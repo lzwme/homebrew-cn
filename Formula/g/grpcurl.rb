@@ -21,13 +21,13 @@ class Grpcurl < Formula
   end
 
   test do
-    (testpath"test.proto").write <<~EOS
+    (testpath"test.proto").write <<~PROTO
       syntax = "proto3";
       package test;
       message HelloWorld {
         string hello_world = 1;
       }
-    EOS
+    PROTO
     system bin"grpcurl", "-msg-template", "-proto", "test.proto", "describe", "test.HelloWorld"
   end
 end

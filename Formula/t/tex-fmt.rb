@@ -22,28 +22,28 @@ class TexFmt < Formula
   end
 
   test do
-    (testpath"test.tex").write <<~TEX
-      \\documentclass{article}
-      \\title{tex-fmt Homebrew Test}
-      \\begin{document}
-      \\maketitle
-      \\begin{itemize}
-      \\item Hello
-      \\item World
-      \\end{itemize}
-      \\end{document}
+    (testpath"test.tex").write <<~'TEX'
+      \documentclass{article}
+      \title{tex-fmt Homebrew Test}
+      \begin{document}
+      \maketitle
+      \begin{itemize}
+      \item Hello
+      \item World
+      \end{itemize}
+      \end{document}
     TEX
 
-    assert_equal <<~TEX, shell_output("#{bin}tex-fmt --print #{testpath}test.tex")
-      \\documentclass{article}
-      \\title{tex-fmt Homebrew Test}
-      \\begin{document}
-      \\maketitle
-      \\begin{itemize}
-        \\item Hello
-        \\item World
-      \\end{itemize}
-      \\end{document}
+    assert_equal <<~'TEX', shell_output("#{bin}tex-fmt --print #{testpath}test.tex")
+      \documentclass{article}
+      \title{tex-fmt Homebrew Test}
+      \begin{document}
+      \maketitle
+      \begin{itemize}
+        \item Hello
+        \item World
+      \end{itemize}
+      \end{document}
     TEX
 
     assert_match version.to_s, shell_output("#{bin}tex-fmt --version")

@@ -7,12 +7,13 @@ class Kubelogin < Formula
   head "https:github.comint128kubelogin.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd54f1305a5b4156df1cf66d02285e6729711b13ca7beae544a83eae9c13902c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd54f1305a5b4156df1cf66d02285e6729711b13ca7beae544a83eae9c13902c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fd54f1305a5b4156df1cf66d02285e6729711b13ca7beae544a83eae9c13902c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "008f52544faf3b23c5c43a4a28ccaaf4c5966e40f8f224f72c7c2dec4555357d"
-    sha256 cellar: :any_skip_relocation, ventura:       "008f52544faf3b23c5c43a4a28ccaaf4c5966e40f8f224f72c7c2dec4555357d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cd9ec1ade640da4e4da728b42cf40c0eb710d085bb2d3974066b9f1a376f8b1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3867cd6666184a96fbc06c8f87fe7f07abb090dabf2d44020b900c4a61968f61"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3867cd6666184a96fbc06c8f87fe7f07abb090dabf2d44020b900c4a61968f61"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3867cd6666184a96fbc06c8f87fe7f07abb090dabf2d44020b900c4a61968f61"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cb5c82e92ef9b6f1b3a9968ec1f2da4775beb2418ddac7e784d7577c4c1f65a5"
+    sha256 cellar: :any_skip_relocation, ventura:       "cb5c82e92ef9b6f1b3a9968ec1f2da4775beb2418ddac7e784d7577c4c1f65a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "678d8e163fd99f67d8edfa04e53fff7158f02f2de03ffcec748a487ed78d65b2"
   end
 
   depends_on "go" => :build
@@ -22,6 +23,8 @@ class Kubelogin < Formula
     ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
     ldflags = "-s -w -X main.version=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin"kubectl-oidc_login")
+
+    generate_completions_from_executable(bin"kubectl-oidc_login", "completion", base_name: "kubectl-oidc_login")
   end
 
   test do

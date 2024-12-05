@@ -25,13 +25,13 @@ class Solhint < Formula
 
   test do
     test_config = testpath/".solhint.json"
-    test_config.write <<~EOS
+    test_config.write <<~JSON
       {
         "rules": {
           "no-empty-blocks": "error"
         }
       }
-    EOS
+    JSON
 
     (testpath/"test.sol").write <<~SOLIDITY
       pragma solidity ^0.4.0;

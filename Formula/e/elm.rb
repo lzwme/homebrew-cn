@@ -50,7 +50,7 @@ class Elm < Formula
   test do
     # create elm.json
     elm_json_path = testpath"elm.json"
-    elm_json_path.write <<~EOS
+    elm_json_path.write <<~JSON
       {
         "type": "application",
         "source-directories": [
@@ -75,14 +75,14 @@ class Elm < Formula
             "indirect": {}
         }
       }
-    EOS
+    JSON
 
     src_path = testpath"Hello.elm"
-    src_path.write <<~EOS
+    src_path.write <<~ELM
       module Hello exposing (main)
       import Html exposing (text)
       main = text "Hello, world!"
-    EOS
+    ELM
 
     out_path = testpath"index.html"
     system bin"elm", "make", src_path, "--output=#{out_path}"

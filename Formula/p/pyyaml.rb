@@ -54,11 +54,11 @@ class Pyyaml < Formula
 
   test do
     pythons.each do |python|
-      system python.opt_libexec"binpython", "-c", <<~EOS
+      system python.opt_libexec"binpython", "-c", <<~PYTHON
         import yaml
         assert yaml.__with_libyaml__
         assert yaml.dump({"foo": "bar"}) == "foo: bar\\n"
-      EOS
+      PYTHON
     end
   end
 end

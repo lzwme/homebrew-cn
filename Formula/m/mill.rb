@@ -23,13 +23,13 @@ class Mill < Formula
   end
 
   test do
-    (testpath"build.sc").write <<~EOS
+    (testpath"build.sc").write <<~SCALA
       import mill._
       import mill.scalalib._
       object foo extends ScalaModule {
         def scalaVersion = "2.13.11"
       }
-    EOS
+    SCALA
     output = shell_output("#{bin}mill resolve __.compile")
     assert_equal "foo.compile", output.lines.last.chomp
   end

@@ -12,20 +12,21 @@ class Inframap < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a082886e9254728b9425ecb668c9bb747d55b4b4860029fd5bd58c13125df5eb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "80770fc43ea2135c2e0d5b570613f6be76f793f27c6fd4a789bbccf0f2a055fc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f0b7cb30405634f07640eb264e406d472f155719b0b7bb51e6a39728ff5cedd1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ef9bc0bde009c80f6d1e4c5646936799fccfecaec04077fc91f34ff83f260a41"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f3e228ba7ef4a41d01eeafc2818078661487352e305afdecfac6aedc29f4ef31"
-    sha256 cellar: :any_skip_relocation, ventura:        "cc2d627e9356b2ee35339a302320873daf4170f7d5fe7d55d5d8c3ada572af2e"
-    sha256 cellar: :any_skip_relocation, monterey:       "151e48157fad893e8edc1c353460ebe42713c50f1565c5450e17aea0754f2cb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c039f5aa5c65db786cdfe4095b8257999b90b5fdd7321a4e3b83bfc62f1226b2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "045720e46c73c4a8f8398d48d0a66207e62195d8797c7f69a8ac1ab1a3bf7412"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "045720e46c73c4a8f8398d48d0a66207e62195d8797c7f69a8ac1ab1a3bf7412"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "045720e46c73c4a8f8398d48d0a66207e62195d8797c7f69a8ac1ab1a3bf7412"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aa596b7fd67f707f8a838582b00f65c4a195c1051654a2f72c4e78d0f0d968a0"
+    sha256 cellar: :any_skip_relocation, ventura:       "aa596b7fd67f707f8a838582b00f65c4a195c1051654a2f72c4e78d0f0d968a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6621e3619bcb502a7e99fbf8043fac869cf1d03b6fffb09945bf759d721093b7"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X github.comcycloidioinframapcmd.Version=v#{version}")
+
+    generate_completions_from_executable(bin"inframap", "completion")
   end
 
   test do

@@ -446,11 +446,11 @@ class LlvmAT14 < Formula
     end
 
     # Testing mlir
-    (testpath"test.mlir").write <<~EOS
+    (testpath"test.mlir").write <<~MLIR
       func @bad_branch() {
         br ^missing   expected-error {{reference to an undefined block}}
       }
-    EOS
+    MLIR
     system bin"mlir-opt", "--verify-diagnostics", "test.mlir"
 
     (testpath"clangformattest.c").write <<~C
@@ -464,10 +464,10 @@ class LlvmAT14 < Formula
     # We explicitly call `"python3"` instead of the method to be able to do
     # `uses_from_macos "python" => :test`.
     with_env(PYTHONPATH: prefixLanguage::Python.site_packages("python3")) do
-      system "python3", "-c", <<~EOS
+      system "python3", "-c", <<~PYTHON
         from clang import cindex
         cindex.Config().get_cindex_library()
-      EOS
+      PYTHON
     end
 
     # Ensure LLVM did not regress output of `llvm-config --system-libs` which for a time
@@ -487,6 +487,7 @@ class LlvmAT14 < Formula
     end
   end
 end
+
 __END__
 --- acompiler-rtlibsanitizer_commonsanitizer_platform_limits_posix.cpp
 +++ bcompiler-rtlibsanitizer_commonsanitizer_platform_limits_posix.cpp

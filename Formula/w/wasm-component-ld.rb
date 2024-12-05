@@ -1,18 +1,18 @@
 class WasmComponentLd < Formula
   desc "Linker for creating WebAssembly components"
   homepage "https:wasi.dev"
-  url "https:github.combytecodealliancewasm-component-ldarchiverefstagsv0.5.10.tar.gz"
-  sha256 "aa049a93da595e4dacf742865f13e7fb1cec1ab47de9258f0a11d81ad6c7a77b"
+  url "https:github.combytecodealliancewasm-component-ldarchiverefstagsv0.5.11.tar.gz"
+  sha256 "323328b18a1e13e35e36339ce59c6e7c4d1800b4fbdd78ba6fa83f3358324414"
   license "Apache-2.0"
   head "https:github.combytecodealliancewasm-component-ld.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79de06bddaa5af8534ef3e3210be559c7413e17d8f504f2ffdefeb24189f1239"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f1f36e28abceafb366512a3a0235c8aa80ba3e6a3e403dc2bd78cde3b266c769"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8d0fca96ba4e4dacef300f1d632ebcd0fc3066daae8853d517ded1bd55766dae"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2bb06da23d7c598b67d980a7c0405e83762666473b4e54c1d8bc6eef749d2ac4"
-    sha256 cellar: :any_skip_relocation, ventura:       "581b65d32016bc17e626999536900c6f5ecec015f694b75ec8eacdf34c72083f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38fecd207497a23c63d145c56ff12aa25e6a692905d34087ca211185e5dc36ad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9538db2e80d4542314ba1e901e554a9945bd9efa27bc439346ebad52aecc1869"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8027d24b5aaa33a84ef04f5c9b3d1e93a6d5817daf4d2c5fdce9d8bcf6f9e383"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0b6133d9717b3c9c69facf38d27428c65b2a8bf1e985d004d09c509c126e6ef9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "36f1629dc9d3302a738ce7d031e2fa02dbfec7fb7be3875876dd2345d0bb5019"
+    sha256 cellar: :any_skip_relocation, ventura:       "4b7474c8215ad08736c2a15563faf73118e41f1ef71090875bddcbcc51f5786a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e070bde431c6cf413bd849260b369b5264b5dbe66052a87699abb616db927086"
   end
 
   depends_on "rust" => :build

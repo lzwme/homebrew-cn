@@ -7,21 +7,34 @@ class Seqkit < Formula
   head "https:github.comshenwei356seqkit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a667b0ba532d938f2a50cde694676a267df3bdc3cd4373065049c040a53df21"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a667b0ba532d938f2a50cde694676a267df3bdc3cd4373065049c040a53df21"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8a667b0ba532d938f2a50cde694676a267df3bdc3cd4373065049c040a53df21"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e8d013ebb699fec9bcf07a497e238989edeff2e463edbd64ab68ee786c9e940d"
-    sha256 cellar: :any_skip_relocation, ventura:       "e8d013ebb699fec9bcf07a497e238989edeff2e463edbd64ab68ee786c9e940d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfc3a16988726cb99ba2120971dfab1c23d3a1752b2b57e7651fcf6c014ef9b5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05ecc08902cdde6e995ea09a8da0693c47968f1a76e0e25545fe37b8ddb2fa41"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05ecc08902cdde6e995ea09a8da0693c47968f1a76e0e25545fe37b8ddb2fa41"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "05ecc08902cdde6e995ea09a8da0693c47968f1a76e0e25545fe37b8ddb2fa41"
+    sha256 cellar: :any_skip_relocation, sonoma:        "458deecd52258761e935f5f18f8fe98592a9bf021bdfff2c3e9f28dc808a7cb9"
+    sha256 cellar: :any_skip_relocation, ventura:       "458deecd52258761e935f5f18f8fe98592a9bf021bdfff2c3e9f28dc808a7cb9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72906e76533517a30f3362b992de3a5b0197ec45d2bc10f2c9fef71c6249641e"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), ".seqkit"
+
+    # generate_completions_from_executable(bin"seqkit", "genautocomplete", "--shell")
+    # We do this because the command to generate completions doesn't print them
+    # to stdout and only writes them to a file
+    system bin"seqkit", "genautocomplete", "--shell", "bash", "--file", "seqkit.bash"
+    system bin"seqkit", "genautocomplete", "--shell", "zsh", "--file", "_seqkit"
+    system bin"seqkit", "genautocomplete", "--shell", "fish", "--file", "seqkit.fish"
+    bash_completion.install "seqkit.bash" => "seqkit"
+    zsh_completion.install "_seqkit"
+    fish_completion.install "seqkit.fish"
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}seqkit version")
+
     resource "homebrew-testdata" do
       url "https:raw.githubusercontent.comshenwei356seqkite37d70a7e0ca0e53d6dbd576bd70decac32aba64testsseqs4amplicon.fa"
       sha256 "b0f09da63e3c677cc698d5cdff60e2d246368263c22385937169a9a4c321178a"

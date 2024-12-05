@@ -21,18 +21,16 @@ class Marcli < Formula
 
   depends_on "go" => :build
 
-  resource "testdata" do
-    url "https:raw.githubusercontent.comhectorcorreamarcli5434a2f85c6f03771f92ad9f0d5af5241f3385a6datatest_1a.mrc"
-    sha256 "7359455ae04b1619f3879fe39eb22ad4187fb3550510f71cb4f27693f60cf386"
-  end
-
   def install
-    cd "cmdmarcli" do
-      system "go", "build", *std_go_args
-    end
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdmarcli"
   end
 
   test do
+    resource "testdata" do
+      url "https:raw.githubusercontent.comhectorcorreamarcli5434a2f85c6f03771f92ad9f0d5af5241f3385a6datatest_1a.mrc"
+      sha256 "7359455ae04b1619f3879fe39eb22ad4187fb3550510f71cb4f27693f60cf386"
+    end
+
     resource("testdata").stage do
       assert_equal "=650  \\0$aCoal$xAnalysis.\r\n=650  \\0$aCoal$xSampling.\r\n\r\n",
       shell_output("#{bin}marcli -file test_1a.mrc -fields 650")

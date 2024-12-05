@@ -1,18 +1,18 @@
 class Jj < Formula
   desc "Git-compatible distributed version control system"
   homepage "https:github.commartinvonzjj"
-  url "https:github.commartinvonzjjarchiverefstagsv0.23.0.tar.gz"
-  sha256 "18e0cc5600c06e940defce0a23ab4b29885bac265f94176603e5f8f926ed000e"
+  url "https:github.commartinvonzjjarchiverefstagsv0.24.0.tar.gz"
+  sha256 "c0e92ec25b7500deec2379a95ab655c6c92021cf4ccb29511fee2377e37b35d6"
   license "Apache-2.0"
   head "https:github.commartinvonzjj.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5910eed8ed991b959748d959a46ef497967043e6cd826aa36e26eae291dae622"
-    sha256 cellar: :any,                 arm64_sonoma:  "04896aa56c97e9f43fb0719e9d33c9bf7fc9a8bfae697545570a0eb53e16d290"
-    sha256 cellar: :any,                 arm64_ventura: "e4b4b42c6878d0dc0fa7ce1d254c51ed0993b1fd852087f0f1a03693af6ff26a"
-    sha256 cellar: :any,                 sonoma:        "d6074df3e11a23b314b96e9078fe9568188c35e581992edaf454fc7fa8a9f72f"
-    sha256 cellar: :any,                 ventura:       "dc5ff7e2c763fe8d00ebe0a452ff2288881aec133adbef7016b3c870e8574b81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98608443f34e51980f2381544ba42e385081ab690866b53c78f9495a7e1150de"
+    sha256 cellar: :any,                 arm64_sequoia: "b52227f624002fec2ea390892b5422ebf013368c08af701c0feb125b0eff3e81"
+    sha256 cellar: :any,                 arm64_sonoma:  "f80d5012e2e05ece55292bc7265c516fc3e7e9224bfe2c274186051921376ffc"
+    sha256 cellar: :any,                 arm64_ventura: "5fdd4798b48df95fcb69fd1a2fd9cc0e5667c3a10ff079801d3671dcc2ea03f0"
+    sha256 cellar: :any,                 sonoma:        "a44672bc799564eaf420c5f085423d0b0e84466cf72afdd2c1e9b77babbee10a"
+    sha256 cellar: :any,                 ventura:       "bfead7f4fa6ca72320bc49fe2bcf3bb139a251bf7ea305302e6d3ee077a26eba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fa4160a7b8b5038362b0606ccb7a878cb9ebf5bc89b0853f6e04c77d6868211"
   end
 
   depends_on "pkgconf" => :build

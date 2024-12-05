@@ -27,7 +27,7 @@ class Ingress2gateway < Formula
 
   test do
     test_file = testpath"test.yml"
-    test_file.write <<~EOS
+    test_file.write <<~YAML
       apiVersion: networking.k8s.iov1
       kind: Ingress
       metadata:
@@ -57,9 +57,9 @@ class Ingress2gateway < Formula
         - hosts:
           - foo,bar
           secretName: foo-bar-cert
-    EOS
+    YAML
 
-    expected = <<~EOS
+    expected = <<~YAML
       apiVersion: gateway.networking.k8s.iov1
       kind: Gateway
       metadata:
@@ -105,7 +105,7 @@ class Ingress2gateway < Formula
               value: 
       status:
         parents: []
-    EOS
+    YAML
 
     result = shell_output("#{bin}ingress2gateway\
                           print\

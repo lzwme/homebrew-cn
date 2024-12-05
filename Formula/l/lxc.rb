@@ -7,18 +7,21 @@ class Lxc < Formula
   head "https:github.comcanonicallxd.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "557ad99b5bcc304ebe9fa87cfecc9df2e5df9f260f98add9ad9904831c2109f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "557ad99b5bcc304ebe9fa87cfecc9df2e5df9f260f98add9ad9904831c2109f4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "557ad99b5bcc304ebe9fa87cfecc9df2e5df9f260f98add9ad9904831c2109f4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "38d351b3937d975859d7298d54b14fb06a8293fd999674d45f07c04f6223cd7a"
-    sha256 cellar: :any_skip_relocation, ventura:       "38d351b3937d975859d7298d54b14fb06a8293fd999674d45f07c04f6223cd7a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "debfd85a1ae466f804ddcccf425d317d4bbfce55db8e42ea7ba3d87a32f9b460"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c34c134ebc906cb32b382fd05c246a7158901cf4c9bebc23d52bec45b7b6def0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c34c134ebc906cb32b382fd05c246a7158901cf4c9bebc23d52bec45b7b6def0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c34c134ebc906cb32b382fd05c246a7158901cf4c9bebc23d52bec45b7b6def0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9b56f98a046cb2532c939d3cf390ee1953544ceed361437a180cafb11bdb0d9f"
+    sha256 cellar: :any_skip_relocation, ventura:       "9b56f98a046cb2532c939d3cf390ee1953544ceed361437a180cafb11bdb0d9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f303552a55818faf6627e9d0c5cad21b80489e748414ef4cfb7aec49feecf06"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), ".lxc"
+
+    generate_completions_from_executable(bin"lxc", "completion")
   end
 
   test do

@@ -5,8 +5,7 @@ class Ssh3 < Formula
       tag:      "v0.1.7",
       revision: "31f8242cf30b675c25b981b862f36e73f9fa1d9d"
   license "Apache-2.0"
-  head "https:github.comfrancoismichelssh3.git",
-       branch: "main"
+  head "https:github.comfrancoismichelssh3.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0f4b007d021b93cfb0c17d853b9ad0f8e8d9112402a7acbbb466f90517e20a12"
@@ -23,13 +22,9 @@ class Ssh3 < Formula
   uses_from_macos "libxcrypt"
 
   def install
-    system "go", "build",
-           *std_go_args(output: bin"ssh3", ldflags: "-s -w"),
-           "cmdssh3main.go"
-    ENV["CGO_ENABLED"] = "1"
-    system "go", "build",
-           *std_go_args(output: bin"ssh3-server", ldflags: "-s -w"),
-           "cmdssh3-servermain.go"
+    ldflags = "-s -w"
+    system "go", "build", *std_go_args(ldflags:, output: bin"ssh3"), ".cmdssh3"
+    system "go", "build", *std_go_args(ldflags:, output: bin"ssh3-server"), ".cmdssh3-server"
   end
 
   test do

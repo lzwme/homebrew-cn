@@ -37,7 +37,7 @@ class GrpcSwift < Formula
   end
 
   test do
-    (testpath"echo.proto").write <<~EOS
+    (testpath"echo.proto").write <<~PROTO
       syntax = "proto3";
       service Echo {
         rpc Get(EchoRequest) returns (EchoResponse) {}
@@ -51,7 +51,7 @@ class GrpcSwift < Formula
       message EchoResponse {
         string text = 1;
       }
-    EOS
+    PROTO
     system Formula["protobuf"].opt_bin"protoc", "echo.proto", "--grpc-swift_out=."
     assert_predicate testpath"echo.grpc.swift", :exist?
   end

@@ -8,27 +8,32 @@ class Revive < Formula
   head "https:github.commgechevrevive.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86c92d60fe4dcfd7bf518a0fa433342f29aef6fdd5105203fbc714cbc4ca85e1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "86c92d60fe4dcfd7bf518a0fa433342f29aef6fdd5105203fbc714cbc4ca85e1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "86c92d60fe4dcfd7bf518a0fa433342f29aef6fdd5105203fbc714cbc4ca85e1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dadea83cdd5c56c13725d30dbdd4e91b8fbb58a6afbd591c0448701d84bfa3fd"
-    sha256 cellar: :any_skip_relocation, ventura:       "dadea83cdd5c56c13725d30dbdd4e91b8fbb58a6afbd591c0448701d84bfa3fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84bb1fbbeeb2e52e195c2a2dbd1c3093524a29df1e57ef0b0d7aecbca94c5b35"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e269b45094637b8e11dd11a57dcd8efae2c6d8b036f529e0b7e5d8efbb8ea7d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e269b45094637b8e11dd11a57dcd8efae2c6d8b036f529e0b7e5d8efbb8ea7d8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e269b45094637b8e11dd11a57dcd8efae2c6d8b036f529e0b7e5d8efbb8ea7d8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "23432d2d934e2fc3ce768eb0c7cf0d8da04919a50d771aaeb4ed35b29a90ce86"
+    sha256 cellar: :any_skip_relocation, ventura:       "23432d2d934e2fc3ce768eb0c7cf0d8da04919a50d771aaeb4ed35b29a90ce86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7654c411b10b2628d31b23f7ed265b3437cd8d9f13579d0b029a4cb3f5b9cd77"
   end
 
   depends_on "go" => [:build, :test]
 
   def install
     ldflags = %W[
-      -X main.commit=#{Utils.git_head}
-      -X main.date=#{time.iso8601}
-      -X main.builtBy=#{tap.user}
+      -s -w
+      -X github.commgechevrevivecli.commit=#{Utils.git_head}
+      -X github.commgechevrevivecli.date=#{time.iso8601}
+      -X github.commgechevrevivecli.builtBy=#{tap.user}
     ]
-    ldflags << "-X main.version=#{version}" unless build.head?
-    system "go", "build", *std_go_args(ldflags: ldflags.join(" "))
+    ldflags << "-X github.commgechevrevivecli.version=#{version}" unless build.head?
+
+    system "go", "build", *std_go_args(ldflags:)
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}revive -version")
+
     (testpath"main.go").write <<~GO
       package main
 

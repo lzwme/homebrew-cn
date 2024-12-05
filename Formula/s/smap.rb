@@ -28,7 +28,7 @@ class Smap < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmd..."
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdsmap"
   end
 
   test do

@@ -15,12 +15,13 @@ class Massdriver < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a06f9709eaabd1c22008047c9e3faaac2456bb90aaa3ad8bd5118706098fcde2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a06f9709eaabd1c22008047c9e3faaac2456bb90aaa3ad8bd5118706098fcde2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a06f9709eaabd1c22008047c9e3faaac2456bb90aaa3ad8bd5118706098fcde2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5261bbb1811139caaa65c6454ab5b042999509900723c92bfa9730480212d7f8"
-    sha256 cellar: :any_skip_relocation, ventura:       "5261bbb1811139caaa65c6454ab5b042999509900723c92bfa9730480212d7f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02a04022d83fd2debab42ca686dd8e1931ae2d0fe11749a206d99a55c80afd9b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a2cfdafb9619fefcb66235f7a9485c6712b4bf5f4b4d8282994becf739553e65"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2cfdafb9619fefcb66235f7a9485c6712b4bf5f4b4d8282994becf739553e65"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a2cfdafb9619fefcb66235f7a9485c6712b4bf5f4b4d8282994becf739553e65"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4b727bdd1b01c44917e97f1912e43fb8162f86f5fdfc52c3bcdcf28b9626c1c5"
+    sha256 cellar: :any_skip_relocation, ventura:       "4b727bdd1b01c44917e97f1912e43fb8162f86f5fdfc52c3bcdcf28b9626c1c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "358296ed0e7e0cdbe2b048aefe53e5a7cf0c8b96dc8f19233b59568798701e75"
   end
 
   depends_on "go" => :build
@@ -32,7 +33,8 @@ class Massdriver < Formula
       -X github.commassdriver-cloudmasspkgversion.gitSHA=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin"mass")
-    generate_completions_from_executable(bin"mass", "completion")
+
+    generate_completions_from_executable(bin"mass", "completion", base_name: "mass")
   end
 
   test do

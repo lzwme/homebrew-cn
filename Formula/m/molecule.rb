@@ -6,16 +6,15 @@ class Molecule < Formula
   url "https://files.pythonhosted.org/packages/dc/72/1c30d07b90b56c0521abaf999e14daf75ae493405d3ee91171fed15b75ae/molecule-24.9.0.tar.gz"
   sha256 "8548eda13c31a1ea41ba0786b29dde466cfb812617c25792151335b17a410f63"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "874921042a8c0743c2412f9ff1f479e4fa5ac021703baf0319e13482d41df011"
-    sha256 cellar: :any,                 arm64_sonoma:  "5b4687a03ffa1335e56a94c051edea0f27309d55672223e3ffafff0d7153fdd6"
-    sha256 cellar: :any,                 arm64_ventura: "5164f3eadfc1ab58d880b014829940343f377c727bac43f245adea51bbf2775b"
-    sha256 cellar: :any,                 sonoma:        "0265b9667b9e9eaa6f30196b5430c9cc39c2677d39ff7f2512f53b5a437e5047"
-    sha256 cellar: :any,                 ventura:       "f18177cc0990b3c89ba5b4b7ffb1b7efeea1c4d2f5a5c658a4b4ede523359fdd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74d04cfcfb3d429878c9c4696d81358da06f4e2bf1a87ced38e42d6e43792bb1"
+    sha256 cellar: :any,                 arm64_sequoia: "f7638e21a7418f6592a7e789d5c55ef710f577e22a97fcbfebe089dd82042ee1"
+    sha256 cellar: :any,                 arm64_sonoma:  "1ca3e0eec3123510736fa5838a6aabef6df8de4c34398e0effeffdb92032d712"
+    sha256 cellar: :any,                 arm64_ventura: "dac7b86c9f3792df17de08a27f7f2bd4b50d1c87307fd2534d2ae51176aefd71"
+    sha256 cellar: :any,                 sonoma:        "5ff6c48991de69e81f8b84ec651ffb595fee8e19cfefcccddcce1a2267427066"
+    sha256 cellar: :any,                 ventura:       "4c752b5484102f1466cc6d614f07bf42066864d4ff3d3b2003f35ec509648a7a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7c6a3211a05b46f2d61e3100d48a3377fef6c2c0d6f37b48c4c0f51aa6d6ed2"
   end
 
   depends_on "rust" => :build
@@ -32,13 +31,13 @@ class Molecule < Formula
   end
 
   resource "ansible-compat" do
-    url "https://files.pythonhosted.org/packages/30/07/f4632fc03a627b008cf6c6cd125640e332810a93a2a264c5f004979f498d/ansible_compat-24.9.1.tar.gz"
-    sha256 "9ff20245e1bd9de9b23a367902524ab0e11fbcfb741831996da5da5b60ab95df"
+    url "https://files.pythonhosted.org/packages/59/f9/c48f3a140e3afad144a720f5c29aa8b34087926b2e2fc8778d4d4b5b6323/ansible_compat-24.10.0.tar.gz"
+    sha256 "0ad873e0dae8b2de79bc33ced813d6c92c716c4d7b82f9a4693e1fd57f43776e"
   end
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/fd/5e/0d5a28caca8fc598b199f3710fffc010a6094dfabcf38f7f3c0abb50451a/ansible_core-2.18.0.tar.gz"
-    sha256 "87fbebbfe8d961e9b153e84b4438ba3a327dbfdcd4ad05a6065d9ff5d9d02e7b"
+    url "https://files.pythonhosted.org/packages/42/46/15836f1f48e2682bd5d04f7b3e2cb27e17626bec3cd7a4f2a7b0ccefbbd2/ansible_core-2.18.1.tar.gz"
+    sha256 "14cac1f92bbdae881cb0616eddeb17925e8cb507e486087975e724533d9de74f"
   end
 
   resource "attrs" do
@@ -127,8 +126,8 @@ class Molecule < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/51/65/50db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4/packaging-24.1.tar.gz"
-    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
+    url "https://files.pythonhosted.org/packages/d0/63/68dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106da/packaging-24.2.tar.gz"
+    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
   end
 
   resource "pluggy" do
@@ -172,8 +171,8 @@ class Molecule < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/23/80/afdf96daf9b27d61483ef05b38f282121db0e38f5fd4e89f40f5c86c2a4f/rpds_py-0.21.0.tar.gz"
-    sha256 "ed6378c9d66d0de903763e7706383d60c33829581f0adff47b6535f1802fa6db"
+    url "https://files.pythonhosted.org/packages/11/e8/9316e3d6edd0530ac284cee5c7ab1cd00acf020b68e08c051c91580d893e/rpds_py-0.22.1.tar.gz"
+    sha256 "157a023bded0618a1eea54979fe2e0f9309e9ddc818ef4b8fc3b884ff38fedd5"
   end
 
   resource "selinux" do

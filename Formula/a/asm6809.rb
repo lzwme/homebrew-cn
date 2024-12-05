@@ -34,12 +34,12 @@ class Asm6809 < Formula
   test do
     input = testpath/"a.asm"
 
-    input.write <<~EOS
+    input.write <<~ASM
       ; Instructions must be preceeded by whitespace
         org $c000
         lda $42
         end $c000
-    EOS
+    ASM
 
     output = testpath/"a.bin"
 

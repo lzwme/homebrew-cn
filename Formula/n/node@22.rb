@@ -1,8 +1,8 @@
 class NodeAT22 < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v22.11.0/node-v22.11.0.tar.xz"
-  sha256 "bbf0297761d53aefda9d7855c57c7d2c272b83a7b5bad4fea9cb29006d8e1d35"
+  url "https://registry.npmmirror.com/-/binary/node/v22.12.0/node-v22.12.0.tar.xz"
+  sha256 "fe1bc4be004dc12721ea2cb671b08a21de01c6976960ef8a1248798589679e16"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class NodeAT22 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "49c1faf86ce77ef26345dd9c2f005839dd13491c71c125464fd028f5ec999530"
-    sha256 arm64_sonoma:  "5eeedf96a1c07d18c1ad6f8f19e503d193bf884c047ff387b7e3b4e966e73c40"
-    sha256 arm64_ventura: "83cef9f2dd852a0c7bdae73604bef7d9cc716319f591ca03e23a05d1b983ba47"
-    sha256 sonoma:        "2e00368aacc852f9693fd2e452a51d2b5fbbfb28299cb3b8dc39aa91158280d9"
-    sha256 ventura:       "5b1f5ddbfe5135908a0fa29a5895e746ff8121fddf1e5ba9464c5ffb5f143e59"
-    sha256 x86_64_linux:  "98af586420519db5648f5fb51a5dbcebd3ee0028b2bbbb151811f4a4d53cdb5d"
+    sha256 arm64_sequoia: "c9c6b9f31f49c23d17032134516c46026f5f5261ab01edb412f05dd5a3cabb51"
+    sha256 arm64_sonoma:  "8c28fb1732077a43ecd23232c29416e1fe6bcae6fdc93b8c8cdf5a4e66cef296"
+    sha256 arm64_ventura: "6411d8d0c890f82ae78e212700dcdbb6c204db9a9b6514b5b14757fbe2129880"
+    sha256 sonoma:        "97059cc2e29aa868a171f7415e4a31d6fb1dea8f2abb2bf54dd8f93ce2be26f8"
+    sha256 ventura:       "4f1e0c39ad1b26e57ab365d501097fd9de13eab9b556e7b480a15f72b43e64ee"
+    sha256 x86_64_linux:  "203b59198bcba5c3448a78aa7b67547112f047dc2a06b9e2045530c29ab4be5a"
   end
 
   keg_only :versioned_formula
@@ -46,12 +46,6 @@ class NodeAT22 < Formula
     cause <<~EOS
       error: calling a private constructor of class 'v8::internal::(anonymous namespace)::RegExpParserImpl<uint8_t>'
     EOS
-  end
-
-  # Backport support for ICU 76+
-  patch do
-    url "https://github.com/nodejs/node/commit/81517faceac86497b3c8717837f491aa29a5e0f9.patch?full_index=1"
-    sha256 "79a5489617665c5c88651a7dc364b8967bebdea5bdf361b85572d041a4768662"
   end
 
   def install

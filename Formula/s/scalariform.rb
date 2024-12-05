@@ -34,17 +34,17 @@ class Scalariform < Formula
   end
 
   test do
-    before_data = <<~EOS
+    before_data = <<~SCALA
       def foo() {
       println("Hello World")
       }
-    EOS
+    SCALA
 
-    after_data = <<~EOS
+    after_data = <<~SCALA
       def foo() {
          println("Hello World")
       }
-    EOS
+    SCALA
 
     (testpath"foo.scala").write before_data
     system bin"scalariform", "-indentSpaces=3", testpath"foo.scala"

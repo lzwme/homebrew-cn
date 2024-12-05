@@ -65,11 +65,11 @@ class Felinks < Formula
   end
 
   test do
-    (testpath"test.html").write <<~EOS
+    (testpath"test.html").write <<~HTML
       <!DOCTYPE html>
       <title>Hello World!<title>
       Abracadabra
-    EOS
+    HTML
     assert_match "Abracadabra", shell_output("#{bin}elinks -dump test.html").chomp
   end
 end

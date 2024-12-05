@@ -30,7 +30,7 @@ class Sbuild < Formula
   end
 
   test do
-    expected = <<~EOS
+    expected = <<~SCALA
       import de.tototec.sbuild._
 
       @version("#{version}")
@@ -45,7 +45,7 @@ class Sbuild < Formula
         }
 
       }
-    EOS
+    SCALA
     system bin"sbuild", "--create-stub"
     assert_equal expected, (testpath"SBuild.scala").read
   end

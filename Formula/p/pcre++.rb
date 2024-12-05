@@ -62,7 +62,7 @@ class Pcrexx < Formula
   end
 
   test do
-    (testpath/"test.cc").write <<~EOS
+    (testpath/"test.cc").write <<~CPP
       #include <pcre++.h>
       #include <iostream>
 
@@ -78,7 +78,7 @@ class Pcrexx < Formula
         }
         return 0;
       }
-    EOS
+    CPP
     flags = ["-I#{include}", "-L#{lib}",
              "-I#{Formula["pcre"].opt_include}", "-L#{Formula["pcre"].opt_lib}",
              "-lpcre++", "-lpcre"] + ENV.cflags.to_s.split

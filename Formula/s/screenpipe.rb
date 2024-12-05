@@ -1,15 +1,15 @@
 class Screenpipe < Formula
   desc "Library to build personalized AI powered by what you've seen, said, or heard"
   homepage "https:github.commediar-aiscreenpipe"
-  url "https:github.commediar-aiscreenpipearchiverefstagsv0.2.7.tar.gz"
-  sha256 "05db0c5dc260d939e14109e2df1e6ee32b562135d6e3e36ec7619471ca8cb7b2"
+  url "https:github.commediar-aiscreenpipearchiverefstagsv0.2.8.tar.gz"
+  sha256 "1166b309204fd7c6f9306ee4da57d918dfdc8c17348510818f872024eb80b700"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ba3ebe387b9a23771606e4c92cf41641543dccd3b7b1a4824f2054fee30ab080"
-    sha256 cellar: :any,                 arm64_sonoma:  "251cb436fc3b1233087d65ea6bae4c3156166470da306cef5c9ef43f8d3828fa"
-    sha256 cellar: :any,                 sonoma:        "abff08008f5ae7b375a1e49fa3f5bc7887798ad94786479f20dfe0afabede9af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3474067aaf94e670414d4c66e32bfcf7e5ac7740a17760f598e644e9e22aedaa"
+    sha256 cellar: :any,                 arm64_sequoia: "314d86014e668eab13dd7372c0a499d4107e5234507226da78f159df684c21a2"
+    sha256 cellar: :any,                 arm64_sonoma:  "27d0088b1ac4fa1f15aa9d1dc702b93aa5aafe39db1e5984ed4ad87eca39cf4d"
+    sha256 cellar: :any,                 sonoma:        "2eb870bfe012e75dc88033d1be244cc15b5ba236a81b070c824df786ac9020fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eda86006c89f439687538e83c7ecd7785000e2f389374935cda3488649d5786e"
   end
 
   depends_on "cmake" => :build

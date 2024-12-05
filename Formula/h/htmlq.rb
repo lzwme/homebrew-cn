@@ -28,7 +28,7 @@ class Htmlq < Formula
   end
 
   test do
-    (testpath"test.html").write <<~EOS
+    (testpath"test.html").write <<~HTML
       <!doctype html>
       <html>
         <head>
@@ -45,7 +45,7 @@ class Htmlq < Formula
             <div>
         <body>
       <html>
-    EOS
+    HTML
 
     test_html = testpath"test.html"
     assert_equal "More information...\n", pipe_output("#{bin}htmlq -t p a", test_html.read)

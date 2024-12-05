@@ -1,8 +1,8 @@
 class Grafana < Formula
   desc "Gorgeous metric visualizations and dashboards for timeseries databases"
   homepage "https:grafana.com"
-  url "https:github.comgrafanagrafanaarchiverefstagsv11.3.1.tar.gz"
-  sha256 "62531d11a05cf6d51d126f8daa3d043ff593b6e37e183f6257af4e009ecce7fc"
+  url "https:github.comgrafanagrafanaarchiverefstagsv11.3.2.tar.gz"
+  sha256 "8896a05d277acd4fb6af5349ad1182057e709c514e3e33fde1e24c1ccbc0c05b"
   license "AGPL-3.0-only"
   head "https:github.comgrafanagrafana.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Grafana < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c19bf8ddbf346df8be460d0cb6c2fd1e584ae76cf3e06211c9305735b85d5d7c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f661071e04175eb4d5a45cf502dc848bd2a77ef43508a6e4f20bed28742c7048"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9e6058f78a0a21bf03accaa638ea44174f9586df554f95d049afc2bcde733af9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3e915fc0e2e0e34337d093b9ac5426e7ac45b2797b7965e0af7c7f2736fe89f9"
-    sha256 cellar: :any_skip_relocation, ventura:       "0b8e83ce62aae129706d90abbe034de1289582c88ac8ddadcbf387320bfe289e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eae8c4fa7abf9238485209db3460f7f15b6934bdbaef9e1890ba4b5291fcb54a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b38269b5aa96e84aa10a0ecbe591e9e602c987cd1af208c5da0b59955232003a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bcddbaff70399f954baa63072b3d0722aee76209b4b57fbbb6bd4939e403b0d2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8997ed60eac228eac767e0a047b512766883b4c0766e3f570a23d535e9daaa42"
+    sha256 cellar: :any_skip_relocation, sonoma:        "214db31be1e6028e0b882273be550fa3a8578fbca998164382ed0e685835a010"
+    sha256 cellar: :any_skip_relocation, ventura:       "beb54fd45198530d86ca827c37798cf892617206a4fd7d454b8c4e30b9c338e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f354e333607a3fa287dc6b7e6e2ca37781b6c793df5f020e66d798fe390bcf8"
   end
 
   depends_on "go" => :build

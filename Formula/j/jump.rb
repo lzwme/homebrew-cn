@@ -7,23 +7,21 @@ class Jump < Formula
   head "https:github.comgsamokovarovjump.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fde11425f5d359b95bab0dc05ef78746c8f25e0d4e0ba64d08a6f571c7c30365"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "401b76cacc9038c0df59f48eca22bd5edf35c33ac5e2dd9ae9e885e5fd404dfc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "90378306728d3520372749d0632558adc2ee809652145a720545ffcc80328c92"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "530e68bb757c889ad241551f9312b147bb349463c854d72708590dc128798227"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "530e68bb757c889ad241551f9312b147bb349463c854d72708590dc128798227"
-    sha256 cellar: :any_skip_relocation, sonoma:         "92ce65b8c03a55e098dad800a46c1ec8ca85520d9f66dd7b8047e36d79c9ab3a"
-    sha256 cellar: :any_skip_relocation, ventura:        "dbedde353648c54dffc593bef54f2a7e089d84bd8756d7913545baf8162cae91"
-    sha256 cellar: :any_skip_relocation, monterey:       "0065c059d901a155f99e532ff126ed58abfe27d27b9ab5e3decdf44dcf0ca06d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0065c059d901a155f99e532ff126ed58abfe27d27b9ab5e3decdf44dcf0ca06d"
-    sha256 cellar: :any_skip_relocation, catalina:       "0065c059d901a155f99e532ff126ed58abfe27d27b9ab5e3decdf44dcf0ca06d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa81693c6c5fe052474ea740a8e49610aea0f2a1fdfd319e9b4333ad17bda82f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ecddcb16acf0ec0cfd882ba188e731b1a82afc22aa30131f15331ccea1135ece"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ecddcb16acf0ec0cfd882ba188e731b1a82afc22aa30131f15331ccea1135ece"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ecddcb16acf0ec0cfd882ba188e731b1a82afc22aa30131f15331ccea1135ece"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3a6bef70aca4c86f24e680096a7137ebba478b1420acca74e131987f3fdb2fc8"
+    sha256 cellar: :any_skip_relocation, ventura:       "3a6bef70aca4c86f24e680096a7137ebba478b1420acca74e131987f3fdb2fc8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5db113fb8a6cb2652adb039f6cc0056341c95df09201ead5d5dd306e2c7f5921"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")
+
+    generate_completions_from_executable(bin"jump", "shell")
     man1.install "manjump.1"
     man1.install "manj.1"
   end

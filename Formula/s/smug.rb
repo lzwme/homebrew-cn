@@ -6,18 +6,22 @@ class Smug < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "99c9f43c665d04989bd1be40fc43f0af22b7128244dca7ec86765ce97a51d4fa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99c9f43c665d04989bd1be40fc43f0af22b7128244dca7ec86765ce97a51d4fa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "99c9f43c665d04989bd1be40fc43f0af22b7128244dca7ec86765ce97a51d4fa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2372c79328bd818584bf2f2f4009a3052107f7a7c43395fe40d05710e91e62e0"
-    sha256 cellar: :any_skip_relocation, ventura:       "2372c79328bd818584bf2f2f4009a3052107f7a7c43395fe40d05710e91e62e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ded466ea0f9f4366e6dd19da6209531be19e14a76ba46c72d59c9a9670385cc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5f45667e3e7a430656241eb38b85cd3d25a8d13159a806b3477148e75cd9c32"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5f45667e3e7a430656241eb38b85cd3d25a8d13159a806b3477148e75cd9c32"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b5f45667e3e7a430656241eb38b85cd3d25a8d13159a806b3477148e75cd9c32"
+    sha256 cellar: :any_skip_relocation, sonoma:        "da2615272e49b0c311b196b597bbf9681283b2120931d29292ee38f58cd053e6"
+    sha256 cellar: :any_skip_relocation, ventura:       "da2615272e49b0c311b196b597bbf9681283b2120931d29292ee38f58cd053e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "262cd8d04d0628dcf493599c3301cf7eafd462a65f030683da7867a1ed7dc208"
   end
 
   depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")
+
+    bash_completion.install "completionsmug.bash" => "smug"
+    fish_completion.install "completionsmug.fish"
   end
 
   test do

@@ -29,12 +29,12 @@ class Dasm < Formula
 
   test do
     path = testpath"a.asm"
-    path.write <<~EOS
+    path.write <<~ASM
       ; Instructions must be preceded by whitespace
         processor 6502
         org $c000
         jmp $fce2
-    EOS
+    ASM
 
     system bin"dasm", path
     code = (testpath"a.out").binread.unpack("C*")

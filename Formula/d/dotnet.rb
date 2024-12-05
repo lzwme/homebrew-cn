@@ -6,21 +6,21 @@ class Dotnet < Formula
 
   stable do
     # Source-build tag announced at https:github.comdotnetsource-builddiscussions
-    url "https:github.comdotnetdotnetarchiverefstagsv9.0.0.tar.gz"
-    sha256 "ade10f909a684c2a056b8b0ec3a30e1570ce2b83c46c5f621a4464d02729af9f"
+    url "https:github.comdotnetdotnetarchiverefstagsv9.0.101.tar.gz"
+    sha256 "2e19ec615afe23e318d15bb7cbceabb00b3c8fb8cdca8d3a4a0b98eae66411c7"
 
     resource "release.json" do
-      url "https:github.comdotnetdotnetreleasesdownloadv9.0.0release.json"
-      sha256 "2a08862e4cd0095c743deccd8e34f3188261772cc775a7c6cdbfc9237727edda"
+      url "https:github.comdotnetdotnetreleasesdownloadv9.0.101release.json"
+      sha256 "02c7435a19fefd8646c641dcf43072b79c0e868ec80a1a12ced108b2b6639819"
     end
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "846716ea37ae27f2be05098226bef127d27c650798f07085417ba8a610b1cf6f"
-    sha256 cellar: :any,                 arm64_sonoma:  "f12bdbf90b2a57fc29349cb78123cd7f8eab584b27cf859c4413ae07a3f4a6bc"
-    sha256 cellar: :any,                 arm64_ventura: "9a4970542023cb1cf76566978f7f6ee9d5e5b3890e47edc64d507468fc382558"
-    sha256 cellar: :any,                 ventura:       "7e315138a9da1bb22c057f063d89d08297609a2196c2f6a5d25ccd405a6e2cef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23cad8699a8133d024cea4cb20f31d829911bffc9acd2586c9ea3811fd51df29"
+    sha256 cellar: :any,                 arm64_sequoia: "47acc69a9fd491ec36514f381aa6eccac49707d7d71126c4c74846e92ebdfdc3"
+    sha256 cellar: :any,                 arm64_sonoma:  "49ddbb78a70576f163403dec659cb963dcaa546596c3a84f78e70e761a73a3e4"
+    sha256 cellar: :any,                 arm64_ventura: "f5c8b63bece516ba93e36f66994485d6db8ba00cd75c43a4d3128e666ac1ce4f"
+    sha256 cellar: :any,                 ventura:       "640cb159a004891af6988e6ccfe5e07ca21898ee886879593c87fced7fd575d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d3be239a0c0da2a87799299dff29ce7e9701605b30d058755453417a7d25797"
   end
 
   depends_on "cmake" => :build
@@ -101,7 +101,7 @@ class Dotnet < Formula
   test do
     target_framework = "net#{version.major_minor}"
 
-    (testpath"test.cs").write <<~CSHARP
+    (testpath"test.cs").write <<~CS
       using System;
 
       namespace Homebrew
@@ -115,7 +115,7 @@ class Dotnet < Formula
           }
         }
       }
-    CSHARP
+    CS
 
     (testpath"test.csproj").write <<~XML
       <Project Sdk="Microsoft.NET.Sdk">
@@ -145,8 +145,8 @@ class Dotnet < Formula
     # Test to avoid uploading broken Intel Sonoma bottle which has stack overflow on restore.
     # See https:github.comHomebrewhomebrew-coreissues197546
     resource "docfx" do
-      url "https:github.comdotnetdocfxarchiverefstagsv2.77.0.tar.gz"
-      sha256 "03c13ca2cdb4a476365ef8f5b7f408a6cf6e35f0193c959d7765c03dd4884bfb"
+      url "https:github.comdotnetdocfxarchiverefstagsv2.78.2.tar.gz"
+      sha256 "0b0f53532fc887a1b7444d8c45f89d49250b6d26d8a24f8865563c4e916c1621"
     end
     resource("docfx").stage do
       system bin"dotnet", "restore", "srcdocfx", "--disable-build-servers", "--no-cache"

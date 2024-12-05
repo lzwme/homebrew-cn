@@ -31,7 +31,7 @@ class ProtocGenGoGrpc < Formula
   end
 
   test do
-    (testpath"service.proto").write <<~EOS
+    (testpath"service.proto").write <<~PROTO
       syntax = "proto3";
 
       option go_package = ".;proto";
@@ -42,7 +42,7 @@ class ProtocGenGoGrpc < Formula
 
       message HelloRequest {}
       message HelloResponse {}
-    EOS
+    PROTO
 
     system "protoc", "--plugin=#{bin}protoc-gen-go-grpc", "--go-grpc_out=.", "service.proto"
 

@@ -27,7 +27,7 @@ class LibpahoMqtt < Formula
   end
 
   test do
-    (testpath"test.c").write <<~EOT
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
       #include <MQTTClient.h>
@@ -38,7 +38,7 @@ class LibpahoMqtt < Formula
 
           return 0;
       }
-    EOT
+    C
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lpaho-mqtt3a", "-o", "test"
     system ".test"
   end

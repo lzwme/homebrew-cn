@@ -727,7 +727,7 @@ class Llvm < Formula
     end
 
     # Testing mlir
-    (testpath"test.mlir").write <<~EOS
+    (testpath"test.mlir").write <<~MLIR
       func.func @main() {return}
 
        -----
@@ -739,7 +739,7 @@ class Llvm < Formula
 
        expected-error @+1 {{redefinition of symbol named 'foo'}}
       func.func @foo() { return }
-    EOS
+    MLIR
     system bin"mlir-opt", "--split-input-file", "--verify-diagnostics", "test.mlir"
 
     (testpath"scanbuildtest.cpp").write <<~CPP

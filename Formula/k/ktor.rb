@@ -7,20 +7,20 @@ class Ktor < Formula
   head "https:github.comktorioktor-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b7a13b7df5cabdf75f7b5e672f53c01c60d83849222931f8b8d4adff4d6de91"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b7a13b7df5cabdf75f7b5e672f53c01c60d83849222931f8b8d4adff4d6de91"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6b7a13b7df5cabdf75f7b5e672f53c01c60d83849222931f8b8d4adff4d6de91"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5695e2ba9dab74be6437b89e40655a77da6f174b46ff08560c7a25b3adc69fe6"
-    sha256 cellar: :any_skip_relocation, ventura:       "5695e2ba9dab74be6437b89e40655a77da6f174b46ff08560c7a25b3adc69fe6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ea8d0c87d24e4d2adec9724111c151e4a2f9034a32a12ea979ada403a84ed5e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0f9d214cf75ad4f2555dc0d750cba7b2e6f28e250d31ee732e42dfa2b8c50ae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0f9d214cf75ad4f2555dc0d750cba7b2e6f28e250d31ee732e42dfa2b8c50ae"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e0f9d214cf75ad4f2555dc0d750cba7b2e6f28e250d31ee732e42dfa2b8c50ae"
+    sha256 cellar: :any_skip_relocation, sonoma:        "be132ece24c7bf5519f46e62d18b79265f1962082f2095d06633fb79b0adf9b0"
+    sha256 cellar: :any_skip_relocation, ventura:       "be132ece24c7bf5519f46e62d18b79265f1962082f2095d06633fb79b0adf9b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3029deef9706edbf7768a9e46191bdde459f2a0c547ab869aee5499ea7e695d5"
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["CGO_ENABLED"] = "0"
-    ldflags = "-X main.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags:), "github.comktorioktor-clicmdktor"
+    ldflags = "-s -w -X main.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags:), ".cmdktor"
   end
 
   test do

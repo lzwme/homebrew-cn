@@ -19,6 +19,8 @@ class Drafter < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "00241d159577722e4fb7d98b661a2d81c91e6fa3beaca88d010b6eecea4377b0"
   end
 
+  deprecate! date: "2024-12-04", because: :repo_archived
+
   depends_on "cmake" => :build
 
   # patch release version

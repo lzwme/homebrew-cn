@@ -1,8 +1,8 @@
 class Scrcpy < Formula
   desc "Display and control your Android device"
   homepage "https:github.comGenymobilescrcpy"
-  url "https:github.comGenymobilescrcpyarchiverefstagsv3.0.tar.gz"
-  sha256 "6ad2306dcdf17a8c927691d1004ec632a694069187ded73d30113a5db780fc43"
+  url "https:github.comGenymobilescrcpyarchiverefstagsv3.0.2.tar.gz"
+  sha256 "5ab92d091f308679fe81851666acec1b161e6810ac73eb9bade705ade285e109"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Scrcpy < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "dc645512230237f88dd769cdd8239e7a2343447b8d029ed1dd4d813bf0f5f04b"
-    sha256 arm64_sonoma:  "4404674f0d68bee3f0654c50b82bf487ecb7d69da2920e4b06d8e318bc4f95fd"
-    sha256 arm64_ventura: "cb4d5ba2ebe83ca9da3388ee3fe4558f29757c4522af714f2a3f160f2b1fb910"
-    sha256 sonoma:        "3c3bcf6550981315c6e45f419b66fcbdc2673b5811408c4acc034ddaaee3e872"
-    sha256 ventura:       "307b9726aa88a54cb4e7ab47aa1e657b40acee79c2c56277d0fc050da8071f44"
-    sha256 x86_64_linux:  "03b4e7857a38b7d7e564293f2c8dbc01d41316b476808c4eb32e13fc5bb86e90"
+    sha256 arm64_sequoia: "0747c792b923256bc148a272c3003487644eba3ee1042172e6cc20822cb6e182"
+    sha256 arm64_sonoma:  "2970efb82a21e1a78c3f8415c48ab4e75e0e42b6930052ad651fe76ee150df4d"
+    sha256 arm64_ventura: "183b4056967dc42e408dc8b3d954da246e914fd6ee56015565cc91410705f494"
+    sha256 sonoma:        "c20998fdff4317a3a5c812d85e8f7549ef1ae827270cb595d578a2317848524b"
+    sha256 ventura:       "36ce72766e1d941b58b25115bc7d7de6f73d2c20ca8f49a94726267f52ea8d45"
+    sha256 x86_64_linux:  "a89979a96e60d390d0c95cc43aac7d35cbb9911d41c3d0298fa9bd1ab1f5fbfb"
   end
 
   depends_on "meson" => :build
@@ -27,8 +27,8 @@ class Scrcpy < Formula
   depends_on "sdl2"
 
   resource "prebuilt-server" do
-    url "https:github.comGenymobilescrcpyreleasesdownloadv3.0scrcpy-server-v3.0", using: :nounzip
-    sha256 "800044c62a94d5fc16f5ab9c86d45b1050eae3eb436514d1b0d2fe2646b894ea"
+    url "https:github.comGenymobilescrcpyreleasesdownloadv3.0.2scrcpy-server-v3.0.2", using: :nounzip
+    sha256 "e19fe024bfa3367809494407ad6ca809a6f6e77dac95e99f85ba75144e0ba35d"
   end
 
   def install

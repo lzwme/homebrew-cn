@@ -37,7 +37,7 @@ class Libmsquic < Formula
 
   test do
     example = testpath"example.cpp"
-    example.write <<~EOS
+    example.write <<~CPP
       #include <iostream>
       #include <msquic.h>
 
@@ -54,7 +54,7 @@ class Libmsquic < Formula
           MsQuicClose(ptr);
           return 0;
       }
-    EOS
+    CPP
     system ENV.cxx, example, "-I#{include}", "-L#{lib}", "-lmsquic", "-o", "test"
     assert_equal "MsQuicOpen2 succeeded", shell_output(".test").strip
   end

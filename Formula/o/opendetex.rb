@@ -28,11 +28,11 @@ class Opendetex < Formula
   end
 
   test do
-    (testpath"test.tex").write <<~TEX
-      \\documentclass{article}
-      \\begin{document}
-      Simple \\emph{text}.
-      \\end{document}
+    (testpath"test.tex").write <<~'TEX'
+      \documentclass{article}
+      \begin{document}
+      Simple \emph{text}.
+      \end{document}
     TEX
 
     output = shell_output("#{bin}detex test.tex")

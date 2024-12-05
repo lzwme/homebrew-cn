@@ -1,19 +1,18 @@
 class Mlpack < Formula
   desc "Scalable C++ machine learning library"
   homepage "https:www.mlpack.org"
-  url "https:mlpack.orgfilesmlpack-4.5.0.tar.gz"
-  sha256 "aab70aee10c134ef3fe568843fe4b3bb5e8901af30ea666f57462ad950682317"
+  url "https:mlpack.orgfilesmlpack-4.5.1.tar.gz"
+  sha256 "58059b911a78b8bda91eef4cfc6278383b24e71865263c2e0569cf5faa59dda3"
   license all_of: ["BSD-3-Clause", "MPL-2.0", "BSL-1.0", "MIT"]
   head "https:github.commlpackmlpack.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "bec3490448e5bfab166597e1ba21643b11caddc285ddcc09fe72a423d4e2e3fb"
-    sha256 cellar: :any,                 arm64_sonoma:  "18ae29440f9b633ce4e67e63d5b54131587facb18ee38ad222e6dbe6db21f441"
-    sha256 cellar: :any,                 arm64_ventura: "78f145ea6c52f9474b1284d1cd5ae5ef87eb1879e7c38e118b58a1171dcaeec4"
-    sha256 cellar: :any,                 sonoma:        "c940e4b76ff1f06c2a5850cf98f6b81436a9e2114658d3205500470c351d3ad8"
-    sha256 cellar: :any,                 ventura:       "b41d0333a89ff7310e0b2ca93314c20cb49241e4fcf10f6a8f46418f420b8010"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c87e0d6ed36859efb4486844c3fea80f6d6ca4970405e0e864e1e233bfee4e95"
+    sha256 cellar: :any,                 arm64_sequoia: "14103e2ce794d0e8cda3bb85a4ca003bb15e696294865e788cd2f5bbab1f33c2"
+    sha256 cellar: :any,                 arm64_sonoma:  "f08fb3c4bd5fecca6e3000d55d50930981abc3b18c990ba266199f85c466afaa"
+    sha256 cellar: :any,                 arm64_ventura: "6d19da72724ba1093b67d027fb8fe78fc1432056331a8ad762b8064f20e47ae4"
+    sha256 cellar: :any,                 sonoma:        "3d7638fd522a387521743fcee1baf6e5cbfaf0e64d594c16a96f04f75083a03e"
+    sha256 cellar: :any,                 ventura:       "7bbd042a5ce26f803ed770587a64805486f84c1955ec6ab926634e6150148285"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec3664885fb3cf60787a14f0a0b2492a4ffa18c90a6a95561e75bf506a18b119"
   end
 
   depends_on "cmake" => :build

@@ -44,7 +44,7 @@ class ProtocGenGrpcWeb < Formula
 
   test do
     # First use the plugin to generate the files.
-    testdata = <<~EOS
+    testdata = <<~PROTO
       syntax = "proto3";
       package test;
       message TestCase {
@@ -59,7 +59,7 @@ class ProtocGenGrpcWeb < Formula
       service TestService {
         rpc RunTest(Test) returns (TestResult);
       }
-    EOS
+    PROTO
     (testpath"test.proto").write testdata
     system "protoc", "test.proto", "--plugin=#{bin}protoc-gen-grpc-web",
                      "--js_out=import_style=commonjs:.",

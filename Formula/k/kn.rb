@@ -8,28 +8,30 @@ class Kn < Formula
   head "https:github.comknativeclient.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05c99832693fadb796b65f38321be89cc3ff9670f7664e9a616e298e946bde54"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05c99832693fadb796b65f38321be89cc3ff9670f7664e9a616e298e946bde54"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "05c99832693fadb796b65f38321be89cc3ff9670f7664e9a616e298e946bde54"
-    sha256 cellar: :any_skip_relocation, sonoma:        "137e3dc95c343860fa811c8c4ab3c89f3336293f8cf70d5d4015175777e4fd03"
-    sha256 cellar: :any_skip_relocation, ventura:       "137e3dc95c343860fa811c8c4ab3c89f3336293f8cf70d5d4015175777e4fd03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c5c5476ed3bded8ea9b02f67be6c2c290ebdde1ecc71ec9ec8a6987727880c0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e5daab383dda02129e1910b59e35fa1d875bd1c9696d0cde360aad3df67003c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef1ef6503a5c46cb5277538371db37ccd22411cc6f6825d8c8a1e8e6651897bd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d969b2daea46765127b155d0d38a1c720fa69b7ff16c0365952017b703ef268e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "198335fab48da6d5725e163754e6384806f4adeb19a80b92fd2d5d3b747788f6"
+    sha256 cellar: :any_skip_relocation, ventura:       "74db90aca044e047de13f0cfad53259256e3d6ac4dd745cb92eb52465daac5cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3c90ce26f86d1b6cda1973848b93446473b07c317c5c407cb5000404fa50143"
   end
 
   depends_on "go" => :build
 
   def install
-    ENV["CGO_ENABLED"] = "0"
+    ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
 
     ldflags = %W[
+      -s -w
       -X knative.devclientpkgcommandsversion.Version=v#{version}
       -X knative.devclientpkgcommandsversion.GitRevision=#{Utils.git_head(length: 8)}
       -X knative.devclientpkgcommandsversion.BuildDate=#{time.iso8601}
     ]
 
-    system "go", "build", *std_go_args(ldflags:), ".cmd..."
+    system "go", "build", *std_go_args(ldflags:), ".cmdkn"
 
-    generate_completions_from_executable(bin"kn", "completion", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin"kn", "completion")
   end
 
   test do

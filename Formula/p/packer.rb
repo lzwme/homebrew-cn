@@ -48,7 +48,7 @@ class Packer < Formula
 
   test do
     minimal = testpath"minimal.json"
-    minimal.write <<~EOS
+    minimal.write <<~JSON
       {
         "builders": [{
           "type": "amazon-ebs",
@@ -66,7 +66,7 @@ class Packer < Formula
           ]
         }]
       }
-    EOS
+    JSON
     system bin"packer", "validate", "-syntax-only", minimal
   end
 end

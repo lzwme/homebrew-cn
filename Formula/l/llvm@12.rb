@@ -381,11 +381,11 @@ class LlvmAT12 < Formula
     end
 
     # Testing mlir
-    (testpath"test.mlir").write <<~EOS
+    (testpath"test.mlir").write <<~MLIR
       func @bad_branch() {
         br ^missing   expected-error {{reference to an undefined block}}
       }
-    EOS
+    MLIR
     system bin"mlir-opt", "--verify-diagnostics", "test.mlir"
 
     (testpath"scanbuildtest.cpp").write <<~CPP

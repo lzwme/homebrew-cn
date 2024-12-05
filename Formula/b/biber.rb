@@ -681,27 +681,27 @@ class Biber < Formula
     cp (pkgshare"test").children, testpath
     output = shell_output("#{bin}biber --validate-control --convert-control annotations")
     assert_match "Output to annotations.bbl", output
-    assert_predicate testpath"annotations.bcf.html", :exist?
-    assert_predicate testpath"annotations.blg", :exist?
-    assert_predicate testpath"annotations.bbl", :exist?
+    assert_path_exists testpath"annotations.bcf.html"
+    assert_path_exists testpath"annotations.blg"
+    assert_path_exists testpath"annotations.bbl"
 
-    (testpath"test.bib").write <<~EOS
+    (testpath"test.bib").write <<~BIBTEX
       @book{test,
         author = {Test},
         title = {Test}
       }
-    EOS
-    (testpath"test.latex").write <<~EOS
-      \\documentclass{article}
-      \\usepackage[backend=biber]{biblatex}
-      \\bibliography{test}
-      \\begin{document}
-      \\cite{test}
-      \\printbibliography
-      \\end{document}
-    EOS
+    BIBTEX
+    (testpath"test.latex").write <<~'LATEX'
+      \documentclass{article}
+      \usepackage[backend=biber]{biblatex}
+      \bibliography{test}
+      \begin{document}
+      \cite{test}
+      \printbibliography
+      \end{document}
+    LATEX
     system Formula["texlive"].bin"pdflatex", "-interaction=errorstopmode", testpath"test.latex"
     system bin"biber", "test"
-    assert_predicate testpath"test.bbl", :exist?
+    assert_path_exists testpath"test.bbl"
   end
 end

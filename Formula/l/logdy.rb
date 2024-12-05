@@ -6,12 +6,13 @@ class Logdy < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29bcebab22e2c35e00d15a5d2d260a3edcc056c373259feb81934832cb325d96"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "29bcebab22e2c35e00d15a5d2d260a3edcc056c373259feb81934832cb325d96"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "29bcebab22e2c35e00d15a5d2d260a3edcc056c373259feb81934832cb325d96"
-    sha256 cellar: :any_skip_relocation, sonoma:        "45ea0519660476e0ff643bf4383ebdefeb1ef2e748490c848aada6e7428b07cd"
-    sha256 cellar: :any_skip_relocation, ventura:       "45ea0519660476e0ff643bf4383ebdefeb1ef2e748490c848aada6e7428b07cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "725b23e72978089bf5a790f75169b806fb0e78a95130b77b4535d13d7928db4e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4de0e9d25df46912c32bfdc96eb8e6da93d5e1f9dacfa49996a8403f9c2d7f62"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4de0e9d25df46912c32bfdc96eb8e6da93d5e1f9dacfa49996a8403f9c2d7f62"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4de0e9d25df46912c32bfdc96eb8e6da93d5e1f9dacfa49996a8403f9c2d7f62"
+    sha256 cellar: :any_skip_relocation, sonoma:        "077b1f7d9bd81574b65b37fe721b6f5469a646ba106231aeb49457f91d1cad87"
+    sha256 cellar: :any_skip_relocation, ventura:       "077b1f7d9bd81574b65b37fe721b6f5469a646ba106231aeb49457f91d1cad87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c17ae0320fa5f2272e400b2e7babed6dabeccd9dde7967adb6c619de8eca178c"
   end
 
   depends_on "go" => :build
@@ -19,6 +20,8 @@ class Logdy < Formula
   def install
     ldflags = "-s -w -X main.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
+
+    generate_completions_from_executable(bin"logdy", "completion")
   end
 
   test do

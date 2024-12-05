@@ -33,8 +33,7 @@ class Gobackup < Formula
     assert_match version.to_s, shell_output("#{bin}gobackup -v")
 
     config_file = testpath"gobackup.yml"
-
-    config_file.write <<~EOS
+    config_file.write <<~YAML
       models:
         test:
           storages:
@@ -44,7 +43,7 @@ class Gobackup < Formula
           archive:
             includes:
               - #{config_file}
-    EOS
+    YAML
 
     out = shell_output("#{bin}gobackup perform -c #{config_file}").chomp
     assert_match "succeeded", out

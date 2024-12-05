@@ -46,7 +46,7 @@ class IcarusVerilog < Formula
   end
 
   test do
-    (testpath"test.v").write <<~EOS
+    (testpath"test.v").write <<~VERILOG
       module main;
         initial
           begin
@@ -54,7 +54,7 @@ class IcarusVerilog < Formula
             $finish;
           end
       endmodule
-    EOS
+    VERILOG
     system bin"iverilog", "-o", "test", "test.v"
 
     expected = <<~EOS

@@ -48,10 +48,10 @@ class GuileGnutls < Formula
 
   test do
     gnutls = testpath"gnutls.scm"
-    gnutls.write <<~EOS
+    gnutls.write <<~SCHEME
       (use-modules (gnutls))
       (gnutls-version)
-    EOS
+    SCHEME
 
     ENV["GUILE_AUTO_COMPILE"] = "0"
     ENV["GUILE_LOAD_PATH"] = HOMEBREW_PREFIX"shareguilesite3.0"

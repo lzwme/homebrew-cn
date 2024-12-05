@@ -30,14 +30,14 @@ class ProtocGenJs < Formula
   end
 
   test do
-    (testpath"person.proto").write <<~EOS
+    (testpath"person.proto").write <<~PROTO
       syntax = "proto3";
 
       message Person {
         int64 id = 1;
         string name = 2;
       }
-    EOS
+    PROTO
     system Formula["protobuf"].bin"protoc", "--js_out=import_style=commonjs:.", "person.proto"
     assert_path_exists testpath"person_pb.js"
     refute_predicate (testpath"person_pb.js").size, :zero?

@@ -31,11 +31,11 @@ class AmmoniteRepl < Formula
   end
 
   test do
-    (testpath"testscript.sc").write <<~EOS
+    (testpath"testscript.sc").write <<~SCALA
       #!usrbinenv amm
       @main
       def fn(): Unit = println("hello world!")
-    EOS
+    SCALA
     output = shell_output("#{bin}amm #{testpath}testscript.sc")
     assert_equal "hello world!", output.lines.last.chomp
   end

@@ -9,15 +9,17 @@ class Harlequin < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a0325720a564ef70170a8678b274989f790c8a9c6f941ce8d0de28ccd2886097"
-    sha256 cellar: :any,                 arm64_sonoma:  "85bcdff85ce10a5347c4aa11dd122530113712c8822bb71fa6b5bcd2d62ddce4"
-    sha256 cellar: :any,                 arm64_ventura: "d53144065dbf6f3795184304a15a683d150f5739c6e65af081b9f89d64d914d0"
-    sha256 cellar: :any,                 sonoma:        "4cbdc353f11b180b0c3b4f2e30efe8bd9dea204f4419afc83cdfa5d4d30f91b0"
-    sha256 cellar: :any,                 ventura:       "a35f1ea5b322961525aa3ff9450531e80b97f57b27fbdc99a06ae453b1e4038e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "624d397576b9b0d573162619a8fd98f46f01dc3bd5cba0546efb7d5c439520a1"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "14e426a0f2b72b6ba09716c08135471f973bf9f821b4f6842f305a3fb291c394"
+    sha256 cellar: :any,                 arm64_sonoma:  "027127834e8bdfe88707d2d389f35d20b733a76c0f25f102bfb75a1b91a76834"
+    sha256 cellar: :any,                 arm64_ventura: "43eac7d923cf9d8e9e07f48267902848601f50850530689958580eda6fabe902"
+    sha256 cellar: :any,                 sonoma:        "bf59dabcc40c4cd6fa31017b5fb8e4c35bb477f6a29fd09e2b8ba308187b67ef"
+    sha256 cellar: :any,                 ventura:       "1e8395e2404d53835bfc2e77820ab751c0fe9ab0abfb62b0904cd9f66a3fa45b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cd455b499a8104ed9539f9562f6b810411937e36fc415f240cc4c6e3d57bc45"
   end
 
   depends_on "cmake" => :build
+  depends_on "mysql" => :build # mysql-connector-python
   depends_on "ninja" => :build
   depends_on "apache-arrow"
   depends_on "python@3.11"
@@ -46,7 +48,12 @@ class Harlequin < Formula
     sha256 "68c3a46ab08836fe041d15dcbf838f74a990d551db47cb24ab1c4576fc19351c"
   end
 
-  resource "Jinja2" do
+  resource "harlequin-mysql" do
+    url "https:files.pythonhosted.orgpackages80fd410c3a6f6c1d0358359c58a3c36b0ac3519a1da8d0e7f0424f1a00f8bfccharlequin_mysql-0.3.0.tar.gz"
+    sha256 "46ef42c5b658568f5340ee53c241cb1333f3e04914807c1f83741e83517878b3"
+  end
+
+  resource "jinja2" do
     url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
     sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
   end
@@ -61,7 +68,7 @@ class Harlequin < Formula
     sha256 "e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"
   end
 
-  resource "MarkupSafe" do
+  resource "markupsafe" do
     url "https:files.pythonhosted.orgpackagesb2975d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62markupsafe-3.0.2.tar.gz"
     sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
@@ -74,6 +81,11 @@ class Harlequin < Formula
   resource "mdurl" do
     url "https:files.pythonhosted.orgpackagesd654cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90mdurl-0.1.2.tar.gz"
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
+  end
+
+  resource "mysql-connector-python" do
+    url "https:github.commysqlmysql-connector-pythonarchiverefstags8.4.0.tar.gz"
+    sha256 "52944d6fa84c903fd70723a47d2f8c3153c50ae91773f1584a7bd30606c58b35"
   end
 
   resource "numpy" do
@@ -96,7 +108,7 @@ class Harlequin < Formula
     sha256 "9386d3ca9c145b5539a1cfc75df07757dff870168c959b473a0bccbc3abc8c73"
   end
 
-  resource "Pygments" do
+  resource "pygments" do
     url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
     sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
@@ -117,8 +129,8 @@ class Harlequin < Formula
   end
 
   resource "rich-click" do
-    url "https:files.pythonhosted.orgpackagesfcf4e48dc2850662526a26fb0961aacb0162c6feab934312b109b748ae4efee2rich_click-1.8.4.tar.gz"
-    sha256 "0f49471f04439269d0e66a6f43120f52d11d594869a2a0be600cfb12eb0616b9"
+    url "https:files.pythonhosted.orgpackages9a31103501e85e885e3e202c087fa612cfe450693210372766552ce1ab5b57b9rich_click-1.8.5.tar.gz"
+    sha256 "a3eebe81da1c9da3c32f3810017c79bd687ff1b3fa35bfc9d8a3338797f1d1a1"
   end
 
   resource "shandy-sqlfmt" do
@@ -179,7 +191,12 @@ class Harlequin < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources without: "mysql-connector-python"
+
+    # PyPI sdist is broken (missing at least setup.py)
+    resource("mysql-connector-python").stage do
+      venv.pip_install Pathname.pwd"mysql-connector-python"
+    end
   end
 
   test do

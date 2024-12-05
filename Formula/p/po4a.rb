@@ -121,11 +121,11 @@ class Po4a < Formula
   test do
     # LaTeX
 
-    (testpath"en.tex").write <<~TEX
-      \\documentclass[a4paper]{article}
-      \\begin{document}
+    (testpath"en.tex").write <<~'TEX'
+      \documentclass[a4paper]{article}
+      \begin{document}
       Hello from Homebrew!
-      \\end{document}
+      \end{document}
     TEX
 
     system bin"po4a-updatepo", "-f", "latex", "-m", "en.tex", "-p", "latex.pot"

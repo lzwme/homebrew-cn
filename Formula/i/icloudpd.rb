@@ -5,18 +5,18 @@ class Icloudpd < Formula
   homepage "https:github.comicloud-photos-downloadericloud_photos_downloader"
   # We use a git checkout as scriptspatch_version runs git commands to update SHA
   url "https:github.comicloud-photos-downloadericloud_photos_downloader.git",
-      tag:      "v1.24.4",
-      revision: "8222e8e1f3de94b7d6fbb5bbf605b36f42aa5c75"
+      tag:      "v1.25.0",
+      revision: "96f945150b4b21aede0ffdc9c5f5c202a3585dc3"
   license "MIT"
   head "https:github.comicloud-photos-downloadericloud_photos_downloader.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d994ac9623a01ab6afcd839c57110fdb4cc79d44c4e611e0d2e5a79c97ba9c98"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40db71ad48d26d7f225d533104040017b966bfa6d70372382e96f06b2ad7dc5a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "12e1d4b01899e76164787ce8e4562c4cf931442c6b757339496a75fb1554ef9e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ebff53fc78b2250eac5e30141fa6a2d97c51954305ae21c05f7505ecece07b11"
-    sha256 cellar: :any_skip_relocation, ventura:       "2e1ecd5224bc3edfed30924509e1f33094af9d961ece7d321d03184bb24c195f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1067a394d331d0d47a1211f0b123ced0d9722c544be1c44b359ba2324ed3829"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0bf72728107c38a0f05ed14f3fc759a29d2b81dcb6a65a8362bf86a3b30bf26e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0aed2ac1a5f2df18e28b35b68ef0baadf87028e930f396f4450aed24cfd8b053"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "52d77444213c09fe1161f357b49958b8a5612b4b6389754ad87cf921ebe92c78"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c941f5382de5147860001158b43c92dc5afb3287172c0d53ca78622c3e33cadc"
+    sha256 cellar: :any_skip_relocation, ventura:       "d73ee636fb9cb52cb99444c948dd35a9162a3e28111eb74518e68700f785ae08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afc42888ed9148a99a346bc099a48b470d40bc8a629868c17956cb48146b073c"
   end
 
   depends_on "python@3.13"
@@ -26,8 +26,8 @@ class Icloudpd < Formula
   end
 
   resource "blinker" do
-    url "https:files.pythonhosted.orgpackages1e57a6a1721eff09598fb01f3c7cda070c1b6a0f12d63c83236edf79a440abccblinker-1.8.2.tar.gz"
-    sha256 "8f77b09d3bf7c795e969e9486f39c2c5e9c39d4ee07424be2bc594ece9642d83"
+    url "https:files.pythonhosted.orgpackages21289b3f50ce0e048515135495f198351908d99540d69bfdc8c1d15b73dc55ceblinker-1.9.0.tar.gz"
+    sha256 "b4ce2265a7abece45e7cc896e98dbebe6cead56bcf805a3d23136d145f5445bf"
   end
 
   resource "certifi" do
@@ -110,6 +110,11 @@ class Icloudpd < Formula
     sha256 "83cb35c606bf3a1ea1a8f0a25cb42cf17e24353fd82e87ae3884e74a302a5f1b"
   end
 
+  resource "python-dateutil" do
+    url "https:files.pythonhosted.orgpackages66c00c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6dbpython-dateutil-2.9.0.post0.tar.gz"
+    sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
+  end
+
   resource "pytz" do
     url "https:files.pythonhosted.orgpackages90269f1f00a5d021fff16dee3de13d43e5e978f3d58928e129c3a62cf7eb9738pytz-2024.1.tar.gz"
     sha256 "2a29735ea9c18baf14b448846bde5a48030ed267578472d8955cd0e7443a9812"
@@ -160,9 +165,9 @@ class Icloudpd < Formula
     sha256 "005da479b04134cdd9dd602d1ee7c49d79de0537610d653674cc6cbde222b8a1"
   end
 
-  resource "Werkzeug" do
-    url "https:files.pythonhosted.orgpackages32afd4502dc713b4ccea7175d764718d5183caf8d0867a4f0190d5d4a45cea49werkzeug-3.1.1.tar.gz"
-    sha256 "8cd39dfbdfc1e051965f156163e2974e52c210f130810e9ad36858f0fd3edad4"
+  resource "werkzeug" do
+    url "https:files.pythonhosted.orgpackages9f6983029f1f6300c5fb2471d621ab06f6ec6b3324685a2ce0f9777fd4a8b71ewerkzeug-3.1.3.tar.gz"
+    sha256 "60723ce945c19328679790e3282cc758aa4a6040e4bb330f53d30fa546d44746"
   end
 
   # support python 3.13

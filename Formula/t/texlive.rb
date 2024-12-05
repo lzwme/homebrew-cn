@@ -576,39 +576,39 @@ class Texlive < Formula
     assert_match "revision", shell_output("#{bin}tlmgr --version")
     assert_match "AMS mathematical facilities for LaTeX", shell_output("#{bin}tlmgr info amsmath")
 
-    (testpath"test.latex").write <<~LATEX
-      \\documentclass[12pt]{article}
-      \\usepackage[utf8]{inputenc}
-      \\usepackage{amsmath}
-      \\usepackage{lipsum}
+    (testpath"test.latex").write <<~'LATEX'
+      \documentclass[12pt]{article}
+      \usepackage[utf8]{inputenc}
+      \usepackage{amsmath}
+      \usepackage{lipsum}
 
-      \\title{\\LaTeX\\ test}
-      \\author{\\TeX\\ Team}
-      \\date{September 2021}
+      \title{\LaTeX\ test}
+      \author{\TeX\ Team}
+      \date{September 2021}
 
-      \\begin{document}
+      \begin{document}
 
-      \\maketitle
+      \maketitle
 
-      \\section*{An equation with amsmath}
-      \\begin{equation} \\label{eu_eqn}
-      e^{\\pi i} + 1 = 0
-      \\end{equation}
-      The beautiful equation \\ref{eu_eqn} is known as Euler's identity.
+      \section*{An equation with amsmath}
+      \begin{equation} \label{eu_eqn}
+      e^{\pi i} + 1 = 0
+      \end{equation}
+      The beautiful equation \ref{eu_eqn} is known as Euler's identity.
 
-      \\section*{Lorem Ipsum}
-      \\lipsum[3]
+      \section*{Lorem Ipsum}
+      \lipsum[3]
 
-      \\lipsum[5]
+      \lipsum[5]
 
-      \\end{document}
+      \end{document}
     LATEX
 
     assert_match "Output written on test.dvi", shell_output("#{bin}latex #{testpath}test.latex")
-    assert_predicate testpath"test.dvi", :exist?
+    assert_path_exists testpath"test.dvi"
     assert_match "Output written on test.pdf", shell_output("#{bin}pdflatex #{testpath}test.latex")
-    assert_predicate testpath"test.pdf", :exist?
+    assert_path_exists testpath"test.pdf"
     assert_match "This is dvips", shell_output("#{bin}dvips #{testpath}test.dvi 2>&1")
-    assert_predicate testpath"test.ps", :exist?
+    assert_path_exists testpath"test.ps"
   end
 end

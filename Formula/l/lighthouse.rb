@@ -1,8 +1,8 @@
 class Lighthouse < Formula
   desc "Rust Ethereum 2.0 Client"
   homepage "https:lighthouse.sigmaprime.io"
-  url "https:github.comsigplighthousearchiverefstagsv5.3.0.tar.gz"
-  sha256 "bfd44a327f9f45dc695a0e65ff47dfc8c40aade65fe4fce92159de9763e6a54d"
+  url "https:github.comsigplighthousearchiverefstagsv6.0.0.tar.gz"
+  sha256 "9eafb6654deabe3e10602daa99a34ec9db1ed83396fca7de12ad2deb05915860"
   license "Apache-2.0"
 
   livecheck do
@@ -11,14 +11,12 @@ class Lighthouse < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f5cb7ec619a16adc02984c0f6ae1493fcfb6ebda97eceac2e377d06b191f2e5a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e1fb53b6a05f614bfd0e41aaa652821b5037c7f44b361adf8561146352634ffa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "12e2e3baa4e14adfaec48a74e3a30fc65393cffa4a43dbc5004679b8e341173e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9d8d457387c6185e4da88a43f014026263c0906f2b5c2a8cb79c3bb79c20021b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c05b15adecdc306c09f4fc0f47a3bf301cd48333968413ecde6702574eac28f6"
-    sha256 cellar: :any_skip_relocation, ventura:        "9666481acaabc2dc1b515c024c36929a16198c2c4741fd4031b92623af38921e"
-    sha256 cellar: :any_skip_relocation, monterey:       "6e7f0fb9a7e98068b3d7269e2f37cf477ef2224710071ac6222b13e6d2f3aba7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7236cd83d1a440ff14b712cc10628b24770f3fef377126e8ad9145f0112ac1c6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "478ef81622db566b6ad87b4b29ec57f6af9dd0736326b75e82f3891aef1a2472"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee33df7b1c0034290306aa3eb020633b748ad9df1c692aa7137e4473bf74a74a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "aca5171cfce34858ad513a8fba0021f182a8f6ba710e563de3b2e42dd936b8e3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c8a60358f8043f0b01c08ebb299bd1f7cb4ae1168fce31fa942aa9f9aac7980e"
+    sha256 cellar: :any_skip_relocation, ventura:       "d6a67d65545b9eef6ffb70f4d89c198c9345d74bab15fe4d2b462a833bd4663d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "253dbece9532ed9a9718fe03e6ae405be7d8e15b089176c8d9c7a5d1560a410a"
   end
 
   depends_on "cmake" => :build
@@ -45,11 +43,18 @@ class Lighthouse < Formula
   test do
     assert_match "Lighthouse", shell_output("#{bin}lighthouse --version")
 
+    (testpath"jwt.hex").write <<~EOS
+      d6a1572e2859ba87a707212f0cc9170f744849b08d7456fe86492cbf93807092
+    EOS
+
     http_port = free_port
-    fork do
-      exec bin"lighthouse", "beacon_node",
-           "--http", "--http-port=#{http_port}", "--port=#{free_port}", "--allow-insecure-genesis-sync"
-    end
+    args = [
+      "--execution-endpoint", "http:localhost:8551",
+      "--execution-jwt", "jwt.hex",
+      "--allow-insecure-genesis-sync", "--http",
+      "--http-port=#{http_port}", "--port=#{free_port}"
+    ]
+    spawn bin"lighthouse", "beacon_node", *args
     sleep 18
 
     output = shell_output("curl -sS -XGET http:127.0.0.1:#{http_port}ethv1nodesyncing")

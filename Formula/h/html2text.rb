@@ -29,13 +29,13 @@ class Html2text < Formula
 
   test do
     path = testpath"index.html"
-    path.write <<~EOS
+    path.write <<~HTML
       <!DOCTYPE html>
       <html>
         <head><title>Home<title><head>
         <body><p>Hello World<p><body>
       <html>
-    EOS
+    HTML
 
     output = `#{bin}html2text #{path}`.strip
     assert_equal "Hello World", output

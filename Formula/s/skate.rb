@@ -7,14 +7,13 @@ class Skate < Formula
   head "https:github.comcharmbraceletskate.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6901230e1a4ee9192e8a5c5e9fe3f068484f70f14fddc742742df51264ce45d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1426264ba44446dfecba6ce0b3343269f91c5cff428b1a0a10dffdd1a65b4a6f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1426264ba44446dfecba6ce0b3343269f91c5cff428b1a0a10dffdd1a65b4a6f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1426264ba44446dfecba6ce0b3343269f91c5cff428b1a0a10dffdd1a65b4a6f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2cd214adbd53e8060bb6a2f9280038cab8fe49e8ed2515af4f7da458f6638b46"
-    sha256 cellar: :any_skip_relocation, ventura:        "2cd214adbd53e8060bb6a2f9280038cab8fe49e8ed2515af4f7da458f6638b46"
-    sha256 cellar: :any_skip_relocation, monterey:       "2cd214adbd53e8060bb6a2f9280038cab8fe49e8ed2515af4f7da458f6638b46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b6142d5e5c0febdc7847e25fb4305d721c6c9c92f0562b3edc5b8fc1606887e2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f44627754bdf718f9e9dcb792a9fb17e71a3bf5f572051ccbfc6c58c5034cd8d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f44627754bdf718f9e9dcb792a9fb17e71a3bf5f572051ccbfc6c58c5034cd8d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f44627754bdf718f9e9dcb792a9fb17e71a3bf5f572051ccbfc6c58c5034cd8d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0143bd4b5134b89dd110fcc8a7486aa9b59b212fed966787dc4daaab1e757ab7"
+    sha256 cellar: :any_skip_relocation, ventura:       "0143bd4b5134b89dd110fcc8a7486aa9b59b212fed966787dc4daaab1e757ab7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17f8a89cbcbcf6016b838293c4ce88b91e2f9d63c3565c0fd86276075fcaeaf3"
   end
 
   depends_on "go" => :build
@@ -22,6 +21,8 @@ class Skate < Formula
   def install
     ldflags = "-s -w -X main.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
+
+    generate_completions_from_executable(bin"skate", "completion")
   end
 
   test do

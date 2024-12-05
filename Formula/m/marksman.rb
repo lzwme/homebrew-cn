@@ -1,17 +1,17 @@
 class Marksman < Formula
   desc "Language Server Protocol for Markdown"
   homepage "https:github.comartempyanykhmarksman"
-  url "https:github.comartempyanykhmarksmanarchiverefstags2024-11-20.tar.gz"
-  sha256 "7c93a6a75444c17573074bbeed8ecfe4f26ae6877d7f0c7ae20a4b55daad37d2"
+  url "https:github.comartempyanykhmarksmanarchiverefstags2024-12-04.tar.gz"
+  sha256 "d53791f6c055ad9b88a0b1d80d17e267b60031e82aa15807283f7488cd01d876"
   license "MIT"
   head "https:github.comartempyanykhmarksman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b747519c4b680cb5dfdd0abe574492dec614316f1ff58b1dc12bb32c89e78888"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c03c2c3e1e2ae9d3029dfb148648da8a366013a7b4dca81ea583c3e00830bfe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "68e31b63094eecbaac8c4f296118d82f143efc68d0710f12a10e7732a49881d8"
-    sha256 cellar: :any_skip_relocation, ventura:       "c02e49622a537a298aa65af5a19d1038d9ac4ad2f3410ed572cc0ecf1e4df791"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "015a9ccb9ada884d3a28b1253471a03575721f492b415bc4166e502d879b1b6a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40c0702b85efb3f4162cd313f39579b7cc31632cb114ff394f8ea31487b5dc10"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "422ff3a6719c51d5220856fa6405eaaec745fc89c168f404c359fd2f594b5d57"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7470dd4060eb0e24698ca213cb96504912e83c642ef245dfd3a1e3ac56f351e2"
+    sha256 cellar: :any_skip_relocation, ventura:       "b5c65348681ce0b6dc8da206d2f3e2c0d06274035bb11069a867359e4833f219"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58cd917677e72f8f856ac84a8eb41241285d6cceed4c353faa4157b2ebe798cc"
   end
 
   depends_on "dotnet@8"

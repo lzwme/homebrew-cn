@@ -1,8 +1,8 @@
 class Sf < Formula
   desc "Command-line toolkit for Salesforce development"
   homepage "https://developer.salesforce.com/tools/salesforcecli"
-  url "https://registry.npmjs.org/@salesforce/cli/-/cli-2.67.7.tgz"
-  sha256 "abd48ac766b9e6c2cfdc536e008b92442eff384389c16df50d50a68b2d793a5a"
+  url "https://registry.npmjs.org/@salesforce/cli/-/cli-2.68.6.tgz"
+  sha256 "ef05660ef80c040accb0f4fd5c09624d3d28d3affbdae71262951da6ab1444a4"
   license "BSD-3-Clause"
 
   livecheck do
@@ -13,12 +13,12 @@ class Sf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3bdba096c1c2688ee2d350e56d3162c98e8c123bcc5f177d711dfae141de4cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3bdba096c1c2688ee2d350e56d3162c98e8c123bcc5f177d711dfae141de4cb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d3bdba096c1c2688ee2d350e56d3162c98e8c123bcc5f177d711dfae141de4cb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5ed7448563b2511acd55494bfbf3915b6fd184a2a96c31da2c3dfb4995640952"
-    sha256 cellar: :any_skip_relocation, ventura:       "5ed7448563b2511acd55494bfbf3915b6fd184a2a96c31da2c3dfb4995640952"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3bdba096c1c2688ee2d350e56d3162c98e8c123bcc5f177d711dfae141de4cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1612f6197f2d648d552ae853b6e6aac8db96553d621b5848555e67fda9168f34"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1612f6197f2d648d552ae853b6e6aac8db96553d621b5848555e67fda9168f34"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1612f6197f2d648d552ae853b6e6aac8db96553d621b5848555e67fda9168f34"
+    sha256 cellar: :any_skip_relocation, sonoma:        "62372d900455946ae59f5fc7dd9b15ab354bbcd1145fd385219ef92a53d7616f"
+    sha256 cellar: :any_skip_relocation, ventura:       "62372d900455946ae59f5fc7dd9b15ab354bbcd1145fd385219ef92a53d7616f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1612f6197f2d648d552ae853b6e6aac8db96553d621b5848555e67fda9168f34"
   end
 
   depends_on "node@20"

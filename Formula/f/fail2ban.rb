@@ -76,8 +76,8 @@ class Fail2ban < Formula
 
   def inreplace_etc_var(targets, audit_result: true)
     inreplace targets do |s|
-      s.gsub! %r{etc}, etc, audit_result
-      s.gsub! %r{var}, var, audit_result
+      s.gsub!(%r{etc}, etc, audit_result:)
+      s.gsub!(%r{var}, var, audit_result:)
     end
   end
 

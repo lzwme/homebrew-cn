@@ -7,12 +7,13 @@ class LivekitCli < Formula
   head "https:github.comlivekitlivekit-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ef43d828cfc44303ce80d6075fa13a8170a13d31b9efbd8eb81e5553222eb53"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ef43d828cfc44303ce80d6075fa13a8170a13d31b9efbd8eb81e5553222eb53"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4ef43d828cfc44303ce80d6075fa13a8170a13d31b9efbd8eb81e5553222eb53"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dcceac9d9ccec2f0b82895bf25ac4f96be2b311209594694d2d16a2e806afecd"
-    sha256 cellar: :any_skip_relocation, ventura:       "dcceac9d9ccec2f0b82895bf25ac4f96be2b311209594694d2d16a2e806afecd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4d030d2a870a1b6d77674b23bec5b2d94f92813c9dbce6d8fd7f824d01e9da2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59685a544c9d54781a0dd0f06fe754f0dbb759b3101a5adf42a9655e15408d0e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59685a544c9d54781a0dd0f06fe754f0dbb759b3101a5adf42a9655e15408d0e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "59685a544c9d54781a0dd0f06fe754f0dbb759b3101a5adf42a9655e15408d0e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2bfe3fdad2cda79b6391cf85367cb8df0f6de18a4ad7fe5ea1da69c8af9ab364"
+    sha256 cellar: :any_skip_relocation, ventura:       "2bfe3fdad2cda79b6391cf85367cb8df0f6de18a4ad7fe5ea1da69c8af9ab364"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf375fcbb312921c7d70492e4779f1d92c099006a91452ef594857b1e0072949"
   end
 
   depends_on "go" => :build
@@ -22,6 +23,10 @@ class LivekitCli < Formula
     system "go", "build", *std_go_args(ldflags:, output: bin"lk"), ".cmdlk"
 
     bin.install_symlink "lk" => "livekit-cli"
+
+    bash_completion.install "autocompletebash_autocomplete" => "lk"
+    fish_completion.install "autocompletefish_autocomplete" => "lk.fish"
+    zsh_completion.install "autocompletezsh_autocomplete" => "_lk"
   end
 
   test do

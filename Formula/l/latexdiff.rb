@@ -31,18 +31,18 @@ class Latexdiff < Formula
   end
 
   test do
-    (testpath"test1.tex").write <<~TEX
-      \\documentclass{article}
-      \\begin{document}
+    (testpath"test1.tex").write <<~'TEX'
+      \documentclass{article}
+      \begin{document}
       Hello, world.
-      \\end{document}
+      \end{document}
     TEX
 
-    (testpath"test2.tex").write <<~TEX
-      \\documentclass{article}
-      \\begin{document}
+    (testpath"test2.tex").write <<~'TEX'
+      \documentclass{article}
+      \begin{document}
       Goodnight, moon.
-      \\end{document}
+      \end{document}
     TEX
 
     expect = ^\\DIFdelbegin \s+

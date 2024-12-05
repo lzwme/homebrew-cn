@@ -42,7 +42,7 @@ class Omake < Formula
   test do
     # example run adapted from the documentation's "quickstart guide"
     system bin"omake", "--install"
-    (testpath"hello_code.c").write <<~EOF
+    (testpath"hello_code.c").write <<~C
       #include <stdio.h>
 
       int main(int argc, char **argv)
@@ -50,7 +50,7 @@ class Omake < Formula
           printf("Hello, world!\\n");
           return 0;
       }
-    EOF
+    C
     rm testpath"OMakefile"
     (testpath"OMakefile").write <<~EOF
       CC = #{ENV.cc}

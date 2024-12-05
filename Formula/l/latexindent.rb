@@ -203,27 +203,27 @@ class Latexindent < Formula
   end
 
   test do
-    (testpath"test.tex").write <<~TEX
-      \\documentclass{article}
-      \\title{latexindent Homebrew Test}
-      \\begin{document}
-      \\maketitle
-      \\begin{itemize}
-      \\item Hello
-      \\item World
-      \\end{itemize}
-      \\end{document}
+    (testpath"test.tex").write <<~'TEX'
+      \documentclass{article}
+      \title{latexindent Homebrew Test}
+      \begin{document}
+      \maketitle
+      \begin{itemize}
+      \item Hello
+      \item World
+      \end{itemize}
+      \end{document}
     TEX
-    assert_match <<~TEX, shell_output("#{bin}latexindent #{testpath}test.tex")
-      \\documentclass{article}
-      \\title{latexindent Homebrew Test}
-      \\begin{document}
-      \\maketitle
-      \\begin{itemize}
-      	\\item Hello
-      	\\item World
-      \\end{itemize}
-      \\end{document}
+    assert_match <<~'TEX', shell_output("#{bin}latexindent #{testpath}test.tex")
+      \documentclass{article}
+      \title{latexindent Homebrew Test}
+      \begin{document}
+      \maketitle
+      \begin{itemize}
+      	\item Hello
+      	\item World
+      \end{itemize}
+      \end{document}
     TEX
   end
 end

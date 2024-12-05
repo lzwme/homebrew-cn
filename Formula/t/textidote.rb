@@ -45,22 +45,22 @@ class Textidote < Formula
     output = shell_output("#{bin}textidote --version")
     assert_match "TeXtidote", output
 
-    (testpath"test1.tex").write <<~EOF
-      \\documentclass{article}
-      \\begin{document}
+    (testpath"test1.tex").write <<~'TEX'
+      \documentclass{article}
+      \begin{document}
         This should fails.
-      \\end{document}
-    EOF
+      \end{document}
+    TEX
 
     output = shell_output("#{bin}textidote --check en #{testpath}test1.tex", 1)
     assert_match "The modal verb 'should' requires the verb's base form..", output
 
-    (testpath"test2.tex").write <<~EOF
-      \\documentclass{article}
-      \\begin{document}
+    (testpath"test2.tex").write <<~'TEX'
+      \documentclass{article}
+      \begin{document}
         This should work.
-      \\end{document}
-    EOF
+      \end{document}
+    TEX
 
     output = shell_output("#{bin}textidote --check en #{testpath}test2.tex")
     assert_match "Everything is OK!", output

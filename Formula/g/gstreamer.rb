@@ -2,16 +2,15 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https:gstreamer.freedesktop.org"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
-  revision 1
 
   stable do
-    url "https:gitlab.freedesktop.orggstreamergstreamer-archive1.24.9gstreamer-1.24.9.tar.bz2"
-    sha256 "3b284fa1c3b5cf0b1ad6eab64d506c2e1d62e37578ef8c0eb6dce3668ae76b77"
+    url "https:gitlab.freedesktop.orggstreamergstreamer-archive1.24.10gstreamer-1.24.10.tar.bz2"
+    sha256 "51cdac6eb2b4368cb3c2ed3ce4679281a7028de0f80f218dc39e7629be07e100"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https:gitlab.freedesktop.orggstreamergst-plugins-rs-archivegstreamer-1.24.9gst-plugins-rs-gstreamer-1.24.9.tar.bz2"
-      sha256 "417881ccd886e0962261f9181faa341f1073ee262775e04f2e8aedaa9ab97fb1"
+      url "https:gitlab.freedesktop.orggstreamergst-plugins-rs-archivegstreamer-1.24.10gst-plugins-rs-gstreamer-1.24.10.tar.bz2"
+      sha256 "7c0109bf7a89a9436b31cbb4bf467cee995b882f5bc83b84fe3f15e3ccf9fb83"
 
       # Backport support for newer `dav1d`
       # upstream commit ref, https:gitlab.freedesktop.orggstreamergst-plugins-rs-commit7e1ab086de00125bc0d596f9ec5d74c9b82b2cc0
@@ -28,12 +27,12 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "5e2a09550f44ff75fe539c36ddc4688d76955f89ed104849c686e13a507826e7"
-    sha256 arm64_sonoma:  "802aac638b3eab7fb3f85476369acff565bdcaf5f71fef3170f6f1392ed6a651"
-    sha256 arm64_ventura: "d4624f5ed38155e4449d454ef967fed3a095042bbfda4495c0262ae3b98a8d25"
-    sha256 sonoma:        "71bbfb0d931dbe58eb37bf4599fb2549806e25990798de09c11b7df57bd8abde"
-    sha256 ventura:       "2fd059f3e26b9548af43dad654887d561542fe0ef3e9f2e5f52c9c92995cad8a"
-    sha256 x86_64_linux:  "7190c7784d132b720b54bb616a35f20a9f2fc5c7c6ade3497b7e132a296c2575"
+    sha256 arm64_sequoia: "2c173cf89492f15e496f6137697ca519dc8a5196318fc931cce168b1d78e2fc3"
+    sha256 arm64_sonoma:  "ddbfcd4af1daede615336929d6c6ec76af166379ccbb7e5d4e8df22b981f18a7"
+    sha256 arm64_ventura: "8ae63a60ed25e562d39c21104b021be4660f82769d3b566a330d12ab5d3077c4"
+    sha256 sonoma:        "cd625a2f714164353b9829b85ac48a4629a21402f87f909c370e338abbd5d090"
+    sha256 ventura:       "5212d08163f38f1baa0676c741d493d9ed94655173568dfb5ad9566afda5c6b4"
+    sha256 x86_64_linux:  "2dda73c0204eee7a70153088fcf6b6fd0933dd66268aef8c7370a97e7e7c9f48"
   end
 
   head do

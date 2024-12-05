@@ -64,10 +64,10 @@ class GuileAT2 < Formula
 
   test do
     hello = testpath/"hello.scm"
-    hello.write <<~EOS
+    hello.write <<~SCHEME
       (display "Hello World")
       (newline)
-    EOS
+    SCHEME
 
     ENV["GUILE_AUTO_COMPILE"] = "0"
 

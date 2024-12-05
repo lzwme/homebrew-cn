@@ -34,11 +34,11 @@ class Acme < Formula
 
   test do
     path = testpath/"a.asm"
-    path.write <<~EOS
+    path.write <<~ASM
       !to "a.out", cbm
       * = $c000
       jmp $fce2
-    EOS
+    ASM
 
     system bin/"acme", path
     code = File.open(testpath/"a.out", "rb") { |f| f.read.unpack("C*") }

@@ -24,20 +24,16 @@ class DepTree < Formula
   end
 
   test do
-    foo_test_file = testpath"foo.js"
-    foo_test_file.write "import { bar } from '.bar'"
-
-    bar_test_file = testpath"bar.js"
-    bar_test_file.write "export const bar = 'bar'"
-
-    package_json_file = testpath"package.json"
-    package_json_file.write "{ \"name\": \"foo\" }"
-
-    result_file = testpath"out.json"
-    output = shell_output("#{bin}dep-tree tree --json #{foo_test_file}")
-    result_file.write(output)
-
-    expected = <<~EOF
+    (testpath"foo.js").write <<~JS
+      import { bar } from '.bar'
+    JS
+    (testpath"bar.js").write <<~JS
+      export const bar = 'bar'
+    JS
+    (testpath"package.json").write <<~JSON
+      { "name": "foo" }
+    JSON
+    expected = <<~JSON
       {
         "tree": {
           "foo.js": {
@@ -47,7 +43,8 @@ class DepTree < Formula
         "circularDependencies": [],
         "errors": {}
       }
-    EOF
-    assert_equal expected, result_file.read
+    JSON
+
+    assert_equal expected, shell_output("#{bin}dep-tree tree --json #{testpath}foo.js")
   end
 end

@@ -6,21 +6,27 @@ class Kor < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "28238df1bac4fe98410a6fba34e5498d6eba1c9140fdf2158379d10c473ce53b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "28238df1bac4fe98410a6fba34e5498d6eba1c9140fdf2158379d10c473ce53b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "28238df1bac4fe98410a6fba34e5498d6eba1c9140fdf2158379d10c473ce53b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ba38a28dac4a58367ce3f4277013227adedd4e9b3ac16abbd0624c050a6aa431"
-    sha256 cellar: :any_skip_relocation, ventura:       "ba38a28dac4a58367ce3f4277013227adedd4e9b3ac16abbd0624c050a6aa431"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df19b69c5ac4a9c000d0b1df27c1d955d1676c19ed64e6afaa763d10aa9cf47c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa73e4cf19f405f9eac5c8e6cb5df71ab086229d64c03ebd14f4c867dbceff55"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fa73e4cf19f405f9eac5c8e6cb5df71ab086229d64c03ebd14f4c867dbceff55"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fa73e4cf19f405f9eac5c8e6cb5df71ab086229d64c03ebd14f4c867dbceff55"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c87fc150d8dd9435105d43dba020e7b6fac3d1e0f4a9c36f06fcf329fe068b77"
+    sha256 cellar: :any_skip_relocation, ventura:       "c87fc150d8dd9435105d43dba020e7b6fac3d1e0f4a9c36f06fcf329fe068b77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5697519de01584e4de4363620ec58518893832d47b5259af0870f722cbb8c054"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    ldflags = "-s -w -X github.comyonahdkorpkgutils.Version=#{version}"
+    system "go", "build", *std_go_args(ldflags:)
+
+    generate_completions_from_executable(bin"kor", "completion")
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}kor version")
+
     (testpath"mock-kubeconfig").write <<~EOS
       apiVersion: v1
       clusters:

@@ -15,12 +15,13 @@ class OhMyPosh < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "349f171c2bae2d972d991ea24a9a27916b61ee56a23cf54c5d28e3916a2c98b0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2fd43bf235c51cd206f4a320a08493aee10abecf9127a36886db65443423aeb3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "674aae0a37a51f984481c16827fce3be91e788f73b065d0f9196003e2d456c33"
-    sha256 cellar: :any_skip_relocation, sonoma:        "df322f5af7161b733e59e6a23673aa7a5e0c8b8351cb9b669c5d64b4091eb6ef"
-    sha256 cellar: :any_skip_relocation, ventura:       "a32deed5f6873187e5585b750588b8fba81f29336be5787f91d5d6eb2735ca3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "062259d437dbbf35a1354e25d69400d9de99d21d49ef2864569d58eb3faf39db"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5126709a34bfe8a7fe733931ee3241f047050517b014a91676e01d0e543ec1cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "69f6e5158e368f7d9acf31ba0a72bbad36415a0919ff53c6275ab92fddfc23f9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8e6f4c1474e68e59af91495c21d32074384cb3c39fe1a966a6feb24bed61deca"
+    sha256 cellar: :any_skip_relocation, sonoma:        "52a6ee3e6f3c8d3d59e7697de55363cbb5a0bbdb29fbd097098b5966cff5988f"
+    sha256 cellar: :any_skip_relocation, ventura:       "b8028894237db8f0174bdf8c62d39e8ef1c3b56c8297f9c41a2ed47d93f4f4dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21a45dc43cb651bc24490e81ec20b5d915382babb1d3a831aacbd0e95aacc1ce"
   end
 
   depends_on "go" => :build
@@ -31,10 +32,12 @@ class OhMyPosh < Formula
       -X github.comjandedobbeleeroh-my-poshsrcbuild.Version=#{version}
       -X github.comjandedobbeleeroh-my-poshsrcbuild.Date=#{time.iso8601}
     ]
+
     cd "src" do
       system "go", "build", *std_go_args(ldflags:)
     end
 
+    generate_completions_from_executable(bin"oh-my-posh", "completion")
     prefix.install "themes"
     pkgshare.install_symlink prefix"themes"
   end

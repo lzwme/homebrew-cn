@@ -6,14 +6,15 @@ class Sigstore < Formula
   url "https:files.pythonhosted.orgpackages95a2a81fc7166e936406a6de0c2d9d23404ce3e0c345428c2d3ad6d7afb7b8adsigstore-3.5.3.tar.gz"
   sha256 "2547bca442201bdf07f7de2c654a0dbe5051b90fac3f8580bf1875d11b5ad498"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9b744db847db431e7156d60e7e333dc135116610e8f4d9aea9c7fdc52614ffdc"
-    sha256 cellar: :any,                 arm64_sonoma:  "d1edaebbfc3fd7652cd949a11033821a005cc20342284b83851123369ee21947"
-    sha256 cellar: :any,                 arm64_ventura: "72f21c0d8237d2b271a56e9484b6192c0a1c2e135b056b6642e54a0b36d499df"
-    sha256 cellar: :any,                 sonoma:        "b31a03d97cdd9692b513b45b06d28d4a052de6ea723e1f5a96745dd77dc743a6"
-    sha256 cellar: :any,                 ventura:       "fc5b2b27b2f0c5ea1b169fb5d8cc80f5095313e787e12e9be0f1d083c3d872de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebeaf8a8c1412d3c8007a1790483e5f2bfbd8013db9b3fe80c578458785f13c8"
+    sha256 cellar: :any,                 arm64_sequoia: "b80b034d193aca170c238c8101d753eb413445c510b29b86f2007fde2c43cb7f"
+    sha256 cellar: :any,                 arm64_sonoma:  "8ae277a3fecbdc7c2c5036ff2d11681d40a7c07c9beddd9f3f36c35b6708d3ee"
+    sha256 cellar: :any,                 arm64_ventura: "e43c959642a338a40ea6aac612b3de7b6e69fd019422cd7510d65f2208dd2004"
+    sha256 cellar: :any,                 sonoma:        "56286d0ea60bc05e98fdb610a1a52d8844cadefdb45c99a4e6751c72231b1e77"
+    sha256 cellar: :any,                 ventura:       "614b5ca402eec665cf07247d16bbd28987c25969bbf44dcdee1bbb125850ab70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ace4bad97d4a64182f787d60b8daa39bbfe5eef8654ce958cda35e11903f57c"
   end
 
   # sigstore does not build with cryptography 44, upstream pr ref, https:github.comsigstoresigstore-pythonpull1229
@@ -120,8 +121,8 @@ class Sigstore < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackages4186a03390cb12cf64e2a8df07c267f3eb8d5035e0f9a04bb20fb79403d2a00epydantic-2.10.2.tar.gz"
-    sha256 "2bc2d7f17232e0841cbba4641e65ba1eb6fafb3a08de3a091ff3ce14a197c4fa"
+    url "https:files.pythonhosted.orgpackages450f27908242621b14e649a84e62b133de45f84c255eecb350ab02979844a788pydantic-2.10.3.tar.gz"
+    sha256 "cb5ac360ce894ceacd69c403187900a02c4b20b693a9dd1d643e1effab9eadf9"
   end
 
   resource "pydantic-core" do
@@ -135,8 +136,8 @@ class Sigstore < Formula
   end
 
   resource "pyjwt" do
-    url "https:files.pythonhosted.orgpackagesb505324952ded002de746f87b21066b9373080bb5058f64cf01c4d62784b8186pyjwt-2.10.0.tar.gz"
-    sha256 "7628a7eb7938959ac1b26e819a1df0fd3259505627b575e4bad6d08f76db695c"
+    url "https:files.pythonhosted.orgpackagese746bd74733ff231675599650d3e47f361794b22ef3e3770998dda30d3b63726pyjwt-2.10.1.tar.gz"
+    sha256 "3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953"
   end
 
   resource "pyopenssl" do
@@ -165,8 +166,8 @@ class Sigstore < Formula
   end
 
   resource "securesystemslib" do
-    url "https:files.pythonhosted.orgpackages81add01a19c754c512f35ed3b955db08bd3d077a322038bc8544e15c7b016b76securesystemslib-1.1.0.tar.gz"
-    sha256 "27143a8e04b5573636f260f21d7e26b48bcedcf394e6f74ec31e9a5287e0c38b"
+    url "https:files.pythonhosted.orgpackages5744cc300cbd7f636534559d0e2a2ce6cae12f199dca7ba8dc1dec0018ed5fd3securesystemslib-1.2.0.tar.gz"
+    sha256 "34fa63e3296a0540b122a13bf51722ecd015be00c1d2ed45b23442e718920e76"
   end
 
   resource "sigstore-protobuf-specs" do

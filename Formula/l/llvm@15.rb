@@ -412,7 +412,7 @@ class LlvmAT15 < Formula
     end
 
     # Testing mlir
-    (testpath"test.mlir").write <<~EOS
+    (testpath"test.mlir").write <<~MLIR
       func.func @main() {return}
 
        -----
@@ -424,7 +424,7 @@ class LlvmAT15 < Formula
 
        expected-error @+1 {{redefinition of symbol named 'foo'}}
       func.func @foo() { return }
-    EOS
+    MLIR
     system bin"mlir-opt", "--split-input-file", "--verify-diagnostics", "test.mlir"
 
     (testpath"scanbuildtest.cpp").write <<~CPP
@@ -449,10 +449,10 @@ class LlvmAT15 < Formula
 
     # This will fail if the clang bindings cannot find `libclang`.
     with_env(PYTHONPATH: prefixLanguage::Python.site_packages("python3")) do
-      system "python3", "-c", <<~EOS
+      system "python3", "-c", <<~PYTHON
         from clang import cindex
         cindex.Config().get_cindex_library()
-      EOS
+      PYTHON
     end
 
     # Ensure LLVM did not regress output of `llvm-config --system-libs` which for a time

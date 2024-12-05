@@ -6,26 +6,22 @@ class Mods < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "29b3fa4adbd7ff68bf2cbb4389b32d5c72bdddd8813b675b1685a935669fdcee"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "29b3fa4adbd7ff68bf2cbb4389b32d5c72bdddd8813b675b1685a935669fdcee"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "29b3fa4adbd7ff68bf2cbb4389b32d5c72bdddd8813b675b1685a935669fdcee"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "29b3fa4adbd7ff68bf2cbb4389b32d5c72bdddd8813b675b1685a935669fdcee"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6398c20e5b5db7b6470349b46af260956f0931ce86a639891c414fb091cee0b2"
-    sha256 cellar: :any_skip_relocation, ventura:        "6398c20e5b5db7b6470349b46af260956f0931ce86a639891c414fb091cee0b2"
-    sha256 cellar: :any_skip_relocation, monterey:       "6398c20e5b5db7b6470349b46af260956f0931ce86a639891c414fb091cee0b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "54cf1956b9d32d996c51b904839ba5fc81849d9c735cba1332c14d168c64946d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e545698222cb6a973edd3e8631a495d026909752b4516d8db7d149654ce8680e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e545698222cb6a973edd3e8631a495d026909752b4516d8db7d149654ce8680e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e545698222cb6a973edd3e8631a495d026909752b4516d8db7d149654ce8680e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "01084d35b89c52a6a1bbf88f18fe966a073086f6e9911fbb2b7a08ffc6214aba"
+    sha256 cellar: :any_skip_relocation, ventura:       "01084d35b89c52a6a1bbf88f18fe966a073086f6e9911fbb2b7a08ffc6214aba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c44a335db22b0afe82e7d4f476b1cedac8bb10638b8260d136a4d3aa8f5fbe28"
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.Version=#{version}
-      -X main.CommitSHA=#{tap.user}
-      -X main.CommitDate=#{time.iso8601}
-    ]
+    ldflags = "-s -w -X main.Version=#{version} -X main.CommitSHA=#{tap.user} -X main.CommitDate=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:)
+
+    generate_completions_from_executable(bin"mods", "completion")
   end
 
   test do

@@ -17,12 +17,13 @@ class MinioMc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f5c2392867f48de6e53a29035d6a25a258241ea85ffa9a676508a6ed27ab98be"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b72ae64437500b7b8bbbe053c03b65810a0f68f6f91372b47f37348dbe2f9a9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f93fbabf340d6750e347a9991c51f53f06c5b20b01e2fa6c04e8702f1e896f07"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5931dc8819bf54db796d14a184a9a55cd16a71cb84230b22d86d63b2fcbf28b6"
-    sha256 cellar: :any_skip_relocation, ventura:       "7f002d857dc48cc291d14c4431a4cb420000c2ac67cd3318c778d50c6477acbb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d301447397950c2030438e4dfda667e02dacde13667d386cab788a8c1a0b1472"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3071ab2e5e0082dfa4981b679d6babe87689561453480513e6bca27f0e5e0f90"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f307153c106c229f622766849175626ec17dab2fce7baab87b571f9a51be354"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "aeed72424004c90af9c9e258b792cc9afd75b3331730a8eee7611005c53aa18b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2ffa62bc2e4d0f24efb1509791d9c458ee3ef1c2dce442e1014eb8f5fd0c7571"
+    sha256 cellar: :any_skip_relocation, ventura:       "2d3bd6c672eb2ce8fc59d7063d1dd90ceb228b815cfa094508aaa8cd3ffe270d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f125ef044ad736eeb4979671288d4ae793f9cf631cc4ef7d445fe8ddd38a750c"
   end
 
   depends_on "go" => :build
@@ -41,8 +42,10 @@ class MinioMc < Formula
         -X #{proj}cmd.ReleaseTag=#{minio_release}
         -X #{proj}cmd.CommitID=#{Utils.git_head}
       ]
-      system "go", "build", *std_go_args(output: bin"mc", ldflags:)
+      system "go", "build", *std_go_args(ldflags:, output: bin"mc")
     end
+
+    generate_completions_from_executable(bin"mc", "--autocompletion", base_name: "mc")
   end
 
   test do

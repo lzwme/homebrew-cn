@@ -28,21 +28,21 @@ class Helmify < Formula
 
   test do
     test_service = testpath"service.yml"
-    test_service.write <<~EOS
+    test_service.write <<~YAML
       apiVersion: v1
       kind: Service
       metadata:
         name: brew-test
       spec:
         type: LoadBalancer
-    EOS
+    YAML
 
-    expected_values_yaml = <<~EOS
+    expected_values_yaml = <<~YAML
       brewTest:
         ports: []
         type: LoadBalancer
       kubernetesClusterDomain: cluster.local
-    EOS
+    YAML
 
     system "cat #{test_service} | #{bin}helmify brewtest"
     assert_predicate testpath"brewtestChart.yaml", :exist?

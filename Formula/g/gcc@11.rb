@@ -264,14 +264,14 @@ class GccAT11 < Formula
 
     return unless Hardware::CPU.intel?
 
-    (testpath"hello_d.d").write <<~EOS
+    (testpath"hello_d.d").write <<~D
       import std.stdio;
       int main()
       {
         writeln("Hello, world!");
         return 0;
       }
-    EOS
+    D
     system bin"gdc-#{version.major}", "-o", "hello-d", "hello_d.d"
     assert_equal "Hello, world!\n", shell_output(".hello-d")
   end

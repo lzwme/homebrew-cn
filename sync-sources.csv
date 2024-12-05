@@ -6339,6 +6339,7 @@ Homebrew-homebrew-core/Formula/t/television.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/teller.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/telnet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/telnetd.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/templ.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/template-glib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/temporal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/temporal_tables.rb, Homebrew/homebrew-core, 1
@@ -6899,6 +6900,7 @@ Homebrew-homebrew-core/Formula/w/wdfs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wdiff.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/weasyprint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/weaver.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/weaviate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/web-ext.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/webarchiver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/webdis.rb, Homebrew/homebrew-core, 1
@@ -11924,7 +11926,7 @@ Homebrew-homebrew-cask/Casks/l/lunar-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lunar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lunarbar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lunasea.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/l/lunatask.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/lunatask.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/luniistore.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/luxmark.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/luyten.rb, Homebrew/homebrew-cask, 1

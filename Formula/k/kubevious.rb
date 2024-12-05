@@ -28,7 +28,7 @@ class Kubevious < Formula
     assert_match version.to_s,
       shell_output("#{bin}kubevious --version")
 
-    (testpath"deployment.yml").write <<~EOF
+    (testpath"deployment.yml").write <<~YAML
       apiVersion: appsv1
       kind: Deployment
       metadata:
@@ -48,12 +48,12 @@ class Kubevious < Formula
               image: nginx:1.14.2
               ports:
               - containerPort: 80
-    EOF
+    YAML
 
     assert_match "Lint Succeeded",
       shell_output("#{bin}kubevious lint #{testpath}deployment.yml")
 
-    (testpath"bad-deployment.yml").write <<~EOF
+    (testpath"bad-deployment.yml").write <<~YAML
       apiVersion: appsv1
       kind: BadDeployment
       metadata:
@@ -73,7 +73,7 @@ class Kubevious < Formula
               image: nginx:1.14.2
               ports:
               - containerPort: 80
-    EOF
+    YAML
 
     assert_match "Lint Failed",
       shell_output("#{bin}kubevious lint #{testpath}bad-deployment.yml", 100)
@@ -84,7 +84,7 @@ class Kubevious < Formula
     assert_match "Guard Failed",
       shell_output("#{bin}kubevious guard #{testpath}bad-deployment.yml", 100)
 
-    (testpath"service.yml").write <<~EOF
+    (testpath"service.yml").write <<~YAML
       apiVersion: v1
       kind: Service
       metadata:
@@ -99,7 +99,7 @@ class Kubevious < Formula
           targetPort: 8080
         selector:
           app: nginx
-    EOF
+    YAML
 
     assert_match "Guard Failed",
       shell_output("#{bin}kubevious guard #{testpath}service.yml", 100)

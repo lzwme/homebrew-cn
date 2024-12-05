@@ -7,26 +7,22 @@ class QbittorrentCli < Formula
   head "https:github.comludviglundgrenqbittorrent-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "acbbec6e2ae18a3836e948642a86dc2628fe23f31f41a647e22323d1d861fbdb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "acbbec6e2ae18a3836e948642a86dc2628fe23f31f41a647e22323d1d861fbdb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "acbbec6e2ae18a3836e948642a86dc2628fe23f31f41a647e22323d1d861fbdb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c99c6f81ebf2ca5e2e6461cc14ea24791b636010f3b75333191fea42bbe4a5e3"
-    sha256 cellar: :any_skip_relocation, ventura:       "c99c6f81ebf2ca5e2e6461cc14ea24791b636010f3b75333191fea42bbe4a5e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba350b2338f39e81a126cf9dad5a827018a0f90288bea9144f873ba0677139a5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e96b29807392f7c74e501cd2f719318d3e770ec2b8876cd227e423533383c69"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e96b29807392f7c74e501cd2f719318d3e770ec2b8876cd227e423533383c69"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5e96b29807392f7c74e501cd2f719318d3e770ec2b8876cd227e423533383c69"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f3d31377614b1fb573a91e316f8f87609bb3b1187c5eef077e8ef1be12548164"
+    sha256 cellar: :any_skip_relocation, ventura:       "f3d31377614b1fb573a91e316f8f87609bb3b1187c5eef077e8ef1be12548164"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "318e10b9ca3a6e4ae318c4588473da21110f6e7dfaeca1354ce3f634341687e5"
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.version=#{version}
-      -X main.commit=#{tap.user}
-      -X main.date=#{time.iso8601}
-    ]
+    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.date=#{time.iso8601}"
     system "go", "build", *std_go_args(ldflags:, output: bin"qbt"), ".cmdqbt"
 
-    generate_completions_from_executable(bin"qbt", "completion")
+    generate_completions_from_executable(bin"qbt", "completion", base_name: "qbt")
   end
 
   test do

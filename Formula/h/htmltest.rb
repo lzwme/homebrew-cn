@@ -30,7 +30,7 @@ class Htmltest < Formula
   end
 
   test do
-    (testpath"test.html").write <<~EOS
+    (testpath"test.html").write <<~HTML
       <!DOCTYPE html>
       <html>
         <body>
@@ -41,7 +41,7 @@ class Htmltest < Formula
           <article>
         <body>
       <html>
-    EOS
+    HTML
     assert_match "htmltest started at", shell_output("#{bin}htmltest test.html")
   end
 end

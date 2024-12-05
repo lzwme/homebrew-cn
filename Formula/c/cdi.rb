@@ -45,7 +45,7 @@ class Cdi < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOF
+    (testpath/"test.c").write <<~C
       #include <stdio.h>
       #include <cdi.h>
       int main() {
@@ -54,7 +54,7 @@ class Cdi < Formula
 
         return 0;
       }
-    EOF
+    C
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lcdi", "-o", "test"
     assert_match "CDI library version : #{version}", shell_output("./test")

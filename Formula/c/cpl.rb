@@ -42,7 +42,7 @@ class Cpl < Formula
   end
 
   test do
-    (testpath/"test.c").write <<~EOF
+    (testpath/"test.c").write <<~C
       #include <cpl.h>
       int main(){
         cpl_init(CPL_INIT_DEFAULT);
@@ -50,7 +50,7 @@ class Cpl < Formula
         cpl_end();
         return 0;
       }
-    EOF
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-I#{include}", "-lcplcore", "-lcext", "-o", "test"
     system "./test"
   end

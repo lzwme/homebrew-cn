@@ -64,13 +64,13 @@ class IncludeWhatYouUse < Formula
   end
 
   test do
-    (testpath"direct.h").write <<~EOS
+    (testpath"direct.h").write <<~C
       #include <stddef.h>
       size_t function() { return (size_t)0; }
-    EOS
-    (testpath"indirect.h").write <<~EOS
+    C
+    (testpath"indirect.h").write <<~C
       #include "direct.h"
-    EOS
+    C
     (testpath"main.c").write <<~C
       #include "indirect.h"
       int main() {

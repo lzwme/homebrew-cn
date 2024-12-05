@@ -7,14 +7,13 @@ class Roadrunner < Formula
   head "https:github.comroadrunner-serverroadrunner.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "08924e7b00d8923422d8b4d48fb84d3435bafebf09c67f906523d1c0dbcb196e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dcee57443a23ccf96d48f2d5892b0ff193859387a3ad79bd6080a80507c29f1d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "54e890c7644a4ac4d021af843a3d4ec74b3add903f7091e865c6052c9c7406de"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b101b5b8a875fe2150d8fef5bfd8d22823b287aa735c3a8cee75d8e9fe45c746"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7f2ad24d0b2fd0a1c3ac7586b54ae2df2b258663d7777eb38d8203471e8191dd"
-    sha256 cellar: :any_skip_relocation, ventura:        "01c76bc92d913fe3dd9c06717c977d842f14839f253253bc5c43c7d37fdd979c"
-    sha256 cellar: :any_skip_relocation, monterey:       "90e46a1414169f2d1c706f28a56e468cee183f3e20ee3cad59a65f83949cfe58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec82d2b0f90e54acbb7c6a78d86e7273cb361cea6a1b1ef18b7d78b6291036b2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "451c73e478ce1e89972cedb3000c48ede56fbe44ac8d3fce2af36cec9e3f5563"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1a410466a2a76ab968d076b94f3cac1927fd5c3974299a7d7e643e04652c719"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "eae38ca8b888a9cea9cb1831fb25460a07dff648e2eb00625c3f17071413ff57"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b1633141b912b2802408347d0e6fddfe497d7ecfeae56aaecb891e855a0b0cee"
+    sha256 cellar: :any_skip_relocation, ventura:       "e42b6436e67d10f30534d2d610965003005b2101f31aea2ae7005c96699d9853"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b76be12d581849133ffa5a6a2fd5f3764ddff7dab50f5322ca86babfc2a6ed4"
   end
 
   depends_on "go" => :build
@@ -27,7 +26,7 @@ class Roadrunner < Formula
     ]
     system "go", "build", "-tags", "aws", *std_go_args(ldflags:, output: bin"rr"), ".cmdrr"
 
-    generate_completions_from_executable(bin"rr", "completion")
+    generate_completions_from_executable(bin"rr", "completion", base_name: "rr")
   end
 
   test do

@@ -55,11 +55,11 @@ class Flit < Formula
   end
 
   test do
-    (testpath"sample.py").write <<~END
+    (testpath"sample.py").write <<~PYTHON
       """A sample package"""
       __version__ = "0.1"
-    END
-    (testpath"pyproject.toml").write <<~END
+    PYTHON
+    (testpath"pyproject.toml").write <<~TOML
       [build-system]
       requires = ["flit_core"]
       build-backend = "flit_core.buildapi"
@@ -67,9 +67,9 @@ class Flit < Formula
       [tool.flit.metadata]
       module = "sample"
       author = "Sample Author"
-    END
+    TOML
     system bin"flit", "build"
-    assert_predicate testpath"distsample-0.1-py2.py3-none-any.whl", :exist?
-    assert_predicate testpath"distsample-0.1.tar.gz", :exist?
+    assert_path_exists testpath"distsample-0.1-py2.py3-none-any.whl"
+    assert_path_exists testpath"distsample-0.1.tar.gz"
   end
 end

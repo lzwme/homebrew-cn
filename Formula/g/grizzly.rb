@@ -23,7 +23,7 @@ class Grizzly < Formula
 
   test do
     sample_dashboard = testpath"dashboard_simple.yaml"
-    sample_dashboard.write <<~EOS
+    sample_dashboard.write <<~YAML
       apiVersion: grizzly.grafana.comv1alpha1
       kind: Dashboard
       metadata:
@@ -36,7 +36,7 @@ class Grizzly < Formula
         timezone: browser
         title: Production Overview
         uid: prod-overview
-    EOS
+    YAML
 
     assert_match "prod-overview", shell_output("#{bin}grr list #{sample_dashboard}")
 

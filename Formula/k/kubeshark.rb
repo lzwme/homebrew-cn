@@ -14,12 +14,13 @@ class Kubeshark < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "880494eac12160398dc63cf785473705f1b39d1d7b5cb7451bfcfa3bba48b764"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d715b44991809427469c2895deaea153c5d8b2ea851941911978a76640d5bd4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f42f0f379eb3c3645b3e5eb7a1ebddd211377e6f987d025a080a7d2a991c466c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "35871b2272699a20924fb0e490f2073ebccc82a04fa09dbaa492ee11943b1b2e"
-    sha256 cellar: :any_skip_relocation, ventura:       "234c35810aeccdb35a83d2a68ce8c9debccf87e2ebec809efffec84d3b581e2d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb544a5030d33c65f1d966859ff6078112120f919bbbc1a609525fb4340c2141"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85601506de7d4ed26d691e6db22b6ecad5bb867038e99fec085ea694200888ec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf61db97234077ee5e909b90995f95fb6fc4082561600ee275ae39d870d669c6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "85b28a384bfbf073ab3c3a7b4f81e40e3c114697d827bfd0b9650be0bde06e41"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b7ed455c3d7684f46476e713b29549d053271886bfa75b2ac51666fc62230886"
+    sha256 cellar: :any_skip_relocation, ventura:       "f922c11d61d3daec65885287bc4de8d2994366fee8ff482deeefd0b1eac21ca8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8aa5bff07dcfe7102528ce451951c8040e30e2bf2dc158d4fe16c79dcc994780"
   end
 
   depends_on "go" => :build
@@ -32,6 +33,8 @@ class Kubeshark < Formula
       -X "github.comkubesharkkubesharkmisc.Ver=v#{version}"
     ]
     system "go", "build", *std_go_args(ldflags:)
+
+    generate_completions_from_executable(bin"kubeshark", "completion")
   end
 
   test do
