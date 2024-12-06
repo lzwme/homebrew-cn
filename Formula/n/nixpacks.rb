@@ -1,18 +1,18 @@
 class Nixpacks < Formula
   desc "App source + Nix packages + Docker = Image"
   homepage "https:nixpacks.com"
-  url "https:github.comrailwayappnixpacksarchiverefstagsv1.29.1.tar.gz"
-  sha256 "0694b453b12155e3f0822b185141e769d47efe0f09ce913bbeb57bacdf625748"
+  url "https:github.comrailwayappnixpacksarchiverefstagsv1.30.0.tar.gz"
+  sha256 "7ad4ff899f8b138d4a41568d1e2559e563a02d746a5c40050567671aa5252bae"
   license "MIT"
   head "https:github.comrailwayappnixpacks.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e29c50f63e13a5dbaef01982c3b34c495860e639df9e284de2358723dda1f7e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "000b243a89194146013ebeeda588f2ffd7e61dbdde487e456872a090ee1061f7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "239179e1ecd3b712d32fa673448f5eca1c206ab821448876090ceecc34cec442"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f03b642e564996b6908646d47e7ac90bddb17909406394f21300e789db1303d2"
-    sha256 cellar: :any_skip_relocation, ventura:       "3645a5ce2fde51843b4c64b57db5d66a85bb0b262041435eccc8ef7f72729439"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37f5db6062c02262694f4f33588d104f6a9e6f0e7d398746f3f73d02cf199fac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "62af1e8866ba2b0f965e3aa8f2eed0fba68d9e6feb52b1c0a9e37984a1921249"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "31d8c5bc61aa9d1a9eaa69198fa6c2c1c6359e5adbb6b18ebc899fed29e8b9e2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2495657000173ab55f5d7349f0af9c349b552dae49ddf7c93b626bd5c22095f4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f809b8d0160361ccb7c8c27460c9b198922568b28f2dc4be5b665d29f996fe07"
+    sha256 cellar: :any_skip_relocation, ventura:       "8bb74dc6778429254f64bf2978d96b12183ca7f775b7e1dd61e7712ea432f8b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48895751fff256408da3c662af4875397c8dec0fcfd9119ae9899bb2d139d519"
   end
 
   depends_on "rust" => :build

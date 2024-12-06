@@ -1002,6 +1002,7 @@ Homebrew-homebrew-core/Formula/c/cntlm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/coal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cobalt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cobo-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cobra-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coccinelle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cocoapods.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cocogitto.rb, Homebrew/homebrew-core, 1
@@ -5131,6 +5132,7 @@ Homebrew-homebrew-core/Formula/p/portal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/portaudio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/porter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/portmidi.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/poselib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/posh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/poster.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/postgis.rb, Homebrew/homebrew-core, 1

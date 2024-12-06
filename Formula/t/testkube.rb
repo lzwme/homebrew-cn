@@ -12,12 +12,13 @@ class Testkube < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4aee0c631949a846e98dba898ae7ccd4d2e33313882cdd647cf43bf2facec79f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4aee0c631949a846e98dba898ae7ccd4d2e33313882cdd647cf43bf2facec79f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4aee0c631949a846e98dba898ae7ccd4d2e33313882cdd647cf43bf2facec79f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3dd93b3d4fb88fb5a622f9b6a0e8874c957112b684325ded4b1f2f75d7b65dfd"
-    sha256 cellar: :any_skip_relocation, ventura:       "3dd93b3d4fb88fb5a622f9b6a0e8874c957112b684325ded4b1f2f75d7b65dfd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9a39c4b401f6d8d4c14799309ed0097d2e7172886e6279099c01324064d72d8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e175f244fce41bb5a6fbff887b3787807147a16bbd4519d562fb04cbfffec1f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e175f244fce41bb5a6fbff887b3787807147a16bbd4519d562fb04cbfffec1f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7e175f244fce41bb5a6fbff887b3787807147a16bbd4519d562fb04cbfffec1f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b066c7dd83daf3dd76ea6392e0184595fcdcc2df69845a935517cdf3fcc6d4c9"
+    sha256 cellar: :any_skip_relocation, ventura:       "b066c7dd83daf3dd76ea6392e0184595fcdcc2df69845a935517cdf3fcc6d4c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d850de906c2669e7bdf0048dc34e51b7f2fa5bba9dcd98e6b8cb84b6b1018156"
   end
 
   depends_on "go" => :build
@@ -25,18 +26,12 @@ class Testkube < Formula
   depends_on "kubernetes-cli"
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.version=#{version}
-      -X main.builtBy=#{tap.user}
-    ]
+    ldflags = "-s -w -X main.version=#{version} -X main.builtBy=#{tap.user}"
 
-    system "go", "build", *std_go_args(output: bin"kubectl-testkube", ldflags:),
-      "cmdkubectl-testkubemain.go"
-
+    system "go", "build", *std_go_args(ldflags:, output: bin"kubectl-testkube"), ".cmdkubectl-testkube"
     bin.install_symlink "kubectl-testkube" => "testkube"
 
-    generate_completions_from_executable(bin"kubectl-testkube", "completion")
+    generate_completions_from_executable(bin"kubectl-testkube", "completion", base_name: "kubectl-testkube")
   end
 
   test do

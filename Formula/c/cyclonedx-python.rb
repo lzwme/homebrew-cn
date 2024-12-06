@@ -173,9 +173,9 @@ class CyclonedxPython < Formula
   end
 
   test do
-    (testpath"requirements.txt").write <<~EOS
+    (testpath"requirements.txt").write <<~REQUIREMENTS
       requests==2.31.0
-    EOS
+    REQUIREMENTS
     system bin"cyclonedx-py", "requirements", testpath"requirements.txt", "-o", "cyclonedx.json"
     assert_match "pkg:pypirequests@2.31.0", (testpath"cyclonedx.json").read
   end

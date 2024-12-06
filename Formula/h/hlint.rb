@@ -29,14 +29,14 @@ class Hlint < Formula
   end
 
   test do
-    (testpath"test.hs").write <<~EOS
+    (testpath"test.hs").write <<~HASKELL
       main = do putStrLn "Hello World"
-    EOS
+    HASKELL
     assert_match "No hints", shell_output("#{bin}hlint test.hs")
 
-    (testpath"test1.hs").write <<~EOS
+    (testpath"test1.hs").write <<~HASKELL
       main = do foo x; return 3; bar z
-    EOS
+    HASKELL
     assert_match "Redundant return", shell_output("#{bin}hlint test1.hs", 1)
   end
 end

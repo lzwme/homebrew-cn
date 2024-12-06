@@ -6,23 +6,34 @@ class Vexctl < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e6ce7e26fa5819ccf87de00241fb22fb9b2105740a57f345aeca492fc28902a8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e6ce7e26fa5819ccf87de00241fb22fb9b2105740a57f345aeca492fc28902a8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e6ce7e26fa5819ccf87de00241fb22fb9b2105740a57f345aeca492fc28902a8"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e6ce7e26fa5819ccf87de00241fb22fb9b2105740a57f345aeca492fc28902a8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "971ef9d2c5783f76a24fdaf9bea3f5c454970011ad67659511114214d22dbcbb"
-    sha256 cellar: :any_skip_relocation, ventura:        "afb6ea108d1e5d64272191ab280440f78687501a76efedeb6be4053c50777a8d"
-    sha256 cellar: :any_skip_relocation, monterey:       "40ee1b591faecd403a883927fe9ac5cac51f51981b5ccc3a43944f881a30300b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f2f1a9cf436e83b91094189a1659f91be736bf3857a9aa1bfa7b214aad63deb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8d3737e23f7d11f5fe749b5524f7f92a36654592f53caf22e81281ffe6614e4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8d3737e23f7d11f5fe749b5524f7f92a36654592f53caf22e81281ffe6614e4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c8d3737e23f7d11f5fe749b5524f7f92a36654592f53caf22e81281ffe6614e4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6b46198d549d57cb6d165dd4f4009308fd7ba5373e68ea3e6551ebbb7c3e5d1d"
+    sha256 cellar: :any_skip_relocation, ventura:       "cdfd7239a7588664765926a8a5e45dfbc50271017c625701c07d79ab78e67c2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9129dd69cff712abe1ada640119124ac040263e31cb8ba1365e6e2edd54b7e5a"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    ldflags = %W[
+      -s -w
+      -X sigs.k8s.iorelease-utilsversion.gitVersion=#{version}
+      -X sigs.k8s.iorelease-utilsversion.gitCommit=#{tap.user}
+      -X sigs.k8s.iorelease-utilsversion.gitTreeState=clean
+      -X sigs.k8s.iorelease-utilsversion.buildDate=#{time.iso8601}
+    ]
+
+    system "go", "build", *std_go_args(ldflags:)
+
+    generate_completions_from_executable(bin"vexctl", "completion")
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}vexctl version")
+
     assert_match "Valid Statuses:\n\tnot_affected\n\taffected\n\tfixed\n\tunder_investigation\n",
     shell_output("#{bin}vexctl list status")
   end

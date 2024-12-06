@@ -50,10 +50,10 @@ class ElmFormat < Formula
 
   test do
     src_path = testpath"Hello.elm"
-    src_path.write <<~EOS
+    src_path.write <<~ELM
       import Html exposing (text)
       main = text "Hello, world!"
-    EOS
+    ELM
 
     system bin"elm-format", "--elm-version=0.18", testpath"Hello.elm", "--yes"
     system bin"elm-format", "--elm-version=0.19", testpath"Hello.elm", "--yes"

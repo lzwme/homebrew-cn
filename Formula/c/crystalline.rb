@@ -33,7 +33,7 @@ class Crystalline < Formula
   end
 
   test do
-    payload = <<~LSP_PAYLOAD
+    payload = <<~JSON
       {
         "jsonrpc": "2.0",
         "id": 1,
@@ -46,7 +46,7 @@ class Crystalline < Formula
           "workspaceFolders": null
         }
       }
-    LSP_PAYLOAD
+    JSON
 
     request = <<~LSP_REQUEST
       Content-Length: #{payload.size}

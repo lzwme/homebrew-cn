@@ -1,8 +1,8 @@
 class Volta < Formula
   desc "JavaScript toolchain manager for reproducible environments"
   homepage "https:volta.sh"
-  url "https:github.comvolta-clivoltaarchiverefstagsv2.0.1.tar.gz"
-  sha256 "4ccffc86b7841cb8bc9a55436529209dbbb9621992e43cbad48ccc7ffadba493"
+  url "https:github.comvolta-clivoltaarchiverefstagsv2.0.2.tar.gz"
+  sha256 "0e93d17c36fb79222b10881d6c67d667483f85b19a0498eacfc535ef31894dbe"
   license "BSD-2-Clause"
   head "https:github.comvolta-clivolta.git", branch: "main"
 
@@ -12,14 +12,12 @@ class Volta < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c3f179ef8e08a6b9192a54f2c53104eb4e1633340b721cca0963b6b6428ba4f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ccc458c5dce897081ef5647f3b7546b990156ff9d4ecf0e5e853ec3183ef6361"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "564451a02fe6a260d6b6c6931dbf5a254d492dbc4e56986b1ff017395f51bb06"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "048b23b6a53de02c00868b733a5ac804daaf25490072327314a8564fff745a81"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4bb7faa360726cf19a4b0a8ba4ce500a5050ea63ddd990b5cafaef3f1d215ed5"
-    sha256 cellar: :any_skip_relocation, ventura:        "1a53b58df1edd4a2df65c0084e6736d16427ab786716972655ec0805391c3c5b"
-    sha256 cellar: :any_skip_relocation, monterey:       "5920d42606af034e79d64e9fcbfc019921ffa16f246d2d1840bfc02a83bef95d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e50806022ce887eb58b2880aff109e3a0f0a63827d9bf8ea3c543287500230b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "acfec2a99f0b9365f89152d6796918fab98839f43a7f16a3a180417e2082f5fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb744499c855e7fc137088663ef45db348e20727549a20c5822ef5887b896205"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "92156fa743a1700648c3ac10594c042c94ceb2b415ff800054d1a13777d49019"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8cf25e1f75d7f3b228a79a986e81817c0690feb96f253b5d11309311166189a0"
+    sha256 cellar: :any_skip_relocation, ventura:       "1c41e466e6b4ce60d13addb1cb792785d4ecaef3c768491f062771603252d523"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0eede98248c0b47f51645f2a7c051549913fcb207f48364f446611f542845ae"
   end
 
   depends_on "pkgconf" => :build

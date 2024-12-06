@@ -7,12 +7,13 @@ class Terrascan < Formula
   head "https:github.comtenableterrascan.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b2fb5ff41488184a925a6b87cc13e096305eacab2f3d27ab0f7aac5d0c511b5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e885c60f5d7131d1554da25f5a93098ee3a1e9c62e84d0f8de6fa5d2041f31e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1eb67275ff0c8438e897b0b468a5045c4c77c32f9eab47eb54acb554e191d877"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c79b75a565ee40b3a0b2cb8a5bad1fca37e81feadbb9b2aec8590877315f1c89"
-    sha256 cellar: :any_skip_relocation, ventura:       "b6ada05d7e18a63bfa1f35a22a3b604195f1b00d942da71dd1903abdeab78431"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f5129f6cbc94f6ff53a5e88f37b1953c58079eb42ef67046a67d3e6d24cfd51"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "55eba53ea3122827a508c8e157c2454488eba175c7be3f8bf5b936de423b0139"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f60423de629cd20ce0ff69e89135366135b39210338c3888c2431b4c7426b9d0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "592b8157f3ccc5c93b0639f8309a4a5a302ca89df28ac7d2d0952844db61966a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "32e3939c3b64a6998af3fdb27aa6d47e783c4add9025b96b26a752075c5759c8"
+    sha256 cellar: :any_skip_relocation, ventura:       "d8339a426f1cdf82ac986fdf3a72ecb4b8405c2c34f17552aca0ff55218de9ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc9651bca3ae4b21cea476f602ee391066e161aa1151a3eb80d32b5c725ffe1e"
   end
 
   depends_on "go" => :build
@@ -20,6 +21,8 @@ class Terrascan < Formula
   def install
     ldflags = "-s -w -X google.golang.orgprotobufreflectprotoregistry.conflictPolicy=ignore"
     system "go", "build", *std_go_args(ldflags:), ".cmdterrascan"
+
+    generate_completions_from_executable(bin"terrascan", "completion")
   end
 
   test do

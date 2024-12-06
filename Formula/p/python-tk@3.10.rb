@@ -1,22 +1,21 @@
 class PythonTkAT310 < Formula
   desc "Python interface to Tcl/Tk"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.10.15/Python-3.10.15.tgz"
-  sha256 "a27864e5ba2a4474f8f6c58ab92ff52767ac8b66f1646923355a53fe3ef15074"
+  url "https://www.python.org/ftp/python/3.10.16/Python-3.10.16.tgz"
+  sha256 "f2e22ed965a93cfeb642378ed6e6cdbc127682664b24123679f3d013fafe9cd0"
   license "Python-2.0"
-  revision 1
 
   livecheck do
     formula "python@3.10"
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bb493b45c3af673f353cda086feed51dc4da1f20ba9b0114b2cd8d318ea088e6"
-    sha256 cellar: :any,                 arm64_sonoma:  "b3e9fc8276fc21b82cf9420e370d4561a3846c712f88a40d6652d6d2c61eca84"
-    sha256 cellar: :any,                 arm64_ventura: "79ae5313ab99ed582a363997fbcde8dc5f724e56e19f4019c29970a81cceffc6"
-    sha256 cellar: :any,                 sonoma:        "e8b05abf545c822e0024b6f19094a78ae944c469b54696181490818064ed34a0"
-    sha256 cellar: :any,                 ventura:       "23c9e2cbbe7a8494bb496d754658b3deb8cdfc6f84dd358b51a6ec230fb84b95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "014fbacded75238e7471ebce827c6de8cb40953bccf473259121228b0d1662ae"
+    sha256 cellar: :any,                 arm64_sequoia: "68b53352f7459667a68d2e2723e6725ddc959ac29dcad81b81be71a3bd5217b5"
+    sha256 cellar: :any,                 arm64_sonoma:  "af5c33f6acdbca5647aec3d7cd970ef27f886826d65bc9f8ddc12f7e75736133"
+    sha256 cellar: :any,                 arm64_ventura: "f535d3a5b6750eb99547e9009f867beb1382b6c0c8b34c2f15154f8caef50ca4"
+    sha256 cellar: :any,                 sonoma:        "ff419e01411af9b9704180232c998269c6ab33756705301ccd341cd4c5ce5d28"
+    sha256 cellar: :any,                 ventura:       "0cb43e607c7335bffb65a04c72ac2fe7cf371bd7cd240f1c75b4a534088a2baf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "133d60721b40d030951ae481e497ae9fadf515911a18311a245d643239d82212"
   end
 
   keg_only :versioned_formula

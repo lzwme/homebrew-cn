@@ -8,12 +8,13 @@ class Zk < Formula
   head "https:github.comzk-orgzk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "664a5847ead175c15e4707b30e8ad541d4d6439adcb5d4e796383617ca4bef04"
-    sha256 cellar: :any,                 arm64_sonoma:  "c78bc5f19eb2488f395915490a9ed166de92234f1b9b98f3f293115dac408914"
-    sha256 cellar: :any,                 arm64_ventura: "1bdf44805c90f588466e12d80f718b28c9580229f49b510f3b29e950dde5f8c4"
-    sha256 cellar: :any,                 sonoma:        "8d0804f647ededf61fb6ac9852ebc2fbea7300ef6e0503e0acfc51972f86a111"
-    sha256 cellar: :any,                 ventura:       "0ed9d6a9cf2fef25819e3fb86533577893babab15cf5f4138b426392017be2b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e944b48af4d8040b7f3b14fbfb823d19c3aed8259ecd9fb6952523eaf2f364c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "10efe9c92516aeb1acd357235201f53a4c7e51ebb61a55f0a099ce8c2d5ed0e4"
+    sha256 cellar: :any,                 arm64_sonoma:  "ea90c3b24d3500bf7beb2401e6dbc8d996f9b06d5d266b628e81d6f8d3a54fa7"
+    sha256 cellar: :any,                 arm64_ventura: "a5dde8c954c2918010ba54cb7ab2d553eec6a43e6006c5e5a123c91777a91934"
+    sha256 cellar: :any,                 sonoma:        "083dabc371d451af6681a0d95986eae25e10d82af8f5848222e47d73c5ce7bad"
+    sha256 cellar: :any,                 ventura:       "50814ce90a03bcaf634590bdcb4f1894ef4ba2eb3a225a245f813e43764ba1b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a2dee63ae756188d8a38b9b147cc316eba321fdadd51caa680bb3146890f165"
   end
 
   depends_on "go" => :build
@@ -22,11 +23,13 @@ class Zk < Formula
   uses_from_macos "sqlite"
 
   def install
-    ldflags = "-X=main.Version=#{version} -X=main.Build=#{tap.user}"
+    ldflags = "-s -w -X main.Version=#{version} -X main.Build=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:), "-tags", "fts5,icu"
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}zk --version")
+
     system bin"zk", "init", "--no-input"
     system bin"zk", "index", "--no-input"
     (testpath"testnote.md").write "note content"

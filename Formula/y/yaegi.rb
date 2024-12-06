@@ -7,20 +7,19 @@ class Yaegi < Formula
   head "https:github.comtraefikyaegi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a008ffc855ef384997cd8c8a826f9dc23fc82a5286012cf2c3e7c63fb42af971"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "89e8681d4dc369e762c31e42208290ede00c1d8972589b341bcfcb9efd006d5b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ee7a0dc7902daca4935063a8e4bb0ea6199bf55e9e189dd84ba7d57a98d926a2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fc2e80bb7ff631f962888c45a903a258c2f6301339e6c13a3cdb350163b8e4b5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6ccd53e38ce8ebfc4739287ccbc67f02757eb1f0bf0fc7945b3d2d5daa512872"
-    sha256 cellar: :any_skip_relocation, ventura:        "0fa9ed0e7f81673bb63a6863511741a6280f5531e5ca2faead31aa501ea8ab8b"
-    sha256 cellar: :any_skip_relocation, monterey:       "e8fb11c381549bc6c5aa6036443f15ff6e07ec9fe613021a00d550abfd313e1b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "61ace260eae8744151743b8e6f3d0601f4b31e4d7f0eabe5446c332c7014f5d1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "596a9506904a37aeb5a6118af68fbf7a4f316ae8baf70ac3e0d22a14b9bf9831"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "596a9506904a37aeb5a6118af68fbf7a4f316ae8baf70ac3e0d22a14b9bf9831"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "596a9506904a37aeb5a6118af68fbf7a4f316ae8baf70ac3e0d22a14b9bf9831"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bd0481cb3feb07c198f773d117a5153a60b91c126f88d99fcf178dbf5f0bd542"
+    sha256 cellar: :any_skip_relocation, ventura:       "bd0481cb3feb07c198f773d117a5153a60b91c126f88d99fcf178dbf5f0bd542"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a431dd9b644a57c9fdf96231d53ddbd7f1f8ac9047d87c633e1677b4d9cbf89"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-X=main.version=#{version}"), ".cmdyaegi"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X=main.version=#{version}"), ".cmdyaegi"
   end
 
   test do

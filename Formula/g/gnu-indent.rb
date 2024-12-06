@@ -65,12 +65,12 @@ class GnuIndent < Formula
       "#{bin}/indent"
     end
     system binary, "test.c"
-    assert_equal File.read("test.c"), <<~EOS
+    assert_equal <<~C, File.read("test.c")
       int
       main ()
       {
         return 0;
       }
-    EOS
+    C
   end
 end

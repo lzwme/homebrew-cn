@@ -43,12 +43,12 @@ class Ronn < Formula
   end
 
   test do
-    (testpath"test.ronn").write <<~EOS
+    (testpath"test.ronn").write <<~MARKDOWN
       simple(7) -- a simple ronn example
       ==================================
 
       This document is created by ronn.
-    EOS
+    MARKDOWN
     system bin"ronn", "--date", "1970-01-01", "test.ronn"
     assert_equal <<~EOS, pipe_output("col -bx", shell_output("groff -t -man -Tascii -P -c test.7"))
       SIMPLE(7)                                                            SIMPLE(7)

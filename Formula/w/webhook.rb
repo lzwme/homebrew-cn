@@ -7,18 +7,19 @@ class Webhook < Formula
   head "https:github.comadnanhwebhook.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "38e7bbf2dd97094eeb2190f13de30eb044a841b8fd96e992c46820056a9d236b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "38e7bbf2dd97094eeb2190f13de30eb044a841b8fd96e992c46820056a9d236b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "38e7bbf2dd97094eeb2190f13de30eb044a841b8fd96e992c46820056a9d236b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "991f9bb7960fc618cf27455b18480a581f4ed96282d3202e727132420106d48b"
-    sha256 cellar: :any_skip_relocation, ventura:       "991f9bb7960fc618cf27455b18480a581f4ed96282d3202e727132420106d48b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae3a9af4020f1dee92642e36d5282f1a96b5c2c47dbb9914300600a13b7298d2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "353fae094f87012e6168a3c05d23775364567e9b77e23dadaddc6934de132687"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "353fae094f87012e6168a3c05d23775364567e9b77e23dadaddc6934de132687"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "353fae094f87012e6168a3c05d23775364567e9b77e23dadaddc6934de132687"
+    sha256 cellar: :any_skip_relocation, sonoma:        "93093d997e626387ef2ca21b6e854d2b04f3a974c144d316db61f924f2eb4546"
+    sha256 cellar: :any_skip_relocation, ventura:       "93093d997e626387ef2ca21b6e854d2b04f3a974c144d316db61f924f2eb4546"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9041e5e55f02a911e3203d13432b83aa72bfe5fc3869b1f81ac4639a1976c31c"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do

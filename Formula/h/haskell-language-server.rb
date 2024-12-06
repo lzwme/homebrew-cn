@@ -70,15 +70,15 @@ class HaskellLanguageServer < Formula
 
   test do
     valid_hs = testpath"valid.hs"
-    valid_hs.write <<~EOS
+    valid_hs.write <<~HASKELL
       f :: Int -> Int
       f x = x + 1
-    EOS
+    HASKELL
 
     invalid_hs = testpath"invalid.hs"
-    invalid_hs.write <<~EOS
+    invalid_hs.write <<~HASKELL
       f :: Int -> Int
-    EOS
+    HASKELL
 
     ghcs.each do |ghc|
       with_env(PATH: "#{ghc.bin}:#{ENV["PATH"]}") do

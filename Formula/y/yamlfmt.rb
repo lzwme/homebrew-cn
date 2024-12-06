@@ -7,21 +7,25 @@ class Yamlfmt < Formula
   head "https:github.comgoogleyamlfmt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5594a8b9d5a83f76f8824a17cf83115644e021aeac1ad5a6365dda1dc0aaf80"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5594a8b9d5a83f76f8824a17cf83115644e021aeac1ad5a6365dda1dc0aaf80"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c5594a8b9d5a83f76f8824a17cf83115644e021aeac1ad5a6365dda1dc0aaf80"
-    sha256 cellar: :any_skip_relocation, sonoma:        "204c0cc28383f3da42f5feb60a40a5f73cd16d090b88260087194b09e2fccdcc"
-    sha256 cellar: :any_skip_relocation, ventura:       "204c0cc28383f3da42f5feb60a40a5f73cd16d090b88260087194b09e2fccdcc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6f799f0a7d20fee357cf4aca9f9108f423069072ac494bfbaffe722e795d4e5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "faf95e2728b5d61de469544a72c9334fb03535e9f3486b33aa83e5870146ca4a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "faf95e2728b5d61de469544a72c9334fb03535e9f3486b33aa83e5870146ca4a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "faf95e2728b5d61de469544a72c9334fb03535e9f3486b33aa83e5870146ca4a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8d08a1ba3129da443233d70aa1aa4b2abe5fed23c6efb1f83a508381709007d0"
+    sha256 cellar: :any_skip_relocation, ventura:       "8d08a1ba3129da443233d70aa1aa4b2abe5fed23c6efb1f83a508381709007d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2cde7e304c615321fc6e100901ba97110c790dc3fca5215cd43516964fb1609c"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdyamlfmt"
+    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user}"
+    system "go", "build", *std_go_args(ldflags:), ".cmdyamlfmt"
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}yamlfmt -version")
+
     (testpath"test.yml").write <<~YAML
       foo: bar
     YAML

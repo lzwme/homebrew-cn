@@ -42,13 +42,13 @@ class M68kElfBinutils < Formula
   end
 
   test do
-    (testpath/"test-s.s").write <<~EOS
+    (testpath/"test-s.s").write <<~M68K
       .section .text
       .globl _start
       _start:
           move.b #42, d0
           move.b #42, d1
-    EOS
+    M68K
 
     system bin/"m68k-elf-as", "-o", "test-s.o", "test-s.s"
     assert_match "file format elf32-m68k",

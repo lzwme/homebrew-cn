@@ -31,15 +31,15 @@ class Bmake < Formula
   end
 
   test do
-    (testpath/"Makefile").write <<~EOS
+    (testpath/"Makefile").write <<~MAKE
       all: hello
 
       hello:
-      \t@echo 'Test successful.'
+      	@echo 'Test successful.'
 
       clean:
-      \trm -rf Makefile
-    EOS
+      	rm -rf Makefile
+    MAKE
     system bin/"bmake"
     system bin/"bmake", "clean"
   end

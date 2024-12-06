@@ -1,8 +1,8 @@
 class PythonAT39 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https:www.python.org"
-  url "https:www.python.orgftppython3.9.20Python-3.9.20.tar.xz"
-  sha256 "6b281279efd85294d2d6993e173983a57464c0133956fbbb5536ec9646beaf0c"
+  url "https:www.python.orgftppython3.9.21Python-3.9.21.tar.xz"
+  sha256 "3126f59592c9b0d798584755f2bf7b081fa1ca35ce7a6fea980108d752a05bb1"
   license "Python-2.0"
 
   livecheck do
@@ -11,14 +11,12 @@ class PythonAT39 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "0580cd1e46999a8beccb75f77e0b05f79cfade91fb402ae473d0aacc02be9951"
-    sha256 arm64_sonoma:   "498dedbc032adaf282c20fb5bd67570a05c740352bafde94b4988cd698d4f762"
-    sha256 arm64_ventura:  "3371da459d79669676fd975e730bf365eeb4658e59cdedfa0b22380bf4cc775c"
-    sha256 arm64_monterey: "9d64b062947225b6dc12543ae672c713823e1420220c5d5984a895a0aa47e214"
-    sha256 sonoma:         "44dcef0a5a81d317ed5fe320030d40e36aabb8416b17fefaa31f7c750b09ec21"
-    sha256 ventura:        "b83e9ef8729218438c3f937c4efc59603a8c100d2b0ef83bbcc0163fdc0075e4"
-    sha256 monterey:       "aa38dd87edf16ffde32390bd0e1bef2358a9c9beffd37f07cf5531eeb4c074f5"
-    sha256 x86_64_linux:   "364db16648d7890e150959da20466065c7a6822cff008e9760c1776f1fed6232"
+    sha256 arm64_sequoia: "072624b4503baabd76e37324d4eda6dfdedf4e859c90f53b323c4adbf346adb9"
+    sha256 arm64_sonoma:  "0d8938a8a41666982846e76338c2269dfaad5a1eed0d2c62b7bc519bf434153a"
+    sha256 arm64_ventura: "8fae6515c8d1dc3efd6009c1648dca72d15c77753e1e884895df9621c1b07225"
+    sha256 sonoma:        "ed8adf7e7e85490d7cf057aafaf293dddf830c421b656d4fd0e7fab6d0a8c265"
+    sha256 ventura:       "105f74d5ba6fdbdca5017cab63942c5c6dff727fabf0816ec169cfa8235702ae"
+    sha256 x86_64_linux:  "cac4999f29fc4d66222af64145bb50d4a0a74483385260b3cdb72962330173de"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -47,23 +45,23 @@ class PythonAT39 < Formula
 
   # Always update to latest release
   resource "flit-core" do
-    url "https:files.pythonhosted.orgpackagesc4e6c1ac50fe3eebb38a155155711e6e864e254ce4b6e17fe2429b4c4d5b9e80flit_core-3.9.0.tar.gz"
-    sha256 "72ad266176c4a3fcfab5f2930d76896059851240570ce9a98733b658cb786eba"
+    url "https:files.pythonhosted.orgpackagesd5ae09427bea9227a33ec834ed5461432752fd5d02b14f93dd68406c91684622flit_core-3.10.1.tar.gz"
+    sha256 "66e5b87874a0d6e39691f0e22f09306736b633548670ad3c09ec9db03c5662f7"
   end
 
   resource "pip" do
-    url "https:files.pythonhosted.orgpackages4d87fb90046e096a03aeab235e139436b3fe804cdd447ed2093b0d70eba3f7f8pip-24.2.tar.gz"
-    sha256 "5b5e490b5e9cb275c879595064adce9ebd31b854e3e803740b72f9ccf34a45b8"
+    url "https:files.pythonhosted.orgpackagesf4b1b422acd212ad7eedddaf7981eee6e5de085154ff726459cf2da7c5a184c1pip-24.3.1.tar.gz"
+    sha256 "ebcb60557f2aefabc2e0f918751cd24ea0d56d8ec5445fe1807f1d2109660b99"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages3e2cf0a538a2f91ce633a78daaeb34cbfb93a54bd2132a6de1f6cec028eee6efsetuptools-74.1.2.tar.gz"
-    sha256 "95b40ed940a1c67eb70fc099094bd6e99c6ee7c23aa2306f4d2697ba7916f9c6"
+    url "https:files.pythonhosted.orgpackages4354292f26c208734e9a7f067aea4a7e282c080750c4546559b58e2e45413ca0setuptools-75.6.0.tar.gz"
+    sha256 "8199222558df7c86216af4f84c30e9b34a61d8ba19366cc914424cdbd28252f6"
   end
 
   resource "wheel" do
-    url "https:files.pythonhosted.orgpackagesb7a095e9e962c5fd9da11c1e28aa4c0d8210ab277b1ada951d2aee336b505813wheel-0.44.0.tar.gz"
-    sha256 "a29c3f2817e95ab89aa4660681ad547c0e9547f20e75b0562fe7723c9a2a9d49"
+    url "https:files.pythonhosted.orgpackages8a982d9906746cdc6a6ef809ae6338005b3f21bb568bea3165cfc6a243fdc25cwheel-0.45.1.tar.gz"
+    sha256 "661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729"
   end
 
   # Link against libmpdec.so.3, update for mpdecimal.h symbol cleanup.

@@ -2,8 +2,8 @@ class Flyctl < Formula
   desc "Command-line tools for fly.io services"
   homepage "https:fly.io"
   url "https:github.comsuperflyflyctl.git",
-      tag:      "v0.3.46",
-      revision: "65df1119742ce65d4ce99c71324702a61df5242a"
+      tag:      "v0.3.47",
+      revision: "47d36f94fd09a7dfff25f8c3eca5d8d5e2efc409"
   license "Apache-2.0"
   head "https:github.comsuperflyflyctl.git", branch: "master"
 
@@ -18,12 +18,12 @@ class Flyctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90714c74cbe5656c17f5d1ff34b698f7d8eb0a424a54ed1889ccf19ae216b7c0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "90714c74cbe5656c17f5d1ff34b698f7d8eb0a424a54ed1889ccf19ae216b7c0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "90714c74cbe5656c17f5d1ff34b698f7d8eb0a424a54ed1889ccf19ae216b7c0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3b7de3da2e6243d4af5035bce6f93055e4883f2277ae7c8722c149f8c45f4b72"
-    sha256 cellar: :any_skip_relocation, ventura:       "3b7de3da2e6243d4af5035bce6f93055e4883f2277ae7c8722c149f8c45f4b72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f65db15b0d44b268ec316e1e604cb24b06bbfcf733ed94260036048d64cddc06"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5655afb8aaad045c1caa7d2127848c1c18ab50a0beae474bb86c25a6c6716dce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5655afb8aaad045c1caa7d2127848c1c18ab50a0beae474bb86c25a6c6716dce"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5655afb8aaad045c1caa7d2127848c1c18ab50a0beae474bb86c25a6c6716dce"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5a73f4bc75e0e57d2e3854e7bfc57b89377d69d4aea9f372b9faaf5a814f64bf"
+    sha256 cellar: :any_skip_relocation, ventura:       "5a73f4bc75e0e57d2e3854e7bfc57b89377d69d4aea9f372b9faaf5a814f64bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d21782fcd44706793a8ef894be00b214938e8201f3d3fe63f2252ed9f4f5729"
   end
 
   depends_on "go" => :build

@@ -3,18 +3,18 @@ class CodecovCli < Formula
 
   desc "Codecov's command-line interface"
   homepage "https:cli.codecov.io"
-  url "https:files.pythonhosted.orgpackagesc49e50af9e41e63a74290a447473a7f7f88af931e3e2b7959486bd30e7e16d80codecov-cli-9.0.4.tar.gz"
-  sha256 "47070f2662c66ad0e506d08712322f16878bb8f98c072525fd4a47f7c30b55fc"
+  url "https:files.pythonhosted.orgpackagesd4a61c24f4099eb74ec5ceef6739d19a09da92569b098aa2e9035291f244e818codecov-cli-9.1.0.tar.gz"
+  sha256 "39f812c0a8c276b18df4be1a0d6d4698ecd5ae131034b35e13dfcc62119703af"
   license "Apache-2.0"
   head "https:github.comcodecovcodecov-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d571ed21ecb2b80154891810044835a9e070ca72fdfbbaf7eff1469c39dc626c"
-    sha256 cellar: :any,                 arm64_sonoma:  "8fc9a2d3fadd291867e94af963222e77e6ce2e06d9a1f56de177ce9281fdc770"
-    sha256 cellar: :any,                 arm64_ventura: "51ba2b4cf2cfd394c7149efb8197bf910dc869bce60002d0254c99d1a7e602d6"
-    sha256 cellar: :any,                 sonoma:        "5fa358345914145f2847d3ee4c15de878b4ccf5b11b5dc8c7df295d6ed533bdc"
-    sha256 cellar: :any,                 ventura:       "f30f1227915b657dd88957d1706282104c84e369f2b35ec338185f7fb34524d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5a5415b437945e8ff21f873c7d0c404944d643338713567e4c9b14cc5694096"
+    sha256 cellar: :any,                 arm64_sequoia: "e809e84d3aab9ff05480c43a9e4e0aa79228fc98eb944892d36a4b1670ec989d"
+    sha256 cellar: :any,                 arm64_sonoma:  "bef86134a4ce8df0b6fef6b535b131eb382ade9f31327b279d8b3609bd2b5e8d"
+    sha256 cellar: :any,                 arm64_ventura: "5e86e87af4ce9d65957e27f52263f5016584cf018869ef6f10ad740ea1ae9cdd"
+    sha256 cellar: :any,                 sonoma:        "ba2cd55c1d0f8aca2f0f336aa88a45749f55ae89c838ec1715c06a046da82e33"
+    sha256 cellar: :any,                 ventura:       "6dd640f19e2ad608c8eab1d721399d6fbb55227c6098c6b63075b7f220ee103a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2cbe3e061ab64dc070e00c08233961440d1e8c9418690f2f4a9d1ccad2db6cf7"
   end
 
   depends_on "rust" => :build
@@ -47,13 +47,13 @@ class CodecovCli < Formula
   end
 
   resource "httpcore" do
-    url "https:files.pythonhosted.orgpackages61425c456b02816845d163fab0f32936b6a5b649f3f915beff6f819f4f6c90b2httpcore-0.16.3.tar.gz"
-    sha256 "c5d6f04e2fc530f39e0c077e6a30caa53f1451096120f1f38b954afd0b17c0cb"
+    url "https:files.pythonhosted.orgpackages6a41d7d0a89eb493922c37d343b607bc1b5da7f5be7e383740b4753ad8943e90httpcore-1.0.7.tar.gz"
+    sha256 "8551cb62a169ec7162ac7be8d4817d561f60e08eaa485234898414bb5a8a0b4c"
   end
 
   resource "httpx" do
-    url "https:files.pythonhosted.orgpackagesf55004d5e8ee398a10c767a341a25f59ff8711ae3adf0143c7f8b45fc560d72dhttpx-0.23.3.tar.gz"
-    sha256 "9818458eb565bb54898ccb9b8b251a28785dd4a55afbc23d0eb410754fe7d0f9"
+    url "https:files.pythonhosted.orgpackages788208f8c936781f67d9e6b9eeb8a0c8b4e406136ea4c3d1f89a5db71d42e0e6httpx-0.27.2.tar.gz"
+    sha256 "f7c2be1d2f3c3c3160d441802406b206c2b76f5947b11115e6df10c6c65e66c2"
   end
 
   resource "idna" do
@@ -86,14 +86,9 @@ class CodecovCli < Formula
     sha256 "b82502eb5f09a0289d8e209e7bad71ef3978334f56d09b444253d5ad67bf5253"
   end
 
-  resource "rfc3986" do
-    url "https:files.pythonhosted.orgpackages79305b1b6c28c105629cc12b33bdcbb0b11b5bb1880c6cfbd955f9e792921aa8rfc3986-1.5.0.tar.gz"
-    sha256 "270aaf10d87d0d4e095063c65bf3ddbc6ee3d0b226328ce21e036f946e421835"
-  end
-
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesc8db722a42ffdc226e950c4757b3da7b56ff5c090bb265dccd707f7b8a3c6feesetuptools-75.5.0.tar.gz"
-    sha256 "5c4ccb41111392671f02bb5f8436dfc5a9a7185e80500531b133f5775c4163ef"
+    url "https:files.pythonhosted.orgpackages4354292f26c208734e9a7f067aea4a7e282c080750c4546559b58e2e45413ca0setuptools-75.6.0.tar.gz"
+    sha256 "8199222558df7c86216af4f84c30e9b34a61d8ba19366cc914424cdbd28252f6"
   end
 
   resource "sniffio" do

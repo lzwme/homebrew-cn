@@ -34,17 +34,17 @@ class Remake < Formula
   depends_on "readline"
 
   def install
-    system "./configure", *std_configure_args, "--disable-silent-rules"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
     # Remove texinfo files for make to avoid conflict
-    info.glob("make.info*").map(&:unlink)
+    rm info.glob("make.info*")
   end
 
   test do
-    (testpath/"Makefile").write <<~EOS
+    (testpath/"Makefile").write <<~MAKE
       all:
-      \techo "Nothing here, move along"
-    EOS
+      	echo "Nothing here, move along"
+    MAKE
     system bin/"remake", "-x"
   end
 end

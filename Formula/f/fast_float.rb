@@ -18,7 +18,7 @@ class FastFloat < Formula
   end
 
   test do
-    (testpath"test-fast-float.cc").write <<~CXX
+    (testpath"test-fast-float.cc").write <<~CPP
       #include "fast_floatfast_float.h"
       #include <iostream>
 
@@ -30,7 +30,7 @@ class FastFloat < Formula
           std::cout << "parsed the number " << result << std::endl;
           return EXIT_SUCCESS;
       }
-    CXX
+    CPP
 
     ENV.append_to_cflags "-I#{include}"
     ENV.append "CXXFLAGS", "-std=c++11"

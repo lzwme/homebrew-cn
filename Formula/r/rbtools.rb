@@ -3,19 +3,18 @@ class Rbtools < Formula
 
   desc "CLI and API for working with code and document reviews on Review Board"
   homepage "https:www.reviewboard.orgdownloadsrbtools"
-  url "https:files.pythonhosted.orgpackages4720112a54002d2023b249906508feefeebcce7d73a25618f3f1f76c7673734dRBTools-5.0.tar.gz"
-  sha256 "beb373100d0f2d707370a6ce449b6f98110dd0081accffd766d955cea16f08bc"
+  url "https:files.pythonhosted.orgpackagesf8ca243e2c69d014c29d77c9160b0d03d9f8fa310944ea4068ed7d4d60986b2frbtools-5.1.1.tar.gz"
+  sha256 "b6017ff512547d5c04f9449d8ea42e151dbf255728c12efa24bd93c57df5b3e4"
   license "MIT"
   head "https:github.comreviewboardrbtools.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f6f3c1b2adf2177005228ea83bb9bc292e517b868e25dfe74210f032c793e6e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f6f3c1b2adf2177005228ea83bb9bc292e517b868e25dfe74210f032c793e6e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7f6f3c1b2adf2177005228ea83bb9bc292e517b868e25dfe74210f032c793e6e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3cbb8aa0f8effbef4ab39a688d44ddf975a7014d37277cca9b6f78a396fc72f9"
-    sha256 cellar: :any_skip_relocation, ventura:       "3cbb8aa0f8effbef4ab39a688d44ddf975a7014d37277cca9b6f78a396fc72f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f6f3c1b2adf2177005228ea83bb9bc292e517b868e25dfe74210f032c793e6e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cbadde63ab37a0215f09776f8b1f970c726f181ac52c19cd72be15fc7ac5cda4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cbadde63ab37a0215f09776f8b1f970c726f181ac52c19cd72be15fc7ac5cda4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cbadde63ab37a0215f09776f8b1f970c726f181ac52c19cd72be15fc7ac5cda4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "488247f4474a8a3c2fcfb1f317a80706420bee5afc3c96f74b08abc05b538045"
+    sha256 cellar: :any_skip_relocation, ventura:       "488247f4474a8a3c2fcfb1f317a80706420bee5afc3c96f74b08abc05b538045"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cbadde63ab37a0215f09776f8b1f970c726f181ac52c19cd72be15fc7ac5cda4"
   end
 
   depends_on "certifi"
@@ -32,18 +31,23 @@ class Rbtools < Formula
   end
 
   resource "importlib-metadata" do
-    url "https:files.pythonhosted.orgpackagesf6a1db39a513aa99ab3442010a994eef1cb977a436aded53042e69bee6959f74importlib_metadata-8.2.0.tar.gz"
-    sha256 "72e8d4399996132204f9a16dcc751af254a48f8d1b20b9ff0f98d4a8f901e73d"
+    url "https:files.pythonhosted.orgpackagescd1233e59336dca5be0c398a7482335911a33aa0e20776128f038019f1a95f1bimportlib_metadata-8.5.0.tar.gz"
+    sha256 "71522656f0abace1d072b9e5481a48f07c138e00f079c38c8f883823f9c26bd7"
   end
 
   resource "importlib-resources" do
-    url "https:files.pythonhosted.orgpackagesc89d6ee73859d6be81c6ea7ebac89655e92740296419bd37e5c8abdb5b62fd55importlib_resources-6.4.0.tar.gz"
-    sha256 "cdb2b453b8046ca4e3798eb1d84f3cce1446a0e8e7b5ef4efb600f19fc398145"
+    url "https:files.pythonhosted.orgpackages98bef3e8c6081b684f176b761e6a2fef02a0be939740ed6f54109a2951d806f3importlib_resources-6.4.5.tar.gz"
+    sha256 "980862a1d16c9e147a59603677fa2aa5fd82b87f223b6cb870695bcfce830065"
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
-    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
+    url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
+    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
+  end
+
+  resource "puremagic" do
+    url "https:files.pythonhosted.orgpackages092d40599f25667733e41bbc3d7e4c7c36d5e7860874aa5fe9c584e90b34954dpuremagic-1.28.tar.gz"
+    sha256 "195893fc129657f611b86b959aab337207d6df7f25372209269ed9e303c1a8c0"
   end
 
   resource "pydiffx" do
@@ -55,8 +59,8 @@ class Rbtools < Formula
   end
 
   resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+    url "https:files.pythonhosted.orgpackages94e7b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   resource "texttable" do
@@ -65,8 +69,8 @@ class Rbtools < Formula
   end
 
   resource "tqdm" do
-    url "https:files.pythonhosted.orgpackages5ac0b7599d6e13fe0844b0cda01b9aaef9a0e87dbb10b06e4ee255d3fa1c79a2tqdm-4.66.4.tar.gz"
-    sha256 "e4d936c9de8727928f3be6079590e97d9abfe8d39a590be678eb5919ffc186bb"
+    url "https:files.pythonhosted.orgpackagesa84b29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744dtqdm-4.67.1.tar.gz"
+    sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
   end
 
   resource "typing-extensions" do
@@ -75,8 +79,8 @@ class Rbtools < Formula
   end
 
   resource "zipp" do
-    url "https:files.pythonhosted.orgpackagesd320b48f58857d98dcb78f9e30ed2cfe533025e2e9827bbd36ea0a64cc00cbc1zipp-3.19.2.tar.gz"
-    sha256 "bf1dcf6450f873a13e952a29504887c89e6de7506209e5b1bcc3460135d4de19"
+    url "https:files.pythonhosted.orgpackages3f50bad581df71744867e9468ebd0bcd6505de3b275e06f202c2cb016e3ff56fzipp-3.21.0.tar.gz"
+    sha256 "2c9958f6430a2040341a52eb608ed6dd93ef4392e02ffe219417c1b28b5dd1f4"
   end
 
   def install

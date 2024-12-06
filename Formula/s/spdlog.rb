@@ -21,11 +21,11 @@ class Spdlog < Formula
   def install
     ENV.cxx11
 
-    inreplace "includespdlogtweakme.h", " #define SPDLOG_FMT_EXTERNAL", <<~EOS
+    inreplace "includespdlogtweakme.h", " #define SPDLOG_FMT_EXTERNAL", <<~C
       #ifndef SPDLOG_FMT_EXTERNAL
       #define SPDLOG_FMT_EXTERNAL
       #endif
-    EOS
+    C
 
     args = std_cmake_args + %W[
       -Dpkg_config_libdir=#{lib}

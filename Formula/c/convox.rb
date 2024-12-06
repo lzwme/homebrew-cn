@@ -1,8 +1,8 @@
 class Convox < Formula
   desc "Command-line interface for the Convox PaaS"
   homepage "https:convox.com"
-  url "https:github.comconvoxconvoxarchiverefstags3.19.5.tar.gz"
-  sha256 "5a752491dbd5b0e0649e2351d6fab4ad7305efc38894f562404080e79a473fc4"
+  url "https:github.comconvoxconvoxarchiverefstags3.19.6.tar.gz"
+  sha256 "2d0dcd29065f73480698eb3ceded8089d652bd1531a17b172419faeb4dbef410"
   license "Apache-2.0"
   version_scheme 1
 
@@ -12,12 +12,12 @@ class Convox < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9aaf2be059f2d3482cbd095cfe5c7be2af0ae4ce2377962d27b91b6e93aece34"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "424e6094f1afec6f79e734c567cba59794623b6842144859c61b634746e62794"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5f1c1586d1e9c50890f926d28dd4ad43228eb43c26a82ac3a1e3dcff2e028c3a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "48b6754692326e1f7cc79bf849ca90d940b49b3d1b78568112059a7ce20f1515"
-    sha256 cellar: :any_skip_relocation, ventura:       "88a0f19751c0071290b92d1e8310a8016982f06a1fdf31fdd69ed1c32c17aa00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91d51fa8bcdedae104f927591355fb14e18380cfa4db8c1a8886a1ed82422f1b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bddbeaee8ffc3d6fc21c7ace83396e4df6a2aaafb4c6253b9ceb1c726c27053a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83460fe7e661a37e6c0ce230e22c78445b84a6654ee2ef0129f2495b49ce7d55"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "01a478cb6876ba848fcb141b5388755adb1e8ab1347e16aff315995f69305375"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e2dc5233ba7268f8033a611042c24d6aa22533d0e9a94dfb5a978693c3d16594"
+    sha256 cellar: :any_skip_relocation, ventura:       "ffbfaf14f7fb77f3f6460ce90a5d0313e8927029ad776e1b1eaae26945136c0a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52a238d85b8f9b017abe96597aaf55241391b2a539316e69df7aaf8ce0319ff6"
   end
 
   depends_on "go" => :build

@@ -34,15 +34,15 @@ class Compiledb < Formula
   end
 
   test do
-    (testpath"Makefile").write <<~EOS
+    (testpath"Makefile").write <<~MAKE
       all:
       	cc main.c -o test
-    EOS
+    MAKE
     (testpath"main.c").write <<~C
       int main(void) { return 0; }
     C
 
     system bin"compiledb", "-n", "make"
-    assert_predicate testpath"compile_commands.json", :exist?, "compile_commands.json should be created"
+    assert_path_exists testpath"compile_commands.json", "compile_commands.json should be created"
   end
 end

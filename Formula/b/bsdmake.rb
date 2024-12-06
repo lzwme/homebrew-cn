@@ -72,12 +72,12 @@ class Bsdmake < Formula
   end
 
   test do
-    (testpath"Makefile").write <<~EOS
+    (testpath"Makefile").write <<~MAKE
       foo:
-      \ttouch $@
-    EOS
+      	touch $@
+    MAKE
 
     system bin"bsdmake"
-    assert_predicate testpath"foo", :exist?
+    assert_path_exists testpath"foo"
   end
 end

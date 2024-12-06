@@ -16,6 +16,8 @@ class Tctl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6fe6c1efa47cbfe9750cb68e0c9e413a4e2005d382faf3554202585f71218500"
   end
 
+  deprecate! date: "2024-12-04", because: "use `temporal` formula instead"
+
   depends_on "go" => :build
 
   conflicts_with "teleport", because: "both install `tctl` binaries"

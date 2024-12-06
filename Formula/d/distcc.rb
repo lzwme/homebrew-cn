@@ -83,10 +83,10 @@ class Distcc < Formula
   test do
     system bin"distcc", "--version"
 
-    (testpath"Makefile").write <<~EOS
+    (testpath"Makefile").write <<~MAKE
       default:
-      \t@echo Homebrew
-    EOS
+      	@echo Homebrew
+    MAKE
     assert_match "distcc hosts list does not contain any hosts", shell_output("#{bin}pump make 2>&1", 1)
 
     # `pump make` timeout on linux runner and is not reproducible, so only run this test for macOS runners

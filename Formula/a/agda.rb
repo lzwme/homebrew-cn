@@ -181,7 +181,7 @@ class Agda < Formula
 
   test do
     simpletest = testpath"SimpleTest.agda"
-    simpletest.write <<~EOS
+    simpletest.write <<~AGDA
       {-# OPTIONS --safe --without-K #-}
       module SimpleTest where
 
@@ -191,10 +191,10 @@ class Agda < Formula
 
       cong : ∀ {A B : Set} (f : A → B) {x y} → x ≡ y → f x ≡ f y
       cong f refl = refl
-    EOS
+    AGDA
 
     stdlibtest = testpath"StdlibTest.agda"
-    stdlibtest.write <<~EOS
+    stdlibtest.write <<~AGDA
       module StdlibTest where
 
       open import Data.Nat
@@ -203,10 +203,10 @@ class Agda < Formula
       +-assoc : ∀ m n o → (m + n) + o ≡ m + (n + o)
       +-assoc zero    _ _ = refl
       +-assoc (suc m) n o = cong suc (+-assoc m n o)
-    EOS
+    AGDA
 
     cubicaltest = testpath"CubicalTest.agda"
-    cubicaltest.write <<~EOS
+    cubicaltest.write <<~AGDA
       {-# OPTIONS --cubical #-}
       module CubicalTest where
 
@@ -217,10 +217,10 @@ class Agda < Formula
 
       suc-equiv : ℤ ≡ ℤ
       suc-equiv = ua (isoToEquiv (iso sucℤ predℤ sucPred predSuc))
-    EOS
+    AGDA
 
     categoriestest = testpath"CategoriesTest.agda"
-    categoriestest.write <<~EOS
+    categoriestest.write <<~AGDA
       module CategoriesTest where
 
       open import Level using (zero)
@@ -233,10 +233,10 @@ class Agda < Formula
       _⇒_ empty-quiver ()
       _≈_ empty-quiver {()}
       equiv empty-quiver {()}
-    EOS
+    AGDA
 
     iotest = testpath"IOTest.agda"
-    iotest.write <<~EOS
+    iotest.write <<~AGDA
       module IOTest where
 
       open import Agda.Builtin.IO
@@ -249,10 +249,10 @@ class Agda < Formula
 
       main : _
       main = return tt
-    EOS
+    AGDA
 
     agda2hstest = testpath"Agda2HsTest.agda"
-    agda2hstest.write <<~EOS
+    agda2hstest.write <<~AGDA
       {-# OPTIONS --erasure #-}
       open import Haskell.Prelude
 
@@ -264,16 +264,16 @@ class Agda < Formula
         Node : (x : a) (l : BST a lower x) (r : BST a x upper) → BST a lower upper
 
       {-# COMPILE AGDA2HS BST #-}
-    EOS
+    AGDA
 
     agda2hsout = testpath"Agda2HsTest.hs"
-    agda2hsexpect = <<~EOS
+    agda2hsexpect = <<~HASKELL
       module Agda2HsTest where
 
       data BST a = Leaf
                  | Node a (BST a) (BST a)
 
-    EOS
+    HASKELL
 
     # we need a test-local copy of the stdlib as the test writes to
     # the stdlib directory; the same applies to the cubical,

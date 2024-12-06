@@ -1,18 +1,18 @@
 class Openjph < Formula
   desc "Open-source implementation of JPEG2000 Part-15 (or JPH or HTJ2K)"
   homepage "https:github.comaous72OpenJPH"
-  url "https:github.comaous72OpenJPHarchiverefstags0.18.0.tar.gz"
-  sha256 "2484908bf5a171cda957643d9bc85c39d58ef939016e2d1a00122b1cefbbd4f8"
+  url "https:github.comaous72OpenJPHarchiverefstags0.18.1.tar.gz"
+  sha256 "79accd348d2d5a3953b973096ace0861b4d1c1147d9c4598c23857a4deefc0ca"
   license "BSD-2-Clause"
   head "https:github.comaous72OpenJPH.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "760908443bbbe4f081d5eac74aea617373f12c9a6dd74ccd6da794bb0bfc0d3e"
-    sha256 cellar: :any,                 arm64_sonoma:  "35b2ecff2d5534d42aa30f0c992024c8fb88561f8a64461f680bae276b750b10"
-    sha256 cellar: :any,                 arm64_ventura: "e43cd0c2af85aaf4379e1fbcac5667dff97c448af7619e86e940fab0e1ad57aa"
-    sha256 cellar: :any,                 sonoma:        "95dbbd2667c1cf12414ca0a765c6baca4ba9b8cc006e22709fef5155b5e8e44c"
-    sha256 cellar: :any,                 ventura:       "2cda884caa9e7205de3f459952d829c27c3a941a64774508775965fabf30c7a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4ccb44a5fdd34dc1dec2882c71187293ed4df6615b9f52586738cbc32ec2295"
+    sha256 cellar: :any,                 arm64_sequoia: "c46a48115f3df080e3b7f78d950afb06bd5ca57bbb1ab918dde86298ef5a4da5"
+    sha256 cellar: :any,                 arm64_sonoma:  "feca15dae107d7b6019cd37c69b0dbc36aee30b31dbfbc282e03f8bd7ace84c5"
+    sha256 cellar: :any,                 arm64_ventura: "cdcc613fc6a428dfdc31771afdd0bcedbe0cd52f66e3fc913dd1e55ae8d67467"
+    sha256 cellar: :any,                 sonoma:        "b209dd3205ba03c54aab3d7c55d3ebb64a7267912f693b1afcf1f5f0a1d42397"
+    sha256 cellar: :any,                 ventura:       "172a929b09b3d4cd9a028e4572819c01f5ca3ad0d42b5fa5e4726c2108b4c17a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13e9d6d02b6996555a7c4841e15855c977b7362a37c36c35b581ab6083f4d156"
   end
 
   depends_on "cmake" => :build

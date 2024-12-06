@@ -7,12 +7,13 @@ class TelegramDownloader < Formula
   head "https:github.comiyeartdl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75e53b51e32df12e43b503fa106aa6e766e11fb7122d56efd8c1bf8643638ed1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "487d7dd18bcfc429898fa194b97451dd6d7982b88dba4fbd451fcdd63a1afb81"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e12be804be7fbfb094952c718dc8db8d23606c951d6daa3420b62212b21fd742"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7b0a641032e96e78ff489fc9e1ac96ac8668d6f6b9b2308f67a0971e9967605b"
-    sha256 cellar: :any_skip_relocation, ventura:       "8dab873e8bfde1113d022891753a959611b37aaaeab2a6e0179a58fa39487443"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7bb1a06deadc61ca364d4fcca0120e481d7676f1b8d9d6904f1f93e215e7090"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad7daff3ddad71a0c78a906dcdde061e06df87e21273497a8c793aaeb88a6df4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87515957cfa197efc5bd4d1a838ab474bfd95f296863b29e0b2333df5849ceec"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0831ef0ea6471f3100cff507fa847a9fee2dc8054a0ec13d497646653f2733c4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8fbb49370725842e024a57c17aa4dcb36198c32079b8f4b307aa9f9ad99e2b98"
+    sha256 cellar: :any_skip_relocation, ventura:       "553fd19caf48fe1e93323edc6844d605c5b1e3a626caf105b98e345bbdd00a91"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3bf7a942125d16280177c86635070f55a1bd9bef94d471f78f7123945dc50814"
   end
 
   depends_on "go" => :build
@@ -26,7 +27,7 @@ class TelegramDownloader < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin"tdl")
 
-    generate_completions_from_executable(bin"tdl", "completion")
+    generate_completions_from_executable(bin"tdl", "completion", base_name: "tdl")
   end
 
   test do

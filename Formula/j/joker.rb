@@ -26,11 +26,11 @@ class Joker < Formula
 
   test do
     test_file = testpath"test.clj"
-    test_file.write <<~EOS
+    test_file.write <<~CLOJURE
       (ns brewtest)
       (defn -main [& args]
         (let [a 1]))
-    EOS
+    CLOJURE
 
     system bin"joker", "--format", test_file
     output = shell_output("#{bin}joker --lint #{test_file} 2>&1", 1)

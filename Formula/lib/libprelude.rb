@@ -85,12 +85,12 @@ class Libprelude < Formula
     system ENV.cc, "test.c", "-L#{lib}", "-lprelude", "-o", "test"
     system "./test"
 
-    (testpath/"test.py").write <<~C
+    (testpath/"test.py").write <<~PYTHON
       import prelude
       idmef = prelude.IDMEF()
       idmef.set("alert.classification.text", "Hello world!")
       print(idmef)
-    C
+    PYTHON
     assert_match(/classification:\s*text: Hello world!/, shell_output("#{python3} test.py"))
   end
 end

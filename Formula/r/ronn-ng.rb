@@ -35,12 +35,12 @@ class RonnNg < Formula
   end
 
   test do
-    (testpath"test.ronn").write <<~EOS
+    (testpath"test.ronn").write <<~MARKDOWN
       helloworld
       ==========
 
       Hello, world!
-    EOS
+    MARKDOWN
 
     assert_match "Hello, world", shell_output("#{bin}ronn --roff --pipe test.ronn")
   end

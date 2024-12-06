@@ -67,10 +67,10 @@ class Dpp < Formula
   end
 
   test do
-    (testpath"c.h").write <<~EOS
+    (testpath"c.h").write <<~C
       #define FOO_ID(x) (x*3)
       int twice(int i);
-    EOS
+    C
 
     (testpath"c.c").write <<~C
       int twice(int i) { return i * 2; }

@@ -21,19 +21,19 @@ class NetsurfBuildsystem < Formula
   test do
     (testpath/"src").mkpath
 
-    (testpath/"Makefile").write <<~EOS
+    (testpath/"Makefile").write <<~MAKE
       COMPONENT := hello
       COMPONENT_VERSION := 0.1.0
       COMPONENT_TYPE ?= binary
       include $(NSSHARED)/makefiles/Makefile.tools
       include $(NSBUILD)/Makefile.top
       INSTALL_ITEMS := $(INSTALL_ITEMS) /bin:$(BUILDDIR)/$(COMPONENT)
-    EOS
+    MAKE
 
-    (testpath/"src/Makefile").write <<~EOS
+    (testpath/"src/Makefile").write <<~MAKE
       DIR_SOURCES := main.c
       include $(NSBUILD)/Makefile.subdir
-    EOS
+    MAKE
 
     (testpath/"src/main.c").write <<~C
       #include <stdio.h>

@@ -70,14 +70,14 @@ class Make < Formula
   end
 
   test do
-    (testpath/"Makefile").write <<~EOS
+    (testpath/"Makefile").write <<~MAKE
       default:
-      \t@echo Homebrew
-    EOS
+      	@echo Homebrew
+    MAKE
 
     if OS.mac?
-      assert_equal "Homebrew\n", shell_output("#{bin}/gmake")
-      assert_equal "Homebrew\n", shell_output("#{opt_libexec}/gnubin/make")
+      assert_equal "Homebrew\n", shell_output(bin/"gmake")
+      assert_equal "Homebrew\n", shell_output(libexec/"gnubin/make")
     else
       assert_equal "Homebrew\n", shell_output(bin/"make")
     end

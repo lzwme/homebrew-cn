@@ -1,20 +1,18 @@
 class BoreCli < Formula
   desc "Modern, simple TCP tunnel in Rust that exposes local ports to a remote server"
   homepage "https:github.comekzhangbore"
-  url "https:github.comekzhangborearchiverefstagsv0.5.1.tar.gz"
-  sha256 "8da3d83647f7f1159553e66d28a94c944ffc55f44962340d3f8046fda1528533"
+  url "https:github.comekzhangborearchiverefstagsv0.5.2.tar.gz"
+  sha256 "cf821106ed428314d825ebe2d09f1842f979eac7acbf0976ac9cd01853d65163"
   license "MIT"
   head "https:github.comekzhangbore.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7448f06ca26474a1ff796dd270d1f364a5eab6a9d7ff70fed44388112c2cb3e2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "920e27d242a6dc0046cc662efc7068f2ae2fcc69c4dbc1540649b62a3ddd05c9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0aa561f03bba9d8b9b130839de74f1eb296e878d008a81b9e458ca38b3ed24f6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a754b67136235aba2145c621ea7f909a59590ca1105b8d73c00e90d6b19ab0b3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ca5eb6ca68f25774ba941f9fad86e2528c81a4f84f88ccd0adb00f70ca886ddc"
-    sha256 cellar: :any_skip_relocation, ventura:        "224c80b12426f9abbc8e8eb321d57d31975619097e21f9ad63d3f857bf783579"
-    sha256 cellar: :any_skip_relocation, monterey:       "2439254d8e7023678061ea97440b6b05227d2bc7383a1e017eb81c9960e68b9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b41e13809ef0fbc798879444f351d5c15122060706306448db6ad1a1635ca47"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d465f61200bf68616f4af90759353837da2b25ea2ddfad5515ff0720b96eb45d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c619d3462869a1fc46282a7d529dc68aa304a6e53e88a52135c682bc86ef4b14"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4d13631a08f76043f5f6bdca2fed25dbefabcb39dcb157b2c5d72200e5761dcb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2ffe3208657a91339bf71743df476ab60188336afe6cab80f18c296c5c0a985a"
+    sha256 cellar: :any_skip_relocation, ventura:       "6e29b8b5a51458d8c9559bc7ffd8f6cd5433b222ec06d374a9584af7a81f9d38"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0344bdd72eb8d0b6d36d734feedacddc5c3c1af9f30e7fd1389d8f5bc7732bcc"
   end
 
   depends_on "rust" => :build

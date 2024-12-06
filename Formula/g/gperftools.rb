@@ -51,7 +51,7 @@ class Gperftools < Formula
   end
 
   test do
-    (testpath"test.c").write <<~CC
+    (testpath"test.c").write <<~C
       #include <assert.h>
       #include <gperftoolstcmalloc.h>
 
@@ -64,7 +64,7 @@ class Gperftools < Formula
 
         return 0;
       }
-    CC
+    C
     system ENV.cc, "test.c", "-L#{lib}", "-ltcmalloc", "-o", "test"
     system ".test"
 

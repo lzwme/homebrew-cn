@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https:semgrep.dev"
   url "https:github.comsemgrepsemgrep.git",
-      tag:      "v1.97.0",
-      revision: "f6cf57283726575a7946256c85358ff7445f79e2"
+      tag:      "v1.99.0",
+      revision: "2bbd0a55b3655b26991c936b92e0c0f6d6f4fa94"
   license "LGPL-2.1-only"
   head "https:github.comsemgrepsemgrep.git", branch: "develop"
 
@@ -15,12 +15,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "eb77f5b071631fad638dae5098f6411f8d6bb0d681fa3fb753e5d5bc4f606e96"
-    sha256 cellar: :any,                 arm64_sonoma:  "e698545c7aef9288ea9a5fbd319eb9bafc345b20dd76b22ea2755e3e1ebac2a5"
-    sha256 cellar: :any,                 arm64_ventura: "e3616cc922fa6a98ec6468e412951b78388676b86b32fa8546826f5dca0324e3"
-    sha256 cellar: :any,                 sonoma:        "1f9b0dedeffbdaa6ee646e152ceaaa1e960a7b610e445de20837db73cf9eae36"
-    sha256 cellar: :any,                 ventura:       "343fd29ea7c8317cbc78a6b4314cbe822ac9dd96a9811aff1490f6f8022af285"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ce9be3f68eff5da462b36fbb823cf686f7f7920e4cf3ee6e0c2e3d79ca1d79c"
+    sha256 cellar: :any,                 arm64_sequoia: "17e3debdd3966d54f5aaf000a71463ffe19e66e19a9fd541995eb19776c3859e"
+    sha256 cellar: :any,                 arm64_sonoma:  "8bd823a0511edd39dcffc95083b53cbc7dfeb78a2289c533c1fb4af152f30fa3"
+    sha256 cellar: :any,                 arm64_ventura: "46abc952db999dd68b015a762871744446e6c7a4dc7d4bb6cc9a58419b5d514e"
+    sha256 cellar: :any,                 sonoma:        "3a8d6b976135a1702a0647760f54564953a78c2181a2173f40a243f1e5ca1f48"
+    sha256 cellar: :any,                 ventura:       "978f2be6c7a59d3fe1c2eca980e8c59efe586ad8aa40988238667cce97e9cadc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f023d627b656922ea5758a0324ccc16f55b09d9969b498ea83950021a9dbd157"
   end
 
   depends_on "autoconf" => :build
@@ -220,8 +220,8 @@ class Semgrep < Formula
   end
 
   resource "rpds-py" do
-    url "https:files.pythonhosted.orgpackages2380afdf96daf9b27d61483ef05b38f282121db0e38f5fd4e89f40f5c86c2a4frpds_py-0.21.0.tar.gz"
-    sha256 "ed6378c9d66d0de903763e7706383d60c33829581f0adff47b6535f1802fa6db"
+    url "https:files.pythonhosted.orgpackages0180cce854d0921ff2f0a9fa831ba3ad3c65cee3a46711addf39a2af52df2cfdrpds_py-0.22.3.tar.gz"
+    sha256 "e32fee8ab45d3c2db6da19a5323bc3362237c8b653c70194414b892fd06a080d"
   end
 
   resource "ruamel-yaml" do
@@ -230,8 +230,8 @@ class Semgrep < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesc8db722a42ffdc226e950c4757b3da7b56ff5c090bb265dccd707f7b8a3c6feesetuptools-75.5.0.tar.gz"
-    sha256 "5c4ccb41111392671f02bb5f8436dfc5a9a7185e80500531b133f5775c4163ef"
+    url "https:files.pythonhosted.orgpackages4354292f26c208734e9a7f067aea4a7e282c080750c4546559b58e2e45413ca0setuptools-75.6.0.tar.gz"
+    sha256 "8199222558df7c86216af4f84c30e9b34a61d8ba19366cc914424cdbd28252f6"
   end
 
   resource "tomli" do
@@ -255,8 +255,8 @@ class Semgrep < Formula
   end
 
   resource "wrapt" do
-    url "https:files.pythonhosted.orgpackages954c063a912e20bcef7124e0df97282a8af3ff3e4b603ce84c481d6d7346be0awrapt-1.16.0.tar.gz"
-    sha256 "5f370f952971e7d17c7d1ead40e49f32345a7f7a5373571ef44d800d06b1899d"
+    url "https:files.pythonhosted.orgpackages24a1fc03dca9b0432725c2e8cdbf91a349d2194cf03d8523c124faebe581de09wrapt-1.17.0.tar.gz"
+    sha256 "16187aa2317c731170a88ef35e8937ae0f533c402872c1ee5e6d079fcf320801"
   end
 
   resource "zipp" do

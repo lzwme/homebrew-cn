@@ -1,13 +1,12 @@
 class Six < Formula
   desc "Python 2 and 3 compatibility utilities"
   homepage "https:github.combenjaminpsix"
-  url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
-  sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+  url "https:files.pythonhosted.orgpackages94e7b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2six-1.17.0.tar.gz"
+  sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   license "MIT"
-  revision 5
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "003522792728cc579ff239d1b4b0373c39bcaad66e7b2960ecd38861f5dbf2df"
+    sha256 cellar: :any_skip_relocation, all: "c7985c480809b773f5c7b28d3eac082ad3bcc69c04e2ac100810901b0a6e410b"
   end
 
   depends_on "python@3.12" => [:build, :test]

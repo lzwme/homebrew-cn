@@ -1,8 +1,8 @@
 class Emqx < Formula
   desc "MQTT broker for IoT"
   homepage "https:www.emqx.io"
-  url "https:github.comemqxemqxarchiverefstagsv5.8.2.tar.gz"
-  sha256 "70e008856836c437c82f4123cf3c353d91dfd64b66ef27bba7924fe6ecec5c45"
+  url "https:github.comemqxemqxarchiverefstagsv5.8.3.tar.gz"
+  sha256 "4f7ec07d4b14c6f5538b41550992136d87fd8849b41b11316efe4ccb02ebd404"
   license "Apache-2.0"
   head "https:github.comemqxemqx.git", branch: "master"
 
@@ -15,12 +15,12 @@ class Emqx < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f0f5534af44d92db903230fc02dd3ec3ec190417c4f3d063ff038ae20291a412"
-    sha256 cellar: :any,                 arm64_sonoma:  "72b0c2453957e3865d4e251bb1622a994a53e9a017be6395598c95aa588d9ff3"
-    sha256 cellar: :any,                 arm64_ventura: "13be08bbbd359884186010f505817cf30fda49bfb809f57979e4136b7a3e600d"
-    sha256 cellar: :any,                 sonoma:        "5743534ae79346a53bb7d9fe9f70e17edc0b9c1c4240de6d36d797d743dc920f"
-    sha256 cellar: :any,                 ventura:       "8f6d76aba2c0116f1dbb2cafdc2d3474e6958e84b35637c1d5d754db7734f75a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fed0430de39d50c5c60ef4d38b5d8646095b03775e6fa48d676d34623b66ca22"
+    sha256 cellar: :any,                 arm64_sequoia: "de7ac12bd6862280840b30c461ced61be0347b70eeff865adff1ec81f53d91de"
+    sha256 cellar: :any,                 arm64_sonoma:  "1dc23c7e867eaf2abd7762e34bccc5591a6dacf521cd225bddcb920bcf3bef9a"
+    sha256 cellar: :any,                 arm64_ventura: "73699c96479d6d9ebe6e880381bf84c2fb68008f714c4ec86ce107796fe8567c"
+    sha256 cellar: :any,                 sonoma:        "702618191a78bec821b3943b966e336dc8bbf80452a0c473c035eeba153cddbd"
+    sha256 cellar: :any,                 ventura:       "7b654beed37bf7a0c66b03bcfe934527e2d98d1d812bd71b29717b3e34ae8377"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2dcb61a2b0b9d5ac1c10c8b00c20ae142359edfb4de629e0d61f3ea324bc32f0"
   end
 
   depends_on "autoconf"  => :build

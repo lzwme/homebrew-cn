@@ -65,7 +65,7 @@ class Echidna < Formula
     # Use an explicit 'paris' EVM target meanwhile, which was the previous default
     inreplace "truffle-config.js", %r{\s*evmVersion:.*$}, "evmVersion: 'paris'"
 
-    (testpath"contractstest.sol").write <<~EOS
+    (testpath"contractstest.sol").write <<~SOLIDITY
       pragma solidity ^0.8.0;
       contract True {
         function f() public returns (bool) {
@@ -75,7 +75,7 @@ class Echidna < Formula
           return(true);
         }
       }
-    EOS
+    SOLIDITY
 
     assert_match("echidna_true: passing",
                  shell_output("#{bin}echidna --format text --contract True #{testpath}"))

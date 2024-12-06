@@ -13,7 +13,7 @@ class GoogleJavaFormat < Formula
 
   depends_on "openjdk"
 
-  uses_from_macos "python"
+  uses_from_macos "python", since: :catalina
 
   resource "google-java-format-diff" do
     url "https:raw.githubusercontent.comgooglegoogle-java-formatv1.25.0scriptsgoogle-java-format-diff.py"
@@ -34,27 +34,30 @@ class GoogleJavaFormat < Formula
   end
 
   test do
-    (testpath"foo.java").write "public class Foo{\n}\n"
+    (testpath"foo.java").write <<~JAVA
+      public class Foo{
+      }
+    JAVA
 
-    assert_match "public class Foo {}", shell_output("#{bin}google-java-format foo.java")
-
-    (testpath"bar.java").write <<~BAR
+    (testpath"bar.java").write <<~JAVA
       class Bar{
         int  x;
       }
-    BAR
+    JAVA
 
-    patch = <<~PATCH
+    patch = <<~DIFF
       --- abar.java
       +++ bbar.java
       @@ -1,0 +2 @@ class Bar{
       +  int x  ;
-    PATCH
-    `echo '#{patch}' | #{bin}google-java-format-diff -p1 -i`
-    assert_equal <<~BAR, File.read(testpath"bar.java")
+    DIFF
+
+    assert_match "public class Foo {}", shell_output("#{bin}google-java-format foo.java")
+    assert_empty pipe_output("#{bin}google-java-format-diff -p1 -i", patch)
+    assert_equal <<~JAVA, (testpath"bar.java").read
       class Bar{
         int x;
       }
-    BAR
+    JAVA
   end
 end

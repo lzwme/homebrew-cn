@@ -3,18 +3,17 @@ class Molecule < Formula
 
   desc "Automated testing for Ansible roles"
   homepage "https://molecule.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/dc/72/1c30d07b90b56c0521abaf999e14daf75ae493405d3ee91171fed15b75ae/molecule-24.9.0.tar.gz"
-  sha256 "8548eda13c31a1ea41ba0786b29dde466cfb812617c25792151335b17a410f63"
+  url "https://files.pythonhosted.org/packages/57/bc/a6dcfca6e4cae04fdb4fc385bda0bc637a338b6d72dea79ba93eaa68e1d3/molecule-24.12.0.tar.gz"
+  sha256 "7243ff58e0b8159aa2cf465ba9605d657f1d614617264307bef5b32518467afe"
   license "MIT"
-  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f7638e21a7418f6592a7e789d5c55ef710f577e22a97fcbfebe089dd82042ee1"
-    sha256 cellar: :any,                 arm64_sonoma:  "1ca3e0eec3123510736fa5838a6aabef6df8de4c34398e0effeffdb92032d712"
-    sha256 cellar: :any,                 arm64_ventura: "dac7b86c9f3792df17de08a27f7f2bd4b50d1c87307fd2534d2ae51176aefd71"
-    sha256 cellar: :any,                 sonoma:        "5ff6c48991de69e81f8b84ec651ffb595fee8e19cfefcccddcce1a2267427066"
-    sha256 cellar: :any,                 ventura:       "4c752b5484102f1466cc6d614f07bf42066864d4ff3d3b2003f35ec509648a7a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7c6a3211a05b46f2d61e3100d48a3377fef6c2c0d6f37b48c4c0f51aa6d6ed2"
+    sha256 cellar: :any,                 arm64_sequoia: "9806ce0d6fc542898249c55e203fd39a03a61d70816a6e2dac04429c1d05092d"
+    sha256 cellar: :any,                 arm64_sonoma:  "42112fd61abcc0e59538ba52ccf777a7ee73333a21c11e04b62197b6c13b60a9"
+    sha256 cellar: :any,                 arm64_ventura: "902b556e09e50bc27fa9ed7f1c0ffec84dea42ac75641d8a09623f684a09eeed"
+    sha256 cellar: :any,                 sonoma:        "4f26feff60895f759951874fb7b8bc7423348aa80f538b0bb8a6370d34948e1d"
+    sha256 cellar: :any,                 ventura:       "72cdf1bc59a0e566617aaaab83934deec3cd3062eabd305e2497c473e9138d9e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d248d1793a1d65924c850a9e397b649daf563d2999e0ab637c661eb14ccd6203"
   end
 
   depends_on "rust" => :build
@@ -171,8 +170,8 @@ class Molecule < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/11/e8/9316e3d6edd0530ac284cee5c7ab1cd00acf020b68e08c051c91580d893e/rpds_py-0.22.1.tar.gz"
-    sha256 "157a023bded0618a1eea54979fe2e0f9309e9ddc818ef4b8fc3b884ff38fedd5"
+    url "https://files.pythonhosted.org/packages/01/80/cce854d0921ff2f0a9fa831ba3ad3c65cee3a46711addf39a2af52df2cfd/rpds_py-0.22.3.tar.gz"
+    sha256 "e32fee8ab45d3c2db6da19a5323bc3362237c8b653c70194414b892fd06a080d"
   end
 
   resource "selinux" do
@@ -181,8 +180,8 @@ class Molecule < Formula
   end
 
   resource "six" do
-    url "https://files.pythonhosted.org/packages/71/39/171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85e/six-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+    url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   resource "subprocess-tee" do

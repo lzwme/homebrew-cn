@@ -35,10 +35,10 @@ class Imake < Formula
 
     # imake runtime is broken when used with clang's cpp
     cpp_program = Formula["tradcpp"].opt_bin/"tradcpp"
-    (buildpath/"imakemdep.h").append_lines <<~EOS
+    (buildpath/"imakemdep.h").append_lines <<~C
       #define DEFAULT_CPP "#{cpp_program}"
       #undef USE_CC_E"
-    EOS
+    C
 
     inreplace "imake.man", /__cpp__/, cpp_program
 

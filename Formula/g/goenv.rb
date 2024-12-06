@@ -1,8 +1,8 @@
 class Goenv < Formula
   desc "Go version management"
   homepage "https:github.comgo-nvgoenv"
-  url "https:github.comgo-nvgoenvarchiverefstags2.2.9.tar.gz"
-  sha256 "e49acea81fd6921770911e680f726ef3a167ad708402257ae00c74aba919375c"
+  url "https:github.comgo-nvgoenvarchiverefstags2.2.10.tar.gz"
+  sha256 "94ede57870b7ff1c4f3fd1904ced39705f6b9e0859cf3f0dfc9abe25cd01eb54"
   license "MIT"
   version_scheme 1
   head "https:github.comgo-nvgoenv.git", branch: "master"
@@ -13,12 +13,12 @@ class Goenv < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75420fab3805c965dc5d9966709ec6186bdfc91171da3e8368b48134f60bd075"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75420fab3805c965dc5d9966709ec6186bdfc91171da3e8368b48134f60bd075"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "75420fab3805c965dc5d9966709ec6186bdfc91171da3e8368b48134f60bd075"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5e9fcb6dca6fa12757c721cf5e0037e123a4db6b4992b90519dfc249ef3126da"
-    sha256 cellar: :any_skip_relocation, ventura:       "5e9fcb6dca6fa12757c721cf5e0037e123a4db6b4992b90519dfc249ef3126da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75420fab3805c965dc5d9966709ec6186bdfc91171da3e8368b48134f60bd075"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fdb2ffa0628cc8039cac5aed017dbe57a8c59477bca13cf7d30cc5d1db75a0f6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fdb2ffa0628cc8039cac5aed017dbe57a8c59477bca13cf7d30cc5d1db75a0f6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fdb2ffa0628cc8039cac5aed017dbe57a8c59477bca13cf7d30cc5d1db75a0f6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1b9ab1549bbcc98e4dd3581c3685096405a07e294063ecb293c1ed71ce24a8f6"
+    sha256 cellar: :any_skip_relocation, ventura:       "1b9ab1549bbcc98e4dd3581c3685096405a07e294063ecb293c1ed71ce24a8f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdb2ffa0628cc8039cac5aed017dbe57a8c59477bca13cf7d30cc5d1db75a0f6"
   end
 
   def install
