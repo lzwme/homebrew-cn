@@ -2,7 +2,7 @@ class Brpc < Formula
   desc "Better RPC framework"
   homepage "https:brpc.apache.org"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https:github.comapachebrpc.git", branch: "master"
 
   stable do
@@ -17,12 +17,12 @@ class Brpc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0614bc7c01990f3c017e153e400abaa9f532180f7634556280cf3d2f5d361759"
-    sha256 cellar: :any,                 arm64_sonoma:  "39d8ba07f4e97723f43cbdc7845f9652d93b6cd111d00658cfa22ce368299afc"
-    sha256 cellar: :any,                 arm64_ventura: "1c3f90e730c2e661f0509ae8eb9904f4aaeef961bb4e2addc6a3841047e934ba"
-    sha256 cellar: :any,                 sonoma:        "01eb2c6c851af152869e83ff7998287462e0904faf32d1b5684a7632416d7689"
-    sha256 cellar: :any,                 ventura:       "ae6a60d455ebde6df38d56dc7099df9d8aa91e11756c4ed1151940d2a00092d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2364cda05e6e1a642e4c6e00d66abb85a112b6cf45b28602aa4f7e43a26cb67f"
+    sha256 cellar: :any,                 arm64_sequoia: "93c8a376a77fd67cbc1d81e86122a654ffdc5557ccb3cedd7a1b7794e66cfd2c"
+    sha256 cellar: :any,                 arm64_sonoma:  "6336199b03157b0815e16d5746a8b38cdd1b26315620d1248703e9f47644513e"
+    sha256 cellar: :any,                 arm64_ventura: "ebe3932aa02fc721345f5efd52cfc75bab914bf7d32bb5de41ef26ee3d048dcc"
+    sha256 cellar: :any,                 sonoma:        "f91d3bcacce553c9267fcc023073aba9e88e96d9bfc615507693590e2bca3685"
+    sha256 cellar: :any,                 ventura:       "f4e25d9e0517ede51044cb4c49a347f50f9122421d70549b764b9451e930f00a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0e5b2f0c9c13d310ee082a88fbb870a7a2f9b5bb54fca0cfc3259ae77368744"
   end
 
   depends_on "cmake" => :build

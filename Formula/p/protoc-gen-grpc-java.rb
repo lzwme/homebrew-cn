@@ -4,14 +4,15 @@ class ProtocGenGrpcJava < Formula
   url "https:github.comgrpcgrpc-javaarchiverefstagsv1.68.2.tar.gz"
   sha256 "dc1ad2272c1442075c59116ec468a7227d0612350c44401237facd35aab15732"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "341faf5bfb58c9b66d8125f13f4ba2df0c04f5c2399182a58d4dc22580aed63b"
-    sha256 cellar: :any,                 arm64_sonoma:  "3085a73cf17253d55994083f536b81d76c9a4e3a3e95078c6fb26688567f41f7"
-    sha256 cellar: :any,                 arm64_ventura: "c7901410547f1d7fed00e88c3dcb2c8cee89e2a572f19cacf8ff85ba6e3abfe7"
-    sha256 cellar: :any,                 sonoma:        "3024ae1dca662042d54cfc017a7def5ee34393dbf675f78bf5a3dbf7193d4801"
-    sha256 cellar: :any,                 ventura:       "51658d35fbb323d2cfacea2cc657c4325b3bab0fec35802e65ecdda8dbf21016"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12b17544fb60d27a9b5bca4cbdebf6ef0df3209a7ad50a8356d16f1b82898d6d"
+    sha256 cellar: :any,                 arm64_sequoia: "f9bd029369494555fbac2e0ceb782c8e9ee8e3c60aef5d764f8e871e47e0abbc"
+    sha256 cellar: :any,                 arm64_sonoma:  "8fae0ab13517f9db6c63e3edac8d26be6283528ebe49df8623488a79b665e044"
+    sha256 cellar: :any,                 arm64_ventura: "65f3a83b4bb88f709b140af84ee91dac2935ff26a9965c2441d07fcd80db471d"
+    sha256 cellar: :any,                 sonoma:        "fe055e58371d129edd9a003955cbf2608346a2f3defbc64bfa7bf85432e9641f"
+    sha256 cellar: :any,                 ventura:       "3a1ebe5574fce77911f9b1f9a007e013bafdbb7e81be2a982a79c60002112be6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8ced8afd60cdd73d9227cd6ad8d5bfb2eccb28cf1825f857078fe647e37df17"
   end
 
   depends_on "openjdk@21" => :build # due to Gradle 8.5

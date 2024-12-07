@@ -8,6 +8,11 @@ class Bilix < Formula
   license "Apache-2.0"
   revision 1
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "3c1e5cde851eb27c85abb5c41bed3edfd4d45f68adf9661621e6c3a00ceb2061"
     sha256 cellar: :any,                 arm64_sonoma:  "49a684a00f27ec7f6ce57a768886cf1ee731d6fc75403e7341248ec02e640511"

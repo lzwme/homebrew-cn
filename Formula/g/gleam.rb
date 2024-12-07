@@ -2,7 +2,7 @@ class Gleam < Formula
   desc "Statically typed language for the Erlang VM"
   homepage "https:gleam.run"
   url "https:github.comgleam-langgleamarchiverefstagsv1.6.3.tar.gz"
-  sha256 "2d73320ebe7ea7154ca63f08f70b19de8e283bd198b5ce58fae19c01187e65d6"
+  sha256 "533498a9915439b2ca61570f453b2079874378e0ae0a890a43fc1f9b3c587197"
   license "Apache-2.0"
   head "https:github.comgleam-langgleam.git", branch: "main"
 
@@ -12,12 +12,13 @@ class Gleam < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29aface473ee96ccb4a9c712134f863978ff1f22bca4b9d86a5a40ca8f761a10"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d5df8619f337ce4997aac1bfc7f5996d77fe81360907015448c95f4d69a2e6c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "91b42381d1a44e337dfa25597bbdf94766a3e58bfc54ec64930603964d8b3543"
-    sha256 cellar: :any_skip_relocation, sonoma:        "776e9d7aac46cd581801239b6818bd1fd2468ea056c9a1e4607677f7f82d6836"
-    sha256 cellar: :any_skip_relocation, ventura:       "64fbf7a3b89561fb503f65027cd5fcfa9f8d4003fbc09c9763c1df8e2e3f689b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd6e6dda3a2d8209aa7d1b15f10efde65c41f9b1b7b5b358f83b5da926d38099"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e493e40cf5c7fac5155a69266f3e35d3558d2b474aeb82fb7407fb8bdf4ce55b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7788c8df239ed23fe32f761cde94063d4ca849619459d4bfbc8e8179708e3983"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "796d230b4146d703a3adf3ebb724fbfec75680f83acd2ecce3c2fcdb1e53427a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6ec67deafa67f1aa4a83431be9cb25f587b935cdd464bb8f37903406a195ecb7"
+    sha256 cellar: :any_skip_relocation, ventura:       "cecf559db6fb852ac4f488d219cdd2bd248e4388d04c69d4a4e073d73beb805b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ba28ba537f4a339338f492d6b6867040742bfa12bb5e55dc4d796b4ddef2945"
   end
 
   depends_on "pkgconf" => :build

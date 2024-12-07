@@ -1,18 +1,18 @@
 class Jql < Formula
   desc "JSON query language CLI tool"
   homepage "https:github.comyamafaktoryjql"
-  url "https:github.comyamafaktoryjqlarchiverefstagsjql-v8.0.1.tar.gz"
-  sha256 "6c1a52d39dc0fcbf183b34f4e4d404c9ccfe6d6180ef45acc82c3746690f1ce6"
+  url "https:github.comyamafaktoryjqlarchiverefstagsjql-v8.0.2.tar.gz"
+  sha256 "3c591dc7c1f2459d581f3373f0aa81593dcc2596c88078dd851f2f84410dc054"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comyamafaktoryjql.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8ff39d736b1bbb5975c56f6a378d73ace0f32ac0a2d3880597cfe8aefbd1791"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb11fcac45f91837ad9cd9a322df80d523447553a39772491bdf9b1b8766b688"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cda7dd1546ebb128d0283bfd3fdc05e16226f3b11527cc90f9d521a515710f4a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9cfc99841e4ea273bd2cf4278cd10e0486b9b7df440a580ad78c89ef56e67e6b"
-    sha256 cellar: :any_skip_relocation, ventura:       "70b6fa6bbb9bd97f0aee96d98795e833d832276bbd0a84a61b5e47fda874784f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ace2db77a87b479137a165fb039461bf8b6b069c09548fa4fa8a95c83fb5fda"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e1c986b912eebf7ee54e20b723d23d7232b8ef583b16da4743781ce8fbbb7f3f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c932e46d8b95e80634e12eb24727ff0452f569a9e5095a336e18acf69e24c520"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2b716e95d4dcd3b2e979e2e82b52b1397a5451e008ba156defccf2e4368bc956"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6eafbeb00df2b5c49b0a150c0dd8314c926e7d2861ac514b8239ad376f00882b"
+    sha256 cellar: :any_skip_relocation, ventura:       "875d17b55bb8a148ca2d1d317a7b225252c8fa2d956adf85ec8df6f96da86205"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47fa8022b0edccedb11ee0a55857b2c0e3690410dd78b0f5744446889ecb0c47"
   end
 
   depends_on "rust" => :build

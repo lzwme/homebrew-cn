@@ -1,8 +1,8 @@
 class Calceph < Formula
   desc "C library to access the binary planetary ephemeris files"
   homepage "https://www.imcce.fr/inpop/calceph"
-  url "https://www.imcce.fr/content/medias/recherche/equipes/asd/calceph/calceph-4.0.1.tar.gz"
-  sha256 "af120397ab185fc77a60e1656a433a12b7fc17d501961463079980c837f9e73e"
+  url "https://www.imcce.fr/content/medias/recherche/equipes/asd/calceph/calceph-4.0.3.tar.gz"
+  sha256 "91d2cc58ecaeab31c480cf21cd7f856bf6532b19e04a22ace4260d07d6813d44"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Calceph < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "86dda990eb2371605d6378b49c8855867160a42d5e9a748a7b86e331c5d099ec"
-    sha256 cellar: :any,                 arm64_sonoma:  "699d33f616c458b193fb12c680aa65b0d060b987e1d5c48cb4d38fb0b7d31874"
-    sha256 cellar: :any,                 arm64_ventura: "d27ebb8de0aebd22c6121a67e569a110d60a2cf4ae86f458d47218883a570963"
-    sha256 cellar: :any,                 sonoma:        "4a2dc1bee8058fd4f55fbf7dc294f809401201eb39ff4cdbf087fc936280c90b"
-    sha256 cellar: :any,                 ventura:       "adafa443652f78b756259092dc4ec747e5801b6d363e065f5a20367fd5adc5b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "266e84d10ee2a143ecbabfc0282d8a1a3f40e5f6e54d45b6bed8a15ea88ef1f5"
+    sha256 cellar: :any,                 arm64_sequoia: "d5b4daaee979d4bcd40b28a55dc19635d17b62d65715f989b6202a075863eb99"
+    sha256 cellar: :any,                 arm64_sonoma:  "5784f2e2a2becf64f005c78357dbd7dc4e852225d12f2be5cc1aa11418f543f3"
+    sha256 cellar: :any,                 arm64_ventura: "9c725901c63e0f630cc168694fa979a40ec8074fabac86ba23b5781d09c73857"
+    sha256 cellar: :any,                 sonoma:        "6f466a59dd8cd7e48fa8c2a20ae5338c237986dc8059b74cbfdfe817d9f8122f"
+    sha256 cellar: :any,                 ventura:       "89be04d4072953afd5ee5c3802aea58dcfdf25b1f0d036f720d9c6561fa2a267"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88783834e6b0a64d64d9c38b2210af0db7259fd6fdd553a455664e07c0f8c7f4"
   end
 
   depends_on "cmake" => :build

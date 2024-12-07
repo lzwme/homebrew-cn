@@ -5511,6 +5511,7 @@ Homebrew-homebrew-core/Formula/r/reminiscence.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ren.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rename.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/renameutils.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/render.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/renovate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/reop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/reorder-python-imports.rb, Homebrew/homebrew-core, 1
@@ -12495,6 +12496,7 @@ Homebrew-homebrew-cask/Casks/n/numi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nutstore.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nvalt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nvidia-geforce-now.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/nvidia-nsight-systems.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nvs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nwjs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nx-studio.rb, Homebrew/homebrew-cask, 0

@@ -1,17 +1,17 @@
 class Colmap < Formula
   desc "Structure-from-Motion and Multi-View Stereo"
   homepage "https:colmap.github.io"
-  url "https:github.comcolmapcolmaparchiverefstags3.11.0.tar.gz"
-  sha256 "8da471b0f5baa3bdd940f1778ffe338738eb47b90b4d03dcd8da6b9810014844"
+  url "https:github.comcolmapcolmaparchiverefstags3.11.1.tar.gz"
+  sha256 "d2c20729ab5b1198e17725b720128f304f4cfae5c0a8c20d75c0e9c5bdee5860"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9d34ec14f9932bfc52bc469a759ccd21531fba6b1262df8c2f1567e85f749f00"
-    sha256 cellar: :any,                 arm64_sonoma:  "2aab52a0ae8b9fc11056abc7aaeb0486f748e49def64fc076124d952b769a3a4"
-    sha256 cellar: :any,                 arm64_ventura: "3ae0841581685adfaac22717aa78ba1ddae8b65fd34a66cc1419bf9fac3269ed"
-    sha256 cellar: :any,                 sonoma:        "08736f3bc9b234940b0ea18c84420193300aefa4c4865987bd31de32f8a48b70"
-    sha256 cellar: :any,                 ventura:       "85a5f70b854ea3deaa7ed41aab83ee28a4e19e2518006549943763e58cbc7147"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6683e33ff087200853478ccce447ee4dee3324bdc9dad23d2f97c2a745768b3c"
+    sha256 cellar: :any,                 arm64_sequoia: "2f2cb0a6caf8b941d3b5b2ca5cd5ddf7719c1306b6f173358857ff3dcd1d4751"
+    sha256 cellar: :any,                 arm64_sonoma:  "7c1b1d29867683878abb83b65de35ddc7f2fb510937fba1860406ee405a93c37"
+    sha256 cellar: :any,                 arm64_ventura: "f04ac6a942e2f8bcc8995f7d3f92e873995b2b8bf51ca49244be068f4f0196d6"
+    sha256 cellar: :any,                 sonoma:        "ddfb633a73a951f3fcc3a62ce20d393d8e195b3b1869fc8edb2b4409a1736297"
+    sha256 cellar: :any,                 ventura:       "9386bbb3ed794f57de94737b9acc2014763119cde5e8595841219db32478a5de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea186d48d37c6433cde7bb3ffd31418bf1bb8f49ffc66825575c16b9d2c19785"
   end
 
   depends_on "cmake" => :build
@@ -41,12 +41,6 @@ class Colmap < Formula
 
   on_linux do
     depends_on "mesa"
-  end
-
-  # patch to build against system PoseLib, upstream pr ref, https:github.comcolmapcolmappull2971
-  patch do
-    url "https:github.comcolmapcolmapcommita2c44a012742b37ce2ddd163942d3b625cf301c0.patch?full_index=1"
-    sha256 "8960a6715ef301108d583646944202d898a043c6fb1f7d09489ebf7fbc9a01f7"
   end
 
   def install

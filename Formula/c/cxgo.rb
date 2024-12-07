@@ -37,7 +37,7 @@ class Cxgo < Formula
       }
     C
 
-    expected = <<~C
+    expected = <<~GO
       package main
 
       import (
@@ -49,7 +49,7 @@ class Cxgo < Formula
       \tstdio.Printf("Hello, World!")
       \tos.Exit(0)
       }
-    C
+    GO
 
     system bin"cxgo", "file", testpath"test.c"
     assert_equal expected, (testpath"test.go").read

@@ -1,18 +1,18 @@
 class Minder < Formula
   desc "CLI for interacting with Stacklok's Minder platform"
   homepage "https:mindersec.github.io"
-  url "https:github.commindersecminderarchiverefstagsv0.0.77.tar.gz"
-  sha256 "195952225d495608ed6d67b39df63763eadd58eb45c835515f5a2c61162812f6"
+  url "https:github.commindersecminderarchiverefstagsv0.0.78.tar.gz"
+  sha256 "7ab407ca152848ddd9436ac30e459fcb0e4f40ad496c05a6935f73a8e71fd2a9"
   license "Apache-2.0"
   head "https:github.commindersecminder.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53b3541881f61892d6dff02708a1ec57811799dba3a9bec9810870413089cdca"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53b3541881f61892d6dff02708a1ec57811799dba3a9bec9810870413089cdca"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "53b3541881f61892d6dff02708a1ec57811799dba3a9bec9810870413089cdca"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6780f7f17764b76e39496896b6e0febb856102f8e9b6ecfafb0b5eb48e472de3"
-    sha256 cellar: :any_skip_relocation, ventura:       "0d85fc7007c836c926906f654fa09488de588862e5ed20eea7c4ba6711a72bd8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c671bcc6ea4d392f7437c5e9b77bef714068ba3e396d74afdf62271ca083c813"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16cb304858d9847739b32dde1bea66b6c4d396fddd9b737c1a74271d9338f04b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "16cb304858d9847739b32dde1bea66b6c4d396fddd9b737c1a74271d9338f04b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "16cb304858d9847739b32dde1bea66b6c4d396fddd9b737c1a74271d9338f04b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "62a67fdbe77e2286df6e44c5124c9f12fa76ede35acbd1a07431e6fb50810de6"
+    sha256 cellar: :any_skip_relocation, ventura:       "bd86f515541a6b4ceff6351139973cb45991c74422cb36e9a7cd86a9e951ee8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a22ef1cb21bd444f54692708b60d65c83f7789aff466f309e8b5568cd57f119f"
   end
 
   depends_on "go" => :build

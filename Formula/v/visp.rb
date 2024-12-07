@@ -4,7 +4,7 @@ class Visp < Formula
   url "https:visp-doc.inria.frdownloadreleasesvisp-3.6.0.tar.gz"
   sha256 "eec93f56b89fd7c0d472b019e01c3fe03a09eda47f3903c38dc53a27cbfae532"
   license "GPL-2.0-or-later"
-  revision 7
+  revision 8
 
   livecheck do
     url "https:visp.inria.frdownload"
@@ -12,11 +12,11 @@ class Visp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "f803ba0cceccafeed756ceddf569abedae7e8035a1c3e2e3f4208dd84291e897"
-    sha256 cellar: :any,                 arm64_ventura: "326edaf8be0c16b036fa1a37691d488101c01b734716cf32c4ca2e11e85c6bd8"
-    sha256 cellar: :any,                 sonoma:        "7588d04a92944c2ec98219064e4b38ce764f9ff4b0de305660613d9ee88043e1"
-    sha256 cellar: :any,                 ventura:       "177146dd7f148cd1fcd1d390a531f12967fabad52f70bf421ae53d3cfd1bcf17"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b23569824a99a69a274631130b09edba15eeb2ac6039c1c210aefd46b547b323"
+    sha256 cellar: :any,                 arm64_sonoma:  "af4c89b76780c58e894a873e8d42d4885b567e01d6f86bec09de95c517c3ebfc"
+    sha256 cellar: :any,                 arm64_ventura: "52e8b99511e305944e322a477f839926e09aea706966ed8c293155166059df4b"
+    sha256 cellar: :any,                 sonoma:        "1c55447d8f7aa637697e6a7074d5e5fae90099f02ae447eba53cb7965ab17614"
+    sha256 cellar: :any,                 ventura:       "be848c02ccf208389f5ea1104bfe3a25d33bd713604b7e2ff2f64649bc2a9f50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "006043deaa30823969980eff82a6d1280816da78d5f8e29bee182a1f70acddd6"
   end
 
   depends_on "cmake" => :build
@@ -131,7 +131,8 @@ class Visp < Formula
     system "cmake", "--install", "."
 
     # Make sure software built against visp don't reference opencv's cellar path either
-    inreplace lib"pkgconfigvisp.pc", opencv.prefix.realpath, opencv.opt_prefix
+    inreplace [lib"pkgconfigvisp.pc", lib"cmakevispVISPConfig.cmake", lib"cmakevispVISPModules.cmake"],
+              opencv.prefix.realpath, opencv.opt_prefix
   end
 
   test do

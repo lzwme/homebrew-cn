@@ -3,21 +3,22 @@ class Poetry < Formula
 
   desc "Python package management tool"
   homepage "https:python-poetry.org"
-  url "https:files.pythonhosted.orgpackages2984dbf6db6ecf3cbb2926c05a0b831bb03559c15b700d9836c8afc9022bcedbpoetry-1.8.4.tar.gz"
-  sha256 "5490f8da66d17eecd660e091281f8aaa5554381644540291817c249872c99202"
+  url "https:files.pythonhosted.orgpackages089242ed153d5590484fc39a76003262d8e0f102ed8ce5d86c803b23b8d5cc9dpoetry-1.8.5.tar.gz"
+  sha256 "eb2c88d224f58f36df8f7b36d6c380c07d1001bca28bde620f68fc086e881b70"
   license "MIT"
   head "https:github.compython-poetrypoetry.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91ce26bbdaa5338c7b27303cf80b6a4f78b0e0dc38bd81d7a68e13c03066c2c2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13d287875b8ee1fd1e691e7c69a9afba3805f024959c76f7492a8a3350d6741b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fa43a3370f7c8caf16339200d722410e81528e75e4ffebd71950e3fc78690f6b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "245357cc442e7100c48aee1851307109664f36749609a86d6563771f12bd028f"
-    sha256 cellar: :any_skip_relocation, ventura:       "cad975a6c1253043a0b27dc3265651b4ae361e67737174515ae9984e88aff000"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f977efa979974929e26227085dd8c7851a9bb101907e2b66a0f27147d06025eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98acba9be7f1481da09cbc6f18bd28bbd745be7af9025b303a4cbb8d9f1d73ce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6117a8f802b097c096e4619573b28872cbefb9bf1aa6dc140afa958cad52bbf3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cea3317ba02cd1bd122974f3224d2008c5bb3da1ba847a353ed3b7d0b9e080ea"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fe7ac608ac2c2bc83754143a8b5b69a36a725dfa717fdff856faa2881b51f9c4"
+    sha256 cellar: :any_skip_relocation, ventura:       "3371638c10adabc02d1e09e13f967e016f0b1ba7bcad326be303938a39fb2185"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a4e9ae21c84b5b1353050e93cdfe52ab2ca2498b8d6747e1ee69b867df37b3b"
   end
 
   depends_on "cmake" => :build # for rapidfuzz
+  depends_on "ninja" => :build # for rapidfuzz
   depends_on "certifi"
   depends_on "cffi"
   depends_on "python@3.13"
@@ -34,8 +35,8 @@ class Poetry < Formula
   end
 
   resource "cachecontrol" do
-    url "https:files.pythonhosted.orgpackages0655edea9d90ee57ca54d34707607d15c20f72576b96cb9f3e7fc266cb06b426cachecontrol-0.14.0.tar.gz"
-    sha256 "7db1195b41c81f8274a7bbd97c956f44e8348265a1bc7641c37dfebc39f0c938"
+    url "https:files.pythonhosted.orgpackagesd223db12e0b6b241e33f77f7cce01a06b4cc6f8071728656cc0ea262d2a14dadcachecontrol-0.14.1.tar.gz"
+    sha256 "06ef916a1e4eb7dba9948cdfc9c76e749db2e02104a9a1277e8b642591a0f717"
   end
 
   resource "charset-normalizer" do
@@ -64,8 +65,8 @@ class Poetry < Formula
   end
 
   resource "fastjsonschema" do
-    url "https:files.pythonhosted.orgpackages033f3ad5e7be13b4b8b55f4477141885ab2364f65d5f6ad5f7a9daffd634d066fastjsonschema-2.20.0.tar.gz"
-    sha256 "3d48fc5300ee96f5d116f10fe6f28d938e6008f59a6a025c2649475b87f76a23"
+    url "https:files.pythonhosted.orgpackages8b504b769ce1ac4071a1ef6d86b1a3fb56cdc3a37615e8c5519e1af96cdac366fastjsonschema-2.21.1.tar.gz"
+    sha256 "794d4f0a58f848961ba16af7b9c85a3e88cd360df008c59aac6fc5ae9323b5d4"
   end
 
   resource "filelock" do
@@ -109,8 +110,8 @@ class Poetry < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
-    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
+    url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
+    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
   end
 
   resource "pexpect" do
@@ -119,8 +120,8 @@ class Poetry < Formula
   end
 
   resource "pkginfo" do
-    url "https:files.pythonhosted.orgpackages6fc34f625ca754f4063200216658463a73106bf725dc27a66b84df35ebe7468cpkginfo-1.11.2.tar.gz"
-    sha256 "c6bc916b8298d159e31f2c216e35ee5b86da7da18874f879798d0a1983537c86"
+    url "https:files.pythonhosted.orgpackagesc9a5fa2432da887652e3a0c07661ebe4aabe7f4692936c742da489178acd34depkginfo-1.12.0.tar.gz"
+    sha256 "8ad91a0445a036782b9366ef8b8c2c50291f83a553478ba8580c73d3215700cf"
   end
 
   resource "platformdirs" do
@@ -149,8 +150,8 @@ class Poetry < Formula
   end
 
   resource "rapidfuzz" do
-    url "https:files.pythonhosted.orgpackages8143ce16df67029b8e4f528fd1b3fbe5e9fcfc6fcc16823c66349260dd93750erapidfuzz-3.10.0.tar.gz"
-    sha256 "6b62af27e65bb39276a66533655a2fa3c60a487b03935721c45b7809527979be"
+    url "https:files.pythonhosted.orgpackagese139e3bcb901c2746734cd70151253bf9e61c688d3c415227b08e6fbf7eb5d7frapidfuzz-3.10.1.tar.gz"
+    sha256 "5a15546d847a915b3f42dc79ef9b0c78b998b4e2c53b252e7166284066585979"
   end
 
   resource "requests" do
@@ -179,8 +180,8 @@ class Poetry < Formula
   end
 
   resource "trove-classifiers" do
-    url "https:files.pythonhosted.orgpackages1051be10158183105d970d7bfc81401cf6076c13844a5869c24c72889f4bf658trove_classifiers-2024.10.13.tar.gz"
-    sha256 "b820fc6f9544543afa15e5d9cfc426cde3b20fc2246dff6f019b835731508cef"
+    url "https:files.pythonhosted.orgpackages998592c2667cf221b37648041ce9319427f92fa76cbec634aad844e67e284706trove_classifiers-2024.10.21.16.tar.gz"
+    sha256 "17cbd055d67d5e9d9de63293a8732943fabc21574e4c7b74edf112b4928cf5f3"
   end
 
   resource "urllib3" do
@@ -189,8 +190,8 @@ class Poetry < Formula
   end
 
   resource "virtualenv" do
-    url "https:files.pythonhosted.orgpackages3f40abc5a766da6b0b2457f819feab8e9203cbeae29327bd241359f866a3da9dvirtualenv-20.26.6.tar.gz"
-    sha256 "280aede09a2a5c317e409a00102e7077c6432c5a38f0ef938e643805a7ad2c48"
+    url "https:files.pythonhosted.orgpackagesbf7553316a5a8050069228a2f6d11f32046cfa94fbb6cc3f08703f59b873de2evirtualenv-20.28.0.tar.gz"
+    sha256 "2c9c3262bb8e7b87ea801d715fae4495e6032450c71d2309be9550e7364049aa"
   end
 
   resource "xattr" do

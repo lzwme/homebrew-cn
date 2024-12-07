@@ -9,19 +9,20 @@ class Harlequin < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "14e426a0f2b72b6ba09716c08135471f973bf9f821b4f6842f305a3fb291c394"
-    sha256 cellar: :any,                 arm64_sonoma:  "027127834e8bdfe88707d2d389f35d20b733a76c0f25f102bfb75a1b91a76834"
-    sha256 cellar: :any,                 arm64_ventura: "43eac7d923cf9d8e9e07f48267902848601f50850530689958580eda6fabe902"
-    sha256 cellar: :any,                 sonoma:        "bf59dabcc40c4cd6fa31017b5fb8e4c35bb477f6a29fd09e2b8ba308187b67ef"
-    sha256 cellar: :any,                 ventura:       "1e8395e2404d53835bfc2e77820ab751c0fe9ab0abfb62b0904cd9f66a3fa45b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cd455b499a8104ed9539f9562f6b810411937e36fc415f240cc4c6e3d57bc45"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "006b8e2a1ac594f163fe350e0108acfb84bfb015d0c4a3d7ec0f435f33252563"
+    sha256 cellar: :any,                 arm64_sonoma:  "13bd23951435c5377a0052e7e902d07075ef9c950d85285f35a2d08687c11f00"
+    sha256 cellar: :any,                 arm64_ventura: "f0296db5edbc67c8cf6049ca0cde35d54d81b0a35384700a6b2626e39cb3eabb"
+    sha256 cellar: :any,                 sonoma:        "ec7f03ece93e4ef4f621c88c789b6fab73c5abcf0a5799d35049d2885813b2e0"
+    sha256 cellar: :any,                 ventura:       "14b868795259af4324b0f4eca9035268c07633ee25e6c50f31a300c2a21ce443"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfa3fddc0d92229a5fd60a5ad3f89b8a41c32ff70e1781c6c401fbc64edccfed"
   end
 
   depends_on "cmake" => :build
   depends_on "mysql" => :build # mysql-connector-python
   depends_on "ninja" => :build
   depends_on "apache-arrow"
+  depends_on "libpq" # psycopg
   depends_on "python@3.11"
 
   on_linux do
@@ -51,6 +52,11 @@ class Harlequin < Formula
   resource "harlequin-mysql" do
     url "https:files.pythonhosted.orgpackages80fd410c3a6f6c1d0358359c58a3c36b0ac3519a1da8d0e7f0424f1a00f8bfccharlequin_mysql-0.3.0.tar.gz"
     sha256 "46ef42c5b658568f5340ee53c241cb1333f3e04914807c1f83741e83517878b3"
+  end
+
+  resource "harlequin-postgres" do
+    url "https:files.pythonhosted.orgpackages715f2015e5d09c34234f4a764df6083405be045f99ea9bf196473d68d3338058harlequin_postgres-0.4.0.tar.gz"
+    sha256 "d72f12df3e994edf8f660ef9681fdb2a710f740b6a8d9d88ab206d50193c2050"
   end
 
   resource "jinja2" do
@@ -101,6 +107,21 @@ class Harlequin < Formula
   resource "prompt-toolkit" do
     url "https:files.pythonhosted.orgpackagesfb93180be2342f89f16543ec4eb3f25083b5b84eba5378f68efff05409fb39a9prompt_toolkit-3.0.36.tar.gz"
     sha256 "3e163f254bef5a03b146397d7c1963bd3e2812f0964bb9a24e6ec761fd28db63"
+  end
+
+  resource "psycopg" do
+    url "https:files.pythonhosted.orgpackagesd1ad7ce016ae63e231575df0498d2395d15f005f05e32d3a2d439038e1bd0851psycopg-3.2.3.tar.gz"
+    sha256 "a5764f67c27bec8bfac85764d23c534af2c27b893550377e37ce59c12aac47a2"
+  end
+
+  resource "psycopg-c" do
+    url "https:files.pythonhosted.orgpackages53ba74caf4eab78d95a173e65cb81507a589365aeafb1d9c84f374002b51dc53psycopg_c-3.2.3.tar.gz"
+    sha256 "06ae7db8eaec1a3845960fa7f997f4ccdb1a7a7ab8dc593a680bcc74e1359671"
+  end
+
+  resource "psycopg-pool" do
+    url "https:files.pythonhosted.orgpackages497101d4e589dc5fd1f21368b7d2df183ed0e5bbc160ce291d745142b229797bpsycopg_pool-3.2.4.tar.gz"
+    sha256 "61774b5bbf23e8d22bedc7504707135aaf744679f8ef9b3fe29942920746a6ed"
   end
 
   resource "pyarrow" do
@@ -190,10 +211,13 @@ class Harlequin < Formula
     sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
   end
 
+  patch :p0, :DATA
+
   def install
     venv = virtualenv_install_with_resources without: "mysql-connector-python"
 
     # PyPI sdist is broken (missing at least setup.py)
+    # https:bugs.mysql.combug.php?id=113396
     resource("mysql-connector-python").stage do
       venv.pip_install Pathname.pwd"mysql-connector-python"
     end

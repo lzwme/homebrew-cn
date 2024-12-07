@@ -4,15 +4,15 @@ class Mosh < Formula
   url "https:github.commobile-shellmoshreleasesdownloadmosh-1.4.0mosh-1.4.0.tar.gz"
   sha256 "872e4b134e5df29c8933dff12350785054d2fd2839b5ae6b5587b14db1465ddd"
   license "GPL-3.0-or-later"
-  revision 23
+  revision 24
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "25be0f7effe4bfcdfc04e0d9f3dcb55b7ca7b628446309280f72bd05b0d1b69c"
-    sha256 cellar: :any,                 arm64_sonoma:  "7601add7a4c8c249ff5332773cd12d27edd2b25ce2d384858b64df8300055073"
-    sha256 cellar: :any,                 arm64_ventura: "d410b902c5d169273643669461b26b96bfc17398c8cbc2637efb2ab355656ca0"
-    sha256 cellar: :any,                 sonoma:        "6fd3a2bc50689a0e023f52264165c0cdf42090d556324039e17a07791a2f0849"
-    sha256 cellar: :any,                 ventura:       "d4c526e38fd611c32af724a3c1d8f28d39c0b677045cf6a14f0c508cccaafe2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a77257eded71c0b6b57db07f936dd1679788466112874d78e00ecdfca5483bf"
+    sha256 cellar: :any,                 arm64_sequoia: "0fcdde2bee9297d8a2dc3180068f44cbbfa5e7abc28ac795d614aeb93cc06931"
+    sha256 cellar: :any,                 arm64_sonoma:  "3d0c50647e39a35aa21cd07ac4a886d0fabe4f9b271917380c7925ca5eab66f5"
+    sha256 cellar: :any,                 arm64_ventura: "3c59395a0a6c868b584248d1ef400964e38c8074fb3ea4346bfb07e1caedc225"
+    sha256 cellar: :any,                 sonoma:        "2bc01a5756bfd19f1756c43a9e227a23d895f20f12773dbd83d77d4ee8cff756"
+    sha256 cellar: :any,                 ventura:       "8922da29aa5ebb38d72aeab96180fdae979dbe70d8ecd7f2afd8b0df8b0b7a89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e92a9c6481687386b0dae2e770dd8156ad89b6c965550b6d946145b01bfc697b"
   end
 
   head do

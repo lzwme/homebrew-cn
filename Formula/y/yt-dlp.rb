@@ -3,17 +3,17 @@ class YtDlp < Formula
 
   desc "Feature-rich command-line audiovideo downloader"
   homepage "https:github.comyt-dlpyt-dlp"
-  url "https:files.pythonhosted.orgpackages5e8e8c7d57d9462f9c5afd06c61c70030e0da65cde80d8ba786e85fd95afaf7byt_dlp-2024.12.3.tar.gz"
-  sha256 "35abff51c5762033103f2330ba0a8a1f48c4388a413a2d8cdc9b84642fe8edd4"
+  url "https:files.pythonhosted.orgpackagesc55e0b632b39b4399a4acbf1c421b0aa656fbbb3d6e4eb78af3d0b09182a8a74yt_dlp-2024.12.6.tar.gz"
+  sha256 "743dbe081ea871be3f5ff083e2cd95da866dea773fc70ae6b109838cfbf72ac4"
   license "Unlicense"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca6fc89432f01a09698e69d91dc0cf4a81294bc60b0514bdc0e85d9d31e9f620"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35f7c91570ca779b16edf968ecc627e86d135c8edb7e6abba276fc9070b58eaf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "91162ff4f016a568873a473eee5f0762a23e4c1a403b7d6d7bed5761b942ba00"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d52ed3289c148ce51a1aa6c8dbccdd376e8492d5e8f96cbc8305ead1ceb7cf32"
-    sha256 cellar: :any_skip_relocation, ventura:       "1d0350c6425c7f6dc36e78edc5b566b44f0928d19d40298763102b1b8f1f55cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "783b6df8d2fc6a8d5a8284e1401991d6c66ffb5f984f18c9ab5da8a0fbdf3a24"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6fac24ff7b403863e4c2456d2fa48039719dbda5834975fc7aec5fac1818456"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f30b7d7805a3a3dac70c30be00894ee443d0548f7861abd3aa935ec0064932b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e302ff4eebf83eca600625726cb51b5bcd1243bf190f2a8d646293cd96042ed8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0eed530497887cb4b7f95d452681edef2f0ca7ea63edaf850f88e750c9892de9"
+    sha256 cellar: :any_skip_relocation, ventura:       "1857706ab9dd264e0c9a6e544c2d224bc9ee791cd584c16f1f8fe36da0be4bc4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "013e411946008f16d0abbe17847e92d06df3a7d3fb4c45623c9b9590fe841e8c"
   end
 
   head do

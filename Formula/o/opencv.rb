@@ -4,7 +4,7 @@ class Opencv < Formula
   url "https:github.comopencvopencvarchiverefstags4.10.0.tar.gz"
   sha256 "b2171af5be6b26f7a06b1229948bbb2bdaa74fcf5cd097e0af6378fce50a6eb9"
   license "Apache-2.0"
-  revision 14
+  revision 15
   head "https:github.comopencvopencv.git", branch: "4.x"
 
   livecheck do
@@ -13,11 +13,11 @@ class Opencv < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:  "15ee039ee39c46732bd981dd3c8b8041f94c6935a70859ef34c753306541393c"
-    sha256 arm64_ventura: "73e8f3f29418fa8afb70b7029bb858a0a7f1ddcae7cb94636bfea4ccf30fa6de"
-    sha256 sonoma:        "57059b3122714e51bcab5d262418de9ed31aa3056143bda488af8236d24e0b30"
-    sha256 ventura:       "17cce69218e5bff7812321680bdb4ca65901e89cfefef274f3085ecc13435a01"
-    sha256 x86_64_linux:  "63d76fa129a636dc6b2b0291f51a940f00d8972409358ebf60c515d8a06f7166"
+    sha256 arm64_sonoma:  "a927a9a30c1092c5710f6de2242d15d6902132e453671f5d29ca1b52bc0284d8"
+    sha256 arm64_ventura: "eb5c6ff9ec7205b04546ce4e9eea2e12b751ee37753cfd060e9ed8c84bde348d"
+    sha256 sonoma:        "3adf544c39ab949ef6985306e881ef0f2e5883d1cc16c6bfaa9bb8ea84d51c85"
+    sha256 ventura:       "226c7fa6ef7c4733647d44bc8cf985865259ceaebc34af1a25cfb5a8ab9d3b24"
+    sha256 x86_64_linux:  "46cb56a32f9341b4203be20bb16d0005826688811e34ff1bef92be115f3908b8"
   end
 
   depends_on "cmake" => :build

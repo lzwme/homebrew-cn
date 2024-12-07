@@ -1,18 +1,18 @@
 class Television < Formula
   desc "General purpose fuzzy finder TUI"
   homepage "https:github.comalexpasmantiertelevision"
-  url "https:github.comalexpasmantiertelevisionarchiverefstags0.6.0.tar.gz"
-  sha256 "ce2ebd02b38b82b1d7ee7351f1309a7788101762729aad7b2f12edde7c812ab1"
+  url "https:github.comalexpasmantiertelevisionarchiverefstags0.6.2.tar.gz"
+  sha256 "79ad4464928812de3a6672c1dba100bf327f90fd7900eed2d0c24a9cdae047f8"
   license "MIT"
   head "https:github.comalexpasmantiertelevision.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9b2508201c411536d45623615cc11a763c502a41c1bcdd1880f160731f5c713"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ffa3a5ba9062532337b94416ecad3ba0792b00f6576fe1884a2898a065c5ef16"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d683bc4fcb80930b6867bd11c9b3614e50d1dc014dc6201bfd4267c3682238b1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "941d07f8a4534cb7838ee371f7b3370b14483b968f3833488b5000a0ae41311e"
-    sha256 cellar: :any_skip_relocation, ventura:       "aa4c58b7e26b00628c13a1c7002febfe9f472196c0d9d7bf477dc59be07c0b50"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f22d4912d5bf5ef2578507c8a6e6164185b5c07356916bced9c2d3cb89887fb6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7019c436f26b2fec4c9f3505562cae0838c8bc1614779be62fd5dadf7bedd821"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4020576a465344ee06a71c0862e6510705426e08b3787ea1b39c272b7f1dc83c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cf9d4971adbeb803b35043a8a90214cd9bbfdf48eef18a2374897a3cc3a6d52f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9c0c16af7b2b1a32cc12c798304822cf20a483861acff425f591463e90f57530"
+    sha256 cellar: :any_skip_relocation, ventura:       "a4cdf54927d1a31802084280e2da9389dc469039a8d52555d2bfd6c730597f61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcf70ae0c7d3a536a62745c6dbaaa6dee7ba0774bf16acd0d9397cdb5747ba7f"
   end
 
   depends_on "rust" => :build
@@ -32,7 +32,7 @@ class Television < Formula
       output_log = testpath"output.log"
       pid = spawn bin"tv", [:out, :err] => output_log.to_s
       sleep 2
-      assert_match "Channel", output_log.read
+      assert_match "Preview", output_log.read
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)

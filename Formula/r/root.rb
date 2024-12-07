@@ -200,12 +200,12 @@ class Root < Formula
   end
 
   test do
-    (testpath"test.C").write <<~C
+    (testpath"test.C").write <<~CPP
       #include <iostream>
       void test() {
         std::cout << "Hello, world!" << std::endl;
       }
-    C
+    CPP
 
     # Test ROOT command line mode
     system bin"root", "-b", "-l", "-q", "-e", "gSystem->LoadAllLibraries(); 0"

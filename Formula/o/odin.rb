@@ -2,24 +2,23 @@ class Odin < Formula
   desc "Programming language with focus on simplicity, performance and modern systems"
   homepage "https:odin-lang.org"
   url "https:github.comodin-langOdin.git",
-      tag:      "dev-2024-11",
-      revision: "e6475fec4d2a3e34099b24a7a3bf890c7a3ef8d9"
-  version "2024-11"
+      tag:      "dev-2024-12",
+      revision: "7be00355782f29cfba05c63d6dc80649bbbacd37"
+  version "2024-12"
   license "BSD-3-Clause"
-  revision 1
   head "https:github.comodin-langOdin.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "31e940b62db1b555df91381d21b8c435774f6438239e47e124fcec7004cfc63e"
-    sha256 cellar: :any,                 arm64_sonoma:  "189fe3a399760b5a44c5e42ccb57d07fb6d79d1516051cc6e69bb430b0d72f74"
-    sha256 cellar: :any,                 arm64_ventura: "548a349c0147afa70db136b3a5df3210ae48dbaf3473e5ef9a4bef26f1726dab"
-    sha256 cellar: :any,                 sonoma:        "25f2095090821214a1ec0e8c61d6dd8c0d78ce74cfd6d483aa2a70f6ede4c51c"
-    sha256 cellar: :any,                 ventura:       "ccd82ddf333eb27e715e62857646177129cc9a5a3ff0c9847d70ca8499f07272"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11fc24e935cbf3e3828f9cb55ba45f8cf0a96ee7c1898be962e616474ec580b4"
+    sha256 cellar: :any,                 arm64_sequoia: "a03e89e13f3128a7f4cd180beaf529c9d7a7564e7bd65ef30d9785bee4f6e972"
+    sha256 cellar: :any,                 arm64_sonoma:  "7fb154a50b1c86183de5c71482f1a0660286d0f78c6cdd8903b9cdbfdb210b07"
+    sha256 cellar: :any,                 arm64_ventura: "2afbffc901ac487b37e267bcfa5c2d034b0e765f6adbc0ad0b9a84bc221a408f"
+    sha256 cellar: :any,                 sonoma:        "94184397f5649bba9b4a81981cf4bbcc6248e32daf6401eb9084a46710f94611"
+    sha256 cellar: :any,                 ventura:       "9cc858089b55bca20d5e30bae7f5792acc509d5810f07f0107ab3d1edfb929fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "682b347a974217d32318f4b70d7fe7ef357a61bdcbb5269fc06cd52591f5ff9b"
   end
 
   depends_on "glfw"
-  depends_on "llvm@18"
+  depends_on "llvm"
   depends_on "raylib"
 
   resource "raygui" do
@@ -48,6 +47,12 @@ class Odin < Formula
 
     raylib_installpath = if OS.linux?
       "vendorrayliblinux"
+    else
+      "vendorraylibmacos"
+    end
+
+    raygui_installpath = if OS.linux?
+      "vendorrayliblinux"
     elsif Hardware::CPU.intel?
       "vendorraylibmacos"
     else
@@ -65,7 +70,7 @@ class Odin < Formula
     ln_s Formula["raylib"].lib"libraylib.a", buildpathraylib_installpath"libraylib.a"
     # In order to match the version 500 used in odin
     ln_s Formula["raylib"].libshared_library("libraylib", "5.5.0"),
-      buildpathraylib_installpathshared_library("libraylib", "500")
+      buildpathraylib_installpathshared_library("libraylib", "550")
 
     resource("raygui").stage do
       cp "srcraygui.h", "srcraygui.c"
@@ -74,7 +79,7 @@ class Odin < Formula
       system ENV.cc, "-c", "-o", "raygui.o", "srcraygui.c",
         "-fpic", "-DRAYGUI_IMPLEMENTATION", "-I#{Formula["raylib"].include}"
       system "ar", "-rcs", "libraygui.a", "raygui.o"
-      cp "libraygui.a", buildpathraylib_installpath
+      cp "libraygui.a", buildpathraygui_installpath
 
       # build shared library
       args = [
@@ -91,7 +96,7 @@ class Odin < Formula
 
       args += ["-framework", "OpenGL"] if OS.mac?
       system ENV.cc, *args
-      cp shared_library("libraygui"), buildpathraylib_installpath
+      cp shared_library("libraygui"), buildpathraygui_installpath
     end
 
     # By default the build runs an example program, we don't want to run it during install.

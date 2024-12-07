@@ -2,17 +2,17 @@ class OpensearchDashboards < Formula
   desc "Open source visualization dashboards for OpenSearch"
   homepage "https:opensearch.orgdocsdashboardsindex"
   url "https:github.comopensearch-projectOpenSearch-Dashboards.git",
-      tag:      "2.17.1",
-      revision: "62cc0320399aef63aa09689aaaf000adafbedeef"
+      tag:      "2.18.0",
+      revision: "543420113443b184e313e489215a88090d60e2b5"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b24337e9517973f2ef1166f0dca56475afd6b2b7372bce6911860c2f7b269d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b24337e9517973f2ef1166f0dca56475afd6b2b7372bce6911860c2f7b269d5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6835484c0688aaa0cca06872c36731fbda3c2aa6f6d271c757a7b3b406efdce1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "350574d29611996de361adf885b0664b66da012947e66221a8766b81d4eccf5c"
-    sha256 cellar: :any_skip_relocation, ventura:       "7ded93c7753822b90e1d44f52c9b94e1e4f0ee6d76dca371144ea7b182a85f85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a58d0e8e496629ea0071fc7cbcb38cb23c71c5aca00abdc76fac3dad33f87c3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43d27f18dc92a6ffdb28fe4f0c61c3a36e28c75e9f4c8a366cfad62a506df579"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "43d27f18dc92a6ffdb28fe4f0c61c3a36e28c75e9f4c8a366cfad62a506df579"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "10fe2750d077f7e428b9e916341658cd49184119ef4fe700f45db3157874772c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "27f3459d79e517a890962e0600070cd11fe04f7a529a978a69acc3526bb20837"
+    sha256 cellar: :any_skip_relocation, ventura:       "b989d7b832a389f95ec044c849136d4051dfdc78875cad0298793520aa73a50b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc5d44cfc210ebfeb7777d65981f5c008729bb0d81fde58c83240f9fde62c892"
   end
 
   # Match deprecation date of `node@18`.

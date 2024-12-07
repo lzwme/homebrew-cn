@@ -1,8 +1,8 @@
 class Scotch < Formula
   desc "Package for graph partitioning, graph clustering, and sparse matrix ordering"
   homepage "https://gitlab.inria.fr/scotch/scotch"
-  url "https://gitlab.inria.fr/scotch/scotch/-/archive/v7.0.5/scotch-v7.0.5.tar.bz2"
-  sha256 "c742ed05db8f39c6644f3128c762fc8acd72ed2fce0185d29f7fd30cc672821b"
+  url "https://gitlab.inria.fr/scotch/scotch/-/archive/v7.0.6/scotch-v7.0.6.tar.bz2"
+  sha256 "8168bf3f8025bb27be6dc9e055c4ceb58c09979c1c04a50ca251da021f12dbbe"
   license "CECILL-C"
   head "https://gitlab.inria.fr/scotch/scotch.git", branch: "master"
 
@@ -12,14 +12,12 @@ class Scotch < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "de4538c50a8a18eccfdf930eee033be2533b5072f75553c5814d4e2522e614c6"
-    sha256 cellar: :any,                 arm64_sonoma:   "24e92a586b21cb68b395ea503e6ccd6d163f2ed98157d30345cc0578a621b632"
-    sha256 cellar: :any,                 arm64_ventura:  "6371884c2959baaaa0cdced2f0863dbfb6072732a6dccc2cae04dda024a0a96d"
-    sha256 cellar: :any,                 arm64_monterey: "61dd479a8047d0262333496f06f7ab22327254c17c73ed7c3def2fa5a0d4d8e5"
-    sha256 cellar: :any,                 sonoma:         "12e6d7232a2be03036ebd1eb1664a7d4c659b2482699d4b1e377093645bf11be"
-    sha256 cellar: :any,                 ventura:        "4ab1ff12902e7a764be2134480b1abc02e3136c8f8b5f021b23ff5898865f470"
-    sha256 cellar: :any,                 monterey:       "a2ce349941b5132c00ac6de6585d363bfe1b4ff396a36407b2ce8702f0ca50b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d264a5164e967dbdd12f826b516918c05346e091fe39f768b34de71a977954ed"
+    sha256 cellar: :any,                 arm64_sequoia: "fa74c50a1469fde1b144b987d8aa871c56220e602f8ec10ebe0b3493f1ffeacd"
+    sha256 cellar: :any,                 arm64_sonoma:  "45d597bca844e4713c3909fc1219bbdca26441e8a47b4b6cfeafae565e087828"
+    sha256 cellar: :any,                 arm64_ventura: "68c2d938e7ffef5ab09d03f863f2ab8ee6df0b0dc2d9e82d9689bdfa3eafb1bc"
+    sha256 cellar: :any,                 sonoma:        "1e356a3c6921c1c6fd027ee3b312abef34ed5f330a2cb698f219ebfe07d67ecd"
+    sha256 cellar: :any,                 ventura:       "55e06bba192398b13847cbda00c18a7c22a761a0b1ac47a287a82fc3547ed850"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb56e29272dc3efded5b734acf714bb129bb8837d7a7c4ca267f870355e6a773"
   end
 
   depends_on "bison" => :build

@@ -5,7 +5,7 @@ class Ola < Formula
   desc "Open Lighting Architecture for lighting control information"
   homepage "https:www.openlighting.orgola"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  revision 2
+  revision 3
 
   stable do
     # TODO: Check if we can use unversioned `protobuf` at version bump
@@ -27,12 +27,12 @@ class Ola < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "29ec53941d01758ba1bd53b47a76477e7df02627efb0961ba95fb26c9546620f"
-    sha256                               arm64_sonoma:  "35702d0ca78ab5ff4b4b941aece666ead9dff6601c3c64876ad1a63c16c3f7b2"
-    sha256                               arm64_ventura: "836d2f79836fd829d21c46fb0e8209a5cb401fa528082b8cf869f85fceb20c50"
-    sha256                               sonoma:        "4043fe393be73b3b7d1ca449ce3190bfa5f4e2551bcb8c5524866ead99bf671f"
-    sha256                               ventura:       "2d5f10ffb5bcdef0dc3dbc609d08d97a608f4376751bfb36050ea80b3be2fb34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6f431ad33cb88441e771631488064b6e7a63512441cfbc3857c8b0bae20cac9"
+    sha256                               arm64_sequoia: "e1f9c63cc95850939944b13db642edf0b739537a27fc938c4aedf1f172a261d0"
+    sha256                               arm64_sonoma:  "a682abb7185bc20aef2d30b30f152222ea9c5257aab744cde03aaa5583e88208"
+    sha256                               arm64_ventura: "7c0dc6b427c6776c3344e26f4845a522300effb6667407db2710675e6868a668"
+    sha256                               sonoma:        "d0c3934c5b288ed18add3ae23e7f015f34ea710cc4648fdecdc1b0bf619f63e5"
+    sha256                               ventura:       "3de55dadd98b13f77a540dec1504b6a65fe988054aa78bc1959515f00a9c8b26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "caccfa95c7cb88c18365e22ec8882bc2a5152b772e386b93f5cd61396b897f0b"
   end
 
   head do
@@ -69,11 +69,8 @@ class Ola < Formula
   end
 
   resource "protobuf" do
-    url "https:files.pythonhosted.orgpackages6abb8e59a30b83102a37d24f907f417febb58e5f544d4f124dd1edcd12e078bfprotobuf-5.29.0.tar.gz"
-    sha256 "445a0c02483869ed8513a585d80020d012c6dc60075f96fa0563a724987b1001"
-
-    # Backport https:github.comprotocolbuffersprotobufcommit5864b5078a0187a1a16d4d2ed6f55972511d0a94
-    patch :DATA
+    url "https:files.pythonhosted.orgpackagesd24f1639b7b1633d8fd55f216ba01e21bf2c43384ab25ef3ddb35d85a52033e8protobuf-5.29.1.tar.gz"
+    sha256 "683be02ca21a6ffe80db6dd02c0b5b2892322c59ca57fd6c872d652cb80549cb"
   end
 
   # Apply open PR to support Protobuf 22+ API
@@ -144,24 +141,3 @@ class Ola < Formula
     system python3, "-c", "from ola.ClientWrapper import ClientWrapper"
   end
 end
-
-__END__
---- agoogleprotobufservice.py
-+++ bgoogleprotobufservice.py
-@@ -70,12 +70,12 @@ def CallMethod(self, method_descriptor, rpc_controller,
-     Postconditions:
- 
-     * "done" will be called when the method is complete.  This may be
--     before CallMethod() returns or it may be at some point in the future.
-+      before CallMethod() returns or it may be at some point in the future.
-     * If the RPC failed, the response value passed to "done" will be None.
--     Further details about the failure can be found by querying the
--     RpcController.
-+      Further details about the failure can be found by querying the
-+      RpcController.
-     """
--   raise NotImplementedError
-+    raise NotImplementedError
- 
-   def GetRequestClass(self, method_descriptor):
-     """Returns the class of the request message for the specified method.
