@@ -1,17 +1,17 @@
 class JxlOxide < Formula
   desc "JPEG XL decoder"
   homepage "https:github.comtirr-cjxl-oxide"
-  url "https:github.comtirr-cjxl-oxidearchiverefstags0.10.1.tar.gz"
-  sha256 "20945315b9e5b30b7685d8329a4049c66967461afdc0ff8ea7cc2c5a15156f29"
+  url "https:github.comtirr-cjxl-oxidearchiverefstags0.10.2.tar.gz"
+  sha256 "0a61b4de0df19f2aef4a9821f9ce74567dba86245450016c36baa7b40ba002c1"
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6c95cb4ce1e2459e01c37f5c172e3e98a178db609504a570ea05b37effb477c1"
-    sha256 cellar: :any,                 arm64_sonoma:  "b2b66a6e61f7a3598e9f409dcb00b9c69ceacfb15cdfb8cfd8fcba876506b5a7"
-    sha256 cellar: :any,                 arm64_ventura: "24d584dd6d99d309f3fc5da8ce82c2aefa8efcb093649d34633557e8526dc792"
-    sha256 cellar: :any,                 sonoma:        "45e82b9e1d92eae7a7c3d1e60c22c0794d8bb10cd5e78d278127cd2773a37a24"
-    sha256 cellar: :any,                 ventura:       "fb525cdf14920ce2d5e9c1a84af71e051e934e410a040e1a0915799988188778"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71c5f3b6bc0836b2581a50760699fa94bb6f6d11f18322b865ba02e3b36723dd"
+    sha256 cellar: :any,                 arm64_sequoia: "bc69ff3d50c7e7a7d7b75d956a71c41809929d22f4c4b4acc223143f5f3b5d2a"
+    sha256 cellar: :any,                 arm64_sonoma:  "da900f9333d77a28dbb9c3b45b3e00bf2756b2e4628eb961fc94f11b2ee57982"
+    sha256 cellar: :any,                 arm64_ventura: "41e145397bb7a512878d626f09d6965121fd9be0c622918b44ad93bb12753267"
+    sha256 cellar: :any,                 sonoma:        "6e468bab7c9674647813a7328ae76a53d1c4a340bbaee9f8755cbc926d3a1487"
+    sha256 cellar: :any,                 ventura:       "86826165fac92be29eb29f119a6e8ff4a1dfacfea5cce7dc7ecb4f03b36e92ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "630ce91dfb03fb1e40630d30d4a20c948472467125a97a838f8c5b86530df675"
   end
 
   depends_on "rust" => :build

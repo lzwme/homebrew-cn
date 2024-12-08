@@ -24,8 +24,8 @@ class Libdmtx < Formula
   depends_on "libtool" => :build
 
   def install
-    system "autoreconf", "-fiv"
-    system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", *std_configure_args
     system "make"
     system "make", "install"
   end

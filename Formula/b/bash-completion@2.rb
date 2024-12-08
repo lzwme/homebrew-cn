@@ -40,8 +40,8 @@ class BashCompletionAT2 < Formula
       s.gsub! "(etcbash_completion.d)", "(#{etc}bash_completion.d)"
     end
 
-    system "autoreconf", "-i" if build.head?
-    system ".configure", "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system ".configure", *std_configure_args
     ENV.deparallelize
     system "make", "install"
   end

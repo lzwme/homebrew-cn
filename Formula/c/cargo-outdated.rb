@@ -6,37 +6,27 @@ class CargoOutdated < Formula
   # pulls same source from crates.io. v0.15.0+ is needed to avoid an older unsupported libgit2.
   # We can switch back to GitHub releases when upstream decides to upload.
   # Issue ref: https:github.comkbknappcargo-outdatedissues388
-  url "https:static.crates.iocratescargo-outdatedcargo-outdated-0.15.0.crate"
-  sha256 "0641d14a828fe7dcf73e6df54d31ce19d4def4654d6fa8ec709961e561658a4d"
+  url "https:static.crates.iocratescargo-outdatedcargo-outdated-0.16.0.crate"
+  sha256 "965d39dfcc7afd39a0f2b01e282525fc2211f6e8acc85f1ee27f704420930678"
   license "MIT"
-  revision 1
   head "https:github.comkbknappcargo-outdated.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "86b57b5f303ed5b7244fa35577ab22e976c93d156c98cab15fce93fa8ac3bed3"
-    sha256 cellar: :any,                 arm64_sonoma:   "bd1d9196b5442029200c34d51c23175f61c899ac4e9cc95ebbe7ff4f3641d177"
-    sha256 cellar: :any,                 arm64_ventura:  "d75a6a4ab730f471c3cebea7e2993f09454e14d9faf2162175a02bdbb1424339"
-    sha256 cellar: :any,                 arm64_monterey: "9cc2cc42be17e9f3c89c8389f4df8191e2d4eb60f9036ca79ab2e70c67bb1e51"
-    sha256 cellar: :any,                 sonoma:         "1fbf19e465ae01e3de9156a71da3a9c31a958bc81793ca981688ccee6e03b1e8"
-    sha256 cellar: :any,                 ventura:        "66736cba56267d3a8fa366e8caa54b4f327864561a984d74592a4f7cdff9997e"
-    sha256 cellar: :any,                 monterey:       "393cc224deb953a44ec760626f335df0e5fac89aac7e1a74defb7c572c27bc91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0bb39e0bca108a5dfb5b579d31d17986faa32ea3b7d8ae486a21199de3e591b0"
+    sha256 cellar: :any,                 arm64_sequoia: "4d34640c51d476d3c0e3edffc99932c71e213f2714d3aaf23d58109916bfe637"
+    sha256 cellar: :any,                 arm64_sonoma:  "1771e1804acfe1537233821c9185975e0061bca378a88594682fe11d1f0ff032"
+    sha256 cellar: :any,                 arm64_ventura: "f188cda8e578bb128373a2fa2703a8682cebe9b570f798b541b5bdb84ffaed84"
+    sha256 cellar: :any,                 sonoma:        "5fa2feab40497eb4d6f4c82bcf23bdac336159c46c027ac2c7b88e547a127e10"
+    sha256 cellar: :any,                 ventura:       "01ba35ef314267282776569918241939965bc829c133c8d11736a4c6b0b2847d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a34bc7ad70d3828def2fbaa0a4849105339300d72ba4abc0fadc3269fb0fbf8b"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "rustup" => :test
-  depends_on "libgit2@1.7"
+  depends_on "libgit2"
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
-
-  # rust 1.80 build patch, upstream pr ref, https:github.comkbknappcargo-outdatedpull397
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patchesc17b2163d305f02e8b63639bfa50fc98a74cf72bcargo-outdatedrust-1.80.patch"
-    sha256 "6e014843621fa897952ea0ff35c44693156109db60e344190157a7805ace60c5"
-  end
 
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
@@ -82,7 +72,7 @@ class CargoOutdated < Formula
     end
 
     [
-      Formula["libgit2@1.7"].opt_libshared_library("libgit2"),
+      Formula["libgit2"].opt_libshared_library("libgit2"),
       Formula["openssl@3"].opt_libshared_library("libssl"),
       Formula["openssl@3"].opt_libshared_library("libcrypto"),
     ].each do |library|

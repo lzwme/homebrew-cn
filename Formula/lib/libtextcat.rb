@@ -32,10 +32,8 @@ class Libtextcat < Formula
   depends_on "libtool" => :build
 
   def install
-    system "autoreconf", "-ivf"
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
     (include/"libtextcat/").install Dir["src/*.h"]
     share.install "langclass/LM", "langclass/ShortTexts", "langclass/conf.txt"

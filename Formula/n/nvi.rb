@@ -79,15 +79,15 @@ class Nvi < Formula
       if OS.mac?
         # These files must be present for autoreconf to work.
         %w[AUTHORS ChangeLog NEWS README].each { |f| touch f }
-        system "autoreconf", "--force", "--verbose", "--install"
+        system "autoreconf", "--force", "--install", "--verbose"
       end
 
       # Xcode 12 needs the "-Wno-implicit-function-declaration" to compile successfully
       # The usual trick of setting $CFLAGS in the environment doesn't work for this
       # configure file though, but specifying an explicit CC setting does
-      system ".configure", *std_configure_args,
-                            "--program-prefix=n",
-                            "CC=" + ENV.cc + " -Wno-implicit-function-declaration"
+      system ".configure", "--program-prefix=n",
+                            "CC=" + ENV.cc + " -Wno-implicit-function-declaration",
+                            *std_configure_args
       system "make"
       ENV.deparallelize
       system "make", "install"

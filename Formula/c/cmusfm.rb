@@ -30,7 +30,7 @@ class Cmusfm < Formula
   end
 
   def install
-    system "autoreconf", "--install"
+    system "autoreconf", "--force", "--install", "--verbose"
     mkdir "build" do
       system "..configure", "--disable-silent-rules", *std_configure_args
       system "make", "install"

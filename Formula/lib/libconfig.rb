@@ -35,8 +35,8 @@ class Libconfig < Formula
   end
 
   def install
-    system "autoreconf", "-fiv" if build.head?
-    system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 

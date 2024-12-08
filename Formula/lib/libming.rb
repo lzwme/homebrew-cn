@@ -34,11 +34,9 @@ class Libming < Formula
 
   def install
     ENV.deparallelize if OS.linux?
-    system "autoreconf", "-fiv"
-    system ".configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
-                          "--enable-perl"
+
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", "--disable-silent-rules", "--enable-perl", *std_configure_args
     system "make", "DEBUG=", "install"
   end
 

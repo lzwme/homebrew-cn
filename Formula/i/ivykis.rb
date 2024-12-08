@@ -26,8 +26,8 @@ class Ivykis < Formula
   depends_on "libtool" => :build
 
   def install
-    system "autoreconf", "-i"
-    system ".configure", "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", *std_configure_args
     system "make"
     system "make", "check"
     system "make", "install"

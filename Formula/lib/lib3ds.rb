@@ -33,8 +33,8 @@ class Lib3ds < Formula
   def install
     # Run autoreconf on macOS to rebuild configure script so that it doesn't try
     # to build with a flat namespace.
-    system "autoreconf", "--force", "--verbose", "--install" if OS.mac?
-    system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking"
+    system "autoreconf", "--force", "--install", "--verbose" if OS.mac?
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 

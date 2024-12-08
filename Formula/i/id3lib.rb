@@ -68,9 +68,8 @@ class Id3lib < Formula
   patch :DATA
 
   def install
-    system "autoreconf", "-fvi"
-    system ".configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 end

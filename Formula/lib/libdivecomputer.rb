@@ -31,8 +31,8 @@ class Libdivecomputer < Formula
   depends_on "libusb"
 
   def install
-    system "autoreconf", "--install" if build.head?
-    system ".configure", "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 

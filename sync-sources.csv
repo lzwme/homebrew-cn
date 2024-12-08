@@ -6903,6 +6903,7 @@ Homebrew-homebrew-core/Formula/w/wdfs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wdiff.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/weasyprint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/weaver.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/weaviate-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/weaviate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/web-ext.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/webarchiver.rb, Homebrew/homebrew-core, 1
@@ -9741,6 +9742,7 @@ Homebrew-homebrew-cask/Casks/font/font-k/font-kalam.rb, Homebrew/homebrew-cask, 
 Homebrew-homebrew-cask/Casks/font/font-k/font-kalnia-glaze.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-k/font-kalnia.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-k/font-kameron.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-k/font-kanchenjunga.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-k/font-kanit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-k/font-kanjistrokeorders.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-k/font-kantumruy-pro.rb, Homebrew/homebrew-cask, 1
@@ -10518,6 +10520,7 @@ Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-fr-trad-guides.rb, Homeb
 Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-fr-trad.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-gb-j-guides.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-gb-j.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-gb-s-guides.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-gb-s.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-hr-guides.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-hr-lijeva-guides.rb, Homebrew/homebrew-cask, 1
@@ -10525,7 +10528,9 @@ Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-hr-lijeva.rb, Homebrew/h
 Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-hr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-hu-guides.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-hu.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-id-guides.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-id.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-ie-guides.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-ie.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-in-guides.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-in.rb, Homebrew/homebrew-cask, 1
@@ -13187,6 +13192,7 @@ Homebrew-homebrew-cask/Casks/r/resolume-arena.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/resolutionator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/responsively.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/restfox.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/r/restic-browser.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/restream-chat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/retcon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/retro-virtual-machine.rb, Homebrew/homebrew-cask, 0

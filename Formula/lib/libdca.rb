@@ -37,9 +37,8 @@ class Libdca < Formula
     # https:github.comHomebrewhomebrewissues31456
     ENV.append_to_cflags "-std=gnu89"
 
-    system "autoreconf", "-fiv"
-    system ".configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", *std_configure_args
     system "make"
     system "make", "install"
   end

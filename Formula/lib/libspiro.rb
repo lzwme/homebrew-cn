@@ -27,7 +27,7 @@ class Libspiro < Formula
 
   def install
     if build.head?
-      system "autoreconf", "-i"
+      system "autoreconf", "--force", "--install", "--verbose"
       system "automake"
     end
 

@@ -28,10 +28,8 @@ class Asn1c < Formula
   end
 
   def install
-    system "autoreconf", "-iv" if build.head?
-    system ".configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system ".configure", "--mandir=#{man}", *std_configure_args
     system "make", "install"
   end
 

@@ -39,7 +39,7 @@ class Crfsuite < Formula
   end
 
   def install
-    system "autoreconf", "-fiv"
+    system "autoreconf", "--force", "--install", "--verbose"
 
     args = std_configure_args
     args << "--disable-sse2" if Hardware::CPU.arm?

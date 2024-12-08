@@ -40,12 +40,8 @@ class Bashdb < Formula
   patch :DATA
 
   def install
-    system "autoreconf", "--verbose", "--install", "--force"
-    system "./configure", "--with-bash=#{HOMEBREW_PREFIX}/bin/bash",
-                          "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
-
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", "--with-bash=#{HOMEBREW_PREFIX}/bin/bash", *std_configure_args
     system "make", "install"
   end
 

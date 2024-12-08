@@ -43,8 +43,8 @@ class Arabica < Formula
   conflicts_with "nss", because: "both install `mangle` binaries"
 
   def install
-    system "autoreconf", "-fvi"
-    system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", *std_configure_args
     system "make"
     system "make", "check"
     system "make", "install"

@@ -45,7 +45,7 @@ class Gtksourceview3 < Formula
   end
 
   def install
-    system "autoreconf", "--verbose", "--install", "--force" if OS.mac?
+    system "autoreconf", "--force", "--install", "--verbose" if OS.mac?
 
     system "./configure", "--disable-silent-rules",
                           "--enable-vala=yes",

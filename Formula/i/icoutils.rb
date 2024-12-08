@@ -36,11 +36,9 @@ class Icoutils < Formula
     inreplace "common/Makefile.am", "libcommon_a_LIBADD", "libcommon_la_LIBADD"
 
     # Workaround for Xcode 14 ld.
-    system "autoreconf", "--force", "--install" if OS.mac? && MacOS.version >= :monterey
+    system "autoreconf", "--force", "--install", "--verbose" if OS.mac? && MacOS.version >= :monterey
 
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-rpath",
-                          "--prefix=#{prefix}"
+    system "./configure", "--disable-rpath", *std_configure_args
     system "make", "install"
   end
 

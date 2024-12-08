@@ -38,9 +38,8 @@ class Libflowmanager < Formula
   end
 
   def install
-    system "autoreconf", "-ivf"
-    system ".configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 end

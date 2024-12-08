@@ -67,8 +67,7 @@ class Nghttp2 < Formula
       s.gsub!(%r{\$[({]top_builddir[)}]liblibnghttp2\.la}, "", audit_result: false)
     end
 
-    args = %W[
-      --prefix=#{prefix}
+    args = %w[
       --disable-silent-rules
       --enable-app
       --disable-examples
@@ -78,7 +77,7 @@ class Nghttp2 < Formula
     ]
 
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make"
     system "make", "install"
   end

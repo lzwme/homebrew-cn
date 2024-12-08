@@ -26,8 +26,8 @@ class H264bitstream < Formula
   depends_on "libtool" => :build
 
   def install
-    system "autoreconf", "-iv"
-    system "./configure", "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 end

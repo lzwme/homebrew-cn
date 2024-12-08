@@ -36,7 +36,7 @@ class LinkGrammar < Formula
     ENV["PYTHON_LIBS"] = "-undefined dynamic_lookup"
     inreplace "bindingspythonMakefile.am", "$(PYTHON_LDFLAGS) -module -no-undefined",
                                              "$(PYTHON_LDFLAGS) -module"
-    system "autoreconf", "--verbose", "--install", "--force"
+    system "autoreconf", "--force", "--install", "--verbose"
     system ".configure", "--with-regexlib=c", *std_configure_args
 
     # Work around error due to install using detected path inside Python formula.

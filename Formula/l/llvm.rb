@@ -6,8 +6,8 @@ class Llvm < Formula
   head "https:github.comllvmllvm-project.git", branch: "main"
 
   stable do
-    url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-19.1.4llvm-project-19.1.4.src.tar.xz"
-    sha256 "3aa2d2d2c7553164ad5c6f3b932b31816e422635e18620c9349a7da95b98d811"
+    url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-19.1.5llvm-project-19.1.5.src.tar.xz"
+    sha256 "bd8445f554aae33d50d3212a15e993a667c0ad1b694ac1977f3463db3338e542"
 
     # Backport relative `CLANG_CONFIG_FILE_SYSTEM_DIR` patch.
     # Remove in LLVM 20.
@@ -24,12 +24,12 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "524e4d54632e5752efcc946e0c3db02377c776381bec2b975f115a53add46847"
-    sha256 cellar: :any,                 arm64_sonoma:  "848d60155ac74aafe9c8aa5c8922a1ab606d37f3581a80124fae2a2a5b9e1624"
-    sha256 cellar: :any,                 arm64_ventura: "69229f827c5673dd736eebc1420f730e4ac878d666a593a477b1f057f4c8a8a8"
-    sha256 cellar: :any,                 sonoma:        "9d37758160bfefb044b73ede330a317319e048ae1b0d5d61752410d7b4372561"
-    sha256 cellar: :any,                 ventura:       "cd6a811972a59fe223998e5ec7d6b241e3e723a171402d5aecb99d730aa1b47d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c024910d3894417c378adbe40ddddc278693cc737b6bced04b2889251ca9046e"
+    sha256 cellar: :any,                 arm64_sequoia: "b6493a9057ae767e2aed3ca28415d63cdf434fbf50b1bab8b2288a8fb60ef3c8"
+    sha256 cellar: :any,                 arm64_sonoma:  "3f5f4564695b9d08b461099a2674eff8b652a943ac838c550b2b3760b916160a"
+    sha256 cellar: :any,                 arm64_ventura: "49b60f0530b3d1bc89fa9e4e9de55bdfb35352730890a7fa010383b81bb562b3"
+    sha256 cellar: :any,                 sonoma:        "15f82c8945c3c5c3b81a7e406307b4e0f5f5edba9da8e57dfcd7c185df795305"
+    sha256 cellar: :any,                 ventura:       "fcb8d13ba1327569b3a2cfa09a0ea36be2e58503794e42c02186f9d7c87479b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9100176d57b910eb87519ba93f8b53d43c222e374b09904abad951a79f3d632d"
   end
 
   keg_only :provided_by_macos
@@ -488,7 +488,7 @@ class Llvm < Formula
   def write_config_files(macos_version, kernel_version, arch)
     clang_config_file_dir.mkpath
 
-    arches = Set.new([:arm64, :x86_64])
+    arches = Set.new([:arm64, :x86_64, :aarch64])
     arches << arch
     sysroot = if macos_version >= "10.14" || (macos_version.blank? && kernel_version.blank?)
       "#{MacOS::CLT::PKG_PATH}SDKsMacOSX#{macos_version}.sdk"
@@ -503,7 +503,7 @@ class Llvm < Formula
       arches.each do |target_arch|
         config_file = "#{target_arch}-apple-#{system}#{version}.cfg"
         (clang_config_file_dirconfig_file).atomic_write <<~CONFIG
-          --sysroot=#{sysroot}
+          -isysroot #{sysroot}
         CONFIG
       end
     end

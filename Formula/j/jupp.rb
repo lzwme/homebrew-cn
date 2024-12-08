@@ -41,9 +41,8 @@ class Jupp < Formula
 
   def install
     ENV.prepend_path "PATH", Formula["gnu-sed"].opt_libexec/"gnubin" if OS.mac?
-    system "autoreconf", "-vfi"
-    system "./configure", *std_configure_args,
-                          "--enable-sysconfjoesubdir=/jupp"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", "--enable-sysconfjoesubdir=/jupp", *std_configure_args
     system "make", "install"
   end
 

@@ -46,12 +46,11 @@ class GnuChess < Formula
     chmod "+x", "install-sh"
 
     if build.head?
-      system "autoreconf", "--install"
+      system "autoreconf", "--force", "--install", "--verbose"
       chmod 0755, "install-sh"
     end
 
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make", "install"
 
     resource("book").stage do

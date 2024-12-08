@@ -41,8 +41,8 @@ class Minizip < Formula
           s.sub! "libminizip.la -lz", "libminizip.la"
         end
       end
-      system "autoreconf", "-fi"
-      system "./configure", "--prefix=#{prefix}"
+      system "autoreconf", "--force", "--install", "--verbose"
+      system "./configure", *std_configure_args
       system "make", "install"
     end
   end

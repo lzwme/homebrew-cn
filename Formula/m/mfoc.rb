@@ -27,7 +27,7 @@ class Mfoc < Formula
   depends_on "libusb"
 
   def install
-    system "autoreconf", "-is"
+    system "autoreconf", "--force", "--install", "--verbose"
     system ".configure", *std_configure_args
     system "make"
     system "make", "install"

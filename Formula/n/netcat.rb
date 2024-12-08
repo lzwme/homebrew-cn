@@ -29,13 +29,9 @@ class Netcat < Formula
 
   def install
     # Regenerate configure script for arm64/Apple Silicon support.
-    system "autoreconf", "--verbose", "--install", "--force"
+    system "autoreconf", "--force", "--install", "--verbose"
 
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}",
-                          "--infodir=#{info}"
+    system "./configure", "--mandir=#{man}", "--infodir=#{info}", *std_configure_args
     system "make", "install"
     man1.install_symlink "netcat.1" => "nc.1"
   end

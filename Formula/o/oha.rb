@@ -1,18 +1,18 @@
 class Oha < Formula
   desc "HTTP load generator, inspired by rakyllhey with tui animation"
   homepage "https:github.comhatoooha"
-  url "https:github.comhatooohaarchiverefstagsv1.4.7.tar.gz"
-  sha256 "a0fa13d33a5607f3ba4321522d0b2626a0eb52c94471e26e05350cd25d15d2ec"
+  url "https:github.comhatooohaarchiverefstagsv1.5.0.tar.gz"
+  sha256 "2e8d42df346486d3ed5be5016361f40a12989aeffd1c239e307e3bcb414d84c9"
   license "MIT"
   head "https:github.comhatoooha.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43380667267790b276fe627528eca97d65be2d932240f55f935f608b006e0c60"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8896d0ef753755d0353dad8c5556794d19e5182705f229666290176f834bca00"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f1765667154ed80d52ef0d56a2cc563d36bfebbfdd4418683ec318f5fb89a788"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8243aecd2e6523793241ebb533484944be33a6e13e8f8d8dd11f4b442f3e4e34"
-    sha256 cellar: :any_skip_relocation, ventura:       "f6825127a9b9b3f5780cc39da3f626b38f719571761cd35c305a014a45c957c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1374ac88a0ccfd989e5ca5f8c53d9f039d812a5ece625ba350710f10df6e0e3c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "984dc4607535bb3a869d60fd1c34804ebfdd882b24dfd990eecafcd8679f4bf5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b23f4409e37e53965b0a82bfde684184f3080353c2e3aeac601e317069d953f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4132c0d27dc38f1745b0179b77498c1edaca6fb7d540346a23d0a08e1387a6c4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "923cfd10cb1a3a398758aa6d2903df5ac91b473e0d49883db429eb759e38676c"
+    sha256 cellar: :any_skip_relocation, ventura:       "eaed6763c85875e5e8b71a6f707364a5404aed32bec63b30a7914ec5d2c89719"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c077fcfef79627928278c2ac332303b34ffcdf13aa13e22d2d68ca992fe793c"
   end
 
   depends_on "cmake" => :build # for aws-lc-sys

@@ -32,19 +32,16 @@ class Goaccess < Formula
 
   def install
     ENV.append_path "PATH", Formula["gettext"].bin
-    system "autoreconf", "-vfi"
+    system "autoreconf", "--force", "--install", "--verbose"
 
     args = %W[
-      --disable-debug
-      --disable-dependency-tracking
-      --prefix=#{prefix}
       --enable-utf8
       --enable-tcb=btree
       --enable-geoip=mmdb
       --with-libintl-prefix=#{Formula["gettext"].opt_prefix}
     ]
 
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make", "install"
   end
 

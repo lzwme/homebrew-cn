@@ -24,9 +24,8 @@ class Advancecomp < Formula
   uses_from_macos "zlib"
 
   def install
-    system "autoreconf", "-fiv"
-    system ".configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--enable-bzip2", "--prefix=#{prefix}", "--mandir=#{man}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", "--enable-bzip2", "--mandir=#{man}", *std_configure_args
     system "make", "install"
   end
 

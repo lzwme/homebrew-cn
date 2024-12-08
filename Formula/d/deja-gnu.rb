@@ -31,11 +31,8 @@ class DejaGnu < Formula
 
   def install
     ENV.deparallelize # Or fails on Mac Pro
-    system "autoreconf", "-iv" if build.head?
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system "./configure", "--mandir=#{man}", *std_configure_args
     # DejaGnu has no compiled code, so go directly to "make check"
     system "make", "check"
     system "make", "install"

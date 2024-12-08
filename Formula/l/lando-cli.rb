@@ -1,8 +1,8 @@
 class LandoCli < Formula
   desc "Cli part of Lando"
   homepage "https:docs.lando.devcli"
-  url "https:github.comlandocorearchiverefstagsv3.23.18.tar.gz"
-  sha256 "baa7c8e2a00ff9a1d78ae8f5cd0e289dea94beb0afb352bfc4975bab6ca5b4cc"
+  url "https:github.comlandocorearchiverefstagsv3.23.19.tar.gz"
+  sha256 "f073b8005e38413f09cc225721ddef68f1c16f0287b05c9424e747392a5e854c"
   license "GPL-3.0-or-later"
   head "https:github.comlandocore.git", branch: "main"
 
@@ -12,12 +12,12 @@ class LandoCli < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "e0299ffaa5fd58d1238cf4d45bb5e060f99bb7cc548c88d69734d3b53b9b97f7"
-    sha256                               arm64_sonoma:  "2afce23e9937a98582e0bbabbc090603f8426ffd8a4d966913e31d3d2606690d"
-    sha256                               arm64_ventura: "02a26a0ab7cf441af619d1c5c3675bdf140fc618a742e8ea8fd077669785053f"
-    sha256                               sonoma:        "3568a9379f475fdfe8111eee88fcde4ef06580df239fc7983d4e739932cf57e7"
-    sha256                               ventura:       "f660a84feca5fc4f0c8ec17872ba5822c991caec923b6fb98e4e3f0e3ea6c6b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee53cb525f22bd8a95cdcae04a73433c02355efb50b915a67ecb6378323237fc"
+    sha256                               arm64_sequoia: "1e9d221d36549cbab1c101e4271cd6eb7ce9fe74acf8284b9079976c75b980d0"
+    sha256                               arm64_sonoma:  "2ea364463ff0ed9e507ff7598cfadf43323b7092f9df3fb7c47a015fe2048652"
+    sha256                               arm64_ventura: "a972f2fe79e3909acb9fa18a3bf61d07663dda1814b0287da0404cb0392cfbfd"
+    sha256                               sonoma:        "9edfdb0bcd1046e32b26f0a7ba81bc7e5678b4e8765daacbd23d46ca398c9254"
+    sha256                               ventura:       "4d694b9ae3473d929c4bf1c3265a5389f60a55bb07199f2c9ed66d69e82555c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4126681c37237fdc3ff008c2febee638d886dce0078b4323019da7d17c9eac09"
   end
 
   depends_on "node"

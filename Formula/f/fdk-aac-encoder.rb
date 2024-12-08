@@ -23,7 +23,7 @@ class FdkAacEncoder < Formula
   depends_on "fdk-aac"
 
   def install
-    system "autoreconf", "-i"
+    system "autoreconf", "--force", "--install", "--verbose"
     system ".configure", "--disable-silent-rules",
                           "--mandir=#{man}",
                           *std_configure_args

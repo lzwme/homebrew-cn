@@ -42,11 +42,8 @@ class Libelf < Formula
       cp am_share/fn, fn
     end
 
-    system "autoreconf", "-fvi"
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--disable-compat"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", "--disable-compat", *std_configure_args
     # Use separate steps; there is a race in the Makefile.
     system "make"
     system "make", "install"

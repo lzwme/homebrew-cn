@@ -24,10 +24,8 @@ class Dateutils < Formula
   end
 
   def install
-    system "autoreconf", "-iv" if build.head?
-    system ".configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

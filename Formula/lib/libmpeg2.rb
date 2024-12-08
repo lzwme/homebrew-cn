@@ -34,9 +34,8 @@ class Libmpeg2 < Formula
     # Otherwise compilation fails in clang with `duplicate symbol ___sputc`
     ENV.append_to_cflags "-std=gnu89"
 
-    system "autoreconf", "-fiv"
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", *std_configure_args
     system "make", "install"
     pkgshare.install "doc/sample1.c"
   end

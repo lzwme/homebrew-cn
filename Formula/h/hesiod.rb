@@ -30,9 +30,7 @@ class Hesiod < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

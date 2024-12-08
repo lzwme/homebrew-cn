@@ -39,8 +39,8 @@ class Minidjvu < Formula
 
     ENV.deparallelize
     # force detection of BSD mkdir
-    system "autoreconf", "-vfi" if OS.mac?
-    system "./configure", "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose" if OS.mac?
+    system "./configure", *std_configure_args
     system "make"
     system "make", "install"
     lib.install Dir[prefix/shared_library("*")]

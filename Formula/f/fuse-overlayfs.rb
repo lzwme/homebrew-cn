@@ -17,7 +17,7 @@ class FuseOverlayfs < Formula
   depends_on :linux
 
   def install
-    system "autoreconf", "-fis"
+    system "autoreconf", "--force", "--install", "--verbose"
     system ".configure", "--prefix=#{prefix}"
     system "make"
     system "make", "install"

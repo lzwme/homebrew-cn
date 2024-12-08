@@ -51,7 +51,7 @@ class Cubeb < Formula
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     else
-      system "autoreconf", "--install"
+      system "autoreconf", "--force", "--install", "--verbose"
       system ".configure", "--disable-silent-rules", *std_configure_args
       system "make", "install"
     end

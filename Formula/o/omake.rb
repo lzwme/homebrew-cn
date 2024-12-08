@@ -1,8 +1,8 @@
 class Omake < Formula
   desc "Build system designed for scalability, portability, and concision"
   homepage "http:projects.camlcity.orgprojectsomake.html"
-  url "https:github.comocaml-omakeomakearchiverefstagsomake-0.10.6.tar.gz"
-  sha256 "f84f4cbb18a075782a7432bbf9abd5ef177eb0603fc1c69afffce8c2c25e30ee"
+  url "https:github.comocaml-omakeomakearchiverefstagsomake-0.10.7.tar.gz"
+  sha256 "ec098107429a419965feab5cee5dfa2996fc3fdc23842d910c314590941cafb8"
   license "GPL-2.0-only"
   head "https:github.comocaml-omakeomake.git", branch: "master"
 
@@ -12,16 +12,12 @@ class Omake < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "e6f7078311531e5160b87ecc20e5e8cff4bc6cca6aff53a802d94f361d7e4eb5"
-    sha256 arm64_sonoma:   "f04d59c0ab2c129aff0e9bae5aa757a83e58f48dc10eea0ba7984e187bbd186b"
-    sha256 arm64_ventura:  "94c636910242c5431bf03e0cd3d5c8f2972a48ad821ba36443ce603c44c84f70"
-    sha256 arm64_monterey: "40ad54dcd5bef35cfb5ab3e7cb7b5f81e03c1b313b1f7c74e715b6ea6c6353f7"
-    sha256 arm64_big_sur:  "a980b712dacb260d0ec4b2121545cdec4a1534ca95976e10b6edfb6eb2137569"
-    sha256 sonoma:         "2e1d7068251a93c64a6331e5b6e891a208bee1cd93ef0dec6370d468cd80d793"
-    sha256 ventura:        "3794f8d448da10ad33558e4a7390f8e657a4de09a84db6933387f1f59da0603c"
-    sha256 monterey:       "f41e4e4311dd134634010373863ef6ab0830c0c4bbb210590c8e2975b10fe35d"
-    sha256 big_sur:        "8dd4cb8d9e79996dc69c9205dfddba7e7e530971f197c2f40d306818afb6a97e"
-    sha256 x86_64_linux:   "5d2038dba034f18eae8f32a98f526ef30b45ceae8ca6bd103b3e083267ab2695"
+    sha256 arm64_sequoia: "81f480345c0653b1788f41971c2d374f1198203e1fa5e382aa68614a3855e7e4"
+    sha256 arm64_sonoma:  "cbab9c88f4d900ccf872ce469f0eac0bf002e8fb78f47697177d59a0f5d96965"
+    sha256 arm64_ventura: "e1fd58352aac92f14588d5867a39240934affcb79040b869c6fb7beb1c0a5f6f"
+    sha256 sonoma:        "f7b331439ec53664c6475b856a53f33c51f09c6065d029101315b2e3c8f37ca4"
+    sha256 ventura:       "630d8d9aab4e7ff5bcc4eb2619b68c314e355d8353e9780a4b429827e4d1642b"
+    sha256 x86_64_linux:  "8663b8c6c736ad807b39f45681cd3295ed9cdf1ff8ed58a3301da2e16eefd68b"
   end
 
   depends_on "ocaml" => [:build, :test]

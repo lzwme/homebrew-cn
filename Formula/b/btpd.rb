@@ -27,7 +27,7 @@ class Btpd < Formula
   depends_on "openssl@3"
 
   def install
-    system "autoreconf", "-fiv"
+    system "autoreconf", "--force", "--install", "--verbose"
     system ".configure", *std_configure_args
     system "make", "install"
   end

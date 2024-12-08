@@ -29,9 +29,8 @@ class Libsass < Formula
 
   def install
     ENV.cxx11
-    system "autoreconf", "-fvi"
-    system ".configure", "--prefix=#{prefix}", "--disable-silent-rules",
-                          "--disable-dependency-tracking"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

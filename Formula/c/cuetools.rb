@@ -35,8 +35,8 @@ class Cuetools < Formula
   patch :DATA
 
   def install
-    system "autoreconf", "-i"
-    system ".configure", "--prefix=#{prefix}", "--mandir=#{man}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", "--mandir=#{man}", *std_configure_args
     system "make", "install"
   end
 

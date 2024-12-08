@@ -34,8 +34,8 @@ class Mad < Formula
     touch "NEWS"
     touch "AUTHORS"
     touch "ChangeLog"
-    system "autoreconf", "-fiv"
-    system "./configure", "--disable-debugging", "--enable-fpm=64bit", "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", "--disable-debugging", "--enable-fpm=64bit", *std_configure_args
     system "make", "CFLAGS=#{ENV.cflags}", "LDFLAGS=#{ENV.ldflags}", "install"
     (lib+"pkgconfig/mad.pc").write pc_file
     pkgshare.install "minimad.c"

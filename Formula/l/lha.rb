@@ -47,9 +47,8 @@ class Lha < Formula
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
 
-    system "autoreconf", "-fvi"
-    system ".configure", "--mandir=#{man}",
-                          *std_configure_args
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", "--mandir=#{man}", *std_configure_args
     system "make", "install"
   end
 

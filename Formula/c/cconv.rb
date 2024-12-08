@@ -30,8 +30,8 @@ class Cconv < Formula
   def install
     ENV.append "LDFLAGS", "-liconv" if OS.mac?
 
-    system "autoreconf", "-fvi"
-    system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", *std_configure_args
     system "make", "install"
     rm(include"unicode.h")
   end

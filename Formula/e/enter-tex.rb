@@ -4,15 +4,16 @@ class EnterTex < Formula
   url "https://gitlab.gnome.org/swilmet/enter-tex/-/archive/3.47.0/enter-tex-3.47.0.tar.bz2"
   sha256 "59a55f852ebb262aaca2f2380b85640ad380beba14ed1121e8beb0ba38aacccf"
   license "GPL-3.0-or-later"
+  revision 1
   head "https://gitlab.gnome.org/swilmet/enter-tex.git", branch: "main"
 
   bottle do
-    sha256 arm64_sequoia: "7ac379dcfee03b15b58b59ca75120b281a4f2fb8f4e3960bc69882344e749c79"
-    sha256 arm64_sonoma:  "fd0d1d740954163948e9793884f38c7251eab917bea0454785fe9bef1eead1c5"
-    sha256 arm64_ventura: "6146c2de5b3c49b9ff014d12015ffb50a047e76c511af0f7cbf7646be7b4f7c6"
-    sha256 sonoma:        "ab45e328b4dc56a6f0e107afabc6471885230195791083d60dc8e39e552d3e23"
-    sha256 ventura:       "405e0c0beb03513ca2d9191b8f5c65d9a445444667d85fc2ed451dd18207155d"
-    sha256 x86_64_linux:  "efa430c72fb6748d2183ad8c1508eeeb045f2e44ef91b8914e81e8b2297f53a5"
+    sha256 arm64_sequoia: "03231ce34252328eb9e8c7efec64106f30379f93b205e3af0884ea48c99eecc5"
+    sha256 arm64_sonoma:  "783266e0d1ddfe3dc11065a6d1d9c8ce086733d40230bb9f94d8681b8e23aa68"
+    sha256 arm64_ventura: "7cedb4638ecc05158f6901eeac0d78559baa5f0db258eab3d4e317a8402094eb"
+    sha256 sonoma:        "7c5a39b1cdf0039d77f1b199eacb42f1e2dc6428bea368cfd3468823e1277d9d"
+    sha256 ventura:       "3790754aa36508b165ac2f7d834804a63bdb3b61ea675dda20e3c6fda4f637cd"
+    sha256 x86_64_linux:  "857a05ffb43a92bb1ee79d3b725636f33ed10359e2e1fb2536208e4216360b28"
   end
 
   depends_on "desktop-file-utils" => :build # for update-desktop-database

@@ -35,9 +35,8 @@ class Mpir < Formula
 
   def install
     # Regenerate .configure script due to patch above
-    system "autoreconf", "--verbose", "--install", "--force"
-    args = %W[--disable-silent-rules --prefix=#{prefix} --enable-cxx]
-    system ".configure", *args
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", "--disable-silent-rules", "--enable-cxx", *std_configure_args
     system "make", "install"
   end
 

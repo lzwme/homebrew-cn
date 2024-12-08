@@ -32,11 +32,8 @@ class Libtar < Formula
   uses_from_macos "zlib"
 
   def install
-    system "autoreconf", "--force", "--install"
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", "--mandir=#{man}", *std_configure_args
     system "make", "install"
   end
 

@@ -18,11 +18,8 @@ class Libcpuid < Formula
   depends_on arch: :x86_64
 
   def install
-    system "autoreconf", "-ivf"
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

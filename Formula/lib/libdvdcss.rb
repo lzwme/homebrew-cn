@@ -33,8 +33,8 @@ class Libdvdcss < Formula
   end
 
   def install
-    system "autoreconf", "-if" if build.head?
-    system "./configure", "--prefix=#{prefix}", "--disable-dependency-tracking"
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 end

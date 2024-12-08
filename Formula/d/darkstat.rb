@@ -34,8 +34,8 @@ class Darkstat < Formula
   end
 
   def install
-    system "autoreconf", "-iv"
-    system ".configure", "--disable-debug", "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 

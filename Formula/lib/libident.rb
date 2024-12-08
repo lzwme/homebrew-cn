@@ -36,7 +36,7 @@ class Libident < Formula
   end
 
   def install
-    system "autoreconf", "--force", "--verbose", "--install" if OS.mac?
+    system "autoreconf", "--force", "--install", "--verbose" if OS.mac?
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",
                           "--mandir=#{man}"

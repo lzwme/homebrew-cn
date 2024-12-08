@@ -28,7 +28,7 @@ class Libghthash < Formula
   depends_on "libtool" => :build
 
   def install
-    system "autoreconf", "-ivf"
+    system "autoreconf", "--force", "--install", "--verbose"
     system ".configure", "--disable-dependency-tracking",
            "--prefix=#{prefix}"
     system "make", "install"
