@@ -1,19 +1,18 @@
 class LibgeditTepl < Formula
   desc "Gedit Technology - Text editor product line"
   homepage "https:gitlab.gnome.orgWorldgeditlibgedit-tepl"
-  url "https:gitlab.gnome.orgWorldgeditlibgedit-tepl-archive6.11.0libgedit-tepl-6.11.0.tar.bz2"
-  sha256 "3b46bae85ae59adbfa63570a6e3818ce27643f1c36e7a8ea866bc141d74727fd"
+  url "https:gitlab.gnome.orgWorldgeditlibgedit-tepl-archive6.12.0libgedit-tepl-6.12.0.tar.bz2"
+  sha256 "2170a6db99803b08fe7437bd8382ed2938baf4f5838349ba90dee1308a7dc08d"
   license "LGPL-2.1-or-later"
-  revision 1
   head "https:gitlab.gnome.orgWorldgeditlibgedit-tepl.git", branch: "main"
 
   bottle do
-    sha256 arm64_sequoia: "678a5bdfcf830bf74e36103aca8c06434eb7f96b5db670fcb6c321ea18e27ec0"
-    sha256 arm64_sonoma:  "d152e02babcc63fec1aeda9782c59ef28da98fd51770604cf03a8493c140d158"
-    sha256 arm64_ventura: "0b5161cda69c43b0255ee58f5d4b63f4415b008288d566b1cecbda59067f02d3"
-    sha256 sonoma:        "a032d97b16278ceb396aab36e6073da845dc8217e3fdc3dfce4aa8b84a9a5eef"
-    sha256 ventura:       "6b05a099bb0e1f268ade8905539ccc3010ebf19465af1aee6daf816c6e4b215b"
-    sha256 x86_64_linux:  "45660f9ba46bdee8796564944735b77617544dc015ba32adefffab50037a350e"
+    sha256 arm64_sequoia: "3bd2190b0dc85fa95f6f54efb237fae81c8f8b85c536d963c8d908921be66982"
+    sha256 arm64_sonoma:  "b274c179ab02621eaa256e26e6fcb41ccfa8eb0802ff02fbc4d28be925d7fa30"
+    sha256 arm64_ventura: "9c072da54b10399e2419a09f0a77c379ad078b99cb3bc469b4b436d82cd5140e"
+    sha256 sonoma:        "5adc56a4593f5a01a32579662820fe48d5304beae43071c72c93d33131ecfb7c"
+    sha256 ventura:       "df23620dda9571a0de98491dd967fd3e7b70a506df45037f2e9804a78c344918"
+    sha256 x86_64_linux:  "ad6912a898e0df486baf1927c24db4092293a826f951c38724435d0340ea458e"
   end
 
   depends_on "gettext" => :build

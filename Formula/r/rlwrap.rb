@@ -30,11 +30,9 @@ class Rlwrap < Formula
   depends_on "readline"
 
   def install
-    system "autoreconf", "-v", "-i"
+    system "autoreconf", "--force", "--install", "--verbose"
 
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 

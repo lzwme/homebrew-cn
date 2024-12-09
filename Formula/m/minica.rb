@@ -24,7 +24,7 @@ class Minica < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", "-o", bin"minica"
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do

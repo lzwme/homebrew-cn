@@ -36,8 +36,8 @@ class Osmfilter < Formula
   end
 
   def install
-    system "autoreconf", "-v", "-i"
-    system "./configure", "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 

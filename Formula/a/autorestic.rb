@@ -21,12 +21,13 @@ class Autorestic < Formula
   depends_on "restic"
 
   def install
-    ldflags = "-s -w"
-    system "go", "build", *std_go_args(ldflags:), ".main.go"
+    system "go", "build", *std_go_args(ldflags: "-s -w")
     generate_completions_from_executable(bin"autorestic", "completion")
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}autorestic --version")
+
     require "yaml"
     config = {
       "locations" => { "foo" => { "from" => "repo", "to" => ["bar"] } },

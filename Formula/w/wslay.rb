@@ -34,7 +34,7 @@ class Wslay < Formula
   depends_on "sphinx-doc" => :build
 
   def install
-    system "autoreconf", "--force", "--verbose", "--install" if build.head?
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
     system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "check"
     system "make", "install"

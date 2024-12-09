@@ -27,7 +27,7 @@ class Oniguruma < Formula
   depends_on "libtool" => :build
 
   def install
-    system "autoreconf", "-vfi"
+    system "autoreconf", "--force", "--install", "--verbose"
     system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
     system "make"
     system "make", "install"

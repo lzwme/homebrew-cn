@@ -42,7 +42,7 @@ class Xmlto < Formula
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
 
     ENV.deparallelize
-    system "autoreconf", "--install"
+    system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end

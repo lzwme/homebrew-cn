@@ -28,8 +28,8 @@ class Xclip < Formula
   depends_on "libxmu"
 
   def install
-    system "autoreconf", "-fiv"
-    system ".configure", "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 

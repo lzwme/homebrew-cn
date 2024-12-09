@@ -1,8 +1,8 @@
 class VulkanTools < Formula
   desc "Vulkan utilities and tools"
   homepage "https:github.comKhronosGroupVulkan-Tools"
-  url "https:github.comKhronosGroupVulkan-Toolsarchiverefstagsv1.3.302.tar.gz"
-  sha256 "75264092f597e883c236345f188d4f09b635891fba53b517d9953aff8ada6571"
+  url "https:github.comKhronosGroupVulkan-Toolsarchiverefstagsv1.4.303.tar.gz"
+  sha256 "958b646bbc5ac0a54908342df30da8c183690f579dce7f7130ac93d433d9d3a8"
   license "Apache-2.0"
   head "https:github.comKhronosGroupVulkan-Tools.git", branch: "main"
 
@@ -12,12 +12,12 @@ class VulkanTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b348c72d5b5ac361ef903fc83b9156ccce9df927457da1c00d33c9086f5d5292"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44c779a0eb19bd51b917abd1a2dc5418b9e07b07f8319fbb6466acdfd0884826"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "91784400f15f6c9ca45280f60da97573ab874aea0debdcffc6783046f0264866"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1a89bf06faee102a17194050d732b50ca86f61683c7ab0a16d920293bf4b5fd6"
-    sha256 cellar: :any_skip_relocation, ventura:       "592bb2fc1935053b72b8fd1f84c9f9b7193fcbffde05e1cb460b8976f5fc85d1"
-    sha256                               x86_64_linux:  "20b0f96fb2b2fab3de6b60bf21a2bf8d614b115f86ab952149ed537d892dabf0"
+    sha256 cellar: :any, arm64_sequoia: "872a558c1472790bbf9bc61178e5d19f7667ae66924742e297cc0e82b1e0de77"
+    sha256 cellar: :any, arm64_sonoma:  "973ea0a35ec96802320aed1f8917b1bbcef927c2ff128211dad8b7f6492654e4"
+    sha256 cellar: :any, arm64_ventura: "c0fb86994bc2e78c73fe77801e882ba476679fe4e1f5bb47de6205fc63728dbb"
+    sha256 cellar: :any, sonoma:        "bd7fe2d33f381f1580e63c2bb4de15a792d24ba8a46ad2c6792faa4a4e1cc972"
+    sha256 cellar: :any, ventura:       "557f80503f2089d62eb5fa2c72922a094b587737f1e8fd29517168a4a1cbf363"
+    sha256               x86_64_linux:  "08104be509c17e7f951a2c9adc4c7c5d037f98389b2fca59ca7dc4188e8db93f"
   end
 
   depends_on "cmake" => :build

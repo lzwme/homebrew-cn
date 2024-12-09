@@ -24,7 +24,7 @@ class Threemux < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args, "-o", bin"3mux"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"3mux")
   end
 
   test do

@@ -33,9 +33,8 @@ class TaLib < Formula
   def install
     ENV.deparallelize
     # Call autoreconf on macOS to fix -flat_namespace usage
-    system "autoreconf", "-fvi" if OS.mac?
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose" if OS.mac?
+    system "./configure", *std_configure_args
     system "make", "install"
     bin.install "src/tools/ta_regtest/.libs/ta_regtest"
   end

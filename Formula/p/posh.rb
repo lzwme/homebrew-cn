@@ -30,10 +30,8 @@ class Posh < Formula
   depends_on "automake" => :build
 
   def install
-    system "autoreconf", "-fiv"
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

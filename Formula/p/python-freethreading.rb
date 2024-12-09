@@ -1,8 +1,8 @@
 class PythonFreethreading < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https:www.python.org"
-  url "https:www.python.orgftppython3.13.0Python-3.13.0.tgz"
-  sha256 "12445c7b3db3126c41190bfdc1c8239c39c719404e844babbd015a1bc3fafcd4"
+  url "https:www.python.orgftppython3.13.1Python-3.13.1.tgz"
+  sha256 "1513925a9f255ef0793dbf2f78bb4533c9f184bdd0ad19763fd7f47a400a7c55"
   license "Python-2.0"
 
   livecheck do
@@ -10,13 +10,12 @@ class PythonFreethreading < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 arm64_sequoia: "a042fee9b1a8365594b2d7d3ceb301f6e2ae2fdb905f2739e522c1c76ec90514"
-    sha256 arm64_sonoma:  "9912054d2a8e93d4f9c5de192b62457916a6f83025aa146986b7ae6ef2ba49c3"
-    sha256 arm64_ventura: "713a261152ec34bbb0c52493dc88b6fef1120b5b923ba05c5af2858d02dc08de"
-    sha256 sonoma:        "f67bfb69abf1b1431be36831c218bc60c4d3765a7dc614cfc3bef57ce2625c4c"
-    sha256 ventura:       "1f5cf3c29f401ae75f796457c9f6253f59fedb23c368789db3835b70bccf2cb3"
-    sha256 x86_64_linux:  "16860c5c2990ba76679f67ffc08142ee3c0df759caac776abcd69d61a43cc036"
+    sha256 arm64_sequoia: "7211fee73765cfcff327a0ebc4ec1b94e0a643fe3d3e129f8de20f96eb4fb07b"
+    sha256 arm64_sonoma:  "6e1c62a4b9a2e5774e3aee4d45cd1843702a6de428ecde40fb530c5101f6b19e"
+    sha256 arm64_ventura: "525f8dcad47a991548d4c5b80de69591ce2f043365d215dcdbf8ca75b7348423"
+    sha256 sonoma:        "ad8826d5a47f1ed24298e7b99cfa4aa7af3f36ff5ef610a06295a519a03abbe2"
+    sha256 ventura:       "b7fa4357a434417197a240e0a7d1eb2b0ec4667608c3f7b110cdd70efbc0064f"
+    sha256 x86_64_linux:  "8a9c28d43f6af78a8ac174a357b37762eebc168597fdc9843c4412f71ee4b7cf"
   end
 
   depends_on "pkgconf" => :build
@@ -44,23 +43,23 @@ class PythonFreethreading < Formula
 
   # Always update to latest release
   resource "flit-core" do
-    url "https:files.pythonhosted.orgpackagesc4e6c1ac50fe3eebb38a155155711e6e864e254ce4b6e17fe2429b4c4d5b9e80flit_core-3.9.0.tar.gz"
-    sha256 "72ad266176c4a3fcfab5f2930d76896059851240570ce9a98733b658cb786eba"
+    url "https:files.pythonhosted.orgpackagesd5ae09427bea9227a33ec834ed5461432752fd5d02b14f93dd68406c91684622flit_core-3.10.1.tar.gz"
+    sha256 "66e5b87874a0d6e39691f0e22f09306736b633548670ad3c09ec9db03c5662f7"
   end
 
   resource "pip" do
-    url "https:files.pythonhosted.orgpackages4d87fb90046e096a03aeab235e139436b3fe804cdd447ed2093b0d70eba3f7f8pip-24.2.tar.gz"
-    sha256 "5b5e490b5e9cb275c879595064adce9ebd31b854e3e803740b72f9ccf34a45b8"
+    url "https:files.pythonhosted.orgpackagesf4b1b422acd212ad7eedddaf7981eee6e5de085154ff726459cf2da7c5a184c1pip-24.3.1.tar.gz"
+    sha256 "ebcb60557f2aefabc2e0f918751cd24ea0d56d8ec5445fe1807f1d2109660b99"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
-    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
+    url "https:files.pythonhosted.orgpackages4354292f26c208734e9a7f067aea4a7e282c080750c4546559b58e2e45413ca0setuptools-75.6.0.tar.gz"
+    sha256 "8199222558df7c86216af4f84c30e9b34a61d8ba19366cc914424cdbd28252f6"
   end
 
   resource "wheel" do
-    url "https:files.pythonhosted.orgpackagesb7a095e9e962c5fd9da11c1e28aa4c0d8210ab277b1ada951d2aee336b505813wheel-0.44.0.tar.gz"
-    sha256 "a29c3f2817e95ab89aa4660681ad547c0e9547f20e75b0562fe7723c9a2a9d49"
+    url "https:files.pythonhosted.orgpackages8a982d9906746cdc6a6ef809ae6338005b3f21bb568bea3165cfc6a243fdc25cwheel-0.45.1.tar.gz"
+    sha256 "661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729"
   end
 
   # Modify default sysconfig to match the brew install layout.

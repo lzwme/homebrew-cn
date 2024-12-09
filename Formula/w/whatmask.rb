@@ -28,11 +28,8 @@ class Whatmask < Formula
 
   def install
     # The included ./configure file is too old to work with Xcode 12
-    system "autoreconf", "--verbose", "--install", "--force"
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--mandir=#{man}",
-                          "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", "--mandir=#{man}", *std_configure_args
     system "make", "install"
   end
 

@@ -56,17 +56,14 @@ class Urlview < Formula
 
     unless OS.mac?
       touch("NEWS") # autoreconf will fail if this file does not exist
-      system "autoreconf", "-i"
+      system "autoreconf", "--force", "--install", "--verbose"
 
       # Disable use of librx, since it is not needed on Linux.
       ENV["CFLAGS"] = "-DHAVE_REGEX_H"
       (etc"urlview").install "url_handler.sh"
     end
 
-    system ".configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}",
-                          "--sysconfdir=#{etc}"
+    system ".configure", "--mandir=#{man}", "--sysconfdir=#{etc}", *std_configure_args
     system "make", "install"
   end
 

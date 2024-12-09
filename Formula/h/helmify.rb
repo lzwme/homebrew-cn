@@ -7,18 +7,20 @@ class Helmify < Formula
   head "https:github.comarttorhelmify.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94001ab1feebadfea7ab6b1268afd5634973ed2d2f91e1627d662f17a010dbaf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "94001ab1feebadfea7ab6b1268afd5634973ed2d2f91e1627d662f17a010dbaf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "94001ab1feebadfea7ab6b1268afd5634973ed2d2f91e1627d662f17a010dbaf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4329c16ff2831c60ba135f5d67d60d676b1579f1c193ebc0312f39f9160f7ceb"
-    sha256 cellar: :any_skip_relocation, ventura:       "4329c16ff2831c60ba135f5d67d60d676b1579f1c193ebc0312f39f9160f7ceb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4f1b4b4cb59cb25fe13440a86ee7d4e0c447b69e5ce2a90d5ce19edd2c57142"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "295298a30ace6939a7fb04f569dffe3a9e1187fa29a16d2facb632a27b421df5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "295298a30ace6939a7fb04f569dffe3a9e1187fa29a16d2facb632a27b421df5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "295298a30ace6939a7fb04f569dffe3a9e1187fa29a16d2facb632a27b421df5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "af33c2998763599bb54667aebb90f1ba0d12d79f0032d9d5bd79ce2f3bce1e15"
+    sha256 cellar: :any_skip_relocation, ventura:       "af33c2998763599bb54667aebb90f1ba0d12d79f0032d9d5bd79ce2f3bce1e15"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e9dfe2db85fe47a3a27b6f637779e70cb8e502d24130d8b9aae53568361560b"
   end
 
   depends_on "go" => :build
 
   def install
     ldflags = %W[
+      -s -w
       -X main.version=#{version}
       -X main.date=#{time.iso8601}
       -X main.commit=#{tap.user}

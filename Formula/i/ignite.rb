@@ -6,19 +6,20 @@ class Ignite < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a0e61d020fe255cdc963ab183fe0683f16a33d1d920f3067d33c22c100c30e1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75096bc21f45a6ccf9761bd35eff0477e652ae403eb45309e0827a490541fbc8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bc2c5258e9efb31423c82d417dc37a6d0c9a0b776a3acffe99d8db36b30de8a7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "49747dd5476d4fdebc696ccfb52ef2e77e81ef218ea772b9e7ce9a2c073ed01e"
-    sha256 cellar: :any_skip_relocation, ventura:       "121c1f4b4507c9e8e0f04fd7f1efbaa34e24bfc2d6a84fd6cf27b2fe3d5064ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b31b3c1e505e50ccaaab4e95c87e771ccab0d56c303ece9d8c486e8decbc9896"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a7ce77de373b2e4d41c7588e67710f711944b5b7246fc430b95923319968261b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07bde4c7b1f25beba04d44208aa485e555fbaad77e993bb30932479e091cd6db"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d436da5653db0146dfbd8871565d90d27f5e496ba555f3cb0b5a87b8de436f70"
+    sha256 cellar: :any_skip_relocation, sonoma:        "98c1f266699417752f1ce03274d376b75361b63d4a68c28a26e111ed1494d1c0"
+    sha256 cellar: :any_skip_relocation, ventura:       "4fb5504802f6e2e34218924d352cb55fa6682f13e1a4692e5d40d0f9105b106b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ffe4dba900aa76360117b7efae4dc321d74258b4da995921531aa0bc28fd333"
   end
 
   depends_on "go"
   depends_on "node"
 
   def install
-    system "go", "build", "-mod=readonly", *std_go_args(output: bin"ignite"), ".ignitecmdignite"
+    system "go", "build", "-mod=readonly", *std_go_args(ldflags: "-s -w", output: bin"ignite"), ".ignitecmdignite"
   end
 
   test do

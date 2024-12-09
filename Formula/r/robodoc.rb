@@ -37,10 +37,8 @@ class Robodoc < Formula
   end
 
   def install
-    system "autoreconf", "-f", "-i" if build.head?
-    system ".configure", "--prefix=#{prefix}",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules"
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

@@ -1,18 +1,18 @@
 class Csvlens < Formula
   desc "Command-line csv viewer"
   homepage "https:github.comYS-Lcsvlens"
-  url "https:github.comYS-Lcsvlensarchiverefstagsv0.10.1.tar.gz"
-  sha256 "7d9062fa94a67fec121062bd45efb00a40bf26236f3cc635ec0945793344e097"
+  url "https:github.comYS-Lcsvlensarchiverefstagsv0.11.0.tar.gz"
+  sha256 "0f8b14f929c5acdc697187ba5c5a1ae643f97dcfc9325847c60f78cb73a6328c"
   license "MIT"
   head "https:github.comYS-Lcsvlens.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e15ca33c987cfa9e2649aa3a374b3f323c6de6cf000a6e8960fed4e7b743672c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b124b4af51bd667998443544ccd19e53a9ce7a8f371b8b50dab154d45f00bc58"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "140f8a7589e47ffb645d660e728287809e7be34241b6c4d5eb24edd8c156aee2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "54306a793ddaba7cc4c44857d22ad274b2c5fb405f114327211f0fd81a76c3f9"
-    sha256 cellar: :any_skip_relocation, ventura:       "44ad684fc850eac40a85de7da11d6e00f68513ff302d84b6975f05357ef0aa5a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74cc0a74db62274d21f53a9c10d01bb459ef266f138eb49e0d86f2c2db612f99"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c20f7079cea5383f40fbbd360deb7f62cc0ecc048e4e0832bcdbdd8ddce23afc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "259a695d57fb7b09db11ae0dd6ce556e80f0d73580cd3c55a3d54883b04087cb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "06e7f2e958ded46ee8643bfb8c68322dfb8ee3b59059c2a5134e2329354d283e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "11c929adbb2946005dbdeb334555d30e7a939221130acddcfc347146aebc4671"
+    sha256 cellar: :any_skip_relocation, ventura:       "58787d25673dae586f38dd1744c1e817f339f2d8a5808ce0a7116db32cd7db4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c7b5d8fda5ba5de5c35eda32212dfee9a2a15727afc0b69694cc578d6ee6868"
   end
 
   depends_on "rust" => :build

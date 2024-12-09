@@ -39,11 +39,8 @@ class Udptunnel < Formula
 
     ENV["LIBS"] = "-L#{Formula["libnsl"].opt_lib}" if OS.linux?
 
-    system "autoreconf", "--verbose", "--install", "--force"
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
     doc.install "udptunnel.html"
   end

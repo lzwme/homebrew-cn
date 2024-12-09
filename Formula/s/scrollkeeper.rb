@@ -63,10 +63,10 @@ class Scrollkeeper < Formula
 
     # Run autoreconf on macOS to rebuild configure script so that it doesn't try
     # to build with a flat namespace.
-    system "autoreconf", "--force", "--verbose", "--install" if OS.mac?
-    system "./configure", "--prefix=#{prefix}",
-                          "--mandir=#{man}",
-                          "--with-xml-catalog=#{etc}/xml/catalog"
+    system "autoreconf", "--force", "--install", "--verbose" if OS.mac?
+    system "./configure", "--mandir=#{man}",
+                          "--with-xml-catalog=#{etc}/xml/catalog",
+                          *std_configure_args
     system "make"
     system "make", "install"
   end

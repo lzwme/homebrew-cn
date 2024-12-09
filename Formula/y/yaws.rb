@@ -48,8 +48,8 @@ class Yaws < Formula
         --with-extrainclude=#{Formula["linux-pam"].opt_include}security
       ]
     end
-    system "autoreconf", "-fvi"
-    system ".configure", "--prefix=#{prefix}", *extra_args
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", *extra_args, *std_configure_args
     system "make", "install", "WARNINGS_AS_ERRORS="
 
     cd "applicationsyapp" do

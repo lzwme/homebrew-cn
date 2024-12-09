@@ -1,17 +1,17 @@
 class TyposLsp < Formula
   desc "Language Server for typos-cli"
   homepage "https:github.comtekumaratypos-lsp"
-  url "https:github.comtekumaratypos-lsparchiverefstagsv0.1.30.tar.gz"
-  sha256 "176db7e46c135158d385092547d1cb999de7420fb8b2e0b7a491ca67af6faa56"
+  url "https:github.comtekumaratypos-lsparchiverefstagsv0.1.31.tar.gz"
+  sha256 "c90b515a2e64d4262405c4e6cb6d445bc20e1c18075f522c7e53099bc0937e3f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9732e4320c0cfee13fbc845ddfe382efd60c06eba5645fb74f49c6d35badec83"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c84aaa3ce4889d53a139a093aac178deb71a4816d983c9a38c0d5a63c65f793"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bae43f7eaee667284571dcb599202f3682d9625fb23f1c75177939a0b634a805"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7a858477adfabd87f9414ac76b5905e1703689a218930f8d9fd64d4f13625834"
-    sha256 cellar: :any_skip_relocation, ventura:       "a9cd5d73df7dfbd832f99ae6da110ee3749d777a755fc56a0b83cdb92078624f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f00f6af3c783f468abf28a640678f17da966c815595de1d4225dc9db62857f36"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f670dd7bbef1419c4e2b0428e297c02daa0a54bec990f8302097d75b5f78eef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c46e060eed84221ea3e74ac95a6ff29191f70710009de37e58a0e0f9bcdd04d9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "95afdcd8391cbeae2f9c5d2b06af9260402caa677d49fdd7fbdb8557f2b09dcb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c5534f2768af24775679f9050f4f4f06370de451bb003a7434aa41025dc9e076"
+    sha256 cellar: :any_skip_relocation, ventura:       "f5fab7aac7ae9f154218c9a636262de84fbc2aac741e05b0f86369a42e103834"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21666d14a478c371f23598e0122f9eb91e966c5a9d4d7e4b46e5cf752a72e226"
   end
 
   depends_on "rust" => :build

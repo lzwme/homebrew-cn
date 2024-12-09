@@ -1,18 +1,18 @@
 class Pandoc < Formula
   desc "Swiss-army knife of markup format conversion"
   homepage "https:pandoc.org"
-  url "https:github.comjgmpandocarchiverefstags3.5.tar.gz"
-  sha256 "1d378e5721eb26ebcdc31232dcd26d041eb3237e85ac3650ce809e9fa0fcacb8"
+  url "https:github.comjgmpandocarchiverefstags3.6.tar.gz"
+  sha256 "9e5dcca8a8a0a24742138cb95c6e8c125dfedfda0c004d28ae2c9fdd297cf699"
   license "GPL-2.0-or-later"
   head "https:github.comjgmpandoc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0e1effa23e96fd7aeabade0da2ba30aba26022d23c4a300e4d89250a733b6ae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "423a1a43968e90be9ffd7ee744846d437a703a606e45673f4f7fda32ad289563"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a3358e15498855a569cc0373961d70745b0af8b870034a93a99aa73214021dd2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ca547d7cab7d8193a3be16f443a479ccc3aa3220698aa6d39f368032af881327"
-    sha256 cellar: :any_skip_relocation, ventura:       "d77b25257036107ad9da955bfe13c9d52d1d7c4b625fbc82b4657e25d02342c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6409b83fd2ecd212973a01798722ad95bfe2d23fb5e4d44ee509f1326ecb5578"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "60e64c5532625f8446a1c346680f201996a79cf65c48260134d47456809c0b64"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aef5c8496d44adc2cba4f246ed80e24cc71bfe6cc5b9ee3493289758bbce8a76"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "35f56822cf2373b584cd76cebe35ee1de9deb97f4c8fb2372c99d4f954ade6ce"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f5eae7f7bff301ff049a027430d306db9604f643f574ec2fa2ed0b6203340fd7"
+    sha256 cellar: :any_skip_relocation, ventura:       "03a1a61819a90f99d5a7e5861149d141f4700a7a45a8b8e3867fc2833ddf4938"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7763840ffd631f34d0d580d0d9eed4dec99e42ad3fd904b2354c9732fe51d547"
   end
 
   depends_on "cabal-install" => :build

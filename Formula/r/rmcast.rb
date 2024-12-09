@@ -37,9 +37,8 @@ class Rmcast < Formula
   def install
     # Run autoreconf on macOS to rebuild configure script so that it doesn't try
     # to build with a flat namespace.
-    system "autoreconf", "--force", "--verbose", "--install" if OS.mac?
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose" if OS.mac?
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 end

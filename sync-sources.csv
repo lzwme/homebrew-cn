@@ -1994,6 +1994,7 @@ Homebrew-homebrew-core/Formula/f/fwup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fwupd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fypp.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fzf-make.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fzf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fzy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/g-ls.rb, Homebrew/homebrew-core, 1
@@ -2756,6 +2757,7 @@ Homebrew-homebrew-core/Formula/i/id3v2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ideviceinstaller.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/idnits.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/idris2.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/idsgrep.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/idutils.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ievms.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ifacemaker.rb, Homebrew/homebrew-core, 1
@@ -5794,6 +5796,7 @@ Homebrew-homebrew-core/Formula/s/senpai.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sentencepiece.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/seqkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/seqtk.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sequin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sequoia-sq.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/ser2net.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/serd.rb, Homebrew/homebrew-core, 0
@@ -8305,6 +8308,7 @@ Homebrew-homebrew-cask/Casks/d/dolphin@dev.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/domzilla-caffeine.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/doomsday-engine.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/doppler.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/dorico.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dosbox-staging.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dosbox-x.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dosbox.rb, Homebrew/homebrew-cask, 0
@@ -12519,6 +12523,7 @@ Homebrew-homebrew-cask/Casks/o/obsbot-center.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/obsidian.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/ocenaudio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oclint.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/octarine.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/october.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/octomouse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/odbc-manager.rb, Homebrew/homebrew-cask, 0

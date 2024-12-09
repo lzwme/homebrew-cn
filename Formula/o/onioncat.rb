@@ -24,7 +24,7 @@ class Onioncat < Formula
   depends_on "tor"
 
   def install
-    system "autoreconf", "-ifv"
+    system "autoreconf", "--force", "--install", "--verbose"
     system ".configure", *std_configure_args
     system "make", "install"
   end

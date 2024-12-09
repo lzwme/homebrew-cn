@@ -1,21 +1,17 @@
 class H3 < Formula
   desc "Hexagonal hierarchical geospatial indexing system"
   homepage "https:uber.github.ioh3"
-  url "https:github.comuberh3archiverefstagsv4.1.0.tar.gz"
-  sha256 "ec99f1f5974846bde64f4513cf8d2ea1b8d172d2218ab41803bf6a63532272bc"
+  url "https:github.comuberh3archiverefstagsv4.2.0.tar.gz"
+  sha256 "438db46fc2b388785d2a0d8e26aa5509739240a7b50b2510c416778d871a4e11"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "a1e8ac308293e2f9288c90ba38975297fe65b9e897668447d70ec7a549dfc14e"
-    sha256 cellar: :any,                 arm64_sonoma:   "1098253ac8e6458dd6c285b07996131776ab985e4177d3a127e4c807d27d02ed"
-    sha256 cellar: :any,                 arm64_ventura:  "44686e792f5b905666c5200c15e31ac3023e1148b474443c0f202322620d600c"
-    sha256 cellar: :any,                 arm64_monterey: "bf4c9ea8b3140be46dedb8aa9b91cde186835ba1cc53c720e129bb36b58bfbc8"
-    sha256 cellar: :any,                 arm64_big_sur:  "d3afae09e49800840dbeb968fa454c82753f8cb9d9234ac2a2887e7ff210f172"
-    sha256 cellar: :any,                 sonoma:         "2dfca31563c6b7e4d3dc94d9fd48eb9c2611ce4d05d73bf77cbd3aa430f02bb4"
-    sha256 cellar: :any,                 ventura:        "519d67be32f5f41440a487eb85a0dc3055e9a4983fb6bb39a10aaeb388f543e3"
-    sha256 cellar: :any,                 monterey:       "6de52d5a62572d73f9e2f7fa062971c4bfb52da64265063a2528a146f0c0ecff"
-    sha256 cellar: :any,                 big_sur:        "c6119a992a3e994b8b3dcb1d8cdd9a783bb000f93c9ad60ed3d24f60db1bc0ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ea347ced55cef67aa8d834815798f19b7f64db12f7a76cd2f992c8047437161f"
+    sha256 cellar: :any,                 arm64_sequoia: "b02873c2bb46bad3ecb164b0de7010a6cf05e88c24d836be8a623edcd33cb123"
+    sha256 cellar: :any,                 arm64_sonoma:  "cdf8ec4cb1d06bd4016315b3c05da5fea167121fdceeae714bc75d63eb780a12"
+    sha256 cellar: :any,                 arm64_ventura: "faa658aedc04d5397bcfc3f1c772405c9de7cc586b8ad8d665cb4f0d055ee6e5"
+    sha256 cellar: :any,                 sonoma:        "0cfeedcff049140ebefbae1c958833b2a13fbc96a476ac5f5bcef8f01881534f"
+    sha256 cellar: :any,                 ventura:       "221c57284d6e1838e6f4deaf5b3090ff628c575a1ec088c5897f90582efd682f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "089248aae3b5dbd2725d56efd962839e3886f4cd0cf99e8f9ac0c05b804ec761"
   end
 
   depends_on "cmake" => :build

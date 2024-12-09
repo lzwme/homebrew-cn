@@ -29,7 +29,7 @@ class Tpl < Formula
   depends_on "libtool" => :build
 
   def install
-    system "autoreconf", "-fvi"
+    system "autoreconf", "--force", "--install", "--verbose"
     system ".configure", "--disable-silent-rules",
                           *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"

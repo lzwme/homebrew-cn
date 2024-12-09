@@ -30,9 +30,8 @@ class Robotfindskitten < Formula
   uses_from_macos "ncurses"
 
   def install
-    system "autoreconf", "-ivf"
-    system ".configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", *std_configure_args
     system "make", "install", "execgamesdir=#{bin}"
   end
 

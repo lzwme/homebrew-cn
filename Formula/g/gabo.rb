@@ -1,17 +1,17 @@
 class Gabo < Formula
   desc "Generates GitHub Actions boilerplate"
   homepage "https:github.comashishbgabo"
-  url "https:github.comashishbgaboarchiverefstagsv1.2.1.tar.gz"
-  sha256 "7d84ed97a7cc642fc5d9b9a4914ddf0e0175de511530736820816961a0fda3e6"
+  url "https:github.comashishbgaboarchiverefstagsv1.3.0.tar.gz"
+  sha256 "1afdb7e512996a80145282b044ce386d310ed9799158fd4a30344320c55c97c6"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6199e3e52d052dc6ce606b85fb2f1b07442ae454e8399055ee6ad42ff93d3df5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6199e3e52d052dc6ce606b85fb2f1b07442ae454e8399055ee6ad42ff93d3df5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6199e3e52d052dc6ce606b85fb2f1b07442ae454e8399055ee6ad42ff93d3df5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c372c254136bab984fd7f10b62c1906449d680c729fbe57b62fcafcfdce2f6ed"
-    sha256 cellar: :any_skip_relocation, ventura:       "c372c254136bab984fd7f10b62c1906449d680c729fbe57b62fcafcfdce2f6ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13abacc9c49693cc929212564edab4da36b56403a882e75b25887506627b40f9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42dafddcb9b6cc42583f454e7dbcb5fcf6f4e692524135c56f8daebfdf0ae461"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42dafddcb9b6cc42583f454e7dbcb5fcf6f4e692524135c56f8daebfdf0ae461"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "42dafddcb9b6cc42583f454e7dbcb5fcf6f4e692524135c56f8daebfdf0ae461"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6e326953053b63a157c17587571834c7bb0ab4004d0c1887666a8a3ba5566e4d"
+    sha256 cellar: :any_skip_relocation, ventura:       "6e326953053b63a157c17587571834c7bb0ab4004d0c1887666a8a3ba5566e4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49c097a712532e105c3f58b29f0413bae6831a0b915589f0afd623d5a2da1110"
   end
 
   depends_on "go" => :build

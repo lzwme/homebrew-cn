@@ -5,14 +5,15 @@ class PandocCrossref < Formula
   version "0.3.18.0b"
   sha256 "a71043e86104951815886d560dd1173308bd7f7e556ce80530b4de03c1bcd9a5"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "454b100be09864162dff118c2490ec0e0bc597e2d832f926510ffe4486a98221"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a942e0c90660465a0b1dc9e5b509336e9beae20ee7b1e94ffdb8fc04e69525e5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "efc0398a828f9c0bdf9637244423aa7b7ad6c98aa2d1b64d08a8013c255e5cac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2c7a8bebdfa52ce8ef133cc14b464fc5ddb7a1ae60e6fa156ec3992aa2bfb711"
-    sha256 cellar: :any_skip_relocation, ventura:       "f756208d8a05afd7332cc5fb2872bb4d2358b0bb76c63bacb4ac9cc6eb4e8f4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63b421075b72824a3132beafb12730eaebfbf1dcd907eae0e89eed3ac1ed1468"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "529b899af27e7778ff5e762fad3fb77b7ee6aacce63cf11cc3849fb38be2f3ce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73def5c9460f4708d3dd5138ce14b81fb47db8bc3de24c2ed8f27c5c23e589c5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ce7aaab582930cd94a4a406f8e7ececf16a22cca2911bfdd2ee4297e7b593a73"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b012c162341e52f7155ba779c5b5e33d71b35809e2a6967f97fd5b68dbba981b"
+    sha256 cellar: :any_skip_relocation, ventura:       "cfb8412a76f7c2dbf6471dc88497d817ff004d32d7bb12d1a76cdc57d7dc6d60"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b1c6ca2c6ceeebcd967ac3bd71300750ce652ab877d9f721e5d5ad92be83fa2"
   end
 
   depends_on "cabal-install" => :build
@@ -21,6 +22,12 @@ class PandocCrossref < Formula
 
   uses_from_macos "unzip" => :build
   uses_from_macos "zlib"
+
+  # patch to support pandoc 3.6, upstream pr ref, https:github.comlierdakilpandoc-crossrefpull458
+  patch do
+    url "https:github.comlierdakilpandoc-crossrefcommitc4d4ec77a8dcb18acb502e9a0bfcdec08c4a8838.patch?full_index=1"
+    sha256 "4150d8d076a79536368ada800d84dfca61a4c1799e7e834c5bb25a165ddaa571"
+  end
 
   def install
     rm("cabal.project.freeze")

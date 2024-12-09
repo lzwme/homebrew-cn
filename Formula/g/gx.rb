@@ -22,10 +22,15 @@ class Gx < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "40fe8e9f82a981fbf440651d85215bdc246ef4da138b5378da7318b4f3f04645"
   end
 
+  # project is no longer maintained as people should be
+  # expected to use go modules to manage dependencies
+  # also see upstream discussion on this, https:github.comwhyrusleepinggxissues247
+  deprecate! date: "2024-12-07", because: :unmaintained
+
   depends_on "go" => :build
 
   def install
-    system "go", "build", "-o", bin"gx"
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do

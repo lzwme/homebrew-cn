@@ -1,20 +1,18 @@
 class Pgbadger < Formula
   desc "Log analyzer for PostgreSQL"
   homepage "https:pgbadger.darold.net"
-  url "https:github.comdaroldpgbadgerarchiverefstagsv12.4.tar.gz"
-  sha256 "25456f0ea76e1de946d2bf09d937e9e830ca953ae4544a72bb9b747f11b4711a"
+  url "https:github.comdaroldpgbadgerarchiverefstagsv13.0.tar.gz"
+  sha256 "4cfaa24e6e7623e3f54e4a9dc35cc8030f7d2486931dc018d677d73181ba3626"
   license "PostgreSQL"
   head "https:github.comdaroldpgbadger.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5f0868106355ade8dd3c388738f195b5af0117bbea2853ffa2a28356be381873"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2a1ef5586c181e4549202e3aa9f6444d9ec21e47497051683b433120eaf94923"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e2e5eec08628c0632b59f62169324beb9cf343c5f5a6207db97fef1ebd91b2b9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e2e5eec08628c0632b59f62169324beb9cf343c5f5a6207db97fef1ebd91b2b9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3cc96eaa419d1c2d0beb889d8603412a5b3e39da4904c0b388ee88c0765d00e2"
-    sha256 cellar: :any_skip_relocation, ventura:        "4457fc2186c89bcb409c8b981918a58b80e72acfc79cb6f2696478fef6b1f6ad"
-    sha256 cellar: :any_skip_relocation, monterey:       "4457fc2186c89bcb409c8b981918a58b80e72acfc79cb6f2696478fef6b1f6ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ceb310563679b39f4c7b18a253e2aef5f6e0d24cb7d428e28e4bfc4e1eac5ea0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94aa1fdd34d44e52c4b8a61de9aa2d4f93e31108c00086c6fad2bd89e8203096"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "94aa1fdd34d44e52c4b8a61de9aa2d4f93e31108c00086c6fad2bd89e8203096"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "777f851682d287a083d4e77c240fc8675070df16bfeb868750d249213d3168eb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c858ea71c3dc74d999c1d64f5e5225963dabf18136444bf8f4ffd4a1d9c1584b"
+    sha256 cellar: :any_skip_relocation, ventura:       "2963fb8da4935daae96d8a17a7abb70b4a1c5173c5d25b5593029d600a092fcc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "997a32aa91ebc0335121777abc59b8701f132ec87611be733d0f36d8d241500e"
   end
 
   def install

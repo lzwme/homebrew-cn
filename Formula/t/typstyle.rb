@@ -1,18 +1,18 @@
 class Typstyle < Formula
   desc "Beautiful and reliable typst code formatter"
   homepage "https:enter-tainer.github.iotypstyle"
-  url "https:github.comEnter-tainertypstylearchiverefstagsv0.12.8.tar.gz"
-  sha256 "a0ec405addfd4b0837838a963d3e57c1063c34a3cf12bfe71aa2e1394190e663"
+  url "https:github.comEnter-tainertypstylearchiverefstagsv0.12.9.tar.gz"
+  sha256 "cb7e00676d34fb4a074be3229d03c4c1a3b2807faa9f88a43de0f23456a959d4"
   license "Apache-2.0"
   head "https:github.comEnter-tainertypstyle.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "335a52edf9b05939f4fdc59a46c7a78e4371aca6404b593fe4932dcb108c7fd2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed10c0d412567bd1a471eff2de398afb08c44cbdb1a8f432d3209fe968c7aefe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "065a67d455be573f919c7664550e6a55b03a85763a85848566a745c5346bf01f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c454f1b2d962eed8f151bbda2edc79b32161412629531e4c1446338314fcb299"
-    sha256 cellar: :any_skip_relocation, ventura:       "dd1e1370efc8ed7ee9f2631288c7d62787ca28f037220d86eb98505c20c3ffc8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb3c01897caf48c15b3d4904fc508499507b92fd9e25974c44fe94f13c807c20"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e366eeb2fdf58f322e527cd74e2a07737e18ec10cd16181982efd100ed441897"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72d2bc5fb02ec8104aa826e087beee77b7ec6333427abee3c34538e2156423eb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6a1918aa360afcfc89b7a586bf4616438debaee91eb5ca2f36e13c7f04f17b11"
+    sha256 cellar: :any_skip_relocation, sonoma:        "36411fc6090d88f9c9f16723cacdc59c3b26e52d8e8aba223044bbab83cb950b"
+    sha256 cellar: :any_skip_relocation, ventura:       "4e52bbe09c545b71b5e5ff59c228b1f7aae929be4921bb31e86b90885f5daa9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c08cbae16171b9645eecd9c4f8b56c264fa1a41182a6ecfecf17c258851a4434"
   end
 
   depends_on "rust" => :build

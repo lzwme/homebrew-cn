@@ -36,10 +36,9 @@ class PgTop < Formula
   uses_from_macos "ncurses"
 
   def install
-    system "autoreconf", "-fvi"
-    system "./configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--with-postgresql=#{Formula["libpq"].opt_prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", "--with-postgresql=#{Formula["libpq"].opt_prefix}", *std_configure_args
+
     (buildpath/"config.h").append_lines "#define HAVE_DECL_STRLCPY 1"
     # On modern OS/X [v]snprinf() are macros that optionally add some security checks
     # In c.h this package provides their own declaration of these assuming they're

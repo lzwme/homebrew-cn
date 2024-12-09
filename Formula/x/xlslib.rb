@@ -33,7 +33,7 @@ class Xlslib < Formula
     ENV.append "LIBS", "-lstdc++" if OS.linux?
 
     cd "xlslib"
-    system "autoreconf", "-i" # shipped configure hardcodes automake-1.13
+    system "autoreconf", "--force", "--install", "--verbose" # shipped configure hardcodes automake-1.13
     system "./configure", *std_configure_args
     system "make", "install"
 

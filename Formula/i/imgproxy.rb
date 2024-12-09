@@ -7,12 +7,13 @@ class Imgproxy < Formula
   head "https:github.comimgproxyimgproxy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2586c3c66d84edb11df56d1b93a2b5da7ff2d5ff2a4bce8a2a618affd9190c4e"
-    sha256 cellar: :any,                 arm64_sonoma:  "f5ceae4788d8dafaf2e56cde36aa2bcff184311649c7eab0944e4061f4f57d9d"
-    sha256 cellar: :any,                 arm64_ventura: "05bcd276740aa58bcd57113a13d948432f37d0e23bbb4d7b3a20902d84223342"
-    sha256 cellar: :any,                 sonoma:        "2aeceefd32490aceaee8274be9348034d79eab027035bcfb5f043e0dc5dd163d"
-    sha256 cellar: :any,                 ventura:       "9e6ebcc207c5e9a0615b683ec18bddde7c546657a3e9687ffab43997966f1fba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04760e453ae95be814da1e5617da46dd5117e555a2546c218ffa2436878cf947"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "2a568c5a604ccb1f091d90b14738baf4c9e45bab7a4424044466f24e068e47cc"
+    sha256 cellar: :any,                 arm64_sonoma:  "39daebbe6837a0409ee37b0e341503cac862bab16fc5041cfc8af92c09dcdfd0"
+    sha256 cellar: :any,                 arm64_ventura: "3c0041006749b164261e3818e9ae178d75240b527b6fb893fdd3f19939be11f0"
+    sha256 cellar: :any,                 sonoma:        "d69ff56f009a15bba489ebbd6f58d0920a745e64e270f9851b580f0f24916bbe"
+    sha256 cellar: :any,                 ventura:       "716c129eb8e635d0cda108a9fd21aa8e2f2bd997d1663621e260ddbe8d6f3036"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36b0215e1db006c135151be22ee931213d63c23377338efdd289ac9d7988b5fa"
   end
 
   depends_on "go" => :build
@@ -28,7 +29,7 @@ class Imgproxy < Formula
     ENV["CGO_LDFLAGS_ALLOW"] = "-s|-w"
     ENV["CGO_CFLAGS_ALLOW"] = "-Xpreprocessor"
 
-    system "go", "build", *std_go_args
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do

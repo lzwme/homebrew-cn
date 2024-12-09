@@ -6,18 +6,19 @@ class Grpcurl < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0e605c34c85402e9fe66fef34eed0939a0ad43c185bcbd3a9073df5896f5d42"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d0e605c34c85402e9fe66fef34eed0939a0ad43c185bcbd3a9073df5896f5d42"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d0e605c34c85402e9fe66fef34eed0939a0ad43c185bcbd3a9073df5896f5d42"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e7bf5a847cacaef832a85655c36c22c5d38aaa8919188ce0595de2a3cb45711c"
-    sha256 cellar: :any_skip_relocation, ventura:       "e7bf5a847cacaef832a85655c36c22c5d38aaa8919188ce0595de2a3cb45711c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "392591de30468ffd85c19e811d50b6f461f0bfa778cd540e482e08acf5ae9647"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18b1180ca2627a4fd5f3da775a9095d3349c14b1c030bce929faddfed56e7e02"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18b1180ca2627a4fd5f3da775a9095d3349c14b1c030bce929faddfed56e7e02"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "18b1180ca2627a4fd5f3da775a9095d3349c14b1c030bce929faddfed56e7e02"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5202cec41fc1afc38feb1357e896ed8287454b414a556a3d2efc98bbce229848"
+    sha256 cellar: :any_skip_relocation, ventura:       "5202cec41fc1afc38feb1357e896ed8287454b414a556a3d2efc98bbce229848"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b4a1cef08d364c3a0f0f2692820901146493aeb4aaf8bb47ff7e6dd035e7ad6"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-X main.version=#{version}"), ".cmdgrpcurl"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), ".cmdgrpcurl"
   end
 
   test do

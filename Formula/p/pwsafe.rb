@@ -43,9 +43,7 @@ class Pwsafe < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", *std_configure_args,
-                          "--mandir=#{man}",
-                          "--without-x"
+    system ".configure", "--mandir=#{man}", "--without-x", *std_configure_args
     system "make", "install"
   end
 

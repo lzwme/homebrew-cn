@@ -14,18 +14,19 @@ class Gitleaks < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "62112f24e46fe80373ec6e25579d4ae90779c206db60c531d19bcc375a720e5a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "62112f24e46fe80373ec6e25579d4ae90779c206db60c531d19bcc375a720e5a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "62112f24e46fe80373ec6e25579d4ae90779c206db60c531d19bcc375a720e5a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a31cc31c476da2ce3723237b449a0bda931bf801b5ebb1574ff5c05590149477"
-    sha256 cellar: :any_skip_relocation, ventura:       "a31cc31c476da2ce3723237b449a0bda931bf801b5ebb1574ff5c05590149477"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe6f29a2d060a3cdc2bba1cae223a12a3f1da974fd6d1bd370bb1acc646da17f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "03c3a9d5df8b3ae0b14e88297cd15628f731c6f3a8c8b708b667b5978439af0c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03c3a9d5df8b3ae0b14e88297cd15628f731c6f3a8c8b708b667b5978439af0c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "03c3a9d5df8b3ae0b14e88297cd15628f731c6f3a8c8b708b667b5978439af0c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5f244d0d43353d2ba5039cacbe95e08765284dc37eba30c537e1ee6a9d5cc242"
+    sha256 cellar: :any_skip_relocation, ventura:       "5f244d0d43353d2ba5039cacbe95e08765284dc37eba30c537e1ee6a9d5cc242"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1fa6d65e86bb9fbd08cc0d0a56f273710082bd17375f8b904c0e5c4b932f1f8"
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = "-X github.comzricethezavgitleaksv#{version.major}cmd.Version=#{version}"
+    ldflags = "-s -w -X github.comzricethezavgitleaksv#{version.major}cmd.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:)
 
     generate_completions_from_executable(bin"gitleaks", "completion")

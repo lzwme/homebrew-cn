@@ -6,18 +6,20 @@ class Rain < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2aaa22065927b47340852392c682fb2891284f8acfc9acab153da5489ba1513d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "672d69fa258dfc8aeac57584c0fd4951c965d793a9f80942659404123c86e8da"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1428e079488494516b35d2176713cddc565de6bea23aee3dcfda807d0255f35b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0ee151a63b3d07bc3eea77e3a434c1a41f900260646aa7b657d2cc81929028c0"
-    sha256 cellar: :any_skip_relocation, ventura:       "5d904e5d03b165e106119bce4923e935661ac83bb615a37aabcee9b0fa6231ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed122de0ed205d625603b841a38ab741f6c3a475d99dce15ff0334371bb2e510"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "669cdd9badbd7cc6cee055360437bfc2c41c2b20ec773a23280f07a205a1a09d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3aa9fc7c5c1cf510ddb2642e3eedde02e280d0877163f14ce773df5db706a80c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f66c6d5c5a1da3cd1109d0606a1f95048c45b167aad73e08ae90e1905eef04b6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5085ee802ec72d38aa8ddbb07b403cb39ef82c352de5e70d8d07f1cd4ffab63d"
+    sha256 cellar: :any_skip_relocation, ventura:       "4012e3e37bd86d13af8ac68fd85551036799b7b71e7c68b04a97b3926653a521"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "069fd2f9c05276aa06cf7c7570abf0073418489e1bc15d218bd7578beba039f7"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args, "cmdrainmain.go"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdrain"
+
     bash_completion.install "docsbash_completion.sh"
     zsh_completion.install "docszsh_completion.sh"
   end

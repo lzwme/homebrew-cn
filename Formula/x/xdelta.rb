@@ -30,10 +30,8 @@ class Xdelta < Formula
 
   def install
     cd "xdelta3" do
-      system "autoreconf", "--install"
-      system ".configure", "--disable-dependency-tracking",
-                            "--prefix=#{prefix}",
-                            "--with-liblzma"
+      system "autoreconf", "--force", "--install", "--verbose"
+      system ".configure", "--with-liblzma", *std_configure_args
       system "make", "install"
     end
   end

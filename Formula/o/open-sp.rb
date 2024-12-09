@@ -39,7 +39,7 @@ class OpenSp < Formula
     ENV["XML_CATALOG_FILES"] = "#{etc}/xml/catalog"
 
     # The included ./configure file is too old to work with Xcode 12
-    system "autoreconf", "--verbose", "--install", "--force"
+    system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", "--mandir=#{man}",
                           "--enable-http",
                           "--enable-default-catalog=#{etc}/sgml/catalog",

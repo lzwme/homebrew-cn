@@ -28,7 +28,7 @@ class RiemannClient < Formula
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
-    system "./configure", "--prefix=#{prefix}", "--with-tls=openssl"
+    system "./configure", "--with-tls=openssl", *std_configure_args
     system "make"
     system "make", "check"
     system "make", "install"

@@ -42,8 +42,8 @@ class Udunits < Formula
   end
 
   def install
-    system "autoreconf", "--verbose", "--install", "--force" if build.head?
-    system ".configure", *std_configure_args, "--disable-silent-rules"
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

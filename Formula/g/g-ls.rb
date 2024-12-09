@@ -7,14 +7,13 @@ class GLs < Formula
   head "https:github.comEquationzhaog.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bc4a6d485f6072e3184f3a3b94afa5849a3f44a1bbcdb3a3b254e7cab7c835b5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b4ab4e88bf5ea2d58748f80ee923e7fa4098bd3359181024f07eacd372dce51a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f6c823cd9480687caa3f4df92dc5fd8495fed9b9f7fa4e8bd0e97a6a753ad657"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1d7b1e0b9b17e8b1567eeac93a8cc46ebe8094348ffc8108c1594bac6be2bf53"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9be4467bb38010cfe2f42c99119eabcb08e1f08649a5a0ceae389ef6bf8ba302"
-    sha256 cellar: :any_skip_relocation, ventura:        "98b43c29665fe23dcda5c677e766686a51cbb1e0e86a7741fb5a7d272b9cb490"
-    sha256 cellar: :any_skip_relocation, monterey:       "3d281739ac9228f5285a84dce93af1f16bff71d3aff2249d988896c15b5eef5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0362f1f6586b1588c894f64b54af22a87aae22cfac101730aa49e5c47e8278d5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4fe791ee275e50ffa8eb284b16b67c09f9e5e16f7929ffe2dd1f7abd8457b0e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fbcd3d9f05f0eae7b66de8a63d9c3c90ed6bfe75ac91cd65495a750dc6d72db9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "aa988e84b92ac30c144e054e44dfac65e0a7837c52a24e684bf8c3b38ffc6fb5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "74e9868f508684615655dc5863a4f9119f34df4c04c4dd9ddbae26f86eba140f"
+    sha256 cellar: :any_skip_relocation, ventura:       "1c2380882d2fbcc5c1695d1a24d523403bc6e4ec6bfec0bf07d13b6b9ddeff28"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb9074c42262214c706cf4810971c2890a8d75b133781519a111c3887c55601b"
   end
 
   depends_on "go" => :build
@@ -22,8 +21,10 @@ class GLs < Formula
   def install
     system "go", "build", *std_go_args(output: bin"g", ldflags: "-s -w")
 
-    man1.install buildpath.glob("man*.1.gz")
+    bash_completion.install "completionsbashg-completion.bash" => "g"
+    fish_completion.install "completionsfishg.fish"
     zsh_completion.install "completionszsh_g"
+    man1.install buildpath.glob("man*.1.gz")
   end
 
   test do

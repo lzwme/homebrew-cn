@@ -44,13 +44,12 @@ class ShairportSync < Formula
       --with-metadata
       --with-piddir=#{var}run
       --sysconfdir=#{etc}shairport-sync
-      --prefix=#{prefix}
     ]
     if OS.mac?
       args << "--with-dns_sd" # Enable bonjour
       args << "--with-os=darwin"
     end
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make", "install"
   end
 

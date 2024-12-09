@@ -24,8 +24,8 @@ class Tctl < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdtctlmain.go"
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "-o", bin"tctl-authorization-plugin",
-      ".cmdpluginstctl-authorization-pluginmain.go"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"tctl-authorization-plugin"),
+      ".cmdpluginstctl-authorization-plugin"
   end
 
   test do

@@ -24,7 +24,7 @@ class Wiki < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", "-o", bin"wiki", "cmdwikimain.go"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdwiki"
   end
 
   test do

@@ -3,10 +3,11 @@ cask "font-montserrat-underline" do
   sha256 :no_check
 
   url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
       only_path: "oflmontserratunderline"
   name "Montserrat Underline"
-  homepage "https:github.comJulietaUlaMontserrat"
+  homepage "https:fonts.google.comspecimenMontserrat+Underline"
 
   font "MontserratUnderline-Italic[wght].ttf"
   font "MontserratUnderline[wght].ttf"

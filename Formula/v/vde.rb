@@ -25,7 +25,7 @@ class Vde < Formula
   depends_on "libtool" => :build
 
   def install
-    system "autoreconf", "--install"
+    system "autoreconf", "--force", "--install", "--verbose"
     system ".configure", *std_configure_args
     system "make", "install"
   end

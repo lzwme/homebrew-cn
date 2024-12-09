@@ -48,12 +48,8 @@ class Tcptraceroute < Formula
 
   def install
     # Regenerate configure script for arm64Apple Silicon support.
-    system "autoreconf", "--verbose", "--install", "--force"
-
-    system ".configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--with-libnet=#{HOMEBREW_PREFIX}",
-                          "--mandir=#{man}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", "--with-libnet=#{HOMEBREW_PREFIX}", "--mandir=#{man}", *std_configure_args
     system "make", "install"
   end
 

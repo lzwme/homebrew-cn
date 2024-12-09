@@ -52,9 +52,7 @@ class Uniutils < Formula
     ENV.append "LDFLAGS", "-L#{gettext.lib}"
     ENV.append "LDFLAGS", "-lintl" if OS.mac?
 
-    system "./configure", "--disable-silent-rules",
-                          "--mandir=#{man}",
-                          *std_configure_args
+    system "./configure", "--disable-silent-rules", "--mandir=#{man}", *std_configure_args
     system "make", "install"
   end
 

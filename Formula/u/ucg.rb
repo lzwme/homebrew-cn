@@ -50,7 +50,7 @@ class Ucg < Formula
   end
 
   def install
-    system "autoreconf", "-i" if build.head?
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
     system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
@@ -67,10 +67,10 @@ index fbce12f5d11fd384becb37fd43ce74d254fc4ac3..be06119bb8d0bb42be77bece750c40c6
 --- asrclibextDoubleCheckedLock.hpp
 +++ bsrclibextDoubleCheckedLock.hpp
 @@ -24,6 +24,7 @@
- 
+
  #include <atomic>
  #include <functional>
 +#include <mutex>
- 
+
  **
   * Function template implementing a double-checked lock.

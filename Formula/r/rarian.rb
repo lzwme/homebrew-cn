@@ -31,8 +31,7 @@ class Rarian < Formula
   def install
     # Regenerate `configure` to fix `-flat_namespace` bug.
     system "autoreconf", "--force", "--install", "--verbose"
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 

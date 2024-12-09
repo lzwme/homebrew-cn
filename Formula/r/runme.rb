@@ -25,7 +25,7 @@ class Runme < Formula
       -X github.comstatefulrunmev3internalversion.Commit=#{tap.user}
     ]
 
-    system "go", "build", "-o", bin, *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags:)
     generate_completions_from_executable(bin"runme", "completion")
   end
 

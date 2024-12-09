@@ -54,8 +54,8 @@ class Ykclient < Formula
   uses_from_macos "curl"
 
   def install
-    system "autoreconf", "-iv" if build.head?
-    system ".configure", "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system ".configure", *std_configure_args
     system "make", "install"
     system "make", "check"
   end

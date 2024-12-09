@@ -6,13 +6,13 @@ class Cheat < Formula
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2235b0cfe1d7f343b6fa54c57e5b17a23d664c3f9c4db25ca608b2e3aa19122a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "848c49f1b2779689004f4e12ff81576243be07eb5d85edcd1a6dead04ed39cf0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b826a7eebaefd56353b8803f89a6caf5fbb6f0cd7b40dd8edeaef35be8f6b6c2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "df2aea16e35718db7e41104bdb40d5470b5910f8922bcfbdd52f07efa486f563"
-    sha256 cellar: :any_skip_relocation, ventura:       "b0ab4a1d6fec6ca930f8feee4b0347aba711573e9a8966bfc348b6561c12786e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65de6e12581b52da9cd69157314771de3b0f003b098ea6cfcfd7347a8e8ca6fa"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "892bbbee98b8e75d5368a898b7f5c3a2968f5f85a7792a4cfbe7d47ba48b811b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "892bbbee98b8e75d5368a898b7f5c3a2968f5f85a7792a4cfbe7d47ba48b811b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "892bbbee98b8e75d5368a898b7f5c3a2968f5f85a7792a4cfbe7d47ba48b811b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4ce8ddab97ab046dbed22b3a584a66bf97e55246c51e1324d18c6959d32170a9"
+    sha256 cellar: :any_skip_relocation, ventura:       "4ce8ddab97ab046dbed22b3a584a66bf97e55246c51e1324d18c6959d32170a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "056c862aa6f3f46ba541558de9ae41a0e0c81424934830c0f1e12b4530d2692b"
   end
 
   depends_on "go" => :build
@@ -20,11 +20,12 @@ class Cheat < Formula
   conflicts_with "bash-snippets", because: "both install a `cheat` executable"
 
   def install
-    system "go", "build", "-mod", "vendor", "-o", bin"cheat", ".cmdcheat"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdcheat"
 
-    bash_completion.install "scriptscheat.bash"
+    bash_completion.install "scriptscheat.bash" => "cheat"
     fish_completion.install "scriptscheat.fish"
     zsh_completion.install "scriptscheat.zsh" => "_cheat"
+    man1.install "doccheat.1"
   end
 
   test do

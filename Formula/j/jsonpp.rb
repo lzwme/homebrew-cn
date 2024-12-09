@@ -28,7 +28,7 @@ class Jsonpp < Formula
 
   def install
     ENV["GO111MODULE"] = "auto"
-    system "go", "build", "-o", bin"jsonpp"
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do

@@ -36,11 +36,8 @@ class Solid < Formula
     # Avoid `required file not found` errors
     touch ["AUTHORS", "ChangeLog", "NEWS"]
 
-    system "autoreconf", "-fiv"
-    system ".configure", "--disable-dependency-tracking",
-                          "--disable-debug",
-                          "--prefix=#{prefix}",
-                          "--infodir=#{info}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", "--infodir=#{info}", *std_configure_args
 
     # Don't make examples, as they do not compile because the include
     # statements for the GLUT library are not platform independent

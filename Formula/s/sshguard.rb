@@ -28,11 +28,8 @@ class Sshguard < Formula
   end
 
   def install
-    system "autoreconf", "-fiv" if build.head?
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
-                          "--sysconfdir=#{etc}"
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system "./configure", "--disable-silent-rules", "--sysconfdir=#{etc}", *std_configure_args
     system "make", "install"
     inreplace man8/"sshguard.8", "%PREFIX%/etc/", "#{etc}/"
     cp "examples/sshguard.conf.sample", "examples/sshguard.conf"

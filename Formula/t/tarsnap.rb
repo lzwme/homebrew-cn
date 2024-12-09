@@ -45,19 +45,17 @@ class Tarsnap < Formula
   end
 
   def install
-    system "autoreconf", "-iv" if build.head?
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
 
     args = %W[
-      --disable-dependency-tracking
       --disable-silent-rules
-      --prefix=#{prefix}
       --sysconfdir=#{etc}
       --with-bash-completion-dir=#{bash_completion}
       --without-lzma
       --without-lzmadec
     ]
 
-    system ".configure", *args
+    system ".configure", *args, *std_configure_args
     system "make", "install"
   end
 

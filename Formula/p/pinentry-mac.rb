@@ -30,7 +30,7 @@ class PinentryMac < Formula
   end
 
   def install
-    system "autoreconf", "-fiv"
+    system "autoreconf", "--force", "--install", "--verbose"
     system "autoconf"
     system ".configure", "--disable-ncurses", "--enable-maintainer-mode"
     system "make"

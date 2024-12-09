@@ -27,10 +27,10 @@ class Tile38 < Formula
       -s -w
       -X github.comtidwalltile38core.Version=#{version}
       -X github.comtidwalltile38core.GitSHA=#{Utils.git_short_head}
-    ].join(" ")
+    ]
 
-    system "go", "build", *std_go_args(ldflags:), "-o", bin"tile38-server", ".cmdtile38-server"
-    system "go", "build", *std_go_args(ldflags:), "-o", bin"tile38-cli", ".cmdtile38-cli"
+    system "go", "build", *std_go_args(ldflags:, output: bin"tile38-server"), ".cmdtile38-server"
+    system "go", "build", *std_go_args(ldflags:, output: bin"tile38-cli"), ".cmdtile38-cli"
   end
 
   def post_install

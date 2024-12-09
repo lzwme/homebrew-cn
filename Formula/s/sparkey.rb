@@ -28,11 +28,8 @@ class Sparkey < Formula
   depends_on "snappy"
 
   def install
-    system "autoreconf", "--install"
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
     mv bin"bench", bin"sparkey_bench"
   end

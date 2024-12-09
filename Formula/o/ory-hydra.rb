@@ -32,8 +32,8 @@ class OryHydra < Formula
       -X github.comoryhydrav2driverconfig.Version=v#{version}
       -X github.comoryhydrav2driverconfig.Date=#{time.iso8601}
       -X github.comoryhydrav2driverconfig.Commit=#{Utils.git_head}
-    ].join(" ")
-    system "go", "build", *std_go_args(ldflags:), "-tags", "sqlite", "-o", bin"hydra"
+    ]
+    system "go", "build", *std_go_args(ldflags:, output: bin"hydra"), "-tags", "sqlite"
   end
 
   test do

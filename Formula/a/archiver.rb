@@ -23,7 +23,7 @@ class Archiver < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "-o", bin"arc", "cmdarcmain.go"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"arc"), ".cmdarc"
   end
 
   test do

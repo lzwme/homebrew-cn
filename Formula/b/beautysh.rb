@@ -8,30 +8,15 @@ class Beautysh < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49c707e71f3f7b721c45714b1ec43ec835742d6f1e5186c49f7b6c8c0600ccc3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49c707e71f3f7b721c45714b1ec43ec835742d6f1e5186c49f7b6c8c0600ccc3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "49c707e71f3f7b721c45714b1ec43ec835742d6f1e5186c49f7b6c8c0600ccc3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2255d1071a5750e9433f548a212f6fe812a77e4193c665bb51096ef1ff1a6ea5"
-    sha256 cellar: :any_skip_relocation, ventura:       "2255d1071a5750e9433f548a212f6fe812a77e4193c665bb51096ef1ff1a6ea5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88da0dae1615bdf1277745b3364275852e2fff5eabc9c1f0af81127409e6484a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "db3fc03fcc098082ae52debdee0bc7f353b793207d1cff2c05ea98f9d991bc83"
   end
 
-  depends_on "pkgconf" => :build
-  depends_on "rust" => :build
   depends_on "python@3.13"
-
-  on_linux do
-    depends_on "openssl@3"
-  end
 
   resource "colorama" do
     url "https:files.pythonhosted.orgpackagesd8536f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4colorama-0.4.6.tar.gz"
     sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
-  end
-
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesc8db722a42ffdc226e950c4757b3da7b56ff5c090bb265dccd707f7b8a3c6feesetuptools-75.5.0.tar.gz"
-    sha256 "5c4ccb41111392671f02bb5f8436dfc5a9a7185e80500531b133f5775c4163ef"
   end
 
   resource "types-colorama" do
@@ -42,6 +27,19 @@ class Beautysh < Formula
   resource "types-setuptools" do
     url "https:files.pythonhosted.orgpackages135e3d46cd143913bd51dde973cd23b1d412de9662b08a3b8c213f26b265e6f1types-setuptools-57.4.18.tar.gz"
     sha256 "8ee03d823fe7fda0bd35faeae33d35cb5c25b497263e6a58b34c4cfd05f40bcf"
+  end
+
+  # Switch build-system to poetry-core to avoid rust dependency on Linux
+  # https:github.comlovesegfaultbeautyshpull247
+  patch do
+    url "https:github.comlovesegfaultbeautyshcommit5f4fcac083fa68568a50f3c2bcee3ead0f3ca7c5.patch?full_index=1"
+    sha256 "26264ebaa3b4f3d65ea382fb126e77b64974a1eb26fda297558c5aad7620cb1b"
+  end
+
+  # Replace setuptools for python 3.12+: https:github.comlovesegfaultbeautyshpull251
+  patch do
+    url "https:github.comlovesegfaultbeautyshcommit2d0486cd4751d828ee0ba70c9c78c8d8f778b6fa.patch?full_index=1"
+    sha256 "2836af4805504339c1aa3bab1c14678e35d6eaaf2310c462b097b736d277b2be"
   end
 
   def install

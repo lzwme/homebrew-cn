@@ -38,13 +38,12 @@ class Pcrexx < Formula
     # about references to the compiler shims that exist there, and there doesn't
     # seem to be much reason to keep it around
     inreplace "doc/Makefile.am", "../config.log", ""
-    system "autoreconf", "-fvi"
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
+
+    system "autoreconf", "--force", "--install", "--verbose"
+    system "./configure", "--disable-silent-rules",
                           "--with-pcre-lib=#{pcre.opt_lib}",
-                          "--with-pcre-include=#{pcre.opt_include}"
+                          "--with-pcre-include=#{pcre.opt_include}",
+                          *std_configure_args
     system "make", "install"
 
     # Pcre++ ships Pcre.3, which causes a conflict with pcre.3 from pcre
@@ -97,11 +96,11 @@ index d80b387..21869fc 100644
  #include <stdexcept>
  #include <iostream>
 +#include <clocale>
- 
- 
+
+
  extern "C" {
    #include <pcre.h>
 -  #include <locale.h>
  }
- 
+
  namespace pcrepp {

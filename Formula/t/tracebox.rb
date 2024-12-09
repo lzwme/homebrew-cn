@@ -42,7 +42,7 @@ class Tracebox < Formula
     ENV["LUA_INCLUDE"] = "-I#{Formula["lua"].opt_include}lua"
     ENV["LUA_LIB"] = "-L#{Formula["lua"].opt_lib} -llua"
 
-    system "autoreconf", "--install"
+    system "autoreconf", "--force", "--install", "--verbose"
     system ".configure", "--disable-silent-rules",
                           "--with-libpcap=yes",
                           *std_configure_args

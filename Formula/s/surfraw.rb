@@ -28,10 +28,10 @@ class Surfraw < Formula
   end
 
   def install
-    system "autoreconf", "-fiv" if build.head?
-    system "./configure", "--prefix=#{prefix}",
-                          "--sysconfdir=#{etc}",
-                          "--with-graphical-browser=open"
+    system "autoreconf", "--force", "--install", "--verbose" if build.head?
+    system "./configure", "--sysconfdir=#{etc}",
+                          "--with-graphical-browser=open",
+                          *std_configure_args
     system "make"
     ENV.deparallelize
     system "make", "install"

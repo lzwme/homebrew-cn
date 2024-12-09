@@ -10,18 +10,19 @@ class CfnFormat < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2dfc02fb8cef10574b787ce6b63ddfbfbd7228b8c41c39b8082c0dbd35b71f4e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2dfc02fb8cef10574b787ce6b63ddfbfbd7228b8c41c39b8082c0dbd35b71f4e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2dfc02fb8cef10574b787ce6b63ddfbfbd7228b8c41c39b8082c0dbd35b71f4e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9f5d23e049aec09b43b9c47ae46714ebac12f378f010fd8a03981efe87f9b2bc"
-    sha256 cellar: :any_skip_relocation, ventura:       "9f5d23e049aec09b43b9c47ae46714ebac12f378f010fd8a03981efe87f9b2bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48275b92d101690b7b920877ab63ca6185a77bb705799e8c8cb0432d73cc547c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a94e9c2ca4f6fdcca464759cbfa7efda78b54ffe3924186908ed2075b676315"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a94e9c2ca4f6fdcca464759cbfa7efda78b54ffe3924186908ed2075b676315"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4a94e9c2ca4f6fdcca464759cbfa7efda78b54ffe3924186908ed2075b676315"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0c66ed9512ba2c3e3c4c61500f1d690fef539565f66f0937f0c7e15943ceaaf1"
+    sha256 cellar: :any_skip_relocation, ventura:       "0c66ed9512ba2c3e3c4c61500f1d690fef539565f66f0937f0c7e15943ceaaf1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "433f31f7b7a1fa8e3d2f965afacf2375b47ef13d7b8232068a3112013128cedf"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args, "cmdcfn-formatmain.go"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdcfn-format"
   end
 
   test do

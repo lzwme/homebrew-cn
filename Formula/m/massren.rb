@@ -1,22 +1,17 @@
 class Massren < Formula
   desc "Easily rename multiple files using your text editor"
   homepage "https:github.comlaurent22massren"
-  url "https:github.comlaurent22massrenarchiverefstagsv1.5.6.tar.gz"
-  sha256 "49758b477a205f3fbf5bbe72c2575fff8b5536f8c6b45f8f6bd2fdde023ce874"
+  url "https:github.comlaurent22massrenarchiverefstagsv1.5.7.tar.gz"
+  sha256 "7e7dd149bd3364235247268cc684b5a35badd9bee22f39960e075c792d037a8c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "83501d3e172358a56956abef5e4639522500a3dfeec5b8306259294ff736c606"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ed675b6bb854325a93f66dfc2b2d7508361392700b0845f55de62e623442b8ac"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "55e1859aa5bca0987dd3fb314243b5d589bd17dbdcb21aea6aa635ee734203c1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e4f3dfe97777a1e9526c15d1f68c635dd742e6aa3474905eed26de63688eb86d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "2911c014673d7dd0eb6333dcca8ed9a56d6ef14467c2f5cbb0b16a433e35991a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9c7a26e977b7360d2d8241494c1cbc03bcbde96f8683208df90c8d6a23d74030"
-    sha256 cellar: :any_skip_relocation, ventura:        "abc717c7a971ea403c3adf6c858e096c125b1558ace34612c569c378fc3f9d90"
-    sha256 cellar: :any_skip_relocation, monterey:       "afc3920b649de0abbbf4be6f9bccc8bbb3362a7c84dd0c551b38a4abc1f1f2ac"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c3e094ec567c910e7dd4dae785979781a3cc6ebcc5e5b32f14447f1610f068be"
-    sha256 cellar: :any_skip_relocation, catalina:       "edae797c19202bc52e73dd1c4f4e53609ef86693e63d536e26d5557f1c115edf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "903293ccfbd37369dca0458cfe533892a142cdc9418e46069b9d964f42c138c9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d9c626a0b4043b935fc894829d76eccb1b5e4005bb74a27c36a2bc6024d6738"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "90dff661ac5259a5bf2a26401f54d62e551a7799f0c44fd125bdb435e3047332"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "737fd5d4ee50a0321bace9f93d01e0e98dd40c5c360425432bce39c04a5805fc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9982a61764789498d55b95616ac779d9de1c3ddd6b7f72d449ae28a9894eecb4"
+    sha256 cellar: :any_skip_relocation, ventura:       "6d5f4718a56f2b21f8f5b11d9ccb003ffe75914e6e9951735a15fb9dd89de170"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4847c67886eae84c917ad14f478f1787532947689235f2edf9d38854740f663c"
   end
 
   depends_on "go" => :build
