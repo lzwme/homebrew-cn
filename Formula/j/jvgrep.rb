@@ -7,20 +7,19 @@ class Jvgrep < Formula
   head "https:github.commattnjvgrep.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "963ff6621f2dc1267f68d17325513c073972ccbf6d49593426755d3431af5179"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "75446e73d07e20f8f669a8aad8d06afa0ce4af12646e77c76cc985df3190a6a0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "75446e73d07e20f8f669a8aad8d06afa0ce4af12646e77c76cc985df3190a6a0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "75446e73d07e20f8f669a8aad8d06afa0ce4af12646e77c76cc985df3190a6a0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "67d7ddecea5ea8a4f38e466a044f33156864e65df221a990b11d20366be2e462"
-    sha256 cellar: :any_skip_relocation, ventura:        "67d7ddecea5ea8a4f38e466a044f33156864e65df221a990b11d20366be2e462"
-    sha256 cellar: :any_skip_relocation, monterey:       "67d7ddecea5ea8a4f38e466a044f33156864e65df221a990b11d20366be2e462"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c903876a35a55737263a79668f2f4f915c38481e0299ebe9f4296a66c4899c0b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b09906823a2d2bd6a90b0fcf9881cadfadf72693749f7431c787c910d74fb106"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b09906823a2d2bd6a90b0fcf9881cadfadf72693749f7431c787c910d74fb106"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b09906823a2d2bd6a90b0fcf9881cadfadf72693749f7431c787c910d74fb106"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3bf79835ac8078c953f7f86e12bed6dc332e268a22455349531945b2ca3414d1"
+    sha256 cellar: :any_skip_relocation, ventura:       "3bf79835ac8078c953f7f86e12bed6dc332e268a22455349531945b2ca3414d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d60b337f4a9d97f4107e04eaa49ca7cdca98cb44a158df7664b55a33724639ed"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do

@@ -1,8 +1,8 @@
 class Jaq < Formula
   desc "JQ clone focussed on correctness, speed, and simplicity"
   homepage "https:github.com01mf02jaq"
-  url "https:github.com01mf02jaqarchiverefstagsv2.0.0.tar.gz"
-  sha256 "7535387562c0e5519811bfd1f405eb8cb7683533781e0790981221e8e5b723c2"
+  url "https:github.com01mf02jaqarchiverefstagsv2.0.1.tar.gz"
+  sha256 "e554f375500d09813c9a2f4454217b8d12ae3be5dba56bc545b199ae0d4ab72e"
   license "MIT"
   head "https:github.com01mf02jaq.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Jaq < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9e1baf5e28388f988404f30cd8fdedffa9a830fcb12036b6ba2517449e4005a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a445f6961b926c0256a793930f1b0bc609ea2abfc162b3fbb9e9a9459c8e39dd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "da6254ea0bef9c88a10b0e5b2da9c67156cb92f93cfe6ddb793dbd8f225587cb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "90d9c16da4895f7983bac9e95204e85032eca0cf9f72872e246cebb8184424cd"
-    sha256 cellar: :any_skip_relocation, ventura:       "3b77caeb4a7adbd2a5b99eed2698b7c35897b997d9280f2509eb610f76beb96c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a338b6b76bb2fd8ae00d2c6432807ce0578a9ee91db8d058bb95b3c3f693fac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ccb5805c1ae04b780c347f05215dd5bb7b659c31e9e0f600c8a8948369af25ec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "287d3078e5c9a2761b7d83b2bbc2542fc3051aa8f878eb0347dc0d5c82902eb4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bb38aefd1c969476e055b6913f2688e7031e0489569365604b83fb785127105a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "82e856c696714d2bf8d18301536a70670526d19bb8056fbf92aa9bd0c56a8555"
+    sha256 cellar: :any_skip_relocation, ventura:       "68f4643fb4eea68a22360af9fde9f1c43ca18970fa121261952e63559ff83503"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91eb2d8a8e5fb8316dfa27db838799cec18aa56b42929ce71c8177eb818a02fe"
   end
 
   depends_on "rust" => :build

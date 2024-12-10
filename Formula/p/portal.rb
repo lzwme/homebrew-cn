@@ -7,19 +7,19 @@ class Portal < Formula
   head "https:github.comSpatiumPortaeportal.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1dd7ebc23dfcc62dd51a4cc2dfb3f1d3b56812e5937edc17b52877e49715705a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1dd7ebc23dfcc62dd51a4cc2dfb3f1d3b56812e5937edc17b52877e49715705a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1dd7ebc23dfcc62dd51a4cc2dfb3f1d3b56812e5937edc17b52877e49715705a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "07a49d8e455386ed83187e1d74641b1ed0bf0096c008e989e35e6f3342f3f7f0"
-    sha256 cellar: :any_skip_relocation, ventura:       "07a49d8e455386ed83187e1d74641b1ed0bf0096c008e989e35e6f3342f3f7f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53b9ee9ad5b6d0fe63eb4f44a9860c790e1859038b8e6ee9a91f7a550caa73ff"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c0f1d260c58e98e4fd7899ef87280ffe8efcc67d77764203a9d54fe35e47ab4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c0f1d260c58e98e4fd7899ef87280ffe8efcc67d77764203a9d54fe35e47ab4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2c0f1d260c58e98e4fd7899ef87280ffe8efcc67d77764203a9d54fe35e47ab4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b091e6d917f3c32d54ae00142dbecf84c98b74985626b43df1dc4ea4c4bcf54c"
+    sha256 cellar: :any_skip_relocation, ventura:       "b091e6d917f3c32d54ae00142dbecf84c98b74985626b43df1dc4ea4c4bcf54c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4416bc3aa73043e6120fd97676142abae1de1f131454036ff9baecf61253068d"
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -X main.version=v#{version}"
+    ldflags = "-s -w -X main.version=v#{version}"
     system "go", "build", *std_go_args(ldflags:), ".cmdportal"
 
     generate_completions_from_executable(bin"portal", "completion")

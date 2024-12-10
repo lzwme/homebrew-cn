@@ -3,8 +3,8 @@ class CoreLightning < Formula
 
   desc "Lightning Network implementation focusing on spec compliance and performance"
   homepage "https:github.comElementsProjectlightning"
-  url "https:github.comElementsProjectlightningreleasesdownloadv24.08.1clightning-v24.08.1.zip"
-  sha256 "d992af84dbb319fb4ac127663241cec04f54108e44c27e471d2cb2654702c01e"
+  url "https:github.comElementsProjectlightningreleasesdownloadv24.11clightning-v24.11.zip"
+  sha256 "3164f3527e6408132beaee64dea0fb6d566377b77e0be67a2359e80dcbd7ba9e"
   license "MIT"
 
   livecheck do
@@ -13,13 +13,12 @@ class CoreLightning < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "04269112db447906dd83ca753457bbb1ca517240ca3718c820abe1b0c88e9687"
-    sha256 arm64_sonoma:  "feb6e52f2c205eef80dca8f8e4bd9692f79deb63031da27cad6f974c3623826a"
-    sha256 arm64_ventura: "a11b53f72b183ada47d1a9ef6d175477d68d4a267694845c7a847317e18407bb"
-    sha256 sonoma:        "002da19820ec43df4a29edd5dcd8dfdba8ffa0a4f43a0f255652642fc5c82687"
-    sha256 ventura:       "ab6afa0566a63b50cf01cbb731246e1497fcda7569a01d14bbc15504e67d56ab"
-    sha256 x86_64_linux:  "ac8e18f4c0626cfcb1fc485038a6f9e96e54dd3d03d559cb0780ffc90eae1301"
+    sha256 arm64_sequoia: "e55d844454993325282420ee4ac5677118c037b3e21fdc2316bbb4cec7ad2c06"
+    sha256 arm64_sonoma:  "e0edaff0f78ef379035eb432a76133ba9ff7aadb83f915a93bd48cc0d64e6d89"
+    sha256 arm64_ventura: "398e40d27468a31cdce9ded4c1ccdcb4748ad21c6eefc7765fba98120579149d"
+    sha256 sonoma:        "a99d79cde0b5a92456cb079a08b34a57a5dd22eac04800ff3f25e0a2eff19f97"
+    sha256 ventura:       "b7ad63a884466f6ef581296587a73f61392a259c3fd1ecffe9818ef95433ca30"
+    sha256 x86_64_linux:  "1ccc0cc7f832cf482a1d84748825d1b5fdce4096ae51d7ac6746e3a32358ff10"
   end
 
   depends_on "autoconf" => :build
@@ -44,8 +43,8 @@ class CoreLightning < Formula
   end
 
   resource "mako" do
-    url "https:files.pythonhosted.orgpackagesfa0b29bc5a230948bf209d3ed3165006d257e547c02c3c2a96f6286320dfe8dcmako-1.3.6.tar.gz"
-    sha256 "9ec3a1583713479fae654f83ed9fa8c9a4c16b7bb0daba0e6bbebff50c0d983d"
+    url "https:files.pythonhosted.orgpackages5fd98518279534ed7dace1795d5a47e49d5299dd0994eed1053996402a8902f9mako-1.3.8.tar.gz"
+    sha256 "577b97e414580d3e088d47c2dbbe9594aa7a5146ed2875d4dfa9075af2dd3cc8"
   end
 
   resource "markupsafe" do
@@ -56,13 +55,6 @@ class CoreLightning < Formula
   resource "setuptools" do
     url "https:files.pythonhosted.orgpackages4354292f26c208734e9a7f067aea4a7e282c080750c4546559b58e2e45413ca0setuptools-75.6.0.tar.gz"
     sha256 "8199222558df7c86216af4f84c30e9b34a61d8ba19366cc914424cdbd28252f6"
-  end
-
-  # Backport fix for paths on ARM macOS
-  # PR ref: https:github.comElementsProjectlightningpull7857
-  patch do
-    url "https:github.comElementsProjectlightningcommit94c5695d6f1933aa8bffe50180dde702f1485297.patch?full_index=1"
-    sha256 "60742fa3911e4c9599cb9f0c0190fb7ed9940dba020236c8005311f1456bb4db"
   end
 
   def install

@@ -6,15 +6,15 @@ class Fdroidserver < Formula
   url "https:files.pythonhosted.orgpackages511bec2cae4ba139f72ec4e178618cd58ec103cce1629cb32e6c654adad9a768fdroidserver-2.3.2.tar.gz"
   sha256 "b50212b5f25544eb6e330afe757bdee0043f26b4e3cdff7b0f056fff37a0f36e"
   license "AGPL-3.0-or-later"
+  revision 1
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia: "439c8007d2c99583d4850bf97433708034f1bc90a8dfd76c10a5624afca909b8"
-    sha256 cellar: :any,                 arm64_sonoma:  "4000d5188b58ea6f1ced3d1214ce6756513e7b63c627f4e9e561d006ee40403c"
-    sha256 cellar: :any,                 arm64_ventura: "86f00e0a6e182a74dfb548a5e4330d4cf45d478a9d898a094e6635bf83ee8c56"
-    sha256 cellar: :any,                 sonoma:        "4fdaec3d321aca73e7ec4f1f460ea718dfa9f31fa1f5fb3f004374d809f373da"
-    sha256 cellar: :any,                 ventura:       "dbe39653fd99f6a35135b9c3cdb4d48f8f7badea92d0debd2fab2f52c7009995"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6df959d626de20dc0f268a3b57ef59fdbbab36436bd3dd94736386e6f9559bf4"
+    sha256 cellar: :any,                 arm64_sequoia: "556c5e3cf194592ef4387fda950b9ff909b16381f8f33085dd1f60041a3443da"
+    sha256 cellar: :any,                 arm64_sonoma:  "c9832d5f2e01900ff9378abecdb4fe89ca4700cb1f316ba0a9a34befa60afccf"
+    sha256 cellar: :any,                 arm64_ventura: "4554ebe46ff27e1ef5745bf953ac5f2659b8fa21c1d02baf003f46df00a12960"
+    sha256 cellar: :any,                 sonoma:        "8296888b2c55829cdd1a67a4d4afa07fcef7cf04e07fc8052e1a5c4e129f5e87"
+    sha256 cellar: :any,                 ventura:       "2deeb732f21856b34571e2b06945253cac523bd510c31a485705b0361a84340f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d48e382f57c3fd7d73e047eddaa3a93832f555228d196f060333b8e493f95800"
   end
 
   depends_on "ninja" => :build
@@ -53,8 +53,8 @@ class Fdroidserver < Formula
   end
 
   resource "argcomplete" do
-    url "https:files.pythonhosted.orgpackages5f3927605e133e7f4bb0c8e48c9a6b87101515e3446003e0442761f6a02ac35eargcomplete-3.5.1.tar.gz"
-    sha256 "eb1ee355aa2557bd3d0145de7b06b2a45b0ce461e1e7813f5d066039ab4177b4"
+    url "https:files.pythonhosted.orgpackages7f03581b1c29d88fffaa08abbced2e628c34dd92d32f1adaed7e42fc416938b0argcomplete-3.5.2.tar.gz"
+    sha256 "23146ed7ac4403b70bd6026402468942ceba34a6732255b9edf5b7354f68a6bb"
   end
 
   resource "args" do

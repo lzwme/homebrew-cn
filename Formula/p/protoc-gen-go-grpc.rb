@@ -11,14 +11,13 @@ class ProtocGenGoGrpc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1ad7618388f5992c35a75815b0de19f40518aff8743c448007277c5e735a52cc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7e92a04eb0c88228fff5b5e9088d9e1b278214418a59ebcd35bf721a54ad7e98"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7e92a04eb0c88228fff5b5e9088d9e1b278214418a59ebcd35bf721a54ad7e98"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7e92a04eb0c88228fff5b5e9088d9e1b278214418a59ebcd35bf721a54ad7e98"
-    sha256 cellar: :any_skip_relocation, sonoma:         "916c049867e8311c96322dba2c05a976fac1104d842114cebfe6cfb42f63db8a"
-    sha256 cellar: :any_skip_relocation, ventura:        "916c049867e8311c96322dba2c05a976fac1104d842114cebfe6cfb42f63db8a"
-    sha256 cellar: :any_skip_relocation, monterey:       "916c049867e8311c96322dba2c05a976fac1104d842114cebfe6cfb42f63db8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6252fdd5f14faaa8467cd9f5ce529b22c22aa2b8b4625ade71b52e28a2a2cb1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6fea4b83597ec851d649c1b749618dda37e3815b4780b28467557aa0a29df606"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6fea4b83597ec851d649c1b749618dda37e3815b4780b28467557aa0a29df606"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6fea4b83597ec851d649c1b749618dda37e3815b4780b28467557aa0a29df606"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5f99bc500ba51adf40e538a0400b8f345647cc0e7b0275745aa1f195e87910a3"
+    sha256 cellar: :any_skip_relocation, ventura:       "5f99bc500ba51adf40e538a0400b8f345647cc0e7b0275745aa1f195e87910a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b754fb14b20c7f4fe1f9f3f03693b2100ea882ffb3fad7c40f96df092437f870"
   end
 
   depends_on "go" => :build
@@ -26,7 +25,7 @@ class ProtocGenGoGrpc < Formula
 
   def install
     cd "cmdprotoc-gen-go-grpc" do
-      system "go", "build", *std_go_args
+      system "go", "build", *std_go_args(ldflags: "-s -w")
     end
   end
 

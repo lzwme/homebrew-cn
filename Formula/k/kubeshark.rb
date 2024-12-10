@@ -1,8 +1,8 @@
 class Kubeshark < Formula
   desc "API Traffic Analyzer providing real-time visibility into Kubernetes network"
   homepage "https:www.kubeshark.co"
-  url "https:github.comkubesharkkubesharkarchiverefstagsv52.3.91.tar.gz"
-  sha256 "90b4c6c223716d21fbce0d8c401929882afe711be60211439aa26f49764f96a0"
+  url "https:github.comkubesharkkubesharkarchiverefstagsv52.3.92.tar.gz"
+  sha256 "191aedeb123dcdfcc5ac4618829928ae629173fedcd4a442f825bb6cb61a0c97"
   license "Apache-2.0"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,13 +14,12 @@ class Kubeshark < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85601506de7d4ed26d691e6db22b6ecad5bb867038e99fec085ea694200888ec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf61db97234077ee5e909b90995f95fb6fc4082561600ee275ae39d870d669c6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "85b28a384bfbf073ab3c3a7b4f81e40e3c114697d827bfd0b9650be0bde06e41"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b7ed455c3d7684f46476e713b29549d053271886bfa75b2ac51666fc62230886"
-    sha256 cellar: :any_skip_relocation, ventura:       "f922c11d61d3daec65885287bc4de8d2994366fee8ff482deeefd0b1eac21ca8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8aa5bff07dcfe7102528ce451951c8040e30e2bf2dc158d4fe16c79dcc994780"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c8eca89a192349ca5a0bedc1b7e272fb37cbe60faa2169aec20414f236fcbfe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6add4fbd8705a2454dec45aa82ff9bcc42eb8c67c99a3aa336e4d8dc68b92437"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f59014ddab0a3774b401effa785684de5b73780e6a6a993337718a7c4d15622f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d867f9ffbf3e09f53dd1532da607f5194a230103c99dea9eae490f7144fec064"
+    sha256 cellar: :any_skip_relocation, ventura:       "aceffdf910e8d79877bad779794a9b5b85ef640df960e70a729e5a5156b9f9b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dded6550213d2f0c60e1f25d0e58562954fdfe207e8eae7e3017b5660e08ad0f"
   end
 
   depends_on "go" => :build

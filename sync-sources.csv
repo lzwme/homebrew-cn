@@ -3785,6 +3785,7 @@ Homebrew-homebrew-core/Formula/lib/libserdes.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libserialport.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libshout.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libshumate.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libsidplayfp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libsigc++.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libsigc++@2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libsignal-protocol-c.rb, Homebrew/homebrew-core, 1
@@ -7234,6 +7235,7 @@ Homebrew-homebrew-core/Formula/z/zsh-autocomplete.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zsh-autopair.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zsh-autosuggestions.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zsh-completions.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/z/zsh-f-sy-h.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zsh-fast-syntax-highlighting.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zsh-git-prompt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zsh-history-substring-search.rb, Homebrew/homebrew-core, 1
@@ -10932,6 +10934,7 @@ Homebrew-homebrew-cask/Casks/font/font-t/font-tac-one.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/font/font-t/font-tai-heritage-pro.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-t/font-tajawal.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-t/font-takaoex.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-t/font-tamzen.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-t/font-tangerine.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-t/font-tapestry.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-t/font-taprom.rb, Homebrew/homebrew-cask, 1

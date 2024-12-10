@@ -6,18 +6,19 @@ class Scw < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "614ffc99584f69e826f981795a4a6ca15c63b32d3de30aa4c5c528d9a233c10a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "614ffc99584f69e826f981795a4a6ca15c63b32d3de30aa4c5c528d9a233c10a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "614ffc99584f69e826f981795a4a6ca15c63b32d3de30aa4c5c528d9a233c10a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9f68a34d87c813c99adba55711778c2fb4d8625a3f40251f8c516f38deb9e9ef"
-    sha256 cellar: :any_skip_relocation, ventura:       "9f68a34d87c813c99adba55711778c2fb4d8625a3f40251f8c516f38deb9e9ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92f53c48d9cff7fed2aeaf9cf5f6774f99142eb214dfe2d0648953e5b7e6e1ba"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "02881fd850383349a8a6dd9c17f85420ebcb8f4cec7f85790fa5c79fc3ccf4f7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "02881fd850383349a8a6dd9c17f85420ebcb8f4cec7f85790fa5c79fc3ccf4f7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "02881fd850383349a8a6dd9c17f85420ebcb8f4cec7f85790fa5c79fc3ccf4f7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c2148f21540a7e8049d9dad5b967471e7cd023cbc61dc0524b941b459450c562"
+    sha256 cellar: :any_skip_relocation, ventura:       "c2148f21540a7e8049d9dad5b967471e7cd023cbc61dc0524b941b459450c562"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6ef4f5002003ffb0486a2d62fdeb2a8161e833d98b0b31144b1dd1cbb05196f"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-X main.Version=#{version}"), ".cmdscw"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}"), ".cmdscw"
 
     generate_completions_from_executable(bin"scw", "autocomplete", "script", shell_parameter_format: :none)
   end

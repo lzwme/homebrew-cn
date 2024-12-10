@@ -12,18 +12,19 @@ class Lazygit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3bcf700102ecf5976c0c930f8c713f4309e632476a5f72d2c84e64abcae9bd73"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3bcf700102ecf5976c0c930f8c713f4309e632476a5f72d2c84e64abcae9bd73"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3bcf700102ecf5976c0c930f8c713f4309e632476a5f72d2c84e64abcae9bd73"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5fc269661eb5372083df26bfbe811a7242a70bd5a5a4dea0e2f442a529136961"
-    sha256 cellar: :any_skip_relocation, ventura:       "5fc269661eb5372083df26bfbe811a7242a70bd5a5a4dea0e2f442a529136961"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf81243a38039594e8461d3a209f1bb49b1dff81fc2d871f28ed2b761b982d00"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8faac025e1c21936ca7bdb7d5a104317386a49686550c3fdfc8cff9c79e1983f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8faac025e1c21936ca7bdb7d5a104317386a49686550c3fdfc8cff9c79e1983f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8faac025e1c21936ca7bdb7d5a104317386a49686550c3fdfc8cff9c79e1983f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0070aff6b1915fe84cea7d5211ed63ae28e7dabc55eba1f6282f1eaba01c4401"
+    sha256 cellar: :any_skip_relocation, ventura:       "0070aff6b1915fe84cea7d5211ed63ae28e7dabc55eba1f6282f1eaba01c4401"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ea460585abf0884e87f46c3d746c7904d24508b72b2c7317ce653d93d9b0c56"
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = "-X main.version=#{version} -X main.buildSource=homebrew"
+    ldflags = "-s -w -X main.version=#{version} -X main.buildSource=homebrew"
     system "go", "build", "-mod=vendor", *std_go_args(ldflags:)
   end
 

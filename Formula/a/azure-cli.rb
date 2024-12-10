@@ -6,6 +6,7 @@ class AzureCli < Formula
   url "https:github.comAzureazure-cliarchiverefstagsazure-cli-2.67.0.tar.gz"
   sha256 "ff55f2c22b372a01518bae53c9acbd612a7f0836935f7dc98574b64f25507620"
   license "MIT"
+  revision 1
   head "https:github.comAzureazure-cli.git", branch: "dev"
 
   livecheck do
@@ -15,12 +16,12 @@ class AzureCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4fea3256f26da7db282bfe0b3541ec60f7da7711b5903eb40a004c0fddc784a0"
-    sha256 cellar: :any,                 arm64_sonoma:  "93180833cb256e97abd3c4e10f5fce064beeabea7d27c0c38008b106ccf243d4"
-    sha256 cellar: :any,                 arm64_ventura: "6af9547de138ebeff383764f9666f4f49b01f7a87323386007a0bb6b065c57b0"
-    sha256 cellar: :any,                 sonoma:        "e2fe8e3e6d048d795cc5d652ae4491fc9b4a95b057226339508611cd97ae277f"
-    sha256 cellar: :any,                 ventura:       "f0a65c8609f4be30ed19f9ce82565cd67ab13925ae0bb6062bd1622643d25b37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff63d27dc6262753ee4406650111ce108893a0de1bc7e6a97f9e9a68f29e949f"
+    sha256 cellar: :any,                 arm64_sequoia: "625075ddb021f2393e7cf776ec42b449b194b562ead1c56f4b4abbaf025bcdf6"
+    sha256 cellar: :any,                 arm64_sonoma:  "5d282d39405880f7c32f55bca8e22fb95658082cc9eeaa3d1a49a65713cf2603"
+    sha256 cellar: :any,                 arm64_ventura: "1609beae4c84bb2a5b82808b6f6c65bbe77ce3b7018df6afe5063e015a397c84"
+    sha256 cellar: :any,                 sonoma:        "d3e3bd91ea0f07d99006d5132ca8c7d4d2e393ec45bb1090e3a0821b5b7d9ee3"
+    sha256 cellar: :any,                 ventura:       "5f777037075d6f60bb2cd6d7f85640982e913449ea1fc3a13f51406090f1868c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13cd4f4918fc3c139c74b4fb693b74557bcce9fed495b03fc68b629e29b64e0b"
   end
 
   # `pkgconf`, `rust`, and `openssl@3` are for cryptography.
@@ -64,8 +65,8 @@ class AzureCli < Formula
   end
 
   resource "argcomplete" do
-    url "https:files.pythonhosted.orgpackages7951fd6e293a64ab6f8ce1243cf3273ded7c51cbc33ef552dce3582b6a15d587argcomplete-3.3.0.tar.gz"
-    sha256 "fd03ff4a5b9e6580569d34b273f741e85cd9e072f3feeeee3eba4891c70eda62"
+    url "https:files.pythonhosted.orgpackages7f03581b1c29d88fffaa08abbced2e628c34dd92d32f1adaed7e42fc416938b0argcomplete-3.5.2.tar.gz"
+    sha256 "23146ed7ac4403b70bd6026402468942ceba34a6732255b9edf5b7354f68a6bb"
   end
 
   resource "azure-appconfiguration" do

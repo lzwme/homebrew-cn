@@ -1,8 +1,8 @@
 class Pv < Formula
   desc "Monitor data's progress through a pipe"
   homepage "https://www.ivarch.com/programs/pv.shtml"
-  url "https://www.ivarch.com/programs/sources/pv-1.9.7.tar.gz"
-  sha256 "6976a789ee1bbcfdc47732015b60589c1d0408892252dd7cbb44f43363a2f33a"
+  url "https://www.ivarch.com/programs/sources/pv-1.9.15.tar.gz"
+  sha256 "e2b17564ab9eba1ec2caae285960cbf363b4401dffda191a60a0befe68e17dac"
   license "Artistic-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Pv < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "907e9f114fe5c31eba1c9dbbc0ba5fe14eaf882639397819082765314cd7d763"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5cbb4485f318aafba34c7822ee28736776ecddefc9817464082a5ddbe10d697a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "098c40aaaf9cadc64ce87f641fc93bbc34043af3199089b2ab8c0a9fb9d0ec7a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9a3eb76a12406cf4fd0f4af0dd0f4a61475c5dc9acdb451a5f27cdbf69be6bd0"
-    sha256 cellar: :any_skip_relocation, ventura:       "25fe871cbff3253c0f1928ad360399547175ac787245787cb1b35528d761356f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2325f0ff216530b9f4d5f027666a002ee213ffc3954930b02038b2c6531215cd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b399be5422bcd9841f428a2cdf20978cbe106f894df8aad117db0522546ffc2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c993bbef82690b6f4e773421ed6a63dbd069b1da408b0be444839e3048217384"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f558107fcfd4617aecd28b65b6fb8bd11b2cd84eb10e18ac87eb441f0b0147d9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "51198750d333a2fae32d0cba5a0a5a2c8d16b1c777381c9d7554deff74adc3a4"
+    sha256 cellar: :any_skip_relocation, ventura:       "3d34a1ac295d5a2d8bf661e71cda8128992535f9d11afddb6888d0b810ace337"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca5db0944e81a9008d9a49413c1b48fe38354d3b1be71d7a9d3e409fa831859b"
   end
 
   def install

@@ -6,6 +6,7 @@ class Checkov < Formula
   url "https://files.pythonhosted.org/packages/73/28/91b6524cc8bc3aee301df95cb26534e259ffa9275adda308a903367a941f/checkov-3.2.330.tar.gz"
   sha256 "a672e96fe290608267be9aa556add10a5dc8b6801e888d41226e7019f5fef3a3"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https://pypi.org/rss/project/checkov/releases.xml"
@@ -17,12 +18,12 @@ class Checkov < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ecc7f4a2e5bd622e024847c42f4f696e37683d1f86f3a8ce7a35f8dbc25a642c"
-    sha256 cellar: :any,                 arm64_sonoma:  "01cc5b072abe069479397d95ffd59e78490e5958fe1af556013c01e112aa2807"
-    sha256 cellar: :any,                 arm64_ventura: "5ff2739d1e80a656f6a46b36f4a4ec2ed164f1bdee069f1578f581f838c06633"
-    sha256 cellar: :any,                 sonoma:        "39572eae199bb9d42940f1a30e97ff92f31e469418be67c0b0186f58453b3aad"
-    sha256 cellar: :any,                 ventura:       "c7b211747f96464f63b6f6ace6d64cab43fe2584fa1b12d1c140c38197a658d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45309439962e1b3bf76f77b3fbde3b22987d43728364dcc3e6cf2c29041e6f63"
+    sha256 cellar: :any,                 arm64_sequoia: "164266b20b58742e89c5cc1a2df9de66a893854b59d77dcc75f5ffa67a4f81ad"
+    sha256 cellar: :any,                 arm64_sonoma:  "b59536b66573ded28d1cb30369fc92b0896eb01aaac90652fed28921bd4068ae"
+    sha256 cellar: :any,                 arm64_ventura: "857339cc7299781aba95f46b2d384fe4eff87719edc0286ccd9fcd8aa862f845"
+    sha256 cellar: :any,                 sonoma:        "905ab0c0a87b6914805fc76c9b392b2363de53df23e8f20cc7cc71bd138fe786"
+    sha256 cellar: :any,                 ventura:       "6a87432a4176f0176051ba8411d3d171fff078d045255a3d783e91f6e2c79d24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72bf0468fc1c3a7896d7b4980923587af3aeb7f1d04deaaf49107dfd638b390f"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -65,8 +66,8 @@ class Checkov < Formula
   end
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/5f/39/27605e133e7f4bb0c8e48c9a6b87101515e3446003e0442761f6a02ac35e/argcomplete-3.5.1.tar.gz"
-    sha256 "eb1ee355aa2557bd3d0145de7b06b2a45b0ce461e1e7813f5d066039ab4177b4"
+    url "https://files.pythonhosted.org/packages/7f/03/581b1c29d88fffaa08abbced2e628c34dd92d32f1adaed7e42fc416938b0/argcomplete-3.5.2.tar.gz"
+    sha256 "23146ed7ac4403b70bd6026402468942ceba34a6732255b9edf5b7354f68a6bb"
   end
 
   resource "attrs" do

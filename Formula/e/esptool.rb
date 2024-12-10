@@ -6,15 +6,15 @@ class Esptool < Formula
   url "https://files.pythonhosted.org/packages/5c/6b/3ce9bb7f36bdef3d6ae71646a1d3b7d59826a478f3ed8a783a93a2f8f537/esptool-4.8.1.tar.gz"
   sha256 "dc4ef26b659e1a8dcb019147c0ea6d94980b34de99fbe09121c7941c8b254531"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "435a28b10ab6dc8fadc387f29e9d100f66a595bbdb3fa1ca1e5eb5c2ed7c12df"
-    sha256 cellar: :any,                 arm64_sonoma:  "b743da34300c646e201c1abfec19a0a8a7dfcd2944e12ebea17a47a47428cf4f"
-    sha256 cellar: :any,                 arm64_ventura: "e4874eaefae3706401f4e3402e984fed85216f2b1ea6931e6555d08d4e9bc1d4"
-    sha256 cellar: :any,                 sonoma:        "507146f1cf6fbb9c674c13caff0030099309d412ce6905893907eee54c28c0c4"
-    sha256 cellar: :any,                 ventura:       "e553aab2cc885e47e3b38f31bcbb622ea03e970054201d97ebe47794d7241826"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "331a891fb3f0af73d6f29687914a5377ceebc1b06f0d7d5e181b6983f8cc143a"
+    sha256 cellar: :any,                 arm64_sequoia: "11062defdb3e0e64afc4d86f61474e6fa0cdf0646a4335c991a09563a90c9ff3"
+    sha256 cellar: :any,                 arm64_sonoma:  "4373c938b5e538847006da6c7ed1edf93a5ff7b9dd1f5a76b1abcb68898fdec3"
+    sha256 cellar: :any,                 arm64_ventura: "495e3a8f36f37f4cd6d807d89aadb44ba8c0e5f829c7f5a7901e28876e492553"
+    sha256 cellar: :any,                 sonoma:        "70a8cc11e7bd50d039f5686149c32bffb65f877115663543ccb3fecf1c1b9e9c"
+    sha256 cellar: :any,                 ventura:       "df06b71d185a18aff7dc694a21287bf71699a4097e88a8a08dbc8668065f68ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "586a583e0380e748419d35f39283d6d1e2df28b4befb05275c43af51a9a643c6"
   end
 
   depends_on "cryptography"
@@ -22,8 +22,8 @@ class Esptool < Formula
   depends_on "python@3.13"
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/5f/39/27605e133e7f4bb0c8e48c9a6b87101515e3446003e0442761f6a02ac35e/argcomplete-3.5.1.tar.gz"
-    sha256 "eb1ee355aa2557bd3d0145de7b06b2a45b0ce461e1e7813f5d066039ab4177b4"
+    url "https://files.pythonhosted.org/packages/7f/03/581b1c29d88fffaa08abbced2e628c34dd92d32f1adaed7e42fc416938b0/argcomplete-3.5.2.tar.gz"
+    sha256 "23146ed7ac4403b70bd6026402468942ceba34a6732255b9edf5b7354f68a6bb"
   end
 
   resource "bitarray" do

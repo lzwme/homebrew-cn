@@ -7,21 +7,24 @@ class Snowflake < Formula
   head "https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07a6b122106aef0f5d9937284eee382799fdfff93618403f9c4a865810323128"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07a6b122106aef0f5d9937284eee382799fdfff93618403f9c4a865810323128"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "07a6b122106aef0f5d9937284eee382799fdfff93618403f9c4a865810323128"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6e0692f785c995c5b510a8cceaecc976d0a006a1c1106f2f3c18afefe6b490b6"
-    sha256 cellar: :any_skip_relocation, ventura:       "6e0692f785c995c5b510a8cceaecc976d0a006a1c1106f2f3c18afefe6b490b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5748cac0c4def26224081230df4a1054d992796b11dbd91453ac196ecc1eca69"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89a106509860c13ecf8b2bfe11ac3e6f83c03d493960d4e9570ba61ae63131ee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89a106509860c13ecf8b2bfe11ac3e6f83c03d493960d4e9570ba61ae63131ee"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "89a106509860c13ecf8b2bfe11ac3e6f83c03d493960d4e9570ba61ae63131ee"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e63cc05a0a54ca94d93bd68754ecb0629a288a34a56a378e63561d6c8a48f924"
+    sha256 cellar: :any_skip_relocation, ventura:       "e63cc05a0a54ca94d93bd68754ecb0629a288a34a56a378e63561d6c8a48f924"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5edb791b02ef6cf50539bcb495f58f8f2622085f81252abb17f14eeb3f62356d"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(output: bin/"snowflake-broker"), "./broker"
-    system "go", "build", *std_go_args(output: bin/"snowflake-client"), "./client"
-    system "go", "build", *std_go_args(output: bin/"snowflake-proxy"), "./proxy"
-    system "go", "build", *std_go_args(output: bin/"snowflake-server"), "./server"
+    ldflags = "-s -w"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"snowflake-broker"), "./broker"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"snowflake-client"), "./client"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"snowflake-proxy"), "./proxy"
+    system "go", "build", *std_go_args(ldflags:, output: bin/"snowflake-server"), "./server"
+
     man1.install "doc/snowflake-client.1"
     man1.install "doc/snowflake-proxy.1"
   end

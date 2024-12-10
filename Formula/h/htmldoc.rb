@@ -1,18 +1,18 @@
 class Htmldoc < Formula
   desc "Convert HTML to PDF or PostScript"
   homepage "https:www.msweet.orghtmldoc"
-  url "https:github.commichaelrsweethtmldocarchiverefstagsv1.9.19.tar.gz"
-  sha256 "5975a5b906de8506c14aedbbf4b954886b4972637d1f0609c6d2546933f3038d"
+  url "https:github.commichaelrsweethtmldocarchiverefstagsv1.9.20.tar.gz"
+  sha256 "a155c86c69f90a426ff7244bd046bad026cc5ba9ac2be89dcb1d7973c52d5d82"
   license "GPL-2.0-only"
   head "https:github.commichaelrsweethtmldoc.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia: "7d9d968e4f563c7c6f1b0695340f0236f4b8014a102094988e14942119bbebfd"
-    sha256 arm64_sonoma:  "f8b178aefc212dec9c57d065b1f9cb754f3ef3aa40b29f067496d7b5f9d17953"
-    sha256 arm64_ventura: "7f83f8df62f8bf32baf2831a87d2e5050f776034022fc3aae00b2fa15ef462ed"
-    sha256 sonoma:        "7f0fd22d7423ac61f497f0937bb95eac75db859886473a51dac68c955fbfb3c9"
-    sha256 ventura:       "b2fe28733a17755ce87c5006ff2b9ba347cdd4fcb358792241cdea2f77023ab1"
-    sha256 x86_64_linux:  "7a3c3054f5628a3ce636939808c5db98daa187a4b2bc9a2ca6b1c040b48b3c49"
+    sha256 arm64_sequoia: "5183e094ab3128b038025333172df99251d2a4f1db6c409d892eba9ff9967270"
+    sha256 arm64_sonoma:  "3957858cee344323b79f139e3659f40112509a8a63305422c18a523f3a4ebd78"
+    sha256 arm64_ventura: "fc6b29637b2e230ee3f969118df765352cc4c55c496ba0aa28b3ccd8db3fa762"
+    sha256 sonoma:        "7bb2bc2ad093d1d9ab36698bb927dd6ace11ca733f300c18bf8f7299588cf1a4"
+    sha256 ventura:       "905cc97f81a0215aa7b1c90b8679ed67e5446b1b533173f2a2d288b4db4fbc96"
+    sha256 x86_64_linux:  "cff32d4cdcf1043c08056a4a3bcacb77de58c679c878bbe983f8de9fc75d438c"
   end
 
   depends_on "pkgconf" => :build

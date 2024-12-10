@@ -6,14 +6,15 @@ class Datalad < Formula
   url "https:files.pythonhosted.orgpackagesed0512bdf141e6350cd55258cfc74709a2c9ab135428687cbe8d2262a8bdcededatalad-1.1.4.tar.gz"
   sha256 "db9286a4baf74d53d23c3bfb5928452197d57f36abed8ba0af334a3dd038166b"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "435a51551a0a11cb19167c7bb60826c9afebf32b39dc0c76225a5ef1535f2762"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e716975cb4ca0e2ea705f1a0cfa78c96b0293f3b1f764eb42a9053282300543d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "044100c9d5be1e4ae9e1221d99b72c1db0e9ed534da392afab57f4a598cac901"
-    sha256 cellar: :any_skip_relocation, sonoma:        "284d098504a017621a222d0823dc24e252b0e091eedeb08d1ee44dc915dbcbbf"
-    sha256 cellar: :any_skip_relocation, ventura:       "d5319a3bde66ba6971b56f43b135c51675cd016296f7b674f7fc9857e11d9042"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6032275507602d7554c1cd9ef6ba72dd9d8a507d6ea0b18c2fc4aa90baca8796"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40ee755fc027f32f998b65d1b7256a76fa6e480899922d0f1505e0976321eee2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d1a565990c610e90c8653af7f79d46560b255be2d9cc06e1bb3adfae57e3fe8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8efb957ca023b578829ba9c82b1960008c6510a770d92865aff020aa3dfe9246"
+    sha256 cellar: :any_skip_relocation, sonoma:        "271c5b796ff632baacfadb76111ae6acba0a20045bd4548bee75b95831bae2cf"
+    sha256 cellar: :any_skip_relocation, ventura:       "e9aa8fca4242fb224f0e3124650ecf9f811bb42ba6e8c370885706cb767c7d08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b9f6c445c3483c6c9ca38956cc0eb9bca018cfa78d598e7820005a82715245e"
   end
 
   depends_on "certifi"
@@ -28,8 +29,8 @@ class Datalad < Formula
   end
 
   resource "argcomplete" do
-    url "https:files.pythonhosted.orgpackages5f3927605e133e7f4bb0c8e48c9a6b87101515e3446003e0442761f6a02ac35eargcomplete-3.5.1.tar.gz"
-    sha256 "eb1ee355aa2557bd3d0145de7b06b2a45b0ce461e1e7813f5d066039ab4177b4"
+    url "https:files.pythonhosted.orgpackages7f03581b1c29d88fffaa08abbced2e628c34dd92d32f1adaed7e42fc416938b0argcomplete-3.5.2.tar.gz"
+    sha256 "23146ed7ac4403b70bd6026402468942ceba34a6732255b9edf5b7354f68a6bb"
   end
 
   resource "boto3" do

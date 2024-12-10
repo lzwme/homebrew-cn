@@ -9,13 +9,13 @@ class GobjectIntrospection < Formula
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later", "MIT"]
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "8c7ea27f7c13481871d27c50ea03c77412b5fe44131a5c548a100fd7c286269a"
-    sha256 arm64_sonoma:  "fcbf404243d12ca9f41a326efb2df79d1d2a3be9daa1b67e8c2eec4dfcecacc8"
-    sha256 arm64_ventura: "29b8666f8fb847410b974487571d1532ad22ecebc5d14e5159023bd3cd0ec26b"
-    sha256 sonoma:        "4114aec82418c561da36503cacf909073bdfc1e95f3a72e4daec98d588b93f89"
-    sha256 ventura:       "e6c49d63be1207e36dfce7090d1070e9bc94bb5765771c201e07365a1a0febd1"
-    sha256 x86_64_linux:  "52311726849f54015d1d233a2a5380d137dc6576eb117b19b419cd190efabc3f"
+    rebuild 2
+    sha256 arm64_sequoia: "9d444f7cfd38c5a74765aa51eb6bea35136dde8d9b18e3d01093d19323987b7a"
+    sha256 arm64_sonoma:  "0f98698570fde113ddf8134b93edf7e50a71530fdad4a345dea44307ad489254"
+    sha256 arm64_ventura: "7d63768077cc24f658149b380daaf6c4d736b09dd3b8a7dc44ac1c94b0ff5472"
+    sha256 sonoma:        "893ed8eba9a90e94c95be128bb8acd9a81386204607e8bed4a53c290fb06fc32"
+    sha256 ventura:       "540635fb9a734b24b2f77740f1e7ca457b9b3644121ff9e938c61738be9827f3"
+    sha256 x86_64_linux:  "c34513885c5ac7c1df5e3f1f4ddb972194a572d19097980e6e67e4d8e8047319"
   end
 
   depends_on "bison" => :build
@@ -54,7 +54,7 @@ class GobjectIntrospection < Formula
   # See: https:github.comHomebrewhomebrew-coreissues75020
   #      https:gitlab.gnome.orgGNOMEgobject-introspection-merge_requests273
   patch do
-    url "https:gitlab.gnome.orgtschoonjgobject-introspection-commita7be304478b25271166cd92d110f251a8742d16b.diff"
+    url "https:gitlab.gnome.orgGNOMEgobject-introspection-commita7be304478b25271166cd92d110f251a8742d16b.diff"
     sha256 "740c9fba499b1491689b0b1216f9e693e5cb35c9a8565df4314341122ce12f81"
   end
 

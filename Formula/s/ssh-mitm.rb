@@ -6,16 +6,16 @@ class SshMitm < Formula
   url "https:files.pythonhosted.orgpackages6522d5a7a153b1f40f31e1a7e15439e4e3a2aad1413a486aa69c2f0be6482295ssh_mitm-5.0.0.tar.gz"
   sha256 "0c3ad0e925c7144e1c95efa08ab183100fcb8257068ae0729fb19493e3a45d60"
   license "GPL-3.0-only"
+  revision 1
   head "https:github.comssh-mitmssh-mitm.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia: "45b617ec5165aaa7ee90bbd55d84e5d4d2c5d6d45f9e981d5bc67661d29067a8"
-    sha256 cellar: :any,                 arm64_sonoma:  "f8773df78248f061b570f36462197ce1204ad0495cc480531a01930bcf429313"
-    sha256 cellar: :any,                 arm64_ventura: "96241fca6a95b8941284996b11cc70a3428bff31fb80199a87f08329ba0a1fc2"
-    sha256 cellar: :any,                 sonoma:        "8d953e30a1ba698d02939524c056859792aecc77b29f4259d6abd38a8974f37b"
-    sha256 cellar: :any,                 ventura:       "5fe6697f827617e56f21e57cadadc45744de62ccef3483c9a123a3ea8e3f6cb8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b9dc80395106c70b3cd444a83c5d8634d3c1a30c4a7fa1b823c932ef6155793"
+    sha256 cellar: :any,                 arm64_sequoia: "043c5dd939bff192cceab387771d00d44aa9c1156604dc6cec597fdfa93e3351"
+    sha256 cellar: :any,                 arm64_sonoma:  "e5467dee9666148cb0ff3e9082af11167fad3d0ee93fc53cdcf932d763a10ca9"
+    sha256 cellar: :any,                 arm64_ventura: "ef8c81c52e041f0eeeead3cc39020ed1c366ff99766e5c40d7a8d829fcb989bb"
+    sha256 cellar: :any,                 sonoma:        "29dfca7957e1fe8d9b497e78ae338b03af2350b2cc7339698b4501e39332826b"
+    sha256 cellar: :any,                 ventura:       "44562ad8c9b8a789d10fd58e7e39ac12a38491034a662442252d322cf42ad27e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f04102f106aca16ca4039b68f6c505c3c8f8e2a0b701fe24b130cd52c05eab42"
   end
 
   depends_on "rust" => :build # for bcrypt
@@ -30,8 +30,8 @@ class SshMitm < Formula
   end
 
   resource "argcomplete" do
-    url "https:files.pythonhosted.orgpackages5f3927605e133e7f4bb0c8e48c9a6b87101515e3446003e0442761f6a02ac35eargcomplete-3.5.1.tar.gz"
-    sha256 "eb1ee355aa2557bd3d0145de7b06b2a45b0ce461e1e7813f5d066039ab4177b4"
+    url "https:files.pythonhosted.orgpackages7f03581b1c29d88fffaa08abbced2e628c34dd92d32f1adaed7e42fc416938b0argcomplete-3.5.2.tar.gz"
+    sha256 "23146ed7ac4403b70bd6026402468942ceba34a6732255b9edf5b7354f68a6bb"
   end
 
   resource "bcrypt" do

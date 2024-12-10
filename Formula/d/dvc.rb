@@ -6,14 +6,15 @@ class Dvc < Formula
   url "https:files.pythonhosted.orgpackages27055c173feb1a2ff16c03a85f0ff2dad1bfcd22c8a7e9d5bf198a18cefb4ac0dvc-3.58.0.tar.gz"
   sha256 "cd078b2916841dbb8ac0cf0aec9db723b11117651af53028d288b6a9a87b7399"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d6dc591b3a88ddf4a6f4badcb774b1f728d1dbd9b397a4f76348c6dad2d6e8bc"
-    sha256 cellar: :any,                 arm64_sonoma:  "72291e6995de2de4d9961aadb5d307f0d54a09a08fb51984c23b6fb07bd06757"
-    sha256 cellar: :any,                 arm64_ventura: "f38d9add3960106c290089d91d4cffec1491d622bbf657594d2d52acd5470bfa"
-    sha256 cellar: :any,                 sonoma:        "08bb61c5d5ee56b6ecfdbba298367b44ead11f95ad9d4ecdcc077b6ce75e2b25"
-    sha256 cellar: :any,                 ventura:       "41bc14ae8c88e2fbefcd95b3f94ec2425cb5fc5345952d8e1ee0bd201510bab9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af094092ceeae10e438ecbcd5e23dfce7ccffda1a056ae831c8c5e2ace3d2326"
+    sha256 cellar: :any,                 arm64_sequoia: "6c829320837208bc3cf199ff0631d543a52644911e3e43f1fc77860a19c74517"
+    sha256 cellar: :any,                 arm64_sonoma:  "5d6a4246fef6a6d148adee7ca1c5e3265796dd6a9291b0bd86fda3b50c544b1c"
+    sha256 cellar: :any,                 arm64_ventura: "c6dbe9cb6eeecec2bbce7d719fa3a8ec6b28d52ca8d55045bf6650366d340730"
+    sha256 cellar: :any,                 sonoma:        "71ed796beb9f3836b7161c3ac8ca50057e4449ca3077c7439ec6b4dde532a5ff"
+    sha256 cellar: :any,                 ventura:       "2adca13bd650ac0d254d7cee5382d5843b891e2b9e59a3df42ab4a0a2631a213"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5594b5463bc05d0c0ac0efa8b485f93c629551f75b865581f0f2df9368efee0"
   end
 
   depends_on "cmake" => :build # for pyarrow
@@ -108,8 +109,8 @@ class Dvc < Formula
   end
 
   resource "argcomplete" do
-    url "https:files.pythonhosted.orgpackages5f3927605e133e7f4bb0c8e48c9a6b87101515e3446003e0442761f6a02ac35eargcomplete-3.5.1.tar.gz"
-    sha256 "eb1ee355aa2557bd3d0145de7b06b2a45b0ce461e1e7813f5d066039ab4177b4"
+    url "https:files.pythonhosted.orgpackages7f03581b1c29d88fffaa08abbced2e628c34dd92d32f1adaed7e42fc416938b0argcomplete-3.5.2.tar.gz"
+    sha256 "23146ed7ac4403b70bd6026402468942ceba34a6732255b9edf5b7354f68a6bb"
   end
 
   resource "asyncssh" do

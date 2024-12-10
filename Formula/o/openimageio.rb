@@ -13,12 +13,13 @@ class Openimageio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0ddbfc5f20e1d2d48566b49b3d61383181b47908df66d4236100b4a03f4733ef"
-    sha256 cellar: :any,                 arm64_sonoma:  "9fa99515e6175477660addd8c94eab570efae126040d75bbc14f14f6345ecdf5"
-    sha256 cellar: :any,                 arm64_ventura: "88115083e592ddebfa6cd9b427118fbf381fa7ea1dc24189e742f06c6291f808"
-    sha256 cellar: :any,                 sonoma:        "360ba304005330dc2ce664e947b5ee00833bae494ae7be9309e5f5805677f543"
-    sha256 cellar: :any,                 ventura:       "e4de3e85ef99d40cd32583519b5a4b43f27fb518c856457bae4e4ad88def1703"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fcace86fe2bc0f1610e8eade9abe744f5b730ffd50f74922878dd55d5f2d918e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "f319ab0634e8ec0a34c07017f6b84f9abbd5a1c3e1f10de7b7c50d0836b44337"
+    sha256 cellar: :any,                 arm64_sonoma:  "cc389000f92e12ce948c65a78de7317b241f0bcefb31c5772bfd13f4b0184979"
+    sha256 cellar: :any,                 arm64_ventura: "910356b34c8e68d76139a5b652ea4116daf3633cd76a06e199faa33fe4dc44c2"
+    sha256 cellar: :any,                 sonoma:        "7b12bcc47d9e40de1679879be9176969a0341d7de9668a4ffc377442dc74c9fe"
+    sha256 cellar: :any,                 ventura:       "1adecdfa9960e65bd011c066b6b7f5ffe1b4e9db9b85ce0c693be5b3597ab050"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52f6da42295798264891d623c377aa97310935fccc13f21c343f2a229cdea804"
   end
 
   depends_on "cmake" => :build
@@ -38,7 +39,7 @@ class Openimageio < Formula
   depends_on "opencolorio"
   depends_on "openexr"
   depends_on "pugixml"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "tbb"
   depends_on "webp"
 
@@ -51,7 +52,7 @@ class Openimageio < Formula
   end
 
   def python3
-    "python3.12"
+    "python3.13"
   end
 
   def install

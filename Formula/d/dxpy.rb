@@ -6,14 +6,15 @@ class Dxpy < Formula
   url "https:files.pythonhosted.orgpackages9034f6361dc1c72a5a6ba83f3c65ddceed00a986bd92bf7add1603c3d76de3b9dxpy-0.386.0.tar.gz"
   sha256 "9568441861351bd590a2612c34137b266f63df2fab7ee0a88d566a4ee85c6128"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b35dbe4bbfa707ac0965acc083d3a4ad6707d23f3e44df04118cc5c4e65fa01a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b81cd0849b672e26b36643bb308511e7320d50106e2dabbffbad180b04a6e31"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "05124aae05172eb7f4100feb91b64b62b1a49cb20969dc9a76420f35d2da2548"
-    sha256 cellar: :any_skip_relocation, sonoma:        "132e93e2cd71756415e7525f3feeab021c07579cb5365d97b20a4359c5338fbd"
-    sha256 cellar: :any_skip_relocation, ventura:       "84c857b8c3218fac8d0e5bf88e1008f7c9afa287873f130631a722fdfaa5abc8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c19d2da462c12b12986344a42c8de1f96d7cd3f1538e0fef005a0117449af36"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d757784a33410d4f12c923987f9b457fb8a0d85af60182425377b4e943b2ed49"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d27c901e892c6e066ed4839bcf0892f1244be5496cbca361dd8d991aad9750c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b38310d7bd18f05762f0a4cf72bbe1a20df38da940aa67d692991f44e599bc8c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d44ce9dce51aa4f19c4ed09305081bb45d9e0bbdf82395c9de6d1010e3d3b472"
+    sha256 cellar: :any_skip_relocation, ventura:       "651d9953f5801d584ed4ef5565fcf71a998b90371244ac4e7ed994da93ed8c41"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "070e1b72d8a224473e290bb1d2042fe57d9608e25d0ee08e64964e20e76b8cdd"
   end
 
   depends_on "certifi"
@@ -27,8 +28,8 @@ class Dxpy < Formula
   end
 
   resource "argcomplete" do
-    url "https:files.pythonhosted.orgpackages5f3927605e133e7f4bb0c8e48c9a6b87101515e3446003e0442761f6a02ac35eargcomplete-3.5.1.tar.gz"
-    sha256 "eb1ee355aa2557bd3d0145de7b06b2a45b0ce461e1e7813f5d066039ab4177b4"
+    url "https:files.pythonhosted.orgpackages7f03581b1c29d88fffaa08abbced2e628c34dd92d32f1adaed7e42fc416938b0argcomplete-3.5.2.tar.gz"
+    sha256 "23146ed7ac4403b70bd6026402468942ceba34a6732255b9edf5b7354f68a6bb"
   end
 
   resource "psutil" do

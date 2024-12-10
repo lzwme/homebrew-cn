@@ -1,8 +1,8 @@
 class Kubehound < Formula
   desc "Tool for building Kubernetes attack paths"
   homepage "https:kubehound.io"
-  url "https:github.comDataDogKubeHoundarchiverefstagsv1.6.1.tar.gz"
-  sha256 "bdeb1c24f1f71b881ad722923e618178add1840ee66d9ca11ec3b78deca77911"
+  url "https:github.comDataDogKubeHoundarchiverefstagsv1.6.2.tar.gz"
+  sha256 "c7ee1b88dd6103f892876b5d19faeb2a099c1856ca3105e7536cdfbd0f0500de"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,12 @@ class Kubehound < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7aeff970c4cfb6f2fdc891a634a721c522589bea8733ac6e1bd76d6f030ccef7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "55b450d16e07f8084dc119202a6d1287b79f5604a5afde3d7713ea2723f90077"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9e30431bf9610fe502be6749548b385c86a49e0886e23b384cec8c7a0b873b75"
-    sha256 cellar: :any_skip_relocation, sonoma:        "895a30fd5b7d028735c13f07fbff4d9a982291222b8fb713690804c089f52955"
-    sha256 cellar: :any_skip_relocation, ventura:       "412506c37e3970202c4dbb5456fc90c04fa0ff17192f70e75a29d948829f00ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fa79edcc9436c3ccd9760b82a83d374b8a02fafb0f458df05f7f60656aff8b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f1d44cea2199bf6af2fdeb2c583ffd8d34b41e5760155810582f871610bda0e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "783f6de6f634031ebd1517e2ac82bd0ea4524ab86c78abdb66c5aa909065ba85"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1ee61d8c04bea42f1ed748cda411b47805a258954bc2bb0eb348682c45ff6cd5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ff3ef59374a4de379a10e2f50f58895bfb2371bbe26604c350a59742726042de"
+    sha256 cellar: :any_skip_relocation, ventura:       "cb06c8f53ac0d17d70e4614b868a0bd9b7369342617d44af32e430a4c2aba311"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb3d0852067153524451c28ba34c0de4a454c8b4c75ce01e657bf80631068a5d"
   end
 
   depends_on "go" => [:build, :test]

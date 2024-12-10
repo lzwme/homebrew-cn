@@ -1,18 +1,18 @@
 class Sequin < Formula
   desc "Human-readable ANSI sequences"
   homepage "https:github.comcharmbraceletsequin"
-  url "https:github.comcharmbraceletsequinarchiverefstagsv0.2.0.tar.gz"
-  sha256 "f78cc05bd476ec8e928ab0fda62f9475d63d3c1a9a6c0d229d8eae80202e3fe0"
+  url "https:github.comcharmbraceletsequinarchiverefstagsv0.3.0.tar.gz"
+  sha256 "545b43475cd217465dbf5e620fb7bc129fca532ef768a1b51cfc1f11d8e98d4b"
   license "MIT"
   head "https:github.comcharmbraceletsequin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "809be5b62e9e1c4afa7387c7eef4ecc59076a7638a7e5025fcf2debdcb2242d6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "809be5b62e9e1c4afa7387c7eef4ecc59076a7638a7e5025fcf2debdcb2242d6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "809be5b62e9e1c4afa7387c7eef4ecc59076a7638a7e5025fcf2debdcb2242d6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "60a7d172d0a73886457f1de58e443f15beb3e291eec974caef85d241d1cf70cf"
-    sha256 cellar: :any_skip_relocation, ventura:       "60a7d172d0a73886457f1de58e443f15beb3e291eec974caef85d241d1cf70cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4f9789f45c52ffc2b2c4890cc244d2da0c997aa71bce8f6c7632f621aab77e2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "721fb54c509d2685911ed51bec6be168cd599fb7d47bdec6088aeb866bc8ca23"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "721fb54c509d2685911ed51bec6be168cd599fb7d47bdec6088aeb866bc8ca23"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "721fb54c509d2685911ed51bec6be168cd599fb7d47bdec6088aeb866bc8ca23"
+    sha256 cellar: :any_skip_relocation, sonoma:        "912641ce05cdc0060093637fa38add03e2c0b761c2c393a79a44bbd6f7502624"
+    sha256 cellar: :any_skip_relocation, ventura:       "912641ce05cdc0060093637fa38add03e2c0b761c2c393a79a44bbd6f7502624"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef1e5733c5184e6c8f43fdcd94e785f64b612973ee1612b8a43e428a67a5282d"
   end
 
   depends_on "go" => :build

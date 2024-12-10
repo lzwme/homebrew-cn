@@ -6,16 +6,15 @@ class Harlequin < Formula
   url "https:files.pythonhosted.orgpackagesbbc10fc47822534938e73f070eb485059be414bb6ee274ac05e1d5d695fb4c24harlequin-1.25.2.tar.gz"
   sha256 "8319da69b07afd063e1296ebba1569374daa171489b97bd35d2dbdae802e6144"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia: "006b8e2a1ac594f163fe350e0108acfb84bfb015d0c4a3d7ec0f435f33252563"
-    sha256 cellar: :any,                 arm64_sonoma:  "13bd23951435c5377a0052e7e902d07075ef9c950d85285f35a2d08687c11f00"
-    sha256 cellar: :any,                 arm64_ventura: "f0296db5edbc67c8cf6049ca0cde35d54d81b0a35384700a6b2626e39cb3eabb"
-    sha256 cellar: :any,                 sonoma:        "ec7f03ece93e4ef4f621c88c789b6fab73c5abcf0a5799d35049d2885813b2e0"
-    sha256 cellar: :any,                 ventura:       "14b868795259af4324b0f4eca9035268c07633ee25e6c50f31a300c2a21ce443"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfa3fddc0d92229a5fd60a5ad3f89b8a41c32ff70e1781c6c401fbc64edccfed"
+    sha256 cellar: :any,                 arm64_sequoia: "d327c5e1013345211e3a894fc2d10bdf46dca614f83e0ebebc9258a01089a1de"
+    sha256 cellar: :any,                 arm64_sonoma:  "d65c283f803a1bf8fbe99cd17c740aca004272abe402f61f449beb5fb349d7e6"
+    sha256 cellar: :any,                 arm64_ventura: "020cbd6e8a07305909b652e7ab7341b3e4c60ff9a0c4594df626e7ae5e206694"
+    sha256 cellar: :any,                 sonoma:        "e0cef61d30667fe5292ccea4842dc71d5b5f5bc1ee0ed104d4a5adb021407e81"
+    sha256 cellar: :any,                 ventura:       "956cb46e3412663c5c8052b9e4cc8e415c95ab58137854a28e132da014bb76ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e0dc40172e61510046526d73ed86362915af6057330103c286a93126626058c"
   end
 
   depends_on "cmake" => :build
@@ -24,6 +23,7 @@ class Harlequin < Formula
   depends_on "apache-arrow"
   depends_on "libpq" # psycopg
   depends_on "python@3.11"
+  depends_on "unixodbc" # harlequin-odbc
 
   on_linux do
     depends_on "patchelf" => :build # for pyarrow
@@ -52,6 +52,11 @@ class Harlequin < Formula
   resource "harlequin-mysql" do
     url "https:files.pythonhosted.orgpackages80fd410c3a6f6c1d0358359c58a3c36b0ac3519a1da8d0e7f0424f1a00f8bfccharlequin_mysql-0.3.0.tar.gz"
     sha256 "46ef42c5b658568f5340ee53c241cb1333f3e04914807c1f83741e83517878b3"
+  end
+
+  resource "harlequin-odbc" do
+    url "https:files.pythonhosted.orgpackagesd6407757a6aaf4a9925bc3d55c332f6914501d5a7ef239dbbb3592a0bed2c733harlequin_odbc-0.1.1.tar.gz"
+    sha256 "beb2b57836ccdb21b4fa4b151e2cd6fc1b946f4f914eb233de5debc2c08920cf"
   end
 
   resource "harlequin-postgres" do
@@ -134,6 +139,11 @@ class Harlequin < Formula
     sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
+  resource "pyodbc" do
+    url "https:files.pythonhosted.orgpackagesa036a1ac7d23a1611e7ccd4d27df096f3794e8d1e7faa040260d9d41b6fc3185pyodbc-5.2.0.tar.gz"
+    sha256 "de8be39809c8ddeeee26a4b876a6463529cd487a60d1393eb2a93e9bcd44a8f5"
+  end
+
   resource "pyperclip" do
     url "https:files.pythonhosted.orgpackages30232f0a3efc4d6a32f3b63cdff36cd398d9701d26cda58e3ab97ac79fb5e60dpyperclip-1.9.0.tar.gz"
     sha256 "b7de0142ddc81bfc5c7507eea19da920b92252b548b96186caf94a5e2527d310"
@@ -210,8 +220,6 @@ class Harlequin < Formula
     url "https:files.pythonhosted.orgpackages6c6353559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598wcwidth-0.2.13.tar.gz"
     sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
   end
-
-  patch :p0, :DATA
 
   def install
     venv = virtualenv_install_with_resources without: "mysql-connector-python"

@@ -8,12 +8,13 @@ class Kubebuilder < Formula
   head "https:github.comkubernetes-sigskubebuilder.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "016d9d995f10b2fe1b1db2c05b60a64eef16564809d6076084461029b8528151"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "016d9d995f10b2fe1b1db2c05b60a64eef16564809d6076084461029b8528151"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "016d9d995f10b2fe1b1db2c05b60a64eef16564809d6076084461029b8528151"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a020a5cfe836ae743f6873aa92dee596beef375b819b28ead26227458ef6cc4d"
-    sha256 cellar: :any_skip_relocation, ventura:       "a020a5cfe836ae743f6873aa92dee596beef375b819b28ead26227458ef6cc4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2513a356dbea0491aa7a9fd001015b3be21eb1f23c53739a66c90a778994bcf5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ee4f57443c4f474f3f11e02760e5a569f41ffdc7e43b4ee20aff2ebb401712b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ee4f57443c4f474f3f11e02760e5a569f41ffdc7e43b4ee20aff2ebb401712b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6ee4f57443c4f474f3f11e02760e5a569f41ffdc7e43b4ee20aff2ebb401712b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "04a88935b8f844e6c9c7150e0cec2e2949a033161b75224e5ee3373c97a7d056"
+    sha256 cellar: :any_skip_relocation, ventura:       "04a88935b8f844e6c9c7150e0cec2e2949a033161b75224e5ee3373c97a7d056"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eccaab58c93d975cd255be39ca10c2181a1543b1cfe3f376c7bffb28d21330c2"
   end
 
   depends_on "go"
@@ -21,7 +22,9 @@ class Kubebuilder < Formula
   def install
     goos = Utils.safe_popen_read("#{Formula["go"].bin}go", "env", "GOOS").chomp
     goarch = Utils.safe_popen_read("#{Formula["go"].bin}go", "env", "GOARCH").chomp
+
     ldflags = %W[
+      -s -w
       -X main.kubeBuilderVersion=#{version}
       -X main.goos=#{goos}
       -X main.goarch=#{goarch}

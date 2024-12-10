@@ -2,12 +2,11 @@ class Subversion < Formula
   desc "Version control system designed to be a better CVS"
   homepage "https:subversion.apache.org"
   license "Apache-2.0"
-  revision 1
 
   stable do
-    url "https:www.apache.orgdyncloser.lua?path=subversionsubversion-1.14.4.tar.bz2"
-    mirror "https:archive.apache.orgdistsubversionsubversion-1.14.4.tar.bz2"
-    sha256 "44ead116e72e480f10f123c914bb6f9f8c041711c041ed7abff1b8634a199e3c"
+    url "https:www.apache.orgdyncloser.lua?path=subversionsubversion-1.14.5.tar.bz2"
+    mirror "https:archive.apache.orgdistsubversionsubversion-1.14.5.tar.bz2"
+    sha256 "e78a29e7766b8b7b354497d08f71a55641abc53675ce1875584781aae35644a1"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -17,12 +16,12 @@ class Subversion < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "219dbd8e67c43d5cd3f4a4d42d8671a71887c16b77bbdf9464295ac4e806bc61"
-    sha256 arm64_sonoma:  "9712ef30bf9739ffafceb6885c31750f8027170cc69cbd05ae77d715289e64e8"
-    sha256 arm64_ventura: "951d415bbac5ccef7497f905a28d0f73f1c188e543de74d8f8b98473fd05c72e"
-    sha256 sonoma:        "7c992a6ae16dd52952c48d16cca55c31c7bb7f05be10342cb4cdebd1005a4db6"
-    sha256 ventura:       "eba166d764e2cafce718a4a179314e97eaf408c03d938055bffb306136338065"
-    sha256 x86_64_linux:  "d8266abb05fe974ed383b243abed2a2371441a9f420eb78ae9b607ce0304f2d6"
+    sha256 arm64_sequoia: "cc1321557a31026b7655b1e8a9045a2f068d6c6a382e97bd678efb4b1a67b978"
+    sha256 arm64_sonoma:  "2757b54021a3423a5f7433f95e42415a4bcc921cd65096e4db4dfacf42500396"
+    sha256 arm64_ventura: "491830eb536157ad94de70b6930971ae362785b381d9b1d2889dd71736c3c799"
+    sha256 sonoma:        "023a262d8b42d0eada7ca5527fcdf810dd0df2531da0cd0419389efef8a4ecbc"
+    sha256 ventura:       "a76e76f4172853dfed3eb7394d843a944461d855b0bffb88bbe546e38627cacc"
+    sha256 x86_64_linux:  "936fa4a5742edeb3c848bd4397f225012ab815bc4ef0c37fcfca9d9c625ca7eb"
   end
 
   head do

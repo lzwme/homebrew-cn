@@ -3,17 +3,17 @@ class Dotbot < Formula
 
   desc "Tool that bootstraps your dotfiles"
   homepage "https:github.comanishathalyedotbot"
-  url "https:files.pythonhosted.orgpackages2ad432af2df3fed3b63bceb7d6926be48bfefd3b5859148ac03cdd5ba3827699dotbot-1.20.2.tar.gz"
-  sha256 "5bd001a532343fe0fdaca4c3a785419a4961a2edfccdd45cfea15aa837b8a97c"
+  url "https:files.pythonhosted.orgpackagesf967793d72c813a4781227963f77d353db4830760ed9a40a5752330f2d7c10d9dotbot-1.20.3.tar.gz"
+  sha256 "6c4ec52e498964082e1048a26f9b1e5fcebe0b384f8b3cefb90525c2d8c70030"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c9e41836c89680b56a0d0b043a8db76e7757e16be17e148847034f2c2a34cfd0"
-    sha256 cellar: :any,                 arm64_sonoma:  "0299a9f7abed21f432d436f1cdff566cd3a3268bf0631056c70568bbd7a48c2e"
-    sha256 cellar: :any,                 arm64_ventura: "e44eb4fc28e2df28b9a9d94802f2258d19e22ac5425b8f9d7e4bef4c8f611e89"
-    sha256 cellar: :any,                 sonoma:        "84daafacf6bf396b92ab61cb267f5459f21be02d892a7671d98c1ec58720dbd7"
-    sha256 cellar: :any,                 ventura:       "8e4dbba4cfda1be17ead0ae10c5acf00bf129db19691df610b391bb224113364"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4d36c237e92775810efb21ceefdd274a6cb0a52fc0353e0571ee6ee8406da1d"
+    sha256 cellar: :any,                 arm64_sequoia: "87b5108bab956ad08c11dfee17a4c30efeed5fff53a1bfa3021da8d840b9fed8"
+    sha256 cellar: :any,                 arm64_sonoma:  "a516eb557731cb4cda13cbcd7b23818d22b834540723b07261d13dcb77e9cb29"
+    sha256 cellar: :any,                 arm64_ventura: "83dfbbe996c23ef3d11028de6ee1c64c3e56fa29627ce45e87bad237242549f7"
+    sha256 cellar: :any,                 sonoma:        "570600e6a0fd2d55c9fd186cc176afa5d8bf0811156470168db0fe668bc985b5"
+    sha256 cellar: :any,                 ventura:       "52748c9f86013955a0e9b4458c57d43c0aa0e8231f3be44118f775bd42a01717"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37818341c4de8a2ac6f6d715f650b3b92d273506a50f54ebf35713c7ab74a395"
   end
 
   depends_on "libyaml"

@@ -7,21 +7,20 @@ class Sgn < Formula
   head "https:github.comEgeBalcisgn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9a1126f8f93b8c871f04594d4311ebf4e1b122ece755c38414e5db57b2252c9b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a1949bca90a05d5d299414a24d43cb1b86e874ef5270cac5055e1a27aa166937"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "02d73bd9e582463b76013e58e14e6471077cb58a907bf9e3f4f2d5cf1732b41b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "946513aabdcb213bb452905a1db946d32982c48958cb24558b054d21604e88c3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a81bd09fdfed445e9ac2af2f253f4e1c8a2741de93ae9b4336d283c0bd7ca51a"
-    sha256 cellar: :any_skip_relocation, ventura:        "8545f154839509d12b1b1d2ee97c80022dee9e65b4c0b7a37acdaca4d4c92710"
-    sha256 cellar: :any_skip_relocation, monterey:       "fa6dee4c2559d222be6fec668790792b5278c6929ac95241867d1daec0310334"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa3cf0a77f56361c1eefc36970949dd1fd3efb8db049af4ac4e4afbe8bd7f993"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "225b80b3fc0c69f76b2476b4ac4348d98f2fc09d6130cf9eb16bcd7057187ff5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "21c4e093b393168c2c38825c5c7e5bd567fe883895bc7de5dd201a553a77ab09"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0da9903de5c67fa1ab04304476c4d87312e50ec8cecf4f63ca45adac527112e6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4cd2918b3875487f6e2d9927e2bad5d39b09c77a7406716ac98bbc8266a60a9f"
+    sha256 cellar: :any_skip_relocation, ventura:       "b5b2795c30c949a7772859cb74da2d499600069bd65bdd1c8c1a9137a6e9c8ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21bd9b282190025a691793764bf3212e1f26990ece0991fbb201d2ef03043ffc"
   end
 
   depends_on "go" => :build
   depends_on "keystone" => :build
 
   def install
-    system "go", "build", *std_go_args
+    system "go", "build", *std_go_args(ldflags: "-s -w")
   end
 
   test do

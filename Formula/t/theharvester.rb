@@ -6,16 +6,16 @@ class Theharvester < Formula
   url "https:github.comlaramiestheHarvesterarchiverefstags4.6.0.tar.gz"
   sha256 "c0ad7121d56a63e23cb54654cbf3bafa344870fc923d6a0004947eac82e47a40"
   license "GPL-2.0-only"
+  revision 1
   head "https:github.comlaramiestheHarvester.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia: "daaca4679c1a5f1ac5fcffa0a68ddc7c7e6598ff76323d7cdeb160a6f04dda56"
-    sha256 cellar: :any,                 arm64_sonoma:  "e6ad08aa03e259fb901a79708452e4fb3fe64c9430102e337ea5c39884a5cc7f"
-    sha256 cellar: :any,                 arm64_ventura: "2c19d390350f6f7dfd0a3f2b816b12ea0c285e7c484751f6fa7a6b0d4f85c4c4"
-    sha256 cellar: :any,                 sonoma:        "57cc84936373248676118a006efd62c9bab0d9a88dcb33e3976d9429deac78b1"
-    sha256 cellar: :any,                 ventura:       "9258379005c8e45cd0bcdce630f27140a5d6cf2b86bcafe093ebcc0baf9f5a36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4dea4b19f2e2a994db4fc717f52e3d0801ff18edf9c3cc5692b40411f324b09b"
+    sha256 cellar: :any,                 arm64_sequoia: "5b0682a608519889cd4653ae5c6b9ec2c79976a6d1674833af54dfd4a98a6551"
+    sha256 cellar: :any,                 arm64_sonoma:  "79616f6b72dbc1b047b2d664d598cee7afee779093692ff8160b3214e00da0b3"
+    sha256 cellar: :any,                 arm64_ventura: "7a9c7e59841c683955d330a7620f1956ae3c0c35893b9c19cbd9889b64399188"
+    sha256 cellar: :any,                 sonoma:        "90e4e829ab2c7bf46c7094e12709c2406562f22345c2eaca05014dcf6915d7a6"
+    sha256 cellar: :any,                 ventura:       "ea5340cdc32d7e0fcb90a4acb90789efa40c99d71d2a46c4a3e74eaef592a29f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8438e1e861185f0bd61657fd276a978dd66a8959268c3872dad8153731c57f5e"
   end
 
   depends_on "rust" => :build
@@ -68,8 +68,8 @@ class Theharvester < Formula
   end
 
   resource "argcomplete" do
-    url "https:files.pythonhosted.orgpackages5f3927605e133e7f4bb0c8e48c9a6b87101515e3446003e0442761f6a02ac35eargcomplete-3.5.1.tar.gz"
-    sha256 "eb1ee355aa2557bd3d0145de7b06b2a45b0ce461e1e7813f5d066039ab4177b4"
+    url "https:files.pythonhosted.orgpackages7f03581b1c29d88fffaa08abbced2e628c34dd92d32f1adaed7e42fc416938b0argcomplete-3.5.2.tar.gz"
+    sha256 "23146ed7ac4403b70bd6026402468942ceba34a6732255b9edf5b7354f68a6bb"
   end
 
   resource "attrs" do

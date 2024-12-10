@@ -6,18 +6,19 @@ class Pdfcpu < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d7a311e318ce7ac9faf31c51cd7e0dc3f9657c415c46bacd73dd97396f67600"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d7a311e318ce7ac9faf31c51cd7e0dc3f9657c415c46bacd73dd97396f67600"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2d7a311e318ce7ac9faf31c51cd7e0dc3f9657c415c46bacd73dd97396f67600"
-    sha256 cellar: :any_skip_relocation, sonoma:        "511f2915c4d8d35199fb2fdb4ca424a4e126e3ff31893dd37c3d4f3b3d0d699a"
-    sha256 cellar: :any_skip_relocation, ventura:       "511f2915c4d8d35199fb2fdb4ca424a4e126e3ff31893dd37c3d4f3b3d0d699a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f214ad4b29b091b31ac5c12235909874db4f209cf7b438b6df66976382c833f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8b00881dea2ce25ee9915ca16b8ffd072b62d6a0024e303f25af6ee9359737f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8b00881dea2ce25ee9915ca16b8ffd072b62d6a0024e303f25af6ee9359737f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c8b00881dea2ce25ee9915ca16b8ffd072b62d6a0024e303f25af6ee9359737f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d3b5b636b90de6b2bb44cc88cc6af4b4dadffdacdac95a0ce73ac091bbc48df0"
+    sha256 cellar: :any_skip_relocation, ventura:       "d3b5b636b90de6b2bb44cc88cc6af4b4dadffdacdac95a0ce73ac091bbc48df0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea91e61252e6c55260c9e40ba9fde54ee4197ff73caeb153af952e6ec7b3c255"
   end
 
   depends_on "go" => :build
 
   def install
-    ldflags = "-X github.compdfcpupdfcpupkgpdfcpu.VersionStr=#{version}"
+    ldflags = "-s -w -X github.compdfcpupdfcpupkgpdfcpu.VersionStr=#{version}"
     system "go", "build", *std_go_args(ldflags:), ".cmdpdfcpu"
   end
 

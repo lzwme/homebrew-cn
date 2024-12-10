@@ -15,18 +15,19 @@ class Livekit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12ff986fbc9d254444b1df98381f4bc0902135f776f1dfd4b5576fa75f80d676"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "74ae00de04dd1a38dc83b76411cc5a727a05eca0f1b0da0b0b4d94741e5569e4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8838462c46252616aa941e32267c4beed4299e822adfc3879853267e48a6dfd1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7df1099990f5e54e9e014567dea2420f879ea24f2b55237fb66be43fb7846425"
-    sha256 cellar: :any_skip_relocation, ventura:       "1e5f87e07897730127783ef0f64516aa70d8f16658fa159b4806f9584d6fa811"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08b8816b7f61d5057031f126712075ff702c58ea6e258a2e8e4a1cb31fe622cb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91539ca2ec3cdcf3e8adfe30c80cbe5f99db42d8765c50fbf91ccb964515bf61"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14e2d1630e4856fb481b52a890a77c5650ba138684ccf4a585766d3dce445323"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d9a4bd73c70d9f02813029d0d9970637ec7d9f35348fc69b91915017b98eb1c7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6a5509f79d2fb948be58852c3dab88153a03bda67311b063565c8b9277cd2d09"
+    sha256 cellar: :any_skip_relocation, ventura:       "99675ff972d242f8e1e6610f9b069896e0b0e06290ec9f55603df5653189b9eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c076548160a94ff09ed19df067a608c37202b75118a9fa87d1827cc6eaa6804"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(output: bin"livekit-server"), ".cmdserver"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"livekit-server"), ".cmdserver"
   end
 
   test do

@@ -2,6 +2,7 @@ class Audacious < Formula
   desc "Lightweight and versatile audio player"
   homepage "https:audacious-media-player.org"
   license "BSD-2-Clause"
+  revision 1
 
   stable do
     url "https:distfiles.audacious-media-player.orgaudacious-4.4.2.tar.bz2"
@@ -19,11 +20,11 @@ class Audacious < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:  "175406bb546a436b6cbda5ebe04b0e5ac50477c1bd58714099f0f01bd6e84b91"
-    sha256 arm64_ventura: "46c010fa84f5cafc5fec4a801f90f0c037c281fb22f98704e2ebf115d34f2bf5"
-    sha256 sonoma:        "9f957874a1c773d74d0d6d4f3905445bd8aa17b2da8f3283abd78db80cd9e109"
-    sha256 ventura:       "1d013dc84b5bf5b5e2ae5d09b8a549bec8894086820fdd2ce08d7c82f5aab107"
-    sha256 x86_64_linux:  "40de28638c36168cd3f540c6d01647739fdbffae3850b518e0e49ead956eaaab"
+    sha256 arm64_sonoma:  "794c8b22de09e8f6828e9dd513c1cb71551bf4ac8bad5ed9617d7c4a671afaa4"
+    sha256 arm64_ventura: "42c0965028465f832c7e0d3c879a539531d929e407fe4a148dc32f5048b8d7c7"
+    sha256 sonoma:        "9a23e849d93017672bb9d4f9ed142773558ced6855586f0edb18fe120f08a468"
+    sha256 ventura:       "dc7fbd11ef3ce5c6216659d14ec4a8876cf6633bad943ba21dd8bb7a1b785c99"
+    sha256 x86_64_linux:  "5ca7ee309f4b2e3c5efb2676120eb3f47beee8b2d7b9499b7bd932c4669bf318"
   end
 
   head do
@@ -52,6 +53,7 @@ class Audacious < Formula
   depends_on "libogg"
   depends_on "libopenmpt"
   depends_on "libsamplerate"
+  depends_on "libsidplayfp"
   depends_on "libsndfile"
   depends_on "libsoxr"
   depends_on "libvorbis"

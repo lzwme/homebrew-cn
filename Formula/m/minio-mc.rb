@@ -17,13 +17,13 @@ class MinioMc < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3c604c35c5eaf0b93a23aa4e06f413bf0c869819b361bc80c1ce1f5a11dc459"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0823c35ec6c3504955337d800ae818875641a6c13d71dbcdc89370f15569fdc1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3299e0a75780c2b90207e0021f8bfaf34cf5f07da5db30898354c3ee6ebc024a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2394c088f83a5c9e0e00793fda7cef164e645b86ba88c1afccac90a91b820461"
-    sha256 cellar: :any_skip_relocation, ventura:       "81ef533fe5aaf45c89d1c1a1e3c2f026f6dbe8cf6fe67e7b506a5c282f5776ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ff23baee8e97da4cb538df06779fb8a773eba8ee784101eb5ced386d72d8bd8"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "146713947a5bf92282f167729746e66f379d085120fa1177a9e6714a31de31e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d44abce960eaa9004ebcdc381350c38e29deef045c67d852386a620aa8d683d0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b2ec5d8ce21a6c90006317f93fb3d5cee82c23eaa3155d99331774a79bcb9156"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4b37b568b8ba77eab88f752dd713fa0babd5e01c86c5cb35565fcbe72ada8bff"
+    sha256 cellar: :any_skip_relocation, ventura:       "c232fa0b0e151c7c2b43f9a297d4b6a5328a65d8f5b011a83f72d6c952efef8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6205ac291ec6fa1f20d3de333c6f820cfefeca924c52cf4f6ede4bc6489623bd"
   end
 
   depends_on "go" => :build
@@ -32,12 +32,14 @@ class MinioMc < Formula
 
   def install
     if build.head?
-      system "go", "build", *std_go_args(output: bin"mc")
+      system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"mc")
     else
       minio_release = stable.specs[:tag]
       minio_version = minio_release.gsub("RELEASE.", "").chomp.gsub(T(\d+)-(\d+)-(\d+)Z, 'T\1:\2:\3Z')
       proj = "github.comminiomc"
+
       ldflags = %W[
+        -s -w
         -X #{proj}cmd.Version=#{minio_version}
         -X #{proj}cmd.ReleaseTag=#{minio_release}
         -X #{proj}cmd.CommitID=#{Utils.git_head}

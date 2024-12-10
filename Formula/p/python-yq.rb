@@ -6,15 +6,15 @@ class PythonYq < Formula
   url "https://files.pythonhosted.org/packages/38/6a/eb9721ed0929d0f55d167c2222d288b529723afbef0a07ed7aa6cca72380/yq-3.4.3.tar.gz"
   sha256 "ba586a1a6f30cf705b2f92206712df2281cd320280210e7b7b80adcb8f256e3b"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "ade8952a20185a727c65adba3cc9100db7c6ed46f4b78653c4f60679959fbb6f"
-    sha256 cellar: :any,                 arm64_sonoma:  "5ec0178c6e5ee1139e49a6275be61c242faef98fd91ce6dc53640e7ee38bbc9f"
-    sha256 cellar: :any,                 arm64_ventura: "5135368b4db7fb4941565644e449afacb335ca008233e09096b27a5ab50d777a"
-    sha256 cellar: :any,                 sonoma:        "cfa479a7ce3064fda290a1261ede523276defe5ee60260a18982722d9a1cf106"
-    sha256 cellar: :any,                 ventura:       "ad2827c9e10e68e5a58e3bf6c34534c380b66dd16122ffec1b68b59b03546fac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a31d246270aa8b514e914937f3ab9d22fd2d4bdd10e7a88e229bd7749ed81a5"
+    sha256 cellar: :any,                 arm64_sequoia: "b43785008ef47b8acce277f0777a78f151c88c0296d932e4260b9d5d1bcc872c"
+    sha256 cellar: :any,                 arm64_sonoma:  "e59ebd20247318f7060d0341a0cbdd5571f4fa926654995dba79accb744a498c"
+    sha256 cellar: :any,                 arm64_ventura: "b666e21d085f1672873688fc581f0255acd5f58266137628a6cb87abe79d30cf"
+    sha256 cellar: :any,                 sonoma:        "57568982ca2b05f3686c8d8f30de2b79963f26e53e22a61b1508aade80531589"
+    sha256 cellar: :any,                 ventura:       "6bc67f3ef27e0fd821fa5fe012fe2eb6f539eab5347798951b58e3ddfbec2c41"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a3bcb0ece8d0ec54412051082421c48faed52ff0d4a7f8d119be03695575366"
   end
 
   depends_on "jq"
@@ -25,8 +25,8 @@ class PythonYq < Formula
   conflicts_with "xq", because: "both install `xq` binaries"
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/5f/39/27605e133e7f4bb0c8e48c9a6b87101515e3446003e0442761f6a02ac35e/argcomplete-3.5.1.tar.gz"
-    sha256 "eb1ee355aa2557bd3d0145de7b06b2a45b0ce461e1e7813f5d066039ab4177b4"
+    url "https://files.pythonhosted.org/packages/7f/03/581b1c29d88fffaa08abbced2e628c34dd92d32f1adaed7e42fc416938b0/argcomplete-3.5.2.tar.gz"
+    sha256 "23146ed7ac4403b70bd6026402468942ceba34a6732255b9edf5b7354f68a6bb"
   end
 
   resource "pyyaml" do

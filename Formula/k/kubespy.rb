@@ -6,20 +6,19 @@ class Kubespy < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6249e8404da965e941fd171832b722cc052ae5431475dc02afabd2b85a61c54b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fda3f73dff9a59dff79bdc79351361a6f737e298c02bef4b585f0991e80e793c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e78222b47bc21a5c77b73dbe032ad775d8a22d6e468029c5c3e10e23b89f39ca"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1cfb8c02d7e116cee63aa1e520d774ea7ca40869eabce292a529058c40072ba4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "52cd6b8254a177de282c0c484dcb04219151f2f90c934d0f2a9916e65d006070"
-    sha256 cellar: :any_skip_relocation, ventura:        "ff33031c27f3b7a78d9a82b065b9c9659f5c9cb5a5362e216a9ad30628287631"
-    sha256 cellar: :any_skip_relocation, monterey:       "f17c5dbafa0861d76ccb6a19f8619c4e241bf62ec204595f6578eb690de3078b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "df523bc15f0a2c1d79906b32e4d2ca64896969770f5c235cde3b46e91e5736e7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d88d6926bf09883789531fe1cc9956908ae7ce115ef2a4a2ddccd932ca2323d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "350da84eb2954134ad621f85dd0619c00d76730835fbd03409b9d93bdff50543"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5f330bfacc517d413078b720bd062241fa133473261bc683d9817e7a0b102d73"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f9759118bb4059b89ddc15eeffde235cf2f38e6c43e3e8ab3f3c0963360da5d8"
+    sha256 cellar: :any_skip_relocation, ventura:       "efee99c55ca31291aab9dad8badf602a0d8eae65f201f407ec40eaed9362f1cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36b1c1fb59db56e36ca01cfb315313a94796d679d7ae85988132f20b6706ffe3"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-X github.compulumikubespyversion.Version=#{version}")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X github.compulumikubespyversion.Version=#{version}")
 
     generate_completions_from_executable(bin"kubespy", "completion")
   end

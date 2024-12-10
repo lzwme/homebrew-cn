@@ -6,12 +6,13 @@ class Pivit < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8905b125a058d154f33ba2c1315dbe971e988bb858a103c0266637fa49f05a72"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab13cc17269b075c1d300cc957f21df8257fddf9e23404f88cb9ec3bc3ff22e6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a169ca42100f3fef700fae42d5e3eb74398c7ae474d90de841fcadee768d8cbc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0571959de174a34bb941d952b67f0026f071482842ce26ce3e3cf227213374ff"
-    sha256 cellar: :any_skip_relocation, ventura:       "1692ff7fce8b4d423a874a6aafc9b0e8e1628f54b357b850140d74d09917abb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fbef3ead98b26fa4a6459ff2eaa71c77e46c3d4989890a5ca7104dc89c0ac04"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10b9bdad1f60c409382076623452598cdd78a74aca0c8730a73017e615ce2889"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76b90fcb5fdd851b6343daaccf3e70bfc5d17e0a6286c73bb0a9ebf46ee96871"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fff9b3eb6c37d38e7dac30a5845b4dbe31ebfecec201a8136e82b364c21c8505"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6340b6f017c995c72b72924dc0744e4ea787c517b4f944c80883c26d1ce3f76c"
+    sha256 cellar: :any_skip_relocation, ventura:       "dc2dbaf0b6e87774aa069b10fe6714a7f5f8a2d54c11248c585afa8c8dbfd450"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df76cbe5172a33ea40688700ffc719af53244bb94043cb83f62bfd05fcfb5405"
   end
 
   depends_on "go" => :build
@@ -23,7 +24,7 @@ class Pivit < Formula
 
   def install
     ENV["CGO_ENABLED"] = "1"
-    system "go", "build", *std_go_args, ".cmdpivit"
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdpivit"
   end
 
   test do

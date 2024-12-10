@@ -6,23 +6,24 @@ class Commitizen < Formula
   url "https:files.pythonhosted.orgpackages7ac566f1b977b48501a33f5fd33253aba14786483b08aba987718d272e99e732commitizen-4.1.0.tar.gz"
   sha256 "4f2d9400ec411aec1c738d4c63fc7fd5807cd6ddf6be970869e03e68b88ff718"
   license "MIT"
+  revision 1
   head "https:github.comcommitizen-toolscommitizen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "783718158585751fee688d54229809b7fb0fe6a0dda04e79135592a2d3cd0ac1"
-    sha256 cellar: :any,                 arm64_sonoma:  "71bba2ad50753d0dc6bff2295054fbaf91ff62880b9bd6c211d11e62b7107925"
-    sha256 cellar: :any,                 arm64_ventura: "1f252f37fcee43ee2e745522d96575d5edc245acfb9a17c370fe00decbd746c5"
-    sha256 cellar: :any,                 sonoma:        "867d5d0a3f75664d7640b64d8664f159710b3282052f6747749c8b2f80686c1e"
-    sha256 cellar: :any,                 ventura:       "c5043b9ec3f3bfa46934ec3fd46f079eac27dc6561bde2d3cd03ec6a19861498"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a52f6388ba16dc84debc206e756cec9f07453ac38f52d38c18ffc94830b18af6"
+    sha256 cellar: :any,                 arm64_sequoia: "d1fecb4fc61869534f10b766004968305aa2d536960a8bfe943bd1ffe3adb25e"
+    sha256 cellar: :any,                 arm64_sonoma:  "d80e410b1a4634fea5be426449bffa585719edf77d8797105a77df7d155b3cab"
+    sha256 cellar: :any,                 arm64_ventura: "b47742116bcac77d8a5944b90fc298718d3c5289a6c02261b27c0a7e0fe5d6fe"
+    sha256 cellar: :any,                 sonoma:        "c62ef87f79fc1111063edc48b993ccd22299c60bd5d2c6e30b54a4ad1cbe0733"
+    sha256 cellar: :any,                 ventura:       "ff3919bf73da1c3c7a8801991b5b0356a0024cfbd1d63bc037f108f8f907d5c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da8f1a613475f92f722278640881985db316a7ec1cedfc558d6c683ee2d7cc79"
   end
 
   depends_on "libyaml"
   depends_on "python@3.13"
 
   resource "argcomplete" do
-    url "https:files.pythonhosted.orgpackages5f3927605e133e7f4bb0c8e48c9a6b87101515e3446003e0442761f6a02ac35eargcomplete-3.5.1.tar.gz"
-    sha256 "eb1ee355aa2557bd3d0145de7b06b2a45b0ce461e1e7813f5d066039ab4177b4"
+    url "https:files.pythonhosted.orgpackages7f03581b1c29d88fffaa08abbced2e628c34dd92d32f1adaed7e42fc416938b0argcomplete-3.5.2.tar.gz"
+    sha256 "23146ed7ac4403b70bd6026402468942ceba34a6732255b9edf5b7354f68a6bb"
   end
 
   resource "charset-normalizer" do
