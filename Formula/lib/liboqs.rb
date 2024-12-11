@@ -1,8 +1,8 @@
 class Liboqs < Formula
   desc "Library for quantum-safe cryptography"
   homepage "https:openquantumsafe.org"
-  url "https:github.comopen-quantum-safeliboqsarchiverefstags0.11.0.tar.gz"
-  sha256 "f77b3eff7dcd77c84a7cd4663ef9636c5c870f30fd0a5b432ad72f7b9516b199"
+  url "https:github.comopen-quantum-safeliboqsarchiverefstags0.12.0.tar.gz"
+  sha256 "df999915204eb1eba311d89e83d1edd3a514d5a07374745d6a9e5b2dd0d59c08"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Liboqs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3413f642debe3a66586c5efaf3aa4f3bc1697f5d17aaff31a375e3a24bcb2927"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0af54fca5fabc83ae77bf2b40de3457997f6e2cf0ce1f21315f8ed8c30561650"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a84bd5c84045fb9291f768921e4c8e97c9535c5470af7b2fbcadea42078a8ce0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3a547a9194e28c4f61ee05ea2ee62da6dc2de31d0eb226f98e04821b36d1aa6b"
-    sha256 cellar: :any_skip_relocation, ventura:       "af949e09fbfa8a5e140c7e58a0ca2568ebe5d0c68b5c08840d13f4e897931123"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44c1f17f44095ba8bea83d380eebd8c62bf5a56333b0747bc6fe9402cc7d37b4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5933c36ee1ae57715e130981f2ce1224686786b2e7f0c7016ec204057b61b79b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9eaf31e61184b48db56d72b601b469229855634e7f558461767c1322ef5d844c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6164c5d38336d5c42b6aaa13f684e9e1f038711e664dbf97cfef836486d77884"
+    sha256 cellar: :any_skip_relocation, sonoma:        "096ad57418c538b5e9f07d3ce1345ce710d53fcb189d7b21e103f1787048f984"
+    sha256 cellar: :any_skip_relocation, ventura:       "d85399bccbdd4e7bcb10a4cee742151912c02fc4f02f6a34a5e040eb843c5498"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f8a5388084f775a73d08949df3800d9d16b07b12702c084586b079cc1664b23"
   end
 
   depends_on "cmake" => :build

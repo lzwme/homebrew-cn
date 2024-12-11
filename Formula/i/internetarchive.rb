@@ -3,12 +3,12 @@ class Internetarchive < Formula
 
   desc "Python wrapper for the various Internet Archive APIs"
   homepage "https:github.comjjjakeinternetarchive"
-  url "https:files.pythonhosted.orgpackages8dea82f60f48cf44710593d3e5206ff0b10da9c08805703944cd497ffc35fea4internetarchive-5.0.4.tar.gz"
-  sha256 "c893ef08fa3a2d202d20452937ab90fe05718657dc43521dd5a2a46cd7648856"
+  url "https:files.pythonhosted.orgpackagesf3e62e2377e126872a9f563768d86a7d5d90b36f145e1d2368a2c139008e40dfinternetarchive-5.0.5.tar.gz"
+  sha256 "8abe722462eee3c03d86f9cc9a2178ba3624b8d4fde9cff0f585c731b6b9de57"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fca12956f7b60848140662f0adec38fb593daa35df34ff57219c051811fc35d4"
+    sha256 cellar: :any_skip_relocation, all: "20cb6a3212b258d7127dd9a3b44601fba102cb71cba2ba2c96ec62226acc2655"
   end
 
   depends_on "certifi"
@@ -39,14 +39,9 @@ class Internetarchive < Formula
     sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
-  resource "schema" do
-    url "https:files.pythonhosted.orgpackagesd4010ea2e66bad2f13271e93b729c653747614784d3ebde219679e41ccdceecdschema-0.7.7.tar.gz"
-    sha256 "7da553abd2958a19dc2547c388cde53398b39196175a9be59ea1caf5ab0a1807"
-  end
-
   resource "tqdm" do
-    url "https:files.pythonhosted.orgpackagese84f0153c21dc5779a49a0598c445b1978126b1344bab9ee71e53e44877e14e0tqdm-4.67.0.tar.gz"
-    sha256 "fe5a6f95e6fe0b9755e9469b77b9c3cf850048224ecaa8293d7d2d31f97d869a"
+    url "https:files.pythonhosted.orgpackagesa84b29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744dtqdm-4.67.1.tar.gz"
+    sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
   end
 
   resource "urllib3" do

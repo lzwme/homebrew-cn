@@ -5821,6 +5821,7 @@ Homebrew-homebrew-core/Formula/s/sf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sfcgal.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sfk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sfml.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sfsexp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sfst.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sftpgo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sgn.rb, Homebrew/homebrew-core, 1
@@ -6076,6 +6077,7 @@ Homebrew-homebrew-core/Formula/s/spr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spring-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spring-loaded.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sproxy.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/spytrap-adb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sql-language-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sql-lint.rb, Homebrew/homebrew-core, 1
@@ -9033,6 +9035,7 @@ Homebrew-homebrew-cask/Casks/font/font-b/font-borel.rb, Homebrew/homebrew-cask, 
 Homebrew-homebrew-cask/Casks/font/font-b/font-bowlby-one-sc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-b/font-bowlby-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-b/font-braah-one.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-b/font-bravura.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-b/font-brawler.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-b/font-bree-serif.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-b/font-bricolage-grotesque.rb, Homebrew/homebrew-cask, 1
@@ -11336,6 +11339,7 @@ Homebrew-homebrew-cask/Casks/h/hackintool.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hackmd.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hackolade.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hakuneko.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/h/halion-sonic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/halloy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hammerspoon.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hancock.rb, Homebrew/homebrew-cask, 1
@@ -13716,6 +13720,7 @@ Homebrew-homebrew-cask/Casks/s/supernotes.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/superslicer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/supersync.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/supertuxkart.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/supremo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/surfeasy-vpn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/surfshark.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/surge-synthesizer.rb, Homebrew/homebrew-cask, 1

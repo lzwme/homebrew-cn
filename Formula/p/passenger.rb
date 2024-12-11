@@ -101,9 +101,6 @@ class Passenger < Formula
 
     man1.install Dir["man*.1"]
     man8.install Dir["man*.8"]
-
-    # See https:github.comHomebrewhomebrew-corepull84379#issuecomment-910179525
-    deuniversalize_machos
   end
 
   def caveats

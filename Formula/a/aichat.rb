@@ -1,18 +1,18 @@
 class Aichat < Formula
   desc "All-in-one AI-Powered CLI Chat & Copilot"
   homepage "https:github.comsigodenaichat"
-  url "https:github.comsigodenaichatarchiverefstagsv0.24.0.tar.gz"
-  sha256 "a7ec96bb2e7fd84f19447d252949ee9baf8326ee37c06f3149a4b6a189c4e7f8"
+  url "https:github.comsigodenaichatarchiverefstagsv0.25.0.tar.gz"
+  sha256 "2d67b99891cb5ad2754a4ae76785796ffa86aeb83d6ca9da87f14feb43fcf0ad"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comsigodenaichat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b10f5b2dae4a983f109038865a94957d8c84ab2da6a294ddd3310743c99c85e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7c37875b086b5f92ac40022b24379a507419e6d5453ae0af64406dcfe7cb66cb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d9f5f3f71179b36292e45c30bf28805b1524a00a0310057499ea24a5f63b52eb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cf8ebb762f05d0c7bae1ddb56581158173f56971ee56fa59538451d878a8b14c"
-    sha256 cellar: :any_skip_relocation, ventura:       "3ecba704b8a0d3b7a120d803704735194f80ecd5309ed87e7b62921c5845bd8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "441027de781e7a495f8077e26b3e24c87634e47b6c56c56f7c197f3ba180709d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b2a8a83e40d44b203b297e2380d1e6e54b6a6396a0da4851d940b4dbc55e10c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc49f44df44f54c25bfed1bb0e37b51f85005384a5f78bc21e2df7ecdfd81cc3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fafb98c51eb42d5f0ec2fef0c662ea476f7983af5b590ee933de212ba8d157ad"
+    sha256 cellar: :any_skip_relocation, sonoma:        "132724413dedd6ee94c58f861f732b24e09fc363fa8f08b1e863c03d046bf93f"
+    sha256 cellar: :any_skip_relocation, ventura:       "47214c99166965ad125c8f7f5ad19ec4d11a917360ce7e4df83e627577069a0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bda524239c749bc56576c3139ef12b9a2f6a13718f25f6efca3cca5239375f0"
   end
 
   depends_on "rust" => :build

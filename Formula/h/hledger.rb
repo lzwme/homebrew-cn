@@ -1,8 +1,8 @@
 class Hledger < Formula
   desc "Easy plain text accounting with command-line, terminal and web UIs"
   homepage "https:hledger.org"
-  url "https:github.comsimonmichaelhledgerarchiverefstags1.40.tar.gz"
-  sha256 "fac19b524566b08ff0ade9793e8440ed0d31ab7bf7c5a33ac73c21ec05f358aa"
+  url "https:github.comsimonmichaelhledgerarchiverefstags1.41.tar.gz"
+  sha256 "627db83f148ea3c339cabd9aa9e4ab42d372ef56ab837e5d5539c75f8a82a30d"
   license "GPL-3.0-or-later"
   head "https:github.comsimonmichaelhledger.git", branch: "master"
 
@@ -15,14 +15,12 @@ class Hledger < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "743ffb01ef98164adc24d38bf7d7157a8c28443da32c28d4ab737fd7332ac996"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c33f69d843a135a0f3df5496ad5ddfea395be6e4324dc8d81cada61c952722f1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c60c65d440480d6e8e0283d8de3c86f007a1a440d9ac947e1e03236d246b530a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "727a907e5447c55e5f88fa0e2aaba0b0c8deccba402cd8dfdcdc1e7d96fd4165"
-    sha256 cellar: :any_skip_relocation, sonoma:         "80cf62d4bdff770e20c42a38ed009e978c882dcfaeb8a91b8f97c3249c15a574"
-    sha256 cellar: :any_skip_relocation, ventura:        "a95911dff60f8a30b0a8e8c19e24ae8efad7f59fb42cfe4d0ffb78d864694808"
-    sha256 cellar: :any_skip_relocation, monterey:       "2af6d01f2c109bde9a191247001f16137c63df669f97b91b24d05417981de54f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9cb47392110629bc44148f6bb68a6a104dc671f11ff0fe7efa91a3c84d7259dc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4582cbc364d5ba4e13d2d0aa6e30e09a085b3c3922b0cd4188772be080f7156"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04c8a0e49f67695e2719d5c0188d6e40e9e31a81b74cd7284998f644a1c08beb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "93b4c915312a226e4c34ca7e91d2e03c27bf502ef93a1516b1b5ecc6c0de1102"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3b888de72cd2f65abcc3c46d5216f2e80a519e08015a40322dff8b5e4a0f9fbc"
+    sha256 cellar: :any_skip_relocation, ventura:       "84c13d7ab6cfe65cee349cb595956d366bbed3ae748e548b7aed042b69e7c518"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e06fa5f1bde15cf47f2671f6b5012731476dee82e05d79aa09ec383c44b3a95"
   end
 
   depends_on "ghc@9.8" => :build

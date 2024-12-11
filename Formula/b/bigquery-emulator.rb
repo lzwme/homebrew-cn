@@ -1,20 +1,18 @@
 class BigqueryEmulator < Formula
   desc "Emulate a GCP BigQuery server on your local machine"
   homepage "https:github.comgoccybigquery-emulator"
-  url "https:github.comgoccybigquery-emulatorarchiverefstagsv0.6.5.tar.gz"
-  sha256 "afa9d2d22f8e0a600bad1cd3732b485bb9869486f479d67b2486794f378f4256"
+  url "https:github.comgoccybigquery-emulatorarchiverefstagsv0.6.6.tar.gz"
+  sha256 "a4055b66ad28f972b43b3fe0c7d54a08c57bf91bb4163a39204e152055d54440"
   license "MIT"
   head "https:github.comgoccybigquery-emulator.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f93d3853282994ff14406f6c877db15ffb3dbe6ec6da31999ff897847ea0407a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "de36c2b552cdbcf4e46c06237289215b423c4efda3a55f15ac9158efd4e89bea"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "04e8d239077ac4fa96b00b9f9d8542634262693c8be57addc4765d1393cbc3cb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ec9af8274042e09ea070db4411737ab4ca0433c70eb85c6bc01b8278c939f267"
-    sha256 cellar: :any_skip_relocation, sonoma:         "564f43a2518cc6f57c63e5248fbc908931b934d3c51a5a4e42845cae52ad6395"
-    sha256 cellar: :any_skip_relocation, ventura:        "be3ef77e7304af45b2d7f95dd495eb84a23532a7f9b862e46404634d3176d647"
-    sha256 cellar: :any_skip_relocation, monterey:       "68ec993e1dc9a20c56f285dc3f3c045c6b5a988989ca5c33597f817f1fe80fa1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e1adb5a4472cb22c6f7e9e248ec9629703554d3269ede330bcf9fb0981fc2db2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "09a97a4d0d2da38a73e8b6bea3fd5957a9e5c2fcf5902845082253969f0b77a8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84e54fbfc85104d2effc52b84374c4e3c323eb9659ceb3f1aa7c8a7ae8c1283c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "099f43b95cae81557172f860bd1f0771193ade8a8e188a578991e6d8759137b5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6d392929f5f202cb8cf49912926a283b424941c442071106c0a4bc57d5b7a953"
+    sha256 cellar: :any_skip_relocation, ventura:       "4fea8c128986fd389f1441e02bd42aca1a31df8de1a3ce446c63007ce1bb7479"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b53e2bd32bf44be1c5ad737c1f4058d855faf4b82530aeebdecf5e9e690bdab2"
   end
 
   depends_on "go" => :build

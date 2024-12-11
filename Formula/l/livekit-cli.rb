@@ -1,19 +1,18 @@
 class LivekitCli < Formula
   desc "Command-line interface to LiveKit"
   homepage "https:livekit.io"
-  url "https:github.comlivekitlivekit-cliarchiverefstagsv2.2.1.tar.gz"
-  sha256 "b78bee20d70d190a43a65a1840e268aa2ac3661011cacb0717b235652b322e65"
+  url "https:github.comlivekitlivekit-cliarchiverefstagsv2.3.0.tar.gz"
+  sha256 "2ae02bf91ab8f2ddc1904e11d0e5351f772078de5e50ce61e516661774ef733c"
   license "Apache-2.0"
   head "https:github.comlivekitlivekit-cli.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59685a544c9d54781a0dd0f06fe754f0dbb759b3101a5adf42a9655e15408d0e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59685a544c9d54781a0dd0f06fe754f0dbb759b3101a5adf42a9655e15408d0e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "59685a544c9d54781a0dd0f06fe754f0dbb759b3101a5adf42a9655e15408d0e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2bfe3fdad2cda79b6391cf85367cb8df0f6de18a4ad7fe5ea1da69c8af9ab364"
-    sha256 cellar: :any_skip_relocation, ventura:       "2bfe3fdad2cda79b6391cf85367cb8df0f6de18a4ad7fe5ea1da69c8af9ab364"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf375fcbb312921c7d70492e4779f1d92c099006a91452ef594857b1e0072949"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25049a3257cbf11dbf1347d33e40b1004a375cec67e34fde360af19b2501e2b0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "25049a3257cbf11dbf1347d33e40b1004a375cec67e34fde360af19b2501e2b0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "25049a3257cbf11dbf1347d33e40b1004a375cec67e34fde360af19b2501e2b0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "777ece92c5ef143c71c2cbfac3251dcc8462f1ab6eeb9856b41b32d3cb5375ed"
+    sha256 cellar: :any_skip_relocation, ventura:       "777ece92c5ef143c71c2cbfac3251dcc8462f1ab6eeb9856b41b32d3cb5375ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ec48d42c3939c62177600678d1e328db7584af11545167396e84af94b2126ad"
   end
 
   depends_on "go" => :build

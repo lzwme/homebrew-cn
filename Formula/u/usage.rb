@@ -1,18 +1,18 @@
 class Usage < Formula
   desc "Tool for working with usage-spec CLIs"
   homepage "https:usage.jdx.dev"
-  url "https:github.comjdxusagearchiverefstagsv1.4.0.tar.gz"
-  sha256 "7c1db09dc06ef4d54d4defa24c22a06ca973ffb46097629485814c14e717838b"
+  url "https:github.comjdxusagearchiverefstagsv1.4.1.tar.gz"
+  sha256 "cedca51dc89633a1f1c98e7ece90ced94ffdd5d03776e530b417a87322cc03b2"
   license "MIT"
   head "https:github.comjdxusage.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4fa471b341b76f1aba01704afc777065a69d1ff65f2b92aa5092260c7bfa4ed4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "481478664defb24e1bac2830b0ec6650c4f625671442f9a3ac86da6fcefc3883"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "af7f82464348ae8ac5b4773d6402deeab6147f455ab1508b01502547e2b541ad"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d24eaaedc6a4ff9de764286e5d538d6c009e055a11cc2f253a70a043cc3ffc51"
-    sha256 cellar: :any_skip_relocation, ventura:       "69a5d124e1dd0c3a601e52b67323b8b331f8b4d239cc1952715232a0d12b6516"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e866d68719f359b8e16f780856f7318e832c4d8a6af8185a77bac3e0e995969"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed314bcd97767478fafeac88dc301d47585b24547396c6089175aa01e9fe0850"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b83e3b8cee08465c539f1224bc981e82282754add0a3783754f718fd7fe684b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ec0841914ec2f689c036d22467167a617d3d0ca396092c41caed0c8f361d757a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "74fef6507270d96e4572804421c0f75ed9dd36fe87b1b5ded77d0e94e11bcbc6"
+    sha256 cellar: :any_skip_relocation, ventura:       "65e9ac1027e27fc0a8c3817566d337f7dc27606f610339e127711f5389508f5e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f4ed4ac6cd8d79b53c613c3866a007af6a328a0233f19a91117165308c33adc"
   end
 
   depends_on "rust" => :build

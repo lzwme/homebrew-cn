@@ -1,8 +1,8 @@
 class Scala < Formula
   desc "JVM-based programming language"
   homepage "https:www.scala-lang.org"
-  url "https:github.comscalascala3releasesdownload3.5.2scala3-3.5.2.tar.gz"
-  sha256 "899de4f9aca56989ce337d8390fbf94967bc70c9e8420e79f375d1c2ad00ff99"
+  url "https:github.comscalascala3releasesdownload3.6.2scala3-3.6.2.tar.gz"
+  sha256 "9525b93f8b9488330ecbdb85df3046d3ef46c6760ac23248902c4d89194c5206"
   license "Apache-2.0"
 
   livecheck do
@@ -11,22 +11,23 @@ class Scala < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7a0c887cea761759face114d09e5b29559dac305e7695dd9c0273f039f8edf1e"
+    sha256 cellar: :any_skip_relocation, all: "9836e7809cd8da0a45de3e6b212b452a538a102b750b356f4e9111d3d2aca94c"
   end
 
-  # Switch back to `openjdk` when supported:
-  # https:docs.scala-lang.orgoverviewsjdk-compatibilityoverview.html
-  depends_on "openjdk@21"
+  # JDK Compatibility: https:docs.scala-lang.orgoverviewsjdk-compatibilityoverview.html
+  depends_on "openjdk"
 
   conflicts_with "pwntools", because: "both install `common` binaries"
 
   def install
+    # fix `scala-cli.jar` path, upstream pr ref, https:github.comscalascala3pull22185
+    inreplace "libexeccli-common-platform", "binscala-cli", "libexecscala-cli"
+
     rm Dir["bin*.bat"]
-    libexec.install "lib"
-    libexec.install "maven2"
-    libexec.install "VERSION"
+
+    libexec.install "lib", "maven2", "VERSION", "libexec"
     prefix.install "bin"
-    bin.env_script_all_files libexec"bin", Language::Java.overridable_java_home_env("21")
+    bin.env_script_all_files libexec"bin", Language::Java.overridable_java_home_env
 
     # Set up an IntelliJ compatible symlink farm in 'idea'
     idea = prefix"idea"

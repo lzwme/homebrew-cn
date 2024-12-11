@@ -1,8 +1,8 @@
 class Cling < Formula
   desc "C++ interpreter"
   homepage "https:root.cerncling"
-  url "https:github.comroot-projectclingarchiverefstagsv1.1.tar.gz"
-  sha256 "e8b33b5e99c6267a85be71fc6eb8e5622ce8aee864c60587cb71f43c27e97032"
+  url "https:github.comroot-projectclingarchiverefstagsv1.2.tar.gz"
+  sha256 "beee8e461424d267ee2dec88b3de57326bc8e3470b4ceae2744de7d3d3aba1eb"
   license all_of: [
     { any_of: ["LGPL-2.1-only", "NCSA"] },
     { "Apache-2.0" => { with: "LLVM-exception" } }, # llvm
@@ -17,14 +17,12 @@ class Cling < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "08656cf9226092658a6151287f836f4f9a954ba10aa4a260e24196b94a0691fc"
-    sha256 arm64_sonoma:   "19b0412143d83a482fd5252d3a5a298ad5867f187f750a260be09be6889d31d2"
-    sha256 arm64_ventura:  "ac3b9dd399d88c74c4c3c0b88edc49ededd1922fd1cf1f03c23bed338697765d"
-    sha256 arm64_monterey: "6cf7a996760a1f5e5d79e5cbf4f258754c4d999691b74fdf37ab36629a0bce8b"
-    sha256 sonoma:         "cda39b9bbadc8473dce97cc997ba974630cdd80774f9ff78cccf5dfa9738a3a8"
-    sha256 ventura:        "c3ae49562e7dce88ff71708a1fac0813347f374d27b7f4afe3be1570271a61fa"
-    sha256 monterey:       "9462386c62c760c5826399df87f677f99ecc238348421230ec95032dad3ae0e7"
-    sha256 x86_64_linux:   "75a5918cdc9831cf4e42d32ab616fdcc95ca5a5e734273b12d7671385d063a09"
+    sha256 arm64_sequoia: "2180b446aa9cee44f570e641dd6ec247844271c9113f44e5669d743cf7b90e4f"
+    sha256 arm64_sonoma:  "b50cf5b6af8e38837eb7cbe80ddc5972e4b7574b7631129dd58ab74a36d1426f"
+    sha256 arm64_ventura: "63a6979bd28f2e05a9a4639f7d5eeec99268be12af84074bf5afe731c63537a5"
+    sha256 sonoma:        "616917ec942914038178ab9c18baf11f09adb518fd09a1bc453d8c570d87303e"
+    sha256 ventura:       "2e72a1bb7d132bfd0d3630d7d556b04ad7440bab3c6ce4ba6b9a1feb823bc81e"
+    sha256 x86_64_linux:  "0babe63deefb1727a2da1fcb90c9c95a296a04317cb87ccd923f652f8b034121"
   end
 
   depends_on "cmake" => :build
@@ -36,10 +34,11 @@ class Cling < Formula
   uses_from_macos "zlib"
 
   # https:github.comroot-projectcling?tab=readme-ov-file#building-from-source
-  # grab the latest tag from cling-latest branch
+  # `git ls-remote --heads https:github.comroot-projectllvm-project.git cling-latest`
+  # grab the latest tag https:github.comroot-projectllvm-projectcommit<commit>
   resource "llvm" do
-    url "https:github.comroot-projectllvm-projectarchiverefstagscling-llvm16-20240621-02.tar.gz"
-    sha256 "51bcf665422be228fbc730cac8bd6bd78258fab80de97c90f629411f14021243"
+    url "https:github.comroot-projectllvm-projectarchiverefstagscling-llvm18-20240821-01.tar.gz"
+    sha256 "47676c77bfa7c63cd6101bcea2611ac0cf363cb5ceb87955ea9e2b3e832ea887"
   end
 
   def install

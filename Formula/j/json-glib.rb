@@ -1,19 +1,17 @@
 class JsonGlib < Formula
   desc "Library for JSON, based on GLib"
   homepage "https://wiki.gnome.org/Projects/JsonGlib"
-  url "https://download.gnome.org/sources/json-glib/1.10/json-glib-1.10.0.tar.xz"
-  sha256 "1bca8d66d96106ecc147df3133b95a5bb784f1fa6f15d06dd7c1a8fb4a10af7b"
+  url "https://download.gnome.org/sources/json-glib/1.10/json-glib-1.10.6.tar.xz"
+  sha256 "77f4bcbf9339528f166b8073458693f0a20b77b7059dbc2db61746a1928b0293"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_sequoia:  "cd747264afa25b324bfdb8db502067ec3db1e4bf3f08aba588f85f6d0fd686e5"
-    sha256 arm64_sonoma:   "a5774cddeca544bfdfed17aa3d1c83dd8bcfa92404cd667388909ab8de5bb529"
-    sha256 arm64_ventura:  "980cdf31daf005701ca36e96802fea798fd75b47ba418c6d6fbef292e29899e4"
-    sha256 arm64_monterey: "c801e7e3532f910456f49da96b4069e383f6cab8b2b2a7396a277c7dc68e0407"
-    sha256 sonoma:         "8a5afc698f6d5c910a553d400b86452d11b78a16e1ca41b4b3644ca9795e5ced"
-    sha256 ventura:        "b626deb80ae8b8746bf73ef3ff8e0784c9c8b11081e0d2017b86e59515679f3a"
-    sha256 monterey:       "36d442758daaa2de90249d6902a0795f9c33270c0e2f0caf4ec232437b04372f"
-    sha256 x86_64_linux:   "5c542473aaf27baee38f1a953c4796ed5b564055b8aa58c395d9a3689145dda8"
+    sha256 arm64_sequoia: "3d00d4a1266924534b5adcc93273d5e8ce51a6342aa2f9c956a3860bc9ee218c"
+    sha256 arm64_sonoma:  "c6b20089f3b7f27bd3f8d8a7bbc4c1b5e73ac3677c3cb78db538e70a329627b5"
+    sha256 arm64_ventura: "589f8ee092ec28365af94a19290a8c81e6801ffab80ba903df2eeff613a1ae4f"
+    sha256 sonoma:        "5946d972c9810bd218ca76da8209e2f54f99db9c34614e93ab0c387b368393a2"
+    sha256 ventura:       "121e1fcafb0fb6c77e9bbc8dec4e1b19a22325e20b9780a07edf149ee0038851"
+    sha256 x86_64_linux:  "76ef98939b04b41babd95e8b680b43266986d73dbc783bd5e79d8dadc296df4c"
   end
 
   depends_on "docutils" => :build # for rst2man

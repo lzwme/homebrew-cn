@@ -2,19 +2,17 @@ class Stanc3 < Formula
   desc "Stan transpiler"
   homepage "https:github.comstan-devstanc3"
   url "https:github.comstan-devstanc3.git",
-      tag:      "v2.35.0",
-      revision: "b46cc7ecc6ab4bd775de72765ffbc827eeffbdd4"
+      tag:      "v2.36.0",
+      revision: "0366507dd98f96bf6acd5d2753bd0910f2eb0ecb"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bfcdeb07e708b96b17861cff6f500f9e4dd8a7703e195fe67e9c28e20cfbbb3a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "252b1a131eeede1c0c7407017a56435bb6a9fc41a4ca518375b6868c56bd9cf2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cf510fd16c6abd9fcc3058cd2863d171ffcbb2343990964ce8265f0aed06acb0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f6bcd5b99613d10958dc78c088b4ffac062d168ddd4fa58b2696f31281700b66"
-    sha256 cellar: :any_skip_relocation, sonoma:         "55126ef12565f1a98391366902eed3d4d0ea81ab5deaa4b9700c365ee5d887a0"
-    sha256 cellar: :any_skip_relocation, ventura:        "118a29a7e10032827b6ac2b685ec1b163d25557d50c1f2a8fcb4ae4f885f3113"
-    sha256 cellar: :any_skip_relocation, monterey:       "5727e1308fa215cdcf1e95380934fc2a10b72a2a96678cb2525fdf7d3ec590a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "15074d4aa26f64aedefacbd4a0f8357cdee32ccecbc3f07c65c2de7c7f36a5ed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a4e28729eb9e4790ba984d02f9752a9e3092c556892673e97d4324c67783cd1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ba590eb17a914c2ce3c93c775a2d8dc1c9dc58ddc4cfecc20a92686d96508d2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "16ccaddc885752a02296d260bbff43e1a618183c5feb29f54dc966d282f58a7b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d95e9716a7f9bfbed4a9161030ec37001051de2ddb7b18f4386b599b11692ca6"
+    sha256 cellar: :any_skip_relocation, ventura:       "d000fd196bc37829af7985f3cfd15a95cae50676acef2250d54cbe088cd207ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92fe8afc06fb2059c4ffd178c2a67eba0b305a60a566ebb80f4fbbce090504ca"
   end
 
   depends_on "ocaml" => :build

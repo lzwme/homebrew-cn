@@ -1,8 +1,8 @@
 class Mise < Formula
   desc "Polyglot runtime manager (asdf rust clone)"
   homepage "https:mise.jdx.dev"
-  url "https:github.comjdxmisearchiverefstagsv2024.12.4.tar.gz"
-  sha256 "bda1dc53b8cd459ec452ff8846a09dfb7559bf50bb2d67b4bfd25aede9f022de"
+  url "https:github.comjdxmisearchiverefstagsv2024.12.5.tar.gz"
+  sha256 "0b7b2bb056bc9429d585c8c23202b1c299793e9b7b72017e3f7b5df390b25ad8"
   license "MIT"
   head "https:github.comjdxmise.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Mise < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6b0d38a33d323d89a24a666114053b992c0c8baab51286f0a9b1efb01602a337"
-    sha256 cellar: :any,                 arm64_sonoma:  "6eecdf47ce08aad568bde99883970335ca4f51eba8e4a3ec040096aec260b9bd"
-    sha256 cellar: :any,                 arm64_ventura: "717a6fb1cc7c9015a4fac71e2e169e556d41a10017237ea8819efdf728f2bf88"
-    sha256 cellar: :any,                 sonoma:        "b03ca1366d07bdb900f09a217d44f04941f14a93bae2ce10d55c42bfd09ed0c5"
-    sha256 cellar: :any,                 ventura:       "8e45a716cc536e02b6cd959fbe57b65eec1382db3f69e33519da9c4c4bec6a71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84e8e8956e27edb1a5be3f900d110c3d600a75b10dcf404674b7d322cc4795ab"
+    sha256 cellar: :any,                 arm64_sequoia: "374730306dc4514d838a04ddef71087da24437210fc64781053f576105b5d8bf"
+    sha256 cellar: :any,                 arm64_sonoma:  "949d982e11b748b3ddef024eb7fd8049cfa6127577536101d61c460e39445de7"
+    sha256 cellar: :any,                 arm64_ventura: "99940fa62a7dcfcc21e3c529748fd90d4c31bedc005bc92f3513ed06e4e4546a"
+    sha256 cellar: :any,                 sonoma:        "a62bcaff3a871086b2830511756755f2eb05225f7e563619d7b2bb69ea6a508e"
+    sha256 cellar: :any,                 ventura:       "70706b1a8028b14aadbe2255f3de084ad270c5af114c975237854258b26e24e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec5ba776fd67eac34ac0fcfb1c331c353578c4bea12330b9e4b6d056e5797234"
   end
 
   depends_on "pkgconf" => :build

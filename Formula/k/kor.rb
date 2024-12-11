@@ -1,18 +1,17 @@
 class Kor < Formula
   desc "CLI tool to discover unused Kubernetes resources"
   homepage "https:github.comyonahdkor"
-  url "https:github.comyonahdkorarchiverefstagsv0.5.6.tar.gz"
-  sha256 "a655d04eadde49c23fa8171248423304adb6db1da695df19b28863b90cae8e3a"
+  url "https:github.comyonahdkorarchiverefstagsv0.5.7.tar.gz"
+  sha256 "db3e4e32738e1dc9a47901937754c589b399e9cae2a4c65eb1bc46b89a14453e"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa73e4cf19f405f9eac5c8e6cb5df71ab086229d64c03ebd14f4c867dbceff55"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fa73e4cf19f405f9eac5c8e6cb5df71ab086229d64c03ebd14f4c867dbceff55"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fa73e4cf19f405f9eac5c8e6cb5df71ab086229d64c03ebd14f4c867dbceff55"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c87fc150d8dd9435105d43dba020e7b6fac3d1e0f4a9c36f06fcf329fe068b77"
-    sha256 cellar: :any_skip_relocation, ventura:       "c87fc150d8dd9435105d43dba020e7b6fac3d1e0f4a9c36f06fcf329fe068b77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5697519de01584e4de4363620ec58518893832d47b5259af0870f722cbb8c054"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "930b64b5619e91003946fa75977aaee86f0739f587108dc12a29a46f0d484ea9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "930b64b5619e91003946fa75977aaee86f0739f587108dc12a29a46f0d484ea9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "930b64b5619e91003946fa75977aaee86f0739f587108dc12a29a46f0d484ea9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ab725bfa29c94d9d9a594f1fdde6f44d5235d293ac350b22f31aae03d8eb3c76"
+    sha256 cellar: :any_skip_relocation, ventura:       "ab725bfa29c94d9d9a594f1fdde6f44d5235d293ac350b22f31aae03d8eb3c76"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f297e41d3bcc094cf98817c8a9041d5b2c59af19e41fe817faf88f5e3a33a1cd"
   end
 
   depends_on "go" => :build

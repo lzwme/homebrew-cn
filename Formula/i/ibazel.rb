@@ -6,14 +6,13 @@ class Ibazel < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0205534d6a69777bc71584978ec7c5d8dff4dc16827e3e4fef4b3757f427334c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5a6a3d2eaa8749318a9a9149d34bf01bed82aa3a32664c7cfac0536d2a44f250"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "99edde73148166f0f1738662507a13738df09f301322e2297b8e9e7c5ffaa88e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "de1b88603188daf5036f5e5ada068d962c270fcca96baf2cd291d0efdb4057bb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "993c286e8f3e90429297e8d00ba069ae23e1a9ab9f5aafcec0a74bd2d0da7e60"
-    sha256 cellar: :any_skip_relocation, ventura:        "e25598ecd6f211262b59640362024ea38f84b2a9cde86dd541aaea9ef030690a"
-    sha256 cellar: :any_skip_relocation, monterey:       "cbb955a9601fc9bfe2f7ff6091488e457262466e67f7f0e01a1d7fe3b8a50f48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d66f94440f2ec1b6fef9b11e46776c2654b61b8c648ac8b6d275e4f0aebedf49"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c12651e6c9cbc680f6e787336fc2f2af53ccdd09cc7fafc8ee27a9317f507df"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c12651e6c9cbc680f6e787336fc2f2af53ccdd09cc7fafc8ee27a9317f507df"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3244d3623fc940b32da49370e3b4d78edae09fa66fc336a80dc5a2a6bfca08d1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a2a7ca0a10912f7e99064fa84f76e4c05a0d1e1aefc026572187c66064872f37"
+    sha256 cellar: :any_skip_relocation, ventura:       "74d628872158223d2254232f97bc08654db611958b4269ed5b60aa91d8c3ec50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1dd9fbcb138b56677b3123f7194cb5d13675a5cdd6f8dcfd9a41f218b3b67828"
   end
 
   depends_on "bazelisk" => [:build, :test]
@@ -29,25 +28,26 @@ class Ibazel < Formula
   end
 
   test do
-    # Test building a sample Go program
-    (testpath"WORKSPACE").write <<~EOS
-      load("@bazel_toolstoolsbuild_defsrepo:http.bzl", "http_archive")
+    # Write MODULE.bazel with Bazel module dependencies
+    (testpath"MODULE.bazel").write <<~BAZEL
+      bazel_dep(name = "rules_go", version = "0.50.1")
+      bazel_dep(name = "gazelle", version = "0.40.0")
 
-      http_archive(
-        name = "io_bazel_rules_go",
-        sha256 = "278b7ff5a826f3dc10f04feaf0b70d48b68748ccd512d7f98bf442077f043fe3",
-        urls = [
-            "https:mirror.bazel.buildgithub.combazelbuildrules_goreleasesdownloadv0.41.0rules_go-v0.41.0.zip",
-            "https:github.combazelbuildrules_goreleasesdownloadv0.41.0rules_go-v0.41.0.zip",
-        ],
+      # Register the Go SDK extension properly
+      go_sdk = use_extension("@rules_gogo:extensions.bzl", "go_sdk")
+
+      # Register the Go SDK installed on the host.
+      go_sdk.host()
+    BAZEL
+
+    (testpath"BUILD.bazel").write <<~BAZEL
+      load("@rules_gogo:def.bzl", "go_binary")
+
+      go_binary(
+          name = "bazel-test",
+          srcs = ["test.go"],
       )
-
-      load("@io_bazel_rules_gogo:deps.bzl", "go_host_sdk", "go_rules_dependencies")
-
-      go_rules_dependencies()
-
-      go_host_sdk(name = "go_sdk")
-    EOS
+    BAZEL
 
     (testpath"test.go").write <<~GO
       package main
@@ -56,15 +56,6 @@ class Ibazel < Formula
         fmt.Println("Hi!")
       }
     GO
-
-    (testpath"BUILD").write <<~EOS
-      load("@io_bazel_rules_gogo:def.bzl", "go_binary")
-
-      go_binary(
-        name = "bazel-test",
-        srcs = glob(["*.go"])
-      )
-    EOS
 
     pid = fork { exec("ibazel", "build", ":bazel-test") }
     out_file = "bazel-binbazel-test_bazel-test"

@@ -10,11 +10,6 @@ class Bagit < Formula
   version_scheme 1
   head "https:github.comLibraryOfCongressbagit-python.git", branch: "master"
 
-  livecheck do
-    url :stable
-    regex(%r{href=.*?projectbagitv?(\d+(?:\.\d+)+)?["' >]}i)
-  end
-
   bottle do
     rebuild 3
     sha256 cellar: :any_skip_relocation, all: "c52968f9d307a0525271426a777174e9c488c3a062ea6756a68fbf671ab320d3"

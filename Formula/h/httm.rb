@@ -1,18 +1,18 @@
 class Httm < Formula
   desc "Interactive, file-level Time Machine-like tool for ZFSbtrfs"
   homepage "https:github.comkimono-koanshttm"
-  url "https:github.comkimono-koanshttmarchiverefstags0.43.2.tar.gz"
-  sha256 "aa5e59972a5db22502930bb4f1c911502d78a98d46a83fa8949f946296e663a0"
+  url "https:github.comkimono-koanshttmarchiverefstags0.44.0.tar.gz"
+  sha256 "91e9940530ca5cd6a440cb6e6d6f25a0243106c9dfdb9764a857985cb7ba61fb"
   license "MPL-2.0"
   head "https:github.comkimono-koanshttm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0fcac86c1f36fdf94caea86df8db942b5cd43215cb16bda797f3a63c4000d60"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "778f01e626b14099a54c80b96bc98cca0dfbb039a7212f55bc405e1c080b407d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fec750dc437d5507b53f9c4a76f53f511543fdfb7b8cc2045fadfe067659b994"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8d743040d8ed25b6401fd2235adb67aff0d648660d7acddf61d832935f0c1156"
-    sha256 cellar: :any_skip_relocation, ventura:       "bff1fd4e07097dc0a1664c2263a657019f32ff2f36ba48c9d0ec9fb37867f452"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74ffcb6e89cc7a480988bca805be6e612167d193a0b551e30ef816419421d651"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f048e3c83a6c2c7f145694c66368101f47a0f040871018a31b6a5057ef10f670"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2fefbb3cb12d293a78053b44549d3ae4be6c6e9f0a88ebaf578b5c2ccb41751"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "945adbb233446290561ecd7b1def5094f359a4928a73e3c5d0f1d4c9a385b59c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "004b953e4a316ead4632ae910792452c49e8f2f701c314c2884cb145f50744a3"
+    sha256 cellar: :any_skip_relocation, ventura:       "75bc5fbc442f807554a5b2bb6763dfc04e57fe479a1daa4275aa3887d81c518e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55088420d61de14fcd23d7eda512a22ab5fe6bda238217e872050f4a2354d04a"
   end
 
   depends_on "rust" => :build

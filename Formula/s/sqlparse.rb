@@ -3,12 +3,12 @@ class Sqlparse < Formula
 
   desc "Non-validating SQL parser"
   homepage "https:github.comandialbrechtsqlparse"
-  url "https:files.pythonhosted.orgpackages57615bc3aff85dc5bf98291b37cf469dab74b3d0aef2dd88eade9070a200af05sqlparse-0.5.2.tar.gz"
-  sha256 "9e37b35e16d1cc652a2545f0997c1deb23ea28fa1f3eefe609eee3063c3b105f"
+  url "https:files.pythonhosted.orgpackagese540edede8dd6977b0d3da179a342c198ed100dd2aba4be081861ee5911e4da4sqlparse-0.5.3.tar.gz"
+  sha256 "09f67787f56a0b16ecdbde1bfc7f5d9c3371ca683cfeaa8e6ff60b4807ec9272"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "407c2129bfab723976c19588513d598fb35024ab5d680f7760d230a3197fcb3b"
+    sha256 cellar: :any_skip_relocation, all: "27c0cee7eb47fbe549b5cc018c08d715e4124b723cfb5a472f2099ea54f28e08"
   end
 
   depends_on "python@3.13"

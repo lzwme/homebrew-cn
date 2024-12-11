@@ -1,8 +1,8 @@
 class Hsd < Formula
   desc "Handshake Daemon & Full Node"
   homepage "https:handshake.org"
-  url "https:github.comhandshake-orghsdarchiverefstagsv6.1.1.tar.gz"
-  sha256 "6a0040832f92b08973b2eb5dd350ee7b6cb20234b0d523f133b935e876e9d9a6"
+  url "https:github.comhandshake-orghsdarchiverefstagsv7.0.0.tar.gz"
+  sha256 "1575078ebda85396fcaa32238580ae4295ea2f3903bac1ffd97ef7dc77ea363c"
   license "MIT"
 
   livecheck do
@@ -11,15 +11,12 @@ class Hsd < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_sequoia:  "38370bba9da2a34a815b8d9d2c1db0b4f966e7cdc80e9bcc2d56260c00fef966"
-    sha256                               arm64_sonoma:   "aca335ee9c1ce485ff2707794e8266a99364f54126c52aa51a017516416469a5"
-    sha256                               arm64_ventura:  "724d34587826a5fbc70b8261c6cd5731615db65885792ee06eabc465de47f641"
-    sha256                               arm64_monterey: "63016ff5b01c5817c264334ae73ec6563bf1407fe2c4d075e42fb9f48e9a4a20"
-    sha256                               sonoma:         "d868bb06dfe9b7249563131e6d0aefcb0ca78ec8edfafec38ed34127b740484f"
-    sha256                               ventura:        "92e1242289174273f88b61eaf3f27a17aee31498dd8f838fcee9eb76f0ae6195"
-    sha256                               monterey:       "e823e72e815659ec79d23f9232697bcb800da16d2634b47010e7e7e303b3d07b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b725ebb4a9c05cc211b83a4932c53cd8054140bdbb62071bb7cccd34715be01"
+    sha256                               arm64_sequoia: "8a888c6370e29963fde04a7fb6eccd2776b406ba80fa508a3aa84313b1f61769"
+    sha256                               arm64_sonoma:  "bc44f24c70c3a7e61073d2b9f18f69b7b667554c5b98fb15ec47c7cf07c5759e"
+    sha256                               arm64_ventura: "abdca27a97cd18ecd3969c05a364636effd180db97c2aa5cbef665905f2f15d4"
+    sha256                               sonoma:        "f741897e398391aab16f5bd42ee1c8f252f8c11f1c7967767c6c55070ab4b368"
+    sha256                               ventura:       "b000053a108c7251724adeffb14fa45afd9da36b66bd4dba2c26e69f02962aa6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "567a06032591728df4091b459d34c8655789730ba0bc385ff9de987893d14507"
   end
 
   depends_on "node"

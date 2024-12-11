@@ -8,11 +8,6 @@ class Asciidoc < Formula
   license "GPL-2.0-or-later"
   head "https:github.comasciidoc-pyasciidoc-py.git", branch: "main"
 
-  livecheck do
-    url :head
-    regex(^v?(\d+(?:\.\d+)+)$i)
-  end
-
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec67acbcd8040ec963e8d3c2cab2427254d2b8b411b65db720347518ab341559"

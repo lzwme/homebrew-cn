@@ -3,18 +3,18 @@ class Conan < Formula
 
   desc "Distributed, open source, package manager for CC++"
   homepage "https:conan.io"
-  url "https:files.pythonhosted.orgpackagese393b1ae4bb56daa2adafd97f057f35abac1728c25f4a95c2445acbcb7db13b2conan-2.10.1.tar.gz"
-  sha256 "dece8e21c49e06cb4846ab9b342f30aa6fbc88bc3d2235f30519bfcb8b3267b6"
+  url "https:files.pythonhosted.orgpackages927528e3db35ea74f857a402e569c8cbb4431e40d7e390d774944bbea698df3dconan-2.10.2.tar.gz"
+  sha256 "ac40fa3e0cbff7e147dcd54787e3a2d58666116e3596fb32eb1c9fffd2c6f7f8"
   license "MIT"
   head "https:github.comconan-ioconan.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "02282b89d4292fdc5c94c466f96f97813f1f47f116686a58af420cd38128ce8d"
-    sha256 cellar: :any,                 arm64_sonoma:  "8bd4ca935e716c777183d499c335b7a141eba5d802f9164dd4dda0a5a9b7a178"
-    sha256 cellar: :any,                 arm64_ventura: "49f330103b3794bc421328f7fcb74b1aceb07f56487614574d469f850e341f14"
-    sha256 cellar: :any,                 sonoma:        "a068a3c4f6d4ecea0451fefaae31181764fd62fbb0dd327a47306e16b6733f77"
-    sha256 cellar: :any,                 ventura:       "ac9cbe1c9bacdf02504011f08df00fbf9561c22ecd63c8f4c4d41c53dc17ef78"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e9d64cc30169d2a0133f34d2db41abdda71faa07d3634b419c2e0f039047aaa"
+    sha256 cellar: :any,                 arm64_sequoia: "eab19813c3d61f1cb2e8553383dd60efd94e0b5e8eebd894d09c8e30565bad70"
+    sha256 cellar: :any,                 arm64_sonoma:  "aa990917894603b0d94b8a2257b744ae0766d6196943c8e4b820827261f3ba7f"
+    sha256 cellar: :any,                 arm64_ventura: "ccc3e655190f73c45137ed745de5053dc624ae5ef317d70c681c5d3fc7ab3004"
+    sha256 cellar: :any,                 sonoma:        "030d5533a43cae9e0476ccae7a346f3b5ee45a229fa98940a70d6e6b7c8852ee"
+    sha256 cellar: :any,                 ventura:       "327b7fa49ec259cb7dcce543ef1287fef3423d495c7079ef9f52dbc5cf97baa0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1260249e07bf67bde19d651b15e837cc00fab88ddcd75aa2712c138c7cf3365"
   end
 
   depends_on "pkgconf" => :build
@@ -79,8 +79,8 @@ class Conan < Formula
   end
 
   resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+    url "https:files.pythonhosted.orgpackages94e7b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   resource "urllib3" do

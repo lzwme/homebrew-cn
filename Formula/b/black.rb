@@ -9,11 +9,6 @@ class Black < Formula
   revision 1
   head "https:github.compsfblack.git", branch: "main"
 
-  livecheck do
-    url :stable
-    regex(%r{href=.*?packages.*?black[._-]v?(\d+(?:\.\d+)*(?:[a-z]\d+)?)\.t}i)
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9183647ee05fd96f5744b846173c161b2aebfb2e73a4c9c4bc5683f444f0f01"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "da967e0075d3b11364c4492aaaccfce24025a8df3a3057f393fc18242cc6e680"

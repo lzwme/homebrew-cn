@@ -1,10 +1,9 @@
 class F3d < Formula
   desc "Fast and minimalist 3D viewer"
   homepage "https:f3d-app.github.iof3d"
-  url "https:github.comf3d-appf3darchiverefstagsv2.5.0.tar.gz"
-  sha256 "d7f6dd7d9e4465c1f44d168c3a38aad24569a25907673180c8791a783e73f02f"
+  url "https:github.comf3d-appf3darchiverefstagsv2.5.1.tar.gz"
+  sha256 "55ea01931f90f066df1abc0ae4e9575672e80b83b241f51884224baa8dccac24"
   license "BSD-3-Clause"
-  revision 3
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -15,11 +14,11 @@ class F3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "6241f01e1f2a2a3506060cb818ca1262859f7ebf0f53f7729fb1834d8d15199a"
-    sha256 cellar: :any,                 arm64_ventura: "20a75e615053084f544f1bd0f88b030adc6310bc0329541ad1b1c8510887ed8c"
-    sha256 cellar: :any,                 sonoma:        "b43aef3363aeee2d47df7844121cb8e4c87397ad09d008660f61d94ad2d2c7d7"
-    sha256 cellar: :any,                 ventura:       "066f1186c6bb44d256b20aba8737fc847eddb5e53935555f39985b432c476b30"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7451e4d58d8a94e3410ac80f95f4165b265aa102922c5bf8e154c21beb75189d"
+    sha256 cellar: :any,                 arm64_sonoma:  "2ab25b18901e2b7df5dce2b820b5ae55948d481a0e04de56b75bb0af58c02da4"
+    sha256 cellar: :any,                 arm64_ventura: "b73eea70d6adcb0d528ee8f462396316c3a8ecc467d49377b47abf51b97e5ae6"
+    sha256 cellar: :any,                 sonoma:        "b3bd9a4073050f764bf821458c087cff59b2e31ac4a3123ab218f7896219323e"
+    sha256 cellar: :any,                 ventura:       "2d3899865c7dbfe60f4352781c5bbb82381441efc385301cafb09e20f8816df6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0a533f4beace3c8e5d8cda50da3fea52fbada7f9ae14998788050245f51f307"
   end
 
   depends_on "cmake" => :build

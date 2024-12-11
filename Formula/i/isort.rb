@@ -8,11 +8,6 @@ class Isort < Formula
   license "MIT"
   head "https:github.comPyCQAisort.git", branch: "main"
 
-  livecheck do
-    url :stable
-    regex(%r{href=.*?packages.*?isort[._-]v?(\d+(?:\.\d+)*(?:[a-z]\d+)?)\.t}i)
-  end
-
   bottle do
     rebuild 3
     sha256 cellar: :any_skip_relocation, all: "40e77a6599b1898f4790a9d54cea3da7662a8012941c0156762e037f8e3ea390"
