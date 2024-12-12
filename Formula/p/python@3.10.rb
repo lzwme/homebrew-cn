@@ -388,7 +388,7 @@ class PythonAT310 < Formula
   end
 
   def sitecustomize
-    <<~EOS
+    <<~PYTHON
       # This file is created by Homebrew and is executed on each python startup.
       # Don't print from here, or else python command line scripts may fail!
       # <https:docs.brew.shHomebrew-and-Python>
@@ -440,7 +440,7 @@ class PythonAT310 < Formula
       tkinter_prefix = "#{HOMEBREW_PREFIX}optpython-tk@#{version.major_minor}libexec"
       if os.path.isdir(tkinter_prefix):
           sys.path.append(tkinter_prefix)
-    EOS
+    PYTHON
   end
 
   def caveats

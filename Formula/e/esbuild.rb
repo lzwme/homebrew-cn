@@ -29,6 +29,7 @@ class Esbuild < Formula
 
       let Greet = () => <h1>Hello, world!<h1>
       console.log(Server.renderToString(<Greet >))
+      process.exit()
     JS
 
     system Formula["node"].libexec"binnpm", "install", "react", "react-dom"

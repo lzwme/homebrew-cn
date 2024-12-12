@@ -1,18 +1,18 @@
 class PhylumCli < Formula
   desc "Command-line interface for the Phylum API"
   homepage "https:www.phylum.io"
-  url "https:github.comphylum-devcliarchiverefstagsv7.1.5.tar.gz"
-  sha256 "2d0783db1cd941d3af9a2561f2e4462e2f745f53eb94e73b9caaa06e1dfb1c79"
+  url "https:github.comphylum-devcliarchiverefstagsv7.2.0.tar.gz"
+  sha256 "9d3937365bd6f19d9c15825e1fd211dedeeba553e36b926270077334618eeaa3"
   license "GPL-3.0-or-later"
   head "https:github.comphylum-devcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d43fa710ccc998ed248ba12b58e98fc11c81b0ee3c8067353eb9ca48dd33d7c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ed44610f8d6ffed2c8fb9a79dbcc31947ac6f92ea04f656b77e53ec96d1b877"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a55fcb038e9470c4a4028f53772c45445b138d3b452c102617606b81812d0947"
-    sha256 cellar: :any_skip_relocation, sonoma:        "af381ee98e732957fc39b1b6f1717824508b2c273ec7ce4a6883fa1f4db4016b"
-    sha256 cellar: :any_skip_relocation, ventura:       "5ceb36ba897bb7cf8591907cb0bec1ea492fd904ed1bc07657cbfc8a86ac44c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "160e71fe93653ab0a831970f9cc9fd3eeb14385d2cb4f5fd0e982a7c54c9330f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2248bc67e53c347d61f0fb1be8a6703b7a8b792287919ca2e6dfa8faab260fe6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a2d01cd1473ae6046819b5f78fa61002f03a2bfa61868f18f8624072d56b9ef"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "86e4825546eb7d9a2f0a0d18fe0abb8dbe2f2ce1102965517b5e6fefbfa4fe07"
+    sha256 cellar: :any_skip_relocation, sonoma:        "017670f96f40bcf3b773e5312291777da13e15cf9a312b5bc7734c3f7acb34a1"
+    sha256 cellar: :any_skip_relocation, ventura:       "ce0aed61f00d9e35a01c072ca1905a3867b4ae33c2ea4b03eafb2951ae4b5d12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1e27b04e4f08b0021bef9c5f666d6876e9fb5e4066d550d38c5687e84604efa"
   end
 
   depends_on "protobuf" => :build

@@ -1,8 +1,8 @@
 class MongoCDriver < Formula
   desc "C driver for MongoDB"
   homepage "https:github.commongodbmongo-c-driver"
-  url "https:github.commongodbmongo-c-driverarchiverefstags1.29.0.tar.gz"
-  sha256 "507414795dfb24ddf1a418b155b57459d8cea1191c7f0fcd8b826acf5400343c"
+  url "https:github.commongodbmongo-c-driverarchiverefstags1.29.1.tar.gz"
+  sha256 "bc7d861192948ea9f5898867b7c9a8ce57b6b775d8d45591d2cc3db7eb637671"
   license "Apache-2.0"
   head "https:github.commongodbmongo-c-driver.git", branch: "master"
 
@@ -12,12 +12,12 @@ class MongoCDriver < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d4f21fedfda0eebce42de12b02eae5de2c55083e3d70dc002ed410a49a6b87a1"
-    sha256 cellar: :any,                 arm64_sonoma:  "e14103bf6cb5a50ca4211da32503ce496f336d6edd771dd38c250880cb309fab"
-    sha256 cellar: :any,                 arm64_ventura: "8fa2bdd4e92144ef5f888c7d2d19dfb76b7f07164d58d45529fd5fcbd8808b6f"
-    sha256 cellar: :any,                 sonoma:        "a59ea091aca0c1248893f71299a972b898d2f73cdabcccad961250e79cc397ef"
-    sha256 cellar: :any,                 ventura:       "a68cdd701a71286c3b8a17d12f18bc18200d32adb44a2f8421e5e8062604b738"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62c5490508d63f54720a08c10329d387bf2398c914c240ca9175b66908ecfae0"
+    sha256 cellar: :any,                 arm64_sequoia: "25ba735ffb61294af4806ea19208dcc27ea9eee2ec45c647f3478f6d650af1fc"
+    sha256 cellar: :any,                 arm64_sonoma:  "6d1443980ddbf551113c34307560d06c1a0ef05679e19948ced3e3b4d1152221"
+    sha256 cellar: :any,                 arm64_ventura: "45ba5549157d95d90e7a3f5fea023f8f67db10356a2065d39d7fd80c44b686da"
+    sha256 cellar: :any,                 sonoma:        "bfd445a4cd04afc10c706e32785dd49c63cc1e2979baef7ce81cbef780ceb753"
+    sha256 cellar: :any,                 ventura:       "8cac51cd969cbc9f070c57f85dcc1f178a1f86a70ad54e6e51f3d40a4bc44375"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a10b81629a9b481681abeb5ae061aea6d03276a199910000576f4495d030f5d"
   end
 
   depends_on "cmake" => :build

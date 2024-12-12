@@ -1,8 +1,8 @@
 class CiliumCli < Formula
   desc "CLI to install, manage & troubleshoot Kubernetes clusters running Cilium"
   homepage "https:cilium.io"
-  url "https:github.comciliumcilium-cliarchiverefstagsv0.16.21.tar.gz"
-  sha256 "50cbd5a8632d2255d288eaf1c1f56092a1978c9abd377a2017a98ddd815757e5"
+  url "https:github.comciliumcilium-cliarchiverefstagsv0.16.22.tar.gz"
+  sha256 "eb75b32fae3bd6f15f9bb96b1d8be319732d28f40f51afbb61bf65c72a93e176"
   license "Apache-2.0"
 
   # Upstream uses GitHub releases to indicate that a version is released
@@ -14,12 +14,12 @@ class CiliumCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e528c0835d1e263eed6ad72a759c590e0a859a99585ebbaed8068d931322a7e7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1738d5d507d6253530ae33ec01df6425d74b417f7aba3c33254ac9b6234b4008"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5c1093bd0cbb18f6d9f2e03840ad860b18d03055551ca66e7d495d5a0e3968f8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9dbb780d11dd3c7e45b0143ebc5c50c9a2d1e582e2ca63f752895fd345d6fc6c"
-    sha256 cellar: :any_skip_relocation, ventura:       "37cb50daf4f46b85252cf39b21f717104028c2c91bc47d96430f8335873db379"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce2f414934077e358ee4d9a988e09a574953e5bd5f1db04b76607b5f8b23404a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "060edbd99c33cafb86f4530e07bccc74c93dbc5ce4bd225f3147ba5b525e45f0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3760abb21ff93ac7f972ef58ce7e0021e321c2ee95530d15332e652e10ad602e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5e3a18ca016b7cec830c1675c8ffee0bf12c1c8c041f3548b9a8807d2715fd8d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ddd5399d3a397c0539cea012804084a38f546d11220b787badcabfe9c2df9b82"
+    sha256 cellar: :any_skip_relocation, ventura:       "5208c9b93830511b2be8d0e6209cb9ff1093ba418f1075cbce64816c31efc1b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88cbabaa2dbdb9d785f9cab541ce3a43e49963a06c2c9b0642324b1512dd8c61"
   end
 
   depends_on "go" => :build

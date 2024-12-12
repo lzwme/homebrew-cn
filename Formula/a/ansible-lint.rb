@@ -3,17 +3,17 @@ class AnsibleLint < Formula
 
   desc "Checks ansible playbooks for practices and behaviour"
   homepage "https://ansible-lint.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/3d/02/d097b8b7d820a940f9f46ab7e50783f8c261a458dbe9955fda04112d0d61/ansible_lint-24.12.0.tar.gz"
-  sha256 "c5202d929af9ef8e791f55f4ae0e06e5d185980b4ebd7a8a47028630ac22a98a"
+  url "https://files.pythonhosted.org/packages/69/1a/597cda86ee5f990845847d4d9ccff7ef7cfab022a831e63f6fe9c6ec039f/ansible_lint-24.12.1.tar.gz"
+  sha256 "3a69e9187b405c0c11ba2e8f7c3e37d8d783bd482eaf5feaa60cf58d387ae18d"
   license all_of: ["MIT", "GPL-3.0-or-later"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e12ec7542254d3030427317533723e9a9f91e5b0178f0d74ec20dd3913a895fe"
-    sha256 cellar: :any,                 arm64_sonoma:  "026f95b21a5b1c03802d97aa20c46ddb5835e6ff74c36ec96b90b5b2932931fa"
-    sha256 cellar: :any,                 arm64_ventura: "7b1eeba67f39775d4bc90a6c988c88a68f901703484eccbd3a1df5ba385f2fbb"
-    sha256 cellar: :any,                 sonoma:        "2bf158b8079be8b0a407c4d927372b11b3d802a829d8506fb9c4468218bbd955"
-    sha256 cellar: :any,                 ventura:       "45e688f60fefe139619a5784f3b0d57ecf08ca24c4cf62cd3957aa9f9cde4073"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18aa1ec3fb36a3dd26ac39e00026e829cc48d12950f47b64279543ec0d242903"
+    sha256 cellar: :any,                 arm64_sequoia: "f6a869f39f27544e45f73e5299212bb984a399dc49ed7ffb483c74149e3de9c2"
+    sha256 cellar: :any,                 arm64_sonoma:  "fe8dbf228148ca1fbbca622f4e2e3021afa1d833d1f16933ab8637a63f61c48e"
+    sha256 cellar: :any,                 arm64_ventura: "d770a02f6dd0699ef29d69b1f8aa3ad56387cb50c24cb701856497abc7216998"
+    sha256 cellar: :any,                 sonoma:        "a9b36bb129057e2d33729037d16afe51795f14ac44f0dbc44b7782bceedc1ac6"
+    sha256 cellar: :any,                 ventura:       "f612135725cbc57cba48cf04aa30b82f2aabc54165896e810fed179618565312"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c10abd8f5a75fd0724d060dbb12badbbb095a441231695b03c45a9a58907293"
   end
 
   depends_on "pkgconf" => :build

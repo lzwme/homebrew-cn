@@ -1,17 +1,17 @@
 class Lowdown < Formula
   desc "Simple markdown translator"
   homepage "https:kristaps.bsd.lvlowdown"
-  url "https:github.comkristapsdzlowdownarchiverefstagsVERSION_1_3_1.tar.gz"
-  sha256 "028b77171cfa03d8360aaaaab81ef3ab1e99f9623cd39e62c5dae82ebad7c5db"
+  url "https:github.comkristapsdzlowdownarchiverefstagsVERSION_1_3_2.tar.gz"
+  sha256 "93ada3d0986536df638865d3ba249b5428d2c70153c11d683aa2b3e91c15e3d0"
   license "ISC"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a608d381364963ab721a75f2d02e5a2c987ebc22b6069020d990c9755282afa1"
-    sha256 cellar: :any,                 arm64_sonoma:  "7186f60365e88d2f8f83ce81dbc35c6a32b5947da68a18e031aa17267715f08d"
-    sha256 cellar: :any,                 arm64_ventura: "a4d9c6568df45a79df945cd58552af85a52b01ae5b0dce50620d81fc2d61cf2f"
-    sha256 cellar: :any,                 sonoma:        "d500f7c023996f93f75b96d09a1e12d85a8b70a08fbcfe22d73a884fb1f94468"
-    sha256 cellar: :any,                 ventura:       "0f420224179cd4969433cfdd1d017c3f24666db599b6a7713c65ac1246b1da17"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fba34df1d8206032d8bacb33d6226d6d50a184eb27591e27f76b10a6ea994c70"
+    sha256 cellar: :any,                 arm64_sequoia: "caea7a23190c194ec64a1f3b9f547a695b9fa736bcf830d66a822f40422aeb11"
+    sha256 cellar: :any,                 arm64_sonoma:  "7f52f1c541875792147ab241711090e3de10d1f7cdb956fe0cd74c4042df5fc1"
+    sha256 cellar: :any,                 arm64_ventura: "91057d8afc801e954cc87f52ad7f9af029d11461c80a525adc1bb4b0ac56625d"
+    sha256 cellar: :any,                 sonoma:        "9a634d52da41dbe84fbe638bea0f0feebebfd6c635e513bebb0ae811d23736b0"
+    sha256 cellar: :any,                 ventura:       "41f632dfbf437a8f943d6c84f2b81e7573a0ced322ad3246ac113cda7db60ef8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c27c8e50b9341cbc4033d4cabae95f47f72caa481e0d158b84abfd93c4e68fd"
   end
 
   def install

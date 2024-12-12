@@ -1,6 +1,6 @@
 class GnomeThemesExtra < Formula
   desc "Extra themes for the GNOME desktop environment"
-  homepage "https://gitlab.gnome.org/GNOME/gnome-themes-extra"
+  homepage "https://gitlab.gnome.org/Archive/gnome-themes-extra"
   url "https://download.gnome.org/sources/gnome-themes-extra/3.28/gnome-themes-extra-3.28.tar.xz"
   sha256 "7c4ba0bff001f06d8983cfc105adaac42df1d1267a2591798a780bac557a5819"
   license "LGPL-2.1-or-later"
@@ -15,6 +15,8 @@ class GnomeThemesExtra < Formula
     sha256 cellar: :any,                 monterey:       "ce23ae32bafec76ac518498866c1e32d4587909ed9c69f24ba9b5796f30428e0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f5c9c176b316179b530c7d28fb245f93881339b1ec7737685c85f3d0857248e"
   end
+
+  deprecate! date: "2024-12-10", because: :repo_archived
 
   depends_on "gettext" => :build
   depends_on "intltool" => :build

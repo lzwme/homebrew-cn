@@ -12,12 +12,13 @@ class Temporal < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87aa3cb7ef068bb712e7d0ecff067cfa457b6f0718efc22437aacd4847191c1c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87aa3cb7ef068bb712e7d0ecff067cfa457b6f0718efc22437aacd4847191c1c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "87aa3cb7ef068bb712e7d0ecff067cfa457b6f0718efc22437aacd4847191c1c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "567daed499ed1305ecbcc2004c1fd497ac3fe4781cf0f2cfc1162cc4ca6176d4"
-    sha256 cellar: :any_skip_relocation, ventura:       "567daed499ed1305ecbcc2004c1fd497ac3fe4781cf0f2cfc1162cc4ca6176d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dad94b2004d5a5d5d70d3fd7d8b5853a1665e5571dd4f03319cf30277eeb2133"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e8c8c6de97ade1b780f71f8924bbf5a04658420fd29129fd7cdece3b9f97a19"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e8c8c6de97ade1b780f71f8924bbf5a04658420fd29129fd7cdece3b9f97a19"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6e8c8c6de97ade1b780f71f8924bbf5a04658420fd29129fd7cdece3b9f97a19"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e3aa0d666ad38eccca5e8d50764682f43d0d43168e703f1719c205a542e29d17"
+    sha256 cellar: :any_skip_relocation, ventura:       "e3aa0d666ad38eccca5e8d50764682f43d0d43168e703f1719c205a542e29d17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "051d2781c004699c386ed25429d4754f5dbfae0a2f243cf1d551080753855d0d"
   end
 
   depends_on "go" => :build
@@ -26,6 +27,14 @@ class Temporal < Formula
     ldflags = "-s -w -X github.comtemporalioclitemporalcli.Version=#{version}"
     system "go", "build", *std_go_args(ldflags:), ".cmdtemporal"
     generate_completions_from_executable bin"temporal", "completion"
+  end
+
+  service do
+    run [opt_bin"temporal", "server", "start-dev"]
+    keep_alive true
+    error_log_path var"logtemporal.log"
+    log_path var"logtemporal.log"
+    working_dir var
   end
 
   test do

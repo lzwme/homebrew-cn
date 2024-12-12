@@ -1,8 +1,8 @@
 class Aptos < Formula
   desc "Layer 1 blockchain built to support fair access to decentralized assets for all"
   homepage "https:aptosfoundation.org"
-  url "https:github.comaptos-labsaptos-corearchiverefstagsaptos-cli-v4.7.0.tar.gz"
-  sha256 "46e3568371030726cbaec17143be3a7c4eec016b6c5e249225500bc5d12b646e"
+  url "https:github.comaptos-labsaptos-corearchiverefstagsaptos-cli-v5.0.0.tar.gz"
+  sha256 "e2afd670d2e9d39622b9da4acd40f05bb5173fc36c61de711ec58bcdaed4062a"
   license "Apache-2.0"
   head "https:github.comaptos-labsaptos-core.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Aptos < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6edaf9b19a50349bd2813d0f5c1b4abee0386f3a2b307ee35643f548492e4b2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d906a8757382c108a1510b1313e76124508e19c316a3a8cd97e924fb90c226f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "83fb63fad255e2ecc15b935b837f32bfafc188b24c9aef011434ad4c49135160"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c1e4c56ad68eee11c7b04c643a959a0eade79f40cd140b3b6f3bcca031c3be46"
-    sha256 cellar: :any_skip_relocation, ventura:       "8caa5a517cf003d9d06515977b163f0629bf7e53bf278ca08a8f3fdd5be3bebb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "067ee06efaff4379c1164200317ba191ee6272ff74b2e418d6aa4ff61faaa2b4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2824da89278d797be5653423ac32dfb34a83df31bc88dfcac7c6829619a86a30"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d8562a11b698e93d868c1c0805444e1ab1ab40b288df8a36a302d76254be6ac3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6d61a9cb0c4252e161781d2261e587d2072ecb61319182284d29b98d52c0129f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9b89696cac8ad2d06a1581f1bc1710e2a3a3a44581fc5618ea61de0df03bf523"
+    sha256 cellar: :any_skip_relocation, ventura:       "301c22509fbd7977e7ba63562846df4c0c9c74f3d9558183784a563bfbb31734"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e69fa057e54bdb21e73ad47d998add7f599622e5f535c59b87489884d8b2255c"
   end
 
   depends_on "cmake" => :build

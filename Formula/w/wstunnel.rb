@@ -1,8 +1,8 @@
 class Wstunnel < Formula
   desc "Tunnel all your traffic over Websocket or HTTP2"
   homepage "https:github.comerebewstunnel"
-  url "https:github.comerebewstunnelarchiverefstagsv10.1.6.tar.gz"
-  sha256 "c89b0fe2d7848233304e622c7ad744954ed4b287edbec48d8e2d65a2569dbd3e"
+  url "https:github.comerebewstunnelarchiverefstagsv10.1.7.tar.gz"
+  sha256 "7cc11681f77eb50331133299174150ede929edacf381bb06ab762053770ba03b"
   license "BSD-3-Clause"
   head "https:github.comerebewstunnel.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Wstunnel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "676a83ec2468c0850038ab2caeceb9e6ca7a2a1756432219f250f4b5273a434b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "616288b4a14ffb2204a8104ebfc319e8862b3f098a19c80a21b06035475bb618"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0d17418db2d5102d0831f630b4f5d73660a6cfb1e41d140308c7b535c286ccaf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8f0ae0fb94d66e1a9c517d66175208e9df100f8af0227c918ea94c33cd9ed285"
-    sha256 cellar: :any_skip_relocation, ventura:       "92f5b818409be3c62f1d6cbec770e373b6abd89ea1e2f7ad8ee64f08fece9b11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df36664a9ac4721df27bdf1a2ce1363a6c15952ba9dfb4d5530c393d75151365"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa44a98c86926822a10d001c800d21e59a789b46541d8129406ea3b7ea2c4f08"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a741a9126aa476984910b95c6ec60ac92d695e582a6ab5340d896978dd610ef3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "28c994aa29ef322db0f7fbcc0a8b27d893cf097534451b56ee899bef91ba1806"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4bee9d63755f1b12826e605ec0978fb479a4e3d4bcc6b60478ee4bca6a2bc59b"
+    sha256 cellar: :any_skip_relocation, ventura:       "4a623a8d8e760154e6f594e6d371c544a2b903d631e617647f804ff37326156d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9eafa049a00ec21710be5f43918728e9663538cb2281824d194b91e86e51dad"
   end
 
   depends_on "rust" => :build

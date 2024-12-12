@@ -32,10 +32,10 @@ class Unzip < Formula
   uses_from_macos "bzip2"
 
   # Upstream is unmaintained so we use the Ubuntu patchset:
-  # https://packages.ubuntu.com/kinetic/unzip
+  # https://packages.ubuntu.com/noble/unzip
   patch do
-    url "http://archive.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_6.0-27ubuntu1.debian.tar.xz"
-    sha256 "9249780437220a5dc81518f2e4c5213b502bf56899c03992572cf9bb5caf724e"
+    url "http://archive.ubuntu.com/ubuntu/pool/main/u/unzip/unzip_6.0-28ubuntu4.1.debian.tar.xz"
+    sha256 "d123c8e6972dbdd17ba1a4920fb57ed2ede9237dbae149dcbf55df829c77baf3"
     apply %w[
       patches/01-manpages-in-section-1-not-in-section-1l.patch
       patches/02-this-is-debian-unzip.patch

@@ -3,18 +3,18 @@ class Safety < Formula
 
   desc "Checks Python dependencies for known vulnerabilities and suggests remediations"
   homepage "https:safetycli.comproductsafety-cli"
-  url "https:files.pythonhosted.orgpackagesbff60569f2928e03b7058c95f4ae05d3098c9c0ba0d42de2adfe91fd6de25c2esafety-3.2.11.tar.gz"
-  sha256 "70a3b7cc75ba41907bf1705bcbbeab232688657c21088e108712ecb601fe0f20"
+  url "https:files.pythonhosted.orgpackages44680144329bb69bea0e746e431c801627b7df7e9e48e82eaf150167eda69b4csafety-3.2.13.tar.gz"
+  sha256 "9328510c3286d67a788346d60df531b8bd2f35abbed3ac4dfaf8d119e6eec1ae"
   license "MIT"
   head "https:github.compyupiosafety.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "05bce5e7d178b074e3d1358b98450ea886cd462829cebb08a97931fa03b15836"
-    sha256 cellar: :any,                 arm64_sonoma:  "eeae21e7fb7b6a1c90b47bf67664ca734f5b60c9b057f8965f0ba227c9f72ae7"
-    sha256 cellar: :any,                 arm64_ventura: "5c9e24a9bb2832d6f4d0c69b247e50ad4b0d7d9e2b6ce33f6a15e2f901867660"
-    sha256 cellar: :any,                 sonoma:        "40cfa117866379f45b25f03db5d722e895cf9eb231bde956f5929512278e59cf"
-    sha256 cellar: :any,                 ventura:       "cd856083121ea9639821b67cbb3524dc15cca0b5806160dbf9404d6063fb7201"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cfc47f4d98c6337eaedd631f730139531f021d05b0592bb0d9bcf2baf60b27f"
+    sha256 cellar: :any,                 arm64_sequoia: "a26a5c939c56caadeb92f74c9f077b35faf7122f47b2b6fb0f861ae6d852e43b"
+    sha256 cellar: :any,                 arm64_sonoma:  "5f90cc78ce0a5fd23168e8f884f3bcc8a63bbd6ca009fa2ac11ac1fb0f2d8f94"
+    sha256 cellar: :any,                 arm64_ventura: "a60cedf4330258a12d41d36182c04f460382c427b1a5f36129de279322093c9d"
+    sha256 cellar: :any,                 sonoma:        "3877f45fb57f94fbb4041857ceb8d3e64b8a8780f9a33c89a14784e063d1d7d2"
+    sha256 cellar: :any,                 ventura:       "fd55e37802f9f55ecfbc4e5822fd7aa70d5172e839b842faa9d182ba6cbe8d21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46a44e9ac9e62b64ced3889ec4ff94345e881a72f08d194202c9c1ee6e0b59eb"
   end
 
   depends_on "rust" => :build
@@ -123,13 +123,13 @@ class Safety < Formula
   end
 
   resource "safety-schemas" do
-    url "https:files.pythonhosted.orgpackages074889f164c0fcb41d8cb4a67580461f94d6e3cb0fff7b198fb0c3bbb7bdfd4asafety_schemas-0.0.9.tar.gz"
-    sha256 "23044f88aa21213980b00e6002cf56229e1efc2b6cbdde3e90fc781ca6bbc217"
+    url "https:files.pythonhosted.orgpackageseeb5736f73c3acb96b93f64006fa3fa6c78d99a7abba6aad46acc3f0b2438b2dsafety_schemas-0.0.10.tar.gz"
+    sha256 "5ec83bb19e17003748d2a4b11e43e1f2b4471c9434329e9a0d80d1069966b96c"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagese273c1ccf3e057ef6331cc6861412905dc218203bde46dfe8262c1631aa7fb11setuptools-75.4.0.tar.gz"
-    sha256 "1dc484f5cf56fd3fe7216d7b8df820802e7246cfb534a1db2aa64f14fcb9cdcb"
+    url "https:files.pythonhosted.orgpackages4354292f26c208734e9a7f067aea4a7e282c080750c4546559b58e2e45413ca0setuptools-75.6.0.tar.gz"
+    sha256 "8199222558df7c86216af4f84c30e9b34a61d8ba19366cc914424cdbd28252f6"
   end
 
   resource "shellingham" do
@@ -138,8 +138,8 @@ class Safety < Formula
   end
 
   resource "typer" do
-    url "https:files.pythonhosted.orgpackagese7879eb07fdfa14e22ec7658b5b1147836d22df3848a22c85a4e18ed272303a5typer-0.13.0.tar.gz"
-    sha256 "f1c7198347939361eec90139ffa0fd8b3df3a2259d5852a0f7400e476d95985c"
+    url "https:files.pythonhosted.orgpackagescbcedca7b219718afd37a0068f4f2530a727c2b74a8b6e8e0c0080a4c0de4fcdtyper-0.15.1.tar.gz"
+    sha256 "a0588c0a7fa68a1978a069818657778f86abe6ff5ea6abf472f940a08bfe4f0a"
   end
 
   resource "typing-extensions" do

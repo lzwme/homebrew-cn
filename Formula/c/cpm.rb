@@ -1,18 +1,18 @@
 class Cpm < Formula
   desc "Fast CPAN module installer"
   homepage "https:metacpan.orgpodcpm"
-  url "https:cpan.metacpan.orgauthorsidSSKSKAJIApp-cpm-0.997020.tar.gz"
-  sha256 "6d59fb7e8e3ce3df624604159163833306c92896bce99de95d517e115b87aecf"
+  url "https:cpan.metacpan.orgauthorsidSSKSKAJIApp-cpm-0.997021.tar.gz"
+  sha256 "2f76c59c5e112c96ca6fe949fc31f7cd6156852c1cbf1278695177a82224c597"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   head "https:github.comskajicpm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3136831f3f1fab75366e60f46842f8732219b83bd450f137031406c6226e663b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3136831f3f1fab75366e60f46842f8732219b83bd450f137031406c6226e663b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3136831f3f1fab75366e60f46842f8732219b83bd450f137031406c6226e663b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d8bf8ca5f9f6c2cedb5786f34e69262b7f503f4e9017eb467c9f32e4e5772a85"
-    sha256 cellar: :any_skip_relocation, ventura:       "d8bf8ca5f9f6c2cedb5786f34e69262b7f503f4e9017eb467c9f32e4e5772a85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "949a333d02ecb3b2109b236dfb9ead3b9eb379a0608c44a05d604398b1b14dbb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c626b58962737efa3c191653928e6f7272c91b39841d395ec8634c6dc01e1db7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c626b58962737efa3c191653928e6f7272c91b39841d395ec8634c6dc01e1db7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c626b58962737efa3c191653928e6f7272c91b39841d395ec8634c6dc01e1db7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "448537aac2a3bb870c60fc62ecae3cc1b476a861d8d594fc7046c23985c8dd94"
+    sha256 cellar: :any_skip_relocation, ventura:       "448537aac2a3bb870c60fc62ecae3cc1b476a861d8d594fc7046c23985c8dd94"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "671409d44d98eb00aa1f5fb95108608b4dbbc1ad1d09bb8608d90807d9da6f81"
   end
 
   depends_on "perl"

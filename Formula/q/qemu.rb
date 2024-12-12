@@ -1,8 +1,8 @@
 class Qemu < Formula
   desc "Generic machine emulator and virtualizer"
   homepage "https://www.qemu.org/"
-  url "https://download.qemu.org/qemu-9.1.2.tar.xz"
-  sha256 "19fd9d7535a54d6e044e186402aa3b3b1bdfa87c392ec8884855592c8510c96f"
+  url "https://download.qemu.org/qemu-9.2.0.tar.xz"
+  sha256 "f859f0bc65e1f533d040bbe8c92bcfecee5af2c921a6687c652fb44d089bd894"
   license "GPL-2.0-only"
   head "https://gitlab.com/qemu-project/qemu.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Qemu < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "216dd16777c79e895d0fb6d8bc40745e9cfae97b8ca88b174237f4444b06f82c"
-    sha256 arm64_sonoma:  "97d5215d322f75bed7206085f759082f313f96fd7dc42d18382197081749dc02"
-    sha256 arm64_ventura: "ed5b0201fcda0dbabb116bfc80a9e1ee3d664c16355bce90a15a9c3d6a5e20d0"
-    sha256 sonoma:        "0f9877866c6341469b53eaea21f69b4133bcbb2f5bc3cffd858cf241fb9c6ae5"
-    sha256 ventura:       "0a6d0533c1c82270d36dca8c7b79db9aac2cc14d7e5a28cab2c14dde3973f4c3"
-    sha256 x86_64_linux:  "88b2682cb1bef6d84e071090f2b3c5258873886b2892aa6dbd745cfaf5632be5"
+    sha256 arm64_sequoia: "bd607b395f256038f445bd28f084d97d6e782100a239538eab4b7d3a7afd16be"
+    sha256 arm64_sonoma:  "70def93cbe29fb71bca7946a2805aa83b657d7826a4f647ef61108a110da99d1"
+    sha256 arm64_ventura: "f46173b2b535c51621f95cfaca704ec1e0feccb7bf99b0ccbb4915ffdc605153"
+    sha256 sonoma:        "557055a6528279c7b0b20a67690c1865eb47e883e68df1b8fdd9d92636bbe52e"
+    sha256 ventura:       "21fd61f4db471a76fd033118e4b7a087bc25a4e06534f7652be9100d93e72410"
+    sha256 x86_64_linux:  "5fa1647fce38df6fe07dbe04f116089d37cb52c73b642e9cd4804a5bee3c8fba"
   end
 
   depends_on "libtool" => :build
@@ -108,7 +108,7 @@ class Qemu < Formula
     end
 
     archs = %w[
-      aarch64 alpha arm avr cris hppa i386 loongarch64 m68k microblaze microblazeel mips
+      aarch64 alpha arm avr hppa i386 loongarch64 m68k microblaze microblazeel mips
       mips64 mips64el mipsel or1k ppc ppc64 riscv32 riscv64 rx
       s390x sh4 sh4eb sparc sparc64 tricore x86_64 xtensa xtensaeb
     ]

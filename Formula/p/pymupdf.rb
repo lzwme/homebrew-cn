@@ -4,14 +4,15 @@ class Pymupdf < Formula
   url "https:files.pythonhosted.orgpackagesd29eec6139116b551922789eb72e710371ddd770a2236fbd5302c2a58670ebbcpymupdf-1.25.0.tar.gz"
   sha256 "9e5a33816e4b85ed6a01545cada2b866fc280a3b6478bb8e19c364532adf6692"
   license "AGPL-3.0-only"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8bf25283fa3c5cac15aac6ceae8cf21a453ce0e5d262cd33e3cb0c5c61b04bd3"
-    sha256 cellar: :any,                 arm64_sonoma:  "658c1af105b0e04459661c957a89da3c88d1e41c17a0d71698f9ce12c3048f5c"
-    sha256 cellar: :any,                 arm64_ventura: "df735af404008080316a71ce707e956b2ec97f198b43f1fcf3de05d88c191159"
-    sha256 cellar: :any,                 sonoma:        "b332010dd3ea76c8edf92d6ef81cf3b5e383a67442f71e3f2f507f3401bfa517"
-    sha256 cellar: :any,                 ventura:       "b7087c63a343959719e9080b696d78a6876b26557fb5cbe73ad8153b56574a73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d92eb542ce63a3f0f390ceb4057eb20c44dbbcbe2fb5b1df85279f3e757a30d"
+    sha256 cellar: :any,                 arm64_sequoia: "01b98e9d2dfd1a75ffe427c27e3dfe7f49afee6d9adec881014431b85868cf15"
+    sha256 cellar: :any,                 arm64_sonoma:  "fd51ca8db558acfb6a3ecfc1243f90ad00a7658b11d8dd8dcc0f51f22f4fdd01"
+    sha256 cellar: :any,                 arm64_ventura: "860830590eea77530bf41bf5033ac337a510bc0e744793444f10fdab26b634e5"
+    sha256 cellar: :any,                 sonoma:        "7f0e64fcab274deef8bc7c5670d3ff54d5ee7f777a6ccb5f588c9e807565dad7"
+    sha256 cellar: :any,                 ventura:       "14f3d2a88b38dd14ddfc5f8c48e86a2998bded78424860479b41fb6d36b5d9bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "776ba0ea484e29191e6e455853c2f17459b680b2b8c825c254f091a52394d287"
   end
 
   depends_on "freetype" => :build

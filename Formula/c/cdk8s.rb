@@ -1,18 +1,18 @@
 class Cdk8s < Formula
   desc "Define k8s native apps and abstractions using object-oriented programming"
   homepage "https:cdk8s.io"
-  url "https:registry.npmjs.orgcdk8s-cli-cdk8s-cli-2.198.279.tgz"
-  sha256 "aed32a11f6676985fde1199c8419ca01645106980abf6b5681dae744d607ad03"
+  url "https:registry.npmjs.orgcdk8s-cli-cdk8s-cli-2.198.280.tgz"
+  sha256 "b54de14ef007df6eaa62a2118515de5ebe8187a940586248788f07b9c55bb459"
   license "Apache-2.0"
   head "https:github.comcdk8s-teamcdk8s-cli.git", branch: "2.x"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2eef910c88f7bc008785aee192eb1459a0d6c013dc2cf29b5d9b15b0350f8320"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2eef910c88f7bc008785aee192eb1459a0d6c013dc2cf29b5d9b15b0350f8320"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2eef910c88f7bc008785aee192eb1459a0d6c013dc2cf29b5d9b15b0350f8320"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6cabcb4e1166db881f92f2f240bf843697371525ef68f2e2f1228b18015dfd15"
-    sha256 cellar: :any_skip_relocation, ventura:       "6cabcb4e1166db881f92f2f240bf843697371525ef68f2e2f1228b18015dfd15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2eef910c88f7bc008785aee192eb1459a0d6c013dc2cf29b5d9b15b0350f8320"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df8e20eaebf1d7d1ac9b34b40caf39ba19d435719811411672104861eaca3460"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df8e20eaebf1d7d1ac9b34b40caf39ba19d435719811411672104861eaca3460"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "df8e20eaebf1d7d1ac9b34b40caf39ba19d435719811411672104861eaca3460"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f152102bf2e2588b06dc011e7ce92e940e70181652663b27a7c1133c79418d67"
+    sha256 cellar: :any_skip_relocation, ventura:       "f152102bf2e2588b06dc011e7ce92e940e70181652663b27a7c1133c79418d67"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df8e20eaebf1d7d1ac9b34b40caf39ba19d435719811411672104861eaca3460"
   end
 
   depends_on "node"

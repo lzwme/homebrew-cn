@@ -328,18 +328,17 @@ class PythonAT38 < Formula
                     Formula["sqlite"].opt_lib], Formula["tcl-tk"].opt_lib
 
     cfg = lib_cellar"distutilsdistutils.cfg"
-
-    cfg.atomic_write <<~EOS
+    cfg.atomic_write <<~INI
       [install]
       prefix=#{HOMEBREW_PREFIX}
       [build_ext]
       include_dirs=#{include_dirs.join ":"}
       library_dirs=#{library_dirs.join ":"}
-    EOS
+    INI
   end
 
   def sitecustomize
-    <<~EOS
+    <<~PYTHON
       # This file is created by Homebrew and is executed on each python startup.
       # Don't print from here, or else python command line scripts may fail!
       # <https:docs.brew.shHomebrew-and-Python>
@@ -372,7 +371,7 @@ class PythonAT38 < Formula
           # explicitly set and we are not in a virtualenv:
           if 'PYTHONEXECUTABLE' not in os.environ and sys.prefix == sys.base_prefix:
               sys.executable = '#{opt_bin}python#{version.major_minor}'
-    EOS
+    PYTHON
   end
 
   def caveats

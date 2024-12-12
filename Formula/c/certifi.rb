@@ -7,15 +7,10 @@ class Certifi < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f1fc985a1c89bd40c73b17e3dfbf5483cb0417c8d4d12e2be66158a503ab169"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f1fc985a1c89bd40c73b17e3dfbf5483cb0417c8d4d12e2be66158a503ab169"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1f1fc985a1c89bd40c73b17e3dfbf5483cb0417c8d4d12e2be66158a503ab169"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1f1667b45b868ff09a3eb9f672c20299d7b49add64a1c6cf8d675b6b3ff5d5ba"
-    sha256 cellar: :any_skip_relocation, ventura:       "1f1667b45b868ff09a3eb9f672c20299d7b49add64a1c6cf8d675b6b3ff5d5ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f1fc985a1c89bd40c73b17e3dfbf5483cb0417c8d4d12e2be66158a503ab169"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "f9369ee71eff19d9072af588bf640947ff6219129ac7fb63fe90a37fbbff9e0c"
   end
 
-  depends_on "python@3.11" => [:build, :test]
   depends_on "python@3.12" => [:build, :test]
   depends_on "python@3.13" => [:build, :test]
   depends_on "ca-certificates"
@@ -25,6 +20,9 @@ class Certifi < Formula
   end
 
   def install
+    # Avoid difference in generated METADATA files across bottles
+    inreplace "README.rst", "usrlocal", HOMEBREW_PREFIX
+
     pythons.each do |python|
       python_exe = python.opt_libexec"binpython"
       system python_exe, "-m", "pip", "install", *std_pip_args(build_isolation: true), "."
@@ -34,6 +32,9 @@ class Certifi < Formula
       rm prefixsite_packages"certificacert.pem"
       (prefixsite_packages"certifi").install_symlink Formula["ca-certificates"].pkgetc"cert.pem" => "cacert.pem"
     end
+
+    # Revert first inreplace to avoid difference in README.rst across bottles
+    inreplace "README.rst", HOMEBREW_PREFIX, "usrlocal"
   end
 
   test do

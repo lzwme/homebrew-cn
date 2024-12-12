@@ -377,7 +377,7 @@ class PythonAT312 < Formula
     # Mark Homebrew python as externally managed: https:peps.python.orgpep-0668#marking-an-interpreter-as-using-an-external-package-manager
     # Placed after ensurepip since it invokes pip in isolated mode, meaning
     # we can't pass --break-system-packages.
-    (lib_cellar"EXTERNALLY-MANAGED").write <<~EOS
+    (lib_cellar"EXTERNALLY-MANAGED").write <<~INI
       [externally-managed]
       Error=To install Python packages system-wide, try brew install
        xyz, where xyz is the package you are trying to
@@ -406,11 +406,11 @@ class PythonAT312 < Formula
        file. Failure to do this can result in a broken Homebrew installation.
 
        Read more about this behavior here: <https:peps.python.orgpep-0668>
-    EOS
+    INI
   end
 
   def sitecustomize
-    <<~EOS
+    <<~PYTHON
       # This file is created by Homebrew and is executed on each python startup.
       # Don't print from here, or else python command line scripts may fail!
       # <https:docs.brew.shHomebrew-and-Python>
@@ -463,7 +463,7 @@ class PythonAT312 < Formula
           split_prefix = f"#{HOMEBREW_PREFIX}optpython-{split_module}@#{version.major_minor}libexec"
           if os.path.isdir(split_prefix):
               sys.path.append(split_prefix)
-    EOS
+    PYTHON
   end
 
   def caveats

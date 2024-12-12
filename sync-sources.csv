@@ -1735,6 +1735,7 @@ Homebrew-homebrew-core/Formula/f/facad.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fades.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fail2ban.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/faircamp.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/fairy-stockfish.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fairymax.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/faiss.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fakeroot.rb, Homebrew/homebrew-core, 1
@@ -2452,6 +2453,7 @@ Homebrew-homebrew-core/Formula/g/graphene.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/graphicsmagick.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/graphite2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/graphql-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/graphql-inspector.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/graphqlviz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/graphqurl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/graphqxl.rb, Homebrew/homebrew-core, 1
@@ -3961,6 +3963,7 @@ Homebrew-homebrew-core/Formula/m/mac-robber.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/macchina.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mackup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/maclaunch.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/macmon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/macos-term-size.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/macos-trash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/macosvpn.rb, Homebrew/homebrew-core, 1
@@ -3975,6 +3978,7 @@ Homebrew-homebrew-core/Formula/m/mage.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/magic-wormhole.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/magic-wormhole.rs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/magic_enum.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mago.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mahout.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mailcatcher.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mailcheck.rb, Homebrew/homebrew-core, 0
@@ -5522,6 +5526,7 @@ Homebrew-homebrew-core/Formula/r/repl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/repo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/repomix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/reposurgeon.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/repren.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/reprepro.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/reproc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/req.rb, Homebrew/homebrew-core, 1
@@ -6353,6 +6358,7 @@ Homebrew-homebrew-core/Formula/t/template-glib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/temporal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/temporal_tables.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tendermint.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tenere.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tengo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tenyr.rb, Homebrew/homebrew-core, 1
@@ -6765,6 +6771,7 @@ Homebrew-homebrew-core/Formula/v/vercel-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/verilator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vermin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/verovio.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/versitygw.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vert.x.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/veryfasttree.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vespa-cli.rb, Homebrew/homebrew-core, 1

@@ -24,9 +24,9 @@ class Tofuenv < Formula
   end
 
   test do
-    assert_match "1.6.0-rc1", shell_output("#{bin}tofuenv list-remote")
-    with_env(TOFUENV_TOFU_VERSION: "1.6.0-rc1", TF_AUTO_INSTALL: "false") do
-      assert_equal "1.6.0-rc1", shell_output("#{bin}tofuenv version-name").strip
+    assert_match "1.8.7", shell_output("#{bin}tofuenv list-remote")
+    with_env(TOFUENV_TOFU_VERSION: "1.8.7", TF_AUTO_INSTALL: "false") do
+      assert_equal "1.8.7", shell_output("#{bin}tofuenv version-name").strip
     end
   end
 end

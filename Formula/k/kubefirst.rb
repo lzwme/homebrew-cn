@@ -1,8 +1,8 @@
 class Kubefirst < Formula
   desc "GitOps Infrastructure & Application Delivery Platform for kubernetes"
   homepage "https:kubefirst.konstruct.iodocs"
-  url "https:github.comkonstructiokubefirstarchiverefstagsv2.7.7.tar.gz"
-  sha256 "c574012f9d2050d09b060618ec45077c503b5646a7dc81581980c0bba89e7887"
+  url "https:github.comkonstructiokubefirstarchiverefstagsv2.7.8.tar.gz"
+  sha256 "6e071b3b6f40bfac8cc110bc2736ed25f85b44933a345fd1b6db0859ccd2b480"
   license "MIT"
   head "https:github.comkonstructiokubefirst.git", branch: "main"
 
@@ -14,13 +14,12 @@ class Kubefirst < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "436b5fbc7a5d4c66155c7d04f909d1362f3293cc3a485e365bebff8d4c4e6dfe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80f9da034216aa87280849dd950219726f3037255d8737d8af5c2bcafcbb9fa9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "62f4a9cffc03ebf109e5df9bae96b1876afd56be2f4313950163ef1a38194663"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2407f410d52113a8684589a11581b2be872572e8cd1802a88a0ccf3c65d10a3f"
-    sha256 cellar: :any_skip_relocation, ventura:       "c698fe896b7c4bd22a329996d294b8707f7aa1f91f508b51f9a9a83faedef72d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9a641469b0ed30d8e5dda37daabb6b231b54be77173904824521ea6e09223b6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ec9dec30968e9aa8f2c2641dbd5b622171da3de194b192965081d009cf1ab7f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "022b108c9e5e3eb39c87e3a3a80fe08dfdb1791dcbb04c6e360176f51681fdde"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5cb3f9e5b4adf5d4becffeb7d37ebcfb7393e4e3bdcf8c5a0942908c1e00940b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bc84ffe6835556902ddba5d1dfceb71d45b143dfcbb288d71d33af3bbf494d81"
+    sha256 cellar: :any_skip_relocation, ventura:       "61faf2d20a3f28a6aa23d041ccc92690f6eb03f7ef948acab394fd72edceda99"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ed596fe714d4f4ac24e242e46faac7300720e039cf1f251d983b10cf7f5c1dc"
   end
 
   depends_on "go" => :build

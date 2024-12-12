@@ -382,14 +382,13 @@ class PythonAT39 < Formula
                     Formula["sqlite"].opt_lib]
 
     cfg = lib_cellar"distutilsdistutils.cfg"
-
-    cfg.atomic_write <<~EOS
+    cfg.atomic_write <<~INI
       [install]
       prefix=#{HOMEBREW_PREFIX}
       [build_ext]
       include_dirs=#{include_dirs.join ":"}
       library_dirs=#{library_dirs.join ":"}
-    EOS
+    INI
 
     # setuptools 63.2.0+ breaks when used inside superenv.
     # https:github.compypadistutilspull155
@@ -400,7 +399,7 @@ class PythonAT39 < Formula
   end
 
   def sitecustomize
-    <<~EOS
+    <<~PYTHON
       # This file is created by Homebrew and is executed on each python startup.
       # Don't print from here, or else python command line scripts may fail!
       # <https:docs.brew.shHomebrew-and-Python>
@@ -452,7 +451,7 @@ class PythonAT39 < Formula
       tkinter_prefix = "#{HOMEBREW_PREFIX}optpython-tk@#{version.major_minor}libexec"
       if os.path.isdir(tkinter_prefix):
           sys.path.append(tkinter_prefix)
-    EOS
+    PYTHON
   end
 
   def caveats

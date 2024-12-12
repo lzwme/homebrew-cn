@@ -390,7 +390,7 @@ class PythonAT311 < Formula
   end
 
   def sitecustomize
-    <<~EOS
+    <<~PYTHON
       # This file is created by Homebrew and is executed on each python startup.
       # Don't print from here, or else python command line scripts may fail!
       # <https:docs.brew.shHomebrew-and-Python>
@@ -443,7 +443,7 @@ class PythonAT311 < Formula
           split_prefix = f"#{HOMEBREW_PREFIX}optpython-{split_module}@#{version.major_minor}libexec"
           if os.path.isdir(split_prefix):
               sys.path.append(split_prefix)
-    EOS
+    PYTHON
   end
 
   def caveats
