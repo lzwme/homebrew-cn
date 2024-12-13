@@ -1,18 +1,17 @@
 class PgCron < Formula
   desc "Run periodic jobs in PostgreSQL"
   homepage "https:github.comcitusdatapg_cron"
-  url "https:github.comcitusdatapg_cronarchiverefstagsv1.6.4.tar.gz"
-  sha256 "52d1850ee7beb85a4cb7185731ef4e5a90d1de216709d8988324b0d02e76af61"
+  url "https:github.comcitusdatapg_cronarchiverefstagsv1.6.5.tar.gz"
+  sha256 "0118080f995fec67e25e58d44c66953e7b2bf5a47bb0602fd2ad147ea646d808"
   license "PostgreSQL"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0e3405e81c0a9cd72737ace18b03c7bab3f628b2eecc90dfee060cb11fcc8f2e"
-    sha256 cellar: :any,                 arm64_sonoma:  "fcae9666effa620d2671ddac687d6278e9a4cb37377045db37c57b78b1bc05d1"
-    sha256 cellar: :any,                 arm64_ventura: "2e3e52857674d76f7597b01179bfcbffec3c3fc07c3d5d26e47225b5839c9c10"
-    sha256 cellar: :any,                 sonoma:        "bbc13204d53324ab935d664ebdf5d93cf0d7309a68ec00abf04311f9e8651b0a"
-    sha256 cellar: :any,                 ventura:       "09dd67e9dc4b56b8ba4288293c8c89ce686f774b5b41fba182f82f882b933272"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1bcd0a3e67e633137b4a02e74998e5b1276961bac3c9aba6c8390022f4ca675"
+    sha256 cellar: :any,                 arm64_sequoia: "e652baea4a5497dccbe7a785953c08f43e820712efee0c47b7ea4299645888dd"
+    sha256 cellar: :any,                 arm64_sonoma:  "5d5ef653d695a0e1029f119532988583d01b18b1bcd0996d7c79f344912bf870"
+    sha256 cellar: :any,                 arm64_ventura: "8617379afc5a21586ac1558c3320d82aaddb8078382fe51e7eb034c2d1772cfa"
+    sha256 cellar: :any,                 sonoma:        "5160bb9284524342df8e0c8140d5715b420c26cf3ff874a9d6462530313c6adf"
+    sha256 cellar: :any,                 ventura:       "44132449e3e3733f9d7342a5e12c23d571402bea3bb7074a23b197b605fca091"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45b413c1332572e44d2e73a04f0d90a932bb34ad1ac7aee78541f9176ecf7b65"
   end
 
   depends_on "postgresql@14" => [:build, :test]

@@ -1,20 +1,18 @@
 class Opencolorio < Formula
   desc "Color management solution geared towards motion picture production"
   homepage "https:opencolorio.org"
-  url "https:github.comAcademySoftwareFoundationOpenColorIOarchiverefstagsv2.4.0.tar.gz"
-  sha256 "0ff3966b9214da0941b2b1cbdab3975a00a51fc6f3417fa860f98f5358f2c282"
+  url "https:github.comAcademySoftwareFoundationOpenColorIOarchiverefstagsv2.4.1.tar.gz"
+  sha256 "d4eb15408b33dffd6ba0bba9a53328085b40bdd9319fa3d0d7348d06a8cbe842"
   license "BSD-3-Clause"
-  revision 1
   head "https:github.comAcademySoftwareFoundationOpenColorIO.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "b08a1c82a6f2f5e5dec10e08a853726fcacef51b4605f95f89e8e8908ed19fe7"
-    sha256 cellar: :any,                 arm64_sonoma:  "2f1b55053fd7ef4a22105666ae8c567c2e49ad3b31a3fc3330928c345dd4b13c"
-    sha256 cellar: :any,                 arm64_ventura: "c6343b306d31ede970e02b824f818ae5bf612bc7f1ed184cdab99593e232ce7f"
-    sha256 cellar: :any,                 sonoma:        "50863919fdd8765261e4ad779c9941ecacbeaada5fe8b982ad97d8e1fe708ec7"
-    sha256 cellar: :any,                 ventura:       "bef54ecf3bf6e192640f2bb937eb34e22f9779108737982816bee3d9d8bdfa7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afdbae92d7160b40aa3afb2661a97f3be3367526d1fd170750e24036f037d87a"
+    sha256 cellar: :any,                 arm64_sequoia: "09ace865c0e44550c5642cb0710fc72bcfa40e7b22f38aafe07458d6dbc794d0"
+    sha256 cellar: :any,                 arm64_sonoma:  "87b0c29f5595d393a76ac33db2efd96a99e1bb531a792a57708f9dbaaef97994"
+    sha256 cellar: :any,                 arm64_ventura: "e6bfaa96d7d4bacffc8cabb48e9ce40eb1a7c973e67f22beac0da0b138d94f6c"
+    sha256 cellar: :any,                 sonoma:        "9b5789f446304b85ad4ff79fe73b353a1acfa6d564d021c86a5f766b97039a88"
+    sha256 cellar: :any,                 ventura:       "fe6b6df8642a3a1a8c5c6690042fbf44ae59559d3a27d56bb1c44b8b3cf4da1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5294782fb736ba42baedbd1d9999f5b2611b76c6711f61d9f2867c3e0f3c172"
   end
 
   depends_on "cmake" => :build

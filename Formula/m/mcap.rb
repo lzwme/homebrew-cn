@@ -1,8 +1,8 @@
 class Mcap < Formula
   desc "Serialization-agnostic container file format for pubsub messages"
   homepage "https:mcap.dev"
-  url "https:github.comfoxglovemcaparchiverefstagsreleasesmcap-cliv0.0.49.tar.gz"
-  sha256 "89c055c48cbe6010a95d950bbe657338da0455ce6da373f22469097028f927d0"
+  url "https:github.comfoxglovemcaparchiverefstagsreleasesmcap-cliv0.0.50.tar.gz"
+  sha256 "f124fbcc4adddd7b9aa74ac01ffb2c5fc00b72db1c98cfd988d67fcbd1f965f3"
   license "MIT"
   head "https:github.comfoxglovemcap.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Mcap < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df49c7a4a68007fbbba77b92a56119d14aa03052c660acb352655acea01f664c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ebe211d51faa2e5400b9b109ad55bdaf37020cb2767f594c0954d577fe1b91c5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f18b8aca2ad7a4b9cdb9b9f06c7a95b9354ec20b8164b1a4a1d0e08f922064a8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4427ca51a926194f019eaebb466437c3745b915d70350c919cc3f2faaea29400"
-    sha256 cellar: :any_skip_relocation, ventura:       "d4aca89571330485bacecc39e5ec5245efd5160e04706c433f9ad944e570c41d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bc66cb95122e993a66da9c4606cddcc8a1f7d041bb2d286abd177a89378edaf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff98690eefab49bac58c6bee59a1579d113d889dcc5a7f6bca4e4c61e8da08d7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "518542adac647d8daa0a297d1eb65d2892cc04693b7709ee5025403470ceb25c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5afc4ba8ba84f8deda8bdae5f51fc3684676d436c7abcfb0992f9c18736efda4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e996b4ddef4812b1fb77564411582faa1a9e9603a08b401a9fee95a380a7d6ba"
+    sha256 cellar: :any_skip_relocation, ventura:       "8e2a374f9b4969e58d82441b6b73b3359e93ce30f9bd642f9a797133b93f89bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f965fb8982ab070aee33b9e1c46d64670415cab488fcca027a3df17a62080162"
   end
 
   depends_on "go" => :build

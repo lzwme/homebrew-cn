@@ -2,18 +2,18 @@ class Metricbeat < Formula
   desc "Collect metrics from your systems and services"
   homepage "https:www.elastic.cobeatsmetricbeat"
   url "https:github.comelasticbeats.git",
-      tag:      "v8.16.1",
-      revision: "f17e0828f1de9f1a256d3f520324fa6da53daee5"
+      tag:      "v8.17.0",
+      revision: "092f0eae4d0d343cc3a142f671c2a0428df67840"
   license "Apache-2.0"
   head "https:github.comelasticbeats.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af35e18906b37ef3d51b6e340253ddd941dcdc224e45bfc192e9d255b16e161d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "25caf57547a4022a345851621763de9949d1d67c5f828ca62fe87aed35a219cb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "26f901b91ada341403257bc00cc29103d47e1d6a1844a507c27db2cb54b01915"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6e07cbfd0a40ebdccd3ef6039d19fa1e9760d6c8d0c07f25355335e059ce2913"
-    sha256 cellar: :any_skip_relocation, ventura:       "31da669cb712f33e9c40d966b1377dfe53114e6eb9a40e9c1721a2869f465015"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f4d9ff70d3ef90d70f97b275900fc1f1153da5d9c0714940a51d2335e01a25c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15c65fd22b9730b2d89c2de8df44a88078ade9a3de917113d11120013aa13227"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e0e39fec849dce6010cb50a808b35936d67ef2d8cd287844a8c187b64344089"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "baf30181b014fc308553829a210bbef2e0988df2c6827073abfca60095ef11b8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "934d8b2951a7e390fb4e05de27a08e2b7c0ddf15b51645c07f1cb9281053c15c"
+    sha256 cellar: :any_skip_relocation, ventura:       "4463858e153e8a0422ec71db032b1bf5037ca5303de6c960cfc75a0eeaf444dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a942fbd0f6e6f341f5e7f44a3842308977ca0223dbcc110967b8a566463e519a"
   end
 
   depends_on "go" => :build
@@ -72,10 +72,7 @@ class Metricbeat < Formula
     (testpath"logs").mkpath
     (testpath"data").mkpath
 
-    fork do
-      exec bin"metricbeat", "-path.config", testpath"config", "-path.data",
-                             testpath"data"
-    end
+    pid = spawn bin"metricbeat", "--path.config", testpath"config", "--path.data", testpath"data"
 
     sleep 15
 
@@ -86,5 +83,8 @@ class Metricbeat < Formula
       s = JSON.parse(file.read.lines.first.chomp)
       assert_match "metricbeat", s["@metadata"]["beat"]
     end
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end

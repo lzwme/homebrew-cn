@@ -6,23 +6,24 @@ class Opencc < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 arm64_sequoia:  "a27e13aa2de9e5c4775f1618842f8a94ba0399462295427f1c01ecb0bad59e45"
-    sha256 arm64_sonoma:   "40bbcc0ea4cceadf579f5bcefded29585f45a18e42bba6ee2a0f0f8b9093f30c"
-    sha256 arm64_ventura:  "517a8dfe20b621aad9d4f8fd9118794b53318f07007ee1ec1fb7081065921184"
-    sha256 arm64_monterey: "addb0ef3712437c10de21dfe670291144d1fa36d6c2661016cfbdba0d6a0e9f1"
-    sha256 sonoma:         "125d0aa542c79a1c64ff50d6bb65f37b8a1df08842d2aadea4de148ad4fd7834"
-    sha256 ventura:        "a6da927e23614ddef3ff4199a162a5ddb81ad3d0414e3943adc1622d5a0eebed"
-    sha256 monterey:       "86fab72d30ba153353798d51f6f1e0ef3136b9edd23d69497fb3b8303cebfb72"
-    sha256 x86_64_linux:   "127925772f41d4145e6f4ee5f74f08cea701fdce389b743174b960dc1e80629d"
+    rebuild 1
+    sha256 arm64_sequoia: "8b6b0e9d88ffeecb82287510d3416101529d017851b0b537f9e6b541673bed66"
+    sha256 arm64_sonoma:  "6f5005829e63d7db587d1018470b02707ce5e47a1f253543877f7285f5a0b3eb"
+    sha256 arm64_ventura: "2563f2f90b6080cee6831a5873833064f03f34fad8af3c127f16ffe08a4d4376"
+    sha256 sonoma:        "c04a149eacdc804adb89854db53fae7634aa4af832537dbe5ed9d032760f7fee"
+    sha256 ventura:       "8a29fb0a0fe27a67c687f7ce0577fd9b8e7d4dc0574dc45af0d8f1ad4be2db95"
+    sha256 x86_64_linux:  "9b7d0f7d8b7113014476146573c883666708cceba92f389a1cb9e0c3225c6337"
   end
 
   depends_on "cmake" => :build
+  depends_on "marisa"
   uses_from_macos "python" => :build
 
   def install
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
       -DPYTHON_EXECUTABLE=#{which("python3")}
+      -DUSE_SYSTEM_MARISA=ON
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

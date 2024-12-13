@@ -1,8 +1,8 @@
 class HaproxyAT28 < Formula
   desc "Reliable, high performance TCP/HTTP load balancer"
   homepage "https://www.haproxy.org/"
-  url "https://www.haproxy.org/download/2.8/src/haproxy-2.8.12.tar.gz"
-  sha256 "16c16c1d7ba6793c89a8fae7f20c595d19497bb18d75fedd9f2db77741b1fa75"
+  url "https://www.haproxy.org/download/2.8/src/haproxy-2.8.13.tar.gz"
+  sha256 "13dc06a65b7705b94c843bda8b845edbb621bf45e8a9dc7db590d40ab920a9ce"
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
 
   livecheck do
@@ -11,12 +11,12 @@ class HaproxyAT28 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0fb522bb53acc24cdfe84205af8ad35373125a1b3659e3fe56e91be99b0ec82e"
-    sha256 cellar: :any,                 arm64_sonoma:  "e347343a43dddcc239643c3058c212a5dbd60baf8c2b76dc8d5b57b72d4fdec7"
-    sha256 cellar: :any,                 arm64_ventura: "3a1691dcd48c96339d8ef4f6064b5e8f4974bbbbcbd23722c93805a48d80ccef"
-    sha256 cellar: :any,                 sonoma:        "df6033baff96005ed609993c6b0f42738cad9995311ed99dfccbf843eb5d9c0e"
-    sha256 cellar: :any,                 ventura:       "9c8c0bdb81e445d742b8a2f1a48fcb8ca9d5565d680aa66f0e11ec694ea48ed3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44ec714355176deb568d035613381ec896c2fb54e58535757bb07a2cd58ebc4c"
+    sha256 cellar: :any,                 arm64_sequoia: "179deac9d37170f3faf8472478e1cdd65454d3101c5ba188549b95c3c67a8dd6"
+    sha256 cellar: :any,                 arm64_sonoma:  "7fcf8f9e7be73e30f1ec085e1c766b728efe88c5b2981c24702800502cf0577d"
+    sha256 cellar: :any,                 arm64_ventura: "ec11059bf9914ebaccc0e56910d93f65aeccde6714489ba00ebd2985ef69eb81"
+    sha256 cellar: :any,                 sonoma:        "7189d299c70b5740183b736741251d4d1a21feea86a554cd3a68a9f2b8038456"
+    sha256 cellar: :any,                 ventura:       "6e181c27239c3373fc8e9a54f544ac1cbfcb2ca4278034093b1bf8aa54114ef3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a416b844daa2c445773571c46d6aecdf4473b5c80be66dd097bedc7320b6758e"
   end
 
   keg_only :versioned_formula

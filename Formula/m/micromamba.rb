@@ -1,10 +1,9 @@
 class Micromamba < Formula
   desc "Fast Cross-Platform Package Manager"
   homepage "https:github.commamba-orgmamba"
-  url "https:github.commamba-orgmambaarchiverefstagsmicromamba-2.0.4.tar.gz"
-  sha256 "29281fe9b8fa99ecaa01d791b00889fb953fdafa154bbdf877a0858044334439"
+  url "https:github.commamba-orgmambaarchiverefstagsmicromamba-2.0.5.tar.gz"
+  sha256 "f3c4d39921b2036aa77e1093cb21006bf8787f720a11a2a1ef9a80568d660bf3"
   license "BSD-3-Clause"
-  revision 1
   head "https:github.commamba-orgmamba.git", branch: "main"
 
   livecheck do
@@ -15,12 +14,12 @@ class Micromamba < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6498d862b65c8f8ef8c5b4710ca94821ae6f81a2963309b91124aef7a298a536"
-    sha256 cellar: :any,                 arm64_sonoma:  "c13ac5bfdd98a891827ffc4c7ad9727a937fdfb293c5876045409e16941891bc"
-    sha256 cellar: :any,                 arm64_ventura: "ea15e6ca847fd91fb3121db01cb33102cf43d5f8ebd3249ba5a12dbf3529c11b"
-    sha256 cellar: :any,                 sonoma:        "1657ccea00701c78158946e3190790fa34619c9031659a23e1a5c431ccaf2f8c"
-    sha256 cellar: :any,                 ventura:       "b04dfe232a8dcc21d9bb50ef66563c0b743c8b6ad15d6504ff5d3cc2fd5e238c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61714f97ff327ab0e3431bea99879a40ca58bc181109fbdba7dcaa384ddab82f"
+    sha256 cellar: :any,                 arm64_sequoia: "4fe1618a5b953dbeb7e66a183104a09e14038ec9a18668eb094ec50e2224e1ca"
+    sha256 cellar: :any,                 arm64_sonoma:  "ba030e1730f4d4ae6300cfbd75ca7db2eb2de5cf7c69c2f93ae271b999d7c20d"
+    sha256 cellar: :any,                 arm64_ventura: "502f113bbcc4175c60fcbfe3e730a11a71bd75c2f4d06e1aef3d20ae13e9b8d9"
+    sha256 cellar: :any,                 sonoma:        "6c3d6a3ba4850c7dbe0cb9df0b5103d21a84bd80c43b438804c5007a2965d8ff"
+    sha256 cellar: :any,                 ventura:       "7dcc4d3843e942829ba41187b8161f17fa26c9c15a3efce31db6f322574ed478"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01d513c5ea35990bd0a04fb87628dc0ddb3de2f248f1892a7b0cb20f3bfc271f"
   end
 
   depends_on "cli11" => :build

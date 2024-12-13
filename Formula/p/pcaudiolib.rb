@@ -1,28 +1,17 @@
 class Pcaudiolib < Formula
   desc "Portable C Audio Library"
   homepage "https:github.comespeak-ngpcaudiolib"
+  url "https:github.comespeak-ngpcaudiolibreleasesdownload1.3pcaudiolib-1.3.tar.gz"
+  sha256 "e8bd15f460ea171ccd0769ea432e188532a7fb27fa73ec2d526088a082abaaad"
   license "GPL-3.0-or-later"
 
-  stable do
-    url "https:github.comespeak-ngpcaudiolibreleasesdownload1.2pcaudiolib-1.2.tar.gz"
-    sha256 "6fae11e87425482acbb12c4e001282d329be097074573060f893349255d3664b"
-
-    # Fix -flat_namespace being used on Big Sur and later.
-    patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
-      sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "d713da35af3fee0aeb5bb86719b8b544b4cf614df473090b93b579f0b9b47630"
-    sha256 cellar: :any,                 arm64_sonoma:   "93e464880ad92fe6d01a9d7ae289de1d651e754bd7dc73ff36f997e440690ef4"
-    sha256 cellar: :any,                 arm64_ventura:  "d4d3d51973306d23db005641d4ff0bf7fa253f45e40a6eb257d3444822aa5f4f"
-    sha256 cellar: :any,                 arm64_monterey: "e869b2820a0891d695690497ed88f6f82e59d2c42abb9d384367fef1815cf111"
-    sha256 cellar: :any,                 sonoma:         "d7397d64207e96b166f20e90ed93be29644946a6b35437af9b002e60e94d93f6"
-    sha256 cellar: :any,                 ventura:        "f905d01515df1bb7babc8eae222534fbde844979d6ffd596a5ed71c89db93b31"
-    sha256 cellar: :any,                 monterey:       "1b2d24e3561a8008d5b5c13aa903759db76c6dbe96953a5865a651cbee4a5d0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c3de7e6ac9b806793767db2b2d9ded8152a1909ba4254215b3508251a346d55"
+    sha256 cellar: :any,                 arm64_sequoia: "9581956c3f6ac62ed80312bad32f93be3bda767e7fb6ce251c600971371bbdd8"
+    sha256 cellar: :any,                 arm64_sonoma:  "bd84f4e1511c570a34e372cf8f4532e92e9eaea2089e0a93d387f191d5c36845"
+    sha256 cellar: :any,                 arm64_ventura: "3d8b34973b1a08cf739c4b7ce2c6a5b80dbfb3856d5777c5f26d4b9011b62bff"
+    sha256 cellar: :any,                 sonoma:        "48118ebffee0146173486843027d4b5a07c8dd0c7be2a17a8fac5de80aebf6f8"
+    sha256 cellar: :any,                 ventura:       "cc9fdf752114a5959fd6906ecd9b2bf182eea8eae5a43769ba6434e3679d6d2d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "103253ad42ee7905b3f45cba3c1fdfc646aca631b912f1346589e7f79e916fd4"
   end
 
   head do
@@ -33,8 +22,9 @@ class Pcaudiolib < Formula
     depends_on "libtool" => :build
   end
 
+  depends_on "pkgconf" => :build
+
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "alsa-lib"
     depends_on "pulseaudio"
   end

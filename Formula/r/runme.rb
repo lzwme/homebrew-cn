@@ -1,18 +1,18 @@
 class Runme < Formula
   desc "Execute commands inside your runbooks, docs, and READMEs"
   homepage "https:runme.dev"
-  url "https:github.comstatefulrunmearchiverefstagsv3.10.0.tar.gz"
-  sha256 "aac77a3c64c8c7bfc3c97d8a71acc8d64d6a5124c83aabf5f0ad5540621738a1"
+  url "https:github.comstatefulrunmearchiverefstagsv3.10.1.tar.gz"
+  sha256 "c74eafe92911170d70d44cc7b6c9b3f95a68fb690858f4c460211f4a2727bca7"
   license "Apache-2.0"
   head "https:github.comstatefulrunme.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eba284cd63a628d7e0ae147a77f5293f7b966cd9fe7090ff7f0bfcb0f79d99ec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eba284cd63a628d7e0ae147a77f5293f7b966cd9fe7090ff7f0bfcb0f79d99ec"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "eba284cd63a628d7e0ae147a77f5293f7b966cd9fe7090ff7f0bfcb0f79d99ec"
-    sha256 cellar: :any_skip_relocation, sonoma:        "14b41cd8e301aa2fe89e0361ac3b5f2735455cbf0d91f0222ec6c9594ce30b00"
-    sha256 cellar: :any_skip_relocation, ventura:       "14b41cd8e301aa2fe89e0361ac3b5f2735455cbf0d91f0222ec6c9594ce30b00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a36ffd2d42e11ae2e758c0893155eb302344bb400c3a35f6a1d845129ccfd274"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6dfa8a1e80e730a1493f883a6f010e0d3451d45c2924546e9d1acdcb7fd553eb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6dfa8a1e80e730a1493f883a6f010e0d3451d45c2924546e9d1acdcb7fd553eb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6dfa8a1e80e730a1493f883a6f010e0d3451d45c2924546e9d1acdcb7fd553eb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "48b3aac997042131195bc21d97a19b0874c49bf3c091113bf9ee97e8c13d9bd3"
+    sha256 cellar: :any_skip_relocation, ventura:       "48b3aac997042131195bc21d97a19b0874c49bf3c091113bf9ee97e8c13d9bd3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfaa2a613c1ede493e82ceaa0523ab65a4bce0c85158fdce8eed58c8b62112a1"
   end
 
   depends_on "go" => :build

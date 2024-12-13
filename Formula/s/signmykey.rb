@@ -1,20 +1,18 @@
 class Signmykey < Formula
   desc "Automated SSH Certificate Authority"
   homepage "https:signmykey.io"
-  url "https:github.comsignmykeyiosignmykeyarchiverefstagsv0.8.7.tar.gz"
-  sha256 "d9697c1d289280395188caaa8b2e10a23cc4c94ca33a493ae398c3a6be500155"
+  url "https:github.comsignmykeyiosignmykeyarchiverefstagsv0.8.8.tar.gz"
+  sha256 "3d08c9b0fbe6c6bcd8240ff0a65121ace0413f30abdd40068930509abc84e4ba"
   license "MIT"
   head "https:github.comsignmykeyiosignmykey.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "df182eaf64241a92448d5810f08442fc0cba432e9e29e176dafe84d80f35c4ab"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ff65fdb76925458ec0c53567cff1b0458f0d62257e69fe2b014fc50a91566335"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a826af57759023e9b57e6e4401c47e9b49b6c3f442a85d806c751554fce0c5d9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d42cd9fc8f60f8e2a602a50f425d1e384c8c50dfd2724a59c38912e171ad0683"
-    sha256 cellar: :any_skip_relocation, sonoma:         "03fbaf48b6ca79e26781e669986ce031c78d0b6af4d7445f6da63365ff3054c6"
-    sha256 cellar: :any_skip_relocation, ventura:        "920fe34b74df9c70fe6bc87ff58892d4607d4a6a6f49f710e87dff7f6e9b4461"
-    sha256 cellar: :any_skip_relocation, monterey:       "92804d80c023e5b070a98582c3a3c52a7c4722e8956a1663926a0e9216b61e8e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "88d4ae72b3b6068fa679a8daf35b7770fb18295aa5326f3829f9902c43d88bab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13f42dcc050c7a1c8f4284603c2b9cf51fc0fdfeec5a59a9c6cc7973fe4a4b4c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13f42dcc050c7a1c8f4284603c2b9cf51fc0fdfeec5a59a9c6cc7973fe4a4b4c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "13f42dcc050c7a1c8f4284603c2b9cf51fc0fdfeec5a59a9c6cc7973fe4a4b4c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a7f9f2972ad442c06ad29a0102bc6a40ba0f9321d90c8cc2f02ea3665d4e71fd"
+    sha256 cellar: :any_skip_relocation, ventura:       "a7f9f2972ad442c06ad29a0102bc6a40ba0f9321d90c8cc2f02ea3665d4e71fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d80a2c91ff6d9fa7e8d95b5a05c7e072380c8fc10e167ee0fd6dc68faeb4aaa"
   end
 
   depends_on "go" => :build

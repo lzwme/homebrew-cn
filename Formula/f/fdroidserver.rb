@@ -3,17 +3,17 @@ class Fdroidserver < Formula
 
   desc "Create and manage Android app repositories for F-Droid"
   homepage "https:f-droid.org"
-  url "https:files.pythonhosted.orgpackagese093dc73b074e49ab0fb8df872863a5851e50ef0902647dbec0b63de3026a7c4fdroidserver-2.3.3.tar.gz"
-  sha256 "f0a279e31479ee4e9b1801016b3dcf94223a81b02eb4c16ff69c607d5e73622a"
+  url "https:files.pythonhosted.orgpackages937cb46d343460d3bbc2b7555d7773490440cbc62d8d9e25cbf31fb1620106e4fdroidserver-2.3.4.tar.gz"
+  sha256 "4874ac84cd59521ea18bce52d2f6f018250592bcbe95c202139872a0f9af857b"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e7e513d8e4274bc10787831bf00decb24a68e71c9e66720cc5127531d1022db0"
-    sha256 cellar: :any,                 arm64_sonoma:  "0ac8dfdb32c320fd8e107270d763a585f7ba51b735d8f317caf5a806fe3b6c7a"
-    sha256 cellar: :any,                 arm64_ventura: "3b98853c1787b3f7a2a607ec8e57789aac2741ffeb1dd8884d32105f32c8207c"
-    sha256 cellar: :any,                 sonoma:        "7ec800071c16fbdbdb3765eafdb230d5c7e04d142dd5ea974757c1c0352befb0"
-    sha256 cellar: :any,                 ventura:       "6affa43530ede9954ba548b22269a244a3802568b49f8e74a0b8608d45ca9d97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5d9902bb18b1b06843d0fe98d2b5d07e9135dc32c49dcc4b3b200cb2a1a262a"
+    sha256 cellar: :any,                 arm64_sequoia: "3403c88d80768234cc75e853b61f45d410a773a5b1ca75fcfe48681116e37eb2"
+    sha256 cellar: :any,                 arm64_sonoma:  "ca32cb576d4bcaa1b0f15a0fd10af0817ada41e00689c7f93d2b113befe4c51c"
+    sha256 cellar: :any,                 arm64_ventura: "7a9761b70bcf54a88eb777c7c88078bb4d08072e3a3ba50afee082b04e400e5e"
+    sha256 cellar: :any,                 sonoma:        "3de097e13727e96a13d2eb1026fc87d9259a88f212c20293ac612282d35b7872"
+    sha256 cellar: :any,                 ventura:       "fec31e93e317eb9b090c4e215f903ead02fa9dc5053343bffbc700db0106cd02"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04667608d15ce6441832e78e9e621fe20ef5e641129f01a6362d49244e6240b2"
   end
 
   depends_on "ninja" => :build

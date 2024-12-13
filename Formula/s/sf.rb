@@ -1,8 +1,8 @@
 class Sf < Formula
   desc "Command-line toolkit for Salesforce development"
   homepage "https://developer.salesforce.com/tools/salesforcecli"
-  url "https://registry.npmjs.org/@salesforce/cli/-/cli-2.68.6.tgz"
-  sha256 "ef05660ef80c040accb0f4fd5c09624d3d28d3affbdae71262951da6ab1444a4"
+  url "https://registry.npmjs.org/@salesforce/cli/-/cli-2.69.14.tgz"
+  sha256 "48f2698611ab7822312038c67b054e6d5d22d912e7c2cf93d5e8ba5be7738b5d"
   license "BSD-3-Clause"
 
   livecheck do
@@ -13,15 +13,15 @@ class Sf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1612f6197f2d648d552ae853b6e6aac8db96553d621b5848555e67fda9168f34"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1612f6197f2d648d552ae853b6e6aac8db96553d621b5848555e67fda9168f34"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1612f6197f2d648d552ae853b6e6aac8db96553d621b5848555e67fda9168f34"
-    sha256 cellar: :any_skip_relocation, sonoma:        "62372d900455946ae59f5fc7dd9b15ab354bbcd1145fd385219ef92a53d7616f"
-    sha256 cellar: :any_skip_relocation, ventura:       "62372d900455946ae59f5fc7dd9b15ab354bbcd1145fd385219ef92a53d7616f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1612f6197f2d648d552ae853b6e6aac8db96553d621b5848555e67fda9168f34"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db7bed28b74c9152015664a2decd0871d47a1ff9ce0fc0d1d2801b06cbc6c24f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db7bed28b74c9152015664a2decd0871d47a1ff9ce0fc0d1d2801b06cbc6c24f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "db7bed28b74c9152015664a2decd0871d47a1ff9ce0fc0d1d2801b06cbc6c24f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9213375a9e6f18da6ce4e7818a8444fd1e574d6232d79a07bd684d75264369dc"
+    sha256 cellar: :any_skip_relocation, ventura:       "9213375a9e6f18da6ce4e7818a8444fd1e574d6232d79a07bd684d75264369dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db7bed28b74c9152015664a2decd0871d47a1ff9ce0fc0d1d2801b06cbc6c24f"
   end
 
-  depends_on "node@20"
+  depends_on "node"
 
   def install
     system "npm", "install", *std_npm_args

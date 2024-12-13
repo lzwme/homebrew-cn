@@ -1,18 +1,18 @@
 class Tenv < Formula
   desc "OpenTofu  Terraform  Terragrunt  Atmos version manager"
   homepage "https:tofuutils.github.iotenv"
-  url "https:github.comtofuutilstenvarchiverefstagsv3.2.10.tar.gz"
-  sha256 "ea8eb905229c43f0ea43394003d9832d225deda2e54bbf2d71d3f47b7e2d471d"
+  url "https:github.comtofuutilstenvarchiverefstagsv3.2.11.tar.gz"
+  sha256 "fb34494b454480c9a4eddc2c7751422e0904a32832a5525bd55abc2259160473"
   license "Apache-2.0"
   head "https:github.comtofuutilstenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea8ceed704f04d2ff1ba487a920b1e6811e6cfbcfd5290a103f3c72ec5addfa3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea8ceed704f04d2ff1ba487a920b1e6811e6cfbcfd5290a103f3c72ec5addfa3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ea8ceed704f04d2ff1ba487a920b1e6811e6cfbcfd5290a103f3c72ec5addfa3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "262a989dc911e8f63b2757d88789431461730b2d0ec043983cdb23e90661d8dd"
-    sha256 cellar: :any_skip_relocation, ventura:       "262a989dc911e8f63b2757d88789431461730b2d0ec043983cdb23e90661d8dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a57a0037190b568603fbee2577400a680dc33f6ceefbff5468cc7d8d5ff516e7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "14e65cfe6d469486b6423bdbbb224283fa5f51e8859b3db4d5d9d8fb53085ad0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14e65cfe6d469486b6423bdbbb224283fa5f51e8859b3db4d5d9d8fb53085ad0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "14e65cfe6d469486b6423bdbbb224283fa5f51e8859b3db4d5d9d8fb53085ad0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6e4baa396a2b852f340292d3dc49c933c7257ccb95173670abc399785a8e0d95"
+    sha256 cellar: :any_skip_relocation, ventura:       "6e4baa396a2b852f340292d3dc49c933c7257ccb95173670abc399785a8e0d95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0191ad4dde884f6e5ea4a504a47af95df659b1468a44220d1218947be1d1681d"
   end
 
   depends_on "go" => :build

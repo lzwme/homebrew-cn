@@ -1,20 +1,18 @@
 class SqlMigrate < Formula
   desc "SQL schema migration tool for Go"
   homepage "https:github.comrubenvsql-migrate"
-  url "https:github.comrubenvsql-migratearchiverefstagsv1.7.0.tar.gz"
-  sha256 "405a405e4e6c456dfb1a11936e336866734881d735f7891e14ce9eb275688de5"
+  url "https:github.comrubenvsql-migratearchiverefstagsv1.7.1.tar.gz"
+  sha256 "faac192e9321ce3fe2d4641a72c9ddaf6ff7c46afcbdeaa641a0027638875b3b"
   license "MIT"
   head "https:github.comrubenvsql-migrate.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2870e77f02a2991804ddc0bcc7f26b33a91d21adf2ed85b0d2cae1374f076bfe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9b58e698410d64d8b2e4780b39974729a09d00bab1434ce7b5c68a75f08cc472"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b67c564eb19177f28740d68d95b706a46b371a1fb9dacdb0fe134f3fa2307fe3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "26fc163f48bf785441f423f14effb740ddd5005be9733f589d13e9ec8c197080"
-    sha256 cellar: :any_skip_relocation, sonoma:         "eae33d8c58f5d512c0611f03630981f399b45c44cfa552fbf2715f68730ba5a3"
-    sha256 cellar: :any_skip_relocation, ventura:        "f8043567cd2b5a3ea0703772869ca47d5f265fb2afa005f1ca2f6745e998b7d2"
-    sha256 cellar: :any_skip_relocation, monterey:       "39f743ec9c8187c5b9e340fe7115a071fa7d2f01078e8814fd06aa1c9a590c5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bdbb3d72b87059bf10dd7f2f97d45e6ede226334c195c4f08edd381cec924b1e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d426f59baf20c63e9370b0b6de8f264a0090e4f32d7d7cf82baaa6c5d99100f2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb2982f036b1486b4f8fdd9a5df83eb346fd7b9363aa0cb1e72f951886074b2a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "29bcb1522528328b56fbb468cff59dda9d752e15c381e8008d22d59e65f3ffcc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2140ae10ad7bb5075063ae42e977b6702873af2e7a1b680789cbf3b40f5d81e6"
+    sha256 cellar: :any_skip_relocation, ventura:       "21a74d44776d61378afc1a74476095e170c3638f51c8d0039813323ef8dd3f0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "151ef9df720a00cb96e49de3b31ff270716aad67eb52ad39446eec325e5b6eac"
   end
 
   depends_on "go" => :build

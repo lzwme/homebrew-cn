@@ -3,18 +3,18 @@ class Sip < Formula
 
   desc "Tool to create Python bindings for C and C++ libraries"
   homepage "https:python-sip.readthedocs.ioenlatest"
-  url "https:files.pythonhosted.orgpackagesb8dc17b69b375103aa3db633b3f1f46bf7030cbe516b2b6d5dc73b7668a7840dsip-6.9.0.tar.gz"
-  sha256 "093fd0e15d99ae2f8a83dd7f7dbaa3ff250c582a77eb8e0845cd9acadb1f0934"
+  url "https:files.pythonhosted.orgpackagese283b23f610ef99fa23aa3c8dcd2ff8536c37b943654405ff4f45f3230327a40sip-6.9.1.tar.gz"
+  sha256 "7904be5190d7879952563b78a3af0e58fa27d9525af7f53f93eac7a83b433e7b"
   license "BSD-2-Clause"
   head "https:github.comPython-SIPsip.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90ea62d0900081d0c6428abc975a47e85e5ebf0eb08c1eaaa46eebbe2a3bb8a8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "90ea62d0900081d0c6428abc975a47e85e5ebf0eb08c1eaaa46eebbe2a3bb8a8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "90ea62d0900081d0c6428abc975a47e85e5ebf0eb08c1eaaa46eebbe2a3bb8a8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2d401b5f1ee2e5a07740eae926f38a6122450996e9ee01facc2f0de612ae9ca2"
-    sha256 cellar: :any_skip_relocation, ventura:       "2d401b5f1ee2e5a07740eae926f38a6122450996e9ee01facc2f0de612ae9ca2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cb0853dcf443690abd2295ba84bd279634fa51b3e29a840e8152fe63e30504b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa15876caa8cb425d1aa7b83a91bce73af45621d373cce6febe2622c39649875"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fa15876caa8cb425d1aa7b83a91bce73af45621d373cce6febe2622c39649875"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fa15876caa8cb425d1aa7b83a91bce73af45621d373cce6febe2622c39649875"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9f857b0b03025a3fdc47792bdd3a6e1124fc83b2901560a9963c88cd095ef290"
+    sha256 cellar: :any_skip_relocation, ventura:       "9f857b0b03025a3fdc47792bdd3a6e1124fc83b2901560a9963c88cd095ef290"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c09df641c9f1b3f4c19361c6313c2219cea6153465db5e8a1e333a16707cd97e"
   end
 
   depends_on "python@3.13"

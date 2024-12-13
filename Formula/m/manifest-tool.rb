@@ -1,17 +1,17 @@
 class ManifestTool < Formula
   desc "Command-line tool to create and query container image manifest listindexes"
   homepage "https:github.comestespmanifest-tool"
-  url "https:github.comestespmanifest-toolarchiverefstagsv2.1.8.tar.gz"
-  sha256 "5e30dfc72c09e2d38544bda4caa40aa6cc9dcc9a5e7855e310ced3ba532095e5"
+  url "https:github.comestespmanifest-toolarchiverefstagsv2.1.9.tar.gz"
+  sha256 "909fa46defbfca664fd05779c7d60e099af87f877ffeea298497e95e3204983d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "653a42187d4ae25891bb612098fc8384622de106cf638c048c19959daace98e5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "327a6a948887469f2dcb89854f36c7a3c185ef1213dfd36f74bfd83a70a9ffae"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "966c129e645ee6562182c2a2c548770da709655bc58d98d3c4dc669ab857bf1d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "159897ecc78a88b02b652619a6bd807dd73114957358640c189dbd8dcf423fe0"
-    sha256 cellar: :any_skip_relocation, ventura:       "9642beb655085b119b989fa71f353c7a6545229109a267051a900f55c16735f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddb94b3dbe3dc431c01e45d0830adae3c0c21fc378b15594b0f96683ffa74204"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f0fa16676503705b0b47fccd329f32d1dfe3ea713de3b5b169599c2dacb91d5e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a26c70492d519db60390b6e1e23f9e955d8733094417a9ede31fe06a5cfbe53f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e5e2ca74e8db7612d70d251517c2d6aadc57e114c0283e45b6c71b9e085a7709"
+    sha256 cellar: :any_skip_relocation, sonoma:        "94779ecdde3e49fdb93412518e378f4375306b467e2d636b0b10940edfc21855"
+    sha256 cellar: :any_skip_relocation, ventura:       "9ed20c11d7418c6a3a78679865e60d1e002a1e513578f4a5ac191992de1c3c5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a289ef90b70bbdbdbab4d7dca57db966d2b3d5c3702f4744e2030267b4c08280"
   end
 
   depends_on "go" => :build

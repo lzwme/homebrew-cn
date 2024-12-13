@@ -610,6 +610,7 @@ Homebrew-homebrew-core/Formula/b/brook.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/broot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brotli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brpc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/bruno-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bsdconv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bsdiff.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bsdmake.rb, Homebrew/homebrew-core, 1
@@ -1132,6 +1133,7 @@ Homebrew-homebrew-core/Formula/c/cracklib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crackpkcs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crane.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crash.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/crates-tui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crc32c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crcany.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/create-api.rb, Homebrew/homebrew-core, 1
@@ -3160,12 +3162,14 @@ Homebrew-homebrew-core/Formula/k/kubergrunt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubernetes-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubernetes-cli@1.29.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubernetes-cli@1.30.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kubernetes-cli@1.31.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubescape.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubeseal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubesess.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubeshark.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubespy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubetail.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kubetrim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubetui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubevela.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubevious.rb, Homebrew/homebrew-core, 1
@@ -3769,6 +3773,7 @@ Homebrew-homebrew-core/Formula/lib/libressl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/librest.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libretls.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/librevenge.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/librime.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/librist.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/librsvg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/librsync.rb, Homebrew/homebrew-core, 1
@@ -4027,6 +4032,7 @@ Homebrew-homebrew-core/Formula/m/mariadb@11.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@11.1.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@11.2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@11.4.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/marisa.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/markdown-oxide.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/markdown-toc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/markdown.rb, Homebrew/homebrew-core, 0
@@ -6829,6 +6835,7 @@ Homebrew-homebrew-core/Formula/v/vmtouch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vncsnapshot.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vnstat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vnu.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/v/vo-amrwbenc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/volk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/volt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/volta.rb, Homebrew/homebrew-core, 1
