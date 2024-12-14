@@ -1,20 +1,22 @@
 class I2pd < Formula
   desc "Full-featured C++ implementation of I2P client"
   homepage "https:i2pd.website"
+  # TODO: Switch to latest `boost` dependency on next release
   url "https:github.comPurpleI2Pi2pdarchiverefstags2.54.0.tar.gz"
   sha256 "5c3f703417bb5f3e5dda642d39c5d30593a5dcf69d5a5ecfe82d5e8a7d454aaf"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8cf3af75a10a5b7a03054b3ef0c90e3ba39337a06f8a6325f2476c1cbebdccd6"
-    sha256 cellar: :any,                 arm64_sonoma:  "52a22137f9fab8fe91a767490b672fa04e3018abdcba29b223c0c100252aaaf7"
-    sha256 cellar: :any,                 arm64_ventura: "3835e6ec875545c06531550bdc09edd6c23d5a0774550b20ae35f962b833ff6d"
-    sha256 cellar: :any,                 sonoma:        "bf628805328fe1b0683a63b1ac4139b6c333a281c113db6919a717fa8c4abe6a"
-    sha256 cellar: :any,                 ventura:       "156e5a4e93c57c42ee35a0e078a0804671631f22c736e3804cfe496380e26511"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f96bed143d8206efd421c611f31313288d0d2c916ff45174d5a569fbe88caea2"
+    sha256 cellar: :any,                 arm64_sequoia: "03f7ef0703446cf80a96042dab3beb16f488642a68a236f159c52749cb7c2a2e"
+    sha256 cellar: :any,                 arm64_sonoma:  "43d3909f37585ead0fe2e69e60fe1a42e0a1790a5cdb30e63255d439affd0256"
+    sha256 cellar: :any,                 arm64_ventura: "878bf408b2fc44736d556b5c72138271a250ff8eaf5031375527adb4e1c5682c"
+    sha256 cellar: :any,                 sonoma:        "023abd273cf210515299f43a9dfaeff5162701766879a76c26d2f04f82abbd7d"
+    sha256 cellar: :any,                 ventura:       "e1b5269fb55c0a7c4546242372cd237d6a871823d6b20963701df023b7e0300c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "961729ac5256811419308cc208914789d309882ade25423df57bb77228d379aa"
   end
 
-  depends_on "boost"
+  depends_on "boost@1.85"
   depends_on "miniupnpc"
   depends_on "openssl@3"
 

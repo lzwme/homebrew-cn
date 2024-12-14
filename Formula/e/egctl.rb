@@ -1,18 +1,18 @@
 class Egctl < Formula
   desc "Command-line utility for operating Envoy Gateway"
   homepage "https:gateway.envoyproxy.io"
-  url "https:github.comenvoyproxygatewayarchiverefstagsv1.2.3.tar.gz"
-  sha256 "53d1b29a7b0700537864458509a6bbc0106777ba52e8f2107137cfc0855c8f14"
+  url "https:github.comenvoyproxygatewayarchiverefstagsv1.2.4.tar.gz"
+  sha256 "2daa8270213ac9e511d336eaa3687f85e761e2f8963cebe0a2534ffef77db9c0"
   license "Apache-2.0"
   head "https:github.comenvoyproxygateway.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de9645c154d65fa0e8f3596fc291657055561591832a92281e47e5b68b2da504"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "55b1e79b03851b2e688f202488dbdd7fcf1d2eccf737e90a79c420a6c9c6c9ae"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "716151babedb05f2bc2cc9ced82c1fafadc1860bac0520a25c9866c75158cc49"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f5893ce7201566c0207ca5f5e5e2c0347d5a6a1157783c107eddd6d8e0395e54"
-    sha256 cellar: :any_skip_relocation, ventura:       "910349c2e0314489da7390fe458be24e956d14c7cdf754b730cb30fdf44aea3b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bd7f5a38e1b9e3da25f262d80a214cc8fac3f923cda866b787540b59585586c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca449e3e6ab1a4d27d82ad7a4c10608c0e6f5127e27d9ee4ececaf407be95ac2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1def47771146d9c5a5e92a11b1f1377d99a52e5d116f0d6684e94dda94acdbd9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "aabe73bec07f2be03deec64f1c3a38484a4d8175d082542c9e759f83613b478c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "128bd12d671e8b94a93aa1cf3f5872a058792a4584cd832980f441459d156a4e"
+    sha256 cellar: :any_skip_relocation, ventura:       "eecbc3294949e91c1a4ade2be59e1a32426350efe3c91e4d786175c24466ad00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb44e19edb710fe423604f84e01e7bb46cebc6387333f70a78d5dd549054e2b3"
   end
 
   depends_on "go" => :build

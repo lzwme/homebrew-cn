@@ -3,17 +3,17 @@ class Codelimit < Formula
 
   desc "Your Refactoring Alarm"
   homepage "https:github.comgetcodelimitcodelimit"
-  url "https:files.pythonhosted.orgpackages778ed9bfa3c43b293f6934b43b6dda6e9c56c63924c270d9d687dffe3f35237ecodelimit-0.13.0.tar.gz"
-  sha256 "98133173220f2c14c0a7e8c71387fc913aa532c0c53ab0482a25ad89fade4913"
+  url "https:files.pythonhosted.orgpackages29981b0daa30392bcb6b99ba70e3b4cc7784a5cef89bf47b8c9f9824452a17d0codelimit-0.14.0.tar.gz"
+  sha256 "b011d51e3aed55477dc9b0f772ee54dfcf9b44c81a53f109f0c9e72e9b184b96"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "43b958ac56b9ccf879b052375849680cbb7d0eac39f947636ec51f4e89fcaa69"
-    sha256 cellar: :any,                 arm64_sonoma:  "ded8b9feea5a8c79be993098ab247e8e8ef074ec8e543679524a5eb362e36624"
-    sha256 cellar: :any,                 arm64_ventura: "7f4f2dc1e4915ea9527ac357149b484addc325f364b7574969b471052e12fa06"
-    sha256 cellar: :any,                 sonoma:        "66e98935c30d092ead7a2331e6099276e56d0b4eaa83284ae071ddde14fd6e32"
-    sha256 cellar: :any,                 ventura:       "e7f7500f9f0d7f9bf081daeccdf7c9668208d60eb3def830ff1679afdee9470f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f90b47de1d83d9adabd7ddfda13c7ee704da849b30e1003c0418178818fd248f"
+    sha256 cellar: :any,                 arm64_sequoia: "c22050ba877bec136e1b850fd7903882ad31b85e9b9f17572a24027a9ac25551"
+    sha256 cellar: :any,                 arm64_sonoma:  "2c13c75bbbf1c47d88da10334305c707f266a5623629b5abe833a4a689d8efc4"
+    sha256 cellar: :any,                 arm64_ventura: "43ba706d94f440ce3a6621a25be9a14d790dafb9fc011fe5cedcf2d86a6757ec"
+    sha256 cellar: :any,                 sonoma:        "f94db6bc9da95a9e9457132a63b70ff484fa152cb70ee334bf85d75dcd47a811"
+    sha256 cellar: :any,                 ventura:       "a05ace9b77262d1140b84785d535f25b02e43e0984a8c826d698fef5949518fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b066649933899129d749c2c5adbb83dd4e03ec66d7da17ad6a4b34a4d69f37b"
   end
 
   depends_on "certifi"
@@ -90,6 +90,11 @@ class Codelimit < Formula
     sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
   end
 
+  resource "pyperclip" do
+    url "https:files.pythonhosted.orgpackages30232f0a3efc4d6a32f3b63cdff36cd398d9701d26cda58e3ab97ac79fb5e60dpyperclip-1.9.0.tar.gz"
+    sha256 "b7de0142ddc81bfc5c7507eea19da920b92252b548b96186caf94a5e2527d310"
+  end
+
   resource "pyyaml" do
     url "https:files.pythonhosted.orgpackages54ed79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17pyyaml-6.0.2.tar.gz"
     sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
@@ -103,6 +108,11 @@ class Codelimit < Formula
   resource "rich" do
     url "https:files.pythonhosted.orgpackagesab3a0316b28d0761c6734d6bc14e770d85506c986c85ffb239e688eeaab2c2bcrich-13.9.4.tar.gz"
     sha256 "439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"
+  end
+
+  resource "sh" do
+    url "https:files.pythonhosted.orgpackages5212b7965006c5adc57ba5459385358bd27c4983cd490884a75be86eb1d3efebsh-2.1.0.tar.gz"
+    sha256 "7e27301c574bec8ca5bf6f211851357526455ee97cd27a7c4c6cc5e2375399cb"
   end
 
   resource "typer" do

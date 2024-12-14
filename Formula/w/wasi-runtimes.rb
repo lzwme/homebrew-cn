@@ -11,12 +11,13 @@ class WasiRuntimes < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7026035613d58999acd72bc9b590b80bdd0b352a597300a0c2884f18548b34f8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb8e96c987a2e8d3a6fa8a8401085a9a174ba7f75297251612d1edb5ae126edb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "aeb30495d5dd74e9ea6b7f7f7628f487004e5eec9a10244416520b6458aa8ce4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "632db53359de79b38b9d169bff85cafc2cfc95da6510207c177e7f4f91ab449c"
-    sha256 cellar: :any_skip_relocation, ventura:       "748e10bed323897a699b9b5cdc4a08f6dadf0887c0e0b52dcb062cfff44b9346"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99be94110e08f849597fb5ed7844bac813173e31e0ed183fd257be11f533b9b1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "361664a76906963e268742fe6f0247f8be1e645db550b58265949f9d60ccaeda"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a280945c8efe98b1b9815fbbfe02dcaea3f8605e3e5cdf0c1c49bbc3e6b7ccf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d8f18d7be9d183d95c66845aeaa89304d35c2a807ccf0ff0adaf196f31475121"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6dd3bfe017c9e1464b0b9cc6277792d6aa93a16c8a665e0bb7c6f6ebe8565479"
+    sha256 cellar: :any_skip_relocation, ventura:       "53dbcdefdca8b9b00c5af745e7998c2266e5874f608d6c225db6de985217129e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdd04988b1b67eb851aa1e76f86c75029cbd6063b33e679ca1a26be89c8f5356"
   end
 
   depends_on "cmake" => :build
@@ -208,7 +209,8 @@ class WasiRuntimes < Formula
       system clang, "--target=#{target}", "-v", "test.c", "-o", "test-#{target}"
       assert_equal "the answer is 42", shell_output("wasmtime #{testpath}test-#{target}")
 
-      system "#{clang}++", "--target=#{target}", "-v", "test.cc", "-o", "test-cxx-#{target}"
+      pthread_flags = target.end_with?("-threads") ? ["-pthread"] : []
+      system "#{clang}++", "--target=#{target}", "-v", "test.cc", "-o", "test-cxx-#{target}", *pthread_flags
       assert_equal "hello from C++ main with cout!", shell_output("wasmtime #{testpath}test-cxx-#{target}").chomp
     end
   end

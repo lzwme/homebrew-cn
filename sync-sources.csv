@@ -2378,6 +2378,7 @@ Homebrew-homebrew-core/Formula/g/goolabs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/goose.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gopass-jsonapi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gopass.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gopeed.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gopls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goplus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goproxy.rb, Homebrew/homebrew-core, 1
@@ -3290,6 +3291,7 @@ Homebrew-homebrew-core/Formula/l/lighttpd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lilv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lilypond.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lima.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/limbo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/limesuite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/link-grammar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/linkerd.rb, Homebrew/homebrew-core, 1
@@ -4883,6 +4885,7 @@ Homebrew-homebrew-core/Formula/p/par.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/par2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/parallel-hashmap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/parallel.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/parca.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pari-elldata.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pari-galdata.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pari-galpol.rb, Homebrew/homebrew-core, 0
@@ -5065,6 +5068,7 @@ Homebrew-homebrew-core/Formula/p/pipx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pius.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pivit.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pixi-pack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pixi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pixie.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pixiewps.rb, Homebrew/homebrew-core, 1
@@ -5158,6 +5162,7 @@ Homebrew-homebrew-core/Formula/p/postgresql@15.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/postgresql@16.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/postgresql@17.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/postgrest.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/posting.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/potrace.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/poutine.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/povray.rb, Homebrew/homebrew-core, 1
@@ -5939,6 +5944,8 @@ Homebrew-homebrew-core/Formula/s/slashem.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sleef.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sleek.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sleepwatcher.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/slepc-complex.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/slepc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sleuthkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/slides.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/slimerjs.rb, Homebrew/homebrew-core, 1
@@ -6303,6 +6310,7 @@ Homebrew-homebrew-core/Formula/t/tal.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/talhelper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/talisman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/talloc.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/talosctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tanka.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/taplo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tarantool.rb, Homebrew/homebrew-core, 1
@@ -6491,7 +6499,7 @@ Homebrew-homebrew-core/Formula/t/tmate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmpmail.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmpreaper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tmpwatch.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/t/tmt.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tmt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tmux-mem-cpu-load.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmux-sessionizer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmux-xpanes.rb, Homebrew/homebrew-core, 1

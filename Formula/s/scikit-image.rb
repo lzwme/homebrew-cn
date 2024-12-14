@@ -3,20 +3,18 @@ class ScikitImage < Formula
 
   desc "Image processing in Python"
   homepage "https:scikit-image.org"
-  url "https:files.pythonhosted.orgpackages5dc5bcd66bf5aae5587d3b4b69c74bee30889c46c9778e858942ce93a030e1f3scikit_image-0.24.0.tar.gz"
-  sha256 "5d16efe95da8edbeb363e0c4157b99becbd650a60b77f6e3af5768b66cf007ab"
+  url "https:files.pythonhosted.orgpackagese68d383e5438c807804b66d68ed2c09202d185ea781b6022aa8b9fac3851137fscikit_image-0.25.0.tar.gz"
+  sha256 "58d94fea11b6b3306b3770417dc1cbca7fa9bcbd6a13945d7910399c88c2018c"
   license "BSD-3-Clause"
-  revision 1
   head "https:github.comscikit-imagescikit-image.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d64e36caaa70664404ebc32cb82d1b3fc10674b2e7945f6e35e3448a22b5a57a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2cffd6770ac35f0dbb025cfa434e74a594a631af8fcf5dccb641548721f6729"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cc7df5c3771d32949f69e2c81ea702f20cf31e2cce5e7e85e51e97eeb12a5835"
-    sha256 cellar: :any_skip_relocation, sonoma:        "baed5a5e5a080aa79e65fc9dd46418432dc4dbbd57422b4912ef085a7d38c9b9"
-    sha256 cellar: :any_skip_relocation, ventura:       "f5d998d670408670d758040ce73058572d1e49b7140f3679eb4900541e72eaa1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3416b17ddb6351488ca1e0205e463db98ded2f5500673bea7e685880ee6fd9b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8b2303edcfb1969d77574f243a4b5f555974ab15368fa79db9697b6e13992e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e8c883b913a8780584bd5aede7d29c3bb5de3c55142514a21b72400ff934c0b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5022142503ff01c444be638e0ff96d631a5d8ff29e069f47e451f2cccd287e92"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6d49c28eb656507cb459b501461640699ba1fcf3b04824c288c65782edcfe0ff"
+    sha256 cellar: :any_skip_relocation, ventura:       "4848b545c08b8f87049eceb3edc3d8a2639887ee29446da57d0d57474a3fad5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66c5eb3a8bb62c0363390b80572ff1d53145ab32088c3dc190b352f8b6543ee3"
   end
 
   depends_on "meson" => :build
@@ -32,8 +30,8 @@ class ScikitImage < Formula
   end
 
   resource "imageio" do
-    url "https:files.pythonhosted.orgpackages4f34a714fd354f5f7fe650477072d4da21446849b20c02045dcf7ac827495121imageio-2.36.0.tar.gz"
-    sha256 "1c8f294db862c256e9562354d65aa54725b8dafed7f10f02bb3ec20ec1678850"
+    url "https:files.pythonhosted.orgpackages70aa2e7a49259339e691ff2b477ae0696b1784a09313c5872700bbbdd00a3030imageio-2.36.1.tar.gz"
+    sha256 "e4e1d231f47f9a9e16100b0f7ce1a86e8856fb4d1c0fa2c4365a316f1746be62"
   end
 
   resource "lazy-loader" do
@@ -42,18 +40,18 @@ class ScikitImage < Formula
   end
 
   resource "networkx" do
-    url "https:files.pythonhosted.orgpackages362b20ad9eecdda3f1b0dc63fb8f82d2ea99163dbca08bfa392594fc2ed81869networkx-3.4.1.tar.gz"
-    sha256 "f9df45e85b78f5bd010993e897b4f1fdb242c11e015b101bd951e5c0e29982d8"
+    url "https:files.pythonhosted.orgpackagesfd1d06475e1cd5264c0b870ea2cc6fdb3e37177c1e565c43f56ff17a10e3937fnetworkx-3.4.2.tar.gz"
+    sha256 "307c3669428c5362aab27c8a1260aa8f47c4e91d3891f48be0141738d8d053e1"
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
-    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
+    url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
+    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
   end
 
   resource "tifffile" do
-    url "https:files.pythonhosted.orgpackagesf2146fe362c483166b3a44521ac5c92c98f096bd7fb05512e8730d0e23e152c9tifffile-2024.9.20.tar.gz"
-    sha256 "3fbf3be2f995a7051a8ae05a4be70c96fc0789f22ed6f1c4104c973cf68a640b"
+    url "https:files.pythonhosted.orgpackages37c9fc4e490c5b0ccad68c98ea1d6e0f409bd7d50e2e8fc30a0725594d3104fftifffile-2024.12.12.tar.gz"
+    sha256 "c38e929bf74c04b6c8708d87f16b32c85c6d7c2514b99559ea3db8003ba4edda"
   end
 
   def install

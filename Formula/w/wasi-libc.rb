@@ -11,9 +11,9 @@ class WasiLibc < Formula
   stable do
     # Check the commit hash of `srcwasi-libc` corresponding to the latest tag at:
     # https:github.comWebAssemblywasi-sdk
-    url "https:github.comWebAssemblywasi-libcarchive1b19fc65ad84b223876c50dd4fcd7d5a08c311dc.tar.gz"
-    version "24"
-    sha256 "a9d5e43c80b5b82fa92325fd73f6f6112ba5631f005030e8d51350efd4c9e61d"
+    url "https:github.comWebAssemblywasi-libcarchive574b88da481569b65a237cb80daf9a2d5aeaf82d.tar.gz"
+    version "25"
+    sha256 "7d11a801570972e7f32639eed3f8f7d0e997f276b3c85b7aa03283e1265e4b8e"
 
     resource "WASI" do
       # Check the commit hash of `toolswasi-headersWASI` from the commit hash above.
@@ -27,13 +27,12 @@ class WasiLibc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "baa8c0d028e3691de22e06d6e9958a61898ad0764ffac57441627bb941da6814"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "baa8c0d028e3691de22e06d6e9958a61898ad0764ffac57441627bb941da6814"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "baa8c0d028e3691de22e06d6e9958a61898ad0764ffac57441627bb941da6814"
-    sha256 cellar: :any_skip_relocation, sonoma:        "baa8c0d028e3691de22e06d6e9958a61898ad0764ffac57441627bb941da6814"
-    sha256 cellar: :any_skip_relocation, ventura:       "baa8c0d028e3691de22e06d6e9958a61898ad0764ffac57441627bb941da6814"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32bf0d734a80239892bcaa7c605aea4021e2e45bd2b906231219ab743da488c0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89f102505760c8d6b154f1574e619e2755e2fd7ff878596ec6c49ea5b62e4da1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89f102505760c8d6b154f1574e619e2755e2fd7ff878596ec6c49ea5b62e4da1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "89f102505760c8d6b154f1574e619e2755e2fd7ff878596ec6c49ea5b62e4da1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "89f102505760c8d6b154f1574e619e2755e2fd7ff878596ec6c49ea5b62e4da1"
+    sha256 cellar: :any_skip_relocation, ventura:       "89f102505760c8d6b154f1574e619e2755e2fd7ff878596ec6c49ea5b62e4da1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbe27ea11d50c62ecfba2922e3a4ff27b16f215eeae08738413ef7f9b01d2a95"
   end
 
   depends_on "llvm" => [:build, :test]
@@ -77,7 +76,6 @@ class WasiLibc < Formula
 
     targets.each do |target|
       system "make", *make_args, "TARGET_TRIPLE=#{target}", "install", *target_flags[target]
-      system "make", "clean"
     end
   end
 

@@ -1,18 +1,17 @@
 class JoplinCli < Formula
   desc "Note taking and to-do application with synchronization capabilities"
   homepage "https:joplinapp.org"
-  url "https:registry.npmjs.orgjoplin-joplin-3.0.1.tgz"
-  sha256 "86217bd4b98a6a9e6b31ee3c716f6f83e2b90ff600bc436b47a428842494b5d4"
+  url "https:registry.npmjs.orgjoplin-joplin-3.2.2.tgz"
+  sha256 "46cda9164f1e20c2ea451fa12398532fbbeb421a9bcdf275ac220f4163f75da5"
   license "MIT"
 
   bottle do
-    rebuild 2
-    sha256                               arm64_sequoia: "ef52961768cf19e1ae2b2fe9ae69e0d45e55fd06eae126e3cedfb19bc8f8ddf1"
-    sha256                               arm64_sonoma:  "87e1f9bd03fa1eca5a6680739cd6cbd76872750194dca1bdba2593e3e8addf52"
-    sha256                               arm64_ventura: "25fc7404867f2ea85f84a37ce14bb81eee7d3f4e4eabfd0db0be60e3b1a6910d"
-    sha256                               sonoma:        "dd3f5f4c75acb229cd3145a733ede897363144e029845b3a50193e460012e1ff"
-    sha256                               ventura:       "cb4c150b0a7ec1fecc06804fe287d863d9f80e6ad734a914258f4d7fd9a1b6be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b1f734064440c1e742dbeb9bc55c4f633c1393783b70fc88deec51a990abeeb"
+    sha256                               arm64_sequoia: "9fb6115ba720d86c13274d26ae70de7f41193f03b3e33d4732e369b8d7d12438"
+    sha256                               arm64_sonoma:  "4f970ffbf4f5a913f15b76f3f69f991e18f557251a047ac3ab2207d7f4186a4a"
+    sha256                               arm64_ventura: "a3611669daf544c463ef4ed5f7345e907d61f30cb0faa16bae76f5cc275b1254"
+    sha256                               sonoma:        "e08b770b0c9c9ad238a7385286a3470c9683c2651b839172c270f100115e1e53"
+    sha256                               ventura:       "116677217ea988081c9e828ef17b43938e7378fd97166d7dc678c7e476a4bac6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "284ad0fcb8c24fe4c4302ea5204b7c22fc09068dadde6315b12a0d4e8a5c18af"
   end
 
   depends_on "pkgconf" => :build

@@ -7,12 +7,13 @@ class EtcdCppApiv3 < Formula
   revision 19
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "70015fab22dae7d329ae91b5d0250d858b9ccf40ab72bbc2bf2da0f7c8ee7f3b"
-    sha256 cellar: :any,                 arm64_sonoma:  "bd34f08f591a79b4900527c50893b53c2ce6c989c5804f8a1ae9839cdb6b981d"
-    sha256 cellar: :any,                 arm64_ventura: "16a834c645392bee0a1327fe6caefe18aadb7e8d25885cfb83183de32e805ad0"
-    sha256 cellar: :any,                 sonoma:        "04b5eb8991359e03507bf1ee905dfc0e45f07ac4e933f92e1b15d5b1421eae4d"
-    sha256 cellar: :any,                 ventura:       "d0989833efd3464806a3fc301e87725b24e3c037b3ce9edef21e9b237d68bff7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "745eb7731ea238c4f2f9b4d1be306dd12daadf5e3d6d26806ab6d0b3882f636a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "59d3e284ea8592f558ce43cfee1eddcb3b5269a3a26fec1f403697549742ea3a"
+    sha256 cellar: :any,                 arm64_sonoma:  "1d0908b4654879dcaffb04cbc1f3571e303eb38978892f69f1291d15ec7cfcdf"
+    sha256 cellar: :any,                 arm64_ventura: "274fde2e831cd1f6af729e8af565db98fc939761803a5e5df3372ca72dcf2881"
+    sha256 cellar: :any,                 sonoma:        "29ebb350a0c47d1161c7c0d5976f0c41197fad29bada8eb61fa56c7d9b24b60e"
+    sha256 cellar: :any,                 ventura:       "e6c9603decc4f48dc91d2045ab2bc1861d89099716f106efcac6d9802ac67616"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cea14adff73410fade32286d54cd161c6885177a0e3771ffe7adf2d50853261d"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -69,6 +70,7 @@ class EtcdCppApiv3 < Formula
       target_link_libraries(test_etcd_cpp_apiv3 PRIVATE etcd-cpp-api)
     CMAKE
 
+    ENV.append_path "CMAKE_PREFIX_PATH", Formula["boost@1.85"].opt_prefix
     ENV.delete "CPATH"
     system "cmake", ".", "-Wno-dev", "-DCMAKE_BUILD_RPATH=#{HOMEBREW_PREFIX}lib"
     system "cmake", "--build", "."

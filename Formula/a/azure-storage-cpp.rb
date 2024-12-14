@@ -4,17 +4,15 @@ class AzureStorageCpp < Formula
   url "https:github.comAzureazure-storage-cpparchiverefstagsv7.5.0.tar.gz"
   sha256 "446a821d115949f6511b7eb01e6a0e4f014b17bfeba0f3dc33a51750a9d5eca5"
   license "Apache-2.0"
-  revision 10
+  revision 11
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "715929b7bf9be66a120d8daaadef336fc4e69cc10b98bf57b1db566ed74c43ae"
-    sha256 cellar: :any,                 arm64_sonoma:   "88c8ce8dd3036ecb8d825e45e4f540d3f85812a5551adbdff2f3e633a14971b2"
-    sha256 cellar: :any,                 arm64_ventura:  "0980769654725aabfdaaf9fd7f5141bc3a80d283bd2926dd44271a96153b43ab"
-    sha256 cellar: :any,                 arm64_monterey: "3c46568d7f4eb00aae073edb010631672d09ddf104aa58575d6e04717238d349"
-    sha256 cellar: :any,                 sonoma:         "e84fce7243f0ec1b8d896c2534046348d28c50a67f44f37291a7e583f62025a6"
-    sha256 cellar: :any,                 ventura:        "85412de563c1d2c57cd1dadf6ecc66eb18d3e0f051d5331771e7d593d144f169"
-    sha256 cellar: :any,                 monterey:       "f5114b4ae18ac1ea2b3ee3c1a24618d910583b83dd848ff059414ecdff91aff9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3c89ec4ddedce0b55bbf1f97de363abf7e2778b39a4363284a642f6215f116c"
+    sha256 cellar: :any,                 arm64_sequoia: "f00202a3cc5f45662cb1bf801b41b41da1e6723ab96ae9a34d25cce65d62ff4e"
+    sha256 cellar: :any,                 arm64_sonoma:  "66384afbbbaaf12285b727f25b3f6c21637183de034a0cf48c1d3c282f90cb67"
+    sha256 cellar: :any,                 arm64_ventura: "6765f5fa16be2927c8fcf835d78ee871d3732ccea22a810177bf9f96df5f80f2"
+    sha256 cellar: :any,                 sonoma:        "2ce10849c8309c5ce8244584ad2684d56e038228d93dd4116228518f4b28b847"
+    sha256 cellar: :any,                 ventura:       "b8a14b220f1ad4e4c759146992258c51906652387a5aabaa924a296f31d37a31"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43fc31791da3f757934d1f122292cce81008d2af85f98284a7cfb89f9aab9104"
   end
 
   # https:github.comAzureazure-storage-cppcommitb319b189067ac5f54137ddcfc18ef506816cbea4
@@ -22,7 +20,7 @@ class AzureStorageCpp < Formula
   disable! date: "2025-05-20", because: :deprecated_upstream
 
   depends_on "cmake" => :build
-  depends_on "boost"
+  depends_on "boost@1.85"
   depends_on "cpprestsdk"
   depends_on "openssl@3"
 
@@ -55,11 +53,12 @@ class AzureStorageCpp < Formula
         catch(...){ return 1; }
       }
     CPP
+    boost = Formula["boost@1.85"]
     flags = ["-std=c++11", "-I#{include}",
-             "-I#{Formula["boost"].include}",
+             "-I#{boost.include}",
              "-I#{Formula["openssl@3"].include}",
              "-I#{Formula["cpprestsdk"].include}",
-             "-L#{Formula["boost"].lib}",
+             "-L#{boost.lib}",
              "-L#{Formula["cpprestsdk"].lib}",
              "-L#{Formula["openssl@3"].lib}",
              "-L#{lib}",

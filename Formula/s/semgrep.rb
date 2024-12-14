@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https:semgrep.dev"
   url "https:github.comsemgrepsemgrep.git",
-      tag:      "v1.99.0",
-      revision: "2bbd0a55b3655b26991c936b92e0c0f6d6f4fa94"
+      tag:      "v1.100.0",
+      revision: "2a5266de179ef4928bf8f67d0aebf39d0a3e0822"
   license "LGPL-2.1-only"
   head "https:github.comsemgrepsemgrep.git", branch: "develop"
 
@@ -15,12 +15,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "17e3debdd3966d54f5aaf000a71463ffe19e66e19a9fd541995eb19776c3859e"
-    sha256 cellar: :any,                 arm64_sonoma:  "8bd823a0511edd39dcffc95083b53cbc7dfeb78a2289c533c1fb4af152f30fa3"
-    sha256 cellar: :any,                 arm64_ventura: "46abc952db999dd68b015a762871744446e6c7a4dc7d4bb6cc9a58419b5d514e"
-    sha256 cellar: :any,                 sonoma:        "3a8d6b976135a1702a0647760f54564953a78c2181a2173f40a243f1e5ca1f48"
-    sha256 cellar: :any,                 ventura:       "978f2be6c7a59d3fe1c2eca980e8c59efe586ad8aa40988238667cce97e9cadc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f023d627b656922ea5758a0324ccc16f55b09d9969b498ea83950021a9dbd157"
+    sha256 cellar: :any,                 arm64_sequoia: "717b3420999a2be585b8e93bc188cc7764af7c52a4e2a5546aa9643ee338e28f"
+    sha256 cellar: :any,                 arm64_sonoma:  "ccd4701a1d35e2ac6036c74a6c2750869107b8d2d670db5c88f8f9362fe9b931"
+    sha256 cellar: :any,                 arm64_ventura: "e6ce9321983597ccee029a5b2808042c99041ddde58533267d29ca9dfb6cb8c2"
+    sha256 cellar: :any,                 sonoma:        "e1b055cae49b6ec892ebb44ad97617b0e3871202993dbf73b2f4bdf6a473e818"
+    sha256 cellar: :any,                 ventura:       "c366b8de57bb570b1e66428ff44284843055b662ca2517f169447efece5d806b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3bb1d3e3d8b6475c9a6b404c91244ad059971caf253d539b38527ddae6605f9"
   end
 
   depends_on "autoconf" => :build
@@ -225,8 +225,8 @@ class Semgrep < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https:files.pythonhosted.orgpackagesd1d6eb2833ccba5ea36f8f4de4bcfa0d1a91eb618f832d430b70e3086821f251ruamel.yaml-0.17.40.tar.gz"
-    sha256 "6024b986f06765d482b5b07e086cc4b4cd05dd22ddcbc758fa23d54873cf313d"
+    url "https:files.pythonhosted.orgpackages29814dfc17eb6ebb1aac314a3eb863c1325b907863a1b8b1382cdffcb6ac0ed9ruamel.yaml-0.18.6.tar.gz"
+    sha256 "8b27e6a217e786c6fbe5634d8f3f11bc63e0f80f6a5890f28863d9c45aac311b"
   end
 
   resource "setuptools" do

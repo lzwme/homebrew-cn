@@ -1,8 +1,8 @@
 class Stunnel < Formula
   desc "SSL tunneling program"
   homepage "https://www.stunnel.org/"
-  url "https://www.stunnel.org/downloads/stunnel-5.73.tar.gz"
-  sha256 "bc917c3bcd943a4d632360c067977a31e85e385f5f4845f69749bce88183cb38"
+  url "https://www.stunnel.org/downloads/stunnel-5.74.tar.gz"
+  sha256 "9bef235ab5d24a2a8dff6485dfd782ed235f4407e9bc8716deb383fc80cd6230"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,14 +11,12 @@ class Stunnel < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "9ebe0bff4ff989f7c813acfc0f3babc0da844d32fc8573f312071de235173258"
-    sha256 cellar: :any,                 arm64_sonoma:   "e906bc39b199cd1a85e6504a76836dafa2ee85512412b6d75a12166c59d39d75"
-    sha256 cellar: :any,                 arm64_ventura:  "31c84b034d02b835932c600829d9b2eaac27c503cd01ccb7237c05fe7922bd29"
-    sha256 cellar: :any,                 arm64_monterey: "91f4e0489c4e7c2186bdeea494fc4190359bc3f1390ee8050997a8beaddaf517"
-    sha256 cellar: :any,                 sonoma:         "af36b6ee1b582ccc58fc5fb2e47aefbe6d33751de4a0608f6eb5dc26463b16c1"
-    sha256 cellar: :any,                 ventura:        "48d97fc738dd0b067cbaaff849b903c8b1cf3f96eca9db64420039c4ae038336"
-    sha256 cellar: :any,                 monterey:       "dcceef2f331ca52a7bb7d59eeeeefe4f406f72bc10f6e431dc0b2c23bd9d2d49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fe9ad0c808b6d741f750e916b5dd5a3ac510b48b12429a99cb0e6c919774e3b6"
+    sha256 cellar: :any,                 arm64_sequoia: "3397dd9c588929b1c27eab79dfc68ac549154cc5723743860f3132a9eaa9b3e7"
+    sha256 cellar: :any,                 arm64_sonoma:  "ed81eddd6dba1c5b0c530be48d7acc46e3a0a8312f9d5ae3d9118c0cd797533e"
+    sha256 cellar: :any,                 arm64_ventura: "ac7f0bbfd5e4e7c5810d181b2ad929d5081d9d40714bb1638dc36149cb0574f4"
+    sha256 cellar: :any,                 sonoma:        "82aa69de9ed3e96f6cf2b40a82ea5d725dc515f47a891649f9d49cb1371d0df4"
+    sha256 cellar: :any,                 ventura:       "448441d68babf46d4b6c5f3feade07c6b24bacd6e6d3923c1b056fd1e6b118a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c5735f96b3a3d61de2648205e462d3eded527d8480dc0dd026829aa3a9bbb03"
   end
 
   depends_on "openssl@3"

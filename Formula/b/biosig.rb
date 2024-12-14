@@ -4,6 +4,7 @@ class Biosig < Formula
   url "https://downloads.sourceforge.net/project/biosig/BioSig%20for%20C_C%2B%2B/src/biosig-2.6.1.src.tar.xz"
   sha256 "558ee17cd7b4aa1547e98e52bb85cccccb7f7a81600f9bef3a50cd5b34d0729e"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,14 +12,12 @@ class Biosig < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "237a918401c7b500c93ee2a07262c7394965f3c8515bb445e0a1b49d6f096e3e"
-    sha256 cellar: :any,                 arm64_sonoma:   "94ce1ed94f2e62d54961a2a711af52a9f229b7852f535ee1ce9a2248576cee83"
-    sha256 cellar: :any,                 arm64_ventura:  "a88421331309918094ee177f00e8b6537ba8d6125a5507d73183275d770e372d"
-    sha256 cellar: :any,                 arm64_monterey: "a94537bf985066694053ddcfe3a8254457ea0a9ed6acc4180da825dddb5a6537"
-    sha256 cellar: :any,                 sonoma:         "832caf6d00dd2a716f4bcbded968ae70552e807e90b68ceba5b590207555d1f1"
-    sha256 cellar: :any,                 ventura:        "6a3926692abe3a19947778b679542669ea010075620ddbcb62240ff411e35026"
-    sha256 cellar: :any,                 monterey:       "5136c7261264acb7dd2631527165f52074587979d988f09c9d551b94cdc48586"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "971e1c4a42c02b0d7bdcceea087f94f3d66314718f319108dcc019717beb0f78"
+    sha256 cellar: :any,                 arm64_sequoia: "117069306a551af329ca174824f8e68f8ecbfc9285ef33a0b9457137dafd1ca9"
+    sha256 cellar: :any,                 arm64_sonoma:  "2afa576649a1ce599abd86cf16c92e8137e1fd5513401c0f91635c679f23732a"
+    sha256 cellar: :any,                 arm64_ventura: "ec0026a9de7bed96c71de9d1e086134cb1f308582cd41f70457cc4fcd01b941b"
+    sha256 cellar: :any,                 sonoma:        "3004a0bb2aa939134d7823a4db2355ea83f4fd9866870a6b9bbf1686e85a31e0"
+    sha256 cellar: :any,                 ventura:       "3615427d4eaba6e8322770bdce3d29033bd8361a5613d682033e1477c4ce416c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e74145def1020e92731a83f67b2a805ecd74871cfe4936c425fa95a5de396cfe"
   end
 
   depends_on "gawk" => :build
@@ -32,6 +31,8 @@ class Biosig < Formula
   patch :DATA
 
   def install
+    ENV.append "CXX", "-std=gnu++17"
+
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 

@@ -1,36 +1,38 @@
 class Cpprestsdk < Formula
   desc "C++ libraries for cloud-based client-server communication"
-  homepage "https:github.comMicrosoftcpprestsdk"
+  homepage "https:github.commicrosoftcpprestsdk"
   # pull from git tag to get submodules
-  url "https:github.comMicrosoftcpprestsdk.git",
+  url "https:github.commicrosoftcpprestsdk.git",
       tag:      "v2.10.19",
       revision: "411a109150b270f23c8c97fa4ec9a0a4a98cdecf"
   license "MIT"
-  head "https:github.comMicrosoftcpprestsdk.git", branch: "development"
+  revision 1
+  head "https:github.commicrosoftcpprestsdk.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "dd3a9b00704714936de5308d93e2e9e4967700aef229981beb7e4163909d525e"
-    sha256 cellar: :any,                 arm64_sonoma:   "252c1e2ad5f0123d2b31840601166a73bd72bfbc229792d54aa73d920948331e"
-    sha256 cellar: :any,                 arm64_ventura:  "93818f470b5411b1696aa60e04a31f42cabef407d05a26e937e24c2a467da693"
-    sha256 cellar: :any,                 arm64_monterey: "e4f4298398119a07041429688116832f67b33c4c9775ab1722a30c287125f8b6"
-    sha256 cellar: :any,                 sonoma:         "0bb14c095957af12e08500e024739f78176f6361ff90c5efdda5e682613cffae"
-    sha256 cellar: :any,                 ventura:        "14bb46f094fa800b287ad3f960de71cf0a401005e4bc552176dd8d585e107540"
-    sha256 cellar: :any,                 monterey:       "b6de216686c055332e5e6d2bcf36a4aff430f1e2121f3adfd59b9ed337a6bea6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3e55392240623fb92f5f42a22d790950d856fd4a0416d90e9f1c721c3197ef80"
+    sha256 cellar: :any,                 arm64_sequoia: "e414a002007eba0a4606f30cc11817338e1287f720d623a616f7e46524717479"
+    sha256 cellar: :any,                 arm64_sonoma:  "ca0b2b79e8165896f68903d6307ad3aa3f01116f952ce0c36074840852cb2ded"
+    sha256 cellar: :any,                 arm64_ventura: "52897f579904d7bd14996e47e0344d779939936dc96b6ff066d76bbd972b90bc"
+    sha256 cellar: :any,                 sonoma:        "5b13e9fd406f3807679d8e193ca8ae4b9bb183a536e3c6add15fe7be7e4806a0"
+    sha256 cellar: :any,                 ventura:       "1c7a0ec58aefff285cc161f38fa77b1b7f5c1a62b4c36c85f1bd6d037c932fbf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06c8025f11aa65e2d9f0694d5a6d530b292d4eb77bec724105c3849dd1254e45"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on "boost"
+  depends_on "boost@1.85" # Issue ref: https:github.commicrosoftcpprestsdkissues1323
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
 
   def install
-    system "cmake", "-DBUILD_SAMPLES=OFF", "-DBUILD_TESTS=OFF",
-                    "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"]}.opt_prefix",
-                    "Release", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", "Release", "-B", "build",
+                    "-DBUILD_SAMPLES=OFF",
+                    "-DBUILD_TESTS=OFF",
+                    "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -42,9 +44,10 @@ class Cpprestsdk < Formula
         std::cout << client.request(web::http::methods::GET).get().extract_string().get() << std::endl;
       }
     CPP
+    boost = Formula["boost@1.85"]
     system ENV.cxx, "test.cc", "-std=c++11",
-                    "-I#{Formula["boost"].include}", "-I#{Formula["openssl@3"].include}", "-I#{include}",
-                    "-L#{Formula["boost"].lib}", "-L#{Formula["openssl@3"].lib}", "-L#{lib}",
+                    "-I#{boost.include}", "-I#{Formula["openssl@3"].include}", "-I#{include}",
+                    "-L#{boost.lib}", "-L#{Formula["openssl@3"].lib}", "-L#{lib}",
                     "-lssl", "-lcrypto", "-lboost_random-mt", "-lboost_chrono-mt", "-lboost_thread-mt",
                     "-lboost_system-mt", "-lboost_filesystem-mt", "-lcpprest",
                     "-o", "test_cpprest"

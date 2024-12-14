@@ -16,11 +16,6 @@ class SphinxDoc < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b15555c672c5e92de778122554a39b645d0e1b3d6f7df36c92dd8b46828296b"
   end
 
-  keg_only <<~EOS
-    this formula is mainly used internally by other formulae.
-    Users are advised to use `pip` to install sphinx-doc
-  EOS
-
   depends_on "certifi"
   depends_on "python@3.13"
 

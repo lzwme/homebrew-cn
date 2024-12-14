@@ -1,35 +1,34 @@
 class Libnfs < Formula
   desc "C client library for NFS"
   homepage "https:github.comsahlberglibnfs"
-  url "https:github.comsahlberglibnfsarchiverefstagslibnfs-5.0.3.tar.gz"
-  sha256 "d945cb4f4c8f82ee1f3640893a168810f794a28e1010bb007ec5add345e9df3e"
+  url "https:github.comsahlberglibnfsarchiverefstagslibnfs-6.0.1.tar.gz"
+  sha256 "16c2f2f67c68e065304e42a9975e9238f773c53c3cd048574e83c6f8a9f445c3"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "e758339be8153e070291e70acb20491ef97d2f1c56a2778e11f356ffcefc60ff"
-    sha256 cellar: :any,                 arm64_sonoma:   "7a52ed77480250f7f6503c89b55939851022fda4b557723df98ee14572900003"
-    sha256 cellar: :any,                 arm64_ventura:  "dff7c08f835774d855710f8195b3fa53d38b4a0d89a1277f8e422d2de6117e21"
-    sha256 cellar: :any,                 arm64_monterey: "06f16c29ed988b38d91ee5f800b93116b41288f993a694603f0af3584f59fdb9"
-    sha256 cellar: :any,                 sonoma:         "165309bcf7d58c4bbe4c62889d8de976b85e01102e1e49eb4a7d84632b35ef13"
-    sha256 cellar: :any,                 ventura:        "00999f67b246396751e8fd9137cb057bf14b2b99f0d059fdaf6e2cb0fa25998f"
-    sha256 cellar: :any,                 monterey:       "1df9d2c2a44214573663eff072d237b090d297ceadca7ab2923daca3cabc6a99"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "da4022b87ad4d500dafafeccbf35e4bebcf2bbbcf23bb47a37c0b35edec09ec5"
+    sha256 cellar: :any,                 arm64_sequoia: "a7dde222002bc32bffc79d59ef75f13f904c1704ea9cedb4caed9a427f60e115"
+    sha256 cellar: :any,                 arm64_sonoma:  "3bd08fd8c27af6c0a48fc215feb89ba9879054b16b5f9dc465c5a99bc1f015ef"
+    sha256 cellar: :any,                 arm64_ventura: "8981260780efb3ae005b7a8d873eea61c4d9c4a68939b66185ac3e997e87f36d"
+    sha256 cellar: :any,                 sonoma:        "74330ab7704e64e960f637a725692b50fbd175fe5fab6e0845fd45d19bf6c0bd"
+    sha256 cellar: :any,                 ventura:       "234d992e081fc292e7227e7c49b88ab45c9d18912df1d7831096b8dbce463649"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a71129f89e6532aa5e969acd7603c58c77dd6c133d3a84b5242bea49bfb8d631"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
+  depends_on "cmake" => :build
+  depends_on "docbook" => :build
+  depends_on "docbook-xsl" => :build
 
   def install
-    system ".bootstrap"
-    system ".configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    ENV["XML_CATALOG_FILES"] = "#{etc}xmlcatalog"
 
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", "-DENABLE_DOCUMENTATION=ON", "-DENABLE_UTILS=ON", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
+    assert_match "No URL specified", shell_output("#{bin}nfs-ls 2>&1", 1)
+
     (testpath"test.c").write <<~C
       #if defined(__linux__)
       # include <systime.h>

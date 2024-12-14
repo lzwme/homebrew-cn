@@ -1,8 +1,8 @@
 class Libfabric < Formula
   desc "OpenFabrics libfabric"
   homepage "https:ofiwg.github.iolibfabric"
-  url "https:github.comofiwglibfabricreleasesdownloadv1.22.0libfabric-1.22.0.tar.bz2"
-  sha256 "485e6cafa66c9e4f6aa688d2c9526e274c47fda3a783cf1dd8f7c69a07e2d5fe"
+  url "https:github.comofiwglibfabricreleasesdownloadv2.0.0libfabric-2.0.0.tar.bz2"
+  sha256 "1a8e40f1f331d6ee2e9ace518c0088a78c8a838968f8601c2b77fd012a7bf0f5"
   license any_of: ["BSD-2-Clause", "GPL-2.0-only"]
   head "https:github.comofiwglibfabric.git", branch: "main"
 
@@ -12,14 +12,12 @@ class Libfabric < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "53db554a6bfa1c550717bbb5c69381a2b9a6e4e7c8da97b7442a5f614aa4e02b"
-    sha256 cellar: :any,                 arm64_sonoma:   "89412889917d484d03bb9876eda676c9d777837f8f500e637d41a189e5b03f83"
-    sha256 cellar: :any,                 arm64_ventura:  "20191f9f094e0905274ec9a193d2bc0f24ed1d0d67a8ed26bd612b8f0a37865f"
-    sha256 cellar: :any,                 arm64_monterey: "f4e5fa18fc8d3aaa8af4204597e0218556921e8dfc49911b3035bb6a2c588aed"
-    sha256 cellar: :any,                 sonoma:         "4e7cd495203660ba7f4eeaf10b2853979aa1e80692e14c7a8cecfcb3ac2c690c"
-    sha256 cellar: :any,                 ventura:        "710a509782eaad6115ff37d71213dca17e382a9abfb5baac6c1df7f99fcbf32a"
-    sha256 cellar: :any,                 monterey:       "8924e288d03c033e7200729dbcba6a84f55d0f45e2509729ca430a7fc2cd9c22"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af0d9ff3334d897ed6f253a45b123d65aa51a9c4dfd559a5ff427081591cd48b"
+    sha256 cellar: :any,                 arm64_sequoia: "46238f5c1c9a0166b74cbc9be48c22ff37ed554b06aaccca1e4227ba7e885ce0"
+    sha256 cellar: :any,                 arm64_sonoma:  "f269ca9709004c3083f3a8fbaa3d55ae20e960346aec3668a13e6804cde9281b"
+    sha256 cellar: :any,                 arm64_ventura: "bc816ffc5cc3a3b1f1002013cdd5a3a012e5c932ef48e4855bb1313b8cefd550"
+    sha256 cellar: :any,                 sonoma:        "ea1fcfbb5f56da802f90ee170dc781904c5971f8c5c11a90c8c46dc5d57d9701"
+    sha256 cellar: :any,                 ventura:       "f994b2ea09200f927a6f729cf26d7cd12af8c4a9560914b3fc9f6b6f499b774b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12ca9881749547fcbb6853d09deff1d6e1c3329ea49869d3cebb9d36ca57e1d8"
   end
 
   depends_on "autoconf" => :build

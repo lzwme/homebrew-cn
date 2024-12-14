@@ -21,10 +21,8 @@ class Stolon < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "30ca55abf39725e1760d6610e38ea05f089fd382724da55c170f2cf914ee1050"
   end
 
-  deprecate! date: "2024-02-04", because: "depends on soon to be deprecated consul"
-
   depends_on "go" => :build
-  depends_on "consul" => :test
+  depends_on "etcd" => :test
   depends_on "libpq"
 
   def install
@@ -53,29 +51,24 @@ class Stolon < Formula
     require "socket"
     require "timeout"
 
-    consul_default_port = 8500
-    localhost_ip = "127.0.0.1".freeze
+    endpoint = "http:127.0.0.1:2379"
+    pid = spawn "etcd", "--advertise-client-urls", endpoint, "--listen-client-urls", endpoint
 
-    if port_open?(localhost_ip, consul_default_port)
-      puts "Consul already running"
-    else
-      fork do
-        exec "consul agent -dev -bind 127.0.0.1"
-        puts "Consul started"
-      end
-      sleep 5
-    end
+    sleep 5
+
     assert_match "stolonctl version #{version}",
       shell_output("#{bin}stolonctl version 2>&1")
-    assert_match "nil cluster data: <nil>",
-      shell_output("#{bin}stolonctl status --cluster-name test --store-backend consul 2>&1", 1)
+    output = shell_output("#{bin}stolonctl status --cluster-name test " \
+                          "--store-backend etcdv3 --store-endpoints #{endpoint} 2>&1", 1)
+    assert_match "nil cluster data: <nil>", output
     assert_match "stolon-keeper version #{version}",
       shell_output("#{bin}stolon-keeper --version 2>&1")
     assert_match "stolon-sentinel version #{version}",
       shell_output("#{bin}stolon-sentinel --version 2>&1")
     assert_match "stolon-proxy version #{version}",
       shell_output("#{bin}stolon-proxy --version 2>&1")
-
-    system "consul", "leave"
+  ensure
+    Process.kill("TERM", pid)
+    Process.wait(pid)
   end
 end

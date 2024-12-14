@@ -1,18 +1,18 @@
 class Grype < Formula
   desc "Vulnerability scanner for container images and filesystems"
   homepage "https:github.comanchoregrype"
-  url "https:github.comanchoregrypearchiverefstagsv0.86.0.tar.gz"
-  sha256 "44b777eeca3127cfe08007fdeb0a7e7f7b1b268eb224b0993e82eb6ab8fd77f7"
+  url "https:github.comanchoregrypearchiverefstagsv0.86.1.tar.gz"
+  sha256 "d339067ba687e70bf62b6050c40d89bf9217ac33e8c101744393d61a4c0e0fb1"
   license "Apache-2.0"
   head "https:github.comanchoregrype.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea6ea374b9a9f71a707cbe944b3ba11d0ab30f9df1a62c32d59334e4dfc81c56"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a450aebe59f6a0f80f51cd9c209e063862401b68744cc8d877d5d174a54e073"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "79d7233181f01b565fdfadf0394985f2c91e7d5c1dabf86f7ea638b803de4f57"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0be1990d919a2f875e9c7f141131025e18a81e8077048d6efb321de89fb77d34"
-    sha256 cellar: :any_skip_relocation, ventura:       "c7cf6bc476e0ff65d8bca80e10702ea3d6bc772fd95f413b739058d1833e84f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3ce37696bc7c26418cc1a7165a75d345cd29a20dc2720dcf6c4429eaebc3f8f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "273577042dbb0b4d5857715271fb6c5a586baeb06d5a88920f0cdfa5de7917f2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7dec8df8068443f18583914df0cf9fb3586e431c3dd915627f5a80b305aff23"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ac243acae4189c0650057182ab520e6a6f7126bec3a6d44748795798f694a437"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8e7b468876ee68803757aa026358e874cf7c9fcf10a188fac68f20ec92c53697"
+    sha256 cellar: :any_skip_relocation, ventura:       "3b81b9d43b2c2270830be61529a918dfc119b648f4225008d1e58809765530a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4b833a7cedca7883ff7a25de0bbca459ff5083363e423b9b8bc3f5a66395fca"
   end
 
   depends_on "go" => :build

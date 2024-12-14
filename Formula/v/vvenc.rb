@@ -1,18 +1,18 @@
 class Vvenc < Formula
   desc "Fraunhofer Versatile Video Encoder"
   homepage "https:github.comfraunhoferhhivvenc"
-  url "https:github.comfraunhoferhhivvencarchiverefstagsv1.12.1.tar.gz"
-  sha256 "ba353363779e8f835200f319c801b052a97d592ebc817b52c41bdce093fa2fe2"
+  url "https:github.comfraunhoferhhivvencarchiverefstagsv1.13.0.tar.gz"
+  sha256 "28994435e4f7792cc3a907b1c5f20afd0f7ef1fcd82eee2af7713df7a72422eb"
   license "BSD-3-Clause-Clear"
   head "https:github.comfraunhoferhhivvenc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e905b360064285e30c7eb8c2713888cac93b28a9388b9bd5a84b0d50c3c2321a"
-    sha256 cellar: :any,                 arm64_sonoma:  "ed236b0f8f357bc8273c8e213576d73177bebd535ad5b3eaa44307012baa9312"
-    sha256 cellar: :any,                 arm64_ventura: "2917e29604a86fc73bc1f4286ca5587dc7f6dcbadea365d8a3b16b8af1d75ef3"
-    sha256 cellar: :any,                 sonoma:        "145f0ed78517a567785ac249aca4dbdf0887a023fffab74c0704de89fd6cd59e"
-    sha256 cellar: :any,                 ventura:       "ec19b435a3fc60d9dfa136cbe797cd23cd0ef91ea2e66869027424b96931ae61"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9d458061236400c33382ea051b66ef09c596f8a52ef5639a87fa3b7ff1610f8"
+    sha256 cellar: :any,                 arm64_sequoia: "7a19d7f4402f06759d7f270a5fdc5f020617b2a9ffe341e11858cd6676949914"
+    sha256 cellar: :any,                 arm64_sonoma:  "cdbbb243d7e900ded36f966c3843ba353833d178a22d62e0d2581558d3528191"
+    sha256 cellar: :any,                 arm64_ventura: "1d5aa565dc36ae8e3433f4f93b8eecbe1f6bde43fb66eacb9aa834a1a2597ee3"
+    sha256 cellar: :any,                 sonoma:        "1ccf83d2dd5b8f41ee83a469cfef3a3925571124eab263e74753bac0be5bf195"
+    sha256 cellar: :any,                 ventura:       "5047f6ac1a59f405b328502d32553f86099a13887214d7e547935af9986f2bd2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ab6befb73b40836dab61c28558e09bbf1104a8477db230f8767f7050c79e5b4"
   end
 
   depends_on "cmake" => :build

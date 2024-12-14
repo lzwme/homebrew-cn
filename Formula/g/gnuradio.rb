@@ -6,7 +6,7 @@ class Gnuradio < Formula
   url "https:github.comgnuradiognuradioarchiverefstagsv3.10.11.0.tar.gz"
   sha256 "9ca658e6c4af9cfe144770757b34ab0edd23f6dcfaa6c5c46a7546233e5ecd29"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
   head "https:github.comgnuradiognuradio.git", branch: "main"
 
   livecheck do
@@ -15,12 +15,12 @@ class Gnuradio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e32a74cda3c91f1f0bd6a048c94dc5381468e8a32e3ba124ecc67681ea85c93f"
-    sha256 cellar: :any,                 arm64_sonoma:  "ab3a5ff722ffc0f72f81d06c7997bf69399149e09947388ae136cbf77a7ec6c8"
-    sha256 cellar: :any,                 arm64_ventura: "9c4f6425905fbdd404f0ace01e1956e1a107a9a6fe8ffaab057030addcafa32f"
-    sha256 cellar: :any,                 sonoma:        "44daf20a7ebaa312e0e8462ec83ce877598c5f96d5b7942e31612a32528202c9"
-    sha256 cellar: :any,                 ventura:       "e7c4fff9fd885440d9e1c4d58a39bdaf59824247c1a2993898c557098d3c2661"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fb99bd447fe6c57571f5bb8669661a6b5b037ba3d43eaa3776a23d1b57cd0a7"
+    sha256 cellar: :any,                 arm64_sequoia: "a68e237184aa8e654424dd61570157af0138a27a3587ef4e7d0b8b51a3c6b2fb"
+    sha256 cellar: :any,                 arm64_sonoma:  "f45f2a919d9c8000066544cd1db5c51cd9cba53f25ca06ccf398b2ecfd7d92d2"
+    sha256 cellar: :any,                 arm64_ventura: "35c82a2d51b34b910d1565e60032670f959893e6e601af3a2d02c1a9f6c0753f"
+    sha256 cellar: :any,                 sonoma:        "f9cc9c15c92e57a380e6b838dd711b2bfd8b5be965c0f15f166f452028f0bdc9"
+    sha256 cellar: :any,                 ventura:       "61f35bb7a8fca7206675c77e4476757b78fc167b5858cb2b6ee5c697a54e8292"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26a41ea0945823d919a08988b7a02851f4f993e5239c3af216272003e38d6573"
   end
 
   depends_on "cmake" => :build
@@ -29,7 +29,7 @@ class Gnuradio < Formula
   depends_on "pybind11" => :build
   depends_on "rust" => :build # for rpds-py
   depends_on "adwaita-icon-theme"
-  depends_on "boost"
+  depends_on "boost@1.85" # Boost 1.87+ PR ref: https:github.comgnuradiognuradiopull7554
   depends_on "cppzmq"
   depends_on "fftw"
   depends_on "fmt"
@@ -67,7 +67,6 @@ class Gnuradio < Formula
   #
   # The following are paths where packages are used:
   # * click - gr-utilsmodtoolcli
-  # * click-plugins - gr-utilsmodtoolclibase.py
   # * jsonschema - grcblocksjson_config.block.yml
   # * lxml - grcconverterxml.py
   # * mako - grc
@@ -84,11 +83,6 @@ class Gnuradio < Formula
   resource "click" do
     url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
     sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
-  end
-
-  resource "click-plugins" do
-    url "https:files.pythonhosted.orgpackages5f1d45434f64ed749540af821fd7e42b8e4d23ac04b1eda7c26613288d6cd8a8click-plugins-1.1.1.tar.gz"
-    sha256 "46ab999744a9d831159c3411bb0c79346d94a444df9a3a3742e9ed63645f264b"
   end
 
   resource "jsonschema" do
@@ -250,9 +244,11 @@ class Gnuradio < Formula
         top.run();
       }
     CPP
-    system ENV.cxx, testpath"test.c++", "-std=c++17", "-L#{lib}",
+
+    boost = Formula["boost@1.85"]
+    system ENV.cxx, testpath"test.c++", "-std=c++17", "-I#{boost.opt_include}", "-L#{lib}",
            "-lgnuradio-blocks", "-lgnuradio-runtime", "-lgnuradio-pmt",
-           "-L#{Formula["boost"].opt_lib}", "-lboost_system",
+           "-L#{boost.opt_lib}", "-lboost_system",
            "-L#{Formula["log4cpp"].opt_lib}", "-llog4cpp",
            "-L#{Formula["fmt"].opt_lib}", "-lfmt",
            "-o", testpath"test"

@@ -6,7 +6,7 @@ class Uhd < Formula
   url "https:github.comEttusResearchuhdarchiverefstagsv4.7.0.0.tar.gz"
   sha256 "afe56842587ce72d6a57535a2b15c061905f0a039abcc9d79f0106f072a00d10"
   license all_of: ["GPL-3.0-or-later", "LGPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0"]
-  revision 1
+  revision 2
   head "https:github.comEttusResearchuhd.git", branch: "master"
 
   livecheck do
@@ -15,19 +15,18 @@ class Uhd < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_sequoia: "8af487212569ce117181b6bb884536580a701a581823cd615168e8fc5b1699e0"
-    sha256                               arm64_sonoma:  "87477b72f2b117d10c580fdc2812e3e1c032309e4e2ce86836cc5250655ef03f"
-    sha256                               arm64_ventura: "86904ebacfd828a291f1f205df0859de71bc412527270400c6eac5df69dfb43d"
-    sha256                               sonoma:        "4a9799003cc7f032a630c857d17a6c970de02beb7f5778c143aa955df670b654"
-    sha256                               ventura:       "43358e6612f828c025c1c7b2e6f00785546f33ab84d4b6c9bf7f4ea850d60947"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8be6e51f1458a8f8ac8d85ab25e00e7d064fb6bbdc23c9abf62890a43cc45fc"
+    sha256                               arm64_sequoia: "4a05fe3cf7631907bef6a416e3a5e1b76ee7c9590e6c02a2194b66b7c5c79292"
+    sha256                               arm64_sonoma:  "ea007011a24d72f1f3ff2d05b1e509d6a0b4bf79fc358117c1ce02714540ebb3"
+    sha256                               arm64_ventura: "047350eee3e26cdb321be13ab062adb73d15690ccd6142456db1bc57c8296b4d"
+    sha256                               sonoma:        "7f649d23d094b511b032788e8d67ea726c4ab394a9e30b2a8c42760aee1bf004"
+    sha256                               ventura:       "aea0fe40b4c6a1a530ad5e57cf4296cdd82345b03730737852451401faea7a66"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e367b389872d8029334fad40c27e6567d17a3a2bab731c3f7a54c626af7cc617"
   end
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
   depends_on "pkgconf" => :build
-  depends_on "boost"
+  depends_on "boost@1.85"
   depends_on "libusb"
   depends_on "python@3.13"
 

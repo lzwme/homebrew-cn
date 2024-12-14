@@ -6,15 +6,15 @@ class Vineyard < Formula
   url "https:github.comv6d-iov6dreleasesdownloadv0.23.2v6d-0.23.2.tar.gz"
   sha256 "2a2788ed77b9459477b3e90767a910e77e2035a34f33c29c25b9876568683fd4"
   license "Apache-2.0"
-  revision 8
+  revision 9
 
   bottle do
-    sha256                               arm64_sequoia: "c3982ddb1a64ee380eeef99b61ffbc33c47d1c0992611d87d16bbf6e5c4c50dc"
-    sha256                               arm64_sonoma:  "696c5f08c347318705f15b2a6332487ebbcaab2fed8cf57415e32d650983c17c"
-    sha256                               arm64_ventura: "4113f2f41c782c487df205939962749282530a81ac64f81baf1540d929fd6374"
-    sha256                               sonoma:        "88d607cbc4fa28ffd036aaa993032cb0f958cdc3c191a118389333ddded63a57"
-    sha256                               ventura:       "92bbb9470d41cb797804d4a711ea2b789355ecd13785be9aa42730e19a491096"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e94c5feb40414e25b77fb2665a6546135169fbbd5b029c065649eee144954f1"
+    sha256                               arm64_sequoia: "1f528609410f9e02d56d6b2517e5f1459c731b10522796eb1c4890847bec8a02"
+    sha256                               arm64_sonoma:  "29e8285e01a286d64e78a00bba49fa12c18f0354061b864b8cb92e11ff4ecc77"
+    sha256                               arm64_ventura: "8d0dcc00e7e5f57cc2d8b03d6afeff35a25a5effb0fc0d6c45684794b8a1aa38"
+    sha256                               sonoma:        "bda2b307746eb09f85aea5f2b648953929406d4a83d1e9ee05e9c701b713a2e8"
+    sha256                               ventura:       "fec317dff55f2921e26f90a7906067cbcd57b92b4a61a4907f40341953851698"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0eb533ac4e1611709db3ea310960bb0c3f3a895ffaed562e8c7ea67744ea2e27"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -22,7 +22,7 @@ class Vineyard < Formula
   depends_on "openssl@3" => :build # indirect (not linked) but CMakeLists.txt checks for it
   depends_on "python@3.12" => :build
   depends_on "apache-arrow"
-  depends_on "boost"
+  depends_on "boost@1.85"
   depends_on "cpprestsdk"
   depends_on "etcd"
   depends_on "etcd-cpp-apiv3"

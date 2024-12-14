@@ -1,8 +1,8 @@
 class Dcmtk < Formula
   desc "OFFIS DICOM toolkit command-line utilities"
   homepage "https://dicom.offis.de/dcmtk.php.en"
-  url "https://dicom.offis.de/download/dcmtk/dcmtk368/dcmtk-3.6.8.tar.gz"
-  sha256 "232076655503138debf2f624109f1799e539354f186ce4e04b27cf82a9d8720f"
+  url "https://dicom.offis.de/download/dcmtk/dcmtk369/dcmtk-3.6.9.tar.gz"
+  sha256 "b93ff5561244916a6e1e7e3ecccf2e26e6932c4edb5961268401cea7d4ab9c16"
   license "BSD-3-Clause"
   head "https://git.dcmtk.org/dcmtk.git", branch: "master"
 
@@ -12,14 +12,12 @@ class Dcmtk < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "7acc30e4227a9bae7f135ea9e61eaaed861a28cb398831733550946b39584a3d"
-    sha256 arm64_sonoma:   "b93d4799f022356c7ae4140f27f7aa2475dc81585ec595db1ef6d682a3dad3d0"
-    sha256 arm64_ventura:  "395d941de382ca2a952d05d29ff5f9d4ff1aba7592c6fd1eb2f685f9129b34c1"
-    sha256 arm64_monterey: "0856d56363ad7e76151ca34bb0622d929ad57c61d1af154a8a110ca50218a2ed"
-    sha256 sonoma:         "2b4b9f0d6e1384949a48bb44c0ed1737268a5a71f9203889203cc524c5c59290"
-    sha256 ventura:        "71cc77981eb068711f0135ac4c8d638a8fd11f12ed432482c57ad2ad9e7f7f5f"
-    sha256 monterey:       "a43505eab9ca8ae07c7f36de7d56b00ec43cc7d9c4742beccecd5c697fbfe146"
-    sha256 x86_64_linux:   "5c3fffbfab9d12f16836c40a46b5080f633049ec2c4e43d2079a97b75e85d1bb"
+    sha256 arm64_sequoia: "6349ba68f65ba257caa778ea8ab86fbf2b70141baf5a0a8f7bfa3759765c42a8"
+    sha256 arm64_sonoma:  "86d3578d795ba30a2a75a9c3d5fa8c5f692bc54c38ed5c2a901cdd10c8e15023"
+    sha256 arm64_ventura: "fd350d43be22126a196b194747b45df08b58919507fd61bde058c153a97ccf33"
+    sha256 sonoma:        "b5496a75247e5fd852d750a503dc788829bcc3e9532a90fae42d64508bf72ba6"
+    sha256 ventura:       "acaae376685ecc370ccf3f6b363b6c1d8b1ace7f752999103eb01eaf44e4716a"
+    sha256 x86_64_linux:  "bf2a2675135b64915b5c5b427c536289e68a904007d0d0ef0c999845005aae14"
   end
 
   depends_on "cmake" => :build
