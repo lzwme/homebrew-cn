@@ -2,9 +2,10 @@ cask "font-playwrite-fr-trad-guides" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflplaywritefrtradguidesPlaywriteFRTradGuides-Regular.ttf"
+  url "https:github.comgooglefontsrawmainoflplaywritefrtradguidesPlaywriteFRTradGuides-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Playwrite FR Trad Guides"
-  homepage "https:github.comTypeTogetherPlaywrite"
+  homepage "https:fonts.google.comspecimenPlaywrite+FR+Trad+Guides"
 
   font "PlaywriteFRTradGuides-Regular.ttf"
 

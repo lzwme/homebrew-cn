@@ -1,21 +1,17 @@
 class Libxv < Formula
   desc "X.Org: X Video (Xv) extension"
   homepage "https://www.x.org/"
-  url "https://www.x.org/archive/individual/lib/libXv-1.0.12.tar.xz"
-  sha256 "aaf7fa09f689f7a2000fe493c0d64d1487a1210db154053e9e2336b860c63848"
+  url "https://www.x.org/archive/individual/lib/libXv-1.0.13.tar.xz"
+  sha256 "7d34910958e1c1f8d193d828fea1b7da192297280a35437af0692f003ba03755"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "fa6b877a6ee5fe4b704687b2d1b88e5463cc8ac17a1fdf82fbb6ad5eef3f5b25"
-    sha256 cellar: :any,                 arm64_sonoma:   "5da6b984fb945045bf874466b46f4ead45eef51078d6f39e1fba6b4787834326"
-    sha256 cellar: :any,                 arm64_ventura:  "4abc69ff5d7bc6589f2cad3bce5c1806663ae041f9baa37bd5e38dd614b3c798"
-    sha256 cellar: :any,                 arm64_monterey: "13ab976fc89ac05fe51660801e55e30d8a98dcbb5bf0a037bf0a922bf9dc1aeb"
-    sha256 cellar: :any,                 arm64_big_sur:  "3886235b3db42d980d1334efba2b4bc19c8e5112f33146e278ea8facd55cd18a"
-    sha256 cellar: :any,                 sonoma:         "3d9474437e4604d27d675c9fa2266a66a175ac4f370e63a6ddd84641e8b5fff7"
-    sha256 cellar: :any,                 ventura:        "de0cf22fe91fc6aef98d41c771e05e8e290b33f710f7b2d012a4de9292494e94"
-    sha256 cellar: :any,                 monterey:       "aa57ca0e247ebd7af7cc9f19c1515c05385b29e08f0ffd353d43109be59e6054"
-    sha256 cellar: :any,                 big_sur:        "4691aa977897287cf117d08f5ac69dccd9347c210774f601ea81c14b77d75374"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db2f06d9ccdd30342fa9d7249dbc068cd1bdb3800f44e22424269f4c29dc5bd6"
+    sha256 cellar: :any,                 arm64_sequoia: "ca4ceb63d5715291d60b70df4374fc26c5d559fa3e97fd7cd910df33f5a0a4b0"
+    sha256 cellar: :any,                 arm64_sonoma:  "b5b7f229fbcefcabbeb5a0bbac23094686d2669c1adebfd5c292bc57528442aa"
+    sha256 cellar: :any,                 arm64_ventura: "feb734a5af4fb26c75394824bcb0e3475eccc29432c3737ab89433a9b8980b5d"
+    sha256 cellar: :any,                 sonoma:        "efca4bea336f2d0ccf72c4b70d7fe7b651ba28ded3c751d83dc9c612a0baa348"
+    sha256 cellar: :any,                 ventura:       "a84ae702322ad41c4f4700a86f0c433211b2ecea8e5d491924cb11e3d6021027"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1371d2c06b2dbb27c1e2c3e7e15227a9741dcf2a6709513e0577d185628291f"
   end
 
   depends_on "pkgconf" => :build

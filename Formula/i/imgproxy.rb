@@ -1,19 +1,18 @@
 class Imgproxy < Formula
   desc "Fast and secure server for resizing and converting remote images"
   homepage "https:imgproxy.net"
-  url "https:github.comimgproxyimgproxyarchiverefstagsv3.26.0.tar.gz"
-  sha256 "6125d230b35cca2b0ca53e06afd82b1bb01aafd0eee2e6617cbd9f5fab6c9e31"
+  url "https:github.comimgproxyimgproxyarchiverefstagsv3.26.1.tar.gz"
+  sha256 "734fab3838efc1636b51680889e9360752044c37fe78ce2c94e6dd47b91d2637"
   license "MIT"
   head "https:github.comimgproxyimgproxy.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "2a568c5a604ccb1f091d90b14738baf4c9e45bab7a4424044466f24e068e47cc"
-    sha256 cellar: :any,                 arm64_sonoma:  "39daebbe6837a0409ee37b0e341503cac862bab16fc5041cfc8af92c09dcdfd0"
-    sha256 cellar: :any,                 arm64_ventura: "3c0041006749b164261e3818e9ae178d75240b527b6fb893fdd3f19939be11f0"
-    sha256 cellar: :any,                 sonoma:        "d69ff56f009a15bba489ebbd6f58d0920a745e64e270f9851b580f0f24916bbe"
-    sha256 cellar: :any,                 ventura:       "716c129eb8e635d0cda108a9fd21aa8e2f2bd997d1663621e260ddbe8d6f3036"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36b0215e1db006c135151be22ee931213d63c23377338efdd289ac9d7988b5fa"
+    sha256 cellar: :any,                 arm64_sequoia: "0f5c22462d4b79989951dea0000b16e395f1cec28a74b2d812e6b9a0ebc431f7"
+    sha256 cellar: :any,                 arm64_sonoma:  "2241f7036c3136b756990ccc5ace4fe5da7fc5f94887c49dcbd0d92e990920c8"
+    sha256 cellar: :any,                 arm64_ventura: "8e8f4f647146c6242d7c297e5e0f3f48101239a652cdd16f93f8cf24e831d75b"
+    sha256 cellar: :any,                 sonoma:        "8af4e5dfbb47565e7be0471feb48fc093a1414d9dc3e7b2eed003cbf35f9fe2c"
+    sha256 cellar: :any,                 ventura:       "43188f27ed7af56ae97975541ac5ade2ee3e134204ecd49a8afae01724be601c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f04bc980c7823f1930fa41a529cc470ce5f24ac5adddefdf7881059a3c9453ad"
   end
 
   depends_on "go" => :build
@@ -40,8 +39,8 @@ class Imgproxy < Formula
     ENV["IMGPROXY_LOCAL_FILESYSTEM_ROOT"] = testpath
 
     pid = spawn bin"imgproxy"
-    sleep 30
-    sleep 30 if OS.mac? && Hardware::CPU.intel?
+    sleep 20
+    sleep 40 if OS.mac? && Hardware::CPU.intel?
 
     output = testpath"test-converted.png"
     url = "http:127.0.0.1:#{port}insecureresize:fit:100:100:trueplainlocal:test.jpg@png"

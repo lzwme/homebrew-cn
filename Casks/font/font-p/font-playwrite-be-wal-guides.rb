@@ -2,9 +2,10 @@ cask "font-playwrite-be-wal-guides" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflplaywritebewalguidesPlaywriteBEWALGuides-Regular.ttf"
+  url "https:github.comgooglefontsrawmainoflplaywritebewalguidesPlaywriteBEWALGuides-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Playwrite BE WAL Guides"
-  homepage "https:github.comTypeTogetherPlaywrite"
+  homepage "https:fonts.google.comspecimenPlaywrite+BE+WAL+Guides"
 
   font "PlaywriteBEWALGuides-Regular.ttf"
 

@@ -58,6 +58,7 @@ class Coin3d < Formula
   depends_on "qt"
 
   on_linux do
+    depends_on "libx11"
     depends_on "libxi"
     depends_on "mesa"
     depends_on "mesa-glu"

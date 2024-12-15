@@ -1,21 +1,17 @@
 class Libice < Formula
   desc "X.Org: Inter-Client Exchange Library"
   homepage "https://www.x.org/"
-  url "https://www.x.org/archive/individual/lib/libICE-1.1.1.tar.xz"
-  sha256 "03e77afaf72942c7ac02ccebb19034e6e20f456dcf8dddadfeb572aa5ad3e451"
+  url "https://www.x.org/archive/individual/lib/libICE-1.1.2.tar.xz"
+  sha256 "974e4ed414225eb3c716985df9709f4da8d22a67a2890066bc6dfc89ad298625"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "72719037ab14a8bd8f4acb21d4c2a4562df939621cd115f4eeb9c0fa8a62dbd4"
-    sha256 cellar: :any,                 arm64_sonoma:   "9631199b732614ee51c17bb28c12cac73da2317a4496da042900ef3d80f73b17"
-    sha256 cellar: :any,                 arm64_ventura:  "4b76f982119e65321f62bbb740a549d08f280ab7055496210ac78acf6505a6c4"
-    sha256 cellar: :any,                 arm64_monterey: "2b30372decf9b63bb1c02d6dabe2eb8216eefd7abbb71e902863ceac1633dcaa"
-    sha256 cellar: :any,                 arm64_big_sur:  "34577a485f10e25e38e27606158bd082e460a36874532bbc0e720bd71f5b9db8"
-    sha256 cellar: :any,                 sonoma:         "3361ef875d4db4f7d0f98d3880c61e38648f207c7010881dadaef6c9dd68f852"
-    sha256 cellar: :any,                 ventura:        "be08a5e12f40f1f2e5fc780ca8735969a41b5f2f5d5994788721de92120828bd"
-    sha256 cellar: :any,                 monterey:       "a6c573ba977c781d5d6c8a5a361ed109b7bdb94f8ba0907a0ff4fc69cd425baa"
-    sha256 cellar: :any,                 big_sur:        "041d92a0fbdd7f581ac42bf05d63ff8156c52d5ce6218b92aa0929d221ece18c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aed9bb2a55522c29d05b499b235181e2474d34e242991238e8322b3d8222ecb7"
+    sha256 cellar: :any,                 arm64_sequoia: "03325eb9b5e663073aedb7f13e975a91d5aa8edb943e71ba52d065128105651f"
+    sha256 cellar: :any,                 arm64_sonoma:  "d62af819826bc4e9ee6a3dceef659d424090f9629db566a3a18eb0f580106888"
+    sha256 cellar: :any,                 arm64_ventura: "7197a6fa7f40caa23c06e2a8276c199f1e35a0284050d7042711a278725045ed"
+    sha256 cellar: :any,                 sonoma:        "c62d9319100ce6332a7c6335c3365b2e2a216f7df9aa5bf1daae891bdb88edd0"
+    sha256 cellar: :any,                 ventura:       "902b4b280d60b9ce71177d3ff0bc0e87213afa56f99b418fd02ec57b748fc6a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4031d0484219c9a701184de11ae283694a3e1067a0103ff661a29e165acc52b"
   end
 
   depends_on "pkgconf" => :build

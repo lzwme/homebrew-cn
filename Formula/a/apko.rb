@@ -1,8 +1,8 @@
 class Apko < Formula
   desc "Build OCI images from APK packages directly without Dockerfile"
   homepage "https:github.comchainguard-devapko"
-  url "https:github.comchainguard-devapkoarchiverefstagsv0.21.0.tar.gz"
-  sha256 "148c30925c120f005fcf00b713c8f6d024788f9e6944d4042054875f2bc4b2c1"
+  url "https:github.comchainguard-devapkoarchiverefstagsv0.22.2.tar.gz"
+  sha256 "8b745848c3bc051fe44b294002513b015bdc9a3fb9da4f495e26fbf90326a8af"
   license "Apache-2.0"
   head "https:github.comchainguard-devapko.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Apko < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f0734d55c36992e268abb2a177e869202b17342b2a412052899be9d1da9f8c8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f0734d55c36992e268abb2a177e869202b17342b2a412052899be9d1da9f8c8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4f0734d55c36992e268abb2a177e869202b17342b2a412052899be9d1da9f8c8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d81892ae155b4b7d592a595ab86890cd17c39ab94100341c18e9d88618d03dc4"
-    sha256 cellar: :any_skip_relocation, ventura:       "d81892ae155b4b7d592a595ab86890cd17c39ab94100341c18e9d88618d03dc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1971a1c06947fa1b8e1e565f8f960ed7113b5ed37c3d0ecf204defa41f15f278"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8850485baa8f0b70bcf53929d143e7e70a2e0cf2c31abfcf55e2caec39d562ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8850485baa8f0b70bcf53929d143e7e70a2e0cf2c31abfcf55e2caec39d562ff"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8850485baa8f0b70bcf53929d143e7e70a2e0cf2c31abfcf55e2caec39d562ff"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7a14516895eb2f6788b451e20687b1dcbc0d71a0deca98bca9a56b151a8d0c74"
+    sha256 cellar: :any_skip_relocation, ventura:       "7a14516895eb2f6788b451e20687b1dcbc0d71a0deca98bca9a56b151a8d0c74"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d17e0f80ea426e4c0e5b0fdc3945242758ba8ca79a1d547feee09bbf46ca553"
   end
 
   depends_on "go" => :build

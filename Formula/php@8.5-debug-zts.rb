@@ -1,20 +1,20 @@
 class PhpAT85DebugZts < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
-  url "https:github.comphpphp-srcarchivec630801ae764c82b478d5e16e81577a2a6213823.tar.gz?commit=c630801ae764c82b478d5e16e81577a2a6213823"
+  url "https:github.comphpphp-srcarchive57e9429e73a05193699283aad53219a9b5788483.tar.gz?commit=57e9429e73a05193699283aad53219a9b5788483"
   version "8.5.0"
-  sha256 "46f43892e79d6fe3551d22d5e71a2f09f0b85ecac883195202265f06a79374e6"
+  sha256 "7bbf5b4c3c4bc43eccf0666b4b18170de4e40d98d32473d98a6ace42a742788f"
   license "PHP-3.01"
   revision 2
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    rebuild 11
-    sha256 arm64_sequoia: "b0b308c0014f60d1ac08d9153ad1f8c2b44dcd49d7fec891a739bc19f95e7375"
-    sha256 arm64_sonoma:  "beb30d422db6d16f94f5352ff2976f887e4df7a02f58043b99a1a216fb6e2f44"
-    sha256 arm64_ventura: "1f3cb3d91b0282d1a2c16a85870e915bf74427d68d7bc9f489e490e25217bc1b"
-    sha256 ventura:       "db3749f02e24ab9bdf20d1ae767ddc638e77746aae58bd18607e407aa95d9328"
-    sha256 x86_64_linux:  "ffa58be7b605d40517678dcd1831b95cbc25f01105ae84cd13adee7589a183ab"
+    rebuild 13
+    sha256 arm64_sequoia: "b436129bab8a0697dedd716471df10cb235667f7b750a227a265becbeda998fc"
+    sha256 arm64_sonoma:  "7241205970ac92a3a1f2ff3639a40143f063487f3d582cec7e169bc82a9990c5"
+    sha256 arm64_ventura: "7fa23681fdf4e6982fdfcc419a61e708695d4b86666cfd9b8239e41ab2966d0a"
+    sha256 ventura:       "1221e696aa0b94730d9d8079f5c1ae298d0ac7f6dfcac48fed25192a3e2d527d"
+    sha256 x86_64_linux:  "a596837ff94022ab1ce232033b54f0d349929e2baf866645936cf663a2791c32"
   end
 
   keg_only :versioned_formula
@@ -115,7 +115,7 @@ class PhpAT85DebugZts < Formula
     fpm_user = OS.mac? ? "_www" : "www-data"
     fpm_group = OS.mac? ? "_www" : "www-data"
 
-    args = %W[
+    shared_args = %W[
       --prefix=#{prefix}
       --localstatedir=#{var}
       --sysconfdir=#{config_path}
@@ -129,7 +129,6 @@ class PhpAT85DebugZts < Formula
       --enable-dba
       --enable-exif
       --enable-ftp
-      --enable-fpm
       --enable-gd
       --enable-intl
       --enable-mbregex
@@ -147,15 +146,12 @@ class PhpAT85DebugZts < Formula
       --enable-sysvsem
       --enable-sysvshm
       --enable-zts
-      --with-apxs2=#{Formula["httpd"].opt_bin}apxs
       --with-bz2#{headers_path}
       --with-capstone
       --with-curl
       --with-external-gd
       --with-external-pcre
       --with-ffi
-      --with-fpm-user=#{fpm_user}
-      --with-fpm-group=#{fpm_group}
       --with-gettext=#{Formula["gettext"].opt_prefix}
       --with-gmp=#{Formula["gmp"].opt_prefix}
       --with-iconv#{headers_path}
@@ -188,14 +184,40 @@ class PhpAT85DebugZts < Formula
     ]
 
     if OS.mac?
-      args << "--enable-dtrace"
-      args << "--with-ldap-sasl"
-      args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}"
+      shared_args << "--enable-dtrace"
+      shared_args << "--with-ldap-sasl"
+      shared_args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}"
     else
-      args << "--disable-dtrace"
-      args << "--without-ldap-sasl"
-      args << "--without-ndbm"
-      args << "--without-gdbm"
+      shared_args << "--disable-dtrace"
+      shared_args << "--without-ldap-sasl"
+      shared_args << "--without-ndbm"
+      shared_args << "--without-gdbm"
+    end
+
+    args = shared_args.map(&:clone)
+    args << "--with-apxs2=#{Formula["httpd"].opt_bin}apxs"
+    args << "--enable-fpm"
+    args << "--with-fpm-user=#{fpm_user}"
+    args << "--with-fpm-group=#{fpm_group}"
+
+    system ".configure", *args
+    system "make"
+    system "make", "install"
+
+    # Build libphp in another pass,
+    # because it's not possible to build Apache and embed at the same time
+    args = shared_args.map(&:clone)
+    args << "--disable-cgi"
+    args << "--disable-cli"
+    args << "--disable-phpdbg"
+
+    if OS.mac?
+      args << "--disable-opcache-jit"
+      args << "--enable-embed=static"
+      args << "--enable-shared=no"
+      args << "--enable-static"
+    else
+      args << "--enable-embed"
     end
 
     system ".configure", *args

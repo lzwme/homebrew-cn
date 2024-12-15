@@ -12,12 +12,13 @@ class Gdal < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "668339891975c9f9949bbd00818306faee5901295ad99a67e56a9bf1b157be17"
-    sha256 arm64_sonoma:  "d4e876f79f2659577c7ca909e4840cfd0cf124e96731e03611bd61c3f43143a9"
-    sha256 arm64_ventura: "dcbb1c9fc0e4a812974f816342fb44a410b378f30b868bd085a537b80c49f150"
-    sha256 sonoma:        "061582a8bed0368643f2861fa0dbabe85853aa86428f9ea233ba98684143ba41"
-    sha256 ventura:       "d9234301535788a84da751c1df78193a787b4009eee8dd69d0a43aa9cd578ec7"
-    sha256 x86_64_linux:  "1aadce9769e43726fe2daefe6edff5f6a2d4e289b457448b152ff281119abdf5"
+    rebuild 1
+    sha256 arm64_sequoia: "2e7e370c46bd9416b1318a74e846273af14cfaafd8a46f7685dfeb049c794ffe"
+    sha256 arm64_sonoma:  "1329ab093266acc1722ed51022fe189e0728f6a7a78be3e0a0735307a680f3ac"
+    sha256 arm64_ventura: "73735f6e27207776662163d0f027f4f88f21902efc114fb0467e1b08e7f78efc"
+    sha256 sonoma:        "969f23a77e6f48985e1d7859a117391542bdc23843b3c8c28e81a5821c6a9df3"
+    sha256 ventura:       "d1de1e412c17bc979e86cd07900c986d4a3866641c5d439671807afae8d7f295"
+    sha256 x86_64_linux:  "473db1e7bf91c3f1dc616c1b320169411fc277d925e092e6b55e7ee6e62fa24e"
   end
 
   head do
@@ -31,6 +32,7 @@ class Gdal < Formula
   depends_on "python-setuptools" => :build
   depends_on "swig" => :build
   depends_on "apache-arrow"
+  depends_on "c-blosc"
   depends_on "cfitsio"
   depends_on "epsilon"
   depends_on "expat"
@@ -128,5 +130,7 @@ class Gdal < Formula
     system bin"ogrinfo", "--formats"
     # Changed Python package name from "gdal" to "osgeo.gdal" in 3.2.0.
     system python3, "-c", "import osgeo.gdal"
+    # test for zarr blosc compressor
+    assert_match "BLOSC_COMPRESSORS", shell_output("#{bin}gdalinfo --format Zarr")
   end
 end

@@ -2,9 +2,10 @@ cask "font-playwrite-be-vlg-guides" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflplaywritebevlgguidesPlaywriteBEVLGGuides-Regular.ttf"
+  url "https:github.comgooglefontsrawmainoflplaywritebevlgguidesPlaywriteBEVLGGuides-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Playwrite BE VLG Guides"
-  homepage "https:github.comTypeTogetherPlaywrite"
+  homepage "https:fonts.google.comspecimenPlaywrite+BE+VLG+Guides"
 
   font "PlaywriteBEVLGGuides-Regular.ttf"
 

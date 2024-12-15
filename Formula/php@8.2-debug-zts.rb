@@ -8,11 +8,12 @@ class PhpAT82DebugZts < Formula
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    sha256 arm64_sequoia: "e25b8b6246bf775099cf0ec5580808edb522b34c073ee8b28fbe43cad5c38a1a"
-    sha256 arm64_sonoma:  "590aff5c24a399f5a52844ab5b1da7cd369c61e7f264724e1a88d4f1f52364e4"
-    sha256 arm64_ventura: "aa239bb3e98468f8067bbfa7798d1cbceb9744d7df72f646d2b0c29e6e9a79e2"
-    sha256 ventura:       "a70ff83d23dec1b9f984515061930595de896b5e85449c8a4367513cae299aa5"
-    sha256 x86_64_linux:  "9a6ed3d25022cb14eb18fa4ab721837813f2b63205edfcc4d9d8e0f758d166f0"
+    rebuild 1
+    sha256 arm64_sequoia: "101f45e6ab57b2b07449d2d5ae1ed168c2768d2750609957de63f37297654be5"
+    sha256 arm64_sonoma:  "59017341f2cc5840ec3ec5168ed614e6a3bd89c5dd93d8e08bc2ea10c1e3d1bf"
+    sha256 arm64_ventura: "debfeb20ca4bcf78d2302400abcfe395c39d3b198b9c8b8cb8c6b1845fb9e0fe"
+    sha256 ventura:       "5e47b87b11e7dcaacb30e49796fd673f0ededf0f846578da07f305ed6b63f01b"
+    sha256 x86_64_linux:  "786ac7b966465481291280c6ab204b61797a8488a8471c4bd735a03fbf3cc6e1"
   end
 
   keg_only :versioned_formula
@@ -117,7 +118,7 @@ class PhpAT82DebugZts < Formula
     fpm_user = OS.mac? ? "_www" : "www-data"
     fpm_group = OS.mac? ? "_www" : "www-data"
 
-    args = %W[
+    shared_args = %W[
       --prefix=#{prefix}
       --localstatedir=#{var}
       --sysconfdir=#{config_path}
@@ -131,7 +132,6 @@ class PhpAT82DebugZts < Formula
       --enable-dba
       --enable-exif
       --enable-ftp
-      --enable-fpm
       --enable-gd
       --enable-intl
       --enable-mbregex
@@ -148,14 +148,11 @@ class PhpAT82DebugZts < Formula
       --enable-sysvshm
       --enable-zend-max-execution-timers
       --enable-zts
-      --with-apxs2=#{Formula["httpd"].opt_bin}apxs
       --with-bz2#{headers_path}
       --with-curl
       --with-external-gd
       --with-external-pcre
       --with-ffi
-      --with-fpm-user=#{fpm_user}
-      --with-fpm-group=#{fpm_group}
       --with-gettext=#{Formula["gettext"].opt_prefix}
       --with-gmp=#{Formula["gmp"].opt_prefix}
       --with-iconv#{headers_path}
@@ -188,14 +185,40 @@ class PhpAT82DebugZts < Formula
     ]
 
     if OS.mac?
-      args << "--enable-dtrace"
-      args << "--with-ldap-sasl"
-      args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}"
+      shared_args << "--enable-dtrace"
+      shared_args << "--with-ldap-sasl"
+      shared_args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}"
     else
-      args << "--disable-dtrace"
-      args << "--without-ldap-sasl"
-      args << "--without-ndbm"
-      args << "--without-gdbm"
+      shared_args << "--disable-dtrace"
+      shared_args << "--without-ldap-sasl"
+      shared_args << "--without-ndbm"
+      shared_args << "--without-gdbm"
+    end
+
+    args = shared_args.map(&:clone)
+    args << "--with-apxs2=#{Formula["httpd"].opt_bin}apxs"
+    args << "--enable-fpm"
+    args << "--with-fpm-user=#{fpm_user}"
+    args << "--with-fpm-group=#{fpm_group}"
+
+    system ".configure", *args
+    system "make"
+    system "make", "install"
+
+    # Build libphp in another pass,
+    # because it's not possible to build Apache and embed at the same time
+    args = shared_args.map(&:clone)
+    args << "--disable-cgi"
+    args << "--disable-cli"
+    args << "--disable-phpdbg"
+
+    if OS.mac?
+      args << "--disable-opcache-jit"
+      args << "--enable-embed=static"
+      args << "--enable-shared=no"
+      args << "--enable-static"
+    else
+      args << "--enable-embed"
     end
 
     system ".configure", *args

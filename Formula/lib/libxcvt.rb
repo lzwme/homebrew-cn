@@ -1,23 +1,18 @@
 class Libxcvt < Formula
   desc "VESA CVT standard timing modelines generator"
   homepage "https://www.x.org"
-  url "https://www.x.org/releases/individual/lib/libxcvt-0.1.2.tar.xz"
-  sha256 "0561690544796e25cfbd71806ba1b0d797ffe464e9796411123e79450f71db38"
+  url "https://www.x.org/releases/individual/lib/libxcvt-0.1.3.tar.xz"
+  sha256 "a929998a8767de7dfa36d6da4751cdbeef34ed630714f2f4a767b351f2442e01"
   license "MIT"
   head "https://gitlab.freedesktop.org/xorg/lib/libxcvt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "9eca3d5d3c8174c805770d34dc484b0ba04a220b9f0ee11fbb4fdd0adb5132c9"
-    sha256 cellar: :any,                 arm64_sonoma:   "e5330b082cb12735cac4debbd5cbf3df873ff2b52f8312e441b0524593a5065f"
-    sha256 cellar: :any,                 arm64_ventura:  "7b5543e3a1de31fd0c1f1cb95b6e05784de3198fcf6c153507b67f0e624dcaa9"
-    sha256 cellar: :any,                 arm64_monterey: "7bf701bf10b2f4888d102161d975ba7e65cfe404d66811088c567e04e925435a"
-    sha256 cellar: :any,                 arm64_big_sur:  "98a64b3f8dcd7212b401b486913c75760ab274112330d518d1998426bbf65860"
-    sha256 cellar: :any,                 sonoma:         "fbcf75fba68fbc9b34804208c588435b519d4d5b3dbe8360d21bd46b02131244"
-    sha256 cellar: :any,                 ventura:        "84a8baa5cbfd1b4aa075b36f9e3e732a534a77d5838dc4416416593a684d0adc"
-    sha256 cellar: :any,                 monterey:       "98f38e88cdc169665f5cb713a7f91ee55baa03161c2d8f9c2728c3e34b2061d0"
-    sha256 cellar: :any,                 big_sur:        "d6f36b386b356f7d50048eee56dbea33b0faff4e19357ff48ade8271b6ca1fe4"
-    sha256 cellar: :any,                 catalina:       "da146a062545c10c45d7adaecda617dd9a3126aac7be26474548ae490c06c5f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e7dc66c26952d298964949abc65021064296fcd969efa2d1a93ffc7c8765bea5"
+    sha256 cellar: :any,                 arm64_sequoia: "190b2e04bf9616a948e8fa075bd511d0f85a215f2442989ba8930c56ac175963"
+    sha256 cellar: :any,                 arm64_sonoma:  "dacbc2be6db4ffdf428c83a18f7ad4c8f4d1613996cc75e8d530adc055bfce38"
+    sha256 cellar: :any,                 arm64_ventura: "30c0ae9b77b6fe734fc12d9e0dd93b34ae5f04def67627d702cd6620dc1e2a32"
+    sha256 cellar: :any,                 sonoma:        "cb2920936dffded24ba49ec10ce12454ba840122f9fdfe9d43d71a1d916bca16"
+    sha256 cellar: :any,                 ventura:       "8fe87353ad2535c4d00afc7b998635f11869abbcdd9ba29de9030a344fbd670f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f789ac088fa131120166a7cc7b61feda163748127f353e9ad40473d6031dd602"
   end
 
   depends_on "meson" => :build

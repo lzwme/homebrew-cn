@@ -2,7 +2,7 @@ class Mpd < Formula
   desc "Music Player Daemon"
   homepage "https:github.comMusicPlayerDaemonMPD"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
   head "https:github.comMusicPlayerDaemonMPD.git", branch: "master"
 
   stable do
@@ -17,12 +17,12 @@ class Mpd < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "78824e8522be8ed0295a10425e51d240dd57ca42b7144575cf927a8c96a5f05d"
-    sha256 cellar: :any, arm64_sonoma:  "cf82215e0eae9339430efb14492ed1d1666bc4894b3a272245276afb99d2fcfc"
-    sha256 cellar: :any, arm64_ventura: "e9c07153717e45bd7ed0a520cfaf682d83de67a02ec3b34b7c99f11dc55d3474"
-    sha256 cellar: :any, sonoma:        "04c50d82ff1c8ab9e8fa0b82cb20c4b22ec126de59ac9fc66440431d70ac5a23"
-    sha256 cellar: :any, ventura:       "48c49888012335ccb8bc37f86d5389aa4e4e96c436da8916f953f432005a7ad0"
-    sha256               x86_64_linux:  "5a78d9d87bb558211f09dced67d583c0673ed39a836ba7e583d9193cc01c35b4"
+    sha256 cellar: :any, arm64_sequoia: "9a9354f8f2e68f7b9a7f3374c69a6216e3bbbddfdf00c88bee70a11f7024ffd6"
+    sha256 cellar: :any, arm64_sonoma:  "1a816d6549cf5485e60b818e86933166a97af3f0f838fd9e4436b0d56b20262a"
+    sha256 cellar: :any, arm64_ventura: "7959d13d7d3e5e64d658b77b0f7204237b7bd0a8b74a200a34c55c3116a8f727"
+    sha256 cellar: :any, sonoma:        "34d9b1cd6e9963b8fa4042ea49b0b85aedb28574c5a3576d3a113c29f378da2a"
+    sha256 cellar: :any, ventura:       "6c57462d32ab0bbe02bcb8d36547d8895dc19e468ce3c6ffb626cbbeab15cc3e"
+    sha256               x86_64_linux:  "312aa5516ab7ba1c7018425dea8b0439850c6727d4073a85fd1e789d84889ad0"
   end
 
   depends_on "boost" => :build

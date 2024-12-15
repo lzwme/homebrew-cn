@@ -128,6 +128,6 @@ class Yewtube < Formula
       "youtube-dl test video,", "d 1,", "q"
     downloaded_file = (testpath"mps").children.first
     file_info = Utils.safe_popen_read("file", "--brief", downloaded_file).strip
-    assert_match(^(WebM)|(.*MP4.*)$, file_info)
+    assert_match(^(WebM)|(.*MP4.*)|(Matroska.*)$, file_info)
   end
 end

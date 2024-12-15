@@ -2,9 +2,10 @@ cask "font-playwrite-mx-guides" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflplaywritemxguidesPlaywriteMXGuides-Regular.ttf"
+  url "https:github.comgooglefontsrawmainoflplaywritemxguidesPlaywriteMXGuides-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Playwrite MX Guides"
-  homepage "https:github.comTypeTogetherPlaywrite"
+  homepage "https:fonts.google.comspecimenPlaywrite+MX+Guides"
 
   font "PlaywriteMXGuides-Regular.ttf"
 

@@ -1,17 +1,17 @@
 class Libnfs < Formula
   desc "C client library for NFS"
   homepage "https:github.comsahlberglibnfs"
-  url "https:github.comsahlberglibnfsarchiverefstagslibnfs-6.0.1.tar.gz"
-  sha256 "16c2f2f67c68e065304e42a9975e9238f773c53c3cd048574e83c6f8a9f445c3"
+  url "https:github.comsahlberglibnfsarchiverefstagslibnfs-6.0.2.tar.gz"
+  sha256 "4e5459cc3e0242447879004e9ad28286d4d27daa42cbdcde423248fad911e747"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a7dde222002bc32bffc79d59ef75f13f904c1704ea9cedb4caed9a427f60e115"
-    sha256 cellar: :any,                 arm64_sonoma:  "3bd08fd8c27af6c0a48fc215feb89ba9879054b16b5f9dc465c5a99bc1f015ef"
-    sha256 cellar: :any,                 arm64_ventura: "8981260780efb3ae005b7a8d873eea61c4d9c4a68939b66185ac3e997e87f36d"
-    sha256 cellar: :any,                 sonoma:        "74330ab7704e64e960f637a725692b50fbd175fe5fab6e0845fd45d19bf6c0bd"
-    sha256 cellar: :any,                 ventura:       "234d992e081fc292e7227e7c49b88ab45c9d18912df1d7831096b8dbce463649"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a71129f89e6532aa5e969acd7603c58c77dd6c133d3a84b5242bea49bfb8d631"
+    sha256 cellar: :any,                 arm64_sequoia: "2e9065bfd3abd3ffe1d38f5637551210ee628b9512eedeb4d30ec5889c2cd346"
+    sha256 cellar: :any,                 arm64_sonoma:  "146e3c3bff06a7f0235889cc38a392f4fa2a0371a03523f697a764b2c59ee770"
+    sha256 cellar: :any,                 arm64_ventura: "d7e4428a240be4fd0c4fec619de6b93846305156b054b8e813917a2a70a17a26"
+    sha256 cellar: :any,                 sonoma:        "4509c2de7ad0dc7583d3d4ad6f17719eaf306adf33dcc5e8b272a69c153aa276"
+    sha256 cellar: :any,                 ventura:       "15287f2942eb74117211df3c6b6bdb9bda26755f4d725c6e355bde38e162e7ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0477428f6b57eb2ebc18e86a9c62951d42623dfb516b6f8e6b409625f943a233"
   end
 
   depends_on "cmake" => :build

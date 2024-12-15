@@ -3,12 +3,12 @@ class LanggraphCli < Formula
 
   desc "Command-line interface for deploying apps to the LangGraph platform"
   homepage "https:www.github.comlangchain-ailanggraph"
-  url "https:files.pythonhosted.orgpackagesaa9668d5e157e8b313bb76c504dd3288ab020942f9ef4353017f25adb4570ee7langgraph_cli-0.1.61.tar.gz"
-  sha256 "373bba9c297408afb84ffb19df868b49c23390195bb0029cb6f8945f8a202eca"
+  url "https:files.pythonhosted.orgpackages653b4b740059398c0c85a8595903530716b4de15b599515a4e1b8eba8b6dd5b5langgraph_cli-0.1.63.tar.gz"
+  sha256 "b1b962b8eeb0d83dfb0fec7f29939c342f08f1f070cf57f6618030495ca179c6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a629faa85d689a9b8bb58108c4e8e1a7d2b4855bb51d9f105378a67259680065"
+    sha256 cellar: :any_skip_relocation, all: "037b657db9addf96a8babde3bc38faf58f7b9b0631e6f4cb975ca014634f30e8"
   end
 
   depends_on "python@3.13"

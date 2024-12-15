@@ -1,20 +1,20 @@
 class PhpAT85Zts < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
-  url "https:github.comphpphp-srcarchivec630801ae764c82b478d5e16e81577a2a6213823.tar.gz?commit=c630801ae764c82b478d5e16e81577a2a6213823"
+  url "https:github.comphpphp-srcarchive57e9429e73a05193699283aad53219a9b5788483.tar.gz?commit=57e9429e73a05193699283aad53219a9b5788483"
   version "8.5.0"
-  sha256 "46f43892e79d6fe3551d22d5e71a2f09f0b85ecac883195202265f06a79374e6"
+  sha256 "7bbf5b4c3c4bc43eccf0666b4b18170de4e40d98d32473d98a6ace42a742788f"
   license "PHP-3.01"
   revision 2
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    rebuild 11
-    sha256 arm64_sequoia: "90c4ba59b5b150d8acad9fbf1fcce0d0b887675e4b108cb0797112f8b8d5d89a"
-    sha256 arm64_sonoma:  "5a64e7d286bc4f0c00d07fe480dbb4842ddd1e85fd936de7ed349ddc442ffa20"
-    sha256 arm64_ventura: "d81647ba249133e12cc9c22fae68b5668113c1e4c996d5336d4a04f1824370e4"
-    sha256 ventura:       "7540719c107fb8d142f061bb962237660815f4b9c39e1e7805b2b823b424c1e7"
-    sha256 x86_64_linux:  "95b101d39d5363b1febf8c71af7fccaf3c3dc47b5492b8290c132702abcf566c"
+    rebuild 13
+    sha256 arm64_sequoia: "a93c8e42c54bbdd7a812b4d8751cc49ef0f17507677535e0fe2d321af7ee8eb2"
+    sha256 arm64_sonoma:  "81fffaded980caf644352a0a3fce7a78f7ad31151aadf69c219ef5aa565b235a"
+    sha256 arm64_ventura: "b8911725ac8f3db8b0b67884b941b0a87cafa55bfdddb9073937e011c560262b"
+    sha256 ventura:       "fb1140e4d0d77c9adc19edb0de6134e3b66d0a8c09d789e43140af0919041a62"
+    sha256 x86_64_linux:  "27504961ff09344444ca13329ab4d1b774af5e0789be7dc8e1d03b0f9d61739c"
   end
 
   keg_only :versioned_formula
@@ -115,7 +115,7 @@ class PhpAT85Zts < Formula
     fpm_user = OS.mac? ? "_www" : "www-data"
     fpm_group = OS.mac? ? "_www" : "www-data"
 
-    args = %W[
+    shared_args = %W[
       --prefix=#{prefix}
       --localstatedir=#{var}
       --sysconfdir=#{config_path}
@@ -128,7 +128,6 @@ class PhpAT85Zts < Formula
       --enable-dba
       --enable-exif
       --enable-ftp
-      --enable-fpm
       --enable-gd
       --enable-intl
       --enable-mbregex
@@ -146,15 +145,12 @@ class PhpAT85Zts < Formula
       --enable-sysvsem
       --enable-sysvshm
       --enable-zts
-      --with-apxs2=#{Formula["httpd"].opt_bin}apxs
       --with-bz2#{headers_path}
       --with-capstone
       --with-curl
       --with-external-gd
       --with-external-pcre
       --with-ffi
-      --with-fpm-user=#{fpm_user}
-      --with-fpm-group=#{fpm_group}
       --with-gettext=#{Formula["gettext"].opt_prefix}
       --with-gmp=#{Formula["gmp"].opt_prefix}
       --with-iconv#{headers_path}
@@ -187,14 +183,40 @@ class PhpAT85Zts < Formula
     ]
 
     if OS.mac?
-      args << "--enable-dtrace"
-      args << "--with-ldap-sasl"
-      args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}"
+      shared_args << "--enable-dtrace"
+      shared_args << "--with-ldap-sasl"
+      shared_args << "--with-os-sdkpath=#{MacOS.sdk_path_if_needed}"
     else
-      args << "--disable-dtrace"
-      args << "--without-ldap-sasl"
-      args << "--without-ndbm"
-      args << "--without-gdbm"
+      shared_args << "--disable-dtrace"
+      shared_args << "--without-ldap-sasl"
+      shared_args << "--without-ndbm"
+      shared_args << "--without-gdbm"
+    end
+
+    args = shared_args.map(&:clone)
+    args << "--with-apxs2=#{Formula["httpd"].opt_bin}apxs"
+    args << "--enable-fpm"
+    args << "--with-fpm-user=#{fpm_user}"
+    args << "--with-fpm-group=#{fpm_group}"
+
+    system ".configure", *args
+    system "make"
+    system "make", "install"
+
+    # Build libphp in another pass,
+    # because it's not possible to build Apache and embed at the same time
+    args = shared_args.map(&:clone)
+    args << "--disable-cgi"
+    args << "--disable-cli"
+    args << "--disable-phpdbg"
+
+    if OS.mac?
+      args << "--disable-opcache-jit"
+      args << "--enable-embed=static"
+      args << "--enable-shared=no"
+      args << "--enable-static"
+    else
+      args << "--enable-embed"
     end
 
     system ".configure", *args

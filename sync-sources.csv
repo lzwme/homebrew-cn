@@ -4893,6 +4893,7 @@ Homebrew-homebrew-core/Formula/p/pari-nflistdata.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pari-seadata-big.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pari-seadata.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pari.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/parlay.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/parliament.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/parquet-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/parrot.rb, Homebrew/homebrew-core, 1
@@ -6172,6 +6173,7 @@ Homebrew-homebrew-core/Formula/s/stanford-ner.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/stanford-parser.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/staq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/star.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/starlark-rust.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/starship.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/startup-notification.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/staticcheck.rb, Homebrew/homebrew-core, 1
@@ -6889,6 +6891,7 @@ Homebrew-homebrew-core/Formula/w/w3m.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wabt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/waffle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wagyu.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/wails.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wait_on.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wakatime-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wakeonlan.rb, Homebrew/homebrew-core, 1
@@ -6914,6 +6917,7 @@ Homebrew-homebrew-core/Formula/w/wasmer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wasmtime.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/watch-sim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/watch.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/w/watcher.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/watchexec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/watchman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/watson.rb, Homebrew/homebrew-core, 1
@@ -10956,6 +10960,7 @@ Homebrew-homebrew-cask/Casks/font/font-s/font-syne-mono.rb, Homebrew/homebrew-ca
 Homebrew-homebrew-cask/Casks/font/font-s/font-syne-tactile.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-syne.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-t/font-tac-one.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-t/font-tagesschrift.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-t/font-tai-heritage-pro.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-t/font-tajawal.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-t/font-takaoex.rb, Homebrew/homebrew-cask, 0
@@ -11023,6 +11028,7 @@ Homebrew-homebrew-cask/Casks/font/font-t/font-tourney.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/font/font-t/font-trade-winds.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-t/font-train-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-t/font-trebuchet-ms.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-t/font-triodion.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-t/font-trirong.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-t/font-trispace.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-t/font-trocchi.rb, Homebrew/homebrew-cask, 1
@@ -11048,6 +11054,7 @@ Homebrew-homebrew-cask/Casks/font/font-u/font-ubuntu-sans-nerd-font.rb, Homebrew
 Homebrew-homebrew-cask/Casks/font/font-u/font-ubuntu-sans.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-u/font-ubuntu.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-u/font-uchen.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-u/font-udev-gothic-hs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-u/font-udev-gothic-nf.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-u/font-udev-gothic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-u/font-ultra.rb, Homebrew/homebrew-cask, 1
@@ -13276,6 +13283,7 @@ Homebrew-homebrew-cask/Casks/r/rocks-n-diamonds.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rode-central.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rode-connect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rode-unify.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/r/rode-virtual-channels.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rodeo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/roku-remote-tool.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rolisteam.rb, Homebrew/homebrew-cask, 0
@@ -13742,6 +13750,7 @@ Homebrew-homebrew-cask/Casks/s/supernotes.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/superslicer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/supersync.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/supertuxkart.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/superwhisper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/supremo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/surfeasy-vpn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/surfshark.rb, Homebrew/homebrew-cask, 0

@@ -1,19 +1,18 @@
 class Ipopt < Formula
   desc "Interior point optimizer"
   homepage "https:coin-or.github.ioIpopt"
-  url "https:github.comcoin-orIpoptarchiverefstagsreleases3.14.16.tar.gz"
-  sha256 "cc8c217991240db7eb14189eee0dff88f20a89bac11958b48625fa512fe8d104"
+  url "https:github.comcoin-orIpoptarchiverefstagsreleases3.14.17.tar.gz"
+  sha256 "17ab8e9a6059ab11172c184e5947e7a7dda9fed0764764779c27e5b8e46f3d75"
   license "EPL-2.0"
-  revision 1
   head "https:github.comcoin-orIpopt.git", branch: "stable3.14"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ff6ba93dca47a18218817c81fa1e0f67b950d031fcedae98f33cc291eea6bd34"
-    sha256 cellar: :any,                 arm64_sonoma:  "6b2e17f3d29e91fcea03af5de5c51cddfcc3a7a31c6be0686ccee3400a56b7ed"
-    sha256 cellar: :any,                 arm64_ventura: "41aae134e8a11bbbd904e625f19dd91b9462bcd47eb245ce0758d2b4580bb6ca"
-    sha256 cellar: :any,                 sonoma:        "6f5af16203486282e3eb4d74380600a35544b362d171c66c4161a367ac4c22eb"
-    sha256 cellar: :any,                 ventura:       "d042fd4c2993aad8181d9be04ff2ce979f1b9f206c5fe9e5b1638da827caa2b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "563c0669c52d28e3e80c8352f28c48b68e8421036ca0e8a08868b1c97ee9d739"
+    sha256 cellar: :any,                 arm64_sequoia: "28f86d6ab4e46e32df53b0d84ea2bc8da41fe2493d8659f9f113e221587292e7"
+    sha256 cellar: :any,                 arm64_sonoma:  "e0da5c979f401e853212ee3318729532f8bcb29b289dc13027aeb91a10f1ccfe"
+    sha256 cellar: :any,                 arm64_ventura: "0430a197a189b0173c8a291595f5603a5732a465219113ae7600da3e704ecf78"
+    sha256 cellar: :any,                 sonoma:        "945bcc0d98610c8f333c8d67bbe38efe6f784fd072ea1912ae62767d3090b4b8"
+    sha256 cellar: :any,                 ventura:       "59158e254001660ae93cf61f6afb569cc5742617e590e9c8ce337c597d4caa28"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cba5cbe25680d7bf7d4dbfdbcc7c730981aefef2104d8b4de2846d566094f33"
   end
 
   depends_on "openjdk" => :build
@@ -43,8 +42,8 @@ class Ipopt < Formula
   end
 
   resource "test" do
-    url "https:github.comcoin-orIpoptarchiverefstagsreleases3.14.16.tar.gz"
-    sha256 "cc8c217991240db7eb14189eee0dff88f20a89bac11958b48625fa512fe8d104"
+    url "https:github.comcoin-orIpoptarchiverefstagsreleases3.14.17.tar.gz"
+    sha256 "17ab8e9a6059ab11172c184e5947e7a7dda9fed0764764779c27e5b8e46f3d75"
   end
 
   resource "miniampl" do

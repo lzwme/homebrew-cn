@@ -3,17 +3,17 @@ class GitCola < Formula
 
   desc "Highly caffeinated git GUI"
   homepage "https:git-cola.github.io"
-  url "https:files.pythonhosted.orgpackages48a3e1e2eade3fa89e1483eff8f47aac47e76379797152d2a4f26a3f73024435git_cola-4.10.0.tar.gz"
-  sha256 "ee6b71d6cb7d3edf6b06124826b88a0a82276f6283e2463615b055d098192b07"
+  url "https:files.pythonhosted.orgpackages7decb620520f3f94c8a6ed704062321641e04af6b3c627764e358c391bdf4165git_cola-4.10.1.tar.gz"
+  sha256 "c3c7e63099d60347528fbbc6f565aef02d62ebf1df8c372666faec9bf8aa19eb"
   license "GPL-2.0-or-later"
   head "https:github.comgit-colagit-cola.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f5b9621a23cceaaa044eb7c76b8e6d38f50408cddc22b491ca182aabe6d6463"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0f5b9621a23cceaaa044eb7c76b8e6d38f50408cddc22b491ca182aabe6d6463"
-    sha256 cellar: :any_skip_relocation, sonoma:        "31bbd61e706af1d931a67fd97327ff59a6c737358a724a99a34c73dda2d7ef40"
-    sha256 cellar: :any_skip_relocation, ventura:       "31bbd61e706af1d931a67fd97327ff59a6c737358a724a99a34c73dda2d7ef40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f5b9621a23cceaaa044eb7c76b8e6d38f50408cddc22b491ca182aabe6d6463"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1bce663e8b1b62a70896380b5eafe2fa612585a4b052ded3cb8fa11fc80def02"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1bce663e8b1b62a70896380b5eafe2fa612585a4b052ded3cb8fa11fc80def02"
+    sha256 cellar: :any_skip_relocation, sonoma:        "557220ab5437fc52d71077980a31cdab68351cfbc7f8a0ae1e4b597841f61a82"
+    sha256 cellar: :any_skip_relocation, ventura:       "557220ab5437fc52d71077980a31cdab68351cfbc7f8a0ae1e4b597841f61a82"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bce663e8b1b62a70896380b5eafe2fa612585a4b052ded3cb8fa11fc80def02"
   end
 
   depends_on "pyqt"

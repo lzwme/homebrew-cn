@@ -1,8 +1,8 @@
 class Libp11 < Formula
   desc "PKCS#11 wrapper library in C"
   homepage "https:github.comOpenSClibp11wiki"
-  url "https:github.comOpenSClibp11releasesdownloadlibp11-0.4.12libp11-0.4.12.tar.gz"
-  sha256 "1e1a2533b3fcc45fde4da64c9c00261b1047f14c3f911377ebd1b147b3321cfd"
+  url "https:github.comOpenSClibp11releasesdownloadlibp11-0.4.13libp11-0.4.13.tar.gz"
+  sha256 "d25dd9cff1b623e12d51b6d2c100e26063582d25c9a6f57c99d41f2da9567086"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,17 +11,12 @@ class Libp11 < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia:  "69fa67771704383e9ca206beb447f4ab55860e78747347024d66372499592e90"
-    sha256 cellar: :any,                 arm64_sonoma:   "a40c03cf47eee36fc36e7bb54291fd0ba8c97add6b785f1067628f8779a01345"
-    sha256 cellar: :any,                 arm64_ventura:  "6af6b0d767af1cb7ec7c3a7265bbdeafb86921fc2e7f5966be2efc9007b8a3d2"
-    sha256 cellar: :any,                 arm64_monterey: "0be4080fadb8580fe8b9618dc2a37670919dc21a0a22d4375d295c3fa40aee98"
-    sha256 cellar: :any,                 arm64_big_sur:  "2c61eab1e9b91d1158a719ca59253a3b65562a7f55c32909319b5359bca5e705"
-    sha256 cellar: :any,                 sonoma:         "76f868ad8917493682541c1f0c9f133567fe3c8306ae2488cfafa4701306a4b0"
-    sha256 cellar: :any,                 ventura:        "da2d7d7a89310ef22f4326c9128f491961bff43ded083b1b52e8240076777c44"
-    sha256 cellar: :any,                 monterey:       "0cc69d822cbf9a934c9c72e1ff421958367333a9fa69f060fba581afb58731c5"
-    sha256 cellar: :any,                 big_sur:        "1546eb96b8f270994559dc63591f852ef0f6fbbcf93f92c8e8071a60db2cb9d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6370c44a401aca7e4f6fe02e2220a1c8b8791d697f8c88dbb5a0a2de0c297349"
+    sha256 cellar: :any,                 arm64_sequoia: "977ad78d2a417ee9375ce0964571619850c0341359ec1cf8ccd29e5fa739e974"
+    sha256 cellar: :any,                 arm64_sonoma:  "904fc18f308574764d577787969935815cb4859063772537ab8d933dfb07bfe2"
+    sha256 cellar: :any,                 arm64_ventura: "621c22fec9d9f4a3f17b370bd92e97ca1ece49e7a813e863d64db4ed845105cc"
+    sha256 cellar: :any,                 sonoma:        "e010e9fbaf03cc911d790fdbcd555f59f96babeb9cb6726e3df72f4f5cf08f2e"
+    sha256 cellar: :any,                 ventura:       "f2fdf3fe55448304d0699d293f5ae42670d3a66d78007d2178d147455a95a1df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b5c9f823614a8048d5d01badef22552f87348814f0286a76119481f72acf940"
   end
 
   head do

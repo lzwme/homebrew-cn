@@ -3,17 +3,17 @@ class PythonMatplotlib < Formula
 
   desc "Python library for creating static, animated, and interactive visualizations"
   homepage "https:matplotlib.org"
-  url "https:files.pythonhosted.orgpackagesdf171747b4154034befd0ed33b52538f5eb7752d05bb51c5e2a31470c3bc7d52matplotlib-3.9.4.tar.gz"
-  sha256 "1e00e8be7393cbdc6fedfa8a6fba02cf3e83814b285db1c60b906a023ba41bc3"
+  url "https:files.pythonhosted.orgpackages68ddfa2e1a45fce2d09f4aea3cee169760e672c8262325aa5796c49d543dc7e6matplotlib-3.10.0.tar.gz"
+  sha256 "b886d02a581b96704c9d1ffe55709e49b4d2d52709ccebc4be42db856e511278"
   license "PSF-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8db36601680fd83e726724a74e3a1f0b5a01de9f0e3c11e9d83d787409f480a8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cef861eb27bb8280dea4bcd756be4620baff377af725c6020a0731f76ccf0e7e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "eb4b23b73a9474944178d9988cf977dcd742a7ec6863ddaba59e0f038baaca0b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f40e3f77c4514d4ff75b6d745459fd550a420fb2c55129bab3ac1c89caf90a7d"
-    sha256 cellar: :any_skip_relocation, ventura:       "feccc202ee1980a3e2a13df44f0155cdd48d327c56c31bb3a750433881adccb7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39683b2d46782c7be7997b261980638accbfdd1e3a55b94d762af87d6675030a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5613499b2da59661ef0641bb7511d06ccf3d5bb883d56d850d5aef9c8c631274"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "95de62f87fb1452cd17e312c222365ecce6a5373b44b419463ca3a9253eaa6ef"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ff089ba09fb4be9b99121dc59e8cb4748de748362f14ed6a8720cdcc12271b7f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f24f38951eaf91d7b39a3a62bcef60ae9956ba4783a1b41fd08743a3eca15c91"
+    sha256 cellar: :any_skip_relocation, ventura:       "5fa43def0604ce0e1702d0f1990aa90c930937716dad9baa9d9066d6f848e2e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b56e5a6aae2fc0ad6514c6f5b77114b450a396a700f7eaaad71b730b07e96cf"
   end
 
   depends_on "meson" => :build

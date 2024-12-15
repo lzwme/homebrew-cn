@@ -2,9 +2,10 @@ cask "font-playwrite-au-vic-guides" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflplaywriteauvicguidesPlaywriteAUVICGuides-Regular.ttf"
+  url "https:github.comgooglefontsrawmainoflplaywriteauvicguidesPlaywriteAUVICGuides-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Playwrite AU VIC Guides"
-  homepage "https:github.comTypeTogetherPlaywrite"
+  homepage "https:fonts.google.comspecimenPlaywrite+AU+VIC+Guides"
 
   font "PlaywriteAUVICGuides-Regular.ttf"
 
