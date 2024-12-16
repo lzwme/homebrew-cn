@@ -27,10 +27,10 @@ class Cask < Formula
   end
 
   test do
-    (testpath"Cask").write <<~EOS
+    (testpath"Cask").write <<~LISP
       (source gnu)
       (depends-on "chess")
-    EOS
+    LISP
     system bin"cask", "install"
     (testpath".cask").directory?
   end

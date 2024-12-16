@@ -22,7 +22,9 @@ class Datafusion < Formula
   end
 
   test do
-    (testpath"datafusion_test.sql").write("select 1+2 as n;")
+    (testpath"datafusion_test.sql").write <<~SQL
+      select 1+2 as n;
+    SQL
     assert_equal "[{\"n\":3}]", shell_output("#{bin}datafusion-cli -q --format json -f datafusion_test.sql").strip
   end
 end

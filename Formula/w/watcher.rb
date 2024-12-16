@@ -7,18 +7,19 @@ class Watcher < Formula
   head "https:github.come-dantwatcher.git", branch: "release"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2a343d052580b66274a1d488a6c3394e8b922491fffde9f68b5aa6e1d61ac7f5"
-    sha256 cellar: :any,                 arm64_sonoma:  "b7319e77d06d5ff60f44943b65e73e93c9aa626db77e319a6abc8c632cf70274"
-    sha256 cellar: :any,                 arm64_ventura: "f98c2d11e1493926f0ff2e0160a6b1f783194e7c9b22e18e4655fcc0c7678bdd"
-    sha256 cellar: :any,                 sonoma:        "9839d335a3dd53e0843e120b38b4378540be36251328bb2ad6065c1eedf5f7dd"
-    sha256 cellar: :any,                 ventura:       "ba201a96cc841cdac0e227fed63d6ce1b607c43f27c56a24050fa638eb52e1f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0d4587ae7acc2536881ba6e74f70b7c278209d9e8c71ea7471914ff6e04f34c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "bbe48a136bb675df5f2eedf9037f5679630388ac138432fd8b44532ea557fa97"
+    sha256 cellar: :any,                 arm64_sonoma:  "f90c5ffa0af1fc17bb7b7bcec9951bbaf9c55afb5e96820e166685e9ce6a494f"
+    sha256 cellar: :any,                 arm64_ventura: "a299d21354784d25dbaaef3945eb5d3bad5c73326aebe22ba7cc0a4ff40933c2"
+    sha256 cellar: :any,                 sonoma:        "573bd31fa9cdc5009592c1eee404114b9a685b6be22a3b10fab95a537082acb6"
+    sha256 cellar: :any,                 ventura:       "1e842312456ccff1da97df5df435ef1a58e505c46e0f1a29fa6f176d7e27316a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6b91612886fb06d34ef734209f2f8280d8ce654df3b973e83c690f9a2b1711d"
   end
 
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

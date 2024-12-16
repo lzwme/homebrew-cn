@@ -37,11 +37,11 @@ class Nasm < Formula
   end
 
   test do
-    (testpath"foo.s").write <<~EOS
+    (testpath"foo.s").write <<~ASM
       mov eax, 0
       mov ebx, 0
       int 0x80
-    EOS
+    ASM
 
     system bin"nasm", "foo.s"
     code = File.open("foo", "rb") { |f| f.read.unpack("C*") }

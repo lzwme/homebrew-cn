@@ -12,18 +12,19 @@ class Riscv64ElfGdb < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "5f7aba797e29ac7a43b5e16bbd6681bf2f58579861177aea7c300daa16c11b66"
-    sha256 arm64_sonoma:  "ebfe7a157b16b5a2c6e88e45c02763892320fae8b320c33a044a239086e2c84b"
-    sha256 arm64_ventura: "74e7d45007b562aae45502f466309d751243941d92aba2a6499427d1acaa1685"
-    sha256 sonoma:        "54b820d8f942cc61441e84d0ee5ce3a2a471922ba098687a0f5278197b87f7e6"
-    sha256 ventura:       "a7f888e84f77af88871f0855a9c6a1d2210af7a15336fac06f9826a0fdeb95f8"
-    sha256 x86_64_linux:  "d9151e9effe890130f9d9d5114f36ce261aeddad7c27b17f831be109436c804d"
+    rebuild 1
+    sha256 arm64_sequoia: "36c1f632bb7f40828e5ec403a478b162d0e4fa015fc0cd7efc9bbd00334d4e59"
+    sha256 arm64_sonoma:  "c403475f420f839a525d0aff4e2908a8e64cb70b98872caaa1746ebb10e95399"
+    sha256 arm64_ventura: "94d073109b7cc60087e9e9b984f8bd87d80770290b6967bec45a97d89ba10109"
+    sha256 sonoma:        "9c5d7038a86482cc060aa65463ccce10d6b0c858a0e9ad5f583a43610f4a1826"
+    sha256 ventura:       "39ca5b921fb532d4f8dac268e68da3c52268097315b976e38af40442997e9172"
+    sha256 x86_64_linux:  "37e929ea261d07835fc69b99999ba092b6da10fe7024d4053fc43c5f7882cc55"
   end
 
   depends_on "riscv64-elf-gcc" => :test
   depends_on "gmp"
   depends_on "mpfr"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "xz" # required for lzma support
 
   uses_from_macos "expat"
@@ -43,7 +44,7 @@ class Riscv64ElfGdb < Formula
       --infodir=#{info}/#{target}
       --mandir=#{man}
       --with-lzma
-      --with-python=#{which("python3.12")}
+      --with-python=#{which("python3.13")}
       --with-system-zlib
       --disable-binutils
     ]
@@ -60,7 +61,7 @@ class Riscv64ElfGdb < Formula
 
   test do
     (testpath/"test.c").write "void _start(void) {}"
-    system "#{Formula["riscv64-elf-gcc"].bin}/riscv64-elf-gcc", "-g", "-nostdlib", "test.c"
+    system Formula["riscv64-elf-gcc"].bin/"riscv64-elf-gcc", "-g", "-nostdlib", "test.c"
     assert_match "Symbol \"_start\" is a function at address 0x",
           shell_output("#{bin}/riscv64-elf-gdb -batch -ex 'info address _start' a.out")
   end

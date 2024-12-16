@@ -23,23 +23,23 @@ class DbmlCli < Formula
 
   test do
     sql_file = testpath/"test.sql"
-    sql_file.write <<~EOS
+    sql_file.write <<~SQL
       CREATE TABLE "staff" (
         "id" INT PRIMARY KEY,
         "name" VARCHAR,
         "age" INT,
         "email" VARCHAR
       );
-    EOS
+    SQL
 
-    expected_dbml = <<~EOS
+    expected_dbml = <<~SQL
       Table "staff" {
         "id" INT [pk]
         "name" VARCHAR
         "age" INT
         "email" VARCHAR
       }
-    EOS
+    SQL
 
     assert_match version.to_s, shell_output("#{bin}/dbml2sql --version")
     assert_equal expected_dbml, shell_output("#{bin}/sql2dbml #{sql_file}").chomp

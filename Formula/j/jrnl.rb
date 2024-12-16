@@ -118,7 +118,7 @@ class Jrnl < Formula
   end
 
   test do
-    (testpath"tests.sh").write <<~EOS
+    (testpath"tests.sh").write <<~EXPECT
       #!usrbinenv expect
 
       set timeout 3
@@ -135,7 +135,7 @@ class Jrnl < Formula
       send -- "n\\r"
       expect -re "Journal encrypted to .*"
       expect eof
-    EOS
+    EXPECT
 
     # Write the journal
     input = "#{testpath}journal.txt\nn\nn"

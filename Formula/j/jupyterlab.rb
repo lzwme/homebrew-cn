@@ -519,13 +519,11 @@ class Jupyterlab < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, python3)
     ENV["JUPYTER_PATH"] = etc"jupyter"
 
     # install packages into virtualenv and link all jupyter extensions
     skipped = %w[hatch-jupyter-builder hatch-nodejs-version jupyterlab-pygments notebook]
-    venv.pip_install resources.reject { |r| skipped.include? r.name }
-    venv.pip_install_and_link buildpath
+    venv = virtualenv_install_with_resources without: skipped
     bin.install_symlink (libexec"bin").glob("jupyter*")
 
     # These resources require `jupyterlab` to build, causing a build loop
@@ -578,29 +576,25 @@ class Jupyterlab < Formula
     EOS
     assert_match "ServerApp", shell_output("expect -f notebook.exp")
 
-    (testpath"nbconvert.ipynb").write <<~EOS
+    (testpath"nbconvert.ipynb").write <<~JSON
       {
         "cells": []
       }
-    EOS
+    JSON
     system bin"jupyter-nbconvert", "nbconvert.ipynb", "--to", "html"
-    assert_predicate testpath"nbconvert.html", :exist?, "Failed to export HTML"
+    assert_path_exists testpath"nbconvert.html", "Failed to export HTML"
 
-    assert_match "-F _jupyter",
-      shell_output("bash -c \"source #{bash_completion}jupyter && complete -p jupyter\"")
+    assert_match "-F _jupyter", shell_output("bash -c 'source #{bash_completion}jupyter && complete -p jupyter'")
 
     # Ensure that jupyter can load the jupyter lab package.
-    assert_match(^jupyterlab *: #{version}$,
-      shell_output(bin"jupyter --version"))
+    assert_match(^jupyterlab *: #{version}$, shell_output(bin"jupyter --version"))
 
     # Ensure that jupyter-lab binary was installed by pip.
-    assert_equal version.to_s,
-      shell_output(bin"jupyter-lab --version").strip
+    assert_equal version.to_s, shell_output(bin"jupyter-lab --version").strip
 
     port = free_port
-    fork { exec "#{bin}jupyter-lab", "-y", "--port=#{port}", "--no-browser", "--ip=127.0.0.1", "--LabApp.token=''" }
+    spawn "#{bin}jupyter-lab", "-y", "--port=#{port}", "--no-browser", "--ip=127.0.0.1", "--LabApp.token=''"
     sleep 15
-    assert_match "<title>JupyterLab<title>",
-      shell_output("curl --silent --fail http:localhost:#{port}lab")
+    assert_match "<title>JupyterLab<title>", shell_output("curl --silent --fail http:localhost:#{port}lab")
   end
 end

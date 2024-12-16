@@ -31,12 +31,13 @@ class ZshAutocomplete < Formula
     EOS
   end
   test do
-    (testpath"run-tests.zsh").write <<~EOS
+    (testpath"run-tests.zsh").write <<~SHELL
       #!binzsh -f
 
       env -i HOME=$HOME PATH=$PATH FPATH=$FPATH zsh -f -- \
           =clitest --progress dot --prompt '%' -- $PWDTests*.md
-    EOS
+    SHELL
+
     cd pkgshare do
       system "zsh", testpath"run-tests.zsh"
     end

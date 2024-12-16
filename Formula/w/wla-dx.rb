@@ -30,7 +30,7 @@ class WlaDx < Formula
   end
 
   test do
-    (testpath"test-gb-asm.s").write <<~EOS
+    (testpath"test-gb-asm.s").write <<~ASM
       .MEMORYMAP
        DEFAULTSLOT 1.01
        SLOT 0.001 $0000 $2000
@@ -58,7 +58,7 @@ class WlaDx < Formula
        jr -128
        jr 127
        jr nc, 127
-    EOS
+    ASM
     system bin"wla-gb", "-o", testpath"test-gb-asm.s"
   end
 end

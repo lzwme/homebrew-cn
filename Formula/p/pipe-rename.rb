@@ -28,10 +28,14 @@ class PipeRename < Formula
 
   test do
     touch "test.log"
-    (testpath"rename.sh").write "#!binsh\necho \"$(cat \"$1\").txt\" > \"$1\""
+    (testpath"rename.sh").write <<~SHELL
+      #!binsh
+      echo "$(cat "$1").txt" > "$1"
+    SHELL
+
     chmod "+x", testpath"rename.sh"
     ENV["EDITOR"] = testpath"rename.sh"
     system bin"renamer", "-y", "test.log"
-    assert_predicate testpath"test.log.txt", :exist?
+    assert_path_exists testpath"test.log.txt"
   end
 end

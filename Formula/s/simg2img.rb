@@ -7,22 +7,22 @@ class Simg2img < Formula
   head "https:github.comanestisbandroid-simg2img.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "411ee6835c162ede4e7d9be48867d01a82e3f059b20aec105532599660a08d76"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6e257aaca0a352b98a949fab1d148fa6c40092ce8d00c53c595954c34fb083e2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a0dcd750c7e2a018a1947e3b944498f9032dbca077a8b5c90104d33f4db7c248"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f4c50b28f615335a6d9dcb2730676b4d3d0b5f1cc02d0279959d313ac0eda6fd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "cd4891712dae2fd35115f8ee32ba703bc3094ff365e52c8fe6a2b0d4694ee1ae"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4801924ef7c07ca43fddd111a366d9b24951d65fe24f5c599941b8e6765bb453"
-    sha256 cellar: :any_skip_relocation, ventura:        "fc26e37af726109d97bf20222c18e97efba0d6259381a38380a21f90451fb34d"
-    sha256 cellar: :any_skip_relocation, monterey:       "3236b3d33786220a8a09ab5f43b237bd69b45bc397f1011f4075939399d44489"
-    sha256 cellar: :any_skip_relocation, big_sur:        "04bb96fc69c1e71931d0fe4b13f122f6036573135c9a228e14fbe54d60ef4515"
-    sha256 cellar: :any_skip_relocation, catalina:       "a79238cc3b241a3c9f2635b2ce230107f4372db3df7678dcc0857f8c7ef40581"
-    sha256 cellar: :any_skip_relocation, mojave:         "eb4046906b4bc9b2508ed5a7bbd0c9cfd2bab387c9891dbbf396c64374fdef6d"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "677aa2ecb11b6c0df59eb44cd75b7bc66d7f99607a4a5e0b5f9137d42428efc5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "12b3dc2a827326c0a15c73a1ea4dd3a986f68dfdaae65adcf035239c449f066e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b25e0f06cde868bdec04ba4dd906433abb120d7748f165880eef898bed510ee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "29690971daf156fb520ac5fae0f14f758b7b9e904488ad949af13806931eb1e0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f06e180e9b83dbc722ee3539e038c69b556d366ebb425b4bb2bb6c849b3d129b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "70b91d0825fd80872068fa97fedd0e6d3144837187843805b9d568345b9fb3b0"
+    sha256 cellar: :any_skip_relocation, ventura:       "b6bc8f731b9624d8ffaaf482be2809afb81d2bb088c91769b880202b9ef53799"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da000263e52d0f4c11a13e4674e2eed694bb6348ebd0be1a4d3240478825e15b"
   end
 
   uses_from_macos "zlib"
+
+  # Fix execution on apple silicon from a fork
+  patch do
+    url "https:github.comanestisbandroid-simg2imgcommit931df9dd83e7feea11197402c5b4e7ad489f4abf.patch?full_index=1"
+    sha256 "97f7e1256e9bc0fcfb4e1714ac503c7d5a4901a1685fe86307222d0f67ae5898"
+  end
 
   def install
     system "make", "PREFIX=#{prefix}", "install"

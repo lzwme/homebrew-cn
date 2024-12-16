@@ -36,7 +36,7 @@ class Kubevela < Formula
     status_output = shell_output("#{bin}vela up 2>&1", 1)
     assert_match "error: either app name or file should be set", status_output
 
-    (testpath"kube-config").write <<~EOS
+    (testpath"kube-config").write <<~YAML
       apiVersion: v1
       clusters:
       - cluster:
@@ -55,7 +55,7 @@ class Kubevela < Formula
       - name: test
         user:
           token: test
-    EOS
+    YAML
 
     ENV["KUBECONFIG"] = testpath"kube-config"
     version_output = shell_output("#{bin}vela version 2>&1")

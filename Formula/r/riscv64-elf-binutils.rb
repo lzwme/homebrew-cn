@@ -44,14 +44,14 @@ class Riscv64ElfBinutils < Formula
   end
 
   test do
-    (testpath/"test-s.s").write <<~EOS
+    (testpath/"test-s.s").write <<~ASM
       .section .text
       .globl _start
       _start:
           li a7, 93
           li a0, 0
           ecall
-    EOS
+    ASM
 
     system bin/"riscv64-elf-as", "-o", "test-s.o", "test-s.s"
     assert_match "file format elf64-littleriscv",

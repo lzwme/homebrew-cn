@@ -52,17 +52,17 @@ class Sbcl < Formula
                              SBCL_SOURCE_ROOT: pkgshare/"src",
                              SBCL_HOME:        lib/"sbcl"
     pkgshare.install %w[contrib src]
-    (lib/"sbcl/sbclrc").write <<~EOS
+    (lib/"sbcl/sbclrc").write <<~'LISP'
       (setf (logical-pathname-translations "SYS")
         '(("SYS:SRC;**;*.*.*" #p"#{pkgshare}/src/**/*.*")
           ("SYS:CONTRIB;**;*.*.*" #p"#{pkgshare}/contrib/**/*.*")))
-    EOS
+    LISP
   end
 
   test do
-    (testpath/"simple.sbcl").write <<~EOS
+    (testpath/"simple.sbcl").write <<~LISP
       (write-line (write-to-string (+ 2 2)))
-    EOS
+    LISP
     output = shell_output("#{bin}/sbcl --script #{testpath}/simple.sbcl")
     assert_equal "4", output.strip
   end

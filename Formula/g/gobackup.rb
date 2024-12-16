@@ -1,18 +1,18 @@
 class Gobackup < Formula
   desc "CLI tool for backup your databases, files to cloud storages"
   homepage "https:gobackup.github.io"
-  url "https:github.comgobackupgobackuparchiverefstagsv2.12.0.tar.gz"
-  sha256 "82b2d07792010a8cdf7b5bcfaf10094de549a442c451d768d71fc8485aadb0e1"
+  url "https:github.comgobackupgobackuparchiverefstagsv2.13.0.tar.gz"
+  sha256 "0eec629fcac1c23d63a70d7c1a464da808a5b3bb3ab0ac7bf7988555e978b76a"
   license "MIT"
   head "https:github.comgobackupgobackup.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75c6dfeb6652be15621362c1aceae1535df5b6e6f80f129c08ddf2e904468a7d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75c6dfeb6652be15621362c1aceae1535df5b6e6f80f129c08ddf2e904468a7d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "75c6dfeb6652be15621362c1aceae1535df5b6e6f80f129c08ddf2e904468a7d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cadbe18079d12d159b79e3a4683fd46e7535f65d584275c22215aa2d71a4fbd5"
-    sha256 cellar: :any_skip_relocation, ventura:       "cadbe18079d12d159b79e3a4683fd46e7535f65d584275c22215aa2d71a4fbd5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "beec32e1efe83561898c7cf47ff9e19cd022f8cb7600b89458397cb1720a7200"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf3cfc6e8c3eba13ef16996c11847efbf0b9ad01a89a4d266ff07a5e48c11389"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf3cfc6e8c3eba13ef16996c11847efbf0b9ad01a89a4d266ff07a5e48c11389"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bf3cfc6e8c3eba13ef16996c11847efbf0b9ad01a89a4d266ff07a5e48c11389"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a36b6d3d933460b5d0c5c0d557a0c7d5e9dbddd490b1aa2adb2c8035413dc579"
+    sha256 cellar: :any_skip_relocation, ventura:       "a36b6d3d933460b5d0c5c0d557a0c7d5e9dbddd490b1aa2adb2c8035413dc579"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ca03c4744cb1fd49e51476d09734e5b70dc10313acc4cc2a55768baebfcce80"
   end
 
   depends_on "go" => :build

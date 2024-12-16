@@ -28,11 +28,12 @@ class Kotlin < Formula
   end
 
   test do
-    (testpath"test.kt").write <<~EOS
+    (testpath"test.kt").write <<~KOTLIN
       fun main(args: Array<String>) {
         println("Hello World!")
       }
-    EOS
+    KOTLIN
+
     system bin"kotlinc", "test.kt", "-include-runtime", "-d", "test.jar"
     system bin"kotlinc-jvm", "test.kt", "-include-runtime", "-d", "test.jar"
   end

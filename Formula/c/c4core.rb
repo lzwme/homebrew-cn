@@ -18,6 +18,8 @@ class C4core < Formula
 
   depends_on "cmake" => [:build, :test]
 
+  conflicts_with "rapidyaml", because: "both install `c4core` files `includec4`"
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
     system "cmake", "--build", "build"

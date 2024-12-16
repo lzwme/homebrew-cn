@@ -9,12 +9,13 @@ class PythonYq < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b43785008ef47b8acce277f0777a78f151c88c0296d932e4260b9d5d1bcc872c"
-    sha256 cellar: :any,                 arm64_sonoma:  "e59ebd20247318f7060d0341a0cbdd5571f4fa926654995dba79accb744a498c"
-    sha256 cellar: :any,                 arm64_ventura: "b666e21d085f1672873688fc581f0255acd5f58266137628a6cb87abe79d30cf"
-    sha256 cellar: :any,                 sonoma:        "57568982ca2b05f3686c8d8f30de2b79963f26e53e22a61b1508aade80531589"
-    sha256 cellar: :any,                 ventura:       "6bc67f3ef27e0fd821fa5fe012fe2eb6f539eab5347798951b58e3ddfbec2c41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a3bcb0ece8d0ec54412051082421c48faed52ff0d4a7f8d119be03695575366"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "fc51885dc4afeb945b9da323e5ab75751a5b861f20c0523a79360343cf4f57db"
+    sha256 cellar: :any,                 arm64_sonoma:  "8b33d265380df20b66a575e0b84592c86ba02422298dfb9a095fd46c407f913a"
+    sha256 cellar: :any,                 arm64_ventura: "b7cfa07975355ba6d17eb32c40d7fc6ca2814de0ce84707e242bbf0050758902"
+    sha256 cellar: :any,                 sonoma:        "148ae1e845bfbbc487ae9b2d152eaff0aca6650233a5c613fe06b1fddcf7ccf8"
+    sha256 cellar: :any,                 ventura:       "509f944e20ed31d27571ae35409f52a3af4d2856295882edc4435bc2cd0243a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30bfa94a1f5bc51fffcfebb345afc1e4de7997833264112ce802774131b14278"
   end
 
   depends_on "jq"
@@ -48,7 +49,7 @@ class PythonYq < Formula
     virtualenv_install_with_resources
     %w[yq xq tomlq].each do |script|
       generate_completions_from_executable(libexec/"bin/register-python-argcomplete", script,
-                                           shell_parameter_format: :arg)
+                                           base_name: script, shell_parameter_format: :arg)
     end
   end
 

@@ -29,9 +29,9 @@ class GradleAT6 < Formula
     assert_match version.to_s, shell_output("#{bin}/gradle --version")
 
     (testpath/"settings.gradle").write ""
-    (testpath/"build.gradle").write <<~EOS
+    (testpath/"build.gradle").write <<~GRADLE
       println "gradle works!"
-    EOS
+    GRADLE
     gradle_output = shell_output("#{bin}/gradle build --no-daemon")
     assert_includes gradle_output, "gradle works!"
   end

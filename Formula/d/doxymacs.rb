@@ -50,11 +50,11 @@ class Doxymacs < Formula
   end
 
   test do
-    (testpath/"test.el").write <<~EOS
+    (testpath/"test.el").write <<~LISP
       (add-to-list 'load-path "#{elisp}")
       (load "doxymacs")
       (print doxymacs-version)
-    EOS
+    LISP
 
     output = shell_output("emacs -Q --batch -l #{testpath}/test.el").strip
     assert_equal "\"#{version}\"", output

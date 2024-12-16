@@ -134,16 +134,13 @@ class Mvt < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.13")
-    venv.pip_install resources.reject { |r| r.name == "iosbackup" }
+    venv = virtualenv_install_with_resources without: "iosbackup"
 
     # iosbackup is incompatible with build isolation: https:github.comavibraziliOSbackuppull32
     resource("iosbackup").stage do
       inreplace "setup.py", "from iOSbackup import __version__", "__version__ = '#{resource("iosbackup").version}'"
       venv.pip_install Pathname.pwd
     end
-
-    venv.pip_install_and_link buildpath
 
     %w[mvt-android mvt-ios].each do |script|
       generate_completions_from_executable(binscript, shells: [:fish, :zsh], shell_parameter_format: :click)

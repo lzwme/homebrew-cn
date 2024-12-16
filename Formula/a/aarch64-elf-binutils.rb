@@ -44,14 +44,14 @@ class Aarch64ElfBinutils < Formula
   end
 
   test do
-    (testpath/"test-s.s").write <<~EOS
+    (testpath/"test-s.s").write <<~ASM
       .section .text
       .globl _start
       _start:
           mov x0, #0
           mov x16, #1
           svc #0x80
-    EOS
+    ASM
     system bin/"aarch64-elf-as", "-o", "test-s.o", "test-s.s"
     assert_match "file format elf64-littleaarch64",
                  shell_output("#{bin}/aarch64-elf-objdump -a test-s.o")

@@ -55,11 +55,12 @@ class ZshCompletions < Formula
   end
 
   test do
-    (testpath"test.zsh").write <<~EOS
+    (testpath"test.zsh").write <<~SHELL
       fpath=(#{pkgshare} $fpath)
       autoload _ack
       which _ack
-    EOS
+    SHELL
+
     assert_match(^_ack, shell_output("zsh test.zsh"))
   end
 end

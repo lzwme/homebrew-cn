@@ -6,22 +6,20 @@ class Enex2notion < Formula
   url "https:files.pythonhosted.orgpackagesde5cc0ce22d810226345411b03177f9b43c35b82c3a671d5d73f56fc43b0858eenex2notion-0.3.1.tar.gz"
   sha256 "f11d8a7b6c135b4d08c63e1256279d56b3798cdd48ad3b6e39c0770dc3bd82e6"
   license "MIT"
-  revision 9
+  revision 10
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8b49be01fa12ba5bebef8f552da44d0fddc4e1c54ce368f77b8be6eca443a573"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a3c5237e24e296d5a095a38b29ac40da52de6829073c6694743a298766aac9cd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bb147ed68b9452b4eaa389b3b84c179d8739527ea11cca8057f4c57cfed298ae"
-    sha256 cellar: :any,                 arm64_monterey: "e0a81a94bebda956c6727ca9e6d279a791ca96f91d78a2c9bd8a87886c6573ae"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d747513219169beaba36bab945a18163640739b527322333f2baed06f8307569"
-    sha256 cellar: :any_skip_relocation, ventura:        "276773ba23dc70efb356e006d05b1687250c26412544aa3e96796debc266eabb"
-    sha256 cellar: :any,                 monterey:       "1c3f7b10dc5a49b167696f24e6e95dbae360ff11ffde89ad3f7956b99af55e1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "728550959ef8743a4a9dc08a0b1be1722559a0f876895de1dffbd78c0dd244f9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23dc2ac7e6d0158475435b91fb75ad86121db794544db097eb2d53aabcb8210d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "223ea686adfec779fd989ae6313f882e098af1d759e7bcddb17a61bc16de24d3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1862d7d309f9c7cfffeb90cfce8ef39b843224070c2b225ccac8b0331d668664"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4c2a6fa9e34b3c8d5171a9038756f6015719130a80d78bb89397b02b9b21286e"
+    sha256 cellar: :any_skip_relocation, ventura:       "168159c2b2dfae1b2887ab3317cabe56f4051cfd256f3e1129b720f485760d46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f95ab872c73e5342097f5f02b9dfb1e16c581f273ff897eef5eb0ddd3bfad651"
   end
 
   depends_on "certifi"
   depends_on "pymupdf"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
@@ -42,8 +40,8 @@ class Enex2notion < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages6309c1bc53dab74b1816a00d8d030de5bf98f724c52c1635e07681d312f20be8charset-normalizer-3.3.2.tar.gz"
-    sha256 "f30c3cb33b24454a82faecaf01b19c18562b1e89558fb6c56de4d9118a032fd5"
+    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
+    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
   end
 
   resource "commonmark" do
@@ -57,13 +55,13 @@ class Enex2notion < Formula
   end
 
   resource "idna" do
-    url "https:files.pythonhosted.orgpackages21edf86a79a07470cb07819390452f178b3bef1d375f2ec021ecfc709fc7cf07idna-3.7.tar.gz"
-    sha256 "028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"
+    url "https:files.pythonhosted.orgpackagesf1707703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7didna-3.10.tar.gz"
+    sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
   end
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackages8414c2070b5e37c650198de8328467dd3d1681e80986f81ba0fea04fc4ec9883lxml-4.9.4.tar.gz"
-    sha256 "b1541e50b78e15fa06a2670157a1962ef06591d4c998b998047fff5e3236880e"
+    url "https:files.pythonhosted.orgpackagese76b20c3a4b24751377aaa6307eb230b66701024012c29dd374999cc92983269lxml-5.3.0.tar.gz"
+    sha256 "4e109ca30d1edec1ac60cdbe341905dc3b8f55b16855e03a54aaf59e51ec8c6f"
   end
 
   resource "notion-vzhd1701-fork" do
@@ -102,13 +100,13 @@ class Enex2notion < Formula
   end
 
   resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+    url "https:files.pythonhosted.orgpackages94e7b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   resource "soupsieve" do
-    url "https:files.pythonhosted.orgpackagesce21952a240de1c196c7e3fbcd4e559681f0419b1280c617db21157a0390717bsoupsieve-2.5.tar.gz"
-    sha256 "5663d5a7b3bfaeee0bc4372e7fc48f9cff4940b3eec54a6451cc5299f1097690"
+    url "https:files.pythonhosted.orgpackagesd7cefbaeed4f9fb8b2daa961f90591662df6a86c1abf25c548329a86920aedfbsoupsieve-2.6.tar.gz"
+    sha256 "e2e68417777af359ec65daac1057404a3c8a5455bb8abc36f1a9866ab1a51abb"
   end
 
   resource "text-unidecode" do
@@ -117,18 +115,18 @@ class Enex2notion < Formula
   end
 
   resource "tinycss2" do
-    url "https:files.pythonhosted.orgpackages446f38d2335a2b70b9982d112bb177e3dbe169746423e33f718bf5e9c7b3ddd3tinycss2-1.3.0.tar.gz"
-    sha256 "152f9acabd296a8375fbca5b84c961ff95971fcfc32e79550c8df8e29118c54d"
+    url "https:files.pythonhosted.orgpackages7afd7a5ee21fd08ff70d3d33a5781c255cbe779659bd03278feb98b19ee550f4tinycss2-1.4.0.tar.gz"
+    sha256 "10c0972f6fc0fbee87c3edb76549357415e94548c1ae10ebccdea16fb404a9b7"
   end
 
   resource "tqdm" do
-    url "https:files.pythonhosted.orgpackages5ac0b7599d6e13fe0844b0cda01b9aaef9a0e87dbb10b06e4ee255d3fa1c79a2tqdm-4.66.4.tar.gz"
-    sha256 "e4d936c9de8727928f3be6079590e97d9abfe8d39a590be678eb5919ffc186bb"
+    url "https:files.pythonhosted.orgpackagesa84b29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744dtqdm-4.67.1.tar.gz"
+    sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
   end
 
   resource "tzdata" do
-    url "https:files.pythonhosted.orgpackages745be025d02cb3b66b7b76093404392d4b44343c69101cc85f4d180dd5784717tzdata-2024.1.tar.gz"
-    sha256 "2674120f8d891909751c38abcdfd386ac0a5a1127954fbc332af6b5ceae07efd"
+    url "https:files.pythonhosted.orgpackagese134943888654477a574a86a98e9896bae89c7aa15078ec29f490fef2f1e5384tzdata-2024.2.tar.gz"
+    sha256 "7d85cc416e9382e69095b7bdf4afd9e3880418a2413feec7069d533d6b4e31cc"
   end
 
   resource "tzlocal" do
@@ -137,8 +135,8 @@ class Enex2notion < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackages436dfa469ae21497ddc8bc93e5877702dca7cb8f911e337aca7452b5724f1bb6urllib3-2.2.2.tar.gz"
-    sha256 "dd505485549a7a552833da5e6063639d0d177c04f23bc3864e41e5dc5f612168"
+    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
+    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
   end
 
   resource "w3lib" do

@@ -47,9 +47,9 @@ class Ecl < Formula
   end
 
   test do
-    (testpath/"simple.cl").write <<~EOS
+    (testpath/"simple.cl").write <<~LISP
       (write-line (write-to-string (+ 2 2)))
-    EOS
+    LISP
     assert_equal "4", shell_output("#{bin}/ecl -shell #{testpath}/simple.cl").chomp
   end
 end

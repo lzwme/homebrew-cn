@@ -18,7 +18,11 @@ class Desk < Formula
   end
 
   test do
-    (testpath".deskdeskstest-desk.sh").write("#\n# Description: A test desk\n#")
+    (testpath".deskdeskstest-desk.sh").write <<~SHELL
+      #
+      # Description: A test desk
+      #
+    SHELL
     list = pipe_output("#{bin}desk list")
     assert_match "test-desk", list
     assert_match "A test desk", list

@@ -215,10 +215,7 @@ class Sgr < Formula
     # TODO: remove with newer `pglast` (4.4+)
     ENV.append_path "PYTHONPATH", Formula["cython"].opt_libexecLanguage::Python.site_packages("python3.13")
 
-    venv = virtualenv_create(libexec, "python3.13")
-    venv.pip_install resource("setuptools")
-    venv.pip_install resources.reject { |r| r.name == "setuptools" }
-    venv.pip_install_and_link buildpath
+    virtualenv_install_with_resources start_with: "setuptools"
 
     generate_completions_from_executable(bin"sgr", shells: [:fish, :zsh], shell_parameter_format: :click)
   end

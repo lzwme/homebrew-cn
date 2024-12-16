@@ -6,14 +6,15 @@ class XcbProto < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e85c8d57ca43017674ecd1dadce614289e8790768087a73ceef981e65310003e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "cf173904bebf1abd5722452d0869d51989d9621978008affbfc43e55d37f1451"
   end
 
   depends_on "pkgconf" => [:build, :test]
-  depends_on "python@3.12" => [:build, :test]
+  depends_on "python@3.13" => [:build, :test]
 
   def python3
-    "python3.12"
+    "python3.13"
   end
 
   def install

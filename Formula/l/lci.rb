@@ -1,23 +1,17 @@
 class Lci < Formula
   desc "Interpreter for the lambda calculus"
   homepage "https:www.chatzi.orglci"
-  url "https:github.comchatzikolcireleasesdownloadv1.0lci-1.0.tar.gz"
-  sha256 "1bcf40d738ce2af7ca5116f02dfb0f4ed21d7e467e3618e071c8199a1285331e"
+  url "https:github.comchatzikolcireleasesdownloadv1.1lci-v1.1.tar.gz"
+  sha256 "51725e33a7066100757b7da84b2290a651a5f47b985eb3e3647acd871964cd58"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256                               arm64_sequoia:  "03e706a199e3f12966157114b96fac64536ca93e3c8cbfc60f2152aba1250b28"
-    sha256                               arm64_sonoma:   "c4d21727f797911c504241d45f2fabf93835e650ec5fdfe5bc86a53caf5b6a53"
-    sha256                               arm64_ventura:  "21afc33909d59c974988a19f1189c56451430b0ff1bd687d421fbcb227e3c215"
-    sha256                               arm64_monterey: "7fb1ab319d3340b759042f184cd043f50f3897bf8f0650885fe8b679b630c52c"
-    sha256                               arm64_big_sur:  "6540439b0f6ea5653aab7ac697f708bf3effa3135f2b8a8d2d98a08e137fab15"
-    sha256                               sonoma:         "f216228f58e813c480d2459c76d59a51ecadd203f65419c3ec1e7da503bfd9f1"
-    sha256                               ventura:        "4dd1911200ea6dda6223506317afea28ef0d54271b61922f6d18b87211b0e68a"
-    sha256                               monterey:       "3f433ee3ec85efa51ac6faab75a0570ed673c5ee0ec36598fa968e2525989d78"
-    sha256                               big_sur:        "f531babdee7254e6bcf5a04f44e388d7b398925d7b9529f0a6fba11e3dae4ced"
-    sha256                               catalina:       "a55400bf771e5c89f5357fc9847929c0bac34e0164ed306b6ea9f3be3a700ebc"
-    sha256                               mojave:         "a1c26ba18c1080a20edc4baf966c579aab841ca73d8f81760df7ca0b32830e71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca80c45e5eca084c3ec55f3d7a0d140f94ae8cf3e5277341875bbac99186ef0e"
+    sha256                               arm64_sequoia: "13a9869c2bc147eb19005e15ed2ccd27a6afec14b8ec661b535e6a8a288b47bc"
+    sha256                               arm64_sonoma:  "46ba0405d0111869ea90bd1fd0148807a65bda00be35589b8d67701b57ffcbf4"
+    sha256                               arm64_ventura: "2cfa4820068d0e4495d3cf8bad083fb4a4fc5ba8b9e141f86fee1887b24bc38c"
+    sha256                               sonoma:        "e32fad6844ab4a93730432d96c263980089464b7f382bf485903b79352d3538b"
+    sha256                               ventura:       "0821036d4af1bfc500f333725f6caf28c1d2fc75a212d66131658f63ffdcd8fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19652d5516ba04ec5519854bdfb56b38156890fa066d6ced1a8d6d228e60c509"
   end
 
   depends_on "cmake" => :build

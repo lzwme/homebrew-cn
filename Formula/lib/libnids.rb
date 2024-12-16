@@ -31,6 +31,10 @@ class Libnids < Formula
 
   uses_from_macos "libpcap"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   # Patch fixes -soname and .so shared library issues. Unreported.
   patch do
     on_macos do

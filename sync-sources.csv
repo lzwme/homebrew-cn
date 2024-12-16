@@ -802,7 +802,7 @@ Homebrew-homebrew-core/Formula/c/cf2tf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cf4ocl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cfengine.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cffi.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/c/cfitsio.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/cfitsio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cflow.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cfn-flip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cfn-format.rb, Homebrew/homebrew-core, 1
@@ -3117,6 +3117,7 @@ Homebrew-homebrew-core/Formula/k/kommit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kompose.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kona.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kondo.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kopia.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kops.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kor.rb, Homebrew/homebrew-core, 1
@@ -5230,7 +5231,7 @@ Homebrew-homebrew-core/Formula/p/protoc-gen-grpc-web.rb, Homebrew/homebrew-core,
 Homebrew-homebrew-core/Formula/p/protoc-gen-js.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protolint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/prover9.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/prowler.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/prowler.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proxify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proxsuite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proxychains-ng.rb, Homebrew/homebrew-core, 1
@@ -5357,6 +5358,7 @@ Homebrew-homebrew-core/Formula/p/pyyaml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qalculate-gtk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qalculate-qt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qbe.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/q/qbec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qbittorrent-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qbs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qca.rb, Homebrew/homebrew-core, 0
@@ -5440,6 +5442,7 @@ Homebrew-homebrew-core/Formula/r/range2cidr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ranger.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rapidfuzz-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rapidjson.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rapidyaml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/raptor.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rargs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rarian.rb, Homebrew/homebrew-core, 0
@@ -5552,6 +5555,7 @@ Homebrew-homebrew-core/Formula/r/retdec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rethinkdb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/retire.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/retry.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/reveal-md.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/revive.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rex.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rfcstrip.rb, Homebrew/homebrew-core, 1
@@ -5810,6 +5814,7 @@ Homebrew-homebrew-core/Formula/s/selenium-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/semgrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/semtag.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sendemail.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sendme.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/senpai.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sentencepiece.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/seqkit.rb, Homebrew/homebrew-core, 1
@@ -6751,6 +6756,7 @@ Homebrew-homebrew-core/Formula/v/vale.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/valgrind.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/valijson.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/valkey.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/vals.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vamp-plugin-sdk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vapor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vapoursynth-imwri.rb, Homebrew/homebrew-core, 1
@@ -10079,6 +10085,12 @@ Homebrew-homebrew-cask/Casks/font/font-m/font-montserrat.rb, Homebrew/homebrew-c
 Homebrew-homebrew-cask/Casks/font/font-m/font-moo-lah-lah.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-mooli.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-moon-dance.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-moralerspace-hw-jpdoc.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-moralerspace-hw-nf.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-moralerspace-hw.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-moralerspace-jpdoc.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-moralerspace-nf.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-moralerspace.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-moul.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-moulpali.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-mountains-of-christmas.rb, Homebrew/homebrew-cask, 1

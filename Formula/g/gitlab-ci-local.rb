@@ -1,18 +1,18 @@
 class GitlabCiLocal < Formula
   desc "Run gitlab pipelines locally as shell executor or docker executor"
   homepage "https:github.comfirecowgitlab-ci-local"
-  url "https:registry.npmjs.orggitlab-ci-local-gitlab-ci-local-4.56.0.tgz"
-  sha256 "1357c078a398103d89fbbd78ed49d04eabf8fa7489ab58c30bf8ff6621deb742"
+  url "https:registry.npmjs.orggitlab-ci-local-gitlab-ci-local-4.56.2.tgz"
+  sha256 "97895a6f81f50ac0ff6eda4c807453ac7fc4608de634d993f954743caf1a5cd9"
   license "MIT"
   head "https:github.comfirecowgitlab-ci-local.git", branch: "master"
 
   bottle do
-    sha256                               arm64_sequoia: "c336815d3921af3e2bad71a7b849df052b171e7014680d3413bb2c40ca69a57e"
-    sha256                               arm64_sonoma:  "1448400239137cd6ca238f1364b96a2f87323321c8ee9ec1e00eb80852e23291"
-    sha256                               arm64_ventura: "a903963fccdc1bcc00b90be109b925d2707ec3c4401e1bedd8e3b14a62727e48"
-    sha256                               sonoma:        "325c9f8d54d6a148746c5f193b86a4f695cb31155aa049369b92854012bf1f7d"
-    sha256                               ventura:       "4d5410c9422ef5216c344c3500ec8b562114f0dd7a1d4661231ad2cc2615480a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efd4e4f488f61af03b9bf403d4e67f1feb4de2c291a05f2d93da4cb75fc46e21"
+    sha256                               arm64_sequoia: "a9287020bc812e18eeb3bd14cb2ba59f88c4262baf37e9983d0bf26cace5ed33"
+    sha256                               arm64_sonoma:  "e51168ff943f17a8f4628920211216cdd9f663be61144fc6cc73cdaa17604856"
+    sha256                               arm64_ventura: "d5f1e2ab6f047a80245fd42f926bd2f0b8086b88312d5867907475a3d7da6194"
+    sha256                               sonoma:        "4dfed5ba030d7e9696ab35e745420ad6da7b455e5d55f53ae7c717858b5c6786"
+    sha256                               ventura:       "e5bf5865eb74a943af7ed605c2a385d6b622e4dd50839fe288c74c01491f8989"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61e879b5e864e313ef9fa653892ac7b5840abd59cc52dcefff010cfc83511594"
   end
 
   depends_on "node"

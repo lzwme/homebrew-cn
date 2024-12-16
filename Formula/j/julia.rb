@@ -236,14 +236,14 @@ class Julia < Formula
                           name.start_with?("sys", "libjulia-internal", "libccalltest")
                         end
 
-    (testpath"library_test.jl").write <<~EOS
+    (testpath"library_test.jl").write <<~JULIA
       using Libdl
       libraries = #{libs}
       for lib in libraries
         handle = dlopen(lib)
         @assert dlclose(handle) "Unable to close $(lib)!"
       end
-    EOS
+    JULIA
     system bin"julia", *args, "library_test.jl"
   end
 end

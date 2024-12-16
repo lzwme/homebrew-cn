@@ -33,6 +33,10 @@ class Zile < Formula
 
   uses_from_macos "ncurses"
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
     # Work around Vala issue https:gitlab.gnome.orgGNOMEvala-issues1408
     # which causes srceval.vala:87:32: error: incompatible function pointer types passing

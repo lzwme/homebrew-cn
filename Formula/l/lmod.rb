@@ -77,11 +77,11 @@ class Lmod < Formula
   test do
     sh_init = "#{prefix}initsh"
 
-    (testpath"lmodtest.sh").write <<~EOS
+    (testpath"lmodtest.sh").write <<~SHELL
       #!binsh
       . #{sh_init}
       module list
-    EOS
+    SHELL
 
     assert_match "No modules loaded", shell_output("sh #{testpath}lmodtest.sh 2>&1")
 

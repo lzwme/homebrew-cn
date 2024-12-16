@@ -26,7 +26,7 @@ class Kor < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}kor version")
 
-    (testpath"mock-kubeconfig").write <<~EOS
+    (testpath"mock-kubeconfig").write <<~YAML
       apiVersion: v1
       clusters:
         - cluster:
@@ -45,7 +45,8 @@ class Kor < Formula
         - name: kube:adminmock-server:6443
           user:
             token: sha256~QTYGVumELfyzLS9H9gOiDhVA2B1VnlsNaRsiztOnae0
-    EOS
+    YAML
+
     out = shell_output("#{bin}kor all -k #{testpath}mock-kubeconfig 2>&1", 1)
     assert_match "Failed to retrieve namespaces: Get \"https:mock-server:6443apiv1namespaces\"", out
   end

@@ -19,8 +19,6 @@ class Metricbeat < Formula
   depends_on "go" => :build
   depends_on "mage" => :build
 
-  uses_from_macos "python" => :build
-
   def install
     # remove non open source files
     rm_r("x-pack")
@@ -31,10 +29,9 @@ class Metricbeat < Formula
       inreplace "magefile.go", "mg.Deps(CollectDocs, FieldsDocs)", ""
 
       system "mage", "-v", "build"
-      ENV.deparallelize
       system "mage", "-v", "update"
 
-      (etc"metricbeat").install Dir["metricbeat.*", "fields.yml", "modules.d"]
+      pkgetc.install Dir["metricbeat.*", "fields.yml", "modules.d"]
       (libexec"bin").install "metricbeat"
       prefix.install "buildkibana"
     end

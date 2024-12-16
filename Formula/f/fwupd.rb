@@ -9,12 +9,13 @@ class Fwupd < Formula
   head "https:github.comfwupdfwupd.git", branch: "main"
 
   bottle do
-    sha256 arm64_sequoia: "08397ac7c37ed96aa3671df7f0cfef1fb1f7494a33f23fc9f3786e7313c52215"
-    sha256 arm64_sonoma:  "306d33f5a0ca7e402ab3c58d4313c38a020714746a809be2a5564aae730e938e"
-    sha256 arm64_ventura: "3cf4bde20f542b3b1cafe86217d851495f5259478d4cee2926efebcbca5ba399"
-    sha256 sonoma:        "c0d5f45ef5be1653dc624d2e9cffa0cd7a9beafa25d7513501c03a44e12b86d9"
-    sha256 ventura:       "55d25c1e041855f8d23624e751be448dc635dabb2ca022edb4834fa4c155c761"
-    sha256 x86_64_linux:  "ec7f3918fefa31960ee4bfdee6fac232c28fdda611366fa225a9049db27dbb21"
+    rebuild 1
+    sha256 arm64_sequoia: "a80a4fe778eccff8f3d962bd223d48ddb5cc6f31592e95d1345566e1e14eee3d"
+    sha256 arm64_sonoma:  "36ea950e73cd71a2d98d2f7c0da3b3861656ad4be46d3132265afe9b40cadefc"
+    sha256 arm64_ventura: "fc74d425744db3a909075e463e29acb56fc7ca6ca9924c1f1cdbf953affd3084"
+    sha256 sonoma:        "aa66c853034562e253558be1a5a1acfa84f2af6b6bdb6955f8bf365027e7023e"
+    sha256 ventura:       "d4ca9165260c6bb13508697d96f089d44f15a43fef2ac90b413909321574bc25"
+    sha256 x86_64_linux:  "f99f9c4230bf9d0b688f150a6683dc5ee5bbb90c737c59c58ce76017deb1f93e"
   end
 
   depends_on "gettext" => :build
@@ -23,7 +24,7 @@ class Fwupd < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
-  depends_on "python@3.12" => :build
+  depends_on "python@3.13" => :build
   depends_on "vala" => :build
 
   depends_on "gcab"
@@ -62,7 +63,7 @@ class Fwupd < Formula
   end
 
   def python3
-    "python3.12"
+    "python3.13"
   end
 
   def install

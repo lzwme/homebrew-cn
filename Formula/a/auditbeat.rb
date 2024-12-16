@@ -18,7 +18,6 @@ class Auditbeat < Formula
 
   depends_on "go" => :build
   depends_on "mage" => :build
-  depends_on "python@3.12" => :build
 
   def install
     # remove non open source files
@@ -30,12 +29,10 @@ class Auditbeat < Formula
       inreplace "magefile.go", "devtools.GenerateModuleIncludeListGo, Docs)",
                                "devtools.GenerateModuleIncludeListGo)"
 
-      # prevent downloading binary wheels during python setup
-      system "make", "PIP_INSTALL_PARAMS=--no-binary :all", "python-env"
       system "mage", "-v", "build"
       system "mage", "-v", "update"
 
-      (etc"auditbeat").install Dir["auditbeat.*", "fields.yml"]
+      pkgetc.install Dir["auditbeat.*", "fields.yml"]
       (libexec"bin").install "auditbeat"
       prefix.install "buildkibana"
     end
@@ -81,7 +78,7 @@ class Auditbeat < Formula
     sleep 10
     sleep 20 if OS.mac? && Hardware::CPU.intel?
 
-    assert_predicate testpath"databeat.db", :exist?
+    assert_path_exists testpath"databeat.db"
 
     output = JSON.parse((testpath"datameta.json").read)
     assert_includes output, "first_start"

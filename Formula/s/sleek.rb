@@ -23,7 +23,9 @@ class Sleek < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}sleek --version")
 
-    (testpath"test.sql").write "SELECT * from foo WHERE bar = 'quux';"
+    (testpath"test.sql").write <<~SQL
+      SELECT * from foo WHERE bar = 'quux';
+    SQL
     system bin"sleek", testpath"test.sql"
   end
 end

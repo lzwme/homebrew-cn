@@ -60,13 +60,13 @@ class Litecli < Formula
   end
 
   test do
-    (testpath".configlitecliconfig").write <<~EOS
+    (testpath".configlitecliconfig").write <<~INI
       [main]
       table_format = tsv
       less_chatty = True
-    EOS
+    INI
 
-    (testpath"test.sql").write <<~EOS
+    (testpath"test.sql").write <<~SQL
       CREATE TABLE IF NOT EXISTS package_manager (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name VARCHAR(256)
@@ -75,7 +75,7 @@ class Litecli < Formula
         package_manager (name)
       VALUES
         ('Homebrew');
-    EOS
+    SQL
     system "sqlite3 test.db < test.sql"
 
     require "pty"

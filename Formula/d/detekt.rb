@@ -27,11 +27,12 @@ class Detekt < Formula
     system bin"detekt", "--generate-config"
     assert_match "empty-blocks:", File.read(testpath"detekt.yml")
 
-    (testpath"input.kt").write <<~EOS
+    (testpath"input.kt").write <<~KOTLIN
       fun main() {
 
       }
-    EOS
+    KOTLIN
+
     shell_output("#{bin}detekt --input input.kt --report txt:output.txt --config #{testpath}detekt.yml", 2)
     assert_equal "EmptyFunctionBlock", shell_output("cat output.txt").slice(\w+)
   end

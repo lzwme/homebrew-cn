@@ -28,9 +28,9 @@ class Ol < Formula
   end
 
   test do
-    (testpath"gcd.ol").write <<~EOS
+    (testpath"gcd.ol").write <<~LISP
       (print (gcd 1071 1029))
-    EOS
+    LISP
     assert_equal "21", shell_output("#{bin}ol gcd.ol").strip
   end
 end

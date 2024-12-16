@@ -95,7 +95,8 @@ class OciCli < Formula
   def install
     # Loosen `pyyaml` version pin: https:github.comoracleoci-clipull858
     inreplace "setup.py", "PyYAML>=5.4,<=6.0.1", "PyYAML>=5.4,<=6.0.2"
-    venv = virtualenv_create(libexec, "python3.13")
+
+    venv = virtualenv_install_with_resources without: "terminaltables"
 
     # Switch build-system to poetry-core to avoid rust dependency on Linux.
     # Remove when released: https:github.commatthewdeanmartinterminaltablespull1
@@ -104,9 +105,6 @@ class OciCli < Formula
       inreplace "pyproject.toml", 'build-backend = "poetry.masonry.api"', 'build-backend = "poetry.core.masonry.api"'
       venv.pip_install_and_link Pathname.pwd
     end
-
-    venv.pip_install resources.reject { |r| r.name == "terminaltables" }
-    venv.pip_install_and_link buildpath
   end
 
   test do

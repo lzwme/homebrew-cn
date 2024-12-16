@@ -44,14 +44,14 @@ class ArmNoneEabiBinutils < Formula
   end
 
   test do
-    (testpath/"test-s.s").write <<~EOS
+    (testpath/"test-s.s").write <<~ASM
       .section .text
       .globl _start
       _start:
           mov r1, #0
           mov r2, #1
           svc #0x80
-    EOS
+    ASM
 
     system bin/"arm-none-eabi-as", "-o", "test-s.o", "test-s.s"
     assert_match "file format elf32-littlearm",

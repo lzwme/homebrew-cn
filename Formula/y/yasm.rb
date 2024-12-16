@@ -58,11 +58,11 @@ class Yasm < Formula
   end
 
   test do
-    (testpath"foo.s").write <<~EOS
+    (testpath"foo.s").write <<~ASM
       mov eax, 0
       mov ebx, 0
       int 0x80
-    EOS
+    ASM
     system bin"yasm", "foo.s"
     code = File.open("foo", "rb") { |f| f.read.unpack("C*") }
     expected = [0x66, 0xb8, 0x00, 0x00, 0x00, 0x00, 0x66, 0xbb,

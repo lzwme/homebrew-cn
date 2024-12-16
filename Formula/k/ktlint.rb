@@ -18,12 +18,14 @@ class Ktlint < Formula
   end
 
   test do
-    (testpath"Main.kt").write <<~EOS
+    (testpath"Main.kt").write <<~KOTLIN
       fun main( )
-    EOS
-    (testpath"Out.kt").write <<~EOS
+    KOTLIN
+
+    (testpath"Out.kt").write <<~KOTLIN
       fun main()
-    EOS
+    KOTLIN
+
     system bin"ktlint", "-F", "Main.kt"
     assert_equal shell_output("cat Main.kt"), shell_output("cat Out.kt")
   end

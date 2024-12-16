@@ -33,13 +33,14 @@ class Homeshick < Formula
   end
 
   test do
-    (testpath"test.sh").write <<~EOS
+    (testpath"test.sh").write <<~SHELL
       #!binsh
       export HOMESHICK_DIR="#{opt_prefix}"
       source "#{opt_prefix}homeshick.sh"
       homeshick generate test
       homeshick list
-    EOS
+    SHELL
+
     assert_match "test", shell_output("bash #{testpath}test.sh")
   end
 end

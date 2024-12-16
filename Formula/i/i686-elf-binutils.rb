@@ -44,7 +44,7 @@ class I686ElfBinutils < Formula
   end
 
   test do
-    (testpath/"test-s.s").write <<~EOS
+    (testpath/"test-s.s").write <<~ASM
       .section .data
       .section .text
       .globl _start
@@ -52,7 +52,7 @@ class I686ElfBinutils < Formula
           movl $1, %eax
           movl $4, %ebx
           int $0x80
-    EOS
+    ASM
 
     system bin/"i686-elf-as", "--32", "-o", "test-s.o", "test-s.s"
     assert_match "file format elf32-i386",

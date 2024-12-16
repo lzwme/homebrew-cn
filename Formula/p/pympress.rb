@@ -9,14 +9,13 @@ class Pympress < Formula
   head "https:github.comCimbalipympress.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4c31a6a6630736627a851380e3cef8a2fcbbe4cfd473d865a4a1bfc813a42684"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "69b9150080604dcea831794aba78f785ce6743ad41847f6e9bb90cf02356eaf7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ca5aa79ede4a81614c5b486733e22d476edf9993d8d1f1871bc870320b4dd692"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "75cad3e04e36900ff767e57e8a17f37cf07d571bba104443b50ba0d34e1530b1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "74d1a9e816d885ca0bbb0641143aa0daf326778dd909f450fcd3e18e97db8ce6"
-    sha256 cellar: :any_skip_relocation, ventura:        "49204cf7f3d5a4b81d29ba9087100660d1fd78bdfd00f56edca3a157011271e4"
-    sha256 cellar: :any_skip_relocation, monterey:       "39c3d273f17f03ab27012d327e00c80e6866d084fffa22f27c82e9d934671ddb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa9926be82452150807a6a20f2726ef0a0ba5495f83d468cf335a52022cd0c3c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f316d72786b317ac5b21e31d01c8cef6127f1f7f7ce6b118daa135c92741c105"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0505c142b3daa22ce3e5ee1ddd0573e5181a86648a729922024f5fac4e1ab894"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8ce2f60ddac40de33cc031840e04394845868616a0eaa6a745cde325857c432c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f283e466751b2d7830e51cc7d443e548abf7b3d6f3052f019bf69c579af74760"
+    sha256 cellar: :any_skip_relocation, ventura:       "b64e3e0efbad5aae12e6641c4f50feaac3b59a6904f52a48aa3e88324cd094c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13ab4556e72e88102a4dbac70df1e885a231cf90a0a1ece7e60c9413ff782bec"
   end
 
   depends_on "gobject-introspection"
@@ -25,11 +24,11 @@ class Pympress < Formula
   depends_on "libyaml"
   depends_on "poppler"
   depends_on "pygobject3"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   resource "watchdog" do
-    url "https:files.pythonhosted.orgpackages95a6d6ef450393dac5734c63c40a131f66808d2e6f59f6165ab38c98fbe4e6ecwatchdog-3.0.0.tar.gz"
-    sha256 "4d98a320595da7a7c5a18fc48cb633c2e73cda78f93cac2ef42d42bf609a33f9"
+    url "https:files.pythonhosted.orgpackagesdb7d7f3d619e951c88ed75c6037b246ddcf2d322812ee8ea189be89511721d54watchdog-6.0.0.tar.gz"
+    sha256 "9ddf7c82fda3ae8e24decda1338ede66e1c99883db93711d8fb941eaa2d8c282"
   end
 
   def install
@@ -43,6 +42,8 @@ class Pympress < Formula
     (testpath"LibraryPreferences").mkpath
 
     system bin"pympress", "--quit"
+    sleep 5
+    sleep 15 if OS.mac? && Hardware::CPU.intel?
 
     # Check everything ran fine at least until reporting the version string in the log file
     # which means all dependencies got loaded OK. Do not check actual version numbers as it breaks --HEAD tests.
@@ -51,7 +52,7 @@ class Pympress < Formula
     else
       testpath"LibraryLogspympress.log"
     end
-    assert_predicate log, :exist?
+    assert_path_exists log
     assert_match "INFO:pympress.app:Pympress:", log.read
   end
 end

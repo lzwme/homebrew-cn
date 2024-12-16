@@ -11,14 +11,13 @@ class Nest < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia:  "f752b4a7174c66b710b60ebb340d32d411332e06ea18d7da09660618754788c6"
-    sha256                               arm64_sonoma:   "6653314027909fa7b2d3016afb0983cdd38ceb79d8103605287251419902e69a"
-    sha256                               arm64_ventura:  "f8c15f21fd28ec67bd1adc7f5265123096a4b3837a54c12b39db7f02c54945a3"
-    sha256                               arm64_monterey: "e29a15567400ebde27990ee78119903bca4fca61e69dbc2b63ff9791a0b6f03c"
-    sha256                               sonoma:         "0a606967e870f9d74f29a0646c7852bd521ba1c2f1e3beff080d81de12036589"
-    sha256                               ventura:        "1a324c3ad9977ca71a8fd89470414276394e7f2f56329516cc7bb372f4a5c343"
-    sha256                               monterey:       "538f6bd318806ce37bb426d0b5c5d5fcba4770da28b5bfdb94049135e2526e47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a66f6b2a3b6b67b20f3506bef7be6a0aaec05366eddde02f2137ccc96ff2cf29"
+    rebuild 1
+    sha256                               arm64_sequoia: "1a34d790312185592e775e4e8fe4aef7383006d5043b7c97847d3c0d7db56394"
+    sha256                               arm64_sonoma:  "7d9f9e7ad474c91f30af1f8befd084621a645b6753780c98a03c3bda4c39f681"
+    sha256                               arm64_ventura: "e4997e4c854f79114bf6126b93073cedd165b443f14d1086f7a246690b77b547"
+    sha256                               sonoma:        "c6628a5bb1198d80c5c1e56a2bdea010d585c067bac0603a744bf1f009191b8a"
+    sha256                               ventura:       "a77c3c6db49b56fe36710c8a05bfc36dc4604bc8bd5448ceb7744fdf216ce86c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e29d5b0a924beffaed5eef267c5c08b78529d3894a8099578d68e0853fb0d65"
   end
 
   depends_on "cmake" => :build
@@ -26,7 +25,7 @@ class Nest < Formula
   depends_on "gsl"
   depends_on "libtool"
   depends_on "numpy"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "readline"
 
   uses_from_macos "ncurses"
@@ -55,10 +54,10 @@ class Nest < Formula
 
   def caveats
     <<~EOS
-      The PyNEST bindings and its dependencies are installed with the python@3.12 formula.
+      The PyNEST bindings and its dependencies are installed with the python@3.13 formula.
       If you want to use PyNEST, use the Python interpreter from this path:
 
-          #{Formula["python@3.12"].bin}
+          #{Formula["python@3.13"].bin}
 
       You may want to add this to your PATH.
     EOS
@@ -69,6 +68,6 @@ class Nest < Formula
     system bin"nest", "--version"
 
     # check whether NEST is importable form python
-    system Formula["python@3.12"].bin"python3.12", "-c", "'import nest'"
+    system Formula["python@3.13"].bin"python3.13", "-c", "'import nest'"
   end
 end
