@@ -4,17 +4,15 @@ class Mapcrafter < Formula
   url "https:github.commapcraftermapcrafterarchiverefstagsv.2.4.tar.gz"
   sha256 "f3b698d34c02c2da0c4d2b7f4e251bcba058d0d1e4479c0418eeba264d1c8dae"
   license "GPL-3.0-or-later"
-  revision 12
+  revision 13
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "60fca734c298eb1039dc344ade09695af622b5f95dc7e11c79be16a9fbcf068e"
-    sha256 cellar: :any,                 arm64_sonoma:   "0ac68289b87661674d36a17db3f8d5e2b7d62157b498f8f61303ba9cc03d2bb1"
-    sha256 cellar: :any,                 arm64_ventura:  "adc4706a3918b77f0e24d5be8368bc541ab17aa4b54f1f37c0cb1381ab0826a9"
-    sha256 cellar: :any,                 arm64_monterey: "3d9064ce98db9b600d973ac52b2f7f7cb5c54e86cbd64b306f80672380a55c95"
-    sha256 cellar: :any,                 sonoma:         "a505e7b1c29277a49fa93fb323ef245bf51375f8e912d36c433ea717de78d650"
-    sha256 cellar: :any,                 ventura:        "f202f39f3ba25cf97451252e430467bf2433529fb5a39c494589900fcc214e2e"
-    sha256 cellar: :any,                 monterey:       "cb1448294bbf586aad34ec1943a34faba19a973e0ac4f415daafe46f7a234f0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e3a10dac4592c2582e0fe73ed16f0e9234a39c69f9115584a01b157440681d4"
+    sha256 cellar: :any,                 arm64_sequoia: "d4556cc5cdbe849c4749c90f875acf0d6c8fd23161067c32896f21b7774baf55"
+    sha256 cellar: :any,                 arm64_sonoma:  "550b5c6e1af585913ca491e70a7ee26f0bf00cca855944852c3c5a407dea44e7"
+    sha256 cellar: :any,                 arm64_ventura: "bb17c4f398412e9152aae89cce1dc562abd658ce7260f85f65ec142268e1d970"
+    sha256 cellar: :any,                 sonoma:        "c79426460a944b07d0f53856be421471ab5893dd15794e2bdbe740413d926ad4"
+    sha256 cellar: :any,                 ventura:       "8b37b8c357fed7bf253a4876aa17e4e1dc33dc1bece5632395149225350b6a27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e53d3945f9d2caeac7b028aede4b5a65ff3db01f290f45297395aa4e3132736"
   end
 
   depends_on "cmake" => :build

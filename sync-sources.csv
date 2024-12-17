@@ -379,6 +379,7 @@ Homebrew-homebrew-core/Formula/a/aztfexport.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azure-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azure-core-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azure-storage-cpp.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/azurehound.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/b2-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/b2sum.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/b3sum.rb, Homebrew/homebrew-core, 1
@@ -1497,6 +1498,7 @@ Homebrew-homebrew-core/Formula/d/dronedb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dropbear.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dropbox-uploader.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/druid.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/dry.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dscanner.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dsda-doom.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dsh.rb, Homebrew/homebrew-core, 0
@@ -2322,6 +2324,7 @@ Homebrew-homebrew-core/Formula/g/gnustep-base.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnustep-make.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnutls.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/go-bindata.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/go-blueprint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-boring.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/go-camo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-critic.rb, Homebrew/homebrew-core, 1
@@ -2495,6 +2498,7 @@ Homebrew-homebrew-core/Formula/g/grt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grunt-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/grunt-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grype.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gsan.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gsar.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gsasl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gsettings-desktop-schemas.rb, Homebrew/homebrew-core, 0
@@ -4225,6 +4229,7 @@ Homebrew-homebrew-core/Formula/m/mlx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mm-common.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mmark.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mmctl.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mmdbctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mmdbinspect.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mmix.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mmseqs2.rb, Homebrew/homebrew-core, 1
@@ -5538,6 +5543,7 @@ Homebrew-homebrew-core/Formula/r/renovate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/reop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/reorder-python-imports.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/repl.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/replxx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/repo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/repomix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/reposurgeon.rb, Homebrew/homebrew-core, 0
@@ -5699,6 +5705,7 @@ Homebrew-homebrew-core/Formula/s/s3fs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/s3ql.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/s3scanner.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/s4cmd.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/s5cmd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/s6.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sad.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/saf-cli.rb, Homebrew/homebrew-core, 0
@@ -6530,6 +6537,7 @@ Homebrew-homebrew-core/Formula/t/tokyo-cabinet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tokyo-dystopia.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tomcat-native.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tomcat.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/tomcat@10.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tomcat@8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tomcat@9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tomee-plume.rb, Homebrew/homebrew-core, 0
@@ -6649,6 +6657,7 @@ Homebrew-homebrew-core/Formula/t/typst.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/typstfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/typstyle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tz.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tzdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tzdiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/u-boot-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/uade.rb, Homebrew/homebrew-core, 0
@@ -8247,6 +8256,7 @@ Homebrew-homebrew-cask/Casks/d/defold.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/defold@alpha.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/defold@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dehelper.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/dehesselle-meld.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dejalu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/deltachat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/deltawalker.rb, Homebrew/homebrew-cask, 0
@@ -14673,6 +14683,8 @@ codello-homebrew-brewery/Casks/ultrastar-deluxe.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/ultrastar-manager.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/yamaha-steinberg-usb-driver.rb, codello/homebrew-brewery, 0
 codello-homebrew-brewery/lib/b2_download_strategy.rb, codello/homebrew-brewery, 0
+shivammathur-homebrew-php/Formula/autoconf@2.69.rb, shivammathur/homebrew-php, 0
+shivammathur-homebrew-php/Formula/bison@2.7.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php-debug-zts.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php-debug.rb, shivammathur/homebrew-php, 1
 shivammathur-homebrew-php/Formula/php-zts.rb, shivammathur/homebrew-php, 1

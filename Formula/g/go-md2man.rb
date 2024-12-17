@@ -2,17 +2,17 @@ class GoMd2man < Formula
   desc "Converts markdown into roff (man pages)"
   homepage "https:github.comcpuguy83go-md2man"
   url "https:github.comcpuguy83go-md2man.git",
-      tag:      "v2.0.5",
-      revision: "b14773d4db11046c50d0d1c05955839604aae991"
+      tag:      "v2.0.6",
+      revision: "441631534462b74c098953dbd8d5f6210994b0bf"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1688591f368bcff0f7570bc26db52b35ce57e8080ff34c47210e9aa4f881fd30"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1688591f368bcff0f7570bc26db52b35ce57e8080ff34c47210e9aa4f881fd30"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1688591f368bcff0f7570bc26db52b35ce57e8080ff34c47210e9aa4f881fd30"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b5931e14240a993944ec49813e0059e638af688e66e4091ea0467cace7a85bd8"
-    sha256 cellar: :any_skip_relocation, ventura:       "b5931e14240a993944ec49813e0059e638af688e66e4091ea0467cace7a85bd8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d33463c6582ce1cea93e4c7876d922c8b36d67d6a7029cdc1828d58e12798f7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "386385f734e6980cd796ef8c730ce0a24cda6258d62583f63adbb4770b5a246c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "386385f734e6980cd796ef8c730ce0a24cda6258d62583f63adbb4770b5a246c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "386385f734e6980cd796ef8c730ce0a24cda6258d62583f63adbb4770b5a246c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3f403e810b84edebc51c4f8e23f6a9f944e7259df273976f8bce39c0f2bf704f"
+    sha256 cellar: :any_skip_relocation, ventura:       "3f403e810b84edebc51c4f8e23f6a9f944e7259df273976f8bce39c0f2bf704f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b560a2b606a1bb4065ec10a33dad917042b3cbd182e5bd900434d9555135b5cf"
   end
 
   depends_on "go" => :build

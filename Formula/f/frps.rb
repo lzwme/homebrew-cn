@@ -1,18 +1,18 @@
 class Frps < Formula
   desc "Server app of fast reverse proxy to expose a local server to the internet"
   homepage "https:github.comfatedierfrp"
-  url "https:github.comfatedierfrparchiverefstagsv0.61.0.tar.gz"
-  sha256 "c06a11982ef548372038ec99a6b01cf4f7817a9b88ee5064e41e5132d0ccb7e1"
+  url "https:github.comfatedierfrparchiverefstagsv0.61.1.tar.gz"
+  sha256 "95c567188d5635a7ac8897a6f93ae0568d0ac4892581a96c89874a992dd6a73c"
   license "Apache-2.0"
   head "https:github.comfatedierfrp.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40b4760a745d5f37ad33b77b032dde5ae75ca57210d2d6599a5ff58e4a88b2de"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40b4760a745d5f37ad33b77b032dde5ae75ca57210d2d6599a5ff58e4a88b2de"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "40b4760a745d5f37ad33b77b032dde5ae75ca57210d2d6599a5ff58e4a88b2de"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fb7ef84acace3c8b6ed7f29e2ac1825d93bd13218c18b2838229f61447411e55"
-    sha256 cellar: :any_skip_relocation, ventura:       "fb7ef84acace3c8b6ed7f29e2ac1825d93bd13218c18b2838229f61447411e55"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c646175538841f0efd668178c350db92d759ef83022cd9ac2ba638e44343711d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aa2b289fd25fd83eaa9aebb2b0d6f62d70b9c7bd7853cb6134aaa3c9a388bd62"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa2b289fd25fd83eaa9aebb2b0d6f62d70b9c7bd7853cb6134aaa3c9a388bd62"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "aa2b289fd25fd83eaa9aebb2b0d6f62d70b9c7bd7853cb6134aaa3c9a388bd62"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c3656a73ac6e6a6c70f413879e9e3c0648e96b1c4757951a4a18ca29998c87b8"
+    sha256 cellar: :any_skip_relocation, ventura:       "c3656a73ac6e6a6c70f413879e9e3c0648e96b1c4757951a4a18ca29998c87b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9974987c290ae8eee6cd54e5a650ebfcfbb27cc87b51372480873edb181ecbbf"
   end
 
   depends_on "go" => :build

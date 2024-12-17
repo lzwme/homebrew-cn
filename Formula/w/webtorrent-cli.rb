@@ -1,35 +1,53 @@
 class WebtorrentCli < Formula
   desc "Command-line streaming torrent client"
   homepage "https://webtorrent.io/"
-  url "https://registry.npmjs.org/webtorrent-cli/-/webtorrent-cli-4.1.0.tgz"
-  sha256 "3b7bac7470e65540e45ed92b8b8d70008bbeca36bf96e81318c15bb9dee8b942"
+  url "https://registry.npmjs.org/webtorrent-cli/-/webtorrent-cli-5.1.3.tgz"
+  sha256 "54a53ecdacbccf0f6855bd4ef18f4f154576f8346e3b7aef3792b66dd5aaaa1b"
   license "MIT"
 
   bottle do
-    sha256                               arm64_sequoia:  "ecd646330d6ddbc709a443847e787cf35abc23b43865aa5ba3de186971b5118f"
-    sha256                               arm64_sonoma:   "15ab8aafa171323e2e057633f8cfff9f23347cdf7f79777082a5b059d26eb19f"
-    sha256                               arm64_ventura:  "be8479b3f65c2a5c11794f53d04ee02357a76bf3c65f5bc410ffc09e805906f8"
-    sha256                               arm64_monterey: "0e582b5e95bd7ae1462caca1b66e796fa83553b75dcf9c1b98b7e4e36f2f57bf"
-    sha256                               arm64_big_sur:  "4658471f872e03c58d8f1ace044942a3debb7e6ad9dbf2a1ac9546e93efde890"
-    sha256                               sonoma:         "94a07b753cec7f30b5270432acd7002e577cd89f76df36ac1c0834c94dad7743"
-    sha256                               ventura:        "7fabff21cbe0391c790a9c05b0a98694ce054223981e012c1d0e65932ff8f63a"
-    sha256                               monterey:       "257f5b960d1291aa153aff64eb1785ae36512bb78516d7d2d132d52a9ff44671"
-    sha256                               big_sur:        "3dc242aefbede7812f1bf60486f7f6627590942b96e44af31197cfaf088e7d0f"
-    sha256                               catalina:       "066aab7a937b40b19e50cc2efe6e336aa89dccbd958022d79e8956a10aa4eaa3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b87f6ede3b7fa60052d477c30c12c72f2cf0d2c50223376d05579c5f43e7ee1"
+    sha256 arm64_sequoia: "2f51039320fd1f4c65622c16387998ea51c75e9cc686f2f28e3f4c8d487948ee"
+    sha256 arm64_sonoma:  "5426246ae8ca317d1400c9c303b8b31fb38ccbe53c29c450b6258203d0ab4aa1"
+    sha256 arm64_ventura: "255d4b3c1c1f5637c67841c04df5b77d515f2f3aef49fbebd9c1d701b853bb63"
+    sha256 sonoma:        "2e1bb535aa93a68bbaa5da0dd2317ce6e76b7b2ddc325ac13052214fac5fe4c2"
+    sha256 ventura:       "e690cb2c937766b9d500d255f79518937ac010c12a35586f4739e012a7d950b1"
+    sha256 x86_64_linux:  "7684212b75eba13057dada394e1658bfb06d061b67da5e90809837c590eb1eb3"
   end
 
+  depends_on "cmake" => :build
+  depends_on "ninja" => :build
   depends_on "node"
 
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
 
+    nm = libexec/"lib/node_modules/webtorrent-cli/node_modules"
+
+    # Delete files that references to the Homebrew shims directory
+    sb = nm/"node-datachannel/build"
+    rm [
+      sb/"CMakeFiles/CMakeConfigureLog.yaml",
+      sb/"CMakeFiles/rules.ninja",
+      sb/"CMakeFiles/3.31.2/CMakeCXXCompiler.cmake",
+      sb/"CMakeFiles/3.31.2/CMakeCCompiler.cmake",
+      sb/"_deps/libdatachannel-subbuild/CMakeLists.txt",
+      sb/"_deps/libdatachannel-subbuild/libdatachannel-populate-prefix/tmp/libdatachannel-populate-gitclone.cmake",
+      sb/"_deps/libdatachannel-subbuild/libdatachannel-populate-prefix/tmp/libdatachannel-populate-gitupdate.cmake",
+      sb/"CMakeCache.txt",
+    ]
+
     # Remove incompatible pre-built binaries
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    libexec.glob("lib/node_modules/webtorrent-cli/node_modules/{bufferutil,utp-native,utf-8-validate}/prebuilds/*")
-           .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
+    pb = nm/"{bare-fs,bare-os,bufferutil,fs-native-extensions,utp-native,utf-8-validate}"
+    libexec.glob(pb/"prebuilds/*").each do |dir|
+      rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}"
+      dir.glob("*.musl.node").map(&:unlink) if OS.linux?
+    end
+
+    # Replace universal binaries with native slices
+    deuniversalize_machos
   end
 
   test do

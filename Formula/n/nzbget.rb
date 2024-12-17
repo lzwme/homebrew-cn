@@ -4,15 +4,16 @@ class Nzbget < Formula
   url "https:github.comnzbgetcomnzbgetarchiverefstagsv24.5.tar.gz"
   sha256 "d8a26fef9f92d63258251c69af01f39073a479e48c14114dc96d285470312c83"
   license "GPL-2.0-or-later"
+  revision 1
   head "https:github.comnzbgetcomnzbget.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7a8e09e7e74541d8343bef47982475c2186d8e296e357bfb383448942161347d"
-    sha256 cellar: :any,                 arm64_sonoma:  "c0556137ec4c0e326e83c43d9ab585e296970cfe31906220e1dc261cb39dd615"
-    sha256 cellar: :any,                 arm64_ventura: "4eef24ab928fa122c43f2489d861244c57aadf584c402fc0453ca543b49ec1c3"
-    sha256                               sonoma:        "b529bafe3e63cd40197b021d35168055ed438e83e4d3de611d3976081d581540"
-    sha256                               ventura:       "b0801ac420cbd20d84fcfe4d7b26bf776d072ce7675d7f2fec09c9190dfc6270"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ea1f0301b816abc15405ebedac03403c64cc8eeaf14572a6f4d43d3bd856d83"
+    sha256 cellar: :any,                 arm64_sequoia: "cfb625c14570f9ad326f3f92b01383473c94fadedb324f6b51d5f8e58a573558"
+    sha256 cellar: :any,                 arm64_sonoma:  "9a79e5a56c6e0e176711be00a643789561d3422b91adc6f62c013785bb0f54e7"
+    sha256 cellar: :any,                 arm64_ventura: "13ef54d1cb4b17fb7cb91e0fdfa82297c455cd1dd01c63d03fdf385347aaf732"
+    sha256                               sonoma:        "54cf30d56515995e3b417af8927f889b8f8406352ee4c8e302d2e1bfbcb7d73d"
+    sha256                               ventura:       "d6c9ffebed9e93a4b14480f0ed02fee96da6a6ccdd6df7892d3ccdcbbe1afe96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0038ebe43a06bf603373d93f7d83fcf43504fa81682cad9b63e370935f993fc7"
   end
 
   depends_on "cmake" => :build

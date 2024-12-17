@@ -1,17 +1,17 @@
 class Lynis < Formula
   desc "Security and system auditing tool to harden systems"
   homepage "https:cisofy.comlynis"
-  url "https:github.comCISOfylynisarchiverefstags3.1.2.tar.gz"
-  sha256 "b0ed01d30a4415beb78acc47867f8e0779c9966d4febc5f4a31594ba2a0bd44d"
+  url "https:github.comCISOfylynisarchiverefstags3.1.3.tar.gz"
+  sha256 "9932147acafb1c5e13289a8bd46e8d330d4a97473da30ec04650ad019e497cd0"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b26eba32da66cef4c85819f95cfece20b4472fa05087b8735704764dd2fd1a3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b26eba32da66cef4c85819f95cfece20b4472fa05087b8735704764dd2fd1a3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0b26eba32da66cef4c85819f95cfece20b4472fa05087b8735704764dd2fd1a3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0828d46f43ade64b6b4ebbaa6bac1d3f4b6f01f9648b004bda56f985ef1ed4e1"
-    sha256 cellar: :any_skip_relocation, ventura:       "0828d46f43ade64b6b4ebbaa6bac1d3f4b6f01f9648b004bda56f985ef1ed4e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b26eba32da66cef4c85819f95cfece20b4472fa05087b8735704764dd2fd1a3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c8c025e5491d98e1a941e81bc8f209b9682939c3a22afd8c28490c44866ac35"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c8c025e5491d98e1a941e81bc8f209b9682939c3a22afd8c28490c44866ac35"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5c8c025e5491d98e1a941e81bc8f209b9682939c3a22afd8c28490c44866ac35"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c689f3f8ac2d4a6dd40426f841d388dd93194d63c9378fef5c84498395e840dd"
+    sha256 cellar: :any_skip_relocation, ventura:       "c689f3f8ac2d4a6dd40426f841d388dd93194d63c9378fef5c84498395e840dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c8c025e5491d98e1a941e81bc8f209b9682939c3a22afd8c28490c44866ac35"
   end
 
   def install

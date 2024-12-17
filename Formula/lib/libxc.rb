@@ -1,6 +1,6 @@
 class Libxc < Formula
   desc "Library of exchange and correlation functionals for codes"
-  homepage "https://tddft.org/programs/libxc/"
+  homepage "https://libxc.gitlab.io/"
   url "https://gitlab.com/libxc/libxc/-/archive/6.2.2/libxc-6.2.2.tar.bz2"
   sha256 "ec292de621e819b03a37db1f7a7365a9eaf423e30e2fd4553e6336eca534cc29"
   license "MPL-2.0"

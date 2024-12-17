@@ -2,8 +2,8 @@ class Tanka < Formula
   desc "Flexible, reusable and concise configuration for Kubernetes using Jsonnet"
   homepage "https:tanka.dev"
   url "https:github.comgrafanatanka.git",
-      tag:      "v0.30.2",
-      revision: "7ced3f94234b5cbdb2edd879abb8bea72f74ae00"
+      tag:      "v0.31.0",
+      revision: "d79a53e056495892fc202d2123a698ecb5e8ecb7"
   license "Apache-2.0"
   head "https:github.comgrafanatanka.git", branch: "main"
 
@@ -13,12 +13,12 @@ class Tanka < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97438ec530dbd4eec0301e7ede24d3018449096e7c48c4e10fd6d0577f10e215"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "97438ec530dbd4eec0301e7ede24d3018449096e7c48c4e10fd6d0577f10e215"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "97438ec530dbd4eec0301e7ede24d3018449096e7c48c4e10fd6d0577f10e215"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ba40fffe9c3e5b3c81bab7baaa5efd5551168a2bdb73cbffa07634e82a477c97"
-    sha256 cellar: :any_skip_relocation, ventura:       "ba40fffe9c3e5b3c81bab7baaa5efd5551168a2bdb73cbffa07634e82a477c97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b462dcea20844e54f1f5f8ed449d69ed03480836c5e876fdec8e2eecfb58bdc7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2312c83ae68e7f566dd9c88fe8fde8f61d93d9dd048a6bd8f09db6e1bbb53c6f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2312c83ae68e7f566dd9c88fe8fde8f61d93d9dd048a6bd8f09db6e1bbb53c6f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2312c83ae68e7f566dd9c88fe8fde8f61d93d9dd048a6bd8f09db6e1bbb53c6f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e933ac02a61aa6f43af8e7837ebd442f8c57543b7960470e6440c777e4a41821"
+    sha256 cellar: :any_skip_relocation, ventura:       "e933ac02a61aa6f43af8e7837ebd442f8c57543b7960470e6440c777e4a41821"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f623b0738da74a59e3db2037f89643ba9612adbfd30085d87e7a49cd57faa67"
   end
 
   depends_on "go" => :build

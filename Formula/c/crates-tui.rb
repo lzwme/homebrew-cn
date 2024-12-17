@@ -1,18 +1,18 @@
 class CratesTui < Formula
   desc "TUI for exploring crates.io using Ratatui"
   homepage "https:github.comratatuicrates-tui"
-  url "https:github.comratatuicrates-tuiarchiverefstagsv0.1.23.tar.gz"
-  sha256 "104167275985e2811fa9c64af177bd2616ec6cd1b5a02e931f2afe5c6c29a191"
+  url "https:github.comratatuicrates-tuiarchiverefstagsv0.1.24.tar.gz"
+  sha256 "da1a6b5a04ab27c3b26fbd616a9fe8ddf52f437a8259a551b54e4aad4ea8ce19"
   license "MIT"
   head "https:github.comratatuicrates-tui.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4f5b9288ddc35bb6e2de20f0f5e6bb260c08d6b580a60fc03014c215ea38db6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ee49a9c6e383a46c1a10589aee85cb132c0673fe564df630ab2f29e841dad4c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c2106fdebcd5d3a09b50d7943527b7b2677a8f0df2567a82cd6fcb9f73b8e329"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4bdd74f2e3bc06bf68d2def74e89405b4c01418bf1fbdb861728f102a5518db1"
-    sha256 cellar: :any_skip_relocation, ventura:       "49366877add0406ba87dd5952ac875d4938496991e06fd399abd5fa1c4b77851"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b71bf937c05cd606ba6aa226768789fefaf23706daf0adf3c7bf7e160388bd8b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c52267df6289617bcba63daa6ff840331c6f70f776f7f3e8c34d26751c4b881"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "463478088ceefac2044e86795b34725cb357c13f17333d6c476870e550dff0ec"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "32624bf04b0ebf1374b612a18cc1b03c2c0fc1c7f7ed6a20608484c089f52fa9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e49c4b4ac31674dcc05d0d43d19a227cdce66f2856b6d034e9464787f146c102"
+    sha256 cellar: :any_skip_relocation, ventura:       "d0d66353ac2b2cfe4b7715fad318a3fba3d240c7b091b17c869c42fc06425dd2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dcbdc4adefbce3ff6ea2e8a5edeac454aa9bd19f34d45817f00f101bbf6ffc7f"
   end
 
   depends_on "pkgconf" => :build

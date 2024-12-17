@@ -1,20 +1,20 @@
 class PhpAT56DebugZts < Formula
   desc "General-purpose scripting language"
   homepage "https:secure.php.net"
-  url "https:github.comshivammathurphp-src-backportsarchive5a280bbf377e3926cd68960065dcbdf387dda812.tar.gz"
+  url "https:github.comshivammathurphp-src-backportsarchive8e9bde45d8f4cfcf72f5a730f4fccf907eb5c35b.tar.gz"
   version "5.6.40"
-  sha256 "4709aa659ca0ec0033c3743c8083c2331a36334e56dade3a6c43983c240bcbc5"
+  sha256 "e6dc16ae13225a59b718ffd44481f67d2df8bdef2af625f19229a1c08cf52303"
   license "PHP-3.01"
   revision 2
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    rebuild 1
-    sha256 arm64_sequoia: "1631efd99905b16a8010a18d75d3a27151ffdf18bb3ee3227697f76e9dcaddee"
-    sha256 arm64_sonoma:  "fadd9c1521a0c0dfaf26f6c99b6c915805c1ca49c52b147d12ef9682fc7b41ea"
-    sha256 arm64_ventura: "59a5b59313422d8a917d764824b1e7b633619f1d46cac07726a2cd05901046e2"
-    sha256 ventura:       "980ddd804e92c74f58848562da9c48e299d89e9a40eb327ef5186247ecb73e24"
-    sha256 x86_64_linux:  "c9be7b3d19e5d70dcdc4e7db5c48898564865db4f02c030c8545e16df8f88625"
+    rebuild 2
+    sha256 arm64_sequoia: "ff9ca16dbbf8e3a5845eb53e0c1def3d84b1941ae10629644a0f93bf2426e1e3"
+    sha256 arm64_sonoma:  "27e439722955104e14cd3874e6c0dbf0a0404e6c2b1adacf6c9279a36298dd56"
+    sha256 arm64_ventura: "c057bda44038b5c0d809b91d0343e9782ccea5eec8ddb040df2141831c6b294f"
+    sha256 ventura:       "b43480cebfad735e209a5473d2b1fa1f3f0286bd8c3a3f3053dc63007a38c0f1"
+    sha256 x86_64_linux:  "8da8f940ba07f5121cfe1e12c6be293002fe2b2fa5ab12a5713aea02906f6e75"
   end
 
   keg_only :versioned_formula
@@ -25,14 +25,13 @@ class PhpAT56DebugZts < Formula
   # For more details, refer to https:www.php.neteol.php
   deprecate! date: "2018-12-31", because: :deprecated_upstream
 
-  depends_on "bison@2.7" => :build
   depends_on "httpd" => [:build, :test]
   depends_on "pkgconf" => :build
   depends_on "re2c" => :build
+  depends_on "shivammathurphpbison@2.7" => :build
   depends_on "apr"
   depends_on "apr-util"
   depends_on "aspell"
-  depends_on "autoconf@2.69"
   depends_on "curl"
   depends_on "freetds"
   depends_on "freetype"
@@ -51,6 +50,7 @@ class PhpAT56DebugZts < Formula
   depends_on "openldap"
   depends_on "openssl@3"
   depends_on "pcre"
+  depends_on "shivammathurphpautoconf@2.69"
   depends_on "sqlite"
   depends_on "tidy-html5"
   depends_on "unixodbc"

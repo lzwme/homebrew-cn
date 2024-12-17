@@ -1,18 +1,18 @@
 class BoshCli < Formula
   desc "Cloud Foundry BOSH CLI v2"
   homepage "https:bosh.iodocscli-v2"
-  url "https:github.comcloudfoundrybosh-cliarchiverefstagsv7.8.3.tar.gz"
-  sha256 "2c7034048e8f056c9304036dcbdf658fcb81d80bbf32eeebf69a15a1ef6666bb"
+  url "https:github.comcloudfoundrybosh-cliarchiverefstagsv7.8.4.tar.gz"
+  sha256 "ca19b0409d701629e439c461d4e8d9a8b7c2c89653ac2cfd7fad204f3b500a9d"
   license "Apache-2.0"
   head "https:github.comcloudfoundrybosh-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96f0e2aa024b069aebe8f23c0c63de0f04471384bd06d83e9a036ea2bb68aa86"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "96f0e2aa024b069aebe8f23c0c63de0f04471384bd06d83e9a036ea2bb68aa86"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "96f0e2aa024b069aebe8f23c0c63de0f04471384bd06d83e9a036ea2bb68aa86"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b4d2a8b62719a7bbdbd3185f40e27bf1dbe31e61f6769f3a443a31a90b54bc46"
-    sha256 cellar: :any_skip_relocation, ventura:       "b4d2a8b62719a7bbdbd3185f40e27bf1dbe31e61f6769f3a443a31a90b54bc46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6befa8c136cc3b33eb8d35265ea3beb3e2444c2d03fb33c227539b513b8042b9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "466a6ebaa11609f9754c119c2fa485627b5482d759130bca78757ecbdf370ad8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "466a6ebaa11609f9754c119c2fa485627b5482d759130bca78757ecbdf370ad8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "466a6ebaa11609f9754c119c2fa485627b5482d759130bca78757ecbdf370ad8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "45d6a56ab365643a943c7964095efb2e303042a066610ceefdde4b5dddbdce18"
+    sha256 cellar: :any_skip_relocation, ventura:       "45d6a56ab365643a943c7964095efb2e303042a066610ceefdde4b5dddbdce18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78db035fc5134a19b287d76d3f5fa54c68e7900bac79254393c4a7c5391bd0f6"
   end
 
   depends_on "go" => :build
@@ -25,8 +25,7 @@ class BoshCli < Formula
 
   test do
     system bin"bosh-cli", "generate-job", "brew-test"
-    assert_equal 0, $CHILD_STATUS.exitstatus
-    assert_predicate testpath"jobsbrew-test", :exist?
+    assert_path_exists testpath"jobsbrew-test"
 
     assert_match version.to_s, shell_output("#{bin}bosh-cli --version")
   end

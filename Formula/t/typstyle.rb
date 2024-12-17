@@ -1,24 +1,24 @@
 class Typstyle < Formula
   desc "Beautiful and reliable typst code formatter"
   homepage "https:enter-tainer.github.iotypstyle"
-  url "https:github.comEnter-tainertypstylearchiverefstagsv0.12.10.tar.gz"
-  sha256 "35d4b9b3f1bee7c2d4fd1604627978874cba7c7c76078621fb0c605dde512a43"
+  url "https:github.comEnter-tainertypstylearchiverefstagsv0.12.12.tar.gz"
+  sha256 "ceac34ab9e51dd770c8e2cb253b9a218a2062e778298d381435c1fde227bbd20"
   license "Apache-2.0"
   head "https:github.comEnter-tainertypstyle.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "74acdee5b167e0e86b340e440a4ab682caa58dd74dd375b70b37437180d7daf2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e56eeb27cc4f9ce178cd1ade10919b65bfbfd68de71744065af96b169453dca"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "54d0ecad39364fcd152ab49ae3a42bdf49fa1560331aa309d138b9b0a74a9f99"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b111740ca047d1cf87e56ff76f7959fe99c93551421052bfc503d552046241b8"
-    sha256 cellar: :any_skip_relocation, ventura:       "040a6c604dc47f711ec09a0e054fac1bf3f33472682e76d7261b2a0cb4dadb11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b70128b43a59e188546fd7bb58aee1c62e708d715981cea823f7da2632122a9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5da99c675f93acd65f37f527b85b865c0754aada7e96c985c50718ccd5f4069b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ba9c93bd027111d44c27a3ccdff5954a688b2f64e938ab34e22b113ec055c18"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "69e73e2ec61294439777ee19365a03b5ce95569a0e720337412bc1827ba3afe9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eda2e316ebe59ce447178e350fbed25c4673526c076b70d1a5821143dbf0c825"
+    sha256 cellar: :any_skip_relocation, ventura:       "0f7a03b2c362bf234e2a4b018224f319ee48fb7bb48b4e0ce648be50db79765e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9529a1387f84f5bc74b24f8dc6d146b52f5ab1136f47758aa3ea5408f333cfc6"
   end
 
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "cratestypstyle")
   end
 
   test do

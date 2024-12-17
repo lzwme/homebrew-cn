@@ -1,18 +1,18 @@
 class Jnv < Formula
   desc "Interactive JSON filter using jq"
   homepage "https:github.comynqajnv"
-  url "https:github.comynqajnvarchiverefstagsv0.4.1.tar.gz"
-  sha256 "71bbd015f4594ef9723ea05a3325e2e8f8bf1f7d3c0309efa679826237ea8c9a"
+  url "https:github.comynqajnvarchiverefstagsv0.4.2.tar.gz"
+  sha256 "12f23a6082afbb80e567222ebfb827d71c08fb343473c1f909f5554aa9a4867f"
   license "MIT"
   head "https:github.comynqajnv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc62615da88cce4421f44b01fa04d18848353b70de05655ae54f006bc2e2f790"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22b596715fd8f0c2ca7b86a5755aa9daf6d588271ca1aff3c7be2c26e5f2c449"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a10dddd869037b345c00873bae108311e2a6cb9a24cb600e714681515a561c8e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "be8f48590ec358a076e2a3f7aa67c3612deecb9de92141e1145f8fde7dcbcbbc"
-    sha256 cellar: :any_skip_relocation, ventura:       "ec608e3ee80ba96f64bcf9ff2026381af4124189a6ef66308fd5b8af4eee265b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3f1559c549efa79701fa2d43d0699b655367ac716081064a07afd31ed859fcf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0cf70293e7111aec8fcc6ff7d8782df0a64324fa9aba266556e9ada1ec0a6bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "435612947d9def4bbd93299bd0a642574a290a85fa85555e89d4421bb7a1da27"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d4ae1af80dd9b3e71cdb82ac43cfb314ad39abdae7b67d91185472c085957262"
+    sha256 cellar: :any_skip_relocation, sonoma:        "14c45837cc6aabe8acb4664dd207f60996bc371ee02af9b4df3fa6fa0a6ec00f"
+    sha256 cellar: :any_skip_relocation, ventura:       "4c646d3a72b8931e85298c85db9dc673d8fe6785f93bac9ce0dcd07bf103daf6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a99e6ff1cf644ca2cbcc72ea2443508e6f0ff5ab2eed863ff51c55559af0bd9e"
   end
 
   depends_on "autoconf" => :build

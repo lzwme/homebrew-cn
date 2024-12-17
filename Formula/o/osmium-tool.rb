@@ -4,17 +4,15 @@ class OsmiumTool < Formula
   url "https:github.comosmcodeosmium-toolarchiverefstagsv1.16.0.tar.gz"
   sha256 "f98454d9f901be42e0b6751aef40106d734887ee35190c224b174c2f27ef1c0f"
   license "GPL-3.0-or-later"
-  revision 4
+  revision 5
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "ebda02a23a3f1cfa0275f71e2c5445e5f3127bc3597db4b16e1fa4b9972500de"
-    sha256 cellar: :any,                 arm64_sonoma:   "f8c2f5614625cafdf9e42a325d1565e25281f9cab2f89ddbc717a05f6a768fff"
-    sha256 cellar: :any,                 arm64_ventura:  "189ab4022fc116085d637ccd93ea248972a9873b5b37d6df3e26c417aee5cbef"
-    sha256 cellar: :any,                 arm64_monterey: "1a168fb4ababa8829f1720b5759ffe48e620d93ebd82b713e6070bcad5e08274"
-    sha256 cellar: :any,                 sonoma:         "4f3cb5053fa0d24861c5fccfdcc15b010c07af138cb6ff2b9d49d9f3b9753185"
-    sha256 cellar: :any,                 ventura:        "6921c1baafe13854f684136de7cbf3ca0e7122291e3e66588464230db67432c0"
-    sha256 cellar: :any,                 monterey:       "9c64fe9a05a00af2ba891e35dcb2bb0afcb4584a1312431015486bbf77f990d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "30655a9d970ee905e12ba22f874947ca8d6847c8641e8ba00750f542dbe3ae91"
+    sha256 cellar: :any,                 arm64_sequoia: "a9935acb79dc891c9293def4ebe33455538b5b9c5df5a5199a36b60e965f9e45"
+    sha256 cellar: :any,                 arm64_sonoma:  "7af99b05b60837be477c18e1a4fc6d46f0a925f1da4f9c0df4c96f3283189762"
+    sha256 cellar: :any,                 arm64_ventura: "0d43f806c48ca293ca43b7b79049da4bdaca569d8dbce79ca64aec2dd8f13157"
+    sha256 cellar: :any,                 sonoma:        "8681a76151572d68f50c1696e62ea71e732112f2658216f016c5381213fa3248"
+    sha256 cellar: :any,                 ventura:       "3489132658ffe95e5410d445b61771fc88ae97257e1ceb4f8ea99c12a74cb9da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d98f2f747206244f51dd7d7b8a40978b2e1e1016b52f08ba0165d6cfae589971"
   end
 
   depends_on "cmake" => :build

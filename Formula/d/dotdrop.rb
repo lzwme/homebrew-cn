@@ -3,18 +3,17 @@ class Dotdrop < Formula
 
   desc "Save your dotfiles once, deploy them everywhere"
   homepage "https:github.comdeadc0de6dotdrop"
-  url "https:files.pythonhosted.orgpackages78bd2684d3616a0838675e7355480bef03295ee12074f1d5745a37a18542c1ccdotdrop-1.14.2.tar.gz"
-  sha256 "b9f44f90f537b6e541704e518cc2a2a424a96a9b865e5b1617bd7d65381d0a1e"
+  url "https:files.pythonhosted.orgpackages66a78c8f1d7268bcb0ae3f7e43d8b0da03ad0c1336baabbd4b9ce88a4b1d7b36dotdrop-1.15.0.tar.gz"
+  sha256 "7e7b5558a66ac514c3861e0bb31262d5972bc15fc97c1402aef8cccffd0bde61"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed26677415348766d3859df72d078952d2c1db1b8a55d7182c1e1309d7235644"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85e8756f8073495ae5eb3e498f40c21560fae2d74371442daff221f89beb9c56"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fc7a0fd9e48139e3c58a07e5df9a7613e20f7c470126db4d7008f57397f4b224"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b92173d880662f817fa5eff2c1f8e5511d3bbac96b1bccc482f0c02bae0f37f2"
-    sha256 cellar: :any_skip_relocation, ventura:       "7b5d67d9d88a72c3c383ab7501ff639ef21d246bd24ed7d96aee2e2ea351051d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4c59d3ae68d5856130e95924ec567c153e455864bd100c6e74fb1ec936065e3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5e7085f892f54ea2fbf667c52b347cdeb2961b2a3a33b60a9d19e6bb5c5d5f2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ecf13231388f2f0521cbed42c585228e7d7d2185f776c6b967794afa950cf7f9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "57cc170767670fbc9d331f480ab70729519450803e88877da7a132296e8139dc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f8faccf5f2837b5a13b5defd98ffba7c8936b5ae5d823ed197ad6b730c823566"
+    sha256 cellar: :any_skip_relocation, ventura:       "07b1ef0067a69c56dd957a0e17ca11a079f05201f5cd32061d23d28d98c496c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a670a0ef77ce715aa73de517e4298e4f255c32552456d4e492ae3a36a8bd03a2"
   end
 
   depends_on "certifi"
@@ -31,9 +30,9 @@ class Dotdrop < Formula
     sha256 "2fa77c6fd8940f116ee1d6b94a2f90b13b5ea8d019b98bc8bafdcabcdd9bdbed"
   end
 
-  resource "docopt" do
-    url "https:files.pythonhosted.orgpackagesa2558f8cab2afd404cf578136ef2cc5dfb50baa1761b68c9da1fb1e4eed343c9docopt-0.6.2.tar.gz"
-    sha256 "49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"
+  resource "docopt-ng" do
+    url "https:files.pythonhosted.orgpackagese4508d6806cf13138127692ae6ff79ddeb4e25eb3b0bcc3c1bd033e7e04531a9docopt_ng-0.9.0.tar.gz"
+    sha256 "91c6da10b5bb6f2e9e25345829fb8278c78af019f6fc40887ad49b060483b1d7"
   end
 
   resource "idna" do
@@ -47,13 +46,13 @@ class Dotdrop < Formula
   end
 
   resource "markupsafe" do
-    url "https:files.pythonhosted.orgpackagesb4d238ff920762f2247c3af5cbbbbc40756f575d9692d381d7c520f45deb9b8fmarkupsafe-3.0.1.tar.gz"
-    sha256 "3e683ee4f5d0fa2dde4db77ed8dd8a876686e3fc417655c2ece9a90576905344"
+    url "https:files.pythonhosted.orgpackagesb2975d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62markupsafe-3.0.2.tar.gz"
+    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
-    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
+    url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
+    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
   end
 
   resource "python-magic" do

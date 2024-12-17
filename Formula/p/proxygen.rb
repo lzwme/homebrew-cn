@@ -4,15 +4,16 @@ class Proxygen < Formula
   url "https:github.comfacebookproxygenreleasesdownloadv2024.12.02.00proxygen-v2024.12.02.00.tar.gz"
   sha256 "536c5baaf372a590e848d1bf60b46195bec421e2f940034530e1c170d43c4947"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comfacebookproxygen.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "21df603f5e31c3a3194c53139cb93426316256a231bb5fb1132d7c14d6f1f68c"
-    sha256 cellar: :any,                 arm64_sonoma:  "310a42d4f43c473c7d567f2defd4562a9c57b81ef2c759cb7aa23b1e2ff349c4"
-    sha256 cellar: :any,                 arm64_ventura: "e8b2621ed173ffe92d39c57c5b346ad5c1110455d05e88348fc889203ab05dde"
-    sha256 cellar: :any,                 sonoma:        "5b57f285fdf57f255db5fe0c118baf5053fc1bcf5413506dac17f5b37811cbbb"
-    sha256 cellar: :any,                 ventura:       "d058fea88e91626ad70967c66b73c26b816f4eb632385a44aac0c9a01ab90446"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "300a8af8e2362949795c88d8b9e32b0a493cca0aa47767a1696da3d6e86c0cb8"
+    sha256 cellar: :any,                 arm64_sequoia: "ab0e64dd6b371856c7a8598b7f66ee5920e0c3c37d05ca4eda765207ad7c4047"
+    sha256 cellar: :any,                 arm64_sonoma:  "64ad913f51b4365cf771497c9c7b3115f5346eca6fa530a22d0db68624737da1"
+    sha256 cellar: :any,                 arm64_ventura: "7520450e26415df4ca957231748e8ead397c0147ecfb31b40caeb871e74c5a81"
+    sha256 cellar: :any,                 sonoma:        "5d650979226a82a089e3214c0820dbe2217f74139b30121deb2366e5a41c6d46"
+    sha256 cellar: :any,                 ventura:       "7379788150ae2770facc43e892d39444a65fe7239794d82b4f055c5006bda411"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6195400434334fc8652e881b28521c417afac224a1b49ffc7702fd5cf431914e"
   end
 
   depends_on "cmake" => :build
@@ -52,6 +53,7 @@ class Proxygen < Formula
     port = free_port
     pid = spawn(bin"proxygen_echo", "--http_port", port.to_s)
     sleep 30
+    sleep 30 if OS.mac? && Hardware::CPU.intel?
     system "curl", "-v", "http:localhost:#{port}"
   ensure
     Process.kill "TERM", pid

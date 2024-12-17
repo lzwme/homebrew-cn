@@ -3,7 +3,7 @@ class Standardese < Formula
   homepage "https:standardese.github.io"
   # TODO: use resource blocks for vendored deps
   license "MIT"
-  revision 19
+  revision 20
   head "https:github.comstandardesestandardese.git", branch: "master"
 
   # Remove stable block when patch is no longer needed.
@@ -21,14 +21,12 @@ class Standardese < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia:  "7e22140475b46fb4d0fb944d7a5f67243e1d7e1b1f2ae35c0ec3aca75e5dee79"
-    sha256                               arm64_sonoma:   "682acebb5938da5bbd182838a6bd952066bf1a2de960174221a4dd1feba29d6b"
-    sha256                               arm64_ventura:  "b57735eb50e862f63e38353150141635957be7b675af90826d985b04f740510e"
-    sha256                               arm64_monterey: "116de83b144054bb29715aee81af0f4190e0c37fb7a2836a0a2ff676b9699692"
-    sha256                               sonoma:         "0e06c1bb976cbd0d915a324c0d121c107ec20468b3286a05c07ef8ff9b33091e"
-    sha256                               ventura:        "02c26b3fdc36cc62bd620dc541008b0ef5f3843965b5e42d3ce0e8133d2848f6"
-    sha256                               monterey:       "6a8db8378c6cad0719dd242c9c50649851ef4c97ba969e82cbff93fe0e434f94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7b6c685ab4508d15a0b7b9df6bc4bb02241d28be6736b7a0e336fa835b798bde"
+    sha256                               arm64_sequoia: "83fcba84e5474be69854c2ecd8d59f2e5e2333f4004c93603d8106a1d91748a9"
+    sha256                               arm64_sonoma:  "fc114064e9734f88f666e37d041e138a31e2517d8a2f7c7ea0f9041414e16b60"
+    sha256                               arm64_ventura: "b3e88e943e501323bbf9a717a2e63757283685c5c061ef7c21ba0baff483b3c9"
+    sha256                               sonoma:        "b9a998194e7bfb6b44cfe0f46d7a19640894efe44c122e097c3978a6e1cd3825"
+    sha256                               ventura:       "737f19c5312d5a62a7224ec89440e8f82e5f348510798ed296c79ffd2f5e9a9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5890b84174fe4da58ab252abe20070a09378430b1f7f6d1c6dc138e3aa127df2"
   end
 
   depends_on "cmake" => :build

@@ -4,18 +4,16 @@ class Dspdfviewer < Formula
   url "https:github.comdannyedeldspdfviewerarchiverefstagsv1.15.1.tar.gz"
   sha256 "c5b6f8c93d732e65a27810286d49a4b1c6f777d725e26a207b14f6b792307b03"
   license "GPL-2.0-or-later"
-  revision 22
+  revision 23
   head "https:github.comdannyedeldspdfviewer.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "ce3347f631f796c57c1fe421fd402cdd77df6c8bb245efeaf64eb6fb2c561363"
-    sha256 cellar: :any,                 arm64_sonoma:   "5db996084e2c7e06c3c474933cb6e4255fa1c37dea5a111f82a971a8e2dfec73"
-    sha256 cellar: :any,                 arm64_ventura:  "52596ae451143f2669614d9694c304c3123168d7db50d79bdcd12aa6684040d7"
-    sha256 cellar: :any,                 arm64_monterey: "84ee197efe13c91f1f127e68796c2d77cb5d694dab0943b1b3372bede5158c68"
-    sha256 cellar: :any,                 sonoma:         "4f23c224799ec83898e871f708bad7da8817b85d68580bbcf58c14b30cedb768"
-    sha256 cellar: :any,                 ventura:        "06d12144f5919f8068177086a482988e116e88091e771c6e91918f0cd720f776"
-    sha256 cellar: :any,                 monterey:       "efeeee0f226a452c50e0077ac08d82e8c588de102fbf41deff4c2047a6f098c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e95e14b53711e78ccd607afb0f44ba040f27b381d23cd4a7b6cec8ebb7d09ba"
+    sha256 cellar: :any,                 arm64_sequoia: "f2bface45d5755709da64d7ca8ad1cd83084184873fd0df4ac70208e6e4637c0"
+    sha256 cellar: :any,                 arm64_sonoma:  "2b9f3cfb2c67e76fd58d45e22676e83d21d6fef080be544150052d03b26e4ded"
+    sha256 cellar: :any,                 arm64_ventura: "12a58b62a7e2835817acdc79d1a894d365c542be1c8b4568896458532cb6555f"
+    sha256 cellar: :any,                 sonoma:        "941a8f9f9d150cf65c1df615544975d88149cf358abb7f5fd62211430bfbf63d"
+    sha256 cellar: :any,                 ventura:       "c4eac68c959c1a14d31c5a2977a9c15d24bca1c5bab169f61196ac0336e7b434"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91de3a769d25fc70db8460cb2d6636eca33834a955364f4ec747fbe2a2efbfbd"
   end
 
   depends_on "cmake" => :build
@@ -39,6 +37,10 @@ class Dspdfviewer < Formula
   end
 
   def install
+    # Allow setting CMAKE_CXX_STANDARD in args
+    inreplace "cmakecompiler_clang.cmake", 'add_definitions("-std=c++11")', ""
+    inreplace "cmakecompiler_gnu_gcc.cmake", "add_definitions(-std=c++11)", ""
+
     args = %w[
       -DRunDualScreenTests=OFF
       -DUsePrerenderedPDF=ON

@@ -3,18 +3,18 @@ class BumpMyVersion < Formula
 
   desc "Version bump your Python project"
   homepage "https:callowayproject.github.iobump-my-version"
-  url "https:files.pythonhosted.orgpackages1d448f4f5dc472a054634bffd86e4941b2624e0b050f15578d40ec15e670d8e5bump_my_version-0.28.1.tar.gz"
-  sha256 "e608def5191baf505b6cde88bd679a0a95fc4cfeace4247adb60ac0f8a7e57ee"
+  url "https:files.pythonhosted.orgpackages452270378e3ab8634633ee37991eac86f072870be4fd9c59603ba6353c54d668bump_my_version-0.28.2.tar.gz"
+  sha256 "65f555b3d279962b100c1f88ad105ae6c6274def73868141f9550a100ca7b87f"
   license "MIT"
   head "https:github.comcallowayprojectbump-my-version.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "fe93e6e535957f332d956ef5853a995e952205e0f963db8908d0fe626aa75acb"
-    sha256 cellar: :any,                 arm64_sonoma:  "52683a7a0352e95b9a1ada772b2cafd5bb80f3f9968745114faac0231a40376b"
-    sha256 cellar: :any,                 arm64_ventura: "840e89f3ad701eda224e4a74a91fa5d2efdd9120ce3defa13802e349ce87743d"
-    sha256 cellar: :any,                 sonoma:        "861c383ba805fcc168458f13f3074474117f500209011ad1ef4c2ceaf54e4e8f"
-    sha256 cellar: :any,                 ventura:       "ad87072003dec33bbe488b6566d6056b95340ae28975b51a9df42824e5958e62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97c20ff0638d2e70ede66c062fada7f7381c78cb607d4f6315c9b1616806268b"
+    sha256 cellar: :any,                 arm64_sequoia: "5b82b497870af237d106c2e3680a99ca78a8b49e816e2b9e52439412880922b3"
+    sha256 cellar: :any,                 arm64_sonoma:  "05e6cf1910f1bd7239f64107495a90cc300b3271017b24c18272564142a79aea"
+    sha256 cellar: :any,                 arm64_ventura: "5dcd1cd25bd38082be83f53f6331a2ab675c71fc0b9e3cf717e068b7ac1a3062"
+    sha256 cellar: :any,                 sonoma:        "7773a80a8ad295b81ab1a874d7483f5bfbb4fa9eae40af22339a02a451cf07b4"
+    sha256 cellar: :any,                 ventura:       "858de516f1341b419e0506dc5603ad81e7a79bd6b5c1a915787470371563609f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c64df7f5d3f5559976b366f3cceeeaa9a023b94e8a92135981568d7fb47f69b4"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -51,18 +51,18 @@ class BumpMyVersion < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackagesa9b7d9e3f12af310e1120c21603644a1cd86f59060e040ec5c3a80b8f05fae30pydantic-2.9.2.tar.gz"
-    sha256 "d155cef71265d1e9807ed1c32b4c8deec042a44a50a4188b25ac67ecd81a9c0f"
+    url "https:files.pythonhosted.orgpackages450f27908242621b14e649a84e62b133de45f84c255eecb350ab02979844a788pydantic-2.10.3.tar.gz"
+    sha256 "cb5ac360ce894ceacd69c403187900a02c4b20b693a9dd1d643e1effab9eadf9"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackagese2aa6b6a9b9f8537b872f552ddd46dd3da230367754b6f707b8e1e963f515ea3pydantic_core-2.23.4.tar.gz"
-    sha256 "2584f7cf844ac4d970fba483a717dbe10c1c1c96a969bf65d61ffe94df1b2863"
+    url "https:files.pythonhosted.orgpackagesa69f7de1f19b6aea45aeb441838782d68352e71bfa98ee6fa048d5041991b33epydantic_core-2.27.1.tar.gz"
+    sha256 "62a763352879b84aa31058fc931884055fd75089cccbd9d58bb6afd01141b235"
   end
 
   resource "pydantic-settings" do
-    url "https:files.pythonhosted.orgpackagesb5d49dfbe238f45ad8b168f5c96ee49a3df0598ce18a0795a983b419949ce65bpydantic_settings-2.6.1.tar.gz"
-    sha256 "e0f92546d8a9923cb8941689abf85d6601a8c19a23e97a34b2964a2e3f813ca0"
+    url "https:files.pythonhosted.orgpackages864119b62b99e7530cfa1d6ccd16199afd9289a12929bef1a03aa4382b22e683pydantic_settings-2.7.0.tar.gz"
+    sha256 "ac4bfd4a36831a48dbf8b2d9325425b549a0a6f18cea118436d728eb4f1c4d66"
   end
 
   resource "pygments" do
@@ -86,8 +86,8 @@ class BumpMyVersion < Formula
   end
 
   resource "rich-click" do
-    url "https:files.pythonhosted.orgpackages3aa9a1f1af87e83832d794342fbc09c96cc7cd6798b8dfb8adfbe6ccbef8d70crich_click-1.8.3.tar.gz"
-    sha256 "6d75bdfa7aa9ed2c467789a0688bc6da23fbe3a143e19aa6ad3f8bac113d2ab3"
+    url "https:files.pythonhosted.orgpackages9a31103501e85e885e3e202c087fa612cfe450693210372766552ce1ab5b57b9rich_click-1.8.5.tar.gz"
+    sha256 "a3eebe81da1c9da3c32f3810017c79bd687ff1b3fa35bfc9d8a3338797f1d1a1"
   end
 
   resource "tomlkit" do

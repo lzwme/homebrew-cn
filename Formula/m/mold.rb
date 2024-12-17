@@ -1,18 +1,18 @@
 class Mold < Formula
   desc "Modern Linker"
   homepage "https:github.comrui314mold"
-  url "https:github.comrui314moldarchiverefstagsv2.35.0.tar.gz"
-  sha256 "2703f1c88c588523815886478950bcae1ef02190dc4787e0d120a293b1a46e3b"
+  url "https:github.comrui314moldarchiverefstagsv2.35.1.tar.gz"
+  sha256 "912b90afe7fde03e53db08d85a62c7b03a57417e54afc72c08e2fa07cab421ff"
   license "MIT"
   head "https:github.comrui314mold.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "94885dddd6f603d4ac1783fbc76ac24a8363fba89bc32695e20184cec37bfcc8"
-    sha256 cellar: :any,                 arm64_sonoma:  "6f1a7410eac67e223f9682c765cddc16ce88861bcc73de3dacdb185752e0a7b5"
-    sha256 cellar: :any,                 arm64_ventura: "15fc94e6f213863bacb5790df5a15e1a7e07cee409cb93810477f5a80c9f4c40"
-    sha256 cellar: :any,                 sonoma:        "ac3da97ab3695bfad40a078f24b9d52574895fb748df81c471938a495fa5e409"
-    sha256 cellar: :any,                 ventura:       "1fa594df1de86f1fe1d218e639851c499a6f3f37f0eabad82461654ccfdff113"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6a56bbd7626740a26a9161e29cdb9ff2986e22a2210f59840129eb3503e33af"
+    sha256 cellar: :any,                 arm64_sequoia: "f59f3217206d50393555975638c9667e3459c49779fb2fec2cdef6294f38b4d8"
+    sha256 cellar: :any,                 arm64_sonoma:  "0f2ed8d4a6d4028e1b975be258100dd7bd5d21564bb66f39e46b384425a9bc69"
+    sha256 cellar: :any,                 arm64_ventura: "393e0d297e7aecf06df3d36ea001dd5d5b8fe94462b6f717afdc0a2ccff2ee66"
+    sha256 cellar: :any,                 sonoma:        "85729bf82cd87573df28173c9c90b93d5566f70383db382aa13c4a239d360176"
+    sha256 cellar: :any,                 ventura:       "d71f89301d9add1e3a5603d8bd0d03c694abd9c2089a8c592a50a206f3418f47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "109be12ec39c94994152396d6ef47faaaa14109b9cf81f817beaa6dd63497173"
   end
 
   depends_on "cmake" => :build
@@ -22,7 +22,7 @@ class Mold < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1200
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1500
   end
 
   on_linux do
@@ -30,7 +30,7 @@ class Mold < Formula
   end
 
   fails_with :clang do
-    build 1200
+    build 1500
     cause "Requires C++20"
   end
 
@@ -40,7 +40,7 @@ class Mold < Formula
   end
 
   def install
-    ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1200)
+    ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1500)
 
     # Avoid embedding libdir in the binary.
     # This helps make the bottle relocatable.

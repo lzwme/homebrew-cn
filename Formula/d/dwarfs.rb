@@ -4,6 +4,7 @@ class Dwarfs < Formula
   url "https:github.commhxdwarfsreleasesdownloadv0.10.2dwarfs-0.10.2.tar.xz"
   sha256 "36767290a39f92782e41daaa3eb45e39550ad1a4294a6d8365bc0f456f75f00c"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,12 +12,12 @@ class Dwarfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c9da1692ffab162576ddfd8d99291869be8658c53779a1603ae730ddb3ce1568"
-    sha256 cellar: :any,                 arm64_sonoma:  "ce2fd4fa9749ad58aa1b8902dd673088b4f7172d0cc804515fa7e2fc30034d9b"
-    sha256 cellar: :any,                 arm64_ventura: "40a82a04d7942c79f4a3ecff411e8a5770818be3dc5cbef931fd9e26db69c8a5"
-    sha256 cellar: :any,                 sonoma:        "de5eda763e440e9ed01b3d7ea4b743cc33710784aabd36c5f2e58b05b7476ee6"
-    sha256 cellar: :any,                 ventura:       "c1038b62ff2ff229e38ed7be3847309758438a5b36666f0751e17026b1406a1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9c18a7327293d2db9cdd92c0d5fe0dd0dd4344053df52559530334c9863c87d"
+    sha256 cellar: :any,                 arm64_sequoia: "0b37775f9b208571fbe489d10419004a12d083a52ef54b3737b4d8add2cd70eb"
+    sha256 cellar: :any,                 arm64_sonoma:  "cd8af7dcb84a9c5a593100f0d49c06db118c2762987a093861f654940b525cef"
+    sha256 cellar: :any,                 arm64_ventura: "c6f16eab5421027f90fe1424686ac19f8bf0e0aa6976cba0563888f2e273d2dc"
+    sha256 cellar: :any,                 sonoma:        "9f5a52055a38a83e10614e8cacecf0a1998b2082b145534c6a7aa8ba0eb5fde1"
+    sha256 cellar: :any,                 ventura:       "cf5f58b64979a49789882121ab1f21d678b4abe566dde761c8f9b8faff092b84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba933a86248c522c065c2fd974d95238086ac5dfdd0a1cb812f88b124df7cc48"
   end
 
   depends_on "cmake" => :build
@@ -83,7 +84,7 @@ class Dwarfs < Formula
     end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
-    system "cmake", "--build", "build", "--parallel"
+    system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 

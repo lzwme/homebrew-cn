@@ -1,8 +1,8 @@
 class Mikutter < Formula
   desc "Extensible Twitter client"
   homepage "https://mikutter.hachune.net/"
-  url "https://mikutter.hachune.net/bin/mikutter-5.0.7.tar.gz", using: :homebrew_curl
-  sha256 "34dcabb98572c5c3b5707ebdee41019bf277fa3e20f7e061088b5b1d1aaea39a"
+  url "https://mikutter.hachune.net/bin/mikutter-5.0.8.tar.gz", using: :homebrew_curl
+  sha256 "c68f9a7cb7424e69b7f5a6557b884deb120708db5678e51f30f3cbb011c5b51f"
   license "MIT"
   head "git://mikutter.hachune.net/mikutter.git", branch: "develop"
 
@@ -12,14 +12,12 @@ class Mikutter < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "5dfe5d2f6dd4fd03d99c9ef6fe3802bac9eead82654de2ecd75b568e860844e2"
-    sha256 cellar: :any,                 arm64_sonoma:   "874e909394bbcd628880b9ecb1c24bbdcd742f4e9bf70b0124ffc9406a03a530"
-    sha256 cellar: :any,                 arm64_ventura:  "3fc62fdf24d802bed6844898757ea6c3ad41199bce35d7695cfcfc18dff2129f"
-    sha256 cellar: :any,                 arm64_monterey: "4699f159d4c7e93dd620bbf19cbd3a24d3a98be7aeffa1931463c3ec61cbd980"
-    sha256 cellar: :any,                 sonoma:         "175463dd78b4438c99e02707a6ffc2b51cd99133975057274c00a8db3d73a7cf"
-    sha256 cellar: :any,                 ventura:        "1ad8bc7f0a40476f9818fc27546d17fa6ce1238b29b8450c7755e653af7d48aa"
-    sha256 cellar: :any,                 monterey:       "9b996455b9139e9a05a5e192a6bc3afd60163657f8dad6547b8d26ea678e2965"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2fb63d053caabda978ef73ca377addc05ae0d51b8eccb4c9b8ac1daef02d8e8a"
+    sha256 cellar: :any,                 arm64_sequoia: "cd859fa77b1c956eae27cb5239b914005708bb83a9fa6bff838a5aaee3c9eeb4"
+    sha256 cellar: :any,                 arm64_sonoma:  "cd5bef014eb7be1201718fc6d23e101929faadf376cc0550b1f818b775907a22"
+    sha256 cellar: :any,                 arm64_ventura: "168aac1652c080ca46bffe711f7f21fc7c492185905edd726aafea05358fbc6f"
+    sha256 cellar: :any,                 sonoma:        "fa7a44d029548c3aa365c41473755ebdbab7305857661c26705e4a7b2b960e1b"
+    sha256 cellar: :any,                 ventura:       "b27f1eac423287da960c26f6acaa714c5f0c7863ca25557868c25f73657a762e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45d7dcf4604999d5f1e97eb2e73fa81fc0945fe6f64a35c923d86612f491cce5"
   end
 
   depends_on "at-spi2-core"
@@ -43,6 +41,8 @@ class Mikutter < Formula
     depends_on "gettext"
     depends_on "terminal-notifier"
   end
+
+  # check `plugin/gtk3/Gemfile` for `gtk3` gem version
 
   resource "addressable" do
     url "https://rubygems.org/downloads/addressable-2.8.6.gem"
@@ -135,8 +135,8 @@ class Mikutter < Formula
   end
 
   resource "json" do
-    url "https://rubygems.org/gems/json-2.7.1.gem"
-    sha256 "187ea312fb58420ff0c40f40af1862651d4295c8675267c6a1c353f1a0ac3265"
+    url "https://rubygems.org/gems/json-2.7.2.gem"
+    sha256 "1898b5cbc81cd36c0fd4d0b7ad2682c39fb07c5ff682fc6265f678f550d4982c"
   end
 
   resource "locale" do

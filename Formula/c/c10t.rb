@@ -4,17 +4,15 @@ class C10t < Formula
   url "https:github.comudoprogc10tarchiverefstags1.7.tar.gz"
   sha256 "0e5779d517105bfdd14944c849a395e1a8670bedba5bdab281a0165c3eb077dc"
   license "BSD-3-Clause"
-  revision 9
+  revision 10
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "0221ec0b0d70aa261b1de4b8bf9d6233f03938cd664e7507c032b90804679deb"
-    sha256 cellar: :any,                 arm64_sonoma:   "65c200e6b93a21b12be0194fa4115c56bf86a919e73a9b77a005db40bc5e00f2"
-    sha256 cellar: :any,                 arm64_ventura:  "359e543872760a9b52bda1a3fce09dee9fe58ede5dc73b9ee2002f61ed95cb31"
-    sha256 cellar: :any,                 arm64_monterey: "865a9cd8ba52885d3a1954bc546afd9795e70e23d93daa92defa558d1aede4ad"
-    sha256 cellar: :any,                 sonoma:         "33d13682f5689fd63f5134c293e63512472ba98f588cdb0ce7d546989b41cf85"
-    sha256 cellar: :any,                 ventura:        "7ea5fc2b7cc4c542a65c5548bd8d5a178b4953a99f7003b72e42a6701190f909"
-    sha256 cellar: :any,                 monterey:       "4f861dcd0ad936fa7fd4bbbe4ac529d99fc94c3d0b86b8806d11744cd9bdb093"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "927f577767bb086cb2e8ca6350abceffb3c5cb859bb8c1e2e195a7d596afead7"
+    sha256 cellar: :any,                 arm64_sequoia: "70ab94023e384a3ab08cfd9e0af0e0a44c83dbca6093465d5723049050243b39"
+    sha256 cellar: :any,                 arm64_sonoma:  "95e91b204b1e1a40ffd9a6a2a4bef1fb572612210980e52bc5c6f6eb9d29fe67"
+    sha256 cellar: :any,                 arm64_ventura: "7bac068da2879d7f2909fcb2a09d2d5962f1a9be7bed12ec7bb49def6246b83a"
+    sha256 cellar: :any,                 sonoma:        "630ca35c4c72f49320d8e11fe2901868b2ad4d82bc247afb875d81e7e8cd1fb7"
+    sha256 cellar: :any,                 ventura:       "e81cbae89815db03fc8f84cbdb8a87abc1000eeecbb9ce79ada9e7e968a7b859"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fb0e64ba0f4146416e66bb79fd0972d6ca5af6a6ef087fa519764355f91b14b"
   end
 
   depends_on "cmake" => :build
@@ -51,7 +49,6 @@ class C10t < Formula
 
   def install
     ENV.cxx11
-    inreplace "testCMakeLists.txt", "boost_unit_test_framework", "boost_unit_test_framework-mt"
 
     args = []
     unless OS.mac?

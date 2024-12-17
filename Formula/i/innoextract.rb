@@ -4,7 +4,7 @@ class Innoextract < Formula
   url "https:constexpr.orginnoextractfilesinnoextract-1.9.tar.gz"
   sha256 "6344a69fc1ed847d4ed3e272e0da5998948c6b828cb7af39c6321aba6cf88126"
   license "Zlib"
-  revision 9
+  revision 10
   head "https:github.comdscharrerinnoextract.git", branch: "master"
 
   livecheck do
@@ -13,14 +13,12 @@ class Innoextract < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "bdb79b724eb71b85cacb7911da0fc14d442b8b668162c8745b4e6257df495c28"
-    sha256 cellar: :any,                 arm64_sonoma:   "2d60ed6571f7d230035575cfe3630f7b2b7243bd911f69313dad3f981257fca6"
-    sha256 cellar: :any,                 arm64_ventura:  "19c8b7a38bd209c865695899c1cbb894569756751e22706a500a97598552dc77"
-    sha256 cellar: :any,                 arm64_monterey: "377142c8b5f00721c84f3a00157b7b26f270cbb3026da05f504f34f3bec80506"
-    sha256 cellar: :any,                 sonoma:         "c5a9bddd53d55669ac2203d86bae7f7feb864fd63bfd47f79e79885337cf10cf"
-    sha256 cellar: :any,                 ventura:        "8369c9af2fbd6cd7243b7d193e24d5402580537d0649738c67bc76ec8905d723"
-    sha256 cellar: :any,                 monterey:       "75e199d52822c846a48beab97ee091b028ccd757c0dc4abc25cd857e6bd29958"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4492c1d8f175a20dbeaefca61a2c0d3525750c9939b210dff39fd6a123e1b439"
+    sha256 cellar: :any,                 arm64_sequoia: "653948d44a91bfc4b452db5ff09f022967bee5fb6fcf2b9368e9d7b2ca61d676"
+    sha256 cellar: :any,                 arm64_sonoma:  "5658b594392eabdf27cb01b08b8c70d0ad4d415e8df226c7a851f026b96db2ff"
+    sha256 cellar: :any,                 arm64_ventura: "9d5d41064e579dc82059762171e6d11be09e09de1a04f2d14cc9f714c8b8e0d0"
+    sha256 cellar: :any,                 sonoma:        "ebf2344eeb9e6be6f8cf2cdcdd7ae9226d4500c63f1e18aeb32fdb20655b11f8"
+    sha256 cellar: :any,                 ventura:       "0b6bc1f911b58b61398f21afd839843cdd1502d2728f0e906d79dd5b74398f3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "494cfd4d754e4eecf0b7b7d2097878fb2cfb3d3a45567f286ef79527b77cc37c"
   end
 
   depends_on "cmake" => :build

@@ -1,14 +1,13 @@
 class RubyInstall < Formula
   desc "Install Ruby, JRuby, Rubinius, TruffleRuby, or mruby"
   homepage "https:github.compostmodernruby-install"
-  url "https:github.compostmodernruby-installreleasesdownloadv0.9.3ruby-install-0.9.3.tar.gz"
-  sha256 "f1cc6c2fdba5591d7734c92201cca0dadb34038f8159ab89e0cf4e096ebb310a"
+  url "https:github.compostmodernruby-installreleasesdownloadv0.9.4ruby-install-0.9.4.tar.gz"
+  sha256 "c932e5a61e5cf11056ba6224fd75f75f2a71a991d4fc216d670ba96d7cc5c6a0"
   license "MIT"
   head "https:github.compostmodernruby-install.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "f0f38dd79961d78a317bbdc6d0c72db9119812dae220526b011b653b40bf8ddc"
+    sha256 cellar: :any_skip_relocation, all: "f469f77ab8e75bfd324cafaa522d5245a68c345d343f8996a8a16ba497981712"
   end
 
   depends_on "xz"

@@ -2,7 +2,7 @@ class Ledger < Formula
   desc "Command-line, double-entry accounting tool"
   homepage "https:ledger-cli.org"
   license "BSD-3-Clause"
-  revision 6
+  revision 7
   head "https:github.comledgerledger.git", branch: "master"
 
   stable do
@@ -48,13 +48,12 @@ class Ledger < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia: "a23d59fe87c4eb5e668c0636de0286b1a9ff8f5d1e823e066b5c74315a63a68b"
-    sha256 cellar: :any,                 arm64_sonoma:  "218ed68a0e22d7bd204f95da731524bc8aa2655ef6120abd408939bf5d994709"
-    sha256 cellar: :any,                 arm64_ventura: "4ddcb1fccd738eb25f3f34d7d385a6f01f6d33bf6171ad4c04cb273b165bc385"
-    sha256 cellar: :any,                 sonoma:        "c9c7cdde58c09a55707cc4275ae657324aa207dc8eeed4b41edc41cc02f3907b"
-    sha256 cellar: :any,                 ventura:       "2339d91e5735e72342ccb4e0890ad19e24e5018e4e5050a09e57a3d3639b98e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ffcf606599116dd135bb202d28aada69e978b017ef2f22735b9b68549919509"
+    sha256 cellar: :any,                 arm64_sequoia: "605f9873cfeee7c954f55a29fbde7cf2066792baca747d039240a4840f40bfa5"
+    sha256 cellar: :any,                 arm64_sonoma:  "a84da9d701f740f902b8c635c19f394cf2b58820a9a59219773617bad15eba19"
+    sha256 cellar: :any,                 arm64_ventura: "6a3c0b722a87fb070eb270e05ca78cfded257e470166597a6766a7dbc42222b9"
+    sha256 cellar: :any,                 sonoma:        "ce4e727f36f0a3159695744dceadb0362d7fbb25906152df3c8263c0c6fe59e7"
+    sha256 cellar: :any,                 ventura:       "159ba0b0853efd009ad410a16bd8d2a8bdfbc4123751dff90338d810551c7e64"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb58b2ab66d1efffa83333d0c281280a20bdd5f6dc9b9bf5058634e58639c772"
   end
 
   depends_on "cmake" => :build

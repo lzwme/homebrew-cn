@@ -4,17 +4,15 @@ class Gource < Formula
   url "https:github.comacaudwellGourcereleasesdownloadgource-0.55gource-0.55.tar.gz"
   sha256 "c8239212d28b07508d9e477619976802681628fc25eb3e04f6671177013c0142"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 arm64_sequoia:  "c735cd51d9e849ddae9f6fe7fee81279a997eed45faee857806e0f3fc0f7d560"
-    sha256 arm64_sonoma:   "0e04c59ea31bcac42b276ddb55c793c3965c7c95863ee93980321a20768ba82b"
-    sha256 arm64_ventura:  "f0c75e3218b79997ea769dc36701f78cd9c3471184f984b60ffb5d0dbec86268"
-    sha256 arm64_monterey: "bd2bad94832bbc7e1a668c70b97dd7a2c432a43cdf316d753c29c5c739c04319"
-    sha256 sonoma:         "e5b2f41f0a965a3dd857ff701ba535b85fe08719e395b1ddcb4aea54f81f3d63"
-    sha256 ventura:        "99b2e09613f40fe201663c5e72d2688214358dc97373cfce90d8f73232eb61d5"
-    sha256 monterey:       "bcbe2dbfcb48406b6f28a3579dc45a9c8a1c0c60cc8a6563301e1b52c2c9d73a"
-    sha256 x86_64_linux:   "164916b7277e4beb805bd690735a859475dcd5d83690f5daff348eebb62d0374"
+    sha256 arm64_sequoia: "45751a1641fe7d73147fe811f8ac03d01e125dc545524fc9b130ea97714ab275"
+    sha256 arm64_sonoma:  "2081d916c3ce5876f496d23ce8d6b092101aaf2750b4987c593fc52168279f2a"
+    sha256 arm64_ventura: "bb6149e22c1ca5442f9974a1079a75f6ae1def91d9439b60bfe411659b9f9ad7"
+    sha256 sonoma:        "163f2bc4d805804d54538f0b0c5e50ca98c8541bc05f2fae65d845a521da8d8c"
+    sha256 ventura:       "1fc962a7b5587a8ce44f71c98b4966460f2b929d050a3477a3f08b878dc40c8c"
+    sha256 x86_64_linux:  "01eaeab6eaaedd52c2ee0f7f7885e96357f560eb12b6b1029a5e322923128c44"
   end
 
   head do

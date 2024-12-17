@@ -4,15 +4,16 @@ class Papilo < Formula
   url "https:github.comscipoptpapiloarchiverefstagsv2.4.0.tar.gz"
   sha256 "280d5472563cdb9f1e7e69f55a580522f7bbb2b2789aa14de56e80d707291421"
   license all_of: ["LGPL-3.0-only", "GPL-3.0-only"]
+  revision 1
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f181f07411bcef5669f4c4d2a769b9a3157deb2a8d428d5e8d4c3a46415a4ee1"
-    sha256 cellar: :any,                 arm64_sonoma:  "613fe9ccc6da2d5d13414c1d38e412c62de3edbd61c679f01228746ea0df00f6"
-    sha256 cellar: :any,                 arm64_ventura: "8424cf40fbfc95dbfaa446c0c7eb52f75761361f88fb550a06316ec822753260"
-    sha256 cellar: :any,                 sonoma:        "460dbc5c2b135468875f927bac6d28d6cbd140c80b7c47a4189260140ac648c6"
-    sha256 cellar: :any,                 ventura:       "2c05102d8924401362fea746b4de06c4e1fe7da5ec40561ca919d8deff2aee79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e7385021b38540c3df6c929407058ae895bb82e53dc417d9ba68f679347a416"
+    sha256 cellar: :any,                 arm64_sequoia: "5f432ab518a3259af803010a3324931d4799d6b81e9df8593acac580e7c38c68"
+    sha256 cellar: :any,                 arm64_sonoma:  "27dd9f0a85e954377d3112d69efcec91b1ca03e2238fe4f3c3a224b49efb84d4"
+    sha256 cellar: :any,                 arm64_ventura: "7a5dc4540ac1293c9d8f1d7055c48c8ba7fe9c09c67072283f8f04b9ad7689d5"
+    sha256 cellar: :any,                 sonoma:        "97b1f943de9291cf78e8b0c051354ae8f58f4a454bcc0584cc7121169d9885a2"
+    sha256 cellar: :any,                 ventura:       "f6c1f5f1cc49452cb9dd0b3e2beccda6d1bbd988d0ec2a477646adfe686bd7a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "855211dc6bfb5bba5bb510aac1e4d5bbcad7f3f7a5bfd24a67069bf0738fdeb5"
   end
 
   depends_on "cmake" => :build

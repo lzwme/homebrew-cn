@@ -4,6 +4,7 @@ class Scip < Formula
   url "https://scipopt.org/download/release/scip-9.2.0.tgz"
   sha256 "f2a1d568ba0801742df062df17b5a1ced9aec8647057050899e9017807280ff3"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https://scipopt.org/scipdata.js"
@@ -11,12 +12,12 @@ class Scip < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "072edd52f6ce89e7fc81d084916be719688a866c1dd31a2f9ede2a64cb084ae4"
-    sha256 cellar: :any,                 arm64_sonoma:  "a1399b0eff655005f402a11adcc096347374729aadd5ad9d7ce295a0fcaae960"
-    sha256 cellar: :any,                 arm64_ventura: "6621bb96a6bf7f511dcbe740811708df215f64cc88f20ed730136c462186510f"
-    sha256 cellar: :any,                 sonoma:        "9ee388681826cbb9dd84fcf0c4a74c2724955d80ce6f2b6cf59d05a3e8d55dd2"
-    sha256 cellar: :any,                 ventura:       "5e33bec282deb0b3386d8795620dffd1da18ea626867084029f28d30e5e4d59c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1515635c7bb25f232df54d00ebe6d247775f6d23a470adf000cc71d01cfd3d69"
+    sha256 cellar: :any,                 arm64_sequoia: "b128fc2aeee92841095026ec503ff6f6419a7645750e487fc50068bfea2136ed"
+    sha256 cellar: :any,                 arm64_sonoma:  "6946432bc33d1fb4cfdff48a76b8ba7c12ad3ed2b8c9e7cbb40824e20c985797"
+    sha256 cellar: :any,                 arm64_ventura: "38229ab3998ef741a3d39436899dd3aa7c3293db0940364b4401f6d0e83663a3"
+    sha256 cellar: :any,                 sonoma:        "a275e4ce98a8101c3ed082bca23ce6933f1e0ac211acd8e77843a026cbd873ae"
+    sha256 cellar: :any,                 ventura:       "fc242b06983f141adf96a2b0f70c13fbcf719cdb8e462fd57f2c34e137be3c33"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cad8f33f370b808688512b5e2db33811c937f6d480ffe1474efd190527fd8545"
   end
 
   depends_on "cmake" => :build

@@ -6,6 +6,7 @@ class GraphTool < Formula
   url "https://downloads.skewed.de/graph-tool/graph-tool-2.80.tar.bz2"
   sha256 "c1a70e075dbe728fad25dc3f5a9a9597880a6d6ff68435b91d21f0b44ef8dbe6"
   license "LGPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url "https://downloads.skewed.de/graph-tool/"
@@ -13,12 +14,12 @@ class GraphTool < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "f8312ee277316d2541abce5195a4f7afb50121a48108a63d5befd47888160175"
-    sha256                               arm64_sonoma:  "afe92a1713d4b26d830d8d37dd6d34f519c03ce98f38ff2612a9512c6897a09f"
-    sha256                               arm64_ventura: "a1d72270290cc4545f1c324dcf36e9f82a93d327a06c6c03986288962e752006"
-    sha256                               sonoma:        "8af3886cfcb8afa48dad5c12f786284713e56007903a30aa44811db493cd09c7"
-    sha256                               ventura:       "0245644ae50faaa755440145fa7ed164db9629cd882614bb52834264c8e7573d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95965b45ede426cc12f96b0d8713a98f334ac36bd92919ff26352c77d50272d8"
+    sha256                               arm64_sequoia: "a470f54a72794490fe01c6ba75f0a7c317f7d3a66adfc28e6e04c890a95384aa"
+    sha256                               arm64_sonoma:  "5855ff9082d883e5458ce9c3836f3253477cdeb4b9ec36d4a1a282bb10a1fe8c"
+    sha256                               arm64_ventura: "a066410f639abda1d7300e9b77255d9a6108f0177e43bf0e9559bfa03cab3008"
+    sha256                               sonoma:        "5e978a35eab16ca77d95a1291d5f528a642740ad482e62129a66d1c78cb2a7ad"
+    sha256                               ventura:       "a5c622b74b2ed842d6660e1439d8305fd3e6868272d57d4b81bffbe5e0bd6540"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57ca74a88ac29c15a829255ccbd430995bb492191a13c81bc0a3f18c0644256e"
   end
 
   depends_on "google-sparsehash" => :build
@@ -144,9 +145,9 @@ class GraphTool < Formula
     args = %W[
       PYTHON=#{python}
       --with-python-module-path=#{prefix/site_packages}
-      --with-boost-python=boost_python#{xy.to_s.delete(".")}-mt
+      --with-boost-python=boost_python#{xy.to_s.delete(".")}
       --with-boost-libdir=#{Formula["boost"].opt_lib}
-      --with-boost-coroutine=boost_coroutine-mt
+      --with-boost-coroutine=boost_coroutine
       --disable-silent-rules
     ]
     args << "PYTHON_LIBS=-undefined dynamic_lookup" if OS.mac?

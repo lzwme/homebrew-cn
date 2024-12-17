@@ -3,14 +3,13 @@ class NicotinePlus < Formula
 
   desc "Graphical client for the Soulseek peer-to-peer network"
   homepage "https:nicotine-plus.org"
-  url "https:files.pythonhosted.orgpackages5ad3a489967ab67165a6893f23e03c5134cf1b9cd35fd826c0a7c9ea3c743cb9nicotine_plus-3.3.6.tar.gz"
-  sha256 "6a0b39c5ff4fb4768689516a3a2cfe3aafdc568b5237f19553c51b1de712ee66"
+  url "https:files.pythonhosted.orgpackages07206fc7098083926c4930dd1f18e87a1d83ef4e943971cb96a0ac80a4371d88nicotine_plus-3.3.7.tar.gz"
+  sha256 "7b0bad2584261f61a0fccc19c7b898d3906f379280faf6a480544887ac3f1803"
   license "GPL-3.0-or-later"
   head "https:github.comnicotine-plusnicotine-plus.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "1efbc77356619bdb2f9ab67519031f51fa3e19eb262f890b805ca5df9aaf66f6"
+    sha256 cellar: :any_skip_relocation, all: "af1f4ffd58ac45eb0d375df8ef5e39979c885cdbe426cd6488155bfe6b0dd90c"
   end
 
   depends_on "adwaita-icon-theme"

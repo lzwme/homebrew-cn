@@ -4,6 +4,7 @@ class Solidity < Formula
   url "https:github.comethereumsolidityreleasesdownloadv0.8.28solidity_0.8.28.tar.gz"
   sha256 "ec756e30f26a5a38d028fd6f401ef0a7f5cfbf4a1ce71f76c2e3e1ffb8730672"
   license all_of: ["GPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0", "CC0-1.0"]
+  revision 1
 
   livecheck do
     url :stable
@@ -11,13 +12,12 @@ class Solidity < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "7d25ad2af2b0d23695ac400c5650d9f4b1ab381363c649f382b1763010362fba"
-    sha256 cellar: :any,                 arm64_sonoma:  "fc412d6503e462724de89699c0b84c96944b349b88d222e37c9c38cea72c479d"
-    sha256 cellar: :any,                 arm64_ventura: "5e579cf156f4878259a12cc70ccc7d300e6d6eb1a9e6822457df27185d3abd22"
-    sha256 cellar: :any,                 sonoma:        "8e0726035c368da6bcd502d76b5139a668222de5b19f64787561500a0eacbd8f"
-    sha256 cellar: :any,                 ventura:       "6fcd5c082015c863f527bb1983c72915f1c9a3f8b1d1ad0e27e2dbcb55e68561"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aaa64d53b22674a9afddd6bea5bb0c1f53bad7262ff6c98131d8ccbff989d791"
+    sha256 cellar: :any,                 arm64_sequoia: "4f389bce0db912513f5e381a4bd139953f2cdfa82308d0a250f81dab088bd18e"
+    sha256 cellar: :any,                 arm64_sonoma:  "8a1fa063bb9410e5257aceabd9c550c446e8906c258b3053367719413540371b"
+    sha256 cellar: :any,                 arm64_ventura: "3a086cdb971d56700ca0d5c73580af511b3789b117de8cd4ff1251db233396de"
+    sha256 cellar: :any,                 sonoma:        "ee728ca80234649a01096bd7f9fdf4bd64a8c70c1e7ad3fd160894bf7d24d112"
+    sha256 cellar: :any,                 ventura:       "0c8159fe43ab0052660fef60240e41996becc36f76bb58fc47ab123931198835"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f1142deb221472afbdad9b6042fc7967dc692a721b8a3b6d5c5f769279960a5"
   end
 
   depends_on "cmake" => :build

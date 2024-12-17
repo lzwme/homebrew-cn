@@ -4,15 +4,16 @@ class Folly < Formula
   url "https:github.comfacebookfollyarchiverefstagsv2024.12.02.00.tar.gz"
   sha256 "8cce5b638aad2f7284e1db2ddf39123f4df8d81f9e3efc516200aab6e89f2206"
   license "Apache-2.0"
+  revision 1
   head "https:github.comfacebookfolly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0d6624b8a4f8683416f338902f9a6295353e62f88e11aeb373dd165f237ca602"
-    sha256 cellar: :any,                 arm64_sonoma:  "901d849ea6d9ba7d4bb82dec5e40b1c126ec48d626b38f5bfc419e31ef99bfc5"
-    sha256 cellar: :any,                 arm64_ventura: "df3760061f3e4b1d1e4bc45a960927d966d1ea3df643c820b2f4aaf364ef5bbc"
-    sha256 cellar: :any,                 sonoma:        "4d809f751c3390303d8ca829ed77c65d189badfe33492a44527fbceb85858910"
-    sha256 cellar: :any,                 ventura:       "9cca3e0d416f8688cc1ad92f9d1088ac8e3de7d037127739f6425d6b6b726e39"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bc959926b8ea699066e5e57d71d37ee454eccb02e991dc26eb8999d3498b2a9"
+    sha256 cellar: :any,                 arm64_sequoia: "06f615ef9b72bf4e3544a027fdcf48208f0e2867334291fe817107e19ee1b375"
+    sha256 cellar: :any,                 arm64_sonoma:  "ac1494f2ec354951d3005e33134c7032c6683d7aa40a6b1c04e5e24b3dd993dd"
+    sha256 cellar: :any,                 arm64_ventura: "9a6a25c45b6addf14f9c60f31990d99719c92852c685f7de2fc3f34ab57f40f6"
+    sha256 cellar: :any,                 sonoma:        "1f3488b11d18f6497881c83e34d2914c4030ecf47a50e161f15ef0f87d90c384"
+    sha256 cellar: :any,                 ventura:       "fbd69180834d312c065f9f79aa2ff9f9e1170704294165c545a1c6589df4d5a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78ad87ec5d3c5fc2eb7ad3cabecfe8ca5a2d19aed05b3a415513f9326f9f8eec"
   end
 
   depends_on "cmake" => :build

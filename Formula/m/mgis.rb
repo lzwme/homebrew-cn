@@ -4,18 +4,16 @@ class Mgis < Formula
   url "https:github.comthelferMFrontGenericInterfaceSupportarchiverefstagsMFrontGenericInterfaceSupport-2.2.tar.gz"
   sha256 "b3776d7b3a534ca626525a42b97665f7660ae2b28ea57b3f53fd7e8538da1ceb"
   license any_of: ["LGPL-3.0-only", "CECILL-1.0"]
-  revision 3
+  revision 4
   head "https:github.comthelferMFrontGenericInterfaceSupport.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "b7779b3b5c38db9f720dfe50cf812955434ff9fa6eb9b42edb47583bcce28c45"
-    sha256 cellar: :any,                 arm64_sonoma:   "73c148a736218658862b6627cd7c2864bc74f01afeaa7f948f4af7e0bc991c1f"
-    sha256 cellar: :any,                 arm64_ventura:  "488f7e70c16abb8b4c6845717cda7df904f2d1d757614dfdd63bf80dc6d1beb5"
-    sha256 cellar: :any,                 arm64_monterey: "51acb9671ffeacc21b644d28e0fc5f7f9b874b1b928e06f8d93de061d013043b"
-    sha256 cellar: :any,                 sonoma:         "edd070e94b3729e3fb0313846ed723cfe12c8e9139dd63f2e52ace7c1c82a3e4"
-    sha256 cellar: :any,                 ventura:        "ec42419ee95dddba6b674c1f73687543d51dd07f938696cb6830d1ce2187c515"
-    sha256 cellar: :any,                 monterey:       "a4ae2c41254776a40b86c3a224369c5dacf2c8bc4515ff45f769e3957d27a24e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "16ffae790702d03708dde3d9465844e67f576d50f92b9e8e0d25c88815678797"
+    sha256 cellar: :any,                 arm64_sequoia: "8ad27b36ebc81202135e46f07239c5c10cd1184482f9884df7fcadec0e4885b2"
+    sha256 cellar: :any,                 arm64_sonoma:  "a0bd94fdc5643eb1d3a09fa4b291447b8d6c275485a847ce20771f085509c161"
+    sha256 cellar: :any,                 arm64_ventura: "fbfa822e7522ada5e5a1afcf89cc41b8efc88dbd8b8ae5decee40d795118f543"
+    sha256 cellar: :any,                 sonoma:        "e4e6d58e29cda1d2d09ce6f312b0fcfb0875f72bae10306bb0905bd570fc41db"
+    sha256 cellar: :any,                 ventura:       "cafc7308d207de8efe3e81fa225f8b3bb715d17f89c55792037978c0e4ebef2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6325e8cf522f4467e99b6066bd464dd2d1df521a14f3f7f4060ac36ac755baa6"
   end
 
   depends_on "cmake" => :build
@@ -50,7 +48,12 @@ class Mgis < Formula
       "-Denable-enable-static=OFF",
       "-Ddisable_python_library_linking=ON",
       "-DCMAKE_INSTALL_RPATH=#{rpath}",
+      "-DPython_ADDITIONAL_VERSIONS=#{Language::Python.major_minor_version python3}",
     ]
+
+    site_packages = prefixLanguage::Python.site_packages(python3)
+    args << "-DCMAKE_MODULE_LINKER_FLAGS=-Wl,-rpath,#{rpath(source: site_packages"mgis")}" if OS.mac?
+
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

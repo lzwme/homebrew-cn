@@ -4,18 +4,16 @@ class SimpleAmqpClient < Formula
   url "https:github.comalanxzSimpleAmqpClientarchiverefstagsv2.5.1.tar.gz"
   sha256 "057c56b29390ec7659de1527f9ccbadb602e3e73048de79594521b3141ab586d"
   license "MIT"
-  revision 9
+  revision 10
   head "https:github.comalanxzSimpleAmqpClient.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "cd6d4094aacae310f0c808a8192bafbb2ca569bca87e95bb4f2f53e6f21733f8"
-    sha256 cellar: :any,                 arm64_sonoma:   "7eb2dfc39d39dc1d154e86e8de9eda347187128e5a79d3b5118ecdb7e51f8e5f"
-    sha256 cellar: :any,                 arm64_ventura:  "d0f9c687e9acc3b0f837117973ce49d4496fa9028ef889fc31e7750c2a7b6405"
-    sha256 cellar: :any,                 arm64_monterey: "eb540cf125e6d28a226b43a051f2459210aa3b13ea991618b004f2582c53b869"
-    sha256 cellar: :any,                 sonoma:         "d2bb07617ff3af4cd6e7d5ef12f960e7370a6582e482abea1676a1de4b0bf2be"
-    sha256 cellar: :any,                 ventura:        "680c8b48533c107811207e2d6cfdcf4a15747f4b17ec46d3f19dd6dd792bc71a"
-    sha256 cellar: :any,                 monterey:       "c4c72635a60f7e5ba392384e3e100f64084d7c9ec73dbdea437d9badac5ecb4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b632ee61e266aab62c8a1418dff3e705ac8a5c01b78f26a76070307307d009b0"
+    sha256 cellar: :any,                 arm64_sequoia: "113b5ded452952e6ece8e1ac1f36abbe862bac2e36dc6933ccf85277d92d423a"
+    sha256 cellar: :any,                 arm64_sonoma:  "bb232a7dd23e721fab644f9853f8daece9d4ade01397d823ecb7e5765f002d9c"
+    sha256 cellar: :any,                 arm64_ventura: "701415d086b41bc3d4d81f2b9f2455b62e4d4ced88429aedefac7c366133347d"
+    sha256 cellar: :any,                 sonoma:        "dac31186f89a2cb1aa4b20c0c3e5b2f7d61cca70b8469a0501e976a8f6bc4783"
+    sha256 cellar: :any,                 ventura:       "c037064915eac9fbe507101aba085e58c7b5cd86e3dffa2b4f0f374bb232ab50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2abfcf884b581f32544e4873d8285e27080f95814eb9513e54ed54b44fc17c24"
   end
 
   depends_on "cmake" => :build

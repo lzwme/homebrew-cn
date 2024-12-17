@@ -1,8 +1,8 @@
 class Lighthouse < Formula
   desc "Rust Ethereum 2.0 Client"
   homepage "https:lighthouse.sigmaprime.io"
-  url "https:github.comsigplighthousearchiverefstagsv6.0.0.tar.gz"
-  sha256 "9eafb6654deabe3e10602daa99a34ec9db1ed83396fca7de12ad2deb05915860"
+  url "https:github.comsigplighthousearchiverefstagsv6.0.1.tar.gz"
+  sha256 "8a8f43f099bed624318aaabbf3811e78a0171c7fb4e5e30f7e66ab70bbe40a1c"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Lighthouse < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "478ef81622db566b6ad87b4b29ec57f6af9dd0736326b75e82f3891aef1a2472"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee33df7b1c0034290306aa3eb020633b748ad9df1c692aa7137e4473bf74a74a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "aca5171cfce34858ad513a8fba0021f182a8f6ba710e563de3b2e42dd936b8e3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c8a60358f8043f0b01c08ebb299bd1f7cb4ae1168fce31fa942aa9f9aac7980e"
-    sha256 cellar: :any_skip_relocation, ventura:       "d6a67d65545b9eef6ffb70f4d89c198c9345d74bab15fe4d2b462a833bd4663d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "253dbece9532ed9a9718fe03e6ae405be7d8e15b089176c8d9c7a5d1560a410a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d954767cb910dab184563e101c3e2934e51287e6b3ba9f553b8c971793ff312"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "525081531d039db97d4c886d50c9fdf833d16e96615a9e2c7a2437c46f3f366e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2ac78b89e96056435847f5af0df3793fc282cb94a5ef17f6bf307a56ef231fdb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b4d405ce97f4d561c210dd94989f083c23410424a55654243a4b2094777f193b"
+    sha256 cellar: :any_skip_relocation, ventura:       "32cd06195c94fef42f6078342ab25184595d6b29a3b671db7e94ec7160c1cfcf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c67153d7446c16ed236cc6c540860604e961ab04791e1b634ec0f1d23ca26f27"
   end
 
   depends_on "cmake" => :build

@@ -5,7 +5,7 @@ class Redex < Formula
   desc "Bytecode optimizer for Android apps"
   homepage "https:github.comfacebookredex"
   license "MIT"
-  revision 17
+  revision 18
   head "https:github.comfacebookredex.git", branch: "main"
 
   stable do
@@ -39,13 +39,12 @@ class Redex < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "092b108e91c9aca93fc40d6b07532066d6e5a54c8d0815658550c88114380e1a"
-    sha256 cellar: :any,                 arm64_sonoma:  "9705d9104e7b028ea0b01caa7b221c1f2dded7823d2e3bb26e22d0e973dc14ba"
-    sha256 cellar: :any,                 arm64_ventura: "3629b26a8b0c5f31aae55121ba1ddbc6e5a8a274c4c6bc9b9861eb3298d94d55"
-    sha256 cellar: :any,                 sonoma:        "a411dfe04f3bf6a0c52f840d1fe385999a55ede5142aa94f13a13bdf44368e1b"
-    sha256 cellar: :any,                 ventura:       "2e6d68e04a55ab05b7f777999462a26a53f11e1c7b76ac39012dc59c2f66736b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f297bd9910b2e1b137e3027ec3942e50c34868eb39cc780128d01268da75f75b"
+    sha256 cellar: :any,                 arm64_sequoia: "b8f15cf1f0fb935d34d71a6aeab7282390ce8c1c3f0ca6ad9783e89a7f0acc51"
+    sha256 cellar: :any,                 arm64_sonoma:  "255affb5c51a98d0de1325b24b542cb8fc55b130bd5a1c8b22bc4fd615c67a8f"
+    sha256 cellar: :any,                 arm64_ventura: "78165bd960bb67a4f12399aae1553c10f4de1feb5c686bc9110655d3942a814f"
+    sha256 cellar: :any,                 sonoma:        "e5b52de79c81d375970a72d0db41bdd21f7607427b9cde20ba2d98323aa3c94a"
+    sha256 cellar: :any,                 ventura:       "89eb99c2a77acdb426c604797ab86ff3a87a9e171dada98e5661569bf2b76ebb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0372148b392f5c519aa86c17fc36b942d317190709e721cde2eaceab0f4082cc"
   end
 
   depends_on "autoconf" => :build

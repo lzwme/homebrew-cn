@@ -2,7 +2,7 @@ class OsrmBackend < Formula
   desc "High performance routing engine"
   homepage "https:project-osrm.org"
   license "BSD-2-Clause"
-  revision 6
+  revision 7
   head "https:github.comProject-OSRMosrm-backend.git", branch: "master"
 
   # TODO: Remove `conflicts_with "mapnik"` in release that has following commit:
@@ -11,14 +11,21 @@ class OsrmBackend < Formula
     url "https:github.comProject-OSRMosrm-backendarchiverefstagsv5.27.1.tar.gz"
     sha256 "52391580e0f92663dd7b21cbcc7b9064d6704470e2601bf3ec5c5170b471629a"
 
+    # Backport fix for Boost 1.85.0. Remove in the next release.
+    # PR ref: https:github.comProject-OSRMosrm-backendpull6856
+    patch do
+      url "https:github.comProject-OSRMosrm-backendcommit10ec6fc33547e4b96a5929c18db57fb701152c68.patch?full_index=1"
+      sha256 "4f475ed8a08aa95a2b626ba23c9d8ac3dc55d54c3f163e3d505d4a45c2d4e504"
+    end
+
     # Backport fix for missing include. Remove in the next release.
     # Ref: https:github.comProject-OSRMosrm-backendcommit565959b3896945a0eb437cc799b697be023121ef
     #
-    # Also add temporary build fix to 'includeutillua_util.hpp' for Boost 1.85.0.
-    # Issue ref: https:github.comProject-OSRMosrm-backendissues6850
-    #
     # Also backport sol2.hpp workaround to avoid a Clang bug. Remove in the next release
     # Ref: https:github.comProject-OSRMosrm-backendcommit523ee762f077908d03b66d0976c877b52adf22fa
+    #
+    # Also add diff from open PR to support Boost 1.87.0
+    # Ref: https:github.comProject-OSRMosrm-backendpull7073
     patch :DATA
   end
 
@@ -28,14 +35,12 @@ class OsrmBackend < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "ea5f99145c4fe841d95fba33e08a093f88b291e311e219b0b833fd9777caeb9e"
-    sha256 cellar: :any,                 arm64_sonoma:   "650d17a3915469c4bbd23eec83f8ceb27570b0d3207c1a3598f3d6747296c21e"
-    sha256 cellar: :any,                 arm64_ventura:  "ccd438e39cdec24fdff74bb2ed43cee49d00af2b3144ad90802fa3e3bb53eb79"
-    sha256 cellar: :any,                 arm64_monterey: "072bd2264dec2d9db23593505666eb8b67b5f993d5753a67decae862be2b5330"
-    sha256 cellar: :any,                 sonoma:         "2fd84b9de2a0e5f091371d7480b8cc2fa0296d71e5f910291e8e293b00e26523"
-    sha256 cellar: :any,                 ventura:        "c34da972144b065eb8bcd678359b298c63631052fce4dfd2565042d77a9e7fd7"
-    sha256 cellar: :any,                 monterey:       "0883df366fab00865ab4f9b83a0879d73006abbcd0856c0f27165d631f79269e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8d9c984c196e0eba61bb632babccb693d2a5e1bb49864d6656a3bf64c6eef51"
+    sha256 cellar: :any,                 arm64_sequoia: "21aa25fa7a3562fcfe9d8a0ae47ecaf39dc96a129fe4335f84a2bb45bce9c5bd"
+    sha256 cellar: :any,                 arm64_sonoma:  "95139386132a79afbf03c241e3bc94b20aba6b4a1b73674a3887be3f4810b229"
+    sha256 cellar: :any,                 arm64_ventura: "6bd26f9a7d81c614e8da57f44b036d9399f27b02780cd7f1e5fc240958e9c694"
+    sha256 cellar: :any,                 sonoma:        "da566a8ea2bd4625ac39fb6be072ad44b2e98e1114f47e4dd21ed76f0218e52e"
+    sha256 cellar: :any,                 ventura:       "4fb6126c266f179069dd0b8f159baa07fd14aab2f99f10b812448dea27a291db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fae7b39121c03728fa24a88578072dcc1a0bed6aacc6fb60c51eb0f3b651d064"
   end
 
   depends_on "cmake" => :build
@@ -125,20 +130,6 @@ index 5d16fe6..2c378bf 100644
 
  #include "utilstring_view.hpp"
 
-diff --git aincludeutillua_util.hpp bincludeutillua_util.hpp
-index 36af5a1f3..cd2d1311c 100644
---- aincludeutillua_util.hpp
-+++ bincludeutillua_util.hpp
-@@ -8,7 +8,7 @@ extern "C"
- #include <lualib.h>
- }
-
--#include <boostfilesystemconvenience.hpp>
-+#include <boostfilesystemoperations.hpp>
-
- #include <iostream>
- #include <string>
-
 diff --git athird_partysol2-3.3.0includesolsol.hpp bthird_partysol2-3.3.0includesolsol.hpp
 index 8b0b7d36ea4ef2a36133ce28476ae1620fcd72b5..d7da763f735434bf4a40b204ff735f4e464c1b13 100644
 --- athird_partysol2-3.3.0includesolsol.hpp
@@ -175,3 +166,17 @@ index 8b0b7d36ea4ef2a36133ce28476ae1620fcd72b5..d7da763f735434bf4a40b204ff735f4e
  			int nr;
  			if constexpr (no_trampoline) {
  				nr = real_call(L);
+diff --git aincludeserverserver.hpp bincludeserverserver.hpp
+index 34b8982e67..02b0dda050 100644
+--- aincludeserverserver.hpp
++++ bincludeserverserver.hpp
+@@ -53,8 +53,7 @@ class Server
+         const auto port_string = std::to_string(port);
+ 
+         boost::asio::ip::tcp::resolver resolver(io_context);
+-        boost::asio::ip::tcp::resolver::query query(address, port_string);
+-        boost::asio::ip::tcp::endpoint endpoint = *resolver.resolve(query);
++        boost::asio::ip::tcp::endpoint endpoint = *resolver.resolve(address, port_string).begin();
+ 
+         acceptor.open(endpoint.protocol());
+ #ifdef SO_REUSEPORT

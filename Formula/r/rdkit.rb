@@ -5,6 +5,7 @@ class Rdkit < Formula
   url "https:github.comrdkitrdkitarchiverefstagsRelease_2024_09_3.tar.gz"
   sha256 "5d6a44be526e26ae80bb225df4bb0344e52c502b7f874ee824cfb2dc01adafeb"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comrdkitrdkit.git", branch: "master"
 
   livecheck do
@@ -16,12 +17,12 @@ class Rdkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "52a4d79c9315ec509a1dbec63fae486ea48188391aa5d9a812ae7fd36fa150a3"
-    sha256 cellar: :any,                 arm64_sonoma:  "0b54fdc727ac5b3f4892800d341b9369bc1338ac4f4b9bf09470d28272352d84"
-    sha256 cellar: :any,                 arm64_ventura: "63634d297838599302e43004d0e88dc67274082f541e9756bacd90f8e2208217"
-    sha256 cellar: :any,                 sonoma:        "135df26be344166eba20b7ee7d079d4955f706e20a6c13d282b25f0018f258d9"
-    sha256 cellar: :any,                 ventura:       "5eac7f29cf97970dfd1978d178c94fd45dde13c340940aa8deae96ad8d0dee4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "337f59cb9dda669d8182404209e8da28874cab2593a09b23961bb4b269c5346e"
+    sha256 cellar: :any,                 arm64_sequoia: "6f4aa5c1a777911a657ebd7943446cc288196c0cc0b09946d2830815d5a30d92"
+    sha256 cellar: :any,                 arm64_sonoma:  "431f6942a5d52ac826bec80c89f3a2e61102a868a64b37a21198154f91a6241d"
+    sha256 cellar: :any,                 arm64_ventura: "20ac8a21e4a534a551a8270d72213ad36d03cc29d68bfbb7b360e0366b892075"
+    sha256 cellar: :any,                 sonoma:        "6411ff987d1127ec12c90ad22d2c3e7db3da35926953486c21198c2d5dd9b12c"
+    sha256 cellar: :any,                 ventura:       "d5636cbf834af5fca6fe842745680a02b680fd169d82a62359aa9b377856e617"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a373770105210cba28c1ef59dfe00053f35cdcd0edd0419a47ba971e8080afb4"
   end
 
   depends_on "catch2" => :build

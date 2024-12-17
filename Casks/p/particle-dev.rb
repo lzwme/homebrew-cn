@@ -8,7 +8,7 @@ cask "particle-dev" do
   desc "IDE for programming Particle devices"
   homepage "https:www.particle.ioproductsdevelopment-toolsparticle-desktop-ide"
 
-  deprecate! date: "2023-12-17", because: :discontinued
+  disable! date: "2024-12-16", because: :discontinued
 
   app "Particle Dev.app"
 

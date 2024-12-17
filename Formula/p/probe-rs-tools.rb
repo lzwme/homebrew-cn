@@ -1,8 +1,8 @@
 class ProbeRsTools < Formula
   desc "Collection of on chip debugging tools to communicate with microchips"
   homepage "https:probe.rs"
-  url "https:github.comprobe-rsprobe-rsarchiverefstagsv0.24.0.tar.gz"
-  sha256 "8a7477a4b04b923ef2f46a91d5491d94e50a57259efef78d4c0800a4a46e4aee"
+  url "https:github.comprobe-rsprobe-rsarchiverefstagsv0.25.0.tar.gz"
+  sha256 "693d76eb1ee697d420781e28cfbb4e527c6176eca327a4c92e26daf7e52c153f"
   license "Apache-2.0"
   head "https:github.comprobe-rsprobe-rs.git", branch: "master"
 
@@ -12,12 +12,12 @@ class ProbeRsTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d84e0446b2ce2ff46054933885c58fecc607907233de2a8914e01ad91676a9d2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "099d23a256deba345a765ef686d69f2a7c82f3ea6f733c3e00d788922dde1aaa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "af610c338d9565acc2ab9f0784593574b336f90e7da589ab8d0c64f1d7c1a3e0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8ad63c7bf0a25744817ea1ab7275348736ef0add2725099192323845d3a798dc"
-    sha256 cellar: :any_skip_relocation, ventura:       "fb5c33cc19d727874515db05d72210f06f3f539dc6c13c9b1ceae7a716c426bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0e4be3bbda804d9e0260fcc235cf8aa43fecc59f8f733332630f926360a8cd4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd7cf5c0a3d4f6c648fc35359cd8fe44e078cf166bfec00273ad4bbe4af76fde"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b8935645d2d27d33430a0278ec8623f98b459abae7a2c5e4b9cf71859aa1480"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d48195dc2d4080c0b439bd356be8a037702597f835aed448d955e8090aaf2a67"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8ff873dd619df88e20aea02d2782a4a3ee893e9eaa2a0a99911d333867ecae3d"
+    sha256 cellar: :any_skip_relocation, ventura:       "f84ef1e8b6af4e5e24efe093af77d11d05f000c6e872ab0fb3fb9b70030a806b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b153b5f7f3a16476fdcdacd073d8bf4a5491e96992bed94cb0c4fc9acf35ca9"
   end
 
   depends_on "cmake" => :build
@@ -35,8 +35,10 @@ class ProbeRsTools < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}probe-rs --version")
+
     output = shell_output("#{bin}probe-rs chip list")
     assert_match "nRF52833_xxAA", output # micro:bit v2
-    assert_match "STM32F303VCTx", output # STM32F3DISCOVERY
+    assert_match "STM32F3 Series", output
   end
 end

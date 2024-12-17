@@ -8,17 +8,15 @@ class AvroCpp < Formula
       tag:      "release-1.11.3",
       revision: "35ff8b997738e4d983871902d47bfb67b3250734"
   license "Apache-2.0"
-  revision 4
+  revision 5
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "68cc14a37de162f0006e51cd24bf8732037333c8b4f83d93281f5fd027322854"
-    sha256 cellar: :any,                 arm64_sonoma:   "43b9420650c17df411a56b9ffa47824c265e909a116f63b5141d700f20ead267"
-    sha256 cellar: :any,                 arm64_ventura:  "e3a3876b799400d284f39109717924563302d548de3508b93499047321982e4f"
-    sha256 cellar: :any,                 arm64_monterey: "3d840f89e9fbef4334d1f3a1919f6c784ad787a108aabd4f156dd0ad5039add7"
-    sha256 cellar: :any,                 sonoma:         "b9193599165f9bd895789f9ea0429f1f1ef0cfeb4768d7cb6857109f8a282f6a"
-    sha256 cellar: :any,                 ventura:        "1732eb8f243b23187bfc41604a74e5b8c222489a72944686a97ad8cc9eca034e"
-    sha256 cellar: :any,                 monterey:       "b75fd0a64cacf35169c219ebea627c7f6f291a46e9d984b250fc3e4ea3a9acd6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c23da0cf62087e7ea7556c6c8359f05f22c97f49e35694dc0269ee8b83d730bd"
+    sha256 cellar: :any,                 arm64_sequoia: "e73e3635f152d88ce0c8da13877b5209a603e36827041ec5c720753b30a2a17c"
+    sha256 cellar: :any,                 arm64_sonoma:  "1a2c2abbaf8b968a600372c87a5a6a0a43a20e0700630d6b8678238cf4816313"
+    sha256 cellar: :any,                 arm64_ventura: "a0a70dd6e799584704493d3e69398742b6ec82053f8a26b910c266b36e45d192"
+    sha256 cellar: :any,                 sonoma:        "138264d7b172c9239e1cc417ae89d7df6f8e15dacd932700b15e426f395f664f"
+    sha256 cellar: :any,                 ventura:       "a19fac27486d0554f54542a95e7eb8eb5a1198889e61900faab846951a121aee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01fecf30ba2081ab2b4ac52e800ba0d3323a28b85b20b291f557c8b2027e576c"
   end
 
   depends_on "cmake" => :build
@@ -26,7 +24,7 @@ class AvroCpp < Formula
   depends_on "boost"
 
   def install
-    system "cmake", "-S", "langc++", "-B", "build", *std_cmake_args
+    system "cmake", "-S", "langc++", "-B", "build", "-DCMAKE_CXX_STANDARD=14", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

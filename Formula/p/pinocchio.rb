@@ -4,6 +4,7 @@ class Pinocchio < Formula
   url "https:github.comstack-of-taskspinocchioreleasesdownloadv3.3.1pinocchio-3.3.1.tar.gz"
   sha256 "83f7af674d65ec1a03bf46f0230a227ba0cd696d46047a82fe87a93e710837e8"
   license "BSD-2-Clause"
+  revision 1
   head "https:github.comstack-of-taskspinocchio.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,12 @@ class Pinocchio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4db81203d12ee7dab2df84486a3244068de35682b1fe5c5ac574eda2784009e8"
-    sha256 cellar: :any,                 arm64_sonoma:  "598ac3c7955de9d36ef452a042b014ceec6e74021e840795be820ab09497fe99"
-    sha256 cellar: :any,                 arm64_ventura: "2fbfda3385fe4f0200efdf0e420e0db8746e3c845f5cb199bb776dd489e66692"
-    sha256 cellar: :any,                 sonoma:        "5f4e64557b846d3c1a41a35ec2449cd926cc6ddef4787dbb20e408ff0945edd7"
-    sha256 cellar: :any,                 ventura:       "894ee486d75aa6876177dc971a2d7822deb94fe731a0ee55afd0e511769c9d01"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14e28d908b4643664b10733561f0e11d20a5c59cc4c426cfcaaf6cbdc9debd62"
+    sha256 cellar: :any,                 arm64_sequoia: "3abcfaf89ad9a74c4db88d003eb6fd38866804d4a3cea08cb887161e886ee07e"
+    sha256 cellar: :any,                 arm64_sonoma:  "62ab3b436bdbaddd4ba078e791b9ae5ce28c48dcc110be2ceed93baf58d06fa2"
+    sha256 cellar: :any,                 arm64_ventura: "1c391e37c15acf5620b8a6a78530d2ce4d02760e0c52c138fa8a946dcb59c932"
+    sha256 cellar: :any,                 sonoma:        "cc083ab53c2d62e895e517ac9cc19fddad34119153e872341980cc414b5feb1a"
+    sha256 cellar: :any,                 ventura:       "900b822cdfb21125f4df7893fc62de4c22cbdedda03ebd2933d429b494d30b25"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc8ab03fa59d988d4433edac3492c230b7ddadd47f2524bb414cb15067a9f8c0"
   end
 
   depends_on "cmake" => :build

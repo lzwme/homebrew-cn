@@ -62,7 +62,7 @@ class FltkAT13 < Formula
         return 0;
       }
     CPP
-    system ENV.cxx, "test.cpp", "-L#{lib}", "-lfltk", "-o", "test"
+    system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-lfltk", "-o", "test"
     system "./test"
   end
 end

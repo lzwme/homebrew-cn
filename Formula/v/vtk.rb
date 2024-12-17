@@ -4,16 +4,15 @@ class Vtk < Formula
   url "https:www.vtk.orgfilesrelease9.3VTK-9.3.1.tar.gz"
   sha256 "8354ec084ea0d2dc3d23dbe4243823c4bfc270382d0ce8d658939fd50061cab8"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
   head "https:gitlab.kitware.comvtkvtk.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:  "52785c8ac91993b76918a78686e63f1ae53ada730e463308cb87325da1f65841"
-    sha256 cellar: :any,                 arm64_ventura: "e9ffe1a3428d109c871d0fda9127e06bb8e5d2f7ed4aaeb35808c387e786659b"
-    sha256 cellar: :any,                 sonoma:        "d9ddbb1ac51c4eea1e8985978a0a6b6354ffcd3d077e52e20552bff0b4a3fdf1"
-    sha256 cellar: :any,                 ventura:       "717cf55c5e9105da6bf00def7678b20194adb9cf21a4c402b9cf0e97ec0b6ec8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb218cf265e0d6745f02cf2feb990c7a12504367c72c4e52b7c15fcc4f2b1495"
+    sha256 cellar: :any,                 arm64_sonoma:  "3dda06f38e64d6b549b3068054d6cc7d19ccfed788c7f86e1028e2f93b1001a7"
+    sha256 cellar: :any,                 arm64_ventura: "cf85754a5ea8abee0e258ab81e48f4e0bf98ea26ba2fd92a6ff68dd3e8cc68f8"
+    sha256 cellar: :any,                 sonoma:        "d0d3d352ba956e896dbda342580f52ed8c8918be3863c2413c29e9cd85039fa3"
+    sha256 cellar: :any,                 ventura:       "d5dc30e44c0d365f0f05033b26be80ca59a4d996d86f2cd3da66f6d3805ff393"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac4e2a56372285ea1dcd4e1155f341bc8452840b766a55438ced21c89a22ec32"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -70,6 +69,11 @@ class Vtk < Formula
   end
 
   def install
+    # Work around problematic netCDF CMake file by forcing pkg-config fallback.
+    # Ref: https:github.comUnidatanetcdf-cissues1444
+    odie "Try removing netCDF workaround!" if Formula["netcdf"].stable.version > "4.9.2"
+    inreplace "CMakeFindNetCDF.cmake", "find_package(netCDF CONFIG QUIET)", "# \\0"
+
     ENV.llvm_clang if DevelopmentTools.clang_build_version == 1316 && Hardware::CPU.arm?
 
     python = "python3.12"
@@ -81,6 +85,8 @@ class Vtk < Formula
       -DBUILD_SHARED_LIBS:BOOL=ON
       -DCMAKE_INSTALL_RPATH:STRING=#{rpaths.join(";")}
       -DCMAKE_DISABLE_FIND_PACKAGE_ICU:BOOL=ON
+      -DCMAKE_CXX_STANDARD=14
+      -DVTK_IGNORE_CMAKE_CXX11_CHECKS=ON
       -DVTK_WRAP_PYTHON:BOOL=ON
       -DVTK_PYTHON_VERSION:STRING=3
       -DVTK_LEGACY_REMOVE:BOOL=ON

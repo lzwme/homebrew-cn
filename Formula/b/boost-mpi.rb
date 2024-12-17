@@ -1,8 +1,8 @@
 class BoostMpi < Formula
   desc "C++ library for C++MPI interoperability"
   homepage "https:www.boost.org"
-  url "https:github.comboostorgboostreleasesdownloadboost-1.86.0boost-1.86.0-b2-nodocs.tar.xz"
-  sha256 "a4d99d032ab74c9c5e76eddcecc4489134282245fffa7e079c5804b92b45f51d"
+  url "https:github.comboostorgboostreleasesdownloadboost-1.87.0boost-1.87.0-b2-nodocs.tar.xz"
+  sha256 "3abd7a51118a5dd74673b25e0a3f0a4ab1752d8d618f4b8cea84a603aeecc680"
   license "BSL-1.0"
   head "https:github.comboostorgboost.git", branch: "master"
 
@@ -11,14 +11,12 @@ class BoostMpi < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia:  "5dd36e209d2078c1dd41940ef9385c331858fd896258a3edb74e0b6241c42fd0"
-    sha256                               arm64_sonoma:   "cd8de39d924faafb79c70b7d84d738bda2f383bdfdcb035de6bdd2e81d71638e"
-    sha256                               arm64_ventura:  "77b901a01375abbb1632235485308a617b1e22ae004dd852208ee58bf9a4f209"
-    sha256                               arm64_monterey: "2f10f49dcb735c9b0622166f1de1e3ea24930cc49ebfd3b228496cc60794e989"
-    sha256                               sonoma:         "3f437798825e43afc6796611b586f892b74fd5543a194bbb5ccb1cde1e19f28f"
-    sha256                               ventura:        "e2bc177769687cf0a5cab2f1f2991a28a14955e135c8693ba0feb2a98c3cd537"
-    sha256                               monterey:       "0604125fbddfcba67572ac8a470d09bf3815c3019f2c324e1aebf276e31c990b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9b97e0eee0f63baba700c64eca133f09445736c871f3cd0f9d396a302a33ca5"
+    sha256                               arm64_sequoia: "9efa4e62e7552a5ddfb642b8d6ec3007792d0deb868285f64ce7e1b9a149ec20"
+    sha256                               arm64_sonoma:  "fc59a592f4d3b42eb0e873884bcf67bdfd45382c01c4a7287dd5642d74b3982e"
+    sha256                               arm64_ventura: "f7d78fe074a21546a30dec3688b5c5dabde5a07b830d82ffcbe5f31aa96b7124"
+    sha256                               sonoma:        "a3d8b33c333cd20e91133573cad92a5a8300587d1eb91afdbee34c94d5ee4e21"
+    sha256                               ventura:       "06a0c896e162a8fc19ae5ecdd850c3491fe3d010f5817a373cf52bb3f18d88e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c066f845dbd122c9b597fd598facfb099118f4f46d084804833324a7938bcee"
   end
 
   # Test with cmake to avoid issues like:
@@ -32,10 +30,10 @@ class BoostMpi < Formula
     args = %W[
       -d2
       -j#{ENV.make_jobs}
-      --layout=tagged-1.66
+      --layout=system
       --user-config=user-config.jam
       install
-      threading=multi,single
+      threading=multi
       link=shared,static
     ]
 
@@ -43,6 +41,10 @@ class BoostMpi < Formula
     # handling using ENV.cxx11. Using "cxxflags" and "linkflags" still works.
     args << "cxxflags=-std=c++11"
     args << "cxxflags=-stdlib=libc++" << "linkflags=-stdlib=libc++" if ENV.compiler == :clang
+
+    # Avoid linkage to boost container and graph modules
+    # Issue ref: https:github.comboostorgboostissues985
+    args << "linkflags=-Wl,-dead_strip_dylibs" if OS.mac?
 
     open("user-config.jam", "a") do |file|
       if OS.mac?
@@ -66,9 +68,6 @@ class BoostMpi < Formula
     if OS.mac?
       # libboost_mpi links to libboost_serialization, which comes from the main boost formula
       boost = Formula["boost"]
-      MachO::Tools.change_install_name("#{lib}libboost_mpi-mt.dylib",
-                                       "libboost_serialization-mt.dylib",
-                                       "#{boost.lib}libboost_serialization-mt.dylib")
       MachO::Tools.change_install_name("#{lib}libboost_mpi.dylib",
                                        "libboost_serialization.dylib",
                                        "#{boost.lib}libboost_serialization.dylib")
@@ -107,7 +106,7 @@ class BoostMpi < Formula
     boost = Formula["boost"]
     args = ["-L#{lib}",
             "-L#{boost.lib}",
-            "-lboost_mpi-mt",
+            "-lboost_mpi",
             "-lboost_serialization",
             "-std=c++14"]
 

@@ -5,15 +5,16 @@ class Ncmpcpp < Formula
   url "https:github.comncmpcppncmpcpparchiverefstags0.10.1.tar.gz"
   sha256 "ddc89da86595d272282ae8726cc7913867b9517eec6e765e66e6da860b58e2f9"
   license "GPL-2.0-or-later"
+  revision 1
   head "https:github.comncmpcppncmpcpp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "33c0ecce7a49585a844ed78e18f7a0d489eb6e07f0b20686e8df4e7ae3a28343"
-    sha256 cellar: :any,                 arm64_sonoma:  "ed5a1603e63554209315bd505e6af8785ba2d1e2e555089b44355829493d81c5"
-    sha256 cellar: :any,                 arm64_ventura: "2432a2868bf904bf0aab5ab13a94396298bb0f316a295ce983808a4effb06eb2"
-    sha256 cellar: :any,                 sonoma:        "a2ce4e5cc19fca1daab19dbbcc44d4293ce40baa4ca35d3779b9fdfd64893629"
-    sha256 cellar: :any,                 ventura:       "bdff69cc2753dec867228e68478eb72f69173b3c5abff5ac40bf8919f2b1092b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "880fef15768b5ffce305529168d746b6ee0f37d29036ef9c948daf2e6cc74516"
+    sha256 cellar: :any,                 arm64_sequoia: "a994876375a1db76829cbc6a8e19d3fb15e54d9e39c4ca08560c5ccc43f826f6"
+    sha256 cellar: :any,                 arm64_sonoma:  "2bfbdb1fb89fb3f0131925d136e0f828fd4367d4fd04345966cd85952c77aad9"
+    sha256 cellar: :any,                 arm64_ventura: "79daf4e1a2fd5d87a1b8fb52217e984f8770d96cbd9bb15fc643af7fc694203f"
+    sha256 cellar: :any,                 sonoma:        "1b7bd50bbad8a2b761210ff1afb18dd8ead6dcceb0c93323dc2148317ff8f494"
+    sha256 cellar: :any,                 ventura:       "0c632676de91a027cbfbeb31d91709d47b82f83183add3cca8a9229ca53c6372"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c668f7f2d18ca0dd37efef5eac7e0a5b9bad851883f2e14775901c6531631739"
   end
 
   depends_on "autoconf" => :build
@@ -34,8 +35,6 @@ class Ncmpcpp < Formula
     ENV.append "LDFLAGS", "-liconv" if OS.mac?
     ENV.prepend "LDFLAGS", "-L#{Formula["readline"].opt_lib}"
     ENV.prepend "CPPFLAGS", "-I#{Formula["readline"].opt_include}"
-
-    ENV.append "BOOST_LIB_SUFFIX", "-mt"
     ENV.append "CXXFLAGS", "-D_XOPEN_SOURCE_EXTENDED"
 
     args = %w[

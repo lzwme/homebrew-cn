@@ -4,15 +4,15 @@ class Freeling < Formula
   url "https:github.comTALP-UPCFreeLingreleasesdownload4.2FreeLing-src-4.2.1.tar.gz"
   sha256 "c672a6379142ac2e872741e7662f17eccd8230bffc680564d2843d87480f1600"
   license "AGPL-3.0-only"
-  revision 7
+  revision 8
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bb16cae69ece5d45a27ec4e4a7c19f767bae6e86adde1b7c6cc62eebf5f0f332"
-    sha256 cellar: :any,                 arm64_sonoma:  "32f84651b83687a37d38186b3ca30ed6d1a756de7b8079350a58e29779a8a916"
-    sha256 cellar: :any,                 arm64_ventura: "6049a2e53d726ad543ba69b973fc23d7296146d74e2620ae5aebb6ddcacfa684"
-    sha256 cellar: :any,                 sonoma:        "d55210dda67692917cf299ae755baf1ab8cc97903c8b7258f2f5169f403b3727"
-    sha256 cellar: :any,                 ventura:       "2d54a7d0dba20a3e9674bff837ad222745650f66598d8a24d50f40d3d1bc92eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c64d78b21c012aed472e1345e742211129771abe3c3c3250bc965283f6141fc"
+    sha256 cellar: :any,                 arm64_sequoia: "d6acdd643de5c309907ceb793cd046cd8dd8ad28699322502b5dfb66a2242a2f"
+    sha256 cellar: :any,                 arm64_sonoma:  "322a9d592bc73e998a38644941240636caa518d30116c1fa70f8d9239b000d30"
+    sha256 cellar: :any,                 arm64_ventura: "fd3f956da818dd715eedc7b82f8bf0f5045a38021ccf1b000691811edf2f35a3"
+    sha256 cellar: :any,                 sonoma:        "780a8288885a7e4577fd407cedd81431f52b7158ac46950623893e5cb2e17905"
+    sha256 cellar: :any,                 ventura:       "506d8768088d58c6bb31306c78f1bd0470d3f1f06b0aab7a97897cf99056c4d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59dff48c765a92393305e2ed97eb4764fdfd458ff3d1e18dce973179dd3b3a3e"
   end
 
   depends_on "cmake" => :build

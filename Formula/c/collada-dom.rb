@@ -4,18 +4,16 @@ class ColladaDom < Formula
   url "https:github.comrdiankovcollada-domarchiverefstagsv2.5.0.tar.gz"
   sha256 "3be672407a7aef60b64ce4b39704b32816b0b28f61ebffd4fbd02c8012901e0d"
   license "MIT"
-  revision 10
+  revision 11
   head "https:github.comrdiankovcollada-dom.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "93ee168d5e413ac9709071615535b1e41a69104a256874a88c455b93a69473cd"
-    sha256 cellar: :any,                 arm64_sonoma:   "a23c3731eff60bcd2dc079fa88da110bdfa807137fe18cdd7893677cd522fd3c"
-    sha256 cellar: :any,                 arm64_ventura:  "5f851bdfae69110c8648205d9f44267c722bbd424a2727649a0442c82c625e30"
-    sha256 cellar: :any,                 arm64_monterey: "46407af6b516e2a49f330278953d8d2fa6d0de217cfde68cfe53990f1dc5e33a"
-    sha256 cellar: :any,                 sonoma:         "4483eedf90d10b9c7306280fafc002e5c1f7c85f2925e1b13466c7c87c3683fb"
-    sha256 cellar: :any,                 ventura:        "90845ce55f8153dd85582570f9955e91b39a56c14a7543ac5412dee3577797cf"
-    sha256 cellar: :any,                 monterey:       "59f34d806302668ae9cbde4ac0cdec8f024f16b4d75b84ceadf04edf1334682f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "95b9bf434a46b41bf05bc4a847f8c560ef500e7ba4b6891ea2d49a8c6d271918"
+    sha256 cellar: :any,                 arm64_sequoia: "7f2f14ada8f52d59fab95a8daa171a5f8190c082e3e593200715c15e24128758"
+    sha256 cellar: :any,                 arm64_sonoma:  "5751a4df5552a182392748da057b6609ebaf823a9d0f5153e320769ec0c63261"
+    sha256 cellar: :any,                 arm64_ventura: "c1c63c11e7a9cdfe018e8840078db2d38118e68484e8aa97c20327d3d313d5f6"
+    sha256 cellar: :any,                 sonoma:        "183a9d8e0ec094106681fc44295ed04c3b3575407e6fea95cfae3d257704745b"
+    sha256 cellar: :any,                 ventura:       "295fff9dae9857f830805e1edfec4f35a10d80f821c86012549b0d763b2ea02a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0954666d6fe07b3cc599f72f797c61f9ef3ae2ba51d3c07dfd876bf3fbe26d8a"
   end
 
   depends_on "cmake" => :build

@@ -4,14 +4,15 @@ class Maeparser < Formula
   url "https:github.comschrodingermaeparserarchiverefstagsv1.3.1.tar.gz"
   sha256 "a8d80f67d1b9be6e23b9651cb747f4a3200132e7d878a285119c86bf44568e36"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3a7ea0e057badfd3c4152ee82c7a168756fdf69a7ba860c52e76b54ee14db3b0"
-    sha256 cellar: :any,                 arm64_sonoma:  "ca02271a309d8c6d442671b396fedc2be05915a787097c5a797313c3afbb2fea"
-    sha256 cellar: :any,                 arm64_ventura: "442e30300805148e962404029bddd1e5f3e2ced2b7da2629ca5db952336bc6ad"
-    sha256 cellar: :any,                 sonoma:        "c64fc931d98a6ae27cb9dc243ac3a52d4cd2f4ad74d6c6a7a9ff60674db90479"
-    sha256 cellar: :any,                 ventura:       "6174e8874ad30e0bbb991dc2dd52e9e9caca66f54680a0f8a3088294c7ba1c9c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f31191fad40b78f8639deab22940717e01af49c477b0429b6f52c77e5575d5ef"
+    sha256 cellar: :any,                 arm64_sequoia: "f6b3e9889ac81328137f42c232abc8ed084f6fccd7f8f9d228925e52d17734b0"
+    sha256 cellar: :any,                 arm64_sonoma:  "d3e926ea865bb4929a1a6b04ac4ec013725fa85cae99b4fdf2d7620d3f2002bd"
+    sha256 cellar: :any,                 arm64_ventura: "11364b3ab0837b8e2b1639cf983efce227cee7c03736dd5b0686a47e92a22374"
+    sha256 cellar: :any,                 sonoma:        "3f4b0aff09fd2fc3024bccd8032bde18ba11aaa87fb3bb6ccd1bf7427a6239ad"
+    sha256 cellar: :any,                 ventura:       "b3e8cd570f15d6378649b8995549de4bd75287c7f7ffefeffcfa431aaa08bac2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12d7caa35b65a79899391609904857c9910a120c35c520dfcac562a22c9cf88f"
   end
 
   depends_on "cmake" => :build
