@@ -6,7 +6,7 @@ class GraphTool < Formula
   url "https://downloads.skewed.de/graph-tool/graph-tool-2.80.tar.bz2"
   sha256 "c1a70e075dbe728fad25dc3f5a9a9597880a6d6ff68435b91d21f0b44ef8dbe6"
   license "LGPL-3.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://downloads.skewed.de/graph-tool/"
@@ -14,12 +14,12 @@ class GraphTool < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "a470f54a72794490fe01c6ba75f0a7c317f7d3a66adfc28e6e04c890a95384aa"
-    sha256                               arm64_sonoma:  "5855ff9082d883e5458ce9c3836f3253477cdeb4b9ec36d4a1a282bb10a1fe8c"
-    sha256                               arm64_ventura: "a066410f639abda1d7300e9b77255d9a6108f0177e43bf0e9559bfa03cab3008"
-    sha256                               sonoma:        "5e978a35eab16ca77d95a1291d5f528a642740ad482e62129a66d1c78cb2a7ad"
-    sha256                               ventura:       "a5c622b74b2ed842d6660e1439d8305fd3e6868272d57d4b81bffbe5e0bd6540"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57ca74a88ac29c15a829255ccbd430995bb492191a13c81bc0a3f18c0644256e"
+    sha256                               arm64_sequoia: "223797f3bb7b9df4be1c5cd46fab929e98eaff52bb210833f588727670747974"
+    sha256                               arm64_sonoma:  "ab5b3725d89e8a02b6c324a36e258296ca730a577d4a2649d5f02e0b5162ae7c"
+    sha256                               arm64_ventura: "9b531f202c4f5aef5c5a32faba3bd76bf700e05624d50dff6f3746b41eb5449f"
+    sha256                               sonoma:        "5d2ffd171aa70ce70c09b2ffb52a882f5d2281b6c325d95b255db0e65de6cfce"
+    sha256                               ventura:       "f78849f7be967362e24878cb04e766fa24ec736fc9402dc6e8566e77dd02fac1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9f0ce257237160f19f9c777a7fcb8b3224c538bb812673b9b21f637c730a7f8"
   end
 
   depends_on "google-sparsehash" => :build
@@ -37,7 +37,7 @@ class GraphTool < Formula
   depends_on "pillow"
   depends_on "py3cairo"
   depends_on "pygobject3"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "qhull"
   depends_on "scipy"
   depends_on "zstd"
@@ -110,7 +110,7 @@ class GraphTool < Formula
   end
 
   def python3
-    "python3.12"
+    "python3.13"
   end
 
   def install

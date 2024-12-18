@@ -1,18 +1,18 @@
 class Dune < Formula
   desc "Composable build system for OCaml"
   homepage "https:dune.build"
-  url "https:github.comocamldunereleasesdownload3.17.0dune-3.17.0.tbz"
-  sha256 "2c3aa6c41ed39e3d6c1a292d75f4806bd80310841afc51673aa59ce9c816507c"
+  url "https:github.comocamldunereleasesdownload3.17.1dune-3.17.1.tbz"
+  sha256 "6b9ee5ed051379a69ca45173ac6c5deb56b44a1c16e30b7c371343303d835ac6"
   license "MIT"
   head "https:github.comocamldune.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab88c2da4a2de5b8af27bc221196d8543b936ef074afcc6b1eaa1b036483d839"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a6051f36687505dc2b05929f76287ff217b686fe071a403d26b30483c6bdacf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e66fc715576625783e27b56606164d4e8a1e6270b617b2a33c3541fcf1efd9c2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b930467ac74da4c654c93e87a59c2c6918b0b72f90ccff7203ad13dcb460286d"
-    sha256 cellar: :any_skip_relocation, ventura:       "94342ea9e1d76e037b4180033c85eac4a699cf0124bf903b4ffaef1c42d25730"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9f652a9b10d41eee2821a88fdb0493c703a49433cfad164578aaf6ef71a8e5f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cbe712230ebb0b40c9e8b1ef98b8dc71833486de4b45a4a7a85b96b96dde477e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ca9c2522a72cea646d27a6bc31a6107b572ca25f51282eb67a48dc19d5782fe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3b96067281833c3383f0fae1950e42ecd7d2f805bd688f9985c51e58452cf6dc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eea07e9f1a4c83eee7e6294f5956f90eb59b9a06a3595aae12cd8d3f7e53fa1c"
+    sha256 cellar: :any_skip_relocation, ventura:       "4b1bc4b25cf3c392df87a4fdffe2c85bd8edd4742ec55a8175d22173bf1f38a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5a6a2519c0a84ac69567bcfc5abeaad4e036831b510bf0ae6ead5e5fa6e722d"
   end
 
   depends_on "ocaml" => [:build, :test]

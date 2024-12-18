@@ -1,18 +1,18 @@
 class Bup < Formula
   desc "Backup tool"
   homepage "https:bup.github.io"
-  url "https:github.combupbuparchiverefstags0.33.5.tar.gz"
-  sha256 "750f8e7176a1b578484fcf4b83f2120ad1e955d2d98a26c7f64cfdb113651594"
+  url "https:github.combupbuparchiverefstags0.33.6.tar.gz"
+  sha256 "62108488f8d1027ac63f276e28f749129055628a82d23f4b926e10deb93cb54f"
   license all_of: ["BSD-2-Clause", "LGPL-2.0-only"]
   head "https:github.combupbup.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3cb1f8a32f2a009da3c424bbe2a32536a2877e9b6d031821feaaef1383c3715e"
-    sha256 cellar: :any,                 arm64_sonoma:  "1583f88e951dd37e4d97953ef826a2b900479657764297aac5920aa691c9a2a0"
-    sha256 cellar: :any,                 arm64_ventura: "108d536dacb03b922fb62f23dc923ee560b1433d3b663cfe6ba11053713a79b0"
-    sha256 cellar: :any,                 sonoma:        "53089dd890ed80ee4fa718189658d9998918dd3964de624a8565b3a5d3371b17"
-    sha256 cellar: :any,                 ventura:       "da81fdddc95d7fb0605826327f96746b0231199599632976a7f2980bf1c2df33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2191edb645f94702d9e3ac9b6b6a92b096fe57074e7e26ba8cf8e76a7b24f04"
+    sha256 cellar: :any,                 arm64_sequoia: "df8271018cddc10787297ae3ac38e8edda355a7227471e9ef119c663267c7345"
+    sha256 cellar: :any,                 arm64_sonoma:  "e126ea3ee137ff6c99fecf0f8ffc8563fd3530f7e02f6c3fe198e03210d7c160"
+    sha256 cellar: :any,                 arm64_ventura: "012e7917175154e0f74d851a34a7c22f1ce9b0035dfbb7e645e7336a059d8504"
+    sha256 cellar: :any,                 sonoma:        "f8b3bad61c33f8d778e3b554a8d591f133f3d84ef7bef9155299964ce48edd91"
+    sha256 cellar: :any,                 ventura:       "ac8fca2732f37bc3ff0beae4753dba78f33fc35790261eb54d0b0b8fbfef9527"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a9634bdbabeb6734ec49252baea50b710c09d807de83b3721ebf79fdf6d7c3f"
   end
 
   depends_on "pandoc" => :build

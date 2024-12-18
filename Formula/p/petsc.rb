@@ -11,14 +11,16 @@ class Petsc < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "9c957d82246e1eb4d3c769b2612ead1231075251ec8e113a66ece9300f4da8de"
-    sha256 arm64_sonoma:  "7f4ce16a9eacd63649fe396cedd0f9b083ff5c64556c016ea6cfbbe16a4d7356"
-    sha256 arm64_ventura: "b4420cd9ba200f88aebe6b35edbb6533a4cc47650923575725e4902490bb4cd3"
-    sha256 sonoma:        "8d8c9ee05086b03b5d77d77b10a1003239ad5de958cb3055b39c188847ed3d17"
-    sha256 ventura:       "2ec24be3d8a8b8b6c2958dd6e217f308fdb1a59927e0f2a7631cc705cd9a5cee"
-    sha256 x86_64_linux:  "e7ffb5d0d3471851e44dee6727a1bde1011e52c6269b44d6e4acda9e933b3964"
+    rebuild 1
+    sha256 arm64_sequoia: "c6f2699a609b603e9162a9704638e058cb17dd0c7f30075d9a6fdf04c7e227a8"
+    sha256 arm64_sonoma:  "d2b776e79442cadba666805f9f491c040897054af03ed9b37b1b42ef1d1f8523"
+    sha256 arm64_ventura: "b959e714c9c0fe00390de755dc010f570415b840157ff0317cd7337a47edee1f"
+    sha256 sonoma:        "afb7cea8ea8efa54da66caf0822ccca7588ef2f17d1872d5b563f500e579f873"
+    sha256 ventura:       "94d9e611dba8a8f6d16ddf4922c3951ef3a057ff0070fb84742ad53050140ed3"
+    sha256 x86_64_linux:  "31d23ac85ce807347fd06b30bcbf0ac87604db7dc6c8fbea77edba5ac4ee8de7"
   end
 
+  depends_on "fftw"
   depends_on "gcc"
   depends_on "hdf5-mpi"
   depends_on "hwloc"
@@ -41,6 +43,11 @@ class Petsc < Formula
                           "--CXX=mpicxx",
                           "--F77=mpif77",
                           "--FC=mpif90",
+                          "--with-fftw-dir=#{Formula["fftw"].opt_prefix}",
+                          "--with-hdf5-dir=#{Formula["hdf5-mpi"].opt_prefix}",
+                          "--with-hdf5-fortran-bindings=1",
+                          "--with-metis-dir=#{Formula["metis"].opt_prefix}",
+                          "--with-scalapack-dir=#{Formula["scalapack"].opt_prefix}",
                           "MAKEFLAGS=$MAKEFLAGS"
 
     # Avoid references to Homebrew shims (perform replacement before running `make`, or else the shim

@@ -1,8 +1,8 @@
 class Z3 < Formula
   desc "High-performance theorem prover"
   homepage "https:github.comZ3Proverz3"
-  url "https:github.comZ3Proverz3archiverefstagsz3-4.13.3.tar.gz"
-  sha256 "f59c9cf600ea57fb64ffeffbffd0f2d2b896854f339e846f48f069d23bc14ba0"
+  url "https:github.comZ3Proverz3archiverefstagsz3-4.13.4.tar.gz"
+  sha256 "4071977e66e9f3d239b7b098ceddfe62ffdf3c71e345e9524a4a5001d1f4adf3"
   license "MIT"
   head "https:github.comZ3Proverz3.git", branch: "master"
 
@@ -13,13 +13,12 @@ class Z3 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "4be29dafaf9f041f46684866c182efd08970bd8600f6bbe43e771ca1fb6b1c87"
-    sha256 cellar: :any,                 arm64_sonoma:  "61ecbfb6496b696fb9ed7aee129bc4973d3f5c127590a1c14967544a05735721"
-    sha256 cellar: :any,                 arm64_ventura: "af39185d9cb16d4af24ec7781618750b1bdfcf795557dbc641403db939ed0fdb"
-    sha256 cellar: :any,                 sonoma:        "8eea09139dc8827731f816d8bbd6babc9f859ab24f9eb019a7eaf1d1bab005bf"
-    sha256 cellar: :any,                 ventura:       "d0e27e707910cd91decf89a28917f1bf29d4d64286204f07513efa598cf0400c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9fee510a5d1b26819ba6a1244e6f86745a117255e5ca5c8e9c8117d8b50a020"
+    sha256 cellar: :any,                 arm64_sequoia: "33767be9506796dc4518a407b431e2ff57337daed711d27181aa5eadbd87db45"
+    sha256 cellar: :any,                 arm64_sonoma:  "2677aa05e10d9d7844c2227766c5c125114d0f3f168ccc210400b2595b3f89ca"
+    sha256 cellar: :any,                 arm64_ventura: "ee18ddaa3907645b23aa02a4de5edf7737e80d006b04b600b8ba1d9f0d657dc6"
+    sha256 cellar: :any,                 sonoma:        "2048bab3779733c006fc64fa70fb3606e0e18453cf344b43ef5f73a8234a9b65"
+    sha256 cellar: :any,                 ventura:       "32f7f3ed4fc476dba644b863f93147e93d0e27438dc56427f73fc2eda8829471"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3904c130f3951f4b52c99775ce9a3c4268b0742809bfd3dbab69202077132dfd"
   end
 
   depends_on "cmake" => :build

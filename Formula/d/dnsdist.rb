@@ -1,8 +1,8 @@
 class Dnsdist < Formula
   desc "Highly DNS-, DoS- and abuse-aware loadbalancer"
   homepage "https://www.dnsdist.org/"
-  url "https://downloads.powerdns.com/releases/dnsdist-1.9.7.tar.bz2"
-  sha256 "285111c2b7dff6bc8a2407106a51c365cc5bf5e6287fe459a29b396c74620332"
+  url "https://downloads.powerdns.com/releases/dnsdist-1.9.8.tar.bz2"
+  sha256 "f664f73a96a8d7343d32696accb70fd8b1ed4328d73cdb0a627a561d6e2fd99e"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,12 +11,12 @@ class Dnsdist < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "cab9add17f959e5a0c37cb16161a8276254a1ae95a9ee451fca72444783f58f8"
-    sha256 cellar: :any,                 arm64_sonoma:  "3613abc48b829688f50b7a417968efa9886c18307615a9145ab38b86a06f51fa"
-    sha256 cellar: :any,                 arm64_ventura: "3643541508b1a3edfc6fcef8eb257b95653081176452368f2d1da6a7b89e7623"
-    sha256 cellar: :any,                 sonoma:        "08e868d21ca368c82493927677fc4a563761b671bda573cc039ec4fddafb94d2"
-    sha256 cellar: :any,                 ventura:       "3763357c02a74c2bba45d5a1172dd6f93ab7ca16d53a90f96f804da2e2e8ef4f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b3314eadd5faf6e1ced56b990ef519675a70cad7f6a625e1ae40c4b61654e52"
+    sha256 cellar: :any,                 arm64_sequoia: "37a81f1a7902b38db901460d51e372a2c2e78f90b14faf87f6f649928c82abd9"
+    sha256 cellar: :any,                 arm64_sonoma:  "42b0a9a71b26f98825ee82d5292b81ec78439db91c646f47887fb4a56f368d67"
+    sha256 cellar: :any,                 arm64_ventura: "c25bce9c1cd32bd92ff7298c6e4702b2ebb39772859fb3653c151b7e0da53242"
+    sha256 cellar: :any,                 sonoma:        "bbb9ee6cdc27310c15fbdfaa1804a405f76fc8a3d9e9e49af90c547f4f75d311"
+    sha256 cellar: :any,                 ventura:       "f3ebdd73c4d92ed6af63a66df23d67f3bd08655b6887845d5f39717579c8cb43"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "befe41fe1ca151f63a3ff433a29a7f59958dcf054238a23e6a07b2b21938c001"
   end
 
   depends_on "boost" => :build

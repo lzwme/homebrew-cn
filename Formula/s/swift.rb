@@ -4,8 +4,8 @@ class Swift < Formula
   desc "High-performance system programming language"
   homepage "https:www.swift.org"
   # NOTE: Keep version in sync with resources below
-  url "https:github.comswiftlangswiftarchiverefstagsswift-6.0.2-RELEASE.tar.gz"
-  sha256 "1489681860e92cee5ddd869a06531d7a1746b2f4ea105a2ff3b631ebcbcffd34"
+  url "https:github.comswiftlangswiftarchiverefstagsswift-6.0.3-RELEASE.tar.gz"
+  sha256 "eef9f312d00540cfabc35cb1da9221dd15d3aaca546497a14f29a641ee6484e3"
   license "Apache-2.0"
 
   # This uses the `GithubLatest` strategy because a `-RELEASE` tag is often
@@ -17,12 +17,12 @@ class Swift < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b0da9c3b201fae6b553a89d23fe20941fb3a6df0d9ed92d6f9d6bb05c2dcbb34"
-    sha256 cellar: :any,                 arm64_sonoma:  "8f8323c289d76a9d52c1864bc3d481d5e5a77e5d69f72aa85287494e70e0001c"
-    sha256 cellar: :any,                 arm64_ventura: "d0c50a6389a459bf86177448ccbdcdfaae3d7c60a2f048c83c44680e5fd1f22b"
-    sha256 cellar: :any,                 sonoma:        "dea817b03b25515a99efc836b3d05702a9aaad9e6d99f503acbf1c38667331d7"
-    sha256 cellar: :any,                 ventura:       "b9cf1d9f5b8f378baec6c0a390c3a8a8bc8ca0a015794d6410f769aaa647a4be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22319e6c3269a53d02b4f1e46b0cfdeb95919ec63631a03cfceb89494bb7812e"
+    sha256 cellar: :any,                 arm64_sequoia: "f68e82e8fea45c4a8f65146eb98ec1e0f1418b6230c73888b9f478a38387672d"
+    sha256 cellar: :any,                 arm64_sonoma:  "26de451fb88025fb13b1b92d9f50a7949a36b1401f526696321c73a2b7668f06"
+    sha256 cellar: :any,                 arm64_ventura: "a1d9ce8a6b96748adab517f9b9f76daed8a713d3f2050b5854525b3f611c6748"
+    sha256 cellar: :any,                 sonoma:        "45509e26cf31a30de0e5cf6e31c73d1031a402b2446bd645b0ed192e9b0ad1b7"
+    sha256 cellar: :any,                 ventura:       "a440a437121c2e9aaba92681137e3b954cd45d5a03d23cf94d226a78fa937050"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b990b642f94de06a0e7eed8fa0b36909d582f80ff2f2f93e140836b4d5c9dfcf"
   end
 
   keg_only :provided_by_macos
@@ -67,28 +67,28 @@ class Swift < Formula
     end
 
     resource "swift-corelibs-foundation" do
-      url "https:github.comappleswift-corelibs-foundationarchiverefstagsswift-6.0.2-RELEASE.tar.gz"
-      sha256 "8af719f14a05cee2d32625cf455261fc74d13eeef3ba9e5b9547316743d5cde9"
+      url "https:github.comappleswift-corelibs-foundationarchiverefstagsswift-6.0.3-RELEASE.tar.gz"
+      sha256 "62c276a18fa3b3b92e95f5349dc125d03f09cea3c477b3af1428ccdbab29e139"
     end
 
     resource "swift-foundation" do
-      url "https:github.comappleswift-foundationarchiverefstagsswift-6.0.2-RELEASE.tar.gz"
-      sha256 "a677ad3a712fb4d8330bccd28904aaa1b10749264d57ad9370215a89156ba1d3"
+      url "https:github.comappleswift-foundationarchiverefstagsswift-6.0.3-RELEASE.tar.gz"
+      sha256 "31ee3ea95a015049d3f6a5cfe8bd3a460071fa0086c1d112efaf0580611d162c"
     end
 
     resource "swift-foundation-icu" do
-      url "https:github.comappleswift-foundation-icuarchiverefstagsswift-6.0.2-RELEASE.tar.gz"
-      sha256 "a48f0d6f998ba6db710f89f0e987c4cf00f3845338afae116ab3e29c04dad127"
+      url "https:github.comappleswift-foundation-icuarchiverefstagsswift-6.0.3-RELEASE.tar.gz"
+      sha256 "c4332b4e6cc008a5a7045ad7f368df7deb518f286ecd5a78839066dcc07a853a"
     end
 
     resource "swift-corelibs-libdispatch" do
-      url "https:github.comappleswift-corelibs-libdispatcharchiverefstagsswift-6.0.2-RELEASE.tar.gz"
-      sha256 "3df429b22d9294c0ca5291c86e83a35f6326600a1c271933107bba199b919008"
+      url "https:github.comappleswift-corelibs-libdispatcharchiverefstagsswift-6.0.3-RELEASE.tar.gz"
+      sha256 "444c0de5fe18e148548a3f3b60b3bac3d4d586285c21064346c7ca17ed1d4fac"
     end
 
     resource "swift-corelibs-xctest" do
-      url "https:github.comappleswift-corelibs-xctestarchiverefstagsswift-6.0.2-RELEASE.tar.gz"
-      sha256 "a671062f178c68dd1fb0fdcf6a7c00589b343a63009a59b522206e03c9850d97"
+      url "https:github.comappleswift-corelibs-xctestarchiverefstagsswift-6.0.3-RELEASE.tar.gz"
+      sha256 "eb131d1cfde18548c5fc782ba56bc871b13057b5e7b6992ddae4d4349360571d"
     end
   end
 
@@ -96,15 +96,8 @@ class Swift < Formula
   fails_with :gcc
 
   resource "llvm-project" do
-    url "https:github.comswiftlangllvm-projectarchiverefstagsswift-6.0.2-RELEASE.tar.gz"
-    sha256 "991e9d63548a5ae8ce4fdda4052e98cb2bf2b193cafac8bbeea8f830f8cede96"
-
-    # Fix copmatibility with macOS 15 SDK.
-    # Remove with Swift 6.0.3.
-    patch do
-      url "https:github.comswiftlangllvm-projectcommita566c12aded130264a1e07e6c1718884ab1d9dc8.patch?full_index=1"
-      sha256 "6f165b41390051098c0b4ea5bd333c49a7fd93740a015b99db72f096283ae434"
-    end
+    url "https:github.comswiftlangllvm-projectarchiverefstagsswift-6.0.3-RELEASE.tar.gz"
+    sha256 "d93ca164615938e5026a2d1af76b2ef7514eae98b38a716f3278bc1a6dfc8f92"
 
     # Support Python 3.13.
     # Remove with Swift 6.1.
@@ -115,13 +108,13 @@ class Swift < Formula
   end
 
   resource "cmark" do
-    url "https:github.comswiftlangswift-cmarkarchiverefstagsswift-6.0.2-RELEASE.tar.gz"
-    sha256 "2bfeab8747f4bcfea6aa70ed0494fe2185ec2532f1c9b7a0e17214cd401e9f31"
+    url "https:github.comswiftlangswift-cmarkarchiverefstagsswift-6.0.3-RELEASE.tar.gz"
+    sha256 "ab1064350ecedd5b3c0f2a6fbe3acefbc45d7accf1e4ca1591ce04d0c6787e40"
   end
 
   resource "llbuild" do
-    url "https:github.comswiftlangswift-llbuildarchiverefstagsswift-6.0.2-RELEASE.tar.gz"
-    sha256 "40ada0511f0218fb3ca0478c8fff1b4d0958478056a0cc5408677753e8c8f7a7"
+    url "https:github.comswiftlangswift-llbuildarchiverefstagsswift-6.0.3-RELEASE.tar.gz"
+    sha256 "68d71bf7e0882153c6ad91fbe0626ab761d8bc46d2d93ce32cbfa392d256a30e"
 
     # Workaround Homebrew sqlite3 not being found.
     # Needs paired inreplace for @@HOMEBREW_PREFIX@@.
@@ -133,13 +126,13 @@ class Swift < Formula
   end
 
   resource "swiftpm" do
-    url "https:github.comswiftlangswift-package-managerarchiverefstagsswift-6.0.2-RELEASE.tar.gz"
-    sha256 "00e40c3bce9b63fdd24d783909af003c7f86431898ee6b8bf44174d023d08402"
+    url "https:github.comswiftlangswift-package-managerarchiverefstagsswift-6.0.3-RELEASE.tar.gz"
+    sha256 "03c5b8dfd8628de42ca1c171faeeddea977ecdad8675d3826a2c165ad8f972ba"
   end
 
   resource "indexstore-db" do
-    url "https:github.comswiftlangindexstore-dbarchiverefstagsswift-6.0.2-RELEASE.tar.gz"
-    sha256 "61f6d010edc11f31b5e01efb3628958501a1883b07ee4c741bbebc8c7d43d03d"
+    url "https:github.comswiftlangindexstore-dbarchiverefstagsswift-6.0.3-RELEASE.tar.gz"
+    sha256 "fdaceb80a819e5b86d1599e7357c79e518a3ff0bb96dcd82245fc50e3d6bbc0d"
 
     # Fix compile with Clang 19.
     # Remove with Swift 6.1.
@@ -150,18 +143,18 @@ class Swift < Formula
   end
 
   resource "sourcekit-lsp" do
-    url "https:github.comswiftlangsourcekit-lsparchiverefstagsswift-6.0.2-RELEASE.tar.gz"
-    sha256 "26175c4774f9817ad32c62c004ca76e9f09d8b77a253fca0e4eafdb33f33b2d2"
+    url "https:github.comswiftlangsourcekit-lsparchiverefstagsswift-6.0.3-RELEASE.tar.gz"
+    sha256 "928db64bc179a250afd305b5729217180e2de1cdcd3d353d0fa20b38c5def8ec"
   end
 
   resource "swift-driver" do
-    url "https:github.comswiftlangswift-driverarchiverefstagsswift-6.0.2-RELEASE.tar.gz"
-    sha256 "c6db9d058c8d5122f8e368087e397d59cf17ce5be686d4713025269658f0467e"
+    url "https:github.comswiftlangswift-driverarchiverefstagsswift-6.0.3-RELEASE.tar.gz"
+    sha256 "9ee38eda1a0adc24dd995b345dff4a5a25d42ae8d063fcc04b170469f2f53d43"
   end
 
   resource "swift-tools-support-core" do
-    url "https:github.comswiftlangswift-tools-support-corearchiverefstagsswift-6.0.2-RELEASE.tar.gz"
-    sha256 "2f88a0790e9fe6fc0efa6a1fc1382d71c010126f871a6516ba56fb05dd1d23a0"
+    url "https:github.comswiftlangswift-tools-support-corearchiverefstagsswift-6.0.3-RELEASE.tar.gz"
+    sha256 "fc83e9922d4c7df0f0d94b8840f292989eb148d5e451b182a9e390a9ea4dd94e"
 
     # Fix "close error" when compiling SwiftPM.
     # https:github.comswiftlangswift-tools-support-corepull456
@@ -172,43 +165,43 @@ class Swift < Formula
   end
 
   resource "swift-docc" do
-    url "https:github.comswiftlangswift-doccarchiverefstagsswift-6.0.2-RELEASE.tar.gz"
-    sha256 "2fa482d6a3ba09a6bbdd9a503ae20a425e495c0c955dc2bd8ebafa64b38ca8ba"
+    url "https:github.comswiftlangswift-doccarchiverefstagsswift-6.0.3-RELEASE.tar.gz"
+    sha256 "00d8e95a7fdae71c7313389ced0fd4d63185782f8d2fa6d4683672f700478195"
   end
 
   resource "swift-lmdb" do
-    url "https:github.comswiftlangswift-lmdbarchiverefstagsswift-6.0.2-RELEASE.tar.gz"
-    sha256 "384ce2942dbff106d6cca112b3f9a00be0ce3715a33c7b0b81dc61cc722ffdcd"
+    url "https:github.comswiftlangswift-lmdbarchiverefstagsswift-6.0.3-RELEASE.tar.gz"
+    sha256 "1876f37050f42044ce9e614530f8001ce0fce6f44fff8a5ece7186591115f4b6"
   end
 
   resource "swift-docc-render-artifact" do
-    url "https:github.comswiftlangswift-docc-render-artifactarchiverefstagsswift-6.0.2-RELEASE.tar.gz"
-    sha256 "7411ed38dcb5a783ddd5c557290a7c2b939251a2ce634913a96a80b8a66c8c0c"
+    url "https:github.comswiftlangswift-docc-render-artifactarchiverefstagsswift-6.0.3-RELEASE.tar.gz"
+    sha256 "d791c82bff3ed8e8a35a76c1fab9bc3a20ed7bd96aa91b40d50e822f11874863"
   end
 
   resource "swift-docc-symbolkit" do
-    url "https:github.comswiftlangswift-docc-symbolkitarchiverefstagsswift-6.0.2-RELEASE.tar.gz"
-    sha256 "a310e60e64291fe8204b59b50c68d1e66bec3eb837ac8a5af8700ad09c819b1d"
+    url "https:github.comswiftlangswift-docc-symbolkitarchiverefstagsswift-6.0.3-RELEASE.tar.gz"
+    sha256 "1bdcb65209d0487fa50d5ed41e108528c56259771f25b06a0bec911ccb224237"
   end
 
   resource "swift-markdown" do
-    url "https:github.comswiftlangswift-markdownarchiverefstagsswift-6.0.2-RELEASE.tar.gz"
-    sha256 "7fedb25982044af33747162f1f249be279f26a043c96d7c4f2b20dcc3d689bdc"
+    url "https:github.comswiftlangswift-markdownarchiverefstagsswift-6.0.3-RELEASE.tar.gz"
+    sha256 "6c2cc30a8c0f8b6f1f4fa0f21af784722267bb9b6c38336718ae959cea5584e5"
   end
 
   resource "swift-experimental-string-processing" do
-    url "https:github.comswiftlangswift-experimental-string-processingarchiverefstagsswift-6.0.2-RELEASE.tar.gz"
-    sha256 "e0380895e1cf5dc49aef321256f8192986185a6fa6ea83c143f171b643450fc0"
+    url "https:github.comswiftlangswift-experimental-string-processingarchiverefstagsswift-6.0.3-RELEASE.tar.gz"
+    sha256 "6c34cfdf934eb781169866a66505e11541861ba638b05fd4ed87f8c34a6fa55e"
   end
 
   resource "swift-syntax" do
-    url "https:github.comswiftlangswift-syntaxarchiverefstagsswift-6.0.2-RELEASE.tar.gz"
-    sha256 "82cb7640775a23cf7483197f0cd6a6342a29a61d4bb75239905490bf47a64a75"
+    url "https:github.comswiftlangswift-syntaxarchiverefstagsswift-6.0.3-RELEASE.tar.gz"
+    sha256 "30788e115f37b7d3f8fc1f5d436b80996f4945fc13287ed7e4391b358479fafd"
   end
 
   resource "swift-testing" do
-    url "https:github.comswiftlangswift-testingarchiverefstagsswift-6.0.2-RELEASE.tar.gz"
-    sha256 "7c7160b1c196b83c36225d2d60dce27b0dd288b94bd1da7ff619d56b4071cf12"
+    url "https:github.comswiftlangswift-testingarchiverefstagsswift-6.0.3-RELEASE.tar.gz"
+    sha256 "c69bafdaaa849cae7265804bd1a8807ebadffbc51c005c343e4d1ce42a1e7b62"
   end
 
   # To find the version to use, check the release#{version.major_minor} entry of:

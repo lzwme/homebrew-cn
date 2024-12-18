@@ -6,7 +6,8 @@ class LibcapNg < Formula
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "f095ed6c21a674235ae2decf76a7c6524fa887bf38cfc72d6386efe548547751"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9213f1b147c170ebc3b4cb8e900562183885668dd745d0888d985d9fd0cfdbe3"
   end
 
   head do
@@ -19,12 +20,12 @@ class LibcapNg < Formula
   end
 
   depends_on "python-setuptools" => :build
-  depends_on "python@3.12" => [:build, :test]
+  depends_on "python@3.13" => [:build, :test]
   depends_on "swig" => :build
   depends_on :linux
 
   def python3
-    "python3.12"
+    "python3.13"
   end
 
   def install

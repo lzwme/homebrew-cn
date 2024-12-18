@@ -3,12 +3,12 @@ class Repren < Formula
 
   desc "Rename anything using powerful regex search and replace"
   homepage "https:github.comjlevyrepren"
-  url "https:files.pythonhosted.orgpackages832c2086d6b7bc88fb115aa2dd00641a1ade8a22e4854e7f4d290133bfc6a6d1repren-1.0.1.tar.gz"
-  sha256 "6e5eeaa211154abed194eaa09a7ae8a5c760c0dfb103636542221089f4d335e1"
+  url "https:files.pythonhosted.orgpackages7b9e1d5ca018f98d82e2ec958564affca79f9477f03fd11f2f9d0deca834dd6crepren-1.0.2.tar.gz"
+  sha256 "dad04db4427ca8999f7c228e9a5f3a5c26b919c7d1b26af402e0f9febdf09d93"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7e67e2a780fcea707e9f2c3e40dbe897c6ffb64580c065015701e1c891518ea8"
+    sha256 cellar: :any_skip_relocation, all: "5a82077e5896eea071dea3a44430d1061df24d3d2b0b8cb72b3a6f46ab4846d8"
   end
 
   depends_on "python@3.13"

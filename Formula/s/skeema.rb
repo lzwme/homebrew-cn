@@ -1,18 +1,18 @@
 class Skeema < Formula
   desc "Declarative pure-SQL schema management for MySQL and MariaDB"
   homepage "https:www.skeema.io"
-  url "https:github.comskeemaskeemaarchiverefstagsv1.12.1.tar.gz"
-  sha256 "22b7713921949bec8e6d23ea70f8460d6ff880e77e7fc0aefca3954b05086107"
+  url "https:github.comskeemaskeemaarchiverefstagsv1.12.2.tar.gz"
+  sha256 "447c0a331c8d37896305751c25c2b44013a57cb25c11d7e009a8359f70832334"
   license "Apache-2.0"
   head "https:github.comskeemaskeema.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0234eb9e24ba34a94632359fb458da799beeb4c9173976cda3e35974e3379889"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0234eb9e24ba34a94632359fb458da799beeb4c9173976cda3e35974e3379889"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0234eb9e24ba34a94632359fb458da799beeb4c9173976cda3e35974e3379889"
-    sha256 cellar: :any_skip_relocation, sonoma:        "41da325d0aa3898d7643a88a1fb0ccc0f320e5da9b4830e5ad157f42e4dadb58"
-    sha256 cellar: :any_skip_relocation, ventura:       "41da325d0aa3898d7643a88a1fb0ccc0f320e5da9b4830e5ad157f42e4dadb58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "661a90a5d940126a04860f9117e2b27c323a2a01e6946a8e5c4d92788757f678"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cdb160fe3fad08c9db6ddeb3917ecdf3b2d848f52146686d4e4974b33686646e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cdb160fe3fad08c9db6ddeb3917ecdf3b2d848f52146686d4e4974b33686646e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cdb160fe3fad08c9db6ddeb3917ecdf3b2d848f52146686d4e4974b33686646e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0b6ec1f57360bc527113b5eb0000e740d9503d07ff24f60c8dff9a620d56b63d"
+    sha256 cellar: :any_skip_relocation, ventura:       "0b6ec1f57360bc527113b5eb0000e740d9503d07ff24f60c8dff9a620d56b63d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2afdfb6a37c9e717ae7c483c29b05a93329fdd75d850903d5ab7b07646123fa9"
   end
 
   depends_on "go" => :build

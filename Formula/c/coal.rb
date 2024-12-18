@@ -4,7 +4,7 @@ class Coal < Formula
   url "https:github.comcoal-librarycoalreleasesdownloadv3.0.0coal-3.0.0.tar.gz"
   sha256 "6a9cbd4684e907fd16577e5227fbace06ac15ca861c0846dfe5bc81e565fb1e7"
   license "BSD-2-Clause"
-  revision 1
+  revision 2
   head "https:github.comcoal-librarycoal.git", branch: "devel"
 
   livecheck do
@@ -13,12 +13,12 @@ class Coal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "17b165c8498f934efef7e8475a950e10ec647826ce84bcb48b8232daa2a10a22"
-    sha256 cellar: :any,                 arm64_sonoma:  "b74507d8b5c6265b5478e0cd5bd05376d5fe789c270343b60facf99adcc9438d"
-    sha256 cellar: :any,                 arm64_ventura: "5ec5d903dd1effa27d1c25014e63f2e8ec680c029bb82d30e64b9c04d5403579"
-    sha256 cellar: :any,                 sonoma:        "e7f051a7f6f00f3fec8045ffd89b5d3a5bb8b2d946cb84653ef568a412550b70"
-    sha256 cellar: :any,                 ventura:       "a7b257a4b5e303e3d89e929470e96227ea2312ef0a4e9ff0abedb3f22496e948"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d80670cbb2119fa906b0c2d2c616c8795782515d8d90859e0250923a2ca8e56"
+    sha256 cellar: :any,                 arm64_sequoia: "f6334d35e66e1d9db8d3d598ff339037bb0b0bc25032789967c3ba0f9c191d8a"
+    sha256 cellar: :any,                 arm64_sonoma:  "f7d995046472136d5d4e4fb5510a51e9ab927632d471ebd78fb7e28c13ed2bfc"
+    sha256 cellar: :any,                 arm64_ventura: "3098293312c10df220f47dcb0086f079eb3ac332b20479b829127e06ae6a1bfb"
+    sha256 cellar: :any,                 sonoma:        "50ad666c545054c491fea1c0dfe2246d40cb36c8c8a4fb5c3f61f4f7b727f115"
+    sha256 cellar: :any,                 ventura:       "3e6347ac04bd3ddb3464956bb3469391db494f009f677818b27e43f464f73248"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2af1b52ae484df6821cd02ce5a93678119fdc3b7423e8ac9c0d087f6fafc626"
   end
 
   depends_on "cmake" => :build
@@ -30,10 +30,10 @@ class Coal < Formula
   depends_on "eigen"
   depends_on "eigenpy"
   depends_on "octomap"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   def python3
-    "python3.12"
+    "python3.13"
   end
 
   def install

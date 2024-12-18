@@ -1,19 +1,19 @@
 class Trufflehog < Formula
   desc "Find and verify credentials"
   homepage "https:trufflesecurity.com"
-  url "https:github.comtrufflesecuritytrufflehogarchiverefstagsv3.86.1.tar.gz"
-  sha256 "798394f7a6e44da5581ca47350dab88aba4ac8d672dfe77d41ee66f128de178b"
+  url "https:github.comtrufflesecuritytrufflehogarchiverefstagsv3.87.0.tar.gz"
+  sha256 "84a5a3a2ca8ff21ae589d99d0fb4d168beed6372d39c8c631846ab9625988485"
   # upstream license ask, https:github.comtrufflesecuritytrufflehogissues1446
   license "AGPL-3.0-only"
   head "https:github.comtrufflesecuritytrufflehog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "932e49653aba2c8c51d6353041661916ff105963bc70186e12002402202ea0a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "221a97b82b66b81454a827f58659db21779753ade85e73574d06961d682c8d12"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9b12a4498e1c208f80557d18f08d531588c9fc5c5d52f416379e54ea5db381e3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9d7cadeb5b63e0bf2778df6a152bcfd66f65433fc1cf4e833825dc621276c883"
-    sha256 cellar: :any_skip_relocation, ventura:       "75247e508439983b1c67071d708f5dde61684f8724626bbca2052ad13042aece"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f25e61f21145edd6009500de5c69b0484d05459fae3521e59613afea2fd1624"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ef9356373ed6191e997b6c3549e0434fda14781f154a8144dbadf47345829c8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "24dc1a4b6b3b58a2ecf290418f5f36d8cd3e05e1cd5065940858067a32efe9b6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0d57fbf9fef57d3700dfb2d45436ddc14295bf2238807699ea0a286ee60f26bf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "10a3f8b24c1269fdafbc3d27c45ee027e5986a9bb2cac285b0707f75b7b38453"
+    sha256 cellar: :any_skip_relocation, ventura:       "909bc5040197e448e04dd0ad4254d45038572a3795f4f183bdea9edfb45fe690"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fa50ecbc25e38206e4607290d6f331f39300b92b3c49e60cf8179d3755e62b4"
   end
 
   depends_on "go" => :build

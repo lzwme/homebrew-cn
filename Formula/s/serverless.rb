@@ -1,8 +1,8 @@
 class Serverless < Formula
   desc "Build applications with serverless architectures"
   homepage "https:www.serverless.com"
-  url "https:github.comserverlessserverlessarchiverefstagsv3.39.0.tar.gz"
-  sha256 "8f9f90af64b4ddf9df872b6a998ce943d82a479d0f138f804a0e84d4f24b74e3"
+  url "https:github.comserverlessserverlessarchiverefstagsv3.40.0.tar.gz"
+  sha256 "c8058ec43e1e5de67a4a1ee95f0bcec24a4b0ffd4e953b4214961ef7ff2b385d"
   license "MIT"
   head "https:github.comserverlessserverless.git", branch: "v3"
 
@@ -12,14 +12,12 @@ class Serverless < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "40a382f6cdcf4825bbb0118b438aed6df7c90eb2b7059cf6ffcddcb74a7d90a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1e02bdf9c7eef601c900ef5a53ab322401177dde6d819bf5d45a680516e02eb0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e02bdf9c7eef601c900ef5a53ab322401177dde6d819bf5d45a680516e02eb0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1e02bdf9c7eef601c900ef5a53ab322401177dde6d819bf5d45a680516e02eb0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b66193d11a01a3796d856e79ec07d97729c2f589d0d9c478baaa9c7b31f881bc"
-    sha256 cellar: :any_skip_relocation, ventura:        "b66193d11a01a3796d856e79ec07d97729c2f589d0d9c478baaa9c7b31f881bc"
-    sha256 cellar: :any_skip_relocation, monterey:       "b66193d11a01a3796d856e79ec07d97729c2f589d0d9c478baaa9c7b31f881bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a06872b8191f9c75f9b346aa19a134db12ac6641683039ffe87eecebf8df9582"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "06a1d77422f266cc1d32de082fd88653ff2acba640e4369391749f8308232abf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e5580e7acdb2b5a7c4c941d321aac21ccc370b40b8432ff0372b83a33227ef1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "06a1d77422f266cc1d32de082fd88653ff2acba640e4369391749f8308232abf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b64fa8af7e98666d443ca3e0df89433fc4613e1c6c4a1e677139f4e9091f8a2d"
+    sha256 cellar: :any_skip_relocation, ventura:       "b64fa8af7e98666d443ca3e0df89433fc4613e1c6c4a1e677139f4e9091f8a2d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06a1d77422f266cc1d32de082fd88653ff2acba640e4369391749f8308232abf"
   end
 
   # v3 will be maintained through 2024

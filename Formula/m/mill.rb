@@ -1,17 +1,20 @@
 class Mill < Formula
   desc "Scala build tool"
   homepage "https:mill-build.commillScala_Intro_to_Mill.html"
-  url "https:github.comcom-lihaoyimillreleasesdownload0.12.30.12.3-assembly"
-  sha256 "86acc0b9869d09c8983ecfdbeb39682d47eb585e2b46d94148cc528fbb4b83b8"
+  url "https:github.comcom-lihaoyimillreleasesdownload0.12.40.12.4-assembly"
+  sha256 "5a5ca4c8dc97522b51e851db8595ce7892ad302aefa092b582bba1f86fe191bf"
   license "MIT"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
   livecheck do
     url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
+    strategy :github_latest
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "969c82e48e12ff85d907dbeeb620536a3fc345e9cde52cbc771588446587bbab"
+    sha256 cellar: :any_skip_relocation, all: "5f28042b2b84dde783e5eb2b480a7b01be3b109dd7c507ebb47eb18c29979bd4"
   end
 
   depends_on "openjdk"

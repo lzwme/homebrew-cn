@@ -1,8 +1,8 @@
 class Maxwell < Formula
   desc "Reads MySQL binlogs and writes row updates as JSON to Kafka"
   homepage "https:maxwells-daemon.io"
-  url "https:github.comzendeskmaxwellreleasesdownloadv1.41.2maxwell-1.41.2.tar.gz"
-  sha256 "55f9c90b27e188f0804131e92628aa3262d3a70d2c3c22e41341dd32924ad5a1"
+  url "https:github.comzendeskmaxwellreleasesdownloadv1.42.0maxwell-1.42.0.tar.gz"
+  sha256 "7624e95d42cbf4ff76c99b2ff7ba3f6664a90bd6296a82cc3b4fc055fc52eaeb"
   license "Apache-2.0"
 
   livecheck do
@@ -11,14 +11,7 @@ class Maxwell < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "af6bcc4cc48efddde658922e204638e6bd691768a8c52561ab70c2e541c8ade6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "03871ea82d9bb31d8b94e330ca4cd56fb418c97a2798a50e3363b8e2f88b5db2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "03871ea82d9bb31d8b94e330ca4cd56fb418c97a2798a50e3363b8e2f88b5db2"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "03871ea82d9bb31d8b94e330ca4cd56fb418c97a2798a50e3363b8e2f88b5db2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "03871ea82d9bb31d8b94e330ca4cd56fb418c97a2798a50e3363b8e2f88b5db2"
-    sha256 cellar: :any_skip_relocation, ventura:        "03871ea82d9bb31d8b94e330ca4cd56fb418c97a2798a50e3363b8e2f88b5db2"
-    sha256 cellar: :any_skip_relocation, monterey:       "03871ea82d9bb31d8b94e330ca4cd56fb418c97a2798a50e3363b8e2f88b5db2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9bdc4d7e80f49c298f7314682b8b2fada302b5237a6f3fb7d40abf72513444d2"
+    sha256 cellar: :any_skip_relocation, all: "990392eb0fc2999456ca7586d3e0c6ccb777e1e490bfd6b0e306f1b68c114ac9"
   end
 
   depends_on "openjdk@11"

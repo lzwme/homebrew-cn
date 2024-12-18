@@ -7,12 +7,13 @@ class Jj < Formula
   head "https:github.commartinvonzjj.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b52227f624002fec2ea390892b5422ebf013368c08af701c0feb125b0eff3e81"
-    sha256 cellar: :any,                 arm64_sonoma:  "f80d5012e2e05ece55292bc7265c516fc3e7e9224bfe2c274186051921376ffc"
-    sha256 cellar: :any,                 arm64_ventura: "5fdd4798b48df95fcb69fd1a2fd9cc0e5667c3a10ff079801d3671dcc2ea03f0"
-    sha256 cellar: :any,                 sonoma:        "a44672bc799564eaf420c5f085423d0b0e84466cf72afdd2c1e9b77babbee10a"
-    sha256 cellar: :any,                 ventura:       "bfead7f4fa6ca72320bc49fe2bcf3bb139a251bf7ea305302e6d3ee077a26eba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fa4160a7b8b5038362b0606ccb7a878cb9ebf5bc89b0853f6e04c77d6868211"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "451e4de3460fd317c0abffba2de1fee65cd591b35234ae5f7403e15390377f3f"
+    sha256 cellar: :any,                 arm64_sonoma:  "e7c846f8838bd8b26a669f96828fc21abb989b24ad80d52df258fefee24e8eff"
+    sha256 cellar: :any,                 arm64_ventura: "6e1dc53f17238e3d4e9fc17a3f32ce34e92c326da591d207f61a3e788a413dbb"
+    sha256 cellar: :any,                 sonoma:        "c8fcb58a6cfd101a2bf1dd120e0a730282bdfff72466f0f7269a60a9df9ec048"
+    sha256 cellar: :any,                 ventura:       "9ecd891313a9da864069246d65c963a127a31b8bbcc3785ae436a4ef625f2265"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de02419686306776565fad7a075e5f2e94cdd905bd729d394fd8400fd4ea2453"
   end
 
   depends_on "pkgconf" => :build
@@ -26,7 +27,8 @@ class Jj < Formula
 
     system "cargo", "install", *std_cargo_args(path: "cli")
 
-    generate_completions_from_executable(bin"jj", "util", "completion", shell_parameter_format: :flag)
+    generate_completions_from_executable(bin"jj", shell_parameter_format: :clap)
+
     (man1"jj.1").write Utils.safe_popen_read(bin"jj", "util", "mangen")
   end
 

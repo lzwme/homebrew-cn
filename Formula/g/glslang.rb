@@ -1,10 +1,24 @@
 class Glslang < Formula
   desc "OpenGL and OpenGL ES reference compiler for shading languages"
   homepage "https:www.khronos.orgopenglessdktoolsReference-Compiler"
-  url "https:github.comKhronosGroupglslangarchiverefstags15.0.0.tar.gz"
-  sha256 "c31c8c2e89af907507c0631273989526ee7d5cdf7df95ececd628fd7b811e064"
   license all_of: ["BSD-3-Clause", "GPL-3.0-or-later", "MIT", "Apache-2.0"]
-  head "https:github.comKhronosGroupglslang.git", branch: "main"
+
+  stable do
+    url "https:github.comKhronosGroupglslangarchiverefstags15.1.0.tar.gz"
+    sha256 "4bdcd8cdb330313f0d4deed7be527b0ac1c115ff272e492853a6e98add61b4bc"
+
+    resource "SPIRV-Tools" do
+      # in known_good.json
+      url "https:github.comKhronosGroupSPIRV-Tools.git",
+          revision: "4d2f0b40bfe290dea6c6904dafdf7fd8328ba346"
+    end
+
+    resource "SPIRV-Headers" do
+      # in known_good.json
+      url "https:github.comKhronosGroupSPIRV-Headers.git",
+          revision: "3f17b2af6784bfa2c5aa5dbb8e0e74a607dd8b3b"
+    end
+  end
 
   livecheck do
     url :stable
@@ -12,27 +26,43 @@ class Glslang < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "cefed08c294b655c3f9f59afff321b5ab171b7485401d84489b363d15d6b5876"
-    sha256 cellar: :any,                 arm64_sonoma:  "d1f8ac70040c50625096e9981bba70b8e2dc809e514b3e0c0008a1112317b6a0"
-    sha256 cellar: :any,                 arm64_ventura: "96864167e6d603a508e36746dffe21f35bde20ca89b5386ca5e7c126fdde3713"
-    sha256 cellar: :any,                 sonoma:        "9075c61713da4f9816536d9548586837deb19f6dde14cc081dd5b624ae3a7862"
-    sha256 cellar: :any,                 ventura:       "1df36c523281fd6f3def34d0afdfb2bb3cc07c42aed812d55fe16ee56ab3bb11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c50ddf958a0f1b6c28484a89519e3b51037b7d4027ec3bba007646cc48f3a9ea"
+    sha256 cellar: :any,                 arm64_sequoia: "1718b3da09df665f37ca130d3d5c584fb174e29feacfcf72399a817fa2c9031e"
+    sha256 cellar: :any,                 arm64_sonoma:  "d643e9284edbc89b4e4906e70afd7d06bf3fd2e20ebb9978bceb06e0903a7a30"
+    sha256 cellar: :any,                 arm64_ventura: "d2f5ca41a945434e67d0ac6ac48ee1903f24ccb02febd5e2a6b215926fb97ec1"
+    sha256 cellar: :any,                 sonoma:        "12987fe9368dfd4a4cfbf9ec2d8be0292fbb199b23fd148260023e895ae54d16"
+    sha256 cellar: :any,                 ventura:       "24d32a6307452552ecdf9fcd21c6000b1bf16c3faf2c56370ea5e501496a0be3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3968014ff1d39cb6760dddb458c74b05c5d539c630db05ead07b2d2d23a7e284"
+  end
+
+  head do
+    url "https:github.comKhronosGroupglslang.git", branch: "main"
+
+    resource "SPIRV-Tools" do
+      url "https:github.comKhronosGroupSPIRV-Tools.git", branch: "main"
+    end
+
+    resource "SPIRV-Headers" do
+      url "https:github.comKhronosGroupSPIRV-Headers.git", branch: "main"
+    end
   end
 
   depends_on "cmake" => :build
-  depends_on "spirv-tools"
   uses_from_macos "python" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DBUILD_EXTERNAL=OFF",
-                    "-DALLOW_EXTERNAL_SPIRV_TOOLS=ON",
-                    "-DBUILD_SHARED_LIBS=ON",
-                    "-DENABLE_CTEST=OFF",
-                    "-DENABLE_OPT=ON",
-                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                    *std_cmake_args
+    (buildpath"Externalspirv-tools").install resource("SPIRV-Tools")
+    (buildpath"Externalspirv-toolsexternalspirv-headers").install resource("SPIRV-Headers")
+
+    args = %W[
+      -DBUILD_EXTERNAL=OFF
+      -DALLOW_EXTERNAL_SPIRV_TOOLS=ON
+      -DBUILD_SHARED_LIBS=ON
+      -DENABLE_CTEST=OFF
+      -DENABLE_OPT=ON
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

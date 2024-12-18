@@ -3,17 +3,17 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/1e/35/7c048fece5f12acc7b8d76b7f25e6056f6b67c0b7bcb848a31facb2f86d0/schemathesis-3.39.0.tar.gz"
-  sha256 "abd51f551a08f99de35ab30f98843fa07c02817ac4fb17a1bafb0aecc0b11558"
+  url "https://files.pythonhosted.org/packages/d4/4f/1c03394fdd4428743ffb1701fcbc7427811ec8b52dfe1bc2f69f68fced0f/schemathesis-3.39.1.tar.gz"
+  sha256 "4840c3d1cf4bf1a2def90a81dd17930919495420339b9e97f1e5558a6fcb01d7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ad0ea3031a8ad9abad7c01c62295372a511dbd5845599521ba30692098237a9a"
-    sha256 cellar: :any,                 arm64_sonoma:  "790b1c4ad45865b0e0d86ae06574b169ceead1745310835e23e85f13ef9f7f05"
-    sha256 cellar: :any,                 arm64_ventura: "b2683e467e587b5458aa199e5c2d4860641a75e352dd09ea339f4045d02f6f1f"
-    sha256 cellar: :any,                 sonoma:        "0d89a107ba4e1014a66775354765afb10d0cb927ac58db22f6d0c71a17e51198"
-    sha256 cellar: :any,                 ventura:       "c12a8a93dc6d62903eea38caf2a784d489ac62831fec7d6cea115e1caed02b8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09ec6eb2452df11665f51f095b8e424d692fe782bc3b8f98fa504ccdac480f9e"
+    sha256 cellar: :any,                 arm64_sequoia: "371a6ac2dc3f696bed6424269792c0a12244cddc031f616fb65029bd939168c0"
+    sha256 cellar: :any,                 arm64_sonoma:  "dad0cfbf276e2154a25ef4de2f110903de6aba86943ac97823401437da4f27ec"
+    sha256 cellar: :any,                 arm64_ventura: "1097ba944ea72f83b8e617d6de79870c1116613ea593476d842421834eb09717"
+    sha256 cellar: :any,                 sonoma:        "9c57624474320079509880179e3d2be3fe254cb9fcc08b76a710fb2d05cdc1e5"
+    sha256 cellar: :any,                 ventura:       "d21920aa207a6a24e7ee8fb345068e9ff040e496072e5a05471724b5fc48d659"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "084bbbbac5fd1702ba7abdada2708b45dd0ea8926603d700237ef620c731b4bc"
   end
 
   depends_on "rust" => :build # for rpds-py

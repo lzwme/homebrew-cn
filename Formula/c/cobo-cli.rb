@@ -3,17 +3,17 @@ class CoboCli < Formula
 
   desc "Cobo Command-line Tool"
   homepage "https:github.comCoboGlobalcobo-cli"
-  url "https:files.pythonhosted.orgpackages83e7dc47cd582b8f68546bac444b79a27d48b297b3d7c74cc9edb38e99c22a1acobo_cli-0.0.4.tar.gz"
-  sha256 "db66874dc6755d51c0efe82af01c273f733e005b9cbe7e5dd66c62b39a3cd469"
+  url "https:files.pythonhosted.orgpackages3a07a80c6fb19a005c81b20b344b6d3f4b3631563d732d6aa91acdc569503e49cobo_cli-0.0.5.tar.gz"
+  sha256 "ae08b589fbf097c4cdac82e3802be2bf2faa98d7c710102c68c27cf6518dd98c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c2ae7c31ff657e9a59e521f1935b3c0a5cccdd8e35210c82ea90e0db677b2223"
-    sha256 cellar: :any,                 arm64_sonoma:  "9f9e0c695a8193f990db05baa5d8259fb8dec13916eaa67ccf52fe28c1d8b2ff"
-    sha256 cellar: :any,                 arm64_ventura: "7780fbaf1554d58f017e77ae9446f149f9f69a43a37534fe76a86463be1a1914"
-    sha256 cellar: :any,                 sonoma:        "1dd991514407b8416a8bd03a0723b10c7c2c535288fc79069784b8996023a2f6"
-    sha256 cellar: :any,                 ventura:       "3ffba56d9a102ec3a3ca2500d0c9f110ac406a4e9b4d1252ab9575927262f3e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c5698330c5560ff41e168dc63b4fe56b23f06b9f0463a698134052f5f623e21"
+    sha256 cellar: :any,                 arm64_sequoia: "fe211dbc601476b6a0d0ca8188f5c8fef8607725baa587dc46f2d4f2c1291c06"
+    sha256 cellar: :any,                 arm64_sonoma:  "56f0c7feed611576176faa6b88fde7fa84a1cb096d7e7a5993ff642f7a9f064d"
+    sha256 cellar: :any,                 arm64_ventura: "79b706ccb13048773977ab8267d5c82a48c399ff343e864de655ad694d2fa9cf"
+    sha256 cellar: :any,                 sonoma:        "dd6858743c4a560a0acd3ff13b95bfa0846caeff81aac55afbc250fc76ea0c58"
+    sha256 cellar: :any,                 ventura:       "546d7c4a63eca9c3b15981ab6fab3e0e14bc81c304851e866331e2a399af58e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9c07826bda8daa2f2fda7ea7475cb461caa280b80e34442bf3d063ca4cfe6d2"
   end
 
   depends_on "certifi"
@@ -95,8 +95,8 @@ class CoboCli < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackages4186a03390cb12cf64e2a8df07c267f3eb8d5035e0f9a04bb20fb79403d2a00epydantic-2.10.2.tar.gz"
-    sha256 "2bc2d7f17232e0841cbba4641e65ba1eb6fafb3a08de3a091ff3ce14a197c4fa"
+    url "https:files.pythonhosted.orgpackages450f27908242621b14e649a84e62b133de45f84c255eecb350ab02979844a788pydantic-2.10.3.tar.gz"
+    sha256 "cb5ac360ce894ceacd69c403187900a02c4b20b693a9dd1d643e1effab9eadf9"
   end
 
   resource "pydantic-core" do
@@ -105,8 +105,8 @@ class CoboCli < Formula
   end
 
   resource "pydantic-settings" do
-    url "https:files.pythonhosted.orgpackagesb5d49dfbe238f45ad8b168f5c96ee49a3df0598ce18a0795a983b419949ce65bpydantic_settings-2.6.1.tar.gz"
-    sha256 "e0f92546d8a9923cb8941689abf85d6601a8c19a23e97a34b2964a2e3f813ca0"
+    url "https:files.pythonhosted.orgpackages864119b62b99e7530cfa1d6ccd16199afd9289a12929bef1a03aa4382b22e683pydantic_settings-2.7.0.tar.gz"
+    sha256 "ac4bfd4a36831a48dbf8b2d9325425b549a0a6f18cea118436d728eb4f1c4d66"
   end
 
   resource "pynacl" do

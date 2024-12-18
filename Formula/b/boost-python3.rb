@@ -4,6 +4,7 @@ class BoostPython3 < Formula
   url "https:github.comboostorgboostreleasesdownloadboost-1.87.0boost-1.87.0-b2-nodocs.tar.xz"
   sha256 "3abd7a51118a5dd74673b25e0a3f0a4ab1752d8d618f4b8cea84a603aeecc680"
   license "BSL-1.0"
+  revision 1
   head "https:github.comboostorgboost.git", branch: "master"
 
   livecheck do
@@ -11,20 +12,20 @@ class BoostPython3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7135ab567cd22e2b1d9aaabdc042b51a6d937f8e86d2a6aefdbd785cee788ec5"
-    sha256 cellar: :any,                 arm64_sonoma:  "1da531ac175cff3144aa46d4495d12277874f75bed5fdb0e1598078e512c50e3"
-    sha256 cellar: :any,                 arm64_ventura: "ec7a06c323a007a3d59c8256f8bb3ed0204e824a49199d3e1cf89d3f3baf3214"
-    sha256 cellar: :any,                 sonoma:        "b04302f3858bb16f948950803b1a21935b44b64cd117278db309538d71c2ca8d"
-    sha256 cellar: :any,                 ventura:       "b08e1448c9d173806e887c4f3a690a603d45bc4a071f3feadbca9b343e5617fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eefac2726cbea27f3934ced7e3f316aa7ef57af075eb182ffceac04941d50629"
+    sha256 cellar: :any,                 arm64_sequoia: "1bfc8d16e673420c90d440351214aa003dddce5dd1e5d997750ebfe3f10406af"
+    sha256 cellar: :any,                 arm64_sonoma:  "10316d5c37144f3ee869da4350a160b518570b60334e768ddbe9eacf1fcb7be8"
+    sha256 cellar: :any,                 arm64_ventura: "f5a6b1a59f5d1bd5092b6256a2fcbfd7fb4816205de5cc94f95fce3ffe708ac5"
+    sha256 cellar: :any,                 sonoma:        "c269dac8219d15e78659b3b5f48819d3695a5e9f646111bd30187d24d6e11525"
+    sha256 cellar: :any,                 ventura:       "7232f6b6da751626f3f7a9bc22ecd19e26804dde406de41b683615805bcead1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4dde9942cf842fe1a19c561da2f18880467730858f59ce0feaa6895e8517bbb"
   end
 
   depends_on "numpy" => :build
   depends_on "boost"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   def python3
-    "python3.12"
+    "python3.13"
   end
 
   def install

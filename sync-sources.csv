@@ -2625,6 +2625,7 @@ Homebrew-homebrew-core/Formula/h/help2man.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/heppdt2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hercules.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hermit.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/h/heroku.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hesiod.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hevea.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hex.rb, Homebrew/homebrew-core, 1
@@ -6289,6 +6290,7 @@ Homebrew-homebrew-core/Formula/s/sylpheed.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/symengine.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/symlinks.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sync_gateway.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/synchrony.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/syncthing.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/synergy-core.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/synfig.rb, Homebrew/homebrew-core, 1
@@ -6627,6 +6629,7 @@ Homebrew-homebrew-core/Formula/t/ttygif.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/ttyplot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/ttyrec.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tuc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tuisky.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tundra.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tunnel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tuntox.rb, Homebrew/homebrew-core, 1
@@ -9325,7 +9328,7 @@ Homebrew-homebrew-cask/Casks/font/font-e/font-eagle-lake.rb, Homebrew/homebrew-c
 Homebrew-homebrew-cask/Casks/font/font-e/font-east-sea-dokdo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-e/font-eater.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-e/font-eb-garamond.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-e/font-ebh.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-e/font-ebh.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-e/font-economica.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-e/font-eczar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-e/font-edlo.rb, Homebrew/homebrew-cask, 1

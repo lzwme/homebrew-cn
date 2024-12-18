@@ -1,8 +1,8 @@
 class Bde < Formula
   desc "Basic Development Environment: foundational C++ libraries used at Bloomberg"
   homepage "https:github.combloombergbde"
-  url "https:github.combloombergbdearchiverefstags4.16.1.0.tar.gz"
-  sha256 "32bb1912b6c37b11ca86c87a7295adeca928ef816014926da089088e5a843d6d"
+  url "https:github.combloombergbdearchiverefstags4.18.0.0.tar.gz"
+  sha256 "87426d6837a1261e385e755361e961c5d75ec35fb1a227a9763a6388de4129fc"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Bde < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "934e52e46f5efff74a846378b931dda85b21d0a47039fdc7e362445a28a6d568"
-    sha256 cellar: :any,                 arm64_sonoma:  "eee9621db68ba4e039acac1b384be033bf779f8b17856b61a220ea05ef63da47"
-    sha256 cellar: :any,                 arm64_ventura: "292257df4ef9f7e16098a88b4149a0882caaf45b9df07a24926c24773b169976"
-    sha256 cellar: :any,                 sonoma:        "42cd88a057de2e123e710f8e42c8ad636d82650d48e52cec020b3fe27fb3600d"
-    sha256 cellar: :any,                 ventura:       "659df6906e225ca217ceebff0f469712f8fe83eb7d012e8de0e945a59a93f7ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87dcfaea08789f78092daf1658160f1ac5806bc42ee5b76308898c1b9ba8ba2a"
+    sha256 cellar: :any,                 arm64_sequoia: "18c5f09e30f7f505fed326240086dc6845882f54bc438d4bcd6eb0da855b4f0a"
+    sha256 cellar: :any,                 arm64_sonoma:  "eab1e15ad41fc1e6a5786cebca8b344a2765ff05e8c1bf2cb786dcaef287df95"
+    sha256 cellar: :any,                 arm64_ventura: "d2c3615e8fc71ae75abe5ef5ba866044f2b60a12e27b01a54f0e69451e32e76b"
+    sha256 cellar: :any,                 sonoma:        "4e78518f55df6ef43f24161615bee765951ae64ce0b47d6c2d4d8d51d64529ed"
+    sha256 cellar: :any,                 ventura:       "05a07a35eb98203bc715687c2d03b6edc573295460c2bfbbc7e6228c121017f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d1d4dcd8a06831ed13ef9f8a70510db7e90e591d4f18929a925787edda28e02"
   end
 
   depends_on "cmake" => :build

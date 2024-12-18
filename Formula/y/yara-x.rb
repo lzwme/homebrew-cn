@@ -1,18 +1,18 @@
 class YaraX < Formula
   desc "Tool to do pattern matching for malware research"
   homepage "https:virustotal.github.ioyara-x"
-  url "https:github.comVirusTotalyara-xarchiverefstagsv0.11.1.tar.gz"
-  sha256 "b59d9d91f05bfdc0d9fa74cd30ddff0885afcd4f0f28afb0d27d9474dd65969d"
+  url "https:github.comVirusTotalyara-xarchiverefstagsv0.12.0.tar.gz"
+  sha256 "f73f7c3d2b38e7190d9b588bbc4eb6664123cd95a10c30e198f0653da1db8932"
   license "BSD-3-Clause"
   head "https:github.comVirusTotalyara-x.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "236c5345b7f5325f83a360259c6b340f60ce630ac80f898dc3454b16545bddcb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de6712b7201f22e0c60f6364d0da82083d26d858af5364af6681903e9a1e1a47"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b854718279a77d728fbb5e7f31e7d9dfb2edab47b3ef655c30e26e77e6bb98af"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6c72b45efe64c6bec8cd5ad28d8a8444ae0d8c0dbacebbf499d775c085db45e4"
-    sha256 cellar: :any_skip_relocation, ventura:       "f395ce5f97a0d4286b2bc17f79fcbd638ea91a83cf2c65fc05ca72ce282686aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc99979b50e30c42fdb5943bef6c8349da9a5e0459596b6051c0cb280447807a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c11ca224f89e699dcfa63955e012992e7e00d3168fbfeda85778bb8b7308c456"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2654f91b33d943709fdb53f404734d1f860ab5a057895ad0ef702ad9f451f538"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ea3de5b2f6c193a7b76d48a6217556be731e4f177967738c4285c7d1bf9fc60f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5193d8f4e3d614c7a3f973822b61590ef8a159d941f6cd7a73831a184ea88cc6"
+    sha256 cellar: :any_skip_relocation, ventura:       "ea70418bd8a8109b21f74ce340939a5a0aff36a0750b8812c0d18632e5e4742a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd8ec8bd9807a760e9d048969158301e2680168f1479865723ea1eb94db49215"
   end
 
   depends_on "rust" => :build

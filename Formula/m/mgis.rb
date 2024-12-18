@@ -4,16 +4,16 @@ class Mgis < Formula
   url "https:github.comthelferMFrontGenericInterfaceSupportarchiverefstagsMFrontGenericInterfaceSupport-2.2.tar.gz"
   sha256 "b3776d7b3a534ca626525a42b97665f7660ae2b28ea57b3f53fd7e8538da1ceb"
   license any_of: ["LGPL-3.0-only", "CECILL-1.0"]
-  revision 4
+  revision 5
   head "https:github.comthelferMFrontGenericInterfaceSupport.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8ad27b36ebc81202135e46f07239c5c10cd1184482f9884df7fcadec0e4885b2"
-    sha256 cellar: :any,                 arm64_sonoma:  "a0bd94fdc5643eb1d3a09fa4b291447b8d6c275485a847ce20771f085509c161"
-    sha256 cellar: :any,                 arm64_ventura: "fbfa822e7522ada5e5a1afcf89cc41b8efc88dbd8b8ae5decee40d795118f543"
-    sha256 cellar: :any,                 sonoma:        "e4e6d58e29cda1d2d09ce6f312b0fcfb0875f72bae10306bb0905bd570fc41db"
-    sha256 cellar: :any,                 ventura:       "cafc7308d207de8efe3e81fa225f8b3bb715d17f89c55792037978c0e4ebef2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6325e8cf522f4467e99b6066bd464dd2d1df521a14f3f7f4060ac36ac755baa6"
+    sha256 cellar: :any,                 arm64_sequoia: "9d2baa0db73a350e2e2c68b11bc65cc48c4c11a35b475b3468e29624259d898a"
+    sha256 cellar: :any,                 arm64_sonoma:  "23031a0e15803505ccb66196fc97fe05b8c64a0a4a734836d9d160d0234e33ea"
+    sha256 cellar: :any,                 arm64_ventura: "d8db5a8b0f0963ff3bc72325c44b5db3f51f8dca547e8cf0991687e87132fd60"
+    sha256 cellar: :any,                 sonoma:        "74adba719180e893aa6e23d60e4f5a058e2e8ddc6ac7fc6bd6ceb2da3ff457ae"
+    sha256 cellar: :any,                 ventura:       "987ed0eb220f4e3c1f04bf721bbc8121b33a6eaae1bb2a76a0a8e6d229ea90f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfc33147428bbbf16053013fff48b01ea6b099aada45ecb0a5b65d8a1d9b9ea2"
   end
 
   depends_on "cmake" => :build
@@ -21,14 +21,14 @@ class Mgis < Formula
 
   depends_on "boost-python3"
   depends_on "numpy"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   on_macos do
     depends_on "gcc"
   end
 
   def python3
-    which("python3.12")
+    which("python3.13")
   end
 
   def install

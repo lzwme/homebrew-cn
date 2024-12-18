@@ -1,8 +1,8 @@
 class Binaryen < Formula
   desc "Compiler infrastructure and toolchain library for WebAssembly"
   homepage "https:webassembly.org"
-  url "https:github.comWebAssemblybinaryenarchiverefstagsversion_120.tar.gz"
-  sha256 "a4edd532d37b33d88e28e8d770f7177a7c0bb4495eabc6f5ecd41ffc5fd4db90"
+  url "https:github.comWebAssemblybinaryenarchiverefstagsversion_121.tar.gz"
+  sha256 "93f3b3d62def4aee6d09b11e6de75b955d29bc37878117e4ed30c3057a2ca4b4"
   license "Apache-2.0"
   head "https:github.comWebAssemblybinaryen.git", branch: "main"
 
@@ -12,19 +12,18 @@ class Binaryen < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "29292c794cf605e525b06a61f25d9a5a9d69556979d1fa19c80973295835d429"
-    sha256 cellar: :any,                 arm64_sonoma:  "25e06480f6181a7fff1409722c135ec9de1be390db038009ac943ac931b44805"
-    sha256 cellar: :any,                 arm64_ventura: "410fa871c22b506786d3fda29dd4c86d433bfc6888259a3903d35b7a5674fab3"
-    sha256 cellar: :any,                 sonoma:        "64eb05c655b941331080d4c4bd08190bc8424b27e2bac10b409a2bd23eeea14f"
-    sha256 cellar: :any,                 ventura:       "accff12f49d550c72f3442b66404e4f278e5e83c9cb110ece59b49f2ba9f931b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b00a4928f8908734c9779d9eed228bf2cbb19dd8dffff41fa4c77d58910df1a0"
+    sha256 cellar: :any,                 arm64_sequoia: "dd9de93a74b980cdd52ff316af71357e9c0431330a367366c44fecad0c662016"
+    sha256 cellar: :any,                 arm64_sonoma:  "5b320f5944d7e5d1d9ba331a54867ca34186e75617756e617982671524ef85dd"
+    sha256 cellar: :any,                 arm64_ventura: "2230ec3ab24197fb2ea483460f9ea9e4454bea70823e6b012dd7e8080d5cf1f1"
+    sha256 cellar: :any,                 sonoma:        "b51ad87aa9815014c10d03e0f71f05ad994dd921d616a1640906a9cb93391e4d"
+    sha256 cellar: :any,                 ventura:       "bf465f9ffebc2e6d550bc466256cd2639a3eddde35e6830df2f4edadd131f334"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7e0cc56b6117d0040efdb1aa0cab6a15a3bda5c3c991f00be2917298cc8598c"
   end
 
   depends_on "cmake" => :build
-  depends_on macos: :mojave # needs std::variant
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DBUILD_TESTS=false"
+    system "cmake", "-S", ".", "-B", "build", "-DBUILD_TESTS=false", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
