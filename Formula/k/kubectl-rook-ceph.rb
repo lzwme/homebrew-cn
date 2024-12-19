@@ -1,18 +1,18 @@
 class KubectlRookCeph < Formula
   desc "Rook plugin for Ceph management"
   homepage "https:rook.io"
-  url "https:github.comrookkubectl-rook-cepharchiverefstagsv0.9.2.tar.gz"
-  sha256 "4d2f2b0bab7b809a50534977b3259b845ffac09b59001aadb00cc3499cd341fb"
+  url "https:github.comrookkubectl-rook-cepharchiverefstagsv0.9.3.tar.gz"
+  sha256 "c426695f3345e631ba912923b2105480f3b963ee8fd4311b29685c3de678e169"
   license "Apache-2.0"
   head "https:github.comrookkubectl-rook-ceph.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "306c9ddf98a35df7b5d0c3ef5d585560cb644a9be064dc5f2125a853bf141487"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "306c9ddf98a35df7b5d0c3ef5d585560cb644a9be064dc5f2125a853bf141487"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "306c9ddf98a35df7b5d0c3ef5d585560cb644a9be064dc5f2125a853bf141487"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2ac03ac7a7ee5f8a05210368354ce02b557f33b8fa55d0ace04fd47bd40f62fa"
-    sha256 cellar: :any_skip_relocation, ventura:       "2ac03ac7a7ee5f8a05210368354ce02b557f33b8fa55d0ace04fd47bd40f62fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "713577950801b8272d0e567f423d423200ec1a966ba64cd3c40925dcfd93dafb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b64737ae9d5c44cf8cb94f4de40c80fafbb4f3cd38f4d6d233b4f8486fdff144"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b64737ae9d5c44cf8cb94f4de40c80fafbb4f3cd38f4d6d233b4f8486fdff144"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b64737ae9d5c44cf8cb94f4de40c80fafbb4f3cd38f4d6d233b4f8486fdff144"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a5e5e5938020925a5153d4bc3b8535334b3d4b32c02d1a184db3243d3bedf06c"
+    sha256 cellar: :any_skip_relocation, ventura:       "a5e5e5938020925a5153d4bc3b8535334b3d4b32c02d1a184db3243d3bedf06c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13378c8a5004db1dfbb29384d11381d1f90be0e4f19e687800337ddd85d32155"
   end
 
   depends_on "go" => :build

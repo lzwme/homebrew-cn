@@ -2,18 +2,18 @@ class Mesheryctl < Formula
   desc "Command-line utility for Meshery, the cloud native management plane"
   homepage "https:meshery.io"
   url "https:github.commesherymeshery.git",
-      tag:      "v0.7.170",
-      revision: "97c30ced3a6d509053cc6b87f58c7e048581d596"
+      tag:      "v0.7.171",
+      revision: "ba303cc500a6ef557d4b86a155449d0994bdd484"
   license "Apache-2.0"
   head "https:github.commesherymeshery.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c7ae859b99e7ac752450574c22958d9a83662a7c7131a44a3af53d3aa68e8258"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7ae859b99e7ac752450574c22958d9a83662a7c7131a44a3af53d3aa68e8258"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c7ae859b99e7ac752450574c22958d9a83662a7c7131a44a3af53d3aa68e8258"
-    sha256 cellar: :any_skip_relocation, sonoma:        "27ce33e714a06a9c30ae3b351ee4a81d747856e8a7045664cb7036740d462b3e"
-    sha256 cellar: :any_skip_relocation, ventura:       "27ce33e714a06a9c30ae3b351ee4a81d747856e8a7045664cb7036740d462b3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd7a351a48f63f5878bd2cd65d28bd799423bfac9165ebff6f92e8b38a760083"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8cadf912299db289fe71094fd9ae8febc04c6e281f8b1050e47c867e867737f5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8cadf912299db289fe71094fd9ae8febc04c6e281f8b1050e47c867e867737f5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8cadf912299db289fe71094fd9ae8febc04c6e281f8b1050e47c867e867737f5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "755e18233afba2b9ffec9c9ce097911a373a02f47c9a83b9650af6ea51351e58"
+    sha256 cellar: :any_skip_relocation, ventura:       "755e18233afba2b9ffec9c9ce097911a373a02f47c9a83b9650af6ea51351e58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "009b6aa00a39124438d7231224b0dc33e73b42de2ed06616d150ff40b604c8dc"
   end
 
   depends_on "go" => :build

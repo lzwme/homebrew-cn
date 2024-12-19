@@ -6,15 +6,23 @@ class Llvm < Formula
   head "https:github.comllvmllvm-project.git", branch: "main"
 
   stable do
-    url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-19.1.5llvm-project-19.1.5.src.tar.xz"
-    sha256 "bd8445f554aae33d50d3212a15e993a667c0ad1b694ac1977f3463db3338e542"
+    url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-19.1.6llvm-project-19.1.6.src.tar.xz"
+    sha256 "e3f79317adaa9196d2cfffe1c869d7c100b7540832bc44fe0d3f44a12861fa34"
+
+    # Remove the following patches in LLVM 20.
 
     # Backport relative `CLANG_CONFIG_FILE_SYSTEM_DIR` patch.
-    # Remove in LLVM 20.
     # https:github.comllvmllvm-projectpull110962
     patch do
       url "https:github.comllvmllvm-projectcommit1682c99a8877364f1d847395cef501e813804caa.patch?full_index=1"
       sha256 "2d0a185e27ff2bc46531fc2c18c61ffab521ae8ece2db5b5bed498a15f3f3758"
+    end
+
+    # Support simplified triples in version config files.
+    # https:github.comllvmllvm-projectpull111387
+    patch do
+      url "https:github.comllvmllvm-projectcommit88dd0d33147a7f46a3c9df4aed28ad4e47ef597c.patch?full_index=1"
+      sha256 "0acaa80042055ad194306abb9843a94da24f53ee2bb819583d624391a6329b90"
     end
   end
 
@@ -24,13 +32,12 @@ class Llvm < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "8922c8ee7cb8ad40950327aadbbe0f73c72f91b1690002b8d8d349019d73bef3"
-    sha256 cellar: :any,                 arm64_sonoma:  "3e45f7c54792dfce7e47387937cb973d497d381c9b4f5765034c3e440b4ef83d"
-    sha256 cellar: :any,                 arm64_ventura: "de490ed1fe6c7693baf9e97a8c1678e349d33c537ad4f85f458f125820bc5595"
-    sha256 cellar: :any,                 sonoma:        "9c714daaab17eae75a56f368621e388505b8bc7db060377698fde250f9706045"
-    sha256 cellar: :any,                 ventura:       "c0ff84dff6908a6460539f688b1b4f9dde6f1135a3a4302b71bc02de5b3c104d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb3c118c29a7e6d8b2527b11529c7c2d340cec6afd4c58513973463e9e9fe458"
+    sha256 cellar: :any,                 arm64_sequoia: "b81a65c268f7f8b9c223f75e0bdb39146ceea67204bfdafe9ff4453d74f856ac"
+    sha256 cellar: :any,                 arm64_sonoma:  "4465517dd63f576de1290997d4836677bf66245055015e3f88bda8c2585c7a5b"
+    sha256 cellar: :any,                 arm64_ventura: "8f30b71bc89a334150dd4a6aecc7e88d239bcbe378a3dd81d933e592377b76a0"
+    sha256 cellar: :any,                 sonoma:        "ce4938afadc387d9a2a64619ce8ddd33449e0f78c4165d586542c82787208052"
+    sha256 cellar: :any,                 ventura:       "bb67bfc15ce74fc161855ddd62e374f5d7010cbd17b85952c723194567896f41"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6b9e197731234ed6b460ec99c7d1be5c845fbb7cdb9d46dfa2da3fee538b59b"
   end
 
   keg_only :provided_by_macos
@@ -53,13 +60,6 @@ class Llvm < Formula
     depends_on "pkgconf" => :build
     depends_on "binutils" # needed for gold
     depends_on "elfutils" # openmp requires <gelf.h>
-  end
-
-  # Support simplified triples in version config files.
-  # https:github.comllvmllvm-projectpull111387
-  patch do
-    url "https:github.comllvmllvm-projectcommit88dd0d33147a7f46a3c9df4aed28ad4e47ef597c.patch?full_index=1"
-    sha256 "0acaa80042055ad194306abb9843a94da24f53ee2bb819583d624391a6329b90"
   end
 
   # Fix triple config loading for clang-cl

@@ -6,6 +6,11 @@ class Azurehound < Formula
   license "GPL-3.0-or-later"
   head "https:github.comSpecterOpsAzureHound.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "408035d9189ac52a7fe735555433d50a63e889fd0956043aead2613cc77062d6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "408035d9189ac52a7fe735555433d50a63e889fd0956043aead2613cc77062d6"

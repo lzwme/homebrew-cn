@@ -1,13 +1,13 @@
 class Asdf < Formula
   desc "Extendable version manager with support for Ruby, Node.js, Erlang & more"
   homepage "https:asdf-vm.com"
-  url "https:github.comasdf-vmasdfarchiverefstagsv0.14.1.tar.gz"
-  sha256 "308a7f2e1eb551e435458974fbe37dcef1c940e961ad40e47ae78cabc154543e"
+  url "https:github.comasdf-vmasdfarchiverefstagsv0.15.0.tar.gz"
+  sha256 "d0cafe61d27b5e3fcb53658821bfbf744fd040a8ea28b0e22277e032b8e8f7fe"
   license "MIT"
   head "https:github.comasdf-vmasdf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "e9b4116ff1cd0efd06d32b784cac45845bf4b277754e0e3f8ac70e8be11f0a8d"
+    sha256 cellar: :any_skip_relocation, all: "1e938bf6752dc1494717a8354a3cd295b7b747202d23573a6a74a10bb0bfe3d4"
   end
 
   depends_on "autoconf"
@@ -24,7 +24,6 @@ class Asdf < Formula
     fish_completion.install "completionsasdf.fish"
     zsh_completion.install "completions_asdf"
     libexec.install Dir["*"]
-    touch libexec"asdf_updates_disabled"
 
     bin.write_exec_script libexec"binasdf"
   end
@@ -44,6 +43,5 @@ class Asdf < Formula
     assert_match version.to_s, shell_output("#{bin}asdf version")
     output = shell_output("#{bin}asdf plugin-list 2>&1")
     assert_match "No plugins installed", output
-    assert_match "Update command disabled.", shell_output("#{bin}asdf update", 42)
   end
 end

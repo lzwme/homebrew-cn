@@ -17,8 +17,8 @@ class Clisp < Formula
   end
 
   livecheck do
-    url "https://ftp.gnu.org/gnu/clisp/release/?C=M&O=D"
-    regex(%r{href=.*?v?(\d+(?:\.\d+)+)/?["' >]}i)
+    url "https://alpha.gnu.org/gnu/clisp/?C=M&O=D"
+    regex(/href=.*?clisp[._-]v?(\d+(?:\.\d+)+)\.t/i)
     strategy :page_match
   end
 

@@ -1,17 +1,17 @@
 class Dockerize < Formula
   desc "Utility to simplify running applications in docker containers"
   homepage "https:github.comjwilderdockerize"
-  url "https:github.comjwilderdockerizearchiverefstagsv0.9.0.tar.gz"
-  sha256 "a428dfc940fc89c9469d7a57d200f8b50dedc098666e50c5a9a90c4fada11c18"
+  url "https:github.comjwilderdockerizearchiverefstagsv0.9.1.tar.gz"
+  sha256 "315f7d5c9eb7456656cd80f54176ff6fe7345b243d3ecdb353db405384eae9c8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e39ce127b92b441d53775d3b565f2cd26ec92b2aa6372b2b33cf3d8d9a941074"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e39ce127b92b441d53775d3b565f2cd26ec92b2aa6372b2b33cf3d8d9a941074"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e39ce127b92b441d53775d3b565f2cd26ec92b2aa6372b2b33cf3d8d9a941074"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f1bd9feb56d85ea4c760dd55d76e0c78983324ce376549da4f1f08f38b20b743"
-    sha256 cellar: :any_skip_relocation, ventura:       "f1bd9feb56d85ea4c760dd55d76e0c78983324ce376549da4f1f08f38b20b743"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "770a6306619e38c1ef0c13cf707d36ec7ee9a8b98e709f1bfe845f82f4b8ae77"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e506c61dcd689f0ebaeccc88e593169bb60b22fb66543f0381506a418da33087"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e506c61dcd689f0ebaeccc88e593169bb60b22fb66543f0381506a418da33087"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e506c61dcd689f0ebaeccc88e593169bb60b22fb66543f0381506a418da33087"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dd374ec4ae14ee340582aa86058a0408070ef919110d37a73279559cf5b18e64"
+    sha256 cellar: :any_skip_relocation, ventura:       "dd374ec4ae14ee340582aa86058a0408070ef919110d37a73279559cf5b18e64"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "558caf666a5d35c50ddaba4784a441a2b5331a3393f2530a05f2764a276baaae"
   end
 
   depends_on "go" => :build

@@ -1,19 +1,18 @@
 class Helmify < Formula
   desc "Create Helm chart from Kubernetes yaml"
   homepage "https:github.comarttorhelmify"
-  url "https:github.comarttorhelmifyarchiverefstagsv0.4.16.tar.gz"
-  sha256 "0ae514fd567869747bc61ecaea336400825fa66ccb5f85b208f8831a2a001c0c"
+  url "https:github.comarttorhelmifyarchiverefstagsv0.4.17.tar.gz"
+  sha256 "81ea18dcbf1f135c9fae8c3502cb845dcfd99f2ead7234f03913ebebf563beb7"
   license "MIT"
   head "https:github.comarttorhelmify.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "295298a30ace6939a7fb04f569dffe3a9e1187fa29a16d2facb632a27b421df5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "295298a30ace6939a7fb04f569dffe3a9e1187fa29a16d2facb632a27b421df5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "295298a30ace6939a7fb04f569dffe3a9e1187fa29a16d2facb632a27b421df5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "af33c2998763599bb54667aebb90f1ba0d12d79f0032d9d5bd79ce2f3bce1e15"
-    sha256 cellar: :any_skip_relocation, ventura:       "af33c2998763599bb54667aebb90f1ba0d12d79f0032d9d5bd79ce2f3bce1e15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e9dfe2db85fe47a3a27b6f637779e70cb8e502d24130d8b9aae53568361560b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1245594585c7cde444edd84dfa10a42f31bd78f853153ac7bc7cf6d4dfe72132"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1245594585c7cde444edd84dfa10a42f31bd78f853153ac7bc7cf6d4dfe72132"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1245594585c7cde444edd84dfa10a42f31bd78f853153ac7bc7cf6d4dfe72132"
+    sha256 cellar: :any_skip_relocation, sonoma:        "906399dee463915b51a296d41708920370efbf7727d67e3750923222ad985cce"
+    sha256 cellar: :any_skip_relocation, ventura:       "906399dee463915b51a296d41708920370efbf7727d67e3750923222ad985cce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b531a6283d42bdeb97c354d38ed75995127f1219ef4dc68aa860038bdc31310"
   end
 
   depends_on "go" => :build

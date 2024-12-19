@@ -1,19 +1,18 @@
 class Mgis < Formula
   desc "Provide tools to handle MFront generic interface behaviours"
   homepage "https:thelfer.github.iomgiswebindex.html"
-  url "https:github.comthelferMFrontGenericInterfaceSupportarchiverefstagsMFrontGenericInterfaceSupport-2.2.tar.gz"
-  sha256 "b3776d7b3a534ca626525a42b97665f7660ae2b28ea57b3f53fd7e8538da1ceb"
+  url "https:github.comthelferMFrontGenericInterfaceSupportarchiverefstagsMFrontGenericInterfaceSupport-3.0.tar.gz"
+  sha256 "dae915201fd20848b69745dabda1a334eb242d823af600825b8b010ddc597640"
   license any_of: ["LGPL-3.0-only", "CECILL-1.0"]
-  revision 5
   head "https:github.comthelferMFrontGenericInterfaceSupport.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9d2baa0db73a350e2e2c68b11bc65cc48c4c11a35b475b3468e29624259d898a"
-    sha256 cellar: :any,                 arm64_sonoma:  "23031a0e15803505ccb66196fc97fe05b8c64a0a4a734836d9d160d0234e33ea"
-    sha256 cellar: :any,                 arm64_ventura: "d8db5a8b0f0963ff3bc72325c44b5db3f51f8dca547e8cf0991687e87132fd60"
-    sha256 cellar: :any,                 sonoma:        "74adba719180e893aa6e23d60e4f5a058e2e8ddc6ac7fc6bd6ceb2da3ff457ae"
-    sha256 cellar: :any,                 ventura:       "987ed0eb220f4e3c1f04bf721bbc8121b33a6eaae1bb2a76a0a8e6d229ea90f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfc33147428bbbf16053013fff48b01ea6b099aada45ecb0a5b65d8a1d9b9ea2"
+    sha256 cellar: :any,                 arm64_sequoia: "84283eaa25f7674e42ea56ebe31801a6ac0539cbe44fb5e4c536983d8851766b"
+    sha256 cellar: :any,                 arm64_sonoma:  "6787ed26f2608121ca8598b37b6d985e5fe4bb22c9718b7cdaa46ba439995fa0"
+    sha256 cellar: :any,                 arm64_ventura: "b79c3b72a78f04a0db0e57c0241fae6b0efd2e8986021d5033a0aa098b411eb2"
+    sha256 cellar: :any,                 sonoma:        "42540c9b23197bb53abd58aba435fca397e27daa792cc88275f75a495c242941"
+    sha256 cellar: :any,                 ventura:       "8d6cc187d4e48cb9241939305ead3837778504a3d123fb7e2ff72b2d62b87af8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c38d2aaa72371acfbc4a19d293514532c64559116b82be05406ed15359851a7c"
   end
 
   depends_on "cmake" => :build

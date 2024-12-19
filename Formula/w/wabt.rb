@@ -5,6 +5,7 @@ class Wabt < Formula
       tag:      "1.0.36",
       revision: "3e826ecde1adfba5f88d10d361131405637e65a3"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,14 +13,12 @@ class Wabt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "6d9c47a7d54935eb10ec2dcf66c0c265e27f348cdf3e62b674debdbe2e3b6f71"
-    sha256 cellar: :any,                 arm64_sonoma:   "6237a1e991c6fd3ef13205d461352614079623eff66d4d3b789653b2f6ad62d0"
-    sha256 cellar: :any,                 arm64_ventura:  "e803c52ce80a02bb1f25f7ff14a84efc6aba0873e6d0349fbb3ceb525fdbebf2"
-    sha256 cellar: :any,                 arm64_monterey: "c7c06f7d146ed9921827c24b163619793d5ed37fae1ccd7119c04edaf4fc119c"
-    sha256 cellar: :any,                 sonoma:         "8e21afdc77664ee9790f575dc5e1e1b37432a04e78b60c99bd7964b35101e762"
-    sha256 cellar: :any,                 ventura:        "df218de107e9a4961f32db86ad0e3cb28120d02ef551f6e298e39549ca14e230"
-    sha256 cellar: :any,                 monterey:       "a3f76262eae5db4e8592817b256b27176a8fcf59f05d4a69b71cb617ed4d2c49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "183381abe48031239a58680b7991463788a018a456403f5061b783fe01b307db"
+    sha256 cellar: :any,                 arm64_sequoia: "9c8c3383a667f9930bf6b7e92a5ecfada06d52dc973aaebfe74fad1c9cf413e9"
+    sha256 cellar: :any,                 arm64_sonoma:  "6623b6eda3ef06355df0aa5826f0048ed47363608df17fe4ce04b083723ba68a"
+    sha256 cellar: :any,                 arm64_ventura: "cacc4321f1793cf3de5ce0cd5c7e815bb304b9d685a5be0b42d08d8cb08d2969"
+    sha256 cellar: :any,                 sonoma:        "0177a246fb21ff547aa0df436f337ab1923e3d7e87ff521e8a9e27b2df9b66b4"
+    sha256 cellar: :any,                 ventura:       "a3a3ba1408a348483f6b710080ad55eb0a02d367fde5a457bb9164683472b21e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9db533eaf5d9e50fc16896ae6525eda7a3a0b0bbc512578b652d1ff0a79bde2e"
   end
 
   depends_on "cmake" => :build
@@ -28,11 +27,17 @@ class Wabt < Formula
   uses_from_macos "python" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DBUILD_TESTS=OFF",
-                    "-WITH_WASI=ON",
-                    *std_cmake_args,
-                    "-DFETCHCONTENT_FULLY_DISCONNECTED=OFF" # FIXME: Find a way to build without this.
+    ENV.append_to_cflags "-fPIC" if OS.linux?
+
+    args = %w[
+      -DBUILD_TESTS=OFF
+      -DWITH_WASI=ON
+      -DFETCHCONTENT_FULLY_DISCONNECTED=OFF
+    ]
+
+    system "cmake", *args, *std_cmake_args
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

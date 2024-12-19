@@ -1,8 +1,8 @@
 class Gping < Formula
   desc "Ping, but with a graph"
   homepage "https:github.comorfgping"
-  url "https:github.comorfgpingarchiverefstagsgping-v1.18.0.tar.gz"
-  sha256 "a76e09619831c0f2bb95f505a92c1332de89c3c43383b4d832a69afcb0fafd4c"
+  url "https:github.comorfgpingarchiverefstagsgping-v1.19.0.tar.gz"
+  sha256 "a979c9a8c7a1a540bb48a1e90bb7ad294560bddc16ca977bc8475fb14f20155d"
   license "MIT"
   head "https:github.comorfgping.git", branch: "master"
 
@@ -16,12 +16,12 @@ class Gping < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7d5997b1f711f810ad7ac906979aa8e30935fec0d5be6928709803d6ed1e6927"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "66ca9e13796783e00217ecb9df7b16577882d7908f2ad2e17e4d79efd166cf02"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ddc951ebb3e3bb95cc312aa6e8ee465c1171bef226508a99c2f98c329e6e1c96"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eb8e2f91391341fe2e43c4a584021f859b79223f21410f980880c709d0a7f720"
-    sha256 cellar: :any_skip_relocation, ventura:       "9a1329f19dfd5c4e49ae9fe894ff501b9d9ed6b06022cb49c75296a4591425ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b3d71c0896cb93022a289d740ed310160ea4e92b5da84d60a1bb15fb40940a6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39f6fb5ff80ebed71185f01e1228f50390ed76c40451fc7696bd6b426c81d177"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9ce0bca1083744caba3de2d937aa00a1106913c93ebc2a16a1e40bc9006c329"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ecea45940ab8f0659edb8f61e5e9bb239bc9ce71b8275baecaf18c8b27ae2a29"
+    sha256 cellar: :any_skip_relocation, sonoma:        "94b2db03885d870c498358c65469c840a66884a479107a33b900b38f828764e7"
+    sha256 cellar: :any_skip_relocation, ventura:       "1137be7cc36b8384767d923bcc4a2977c7fb77ecf96a777ff036aa35a8482c17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d5c6309c3ccd67422b6a4611db1b4d3319c366db24047adc4f3a6ebdaee5081"
   end
 
   depends_on "pkgconf" => :build
@@ -35,6 +35,7 @@ class Gping < Formula
 
   def install
     system "cargo", "install", *std_cargo_args(path: "gping")
+    man.install "gping.1"
   end
 
   test do

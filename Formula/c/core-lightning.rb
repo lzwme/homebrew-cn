@@ -3,8 +3,8 @@ class CoreLightning < Formula
 
   desc "Lightning Network implementation focusing on spec compliance and performance"
   homepage "https:github.comElementsProjectlightning"
-  url "https:github.comElementsProjectlightningreleasesdownloadv24.11clightning-v24.11.zip"
-  sha256 "3164f3527e6408132beaee64dea0fb6d566377b77e0be67a2359e80dcbd7ba9e"
+  url "https:github.comElementsProjectlightningreleasesdownloadv24.11.1clightning-v24.11.1.zip"
+  sha256 "15dac3f85034b7dd282675e3500f286a553b0c38d4bfbd1f02d78dc5b86c7209"
   license "MIT"
 
   livecheck do
@@ -13,12 +13,12 @@ class CoreLightning < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "e55d844454993325282420ee4ac5677118c037b3e21fdc2316bbb4cec7ad2c06"
-    sha256 arm64_sonoma:  "e0edaff0f78ef379035eb432a76133ba9ff7aadb83f915a93bd48cc0d64e6d89"
-    sha256 arm64_ventura: "398e40d27468a31cdce9ded4c1ccdcb4748ad21c6eefc7765fba98120579149d"
-    sha256 sonoma:        "a99d79cde0b5a92456cb079a08b34a57a5dd22eac04800ff3f25e0a2eff19f97"
-    sha256 ventura:       "b7ad63a884466f6ef581296587a73f61392a259c3fd1ecffe9818ef95433ca30"
-    sha256 x86_64_linux:  "1ccc0cc7f832cf482a1d84748825d1b5fdce4096ae51d7ac6746e3a32358ff10"
+    sha256 arm64_sequoia: "69c1ba439cf206219c154dd28f66cbf44e531bcefd726a7b7eede0197b98b3b0"
+    sha256 arm64_sonoma:  "17f04a11c8743d96bf5960cd1a74ab28f8fa77c95d1ff2064f195179cb3f2288"
+    sha256 arm64_ventura: "c60f604073799ff53ffbb7a8e7d0a50df9f9b95cfd9ebc352c1edfa83b9848c1"
+    sha256 sonoma:        "e9ea211db180a522a8ee32fc94cdd4a3b4a38016863498afd3c99d9fd43f542b"
+    sha256 ventura:       "64f72091f377bdc161bcbe576455680a20f4c2f2976d6f543e3d71cf36264141"
+    sha256 x86_64_linux:  "5ba06e91b61fffb2da1d2181da8bd1921ea27dd93c382ebc2abb8817c7c01028"
   end
 
   depends_on "autoconf" => :build

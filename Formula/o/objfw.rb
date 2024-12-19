@@ -12,12 +12,13 @@ class Objfw < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "c785afb5e54db955b9fd9e9598f4b198e96ee2aabfe1665032f929a211766fd0"
-    sha256 arm64_sonoma:  "89f9db735e6412a17544e33e5861e0c4003c6b9edc1023d1d89ca924749de4d1"
-    sha256 arm64_ventura: "3da338e5f0da0e566d6602405288990a8568f9b9980a003e425cc362dd512213"
-    sha256 sonoma:        "5a25b57dc213a81115efa33ca6b416f4efbc93e5fb810d96ec5ab2408777fe98"
-    sha256 ventura:       "25660773d6b8c140fd9ef70db699480e84da3362dc47d72386e710f9879b54d3"
-    sha256 x86_64_linux:  "573866fbd8268324845b7e03f88fb90a57b6f914b99e622226e365fd64ed9fa3"
+    rebuild 1
+    sha256 arm64_sequoia: "966443a0101b0f019e8262a412f7da946240e2b5bf0ad1204e00e69ec583caff"
+    sha256 arm64_sonoma:  "41177507640d9144e188db893c30bba5a4b42e4e70950a18fa26a3cefa371305"
+    sha256 arm64_ventura: "b7df0cab9a10b59be982906cbe2c8c9da0cbe13edaaf48f442050587301dab8d"
+    sha256 sonoma:        "f3c5c01bdcbb88edbeb6bcadfbc5dc59d360fa0e453fcf6f66a29f4b81f9a854"
+    sha256 ventura:       "0491d3bef0c7c449afcc2555ebef680fb884c2dfb9c1af17c89aeec2918b809c"
+    sha256 x86_64_linux:  "d13ccc8c605d43fe373327d0588ba5e877f5350866af1b458fb2cd196f66511b"
   end
 
   depends_on "autoconf" => :build
@@ -33,10 +34,15 @@ class Objfw < Formula
   patch :DATA
 
   def install
+    ENV.clang if OS.linux?
+
     system "./autogen.sh"
     system "./configure", "--prefix=#{prefix}"
     system "make", "install"
-    inreplace bin/"objfw-config", "llvm_clang", "clang" if OS.linux?
+
+    return unless OS.mac?
+
+    inreplace bin/"objfw-config", 'OBJC="clang"', 'OBJC="/usr/bin/clang"'
   end
 
   test do

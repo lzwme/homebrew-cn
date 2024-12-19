@@ -2248,6 +2248,7 @@ Homebrew-homebrew-core/Formula/g/glade.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/glances.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/glassfish.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/glasskube.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/glaze.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/glbinding.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/glbinding@2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gleam.rb, Homebrew/homebrew-core, 1
@@ -3415,7 +3416,7 @@ Homebrew-homebrew-core/Formula/l/lutok.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/luv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/luvit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lux.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/l/lv.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lv2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lwtools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lxc.rb, Homebrew/homebrew-core, 1
@@ -4009,6 +4010,7 @@ Homebrew-homebrew-core/Formula/m/makepkg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/makeself.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mako.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/malbolge.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/malcontent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mallet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mame.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/man-db.rb, Homebrew/homebrew-core, 0
@@ -4096,6 +4098,7 @@ Homebrew-homebrew-core/Formula/m/mdsh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mdt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mdv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mdxmini.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mdz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mdzk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mecab-ipadic.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mecab-jumandic.rb, Homebrew/homebrew-core, 0

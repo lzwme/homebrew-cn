@@ -1,18 +1,18 @@
 class Mbt < Formula
   desc "Multi-Target Application (MTA) build tool for Cloud Applications"
   homepage "https:sap.github.iocloud-mta-build-tool"
-  url "https:github.comSAPcloud-mta-build-toolarchiverefstagsv1.2.33.tar.gz"
-  sha256 "3fd097ba23d8c638114ea5dc83ff5f2313fff8122c6aa6ef4303f5bcaed7ea0a"
+  url "https:github.comSAPcloud-mta-build-toolarchiverefstagsv1.2.34.tar.gz"
+  sha256 "831450c20115a2446513629b71597ae1dd6d81d185cb65a3d49fba5d1c7c220d"
   license "Apache-2.0"
   head "https:github.comSAPcloud-mta-build-tool.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a1c8b686b3371f819974730d1a917a718fc096c6a655031861bd7c225c6114bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a1c8b686b3371f819974730d1a917a718fc096c6a655031861bd7c225c6114bb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a1c8b686b3371f819974730d1a917a718fc096c6a655031861bd7c225c6114bb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b02054947f56d5733b292a6302016632922e3fc297e22718820857e2c33c0664"
-    sha256 cellar: :any_skip_relocation, ventura:       "b02054947f56d5733b292a6302016632922e3fc297e22718820857e2c33c0664"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3a422793a7e0602096a7fbc5f5a547f1e4dc9442a25a34fe4b46022b4f33f4e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c402f06fa3ad380a2cf919861555eb18c0a1c649a9d772c84e96251ee8beba58"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c402f06fa3ad380a2cf919861555eb18c0a1c649a9d772c84e96251ee8beba58"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c402f06fa3ad380a2cf919861555eb18c0a1c649a9d772c84e96251ee8beba58"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8d0083779e2224e44c5b2a942c1bd455ffa9cf02f74c5ec3599fa2b906b6e3c1"
+    sha256 cellar: :any_skip_relocation, ventura:       "8d0083779e2224e44c5b2a942c1bd455ffa9cf02f74c5ec3599fa2b906b6e3c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3de1733d1f33b1497ad216370c7301b8414cbb544db4376581feddb0869db12b"
   end
 
   depends_on "go" => :build

@@ -1,18 +1,18 @@
 class SwaggerCodegen < Formula
   desc "Generate clients, server stubs, and docs from an OpenAPI spec"
   homepage "https:swagger.iotoolsswagger-codegen"
-  url "https:github.comswagger-apiswagger-codegenarchiverefstagsv3.0.64.tar.gz"
-  sha256 "944a1c119822754c95f6d11fe44c18ea8dbe05c2ddf84f1c34024d19454f33fc"
+  url "https:github.comswagger-apiswagger-codegenarchiverefstagsv3.0.65.tar.gz"
+  sha256 "6339a67657d088e22fd983ba9983e0e0cbc9dfd70a63d2138b69734cb3a02218"
   license "Apache-2.0"
   head "https:github.comswagger-apiswagger-codegen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "806b27e63561d473c3d9590096a90bae7a98445f6270e4a4841d513ca07919a5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2e0ae5135bc4def24dc66d7d80ff0b9a95ab1c0bc18df23b2b68bd881ae095e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cced6ccf506f0f11ad477732b66b37aa6d954eb69c72a68864749a67cff3bcb8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1be903f02292e44dd6d5605a21736a0f80c2e1121a40b96dd8d3b532f5bc49a7"
-    sha256 cellar: :any_skip_relocation, ventura:       "eb1323ba442f209716969501dc87b0a972cab829f9e765bca089bbcea9eebb51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3b4f7db9a0a56b216652e41c1a677ca808cc1b84d03db7de63020e920b448dd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79b1cf1148fdd4301d25ab77f766bd9cfaec8a575ded68ff29470bfb5d57186f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7111b269c0ee8e129365dbe1ad6077b53d636553b72fe22c18a27ac2070f777b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8c6fe63ffeff2f5757fe87225c4bf47b064323c853d7483dfa2fcabbe331f59b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d61dd724dff1947da1a0618863af425337abd13b4aad175bf652bd3e5611f234"
+    sha256 cellar: :any_skip_relocation, ventura:       "4da608ab267a548124c1cd5e57311b5ee88bc4d9f396fbd682dba10414beac04"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7a2da21c3f69b8f0c55d796ef7badf2ce29436bfb5c0474ea88d633a892617e"
   end
 
   depends_on "maven" => :build

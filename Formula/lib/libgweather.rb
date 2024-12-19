@@ -16,14 +16,13 @@ class Libgweather < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "c7697434e255dd1ceb91bed8baa441dce6be4c8f6eab61906f42a9aea4f57426"
-    sha256 arm64_sonoma:   "02c91201c18a93a45588abf946d3b636890dc31761978d0630d8ab7446aa0dc3"
-    sha256 arm64_ventura:  "d2d0765dc966fa1299d58c4c279380f0da767d6ce0d47a8ae32200afeb1ccdc9"
-    sha256 arm64_monterey: "afee30653b964979c9f1e10d068faa99de4fcec840ae6ae62a6561b12eb6baf3"
-    sha256 sonoma:         "1b10edad1de33da77f30b0253d12f8b1f094fa3bcebeb2d507f8dfc668a96b68"
-    sha256 ventura:        "66e04fe281db63f8c3f31efe8af83c04364a94d38622a39ea814a4add7fc9947"
-    sha256 monterey:       "1b16600b10b73bac96dcf7bcf174318d4c80e80d34388a672f28a247b780f9e7"
-    sha256 x86_64_linux:   "8836ddf538d68d22693e2f916410c6872d9a22ae51ddf1176436580eecf5e192"
+    rebuild 1
+    sha256 arm64_sequoia: "def0a9ed0b83c1c6601df15db175bb336f73fd853f86c93a1a0cc1994ea467bf"
+    sha256 arm64_sonoma:  "4bdf722d36c2c99c6a3dd7d816cfd3d73e439a9225ed36e0bee4240193f5f4d8"
+    sha256 arm64_ventura: "bb2d31e83d13f02446f7e5b523eeeb4cdf86e2065a8572ff1cd449b9abf1ea7c"
+    sha256 sonoma:        "186ce1fa070215a5d1bd8a1f7d8ab3e64113dfb069a315a82c30853d230fecdf"
+    sha256 ventura:       "255051452c7188eeec6d22267edae06a83e797a0713ab80d805ec52968cf7d65"
+    sha256 x86_64_linux:  "e2107ed28850147098f165b516687d2e7a0aa494d39fbb4ac1326ebdb74c4ecc"
   end
 
   depends_on "gettext" => :build
@@ -32,7 +31,7 @@ class Libgweather < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "pygobject3" => :build
-  depends_on "python@3.12" => :build
+  depends_on "python@3.13" => :build
 
   depends_on "geocode-glib"
   depends_on "glib"

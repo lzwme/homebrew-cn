@@ -1,19 +1,19 @@
 class Lv < Formula
-  desc "Powerful multi-lingual file viewergrep"
-  # The upstream homepage was "https:web.archive.orgweb20160310122517www.ff.iij4u.or.jp~nrtlv"
-  homepage "https:salsa.debian.orgdebianlv"
-  url "https:salsa.debian.orgdebianlv-archivedebian4.51-9lv-debian-4.51-9.tar.gz"
-  sha256 "ab48437d92eb7ae09e22e8d6f8fbfd321e7869069da2d948433fb49da67e0c34"
+  desc "Powerful multi-lingual file viewer/grep"
+  # The upstream homepage was "https://web.archive.org/web/20160310122517/www.ff.iij4u.or.jp/~nrt/lv/"
+  homepage "https://salsa.debian.org/debian/lv"
+  url "https://salsa.debian.org/debian/lv/-/archive/debian/4.51-10/lv-debian-4.51-10.tar.gz"
+  sha256 "c935150583df6f2cea596fdd116d82ec634d96e99f2f7e4dc5b7b1a6f638aba1"
   license "GPL-2.0-or-later"
-  head "https:salsa.debian.orgdebianlv.git", branch: "master"
+  head "https://salsa.debian.org/debian/lv.git", branch: "master"
 
   bottle do
-    sha256                               arm64_sequoia: "5b5dd9f26574075bc3d95ee8471eb88bc1bc7158d6f5172876762987b5bf0cda"
-    sha256                               arm64_sonoma:  "3cd056cc510f5adfcac3704dd51714f19d8766be53775f91e6a5fe7911ca2e9f"
-    sha256                               arm64_ventura: "12db89933a9d1da2d4cbcd46eedfe8a012daceee73f3aa2847633250c622a48d"
-    sha256                               sonoma:        "5b09e7911cc65d1973481307932fd0bb6b17d2a05c6826c0ae544cbb3501987e"
-    sha256                               ventura:       "406d582f716e59c5da1ffaf83e36ccbdcf7fb94f29641f2e5bd1faff4ad1bd79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cca7e45af8674ea0900398f58a2df15116ad78bc37cd16606f8438722dfd599"
+    sha256                               arm64_sequoia: "d8fff4f49ad72ed22fe3b335d3a780a6ecc7e97d14e49d9a0cfdb459ab40fc77"
+    sha256                               arm64_sonoma:  "103c91e238509bcb1862409cb3483b12311309b98dc0bccd3cdb485866ca6d73"
+    sha256                               arm64_ventura: "aa3867a4900aedf77e796f681676e22fc595dcaa8fb6fb9d20cdecd25f688c0c"
+    sha256                               sonoma:        "1d572a28261e7bb59a07d707ce3f28299d297442c09c90735196a08525db2c01"
+    sha256                               ventura:       "f737ea5ead2f1e11e7e2830e5acb65c2e2228775298dc855d30c4072cdafe83c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46f6669252eb821a07cd2648d0356449e22906673c9abbbbd8c604c98a827b27"
   end
 
   uses_from_macos "ncurses"
@@ -22,24 +22,14 @@ class Lv < Formula
     depends_on "gzip"
   end
 
-  # See https:github.comHomebrewhomebrew-corepull53085.
-  # Being proposed to Debian: https:salsa.debian.orgdebianlv-merge_requests3
-  patch :DATA
-
   def install
-    File.read("debianpatchesseries").each_line do |line|
+    File.read("debian/patches/series").each_line do |line|
       line.chomp!
-      system "patch", "-p1", "-i", "debianpatches"+line
-    end
-
-    if OS.mac?
-      # zcat doesn't handle gzip'd data on OSX.
-      # Being proposed to Debian: https:salsa.debian.orgdebianlv-merge_requests4
-      inreplace "srcstream.c", 'gz_filter = "zcat"', 'gz_filter = "gzcat"'
+      system "patch", "-p1", "-i", "debian/patches/"+line
     end
 
     cd "build" do
-      system "..srcconfigure", "--prefix=#{prefix}"
+      system "../src/configure", "--prefix=#{prefix}"
       system "make"
       bin.install "lv"
       bin.install_symlink "lv" => "lgrep"
@@ -50,21 +40,6 @@ class Lv < Formula
   end
 
   test do
-    system bin"lv", "-V"
+    system bin/"lv", "-V"
   end
 end
-
-__END__
---- asrcescape.c
-+++ bsrcescape.c
-@@ -62,6 +62,10 @@
- 	break;
-     } while( 'm' != ch );
- 
-+    if( 'K' == ch ){
-+        return TRUE;
-+    }
-+
-     SIDX = index;
- 
-     if( 'm' != ch ){

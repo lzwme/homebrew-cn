@@ -1,20 +1,18 @@
 class Age < Formula
   desc "Simple, modern, secure file encryption"
   homepage "https:github.comFiloSottileage"
-  url "https:github.comFiloSottileagearchiverefstagsv1.2.0.tar.gz"
-  sha256 "cefe9e956401939ad86a9c9d7dcf843a43b6bcdf4ee7d8e4508864f227a3f6f0"
+  url "https:github.comFiloSottileagearchiverefstagsv1.2.1.tar.gz"
+  sha256 "93bd89a16c74949ee7c69ef580d8e4cf5ce03e7d9c461b68cf1ace3e4017eef5"
   license "BSD-3-Clause"
   head "https:github.comFiloSottileage.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6e542c3d7bb343de9e711514736debc8af9cbeb01a26b903ba13ac5b6514bece"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "41e4ed7ff1849806a4144c68fd6ea0607000b6ab9968e658664e2846764b5acc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "94cfc2ee8b79c165388e74c3ab53cb824f3ec3043e6d8cecb4016dce0e6d7c31"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "365a092bba65b870b2a171fc81f893fa43d8c025c2f257926de0c3431529fa2f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "bac09b266d274fef97330251550355444ae86d771aa36ac657da06e04c3c502f"
-    sha256 cellar: :any_skip_relocation, ventura:        "69d5ab672aab414d7f4e7867ac8aedaae24b65bbae275aeecca2ca2a2532c871"
-    sha256 cellar: :any_skip_relocation, monterey:       "50180ad28dff70d139b3577b94b66dac48767bf6b957ba0c7bf0ccecb7f58722"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "33f74dae7dff519afbbcf200af30a1953f2707be25d03f8f912d1c43e5556ec8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "705c020da53169d3d628c90d98ffdbd0029da3e3ecfe84cca12a20fa4e0b76a1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "705c020da53169d3d628c90d98ffdbd0029da3e3ecfe84cca12a20fa4e0b76a1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "705c020da53169d3d628c90d98ffdbd0029da3e3ecfe84cca12a20fa4e0b76a1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5e44ff70a1bd1addf97fd49eab60126015d8f477493426a02866b927fa4cc485"
+    sha256 cellar: :any_skip_relocation, ventura:       "5e44ff70a1bd1addf97fd49eab60126015d8f477493426a02866b927fa4cc485"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "216ab3d1d02b2a71ff4003357d434c25d9e0357d7ac18f88ff5de2a645382c59"
   end
 
   depends_on "go" => :build

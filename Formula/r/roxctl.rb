@@ -1,8 +1,8 @@
 class Roxctl < Formula
   desc "CLI for Stackrox"
   homepage "https:www.stackrox.io"
-  url "https:github.comstackroxstackroxarchiverefstags4.6.0.tar.gz"
-  sha256 "e2740569a62a364e3eb446752a1ec6551e3a48917ef2454212c0c99b7023868a"
+  url "https:github.comstackroxstackroxarchiverefstags4.6.1.tar.gz"
+  sha256 "ddec0108caf693b198fe2669cfbe1c74a40f434eb2409b77433db8ee5ac9422f"
   license "Apache-2.0"
   head "https:github.comstackroxstackrox.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Roxctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "23e00e37da0dc2e8293fc9fe39f4f56ad88e962bf8f625bbb2963ce63de9fd5d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48c62db989f00b123c67d5d99ad15c1fa96d06608ee9d6e39ea04e5a231ae621"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "37e882911c3267224ab08edfc77f57c51a81252c4f046b0c103f0e0af07ec7b4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f4a645b88ffd52cde7e33cb6ddffce86b04a2276dd2a4c86e12684f665707770"
-    sha256 cellar: :any_skip_relocation, ventura:       "47a59b8557c22cde47be0e90b367d9ae2caaed65a2afcf596c3e456ce0fd327d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af48451396abcdae8acfd087a481b384910f46aec11d08f94d27331ca2a4cf75"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe9f797e4e9110e1093969ab9b10421d978ac379d4f85f763fffb4cd13c0f17a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b90349be383858f0cc38d97c16f3dd8eeac7a90e363ce25de022025504b0e7b2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a2cb42dc2599e846db06a965939f6c604ef87eea2536b6ab9ebfc9539a97c6b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fb11bae865a8c3982d3af5fdb851fa070a010c49f3db9247a5853e6752138a3a"
+    sha256 cellar: :any_skip_relocation, ventura:       "65e282f9e28282644b64849dc196e4d3a3ced6ceeedfd397b5d6390ccc1f91e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c84d82eef67b33ae30ca2f87df75b052b967d950297c23a50bee8e535ef5679"
   end
 
   depends_on "go" => :build

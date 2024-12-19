@@ -1,8 +1,8 @@
 class Flarectl < Formula
   desc "CLI application for interacting with a Cloudflare account"
   homepage "https:github.comcloudflarecloudflare-gotreemastercmdflarectl"
-  url "https:github.comcloudflarecloudflare-goarchiverefstagsv0.111.0.tar.gz"
-  sha256 "32de96342f4f1cdd75ddf7a2a72d5407491436773561ae62108dd9cac590ac3c"
+  url "https:github.comcloudflarecloudflare-goarchiverefstagsv0.112.0.tar.gz"
+  sha256 "f6f82f9b198b0a6e515294e87e52d6d25ec7341c659f83646e6ce189b36709ef"
   license "BSD-3-Clause"
   head "https:github.comcloudflarecloudflare-go.git", branch: "master"
 
@@ -13,12 +13,12 @@ class Flarectl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2262561d36cdb555c963fb6454e5403430c082b46ee4b01a6d1fbc9cd07ff11d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2262561d36cdb555c963fb6454e5403430c082b46ee4b01a6d1fbc9cd07ff11d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2262561d36cdb555c963fb6454e5403430c082b46ee4b01a6d1fbc9cd07ff11d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "21f4428550d5bbdaa5503bd1340e801c3fa564f9c702da2bbe6ad0868e71d82f"
-    sha256 cellar: :any_skip_relocation, ventura:       "21f4428550d5bbdaa5503bd1340e801c3fa564f9c702da2bbe6ad0868e71d82f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d49396c72304e1112f7c61a8ae2629a8d8e92edb95d8df6fbad60271915d6982"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85f57a977dde6c9e933d47b4eddb1cc5cab5e84e5049fc4818b00c0f16f34738"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85f57a977dde6c9e933d47b4eddb1cc5cab5e84e5049fc4818b00c0f16f34738"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "85f57a977dde6c9e933d47b4eddb1cc5cab5e84e5049fc4818b00c0f16f34738"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0be1c6e7a76ce2420fe5f8ab24ed58e44672a1b82fa7ca160b82f87e1b0ab3eb"
+    sha256 cellar: :any_skip_relocation, ventura:       "0be1c6e7a76ce2420fe5f8ab24ed58e44672a1b82fa7ca160b82f87e1b0ab3eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eeed0008247feb9fed23a1be06414a9520c3fcfa37362856e8574687b78b9606"
   end
 
   depends_on "go" => :build

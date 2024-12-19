@@ -8,14 +8,13 @@ class Gexiv2 < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia:  "5c0359ddfb69810924b8987d62a9e353455b76e4ee4c4739736764f1d45aa7c1"
-    sha256 cellar: :any, arm64_sonoma:   "67e11e557d79c924eddda15dbca08e388946bf1f8d4ccb60e938901719f3c579"
-    sha256 cellar: :any, arm64_ventura:  "afda771f7cb34bcdccda695f5b843d1acd188427e8b0dcb55e895f427efb515e"
-    sha256 cellar: :any, arm64_monterey: "daef02de6a9fd13965b53543ecb568dbdfcccb69a9425f047fff2ae4bc28e457"
-    sha256 cellar: :any, sonoma:         "15453b28ad8ceae545a5fd10ba90075b191a87945da03ccfc4fd64a43433f886"
-    sha256 cellar: :any, ventura:        "fe5fa4ebfd93ac04ac0abf3e8aaa151312c4e6b4f33f2ed4e162d5617bbd6215"
-    sha256 cellar: :any, monterey:       "d8309f1187652152e7817e0973e6496e3ddedf549eb279c1704523ddd81c0e2a"
-    sha256               x86_64_linux:   "93e44d86332a71710f2e67fdc510541988bb8794493a735ac26a7c933c58e916"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "cd712760b3f1d290f1fc59262907b5298c8e09fed1d96c638772f7db1514deea"
+    sha256 cellar: :any, arm64_sonoma:  "8c483d386a059aae6e431a91beeedd90487d8c74c8f137353f2de8669da6ad6f"
+    sha256 cellar: :any, arm64_ventura: "a4ebe3eef9a3a532bbf91b1a13a22ce8ad9f879937e64531744ec81cc284fdbe"
+    sha256 cellar: :any, sonoma:        "1d018abfa68800c473dfd4256ef98a5432258192728bb21fa8c763e6eef2cd9a"
+    sha256 cellar: :any, ventura:       "026636430ab1d62ff0b97fc642c7e7986cfb0a82cbc6a56a4efef5c3ec6e3217"
+    sha256               x86_64_linux:  "b3ddc92c83707fc4ef16912a47bf8cdf01dbf76dd39b91155d1f7c334718c50a"
   end
 
   depends_on "gobject-introspection" => :build
@@ -23,13 +22,13 @@ class Gexiv2 < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "pygobject3" => [:build, :test]
-  depends_on "python@3.12" => [:build, :test]
+  depends_on "python@3.13" => [:build, :test]
   depends_on "vala" => :build
   depends_on "exiv2"
   depends_on "glib"
 
   def python3
-    "python3.12"
+    "python3.13"
   end
 
   def install

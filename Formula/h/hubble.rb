@@ -1,8 +1,8 @@
 class Hubble < Formula
   desc "Network, Service & Security Observability for Kubernetes using eBPF"
   homepage "https:github.comciliumhubble"
-  url "https:github.comciliumhubblearchiverefstagsv1.16.4.tar.gz"
-  sha256 "6ba4d5d745a880b19cb365ed98486f31188ffb5ec1d6fdba78598503bf422239"
+  url "https:github.comciliumhubblearchiverefstagsv1.16.5.tar.gz"
+  sha256 "7fbcbc321ef3dc0ed67a84ecfe0749898ea3a11b72a3f9b279ae6b272e38a819"
   license "Apache-2.0"
 
   # There can be a notable gap between when a version is tagged and a
@@ -14,12 +14,12 @@ class Hubble < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8205131fd611d0435a56677a4b8549c62babb9e2d1ba2e8b9591563e7decc3e0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8205131fd611d0435a56677a4b8549c62babb9e2d1ba2e8b9591563e7decc3e0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8205131fd611d0435a56677a4b8549c62babb9e2d1ba2e8b9591563e7decc3e0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1d7230a154033706bb487e87aee89274bd1b1083770384bf891dbbb330f5ad53"
-    sha256 cellar: :any_skip_relocation, ventura:       "1d7230a154033706bb487e87aee89274bd1b1083770384bf891dbbb330f5ad53"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "adf289270a56e83232f558249ffd76b6972629c3c1430f4b90fe3ba3db44a480"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "280efd6ac5fe81d7364f283ab4c8f1a7882eff584bedae364bf14a51286fcdcb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "280efd6ac5fe81d7364f283ab4c8f1a7882eff584bedae364bf14a51286fcdcb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "280efd6ac5fe81d7364f283ab4c8f1a7882eff584bedae364bf14a51286fcdcb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "41f94fe9d766f71ed2b573d0057a5affab41d2a701c3790fcc8174df1632a444"
+    sha256 cellar: :any_skip_relocation, ventura:       "41f94fe9d766f71ed2b573d0057a5affab41d2a701c3790fcc8174df1632a444"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08e682b91045107973e4a9f3153404f1f7f5b1352f3cbf2d10c857cf55fb1fd7"
   end
 
   depends_on "go" => :build

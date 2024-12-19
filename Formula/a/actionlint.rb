@@ -4,18 +4,21 @@ class Actionlint < Formula
   url "https:github.comrhysdactionlintarchiverefstagsv1.7.4.tar.gz"
   sha256 "3004bcb4615510e671c76a56259755ed616c3200fb73b0be0ca9c3d6ea09c73a"
   license "MIT"
+  head "https:github.comrhysdactionlint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4800fafd738d38fd98e07e3c2ba1e46926f74f0a03f153eb40fdb639da44a910"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4800fafd738d38fd98e07e3c2ba1e46926f74f0a03f153eb40fdb639da44a910"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4800fafd738d38fd98e07e3c2ba1e46926f74f0a03f153eb40fdb639da44a910"
-    sha256 cellar: :any_skip_relocation, sonoma:        "213db714539ffe8befc312eeeefbc3f6f6169f3d110006e18be07b631d839291"
-    sha256 cellar: :any_skip_relocation, ventura:       "213db714539ffe8befc312eeeefbc3f6f6169f3d110006e18be07b631d839291"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06c290ccc5d780a1dc747bd21e280b0021308f3d2f94a7c8a99ce7f3072e80d7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1daf27858f22af83e9d0e4a9dca987c91a75750a3abcbd52896a30694fc3182f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1daf27858f22af83e9d0e4a9dca987c91a75750a3abcbd52896a30694fc3182f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1daf27858f22af83e9d0e4a9dca987c91a75750a3abcbd52896a30694fc3182f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ab63732f13a54479ccddc895934a38bf94f7a150c04dd62e41c2830d05ea50de"
+    sha256 cellar: :any_skip_relocation, ventura:       "ab63732f13a54479ccddc895934a38bf94f7a150c04dd62e41c2830d05ea50de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d6922639d4cede7b462b08e28ef0d7dce4f3163e8d82ef9cadfa0d430576ed4"
   end
 
   depends_on "go" => :build
   depends_on "ronn" => :build
+  depends_on "shellcheck"
 
   def install
     ldflags = "-s -w -X github.comrhysdactionlint.version=#{version}"
@@ -25,6 +28,8 @@ class Actionlint < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}actionlint --version 2>&1")
+
     (testpath"action.yaml").write <<~YAML
       name: Test
       on: push

@@ -1,18 +1,18 @@
 class Rage < Formula
   desc "Simple, modern, secure file encryption"
   homepage "https:str4d.xyzrage"
-  url "https:github.comstr4dragearchiverefstagsv0.11.0.tar.gz"
-  sha256 "f5c37b27428ad2b9ed91f0c691612dd0f91044d17565edf177fb676be4af1d35"
+  url "https:github.comstr4dragearchiverefstagsv0.11.1.tar.gz"
+  sha256 "b00559285c9fa5779b2908726d7a952cbf7cb629008e4c4c23a5c137c98f3f09"
   license any_of: ["MIT", "Apache-2.0"]
   head "https:github.comstr4drage.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c01e7c4ba4c3cfad0a74c14ff32b25e4642f0962056e73518226cc71c121e88"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "15a525b3085b4ffdd6ac02bb665e1c765eb3ebcfbf7addff382273f6466550e1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2bbf8f7d72e70891850c66013159c2b961618b376b368404efb55d5d78bd6b84"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0be2efd3da88b4926c5a0e1b2aa2c6d5148a8c6ff1117bf796c026df175fa882"
-    sha256 cellar: :any_skip_relocation, ventura:       "583714adf952ec6658bcdf237f795dc052436ddf144db192875a7dca991de6eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55ce0166f53aa84b5dead2794a9b27d23e53bf863db4399ef470bebb7b3af34c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e67f141f38b2b412b46128c485063801adcbcf959b07534a8f551a52c4a60ecc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "66ae99a18be59aaf0e4320d5730dd614b255c2dbb7dfb983ca99458c8853f8c7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8c083e92caadb55e63ba0a77f37e06a6e2c0d8bfdc8a60a3e19ccc4de0102745"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5030ea9c84062928ec800a5101edf75e70ec4459984aaa51858b9d250e80bcdb"
+    sha256 cellar: :any_skip_relocation, ventura:       "c1ef3aec2a5cb8148d8928a1585142e9b761e2d0f35c1acaee7da19c0e3a876e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87a45f4a404552dd7911b5f35180e7ca31a130628b420607d32c8699849deaa4"
   end
 
   depends_on "rust" => :build

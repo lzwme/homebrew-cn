@@ -3,17 +3,17 @@ class Dstack < Formula
 
   desc "ML workflow orchestration system designed for reproducibility and collaboration"
   homepage "https://dstack.ai/"
-  url "https://files.pythonhosted.org/packages/78/60/de00fe5ef5a6f8cd1b55954d0c081ef477b243a34ff7a2ef1ecb0e867e68/dstack-0.18.30.tar.gz"
-  sha256 "f4b93a395f93544a36173eef117b3adbfa5ca417e4d20d0d509da9e9bdd7a624"
+  url "https://files.pythonhosted.org/packages/1b/cd/fc6bf572ea10fdcda3890d141bb217ccd50beb43b5515194c4710ed12750/dstack-0.18.31.tar.gz"
+  sha256 "15f93854fec3ddcfc634a8b9b047b6b2ab13efd7d33ddf3d64ddc21c38170bf1"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "47608efd64393e1f7a5bcaca815af32e09fbe45269fe401b914280e44b6a5399"
-    sha256 cellar: :any,                 arm64_sonoma:  "a41df03f42ad04fc9db28282405ca4ab5296dacf911f435b52f475d46b559238"
-    sha256 cellar: :any,                 arm64_ventura: "a2681b081c5716b1cc95ec5fbfc79a010ba98d67d1c46e22116c99ffc06a0554"
-    sha256 cellar: :any,                 sonoma:        "a3f89951a18d7dcfc67f838d913ea60f761149a9192eb37e1e51cdee5442b0d8"
-    sha256 cellar: :any,                 ventura:       "d23f62f5cb460d0fc86987025a7a5984a1aedc9e11325417a52fba520e75ae4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "795f05a35c1fd01c19f4eaaf5ec7cfaf55c741b0f0a3293fc386fb28e116ce6c"
+    sha256 cellar: :any,                 arm64_sequoia: "f9dd228093532aedb8729ab4ff73de74397f2f08c7890f3a2d712b3e0f86c60f"
+    sha256 cellar: :any,                 arm64_sonoma:  "b277a6f4852fbd3c4d164956dc62e90c1136817f0917c2e504ee4d531c823d38"
+    sha256 cellar: :any,                 arm64_ventura: "8a7af2f7eb2e78a8e43c51b5a1ca153ce986ee9692cbbfa9cc989ebb5d994fb3"
+    sha256 cellar: :any,                 sonoma:        "fed40bd987504fde723260389b81b1f3ee4f17dfc240a872b9aef99171397d9f"
+    sha256 cellar: :any,                 ventura:       "5209dbf41675f50968d9c59bf47d9a98f1f89194bbd50dbfbeb153f79d28cf9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fd83454b86eb5eabf5eecda4fea8ce89645c91ec147d5bd05ac3b6f32cbae26"
   end
 
   # `pkgconf` and `rust` are for bcrypt.
@@ -24,6 +24,11 @@ class Dstack < Formula
   depends_on "libsodium" # for pynacl
   depends_on "libyaml"
   depends_on "python@3.13"
+
+  resource "aiocache" do
+    url "https://files.pythonhosted.org/packages/7a/64/b945b8025a9d1e6e2138845f4022165d3b337f55f50984fbc6a4c0a1e355/aiocache-0.12.3.tar.gz"
+    sha256 "f528b27bf4d436b497a1d0d1a8f59a542c153ab1e37c3621713cb376d44c4713"
+  end
 
   resource "aiorwlock" do
     url "https://files.pythonhosted.org/packages/c5/bf/d1ddcd676be027a963b3b01fdf9915daf4590b4dfd03bf1c8c2858aac7e3/aiorwlock-1.5.0.tar.gz"
@@ -61,8 +66,8 @@ class Dstack < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/fc/0f/aafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fb/attrs-24.2.0.tar.gz"
-    sha256 "5cfb1b9148b5b086569baec03f20d7b6bf3bcacc9a42bebf87ffaaca362f6346"
+    url "https://files.pythonhosted.org/packages/48/c8/6260f8ccc11f0917360fc0da435c5c9c7504e3db174d5a12a1494887b045/attrs-24.3.0.tar.gz"
+    sha256 "8f5c07333d543103541ba7be0e2ce16eeee8130cb0b3f9238ab904ce1e85baff"
   end
 
   resource "azure-common" do
@@ -86,8 +91,8 @@ class Dstack < Formula
   end
 
   resource "azure-mgmt-compute" do
-    url "https://files.pythonhosted.org/packages/90/f2/a2b1391e9df876d7ef9086f8d41ad4666eafef921ae0c47da931f8cedb1a/azure-mgmt-compute-33.0.0.tar.gz"
-    sha256 "a3cc0fe4f09c8e1d3523c1bfb92620dfe263a0a893b0ac13a33d7057e9ddddd2"
+    url "https://files.pythonhosted.org/packages/76/b4/0b5b7e7cce4e83efc59e9a0763d95c613edd0d87f17891d7cccb451ff071/azure_mgmt_compute-33.1.0.tar.gz"
+    sha256 "f5a5e18a5a7a0354562bbfa589b5db4aaf1e8ac3a194a2a910db55900d2535e9"
   end
 
   resource "azure-mgmt-core" do
@@ -116,13 +121,13 @@ class Dstack < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/c1/01/cea53440a882f1d9772e128d205482df0005f9425166dccbb5513953e43a/boto3-1.35.79.tar.gz"
-    sha256 "1fa26217cd33ded82e55aed4460cd55f7223fa647916aa0d3c5d6828e6ec7135"
+    url "https://files.pythonhosted.org/packages/4a/0c/555e2d1d912a43c90d6d99f960233b4574c166e241c2632e6694a65f18e0/boto3-1.35.83.tar.gz"
+    sha256 "df2e0d57241de0f9c31b62e73093c2126e4fd73b87b1897ecf280a1b87a2b825"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/15/4f/ff271a347a3aaa24b41f4893a3f92a8ebfbe26cd96a5b3daaa15995a815b/botocore-1.35.79.tar.gz"
-    sha256 "245bfdda1b1508539ddd1819c67a8a2cc81780adf0715d3de418d64c4247f346"
+    url "https://files.pythonhosted.org/packages/06/dd/835b5f9ed7a7d7ffbf7f1f600dc963f5f6c1e5939ca0ca8d0f3ae73f19cb/botocore-1.35.83.tar.gz"
+    sha256 "df5e4384838e50bbafd47e9b5fefb995e83cbb9412e7cd7c0db9555174d91bba"
   end
 
   resource "cached-classproperty" do
@@ -211,13 +216,13 @@ class Dstack < Formula
   end
 
   resource "google-cloud-billing" do
-    url "https://files.pythonhosted.org/packages/06/f7/8f5b83bcb05d30b8a8644045853092c88bfe69e9f55964e00987a35eda8d/google_cloud_billing-1.14.1.tar.gz"
-    sha256 "99d10cbca4a13dbe721d12cc624f0dd49d5e1fc9ac4a1e3b3b5c6a9914d2992b"
+    url "https://files.pythonhosted.org/packages/23/fe/9be0de08e0bd9b08111d5f42b27aa0bafde4346421384790616afdb2a5c6/google_cloud_billing-1.15.0.tar.gz"
+    sha256 "d43e78e472ff82c3ca7be91092a58debb4801c3f2cf0e134a4553b2af19355b5"
   end
 
   resource "google-cloud-compute" do
-    url "https://files.pythonhosted.org/packages/60/a9/cabe95bd631addae6c1a562262d806017d1f5ef86dcfcd371ad69e03dfb1/google_cloud_compute-1.22.0.tar.gz"
-    sha256 "538af297f5a21413336a8e32ccba8690d315de4c6f09a4763ba98aa98b70e618"
+    url "https://files.pythonhosted.org/packages/05/1c/78436d42d1416be0b97cb551375f5e1257a804d471c78e97c936d7f64189/google_cloud_compute-1.23.0.tar.gz"
+    sha256 "2cb02563af528f7460f2c8c905230996873e284fffe69ccfe2e47890f9e5490b"
   end
 
   resource "google-cloud-core" do
@@ -236,8 +241,8 @@ class Dstack < Formula
   end
 
   resource "google-cloud-tpu" do
-    url "https://files.pythonhosted.org/packages/16/a7/d045b9ae4a5cf97f85b080421747b414ed0043b42569c65eeac8662d4679/google_cloud_tpu-1.19.1.tar.gz"
-    sha256 "8dce6def995d94f0962fc4520c733df710e0f636493b2f3b60bdf327448d13fc"
+    url "https://files.pythonhosted.org/packages/3a/46/be3702774e160d1fc237b56cb6a2fb8d74547eb475df1fd88e5e8611de2d/google_cloud_tpu-1.20.0.tar.gz"
+    sha256 "74bfb895ee26d6bd3204c9a1b0fb793d450f8ff2749275fa668f8cfa3fe5989d"
   end
 
   resource "google-crc32c" do
@@ -461,13 +466,13 @@ class Dstack < Formula
   end
 
   resource "python-json-logger" do
-    url "https://files.pythonhosted.org/packages/b6/df/8a6015e77e26250c7cd016ed9487c2e5360e315da149d9663dc71b826237/python_json_logger-3.2.0.tar.gz"
-    sha256 "2c11056458d3f56614480b24e9cb28f7aba69cbfbebddbb77c92f0ec0d4947ab"
+    url "https://files.pythonhosted.org/packages/e3/c4/358cd13daa1d912ef795010897a483ab2f0b41c9ea1b35235a8b2f7d15a7/python_json_logger-3.2.1.tar.gz"
+    sha256 "8eb0554ea17cb75b05d2848bc14fb02fbdbd9d6972120781b974380bfa162008"
   end
 
   resource "python-multipart" do
-    url "https://files.pythonhosted.org/packages/c1/19/93bfb43a3c41b1dd0fa1fa66a08286f6467d36d30297a7aaab8c0b176a26/python_multipart-0.0.19.tar.gz"
-    sha256 "905502ef39050557b7a6af411f454bc19526529ca46ae6831508438890ce12cc"
+    url "https://files.pythonhosted.org/packages/f3/87/f44d7c9f274c7ee665a29b885ec97089ec5dc034c7f3fafa03da9e39a09e/python_multipart-0.0.20.tar.gz"
+    sha256 "8dd0cab45b8e23064ae09147625994d090fa46f5b0d1e13af944c331a7fa9d13"
   end
 
   resource "pyyaml" do
@@ -581,8 +586,8 @@ class Dstack < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/6a/3c/21dba3e7d76138725ef307e3d7ddd29b763119b3aa459d02cc05fefcff75/uvicorn-0.32.1.tar.gz"
-    sha256 "ee9519c246a72b1c084cea8d3b44ed6026e78a4a309cbedae9c37e4cb9fbb175"
+    url "https://files.pythonhosted.org/packages/4b/4d/938bd85e5bf2edeec766267a5015ad969730bb91e31b44021dfe8b22df6c/uvicorn-0.34.0.tar.gz"
+    sha256 "404051050cd7e905de2c9a7e61790943440b3416f49cb409f965d9dcd0fa73e9"
   end
 
   resource "watchfiles" do
