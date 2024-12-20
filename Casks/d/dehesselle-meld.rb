@@ -30,6 +30,8 @@ cask "dehesselle-meld" do
 
   zap trash: [
     "~.localsharemeld",
+    "~LibraryApplication Supportorg.gnome.Meld",
+    "~LibraryCachesorg.gnome.Meld",
     "~LibraryPreferencesorg.gnome.Meld.plist",
     "~LibrarySaved Application Stateorg.gnome.Meld.savedState",
   ]

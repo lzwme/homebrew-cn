@@ -4,7 +4,7 @@ class Opencv < Formula
   url "https:github.comopencvopencvarchiverefstags4.10.0.tar.gz"
   sha256 "b2171af5be6b26f7a06b1229948bbb2bdaa74fcf5cd097e0af6378fce50a6eb9"
   license "Apache-2.0"
-  revision 15
+  revision 16
   head "https:github.comopencvopencv.git", branch: "4.x"
 
   livecheck do
@@ -13,11 +13,11 @@ class Opencv < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:  "a927a9a30c1092c5710f6de2242d15d6902132e453671f5d29ca1b52bc0284d8"
-    sha256 arm64_ventura: "eb5c6ff9ec7205b04546ce4e9eea2e12b751ee37753cfd060e9ed8c84bde348d"
-    sha256 sonoma:        "3adf544c39ab949ef6985306e881ef0f2e5883d1cc16c6bfaa9bb8ea84d51c85"
-    sha256 ventura:       "226c7fa6ef7c4733647d44bc8cf985865259ceaebc34af1a25cfb5a8ab9d3b24"
-    sha256 x86_64_linux:  "46cb56a32f9341b4203be20bb16d0005826688811e34ff1bef92be115f3908b8"
+    sha256 arm64_sonoma:  "a5da67756d69ee8dfbed69c0b8960bfae0316410682b74e148bd11cf494e862b"
+    sha256 arm64_ventura: "840fef543cf23fe9811b28d4ad6ff6b1bdadda649b47cac5d9e9a8793c53f11e"
+    sha256 sonoma:        "f4b4776b823608777fba143c047d020cd927edd49a33fc0dd402c8117da0fa34"
+    sha256 ventura:       "a24c99d12f588e4a173eb6a73d3d1f2cbd289d621cb4d2d8ff0a30dd0a3135bf"
+    sha256 x86_64_linux:  "f7c064b06939751d472b4d54d6e5a3e1ff3d9a546c9921a9d76bed93183501a3"
   end
 
   depends_on "cmake" => :build
@@ -129,9 +129,12 @@ class Opencv < Formula
       "-Dprotobuf_MODULE_COMPATIBLE=ON", # https:github.comprotocolbuffersprotobufissues1931
     ]
 
-    # Disable precompiled headers and force opencv to use brewed libraries on Linux
-    if OS.linux?
-      args += %W[
+    args += if OS.mac?
+      # Requires closed-source, pre-built Orbbec SDK on macOS
+      ["-DWITH_OBSENSOR=OFF"]
+    else
+      # Disable precompiled headers and force opencv to use brewed libraries on Linux
+      %W[
         -DENABLE_PRECOMPILED_HEADERS=OFF
         -DJPEG_LIBRARY=#{Formula["jpeg-turbo"].opt_lib}libjpeg.so
         -DOpenBLAS_LIB=#{Formula["openblas"].opt_lib}libopenblas.so
@@ -168,9 +171,6 @@ class Opencv < Formula
 
     # Prevent dependents from using fragile Cellar paths
     inreplace lib"pkgconfigopencv#{version.major}.pc", prefix, opt_prefix
-
-    # Replace universal binaries with their native slices
-    deuniversalize_machos
   end
 
   test do

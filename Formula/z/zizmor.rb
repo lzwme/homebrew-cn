@@ -1,17 +1,17 @@
 class Zizmor < Formula
   desc "Find security issues in GitHub Actions setups"
   homepage "https:github.comwoodruffwzizmor"
-  url "https:github.comwoodruffwzizmorarchiverefstagsv0.9.2.tar.gz"
-  sha256 "470afbb50f7e65d2de48fce4353c43db03a267977bacba3adc88d5f563d2a385"
+  url "https:github.comwoodruffwzizmorarchiverefstagsv0.10.0.tar.gz"
+  sha256 "ac188a66c496dc503707515b60bff0b9d61bd27c163ad98b1d16465bfe816980"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b24b9831499e16670bec41457ca7c8ca5b4ceea041027d45d7dc717314a3f228"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fabaef8f3cd6029bc8fe4634cdb603be157f30f2d5faff96656db96b35ae21bc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7ac62b55bc2c5430c7afa713f705ddef92ea495481f996b355210b5e957842c8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7a5af6901e0616423169c6183b4126047b57e4714dc731548d21a00b84e1a569"
-    sha256 cellar: :any_skip_relocation, ventura:       "d7aa43ef744294b047a9afece05fc9ca5cf4a46fa580d82955ec418dd1075821"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d5408bf5cde1020833cc32724d08a77ce77be05d6ff1863b71613cdcdd06f62"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "19bf52fec33f2d225edee6da9148cd0967e7c2f72fba15c0c77c4f958d0f0c3e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e5a720c4b80474c281a08fe8327edc86d2a182966b439b670f33f766f18f91a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "81f5ccebbad9bedd1e01e41feee931f616ab604484655a9b3bcf633df94a2253"
+    sha256 cellar: :any_skip_relocation, sonoma:        "482fcfc51b9316d13b18e3c5c0f1e4c92e35d38c227e0d109631974f7c43602c"
+    sha256 cellar: :any_skip_relocation, ventura:       "e6dbac52a5df9688893b5ead40bf27903460d3af3629d3a6b69122df8195acc3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2a5b5a9222bc5cdc1890e467d3d472425c38a0fe1cf6e7db604e4e0621bf06a"
   end
 
   depends_on "pkgconf" => :build

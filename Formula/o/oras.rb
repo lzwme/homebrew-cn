@@ -1,17 +1,17 @@
 class Oras < Formula
   desc "OCI Registry As Storage"
   homepage "https:github.comoras-projectoras"
-  url "https:github.comoras-projectorasarchiverefstagsv1.2.1.tar.gz"
-  sha256 "200e843a5aa0f375b23403cd5442d77243600d92dc62a1acc8dbc2a2e6b72dd5"
+  url "https:github.comoras-projectorasarchiverefstagsv1.2.2.tar.gz"
+  sha256 "09436b3048aab42fdfd5662f71da7d211f9d6e7ce66740cbbd8f3695ae621f6a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee3fe2d313f3e4f40427aea6618221df0ecc2556d1cb4c48916392bf96e8847a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee3fe2d313f3e4f40427aea6618221df0ecc2556d1cb4c48916392bf96e8847a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ee3fe2d313f3e4f40427aea6618221df0ecc2556d1cb4c48916392bf96e8847a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2485dd828561b70638b85054550440ebbd2beee2d47abf87a680200a29d87f6a"
-    sha256 cellar: :any_skip_relocation, ventura:       "2485dd828561b70638b85054550440ebbd2beee2d47abf87a680200a29d87f6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1e339188f3f28aedce92a07d29e97989a933dc4c40ac58497ba860dbb25c635"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0ab4fed3980c7d6975df20975d447004b17c604da7947b2e99d999d55170345"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0ab4fed3980c7d6975df20975d447004b17c604da7947b2e99d999d55170345"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c0ab4fed3980c7d6975df20975d447004b17c604da7947b2e99d999d55170345"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2ab9bd7c87e28d26180474be395d27458369dc7225a6618223882d7ef03f6073"
+    sha256 cellar: :any_skip_relocation, ventura:       "2ab9bd7c87e28d26180474be395d27458369dc7225a6618223882d7ef03f6073"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf849b37520f25e5fa0c0cef23a23b8b28fe64d51c45465c9cd0024f9dc18d1e"
   end
 
   depends_on "go" => :build

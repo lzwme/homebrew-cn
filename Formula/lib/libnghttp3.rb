@@ -2,18 +2,18 @@ class Libnghttp3 < Formula
   desc "HTTP3 library written in C"
   homepage "https:nghttp2.orgnghttp3"
   url "https:github.comngtcp2nghttp3.git",
-      tag:      "v1.6.0",
-      revision: "e79890583f1ba8bb4d58d7456043a7e65205b34d"
+      tag:      "v1.7.0",
+      revision: "86a72e9e64b81c770315636da8756d3ce38c3281"
   license "MIT"
   head "https:github.comngtcp2nghttp3.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5b790a23a40c6afdfbefeaa1cd8277f6fb697df9ee258fddd0314f2a98e381ae"
-    sha256 cellar: :any,                 arm64_sonoma:  "6f2200eb626ea9eaa4cee07e940a56acfbf3c359b8a226efd76dcc222e211810"
-    sha256 cellar: :any,                 arm64_ventura: "b71c4bd746cefe0e97aef0a0f2135bc62d169b97c05fb03c8ab0e9ed2edba6c5"
-    sha256 cellar: :any,                 sonoma:        "ad8d24ef80ab33d089942e6d3ddbcc8a9576df6edf5b58d07c5bbe4a279dd2aa"
-    sha256 cellar: :any,                 ventura:       "c7562b4061978560cd58afc29f48bcbf5c4ea44e9c3b3483226e159a87482daa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ad6a04daa0150fc54a7df2cfcb4de68ce55d343cb4f0bc22340244997abb50f"
+    sha256 cellar: :any,                 arm64_sequoia: "a3c8f4658539e92c32f790e6e122c5cd5997a0f9ab9e80cbacff9e8a0f5ef848"
+    sha256 cellar: :any,                 arm64_sonoma:  "6734dfc0f8d258a6166568635fed6c31dfb1e91a60be440bb92a6ec5e7b2f113"
+    sha256 cellar: :any,                 arm64_ventura: "5249a29504d61bdd324202e585ab20a3469141f53c33bf9675593de70f19bd79"
+    sha256 cellar: :any,                 sonoma:        "957808bd55a7e1f592af84b989a3b32daf67f15a16ff3661f92721b65aa13949"
+    sha256 cellar: :any,                 ventura:       "cb3120a35a4f927550f0c0425599d18578bd55819cb8abb2c4955d7da1cecc5b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8c3f3addc09b45d718a445ed1a1ce9fbe68777b31abcba543a7a68c654f6f60"
   end
 
   depends_on "cmake" => :build

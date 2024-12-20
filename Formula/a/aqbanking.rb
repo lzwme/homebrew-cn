@@ -1,10 +1,9 @@
 class Aqbanking < Formula
   desc "Generic online banking interface"
   homepage "https://www.aquamaniac.de/rdm/projects/aqbanking"
-  url "https://www.aquamaniac.de/rdm/attachments/download/499/aqbanking-6.5.4.tar.gz"
-  sha256 "0d16ceae76f0718e466638f4547a8b14927f1d8d98322079cd6481adde30ac99"
+  url "https://www.aquamaniac.de/rdm/attachments/download/531/aqbanking-6.6.0.tar.gz"
+  sha256 "37634487b95bad72b1b21397bce08cb4b15e13cb253886767c98f31712e40bfb"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url "https://www.aquamaniac.de/rdm/projects/aqbanking/files"
@@ -12,16 +11,12 @@ class Aqbanking < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "478d929f72e9654f1bf72dbef75ca57760a6b41fb06f906ec80124b03e4d3579"
-    sha256 arm64_sonoma:   "40c5e3e65530d65705cf5652d443e980595c39c7f2767e4b3719c8339ca26c6e"
-    sha256 arm64_ventura:  "b9a8f344467a7d69267d994da860fade6dda407510eed4398db47f2fd3206408"
-    sha256 arm64_monterey: "fcbf229d4ea7dcde5d788e088e4ff30d6f2a1a62ab2498f2e0c2913b0cda32b5"
-    sha256 arm64_big_sur:  "60da3b01e9cfeef3b9d47673d8353afec5bdfa87fec21c3df9635c41492861fd"
-    sha256 sonoma:         "27737d104556c605d174dcb3400f04ebeb8093481090e1d14ce457a2f600cbab"
-    sha256 ventura:        "c912b990acd3cc02ead0f7619bce81e9feb78f41caa1654b4778569b3050ba2e"
-    sha256 monterey:       "b989a7cb5bf36df5b829828f8452a3661d5d370d02bdce63b266fbf10ef38601"
-    sha256 big_sur:        "9ab40d81b08b2d798d3dc69a6c7557bb72e07a0891338c92bb972457c0998549"
-    sha256 x86_64_linux:   "f7586074ec396a050c9f210d05ae733b9697c0f9f2d366940b6937927f2cd215"
+    sha256 arm64_sequoia: "867da1207bd6888e0ccaff9e5a590a550496c75a3c108268eb735a72d88f4b63"
+    sha256 arm64_sonoma:  "09eac4af03579d4a5a3a337abb3084181421c3900d4b48634ae49b40c8bf372e"
+    sha256 arm64_ventura: "06bb730e2245dc7397488e452cdd1a7f1016929fd17cddbfec4bb823c1a796b4"
+    sha256 sonoma:        "b6a29a9a12754837f0ded814578872416c787c6035e4903bd24f3cd74bfaa423"
+    sha256 ventura:       "959125b55e5ed7918812874fd42281191a7ce553dadfe0f7d0e2db42b97eb971"
+    sha256 x86_64_linux:  "f864757758e63cc53a8ad042903e7ec7a24634c3e2d635e058b20f95b43f21eb"
   end
 
   depends_on "gmp"

@@ -5,7 +5,7 @@ class Ola < Formula
   desc "Open Lighting Architecture for lighting control information"
   homepage "https:www.openlighting.orgola"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
-  revision 3
+  revision 4
 
   stable do
     # TODO: Check if we can use unversioned `protobuf` at version bump
@@ -27,12 +27,12 @@ class Ola < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "e1f9c63cc95850939944b13db642edf0b739537a27fc938c4aedf1f172a261d0"
-    sha256                               arm64_sonoma:  "a682abb7185bc20aef2d30b30f152222ea9c5257aab744cde03aaa5583e88208"
-    sha256                               arm64_ventura: "7c0dc6b427c6776c3344e26f4845a522300effb6667407db2710675e6868a668"
-    sha256                               sonoma:        "d0c3934c5b288ed18add3ae23e7f015f34ea710cc4648fdecdc1b0bf619f63e5"
-    sha256                               ventura:       "3de55dadd98b13f77a540dec1504b6a65fe988054aa78bc1959515f00a9c8b26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "caccfa95c7cb88c18365e22ec8882bc2a5152b772e386b93f5cd61396b897f0b"
+    sha256                               arm64_sequoia: "da0b6d336c77add2ec88c13f7f3d1300fdd6257505240d3b6cefe32320994259"
+    sha256                               arm64_sonoma:  "ca21235c13a13e393cc0792c760a094a68e68713b27a8db93c42ae58f6f8fa48"
+    sha256                               arm64_ventura: "91339dd372819edaeedf7f5f2ce528c023d7d592f2df4a2e5c13bf47b8d92810"
+    sha256                               sonoma:        "1d1cfc263bfa58ac6a4a789fbcf982997785664c9bd477c2192a53a8131a01cb"
+    sha256                               ventura:       "ec372bbb7ab577e8b75b2ff79b2a92e90a8eecbba2083bccb7194c8698609e42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3aa81849e9a64ad7ae28324c9418d12c9267828da8cf03121999dc513a0ce20"
   end
 
   head do
@@ -69,8 +69,8 @@ class Ola < Formula
   end
 
   resource "protobuf" do
-    url "https:files.pythonhosted.orgpackagesd24f1639b7b1633d8fd55f216ba01e21bf2c43384ab25ef3ddb35d85a52033e8protobuf-5.29.1.tar.gz"
-    sha256 "683be02ca21a6ffe80db6dd02c0b5b2892322c59ca57fd6c872d652cb80549cb"
+    url "https:files.pythonhosted.orgpackagesa5734e6295c1420a9d20c9c351db3a36109b4c9aa601916cb7c6871e3196a1caprotobuf-5.29.2.tar.gz"
+    sha256 "b2cc8e8bb7c9326996f0e160137b0861f1a82162502658df2951209d0cb0309e"
   end
 
   # Apply open PR to support Protobuf 22+ API

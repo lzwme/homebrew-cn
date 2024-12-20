@@ -1,17 +1,17 @@
 class EslintD < Formula
   desc "Speed up eslint to accelerate your development workflow"
   homepage "https:github.commantonieslint_d.js"
-  url "https:registry.npmjs.orgeslint_d-eslint_d-14.2.2.tgz"
-  sha256 "2146352364383bbf0f8935fd2460aea04a1fff96af4e26a7974fbee91ccfce51"
+  url "https:registry.npmjs.orgeslint_d-eslint_d-14.3.0.tgz"
+  sha256 "f873d33ca7b7851704555a6453798163956a3f525a322d3caea8c16b294933c3"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9d5b4d6bdbc13ac53b1667b7b247116830d9ebbe1c8454027a9ec38a43dbdbd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9d5b4d6bdbc13ac53b1667b7b247116830d9ebbe1c8454027a9ec38a43dbdbd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d9d5b4d6bdbc13ac53b1667b7b247116830d9ebbe1c8454027a9ec38a43dbdbd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1351de51120b458392426e395363ef55ed05caaa0a76a91d53ef0eebe6df851a"
-    sha256 cellar: :any_skip_relocation, ventura:       "1351de51120b458392426e395363ef55ed05caaa0a76a91d53ef0eebe6df851a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9d5b4d6bdbc13ac53b1667b7b247116830d9ebbe1c8454027a9ec38a43dbdbd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f71f81814a0fc35b5b9dc63e435dadc521a5d7fe3c387a9a40327c3d90985a05"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f71f81814a0fc35b5b9dc63e435dadc521a5d7fe3c387a9a40327c3d90985a05"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f71f81814a0fc35b5b9dc63e435dadc521a5d7fe3c387a9a40327c3d90985a05"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bf7a935543ad7d69ad4e8c3e01130765c8c7e4319e749dcbc1fbab0a2d9d8d09"
+    sha256 cellar: :any_skip_relocation, ventura:       "bf7a935543ad7d69ad4e8c3e01130765c8c7e4319e749dcbc1fbab0a2d9d8d09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f71f81814a0fc35b5b9dc63e435dadc521a5d7fe3c387a9a40327c3d90985a05"
   end
 
   depends_on "node"

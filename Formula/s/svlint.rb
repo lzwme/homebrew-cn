@@ -7,20 +7,25 @@ class Svlint < Formula
   head "https:github.comdalancesvlint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8e0f4520274a9d65fa8c5355950064f9bf7ba4545e1e4fa59d2dc78f98dbceb4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0650e00432f1b1bea694d145e8d82793ac8c2803b6584c77626bc6ff9734bb09"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3a597239fb738c494719baf5ebc71c4be2b8f28fa94b6397fd49d0170c0f17f5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2d28d81b6d76eb7678bb61783f4d31ec4f54d4ddf609da3ce097175e571a6f46"
-    sha256 cellar: :any_skip_relocation, sonoma:         "74700743529098809fc76ece0a43f1c19e8a5e1e653c88444cb7c62e38b222fe"
-    sha256 cellar: :any_skip_relocation, ventura:        "999f7136b567446b81d26b4d309f696af0d6da7e0d29f5cd1ea7ad78b68b2741"
-    sha256 cellar: :any_skip_relocation, monterey:       "b84d5719b75ba93a3514ac17ad1438d27a096e3d0fb257384ffab3d1f126ec4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6dcb14a7dae2848d3bccd8f938c3deffd4270cab99e1dff9bf35fa5873d226b8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c82113e0273481d396f4d0b09bcb50abe5034c9397c9b4779e235df99dba9cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d4983f8a4e157a8cddd6e4e3aef2ad28dc6b1a0048134e1e8894f6a8259ceae"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e92e737e77aa193fa30e67f5c443fec1329ec01ced2ec0cf74ded12c8037f614"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a54509a5ccbaa642caf7f72f8d24aa93191b4ee8d7eb5eb42f5c9c5c302a552e"
+    sha256 cellar: :any_skip_relocation, ventura:       "fcc94fcfab52c8b6fca8bc7473bc59f14748ee9a97679b344a9d2d724456d063"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbe93914caa4cc7c788375ba72a0dc2d1a1bccde48f0100a1f39b2fc70ae8827"
   end
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args
+
+    # installation produces two binaries, `mdgen` and `svlint`, however, `mdgen` is for dev pipeline
+    # see https:github.comdalancesvlintblob729159751f330c4c3f7adaa25b826f809f0e5f44README.md?plain=1#L26
+    rm bin"mdgen"
+
+    generate_completions_from_executable(bin"svlint", "--shell-completion")
   end
 
   test do

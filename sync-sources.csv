@@ -470,6 +470,7 @@ Homebrew-homebrew-core/Formula/b/bee.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/beecrypt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/befunge93.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bench.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/bender.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/benerator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/benthos.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bento4.rb, Homebrew/homebrew-core, 0
@@ -1535,7 +1536,7 @@ Homebrew-homebrew-core/Formula/d/dunamai.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dune.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dungeon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/duo_unix.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/duplicity.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/duplicity.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/duply.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dupseek.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dura.rb, Homebrew/homebrew-core, 1
@@ -2547,6 +2548,7 @@ Homebrew-homebrew-core/Formula/g/gumbo-parser.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gupnp-av.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gupnp-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gupnp.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gurk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gvp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gwenhywfar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gws.rb, Homebrew/homebrew-core, 1
@@ -3042,6 +3044,7 @@ Homebrew-homebrew-core/Formula/j/just.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jvgrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jvm-mon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jvmtop.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/j/jwt-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jxl-oxide.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jxrlib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jython.rb, Homebrew/homebrew-core, 0
@@ -3639,6 +3642,7 @@ Homebrew-homebrew-core/Formula/lib/libjuice.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libjwt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libkate.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libkeccak.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libkeyfinder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libkml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libksba.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/liblbfgs.rb, Homebrew/homebrew-core, 1
@@ -5252,6 +5256,7 @@ Homebrew-homebrew-core/Formula/p/prs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/ps2eps.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/psalm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/psc-package.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pscale.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/psftools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/psgrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pspg.rb, Homebrew/homebrew-core, 1
@@ -11746,7 +11751,7 @@ Homebrew-homebrew-cask/Casks/k/kap.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kapitainsky-rclone-browser.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/karabiner-elements.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/karafun.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/k/katalon-studio.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/k/katalon-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/katana.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/katrain.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kawa.rb, Homebrew/homebrew-cask, 1
@@ -13631,6 +13636,7 @@ Homebrew-homebrew-cask/Casks/s/soundboosterlite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/soundflower.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/soundflowerbed.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/soundsource.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/soundsource@test.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/soundtoys.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sourcenote.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sourcetrail.rb, Homebrew/homebrew-cask, 1

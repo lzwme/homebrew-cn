@@ -10,12 +10,13 @@ class Qrtool < Formula
   head "https://gitlab.com/sorairolake/qrtool.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52e6870560b41a8b3f0f0c3e02097798599005db8d579d0cbec020221deec1da"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad03e4c7fac90b5fa20fe7cbb7604732e2b0835c2b70ea98e5e9ad471893d869"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e6884bc646daa28647b11baf9ba80d10d6d000e76ff454e33fe13dfba909e367"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8c338b94172639b4697729961ac223e2733499aa60a2055aaeae172131b3c403"
-    sha256 cellar: :any_skip_relocation, ventura:       "4c88772f05cc8dac9aeea084bc02024e0f45f6f3617ecb913e1e73ed65d317b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13215d2360180c17ea0a606f91f31e9b5d0be3750674e52f2ea1f7be83bc6c8d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e47b6269582d8257d04edd95b7ee8590250be7939b776e5d1ad93f0ced6be97b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f63c7b57c58201ce6060d3a22908c16e5421b196b8da499e5e314bb7e54e280f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "128756d73531417dfc062cdd8f7ab0747e389887a2adc3106593d67c5235f498"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7c9f89a5c2fbbdd3281eeec991027bb25a072d8823061307938a2da77c45d12c"
+    sha256 cellar: :any_skip_relocation, ventura:       "e55875fe9512c5bee0e316b1b827f57a6ded26d3318a4ef4fa22a024c821d865"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b629b69b2dbd059b27cfc6c33cf2cdcdc169960f2641d19e74986a257a02d12"
   end
 
   depends_on "asciidoctor" => :build
@@ -23,6 +24,8 @@ class Qrtool < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
+
+    generate_completions_from_executable(bin/"qrtool", "--generate-completion")
 
     outdir = Dir["target/release/build/qrtool-*/out"].first
     man1.install Dir["#{outdir}/*.1"]

@@ -2,9 +2,9 @@ class PhpAT82 < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
   # Should only be updated if the new version is announced on the homepage, https:www.php.net
-  url "https:www.php.netdistributionsphp-8.2.26.tar.xz"
-  mirror "https:fossies.orglinuxwwwphp-8.2.26.tar.xz"
-  sha256 "54747400cb4874288ad41a785e6147e2ff546cceeeb55c23c00c771ac125c6ef"
+  url "https:www.php.netdistributionsphp-8.2.27.tar.xz"
+  mirror "https:fossies.orglinuxwwwphp-8.2.27.tar.xz"
+  sha256 "3eec91294d8c09b3df80b39ec36d574ed9b05de4c8afcb25fa215d48f9ecbc6b"
   license "PHP-3.01"
 
   livecheck do
@@ -13,12 +13,12 @@ class PhpAT82 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "8fedb3512013d468f65bdf6016c92eeeb3214a1033a41c05a2252b01be7d709e"
-    sha256 arm64_sonoma:  "4d75851f04e7082fb7ccbe26590a0224ad3fee9abc5bf987fd4ab28e98b55892"
-    sha256 arm64_ventura: "fcbcc34c8b092d32a42c21317939b87e02aa063424b33b5f23d4626b3f1a4c69"
-    sha256 sonoma:        "08a458e6199c152a6b01f8faed44af4fd6a703e6a6039929926d5694b9241532"
-    sha256 ventura:       "20b4fb87769fbe4ca162808d8cf23cad8aeed2c4f01b5ed4524a67b6435ed23c"
-    sha256 x86_64_linux:  "c447bdd7172fe25fa1face958c1361c77adef4c7b38b3886a41f71ca1ddde698"
+    sha256 arm64_sequoia: "852a432d874662ce4fcbaea8a776b57234f8c88846f4a028b286fe2bdf11f674"
+    sha256 arm64_sonoma:  "c472f30e848d5a0691d42bdc52e8492842f5d902ee864463b50445a23e3a6ed4"
+    sha256 arm64_ventura: "298ca30a9044eab32a76e09b8b40a4d55d0680fa66c08e9e331fd4dfcb48bef4"
+    sha256 sonoma:        "29ca7a96057f4c598e63b79e89806addf7a6f48ad7746e1859f440f269a39a53"
+    sha256 ventura:       "fa8782917d3e510390469eebe92149a16f8024f56e4c124a63ccb53c47dbcc3c"
+    sha256 x86_64_linux:  "ac74b3be0f519752cd179b9c3cd2ac928cb4ef7baf80c94095354eb09db5f1e9"
   end
 
   keg_only :versioned_formula

@@ -6,18 +6,21 @@ class CloudformationGuard < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb00a8cef34b328c3cbefdac9516e652ff9c09eee5810eade78ff3f030727a74"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb1f5fb64b237d6c73f3ebfcf073811005498ce02e68975425c24beb2fc661d6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bd3293c56682cdafe01ed0a3c2f74e6cf4551810353aca00d5b7fd4271510284"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e4623ae3db7877e5b7305bad191a7b0fbecec0943d850426bcec93236c72b74b"
-    sha256 cellar: :any_skip_relocation, ventura:       "24b63300f319213dcfb222705a3445df4b90c77d939f82cd5d6e0738e048a3dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7535e043e8f22b3c7b0a5611406da8dd1a39a1c724813caaf32dc3f2b72a8a1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c6b065811bdf93dbb06dca229b3567045a25420cecf828554efc9ee49eddb48"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ab0907195c7ae28169278e5274755b2affe21fc43ec24fb15bc90fb722e7d3e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5e3a03945d1830b0118ce9a305347d0287b06e0d664552f6cc16ffb9a289d609"
+    sha256 cellar: :any_skip_relocation, sonoma:        "418c4452b9314131ffb0c60433b5f1451207a7875fefdbc8054421661425106b"
+    sha256 cellar: :any_skip_relocation, ventura:       "8903293b6db67437a424372618aae457b596c26fb5e09c8499b32457287b349e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97922a5fb353ad0da865d66940eceae6268e5648f82411bb8377a4a56ea78a23"
   end
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args(path: "guard")
+
+    generate_completions_from_executable(bin"cfn-guard", "completions", "--shell", base_name: "cfn-guard")
 
     doc.install "docs"
     doc.install "guard-examples"

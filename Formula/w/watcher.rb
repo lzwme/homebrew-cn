@@ -18,6 +18,8 @@ class Watcher < Formula
 
   depends_on "cmake" => :build
 
+  conflicts_with "tabiew", because: "both install `tw` binaries"
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *std_cmake_args
     system "cmake", "--build", "build"

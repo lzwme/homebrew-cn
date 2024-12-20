@@ -4,8 +4,8 @@ class Glooctl < Formula
   # NOTE: Please wait until the newest stable release is finished building and
   # no longer marked as "Pre-release" before creating a PR for a new version.
   url "https:github.comsolo-iogloo.git",
-      tag:      "v1.18.0",
-      revision: "487dbe468c288be878296c1058877f6755f4af5c"
+      tag:      "v1.18.1",
+      revision: "6c6f27208b96e8e5390c28499f7f8cbf39dc0318"
   license "Apache-2.0"
   head "https:github.comsolo-iogloo.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Glooctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0860c3f5d5f4c995a0e553f8168ff9e328e198984a26b2f02d734ffcdee3ae9e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "67b644a21b2a82790a423c6839870a93f1fc603ac4d509768651bb2643cf7b82"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ad1f551445d6c012aa269b93cb353f6119f22d648f1ab51c79fe76da4a47757f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c451dcb0b96bd0f1f2442c9c92350b483427ca3b014f621e8a82e9279bd6081f"
-    sha256 cellar: :any_skip_relocation, ventura:       "906370743712f10dec6ca1aa5e47293ce8f6584522373c362b199e03da572e9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb09929d2ec81ca64b443818777cb347c9788ab30bba865327d89bde7c2fed4c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "43fc187ad88c7c8d4fc19772996d5719ad8c3931094aefedd9adf1d25a581e14"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00177d1d630febb661ef2fdabb9d98ee5e863ce65f7369f589b5c8651c446ec4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d4bba2926a63d0e367e96f4a6a5339226efdaf581d974cea55c44240120d32c9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "598e6cb031da758b538b177eaba9c60951dfac27203cb990611d0a824ea6862c"
+    sha256 cellar: :any_skip_relocation, ventura:       "ace4625a22eadb49f9c84aa3723e4029e78742df2ebdd578c79152e7fa8d28fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f77e39f3eb49e7907c4529b173ed1c2aa89d6ae832ee12bfebd7158bd30cc000"
   end
 
   depends_on "go" => :build

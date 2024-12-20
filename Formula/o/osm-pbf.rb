@@ -4,15 +4,15 @@ class OsmPbf < Formula
   url "https:github.comopenstreetmapOSM-binaryarchiverefstagsv1.5.1.tar.gz"
   sha256 "183ad76c5905c7abd35d938824320ffb82d9ca8987796018f2da8380b51cdac2"
   license "LGPL-3.0-or-later"
-  revision 11
+  revision 12
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "89d00935034bcfe66271702b0672072e864e08ff70cdff05aff3d1422ff028a0"
-    sha256 cellar: :any,                 arm64_sonoma:  "6fa8b2d2a7b46403a31dd8c137302a786246e1924522d2b0d6db6eee43d1b5c8"
-    sha256 cellar: :any,                 arm64_ventura: "89f1460a048af812cb71c06384f1143ec6096874ac592bc2c0f13a769f9bd1da"
-    sha256 cellar: :any,                 sonoma:        "ef02fb7b3bd067ef85ec1213a88ce3548d04d6b277b07e0156027a6fe8470489"
-    sha256 cellar: :any,                 ventura:       "3a9cabb4d421ef5fbc9785b89e0cccdca8bd6e2d7c9ebb2510c6e3969519ff5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "887cd89aa901b0de97157a7d6b6e642349d36714ff22fb2d6953781971f37e8f"
+    sha256 cellar: :any,                 arm64_sequoia: "a706fdae046b617c79d62c63f421bf151fc4b71ac9a5090ec2dd7fb3eb63038d"
+    sha256 cellar: :any,                 arm64_sonoma:  "e1365c155a6d48075e56f79aa8f6c1183deae82328eafffb449a6f2250894147"
+    sha256 cellar: :any,                 arm64_ventura: "a8a6b13ed7138c459927a574663b6e106ed1b8c64ceaf09209691136a5dc52c5"
+    sha256 cellar: :any,                 sonoma:        "ff4c3b2064b9b42b121af46950b1a7a315fcef9141361b7f698dd574f1c17ca8"
+    sha256 cellar: :any,                 ventura:       "9977bb32528de863f26c96b665fef866464afd6b1e29a6c0cfd646b517470824"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbc751c2903bf4df4f2aaef93a3da1af0c65dccafa4eeaa209f50f698b7ebd0c"
   end
 
   depends_on "cmake" => :build

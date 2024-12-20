@@ -1,18 +1,18 @@
 class Xmake < Formula
   desc "Cross-platform build utility based on Lua"
   homepage "https:xmake.io"
-  url "https:github.comxmake-ioxmakereleasesdownloadv2.9.6xmake-v2.9.6.tar.gz"
-  sha256 "47f6efcb00f90c98a02c395f973b4d55bdd3a8fe452676dce57b55c055759686"
+  url "https:github.comxmake-ioxmakereleasesdownloadv2.9.7xmake-v2.9.7.tar.gz"
+  sha256 "248e496a5a734c89e167f931e2620c0ea4109e7ca913dc1022735129a5ffe9d3"
   license "Apache-2.0"
   head "https:github.comxmake-ioxmake.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "392027a4b901dedb75adbc4d11b868a96c223cc437a0f1c449bc06322781cc83"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "958ea919c8a987c55c754078c8d0434e32036d3d3fd0f13a8df1e75cbdb03a55"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d654e3e5e4c52385020c654d778962d4a196e5d654b0a8f0775c419594fbada0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bd6f30bfb9f11e1107fa0d8f6bc2193e1931b542c40941c4de347bf2a39657dc"
-    sha256 cellar: :any_skip_relocation, ventura:       "81d44a529f9c925f339ae55c47396e428f20aac0c12d2456f0000c55c2b94b15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4638a1742739d66cc380a7964a0458694320e497da2b8da9672af01757ad40d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "290d09dc79c230eb91c50ad11bc777464ebc5dab897fe2f18ac6d3158c116540"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c1d48bcf2c5e7fd1e54e94409bc981517317152f58b6e3fc4f1ddbde7bef0b5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e028c8ad906be3bd9b7a20d637d25318aa6b1c2fa08728f61ee730fc76d3f679"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dd9090d5c9446fda2debf6593918a49c914f457162274c6d298c06f88944c307"
+    sha256 cellar: :any_skip_relocation, ventura:       "b4701bd3195c8f630a6a5f5540cc56fa892928dccabc82d74d321fdf1cd9cf88"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b64a36fdabc39facd74232614473df4c79a62b02df14540e1f72e75a223b117"
   end
 
   uses_from_macos "ncurses"

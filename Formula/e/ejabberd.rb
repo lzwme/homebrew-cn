@@ -1,8 +1,8 @@
 class Ejabberd < Formula
   desc "XMPP application server"
   homepage "https:www.ejabberd.im"
-  url "https:github.comprocessoneejabberdarchiverefstags24.10.tar.gz"
-  sha256 "e260de76fc75354cd302caf2281e5114fdd1120d4fa2f4d24ddb1785dc43e343"
+  url "https:github.comprocessoneejabberdarchiverefstags24.12.tar.gz"
+  sha256 "22b15ab9be8f0ac4b7a5a7a48cd59c282c87f17b038017b960c15cfd314689f2"
   license "GPL-2.0-only"
   head "https:github.comprocessoneejabberd.git", branch: "master"
 
@@ -15,12 +15,12 @@ class Ejabberd < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0bbac950dfba118fdd659cc5e07683c2629b0270b6d90db2600c57b37923618d"
-    sha256 cellar: :any,                 arm64_sonoma:  "5ab452653cf526ab258a04fdc2fe199a101fabe2272b2e139da81215270c7eb0"
-    sha256 cellar: :any,                 arm64_ventura: "8fe998a22abc61616d3dd493807e5471d24bf8a2dac2f51be3b51a6c255216c9"
-    sha256 cellar: :any,                 sonoma:        "a363cd6e6f144c6cd32a6c73428d37d10de3858d098dd760a9fe959675b20d0e"
-    sha256 cellar: :any,                 ventura:       "bcb096e871949aa6e4048e4a0f768267d44bc42019b92883a70d067200d58c0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40f1d051e1064f0127bc8090ae538c39eb1bf6fce8bc2a4af87c2c5b57cd8439"
+    sha256 cellar: :any,                 arm64_sequoia: "171e56db81d3ebd5362569c704bb73b4e69951b3d4570ffe708c9ada479b2b93"
+    sha256 cellar: :any,                 arm64_sonoma:  "b30eabf8ae62380df07fcfcb0a066049300b0775248b41563cb266f58b8386aa"
+    sha256 cellar: :any,                 arm64_ventura: "5fe268b11de8693d05c2a6f87572db4df63ed17a0d4c6ac5b66d95db6bf9205a"
+    sha256 cellar: :any,                 sonoma:        "c2cf04d02ee1f53f3757a47f41c31a659978a2ef8724624209eff7c0de9de67f"
+    sha256 cellar: :any,                 ventura:       "cd02e39ca82d4323d075e135fa427a37cfa38960bc205f102d32db64a73dc6da"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc37a4a6eaa6db25ff1d6d3508d08cb30442010423a2de4f2128712838a0b874"
   end
 
   depends_on "autoconf" => :build

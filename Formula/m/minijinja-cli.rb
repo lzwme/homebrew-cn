@@ -7,18 +7,21 @@ class MinijinjaCli < Formula
   head "https:github.commitsuhikominijinja.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf6694c32c747e26783b584ec6158cb4e0a8e3e2678662259d792b7f89b994f5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "918b300ea03e7997089ed5646925d72d382285db8714d1a9362b061dbaaa9c7a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "49ef06405b4b488838b9a6d0c862ce61b80eef6370de961f031d9087f32bb2a1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5b086ab3351008beb5a9f46a644b6da6ebdd4fafac95e3c2186a0431fa3ec606"
-    sha256 cellar: :any_skip_relocation, ventura:       "0821ac7038f72ac946b52a5fa5bbce30a0d6bea6bc6d1e791b99f3d87fa3b4a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9d6e5ed489bedb9b0202bd4ce9f3db7c31ee2d7bc6116b61436b84e42d2cd09"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5cd46a4e0a68200b5e87bde1cf6a470f7ad0a3b5731ef430e50f43ac2f8b5bc5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9afbf60092ec8ac6b8b7fe1648573dbf69707802dfe3b59db766a871059c3927"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d286e3107104d42bfee64e93f094dc440b98a9efe86f5c8463650054cb5fb189"
+    sha256 cellar: :any_skip_relocation, sonoma:        "26f61e55e39e6675507da50b25ab0bd5d207498d5f0cfae773ad04112263f972"
+    sha256 cellar: :any_skip_relocation, ventura:       "e49183d2971cf5c20adfcd29fb4a622a82eb58fb2c8975247d3e74d552fe297a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea17b0761685c64cf1652b8904551ce2c785173b720a2b0c1f4d5d67d39b5c38"
   end
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args(path: "minijinja-cli")
+
+    generate_completions_from_executable(bin"minijinja-cli", "--generate-completion")
   end
 
   test do

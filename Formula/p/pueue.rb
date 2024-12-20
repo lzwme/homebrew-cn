@@ -7,14 +7,13 @@ class Pueue < Formula
   head "https:github.comNukesorpueue.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bb6f6bff43b00d41920ab98ee941fd5a275cdc885b48e1e15a72f51fe4bf56c0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "08b84e59e008d5991d5130b37a3e14522d9e62bbee1700303ec04a9680420582"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "bbecc5333cee858957a8aa932d13274d1b47273abc84e361238bb03109b366b0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1c2d616bd61a583dff5ce25d7a989913f12d52fe1d425a25c8e7b6597c18ae05"
-    sha256 cellar: :any_skip_relocation, sonoma:         "da97ac900e9fcd34c2f268e15b94dde63632efabae09bd10d5cc4eb1f930b3ba"
-    sha256 cellar: :any_skip_relocation, ventura:        "8c38cdb41fd486c9c5fb95084999b736184a82f06db7f672bdb8f527138ff04a"
-    sha256 cellar: :any_skip_relocation, monterey:       "57440207f7d1f19ad572a256df80eef88e4db9f17ab22a6b30cdc1683b0dc3e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "27022107ac3e5b7af30bf1af50a811553b44689d4fbb9c9225a43afae5b9af8f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "069ad84e3ec9d9513ebfbe1272a18352cd6b0594ee9b3a03912b735a5bf97676"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12dac34c9a768b35c11abd2e91798085c8af6dbe5957741ba2887a2435f2d2d9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f66df95de1cdf2bef246ba8d327779dbeebd77314496c8a90be1c222a22ab72b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e2cd03a375f5ee42700ba2698ba3a11fb453faebd7c9797b184229cb675dc37a"
+    sha256 cellar: :any_skip_relocation, ventura:       "513cf264a536c71dac1211a840db4aaa18a45103d5486c523f3e42eeea4dbfa5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36b77846f503d5b2a7ae1262f26b11511b94f151498b103b0ed5aeb4045ad667"
   end
 
   depends_on "rust" => :build
@@ -22,14 +21,7 @@ class Pueue < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "pueue")
 
-    mkdir "utilscompletions" do
-      system bin"pueue", "completions", "bash", "."
-      bash_completion.install "pueue.bash" => "pueue"
-      system bin"pueue", "completions", "fish", "."
-      fish_completion.install "pueue.fish" => "pueue.fish"
-      system bin"pueue", "completions", "zsh", "."
-      zsh_completion.install "_pueue" => "_pueue"
-    end
+    generate_completions_from_executable(bin"pueue", "completions")
   end
 
   service do

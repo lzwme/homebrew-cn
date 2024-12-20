@@ -2,8 +2,8 @@ class Vcluster < Formula
   desc "Creates fully functional virtual k8s cluster inside host k8s cluster's namespace"
   homepage "https:www.vcluster.com"
   url "https:github.comloft-shvcluster.git",
-      tag:      "v0.21.2",
-      revision: "c0fcbf2b0544109c3f53b41864aac0a8c02fb22c"
+      tag:      "v0.22.0",
+      revision: "8ff86da29c5628d338613c5d6fafba547c8c9a73"
   license "Apache-2.0"
   head "https:github.comloft-shvcluster.git", branch: "main"
 
@@ -16,12 +16,12 @@ class Vcluster < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a178c990b9b80c29333ff9f96100ce2fc08ace3e6d5dd30a8623d3cfe10a6fb6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b73be4b7b76fa9739b842b028a5e38a87185a77e6a1a922791b22f2673a7732"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6f7abfb3ff61da39e61602e0d443985d17cc1c1bf481494af4bd895435b22030"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a75ef0245765dee4ab4f32a2a6baa646efc7a169a88cce36e62da7867a2254e5"
-    sha256 cellar: :any_skip_relocation, ventura:       "fa9712c954e839a7898cdbdaa45842e5af72c24f330bcaa50e0a5430ca2abecd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01e6ca0e952334e5fc53bd05513feae361a63c84eaaef647458193c7b99f3c04"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ac68de212ccc77ef149f434d18b6ff5945791461df6144474916d497e5261d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e54cd95463af54707cfa1bf1a803ca7c81579a11ca377243edfa3a77ea12f02"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d27cd4750f18e31d95f53743674668a8bf82213119de2e0c06dda12538bf6358"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b9cb856a56e21d4ce5cd619dc682142b93c7b5066736a4b67d07fb3addb48dbc"
+    sha256 cellar: :any_skip_relocation, ventura:       "60a068fa637ea8076e4277a37b004f1ce0b515946e08883f60a106788fb4f255"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "097c1c39dd63fe4e409eaaa993d68911d4b634d8c4529335e2f18511765d3498"
   end
 
   depends_on "go" => :build

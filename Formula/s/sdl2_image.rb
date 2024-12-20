@@ -1,10 +1,10 @@
 class Sdl2Image < Formula
   desc "Library for loading images as SDL surfaces and textures"
   homepage "https:github.comlibsdl-orgSDL_image"
-  url "https:github.comlibsdl-orgSDL_imagereleasesdownloadrelease-2.8.2SDL2_image-2.8.2.tar.gz"
-  sha256 "8f486bbfbcf8464dd58c9e5d93394ab0255ce68b51c5a966a918244820a76ddc"
+  url "https:github.comlibsdl-orgSDL_imagereleasesdownloadrelease-2.8.3SDL2_image-2.8.3.tar.gz"
+  sha256 "4b000f2c238ce380807ee0cb68a0ef005871691ece8646dbf4f425a582b1bb22"
   license "Zlib"
-  revision 2
+  head "https:github.comlibsdl-orgSDL_image.git", branch: "main"
 
   # This formula uses a file from a GitHub release, so we check the latest
   # release version instead of Git tags.
@@ -15,22 +15,17 @@ class Sdl2Image < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ea6594c3fe00a6b0a1169f68e78ef17c0d9cc35dab208d88e2b448cf96703547"
-    sha256 cellar: :any,                 arm64_sonoma:  "4520a781a18de69c48f4e45cdf0136facce70322d326200eac0568ea06d9b0de"
-    sha256 cellar: :any,                 arm64_ventura: "d6ba44f75c244195f45458679b1ffcbde7ba4041b0ac314608b1ca66719ce5c5"
-    sha256 cellar: :any,                 sonoma:        "b77136bb7cac65db0092fba3c4f06ac8af0d3eb273dc98e4a0dc36773f341fc9"
-    sha256 cellar: :any,                 ventura:       "6c47414b1e8b5c656e8aa1dd07529e6510df854f0ddb0d630a8e25b557244e48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "627c063738ce664e38f5eaec55821203a6388ce4559f4b3427468aaf9bed4a97"
+    sha256 cellar: :any,                 arm64_sequoia: "bb95b0770931a48a9910421cd92f609e1d1c5523e26183b8950aeb8627695515"
+    sha256 cellar: :any,                 arm64_sonoma:  "7a5a42dd08474c0365e30e6eda4e4709247c9f9d39ff5217017f2f2887fc40d2"
+    sha256 cellar: :any,                 arm64_ventura: "5b60ade973f87281d28c65ed3a81ce2304a63d40ba4064c7ec06fab93b8f5bc4"
+    sha256 cellar: :any,                 sonoma:        "6761072329bed214194fa2dd4636f39f499a4a5c8a7f243afafd97f087a7dac6"
+    sha256 cellar: :any,                 ventura:       "b9aefd03a26f19360905939d5454e9d76ab4ffe6a80e3cce7ceaee63f9631f21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9faea474543756600f7845868ab27241297734bbe1bb1565b7cf43de44fc8aa7"
   end
 
-  head do
-    url "https:github.comlibsdl-orgSDL_image.git", branch: "main"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
-
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "pkgconf" => :build
   depends_on "jpeg-turbo"
   depends_on "jpeg-xl"
@@ -43,7 +38,8 @@ class Sdl2Image < Formula
   def install
     inreplace "SDL2_image.pc.in", "@prefix@", HOMEBREW_PREFIX
 
-    system ".autogen.sh" if build.head?
+    # upstream bug report, https:github.comlibsdl-orgSDL_imageissues490
+    system ".autogen.sh"
     system ".configure", "--disable-imageio",
                           "--disable-avif-shared",
                           "--disable-jpg-shared",

@@ -1,18 +1,18 @@
 class Dbmate < Formula
   desc "Lightweight, framework-agnostic database migration tool"
   homepage "https:github.comamacneildbmate"
-  url "https:github.comamacneildbmatearchiverefstagsv2.24.0.tar.gz"
-  sha256 "2de4a4037df4560917ed16f7f6ecdfc460be587d2e159aee106162e424093765"
+  url "https:github.comamacneildbmatearchiverefstagsv2.24.2.tar.gz"
+  sha256 "a134c289912216e380a94c0d8136c3df2f0296ffb3bceacff8d243a752cc2f8c"
   license "MIT"
   head "https:github.comamacneildbmate.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2fc502f4f0e77b182d7958b077f71ab7aeb0d93df0274971a9c43ae946c1abb7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee1653e73b396151b03b5aaf0a50b2ad22f6fcbd096440c0a8ab915aefc3d425"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4a28629b9fcbdcb785099cc79ad8955b3ed2539db7ca7d8beceb6b6010b86197"
-    sha256 cellar: :any_skip_relocation, sonoma:        "18cf74b7535c71ff540dfdb3e646fcb722014f84810eae68945b951ad4ec6225"
-    sha256 cellar: :any_skip_relocation, ventura:       "3337c24c041fdd075c3d35e343d7bdefac1fc1f223dc412e5571c0d12b9b4fc3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d308fdd56342c1072a867ba1a6f2a974db1f9120f0a270c0fa8c337d6762f838"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7524d5b5adf73193ae81c091a7624fd2a20b2602855de120b0d32c0ea737d0ab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0eecd85bb370655aab685e1f9f00f41112bff6999af485e6b04fec89ef8757c0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c26c884f612550bf954403d13453810de022c959b6b44ece564f0cf9d6a7f0be"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7dd8d35f50fb812e5b4dff66553b01ed0ca5542ff25a8cbbb9c0c960d55bb233"
+    sha256 cellar: :any_skip_relocation, ventura:       "a712472c7d8ed8d9def04d8c2a70ff4fd9d6d13e936ba0d338958f3456968f40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a9be764abef88ffb96c85b74d210c1096003ef9322649f5e518bad00ee3c9e0"
   end
 
   depends_on "go" => :build

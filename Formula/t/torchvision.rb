@@ -6,7 +6,7 @@ class Torchvision < Formula
   url "https:github.compytorchvisionarchiverefstagsv0.20.1.tar.gz"
   sha256 "7e08c7f56e2c89859310e53d898f72bccc4987cd83e08cfd6303513da15a9e71"
   license "BSD-3-Clause"
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -14,32 +14,29 @@ class Torchvision < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5047bf811ca8caee6757e05b7202f764b5d9e7344031fbc55365d0aadbdd9742"
-    sha256 cellar: :any,                 arm64_sonoma:  "192f7cd63e1063333e357d73f2169093327f0652a4b9c21a68d90d10f91d4bfa"
-    sha256 cellar: :any,                 arm64_ventura: "2e30694c23d11e6c31d8fba9ef020eeeff7dfd1dfc3445dfad8958b5261b53ba"
-    sha256 cellar: :any,                 sonoma:        "a6f0a0302996d80836b045a991a752d5c8f270f1bb6c0a2cb541b408c70d4b58"
-    sha256 cellar: :any,                 ventura:       "9fe5cd00ae97654884aa96f1cdadc3ac24c465706ce2e184107ddbe8a2f675c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22bd3fee011812410a8dee1c60c0e55621156aaa597908fad20fbdcadd691711"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "05ad6434595d32adb338a250c188b1c4bdbc9dd6cc002667775a940610d03aaa"
+    sha256 cellar: :any,                 arm64_sonoma:  "bb50c0817c495dda4b4a5a2bf01c8cf01033ea76b24a9e7aa9e9e3bd589f8507"
+    sha256 cellar: :any,                 arm64_ventura: "aea7d5b0c1a146c2ecb2c65eceed96b382775b97a840a496e16c7a65cc050a47"
+    sha256 cellar: :any,                 sonoma:        "e4e2d058603a89e0c8a20ebc53c795265ae785bf513e827091416070c13e4543"
+    sha256 cellar: :any,                 ventura:       "bb1e8f8730e76a7ec674ead6d9140b8053726b7f705916da713426918a489680"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33991a057cb3b39910bfe3e1edf1e28efe209c6088958aeeb30d3377a6ec01f8"
   end
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "python@3.13" => [:build, :test]
-  depends_on "abseil"
-  depends_on "certifi"
   depends_on "jpeg-turbo"
   depends_on "libpng"
   depends_on "numpy"
   depends_on "pillow"
-  depends_on "protobuf"
   depends_on "pytorch"
 
-  on_macos do
-    depends_on "libomp"
-  end
-
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # Avoid overlinking to `abseil`, `libomp` and `protobuf`
+    args = OS.mac? ? ["-DCMAKE_SHARED_LINKER_FLAGS=-Wl,-dead_strip_dylibs"] : []
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 

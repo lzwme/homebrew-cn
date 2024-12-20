@@ -16,6 +16,8 @@ class Tabiew < Formula
 
   depends_on "rust" => :build
 
+  conflicts_with "watcher", because: "both install `tw` binaries"
+
   def install
     system "cargo", "install", *std_cargo_args
 

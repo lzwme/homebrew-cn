@@ -7,18 +7,21 @@ class Dprint < Formula
   head "https:github.comdprintdprint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "442f5dc9615639365deb0a6d9beeb7c12455f29026b7ef2e9f31fd418c4edaad"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61a6c7c79cb0ec694d1b331fd77615b42386b27959a4ef512e77635ad3c196d2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ee833f66c006546733df75aef02d162389867e5dfe1b992d9eeb8ced34e8edbc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "66261b8fe4d1f1e25c5b26e0b12c3e35a203e380295b142ec50bbe9642b8ea67"
-    sha256 cellar: :any_skip_relocation, ventura:       "ae55ec367e7aee017a7823a9b3d50f13b67f2e724e634bdbc3bdeaf694c14cd5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7af5b8e0eb21fcf4f1923b30bca549e908729f40e1eb1d9a7ca13d8bff83b600"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f36fb7cdfe3968d85bfa770c7f43e9fb8bbe649994495825860868b3f99a428"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dbcf1acfcc67af149369fadcb917728d095f3aa7b4dc7bb3890fe21a6ddccbbc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b450f4f94ed7ea5350e7c450e2ff819bcac47cdf575424c7b53bb30668a24b58"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dd965baa9637e33a253ddc82b98f1508e1ce30a5df2ff8fc9a796f82fae0adf0"
+    sha256 cellar: :any_skip_relocation, ventura:       "67919f18e35d2e2888f818d4d33a3bd889d817139c74874d04e6da570d601c94"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "951ed0523ed6d5f6e6fef11986bcaf5addd0fe4c2bceaf94406efa87ee42eb77"
   end
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args(path: "cratesdprint")
+
+    generate_completions_from_executable(bin"dprint", "completions")
   end
 
   test do

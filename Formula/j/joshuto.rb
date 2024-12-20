@@ -16,15 +16,13 @@ class Joshuto < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "eb13fbe0d40a539753b2eff12cc997b0e8356e4a3870a6a7f7d58fc6ee14fffa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5654ff693e79e548559c05fe5068242ddb204bc9b96304e6554c85be3e7384e0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "515e47a07f94b1d95048ef41aaa02772879da4bde695d396fb919b41464dc88f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "499051587a419c940c465feadcc24821b13f905f1b5283fdd6c90bd78226b794"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9d4f280f210af9a9a3e5e58d1d8d5aa4ac65b8c0548beb95802e190c793238a7"
-    sha256 cellar: :any_skip_relocation, ventura:        "222081d6fe474676f362cd7f00af82863f4e2ce02df6072ca2b426d5b337a01c"
-    sha256 cellar: :any_skip_relocation, monterey:       "a5f517aae52e613b3ccabc8c187f2049be74686720c1e5a1e130fe2f7e119bb2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d898caaab5ad36b353c3c00189939b9ff459696ba4e8ee0aacb281398f0d278d"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05358a2a7b19b860ee8a0f96183f86587d0db37bb0d3caded154c7cf92c09f42"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce1ddf54bfdc995486062ed770d1c80f1343c6df4f15bd120fb05ea57633b383"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f514471db634eef5bc7be735708cb9a3d3adc731c0bd17536b9bdf659a2db118"
+    sha256 cellar: :any_skip_relocation, sonoma:        "87d5f791245b275fef1e0ea33481a5ead7ce2ee3ff8b3335d48ccc1ea767e552"
+    sha256 cellar: :any_skip_relocation, ventura:       "e1bf0abd5d2379a4611cf2860282f8d456816c57c103ba59af215499e4a67a95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f5fd70baa48a4e36ac7c6be47c6c4517ddd39af97e88509cd3e0dad8f6efcdc"
   end
 
   depends_on "rust" => :build
@@ -32,6 +30,8 @@ class Joshuto < Formula
   def install
     system "cargo", "install", *std_cargo_args
     pkgetc.install Dir["config*.toml"]
+
+    generate_completions_from_executable(bin"joshuto", "completions")
   end
 
   test do

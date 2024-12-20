@@ -6,14 +6,13 @@ class SqlxCli < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f874214d8fb27df2f3bfb1479cdd259f2cbab8808d77b171d96af16ac57b45d9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e1c238a10e94db7777c013316fb503eed969fd6edad80091bd04b892ff91cda7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8b88aab2146428c263aa7f20752b27fec3edd7e7784c2b0448e2be503e5bec3a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "61ca0b0af77d7d65c3eb2eedce677502fe137f5436c75e12ae0e5b2f2bf4ba71"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8ec46ef906952515ca3fdb8ec9b57440fb49fd8ab7d4643bb78be206217c8a35"
-    sha256 cellar: :any_skip_relocation, ventura:        "95c54d98b04ac5ee315f6e352dce345cd53e4160632b827dea7500f97d9356cc"
-    sha256 cellar: :any_skip_relocation, monterey:       "e6e78ca4649034854e10f8791abfd3c415a2a16eee3b9c4e3fbdf79eee3535eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "656282d427fccc2a42201ac6dd7c35fafa1296cce1843562a1b6f16bbab01e31"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52373a6a9a45d43817bf4c659cbec4788b9a44705807006edcfed4dc7651a7eb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "301e1889869918cd21817740ca7b97ace318b70b36706401c447aed3759152dc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "faf3fa9c8d12dd0dec06913723dd16efdde46541c1c908940f502b48d9b2a141"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f5b32adbf84dabff3868ec62c2a4af80e0e50b9e410ffd0a59dbdaa37f973f10"
+    sha256 cellar: :any_skip_relocation, ventura:       "2636cc4d63867d085dd502f33b49eef770c1bcf820db0dccde56b701adb559a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aecd28cad32990c6bcd43a198bbe6e2da55029c0b1cafed4ff25b3edec0349a4"
   end
 
   depends_on "rust" => :build
@@ -25,6 +24,8 @@ class SqlxCli < Formula
 
   def install
     system "cargo", "install", *std_cargo_args(path: "sqlx-cli")
+
+    generate_completions_from_executable(bin"sqlx", "completions", base_name: "sqlx")
   end
 
   test do
