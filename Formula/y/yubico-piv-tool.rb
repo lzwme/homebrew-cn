@@ -1,8 +1,8 @@
 class YubicoPivTool < Formula
   desc "Command-line tool for the YubiKey PIV application"
   homepage "https://developers.yubico.com/yubico-piv-tool/"
-  url "https://developers.yubico.com/yubico-piv-tool/Releases/yubico-piv-tool-2.7.0.tar.gz"
-  sha256 "778f6de9eb00f99d042a573220395ab29d45c0d1018a0dd619c17783b2da712a"
+  url "https://developers.yubico.com/yubico-piv-tool/Releases/yubico-piv-tool-2.7.1.tar.gz"
+  sha256 "9813190a5c2560ef7fe8018c03614091e911e0596c5853ef25c82cd9283a444b"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class YubicoPivTool < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "51ea4e319880536e344a8d3b2dfbb04b4f1e01de11210cdab88564bc74ee1b17"
-    sha256 cellar: :any,                 arm64_sonoma:  "16ff1cbed244780f03c308a554468629683ec83d7d611a58208b19cc9349d1ad"
-    sha256 cellar: :any,                 arm64_ventura: "184c31dc89c0888650fa8da2f41327e71fd73147eb5598dcb24b556248177d4a"
-    sha256 cellar: :any,                 sonoma:        "b53064f660733a3d57b6df54f9040929074a86a36cfe5bfa64bdbcfb275d71df"
-    sha256 cellar: :any,                 ventura:       "44b3d4191563e05e138415d20e40db7c63a3a6238faf75bdef9dd2c1ca9d3cb8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2224ac3842df368843a5ee263af30ec3453aa6be116a15ecd1659c9cda44ef4f"
+    sha256 cellar: :any,                 arm64_sequoia: "852e180ed2fe18fe28777716db26c09e754238744f889078b61d137d61fa6e80"
+    sha256 cellar: :any,                 arm64_sonoma:  "c7a5dc4310d0f45106800d409de0933feda9ff5cedb14fae0b0c5d73df545ffe"
+    sha256 cellar: :any,                 arm64_ventura: "5270a529dab82aaf84696ae71fedf63786d36c20209bcd701debada9e08e6e5b"
+    sha256 cellar: :any,                 sonoma:        "8f3beb1c9c8532e03fe3730b561c2d54aa98def4f5d4c9e26ba3682acba762b5"
+    sha256 cellar: :any,                 ventura:       "c31f355c89499b1e03ca9655c03e0c9e7f279d6ce236238de851ccae68d1c2bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e54ae29bc9056bc7763ee41cf8db4b6dbb744d43f1c7903e6d8d480d9b0014fd"
   end
 
   depends_on "check" => :build

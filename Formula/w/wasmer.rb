@@ -7,12 +7,13 @@ class Wasmer < Formula
   head "https:github.comwasmeriowasmer.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89f25d4cb160f60a678467186f8f3fa976e719a5fe8f182fbf6b2a5378913b7f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb97327d68246373e10b5a0ece1b66cac378792dbbf6e3b14ebf711bf7bbba6d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b3341355501e7df25fd235ff3cc2a3252289d633392d6c56a9bfedb382e80d0d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "da5932717fcdee30e592d4c14f2ce65006d79b589e45eab05ff49e53dd6de68a"
-    sha256 cellar: :any_skip_relocation, ventura:       "7d993db18105f30d565f03711fa36f82acfa24ee49a270f616f850ce9b09b65c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab947b74b03cba811ca9125af5ee6826904cef1507d138b18c8acfa3112cddd8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "125ceff044fe590c81adf25dd1cd04d472b5649e8e54cbe122bca65579e9bbee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7323f35dd94c282210b5ea295257a7b6c1fc318f0dafd6ae4dea582b2ed8f62"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6bf51106be2fdb78fd06b11268fd10269c3dfe1c7fc1c67c84f84b195e3f7ead"
+    sha256 cellar: :any_skip_relocation, sonoma:        "502738bb88139da09da3a9065cd1a2077abc8d2a538a6a023f0072882a5fd0fb"
+    sha256 cellar: :any_skip_relocation, ventura:       "59019f8fd8d6e571cf0b2db906d773ca12904213150222508767c2ac554c646d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10eb158e7950f7de195258ec2a41abc6d2f8dce12c0bd1050917328adb34623e"
   end
 
   depends_on "cmake" => :build
@@ -26,6 +27,8 @@ class Wasmer < Formula
 
   def install
     system "cargo", "install", "--features", "cranelift", *std_cargo_args(path: "libcli")
+
+    generate_completions_from_executable(bin"wasmer", "gen-completions")
   end
 
   test do

@@ -1,8 +1,8 @@
 class Apt < Formula
   desc "Advanced Package Tool"
   homepage "https:wiki.debian.orgApt"
-  url "https:deb.debian.orgdebianpoolmainaaptapt_2.9.17.tar.xz"
-  sha256 "30a0f5bb66e50e66355eaa810097192f977dfeb5c2aa57b9c4f59870be7b0d04"
+  url "https:deb.debian.orgdebianpoolmainaaptapt_2.9.18.tar.xz"
+  sha256 "9903bbbbc89bb6a4687a080a1bf90bb8ba36802ec196b3549a4c1fd0502d1a3a"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,7 +11,7 @@ class Apt < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "d65206c059ed439ebd9cebd584647274be2b687d3b1671efaba6c4a5aa0b422c"
+    sha256 x86_64_linux: "78a9cd8b8113c96eccc4a1ec34d2d8b449307ede892bccf548837f2a131ff472"
   end
 
   keg_only "not linked to prevent conflicts with system apt"
@@ -77,8 +77,8 @@ class Apt < Formula
   end
 
   resource "YAML::Tiny" do
-    url "https:cpan.metacpan.orgauthorsidEETETHERYAML-Tiny-1.74.tar.gz"
-    sha256 "7b38ca9f5d3ce24230a6b8bdc1f47f5b2db348e7f7f9666c26f5955636e33d6c"
+    url "https:cpan.metacpan.orgauthorsidEETETHERYAML-Tiny-1.76.tar.gz"
+    sha256 "a8d584394cf069bf8f17cba3dd5099003b097fce316c31fb094f1b1c171c08a3"
   end
 
   resource "Pod::Parser" do

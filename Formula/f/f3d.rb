@@ -4,6 +4,7 @@ class F3d < Formula
   url "https:github.comf3d-appf3darchiverefstagsv2.5.1.tar.gz"
   sha256 "55ea01931f90f066df1abc0ae4e9575672e80b83b241f51884224baa8dccac24"
   license "BSD-3-Clause"
+  revision 1
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -14,11 +15,11 @@ class F3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "2ab25b18901e2b7df5dce2b820b5ae55948d481a0e04de56b75bb0af58c02da4"
-    sha256 cellar: :any,                 arm64_ventura: "b73eea70d6adcb0d528ee8f462396316c3a8ecc467d49377b47abf51b97e5ae6"
-    sha256 cellar: :any,                 sonoma:        "b3bd9a4073050f764bf821458c087cff59b2e31ac4a3123ab218f7896219323e"
-    sha256 cellar: :any,                 ventura:       "2d3899865c7dbfe60f4352781c5bbb82381441efc385301cafb09e20f8816df6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0a533f4beace3c8e5d8cda50da3fea52fbada7f9ae14998788050245f51f307"
+    sha256 cellar: :any,                 arm64_sonoma:  "a158b6d659492373c960283233a2434c85594ecb1cd33aef5c28ea5bea55a54b"
+    sha256 cellar: :any,                 arm64_ventura: "0e69108d23b6a6286f99e3d60c71347681c2a066c4e445f8e5d5230353e0639e"
+    sha256 cellar: :any,                 sonoma:        "7b2a9064eecc991892d9a4d3bf5dbe7cb90c3262ab7b10923194ccd576c4742e"
+    sha256 cellar: :any,                 ventura:       "99910851df88d8b03085f336beb523a6a8ad8500904e9f0d356d3716cc070db7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfbed537c4b1ff81af941dfb7702cd3dfc6bd4d2e4b7ba67d6881dd6a8a68a95"
   end
 
   depends_on "cmake" => :build

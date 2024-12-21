@@ -4,7 +4,7 @@ class Visp < Formula
   url "https:visp-doc.inria.frdownloadreleasesvisp-3.6.0.tar.gz"
   sha256 "eec93f56b89fd7c0d472b019e01c3fe03a09eda47f3903c38dc53a27cbfae532"
   license "GPL-2.0-or-later"
-  revision 9
+  revision 10
 
   livecheck do
     url "https:visp.inria.frdownload"
@@ -12,11 +12,11 @@ class Visp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "a5a58d76081eac3f0aa696c9d9d585e13b8d83f87db94d31cf2d6cab4737e1d0"
-    sha256 cellar: :any,                 arm64_ventura: "ed6c8b3ecd5b927d4f01d6960ce6403df2205e8c6d5d2698f91326abb0091c1d"
-    sha256 cellar: :any,                 sonoma:        "44ea774131f383ff063c3a4cec51d9a88e6e9bdcf13b05ea365b0a9a466e7ddf"
-    sha256 cellar: :any,                 ventura:       "eae2d82bde93a8ac54b7c86e1cf1d369b606b0c506fbf70326bfb0502951837f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24d6aa141440f2316eaecd0da436f0876026e101d7821a7a1c6daacbb473c8ae"
+    sha256 cellar: :any,                 arm64_sonoma:  "cd46d0345aac25f3459482433444fc604fac8edd647c110966a959c9ae6d9c96"
+    sha256 cellar: :any,                 arm64_ventura: "67b6676dcd3a6b751f87d880a9b6a6be42a17626a06ab0ddda08defaa4272c23"
+    sha256 cellar: :any,                 sonoma:        "6cb4fed15290ad68e0c008815589a4453163323cbcd345be6588cc9b9892513f"
+    sha256 cellar: :any,                 ventura:       "3a1a93587fe3432cda0dfc9adaa78235d71154878cdffd5f92f43ce1bfbffc0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f55415e96b2adca09e489d64b8399f9b14961939f8b0d5b9895ddff1c7f50f9"
   end
 
   depends_on "cmake" => :build
@@ -60,11 +60,26 @@ class Visp < Formula
     sha256 "c0dd6678f1b39473da885f7519daf16018e20209c66cdd04f660a968f6fadbba"
   end
 
+  # Backport fix for VTK include directories detection
+  patch do
+    url "https:github.comlagadicvispcommit44d06319430c4933127e8dc31094259d92c63c2e.patch?full_index=1"
+    sha256 "a474659656764ca7b98d7ab7bad162cd9d36c50018d3033eb59806d2ac309850"
+  end
+  patch do
+    url "https:github.comlagadicvispcommit09c900480c5b9d3b2d97244fe3b109e48f8e2d27.patch?full_index=1"
+    sha256 "417c3fa88cd5718e48e970ddd590ccaaafbe01db328dee79390fb931afa67da9"
+  end
+  patch do
+    url "https:github.comlagadicvispcommitd6aebe3af2700c95c17c75aafb4f25d478a8f853.patch?full_index=1"
+    sha256 "740cb92ff79a368475af7979ff6ac4c443f90808bd02dd841aec3428cdbc95ed"
+  end
+
   # One usage of OpenCV Universal Intrinsics API altered starting from 4.9.0
-  # Remove this patch if it's merged into a future version
-  # https:github.comlagadicvispissues1309
-  # Patch source: https:github.comlagadicvisppull1310
-  patch :DATA
+  # TODO: Remove this patch in the next release
+  patch do
+    url "https:github.comlagadicvispcommitebfa2602faca0f40db2dd1cc0cfb72cd8177640c.patch?full_index=1"
+    sha256 "7fac428ca4fee039a84770e9c7877c43e28945038ff21233da74f3ae159703e0"
+  end
 
   def install
     ENV.cxx11
@@ -151,38 +166,3 @@ class Visp < Formula
     assert_equal version.to_s, shell_output(".test").chomp
   end
 end
-
-__END__
-diff --git amodulestrackermbtsrcdepthvpMbtFaceDepthDense.cpp bmodulestrackermbtsrcdepthvpMbtFaceDepthDense.cpp
-index 8a47b5d437..c6d636bc9e 100644
---- amodulestrackermbtsrcdepthvpMbtFaceDepthDense.cpp
-+++ bmodulestrackermbtsrcdepthvpMbtFaceDepthDense.cpp
-@@ -606,9 +606,15 @@ void vpMbtFaceDepthDense::computeInteractionMatrixAndResidu(const vpHomogeneousM
-         cv::v_float64x2 vx, vy, vz;
-         cv::v_load_deinterleave(ptr_point_cloud, vx, vy, vz);
- 
-+#if (VISP_HAVE_OPENCV_VERSION >= 0x040900)
-+        cv::v_float64x2 va1 = cv::v_sub(cv::v_mul(vnz, vy), cv::v_mul(vny, vz));  vnz*vy - vny*vz
-+        cv::v_float64x2 va2 = cv::v_sub(cv::v_mul(vnx, vz), cv::v_mul(vnz, vx));  vnx*vz - vnz*vx
-+        cv::v_float64x2 va3 = cv::v_sub(cv::v_mul(vny, vx), cv::v_mul(vnx, vy));  vny*vx - vnx*vy
-+#else
-         cv::v_float64x2 va1 = vnz*vy - vny*vz;
-         cv::v_float64x2 va2 = vnx*vz - vnz*vx;
-         cv::v_float64x2 va3 = vny*vx - vnx*vy;
-+#endif
- 
-         cv::v_float64x2 vnxy = cv::v_combine_low(vnx, vny);
-         cv::v_store(ptr_L, vnxy);
-@@ -630,7 +636,12 @@ void vpMbtFaceDepthDense::computeInteractionMatrixAndResidu(const vpHomogeneousM
-         cv::v_store(ptr_L, vnxy);
-         ptr_L += 2;
- 
-+#if (VISP_HAVE_OPENCV_VERSION >= 0x040900)
-+        cv::v_float64x2 verr = cv::v_add(vd, cv::v_muladd(vnx, vx, cv::v_muladd(vny, vy, cv::v_mul(vnz, vz))));
-+#else
-         cv::v_float64x2 verr = vd + cv::v_muladd(vnx, vx, cv::v_muladd(vny, vy, vnz*vz));
-+#endif
-+
-         cv::v_store(ptr_error, verr);
-         ptr_error += 2;
- #elif USE_SSE

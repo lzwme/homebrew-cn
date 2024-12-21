@@ -1,8 +1,8 @@
 class Sundials < Formula
   desc "Nonlinear and differentialalgebraic equations solver"
   homepage "https:computing.llnl.govprojectssundials"
-  url "https:github.comLLNLsundialsreleasesdownloadv7.2.0sundials-7.2.0.tar.gz"
-  sha256 "5c6c0a66a7e27c45bfb57b27f7579463855a85fc3976fed1d5c9dd88dc1ae3ab"
+  url "https:github.comLLNLsundialsreleasesdownloadv7.2.1sundials-7.2.1.tar.gz"
+  sha256 "3781e3f7cdf372ca12f7fbe64f561a8b9a507b8a8b2c4d6ce28d8e4df4befbea"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class Sundials < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1923f22a1ca2a93dd4b3a7b3a62886995548186892a2b6644545e6b735cb41bf"
-    sha256 cellar: :any,                 arm64_sonoma:  "f03bf60cbe0df7308120164fdcf00721f1f0053ad685af62d81788f92889464b"
-    sha256 cellar: :any,                 arm64_ventura: "3f79680a8517578b67926e3a98db2e6061d46983163cc8a2c5b0bc782e2913c9"
-    sha256 cellar: :any,                 sonoma:        "86bacf2e9c55cda6847a409c0d87ce116328653b502f00ac05a6c988b195428c"
-    sha256 cellar: :any,                 ventura:       "72db9c0775b89ef3ec7786f001a76d954e86afff2c18d9c915a416bc72a4f857"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87e221e692557a83842540c85a5caa0c0d51dc36adeb7095146da99f39a93e25"
+    sha256 cellar: :any,                 arm64_sequoia: "db1ede463b5ac940844d33fddb8d3a5a482c5a86c696bc7f4c35c9fccc44ce0f"
+    sha256 cellar: :any,                 arm64_sonoma:  "35090ef4269eec7b77c60f030a2918df9699a1c4f6ea9fe3783def9ba6c816bc"
+    sha256 cellar: :any,                 arm64_ventura: "c88629bb65b804f8a36751d4d7b38ba7ef00eba7fa27853a26ca9c8f2a8b8306"
+    sha256 cellar: :any,                 sonoma:        "b1842b88bb89d15e7e2f1fcf549b2a48f4e5b3f7c9275c86fd4421d5f22c611d"
+    sha256 cellar: :any,                 ventura:       "734bb3a415f6647d7fe6482fa6958fe967455a8c050a356cfd3d038593d727df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ee65d6f4c0ca10da972dbbe5304ca7b39918776395fddb197a2e16908de1dfa"
   end
 
   depends_on "cmake" => :build
@@ -44,8 +44,11 @@ class Sundials < Formula
     system "cmake", "--install", "build"
 
     # Only keep one example for testing purposes
-    (pkgshare"examples").install Dir[prefix"examplesnvectorserial*"] \
-                                  - Dir[prefix"examplesnvectorserial{CMake*,Makefile}"]
+    (pkgshare"examples").install Dir[
+      "testunit_testsnvectortest_nvector.c",
+      "testunit_testsnvectortest_nvector.h",
+      "testunit_testsnvectorserialtest_nvector_serial.c",
+    ]
     rm_r(prefix"examples")
   end
 

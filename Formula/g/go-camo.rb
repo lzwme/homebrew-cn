@@ -1,19 +1,17 @@
 class GoCamo < Formula
   desc "Secure image proxy server"
   homepage "https:github.comcactusgo-camo"
-  url "https:github.comcactusgo-camoarchiverefstagsv2.6.0.tar.gz"
-  sha256 "c6491a9364e621da6a2f204b2bc77aac14eb7d0eba895bd5c60240853d572f4d"
+  url "https:github.comcactusgo-camoarchiverefstagsv2.6.1.tar.gz"
+  sha256 "454e9001a55cff3fc191541bc3d17f6b95d991b5fda4fe596023aa914b332267"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fe93419ffa43e642d2079e69daf962440bb629c57cddc2b84c2301ae8af3807a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2e88abfca2c294c8966ab21d0fece9b7a0117461a81508cee2cf39f4de790978"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e88abfca2c294c8966ab21d0fece9b7a0117461a81508cee2cf39f4de790978"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2e88abfca2c294c8966ab21d0fece9b7a0117461a81508cee2cf39f4de790978"
-    sha256 cellar: :any_skip_relocation, sonoma:         "68c115ff6731fff9e5f84b0d4894bd22f52afaae67b2fcdf4c9e40b23f43016e"
-    sha256 cellar: :any_skip_relocation, ventura:        "68c115ff6731fff9e5f84b0d4894bd22f52afaae67b2fcdf4c9e40b23f43016e"
-    sha256 cellar: :any_skip_relocation, monterey:       "68c115ff6731fff9e5f84b0d4894bd22f52afaae67b2fcdf4c9e40b23f43016e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2eebd364b64215bf9b2a06f64edc58078c21ac9ca6d039985b3b6e1c8edb90ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59b5fe9ad14fc151d2bddd05e1499bd11c78cd3c637ff35fbb9f68d793b8aef7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59b5fe9ad14fc151d2bddd05e1499bd11c78cd3c637ff35fbb9f68d793b8aef7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "59b5fe9ad14fc151d2bddd05e1499bd11c78cd3c637ff35fbb9f68d793b8aef7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "58ac230bd2ed5cf5cc440ecf5ba3383b9150881b239741a23edeac3efb2ba366"
+    sha256 cellar: :any_skip_relocation, ventura:       "58ac230bd2ed5cf5cc440ecf5ba3383b9150881b239741a23edeac3efb2ba366"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e44ee5ea9ea08f0fe8ad54c6941e7bcb4417a8f012367dc38744cdbb59f5b10"
   end
 
   depends_on "go" => :build

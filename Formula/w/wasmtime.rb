@@ -2,8 +2,8 @@ class Wasmtime < Formula
   desc "Standalone JIT-style runtime for WebAssembly, using Cranelift"
   homepage "https:wasmtime.dev"
   url "https:github.combytecodealliancewasmtime.git",
-      tag:      "v27.0.0",
-      revision: "8eefa236f8ef0cc766977e0c0cbb0d602132dfa4"
+      tag:      "v28.0.0",
+      revision: "2e584e84127f0123c5a9211310140419e12082c2"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https:github.combytecodealliancewasmtime.git", branch: "main"
 
@@ -16,12 +16,12 @@ class Wasmtime < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "dcf825cb9449c7aeeb0b2542156cddb3ae9725dcefc128aa1e404abb6c8479ff"
-    sha256 cellar: :any,                 arm64_sonoma:  "70900d469e765cb6a9274dc730f90f0ca40ed7f28070bf84e57e035e93f4bdcb"
-    sha256 cellar: :any,                 arm64_ventura: "3c2c604cab16c4f253937918ea74be0468279c0291f82878581fdfde29d4cb4a"
-    sha256 cellar: :any,                 sonoma:        "803a824a03b53677a80d441d9f049576e818ee635a5654e50296b4cd99bacf46"
-    sha256 cellar: :any,                 ventura:       "3df748d1006c3b755e0fb22c87dcf4da5820bf380ee046afc68a6563bf798a2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0b9b9588dd4360dfdacdf0209508a3b20ef34e61862fdbe0f1a9d8cfb54b067"
+    sha256 cellar: :any,                 arm64_sequoia: "6bdddfc5952f2dfba593deb511b5830426035d0a95e4dbf6b3a8f2574c7d3db0"
+    sha256 cellar: :any,                 arm64_sonoma:  "8843fc476c19f092e143430b38522792950e54704fea5a9dd40a58b931234aa9"
+    sha256 cellar: :any,                 arm64_ventura: "6e0b9666e74979bf7e27e5341c9e63b4838468ead8f1bfd9a51ca3c451e42496"
+    sha256 cellar: :any,                 sonoma:        "e2761ddc69b7fe7f0a37870b2d9eb9ce3f8642aa816f5b081ea7e367da861fe3"
+    sha256 cellar: :any,                 ventura:       "ee3bac319c3009b5bf37809a951c32ee132109767620ad794a941b6aecc1c47a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "770fa06a4b545d8da23b6049ac1f7ff7daa4028f156d7a861696b53f90439d44"
   end
 
   depends_on "cmake" => :build
@@ -33,6 +33,8 @@ class Wasmtime < Formula
     system "cmake", "-S", "cratesc-api", "-B", "build", "-DWASMTIME_FASTEST_RUNTIME=ON", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
+
+    generate_completions_from_executable(bin"wasmtime", "completion")
   end
 
   test do

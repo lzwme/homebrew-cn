@@ -1,10 +1,10 @@
 class CmakeDocs < Formula
   desc "Documentation for CMake"
   homepage "https:www.cmake.org"
-  url "https:github.comKitwareCMakereleasesdownloadv3.31.2cmake-3.31.2.tar.gz"
-  mirror "http:fresh-center.netlinuxmisccmake-3.31.2.tar.gz"
-  mirror "http:fresh-center.netlinuxmisclegacycmake-3.31.2.tar.gz"
-  sha256 "42abb3f48f37dbd739cdfeb19d3712db0c5935ed5c2aef6c340f9ae9114238a2"
+  url "https:github.comKitwareCMakereleasesdownloadv3.31.3cmake-3.31.3.tar.gz"
+  mirror "http:fresh-center.netlinuxmisccmake-3.31.3.tar.gz"
+  mirror "http:fresh-center.netlinuxmisclegacycmake-3.31.3.tar.gz"
+  sha256 "fac45bc6d410b49b3113ab866074888d6c9e9dc81a141874446eb239ac38cb87"
   license "BSD-3-Clause"
   head "https:gitlab.kitware.comcmakecmake.git", branch: "master"
 
@@ -13,12 +13,12 @@ class CmakeDocs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ed3795024ac004c81550d39211b83d8d055201f3d8405c5670bf5512e8701d1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ed3795024ac004c81550d39211b83d8d055201f3d8405c5670bf5512e8701d1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3ed3795024ac004c81550d39211b83d8d055201f3d8405c5670bf5512e8701d1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c6eada3160082c79fb320edf5214366d9cb4636a5f7d8f608caeb92256905a67"
-    sha256 cellar: :any_skip_relocation, ventura:       "c6eada3160082c79fb320edf5214366d9cb4636a5f7d8f608caeb92256905a67"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ed3795024ac004c81550d39211b83d8d055201f3d8405c5670bf5512e8701d1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e918e8a3d4fb923ebd5585428734df468c1932cef85f3a4794005308e719a23"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e918e8a3d4fb923ebd5585428734df468c1932cef85f3a4794005308e719a23"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6e918e8a3d4fb923ebd5585428734df468c1932cef85f3a4794005308e719a23"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fc7d4ab8d30dfcc5af83ab34e2df1f16fea63fe5b9e84357325804af80427444"
+    sha256 cellar: :any_skip_relocation, ventura:       "fc7d4ab8d30dfcc5af83ab34e2df1f16fea63fe5b9e84357325804af80427444"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e918e8a3d4fb923ebd5585428734df468c1932cef85f3a4794005308e719a23"
   end
 
   depends_on "cmake" => :build

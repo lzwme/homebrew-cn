@@ -7,21 +7,26 @@ class Prqlc < Formula
   head "https:github.comprqlprql.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0504c5363097ca60b2387ea9d9fdd3bff87e38042df06e38d02ab98c303132da"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01af361385a984959e1c993035eb745aaaf2b339c1393ee76422b4e7484514e5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "dabb929e4199fc379047d6a999d16343cc8fcc61716dc3ce9fe282b8bc9b0fbc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ec6af8e56f8e59e8d22e413a6c55b8fc2a86b9086ab6f6cced108212bb197d14"
-    sha256 cellar: :any_skip_relocation, ventura:       "ba0f1ff20ac87ee362ec15e860730c03cd410730e038da03ee13f661364e5939"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3c279867650e9820cf28d8709a5a5f4f79d2bcd3292f38baffedef498bc6e57"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9233066bb8690613d46ff4337c28489d17d26eef557e540605f4edf073d8494"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "612382df672c86e91ab3bfd905175ac04898edf6f90110b5e69b97499305b107"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "797d0ecad3c02117082e1392d8febe2f3816a0d3a52b1f82fcc53b52c84735b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d16beb8b2d71ee21bb79fe2a9012f59d355d11dd8dabce3b5d38509ff23a427d"
+    sha256 cellar: :any_skip_relocation, ventura:       "6962e491915d83e04e2baffd143ec649977aa179b9373c817b060189b5738a90"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8a97686a8660a15460858df5725cf1b12a24b01f7f39c3e4a5ed075011e8fa1"
   end
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", "prqlc", *std_cargo_args(path: "prqlcprqlc")
+
+    generate_completions_from_executable(bin"prqlc", "shell-completion")
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}prqlc --version")
+
     stdin = "from employees | filter has_dog | select salary"
     stdout = pipe_output("#{bin}prqlc compile", stdin)
     assert_match "SELECT", stdout

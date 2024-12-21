@@ -7,14 +7,13 @@ class Ouch < Formula
   head "https:github.comouch-orgouch.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "01207f623492615b563e7607f2f992f72c4904126c4e79861bd60a00479fa6ed"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "96516fad49dade5fd195d9b6610c189750a29e19d8151b63d30e9bc5eed7ccb0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "045659db08dc4821578de4fe5f31acf36bcbe46ef8112e5e10b283bbd0c9826a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e5e4e6cf4f26e98a708f3f6d0d017d70dfbb60982c71e43bcad1abcab948ccc1"
-    sha256 cellar: :any_skip_relocation, sonoma:         "120da005b6f47e606635590b7a6fe3d9d07e4a760dae9b9772121df9bdfae3ba"
-    sha256 cellar: :any_skip_relocation, ventura:        "843b8b72bbc16e4b5be35d828964683aeacd965e269cdcff2fd331b1f1ac5cbb"
-    sha256 cellar: :any_skip_relocation, monterey:       "6bf0d26001a16f01e235d1ff20b03d6992d58dc4ec990f2fb18ab42ed7bb028c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5f89e533cc7aab96e7261bf11b4016b13397c89757f3e2ed82865c1758a5cf2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11795cbe9c38f30481e04282efceebe109de670689a346558585db7aa1ef0977"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "424a341aa2183e0fac3aa9180c88d0a293876bb077a6a07a9ab775dc4694abef"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "55fa180fa50d60cae20499315c094e4e27ef9569c7bc153e194da5981e4dae53"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e577a0daba8281df2106f823428d147e2b5feb5bd94c8a7bab428dda4cd5c269"
+    sha256 cellar: :any_skip_relocation, ventura:       "ecd0d5ec186fddd2fc7f770c587428e9ca9f7606e8998af8353ad7bbe81a216b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75ebb0483051766284f4eb6cd08c3a117b63a6f6eeec6f369213c9340b5accfb"
   end
 
   depends_on "rust" => :build
@@ -24,10 +23,21 @@ class Ouch < Formula
   uses_from_macos "zlib"
 
   def install
+    # for completion and manpage generation
+    ENV["OUCH_ARTIFACTS_FOLDER"] = buildpath
+
     system "cargo", "install", *std_cargo_args
+
+    bash_completion.install "ouch.bash" => "ouch"
+    fish_completion.install "ouch.fish"
+    zsh_completion.install "_ouch"
+
+    man1.install Dir["*.1"]
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}ouch --version")
+
     (testpath"file1").write "Hello"
     (testpath"file2").write "World!"
 

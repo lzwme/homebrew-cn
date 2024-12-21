@@ -1,8 +1,8 @@
 class Stackql < Formula
   desc "SQL interface for arbitrary resources with full CRUD support"
   homepage "https:stackql.io"
-  url "https:github.comstackqlstackqlarchiverefstagsv0.6.7.tar.gz"
-  sha256 "62569781d806771b5fc118d48fc09dd7e4701556481c2001e2207bed6e929713"
+  url "https:github.comstackqlstackqlarchiverefstagsv0.6.32.tar.gz"
+  sha256 "6f1b2a50363be83b75959a6eb7c874ba870cf8c03075bd795b545a315755019c"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Stackql < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0bb3e676b8da95fbd01c44ad0dc8abc0e9ab4fbd3dcdc8f2fdba688ed1d279f1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26ed0db58fb9917328b881117e21b0dbf59a38a01b0dab6738356fae494500ad"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "96366f122afa1218b2a2df7103963feffd0ef850163b7717aaad0bc9cacc688a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fa6796f15c82f8ac35b2f964f3e0aa8573a2940b8f5e5e76da09ef5e34781599"
-    sha256 cellar: :any_skip_relocation, ventura:       "b9f033b542444ab2222bd7358b45ee9333c518c48d40c7ad7d4aceb10d6315cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c62168986e4b37a430ead1c7485e4b028f0a24cf7245d99a2677be653927c7d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "285f2a7008850d71a8febe2546f1578bd1bbad62d448459111d9bdc2d58f52c5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "736d342a9910148d7799b0fa628a5a81c0f3973597b0cdfdf88362b7af2dd6b8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4d47ce2cac54c69569c99c788f535919d85a2a5981a74c37400fe6f20cfec2b6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "803eaabef4536490df1df17f6e3ac74e19baf74a4377696e7e32ca8553159349"
+    sha256 cellar: :any_skip_relocation, ventura:       "81ba7fe4dd2c471904ee8290dc25bb908ad5401a7f5ba4402e0f8bcda829471d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca6a6447746a230722d7cff2045991996fb613a9d43a3cd3a5e6cc15cc35a5bd"
   end
 
   depends_on "go" => :build

@@ -7,12 +7,13 @@ class Flawz < Formula
   head "https:github.comorhunflawz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d9fc11d84d25830195e9ff2e2948ebcfe100365b6e9e4a87d1e8f4df5831616"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32c262ad502b668ddc1247d88148c60681ad589dbe985cb7bfe930b0f018edaa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b80ac08fa94ce919947113bf419e77e9f90fffe30eb34bb53b4b5ddf973ae739"
-    sha256 cellar: :any_skip_relocation, sonoma:        "413d100567192fc3159025d8bf445f7b5b902d3f80e6060c6f79f894dcd99aef"
-    sha256 cellar: :any_skip_relocation, ventura:       "65ca1612a2345783cc1b7e2b071ab5789ee052aa1e323ff55a9f7974e5680f03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "917ae375e82d69e1c5952feeee931ebb6f2c18d48c0722ba06da19ebef69aa84"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c97b5cd0db7f806b02e8b7a22bfffd3c3305780a218d558ca0053220205ba882"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59c66cdabc185ffcb53cb7a481ad8ef5866aceae91ae3519f6e8222bb23f874a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0d41b1a2483d47ffff21a20a37b678d2b37ea25363010a592e5efe57ac9a5033"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0120b7ac67721ca6d74ec1fdf08e082fba851447998f54d698afb0a18f9f1d24"
+    sha256 cellar: :any_skip_relocation, ventura:       "63ea238fa5329800901bba640c22d65b23d7971d6b15a4096121baeb7848c496"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76314b097693e33dfaffe268be3fd2dea5519df259c39958e6b6cffa334bfec2"
   end
 
   depends_on "pkgconf" => :build
@@ -26,6 +27,20 @@ class Flawz < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
+
+    # Setup buildpath for completions and manpage generation
+    ENV["OUT_DIR"] = buildpath
+
+    system bin"flawz-completions"
+    bash_completion.install "flawz.bash" => "flawz"
+    fish_completion.install "flawz.fish"
+    zsh_completion.install "_flawz"
+
+    system bin"flawz-mangen"
+    man1.install "flawz.1"
+
+    # no need to ship `flawz-completions` and `flawz-mangen` binaries
+    rm [bin"flawz-completions", bin"flawz-mangen"]
   end
 
   test do

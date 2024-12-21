@@ -3,18 +3,18 @@ class TranslateToolkit < Formula
 
   desc "Toolkit for localization engineers"
   homepage "https:toolkit.translatehouse.org"
-  url "https:files.pythonhosted.orgpackages84e05b163cce66be1f6a557b4a1c73c1a6c4ded941c8022069bc784f77968571translate_toolkit-3.14.3.tar.gz"
-  sha256 "b588747b72b8befe76e34d16a720af57b4540c6f6d4cb0bb831107281a485824"
+  url "https:files.pythonhosted.orgpackageseb57ebfeab9b6893c4e8c2583db04a0a8560cac6adb818dbda65e54e71a4eb1ftranslate_toolkit-3.14.4.tar.gz"
+  sha256 "6bf58e151385b32e45c9643b24c80b3cd46ad5bcc4665afa5332974bc94cf79b"
   license "GPL-2.0-or-later"
   head "https:github.comtranslatetranslate.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1622e013b312cfa0e38f465bea9bebad56564a09bbf0a7fc3cf0e7852a2235b5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23371c39d4236ce6d95c9b8265bbabf777836d7732b87a936a22f9d8b1071d29"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f1b718850fc4cba15dfa1c809d2b2d1cdf6bd2615074701ecee433ee297df2ff"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0664a30ae4785c2e9663825774918412df02eeb90e3fe9d8ea1ec7bd8faf3f02"
-    sha256 cellar: :any_skip_relocation, ventura:       "730071787a409a6d8c0158e71c429fe8523218ee62f73d9460048467c20fc5bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "459f806454cad29380f4328828b3a83a143b22a795a3b3709c04dd5a02839e18"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de26987a8e7e0879ea125e641988eab455a273d5b38238de8188786c4ce56c3b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0a928edbec569da9cd34650c3ec242d7b73270c351285ee4914b7bbc0026194"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fdaacda69aac26658e9fab879b1a589ebc2d293c206fe7c6bd9051ba496c0536"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3ed5c5f9337190f583163cc11fb14d6059f6ea4db31e6f4513caf12f3d2c13eb"
+    sha256 cellar: :any_skip_relocation, ventura:       "6b028f4bc66100cb2dc1c63a9624ae278c0202a4e2eb4d764b5da1fd818c14b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3b54fb9a10dd45494e453a2e6ef87de763f2cf49259e8f19ae1fdd601733652"
   end
 
   depends_on "python@3.13"

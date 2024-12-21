@@ -3,17 +3,17 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https:prowler.com"
-  url "https:files.pythonhosted.orgpackagesb81c8256a100254628fd1f338997001c72735738085597d1d51bac9272b3848eprowler-5.0.2.tar.gz"
-  sha256 "32f6fcaaa6921715bda38e19b0782f07f717a7f02b7065f7ea08e83216bcf39f"
+  url "https:files.pythonhosted.orgpackagesb37335a8be33575c986728fb2aff3ee0e910b677c04edd7561022e76afb85003prowler-5.0.4.tar.gz"
+  sha256 "d154fec24825217d9f87d8d72220740af5bd32ef9ac7f8ce8b0a07697d086ec0"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "095a81057783a3cbd169e7f7ce4b89e7e7e57cfb55d71ebb6bf46fe08ccea927"
-    sha256 cellar: :any,                 arm64_sonoma:  "b53e007e1b4c8487e152e6703bd7bd6835176e4ff24b980c51cf78f78c716f69"
-    sha256 cellar: :any,                 arm64_ventura: "d57bae13b0f0cf8311eac7b59dc063ae50db9cea6bd56e7ab10727bbe20531a0"
-    sha256 cellar: :any,                 sonoma:        "210c3cb1eac2d9fc690a22bbf17b140641d7615d099ec4e12f0b88ef585f6c6d"
-    sha256 cellar: :any,                 ventura:       "1ec7fd70786da81b35e5f0b504cf89b0f9f1548392d376f01d8e211050ee2f09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b651ff1469a53c5474c7987d10881282baeb47d77b586957311221f5e0e9a7b"
+    sha256 cellar: :any,                 arm64_sequoia: "a739dfcb658b8da21683783afa8e4d30697093ad737dc298940b8577aa9a3db6"
+    sha256 cellar: :any,                 arm64_sonoma:  "b524140953161d1b6408da3f3dddf46900ee00129bf7bdf0da7cd622cd963553"
+    sha256 cellar: :any,                 arm64_ventura: "7ef676a909e99bba9c95e96d6e2cda0785fa70b2f2cf14f954b8abf986c3f42c"
+    sha256 cellar: :any,                 sonoma:        "8392a74af61d64c4beac2855f513299d7c094a912caff95b2b2be587e63852b0"
+    sha256 cellar: :any,                 ventura:       "d09d0bcd306d26f195395e426ed4562ca916e15aeeb87d7f57382622c1b0ead9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "078020d012cb0c83cb2fa9d4f1f14fe24c44ad19781658342fa642ca6c75b45a"
   end
 
   depends_on "cmake" => :build
@@ -41,8 +41,8 @@ class Prowler < Formula
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages94c43b5a937b16f6c2a0ada842a9066aad0b7a5708427d4a202a07bf09c67cbbaiohttp-3.11.10.tar.gz"
-    sha256 "b1fc6b45010a8d0ff9e88f9f2418c6fd408c99c211257334aff41597ebece42e"
+    url "https:files.pythonhosted.orgpackagesfeedf26db39d29cd3cb2f5a3374304c713fe5ab5a0e4c8ee25a0c45cc6adf844aiohttp-3.11.11.tar.gz"
+    sha256 "bb49c7f1e6ebf3821a42d81d494f538107610c3a705987f53068546b0e90303e"
   end
 
   resource "aiosignal" do

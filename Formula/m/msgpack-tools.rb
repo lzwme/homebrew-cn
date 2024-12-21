@@ -27,13 +27,18 @@ class MsgpackTools < Formula
   conflicts_with "remarshal", because: "both install 'json2msgpack' binary"
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "install", "PREFIX=#{prefix}"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
-    json_data = '{"hello":"world"}'
-    assert_equal json_data,
-      pipe_output("#{bin}json2msgpack | #{bin}msgpack2json", json_data, 0)
+    json_data = <<~JSON
+      {"hello":"world"}
+    JSON
+
+    msgpack_data = pipe_output("#{bin}json2msgpack", json_data)
+    output = pipe_output("#{bin}msgpack2json", msgpack_data)
+    assert_equal json_data.strip, output.strip
   end
 end

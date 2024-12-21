@@ -6,18 +6,19 @@ class GitCola < Formula
   url "https:files.pythonhosted.orgpackages7decb620520f3f94c8a6ed704062321641e04af6b3c627764e358c391bdf4165git_cola-4.10.1.tar.gz"
   sha256 "c3c7e63099d60347528fbbc6f565aef02d62ebf1df8c372666faec9bf8aa19eb"
   license "GPL-2.0-or-later"
+  revision 1
   head "https:github.comgit-colagit-cola.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1bce663e8b1b62a70896380b5eafe2fa612585a4b052ded3cb8fa11fc80def02"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1bce663e8b1b62a70896380b5eafe2fa612585a4b052ded3cb8fa11fc80def02"
-    sha256 cellar: :any_skip_relocation, sonoma:        "557220ab5437fc52d71077980a31cdab68351cfbc7f8a0ae1e4b597841f61a82"
-    sha256 cellar: :any_skip_relocation, ventura:       "557220ab5437fc52d71077980a31cdab68351cfbc7f8a0ae1e4b597841f61a82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bce663e8b1b62a70896380b5eafe2fa612585a4b052ded3cb8fa11fc80def02"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41fdb0ff9d944644af17df1b3362a6710c813640d8bd455a725cd1e21eab7824"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "41fdb0ff9d944644af17df1b3362a6710c813640d8bd455a725cd1e21eab7824"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9924a781606241fe258463d4dc2d2a73e33f474ca01b91807636668833e96ab4"
+    sha256 cellar: :any_skip_relocation, ventura:       "9924a781606241fe258463d4dc2d2a73e33f474ca01b91807636668833e96ab4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41fdb0ff9d944644af17df1b3362a6710c813640d8bd455a725cd1e21eab7824"
   end
 
   depends_on "pyqt"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   resource "packaging" do
     url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"

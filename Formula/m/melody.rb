@@ -6,18 +6,21 @@ class Melody < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9357930b4337a242439d8dad0bb624e77df223b85ca2feed819148ec193879d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "69ec1b43828c1cddb1caea9c98c7d358d72f2b55dadd4ff1b9b6b609468af550"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3f06eff1e2940053069a578f58f0dab013d23bf3734869c74b7943ef00e3c271"
-    sha256 cellar: :any_skip_relocation, sonoma:        "232c51f62048c860a4b72b4dcfad31bfa1dd5933c63888cdf54d185e32640d0e"
-    sha256 cellar: :any_skip_relocation, ventura:       "49ce44732ac20a95f265b901e3c6489e6330e7cfb30fc17c6b5eaf164272cc90"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "551acffbd70fde043c5a83f3c7735580bb55686934ee9b79f90792a58d346303"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "02ae5a9796e29ff3f0f88a96e957b5c2495a12f27d513eef8ffbf07f07cca8c6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d329bc93d86774235dcd465aab7713a214809943998f6b13f4410a72ed44f427"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f6f38b37a164b96b64c1dfbf510ce9c3bfdf714aa78ed019f21ec1f1fae8e6a8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4ff223f27cb843cbfb6742debd3f37a903ef15e837c58ba6983b7028b151cfb6"
+    sha256 cellar: :any_skip_relocation, ventura:       "fc4c23ef29bb5907b1f9888ce9e5d676f30c95d2d5b85392c8ed65317d38a6d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "486bf0de59a35bd2fcad51c0f00156f8eeeba5db3e27b246a5d79105f195a20f"
   end
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args(path: "cratesmelody_cli")
+
+    generate_completions_from_executable(bin"melody", "--generate-completions")
   end
 
   test do

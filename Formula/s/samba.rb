@@ -7,6 +7,7 @@ class Samba < Formula
   url "https:download.samba.orgpubsambastablesamba-4.21.2.tar.gz"
   sha256 "bde66be3d2025cb949de38518ad2652f3795f824c7fa89d4e443ede1ae828ea6"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url "https:www.samba.orgsambadownload"
@@ -14,12 +15,12 @@ class Samba < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "81ffa7e7a8caa429a8e1dd701ecaa2b2e541defc970356cdffa56b3f60c8a75c"
-    sha256 arm64_sonoma:  "47e491c656a41d217bc8c54ec0bef53be8eccbe30e865050faedf07d8155212b"
-    sha256 arm64_ventura: "c779512c5594fd9bcf481b6ab238a27e49fd26cedaee7b001060c2d116181d74"
-    sha256 sonoma:        "9f338dc5d27441d11fd62eb34cf26048d59035cd2e9c809d704fca0e51e526a1"
-    sha256 ventura:       "c0d88b1952c056bc37eb04d2ab7afff0801a51d65c9c877e534e1c439fcfa6fa"
-    sha256 x86_64_linux:  "1d3f9a04277a848938298c6185a92df13e016b6ed43f840574850b1a55d61fc8"
+    sha256 arm64_sequoia: "7619dec787d24ae50195ccc8232da940eb9b3ee8c13743e380f01f9934f76266"
+    sha256 arm64_sonoma:  "a02b6c78c34f97eadb09445bd1029b722eb32965991e6f79c2c17e3fc725052d"
+    sha256 arm64_ventura: "6255f04c3845e3399a20b32f6735bde06359283fcf77c6ee8567b07987fda19d"
+    sha256 sonoma:        "2690ee2dfe0c0b1dc410059f4df97d088027e53f65d446fa6b352cb5de86a794"
+    sha256 ventura:       "1a34ca730dc121b9ef1a876375cfd427523584bd1079a44cd7a388d7475795f5"
+    sha256 x86_64_linux:  "af8bd2b780d28fe08107d4a081cecc97762ed95a7af2915a766dfd11f1993c72"
   end
 
   depends_on "bison" => :build
@@ -59,6 +60,15 @@ class Samba < Formula
   resource "Parse::Yapp" do
     url "https:cpan.metacpan.orgauthorsidWWBWBRASWELLParse-Yapp-1.21.tar.gz"
     sha256 "3810e998308fba2e0f4f26043035032b027ce51ce5c8a52a8b8e340ca65f13e5"
+  end
+
+  # upstream bug report, https:bugzilla.samba.orgshow_bug.cgi?id=10791
+  # https:bugzilla.samba.orgshow_bug.cgi?id=10626
+  # https:bugzilla.samba.orgshow_bug.cgi?id=9665
+  # upstream pr ref, https:gitlab.comsamba-teamsamba-merge_requests3902
+  patch do
+    url "https:gitlab.comsamba-teamsamba-commita2736fe78a4e75e71b9bc53dc24c36d71b911d2a.diff"
+    sha256 "7d1bf9eb26211e2ab9e3e67ae32308a3704ff9904ab2369e5d863e079ea8a03f"
   end
 
   def install

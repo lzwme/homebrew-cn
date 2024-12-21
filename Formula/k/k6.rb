@@ -1,17 +1,17 @@
 class K6 < Formula
   desc "Modern load testing tool, using Go and JavaScript"
   homepage "https:k6.io"
-  url "https:github.comgrafanak6archiverefstagsv0.55.1.tar.gz"
-  sha256 "8ddf7629748e246ab8396159a856b3da170345ffd180e4ecb296b6c96c23b9be"
+  url "https:github.comgrafanak6archiverefstagsv0.55.2.tar.gz"
+  sha256 "5d61b93a0385f5643ebc8aac883aa974dc78cae572d9f5aad4c34f128fd4b646"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f33944835fff4700afacdeadb44a3adf3b4d1645025deb2872f19964c1b1b03"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f33944835fff4700afacdeadb44a3adf3b4d1645025deb2872f19964c1b1b03"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7f33944835fff4700afacdeadb44a3adf3b4d1645025deb2872f19964c1b1b03"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9183e559ac42814a19ff2872d5493404fa80f4b586a1a3d1cef02558ea750299"
-    sha256 cellar: :any_skip_relocation, ventura:       "9183e559ac42814a19ff2872d5493404fa80f4b586a1a3d1cef02558ea750299"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4648e94ab8d8b0faab63cd58378fd3e2d18e07cab56a1989993e2aa779ba3d16"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9891248ebf793fe5e0bfa640ce71237567ccf079ce0bc47f9cdb6e62ff1a5f43"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9891248ebf793fe5e0bfa640ce71237567ccf079ce0bc47f9cdb6e62ff1a5f43"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9891248ebf793fe5e0bfa640ce71237567ccf079ce0bc47f9cdb6e62ff1a5f43"
+    sha256 cellar: :any_skip_relocation, sonoma:        "03e5ac5736781944ccfbba9a76123b59d193f158a732f7b9fa507fb60c99d7cd"
+    sha256 cellar: :any_skip_relocation, ventura:       "03e5ac5736781944ccfbba9a76123b59d193f158a732f7b9fa507fb60c99d7cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7be115a3f7212db4498b354bc27e299eb77db637ccb338d6113448253676e16b"
   end
 
   depends_on "go" => :build

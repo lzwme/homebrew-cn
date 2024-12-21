@@ -6,14 +6,13 @@ class Mqttui < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "852000bbb6154a15aaeb04c16dea3debb51a37ae6e2aca62865703b69710897c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "78a4b50a7de81fdcf692ada8a6b8cf8ce4422f073f1eeaec4e342f311352d8eb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0a83821074d07516d9b80c32718727bc1d2a62f772b2be2a8956493cc4682d65"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e95d225919d3ec405260a89a3c3cd3cbc273331ec899e29efb537884685ba337"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6e26d91c0f38ed79f5d6afc91f7a5781fd000e0dc70257c678f7260718a3d2b4"
-    sha256 cellar: :any_skip_relocation, ventura:        "ea861b285a01185fec5ea5fc6663c8f99d205f5ca9158b40e7ed1068545cb7bf"
-    sha256 cellar: :any_skip_relocation, monterey:       "f7abd6ef1e8b517472124b35e7dc94127886ea30aabd2d7cf950c253b3438a55"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7ebeadc572d78a107c0b0e8e109804d2c17adc3a41d3abd4adce818378965dd2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "785c02e782d4705b8856b3a2e7efafcf4316c96b82ef40f09b1941be8d890ad4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46e79fe9bd4008a24b0a4747578225a3c7499ab6325d0b4409df68e8ca511f6e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1cdd4e2052248e29d0c8d68187310d53cbaf4b64eee1d9b2fdcdc788f02bdf72"
+    sha256 cellar: :any_skip_relocation, sonoma:        "446294e3a949a6d148b8f9910a2bd8de85f6fe20a63aeabbac6c05000dad1b72"
+    sha256 cellar: :any_skip_relocation, ventura:       "5f7ffb503ce101b1e29010d9b35e22f9816e3168cd89b7aa62bf4ab5e21891f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51fede45d21c05b4d32da4164d1305d8b8021b20e3103b18fa70f62b2b26a192"
   end
 
   depends_on "rust" => :build
@@ -21,9 +20,11 @@ class Mqttui < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    zsh_completion.install "targetcompletions_mqttui"
-    bash_completion.install "targetcompletionsmqttui.bash"
+    bash_completion.install "targetcompletionsmqttui.bash" => "mqttui"
     fish_completion.install "targetcompletionsmqttui.fish"
+    zsh_completion.install "targetcompletions_mqttui"
+
+    man1.install "targetmanpagesmqttui.1"
   end
 
   test do

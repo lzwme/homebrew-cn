@@ -3,18 +3,18 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https:aws.amazon.comcli"
-  url "https:github.comawsaws-cliarchiverefstags2.22.20.tar.gz"
-  sha256 "44dd45d58cc225236ee2b7d6cdbdb4b4c444275aaa1d3e9cad0ebc16e8570489"
+  url "https:github.comawsaws-cliarchiverefstags2.22.22.tar.gz"
+  sha256 "03ef9a626ba1db38fce0c9d24dd55f54d0602b2a88e87c77f4e22b8953732aa8"
   license "Apache-2.0"
   head "https:github.comawsaws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f1f03db02002b69512f81557fbd9da599e52bbc1e63f611f94b2b710845fb7f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7827efa63079df51e2ed1ae8a477f82de694c01efd4ada572c6cbdf724252b0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f3865d02ea9bd77015a1b565d4c309eb4ffe959a0713143daa12c9ae0103c66d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "da2f3b2288f459cdef31d644b4f8b04c4baf37de3a76bf3c57a4878b0d605331"
-    sha256 cellar: :any_skip_relocation, ventura:       "371685dd4eccf5535280d4f9d2977042579a9f1b05d35e017c1da7cf0e0ecd5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5d24ecb2081fdfec92a07330b6af6a695451b18f6a5e0bb75a3de0fe404fee4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1850fbf281b3ad035a350899fc399dcdb24d5afeaa3fcf2d96eb0557d33f2ede"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b2a3608ab87a78bdbc334405aaf25673df018aff47e4670a046542a963e79d1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "730ac7848d4f0772c39bbee37d7c8f903dec9e824c469a5987acab4e59538dc1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8d9966eca0b03c9a80598b13debad204398791c07a588589d2ec82e804e24ff3"
+    sha256 cellar: :any_skip_relocation, ventura:       "7e3473f72f1ad0f911ef20d105235e70fef25489ce5154d334d54a1af0bbdb3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cdd82d69c61284f7e24af14776d49c1dbe01f5942675cdeb73c264e66b05ee25"
   end
 
   depends_on "cmake" => :build
@@ -49,8 +49,8 @@ class Awscli < Formula
   end
 
   resource "flit-core" do
-    url "https:files.pythonhosted.orgpackagesc4e6c1ac50fe3eebb38a155155711e6e864e254ce4b6e17fe2429b4c4d5b9e80flit_core-3.9.0.tar.gz"
-    sha256 "72ad266176c4a3fcfab5f2930d76896059851240570ce9a98733b658cb786eba"
+    url "https:files.pythonhosted.orgpackagesd5ae09427bea9227a33ec834ed5461432752fd5d02b14f93dd68406c91684622flit_core-3.10.1.tar.gz"
+    sha256 "66e5b87874a0d6e39691f0e22f09306736b633548670ad3c09ec9db03c5662f7"
   end
 
   resource "jmespath" do
@@ -91,6 +91,11 @@ class Awscli < Formula
   resource "wcwidth" do
     url "https:files.pythonhosted.orgpackages6c6353559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598wcwidth-0.2.13.tar.gz"
     sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
+  end
+
+  resource "zipp" do
+    url "https:files.pythonhosted.orgpackages54bf5c0000c44ebc80123ecbdddba1f5dcd94a5ada602a9c225d84b5aaa55e86zipp-3.20.2.tar.gz"
+    sha256 "bc9eb26f4506fda01b81bcde0ca78103b6e62f991b381fec825435c836edbc29"
   end
 
   def python3

@@ -3,9 +3,9 @@ class Exiftool < Formula
   homepage "https://exiftool.org"
   # Ensure release is tagged production before submitting.
   # https://exiftool.org/history.html
-  url "https://cpan.metacpan.org/authors/id/E/EX/EXIFTOOL/Image-ExifTool-13.00.tar.gz"
-  mirror "https://exiftool.org/Image-ExifTool-13.00.tar.gz"
-  sha256 "4895788f34f834765f86be4a5ad5a32433f572d757160ecd7b612eaf5ed37e84"
+  url "https://cpan.metacpan.org/authors/id/E/EX/EXIFTOOL/Image-ExifTool-13.10.tar.gz"
+  mirror "https://exiftool.org/Image-ExifTool-13.10.tar.gz"
+  sha256 "d15bae18b6ea205869f3fc815cbc35af9022a24506bb540d8cb2e85b7795b600"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
 
   livecheck do
@@ -14,12 +14,12 @@ class Exiftool < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0dd93d1ee330d6e80652335324ecff3def7375576499029d9f45a50fb3674401"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0dd93d1ee330d6e80652335324ecff3def7375576499029d9f45a50fb3674401"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "243e83a5a3e0d0d626de64f16be6ffda298284d896c387d58de9a8bad446d3df"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c2ee4af7fbb303d71fc9f3efcf7632211569cd33a1380a29e7c192c7e05ae0f9"
-    sha256 cellar: :any_skip_relocation, ventura:       "383b2984c26a407ae0150135ab2554d7108e087446110d5f6a71115282076fe6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66575c9dc024fd821062acbbe4ef84c44da30a9f97d88e1bd2b439b76ce269b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29fd8dbeda720f5d00dc1bdc834a3649a76ac520129cfb175edc074e39de30fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "29fd8dbeda720f5d00dc1bdc834a3649a76ac520129cfb175edc074e39de30fe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "af264f92e9f7a49f0fe0fd2223c2bb515b3624b95adbe07f34d38d3df0842e58"
+    sha256 cellar: :any_skip_relocation, sonoma:        "154a40158762db56b0f8644e2afe265476191a3907450734b7abad6824384075"
+    sha256 cellar: :any_skip_relocation, ventura:       "28df6e34d8bf602c5facaadd5efe85d7ca8b67eb5c2b2a7ca58d619868e01a61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d55bfc592867a88920fdb6687a5d6b83c4b842a7a4f09d01490c7156641cb245"
   end
 
   uses_from_macos "perl"

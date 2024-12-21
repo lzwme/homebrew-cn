@@ -6,12 +6,13 @@ class Feroxbuster < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51c6011f5593b6dd2012fc7632e03443382dc34366b49fc197bd85c72ac84c14"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b289fbd75851dcf2c824f86931ff583a106797ed7c4aa092461227b9c574d9cb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2983e54b04f2de0b30938fcee493c5786dbadc4a6383191c8feb1433b0d96eaa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fda99a1eb698b711a85c1ca4ff35afc21e42d840c7dab87c5cbc73eb0a62acfc"
-    sha256 cellar: :any_skip_relocation, ventura:       "a95cc0009963be0131251e81639164187a31c869ae4f11c76f033045cc30a33f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c31b3b1589aa43597612d07fcb4c1c2386473f82dcd91ef6e64ebe05338209e3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf7ba7b09be136c65b9610abeb3917e70c781f5ca3f14ae302713f5a0b0a743a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c37f755e0d771161924c22ba8db0da37f83f83034075a0ba9270a9e9f04debb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b746842e75d6cc9bdb53e1f1b2d8f48ffa91b1acdda8149f83ec680b60f35ecc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3cb614702fcc971ff1ab5815cf9a137dbef994485b0006b66e74e63755376486"
+    sha256 cellar: :any_skip_relocation, ventura:       "64a1648df0882c5a32d4b25dfefe5c61e0963c98996ec27a6916c540555436c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be9cee6c81ad2baf75d4380012c5d4887c6f66a51a1f699e47208beb3e41f44f"
   end
 
   depends_on "pkgconf" => :build
@@ -25,6 +26,10 @@ class Feroxbuster < Formula
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
     system "cargo", "install", *std_cargo_args
+
+    bash_completion.install "shell_completionsferoxbuster.bash" => "feroxbuster"
+    fish_completion.install "shell_completionsferoxbuster.fish"
+    zsh_completion.install "shell_completions_feroxbuster"
   end
 
   test do

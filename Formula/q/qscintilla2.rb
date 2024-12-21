@@ -4,7 +4,7 @@ class Qscintilla2 < Formula
   url "https://www.riverbankcomputing.com/static/Downloads/QScintilla/2.14.1/QScintilla_src-2.14.1.tar.gz"
   sha256 "dfe13c6acc9d85dfcba76ccc8061e71a223957a6c02f3c343b30a9d43a4cdd4d"
   license "GPL-3.0-only"
-  revision 3
+  revision 4
 
   # The downloads page also lists pre-release versions, which use the same file
   # name format as stable versions. The only difference is that files for
@@ -17,23 +17,20 @@ class Qscintilla2 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sonoma:   "6fb256991b510ff55552bc805e7044d3545d51398c938d62038ba32e79f9f8a5"
-    sha256 cellar: :any,                 arm64_ventura:  "2e917a31f5e2041f0f410f6a28e7fd782a16b40610577decd1370a51affd3a6f"
-    sha256 cellar: :any,                 arm64_monterey: "17dd75682a7d9a0ffbce7264c4c057ebedcd6cf13285fda299e9aae1dca82514"
-    sha256 cellar: :any,                 sonoma:         "6ff12a8e9e5ca6dd65f70ab6932a03e73a2e234b7ac568485dff28d9f88c0112"
-    sha256 cellar: :any,                 ventura:        "4252af7063d8286071bdf75a414636009b4ffa86b9fc750092bf80025bc8b86a"
-    sha256 cellar: :any,                 monterey:       "9a0a71f39273141d7fce01ee4fa44bb447b81120605a6bcea671b20a482fb831"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "87c584ef6e5420e8ac1cdc3fa3dcf9d34d3e2482e4ae1b0bdf08f23682c2fa7a"
+    sha256 cellar: :any,                 arm64_sonoma:  "eef138891327e8f9a5577972ee0c442ca7f3cf64c768541271418c0e577fbfae"
+    sha256 cellar: :any,                 arm64_ventura: "19e9c2e210f487a2a54f800c56e0e7b06bfaddf9d5a68a6bc2b54782a4d0d902"
+    sha256 cellar: :any,                 sonoma:        "62385ab067cc1fef525c0732f0b29b5044a2af79557bc49606a288b182b59a87"
+    sha256 cellar: :any,                 ventura:       "8a875755a790c4d437e29e2f93d8257bc3feeb0e7e56d0ebc2227f532eec7608"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d578937c4531c8cf6af62e88838e12e2431f46b042737da78841414a5c2fa92"
   end
 
   depends_on "pyqt-builder" => :build
   depends_on "pyqt"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "qt"
 
   def python3
-    "python3.12"
+    "python3.13"
   end
 
   def install

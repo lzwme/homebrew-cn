@@ -1,38 +1,40 @@
 class Vtk < Formula
   desc "Toolkit for 3D computer graphics, image processing, and visualization"
   homepage "https:www.vtk.org"
-  url "https:www.vtk.orgfilesrelease9.3VTK-9.3.1.tar.gz"
-  sha256 "8354ec084ea0d2dc3d23dbe4243823c4bfc270382d0ce8d658939fd50061cab8"
+  url "https:www.vtk.orgfilesrelease9.4VTK-9.4.0.tar.gz"
+  sha256 "16f3ffd65fafd68fab469bcb091395bf5432617c7db27cbce86a737bf09ec5b0"
   license "BSD-3-Clause"
-  revision 3
   head "https:gitlab.kitware.comvtkvtk.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "3dda06f38e64d6b549b3068054d6cc7d19ccfed788c7f86e1028e2f93b1001a7"
-    sha256 cellar: :any,                 arm64_ventura: "cf85754a5ea8abee0e258ab81e48f4e0bf98ea26ba2fd92a6ff68dd3e8cc68f8"
-    sha256 cellar: :any,                 sonoma:        "d0d3d352ba956e896dbda342580f52ed8c8918be3863c2413c29e9cd85039fa3"
-    sha256 cellar: :any,                 ventura:       "d5dc30e44c0d365f0f05033b26be80ca59a4d996d86f2cd3da66f6d3805ff393"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac4e2a56372285ea1dcd4e1155f341bc8452840b766a55438ced21c89a22ec32"
+    sha256 cellar: :any,                 arm64_sonoma:  "0f9d3373402b31b95ed1d9d123963e4f7985c518944e09e25afe77f3423a1262"
+    sha256 cellar: :any,                 arm64_ventura: "2bbd3bda7f5a665d45abf5f4b1dea23c5d03be4c818125b1e7bc7bd52ca91ad2"
+    sha256 cellar: :any,                 sonoma:        "b6a508cf82790908badcc9ee3756e73771a1623da0bdeebc52c8316d19fe8d63"
+    sha256 cellar: :any,                 ventura:       "912ee33c76b45a4757c1c5f367bec06b0deb24cb0df30fd3753449038ad7697f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0c118823043799a91a8f6927337dc71dddb716a7ad954f5b435d3899d8af0e3"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "boost"
+  depends_on "cgns"
   depends_on "double-conversion"
   depends_on "eigen"
   depends_on "fontconfig"
-  depends_on "gl2ps"
-  depends_on "glew"
+  depends_on "freetype"
   depends_on "hdf5"
   depends_on "jpeg-turbo"
   depends_on "jsoncpp"
+  depends_on "libharu"
   depends_on "libogg"
   depends_on "libpng"
   depends_on "libtiff"
   depends_on "lz4"
   depends_on "netcdf"
+  depends_on "nlohmann-json"
+  depends_on "proj"
   depends_on "pugixml"
   depends_on "pyqt"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
   depends_on "qt"
   depends_on "sqlite"
   depends_on "theora"
@@ -45,9 +47,6 @@ class Vtk < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "libaec"
-    depends_on "zstd"
-
     on_arm do
       if DevelopmentTools.clang_build_version == 1316
         depends_on "llvm" => :build
@@ -61,11 +60,10 @@ class Vtk < Formula
   end
 
   on_linux do
-    depends_on "libaec"
+    depends_on "gl2ps"
     depends_on "libx11"
     depends_on "libxcursor"
     depends_on "mesa"
-    depends_on "mesa-glu"
   end
 
   def install
@@ -76,7 +74,7 @@ class Vtk < Formula
 
     ENV.llvm_clang if DevelopmentTools.clang_build_version == 1316 && Hardware::CPU.arm?
 
-    python = "python3.12"
+    python = "python3.13"
     qml_plugin_dir = lib"qmlVTK.#{version.major_minor}"
     vtkmodules_dir = prefixLanguage::Python.site_packages(python)"vtkmodules"
     rpaths = [rpath, rpath(source: qml_plugin_dir), rpath(source: vtkmodules_dir)]
@@ -93,18 +91,21 @@ class Vtk < Formula
       -DVTK_MODULE_ENABLE_VTK_InfovisBoost:STRING=YES
       -DVTK_MODULE_ENABLE_VTK_InfovisBoostGraphAlgorithms:STRING=YES
       -DVTK_MODULE_ENABLE_VTK_RenderingFreeTypeFontConfig:STRING=YES
+      -DVTK_MODULE_USE_EXTERNAL_VTK_cgns:BOOL=ON
       -DVTK_MODULE_USE_EXTERNAL_VTK_doubleconversion:BOOL=ON
       -DVTK_MODULE_USE_EXTERNAL_VTK_eigen:BOOL=ON
       -DVTK_MODULE_USE_EXTERNAL_VTK_expat:BOOL=ON
-      -DVTK_MODULE_USE_EXTERNAL_VTK_gl2ps:BOOL=ON
-      -DVTK_MODULE_USE_EXTERNAL_VTK_glew:BOOL=ON
+      -DVTK_MODULE_USE_EXTERNAL_VTK_freetype:BOOL=ON
       -DVTK_MODULE_USE_EXTERNAL_VTK_hdf5:BOOL=ON
       -DVTK_MODULE_USE_EXTERNAL_VTK_jpeg:BOOL=ON
       -DVTK_MODULE_USE_EXTERNAL_VTK_jsoncpp:BOOL=ON
+      -DVTK_MODULE_USE_EXTERNAL_VTK_libharu:BOOL=ON
+      -DVTK_MODULE_USE_EXTERNAL_VTK_libproj:BOOL=ON
       -DVTK_MODULE_USE_EXTERNAL_VTK_libxml2:BOOL=ON
       -DVTK_MODULE_USE_EXTERNAL_VTK_lz4:BOOL=ON
       -DVTK_MODULE_USE_EXTERNAL_VTK_lzma:BOOL=ON
       -DVTK_MODULE_USE_EXTERNAL_VTK_netcdf:BOOL=ON
+      -DVTK_MODULE_USE_EXTERNAL_VTK_nlohmannjson:BOOL=ON
       -DVTK_MODULE_USE_EXTERNAL_VTK_ogg:BOOL=ON
       -DVTK_MODULE_USE_EXTERNAL_VTK_png:BOOL=ON
       -DVTK_MODULE_USE_EXTERNAL_VTK_pugixml:BOOL=ON
@@ -117,15 +118,8 @@ class Vtk < Formula
       -DVTK_GROUP_ENABLE_Qt:STRING=YES
       -DVTK_QT_VERSION:STRING=6
     ]
-
-    # https:github.comHomebrewlinuxbrew-corepull21654#issuecomment-738549701
-    args << "-DOpenGL_GL_PREFERENCE=LEGACY"
-
-    # Help vtk find hdf5 1.14.4.x
-    # https:github.comHomebrewhomebrew-corepull170959#issuecomment-2295288143
-    args << "-DHDF5_INCLUDE_DIR=#{Formula["hdf5"].opt_include}"
-
-    args << "-DVTK_USE_COCOA:BOOL=ON" if OS.mac?
+    # External gl2ps causes failure linking to macOS OpenGL.framework
+    args << "-DVTK_MODULE_USE_EXTERNAL_VTK_gl2ps:BOOL=ON" unless OS.mac?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

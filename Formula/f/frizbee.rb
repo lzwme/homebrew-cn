@@ -1,28 +1,18 @@
 class Frizbee < Formula
   desc "Throw a tag at and it comes back with a checksum"
   homepage "https:github.comstacklokfrizbee"
+  url "https:github.comstacklokfrizbeearchiverefstagsv0.1.6.tar.gz"
+  sha256 "3aca6e86a27fd659f2c543c3516a50ca46d1e6b0a85df5363d90e792dbf90f2b"
   license "Apache-2.0"
-  revision 1
   head "https:github.comstacklokfrizbee.git", branch: "main"
 
-  stable do
-    url "https:github.comstacklokfrizbeearchiverefstagsv0.1.4.tar.gz"
-    sha256 "73f6d7e9e9b507425b8c58101e6eab933aad27372cc531ffd110e283a6ff2d3e"
-
-    # build patch to resolve commit correctly, remove in next release
-    patch do
-      url "https:github.comstacklokfrizbeecommitfbef552fec0c53133cec4a1ee2acc513599aa9d9.patch?full_index=1"
-      sha256 "285c1a41b25ecf7ffd818006a151f97a2b93104ecee9d64bb70cd2635d4f031a"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93f8f8aec9503ec9c4036b98ae3c7d356cabee8f2ceca7e761e66b8ef8a8f6d3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93f8f8aec9503ec9c4036b98ae3c7d356cabee8f2ceca7e761e66b8ef8a8f6d3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "93f8f8aec9503ec9c4036b98ae3c7d356cabee8f2ceca7e761e66b8ef8a8f6d3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8b1dbf210e7de8bc465f9c17444e69b2b56d5fb3951380bdf5a6581fdb8c298d"
-    sha256 cellar: :any_skip_relocation, ventura:       "8b1dbf210e7de8bc465f9c17444e69b2b56d5fb3951380bdf5a6581fdb8c298d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c4a6195d5c89e7a65119251e52459c2ef93184e2b6ff60145c1544bcb520456"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46c25d69ec52fab8fa9cbb339aae62c8d4072853e33d779c95cd5f9e146aa6ab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46c25d69ec52fab8fa9cbb339aae62c8d4072853e33d779c95cd5f9e146aa6ab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "46c25d69ec52fab8fa9cbb339aae62c8d4072853e33d779c95cd5f9e146aa6ab"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0a4435d62f083d5e20b0893ef8673cead2aaa27a5c707ddc988a153c9ca885a7"
+    sha256 cellar: :any_skip_relocation, ventura:       "0a4435d62f083d5e20b0893ef8673cead2aaa27a5c707ddc988a153c9ca885a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a36516da0357fc73d5d8398854ddd467d808f1d97b5ebf61b21620f38b6cdbe0"
   end
 
   depends_on "go" => :build

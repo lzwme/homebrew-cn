@@ -3,25 +3,25 @@ class Ipython < Formula
 
   desc "Interactive computing in Python"
   homepage "https:ipython.org"
-  url "https:files.pythonhosted.orgpackagesd88b710af065ab8ed05649afa5bd1e07401637c9ec9fb7cfda9eac7e91e9fbd4ipython-8.30.0.tar.gz"
-  sha256 "cb0a405a306d2995a5cbb9901894d240784a9f341394c6ba3f4fe8c6eb89ff6e"
+  url "https:files.pythonhosted.orgpackages01356f90fdddff7a08b7b715fccbd2427b5212c9525cd043d26fdc45bee0708dipython-8.31.0.tar.gz"
+  sha256 "b6a2274606bec6166405ff05e54932ed6e5cfecaca1fc05f2cacde7bb074d70b"
   license "BSD-3-Clause"
   head "https:github.comipythonipython.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "046fefc42ed38739185c2161ec22062a493c81a2c89262e8fc6aefb283ab1bbd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "046fefc42ed38739185c2161ec22062a493c81a2c89262e8fc6aefb283ab1bbd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "046fefc42ed38739185c2161ec22062a493c81a2c89262e8fc6aefb283ab1bbd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4cf0759dc806553000c949d4a5c9c59e798a0b411a14f44f31d59d1da5890e2b"
-    sha256 cellar: :any_skip_relocation, ventura:       "4cf0759dc806553000c949d4a5c9c59e798a0b411a14f44f31d59d1da5890e2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "046fefc42ed38739185c2161ec22062a493c81a2c89262e8fc6aefb283ab1bbd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "20fc452c3852c60dbe8158c9ec0002552dfe18248f05ac86948e2e559d5d0577"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20fc452c3852c60dbe8158c9ec0002552dfe18248f05ac86948e2e559d5d0577"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "20fc452c3852c60dbe8158c9ec0002552dfe18248f05ac86948e2e559d5d0577"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4fe04f865643025442463f70a73ade9988c0b786d9b045b65d11e28ea2290f57"
+    sha256 cellar: :any_skip_relocation, ventura:       "4fe04f865643025442463f70a73ade9988c0b786d9b045b65d11e28ea2290f57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20fc452c3852c60dbe8158c9ec0002552dfe18248f05ac86948e2e559d5d0577"
   end
 
   depends_on "python@3.13"
 
   resource "asttokens" do
-    url "https:files.pythonhosted.orgpackages451df03bcb60c4a3212e15f99a56085d93093a497718adf828d050b9d675da81asttokens-2.4.1.tar.gz"
-    sha256 "b03869718ba9a6eb027e134bfdf69f38a236d681c83c160d510768af11254ba0"
+    url "https:files.pythonhosted.orgpackages4ae782da0a03e7ba5141f05cce0d302e6eed121ae055e0456ca228bf693984bcasttokens-3.0.0.tar.gz"
+    sha256 "0dcd8baa8d62b0c1d118b399b2ddba3c4aff271d0d7a9e0d4c1681c79035bbc7"
   end
 
   resource "decorator" do
@@ -72,11 +72,6 @@ class Ipython < Formula
   resource "pygments" do
     url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
     sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
-  end
-
-  resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
   end
 
   resource "stack-data" do

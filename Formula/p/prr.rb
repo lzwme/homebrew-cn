@@ -1,21 +1,18 @@
 class Prr < Formula
   desc "Mailing list style code reviews for github"
   homepage "https:github.comdanobiprr"
-  url "https:github.comdanobiprrarchiverefstagsv0.18.0.tar.gz"
-  sha256 "3c32911854a33a1a7870382db0e759923315ec943b5d43dec42d751820473094"
+  url "https:github.comdanobiprrarchiverefstagsv0.19.0.tar.gz"
+  sha256 "76d101fefe42456d0c18a64e6f57b9d3a84baaecaf1e3a5e94b93657a6773c11"
   license "GPL-2.0-only"
-  revision 1
   head "https:github.comdanobiprr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "4a822cf091a1f6789490698744ac828c6d4f36a6421830e24c114f7b0c485916"
-    sha256 cellar: :any,                 arm64_sonoma:   "28f80c091dcaf14c6fe7733f95dadcd2d0bd2fa7b0d78f1ba848cfd6d64fda7b"
-    sha256 cellar: :any,                 arm64_ventura:  "a8944bd7c8638a6359224c2b3c0b0013a4886dbf9b8742604f6e7ea7d35255b9"
-    sha256 cellar: :any,                 arm64_monterey: "ffae88ab388c852d1b2b901a936d97907ea92716a602c335dc4a3972bba56751"
-    sha256 cellar: :any,                 sonoma:         "5e5aa701fddf38bf75dc86ab1cac71b9243397cc80b9d87cc30262367b690468"
-    sha256 cellar: :any,                 ventura:        "a74c399d838ade14f19e655f06a98e26f3a7d7ff9ee9944be51139ea194063fa"
-    sha256 cellar: :any,                 monterey:       "41edc115e3e5173dca78d6b87332a320c4b3362873a63727a523c858b44a6806"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b261dc29a087e6b2f8cb517e1f3fcc0f465fddf33cfb7ae5c958d23d7efcccc0"
+    sha256 cellar: :any,                 arm64_sequoia: "2d51ff33fe7be93b0e1c9d1ec9d5b86792d68c59cf1bd43fb61a8cdf88a4391b"
+    sha256 cellar: :any,                 arm64_sonoma:  "5a217d0b50c1169f3526faf7c04c8d871cb2795097234635de65aab5287d126f"
+    sha256 cellar: :any,                 arm64_ventura: "00fbe685b7669440fd8752c4622a125646196a35ac4fd6b13f5b289e5785b1e8"
+    sha256 cellar: :any,                 sonoma:        "7818bb0712e26930334fb9777ad7cd295092c3f7f3cbd77ffaf0ef0033940877"
+    sha256 cellar: :any,                 ventura:       "d2c4c34d50b30f461ae9ffd77515b750499fafe62b66e0efee1ea2d33a8c78ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "867d5a7dee57560d17126ff0892654a8a55e7a26036d17bfedbf0e5bdc1070fb"
   end
 
   depends_on "pkgconf" => :build

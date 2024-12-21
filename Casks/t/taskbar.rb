@@ -1,6 +1,6 @@
 cask "taskbar" do
-  version "1.2.5,2024,09"
-  sha256 "b372de00cfbfaebafdc7efd13d0d1ec25f01a1f296bdbe207f17f57e8e17d916"
+  version "1.2.6,2024,12"
+  sha256 "9090ea8e66f0f0a49b00717c869537675c3c5b523b5dce097071327fa69fa02c"
 
   url "https:lawand.iowp-contentuploads#{version.csv.second}#{version.csv.third}taskbar-#{version.csv.first}.zip"
   name "Taskbar"
@@ -24,8 +24,10 @@ cask "taskbar" do
   app "Taskbar.app"
 
   zap trash: [
+    "~LibraryCachescom.fpfxtknjju.wbgcdolfev",
     "~LibraryHTTPStoragescom.fpfxtknjju.wbgcdolfev",
     "~LibraryLaunchAgentscom.fpfxtknjju.wbgcdolfev.plist",
     "~LibraryPreferencescom.fpfxtknjju.wbgcdolfev.plist",
+    "~LibraryWebKitcom.fpfxtknjju.wbgcdolfev",
   ]
 end
