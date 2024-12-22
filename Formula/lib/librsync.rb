@@ -22,8 +22,10 @@ class Librsync < Formula
   depends_on "popt"
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
     man1.install "docrdiff.1"
     man3.install "doclibrsync.3"
   end

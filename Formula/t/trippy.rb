@@ -1,19 +1,18 @@
 class Trippy < Formula
   desc "Network diagnostic tool, inspired by mtr"
   homepage "https:trippy.cli.rs"
-  url "https:github.comfujiapple852trippyarchiverefstags0.12.0.tar.gz"
-  sha256 "4baf5e9f4d4490148ca739af6dbf5234c79dc5f8882690575ade29ce7f9b60e8"
+  url "https:github.comfujiapple852trippyarchiverefstags0.12.1.tar.gz"
+  sha256 "ae868123cba03977786f0dd74297f2e15e021d753684bd6e47554003f03a3d5b"
   license "Apache-2.0"
   head "https:github.comfujiapple852trippy.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b2586353d32528a86fa4e65ca973d4efc011268ed55f8727dd9aeb351b2436d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e8c6079e60a1223b43b989cdcf259f16a63acc1d3ccfe46c84545888b7b6965d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e8a42ab3890c214ea2797abfb4d09198b76beed5b489277eda88af06b30e18cc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2830e758a8ae1916eea92c9557863dcd7444f6ce9d66e63f3651d93c5daede9d"
-    sha256 cellar: :any_skip_relocation, ventura:       "e3a4b37d4baf5ef41e0f3de0294ce797b26709ffbd9a5a29eea35aea99f8c546"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c70229f253500c7478f10d9ed3ed20ecc62db0e4c2452010ba2635d892ef4e96"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad621cefa8595b31dec20b0638265041703a1e1904c0b62c777563ea07d265ee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3be9dc1e4f6aae077ff542e20edccad53c2a666da0415c2f9df1ed0cd927a758"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "454a7509ac48d2a6ad3e73cd36f54411577452222f453c0bbb0f31e25f1e2474"
+    sha256 cellar: :any_skip_relocation, sonoma:        "13b62cbb1c4c5aee1eebdce977cda78cc23b3c3ce51dbcb6d08bbfcec69c3852"
+    sha256 cellar: :any_skip_relocation, ventura:       "b3c7949a55372ebec3d1acc2abfc0365f3cbd68c997b269618782edf6883c14d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69dc123d2bb651b1744b11664248821940b43a226141a182909d4c2790ba99b0"
   end
 
   depends_on "rust" => :build

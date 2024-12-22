@@ -3,18 +3,18 @@ class Safety < Formula
 
   desc "Checks Python dependencies for known vulnerabilities and suggests remediations"
   homepage "https:safetycli.comproductsafety-cli"
-  url "https:files.pythonhosted.orgpackages44680144329bb69bea0e746e431c801627b7df7e9e48e82eaf150167eda69b4csafety-3.2.13.tar.gz"
-  sha256 "9328510c3286d67a788346d60df531b8bd2f35abbed3ac4dfaf8d119e6eec1ae"
+  url "https:files.pythonhosted.orgpackages3a781a3ccb6e48b30892ae5781e8239a6d446a755ef2956c7b14595f18fb4083safety-3.2.14.tar.gz"
+  sha256 "7a45d88b1903c5b7c370eaeb6ca131a52f147e0b8a0b302265f82824ef92adc7"
   license "MIT"
   head "https:github.compyupiosafety.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a26a5c939c56caadeb92f74c9f077b35faf7122f47b2b6fb0f861ae6d852e43b"
-    sha256 cellar: :any,                 arm64_sonoma:  "5f90cc78ce0a5fd23168e8f884f3bcc8a63bbd6ca009fa2ac11ac1fb0f2d8f94"
-    sha256 cellar: :any,                 arm64_ventura: "a60cedf4330258a12d41d36182c04f460382c427b1a5f36129de279322093c9d"
-    sha256 cellar: :any,                 sonoma:        "3877f45fb57f94fbb4041857ceb8d3e64b8a8780f9a33c89a14784e063d1d7d2"
-    sha256 cellar: :any,                 ventura:       "fd55e37802f9f55ecfbc4e5822fd7aa70d5172e839b842faa9d182ba6cbe8d21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46a44e9ac9e62b64ced3889ec4ff94345e881a72f08d194202c9c1ee6e0b59eb"
+    sha256 cellar: :any,                 arm64_sequoia: "f658b3bb7170363219328ea832775d62f8643f868279888e2796bd801ed6efad"
+    sha256 cellar: :any,                 arm64_sonoma:  "ea2ef4253f9d243feba283ae4931b80e64e5dd356f3b441d3f4d52ab6effa30b"
+    sha256 cellar: :any,                 arm64_ventura: "65f843dd0cf214c4fec4dbc909c829df5968cba031e56d0b7fe360beb508252f"
+    sha256 cellar: :any,                 sonoma:        "80575130a7a1b1cf0e7a4a6b040e0c071c72933bed74681883688783c94ca358"
+    sha256 cellar: :any,                 ventura:       "5ba1dc40c8751bebc691edcb4c752667be7f9b9452a71afc6110f3294676bdab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "856accd90c9ef6bd9cf55e4ab43d96018a587abe8106ffae16a3e45063f370e4"
   end
 
   depends_on "rust" => :build
@@ -28,8 +28,8 @@ class Safety < Formula
   end
 
   resource "authlib" do
-    url "https:files.pythonhosted.orgpackagesf37547dbab150ef6f9298e227a40c93c7fed5f3ffb67c9fb62cd49f66285e46eauthlib-1.3.2.tar.gz"
-    sha256 "4b16130117f9eb82aa6eec97f6dd4673c3f960ac0283ccdae2897ee4bc030ba2"
+    url "https:files.pythonhosted.orgpackages337d67f064784776afc59d6deda9f4b8e117843d7cda8ddf34bbdbbae39641caauthlib-1.4.0.tar.gz"
+    sha256 "1c1e6608b5ed3624aeeee136ca7f8c120d6f51f731aa152b153d54741840e1f2"
   end
 
   resource "charset-normalizer" do
@@ -48,8 +48,8 @@ class Safety < Formula
   end
 
   resource "filelock" do
-    url "https:files.pythonhosted.orgpackagesd571bb1326535231229dd69a9dd2e338f6f54b2d57bd88fc4a52285c0ab8a5f6filelock-3.12.4.tar.gz"
-    sha256 "2e6f249f1f3654291606e046b09f1fd5eac39b360664c27f5aad072012f8bcbd"
+    url "https:files.pythonhosted.orgpackages9ddb3ef5bb276dae18d6ec2124224403d1d67bccdbefc17af4cc8f553e341ab1filelock-3.16.1.tar.gz"
+    sha256 "c249fbfcd5db47e5e2d6d62198e565475ee65e4831e2561c8e313fa7eb961435"
   end
 
   resource "idna" do
@@ -73,8 +73,8 @@ class Safety < Formula
   end
 
   resource "marshmallow" do
-    url "https:files.pythonhosted.orgpackages6d3014d8609f65c8aeddddd3181c06d2c9582da6278f063b27c910bbf9903441marshmallow-3.23.1.tar.gz"
-    sha256 "3a8dfda6edd8dcdbf216c0ede1d1e78d230a6dc9c5a088f58c4083b974a0d468"
+    url "https:files.pythonhosted.orgpackagesac0f33b98679f185f5ce58620595b32d4cf8e2fa5fb56d41eb463826558265c6marshmallow-3.23.2.tar.gz"
+    sha256 "c448ac6455ca4d794773f00bae22c2f351d62d739929f761dce5eacb5c468d7f"
   end
 
   resource "mdurl" do
@@ -88,8 +88,8 @@ class Safety < Formula
   end
 
   resource "psutil" do
-    url "https:files.pythonhosted.orgpackages18c78c6872f7372eb6a6b2e4708b88419fb46b857f7a2e1892966b851cc79fc9psutil-6.0.0.tar.gz"
-    sha256 "8faae4f310b6d969fa26ca0545338b21f73c6b15db7c4a8d934a5482faa818f2"
+    url "https:files.pythonhosted.orgpackages1f5a07871137bb752428aa4b659f910b399ba6f291156bdea939be3e96cae7cbpsutil-6.1.1.tar.gz"
+    sha256 "cf8496728c18f2d0b45198f06895be52f36611711746b7f30c464b422b50e2f5"
   end
 
   resource "pydantic" do

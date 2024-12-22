@@ -21,9 +21,9 @@ class UrdfdomHeaders < Formula
   depends_on "pkgconf" => :test
 
   def install
-    ENV.cxx11
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -36,6 +36,7 @@ class UrdfdomHeaders < Formula
         return 0;
       }
     CPP
+
     system ENV.cxx, shell_output("pkg-config --cflags urdfdom_headers").chomp, "test.cpp", "-std=c++11", "-o", "test"
     system ".test"
   end

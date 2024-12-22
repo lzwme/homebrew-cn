@@ -20,23 +20,26 @@ class ConsoleBridge < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "pkgconf" => :test
 
   def install
-    ENV.cxx11
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
     (testpath"test.cpp").write <<~CPP
       #include <console_bridgeconsole.h>
+
       int main() {
         CONSOLE_BRIDGE_logDebug("Testing Log");
         return 0;
       }
     CPP
-    system ENV.cxx, "test.cpp", "-L#{lib}", "-lconsole_bridge", "-std=c++11",
-                    "-o", "test"
+
+    flags = shell_output("pkgconf --cflags --libs console_bridge").chomp.split
+    system ENV.cxx, "test.cpp", "-o", "test", *flags
     system ".test"
   end
 end

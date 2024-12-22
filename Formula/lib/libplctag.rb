@@ -24,8 +24,9 @@ class Libplctag < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -40,6 +41,7 @@ class Libplctag < Formula
         return 0;
       }
     C
+
     system ENV.cc, "test.c", "-L#{lib}", "-lplctag", "-o", "test"
     system ".test"
   end

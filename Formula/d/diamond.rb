@@ -19,8 +19,9 @@ class Diamond < Formula
   uses_from_macos "zlib"
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -44,6 +45,7 @@ class Diamond < Formula
       ffetesrsvaqagvqwrdlgslqapppgftpfsclslpsswdyrrppprpanfcifsrdg
       vspcXpgwsrspdlvirpprppkvlglqaXatapg
     EOS
+
     output = shell_output("#{bin}diamond makedb --in nr.faa -d nr 2>&1")
     assert_match "Database sequences  6\n  Database letters  572", output
   end

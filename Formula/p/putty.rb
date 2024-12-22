@@ -38,20 +38,19 @@ class Putty < Formula
   end
 
   test do
-    (testpath/"command.exp").write <<~EXPECT
-      #!/usr/bin/env expect
-      set timeout -1
-      spawn #{bin}/puttygen -t rsa -b 4096 -q -o test.key
-      expect -exact "Enter passphrase to save key: "
-      send -- "Homebrew\n"
-      expect -exact "\r
-      Re-enter passphrase to verify: "
-      send -- "Homebrew\n"
-      expect eof
-    EXPECT
-    chmod 0755, testpath/"command.exp"
+    require "expect"
+    require "pty"
 
-    system "./command.exp"
+    PTY.spawn(bin/"puttygen", "-t", "rsa", "-b", "4096", "-q", "-o", "test.key") do |r, w, _pid|
+      r.expect "Enter passphrase to save key: "
+      w.write "Homebrew\n"
+      r.expect "Re-enter passphrase to verify: "
+      w.write "Homebrew\n"
+      r.read
+    rescue Errno::EIO
+      # GNU/Linux raises EIO when read is done on closed pty
+    end
+
     assert_path_exists testpath/"test.key"
   end
 end

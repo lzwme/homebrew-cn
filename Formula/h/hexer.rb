@@ -23,7 +23,6 @@ class Hexer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d2555b996ecdfe5178d26c9b7279c882fbdbff1551b8f71b6d232338ccf2c74"
   end
 
-  uses_from_macos "expect" => :test
   uses_from_macos "ncurses"
 
   def install
@@ -31,15 +30,8 @@ class Hexer < Formula
   end
 
   test do
-    script = (testpath/"script.exp")
-    script.write <<~EOS
-      #!/usr/bin/expect -f
-      set timeout 10
-      spawn hexer
-      send -- ":q\n"
-      expect eof
-    EOS
-    script.chmod 0700
-    system "expect", "-f", "script.exp"
+    ENV["TERM"] = "xterm"
+    assert_match "00000000:  62 72 65 77", pipe_output("#{bin}/hexer test", "i62726577\e:wq\n")
+    assert_equal "brew", (testpath/"test").read
   end
 end

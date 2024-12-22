@@ -4,7 +4,7 @@ cask "font-noto-serif" do
 
   url "https:github.comnotofontslatin-greek-cyrillicreleasesdownloadNotoSerif-v#{version}NotoSerif-v#{version}.zip",
       verified: "github.comnotofonts"
-  name "Noto Sans"
+  name "Noto Serif"
   homepage "https:notofonts.github.io"
 
   livecheck do

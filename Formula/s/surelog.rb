@@ -4,17 +4,16 @@ class Surelog < Formula
   url "https:github.comchipsallianceSurelogarchiverefstagsv1.84.tar.gz"
   sha256 "ddcbc0d943ee52f2487b7a064c57a8239d525efd9a45b1f3e3e4a96a56cb3377"
   license "Apache-2.0"
+  revision 1
   head "https:github.comchipsallianceSurelog.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "5a7918b04d91dab87e2aa0ee10bc54e5a560288af6714db5abf6d30f3feab0fc"
-    sha256 cellar: :any,                 arm64_sonoma:   "85204e65ac92cea0739274b1836c7bae77eaf3005eb013ec20241dfe5500ba8d"
-    sha256 cellar: :any,                 arm64_ventura:  "2ff2bedf7480466f17c675bb0a34882222158d8b4d460b72bb4aa2082cffb8e4"
-    sha256 cellar: :any,                 arm64_monterey: "9325935c4d32f32009230864c7418d73ac42a373978f068751437914f898e72b"
-    sha256 cellar: :any,                 sonoma:         "2400e046712df69761721f69f70017ad1d4e9880ba91377589e792428e2de399"
-    sha256 cellar: :any,                 ventura:        "5310dfc346c2bff4520151aecf9c942b1908bbaff85a4e7c57221bdf71a0aaf1"
-    sha256 cellar: :any,                 monterey:       "f71d7d68cc8be8de38a47dfdde9a93163f78bd8b67babc5c6206cbf2b576f986"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5b576e3198b44eaefa5b52736ddbf80d8e314c40261f3d3cb60c096b069675c"
+    sha256 cellar: :any,                 arm64_sequoia: "9ee2c25ec18fd1d9dd4f7793b6ba916671a576d1e79ea3f59b0c0ecd6f405def"
+    sha256 cellar: :any,                 arm64_sonoma:  "8ec82893f6dae9ba5959bc4c7d7910afe640343ebd7ec40f66eae243c30815c2"
+    sha256 cellar: :any,                 arm64_ventura: "3e75f97f1b262e924733ef2a7a26a416e90f3b0cedb67341e0a0eadfcbdbd992"
+    sha256 cellar: :any,                 sonoma:        "e7bec2531c7d241da26665a6baa89d6e7731a4e64066def102328cdd6ff6a75a"
+    sha256 cellar: :any,                 ventura:       "284118733c63ad3344c973917b2b52ee91468f3d442851729995e27c5622736c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72570d5f28cac62d5bb5c5e72674a1e95b25cbb43b47fe57bbeb16d353cfe95b"
   end
 
   depends_on "antlr" => :build

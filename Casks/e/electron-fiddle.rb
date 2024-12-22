@@ -33,8 +33,12 @@ cask "electron-fiddle" do
   app "Electron Fiddle.app"
 
   zap trash: [
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.electron.fiddle.sfl*",
     "~LibraryApplication SupportElectron Fiddle",
     "~LibraryCachescom.electron.fiddle*",
+    "~LibraryCachesfiddle-core",
+    "~LibraryHTTPStoragescom.electron.fiddle",
     "~LibraryPreferencescom.electron.fiddle*.plist",
+    "~LibrarySaved Application Statecom.electron.fiddle.savedState",
   ]
 end

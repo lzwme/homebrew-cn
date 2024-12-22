@@ -27,35 +27,26 @@ class GraphqlCli < Formula
 
   depends_on "node"
 
-  uses_from_macos "expect" => :test
-
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
   end
 
   test do
-    (testpath"test.exp").write <<~EOS
-      #!usrbinenv expect -f
-      set timeout -1
-      spawn #{bin}graphql init
+    require "expect"
+    require "open3"
 
-      expect -exact "Select the best option for you"
-      send -- "1\r"
+    Open3.popen2(bin"graphql", "init") do |stdin, stdout, wait_thread|
+      stdout.expect "Select the best option for you"
+      stdin.write "1\n"
+      stdout.expect "? What is the name of the project?"
+      stdin.write "brew\n"
+      stdout.expect "? Choose a template to bootstrap"
+      stdin.write "1\n"
+      wait_thread.join
+    end
 
-      expect -exact "? What is the name of the project?"
-      send -- "brew\r"
-
-      expect -exact "? Choose a template to bootstrap"
-      send -- "1\r"
-
-      expect eof
-    EOS
-
-    system "expect", "-f", "test.exp"
-
-    assert_predicate testpath"brew", :exist?
-    assert_match "Graphback runtime template with Apollo Server and PostgreSQL",
-                 File.read(testpath"brewpackage.json")
+    assert_path_exists testpath"brew"
+    assert_match "Graphback runtime template with Apollo Server and PostgreSQL", (testpath"brewpackage.json").read
   end
 end

@@ -28,13 +28,15 @@ class Dromeaudio < Formula
   def install
     # install FindDromeAudio.cmake under sharecmakeModules
     inreplace "shareCMakeLists.txt", "${CMAKE_ROOT}", "#{share}cmake"
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
-    assert_predicate include"DromeAudio", :exist?
-    assert_predicate lib"libDromeAudio.a", :exist?
+    assert_path_exists include"DromeAudio"
+    assert_path_exists lib"libDromeAudio.a"
 
     # We don't test DromeAudioPlayer with an audio file because it only works
     # with certain audio devices and will fail on CI with this error:

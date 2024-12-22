@@ -20,10 +20,7 @@ class Kondo < Formula
   depends_on "rust" => :build
 
   def install
-    # The kondo command line program in in the kondo subfolder, so we navigate there.
-    cd "kondo" do
-      system "cargo", "install", *std_cargo_args
-    end
+    system "cargo", "install", *std_cargo_args(path: "kondo")
     generate_completions_from_executable(bin"kondo", "--completions")
   end
 

@@ -6,38 +6,33 @@ class Yank < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fc56e61d9f57aebadb6a403f42c29e5b5a1d402567848152a55f776d12833dbd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6dfea88ab352e6702b771f5adf9236b41f43550be51be762a6e522558037edb2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "286acb35142223b6e0274221c5a2527f022c79f51a8f5d81ef5261f08b651b99"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e5fd3a08d92bfeb4da493930b49df96b38ad624f815b3c3f27a661f5e35274ac"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "3ca61de9c598eb8c2abd4b78874ff40af76cc83474ff1d2261979800a42d62f7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "595614a25e5ae25463f2065e10aaecc46f52a335b55cb915bb854bd256a1c680"
-    sha256 cellar: :any_skip_relocation, ventura:        "6805196d030a823a9e95dde8afd62ec87b21b6602f1cbcd7e40239638da40ceb"
-    sha256 cellar: :any_skip_relocation, monterey:       "7e58ab275e612ff3d6072c1765d5a21fb151c904f56f3c238249be022c14e07a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d41ad7e32d8c75ca170b883b39cd3f5b34f800e9ea555d128a11b1a198f08c53"
-    sha256 cellar: :any_skip_relocation, catalina:       "a1c1f827b9e04877c3c9082c2f531a512be07ff8f0afb204aeea3fba013f74d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac3f578746c21ef166d41389433354a0435093a8648e224ad55c648925f1764c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0296212716734c1aa848c53307e2c7650c884be26a7b725fac7177df7d6c844"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "826894f992a241194151200adbbe897b0ec8ab6b9edea895196c1f3f73a0860d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d8a82c47af7166beacbec8c91d49ec5f9f4b2a4575782be062f89e39ebb58c19"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5ed9023f906bb2ce8b1c52f95ee427b8309b3582ab53972179abcc2311efb193"
+    sha256 cellar: :any_skip_relocation, ventura:       "958524a5a0349f5ef1f9fd704b057a64228c5f240df7635a25bf7d8b41c984a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15b6185fe4d08cba98dcabd29a327037a96c9872cadc0048bc60eb40ede9ba3b"
   end
 
-  uses_from_macos "expect" => :test
+  on_linux do
+    depends_on "xsel"
+  end
 
   def install
-    system "make", "install", "PREFIX=#{prefix}", "YANKCMD=pbcopy"
+    yankcmd = OS.mac? ? "pbcopy" : "xsel"
+    system "make", "install", "PREFIX=#{prefix}", "YANKCMD=#{yankcmd}"
   end
 
   test do
-    (testpath"test.exp").write <<~EXPECT
-      spawn sh
-      set timeout 1
-      send "echo key=value | #{bin}yank -d = | cat"
-      send "\r"
-      send "\016"
-      send "\r"
-      expect {
-            "value" { send "exit\r"; exit 0 }
-            timeout { send "exit\r"; exit 1 }
-      }
-    EXPECT
-    system "expect", "-f", "test.exp"
+    require "pty"
+    PTY.spawn("echo key=value | #{bin}yank -d = >#{testpath}result") do |r, w, _pid|
+      r.winsize = [80, 43]
+      w.write "\016"
+      sleep 1
+      w.write "\r"
+      sleep 1
+    end
+    assert_equal "value", (testpath"result").read
   end
 end

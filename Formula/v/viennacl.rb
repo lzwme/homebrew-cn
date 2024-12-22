@@ -29,12 +29,14 @@ class Viennacl < Formula
   end
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
-    libexec.install "#{buildpath}examplesbenchmarksdense_blas-bench-cpu" => "test"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
+    libexec.install "buildexamplesbenchmarksdense_blas-bench-cpu" => "test"
   end
 
   test do
-    system "#{opt_libexec}test"
+    system opt_libexec"test"
   end
 end

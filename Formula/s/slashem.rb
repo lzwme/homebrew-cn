@@ -35,7 +35,6 @@ class Slashem < Formula
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
-  uses_from_macos "expect" => :test
   uses_from_macos "ncurses"
 
   skip_clean "slashemdirsave"
@@ -72,17 +71,16 @@ class Slashem < Formula
   end
 
   test do
-    # Make sure that we don't modify the user's files
-    cp_r "#{Formula["slashem"].prefix}slashemdir", testpath"slashemdir"
-    # Write an expect script to respond to the game's prompts and quit
-    (testpath"slashem.exp").write <<~EXPECT
-      spawn -pty #{Formula["slashem"].prefix}slashemdirslashem -d #{testpath}slashemdir
-      expect "Shall"
-      send "q"
-      expect eof
-    EXPECT
+    cp_r "#{prefix}slashemdir", testpath"slashemdir"
 
-    system "expect", "slashem.exp"
+    require "expect"
+    require "pty"
+    ENV["TERM"] = "xterm"
+    PTY.spawn(prefix"slashemdirslashem", "-d", testpath"slashemdir") do |r, w, pid|
+      r.expect "Shall"
+      w.write "q"
+      Process.wait pid
+    end
   end
 end
 

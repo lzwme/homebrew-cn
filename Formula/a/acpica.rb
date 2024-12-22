@@ -1,8 +1,8 @@
 class Acpica < Formula
   desc "OS-independent implementation of the ACPI specification"
   homepage "https:github.comacpicaacpica"
-  url "https:downloadmirror.intel.com835329acpica-unix2-20240927.tar.gz"
-  sha256 "4471a9c92f2f68b84be0647c4376a176fcb68a6289d7679c1b3a430507f65d71"
+  url "https:github.comacpicaacpicareleasesdownloadR2024_12_12acpica-unix2-20241212.tar.gz"
+  sha256 "e87af02667dbf19416b3f97998cd1d3dbdb165ab189562c90935b3dafbfca964"
   license any_of: ["Intel-ACPI", "GPL-2.0-only", "BSD-3-Clause"]
   head "https:github.comacpicaacpica.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Acpica < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e365a4578890fecb9ca994a2a7bc162b01aeab1726450d3facfcd4838dd72f89"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4933bbf4367e5b2996e9090e367cf06381105b6881e7c66d0f387ddc62abb530"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d3c66ef224e8cd8aab50fa7a8d776a6d3315db285c73cc40efa30c7769d85199"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0d013f9272915ad9bc4521a7b1057a87a381a9858332f52cb19472067f80aee0"
-    sha256 cellar: :any_skip_relocation, ventura:       "aece8fec1058cc8c0046ef059bda98ec3301f08da7d2cc224631be2e079a65b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a885756d3404a92a82f1a077e5ee31b8acb9e511b62e474ab4d48ea94218f8c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ef5eb8ed5a1c5bfaf4ed61253cc84e246190739d535b7644185c49d69aa4da9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "226c303561af1a81d6224a28fb26072f34c6d24658fbcee62058180b8d0db7a4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b74ad3dfc593213cd4d0bd4e354878ce0a2ce96f0676c70f7b53cd5becc6e503"
+    sha256 cellar: :any_skip_relocation, sonoma:        "61fc69ca8a10856f5bf4f8e0313183087b877e9ef61bbea4b29852ac0cf3c6ad"
+    sha256 cellar: :any_skip_relocation, ventura:       "f22d9bc0d7f378aaea1e21d25e9a4e19a2930c0a19fbbb0cc3ef9adafdca5f17"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58ad276be00d30ee4a90f4cb5cd76c1bb28b03d58023fdb7cbf1a10919685731"
   end
 
   uses_from_macos "bison" => :build

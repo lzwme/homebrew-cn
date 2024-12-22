@@ -7,16 +7,16 @@ class FzfMake < Formula
   head "https:github.comkyu08fzf-make.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b6236a5447249cd8d8454b62c31ac7c679992b0d3e6688e6034f6d62f22de0b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb7e3e083719a0f90b341c17461d919ecfdb373901f26e9bc92070196bb6eb2d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "81f8d729d27e69dc69dbe5c4450ad328aa53755898c95c4b2a34dbe3c8ef7c15"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3d7e5db623836b9e91a543857659cdeb83ce3cd2ffc3b64bbadac316bdc7d275"
-    sha256 cellar: :any_skip_relocation, ventura:       "4d58e288fd3a4d670ac037dea41f275829511806f8a3176f41bdf71d825721e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a512c481f47d753959f477d6083d5c53f6e18bf0e9592a2200a6596fc207c4df"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fbb04287b237067a8da1bce449321266dc6b04fa1714c863eecf6e713b1f78c4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6071f181fa42bbdbcbc98528d48c5ecd9008f5015703e404ae2120330c60534e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f9945339416a0c3cf8831b40d4fadb19a7c82a80f02a404ca76a14a9add073c0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "14cda4b4ca2df8d0f51e54a94c019db4c00f583fdeae793593b73977cbbb987d"
+    sha256 cellar: :any_skip_relocation, ventura:       "9d149c90e8e3c0c04fcf4b8377dd7f5e6c372b5464e53978ea56999fee0a365c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a081564d16b5e8bf9769e72a241955c3c479178cd65cd7389bbefcd2bf6d0a1b"
   end
 
   depends_on "rust" => :build
-  depends_on "bat"
 
   def install
     system "cargo", "install", *std_cargo_args

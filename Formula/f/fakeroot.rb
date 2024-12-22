@@ -1,8 +1,8 @@
 class Fakeroot < Formula
   desc "Provide a fake root environment"
   homepage "https:tracker.debian.orgpkgfakeroot"
-  url "https:deb.debian.orgdebianpoolmainffakerootfakeroot_1.36.1.orig.tar.gz"
-  sha256 "ed828389ebe8fa7923acc9a03c72aac47a1db254c97aa1bfaffc2618fb532fdf"
+  url "https:deb.debian.orgdebianpoolmainffakerootfakeroot_1.36.2.orig.tar.gz"
+  sha256 "92ee28cd75ef17a178bb06d9b9f57fb54b068b6a72d4710cccfe8453701c734f"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Fakeroot < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d45786ae8a5517b67abe2bbbccd809410e3a6a8c3d33651847f4ff0494e9254e"
-    sha256 cellar: :any,                 arm64_sonoma:  "01819bdea2919163a04647e4ff347425bf8f5dfccd32cf20267dae2b7076ec03"
-    sha256 cellar: :any,                 arm64_ventura: "6964b20bb3e23f9df3b7cba50cfd1bb6da59b4ee59f7320e5c875aa6958bd2c3"
-    sha256 cellar: :any,                 sonoma:        "a88ab35aba724a5010c9b11880750e2797a38010b9892e9521d103c23cca70ea"
-    sha256 cellar: :any,                 ventura:       "2d666b8df97773192a311b40fdfb5f4d4ceeb70e3c9e530719b9af68c9b6731f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f644b71e12b5525bb7c6d680c990dd43d01454a09509912f829542d7c5f4fab"
+    sha256 cellar: :any,                 arm64_sequoia: "d996f780f22a39b0e3ea1caa2d36cf04dc5b911646d660005720eee664168de1"
+    sha256 cellar: :any,                 arm64_sonoma:  "26b1afc9d02feef810a11736a389f46b88d997a81cd2713f94c47ec84a5b0da8"
+    sha256 cellar: :any,                 arm64_ventura: "687a5410e011030703e4ee250067545f31cdb0509c1277bbbd038dda7266ec03"
+    sha256 cellar: :any,                 sonoma:        "921f6e353c931cd8364d8e656bf107d49845df1c9b618d24c3315e50b0fd671d"
+    sha256 cellar: :any,                 ventura:       "3c21764bf649e641c9f3a3296bb2b8e4a89d52d7752d9e2f8b5dcf479190eb9b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a52781c0a99b8debae48e4660bf4076d748271c3e5278901db4cdd4002a21c2f"
   end
 
   # Needed to apply patches below. Remove when no longer needed.

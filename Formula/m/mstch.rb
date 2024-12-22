@@ -24,8 +24,9 @@ class Mstch < Formula
   depends_on "boost"
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
     (lib"pkgconfigmstch.pc").write pc_file
   end

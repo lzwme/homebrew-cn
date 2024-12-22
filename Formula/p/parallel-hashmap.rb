@@ -22,8 +22,9 @@ class ParallelHashmap < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -49,6 +50,7 @@ class ParallelHashmap < Formula
           return 0;
       }
     CPP
+
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}"
     assert_equal "foo:a\nbar:b\nbaz:c\n", shell_output(".test")
   end

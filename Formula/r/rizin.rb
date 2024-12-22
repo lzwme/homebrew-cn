@@ -1,19 +1,18 @@
 class Rizin < Formula
   desc "UNIX-like reverse engineering framework and command-line toolset"
   homepage "https:rizin.re"
-  url "https:github.comrizinorgrizinreleasesdownloadv0.7.3rizin-src-v0.7.3.tar.xz"
-  sha256 "e0ed25ada6be42098d38da9ccef4befbd549e477e80f8dffa5ca1b8ff9fbda74"
+  url "https:github.comrizinorgrizinreleasesdownloadv0.7.4rizin-src-v0.7.4.tar.xz"
+  sha256 "f7118910e5dc843c38baa3e00b30ec019a1cdd5c132ba2bc16cf0c7497631201"
   license "LGPL-3.0-only"
   head "https:github.comrizinorgrizin.git", branch: "dev"
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "74364fdd3b8a5ac67ff32db93fe428f02a7b3b9da438781df82b49841a19f8d1"
-    sha256 arm64_sonoma:  "12675702b9239c67da1a3310062b93348b483848e135b6dd9c2c9dab880f733a"
-    sha256 arm64_ventura: "bb6092d27f061ff2a7893ec87006796db07cec3ecd0975520f51c0483772f98c"
-    sha256 sonoma:        "08c7e0da37059924db22e66ab9b8000dba160afaea2e5acc93034442b19afcc3"
-    sha256 ventura:       "12056a2ea39056dc54842eb5febf07b3fe54be67d139849fa827dfc28241592b"
-    sha256 x86_64_linux:  "755afa76deb4ba4fdd8c4f5e1e5aba43c951c5d30931c6570280fbd9b9023f5e"
+    sha256 arm64_sequoia: "c9854ebc1a48bd0c3ad95e6280bd64286eec7c9da4a786816d56966b49dddbc4"
+    sha256 arm64_sonoma:  "3c1915fd5bcd0e5c405c89345ef5b11bc1ff0439a26e014d197830b94d409307"
+    sha256 arm64_ventura: "36e6d99be00280b12b61e2a26867bced9c8d9b804207d660955f9935f9899191"
+    sha256 sonoma:        "f1f5b38a621a1a3a9da4027d564bf4fd7399a1a42b575d10c1f51b200fd9d1b9"
+    sha256 ventura:       "ecada780645e39bd0f85be6129b89e2e85b80d81fb1bad621bc476bb88829385"
+    sha256 x86_64_linux:  "a8cbce5bb6b3ae52b611b07247208d023ffcdde27ab6abb9cd432e084e064211"
   end
 
   depends_on "meson" => :build

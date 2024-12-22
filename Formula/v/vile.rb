@@ -22,30 +22,30 @@ class Vile < Formula
   end
 
   uses_from_macos "flex" => :build
-  uses_from_macos "expect" => :test
   uses_from_macos "libxcrypt"
   uses_from_macos "ncurses"
   uses_from_macos "perl"
 
   def install
-    system "./configure", *std_configure_args,
-                          "--disable-imake",
+    system "./configure", "--disable-imake",
                           "--enable-colored-menus",
                           "--with-ncurses",
                           "--without-x",
-                          "--with-screen=ncurses"
+                          "--with-screen=ncurses",
+                          *std_configure_args
     system "make", "install"
   end
 
   test do
+    require "pty"
     ENV["TERM"] = "xterm"
-    (testpath/"vile.exp").write <<~EXPECT
-      spawn #{bin}/vile
-      expect "unnamed"
-      send ":w new\r:q\r"
-      expect eof
-    EXPECT
-    system "expect", "-f", "vile.exp"
-    assert_predicate testpath/"new", :exist?
+    PTY.spawn(bin/"vile") do |r, w, _pid|
+      w.write "ibrew\e:w new\r:q\r"
+      r.read
+    rescue Errno::EIO
+      # GNU/Linux raises EIO when read is done on closed pty
+    end
+    assert_path_exists testpath/"new"
+    assert_equal "brew\n", (testpath/"new").read
   end
 end

@@ -1,8 +1,8 @@
 class Highs < Formula
   desc "Linear optimization software"
   homepage "https:www.maths.ed.ac.ukhallHiGHS"
-  url "https:github.comERGO-CodeHiGHSarchiverefstagsv1.8.1.tar.gz"
-  sha256 "a0d09371fadb56489497996b28433be1ef91a705e3811fcb1f50a107c7d427d1"
+  url "https:github.comERGO-CodeHiGHSarchiverefstagsv1.9.0.tar.gz"
+  sha256 "dff575df08d88583c109702c7c5c75ff6e51611e6eacca8b5b3fdfba8ecc2cb4"
   license "MIT"
 
   # Upstream appears to use GitHub releases to indicate that a version is
@@ -14,12 +14,12 @@ class Highs < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bf92b1998eb98dbd3532b56e8b1f7d13fe925314b5b66d6ca290adc787b5db3b"
-    sha256 cellar: :any,                 arm64_sonoma:  "5ab8e26221fb17315d355db2f7bcae5b79844229c09c301aa06e10f404f66553"
-    sha256 cellar: :any,                 arm64_ventura: "3dfa267c966d1d9a945bd645534a16fbb0ac939a15252a9edd2469749362ed4a"
-    sha256 cellar: :any,                 sonoma:        "baac77eb647c69bc1a7484b5b02783e8aca9f2be57960abffa41e9b69d603117"
-    sha256 cellar: :any,                 ventura:       "5efd53f5d7bf74b29a117816093b0bf39dc0533d8f6add87ee211f82b1d0b8ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1b90437c8df2531bd65b9375060810f8d66a1d86ae5b2889c57adb15c00c498"
+    sha256 cellar: :any,                 arm64_sequoia: "6c321f3658baa46d629748d62bac7c22d278c7d582ea79a0f1f3e3403894863a"
+    sha256 cellar: :any,                 arm64_sonoma:  "dc96ee1daca80330321339a3d03e5ef7105c6c1357f8c045a37417df595241f1"
+    sha256 cellar: :any,                 arm64_ventura: "1cb8bb55922993dcc9c157d5377aa632f8aed42417ff771801a8b499b32b5b43"
+    sha256 cellar: :any,                 sonoma:        "e2e05016dcf50ba1bc9d8323cf1ad9493da0f0cfb3a365eb04b40f7c4314c708"
+    sha256 cellar: :any,                 ventura:       "8c6b108a3ee9d87fe43d383c1118f7db9ccd9271fbdd3f21f27a78a46c5be55e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "143c28a7fce282c8bba26b7e3c238cb8323aa27f6581c017100ba3fe7f7959ed"
   end
 
   depends_on "cmake" => :build

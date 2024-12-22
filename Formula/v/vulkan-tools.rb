@@ -1,8 +1,8 @@
 class VulkanTools < Formula
   desc "Vulkan utilities and tools"
   homepage "https:github.comKhronosGroupVulkan-Tools"
-  url "https:github.comKhronosGroupVulkan-Toolsarchiverefstagsv1.4.303.tar.gz"
-  sha256 "958b646bbc5ac0a54908342df30da8c183690f579dce7f7130ac93d433d9d3a8"
+  url "https:github.comKhronosGroupVulkan-Toolsarchiverefstagsv1.4.304.tar.gz"
+  sha256 "fa17870f531affec06dfd5cab8121cb6e54777f779dab59fccafeb136fe43e19"
   license "Apache-2.0"
   head "https:github.comKhronosGroupVulkan-Tools.git", branch: "main"
 
@@ -12,12 +12,12 @@ class VulkanTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "872a558c1472790bbf9bc61178e5d19f7667ae66924742e297cc0e82b1e0de77"
-    sha256 cellar: :any, arm64_sonoma:  "973ea0a35ec96802320aed1f8917b1bbcef927c2ff128211dad8b7f6492654e4"
-    sha256 cellar: :any, arm64_ventura: "c0fb86994bc2e78c73fe77801e882ba476679fe4e1f5bb47de6205fc63728dbb"
-    sha256 cellar: :any, sonoma:        "bd7fe2d33f381f1580e63c2bb4de15a792d24ba8a46ad2c6792faa4a4e1cc972"
-    sha256 cellar: :any, ventura:       "557f80503f2089d62eb5fa2c72922a094b587737f1e8fd29517168a4a1cbf363"
-    sha256               x86_64_linux:  "08104be509c17e7f951a2c9adc4c7c5d037f98389b2fca59ca7dc4188e8db93f"
+    sha256 cellar: :any, arm64_sequoia: "00209f402d6a016da15c9f85610fcc37527992a134662c85f5215e7c883783c9"
+    sha256 cellar: :any, arm64_sonoma:  "c60ec0981eee8817b18e516806be7df430252cd75a28854de9f708a04bf260a5"
+    sha256 cellar: :any, arm64_ventura: "481a9305ecf5cabf84db42bdc75f1f28d897b7c852b019fd0ac730d95ab980db"
+    sha256 cellar: :any, sonoma:        "7ba08a4994c11775a71f20f6a8aeb909b22332f09714c1d4e7e9eef64bd44bad"
+    sha256 cellar: :any, ventura:       "6e245b47c855b1528e9972290173c9a23974fc49b415ea7e8c0585b022a29498"
+    sha256               x86_64_linux:  "a0a143db6502b936a5b1bfbcefe272a167dd221a928597697badd73baabf7a47"
   end
 
   depends_on "cmake" => :build
@@ -48,8 +48,6 @@ class VulkanTools < Formula
                 "${MOLTENVK_DIR}MoltenVKicdMoltenVK_icd.json",
                 "${MOLTENVK_DIR}sharevulkanicd.dMoltenVK_icd.json"
       inreplace buildpath.glob("*macOS*CMakeLists.txt") do |s|
-        s.gsub! "${MOLTENVK_DIR}MoltenVKinclude",
-                "${MOLTENVK_DIR}include"
         s.gsub! "${MOLTENVK_DIR}PackageReleaseMoltenVKdynamicdylibmacOSlibMoltenVK.dylib",
                 "${MOLTENVK_DIR}liblibMoltenVK.dylib"
       end

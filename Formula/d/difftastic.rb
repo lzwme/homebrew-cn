@@ -1,17 +1,17 @@
 class Difftastic < Formula
   desc "Diff that understands syntax"
   homepage "https:github.comWilfreddifftastic"
-  url "https:github.comWilfreddifftasticarchiverefstags0.61.0.tar.gz"
-  sha256 "8e85001e32f1fe7b2c6d164f3a654cb589c6e48b6350421df27a56919da7a185"
+  url "https:github.comWilfreddifftasticarchiverefstags0.62.0.tar.gz"
+  sha256 "ef69a23c6e3b9697d84ea5be158e8cb6d7482f49fc91cf4f9c7416bd48301260"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2b7f3f27a64c660bb67144a436ba14260dcb1e8971cfe0f81f395f1d864916c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f25870db5ae08c753c5f08f41ee7d68afadbc1632bdaaeefbd08832af7e0cd1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "777bd7bf276467e41840c1549b792ff80abb656fc98724d133d44d0bda7eaedd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f992243103e51e8c0d6214594a18b33b5ade70dc3814cd2581b57ad588dfe6c0"
-    sha256 cellar: :any_skip_relocation, ventura:       "e21c8dff05fde08d4f80cb2434cf9f9f5e1c86d56311d7ed4dfe6fa6d47c54e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5be52d55835ae0a9309e486d1a646dc1f2d8bf0d5e6e6757cc2891d9a961b15"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d96104e5f2273ad8eecfaa925654deb484cb91ef3ce4a45822b9682ca503dc6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "459d4b9a107b05f5061d08211df5c70fe80ea9691b2a47d8dd07f0f68bfe6920"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7efdc69371102eecb52adbe6a37d52e8dbcfe8a198f06f499b8f0fae3838ca66"
+    sha256 cellar: :any_skip_relocation, sonoma:        "838656dcc64c0545adcf44d781e8f6223c783dfd414fe498725d2e501a0135b3"
+    sha256 cellar: :any_skip_relocation, ventura:       "f617037ecc7099347323b2fffa87505664c6b84f07ebcd9bcc3b148f2ee72935"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e32986d6d64e1c25f3a97c62c24fd1ea83c35c83a69f19ceb1855c41a4f6d162"
   end
 
   depends_on "rust" => :build

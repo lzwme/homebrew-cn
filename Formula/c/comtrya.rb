@@ -7,18 +7,21 @@ class Comtrya < Formula
   head "https:github.comcomtryacomtrya.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56bcd6407ac6f14a3ba79414c0651e52a2e262ce16b1148c70abc2ac1a121ead"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6686fa03d6d26a52beb6db4aa60d1dc51dfe34fda8e490d65c0ed96ee1adf883"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "eaed784b320caf01dbf1130b956a34d5bf75d93c09555d9d5c3cdc799de13cad"
-    sha256 cellar: :any_skip_relocation, sonoma:        "846c88f71d195eb80fe7a33024cd985bcd023455a6d2e52582e66b6a40613adc"
-    sha256 cellar: :any_skip_relocation, ventura:       "ca956905d382263bc9ce55ddcda6f57612565322d33aa918621fe24e744f565e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "635873d62afde5a0e0e100273ec87da7d4d6bc3ee74f59c894bf7e8d346b3b77"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "277b41a4edbdb8560e9e848208305443cc65a03d837d5bd30e836ec7c7b862ea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f75d9f9221aa7573389d06e57e044155599db6d6f0c66a053b60e98df934725e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "311fa6380c3ad9494d0607f359e6f589d9cf2f2b84f0e882356063112461bf58"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c4b1e2c8aee68dddf6cb31d78415a3982c0d237a0f58cca70d21c76450b86c2e"
+    sha256 cellar: :any_skip_relocation, ventura:       "8f67df8513e07fa442e6dc51a740954bd4f2c6536b668731a4107aa082f575d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad90d6addf53781eea15f10bfbb08fd0e7c24350bcdf135124b945985093d606"
   end
 
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args(path: ".app")
+    system "cargo", "install", *std_cargo_args(path: "app")
+
+    generate_completions_from_executable(bin"comtrya", "gen-completions")
   end
 
   test do

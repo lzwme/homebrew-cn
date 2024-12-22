@@ -13,8 +13,9 @@ class Termcolor < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -28,6 +29,7 @@ class Termcolor < Formula
         return 0;
       }
     CPP
+
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", "-I#{include}"
     assert_match "Hello Colorful World", shell_output(".test")
   end

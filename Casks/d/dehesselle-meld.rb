@@ -14,6 +14,7 @@ cask "dehesselle-meld" do
     url "https:gitlab.comdehessellemeld_macos.git"
   end
 
+  conflicts_with cask: "meld"
   depends_on macos: ">= :high_sierra"
 
   app "Meld.app"

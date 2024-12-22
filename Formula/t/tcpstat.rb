@@ -25,7 +25,6 @@ class Tcpstat < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "036527a4c4492a1ca44c9b7c29ab1437108fc2c57105ade2f98fa8cf43a4e839"
   end
 
-  uses_from_macos "expect" => :test
   uses_from_macos "ncurses"
 
   def install
@@ -34,13 +33,6 @@ class Tcpstat < Formula
   end
 
   test do
-    (testpath"script.exp").write <<~EXPECT
-      set timeout 30
-      spawn "#{bin}tcpstat"
-      send -- "q"
-      expect eof
-    EXPECT
-
-    system "expect", "-f", "script.exp"
+    assert_match "Resolving", pipe_output(bin"tcpstat", "q")
   end
 end
