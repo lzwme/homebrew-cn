@@ -21,8 +21,6 @@ class Percol < Formula
 
   depends_on "python@3.13"
 
-  uses_from_macos "expect" => :test
-
   resource "cmigemo" do
     url "https:files.pythonhosted.orgpackages2fe4374df50b655e36139334046f898469bf5e2d7600e1e638f29baf05b14b72cmigemo-0.1.6.tar.gz"
     sha256 "7313aa3007f67600b066e04a4805e444563d151341deb330135b4dcdf6444626"
@@ -38,13 +36,24 @@ class Percol < Formula
   end
 
   test do
-    (testpath"textfile").write <<~EOS
-      Homebrew, the missing package manager for macOS.
-    EOS
-    (testpath"expect-script").write <<~EOS
-      spawn #{bin}percol --query=Homebrew textfile
-      expect "QUERY> Homebrew"
-    EOS
-    assert_match "Homebrew", shell_output("expect -f expect-script")
+    expected = "Homebrew, the missing package manager for macOS."
+    (testpath"textfile").write <<~TEXT
+      Unrelated line
+      #{expected}
+      Another unrelated line
+    TEXT
+
+    require "pty"
+    PTY.spawn("#{bin}percol --query=Homebrew textfile > result") do |r, w, pid|
+      w.write "\n"
+      r.read
+    rescue Errno::EIO
+      # GNULinux raises EIO when read is done on closed pty
+    ensure
+      r.close
+      w.close
+      Process.wait(pid)
+    end
+    assert_equal expected, (testpath"result").read.chomp
   end
 end

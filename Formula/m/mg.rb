@@ -19,7 +19,6 @@ class Mg < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "df7547e37e627c0504896e045d8c8df6adc3ea3dbdade674b1b964fcf333397f"
   end
 
-  uses_from_macos "expect" => :test
   uses_from_macos "ncurses"
 
   def install
@@ -30,14 +29,18 @@ class Mg < Formula
   end
 
   test do
-    (testpath"command.exp").write <<~EXPECT
-      set timeout -1
-      spawn #{bin}mg
-      match_max 100000
-      send -- "\u0018\u0003"
-      expect eof
-    EXPECT
-
-    system "expect", "-f", "command.exp"
+    require "pty"
+    PTY.spawn({ "TERM" => "xterm" }, bin"mg", "test") do |r, w, pid|
+      sleep 1
+      w.write "brew\n\u0018\u0003y"
+      r.read
+    rescue Errno::EIO
+      # GNULinux raises EIO when read is done on closed pty
+    ensure
+      r.close
+      w.close
+      Process.wait(pid)
+    end
+    assert_equal "brew\n", (testpath"test").read
   end
 end

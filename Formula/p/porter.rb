@@ -1,19 +1,18 @@
 class Porter < Formula
   desc "App artifacts, tools, configs, and logic packaged as distributable installer"
   homepage "https:porter.sh"
-  url "https:github.comgetporterporterarchiverefstagsv1.2.0.tar.gz"
-  sha256 "429fd43ccca8881b48d0adb9462279da1bec6a2b05c289cd838351ebfd6424b0"
+  url "https:github.comgetporterporterarchiverefstagsv1.2.1.tar.gz"
+  sha256 "927c88d7342439594b4f416f6d18d116afd2418bc48876efedeb1cc8e4716fda"
   license "Apache-2.0"
   head "https:github.comgetporterporter.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "31afcec22d4dd9f5fd1e659aa434e114cd7faad54eb78706d77437d8bf678497"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "31afcec22d4dd9f5fd1e659aa434e114cd7faad54eb78706d77437d8bf678497"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "31afcec22d4dd9f5fd1e659aa434e114cd7faad54eb78706d77437d8bf678497"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1ad4eeec835a2fd33908de7b1d103f8a85651b53acb890d70795cac58a16ffec"
-    sha256 cellar: :any_skip_relocation, ventura:       "1ad4eeec835a2fd33908de7b1d103f8a85651b53acb890d70795cac58a16ffec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "524afbfbbaaf9936335ccf8ccfb290eaa181f415eacf550c23f4d6195b345da2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1bbb8d0fec75d619cb3157967dc5673647c69e2e2abddb4f6ce311ef12bbabfc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1bbb8d0fec75d619cb3157967dc5673647c69e2e2abddb4f6ce311ef12bbabfc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1bbb8d0fec75d619cb3157967dc5673647c69e2e2abddb4f6ce311ef12bbabfc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f58637b322064fd390d0832cacc06c14eaad6c6d630b352344bd44bd43067f1e"
+    sha256 cellar: :any_skip_relocation, ventura:       "f58637b322064fd390d0832cacc06c14eaad6c6d630b352344bd44bd43067f1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01040892418ef902c033e9d4504661445774151d63e6f91417ba2a9c0cf4897d"
   end
 
   depends_on "go" => :build

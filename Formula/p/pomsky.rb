@@ -1,26 +1,29 @@
 class Pomsky < Formula
   desc "Regular expression language"
   homepage "https:pomsky-lang.org"
-  url "https:github.comrulex-rspomskyarchiverefstagsv0.11.tar.gz"
+  url "https:github.compomsky-langpomskyarchiverefstagsv0.11.tar.gz"
   sha256 "602cf73d7f7343b8c59ae82973635f5f62f26e2fe341fa990fca5fe504736384"
   license any_of: ["Apache-2.0", "MIT"]
-  head "https:github.comrulex-rspomsky.git", branch: "main"
+  head "https:github.compomsky-langpomsky.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3ac800ce5e8c8733f1196cac85cc75cfe82cd1427d0b8349affeb3a03153b321"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "01842f19977a4477d2c0883fe93afd2f12b9ea76fcb11125ce90607799c448cf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6c0bfe04867190d21ec09bd8ba714eb24ebd1c17cea13e6a36d7b048b5d693d4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ac38361c357ac818f40046e80d9c1d40bbfc46d58338bd42d703ce0268a8dd5f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1d179a2613cb6b3992b92faf7a8c5c30afd39b5a46057464c1fd1718095c38db"
-    sha256 cellar: :any_skip_relocation, ventura:        "5d6bf119921ada1fcf6ebcc77d0ccc083333f87dfaf86d9acd9b447392085a24"
-    sha256 cellar: :any_skip_relocation, monterey:       "d1ba43175ec2204522560eb8deaf5d6ee460ecbca9bdea22331924e92fd43def"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "67ac6ce4cfcedd9f918924fc199a8d4fff46017eb0a465d995cb1fa55f53deff"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e2c2f94091ab38f06f95ddca0c90df7cb9c7f4fb16e78518b365756f68d04d8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f191a0eb866fe3c9a43e6af5ffc963c5a08ba72ea49dd93eabf5ced8c960081"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "41595db77e38123a28d0976497c6ac257214fed22254755e54b89cb5dee7d127"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b7072d58cef2e775feb2cfd3c2f9da2e8b8f5ae656ff530b8bc3c8aaffd048fc"
+    sha256 cellar: :any_skip_relocation, ventura:       "6079d8a1dfc89585ad17b5adeb197c38f995fb0db087fd341d0aa1320f090eaf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b045ede5c8563463d1afc5058db6721ea82017350d4faa86394502fb756d286"
   end
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args(path: "pomsky-bin")
+
+    bash_completion.install "completionspomsky.bash" => "pomsky"
+    fish_completion.install "completionspomsky.fish"
+    zsh_completion.install "completionspomsky.zsh" => "_pomsky"
   end
 
   test do

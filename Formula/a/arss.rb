@@ -27,10 +27,14 @@ class Arss < Formula
   depends_on "fftw"
 
   def install
-    cd "src" do
-      system "cmake", ".", *std_cmake_args
-      system "make", "install"
-    end
+    # Work around failure from GCC 10+ using default of `-fno-common`
+    # multiple definition of `LOGBASE'; CMakeFiles/arss.dir/arss.o:(.bss+0x18): first defined here
+    # multiple definition of `pi'; CMakeFiles/arss.dir/arss.o:(.bss+0x20): first defined here
+    ENV.append_to_cflags "-fcommon" if OS.linux?
+
+    system "cmake", "-S", "src", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    bin.install "build/arss"
   end
 
   test do

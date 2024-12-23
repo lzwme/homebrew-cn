@@ -23,8 +23,9 @@ class PamReattach < Formula
   depends_on :macos
 
   def install
-    system "cmake", ".", *std_cmake_args, "-DENABLE_CLI=ON"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", "-DENABLE_CLI=ON", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

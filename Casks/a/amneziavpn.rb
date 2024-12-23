@@ -21,7 +21,10 @@ cask "amneziavpn" do
               "AmneziaVPN",
               "AmneziaVPN-service",
             ],
-            delete: "ApplicationsAmneziaVPN.app"
+            delete: [
+              "ApplicationsAmneziaVPN.app",
+              "LibraryLaunchDaemonsAmneziaVPN.plist",
+            ]
 
   zap trash: [
     "~LibraryCachesAmneziaVPN.ORG",

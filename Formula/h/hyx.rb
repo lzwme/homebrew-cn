@@ -21,16 +21,24 @@ class Hyx < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "caa4542a609e244b3d83ca4e45e3fb9a71d3fa77e8ba0346803b24f63cc205bf"
   end
 
-  uses_from_macos "expect" => :test
-
   def install
     system "make"
     bin.install "hyx"
   end
 
   test do
-    assert_match(/window|0000/,
-      pipe_output("env TERM=tty expect -",
-                  "spawn #{bin}/hyx;send \"q\";expect eof"))
+    require "pty"
+    PTY.spawn(bin/"hyx", "test") do |r, w, pid|
+      r.winsize = [80, 43]
+      w.write "62726577:wq\n"
+      r.read
+    rescue Errno::EIO
+      # GNU/Linux raises EIO when read is done on closed pty
+    ensure
+      r.close
+      w.close
+      Process.wait(pid)
+    end
+    assert_equal "brew", (testpath/"test").read
   end
 end

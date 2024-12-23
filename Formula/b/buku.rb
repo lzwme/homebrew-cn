@@ -22,7 +22,6 @@ class Buku < Formula
   depends_on "cryptography"
   depends_on "python@3.13"
 
-  uses_from_macos "expect" => :test
   uses_from_macos "libffi"
 
   resource "arrow" do
@@ -186,28 +185,45 @@ class Buku < Formula
     assert_match "Index 1: updated", shell_output("#{bin}buku --nostdin --nc --update")
 
     # Test crypto functionality
-    (testpath"crypto-test").write <<~SHELL
+    require "expect"
+    require "pty"
+    timeout = 5
+    PTY.spawn(bin"buku", "--lock") do |r, w, pid|
       # Lock bookmark database
-      spawn #{bin}buku --lock
-      expect "Password: "
-      send "password\r"
-      expect "Password: "
-      send "password\r"
-      expect {
-          -re ".*ERROR.*" { exit 1 }
-          "File encrypted"
-      }
-
+      refute_nil r.expect("Password: ", timeout), "Expected password input"
+      w.write "password\r"
+      refute_nil r.expect("Password: ", timeout), "Expected password confirmation input"
+      w.write "password\r"
+      output = ""
+      begin
+        r.each { |line| output += line }
+      rescue Errno::EIO
+        # GNULinux raises EIO when read is done on closed pty
+      end
+      refute_match "ERROR", output
+      assert_match "File encrypted", output
+    ensure
+      r.close
+      w.close
+      Process.wait pid
+    end
+    PTY.spawn(bin"buku", "--unlock") do |r, w, pid|
       # Unlock bookmark database
-      spawn #{bin}buku --unlock
-      expect "Password: "
-      send "password\r"
-      expect {
-          -re ".*ERROR.*" { exit 1 }
-          "File decrypted"
-      }
-    SHELL
-    system "expect", "-f", "crypto-test"
+      refute_nil r.expect("Password: ", timeout), "Expected password input"
+      w.write "password\r"
+      output = ""
+      begin
+        r.each { |line| output += line }
+      rescue Errno::EIO
+        # GNULinux raises EIO when read is done on closed pty
+      end
+      refute_match "ERROR", output
+      assert_match "File decrypted", output
+    ensure
+      r.close
+      w.close
+      Process.wait pid
+    end
 
     # Test database content and search
     result = shell_output("#{bin}buku --np --sany Homebrew")

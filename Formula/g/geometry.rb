@@ -11,7 +11,6 @@ class Geometry < Formula
   end
 
   depends_on "zsh-async"
-  uses_from_macos "expect" => :test
   uses_from_macos "zsh" => :test
 
   def install
@@ -27,15 +26,12 @@ class Geometry < Formula
 
   test do
     (testpath".zshrc").write "source #{opt_pkgshare}geometry.zsh"
-    (testpath"prompt.exp").write <<~EOS
-      set timeout 1
-      spawn zsh
-      expect {
-        "▲" { exit 0 }
-        default { exit 1 }
-      }
-    EOS
 
-    system "expect", "-f", "prompt.exp"
+    require "expect"
+    require "pty"
+    PTY.spawn("zsh") do |r, w, _pid|
+      refute_nil r.expect("▲", 1), "Zsh prompt missing ▲"
+      w.write "exit\n"
+    end
   end
 end

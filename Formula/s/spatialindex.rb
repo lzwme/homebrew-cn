@@ -1,8 +1,8 @@
 class Spatialindex < Formula
   desc "General framework for developing spatial indices"
   homepage "https:libspatialindex.org"
-  url "https:github.comlibspatialindexlibspatialindexreleasesdownload2.0.0spatialindex-src-2.0.0.tar.bz2"
-  sha256 "949e3fdcad406a63075811ab1b11afcc4afddc035fbc69a3acfc8b655b82e9a5"
+  url "https:github.comlibspatialindexlibspatialindexreleasesdownload2.1.0spatialindex-src-2.1.0.tar.bz2"
+  sha256 "c59932395e98896038d59199f2e2453595df6d730ffbe09d69df2a661bcb619b"
   license "MIT"
 
   livecheck do
@@ -11,14 +11,12 @@ class Spatialindex < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "015d8d895f7d70c463c51cc1edbe5947312bba8c02520ed7038847bd72029802"
-    sha256 cellar: :any,                 arm64_sonoma:   "d4d8356031dbd364d52f7084eda53904504adb4c2d66cd271eb59724c68c54bb"
-    sha256 cellar: :any,                 arm64_ventura:  "18cf32a34ab1ba0b81c809ddcdaee91467b0221cd0175db1fdf859f8f6be237f"
-    sha256 cellar: :any,                 arm64_monterey: "45516ebe96f28fd4cc70ee529d7e008b897e4e277aaff5ee7407635134089bd7"
-    sha256 cellar: :any,                 sonoma:         "6b452f456423420445266dcec2c67a8ff3d342fc18bce4c280af2148054d4cfe"
-    sha256 cellar: :any,                 ventura:        "37c67e12247424a37c681c930ddf5a130fb7f28165c2c10536975dcc7c1c7f98"
-    sha256 cellar: :any,                 monterey:       "0cefd42c848e69c6763d45a4eded4b9309ed01a752f284a370d93596e3bc0109"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb8f43583a9d8c86dcabbe2d332e325c9bf1603ffba4f3344239e23d86b8c8ca"
+    sha256 cellar: :any,                 arm64_sequoia: "2a84ec0d1a739824971183632c46cd8e1a6e0c8584e00d4ad1d9460d712ee481"
+    sha256 cellar: :any,                 arm64_sonoma:  "071b7e50fbe7ac47aa578e69edc53c87de74808c8287aa937bdaa50de0e3fa97"
+    sha256 cellar: :any,                 arm64_ventura: "ccdbb7d96b49d3a30ad83530034142629350a725e64e1cba2e260b41c7ef15d0"
+    sha256 cellar: :any,                 sonoma:        "ffd3cfa50eb1ed66c896081d61ce335c968c1f432a95770ffc80233f41ab0571"
+    sha256 cellar: :any,                 ventura:       "117276faf402a1afed33a420fc9e59f66434612f4f735e307cc13e3d45669f7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "359128f10b75e3ef834f3fbc988856b763caddb96bc006302cf2e6d2a9fb2a99"
   end
 
   depends_on "cmake" => :build

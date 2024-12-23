@@ -5,14 +5,14 @@ cask "signal@beta" do
   sha256 arm:   "1bac52b84282a6725b1aba30a2f2de090e09a9fd6c3daca51b0ced60508e8f77",
          intel: "91b5a80e88159064999482ee110cf519d6746d076dd48fe7fe0a4ca868ce83ff"
 
-  url "https:updates.signal.orgdesktopsignal-desktop-beta-mac-#{arch}-#{version}.dmg"
+  url "https://updates.signal.org/desktop/signal-desktop-beta-mac-#{arch}-#{version}.dmg"
   name "Signal Beta"
   desc "Instant messaging application focusing on security"
-  homepage "https:signal.org"
+  homepage "https://signal.org/"
 
   livecheck do
-    url "https:github.comsignalappSignal-Desktop"
-    regex(^v?(\d+(?:\.\d+)+[._-]beta\.\d+)$i)
+    url "https://updates.signal.org/desktop/beta-mac.yml"
+    strategy :electron_builder
   end
 
   auto_updates true
@@ -21,9 +21,9 @@ cask "signal@beta" do
   app "Signal Beta.app"
 
   zap trash: [
-    "~LibraryApplication SupportSignal",
-    "~LibraryPreferencesorg.whispersystems.signal-desktop.helper.plist",
-    "~LibraryPreferencesorg.whispersystems.signal-desktop.plist",
-    "~LibrarySaved Application Stateorg.whispersystems.signal-desktop.savedState",
+    "~/Library/Application Support/Signal",
+    "~/Library/Preferences/org.whispersystems.signal-desktop.helper.plist",
+    "~/Library/Preferences/org.whispersystems.signal-desktop.plist",
+    "~/Library/Saved Application State/org.whispersystems.signal-desktop.savedState",
   ]
 end

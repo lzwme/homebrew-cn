@@ -23,9 +23,6 @@ class Mailcatcher < Formula
   depends_on "ruby"
 
   uses_from_macos "xz" => :build
-  uses_from_macos "curl" => :test
-  uses_from_macos "expect" => :test
-  uses_from_macos "netcat" => :test
   uses_from_macos "libffi"
   uses_from_macos "sqlite"
   uses_from_macos "zlib"
@@ -184,60 +181,33 @@ class Mailcatcher < Formula
     smtp_port = free_port
     http_port = free_port
     system bin"mailcatcher", "--smtp-port", smtp_port.to_s, "--http-port", http_port.to_s
-    (testpath"mailcatcher.exp").write <<~EXPECT
-      #!usrbinenv expect
 
-      set timeout 3
-      spawn nc -c localhost #{smtp_port}
+    TCPSocket.open("localhost", smtp_port) do |sock|
+      assert_match "220 ", sock.gets
+      sock.puts "HELO example.org"
+      assert_match "250 ", sock.gets
+      sock.puts "MAIL FROM:<bob@example.org>"
+      assert_match "250 ", sock.gets
+      sock.puts "RCPT TO:<alice@example.com>"
+      assert_match "250 ", sock.gets
+      sock.puts "DATA"
+      assert_match "354 ", sock.gets
+      sock.puts <<~TEXT
+        From: Bob Example <bob@example.org>
+        To: Alice Example <alice@example.com>
+        Date: Tue, 15 Jan 2008 16:02:43 -0500
+        Subject: Test message
 
-      expect {
-        "220 *" { send -- "HELO example.org\n" }
-        timeout { exit 1 }
-      }
+        Hello Alice.
+        .
+      TEXT
+      assert_match "250 ", sock.gets
+      sock.puts "QUIT"
+      assert_match "221 ", sock.gets
+    ensure
+      sock.close
+    end
 
-      expect {
-        "250 *" { send -- "MAIL FROM:<bob@example.org>\n" }
-        timeout { exit 1 }
-      }
-
-      expect {
-        "250 *" { send -- "RCPT TO:<alice@example.com>\n" }
-        timeout { exit 1 }
-      }
-
-      expect {
-        "250 *" { send -- "DATA\n" }
-        timeout { exit 1 }
-      }
-
-      expect {
-        "354 *" {
-          send -- "From: Bob Example <bob@example.org>\n"
-          send -- "To: Alice Example <alice@example.com>\n"
-          send -- "Date: Tue, 15 Jan 2008 16:02:43 -0500\n"
-          send -- "Subject: Test message\n"
-          send -- "\n"
-          send -- "Hello Alice.\n"
-          send -- ".\n"
-        }
-        timeout { exit 1 }
-      }
-
-
-      expect {
-        "250 *" {
-          send -- "QUIT\n"
-        }
-        timeout { exit 1 }
-      }
-
-      expect {
-        "221 *" { }
-        eof { exit }
-      }
-    EXPECT
-
-    system "expect", "-f", "mailcatcher.exp"
     assert_match "bob@example.org", shell_output("curl --silent http:localhost:#{http_port}messages")
     assert_equal "Hello Alice.", shell_output("curl --silent http:localhost:#{http_port}messages1.plain").strip
     system "curl", "--silent", "-X", "DELETE", "http:localhost:#{http_port}"

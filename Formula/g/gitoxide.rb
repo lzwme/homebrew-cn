@@ -1,8 +1,8 @@
 class Gitoxide < Formula
   desc "Idiomatic, lean, fast & safe pure Rust implementation of Git"
   homepage "https:github.comByrongitoxide"
-  url "https:github.comByrongitoxidearchiverefstagsv0.39.0.tar.gz"
-  sha256 "50d8dcaa16e9a2dbcd89d6a68cae0c136734ca4b64a861a48ff6784e9939d4ca"
+  url "https:github.comByrongitoxidearchiverefstagsv0.40.0.tar.gz"
+  sha256 "fe0ed165f3325176e7e7abff1d2a819a473a332ecf48921931756c3289405e86"
   license "Apache-2.0"
   head "https:github.comByrongitoxide.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Gitoxide < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7bfd67b2f11561b27e77046dafd1c10e080dda4ea84b049f70f6731abedbb31"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e6562e87efff85bf4be8f12cfbf04bc942a616a009f6ea3dd595979891113052"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7868a614c10ab26d8261cb74c60893eb0b69ba054b5fa0e533818ceef8b8006e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9b11b8330687c31114acd57e671b1c8690a56950db597f4ea894d8eb04c3e9c1"
-    sha256 cellar: :any_skip_relocation, ventura:       "f070474a0efd27c5223fed95edcff847bbf47d05c79561b29be11514abb1f448"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cdf8d5783d0d4351f4615fe5dc8687371cd4df9e76d05b6a998bc652d7bd8fe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "129ff38ba268b5cd8e80ac1969df204a9c2e10d4debfb9468e7d1ee22c3abc33"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "25be403a8907cda6fb5bac41b0ee5415c893a8523fb6bbbd2ff58cedb30cbd74"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6f108003db5656bc82b63bdefd6933b8725334820b6da4a391a6d8e3718701bc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c47b6e643d5195816e9eb61b670033f7aeb02d85380d7e6332c7eb8339e8d92f"
+    sha256 cellar: :any_skip_relocation, ventura:       "808fd03a3d94c30523d3ed1fbe5ad5a195be2a60bea8976f45af309cc87dc697"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec57c1d83b956e9ca21f75deece3407f7de0310d531fe41aa5ef50d0af11e8bb"
   end
 
   depends_on "pkgconf" => :build

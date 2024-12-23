@@ -6,6 +6,11 @@ class Asdf < Formula
   license "MIT"
   head "https:github.comasdf-vmasdf.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "1e938bf6752dc1494717a8354a3cd295b7b747202d23573a6a74a10bb0bfe3d4"
   end

@@ -16,11 +16,19 @@ class Rhash < Formula
   end
 
   def install
-    system ".configure", "--prefix=#{prefix}", "--disable-gettext"
+    # Exclude unrecognized options
+    args = std_configure_args.reject { |s| s["--disable-dependency-tracking"] } + %W[
+      --disable-lib-static
+      --disable-gettext
+      --sysconfdir=#{etc}
+    ]
+
+    system ".configure", *args
     system "make"
-    system "make", "install"
-    lib.install "librhash#{shared_library("librhash")}"
-    system "make", "-C", "librhash", "install-lib-headers"
+    # Avoid race during installation.
+    ENV.deparallelize { system "make", "install" }
+    system "make", "install-lib-headers", "install-pkg-config"
+    lib.install_symlink (libshared_library("librhash", version.major.to_s).to_s) => shared_library("librhash")
   end
 
   test do

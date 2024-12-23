@@ -17,12 +17,16 @@ class HowardHinnantDate < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", ".", *std_cmake_args,
-                         "-DENABLE_DATE_TESTING=OFF",
-                         "-DUSE_SYSTEM_TZ_DB=ON",
-                         "-DBUILD_SHARED_LIBS=ON",
-                         "-DBUILD_TZ_LIB=ON"
-    system "make", "install"
+    args = %w[
+      -DENABLE_DATE_TESTING=OFF
+      -DUSE_SYSTEM_TZ_DB=ON
+      -DBUILD_SHARED_LIBS=ON
+      -DBUILD_TZ_LIB=ON
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

@@ -22,8 +22,6 @@ class Ijq < Formula
   depends_on "scdoc" => :build
   depends_on "jq"
 
-  uses_from_macos "expect" => :test
-
   def install
     system "make", "prefix=#{prefix}", "install"
   end
@@ -33,23 +31,19 @@ class Ijq < Formula
 
     (testpath/"filterfile.jq").write '["foo", "bar", "baz"] | sort | add'
 
-    (testpath/"ijq.exp").write <<~EOS
-      #!/usr/bin/expect -f
-      proc succeed {} {
-        puts success
-        exit 0
-      }
-      proc fail {} {
-        puts failure
-        exit 1
-      }
-      set timeout 5
-      spawn ijq -H '' -M -n -f filterfile.jq
-      expect {
-        barbazfoo   succeed
-        timeout     fail
-      }
-    EOS
-    system "expect", "-f", "ijq.exp"
+    require "expect"
+    require "pty"
+    PTY.spawn("#{bin}/ijq -H '' -M -n -f filterfile.jq > result") do |r, w, pid|
+      refute_nil r.expect("barbazfoo", 5), "Expected barbazfoo"
+      w.write "\r"
+      r.read
+    rescue Errno::EIO
+      # GNU/Linux raises EIO when read is done on closed pty
+    ensure
+      r.close
+      w.close
+      Process.wait(pid)
+    end
+    assert_equal "\"barbazfoo\"\n", (testpath/"result").read
   end
 end

@@ -29,8 +29,14 @@ class Antlr4CppRuntime < Formula
   end
 
   def install
-    system "cmake", ".", "-DANTLR4_INSTALL=ON", "-DANTLR_BUILD_CPP_TESTS=OFF", *std_cmake_args
-    system "cmake", "--build", ".", "--target", "install"
+    args = %w[
+      -DANTLR4_INSTALL=ON
+      -DANTLR_BUILD_CPP_TESTS=OFF
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

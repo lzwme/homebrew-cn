@@ -26,37 +26,25 @@ class Dps8m < Formula
 
   depends_on "libuv"
 
-  uses_from_macos "expect" => :test
-
   def install
-    # Reported 23 Jul 2017 "make doesn't create bin directory"
-    # See https://sourceforge.net/p/dps8m/mailman/message/35960505/
-    bin.mkpath
-
-    system "make"
-    bin.install %w[src/dps8/dps8 src/punutil/punutil src/prt2pdf/prt2pdf]
+    system "make", "install", "PREFIX=#{prefix}"
+    bin.install %w[src/punutil/punutil src/prt2pdf/prt2pdf]
   end
 
   test do
-    (testpath/"test.exp").write <<~EXPECT
-      spawn #{bin}/dps8 -t
-      set timeout 30
-      expect {
-        timeout { exit 1 }
-        ">"
-      }
-      set timeout 10
-      send "SH VE\r"
-      expect {
-        timeout { exit 2 }
-        "Version:"
-      }
-      send "q\r"
-      expect {
-        timeout { exit 3 }
-        eof
-      }
-    EXPECT
-    system("expect", "-f", "test.exp")
+    require "expect"
+    require "pty"
+    timeout = 10
+    PTY.spawn(bin/"dps8", "-t") do |r, w, pid|
+      refute_nil r.expect("sim>", timeout), "Expected sim>"
+      w.write "SH VE\r"
+      refute_nil r.expect("Version:", timeout), "Expected Version:"
+      w.write "q\r"
+      refute_nil r.expect("Goodbye", timeout), "Expected Goodbye"
+    ensure
+      r.close
+      w.close
+      Process.wait(pid)
+    end
   end
 end

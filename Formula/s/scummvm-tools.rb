@@ -1,10 +1,9 @@
 class ScummvmTools < Formula
   desc "Collection of tools for ScummVM"
   homepage "https:www.scummvm.org"
-  url "https:downloads.scummvm.orgfrsscummvm-tools2.7.0scummvm-tools-2.7.0.tar.xz"
-  sha256 "1d9f1faf8338a2fda64f0e6e14bc25a2dadced156cb28a9c60191b983d72db71"
+  url "https:downloads.scummvm.orgfrsscummvm-tools2.9.0scummvm-tools-2.9.0.tar.xz"
+  sha256 "1b4bbd7a7ccf4584bfc2c0142b7c1b4e5db97c39d8d214757c72d50e0905b71d"
   license "GPL-3.0-or-later"
-  revision 7
   head "https:github.comscummvmscummvm-tools.git", branch: "master"
 
   livecheck do
@@ -13,12 +12,12 @@ class ScummvmTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "62f494b25b1d871cfd1adedea60f08745c1b1b58902c6d0ff2c9520ded8a1988"
-    sha256 cellar: :any,                 arm64_sonoma:  "fbad749c989a532104b08938c53117116564aaa3e4e9466f76cd440e7fff557f"
-    sha256 cellar: :any,                 arm64_ventura: "cc7a1b2104be3e291b0dfc20c0b80ba2c642543d5751d4b6703e77df9d52b38b"
-    sha256 cellar: :any,                 sonoma:        "75023d89b1af5e90cd8e7ceb1b8f5cb9ead37cf7d791025964966d45e855ad21"
-    sha256 cellar: :any,                 ventura:       "8f1484d030e356c9bb478ecab34bb118ec806adc862d9710b53e87df8f237de1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0de41429c253dedcca6b68cb98da410d82803fadb3f32e1f25c6ce41912c426"
+    sha256 cellar: :any,                 arm64_sequoia: "9f8d04daac9c26a48ff80e3ce087d12cb3b5b8bdebab9884765c950de4d30bf4"
+    sha256 cellar: :any,                 arm64_sonoma:  "e07ba39dd7a18914540bc691a69386e9f0010a45449577e87d6ec85b69ac81c0"
+    sha256 cellar: :any,                 arm64_ventura: "7cc02f042e2857885a37a690963828b1d86299e971c0e6a7fe5b21dc4570c891"
+    sha256 cellar: :any,                 sonoma:        "0d76af780aac37fec4ddbe3839c0967e75c228888e0d5dd1ac1558f2971aa422"
+    sha256 cellar: :any,                 ventura:       "4af72525fa2059800f33b2ae392dcca1686bfb4f3275ca009b3180af353e74f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "529873130d47d9b1d37b903881307e03f73c83d37125b40381307c40b105332d"
   end
 
   depends_on "boost"

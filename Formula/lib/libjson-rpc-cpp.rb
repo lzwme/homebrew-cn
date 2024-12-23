@@ -25,9 +25,14 @@ class LibjsonRpcCpp < Formula
   uses_from_macos "curl"
 
   def install
-    system "cmake", ".", *std_cmake_args, "-DCOMPILE_EXAMPLES=OFF", "-DCOMPILE_TESTS=OFF"
-    system "make"
-    system "make", "install"
+    args = %w[
+      -DCOMPILE_EXAMPLES=OFF
+      -DCOMPILE_TESTS=OFF
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

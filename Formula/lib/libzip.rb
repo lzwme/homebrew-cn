@@ -34,16 +34,17 @@ class Libzip < Formula
   conflicts_with "libtcod", because: "libtcod and libzip install a `zip.h` header"
 
   def install
-    crypto_args = %w[
+    args = %w[
       -DENABLE_GNUTLS=OFF
       -DENABLE_MBEDTLS=OFF
+      -DBUILD_REGRESS=OFF
+      -DBUILD_EXAMPLES=OFF
     ]
-    crypto_args << "-DENABLE_OPENSSL=OFF" if OS.mac? # Use CommonCrypto instead.
-    system "cmake", ".", *std_cmake_args,
-                         *crypto_args,
-                         "-DBUILD_REGRESS=OFF",
-                         "-DBUILD_EXAMPLES=OFF"
-    system "make", "install"
+    args << "-DENABLE_OPENSSL=OFF" if OS.mac? # Use CommonCrypto instead.
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

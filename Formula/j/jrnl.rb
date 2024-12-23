@@ -21,8 +21,6 @@ class Jrnl < Formula
   depends_on "libyaml"
   depends_on "python@3.13"
 
-  uses_from_macos "expect" => :test
-
   resource "colorama" do
     url "https:files.pythonhosted.orgpackagesd8536f443c9a4a8358a93a6792e2acffb9d9d5cb0a5cfd8802644b7b1c9a02e4colorama-0.4.6.tar.gz"
     sha256 "08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"
@@ -118,36 +116,30 @@ class Jrnl < Formula
   end
 
   test do
-    (testpath"tests.sh").write <<~EXPECT
-      #!usrbinenv expect
-
-      set timeout 3
-      match_max 100000
-
-      spawn "#{bin}jrnl" --encrypt
-      expect -exact "Enter password for journal 'default': "
-      sleep 0.5
-      send -- "homebrew\\r"
-      expect -exact "Enter password again: "
-      sleep 0.5
-      send -- "homebrew\\r"
-      expect -exact "Do you want to store the password in your keychain? \\[Yn\\] "
-      send -- "n\\r"
-      expect -re "Journal encrypted to .*"
-      expect eof
-    EXPECT
-
     # Write the journal
     input = "#{testpath}journal.txt\nn\nn"
     assert_match "Journal 'default' created", pipe_output("#{bin}jrnl My journal entry 2>&1", input, 0)
-    assert_predicate testpath"journal.txt", :exist?
+    assert_path_exists testpath"journal.txt"
 
     # Read the journal
     assert_match "#{testpath}journal.txt", shell_output("#{bin}jrnl --list 2>&1")
 
     # Encrypt the journal. Needs a TTY to read password.
-    system "expect", ".tests.sh"
-    assert_predicate testpath".configjrnljrnl.yaml", :exist?
+    require "expect"
+    require "pty"
+    timeout = 3
+    PTY.spawn(bin"jrnl", "--encrypt") do |r, w, pid|
+      refute_nil r.expect("Enter password for journal 'default': ", timeout), "Expected password input"
+      w.write "homebrew\r"
+      refute_nil r.expect("Enter password again: ", timeout), "Expected password confirmation input"
+      w.write "homebrew\r"
+      refute_nil r.expect("store the password in your keychain? [Yn] ", timeout), "Expected keychain input"
+      w.write "n\r"
+      refute_nil r.expect("Journal encrypted to ", timeout), "Expected result output"
+      Process.wait pid
+    end
+
+    assert_path_exists testpath".configjrnljrnl.yaml"
     assert_match "encrypt: true", (testpath".configjrnljrnl.yaml").read
   end
 end

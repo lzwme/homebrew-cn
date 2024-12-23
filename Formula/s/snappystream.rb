@@ -22,8 +22,14 @@ class Snappystream < Formula
   depends_on "snappy"
 
   def install
-    system "cmake", ".", *std_cmake_args, "-DBUILD_TESTS=ON", "-DCMAKE_CXX_STANDARD=11"
-    system "make", "all", "test", "install"
+    args = %w[
+      -DBUILD_TESTS=ON
+      -DCMAKE_CXX_STANDARD=11
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

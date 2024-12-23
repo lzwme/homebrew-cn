@@ -1,31 +1,30 @@
 class Dstask < Formula
   desc "Git-powered personal task tracker"
   homepage "https:github.comnaggiedstask"
-  url "https:github.comnaggiedstaskarchiverefstagsv0.26.tar.gz"
-  sha256 "ccd7afcb825eb799bdaaaf6eaf8150bbb8ceda02fec6c97f042b7bbc913a46fc"
+  url "https:github.comnaggiedstaskarchiverefstags0.27.tar.gz"
+  sha256 "85da92eb50c3611e1054f5153dc0cf90fe1b8b12219c77d1aa86a61384c450a0"
   license "MIT"
   head "https:github.comnaggiedstask.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c703e91aca630e4709de9665547a7b5755628d1749d792900e4d11864d4e2e79"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f76c19c728c1c23782e87213061f06a97cce7e5924f02816e6d51d4893001b3d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d79ae69accd7905d73e6f15fa3fb0a6f05ea23bfd7b7333ddd7839d522e285e0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "cb785da84d172ec459b7322031e52d67df8611a701020218a03c91b90eb1a890"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4be4ac5744549c10dfb731337f312c4aa47e9ce103d46343c4690c8321882f0f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1d076c4c96153b49c164cc1b6dd9d9dca29dd0f32897536402333a8b5cb63e94"
-    sha256 cellar: :any_skip_relocation, ventura:        "e3a1e47af361d58a32e806b6d675a2257b12356bf54cefd6792790e50ec5928f"
-    sha256 cellar: :any_skip_relocation, monterey:       "032acb245aafde4a1007a88c6bb19a6f3da10b3e6880ce41eaa8d96f89680559"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3c491f3930296ca760c81cfb4577616aa6bc9a9120e49a301b160becca721a7c"
-    sha256 cellar: :any_skip_relocation, catalina:       "ffe559741df2fc7b18b745287658d29acc84d854533dff5d2176e8453ad179a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ced7cf5c0d00d885ce99aea38e2be90d46292750dcf4e9fb1bc7fea9ce68b6c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5ee01e4bed812038f3734de20cab6be5da1d4d17235489037fd0f5f7dac25a9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5ee01e4bed812038f3734de20cab6be5da1d4d17235489037fd0f5f7dac25a9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c5ee01e4bed812038f3734de20cab6be5da1d4d17235489037fd0f5f7dac25a9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6958dcb344570273f7eeaa408ee4b0ebbc4cc2d03fce10d8483b8c7e163085c2"
+    sha256 cellar: :any_skip_relocation, ventura:       "6958dcb344570273f7eeaa408ee4b0ebbc4cc2d03fce10d8483b8c7e163085c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9f1978c6d71f808ebef38ac0f046f2b28e437b0df2f10e375231e5d625a00bc"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "mod", "vendor"
-    system "make", "distdstask"
-    bin.install Dir["dist*"]
+    ldflags = "-s -w"
+    system "go", "build", *std_go_args(ldflags:), ".cmddstaskmain.go"
+    system "go", "build", *std_go_args(ldflags:, output: bin"dstask-import"), ".cmddstask-importmain.go"
+
+    bash_completion.install "completionsbash.sh" => "dstask"
+    fish_completion.install "completionscompletions.fish" => "dstask.fish"
+    zsh_completion.install "completionszsh.sh" => "_dstask"
   end
 
   test do
@@ -37,8 +36,7 @@ class Dstask < Formula
 
     system bin"dstask", "add", "Brew the brew"
     system bin"dstask", "start", "1"
-    output = shell_output("#{bin}dstask show-active")
-    assert_match "Brew the brew", output
+    assert_match "Brew the brew", shell_output("#{bin}dstask show-active")
     system bin"dstask", "done", "1"
   end
 end

@@ -17,6 +17,8 @@ class VueCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f068d7c069a1dae0ecbba18a4537d4816d55d6357ff9feb4806923ee486e92e9"
   end
 
+  deprecate! date: "2024-12-22", because: :deprecated_upstream
+
   depends_on "node"
 
   on_macos do
@@ -25,7 +27,7 @@ class VueCli < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     # Remove vendored pre-built binary `terminal-notifier`
     node_notifier_vendor_dir = libexec/"lib/node_modules/@vue/cli/node_modules/node-notifier/vendor"
@@ -49,7 +51,7 @@ class VueCli < Formula
       }
     JSON
 
-    assert_match "yarn", shell_output(bin/"vue config")
-    assert_match "npm", shell_output(bin/"vue info")
+    assert_match "yarn", shell_output("#{bin}/vue config")
+    assert_match "npm", shell_output("#{bin}/vue info")
   end
 end

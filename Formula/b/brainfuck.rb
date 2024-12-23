@@ -25,9 +25,15 @@ class Brainfuck < Formula
   uses_from_macos "libedit"
 
   def install
-    system "cmake", ".", *std_cmake_args, "-DBUILD_SHARED_LIB=ON",
-                         "-DBUILD_STATIC_LIB=ON", "-DINSTALL_EXAMPLES=ON"
-    system "make", "install"
+    args = %w[
+      -DBUILD_SHARED_LIB=ON
+      -DBUILD_STATIC_LIB=ON
+      -DINSTALL_EXAMPLES=ON
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
