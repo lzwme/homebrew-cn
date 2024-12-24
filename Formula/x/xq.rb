@@ -2,19 +2,17 @@ class Xq < Formula
   desc "Command-line XML and HTML beautifier and content extractor"
   homepage "https:github.comsibprogrammerxq"
   url "https:github.comsibprogrammerxq.git",
-      tag:      "v1.2.5",
-      revision: "fb8ac87a3431cdfebeeda81053562e3aeebde6af"
+      tag:      "v1.3.0",
+      revision: "86a755578f7bfb82fddc1f712c96db2f0bf36076"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0c68bfba237d2ba1d1e700fc944092820abfca1d7ac4e92289f5e4684728c3db"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "56adba6745dda15519f526ad670b2e4efbd2d716ac22cf3a3f472bd551e4808b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "56adba6745dda15519f526ad670b2e4efbd2d716ac22cf3a3f472bd551e4808b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "56adba6745dda15519f526ad670b2e4efbd2d716ac22cf3a3f472bd551e4808b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "feb158b48cbbd3f0a451969192f713238797a3b1945f97743766151a27b9945c"
-    sha256 cellar: :any_skip_relocation, ventura:        "feb158b48cbbd3f0a451969192f713238797a3b1945f97743766151a27b9945c"
-    sha256 cellar: :any_skip_relocation, monterey:       "feb158b48cbbd3f0a451969192f713238797a3b1945f97743766151a27b9945c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4fab4c651a2b92463a643615ea80996674ebaa3bb7f313728e3878848eb75556"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "acee76fdd23d919d0c9e3bee5ff519742be43f958833f8949972a48f222fb253"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "acee76fdd23d919d0c9e3bee5ff519742be43f958833f8949972a48f222fb253"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "acee76fdd23d919d0c9e3bee5ff519742be43f958833f8949972a48f222fb253"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3f27afa855799f0e43c3d7d878349dba62998d23a2504a3e0979998183b410e0"
+    sha256 cellar: :any_skip_relocation, ventura:       "3f27afa855799f0e43c3d7d878349dba62998d23a2504a3e0979998183b410e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3bfe60511be1ea50e381c53d56e8b7125315c189e3e7c23809c8eefa73df627"
   end
 
   depends_on "go" => :build

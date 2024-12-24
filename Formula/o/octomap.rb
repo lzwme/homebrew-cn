@@ -17,12 +17,12 @@ class Octomap < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "pkgconf" => :test
 
   def install
-    cd "octomap" do
-      system "cmake", ".", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", "octomap", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -35,8 +35,9 @@ class Octomap < Formula
         return 0;
       }
     CPP
-    system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}",
-                    "-loctomath", "-loctomap", "-o", "test"
+
+    flags = shell_output("pkgconf --cflags --libs octomap").chomp.split
+    system ENV.cxx, "test.cpp", "-o", "test", *flags
     system ".test"
   end
 end

@@ -24,10 +24,13 @@ class Stormlib < Formula
   patch :DATA
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "install"
-    system "cmake", ".", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "buildstatic", *std_cmake_args
+    system "cmake", "--build", "buildstatic"
+    system "cmake", "--install", "buildstatic"
+
+    system "cmake", "-S", ".", "-B", "buildshared", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
+    system "cmake", "--build", "buildshared"
+    system "cmake", "--install", "buildshared"
   end
 
   test do

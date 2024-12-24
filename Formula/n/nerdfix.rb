@@ -6,21 +6,26 @@ class Nerdfix < Formula
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5e050b3eb4e291e14f25b6abb1bbafce0b627e4c9161b4061cc622b011492ef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c08fe804ef44f8bb8d254817ef6c7ffbe4900d0653a77509a5a10338d5d8142b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "eadf88c586ec7c4911fe67650fce7aac1b78d9149be4e5d60c146014a528caaa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "57dad8812389ebb6707876de647ffb4275a77c7e486e0945571d6096e96ad4d9"
-    sha256 cellar: :any_skip_relocation, ventura:       "a37f03017360965083c43e046918c264f121f435ff5c141d087660b82965e059"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e921666ec8ea11f6d2874a2980d27840ce8b86659cbe5b580c6cdd408fff35a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5acc95bc0c1314b40e2fb0555b97724538609e457d5574e1a5dcf61ac97942de"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "248d5d912540c309ba86f239eca1016f5cac27823a9e258f07be6aef79a39ce5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "746859b3faa37328b50b548711830edec81ecf0d1a874a7902cc2161bc961438"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0e2875debaaa6b165db6d0a3fbb92a9593ac4eca542dea253da61f99c1581051"
+    sha256 cellar: :any_skip_relocation, ventura:       "cc197b42aa7b59787c5a1cda9471bcc7ed1ec01557bc36500acb46ee3170fca8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c92886e7e4886f45c9d8f21a31389aff08e62bdf5b5bfda780b4e174c64f3656"
   end
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args
+
+    generate_completions_from_executable(bin"nerdfix", "completions")
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}nerdfix --version")
+
     touch "test.txt"
     system bin"nerdfix", "check", "test.txt"
   end

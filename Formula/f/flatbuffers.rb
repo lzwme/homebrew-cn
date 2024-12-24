@@ -1,8 +1,8 @@
 class Flatbuffers < Formula
   desc "Serialization library for C++, supporting Java, C#, and Go"
   homepage "https:google.github.ioflatbuffers"
-  url "https:github.comgoogleflatbuffersarchiverefstagsv24.3.25.tar.gz"
-  sha256 "4157c5cacdb59737c5d627e47ac26b140e9ee28b1102f812b36068aab728c1ed"
+  url "https:github.comgoogleflatbuffersarchiverefstagsv24.12.23.tar.gz"
+  sha256 "7e2ef35f1af9e2aa0c6a7d0a09298c2cb86caf3d4f58c0658b306256e5bcab10"
   license "Apache-2.0"
   head "https:github.comgoogleflatbuffers.git", branch: "master"
 
@@ -12,14 +12,12 @@ class Flatbuffers < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "5f810c9f7fa1f1071b4c8dea28b7966d737edb5991a5535385efd6207cf203df"
-    sha256 cellar: :any,                 arm64_sonoma:   "90e5222fe1fa49beff198a81085dcdf91767a9219fcf110db25d266d826284be"
-    sha256 cellar: :any,                 arm64_ventura:  "c90b3e2eed62af7b9a4b7a2988e1d932af1bafeb13a56d49a5cb784d7dffb26a"
-    sha256 cellar: :any,                 arm64_monterey: "8a5bf9c0f50d3f05e7e7758c9f75fb31fd794f9278c0ffd78cc34b6ab83a48e6"
-    sha256 cellar: :any,                 sonoma:         "9ab97400e8b6418b64cc5b3a78059106160f26961d3c8f68e61522e5e7d89d41"
-    sha256 cellar: :any,                 ventura:        "557e248c8c2d42f33827a2456fb0bb87ddadbee71aeaade663df51e8af76565b"
-    sha256 cellar: :any,                 monterey:       "950ec2ace2073968a4b6cd1b1fb6b9277204ed4a0d1d3f30755fab6fa64b8bd8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9bb0221b1fb16b3ad4a88aad4078452c8a51e318ee8927c3c1d82fb44c68b053"
+    sha256 cellar: :any,                 arm64_sequoia: "28f8e16a95b96e48d042009d32a1045e61384d89f02e7b49374531dcdf37ffa2"
+    sha256 cellar: :any,                 arm64_sonoma:  "ba0ab398a1b519f6f76f304c03afc1922f95c64a34ea6cc59e98806ab8742d77"
+    sha256 cellar: :any,                 arm64_ventura: "599860a4cfadd559b0b7403d73e9b8eb581afc55390955659767d416ce39fa8e"
+    sha256 cellar: :any,                 sonoma:        "0bd8085554688dec144bf26a1e18b0ad0d0cca66c25dbaeb8287646170b8fb62"
+    sha256 cellar: :any,                 ventura:       "45590ed0cf730355d7def00f33be726a3a3b9e5c4c1dc8a13b25f1119f70de20"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "abd4535fdef9ca00323ea310de185911f9225e2aae4508edb78ef6d9bbb30591"
   end
 
   depends_on "cmake" => :build

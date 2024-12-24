@@ -7,17 +7,13 @@ class ZshFastSyntaxHighlighting < Formula
   head "https:github.comzdharma-continuumfast-syntax-highlighting.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e2246a1ba134c420f80f1236b4fc1fb8f10ba870e2c8264620c4e5fd57a20149"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "83b98c528f9b7705fe70b6b37a13737691f3f6eabdbb8596be5144a786624888"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5491428e00739fd9a4f66c979e2a1cd132b42279c2088052e071797a88fb9f28"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5491428e00739fd9a4f66c979e2a1cd132b42279c2088052e071797a88fb9f28"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "5491428e00739fd9a4f66c979e2a1cd132b42279c2088052e071797a88fb9f28"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ea78e1a7342d6765b50bbf1a8a9d3328f8529ebe25f3f4fd5884ae801776f3c3"
-    sha256 cellar: :any_skip_relocation, ventura:        "196df85afadfaeac5121915b914bab28a77e6fdbf6d4bb3e5d0fc6f7e8c4dbbb"
-    sha256 cellar: :any_skip_relocation, monterey:       "196df85afadfaeac5121915b914bab28a77e6fdbf6d4bb3e5d0fc6f7e8c4dbbb"
-    sha256 cellar: :any_skip_relocation, big_sur:        "196df85afadfaeac5121915b914bab28a77e6fdbf6d4bb3e5d0fc6f7e8c4dbbb"
-    sha256 cellar: :any_skip_relocation, catalina:       "196df85afadfaeac5121915b914bab28a77e6fdbf6d4bb3e5d0fc6f7e8c4dbbb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5491428e00739fd9a4f66c979e2a1cd132b42279c2088052e071797a88fb9f28"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b63cd29b30d65b5f15e12a53ecf2b8f78b8eae1e0a32ac5761d88933cb00ad8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b63cd29b30d65b5f15e12a53ecf2b8f78b8eae1e0a32ac5761d88933cb00ad8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2b63cd29b30d65b5f15e12a53ecf2b8f78b8eae1e0a32ac5761d88933cb00ad8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5b0435113e89b05900636a678cb33a9e0d44382a005da60cc072ec944a613d2e"
+    sha256 cellar: :any_skip_relocation, ventura:       "5b0435113e89b05900636a678cb33a9e0d44382a005da60cc072ec944a613d2e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b63cd29b30d65b5f15e12a53ecf2b8f78b8eae1e0a32ac5761d88933cb00ad8"
   end
 
   uses_from_macos "zsh" => [:build, :test]

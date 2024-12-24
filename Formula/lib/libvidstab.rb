@@ -19,9 +19,26 @@ class Libvidstab < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "pkgconf" => :test
 
   def install
-    system "cmake", ".", "-DUSE_OMP=OFF", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", "-DUSE_OMP=OFF", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+  end
+
+  test do
+    (testpath"test.c").write <<~C
+      #include <vid.stablibvidstab.h>
+      #include <stdio.h>
+      int main() {
+        printf("libvidstab version: %s\\n", LIBVIDSTAB_VERSION);
+        return 0;
+      }
+    C
+
+    flags = shell_output("pkgconf --cflags --libs vidstab").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *flags
+    system ".test"
   end
 end

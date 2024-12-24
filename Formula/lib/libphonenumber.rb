@@ -69,8 +69,8 @@ class Libphonenumber < Formula
       target_link_libraries(test libphonenumber::phonenumber-shared)
     CMAKE
 
-    system "cmake", ".", *std_cmake_args
-    system "cmake", "--build", "."
-    system ".test"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system ".buildtest"
   end
 end

@@ -25,8 +25,14 @@ class Entityx < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", ".", "-DENTITYX_BUILD_SHARED=off", "-DENTITYX_BUILD_TESTING=off", *std_cmake_args
-    system "make", "install"
+    args = %w[
+      -DENTITYX_BUILD_SHARED=off
+      -DENTITYX_BUILD_TESTING=off
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

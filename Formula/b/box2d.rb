@@ -27,9 +27,10 @@ class Box2d < Formula
       -DBOX2D_BUILD_EXAMPLES=OFF
     ]
 
-    system "cmake", ".", *args, *std_cmake_args
-    system "cmake", "--build", "."
-    system "cmake", "--install", "."
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
     pkgshare.install "unit-testhello_world.cpp"
   end
 

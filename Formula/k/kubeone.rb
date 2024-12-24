@@ -1,18 +1,28 @@
 class Kubeone < Formula
   desc "Automate cluster operations on all your environments"
   homepage "https:kubeone.io"
-  url "https:github.comkubermatickubeonearchiverefstagsv1.9.0.tar.gz"
-  sha256 "56009d0982e99d624cfa82e433f63075c1e519273c304b4a73496670c1beed2f"
   license "Apache-2.0"
   head "https:github.comkubermatickubeone.git", branch: "main"
 
+  stable do
+    url "https:github.comkubermatickubeonearchiverefstagsv1.9.1.tar.gz"
+    sha256 "bd19d41be2a172b5ad280e29fe7aac6d1f6c8d10c42bc6a4655bc4bb72aab2af"
+
+    # fish completion support patch, upstream pr ref, https:github.comkubermatickubeonepull3471
+    patch do
+      url "https:github.comkubermatickubeonecommite43259aaec109a313288928ad3c0569a3dfda68a.patch?full_index=1"
+      sha256 "3038576709fc007aece03b382715b1405e3e2b827a094def46f27f699f33e9fd"
+    end
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5bf47ae6c90784a9ec05d00889a2a5cd4239605c0b354370e017259358e500f1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ae8c30e1d7fc8476110911783fbd553bb0bc18ef276fcd7ac360be3c87859ad"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d3252718f8c30f82539568717059abbb5509295d36856cfe88e0d26048520878"
-    sha256 cellar: :any_skip_relocation, sonoma:        "59d426a43d57cd8d1e77a88ca27845e574c0429a111295f7adc7233771b053b6"
-    sha256 cellar: :any_skip_relocation, ventura:       "df4aeb4046121b37aad39e31424b07d31ec4981e28a5512eece1f673b55d811c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "424a20cb16843151ecd2c5afec8a5d16cb095d479fc42017dcc09cdd358e7d1b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15f186802fdf199941c9ea7b9961c5958e68d5be9a2fb6a6eed2898697c71098"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f73f0f99adafc291540f1f7fcd5c89ff3f58eef85e24f6eacf05973af335bde"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f8c4ac1eb75a0186239525cea6638e133270eaa5252fcc2457895bbc12929354"
+    sha256 cellar: :any_skip_relocation, sonoma:        "90a06e7fbee48e812776ecc2d0598028661625b08c7edc9f52204993b7da47f9"
+    sha256 cellar: :any_skip_relocation, ventura:       "c29c13f212daf9f00c7ae20527ac837f8fb02e4b2e80a4eca105ad65ebeaada5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9912f3baed4367c173e5a5127f3af63e7f06be05f6118e0a36136a3fd74bc63"
   end
 
   depends_on "go" => :build
@@ -26,8 +36,7 @@ class Kubeone < Formula
 
     system "go", "build", *std_go_args(ldflags:)
 
-    # upstream fish completion support PR, https:github.comkubermatickubeonepull3471
-    generate_completions_from_executable(bin"kubeone", "completion", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin"kubeone", "completion")
   end
 
   test do

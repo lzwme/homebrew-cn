@@ -22,8 +22,9 @@ class Libolm < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", ".", "-Bbuild", "-DCMAKE_INSTALL_PREFIX=#{prefix}"
-    system "cmake", "--build", "build", "--target", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

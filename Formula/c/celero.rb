@@ -21,13 +21,15 @@ class Celero < Formula
   depends_on "cmake" => :build
 
   def install
-    cmake_args = std_cmake_args + %w[
+    args = %w[
       -DCELERO_COMPILE_DYNAMIC_LIBRARIES=ON
       -DCELERO_ENABLE_EXPERIMENTS=OFF
       -DCELERO_ENABLE_TESTS=OFF
     ]
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

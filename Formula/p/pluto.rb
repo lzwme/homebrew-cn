@@ -1,18 +1,18 @@
 class Pluto < Formula
   desc "CLI tool to help discover deprecated apiVersions in Kubernetes"
   homepage "https:fairwinds.com"
-  url "https:github.comFairwindsOpsplutoarchiverefstagsv5.20.3.tar.gz"
-  sha256 "0e3991a8fd5e655953b1330a852a450dc26107ff77d1ceb20bd7464b86bd9e12"
+  url "https:github.comFairwindsOpsplutoarchiverefstagsv5.21.0.tar.gz"
+  sha256 "0b09aaa02da175c801c6635d15041b2ef02e165f730fc226cf4a0022aeadd32b"
   license "Apache-2.0"
   head "https:github.comFairwindsOpspluto.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44002232b5b5ca5fc361005304df7647dd7c544edf37e9edb4d30c9c0cd5aeda"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44002232b5b5ca5fc361005304df7647dd7c544edf37e9edb4d30c9c0cd5aeda"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "44002232b5b5ca5fc361005304df7647dd7c544edf37e9edb4d30c9c0cd5aeda"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cddb8b1d62bf7cc33a7d789bc089ef31af24baf7fa7ba646587390197ef44736"
-    sha256 cellar: :any_skip_relocation, ventura:       "cddb8b1d62bf7cc33a7d789bc089ef31af24baf7fa7ba646587390197ef44736"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e6b2b713e40011b1625f67e5abd4bf67c0ab2f878ea51d2289f8c5b7e8d8879"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c360c51cd3baf00dbef4b0ed4f91e431eca3c438429fadeaa44db726e0c13ae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c360c51cd3baf00dbef4b0ed4f91e431eca3c438429fadeaa44db726e0c13ae"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6c360c51cd3baf00dbef4b0ed4f91e431eca3c438429fadeaa44db726e0c13ae"
+    sha256 cellar: :any_skip_relocation, sonoma:        "50c0c25ce618d7b5af39d3f8986eb67aa677b654dba282749a90f0faf0426d2c"
+    sha256 cellar: :any_skip_relocation, ventura:       "50c0c25ce618d7b5af39d3f8986eb67aa677b654dba282749a90f0faf0426d2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1e57325d146a752ea2fa47feeb710e03aa727affd4081f9d300c1c00dd42eed"
   end
 
   depends_on "go" => :build

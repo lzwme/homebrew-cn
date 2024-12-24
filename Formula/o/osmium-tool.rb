@@ -27,8 +27,10 @@ class OsmiumTool < Formula
 
   def install
     protozero = Formula["libosmium"].opt_libexec"include"
-    system "cmake", ".", "-DPROTOZERO_INCLUDE_DIR=#{protozero}", *std_cmake_args
-    system "make", "install"
+
+    system "cmake", "-S", ".", "-B", "build", "-DPROTOZERO_INCLUDE_DIR=#{protozero}", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -48,6 +50,7 @@ class OsmiumTool < Formula
         <relation>
       <osm>
     XML
+
     output = shell_output("#{bin}osmium fileinfo test.osm")
     assert_match(Compression.+generator=handwrittenm, output)
     system bin"osmium", "tags-filter", "test.osm", "wname=line", "-f", "osm"

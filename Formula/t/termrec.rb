@@ -12,19 +12,13 @@ class Termrec < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "2ffc2c327f5d103b6aa30f203c7a7e8e87825c9a793e14dc11384f3c75f17c33"
-    sha256 cellar: :any,                 arm64_sonoma:   "cf7f8a53b45b1dac0ed84086e17c2374a27ebcd43e729e9d6be631816e795b6d"
-    sha256 cellar: :any,                 arm64_ventura:  "2b08f0b04c98a5152357e074c14027a63b64ccbd4814f4c04235eef9d2862942"
-    sha256 cellar: :any,                 arm64_monterey: "3c45928def623126f5999ab77cd48cc6711731a44cfa28c5746841ee19f313c3"
-    sha256 cellar: :any,                 arm64_big_sur:  "a03a052b7ee89450b145a866724f6f97727c56bbf0220a14a089c84951aeed35"
-    sha256 cellar: :any,                 sonoma:         "1cd6ec28ec3e040f28575428641bcf0e350240f24fe1d6eea9b3e09646d9d9ed"
-    sha256 cellar: :any,                 ventura:        "df2afb4aa2443fdb4ff692e87b076edc753effa283ffc3a7ade6b6957a7702b1"
-    sha256 cellar: :any,                 monterey:       "634617e61f1492c473f62bfa37cf742e5fc4e7b0e36339ddc1f6b8574ed90272"
-    sha256 cellar: :any,                 big_sur:        "81060090e19bbb56f0b991dfa987eb890c00b116b656be2d2bd29ea027f9496a"
-    sha256 cellar: :any,                 catalina:       "1d93149ec34c0bf531da76b0137390ed1f05bf2e35e806f1fe875fe6648c4c2b"
-    sha256 cellar: :any,                 mojave:         "e3f9f241763a05de367da2ee91727674e18a126a99480a750b901a21bdad0ffb"
-    sha256 cellar: :any,                 high_sierra:    "d6cb43ed14ec0531824bd4eb55ddc625b5711c28b274ce78eb815501e5f3ebf2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "367ae28f9b68565c985f0762a0781ac1df02267fa34b47806477456dc0d22e5f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "e49f5031c0c2bd9c8a17c75bd3d345755a47525ef4a68d32ca257dcb47b7eb10"
+    sha256 cellar: :any,                 arm64_sonoma:  "206c6ea13f36cb770ad80f1702f1620a5a8cd8a82eea1e01d136f6b46ccecf03"
+    sha256 cellar: :any,                 arm64_ventura: "b5e160a090054b7e36883023816a7123f6305131c9248cb2543d939d209a7c7b"
+    sha256 cellar: :any,                 sonoma:        "8225f9ddc5ff3c7e8110435fdfd09d5e0310a4370dcded0e1b4a4ef06424f9c7"
+    sha256 cellar: :any,                 ventura:       "d58a44779c299757776b50043dd4a039fdccc99d96d77a4ada9096499adbfe01"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5d5fbe66e009d9a482ea968920e75bf9789fcbc1b08fa7d865ab90528709a11"
   end
 
   depends_on "autoconf" => :build

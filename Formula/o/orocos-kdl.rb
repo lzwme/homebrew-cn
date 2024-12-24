@@ -33,11 +33,11 @@ class OrocosKdl < Formula
   end
 
   def install
-    cd "orocos_kdl" do
-      system "cmake", ".", "-DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}eigen3",
-                           *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", "orocos_kdl", "-B", "build",
+                    "-DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}eigen3",
+                    *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -52,6 +52,7 @@ class OrocosKdl < Formula
         return 0;
       }
     CPP
+
     system ENV.cxx, "test.cpp", "-I#{include}", "-L#{lib}", "-lorocos-kdl",
                     "-o", "test"
     system ".test"

@@ -1,6 +1,6 @@
 class Hotbuild < Formula
   desc "Cross platform hot compilation tool for go"
-  homepage "https:hotbuild.ffactory.org"
+  homepage "https:hotbuild.rustpub.com"
   url "https:github.comwandercnhotbuildarchiverefstagsv1.0.8.tar.gz"
   sha256 "662fdc31ca85f5d00ba509edcb177b617d8d6d8894086197347cfdbd17dc7c2f"
   license "MulanPSL-2.0"

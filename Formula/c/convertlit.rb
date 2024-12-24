@@ -14,21 +14,13 @@ class Convertlit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "16f86a985e46d742fb6e5ad4830e0d415611c75a523c90a5dc6de3669c0f179b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6cc99de9129ef3228e3c8b9998bbd227846308b35c0de66e9103ed4defef29d3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c6f7298822916f88187c248ccf8c71b485eb397664fc3a84d84ca25f480de3b6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "487f8eae8213a6480a40b34b11acadb1e948090e3240ab557124c348e76a398c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0ef0e8a30545af331a8acbc7280dfaa41fab75a0bb87a2bf05b84e5ebdc8db2e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c2a095162cbd450903f4169677d360f3e1a2119342d2c2fa54ea4b85b46d7462"
-    sha256 cellar: :any_skip_relocation, ventura:        "e5fca5a2bf373b68e302d6b9da7c475c516a33f9819448093af8b47cfdfec175"
-    sha256 cellar: :any_skip_relocation, monterey:       "10c77d1b740056521f6cf689700ab021a1577722dc2d513dff560d91d811d789"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4a70dcf4f3bc3b2806794651f1cbbf9effe317ea3d29b06339595bae0d6e71b9"
-    sha256 cellar: :any_skip_relocation, catalina:       "72966d25e505751ac86204848a68cc6a9e3b1e0e57340f348a853bfeca72c2d3"
-    sha256 cellar: :any_skip_relocation, mojave:         "7d06d34736082be89b9e6c0db2fa42c4d2b4fb15469bef2922003d3d299680c8"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "f41e31b1f6f53d1441bf670e75e0315f6a0f0e938de75e9973678ed565b6b4b8"
-    sha256 cellar: :any_skip_relocation, sierra:         "43e28e7711f27843223b29d351ba0ce03a4deee76bbc99c4bdac50969b8eaeb7"
-    sha256 cellar: :any_skip_relocation, el_capitan:     "66b05c2c6371f16620c82b31b507413556b511b859644322c65f4ceea4a83a64"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "983bf456c2fed65ab702faeb6ada0265c9cf32f72fbee7fcd967e81f68b49b2f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af81e33973b458225160387d713ab4646496719b4c0a3ae064dccf92c7e3efbd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f0df27834c193ce4b6f3d17a63c072818bd667f2d98b653f166c024d3bdafbdb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "723db1f95f54e5f9003305056b3e67c5d2e6eb424fb18cc4e366a2dbe53756d4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "061b39d2c0b09a6bd68c6f1219b396e558cd4cbe8dcbaf64968079bb2c2a9253"
+    sha256 cellar: :any_skip_relocation, ventura:       "47c22a8704d183095db27702edb6dbe248f4cbf88b3aeb788ea2686656ddf05a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9e0dbeb09435b5d6c8a8f0e728d345185e14bb1bd4a799c05a1cefde6938046"
   end
 
   depends_on "libtommath"

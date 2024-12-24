@@ -13,13 +13,16 @@ class RangeV3 < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", ".",
-                    "-DRANGE_V3_TESTS=OFF",
-                    "-DRANGE_V3_HEADER_CHECKS=OFF",
-                    "-DRANGE_V3_EXAMPLES=OFF",
-                    "-DRANGE_V3_PERF=OFF",
-                    *std_cmake_args
-    system "make", "install"
+    args = %w[
+      -DRANGE_V3_TESTS=OFF
+      -DRANGE_V3_HEADER_CHECKS=OFF
+      -DRANGE_V3_EXAMPLES=OFF
+      -DRANGE_V3_PERF=OFF
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

@@ -15,10 +15,14 @@ class Inja < Formula
   depends_on "nlohmann-json"
 
   def install
-    system "cmake", ".", "-DBUILD_BENCHMARK=OFF",
-                         "-DINJA_USE_EMBEDDED_JSON=OFF",
-                         *std_cmake_args
-    system "make", "install"
+    args = %w[
+      -DBUILD_BENCHMARK=OFF
+      -DINJA_USE_EMBEDDED_JSON=OFF
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -32,6 +36,7 @@ class Inja < Formula
           inja::render_to(std::cout, "Hello {{ name }}!\\n", data);
       }
     CPP
+
     system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test",
            "-I#{include}", "-I#{Formula["nlohmann-json"].opt_include}"
     assert_equal "Hello world!\n", shell_output(".test")

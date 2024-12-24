@@ -22,10 +22,14 @@ class Pagmo < Formula
   depends_on "tbb"
 
   def install
-    system "cmake", ".", "-DPAGMO_WITH_EIGEN3=ON", "-DPAGMO_WITH_NLOPT=ON",
-                         *std_cmake_args,
-                         "-DCMAKE_CXX_STANDARD=17"
-    system "make", "install"
+    args = %w[
+      -DPAGMO_WITH_EIGEN3=ON
+      -DPAGMO_WITH_NLOPT=ON
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

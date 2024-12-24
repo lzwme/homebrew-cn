@@ -20,12 +20,29 @@ class Libuvc < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkgconf" => :build
+  depends_on "pkgconf" => [:build, :test]
   depends_on "libusb"
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+  end
+
+  test do
+    (testpath"test.c").write <<~C
+      #include <libuvclibuvc.h>
+      int main() {
+        uvc_context_t *ctx;
+        uvc_error_t res = uvc_init(&ctx, NULL);
+        if (res != UVC_SUCCESS) return 1;
+        uvc_exit(ctx);
+        return 0;
+      }
+    C
+
+    flags = shell_output("pkgconf --cflags --libs libuvc").strip.split
+    system ENV.cc, "test.c", "-o", "test", *flags
+    system ".test"
   end
 end

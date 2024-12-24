@@ -35,10 +35,11 @@ class Lolcode < Formula
   conflicts_with "lci", because: "both install `lci` binaries"
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+
     # Don't use `make install` for this one file
-    bin.install "lci"
+    bin.install "buildlci"
   end
 
   test do

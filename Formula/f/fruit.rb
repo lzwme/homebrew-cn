@@ -21,8 +21,10 @@ class Fruit < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", ".", "-DFRUIT_USES_BOOST=False", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "_build", "-DFRUIT_USES_BOOST=False", *std_cmake_args
+    system "cmake", "--build", "_build"
+    system "cmake", "--install", "_build"
+
     pkgshare.install "exampleshello_worldmain.cpp"
   end
 

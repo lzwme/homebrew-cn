@@ -24,10 +24,9 @@ class Onednn < Formula
   depends_on "doxygen" => :build
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make"
-    system "make", "doc"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -39,6 +38,7 @@ class Onednn < Formula
         return !(status == dnnl_success);
       }
     C
+
     system ENV.cc, "test.c", "-L#{lib}", "-ldnnl", "-o", "test"
     system ".test"
   end

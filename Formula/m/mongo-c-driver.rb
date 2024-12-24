@@ -28,12 +28,13 @@ class MongoCDriver < Formula
   uses_from_macos "zlib"
 
   def install
-    cmake_args = std_cmake_args
-    cmake_args << "-DCMAKE_INSTALL_RPATH=#{rpath}"
     File.write "VERSION_CURRENT", version.to_s unless build.head?
     inreplace "srclibmongocsrcmongocmongoc-config.h.in", "@MONGOC_CC@", ENV.cc
-    system "cmake", ".", *cmake_args
-    system "make", "install"
+
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
     (pkgshare"libbson").install "srclibbsonexamples"
     (pkgshare"libmongoc").install "srclibmongocexamples"
   end

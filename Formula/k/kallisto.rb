@@ -24,9 +24,9 @@ class Kallisto < Formula
     ENV["SDKROOT"] = MacOS.sdk_path if OS.mac?
     ENV.deparallelize
 
-    system "cmake", ".", "-DUSE_HDF5=ON", *std_cmake_args
-    system "make"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", "-DUSE_HDF5=ON", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -34,6 +34,7 @@ class Kallisto < Formula
       >seq0
       FQTWEEFSRAAEKLYLADPMKVRVVLKYRHVDGNLCIKVTDDLVCLVYRTDQAQDVKKIEKF
     EOS
+
     output = shell_output("#{bin}kallisto index -i test.index test.fasta 2>&1")
     assert_match "has 1 contigs and contains 32 k-mers", output
   end

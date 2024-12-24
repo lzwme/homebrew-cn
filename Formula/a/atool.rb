@@ -11,22 +11,13 @@ class Atool < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "00e67b0e4ef80834a7d17d2f19720bef6d71e7024b39dfb5037fa8b39a26e57b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7ff38c5e02e2ddc9958969caf192b57fb72137544c728e9abf61aa4c3ccb95e3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9772f860038b7901645159630516942318faf1c300f47ff7d393b018993c2927"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9772f860038b7901645159630516942318faf1c300f47ff7d393b018993c2927"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8a498806923cebdf510cefbd1dc5e1dd8e88b8e50e317e3531dccb08d808d09f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "17881b73ec0afb2f065ec16e043dcdd8fff769a23f95f19a51f4c5e5613f079b"
-    sha256 cellar: :any_skip_relocation, ventura:        "ca6b1d8ed7a241588990b84006bd047b05734f9f70a50354d2ea129e0adfdaee"
-    sha256 cellar: :any_skip_relocation, monterey:       "ca6b1d8ed7a241588990b84006bd047b05734f9f70a50354d2ea129e0adfdaee"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b9492434916b077c29cfadeb04d853748db63bd54e9f4869f4efb03bcc3f00de"
-    sha256 cellar: :any_skip_relocation, catalina:       "78769c7244232e9ba4b403f0dae560e61bc69d08d76936e9797c3f9b18b778f3"
-    sha256 cellar: :any_skip_relocation, mojave:         "afc78205d3558294d008a801f7b06e8fcc94509a34bb0832f914575c196d6f8d"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "0f28ddbd664675c6b3fe440f6cfba6ac8cc6fc1f97141979bbce485080a759f4"
-    sha256 cellar: :any_skip_relocation, sierra:         "656b59fcaa79956c81af4ce21afc06dbf9f6ffaecc0ff52b1a063da2c911fe89"
-    sha256 cellar: :any_skip_relocation, el_capitan:     "dcfdcb720aa3704b9103aa01bb8efac42d24327bc8664baa420a9a69d75a98b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9772f860038b7901645159630516942318faf1c300f47ff7d393b018993c2927"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c90268b9621aa25c6cae07db4313c857cc3e4a6ece918a9d55753e1b8055fef1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c90268b9621aa25c6cae07db4313c857cc3e4a6ece918a9d55753e1b8055fef1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c90268b9621aa25c6cae07db4313c857cc3e4a6ece918a9d55753e1b8055fef1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "32ab886a03969d9890dc6867a45164535fd1f9e66956d8d29b8bff7c70b8ddc2"
+    sha256 cellar: :any_skip_relocation, ventura:       "32ab886a03969d9890dc6867a45164535fd1f9e66956d8d29b8bff7c70b8ddc2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c90268b9621aa25c6cae07db4313c857cc3e4a6ece918a9d55753e1b8055fef1"
   end
 
   def install

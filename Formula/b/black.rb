@@ -10,12 +10,13 @@ class Black < Formula
   head "https:github.compsfblack.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9183647ee05fd96f5744b846173c161b2aebfb2e73a4c9c4bc5683f444f0f01"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "da967e0075d3b11364c4492aaaccfce24025a8df3a3057f393fc18242cc6e680"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "da9107192962629dfb35949d7db313da3426e898a0b16b91345caac48ca13c1b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9214bee378d7f6f47ef71921cfd5885615acbff3655ce547a59d5198e7b7f924"
-    sha256 cellar: :any_skip_relocation, ventura:       "71a9df828db3f38685651c0a737ab1d02970efc53f52c85af431aabee65c5c66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9ef3ff121dc7e85fe2c0efd5169ffbf42c7c9ff81f8c8fba1078ae7e9ade653"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d907b91a649712809d1ee774c56b098d77824b94e844eeab813ccaa9473b118"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3317317a40344aa0134a70f9843208e3404de3b9884ff94d3b82903364238a60"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6d2d3dd428ea124603044c3191378e9e2d86fc04a96b3d8cbda4265226934627"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6a41000d596987c927ef1f018bb07de8f62aed2c38ee45b2a6bebc30ca5f33ee"
+    sha256 cellar: :any_skip_relocation, ventura:       "06b304505e915cdc75102d3cff1fd089237c454fd2bd73ee7b49fb29aeb9acb8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f23e5359f4294329e7b47878c065d16e6497f106d7ec31b1d94fc52dd7922d0"
   end
 
   depends_on "python@3.13"
@@ -91,6 +92,7 @@ class Black < Formula
   end
 
   def install
+    ENV["HATCH_BUILD_HOOK_ENABLE_MYPYC"] = "1"
     virtualenv_install_with_resources
 
     generate_completions_from_executable(bin"black", shells: [:fish, :zsh], shell_parameter_format: :click)
@@ -106,16 +108,20 @@ class Black < Formula
   end
 
   test do
+    assert_match "compiled: yes", shell_output("#{bin}black --version")
+
     ENV["LC_ALL"] = "en_US.UTF-8"
     (testpath"black_test.py").write <<~PYTHON
       print(
       'It works!')
     PYTHON
     system bin"black", "black_test.py"
-    assert_equal "print(\"It works!\")\n", (testpath"black_test.py").read
+    assert_equal 'print("It works!")', (testpath"black_test.py").read.strip
+
     port = free_port
-    fork { exec "#{bin}blackd --bind-host 127.0.0.1 --bind-port #{port}" }
+    spawn bin"blackd", "--bind-host=127.0.0.1", "--bind-port=#{port}"
     sleep 10
-    assert_match "print(\"valid\")", shell_output("curl -s -XPOST localhost:#{port} -d \"print('valid')\"").strip
+    output = shell_output("curl -s -XPOST localhost:#{port} -d \"print('valid')\"").strip
+    assert_match 'print("valid")', output
   end
 end

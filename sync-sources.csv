@@ -3557,6 +3557,7 @@ Homebrew-homebrew-core/Formula/lib/libedit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libelf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libemf2svg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libepoxy.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libesedb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libestr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libetonyek.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libetpan.rb, Homebrew/homebrew-core, 1
@@ -6332,7 +6333,7 @@ Homebrew-homebrew-core/Formula/t/t-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/t-rec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/t1lib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/t1utils.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/t/ta-lib.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/ta-lib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tabiew.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tabulate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tag.rb, Homebrew/homebrew-core, 1
@@ -7819,7 +7820,6 @@ Homebrew-homebrew-cask/Casks/b/boltai.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bome-network.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bonitastudiocommunity.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bonjeff.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/b/bonjour-browser.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bookends.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bookletcreator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bookmacster.rb, Homebrew/homebrew-cask, 0
@@ -8017,7 +8017,6 @@ Homebrew-homebrew-cask/Casks/c/ckb-next.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/clamxav.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clash-verge-rev.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/classicftp.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/c/classroom-assistant.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/classroom-mode-for-minecraft.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/claude.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clay.rb, Homebrew/homebrew-cask, 0
@@ -8626,6 +8625,7 @@ Homebrew-homebrew-cask/Casks/f/fantasy-map-generator.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/f/far2l.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/farrago.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fastclicker.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/fastdmg.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fastmarks.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fastrawviewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fastscripts.rb, Homebrew/homebrew-cask, 0
@@ -9222,7 +9222,7 @@ Homebrew-homebrew-cask/Casks/font/font-c/font-code-new-roman-nerd-font.rb, Homeb
 Homebrew-homebrew-cask/Casks/font/font-c/font-code2002.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-codicon.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-codystar.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-c/font-coelacanth.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-c/font-coelacanth.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-coiny.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-combo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-comfortaa.rb, Homebrew/homebrew-cask, 1
@@ -9242,7 +9242,7 @@ Homebrew-homebrew-cask/Casks/font/font-c/font-conakry.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/font/font-c/font-concert-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-condiment.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-consolas-for-powerline.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-c/font-constructium.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-c/font-constructium.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-content.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-contrail-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-convergence.rb, Homebrew/homebrew-cask, 1
@@ -9406,7 +9406,8 @@ Homebrew-homebrew-cask/Casks/font/font-e/font-explora.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/font/font-e/font-ezra-sil.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-f/font-faculty-glyphic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-f/font-fahkwang.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-f/font-fairfax.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-f/font-fairfax-hd.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-f/font-fairfax.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-f/font-familjen-grotesk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-f/font-fandol.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-f/font-fantasque-sans-mono-nerd-font.rb, Homebrew/homebrew-cask, 1
@@ -9866,6 +9867,7 @@ Homebrew-homebrew-cask/Casks/font/font-k/font-kosugi.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/font/font-k/font-kotta-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-k/font-koulen.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-k/font-kranky.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-k/font-kreative-square.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-k/font-kreon.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-k/font-kristi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-k/font-krona-one.rb, Homebrew/homebrew-cask, 1

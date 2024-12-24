@@ -20,12 +20,14 @@ class Onnx < Formula
   uses_from_macos "python" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DBUILD_SHARED_LIBS=ON",
-                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                    "-DONNX_USE_PROTOBUF_SHARED_LIBS=ON",
-                    "-DPYTHON_EXECUTABLE=#{which("python3")}",
-                    *std_cmake_args
+    args = %W[
+      -DBUILD_SHARED_LIBS=ON
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DONNX_USE_PROTOBUF_SHARED_LIBS=ON
+      -DPYTHON_EXECUTABLE=#{which("python3")}
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
@@ -94,8 +96,8 @@ class Onnx < Formula
     CMAKE
 
     args = OS.mac? ? [] : ["-DCMAKE_BUILD_RPATH=#{lib}"]
-    system "cmake", ".", *args
-    system "cmake", "--build", "."
-    system ".test"
+    system "cmake", "-S", ".", "-B", "build", *args
+    system "cmake", "--build", "build"
+    system ".buildtest"
   end
 end

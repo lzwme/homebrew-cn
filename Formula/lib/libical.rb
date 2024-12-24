@@ -31,12 +31,16 @@ class Libical < Formula
   end
 
   def install
-    system "cmake", ".", "-DBDB_LIBRARY=BDB_LIBRARY-NOTFOUND",
-                         "-DENABLE_GTK_DOC=OFF",
-                         "-DSHARED_ONLY=ON",
-                         "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                         *std_cmake_args
-    system "make", "install"
+    args = %W[
+      -DBDB_LIBRARY=BDB_LIBRARY-NOTFOUND
+      -DENABLE_GTK_DOC=OFF
+      -DSHARED_ONLY=ON
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

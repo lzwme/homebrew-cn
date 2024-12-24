@@ -1,18 +1,18 @@
 class Hoverfly < Formula
   desc "API simulations for development and testing"
   homepage "https:hoverfly.io"
-  url "https:github.comSpectoLabshoverflyarchiverefstagsv1.10.6.tar.gz"
-  sha256 "116755ae5ac7af9c2a63ee2ab9b8fb26fe451af4722f26f95121de240167acd6"
+  url "https:github.comSpectoLabshoverflyarchiverefstagsv1.10.7.tar.gz"
+  sha256 "d0203f84a4e1137978d3420eefca13768f85d6dc40d511a184d338fcd240114a"
   license "Apache-2.0"
   head "https:github.comSpectoLabshoverfly.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "09ef5a96a32a9054e279df80d8f73d351006bc92cac65f374d41bbc46524c9c0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "09ef5a96a32a9054e279df80d8f73d351006bc92cac65f374d41bbc46524c9c0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "09ef5a96a32a9054e279df80d8f73d351006bc92cac65f374d41bbc46524c9c0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0ed2af5c9928bc65af2a929de43802ac05b945b577546ea1b170db69c4401413"
-    sha256 cellar: :any_skip_relocation, ventura:       "0ed2af5c9928bc65af2a929de43802ac05b945b577546ea1b170db69c4401413"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ca4b54faf15197160f0f0dad4814b409ab6c6f85022f8fd810d7522b34876fb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6e96ad474253dcdb1f6300fb3c81095bcf2e48829c1a8ec2af03b99a3b72ebd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b6e96ad474253dcdb1f6300fb3c81095bcf2e48829c1a8ec2af03b99a3b72ebd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b6e96ad474253dcdb1f6300fb3c81095bcf2e48829c1a8ec2af03b99a3b72ebd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "499108b76825c2602ea9814aa69c93acd75be98507d0c577071921e55d9ae087"
+    sha256 cellar: :any_skip_relocation, ventura:       "499108b76825c2602ea9814aa69c93acd75be98507d0c577071921e55d9ae087"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "982cb424994466bbf66f3f2537c2bc3e1814d4be6774d6e26a4e68234ca5e689"
   end
 
   depends_on "go" => :build

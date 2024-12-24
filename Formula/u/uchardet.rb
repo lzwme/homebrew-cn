@@ -22,10 +22,9 @@ class Uchardet < Formula
   depends_on "cmake" => :build
 
   def install
-    args = std_cmake_args
-    args << "-DCMAKE_INSTALL_NAME_DIR=#{lib}"
-    system "cmake", ".", *args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_NAME_DIR=#{lib}", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

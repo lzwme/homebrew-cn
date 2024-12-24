@@ -21,11 +21,9 @@ class Tlx < Formula
   depends_on "cmake" => :build
 
   def install
-    args = std_cmake_args + [".."]
-    mkdir "build" do
-      system "cmake", ".", *args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

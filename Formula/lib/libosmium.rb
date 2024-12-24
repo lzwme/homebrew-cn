@@ -25,11 +25,16 @@ class Libosmium < Formula
 
   def install
     resource("protozero").stage { libexec.install "include" }
-    system "cmake", ".", "-DINSTALL_GDALCPP=ON",
-                         "-DINSTALL_UTFCPP=ON",
-                         "-DPROTOZERO_INCLUDE_DIR=#{libexec}include",
-                         *std_cmake_args
-    system "make", "install"
+
+    args = %W[
+      -DINSTALL_GDALCPP=ON
+      -DINSTALL_UTFCPP=ON
+      -DPROTOZERO_INCLUDE_DIR=#{libexec}include
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

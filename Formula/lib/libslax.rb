@@ -1,6 +1,6 @@
 class Libslax < Formula
   desc "Implementation of the SLAX language (an XSLT alternative)"
-  homepage "http:www.libslax.org"
+  homepage "https:github.comJuniperlibslaxwiki"
   url "https:github.comJuniperlibslaxreleasesdownload0.22.1libslax-0.22.1.tar.gz"
   sha256 "4da6fb9886e50d75478d5ecc6868c90dae9d30ba7fc6e6d154fc92e6a48d9a95"
   license "BSD-3-Clause"

@@ -119,7 +119,7 @@ class Luvit < Formula
         -DLUAJIT_LIBRARIES=#{luajit.opt_libshared_library("libluajit")}
       ]
 
-      system "cmake", ".", "-B", "build", *luvi_args, *std_cmake_args
+      system "cmake", "-S", ".", "-B", "build", *luvi_args, *std_cmake_args
       system "cmake", "--build", "build"
       buildpath.install "buildluvi"
     end

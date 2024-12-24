@@ -34,8 +34,8 @@ class Utf8cpp < Formula
       }
     CPP
 
-    system "cmake", ".", "-DCMAKE_PREFIX_PATH:STRING=#{opt_lib}", "-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON"
-    system "make"
-    system ".utf8_append"
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_PREFIX_PATH=#{opt_lib}", "-DCMAKE_VERBOSE_MAKEFILE=ON"
+    system "cmake", "--build", "build"
+    system ".buildutf8_append"
   end
 end

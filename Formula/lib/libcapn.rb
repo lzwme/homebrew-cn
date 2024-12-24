@@ -53,17 +53,15 @@ class Libcapn < Formula
     # head gets jansson as a git submodule
     (buildpath"srcthird_partyjansson").install resource("jansson") if build.stable?
 
-    args = std_cmake_args
-    args << "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}"
-    unless OS.mac?
-      args += %W[
-        -DCAPN_INSTALL_PATH_SYSCONFIG=#{etc}
-        -DCMAKE_EXE_LINKER_FLAGS=-Wl,-rpath,#{lib}capn
-      ]
-    end
+    args = %W[
+      -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
+    ]
+    args << "-DCAPN_INSTALL_PATH_SYSCONFIG=#{etc}" << "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-rpath,#{lib}capn" unless OS.mac?
 
-    system "cmake", ".", *args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
     pkgshare.install "examples"
   end
 

@@ -70,16 +70,16 @@ class Wangle < Formula
     CMAKE
 
     ENV.delete "CPATH"
-    system "cmake", ".", "-DCMAKE_MODULE_PATH=#{testpath}cmake", "-Wno-dev"
-    system "cmake", "--build", "."
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_MODULE_PATH=#{testpath}cmake", "-Wno-dev"
+    system "cmake", "--build", "build"
 
     port = free_port
-    fork { exec testpath"EchoServer", "-port", port.to_s }
+    fork { exec testpath"buildEchoServer", "-port", port.to_s }
     sleep 30
 
     require "pty"
     output = ""
-    PTY.spawn(testpath"EchoClient", "-port", port.to_s) do |r, w, pid|
+    PTY.spawn(testpath"buildEchoClient", "-port", port.to_s) do |r, w, pid|
       w.write "Hello from Homebrew!\nAnother test line.\n"
       sleep 60
       Process.kill "TERM", pid

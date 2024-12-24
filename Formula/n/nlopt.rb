@@ -42,8 +42,9 @@ class Nlopt < Formula
       add_executable(box "#{pkgshare}box.c")
       target_link_libraries(box NLopt::nlopt)
     CMAKE
-    system "cmake", "."
-    system "make"
-    assert_match "found", shell_output(".box")
+
+    system "cmake", "-S", ".", "-B", "build"
+    system "cmake", "--build", "build"
+    assert_match "found", shell_output(".buildbox")
   end
 end

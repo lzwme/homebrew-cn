@@ -12,17 +12,13 @@ class Automysqlbackup < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d86303f7b195098a8025ee17b9fb0abd0c0b347c69cef3189a927df01d1145d8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5dff492b004afd5fd0c2f20991204c99c872a810a10fbaf47ac6c09dbde611a8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "452812b8437cd65781adbe94558e474283d72ba8a883250a4d141c4e8c284f8c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "452812b8437cd65781adbe94558e474283d72ba8a883250a4d141c4e8c284f8c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "452812b8437cd65781adbe94558e474283d72ba8a883250a4d141c4e8c284f8c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "43d1f5181c2f11161be09dbcfcf7e25c91e5f79074f232906822354215b1ca5c"
-    sha256 cellar: :any_skip_relocation, ventura:        "97797f99e2b639017bf9dc545b3beaefcf22276a8fad76785afc96674813dcb1"
-    sha256 cellar: :any_skip_relocation, monterey:       "97797f99e2b639017bf9dc545b3beaefcf22276a8fad76785afc96674813dcb1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "97797f99e2b639017bf9dc545b3beaefcf22276a8fad76785afc96674813dcb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "452812b8437cd65781adbe94558e474283d72ba8a883250a4d141c4e8c284f8c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eae5fa097a6796bd0aeb27e2a4026257d8b8a868263f292a693723c32404a0d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eae5fa097a6796bd0aeb27e2a4026257d8b8a868263f292a693723c32404a0d3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "eae5fa097a6796bd0aeb27e2a4026257d8b8a868263f292a693723c32404a0d3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c34d3e9363096874a38e300b7ca801587d5e3076de4fd0b9504229b3544cfb50"
+    sha256 cellar: :any_skip_relocation, ventura:       "c34d3e9363096874a38e300b7ca801587d5e3076de4fd0b9504229b3544cfb50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eae5fa097a6796bd0aeb27e2a4026257d8b8a868263f292a693723c32404a0d3"
   end
 
   def install

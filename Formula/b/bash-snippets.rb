@@ -6,18 +6,13 @@ class BashSnippets < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4f7f21982073b861f41be1d1e33f8b3e8ee6148d86886e2d48d1a684182c36b7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "19f0ab97648f7c63aa1145c9486beccfe70408e1952513e544a111dae51a2fd8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8e38f6d39c157dcf604f1ac774a16afe66472de96ebf612a7f409689a7074282"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8e38f6d39c157dcf604f1ac774a16afe66472de96ebf612a7f409689a7074282"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "8e38f6d39c157dcf604f1ac774a16afe66472de96ebf612a7f409689a7074282"
-    sha256 cellar: :any_skip_relocation, sonoma:         "631073eb6aba487f049bc1476a64b045e71c96a5162468ea8fe2c1f1b4bc279b"
-    sha256 cellar: :any_skip_relocation, ventura:        "c2a441dc6d5b21408f49f4869b00919354392682b3ef7eef2f908ab2f638dd8a"
-    sha256 cellar: :any_skip_relocation, monterey:       "c2a441dc6d5b21408f49f4869b00919354392682b3ef7eef2f908ab2f638dd8a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c2a441dc6d5b21408f49f4869b00919354392682b3ef7eef2f908ab2f638dd8a"
-    sha256 cellar: :any_skip_relocation, catalina:       "c2a441dc6d5b21408f49f4869b00919354392682b3ef7eef2f908ab2f638dd8a"
-    sha256 cellar: :any_skip_relocation, mojave:         "c2a441dc6d5b21408f49f4869b00919354392682b3ef7eef2f908ab2f638dd8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e38f6d39c157dcf604f1ac774a16afe66472de96ebf612a7f409689a7074282"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d9c146c0d2b5d4e6ec135939558a9a61f40f416c9087be9bcc968f09a156998"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d9c146c0d2b5d4e6ec135939558a9a61f40f416c9087be9bcc968f09a156998"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3d9c146c0d2b5d4e6ec135939558a9a61f40f416c9087be9bcc968f09a156998"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dd3fba704985cfdaef3cb86ca549b505e4ea7eecd3635c9acc3061f78acfa293"
+    sha256 cellar: :any_skip_relocation, ventura:       "dd3fba704985cfdaef3cb86ca549b505e4ea7eecd3635c9acc3061f78acfa293"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d9c146c0d2b5d4e6ec135939558a9a61f40f416c9087be9bcc968f09a156998"
   end
 
   conflicts_with "cheat", because: "both install a `cheat` executable"

@@ -15,17 +15,10 @@ class Nacl < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, sonoma:       "4483449bad5392b31f7c46e80beab15e20ab942b5423d204ff4ffc6e6157f5b0"
-    sha256 cellar: :any_skip_relocation, ventura:      "8295f77303ae90ec9c22cfb16f5d676b435804447edc5347ab5f1a8d55ea2ddd"
-    sha256 cellar: :any_skip_relocation, monterey:     "925c585e1140b37453c5f7ac60f944221e1de495654aefc70d5352e43fa0f730"
-    sha256 cellar: :any_skip_relocation, big_sur:      "89574694f733c8aa852e09e3828f10dd6ce2ece4219bd825e5f6c18253bddb28"
-    sha256 cellar: :any_skip_relocation, catalina:     "b9fb1445709388168d0e1c56964a7540e8ff4e6294d31eb23c62368ce56e6d1b"
-    sha256 cellar: :any_skip_relocation, mojave:       "bb0b22e1aa3a87657b064def3d19bcad419a4339889046f931a5eac7e5bc8bc1"
-    sha256 cellar: :any_skip_relocation, high_sierra:  "43fffe959f6a95aacff4d5d4b7bfbb34f835a2487e8bff0645473d8ec1de83b6"
-    sha256 cellar: :any_skip_relocation, sierra:       "86e5ef1c0a14b029d1ed3f63df48fde9c302adbbc3e1dcacd1bb7617bf547615"
-    sha256 cellar: :any_skip_relocation, el_capitan:   "e08c93b814989405fa3b7db9e3a9c4f149e36aaab32aba44e9a2f1659d2d3efd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "03cbc3623ab6388289a613b8499f4e120d19cda47b661bd494e0d0cdfc355288"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, sonoma:       "2bc9b50523f178e04e9241b85554bf361f1c1e4fb70105be8b8897db0d8622ca"
+    sha256 cellar: :any_skip_relocation, ventura:      "e79dfbf0f21c155f30ffd7f61b012ca4ff2092fbad508e59a44de5ff2894c307"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "01602518b18033cb7a49ca9716072b02a9115f469b15b85661459f948707fb5a"
   end
 
   depends_on arch: :x86_64

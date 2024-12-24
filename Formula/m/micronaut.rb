@@ -1,8 +1,8 @@
 class Micronaut < Formula
   desc "Modern JVM-based framework for building modular microservices"
   homepage "https:micronaut.io"
-  url "https:github.commicronaut-projectsmicronaut-starterarchiverefstagsv4.7.2.tar.gz"
-  sha256 "c547932619b5aba7bc752356125b424ae444e620844c6c834a2dff74713e35c7"
+  url "https:github.commicronaut-projectsmicronaut-starterarchiverefstagsv4.7.3.tar.gz"
+  sha256 "5c8c01f87d7834eab830987d65fd073c3d9a1a5196288bb2565834914e77abd6"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Micronaut < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f36f49dd7380a933fcf897f21e7aae29c411a25dfbafe30ce195f9acdb4f9684"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6baa6734500374513357f8366372374a673802126eedbbf48816054932fb76fd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8e8ee006cfddaeef70d258eddf14b8f38acc31079420550d5377e298f2225d10"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6c5aaa5d02f82c1fb1cf6795d91a6df9ba3ca28cbf1c4aab6ec152ca4266b5c3"
-    sha256 cellar: :any_skip_relocation, ventura:       "94fed0711af32e4320eca468356da78c243cf5d97de6835de962dff4166eedbd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2c47561a1e88b22995c7564ad6478950a5f5beb50082ac3b9f629ee6a060bd3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b208b7586971bcadfa20bb7ee180c5950363130f784d858ae48dec8ac19964a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1cae6c116beffe5da195464526af0e19b2883633bc1ffe01a847466caa9944cf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "be5163a8bd729ac5431b4ccb49102ee5b7f2820ad6c7ea7c9eae97b625181193"
+    sha256 cellar: :any_skip_relocation, sonoma:        "315dee15859ed96cb42fd9cf6c5b5947f272d210116222512bcf5304e9d9021d"
+    sha256 cellar: :any_skip_relocation, ventura:       "11d2427cb602ab1ef5dc708c13e5d001a1eb2d76e651df69437bd3ae4c4b1a6e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eff154448d78db5743976dc0858586df9e3dbdd5d2b6de281220d045ca4eab4c"
   end
 
   depends_on "gradle" => :build

@@ -29,7 +29,6 @@ class Jupyterlab < Formula
   depends_on "python@3.13"
   depends_on "zeromq"
 
-  uses_from_macos "expect" => :test
   uses_from_macos "libffi"
   uses_from_macos "libxml2"
   uses_from_macos "libxslt"
@@ -559,22 +558,17 @@ class Jupyterlab < Formula
   end
 
   test do
-    system bin"jupyter-console --help"
+    assert_match "The Jupyter terminal-based Console", shell_output("#{bin}jupyter-console --help")
     assert_match python3, shell_output("#{bin}jupyter kernelspec list")
+    assert_match(In \[1\]:.*exit.*Shutting downm, pipe_output("#{bin}jupyter-console 2>&1", "exit"))
 
-    (testpath"console.exp").write <<~EOS
-      spawn #{bin}jupyter-console
-      expect -timeout 60 "In "
-      send "exit\r"
-    EOS
-    assert_match "Jupyter console", shell_output("expect -f console.exp")
-
-    (testpath"notebook.exp").write <<~EOS
-      set timeout 60
-      spawn #{bin}jupyter notebook --no-browser
-      expect "ServerApp"
-    EOS
-    assert_match "ServerApp", shell_output("expect -f notebook.exp")
+    require "expect"
+    require "open3"
+    Open3.popen3(bin"jupyter", "notebook", "--no-browser") do |_stdin, _stdout, stderr, wait_thread|
+      refute_nil stderr.expect("Serving notebooks from local directory:", 15), "Expected running message"
+    ensure
+      Process.kill "TERM", wait_thread.pid
+    end
 
     (testpath"nbconvert.ipynb").write <<~JSON
       {

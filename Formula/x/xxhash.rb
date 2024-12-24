@@ -70,6 +70,7 @@ class Xxhash < Formula
         return 0;
       }
     C
+
     (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.5)
       project(test LANGUAGES C)
@@ -77,8 +78,9 @@ class Xxhash < Formula
       add_executable(test test.c)
       target_link_libraries(test PRIVATE xxHash::xxhash)
     CMAKE
-    system "cmake", "."
-    system "cmake", "--build", "."
-    system ".test"
+
+    system "cmake", "-S", ".", "-B", "build"
+    system "cmake", "--build", "build"
+    system ".buildtest"
   end
 end

@@ -1,18 +1,18 @@
 class Skylighting < Formula
   desc "Flexible syntax highlighter using KDE XML syntax descriptions"
   homepage "https:github.comjgmskylighting"
-  url "https:github.comjgmskylightingarchiverefstags0.14.4.tar.gz"
-  sha256 "fa4e9610446d55ea3803f0219ce5482f4564f99a1c68d71b9ca80bd6f8e6741b"
+  url "https:github.comjgmskylightingarchiverefstags0.14.5.tar.gz"
+  sha256 "18e04aa52bbdce34a008509d5763cb7d3e33a3c36cec1397bb9733c32374ceea"
   license "GPL-2.0-or-later"
   head "https:github.comjgmskylighting.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d589e8d90f4378d7bfcc3d6d0cd276a53e0451bf3bb85304aba0fd29209fa482"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77b0a5471067e422a098da41eaf12b60910cd93c70597f272575b711cd21d1ce"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a480babeb43a33a0852fbbf19340a21d9860f40f50c54e8cab042cf1e0837071"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1a236e8cc1aab729ef80672c0e1ccad83e97acce1b0013c3ba43d1cfe4b99566"
-    sha256 cellar: :any_skip_relocation, ventura:       "439ecc4c2f65764e913a065a448adfefa9738cb6c3bebc62a3b608b126a9af9c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d327a90a256fc8b6972792a24a7f60f702edecd3bdf347ddad63672af5130f1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b43362c4168679b240c3db12fd1623dd5d2a30f91c56e05068f1022814302acb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "82375a2b588155dc8c80b3f957963564f5f69ce69f4466b3b8598c85166324c8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6f80968b2a9f80a6666a038ac2d9be6d2bac1af47183b3cab3cc5d0e22c4b1a7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9a6b28929cd33e9504df0d9646f6339b6074a29a5279caa4effa6bc9c3855762"
+    sha256 cellar: :any_skip_relocation, ventura:       "059f0627e50d082fd2b9b55aa7b32a2066c1f64fad191e6dd5428136f1f2af89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6044669307aeeed64895934c3511fdad0997e514cdbf4eabcf08258d5257339"
   end
 
   depends_on "cabal-install" => :build

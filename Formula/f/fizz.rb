@@ -84,8 +84,9 @@ class Fizz < Formula
     CMAKE
 
     ENV.delete "CPATH"
-    system "cmake", ".", *std_cmake_args
-    system "cmake", "--build", "."
-    assert_match "TLS", shell_output(".test")
+
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    assert_match "TLS", shell_output(".buildtest")
   end
 end

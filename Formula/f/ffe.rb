@@ -12,18 +12,13 @@ class Ffe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f839efe80fda0cac22ae4720abb313ff00f9de735eaab679c95a66f60be30b94"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5e0dc2b044209ff16ce46325efd22682f021cd39a37f695723704fedb7ae94ba"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6439a12e9180af68d7dbdcfe34542acac6ae00b68b1dd76af01caca53b6fea70"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5d3e8b3f5351665de15fb7ea4904b873cd7c3c04cefde6f6b0534a16dc7dbef0"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "0fc8ca59fce53552b827be4e9bfdc9c263c8087961245704277be10915fb6d20"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f6ec432828c679a419bcd2ea0640594df15cd6b48696e3bff7cc3e46e8c4553d"
-    sha256 cellar: :any_skip_relocation, ventura:        "33ad5a55c582f1010abc77265a3ded3217a771b87a749809868184d74a115c8e"
-    sha256 cellar: :any_skip_relocation, monterey:       "296af9a5f1d536172be945d4856dc659441b6c8129ab0b6bc865f97d0ffc9b6a"
-    sha256 cellar: :any_skip_relocation, big_sur:        "96ed6ad86d89e339ff49c9ed615ca5e44dd1aa67b534b0644ae09accb31f4d80"
-    sha256 cellar: :any_skip_relocation, catalina:       "f702acaeb2f1c1c8681b67e7725827b5a33b46a9f11c6138682b715c0a652798"
-    sha256 cellar: :any_skip_relocation, mojave:         "50a6933b42632612de08af50fead023d23c04593ecb323749f950b05df9f034e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "583204b3a7ac459ad0ab5d76d7cea314103dc499d271ddfd2309f053e795c41f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2434c37d7cd7a87491c114df6bda210f02931bea75a31f9dd5291124d3da0f11"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22ac6a47505e5c5daea19a9e916141a3882896d1218815d8fb5d43fd90f75181"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a7b77078513e21ac6d077c228a3fc51dc31dcdbb707e9807764b7438e6630146"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3cd2f309d44bbc5d7a429d078f6cec664e4ec170e08b8993477000e7d843605c"
+    sha256 cellar: :any_skip_relocation, ventura:       "8e2a4fd7ab7bd26bcd4b562eb90e7ae78987bbd5c0ff387cac15e6dcf45fd0ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95cd58d701bdd204a70498b668326d01679493ccb77d8b84b517472d9838df0b"
   end
 
   def install

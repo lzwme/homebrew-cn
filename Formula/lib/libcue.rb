@@ -22,8 +22,10 @@ class Libcue < Formula
   uses_from_macos "flex" => :build
 
   def install
-    system "cmake", ".", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+
     (pkgshare"tests").install Dir["t*"]
   end
 

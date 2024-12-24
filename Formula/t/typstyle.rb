@@ -7,18 +7,21 @@ class Typstyle < Formula
   head "https:github.comEnter-tainertypstyle.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3730f14c2a080f941e6a0d391432fbc9b95ded64f148d8f56df894352bc75604"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "487f540000c50a25c219f2cb4150fa38c067a7644231b49c02b84733b75ad4d3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "afdb78d7312ffa843503c43d25a16be8f434cdbee36a3f3b4e7c2629f57d062f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "201f525d1d7aef7bb3accc607e5af4c49bc9fc936ee6d49627c462b0f6d32ed4"
-    sha256 cellar: :any_skip_relocation, ventura:       "4121555a0f26630fe63614d9438db7df2c184692f1b06b2a47869800a304a181"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0a7e5fa26648a4586608dbf9d9b92aecc81d3d72b918d4d96c99da8e76624e9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cec5051403900129db4d5984fc81f8a78f2c359cd1b8fdcbf072cc4df780b72e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0dd06f0f72994c1769373fc076af022bf70bc3e1761dc2560d2b11a7603a982b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "95f4ae101b7f5cd7479e54c39df81e1fcb8bac8c097a7a645f33dd4fc4b3c816"
+    sha256 cellar: :any_skip_relocation, sonoma:        "585625f09b16dbde53858014b16a8c6cd7010dd6802c092b9c2d394d12b635c5"
+    sha256 cellar: :any_skip_relocation, ventura:       "b72df48eee1a1ee4131dc75f114a5e54607e2bf034728993f5d3cac55ed43f1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b55f8bb1b80f76be191550f8bfb50ee42fb340ce12a783515b9e6b657b8f3674"
   end
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args(path: "cratestypstyle")
+
+    generate_completions_from_executable(bin"typstyle", "completions")
   end
 
   test do

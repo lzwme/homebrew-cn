@@ -23,9 +23,9 @@ class Mkclean < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", ".", *std_cmake_args
-    system "make", "-C", "mkclean"
-    bin.install "mkclean/mkclean"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    bin.install "build/mkclean/mkclean"
   end
 
   test do

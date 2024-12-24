@@ -40,8 +40,10 @@ class Ompl < Formula
       -DCMAKE_DISABLE_FIND_PACKAGE_spot=ON
       -DCMAKE_DISABLE_FIND_PACKAGE_Triangle=ON
     ]
-    system "cmake", ".", *args, *std_cmake_args
-    system "make", "install"
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

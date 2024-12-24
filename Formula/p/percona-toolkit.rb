@@ -1,10 +1,9 @@
 class PerconaToolkit < Formula
   desc "Command-line tools for MySQL, MariaDB and system tasks"
   homepage "https://www.percona.com/software/percona-toolkit/"
-  url "https://www.percona.com/downloads/percona-toolkit/3.6.0/source/tarball/percona-toolkit-3.6.0.tar.gz"
-  sha256 "48c2a0f7cfc987e683f60e9c7a29b0ca189e2f4b503f6d01c5baca403c09eb8d"
+  url "https://www.percona.com/downloads/percona-toolkit/3.7.0/source/tarball/percona-toolkit-3.7.0.tar.gz"
+  sha256 "e79f53c3227ac31c858fad061d8a000162cb5ecf8b446b90b574adde9e9ab455"
   license any_of: ["GPL-2.0-only", "Artistic-1.0-Perl"]
-  revision 2
   head "lp:percona-toolkit", using: :bzr
 
   livecheck do
@@ -13,13 +12,12 @@ class PerconaToolkit < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "3980109fd839e015ba0374ce6ab91d38b1e3dbf19adbd0dbd9419ff22c6d7c6b"
-    sha256 cellar: :any,                 arm64_sonoma:  "132b777b091235c5cfb076fcb1e598779b9c85b5474ab4bd835a41505bf90913"
-    sha256 cellar: :any,                 arm64_ventura: "8d602577ed2a44397000a5f7c6681fedd6d877ae216397832ca56845e1605db3"
-    sha256 cellar: :any,                 sonoma:        "dc1b543213e20d1c89fa03feed8db8c1d4389d9af301bd09f53ab7ec8b7465df"
-    sha256 cellar: :any,                 ventura:       "e02f9d93dc0f420f69948e2ec983cf448b6e4ab65b32f111e1b7ba99d124f70c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b3d4c95c44bb34b52568ea62819f57a19988ba50622c5c87b82a7a236606407"
+    sha256 cellar: :any,                 arm64_sequoia: "20acd34ed6c90230cab848cc2d60244eb417bf4eb27ce69fb48a9809681e8f57"
+    sha256 cellar: :any,                 arm64_sonoma:  "9bb2cec45a90341e259b773737d409aaf0ecbb862d9578849c4740785d2d760c"
+    sha256 cellar: :any,                 arm64_ventura: "cf116bff658175721671f8c152c40e669e895ff5dd9a474167fd306fcfbc97df"
+    sha256 cellar: :any,                 sonoma:        "7bab53293a32c33c15b7764666d828125f4abdd244e2e8e1b486f2c078229116"
+    sha256 cellar: :any,                 ventura:       "05a8dc478966a2395d7d83bc1cf816e683795db19d83417a244db43b1caca830"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8ee2ab6048715176684e52a0dcbfcd186addb7bdd791c433df9c8e0f568d291"
   end
 
   depends_on "go" => :build
@@ -41,8 +39,8 @@ class PerconaToolkit < Formula
   end
 
   resource "DBD::mysql" do
-    url "https://cpan.metacpan.org/authors/id/D/DV/DVEEDEN/DBD-mysql-5.009.tar.gz"
-    sha256 "8552d90dfddee9ef36e7a696da126ee1b42a1a00fbf2c6f3ce43ca2c63a5b952"
+    url "https://cpan.metacpan.org/authors/id/D/DV/DVEEDEN/DBD-mysql-5.010.tar.gz"
+    sha256 "2ca2ff39d93e89d4f7446e5f0faf03805e9167ee9b8a04ba7cb246e2cb46eee7"
   end
 
   resource "JSON" do

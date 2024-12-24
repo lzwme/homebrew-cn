@@ -28,11 +28,11 @@ class Precomp < Formula
   def install
     # https:github.comschnaaderprecomp-cpppull146
     inreplace "contribliblzmarangecoderrange_encoder.h", "#include \"price.h\"",
-      "#include \"price.h\"\n#include <assert.h>"
+              "#include \"price.h\"\n#include <assert.h>"
 
-    system "cmake", ".", *std_cmake_args
-    system "make"
-    bin.install "precomp"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    bin.install "buildprecomp"
   end
 
   test do

@@ -30,13 +30,25 @@ class EbookTools < Formula
   uses_from_macos "libxml2"
 
   def install
-    system "cmake", ".",
-                    "-DLIBZIP_INCLUDE_DIR=#{Formula["libzip"].lib}/libzip/include",
-                    *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
     system bin/"einfo", "-help"
+
+    (testpath/"test_libepub.c").write <<~C
+      #include <stdio.h>
+      #include "epub_version.h"
+
+      int main() {
+          printf("libepub version: %s\\n", LIBEPUB_VERSION_STRING);
+          return 0;
+      }
+    C
+
+    system ENV.cc, "test_libepub.c", "-I#{include}", "-L#{lib}", "-lepub", "-o", "test_libepub"
+    system "./test_libepub"
   end
 end

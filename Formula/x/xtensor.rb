@@ -19,12 +19,14 @@ class Xtensor < Formula
 
   def install
     resource("xtl").stage do
-      system "cmake", ".", *std_cmake_args
-      system "make", "install"
+      system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+      system "cmake", "--build", "build"
+      system "cmake", "--install", "build"
     end
 
-    system "cmake", ".", "-Dxtl_DIR=#{lib}cmakextl", *std_cmake_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", "-Dxtl_DIR=#{lib}cmakextl", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -49,6 +51,7 @@ class Xtensor < Formula
         return 0;
       }
     CPP
+
     system ENV.cxx, "-std=c++14", "test.cc", "-o", "test", "-I#{include}"
     assert_equal "323", shell_output(".test").chomp
   end

@@ -37,8 +37,12 @@ class Mmseqs2 < Formula
   end
 
   def install
-    args = *std_cmake_args << "-DHAVE_TESTS=0" << "-DHAVE_MPI=0"
-    args << "-DVERSION_OVERRIDE=#{version}"
+    args = %W[
+      -DHAVE_TESTS=0
+      -DHAVE_MPI=0
+      -DVERSION_OVERRIDE=#{version}
+    ]
+
     args << if Hardware::CPU.arm?
       "-DHAVE_ARM8=1"
     else
@@ -54,8 +58,9 @@ class Mmseqs2 < Formula
       args << "-DOpenMP_omp_LIBRARY=#{libomp.opt_lib}libomp.a"
     end
 
-    system "cmake", ".", *args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
     resource("documentation").stage { doc.install Dir["*"] }
     pkgshare.install "examples"

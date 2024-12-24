@@ -13,8 +13,14 @@ class Cli11 < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", ".", "-DCLI11_BUILD_DOCS=OFF", "-DCLI11_BUILD_TESTS=OFF", *std_cmake_args
-    system "make", "install"
+    args = %w[
+      -DCLI11_BUILD_DOCS=OFF
+      -DCLI11_BUILD_TESTS=OFF
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

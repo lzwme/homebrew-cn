@@ -1,4 +1,6 @@
 class Shellshare < Formula
+  include Language::Python::Shebang
+
   desc "Live Terminal Broadcast"
   homepage "https:shellshare.net"
   url "https:github.comvitorbaptistashellsharearchiverefstagsv1.1.0.tar.gz"
@@ -6,10 +8,14 @@ class Shellshare < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "cc656c34170ea6d6e3b9573a0077403840e9a84e9ea764d6e4add6ad9397f9e2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "74bd14d6127d61de20dc99c0936450669eb5bbe22788f0ef64abdcacf2c1f7a0"
   end
 
+  uses_from_macos "python"
+
   def install
+    rewrite_shebang detected_python_shebang(use_python_from_path: true), "publicbinshellshare"
     bin.install "publicbinshellshare"
   end
 

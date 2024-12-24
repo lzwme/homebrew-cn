@@ -28,16 +28,17 @@ class Woff2 < Formula
   depends_on "brotli"
 
   def install
-    args = std_cmake_args + %W[
+    args = %W[
       -DCMAKE_INSTALL_NAME_DIR=#{opt_lib}
       -DCMAKE_BUILD_WITH_INSTALL_NAME_DIR=ON
     ]
 
-    system "cmake", ".", *args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
-    # make install does not install binaries
-    bin.install "woff2_info", "woff2_decompress", "woff2_compress"
+    # Manually install binaries not handled by `make install`
+    bin.install "buildwoff2_info", "buildwoff2_decompress", "buildwoff2_compress"
   end
 
   test do

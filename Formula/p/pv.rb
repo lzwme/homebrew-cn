@@ -11,19 +11,26 @@ class Pv < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3aedb889fb5c34796808c55b1e947238e41b751d3a1b9f71b20910502e62504"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "29daf6ddd5fb54358109b5d5d976e5b0a0bfde8a4ba96990b5b656794c0f54ac"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f91bbe641cf07ce61a2dfb6a0110f04f82494fc72bc327a1e2a99f764ae7c2d6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b0b900e477a01d4850834d587d336bb560963fecc173fdca6659f27a70b02669"
-    sha256 cellar: :any_skip_relocation, ventura:       "53bcb7077797b93c0feec686676cfb00737617675e9fcae19b5ba83fdad4fafc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f25755c20fce6dfd4be0fe76c047d5c68111fcbcbffd0415206b79085f659e59"
+    rebuild 1
+    sha256 arm64_sequoia: "e0da19b94f65cb3443073d84dc56636fc17122537f222cc74eb8526872036685"
+    sha256 arm64_sonoma:  "5cb01ad3f5394b602152c5a8501e778dc72005e9fe0aacfeb7924a5309c702cc"
+    sha256 arm64_ventura: "c57e295e51a38b43d01acdb12b546551b2a7dc2234fa51e3452ea0a8df48a910"
+    sha256 sonoma:        "e336a400640f881823b2aeb1cddadcd5cdadcee1d70d95d140c628b49cfde3cf"
+    sha256 ventura:       "9495bf894c4d9265c399544d8e7c8a84fbd1d570fd06193b8e969c3036d6706b"
+    sha256 x86_64_linux:  "9df26dd6d6cbc6753eb33552a2bc28bd6587aa2875bf3edacd1c279fe824cfbc"
+  end
+
+  uses_from_macos "ncurses"
+
+  on_macos do
+    depends_on "gettext"
   end
 
   def install
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
-    system "./configure", "--prefix=#{prefix}", "--mandir=#{man}", "--disable-nls"
+    system "./configure", "--mandir=#{man}", *std_configure_args
     system "make", "install"
   end
 

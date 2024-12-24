@@ -27,11 +27,16 @@ class Qbs < Formula
   depends_on "qt"
 
   def install
-    qt = Formula["qt"].opt_prefix
-    system "cmake", ".", "-DQt6_DIR=#{qt}/lib/cmake/Qt6", "-DQBS_ENABLE_RPATH=NO",
-                         *std_cmake_args
-    system "cmake", "--build", "."
-    system "cmake", "--install", "."
+    qt_dir = Formula["qt"].opt_lib/"cmake/Qt6"
+
+    args = %W[
+      -DQt6_DIR=#{qt_dir}
+      -DQBS_ENABLE_RPATH=NO
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
