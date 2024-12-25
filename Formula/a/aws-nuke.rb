@@ -1,18 +1,18 @@
 class AwsNuke < Formula
   desc "Nuke a whole AWS account and delete all its resources"
   homepage "https:github.comekristenaws-nuke"
-  url "https:github.comekristenaws-nukearchiverefstagsv3.36.0.tar.gz"
-  sha256 "014b0ac7ac8cc54fbc3d8cbc0c5cfac5620db7f6ad9ba73e50ec9010882b0ec6"
+  url "https:github.comekristenaws-nukearchiverefstagsv3.38.0.tar.gz"
+  sha256 "cff3a50163f9fba8c95a15f11bfdce2c643f930a9fb9dd7dbe756cbe6774417d"
   license "MIT"
   head "https:github.comekristenaws-nuke.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e75b14f4e38d9ad5fd35d34cf0973e11b6ab8d153c4f862278ae8dc318991e0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e75b14f4e38d9ad5fd35d34cf0973e11b6ab8d153c4f862278ae8dc318991e0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0e75b14f4e38d9ad5fd35d34cf0973e11b6ab8d153c4f862278ae8dc318991e0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "215af0d9d159c9542635daf2227e46a4cc0d7700df29fafd09ccdfaaa929b969"
-    sha256 cellar: :any_skip_relocation, ventura:       "215af0d9d159c9542635daf2227e46a4cc0d7700df29fafd09ccdfaaa929b969"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "860a73b4d8da7b171459d5f4440c21ee1d8a5f893a62a193b9167f9643783284"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f73981f9599fc331be245e138c5eed9b534980c99fb820fe5265efe2fec7a81c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f73981f9599fc331be245e138c5eed9b534980c99fb820fe5265efe2fec7a81c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f73981f9599fc331be245e138c5eed9b534980c99fb820fe5265efe2fec7a81c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "44a31a1b2f5e16f7b39255a9aa0cd23143f653f8ebbb6b0a715f3b6d42b87608"
+    sha256 cellar: :any_skip_relocation, ventura:       "44a31a1b2f5e16f7b39255a9aa0cd23143f653f8ebbb6b0a715f3b6d42b87608"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e726743bb9a4a38cc346f51400e36581b107dc40b143b9dbf089ab210cff44b0"
   end
 
   depends_on "go" => :build

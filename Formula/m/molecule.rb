@@ -6,14 +6,15 @@ class Molecule < Formula
   url "https://files.pythonhosted.org/packages/57/bc/a6dcfca6e4cae04fdb4fc385bda0bc637a338b6d72dea79ba93eaa68e1d3/molecule-24.12.0.tar.gz"
   sha256 "7243ff58e0b8159aa2cf465ba9605d657f1d614617264307bef5b32518467afe"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9806ce0d6fc542898249c55e203fd39a03a61d70816a6e2dac04429c1d05092d"
-    sha256 cellar: :any,                 arm64_sonoma:  "42112fd61abcc0e59538ba52ccf777a7ee73333a21c11e04b62197b6c13b60a9"
-    sha256 cellar: :any,                 arm64_ventura: "902b556e09e50bc27fa9ed7f1c0ffec84dea42ac75641d8a09623f684a09eeed"
-    sha256 cellar: :any,                 sonoma:        "4f26feff60895f759951874fb7b8bc7423348aa80f538b0bb8a6370d34948e1d"
-    sha256 cellar: :any,                 ventura:       "72cdf1bc59a0e566617aaaab83934deec3cd3062eabd305e2497c473e9138d9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d248d1793a1d65924c850a9e397b649daf563d2999e0ab637c661eb14ccd6203"
+    sha256 cellar: :any,                 arm64_sequoia: "506ab38aa9b763883db8c672e1e4c12fcfe9433ec8986960e52322732e51426c"
+    sha256 cellar: :any,                 arm64_sonoma:  "86cf8aa2b1ef27e4d21ccdf6a3c16f5feff81b2646c0e75644f0d9bd61a7b997"
+    sha256 cellar: :any,                 arm64_ventura: "ea40af787e2acf56d89fe4e1c4d9bbe163bcba625e613c182ea018c2ed36de4e"
+    sha256 cellar: :any,                 sonoma:        "37cc9cf2215a6264d3ae9ca09aedcfac006581807e4b33e22d3fa0e940c32ac4"
+    sha256 cellar: :any,                 ventura:       "25dd451e32bca612be54269914565dff3b9a3833debfd5f85d2b8c67b7725e26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63975d6bd95f39ba3c378fc3a23ec915802bf54d8fcf42b2aa364e9e512e7dec"
   end
 
   depends_on "rust" => :build
@@ -40,8 +41,8 @@ class Molecule < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/fc/0f/aafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fb/attrs-24.2.0.tar.gz"
-    sha256 "5cfb1b9148b5b086569baec03f20d7b6bf3bcacc9a42bebf87ffaaca362f6346"
+    url "https://files.pythonhosted.org/packages/48/c8/6260f8ccc11f0917360fc0da435c5c9c7504e3db174d5a12a1494887b045/attrs-24.3.0.tar.gz"
+    sha256 "8f5c07333d543103541ba7be0e2ce16eeee8130cb0b3f9238ab904ce1e85baff"
   end
 
   resource "bracex" do
@@ -55,8 +56,8 @@ class Molecule < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
+    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
   end
 
   resource "click-help-colors" do
@@ -90,8 +91,8 @@ class Molecule < Formula
   end
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/ed/55/39036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5d/jinja2-3.1.4.tar.gz"
-    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
+    url "https://files.pythonhosted.org/packages/af/92/b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccff/jinja2-3.1.5.tar.gz"
+    sha256 "8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"
   end
 
   resource "jsonschema" do
@@ -190,8 +191,8 @@ class Molecule < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/ed/63/22ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260/urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https://files.pythonhosted.org/packages/aa/63/e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66/urllib3-2.3.0.tar.gz"
+    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
   end
 
   resource "wcmatch" do

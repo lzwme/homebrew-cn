@@ -6,16 +6,16 @@ class SigmaCli < Formula
   url "https:files.pythonhosted.orgpackages70e86a4e6aa2875494af43483a37c1715039d42a0ba54cb1353db5c3ebfded69sigma_cli-1.0.4.tar.gz"
   sha256 "30db40f7b6ea1cff8da5c03668ee37326fa371fa343129455741a6b8b68d81b2"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https:github.comSigmaHQsigma-cli.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "e85d81944db241d8ab8e7c1cfd14e68f501d13f2980c9c0c38cac75bee9fdf9e"
-    sha256 cellar: :any,                 arm64_sonoma:  "c7f506585c2e8fd7ef33e3e0cf372d185e64725d4af627965c8f70a31c128368"
-    sha256 cellar: :any,                 arm64_ventura: "1ce2f22d39f1aeae70e408ec3bafdd420cfa517d7cc70c15fdf741040c6f7c80"
-    sha256 cellar: :any,                 sonoma:        "9d81f30515267b4ae2b4a5295bc176e8ce562228f2d73bc6458ecc59d7f8203f"
-    sha256 cellar: :any,                 ventura:       "d3cb323471d15418cb3feb3c979726598d0130d2caf9fc728a0cf470dac06dd3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dcc4edecab2c8758382e38ed3fd3ac6d0690f1448b8f09f2f63f053baf3b4ebe"
+    sha256 cellar: :any,                 arm64_sequoia: "7f8083cf34d6448e0e342015a8fca502f0ff8833dd311ba16a2f93a909f6ed24"
+    sha256 cellar: :any,                 arm64_sonoma:  "5cbcf0140ec1a48e1813d7b16fbad8e12b9e55d34668cc23fbb100e8a43b0a2d"
+    sha256 cellar: :any,                 arm64_ventura: "1bef4969fef936b6174e2b4a4fd446cec1c26aaa82ac0b371bd0bdb9a2a985ca"
+    sha256 cellar: :any,                 sonoma:        "6bd62a6633329e125f5fdbc3b35fae5fa9e9aded71d30a63efe8d510a948c7e5"
+    sha256 cellar: :any,                 ventura:       "25da1fb930db48ae4223ec5ac53bc2d5d668e7495734b60ff6f000bb4fbe8c52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b451f1e0f7bdff2173a5ecbe5127108d6f54cc4c4ea95245cd4fee7c130a40f1"
   end
 
   depends_on "certifi"
@@ -30,8 +30,8 @@ class SigmaCli < Formula
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
+    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
   end
 
   resource "colorama" do
@@ -45,38 +45,38 @@ class SigmaCli < Formula
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
-    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
+    url "https:files.pythonhosted.orgpackagesaf92b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccffjinja2-3.1.5.tar.gz"
+    sha256 "8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"
   end
 
   resource "markupsafe" do
-    url "https:files.pythonhosted.orgpackagesb4d238ff920762f2247c3af5cbbbbc40756f575d9692d381d7c520f45deb9b8fmarkupsafe-3.0.1.tar.gz"
-    sha256 "3e683ee4f5d0fa2dde4db77ed8dd8a876686e3fc417655c2ece9a90576905344"
+    url "https:files.pythonhosted.orgpackagesb2975d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62markupsafe-3.0.2.tar.gz"
+    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
-    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
+    url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
+    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
   end
 
   resource "prettytable" do
-    url "https:files.pythonhosted.orgpackages28570a642bec16d5736b9baaac7e830bedccd10341dc2858075c34d5aec5c8b6prettytable-3.11.0.tar.gz"
-    sha256 "7e23ca1e68bbfd06ba8de98bf553bf3493264c96d5e8a615c0471025deeba722"
+    url "https:files.pythonhosted.orgpackages3b8ade4dc1a6098621781c266b3fb3964009af1e9023527180cb8a3b0dd9d09eprettytable-3.12.0.tar.gz"
+    sha256 "f04b3e1ba35747ac86e96ec33e3bb9748ce08e254dc2a1c6253945901beec804"
   end
 
   resource "pyparsing" do
-    url "https:files.pythonhosted.orgpackages830813f3bce01b2061f2bbd582c9df82723de943784cf719a35ac886c652043apyparsing-3.1.4.tar.gz"
-    sha256 "f86ec8d1a83f11977c9a6ea7598e8c27fc5cddfa5b07ea2241edbbde1d7bc032"
+    url "https:files.pythonhosted.orgpackages8cd5e5aeee5387091148a19e1145f63606619cb5f20b83fccb63efae6474e7b2pyparsing-3.2.0.tar.gz"
+    sha256 "cbf74e27246d595d9a74b186b810f6fbb86726dbf3b9532efb343f6d7294fe9c"
   end
 
   resource "pysigma" do
-    url "https:files.pythonhosted.orgpackages4caa430bb16b481d321cd6a25ef0e132a95d34ec9b6352718c738799ef12f674pysigma-0.11.14.tar.gz"
-    sha256 "89f202580684f775af25127a647e883dbce54cc177a3c5a203233cb47c20e08f"
+    url "https:files.pythonhosted.orgpackagesfc345d7bf067f4219f8634609ce30190ff51da96deb3ed6d675140a1a3c03601pysigma-0.11.18.tar.gz"
+    sha256 "eb625590dbc9822bed9ad0d64cb42fb3df69581d98c0c87f674df255b1a617d7"
   end
 
   resource "pysigma-backend-sqlite" do
-    url "https:files.pythonhosted.orgpackagesf9a744f3af755fc30d693c9c1242b8f3e52507ffaed34c4847329c3eb0ba62f3pysigma_backend_sqlite-0.1.2.tar.gz"
-    sha256 "9a57a4f89689f980c4cd53cdfb2f8fbfc49ea301b9446f39659e9a84f688302f"
+    url "https:files.pythonhosted.orgpackages7263e618d84f770f982afa5f8e99a93c99c48bd87992d1ba4cc961aab6ba15e9pysigma_backend_sqlite-0.2.0.tar.gz"
+    sha256 "0ff1bbb0165477e938e2951808ba348bd29803fd3fae5c4cbcd117532e622217"
   end
 
   resource "pyyaml" do
@@ -90,8 +90,8 @@ class SigmaCli < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https:files.pythonhosted.orgpackagesaa63e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66urllib3-2.3.0.tar.gz"
+    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
   end
 
   resource "wcwidth" do

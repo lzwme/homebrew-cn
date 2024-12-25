@@ -6,14 +6,15 @@ class Sqlfluff < Formula
   url "https://files.pythonhosted.org/packages/6d/1f/d4d5f97110a917e01c4f5c921852eb11a3b69d6c5decdbb6ddd5658ccdcd/sqlfluff-3.3.0.tar.gz"
   sha256 "ea0b752c0b8f4602a56fa5b381eb5c806799e4941df8fc0aad0842c9d4283e03"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "706b5d1730e4cc6fc68d3e909e896f3d9694daec9130aa84e2028f50be678564"
-    sha256 cellar: :any,                 arm64_sonoma:  "6af0a094cdbd4abf53a9b1c80246bc724308e86778b62fa93deb449766ba5f8f"
-    sha256 cellar: :any,                 arm64_ventura: "1c41f97ff2e1349d56a329115e540604c87fd97869a0eb9efbdf49f13df5f76a"
-    sha256 cellar: :any,                 sonoma:        "f210fc37cce2297280916ad818f24027d0c6988ec2c5aafc45c94eb3952af616"
-    sha256 cellar: :any,                 ventura:       "3449ca0bebf1a014e73b2df03d1a705cd5494e87075bcfad1e58636fee445335"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90e33260edd812da2d62c095e5db5cabe8f4948c6001e6f16904756283a583db"
+    sha256 cellar: :any,                 arm64_sequoia: "830cbf051c2a2c8e4096c6b26e6e117279dbc10ef5bbf2145cc5fb9d8af0541a"
+    sha256 cellar: :any,                 arm64_sonoma:  "3b2dd1dc1306544b7c6a987b849220f01427cf7b0e53bc1fc1e8fc9e961eccac"
+    sha256 cellar: :any,                 arm64_ventura: "04e1c499d0f7f127a00255b283394e39b98315ff2b7c428437b922cf05151bd7"
+    sha256 cellar: :any,                 sonoma:        "f57c5f5c2f234f4ad22b6d182ac06357ff71f933bbbf2c2931e9d0b2ab0d3c3c"
+    sha256 cellar: :any,                 ventura:       "6038c8962a161f028c866b928c55a716dbbf68a91c01d7465b37d49dccc3b88b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e43497f373c045bfe70c60bf1092b6a7f0b8866820f34fbcc38eb9658f2fe2f7"
   end
 
   depends_on "libyaml"
@@ -25,8 +26,8 @@ class Sqlfluff < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
+    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
   end
 
   resource "colorama" do
@@ -35,8 +36,8 @@ class Sqlfluff < Formula
   end
 
   resource "diff-cover" do
-    url "https://files.pythonhosted.org/packages/44/3a/e49ccba052a4dda264fbad4f467739ecc63498f7223bfc03d4bfac23ea95/diff_cover-9.2.0.tar.gz"
-    sha256 "85a0b353ebbb678f9e87ea303f75b545bd0baca38f563219bb72f2ae862bba36"
+    url "https://files.pythonhosted.org/packages/36/b0/f3ccf97926f6e5cc76d5ece42f3c685d75673d1886fcec62886b8b00c51a/diff_cover-9.2.1.tar.gz"
+    sha256 "5fa5b2d71ccf5d16cd222a71c2ca069d9bf5fa3d657f6fac9b4d9c23379323bf"
   end
 
   resource "iniconfig" do
@@ -45,8 +46,8 @@ class Sqlfluff < Formula
   end
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/ed/55/39036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5d/jinja2-3.1.4.tar.gz"
-    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
+    url "https://files.pythonhosted.org/packages/af/92/b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccff/jinja2-3.1.5.tar.gz"
+    sha256 "8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"
   end
 
   resource "markupsafe" do

@@ -6,14 +6,15 @@ class Dotdrop < Formula
   url "https:files.pythonhosted.orgpackages66a78c8f1d7268bcb0ae3f7e43d8b0da03ad0c1336baabbd4b9ce88a4b1d7b36dotdrop-1.15.0.tar.gz"
   sha256 "7e7b5558a66ac514c3861e0bb31262d5972bc15fc97c1402aef8cccffd0bde61"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5e7085f892f54ea2fbf667c52b347cdeb2961b2a3a33b60a9d19e6bb5c5d5f2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ecf13231388f2f0521cbed42c585228e7d7d2185f776c6b967794afa950cf7f9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "57cc170767670fbc9d331f480ab70729519450803e88877da7a132296e8139dc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f8faccf5f2837b5a13b5defd98ffba7c8936b5ae5d823ed197ad6b730c823566"
-    sha256 cellar: :any_skip_relocation, ventura:       "07b1ef0067a69c56dd957a0e17ca11a079f05201f5cd32061d23d28d98c496c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a670a0ef77ce715aa73de517e4298e4f255c32552456d4e492ae3a36a8bd03a2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1cc8ecf7940ed9046d6688b0a5c878765e4582e0061cd0c236166895029b1952"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f5229217f9b272f18e62f27896ef35a25cb7b0ca10d4498292218852bce525f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d59970c695d646e358cc92bac3550fe77bfadb89eb388a9dc2be3867e2fa099b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a160d746440580101cc0a3375e79316bb23c677d7c14cfec569b9b5d5cd4d1db"
+    sha256 cellar: :any_skip_relocation, ventura:       "d42e9a5b9a65d5ad03133a58a2e6a0c5d089b15117f735a0edd693080f59931d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ff5c60fb3c757395bdb3f54a7e57818df1d7145523fc84658a812b17b7ce7a2"
   end
 
   depends_on "certifi"
@@ -41,8 +42,8 @@ class Dotdrop < Formula
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
-    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
+    url "https:files.pythonhosted.orgpackagesaf92b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccffjinja2-3.1.5.tar.gz"
+    sha256 "8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"
   end
 
   resource "markupsafe" do
@@ -76,8 +77,8 @@ class Dotdrop < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https:files.pythonhosted.orgpackagesaa63e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66urllib3-2.3.0.tar.gz"
+    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
   end
 
   def install

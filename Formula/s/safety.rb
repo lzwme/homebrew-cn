@@ -6,15 +6,16 @@ class Safety < Formula
   url "https:files.pythonhosted.orgpackages3a781a3ccb6e48b30892ae5781e8239a6d446a755ef2956c7b14595f18fb4083safety-3.2.14.tar.gz"
   sha256 "7a45d88b1903c5b7c370eaeb6ca131a52f147e0b8a0b302265f82824ef92adc7"
   license "MIT"
+  revision 1
   head "https:github.compyupiosafety.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f658b3bb7170363219328ea832775d62f8643f868279888e2796bd801ed6efad"
-    sha256 cellar: :any,                 arm64_sonoma:  "ea2ef4253f9d243feba283ae4931b80e64e5dd356f3b441d3f4d52ab6effa30b"
-    sha256 cellar: :any,                 arm64_ventura: "65f843dd0cf214c4fec4dbc909c829df5968cba031e56d0b7fe360beb508252f"
-    sha256 cellar: :any,                 sonoma:        "80575130a7a1b1cf0e7a4a6b040e0c071c72933bed74681883688783c94ca358"
-    sha256 cellar: :any,                 ventura:       "5ba1dc40c8751bebc691edcb4c752667be7f9b9452a71afc6110f3294676bdab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "856accd90c9ef6bd9cf55e4ab43d96018a587abe8106ffae16a3e45063f370e4"
+    sha256 cellar: :any,                 arm64_sequoia: "9088f43106da7cc3e3f385639a7f62ad353b118aecb49262ebc677f5d78a668c"
+    sha256 cellar: :any,                 arm64_sonoma:  "74485182769cd34185f061078cf03e9aa53d8dc959ff92733b0810e11c4498d5"
+    sha256 cellar: :any,                 arm64_ventura: "7fcecff032406e4f4d2e433ae2db049121a216d9bc6f943a710e2d3d1d2c2fa9"
+    sha256 cellar: :any,                 sonoma:        "198be7af91602e43d886140181f85c55b7101cd9efe12019a3ee5c71d28726a4"
+    sha256 cellar: :any,                 ventura:       "fcfe16f7207afc344612bca13846f36ea11c83ad6a22cb8a6222e8cd2562f69a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9b44a67f8f7a02276718f87b92928ecfc801d506c3fb1135dff272813a3b99e"
   end
 
   depends_on "rust" => :build
@@ -38,8 +39,8 @@ class Safety < Formula
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
+    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
   end
 
   resource "dparse" do
@@ -58,8 +59,8 @@ class Safety < Formula
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
-    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
+    url "https:files.pythonhosted.orgpackagesaf92b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccffjinja2-3.1.5.tar.gz"
+    sha256 "8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"
   end
 
   resource "markdown-it-py" do
@@ -148,8 +149,8 @@ class Safety < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https:files.pythonhosted.orgpackagesaa63e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66urllib3-2.3.0.tar.gz"
+    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
   end
 
   def install

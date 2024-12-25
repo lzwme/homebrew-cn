@@ -6,14 +6,15 @@ class SphinxDoc < Formula
   url "https://files.pythonhosted.org/packages/6f/6d/be0b61178fe2cdcb67e2a92fc9ebb488e3c51c4f74a36a7824c0adf23425/sphinx-8.1.3.tar.gz"
   sha256 "43c1911eecb0d3e161ad78611bc905d1ad0e523e4ddc202a58a821773dc4c927"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e0ff06a34a74b13cc0291812a7e45157888e2cc5c547d3c4307dee5d52e4f17"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab27c408493584094f40b2b5f0e3ef66096b28fb8c17d3cb1e0504e205049039"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f5e6b4345bd268e098eaaf635821948f1041bc2c5a78c6d9bf9cbaad3c92d004"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9ceedef9319dd5b552b8dd9d48d8969446594c4124caef9482916fa89eb8606e"
-    sha256 cellar: :any_skip_relocation, ventura:       "17389f948acc688d6d962144c01970ce6882885bffc948817fca1fc1eb787514"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b15555c672c5e92de778122554a39b645d0e1b3d6f7df36c92dd8b46828296b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76fd3e0a21c0ae02860e7125a723917d1da17318f425eb00dcba89e72a069255"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5d6c97eebb9c8fe4605b396c2a0b106af8f35cce5209e05c13bba605c173c20"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0babe1c2a374c2e5ebd1e1056c87febeac3ad1b293fc9a06f225c22e4935b013"
+    sha256 cellar: :any_skip_relocation, sonoma:        "24e6e392d9abb79b65eaa8cf4f24e75fd78774029a9e2035d3d3a5807ee7143e"
+    sha256 cellar: :any_skip_relocation, ventura:       "3bec04b6ef81f4b2ca5a65978c527cf040f3f8442111fe54cdec4c328d158bec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "542cf43209b6b6863d27694ff3878e01260d15314eaa5ba9d2c60cb40e50f5b0"
   end
 
   depends_on "certifi"
@@ -50,13 +51,13 @@ class SphinxDoc < Formula
   end
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/ed/55/39036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5d/jinja2-3.1.4.tar.gz"
-    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
+    url "https://files.pythonhosted.org/packages/af/92/b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccff/jinja2-3.1.5.tar.gz"
+    sha256 "8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"
   end
 
   resource "markupsafe" do
-    url "https://files.pythonhosted.org/packages/b4/d2/38ff920762f2247c3af5cbbbbc40756f575d9692d381d7c520f45deb9b8f/markupsafe-3.0.1.tar.gz"
-    sha256 "3e683ee4f5d0fa2dde4db77ed8dd8a876686e3fc417655c2ece9a90576905344"
+    url "https://files.pythonhosted.org/packages/b2/97/5d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62/markupsafe-3.0.2.tar.gz"
+    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
 
   resource "numpydoc" do
@@ -65,8 +66,8 @@ class SphinxDoc < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/51/65/50db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4/packaging-24.1.tar.gz"
-    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
+    url "https://files.pythonhosted.org/packages/d0/63/68dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106da/packaging-24.2.tar.gz"
+    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
   end
 
   resource "pygments" do
@@ -120,8 +121,8 @@ class SphinxDoc < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/ed/63/22ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260/urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https://files.pythonhosted.org/packages/aa/63/e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66/urllib3-2.3.0.tar.gz"
+    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
   end
 
   def install

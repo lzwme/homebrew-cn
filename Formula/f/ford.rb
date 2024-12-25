@@ -6,15 +6,16 @@ class Ford < Formula
   url "https:files.pythonhosted.orgpackagesb5ebec32133d28c57141d96081f5a23060e7cca71b423ff96505cd7ebac50aa7ford-7.0.9.tar.gz"
   sha256 "b9b660552a753f1d5265c3355548ca2bc4e38828a0802c03da347ebdd6d594ab"
   license "GPL-3.0-or-later"
+  revision 1
   head "https:github.comFortran-FOSS-Programmersford.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9bf181605181ae24426abc96df4d9e718fbf8b79f41c3d0682c0f8064e49270"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef4b5a27ad97397322925fb452f926f1de63ace8c84a3e99064d7d42859ae9b2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3dfb381eb79df84203107659a4ccb450b514f0d2b38f52e82783c665b0f5f731"
-    sha256 cellar: :any_skip_relocation, sonoma:        "35f40c4dcf2025063230076d9f0452dafb17840d8a8f91eb46bde5019b40ad09"
-    sha256 cellar: :any_skip_relocation, ventura:       "1ea559352dd05e9766bc6bd55a6fd9c55986bb03e5b1b953219418fd4c36913a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa165f0a758887631c38519ffe454608415ab5bb48ed931d04788590db72b8d1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a0fa96b6790de84f5eacae47090caabe5a9a6c16acc02b2bdbdce9e14d7c5ef"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac332b481fb1e3e05eb8061de37bd1b63603df932e07eff966955d193efbd1a5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "25c7925a6b7d8c6f31709e7306bedc2da35277c6a71b68d2b953856e6b9aca72"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e89790615e281ac0032a6c9bae4f0b388603ce3908a1aa8c30be1bcefadf0ee5"
+    sha256 cellar: :any_skip_relocation, ventura:       "0ee7361647e568b5fa78e3850e2ed0a5f72ebda33c279050497d4153488c3266"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea1c88c245514786604f6c8932041b3273b3cec7c645affdacbbed21016a41e6"
   end
 
   depends_on "graphviz"
@@ -31,8 +32,8 @@ class Ford < Formula
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
-    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
+    url "https:files.pythonhosted.orgpackagesaf92b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccffjinja2-3.1.5.tar.gz"
+    sha256 "8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"
   end
 
   resource "markdown" do

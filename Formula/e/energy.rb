@@ -1,17 +1,17 @@
 class Energy < Formula
   desc "CLI is used to initialize the Energy development environment tools"
   homepage "https:energye.github.io"
-  url "https:github.comenergyeenergyarchiverefstagsv2.5.0.tar.gz"
-  sha256 "e1749e2354626d1ca4e22169752175807930d5fc1d48edcea4e890670fbac923"
+  url "https:github.comenergyeenergyarchiverefstagsv2.5.1.tar.gz"
+  sha256 "c492bbc5ce5fd7e2ef7e5bd2225d0f844da5be51d63cdc4a5b7df73fc24b2e17"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6fd00e0905710425de05468f8b33550078362a72b25b0f0e421aecd745e640d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6fd00e0905710425de05468f8b33550078362a72b25b0f0e421aecd745e640d5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6fd00e0905710425de05468f8b33550078362a72b25b0f0e421aecd745e640d5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "03fad90c4f03a8f883ccb4e09a70c6c1414cef3268d02dd86e0a175c4113fca8"
-    sha256 cellar: :any_skip_relocation, ventura:       "03fad90c4f03a8f883ccb4e09a70c6c1414cef3268d02dd86e0a175c4113fca8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1b6a6b86a3848b20f4ce96c52ed044e23648e451e12edda2f8eac9ea730c035"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e62fc9c1a6c58038226e028cd688ef3b2f21b49fe156a13f51f30522348c7951"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e62fc9c1a6c58038226e028cd688ef3b2f21b49fe156a13f51f30522348c7951"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e62fc9c1a6c58038226e028cd688ef3b2f21b49fe156a13f51f30522348c7951"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4b3fc139d84fe21b1903ba4e9ce42fb1232572652856e7d91a89797ee5c9840b"
+    sha256 cellar: :any_skip_relocation, ventura:       "4b3fc139d84fe21b1903ba4e9ce42fb1232572652856e7d91a89797ee5c9840b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e31a37661e5c5249d609858447268f60937b41975741247c43c0c6e322bdced8"
   end
 
   depends_on "go" => :build
@@ -24,11 +24,9 @@ class Energy < Formula
 
   test do
     output = shell_output("#{bin}energy cli -v")
-    assert_match "Current", output
-    assert_match "Latest", output
-    output = shell_output("#{bin}energy env")
-    assert_match "Get ENERGY Framework Development Environment", output
-    assert_match "GOROOT", output
-    assert_match "ENERGY_HOME", output
+    assert_match "CLI Current: #{version}", output
+    assert_match "CLI Latest : #{version}", output
+
+    assert_match "https:energye.github.io", shell_output("#{bin}energy env")
   end
 end

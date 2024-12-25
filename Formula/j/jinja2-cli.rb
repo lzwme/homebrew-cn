@@ -6,29 +6,28 @@ class Jinja2Cli < Formula
   url "https:files.pythonhosted.orgpackagesa422c922839761b311b72ccc95c2ca2239311a3e80916458878962626f96922ajinja2-cli-0.8.2.tar.gz"
   sha256 "a16bb1454111128e206f568c95938cdef5b5a139929378f72bb8cf6179e18e50"
   license "BSD-2-Clause"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "81b65bd7b8c12f70c77101e3b873aad25ac78b8cb41a6c4fbf1961a0264e7efe"
-    sha256 cellar: :any,                 arm64_sonoma:  "992f1b453c9483dd8e7953e56444c628c59694f280e1c421cbc6bc7630c178f7"
-    sha256 cellar: :any,                 arm64_ventura: "7f5f7605e5af82791c3ac2c5ec8783db4a6cb310898ce5d33a414d9518bb6e26"
-    sha256 cellar: :any,                 sonoma:        "01da851dd3c361c4bf5620a2534575bc63ccf10bdfb976a6ce85ed080540fef7"
-    sha256 cellar: :any,                 ventura:       "610f85c4d0947dc2f9e91cc8efd8920dfb31c4d55d81531330a8283cdac106de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72f14013e43edb770d14a88df8c001c88a775f241ee5f8c1d91fd80c098c3011"
+    sha256 cellar: :any,                 arm64_sequoia: "2620ee9fd5aa2da33d5fea6841d1cb77d5b630d2111a17530249ea7def9d422f"
+    sha256 cellar: :any,                 arm64_sonoma:  "132a13e406d3654c199ec4784062d26d932eed486e8ac5171bb2bb37a2b676f2"
+    sha256 cellar: :any,                 arm64_ventura: "7eea787f9991ad399d517df9e893f659ba9cbbb1ae36bdd9071d246e6a59b28f"
+    sha256 cellar: :any,                 sonoma:        "6749a16cc095372a402f64dc1db6bdafc112095a816f6ff557be0146a1d04c6d"
+    sha256 cellar: :any,                 ventura:       "d1c80d14802b51adc586580f53456c1604cab02792b65eb56eddfebd487857df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2369a0b06a7384ce3a8c3c2cc0b69fea4d08c6a0cd83381b349ee58b329295c"
   end
 
   depends_on "libyaml"
   depends_on "python@3.13"
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
-    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
+    url "https:files.pythonhosted.orgpackagesaf92b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccffjinja2-3.1.5.tar.gz"
+    sha256 "8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"
   end
 
   resource "markupsafe" do
-    url "https:files.pythonhosted.orgpackagesb4d238ff920762f2247c3af5cbbbbc40756f575d9692d381d7c520f45deb9b8fmarkupsafe-3.0.1.tar.gz"
-    sha256 "3e683ee4f5d0fa2dde4db77ed8dd8a876686e3fc417655c2ece9a90576905344"
+    url "https:files.pythonhosted.orgpackagesb2975d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62markupsafe-3.0.2.tar.gz"
+    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
 
   resource "pyyaml" do
@@ -42,8 +41,8 @@ class Jinja2Cli < Formula
   end
 
   resource "xmltodict" do
-    url "https:files.pythonhosted.orgpackages98f7d29b8cdc9d8d075673be0f800013c1161e2fd4234546a140855a1bcc9eb4xmltodict-0.14.1.tar.gz"
-    sha256 "338c8431e4fc554517651972d62f06958718f6262b04316917008e8fd677a6b0"
+    url "https:files.pythonhosted.orgpackages500551dcca9a9bf5e1bce52582683ce50980bcadbc4fa5143b9f2b19ab99958fxmltodict-0.14.2.tar.gz"
+    sha256 "201e7c28bb210e374999d1dde6382923ab0ed1a8a5faeece48ab525b7810a553"
   end
 
   def install

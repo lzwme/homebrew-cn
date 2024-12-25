@@ -27,10 +27,11 @@ class Systemd < Formula
     { any_of: ["MIT", "GPL-2.0-or-later" => { with: "Linux-syscall-note" }] },
     { any_of: ["GPL-2.0-only", "BSD-2-Clause"] },
   ]
+  revision 1
   head "https:github.comsystemdsystemd.git", branch: "main"
 
   bottle do
-    sha256 x86_64_linux: "027cb1c63451188fce00728675692eb4cc2bcf79edae7b23697e98f927c90092"
+    sha256 x86_64_linux: "bd9ac3858baa447a60bf6f1eb8c2b9b0dfb4c23d91d0a049cb4a6d00630f8eab"
   end
 
   depends_on "coreutils" => :build
@@ -54,8 +55,8 @@ class Systemd < Formula
   depends_on "zstd"
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
-    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
+    url "https:files.pythonhosted.orgpackagesaf92b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccffjinja2-3.1.5.tar.gz"
+    sha256 "8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"
   end
 
   resource "lxml" do

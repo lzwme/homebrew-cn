@@ -1,22 +1,18 @@
 class Hamlib < Formula
   desc "Ham radio control libraries"
   homepage "http:www.hamlib.org"
-  url "https:github.comHamlibHamlibreleasesdownload4.5.5hamlib-4.5.5.tar.gz"
-  sha256 "601c89f32ed225e9527ade3d64d0d05d23202c05ae21ffa77e59d70ee4597fcd"
+  url "https:github.comHamlibHamlibreleasesdownload4.6hamlib-4.6.tar.gz"
+  sha256 "6f873579bc4e0ef4e540313ec2acd4f198b5510d7dd9397a4ae68fe8ff20d167"
   license "LGPL-2.1-or-later"
   head "https:github.comhamlibhamlib.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "8406c21b77dcaec4da05c92bcd6427e71cd7b3d287857b52d9f1bb7586292ec4"
-    sha256 cellar: :any,                 arm64_sonoma:   "458b25ee925c1e679efe780813e20c1a7477fdf86ac0cdcb77d7921e2301ec3f"
-    sha256 cellar: :any,                 arm64_ventura:  "273a45da72d9e209e76bd20c4b699207f6fea5b6483dfa2f3a6f5837ed596ce9"
-    sha256 cellar: :any,                 arm64_monterey: "2d2952caeac114ef9bb6794cd7e609fcd275508eef0cb6e536802a4741b74145"
-    sha256 cellar: :any,                 arm64_big_sur:  "edcf3ece2ef4287a106e149b543b2e0202a1adf742710c266b786f9c94a04c35"
-    sha256 cellar: :any,                 sonoma:         "499883bebb250ea72f9ea473033168355e80f0871ca265367e1bc6a1cc951bcd"
-    sha256 cellar: :any,                 ventura:        "877fdfa294a99eb9c676409bbb258d86fe02930620c9fc0cbf7de4f46adb6a6f"
-    sha256 cellar: :any,                 monterey:       "8c00d183265b56c8569344db90d6fdd54f0008c2012b372f9b4935081de47f94"
-    sha256 cellar: :any,                 big_sur:        "fd714ee0ad06f5d07f0a8eaabf0d4284033b86a12847936db320e2f2e4a2be93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6edfd57243916568cf5cbf5e0e6c755a8a4c0dafd5fbb5237374091500f99418"
+    sha256 cellar: :any,                 arm64_sequoia: "fef2669dbd14b7eb9444d67dd07b583a24c642b93534cf98e658c68af205a9e4"
+    sha256 cellar: :any,                 arm64_sonoma:  "63b00a950e4834bb234bee5426560f20384adbc93b0ef4357e4df48878aa3af6"
+    sha256 cellar: :any,                 arm64_ventura: "9bca5b206f7b1bbad714cfa9631ec0054605daa8404ae7bb01b7096fb62e417a"
+    sha256 cellar: :any,                 sonoma:        "e6bd7ffb646a0bc46604ea968ec770d38641d1e6da613697ba75168f25062673"
+    sha256 cellar: :any,                 ventura:       "7ef8078221bd4b158f38d83c6e41240e0ae9d7c9b02e3d5b1ce2bb8319fb6401"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a71ffe4636052758942c819463e3af382e1de91c9b1d58fbe899734dc845947"
   end
 
   depends_on "autoconf" => :build

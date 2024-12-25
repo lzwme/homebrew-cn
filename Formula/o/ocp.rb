@@ -1,8 +1,8 @@
 class Ocp < Formula
   desc "UNIX port of the Open Cubic Player"
   homepage "https:stian.cubic.orgproject-ocp.php"
-  url "https:stian.cubic.orgocpocp-0.2.109.tar.xz"
-  sha256 "aa043503bd1dfd1433fabe0d5f4bb85bcadc3bae8cc19630a77c89182bce8d90"
+  url "https:stian.cubic.orgocpocp-3.0.0.tar.xz"
+  sha256 "0dadfbfd755eac84aa33e23b24eb158f01f674e16a28e9820ad67e2f90418483"
   license "GPL-2.0-or-later"
   head "https:github.commywave82opencubicplayer.git", branch: "master"
 
@@ -12,14 +12,12 @@ class Ocp < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "eab30fc80b948680e2b3b6b90b9ade084237d5f7bd03ec0a470940dae7d5d741"
-    sha256 arm64_sonoma:   "462d8e35f07308e170caa48842075baa49a1cc8f0f7ffb2d14929cf7e9d63e49"
-    sha256 arm64_ventura:  "8680caad7650448489b181ef095e82a20f2a3757b6ed9e546f045ea1eab3b12b"
-    sha256 arm64_monterey: "c522fdc20022948049c46fe8ff99f0d3e6702049c1fa65ed4dd598a3206aab27"
-    sha256 sonoma:         "940a928439f2840880e05cee094e86a9509f5be3cbbb3bf119c3e75178993cc3"
-    sha256 ventura:        "75906ae975ffe405f47d8a06f2d57286022a44c7bd18d734173d4e0e7eee80ae"
-    sha256 monterey:       "26d1ae3d2c0bfb0e267994a1be776301ebe10672c1ba514c47af7b6ef96c2102"
-    sha256 x86_64_linux:   "4cd81c537874b42e0de929447ecc9fe813030cce6a3b1296caf32309233239bb"
+    sha256 arm64_sequoia: "b5fdbd1aba97e89967999d2106f323a902c48fefe074bbb40738d5ed4e8a80f2"
+    sha256 arm64_sonoma:  "77ca5c808c77f70fe6aec3e4325708080a4c825475833f267845291464a4a01f"
+    sha256 arm64_ventura: "ff5fca2c6a9fdcd9c3023eccc1ac49e54baf3cc1d89be576ec033facdba03d19"
+    sha256 sonoma:        "0ef2ae3294163b9a04fbdd5a469ca3c3fb2fd6748ce5e3970e7e22cb37e2f74d"
+    sha256 ventura:       "4f218ff633330609a113e3fc26a1ef0d38c306cc09542e138e067890701f684f"
+    sha256 x86_64_linux:  "fddaa7f678cca44140cdf683631fd82d3ed9470242ca044d0ad480c6bf4f0f6c"
   end
 
   depends_on "pkgconf" => :build
@@ -57,6 +55,12 @@ class Ocp < Formula
   end
 
   def install
+    # Fix compile with newer Clang
+    # upstream bug report, https:github.commywave82opencubicplayerissues121
+    if DevelopmentTools.clang_build_version >= 1403
+      ENV.append_to_cflags "-Wno-implicit-function-declaration -Wno-int-conversion"
+    end
+
     ENV.deparallelize
 
     # Required for SDL2

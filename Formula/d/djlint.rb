@@ -3,26 +3,26 @@ class Djlint < Formula
 
   desc "Lint & Format HTML Templates"
   homepage "https:djlint.com"
-  url "https:files.pythonhosted.orgpackagesffdda442814263f6ef16153f87fe78658097c6690106f53f0d2594bf4ee81202djlint-1.36.3.tar.gz"
-  sha256 "d85735da34bc7ac93ad8ef9b4822cc2a23d5f0ce33f25438737b8dca1d404f78"
+  url "https:files.pythonhosted.orgpackages7489ecf5be9f5c59a0c53bcaa29671742c5e269cc7d0e2622e3f65f41df251bfdjlint-1.36.4.tar.gz"
+  sha256 "17254f218b46fe5a714b224c85074c099bcb74e3b2e1f15c2ddc2cf415a408a1"
   license "GPL-3.0-or-later"
   head "https:github.comdjlintdjLint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bf5ec3937b2c45003e27ece8d9d226acd734583cdfb21e2f6650769e7a142f8b"
-    sha256 cellar: :any,                 arm64_sonoma:  "412df1673992ea25bf4164c28dd9b1e282819fb0b2de0c40076feafa74b17f42"
-    sha256 cellar: :any,                 arm64_ventura: "e59df593650ab61b4d89ced74ec39e38eb432bb7c3982daf2179bdd7bfe7c675"
-    sha256 cellar: :any,                 sonoma:        "a292cbc9d52eef8755cbd27ea35eef5d43a0a24cc27fbbcaec92e9a0ca768c10"
-    sha256 cellar: :any,                 ventura:       "2482520049ffadc6209b80735c15ea68aa38dc9769c8c30accb741c972b38277"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca01adda69151e8f3a763995895315cca8d4c7964455397c2a184d4cea746208"
+    sha256 cellar: :any,                 arm64_sequoia: "8fde60794f6d2d3081b26378c7b81eab4ee1536cd4cd4096339793e03a49b13f"
+    sha256 cellar: :any,                 arm64_sonoma:  "e8cfe070ce355fdcc6a856446b7f4ca8b65b3923b6b6ca2d6b0f4f953fdb0746"
+    sha256 cellar: :any,                 arm64_ventura: "290ed5ea0c78d9804d40a8faf75f9b231f0b8e26bcd51019c87bb369c871cc33"
+    sha256 cellar: :any,                 sonoma:        "6d08e360c17706da616c50aecee6df832e8544653e888708c8ab4f0b5a5f9943"
+    sha256 cellar: :any,                 ventura:       "a0c51c51e35eb4e669f796e214ea5aeb7be4850965d60e4bba0ca1e0891b095b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48f192851e8ca155e2553c6ec29addb7244989d9615d2a012640dabae3d3198d"
   end
 
   depends_on "libyaml"
   depends_on "python@3.13"
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
+    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
   end
 
   resource "colorama" do
@@ -36,8 +36,8 @@ class Djlint < Formula
   end
 
   resource "editorconfig" do
-    url "https:files.pythonhosted.orgpackages3d857b5c2fac7fdc37d959fab714b13b9acb75884490dcc0e8b1dc5e64105084EditorConfig-0.12.4.tar.gz"
-    sha256 "24857fa1793917dd9ccf0c7810a07e05404ce9b823521c7dce22a4fb5d125f80"
+    url "https:files.pythonhosted.orgpackagesb429785595a0d8b30ab8d2486559cfba1d46487b8dcbd99f74960b6b4cca92a4editorconfig-0.17.0.tar.gz"
+    sha256 "8739052279699840065d3a9f5c125d7d5a98daeefe53b0e5274261d77cb49aa2"
   end
 
   resource "jsbeautifier" do
@@ -66,8 +66,8 @@ class Djlint < Formula
   end
 
   resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+    url "https:files.pythonhosted.orgpackages94e7b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   resource "tqdm" do

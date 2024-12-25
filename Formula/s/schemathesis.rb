@@ -3,17 +3,17 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/eb/30/8c854c1b9d4c0efe91ef39351acbfe01469bc3359306738e02fe9339a0f2/schemathesis-3.39.2.tar.gz"
-  sha256 "3ddb947d44f297fd686f7f6425485758e80764ea94a6bd588b9c71beaa6f3ff5"
+  url "https://files.pythonhosted.org/packages/5e/63/14c37d4590f47fb2f28855453b0dcfa11df0a59560bb8e40680917082d84/schemathesis-3.39.3.tar.gz"
+  sha256 "fe9fe7f2c330cf660e5b87c75486efd2c10013d7bb47c014daafaf49c12361db"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "104befda4c2eb31df5c524fafe8b3e20dd4d2bbe444dd5012c6396dee92da47e"
-    sha256 cellar: :any,                 arm64_sonoma:  "451d6f151feaa9d5838a863026c427f82a6b0872aca2e5de28825424ee536a6f"
-    sha256 cellar: :any,                 arm64_ventura: "66c25f45f27dca7148bfee0a00c4887a500ea5467e098eb2d92e3de5d0dfd9db"
-    sha256 cellar: :any,                 sonoma:        "6a94ddd5397dc687a18e563287cec7d8ba7ea0e8138544c5234561871b8eb8d5"
-    sha256 cellar: :any,                 ventura:       "e98f470013c081d32f4bb9e3de061d808c007780189f30e725b061352de193a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ecb917d893afc4fa1e83270ba8feb4c47fb06050fea5ba8efb3fa84e2a12d38"
+    sha256 cellar: :any,                 arm64_sequoia: "72251c678169fdaff4cba002e802f4b9839d9e1777c0d480d186b833000598b3"
+    sha256 cellar: :any,                 arm64_sonoma:  "7b0a2151b4aafc05137f43c2a60f12c62b739ab7880e516d41b9a5150f7708b5"
+    sha256 cellar: :any,                 arm64_ventura: "782bd9cc3137a02febd7f7509419420fa8ecc678b90f2a96f5e891993eb1393b"
+    sha256 cellar: :any,                 sonoma:        "62eb3973679f6fdc454e550f8cf1ce7fa8a0c855996a9f7eb76595e4f671bfa4"
+    sha256 cellar: :any,                 ventura:       "262ed04e3724520710a95e6b7cda3f2e8286f816a2b6e4a5b6ff9fecc859bd8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f02ff8b0ad33287292fcef94b7a5dee8301a9e064f487d42c858c9e288cf1a6f"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -44,8 +44,8 @@ class Schemathesis < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/f2/4f/e1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1e/charset_normalizer-3.4.0.tar.gz"
-    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
+    url "https://files.pythonhosted.org/packages/16/b0/572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357/charset_normalizer-3.4.1.tar.gz"
+    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
   end
 
   resource "click" do
@@ -89,8 +89,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/ce/08/883c6e5c2a7a8223b040eb5dfa5ebb1f83f9832b9df0557f35cbaff2805a/hypothesis-6.122.6.tar.gz"
-    sha256 "2642598dc4426945d62b849a915d0d3e2d53f0fb17090f0cf10d8a545a421dc1"
+    url "https://files.pythonhosted.org/packages/a1/10/92bed8bbec8d87e34ca665177efea0c061ce45abedbcc10a25d1f3f9067c/hypothesis-6.123.1.tar.gz"
+    sha256 "eb2bf646537ad818270feff6428c34f57813a4ef78781861ec1693b0840ab1d8"
   end
 
   resource "hypothesis-graphql" do

@@ -6,24 +6,23 @@ class Doitlive < Formula
   url "https:files.pythonhosted.orgpackages3275c94e4d4e7fac8606e199fad35a00b33e4252d00078f25285f91e97e546c0doitlive-5.1.0.tar.gz"
   sha256 "b6bcd25f9f037b7e96e34d68549306adb3e8c83f6e92c51ec2b225abc05b25c5"
   license "MIT"
-  revision 1
+  revision 2
   head "https:github.comsloriadoitlive.git", branch: "dev"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eae18d34cf330aefd1bec32fdb07945a4c4ec3cce331426d34265dc758c34f35"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9991e43a40f485d6b810ddd53856c70186ebd585800a8785a512b60ad2120ed9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8f88c1cbef31bd6f30e2b27313a371994468f78ac39b4dd32a8b073414b863ab"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f1b1a404053a75c01c185829be0fd585f16508a8abad3da9b0c48499e8a54d1c"
-    sha256 cellar: :any_skip_relocation, ventura:       "25c0574a853f230864811bdc57cc9d3ed0ec72619056d4ad76c890cd5dce45b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc26ad664b446225fcc8ab45387172aab3067f0d76814b404f7a9d46dbbfe069"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d2107a46a5eccd3270f129141d3dc59eadb652d03908b65a83a7260ecc1eca7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e39ca680b9bf4aac6e0f0c15787b55fce375a4cfa16d216d0c9d6634230c3f1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f1d3cc0229557862f2240a863fab0541306b8d1777c899bdd26894e08ff1e5d2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d7524bbbe6e87bd4585554d0f65bdffc3df80abcf84b5c4677c5a38f7b4adb70"
+    sha256 cellar: :any_skip_relocation, ventura:       "c0018134d2622433c91292f3a5a0fb9cacedde38382fabc2cc29356f08991352"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "456c7af17858f00083cdf98a8f032ae7a8194813cfe64903c082cc43d2087972"
   end
 
   depends_on "python@3.13"
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
+    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
   end
 
   resource "click-completion" do
@@ -37,13 +36,13 @@ class Doitlive < Formula
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
-    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
+    url "https:files.pythonhosted.orgpackagesaf92b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccffjinja2-3.1.5.tar.gz"
+    sha256 "8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"
   end
 
   resource "markupsafe" do
-    url "https:files.pythonhosted.orgpackagesb4d238ff920762f2247c3af5cbbbbc40756f575d9692d381d7c520f45deb9b8fmarkupsafe-3.0.1.tar.gz"
-    sha256 "3e683ee4f5d0fa2dde4db77ed8dd8a876686e3fc417655c2ece9a90576905344"
+    url "https:files.pythonhosted.orgpackagesb2975d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62markupsafe-3.0.2.tar.gz"
+    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
 
   resource "shellingham" do
@@ -52,8 +51,8 @@ class Doitlive < Formula
   end
 
   resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+    url "https:files.pythonhosted.orgpackages94e7b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   def install

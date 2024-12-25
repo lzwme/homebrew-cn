@@ -1,8 +1,8 @@
 class Pari < Formula
   desc "Computer algebra system designed for fast computations in number theory"
   homepage "https://pari.math.u-bordeaux.fr/"
-  url "https://pari.math.u-bordeaux.fr/pub/pari/unix/pari-2.17.0.tar.gz"
-  sha256 "e723e7cef18d08c6ece2283af9a9b4d56077c22b4fce998faaa588d389b1aea8"
+  url "https://pari.math.u-bordeaux.fr/pub/pari/unix/pari-2.17.1.tar.gz"
+  sha256 "67ba6f3071233725258541e4f174b5efbc64c65ae5115bade9edfc45f1fde5dc"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Pari < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a872743b47cdc2fb07705883dd40165dca85b678d0175f90906a5e014b195ca2"
-    sha256 cellar: :any,                 arm64_sonoma:  "302862e50bd4b8364d3c37bcf605dec272524b3d8a8c3c58bf3ebb90fd2ac884"
-    sha256 cellar: :any,                 arm64_ventura: "4a5dfa16dbc234c37111d09dd4afa1d1ed83b7e263042192480066c4895c5194"
-    sha256 cellar: :any,                 sonoma:        "135c26329c52480015f9691ad86e23ee95c1998ca6bb2341d339f61c81e738c8"
-    sha256 cellar: :any,                 ventura:       "edc23f635ae0befedff9317806d862e35739f852627a5992905f4897caf76e94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66c539100e883305cc73cb26f21640ddd85ed78451f8bf678f1ef9f98b8a6396"
+    sha256 cellar: :any,                 arm64_sequoia: "6e3bac204e73cba93b99b3d205087289920a4ae794ff6b31fa2ba3d2cc241570"
+    sha256 cellar: :any,                 arm64_sonoma:  "c016de97580e7f01abb72116b86614dd19dbe5bdbf50e98fe068f256154f706d"
+    sha256 cellar: :any,                 arm64_ventura: "c97015a09844c87b71755498682442dae77a57650b33d59adeb8d64611dc9574"
+    sha256 cellar: :any,                 sonoma:        "5c662e25dedb14ac7d151269de9ff0f08af2c0b022e850ad41db0b67b2964d6e"
+    sha256 cellar: :any,                 ventura:       "306066cceb3bdb2ed7fb5d36d2e0fcd0f3c3543e6ae65e62405c223884eabbe0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d59d53d361ef5babd2582a39ea6a909832fd0b794db1132ca820fed4c0a0394f"
   end
 
   depends_on "gmp"

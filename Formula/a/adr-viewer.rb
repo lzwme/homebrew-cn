@@ -6,16 +6,15 @@ class AdrViewer < Formula
   url "https:files.pythonhosted.orgpackages1b720f787da38d0f9d69c06b31d8f412735ed4fad383edd7f7d2286f4fc7b5b0adr_viewer-1.4.0.tar.gz"
   sha256 "9a2f02a9feb3a6d03d055dd8599b20d34126f8e755b4b4ee1a353ecbbd590cef"
   license "MIT"
-  revision 1
+  revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84be5edc730293d76c12cbf42eb8429e902aedf01114c1e69099ae111c335935"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5de9ec935b5bdff959017398a1384107fbf1bc7bfc9d30c2c51f6e269e156694"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "03ff6ef7bdd353affa19fcefc4ddde2fc3badb970e59636b9a894d917a0bd207"
-    sha256 cellar: :any_skip_relocation, sonoma:        "62e5bb46d40598b962ab2f74ebf414f40ab10964d347fd9d6e30a3440f5c141f"
-    sha256 cellar: :any_skip_relocation, ventura:       "7f6b9ed8bd14a15f29734739888534eb5573cea5f3d67336e4fe5e2327944ac4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eef10318762e64ec17d81d1f32ae925adf8c05a83adfd67c92f4678ba9103101"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fff66558a3dc0891dc960355f0f0525f80e9c06aa98e23f3aeac43dadcc5288c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d7214417dfde8e74de0c67bf102a01ba39130c7a36b6980011b48f1b16839d9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "84f2ad61fb54d99fa10d6f09284046748dbace538a4766c655a8015083fa90f0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eb7d1b41c9e9f9c69157d4a5a7128e75fc724c41e7e55b9da434483afe026518"
+    sha256 cellar: :any_skip_relocation, ventura:       "b717a63b17499a157bf65ef88fb3ad874a455e27595d81bd1530bb6b158ba6e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "926f71bbc769190aa84277149755a9cba09fdb10f81a6930b60b7249481cd5c9"
   end
 
   depends_on "python@3.13"
@@ -26,8 +25,8 @@ class AdrViewer < Formula
   end
 
   resource "bottle" do
-    url "https:files.pythonhosted.orgpackages877eeae463f832f64b3a1cb640384d155079e7dd2905116ab925e9bb04f66e75bottle-0.13.1.tar.gz"
-    sha256 "a48852dc7a051353d3e4de3dd5590cd25de370bcfd94a72237561e314ceb0c88"
+    url "https:files.pythonhosted.orgpackages1bfb97839b95c2a2ea1ca91877a846988f90f4ca16ee42c0bb79e079171c0c06bottle-0.13.2.tar.gz"
+    sha256 "e53803b9d298c7d343d00ba7d27b0059415f04b9f6f40b8d58b5bf914ba9d348"
   end
 
   resource "bs4" do
@@ -36,18 +35,18 @@ class AdrViewer < Formula
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
+    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
-    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
+    url "https:files.pythonhosted.orgpackagesaf92b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccffjinja2-3.1.5.tar.gz"
+    sha256 "8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"
   end
 
   resource "markupsafe" do
-    url "https:files.pythonhosted.orgpackagesb4d238ff920762f2247c3af5cbbbbc40756f575d9692d381d7c520f45deb9b8fmarkupsafe-3.0.1.tar.gz"
-    sha256 "3e683ee4f5d0fa2dde4db77ed8dd8a876686e3fc417655c2ece9a90576905344"
+    url "https:files.pythonhosted.orgpackagesb2975d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62markupsafe-3.0.2.tar.gz"
+    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
 
   resource "mistune" do

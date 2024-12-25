@@ -6,43 +6,43 @@ class HomeassistantCli < Formula
   url "https:files.pythonhosted.orgpackagesb298fd5e7beb7cc135f80d78b32c85ac15f3ba9219063b794b1d184fb07fd84bhomeassistant-cli-0.9.6.tar.gz"
   sha256 "9b9b705eaf6ee40dc6a732f3458c78ba37b62b7330bc17b132e6fee385ec8606"
   license "Apache-2.0"
-  revision 13
+  revision 14
   head "https:github.comhome-assistant-ecosystemhome-assistant-cli.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d25f118a60aff488db090131cbd821d1518ed1f85fa2c7550d2a4c37d944d66f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b62d704d8f7e664faaf3d1438ffbacadaa76e73f3b4b5627e2513ec2f3517ca4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "dbf2d8af2e365c3cc6adee1f3c8a5a3afdc557f788911778ef653ab5da72355a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b4d6d51185e1d664f591f85beaea710c883c4093341c357c62b8bfb71594c2e8"
-    sha256 cellar: :any_skip_relocation, ventura:       "d908f79ef836f846f57f20bb7cd510ede3ba456351db9a86bb008a9406139f3b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0334cc19774c11ce5e0befe9ed88fca1a30e773c9f8b891456f5f998e8603e0a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff7df6138f7c73d40672ce43553cb590b24e0888c09f737fd5f87e0c600c031c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "65f4e2ec1d7a86da00e7595356d04c71527bf067d1bc88ab2d2b7e5445f4ac1f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7d7e604c1d47aa093888219d1ac66796d168d5c9d59507e2b97c76c3b817dfe0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1d3ab7310bd71d640e5bbb1682e3fa78266b942c4f3667a2c15ec973f22475b6"
+    sha256 cellar: :any_skip_relocation, ventura:       "3a6b6bb4ed9b5c01aa3838a6c5ca114fc9fb23a00849b57be5f6a73d262d5504"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c845bdd18a3655bfe16b50722d8f9dc28f27d07510c1ebdb4b69d08ed3bcb1c"
   end
 
   depends_on "python@3.13"
 
   resource "aiohappyeyeballs" do
-    url "https:files.pythonhosted.orgpackagesbc692f6d5a019bd02e920a3417689a89887b39ad1e350b562f9955693d900c40aiohappyeyeballs-2.4.3.tar.gz"
-    sha256 "75cf88a15106a5002a8eb1dab212525c00d1f4c0fa96e551c9fbe6f09a621586"
+    url "https:files.pythonhosted.orgpackages7f55e4373e888fdacb15563ef6fa9fa8c8252476ea071e96fb46defac9f18bf2aiohappyeyeballs-2.4.4.tar.gz"
+    sha256 "5fdd7d87889c63183afc18ce9271f9b0a7d32c2303e394468dd45d514a757745"
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages1dcdaf0e573bdb77ae7df1148fe8e4ea854215a37db0b116aac6b5496335095eaiohttp-3.11.4.tar.gz"
-    sha256 "9d95cce8bb010597b3f2217155befe4708e0538d3548aa08d640ebf54e3f57cb"
+    url "https:files.pythonhosted.orgpackagesfeedf26db39d29cd3cb2f5a3374304c713fe5ab5a0e4c8ee25a0c45cc6adf844aiohttp-3.11.11.tar.gz"
+    sha256 "bb49c7f1e6ebf3821a42d81d494f538107610c3a705987f53068546b0e90303e"
   end
 
   resource "aiosignal" do
-    url "https:files.pythonhosted.orgpackagesae670952ed97a9793b4958e5736f6d2b346b414a2cd63e82d05940032f45b32faiosignal-1.3.1.tar.gz"
-    sha256 "54cd96e15e1649b75d6c87526a6ff0b6c1b0dd3459f43d9ca11d48c339b68cfc"
+    url "https:files.pythonhosted.orgpackagesbab56d55e80f6d8a08ce22b982eafa278d823b541c925f11ee774b0b9c43473daiosignal-1.3.2.tar.gz"
+    sha256 "a8c255c66fafb1e499c9351d0bf32ff2d8a0321595ebac3b93713656d2436f54"
   end
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackagesfc0faafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fbattrs-24.2.0.tar.gz"
-    sha256 "5cfb1b9148b5b086569baec03f20d7b6bf3bcacc9a42bebf87ffaaca362f6346"
+    url "https:files.pythonhosted.orgpackages48c86260f8ccc11f0917360fc0da435c5c9c7504e3db174d5a12a1494887b045attrs-24.3.0.tar.gz"
+    sha256 "8f5c07333d543103541ba7be0e2ce16eeee8130cb0b3f9238ab904ce1e85baff"
   end
 
   resource "certifi" do
-    url "https:files.pythonhosted.orgpackagesb0ee9b19140fe824b367c04c5e1b369942dd754c4c5462d5674002f75c4dedc1certifi-2024.8.30.tar.gz"
-    sha256 "bec941d2aa8195e248a60b31ff9f0558284cf01a52591ceda73ea9afffd69fd9"
+    url "https:files.pythonhosted.orgpackages0fbd1d41ee578ce09523c81a15426705dd20969f5abf006d1afe8aeff0dd776acertifi-2024.12.14.tar.gz"
+    sha256 "b650d30f370c2b724812bee08008be0c4163b163ddaec3f2546c1caf65f191db"
   end
 
   resource "charset-normalizer" do
@@ -51,8 +51,8 @@ class HomeassistantCli < Formula
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
+    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
   end
 
   resource "click-log" do
@@ -81,8 +81,8 @@ class HomeassistantCli < Formula
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
-    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
+    url "https:files.pythonhosted.orgpackagesaf92b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccffjinja2-3.1.5.tar.gz"
+    sha256 "8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"
   end
 
   resource "jsonpath-ng" do
@@ -111,8 +111,8 @@ class HomeassistantCli < Formula
   end
 
   resource "propcache" do
-    url "https:files.pythonhosted.orgpackagesa94d5e5a60b78dbc1d464f8a7bbaeb30957257afdc8512cbb9dfd5659304f5cdpropcache-0.2.0.tar.gz"
-    sha256 "df81779732feb9d01e5d513fad0122efb3d53bbc75f61b2a4f29a020bc985e70"
+    url "https:files.pythonhosted.orgpackages20c82a13f78d82211490855b2fb303b6721348d0787fdd9a12ac46d99d3acde1propcache-0.2.1.tar.gz"
+    sha256 "3f77ce728b19cb537714499928fe800c3dda29e8d9428778fc7c186da4c09a64"
   end
 
   resource "python-dateutil" do
@@ -141,8 +141,8 @@ class HomeassistantCli < Formula
   end
 
   resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+    url "https:files.pythonhosted.orgpackages94e7b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   resource "tabulate" do
@@ -156,18 +156,18 @@ class HomeassistantCli < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https:files.pythonhosted.orgpackagesaa63e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66urllib3-2.3.0.tar.gz"
+    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
   end
 
   resource "yarl" do
-    url "https:files.pythonhosted.orgpackages4bd50d0481857de42a44ba4911f8010d4b361dc26487f48d5503c66a797cff48yarl-1.17.2.tar.gz"
-    sha256 "753eaaa0c7195244c84b5cc159dc8204b7fd99f716f11198f999f2332a86b178"
+    url "https:files.pythonhosted.orgpackagesb79d4b94a8e6d2b51b599516a5cb88e5bc99b4d8d4583e468057eaa29d5f0918yarl-1.18.3.tar.gz"
+    sha256 "ac1801c45cbf77b6c99242eeff4fffb5e4e73a800b5c4ad4fc0be5def634d2e1"
   end
 
   resource "zeroconf" do
-    url "https:files.pythonhosted.orgpackages82e417075a9f1951b031dfd92d57916505574e0d1eab3f2fb7deecabd2be581ezeroconf-0.136.0.tar.gz"
-    sha256 "7a82c7bd0327266ef9f04a5272b0bb79812ddcefccf944320b5f3519586bbc82"
+    url "https:files.pythonhosted.orgpackages89e0cddc7e2272799e11ea172810fd2f6da58fc7290f9bd3102d6cf2c385cca3zeroconf-0.136.2.tar.gz"
+    sha256 "37d223febad4569f0d14563eb8e80a9742be35d0419847b45d84c37fc4224bb4"
   end
 
   def install

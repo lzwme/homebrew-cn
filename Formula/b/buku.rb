@@ -6,16 +6,16 @@ class Buku < Formula
   url "https:github.comjarunbukuarchiverefstagsv4.9.tar.gz"
   sha256 "1e432270ae78c7852110dcf2c2e215893bcc338299a4998f14a1f6b26e37bfac"
   license "GPL-3.0-or-later"
-  revision 3
+  revision 4
   head "https:github.comjarunbuku.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91c197ca9aa2c9dab0f7dc7fca83d9ec957c08f936791c7ea9baa5baaac053b2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8373d4f30efef28097c4836a6ca12076eb7c700b8c5a881ac1963ec276efeebf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "05c8754f49764e3a858755539096b8ef41494586237754b9eebd1ec5afb5ac87"
-    sha256 cellar: :any_skip_relocation, sonoma:        "769a6a9b5fd71a38805879af37f9b8af4be10497f37e3adcf61e9db8695e805d"
-    sha256 cellar: :any_skip_relocation, ventura:       "d6628b26bfb355c40b1dd83db291d3e65094f6fd9d28221df1f7cffe593f9e7a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7677e9fc2fef63e82ca4e269e58b5e3301aecca9a9c01b0712deb7790b33ad7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e21aab12edfb5ed957b882de61b739cfa96cd2b66475181b882c3c30323fd4b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b623288b44db6297ba1f2d8d513103291d18b43c29f980fe5a571f944864b68d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2f76d0977a40c829227c09e24d51e7c4d4b47280b686fb2ecd1a441bd4414b40"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3417f96fdd88257c76fa40dd7942959c96121c1414ce8e6d2354ee7c563804c7"
+    sha256 cellar: :any_skip_relocation, ventura:       "682f27f719652fcd1cd08291182dbedc112ac985ed15c94e9ae94e10a21f8b6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03eb99f07115d1dca39d1daaea0df354c18f37703ae386880ae1c772219772dd"
   end
 
   depends_on "certifi"
@@ -35,8 +35,8 @@ class Buku < Formula
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
+    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
   end
 
   resource "dominate" do
@@ -70,8 +70,8 @@ class Buku < Formula
   end
 
   resource "flask-wtf" do
-    url "https:files.pythonhosted.orgpackages9befb6ec35e02f479f6e76e02ede14594c9cfa5e6dcbab6ea0e82fa413993a2aflask_wtf-1.2.1.tar.gz"
-    sha256 "8bb269eb9bb46b87e7c8233d7e7debdf1f8b74bf90cc1789988c29b37a97b695"
+    url "https:files.pythonhosted.orgpackages809bf1cd6e41bbf874f3436368f2c7ee3216c1e82d666ff90d1d800e20eb1317flask_wtf-1.2.2.tar.gz"
+    sha256 "79d2ee1e436cf570bccb7d916533fa18757a2f18c290accffab1b9a0b684666b"
   end
 
   resource "html5lib" do
@@ -85,13 +85,13 @@ class Buku < Formula
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
-    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
+    url "https:files.pythonhosted.orgpackagesaf92b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccffjinja2-3.1.5.tar.gz"
+    sha256 "8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"
   end
 
   resource "markupsafe" do
-    url "https:files.pythonhosted.orgpackages875baae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02dMarkupSafe-2.1.5.tar.gz"
-    sha256 "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
+    url "https:files.pythonhosted.orgpackagesb2975d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62markupsafe-3.0.2.tar.gz"
+    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
 
   resource "python-dateutil" do
@@ -100,23 +100,23 @@ class Buku < Formula
   end
 
   resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+    url "https:files.pythonhosted.orgpackages94e7b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   resource "soupsieve" do
-    url "https:files.pythonhosted.orgpackagesce21952a240de1c196c7e3fbcd4e559681f0419b1280c617db21157a0390717bsoupsieve-2.5.tar.gz"
-    sha256 "5663d5a7b3bfaeee0bc4372e7fc48f9cff4940b3eec54a6451cc5299f1097690"
+    url "https:files.pythonhosted.orgpackagesd7cefbaeed4f9fb8b2daa961f90591662df6a86c1abf25c548329a86920aedfbsoupsieve-2.6.tar.gz"
+    sha256 "e2e68417777af359ec65daac1057404a3c8a5455bb8abc36f1a9866ab1a51abb"
   end
 
   resource "types-python-dateutil" do
-    url "https:files.pythonhosted.orgpackages61c5c3a4d72ffa8efc2e78f7897b1c69ec760553246b67d3ce8c4431fac5d4e3types-python-dateutil-2.9.0.20240316.tar.gz"
-    sha256 "5d2f2e240b86905e40944dd787db6da9263f0deabef1076ddaed797351ec0202"
+    url "https:files.pythonhosted.orgpackagesa96047d92293d9bc521cd2301e423a358abfac0ad409b3a1606d8fbae1321961types_python_dateutil-2.9.0.20241206.tar.gz"
+    sha256 "18f493414c26ffba692a72369fea7a154c502646301ebfe3d56a04b3767284cb"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesc89365e479b023bbc46dab3e092bda6b0005424ea3217d711964ccdede3f9b1burllib3-1.26.19.tar.gz"
-    sha256 "3e3d753a8618b86d7de333b4223005f68720bcd6a7d2bcb9fbd2229ec7c1e429"
+    url "https:files.pythonhosted.orgpackagese4e86ff5e6bc22095cfc59b6ea711b687e2b7ed4bdb373f7eeec370a97d7392furllib3-1.26.20.tar.gz"
+    sha256 "40c2dc0c681e47eb8f90e7e27bf6ff7df2e677421fd46756da1161c39ca70d32"
   end
 
   resource "visitor" do
@@ -135,8 +135,8 @@ class Buku < Formula
   end
 
   resource "wtforms" do
-    url "https:files.pythonhosted.orgpackages6ac796d10183c3470f1836846f7b9527d6cb0b6c2226ebca40f36fa29f23de60wtforms-3.1.2.tar.gz"
-    sha256 "f8d76180d7239c94c6322f7990ae1216dae3659b7aa1cee94b6318bdffb474b9"
+    url "https:files.pythonhosted.orgpackages01e4633d080897e769ed5712dcfad626e55dbd6cf45db0ff4d9884315c6a82dawtforms-3.2.1.tar.gz"
+    sha256 "df3e6b70f3192e92623128123ec8dca3067df9cfadd43d59681e210cfb8d4682"
   end
 
   # fixed url value passed to update_rec() from CLI

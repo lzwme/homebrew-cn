@@ -4,6 +4,7 @@ class Ipatool < Formula
   url "https:github.commajdipatoolarchiverefstagsv2.1.4.tar.gz"
   sha256 "e0e01c88efb94f35a71f664267c6c9ab0e22932804e0af864a0a5cd8d348dbca"
   license "MIT"
+  head "https:github.commajdipatool.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "46bdef94c160943aba176a886fd1290e82f0052c6a3e9d138a66eda038310429"

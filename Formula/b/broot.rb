@@ -7,12 +7,13 @@ class Broot < Formula
   head "https:github.comCanopbroot.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a94de1e614521fab990d17d959bb71d2351311384517c7ad0b5e83ef8e1fd04"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b4ba173f2232e82fe75e3d3acd846d89af63e6b5cb7b21f1aec992234bb2f19"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d68abb5035d1de6302fef8705ea8ff8da8a7604f7e4054469f445dfc00e0edf4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "518d3f8ff6274c925f4df10afd26472c54b6af326f83a2f355467f722e90070a"
-    sha256 cellar: :any_skip_relocation, ventura:       "436906062760a229b4a72c07402029e64c7c6980e8199f229b3c96b7e709d912"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b407acb85b70f6fb9077d67d51ab77c77c537595b7a8fd50e1427c72b45cc6b3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad3b7b701b0d0b24cc9868bc4e1e575aa89c04be18d8d5907ecd8ee94ef7605c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "861a3871c40abad90cfcf69d9d5e2c309113382c6c876b76d2266ca2eb8979f5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f541d2cbce0674f7231d2d9df8653380eaee426d8a9454ffd42fe69bd78fc34c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3378be3f1a9c154a8365ffece2f9e867c152df69de7c7c9e0a2361b4d87e021a"
+    sha256 cellar: :any_skip_relocation, ventura:       "582e0964024cb156b9debc17cc4cf6e28ce1b2ed14d556fcef5adddc3f7dc45e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5350a104f339cc705cfbd07bf5d76b58f80d27ec799a8909a6eebd81c3e2faa8"
   end
 
   depends_on "rust" => :build
@@ -38,11 +39,8 @@ class Broot < Formula
     fish_completion.install "#{out_dir}br.fish"
     zsh_completion.install "#{out_dir}_broot"
     zsh_completion.install "#{out_dir}_br"
-    # Bash completions are not compatible with Bash 3 so don't use v1 directory.
-    # bash: complete: nosort: invalid option name
-    # Issue ref: https:github.comclap-rsclapissues5190
-    (share"bash-completioncompletions").install "#{out_dir}broot.bash" => "broot"
-    (share"bash-completioncompletions").install "#{out_dir}br.bash" => "br"
+    bash_completion.install "#{out_dir}broot.bash" => "broot"
+    bash_completion.install "#{out_dir}br.bash" => "br"
   end
 
   test do

@@ -5,14 +5,15 @@ class MkdocsMaterial < Formula
   url "https://files.pythonhosted.org/packages/e2/14/8daeeecee2e25bd84239a843fdcb92b20db88ebbcb26e0d32f414ca54a22/mkdocs_material-9.5.49.tar.gz"
   sha256 "3671bb282b4f53a1c72e08adbe04d2481a98f85fed392530051f80ff94a9621d"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "81cf537c03991a1a999ea5bd8beb379f8721beb4e4b746edfbc724d076818c23"
-    sha256 cellar: :any,                 arm64_sonoma:  "92f40af7631d44ccfb19e3779eb993e844b59eb022e9c81b62425dc7c152ab1d"
-    sha256 cellar: :any,                 arm64_ventura: "ec3800515881044022d7cae2b3af5217f7295ec6496a46d6ffc7e11ce438ddf0"
-    sha256 cellar: :any,                 sonoma:        "57f3e00442b5b14424c2b742cf412bed82dc190d5b0fd931b31cc3df766a9a71"
-    sha256 cellar: :any,                 ventura:       "8e9a0c5b5973413850941d56f91c5ad8f010dc73581ba27596a4ec827492ff79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c510fa5805ba23d67dda62edb8765a8e00ec3eef18cc6d78903db27cdb878b2d"
+    sha256 cellar: :any,                 arm64_sequoia: "f022d2cd2c386da1f1931030d47a118a8c4c5fcaeea9efe27a85ec8b4b4832d8"
+    sha256 cellar: :any,                 arm64_sonoma:  "fe668ca2e7fe58723903e55be63e77e6b070ee6841042a419298edd65b074a76"
+    sha256 cellar: :any,                 arm64_ventura: "658bfd495150cf334448fe7e7e82b9a970b8fb81946f51d0d040228f549dba77"
+    sha256 cellar: :any,                 sonoma:        "4465a71cf730bc282ed8afcba36f399454ef091937313846c9b3f24d5095127f"
+    sha256 cellar: :any,                 ventura:       "079f7f942ae39e9aad0c1cebdf0e9ab065efeb8b6c93ed5a057c7c4fc9da8635"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15815bd2f2cb465089a3e837b7fcf493abe549cb628feadf816d37f68028d29a"
   end
 
   depends_on "libyaml"
@@ -36,8 +37,8 @@ class MkdocsMaterial < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/96/d3/f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5/click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
+    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
   end
 
   resource "colorama" do
@@ -56,8 +57,8 @@ class MkdocsMaterial < Formula
   end
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/ed/55/39036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5d/jinja2-3.1.4.tar.gz"
-    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
+    url "https://files.pythonhosted.org/packages/af/92/b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccff/jinja2-3.1.5.tar.gz"
+    sha256 "8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"
   end
 
   resource "markdown" do
@@ -116,8 +117,8 @@ class MkdocsMaterial < Formula
   end
 
   resource "pymdown-extensions" do
-    url "https://files.pythonhosted.org/packages/d8/0b/32f05854cfd432e9286bb41a870e0d1a926b72df5f5cdb6dec962b2e369e/pymdown_extensions-10.12.tar.gz"
-    sha256 "b0ee1e0b2bef1071a47891ab17003bfe5bf824a398e13f49f8ed653b699369a7"
+    url "https://files.pythonhosted.org/packages/49/87/4998d1aac5afea5b081238a609d9814f4c33cd5c7123503276d1105fb6a9/pymdown_extensions-10.13.tar.gz"
+    sha256 "e0b351494dc0d8d14a1f52b39b1499a00ef1566b4ba23dc74f1eba75c736f5dd"
   end
 
   resource "python-dateutil" do
@@ -151,8 +152,8 @@ class MkdocsMaterial < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/ed/63/22ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260/urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https://files.pythonhosted.org/packages/aa/63/e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66/urllib3-2.3.0.tar.gz"
+    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
   end
 
   resource "watchdog" do

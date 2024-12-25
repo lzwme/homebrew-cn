@@ -5,16 +5,16 @@ class ApacheArrow < Formula
   mirror "https:archive.apache.orgdistarrowarrow-18.1.0apache-arrow-18.1.0.tar.gz"
   sha256 "2dc8da5f8796afe213ecc5e5aba85bb82d91520eff3cf315784a52d0fa61d7fc"
   license "Apache-2.0"
-  revision 3
+  revision 4
   head "https:github.comapachearrow.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "892bff92c42091e16cdaa76f7e6f5571c6d1b89b9521f694db6b5ba302faf682"
-    sha256 cellar: :any,                 arm64_sonoma:  "a4300783c32382e311eb2e3b251b8cc43deb4b9b7598e7ef3482331c008c6dbb"
-    sha256 cellar: :any,                 arm64_ventura: "af7207ee300b716d318d0e2cdddc3b1f9689cc5e5962bb069a5f320cc26b1e9b"
-    sha256 cellar: :any,                 sonoma:        "b1b97e2adb0739d64af495afbc80696d8d66ce791b86d4c537b61150ce6261f6"
-    sha256 cellar: :any,                 ventura:       "4479964bd7a0086571993634326835d8fc246590723a69b157e9ca15de4b1700"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12ef8ad25e5606df4647c9c66d40d98ea29155c0b63499d923b4250dc95810fb"
+    sha256 cellar: :any,                 arm64_sequoia: "365dbe9722456dbb3c41c13c8c939ae519008d60fd48a57d6e581290a540a83b"
+    sha256 cellar: :any,                 arm64_sonoma:  "37c4d21830e414964627268e60d558340bb4e84a236bd5559e00f742ecd4e170"
+    sha256 cellar: :any,                 arm64_ventura: "2ed61140c2acd7c800868228c7681403754cf3ce8b043feedc3bea8ff74ab433"
+    sha256 cellar: :any,                 sonoma:        "d5f91bce2a00954bcc433bcf2a63a46f77a62b454258e1fbabcaec3d3295a7fa"
+    sha256 cellar: :any,                 ventura:       "aa065ac9d32ada2f3017d8b0795a69d04fae9d3ca9a113442979089e290b6631"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6d92852cdcbbdef86b35753634735d2d4c0abfd55628ad7b97dfe4d9c63cc2f"
   end
 
   depends_on "boost" => :build

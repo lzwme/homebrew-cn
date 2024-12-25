@@ -6,16 +6,16 @@ class Commitizen < Formula
   url "https:files.pythonhosted.orgpackages7ac566f1b977b48501a33f5fd33253aba14786483b08aba987718d272e99e732commitizen-4.1.0.tar.gz"
   sha256 "4f2d9400ec411aec1c738d4c63fc7fd5807cd6ddf6be970869e03e68b88ff718"
   license "MIT"
-  revision 1
+  revision 2
   head "https:github.comcommitizen-toolscommitizen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d1fecb4fc61869534f10b766004968305aa2d536960a8bfe943bd1ffe3adb25e"
-    sha256 cellar: :any,                 arm64_sonoma:  "d80e410b1a4634fea5be426449bffa585719edf77d8797105a77df7d155b3cab"
-    sha256 cellar: :any,                 arm64_ventura: "b47742116bcac77d8a5944b90fc298718d3c5289a6c02261b27c0a7e0fe5d6fe"
-    sha256 cellar: :any,                 sonoma:        "c62ef87f79fc1111063edc48b993ccd22299c60bd5d2c6e30b54a4ad1cbe0733"
-    sha256 cellar: :any,                 ventura:       "ff3919bf73da1c3c7a8801991b5b0356a0024cfbd1d63bc037f108f8f907d5c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da8f1a613475f92f722278640881985db316a7ec1cedfc558d6c683ee2d7cc79"
+    sha256 cellar: :any,                 arm64_sequoia: "0ad440d8d25dbb73c282761c264674c622f67d61f70ccfd963a4bbee38cc2140"
+    sha256 cellar: :any,                 arm64_sonoma:  "93d5a4ba987812e85411fa89afb26a560f2744861b34c9f9a1b03d68962ccc48"
+    sha256 cellar: :any,                 arm64_ventura: "91241e704e456eb0550fdc5d3b846d8f7cf4a45f4e7f6b9a9092995c845844c6"
+    sha256 cellar: :any,                 sonoma:        "06d4c0d04050a4a3048745765ad34275cb8605a6debe97513aa376686f67ff7b"
+    sha256 cellar: :any,                 ventura:       "f463d32c11d1fbc756b7e5e5db7b80626d7ae48574aee65c1791b84d56cf6874"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c5131888eb5286342539db33ef40959fc44cd2943378f881c8c9cb943c7a4f1"
   end
 
   depends_on "libyaml"
@@ -42,8 +42,8 @@ class Commitizen < Formula
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
-    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
+    url "https:files.pythonhosted.orgpackagesaf92b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccffjinja2-3.1.5.tar.gz"
+    sha256 "8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"
   end
 
   resource "markupsafe" do
