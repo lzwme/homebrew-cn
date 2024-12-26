@@ -6,6 +6,7 @@ class Thrax < Formula
   url "https://www.openfst.org/twiki/pub/GRM/ThraxDownload/thrax-1.3.9.tar.gz"
   sha256 "1e6ed84a747d337c28f2064348563121a439438f5cc0c4de4b587ddf779f1ae3"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https://www.openfst.org/twiki/bin/view/GRM/ThraxDownload"
@@ -13,14 +14,12 @@ class Thrax < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "37202fbbf90594ea9f2769f80b28cedbd692f4622d15227ab79901ab632500bb"
-    sha256 cellar: :any,                 arm64_sonoma:   "9d668a3b488757d8586f0db1184f6f5df31f6bb9f2630b4115ab04fb17e07091"
-    sha256 cellar: :any,                 arm64_ventura:  "cc655cae62d5c58638cc40e1c3f32e9e9ad3ea8741120e4f16418be4f7add2cc"
-    sha256 cellar: :any,                 arm64_monterey: "20858036b8aae42f7a46f5829fbe4928d9f6c44058c466495b22ce922261d5db"
-    sha256 cellar: :any,                 sonoma:         "62258cde4a11efbf7c314f4df6b4814deeabf3011af0c77d85419ab54e69d9d5"
-    sha256 cellar: :any,                 ventura:        "bd252a98a59559a550c44a1119461e12b0aaa3a66047d74f68f137e3f9a67961"
-    sha256 cellar: :any,                 monterey:       "0229ee95400fd0ddfefa917c93819a58a51319fd9fcffe1fc03f40949270777d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3938dd9af9f3bc0e161abb79a313b49dec14ac03b056ec046cb5b335489628c6"
+    sha256 cellar: :any,                 arm64_sequoia: "1eb8c3d01b8131ea4cc7040397c4eb266c02d517d9076722f322075c93521674"
+    sha256 cellar: :any,                 arm64_sonoma:  "b3bfcb2f229d5709774df18f6bd4d4915a03218b430bc4cae498cfc98b387569"
+    sha256 cellar: :any,                 arm64_ventura: "87aea2fcc77a37ff7eb3118757a6e224c8e4704a26cae719a8a123bac9b8a3bb"
+    sha256 cellar: :any,                 sonoma:        "63a97b5dfbe107ab19a9780f7fd346e421af9ecadc30a0faca9110707cafacec"
+    sha256 cellar: :any,                 ventura:       "ea2651cc17ba7837e2e6f362124c9f6c9d06034521dfd86468d4e13220fc9893"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da7eb89d693322a62b6409eaf8d21a502d307401726f5f8563695944350ab92d"
   end
 
   # Regenerate `configure` to avoid `-flat_namespace` bug.
@@ -31,6 +30,9 @@ class Thrax < Formula
 
   depends_on "openfst"
   uses_from_macos "python", since: :catalina
+
+  # patch to build with openfst 1.8.4, notified upstream about this patch
+  patch :DATA
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"
@@ -49,3 +51,27 @@ class Thrax < Formula
     end
   end
 end
+
+__END__
+diff --git a/src/include/thrax/algo/stringmap.h b/src/include/thrax/algo/stringmap.h
+index f2ea7a7..6ee0a7c 100644
+--- a/src/include/thrax/algo/stringmap.h
++++ b/src/include/thrax/algo/stringmap.h
+@@ -180,7 +180,7 @@ bool StringMapCompile(internal::ColumnStringFile *csf, MutableFst<Arc> *fst,
+     const auto log_line_compilation_error = [&csf, &line]() {
+       LOG(ERROR) << "StringFileCompile: Ill-formed line " << csf->LineNumber()
+                  << " in file " << csf->Filename() << ": `"
+-                 << ::fst::StringJoin(line, "\t") << "`";
++                 << ::fst::StrJoin(line, "\t") << "`";
+     };
+     switch (line.size()) {
+       case 1: {
+@@ -225,7 +225,7 @@ bool StringMapCompile(const std::vector<std::vector<std::string>> &lines,
+   for (const auto &line : lines) {
+     const auto log_line_compilation_error = [&line]() {
+       LOG(ERROR) << "StringMapCompile: Ill-formed line: `"
+-                 << ::fst::StringJoin(line, "\t") << "`";
++                 << ::fst::StrJoin(line, "\t") << "`";
+     };
+     switch (line.size()) {
+       case 1: {

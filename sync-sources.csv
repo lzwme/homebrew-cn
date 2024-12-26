@@ -3582,6 +3582,7 @@ Homebrew-homebrew-core/Formula/lib/libfixposix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libflowmanager.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libfontenc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libforensic1394.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libformfactor.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libfreefare.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libfreehand.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libfreenect.rb, Homebrew/homebrew-core, 1
@@ -3627,6 +3628,7 @@ Homebrew-homebrew-core/Formula/lib/libhandy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libharu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libhdhomerun.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libheif.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libheinz.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libhttpserver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libhubbub.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libical.rb, Homebrew/homebrew-core, 1
@@ -4667,6 +4669,7 @@ Homebrew-homebrew-core/Formula/o/octave.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/octobuild.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/octomap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/octosql.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/odbc2parquet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ode.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/odin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/odo-dev.rb, Homebrew/homebrew-core, 1
@@ -5096,6 +5099,7 @@ Homebrew-homebrew-core/Formula/p/pipes-sh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pipet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pipgrip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pipx.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pistache.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pius.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pivit.rb, Homebrew/homebrew-core, 1
@@ -5877,6 +5881,7 @@ Homebrew-homebrew-core/Formula/s/sf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sfcgal.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sfk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sfml.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sfml@2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sfsexp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sfst.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sftpgo.rb, Homebrew/homebrew-core, 1
@@ -13003,7 +13008,7 @@ Homebrew-homebrew-cask/Casks/p/postman.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/postman@canary.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/posture-pal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/powder-player.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/p/powder.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/powder.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/power-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/powerpanel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/powerphotos.rb, Homebrew/homebrew-cask, 0

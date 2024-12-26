@@ -5,6 +5,11 @@ class Forgit < Formula
   sha256 "7b78553561bf0201d7cf3d1c892af35044cf74d76079bcdc421113e178324ef5"
   license "MIT"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "7a0752f36630c84cc3a7738fcc0928416022f38e10a56d54a127ae4ab748de3a"
   end

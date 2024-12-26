@@ -1,11 +1,26 @@
 class Prr < Formula
   desc "Mailing list style code reviews for github"
   homepage "https:github.comdanobiprr"
-  url "https:github.comdanobiprrarchiverefstagsv0.19.0.tar.gz"
-  sha256 "76d101fefe42456d0c18a64e6f57b9d3a84baaecaf1e3a5e94b93657a6773c11"
   license "GPL-2.0-only"
   revision 1
   head "https:github.comdanobiprr.git", branch: "master"
+
+  stable do
+    url "https:github.comdanobiprrarchiverefstagsv0.19.0.tar.gz"
+    sha256 "76d101fefe42456d0c18a64e6f57b9d3a84baaecaf1e3a5e94b93657a6773c11"
+
+    # support libgit2 1.8, upstream pr ref, https:github.comMitMarogit-interactive-rebase-toolpull948
+    patch do
+      url "https:github.comdanobiprrcommitc860f3d29c3607b10885e6526bea4cfd242815b5.patch?full_index=1"
+      sha256 "208bbbdf4358f98c01b567146d0da2d1717caa53e4d2e5ea55ae29f5adaaaae2"
+    end
+
+    # completion and manpage support, upstream pr ref, https:github.comdanobiprrpull68
+    patch do
+      url "https:github.comdanobiprrcommit8ba7fdc2fcca86236311c65481af5b27a276a806.patch?full_index=1"
+      sha256 "f74882907e25bc1af3e1556407c84e5477b3d7be3e51a2b40178ae17aaafaa0d"
+    end
+  end
 
   bottle do
     rebuild 1
@@ -23,18 +38,6 @@ class Prr < Formula
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
-
-  # support libgit2 1.8, upstream pr ref, https:github.comMitMarogit-interactive-rebase-toolpull948
-  patch do
-    url "https:github.comdanobiprrcommitc860f3d29c3607b10885e6526bea4cfd242815b5.patch?full_index=1"
-    sha256 "208bbbdf4358f98c01b567146d0da2d1717caa53e4d2e5ea55ae29f5adaaaae2"
-  end
-
-  # completion and manpage support, upstream pr ref, https:github.comdanobiprrpull68
-  patch do
-    url "https:github.comdanobiprrcommit8ba7fdc2fcca86236311c65481af5b27a276a806.patch?full_index=1"
-    sha256 "f74882907e25bc1af3e1556407c84e5477b3d7be3e51a2b40178ae17aaafaa0d"
-  end
 
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"

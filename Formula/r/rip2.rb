@@ -1,18 +1,18 @@
 class Rip2 < Formula
   desc "Safe and ergonomic alternative to rm"
   homepage "https:github.comMilesCranmerrip2"
-  url "https:github.comMilesCranmerrip2archiverefstagsv0.9.1.tar.gz"
-  sha256 "e35733235589ad74bafce32f5ec0e5db71133eaa8373734763ae1f78ce5402cd"
+  url "https:github.comMilesCranmerrip2archiverefstagsv0.9.2.tar.gz"
+  sha256 "1a2c54f04f5045de48553d4a81c359f3d5e0ed9ef6aa875185f43765533d2f15"
   license "GPL-3.0-or-later"
   head "https:github.comMilesCranmerrip2.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea0c7eb215c784b065efb7e46db7f7c75ca7fb61bc98969455462af6190092ad"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44468fe72c4039733863d730740f4bf40ad7727109629bedf75be6eec0027cdb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "39fb078c6a2e13c76e06dfb7469b96d6feb53e1164249eb4a1b6ad299e091534"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1c5d8da937b1c88e6a448556aed6046d992db297028f540b1f72529f8f319010"
-    sha256 cellar: :any_skip_relocation, ventura:       "7d6c2517e8bf095e38bffe709adbec3a6599a3dda0fe58ee0051f11b5d2fedb9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33f7a2145695d4071889cef3610b7e38e565bf0077564be8203ecea01a1747a9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79cdf7da64b66458ae788d918224a2faf4e8e8f55733a278cc680aca7f5ffea1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db8e496f0a80e786e14d9560357ec431075e413a1615e88c12fe4122dfdac591"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0093b04b01751dd9c6ba97e92507b96c44faade8cd91ccf5162792d67b301097"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b9d6b86d8c27a454a0efb919c9ee13b0d00c9d0a16891d2bb8e322029cda4faf"
+    sha256 cellar: :any_skip_relocation, ventura:       "2ffa51a96b30d2fcd2a683fa325236934526873aa747c409ddfb90b7381113c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d660c554881637f34f86db907be00282c05d644cd45939ba3a0645decce5519"
   end
 
   depends_on "rust" => :build

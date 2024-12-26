@@ -6,13 +6,13 @@ class Decasify < Formula
   license "LGPL-3.0-only"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b25223707b94797890dd49e7aa98c2a477ff57a902ff2bdcf0f9ebd6c74b81c3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01ea70c5a5a716e6ac0ea825871890b1f9d1e27b1d697367631497212908052f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "de126245eb0ae0d0bcffedd4b1d7fa5fa1b6ff83acb269d0b541c584dedc84de"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bf208333b9f376d845f8c271d5a26d4b707682ecb2a41f7fa9cf2f3203984ce4"
-    sha256 cellar: :any_skip_relocation, ventura:       "53508523d514a1e13970caedf30d11eb9284a9fb2a89b1d4b045144b040963c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d8d47baa6a56859dd30c5c97f26c146082ef76ee8b2c30a68f99f3968c0bbec"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "67f3d8fe3d2b2075bd394ce73e74212d34dcb0ee895d47a8f7dad900713e57de"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de0e5675ed1a3e5f9efce89db8c16fdd8786e196905ee844207d91648eed3648"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f48107a2056c18adf1ba70fde014d373465f7596d30d04126f0697f12e4c9a07"
+    sha256 cellar: :any_skip_relocation, sonoma:        "31cb66b6d9eca38f3b9b5910414193c0bed89c706c2abafbaf607aa2f465ccfc"
+    sha256 cellar: :any_skip_relocation, ventura:       "47646a4c162f98a43fb12b95e4f4584754ef66568b538c242c30087d8ffe76fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43c42908bc43fa322a6761703a4dbe5d364593c5d440f4e67e55c271018688c5"
   end
 
   head do
@@ -29,22 +29,11 @@ class Decasify < Formula
 
   uses_from_macos "zlib"
 
-  # shell completion file permission patch, upstream pr ref, https:github.comalerquedecasifypull37
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches280b19b530f7328464e7aacd31a3faa621aa137fdecasify0.8.0-fix-shell-permissions.patch"
-    sha256 "0fd8046981413341698166b1942020956dfa5ee6a4874ee418557179e61a8a6f"
-  end
-
   def install
     system ".bootstrap.sh" if build.head?
     system ".configure", "--disable-silent-rules", *std_configure_args
     system "make"
     system "make", "install"
-
-    bash_completion.install "completionsdecasify"
-    fish_completion.install "completionsdecasify.fish"
-    zsh_completion.install "completions_decasify"
-    man1.install "decasify.1"
   end
 
   test do

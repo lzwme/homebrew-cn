@@ -1,19 +1,27 @@
 class NestopiaUe < Formula
   desc "NES emulator"
   homepage "http:0ldsk00l.canestopia"
-  url "https:github.com0ldsk00lnestopiaarchiverefstags1.52.1.tar.gz"
-  sha256 "c9c0bce673eb3b625b538b462e49c00ed1ee1ded1e0bad09be780076880968b5"
   license "GPL-2.0-or-later"
-  revision 1
   head "https:github.com0ldsk00lnestopia.git", branch: "master"
 
+  stable do
+    url "https:github.com0ldsk00lnestopiaarchiverefstags1.53.0.tar.gz"
+    sha256 "27a26a6fd92e6acc2093bbd6c1e3ab7f2fff419d9ed6de13bc43349b52e1f705"
+
+    # add back `--version` command, see discussions in https:github.com0ldsk00lnestopiaissues430
+    patch do
+      url "https:github.com0ldsk00lnestopiacommit76c5d0cdb75444c54258a184eb7a488b8f1dd4ec.patch?full_index=1"
+      sha256 "4f1ad461502fe837261860690ab936a642925299054b0e8fe4b0b3e1a243e9e7"
+    end
+  end
+
   bottle do
-    sha256 arm64_sequoia: "67af1d1abc8403e93fd13196f700615e07dd7034479f3822f1a4b00b1240899b"
-    sha256 arm64_sonoma:  "6c6067d902336e6e8ec57e70607c703b6a4d95e8639cde05375b667da2b2f97f"
-    sha256 arm64_ventura: "c57ba97017d1bed91703be29ff24a3cccf099fc962e0972e63c9af9c8ea54083"
-    sha256 sonoma:        "9c90b0b5a87130d6d4a64e37c76f9d358e238a9a87c5bf227448f0bd143dd8b7"
-    sha256 ventura:       "b0900fc15e84459bd860ec7ea552d9abebf8670dc3211440d9e585706d72cfc4"
-    sha256 x86_64_linux:  "9108695ba978f4218da904110ce3d22e0345aeb85edc7bc3152997e759af58a6"
+    sha256 arm64_sequoia: "a0bdb08096a005edbb35f9807d2b834e9a8f79811c75b473d5584e0bf4efdcdc"
+    sha256 arm64_sonoma:  "68e0b4795fc64dbf8158146a5f7fd96a99bb057ce06444c72dd8d1b275f25dc5"
+    sha256 arm64_ventura: "8f2025bd929b74f756227cd72beef6fd04c12f0f17aa2f9987b475cc55ee161f"
+    sha256 sonoma:        "e92205869fe6d03479e708ecdd00a05ab9799552195ce9aff49e25668c328418"
+    sha256 ventura:       "f885dc6e40568171755c0b7b12b808b1fe051ecc12682dbd5fa8d9e7c7ab9aa2"
+    sha256 x86_64_linux:  "cdede8ff541df4b2f4d553e7d99043ac1a35e4e403e9286cc6bb80cb22dd1fb8"
   end
 
   depends_on "autoconf" => :build
@@ -23,6 +31,8 @@ class NestopiaUe < Formula
 
   depends_on "fltk"
   depends_on "libarchive"
+  depends_on "libepoxy"
+  depends_on "libsamplerate"
   depends_on "sdl2"
 
   uses_from_macos "zlib"

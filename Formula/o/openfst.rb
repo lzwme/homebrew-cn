@@ -1,8 +1,8 @@
 class Openfst < Formula
   desc "Library for weighted finite-state transducers"
   homepage "https://www.openfst.org/twiki/bin/view/FST/WebHome"
-  url "https://openfst.org/twiki/pub/FST/FstDownload/openfst-1.8.3.tar.gz"
-  sha256 "077714159d5cf3e38a80b6c6656d3ccc2c8b8b6c50bb41bb65c5fec10796bf53"
+  url "https://openfst.org/twiki/pub/FST/FstDownload/openfst-1.8.4.tar.gz"
+  sha256 "a8ebbb6f3d92d07e671500587472518cfc87cb79b9a654a5a8abb2d0eb298016"
   license "Apache-2.0"
 
   livecheck do
@@ -11,24 +11,21 @@ class Openfst < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "5d174e442429bca62cb5efef625032721a5c6987e18ade3078e88091df31d921"
-    sha256 cellar: :any,                 arm64_sonoma:   "3a0436dfb645f06b824d626e1b8e10c47b782b7134c6ac04d5f4ee4df106db22"
-    sha256 cellar: :any,                 arm64_ventura:  "76a0f9e9075766f227495fe513ce756167b62d3c6fd326399bbe259ba493b6ee"
-    sha256 cellar: :any,                 arm64_monterey: "45aa8f4f880ea7e84b9aa4463f892d25b41b00cfb684aeb81efa94088e18d4c2"
-    sha256 cellar: :any,                 sonoma:         "9cc3657fddcd253c2e69e870a90978776f0356fab021338dcaad3c4c2837c20e"
-    sha256 cellar: :any,                 ventura:        "918bf970528321b4b385c8e08f57d9a45b530428bac2b0e74a474e5434fa1f03"
-    sha256 cellar: :any,                 monterey:       "62b9fbfe4dd8e058825ae75a682f922844c4f3dae90d956e5e9e0192496d33ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "18b293aa36b18f6c227da97b39f8389accdf0f02a6b5801b197d062a473407fa"
+    sha256 cellar: :any,                 arm64_sequoia: "170b2d2c3a8567af3feec554218bc4c8d6d62b2e8f04395e3fc3b5ef8451c846"
+    sha256 cellar: :any,                 arm64_sonoma:  "9d437bc3a9cb1661b816b8ab6c7ab8f4d18303cf67e23ecd4285142c03a8f537"
+    sha256 cellar: :any,                 arm64_ventura: "b6111a87dbce7299b5bb7616c4886df0df105ff5f5dbad107312953017092fcc"
+    sha256 cellar: :any,                 sonoma:        "053608b3f203e6d338d124bd7efbb4abaccaef09541710ada922e714e924ed45"
+    sha256 cellar: :any,                 ventura:       "ee4d24be7b6490cbe241d86a4df0e3c9274e175ee9bac9ae5df410de8f0dff00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e99e7fd868352d8f1956c5e2721ec89dbe064c39018c680d19e2ddaab3bb787"
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--disable-silent-rules",
-                          "--prefix=#{prefix}",
+    system "./configure", "--disable-silent-rules",
                           "--enable-fsts",
                           "--enable-compress",
                           "--enable-grm",
-                          "--enable-special"
+                          "--enable-special",
+                          *std_configure_args
     system "make"
     system "make", "install"
   end

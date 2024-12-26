@@ -3,19 +3,18 @@ class Cruft < Formula
 
   desc "Utility that creates projects from templates and maintains the cruft afterwards"
   homepage "https:cruft.github.iocruft"
-  url "https:files.pythonhosted.orgpackagesd859bb9e052fba37972e4b27db74d0bc770bade501d48336dec3c89fe57e9513cruft-2.15.0.tar.gz"
-  sha256 "9802af66037418655e7e4b6f30b531591e0761939b3ff5dd45d27c3a3f588abe"
+  url "https:files.pythonhosted.orgpackagesd17e0e20012f2aa156e5d6a70483a8d90accb7ed4966dddb0c58987d9f6eba12cruft-2.16.0.tar.gz"
+  sha256 "184662853fbc1c16c0137fe0e9444e0cbe95e40362f5ebb2d9fae33d9223e73f"
   license "MIT"
-  revision 11
   head "https:github.comcruftcruft.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "35a429acfb6a1f80f292f1adc2f4cb0592ab02d88780c94612f53250301dfea6"
-    sha256 cellar: :any,                 arm64_sonoma:  "42265f60131404e09c8f65248f3529624231d2ee0ae7027953cacc4381d8c413"
-    sha256 cellar: :any,                 arm64_ventura: "1c731bb8018c0b59d4b40fb2741d38742bc6d32433c5ba7ea7af88fc5d79cc5f"
-    sha256 cellar: :any,                 sonoma:        "deb5443375ca90099e215569121445edc2ad581c5e08dd0a2db0d740606fd2e0"
-    sha256 cellar: :any,                 ventura:       "619c938132725047ca092a2a1fa58e1ef75c765353ff750a9a63de7f7b6615c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3a6bdf43fff699cc4099d42a252bb83c68ab61f0c2c905e87c70430efcc80bc"
+    sha256 cellar: :any,                 arm64_sequoia: "64a39ce4ada1547e8573ee8d01313832c15474e00a9674c1f131975e650345ec"
+    sha256 cellar: :any,                 arm64_sonoma:  "9b993b52970579cc2c8a354b1a770ad2d804d2564dc63cebcf1f412ee23840e8"
+    sha256 cellar: :any,                 arm64_ventura: "ee0e42234f39dc1ba80ab8e06ab26815d40681e2af9f079048c2bd35496ceab2"
+    sha256 cellar: :any,                 sonoma:        "bd876f238ee4de8a54de8c4ce7ad16e26b8b9abc4c4346f0f623beaa4b35a040"
+    sha256 cellar: :any,                 ventura:       "9c64ef5a4169739ec967e1b1c40c7326c3c0206dad57d83973887c89df4d9678"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b85dc9c92ebce60f63a83fb8e88ccb70af6e91c84f2477114209935e22f4893f"
   end
 
   depends_on "certifi"
@@ -38,8 +37,8 @@ class Cruft < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
-    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
+    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
+    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
   end
 
   resource "click" do

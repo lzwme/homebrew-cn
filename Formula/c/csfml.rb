@@ -5,25 +5,24 @@ class Csfml < Formula
   url "https:github.comSFMLCSFMLarchiverefstags2.6.1.tar.gz"
   sha256 "f3f3980f6b5cad85b40e3130c10a2ffaaa9e36de5f756afd4aacaed98a7a9b7b"
   license "Zlib"
+  revision 1
   head "https:github.comSFMLCSFML.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "02e7a77b215a808cd2948b295752ea660f0a9ce2065c4ebae68ff20dbfcf6364"
-    sha256 cellar: :any,                 arm64_sonoma:   "51106a18de295924740040dfe451298bf81642b99085741ab536200be362a270"
-    sha256 cellar: :any,                 arm64_ventura:  "49eef8514705e01c7bdaf6fb3c82aacee098eb42bcdbc671a937e100e51dec23"
-    sha256 cellar: :any,                 arm64_monterey: "99aa119e5df305ad65af18397978c39e2f2ea88c3aaafbd9e4c62fb92a5e24b0"
-    sha256 cellar: :any,                 sonoma:         "41a00b5ee1f4c5210ebbf52210c29738921466d3de8c0144a225b47f1376bd0b"
-    sha256 cellar: :any,                 ventura:        "cf5c4fc6532d7ccd3efe857e3f0bbf472bcb105f38dbf9c58a7cbd2e0a77b4a5"
-    sha256 cellar: :any,                 monterey:       "517ba2b6d220a8b0a8520959439299feb154edb343fcb7ed2c63842db250ca5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a820796c52b40aeab5cd532d5a4eb51920783e5571c5621824b23d0f452947ea"
+    sha256 cellar: :any,                 arm64_sequoia: "e1e1172b80909989105f3813e7d1dba2ce0caca2a7efdd2717724e624b7e9cb0"
+    sha256 cellar: :any,                 arm64_sonoma:  "1a1763c3710588f2e1eff5569802b195f89582cdc9e5dd842cd818135fede023"
+    sha256 cellar: :any,                 arm64_ventura: "0f5543e8c4f83ba20d16b986870afdb4d127326e9b4545b2d98bab4430be4000"
+    sha256 cellar: :any,                 sonoma:        "c63caf00bb7ab923a8d49448b410dd7c269fc1a6e8f194326286d610b972f6af"
+    sha256 cellar: :any,                 ventura:       "d2d7e9b7eef45f2cd6fa0a48c3f0e606f9690945c8bc7ef396eeeb6640bd62e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4c772a79cfa52cd66d37f85c6964473519693d3661f593ede05b4103ae09983"
   end
 
   depends_on "cmake" => :build
-  depends_on "sfml"
+  depends_on "sfml@2" # milestone to support sfml 3.0, https:github.comSFMLCSFMLmilestone1
 
   def install
     args = %W[
-      -DCMAKE_MODULE_PATH=#{Formula["sfml"].share}SFMLcmakeModules
+      -DCMAKE_MODULE_PATH=#{Formula["sfml@2"].share}SFMLcmakeModules
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

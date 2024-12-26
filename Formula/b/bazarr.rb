@@ -3,21 +3,18 @@ class Bazarr < Formula
 
   desc "Companion to Sonarr and Radarr for managing and downloading subtitles"
   homepage "https:www.bazarr.media"
-  url "https:github.commorpheus65535bazarrreleasesdownloadv1.4.3bazarr.zip"
-  sha256 "b664dd9947d1051941d788ee371528eb945efbd6a05015f40414ae36ede9482d"
+  url "https:github.commorpheus65535bazarrreleasesdownloadv1.5.0bazarr.zip"
+  sha256 "0b85e92622b8bd53ad0478b872a36c181bda0b28ab1d01a7d2473ddbfebba748"
   license "GPL-3.0-or-later"
   head "https:github.commorpheus65535bazarr.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0f8672138939fa50ef1f6b228cb57a66e8bd15f270aebbaeed175adec2bd78ec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8b023d5c160d3c58237cd18c8ce142b47f94725ab26f9849f9161401cd416c33"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c5a5ccc8ae165f93dd193cb14cdbdb489eb800fc57f2da84c33fbc3b12be29fd"
-    sha256 cellar: :any,                 arm64_monterey: "99e22f87a17d46593ac22ebca997d18d25bc1d7885871b4a3afcc65a53794b45"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9c97ed102759a6ea084b277f13bce79792ea13ca159d55df7a06c86d19e094ba"
-    sha256 cellar: :any_skip_relocation, ventura:        "bad9d45c6e1f7292549859ddc2a2461b32293fa6f42cc29cc1620dd93d9a5ec4"
-    sha256 cellar: :any,                 monterey:       "18350639a3711e8a8059aaa5af057473dc833dc9894917c5e57cfa800a8857d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f5757b9d197bca66cac1645c719d2f8f2f0c74397f0bf39177d4428f9dbe4075"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9559d6bc327724d2d428f74775095e1385938a1d90a137b3a2cc1117ed291c20"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b184133fa813befba2ac7ed45586a359d258ca391e3860339800aca7e2a7b643"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "eb3f2453f0cb0465ee847046b5e9cf5c4f4b70cd6684c77c0d5ce3a309dae5c2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c15721d16593aef0c329ccfcdd0dcf83a05c4af7cc1ab04b5606c976b45b5219"
+    sha256 cellar: :any_skip_relocation, ventura:       "9217c97bff3e434ab8a9096136ed0ce62f0aad89fdf808dd9ea9c05176ddad24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3908943effb00688a1b4ceb60a2f43f10cb127bb6afc19f959c8e426f74af442"
   end
 
   depends_on "node" => :build
@@ -38,13 +35,13 @@ class Bazarr < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages5e11487b18cc768e2ae25a919f230417983c8d5afa1b6ee0abd8b6db0b89fa1dsetuptools-72.1.0.tar.gz"
-    sha256 "8d243eff56d095e5817f796ede6ae32941278f542e0f941867cc05ae52b162ec"
+    url "https:files.pythonhosted.orgpackages4354292f26c208734e9a7f067aea4a7e282c080750c4546559b58e2e45413ca0setuptools-75.6.0.tar.gz"
+    sha256 "8199222558df7c86216af4f84c30e9b34a61d8ba19366cc914424cdbd28252f6"
   end
 
   resource "webrtcvad-wheels" do
-    url "https:files.pythonhosted.orgpackages59d917fe64f981a2d33c6e95e115c29e8b6bd036c2a0f90323585f1af639d5fcwebrtcvad-wheels-2.0.11.post1.tar.gz"
-    sha256 "aa1f749b5ea5ce209df9bdef7be9f4844007e630ac87ab9dbc25dda73fd5d2b7"
+    url "https:files.pythonhosted.orgpackages28ba3a8ce2cff3eee72a39ed190e5f9dac792da1526909c97a11589590b21739webrtcvad_wheels-2.0.14.tar.gz"
+    sha256 "5f59c8e291c6ef102d9f39532982fbf26a52ce2de6328382e2654b0960fea397"
   end
 
   def install
@@ -117,11 +114,11 @@ class Bazarr < Formula
 
     port = free_port
 
-    Open3.popen3(bin"bazarr", "--no-update", "--config", testpath, "-p", port.to_s) do |_, _, stderr, wait_thr|
+    Open3.popen3(bin"bazarr", "--no-update", "--config", testpath, "--port", port.to_s) do |_, _, stderr, wait_thr|
       Timeout.timeout(45) do
         stderr.each do |line|
           refute_match "ERROR", line unless line.match? "Error trying to get releases from Github"
-          break if line.include? "BAZARR is started and waiting for request on http:0.0.0.0:#{port}"
+          break if line.include? "BAZARR is started and waiting for requests on: http:0.0.0.0:#{port}"
         end
         assert_match "<title>Bazarr<title>", shell_output("curl --silent http:localhost:#{port}")
       end
