@@ -4,16 +4,15 @@ class Dexter < Formula
   url "https:github.comankanedexterarchiverefstagsv0.5.5.tar.gz"
   sha256 "4e5c7a8e1e77af44e16fefe2dcb5fc221612be0b6977547318edd9e597467e19"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "f750ffc4abb7b8ca1bf4a905d0e06e171ac2c8743ec65a5a09604f766be2c97d"
-    sha256 cellar: :any,                 arm64_sonoma:   "07dfc1189a60ac1210ac45c70ee560e25c75e6f86d95f6fe131f03b9ecc98c35"
-    sha256 cellar: :any,                 arm64_ventura:  "07c027d2438d2fa87d3f09491a954fc7c9d026492f190c66bba029299c9bd981"
-    sha256 cellar: :any,                 arm64_monterey: "56e53e4eadefa9f678cfdf514c5c6339f5f0a40cb603fa1fe801228fe722ded0"
-    sha256 cellar: :any,                 sonoma:         "4f345df259c4688e07a37ab44b48359d59193bdacefad9dd2753e762dd1be89d"
-    sha256 cellar: :any,                 ventura:        "a06551e518d503c32d122f19f5f7d6d3be18983c666cc42d7c6b67a87ecc2f22"
-    sha256 cellar: :any,                 monterey:       "79925df614a0853a3606ea89b28f563958688d736419958c7c82e63ce7308950"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83130e9cf8066ce05ff78a2e893da336cc2d5225b20be91a9746a43f3a2bcc65"
+    sha256 cellar: :any,                 arm64_sequoia: "27202dafe7bc5b4ab458a294f03a8874a2d65806ed5b89c1e9c95859855c7ceb"
+    sha256 cellar: :any,                 arm64_sonoma:  "0b2c142baaf6765573801d064a9e8617636eaa2cfdd19b077d21fa21d6240637"
+    sha256 cellar: :any,                 arm64_ventura: "52d040b9a7eb12451548f5c1974ca57d4d434f9f494d674244fa9b8ae0130ec0"
+    sha256 cellar: :any,                 sonoma:        "33f9a88a2a7e9a131edf0ba3decbe2c505ab7427357bb72bc554433c85d6549d"
+    sha256 cellar: :any,                 ventura:       "b9c7c9ea2fe582b7db9824418bdf9cdb27c323c4e13d7d29e16eda7093233533"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7af786c843b3ddabc4856afa1a82269d5585df4473c702339c0927c6671a39a"
   end
 
   depends_on "postgresql@17" => :test

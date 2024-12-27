@@ -4,16 +4,15 @@ class Youplot < Formula
   url "https:github.comred-data-toolsYouPlotarchiverefstagsv0.4.6.tar.gz"
   sha256 "126278103f6dbc4e28983b9e90a4e593f17e78b38d925a7df16965b5d3c145a4"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256                               arm64_sequoia:  "38af94e0b042576027ea48ddacfa7328a06da03115fd979ffe51ea78f20cce04"
-    sha256                               arm64_sonoma:   "34886703341b58e351283223a6fe19717d404120c709ed1a518753ac07f16e85"
-    sha256                               arm64_ventura:  "224f2643f50bbd531e19ec45f9a56ec760304379a943420a42c0038b0d5ca2c2"
-    sha256                               arm64_monterey: "e2f7ef7149fec5451496cdc50394a718084180d792d08f7b7db3085db1f56fa3"
-    sha256                               sonoma:         "15297f02a8a7176c2cae1a2f541ce7bd8884b15d097070b8882ad6e2fc54d7a6"
-    sha256                               ventura:        "3ed832d8288148f3ce99bb857538dabcdca8821e33215db6910c2c0f7075a9ae"
-    sha256                               monterey:       "0ab163b9eb0c815a52b0ae4122d3e7ac41c2ad885c39b7106e0bd1b909cd3f92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e036b00579b5ab8dab662523782303690222a42b3f21197769191c690f1adb87"
+    sha256                               arm64_sequoia: "f4f7a0b1d99fc9472d007745a96456a2d87626a21f9e2f1d781b81713904bc71"
+    sha256                               arm64_sonoma:  "0154fece0c0a8ddb10acbac21c168b33bacb2839ecc8f0f28d6d7dcf0ebe7047"
+    sha256                               arm64_ventura: "4bb2dff5ad2c3ed7d664ef15b09ce44f03b2ec9cb01fa538b6420b9aba56d5c1"
+    sha256                               sonoma:        "3373ffb2e43529719160f9be85457e89a87eb20648ca158c4b369b38d762b39c"
+    sha256                               ventura:       "b642704f1c8f283ef82b61ece8ee89f5bc758949d36c0f66b3bacd192843b223"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c6afa1c010330d42e76bd3430040c5f289cea496fa805d0fb27a8494a33fd43"
   end
 
   uses_from_macos "ruby"

@@ -34,12 +34,9 @@ class Gpsbabel < Formula
     rm_r "maclibusb"
     rm_r "shapelib"
     rm_r "zlib"
-    shapelib = Formula["shapelib"]
     system "cmake", "-S", ".", "-B", "build",
                     "-DGPSBABEL_WITH_LIBUSB=pkgconfig",
-                    "-DGPSBABEL_WITH_SHAPELIB=custom",
-                    "-DGPSBABEL_EXTRA_INCLUDE_DIRECTORIES=#{shapelib.opt_include}",
-                    "-DGPSBABEL_EXTRA_LINK_LIBRARIES=-L#{shapelib.opt_lib} -lshp",
+                    "-DGPSBABEL_WITH_SHAPELIB=pkgconfig",
                     "-DGPSBABEL_WITH_ZLIB=pkgconfig",
                     *std_cmake_args
     system "cmake", "--build", "build", "--target", "gpsbabel"

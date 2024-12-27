@@ -6,7 +6,7 @@ class Gnuradio < Formula
   url "https:github.comgnuradiognuradioarchiverefstagsv3.10.11.0.tar.gz"
   sha256 "9ca658e6c4af9cfe144770757b34ab0edd23f6dcfaa6c5c46a7546233e5ecd29"
   license "GPL-3.0-or-later"
-  revision 3
+  revision 4
   head "https:github.comgnuradiognuradio.git", branch: "main"
 
   livecheck do
@@ -15,12 +15,12 @@ class Gnuradio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a68e237184aa8e654424dd61570157af0138a27a3587ef4e7d0b8b51a3c6b2fb"
-    sha256 cellar: :any,                 arm64_sonoma:  "f45f2a919d9c8000066544cd1db5c51cd9cba53f25ca06ccf398b2ecfd7d92d2"
-    sha256 cellar: :any,                 arm64_ventura: "35c82a2d51b34b910d1565e60032670f959893e6e601af3a2d02c1a9f6c0753f"
-    sha256 cellar: :any,                 sonoma:        "f9cc9c15c92e57a380e6b838dd711b2bfd8b5be965c0f15f166f452028f0bdc9"
-    sha256 cellar: :any,                 ventura:       "61f35bb7a8fca7206675c77e4476757b78fc167b5858cb2b6ee5c697a54e8292"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26a41ea0945823d919a08988b7a02851f4f993e5239c3af216272003e38d6573"
+    sha256 cellar: :any,                 arm64_sequoia: "e5a4f738ca783f6c230d01e8070175d29a4044d83e3dd4956a6fb127c4642929"
+    sha256 cellar: :any,                 arm64_sonoma:  "fe815b548e2b529e488f1615fab21576c22c49b75e1019a45cd3527a226407bb"
+    sha256 cellar: :any,                 arm64_ventura: "96aa76148e359431ee0b969e52471cf62ec19bcf4040115533995a6f2f1c42a5"
+    sha256 cellar: :any,                 sonoma:        "213c599ff918c1433f65a526b13ababab1a2a10db273fdad9b37fb67e0d37296"
+    sha256 cellar: :any,                 ventura:       "587fcb6b1ebd0fb717b77057fc1666ad6a056c02a5a993fbd925c29a4549f708"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a5a0bac52f07f39de8a56d9a990fa826b86fbb0fe134681fdbab88e8a34d7bb"
   end
 
   depends_on "cmake" => :build

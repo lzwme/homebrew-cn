@@ -1,8 +1,8 @@
 class Fastfetch < Formula
   desc "Like neofetch, but much faster because written mostly in C"
   homepage "https:github.comfastfetch-clifastfetch"
-  url "https:github.comfastfetch-clifastfetcharchiverefstags2.32.1.tar.gz"
-  sha256 "f08efaaffa9f1c58b085105acfc41c65ed8f5721bdc7b1746b80700c727a4f60"
+  url "https:github.comfastfetch-clifastfetcharchiverefstags2.33.0.tar.gz"
+  sha256 "fa3b5c3c4fc7d2b6c4e24c15fb7cf3df94024227f2d24995f6ca0eaa95f39725"
   license "MIT"
   head "https:github.comfastfetch-clifastfetch.git", branch: "dev"
 
@@ -12,12 +12,12 @@ class Fastfetch < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "94988083e11c0625cea82eee35f3c587b5f42fd6eef4ddd495f5017af476d26e"
-    sha256 arm64_sonoma:  "405ad07f6494a9320f128302aee6c37867673b39494b2f3f47ecb018d424843f"
-    sha256 arm64_ventura: "5021dd8a74d9e6913d67dbb93cf4d3d9ffafc515eed23263ee0bf93039532cc0"
-    sha256 sonoma:        "c8d9fc3e9de479ceac2fae756de2a7e6211225639fcfc26473f30af13f0704c7"
-    sha256 ventura:       "e234078ec26a64ef7dff62322675022a028a8c30c62b4b0dacafb4c2735e49fc"
-    sha256 x86_64_linux:  "902da4edb8629b92e2f4366c18dcf1a88f09119e98442e693b91dce7046f5aa3"
+    sha256 arm64_sequoia: "a2babae004fd3cba1d2757911efa32c825384ed415d474db3c22f86a16aa8026"
+    sha256 arm64_sonoma:  "5ab9e7be9b14100dfc93b38b97e08c84111ae903d2a108c1afb47ccbb8002425"
+    sha256 arm64_ventura: "aa0216551f78e92eea226680c9d49654a05967d879d73a9a6348f27770a97ef9"
+    sha256 sonoma:        "06a6491bfd63c244f10836d40db62eb8bb03251ae1f3b649d966c83de02437bf"
+    sha256 ventura:       "f72439234a8a4459489556f423f8dae325b3e6e7c241155e008f71a8c19a8fb1"
+    sha256 x86_64_linux:  "02a6922c9aa945e8b8f3bb504aae9b9bbf91b04a6f7245c282c429b83b262241"
   end
 
   depends_on "chafa" => :build
@@ -48,7 +48,11 @@ class Fastfetch < Formula
   end
 
   def install
-    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_SYSCONFDIR=#{etc}", *std_cmake_args
+    args = %W[
+      -DCMAKE_INSTALL_SYSCONFDIR=#{etc}
+      -DDBUILD_FLASHFETCH=OFF
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     bash_completion.install share"bash-completioncompletionsfastfetch"

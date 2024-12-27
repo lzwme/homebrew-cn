@@ -1,14 +1,13 @@
 class Sse2neon < Formula
   desc "Translator from Intel SSE intrinsics to ArmAarch64 NEON implementation"
   homepage "https:github.comDLTcollabsse2neon"
-  url "https:github.comDLTcollabsse2neonarchiverefstagsv1.7.0.tar.gz"
-  sha256 "cee6d54922dbc9d4fa57749e3e4b46161b7f435a22e592db9da008051806812a"
+  url "https:github.comDLTcollabsse2neonarchiverefstagsv1.8.0.tar.gz"
+  sha256 "e251746e3b761f3f0de1ad462b1efe53532341b6b0498d394765fceb85ce8a46"
   license "MIT"
   head "https:github.comDLTcollabsse2neon.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "f42189e7b34ec8c8206fc17382c113f36c236afae45502f7faf852a7fccdd2f7"
+    sha256 cellar: :any_skip_relocation, all: "06fb48d181d2cad0a1bab7bcf214f80c33c42a7c37599cb58015e3223dfb1543"
   end
 
   depends_on arch: :arm64

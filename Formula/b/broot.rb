@@ -1,19 +1,18 @@
 class Broot < Formula
   desc "New way to see and navigate directory trees"
   homepage "https:dystroy.orgbroot"
-  url "https:github.comCanopbrootarchiverefstagsv1.44.2.tar.gz"
-  sha256 "e1b78354c21680914a07ed4b856257c83ef873b878ef281bd2d1aed7fcba3828"
+  url "https:github.comCanopbrootarchiverefstagsv1.44.3.tar.gz"
+  sha256 "1b68c6d4a21974d5e3c14bf22e067607113afc3ea152b1ec225fe19ffe127348"
   license "MIT"
   head "https:github.comCanopbroot.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad3b7b701b0d0b24cc9868bc4e1e575aa89c04be18d8d5907ecd8ee94ef7605c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "861a3871c40abad90cfcf69d9d5e2c309113382c6c876b76d2266ca2eb8979f5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f541d2cbce0674f7231d2d9df8653380eaee426d8a9454ffd42fe69bd78fc34c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3378be3f1a9c154a8365ffece2f9e867c152df69de7c7c9e0a2361b4d87e021a"
-    sha256 cellar: :any_skip_relocation, ventura:       "582e0964024cb156b9debc17cc4cf6e28ce1b2ed14d556fcef5adddc3f7dc45e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5350a104f339cc705cfbd07bf5d76b58f80d27ec799a8909a6eebd81c3e2faa8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1044c61939047537b1ae698dee5ae467572b86beff9c2848a9d135e68e63196d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8854e632a4e95e14b8181b8b040207317779eb9344d8ecdc75808ab2e9cd9ff"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5b8e8dc79c6372dcda21dec16e08e25fc47df6444b2fe1d3df5909b1664d8c89"
+    sha256 cellar: :any_skip_relocation, sonoma:        "965330412f65373b144e10d239fd232d3970fb1b18ade87ea70670448cdba092"
+    sha256 cellar: :any_skip_relocation, ventura:       "826861b159bdef6b7f5d2787ee9773bc3efb4fb630317753db471ca128822723"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "374b87c3719a97ed366537bc3917fc77a1fbfe89501493c9c699e28ccb4e41ac"
   end
 
   depends_on "rust" => :build

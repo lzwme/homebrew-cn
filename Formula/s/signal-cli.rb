@@ -1,17 +1,17 @@
 class SignalCli < Formula
   desc "CLI and dbus interface for WhisperSystemslibsignal-service-java"
   homepage "https:github.comAsamKsignal-cli"
-  url "https:github.comAsamKsignal-cliarchiverefstagsv0.13.10.tar.gz"
-  sha256 "b1947eb37064e7a196c5b1012cb9fd111126c1f9449bbd43f5f0e3971a2dc173"
+  url "https:github.comAsamKsignal-cliarchiverefstagsv0.13.11.tar.gz"
+  sha256 "7cf1e37f04a6f71397829228e7de76f4d82ebe779e3cb1f8b337375d6f090426"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "acaaf3f22193ba506508e24b5ba5f6cd6bf889487456679803e1c27b9e8fed1a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "600fbcfd84dac5bf9e8713d8160928402dd724211bdaa5ff21e1b9f83a2422dd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c53f355a23a23ea1da94b56831da5a9c676ad5eaca6e36e97d6f60d06b1a6b6b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f7c73ca10d7ab2f6ffe635c13830bdf2a75770466bacdca279a58f27aec40cce"
-    sha256 cellar: :any_skip_relocation, ventura:       "81ba923ea64ca023c47fc614d5efc651f03dd5b5cfaeae274e91ae1f5cc303e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a2c51f04b131c96cce8369cc57ac9b11354fbbd40a0fe38355505d46b91557a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9521f01faf368dcc2999cbde7956d180065fb25177b690ee5800c3ed24dc53c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dec8e89bcf62223a2ecc80a8c0864db4a8c07dc8c650d0834a50d6ee8cd92243"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ee8086d908bb7414293e518be48901986a2514c2702da801416331945377e751"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2f781ac90c6efb28af7a67e8fdbe3939545528b6ee8bf520208b612f839d62f2"
+    sha256 cellar: :any_skip_relocation, ventura:       "0df967c68973eadf3e3873039b2762cc2b2318304e721c813d4cb3cc023422a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "971d37db8abc3e727fe22cc918b46a4439f4c09ea3bcb16a0cf40a640f2a2bb7"
   end
 
   depends_on "cmake" => :build # For `boring-sys` crate in `libsignal-client`
@@ -29,8 +29,8 @@ class SignalCli < Formula
   # url=https:github.comAsamKsignal-clireleasesdownloadv$versionsignal-cli-$version.tar.gz
   # curl -fsSL $url | tar -tz | grep libsignal-client
   resource "libsignal-client" do
-    url "https:github.comsignalapplibsignalarchiverefstagsv0.62.0.tar.gz"
-    sha256 "1f04eac98fcd6b34ab61ce6fc65f6c46eceab0f1b407a65d95207a8a5050594c"
+    url "https:github.comsignalapplibsignalarchiverefstagsv0.64.0.tar.gz"
+    sha256 "2c5d2bb3e546ec618d42331f5f1892cfffd9f9087dcdef0d0b988469266cfa1e"
   end
 
   def install

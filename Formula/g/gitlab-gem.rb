@@ -4,14 +4,15 @@ class GitlabGem < Formula
   url "https:github.comNARKOZgitlabarchiverefstagsv5.1.0.tar.gz"
   sha256 "fdb4cab8f09258b9b8a70b3cddd618dc19a10303124a9176dd7ca5ed70f98ce4"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "dfdc4e6149913dbcd7d195dbcd7ed62a379762b842a2acc9a9d1f953ef51ee7c"
-    sha256 cellar: :any,                 arm64_sonoma:  "c63a00b6eb58d0017fc0e8a5b6bcbaea12321cee802ca87e949ee16e2bfd953c"
-    sha256 cellar: :any,                 arm64_ventura: "2328f3c454e5485f1b09e828fbf2cbf66801a47ef3f756211b6b6f88b7d3cb39"
-    sha256 cellar: :any,                 sonoma:        "632c41da4d5717a0512eb4a0bf62c46b13d0c98628908cc08e289f2741a84ea6"
-    sha256 cellar: :any,                 ventura:       "215ec1a5e1f75fcaa14877c63a09bf30fe66471b713f6e75df12b784ad2dd28e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93acf3468f972d534c094ac34b504f5476f6755d77a6b4265ea70fd7d4e12fa9"
+    sha256 cellar: :any,                 arm64_sequoia: "05f1b0962f1cdc0ba8325a1cb2161aad2fb2c2d93c144c1efd8aa861b7faac12"
+    sha256 cellar: :any,                 arm64_sonoma:  "040dfa582c413b0c51cedffc28d3edc5d5482b4c3584e1553fb31fbb9c76ad9e"
+    sha256 cellar: :any,                 arm64_ventura: "46f87e54a723b07f5813a32f9d5391c471a6384929e4a1880cf27a864d55543d"
+    sha256 cellar: :any,                 sonoma:        "7d01617823ef02f76e5ef3ca2f31fbdc07c78c0ecb93fa89b2cad893971851e3"
+    sha256 cellar: :any,                 ventura:       "c1b354fab666cfffd496156c33b9a8c0bafb5ed371bcf9b1ffdd6ddab30e015d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f059f0148490b7eaffb7a619c8c7cb146b511defea2b4c9d146c68b68e2da7e4"
   end
 
   depends_on "ruby"

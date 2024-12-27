@@ -3,18 +3,29 @@ class Mlx < Formula
 
   desc "Array framework for Apple silicon"
   homepage "https:github.comml-exploremlx"
-  url "https:github.comml-exploremlxarchiverefstagsv0.21.0.tar.gz"
-  sha256 "41f8ff1b5367b4d1a3ca9c026e857bdcf5ec777e781a957ddfea3b21d7dfea6d"
-  # Main license is MIT while `metal-cpp` resource is Apache-2.0
-  license all_of: ["MIT", "Apache-2.0"]
+  license all_of: [
+    "MIT", # main license
+    "Apache-2.0", # metal-cpp resource
+  ]
   head "https:github.comml-exploremlx.git", branch: "main"
 
+  stable do
+    url "https:github.comml-exploremlxarchiverefstagsv0.21.1.tar.gz"
+    sha256 "1ce949256c343a4a9fb1e53cc15f537ad2faceccbb3ad314cd47a198b534bcac"
+
+    # fix x86 tests, upstream pr ref, https:github.comml-exploremlxpull1691
+    patch do
+      url "https:github.comml-exploremlxcommitf3dfa36a3aa67dfc4488996bf7f218f976bef9aa.patch?full_index=1"
+      sha256 "5b798fa17ee6fccd4b031b99d8301f9fb434545f6e4ebbbd544376403c1a4c3d"
+    end
+  end
+
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "fd18516eef6904ee30fff4c8a064bb5a26e2f760b160452881b737058440e991"
-    sha256 cellar: :any, arm64_sonoma:  "23800da529205b61f80056c4b23f4977f09312cce9f078f49ed369954711599e"
-    sha256 cellar: :any, arm64_ventura: "e85d2d9d9c10d5b8a52033c38da8e8a3ae6c65712610cc2e6424fb87adff3a1b"
-    sha256 cellar: :any, sonoma:        "969615ae82059b014730553d207d8f0f6bf83e2d2f8d60b966b1582be2a2d0fa"
-    sha256 cellar: :any, ventura:       "ff0a2819c11d989de908e39319dddd20c3f8a828ae8df287074ffc9a1abe8260"
+    sha256 cellar: :any, arm64_sequoia: "575a6fdd16b8e35a74c193a8e34caace3c057e1dae8829bf8b3e5320f5c41e5a"
+    sha256 cellar: :any, arm64_sonoma:  "889879a0ab49703e93eb5ae95d973ae957b72ce7cbb4ec3ea924bd6e14dc2790"
+    sha256 cellar: :any, arm64_ventura: "a5732b975b0fa32bd286ddc3889d0a70c8cb2203ca9ed35f6822f4f106f06761"
+    sha256 cellar: :any, sonoma:        "a94154645f164f56c18c97a2e11056bdfefbc505e7f982b2562c3a52bda285b1"
+    sha256 cellar: :any, ventura:       "95d49fdef66a38e083d0380d72b6feabd6e386c01f0556a1e7b711ef30cf99e7"
   end
 
   depends_on "cmake" => :build
@@ -112,7 +123,7 @@ class Mlx < Formula
     (testpath"test.py").write <<~PYTHON
       import mlx.core as mx
       x = mx.array(0.0)
-      assert mx.cos(x) == 1.0
+      assert mx.allclose(mx.cos(x), mx.array(1.0))
     PYTHON
     system python3, "test.py"
   end

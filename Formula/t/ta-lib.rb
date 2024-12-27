@@ -1,17 +1,17 @@
 class TaLib < Formula
   desc "Tools for market analysis"
   homepage "https:ta-lib.org"
-  url "https:github.comta-libta-libreleasesdownloadv0.6.1ta-lib-0.6.1-src.tar.gz"
-  sha256 "887372f41b6de9cb2a957d25ea5f87453d419aa388f208c7bf57f6019d6e3c2d"
+  url "https:github.comta-libta-libreleasesdownloadv0.6.2ta-lib-0.6.2-src.tar.gz"
+  sha256 "598164dd030546eac7385af9b311a4115bb47901971c74746cbef4d3287c81e0"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3f6e1cdd6318b2cd86760e12de7ef950cafe4816e7c6b0e51f185ce62e167ecf"
-    sha256 cellar: :any,                 arm64_sonoma:  "fb1d96d105ee245e1b1ceacc45dcf321f7b6cc06f0b10fddee3d93ac3274b480"
-    sha256 cellar: :any,                 arm64_ventura: "b4fc78dcf2c6fff81ff3a3375cf2f82924c17d987bf8192505375e9094fbec70"
-    sha256 cellar: :any,                 sonoma:        "83d3a19fd07580171ef7ece8d5d03050e5e90bd9379302dc58451923289113da"
-    sha256 cellar: :any,                 ventura:       "8f9546efa54f086eb038d03cb7c8a4cea24e9bd480a6bc9269cbfe09d6f94539"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6622688adf7bfbdd9ecb473950897f77d659db6f82f3ecf851881c125c9dc1ba"
+    sha256 cellar: :any,                 arm64_sequoia: "49d87c2962204bd32cfcb57e78a2c215ab57efbcfb8be4caca17d032a7d4c151"
+    sha256 cellar: :any,                 arm64_sonoma:  "8fd696175b4e80ad8c3f2d899bc2949886bb45cbe51f1a2d7d2d7d8215ddfcee"
+    sha256 cellar: :any,                 arm64_ventura: "558130e9bf0054922bae500855275d9d54dd4d921a31b2daefb5aed0590c905c"
+    sha256 cellar: :any,                 sonoma:        "d56d36597eb16861dcbfeef84a08a0729f2674ea7ac7144f78a514e62f0f6c6d"
+    sha256 cellar: :any,                 ventura:       "6f926617fb71bb56f7dbd3fce614e08aef48e51be3b72d66344cb8ea2bb6bc2b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cff915c3a89a1e10122c5adc45b0e76448b36f1b53d4b1d802ed5b44de2b1d1b"
   end
 
   on_macos do

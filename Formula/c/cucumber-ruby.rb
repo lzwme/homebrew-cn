@@ -4,6 +4,7 @@ class CucumberRuby < Formula
   url "https:github.comcucumbercucumber-rubyarchiverefstagsv9.2.0.tar.gz"
   sha256 "fd8eae54016de9055e84fd4251d873bc9a64d0929b02b4355762ce82ab2874b7"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,18 +12,16 @@ class CucumberRuby < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "35c03d4159dee347736ad005f035e07fe42efb5f9cd35da2c1df23083951507d"
-    sha256 cellar: :any,                 arm64_sonoma:   "4000d689086674fe92eb5becd1734ea706ad7dbfbb8f906161e53e17f27da779"
-    sha256 cellar: :any,                 arm64_ventura:  "d840d9a581273c19616d90e839a17ded69effe4f6f66b35bbf2eb00d9af0b77a"
-    sha256 cellar: :any,                 arm64_monterey: "ed707ba23b5a2b13b109ca3ddcc1d01488825a0628f105d3872fad075015e97a"
-    sha256 cellar: :any,                 sonoma:         "b47572789a8b6f34acf5f1fcca6690260895175f08bc2cba017e7386947c3b70"
-    sha256 cellar: :any,                 ventura:        "f25a2dcf5a178f6495f40d0a546212c659646391d7117229883b02bd5e256622"
-    sha256 cellar: :any,                 monterey:       "466405f273b24bc6d3e127bd8213dd742b7bdad824c4980251e2cc1af60bd55c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "34227e49e2a9843381f9aff2d4500302a88e03e5af4ecf867b3b61380f3ee4d1"
+    sha256 cellar: :any,                 arm64_sequoia: "5c88e29863e16ab85da2bdd2643008f6cfda6dfa5eb405d9646c25efa247c4e0"
+    sha256 cellar: :any,                 arm64_sonoma:  "345fa4270fa2b3f6299b8cc7c72de8ca93062885d90aca984181cf0f660c63d8"
+    sha256 cellar: :any,                 arm64_ventura: "368f53c28309264a68bdf2d1083a9d8960ed160b1da00738f5d4d926d73c7a5e"
+    sha256 cellar: :any,                 sonoma:        "981eb23c1e51bf9561c3342ea5b344b655802fa590eca52b9063bf8ef77196f6"
+    sha256 cellar: :any,                 ventura:       "d9f836caa2bee5a0e5373652bbe28973bb4a362257bbd87681d4865c35735377"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "332cf9475689eb12111a387cad66d54655d109115809b42c8c7e014d1ccb349a"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "ruby" # Requires >= Ruby 2.7
+  depends_on "ruby@3.3" # ruby 3.4 support bug report, https:github.comcucumbercucumber-rubyissues1769
 
   uses_from_macos "libffi", since: :catalina
 

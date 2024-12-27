@@ -6,6 +6,7 @@ class Macvim < Formula
   version "9.1.0727"
   sha256 "e1bc74beb3ee594503b5e1e20a9d075b5972bbaa642a91921116531475f46a6f"
   license "Vim"
+  revision 1
   head "https:github.commacvim-devmacvim.git", branch: "master"
 
   # The stable Git tags use a `release-123` format and it's necessary to check
@@ -23,12 +24,11 @@ class Macvim < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_sequoia: "80e6eed701a2a90d774c3466a1a658eae0602f6514cc179cf5f4094a4a59536f"
-    sha256 cellar: :any, arm64_sonoma:  "0f73e511af34cbe4477d83c907e9b42caf8032b8b2723fc5879d68f00e861dea"
-    sha256 cellar: :any, arm64_ventura: "e9210bbe26673e2cefc2445636b5b1f4a42e1f19369a4aa64071f7a721680b77"
-    sha256 cellar: :any, sonoma:        "eee7dada958ef31d41d97838efce0689d8aac95adb7a782f16ca3147348fbe49"
-    sha256 cellar: :any, ventura:       "663fb344c7d5e0e73373204a8ba3ebf61e348c8b638791340e985a86e62f8961"
+    sha256 cellar: :any, arm64_sequoia: "ab76872feed0c90594fc3349302242ab142e87c5e04c364a570a12758fda1fe4"
+    sha256 cellar: :any, arm64_sonoma:  "2d7e4947f9eed2985029bc2ea1d026dda0c363a7eb272f87be4fd82f33d555ae"
+    sha256 cellar: :any, arm64_ventura: "428beaa2228f7c93adf0f7c00ad7ea9ea8639d7289265188ee74e81219c706c2"
+    sha256 cellar: :any, sonoma:        "79b0f224d6526b64664569fa3dd1bfbf69dcd57c346e7915b75591a282f8f27f"
+    sha256 cellar: :any, ventura:       "55f12977a79c56c95b008644f89586f175bb66eff260c307d0f91eda73dd01e4"
   end
 
   depends_on "gettext" => :build

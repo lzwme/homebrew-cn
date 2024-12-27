@@ -5,6 +5,7 @@ class Vcpkg < Formula
   version "2024.12.09"
   sha256 "4db7060703a7671688dc14a65f6e4b70c73d2ad9f47d5f85782169bc259beae6"
   license "MIT"
+  revision 1
   head "https:github.commicrosoftvcpkg-tool.git", branch: "main"
 
   # The source repository has pre-release tags with the same
@@ -21,12 +22,12 @@ class Vcpkg < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "245045992529bced711fec15e359ec519b2ce47e6a69142f0bf26b1bb2f61f8a"
-    sha256 cellar: :any,                 arm64_sonoma:  "e82386abd11eb8eb6637b6990b137f7a042d15501fa916d03da12639456820ef"
-    sha256 cellar: :any,                 arm64_ventura: "987c8bea9f6115191425ed2266b45223b9d8888aad24db1dbc926e84406119a1"
-    sha256 cellar: :any,                 sonoma:        "6b443c4ec326bd9d89227b67d6150bb80c90a86a7565db53649c2bfe2d70dade"
-    sha256 cellar: :any,                 ventura:       "e605baf2a5bd2278af781c405a166a59afcdaf37e6fbffaede93634fefc30537"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3202ec8424ada79176cc6da5400a1a03396c9acb58f10006547679ff65ed878c"
+    sha256 cellar: :any,                 arm64_sequoia: "a22f0cef7b7bb07fdd0aa868c0705a73e87a0903d099c5abddddb00207bec726"
+    sha256 cellar: :any,                 arm64_sonoma:  "4ac8d10aff6d508e6482d786baf9fbeddf688b76abdf149d201a4c0922b57b7f"
+    sha256 cellar: :any,                 arm64_ventura: "32246cd0145a4ea729c36242cc7415a805df0ae5b5cfeccb61e46dd9ffa5aac2"
+    sha256 cellar: :any,                 sonoma:        "bf80b6ec4a678d67a3ea5b90df9ed3a4ba19cbaee364d3a8443767c6e7060111"
+    sha256 cellar: :any,                 ventura:       "233418a2f2ce5a7343e74b880c09409eefdbb43c424612a1fdaff9460facdac6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "766b8be92f475b8fceaf7dfa66691ae7a0a5644ebc6606e14080928279495110"
   end
 
   depends_on "cmake" => :build

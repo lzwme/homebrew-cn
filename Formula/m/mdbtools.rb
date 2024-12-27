@@ -1,22 +1,17 @@
 class Mdbtools < Formula
   desc "Tools to facilitate the use of Microsoft Access databases"
   homepage "https:github.commdbtoolsmdbtools"
-  url "https:github.commdbtoolsmdbtoolsreleasesdownloadv1.0.0mdbtools-1.0.0.tar.gz"
-  sha256 "3446e1d71abdeb98d41e252777e67e1909b186496fda59f98f67032f7fbcd955"
+  url "https:github.commdbtoolsmdbtoolsreleasesdownloadv1.0.1mdbtools-1.0.1.tar.gz"
+  sha256 "ff9c425a88bc20bf9318a332eec50b17e77896eef65a0e69415ccb4e396d1812"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "546a6e1ae53cd3d53b830276c9bd780ea2e105826f0c6ca8ad452b2dff7e36b4"
-    sha256 cellar: :any,                 arm64_sonoma:   "f7bda48ed1b04c73b7bf29033810b7ddeec3b33c85b464eedb91c11af0b42c6a"
-    sha256 cellar: :any,                 arm64_ventura:  "cd5023a5419a776cefa3e4bcd408536a696459f1fd3084822e22565e3cd75c39"
-    sha256 cellar: :any,                 arm64_monterey: "c4502a9b481c4e40f0bc5c1767af43938cea64ea125a564dd1371e0cdad5729c"
-    sha256 cellar: :any,                 arm64_big_sur:  "1f808f4f3574633bb4d3176046a4b98dd0f673291db20ef5f34357f8e04aa3f1"
-    sha256 cellar: :any,                 sonoma:         "235e85d9f9e2d9f1ecc833c03504d71992b419c1505027c6cc9337a175b85aca"
-    sha256 cellar: :any,                 ventura:        "f4bf3ad76af45f61c2d29418a66c2ec3ae61bf34cd02bec78e84195653ace158"
-    sha256 cellar: :any,                 monterey:       "b11d8015632397cfcc11ce21225d3f5d5001bcf64f55996c20713ac9ddc48c46"
-    sha256 cellar: :any,                 big_sur:        "705cecb093ad9dc51806e241b75389a4843b2ea57170a5653aa15face44323ba"
-    sha256 cellar: :any,                 catalina:       "472f8d9eb6f9608ef300715e1e7774625643c5433dfef4844eb8337c00a1cdfd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "941c3eae4065118abd7bf72a1a42da8c33d7d1c706f655622254a8989e4e0468"
+    sha256 cellar: :any,                 arm64_sequoia: "3aab4c13461e0571b3ef4aa822417e0408fd7caad03f0d7d63bda9e20d102f20"
+    sha256 cellar: :any,                 arm64_sonoma:  "c247b94b87f1f09c26953f4b3f923f345ba18a8764d8f5ffc0ca8060e557a5fe"
+    sha256 cellar: :any,                 arm64_ventura: "ece916c2bc386781de20c67cc5e314430a369dc886d362f22039ea56d37771ee"
+    sha256 cellar: :any,                 sonoma:        "49722390bf0230475a1261a0c10d90540b6ff056a07c54b74680eab7276c3a04"
+    sha256 cellar: :any,                 ventura:       "2c2db546223c1b1ddfba20d70303761358fb5bba39362924976ff35d9710ae1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e2ca3b97c784e7ce3e9d42e0bf58e15816b94944f2686c41d6ec698fc50ca0f"
   end
 
   depends_on "autoconf" => :build

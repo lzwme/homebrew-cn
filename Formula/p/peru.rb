@@ -3,27 +3,21 @@ class Peru < Formula
 
   desc "Dependency retriever for version control and archives"
   homepage "https:github.combuildinspaceperu"
-  url "https:files.pythonhosted.orgpackagesfe0eb78315545923029f18669d083826bc59a12006cd3bc430c8141f896310ccperu-1.3.2.tar.gz"
-  sha256 "161d9fd85d8d37ef10eed1d8b38da126d7ba9554b585e40ed2964138fc3b2f00"
+  url "https:files.pythonhosted.orgpackagesa845cec03aca5ab8a8a1ff8248dcd5c9f17e5a7e9c9e8e9d0b9a135a1c0605e7peru-1.3.3.tar.gz"
+  sha256 "ac6b0d0e85fbe7d57d4587b4e58551de83fd4af4f8245a0851414898cce3e1b1"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "3a505d5ae83c37d1c03a701730080b6c5ea64845e49e5b559092f8e456f7861c"
-    sha256 cellar: :any,                 arm64_sonoma:  "3f43433b133723e78ac768cbbf3cdf75727ec56ce717d0032b5a477c5b108933"
-    sha256 cellar: :any,                 arm64_ventura: "6ad7e31af06a24c12d7554db4cc6484efcc36ea223eb55b58f6afb1c44564159"
-    sha256 cellar: :any,                 sonoma:        "1f1cb4aff42105b14711d19944b4d7fe8d0f35ccf4d7f473e762605770adac1d"
-    sha256 cellar: :any,                 ventura:       "ed6ef91406a4e6391239f3d8a9d4608bb2f9c3133051c11b088bdaa64fcb365e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9b15bfa66cac8e7e571c11213ab84b55d5deb0de4d742d94b36c489ba63349e"
+    sha256 cellar: :any,                 arm64_sequoia: "fd7035d7b44788659c3c228fdbca57d6f918799469ca542046e70b64465e3855"
+    sha256 cellar: :any,                 arm64_sonoma:  "124352399f26fd9fdc5a396a33f6f624ef613eb7a5eb07b50aac7262ac12a0c3"
+    sha256 cellar: :any,                 arm64_ventura: "ad488293d43ee05ac8eccf9e5278e7613b26a8ac960b1385d128fa78e1465f15"
+    sha256 cellar: :any,                 sonoma:        "e575c707cc3431e180e541d516812c8f4303adfd3e786198da14f4af7c27ddc5"
+    sha256 cellar: :any,                 ventura:       "45a48b49b8eef723df7537615fb968eb984c1c6e6a4a44634177c3ce35b367d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73ab93c07fc0d53f07452e107fa9352fc3a269a608f0284a4baa41369c9e6257"
   end
 
   depends_on "libyaml"
   depends_on "python@3.13"
-
-  resource "docopt" do
-    url "https:files.pythonhosted.orgpackagesa2558f8cab2afd404cf578136ef2cc5dfb50baa1761b68c9da1fb1e4eed343c9docopt-0.6.2.tar.gz"
-    sha256 "49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"
-  end
 
   resource "pyyaml" do
     url "https:files.pythonhosted.orgpackages54ed79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17pyyaml-6.0.2.tar.gz"

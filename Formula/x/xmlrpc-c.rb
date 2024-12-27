@@ -6,14 +6,13 @@ class XmlrpcC < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "c50dd6bf5c7a278e7b7046bb4fc4c714f376e1ece6d2a2f6b9dc567b2591cbcf"
-    sha256 cellar: :any,                 arm64_sonoma:   "a37de64bbd2ff69db08d29c18be9061c383273fb7a2f4c437bcc97609b2d921d"
-    sha256 cellar: :any,                 arm64_ventura:  "6acfdb7a4974c9dd956b9395b78f0acc1b669e877b23ad6e8acdf162477d86f7"
-    sha256 cellar: :any,                 arm64_monterey: "f81cd7a5a3abc242fda56cf730a27007bec239731168e72cc89711e3f16e5a16"
-    sha256 cellar: :any,                 sonoma:         "dac86be0a0f288eea63ecf9657bf6fdb89a1873dab3b415946b34d61b6640995"
-    sha256 cellar: :any,                 ventura:        "7b6cc04921933e9e7a36eb8bc0ca36f7a1f67e2259385c462424a5f61fefe2ff"
-    sha256 cellar: :any,                 monterey:       "2289714e60026a5ed0645aafed98f02dade60bb6884af5412362c5a3ef271779"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cdbcf2578d239e21752a3f06e0df6d0e27f26e83376536ecd16e62b9b8edfc5e"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "f1b8216bc2bb7e862ccd66cb4a465fbbc6898d7929c40b3e3f6cf4b97bb374b6"
+    sha256 cellar: :any,                 arm64_sonoma:  "4ebef865a989c7023726abd9b2a25d113820450bc03adc72b7d8f0cade99fdb0"
+    sha256 cellar: :any,                 arm64_ventura: "e25a30dc29f0361012c857be321fbaeab62673c5f9911a66f7c4e62baf368f0d"
+    sha256 cellar: :any,                 sonoma:        "61d6b88623b8c15ac930983262a7a500227787e734b891e8c0e16f66dec2f8ff"
+    sha256 cellar: :any,                 ventura:       "1a66bba41419cdf01db559ea65f8916b9ae8fc1a980d94c38bbdea3e923f2d00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89873833875863fb9e917dbff0542153d294981ac7a380b102059472b5d327cd"
   end
 
   depends_on "pkgconf" => :build
@@ -21,6 +20,9 @@ class XmlrpcC < Formula
 
   uses_from_macos "curl"
   uses_from_macos "libxml2"
+
+  # add `srcdir` removal build patch, upstream bug report, https://sourceforge.net/p/xmlrpc-c/patches/50/
+  patch :DATA
 
   def install
     # Fix compile with newer Clang
@@ -40,3 +42,17 @@ class XmlrpcC < Formula
     system bin/"xmlrpc-c-config", "--features"
   end
 end
+
+__END__
+diff --git a/common.mk b/common.mk
+index e6e79a0..eff7c79 100644
+--- a/common.mk
++++ b/common.mk
+@@ -368,6 +368,7 @@ $(TARGET_MODS_PP:%=%.osh):%.osh:%.cpp
+ # dependency of 'srcdir'.
+
+ srcdir:
++	rm -f srcdir
+ 	$(LN_S) $(SRCDIR) $@
+ blddir:
+ 	$(LN_S) $(BLDDIR) $@

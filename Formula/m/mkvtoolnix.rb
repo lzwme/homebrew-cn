@@ -5,7 +5,7 @@ class Mkvtoolnix < Formula
   mirror "https://fossies.org/linux/misc/mkvtoolnix-88.0.tar.xz"
   sha256 "f2f08c0100740668ef8aba7953fe4aed8c04ee6a5b51717816a4b3d529df0a25"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
 
   livecheck do
     url "https://mkvtoolnix.download/sources/"
@@ -13,11 +13,11 @@ class Mkvtoolnix < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:  "6c34e87c0f5bb7fcdcd55bfb4cb7a9f25a5328d3d7126db8429f699431346c3a"
-    sha256 cellar: :any, arm64_ventura: "c9acb88f46ec99a2dc1130f093ba6244a350c3da2737756d9d88dde8e1ff2c46"
-    sha256 cellar: :any, sonoma:        "499f97ff8bc11c38a446cba15097f1b43fa9fea61d218186faf1258194197f7d"
-    sha256 cellar: :any, ventura:       "7870d37c5e7071facd8585e0a411db19b456a52a24367b958ac1bd934e124be5"
-    sha256               x86_64_linux:  "ee9dacf41a1cab8dd700b0b8387f658d29967e297b98c8b6224afe29d43d22d9"
+    sha256 cellar: :any, arm64_sonoma:  "399b9b50cac45e8fe2ea9c47888496102cfce0ede842ef2d8c5cf74239acf8d2"
+    sha256 cellar: :any, arm64_ventura: "a3b10ddbfda0cf979860750d10474120455d35695b6bbe65730bc6d156f5e031"
+    sha256 cellar: :any, sonoma:        "c48b2fad5b28a020ab1803cc34ea8d6fd1ce0900cbe49bb65d540abd02c4df24"
+    sha256 cellar: :any, ventura:       "62d4edb50fcdc56067fd94d05ca2415919653e080ddc28e0b5b0355e892a8f44"
+    sha256               x86_64_linux:  "285ec616a505c12d022dd8299214707e1447b057dc7337afb0b31f7252dd1c71"
   end
 
   head do

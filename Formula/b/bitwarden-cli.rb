@@ -41,10 +41,7 @@ class BitwardenCli < Formula
     (node_modules"argon2prebuildslinux-x64argon2.musl.node").unlink
     (node_modules"argon2prebuilds").each_child { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
 
-    generate_completions_from_executable(
-      bin"bw", "completion",
-      base_name: "bw", shell_parameter_format: :arg, shells: [:zsh]
-    )
+    generate_completions_from_executable(bin"bw", "completion", shells: [:zsh], shell_parameter_format: :arg)
   end
 
   test do

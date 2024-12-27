@@ -8,12 +8,13 @@ class Sfml < Formula
   head "https:github.comSFMLSFML.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4f2a550dbf8f0c738a0039806aac58e953715dd805ecca883c592d5a483a055"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "678b1824ead3b9369afab1951dcbcd49615065af6667c1080d9129feafc1ee71"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "24af4cff3a8441b1630e4eda8603b610a45d22ab22d11b78d0749ef47b3be276"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4d5cde2d922d35bc77ed993e51785f882fc837e9e5a662462f10870c3f8a595f"
-    sha256 cellar: :any_skip_relocation, ventura:       "4465dd4a2c23ee8ee49005cfe6bb143d1b85b820afef770b31477324de854790"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8af3036c52506067f3418e28926596831d6c304fe06a57318cdb11a1a9d55337"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "fff37927fb4f670430d85f49261b6154978e0216d55768b7d5a1a5168232d18f"
+    sha256 cellar: :any,                 arm64_sonoma:  "ff020fbbaccb4b711f2fb9eff376c43f6ccd900e3f1e48d20636524aaa67c9b9"
+    sha256 cellar: :any,                 arm64_ventura: "3dfa4ab8f4d7242edb31a6f9e862c1f4322f45fec06fefc992e7c9d1764d6c80"
+    sha256 cellar: :any,                 sonoma:        "b941f80dc54ebbf31d9853ceef9a5c72641e10810f2dbbbf40375d32da1a95cb"
+    sha256 cellar: :any,                 ventura:       "31f1099add9105e6d52e114b60587fb84a4c11c5a2f9e4312d7c5a6336fde916"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2caae5a406d4744b0bf2e718a56b20d0a51e3f936d7343802a6bcd2a552dfc72"
   end
 
   depends_on "cmake" => :build
@@ -46,13 +47,15 @@ class Sfml < Formula
     # headers that were moved there in https:github.comSFMLSFMLpull795
     rm_r(Dir["extlibs*"] - ["extlibsheaders"])
 
-    args = ["-DCMAKE_INSTALL_RPATH=#{lib}",
-            "-DSFML_MISC_INSTALL_PREFIX=#{share}SFML",
-            "-DSFML_INSTALL_PKGCONFIG_FILES=TRUE",
-            "-DSFML_BUILD_DOC=TRUE",
-            "-DSFML_USE_SYSTEM_DEPS=ON"]
+    args = [
+      "-DBUILD_SHARED_LIBS=ON",
+      "-DCMAKE_INSTALL_RPATH=#{rpath}",
+      "-DSFML_INSTALL_PKGCONFIG_FILES=TRUE",
+      "-DSFML_BUILD_DOC=TRUE",
+      "-DSFML_USE_SYSTEM_DEPS=ON",
+    ]
 
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--build", "build", "--target=doc"
     system "cmake", "--install", "build"
@@ -67,7 +70,7 @@ class Sfml < Formula
       }
     CPP
     system ENV.cxx, "-I#{include}SFMLSystem", "-std=c++17", testpath"test.cpp",
-           "-L#{lib}", "-o", "test"
+                    "-L#{lib}", "-lsfml-system", "-o", "test"
     system ".test"
   end
 end

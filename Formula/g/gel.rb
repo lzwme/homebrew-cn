@@ -17,6 +17,9 @@ class Gel < Formula
     sha256 cellar: :any_skip_relocation, all: "898572d813d48ead8bc112c19eab9964c5ba560062fe57e40f138840a35ee5da"
   end
 
+  # https:github.comgel-rbgelissues134
+  deprecate! date: "2024-12-25", because: :unmaintained
+
   depends_on "ronn" => :build
 
   uses_from_macos "ruby"

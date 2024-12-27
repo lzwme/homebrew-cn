@@ -4,16 +4,15 @@ class Pgsync < Formula
   url "https:github.comankanepgsyncarchiverefstagsv0.8.0.tar.gz"
   sha256 "385aa0be8683ae4877fc6b39a3a4a0664680ed1631559fadd7b5113d7724ecea"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "943687f8e9f670920d7eeaee1a271cdc66d6433010d03375832e12478755ab1f"
-    sha256 cellar: :any,                 arm64_sonoma:   "d0fca0241bcd1370d86a97de70e9a6255eb8233e732da09777c2b5894c493374"
-    sha256 cellar: :any,                 arm64_ventura:  "cf0802b4607cd6561a44ab652c5d6fcee8606d30ee2ab26fd6dc173a2861b225"
-    sha256 cellar: :any,                 arm64_monterey: "140280805ff038e3ac4acaebe412c00cefc83ab4ead853f4ae118df3ce9ec1cd"
-    sha256 cellar: :any,                 sonoma:         "11f63bba4caf4667f0932a4478b35796c149f6abb6123cb52ca5f9cd9d6fad29"
-    sha256 cellar: :any,                 ventura:        "4266dc4941f0a59b6501366328621230140dca93095da411ca59b295864264be"
-    sha256 cellar: :any,                 monterey:       "685537766509336ec0a61b47a202c279303740e6284ecf85e31a20dfc9a91d28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "be09e2268832219f7fe75c3dcb8c0baf0067cee5a80c325f423f07ab788fba29"
+    sha256 cellar: :any,                 arm64_sequoia: "d569525a961f1543642f07928fe0ca9317ac819c670a7f6d6735d8752168bac6"
+    sha256 cellar: :any,                 arm64_sonoma:  "95f8e9b647da0ca010fe39d6f289e64e849b25f212f0e50fb7906e3a88e854fe"
+    sha256 cellar: :any,                 arm64_ventura: "c3fe3a0ab9336a9fd3343e1466ba5a137294d2ffbae99110adb2e2c152f1e206"
+    sha256 cellar: :any,                 sonoma:        "0b1082fa75fb757eea994e9d50be3116d701587c5880430fb20d3a018b875a3d"
+    sha256 cellar: :any,                 ventura:       "01e1f89f86a1cb51e8c4821a98611c5bad2f18d7145c82e39498d474af9af87c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce4b49836360a1abe20cd60228f4e555765a5e41483709706584931abb6dd64d"
   end
 
   depends_on "libpq"

@@ -4,15 +4,16 @@ class Passenger < Formula
   url "https:github.comphusionpassengerreleasesdownloadrelease-6.0.24passenger-6.0.24.tar.gz"
   sha256 "3bc636ecf3e337c9fad13842fa539dabab546d458dfe4e2ae7c83419e7b8839c"
   license "MIT"
+  revision 1
   head "https:github.comphusionpassenger.git", branch: "stable-6.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4688b322556f5d7675916d2d1d2b036b9803bfac953fa3f26cea1655dbff9aa0"
-    sha256 cellar: :any,                 arm64_sonoma:  "4b4724c8bfac9e671f1fa51b73d27489b81c0d222cb37da330da09c59a38ed1a"
-    sha256 cellar: :any,                 arm64_ventura: "c98a618992ca5a804f63e04c89a4d0d9b11583983e6831ba5de84988a22e16b0"
-    sha256 cellar: :any,                 sonoma:        "067ab1e79d5abdeb161c7e42c3186979d81d92adc9bc8e02d5097707a8734b1b"
-    sha256 cellar: :any,                 ventura:       "7a6cbd725659c4111c5024a3eb065fe4e09afcff09d03e07a35e7326c9d4b20d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c4bb493b102bf76c78d805d4cffe2d16cddea688ab9e25632172f302f1df4cb"
+    sha256 cellar: :any,                 arm64_sequoia: "4c0ceae0f8545f444989001e830b37942ece639d10e4bf5006bd4072760ddaa6"
+    sha256 cellar: :any,                 arm64_sonoma:  "629d7d8414714171c58828e7b2a6d87634de1535b7135bbc47309a1179f8d024"
+    sha256 cellar: :any,                 arm64_ventura: "b88ca8ffc4cfb90a98387d9c842be7d8d9ee4ae6a7fa271e72dc876c8ca61803"
+    sha256 cellar: :any,                 sonoma:        "bfa03b50d2b1cebde00edc1c78d9ce4c624d7762b45655fde4474d3cf424dd09"
+    sha256 cellar: :any,                 ventura:       "3f4fdd17bccb32e4843205e1dafa11b62e17afb77c4571c9d5733835a48ad802"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5df766e6d116443a3b01f2d06681c15d6550dce4f759fe641cf0fc15bd0e7b24"
   end
 
   depends_on "httpd" => :build # to build the apache2 module

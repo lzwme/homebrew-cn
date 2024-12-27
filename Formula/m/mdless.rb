@@ -4,14 +4,15 @@ class Mdless < Formula
   url "https:github.comttscoffmdlessarchiverefstags2.1.51.tar.gz"
   sha256 "fedd185416a7c4c88c824f48f13da843d0535f0dded13ead0b6cae7bf174da5d"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0dc52539af0c30d353cde6eb4966a2a3cd78888136d449cf727c8224150e5490"
-    sha256 cellar: :any,                 arm64_sonoma:  "494ba6d56e4b5f6322e3b221ee0b7324f097354ff6825bae614862a3747c8ab5"
-    sha256 cellar: :any,                 arm64_ventura: "00c4f86d2efa11b59ea2b406a1868cae4c717bf45f9fba3df90db3438e42192e"
-    sha256 cellar: :any,                 sonoma:        "e45b5ed6f214617c19f6cd4e16cfbc73ada99c841251d5193b05b6beac1f3036"
-    sha256 cellar: :any,                 ventura:       "8ffaf68d1afbabf8688fa92e1dc2f461a468a7909e10796b6e2d9b46da7b6a9c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31ad4305b64dc4aad627f776ca684626b3b4104277270b50ecfe14e6eb02ec47"
+    sha256 cellar: :any,                 arm64_sequoia: "c53f9b1eec7442a0c501a5758f98c1efe742d1e75ae2cd7b9de84b0a0ffee6d6"
+    sha256 cellar: :any,                 arm64_sonoma:  "b7465de4d8a7ed2734ddb505f188bc3dc7582134f98c94eb46e3fcf70b235039"
+    sha256 cellar: :any,                 arm64_ventura: "529b3fde7b425c29020d5a977337af1137da0744f81c455a70b1648728d88972"
+    sha256 cellar: :any,                 sonoma:        "315028ea29ae443c4d56b91cbb66e7cc32159fc281d7eb6455b0c00462524783"
+    sha256 cellar: :any,                 ventura:       "5abacf54acfca534e3c413c0fa6f93c1543f28c0fa326e1ad38947bd38ba8224"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbdf674a68b07d2f6a39ba0c256a29dc2b841505360418884b587d372ee86a47"
   end
 
   # Requires Ruby >= 2.7

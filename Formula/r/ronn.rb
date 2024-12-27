@@ -4,7 +4,7 @@ class Ronn < Formula
   url "https:github.comrtomaykoronnarchiverefstags0.7.3.tar.gz"
   sha256 "808aa6668f636ce03abba99c53c2005cef559a5099f6b40bf2c7aad8e273acb4"
   license "MIT"
-  revision 3
+  revision 4
 
   livecheck do
     url :stable
@@ -12,14 +12,12 @@ class Ronn < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia:  "bdc72063db5be27dc1d34d941c0e249b39a9c7df448ef3914863948dad7ddc29"
-    sha256                               arm64_sonoma:   "416aeca29910f0ce1822a255a7d73809d4dd1a29e5d6fb8375aaf5001343a293"
-    sha256                               arm64_ventura:  "408a7986228c62661d63bd01bc2d3ba03e22641018915a3366bcb4b9aa1bf92a"
-    sha256                               arm64_monterey: "5cf031f43f4b10d293293263784cebbfe3d1616412dce8ed94c78ea34297cfcf"
-    sha256                               sonoma:         "1660a20ae4acba5d8c2672028c1013babb989458720dbc4dc6dba2386380c5f6"
-    sha256                               ventura:        "6bb2e2ffd5ab8a76357720b88ea0283b645b0f45b3dc7b30fcb38cc44612889c"
-    sha256                               monterey:       "7b3601e05dd8b64eaea9783767ecf9b40dd8d70b43a497f2b8b3f8952525ca3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a73748f925012eb92e989e625d1086f08c56f211e92a5b1318837004236d1c8"
+    sha256                               arm64_sequoia: "ae47bcebfb7b492d6a6aa8f9dedcb248c79f657f37dd851b8148299120750253"
+    sha256                               arm64_sonoma:  "2aa277c67249e543b65df95bd8ae64e88276b8be25497c27edf923aa20933049"
+    sha256                               arm64_ventura: "4a5a015611099aa8618e53d517cbb481528383ca8a7bcaa9a9684d403378308a"
+    sha256                               sonoma:        "2bdef28fa1cc074a01fe71f08be92eb459e5c6ff481af10cba987a69857cf89c"
+    sha256                               ventura:       "ae254f18931f756ddbbdbff72edeafe83c69be33b59b8dd809e8ccd5dabf4a96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7039deef414574510a014b1ee4f0b676b0535b1af20fad6c46af736425608795"
   end
 
   depends_on "groff" => :test

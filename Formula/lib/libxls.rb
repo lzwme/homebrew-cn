@@ -1,34 +1,23 @@
 class Libxls < Formula
   desc "Read binary Excel files from CC++"
   homepage "https:github.comlibxlslibxls"
-  url "https:github.comlibxlslibxlsreleasesdownloadv1.6.2libxls-1.6.2.tar.gz"
-  sha256 "5dacc34d94bf2115926c80c6fb69e4e7bd2ed6403d51cff49041a94172f5e371"
+  url "https:github.comlibxlslibxlsreleasesdownloadv1.6.3libxls-1.6.3.tar.gz"
+  sha256 "b2fb836ea0b5253a352fb5ca55742e29f06f94f9421c5b8eeccef2e5d43f622c"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "18328c76088316939868e45a8057c4998eac03d89fc85722c34bbe8fb6f9cdda"
-    sha256 cellar: :any,                 arm64_sonoma:   "26eda83d2c3f21f086cba2142ef5ea4db5728d47e9b78eda1a832ae35039aa31"
-    sha256 cellar: :any,                 arm64_ventura:  "5dbc5a3cc52e9f6b52bfe3c1f065b687ce7596fcd30b75ca0ba6ad55613d878d"
-    sha256 cellar: :any,                 arm64_monterey: "fdcf6a5152977cad6b6cd2e9098fa656a77a082e1bd33de0688aaab7a1a7ab7e"
-    sha256 cellar: :any,                 arm64_big_sur:  "7d39e15d8683c700347ab81d920698354cc96d195b64e8483784e6cac36b75fa"
-    sha256 cellar: :any,                 sonoma:         "d35798c92393a39204fe4fb5030740faa72dbf035b1c1a98246441a7905ac94b"
-    sha256 cellar: :any,                 ventura:        "f11fa55a4772754f5acb3d6915d6ac2b934ef07592fe6057cdedb6fb212c08ad"
-    sha256 cellar: :any,                 monterey:       "ae68097132fde8b5fe81d0f251184d450930765e52aa64565923295dfe1288aa"
-    sha256 cellar: :any,                 big_sur:        "a00c9704817ff786484d2da807aaf5ba39bfc2ce1c79370830cdbe62e7ac706d"
-    sha256 cellar: :any,                 catalina:       "2081f2f715405c37ac444e89377033c06bd922d04d04c63db93e01aa9222827d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9fa950062d66333e82b1d7dd146251d070a13f2e66367cd7ddee7ecc811b7b1"
-  end
-
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
+    sha256 cellar: :any,                 arm64_sequoia: "abaffb1c9027ca974c12ca4ded7a0b2be05f55cfb7b4ed371a3e14d382278073"
+    sha256 cellar: :any,                 arm64_sonoma:  "d90a8a341886453222b61a6fc9015797f5b3b517620f7f4fa5ec217364bf1896"
+    sha256 cellar: :any,                 arm64_ventura: "d265631b00cebb4c0afc5dce7e1aa31c332e50022b1b3718acdb10bc68639021"
+    sha256 cellar: :any,                 sonoma:        "dfbc41b4db8cb154d168ccd41d8a730400fd49b73239cb6fc1d2b1ef15b80e96"
+    sha256 cellar: :any,                 ventura:       "6ba571cf05be33a069621adc5e455983a26ce132f55bbee5ed2b3b6cab98cde7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af8e8be72b0f2317a9901db68e14b77595d48da2294df10ef3aafc2aeaa9df02"
   end
 
   def install
     # Add program prefix `lib` to prevent conflict with another Unix tool `xls2csv`.
     # Arch and Fedora do the same.
-    system ".configure", *std_configure_args, "--disable-silent-rules", "--program-prefix=lib"
+    system ".configure", "--disable-silent-rules", "--program-prefix=lib", *std_configure_args
     system "make", "install"
     pkgshare.install "testfilestest2.xls"
   end

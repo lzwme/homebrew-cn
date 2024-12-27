@@ -5,15 +5,15 @@ class Ruby < Formula
   head "https:github.comrubyruby.git", branch: "master"
 
   stable do
-    url "https:cache.ruby-lang.orgpubruby3.3ruby-3.3.6.tar.gz"
-    sha256 "8dc48fffaf270f86f1019053f28e51e4da4cce32a36760a0603a9aee67d7fd8d"
+    url "https:cache.ruby-lang.orgpubruby3.4ruby-3.4.1.tar.gz"
+    sha256 "3d385e5d22d368b064c817a13ed8e3cc3f71a7705d7ed1bae78013c33aa7c87f"
 
     # Should be updated only when Ruby is updated (if an update is available).
     # The exception is Rubygem security fixes, which mandate updating this
     # formula & the versioned equivalents and bumping the revisions.
     resource "rubygems" do
-      url "https:rubygems.orgrubygemsrubygems-3.5.23.tgz"
-      sha256 "3d277bf0b12ff46834d89b283fc451d130dbe6428d00d7ace4664c449c3ef28c"
+      url "https:rubygems.orgrubygemsrubygems-3.6.2.tgz"
+      sha256 "d2f4e760eef098608692bbd6eff30df2e221b4723549da70dabcba116dc39680"
 
       livecheck do
         url "https:rubygems.orgpagesdownload"
@@ -28,12 +28,13 @@ class Ruby < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "d1077f441bf54d6e59bdac468cd44013d218843dea36add546b8946464bc7b59"
-    sha256 arm64_sonoma:  "1d1be63045a004474d7d2f0e0607af710ef04999e70b455a7e1be7df289cc024"
-    sha256 arm64_ventura: "78f11b6782faa869e8422cf2531be7bf21447f86a563e8eae6d57d148ef2b6a7"
-    sha256 sonoma:        "9102cb5755913c088cb4fb5a9afe0188cdcf2f6b733586a3deb492b6869e8906"
-    sha256 ventura:       "f82fad313fa6e653d9d453ce21a56e16bfe6df4cd8539e883704fc1e08c680ea"
-    sha256 x86_64_linux:  "8784b621019d8580a50a588341ea83ceafded9a1f750f5ae47680a6bad89f909"
+    rebuild 1
+    sha256 arm64_sequoia: "a11f7158aa46b332df40c93fba9348c5566952e1d6388d4cf4cb5254a217d929"
+    sha256 arm64_sonoma:  "2a328dfe418369c55f51ff3893639e6637c2050166de98bb39594493450013e1"
+    sha256 arm64_ventura: "4d77b9eb5e005ea742383eef306f3ec0544d6d8137a7f06424029396fd0a58a2"
+    sha256 sonoma:        "3c2c5e4956778c2e5c331f1104f7f4a1cfe9ea35c266e0800a5e9c555281d06e"
+    sha256 ventura:       "817c7d0d6846e9745b704a9c021d8ed46e103f43d0da4c8a86a40c1c11ea225e"
+    sha256 x86_64_linux:  "541296cf680716fc9439364c6559eaaed17afeeaa2b44ae30adab6a871d33c29"
   end
 
   keg_only :provided_by_macos

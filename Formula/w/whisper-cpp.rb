@@ -12,19 +12,20 @@ class WhisperCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a9b74a43600aa765826b7a79cc06c025070ffd7cce932f493240abf6cc21824"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b6fde059a1cc222038be70d762ebe1f75e31121c7246410d1bd1063e96e4b342"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "10f789f5dbdc8c0e3adfe15cea91d2437f7922c1cd21bb7e788896d5213fe53a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "64a4ec07c1191f7313ff8be9681ef20859deac638707a9a89da6a683720d9674"
-    sha256 cellar: :any_skip_relocation, ventura:       "a00e4c6ad15c44c89a72172599179e41c226e9cbb3d87751dc0a48303cbf668e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3141b812e243e19e5a0acef2841e683c1564dd29f15ed3208f9483b59886611"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07c74c377cc365a428fe7f9190751965d6fcb410c27560c6e0b1f110c5ec9ea7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12f7b086d01e2f41f15b2e688997872e250d42477ba91d30c8897df1bb3d39a2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "78d9815c81e513f8abd8b1fe52e6832fb92149fbb96f930f11f5be50186b4793"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4592ba6d85b8126c1624d5ae219ffa0959f60479393aa2a1d02458f1fbebf9ab"
+    sha256 cellar: :any_skip_relocation, ventura:       "9fda78a85467ddaed23109f0f2c97609e351d98c297f013576207d1d1b9a0c87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ed56a0ed458735806110430c37376808efd6c62d9efb4b7d2b6ea0e94bda268"
   end
 
   depends_on "cmake" => :build
 
   def install
     args = %W[
-      -DBUILD_SHARED_LIBS=OFF
+      -DBUILD_SHARED_LIBS=#{build.head? ? "ON" : "OFF"}
       -DGGML_METAL=#{(OS.mac? && !Hardware::CPU.intel?) ? "ON" : "OFF"}
       -DGGML_METAL_EMBED_LIBRARY=#{OS.mac? ? "ON" : "OFF"}
       -DGGML_NATIVE=#{build.bottle? ? "OFF" : "ON"}
@@ -33,11 +34,29 @@ class WhisperCpp < Formula
       -DWHISPER_BUILD_SERVER=OFF
     ]
     args << "-DLLAMA_METAL_MACOSX_VERSION_MIN=#{MacOS.version}" if OS.mac?
+    args << "-DCMAKE_INSTALL_RPATH=#{rpath(target: prefix"libinternal")}" if build.head?
 
-    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
-    # the "main" target is our whisper-cpp binary
-    system "cmake", "--build", "build", "--target", "main"
-    bin.install "buildbinmain" => "whisper-cpp"
+    # avoid installing libggml libraries to "lib" since they would conflict with llama.cpp
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args(install_libdir: "libinternal")
+    if build.head?
+      system "cmake", "--build", "build"
+      system "cmake", "--install", "build"
+      # avoid publishing header files since they will conflict with llama.cpp
+      rm_r include
+    else
+      # the "main" target is our whisper-cli binary
+      system "cmake", "--build", "build", "--target", "main"
+      bin.install "buildbinmain" => "whisper-cli"
+    end
+
+    # for backward compatibility with existing installs
+    (bin"whisper-cpp").write <<~EOS
+      #!binbash
+      here="${BASH_SOURCE[0]}"
+      echo "${BASH_SOURCE[0]}: warning: whisper-cpp is deprecated. Use whisper-cli instead." >&2
+      exec "$(dirname "$here")whisper-cli" "$@"
+    EOS
+    (bin"whisper-cpp").chmod 0755
 
     pkgshare.install "modelsfor-tests-ggml-tiny.bin", "samplesjfk.wav"
   end

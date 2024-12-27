@@ -35,7 +35,7 @@ class CiliumCli < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin"cilium"), ".cmdcilium"
 
-    generate_completions_from_executable(bin"cilium", "completion", base_name: "cilium")
+    generate_completions_from_executable(bin"cilium", "completion")
   end
 
   test do

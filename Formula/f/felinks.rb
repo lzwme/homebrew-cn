@@ -1,18 +1,18 @@
 class Felinks < Formula
   desc "Text mode browser and Gemini, NNTP, FTP, Gopher, Finger, and BitTorrent client"
   homepage "https:github.comrkd77elinks"
-  url "https:github.comrkd77elinksreleasesdownloadv0.17.1.1elinks-0.17.1.1.tar.xz"
-  sha256 "dc6f292b7173814d480655e7037dd68b7251303545ca554344d7953a57c4ba63"
+  url "https:github.comrkd77elinksreleasesdownloadv0.18.0elinks-0.18.0.tar.xz"
+  sha256 "e56ef15996a1ca130789293ee6d49cbecf175c06266acfa676fa6edb271a1173"
   license "GPL-2.0-only"
   head "https:github.comrkd77elinks.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "ed51c6ce065bf534ad9afc73c0c0d08bc14997909e08145ce1396cbf1ee67232"
-    sha256 cellar: :any, arm64_sonoma:  "cde1dda6cb15899341af71934add2202f30a06301cb201bf4f78d7b853d1b13e"
-    sha256 cellar: :any, arm64_ventura: "072b62db5ecb6c4590a76cda6baf5fdb55f8a04dddc6c7003f88f8e1925963b9"
-    sha256 cellar: :any, sonoma:        "93b19701a3864f59dd29c742ca6c597eb3e6fccac1e9372c5e12bc6e2d21fa81"
-    sha256 cellar: :any, ventura:       "31e3c6758ff7b0db2f8b175344f7f3b995bcd8e3fa73a2320ad9d17c8730b729"
-    sha256               x86_64_linux:  "305289c38214fa59b864cbd79833beb74ca771fa4f14ec2b0e333b6997334b8a"
+    sha256 cellar: :any, arm64_sequoia: "529eb6faff1708b4e77d43909e658745d00b7eeacb37fb3db72e8b2bc7d558f9"
+    sha256 cellar: :any, arm64_sonoma:  "218fe1fdc56e6c73245834c41763b66d4277a85737b30a093eb4b15c38dd8c50"
+    sha256 cellar: :any, arm64_ventura: "fdee3c49900a48edafb82435144c94a2ddcaeecf30646b606a604e7ff3f4ca73"
+    sha256 cellar: :any, sonoma:        "c7d99c15f1ac89441b4de54cb413e22e6c096fc88828e5461822c5c6f8dcb856"
+    sha256 cellar: :any, ventura:       "0f268c3811c863f325f50c0d36bfffcb8d54d9d258871afa4501c2a6a71c2080"
+    sha256               x86_64_linux:  "f0ca366d10b01c506710abc06dec5f57ade08f76c4f233d2ce353e28c75bec2d"
   end
 
   depends_on "meson" => :build

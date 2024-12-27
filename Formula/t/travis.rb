@@ -4,16 +4,15 @@ class Travis < Formula
   url "https:github.comtravis-citravis.rbarchiverefstagsv1.14.0.tar.gz"
   sha256 "6fe418bf33b025a106dd99762aa8ebc595b4b549d4087c6921d5565b741f7361"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "36c4e4ec1af82812623a0e6fba9333b536eb215ec0956a33215eebcc5aedeb55"
-    sha256 cellar: :any,                 arm64_sonoma:   "5766618d480fb76e3005eba00f3a7a7ed5a7d51dfc324371d72babe0c4ff3910"
-    sha256 cellar: :any,                 arm64_ventura:  "159636202070bdb08a71e8536d3f3fec6a1c1cb2337f7e7155541069eae7db65"
-    sha256 cellar: :any,                 arm64_monterey: "d29494581f310f89b031c7890aa97f543135142ab5358b4822354091c6691c25"
-    sha256 cellar: :any,                 sonoma:         "644741937292acf07e3906cb16e5da38f6f38a3f1b3a5b4b6635e228f5b785ec"
-    sha256 cellar: :any,                 ventura:        "8608c07f7223723636ff0f0006e581ca79b192aa43bb4c1a7463f208e7f5efb1"
-    sha256 cellar: :any,                 monterey:       "259c73779364bf1ffa6e4742697f16909f84499180cf30b153ee38d146126e7e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c12a3598e9cfdf75556100cbd028916085d5de6c6f49c9d50c27f8c5935fe6b"
+    sha256 cellar: :any,                 arm64_sequoia: "a2656c812d2de510207764913a794922237221ac0840c5f238e391fc73b913c9"
+    sha256 cellar: :any,                 arm64_sonoma:  "51bf2cb257cdd819adb71a0e2b5c44177f5ef3ff83fd23718b08fd89248d8f97"
+    sha256 cellar: :any,                 arm64_ventura: "7b54aebccabde93f8f5898240e2107347d671d6d4e7a51606a674c7386111453"
+    sha256 cellar: :any,                 sonoma:        "5773a64c642d24d49102ae362ff3b877da2e78a2565aac86b8c84b008473fbe7"
+    sha256 cellar: :any,                 ventura:       "a722365f1d543352566b79d0468abe9a8eebc6b45707d1930af9d6c2cb679ac7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad1edfc0f78b697477f04ac92d4e3b6a094341ef0894f92ee684c83b60aba68f"
   end
 
   depends_on "pkgconf" => :build

@@ -1,17 +1,17 @@
 class Asyncapi < Formula
   desc "All in one CLI for all AsyncAPI tools"
   homepage "https:github.comasyncapicli"
-  url "https:registry.npmjs.org@asyncapicli-cli-2.14.0.tgz"
-  sha256 "02dae8122d985ec0a9a7dcf4b9598288eb8217ba6550de2ac843b01ae208576c"
+  url "https:registry.npmjs.org@asyncapicli-cli-2.14.1.tgz"
+  sha256 "52111fa8c3c114c9554dea023de8bbcf934de0a0a1ede784fe257d0b44584b41"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "047fa6358ca392516437105720e829ef0886c7e65c4e461ea5251c3e6889f527"
-    sha256 cellar: :any,                 arm64_sonoma:  "047fa6358ca392516437105720e829ef0886c7e65c4e461ea5251c3e6889f527"
-    sha256 cellar: :any,                 arm64_ventura: "047fa6358ca392516437105720e829ef0886c7e65c4e461ea5251c3e6889f527"
-    sha256 cellar: :any,                 sonoma:        "e04892119797667ab60674855f783b8877d1e35e54d03f7a1367c314c80ad9c3"
-    sha256 cellar: :any,                 ventura:       "e04892119797667ab60674855f783b8877d1e35e54d03f7a1367c314c80ad9c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a956198078a1a870b136986a0d57dd33c26cbc092619defe5bfd36197862956f"
+    sha256 cellar: :any,                 arm64_sequoia: "7075096a5aa01819998ee1bdb71fb1af2e06fa46ed7093bedd2b4eb8272ca7e2"
+    sha256 cellar: :any,                 arm64_sonoma:  "7075096a5aa01819998ee1bdb71fb1af2e06fa46ed7093bedd2b4eb8272ca7e2"
+    sha256 cellar: :any,                 arm64_ventura: "7075096a5aa01819998ee1bdb71fb1af2e06fa46ed7093bedd2b4eb8272ca7e2"
+    sha256 cellar: :any,                 sonoma:        "112ca487eaa122277831c2f2b4347ef29e36fd2bf08815f61f4a2b117a4b1161"
+    sha256 cellar: :any,                 ventura:       "112ca487eaa122277831c2f2b4347ef29e36fd2bf08815f61f4a2b117a4b1161"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "681a607718ac6f90a929d94cbc11ffcd39348376dd881ca71ce75752e8c8c3e8"
   end
 
   depends_on "node"

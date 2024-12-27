@@ -4,6 +4,7 @@ class Micromamba < Formula
   url "https:github.commamba-orgmambaarchiverefstagsmicromamba-2.0.5.tar.gz"
   sha256 "f3c4d39921b2036aa77e1093cb21006bf8787f720a11a2a1ef9a80568d660bf3"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.commamba-orgmamba.git", branch: "main"
 
   livecheck do
@@ -14,12 +15,12 @@ class Micromamba < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4fe1618a5b953dbeb7e66a183104a09e14038ec9a18668eb094ec50e2224e1ca"
-    sha256 cellar: :any,                 arm64_sonoma:  "ba030e1730f4d4ae6300cfbd75ca7db2eb2de5cf7c69c2f93ae271b999d7c20d"
-    sha256 cellar: :any,                 arm64_ventura: "502f113bbcc4175c60fcbfe3e730a11a71bd75c2f4d06e1aef3d20ae13e9b8d9"
-    sha256 cellar: :any,                 sonoma:        "6c3d6a3ba4850c7dbe0cb9df0b5103d21a84bd80c43b438804c5007a2965d8ff"
-    sha256 cellar: :any,                 ventura:       "7dcc4d3843e942829ba41187b8161f17fa26c9c15a3efce31db6f322574ed478"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01d513c5ea35990bd0a04fb87628dc0ddb3de2f248f1892a7b0cb20f3bfc271f"
+    sha256 cellar: :any,                 arm64_sequoia: "6dd6b3ae536052b00413ea3c46775fc0b4dec06230bf93e27e0eb89592eee558"
+    sha256 cellar: :any,                 arm64_sonoma:  "3a2c3076c02cf7ab2e21859fcf97f7d1b0de73db9121b2db60a940550deaa8f8"
+    sha256 cellar: :any,                 arm64_ventura: "33ccc786e9e29b4346a4131e16e6c6cad940026953c3c2584721dc022f71e6a3"
+    sha256 cellar: :any,                 sonoma:        "76b43513c6fe4aab13ae10d740ea14e3e2d47ba4b52a0006aa049ce3233f8bfb"
+    sha256 cellar: :any,                 ventura:       "b9718615d797c08b434658efa0f4ab46c940e8a70adaaae5a93fdab340aec312"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "803e44cde62fcf780e1ef032e6b4de78fb7ea96ab9b2bca66fa6b6e679ac9134"
   end
 
   depends_on "cli11" => :build

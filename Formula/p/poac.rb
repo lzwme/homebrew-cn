@@ -2,6 +2,7 @@ class Poac < Formula
   desc "Package manager and build system for C++"
   homepage "https:github.compoac-devpoac"
   license "Apache-2.0"
+  revision 1
   head "https:github.compoac-devpoac.git", branch: "main"
 
   stable do
@@ -16,14 +17,12 @@ class Poac < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "a6a22dea81a6f82833163d1a7541f7b1856dbec8eca1bed9d5c0365e65e50076"
-    sha256 cellar: :any,                 arm64_sonoma:   "ce280c229ec1bf6ca4f8d50a0337a7ef24f6c49447725a0237672a8e9657147c"
-    sha256 cellar: :any,                 arm64_ventura:  "42bf04a9fb7254ad547e688696fbfeca929aa459a578875aafa71d8a9db01729"
-    sha256 cellar: :any,                 arm64_monterey: "0c65b81b080635d90dfbcf52f436d16d01fc0fcbff37afc586b55f964f35dd9b"
-    sha256 cellar: :any,                 sonoma:         "884538639f5ea51af10475448c7b6842b7b37ff62a52e4a12aec77c577f60d6a"
-    sha256 cellar: :any,                 ventura:        "22d3259793bc6789619a425a12b9828dac69bb654c7fa03a3557b1102797869c"
-    sha256 cellar: :any,                 monterey:       "042cf881a92dbcf0e89efa098fef63606efe337a5a6cfbf514e5d28cd414f72d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b1c2ab967603d03c320774091f89b110b5cec3e96526b56bbfa1316c9b55b77"
+    sha256 cellar: :any,                 arm64_sequoia: "7b59fe0ef52277fad2ae5d782698269a20b4f76da7572f009bb9753250436294"
+    sha256 cellar: :any,                 arm64_sonoma:  "e3ffa74cffc03297da642ffcd88494ebf6321ff5f28d9d490b4d6442063e9c2a"
+    sha256 cellar: :any,                 arm64_ventura: "d134b1699bc23c5417e436353bf137324673cabb3f75e30581da198f0880fbbc"
+    sha256 cellar: :any,                 sonoma:        "f984260fc9eb74014e100ff527f1a1b2b86173c936156aaaa4fac1bac1e206eb"
+    sha256 cellar: :any,                 ventura:       "97a2d76d91cd9035498bd323505f5ad9642337a8e227fdda5871c2f36a938cf7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "366b2f3e0a2e2d59ff46e452a632ac40c4c0c0d827f19889b8d3f1390cdc77d6"
   end
 
   depends_on "nlohmann-json" => :build

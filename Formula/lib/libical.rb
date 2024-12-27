@@ -1,18 +1,22 @@
 class Libical < Formula
   desc "Implementation of iCalendar protocols and data formats"
   homepage "https:libical.github.iolibical"
-  url "https:github.comlibicallibicalreleasesdownloadv3.0.18libical-3.0.18.tar.gz"
-  sha256 "72b7dc1a5937533aee5a2baefc990983b66b141dd80d43b51f80aced4aae219c"
+  url "https:github.comlibicallibicalreleasesdownloadv3.0.19libical-3.0.19.tar.gz"
+  sha256 "6a1e7f0f50a399cbad826bcc286ce10d7151f3df7cc103f641de15160523c73f"
   license any_of: ["LGPL-2.1-or-later", "MPL-2.0"]
-  revision 2
+
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "12ed9bd20e48d2a2e2179ac13ac2a0680e230f977327131c47bc2496b10f9e9a"
-    sha256 cellar: :any,                 arm64_sonoma:  "09ef21d33928ca0f752e03f9da8c553682539a4a54ecbf046c6355d31230e821"
-    sha256 cellar: :any,                 arm64_ventura: "c8e2ac34b1c0ba410afeb4a5edb16746836c1479f80341a2bdec8b179baab4ea"
-    sha256 cellar: :any,                 sonoma:        "15ef37cc1f62f61d674ab2641ca678d3ea355c95cfa97df05332bcb1f7140a4f"
-    sha256 cellar: :any,                 ventura:       "9bb23e2c4724bff5b3446a47510e84f6f2acf4ae7fac74ab9c4119a3c48748f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50bab3d317e999bbabf84081ba16a074703023ae3a28f2bf6510b6eb7a76cdfc"
+    sha256 cellar: :any,                 arm64_sequoia: "a6dae4a92f065ebc7e06843b2983b42133df6ce2ed2e6168a9b1b970c5fdd105"
+    sha256 cellar: :any,                 arm64_sonoma:  "d207372138129605cd50e713d8167f58b71f8c19d6e77ba7898673c3fe821070"
+    sha256 cellar: :any,                 arm64_ventura: "2d89c11b85761c3cf357f27b7e3b6712faefbabba77368ab12946ca4d97951c2"
+    sha256 cellar: :any,                 sonoma:        "ee002ff8085136d6603c358c3b6256c5d6c4dc2609d6f9d2afaa86e9e5d8ad75"
+    sha256 cellar: :any,                 ventura:       "efd1e91cb898f2c97697c3cd5611b75826b10f5028f7cdb0705645017d92f75d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b97de9662735ed49c86b83c73eefaa27e3dd3e0f699d337f605f8d5aa0121fe"
   end
 
   depends_on "cmake" => :build
@@ -52,6 +56,7 @@ class Libical < Formula
         return 0;
       }
     C
+
     system ENV.cc, "test.c", "-o", "test", "-L#{lib}", "-lical-glib",
                    "-I#{Formula["glib"].opt_include}glib-2.0",
                    "-I#{Formula["glib"].opt_lib}glib-2.0include"

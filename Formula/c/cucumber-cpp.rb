@@ -7,19 +7,18 @@ class CucumberCpp < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e52705eba218bc405d689160e6e28308ff0f2f33bcddf6ec85898c0cfcab1e1f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8c03f2daaf1def843478d7d144500cef481190e79eb145fcc25844352223412b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c8ae30b6185669938d6bf21a83a84acb8d56bc59194a4b1b28feb6b986d77da9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6b629690ec414931c52c1796dedc8e8bf5a4dfcf70c73ed7dcc4f091894ec5f3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "082e66cef0aeabaaf1aeb24b4d47396613b37ed28b3739a99452da70a819ca13"
-    sha256 cellar: :any_skip_relocation, ventura:        "fda51f7ecd0df9092e3734f44a3e0fe1ed88a8d9a084e25f2379c70c76ac7243"
-    sha256 cellar: :any_skip_relocation, monterey:       "ad29a2f7f882a4376e053a851645aa251a95679a6099aaa8931c9c3a98160045"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c9e95d394b01d3a55aee2d7b2add5de066e47843a7c98f58a9a30c58346fff0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebd1f734db83ae5e745b5a870609430170ac0a4db66d0a982054f17f9c11df23"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9d57c131eb3c28dacc0dc5191e0db536837ff6c0c3e1c00b18bbde206cbccea"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "83b0a4ebd24369723ca462379eec507069b69745b0162aaf8e52fbd191912f8b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "552c285dcbfdfeeeee4918504197d55608bcdd7a6f545c7b128b9a3ec4de66bd"
+    sha256 cellar: :any_skip_relocation, ventura:       "f174b4c1f7188ec9cbfa63d42a7858b5b6055d46b4e8ef9e01603aa6a8f504a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fdfd1f3eb9ae326c0490d8f17f4b68adebd5c48382bae283de89b9bb835b994"
   end
 
   depends_on "cmake" => :build
   depends_on "nlohmann-json" => :build
-  depends_on "ruby" => :test
+  depends_on "ruby@3.3" => :test # ruby 3.4 support bug report, https:github.comcucumbercucumber-rubyissues1769
   depends_on "asio"
   depends_on "tclap"
 
@@ -40,7 +39,7 @@ class CucumberCpp < Formula
   end
 
   test do
-    ENV.prepend_path "PATH", Formula["ruby"].opt_bin
+    ENV.prepend_path "PATH", Formula["ruby@3.3"].opt_bin
     ENV["GEM_HOME"] = testpath
     ENV["BUNDLE_PATH"] = testpath
 

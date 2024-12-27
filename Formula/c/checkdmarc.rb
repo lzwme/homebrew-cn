@@ -3,13 +3,13 @@ class Checkdmarc < Formula
 
   desc "Command-line parser for SPF and DMARC DNS records"
   homepage "https:domainaware.github.iocheckdmarc"
-  url "https:files.pythonhosted.orgpackages015840686054152f1029beff28f1ab2edaf1f30583fb7a366d774166a29023a3checkdmarc-5.7.9.tar.gz"
-  sha256 "1276a384ff65fa7d4cf6eee5d989ec966d6bc061e4d7caa49498e42af86e4164"
+  url "https:files.pythonhosted.orgpackagese4013e98a21916719cc1968d49b7c8c19bd775c468eba672a0dda785cc95a050checkdmarc-5.7.11.tar.gz"
+  sha256 "248d5f51dd6a8be85b7206ea418c98dd7c234417fd9507b6ee02b6d27c9786af"
   license "Apache-2.0"
   head "https:github.comdomainawarecheckdmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ae86a555625bf8d5cc103cdd421f0903a7fb419f5eed9a5e24c3ecc4266d5fbe"
+    sha256 cellar: :any_skip_relocation, all: "4913d8613364aee6ce23d85586f4f1fdec6fc838493b4b05a0a1a6bdaa53926d"
   end
 
   depends_on "certifi"
@@ -17,8 +17,8 @@ class Checkdmarc < Formula
   depends_on "python@3.13"
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
-    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
+    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
+    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
   end
 
   resource "dnspython" do
@@ -42,8 +42,8 @@ class Checkdmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https:files.pythonhosted.orgpackagesfa4b0388dd6069e6399178d88d5ba23267b155f95112a573f5da4d09b6940ae2publicsuffixlist-1.0.2.20241102.tar.gz"
-    sha256 "74d9c69c0c9ba75d72f16192bd788fd0c345466c394d0827ad50501aac2c0d24"
+    url "https:files.pythonhosted.orgpackagesfafcc381f2f56d2283a83bda6dc73df593e1e424f780d468aa3aa8094c9d03d3publicsuffixlist-1.0.2.20241225.tar.gz"
+    sha256 "cea5d299e3a3bd20627c39a61cdc11eee6227a0af2f4af1d7cee88b823fd92b8"
   end
 
   resource "pyleri" do
@@ -52,8 +52,8 @@ class Checkdmarc < Formula
   end
 
   resource "pyopenssl" do
-    url "https:files.pythonhosted.orgpackages5d70ff56a63248562e77c0c8ee4aefc3224258f1856977e0c1472672b62dadb8pyopenssl-24.2.1.tar.gz"
-    sha256 "4247f0dbe3748d560dcbb2ff3ea01af0f9a1a001ef5f7c4c647956ed8cbf0e95"
+    url "https:files.pythonhosted.orgpackagesc1d41067b82c4fc674d6f6e9e8d26b3dff978da46d351ca3bac171544693e085pyopenssl-24.3.0.tar.gz"
+    sha256 "49f7a019577d834746bc55c5fce6ecbcec0f2b4ec5ce1cf43a9a173b8138bb36"
   end
 
   resource "requests" do
@@ -67,8 +67,8 @@ class Checkdmarc < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https:files.pythonhosted.orgpackagesaa63e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66urllib3-2.3.0.tar.gz"
+    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
   end
 
   resource "xmltodict" do

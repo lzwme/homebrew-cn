@@ -4,19 +4,26 @@ class Spdlog < Formula
   url "https:github.comgabimespdlogarchiverefstagsv1.15.0.tar.gz"
   sha256 "9962648c9b4f1a7bbc76fd8d9172555bad1871fdb14ff4f842ef87949682caa5"
   license "MIT"
+  revision 1
   head "https:github.comgabimespdlog.git", branch: "v1.x"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "246130deacdb3cde7faa8e5159c6f03b2175160db08060a6d76ad36500e27175"
-    sha256 cellar: :any,                 arm64_sonoma:  "d1e17b29906ba9ee8fbc5ec3ae90ed4c2cc1b5a28b7d1837a3f106435f77fdef"
-    sha256 cellar: :any,                 arm64_ventura: "d594a2118a23b1817edccbc8b1c05930fd8cc31724b989086ccac6a5f5abc2cd"
-    sha256 cellar: :any,                 sonoma:        "9f1b0e5bd8b2c7fe94cb7f5a71bb97cc14fcff4e98db8606b78638dd01181d91"
-    sha256 cellar: :any,                 ventura:       "c4db7a7c3af2edc21bcc955663cc4bbe63969bcb1ac74996c3de1c4474b7c01a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60250a68987a49d8aa950e3bdedfaaa2e19b3834813c01e2133c63b6d0f29bee"
+    sha256 cellar: :any,                 arm64_sequoia: "3dc996b22567b1145fb0824b2c18055c1118c20cd204b74d9dc669e2e9685e2f"
+    sha256 cellar: :any,                 arm64_sonoma:  "076cf115fe4d4a1015daad980bdbf002a9b8bf2a3c2572051dae8b5dee27077a"
+    sha256 cellar: :any,                 arm64_ventura: "0fa5d95d90aea0050a169b19fc587556f138f6c2c7fd3690889b110b4610dabc"
+    sha256 cellar: :any,                 sonoma:        "fbb802e3c297a881ab963a712312b4ce325b610ddff842bcf7e7d9f1ef2a7171"
+    sha256 cellar: :any,                 ventura:       "9c323cf25b6c23675718bdf05eefb2d258525d76af383b6841e18eb177ebc43e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa5aa509df9f72672eabb2b4b5a3863288f433ea3e29909b63bf61c4cb38fc17"
   end
 
   depends_on "cmake" => :build
   depends_on "fmt"
+
+  # fmt 11.1 compatibility patch, upstream pr ref, https:github.comgabimespdlogpull3301
+  patch do
+    url "https:github.comgabimespdlogcommite693420a38b58d29a56b3ea921e15b175a5f2843.patch?full_index=1"
+    sha256 "70555a85ae64b55deeaa4cec8397e6a81e5cc44bc18ed39e98a97f331c61417a"
+  end
 
   def install
     ENV.cxx11
