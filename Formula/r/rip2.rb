@@ -22,7 +22,7 @@ class Rip2 < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"rip", "completions", base_name: "rip")
+    generate_completions_from_executable(bin"rip", "completions")
     (share"elvishlibrip.elv").write Utils.safe_popen_read(bin"rip", "completions", "elvish")
     (share"powershellcompletions_rip.ps1").write Utils.safe_popen_read(bin"rip", "completions", "powershell")
     (share"nucompletionsrip.nu").write Utils.safe_popen_read(bin"rip", "completions", "nushell")
@@ -33,7 +33,7 @@ class Rip2 < Formula
     test_file = testpath"test.txt"
     touch test_file
     system bin"rip", "--graveyard", testpath"graveyard", test_file.to_s
-    assert_predicate testpath"graveyard", :exist?
-    refute_predicate test_file, :exist?
+    assert_path_exists testpath"graveyard"
+    refute_path_exists test_file
   end
 end

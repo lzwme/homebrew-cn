@@ -1,18 +1,18 @@
 class Lima < Formula
   desc "Linux virtual machines"
   homepage "https:lima-vm.io"
-  url "https:github.comlima-vmlimaarchiverefstagsv1.0.2.tar.gz"
-  sha256 "f1f69d38998ca4e08b1dadbb3e3e5140feaecf8b49105a99a18be0e7a27ce90d"
+  url "https:github.comlima-vmlimaarchiverefstagsv1.0.3.tar.gz"
+  sha256 "c36e803f4faf41607220df4c1d7a61977a7d492facf03e0b67f1f69390840a90"
   license "Apache-2.0"
   head "https:github.comlima-vmlima.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de3712abd08d1f13939ef8f19fe556e581b810be4602d23ba82bc22a3f03bc85"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6cbe64ea673896c549a302833a754d33c1a1d777cfc8df9e9f634ce5bac6bca2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a063d7e643fe9d57b3dc58afcba3119ac7c55463deecbd8c8d3af51f0840afdf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6438f090d5f9e933f3adf4d5d551458d2c2e62d5f81ba384cf49afdaa31f8611"
-    sha256 cellar: :any_skip_relocation, ventura:       "1f5377e2c1b28d8f6d5f85e3c733293c20bc61baaeb696b9388038dd4ab6b0b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4eb7d507eacb6ecd19bc7d997f465e03898bb63ac1e8afba3be6068ab50d053b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5bbdf46683a37bcf7e966c9f5a91f2da620a80b9378f75b575ba32f288f6d5d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8aeb0a3b7295f0c3e0c2a7a92a798a44397936e5bb732db825aee6da5e762d7a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "80f5e9fb07ed53da6675bb616a02dfd13f394a953cbe0fd5bd28ce3b7b072fe2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f675abee28d0f10f335f7a04dc6ad3de12434c83c2f0f32c913061204c137a94"
+    sha256 cellar: :any_skip_relocation, ventura:       "fe6dbf00e813c294ba0f1e8dc053d2aa6fbc8db83cdfa50ace2d81c5fe5e3346"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ebdca67c4a83677827fab4b7bc393e3201ed5d807d5095a702c8977eb83debd"
   end
 
   depends_on "go" => :build
@@ -33,7 +33,7 @@ class Lima < Formula
     share.install Dir["_outputshare*"]
 
     # Install shell completions
-    generate_completions_from_executable(bin"limactl", "completion", base_name: "limactl")
+    generate_completions_from_executable(bin"limactl", "completion")
   end
 
   test do

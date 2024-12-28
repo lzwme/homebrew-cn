@@ -64,10 +64,10 @@ class Povray < Formula
   test do
     # Condensed version of `sharepovray-3.7scriptsallscene.sh` that only
     # renders variants of the famous Utah teapot as a quick smoke test.
-    scenes = Dir["#{share}povray-3.7scenesadvancedteapot*.pov"]
-    assert !scenes.empty?, "Failed to find test scenes."
+    scenes = share.glob("povray-3.7scenesadvancedteapot*.pov")
+    refute_empty scenes, "Failed to find test scenes."
     scenes.each do |scene|
-      system "#{share}povray-3.7scriptsrender_scene.sh", ".", scene
+      system share"povray-3.7scriptsrender_scene.sh", ".", scene
     end
   end
 end

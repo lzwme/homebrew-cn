@@ -30,7 +30,7 @@ class Testkube < Formula
     system "go", "build", *std_go_args(ldflags:, output: bin"kubectl-testkube"), ".cmdkubectl-testkube"
     bin.install_symlink "kubectl-testkube" => "testkube"
 
-    generate_completions_from_executable(bin"kubectl-testkube", "completion", base_name: "kubectl-testkube")
+    generate_completions_from_executable(bin"kubectl-testkube", "completion")
   end
 
   test do

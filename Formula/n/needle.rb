@@ -14,13 +14,17 @@ class Needle < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "36eefd947c51d41c2aeefa29f104523888e0f61110dcdae01dee53be5726d24e"
-    sha256 cellar: :any, arm64_sonoma:  "ee257a4ef13ec18eda8c54354fc67c2bd78d3b5686cbc0a0e9c9c3607fa7e2cd"
-    sha256 cellar: :any, sonoma:        "60f50b3285a36d440c5af05abf77d61ef2a7b9f8a897099b67a9fc2f8d97d014"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "cbcf9f7c69f032ab6ff3a83bad525a86ab607985680870ea905f9fd8d413734b"
+    sha256 cellar: :any, arm64_sonoma:  "11b37daadfe93a3be6fe5605b760afbe130d6944100e62f0ceb2b75fce67110d"
+    sha256 cellar: :any, arm64_ventura: "dba912fe6c6eb664a0b43092a27e8bb9b9ffab66cea81e559f01bec356eb8265"
+    sha256 cellar: :any, sonoma:        "2297f9b535ac16dc443f30f5894772c85c70ec3bb4502b4520d3d93c4ad3ed09"
+    sha256 cellar: :any, ventura:       "9a4f63352a659ff766fdd61e5f8dbe71940c024a25f879ff07f75089fe3a19be"
   end
 
-  depends_on xcode: ["15.3", :build]
   depends_on :macos
+
+  uses_from_macos "swift" => :build, since: :sonoma # swift 5.10+
 
   def install
     # Avoid building a universal binary.

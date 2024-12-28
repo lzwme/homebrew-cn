@@ -26,7 +26,6 @@ class Spoofdpi < Formula
   end
 
   depends_on "go" => :build
-  uses_from_macos "curl" => :test
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdspoofdpi"
@@ -41,17 +40,13 @@ class Spoofdpi < Formula
 
   test do
     port = free_port
-
-    pid = fork do
-      system bin"spoofdpi", "-system-proxy=false", "-port", port
-    end
-    sleep 3
-
+    pid = spawn bin"spoofdpi", "-system-proxy=false", "-port", port.to_s
     begin
+      sleep 3
       # "nothing" is an invalid option, but curl will process it
       # only after it succeeds at establishing a connection,
       # then it will close it, due to the option, and return exit code 49.
-      shell_output("curl -s --connect-timeout 1 --telnet-option nothing 'telnet:127.0.0.1:#{port}' > devnull", 49)
+      shell_output("curl -s --connect-timeout 1 --telnet-option nothing 'telnet:127.0.0.1:#{port}'", 49)
     ensure
       Process.kill("SIGTERM", pid)
     end

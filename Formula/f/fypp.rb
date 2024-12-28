@@ -9,19 +9,31 @@ class Fypp < Formula
   head "https:github.comaradifypp.git", branch: "main"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, all: "8fa263558875dc38b506ff37c6d8a41125ad4176ef51e5111aaff5e73ce6605e"
+    rebuild 5
+    sha256 cellar: :any_skip_relocation, all: "c8c4c383f5fa91ab12d838277ef39f7b8e11807e3e328379fb52b46c9a5b73f4"
   end
 
+  depends_on "python-setuptools" => :build
   depends_on "gcc" => :test
   depends_on "python@3.13"
 
+  def python3
+    "python3.13"
+  end
+
   def install
-    virtualenv_install_with_resources
+    system python3, "-m", "pip", "install", *std_pip_args, "."
   end
 
   test do
     system bin"fypp", "--version"
+
+    (testpath"test_fypp.py").write <<~PYTHON
+      import fypp
+      print("fypp version:", fypp.VERSION)
+    PYTHON
+    system python3, testpath"test_fypp.py"
+
     (testpath"hello.F90").write <<~EOS
       program hello
       #:for val in [_SYSTEM_, _MACHINE_, _FILE_, _LINE_]
@@ -29,6 +41,7 @@ class Fypp < Formula
       #:endfor
       end
     EOS
+
     system bin"fypp", testpath"hello.F90", testpath"hello.f90"
     ENV.fortran
     system ENV.fc, testpath"hello.f90", "-o", testpath"hello"

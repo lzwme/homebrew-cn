@@ -4,7 +4,7 @@ class Flowgrind < Formula
   url "https:github.comflowgrindflowgrindreleasesdownloadflowgrind-0.8.2flowgrind-0.8.2.tar.bz2"
   sha256 "432c4d15cb62d5d8d0b3509034bfb42380a02e3f0b75d16b7619a1ede07ac4f1"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
 
   livecheck do
     url :stable
@@ -13,14 +13,12 @@ class Flowgrind < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "7d7a2e643709a80e87d6585e6d96af3c50ba5d310a20cb7f9ca902db989e2115"
-    sha256 cellar: :any,                 arm64_sonoma:   "25f3197b68720e0e5858a73c2fb8dd78b576a1f153cb2f383f06179bd637a17e"
-    sha256 cellar: :any,                 arm64_ventura:  "c2fa42177d8ca42b47f974a821c1359b2ccb88b0ef286733974fddf35e5e5e83"
-    sha256 cellar: :any,                 arm64_monterey: "677e2405fd0fd400387c26291671a4324e29885c14176eed3586d019edd33004"
-    sha256 cellar: :any,                 sonoma:         "d645d6c2adbec394337e39eb92abd2de76255617cce022b8323737184d37bce8"
-    sha256 cellar: :any,                 ventura:        "823a2b3a36d1c8e0b3b3781cdda8ddf3d014ac8f500e9e869cfaa72aa3957370"
-    sha256 cellar: :any,                 monterey:       "c369b92e94e78c795892c5bfb5cbce8c548cd5b2e5bbafdef6576e50e7315846"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f8ec4303d62ad6711cebe7f7af64499c0ee3c8cea09e98870a5a6b8f48b4512"
+    sha256 cellar: :any,                 arm64_sequoia: "ca6a1f882f1e3d9d886000625a2b3f53f5ce0947f8d1581a9f4ccf1fd3e29b32"
+    sha256 cellar: :any,                 arm64_sonoma:  "7fbd50a235fee0890cfcea2afe0a0ecaf6d95264ebb3bc804b2c0fe19bc47f5a"
+    sha256 cellar: :any,                 arm64_ventura: "4cd194dededa538922c8776c32890c9c85241feca07ff12a4d6ef1c8ae74dbfc"
+    sha256 cellar: :any,                 sonoma:        "3ec8f4b1038691864cf8fa30497efd7ede5191215f6b4812d11cce25e656a99e"
+    sha256 cellar: :any,                 ventura:       "6e14c72f5e1674c8425b1fc2bbaaa31fe4a9abce2c57340c49610d19cc52f5dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f3aa5e0fa120f60cb88c95cf2a710fa57e9481efe0b4067a694f96497b004f6"
   end
 
   head do

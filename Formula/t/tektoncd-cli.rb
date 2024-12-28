@@ -25,12 +25,11 @@ class TektoncdCli < Formula
     system "make", "bintkn"
     bin.install "bintkn" => "tkn"
 
-    generate_completions_from_executable(bin"tkn", "completion", base_name: "tkn")
+    generate_completions_from_executable(bin"tkn", "completion")
   end
 
   test do
-    cmd = "#{bin}tkn pipelinerun describe homebrew-formula"
-    io = IO.popen(cmd, err: [:child, :out])
-    assert_match "Error: Couldn't get kubeConfiguration namespace", io.read
+    output = shell_output("#{bin}tkn pipelinerun describe homebrew-formula 2>&1", 1)
+    assert_match "Error: Couldn't get kubeConfiguration namespace", output
   end
 end

@@ -161,7 +161,7 @@ Homebrew-homebrew-core/Formula/a/apache-drill.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apache-flink-cdc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apache-flink.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apache-geode.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/a/apache-opennlp.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/apache-opennlp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apache-pulsar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apache-spark.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apachetop.rb, Homebrew/homebrew-core, 1
@@ -3824,7 +3824,7 @@ Homebrew-homebrew-core/Formula/lib/libsidplayfp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libsigc++.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libsigc++@2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libsignal-protocol-c.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libsigrok.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libsigrok.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libsigrokdecode.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libsigsegv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libsixel.rb, Homebrew/homebrew-core, 1
@@ -5375,7 +5375,7 @@ Homebrew-homebrew-core/Formula/p/python-setuptools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tabulate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-tk@3.10.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tk@3.11.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/p/python-tk@3.12.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/python-tk@3.12.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-tk@3.13.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-tk@3.9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-yq.rb, Homebrew/homebrew-core, 0
@@ -11255,7 +11255,7 @@ Homebrew-homebrew-cask/Casks/g/garagesale.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gargoyle.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/garmin-basecamp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/garmin-express.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/g/gas-mask.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/gas-mask.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gather.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gauntlet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gb-studio.rb, Homebrew/homebrew-cask, 1
@@ -11298,6 +11298,7 @@ Homebrew-homebrew-cask/Casks/g/ghidra.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/ghost-browser.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/ghosttile.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/ghostty.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/g/ghostty@tip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gifcapture.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gifox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gimp.rb, Homebrew/homebrew-cask, 0
@@ -12660,6 +12661,7 @@ Homebrew-homebrew-cask/Casks/o/omnigraffle.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/omnioutliner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/omniplan.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/omnipresence.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/o/omnissa-horizon-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/ondesoft-audiobook-converter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/one-switch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/onecast.rb, Homebrew/homebrew-cask, 0
@@ -14053,6 +14055,7 @@ Homebrew-homebrew-cask/Casks/t/tiptoi-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tl-legacy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tla+-toolbox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tlv.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/t/tm-error-logger.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tmpdisk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tnefs-enough.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/to-audio-converter.rb, Homebrew/homebrew-cask, 0
@@ -14322,7 +14325,6 @@ Homebrew-homebrew-cask/Casks/v/vlcstreamer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vmpk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vmware-fusion.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vmware-fusion@preview.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/v/vmware-horizon-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vnc-server.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vnc-viewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vnote.rb, Homebrew/homebrew-cask, 1

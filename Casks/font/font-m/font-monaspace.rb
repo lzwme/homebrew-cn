@@ -7,6 +7,11 @@ cask "font-monaspace" do
   name "Monaspace"
   homepage "https:monaspace.githubnext.com"
 
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
+
   font "monaspace-v#{version}fontsotfMonaspaceArgon-Bold.otf"
   font "monaspace-v#{version}fontsotfMonaspaceArgon-BoldItalic.otf"
   font "monaspace-v#{version}fontsotfMonaspaceArgon-ExtraBold.otf"

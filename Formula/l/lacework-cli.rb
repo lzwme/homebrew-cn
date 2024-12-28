@@ -36,7 +36,7 @@ class LaceworkCli < Formula
     ]
     system "go", "build", *std_go_args(output: bin"lacework", ldflags:), ".cli"
 
-    generate_completions_from_executable(bin"lacework", "completion", base_name: "lacework")
+    generate_completions_from_executable(bin"lacework", "completion")
   end
 
   test do

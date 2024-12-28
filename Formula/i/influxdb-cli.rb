@@ -37,7 +37,7 @@ class InfluxdbCli < Formula
 
     system "go", "build", *std_go_args(output: bin"influx", ldflags:), ".cmdinflux"
 
-    generate_completions_from_executable(bin"influx", "completion", base_name: "influx", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin"influx", "completion", shells: [:bash, :zsh])
   end
 
   test do

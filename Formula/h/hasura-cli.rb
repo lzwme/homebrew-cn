@@ -51,7 +51,7 @@ class HasuraCli < Formula
       system "go", "build", *std_go_args(output: bin"hasura", ldflags:), ".cmdhasura"
     end
 
-    generate_completions_from_executable(bin"hasura", "completion", base_name: "hasura", shells: [:bash, :zsh])
+    generate_completions_from_executable(bin"hasura", "completion", shells: [:bash, :zsh])
   end
 
   test do

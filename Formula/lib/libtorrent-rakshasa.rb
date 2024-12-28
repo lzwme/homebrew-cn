@@ -1,8 +1,8 @@
 class LibtorrentRakshasa < Formula
   desc "BitTorrent library with a focus on high performance"
   homepage "https:github.comrakshasalibtorrent"
-  url "https:github.comrakshasalibtorrentarchiverefstagsv0.14.0.tar.gz"
-  sha256 "0ec8ef7544a551ccbf6fce5c6c535f69cb3ad10e4d5e70e620ecd47fef90a13e"
+  url "https:github.comrakshasalibtorrentarchiverefstagsv0.15.0.tar.gz"
+  sha256 "f55fb872282a2964049dadb89c4d1fb580a1cef981b9a421991efd5282ca90b7"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class LibtorrentRakshasa < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6b8fe6b2bfc5f3a6f14306459ec7e13b6691de88cae403a911db55a93ad0bc02"
-    sha256 cellar: :any,                 arm64_sonoma:  "0c2c34b058e1a855d2abe7de2df0b67c27fc861609a8578fd6dd2e54657aa63e"
-    sha256 cellar: :any,                 arm64_ventura: "efd7e73f50633f369299429175a65b38d9ef69691acc98b7bdd9b4d237827424"
-    sha256 cellar: :any,                 sonoma:        "2d59fc558170dc24256a5cd1019157f20bcd978ec53296d89fa17dde0485606d"
-    sha256 cellar: :any,                 ventura:       "b3d3f595792363a889b76657bd139e5d7f1014ab3cc45e42d5c6ba7b3fe9fb6d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25d07d284e4494c038603a297fbe75ade3a0b374cfe1069ffa8674cb49cd4216"
+    sha256 cellar: :any,                 arm64_sequoia: "4cdc68e1d6fab8dcee7d8b2679c1f4d43dd21a3f9ca180370f76fd62062e8b17"
+    sha256 cellar: :any,                 arm64_sonoma:  "74bc68d4ad3dc30bc1c4759894da0c5f8898d821a971421f6373ffdeaf47ebc2"
+    sha256 cellar: :any,                 arm64_ventura: "b09e4b71ea6b6338a5caa1075477fb69e839e05d868130ccbfb801de577cc52e"
+    sha256 cellar: :any,                 sonoma:        "2dd4052aaaede389acbf44a58eedc885a827e663fe61cf8fedbe92399627d5ae"
+    sha256 cellar: :any,                 ventura:       "5ea6e155be088cb5bfd7aa6a5e7cc2460454d5d8ef74eb49c280a6945f46c74d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e349c6510275e9aca4848400949966c16efd9fe26cb59b8dd4f97e518452110e"
   end
 
   depends_on "autoconf" => :build
@@ -28,6 +28,12 @@ class LibtorrentRakshasa < Formula
   uses_from_macos "zlib"
 
   conflicts_with "libtorrent-rasterbar", because: "they both use the same libname"
+
+  # build patch to remove `rak::equal` and `rak::mem_ref` refs, upstream pr ref, https:github.comrakshasalibtorrentpull285
+  patch do
+    url "https:github.comrakshasalibtorrentcommit59ea9a985083c6c933cb9fe28d6e2d1579f337da.patch?full_index=1"
+    sha256 "3e4d2eee017228193a07f1ba9d9c4ebb0c36d5f78fba62b1c39f57e4cfe7d15f"
+  end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"

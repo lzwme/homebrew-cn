@@ -30,7 +30,7 @@ class Ripgrep < Formula
   def install
     system "cargo", "install", "--features", "pcre2", *std_cargo_args
 
-    generate_completions_from_executable(bin"rg", "--generate", base_name: "rg", shell_parameter_format: "complete-")
+    generate_completions_from_executable(bin"rg", "--generate", shell_parameter_format: "complete-")
     (man1"rg.1").write Utils.safe_popen_read(bin"rg", "--generate", "man")
   end
 

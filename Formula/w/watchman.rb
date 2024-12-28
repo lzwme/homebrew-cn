@@ -4,16 +4,16 @@ class Watchman < Formula
   url "https:github.comfacebookwatchmanarchiverefstagsv2024.12.02.00.tar.gz"
   sha256 "445bda6f262cd23ed305f914249e400c7377ebe21ec971a2ace6c1c3dfad5880"
   license "MIT"
-  revision 1
+  revision 2
   head "https:github.comfacebookwatchman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "63aee0b52d337b94e18a2bfe8ff5be597e59ec2f9118987bf17a16504b5139b5"
-    sha256 cellar: :any,                 arm64_sonoma:  "48e107c78b29296025b235bfb34b081b82d416a623a7c9f9bfd982d1ef91a7c4"
-    sha256 cellar: :any,                 arm64_ventura: "a33c37108bdb10bb817369887b0fc0c11adb544ac224ae11f23238f28d5f9794"
-    sha256 cellar: :any,                 sonoma:        "17ab1895889be71d3a61a3abe8b5109a472d7991debf125bf00068576262f6c6"
-    sha256 cellar: :any,                 ventura:       "26c5c8526803b16ff2102ae1346f62055d9dbbe79bca0314743e8cec72b45b04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f681e259829f85881c43f0991c979aaf5bfd3f99cbceccf268131f0a2515ed13"
+    sha256 cellar: :any,                 arm64_sequoia: "caa41cb9dc1d7707da7078b7f8a7a1b5fb2d9c5193a744ea035627699e472ed9"
+    sha256 cellar: :any,                 arm64_sonoma:  "9b70da1cfde3294c1bd0e498a7d091df78f95eefafae0190dbd9fa7c5c11bcc4"
+    sha256 cellar: :any,                 arm64_ventura: "83cecd08b798fb570eb9194a3e2ba7a7149f5b1a5448643439adac5e9f4fb48c"
+    sha256 cellar: :any,                 sonoma:        "d32ba4e9aaab9dc10589b7e79cd3d1edfb30f39876fa53fc0f472503c28a4dc9"
+    sha256 cellar: :any,                 ventura:       "91d3d3000f0e5cfd67c10c1526b93f81012ae3af4fccc7235b6504c31cc97a66"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d793f03af48391058490f5bb8516239b101d6cfabc1b288cfbba90428ec54eb7"
   end
 
   depends_on "cmake" => :build

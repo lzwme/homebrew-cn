@@ -28,7 +28,7 @@ class Kubevela < Formula
 
     system "go", "build", *std_go_args(output: bin"vela", ldflags:), ".referencescmdcli"
 
-    generate_completions_from_executable(bin"vela", "completion", shells: [:bash, :zsh], base_name: "vela")
+    generate_completions_from_executable(bin"vela", "completion", shells: [:bash, :zsh])
   end
 
   test do

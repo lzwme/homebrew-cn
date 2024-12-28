@@ -25,8 +25,6 @@ class Openbao < Formula
   depends_on "node@22" => :build # failed to build with node 23, https:github.comopenbaoopenbaoissues731
   depends_on "yarn" => :build
 
-  uses_from_macos "curl" => :test
-
   conflicts_with "bao", because: "both install `bao` binaries"
 
   def install
@@ -48,11 +46,12 @@ class Openbao < Formula
     ENV["VAULT_DEV_LISTEN_ADDRESS"] = addr
     ENV["VAULT_ADDR"] = "http:#{addr}"
 
-    pid = fork { exec bin"bao", "server", "-dev" }
+    pid = spawn bin"bao", "server", "-dev"
     sleep 5
     system bin"bao", "status"
     # Check the ui was properly embedded
     assert_match "User-agent", shell_output("curl #{addr}robots.txt")
+  ensure
     Process.kill("TERM", pid)
   end
 end

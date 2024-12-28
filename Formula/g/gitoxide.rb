@@ -31,8 +31,8 @@ class Gitoxide < Formula
     # See: https:github.comByrongitoxideblobb8db2072bb6a5625f37debe9e58d08461ece67ddCargo.toml#L88-L89
     features = %w[max-control gix-featureszlib-stock gitoxide-core-blocking-client http-client-curl]
     system "cargo", "install", "--no-default-features", "--features=#{features.join(",")}", *std_cargo_args
-    generate_completions_from_executable(bin"gix", "completions", "-s", base_name: "gix")
-    generate_completions_from_executable(bin"ein", "completions", "-s", base_name: "ein")
+    generate_completions_from_executable(bin"gix", "completions", "-s")
+    generate_completions_from_executable(bin"ein", "completions", "-s")
   end
 
   test do

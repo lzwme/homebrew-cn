@@ -42,6 +42,7 @@ class Nmh < Formula
   end
 
   conflicts_with "ali", because: "both install `ali` binaries"
+  conflicts_with "cargo-dist", because: "both install `dist` binaries"
   conflicts_with "pick", because: "both install `pick` binaries"
   conflicts_with "repl", because: "both install `repl` binaries"
 

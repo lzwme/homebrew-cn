@@ -33,7 +33,7 @@ class TmuxSessionizer < Formula
 
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"tms", "--generate", base_name: "tms")
+    generate_completions_from_executable(bin"tms", "--generate")
   end
 
   def check_binary_linkage(binary, library)

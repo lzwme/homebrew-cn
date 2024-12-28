@@ -3,8 +3,8 @@ class Grokj2k < Formula
   homepage "https:github.comGrokImageCompressiongrok"
   # pull from git tag to get submodules
   url "https:github.comGrokImageCompressiongrok.git",
-      tag:      "v14.0.0",
-      revision: "e43d65217bd01ecef46a87f14653f53a96bb9797"
+      tag:      "v14.1.0",
+      revision: "959b0a770e41dc48d6117eb1d42b617d96a1c66c"
   license "AGPL-3.0-or-later"
   head "https:github.comGrokImageCompressiongrok.git", branch: "master"
 
@@ -14,12 +14,12 @@ class Grokj2k < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c9061de65bc75321ca47cb0341ca0dcb4712e99f6922d1e04fbc74d9173a04d0"
-    sha256 cellar: :any,                 arm64_sonoma:  "2e7e3bc24662d08e22f8efb7a757a6ded7fb1e0c3670bc43f600302fe83e9a3c"
-    sha256 cellar: :any,                 arm64_ventura: "c7cacbaf1ac16a5e823ac1323527a2590e78f3fdd85ecb7f6e8f16c243a09c36"
-    sha256 cellar: :any,                 sonoma:        "a61f44d028d03aa57f3f1bdff3ec50eb41c7523dead2820d45ed8116ec0f44f4"
-    sha256 cellar: :any,                 ventura:       "c8c112f3e0a30cef8adfbe9ba5ff6cca044408c7ffdc75373a68b28c0ddf657c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67d1693d13afc45438b3b4947757668a0a08d053bc2c24940bf01ecb956d942b"
+    sha256 cellar: :any,                 arm64_sequoia: "ba1e24687f542b24303f5e0c04527d423b75a4aa1b72f02d749cd113cff94230"
+    sha256 cellar: :any,                 arm64_sonoma:  "629073681c8c45d47b16375e7e146c420972c26daad0a64c6165e55262cc7324"
+    sha256 cellar: :any,                 arm64_ventura: "fb54bb82c7c150803cb918f7a02a7532d523c57962c569ce3fe02fe981d43392"
+    sha256 cellar: :any,                 sonoma:        "6e347095705ec832a1e4c50591ed4807a70fec5e1a0af640483bf4c51e30df91"
+    sha256 cellar: :any,                 ventura:       "71eb59f63d77cdcb237ac9f6f52dca4492567029b7b79f823034394275604ca6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa70ca7b41fb65c7cf7bdecdaa7b1cce5444ec31310004000cfc92fbd6907010"
   end
 
   depends_on "cmake" => :build

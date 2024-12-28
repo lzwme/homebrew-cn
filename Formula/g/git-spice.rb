@@ -23,7 +23,7 @@ class GitSpice < Formula
     ldflags = "-s -w -X main._version=#{version}"
     system "go", "build", *std_go_args(ldflags:, output: bin"gs")
 
-    generate_completions_from_executable(bin"gs", "shell", "completion", base_name: "gs")
+    generate_completions_from_executable(bin"gs", "shell", "completion")
   end
 
   test do

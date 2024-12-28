@@ -1,19 +1,25 @@
-cask "ghostty" do
-  version "1.0.0"
-  sha256 "091f7a2b3f4160a16d7d52b2822124bb9d5714993815f62a7d70027984372652"
+cask "ghostty@tip" do
+  version "8511,bee21880149129f9373a35e9df0d39c223481709"
+  sha256 "795a31b676a248ca0c2bbcec63963ec359506a5130d8f054c18bf85e99132dda"
 
-  url "https://release.files.ghostty.org/#{version}/Ghostty.dmg"
+  url "https://tip.files.ghostty.org/#{version.csv.second}/Ghostty.dmg"
   name "Ghostty"
   desc "Terminal emulator that uses platform-native UI and GPU acceleration"
   homepage "https://ghostty.org/"
 
   livecheck do
-    url "https://release.files.ghostty.org/appcast.xml"
-    strategy :sparkle, &:short_version
+    url "https://tip.files.ghostty.org/appcast.xml"
+    regex(%r{/(\h+)/Ghostty\.dmg}i)
+    strategy :sparkle do |item, regex|
+      match = item.url&.match(regex)
+      next if match.blank?
+
+      "#{item.version},#{match[1]}"
+    end
   end
 
   auto_updates true
-  conflicts_with cask: "ghostty@tip"
+  conflicts_with cask: "ghostty"
   depends_on macos: ">= :ventura"
 
   app "Ghostty.app"

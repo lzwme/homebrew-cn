@@ -7,15 +7,17 @@ class MistCli < Formula
   head "https:github.comninxsoftmist-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "928f50eb19ab4c5c323814adce8d8fba16ecc0b1abd0e729bef9b17cd5d594da"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "19b7e2cb260545e238222f7b84e289255b738517cd5dd05cc232668666fe893f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b83757aa7976c9656343544be8db0bdfd68ed5c5243c7e7332d4a38392860dd2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3de5cfe1043e9d802d578250bf5ec02386c0e1541c8e6bf8c1f57883bb01155"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d52878ebf4acd1c8e3462bc7dc477df052682bef4bd8f696a9f2fa83188d403e"
+    sha256 cellar: :any,                 arm64_ventura: "7e304d64f0ef30b675ca7b6fc8df1c3bea09c5f69eaf5cc5ec547d73b9b8a012"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7515d36129473828d4ea0272a182ffb8824ac3ed7c5ecdce65b6633289cc500d"
+    sha256 cellar: :any,                 ventura:       "485d54f96a0ecb0c3739b310b459007a270587746b0187a596da10f04fbbf3c4"
   end
 
-  # mist-cli requires Swift 5.10
-  depends_on xcode: ["15.3", :build]
   depends_on :macos
-  uses_from_macos "swift"
+
+  uses_from_macos "swift" => :build, since: :sonoma # swift 5.10+
 
   def install
     system "swift", "build", "--disable-sandbox", "--configuration", "release"

@@ -36,7 +36,7 @@ class Kraftkit < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin"kraft"), ".cmdkraft"
 
-    generate_completions_from_executable(bin"kraft", "completion", base_name: "kraft")
+    generate_completions_from_executable(bin"kraft", "completion")
   end
 
   test do

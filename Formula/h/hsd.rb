@@ -1,8 +1,8 @@
 class Hsd < Formula
   desc "Handshake Daemon & Full Node"
   homepage "https:handshake.org"
-  url "https:github.comhandshake-orghsdarchiverefstagsv7.0.0.tar.gz"
-  sha256 "1575078ebda85396fcaa32238580ae4295ea2f3903bac1ffd97ef7dc77ea363c"
+  url "https:github.comhandshake-orghsdarchiverefstagsv7.0.1.tar.gz"
+  sha256 "b00b4250ccb56e42a0075263564bdc9a41b536d903b20af6cb2e87ca9a0e99a6"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Hsd < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "8a888c6370e29963fde04a7fb6eccd2776b406ba80fa508a3aa84313b1f61769"
-    sha256                               arm64_sonoma:  "bc44f24c70c3a7e61073d2b9f18f69b7b667554c5b98fb15ec47c7cf07c5759e"
-    sha256                               arm64_ventura: "abdca27a97cd18ecd3969c05a364636effd180db97c2aa5cbef665905f2f15d4"
-    sha256                               sonoma:        "f741897e398391aab16f5bd42ee1c8f252f8c11f1c7967767c6c55070ab4b368"
-    sha256                               ventura:       "b000053a108c7251724adeffb14fa45afd9da36b66bd4dba2c26e69f02962aa6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "567a06032591728df4091b459d34c8655789730ba0bc385ff9de987893d14507"
+    sha256                               arm64_sequoia: "a64c6370b1e09f25dfef73cc662a4781b72b977bf4a27a55ac346701fc71d9e1"
+    sha256                               arm64_sonoma:  "93ece0122203241029f6aedb4817ee7f8a751fa9f7307c3b4bac5209eb096b15"
+    sha256                               arm64_ventura: "23eb2c7aa7efe1c0719de0cd083cbff53c2fc09ade911da47e66d5d75b5427fb"
+    sha256                               sonoma:        "01cd2eeaf3eb101e8d2f19cf7385168654053a875ca3ef071293918af1c52962"
+    sha256                               ventura:       "7df4707762756df9e7f918c4fd4003f1fb45d492f11ae75a3d619e9984a14e45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "168fe038545e6dd92c6efaefc90aa7c8ffd6aa072e3be6c7a990f898a38c5b99"
   end
 
   depends_on "node"

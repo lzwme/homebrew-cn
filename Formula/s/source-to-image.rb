@@ -25,11 +25,11 @@ class SourceToImage < Formula
     arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
     bin.install "_outputlocalbin#{OS.kernel_name.downcase}#{arch}s2i"
 
-    generate_completions_from_executable(bin"s2i", "completion", shells: [:bash, :zsh], base_name: "s2i")
+    generate_completions_from_executable(bin"s2i", "completion", shells: [:bash, :zsh])
   end
 
   test do
     system bin"s2i", "create", "testimage", testpath
-    assert_predicate testpath"Dockerfile", :exist?, "s2i did not create the files."
+    assert_path_exists testpath"Dockerfile", "s2i did not create the files."
   end
 end

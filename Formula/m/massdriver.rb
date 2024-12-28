@@ -34,7 +34,7 @@ class Massdriver < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin"mass")
 
-    generate_completions_from_executable(bin"mass", "completion", base_name: "mass")
+    generate_completions_from_executable(bin"mass", "completion")
   end
 
   test do

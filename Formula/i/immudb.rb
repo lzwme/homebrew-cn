@@ -27,7 +27,7 @@ class Immudb < Formula
 
     %w[immudb immuclient immuadmin].each do |binary|
       bin.install binary
-      generate_completions_from_executable(binbinary, "completion", base_name: binary)
+      generate_completions_from_executable(binbinary, "completion")
     end
   end
 

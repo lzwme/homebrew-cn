@@ -21,19 +21,16 @@ class MagicWormholeRs < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "cli")
 
-    generate_completions_from_executable(bin"wormhole-rs", "completion", base_name: "wormhole-rs")
+    generate_completions_from_executable(bin"wormhole-rs", "completion")
   end
 
   test do
     n = rand(1e6)
-    pid = fork do
-      exec bin"wormhole-rs", "send", "--code=#{n}-homebrew-test", test_fixtures("test.svg")
-    end
-    sleep 1
+    pid = spawn bin"wormhole-rs", "send", "--code=#{n}-homebrew-test", test_fixtures("test.svg")
     begin
-      received = "received.svg"
+      sleep 1
       exec bin"wormhole-rs", "receive", "--noconfirm", "#{n}-homebrew-test"
-      assert_predicate testpathreceived, :exist?
+      assert_path_exists testpath"received.svg"
     ensure
       Process.kill("TERM", pid)
       Process.wait(pid)

@@ -31,7 +31,7 @@ class KosliCli < Formula
     ]
     system "go", "build", *std_go_args(output: bin"kosli", ldflags:), ".cmdkosli"
 
-    generate_completions_from_executable(bin"kosli", "completion", base_name: "kosli")
+    generate_completions_from_executable(bin"kosli", "completion")
   end
 
   test do

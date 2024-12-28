@@ -32,7 +32,7 @@ class MongodbAtlasCli < Formula
     system "make", "build"
     bin.install "binatlas"
 
-    generate_completions_from_executable(bin"atlas", "completion", base_name: "atlas")
+    generate_completions_from_executable(bin"atlas", "completion")
   end
 
   test do

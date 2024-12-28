@@ -36,7 +36,7 @@ class KubernetesCli < Formula
     system "make", "WHAT=cmdkubectl"
     bin.install "_outputbinkubectl"
 
-    generate_completions_from_executable(bin"kubectl", "completion", base_name: "kubectl")
+    generate_completions_from_executable(bin"kubectl", "completion")
 
     # Install man pages
     # Leave this step for the end as this dirties the git tree

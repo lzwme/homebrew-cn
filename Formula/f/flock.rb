@@ -24,19 +24,14 @@ class Flock < Formula
   end
 
   def install
-    system ".configure", *std_configure_args,
-                          "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
-    pid = fork do
-      exec bin"flock", "tmpfile", "sleep", "5"
-    end
+    pid = spawn bin"flock", "tmpfile", "sleep", "5"
     sleep 1
-    assert shell_output("#{bin}flock --nonblock tmpfile true", 1).empty?
+    assert_empty shell_output("#{bin}flock --nonblock tmpfile true", 1)
   ensure
     Process.wait pid
   end

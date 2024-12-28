@@ -38,7 +38,7 @@ class Pixie < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin"px"), ".srcpixie_cli"
 
-    generate_completions_from_executable(bin"px", "completion", base_name: "px")
+    generate_completions_from_executable(bin"px", "completion")
   end
 
   test do

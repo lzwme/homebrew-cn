@@ -28,7 +28,7 @@ class FlowCli < Formula
     system "make", "cmdflowflow", "VERSION=v#{version}"
     bin.install "cmdflowflow"
 
-    generate_completions_from_executable(bin"flow", "completion", base_name: "flow")
+    generate_completions_from_executable(bin"flow", "completion")
   end
 
   test do

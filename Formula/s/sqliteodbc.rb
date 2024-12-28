@@ -1,7 +1,7 @@
 class Sqliteodbc < Formula
   desc "ODBC driver for SQLite"
-  homepage "https:ch-werner.homepage.t-online.desqliteodbc"
-  url "https:ch-werner.homepage.t-online.desqliteodbcsqliteodbc-0.99991.tar.gz"
+  homepage "https:ch-werner.hier-im-netz.desqliteodbc"
+  url "https:ch-werner.hier-im-netz.desqliteodbcsqliteodbc-0.99991.tar.gz"
   sha256 "4d94adb8d3cde1fa94a28aeb0dfcc7be73145bcdfcdf3d5e225434db31dc8a5c"
   license "TCL"
 

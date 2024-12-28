@@ -35,7 +35,7 @@ class GitDelta < Formula
 
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"delta", "--generate-completion", base_name: "delta")
+    generate_completions_from_executable(bin"delta", "--generate-completion")
   end
 
   test do

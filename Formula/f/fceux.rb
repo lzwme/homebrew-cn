@@ -2,7 +2,7 @@ class Fceux < Formula
   desc "All-in-one NESFamicom Emulator"
   homepage "https:fceux.com"
   license "GPL-2.0-only"
-  revision 4
+  revision 5
   head "https:github.comTASEmulatorsfceux.git", branch: "master"
 
   stable do
@@ -15,20 +15,14 @@ class Fceux < Formula
       url "https:raw.githubusercontent.comHomebrewformula-patchescd40795fceux2.6.6-arm.patch"
       sha256 "0890494f4b5db5fa11b94e418d505cea87dc9b9f55cdc6c97e9b5699aeada4ac"
     end
-
-    # x265 4.0 build patch, upstream pr ref, https:github.comTASEmulatorsfceuxpull766
-    patch do
-      url "https:github.comTASEmulatorsfceuxcommit7d5960fe4037f673b4a644af18b663efe215a24d.patch?full_index=1"
-      sha256 "eb16bd9673645a74b1797914564e3fc3867594332334d5921791e7f97f8d36b4"
-    end
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "c3594d0215425a0e72abe7c7234eaba3dfa46b85dc4dd01ba03dd0f1a422a50e"
-    sha256 cellar: :any,                 arm64_ventura: "ac3ba77489705d69cb38841e46e6387c1f4e0296a0850b86371d428240325d56"
-    sha256 cellar: :any,                 sonoma:        "fe93346ca1683b5dcecb5cf4df2296ea345422354b46714c1f1365a8a962c71c"
-    sha256 cellar: :any,                 ventura:       "bfb3e74a9bb2ebacd321c553eb170991e16fc361c547ae56887b61360b355f08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc5e0fd981b3b0245b4b9df311b69fb00fe65fe652622a8d3d30f24d0b18fc44"
+    sha256 cellar: :any,                 arm64_sonoma:  "31754b6f7207bc00a48ea084ec06084b2cab1de6e6bebf1691b6f4d64e54b31e"
+    sha256 cellar: :any,                 arm64_ventura: "896707c1bd55dee56878cde5feca245d73f8a55e8b781d5fb83c59e8989a110d"
+    sha256 cellar: :any,                 sonoma:        "010e7a4a2b114a6799d7f8ec4bd5704c49433a6e720ecddd9bff1c416854077c"
+    sha256 cellar: :any,                 ventura:       "a06a34bfe581b36a7791d93c5605cbdd6cff0af980688c09d64b97fd12e57289"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "229f39e293d88f2c0d53075fa39b5246d3987e8c5264270597f55026952da5f2"
   end
 
   depends_on "cmake" => :build

@@ -26,7 +26,7 @@ class VulsioGost < Formula
     ]
     system "go", "build", *std_go_args(output: bin"gost", ldflags:)
 
-    generate_completions_from_executable(bin"gost", "completion", base_name: "gost")
+    generate_completions_from_executable(bin"gost", "completion")
   end
 
   test do

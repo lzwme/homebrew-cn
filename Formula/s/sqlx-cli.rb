@@ -25,13 +25,13 @@ class SqlxCli < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "sqlx-cli")
 
-    generate_completions_from_executable(bin"sqlx", "completions", base_name: "sqlx")
+    generate_completions_from_executable(bin"sqlx", "completions")
   end
 
   test do
     ENV["DATABASE_URL"] = "postgres:postgres@localhostmy_database"
-    assert_match "error: while resolving migrations: No such file or directory",
-      shell_output("#{bin}sqlx migrate info 2>&1", 1)
+    output = shell_output("#{bin}sqlx migrate info 2>&1", 1)
+    assert_match "error: while resolving migrations: No such file or directory", output
 
     assert_match version.to_s, shell_output("#{bin}sqlx --version")
   end

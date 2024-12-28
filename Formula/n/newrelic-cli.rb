@@ -27,7 +27,7 @@ class NewrelicCli < Formula
     system "make", "compile-only"
     bin.install "bin#{OS.kernel_name.downcase}newrelic"
 
-    generate_completions_from_executable(bin"newrelic", "completion", "--shell", base_name: "newrelic")
+    generate_completions_from_executable(bin"newrelic", "completion", "--shell")
   end
 
   test do

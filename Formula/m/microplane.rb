@@ -20,7 +20,7 @@ class Microplane < Formula
   def install
     system "go", "build", *std_go_args(output: bin"mp", ldflags: "-s -w -X main.version=#{version}")
 
-    generate_completions_from_executable(bin"mp", "completion", base_name: "mp")
+    generate_completions_from_executable(bin"mp", "completion")
   end
 
   test do

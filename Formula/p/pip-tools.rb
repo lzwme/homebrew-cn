@@ -54,10 +54,7 @@ class PipTools < Formula
     virtualenv_install_with_resources
 
     %w[pip-compile pip-sync].each do |script|
-      generate_completions_from_executable(bin/script,
-                                           base_name:              script,
-                                           shells:                 [:fish, :zsh],
-                                           shell_parameter_format: :click)
+      generate_completions_from_executable(bin/script, shells: [:fish, :zsh], shell_parameter_format: :click)
     end
   end
 

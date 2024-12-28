@@ -37,8 +37,6 @@ class Teleport < Formula
   depends_on "node"
   depends_on "openssl@3"
 
-  uses_from_macos "curl" => :test
-  uses_from_macos "netcat" => :test
   uses_from_macos "zip"
 
   conflicts_with "etsh", because: "both install `tsh` binaries"
@@ -75,10 +73,7 @@ class Teleport < Formula
           severity: WARN
     YAML
 
-    fork do
-      exec "#{bin}teleport start --roles=proxy,node,auth --config=#{testpath}config.yml"
-    end
-
+    spawn bin"teleport", "start", "--roles=proxy,node,auth", "--config=#{testpath}config.yml"
     sleep 10
     system "curl", "--insecure", "https:localhost:3080"
 

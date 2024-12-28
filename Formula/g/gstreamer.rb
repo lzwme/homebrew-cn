@@ -2,6 +2,7 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https:gstreamer.freedesktop.org"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
+  revision 1
 
   stable do
     url "https:gitlab.freedesktop.orggstreamergstreamer-archive1.24.10gstreamer-1.24.10.tar.bz2"
@@ -27,12 +28,12 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "2c173cf89492f15e496f6137697ca519dc8a5196318fc931cce168b1d78e2fc3"
-    sha256 arm64_sonoma:  "ddbfcd4af1daede615336929d6c6ec76af166379ccbb7e5d4e8df22b981f18a7"
-    sha256 arm64_ventura: "8ae63a60ed25e562d39c21104b021be4660f82769d3b566a330d12ab5d3077c4"
-    sha256 sonoma:        "cd625a2f714164353b9829b85ac48a4629a21402f87f909c370e338abbd5d090"
-    sha256 ventura:       "5212d08163f38f1baa0676c741d493d9ed94655173568dfb5ad9566afda5c6b4"
-    sha256 x86_64_linux:  "2dda73c0204eee7a70153088fcf6b6fd0933dd66268aef8c7370a97e7e7c9f48"
+    sha256 arm64_sequoia: "07fc6ea3d3c366dce076ab96ec46f9284056871a25808619d7a85218a1f8f355"
+    sha256 arm64_sonoma:  "4458ab73bf215081aa7672cadc08a7985f6275153b64f3c501a7ef444cd7b384"
+    sha256 arm64_ventura: "271df8f612d7bf61ccfef4e7f2a1451bdd12424fb4d59d831d2b6260ad1d89dd"
+    sha256 sonoma:        "c59674477a91ef90e368586f1ca3ccf62b3b483d19ecae90525e7ecf169394c4"
+    sha256 ventura:       "79ed3a361c6689b7c9d1c131156f7486ce9e9dc4e42e5e21e311378e18b0cadd"
+    sha256 x86_64_linux:  "74489ddff9b31c9626e7496e69824f3697a0b4acd10097822205b51617aed3a5"
   end
 
   head do

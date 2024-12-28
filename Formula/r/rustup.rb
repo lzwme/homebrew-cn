@@ -37,7 +37,7 @@ class Rustup < Formula
        rust-gdb rust-gdbgui rust-lldb rustc rustdoc rustfmt rustup].each do |name|
       bin.install_symlink bin"rustup-init" => name
     end
-    generate_completions_from_executable(bin"rustup", "completions", base_name: "rustup")
+    generate_completions_from_executable(bin"rustup", "completions")
   end
 
   def post_install

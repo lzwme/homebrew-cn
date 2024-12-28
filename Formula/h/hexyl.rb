@@ -1,18 +1,18 @@
 class Hexyl < Formula
   desc "Command-line hex viewer"
   homepage "https:github.comsharkdphexyl"
-  url "https:github.comsharkdphexylarchiverefstagsv0.15.0.tar.gz"
-  sha256 "017ab7fe18caa3d13427fb13fd6050a9d8bf9aa26d1e1fe02924dfd7f86cd3cf"
+  url "https:github.comsharkdphexylarchiverefstagsv0.16.0.tar.gz"
+  sha256 "52853b4edede889b40fd6ff132e1354d957d1f26ee0c26ebdea380f8ce82cb0b"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comsharkdphexyl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a44a4b5ee249e86b36143290bbec04a32083ef81fa43567540c769dc6815a10"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b91fa9babb7eb57011c2f3238efbabb1d969e889828dd90cbee76553887a0548"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4d8c155d4810f8f56c72f75f815ffabdc5d9d4f8bcf39f27d8dc856df0fcbe78"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3fc12c9a965ad23a423263b9928e016749fc842e69938f09f1477e5f28388db2"
-    sha256 cellar: :any_skip_relocation, ventura:       "29f47c94ac8862688184af7d2461eab6c3ec32040da86576b9390292ff0a0d03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "582a2dad400f4e342ab3f76f9c020c65117da35af0d3360d6306e2a32c853057"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97598fb11f5c1a101081183f3a00864973d5349402864db0e2c694a48c079f97"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "21cada0c4349bfc09a426f2616e4f881ef42d6625d46120d65f95394e2e36fb2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "779a6fdb3c0f2e6510bd57178035273a0f9646f5040d7a5f62c71b6acfe40242"
+    sha256 cellar: :any_skip_relocation, sonoma:        "61036a4e637cedfd6552216797444bf1bf0cbd1d2904fa45be32ac595cfbcb78"
+    sha256 cellar: :any_skip_relocation, ventura:       "42429a6a91e2d1f963559a9c618397be4ab0fbd70e206c599e49acab065cdff4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84ad345fa48b2ea4a6e62145423924a9f4112f10b1cfd1f765bdb7b3531d56c5"
   end
 
   depends_on "pandoc" => :build

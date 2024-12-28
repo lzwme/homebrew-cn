@@ -30,7 +30,7 @@ class WithReadline < Formula
 
   depends_on "readline"
 
-  uses_from_macos "expect" => :test
+  uses_from_macos "tcl-tk" => :test
 
   def install
     system "./configure", *std_configure_args
@@ -38,7 +38,7 @@ class WithReadline < Formula
   end
 
   test do
-    expect = OS.mac? ? "/usr/bin/expect" : Formula["expect"].bin/"expect"
-    pipe_output("#{bin}/with-readline #{expect}", "exit", 0)
+    tclsh = OS.mac? ? "/usr/bin/tclsh" : Formula["tcl-tk"].bin/"tclsh"
+    pipe_output("#{bin}/with-readline #{tclsh}", "exit", 0)
   end
 end

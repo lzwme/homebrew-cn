@@ -26,7 +26,7 @@ class Periscope < Formula
     ]
     system "go", "build", *std_go_args(output: bin"psc", ldflags:), ".cmdpsc"
 
-    generate_completions_from_executable(bin"psc", "completion", base_name: "psc")
+    generate_completions_from_executable(bin"psc", "completion")
   end
 
   test do

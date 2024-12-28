@@ -18,6 +18,8 @@ class CargoDist < Formula
   depends_on "rust" => :build
   depends_on "rustup" => :test
 
+  conflicts_with "nmh", because: "both install `dist` binaries"
+
   def install
     system "cargo", "install", *std_cargo_args(path: "cargo-dist")
   end

@@ -22,7 +22,7 @@ class SSearch < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"s")
 
-    generate_completions_from_executable(bin"s", "--completion", base_name: "s")
+    generate_completions_from_executable(bin"s", "--completion")
   end
 
   test do

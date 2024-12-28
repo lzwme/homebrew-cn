@@ -41,7 +41,7 @@ class Flyctl < Formula
     bin.install_symlink "flyctl" => "fly"
 
     generate_completions_from_executable(bin"flyctl", "completion")
-    generate_completions_from_executable(bin"fly", "completion", base_name: "fly")
+    generate_completions_from_executable(bin"fly", "completion")
   end
 
   test do

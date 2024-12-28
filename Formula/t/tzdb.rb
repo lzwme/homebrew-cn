@@ -5,6 +5,11 @@ class Tzdb < Formula
   sha256 "22674a67786d3ec1b0547305904011cb2b9126166e72abbbea39425de5595233"
   license all_of: ["BSD-3-Clause", :public_domain]
 
+  livecheck do
+    url :homepage
+    regex(/href=.*?tzdb[._-]v?(\d+(?:\.\d+)*[a-z]?)\.t/i)
+  end
+
   bottle do
     sha256 arm64_sequoia: "05a58b175a4b15be423b08a4dfe786f19e2e67cb7d0319d414ab1938da5a024a"
     sha256 arm64_sonoma:  "a6e15f3501cde82cc7643afa516b86904f42ac6e113f6fe84a58869dd9ce377a"

@@ -24,7 +24,7 @@ class PhraseCli < Formula
     system "go", "build", *std_go_args(ldflags:)
     bin.install_symlink "phrase-cli" => "phrase"
 
-    generate_completions_from_executable(bin"phrase", "completion", base_name: "phrase", shells: [:bash])
+    generate_completions_from_executable(bin"phrase", "completion", shells: [:bash])
   end
 
   test do

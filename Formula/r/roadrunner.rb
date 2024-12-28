@@ -25,7 +25,7 @@ class Roadrunner < Formula
     ]
     system "go", "build", "-tags", "aws", *std_go_args(ldflags:, output: bin"rr"), ".cmdrr"
 
-    generate_completions_from_executable(bin"rr", "completion", base_name: "rr")
+    generate_completions_from_executable(bin"rr", "completion")
   end
 
   test do

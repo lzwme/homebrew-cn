@@ -20,7 +20,7 @@ class Trippy < Formula
   def install
     system "cargo", "install", *std_cargo_args(path: "cratestrippy")
 
-    generate_completions_from_executable(bin"trip", "--generate", base_name: "trip")
+    generate_completions_from_executable(bin"trip", "--generate")
   end
 
   test do

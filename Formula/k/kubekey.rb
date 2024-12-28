@@ -47,7 +47,7 @@ class Kubekey < Formula
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin"kk"), "-tags", tags, ".cmdkk"
 
-    generate_completions_from_executable(bin"kk", "completion", "--type", shells: [:bash, :zsh], base_name: "kk")
+    generate_completions_from_executable(bin"kk", "completion", "--type", shells: [:bash, :zsh])
   end
 
   test do

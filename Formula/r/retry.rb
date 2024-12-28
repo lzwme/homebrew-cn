@@ -16,30 +16,26 @@ class Retry < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "08c9b562e484816df97ec9ffdb6849201f5e5958397269087f90dbc478b1e354"
   end
 
-  uses_from_macos "curl" => :test
-
   def install
-    system ".configure", *std_configure_args, "--disable-silent-rules"
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
     require "socket"
     port = free_port
-    command = "#{bin}retry --delay 1 --until 0,28 -- curl --max-time 1 telnet:localhost:#{port}"
-    _, stdout = Open3.popen2e(command)
-    sleep 3
+    args = %W[--delay 1 --until 0,28 -- curl --max-time 1 telnet:localhost:#{port}]
+    Open3.popen2e(bin"retry", *args) do |_, stdout_and_stderr|
+      sleep 3
+      assert_match "curl returned 7", stdout_and_stderr.read_nonblock(1024)
 
-    assert_match "curl returned 7", stdout.read_nonblock(1024)
+      TCPServer.open(port) do |server|
+        session = server.accept
+        session.puts "Hello world!"
+        session.close
+      end
 
-    fork do
-      server = TCPServer.new port
-      session = server.accept
-      session.puts "Hello world!"
-      session.close
-      server.close
+      assert_match "Hello world!", stdout_and_stderr.read
     end
-
-    assert_match "Hello world!", stdout.read
   end
 end

@@ -2,12 +2,12 @@ class Poac < Formula
   desc "Package manager and build system for C++"
   homepage "https:github.compoac-devpoac"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https:github.compoac-devpoac.git", branch: "main"
 
   stable do
     url "https:github.compoac-devpoacarchiverefstags0.10.1.tar.gz"
-    sha256 "4be4f9d80ee1b4b2dd489bc335d59b50d945ad2bff9458eba66b230247f5c8a6"
+    sha256 "ba6a4b2df33ab9bb4eb5923e550bfe81725658fa6a647be5b0b4508ebfe7acc8"
 
     # Backport build fix for tbb 2022
     patch do
@@ -17,12 +17,12 @@ class Poac < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7b59fe0ef52277fad2ae5d782698269a20b4f76da7572f009bb9753250436294"
-    sha256 cellar: :any,                 arm64_sonoma:  "e3ffa74cffc03297da642ffcd88494ebf6321ff5f28d9d490b4d6442063e9c2a"
-    sha256 cellar: :any,                 arm64_ventura: "d134b1699bc23c5417e436353bf137324673cabb3f75e30581da198f0880fbbc"
-    sha256 cellar: :any,                 sonoma:        "f984260fc9eb74014e100ff527f1a1b2b86173c936156aaaa4fac1bac1e206eb"
-    sha256 cellar: :any,                 ventura:       "97a2d76d91cd9035498bd323505f5ad9642337a8e227fdda5871c2f36a938cf7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "366b2f3e0a2e2d59ff46e452a632ac40c4c0c0d827f19889b8d3f1390cdc77d6"
+    sha256 cellar: :any,                 arm64_sequoia: "354ebe892337d536503fc470d83534785290a807a154683e8b2e604f73585198"
+    sha256 cellar: :any,                 arm64_sonoma:  "045d528aedc63e629247d2276876a63ca3a062766a79406f21f47b8cf4c1bab6"
+    sha256 cellar: :any,                 arm64_ventura: "952a59a87cb6cc4c84f4e8151d653ec9874f03729187f90060cf2deb71fda171"
+    sha256 cellar: :any,                 sonoma:        "0ddd945a97c2d8e9e3b477bac5a0cb45678b3f23178ce035151858dae8bee0c8"
+    sha256 cellar: :any,                 ventura:       "52f87b42f28b1f2c8ccc626f03e1b320af07d171fa83373e396dfa6267fb98d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7a129a4491cd1660b74f8634903cbdae62cf12e861e3ba91364d1643ce61ea0"
   end
 
   depends_on "nlohmann-json" => :build

@@ -66,7 +66,7 @@ class Cortex < Formula
     ) do |_, _, stderr, wait_thr|
       Timeout.timeout(5) do
         stderr.each do |line|
-          refute line.start_with? "level=error"
+          refute_match "level=error", line
           # It is important to wait for this line. Finishing the test too early
           # may shadow errors that only occur when modules are fully loaded.
           break if line.include? "Cortex started"

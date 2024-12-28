@@ -40,12 +40,13 @@ class Iperf3 < Formula
   end
 
   test do
-    server = IO.popen("#{bin}iperf3 --server")
+    port = free_port
+    pid = spawn bin"iperf3", "--server", "--port", port.to_s
     sleep 1
     sleep 2 if OS.mac? && Hardware::CPU.intel?
-    assert_match "Bitrate", pipe_output("#{bin}iperf3 --client 127.0.0.1 --time 1")
+    assert_match "Bitrate", shell_output("#{bin}iperf3 --client 127.0.0.1 --port #{port} --time 1")
   ensure
-    Process.kill("SIGINT", server.pid)
-    Process.wait(server.pid)
+    Process.kill("SIGINT", pid)
+    Process.wait(pid)
   end
 end

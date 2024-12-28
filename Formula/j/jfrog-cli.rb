@@ -29,7 +29,7 @@ class JfrogCli < Formula
     system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"jf")
     bin.install_symlink "jf" => "jfrog"
 
-    generate_completions_from_executable(bin"jf", "completion", base_name: "jf")
+    generate_completions_from_executable(bin"jf", "completion")
   end
 
   test do
