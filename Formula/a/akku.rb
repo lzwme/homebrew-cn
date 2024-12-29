@@ -6,6 +6,14 @@ class Akku < Formula
   license "GPL-3.0-or-later"
   head "https://gitlab.com/akkuscm/akku.git", branch: "master"
 
+  livecheck do
+    url "https://gitlab.com/api/v4/projects/6808260/releases"
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+    strategy :json do |json, regex|
+      json.map { |item| item["tag_name"]&.[](regex, 1) }
+    end
+  end
+
   bottle do
     sha256 arm64_sequoia:  "0f13478e5f6f3b41e6e75beac905b2aaae1df9d9a1eb7d600bf0f6bf70b076f0"
     sha256 arm64_sonoma:   "565a1f1bba15ccfbe640704c86b1752a03fe8935b86fefe5c02f946d51cf6b0a"

@@ -50,7 +50,7 @@ class Fail2ban < Formula
     inreplace_etc_var(Pathname.glob("fail2ban***").select(&:file?), audit_result: false)
     inreplace_etc_var(Pathname.glob("man*"), audit_result: false)
 
-    # Update `data_files` from absolute to relative paths for wheel compatability and include doc files
+    # Update `data_files` from absolute to relative paths for wheel compatibility and include doc files
     inreplace "setup.py" do |s|
       s.gsub! "etc", ".etc"
       s.gsub! "var", ".var"

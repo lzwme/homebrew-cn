@@ -5,6 +5,11 @@ class Bindfs < Formula
   sha256 "c0b060e94c3a231a1d4aa0bcf266ff189981a4ef38e42fbe23296a7d81719b7a"
   license "GPL-2.0-or-later"
 
+  livecheck do
+    url "https:bindfs.orgdownloads"
+    regex(href=.*?bindfs[._-]v?(\d+(?:\.\d+)+)\.ti)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, x86_64_linux: "515aa180439b344708d23c95b2dfcd64b69c6cd9e3fb6a458e95a4469ebee204"
   end

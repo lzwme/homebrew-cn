@@ -1,28 +1,27 @@
 class Binkd < Formula
   desc "TCPIP FTN Mailer"
   homepage "https:github.compgulbinkd"
-  url "https:happy.kiev.uapubfidosoftmailerbinkdbinkd-1.0.4.tar.gz"
-  sha256 "917e45c379bbd1a140d1fe43179a591f1b2ec4004b236d6e0c4680be8f1a0dc0"
+  url "https:github.compgulbinkdarchiverefstagsbinkd-1_0_4.tar.gz"
+  sha256 "67cc5c254198005e6d7c5c98b1d161ad146615874df4839daa86735aa5e3fa1d"
   license "GPL-2.0-or-later"
   head "https:github.compgulbinkd.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(^(?:binkd[._-])?v?(\d+(?:[._]\d+)+)$i)
+    strategy :git do |tags|
+      tags.filter_map { |tag| tag[regex, 1]&.tr("_", ".") }
+    end
+  end
+
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "203981e9bb0598dcb33b83b50bb8af30688d8e661896d3b4dac8ca7408510cb0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "18c117512a766e75cdca7fd46a2f67388e20935cd7acfc2a34f5f08950615848"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b2df2fde26d69ad428bcc89b4108fee501ebf175a068db94ea97366212d66e7c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ea0018141c5ebc35b7dca7fb49322682120a2eb5868eb16ff40c8f670123a3fc"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "4cd8c44619d3c04b646a1ea8ad7db21feb95e950656c78d5dc1a983d6472b469"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e8d50f0c28fd306141d748253590c49e783d5441cf3a4ffed486b8eb2120da17"
-    sha256 cellar: :any_skip_relocation, ventura:        "5ffb321d48d1c22395d4c0453ebd2794a12ab267eb67117b17aa66004e0f5175"
-    sha256 cellar: :any_skip_relocation, monterey:       "111b63381a81029c8e2b1618e34d7f6def295e9abd5f6b4c2073b636650ad026"
-    sha256 cellar: :any_skip_relocation, big_sur:        "3b309f2c4a6ee43441a32c0396a570454737bb85c5467f3e27a8c666140bda59"
-    sha256 cellar: :any_skip_relocation, catalina:       "263219b174c193cd86454770d838013daa797994d8d21cdca45493a59d8a5a79"
-    sha256 cellar: :any_skip_relocation, mojave:         "1582b44b77979d7258c51baec8bb54f367fc21f8cc03838c9c1b1351ea9f77e7"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "e890bed8ae5c89dfabd589e2c9654b2c8da6811bd24fbfd99aa4fc520a535e26"
-    sha256 cellar: :any_skip_relocation, sierra:         "d685be9cb23ecb98dc34c2ea185c47ec39e54db1a8ca88782d11cbd96c78862a"
-    sha256 cellar: :any_skip_relocation, el_capitan:     "d69c67a3cb68789a0a96196b5d2d92e44e6dd9bab3eb870ec9727987ae538c35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "83ac41663d506bea26d30d168d2b5193f2d42da32ed8530ec8422f990281c3b7"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "363282ef02c77db08c0963460807439902cc81ec6bf480f1fb2714fd2f0211f8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "55fbf747f2e698ebf87a90b001d4bf62f9486012f860b561835a3c45730b4f97"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "18ee6019972abd32129415ce9545fbb80abf690bfe4aaa6dcd599d3ab9ab17d9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7df6b2f5bb3437e91f6c293b63cf7dc28de37b458654d9b925cb0354dd296394"
+    sha256 cellar: :any_skip_relocation, ventura:       "1d0c2d8e07da1e49cafed0aa027ea488105b3b8088b69e76d3027d3fdfe70c40"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d99d97e67e7079053da1c408b6064abff7ff447a116e2044e4a39d82ed654bc2"
   end
 
   uses_from_macos "zlib"

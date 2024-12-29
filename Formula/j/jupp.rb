@@ -29,8 +29,6 @@ class Jupp < Formula
   depends_on "automake" => :build
   depends_on "libtool" => :build
 
-  uses_from_macos "expect" => :test
-
   uses_from_macos "ncurses"
 
   on_macos do
@@ -47,8 +45,17 @@ class Jupp < Formula
   end
 
   test do
-    assert_match "File (Unnamed) not changed so no update needed.",
-      pipe_output("env TERM=tty expect -",
-                  "spawn #{bin}/jupp;send \"q\";expect eof")
+    require "pty"
+    output = ""
+    PTY.spawn({ "TERM" => "xterm" }, bin/"jupp", "test") do |r, w, _pid|
+      w.write "brewx"
+      begin
+        r.each { |line| output += line }
+      rescue Errno::EIO
+        # GNU/Linux raises EIO when read is done on closed pty
+      end
+    end
+    assert_match "File test saved", output
+    assert_equal "brew", (testpath/"test").read
   end
 end

@@ -10,6 +10,13 @@ cask "pliim" do
 
   app "Pliim.app"
 
+  zap trash: [
+    "~LibraryApplication SupportPliim",
+    "~LibraryLogsPliim",
+    "~LibraryPreferencescom.electron.pliim.plist",
+    "~LibrarySaved Application Statecom.electron.pliim.savedState",
+  ]
+
   caveats do
     requires_rosetta
   end

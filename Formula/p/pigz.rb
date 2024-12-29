@@ -39,7 +39,7 @@ class Pigz < Formula
     test_data = "a" * 1000
     (testpath"example").write test_data
     system bin"pigz", testpath"example"
-    assert (testpath"example.gz").file?
+    assert_predicate testpath"example.gz", :file?
     system bin"unpigz", testpath"example.gz"
     assert_equal test_data, (testpath"example").read
     system "bindd", "if=devrandom", "of=foo.bin", "bs=1024k", "count=10"

@@ -6,6 +6,11 @@ class ErofsUtils < Formula
   license "GPL-2.0-or-later"
   head "https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git", branch: "master"
 
+  livecheck do
+    url "https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git/refs/"
+    regex(/href=.*?erofs-utils[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "1106a4906f31557bb358b77d1c51b5905fff689717c5eeedd47f82967b406985"
     sha256 cellar: :any,                 arm64_sonoma:  "adbacd3f9845bc5d770a90756bcf978114f8439f5c32b0f77afb68eed0932b5b"

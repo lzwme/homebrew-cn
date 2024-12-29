@@ -3,17 +3,17 @@ class Glances < Formula
 
   desc "Alternative to top/htop"
   homepage "https://nicolargo.github.io/glances/"
-  url "https://files.pythonhosted.org/packages/0d/e0/3014b93fbd673a15def5903a99d2d087b792751e0cd132c56fb3c23c63d7/glances-4.3.0.3.tar.gz"
-  sha256 "ea307e479e7183eeb3297cf993364daaa327ed52b38d252cca1b0446dcd01055"
+  url "https://files.pythonhosted.org/packages/84/71/9b47b245e26e51691d5cbdb8b692130295b80495aac2e2de3b2f68db3e89/glances-4.3.0.5.tar.gz"
+  sha256 "4125ed6014cab659b7b77210a336c1599596185091093cd4712be9c3bdc89f3b"
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "465a69f3fecd79e6c1a662507d981e55fe502294dc1fe69a6be2925279be5bb1"
-    sha256 cellar: :any,                 arm64_sonoma:  "4fb150b2eb29d9cc6e171c7f45cd4ada9bfb3812d54aa31ee2473f66b27c97b2"
-    sha256 cellar: :any,                 arm64_ventura: "14d4c0b84d1869e1a47d17cade38c4b7097cd8378bc45d9e6fec22a49079b18b"
-    sha256 cellar: :any,                 sonoma:        "e7b6e6e216ce8d052495012096243167d9f3c8bd934c29cc8d7e0300f79d9340"
-    sha256 cellar: :any,                 ventura:       "5fc1e46c20f19b9edec62c979a5ce4114229a9c14c5f8962f68417b3fc731129"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eff67f06f595232aa1082a98b96fddcf479d64dcfdeb2edda2dd5e58b4135941"
+    sha256 cellar: :any,                 arm64_sequoia: "09601994772a0b8a5b4679437be50b6c8a5a8ca1c0eaacd36a72b8bbbc75ef97"
+    sha256 cellar: :any,                 arm64_sonoma:  "366ea7238633a571b80c729a700b4015d66228a7c80720c67b4a0e6abd84bc18"
+    sha256 cellar: :any,                 arm64_ventura: "47223d1ad0caae0c23ed1b429c6dc328f44b3aa2856ff2a347354c579778ca60"
+    sha256 cellar: :any,                 sonoma:        "87b36f68e0e766e187ebdac5fdd2b933b3e022c20db84b48728bc77ccb1fd0dd"
+    sha256 cellar: :any,                 ventura:       "42d6681066982c1ab9bfdee5512479727b36ceb88d0548ebbb4d4b70bdd117f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "392b5cc9d9c38538e8b3eeeb79753451b4a025a7d57d4741980785ca888ba629"
   end
 
   depends_on "rust" => :build # for orjson

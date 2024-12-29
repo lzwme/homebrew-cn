@@ -6,6 +6,14 @@ class GuileGnutls < Formula
   license "LGPL-2.1-or-later"
   head "https:gitlab.comgnutlsguile.git", branch: "master"
 
+  livecheck do
+    url "https:gitlab.comapiv4projects40217954releases"
+    regex(^(?:gnutls[._-])?v?(\d+(?:[._]\d+)+)$i)
+    strategy :json do |json, regex|
+      json.map { |item| item["tag_name"]&.[](regex, 1)&.tr("_", ".") }
+    end
+  end
+
   bottle do
     sha256 arm64_sequoia: "774fbd9464a92152b3506f67c9e5b2f7349575e2031293e50132017b7a3e98bb"
     sha256 arm64_sonoma:  "a50a21859c4523e1a26aa0e9b566d69b8351da2a31b8f01999b407551b2cc4d1"

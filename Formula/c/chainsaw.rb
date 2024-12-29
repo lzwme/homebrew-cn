@@ -1,18 +1,18 @@
 class Chainsaw < Formula
   desc "Rapidly Search and Hunt through Windows Forensic Artefacts"
   homepage "https:github.comWithSecureLabschainsaw"
-  url "https:github.comWithSecureLabschainsawarchiverefstagsv2.10.4.tar.gz"
-  sha256 "77c35c17b705dd26d5e353cc4a275484cc9ef7789c5aa3e9b813f985021361b8"
+  url "https:github.comWithSecureLabschainsawarchiverefstagsv2.11.0.tar.gz"
+  sha256 "87a66e39fd6417dfd53d026e72bf2ea9cffc72f3ab5e7b65e633bd4ab95d2a87"
   license "GPL-3.0-only"
   head "https:github.comWithSecureLabschainsaw.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32da83155c7fa9a338e7b896965b36af2fe3a704e89856f412f83618c2a4846c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "332d31642f9e02b6c1fbc192f411f44c5e40551fecb69a3f393e01459de0950c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "aaad6e02e054b1ef4fe828bf2707e760fddd01cb6fe968743da5aa75866552e9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7b30ae100165de2ad4922eb81626e851af5b7e18c853daca9a64c0457cc3468e"
-    sha256 cellar: :any_skip_relocation, ventura:       "91fb90650e6206d434a1580fb744350d99e4560c598f4920578761b717970bb9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fcfc87999e1792071b56e13e002395d4e5c9276151e24fde653820e8b3833262"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "28ccaff92d365b6b4820a32ef76f9c90e24c3b819ecbeccf8b1473ca33d9c422"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7bac7270712cb90a101409f4e0d5e60e896727c158d30225575e0d2ac54e0e1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "61310609af62c08441e2afcfdb3650cfb1cf354d4ac1c8c5fdbfdadbdd9adfaa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b8ed32ee23dbf0478f2c592d01bce6217248a316f38ac9661b449525cc57128d"
+    sha256 cellar: :any_skip_relocation, ventura:       "aa3f408a060ef71fe4fbe5756b7b25cc09557d06fc5abab52b09b3c67fe0d5cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f192090857775783e2a9c9a1b492685fbf17b0f5ddc140196ffaa5b17d1969e0"
   end
 
   depends_on "rust" => :build

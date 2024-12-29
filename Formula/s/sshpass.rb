@@ -23,7 +23,7 @@ class Sshpass < Formula
 
   def caveats
     <<~EOS
-      Sshpass is a tool for non-interactivly performing password authentication
+      Sshpass is a tool for non-interactively performing password authentication
       with SSH's so called "interactive keyboard password authentication".
       Most users should use SSH's more secure public key authentication instead.
 

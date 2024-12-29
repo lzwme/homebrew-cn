@@ -1,40 +1,27 @@
 class Ahoy < Formula
   desc "Creates self documenting CLI programs from commands in YAML files"
-  homepage "https:ahoy-cli.readthedocs.io"
-  url "https:github.comahoy-cliahoyarchiverefstagsv2.2.0.tar.gz"
-  sha256 "9131747774cbb6641b8f7104fd5fb239cbb6fe53656c74d2c29eb95d2db6f9f8"
+  homepage "https:github.comahoy-cliahoy"
+  url "https:github.comahoy-cliahoyarchiverefstagsv2.3.0.tar.gz"
+  sha256 "d48b832a475fc9aa5ea42784ac77805afa7bcd477d919a603ec022c240a045df"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3df3575f32c3f7f4b035763fb50c321691ee21a55cd09b0f1b7db7456e8b8a80"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ff34fd831db681f141430674f747592b0d25b0fced2b7b06eca000904bd93c29"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ff34fd831db681f141430674f747592b0d25b0fced2b7b06eca000904bd93c29"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ff34fd831db681f141430674f747592b0d25b0fced2b7b06eca000904bd93c29"
-    sha256 cellar: :any_skip_relocation, sonoma:         "94456698ccb845385b3eecd9f567a51e763ce69f42b2c3cee43f23eb371a94e8"
-    sha256 cellar: :any_skip_relocation, ventura:        "94456698ccb845385b3eecd9f567a51e763ce69f42b2c3cee43f23eb371a94e8"
-    sha256 cellar: :any_skip_relocation, monterey:       "94456698ccb845385b3eecd9f567a51e763ce69f42b2c3cee43f23eb371a94e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8cbaee24adf9c44204beec7e6b43d13a123aedc2be7e7382327630727a857700"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d0be876590907288aa7687f43dc47ca9b73a7927e85e94efd171e57ae1bd476"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d0be876590907288aa7687f43dc47ca9b73a7927e85e94efd171e57ae1bd476"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8d0be876590907288aa7687f43dc47ca9b73a7927e85e94efd171e57ae1bd476"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2be33eca2f4ea292d53fc0a2f177ef7bffb865ba53e52619568dcc261abcda00"
+    sha256 cellar: :any_skip_relocation, ventura:       "2be33eca2f4ea292d53fc0a2f177ef7bffb865ba53e52619568dcc261abcda00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "739afb6f4249685b464784d2288c5c7d97976a76638096b01d40bd3cb0a14fa6"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}-homebrew")
-  end
-
-  def caveats
-    <<~EOS
-      ===== UPGRADING FROM 1.x TO 2.x =====
-
-      If you are upgrading from ahoy 1.x, note that you'll
-      need to upgrade your ahoyapi settings in your .ahoy.yml
-      files to 'v2' instead of 'v1'.
-
-      See other changes at:
-
-      https:github.comahoy-cliahoy
-
-    EOS
+    cd "v2" do
+      system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}-homebrew")
+    end
+    ohai "Please check the README in the repo (https:github.comahoy-cliahoy) for new features."
+    ohai "An updated documentation website is coming soon."
   end
 
   test do

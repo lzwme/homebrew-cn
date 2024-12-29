@@ -5,6 +5,11 @@ class Asm6809 < Formula
   sha256 "c7b5c8a17f329a88c8ec466ebf000047879bab3716f7df2ed2579e2623f22c0c"
   license "GPL-3.0-or-later"
 
+  livecheck do
+    url :homepage
+    regex(/href=.*?asm6809[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c6f5c6fa28e50311352db7cb70d61249b3599f8b503d251f1b2eb4556af5806"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "440d94ef4c3690acade80e470c130b75fd1cae46fcd4dd8fd5f2e11f1189382d"
@@ -35,7 +40,7 @@ class Asm6809 < Formula
     input = testpath/"a.asm"
 
     input.write <<~ASM
-      ; Instructions must be preceeded by whitespace
+      ; Instructions must be preceded by whitespace
         org $c000
         lda $42
         end $c000

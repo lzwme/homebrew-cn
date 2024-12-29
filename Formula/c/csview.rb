@@ -1,20 +1,18 @@
 class Csview < Formula
   desc "High performance csv viewer for cli"
   homepage "https:github.comwfxrcsview"
-  url "https:github.comwfxrcsviewarchiverefstagsv1.3.3.tar.gz"
-  sha256 "de84f181a6b89101ed150a378eff9583d8f8cbcc4025d06adc4bc3c48085df95"
+  url "https:github.comwfxrcsviewarchiverefstagsv1.3.4.tar.gz"
+  sha256 "91fadcddef511265f4bf39897ce4a65c457ac89ffd8dd742dc209d30bf04d6aa"
   license any_of: ["MIT", "Apache-2.0"]
   head "https:github.comwfxrcsview.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8341aac84bf3742c76c2a4e869f76de7b45b89a058d1f864b26f81a98e5bccd0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "55c57ffe5e4de2111bbdcfcce022b99415fc892547c593d6111426226db06321"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1383555c54c01abbd0a2338b1c6434240a1fdbd2a185acc82fd90008c07a447f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bfc7e3e335b6dd3079310a339fcc7d71df6fdfb522db1dada174940504e64996"
-    sha256 cellar: :any_skip_relocation, sonoma:         "610bc3a181d58402bc7b70a296032bbb774446175f90f52346a9e3438720db41"
-    sha256 cellar: :any_skip_relocation, ventura:        "cef9950a72034e572b6bc7b02d688ad0c2cbfbd2732223d7853714c91d335c1f"
-    sha256 cellar: :any_skip_relocation, monterey:       "14dafba5b224e069fd7b0ccadaae032eacea098b46c43e2ef56fcfb1be9be2ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "52f4ece6bbdd1cfb6b61ffb0ab44b6ad72b426479cf8612d7dfa6d5fba816a57"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa65514000cc4091d056a09965c343ddeeffd4955c7f7667464cfc3a45856493"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "839e6ac9018b3cb5079ad9044fc4552a188532e222a3cfa08c865e9178ac48c7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a2bd401378a8a76fa0863a7f400e43c4e9d62d03e2a6b0f5700b9f1b06a334b6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8b2cae09c4f3f4c4ad423b3dae727eee5d43c790a1f9fdc720b0bc1678fcacf6"
+    sha256 cellar: :any_skip_relocation, ventura:       "9cf797b2622d8770fecd88e8dff65430f2c4145d00e0222f5877dc3b430a8abb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65a7d18e46c145b00e3747a8cb0309d59138eb5e4fc396ed2e7d2cf3d6f75c0c"
   end
 
   depends_on "rust" => :build

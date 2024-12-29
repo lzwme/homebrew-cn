@@ -1,6 +1,6 @@
 class SstpClient < Formula
   desc "SSTP (Microsoft's Remote Access Solution for PPP over SSL) client"
-  homepage "https://sstp-client.sourceforge.net/"
+  homepage "https://gitlab.com/sstp-project/sstp-client"
   url "https://gitlab.com/sstp-project/sstp-client/-/releases/1.0.20/downloads/dist-gzip/sstp-client-1.0.20.tar.gz"
   sha256 "6c84b6cdcc21ebea6daeb8c5356dcdfd8681f4981a734f8485ed0b31fc30aadd"
   license "GPL-2.0-or-later"

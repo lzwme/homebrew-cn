@@ -1,7 +1,7 @@
 class Wcslib < Formula
   desc "Library and utilities for the FITS World Coordinate System"
-  homepage "https://www.atnf.csiro.au/people/mcalabre/WCS/"
-  url "https://www.atnf.csiro.au/people/mcalabre/WCS/wcslib-8.4.tar.bz2"
+  homepage "https://www.atnf.csiro.au/computing/software/wcs/"
+  url "https://www.atnf.csiro.au/computing/software/wcs/wcslib-8.4.tar.bz2"
   sha256 "960b844426d14a8b53cdeed78258aa9288cded99a7732c0667c64fa6a50126dc"
   license "GPL-3.0-or-later"
 

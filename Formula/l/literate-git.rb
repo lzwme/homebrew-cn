@@ -6,29 +6,24 @@ class LiterateGit < Formula
   url "https:files.pythonhosted.orgpackages7bcc1a6c994c90fa34cfa8e90e017c80f838b149fd0262daa24cdb930c091b48literategit-0.5.0.tar.gz"
   sha256 "88f9e95749d427c98a397a9c38a845d9760cf3451424441bc217c53c1ec835bd"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f9235220e16c529400db78d67cc49139ae568afd127f8ed72365a331a45a3dd5"
-    sha256 cellar: :any,                 arm64_sonoma:  "4747522269d62bca08a9ea83c7d82d5e44ad619170e7de9c640c8be7da771e90"
-    sha256 cellar: :any,                 arm64_ventura: "529c137577be7605754a22ef3b958ace7bf7bb05a8e63bfbad9dc1466064a3fe"
-    sha256 cellar: :any,                 sonoma:        "40909dbcead9b8c6bc8290afd4c2d6ed8e468f4af60e391425b90f1c37000ea0"
-    sha256 cellar: :any,                 ventura:       "3859333485640c20f338dda8d673ffe0acb17de24fd52820ee0b0536f4cbb949"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c2b8b137ffbfc8992052e3c5d0ebe578a402c367278601d1958f5577768c12c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9d2b025ddbab295193c1e6f827407d639a9d204c4e5f9cdb5f53fd9621d180c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "796a2f7d9c28026fe53d797479b502dc6f32d2397334c924ea7f058ea857ecd3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7f014c600ce0139cd4e7ed823c48791e4589691ac5556eef4054b6e1e29ff84c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "74385ddd793439f8f9280f1e498e43678bc6b8430c3ff6a31607e89a8a45fa8c"
+    sha256 cellar: :any_skip_relocation, ventura:       "4b9700e863cbe0fe8339cfa29c0b13ca998eb2bf7f763aca819cfcef2484e7a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "441c3d2a61e151bba2931e002e40c737fab41a491daa57174b09d8e821c1f56e"
   end
 
-  depends_on "libgit2"
+  depends_on "pygit2"
   depends_on "python@3.13"
 
   uses_from_macos "libffi"
 
   on_linux do
     depends_on "pkgconf" => :build
-  end
-
-  resource "cffi" do
-    url "https:files.pythonhosted.orgpackagesfc97c783634659c2920c3fc70419e3af40972dbaf758daa229a7d6ea6135c90dcffi-1.17.1.tar.gz"
-    sha256 "1c39c6016c32bc48dd54561950ebd6836e1670f2ae46128f67cf49e789c52824"
   end
 
   resource "click" do
@@ -49,16 +44,6 @@ class LiterateGit < Formula
   resource "markupsafe" do
     url "https:files.pythonhosted.orgpackages875baae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02dMarkupSafe-2.1.5.tar.gz"
     sha256 "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
-  end
-
-  resource "pycparser" do
-    url "https:files.pythonhosted.orgpackages1db231537cf4b1ca988837256c910a668b553fceb8f069bedc4b1c826024b52cpycparser-2.22.tar.gz"
-    sha256 "491c8be9c040f5390f5bf44a5b07752bd07f56edf992381b05c701439eec10f6"
-  end
-
-  resource "pygit2" do
-    url "https:files.pythonhosted.orgpackagesa485c848cdf44214bf541c4a725a0a6e271f8db9f18cfccef702d53f83f1e19apygit2-1.16.0.tar.gz"
-    sha256 "7b29a6796baa15fc89d443ac8d51775411d9b1e5b06dc40d458c56c8576b48a2"
   end
 
   resource "pygments" do

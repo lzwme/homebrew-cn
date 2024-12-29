@@ -1,19 +1,17 @@
 class PandocCrossref < Formula
   desc "Pandoc filter for numbering and cross-referencing"
   homepage "https:github.comlierdakilpandoc-crossref"
-  url "https:github.comlierdakilpandoc-crossrefarchiverefstagsv0.3.18.0c.tar.gz"
-  version "0.3.18.0c"
-  sha256 "b82b3f5d78ca1ea1b406b126704a81d595db341fc6f757bdfbf9832415aec6a3"
+  url "https:github.comlierdakilpandoc-crossrefarchiverefstagsv0.3.18.1.tar.gz"
+  sha256 "d41c7fc7e9f1fd3bff72d96c0693458aa18b338f65390692baf277c305f95ec4"
   license "GPL-2.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f056f20a11b84bb96fb689dadb6fd0ab125f2f5fe422476eeab1ad9d44382ae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c50277d4b20bb39c1aa54a2bda5b6f18db619478c624b2d4f45009c3bd17818"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "33a6429bd5b91d917ca31ef01b9ad6153f11d52cead374e18edb88e2ae945348"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cfd78c513f5121100c4a9d63ac4097732f7fc5379ec4830a70d851e900e620b8"
-    sha256 cellar: :any_skip_relocation, ventura:       "8502af029c963f94e1bafafe4b0b8841c9696f00065455bbfac9b9849616dcc3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9b2a23c95d277b6533b7c4a206f1d580a0f325772f80885d2ac0975ff02164c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3d162bcce4c55bd1a2d2a40099893593ec6dbc5c41df9d84593fce444dd5fc5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "673133be289e57a36574d6e2f491e3346e385f832b611ae175280247de33c1ca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "941ca59af3d7f24f63700399c2410975421e262ff88a367f6f3f2f3e0881bd4f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7a9a08fe8d552cedba2fd1e17a82ff77da5ac738026ea5cc1b982061183d4777"
+    sha256 cellar: :any_skip_relocation, ventura:       "e38878a0d191840523257eacbe1aae372a26d08d23ec1f561ebdc591417ddc36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "492887aac29ac862b534be705b0b7714e08675297c37927b9005500d4b38b52d"
   end
 
   depends_on "cabal-install" => :build

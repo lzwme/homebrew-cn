@@ -59,7 +59,7 @@ class Otf2 < Formula
     ENV["PYTHON"] = which(python3)
     ENV["SPHINX"] = Formula["sphinx-doc"].opt_bin"sphinx-build"
 
-    # Bundled `build-configpy-compile` isn't compatabile with python 3.12 due to `imp` usage
+    # Bundled `build-configpy-compile` isn't compatible with python 3.12 due to `imp` usage
     # TODO: check if we can remove this and `autoconf` + `automake` deps
     system "autoreconf", "--force", "--install", "--verbose"
     system ".configure", "--disable-silent-rules", *std_configure_args

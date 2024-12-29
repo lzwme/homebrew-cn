@@ -1,18 +1,18 @@
 class Smartdns < Formula
   desc "Rule-based DNS server for fast IP resolution, DoTDoQDoHDoH3 supported"
   homepage "https:github.commokeyishsmartdns-rs"
-  url "https:github.commokeyishsmartdns-rsarchiverefstagsv0.9.0.tar.gz"
-  sha256 "80048b1d07e5b009eae0ab42e9192ee39a92a9694011b4ceeac4be2a5a41114e"
+  url "https:github.commokeyishsmartdns-rsarchiverefstagsv0.9.1.tar.gz"
+  sha256 "120b6c750cb8fb063ddbc7de42458c6a3e4b7cfdc2650914022bddc324a75894"
   license "GPL-3.0-only"
   head "https:github.commokeyishsmartdns-rs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34b863eb708ca47f00e07e0ecf9afd7510d6b83fe6386518dccd9fb4e862219c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50e8e9587095af5017693baf8698b8bd8c3d6f9a0ceaaea9d59c141c03a73b89"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1c94498c25a5687d2195c8e33c6f6319eef6de750717225f31d191ac9ec06029"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c341f38b3d70ee1ac61f49baf9c291eecf75cf3da120c72c642e98a35c9a42e1"
-    sha256 cellar: :any_skip_relocation, ventura:       "35d074ac44f263881052fcee729a4e6133a34eded9580d742fc1ce7b804631d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4938ab6f8fc7a5c0351de6b5f6e1ddde636a0336b214b011e96905a2d4b3b30"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "639c0b5b272a34fd146b6511353ab1fd5a961718e0bbc7542b0cb24873c5cd34"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07a72f096a91617f4c87a297c35fed403a7f03c949e9184c341641d3bb44b52e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9b1950dcad30bacc672e60747b93b1cb8879e79f08ebadfc6411a070bc313147"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ad7944e95a74bffdbab5320c379967f525f7197b40501002f9c8db523072a1f5"
+    sha256 cellar: :any_skip_relocation, ventura:       "408b520be64c4eebd59e9110e75e7c271e198f70d22b3d393f5880559c311dc0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "294abaf73ccf0ded6bcfd3c9e0d848a71521ba6df05934f95450b54d7b497053"
   end
 
   depends_on "just" => :build

@@ -15,6 +15,11 @@ class Graphviz < Formula
     end
   end
 
+  livecheck do
+    url "https:graphviz.orgdownloadsource"
+    regex(href=.*?graphviz[._-]v?(\d+(?:\.\d+)+)\.ti)
+  end
+
   bottle do
     sha256 arm64_sequoia: "1021bca3aee2d641cc8b3741820f4df48c2f53916cfb6cff3ed1fc664ebdf5dd"
     sha256 arm64_sonoma:  "067aecda0ddbf4b5593f81aaca952ef5d14992f9e0fcff692ba29cc2c868330e"

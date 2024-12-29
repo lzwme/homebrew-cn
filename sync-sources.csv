@@ -553,7 +553,7 @@ Homebrew-homebrew-core/Formula/b/bltool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bluepill.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bluetoothconnector.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/blueutil.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/b/bluez.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/bluez.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bmake.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bmon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bnd.rb, Homebrew/homebrew-core, 0
@@ -717,6 +717,7 @@ Homebrew-homebrew-core/Formula/c/cargo-dist.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-docset.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-edit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-expand.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cargo-flamegraph.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-fuzz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-generate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-instruments.rb, Homebrew/homebrew-core, 1
@@ -2341,6 +2342,7 @@ Homebrew-homebrew-core/Formula/g/go-feature-flag-relay-proxy.rb, Homebrew/homebr
 Homebrew-homebrew-core/Formula/g/go-jira.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-jsonnet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-md2man.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/go-parquet-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-size-analyzer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-statik.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/go-task.rb, Homebrew/homebrew-core, 1
@@ -4296,6 +4298,7 @@ Homebrew-homebrew-core/Formula/m/monitoring-plugins.rb, Homebrew/homebrew-core, 
 Homebrew-homebrew-core/Formula/m/monkeysphere.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mono-libgdiplus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mono.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/monocle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/monolith.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/montage.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/moon-buggy.rb, Homebrew/homebrew-core, 1
@@ -6986,6 +6989,7 @@ Homebrew-homebrew-core/Formula/w/waypoint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wazero.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wb32-dfu-updater_cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wcslib.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/w/wcstools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wcurl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wdc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wdfs.rb, Homebrew/homebrew-core, 0
@@ -8464,7 +8468,7 @@ Homebrew-homebrew-cask/Casks/d/dwarf-fortress.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dwgsee.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dwihn0r-keepassx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dyalog.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/d/dymo-label.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/dymo-connect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dyn-updater.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dynalist.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dynamic-dark-mode.rb, Homebrew/homebrew-cask, 1

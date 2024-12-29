@@ -5,6 +5,33 @@ class GnuGetopt < Formula
   sha256 "d78b37a66f5922d70edf3bdfb01a6b33d34ed3c3cafd6628203b2a2b67c8e8b3"
   license "GPL-2.0-or-later"
 
+  livecheck do
+    url "https:mirrors.edge.kernel.orgpublinuxutilsutil-linux"
+    regex(href=.*?util-linux[._-]v?(\d+(?:\.\d+)+)\.ti)
+    strategy :page_match do |page, regex|
+      # Match versions from directories
+      versions = page.scan(%r{href=["']?v?(\d+(?:\.\d+)+)?["' >]}i)
+                     .flatten
+                     .uniq
+                     .sort_by { |v| Version.new(v) }
+      next versions if versions.blank?
+
+      # Assume the last-sorted version is newest
+      newest_version = versions.last
+
+      # Fetch the page for the newest version directory
+      dir_page = Homebrew::Livecheck::Strategy.page_content(
+        URI.join(@url, "v#{newest_version}").to_s,
+      )
+      next versions if dir_page[:content].blank?
+
+      # Identify versions from files in the version directory
+      dir_versions = dir_page[:content].scan(regex).flatten
+
+      dir_versions || versions
+    end
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8025c5fff22016f9d616a7f7f94de79ece01db73f6e2ef3032a038621e894abb"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ab9985a8189d89d997042764ca3a413380798f7faddb032c77613c392724daae"

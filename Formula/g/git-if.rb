@@ -1,11 +1,18 @@
 class GitIf < Formula
   desc "Glulx interpreter that is optimized for speed"
-  homepage "https:ifarchive.orgindexesif-archiveXprogrammingXglulxXinterpretersXgit.html"
+  homepage "https:ifarchive.orgindexesif-archiveprogrammingglulxinterpretersgit"
   url "https:ifarchive.orgif-archiveprogrammingglulxinterpretersgitgit-138.zip"
   version "1.3.8"
   sha256 "59de132505fdf2d212db569211c18ff0f1f4c1032c5370b95272d2c2b4e95c00"
   license "MIT"
   head "https:github.comDavidKinderGit.git", branch: "master"
+
+  # The archive filename uses a dotless version, so we match the version from
+  # the "Git 1.2.3" text after the archive link.
+  livecheck do
+    url :homepage
+    regex(href=.*?git[._-]v?\d+(?:\.\d+)*\.(?:t|zip).+?Git\s+v?(\d+(?:\.\d+)+)im)
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2918859c7196c31d059c74c800d7207bb77aa90b6b1ee67f07348a8d9871151a"

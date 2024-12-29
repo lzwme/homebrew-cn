@@ -50,12 +50,8 @@ class Jinja2Cli < Formula
   end
 
   test do
-    output = if OS.mac?
-      shell_output("script -q devnull #{bin}jinja2 --version")
-    else
-      shell_output("script -q devnull -e -c \"#{bin}jinja2 --version\"")
-    end
-    assert_match version.to_s, output
+    assert_match version.to_s, shell_output("#{bin}jinja2 --version")
+
     expected_result = <<~EOS
       The Beatles:
       - Ringo Starr
@@ -71,7 +67,7 @@ class Jinja2Cli < Formula
       {% endfor -%}
     EOS
     template_variables_file = testpath"my-template-variables.json"
-    template_variables_file.write <<~EOS
+    template_variables_file.write <<~JSON
       {
         "band": {
           "name": "The Beatles",
@@ -83,8 +79,8 @@ class Jinja2Cli < Formula
           ]
         }
       }
-    EOS
+    JSON
     output = shell_output("#{bin}jinja2 #{template_file} #{template_variables_file}")
-    assert_equal output, expected_result
+    assert_equal expected_result, output
   end
 end
