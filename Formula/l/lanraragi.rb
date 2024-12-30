@@ -1,19 +1,18 @@
 class Lanraragi < Formula
   desc "Web application for archival and reading of mangadoujinshi"
   homepage "https:github.comDifegueLANraragi"
-  url "https:github.comDifegueLANraragiarchiverefstagsv.0.9.22.tar.gz"
-  sha256 "979b819994fdf4260a19bf276aef407da9c1d9d294bee44fc7a1f600c1ce5696"
+  url "https:github.comDifegueLANraragiarchiverefstagsv.0.9.30.tar.gz"
+  sha256 "ec3ec61acebaf427e5c8b6873fd477d6aae5b084552ac981112692535ad0fbdf"
   license "MIT"
   head "https:github.comDifegueLANraragi.git", branch: "dev"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "2a7275439b294f72023ac1504a45fb965d53755baf6fd9a9e991e1593a810285"
-    sha256 cellar: :any,                 arm64_sonoma:  "b85651e4ab341d8af56a2841123455d929bea02b9bf2894d7ec95436ad7d1811"
-    sha256 cellar: :any,                 arm64_ventura: "2e0d1db33e27f99d320e15b07569941e8493de031cac8ae8d7ddb99e1f55c3b2"
-    sha256 cellar: :any,                 sonoma:        "67b587ef379adbd02c1a06fc00853e511462d60bf1d44c5994f79d975343e1b6"
-    sha256 cellar: :any,                 ventura:       "ea30b9840d34c455744871551cd6c55152e1a9785d28dced8048c75f1c4f1896"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8df596c32e9240b2457921e8ae84d6d566e202735b0dcf58fe6efd05a169440"
+    sha256 cellar: :any,                 arm64_sequoia: "dabd80ac33bd251fb05017964420e48c542095b275f86330c6abe2242dcbac53"
+    sha256 cellar: :any,                 arm64_sonoma:  "1ef34ca2ccb4c9f3e317a2d458c1e1b818aa9f3f3e0083d50be001ff47515972"
+    sha256 cellar: :any,                 arm64_ventura: "eb632569f52619d1102c01f3d8ac50b12b48d30d6b9a078026242455a6479f4a"
+    sha256 cellar: :any,                 sonoma:        "4751aad23f69d0aaa3d02c140bf3468ad6a9b01088165435fcbd4a4638371bf8"
+    sha256 cellar: :any,                 ventura:       "87e9fefcf02eb7c04a42811bcb08639d9facc7b727ba13fef0927ce516df137e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae0d76c2177e8d830c0b6c2729c37130fda9dcb4cffbf4322e1b83b18e3db8c1"
   end
 
   depends_on "pkgconf" => :build

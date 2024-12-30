@@ -1,25 +1,25 @@
 class Sourcery < Formula
   desc "Meta-programming for Swift, stop writing boilerplate code"
   homepage "https:github.comkrzysztofzablockiSourcery"
-  url "https:github.comkrzysztofzablockiSourceryarchiverefstags2.2.5.tar.gz"
-  sha256 "6f4d4d2859e57039f9d49f737a696d0f22aecaffd553a7d5039fa2007103994f"
+  url "https:github.comkrzysztofzablockiSourceryarchiverefstags2.2.6.tar.gz"
+  sha256 "5e63ed976ca74df7483a6508796ea9d570766e387d3631b474c81b67d1c771f9"
   license "MIT"
-  revision 1
   version_scheme 1
   head "https:github.comkrzysztofzablockiSourcery.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71a57229b8bfaab27f073c8cc07a211558ff394905fef154d0b1ade1c6d7ea61"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b82e5b008f23e3dec7d016755a3cc877daa64e565be7722e89e35cd2258ed71"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7347a5d596dd15979b3befcef52dff53a354fa2acf7f64bfca26cc38f5b98ee8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "007d74c9daa1026a9fd5d22ed751474b203dcec6466228a860f926664c7c0f51"
-    sha256 cellar: :any_skip_relocation, ventura:       "b963422707a34b8ba8eeb39129031d8bebb90b4c243b49d1a629df372fbe6412"
-    sha256                               x86_64_linux:  "28c3a0eb1d8e30f1b5f413ceb51be9efe83f5b340eb986d8a98f07bdcfe125c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af818510164d00393b484c87bbf617aa785d399da744fd157026e3325553ee18"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "29573fbcdc7c57968bb93d773ff7e6f26a16c2f9294fde7b2cdaa5379b9dbb22"
+    sha256 cellar: :any,                 arm64_ventura: "8e8c8c7e8ec176a95edfb8ce21ee280d9ff5420d03cb90d7caeb60579335a252"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9b422f632ebfbaaad72bf6322a8006d330d7cb9af346d782e030becc0f2e0228"
+    sha256 cellar: :any,                 ventura:       "8a4809736a2732ad61de0bd27a835081dd66d54fb0438f390c442b7a2902efed"
+    sha256                               x86_64_linux:  "48f8ec1325bcae22e80053804d915b42c17368fa2a3c0cb11e755b2b6db8e55d"
   end
 
   depends_on xcode: "14.3"
 
   uses_from_macos "ruby" => :build
+  uses_from_macos "swift" => :build, since: :sonoma # swift 5.10+
   uses_from_macos "curl"
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"

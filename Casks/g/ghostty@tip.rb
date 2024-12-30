@@ -1,6 +1,6 @@
 cask "ghostty@tip" do
-  version "8543,5293fc9c2f19b7e01472de8c2ef08bef603b754a"
-  sha256 "d9a4a785d5493470bdeec1742a837166dc5758a6bb49a6f563c99a4198c09959"
+  version "8606,d5703a57e7d7bcf8dd9bd5711d9f351e5a43446b"
+  sha256 "0b2a4ffe973e73a25e70851146a0c6d0c926b075382d2bdbb940707292d5018f"
 
   url "https://tip.files.ghostty.org/#{version.csv.second}/Ghostty.dmg"
   name "Ghostty"
@@ -30,10 +30,6 @@ cask "ghostty@tip" do
          target: "#{HOMEBREW_PREFIX}/share/fish/vendor_completions.d/ghostty.fish"
   binary "#{appdir}/Ghostty.app/Contents/Resources/zsh/site-functions/_ghostty",
          target: "#{HOMEBREW_PREFIX}/share/zsh/site-functions/_ghostty"
-  binary "#{appdir}/Ghostty.app/Contents/Resources/terminfo/67/ghostty",
-         target: "#{ENV.fetch("TERMINFO", "~/.terminfo")}/67/ghostty"
-  binary "#{appdir}/Ghostty.app/Contents/Resources/terminfo/78/xterm-ghostty",
-         target: "#{ENV.fetch("TERMINFO", "~/.terminfo")}/78/xterm-ghostty"
   manpage "#{appdir}/Ghostty.app/Contents/Resources/man/man1/ghostty.1"
   manpage "#{appdir}/Ghostty.app/Contents/Resources/man/man5/ghostty.5"
 

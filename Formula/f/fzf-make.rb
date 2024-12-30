@@ -1,18 +1,18 @@
 class FzfMake < Formula
   desc "Fuzzy finder with preview window for make, pnpm, & yarn"
   homepage "https:github.comkyu08fzf-make"
-  url "https:github.comkyu08fzf-makearchiverefstagsv0.52.0.tar.gz"
-  sha256 "4cb9b8c0fbe2727b29269bb3db389b31814de2cbd15ed33de2ea9b5f3a4c7713"
+  url "https:github.comkyu08fzf-makearchiverefstagsv0.53.0.tar.gz"
+  sha256 "7f2efbfadbf05cd92d09d64f296621757291b798b372f72335fae6c0dd9c156b"
   license "MIT"
   head "https:github.comkyu08fzf-make.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98ed132d902f5de26280192e777d68afee735771e2a6d239d478334c5d054ce1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d47d7bba21d510ee5c33ce9bd619bb28f433055f099db77a31590776ba0a576f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8f0334bec304ddb810f198534127ab1e2579276259e5e8d922a0184fe855cf1c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8dfe1dccd504fe8704247f9d7ae459f77958b63d911b168a9e79dc8da8016d8b"
-    sha256 cellar: :any_skip_relocation, ventura:       "bcad1e888b7bb7b0d26f4d77178525753f82e865b67527f361459cec9b422542"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4dc0122cebbd3e98fb562a2b51adcbf4e756dc976a97c475969e500fee4bea7f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18060803254eb1d10e1318ec5efc314ac1379c973af3a18e2d84ca67914fd8e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "16bad69eefdcc2eba00f93f18f235d3f427269f5ed2f73173cbd2b6613711acc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "db694b111ab497ee674f26d928772eef489e5c931360b6847af67c7582b3befe"
+    sha256 cellar: :any_skip_relocation, sonoma:        "12ca6d1e963e0dc81298043b0dd4e99ddf6a2357bac7201b4515c5cc8a54c4b2"
+    sha256 cellar: :any_skip_relocation, ventura:       "d9eef07a826f7eb822ebec07ef636340b770c2cc191f27bbbb3769e01e2fdc24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2cebfc1daf9e5a416031108a7a0200174bbf876e3454351f7706bb9022a530d2"
   end
 
   depends_on "rust" => :build

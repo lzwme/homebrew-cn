@@ -1,19 +1,18 @@
 class TexFmt < Formula
   desc "Extremely fast LaTeX formatter written in Rust"
   homepage "https:github.comWGUNDERWOODtex-fmt"
-  url "https:github.comWGUNDERWOODtex-fmtarchiverefstagsv0.5.0.tar.gz"
-  sha256 "f7c8444efeaa9ad33914d2d64d92b054854a47ab0a756ed81ca333849892e6da"
+  url "https:github.comWGUNDERWOODtex-fmtarchiverefstagsv0.5.1.tar.gz"
+  sha256 "60c74c8f0155d1324e10c4e97c774bd0dd4449cbdd703b704d791a3c0f0b0364"
   license "MIT"
   head "https:github.comWGUNDERWOODtex-fmt.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d45f919e9777d304f57d735ecdc7217f33775d6a740e9dfaea0938ef735bc649"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d94379fc8e241a72b95e9111d238683e16ae2d3dea0acba10f70c5275b100d16"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "710733d6c3d6b26e10691fb7b589bdd450d2994adc388ae9f459974f03fd74b6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5b642db55484229218e7d31861f74a260af15fe838faa4f7d021e2478d009b06"
-    sha256 cellar: :any_skip_relocation, ventura:       "b0d466698f4be950027967f962b017f6ff982e5205c02cdc04c4680fb6a96cb8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b457542a662e1d33f2e826dd8d67fce5be16ebbf37395291f3c4469b951ceb8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bca1508079191377c44231ef1aff3150e00dbd0100e35df91ddfd5481cd4b669"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5cbd11af828ec9c23a1431138f0e964e6576f0afa081b8b07e8a36dd3ef8ab2e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ee6a729c75f6cf03117ed8b5f1d3a30eb8a392b9eb5b2db16692d10240a5eeac"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e34164bc0c65f0791dbd95f81c6f0a547ed2c9f26ca310875a7fc59de325ab1f"
+    sha256 cellar: :any_skip_relocation, ventura:       "193287b0b307c8764387724a990edc046fefddc394d3b19558fc459b89b31d3c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c7f0ddbe932b399ae82059ff500444e382394c42815dbf77d658a1082e6dd43"
   end
 
   depends_on "rust" => :build

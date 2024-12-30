@@ -23,7 +23,7 @@ class Alac < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "01ddb3fb230954f624b068100ddcffa8c288481489f6cd62143beac4cd1e3c45"
   end
 
-  deprecate! date: "2024-01-10", because: :repo_removed
+  disable! date: "2025-01-10", because: :repo_removed
 
   def install
     system "make", "CFLAGS=#{ENV.cflags}", "CC=#{ENV.cc}"

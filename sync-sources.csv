@@ -5082,6 +5082,7 @@ Homebrew-homebrew-core/Formula/p/pike.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/piknik.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pillar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pillow.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pinact.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pinboard-notes-backup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pinentry-mac.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pinentry.rb, Homebrew/homebrew-core, 0
@@ -5490,6 +5491,7 @@ Homebrew-homebrew-core/Formula/r/rasqal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ratchet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ratfor.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rathole.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/ratify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rats.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rattler-build.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rav1e.rb, Homebrew/homebrew-core, 1
@@ -6304,6 +6306,7 @@ Homebrew-homebrew-core/Formula/s/swagger-codegen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/swagger-codegen@2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/swagger2markup-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/swaks.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/swc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/swctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/swfmill.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/swftools.rb, Homebrew/homebrew-core, 0
@@ -12435,8 +12438,8 @@ Homebrew-homebrew-cask/Casks/m/mubu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mucommander.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mudlet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mullvad-browser.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/mullvadvpn.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/mullvadvpn@beta.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/mullvadvpn.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/mullvadvpn@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/multi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/multiapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/multibit-hd.rb, Homebrew/homebrew-cask, 1
@@ -13274,8 +13277,8 @@ Homebrew-homebrew-cask/Casks/r/red-canary-mac-monitor.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/r/red-eye.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/redcine-x-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/redeclipse.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/r/redis-insight.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/redis-pro.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/r/redisinsight.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/redquits.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/redream.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/reflect.rb, Homebrew/homebrew-cask, 1
@@ -14144,8 +14147,8 @@ Homebrew-homebrew-cask/Casks/t/tunein.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tuneinstructor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tunetag.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tunnelbear.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/t/tunnelblick.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/t/tunnelblick@beta.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/t/tunnelblick.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/tunnelblick@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tuple.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/turbo-boost-switcher.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/turbovnc-viewer.rb, Homebrew/homebrew-cask, 1

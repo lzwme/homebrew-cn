@@ -20,7 +20,7 @@ class Mxnet < Formula
   end
 
   # Moved into the Attic in 2023-09: https://attic.apache.org/projects/mxnet.html
-  deprecate! date: "2024-01-05", because: :deprecated_upstream
+  disable! date: "2025-01-05", because: :deprecated_upstream
 
   depends_on "cmake" => :build
   depends_on "openblas"

@@ -2,28 +2,18 @@ cask "mullvadvpn@beta" do
   version "2024.9-beta1"
   sha256 "a450bbf063c20f5c87a4788bbd33827140f2bc7bee36a96f0f0221b4ba2cc9ff"
 
-  url "https:github.commullvadmullvadvpn-appreleasesdownload#{version}MullvadVPN-#{version}.pkg",
-      verified: "github.commullvadmullvadvpn-app"
+  url "https://cdn.mullvad.net/app/desktop/releases/#{version}/MullvadVPN-#{version}.pkg"
   name "Mullvad VPN"
   desc "VPN client"
-  homepage "https:mullvad.net"
+  homepage "https://mullvad.net/"
 
   livecheck do
-    url :url
-    regex(^v?(\d+(?:\.\d+)+[._-]beta\d*)$i)
-    strategy :github_releases do |json, regex|
-      json.map do |release|
-        next if release["draft"]
-
-        match = release["tag_name"]&.match(regex)
-        next if match.blank?
-
-        match[1]
-      end
-    end
+    url "https://mullvad.net/download/app/pkg/latest-beta"
+    strategy :header_match
   end
 
   conflicts_with cask: "mullvadvpn"
+  depends_on macos: ">= :ventura"
 
   pkg "MullvadVPN-#{version}.pkg"
 
@@ -32,10 +22,10 @@ cask "mullvadvpn@beta" do
             pkgutil:   "net.mullvad.vpn"
 
   zap trash: [
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsnet.mullvad.vpn.sfl*",
-    "~LibraryApplication SupportMullvad VPN",
-    "~LibraryLogsMullvad VPN",
-    "~LibraryPreferencesnet.mullvad.vpn.helper.plist",
-    "~LibraryPreferencesnet.mullvad.vpn.plist",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/net.mullvad.vpn.sfl*",
+    "~/Library/Application Support/Mullvad VPN",
+    "~/Library/Logs/Mullvad VPN",
+    "~/Library/Preferences/net.mullvad.vpn.helper.plist",
+    "~/Library/Preferences/net.mullvad.vpn.plist",
   ]
 end

@@ -17,7 +17,7 @@ class Nativefier < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1f12e3086887b5424fc4a6b718a323f2bc207069ebb4a9419f35680e8ef82fdd"
   end
 
-  deprecate! date: "2024-01-06", because: :repo_archived
+  disable! date: "2025-01-06", because: :repo_archived
 
   depends_on "node"
 

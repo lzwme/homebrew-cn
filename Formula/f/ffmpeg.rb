@@ -1,13 +1,22 @@
 class Ffmpeg < Formula
   desc "Play, record, convert, and stream audio and video"
   homepage "https:ffmpeg.org"
-  url "https:ffmpeg.orgreleasesffmpeg-7.1.tar.xz"
-  sha256 "40973d44970dbc83ef302b0609f2e74982be2d85916dd2ee7472d30678a7abe6"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   license "GPL-2.0-or-later"
   revision 4
   head "https:github.comFFmpegFFmpeg.git", branch: "master"
+
+  stable do
+    url "https:ffmpeg.orgreleasesffmpeg-7.1.tar.xz"
+    sha256 "40973d44970dbc83ef302b0609f2e74982be2d85916dd2ee7472d30678a7abe6"
+
+    # Backport fix needed for recent x265 (v4.1 is X265_BUILD=215)
+    patch do
+      url "https:github.comFFmpegFFmpegcommit099f88b8641dfc299f3896d17d9addc5b9ae7799.patch?full_index=1"
+      sha256 "43677660210523f0eb6db93c4ac9c7943c959116951a5859e6f14568b4392a59"
+    end
+  end
 
   livecheck do
     url "https:ffmpeg.orgdownload.html"
@@ -15,12 +24,13 @@ class Ffmpeg < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "93895f643d4ec0864199f4b37165322cdfa906556097df4dc3c90b4a286c0333"
-    sha256 arm64_sonoma:  "37bda6956613bee3457dd4dd09a6982441dee3ff1649dc232b7e66e13b054fe4"
-    sha256 arm64_ventura: "73a4bb1c01d54edfd9bb7718ac77036fc7a4a1211b429b162ec705d7f126decf"
-    sha256 sonoma:        "90f8031ed9db1a584872d6021505ee2a65e54fde45b6d49e932965c2963a458d"
-    sha256 ventura:       "265facffdc170f5c02620768227129753977bf90b894424670568e04f849ac3d"
-    sha256 x86_64_linux:  "2ffbfc422fdef4b5d344e1375bcc0daf84472b1756e291f6f34c941b4d5b25cc"
+    rebuild 1
+    sha256 arm64_sequoia: "dc9c14c6a2012ffbfd8edc71ab2f3c2d1ccddce3a9dbb02a3054078223f1642b"
+    sha256 arm64_sonoma:  "20bec802778d6466d8d53ebe5d56db49e6a6e72ed99a8b3b6231e448db68aa4e"
+    sha256 arm64_ventura: "07ca463e1102cd39b55d72c1e074d1d09050a06b5504eea4231570faeb16855d"
+    sha256 sonoma:        "6d6e0ef09f39c9ffc3169a0dc7ad91a70d901c2d4e41702292820ce2b6d5b631"
+    sha256 ventura:       "a022f69edc0197a41ae1ac786b9c3345fe141b5fee1dab8ff895b85feebb51b6"
+    sha256 x86_64_linux:  "e3fed64971ccc8cabeccb8f7e37e9ee25fb84845da5a56513c881f0377d6bc35"
   end
 
   depends_on "pkgconf" => :build

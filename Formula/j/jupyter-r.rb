@@ -22,16 +22,14 @@ class JupyterR < Formula
   depends_on "r"
   depends_on "zeromq"
 
-  uses_from_macos "expect" => :test
-
   on_macos do
     depends_on "gettext"
   end
 
   resource "rlang" do
-    url "https:cloud.r-project.orgsrccontribrlang_1.1.3.tar.gz"
-    mirror "https:cloud.r-project.orgsrccontribArchiverlangrlang_1.1.3.tar.gz"
-    sha256 "24a3424b5dc2c4bd3e5f7c0b54fbe1355028e329181b2d41f4464c8ade28bf0a"
+    url "https:cloud.r-project.orgsrccontribrlang_1.1.4.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchiverlangrlang_1.1.4.tar.gz"
+    sha256 "f2d74527508bf3287102470beb27de0d234c3cbba399c28d3312f2c83c64a6e1"
   end
 
   resource "fastmap" do
@@ -47,9 +45,9 @@ class JupyterR < Formula
   end
 
   resource "cli" do
-    url "https:cloud.r-project.orgsrccontribcli_3.6.2.tar.gz"
-    mirror "https:cloud.r-project.orgsrccontribArchiveclicli_3.6.2.tar.gz"
-    sha256 "4c0749e3711b2b6ae90fd992784303bc8d98039599cac1deb397239a7018e151"
+    url "https:cloud.r-project.orgsrccontribcli_3.6.3.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchiveclicli_3.6.3.tar.gz"
+    sha256 "4295085f11221c54b1dd2b1d39a675a85dfd9f900294297567e1d36f65ac4841"
   end
 
   resource "fansi" do
@@ -59,9 +57,9 @@ class JupyterR < Formula
   end
 
   resource "glue" do
-    url "https:cloud.r-project.orgsrccontribglue_1.7.0.tar.gz"
-    mirror "https:cloud.r-project.orgsrccontribArchiveglueglue_1.7.0.tar.gz"
-    sha256 "1af51b51f52c1aeb3bfe9349f55896dd78b5542ffdd5654e432e4d646e4a86dc"
+    url "https:cloud.r-project.orgsrccontribglue_1.8.0.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchiveglueglue_1.8.0.tar.gz"
+    sha256 "c86f364ba899b8662f5da3e1a75f43ae081ab04e0d51171d052356e7ee4b72a0"
   end
 
   resource "lifecycle" do
@@ -89,9 +87,9 @@ class JupyterR < Formula
   end
 
   resource "digest" do
-    url "https:cloud.r-project.orgsrccontribdigest_0.6.35.tar.gz"
-    mirror "https:cloud.r-project.orgsrccontribArchivedigestdigest_0.6.35.tar.gz"
-    sha256 "cc333fbb05059c4973d0ca5d0f1322c812943d81cdbfa18455f72267abd8781f"
+    url "https:cloud.r-project.orgsrccontribdigest_0.6.37.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchivedigestdigest_0.6.37.tar.gz"
+    sha256 "82c4d149994b8a4a9af930f5a8e47420829935abed41f3f9030e94b6a48f0321"
   end
 
   resource "htmltools" do
@@ -101,15 +99,15 @@ class JupyterR < Formula
   end
 
   resource "pillar" do
-    url "https:cloud.r-project.orgsrccontribpillar_1.9.0.tar.gz"
-    mirror "https:cloud.r-project.orgsrccontribArchivepillarpillar_1.9.0.tar.gz"
-    sha256 "f23eb486c087f864c2b4072d5cba01d5bebf2f554118bcba6886d8dbceb87acc"
+    url "https:cloud.r-project.orgsrccontribpillar_1.10.0.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchivepillarpillar_1.10.0.tar.gz"
+    sha256 "97f6bb5d54388e9fbc2d6e5d3c883374105fadbc9c9aad38e7b4e1389970eadb"
   end
 
   resource "jsonlite" do
-    url "https:cloud.r-project.orgsrccontribjsonlite_1.8.8.tar.gz"
-    mirror "https:cloud.r-project.orgsrccontribArchivejsonlitejsonlite_1.8.8.tar.gz"
-    sha256 "7de21316984c3ba3d7423d12f43d1c30c716007c5e39bf07e11885e0ceb0caa4"
+    url "https:cloud.r-project.orgsrccontribjsonlite_1.8.9.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchivejsonlitejsonlite_1.8.9.tar.gz"
+    sha256 "89f130e0e1163328c01decd54e7712b5ebf3d0a667da0052833722cb9a6e90b0"
   end
 
   resource "repr" do
@@ -119,9 +117,9 @@ class JupyterR < Formula
   end
 
   resource "evaluate" do
-    url "https:cloud.r-project.orgsrccontribevaluate_0.23.tar.gz"
-    mirror "https:cloud.r-project.orgsrccontribArchiveevaluateevaluate_0.23.tar.gz"
-    sha256 "c9cf9c37502b8fbfa78e4eb96b8c3d1789060e49505c86c07cb7476da804a45c"
+    url "https:cloud.r-project.orgsrccontribevaluate_1.0.1.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchiveevaluateevaluate_1.0.1.tar.gz"
+    sha256 "436cc3e55b53e3c618b2f31324840875b5d66076c737af6fb31c650c783171e2"
   end
 
   resource "IRdisplay" do
@@ -131,24 +129,21 @@ class JupyterR < Formula
   end
 
   resource "pbdZMQ" do
-    url "https:cloud.r-project.orgsrccontribpbdZMQ_0.3-11.tar.gz"
-    mirror "https:cloud.r-project.orgsrccontribArchivepbdZMQpbdZMQ_0.3-11.tar.gz"
-    sha256 "da7e204d857370201f75a05fbd808a2f409d440cc96855bb8f48f4a5dd75405b"
-
-    # Remove use of -flat_namespace.
-    patch :DATA
+    url "https:cloud.r-project.orgsrccontribpbdZMQ_0.3-13.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchivepbdZMQpbdZMQ_0.3-13.tar.gz"
+    sha256 "4139a88323642b734a83a8d73ea34550f8ef279389e794a5a3a5f3e8f579839a"
   end
 
   resource "crayon" do
-    url "https:cloud.r-project.orgsrccontribcrayon_1.5.2.tar.gz"
-    mirror "https:cloud.r-project.orgsrccontribArchivecrayoncrayon_1.5.2.tar.gz"
-    sha256 "70a9a505b5b3c0ee6682ad8b965e28b7e24d9f942160d0a2bad18eec22b45a7a"
+    url "https:cloud.r-project.orgsrccontribcrayon_1.5.3.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchivecrayoncrayon_1.5.3.tar.gz"
+    sha256 "3e74a0685541efb5ea763b92cfd5c859df71c46b0605967a0b5dbb7326e9da69"
   end
 
   resource "uuid" do
-    url "https:cloud.r-project.orgsrccontribuuid_1.2-0.tar.gz"
-    mirror "https:cloud.r-project.orgsrccontribArchiveuuiduuid_1.2-0.tar.gz"
-    sha256 "73710a14f812e34e891795b8945ea213f15ebcaf00b464b0e4b3fa09cf222afd"
+    url "https:cloud.r-project.orgsrccontribuuid_1.2-1.tar.gz"
+    mirror "https:cloud.r-project.orgsrccontribArchiveuuiduuid_1.2-1.tar.gz"
+    sha256 "f90e49733d7d6ea7cf91abdc07b7d0e9a34a4b993e6914d754f0621281fc4b96"
   end
 
   def install
@@ -191,63 +186,29 @@ class JupyterR < Formula
     ENV["R_LIBS_SITE"] = lib"Rsite-library"
     assert_match " ir ", shell_output("#{jupyter} kernelspec list")
 
-    (testpath"console.exp").write <<~EOS
-      spawn #{jupyter} console --kernel=ir
-      expect -timeout 60 "In "
-      send "print('Hello Homebrew')\r"
-      expect -timeout 60 "In "
-      send "exit\r"
-    EOS
-    output = shell_output("expect -f console.exp")
-    assert_match "R version #{r_version}", output
-    assert_match "Hello Homebrew", output
+    require "expect"
+    require "pty"
+    PTY.spawn(jupyter, "console", "--kernel=ir") do |r, w, pid|
+      timeout = 30
+      r.expect("In [1]:", timeout) do |result|
+        refute_nil result, "Expected In [1] prompt"
+        assert_match "R version #{r_version}", result.first
+      end
+      w.write "print('Hello Homebrew')\r"
+      r.expect("In [2]:", timeout) do |result|
+        refute_nil result, "Expected In [2] prompt"
+        assert_match '[1] "Hello Homebrew"', result.first
+      end
+      w.write "mean(c(1, 2, 3, 4))\r"
+      r.expect("In [3]:", timeout) do |result|
+        refute_nil result, "Expected In [3] prompt"
+        assert_match "[1] 2.5", result.first
+      end
+      w.write "quit()\r"
+    ensure
+      r.close
+      w.close
+      Process.wait(pid)
+    end
   end
 end
-
-__END__
---- asrczmqsrcconfiglibtool.m4
-+++ bsrczmqsrcconfiglibtool.m4
-@@ -1045,16 +1045,11 @@ _LT_EOF
-       _lt_dar_allow_undefined='${wl}-undefined ${wl}suppress' ;;
-     darwin1.*)
-       _lt_dar_allow_undefined='${wl}-flat_namespace ${wl}-undefined ${wl}suppress' ;;
--    darwin*) # darwin 5.x on
--      # if running on 10.5 or later, the deployment target defaults
--      # to the OS version, if on x86, and 10.4, the deployment
--      # target defaults to 10.4. Don't you love it?
--      case ${MACOSX_DEPLOYMENT_TARGET-10.0},$host in
--	10.0,*86*-darwin8*|10.0,*-darwin[[91]]*)
--	  _lt_dar_allow_undefined='${wl}-undefined ${wl}dynamic_lookup' ;;
--	10.[[012]]*)
-+    darwin*)
-+      case ${MACOSX_DEPLOYMENT_TARGET},$host in
-+	10.[[012]],*|,*powerpc*)
- 	  _lt_dar_allow_undefined='${wl}-flat_namespace ${wl}-undefined ${wl}suppress' ;;
--	10.*)
-+	*)
- 	  _lt_dar_allow_undefined='${wl}-undefined ${wl}dynamic_lookup' ;;
-       esac
-     ;;
---- asrczmqsrcconfigure
-+++ bsrczmqsrcconfigure
-@@ -10686,16 +10686,11 @@ $as_echo "$lt_cv_ld_force_load" >&6; }
-       _lt_dar_allow_undefined='${wl}-undefined ${wl}suppress' ;;
-     darwin1.*)
-       _lt_dar_allow_undefined='${wl}-flat_namespace ${wl}-undefined ${wl}suppress' ;;
--    darwin*) # darwin 5.x on
--      # if running on 10.5 or later, the deployment target defaults
--      # to the OS version, if on x86, and 10.4, the deployment
--      # target defaults to 10.4. Don't you love it?
--      case ${MACOSX_DEPLOYMENT_TARGET-10.0},$host in
--	10.0,*86*-darwin8*|10.0,*-darwin[91]*)
--	  _lt_dar_allow_undefined='${wl}-undefined ${wl}dynamic_lookup' ;;
--	10.[012]*)
-+    darwin*)
-+      case ${MACOSX_DEPLOYMENT_TARGET},$host in
-+	10.[012],*|,*powerpc*)
- 	  _lt_dar_allow_undefined='${wl}-flat_namespace ${wl}-undefined ${wl}suppress' ;;
--	10.*)
-+	*)
- 	  _lt_dar_allow_undefined='${wl}-undefined ${wl}dynamic_lookup' ;;
-       esac
-     ;;

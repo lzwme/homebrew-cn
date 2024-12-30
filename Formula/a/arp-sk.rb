@@ -23,7 +23,7 @@ class ArpSk < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a6745104a8b8035108f38a3f35ae90527790a02641cca54c29e99c962c74f16"
   end
 
-  deprecate! date: "2024-01-10", because: :repo_removed
+  disable! date: "2025-01-10", because: :repo_removed
 
   depends_on "libnet"
 

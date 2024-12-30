@@ -18,7 +18,7 @@ class Cf4ocl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9e0c414903014a5ff0feadf1dea46a6bf9ebf725e94c95cbe1af659789e864c"
   end
 
-  deprecate! date: "2024-01-18", because: :repo_archived
+  disable! date: "2025-01-18", because: :repo_archived
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build

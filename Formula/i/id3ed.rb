@@ -23,7 +23,7 @@ class Id3ed < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0955550881e7f35fdf76fe198de7f2c1908d749978587c55cc9b5574ddafb2fd"
   end
 
-  deprecate! date: "2024-01-10", because: :repo_removed
+  disable! date: "2025-01-10", because: :repo_removed
 
   def install
     system "./configure", "--disable-debug",

@@ -1,8 +1,8 @@
 class Allegro < Formula
   desc "CC++ multimedia library for cross-platform game development"
   homepage "https:liballeg.org"
-  url "https:github.comliballegallegro5releasesdownload5.2.10.0allegro-5.2.10.0.tar.gz"
-  sha256 "8780b7965ad63646c7c5cd3381c64627e0c1edc3594e0947a7f3696e1176367e"
+  url "https:github.comliballegallegro5releasesdownload5.2.10.1allegro-5.2.10.1.tar.gz"
+  sha256 "2ef9f77f0b19459ea2c7645cc4762fc35c74d3d297bfc38d8592307757166f05"
   license "Zlib"
   head "https:github.comliballegallegro5.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Allegro < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0a49b0d75209741db0980a3dac14dd6451fff9eb8ea9d1852311202a4d343cd2"
-    sha256 cellar: :any,                 arm64_sonoma:  "ec50dc855941b5a38481b4b5b24ff581e39407a4a1733d0011a60706cb2ce27b"
-    sha256 cellar: :any,                 arm64_ventura: "5462abd33391eaa4487a76853b6b0c3a537398afe54e7db33d16f315b01d2bf3"
-    sha256 cellar: :any,                 sonoma:        "ed894015e7b5b1c7db9758ea93c7fd5d836e294681487addaf2538299209a550"
-    sha256 cellar: :any,                 ventura:       "5c3dfc3e22f0a035fc52219f842414495f568f2dfc4db638cddba31a0f6db0e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "225eb56faaaf3b624cd63c2f42817083ba9807189bf9cb9dfbcdf37b1d8063fc"
+    sha256 cellar: :any,                 arm64_sequoia: "79f3b5c3b0bd394ed78f59d83c0c600bab8a40de1048dfba4044addb8ce84e48"
+    sha256 cellar: :any,                 arm64_sonoma:  "0bff19547f67acd417d503ffa601c4abbc1c0677018383608f74231bed2181e1"
+    sha256 cellar: :any,                 arm64_ventura: "aa3dea47c0887752b899daed2e4d672094a197c321e4c2dc21dbb1f6d299b3ee"
+    sha256 cellar: :any,                 sonoma:        "165885c74f91990ba86bacdd0b27e655e51e3a1c628b3b9dde8e8b17a890fca4"
+    sha256 cellar: :any,                 ventura:       "1357c95194e2a91e4520515c8730067a0cd22606e7717f8923266c4cdd3437c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f335668957c66cd3f4a6151af0b45cc19e0b1963d9fc304711907237f5e49c76"
   end
 
   depends_on "cmake" => :build

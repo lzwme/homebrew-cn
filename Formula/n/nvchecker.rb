@@ -16,7 +16,6 @@ class Nvchecker < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fcc81533608a5be3f12b965d04f00704e51a8863b69281db9412174acc935b08"
   end
 
-  depends_on "jq" => :test
   depends_on "curl"
   depends_on "openssl@3"
   depends_on "python@3.13"
@@ -58,7 +57,7 @@ class Nvchecker < Formula
       pypi = "nvchecker"
     TOML
 
-    out = shell_output("#{bin}nvchecker -c #{file} --logger=json | jq '.[\"version\"]' ").strip
-    assert_equal "\"#{version}\"", out
+    output = JSON.parse(shell_output("#{bin}nvchecker -c #{file} --logger=json"))
+    assert_equal version.to_s, output["version"]
   end
 end
