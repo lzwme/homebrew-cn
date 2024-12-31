@@ -3,18 +3,18 @@ class Aider < Formula
 
   desc "AI pair programming in your terminal"
   homepage "https:aider.chat"
-  url "https:files.pythonhosted.orgpackagesc72503bff733ecfeb2f3478644b55a8c752f733e02e952e15b2f1ee7fb547325aider_chat-0.69.1.tar.gz"
-  sha256 "0a4296ef176b6b7e62265b70fec479d16f90f8754967ab426efe6eac7f5ad31b"
+  url "https:files.pythonhosted.orgpackagesbabb40bf7c9e8cfacddc48ea787caba543719ffa79106628333da744b0e89fc1aider_chat-0.70.0.tar.gz"
+  sha256 "1841af4bbf56bdb451e3c5cfd9cdaec13da39015c4c04184a24c635c3d7fd21d"
   license "Apache-2.0"
   head "https:github.compaul-gauthieraider.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d3bc95b8e3abf7fd7f8fe9d85977f3ab7760e8f33ba88534d9df04fe100aa8f2"
-    sha256 cellar: :any,                 arm64_sonoma:  "5fac25a4af76961b2d2289f5050c6583b2658ed71b8498171fa08aa10649fbb6"
-    sha256 cellar: :any,                 arm64_ventura: "86ac5f0bdaaca8f0dbbe1a253f6d03186c0775a44bc70c48c4e282cf236d2839"
-    sha256 cellar: :any,                 sonoma:        "343faa1b6e25b5574b986280daa2c0443806ab3252e35c21015652af02d9a271"
-    sha256 cellar: :any,                 ventura:       "39a914fb24522bdd2ddcbf83899bcee0bb5ae6810d5f484da4e35cd7f18fcde7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8f2cf430f99e956eb545ced8bec4f91873c52174c913115882537a08cd7c5d2"
+    sha256 cellar: :any,                 arm64_sequoia: "4f847fd51e0dc936907c0787f10b1ed08d148666a2c7593b51e09deec213bc58"
+    sha256 cellar: :any,                 arm64_sonoma:  "c55de07be72b7969da928ae43a7087f8c278fc5de8dfa8824f05f8763259696d"
+    sha256 cellar: :any,                 arm64_ventura: "ff94a08a9dce7f1cbcd98f1746c0b6600e23e5b4eda52bab9f38e1f7d60aa92c"
+    sha256 cellar: :any,                 sonoma:        "60fc8b8a71983899219f3aa11f0c2061b8d35b4582a72ae8694ab8b5d6e0c21f"
+    sha256 cellar: :any,                 ventura:       "78a87188751fe2b7fddca61332add2fd53647a9769a37e9325ebd574bd68947a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f92f6e562631ce04b86d74e23026578293483501cd012c2d049c423f4336feb"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -412,8 +412,8 @@ class Aider < Formula
   end
 
   resource "tokenizers" do
-    url "https:files.pythonhosted.orgpackages48042071c150f374aab6d5e92aaec38d0f3c368d227dd9e0469a1f0966ac68d1tokenizers-0.19.1.tar.gz"
-    sha256 "ee59e6680ed0fdbe6b724cf38bd70400a0c1dd623b07ac729087270caeac88e3"
+    url "https:files.pythonhosted.orgpackages2041c2be10975ca37f6ec40d7abd7e98a5213bb04f284b869c1a24e6504fd94dtokenizers-0.21.0.tar.gz"
+    sha256 "ee0894bf311b75b0c03079f33859ae4b2334d675d4e93f5a4132e1eae2834fe4"
   end
 
   resource "tqdm" do

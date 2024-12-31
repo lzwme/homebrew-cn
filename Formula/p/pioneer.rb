@@ -1,22 +1,18 @@
 class Pioneer < Formula
   desc "Game of lonely space adventure"
   homepage "https:pioneerspacesim.net"
-  url "https:github.compioneerspacesimpioneerarchiverefstags20230203.tar.gz"
-  sha256 "80eea94e0f7e4d8e6a0c4629bdfb89201f82aae2f59ee7a1f7a487eeeccf27c7"
+  url "https:github.compioneerspacesimpioneerarchiverefstags20240710.tar.gz"
+  sha256 "65549552df84edaecf0c2547d01dec137282c9fe20a1299f9494b739c90ef7ed"
   license "GPL-3.0-only"
   head "https:github.compioneerspacesimpioneer.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia:  "021f05a8f45ced0f1f7e6caf947157db8b253077670a23426ede21bd582ebea7"
-    sha256 arm64_sonoma:   "f987336d46f0d5541dff2ef1aacfb20d632e2c345db9b4428f5e64155d2b9293"
-    sha256 arm64_ventura:  "6629891c8f8f85d32796a2e984675b3a543d19b9bd17e86daa3001e108a6649f"
-    sha256 arm64_monterey: "95f82fcc3dc1c3b12189ee417dda7ee2517bdc0bd850af9247b98dfa6e5c1e14"
-    sha256 arm64_big_sur:  "759269a2e00d06d6cc09293f7ff41bbc53991fe44721a870b32bd771ab70d7c4"
-    sha256 sonoma:         "37b3531dea6b2e03235635f55c623981b69fde07fe6ca53032c3405f0f66275c"
-    sha256 ventura:        "de952238374b4bcebde412c5c02c06bc1390238136b9f5f987f73dd0125ca720"
-    sha256 monterey:       "10abffe3e985ffcacd1709f6f1e1072bc8755d767e7c5fa3d6b7f2f3011f45d3"
-    sha256 big_sur:        "805b22fbde064931335713adbc9b25142d508141b3a798779a777c08082be107"
-    sha256 x86_64_linux:   "2af51910ed74e3ec2a4e79aadf489da5bf312b3f63a044d74528221dde1106f3"
+    sha256                               arm64_sequoia: "47094faa61901883b86867f338971f2ae6f1ddd27de5cce9b9386f47561db222"
+    sha256                               arm64_sonoma:  "2b2d1798ef9cacac6aae436bc1ebb9e99fb0ce64d5bab9a117c67b9abc329a69"
+    sha256                               arm64_ventura: "35c406419857a82e18cede4a8820d226b0f0a83e7013a2b388529a48338fba3a"
+    sha256                               sonoma:        "cbf97b200ffbea940d4fb5e6c6d7845b8f0c2830642a5ed60231075fbd157e10"
+    sha256                               ventura:       "1c238e95d5c2ddc4477d0844cc4b21b2bbf871e274d0c88ad0b50b07f916c971"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9b9014de6fef65eece99be722a6fdcc5636c2f26bee124fd42263ff0dc8c649"
   end
 
   depends_on "cmake" => :build
@@ -35,17 +31,20 @@ class Pioneer < Formula
     depends_on "mesa"
   end
 
-  def install
-    # Set PROJECT_VERSION to be the date of release, not the build date
-    inreplace "CMakeLists.txt", "string(TIMESTAMP PROJECT_VERSION \"%Y%m%d\")", "set(PROJECT_VERSION #{version})"
+  # patch to fix `pi_lua_generic_push` call, upstream pr ref, https:github.compioneerspacesimpioneerpull6000
+  patch do
+    url "https:github.compioneerspacesimpioneercommit9293a5f84584d7dd10699c64f28647a576ca059b.patch?full_index=1"
+    sha256 "c93e0f8745d9e1dc7989a0051489be7825df452e0d1fa0cf654038f1486e2f9f"
+  end
 
+  def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    assert_match "#{name} #{version}", shell_output("#{bin}pioneer -v 2>&1").chomp
+    assert_match "pioneer #{version}", shell_output("#{bin}pioneer -v 2>&1").chomp
     assert_match "modelcompiler #{version}", shell_output("#{bin}modelcompiler -v 2>&1").chomp
   end
 end

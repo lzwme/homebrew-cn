@@ -1,18 +1,18 @@
 class Television < Formula
   desc "General purpose fuzzy finder TUI"
   homepage "https:github.comalexpasmantiertelevision"
-  url "https:github.comalexpasmantiertelevisionarchiverefstags0.8.0.tar.gz"
-  sha256 "bd110e3ca53bd9eaa20aad66015f1eb51ed6945b2827ca24d7c6bf7ade74a63a"
+  url "https:github.comalexpasmantiertelevisionarchiverefstags0.8.1.tar.gz"
+  sha256 "bbab0b544574fdfb72ee44a121701d78fabf5a4aa276b7668ab9c3f84e54294d"
   license "MIT"
   head "https:github.comalexpasmantiertelevision.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61481f04aa5ae55130073b931a38286fa2b54002c3f2cf0e8e59b830c78462c9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ec111c43f4f274f802d21051327b618da00a777fce9c91916544a577fe71f9c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bbdd92c445d24435d769ba5218209254ed71abf0a1f632cdb77d6587b78e8dfe"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8460986ee0b117eac9969161377f5c9cd62a953141b0b24bea86d722054c916b"
-    sha256 cellar: :any_skip_relocation, ventura:       "0fef537e444780b1ba57435db454e3fcbe605611269058d48a7b8cc2ef99cf8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e755e57f9ab65551ac0b8732945a646efc485e491af857acce32587f2154c1eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff365bceb1e17f400ac6d8f1b37c1579e57c13d57a40a180e75bc96889105dbf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b9187f2765197980a2091593a86103b4d88855ff119d4c0b2b88b634823a0c7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "28b784279a4c8b57c9471b8c5005236b661cce35bd8840ed6339ec8b4aa92d2b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ec823e0cef4a5357c697c1784b735bba1c08b2b8266e1588c11f70fdf472aa94"
+    sha256 cellar: :any_skip_relocation, ventura:       "0cd5c940ca66cdd8b11a29d8f2ae800d1af79cbbd4d17e7845addbe1385cb5af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6633c5c5210b3824cabae8d1328c010ce09c339bdedd9412558db1fa8bff0741"
   end
 
   depends_on "rust" => :build

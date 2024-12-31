@@ -9,13 +9,13 @@ class PreCommit < Formula
   head "https:github.compre-commitpre-commit.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "b3d30b89144d8839d8fc7bf35ebfdf0ea19d6caf93380c3f40b78a35d7d57a9c"
-    sha256 cellar: :any,                 arm64_sonoma:  "a795575506ca69bee2237f32f90620fdf71c96f04652b80f0c023cc2e858cfcf"
-    sha256 cellar: :any,                 arm64_ventura: "de0cabd089bf6601690464bde0e12d7cfe3ddc7b07743ac63fc7e8bd69e693d9"
-    sha256 cellar: :any,                 sonoma:        "f3f81314c7a74ca338a6a34eb140248c29d93696e2a33411649f91519be103a8"
-    sha256 cellar: :any,                 ventura:       "9e1056aa377c124b358f6a1f47f9354b34002c3133d826d10f2eeeaefa2212f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8885c36ddab76802a453fd4f4adcbe0c34e5a51bd2857d669d39592419008aef"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "80505e919f42270c85f11bb79ba839347023cdc6afaf318d0c41aec7d393fe0b"
+    sha256 cellar: :any,                 arm64_sonoma:  "286e00716c42375a6389e168640c864d47331d0f3378a5f91151b726f278c60f"
+    sha256 cellar: :any,                 arm64_ventura: "55ad204e8c16a7e1771d072cb2e064845b870384f3b531cf57dd0292fa2b0ef1"
+    sha256 cellar: :any,                 sonoma:        "e5005217b42db6d1955ecabaabdd2f197d15f9a6017f1a531e65e596bc4f1ed0"
+    sha256 cellar: :any,                 ventura:       "02d1f96671b025343c1eafd7798bb64fd3496d051c55ca7faf23269c5236d6f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "238700fc36e3a5d5233fc837eaaeb354bb290e4d363bcd96a497182b0f8950cf"
   end
 
   depends_on "libyaml"
@@ -37,8 +37,8 @@ class PreCommit < Formula
   end
 
   resource "identify" do
-    url "https:files.pythonhosted.orgpackages29bb25024dbcc93516c492b75919e76f389bac754a3e4248682fba32b250c880identify-2.6.1.tar.gz"
-    sha256 "91478c5fb7c3aac5ff7bf9b4344f803843dc586832d5f110d672b19aa1984c98"
+    url "https:files.pythonhosted.orgpackages49a57de3053524ee006b91099968d7ecb2e0b420f7ae728094394c33e8a2a2b9identify-2.6.4.tar.gz"
+    sha256 "285a7d27e397652e8cafe537a6cc97dd470a970f48fb2e9d979aa38eae5513ac"
   end
 
   resource "nodeenv" do

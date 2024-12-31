@@ -6,6 +6,11 @@ class Incus < Formula
   license "Apache-2.0"
   head "https:github.comlxcincus.git", branch: "main"
 
+  livecheck do
+    url "https:linuxcontainers.orgincusdownloads"
+    regex(href=.*?incus[._-]v?(\d+(?:\.\d+)+)\.ti)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "44913f8cad662c918fdfd54f5918cd957cc802d7d688b1354731a51a4d724f4a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44913f8cad662c918fdfd54f5918cd957cc802d7d688b1354731a51a4d724f4a"

@@ -2,10 +2,11 @@ cask "freetube" do
   version "0.22.1"
   sha256 "0e9eb9db841f36671c81fedff4580c39dbbd6bd541d5158ed4897218c4134946"
 
-  url "https:github.comFreeTubeAppFreeTubereleasesdownloadv#{version}-betafreetube-#{version}-mac-x64.dmg"
+  url "https:github.comFreeTubeAppFreeTubereleasesdownloadv#{version}-betafreetube-#{version}-mac-x64.dmg",
+      verified: "github.comFreeTubeAppFreeTube"
   name "FreeTube"
   desc "YouTube player focusing on privacy"
-  homepage "https:github.comFreeTubeAppFreeTube"
+  homepage "https:freetubeapp.io"
 
   livecheck do
     url :url

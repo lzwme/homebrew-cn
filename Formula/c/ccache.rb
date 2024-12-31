@@ -89,9 +89,39 @@ class Ccache < Formula
   test do
     ENV.prepend_path "PATH", opt_libexec
     assert_equal "#{opt_libexec}gcc", shell_output("which gcc").chomp
-    system bin"ccache", "-s"
+    assert_match etc.to_s, shell_output("#{bin}ccache --show-stats --verbose")
+
     # Calling `--help` can catch issues with fmt upgrades.
     # https:github.comorgsHomebrewdiscussions5830
     system bin"ccache", "--help"
+
+    (testpath"test.c").write <<~C
+      #include <stdio.h>
+      int main(void) {
+        printf("hello, world");
+        return 0;
+      }
+    C
+
+    # Test that we link with xxhash correctly.
+    assert_equal "6ef4b356229ca145dca726e94e88ad10", shell_output("#{bin}ccache --checksum-file test.c").chomp
+    # Test that we link with blake3 correctly.
+    file_hash = shell_output("#{bin}ccache --hash-file test.c").chomp
+    assert_equal "5af3d23skapbcgbs975geemfqv6r6utsu", file_hash
+
+    system bin"ccache", ENV.cc, "-c", "test.c"
+    system bin"ccache", "debug=true", ENV.cc, "-c", "test.c"
+
+    input_text = testpath.glob("test.o.*.ccache-input-text").first.read
+    assert_match File.basename(ENV.cc), input_text
+    assert_match "test.c", input_text
+    assert_match file_hash, input_text
+
+    # The format of the log file seems to differ on Linux.
+    # It's not clear how to make the assertion below work for it.
+    return unless OS.mac?
+
+    log = testpath.glob("test.o.*.ccache-log").first
+    assert_match "cache hit", log.read
   end
 end

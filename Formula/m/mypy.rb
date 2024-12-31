@@ -3,18 +3,18 @@ class Mypy < Formula
 
   desc "Experimental optional static type checker for Python"
   homepage "https:www.mypy-lang.org"
-  url "https:files.pythonhosted.orgpackages8c7b08046ef9330735f536a09a2e31b00f42bccdb2795dcd979636ba43bb2d63mypy-1.14.0.tar.gz"
-  sha256 "822dbd184d4a9804df5a7d5335a68cf7662930e70b8c1bc976645d1509f9a9d6"
+  url "https:files.pythonhosted.orgpackagesb9eb2c92d8ea1e684440f54fa49ac5d9a5f19967b7b472a281f419e69a8d228emypy-1.14.1.tar.gz"
+  sha256 "7ec88144fe9b510e8475ec2f5f251992690fcf89ccb4500b214b4226abcd32d6"
   license "MIT"
   head "https:github.compythonmypy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32728b5de464fc05b5d66a04dd08c84a64ead56d3c95efa987c3e71626799c08"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f001a15e5dff8fe4bbb49bf2399951fed3509c3ef9b9bb47013a6c0d0c07a4a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "add0109386a82a6664cb65f4c444517a86e4326f942f74e03762c491192fa4bd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3f599b607eecfebdfdfe682846563c86f11c34e21940c3af684c2325dd81381c"
-    sha256 cellar: :any_skip_relocation, ventura:       "32a2ee34ae0ec0485fe7039daeb9c57f9946f348f780b5e9e402b4a0fb696596"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45990f497183a3d6790973092c5b899707f961789b8a08680e1faa4dc67cb4ac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d903e151f7865ca93dcf172851740a8806078af17afc47bab85b119b727cc949"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45e0169fb4aa0e9a3fb5185c074f245eb082c57fdde7926effeca12f26d9c471"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "49d1641cb533afb31275024f8aea57e8e11cfa7e8395cfd2607d02d05faad807"
+    sha256 cellar: :any_skip_relocation, sonoma:        "44d89427386a0490417caec99663e98e0904a05521261d4554bbdb52e3964222"
+    sha256 cellar: :any_skip_relocation, ventura:       "7d35b440114870b7882e03fa39a0300af16c0a35f6ff712c544d98eafe15c313"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a591b3626f739da700de92d45d9c0a51f2a9973b7b738b3cf1df49a34fc46d7b"
   end
 
   depends_on "python@3.13"

@@ -671,6 +671,7 @@ Homebrew-homebrew-core/Formula/c/c7n.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/ca-certificates.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cabal-install.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cabextract.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/cabin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cabocha.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cadaver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/caddy.rb, Homebrew/homebrew-core, 1
@@ -3386,6 +3387,7 @@ Homebrew-homebrew-core/Formula/l/logstash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/logswan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/logtalk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/loki.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lol-html.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lolcat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lolcode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lorem.rb, Homebrew/homebrew-core, 1
@@ -5157,7 +5159,6 @@ Homebrew-homebrew-core/Formula/p/pngquant.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pnpm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pnpm@8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/po4a.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/poac.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pocketbase.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pocl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/poco.rb, Homebrew/homebrew-core, 1
@@ -5928,6 +5929,7 @@ Homebrew-homebrew-core/Formula/s/shml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shmux.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shntool.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/shodan.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/showcert.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/showkey.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/shpotify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shtool.rb, Homebrew/homebrew-core, 0
@@ -13801,7 +13803,7 @@ Homebrew-homebrew-cask/Casks/s/stratoshark.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/strawberry-wallpaper.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/streamlabs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/streamlink-twitch-gui.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/s/streammusic.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/streammusic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stremio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/stretchly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stringsfile.rb, Homebrew/homebrew-cask, 0

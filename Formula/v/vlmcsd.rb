@@ -29,6 +29,8 @@ class Vlmcsd < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8bacd07ef0cda2ea4ad4c5d7274b97bf8b067b69fd4412d20272b0d1c8828d1c"
   end
 
+  deprecate! date: "2024-12-31", because: :repo_archived
+
   uses_from_macos "llvm" => :build
 
   def install

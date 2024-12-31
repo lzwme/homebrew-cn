@@ -1,8 +1,8 @@
 class Xxhash < Formula
   desc "Extremely fast non-cryptographic hash algorithm"
   homepage "https:xxhash.com"
-  url "https:github.comCyan4973xxHasharchiverefstagsv0.8.2.tar.gz"
-  sha256 "baee0c6afd4f03165de7a4e67988d16f0f2b257b51d0e3cb91909302a26a79c4"
+  url "https:github.comCyan4973xxHasharchiverefstagsv0.8.3.tar.gz"
+  sha256 "aae608dfe8213dfd05d909a57718ef82f30722c392344583d3f39050c7f29a80"
   license all_of: [
     "BSD-2-Clause", # library
     "GPL-2.0-or-later", # `xxhsum` command line utility
@@ -14,15 +14,12 @@ class Xxhash < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia:  "ae616166bfea73b6f037c648a4cb84b33a64ec91d9c4edd149ac2b83585b3573"
-    sha256 cellar: :any,                 arm64_sonoma:   "ae0ac26ed3379dff86fcd2f34f70a927a44bfedad87c2f2d46723b45cfa5bfe5"
-    sha256 cellar: :any,                 arm64_ventura:  "2d0df15d11a6f3f5786b78ad8dc97092f73f915f7b65790d7bb18e54407d43ba"
-    sha256 cellar: :any,                 arm64_monterey: "db3ffe16e74cf1cf2564f281553f64b5188f56b9630c371fbaed1d93a800150b"
-    sha256 cellar: :any,                 sonoma:         "7ca0782ca1dc2a866db27d4d2c0239a72dd8970c1d7bca0a5468572197d2c50b"
-    sha256 cellar: :any,                 ventura:        "c2336943469780a2f33257e4a782e65ff9436d6bba2ccf4dfd4f65aed9c6b225"
-    sha256 cellar: :any,                 monterey:       "f02d5450fdb357f4b61bd319aa514f32065409bf5b67eb64eadc123a89eb44ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c87b4144350b4eb01586efffff599159b7d36b1100429633156b392fefbe9997"
+    sha256 cellar: :any,                 arm64_sequoia: "89bd0369c7033c364428cf03daad6f58ca5e5defd8dc585b8f0bc6a111714013"
+    sha256 cellar: :any,                 arm64_sonoma:  "32a8ae9615395368644020266663a1758cd4b32b15cdf8c547c9b5a3a3bc3016"
+    sha256 cellar: :any,                 arm64_ventura: "60dfb4150b26f590cb36561262a3bf0d845bacb2e26ec7d4bf5f619be9ddce5a"
+    sha256 cellar: :any,                 sonoma:        "e2355ea12831286d6858820e7fedcc3a044904f510ecc47d988698cd629a7ab0"
+    sha256 cellar: :any,                 ventura:       "b48f20a3ccf572377aa01bc280f66692e43c94b26d1eac4ac5493ce576c5cd3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18dc2081164fec96866d5f6300bde1e3c3a80c0d7659183195e5810a8e438470"
   end
 
   depends_on "cmake" => [:build, :test]

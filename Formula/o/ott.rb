@@ -1,8 +1,8 @@
 class Ott < Formula
   desc "Tool for writing definitions of programming languages and calculi"
   homepage "https:www.cl.cam.ac.uk~pes20ott"
-  url "https:github.comott-langottarchiverefstags0.33.tar.gz"
-  sha256 "d64ec4527f8ace56a407fc67957840d1653980fb0112d7fa8f2b0fc958501f7b"
+  url "https:github.comott-langottarchiverefstags0.34.tar.gz"
+  sha256 "c14899fb9f9627f96fcde784829b53c014f4cd2e7633a697ac485ecb9ab8abd6"
   license "BSD-3-Clause"
   head "https:github.comott-langott.git", branch: "master"
 
@@ -12,14 +12,12 @@ class Ott < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "65546813bc9828857309b7c5263650f4a6cac03a48d6b070e13172bd4a000f13"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7c138f305f0c33843f5c9b69298f1ab095680bd72aef50f091635d74d3d8ce5b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "41c6201ade0bebc2bb75696d6e53e5fb589692aa716f3fd09178d5050e4bc00e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bfff4519a3ba70b177252aa268bee375fd93d59a4d0dc6adbe1b26169400f555"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c86c2362dee1ccfcec917430e9fb32de810ba4dad3e13bdecdd6ca2d73bdcd3a"
-    sha256 cellar: :any_skip_relocation, ventura:        "ff36d9f8050eafd7a789c078669418bf480f216e06b6d5a0dec9b399d14e563c"
-    sha256 cellar: :any_skip_relocation, monterey:       "d45a7148e22a09d5ee1bf4fe17a103aa5caf0b0acac1a12a88dc48c6c0a1d3cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7fac1121b49f993443edae09205bdaf9a63fe2252ee7d848def1f1ae88f22790"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d045d9324681cbb59888db4b0f47cde465b9777faa3ead91b4dafc748698a55a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e64b4f53bc4b32c5c2300ca5e6b4ddc9f336cfc10e9b40561c00433758fd9a6b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "da33fd1e6bfc151dbc8f8f1ed08e086715900c038b29537624944a36e1fb3b52"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8271dd4f6d13603b7353203cbbe021f2fb6359356a6fed14747d9c6761eaa477"
+    sha256 cellar: :any_skip_relocation, ventura:       "606c6ecd10fad0b508c32072a518e8ff135d9a12dc7dce01e95dba94b21154d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73f293a7ca9b84a8c105e9e5106176695c3207f4e92b98890ba72652dbec2e81"
   end
 
   depends_on "gmp" => :build

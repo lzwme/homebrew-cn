@@ -1,17 +1,17 @@
 class PgPartman < Formula
   desc "Partition management extension for PostgreSQL"
   homepage "https:github.compgpartmanpg_partman"
-  url "https:github.compgpartmanpg_partmanarchiverefstagsv5.2.2.tar.gz"
-  sha256 "c67898c7b131d66b835b44d92013e9e07f0834b253505ef2808de6826e3e558d"
+  url "https:github.compgpartmanpg_partmanarchiverefstagsv5.2.3.tar.gz"
+  sha256 "be4283d5891831c554b328a7a0ec59a2b108cf5417c0f2ee38375d407d1d5bc7"
   license "PostgreSQL"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a8a2d74617d5cd8a5ad3551405e33804c14c1e568e2a32a9681be48c4350683f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a01b6b2b975c1a385bfb04bb939184c836d66ae5af851d0d63dccd42184de552"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e81653ea3a8982418dc0c52d9d5c90d221b99a36ee32de40786e2f9314d84dc4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6996a3477d03ee5a6d907789d4a75a9da60d4eaf9717e8f98d2054208f354aab"
-    sha256 cellar: :any_skip_relocation, ventura:       "c6759ee065d0d726f1d9b001ffb8a532c2063b190a811916c82e1c14ca5637fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1eeb5c7b4e011002c6d7cee8b607665525d2eb7252581a014a39c8bce4bd747"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a32264b10d1151a51f32a45a70790e1d5cc170cd40cd7e0e2ce83aebb7b92a21"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39e8bf0e02cf65720d663b4a6e031d1101ecd7a940e1b95bc2ae319ec6624701"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0aadc8585922758da42ba4c5123f5f41fe27716be6b690369d0a984796e4e051"
+    sha256 cellar: :any_skip_relocation, sonoma:        "356430a5eaf35fdadd0d452a7fc58e6bbdf635ac1d056c590822661fab1c8e53"
+    sha256 cellar: :any_skip_relocation, ventura:       "2ad5025c66bb79e93ccf58f0c2695a9af844403396232b1c6c34599131c5b662"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb4d295337ddb711cc2f4aaee616a5813038fc7579d3a95c0165de99ff2f92d7"
   end
 
   depends_on "postgresql@14" => [:build, :test]

@@ -2,18 +2,17 @@ class I2pd < Formula
   desc "Full-featured C++ implementation of I2P client"
   homepage "https:i2pd.website"
   # TODO: Switch to latest `boost` dependency on next release
-  url "https:github.comPurpleI2Pi2pdarchiverefstags2.54.0.tar.gz"
-  sha256 "5c3f703417bb5f3e5dda642d39c5d30593a5dcf69d5a5ecfe82d5e8a7d454aaf"
+  url "https:github.comPurpleI2Pi2pdarchiverefstags2.55.0.tar.gz"
+  sha256 "f5792a1c0499143c716663e90bfb105aaa7ec47d1c4550b5f90ebfc25da00c6c"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "03f7ef0703446cf80a96042dab3beb16f488642a68a236f159c52749cb7c2a2e"
-    sha256 cellar: :any,                 arm64_sonoma:  "43d3909f37585ead0fe2e69e60fe1a42e0a1790a5cdb30e63255d439affd0256"
-    sha256 cellar: :any,                 arm64_ventura: "878bf408b2fc44736d556b5c72138271a250ff8eaf5031375527adb4e1c5682c"
-    sha256 cellar: :any,                 sonoma:        "023abd273cf210515299f43a9dfaeff5162701766879a76c26d2f04f82abbd7d"
-    sha256 cellar: :any,                 ventura:       "e1b5269fb55c0a7c4546242372cd237d6a871823d6b20963701df023b7e0300c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "961729ac5256811419308cc208914789d309882ade25423df57bb77228d379aa"
+    sha256 cellar: :any,                 arm64_sequoia: "90d8ccd4ba31afcfcc690fac21c3a0946699916d5e22964e112b0149efcceabf"
+    sha256 cellar: :any,                 arm64_sonoma:  "cd91388ea4cb59b3b6e005d96b85c48c8c75fb6a5beaba36a13884fd28e87bd7"
+    sha256 cellar: :any,                 arm64_ventura: "ca57f6a6a9aac905ba794ef8a045eebba9a7ae2d7c13c03f2e2a62de308a5e87"
+    sha256 cellar: :any,                 sonoma:        "c35e53ab939669eac762f82441d880f58ca3ece6bcd82d2390b228522b54e795"
+    sha256 cellar: :any,                 ventura:       "83259ed270c54b04e910ba8ece73b10b82d2acb6214859accfdd1526727329e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a016bfda13fa3b5deba1948edec9ee979b3fc2c90b226826c36600b9e0d20d9e"
   end
 
   depends_on "boost@1.85"

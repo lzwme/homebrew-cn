@@ -19,7 +19,6 @@ class Harlequin < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "mysql" => :build # mysql-connector-python
   depends_on "ninja" => :build
   depends_on "apache-arrow"
   depends_on "libpq" # psycopg

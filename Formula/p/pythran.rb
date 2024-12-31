@@ -3,35 +3,33 @@ class Pythran < Formula
 
   desc "Ahead of Time compiler for numeric kernels"
   homepage "https:pythran.readthedocs.io"
-  url "https:files.pythonhosted.orgpackages7332f892675c5009cd4c1895ded3d6153476bf00adb5ad1634d03635620881f5pythran-0.16.1.tar.gz"
-  sha256 "861748c0f9c7d422b32724b114b3817d818ed4eab86c09781aa0a3f7ceabb7f9"
+  url "https:files.pythonhosted.orgpackages342d4ac363a2eecd68c372b058d1b95a5f262c70776e107619cdcb5a4b68e1a3pythran-0.17.0.tar.gz"
+  sha256 "3b77d6d970a6cf5b448facc7d4f6229c3e73909ac27ea2480c843afdadbad0fb"
   license "BSD-3-Clause"
   head "https:github.comserge-sans-paillepythran.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "868e70b12c50c833ebfa29f43222dbebb81365ea1bd467a3c89e5b43da5dbd11"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c102e65b23490ba1aa5a454f78991b83a5df12b28dcfdc80ef8deee1d612ef81"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c102e65b23490ba1aa5a454f78991b83a5df12b28dcfdc80ef8deee1d612ef81"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c102e65b23490ba1aa5a454f78991b83a5df12b28dcfdc80ef8deee1d612ef81"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1836a0fed68f565d8031c1e15449f8d322f9c0076570a1482466fcbd88f9c74d"
-    sha256 cellar: :any_skip_relocation, ventura:        "1836a0fed68f565d8031c1e15449f8d322f9c0076570a1482466fcbd88f9c74d"
-    sha256 cellar: :any_skip_relocation, monterey:       "1836a0fed68f565d8031c1e15449f8d322f9c0076570a1482466fcbd88f9c74d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a390654163b4ce2a13919606c598bd6f61b412400ce5c7f899b568eedbb4c51"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c5edb0e5ce4922aa85e330bc47602b8b452983804ae81ada51d7a73a9a40efd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7c5edb0e5ce4922aa85e330bc47602b8b452983804ae81ada51d7a73a9a40efd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7c5edb0e5ce4922aa85e330bc47602b8b452983804ae81ada51d7a73a9a40efd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "32a4cb2d097c7576508c61e7e1b031748da9da5de8f2562cb31c6326ca50b05e"
+    sha256 cellar: :any_skip_relocation, ventura:       "32a4cb2d097c7576508c61e7e1b031748da9da5de8f2562cb31c6326ca50b05e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ccebee6a9c4e0bfb70a5120c7e0becc2a2bdde2313f064552ff75fd1ff0ea23"
   end
 
   depends_on "gcc" # for OpenMP
   depends_on "numpy"
   depends_on "openblas"
-  depends_on "python@3.12"
+  depends_on "python@3.13"
 
   resource "beniget" do
-    url "https:files.pythonhosted.orgpackages14e750cbac38f77eca8efd39516be6651fdb9f3c4c0fab8cf2cf05f612578737beniget-0.4.1.tar.gz"
-    sha256 "75554b3b8ad0553ce2f607627dad3d95c60c441189875b98e097528f8e23ac0c"
+    url "https:files.pythonhosted.orgpackages2e275bb01af8f2860d431b98d0721b96ff2cea979106cae3f2d093ec74f6400cbeniget-0.4.2.post1.tar.gz"
+    sha256 "a0258537e65e7e14ec33a86802f865a667f949bb6c73646d55e42f7c45a052ae"
   end
 
   resource "gast" do
-    url "https:files.pythonhosted.orgpackagese441f26f62ebef1a80148e20951a6e9ef4d0ebbe2090124bc143da26e12a934cgast-0.5.4.tar.gz"
-    sha256 "9c270fe5f4b130969b54174de7db4e764b09b4f7f67ccfc32480e29f78348d97"
+    url "https:files.pythonhosted.orgpackages3c14c566f5ca00c115db7725263408ff952b8ae6d6a4e792ef9c84e77d9af7a1gast-0.6.0.tar.gz"
+    sha256 "88fc5300d32c7ac6ca7b515310862f71e6fdf2c029bbec7c66c0f5dd47b6b1fb"
   end
 
   resource "ply" do
@@ -60,7 +58,7 @@ class Pythran < Formula
   end
 
   test do
-    python3 = which("python3.12")
+    python3 = which("python3.13")
     pythran = Formula["pythran"].opt_bin"pythran"
 
     (testpath"dprod.py").write <<~PYTHON
@@ -84,6 +82,7 @@ class Pythran < Formula
         distance_matrix = 2 * np.arctan2(np.sqrt(temp), np.sqrt(1-temp))
         return distance_matrix
     PYTHON
+
     # Test with configured gcc to detect breakages from gcc major versions and for OpenMP support
     with_env(CC: nil, CXX: nil) do
       system pythran, "-DUSE_XSIMD", "-fopenmp", "-march=native", testpath"arc_distance.py"
