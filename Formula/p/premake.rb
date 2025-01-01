@@ -1,8 +1,8 @@
 class Premake < Formula
   desc "Write once, build anywhere Lua-based build system"
   homepage "https:premake.github.io"
-  url "https:github.compremakepremake-corereleasesdownloadv5.0.0-beta3premake-5.0.0-beta3-src.zip"
-  sha256 "4b2b1fe9772ca1caf689c07e8c32f108b8393922956f602ddaf404f73467bd83"
+  url "https:github.compremakepremake-corereleasesdownloadv5.0.0-beta4premake-5.0.0-beta4-src.zip"
+  sha256 "7ed887b3731ef6454b7c1cf99adbecb77f1abee088d0478916db8a4da16a1e82"
   license "BSD-3-Clause"
   version_scheme 1
   head "https:github.compremakepremake-core.git", branch: "master"
@@ -13,12 +13,12 @@ class Premake < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3fc61135e4dc02497cc901ea5e947c71c1d679ddce74a06b6debebbb91ee9b68"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4181c30d8f5bf26a313bd09698e701029a4d7c5177d56807ad3f66f6572e621"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "488c6a7b28f8ca949c962103c9688670add748d067a3325f4b974c680376b32b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5f4685956e6dda4395f48556328db9619a2833928553d08b54b8196666e8dd6a"
-    sha256 cellar: :any_skip_relocation, ventura:       "01b4c6a57b7d41757c48749dc3da6d0eb29e590c685becd3d39e019ab1cee107"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70279e7aab1b39c6428961e5b5b3ca0d4480cc637703730f87e0bc98c4a5477e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "881991a8f92bae6785d61fa135b75cbf2167f72dea81dc69e988f82584a34650"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "af776f3b2b25129f1e76ea56f2f595563300c7a3aba8a15325e360e5dbe979b9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2d0b3e94a3622f3b5cf93055810dfd4c347e8d882709e0b3a734a1620d20230d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b7e7485f8685afe2c9614ae25632fa7578e843a96e4aee68f1c071fd667d75be"
+    sha256 cellar: :any_skip_relocation, ventura:       "31b4dea50eff685369daec416ac307a59c112ddc2b790cb841c5b37eb5ac3463"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e288f6bdf196560a2b12e270ad36b3fc760c57d5badf44296643e03cb1110c8"
   end
 
   on_linux do

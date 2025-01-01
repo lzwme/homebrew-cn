@@ -1,17 +1,17 @@
 class Mihomo < Formula
   desc "Another rule-based tunnel in Go, formerly known as ClashMeta"
   homepage "https:wiki.metacubex.one"
-  url "https:github.comMetaCubeXmihomoarchiverefstagsv1.19.0.tar.gz"
-  sha256 "9713035bd2c3553588cd9151574f70b6803dc90a4aa65b0506429376675da22a"
+  url "https:github.comMetaCubeXmihomoarchiverefstagsv1.19.1.tar.gz"
+  sha256 "cf32a96bea6caeb2769e86e3001da67d332a673fc6db703b5bc1a5d14754daa1"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b4209011d6790f54956f4dd774addf4fb1b62dc0a7df806344363c1789f8860"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3c5cf7abf81c9b48083940bf2226d77436bba98938b6525a03d246edae3744c1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1bef7129bdd352d96785aa54323eee25dcbf6975b4b4a999f3e9f87b56ea7aa5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "148c5f713d73c2a46a231b3c7c64425bf575131e50671c26653439a3a39f23e8"
-    sha256 cellar: :any_skip_relocation, ventura:       "add97e2f0d19e9c3155f436b62d95902d4f2fe5f6e13424724c071a5a47e66f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64326b5bd67de968b78d838837fc18493d8d896170c718bc47ad61402431842b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6bd1c71970b8b4b877f61dfb029cee22cb270d0affd3a36642e326c58a2375f4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dbe375cd2fe2e94bf8304f37e8c97c7f88606af6924ecf48f258491aa3544d40"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5f35d3230615d2743a6a7fd482cea4c93c8d8311a63920571fe01a377f89f064"
+    sha256 cellar: :any_skip_relocation, sonoma:        "94a1d4cbc170fd4b3a25302c9c1b9b2106479ec2e31a3e11da2266896826062b"
+    sha256 cellar: :any_skip_relocation, ventura:       "e2ab5f41f801543136244b6a698fb80e2cc2115b46bf45501971dd8038a494b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31566243c3288dd8511ee5b59e6de5e5dbaf7b5d87a690abf5a321ffd228dcbd"
   end
 
   depends_on "go" => :build

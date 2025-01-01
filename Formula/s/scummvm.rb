@@ -12,12 +12,12 @@ class Scummvm < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "b3f50a224cb7565d6a9e484d060d536c960926fa75ede22414559b4b2ed26080"
-    sha256 arm64_sonoma:  "b79272444016cef3bdf08caee3c706499697f2e2f957d8cdd831035d9695deac"
-    sha256 arm64_ventura: "8f6610ad1589f173888bfb5003c3b7231383a10be5a668fc0836e92521f1cd27"
-    sha256 sonoma:        "ca9da658a16b599603785e83ac0cbbb3885b8cdd7633e1bc2c8b04f1bfaf1bb2"
-    sha256 ventura:       "8dd1d46ce87231f8462293cbb0b3d0a3f8dbf91c44c59f59311c5d2fe43f9f50"
-    sha256 x86_64_linux:  "0c859bc01c0943c6a91a835071ddaf5cc97dda381d37c592b4acdff8935410c9"
+    rebuild 1
+    sha256 arm64_sequoia: "fd386b790796cd93212f0a48afa615a96f38dab6f8100b9a106d7b162daa575e"
+    sha256 arm64_sonoma:  "b5d4e2c4810e5891a7e4cf6a81a393cefb136ad120542995d5f05ea28c9f7e46"
+    sha256 arm64_ventura: "11a8e89fafed34c094e689e1b93457afd24a56416fe49f3e6eb085dfb40bebe0"
+    sha256 sonoma:        "6043f6417fbbfd4b12b4412804ad9e11ccc1874eb9a846a182aa182f9cf3d30d"
+    sha256 ventura:       "7972f1c506a5241495960fcbc77d366567a7d0f66ecd0b01ebbc351a2e9d5851"
   end
 
   depends_on "a52dec"
@@ -28,13 +28,14 @@ class Scummvm < Formula
   depends_on "fribidi"
   depends_on "giflib"
   depends_on "jpeg-turbo"
-  depends_on "libmikmod"
   depends_on "libmpeg2"
   depends_on "libogg"
+  depends_on "libopenmpt"
   depends_on "libpng"
   depends_on "libvorbis"
   depends_on "libvpx"
   depends_on "mad"
+  depends_on "musepack"
   depends_on "sdl2"
   depends_on "theora"
 

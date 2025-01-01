@@ -1,18 +1,18 @@
 class Oj < Formula
   desc "JSON parser and visualization tool"
   homepage "https:github.comohler55ojg"
-  url "https:github.comohler55ojgarchiverefstagsv1.25.1.tar.gz"
-  sha256 "b94977f7f7e67fe306fc2ccb949189741f88a3490140350d15f4d1eb703e0c7f"
+  url "https:github.comohler55ojgarchiverefstagsv1.26.0.tar.gz"
+  sha256 "50c78bf0bd21924514967bc6039535b3e55db74a7214e7519f52e191db77e2dd"
   license "MIT"
   head "https:github.comohler55ojg.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5dcd701a8180af1b664c575c86ffc5f4f84f5f7ee484aad6701b050ad1bbff8e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5dcd701a8180af1b664c575c86ffc5f4f84f5f7ee484aad6701b050ad1bbff8e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5dcd701a8180af1b664c575c86ffc5f4f84f5f7ee484aad6701b050ad1bbff8e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3e8c3672931c914feb0061933768fb6464d798f5948f3ecb3196d0d8c2027cf6"
-    sha256 cellar: :any_skip_relocation, ventura:       "3e8c3672931c914feb0061933768fb6464d798f5948f3ecb3196d0d8c2027cf6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eea99eadc4c69c5e39dc0f9731280fb46c3884a4c9725906d4ff2369821d204b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ff9beb95f2908004cb96fcc5e24f5ceddc4ed3e1274c15dd816bfc0680922ad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ff9beb95f2908004cb96fcc5e24f5ceddc4ed3e1274c15dd816bfc0680922ad"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1ff9beb95f2908004cb96fcc5e24f5ceddc4ed3e1274c15dd816bfc0680922ad"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e402fed7003db67ea73a383cc106b603c6829c7681d49e7db8be98825d4a300a"
+    sha256 cellar: :any_skip_relocation, ventura:       "e402fed7003db67ea73a383cc106b603c6829c7681d49e7db8be98825d4a300a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b081c07e45f7b4c4d7549939f3aeb0172e99976572e7d22e50419951478752da"
   end
 
   depends_on "go" => :build

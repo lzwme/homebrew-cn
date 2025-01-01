@@ -7,12 +7,13 @@ class Lanraragi < Formula
   head "https:github.comDifegueLANraragi.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "dabd80ac33bd251fb05017964420e48c542095b275f86330c6abe2242dcbac53"
-    sha256 cellar: :any,                 arm64_sonoma:  "1ef34ca2ccb4c9f3e317a2d458c1e1b818aa9f3f3e0083d50be001ff47515972"
-    sha256 cellar: :any,                 arm64_ventura: "eb632569f52619d1102c01f3d8ac50b12b48d30d6b9a078026242455a6479f4a"
-    sha256 cellar: :any,                 sonoma:        "4751aad23f69d0aaa3d02c140bf3468ad6a9b01088165435fcbd4a4638371bf8"
-    sha256 cellar: :any,                 ventura:       "87e9fefcf02eb7c04a42811bcb08639d9facc7b727ba13fef0927ce516df137e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae0d76c2177e8d830c0b6c2729c37130fda9dcb4cffbf4322e1b83b18e3db8c1"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "601a58b6b9eae187deaae655dc68cfa83929614f7def8a7b1125307b6b5c5371"
+    sha256 cellar: :any,                 arm64_sonoma:  "b3c6fd03779b541004f19e02b923a2319a84720d13aba645af8fa0a68b7cd0a3"
+    sha256 cellar: :any,                 arm64_ventura: "1eac6503c04791db40c3709f1ce4d42c0985e0e5c3e9b683c5dcce6557d0751c"
+    sha256 cellar: :any,                 sonoma:        "5273b188612576ea97422ab00ac63d792a377b9918a24a7135643a1aeb946e2f"
+    sha256 cellar: :any,                 ventura:       "f41499e553f2de58c55ddc266669afc94c215984cfb36f72536fb0b716e9ba22"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4bf74bd4be183b84374e7326c2495a4a832d25c9b4f3b5a9c4cdc26766279cc"
   end
 
   depends_on "pkgconf" => :build
@@ -63,7 +64,7 @@ class Lanraragi < Formula
               "'#{ENV["ARCHIVE_LIBARCHIVE_LIB_DLL"]}'"
 
     (libexec"lib").install Dir["lib*"]
-    libexec.install "script", "package.json", "public", "templates", "tests", "lrr.conf"
+    libexec.install "script", "package.json", "public", "locales", "templates", "tests", "lrr.conf"
     libexec.install "toolsbuildhomebrewredis.conf"
     bin.install "toolsbuildhomebrewlanraragi"
   end

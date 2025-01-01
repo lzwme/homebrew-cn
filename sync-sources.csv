@@ -5715,6 +5715,7 @@ Homebrew-homebrew-core/Formula/r/run.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/runcocoa.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rune.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/runit.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/runitor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/runme.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rure.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rush-parallel.rb, Homebrew/homebrew-core, 1
@@ -13234,6 +13235,7 @@ Homebrew-homebrew-cask/Casks/r/radar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/radarr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/radiant-player.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/radio-silence.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/r/radiola.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/raindropio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/rambox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/ramme.rb, Homebrew/homebrew-cask, 1

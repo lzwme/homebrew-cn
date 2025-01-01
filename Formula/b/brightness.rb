@@ -4,6 +4,7 @@ class Brightness < Formula
   url "https:github.comnrileybrightnessarchiverefstags1.2.tar.gz"
   sha256 "6094c9f0d136f4afaa823d299f5ea6100061c1cec7730bf45c155fd98761f86b"
   license "BSD-2-Clause"
+  head "https:github.comnrileybrightness.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "92e87e26e1e82ded8087e37e6e94624f80af2b1d84248fb70653da8c86688396"

@@ -12,18 +12,19 @@ class Clazy < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "067a38e1a6f888c88202043ed9fe74fa71accfb9b0542dd537dc57e008681ab9"
-    sha256 cellar: :any,                 arm64_sonoma:  "ceb22a17cd7551fcecabf720daba930640448979014e4f05b10ecea4acb67642"
-    sha256 cellar: :any,                 arm64_ventura: "5815bd69a7e5bb7028dc381d174c17a936e667d996f995e72bfb28900f4c95be"
-    sha256 cellar: :any,                 sonoma:        "7020fc1ed55382630a179a76b3047ec89faeb0b881b1718406641680831210d2"
-    sha256 cellar: :any,                 ventura:       "2ac1f42184b5e62aa4ca3538f961e8b14f61208bad6ebf1900518657baad00cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf8ed997f6439a05e149fbc974eecc9c3c517f6c87b89f4e9582e74f84b046c0"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "befed9e3e396380d703605d0c951c3906ec5132eaa00e7331913521d168b0683"
+    sha256 cellar: :any,                 arm64_sonoma:  "17c7fddf8588b5eb3036e694e47e0bacb9e1cc4c72cb7e41df27ac7549a8e07b"
+    sha256 cellar: :any,                 arm64_ventura: "2857ba1a5e9e7d03d342acecbce06ad1bc0d9ca74df84960529ae28205f9887b"
+    sha256 cellar: :any,                 sonoma:        "bb07ed1692e2565c9b0c4ee901b0249b335141e8292d3882dd9fc19d54e59cb6"
+    sha256 cellar: :any,                 ventura:       "83f55f60617d1be46cf987cd6c90d8456372fc76a113b497645eafc709d35910"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82caf7f18cc0624a9772df4c8d4cf219cbb10dc1b46ac040d19dd555bd8876be"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "qt" => :test
   depends_on "coreutils"
-  depends_on "llvm@18"
+  depends_on "llvm"
 
   uses_from_macos "libxml2"
   uses_from_macos "ncurses"

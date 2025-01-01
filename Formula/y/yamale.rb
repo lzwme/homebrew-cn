@@ -3,19 +3,18 @@ class Yamale < Formula
 
   desc "Schema and validator for YAML"
   homepage "https:github.com23andMeYamale"
-  url "https:files.pythonhosted.orgpackagesa1520faa32aa15f241a9f950ded276c942db69bce8dda5f19241f6b960080dcayamale-5.2.1.tar.gz"
-  sha256 "19bbe713d588f07177bc519a46070c0793ed126ea37f425a76055b99703f835a"
+  url "https:files.pythonhosted.orgpackagesc6a66bfdf3b84fe2db12e2fe900f9ab89b2a42f99764722c0f1174e99340b0bfyamale-5.3.0.tar.gz"
+  sha256 "68af23b6155f496fb11c831a504eb9f9a474a997a8571d6f249dc044e6a65af3"
   license "MIT"
   head "https:github.com23andMeYamale.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "972e3519557190a2fb6f6b22c98b61fe538d5624b14da8d34e0bfa553a30ab92"
-    sha256 cellar: :any,                 arm64_sonoma:  "9bc34bd97e2f3b863536b6d5a496a8d1e302a2c82d9e502a7fe9b5ce292e2928"
-    sha256 cellar: :any,                 arm64_ventura: "59d8b6c4c7d427f1ae7a5d7e12020372d12d9dac4e84112583d928c145062c9c"
-    sha256 cellar: :any,                 sonoma:        "a5b74a8255fd2673d509c7a5d83261c3091d62d756552e5f487e3fa011a2db38"
-    sha256 cellar: :any,                 ventura:       "4771d6bf1e8781dc07095dfc196702fcebad4d668e7cdce136b81e1e0f01a4c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8896fa98af8cd7309abc1ae9a63ea54da11fdac0029b397481f9644f236fe0e6"
+    sha256 cellar: :any,                 arm64_sequoia: "07cc752ebb1642a59d25612806c881c3f14f66b26e5ccc3d6e5605da9d3fa5f3"
+    sha256 cellar: :any,                 arm64_sonoma:  "2b9ad0a42db9fcba7f763ca766d692418378648754c58c6ab042197b169299d2"
+    sha256 cellar: :any,                 arm64_ventura: "25b04eda28ea49eaf9072e538ba53c9b58dc1a2382293274bd55f27a5e9fa980"
+    sha256 cellar: :any,                 sonoma:        "6816a9ed83cd53f2a15ed1ba42ca6abd8838fb6aa69f82037a9681ed6369c3d5"
+    sha256 cellar: :any,                 ventura:       "225d85d67aca1ff922ea84fa8b0dc3615d1fa947697b2b8887ed1dc09d3f3998"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "930b426c69d4075c6397f1f48121a7e335944afde00d579ed5071a528e657d2b"
   end
 
   depends_on "libyaml"

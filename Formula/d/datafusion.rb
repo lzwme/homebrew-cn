@@ -1,18 +1,18 @@
 class Datafusion < Formula
   desc "Apache Arrow DataFusion and Ballista query engines"
   homepage "https:arrow.apache.orgdatafusion"
-  url "https:github.comapachearrow-datafusionarchiverefstags43.0.0.tar.gz"
-  sha256 "a873124503ab5182dd3c00db52ed7bae29d09f72900442aaeff7854bfe8600fd"
+  url "https:github.comapachearrow-datafusionarchiverefstags44.0.0.tar.gz"
+  sha256 "f3afc14c735db37525db50cb71144d895e7b0729f696ff97439590759c13afa6"
   license "Apache-2.0"
   head "https:github.comapachearrow-datafusion.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51818452ee82d9f0bf9f3a5d8c65de55a82f82080d6aacb6900059b8fb3b99b2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18499f56ec85f8cbb05467b2c363e3437b1131f5e35709c83cea7805804159d7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "614dbc21c07b982fb51caf29a09b3994a81cc9618c722c82cb6ba16483a703fe"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e61485922e624d4bba37e0b281f6ea7dfec83b127bf6a181bb3c10ea4939904b"
-    sha256 cellar: :any_skip_relocation, ventura:       "3dce564739a041b3afddc7ef6f1c17a8d4487a79eb77f8d12de142324a7d0412"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5f938d6ef13440075905b1d3a214667f75846a9e78a1ead4238f8f60e5a0a91"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f19a572ed16a7a279dc61b0cb2e391d20d29f94e40af2f1cf117d334af185421"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "810ee05733c7945380a87ce3504b52c066ee4d2625c10e5e320ee09ea223ca44"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9c7bd7633628893abf29ae7829a9a04754b98018ebba29622728633c72d7da94"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5df78de31c02cee7d27787a22a657607481516df41ba20d35533b657f17388ab"
+    sha256 cellar: :any_skip_relocation, ventura:       "34bea9512c5ecd959a1520c2dbbed4d2779f2d2c3d056f3a09b207e20d444490"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79d1e6cc01adc6dce40162f00b01b1c6e98d85fcee5d678ffe475b672c735cde"
   end
 
   depends_on "rust" => :build

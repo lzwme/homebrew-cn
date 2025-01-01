@@ -1,8 +1,8 @@
 class Mikmod < Formula
   desc "Portable tracked music player"
   homepage "https://mikmod.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/mikmod/mikmod/3.2.8/mikmod-3.2.8.tar.gz"
-  sha256 "dbb01bc36797ce25ffcab2b3bf625537b85b42534344e1808236ca612fbaa4cc"
+  url "https://downloads.sourceforge.net/project/mikmod/mikmod/3.2.9/mikmod-3.2.9.tar.gz"
+  sha256 "214c10aa3019807a1eb26b2c709592f63dbcc00b72985aa86a4fb7ac3cd8b901"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,21 +11,12 @@ class Mikmod < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "c7051d560f5b44ef4a0928e528d31657d66d481b3f7d952ba31c2754dc0b1ab1"
-    sha256 arm64_sonoma:   "53f85a6c2fe72833a023b9063a4ae9ddbe732eaabe50111b6c7313678ce1ceb3"
-    sha256 arm64_ventura:  "158ed43b20cb69fe213ad8635f53437e164dde2148cf67f39ec37f209d1bc631"
-    sha256 arm64_monterey: "bb54632a522875765adad5cab06af5329387f9ae1c5c7e96097ad7bc01e10526"
-    sha256 arm64_big_sur:  "db291715ff28e243fcd0c1a5933bb5dc3c4bdf93368df9f66654d45e0003ea8c"
-    sha256 sonoma:         "96bfdb403f3bffd9fedf783f9340a32819886b1a3499cb1e85aecf66377f072b"
-    sha256 ventura:        "f0ec85236694fd008c2ef6113545a182a53f7b551f6800e587ac0dd485c4436e"
-    sha256 monterey:       "e6722e94ac1051373437dd424178a21f821f1275c5fcc41547959549383364fc"
-    sha256 big_sur:        "d36db8a1221871140e8053654f1dd7fd6433f7fa50e15b42b239137ede527cb8"
-    sha256 catalina:       "6d6794da1daf749a56cf55738f796fe5b6a7b337456730b21a5efba2fab60f38"
-    sha256 mojave:         "6812f223d67d763208eaf21ab6e1ebfaf50e349852cb6820010010ed0524b2f2"
-    sha256 high_sierra:    "5907f92b40ddc0ba15cddd60269a9f9a8e9fcf6295a099df4145818536431427"
-    sha256 sierra:         "a9586a9306006e8fd451aecb6c3259fc57cb0bb328a2b0ce8c064e5518f943bc"
-    sha256 el_capitan:     "ae0b4480b6b34327b9c99601d7e2cbc9648ece54344bd4bda3582ef048e1f1de"
-    sha256 x86_64_linux:   "4e4b77ce15ebf81c0bbaf79ca476bc05de760eaeedc28ffbfbcfdb33df94127d"
+    sha256 arm64_sequoia: "ebf971e2565954c0a4340c3b27d3f09a1087d276199e360f3506e113266eb398"
+    sha256 arm64_sonoma:  "235c1f19c1752d44d0eb89e888894f9b4a72a75131c796d5281bf15fdd1df6b4"
+    sha256 arm64_ventura: "ef5825cf3c2f07a1b58c596d56e9f965f743788232720529e82acaf10838da28"
+    sha256 sonoma:        "5f51f1fc55de88f9083ab08d701523d68ca1675c0c27f8fab6dd1012afc1551c"
+    sha256 ventura:       "305dbbedcc5ff0bb6f3853f930375503aa9acf4234889de233070c2f566e3eae"
+    sha256 x86_64_linux:  "0ac9b85e2c8c107a3d9d59f8ba8a3e6b316de1b1b28b30f4f2883377d10917e4"
   end
 
   depends_on "libmikmod"

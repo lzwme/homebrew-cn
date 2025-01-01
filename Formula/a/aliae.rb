@@ -1,18 +1,18 @@
 class Aliae < Formula
   desc "Cross shell and platform alias management"
   homepage "https:aliae.dev"
-  url "https:github.comjandedobbeleeraliaearchiverefstagsv0.26.0.tar.gz"
-  sha256 "71d6b0327c3c3717814e37daea55f80c1c04d31c53e799505ed13d75a7f9b557"
+  url "https:github.comjandedobbeleeraliaearchiverefstagsv0.26.2.tar.gz"
+  sha256 "c5c17003e02377c5edbdfe70618cab03952ddcc4b870552f6c945b3481267aec"
   license "MIT"
   head "https:github.comjandedobbeleeraliae.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0759bb4a19ec6b130896d247b235df5486a43d4c7a8af0a81cf269813705a0b5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9ea43373c96463b9d5262b23eb1706388d424bb53e7f2ff203fedd8acd9ba1a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5030b4d873fb145eabb3d4ce552b253016fa17b7b143187ba89c92dca11ba7ed"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a9f7280bf8c5dfbfcf1b547a1f0a6d6d06271eb1365edd3e03ca703d7825cb6a"
-    sha256 cellar: :any_skip_relocation, ventura:       "8bd45af49ac63184c53f335cf9cd2229323a009dbfec8650bfebef7eb73082e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ff633dce774c5f5e571b6a87f14a8e0c6afbc11990a9b4a5076f229bc5877db"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "609c6473980f8299cc9e0666fc0618db92e9433e8f6c8d4286a61535d3adfb90"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1f3b546b391c972066562f44938c3a7fb3d7b43d68e04188cd1256c7cbd7820"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7b267c5be15d5185e036653c6a296571e9206652fc1599c3c280d15c6142b592"
+    sha256 cellar: :any_skip_relocation, sonoma:        "66854ef342dac9bea082212ba64ee9fb73636da571a2bd1787bd7a4238dd5202"
+    sha256 cellar: :any_skip_relocation, ventura:       "01e2b5a3060c1a4180631d26dd71b578e3aa2ca952aaae5e41606697b9b1de8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "857ffec33e5506747e720bb1016fe4d897b7025ae5e19a36f758cae140432026"
   end
 
   depends_on "go" => :build

@@ -7,17 +7,18 @@ class C2rust < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d9868ff52ddf26a449db237b4ecc72dafd9137c672c86744c3f480f0b69e607a"
-    sha256 cellar: :any,                 arm64_sonoma:  "1c74fbca870f39ad8c8920fcbf153200a04484e333230b9ad0dba80894757936"
-    sha256 cellar: :any,                 arm64_ventura: "6903c7d307a32e0405e691e71e0915910c7acc537ab8f662b5d178530809e7f0"
-    sha256 cellar: :any,                 sonoma:        "35789caa2462fabfe9fe63d63613e6afd4035173bd2c0f30a048c51ef0ee3e95"
-    sha256 cellar: :any,                 ventura:       "520a8db5a7bb6e0ab226a70c24b68d7dd4c11e3af22d8c1c6fa5779f8b09e011"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46f1ba002a700369c7118df22f22a61e25ee5d1d093f7173211de77e356e89ce"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "6eefd13cc36a0b3ab1cbfa9ec802bacd36ef00206ed3cf827c62f9c403c48676"
+    sha256 cellar: :any,                 arm64_sonoma:  "069b88aa5e4065712b9dd17c778bcda625d3ed6c1f1a5e781238fed63bed1783"
+    sha256 cellar: :any,                 arm64_ventura: "39fd69af63e922ea4238fd482f100abb7b16c4cd780f25405c85212542400fc1"
+    sha256 cellar: :any,                 sonoma:        "d8142840f7b061e9a1fe8a7abc122a02241d085da8b9be1a2a37ee3f3bdcfe1b"
+    sha256 cellar: :any,                 ventura:       "aa1fe9c8bab9e74dc4eb4a95587b26723eb37cdd9a409251073d3a55fa51a723"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5016b79a5d6b22e582fd3ac7aaecf39bffa3677f3247408f725e77b42502bba"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "rust" => :build
-  depends_on "llvm@18"
+  depends_on "llvm"
 
   def install
     system "cargo", "install", *std_cargo_args(path: "c2rust")
@@ -29,6 +30,6 @@ class C2rust < Formula
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_EXPORT_COMPILE_COMMANDS=1"
     system "cmake", "--build", "build"
     system bin"c2rust", "transpile", "buildcompile_commands.json"
-    assert_predicate testpath"qsort.c", :exist?
+    assert_path_exists testpath"qsort.c"
   end
 end
