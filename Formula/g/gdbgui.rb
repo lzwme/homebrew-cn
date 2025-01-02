@@ -15,9 +15,12 @@ class Gdbgui < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "3e21d4de715f9491188306dd090bbc23f6fabe60eadf6b1e65238d19e30abee5"
   end
 
-  depends_on arch: :x86_64 # gdb is not supported on macOS ARM
   depends_on "gdb"
   depends_on "python@3.12"
+
+  on_macos do
+    depends_on arch: :x86_64 # gdb is not supported on macOS ARM
+  end
 
   resource "bidict" do
     url "https://files.pythonhosted.org/packages/f2/be/b31e6ea9c94096a323e7a0e2c61480db01f07610bb7e7ea72a06fd1a23a8/bidict-0.22.1.tar.gz"

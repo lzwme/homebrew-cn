@@ -15,9 +15,12 @@ class DnscryptWrapper < Formula
   end
 
   depends_on "autoconf" => :build
-  depends_on arch: :x86_64 # https:github.comcofycdnscrypt-wrapperissues177
   depends_on "libevent"
   depends_on "libsodium"
+
+  on_macos do
+    depends_on arch: :x86_64 # https:github.comcofycdnscrypt-wrapperissues177
+  end
 
   def install
     system "make", "configure"
@@ -27,9 +30,9 @@ class DnscryptWrapper < Formula
   end
 
   test do
-    system "#{sbin}dnscrypt-wrapper", "--gen-provider-keypair",
-           "--provider-name=2.dnscrypt-cert.example.com",
-           "--ext-address=192.168.1.1"
-    system "#{sbin}dnscrypt-wrapper", "--gen-crypt-keypair"
+    system sbin"dnscrypt-wrapper", "--gen-provider-keypair",
+                                    "--provider-name=2.dnscrypt-cert.example.com",
+                                    "--ext-address=192.168.1.1"
+    system sbin"dnscrypt-wrapper", "--gen-crypt-keypair"
   end
 end

@@ -17,7 +17,9 @@ class Libpcl < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux: "64a2d65ad2bcbbdcc93eedb2771d85da04a69e1e3b3304c256c68d509bc0de20"
   end
 
-  depends_on arch: :x86_64
+  on_macos do
+    depends_on arch: :x86_64
+  end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
@@ -26,8 +28,10 @@ class Libpcl < Formula
   end
 
   def install
-    system ".configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    args = []
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
+    system ".configure", *args, *std_configure_args
     system "make", "install"
   end
 end

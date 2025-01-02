@@ -1,8 +1,8 @@
 class Latex2html < Formula
   desc "LaTeX-to-HTML translator"
   homepage "https:www.latex2html.org"
-  url "https:github.comlatex2htmllatex2htmlarchiverefstagsv2024.2.tar.gz"
-  sha256 "d99c5963d802edf1516a6301a5275edd54014bea2ca924f8752aacab0cdd23fd"
+  url "https:github.comlatex2htmllatex2htmlarchiverefstagsv2025.tar.gz"
+  sha256 "d6f4e9f674994c82cbdff5a39441258add4a8822087fc0d418c0a697dbf3d191"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Latex2html < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a8a8368638da5e8e7ae55bb10b565286afc2f8bb5766c21e35c75cec45f7c94"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b032c18a6228d824352383052add8119485dcd99812fcf231165c7aa06bb5faa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "08c2b9a4172079624fd579ecc4a76b4f609bb366f5eddb24bc48553c05039113"
-    sha256 cellar: :any_skip_relocation, sonoma:        "87200d874aee7ca04cbe5367ee83191b5236541f75be3967ea9fcd0d9bb28b52"
-    sha256 cellar: :any_skip_relocation, ventura:       "f657cad51fa143b1cfecaad1ef3ae36db841dbccc99034529b6dcac204c6238a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "756050ee203d6141e5fca77079622ede6df503ae6264ac330611299ed875bf5b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "17359f64ba9559377a577436aae9ef6c06a785ea4e20211354c2ec535ead3252"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f65e97b803180688a72967591e566bf69017534278f1a53510b99bb726e129a0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "167d02851e14c9c60d894dc40c32bc263dd2eac9356023d67123eea9f5197b31"
+    sha256 cellar: :any_skip_relocation, sonoma:        "07acb63ae7523f8a1d3f389a155966303ed115ef9b3601a41adba50599cc5a8f"
+    sha256 cellar: :any_skip_relocation, ventura:       "e0d9a77d2410693bb2fe2d55e8dbfba133f8ee636a35948f71eb789b2c5168d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a492ae0e47fef2bb2331f68488a82d22cab36afb649c82af28a34b5532b8e0e"
   end
 
   depends_on "ghostscript"

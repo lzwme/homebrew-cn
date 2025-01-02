@@ -1,18 +1,18 @@
 class DepTree < Formula
   desc "Tool for visualizing dependencies between files and enforcing dependency rules"
   homepage "https:github.comgabotechsdep-tree"
-  url "https:github.comgabotechsdep-treearchiverefstagsv0.23.1.tar.gz"
-  sha256 "cfc88b80c2fdd72f878dac5f364023c9ad7c7a892b0619701b076caf2257b3eb"
+  url "https:github.comgabotechsdep-treearchiverefstagsv0.23.3.tar.gz"
+  sha256 "c6257189f94d3ff5bd37a178168c8274bdcb3f3b4fc874061c0cbd7f53ed65d2"
   license "MIT"
   head "https:github.comgabotechsdep-tree.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ef8da46fd543e007f180a4b6acf4fb26e8647712d814bfccadda4e6123d734a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ef8da46fd543e007f180a4b6acf4fb26e8647712d814bfccadda4e6123d734a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4ef8da46fd543e007f180a4b6acf4fb26e8647712d814bfccadda4e6123d734a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8b5ba965fbc433c37a2aeb78875335c88fe9b26fb5aa17227f18bd9059c90fa2"
-    sha256 cellar: :any_skip_relocation, ventura:       "8b5ba965fbc433c37a2aeb78875335c88fe9b26fb5aa17227f18bd9059c90fa2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4dfb2867b43f338f7c2fc3707c93068db1f5360a640911b4bd3d60dd7612f9d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ae8e97ced7faf8f6c1afdf91cc2e8ede125dec3fbf07f0c2579a4223b42434b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ae8e97ced7faf8f6c1afdf91cc2e8ede125dec3fbf07f0c2579a4223b42434b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6ae8e97ced7faf8f6c1afdf91cc2e8ede125dec3fbf07f0c2579a4223b42434b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8d3154d8f8051e30fa147cffa844920960a88c38fd57f0f6130923cca5b3a981"
+    sha256 cellar: :any_skip_relocation, ventura:       "8d3154d8f8051e30fa147cffa844920960a88c38fd57f0f6130923cca5b3a981"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b5cfb0f6b9c8780c1280372825ea6ba1517b65a83ca21610baba8ca346672a4"
   end
 
   depends_on "go" => :build

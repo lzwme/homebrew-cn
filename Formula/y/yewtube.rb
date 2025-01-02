@@ -119,15 +119,10 @@ class Yewtube < Formula
   end
 
   test do
-    # Fails with bot detection
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
-    system bin"yt",
-      "set checkupdate false,",
-      "set ddir \"#{testpath}\",",
-      "youtube-dl test video,", "d 1,", "q"
-    downloaded_file = (testpath"mps").children.first
-    file_info = Utils.safe_popen_read("file", "--brief", downloaded_file).strip
-    assert_match(^(WebM)|(.*MP4.*)|(Matroska.*)$, file_info)
+    console = fork do
+      assert_match "checkupdate set to False", shell_output("#{bin}yt set checkupdate false")
+    end
+    sleep 1
+    Process.kill("TERM", console)
   end
 end

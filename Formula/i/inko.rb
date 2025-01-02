@@ -6,6 +6,14 @@ class Inko < Formula
   license "MPL-2.0"
   head "https:github.cominko-langinko.git", branch: "main"
 
+  # The upstream website doesn't provide easily accessible version information
+  # or link to release tarballs, so we check the release manifest file that
+  # the Inko version manager (`ivm`) uses.
+  livecheck do
+    url "https:releases.inko-lang.orgmanifest.txt"
+    regex(^v?(\d+(?:\.\d+)+)$im)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "a6a054979919629af9dc5b93c3caa53863e8035085c9d0f4816d0ceaead78133"
     sha256 cellar: :any,                 arm64_sonoma:  "17e298645d17fc2f4b0aaa29d622be52b5ef2c467e65fa044eec038cc726749b"

@@ -3,18 +3,18 @@ class Bazarr < Formula
 
   desc "Companion to Sonarr and Radarr for managing and downloading subtitles"
   homepage "https:www.bazarr.media"
-  url "https:github.commorpheus65535bazarrreleasesdownloadv1.5.0bazarr.zip"
-  sha256 "0b85e92622b8bd53ad0478b872a36c181bda0b28ab1d01a7d2473ddbfebba748"
+  url "https:github.commorpheus65535bazarrreleasesdownloadv1.5.1bazarr.zip"
+  sha256 "7b96ad17e72a0519186fa9733df86246e50e166b8915a9a4f4ac0d896f3dd724"
   license "GPL-3.0-or-later"
   head "https:github.commorpheus65535bazarr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9559d6bc327724d2d428f74775095e1385938a1d90a137b3a2cc1117ed291c20"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b184133fa813befba2ac7ed45586a359d258ca391e3860339800aca7e2a7b643"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "eb3f2453f0cb0465ee847046b5e9cf5c4f4b70cd6684c77c0d5ce3a309dae5c2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c15721d16593aef0c329ccfcdd0dcf83a05c4af7cc1ab04b5606c976b45b5219"
-    sha256 cellar: :any_skip_relocation, ventura:       "9217c97bff3e434ab8a9096136ed0ce62f0aad89fdf808dd9ea9c05176ddad24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3908943effb00688a1b4ceb60a2f43f10cb127bb6afc19f959c8e426f74af442"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40d35c35dcab8682c03cf750fb7e7417184709d4c97b9db40fce0968ec2bb194"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec29c096a07bcaa7583b2d92bf7c78ac22055fe0e41792760a8005103fb61ead"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cfeb0170d8f5be7cf93401e4047e427d4892a05f454ef5b7c89689e3412faf2d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7375a37329a9eed68187555c430bea89d378fbe7c3727fa9a416832d2c051506"
+    sha256 cellar: :any_skip_relocation, ventura:       "0bfe738d8b0367355f229f7af64998e3de74bb02ffc1d764479269beb3c9e442"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2198317ff715c8d368b65fce2ec6b14a9abee575a767ca86862049725195b0fc"
   end
 
   depends_on "node" => :build

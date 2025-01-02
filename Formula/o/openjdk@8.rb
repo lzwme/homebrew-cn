@@ -25,13 +25,16 @@ class OpenjdkAT8 < Formula
 
   depends_on "autoconf" => :build
   depends_on "pkgconf" => :build
-  depends_on arch: :x86_64
   depends_on "freetype"
   depends_on "giflib"
 
   uses_from_macos "cups"
   uses_from_macos "unzip"
   uses_from_macos "zip"
+
+  on_macos do
+    depends_on arch: :x86_64
+  end
 
   on_monterey :or_newer do
     depends_on "gawk" => :build
@@ -57,8 +60,14 @@ class OpenjdkAT8 < Formula
       sha256 "31909aa6233289f8f1d015586825587e95658ef59b632665e1e49fc33a2cdf06"
     end
     on_linux do
-      url "https:cdn.azul.comzulubinzulu7.56.0.11-ca-jdk7.0.352-linux_x64.tar.gz"
-      sha256 "8a7387c1ed151474301b6553c6046f865dc6c1e1890bcf106acc2780c55727c8"
+      on_arm do
+        url "https:cdn.azul.comzulubinzulu8.82.0.21-ca-jdk8.0.432-linux_aarch64.tar.gz"
+        sha256 "b400f65b63243e41851f20b64374def6ae687de8d15bfb37ef876c2d77548bf5"
+      end
+      on_intel do
+        url "https:cdn.azul.comzulubinzulu7.56.0.11-ca-jdk7.0.352-linux_x64.tar.gz"
+        sha256 "8a7387c1ed151474301b6553c6046f865dc6c1e1890bcf106acc2780c55727c8"
+      end
     end
   end
 

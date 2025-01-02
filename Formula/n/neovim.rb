@@ -138,13 +138,6 @@ class Neovim < Formula
     system "cmake", "--install", "build"
   end
 
-  def caveats
-    <<~EOS
-      `--HEAD` installs also require:
-        brew install --HEAD utf8proc
-    EOS
-  end
-
   test do
     refute_match "dirty", shell_output("#{bin}nvim --version")
     (testpath"test.txt").write("Hello World from Vim!!")

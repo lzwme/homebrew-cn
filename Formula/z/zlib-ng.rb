@@ -1,8 +1,8 @@
 class ZlibNg < Formula
   desc "Zlib replacement with optimizations for next generation systems"
   homepage "https:github.comzlib-ngzlib-ng"
-  url "https:github.comzlib-ngzlib-ngarchiverefstags2.2.2.tar.gz"
-  sha256 "fcb41dd59a3f17002aeb1bb21f04696c9b721404890bb945c5ab39d2cb69654c"
+  url "https:github.comzlib-ngzlib-ngarchiverefstags2.2.3.tar.gz"
+  sha256 "f2fb245c35082fe9ea7a22b332730f63cf1d42f04d84fe48294207d033cba4dd"
   license "Zlib"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,12 +14,12 @@ class ZlibNg < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bc1a40efd791c95a4f89cf7130143af0f55cb60293bcba7e898274ce1d6072f8"
-    sha256 cellar: :any,                 arm64_sonoma:  "ab11bbbef94c89230de768f2ce3ee4ff0fc1c0b6a6e6bd502a9ed63987c1f07f"
-    sha256 cellar: :any,                 arm64_ventura: "ed5838db3f194af31af706bdb83479f9ab58e97d591255da69a243f54e0d63bf"
-    sha256 cellar: :any,                 sonoma:        "490cc436f9bd223ba9bfe652dde27f8b57e49c3062c91fd4455be1b249e21631"
-    sha256 cellar: :any,                 ventura:       "3186ce97b2be07dd0a4dfd2f4dafbcd7c0cae2da506ff67c363394426b783471"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cbfac94e97c9cc5a8518002b3e2baa090cf034a38023aefc292fdb479e3f608"
+    sha256 cellar: :any,                 arm64_sequoia: "8a6407ff6ed8f11bdc38455def3dd19e0072ead6c4b7dd946a9c794369743952"
+    sha256 cellar: :any,                 arm64_sonoma:  "02f492874924adb106c91d846a90b3960c5b4b9c15320773ebea7cf492f01743"
+    sha256 cellar: :any,                 arm64_ventura: "f7da1ac1536239ff9e75637e41443f7f151dd5874d45f387ec37c6551ab0b370"
+    sha256 cellar: :any,                 sonoma:        "3af29abb3a9911cf6572bfc8dd6cd4e23c7bc6b7b5777bb1be87db15bf270e82"
+    sha256 cellar: :any,                 ventura:       "83d66831f2775ee792e9398e2ed6dae9c4d0c46d8c1e29c3b2955fcf434f218b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0527249cbdc21f2521169d09bb968a41a4bed937deac3b3ef6e9b09108110f59"
   end
 
   # https:zlib.netzlib_how.html

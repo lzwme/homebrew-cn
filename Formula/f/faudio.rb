@@ -1,18 +1,18 @@
 class Faudio < Formula
   desc "Accuracy-focused XAudio reimplementation for open platforms"
   homepage "https:fna-xna.github.io"
-  url "https:github.comFNA-XNAFAudioarchiverefstags24.12.tar.gz"
-  sha256 "82feeb58301c4b7316ff6ee2201310073d8c9698ceb3f6f2cf5cc533dee0a415"
+  url "https:github.comFNA-XNAFAudioarchiverefstags25.01.tar.gz"
+  sha256 "044a79222ac01eb0e279f0204e403f01dfea03d29163a721ec266135dd09fb95"
   license "Zlib"
   head "https:github.comFNA-XNAFAudio.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2f8d0559dbc099b8dde9096dbf0fc9bc1b97c604ebd41371b851722e9c2e31d6"
-    sha256 cellar: :any,                 arm64_sonoma:  "c5b712302abe761b78ece64375f549e475845199ac434f421db74985d64c4dd1"
-    sha256 cellar: :any,                 arm64_ventura: "c8a7d413dc7763916221ba6705f85c5ae1e2adfd671fca5109d0a4b3f66abab3"
-    sha256 cellar: :any,                 sonoma:        "355c9d759827d99e9027bf7196d0379af3f3578621eef7e4af278e3fdcd28e99"
-    sha256 cellar: :any,                 ventura:       "6ffe7881bb97c5896a1a073134cdce09c4feda150998123fbc4bec1f7fc547cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc1275b7cb5b506ea1700c1666f314ef71d56cc5874ebe0fb84bdcf6119c6950"
+    sha256 cellar: :any,                 arm64_sequoia: "878cad02164b5cb077145195a6bbe08446b4296edb7774a7bd454655880332fe"
+    sha256 cellar: :any,                 arm64_sonoma:  "24028f4449b2f9ed15774dbe25fff96209a372d638d4107ec5b8b444329f2939"
+    sha256 cellar: :any,                 arm64_ventura: "5573b9a5fcfc5889b0a24a6a8cad7a1e69be40856ed2726d3f61902527961166"
+    sha256 cellar: :any,                 sonoma:        "8c2275c45672725ef981cb5676778a3d38f0de1ee2f3a3f47dd4038e5466be4e"
+    sha256 cellar: :any,                 ventura:       "8388fe308cb670d97b287bb9a80d4455c23552c19236d9839c5e80809aae14b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b1270da232ca4c686d816d93af7046afc0bc38921c72224bb2a8d16b2c81dcc"
   end
 
   depends_on "cmake" => :build

@@ -1,8 +1,8 @@
 class VrcGet < Formula
   desc "Open Source alternative of Command-line client of VRChat Package Manager"
   homepage "https:github.comvrc-getvrc-get"
-  url "https:github.comvrc-getvrc-getarchiverefstagsv1.8.2.tar.gz"
-  sha256 "9dbbaa1addf018e139d87678f8669d0b025502be38afd46f8abd736a3784813c"
+  url "https:github.comvrc-getvrc-getarchiverefstagsv1.9.0.tar.gz"
+  sha256 "4d3821eb4047f7ee83a07a589e97a63608680a71200046d571f9db3320bf8d65"
   license "MIT"
   head "https:github.comvrc-getvrc-get.git", branch: "master"
 
@@ -12,12 +12,12 @@ class VrcGet < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7fe3d7f8abc6d60dcbdddb9c0cce37c1a0071c979e1dceeaefc09b4b37837d0c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba8402442b4b96839d778fa7fbbde67351fec04d35a6cbee551eb86ca635add8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ddf20ad40958f02b1a3f52be12f2cedafa8939932f12022c491330bedcec38be"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d3cc1776e18988d7fe339f25eb6d1a408734e1d4b5f67244efb7669ac7f651f4"
-    sha256 cellar: :any_skip_relocation, ventura:       "132efaf1418a43cfcffb2e8159b4b27984843bac08f333556dd358abaf63874f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fc6bf0b5fbbcd6643f5570af91514a1b4cad94d240078c5f2814c7d1765614b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fe8c69965afb8677e2976c2bd01969d83fb94cfc39ca6ebd2353621ed433bba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c4187e7a323417acaa1d1c6da1b4493d1e56d2c3b4c1cf7a6e625420121c3c90"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "42fab214e3b40da97fe5368b838a1a03b5c534574d0ee1894869dd2819717ca6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d611cd64afa6c1b8a76a0ecc52a2fdaf1ed514ca13b35d28950bbc7f45337b3d"
+    sha256 cellar: :any_skip_relocation, ventura:       "6a8ac8b21c07dc4ef748b0365388463f481b765e60c9492a611e996f17aef78e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf27fd9ca3c93fe01e9db091775dec6c2a6c48c03e79ee90b23ed8b8fc2f03da"
   end
 
   depends_on "rust" => :build

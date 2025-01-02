@@ -1,8 +1,6 @@
 class Z < Formula
   desc "Tracks most-used directories to make cd smarter"
   homepage "https:github.comrupaz"
-  # Please don't update this formula to 1.11.
-  # https:github.comrupazissues205
   url "https:github.comrupazarchiverefstagsv1.12.tar.gz"
   sha256 "7d8695f2f5af6805f0db231e6ed571899b8b375936a8bfca81a522b7082b574e"
   license "WTFPL"
@@ -39,7 +37,7 @@ class Z < Formula
 
   test do
     (testpath"zindex").write("usrlocal|1|1491427986\n")
-    testcmd = "binbash -c '_Z_DATA=#{testpath}zindex; . #{etc}profile.dz.sh; _z -l 2>&1'"
-    assert_match "usrlocal", pipe_output(testcmd)
+    output = shell_output("binbash -c '_Z_DATA=#{testpath}zindex; . #{etc}profile.dz.sh; _z -l 2>&1'")
+    assert_match "usrlocal", output
   end
 end

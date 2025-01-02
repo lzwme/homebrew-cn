@@ -12,7 +12,9 @@ class Openslp < Formula
     sha256 x86_64_linux: "aa1988503f1e9688dfd80e0331392ab29a053e62197b60653e933ee1bc681efb"
   end
 
-  depends_on arch: :x86_64
+  on_macos do
+    depends_on arch: :x86_64
+  end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
@@ -21,8 +23,7 @@ class Openslp < Formula
   end
 
   def install
-    system ".configure", "--disable-debug", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 end

@@ -4,8 +4,8 @@ class Influxdb < Formula
   # When bumping to 3.x, update license stanza to `license any_of: ["Apache-2.0", "MIT"]`
   # Ref: https:github.cominfluxdatainfluxdbblobmainCargo.toml#L124
   url "https:github.cominfluxdatainfluxdb.git",
-      tag:      "v2.7.10",
-      revision: "f302d9730c3c66577bea7bc7199cfae773bf308e"
+      tag:      "v2.7.11",
+      revision: "fbf5d4ab5e65d3a3661aa52e1d05259d19a6a81b"
   license "MIT"
   head "https:github.cominfluxdatainfluxdb.git", branch: "main-2.x"
 
@@ -21,14 +21,12 @@ class Influxdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3a42b508ddb1b9afa8127abf8b17de6f061bd82cf1e87fd03a82e4d7a17f5f9c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d77bc46ed3327b7b0fdbb00f043c2a1a19d60dea2ba1abc7b456b0132fd27f80"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "39520065d44f4c22f7e063dc7704779a4f6fc30cfbc8f5c726bc8bc24ca7ca92"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "1164aadaad10ad149b1751b8c0ccf0b96e671a880ea0ecee3b0bf05537013520"
-    sha256 cellar: :any_skip_relocation, sonoma:         "468a05d3b08bebb974a74c0835fbd390b3b779359b7bb7c0af5be1a6fdc444d5"
-    sha256 cellar: :any_skip_relocation, ventura:        "0d46147e4aed85b578105188ae7d99b1ce5344340ab1ff1dffac84ce3e001e0b"
-    sha256 cellar: :any_skip_relocation, monterey:       "b2b948941a88660812dbade01ef0b6aab00a63f116424c75f68abd831c93d6cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cfc8959bddb5cd650a48835e00bc4b76402cc3c8d56b9efbadff72eb0e415411"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "577ba9284522799541c29345f9c05007fa0a4d49c506e9d6e3ef8410cf070bba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9cb31a2b14b041a044bb1bd8ca75a3a1799d6ab4c9981d95eafe2675cf1786fc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1ff048a6a4b8784a6f07c16c40a406fa90f7acc77b9f6db1d2b59403fac0d211"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2cbda744c82743c7e1b0193708c813b22602b65ce9c3c5117f595ea44933103e"
+    sha256 cellar: :any_skip_relocation, ventura:       "5b206daf7596804851d172d0f70d0713b2477a1cc7fb58d5b0c18a3deba9a6f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dce1ad38f5b09ae95904350471e1d3dd7dd9eb1558e07c52e9dda1db2dd8ab2a"
   end
 
   depends_on "breezy" => :build
@@ -61,6 +59,12 @@ class Influxdb < Formula
     end
   end
 
+  # rust 1.83 build patch, upstream pr ref, https:github.cominfluxdatafluxpull5516
+  patch do
+    url "https:raw.githubusercontent.comHomebrewformula-patchesa188defd190459f5d1faa8c8f9e253e8f83ca161influxdb2.7.11-rust-1.83.patch"
+    sha256 "15fa09ae18389b21b8d93792934abcf85855a666ddd8faeaeca6890452fd5bd4"
+  end
+
   def install
     # Set up the influxdata pkg-config wrapper to enable just-in-time compilation & linking
     # of the Rust components in the server.
@@ -76,8 +80,7 @@ class Influxdb < Formula
 
     # Build the server.
     ldflags = %W[
-      -s
-      -w
+      -s -w
       -X main.version=#{version}
       -X main.commit=#{Utils.git_short_head(length: 10)}
       -X main.date=#{time.iso8601}

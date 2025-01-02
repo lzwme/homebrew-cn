@@ -7,7 +7,9 @@ class Bic < Formula
     url "https:github.comhexagonal-sunbicreleasesdownloadv1.0.0bic-v1.0.0.tar.gz"
     sha256 "553324e39d87df59930d093a264c14176d5e3aaa24cd8bff276531fb94775100"
 
-    depends_on arch: :x86_64
+    on_macos do
+      depends_on arch: :x86_64
+    end
 
     # Backport fix for error: call to undeclared function '__gmp_fprintf'
     patch do

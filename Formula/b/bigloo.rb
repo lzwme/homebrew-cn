@@ -22,7 +22,6 @@ class Bigloo < Formula
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
 
-  depends_on arch: :x86_64
   depends_on "bdw-gc"
   depends_on "gmp"
   depends_on "libunistring"
@@ -31,6 +30,10 @@ class Bigloo < Formula
   depends_on "openssl@3"
   depends_on "pcre2"
   depends_on "sqlite"
+
+  on_macos do
+    depends_on arch: :x86_64
+  end
 
   on_linux do
     depends_on "alsa-lib"
@@ -69,7 +72,6 @@ class Bigloo < Formula
     end
 
     system ".configure", *args, *std_configure_args
-
     system "make"
     system "make", "install"
 
@@ -79,11 +81,11 @@ class Bigloo < Formula
   end
 
   test do
-    program = <<~EOS
+    program = <<~SCHEME
       (display "Hello World!")
       (newline)
       (exit)
-    EOS
+    SCHEME
     assert_match "Hello World!\n", pipe_output("#{bin}bigloo -i -", program)
   end
 end

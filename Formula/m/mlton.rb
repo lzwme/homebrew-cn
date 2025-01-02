@@ -1,9 +1,9 @@
 class Mlton < Formula
   desc "Whole-program, optimizing compiler for Standard ML"
   homepage "http:mlton.org"
-  url "https:downloads.sourceforge.netprojectmltonmlton20210117mlton-20210117.src.tgz"
-  version "20210117"
-  sha256 "ec7a5a54deb39c7c0fa746d17767752154e9cb94dbcf3d15b795083b3f0f154b"
+  url "https:downloads.sourceforge.netprojectmltonmlton20241230mlton-20241230.src.tgz"
+  version "20241230"
+  sha256 "cd170218f67b76c3fcb4d487ba8841518babcebb41e4702074668e61156ca6f6"
   license "HPND"
   version_scheme 1
   head "https:github.comMLtonmlton.git", branch: "master"
@@ -14,18 +14,12 @@ class Mlton < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia:  "203ad4b481a894afceb9aa087114983f22bc7035afea81c13601fee5617fc68a"
-    sha256 cellar: :any,                 arm64_sonoma:   "ab72acae5b403f85995c18f3da2dc19341ef57ef1c8b5b2bc0f0c791bce41d7c"
-    sha256 cellar: :any,                 arm64_ventura:  "47153e8fe8add04e420f69b4d5b1062ac2fa9abc1106cda2e5d0d0893ed0ca79"
-    sha256 cellar: :any,                 arm64_monterey: "b63990802ceb1eab45673ca135e32aa1329a051fdd2ac3ca28c703d691e2f854"
-    sha256 cellar: :any,                 arm64_big_sur:  "13f277d7115052ab34efd1cbea436bb9dec5227a09cc1f1e7c07a9f0670f7405"
-    sha256 cellar: :any,                 sonoma:         "ebd91f16e7ff2211c0695c5cb5430e724f4fe33676f72fcbc9e2a690cf488235"
-    sha256 cellar: :any,                 ventura:        "fbea833f5eb02f0c9a3ff0a0f494eae2dc24232672900deb1863de117d2b1904"
-    sha256 cellar: :any,                 monterey:       "67242137af80b4ecae138c139ee1e169d8ee04a1928ae0e40cbd339c2846d349"
-    sha256 cellar: :any,                 big_sur:        "1a78dc22f29209bd9d2b3acc9b4d67655443a07adda31e421ccd748ae82cf50d"
-    sha256 cellar: :any,                 catalina:       "049702ba52a30d7d5e4f005f68e35460ed9a9f18cc2af5d1ae66ca6c2d8fd5e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8dd855cfe0427e16f22c83f52f19999fa184cbac12853431fac1444c34565ff4"
+    sha256 cellar: :any,                 arm64_sequoia: "e4ab226d1c19700cfb7336f58945cffa425aa1a8e1efdbc661a34434be2ef571"
+    sha256 cellar: :any,                 arm64_sonoma:  "27c4f97455e26387cee36bdba2faa5df88b69a80b385a74735b1631c6b7f1592"
+    sha256 cellar: :any,                 arm64_ventura: "bed247cd0a0a8e1d219a0aa227bc0c1521546c982d6e39252471ca9788037702"
+    sha256 cellar: :any,                 sonoma:        "6d43cf4850c6254329c6a4c1ee06f6e860bf133fca2772eac31c9d8f9e1645dd"
+    sha256 cellar: :any,                 ventura:       "de3736436eba0b0a13c9f5c04dc472912366b1ab4aafce7c88d0b0b7687d1fbf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed7629b2e4edf19250fc7c6311fbf582b2f8b63658b3e8dd37083ceb98c8a801"
   end
 
   depends_on "autoconf" => :build
@@ -37,22 +31,24 @@ class Mlton < Formula
     on_macos do
       # See https:projects.laas.frtinahowto-arm64-darwin.html and
       # https:projects.laas.frtinasoftware.php
+      # macos-15 is arm runner
       on_arm do
-        url "https:projects.laas.frtinasoftwaremlton-20210117-1.arm64-darwin-21.6-gmp-static.tgz"
-        sha256 "5d8cc4046f502ca7d98670d53915e3a1973ec0826e4c4c23e25d483fa657c1e8"
+        url "https:github.comMLtonmltonreleasesdownloadon-20241230-releasemlton-20241230-1.arm64-darwin.macos-15_gmp-static.tgz"
+        sha256 "c6114fda99458cffe66cbcf508db65673926d0ac7ab707c3fc39a7efd563f74f"
       end
       # https:github.comHomebrewhomebrew-corepull58438#issuecomment-665375929
-      # new `mlton-20210117-1.amd64-darwin-17.7.gmp-static.tgz` artifact
+      # new `mlton-20241230-1.amd64-darwin.macos-13_gmp-static.tgz` artifact
       # used here for bootstrapping all homebrew versions
+      # macos-13 is intel runner
       on_intel do
-        url "https:downloads.sourceforge.netprojectmltonmlton20210117mlton-20210117-1.amd64-darwin-19.6.gmp-static.tgz"
-        sha256 "5bea9f60136ea6847890c5f4e45d7126a32ef14fd46a2303cab875ca95c8cd76"
+        url "https:github.comMLtonmltonreleasesdownloadon-20241230-releasemlton-20241230-1.amd64-darwin.macos-13_gmp-static.tgz"
+        sha256 "7d6d21aa3ad651ccbe3c837c5876f5af811881fbb017d673deaedfd99b713a2d"
       end
     end
 
     on_linux do
-      url "https:downloads.sourceforge.netprojectmltonmlton20210117mlton-20210117-1.amd64-linux-glibc2.23.tgz"
-      sha256 "5ac30fe415dd9bf727327980391df2556fed3f8422e36624db1ce0e9f7fba1e5"
+      url "https:github.comMLtonmltonreleasesdownloadon-20241230-releasemlton-20241230-1.amd64-linux.ubuntu-24.04_glibc2.39.tgz"
+      sha256 "95d5e78c77161aeefb2cff562fabd30ba1678338713c50147e5000f9ba481593"
     end
   end
 

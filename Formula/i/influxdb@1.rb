@@ -12,12 +12,13 @@ class InfluxdbAT1 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dee91f95146a964f1edff2713db95d556cdce850c66b8fb1a8be2e63f592ee67"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a804285e662148a707e4c67568f743fa6b53962b7c71d0b6a16101886ca056d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fce2ab4adcb4dd5f9616c59be6dc96245ead7f6f8390dd8518ef03423f7f1453"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e1294502e77f813839a9f087fd8e08746a853572b58ee961c84f40abaa77ade5"
-    sha256 cellar: :any_skip_relocation, ventura:       "a5fc120ab0089ce9c3bb4459efc10b38688a4f5a5241bada4ed38bc39a81d888"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a10a03c0d30b7801e40f66e43d7cfd3aa877759c87a58412b230b6809105f001"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a16ab41c6f874c7b1f4a3270f330737ab97bca896bd0ebc16959b98ca9d4508d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d883510e1b2a7ce917bcda970363dcfe5fb8d7b5470ff139c5ba4cb8cfbed8d9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "feb8a53d3796b3a3f6db169cfcfbff22ea1f4640c6dfa4bcef7279229e898913"
+    sha256 cellar: :any_skip_relocation, sonoma:        "22571e63d45311ce6b79114d1ffbeba4d2afc9c04e15200ad799dae9078bdd54"
+    sha256 cellar: :any_skip_relocation, ventura:       "575068844d81e6c2623d995aaf2f3891e0d19ba3ad555db6575b76bb2cb56274"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b659d515984209fb912df2e58ab96f2ac9b93240f89885f85e4c6d57ece1e30"
   end
 
   keg_only :versioned_formula
@@ -34,10 +35,12 @@ class InfluxdbAT1 < Formula
     sha256 "52b22c151163dfb051fd44e7d103fc4cde6ae8ff852ffc13adeef19d21c36682"
   end
 
-  # update flux dep, upstream bug report, https:github.cominfluxdatainfluxdbissues25440
+  # update flux dep to fix rust build issue
+  # upstream bug report, https:github.cominfluxdatainfluxdbissues25440
+  # upstream rust 1.83 build patch, https:github.cominfluxdatafluxpull5516
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches984eb256ccb68fe9ee3b3e0f88f7991b0dd55ccbinfluxdb@11.11.7.patch"
-    sha256 "4c6ac695f2302ca320db58f3906f346fa48fbd3706964a8be39c5a3da6080256"
+    url "https:raw.githubusercontent.comHomebrewformula-patchesa2f5c7e20f69eabde99098e6480d2b29faaf2638influxdb%4011.11.8-rust.patch"
+    sha256 "f24a5021b72a3ebd9b7234c35f033fa0f5d5f10377257af09dcfdbd84fcf5ed4"
   end
 
   def install

@@ -3,19 +3,18 @@ class Drogon < Formula
   homepage "https:drogon.org"
   # pull from git tag to get submodules
   url "https:github.comdrogonframeworkdrogon.git",
-      tag:      "v1.9.8",
-      revision: "6d9ecb8d8d8dcbbc14db618c0687c7ae4c792f1b"
+      tag:      "v1.9.9",
+      revision: "38dd5fea31a7a2727c0a6f6b6b04252374796cab"
   license "MIT"
   head "https:github.comdrogonframeworkdrogon.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256                               arm64_sequoia: "d7713ae1b91274ee539bcf3111396ec341664bb66b360143be1bc02ee1d527bb"
-    sha256                               arm64_sonoma:  "918e9594835f3f5ff27992fefc91867c58148b21f203e1dacc305d6db9e6bda6"
-    sha256                               arm64_ventura: "4f6b123877a15d6ddc9eb00dcd6a8ad384c2f5f23a25a3e440767ea52652175a"
-    sha256                               sonoma:        "0d5ac27f514e7014ee8c605c7a6a3dbb8f36bf61bb1cd89e84e26fd6f0102d66"
-    sha256                               ventura:       "f11e22833092ef33c773b2781cca9d5285419e3b42f3807cc38ae619d5e69cd6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37802093942e430f38b315d72c019af76246e27fd7acf55f40c6c0009e3d0dcb"
+    sha256                               arm64_sequoia: "8dc2155bd7e8cc3c0051f94916eecf745776d2df8f1f47496e18faf21e36ab27"
+    sha256                               arm64_sonoma:  "c93d9767414b174d4c1e9d8e04b52c3c39458a26ffdaee359fba557a5e3a66d0"
+    sha256                               arm64_ventura: "15513fef0b3bbed6f98b4c180025e4a3c1482f74a3db073d6502b6ddadc744cc"
+    sha256                               sonoma:        "389c469f48eb5e301057b59bfd8d89d17c8ed11499853ea9154aba60e9def0a8"
+    sha256                               ventura:       "4b1a76323552af03a531fae8915a22535fb842a9eaa9b51076017665bd569f3f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c566cde051d497bef9503d7a795c1331f5fecb58d347265dc04086c85128f89c"
   end
 
   depends_on "cmake" => [:build, :test]
