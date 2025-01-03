@@ -15,12 +15,13 @@ class Notmuch < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0cb5a27f8898383b7c6b5696d605b47466ae80ae73feabf7cc616935dba75571"
-    sha256 cellar: :any,                 arm64_sonoma:  "77f11fdb21b081f7cdf38f0334efd97bf7f208d557278f3391947dd99c4819c6"
-    sha256 cellar: :any,                 arm64_ventura: "7f655d574419dbbe31f22724515dc695e062f2c9020d60dc6069657ec427907e"
-    sha256 cellar: :any,                 sonoma:        "7873f14945e4cabf41579162fa9fa4beea2c00ef315002166f3c26f85432578c"
-    sha256 cellar: :any,                 ventura:       "628cd7d9c59e86410c0d82c47f7c13f0aea37c210c0850eced14e2bf117ab96f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39562c54f856e2ce82c611ac9fce4d9656c55dc89262091bc047182c3e7338c8"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "cd717cdea34175ce4b3ecb26f15594ed015483ce17e14204864b208afed3cf5e"
+    sha256 cellar: :any,                 arm64_sonoma:  "7844df568b86b1b6309c3aa0f6c4cf68ccb8a9b35fc90121b109d05a208b7cac"
+    sha256 cellar: :any,                 arm64_ventura: "592e3240392b89a60c68eba4c9bcb7d705c60733a3a8366642336c6369811cc4"
+    sha256 cellar: :any,                 sonoma:        "10fa6fbceadb544587d026f3591a1a43c3054cfce290f5d56beda33a201fc98b"
+    sha256 cellar: :any,                 ventura:       "3de2605deb58d1854e07fa28ac0730ee6ea82599510297a910d03df7cabbbb4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1572f5f82da23d1493d0651c6294c7694f473c36c77d0d08c6f8d535c3ad700b"
   end
 
   depends_on "doxygen" => :build
@@ -64,7 +65,7 @@ class Notmuch < Formula
     rewrite_shebang detected_python_shebang, bin/"notmuch-git"
 
     elisp.install Pathname.glob("emacs/*.el")
-    bash_completion.install "completion/notmuch-completion.bash"
+    bash_completion.install "completion/notmuch-completion.bash" => "notmuch"
 
     (prefix/"vim/plugin").install "vim/notmuch.vim"
     (prefix/"vim/doc").install "vim/notmuch.txt"
@@ -92,6 +93,6 @@ class Notmuch < Formula
       db.close()
     PYTHON
     system bin/"notmuch-git", "-C", "#{testpath}/git", "init"
-    assert_predicate testpath/"git", :exist?
+    assert_path_exists testpath/"git"
   end
 end

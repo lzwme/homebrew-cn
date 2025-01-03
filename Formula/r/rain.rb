@@ -6,12 +6,13 @@ class Rain < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6f23e9b078bf0ca35c57852524f4e331e1822053cbeacf7736d874199a84a42"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "894452f9469ca9d28716fc249c51711d4ade5834cc136306eb7b76d92b797272"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d0a7c73392d539c94877d13061279a10659ee1e065d8c4039919869ab2294255"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a81e40b7b8637d15ba03c1a2188bab55ae9acae96f1ee22712f902d98d7024b6"
-    sha256 cellar: :any_skip_relocation, ventura:       "5ed1a26a42c7d8f1da8b49d48e4accfd24ca7f93930ab4e51bee9031ddb35469"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42f5e0ae9f61118f8c37350ee154e55273852dd9a9be5f7fe0f00a03835ac7cb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7fab2fe3bf19e53cf47b35e20de4dfb14048d2b6f52a742396437af4c1375535"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0cd83efc3f08a367485662f3ab8534c6d4a9ccf461cb498c8d4a2c16a5a4a491"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3c88ad6843cac01f9638d0234dd3f199a2e19dd49a80e50e38520b16edb5044a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "757dae67102a70496f24a2e48d1e3ea77f382aaae32fda9c19f06c7c3500baa7"
+    sha256 cellar: :any_skip_relocation, ventura:       "9ecdee2848a66ee24f9ec2c554fa71b34784cca0c9c11dcbbc375a357fe9cdfd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81e0ab13f70e98a3bb02dbbc8ad4511f714d888121e085a3c82f17301592df9b"
   end
 
   depends_on "go" => :build
@@ -19,8 +20,8 @@ class Rain < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdrain"
 
-    bash_completion.install "docsbash_completion.sh"
-    zsh_completion.install "docszsh_completion.sh"
+    bash_completion.install "docsbash_completion.sh" => "rain"
+    zsh_completion.install "docszsh_completion.sh" => "_rain"
   end
 
   def caveats
@@ -31,11 +32,11 @@ class Rain < Formula
   end
 
   test do
-    (testpath"test.template").write <<~EOS
+    (testpath"test.yaml").write <<~YAML
       Resources:
         Bucket:
           Type: AWS::S3::Bucket
-    EOS
-    assert_equal "test.template: formatted OK", shell_output("#{bin}rain fmt -v test.template").strip
+    YAML
+    assert_equal "test.yaml: formatted OK", shell_output("#{bin}rain fmt -v test.yaml").strip
   end
 end

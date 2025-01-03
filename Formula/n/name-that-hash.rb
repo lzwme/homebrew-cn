@@ -10,8 +10,8 @@ class NameThatHash < Formula
   head "https:github.comHashPalsName-That-Hash.git", branch: "main"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, all: "f5f2e0cbb22fb4686764e9d6eed612bd179fa3bee5b9fd8e2040541a291f87aa"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, all: "ebc63e1cd2a29eded2a1d8bd312f4df14882bd40e4e98f713e69aad521b47e0e"
   end
 
   depends_on "python@3.13"
@@ -43,6 +43,10 @@ class NameThatHash < Formula
 
   def install
     virtualenv_install_with_resources
+
+    %w[name-that-hash nth].each do |cmd|
+      generate_completions_from_executable(bincmd, shells: [:fish, :zsh], shell_parameter_format: :click)
+    end
   end
 
   test do

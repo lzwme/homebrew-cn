@@ -8,12 +8,13 @@ class Localstack < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2e7d4be3c40a9fc37075d0e119001a5e90ebb41f7af2894f9bd8bb727241c01b"
-    sha256 cellar: :any,                 arm64_sonoma:  "358c5d09ae738305ec3a5e2472b42e384ae597994b1ad0ff2918850260f56e6c"
-    sha256 cellar: :any,                 arm64_ventura: "69d7dbf235c0beb7cdb7fee30b85954d64924fad5d12b948b1741982f4f4f266"
-    sha256 cellar: :any,                 sonoma:        "1432a51e115a097b6ef3d7bdbefbe89d52d9aa794c426ea582e0210db4abd8a6"
-    sha256 cellar: :any,                 ventura:       "6f601f86aa07e783fd0930eacfba45735a48d3e1978a0ea8327acfd953b19aac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53aa9b0fabf039d043145e77b40bcd7ac86decbf8986ba1e77d6e61f622a62f5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "fcc329420a766ae73a69b3eb78c922447581e57eb664dc6d38359f9930777d0f"
+    sha256 cellar: :any,                 arm64_sonoma:  "c26b1821e174ae2f55d2586d29aee71888252e93e0a1717d4e2332fb4050b360"
+    sha256 cellar: :any,                 arm64_ventura: "b072b1ea640ffa24b468d1977658a6a60da66490255d551595e99afa5dd6ca76"
+    sha256 cellar: :any,                 sonoma:        "9c3cb9265cc00eb73a6b756a4c633d826a0c348da508e511e5ae3cb4c37adae6"
+    sha256 cellar: :any,                 ventura:       "38659fbf7e478bbc8d1940f9a49262414289acb6e41d6e733eed8787b51b42e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e55422c161f1de010bc9dbf09977dee663fa9a0e3c536fb5464679519731b64"
   end
 
   depends_on "docker" => :test
@@ -190,6 +191,8 @@ class Localstack < Formula
   def install
     virtualenv_install_with_resources
     bin.install_symlink libexec/"bin/localstack"
+
+    generate_completions_from_executable(bin/"localstack", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

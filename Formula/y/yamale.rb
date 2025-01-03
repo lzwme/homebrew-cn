@@ -3,18 +3,18 @@ class Yamale < Formula
 
   desc "Schema and validator for YAML"
   homepage "https:github.com23andMeYamale"
-  url "https:files.pythonhosted.orgpackagesc6a66bfdf3b84fe2db12e2fe900f9ab89b2a42f99764722c0f1174e99340b0bfyamale-5.3.0.tar.gz"
-  sha256 "68af23b6155f496fb11c831a504eb9f9a474a997a8571d6f249dc044e6a65af3"
+  url "https:files.pythonhosted.orgpackages3727da3742a358015f3c2a069ccdaf7e5766ac358e8200319f640755db3128aeyamale-6.0.0.tar.gz"
+  sha256 "60be681f35e4939320b89de0d6f187ee0e5479ae7f7286b7f17f0859ddee4a66"
   license "MIT"
   head "https:github.com23andMeYamale.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "07cc752ebb1642a59d25612806c881c3f14f66b26e5ccc3d6e5605da9d3fa5f3"
-    sha256 cellar: :any,                 arm64_sonoma:  "2b9ad0a42db9fcba7f763ca766d692418378648754c58c6ab042197b169299d2"
-    sha256 cellar: :any,                 arm64_ventura: "25b04eda28ea49eaf9072e538ba53c9b58dc1a2382293274bd55f27a5e9fa980"
-    sha256 cellar: :any,                 sonoma:        "6816a9ed83cd53f2a15ed1ba42ca6abd8838fb6aa69f82037a9681ed6369c3d5"
-    sha256 cellar: :any,                 ventura:       "225d85d67aca1ff922ea84fa8b0dc3615d1fa947697b2b8887ed1dc09d3f3998"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "930b426c69d4075c6397f1f48121a7e335944afde00d579ed5071a528e657d2b"
+    sha256 cellar: :any,                 arm64_sequoia: "e48267ff74adef8ba5d4d66834e837278195007081f1ba45e3b9142d17edcc1b"
+    sha256 cellar: :any,                 arm64_sonoma:  "84c923dcb48dca1e6eed547ce3768edc50d1cf4a357cbbe777b76e0cf9d1df50"
+    sha256 cellar: :any,                 arm64_ventura: "7a25c95c119ca7c208907a8a8f96555ceacaeb99ca3e33742127a1024293461d"
+    sha256 cellar: :any,                 sonoma:        "da45cebb15964ac288acd319dc2bf59553a4248ee2e0ec33959267b3fe684ac4"
+    sha256 cellar: :any,                 ventura:       "5d79479b30e4a0b9060051b53726d56cc6b96cd7a5e107584b5ca4459d6ad259"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eef4d6178db727a8de6d7749a1e03f2fafe21384e58b20f7e29d2bd1f35450ca"
   end
 
   depends_on "libyaml"

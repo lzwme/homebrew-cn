@@ -9,8 +9,8 @@ class Proselint < Formula
   head "https:github.comamperserproselint.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "2127a0808d77df7d5ff5035bd1406036100445e831c6c728d3367ad390a45af1"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "fe5583b1309c7b518421055b260ab9d02734219408b363a30daf2feefb54ecee"
   end
 
   depends_on "python@3.13"
@@ -22,10 +22,12 @@ class Proselint < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"proselint", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
-    output = pipe_output("#{bin}proselint --compact -", "John is very unique.")
+    output = pipe_output("#{bin}proselint --compact -", "John is very unique.", 1)
     assert_match "Comparison of an uncomparable", output
   end
 end

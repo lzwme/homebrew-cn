@@ -1,8 +1,8 @@
 class Goctl < Formula
   desc "Generates server-side and client-side code for web and RPC services"
   homepage "https:go-zero.dev"
-  url "https:github.comzeromicrogo-zeroarchiverefstagstoolsgoctlv1.7.4.tar.gz"
-  sha256 "93861b2fa7ddb236f2cfe1325158c4b73a8c6888c648f55b03c439767f9f61a4"
+  url "https:github.comzeromicrogo-zeroarchiverefstagstoolsgoctlv1.7.5.tar.gz"
+  sha256 "4d2271227ea63c5cce6a656dd16057022479c5c4acdf966ca0246f461bdce061"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Goctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "05e2d643c00a24ce872fe5e90d24721853dd526a6b15a74ee0764bd11a763559"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05e2d643c00a24ce872fe5e90d24721853dd526a6b15a74ee0764bd11a763559"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "05e2d643c00a24ce872fe5e90d24721853dd526a6b15a74ee0764bd11a763559"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4b84ed3cb58976743e9ea854373362c99deb6ffe0dcf1bf84912a6a3f4489b8d"
-    sha256 cellar: :any_skip_relocation, ventura:       "4b84ed3cb58976743e9ea854373362c99deb6ffe0dcf1bf84912a6a3f4489b8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e33f751a66b8f0c0d2379fe2c7d99c00ff4f3add85fd31ed8d3eaa6c02a9cb5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "74315348892d925634239ab2e791b2901d1e1fa1bed08ccd1782c4d09f4e62e2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "74315348892d925634239ab2e791b2901d1e1fa1bed08ccd1782c4d09f4e62e2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "74315348892d925634239ab2e791b2901d1e1fa1bed08ccd1782c4d09f4e62e2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "09901a91078dc39a58a2b99241b9393108e98689d96209f4867432d64a5ac931"
+    sha256 cellar: :any_skip_relocation, ventura:       "09901a91078dc39a58a2b99241b9393108e98689d96209f4867432d64a5ac931"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87b113afd8240357f276f559ab9eaef84f42277e763bb1b68c76472ad86f6821"
   end
 
   depends_on "go" => :build

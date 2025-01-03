@@ -4,20 +4,21 @@ class Fselect < Formula
   url "https:github.comjhspeterssonfselectarchiverefstags0.8.8.tar.gz"
   sha256 "0f586c3870a66d4a3ab7b92409dcf0f68a23bd8031ec0cc3f1622efebe190c9e"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e5e7b20338ffee88d3d873a8833eebb899d178d664b69d9ec1467f183b83a7bd"
-    sha256 cellar: :any,                 arm64_sonoma:  "4a7a59e06bdc9386a66ad1f321b8be70d9fd44311a1855847fae76ac76171fb9"
-    sha256 cellar: :any,                 arm64_ventura: "9c69d01efd42573aec1830a943fc6e3e40027430529d6ad34d7fef9f2a983c17"
-    sha256 cellar: :any,                 sonoma:        "067861bb6541a0cf74f7e5398bc77a2f17e7acda0c9ecb4fae662be738488dd2"
-    sha256 cellar: :any,                 ventura:       "933cb9075ee0eedd71b1668a776806c66d559a5ad48f4d5428c7e976c8126ab7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bccfa74b105eecd9922f38cd7733cf940e6701ac2da1fb8c501775b160a63b5"
+    sha256 cellar: :any,                 arm64_sequoia: "9312998702ee83c806f9b8a81680b134a5b0673de1bfcb19e0d3e623e9c05fcf"
+    sha256 cellar: :any,                 arm64_sonoma:  "aee99ad575ad0ee51b8da39d8b5eec8ed8c996d05a07a6906cadeadbf43da820"
+    sha256 cellar: :any,                 arm64_ventura: "5f3dd57481b735dac9c15672fac8ade8e4849b3c8b2f2e0ec5d68e19d72f09b5"
+    sha256 cellar: :any,                 sonoma:        "064482d661067674ac21273e77738d3967d85fceb9035d171afb70b020166b43"
+    sha256 cellar: :any,                 ventura:       "3088a497579df2acbfb99951d22a91b20fb4bfa093a7a92a680cc2fb54cd5440"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1978401b8eeaad13e973afdb08633715c9b517da32428ae40fcac426bc56c5a0"
   end
 
   depends_on "cmake" => :build # for libz-ng-sys
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "libgit2"
+  depends_on "libgit2@1.8" # needs https:github.comrust-langgit2-rsissues1109 to support libgit2 1.9
   depends_on "openssl@3"
 
   uses_from_macos "bzip2"
@@ -46,7 +47,7 @@ class Fselect < Formula
     assert_match "test.txt", shell_output(cmd).chomp
 
     linked_libraries = [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["libgit2@1.8"].opt_libshared_library("libgit2"),
       Formula["openssl@3"].opt_libshared_library("libcrypto"),
       Formula["openssl@3"].opt_libshared_library("libssl"),
     ]

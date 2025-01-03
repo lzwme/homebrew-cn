@@ -8,7 +8,8 @@ class LanggraphCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0a7b1b8fbba8357711046b204bd2f8bd4ca788eb2881d4f38a895938dcf56edc"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "82ad910c6e05f3de0dc08aef3785813ebd6ee6c97ca03f7dd2667b823507847e"
   end
 
   depends_on "python@3.13"
@@ -20,6 +21,8 @@ class LanggraphCli < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"langgraph", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

@@ -9,12 +9,13 @@ class Bilix < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3c1e5cde851eb27c85abb5c41bed3edfd4d45f68adf9661621e6c3a00ceb2061"
-    sha256 cellar: :any,                 arm64_sonoma:  "49a684a00f27ec7f6ce57a768886cf1ee731d6fc75403e7341248ec02e640511"
-    sha256 cellar: :any,                 arm64_ventura: "10290bffb1be855b97822cac52915f16180185794478e53ee99bdb960b7d4c4c"
-    sha256 cellar: :any,                 sonoma:        "78d4865ffa1dc7106db2272b789a90a46f509bfc7b0186c18c3b916280eb4b40"
-    sha256 cellar: :any,                 ventura:       "669ef0d47cfbd0f9c8ac6b9a70c5af94ff828cd271867ad981a0ff6ebf39b2cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "216ac59112c834424f935f42cedcec79ea202f40a817bb0dff133315b7b0760c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "f7bae8004f87f4ac5da38df84579365e3adcb00b9cc4ec57b74282bb3727a23f"
+    sha256 cellar: :any,                 arm64_sonoma:  "31d5f998615d46d4f333eb0df28079cf7261d5e422e8be6eb06022611e67d649"
+    sha256 cellar: :any,                 arm64_ventura: "02ba642ca6e4d17595fc694585cce296bb01174371e440df74b489bc45a9e621"
+    sha256 cellar: :any,                 sonoma:        "87617e45dcd5c871a273de454830da1d686e3fd208c907bc3682d70eb1d8e594"
+    sha256 cellar: :any,                 ventura:       "09daeae43c5fee948d99e2e185d0cc8e75e0d9be032460d713d38e3ce6e6cb2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d5adb32a945cc04f70fc982d589d9fc3785bb406c6e5b6e7aa32a04d30676c0"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -189,6 +190,8 @@ class Bilix < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"bilix", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

@@ -2,18 +2,18 @@ class Goreleaser < Formula
   desc "Deliver Go binaries as fast and easily as possible"
   homepage "https:goreleaser.com"
   url "https:github.comgoreleasergoreleaser.git",
-      tag:      "v2.5.0",
-      revision: "7339ef1b4aeae3ba84d4f125fa762b22c59a1c30"
+      tag:      "v2.5.1",
+      revision: "a167e697a0334766bd4085b38508406ab9528b1b"
   license "MIT"
   head "https:github.comgoreleasergoreleaser.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29e4e0ebdfb51aa7bcd0747fb34943ed90c651fecb6c1cb1b9ebd65be2563d29"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "29e4e0ebdfb51aa7bcd0747fb34943ed90c651fecb6c1cb1b9ebd65be2563d29"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "29e4e0ebdfb51aa7bcd0747fb34943ed90c651fecb6c1cb1b9ebd65be2563d29"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d5eed19a46a1865ec2a2ccacb20664e8194d9181c1916c094b285a6d6d818f12"
-    sha256 cellar: :any_skip_relocation, ventura:       "d5eed19a46a1865ec2a2ccacb20664e8194d9181c1916c094b285a6d6d818f12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d3f2733953690551f8d9ca2cd25a6551bb64c44971a1e9b454310c6aa38236a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11fb1f9bf91cdc8a8c63579459eb51a6d38dc49f652c74f0bd36e5dd72e8f737"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "11fb1f9bf91cdc8a8c63579459eb51a6d38dc49f652c74f0bd36e5dd72e8f737"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "11fb1f9bf91cdc8a8c63579459eb51a6d38dc49f652c74f0bd36e5dd72e8f737"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9f8a8377b3b8196f76e18ba2f17919cab7fc19229c4576716538c13fa73eaf78"
+    sha256 cellar: :any_skip_relocation, ventura:       "9f8a8377b3b8196f76e18ba2f17919cab7fc19229c4576716538c13fa73eaf78"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59c4491fe23fb0fae7fdcc5463da1bb0a0b05c0d5671399c5ca7fe5f9c5bd912"
   end
 
   depends_on "go" => :build
@@ -34,7 +34,7 @@ class Goreleaser < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}goreleaser -v 2>&1")
-    assert_match "config created", shell_output("#{bin}goreleaser init --config=.goreleaser.yml 2>&1")
+    assert_match "thanks for using GoReleaser!", shell_output("#{bin}goreleaser init --config=.goreleaser.yml 2>&1")
     assert_predicate testpath".goreleaser.yml", :exist?
   end
 end

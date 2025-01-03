@@ -10,13 +10,13 @@ class AwsSsoUtil < Formula
   head "https:github.combenkehoeaws-sso-util.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "5b22b40a8de1bfdb985b4e7ecdbed71078be58f6450066f49dbd83ea4dabf9b5"
-    sha256 cellar: :any,                 arm64_sonoma:  "c7cd5292ce5c50d89c9a39a0c5118839351d69dea9ced67d1c5c96e75f9d0028"
-    sha256 cellar: :any,                 arm64_ventura: "c81d42d4b21f063b81a9eb2b0b818c3952c88b8751782b325e05ad7912efe79a"
-    sha256 cellar: :any,                 sonoma:        "c5197f8921916bd232ad68412afa365ad8bdccb46da019c005e188b7d7314718"
-    sha256 cellar: :any,                 ventura:       "ae78f09a36575a99f13c989feee7fb028723c5fa87b1f8c3eb48b2b9cff95fb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12e03d130f23e413462534cb3b6f94d0b8a6ddf1ba0bc50fc2520e321f1440cd"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "9903e41ae7e257555039f86152b41d0a6f7b27955a2744cf2f1f2c997191c9dd"
+    sha256 cellar: :any,                 arm64_sonoma:  "ad43abbb7a0a7c3ba61dce0b6af56eb92f83430be36df384f9ef7ac4864e8eed"
+    sha256 cellar: :any,                 arm64_ventura: "efb299f6b966cb9e1a499c3bd713e90dbddd4b807cd3c9879c457d1c7926c47a"
+    sha256 cellar: :any,                 sonoma:        "7805d4f7f3d2ea04b5f1cfef139aa3f031c4072386b2023942b29120c92c8204"
+    sha256 cellar: :any,                 ventura:       "801c69f860d2be4906b323f4799b894bb7946d96dc279bdf0f5099b0ee5b6b6e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3273d21f75eb5bd2de2a7d52e46260752499e052ec13b18e7cb83c1597fa5b5d"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -121,6 +121,8 @@ class AwsSsoUtil < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"aws-sso-util", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
@@ -131,7 +133,7 @@ class AwsSsoUtil < Formula
 
     assert_empty shell_output "AWS_CONFIG_FILE=#{testpath}config #{cmd}"
 
-    assert_predicate testpath"config", :exist?
+    assert_path_exists testpath"config"
 
     expected = <<~EOS
 

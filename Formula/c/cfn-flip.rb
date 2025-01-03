@@ -9,13 +9,13 @@ class CfnFlip < Formula
   revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "56fe9fe6185019ce53a85c5ddc71abbd373c24c27bb26a4ba6e73463b89b1df4"
-    sha256 cellar: :any,                 arm64_sonoma:  "6adc448d4253f808ffc13a4d4191acd29608047c62f573916567bd5dee5cd37c"
-    sha256 cellar: :any,                 arm64_ventura: "e7a1d40f2eedb27478defd049e6779b5f8717c583f3ea3b1c8b293f3ef3bbea7"
-    sha256 cellar: :any,                 sonoma:        "fb306034d555f7d8bef38114f949c89c0af36747814cb7fe91d7c59367614c96"
-    sha256 cellar: :any,                 ventura:       "29d0c987000711a22b22cf4035132104e7e3decaae3980f7ef347139c6c0d30e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f53b22e1f37ddd7932bc70841da5bf64cff519693b166098a0309642a539406"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "07d7a01e5e4b2cf04a12cf05b6255c452326347afc72cf22c755f11eee638fac"
+    sha256 cellar: :any,                 arm64_sonoma:  "a30142eaa1b55eacf35e1c2573e38e516779882086ddb7c417e7bee97e556f5c"
+    sha256 cellar: :any,                 arm64_ventura: "21a22fd0985168ca5c0ac5836ca4a85928d159833fdd4e75553e9295b8e74514"
+    sha256 cellar: :any,                 sonoma:        "c1497cca44686eab9b0031d34deab63258a1d891c7f8854e39558c7c60f01f96"
+    sha256 cellar: :any,                 ventura:       "92e08c7a0fb66b3c691bf141fac782213907d85989945519e1dc1aa55bb686a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a009e9b1951f2f55ff9891c6e3366a2a66a2599f211f75ee420274f7b1ed811"
   end
 
   depends_on "libyaml"
@@ -38,6 +38,8 @@ class CfnFlip < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"cfn-flip", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

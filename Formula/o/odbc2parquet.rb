@@ -1,18 +1,18 @@
 class Odbc2parquet < Formula
   desc "CLI to query an ODBC data source and write the result into a Parquet file"
   homepage "https:github.compacman82odbc2parquet"
-  url "https:github.compacman82odbc2parquetarchiverefstagsv6.3.1.tar.gz"
-  sha256 "02aaa8358311f5551dc8c966563ac2adc637897070717da2249611522f3ada9c"
+  url "https:github.compacman82odbc2parquetarchiverefstagsv6.3.2.tar.gz"
+  sha256 "3ca5a814d739773372af07696d67a0eeaf1d2708b951ed10a4e5fe4c80943e09"
   license "MIT"
   head "https:github.compacman82odbc2parquet.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c127ed1d31a4716cdfa3d39019769e2826589e7071e39a085c52c7cfefed43dd"
-    sha256 cellar: :any,                 arm64_sonoma:  "436af15821db55593d14af9866169eb2aff5ed14142bcf227c3788dc8f944c8a"
-    sha256 cellar: :any,                 arm64_ventura: "9030aad4adb8a44069aca011d6b10e679959b22f34236507973d2ddc5d1665e8"
-    sha256 cellar: :any,                 sonoma:        "f986e20a827ba9f3f56d5500146ef4f51e3e0330ce14c2964f49782555640eb4"
-    sha256 cellar: :any,                 ventura:       "79845a24e840157eed1f55181cbc1455c53b13e17f8be5cf0b5875f7f5e1d7a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "957fb36c957dde2d24d3d835c9612a74a870ac159f3844ade44c752c3f1247eb"
+    sha256 cellar: :any,                 arm64_sequoia: "be103589f91c87e60b714bce4ece2c67691bd993a99c5ee0d0d43c862456884e"
+    sha256 cellar: :any,                 arm64_sonoma:  "dbe6a3f894bf73991fafb3e2c4dee375613cede76c15b0c3c9ca5d790f2bce98"
+    sha256 cellar: :any,                 arm64_ventura: "64aa16afa01c011cd683c7ac2c807372fa108cc16d9a919637bcceafa6e19735"
+    sha256 cellar: :any,                 sonoma:        "b470091fe4b6ff8bb76ccf43fb6f9379e7432732139cfd0bf04aa9b474d5a24a"
+    sha256 cellar: :any,                 ventura:       "4bad5379fa9c8c73612cafa60386e9f8c2420ba0e2022750eaebf93996fccfa8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a97c4ecba63cea7f3a6492d9d38ba5c90df32ff68c56a4eb76c169cf9fd15054"
   end
 
   depends_on "pkgconf" => :build

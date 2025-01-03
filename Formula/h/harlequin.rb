@@ -9,13 +9,13 @@ class Harlequin < Formula
   revision 2
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "3d9b8af9dd1e254783303d7570ce0db70e815cd17fa4f1b3a044dbdafd6632f3"
-    sha256 cellar: :any,                 arm64_sonoma:  "fd5a4f24f05ee2bd86db9621788c75f7e7c41c3e533900c6bd455072bf3ca392"
-    sha256 cellar: :any,                 arm64_ventura: "f765d9404086227fafd342785b5dc090b4531258b538c74723d5aa649d50eae4"
-    sha256 cellar: :any,                 sonoma:        "2dba88f8455c9e96d78dc47f5e334ae2aecea6919c94b4f38449e3dd8c4aef40"
-    sha256 cellar: :any,                 ventura:       "124980a4f82b80ca729234f713e5d097d0cbd0f16d3b6e6ff616cd44166ea685"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09d72bc0bd030306b29584ce9d415b08e96418883ba24fbb6f4615286dad30e6"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "ff9ca22dd577969e4046a7d19e2e35d2c711aff5aaff3c9906735a05bac39e5a"
+    sha256 cellar: :any,                 arm64_sonoma:  "aa028ed4062093f9bd1a36402dbee8d6738fe05ea9a0e7979f689bbf068eff14"
+    sha256 cellar: :any,                 arm64_ventura: "906028123044564ff52cce6ce375a6f16a18bf433e598b4e5f1236b5b1bc41b2"
+    sha256 cellar: :any,                 sonoma:        "6badd876b8506a2faaee418e755d91083717f69b37a794f06e28e7dc07e4f654"
+    sha256 cellar: :any,                 ventura:       "9b0419339b26a27b688fd5ad7b17ca4398fae7d3b9ff6a9fa58eb70c290f2c74"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18df828eb40768b110b792b501074aced524fd49714c5611cca4dfff039e14ae"
   end
 
   depends_on "cmake" => :build
@@ -229,6 +229,8 @@ class Harlequin < Formula
     resource("mysql-connector-python").stage do
       venv.pip_install Pathname.pwd"mysql-connector-python"
     end
+
+    generate_completions_from_executable(bin"harlequin", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

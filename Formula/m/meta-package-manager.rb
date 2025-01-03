@@ -10,12 +10,13 @@ class MetaPackageManager < Formula
   head "https:github.comkdeldyckemeta-package-manager.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1e2e46a60a99b4fb19f606e6e2c0bfcf6188b1aa69c3780946cd655d47f653b0"
-    sha256 cellar: :any,                 arm64_sonoma:  "89831f826acb563cd160693c37f5be1714fc6f8d53e5194fedd93fecb0a2f9d9"
-    sha256 cellar: :any,                 arm64_ventura: "b339ab455b07369f0e17d2d6804054bf892b1fa5e65d1d9ec474a4583ce04f42"
-    sha256 cellar: :any,                 sonoma:        "b832caf06c72cca5c6c933c5844d6ddff4f7a9b8fabfdb00547ddcd7d3cb1c58"
-    sha256 cellar: :any,                 ventura:       "631f93ac7cbd0184f96f71c558880495a9b9794e7623a5d14ad07821c14aa435"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e92abce52037773ca94e383200789fcaa60c63d16f2e244ce29ab111fd1c5c5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "ff773a351cbd752f6a402f4ff344817bb69cfa2fcb9f665570172df2c2a51924"
+    sha256 cellar: :any,                 arm64_sonoma:  "0365193ee89f16e09e8cccf5a89cecaa7786e30b53207b1b6a479f8673cc5d55"
+    sha256 cellar: :any,                 arm64_ventura: "4fc787d52a7d884903bdca03a5bd3d1cf8ade9497d881da85a19986f7e6c709e"
+    sha256 cellar: :any,                 sonoma:        "a09a4fae321228c575444a597f050b97b4e30a80ce75ab170569bb365326ad4a"
+    sha256 cellar: :any,                 ventura:       "5ef47cff88cbcc062492a62d7edbc7877de4d8e93fadeb726a3ce9f99760c420"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dffc1654fbe7af22ead2d939727e289c42e8914fc0a56fa4c0d5d409def943df"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -309,6 +310,8 @@ class MetaPackageManager < Formula
   def install
     rewrite_shebang detected_python_shebang, "meta_package_managerbar_plugin.py"
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"mpm", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

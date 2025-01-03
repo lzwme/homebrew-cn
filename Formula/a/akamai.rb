@@ -1,18 +1,17 @@
 class Akamai < Formula
   desc "CLI toolkit for working with Akamai's APIs"
   homepage "https:github.comakamaicli"
-  url "https:github.comakamaicliarchiverefstagsv1.6.0.tar.gz"
-  sha256 "dede02e8809659f752415e55e5d1a42134d1c6f131dd2cd7b02ed91532848b61"
+  url "https:github.comakamaicliarchiverefstagsv1.6.1.tar.gz"
+  sha256 "72670806967ecb63bf516b3e36635cdbbccff7a1f648782996b6e614f06565c8"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb62f539efcfbdf1d97670325d7de4ddd943299a057fbe1f25ade6faac568565"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb62f539efcfbdf1d97670325d7de4ddd943299a057fbe1f25ade6faac568565"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bb62f539efcfbdf1d97670325d7de4ddd943299a057fbe1f25ade6faac568565"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8bdf2ab67fd7687bbda07711da9fd36afd50f23783e46e5d8386252d5fe90c26"
-    sha256 cellar: :any_skip_relocation, ventura:       "8bdf2ab67fd7687bbda07711da9fd36afd50f23783e46e5d8386252d5fe90c26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0de49b9102884029167dc753ecdc0894c81a7067a283893cb07a1971ce164a23"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc904bcc85efab494238756c0cc09bc9afcb011006c77c185db0851db18302e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc904bcc85efab494238756c0cc09bc9afcb011006c77c185db0851db18302e0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "dc904bcc85efab494238756c0cc09bc9afcb011006c77c185db0851db18302e0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "55212608af5d376981fd87232f8558d9640636ba83bc39ca05ff9ff24d0f53cd"
+    sha256 cellar: :any_skip_relocation, ventura:       "55212608af5d376981fd87232f8558d9640636ba83bc39ca05ff9ff24d0f53cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fe29135622fbeb235f21de31bf5c7879ea3441eee7a7e8df9c5dcaf5100daa3"
   end
 
   depends_on "go" => [:build, :test]

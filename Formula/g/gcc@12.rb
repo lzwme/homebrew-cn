@@ -28,7 +28,7 @@ class GccAT12 < Formula
 
   # https:github.comiainsgcc-12-branchissues24
   # https:github.comiainsgcc-12-branchissues25
-  depends_on maximum_macos: [:sonoma, :build]
+  depends_on maximum_macos: [:ventura, :build] # Xcode < 16
   depends_on "gmp"
   depends_on "isl"
   depends_on "libmpc"
@@ -109,6 +109,7 @@ class GccAT12 < Formula
       # Change the default directory name for 64-bit libraries to `lib`
       # https:stackoverflow.coma54038769
       inreplace "gccconfigi386t-linux64", "m64=..lib64", "m64="
+      inreplace "gccconfigaarch64t-aarch64-linux", "lp64=..lib64", "lp64="
 
       make_args = %W[
         BOOT_CFLAGS=-I#{Formula["zlib"].opt_include}

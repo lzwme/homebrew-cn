@@ -8,12 +8,13 @@ class CoboCli < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "fe211dbc601476b6a0d0ca8188f5c8fef8607725baa587dc46f2d4f2c1291c06"
-    sha256 cellar: :any,                 arm64_sonoma:  "56f0c7feed611576176faa6b88fde7fa84a1cb096d7e7a5993ff642f7a9f064d"
-    sha256 cellar: :any,                 arm64_ventura: "79b706ccb13048773977ab8267d5c82a48c399ff343e864de655ad694d2fa9cf"
-    sha256 cellar: :any,                 sonoma:        "dd6858743c4a560a0acd3ff13b95bfa0846caeff81aac55afbc250fc76ea0c58"
-    sha256 cellar: :any,                 ventura:       "546d7c4a63eca9c3b15981ab6fab3e0e14bc81c304851e866331e2a399af58e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9c07826bda8daa2f2fda7ea7475cb461caa280b80e34442bf3d063ca4cfe6d2"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "03f0ae59508dcbee81fafbae557996d4650fe4fa1618dc1ca1455a22ee20be33"
+    sha256 cellar: :any,                 arm64_sonoma:  "83ad0211dfbd36df1f81ed68d66f3dcbe44d36baaf16a3232bd7961291da0da8"
+    sha256 cellar: :any,                 arm64_ventura: "931a2a853714477b7f5a6e79b6ad228bef542c5459c3e767f53dce7d789239aa"
+    sha256 cellar: :any,                 sonoma:        "5a5680c570e26141e83ccb3f35fd14e271fa72f75fea9ca450b8778e3162d31a"
+    sha256 cellar: :any,                 ventura:       "68b3c825383bfcedf49ab711a0287462e2cd042670f1ddf2b5019971fe200a2a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "786835dfc48af95185b3a9ee4c84a49d9590288549117ef71af6e63135071458"
   end
 
   depends_on "certifi"
@@ -166,6 +167,8 @@ class CoboCli < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"cobo", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

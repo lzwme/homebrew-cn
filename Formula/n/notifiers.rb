@@ -9,13 +9,13 @@ class Notifiers < Formula
   revision 6
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "2bb43e58b2d8fa79cac57305404d13f4cfebd80d0e67e00c63df0393810a1ee0"
-    sha256 cellar: :any,                 arm64_sonoma:  "65d0059cfa80adc2a2bc75fa47835d9291002a7c6ec20af91dca4e243b5d65dc"
-    sha256 cellar: :any,                 arm64_ventura: "a6e4872ef9685c99dc8641850852440563a74f5a5c13f9939b023562230540c6"
-    sha256 cellar: :any,                 sonoma:        "21a72105653bd25f505fdd0e4f80ee3edefc34ec48459a3c629f2461ca87aeea"
-    sha256 cellar: :any,                 ventura:       "2970640745a6e0476c229a975fc2fb03f9ff247a29378b79e7dde8b9daa5f026"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4be605a30cf41a90181b885b46812f8b47982dc4df14caab145beb9826929d42"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "300a45400582879b760961cd9f525b80ed441b32c521d0906507908e3048aa68"
+    sha256 cellar: :any,                 arm64_sonoma:  "96e52beab3b7f4f970ab35b0503960e5dfdcebafa3328e8d0e59cdf994d6c947"
+    sha256 cellar: :any,                 arm64_ventura: "457f3a729ded33ed9beb948a57adee6fbd7602fa969d415bbf526455ea1bf043"
+    sha256 cellar: :any,                 sonoma:        "c96537d4fb246ed71c41bfe6c61fd5f9a29eae517fb368b11a2c9313c2fbcf36"
+    sha256 cellar: :any,                 ventura:       "2024eaac6704991a447f683b6df66129055273e49d9edcfeb4c80a3aeef2bc96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87b54598ebff943a76750851764c55942cc308c3fc1f0f7d6a672d97465ddd08"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -77,6 +77,8 @@ class Notifiers < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"notifiers", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

@@ -12,15 +12,13 @@ class Ninja < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4ccb687bdd51f132eb4e87bda877c7ec7fbd565dd567c59e074083977c7e027b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e0137a7ca41103118431134051e264a38dfcfd90a1d23354527dec7ecd4098d0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ee3cb1d64ad324420cb83866236159703faa91825353d4f2ac70aa8a729d03f7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4853917b940c67e971ecc4575d490080e88ea812b1af2e9f3b383c5f9012f9eb"
-    sha256 cellar: :any_skip_relocation, sequoia:        "8b078ad9df50b80bd296614204d1dc0a42e9340edd45d0aa0c6576cd538be50f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b9e7f5d59c29882398cbf1cf9fcf358db480afa96ad9fb51a87aa0da9b5fabd7"
-    sha256 cellar: :any_skip_relocation, ventura:        "4cda186dde7fff9284bc64d2469faf3a6af148e656f9ee9c27d731d1e02bb637"
-    sha256 cellar: :any_skip_relocation, monterey:       "ef5eced95e4a700b49d67acdf1fa25547242ca95e36ed197339dc24f5239c312"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bb1fdec103d46cf08a086a70f0c4bda35927cfdfcef35bad0da2b0b4430c8801"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "977f9c2ad831aed827b3cf8ad38606f64b11b4c1c6a170ecc0a2bf8118911b63"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "474df4968035d4949cc7d955302036f3e665d3bc6dc37fd221598bb3e1aef31b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1c7814f2fc23794608edce7b86d8dfcf20fd810acbd5a66515f8731aeafd0585"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8cf692e5eabf45fee86530ee3313fa68a3942405587606e3ee39cadc781e3ff5"
+    sha256 cellar: :any_skip_relocation, ventura:       "e2fa65aa91a9ec6054bf01c693ca4c8a9c086270020c7c281d729dc3a5cef70e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99758937cfb53c0e214a4e752b50d38bf9e32e87ec31c7802b84953a802cbe6c"
   end
 
   uses_from_macos "python" => [:build, :test], since: :catalina
@@ -29,7 +27,7 @@ class Ninja < Formula
     system "python3", "configure.py", "--bootstrap", "--verbose", "--with-python=python3"
 
     bin.install "ninja"
-    bash_completion.install "miscbash-completion" => "ninja-completion.sh"
+    bash_completion.install "miscbash-completion" => "ninja"
     zsh_completion.install "misczsh-completion" => "_ninja"
     doc.install "docmanual.asciidoc"
     elisp.install "miscninja-mode.el"

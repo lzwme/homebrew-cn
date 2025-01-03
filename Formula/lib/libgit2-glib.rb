@@ -4,16 +4,16 @@ class Libgit2Glib < Formula
   url "https://gitlab.gnome.org/GNOME/libgit2-glib/-/archive/v1.2.0/libgit2-glib-v1.2.0.tar.bz2"
   sha256 "421ac5c99e02c5b6235842e60eb7f9fa8dc580d2500fb1eb521ced8a22de9f29"
   license "LGPL-2.1-only"
-  revision 2
+  revision 3
   head "https://gitlab.gnome.org/GNOME/libgit2-glib.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "228ecba137404c9986086b1e844e03828d8609e731ab63fc7d8d1d2cb933d182"
-    sha256 cellar: :any, arm64_sonoma:  "31426f6acef6e6bc0d07f9b9f355d5dc7e8a0e5289e9f84a5e4bc9b09da8e18f"
-    sha256 cellar: :any, arm64_ventura: "1602ed0567bf6203c09ca34b3889e9f0a03e668e0bf33b41fc381385ddc3cb2e"
-    sha256 cellar: :any, sonoma:        "dcd4eb64f5de25860988f29718ce3448ecccca65b6f1b7567538243e84d23cdd"
-    sha256 cellar: :any, ventura:       "c61c5352def3fb6b04f71112f2c0ff27da10735763833279a6b5d59641d1eca4"
-    sha256               x86_64_linux:  "598a0961eed94c0ee532053b65bff724393737c80f34af4fb77a744d03ee4ff2"
+    sha256 cellar: :any, arm64_sequoia: "18954f6aaf601c8f845989582a3d11668bbe01f40ea79bcff227e968906fd177"
+    sha256 cellar: :any, arm64_sonoma:  "a001955812e61357788cbd1850a43c9b26c1240b4662670b5729747dce272cd4"
+    sha256 cellar: :any, arm64_ventura: "dcdbedb74758f2f5a2b41f88f3a41e66a77c816c52ed19acfc967d57af9cac2a"
+    sha256 cellar: :any, sonoma:        "aed90c346cfc1dc55c380a41229700c4522a095be49777aa1aa090105f107ec3"
+    sha256 cellar: :any, ventura:       "fc4bde42fda94779073a8ba99b1b02c7f08446a08d5f89a4948f67af3427b209"
+    sha256               x86_64_linux:  "b2010f146b29c53b313bb13c00baf3d2071b5fd95f1a6d68e5bcfa97fd7ba291"
   end
 
   depends_on "gobject-introspection" => :build
@@ -22,7 +22,7 @@ class Libgit2Glib < Formula
   depends_on "pkgconf" => :build
   depends_on "vala" => :build
   depends_on "glib"
-  depends_on "libgit2"
+  depends_on "libgit2@1.8"
 
   on_macos do
     depends_on "gettext"

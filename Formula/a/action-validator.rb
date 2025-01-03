@@ -21,13 +21,13 @@ class ActionValidator < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "467356ff337f000cdab20947b5f4fa5ead9cbaba83801d0e7862c940f4264a32"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b79e8f1f28865df8a87a837d22775fb52de8bc9f63875f49cb12bc9bdc9f15d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8cd34c8e34dd85ed863fcfd4d70572a9b0fa8975a6fbefb7cd0b877a0bd12929"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f7b4ab4bad8d7bb8cf2df0b8268da4dce66b24c3381a22e3e4e28a636a5b252f"
-    sha256 cellar: :any_skip_relocation, ventura:       "49439159f898d39b291cf67394a89be873f1986e1ed5537e8730e3544335d6e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "664ea399cda470343bb3d8a0690cc9be3cf5e6410f3b16773a6d7396f3c0e940"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2648c46a07251127841f4f96faf5cf42abf24d46346190aa7d7469f410fe107"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b9ea08105457a87d1571d8f8ab8c0309f198cbb1d39961fb4b6091f14f08239"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b19fed4dbbcd2f0b0e6b702a10a26a3dbd1ca84040008e26a733076adba004a0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f065ef1e7dda660200a3f90f8c369dc60e36c5c4e9d2d2823373807440e62eb9"
+    sha256 cellar: :any_skip_relocation, ventura:       "f162d3f6739bf01635bf4ca4287cae32c5b73da5a039bcf27a73e6a006ad81ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07824bb882abb54d58d5ad90fa6987a363cfe474b2a5f5647153284244e232a1"
   end
 
   head do
@@ -47,7 +47,7 @@ class ActionValidator < Formula
 
     system "cargo", "install", *std_cargo_args
 
-    bash_completion.install "completionsaction-validator.bash"
+    bash_completion.install "completionsaction-validator.bash" => "action-validator"
     fish_completion.install "completionsaction-validator.fish"
     zsh_completion.install "completions_action-validator"
     man1.install "manaction-validator.1"

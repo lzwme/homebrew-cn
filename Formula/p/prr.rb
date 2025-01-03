@@ -2,7 +2,7 @@ class Prr < Formula
   desc "Mailing list style code reviews for github"
   homepage "https:github.comdanobiprr"
   license "GPL-2.0-only"
-  revision 1
+  revision 2
   head "https:github.comdanobiprr.git", branch: "master"
 
   stable do
@@ -23,18 +23,17 @@ class Prr < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "725334137a875b74691e3c7a7eeb8ede5590f73b5f2cd3163618432d74a38547"
-    sha256 cellar: :any,                 arm64_sonoma:  "28416d452a963b23ef05bf27fb71bd78f0d7fcb7b7cad1c65a0c48f6d40cf450"
-    sha256 cellar: :any,                 arm64_ventura: "71b7de882d22acf8d7e526ca0520944271048e2c1157bd50706f07c0fd98951b"
-    sha256 cellar: :any,                 sonoma:        "c427a9782a010a451298dcc13a169771b31f181db32bf0e029160b2ad5afce34"
-    sha256 cellar: :any,                 ventura:       "6b1678d5c38bf5e751cc592c725d64245936b33b7969b7b53f91a0bf50a5655a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de7157bd23986d61b335ef42cf1f8566763215930cd0fe00002a25cdfe52ed0b"
+    sha256 cellar: :any,                 arm64_sequoia: "55088b52450bbe27b38177e4c0dbac2480defc15dc48e66aaf03c834178803b0"
+    sha256 cellar: :any,                 arm64_sonoma:  "bd278e9e68140e02e6841496f7d84c6092f06390c7a525b4a5dbb8b5a1377fdc"
+    sha256 cellar: :any,                 arm64_ventura: "c9e7b1a6479fd33c34d1be401fb6fc4145e36a642884bfeedb1574b323f4c1d6"
+    sha256 cellar: :any,                 sonoma:        "a40a5696842f03b31a694ace93ce5775c42b747e42915a901031d487e2319580"
+    sha256 cellar: :any,                 ventura:       "c79aa8de4e7ea6477ca584cca5261dcb7a955b3e845ea5321d1afa33c0344859"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a878aed66f84e1e1be4885647859eaef4676cab25dae269aea0855203f10874"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "libgit2"
+  depends_on "libgit2@1.8" # needs https:github.comrust-langgit2-rsissues1109 to support libgit2 1.9
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
@@ -69,7 +68,7 @@ class Prr < Formula
     assert_match "Failed to read config", shell_output("#{bin}prr get Homebrewhomebrew-core6 2>&1", 1)
 
     [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["libgit2@1.8"].opt_libshared_library("libgit2"),
       Formula["openssl@3"].opt_libshared_library("libssl"),
       Formula["openssl@3"].opt_libshared_library("libcrypto"),
     ].each do |library|

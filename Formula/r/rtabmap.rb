@@ -38,6 +38,7 @@ class Rtabmap < Formula
   on_macos do
     depends_on "boost"
     depends_on "flann"
+    depends_on "freetype"
     depends_on "glew"
     depends_on "libomp"
     depends_on "libpcap"

@@ -4,28 +4,27 @@ class Sheldon < Formula
   url "https:github.comrossmacarthursheldonarchiverefstags0.8.0.tar.gz"
   sha256 "71c6c27b30d1555e11d253756a4fce515600221ec6de6c06f9afb3db8122e5b5"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   head "https:github.comrossmacarthursheldon.git", branch: "trunk"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "7721bb7c252d11827db27bc2e94599b59e2d5189f13da21c0baf2985e2a0a006"
-    sha256 cellar: :any,                 arm64_sonoma:  "fd934fd9477dd230780e8c18386a4255598278ae6a496abef5a262ddf7599ded"
-    sha256 cellar: :any,                 arm64_ventura: "e5a9fc87b96346dd783949200364782fe94899c86791b2005cc939616ae47767"
-    sha256 cellar: :any,                 sonoma:        "7eac3be77a7a3d35685ecefecea705e3b2c506b81e4c649bfc8c510f68f7b585"
-    sha256 cellar: :any,                 ventura:       "9c4d728a1e1541f33ff20906cdacc5fd055ee5567dbbaf36b00c274c594e8601"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4c15f35368003e34e91eaa5e4f78edccaffbde9ce2c1a3109eeebbdb15ea4c4"
+    sha256 cellar: :any,                 arm64_sequoia: "6b4ca226568ec1d56bdf2d8d38c89f5ffae1194216072ba9505f502085b4a4f0"
+    sha256 cellar: :any,                 arm64_sonoma:  "77bcbdffab00767b124322df281f6a5d731aa0a9d07f594e9b5265d4dc26fef9"
+    sha256 cellar: :any,                 arm64_ventura: "50df0255e0d8c049b435e20d83346b68cc7cf2490add53214c9cdb67a8a802ab"
+    sha256 cellar: :any,                 sonoma:        "995b5d37feedc55e4a9bb14ecc3bec14b935ae7982aad6fecc995935d7cba08a"
+    sha256 cellar: :any,                 ventura:       "c66a4800c30bb98897effdad71d930936c0546ed83fe32c3eb5e28665f9cda18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1af78241af1979a6d1f15c69b4707afa43b16c1e3fb2c06e0ff8f8d5bc4e4523"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "libgit2"
+  depends_on "libgit2@1.8" # needs https:github.comrust-langgit2-rsissues1109 to support libgit2 1.9
   depends_on "openssl@3"
 
   # curl-config on ventura builds do not report http2 feature,
-  # this is a workaround to allow to build against system curl
   # see discussions in https:github.comHomebrewhomebrew-corepull197727
-  uses_from_macos "curl" => :build, since: :sonoma
-  uses_from_macos "curl"
+  # FIXME: We should be able to use macOS curl on Ventura, but `curl-config` is broken.
+  uses_from_macos "curl", since: :sonoma
 
   def install
     # Ensure the declared `openssl@3` dependency will be picked up.
@@ -56,7 +55,7 @@ class Sheldon < Formula
     assert_path_exists testpath"plugins.lock"
 
     libraries = [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["libgit2@1.8"].opt_libshared_library("libgit2"),
       Formula["openssl@3"].opt_libshared_library("libssl"),
       Formula["openssl@3"].opt_libshared_library("libcrypto"),
     ]

@@ -2,6 +2,7 @@ class Rust < Formula
   desc "Safe, concurrent, practical language"
   homepage "https:www.rust-lang.org"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
 
   stable do
     url "https:static.rust-lang.orgdistrustc-1.83.0-src.tar.gz"
@@ -15,12 +16,12 @@ class Rust < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e8608de2377175032cf7ce78b652ae7e03f599e70eaa2a3f9dd1b1b0fd76b120"
-    sha256 cellar: :any,                 arm64_sonoma:  "89461542649aa0f07c8461562c87467d5e735c6075ad4f0d79a6b7a1ca59cda9"
-    sha256 cellar: :any,                 arm64_ventura: "7f5fb31f3db8a5864c3e60c14029b55ddba6748d53d11803c46eafc79b132e37"
-    sha256 cellar: :any,                 sonoma:        "40e2127fc99f1f9cdfd445ab37fea789975d84cf5cc6d8172ea09f712220f8fc"
-    sha256 cellar: :any,                 ventura:       "9d15d12025f4d72a0e4f23c1e13b074eaf02563cfe5662eaf475d39535e51dd1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a00d5d6608f1297fc1adfbcee2bfae2835e843ff7e2a7e0e093248283cc18ce4"
+    sha256 cellar: :any,                 arm64_sequoia: "c4ad4e7cca47cff44b33a0bd35f45b04c6a07e0e7541507f2d9151b02c91d296"
+    sha256 cellar: :any,                 arm64_sonoma:  "e33c46cff673b5e03959f2a50a721219ca899a0867c569c8680ab966378420a6"
+    sha256 cellar: :any,                 arm64_ventura: "bdd7fecbb17340264a9a01cc2a82be770c9d789eb6a9b2fe2770e82befd38510"
+    sha256 cellar: :any,                 sonoma:        "7c8dbe22159b0e4f4402ed804cc27618d225ffecf40bac6bfc1ac44dbdf49b70"
+    sha256 cellar: :any,                 ventura:       "7ab5ebb3f28faf78faeac4a55433a6ac52a9b1898f97c5151ce270b77ed119e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7776fa4c5f4e94c603f868e8209daee047bb56caccf98249db57f9ce5dfb296d"
   end
 
   head do
@@ -31,7 +32,7 @@ class Rust < Formula
     end
   end
 
-  depends_on "libgit2"
+  depends_on "libgit2@1.8" # needs https:github.comrust-langgit2-rsissues1109 to support libgit2 1.9
   depends_on "libssh2"
   depends_on "llvm"
   depends_on macos: :sierra
@@ -251,7 +252,7 @@ class Rust < Formula
     # We only check the tools' linkage here. No need to check rustc.
     expected_linkage = {
       bin"cargo" => [
-        Formula["libgit2"].opt_libshared_library("libgit2"),
+        Formula["libgit2@1.8"].opt_libshared_library("libgit2"),
         Formula["libssh2"].opt_libshared_library("libssh2"),
         Formula["openssl@3"].opt_libshared_library("libcrypto"),
         Formula["openssl@3"].opt_libshared_library("libssl"),

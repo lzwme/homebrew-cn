@@ -9,12 +9,13 @@ class Airshare < Formula
   revision 15
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4ca848f91bde57e2a8dbe6b6f33ad1531baa33b6d9def7ee4fa649c63d20221e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c567375c8a6ed15031597e92d8f092dfe31e3fbab6614827ce42be9cc8db3ef0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cdcbaf0513f57ab016d9256fab6c5f5b702b424f3e5c033fbfec2d6ccc47f709"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9ea85d907260904949a84e2b02e75bff3268fd33b83380993a8fef88b714c319"
-    sha256 cellar: :any_skip_relocation, ventura:       "ccb80ba825d2c17e29737efbeaa9d179b54da6726d759013f3f0357125652068"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ff801315053f840c947c78ae6b779c56da8f94c34c839754aa7bd311bd79ed9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4b550bf1cf350929dcc4c64edd0df91db3b9b800ee418721d1705e33d33215a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e1b5324e495b815efe00ec0c09090671c2eaca5ba646765f7fe32e69b19397da"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c288eec063472c2d29405feada5730445b2a53ddaed3e99d38a539bde78ec242"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6bf6cc80923dfeb6076056bdefde98cdedd59f02ccaf733b9c8af04369f9280b"
+    sha256 cellar: :any_skip_relocation, ventura:       "c78c8e76814a75b1d0804179773455dc97094e762315ef8a830094c3c584aa18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9a6df81c0528040a14037b6b41f1430cac158b3c4972d629fd67ae234019f6c"
   end
 
   depends_on "python@3.13"
@@ -136,6 +137,8 @@ class Airshare < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"airshare", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

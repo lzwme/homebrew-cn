@@ -9,8 +9,8 @@ class Dnsgen < Formula
   head "https:github.comAlephNullSKdnsgen.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "edaea6fa7dc467ed682a732e401d46ce3bdee35ed877a61e7bdf131ac9914ea0"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "0c01003d3350f795d946702e6853000f34c5436839ae5771deef6b84da57e2b6"
   end
 
   depends_on "certifi"
@@ -58,6 +58,8 @@ class Dnsgen < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"dnsgen", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

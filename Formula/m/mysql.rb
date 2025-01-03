@@ -1,10 +1,9 @@
 class Mysql < Formula
   desc "Open source relational database management system"
-  homepage "https:dev.mysql.comdocrefman9.0en"
-  url "https:cdn.mysql.comDownloadsMySQL-9.0mysql-9.0.1.tar.gz"
-  sha256 "18fa65f1ea6aea71e418fe0548552d9a28de68e2b8bc3ba9536599eb459a6606"
+  homepage "https:dev.mysql.comdocrefman9.1en"
+  url "https:cdn.mysql.comDownloadsMySQL-9.1mysql-9.1.0.tar.gz"
+  sha256 "52c3675239bfd9d3c83224ff2002aa6e286fab97bf5b2b5ca1a85c9c347766fc"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  revision 9
 
   livecheck do
     url "https:dev.mysql.comdownloadsmysql?tpl=files&os=src"
@@ -12,12 +11,12 @@ class Mysql < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "2956e440bb77be78a4d96b848d146af4508f57e879c06438c278d3e91181d959"
-    sha256 arm64_sonoma:  "6c2b53e7879bd7dcf1d71922986093aab604f824051735004a060f192cedfa79"
-    sha256 arm64_ventura: "12df096425c79c0bfddeffb8f8dedab931b8dc26a0c2c87d717597f2909f8ad4"
-    sha256 sonoma:        "60d14f95afda88e63653921051cc0e08cb3fb789250c0c8bf430e890bedcc1df"
-    sha256 ventura:       "23c0256889c3edc211b5526b92c16b42403b0a95fd169aebb88d7854e657ad50"
-    sha256 x86_64_linux:  "3d7f54eaa40cd566591cef527d56fa2ecf5b8a91e877c9a02a245e617cca6953"
+    sha256 arm64_sequoia: "ce5130d06a5cc67cc8765824b2326cbd31512a98e9e9a24d2731661c98f59108"
+    sha256 arm64_sonoma:  "8237328ccc461ad8349b4053b4844ec2f642fb82acf1abd003cee114084795e4"
+    sha256 arm64_ventura: "309c643f1fd3d69c0b4497640b3e2cee714181b84df1017b2fb67f270f81f356"
+    sha256 sonoma:        "cfc7ac19401342fdf6c58278580023165589836e82bb2c1f7d6d96cd4c5a5c13"
+    sha256 ventura:       "49fea7d8535c82b9490ba7119462699ac7bfb205c6656c62073ea5109497bc43"
+    sha256 x86_64_linux:  "69c9e53513ab2cb01979bd3c956f10e9ce150f8850cc7ee3ff3c9b5afec8049b"
   end
 
   depends_on "bison" => :build
@@ -35,8 +34,11 @@ class Mysql < Formula
   uses_from_macos "cyrus-sasl"
   uses_from_macos "libedit"
 
-  on_macos do
-    depends_on "llvm" if DevelopmentTools.clang_build_version <= 1400
+  # std::string_view is not fully compatible with the libc++ shipped
+  # with ventura, so we need to use the LLVM libc++ instead.
+  on_ventura :or_older do
+    depends_on "llvm@18"
+    fails_with :clang
   end
 
   on_linux do
@@ -45,11 +47,6 @@ class Mysql < Formula
   end
 
   conflicts_with "mariadb", "percona-server", because: "both install the same binaries"
-
-  fails_with :clang do
-    build 1400
-    cause "Requires C++20"
-  end
 
   fails_with :gcc do
     version "9"
@@ -83,13 +80,19 @@ class Mysql < Formula
         s.gsub! 'IF(APPLE AND WITH_PROTOBUF STREQUAL "system"', 'IF(WITH_PROTOBUF STREQUAL "system"'
         s.gsub! ' INCLUDE REGEX "${HOMEBREW_HOME}.*")', ' INCLUDE REGEX "libabsl.*")'
       end
-    elsif DevelopmentTools.clang_build_version <= 1400
-      ENV.llvm_clang
-      # Work around failure mixing newer `llvm` headers with older Xcode's libc++:
-      # Undefined symbols for architecture arm64:
-      #   "std::exception_ptr::__from_native_exception_pointer(void*)", referenced from:
-      #       std::exception_ptr std::make_exception_ptr[abi:ne180100]<std::runtime_error>(std::runtime_error) ...
-      ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib"c++"
+    elsif MacOS.version <= :ventura
+      ENV["CC"] = Formula["llvm@18"].opt_bin"clang"
+      ENV["CXX"] = Formula["llvm@18"].opt_bin"clang++"
+
+      # The dependencies need to be explicitly added to the environment
+      deps.each do |dep|
+        next if dep.build? || dep.test?
+
+        ENV.append "CXXFLAGS", "-I#{dep.to_formula.opt_include}"
+        ENV.append "LDFLAGS", "-L#{dep.to_formula.opt_lib}"
+      end
+
+      ENV.append "LDFLAGS", "-L#{Formula["llvm@18"].opt_lib}c++ -L#{Formula["llvm@18"].opt_lib} -lunwind"
     end
 
     icu4c = deps.find { |dep| dep.name.match?(^icu4c(@\d+)?$) }
@@ -122,6 +125,21 @@ class Mysql < Formula
       -DWITH_UNIT_TESTS=OFF
       -DWITH_INNODB_MEMCACHED=ON
     ]
+
+    # Add the dependencies to the CMake args
+    if OS.mac? && MacOS.version <=(:ventura)
+      %W[
+        -DABSL_INCLUDE_DIR=#{Formula["abseil"].opt_include}
+        -DICU_ROOT=#{Formula["icu4c@76"].opt_prefix}
+        -DLZ4_INCLUDE_DIR=#{Formula["lz4"].opt_include}
+        -DOPENSSL_INCLUDE_DIR=#{Formula["openssl@3"].opt_include}
+        -DPROTOBUF_INCLUDE_DIR=#{Formula["protobuf"].opt_include}
+        -DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}
+        -DZSTD_INCLUDE_DIR=#{Formula["zstd"].opt_include}
+      ].each do |arg|
+        args << arg
+      end
+    end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

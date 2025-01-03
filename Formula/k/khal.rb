@@ -10,13 +10,13 @@ class Khal < Formula
   head "https:github.compimutilskhal.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe58e910b0aa7bb89482c530030904e06e353bfcae1e66a78eb114a4c8aa3d66"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe58e910b0aa7bb89482c530030904e06e353bfcae1e66a78eb114a4c8aa3d66"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fe58e910b0aa7bb89482c530030904e06e353bfcae1e66a78eb114a4c8aa3d66"
-    sha256 cellar: :any_skip_relocation, sonoma:        "30af7b73726bd7c453387280c9febba446a3f73a5bb56b550a3e3becfa7670e9"
-    sha256 cellar: :any_skip_relocation, ventura:       "30af7b73726bd7c453387280c9febba446a3f73a5bb56b550a3e3becfa7670e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe58e910b0aa7bb89482c530030904e06e353bfcae1e66a78eb114a4c8aa3d66"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a98d5f2c406a2ad402a0c567513a61e8a2e196f2f96b8f5ec7f8d48841946b22"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a98d5f2c406a2ad402a0c567513a61e8a2e196f2f96b8f5ec7f8d48841946b22"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a98d5f2c406a2ad402a0c567513a61e8a2e196f2f96b8f5ec7f8d48841946b22"
+    sha256 cellar: :any_skip_relocation, sonoma:        "51e8587497b7186e07812378bc728bc674cfafb63df2938e5ee3e0e8b51e96a9"
+    sha256 cellar: :any_skip_relocation, ventura:       "51e8587497b7186e07812378bc728bc674cfafb63df2938e5ee3e0e8b51e96a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a98d5f2c406a2ad402a0c567513a61e8a2e196f2f96b8f5ec7f8d48841946b22"
   end
 
   depends_on "python@3.13"
@@ -93,6 +93,10 @@ class Khal < Formula
 
   def install
     virtualenv_install_with_resources
+
+    %w[khal ikhal].each do |cmd|
+      generate_completions_from_executable(bincmd, shells: [:fish, :zsh], shell_parameter_format: :click)
+    end
   end
 
   test do

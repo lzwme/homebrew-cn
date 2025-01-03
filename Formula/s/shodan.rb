@@ -10,8 +10,8 @@ class Shodan < Formula
   head "https:github.comachilleanshodan-python.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "a65a953090e60d32b7002d045f1a9d77021140e56988e3a21f9123bbdb82bec8"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "d39256af014bfbe3904bfc6bc4874fc6e86c978f0825350bc366516e3b5f9882"
   end
 
   depends_on "certifi"
@@ -80,8 +80,9 @@ class Shodan < Formula
   end
 
   def install
-    ENV["PIP_USE_PEP517"] = "1"
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"shodan", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

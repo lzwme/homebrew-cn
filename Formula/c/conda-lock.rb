@@ -9,12 +9,13 @@ class CondaLock < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "821e05329fd8e4b461ef33cfaf0d3a3a29893bc8363974f3f3c8160f587653c0"
-    sha256 cellar: :any,                 arm64_sonoma:  "3eb28fd77c372fee83f7c5ca8f59c69003353185ee8150e66b93a389082e8883"
-    sha256 cellar: :any,                 arm64_ventura: "62a9bc2d5a86fb82e0749360f66c183f9a5f35f1c0664043eaad8ece8dbd48f6"
-    sha256 cellar: :any,                 sonoma:        "ec910d7a2b30dc025517877693615a593566b84387c6dd016aab18a298b5a8a4"
-    sha256 cellar: :any,                 ventura:       "f7ebf672a3aa2ac0b7044e3bed67c5321ac76fca372ed879a06cf968b5bd7e86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae9f5f43655ac4e25c0b7a3ad6045eccd39ae6a75bc6f9e6de093bfa51cb79ba"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "b585955227114a717f1e4b2dcb4868d9656175a65fb8da2dd22e3c7bb1ada9f8"
+    sha256 cellar: :any,                 arm64_sonoma:  "cfae6edb4c19b0d2ceab2b2459bc0cd299afbee0f6dfae57c7660e3ac40eec5b"
+    sha256 cellar: :any,                 arm64_ventura: "87035793e4ef882f0b363ccace49cd5dd20c5b54cf331d4f36a63e4c686d84d3"
+    sha256 cellar: :any,                 sonoma:        "56045a3de8c67237e65b80421ea4ebf0fafa834b4968d9c2a229ffbf854a689b"
+    sha256 cellar: :any,                 ventura:       "ba2971ee2367066731e55ba6bcb455e7cdbe866bf0f5c2bd84272d059b457946"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b283174577881bdeea5f6241437c05405f56377bbe5894c906500c43e52ed5ba"
   end
 
   depends_on "rust" => :build # for pydantic
@@ -253,6 +254,8 @@ class CondaLock < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"conda-lock", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

@@ -9,12 +9,13 @@ class AdrViewer < Formula
   revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fff66558a3dc0891dc960355f0f0525f80e9c06aa98e23f3aeac43dadcc5288c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d7214417dfde8e74de0c67bf102a01ba39130c7a36b6980011b48f1b16839d9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "84f2ad61fb54d99fa10d6f09284046748dbace538a4766c655a8015083fa90f0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eb7d1b41c9e9f9c69157d4a5a7128e75fc724c41e7e55b9da434483afe026518"
-    sha256 cellar: :any_skip_relocation, ventura:       "b717a63b17499a157bf65ef88fb3ad874a455e27595d81bd1530bb6b158ba6e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "926f71bbc769190aa84277149755a9cba09fdb10f81a6930b60b7249481cd5c9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "143453f18e9b27f3b1d51930fb8ca1292d9e0fb13c985b1e81fa0437672e896d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd01c16b95553f18fe3a3c3d45096ea6f31d86a66c1fabaff41f19599235a47a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d14d677402e4748b4ea9b102fea98217e8aa2238949e8de93d7dc828fbcb340e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "93890ea63e05aa0abfe5bf3d7122202ac0ddf5e73f392eb9885146d7e4baccfb"
+    sha256 cellar: :any_skip_relocation, ventura:       "9c163a6e3d018aa199b50b3cf8f0a1444a0778530b5b90d3432fab8329b6839a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ba4e0ebd1d35e153e2086802e220a011e734ebc3999bd1e589c23260116938f"
   end
 
   depends_on "python@3.13"
@@ -61,6 +62,8 @@ class AdrViewer < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"adr-viewer", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

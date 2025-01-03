@@ -8,12 +8,13 @@ class WeaviateCli < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3e722ad5d44f8dad5606719313612377f6b6f22083774acf3bee38b2bbd170fa"
-    sha256 cellar: :any,                 arm64_sonoma:  "f1484f8d3163f4400d22f7bfe47026faa6237be1d44f434fbfbd3246e84d5c2c"
-    sha256 cellar: :any,                 arm64_ventura: "4de14df246cb611d7562b8c0704ae5cbfb889f986baa31897639b68e336fd525"
-    sha256 cellar: :any,                 sonoma:        "85f8cc1fff1cfd84384d96f979aa9f38338e1c2fdf2a40ede565ac29fc4fe076"
-    sha256 cellar: :any,                 ventura:       "45c73d56e2cfe09ab3f6cae7793165bcc014cb31b61f37d891207ed1c6d35686"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24549894f1d444ed7ea6a741960fd4940c8ec9e38e31d449d33c738882ba391b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "6dd619c357043fa50f5ed1f65a418e5a61efdb143763561fa7cf1c06065478e5"
+    sha256 cellar: :any,                 arm64_sonoma:  "878f7fcff0597d438c15152833202a5c4b4d1970954bc75314e1a5eb3c18ecdb"
+    sha256 cellar: :any,                 arm64_ventura: "bf9b5916ffa470db8a5f670ab72894634e8620535dcfc21fb7cb345b744957cb"
+    sha256 cellar: :any,                 sonoma:        "44fa8c2db5d7c231384ebc76757fa842f7ab3e3f6e24dc23b743193a793f73d1"
+    sha256 cellar: :any,                 ventura:       "9009c22088311092c3fbec785332fbc0e03cf22d524c1383f33c353c2cbd8e7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa9185e3c2df34b8a81daf9fc6011bff434e61a09edece1877f3e39099d21a18"
   end
 
   depends_on "ninja" => :build
@@ -142,6 +143,8 @@ class WeaviateCli < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"weaviate-cli", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

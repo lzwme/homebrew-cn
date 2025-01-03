@@ -8,12 +8,13 @@ class Posting < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a7105315e560cf54ab1eb104315d2881cfc8a8fbe135fd7001b319480abfee84"
-    sha256 cellar: :any,                 arm64_sonoma:  "060466c8c92d827736290c966e962aaf4c0dffb0e1fa9e63548ea2040826f456"
-    sha256 cellar: :any,                 arm64_ventura: "fa108a79e28faaad88eacee9905cdcbf97bd05a3fdcace5f4971fddc01590640"
-    sha256 cellar: :any,                 sonoma:        "b2f700f079e5cccef4d0d0e97d446e86cda94b19b32530f71d79b56868555ba2"
-    sha256 cellar: :any,                 ventura:       "52f574c3e39374e50db3241f49073766c4beef90d4d042f62043f014a4043c59"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db080bb1fbc9f6a3f6fc41235dfb2b37d88ce3fb2c3ad099e428d18bac81ff59"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "d1e1abeec94bb888ea6549df88e0eed4e60f714770c60de56c052c0fd4b0423b"
+    sha256 cellar: :any,                 arm64_sonoma:  "8f30ea9df52a0e28779d4a35111f4b041a36400c1f10091bca484bb2266a470b"
+    sha256 cellar: :any,                 arm64_ventura: "f8272e44085616ef40d575e76b1fd6bdce35a52deed313dcc49785c6d159d56a"
+    sha256 cellar: :any,                 sonoma:        "06ee31748eae16f0158364e0c0fd0cfb37b7f43f6f40b584e0ab98c27519843e"
+    sha256 cellar: :any,                 ventura:       "6c547d736a01f64ec37f78f9dff26792e42144d5316a6ec3867b1a768b8f5230"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e1ab39d1e3eedaa8bc7f635c05cafec0831094da5f10d2ba80686c71d4b52a4"
   end
 
   depends_on "cmake" => :build
@@ -174,6 +175,8 @@ class Posting < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"posting", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

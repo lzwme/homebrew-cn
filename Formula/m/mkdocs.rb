@@ -9,12 +9,13 @@ class Mkdocs < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3d666fb68bc2fd0ed7786a997aacdf042e55e0cdb8d23f5af8de2aaf7d4d6ef3"
-    sha256 cellar: :any,                 arm64_sonoma:  "b6efd733d2eeafebd9cfcf10ab0191ff4168150ed0925f9a2aba07d10361d29c"
-    sha256 cellar: :any,                 arm64_ventura: "be71697c0de3aa849899f2e00431185258749ded2602605e509dfd40d3af7e1e"
-    sha256 cellar: :any,                 sonoma:        "f98b0e0e86d568be18b679229b263f95afc19da03c6dc84e812c04298bab9313"
-    sha256 cellar: :any,                 ventura:       "e9f98afd0b518de77f3a48f4ffe72b38db62e78474f5752171a8dfa8bd50e43f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db9e1d15a081347232dff3e04a92522b1511673a18977ee7dab75a830cd90e59"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "8724169cc6ec5c1d48768c160d30faa9d9527e69cf27e3aa778b12e16751ec73"
+    sha256 cellar: :any,                 arm64_sonoma:  "ae2158b7144a760c45e33c72b59734248b2ed2a6bab08daafc2a2ee9afcb0a0d"
+    sha256 cellar: :any,                 arm64_ventura: "82050eb91f6d45e558f6aa5712ec647425d5b16a76890ce5c7776039a95fbfc6"
+    sha256 cellar: :any,                 sonoma:        "6ab4f5749d0d102e5e7e9eb5ec630047e2dca4a9fa3f6fa86419fadb8b2a6e8f"
+    sha256 cellar: :any,                 ventura:       "f52f871e2cbf3baf640ccb4afa1ae3501334113c507a6bbe97a33bb5f0797067"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55655190f325e1b273de94090d8975a003a7a46623feed0192ec830690092dc1"
   end
 
   depends_on "libyaml"
@@ -100,6 +101,8 @@ class Mkdocs < Formula
   def install
     ENV["PIP_USE_PEP517"] = "1"
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"mkdocs", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

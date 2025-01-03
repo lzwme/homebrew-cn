@@ -10,12 +10,13 @@ class HttpPrompt < Formula
   head "https:github.comhttpiehttp-prompt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "47a171b84d2ba1401846694ae9bc1f6f4f7a7036674c713a700211f953186a98"
-    sha256 cellar: :any,                 arm64_sonoma:  "4bcfd2f7e91d7f028d59863f71612b32116db5dd340baa85dbaab9daa8570424"
-    sha256 cellar: :any,                 arm64_ventura: "edc72e99013d10fcd86324c085b40a4533889b49362e8f91e082273083110b07"
-    sha256 cellar: :any,                 sonoma:        "84e1d7a7fb706c2f0b805c7c51e234d87e2409be3aa993c77d4283eae5b276d8"
-    sha256 cellar: :any,                 ventura:       "0aa6fdb42e457f5a5d0f92bcfe3c507ca466a3f7258de9f9b061c8b38a5db80e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbf5e4e77b75701cb77039e3f283182b9a222d6e6709952f5c6677205aba8192"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "b011c69d4afbef3f74f82823d1b6e097385967a71228e18b3dc9a4e756b12079"
+    sha256 cellar: :any,                 arm64_sonoma:  "53659c6f09f90fb0f3d71f22f6757f7d7bc9fc05709f7eeb6af46bdf2528829a"
+    sha256 cellar: :any,                 arm64_ventura: "e569ae1a14a4e5a911d32c8ae67811f38f1b0cdf34f745dc98e50e4ee8005a2b"
+    sha256 cellar: :any,                 sonoma:        "d9c8f46296414e0d9d1b33f93bb52b82a713cf288296ff6ad9ed67c46b4248fe"
+    sha256 cellar: :any,                 ventura:       "33c3a14f21a42a7ecf2baaa509b8e9138f7304843391a8a30afb6b922666fceb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "797fda91cbe2f3fa31dd291dd6eb10821eabdd0f58f4dba6b8ed081009c99c11"
   end
 
   depends_on "certifi"
@@ -129,6 +130,8 @@ class HttpPrompt < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"http-prompt", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
@@ -145,6 +148,6 @@ class HttpPrompt < Formula
       read.expect(Goodbye!)
     end
 
-    assert File.read("test.html").start_with? "<html>"
+    assert_match(^<html>, (testpath"test.html").read)
   end
 end

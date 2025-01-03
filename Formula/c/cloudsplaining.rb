@@ -10,12 +10,13 @@ class Cloudsplaining < Formula
   head "https:github.comsalesforcecloudsplaining.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b3827fd360bdacf41e85cc5b08925af7ec9b1ca3940b1c60857bcfd4ee899abe"
-    sha256 cellar: :any,                 arm64_sonoma:  "fe0f53d3f21648611e2e9dd827f0e1f80c46d001141bdad018074191959af70a"
-    sha256 cellar: :any,                 arm64_ventura: "d336c275c6e6979f3bcc726468e9c51b1425a50a958e724cc3ef0b7d85c44200"
-    sha256 cellar: :any,                 sonoma:        "823c46577ca9dd4702edc2aa2c2949e824052e34b05d7a86dc9d1d3807fc0d13"
-    sha256 cellar: :any,                 ventura:       "41f8ddcd2afc2cbf8e2b4ac8c7a26e99f7ca7ce7ff6d688a06ed6f248757c6ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea82065c0278f12b19cd886c59dadde632e89e60af2f799c6cb1ea2b1013c989"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "7f7ac4cc32819c519f81d7963c7c06f60a1b9a76ac508c74cf40b558c7557b0f"
+    sha256 cellar: :any,                 arm64_sonoma:  "2e4dfb39b5463db00c95d54211e82c9972e29e5416ba3e1df405b173a8cc3208"
+    sha256 cellar: :any,                 arm64_ventura: "d8aab0136a1315522fbc3ef947f56e5fadb20f9fa5bd8953c7950dc9716b70d6"
+    sha256 cellar: :any,                 sonoma:        "45aa727d3dfd85e791400229f234769e128a40194d86b756827077010a7eb43a"
+    sha256 cellar: :any,                 ventura:       "fb9a440d437e2abeac55ca19f98a875b49367446a106cdbe4a2a943e6893d92a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be437d8a03cc9bdf2a741bcd39285b684cc921f92275702b7e43dce08bec67cc"
   end
 
   depends_on "rust" => :build # for orjson
@@ -135,6 +136,8 @@ class Cloudsplaining < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"cloudsplaining", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

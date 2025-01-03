@@ -9,13 +9,13 @@ class Fred < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "607fa7cf50271364c47e8f09142ebcbd42c4057439ee93fe4ec6dd6e288a3048"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "607fa7cf50271364c47e8f09142ebcbd42c4057439ee93fe4ec6dd6e288a3048"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "607fa7cf50271364c47e8f09142ebcbd42c4057439ee93fe4ec6dd6e288a3048"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a6c34c41fc0e74288beade477077831f9408505dc0d570dbf6fb39047d472fe5"
-    sha256 cellar: :any_skip_relocation, ventura:       "a6c34c41fc0e74288beade477077831f9408505dc0d570dbf6fb39047d472fe5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "607fa7cf50271364c47e8f09142ebcbd42c4057439ee93fe4ec6dd6e288a3048"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dda7a9bb2e5061f6166ccee21467b94ded8b850aca54196ab1405c2d773042db"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dda7a9bb2e5061f6166ccee21467b94ded8b850aca54196ab1405c2d773042db"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "dda7a9bb2e5061f6166ccee21467b94ded8b850aca54196ab1405c2d773042db"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eedf8e333e8eddde050d16bda766093370475729b1219e6de44fa0795ad5e182"
+    sha256 cellar: :any_skip_relocation, ventura:       "eedf8e333e8eddde050d16bda766093370475729b1219e6de44fa0795ad5e182"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dda7a9bb2e5061f6166ccee21467b94ded8b850aca54196ab1405c2d773042db"
   end
 
   depends_on "certifi"
@@ -53,6 +53,8 @@ class Fred < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"fred", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

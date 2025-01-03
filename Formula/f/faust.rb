@@ -14,19 +14,20 @@ class Faust < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3296230f502adb8a95c9a5e0e7c556c9aa44a37a9ee6b6f93aaa99601d54a637"
-    sha256 cellar: :any,                 arm64_sonoma:  "f8eaf80d3fc8a735f874de8e1b29f3c416118f954990e9d6862e59dade531e99"
-    sha256 cellar: :any,                 arm64_ventura: "246299770a0e972861a72dce99656a3eb466c43eca0f76c7ded87868325186d1"
-    sha256 cellar: :any,                 sonoma:        "26fa0ecf918c6dd768a2e319b76ba8e2acc5de5b0f39bc58807e523cacda1adf"
-    sha256 cellar: :any,                 ventura:       "52c0024aebe3f787036012d0e5766b016146a18d91657f165cd0bae412418070"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2aeb6e71cb7393c351df9fd884ed1a3b2b3cb80de8b8466c0a0c1f690c21ac7b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "72afaf325ad50d677fa9741080501a3ea25e71f3413e1495434a0427544bb7b4"
+    sha256 cellar: :any,                 arm64_sonoma:  "d556688303764f6645d20301a1a47669e337240a12ca715d7702c97016577411"
+    sha256 cellar: :any,                 arm64_ventura: "4bd907b439c79eb53981e3f83fd168527eaf4955b25c0246ab7bfd5275a10ce0"
+    sha256 cellar: :any,                 sonoma:        "c297a021412fd064f8d790b19d6da9f08edbcd752e760cc2f1ab4affe8396ed2"
+    sha256 cellar: :any,                 ventura:       "bd3dbd54042efc8a83f64cec75325e8fb21f944bd51d684141306a59768cb323"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40d93a0c90132426d4087657e4ba77c64f47c180ca4dc08ea748e36f5e64a5d3"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "libmicrohttpd"
   depends_on "libsndfile"
-  depends_on "llvm@18"
+  depends_on "llvm"
 
   def install
     system "cmake", "-S", "build", "-B", "homebrew_build",
@@ -56,6 +57,7 @@ class Faust < Formula
                     "-DHTTPDYNAMIC=ON",
                     "-DINCLUDE_ITP=OFF",
                     "-DITPDYNAMIC=ON",
+                    "-DLINK_LLVM_STATIC=OFF",
                     *std_cmake_args
     system "cmake", "--build", "homebrew_build"
     system "cmake", "--install", "homebrew_build"

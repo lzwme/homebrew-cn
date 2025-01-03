@@ -202,7 +202,6 @@ class Csound < Formula
     (testpath"test.orc").write <<~ORC
       0dbfs = 1
       gi_peer link_create
-      gi_programHandle faustcompile "process = _;", "--vectorize --loop-variant 1"
       FLrun
       gi_fluidEngineNumber fluidEngine
       gi_realVector la_i_vr_create 1

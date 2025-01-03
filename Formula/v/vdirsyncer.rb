@@ -10,12 +10,13 @@ class Vdirsyncer < Formula
   head "https:github.compimutilsvdirsyncer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "262259023ada6d45fbe2d552ae9c131056afd17e6b9e61acf1cda39ab5f99873"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "539bd2b454cb065f44205a65bad80cac2885587dbd9e47ceb74ed86410234a81"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3a1739830ed3ee741744b58963122e2303cbc7e594d81dac59f585d6170ccaf2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e26029b8dffb1d00efa11ac50378cbea093c90ead6e1ac1a5991e7a57cc5a591"
-    sha256 cellar: :any_skip_relocation, ventura:       "5963ce821ab637ee1c1ab1b781235f801ef44f9832a11daca81aea53383cfd37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4ce3329db8209b5a19816fbf886ffda72682f4c8a1f8c93f49c9eb7b027072a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d5d8caff129d1bd04a3bc1053dea96b450abdb139ddf91c2e58f3eae1686455"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "044260626c367cb745a4bab4ac5c4713f974cd4bc9293e38ac80fe5676c35561"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "49769d8cac044ada8b15d1ed3db8c83cb2f00b154c46354c523673cfa70d745b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e8d51e71ec7cbdb9e21995cab9ee7e7f169973e7998c3a86747a60726060d347"
+    sha256 cellar: :any_skip_relocation, ventura:       "b1030cd302d1a1c11dd379a488bfcf0ac6a110e17e0b4eaa36afab08b186bfbf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52f1a9a9af3c8d86551fb7864e80af1b8fb9d26a8641e334d617430522363d3a"
   end
 
   depends_on "certifi"
@@ -113,6 +114,8 @@ class Vdirsyncer < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"vdirsyncer", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   service do

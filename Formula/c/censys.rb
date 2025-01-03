@@ -9,12 +9,13 @@ class Censys < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd2e27b67a7a06074480fb76a6c29677d9c9273d9201442fccf754cef95dbd2e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd2e27b67a7a06074480fb76a6c29677d9c9273d9201442fccf754cef95dbd2e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cd2e27b67a7a06074480fb76a6c29677d9c9273d9201442fccf754cef95dbd2e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bdbbb9350f17a4b3bca071916c6013db8a707ea8d33d9584c51425cb4ed1a616"
-    sha256 cellar: :any_skip_relocation, ventura:       "bdbbb9350f17a4b3bca071916c6013db8a707ea8d33d9584c51425cb4ed1a616"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c9f92799d176079c540ba1bc64c8af60234b9231c0ba65f79e5a3482d721e04"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2468a08526856c7d66619081568dcd6a99490334fdea34df559ab63444ba906"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2468a08526856c7d66619081568dcd6a99490334fdea34df559ab63444ba906"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e2468a08526856c7d66619081568dcd6a99490334fdea34df559ab63444ba906"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2b58903e65c6062fb761d54b749efdb254bd55b82c3ab782072ec662915075b4"
+    sha256 cellar: :any_skip_relocation, ventura:       "2b58903e65c6062fb761d54b749efdb254bd55b82c3ab782072ec662915075b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "456877334b2c34f08aa83fcbd64d2a00aa565652952f8a8ad33839b80d4dfbfd"
   end
 
   depends_on "certifi"
@@ -72,6 +73,9 @@ class Censys < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(libexec"binregister-python-argcomplete", "censys",
+                                         shell_parameter_format: :arg)
   end
 
   test do

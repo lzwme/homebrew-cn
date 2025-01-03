@@ -1,8 +1,8 @@
 class Lbdb < Formula
   desc "Little brother's database for the mutt mail reader"
   homepage "https://www.spinnaker.de/lbdb/"
-  url "https://www.spinnaker.de/lbdb/download/lbdb-0.55.tar.gz"
-  sha256 "f642cf835dc13291bbd066f67186d485c8f4d318f3cf5228febba6b1a108392a"
+  url "https://www.spinnaker.de/lbdb/download/lbdb-0.55.1.tar.gz"
+  sha256 "fa9289c3137f0e95021bc848f40926874c2d43de685988688a38f41666865d4e"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Lbdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1774ad2e2d7ede97cd22d0c9a4615a7a1116e08c629bdca5078d53dfae403d76"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b975153af7f2519b2ec424c89e78fc33b035a1c605d24bea231018c3b76bff79"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5568cf6cacd053412e7fd19401c0c825918af89020d0baddc97f7bcc55e91445"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9c2db788d93aa372bd0073680e00e0fe444f262e18795ae8d11bb7656de7630a"
-    sha256 cellar: :any_skip_relocation, ventura:       "a4941dd0321535accfcf96fe45c1d793da06a762ae09833fe7dace524955389e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8da04acbb6abea80a391a408df40c690853a957c01618e7aff0f374df352f2a4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5f0cda8bd82e482446ad7b8db04913190877742d1e309722e9631bdaf967b09"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d055509ac9bc7677fb5a7d41199766a7ab915b0663e69e58822fef78b5241829"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cb0b0354f160f013bad882aced397a8bd50f60bb2150a64e0cddbfb0825a4429"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5638ebf0f42cffcb1d84a6f871cdb3297cb5d73f37c445b1b42d987ca3ace6eb"
+    sha256 cellar: :any_skip_relocation, ventura:       "4b045c2798429dd21fdb2f90825a06b1785d48950d700f9310eaae36628884bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "936539b41a0ab7f7cd8efaf11fe8d7779a3d93c45ed3b33b3bf14cdfb8c42ddb"
   end
 
   depends_on "abook"

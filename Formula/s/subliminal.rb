@@ -9,13 +9,13 @@ class Subliminal < Formula
   head "https:github.comDiaoulsubliminal.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5cab29a1b05ee7deb45af01ab28bff2bdff33369192772d7426c93001d97856"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5cab29a1b05ee7deb45af01ab28bff2bdff33369192772d7426c93001d97856"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a5cab29a1b05ee7deb45af01ab28bff2bdff33369192772d7426c93001d97856"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9f5087528add4235f52dac844c31cbc377f44ad6115918a9010bd59a65b94ed6"
-    sha256 cellar: :any_skip_relocation, ventura:       "9f5087528add4235f52dac844c31cbc377f44ad6115918a9010bd59a65b94ed6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d41d4075abc823931f5a91b68c1e4aa71c309f6190f9d8093f1fd2733b6fed7c"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9e1b2f241f29a65635801c65d6e1cdd47e0cbb278b4ac0accce0b77c2e7728a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9e1b2f241f29a65635801c65d6e1cdd47e0cbb278b4ac0accce0b77c2e7728a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c9e1b2f241f29a65635801c65d6e1cdd47e0cbb278b4ac0accce0b77c2e7728a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b0fec59f14211b0908653606b83556d2748004e24ef8d26e6805548e2ba7f890"
+    sha256 cellar: :any_skip_relocation, ventura:       "b0fec59f14211b0908653606b83556d2748004e24ef8d26e6805548e2ba7f890"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8043bb5ef6755529fe1ab7f3a387d13f4b39017e6d8f6b3f28783d68f20058b"
   end
 
   depends_on "certifi"
@@ -143,12 +143,14 @@ class Subliminal < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"subliminal", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
     (testpath".config").mkpath
     system bin"subliminal", "download", "-l", "en",
                "The.Big.Bang.Theory.S05E18.HDTV.x264-LOL.mp4"
-    assert_predicate testpath"The.Big.Bang.Theory.S05E18.HDTV.x264-LOL.en.srt", :exist?
+    assert_path_exists testpath"The.Big.Bang.Theory.S05E18.HDTV.x264-LOL.en.srt"
   end
 end

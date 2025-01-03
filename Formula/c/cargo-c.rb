@@ -4,6 +4,7 @@ class CargoC < Formula
   url "https:github.comlu-zerocargo-carchiverefstagsv0.10.7.tar.gz"
   sha256 "c4532dd2bf23769df5f64649d5b0c037fb2a29467c74d16a54bad3054d9f3f3a"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,17 +12,17 @@ class CargoC < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5951973b69b0cb31e7ce329ea10ec1e079a623f41ff1a98f711c84798c1e42eb"
-    sha256 cellar: :any,                 arm64_sonoma:  "9be9fcbaa46d8145277a02eeb086b70cfd227d1c5f8fd8bcb5fbf7038f78ad4d"
-    sha256 cellar: :any,                 arm64_ventura: "814ef6637f5e55538275ff4e12e00c19f10b9931a00abfcc3bd924434a3f187d"
-    sha256 cellar: :any,                 sonoma:        "bbeaf25cbfcfff7b2c2d24bf042e361ee2d7f75aeba4a06699abaf0d88145d6f"
-    sha256 cellar: :any,                 ventura:       "5f48c342177b5ffe5653a601588ec3db7bec366df7aa1fd0173429b2fb242a41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79ec2ac05df9f384a6c372610c7f995bd3f518f0d341eb53f1e5fa709f122f4e"
+    sha256 cellar: :any,                 arm64_sequoia: "8aec96a2dce142fbe7f95ab307f1db7b97461e8015883540ff5e3f1ea81e87d2"
+    sha256 cellar: :any,                 arm64_sonoma:  "d35a8a6e883a1c24edaae1859c95538203949b37797ba889d86f0ede922ed70b"
+    sha256 cellar: :any,                 arm64_ventura: "472d2114a047824e76ad513d80091d232b88409ca5e55a893a48cc5614efd2c1"
+    sha256 cellar: :any,                 sonoma:        "af9bcc231409f9459314350d12028555f625952dabe4959fe6fe408cf83a421e"
+    sha256 cellar: :any,                 ventura:       "09f6635f2e7d963d798d1229508d2cf3ce98a067c666586889a4c3bce5aa51d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a65e5792a0cef75b7fe70f1bf738b752d6cac6798e108a87441b67b50ff39fe"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "libgit2"
+  depends_on "libgit2@1.8" # needs https:github.comrust-langgit2-rsissues1109 to support libgit2 1.9
   depends_on "libssh2"
   depends_on "openssl@3"
 
@@ -55,7 +56,7 @@ class CargoC < Formula
     assert_match cargo_error, shell_output("#{bin}cargo-cbuild cbuild 2>&1", 1)
 
     [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["libgit2@1.8"].opt_libshared_library("libgit2"),
       Formula["libssh2"].opt_libshared_library("libssh2"),
       Formula["openssl@3"].opt_libshared_library("libssl"),
       Formula["openssl@3"].opt_libshared_library("libcrypto"),

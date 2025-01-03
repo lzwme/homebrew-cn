@@ -1,8 +1,8 @@
 class Libgit2 < Formula
   desc "C library of Git core methods that is re-entrant and linkable"
   homepage "https:libgit2.github.com"
-  url "https:github.comlibgit2libgit2archiverefstagsv1.8.4.tar.gz"
-  sha256 "49d0fc50ab931816f6bfc1ac68f8d74b760450eebdb5374e803ee36550f26774"
+  url "https:github.comlibgit2libgit2archiverefstagsv1.9.0.tar.gz"
+  sha256 "75b27d4d6df44bd34e2f70663cfd998f5ec41e680e1e593238bbe517a84c7ed2"
   license "GPL-2.0-only" => { with: "GCC-exception-2.0" }
   head "https:github.comlibgit2libgit2.git", branch: "main"
 
@@ -12,21 +12,25 @@ class Libgit2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "af706565ac2a03d3d765ed233aa4247dad3fb66d95b81762dca6eda04227c015"
-    sha256 cellar: :any,                 arm64_sonoma:  "771f2b1ccc5fb1b4398570f8d69b54f0d941c92a4703b48e84fcfac81256c720"
-    sha256 cellar: :any,                 arm64_ventura: "dd50ae6085310761b73171d1f225728227d3de9fc763d1f4ed999ee6bee5a4c3"
-    sha256 cellar: :any,                 sonoma:        "1e2d125e49b5b7a55e1e1de88e5597451fee74e989b8f703bb84522b2c778723"
-    sha256 cellar: :any,                 ventura:       "2d324aaded04a396af21dd0daec49fe455d5081e2ed911330f9281eaaee46c37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e33599ab70f4c70f137c61cf4664b5416ca7e75453310c70ead985530a65b8dc"
+    sha256 cellar: :any,                 arm64_sequoia: "f0ee705c27e87553582c58556a2a20a766af1e1ffbef0f1c676b0244e89398b9"
+    sha256 cellar: :any,                 arm64_sonoma:  "74a27239cf67c5e87b45b9cf3db547a41ace91b9fab9dbd44608bf1dc3faf3df"
+    sha256 cellar: :any,                 arm64_ventura: "ff62b8ec0e1a2b212eff271c39bbd801c45b4bba3595b3f361b7d90f5b3d11b3"
+    sha256 cellar: :any,                 sonoma:        "fb233893f22e55ca0cd7856f5ec319d077530ad1a5341c3c067d53ce2135627d"
+    sha256 cellar: :any,                 ventura:       "f5eb731a1908b229c0f7da31345af99a176c51f813069401884aada234c1247c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be9b0548c38c23f5ef5cecb22db883a65324ef385610f944e4506af6cf077aad"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "libssh2"
-  depends_on "openssl@3"
+  uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "openssl@3" # Uses SecureTransport on macOS
+  end
 
   def install
-    args = %w[-DBUILD_EXAMPLES=OFF -DBUILD_TESTS=OFF -DUSE_SSH=ON]
+    args = %w[-DBUILD_EXAMPLES=OFF -DBUILD_TESTS=OFF -DUSE_SSH=ON -DUSE_BUNDLED_ZLIB=OFF]
 
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *args, *std_cmake_args
     system "cmake", "--build", "build"

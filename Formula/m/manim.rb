@@ -10,13 +10,13 @@ class Manim < Formula
   head "https:github.commanimCommunitymanim.git", branch: "main"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia: "38ff9acda51096f7d298f5198a87ef6e9b5b43413fd3d7488d5815ed7908a2eb"
-    sha256 cellar: :any,                 arm64_sonoma:  "7040ccf7ee12b6616b0aab0d3a5ba1448ba3a3a90f399615743ff298360c7138"
-    sha256 cellar: :any,                 arm64_ventura: "6b65945deb09217e16635e8f6e7a9c8a30d02865bb9d5b851fc9801d27bebdb3"
-    sha256 cellar: :any,                 sonoma:        "ed7f3cc15f153b991b0b41d53ecfa525a554a44b86e84c574537ebb7cc1ee0ff"
-    sha256 cellar: :any,                 ventura:       "416d06fd3f496835ae412ac8279b17103072044ab22a25dfad60633980a300fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc8bfd011829ab73b001ffb2a703442b3f9099ffa86e77c7dacfa66644504758"
+    rebuild 3
+    sha256 cellar: :any,                 arm64_sequoia: "071005e968de028db4da5d7a8c68335da00cd3e4a2fbc84241791a574d0aa15d"
+    sha256 cellar: :any,                 arm64_sonoma:  "ac3358678907db9a4befd566e6ed20e13a7a61c98eef00d8f503e2b747bd2175"
+    sha256 cellar: :any,                 arm64_ventura: "10237fc1cd1bfd66a57092a80158b4ea6e2513780829734b8d8be0ee6024e8d6"
+    sha256 cellar: :any,                 sonoma:        "cde620a418bd5325b43b0951c02faa39e4e2475807e67bf298b6f638229f83d4"
+    sha256 cellar: :any,                 ventura:       "12c715f545c99e1021c55399ead35064cd0443d48fe1de60ca160b6112acc438"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a56eee995594da0b0f28bcd00200b899e1ea4afe2cb6d124c8a163f128c01ddf"
   end
 
   depends_on "ninja" => :build
@@ -199,6 +199,8 @@ class Manim < Formula
       without = resources.filter_map { |r| r.name if r.name.start_with?("pyobjc") }
     end
     virtualenv_install_with_resources(without:)
+
+    generate_completions_from_executable(bin"manim", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

@@ -9,8 +9,8 @@ class Waybackpy < Formula
   revision 6
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "f4fc2cb70ede4767991a20af1a8a67a3a4f2e59994e34d8a412e089e9a382f15"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "3c04c3dc485bc958c532a3d094ffd407b390b69dae8b4af96b5d6c82ecc1de0b"
   end
 
   depends_on "certifi"
@@ -43,6 +43,8 @@ class Waybackpy < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"waybackpy", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

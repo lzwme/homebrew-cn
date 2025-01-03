@@ -9,12 +9,13 @@ class OciCli < Formula
   head "https:github.comoracleoci-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5959cbe5fd76349c31473eaef81b8445ced5ee7436284a0c75a599818a61d353"
-    sha256 cellar: :any,                 arm64_sonoma:  "3186d961e0838a05ffc6f93b27d3db1971e4a5c93c688e8854c302c32bc2cb31"
-    sha256 cellar: :any,                 arm64_ventura: "c8e7996f5fff2526a5abd462ca24e9a97dbd28dacd5cf06691e5b481b65ff27b"
-    sha256 cellar: :any,                 sonoma:        "2db67045a5a0f7bfb21e4b207a95a4db1b7d39589374472c85538631d9fd9d92"
-    sha256 cellar: :any,                 ventura:       "fa19227c64385ee6e6c39444ba74c2cf37167f87b586f48951f80fa3bf4a0470"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "943a5072e82a314695e3ee74b7f5807ec4d87af26e4f19df002f3d38862db6ad"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "258b4cbab117c0f6c72579337d4ebb93ebb02b3e7df0c64d7701806edf95f6f2"
+    sha256 cellar: :any,                 arm64_sonoma:  "775e19019a4d1ce996f31d5cc015a4cf27bafc1f09320d46f483c1f0c7b9b613"
+    sha256 cellar: :any,                 arm64_ventura: "c79ca5e85299b91bfa1cb69cfb0e8bfbe2581dca8a8af74ba03f78e1764df469"
+    sha256 cellar: :any,                 sonoma:        "2462dec1a949f577f7132902ab95ed233fc292ee73fc8f3513ddb2df31bc0577"
+    sha256 cellar: :any,                 ventura:       "2e24114b8044da6653f575152f36e6410b7e98f7746f91a79774e6f3ab36dd85"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64ce6910d7f8c5005b62d65d9711fb579101b39ed6f2551a2d5569c2f3e19b6d"
   end
 
   depends_on "certifi"
@@ -105,6 +106,8 @@ class OciCli < Formula
       inreplace "pyproject.toml", 'build-backend = "poetry.masonry.api"', 'build-backend = "poetry.core.masonry.api"'
       venv.pip_install_and_link Pathname.pwd
     end
+
+    generate_completions_from_executable(bin"oci", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
@@ -112,6 +115,6 @@ class OciCli < Formula
     assert_match version.to_s, version_out
 
     assert_match "Usage: oci [OPTIONS] COMMAND [ARGS]", shell_output("#{bin}oci --help")
-    assert_match "", shell_output("#{bin}oci session validate", 1)
+    assert_match "Could not find config file", shell_output("#{bin}oci session validate 2>&1", 1)
   end
 end

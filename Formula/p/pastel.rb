@@ -7,14 +7,13 @@ class Pastel < Formula
   head "https:github.comsharkdppastel.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a6fff0aefd40678a727cc33286dc6574d22e859f4677b89b6d6bf11780bf46fc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "846b6b902b61fdb6a487a55bca5db48281d15b2879a03c4a7c4d1734eb69785e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fbf1bcaec1cd65ba7c7572372f8572f26f9fc0a34453c200fbf9268fd72b1a61"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8e77251303794e9030f01de3199335e116321aaf1160e50d0a66d5efeefb7b5e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "de5aa587edab2ba6677ce2b455c73ab4d29d93ec111b46e2afd7e948c6d94ec7"
-    sha256 cellar: :any_skip_relocation, ventura:        "5fc7e310c200267bb1a9e1f47d14747c18a666e8137bc115a509d017e90fbdb8"
-    sha256 cellar: :any_skip_relocation, monterey:       "111cb3e22a17758946cbb68cd3bdeb0a91320d680cf50eeb7b142d6030ce8c1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "08561a70b60b1733f82b3ef31fe6ccf0f2934ae301f3a992b70a6d84e72076e6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e812865926cc13b1568b5d4b1e201d2beb9266a4c4c9c8e3ea484b258938061b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "15d534aa1d21c0f2b1a5ef082a24e7ef5ab01d43cc2019e9ac69a1abf0bd050e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "57803257b4273b72d306b3a75e8a9caa5187a693a67f62f5044d30f646d8021f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b735957971ed222ad72bf9e6e2aa6da522ec06840667ae398e7d5ff1e38c26f2"
+    sha256 cellar: :any_skip_relocation, ventura:       "6a0219597bb7b66fac01792cf31430bccc9fc9491f778d34f7c7885ea48013a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ed39ba06bbc613002a222b647bb81c1280e3630e89c6944bf8758b78216ee5f"
   end
 
   depends_on "rust" => :build
@@ -24,7 +23,7 @@ class Pastel < Formula
 
     system "cargo", "install", *std_cargo_args
 
-    bash_completion.install "completionspastel.bash"
+    bash_completion.install "completionspastel.bash" => "pastel"
     zsh_completion.install "completions_pastel"
     fish_completion.install "completionspastel.fish"
   end

@@ -4,20 +4,21 @@ class CargoUdeps < Formula
   url "https:github.comest31cargo-udepsarchiverefstagsv0.1.53.tar.gz"
   sha256 "fc4581c996dcbd8a9e660f49a55ada68e39c4b07a0eda9bd8efe1006e1dd1c73"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "12be653d70676ad78cc09e4a2a0080ea7bc05dd2e26d97edd7aaa6c4dbe99dd5"
-    sha256 cellar: :any,                 arm64_sonoma:  "98fc902d83ba3b52f7bff706a3adcce1c0ef7be85e97288cb8984e4057416ea7"
-    sha256 cellar: :any,                 arm64_ventura: "99809e0d75a6cbeb830ba4ee7701a6045ba70e65041c9fbec44d74aa9b41efcb"
-    sha256 cellar: :any,                 sonoma:        "4585400b1dd440bb929a16037ed76f714fe2b43546d976b154bcb5366ce68093"
-    sha256 cellar: :any,                 ventura:       "410a2ad5bece4b3b765b0da03726060282611fb25ea3c2500619dd11d7f8e386"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b0f6cc7eb304b42112cf561f471b6600ff57af518c389a82713347f644f25ab"
+    sha256 cellar: :any,                 arm64_sequoia: "e1fb68cf1d9ffdf5e6b818d92e2233bad9cca8a8c4c0d6d650cf9e5215d8e447"
+    sha256 cellar: :any,                 arm64_sonoma:  "cc9ee12b128e941caec64b271ff436cd8de98be54f5a7d327eb56d76b8897d42"
+    sha256 cellar: :any,                 arm64_ventura: "463e45fbfe269b9d7cb78a1ed9e6f9e37d0809d79014c7526636a880f8118032"
+    sha256 cellar: :any,                 sonoma:        "2cb29b8db03ba0781acea4b3d023e8355570171947c6658b6f366bc65e153fdf"
+    sha256 cellar: :any,                 ventura:       "67e6378019d16e0fefcfae97d225ee0673834eb24269884a3793df4976b7bb09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3734990ed4b83f9d2a85d6b675e3a25d0b3bded7cb3a5f7d29ef3b608768c0e4"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "rustup" => :test
-  depends_on "libgit2"
+  depends_on "libgit2@1.8" # needs https:github.comrust-langgit2-rsissues1109 to support libgit2 1.9
   depends_on "libssh2"
   depends_on "openssl@3"
 
@@ -28,6 +29,7 @@ class CargoUdeps < Formula
     ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
+
     system "cargo", "install", "--no-default-features", *std_cargo_args
   end
 
@@ -64,7 +66,7 @@ class CargoUdeps < Formula
     end
 
     [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["libgit2@1.8"].opt_libshared_library("libgit2"),
       Formula["libssh2"].opt_libshared_library("libssh2"),
       Formula["openssl@3"].opt_libshared_library("libssl"),
       Formula["openssl@3"].opt_libshared_library("libcrypto"),

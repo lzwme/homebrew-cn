@@ -9,21 +9,22 @@ class CargoOutdated < Formula
   url "https:static.crates.iocratescargo-outdatedcargo-outdated-0.16.0.crate"
   sha256 "965d39dfcc7afd39a0f2b01e282525fc2211f6e8acc85f1ee27f704420930678"
   license "MIT"
+  revision 1
   head "https:github.comkbknappcargo-outdated.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4d34640c51d476d3c0e3edffc99932c71e213f2714d3aaf23d58109916bfe637"
-    sha256 cellar: :any,                 arm64_sonoma:  "1771e1804acfe1537233821c9185975e0061bca378a88594682fe11d1f0ff032"
-    sha256 cellar: :any,                 arm64_ventura: "f188cda8e578bb128373a2fa2703a8682cebe9b570f798b541b5bdb84ffaed84"
-    sha256 cellar: :any,                 sonoma:        "5fa2feab40497eb4d6f4c82bcf23bdac336159c46c027ac2c7b88e547a127e10"
-    sha256 cellar: :any,                 ventura:       "01ba35ef314267282776569918241939965bc829c133c8d11736a4c6b0b2847d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a34bc7ad70d3828def2fbaa0a4849105339300d72ba4abc0fadc3269fb0fbf8b"
+    sha256 cellar: :any,                 arm64_sequoia: "6049f49c035ed7bb3e593d48821239c93b03643ef60aacb847d86db52037c8a0"
+    sha256 cellar: :any,                 arm64_sonoma:  "d702cdb138bab9eb25da3782caaeaad6702bc604e0f99551472ac0b926557d87"
+    sha256 cellar: :any,                 arm64_ventura: "1060e9672f0ced9f9e2f62f3140c79a9561062ab24439a3c1ea669244bf323a6"
+    sha256 cellar: :any,                 sonoma:        "61985936a86ff5a4848bd6fe7c9fec1346065ec0ef16dad3ae6b880a86cd50cc"
+    sha256 cellar: :any,                 ventura:       "aea8615845515169d44ee3cbdb4cc8b29b591a0530f5142a8eaef64ee1bf5fe9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23c83b573ccf7c64e862557f2bd62a398476ee426fb91826746f68114f0335ee"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "rustup" => :test
-  depends_on "libgit2"
+  depends_on "libgit2@1.8" # needs https:github.comrust-langgit2-rsissues1109 to support libgit2 1.9
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
@@ -72,7 +73,7 @@ class CargoOutdated < Formula
     end
 
     [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["libgit2@1.8"].opt_libshared_library("libgit2"),
       Formula["openssl@3"].opt_libshared_library("libssl"),
       Formula["openssl@3"].opt_libshared_library("libcrypto"),
     ].each do |library|

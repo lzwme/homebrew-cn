@@ -8,13 +8,13 @@ class Cfripper < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "1429e31442f82a44f7afcd6e9985267e9f5d4103c5d7542805d17b737c6588d1"
-    sha256 cellar: :any,                 arm64_sonoma:  "95d976d4176b99d47aa3b589f42ea47c2e0eae0c0bd5583dd0ece9dcd59da65d"
-    sha256 cellar: :any,                 arm64_ventura: "816a7c4b9102a6c3aa5b438ae336b51aa0eb342a7cf016a9076f9caebe18787c"
-    sha256 cellar: :any,                 sonoma:        "416e702c1295f55617767d824916743bfde9e6fef7c1a252e87a173564905b42"
-    sha256 cellar: :any,                 ventura:       "136e2aee7aca17a311b0acd5cec90dbdf4dd3a4e9799887a08a6b1b412473855"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3aebbad0f71e673ff9e0a004ad9596db6ad576d39794ed8f9616e88b97650825"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "398654460557247a83832ce4eab0fd165326aa4eec70d5e3472b09c356f2667d"
+    sha256 cellar: :any,                 arm64_sonoma:  "c21cf3a12a54c9c0702ce4b52b47c8cc5eae56c6bcd1c85305cb933b8741bc57"
+    sha256 cellar: :any,                 arm64_ventura: "4d23d4f5af154cd2309a705781eebde9324160981129b3ef210d7674aeb96a22"
+    sha256 cellar: :any,                 sonoma:        "f5d81b15a0b85eb3a67ae0d3890e6ef063dbc334ca087dc1ca67e510c292f99d"
+    sha256 cellar: :any,                 ventura:       "ba589abada4c5eeced762a6371f0cbee68f3b5f8dd182c11557e068f1e881a2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a73c0465a9fe3a37bb1b64ad97261cae19431f20e38ac02c41544964777667e"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -108,6 +108,8 @@ class Cfripper < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"cfripper", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

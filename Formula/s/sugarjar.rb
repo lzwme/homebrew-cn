@@ -6,14 +6,13 @@ class Sugarjar < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0d00a073b001f340a4b71902f2ac6c8816750e65ac63ddd39d10f4991dd3d8ec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "890a1d99d837faddc6905a810ced07d286467aa852fe832a9d7f201b6edff5d9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "890a1d99d837faddc6905a810ced07d286467aa852fe832a9d7f201b6edff5d9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "890a1d99d837faddc6905a810ced07d286467aa852fe832a9d7f201b6edff5d9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "46b28ef5fbb8d993ff0cdced2798d28afc18a203294fc38fea992472e022e3d1"
-    sha256 cellar: :any_skip_relocation, ventura:        "46b28ef5fbb8d993ff0cdced2798d28afc18a203294fc38fea992472e022e3d1"
-    sha256 cellar: :any_skip_relocation, monterey:       "46b28ef5fbb8d993ff0cdced2798d28afc18a203294fc38fea992472e022e3d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "890a1d99d837faddc6905a810ced07d286467aa852fe832a9d7f201b6edff5d9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8d688e5faaf4e262f1fce1d6c89da0250a897c979956938668d6d9157de08c7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8d688e5faaf4e262f1fce1d6c89da0250a897c979956938668d6d9157de08c7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b8d688e5faaf4e262f1fce1d6c89da0250a897c979956938668d6d9157de08c7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "03b52333c3f2564ea1c2fb278f00cc0493ad928006fd1e95c0e48db925520889"
+    sha256 cellar: :any_skip_relocation, ventura:       "03b52333c3f2564ea1c2fb278f00cc0493ad928006fd1e95c0e48db925520889"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8d688e5faaf4e262f1fce1d6c89da0250a897c979956938668d6d9157de08c7"
   end
 
   depends_on "gh"
@@ -28,7 +27,7 @@ class Sugarjar < Formula
     system "gem", "install", "--ignore-dependencies", "sugarjar-#{version}.gem"
     bin.install libexec"binsj"
     bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
-    bash_completion.install "extrassugarjar_completion.bash"
+    bash_completion.install "extrassugarjar_completion.bash" => "sj"
   end
 
   test do

@@ -1,18 +1,18 @@
 class Goread < Formula
   desc "RSSAtom feeds in the terminal"
   homepage "https:github.comTypicalAMgoread"
-  url "https:github.comTypicalAMgoreadarchiverefstagsv1.7.1.tar.gz"
-  sha256 "29e15a110ad1844adf6990033d118df4ec3ff6ccbe68b36eb6729867db8ec375"
+  url "https:github.comTypicalAMgoreadarchiverefstagsv1.7.2.tar.gz"
+  sha256 "103e5bcb444f92344f883b23a429424a1bfc1dec418af1db7476fc8e90552f03"
   license "GPL-3.0-or-later"
   head "https:github.comTypicalAMgoread.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "370e06cee7a0e012e29192aad1510c13148c516d5518f04ece53d45c894977f5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "370e06cee7a0e012e29192aad1510c13148c516d5518f04ece53d45c894977f5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "370e06cee7a0e012e29192aad1510c13148c516d5518f04ece53d45c894977f5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "62fddcb4abfa9ca7c7e1b246e1a6c4d8f36160adc4c1f351a7f41b7500ce6eb5"
-    sha256 cellar: :any_skip_relocation, ventura:       "62fddcb4abfa9ca7c7e1b246e1a6c4d8f36160adc4c1f351a7f41b7500ce6eb5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50aada6c4ed52d0d7385b0e3667b1981af8338df896c00dbf81fd40e2aca8107"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d646681aeffc7e1f5cad4106b8f6ce28e23263b346d2129baecb868ab153638"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d646681aeffc7e1f5cad4106b8f6ce28e23263b346d2129baecb868ab153638"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2d646681aeffc7e1f5cad4106b8f6ce28e23263b346d2129baecb868ab153638"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cbed2eaba2ccd581ddc42196663bf48d527c2b17411ad0ef6eb2157fcd706924"
+    sha256 cellar: :any_skip_relocation, ventura:       "cbed2eaba2ccd581ddc42196663bf48d527c2b17411ad0ef6eb2157fcd706924"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a7c3cbdee9df5a21a522f6e55a25a8c70b9f3bb054f4cbf4e561d6ef321c1d4"
   end
 
   depends_on "go" => :build

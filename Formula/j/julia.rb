@@ -6,6 +6,7 @@ class Julia < Formula
   url "https:github.comJuliaLangjuliareleasesdownloadv1.11.2julia-1.11.2-full.tar.gz"
   sha256 "a7365b969944f27df0d8563716ca9769e07f3f77b9f9fbb48bcd114ddf752ca4"
   license all_of: ["MIT", "BSD-3-Clause", "Apache-2.0", "BSL-1.0"]
+  revision 1
   head "https:github.comJuliaLangjulia.git", branch: "master"
 
   # Upstream creates GitHub releases for both stable and LTS versions, so the
@@ -18,12 +19,12 @@ class Julia < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "2561c1337e2781f2892d6ea8e11cf9ac39e4133faddf70f8db5f97594b2c5f1c"
-    sha256 cellar: :any,                 arm64_sonoma:  "cab1ecfebb57dabffeeccef4641035d028b2a99466f5b9b2a181eb2fdb02ee76"
-    sha256 cellar: :any,                 arm64_ventura: "9b3fa7cff81b387afc14464d4754a6ad27ddb1de101875f6139b70d3665abf91"
-    sha256 cellar: :any,                 sonoma:        "02017eeb569f7cd27b289cf8d41385122bb5f0da9277a745ec9edac30cb4e23e"
-    sha256 cellar: :any,                 ventura:       "5613c9d168cef4b3578f18af032bbcb2006d7dbd52e36e408eae85b4b2de8af5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3ab077d11dc895bdbd5967c6b2572c31c57603d1ef2f75824c7ac30e2b8b07b"
+    sha256                               arm64_sequoia: "e99f73e9dcbfa534e6714e425bee4a3901e23052d2de2265a91d43532791fedb"
+    sha256 cellar: :any,                 arm64_sonoma:  "e059eb30c2fbc23a7dd674a6364f1080dff6139007e8a0a66087a319f5ce569f"
+    sha256 cellar: :any,                 arm64_ventura: "6c2ec071b4efddd94350904200996c2731a99409f6f80f066192b71e03bb6ced"
+    sha256 cellar: :any,                 sonoma:        "99847aae7ecc8b0aead8c11a1a9719fafcc50444e0f8745995cb8d1e9f71bf55"
+    sha256 cellar: :any,                 ventura:       "156c1e9f1771ae3944adaccf5db2a1ba46c2f4ae84fd2a4fb150bac201513256"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a15ebfd5262883df6bc6ac59725a8e2d07741f6c1b5dfe2fb6ef26bce90e57ae"
   end
 
   depends_on "cmake" => :build # Needed to build LLVM
@@ -34,7 +35,7 @@ class Julia < Formula
   # TODO: depends_on "curl"
   depends_on "gmp"
   depends_on "libblastrampoline"
-  depends_on "libgit2"
+  depends_on "libgit2@1.8"
   depends_on "libnghttp2"
   depends_on "libssh2"
   depends_on "mbedtls@2"

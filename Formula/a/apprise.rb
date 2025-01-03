@@ -8,12 +8,13 @@ class Apprise < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c4ff77e915755987888f4d432748a89a711af1893f96177d6912e2bf8c7ca6e6"
-    sha256 cellar: :any,                 arm64_sonoma:  "fa2f2552b8e526514c53f4da25e2ba1326c27dbe201902453354f3ef06cc317b"
-    sha256 cellar: :any,                 arm64_ventura: "0e1c5798b2040fc629ce658e9e9093a3be5e9a1bb51b934ee515b03183657ea4"
-    sha256 cellar: :any,                 sonoma:        "f47bb1e19780ca4dc8dd7b70f13877ad714f813defeb982a29d471643e3a286f"
-    sha256 cellar: :any,                 ventura:       "2a2005baabb8aa8631fb66b5755746c763a3e2458212da84a4897550045f05e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bd0bc564783a097f309ff724154519bbbbe05872a282b32c4acd40304a31b86"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "2c8b5786d1927f7b769e68fd06f763f09fd6fce5360ed61296d72a372e0c08ed"
+    sha256 cellar: :any,                 arm64_sonoma:  "c6a0810c73f86ce1288ba764ffbe730d5270705cf5549cfd098651072ecea6b1"
+    sha256 cellar: :any,                 arm64_ventura: "3d4738055b1690e2f8df10e964196132f94936d34d49837a599fc9f6cdf50868"
+    sha256 cellar: :any,                 sonoma:        "ee9b9ad8775db5b3501dc37da9f71348906ae64394fc4d2d38c9d4a655da7f13"
+    sha256 cellar: :any,                 ventura:       "17eccdd9f10fd9fe8ac7c7533da604c0f74d8f451128c5902958727c6b5bfb37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "644b5d48906296ad74b35a9605e9ebe3f84453a8fecd6726969bd1e3dbdce0c6"
   end
 
   depends_on "certifi"
@@ -67,12 +68,14 @@ class Apprise < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"apprise", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
     # Setup a custom notifier that can be passed in as a plugin
-    file = "#{testpath}/brewtest_notifier.py"
-    apprise_plugin_definition = <<~PYTHON
+    file = testpath/"brewtest_notifier.py"
+    file.write <<~PYTHON
       from apprise.decorators import notify
 
       @notify(on="brewtest")
@@ -80,8 +83,6 @@ class Apprise < Formula
         # A simple test - print to screen
         print("{}: {}".format(title, body))
     PYTHON
-
-    File.write(file, apprise_plugin_definition)
 
     charset = Array("A".."Z") + Array("a".."z") + Array(0..9)
     title = charset.sample(32).join

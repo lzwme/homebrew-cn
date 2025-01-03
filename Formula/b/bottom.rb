@@ -15,14 +15,13 @@ class Bottom < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b9bb56477f24536e5ae48b06159e337d9fd0c3ab67710950f59af2aca2be62f5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b4c0dac75255ca0efe25e8d675f66a7509d24e03057aa9806bd2f5874d613056"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b78a76d3659944b74e7ca4b0f3c061b1a472da89363f63d06efda99c695fb5ca"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "92b42d2bf6ef560605216e9616d8c01f365a126810f3c4083e804c95b45b0ecc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5e9f22ad7b0098ca07750d864c62c37d6c939a2fe2e21b7e8a145c99200ea2df"
-    sha256 cellar: :any_skip_relocation, ventura:        "d3db0527a8a8ac6d9e1efabd7a7824795bd149a425bd2b815049d836c65bb2cb"
-    sha256 cellar: :any_skip_relocation, monterey:       "6cc6b1021908df82dd39bdf2c5541999c6d9a30e9a23f22c52687f00a3eebb51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "bbb486c2507d3b31db2c4ea932bf1b5da0d41fe9a50c0c683ec2e008d12acb0f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "293b085af54d7e69f159e9b6a1a317ea380d52cc2996bbf74203971cb2fa6347"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c90acf12752aa008cb245f0f5e6982ba391b4129b0f1372d2f651b367768f90"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fc76f47d4eaef7e6eac3cda67cbb06805b049ed83b0c7d7f3121a0ef3f9486dc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a50cf59e7195ba6cc6c24778047b1681e1932625222c4a3d19f386e315366737"
+    sha256 cellar: :any_skip_relocation, ventura:       "eb73f6318589bc6be3e01d7eefd8a1cb4e19726be7f2f14cd8e574d2d86333d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f438b63dce811a4d60b306a712385942acec74e726101dc8ab78b910ced3a2e"
   end
 
   depends_on "rust" => :build
@@ -36,7 +35,7 @@ class Bottom < Formula
     # Completion scripts are generated in the crate's build
     # directory, which includes a fingerprint hash. Try to locate it first
     out_dir = "targettmpbottom"
-    bash_completion.install "#{out_dir}completionbtm.bash"
+    bash_completion.install "#{out_dir}completionbtm.bash" => "btm"
     fish_completion.install "#{out_dir}completionbtm.fish"
     zsh_completion.install "#{out_dir}completion_btm"
     man1.install "#{out_dir}manpagebtm.1"

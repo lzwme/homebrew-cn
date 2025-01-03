@@ -9,13 +9,13 @@ class Snakefmt < Formula
   head "https:github.comsnakemakesnakefmt.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11f68240857d9f3b6633e324772ebfa6e0c3ad0b428848d8fec8ef7fc138e887"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "11f68240857d9f3b6633e324772ebfa6e0c3ad0b428848d8fec8ef7fc138e887"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "11f68240857d9f3b6633e324772ebfa6e0c3ad0b428848d8fec8ef7fc138e887"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eabb13081318cb5879ccf641dd404b84631431db0451b50327aeb4c22c96defc"
-    sha256 cellar: :any_skip_relocation, ventura:       "eabb13081318cb5879ccf641dd404b84631431db0451b50327aeb4c22c96defc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69070a7b66ff5fa9529bd30d05db583218ac848c945e463e5fc5c68a9d16ddc2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b26bcc28c7e1ea655e96b0fc28ece25b56aa50c3010c6c45251e316d36d5cac"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b26bcc28c7e1ea655e96b0fc28ece25b56aa50c3010c6c45251e316d36d5cac"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6b26bcc28c7e1ea655e96b0fc28ece25b56aa50c3010c6c45251e316d36d5cac"
+    sha256 cellar: :any_skip_relocation, sonoma:        "617081ca430c5571eb91f71a3c0938b4aa7e7fc8557dc2c2a0d8f63dd4722bb3"
+    sha256 cellar: :any_skip_relocation, ventura:       "617081ca430c5571eb91f71a3c0938b4aa7e7fc8557dc2c2a0d8f63dd4722bb3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "134a3acf2ecfbc67102471f3eb3a167e0b3251e458bc9e15c151e87412fa69ef"
   end
 
   depends_on "python@3.13"
@@ -57,6 +57,8 @@ class Snakefmt < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"snakefmt", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

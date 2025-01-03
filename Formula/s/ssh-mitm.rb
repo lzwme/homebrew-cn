@@ -10,12 +10,13 @@ class SshMitm < Formula
   head "https:github.comssh-mitmssh-mitm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "043c5dd939bff192cceab387771d00d44aa9c1156604dc6cec597fdfa93e3351"
-    sha256 cellar: :any,                 arm64_sonoma:  "e5467dee9666148cb0ff3e9082af11167fad3d0ee93fc53cdcf932d763a10ca9"
-    sha256 cellar: :any,                 arm64_ventura: "ef8c81c52e041f0eeeead3cc39020ed1c366ff99766e5c40d7a8d829fcb989bb"
-    sha256 cellar: :any,                 sonoma:        "29dfca7957e1fe8d9b497e78ae338b03af2350b2cc7339698b4501e39332826b"
-    sha256 cellar: :any,                 ventura:       "44562ad8c9b8a789d10fd58e7e39ac12a38491034a662442252d322cf42ad27e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f04102f106aca16ca4039b68f6c505c3c8f8e2a0b701fe24b130cd52c05eab42"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "bad464b27d45fd17f9b91d5d2cd652ac9b66b4cbe45c4725ffb723820bb0319d"
+    sha256 cellar: :any,                 arm64_sonoma:  "8a4509d8f7de16690cb3c292ff9e19fe55d66550283effbfbef02a0bcd8e1152"
+    sha256 cellar: :any,                 arm64_ventura: "1000a33333cb126802387132f451f0eb777a5d899e556daef27ce03995c26a49"
+    sha256 cellar: :any,                 sonoma:        "349b210d8d17ed642d0000abbd7605b32fe790ac7b4a61a8daa813e3fce6885e"
+    sha256 cellar: :any,                 ventura:       "8b1f21b4a7a49deecba74ff91467dcda93895f9b79919f2b5ebac46aa9d1f72f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "972bf036544288557f5abe6b087d4a1355c12f47469abbb757dc41bf95a03a80"
   end
 
   depends_on "rust" => :build # for bcrypt
@@ -115,8 +116,10 @@ class SshMitm < Formula
   end
 
   def install
-    ENV["SODIUM_INSTALL"] = "system"
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(libexec"binregister-python-argcomplete", "ssh-mitm",
+                                         shell_parameter_format: :arg)
   end
 
   test do

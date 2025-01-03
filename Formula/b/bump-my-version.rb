@@ -9,12 +9,13 @@ class BumpMyVersion < Formula
   head "https:github.comcallowayprojectbump-my-version.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ffefdfc7f943d57f70e21cece284a760b7d23d2e4193c423d7dc7d357aa30c52"
-    sha256 cellar: :any,                 arm64_sonoma:  "c96e91c8266ac477e6a00712e0bf0cffd4af7caaac9b82ae6c6368f6320fb5eb"
-    sha256 cellar: :any,                 arm64_ventura: "09e6a52b9c079f2bef04fdcc63a5023c6d788fbe2c90937ee5928f0dac86e10a"
-    sha256 cellar: :any,                 sonoma:        "c5534d68e88abe40c05e383ebc33373e6118a645a0cf66c5e92b0c804efea029"
-    sha256 cellar: :any,                 ventura:       "5dbc5094fbbe5894f0675080fd7d0debd86702508032c47a165fb705a7875ebd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a73c2f3a823a056b29abab0f572fefa6d9b1103e4337567dc2fd7d9ee9dcc31"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "16175e33bad9e4b9d558e99e7e5282613c7dc072aae99ca142dfcf02e3eccdb6"
+    sha256 cellar: :any,                 arm64_sonoma:  "f607d4bdc8af6a6691b04e89159d866823f12bc171604a5cd96624aa76d915f1"
+    sha256 cellar: :any,                 arm64_ventura: "4bd6d8275983c22dd6066b0dfb0182ef9b7f84175c4be2f22c90087953a6b3df"
+    sha256 cellar: :any,                 sonoma:        "443103ab6d162e68fd27e7b0756f7256f7311bb66cac7781c158c167e0b29620"
+    sha256 cellar: :any,                 ventura:       "ee122be971f686a1c8907e5d6cac59862c7f267d187c51e3145652de67ad8f2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a774b143eb3f2f4868a93a595ddcca4dd15306f6d2d59eb5f961f1ea9faf1a3"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -112,6 +113,8 @@ class BumpMyVersion < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"bump-my-version", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

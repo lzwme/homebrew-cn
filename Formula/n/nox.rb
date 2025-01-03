@@ -9,12 +9,13 @@ class Nox < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8318511bfd67b9e388403c7bbd5490895b65494af8ed5a1c5e549a63c1e6c8ac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8318511bfd67b9e388403c7bbd5490895b65494af8ed5a1c5e549a63c1e6c8ac"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8318511bfd67b9e388403c7bbd5490895b65494af8ed5a1c5e549a63c1e6c8ac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4911354724ece83de21f33d996e25188114657d0bc11f533c59e35e3e5407317"
-    sha256 cellar: :any_skip_relocation, ventura:       "4911354724ece83de21f33d996e25188114657d0bc11f533c59e35e3e5407317"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f17e404a159d155147fb3a9549700ebecd4cc12688fd770a11c5813ef13e4761"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24456477ab731833f7e0792d772ee89d897a38fcd65bfeac97a82248cbb2ad1a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "24456477ab731833f7e0792d772ee89d897a38fcd65bfeac97a82248cbb2ad1a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "24456477ab731833f7e0792d772ee89d897a38fcd65bfeac97a82248cbb2ad1a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8c3bbe3f8b9ed39e70bcb7eba40eb03046a6f1a163b677d7381d8345d989338a"
+    sha256 cellar: :any_skip_relocation, ventura:       "8c3bbe3f8b9ed39e70bcb7eba40eb03046a6f1a163b677d7381d8345d989338a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ff339389924bb5dec027d1a6e377cef65842056e3c8195d5653a19aa4f67016"
   end
 
   depends_on "python@3.13"
@@ -57,6 +58,9 @@ class Nox < Formula
   def install
     virtualenv_install_with_resources
     (bin/"tox-to-nox").unlink
+
+    generate_completions_from_executable(libexec/"bin/register-python-argcomplete", "nox",
+                                         shell_parameter_format: :arg)
   end
 
   test do

@@ -26,7 +26,7 @@ class GccAT11 < Formula
   # out of the box on Xcode-only systems due to an incorrect sysroot.
   pour_bottle? only_if: :clt_installed
 
-  depends_on maximum_macos: [:sonoma, :build]
+  depends_on maximum_macos: [:ventura, :build] # Xcode < 16
   depends_on "gmp"
   depends_on "isl"
   depends_on "libmpc"
@@ -105,6 +105,7 @@ class GccAT11 < Formula
       # Change the default directory name for 64-bit libraries to `lib`
       # https:stackoverflow.coma54038769
       inreplace "gccconfigi386t-linux64", "m64=..lib64", "m64="
+      inreplace "gccconfigaarch64t-aarch64-linux", "lp64=..lib64", "lp64="
     end
 
     mkdir "build" do

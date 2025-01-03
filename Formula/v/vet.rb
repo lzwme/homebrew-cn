@@ -1,17 +1,17 @@
 class Vet < Formula
   desc "Policy driven vetting of open source dependencies"
   homepage "https:github.comsafedepvet"
-  url "https:github.comsafedepvetarchiverefstagsv1.8.9.tar.gz"
-  sha256 "c194ecf10b701f8fea8abd799f35fc258b16500de2490a5514c0e49f1723bc22"
+  url "https:github.comsafedepvetarchiverefstagsv1.8.10.tar.gz"
+  sha256 "20a161dfc02b55c307dbf01aa051bd346d59e2106c9d23c0c37978bb3f16bc7c"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ada635540327286d3d2d495c5f77a3c208979b54eda95c0143144a02eeadfad5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35f83551804e22e878c2953fa413d417699ad6149839cfe052e3914d3c56ccca"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6a8a4252d3db3333a33cc92dd836007ad1a38cfa7ccec92d6c626192bea1ad28"
-    sha256 cellar: :any_skip_relocation, sonoma:        "84e92fcee2c8c4b59af521d35e58e3a4c69b360fa9595ce86b0873ea2da3ae10"
-    sha256 cellar: :any_skip_relocation, ventura:       "d93fc184fc761ac3a8ca731df74d8f502036acc4b19af496fdcb0c75981ccdd1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b040466cd405b19088b19c702b33253430a7c53db119030ee2321ad3c61fa40"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13489f284cdd2c506bb3b2b1922b969d416d6297ef1d9822a1967800492f674c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a703cf555e4f6de6283836be48e560f53acb7e56b8823b503f1f0e69c7c74288"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b1fb5b9cc771fee0d337a73c4a755a7971c04f3b32a7e5ed46e46efeee6d088b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d802194c6d2568392bc9b92b31940f68077ca2296ee73839d2edf0bd09a1aeb0"
+    sha256 cellar: :any_skip_relocation, ventura:       "e244e256203b1f492da1397f26036c6828b5980f48c39c507ba57d55b668a3c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04799fb8523e9d17fbde7f821d60754b4493c44eb9202f2c1d559ac17ce0a0e5"
   end
 
   depends_on "go" => :build

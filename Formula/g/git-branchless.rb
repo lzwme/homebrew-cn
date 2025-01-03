@@ -4,6 +4,7 @@ class GitBranchless < Formula
   url "https:github.comarxanasgit-branchlessarchiverefstagsv0.10.0.tar.gz"
   sha256 "1eb8dbb85839c5b0d333e8c3f9011c3f725e0244bb92f4db918fce9d69851ff7"
   license any_of: ["Apache-2.0", "MIT"]
+  revision 1
   head "https:github.comarxanasgit-branchless.git", branch: "master"
 
   # Upstream appears to use GitHub releases to indicate that a version is
@@ -15,17 +16,17 @@ class GitBranchless < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "42a77ecf8c5aea5d410cf2a76a0fc06f15e5674aeb88d17076e94a2c67bd4bfa"
-    sha256 cellar: :any,                 arm64_sonoma:  "24000865ca925f6b59e5f3cf45ccbc34d3ad9d5059777e414e961b0a33e931bc"
-    sha256 cellar: :any,                 arm64_ventura: "9eb5335a4ef1611c6355d4c6a5977e509e8bb0d40c346ef88b30502a99f24a1a"
-    sha256 cellar: :any,                 sonoma:        "6553ee06179218268112ef31322133e69c392df2259244049b0abcd4f27101f0"
-    sha256 cellar: :any,                 ventura:       "2a1ee3f6ffdf8d11c60ae9c752789f241c519b0308025edabc1ea07857c1387b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d92a10006422d6f296aef114de2a5f52b6537b117666ebbbc0b2bceb1e67bde"
+    sha256 cellar: :any,                 arm64_sequoia: "ca739d76b3d52de81f0ec9e679aba6847426b0c4d9c84b8db0c934ad576dc439"
+    sha256 cellar: :any,                 arm64_sonoma:  "993e9b56d4598738d7c5fd6fb6b90393396cd59a3bfb630294c7709a6507b04b"
+    sha256 cellar: :any,                 arm64_ventura: "a1e2afd8baea79531f7774ec70cc2230c945edde309036d0fb0aa5a9809b87fa"
+    sha256 cellar: :any,                 sonoma:        "4ca5e3cd013c7556f3b32d06cac5186e3bdf369afdc2fe92c81ef52e08f631ff"
+    sha256 cellar: :any,                 ventura:       "c72f47a4f49662451cd7154370b69240f75ceb7db7f33b90bc0e8532f39dd5c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c6f31ef2352a3bbcc8e2478b7edfcf91df250d22084ade647a3fb187ace0f32"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "libgit2"
+  depends_on "libgit2@1.8" # needs https:github.comrust-langgit2-rsissues1109 to support libgit2 1.9
 
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
@@ -49,7 +50,7 @@ class GitBranchless < Formula
     linkage_with_libgit2 = (bin"git-branchless").dynamically_linked_libraries.any? do |dll|
       next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
 
-      File.realpath(dll) == (Formula["libgit2"].opt_libshared_library("libgit2")).realpath.to_s
+      File.realpath(dll) == (Formula["libgit2@1.8"].opt_libshared_library("libgit2")).realpath.to_s
     end
 
     assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."

@@ -4,21 +4,21 @@ class GitDelta < Formula
   url "https:github.comdandavisondeltaarchiverefstags0.18.2.tar.gz"
   sha256 "64717c3b3335b44a252b8e99713e080cbf7944308b96252bc175317b10004f02"
   license "MIT"
-  revision 1
+  revision 2
   head "https:github.comdandavisondelta.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7c6b8a8d5802e42770a3f5da3e276a3dcc2e8b7a6945c3f5e7e240e95274afe1"
-    sha256 cellar: :any,                 arm64_sonoma:  "aaaa87419f0ac6b1ca16345e9299b93a4c26646bdf7b27048b4789a68c38e785"
-    sha256 cellar: :any,                 arm64_ventura: "e1dd88715549906c8d75fda37aba45bebccc2feaa5152e8444739f80bf349fe6"
-    sha256 cellar: :any,                 sonoma:        "4800301c726f6b22a99a9f6f9294799e9ae2b7b4625c87fbb63890358c984aaa"
-    sha256 cellar: :any,                 ventura:       "ed18eb50a566ddbae43d7cfad0e090e8774a213ed3a6a7a7d3832c7e23a59469"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ea94075ccecbdb82e38f3b57a2e08ec6c46958fd6f723c11c6515e359985b07"
+    sha256 cellar: :any,                 arm64_sequoia: "4bb9a2113f9fb21101c8d4bcc11b37048a008ddf0c140cdcfa7e1bbbf8650e55"
+    sha256 cellar: :any,                 arm64_sonoma:  "0b9bb3ae47e22b36121b5ff4c87422cf356705f9c7eaf1bfc9d011489bb0a9c4"
+    sha256 cellar: :any,                 arm64_ventura: "2be672321d53b1c798d3997088e015d0a038bbe94dd5797c298ef167eee0c959"
+    sha256 cellar: :any,                 sonoma:        "28949d77b77db2413a12e397d3292d050603be2d7e491ee2406a1c41a87224a9"
+    sha256 cellar: :any,                 ventura:       "93c87379b5ea08686f959f9d5b8f6bb52e59cbf549b38a0f1ed9e06907ccae87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "086c0c46d5ad7ef03a390e168ddf375c2e8b9734bdca0338f4aa5d879eea62d9"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "libgit2"
+  depends_on "libgit2@1.8" # needs https:github.comrust-langgit2-rsissues1109 to support libgit2 1.9
   depends_on "oniguruma"
 
   uses_from_macos "zlib"

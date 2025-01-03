@@ -4,20 +4,21 @@ class CargoShuttle < Formula
   url "https:github.comshuttle-hqshuttlearchiverefstagsv0.49.0.tar.gz"
   sha256 "fe13c6a0717edd1d6ec838c6abf02d3230b379083d4daf8f63621d47d1ceded6"
   license "Apache-2.0"
+  revision 1
   head "https:github.comshuttle-hqshuttle.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7d7df9f8bd0165fa7dc319a5c292a1963dbbbd02fb9acc9a82be84a324069497"
-    sha256 cellar: :any,                 arm64_sonoma:  "e8ea01a46ba6b94af54656b0a97ac89258031a9a364aeb6a92c9cf995132a2aa"
-    sha256 cellar: :any,                 arm64_ventura: "d67182c4ef74a39a5dcdf99b2b6cd1405211f098b2a41d2ba7482cbcd954abb3"
-    sha256 cellar: :any,                 sonoma:        "562c9bdcb385fb3d89567b28e90bd5e6eb6a7695b88c3ee2b1a5c6ae6bb07220"
-    sha256 cellar: :any,                 ventura:       "97723f1be157be4af14ed4d76c82b4fa210a8b1252b57362fce0273654576339"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92e199d3de11901d1ebb0d2bb4b475ad9a6d9d1157d858c159773c0bc6b7c992"
+    sha256 cellar: :any,                 arm64_sequoia: "e4f4bcd687ba6e974b1c6752bd95bf8379b7c384ddb1e605e6694a90b115b340"
+    sha256 cellar: :any,                 arm64_sonoma:  "a8d0d989c7b740ef6a1f6d0e982200cb07279c5375ee1c0639f281420eff6515"
+    sha256 cellar: :any,                 arm64_ventura: "198d4256b344bb905069bcbf51103fa141816c2613e5148d1fc7c8ca02b14e40"
+    sha256 cellar: :any,                 sonoma:        "614b43b6ea478ca9a49ec7ba28bd2d8e0d3aaca078850e5cb5d1b9e974a917fe"
+    sha256 cellar: :any,                 ventura:       "88d63a4f34aa7568222edd899045c4005d24e946c3aa44784e7068c1a278358c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1400520b9e73b07cbb4d34ef411dbec11c7b7efaec05982447700faed19bb328"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "libgit2"
+  depends_on "libgit2@1.8" # needs https:github.comrust-langgit2-rsissues1109 to support libgit2 1.9
 
   uses_from_macos "bzip2"
 

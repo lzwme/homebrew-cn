@@ -1,8 +1,8 @@
 class Sdl2 < Formula
   desc "Low-level access to audio, keyboard, mouse, joystick, and graphics"
   homepage "https:www.libsdl.org"
-  url "https:github.comlibsdl-orgSDLreleasesdownloadrelease-2.30.10SDL2-2.30.10.tar.gz"
-  sha256 "f59adf36a0fcf4c94198e7d3d776c1b3824211ab7aeebeb31fe19836661196aa"
+  url "https:github.comlibsdl-orgSDLreleasesdownloadrelease-2.30.11SDL2-2.30.11.tar.gz"
+  sha256 "8b8d4aef2038533da814965220f88f77d60dfa0f32685f80ead65e501337da7f"
   license "Zlib"
 
   livecheck do
@@ -12,12 +12,12 @@ class Sdl2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b2c39e2f53a61b0345a7322e6bd2013beedc80bcc322021e3aec2ccf7ebb58c3"
-    sha256 cellar: :any,                 arm64_sonoma:  "feb84413c378c66af6c20985bb1367c455ea34f14d6be776f6d7a3afc4ca0f1f"
-    sha256 cellar: :any,                 arm64_ventura: "5ec54e17cdea933dbb9daf9cc2101664dfd783ff70bcdaaca675dfdeee3d7ccc"
-    sha256 cellar: :any,                 sonoma:        "990108b87ff3f117fbc9fbf9648e093a32edb435cf192bd0c42b3a97e7e1ddfe"
-    sha256 cellar: :any,                 ventura:       "7cc5a03c3ac21e51fd11f2d9b5f445d1233c19a41d0ffac3dcb5274383b08e8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b331d26576b3c1255b350fb7ce8beebb93f96a4a8badd6199b94c735bf9d75a"
+    sha256 cellar: :any,                 arm64_sequoia: "b87f0d34432faf3630ad1f7ed5a65b8387ffadc8eb51c936fe7e973642a8207d"
+    sha256 cellar: :any,                 arm64_sonoma:  "6eed4d7882ace75c6831382cbadbdeb7cad356cdd5000fad7f0b2e7b17d917f8"
+    sha256 cellar: :any,                 arm64_ventura: "47101386010f483cb135c3b0caa574c8912777277ec63afdd8216788e8dfc720"
+    sha256 cellar: :any,                 sonoma:        "eb8211e78231337e7b2a50665a839d46254cac5a6cf6a88cef738ad81f7054cf"
+    sha256 cellar: :any,                 ventura:       "9809878a8d7eab5b71acb0cdcccc528313896a99972ae251ca693032df7bb427"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f53ea335f9990ec2aef849a995ea2d7b56db073ea4eb7fb8a34a53e4275d6970"
   end
 
   head do

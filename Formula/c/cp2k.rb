@@ -1,10 +1,9 @@
 class Cp2k < Formula
   desc "Quantum chemistry and solid state physics software package"
   homepage "https:www.cp2k.org"
-  url "https:github.comcp2kcp2kreleasesdownloadv2024.3cp2k-2024.3.tar.bz2"
-  sha256 "a6eeee773b6b1fb417def576e4049a89a08a0ed5feffcd7f0b33c7d7b48f19ba"
+  url "https:github.comcp2kcp2kreleasesdownloadv2025.1cp2k-2025.1.tar.bz2"
+  sha256 "65c8ad5488897b0f995919b9fa77f2aba4b61677ba1e3c19bb093d5c08a8ce1d"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,12 +11,12 @@ class Cp2k < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "afcde06b0ad9e8670f2e03850a2683ef10338fc88c72999025256c2bdda6ed40"
-    sha256 arm64_sonoma:  "e05d3c17c577b1532f32ea51a3b416630325a7d2d17a7bd272c28e06502a1424"
-    sha256 arm64_ventura: "564589842cd32cca4030845add9c0ec5325db3d2ba84b72cc98b9936924c2cb5"
-    sha256 sonoma:        "60fb71aa453096b23f0fe81d154e49f2c86c314eef8414123c5b3323f0e02e85"
-    sha256 ventura:       "4c6a0bc4785229bdc7abe2a7c37aecb55e29a86a39ddf89adaf446e44c3050f6"
-    sha256 x86_64_linux:  "3c59adfcd22bd261911dbf767a7b4321f933bd6bc3926278c751c46ea5c32d18"
+    sha256 arm64_sequoia: "46b2e75543dc15952e00a6614a0257225b5ed00d8c038cfb3546061a8e6446bb"
+    sha256 arm64_sonoma:  "c2b1c3f70cc13fb9c89b8b5713a1702715e3ee01584ddb1113780ddfceeaf7ac"
+    sha256 arm64_ventura: "1f4f74b1fcb70f1f88625059dfa197e5fd00cdd6560de061f8b7a709a3abec28"
+    sha256 sonoma:        "d6b69ff15f5582ebe7093c86e9664aae11e1e2670eb428d83f774c2507592133"
+    sha256 ventura:       "da3a27206ed2d1345338e3c764cf485cf003f13db52b38ec99be75eece741913"
+    sha256 x86_64_linux:  "92120af9f50b710a84a8637f0294803f1ec745d4c49f3a9d19258955ded5e5bb"
   end
 
   depends_on "cmake" => :build
@@ -38,9 +37,6 @@ class Cp2k < Formula
     url "https:github.comcp2klibint-cp2kreleasesdownloadv2.6.0libint-v2.6.0-cp2k-lmax-5.tgz"
     sha256 "1cd72206afddb232bcf2179c6229fbf6e42e4ba8440e701e6aa57ff1e871e9db"
   end
-
-  # build patch to support libxc 7, upstream pr ref, https:github.comcp2kcp2kpull3828
-  patch :DATA
 
   def install
     resource("libint").stage do
@@ -102,64 +98,3 @@ class Cp2k < Formula
     system "mpirun", bin"cp2k.psmp", pkgshare"testswater.inp"
   end
 end
-
-__END__
-diff --git aCMakeLists.txt bCMakeLists.txt
-index 5ff48a4..273ba62 100644
---- aCMakeLists.txt
-+++ bCMakeLists.txt
-@@ -624,7 +624,7 @@ if(CP2K_USE_ELPA)
- endif()
-
- if(CP2K_USE_LIBXC)
--  find_package(LibXC 6 REQUIRED EXACT)
-+  find_package(LibXC 7 REQUIRED)
- endif()
-
- # uncomment this when libgrpp cmake support is complete
-diff --git acmakecp2kConfig.cmake.in bcmakecp2kConfig.cmake.in
-index 6fec68c..63dee33 100644
---- acmakecp2kConfig.cmake.in
-+++ bcmakecp2kConfig.cmake.in
-@@ -60,7 +60,7 @@ if(NOT TARGET cp2k::cp2k)
-   endif()
-
-   if(@CP2K_USE_LIBXC@)
--    find_dependency(LibXC 6 REQUIRED EXACT)
-+    find_dependency(LibXC 7 REQUIRED)
-   endif()
-
-   if(@CP2K_USE_COSMA@)
-diff --git acmakemodulesFindLibXC.cmake bcmakemodulesFindLibXC.cmake
-index 1c8a08d..821d55b 100644
---- acmakemodulesFindLibXC.cmake
-+++ bcmakemodulesFindLibXC.cmake
-@@ -12,8 +12,12 @@ include(cp2k_utils)
- cp2k_set_default_paths(LIBXC "LibXC")
-
- if(PKG_CONFIG_FOUND)
--  pkg_check_modules(CP2K_LIBXC IMPORTED_TARGET GLOBAL libxcf90 libxcf03
--                    libxc>=${LibXC_FIND_VERSION})
-+  # For LibXC >= 7, the Fortran interface is only libxcf03
-+  pkg_check_modules(CP2K_LIBXC
-+    IMPORTED_TARGET GLOBAL
-+    libxcf03
-+    libxc>=7
-+  )
- endif()
-
- if(NOT CP2K_LIBXC_FOUND)
-@@ -25,11 +29,10 @@ if(NOT CP2K_LIBXC_FOUND)
-   endforeach()
- endif()
-
--if(CP2K_LIBXC_FOUND
--   AND CP2K_LIBXCF90_FOUND
--   AND CP2K_LIBXCF03_FOUND)
-+if(CP2K_LIBXC_FOUND)
-+  # We require both libxc + libxcf03 for LibXC 7
-   set(CP2K_LIBXC_LINK_LIBRARIES
--      "${CP2K_LIBXCF03_LIBRARIES};${CP2K_LIBXCF90_LIBRARIES};${CP2K_LIBXC_LIBRARIES}"
-+    "${CP2K_LIBXCF03_LIBRARIES};${CP2K_LIBXC_LIBRARIES}"
-   )
- endif()

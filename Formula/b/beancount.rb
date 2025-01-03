@@ -9,13 +9,13 @@ class Beancount < Formula
   head "https:github.combeancountbeancount.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd46704b5f7378d8f22c21d28dd7889e5c4128e74fffad77abbd15c97690e0d9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b3156bab6cb30a56af2bc10fde877271be206952204334f8cf6623e56baa37a5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "53f9b70c1f228ae55aa911283407a2d2eaa535e9da434270c9e8328371c345a9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7ee09aef497ae1937ef164f58f2894704b3fb0a362d01e42cd877abeea23a9b0"
-    sha256 cellar: :any_skip_relocation, ventura:       "9c8678874984a80f6df58b18f09bf90bc73cf180421299b403e7f91e062c0298"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6052aec81c41e933c8ba47c69673e45539088e07282b0b91dd5128c97acbb6af"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "220fca5da217c97fb5a9fad7ca6915bc55c9bae1d79fbdad5ee965442077d3d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "09220a93a40eaa115f24d4e39e9e0f74aefaf36a973a42a56b7f23ab9af1f8f7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bcc06911282b28ad7c6f77c9b846eda048d22c90d09ebc353734273b0e9c0e5d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "904439e31cf5362140019d4bc222f5ece05c5421fbcfb6d1123732be6cf8e445"
+    sha256 cellar: :any_skip_relocation, ventura:       "3c2df16ce54d376f303adae8bf2aea116c294b884f7e4661b73fe4dd9ab80619"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b9af264b6a0e9e5862107f3eb0d162ad92ce914f96e452f3efbf31e790c6e9b"
   end
 
   depends_on "meson" => :build
@@ -52,6 +52,10 @@ class Beancount < Formula
 
   def install
     virtualenv_install_with_resources
+
+    bin.glob("bean-*") do |executable|
+      generate_completions_from_executable(executable, shells: [:fish, :zsh], shell_parameter_format: :click)
+    end
   end
 
   test do

@@ -12,12 +12,13 @@ class Exercism < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f9da30002c7198b9d75d86c774cc1963e62c62924bba5e541db4e2d5457bb62"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f9da30002c7198b9d75d86c774cc1963e62c62924bba5e541db4e2d5457bb62"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9f9da30002c7198b9d75d86c774cc1963e62c62924bba5e541db4e2d5457bb62"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b9666dfef34c3e6fe8fe9dd1fe221f6dce00d86e0c99a820b8aac229875beeec"
-    sha256 cellar: :any_skip_relocation, ventura:       "b9666dfef34c3e6fe8fe9dd1fe221f6dce00d86e0c99a820b8aac229875beeec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8069217404dd1a17c578009d1e01cd8f021710898257a41d5ab57c19caab60b1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "edbed801d51e954a07e8361b1f046e7debe55a8d1f3395cb1b76119c322e6843"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "edbed801d51e954a07e8361b1f046e7debe55a8d1f3395cb1b76119c322e6843"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "edbed801d51e954a07e8361b1f046e7debe55a8d1f3395cb1b76119c322e6843"
+    sha256 cellar: :any_skip_relocation, sonoma:        "73e1f0791210f733ad58582e961694a6e48073fc3c05211fec65f187d446f1a8"
+    sha256 cellar: :any_skip_relocation, ventura:       "73e1f0791210f733ad58582e961694a6e48073fc3c05211fec65f187d446f1a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8db0470e98aa26162d4a8c02de1c650665b43b9331eac64e2a98cfa495993701"
   end
 
   depends_on "go" => :build
@@ -25,7 +26,7 @@ class Exercism < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "exercismmain.go"
 
-    bash_completion.install "shellexercism_completion.bash"
+    bash_completion.install "shellexercism_completion.bash" => "exercism"
     zsh_completion.install "shellexercism_completion.zsh" => "_exercism"
     fish_completion.install "shellexercism.fish"
   end

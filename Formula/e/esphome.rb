@@ -8,12 +8,13 @@ class Esphome < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5cac3b96be3be4b7cdc2bc0128df3e06ca37e876d9d9b6d0980d15c4d47eea30"
-    sha256 cellar: :any,                 arm64_sonoma:  "c14d3fcae318ce7bb94fbb569221f38d218352b4bb0424f65925bc0d65007154"
-    sha256 cellar: :any,                 arm64_ventura: "558e8b8227ac075acdad3569948b676694b4f763f1c3b69feeb71a1d9b9e8bd7"
-    sha256 cellar: :any,                 sonoma:        "a8b094d0e234d5da8666d9e1823f1880bb2f2c3e559ee173acd609e5afc879c3"
-    sha256 cellar: :any,                 ventura:       "8a1942edcc5305c816d36996f8dc569e926b5c83660344812e5c80673388bdd3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4d734b6e6316550ce8698c4e3b4044b539bb99488520723b552645f3ffccda9"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "99e18704e1e829323cbab0528f787505b8d304f21fc3a5a85ea88ecbb7918ff1"
+    sha256 cellar: :any,                 arm64_sonoma:  "cdcd1719a2fef454357290cc24d639357c4e0ce22fe1c33e179adaa033657348"
+    sha256 cellar: :any,                 arm64_ventura: "7bc02029fe1ca3b01b6709c0e5b8dc060951928af3e3120d8826a3b1ad30d15d"
+    sha256 cellar: :any,                 sonoma:        "8ef29849a1fa8d3b4b46d1badb07156f8bec494508f6e683433b85d7cc4d8300"
+    sha256 cellar: :any,                 ventura:       "07d4a2539182edec2bdbb1a035bea09a8735bbdb71bb42095ed1da691706a844"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60daed2b0f4479fc7405e26185308658668514ab51820fd484bf4b18de8de19a"
   end
 
   depends_on "pkgconf" => :build
@@ -27,7 +28,6 @@ class Esphome < Formula
   depends_on "libyaml"
   depends_on "little-cms2"
   depends_on "pillow"
-  depends_on "python-setuptools"
   depends_on "python@3.13"
   depends_on "webp"
 
@@ -350,6 +350,9 @@ class Esphome < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(libexec"binregister-python-argcomplete", "esphome",
+                                         shell_parameter_format: :arg)
   end
 
   test do

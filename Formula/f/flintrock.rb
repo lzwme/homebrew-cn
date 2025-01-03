@@ -8,13 +8,13 @@ class Flintrock < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_sequoia: "24fa38c3037c441cea8ddda14ed7d0017c958bbe7fcd1a5eaa538a3200eb04b0"
-    sha256 cellar: :any,                 arm64_sonoma:  "8da514e5c1f5ff0cc944d6d5574fafe09310c20341b90a493b9151dd5e651be9"
-    sha256 cellar: :any,                 arm64_ventura: "e1c9c2bee6e3559729afaf25b2c1e3a96ae3f2fc11897f40aec89d0006eb46bd"
-    sha256 cellar: :any,                 sonoma:        "6415cd4b740d679ddcc1d7b3edbfa9bbfdc7316644473a59da0cd36515104551"
-    sha256 cellar: :any,                 ventura:       "b5c89ee5307ef6c7091f8f6c527222cd0fdce2356c1297d8fa49aa7933ab40ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f3686b5e99c219bd9214b7fb553c0a33c73b990f492530f25bb33f821396e33"
+    rebuild 4
+    sha256 cellar: :any,                 arm64_sequoia: "a1211bc4ea1c062dfa95b3c14f6da61dcab02b1d6216e6687ef58b6680379089"
+    sha256 cellar: :any,                 arm64_sonoma:  "199ee4726b6a069ff33ccf5fb1650b74645d89c9fb42b16d85a89df361c33afe"
+    sha256 cellar: :any,                 arm64_ventura: "8e34466bfce9510389d673167e2b86430f034ff8f51c7a830af341f76fb7d54f"
+    sha256 cellar: :any,                 sonoma:        "53dd4e7e69bd54ca81bb968017244dbaa6b7179b065461c475050aeab2d8f3f9"
+    sha256 cellar: :any,                 ventura:       "97151962e88f570735fd2a02769f7d3bc6c1ef13ea5bd54643fb4ddeb71b00cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48fe7af4aefa589974da8e5eab93f9a9c159aa16d701699930ddaad0a943a20a"
   end
 
   depends_on "rust" => :build # for bcrypt
@@ -88,6 +88,8 @@ class Flintrock < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"flintrock", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

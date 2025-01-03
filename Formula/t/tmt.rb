@@ -9,12 +9,13 @@ class Tmt < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "45cda8c19347eeb6a71b38b6e1b9adb6698d1ed8d5a879bf2312975d3b12f6be"
-    sha256 cellar: :any,                 arm64_sonoma:  "f1b8a9a9c70e6466e29689b6ceba5f8321ca8e84256e4c396ee1a95f33b545f9"
-    sha256 cellar: :any,                 arm64_ventura: "7ced4d8772f4e027904d3852b55d6282c9e48ca71ca462e7b7fdb6b8f471a78d"
-    sha256 cellar: :any,                 sonoma:        "1e5b1fe6e10ae730ea6eee32cbb8f076bf657ad068c640da2b306c15742e8de4"
-    sha256 cellar: :any,                 ventura:       "2998b6e0a5ba6943505293bf549f2ae4cde8e8f87d6f9023bc557abaa389c40d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26fef92281e034c1b4eed3a473517cc3cde6d4fdc0fc3f160a41ae70468b413c"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "e6950436ab1c142a4e008349a7e46c54d35517c3cfa86f83c3b20b64b5620719"
+    sha256 cellar: :any,                 arm64_sonoma:  "64956467adaeaaf04ab42ea452237196721c673bd0b6a2b1289c5192a54bc57e"
+    sha256 cellar: :any,                 arm64_ventura: "1e8bdc96ea294c7a2d42b35e2573127c79dd0caa4a41f438e1485c27ad41c15b"
+    sha256 cellar: :any,                 sonoma:        "2c91850c76b4061fcbfb9df19d6090231d09c3184f2b0ff1e24f06197c900e96"
+    sha256 cellar: :any,                 ventura:       "50cb6ddb88ac8facf6a3d037169755bd0ef9faa7b145226b5faa297617632b62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "937a713847cc3089569fcc2dcf815d61b2be78f134d584332ca15c67f040931b"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -154,17 +155,19 @@ class Tmt < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin/"tmt", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
     output = shell_output("#{bin}/tmt init --template mini")
     assert_match "Applying template 'mini'", output
-    assert_match <<~EOS, (testpath/"plans/example.fmf").read
+    assert_match <<~YAML, (testpath/"plans/example.fmf").read
       summary: Basic smoke test
       execute:
           how: tmt
           script: tmt --help
-    EOS
+    YAML
 
     assert_match version.to_s, pipe_output("#{bin}/tmt --version")
   end

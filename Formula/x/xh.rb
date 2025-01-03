@@ -1,18 +1,19 @@
 class Xh < Formula
   desc "Friendly and fast tool for sending HTTP requests"
   homepage "https:github.comducaalexh"
-  url "https:github.comducaalexharchiverefstagsv0.23.0.tar.gz"
-  sha256 "c44ca41b52b5857895d0118b44075d94c3c4a98b025ed3433652519a1ff967a0"
+  url "https:github.comducaalexharchiverefstagsv0.23.1.tar.gz"
+  sha256 "3f7dc6a3c8809f57a32c9aae7a192b54e87702a65d426784c1775676eea2e67f"
   license "MIT"
   head "https:github.comducaalexh.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "874b8a3054dc0af63821d676379035b9fdecdebab6c6650c67cf90cc3ec469e5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc3552dfffd775c1821615ea20cab5d802f524cda56852872b19aab4e5a8c39b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f76ff5506d9c5a652b3dd64d00a956f9925b6401df3bc1f2e4a5d2c79125dbd2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e89c6f6a68e21ac5675b35c3188176e0db77ef9044a58b04c6f88bb4ecb4087e"
-    sha256 cellar: :any_skip_relocation, ventura:       "5f7006289f281e2112c556bcda4ebda6adccfa4038c6554ec321ecade3ac8137"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85b176f4d16727845c1671d52655cf485335434260b9e054defcca4b156d99ca"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf026bfa5cbc26343dc02123476e897362491bb86c77d2d82d92ccfef4f288fa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9120640e68c2d6c4259413a2b6be5bfceb05e6477de159bc9f751aa4b978644"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "abe934355399d3360301f432adb9fceb41d933e0cb85d0aa45a12b386e60f8a4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d804da80a06c3fa1f0702aacabb85468a0d5b3065ed749e56ecc9e869b856f4d"
+    sha256 cellar: :any_skip_relocation, ventura:       "b41325090cf596f0d66c6344abeeee23cec0fa3dc197154a2526eb59e49cf100"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "427b3200809c3c8a198031d1f65354d921eb16c020560b1a862fd17c0ca43bb6"
   end
 
   depends_on "rust" => :build
@@ -22,7 +23,7 @@ class Xh < Formula
     bin.install_symlink bin"xh" => "xhs"
 
     man1.install "docxh.1"
-    bash_completion.install "completionsxh.bash"
+    bash_completion.install "completionsxh.bash" => "xh"
     fish_completion.install "completionsxh.fish"
     zsh_completion.install "completions_xh"
   end

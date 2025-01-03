@@ -9,12 +9,13 @@ class Djlint < Formula
   head "https:github.comdjlintdjLint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8fde60794f6d2d3081b26378c7b81eab4ee1536cd4cd4096339793e03a49b13f"
-    sha256 cellar: :any,                 arm64_sonoma:  "e8cfe070ce355fdcc6a856446b7f4ca8b65b3923b6b6ca2d6b0f4f953fdb0746"
-    sha256 cellar: :any,                 arm64_ventura: "290ed5ea0c78d9804d40a8faf75f9b231f0b8e26bcd51019c87bb369c871cc33"
-    sha256 cellar: :any,                 sonoma:        "6d08e360c17706da616c50aecee6df832e8544653e888708c8ab4f0b5a5f9943"
-    sha256 cellar: :any,                 ventura:       "a0c51c51e35eb4e669f796e214ea5aeb7be4850965d60e4bba0ca1e0891b095b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48f192851e8ca155e2553c6ec29addb7244989d9615d2a012640dabae3d3198d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "ffffd50d9a981e616541d88a685b44ddd5fdb425873563681e3c0611775f48f7"
+    sha256 cellar: :any,                 arm64_sonoma:  "15f38fb5cc8c6d57101be9f42ddef52a9e8c82b23874dff59b2051c282656e11"
+    sha256 cellar: :any,                 arm64_ventura: "25d8dd0b2238eef47a3f7d9cde2ff99c5bac124bdae44855aba1ef11fd4f977b"
+    sha256 cellar: :any,                 sonoma:        "b6d24985a8a4d539ff7b2ce6f121eda24a96691ef42b5785714cd0394e9c7d9e"
+    sha256 cellar: :any,                 ventura:       "2f351016b97bf06731b52dfca66ae25fd7b2d8a95442bf70e0c011789dd63105"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa3b3445307399671cdda0fb78276dc88e33823b28c4db26a27ded1f8ff9e4e9"
   end
 
   depends_on "libyaml"
@@ -77,6 +78,8 @@ class Djlint < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"djlint", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

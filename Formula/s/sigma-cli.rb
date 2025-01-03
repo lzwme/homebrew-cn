@@ -10,12 +10,13 @@ class SigmaCli < Formula
   head "https:github.comSigmaHQsigma-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7f8083cf34d6448e0e342015a8fca502f0ff8833dd311ba16a2f93a909f6ed24"
-    sha256 cellar: :any,                 arm64_sonoma:  "5cbcf0140ec1a48e1813d7b16fbad8e12b9e55d34668cc23fbb100e8a43b0a2d"
-    sha256 cellar: :any,                 arm64_ventura: "1bef4969fef936b6174e2b4a4fd446cec1c26aaa82ac0b371bd0bdb9a2a985ca"
-    sha256 cellar: :any,                 sonoma:        "6bd62a6633329e125f5fdbc3b35fae5fa9e9aded71d30a63efe8d510a948c7e5"
-    sha256 cellar: :any,                 ventura:       "25da1fb930db48ae4223ec5ac53bc2d5d668e7495734b60ff6f000bb4fbe8c52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b451f1e0f7bdff2173a5ecbe5127108d6f54cc4c4ea95245cd4fee7c130a40f1"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "0f116a1cdfabb9a8ab372cbfbc5a58bb55d010599cf04dcd72ad0b9ff8d14af5"
+    sha256 cellar: :any,                 arm64_sonoma:  "5a0c149dee4040643ff7acaf2130a5597ac4663d7fdef750e523f4f5de337a85"
+    sha256 cellar: :any,                 arm64_ventura: "739f2a3e06f36c606514719ef2f661881b4544ec526c4ade8f01ed61a2738ee9"
+    sha256 cellar: :any,                 sonoma:        "2dd5b0ce7dd5a89f1e462aff4cc1a0dbfff5eb3235aa1c204a9fefbb9b7d4ce4"
+    sha256 cellar: :any,                 ventura:       "ceab2cfd3fcef97866e246e0e8c5f87146da00fda05c0d9f7139d20384136299"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6be7eabe41cc3119c7743d47cfe684b9315fbd265590cfeb8151d47a5fae535a"
   end
 
   depends_on "certifi"
@@ -101,6 +102,8 @@ class SigmaCli < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"sigma", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

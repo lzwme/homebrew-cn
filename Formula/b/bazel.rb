@@ -11,11 +11,12 @@ class Bazel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc775623baab8f83e293d5c9a15b2f264e8bbfc6985b9b0d34d675b1eca10604"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9769c3905214d37bc33ee022130d3eb53cf79332798f0d95b6fec7468d249ff"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1c067b18f9ee1ef0a165bc868cb7a400c186bdc80025b84684e00f24057fad73"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d4325cabb79e0f12b6c0cd0a549f869213c95c76e75bd7f9c1d35f8a6ef13b31"
-    sha256 cellar: :any_skip_relocation, ventura:       "d78d5d6463d35c897e1c56fe52a358108b8d9150e3249e5345161a565aa4dafa"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d0e1ab6f5803279244b510d252b7da929451f871dd84bc69089de5399b23170"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "182820919fd8a4729c3769fad482783bc15f42da84b3128d9db5ffec2e6ec900"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3fff3607b0e68a3ef19810fe60418093e9ba3ac59fa6dc1af71a8187ba8c304a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "819cc3996a5b758d2ee1892f777c8236849fd480fd9b742d4fb11cf13598fee8"
+    sha256 cellar: :any_skip_relocation, ventura:       "d8d1a7f56fd5131c04fdf8c12056dbbee07252f371e0971d684591cec46600cc"
   end
 
   depends_on "python@3.13" => :build
@@ -60,7 +61,7 @@ class Bazel < Formula
       (libexec"bin").install "outputbazel" => "bazel-real"
       bin.env_script_all_files libexec"bin", Language::Java.java_home_env("21")
 
-      bash_completion.install "bazel-binscriptsbazel-complete.bash"
+      bash_completion.install "bazel-binscriptsbazel-complete.bash" => "bazel"
       zsh_completion.install "scriptszsh_completion_bazel"
       fish_completion.install "bazel-binscriptsbazel.fish"
     end

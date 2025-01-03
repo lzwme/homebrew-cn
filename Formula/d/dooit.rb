@@ -9,12 +9,13 @@ class Dooit < Formula
   head "https:github.comkraanzudooit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "16c33a50a9c73837fbdfa2ddb08cef046583d64a1b64ca82da0fa718a08d0de9"
-    sha256 cellar: :any,                 arm64_sonoma:  "1f1e58c3522dbee6bb82938889c9f6f79fce53af208896b765a8056c6dc845bc"
-    sha256 cellar: :any,                 arm64_ventura: "42786ad6dceeba5308297e5ddc40bf34e09255823c12d0dc4d4842d29a712800"
-    sha256 cellar: :any,                 sonoma:        "7d446a7d0fd3f4e1b124434d3418ed5c5cfb95e81fd593807c0757b070b05ec8"
-    sha256 cellar: :any,                 ventura:       "cb4d7b0d9ec3df2e7477a1ad054377dc589bb33e18599b1db1cec35fa04ec4c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fa530fabf630fdfd0d98a3d1756722d9c5f7426bcc151ab4582b8410d0b6b90"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "28e26bfd0d1b64a2c5e6c8f2530f8226e5293a15831f923879d588a68b8e8e25"
+    sha256 cellar: :any,                 arm64_sonoma:  "3063a42abfe79996679469529c459da907354d9450a141695a7e412bb8308e33"
+    sha256 cellar: :any,                 arm64_ventura: "0e8872e9a7b67579b3693d9a5874084801991ab019c17b1b2683315c7052bd2e"
+    sha256 cellar: :any,                 sonoma:        "3417fc5d17fa21ad45adaacd71eaf9c370352d41a81f9cc2bc77023524629421"
+    sha256 cellar: :any,                 ventura:       "5aab34101df08674d9b15a59fe0896f8f43d0c895ffb1a41980c62368ec57e9d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d74e67a6601a1be24dae34f987a97d076c551d9f64827451f23beef5d42401e2"
   end
 
   depends_on "cmake" => :build
@@ -108,6 +109,8 @@ class Dooit < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"dooit", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

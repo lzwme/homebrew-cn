@@ -12,17 +12,13 @@ class Textidote < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9e4522d1907e63af4baca1ff23513e7afebf5e4f1847607114011c939f5fd185"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e2ce5fbb2b7d8c45d6ec7fae3293ba8a40ebab77186d30e82138beb4597a8a7a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "992cf16616bcb97600fe29bee363412c756c7c149b012a0d5009cd026b9b3a6f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c43727c26715f20b4f584dc84f451892795aa2a0ea7acd126b8f60e3b75a7ea6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "699f0bfbe3ec8667be03c956935ded5af3eca9c22ad7a6a627a29dc40224e863"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b1bea00a950a4a7d7770bbc8f88ef2f32cec2d56dd074e2aa0f232e2ee8236c3"
-    sha256 cellar: :any_skip_relocation, ventura:        "ef9b09601f3d6b51e9d3c79c0f025711c103a85583fcd6e6f16eae964217bd27"
-    sha256 cellar: :any_skip_relocation, monterey:       "306ad9dd1d5cfa96ea9976fa349ec38bd0a246f0feaf27223fff86f51bcd879d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "62cb64ee83a30dae725475d3bb5b5260ed74784ce4b7bfe071a2cf0c7bb7a917"
-    sha256 cellar: :any_skip_relocation, catalina:       "2c307c617920b39a668b3b4d877da206912f615bf409cdafa17e4a0063393171"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0571032b89ba4edb5560e4358dab877bcdd15eb8a8d76c8656405362e0da8923"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51461cd926b6329d791237ea255458e237710fc6c5eaa0a3067b9bfde03bf533"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0286fceacded8ff1661117098ea3e864f3e6a9f8d42ba2418eb027578865f5f3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e9a83218eb82f98e70fba9d90886ddedc8402f9a664c5578ccb768f013efcee2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "936cca1b103e05e9301cb9442078d417f13169f9726d85e46ba0fe984ece5bd6"
+    sha256 cellar: :any_skip_relocation, ventura:       "2ca10fe4b0d6c75985e19fdfe409db7aa3780bc027f1686d65dbcf295d107862"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53bc512af1d05084aef085e8185b29444e3a9a92f515859e06cf7d9860490b31"
   end
 
   depends_on "ant" => :build
@@ -37,7 +33,7 @@ class Textidote < Formula
     libexec.install "textidote.jar"
     bin.write_jar_script libexec"textidote.jar", "textidote"
 
-    bash_completion.install "Completionstextidote.bash"
+    bash_completion.install "Completionstextidote.bash" => "textidote"
     zsh_completion.install "Completionstextidote.zsh" => "_textidote"
   end
 

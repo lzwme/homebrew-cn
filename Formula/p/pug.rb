@@ -1,18 +1,18 @@
 class Pug < Formula
   desc "Drive terraform at terminal velocity"
   homepage "https:github.comleg100pug"
-  url "https:github.comleg100pugarchiverefstagsv0.6.1.tar.gz"
-  sha256 "9e6af6d6922c0a3d14171949f5a659d0f8ac71a882bb880793df3737015ecaae"
+  url "https:github.comleg100pugarchiverefstagsv0.6.2.tar.gz"
+  sha256 "e4a298523b450883be7bb3a9ab3f40c5d821ac88bd91d682093595c537a7f45d"
   license "MPL-2.0"
   head "https:github.comleg100pug.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25c7db8bb13fabc5e5588c1c8ff458a3bd74646b894cc898956d055839e2be4a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "25c7db8bb13fabc5e5588c1c8ff458a3bd74646b894cc898956d055839e2be4a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "25c7db8bb13fabc5e5588c1c8ff458a3bd74646b894cc898956d055839e2be4a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bee6cffa57d3a40bfb4432f636698c5786ce86e5b5a235124d0344e08e11db37"
-    sha256 cellar: :any_skip_relocation, ventura:       "bee6cffa57d3a40bfb4432f636698c5786ce86e5b5a235124d0344e08e11db37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e61c48f739429a0177e942409bfa6adca3436aa5b3a9644820b52c36c0772a16"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42846ed3a6a39b4a03222a858abe4d8c2e7997f897f7dcce63f1c14ac4dcc5f6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42846ed3a6a39b4a03222a858abe4d8c2e7997f897f7dcce63f1c14ac4dcc5f6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "42846ed3a6a39b4a03222a858abe4d8c2e7997f897f7dcce63f1c14ac4dcc5f6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "446973d6d7d50bd36a091955da5350479b69d92bd6adabea81cfaafdadecc04b"
+    sha256 cellar: :any_skip_relocation, ventura:       "446973d6d7d50bd36a091955da5350479b69d92bd6adabea81cfaafdadecc04b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "084b94edf9580a6e255587ed3b9745df7db27780feb351b31eb559e9a6157964"
   end
 
   depends_on "go" => :build

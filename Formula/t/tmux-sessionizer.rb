@@ -4,20 +4,20 @@ class TmuxSessionizer < Formula
   url "https:github.comjrmoultontmux-sessionizerarchiverefstagsv0.4.4.tar.gz"
   sha256 "9dfbe99a3c1fe7f48be0c1ab9056e49f36c4f85d023e24f874254f6791a9894e"
   license "MIT"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "039011d74739cdc73301f6d8d424311d14f14243bf9112c64d12668f303e94eb"
-    sha256 cellar: :any,                 arm64_sonoma:  "fc7eb901dff1deddfc6cb6bf320b473154d3760459bc80cea477f0cfb95d147a"
-    sha256 cellar: :any,                 arm64_ventura: "f4ce96fc1ad1def2e691bb9941d1b9017e5ff90797149f66bf29054548e6e972"
-    sha256 cellar: :any,                 sonoma:        "7ad5de9590ab6392514dd65e4159bd56f7d8edb6708036a1f422cbf251c83896"
-    sha256 cellar: :any,                 ventura:       "b86f4cebc829f1b7717870caa79f1ee5ff91388bfa09e00f13f4672d55e9d046"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3f45a9334e24a1c2715a766b4fe387fb3a8ed737c7cf8e5e4837ef2ba27e468"
+    sha256 cellar: :any,                 arm64_sequoia: "4042bf4b217a95b253ea859c8c4426950ec8b0653fe873f8b5b2624399e36186"
+    sha256 cellar: :any,                 arm64_sonoma:  "6d78bca70b4b810883e57ced9e19de3970f44e4817f7fc344f64f15b9c2598fd"
+    sha256 cellar: :any,                 arm64_ventura: "768a4b4e6037be396301f0dc9f121134034bd6388e800df6b3f68d1acc3a397a"
+    sha256 cellar: :any,                 sonoma:        "a50d45fc6db7c4ce2f5190900adb7f278635d58dbdbb844e39c3d99f1dcea374"
+    sha256 cellar: :any,                 ventura:       "b209c7ff2dd2e36422eda390fd21cab761b44b0378727de497068f9b8327c533"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67cde82247503f1f870cfe96d88e70a55c91edbb14fb25cdc2098a90723f8ae1"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "libgit2"
+  depends_on "libgit2@1.8" # needs https:github.comrust-langgit2-rsissues1109 to support libgit2 1.9
   depends_on "libssh2"
   depends_on "openssl@3"
 
@@ -49,7 +49,7 @@ class TmuxSessionizer < Formula
     assert_match version.to_s, shell_output("#{bin}tms --version")
 
     [
-      Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["libgit2@1.8"].opt_libshared_library("libgit2"),
       Formula["libssh2"].opt_libshared_library("libssh2"),
       Formula["openssl@3"].opt_libshared_library("libssl"),
       Formula["openssl@3"].opt_libshared_library("libcrypto"),

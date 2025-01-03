@@ -14,12 +14,13 @@ class C7n < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "03b4e07d75450c2640ebb0bb45098fbbfe6411db3bf60398856f10137f997c81"
-    sha256 cellar: :any,                 arm64_sonoma:  "f43cd4add052d0570ec3d1601c7ef55073d6cd338d605adbe168d0938a57ca46"
-    sha256 cellar: :any,                 arm64_ventura: "77e4b7d106a683557ddf7a12a65b48ab13bd60472838d8fc77eeda519e24dcd9"
-    sha256 cellar: :any,                 sonoma:        "0c8939e6107c61099e0ccaef6f45de8c5b43bb5ba125a84a7c628621593aca46"
-    sha256 cellar: :any,                 ventura:       "3249bf19fe561301d437a26f5335522ab5db86b51d307cdd7084367e2699ae87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da5e70a6b26c4e2384f031d24aa609f417a4665591bba67b3c6d8568f8b65eb6"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "bf7beb334ef4701fbcf3151fed55f87e26a30783d2860a2436ded659002c0598"
+    sha256 cellar: :any,                 arm64_sonoma:  "5f28d607db86f50e09cdedc38800c3d60311b66f39350f607e26ba66c5c6b545"
+    sha256 cellar: :any,                 arm64_ventura: "03afcb4435af5dfcbd42a7af3248ef9ce0be10503306526fd853561a51972e80"
+    sha256 cellar: :any,                 sonoma:        "5fbbacecee3ac9be7f736937efe374656beb7bdb4eb1ba391d59fa1a0c3f9c14"
+    sha256 cellar: :any,                 ventura:       "4c09b7e33a71ef49d6374e52af07f696ad40e84540feab9aaec0f5c70949deab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb90a238b4691adbe7ed8acd9a861f1e9f148dc414abb85590514b14a8049e07"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -118,6 +119,9 @@ class C7n < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(libexec"binregister-python-argcomplete", "custodian",
+                                         base_name: "custodian", shell_parameter_format: :arg)
   end
 
   test do

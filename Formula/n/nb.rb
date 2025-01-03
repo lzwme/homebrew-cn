@@ -7,12 +7,13 @@ class Nb < Formula
   head "https:github.comxwmxnb.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "54ab765804c126774f31f16550185a050638b037aabf946e499f7e4c5a4f5039"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "54ab765804c126774f31f16550185a050638b037aabf946e499f7e4c5a4f5039"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "54ab765804c126774f31f16550185a050638b037aabf946e499f7e4c5a4f5039"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9e00a7dd63d236ef268e39fc98fe802336a1ab9896c8acb47f9969103ecfe04f"
-    sha256 cellar: :any_skip_relocation, ventura:       "9e00a7dd63d236ef268e39fc98fe802336a1ab9896c8acb47f9969103ecfe04f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54ab765804c126774f31f16550185a050638b037aabf946e499f7e4c5a4f5039"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f77dc7c286c62b2fb1899636c01c7781b0cdcf296edf06c97d9c7a408cd5b8e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f77dc7c286c62b2fb1899636c01c7781b0cdcf296edf06c97d9c7a408cd5b8e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2f77dc7c286c62b2fb1899636c01c7781b0cdcf296edf06c97d9c7a408cd5b8e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e79f7ea22c434ebf9cd32b77d8fccf0721593c71e05e40406e1e59f8518ffaa2"
+    sha256 cellar: :any_skip_relocation, ventura:       "e79f7ea22c434ebf9cd32b77d8fccf0721593c71e05e40406e1e59f8518ffaa2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f77dc7c286c62b2fb1899636c01c7781b0cdcf296edf06c97d9c7a408cd5b8e"
   end
 
   depends_on "bat"
@@ -27,7 +28,7 @@ class Nb < Formula
   def install
     bin.install "nb", "binbookmark"
 
-    bash_completion.install "etcnb-completion.bash" => "nb.bash"
+    bash_completion.install "etcnb-completion.bash" => "nb"
     zsh_completion.install "etcnb-completion.zsh" => "_nb"
     fish_completion.install "etcnb-completion.fish" => "nb.fish"
   end

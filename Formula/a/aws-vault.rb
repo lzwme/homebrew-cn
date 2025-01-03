@@ -11,17 +11,13 @@ class AwsVault < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "20f344cb9d217bb3f6e633e651dfa98840ddd931a00837dba9c81c650c210be1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7b0b3c72c3b9820f1856d16e4e22a4c90bb5bc9a25a790c4b4b30330bc63fcaf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7d4edf5be0c041f46ebac1c5cc20abb955d39b7da6a995f9b12dcf3cd3b3c0b7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "da422ad42ec1da2e988d334eed3f5c10e82a7eb74a6896ffcdb324925ee9d43c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ab8b714b99158dba0a3fdbe10a5c5c0abfac2ccb879f5f276b1859b4817487a3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5cbd3ba6f0c5821efcf11d31b68894b3e662ac2459c146e35a5508c1dd520d15"
-    sha256 cellar: :any_skip_relocation, ventura:        "093f64e9b044016512882a0c9c54676abea5e3a9cdc997c2731a8549b2296e20"
-    sha256 cellar: :any_skip_relocation, monterey:       "25c992b608cc4446f0776d145e155c434d9e4c13abf4f76fab5a87ab62eb5911"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0377d6550111f02593a073362568c0aa9af51ad7b586bb8e86f7a3756bb4e26f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c43aafd7b0b3408d286e2f043e9007e261d1ea6df5a2c0fbceaaf909fab18b45"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d977e625b3ac401635b1d95b4b18e4fc0b058f251f425c102b7b965e08b2ecf6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e85192e42b17524b0a1321b1d69beebfd2c0a10baf961e514bce2914eace59f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "578a68527779690f0f37b655af958895f8b6d854a34767a263dcf5a7e7a14e1d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "02d404644b13dc1667c7ccf0912be79ea2788cb339773f2e350b0cdda9d1f7d5"
+    sha256 cellar: :any_skip_relocation, ventura:       "a1eb3f660e906283eb1d48d6c96b1f81a10060f7d0367735b219f3c103191921"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61114565f6c9bf24fb99520e20f46494517ff949805299d178861e8e24b59d58"
   end
 
   depends_on "go" => :build
@@ -37,7 +33,7 @@ class AwsVault < Formula
     system "make", "install", "INSTALL_DIR=#{bin}", "VERSION=#{version}-#{tap.user}"
 
     zsh_completion.install "contribcompletionszshaws-vault.zsh" => "_aws-vault"
-    bash_completion.install "contribcompletionsbashaws-vault.bash"
+    bash_completion.install "contribcompletionsbashaws-vault.bash" => "aws-vault"
     fish_completion.install "contribcompletionsfishaws-vault.fish"
   end
 

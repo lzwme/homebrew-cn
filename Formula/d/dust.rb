@@ -12,14 +12,13 @@ class Dust < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "00f415d936d1e3311e0bce04b8173d981acd4e81df7b71df95c9c8dc4f0feaa0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "34754de221680f27966d1f9144384f16309344bbcbbdfd4a5abaaecfeda21ce7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "1e7f5ad55de4ecaf061118e300993278ec4d86effc7907f1c3371914c9ffc80d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b095326b2ae7fe89d4cef623c0ee606059a2d43fbc98d89a956cc41bc86ac0f3"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3f70304285ff4bfd98e4a4eea86b63aa31b7cd131f17e40ae6c60e78b577d64b"
-    sha256 cellar: :any_skip_relocation, ventura:        "e34c0a5399f84cfe5129300f51bbc2f0da6bb7610d87c1272fae14900bc50c66"
-    sha256 cellar: :any_skip_relocation, monterey:       "1171134bc2953b1b9b4dddeec80dc5d373d53565aa82443fcfcc1ecbfe27c71a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "61c98c2c3b31a1be9febaf4bdc3eadf64ac8876c1b26403bf384a092954b116c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7d645dd72a1c5a287d8b5dec369bba3c83a75448171b2cc1724e07363ded70f2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "837fb55fcb02c99efff5b19c3b50aeff323ec54125716c1506b18f4e821b32d1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bb9727b495643fc9257406be8f4d3daf657aa3bebcfdcce3778e1c0c6223426f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1726e1634c2cdff9c43bdc513c810608050ff85e23c885ec349a763828172fac"
+    sha256 cellar: :any_skip_relocation, ventura:       "8158c5f5f51c1137674ce1142429019dbadf4b99ad404af4ddb5c89645e3c598"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb96e198b0a3bb3cafe0c867b835cb552c91f57ad930658923561137bb0ede60"
   end
 
   depends_on "rust" => :build
@@ -27,7 +26,7 @@ class Dust < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    bash_completion.install "completionsdust.bash"
+    bash_completion.install "completionsdust.bash" => "dust"
     fish_completion.install "completionsdust.fish"
     zsh_completion.install "completions_dust"
 

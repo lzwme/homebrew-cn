@@ -6,12 +6,13 @@ class Tabiew < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7d069010db1e45626e5030a24e0aa7e1f6ad88c3fab086192c5d57da47af0ba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4136fff6f3096acf6b88fea482485b1a7345238a55d8951c1dd97ea4326257c1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f7d07e60d63797143f6605402c3c66643ed16344f777c28004e9b72c05af1244"
-    sha256 cellar: :any_skip_relocation, sonoma:        "12cb5e4e790977e75313bb9f1d5493a2ce295a0d4ba78769e04f7fc1dac3d300"
-    sha256 cellar: :any_skip_relocation, ventura:       "7d3a75f1edeec8a7f0416146d4ee822dc1b16a6c9db782c6175534009bcd95fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22dfb6af56911749a9e16ff4e925a0e37cca389402777f3a2f13fb36442c0fa6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "815f399df1e5befbf55d5f1c3b11c39d6e2108eb13cc9524a8245335ce3a4bde"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "634f0294db4bbb963e0d9fe57f155bb998a7f1833b67021f43c01dd8da1a028f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9ff55c7674f9a9c0b4b970d4a40527b3d5f9f85bec588fba7cbd03592f56284e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "16cc5896eaed00c89ad7395fba1da2ebf7229e25828435cb54aaaf38533fa3ba"
+    sha256 cellar: :any_skip_relocation, ventura:       "7d4efcc66f4411407320c49748f9a5bec1b3ab8ed770d36cf3bde0c3bf2947d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d4ea5338ff22a6f87c80773914f3361e8f07c57d697e2fae591ee2b9998329d"
   end
 
   depends_on "rust" => :build
@@ -22,7 +23,7 @@ class Tabiew < Formula
     system "cargo", "install", *std_cargo_args
 
     man1.install "targetmanualtabiew.1" => "tw.1"
-    bash_completion.install "targetcompletiontw.bash"
+    bash_completion.install "targetcompletiontw.bash" => "tw"
     zsh_completion.install "targetcompletion_tw"
     fish_completion.install "targetcompletiontw.fish"
   end
@@ -43,9 +44,7 @@ class Tabiew < Formula
     sleep 1
     input.close
     sleep 2
-    File.open(testpath"output.txt") do |f|
-      contents = f.read
-      assert_match "you think?", contents
-    end
+
+    assert_match "you think?", (testpath"output.txt").read
   end
 end

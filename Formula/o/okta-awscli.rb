@@ -9,8 +9,8 @@ class OktaAwscli < Formula
   revision 3
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "613f5e25ef550dc067bbb3e002a51e5592e99af65dc4e001c53397fa8fb5241e"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, all: "317022aacef6cb0a90882bf72ab59192d700c916ea9633f046ffd2ab6049ca8d"
   end
 
   depends_on "certifi"
@@ -93,6 +93,8 @@ class OktaAwscli < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"okta-awscli", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

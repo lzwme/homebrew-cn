@@ -12,14 +12,13 @@ class TaskwarriorTui < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "95b9c1b9d475343ea287691b05b797c72402d77df83b6e3337777874e4737d36"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f2b2901f32b3544122323c26da892e08f87823454f705cce01d14d232476fdfe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3afa62a7d9b37f1cc56aeb18eccdddb7aab80f02a29bd25c549ebd45238b6257"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "49c0710b58e19d0ed0ca8bfba08e702edaa52c133127485de4b9fd5bb5f07e33"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3abc297d8fe7d9408808eebd2e06d7a915072bd58b8945d5a19bd5ee9220aa72"
-    sha256 cellar: :any_skip_relocation, ventura:        "4ec417f8de4e491903ff7c5cb9283f32577a6984259b1ff2d828121492cf5ba6"
-    sha256 cellar: :any_skip_relocation, monterey:       "24252080f7e54af6aa0f953f65701677b12478c1936764cb8862751e83bd5c1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8cd9e4bead169a07fa797b7a9025c50abbd881ff0f0aa95d5be400ed41fecb9b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7008f3327bebcfdae93a957ccad18327bb0b54fa10071fe7132af4d024d1f5bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f2155bbc016b0505c664d7725748fc8b4edf6fc0512a8a1b4aae89b9b152519"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "dc2f0b120a04e533106d02ed25211ab53f16fd341b69697e21b5b9b814c92ccd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "77e6f2f4aa47b69eaca19366e84b61cc3cdd19bcab973ecbab047f07bf023d09"
+    sha256 cellar: :any_skip_relocation, ventura:       "2706cbc52b513a724f58161361486e606acfa7bc52ebb0e9ef1ca9d5b659fcaf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eac66f9b80b3d5fe8ebfbe7ff240f393c4ed76a088cd9e4ec404749e4e1b1b2a"
   end
 
   depends_on "rust" => :build
@@ -28,7 +27,7 @@ class TaskwarriorTui < Formula
   def install
     system "cargo", "install", *std_cargo_args
     man1.install "docstaskwarrior-tui.1"
-    bash_completion.install "completionstaskwarrior-tui.bash"
+    bash_completion.install "completionstaskwarrior-tui.bash" => "taskwarrior-tui"
     fish_completion.install "completionstaskwarrior-tui.fish"
     zsh_completion.install "completions_taskwarrior-tui"
   end

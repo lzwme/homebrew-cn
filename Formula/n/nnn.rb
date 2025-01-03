@@ -7,14 +7,13 @@ class Nnn < Formula
   head "https:github.comjarunnnn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "85a7d1985a8e9ffc523ac0e9e4d920fcd5082191bb05cb29022585e08cdb87a9"
-    sha256 cellar: :any,                 arm64_sonoma:   "7773a56db688d09ee950ed2cece939fd95d229031044acbc310eda58f227c0b7"
-    sha256 cellar: :any,                 arm64_ventura:  "094d843cb5247e4140b21d3145b214ac43ec3a2aa5e366779db33369c922523c"
-    sha256 cellar: :any,                 arm64_monterey: "c644255f2c961e6e4804e2c9fcecdb20a9b09cfcb226b86907c43097cf9b0c25"
-    sha256 cellar: :any,                 sonoma:         "1a839e5fb6dc6049039c8148d648265f30673f8589d51f84146283148c1d2563"
-    sha256 cellar: :any,                 ventura:        "142164bea2d0cbdd7984a410bd981ee718c2d7a6bd600d0d1e0361886af1530e"
-    sha256 cellar: :any,                 monterey:       "9fc7ce6137ed2d0ba69d9e44524485f23a768b464a82c570e2529c84f72cb357"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "46ee484c8948c2c24d8fd20f11013fbf6c1c4657d5c4659983d985f5a0e2056f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "b779d56e7e4b37a45f6ee35a094de4f7bd421f7c4468daa4b5bceb2c45e627bc"
+    sha256 cellar: :any,                 arm64_sonoma:  "4de486092ffb8baf66e4134ca7932208bff0eab3a1f5ec7066727b10f4abcf2d"
+    sha256 cellar: :any,                 arm64_ventura: "5f34f95c87192ede70063f4e5d6ea3ed89284e5af05e1bfe6eedc2a4d2a93173"
+    sha256 cellar: :any,                 sonoma:        "ecdfa7050c0d271f5310f33640f449c42de687dbbc1a4327299d261a60944f09"
+    sha256 cellar: :any,                 ventura:       "8038dc7a4cdf73e5283f4bfa466b0f5dcbc0dcf67df28bed6866426ca2084ce9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d0686c85db1f495303f9998a382a5d88911c12f0e663eab48b20a1ccecbbb11"
   end
 
   depends_on "gnu-sed"
@@ -24,7 +23,7 @@ class Nnn < Formula
   def install
     system "make", "install", "PREFIX=#{prefix}"
 
-    bash_completion.install "miscauto-completionbashnnn-completion.bash"
+    bash_completion.install "miscauto-completionbashnnn-completion.bash" => "nnn"
     zsh_completion.install "miscauto-completionzsh_nnn"
     fish_completion.install "miscauto-completionfishnnn.fish"
 

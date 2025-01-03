@@ -10,8 +10,8 @@ class Iredis < Formula
   head "https:github.comlaixintaoiredis.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "57ddd6507962ae44cffea2d4cbb8e173002f5d97c99e4151f0d5bcc7b7a86498"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "55e5c6002bbe95b9aa0446641298d7d766159126bf8602ca1d84edcbfd44d229"
   end
 
   depends_on "python@3.13"
@@ -68,6 +68,8 @@ class Iredis < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"iredis", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

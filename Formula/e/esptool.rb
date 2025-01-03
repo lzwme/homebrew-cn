@@ -9,12 +9,13 @@ class Esptool < Formula
   revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "11062defdb3e0e64afc4d86f61474e6fa0cdf0646a4335c991a09563a90c9ff3"
-    sha256 cellar: :any,                 arm64_sonoma:  "4373c938b5e538847006da6c7ed1edf93a5ff7b9dd1f5a76b1abcb68898fdec3"
-    sha256 cellar: :any,                 arm64_ventura: "495e3a8f36f37f4cd6d807d89aadb44ba8c0e5f829c7f5a7901e28876e492553"
-    sha256 cellar: :any,                 sonoma:        "70a8cc11e7bd50d039f5686149c32bffb65f877115663543ccb3fecf1c1b9e9c"
-    sha256 cellar: :any,                 ventura:       "df06b71d185a18aff7dc694a21287bf71699a4097e88a8a08dbc8668065f68ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "586a583e0380e748419d35f39283d6d1e2df28b4befb05275c43af51a9a643c6"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "aad39de44889bb764d3fd6cca00df3348cdb04ff7f0076e6e367e5dea8bd8fd7"
+    sha256 cellar: :any,                 arm64_sonoma:  "90745c064cd63eb2a562a5f6d5059912539157c29f164495928122784e90a274"
+    sha256 cellar: :any,                 arm64_ventura: "eebafbba9715281b8d4a3bcb298f2bc38605cb8c4679ac3d4d9c5112fce82cc4"
+    sha256 cellar: :any,                 sonoma:        "2924d5ea64cf8dbc011a8c1124efc2b093bc984667a5b14366c690c6d4ae637b"
+    sha256 cellar: :any,                 ventura:       "acf99fe8d78ef16a6260ea395bfaa2eb67ebe2ea15e0e43a2deaa9af90cf9505"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f9a9f990ee858a111961f260c9d270e068f0b07f5dbbab15c72c12e40446564"
   end
 
   depends_on "cryptography"
@@ -71,6 +72,11 @@ class Esptool < Formula
     ENV["PYTHONPYCACHEPREFIX"] = buildpath/"pycache"
 
     virtualenv_install_with_resources
+
+    bin.each_child(false) do |script|
+      generate_completions_from_executable(libexec/"bin/register-python-argcomplete", script.to_s,
+                                           base_name: script.to_s, shell_parameter_format: :arg)
+    end
   end
 
   test do

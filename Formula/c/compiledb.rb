@@ -8,8 +8,8 @@ class Compiledb < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, all: "8422a0054a71a3e4f05686457aeedb25f04aae956ea2f471fe4bfced32822084"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, all: "ef5eaedacb5fa01a610f2232066c7809743d3952eee15db2f459a664663a6a48"
   end
 
   depends_on "python@3.13"
@@ -31,6 +31,8 @@ class Compiledb < Formula
 
   def install
     virtualenv_install_with_resources
+
+    generate_completions_from_executable(bin"compiledb", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do

@@ -9,12 +9,13 @@ class MagicWormhole < Formula
   head "https:github.commagic-wormholemagic-wormhole.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7ba30a7b56dd79d07a5e59ced7ad16371c7699d6a7ba563bffed6f0c1d6ba5d9"
-    sha256 cellar: :any,                 arm64_sonoma:  "0cac7d5305baa972190c80b1a05ef1ed01433db9a9bd33c18b494f0fc0a4eb4e"
-    sha256 cellar: :any,                 arm64_ventura: "16fd3c1dad574b4b8efabc2b24f85439b2061e4877a4e31145d06875144e9c00"
-    sha256 cellar: :any,                 sonoma:        "e260eee9a60b1954419acb1d392e6f0dc663553ab6fcbc040f28c92f129a3023"
-    sha256 cellar: :any,                 ventura:       "6526610beceb090ff78594314b925d1883539e412df6064d9557d5a8ef048ab9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ade67e503ee0b9c6586e3905d3274db85d94c2850730ccf4940d5a5ae371498f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "6058586a1a9545b47a16ea3171132cb835ec80c220cd94c73ce389e5a7602c54"
+    sha256 cellar: :any,                 arm64_sonoma:  "9f698ae58e41c962a7a8635f92f9ebe3728280807ea19751a5b57babcbed5cd6"
+    sha256 cellar: :any,                 arm64_ventura: "55e3111dcedf9c46bfe64ad16832049335ef0b7e75d4c3c658c1d950ec243f83"
+    sha256 cellar: :any,                 sonoma:        "666d89b8993fb3c8fdcfb585db901b5e6a3608fe1ca0a71081f8ba625bb00702"
+    sha256 cellar: :any,                 ventura:       "3a7e244d86911662ede56e0a2e248ef1369c2333c967c45ed50009eb5d1cdb6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2959dc88e056a9a055b23e3b7324809bf5df3e2c95b277acf2bbfff834941ddb"
   end
 
   depends_on "cryptography"
@@ -144,10 +145,9 @@ class MagicWormhole < Formula
   end
 
   def install
-    ENV["SODIUM_INSTALL"] = "system"
     virtualenv_install_with_resources
     man1.install "docswormhole.1"
-    bash_completion.install "wormhole_complete.bash"=> "wormhole.bash"
+    bash_completion.install "wormhole_complete.bash"=> "wormhole"
     fish_completion.install "wormhole_complete.fish" => "wormhole.fish"
     zsh_completion.install "wormhole_complete.zsh" => "_wormhole"
   end
@@ -155,13 +155,10 @@ class MagicWormhole < Formula
   test do
     ENV["LC_ALL"] = "en_US.UTF-8"
     n = rand(1e6)
-    pid = fork do
-      exec bin"wormhole", "send", "--code=#{n}-homebrew-test", "--text=foo"
-    end
-    sleep 1
+    pid = spawn bin"wormhole", "send", "--code=#{n}-homebrew-test", "--text=foo"
     begin
-      received = shell_output("#{bin}wormhole receive #{n}-homebrew-test")
-      assert_match received, "foo\n"
+      sleep 1
+      assert_match "foo\n", shell_output("#{bin}wormhole receive #{n}-homebrew-test")
     ensure
       Process.wait(pid)
     end
