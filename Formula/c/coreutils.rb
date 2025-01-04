@@ -41,10 +41,6 @@ class Coreutils < Formula
     conflicts_with "md5sha1sum", because: "both install `md5sum` and `sha1sum` binaries"
   end
 
-  on_monterey :or_older do
-    conflicts_with "aardvark_shell_utils", because: "both install `realpath` binaries"
-  end
-
   on_linux do
     depends_on "acl"
     depends_on "attr"

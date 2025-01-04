@@ -1,18 +1,17 @@
 class Tabiew < Formula
   desc "TUI to view and query tabular files (CSV,TSV, Parquet, etc.)"
   homepage "https:github.comshshemitabiew"
-  url "https:github.comshshemitabiewarchiverefstagsv0.8.0.tar.gz"
-  sha256 "d8f5a7ab8373d8cb1ca88a8d921f0ce0f44ff34bf5fdbf6afd170594ba28df9a"
+  url "https:github.comshshemitabiewarchiverefstagsv0.8.1.tar.gz"
+  sha256 "912c45cf26d83b96a0003c0134c2971c82cbdf2dda630fa8fa11e41c4ce28150"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "815f399df1e5befbf55d5f1c3b11c39d6e2108eb13cc9524a8245335ce3a4bde"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "634f0294db4bbb963e0d9fe57f155bb998a7f1833b67021f43c01dd8da1a028f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9ff55c7674f9a9c0b4b970d4a40527b3d5f9f85bec588fba7cbd03592f56284e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "16cc5896eaed00c89ad7395fba1da2ebf7229e25828435cb54aaaf38533fa3ba"
-    sha256 cellar: :any_skip_relocation, ventura:       "7d4efcc66f4411407320c49748f9a5bec1b3ab8ed770d36cf3bde0c3bf2947d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d4ea5338ff22a6f87c80773914f3361e8f07c57d697e2fae591ee2b9998329d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f55b4fa7f134115b01bba141a3ac58ecffcb7b7162c89729e1eec1d44837108a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e7ec10c3b14aabc55eaa6c5239da79100cbe673eb552a8f7b09db8569c83b8e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "09b84a0bde191d419be974b78fd6cbbe5b291579418392a495b773abb0ee18f7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a1af34fbbd32732ef6c60e731f217cd3e75f0ced2edc4b728b2db2044e547d16"
+    sha256 cellar: :any_skip_relocation, ventura:       "1d27866c282863c2d6135f009dd67affaa6e6545268a5c078260aa71f37f9eac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5dce88d9d2b6081e9d637447d6e7fd3e92c8850aebc97d20afe5eda9619fdac5"
   end
 
   depends_on "rust" => :build

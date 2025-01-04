@@ -7,20 +7,20 @@ class GitGerrit < Formula
   head "https:github.comfbzhonggit-gerrit.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6cf3c7193a5ccbff2562105efa2ad31ad3b17de050b28c9ab1f70fa99666469f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6cf3c7193a5ccbff2562105efa2ad31ad3b17de050b28c9ab1f70fa99666469f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6cf3c7193a5ccbff2562105efa2ad31ad3b17de050b28c9ab1f70fa99666469f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "01772c7bee5b9b90a0cec0c8d7db50674a0dbd6b92745539b906e8afd2151aa6"
-    sha256 cellar: :any_skip_relocation, ventura:       "01772c7bee5b9b90a0cec0c8d7db50674a0dbd6b92745539b906e8afd2151aa6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6cf3c7193a5ccbff2562105efa2ad31ad3b17de050b28c9ab1f70fa99666469f"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae518d315b919c27305591d1cc24773926b1a947da589b0e50146c98ff138997"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae518d315b919c27305591d1cc24773926b1a947da589b0e50146c98ff138997"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ae518d315b919c27305591d1cc24773926b1a947da589b0e50146c98ff138997"
+    sha256 cellar: :any_skip_relocation, sonoma:        "843601d279865025574a23dc00ae8e8bdd222a2d705f04ec8939af16aa2c19f5"
+    sha256 cellar: :any_skip_relocation, ventura:       "843601d279865025574a23dc00ae8e8bdd222a2d705f04ec8939af16aa2c19f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae518d315b919c27305591d1cc24773926b1a947da589b0e50146c98ff138997"
   end
 
   conflicts_with "gerrit-tools", because: "both install `gerrit-cherry-pick` binaries"
 
   def install
     prefix.install "bin"
-    bash_completion.install "completiongit-gerrit-completion.bash"
+    bash_completion.install "completiongit-gerrit-completion.bash" => "git-gerrit"
   end
 
   test do

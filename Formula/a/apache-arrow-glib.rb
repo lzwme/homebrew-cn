@@ -23,7 +23,7 @@ class ApacheArrowGlib < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkgconf" => :build
+  depends_on "pkgconf" => [:build, :test]
   depends_on "apache-arrow"
   depends_on "glib"
 
@@ -42,23 +42,8 @@ class ApacheArrowGlib < Formula
         return 0;
       }
     C
-    apache_arrow = Formula["apache-arrow"]
-    glib = Formula["glib"]
-    flags = %W[
-      -I#{include}
-      -I#{apache_arrow.opt_include}
-      -I#{glib.opt_include}glib-2.0
-      -I#{glib.opt_lib}glib-2.0include
-      -L#{lib}
-      -L#{apache_arrow.opt_lib}
-      -L#{glib.opt_lib}
-      -DNDEBUG
-      -larrow-glib
-      -larrow
-      -lglib-2.0
-      -lgobject-2.0
-      -lgio-2.0
-    ]
+
+    flags = shell_output("pkgconf --cflags --libs arrow-glib gobject-2.0").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system ".test"
   end

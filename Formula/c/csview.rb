@@ -7,12 +7,13 @@ class Csview < Formula
   head "https:github.comwfxrcsview.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa65514000cc4091d056a09965c343ddeeffd4955c7f7667464cfc3a45856493"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "839e6ac9018b3cb5079ad9044fc4552a188532e222a3cfa08c865e9178ac48c7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a2bd401378a8a76fa0863a7f400e43c4e9d62d03e2a6b0f5700b9f1b06a334b6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8b2cae09c4f3f4c4ad423b3dae727eee5d43c790a1f9fdc720b0bc1678fcacf6"
-    sha256 cellar: :any_skip_relocation, ventura:       "9cf797b2622d8770fecd88e8dff65430f2c4145d00e0222f5877dc3b430a8abb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65a7d18e46c145b00e3747a8cb0309d59138eb5e4fc396ed2e7d2cf3d6f75c0c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25e89b345b9a280bb3e1ed9131878aa372277f1b8ac5647938f4056fd8267a97"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e558ed523b25a07d5d6110f2686154c2f1b43ee5fe4e28cc63d1287f475292c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "726c20bdf56990f680feea91504782ff3ed966ff27a4d63ac2fd7d8e9244e70c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b0cfc60d188ba14a0d17909bcf78e21673ee65aee2d0bfadd28ffaa741ce2816"
+    sha256 cellar: :any_skip_relocation, ventura:       "46a886931cb6f7876fa7dca415a2d25f61063e69a4d47dd1fa7eb2726f2bc41e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1dcad326ae8950b1557bdf2dc4e6477ae867a0f4f05211373bde145c87154e7c"
   end
 
   depends_on "rust" => :build
@@ -21,7 +22,7 @@ class Csview < Formula
     system "cargo", "install", *std_cargo_args
 
     zsh_completion.install  "completionszsh_csview"
-    bash_completion.install "completionsbashcsview.bash"
+    bash_completion.install "completionsbashcsview.bash" => "csview"
     fish_completion.install "completionsfishcsview.fish"
   end
 

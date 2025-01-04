@@ -17,10 +17,12 @@ cask "xbar" do
 
   app "xbar.app"
 
-  uninstall quit: "xbar.v#{version}"
+  uninstall quit: "com.xbarapp.app"
 
   zap trash: [
-    "~LibraryPreferencesxbar.v#{version}.plist",
-    "~LibraryWebKitxbar.v#{version}",
+    "~LibraryApplication Supportxbar",
+    "~LibraryCachescom.xbarapp.app",
+    "~LibraryPreferencescom.xbarapp.app.plist",
+    "~LibraryWebKitcom.xbarapp.app",
   ]
 end

@@ -3,19 +3,18 @@ class Liquidctl < Formula
 
   desc "Cross-platform tool and drivers for liquid coolers and other devices"
   homepage "https:github.comliquidctlliquidctl"
-  url "https:files.pythonhosted.orgpackages99d915bfe9dc11f2910b7483693b0bab16a382e5ad16cee657ff8133b7cae56dliquidctl-1.13.0.tar.gz"
-  sha256 "ee17241689c0bf3de43cf4d97822e344f5b57513d16dd160e37fa0e389a158c7"
+  url "https:files.pythonhosted.orgpackagesd9866c5f842642b88166fb21ab5218a1af47e567f684a564db77eeca2235c7d1liquidctl-1.14.0.tar.gz"
+  sha256 "a90e3f36a13adbaf2f463adf0051f30107fd3d0edecac89f46a5bd931b2b54f2"
   license "GPL-3.0-or-later"
-  revision 2
   head "https:github.comliquidctlliquidctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5b7d116b57b269eadd7006affac38a95761f8b8773aa18877bfb27378bec8467"
-    sha256 cellar: :any,                 arm64_sonoma:  "1a4301c9452fbb366a43e086d77bfafb140af1fe4a6256bee0171803cdcf5700"
-    sha256 cellar: :any,                 arm64_ventura: "baf3ad92ea880d182f53ee80fd8cabd47a3ba8a4ef6f78557584a3f1eb1cf243"
-    sha256 cellar: :any,                 sonoma:        "bf35060fb1ad3e14d28affbb22c42680db0322103944e10f1adb8bde29b19c68"
-    sha256 cellar: :any,                 ventura:       "73e72321380e52953bc9d0564a74aeed8f7cc01e589ed4a6b3b613b31d13ce1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "daeeeb0e6b98a1275460bce5cae4994c1c74307c2447dff786da1c744c4d9ce6"
+    sha256 cellar: :any,                 arm64_sequoia: "a3f5fe7aa7882e86492bd878ee846acbbfd4bd4d4c1309f7ac57416f434ac829"
+    sha256 cellar: :any,                 arm64_sonoma:  "a6a8e6694b8615e1b2b38c9156188ff882f53d4d485faec6248581546ed859d6"
+    sha256 cellar: :any,                 arm64_ventura: "49576ad8d9c9de8468e5f4ea799e6a5fef805e6f2f8e8329e9e6610ad3a7976b"
+    sha256 cellar: :any,                 sonoma:        "f4663a574207d29d9572596f1e00752227f7c29145429eacfa6c4033975f6610"
+    sha256 cellar: :any,                 ventura:       "533cb471eb11fdb4b83e364a53f0d3fe0a344c079a208938143b77058fa62d23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f1dd3a4be076e0773742b7daded5e8c16cb5c86b1efeb0ee29b75d67b8397cf"
   end
 
   depends_on "pkgconf" => :build
@@ -29,8 +28,8 @@ class Liquidctl < Formula
   end
 
   resource "colorlog" do
-    url "https:files.pythonhosted.orgpackagesdb382992ff192eaa7dd5a793f8b6570d6bbe887c4fbbf7e72702eb0a693a01c8colorlog-6.8.2.tar.gz"
-    sha256 "3e3e079a41feb5a1b64f978b5ea4f46040a94f11f0e8bbb8261e3dbbeca64d44"
+    url "https:files.pythonhosted.orgpackagesd37a359f4d5df2353f26172b3cc39ea32daa39af8de522205f512f458923e677colorlog-6.9.0.tar.gz"
+    sha256 "bfba54a1b93b94f54e1f4fe48395725a3d92fd2a4af702f6bd70946bdc0c6ac2"
   end
 
   resource "crcmod" do
@@ -44,18 +43,18 @@ class Liquidctl < Formula
   end
 
   resource "hidapi" do
-    url "https:files.pythonhosted.orgpackagesbf6f90c536b020a8e860f047a2839830a1ade3e1490e67336ecf489b4856eb7bhidapi-0.14.0.post2.tar.gz"
-    sha256 "6c0e97ba6b059a309d51b495a8f0d5efbcea8756b640d98b6f6bb9fdef2458ac"
+    url "https:files.pythonhosted.orgpackages477221ccaaca6ffb06f544afd16191425025d831c2a6d318635e9c8854070f2dhidapi-0.14.0.post4.tar.gz"
+    sha256 "48fce253e526d17b663fbf9989c71c7ef7653ced5f4be65f1437c313fb3dbdf6"
   end
 
   resource "pyusb" do
-    url "https:files.pythonhosted.orgpackagesd96e433a5614132576289b8643fe598dd5d51b16e130fd591564be952e15bb45pyusb-1.2.1.tar.gz"
-    sha256 "a4cc7404a203144754164b8b40994e2849fde1cfff06b08492f12fff9d9de7b9"
+    url "https:files.pythonhosted.orgpackagese9631dead067e1d6478e1ca6ccf882ade4132f713975739b64cedccf9f33bfc7pyusb-1.3.0.tar.gz"
+    sha256 "7e6de8ef79e164ced020d8131cd17d45a3cdeefb7afdaf41d7a2cbf2378828c3"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
-    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
+    url "https:files.pythonhosted.orgpackages4354292f26c208734e9a7f067aea4a7e282c080750c4546559b58e2e45413ca0setuptools-75.6.0.tar.gz"
+    sha256 "8199222558df7c86216af4f84c30e9b34a61d8ba19366cc914424cdbd28252f6"
   end
 
   def install

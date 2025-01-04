@@ -6,18 +6,13 @@ class Cmdshelf < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a9228f22f7205b82bdd0db4e1a6a6f8145b264eeeeac69de13c1d95b99e6c31c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "baf2c8593f5dde592d0023b6a10c809da3dd0ba83121a72a34c0a0939abdbe35"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "11ee71c650aa2e2910bba632afb1632e00eed0d4a34968dde9f43c2728ed958b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2129cc4f853a0328aae11613e798bfae886299523422ad84bceb33b076060db7"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1cfd2cf4bb09a17661c2b513cf67eff5fa545d549734111829c8829b105cef14"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7baa1f4881efdf5b6736bd4df641fca5b21b8f981e16ca775eed95c99746bf41"
-    sha256 cellar: :any_skip_relocation, ventura:        "92038b2ba192ec3ede688f08ce352ba8502d506f02f904275c0ffeb61f08077e"
-    sha256 cellar: :any_skip_relocation, monterey:       "fb958a194580d31dd505817d41030cf623f7b193a6482ee2d01fdb038b107c47"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b1b12cbcc8f895523782fc7955cd62fba746b27f76de5bc0e3b0f3c2555fd992"
-    sha256 cellar: :any_skip_relocation, catalina:       "7fb831db17eb8aa4dbfd17bc4c1dee5e53dcbc1bbffa1da075c2ddba5c1df93e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9125da575a5730c3dbf6e33cbaab9ad3fbb2cc361536727563306f23ba14ee01"
+    rebuild 4
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9774fb5ac602f84fb7b56c0409d688e0d70d810a36336a4ecdfb3a61cf5e40c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c510678189b00d66e3fe93ceae94f0475d8904e9d5c47f5dfcf99ba7b766a07"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a5e08b8759ea2720bb5409922772fd9432a3c9db493db0567b2f45139aa589b4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4658ed5c59252828c4d8137ccc105228477dcb18512284899fce0ea2359791b6"
+    sha256 cellar: :any_skip_relocation, ventura:       "10633921cd251385fd77106fb77d8fded40f0ffab37e9137d8d5004ea6867d1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f54c84920fa8bd1abe7126270c1f1046a5a8d4932baad7b14982a9dbb4ec2189"
   end
 
   depends_on "rust" => :build
@@ -25,7 +20,7 @@ class Cmdshelf < Formula
   def install
     system "cargo", "install", *std_cargo_args
     man.install Dir["docsman*"]
-    bash_completion.install "cmdshelf-completion.bash"
+    bash_completion.install "cmdshelf-completion.bash" => "cmdshelf"
   end
 
   test do

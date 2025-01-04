@@ -12,27 +12,26 @@ class S2n < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d688330a8c1f4de97d36ff70ac4784d5f732dd7cbb0ce5c134dcf52d084a1c65"
-    sha256 cellar: :any,                 arm64_sonoma:  "2445f1fdcd1d6d180e7f2bf7996575421fc082594f3eeb1066b00e7e7a97bfb1"
-    sha256 cellar: :any,                 arm64_ventura: "573323b2b7c385d699d7160ec3da6f60f22f8d31b4c76d9169774dd76ed430d3"
-    sha256 cellar: :any,                 sonoma:        "fae454a2b307ff20a7facb2e1309eb20759d43844927a8f90ecd5f973120225c"
-    sha256 cellar: :any,                 ventura:       "f600a145873d4978a3e3302f430321cef9c489b40f0ef183c6f33c22f147dca7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81e6a035b848cb61cd0e30d656f16bb03ad2b9c8748bd9b61fb4310082149369"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "2aa0b1cb41619dc00e85fa348f5f0f2707e440d738d3401b5bdb708b168be535"
+    sha256 cellar: :any,                 arm64_sonoma:  "a27ef26012b0a4a410d087089760e6d9b0e3e8a156973a473e8b8c2457c0d5b4"
+    sha256 cellar: :any,                 arm64_ventura: "ef9cc5414d9055bc06d65d242f08eca96a7eca06bd77393dd69d5a96a837df34"
+    sha256 cellar: :any,                 sonoma:        "115b3955156edbb38c09021b73107361467644ebf06fe177c8f4b4c8c18db0cb"
+    sha256 cellar: :any,                 ventura:       "b3991e0d8bcf67aae40128edecd7abb05430e0765309ff659b21eb56637d09c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8a97c06f8575fcc1577ca0e3f287a17cc3563bf8acb27f6fcf62c3f9a879a6f"
   end
 
   depends_on "cmake" => :build
   depends_on "openssl@3"
 
-  conflicts_with "aws-sdk-cpp", because: "both install s2nunstablecrl.h"
-
   def install
-    system "cmake", "-S", ".", "-B", "buildstatic", *std_cmake_args, "-DBUILD_SHARED_LIBS=OFF"
-    system "cmake", "--build", "buildstatic"
-    system "cmake", "--install", "buildstatic"
+    system "cmake", "-S", ".", "-B", "build_static", "-DBUILD_SHARED_LIBS=OFF", *std_cmake_args
+    system "cmake", "--build", "build_static"
+    system "cmake", "--install", "build_static"
 
-    system "cmake", "-S", ".", "-B", "buildshared", *std_cmake_args, "-DBUILD_SHARED_LIBS=ON"
-    system "cmake", "--build", "buildshared"
-    system "cmake", "--install", "buildshared"
+    system "cmake", "-S", ".", "-B", "build_shared", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
+    system "cmake", "--build", "build_shared"
+    system "cmake", "--install", "build_shared"
   end
 
   test do

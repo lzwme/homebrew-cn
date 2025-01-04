@@ -1,8 +1,8 @@
 class Kitex < Formula
   desc "Golang RPC framework for microservices"
   homepage "https:github.comcloudwegokitex"
-  url "https:github.comcloudwegokitexarchiverefstagsv0.12.0.tar.gz"
-  sha256 "fb0f526ffc9de885b0ed9a2c7cebb393b36edb14a84957601e70b7ef9a5a520a"
+  url "https:github.comcloudwegokitexarchiverefstagsv0.12.1.tar.gz"
+  sha256 "6b446bb840b04626be6048f02fdaf899e613ada2038f2f169ec0a1262eee219e"
   license "Apache-2.0"
   head "https:github.comcloudwegokitex.git", branch: "develop"
 
@@ -12,12 +12,12 @@ class Kitex < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a1fcc9bbe785091e70e04967cbce1e905da82fc4fc08d19ae5765ddcd5557be6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a1fcc9bbe785091e70e04967cbce1e905da82fc4fc08d19ae5765ddcd5557be6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a1fcc9bbe785091e70e04967cbce1e905da82fc4fc08d19ae5765ddcd5557be6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a2755d1d972460e1dd07e8928c0da59627eef991c91a9ce6a99b8cd8bdf20ba8"
-    sha256 cellar: :any_skip_relocation, ventura:       "a2755d1d972460e1dd07e8928c0da59627eef991c91a9ce6a99b8cd8bdf20ba8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5fc62625712942280f619b58cdc45f5403f5b0e9936dd5a59ca02ffe8bea69b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8bb0db0325c188f59d389d0e18fa43cb64ac53aafc7c82e687fb5babe32dee2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8bb0db0325c188f59d389d0e18fa43cb64ac53aafc7c82e687fb5babe32dee2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f8bb0db0325c188f59d389d0e18fa43cb64ac53aafc7c82e687fb5babe32dee2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7fe63a88fe601260e39785d72d37273aac35e8368b28b644416ae2b33f2eedad"
+    sha256 cellar: :any_skip_relocation, ventura:       "7fe63a88fe601260e39785d72d37273aac35e8368b28b644416ae2b33f2eedad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce5e4e6fef19a4785d6e6487f2ff64e393026bde795ae2c3c18b9e1d781e4f2e"
   end
 
   depends_on "go" => [:build, :test]

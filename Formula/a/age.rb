@@ -28,7 +28,7 @@ class Age < Formula
 
   test do
     system bin"age-keygen", "-o", "key.txt"
-    pipe_output("#{bin}age -e -i key.txt -o test.age", "test")
+    pipe_output("#{bin}age -e -i key.txt -o test.age", "test", 0)
     assert_equal "test", shell_output("#{bin}age -d -i key.txt test.age")
   end
 end

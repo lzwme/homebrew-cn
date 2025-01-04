@@ -84,6 +84,7 @@ cask "coteditor" do
     "~LibraryCachescom.apple.helpdGeneratedcom.coteditor.CotEditor.help*",
     "~LibraryCachescom.apple.helpdSDMHelpDataOtherEnglishHelpSDMIndexFilecom.coteditor.CotEditor.help*",
     "~LibraryCachescom.apple.helpdSDMHelpDataOtherJapaneseHelpSDMIndexFilecom.coteditor.CotEditor.help*",
+    "~LibraryCachescom.coteditor.CotEditor",
     "~LibraryContainerscom.coteditor.CotEditor",
     "~LibraryPreferencescom.coteditor.CotEditor.plist",
   ]

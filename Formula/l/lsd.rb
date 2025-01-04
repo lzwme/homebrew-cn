@@ -7,14 +7,13 @@ class Lsd < Formula
   head "https:github.comlsd-rslsd.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1bd66cf4147ca72261c46bc2ccd83b87ba439ae94b08f8341acad2368b970d75"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a8b8fe68defcb12b13129f043232501c7b26e26bee95d234af007f7efb3a74c0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "052713d1eb533cc327634f2af5b8b5c5cedd81e6d4dab490f01d27027f7bcb5a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a932036d16254f460ca5eaf97ebbdba0b8889694948cf65c70463b1dafe8bd02"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4b0d22a1df5991392d2c8ebc385d218681e42337610ac80bd53178e70dc7cfee"
-    sha256 cellar: :any_skip_relocation, ventura:        "1d19910facdfecda3de68de5f171136aff02d5c4877f5c1b261f5718510d7eaa"
-    sha256 cellar: :any_skip_relocation, monterey:       "ae4f9d76a5f1ac4936289a0623c4ab936399ab4ec61ae72c32875c087ff62ece"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85322652128256141215d105d140346170a1748f789f0284a56c3f2568d6165d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "620e65bedbd524277a073f2469d5467c7e93e88a95c227da58b5f270966392a2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "171fdc624eada5c1f48837e56e5f0a44139fc897de8b0c75a6637b64cfb41b87"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0ab10dba6606d09d98086b000a07ea2c6d0573e3b6e4ffc4eba3c30260810c9d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e5a078994599902b8b972d7bf4ce14ad755a0b559f7794e08ad9e40110c8365e"
+    sha256 cellar: :any_skip_relocation, ventura:       "2cee4fdf553f67937d3df1bdbecf420ea9453de347a3b6f99aa0a03f28020063"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da5e2e98f824400895e34655adfbc250a3140e304a0247d11a4e64a9e2c133b2"
   end
 
   depends_on "pandoc" => :build
@@ -25,7 +24,7 @@ class Lsd < Formula
   def install
     ENV["SHELL_COMPLETIONS_DIR"] = buildpath
     system "cargo", "install", *std_cargo_args
-    bash_completion.install "lsd.bash"
+    bash_completion.install "lsd.bash" => "lsd"
     fish_completion.install "lsd.fish"
     zsh_completion.install "_lsd"
 

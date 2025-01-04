@@ -30,8 +30,8 @@ class Aespipe < Formula
   test do
     (testpath/"secret").write "thisismysecrethomebrewdonttellitplease"
     msg = "Hello this is Homebrew"
-    encrypted = pipe_output("#{bin}/aespipe -P secret", msg)
-    decrypted = pipe_output("#{bin}/aespipe -P secret -d", encrypted)
+    encrypted = pipe_output("#{bin}/aespipe -P secret", msg, 0)
+    decrypted = pipe_output("#{bin}/aespipe -P secret -d", encrypted, 0)
     assert_equal msg, decrypted.gsub(/\x0+$/, "")
   end
 end

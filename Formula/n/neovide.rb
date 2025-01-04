@@ -1,19 +1,18 @@
 class Neovide < Formula
   desc "No Nonsense Neovim Client in Rust"
   homepage "https:github.comneovideneovide"
-  url "https:github.comneovideneovidearchiverefstags0.13.3.tar.gz"
-  sha256 "21c8eaa53cf3290d2b1405c8cb2cde5f39bc14ef597b328e76f1789b0ef3539a"
+  url "https:github.comneovideneovidearchiverefstags0.14.0.tar.gz"
+  sha256 "33aade5dcc2962aadcd7c885876a52f096397356c56aab90c71cf12aa368e87d"
   license "MIT"
   head "https:github.comneovideneovide.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a707205c55f9f4b08ce1228baf5de9c7e3501c55dd161c45c647f362ddc9164e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ca6b4e3e0b753cbb25ce6c1c8cc83baa3e8dddfbae1bb3b8cb03102c6ad8c60"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fe99aabf60388de8d103fde859c56193b2c7192ef2282b99249baf1a7bae8b68"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6175015a4a4ca06f7b9d948a733b4ad85580837d6f12e587f8e2742fde3981cc"
-    sha256 cellar: :any_skip_relocation, ventura:       "b89ecae1aae8bfdd70cf0b966b14091fe088a1eaf7fcdacced64a89ccbefb111"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e119675832daa71d45d9cc1a805d14c014caf8f5f45744c6ccd57231e3ff91cd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d38da184be6acf398b2c83a383effd56e59a3309db2909a05d7d378d5a1bd457"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "181d93123769252f063c8695ae6346631b419a0fe3d34e3c11538677160c17df"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8f1c8d257b736235af43eff70921bf63d360c4b208038ae099806ef5502bbb06"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3886268d9d53ce4e061880e3248fc313356a830c5cd90e3e3d85858d5f28728e"
+    sha256 cellar: :any_skip_relocation, ventura:       "a8b58a4337f647d7980aea34c021d9e3ca93b87179886cdd4c702c8d51a1daf8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ea24502baf0a789cbe1208d7c865203cf6486e4d59308b7d7994ba82eb415e7"
   end
 
   depends_on "ninja" => :build
@@ -28,7 +27,6 @@ class Neovide < Formula
   end
 
   on_linux do
-    depends_on "python@3.12" => :build # https:github.comrust-skiarust-skiaissues1049
     depends_on "expat"
     depends_on "fontconfig"
     depends_on "freetype"
@@ -50,12 +48,6 @@ class Neovide < Formula
 
     # FIXME: On macOS, `skia-bindings` crate only allows building `skia` with bundled libraries
     if OS.linux?
-      if build.stable?
-        skia_bindings_version = Version.new(File.read("Cargo.lock")[name = "skia-bindings"\nversion = "(.*)", 1])
-        odie "Remove `python@3.12` dependency and PATH modification" if skia_bindings_version >= "0.80.0"
-        ENV.prepend_path "PATH", Formula["python@3.12"].opt_libexec"bin"
-      end
-
       ENV["SKIA_USE_SYSTEM_LIBRARIES"] = "1"
       ENV["CLANG_PATH"] = which(ENV.cc) # force bindgen to use superenv clang to find brew libraries
 

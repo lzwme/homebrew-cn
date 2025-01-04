@@ -4,7 +4,7 @@ class Mupdf < Formula
   url "https://mupdf.com/downloads/archive/mupdf-1.25.2-source.tar.gz"
   sha256 "36ccf6a5e691e188acf8db6e98d08bf05f27bb4ce30432dc15fc76d329a92d4d"
   license "AGPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https://git.ghostscript.com/mupdf.git", branch: "master"
 
   livecheck do
@@ -13,12 +13,12 @@ class Mupdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a4ec374e1dd2d472e742563fdd0120db1cdb9262bf578223bf790950dc4d8b90"
-    sha256 cellar: :any,                 arm64_sonoma:  "c69a24ba6b4703dba7dea2f37757a50e79d5523484303cbf871612557bdc49f6"
-    sha256 cellar: :any,                 arm64_ventura: "5dce2e08a3bdef852794a8ed4875effc56db08f7c84c04729b26c810fe74ad8e"
-    sha256 cellar: :any,                 sonoma:        "95c259ef0ca3ebfd7a51855ee8d8be0a869e2a68398c121ee797044fb278a641"
-    sha256 cellar: :any,                 ventura:       "2fa51233e53b9b3e2af462dc7147980a052c7bdf1900f725709cf7439230f150"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cff1889f1404d4014983cd0e77dfc9b1210153d9e83e011cd7d390652a89d38"
+    sha256 cellar: :any,                 arm64_sequoia: "57f1e702b53a90a0f20ed56212375c169be79ba6e0547a9adf758045c6711268"
+    sha256 cellar: :any,                 arm64_sonoma:  "5c35d16262ea269bccb3949686450f2e4f7296862328175c9914c032de8f719e"
+    sha256 cellar: :any,                 arm64_ventura: "617eeca0c62887b34621c35fd461108f68491f3e017798902ebf705154a0db86"
+    sha256 cellar: :any,                 sonoma:        "bab1529f71f85775e11252aa041f95d2d5abc8e57ba6b8f21197a65cca2bd669"
+    sha256 cellar: :any,                 ventura:       "c49644de6a94065924c9742b45d17039a6273ef5d1b2bbc186857d54e800cb03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "462743a2f09a367b88eed6953e0b7ee491764ad71dfebfff7a3bb9f39775a421"
   end
 
   depends_on "llvm" => :build

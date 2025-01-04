@@ -22,7 +22,7 @@ class Libosinfo < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkgconf" => :build
+  depends_on "pkgconf" => [:build, :test]
   depends_on "vala" => :build
   depends_on "gettext"
   depends_on "glib"
@@ -73,20 +73,8 @@ class Libosinfo < Formula
         return 0;
       }
     C
-    gettext = Formula["gettext"]
-    glib = Formula["glib"]
-    flags = %W[
-      -I#{gettext.opt_include}
-      -I#{glib.opt_include}glib-2.0
-      -I#{glib.opt_lib}glib-2.0include
-      -I#{include}libosinfo-1.0
-      -L#{gettext.opt_lib}
-      -L#{glib.opt_lib}
-      -L#{lib}
-      -losinfo-1.0
-      -lglib-2.0
-      -lgobject-2.0
-    ]
+
+    flags = shell_output("pkgconf --cflags --libs libosinfo-1.0").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system ".test"
     system bin"osinfo-query", "device", "vendor=Apple Inc."

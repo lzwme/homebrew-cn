@@ -14,12 +14,13 @@ class Chezmoi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0fac66a51b0519719cd49aa5543621d8d11e2eb5a56d084895585b5bdac1379"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "54b92c851ded9c1b72b0daa316548915ac4197b53105798ead1708fb6f12171f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cb4ba0e8448aa4aa1c8a87b77a0753af617a6401ff0722f4023057211c70c86d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c5c47bbd2cc1486b3e7619a4319a491f123095cc6774cd382a49db3ea11211ab"
-    sha256 cellar: :any_skip_relocation, ventura:       "38926492b3d0de4fddbeabd7bc2d1ec226007252acb3673cdbdc78b8573bdb91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78f18930e2bfc5d0cb3c17f456e1d4bfe8509e36f3f57a2b70265e5a40cd40da"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77ec7d2734d23bf0d9934d6d4744d8f19b1823cb98b79f8d55672b5a1f967df8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ecc493e76cce0753b19ece6210f8e5afbbca482f36aa44777d29e0d8b9f8424"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6950d012926f1f58b81ef15778632d6ee82fc243a0720e85c5391035ecb7b192"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5a8f970f1b158df239406918466394993a8eef00eaad46d2bc9179818300ad15"
+    sha256 cellar: :any_skip_relocation, ventura:       "0ff44c5283c43dc1114c0308b010507a697d21dfd4815c968603817b6cf98d4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48ca4c1c3f1a96365acc71402e6e3de922830aa635e859a04158cf6f9a1bb2c3"
   end
 
   depends_on "go" => :build
@@ -34,7 +35,7 @@ class Chezmoi < Formula
     ]
     system "go", "build", *std_go_args(ldflags:)
 
-    bash_completion.install "completionschezmoi-completion.bash"
+    bash_completion.install "completionschezmoi-completion.bash" => "chezmoi"
     fish_completion.install "completionschezmoi.fish"
     zsh_completion.install "completionschezmoi.zsh" => "_chezmoi"
   end

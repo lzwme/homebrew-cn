@@ -8,7 +8,8 @@ class GitMachete < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8193ac2d25a936fcbd72af0bbe8f5187487ceb4396b55f56dbdc44b7cc1f4b39"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "35bf6ac5f3540d423b5af5ef7de89574255a5acef7d77bf87db912364a634edd"
   end
 
   depends_on "python@3.13"
@@ -18,8 +19,8 @@ class GitMachete < Formula
 
     man1.install "docsmangit-machete.1"
 
-    bash_completion.install "completiongit-machete.completion.bash"
-    zsh_completion.install "completiongit-machete.completion.zsh"
+    bash_completion.install "completiongit-machete.completion.bash" => "git-machete"
+    zsh_completion.install "completiongit-machete.completion.zsh" => "_git-machete"
     fish_completion.install "completiongit-machete.fish"
   end
 

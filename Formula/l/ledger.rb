@@ -48,12 +48,13 @@ class Ledger < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "605f9873cfeee7c954f55a29fbde7cf2066792baca747d039240a4840f40bfa5"
-    sha256 cellar: :any,                 arm64_sonoma:  "a84da9d701f740f902b8c635c19f394cf2b58820a9a59219773617bad15eba19"
-    sha256 cellar: :any,                 arm64_ventura: "6a3c0b722a87fb070eb270e05ca78cfded257e470166597a6766a7dbc42222b9"
-    sha256 cellar: :any,                 sonoma:        "ce4e727f36f0a3159695744dceadb0362d7fbb25906152df3c8263c0c6fe59e7"
-    sha256 cellar: :any,                 ventura:       "159ba0b0853efd009ad410a16bd8d2a8bdfbc4123751dff90338d810551c7e64"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb58b2ab66d1efffa83333d0c281280a20bdd5f6dc9b9bf5058634e58639c772"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "ce45119d338d9e00956307b4721d33440f14d1907ca54da02fe1ca25a5471459"
+    sha256 cellar: :any,                 arm64_sonoma:  "d159a1cfe29825f3c314a4594355fab005ace773c218a9bb26cdf7db0bfc6ba1"
+    sha256 cellar: :any,                 arm64_ventura: "ab24ca08a201ceef084c01fb75d9f7610f841cbd471f5c906caff3a3e6f3ba93"
+    sha256 cellar: :any,                 sonoma:        "088a64661ab9e5cacc46563de601e06b79f8a75d4c7502d043df15335a906830"
+    sha256 cellar: :any,                 ventura:       "f149928e3e4c40bf16d6c237fe8bb7e54cc5e0651e993e6b30cf3fa887f61bb3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "601f17b3901dae3f78185c3e5a911f8d04fd3795941f7554567d0e820c9c26a0"
   end
 
   depends_on "cmake" => :build
@@ -95,7 +96,7 @@ class Ledger < Formula
     (pkgshare"examples").install Dir["testinput*.dat"]
     pkgshare.install "contrib"
     elisp.install Dir["lisp*.el", "lisp*.elc"]
-    bash_completion.install pkgshare"contribledger-completion.bash"
+    bash_completion.install pkgshare"contribledger-completion.bash" => "ledger"
   end
 
   test do

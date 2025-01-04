@@ -7,7 +7,8 @@ class Leiningen < Formula
   head "https:github.comtechnomancyleiningen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "baffb707e7f1f330bf364946e0f7ffa4c44a1a679be371dc70748717661dc613"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "131114eee9aa0c25867ebf065360d52bbfaef43906308b747ea6cd9b033326f6"
   end
 
   depends_on "openjdk"
@@ -31,7 +32,7 @@ class Leiningen < Formula
     (libexec"bin").install "binlein-pkg" => "lein"
     (libexec"binlein").chmod 0755
     (bin"lein").write_env_script libexec"binlein", Language::Java.overridable_java_home_env
-    bash_completion.install "bash_completion.bash" => "lein-completion.bash"
+    bash_completion.install "bash_completion.bash" => "lein"
     zsh_completion.install "zsh_completion.zsh" => "_lein"
   end
 

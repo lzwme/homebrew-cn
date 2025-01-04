@@ -1,18 +1,18 @@
 class CargoLlvmLines < Formula
   desc "Count lines of LLVM IR per generic function"
   homepage "https:github.comdtolnaycargo-llvm-lines"
-  url "https:github.comdtolnaycargo-llvm-linesarchiverefstags0.4.41.tar.gz"
-  sha256 "4674fd81bf3c565fd19e6405e4fd2cd65b2e7c21ec06da762b148150ddcb2787"
+  url "https:github.comdtolnaycargo-llvm-linesarchiverefstags0.4.42.tar.gz"
+  sha256 "758cfc5e2b30578912e5d0e3faabf4ffe0e4ed316bb6bd464a4c81c45f5e25c9"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comdtolnaycargo-llvm-lines.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f9900e26c5651c6e8d24680c25d1efcb3d4fe14576aff26dbbd09d1b2c443a59"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f25e56422803cd44cf091afe47337009c1852651c09a8da6bf8acb44d8b0253f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1f353796bcf6f188deff4b05d489cc3f4d216441849c0cd07f272d6a9a1b188d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "72ee668391a3bd302728779cf0ceac504c0b38e73480c9d54a96b3657b31bfd7"
-    sha256 cellar: :any_skip_relocation, ventura:       "83f802477e53e768f455dd060ab63cb15bb5c9f299ba68676f8322bae7b412a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fff265422209daaaf26634109a1eaeff1ed48a55fa6f4657016a01d211038ebe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d0066a18e73fb045e80ef304423215bfd0a029e0180ecab07289a1478f22c39"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "551d3123cb0200c3cd26a2ea51c41c766d571832337fb08b7431fd383b2f776f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b4e29b368f5bc237d886ec8d44a9788e6636e1d59cea25aa16fa3dad032eb926"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d60b6dde261ed8fc0c23e7edaa63d2ac5cb2b04227ae93be718b0b14048c5621"
+    sha256 cellar: :any_skip_relocation, ventura:       "f9d6b6dfe250bd19ae2c018839f4cbccf7e7ddfda01c5fb60038b1017a31f44a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13717c12b7d492991231ef8124dd961eaf091a5eb1faa0a8e68cbfd57766ed4e"
   end
 
   depends_on "rust" => :build

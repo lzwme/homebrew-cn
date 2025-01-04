@@ -20,7 +20,7 @@ class Gerbv < Formula
   depends_on "automake" => :build
   depends_on "gettext" => :build
   depends_on "libtool" => :build
-  depends_on "pkgconf" => :build
+  depends_on "pkgconf" => [:build, :test]
 
   depends_on "cairo"
   depends_on "gdk-pixbuf"
@@ -63,60 +63,8 @@ class Gerbv < Formula
         return 0;
       }
     C
-    atk = Formula["atk"]
-    cairo = Formula["cairo"]
-    fontconfig = Formula["fontconfig"]
-    freetype = Formula["freetype"]
-    gdk_pixbuf = Formula["gdk-pixbuf"]
-    gettext = Formula["gettext"]
-    glib = Formula["glib"]
-    gtkx = Formula["gtk+"]
-    harfbuzz = Formula["harfbuzz"]
-    libpng = Formula["libpng"]
-    pango = Formula["pango"]
-    pixman = Formula["pixman"]
-    flags = %W[
-      -I#{atk.opt_include}atk-1.0
-      -I#{cairo.opt_include}cairo
-      -I#{fontconfig.opt_include}
-      -I#{freetype.opt_include}freetype2
-      -I#{gdk_pixbuf.opt_include}gdk-pixbuf-2.0
-      -I#{gettext.opt_include}
-      -I#{glib.opt_include}glib-2.0
-      -I#{glib.opt_lib}glib-2.0include
-      -I#{gtkx.opt_include}gtk-2.0
-      -I#{gtkx.opt_lib}gtk-2.0include
-      -I#{harfbuzz.opt_include}harfbuzz
-      -I#{include}gerbv-#{version}
-      -I#{libpng.opt_include}libpng16
-      -I#{pango.opt_include}pango-1.0
-      -I#{pixman.opt_include}pixman-1
-      -D_REENTRANT
-      -L#{atk.opt_lib}
-      -L#{cairo.opt_lib}
-      -L#{gdk_pixbuf.opt_lib}
-      -L#{gettext.opt_lib}
-      -L#{glib.opt_lib}
-      -L#{gtkx.opt_lib}
-      -L#{lib}
-      -L#{pango.opt_lib}
-      -latk-1.0
-      -lcairo
-      -lgdk_pixbuf-2.0
-      -lgerbv
-      -lgio-2.0
-      -lglib-2.0
-      -lgobject-2.0
-      -lpango-1.0
-      -lpangocairo-1.0
-    ]
-    if OS.mac?
-      flags += %w[
-        -lgdk-quartz-2.0
-        -lgtk-quartz-2.0
-        -lintl
-      ]
-    end
+
+    flags = shell_output("pkgconf --cflags --libs libgerbv").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system ".test"
   end

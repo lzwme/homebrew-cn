@@ -2,6 +2,7 @@ class Sile < Formula
   desc "Modern typesetting system inspired by TeX"
   homepage "https:sile-typesetter.org"
   license "MIT"
+  revision 1
 
   stable do
     url "https:github.comsile-typesettersilereleasesdownloadv0.15.8sile-0.15.8.tar.zst"
@@ -16,12 +17,12 @@ class Sile < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c73569b18ef58118933b042b2798cdfbf799a7d33db269233d277ebab9e65aae"
-    sha256 cellar: :any,                 arm64_sonoma:  "6c9ccd73775633e380f73599b77b7743ab0cab761387f1b17b8a12077a54fdac"
-    sha256 cellar: :any,                 arm64_ventura: "f9f0a55bebd34b16e5c20b741bec059de5a5833a425ee78095cf27b6a51e29a4"
-    sha256 cellar: :any,                 sonoma:        "1399274b08181e6d034f66669f9f2c5e2cc26d201dd16502d7b55ec13e490ea3"
-    sha256 cellar: :any,                 ventura:       "0af3edbdfbe446a79ed80f705ae432062390f9f42973779c9cba4cb0392bb308"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5e0c9a04abe78f48723118e502326da42c8943a3ac54910569d3ce84b8f81e2"
+    sha256 cellar: :any,                 arm64_sequoia: "760dcc9aead85503c481ad2c62bc69e81569258a5188ef79115df15fa0359982"
+    sha256 cellar: :any,                 arm64_sonoma:  "adf6937d8e83cb00293fe7898a042f43461918cd08a87145fc1623bf6c68ef9c"
+    sha256 cellar: :any,                 arm64_ventura: "30a968d237af1c8b46ea79578c6b10ff310ea51fa17b32f5b440d225837f70c0"
+    sha256 cellar: :any,                 sonoma:        "87e0fa9b81ff1c67d684d0fcb1c9fc1dafda1b72156928841b9e6f6c5a892b71"
+    sha256 cellar: :any,                 ventura:       "501370fa5e9e8222f9e7fd549f4b8b468dec0f06f2e32e11c13ece959aa7cb3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e9ba5802d895353c1e6de168a4668d0893bb908d32272cb9fbe544e6a699859"
   end
 
   head do
@@ -142,8 +143,8 @@ class Sile < Formula
   end
 
   resource "luautf8" do
-    url "https:luarocks.orgmanifestsxavier-wangluautf8-0.1.5-2.src.rock"
-    sha256 "68bd8e3c3e20f98fceb9e20d5a7a50168202c22eb45b87eff3247a0608f465ae"
+    url "https:luarocks.orgmanifestsxavier-wangluautf8-0.1.6-1.src.rock"
+    sha256 "37901bc127c4afe9f611bba58af7b12eda6599fc270e1706e2f767807dfacd82"
   end
 
   resource "vstruct" do
@@ -188,14 +189,7 @@ class Sile < Formula
         rock = Pathname.pwd.children(false).first
         unpack_dir = Utils.safe_popen_read("luarocks", "unpack", rock).split("\n")[-2]
         spec = "#{r.name}-#{r.version}.rockspec"
-        cd unpack_dir do
-          # Work around LuaJIT not exporting a setting for INT_MAX any
-          # more and luautf8 expecting it transitively
-          if r.name.eql? "luautf8"
-            inreplace "lutf8lib.c", "#include <stdint.h>", "#include <stdint.h>\n#include <limits.h>"
-          end
-          system "luarocks", "make", *luarocks_args, spec
-        end
+        cd(unpack_dir) { system "luarocks", "make", *luarocks_args, spec }
       end
     end
 

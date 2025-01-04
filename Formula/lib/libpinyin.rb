@@ -28,7 +28,7 @@ class Libpinyin < Formula
   # macOS `ld64` does not like the `.la` files created during the build.
   # upstream issue report, https:github.comlibpinyinlibpinyinissues158
   depends_on "lld" => :build if DevelopmentTools.clang_build_version >= 1400
-  depends_on "pkgconf" => :build
+  depends_on "pkgconf" => [:build, :test]
   depends_on "glib"
 
   on_macos do
@@ -85,18 +85,9 @@ class Libpinyin < Formula
           return 0;
       }
     CPP
-    glib = Formula["glib"]
-    flags = %W[
-      -I#{include}libpinyin-#{version}
-      -I#{glib.opt_include}glib-2.0
-      -I#{glib.opt_lib}glib-2.0include
-      -L#{lib}
-      -L#{glib.opt_lib}
-      -DLIBPINYIN_DATADIR="#{lib}libpinyindata"
-      -lglib-2.0
-      -lpinyin
-    ]
-    system ENV.cxx, "test.cc", "-o", "test", *flags
+
+    flags = shell_output("pkgconf --cflags --libs libpinyin").chomp.split
+    system ENV.cxx, "test.cc", "-o", "test", "-DLIBPINYIN_DATADIR=\"#{lib}libpinyindata\"", *flags
     touch "user.conf"
     system ".test"
   end

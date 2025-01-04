@@ -23,6 +23,6 @@ class Afuse < Formula
   end
 
   test do
-    assert_match "FUSE library version", pipe_output("#{bin}afuse --version 2>&1")
+    assert_match "FUSE library version", shell_output("#{bin}afuse --version 2>&1", 1)
   end
 end

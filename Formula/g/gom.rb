@@ -19,7 +19,7 @@ class Gom < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkgconf" => :build
+  depends_on "pkgconf" => [:build, :test]
   depends_on "python@3.13" => :build
   depends_on "gdk-pixbuf"
   depends_on "gettext"
@@ -43,21 +43,8 @@ class Gom < Formula
         return 0;
       }
     C
-    gettext = Formula["gettext"]
-    glib = Formula["glib"]
-    flags = %W[
-      -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{include}/gom-1.0
-      -L#{gettext.opt_lib}
-      -L#{glib.opt_lib}
-      -L#{lib}
-      -lglib-2.0
-      -lgobject-2.0
-      -lgom-1.0
-    ]
-    flags << "-lintl" if OS.mac?
+
+    flags = shell_output("pkgconf --cflags --libs gom-1.0").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end

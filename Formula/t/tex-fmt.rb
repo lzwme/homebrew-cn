@@ -1,18 +1,18 @@
 class TexFmt < Formula
   desc "Extremely fast LaTeX formatter written in Rust"
   homepage "https:github.comWGUNDERWOODtex-fmt"
-  url "https:github.comWGUNDERWOODtex-fmtarchiverefstagsv0.5.1.tar.gz"
-  sha256 "60c74c8f0155d1324e10c4e97c774bd0dd4449cbdd703b704d791a3c0f0b0364"
+  url "https:github.comWGUNDERWOODtex-fmtarchiverefstagsv0.5.2.tar.gz"
+  sha256 "e9dd89236781ea6f781b00d9452a071311cebd175424baea08bc03e8863f314c"
   license "MIT"
   head "https:github.comWGUNDERWOODtex-fmt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bca1508079191377c44231ef1aff3150e00dbd0100e35df91ddfd5481cd4b669"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5cbd11af828ec9c23a1431138f0e964e6576f0afa081b8b07e8a36dd3ef8ab2e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ee6a729c75f6cf03117ed8b5f1d3a30eb8a392b9eb5b2db16692d10240a5eeac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e34164bc0c65f0791dbd95f81c6f0a547ed2c9f26ca310875a7fc59de325ab1f"
-    sha256 cellar: :any_skip_relocation, ventura:       "193287b0b307c8764387724a990edc046fefddc394d3b19558fc459b89b31d3c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c7f0ddbe932b399ae82059ff500444e382394c42815dbf77d658a1082e6dd43"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4d2575c418e61c4bff720eeb19852591a71c8d827acd85ea64f81457ee4ed4b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "116a1f1e0acb70fd2acf1a7fe2d5f167913d41f526e457ba5e1c7ac527c0e5a2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "918d7de84741a919de50c867fa54ff951b8bcbb368711b02e157b1e824a50ffc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "18ecd39663c00d2b38ab774f4fc739bab66bbf01c6d9f63334cbf662938a7f64"
+    sha256 cellar: :any_skip_relocation, ventura:       "577521c80c447d1bbda632e7be5a12eb982a213f764ce63e9169e5ebb30941bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8d5037caf528c1142ed982b7423b192bd5bae89c032902cc7629478a66f5084"
   end
 
   depends_on "rust" => :build

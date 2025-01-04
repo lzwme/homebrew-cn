@@ -1,8 +1,8 @@
 class Ginac < Formula
   desc "Not a Computer algebra system"
   homepage "https://www.ginac.de/"
-  url "https://www.ginac.de/ginac-1.8.7.tar.bz2"
-  sha256 "71ff4f2d8a00e6f07ce8fee69b76dcc1ebbb727be6760b587c1fbb5ccf7b61ea"
+  url "https://www.ginac.de/ginac-1.8.8.tar.bz2"
+  sha256 "330f57d0ed79dbd8f9c46ca4b408439b8b30e2ea061e3672d904c5dab94ecad6"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,13 +11,12 @@ class Ginac < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia: "9a7a204b5c3770f7d683be8e7010ce7746bb599302e7caee90eef1fa45abff55"
-    sha256 cellar: :any,                 arm64_sonoma:  "f4a19bf3843043773daecc4e19a308eaf20e1370d78be953c03dd271e46744bc"
-    sha256 cellar: :any,                 arm64_ventura: "11f66f760f919876085a014375f863d2a03613a5f9a26e1fef7aa0c673759619"
-    sha256 cellar: :any,                 sonoma:        "c91f9809888fb6294d6839ab236eb3880d77cae084b5dc7ccf5950cdff267055"
-    sha256 cellar: :any,                 ventura:       "5cd7b23d37eb77baab052cacb8cbcf36378d5dc38633593761c8810632c6de97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fdede5aa580316b0c9d774fc07455d659d760cb9fa76d10bec3eb47128b0cae"
+    sha256 cellar: :any,                 arm64_sequoia: "6d9ec318fc0e4b6c78b15fadde111f0872df880ec4bb949e3087ad153b672828"
+    sha256 cellar: :any,                 arm64_sonoma:  "552f4fbd7b5622d7ede628471e6fb216877870951276152fcc472539e545637a"
+    sha256 cellar: :any,                 arm64_ventura: "3d1b94dc22aae599565dfe9fea6ac54ca696f11cf5a3f50528c594d1ae39f95f"
+    sha256 cellar: :any,                 sonoma:        "68229ef05f5b82e8750ce12bfb7c84997f85b2c067d49273c21e3c819aeff10a"
+    sha256 cellar: :any,                 ventura:       "eddcfc320d3691fdebfd71a6f642ddeac843a4a319cca1c3a24fc5f9d045ca80"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a010a1afcb6ed3b42ebb387ee863eebaef45c995bea1bbba87c0b7663f8c107b"
   end
 
   depends_on "pkgconf" => :build

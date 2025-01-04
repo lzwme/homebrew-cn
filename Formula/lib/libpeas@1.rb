@@ -19,7 +19,7 @@ class LibpeasAT1 < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkgconf" => :build
+  depends_on "pkgconf" => [:build, :test]
   depends_on "vala" => :build
 
   depends_on "glib"
@@ -59,30 +59,8 @@ class LibpeasAT1 < Formula
         return 0;
       }
     C
-    gettext = Formula["gettext"]
-    glib = Formula["glib"]
-    gobject_introspection = Formula["gobject-introspection"]
-    libffi = Formula["libffi"]
-    flags = %W[
-      -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{gobject_introspection.opt_include}/gobject-introspection-1.0
-      -I#{include}/libpeas-1.0
-      -I#{libffi.opt_lib}/libffi-3.0.13/include
-      -D_REENTRANT
-      -L#{gettext.opt_lib}
-      -L#{glib.opt_lib}
-      -L#{gobject_introspection.opt_lib}
-      -L#{lib}
-      -lgio-2.0
-      -lgirepository-1.0
-      -lglib-2.0
-      -lgmodule-2.0
-      -lgobject-2.0
-      -lpeas-1.0
-    ]
-    flags << "-lintl" if OS.mac?
+
+    flags = shell_output("pkgconf --cflags --libs libpeas-1.0").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end

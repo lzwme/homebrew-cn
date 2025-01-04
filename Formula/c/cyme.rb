@@ -7,12 +7,13 @@ class Cyme < Formula
   head "https:github.comtuna-f1shcyme.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89da05b7471adcf0f4ad726ffea17a281666663cfad2853878f6989c920f948d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "107d2423c440b4899416d5ce4d2c42f48ac0c3a2189bb1dbbbcae8e8a4363de2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "883f637b63aecccc74079cae4da7a61fd60e40850b57619bdf217e2f90e7db73"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d19e2b4799a0527430047e682363eca91d311315701ebef717ae9d3609006dda"
-    sha256 cellar: :any_skip_relocation, ventura:       "12d746e164f206f680f18d793de6d8cc5baa10e257f3ad0d6641c3317cbc2194"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06dad774dd4a81a10274a0c5b27e38dd3724031ea8491ad6bc1e908c8f4cbb63"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "244a202824cc27d020db9505baf4ee03eec551e0799b6d9d35e4c2c2e14276ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92f56bf275c07bf90c444333cc92dcc46a7db09c012c9cab7ed1e97b2fbebd5e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e017e04dce4daf71bf0005c1ee4cb16ee2a51ead69b65d98df12230fce055a6d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b20b8975c9dd97bf1bdd643bce57e60df1dd06243c69046456c02e7c1261e4ec"
+    sha256 cellar: :any_skip_relocation, ventura:       "0606d756ecb564d38ec451de8e5d5e3b3f5608a344efb1008653f37b81f4f386"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c626a54bf672a2aebf0d339aff3a5c42c6e07029fecb340b6832653a5026225a"
   end
 
   depends_on "rust" => :build
@@ -21,7 +22,7 @@ class Cyme < Formula
   def install
     system "cargo", "install", *std_cargo_args
     man1.install "doccyme.1"
-    bash_completion.install "doccyme.bash"
+    bash_completion.install "doccyme.bash" => "cyme"
     zsh_completion.install "doc_cyme"
     fish_completion.install "doccyme.fish"
   end

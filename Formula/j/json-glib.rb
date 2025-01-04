@@ -19,7 +19,7 @@ class JsonGlib < Formula
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkgconf" => :build
+  depends_on "pkgconf" => [:build, :test]
 
   depends_on "glib"
 
@@ -45,23 +45,7 @@ class JsonGlib < Formula
       }
     C
 
-    gettext = Formula["gettext"]
-    glib = Formula["glib"]
-    flags = %W[
-      -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{include}/json-glib-1.0
-      -D_REENTRANT
-      -L#{gettext.opt_lib}
-      -L#{glib.opt_lib}
-      -L#{lib}
-      -lgio-2.0
-      -lglib-2.0
-      -lgobject-2.0
-      -ljson-glib-1.0
-    ]
-    flags << "-lintl" if OS.mac?
+    flags = shell_output("pkgconf --cflags --libs json-glib-1.0").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end

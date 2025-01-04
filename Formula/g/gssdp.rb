@@ -20,7 +20,7 @@ class Gssdp < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pandoc" => :build
-  depends_on "pkgconf" => :build
+  depends_on "pkgconf" => [:build, :test]
   depends_on "vala" => :build
   depends_on "glib"
   depends_on "libsoup"
@@ -48,17 +48,8 @@ class Gssdp < Formula
         return 0;
       }
     C
-    gettext = Formula["gettext"]
-    glib = Formula["glib"]
-    flags = %W[
-      -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{include}/gssdp-#{version.major_minor}
-      -D_REENTRANT
-      -L#{lib}
-      -lgssdp-#{version.major_minor}
-    ]
+
+    flags = shell_output("pkgconf --cflags --libs gssdp-1.6").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end

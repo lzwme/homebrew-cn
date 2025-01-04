@@ -4,15 +4,15 @@ class Pdfgrep < Formula
   url "https://pdfgrep.org/download/pdfgrep-2.2.0.tar.gz"
   sha256 "0661e531e4c0ef097959aa1c9773796585db39c72c84a02ff87d2c3637c620cb"
   license "GPL-2.0-only"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5fd50352b2273e2fe74cc1d743223ad274f9d5a8cc1f80a58995859c68a9f52e"
-    sha256 cellar: :any,                 arm64_sonoma:  "5356bb2f208f6f5824dda4506b77d74629939da845eefde2865083efdfe9e986"
-    sha256 cellar: :any,                 arm64_ventura: "8bb0312620765b07ff82bf65c78f3fb50d5a24a933c8fde3e227f614c37aecc3"
-    sha256 cellar: :any,                 sonoma:        "d4996ec4f5eb3e90b4ba3c8ce8c442cbdbe00a8c7585e43ac766bf109b44f6d7"
-    sha256 cellar: :any,                 ventura:       "e0033f368c2694317ecbcfe49eaf4efbf88f1e97e31f83252d3131132e84c659"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7350f888b534ac62216fc4c50935be77b4a8e47620e8b188d4098c8b024b333a"
+    sha256 cellar: :any,                 arm64_sequoia: "9926375b2077d2480098e6d821880915a51f94a4c89284718d5b320609e00220"
+    sha256 cellar: :any,                 arm64_sonoma:  "41dc9c7cfff5e4e580d773798cdf1bf190017ec15287aac86fbd44a7632f451a"
+    sha256 cellar: :any,                 arm64_ventura: "7482070f52df00a9eb14f2728145b17828ab75d95083a6c4267ba899b0ffcf12"
+    sha256 cellar: :any,                 sonoma:        "9dbe21ca4fa269567f10411c1d31eb3646151557b05905343782148f1c7b2e99"
+    sha256 cellar: :any,                 ventura:       "1d6942180032f100bceabe2e78e4dd68556d60a4ee60b451c959ea5c552e56f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17e547dc318109b9fb83fa11a59c5cf07608121c5be5173d34d7762dea0498b1"
   end
 
   head do

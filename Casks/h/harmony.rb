@@ -8,6 +8,7 @@ cask "harmony" do
   homepage "https:github.comvincelwtharmony"
 
   deprecate! date: "2024-01-03", because: :discontinued
+  disable! date: "2025-01-04", because: :discontinued
 
   app "Harmony.app"
 

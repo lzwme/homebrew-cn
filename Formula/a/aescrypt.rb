@@ -44,8 +44,8 @@ class Aescrypt < Formula
   test do
     (testpath/"key").write "kk=12345678901234567890123456789abc0"
     original_text = "hello"
-    cipher_text = pipe_output("#{bin}/aescrypt -k #{testpath}/key -s 128", original_text)
-    deciphered_text = pipe_output("#{bin}/aesget -k #{testpath}/key -s 128", cipher_text)
+    cipher_text = pipe_output("#{bin}/aescrypt -k #{testpath}/key -s 128", original_text, 0)
+    deciphered_text = pipe_output("#{bin}/aesget -k #{testpath}/key -s 128", cipher_text, 0)
     refute_equal original_text, cipher_text
     assert_equal original_text, deciphered_text
   end

@@ -38,7 +38,7 @@ class OsmGpsMap < Formula
   end
 
   depends_on "gobject-introspection" => :build
-  depends_on "pkgconf" => :build
+  depends_on "pkgconf" => [:build, :test]
 
   depends_on "cairo"
   depends_on "gdk-pixbuf"
@@ -69,41 +69,9 @@ class OsmGpsMap < Formula
         return 0;
       }
     C
-    atk = Formula["atk"]
-    cairo = Formula["cairo"]
-    glib = Formula["glib"]
-    gdk_pixbuf = Formula["gdk-pixbuf"]
-    gtkx3 = Formula["gtk+3"]
-    harfbuzz = Formula["harfbuzz"]
-    pango = Formula["pango"]
-    flags = %W[
-      -I#{atk.opt_include}atk-1.0
-      -I#{cairo.opt_include}cairo
-      -I#{gdk_pixbuf.opt_include}gdk-pixbuf-2.0
-      -I#{glib.opt_include}glib-2.0
-      -I#{glib.opt_lib}glib-2.0include
-      -I#{gtkx3.opt_include}gtk-3.0
-      -I#{harfbuzz.opt_include}harfbuzz
-      -I#{pango.opt_include}pango-1.0
-      -I#{include}osmgpsmap-1.0
-      -D_REENTRANT
-      -L#{atk.opt_lib}
-      -L#{cairo.opt_lib}
-      -L#{gdk_pixbuf.opt_lib}
-      -L#{glib.opt_lib}
-      -L#{gtkx3.opt_lib}
-      -L#{lib}
-      -L#{pango.opt_lib}
-      -latk-1.0
-      -lcairo
-      -lgdk-3
-      -lgdk_pixbuf-2.0
-      -lglib-2.0
-      -lgtk-3
-      -lgobject-2.0
-      -lpango-1.0
-      -losmgpsmap-1.0
-    ]
+
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libsoup@2"].opt_lib"pkgconfig"
+    flags = shell_output("pkgconf --cflags --libs osmgpsmap-1.0").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
 
     # (test:40601): Gtk-WARNING **: 23:06:24.466: cannot open display

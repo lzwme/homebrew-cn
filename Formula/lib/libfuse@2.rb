@@ -26,13 +26,19 @@ class LibfuseAT2 < Formula
     sha256 "94d5c6d9785471147506851b023cb111ef2081d1c0e695728037bbf4f64ce30a"
   end
 
+  # Backport fix for build failure on arm64. Debian applies same patch (0006-arm64.patch)
+  patch do
+    url "https:github.comlibfuselibfusecommit914871b20a901e3e1e981c92bc42b1c93b7ab81b.patch?full_index=1"
+    sha256 "97360b7353903f3968aa10c9fd95ee42372049fea748d2be78f1c054e750bed0"
+  end
+
   def install
     ENV["INIT_D_PATH"] = etc"init.d"
     ENV["UDEV_RULES_PATH"] = etc"udevrules.d"
     ENV["MOUNT_FUSE_PATH"] = bin
     # TODO: Remove `autoreconf` when patch is no longer needed.
     system "autoreconf", "--force", "--install", "--verbose"
-    system ".configure", *std_configure_args, "--enable-lib", "--enable-util", "--disable-example"
+    system ".configure", "--enable-lib", "--enable-util", "--disable-example", *std_configure_args
     system "make"
     system "make", "install"
     (pkgshare"doc").install "dockernel.txt"

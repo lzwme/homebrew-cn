@@ -12,14 +12,13 @@ class Kubie < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "45d2b5bf4e409f92e20e7e40ab2597bc3944e58b49952191639397f26a15dc8e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a1dc3ff251898d15423b3a55c61549c9c94a2477bf3a723d221a8604b84e3dda"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cdb9af05aa60fe80bb9274a5254300c6d0aaec8167ef101c2d1b76d9e0edc911"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "79b81ce6914d45a0757e883117f5f8222b382f62b94636eff8e88fc2795eeb26"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e333225b5f2eb7f8d92a2fba93009fc7708ce27a4c12865a415caedfed80b89e"
-    sha256 cellar: :any_skip_relocation, ventura:        "1714313979f78a090cd6a9bd8eaf1c0d889398536aab5ef0b614f42467ebeb49"
-    sha256 cellar: :any_skip_relocation, monterey:       "ecfa627364eb8abf1816fe9751262dc73c2a9c6feb78228204a1d1d2f4939cc0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5111297df8d21edf1654f6770b2855878ef6c1448b1c3792a7cb116cb7739135"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7343146a2388c3691aba481cf5defdca6d6913095e4b544b23151d61562796d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "830d06fbd3b2f588ef331f751cd694af46b4f811a993d1c2ed51a59a9ece545d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8108e8f3f91b0cfaed27f2c4b71da0e4c9cc7de0b7c0a727de6f12bfcb8d9754"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f221a79f589a3f85eac3c86947bca0cec07d290c251b360060ac77f3aee5d930"
+    sha256 cellar: :any_skip_relocation, ventura:       "f8485751ca3b749db750553071560317aca7c30c3163bb1611ddeafdb3f4f548"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c3963e715e4da8aa4fc72ccea9733720fffc96c12fe7376189730fe6662898e"
   end
 
   depends_on "rust" => :build
@@ -27,7 +26,7 @@ class Kubie < Formula
 
   def install
     system "cargo", "install", *std_cargo_args
-    bash_completion.install ".completionkubie.bash"
+    bash_completion.install ".completionkubie.bash" => "kubie"
     fish_completion.install ".completionkubie.fish"
   end
 

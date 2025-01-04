@@ -10,6 +10,7 @@ cask "quickboot" do
   # user has reported it stopped working in catalina
   # https:github.comjfroQuickBootissues5
   deprecate! date: "2024-01-01", because: :unmaintained
+  disable! date: "2025-01-04", because: :unmaintained
 
   app "QuickBoot.app"
 end

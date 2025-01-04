@@ -6,12 +6,13 @@ class CodeMinimap < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "263eea4b76f60214200778af55e486ed9dbc84a12c2673a8244e6da19e86ab62"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa5d1d90bb9546186c5c5b94537729b367cab21eaf55bac39f2a43a411e71130"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7f08906475ed671f2dec6f146bb65f14ed0460a893ccee1b36a5c036c1d1385d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3cb6e04b1309f85a6a040387c9d3051d2a9ba541bc9347219b928fa8cb2c7edb"
-    sha256 cellar: :any_skip_relocation, ventura:       "296d784e3e55546a8df653b9e971e0758ba20aff12d37093dca9b3d787073521"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c0a20dc3254df3f0f3793a781c82d22c9fb57ad5e9c5344168cb5cde7fe8e7f"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3716b4399f2bf71a5152c87ec0c92b3c5303294219d8da389df76a13d9717276"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd478a065e694fc8adb510435dc95b6d208687e21c8dc0a5c62fad2649ec1e9d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "85d8ed4137ca95bc5f7460e53888d5ada7def591e478d05341d0fd8cc0474a25"
+    sha256 cellar: :any_skip_relocation, sonoma:        "83ddd0a6939195e5989578e2040ea16117c4dfbbb71be9112f7e0afac7496280"
+    sha256 cellar: :any_skip_relocation, ventura:       "d8195bd613d46d3ed7941deb5a442b3db073a7a663796ad24d4cde971ece9f6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15fc2163649169a8c43ac0fafa401259eee14214593ec73cbf82911631d443eb"
   end
 
   depends_on "rust" => :build
@@ -19,7 +20,7 @@ class CodeMinimap < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    bash_completion.install "completionsbashcode-minimap.bash"
+    bash_completion.install "completionsbashcode-minimap.bash" => "code-minimap"
     fish_completion.install "completionsfishcode-minimap.fish"
     zsh_completion.install  "completionszsh_code-minimap"
   end

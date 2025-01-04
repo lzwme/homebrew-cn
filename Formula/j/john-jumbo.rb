@@ -13,17 +13,13 @@ class JohnJumbo < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia:  "49a789c53d17a46d726ba98b5e4b2bbf8085a8735e57c610a28adfb2d2b22f25"
-    sha256 arm64_sonoma:   "4cc3fcf34d2fdfb2595cd689475d5337267edd8273b2aee87b875e8bbb729017"
-    sha256 arm64_ventura:  "82da2e81fdeedfb9a71f1740ff7bfef4641ccce5f31d51fa6d1ca7fdd576f6ef"
-    sha256 arm64_monterey: "4bccbd52d70bbdffc767cf12cfe177bf32002504a300de3d52e91ec8d4d19691"
-    sha256 arm64_big_sur:  "3441957c8cd6257a3f4d6cda745aaf22d461a9688408e81cebf538b6f5131663"
-    sha256 sonoma:         "e5cdbd5549c1b835b881f67de28cd54ef1fe2f9c6d3147fe9b3577c8a7c88c41"
-    sha256 ventura:        "503d1df42838b5d921ab6994410ff2e37b6d3717944fee0440e331f867c8e978"
-    sha256 monterey:       "0ace1b1a1ce24edde854033c8bae3c4b3d42379f569f374d9f43b56856f90eae"
-    sha256 big_sur:        "7ee4f489b10109d93d69757ffc0cb8b8538e7b391d549d9d133400d39433c22c"
-    sha256 x86_64_linux:   "2c1c1fa912ee63f865d0f61c11188f50d1d600e2c8af616175db78c9f51c154a"
+    rebuild 2
+    sha256 arm64_sequoia: "60a5968b96000102a72df069793e756067af2b87d862ce01b9cd1e24bb1a4b05"
+    sha256 arm64_sonoma:  "865c20ab8f23bf0c8213cc88014e36bf907f17a9f924d477d4866e8ea0e76e64"
+    sha256 arm64_ventura: "f70a5308db1137f69fa0da915a2d4898453db9339467044b224b64df1c9feb53"
+    sha256 sonoma:        "9579793b2cc5a9f493d4f45e92c509981dad449817f390df62fad67163656bd1"
+    sha256 ventura:       "5a03775927f3e4d2bbb843ba2fb614674f2342143d5e6b0644ceb852e7ad8da7"
+    sha256 x86_64_linux:  "9c218a9de0a672e13bd10012a4b7f6257bb1cb9e4e3c094b8444ade22cefb2d2"
   end
 
   depends_on "pkgconf" => :build
@@ -99,7 +95,7 @@ class JohnJumbo < Formula
     (share"john").install Dir["run*"]
     bin.install_symlink share"johnjohn"
 
-    bash_completion.install share"johnjohn.bash_completion" => "john.bash"
+    bash_completion.install share"johnjohn.bash_completion" => "john"
     zsh_completion.install share"johnjohn.zsh_completion" => "_john"
   end
 

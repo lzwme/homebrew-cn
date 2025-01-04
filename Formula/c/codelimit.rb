@@ -3,17 +3,17 @@ class Codelimit < Formula
 
   desc "Your Refactoring Alarm"
   homepage "https:github.comgetcodelimitcodelimit"
-  url "https:files.pythonhosted.orgpackagesc35ddad628013fb28d539575ea0267cec1c24521c6ea65b87b30111ffb5b7782codelimit-0.17.0.tar.gz"
-  sha256 "8701a6cce4676dd315b29fb2314249adf20ee78186694c706c4edfd68b7834e9"
+  url "https:files.pythonhosted.orgpackagesd62b5e982b31e4540706ece41e8cedd87674ada874fe58b6f89fd97d5d3a73f2codelimit-0.17.1.tar.gz"
+  sha256 "e4247881bad0e63b5cf7be729d798ebc531e8b6a5c11ceb4198aa5cdfe6ac081"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "aa50cc534257e2776ef26f59f2c10e295962543077914c9943a2c99db9306d8f"
-    sha256 cellar: :any,                 arm64_sonoma:  "93c226788dfb2903ecb2cd55eddf6495d96544dccdc9cb5af86aa076d047c196"
-    sha256 cellar: :any,                 arm64_ventura: "e9516588521e49cb28417a67dcbe1eff945ee065a7f39ad60f9d49c71d802c9b"
-    sha256 cellar: :any,                 sonoma:        "1608536cd4305bd9714fa46a0d706006c0c5cb0dade730d0121e5f168a803d73"
-    sha256 cellar: :any,                 ventura:       "225517187eda62a5470fa672d923b003e57c61c84504d0a5539b8ab0b6afd018"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "044e21a92ed40ceeb88e5ce014bf88f75e10a0effd7259d39cd5f2753ce60d21"
+    sha256 cellar: :any,                 arm64_sequoia: "aa50fe055d67235968fcb0b3caa8cfaa83ac5130b660d9d6b2426b8189bd603c"
+    sha256 cellar: :any,                 arm64_sonoma:  "ed9e7406e99e293cc8bb8613e31f2c604533435d0048aa10c67351eb277ad95e"
+    sha256 cellar: :any,                 arm64_ventura: "da9f0a3eeda3bc10f9c2f357d10dc3865a35570a990d7a7949249839b00db917"
+    sha256 cellar: :any,                 sonoma:        "0078df2a2820b4b75ed8f61498c1cbfa9888af706fd4d31feef6f7549507e7c9"
+    sha256 cellar: :any,                 ventura:       "dd54d785f96b527661865ca7b3c591b12771dd2d6e02b80fa1307dcf53304d96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d323196cb9075c91a766152bc79a2f35200a30fba50cef7520d36493a3e4d7d"
   end
 
   depends_on "certifi"

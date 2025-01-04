@@ -29,7 +29,7 @@ class Librest < Formula
   end
 
   depends_on "gobject-introspection" => :build
-  depends_on "pkgconf" => :build
+  depends_on "pkgconf" => [:build, :test]
 
   depends_on "glib"
   depends_on "libsoup@2"
@@ -66,19 +66,9 @@ class Librest < Formula
         return EXIT_SUCCESS;
       }
     C
-    glib = Formula["glib"]
-    libsoup = Formula["libsoup@2"]
-    flags = %W[
-      -I#{libsoup.opt_include}/libsoup-2.4
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{include}/rest-0.7
-      -L#{libsoup.opt_lib}
-      -L#{glib.opt_lib}
-      -L#{lib}
-      -lrest-0.7
-      -lgobject-2.0
-    ]
+
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libsoup@2"].opt_lib/"pkgconfig"
+    flags = shell_output("pkgconf --cflags --libs rest-0.7").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end

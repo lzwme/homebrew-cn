@@ -18,6 +18,13 @@ class Fastfec < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bf228d820220f1c3499eced326d33d6492bcb86745db6aaaef29e41e8405f01f"
   end
 
+  # Disable date set to 1 year after upstream issue report[^1] for Zig 0.13 failure.
+  # Zig 0.12.0 was released on 2024-04-20 so date is roughly 1 year 5 months after release.
+  # Also requires EOL `pcre`, which is being vendored on Linux.
+  #
+  # [^1]: https:github.comwashingtonpostFastFECissues66
+  disable! date: "2025-09-13", because: "does not build with zig >= 0.12 and uses EOL pcre"
+
   depends_on "cmake" => :build # for zig resource
   depends_on "llvm@16" => :build # for zig resource
   depends_on "pkgconf" => :build

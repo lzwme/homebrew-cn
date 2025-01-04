@@ -23,7 +23,7 @@ class Libxmlxx < Formula
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
-  depends_on "pkgconf" => :build
+  depends_on "pkgconf" => [:build, :test]
   depends_on "glibmm@2.66"
 
   uses_from_macos "libxml2"
@@ -46,34 +46,8 @@ class Libxmlxx < Formula
          return 0;
       }
     CPP
-    ENV.libxml2
-    gettext = Formula["gettext"]
-    glib = Formula["glib"]
-    glibmm = Formula["glibmm@2.66"]
-    libsigcxx = Formula["libsigc++@2"]
-    flags = %W[
-      -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{glibmm.opt_include}/glibmm-2.4
-      -I#{glibmm.opt_lib}/glibmm-2.4/include
-      -I#{include}/libxml++-2.6
-      -I#{libsigcxx.opt_include}/sigc++-2.0
-      -I#{libsigcxx.opt_lib}/sigc++-2.0/include
-      -I#{lib}/libxml++-2.6/include
-      -L#{gettext.opt_lib}
-      -L#{glib.opt_lib}
-      -L#{glibmm.opt_lib}
-      -L#{libsigcxx.opt_lib}
-      -L#{lib}
-      -lglib-2.0
-      -lglibmm-2.4
-      -lgobject-2.0
-      -lsigc-2.0
-      -lxml++-2.6
-      -lxml2
-    ]
-    flags << "-lintl" if OS.mac?
+
+    flags = shell_output("pkgconf --cflags --libs libxml++-2.6").chomp.split
     system ENV.cxx, "-std=c++11", "test.cpp", "-o", "test", *flags
     system "./test"
   end

@@ -52,7 +52,7 @@ class Aamath < Formula
   end
 
   test do
-    s = pipe_output(bin"aamath", (prefix"testcases").read)
+    s = pipe_output(bin"aamath", (prefix"testcases").read, 0)
     assert_match "f(x + h) = f(x) + h f'(x)", s
   end
 end

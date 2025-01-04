@@ -1,20 +1,18 @@
 class Mailutils < Formula
   desc "Swiss Army knife of email handling"
-  homepage "https:mailutils.org"
-  url "https:ftp.gnu.orggnumailutilsmailutils-3.17.tar.gz"
-  mirror "https:ftpmirror.gnu.orgmailutilsmailutils-3.17.tar.gz"
-  sha256 "403d0a8a7d923560ee189783a35cec517e9993dda985e35b7afd9c488bf6f149"
+  homepage "https://mailutils.org/"
+  url "https://ftp.gnu.org/gnu/mailutils/mailutils-3.18.tar.gz"
+  mirror "https://ftpmirror.gnu.org/mailutils/mailutils-3.18.tar.gz"
+  sha256 "91cc5fc52d6fadb481102ecfeefdd210a75975b0bd01577d9393fcc1ba4798e5"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sequoia:  "b038dbc93f3690440b7c52e6731c143d9ef11365d2d6347cd3c7a862021caf16"
-    sha256 arm64_sonoma:   "8a0c917dde78ad9e1e53adccfeed8a1ca7c5e465bf0fdae4392bb5460b407dc8"
-    sha256 arm64_ventura:  "f2b9f4a8a2078da0008e291c8abe58f73ba89013277042fd1df9b2f72db43999"
-    sha256 arm64_monterey: "8501f9f6b87427d70f99b03cd5246e6d22ebc9390c5a8211dcdf91166c209748"
-    sha256 sonoma:         "beedafeac4b0ea238ab762c14445a2a546774e9b76a92bddbb998f2709069851"
-    sha256 ventura:        "0298c5015f79f7f89bf550ab721f89b112b78df262cf5e789a125170e1836aa6"
-    sha256 monterey:       "397d16b0b03abb041cdfe05afa402b2576922a41df4386f9c974708b700a42f3"
-    sha256 x86_64_linux:   "9359d2d38ee56d75d796ed0a002b625eaaeece2e04248cc8a1493afbe9dba009"
+    sha256 arm64_sequoia: "753604bb987c55a0072a907509ffad8faa25fd35dfa72696b7797156770c4ef6"
+    sha256 arm64_sonoma:  "d7c03458852b7b4522595ce8801b5a0cdeaf34ae76ef9e93300b96370f235bdc"
+    sha256 arm64_ventura: "1480c514c7284b1229318368ab1e4a6e0075f3e4f320038b48c72faa11fc1b69"
+    sha256 sonoma:        "63a50102b0c5ebbf5f9610f9040b33b432dabcdd23f6f2a207e591d00e036459"
+    sha256 ventura:       "ecbfbc7b323e9e815f409f319edbd394b48caa9c2e79d6754e7489fd5dec3076"
+    sha256 x86_64_linux:  "76e8d8e74906ee588371c9425cd5ba34d5a7d75e69bf6be04d9081f23dae7c14"
   end
 
   depends_on "gnutls"
@@ -29,20 +27,14 @@ class Mailutils < Formula
     depends_on "gettext"
   end
 
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-  end
-
   def install
     # This is hardcoded to be owned by `root`, but we have no privileges on installation.
-    inreplace buildpath.glob("dotlockMakefile.*") do |s|
+    inreplace buildpath.glob("dotlock/Makefile.*") do |s|
       s.gsub! "chown root:mail", "true"
       s.gsub! "chmod 2755", "chmod 755"
     end
 
-    system ".configure", "--disable-mh",
+    system "./configure", "--disable-mh",
                           "--disable-silent-rules",
                           "--without-fribidi",
                           "--without-gdbm",
@@ -53,6 +45,6 @@ class Mailutils < Formula
   end
 
   test do
-    system bin"movemail", "--version"
+    system bin/"movemail", "--version"
   end
 end

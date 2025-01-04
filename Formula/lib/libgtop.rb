@@ -24,7 +24,7 @@ class Libgtop < Formula
 
   depends_on "gobject-introspection" => :build
   depends_on "intltool" => :build
-  depends_on "pkgconf" => :build
+  depends_on "pkgconf" => [:build, :test]
   depends_on "gettext"
   depends_on "glib"
   depends_on "libxau"
@@ -47,20 +47,8 @@ class Libgtop < Formula
         return 0;
       }
     C
-    gettext = Formula["gettext"]
-    glib = Formula["glib"]
-    flags = %W[
-      -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{include}/libgtop-2.0
-      -L#{gettext.opt_lib}
-      -L#{glib.opt_lib}
-      -L#{lib}
-      -lglib-2.0
-      -lgtop-2.0
-    ]
-    flags << "-lintl" if OS.mac?
+
+    flags = shell_output("pkgconf --cflags --libs libgtop-2.0").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end

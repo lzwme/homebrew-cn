@@ -40,7 +40,7 @@ class Afio < Formula
   test do
     path = testpath"test"
     path.write "homebrew"
-    pipe_output("#{bin}afio -o archive", "test\n")
+    pipe_output("#{bin}afio -o archive", "test\n", 0)
 
     system bin"afio", "-r", "archive"
     path.unlink

@@ -46,6 +46,6 @@ class AivenClient < Formula
 
   test do
     assert_match "aiven-client", shell_output("#{bin}avn --version")
-    assert_match "UserError: not authenticated", pipe_output("AIVEN_CONFIG_DIR=tmp #{bin}avn user info 2>&1")
+    assert_match "UserError: not authenticated", shell_output("AIVEN_CONFIG_DIR=tmp #{bin}avn user info 2>&1", 1)
   end
 end

@@ -5,7 +5,6 @@ Homebrew-homebrew-core/Formula/a/aamath.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aarch64-elf-binutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aarch64-elf-gcc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aarch64-elf-gdb.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/a/aardvark_shell_utils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/abcde.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/abcl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/abcm2ps.rb, Homebrew/homebrew-core, 1
@@ -18,7 +17,6 @@ Homebrew-homebrew-core/Formula/a/abnfgen.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/abook.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/abricate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/abseil.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/abuse.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/abyss.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/access.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ace.rb, Homebrew/homebrew-core, 1
@@ -1003,7 +1001,6 @@ Homebrew-homebrew-core/Formula/c/cmockery2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cmrc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cmu-pocketsphinx.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/cmu-sphinxbase.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cmuclmtk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cmus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cmusfm.rb, Homebrew/homebrew-core, 1
@@ -4027,7 +4024,7 @@ Homebrew-homebrew-core/Formula/m/mailcheck.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mailhog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mailpit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mailsy.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mailutils.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mailutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mairix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/make.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/makedepend.rb, Homebrew/homebrew-core, 0
@@ -7175,7 +7172,6 @@ Homebrew-homebrew-core/Formula/x/xmake.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xml-coreutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xml-security-c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xml-tooling-c.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/x/xml2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xmlcatmgr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xmlformat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xmlrpc-c.rb, Homebrew/homebrew-core, 0
@@ -9527,6 +9523,7 @@ Homebrew-homebrew-cask/Casks/font/font-g/font-gandhi-sans.rb, Homebrew/homebrew-
 Homebrew-homebrew-cask/Casks/font/font-g/font-gantari.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-gasoek-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-gayathri.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-g/font-gd-highwaygothicja.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-geist-mono-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-geist-mono.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-geist.rb, Homebrew/homebrew-cask, 1
@@ -11892,7 +11889,7 @@ Homebrew-homebrew-cask/Casks/k/komodo-edit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/komodo-ide.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/konica-minolta-bizhub-c750i-driver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/konica-minolta-bizhub-c759-c658-c368-c287-c3851-driver.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/k/koodo-reader.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/k/koodo-reader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kopiaui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kotlin-native.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kreya.rb, Homebrew/homebrew-cask, 0

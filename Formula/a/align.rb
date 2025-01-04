@@ -22,6 +22,6 @@ class Align < Formula
   end
 
   test do
-    assert_equal " 1  1\n12 12\n", pipe_output(bin/"align", "1 1\n12 12\n")
+    assert_equal " 1  1\n12 12\n", pipe_output(bin/"align", "1 1\n12 12\n", 0)
   end
 end

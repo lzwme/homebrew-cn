@@ -8,12 +8,13 @@ class Passenger < Formula
   head "https:github.comphusionpassenger.git", branch: "stable-6.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4c0ceae0f8545f444989001e830b37942ece639d10e4bf5006bd4072760ddaa6"
-    sha256 cellar: :any,                 arm64_sonoma:  "629d7d8414714171c58828e7b2a6d87634de1535b7135bbc47309a1179f8d024"
-    sha256 cellar: :any,                 arm64_ventura: "b88ca8ffc4cfb90a98387d9c842be7d8d9ee4ae6a7fa271e72dc876c8ca61803"
-    sha256 cellar: :any,                 sonoma:        "bfa03b50d2b1cebde00edc1c78d9ce4c624d7762b45655fde4474d3cf424dd09"
-    sha256 cellar: :any,                 ventura:       "3f4fdd17bccb32e4843205e1dafa11b62e17afb77c4571c9d5733835a48ad802"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5df766e6d116443a3b01f2d06681c15d6550dce4f759fe641cf0fc15bd0e7b24"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "ed961f7ab803475f7e25f93b5e5352d89b1f4c95d72cfb21a17227609fa1f983"
+    sha256 cellar: :any,                 arm64_sonoma:  "a7c121bef2ae0ad8946dda5fba8de2ac255dc454f1e81525b285b3e0acbf4555"
+    sha256 cellar: :any,                 arm64_ventura: "0a98b9723f58e9f3229eea6ef919d95f302d919758eed857fd998acee35f6c68"
+    sha256 cellar: :any,                 sonoma:        "c77fc41c83b077bcad91588e4b6c556bf757263ea9dee3b472df26616ba1834c"
+    sha256 cellar: :any,                 ventura:       "508334d834139aee830c243769d2c6f4dafea64bec82e3dbc62816c91ac8b954"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "670207165133288dea2910b5f21617834bb12dc668d9954025456776fc519ede"
   end
 
   depends_on "httpd" => :build # to build the apache2 module
@@ -21,7 +22,6 @@ class Passenger < Formula
   depends_on "apr"
   depends_on "apr-util"
   depends_on "openssl@3"
-  depends_on "pcre"
   depends_on "pcre2"
 
   uses_from_macos "xz" => :build

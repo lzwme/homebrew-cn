@@ -18,7 +18,7 @@ class Libgee < Formula
   end
 
   depends_on "gobject-introspection" => :build
-  depends_on "pkgconf" => :build
+  depends_on "pkgconf" => [:build, :test]
   depends_on "vala" => :build
 
   depends_on "glib"
@@ -53,21 +53,8 @@ class Libgee < Formula
         return 0;
       }
     C
-    gettext = Formula["gettext"]
-    glib = Formula["glib"]
-    flags = %W[
-      -I#{gettext.opt_include}
-      -I#{glib.opt_include}/glib-2.0
-      -I#{glib.opt_lib}/glib-2.0/include
-      -I#{include}/gee-0.8
-      -L#{gettext.opt_lib}
-      -L#{glib.opt_lib}
-      -L#{lib}
-      -lgee-0.8
-      -lglib-2.0
-      -lgobject-2.0
-    ]
-    flags << "-lintl" if OS.mac?
+
+    flags = shell_output("pkgconf --cflags --libs gee-0.8").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"
   end

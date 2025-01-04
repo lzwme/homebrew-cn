@@ -6,15 +6,22 @@ class StripeCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e2b70d7817c81ce22adcaad192ed6604b997f9d8ab21446a0f17465ad274092"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5418784b7654f5a525d9fb553ccf720eb2d84885275cdd9877eeeeca6ed7070"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a0fe9e91fbdb1ac809e20256379a37874565894f738a6c37205aad2ae1491062"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5613b56cfd1f00a68d6a9391ebf850c28b85e158fba3330a39aa107191a2a687"
-    sha256 cellar: :any_skip_relocation, ventura:       "e278159ea15492ca9c34581145a7cc8e9cedab87b0fc9b7ddcdd05c8e067a79c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "386da982cc36d2e74cd01360cd2cef3a6822fac30155099f9672932ac25063e2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db45f35031c0434384c49a441eea5eb2c875449765143c1ef7a2b00f2d0ca889"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef7eb2ab99f20143e7cefcfa35496b32e539dfef3e208c016a5dd672dfb9ae3a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3282fdfcb7c3793921945629297fb8ed8f36524a4f02459d6f16bf198619a42e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c48b5804cefe6fc738fec1f238649d6d997e6808f4efafdfeb89b1d118053994"
+    sha256 cellar: :any_skip_relocation, ventura:       "a5dce5c6c0f706c79402ac84c6ec8d5f227b0f455ef683ae070c6b50d53253ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dedb25f4ffee54e0af70e98624e1996d04e0f6aab7c7f463734fdccdb15756fd"
   end
 
   depends_on "go" => :build
+
+  # fish completion support patch, upstream pr ref, https:github.comstripestripe-clipull1282
+  patch do
+    url "https:github.comstripestripe-clicommitef36be45f56821a33ac175bb4f483f08cca3f458.patch?full_index=1"
+    sha256 "e64d6ab6ed1b93749b8d65a429b0132063fb86520960b7d0c87fa6f7f9221252"
+  end
 
   def install
     # See configuration in `.goreleaser` directory
@@ -22,17 +29,14 @@ class StripeCli < Formula
     ldflags = %W[-s -w -X github.comstripestripe-clipkgversion.Version=#{version}]
     system "go", "build", *std_go_args(ldflags:, output: bin"stripe"), "cmdstripemain.go"
 
-    # Doesn't work with `generate_completions_from_executable`
-    # Taken from `.goreleaser` directory
-    system bin"stripe", "completion", "--shell", "bash"
-    system bin"stripe", "completion", "--shell", "zsh"
-    bash_completion.install "stripe-completion.bash"
-    zsh_completion.install "stripe-completion.zsh" => "_stripe"
+    generate_completions_from_executable(bin"stripe", "completion", "--write-to-stdout", "--shell")
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}stripe version")
     assert_match "secret or restricted key",
                  shell_output("#{bin}stripe --api-key=not_real_key get ch_1EGYgUByst5pquEtjb0EkYha", 1)
+    assert_match "-F __start_stripe",
+                 shell_output("bash -c 'source #{bash_completion}stripe && complete -p stripe'")
   end
 end
