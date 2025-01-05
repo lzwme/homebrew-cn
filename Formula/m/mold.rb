@@ -4,15 +4,16 @@ class Mold < Formula
   url "https:github.comrui314moldarchiverefstagsv2.35.1.tar.gz"
   sha256 "912b90afe7fde03e53db08d85a62c7b03a57417e54afc72c08e2fa07cab421ff"
   license "MIT"
+  revision 1
   head "https:github.comrui314mold.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f59f3217206d50393555975638c9667e3459c49779fb2fec2cdef6294f38b4d8"
-    sha256 cellar: :any,                 arm64_sonoma:  "0f2ed8d4a6d4028e1b975be258100dd7bd5d21564bb66f39e46b384425a9bc69"
-    sha256 cellar: :any,                 arm64_ventura: "393e0d297e7aecf06df3d36ea001dd5d5b8fe94462b6f717afdc0a2ccff2ee66"
-    sha256 cellar: :any,                 sonoma:        "85729bf82cd87573df28173c9c90b93d5566f70383db382aa13c4a239d360176"
-    sha256 cellar: :any,                 ventura:       "d71f89301d9add1e3a5603d8bd0d03c694abd9c2089a8c592a50a206f3418f47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "109be12ec39c94994152396d6ef47faaaa14109b9cf81f817beaa6dd63497173"
+    sha256 cellar: :any,                 arm64_sequoia: "5aaf23f859206a1e26f3439eaa9a3fd6d54a6bb435e6e363efc91424c1bbb08b"
+    sha256 cellar: :any,                 arm64_sonoma:  "7c5a3389cbf29746e6f5e390a23323c2138b085058c33a9740544d932afc7040"
+    sha256 cellar: :any,                 arm64_ventura: "f504d25dfe9da54bb2556b999ff4d2b536ed957e6fab6f126d6b030f7d25ef00"
+    sha256 cellar: :any,                 sonoma:        "914ec638ef8f3f04d5c541c60a3bea75542ad9e965a93f6d76a33bb0d6e1e20a"
+    sha256 cellar: :any,                 ventura:       "554a05b52229527ed8defbf2c84e1bedf94db8988b3afc5dd414318084b1d42f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "def1a7629afea11098114ad7164a9f00e0712232ca082791f3f68aa1f4242382"
   end
 
   depends_on "cmake" => :build

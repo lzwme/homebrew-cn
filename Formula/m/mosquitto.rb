@@ -36,12 +36,12 @@ class Mosquitto < Formula
 
   def install
     args = %W[
+      -DCMAKE_INSTALL_RPATH=#{rpath}
       -DWITH_PLUGINS=OFF
       -DWITH_WEBSOCKETS=ON
-      -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
 
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
@@ -65,11 +65,9 @@ class Mosquitto < Formula
   end
 
   test do
-    quiet_system sbin"mosquitto", "-h"
-    assert_equal 3, $CHILD_STATUS.exitstatus
-    quiet_system bin"mosquitto_ctrl", "dynsec", "help"
-    assert_equal 0, $CHILD_STATUS.exitstatus
-    quiet_system bin"mosquitto_passwd", "-c", "-b", "tmpmosquitto.pass", "foo", "bar"
-    assert_equal 0, $CHILD_STATUS.exitstatus
+    assert_match "Usage: mosquitto ", shell_output("#{sbin}mosquitto -h", 3)
+    assert_match "Dynamic Security module", shell_output("#{bin}mosquitto_ctrl dynsec help")
+    system bin"mosquitto_passwd", "-c", "-b", testpath"mosquitto.pass", "foo", "bar"
+    assert_match(^foo:, (testpath"mosquitto.pass").read)
   end
 end

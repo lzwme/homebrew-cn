@@ -1,7 +1,6 @@
 class Fourstore < Formula
   desc "Efficient, stable RDF database"
   homepage "https:github.com4store4store"
-  # NOTE: Try building without `avahi` at version bump.
   url "https:github.com4store4storearchiverefstagsv1.1.7.tar.gz"
   sha256 "e511f1adb094e2506545d4773a6005a462f6b4532731e91f1115b038ab25a8f0"
   license "GPL-3.0-or-later"

@@ -18,14 +18,13 @@ class OpenclIcdLoader < Formula
   keg_only :shadowed_by_macos, "macOS provides OpenCL.framework"
 
   depends_on "cmake" => :build
-  depends_on "ninja" => :build
   depends_on "opencl-headers" => [:build, :test]
 
   conflicts_with "ocl-icd", because: "both install `liblibOpenCL.so` library"
 
   def install
     inreplace "loadericd_platform.h", "\"etc", "\"#{etc}"
-    system "cmake", "-S", ".", "-B", "build", "-G", "Ninja", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     pkgshare.install "testloader_test"

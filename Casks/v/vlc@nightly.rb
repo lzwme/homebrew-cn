@@ -1,27 +1,24 @@
 cask "vlc@nightly" do
   arch arm: "arm64", intel: "x86_64"
-  livecheck_arch = on_arch_conditional arm: "-arm64", intel: "-intel64"
+  livecheck_arch = on_arch_conditional arm: "arm64", intel: "intel64"
 
   on_arm do
-    version "4.0.0,20250103-0413,dc430c65"
-    sha256 "c8d9b580b94bc7622b3810a55b0dd27d60153364c32809b7cbbc61ba9f707795"
-
-    url "https:artifacts.videolan.orgvlcnightly-macos-#{arch}#{version.csv.second}vlc-#{version.csv.first}-dev-arm64-#{version.csv.third}.dmg"
+    version "4.0.0,20250104-0413,581e31de"
+    sha256 "71eb62850813393425f978546087783e671bf98861423fe5eefd6a72cd254b05"
   end
   on_intel do
-    version "4.0.0,20250103-0411,dc430c65"
-    sha256 "87a608d82e837121ba0c770ca02f5977fc716a2402c743a6b107904b1ef18848"
-
-    url "https:artifacts.videolan.orgvlcnightly-macos-#{arch}#{version.csv.second}vlc-#{version.csv.first}-dev-intel64-#{version.csv.third}.dmg"
+    version "4.0.0,20250104-0415,581e31de"
+    sha256 "831bd704a2d51b737c4b29389d729cef7be978d7413e0b18dfe27593d309001c"
   end
 
+  url "https:artifacts.videolan.orgvlcnightly-macos-#{arch}#{version.csv.second}vlc-#{version.csv.first}-dev-#{livecheck_arch}-#{version.csv.third}.dmg"
   name "VLC media player"
   desc "Open-source cross-platform multimedia player"
   homepage "https:www.videolan.orgvlc"
 
   livecheck do
     url "https:artifacts.videolan.orgvlcnightly-macos-#{arch}"
-    regex(href=.*?vlc[._-]v?(\d+(?:\.\d+)+)-dev#{livecheck_arch}-(\h+)\.dmgi)
+    regex(href=.*?vlc[._-]v?(\d+(?:\.\d+)+)[._-]dev[._-]#{livecheck_arch}[._-](\h+)\.dmgi)
     strategy :page_match do |page, regex|
       directory = page.scan(%r{href=["']?v?(\d+(?:[.-]\d+)+)?["' >]}i)
                       .flatten

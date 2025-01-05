@@ -1,18 +1,18 @@
 class SingBox < Formula
   desc "Universal proxy platform"
   homepage "https:sing-box.sagernet.org"
-  url "https:github.comSagerNetsing-boxarchiverefstagsv1.10.5.tar.gz"
-  sha256 "ca0385b45d160c2c2a1d0e09665f4f04caac27cb3dd9d6132173316dfd873b75"
+  url "https:github.comSagerNetsing-boxarchiverefstagsv1.10.6.tar.gz"
+  sha256 "bb3ca59c848f1509d0e183c54c91716993ce77ab0c9c48a0de0bcd4cc1f0e021"
   license "GPL-3.0-or-later"
   head "https:github.comSagerNetsing-box.git", branch: "dev-next"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "877dffd484ce368a8170ced3b60a24e4f8b61ee9d21343516f34b5d84c7f13ab"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70319728122cab3c6358aea05407f4eec335c473106fbb3f81f69269df159843"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "264f810d0fff2ca59dc108e9ebb323470dfd6f25b99ad513d0ebfe4b6f990426"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9b4ec738d49389b9c95cf45f4f5b4674c721c92adf5a91166d8591064c3ac92c"
-    sha256 cellar: :any_skip_relocation, ventura:       "4848bd3876145772f97e888df53ed04dc1fe62567195a666d1ea78c920b03b4e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e747a95bd607c317513435cd4fdbc802a9abe9f3a5aa58886b4abf3e5778de2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3031ded03b120bccf5bad5b1f6bf6aa0e93783a894582f6ba4c5a80a17755a51"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c006633cbf28d9a6ca4e9b470b213b46c549980052898599ffb23db0b9208951"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5192357b96823272f7bb78d2e023f0ecf24f9bfd9729f3f2dd61d0d8c4a21290"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8cd12d0d77f18121779e4ec1b152aa46ed44eb8841a3ac68a8fd0677d30e7174"
+    sha256 cellar: :any_skip_relocation, ventura:       "af722b059b98d36bb40b1e5ce59a6c69001431a65da2a0b95510dc9bd03e219d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58ae4051adc87b7d759beddecea9741c0b83ef0fbef52fa61e4c3c7d89b15a97"
   end
 
   depends_on "go" => :build

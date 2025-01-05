@@ -1,17 +1,17 @@
 class Xmq < Formula
   desc "Tool and language to work with xmlhtmljson"
   homepage "https:libxmq.org"
-  url "https:github.comlibxmqxmqarchiverefstags3.1.3.tar.gz"
-  sha256 "f58dc5a1d3c523e19a9db24a7d14dd96e5307425950b0fefeae94d3c2ccc7339"
+  url "https:github.comlibxmqxmqarchiverefstags3.2.0.tar.gz"
+  sha256 "d49ea8e3d646fe2c9fe7c50ecab6943f67c55c6b589af469af99f1220521b9d8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8907fab8d5f5257f80a3c66b4d10d206c24ff07d0527fc1b0b7af05e224bfcdb"
-    sha256 cellar: :any,                 arm64_sonoma:  "0bcabe5e4befad3b0c2916cc5ecd190cbc2880468b1feb02947e7a172e5b4c12"
-    sha256 cellar: :any,                 arm64_ventura: "d71bb6cc4ea57d9b25e0e6cac6344713aa93b562884d79ebeb47fd658c10d8fc"
-    sha256 cellar: :any,                 sonoma:        "a82070e791e6f60e40997187fbf59622adf08b8775c0892de66877423e6817fa"
-    sha256 cellar: :any,                 ventura:       "d2028f9304cac6f52a5c5f996f6fbe688d922602692fa1f52394b57a68a90138"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06d30ca868a68263d1d565c2a5ab71dafa9e606dfbd762629507033ee2685ad1"
+    sha256 cellar: :any,                 arm64_sequoia: "531a06c7277af3ae405982945abf9d22484ba7d5c18948aeb6d7d9a2fe5878cf"
+    sha256 cellar: :any,                 arm64_sonoma:  "6911f9d2d110060c85f876357d13be734deb187b85e50c9060512a9143054294"
+    sha256 cellar: :any,                 arm64_ventura: "1637573624991929180856259783d5b9eb665b8be846d4c1de0d4d8cf7b37134"
+    sha256 cellar: :any,                 sonoma:        "21a5a573b81f4604c03afbfdd0a2598348f8d568c3999c5c9ff54d42380490ae"
+    sha256 cellar: :any,                 ventura:       "ad89b4482781b7b7f7999feca0c89980c790eba04360344e38986ad4fbf7b241"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e880c815299b3736864aa482ffb98940ca9465e54266e4537ec74e6e637264f"
   end
 
   head do
@@ -32,7 +32,7 @@ class Xmq < Formula
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
     system ".configure", "--disable-silent-rules", *std_configure_args
     system "make"
-    system "make", "install", "DESTDIR=#{prefix}"
+    system "make", "install"
   end
 
   test do

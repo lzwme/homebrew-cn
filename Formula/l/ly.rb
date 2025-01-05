@@ -1,14 +1,12 @@
 class Ly < Formula
   desc "Parse, manipulate or create documents in LilyPond format"
   homepage "https:github.comfrescobaldipython-ly"
-  url "https:files.pythonhosted.orgpackages9bede277509bb9f9376efe391f2f5a27da9840366d12a62bef30f44e5a24e0d9python-ly-0.9.7.tar.gz"
-  sha256 "d4d2b68eb0ef8073200154247cc9bd91ed7fb2671ac966ef3d2853281c15d7a8"
+  url "https:files.pythonhosted.orgpackagesb625d82a762b4c8f068303259f9555fe6f8725f930318a64679a6bb9ffdf21c8python_ly-0.9.9.tar.gz"
+  sha256 "cf1780fe53d367efc1f2642cb77c57246106ea7517f8c2d1126f0a36ee26567a"
   license "GPL-2.0-or-later"
-  revision 1
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, all: "24173bdbfe1917ec3bef8bfb63419436c863e15729f8d128e54ed71af4cd2f21"
+    sha256 cellar: :any_skip_relocation, all: "9a28dcdb3270423db13b9b8eb52ef1b65beffa23cd684672e6ebfa8b992cd413"
   end
 
   depends_on "python@3.13"

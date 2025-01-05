@@ -5278,6 +5278,7 @@ Homebrew-homebrew-core/Formula/p/prowler.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proxify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proxsuite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proxychains-ng.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/proxyfor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proxygen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proxytunnel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/prqlc.rb, Homebrew/homebrew-core, 1
@@ -8319,7 +8320,6 @@ Homebrew-homebrew-cask/Casks/d/dejalu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/deltachat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/deltawalker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/deluge.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/d/dendroscope.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/denemo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/descript.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/deskpad.rb, Homebrew/homebrew-cask, 1
@@ -12155,7 +12155,6 @@ Homebrew-homebrew-cask/Casks/m/malwarebytes.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mambaforge.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mame.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mamp.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/mana-security.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/manico.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/manictime.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/manila.rb, Homebrew/homebrew-cask, 1
@@ -12339,7 +12338,6 @@ Homebrew-homebrew-cask/Casks/m/mints.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mipony.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/miro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mirrordisplays.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/mirrorop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mission-control-plus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/missive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mist.rb, Homebrew/homebrew-cask, 1
@@ -14343,7 +14341,6 @@ Homebrew-homebrew-cask/Casks/v/vnote.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/voicepeak.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/voikkospellservice.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/volanta.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/v/volley.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/volt.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/volta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/voodoopad.rb, Homebrew/homebrew-cask, 0

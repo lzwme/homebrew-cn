@@ -1,22 +1,18 @@
 class Xurls < Formula
   desc "Extract urls from text"
   homepage "https:github.commvdanxurls"
-  url "https:github.commvdanxurlsarchiverefstagsv2.5.0.tar.gz"
-  sha256 "552779a765de29e51ff01fe6c85a7d0389faae1b80d354332e7c69db232ee4ad"
+  url "https:github.commvdanxurlsarchiverefstagsv2.6.0.tar.gz"
+  sha256 "476d92a0416fee965f928180a950691b85dbb8d11efc3dc7f795ecc106c76075"
   license "BSD-3-Clause"
   head "https:github.commvdanxurls.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2e807c057433c0ed36d7143bd8996cf6e2f45d63b34fac89b2c8958928e3122f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e1bff20d5c71c28fd1931855730748b6b45accd8282d399fd2d854db05d98830"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c450839ae17f188495de308aba6e40980a624c456c0da546879685f527712529"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c450839ae17f188495de308aba6e40980a624c456c0da546879685f527712529"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "c450839ae17f188495de308aba6e40980a624c456c0da546879685f527712529"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8df1a2861505f8499e8d8644c3c0a61bf1b32ef2acfb74e2a312cda35c7aa688"
-    sha256 cellar: :any_skip_relocation, ventura:        "dc19854a4968ff35b25301605dee1a83e2efbc210a6b5029b3f1d28b93a8edb8"
-    sha256 cellar: :any_skip_relocation, monterey:       "dc19854a4968ff35b25301605dee1a83e2efbc210a6b5029b3f1d28b93a8edb8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "dc19854a4968ff35b25301605dee1a83e2efbc210a6b5029b3f1d28b93a8edb8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "09b207fe83c1fbf801cc3270b27234ea6beac64e243ee1d0209292aa54723f1e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5b5a4fca9fccb9162ae07c8d883401d049a1823faf90766628480cebba4aa1e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5b5a4fca9fccb9162ae07c8d883401d049a1823faf90766628480cebba4aa1e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b5b5a4fca9fccb9162ae07c8d883401d049a1823faf90766628480cebba4aa1e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "984597d394db29ff5f590173452dfa7333a90aec571508c292f5d7d2cc322edf"
+    sha256 cellar: :any_skip_relocation, ventura:       "984597d394db29ff5f590173452dfa7333a90aec571508c292f5d7d2cc322edf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff7c2bd2e39eda3aa3d5fcf116a62ce740d594e4408a3166c9f6c66157ace5db"
   end
 
   depends_on "go" => :build

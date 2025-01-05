@@ -1,8 +1,8 @@
 class Fswatch < Formula
   desc "Monitor a directory for changes and run a shell command"
   homepage "https:github.comemcrisostomofswatch"
-  url "https:github.comemcrisostomofswatchreleasesdownload1.17.1fswatch-1.17.1.tar.gz"
-  sha256 "c38e341c567f5f16bfa64b72fc48bba5e93873d8572522e670e6f320bbc2122f"
+  url "https:github.comemcrisostomofswatchreleasesdownload1.18.0fswatch-1.18.0.tar.gz"
+  sha256 "aa7454d1fc4e8f5eb0e9bd4711473c8c7c2b257e2fdea62527e86f7afaef091b"
   license all_of: ["GPL-3.0-or-later", "Apache-2.0"]
 
   livecheck do
@@ -11,24 +11,16 @@ class Fswatch < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia:  "6ebeea97a2aa8390f8eeffd811f0b9b86f4e231e36345df4a0a4c06c148d50d3"
-    sha256 cellar: :any, arm64_sonoma:   "0a46b04e0ff340c1de3f55e46cb7785cd12de3bba2235d463e6d462672a2a102"
-    sha256 cellar: :any, arm64_ventura:  "96cea06f4891e9af44abcd6f30a250c8efebe660104893b7fd80c8f22b2ab569"
-    sha256 cellar: :any, arm64_monterey: "b7f5facb15c82b5dc9eb94e8cfaa4857e562609be24fdd716051c35bd2e85e8b"
-    sha256 cellar: :any, arm64_big_sur:  "ec08b3bf8f659a864d0c54f022939b45ea647c25769a8ab908f60f28ffbd803c"
-    sha256 cellar: :any, sonoma:         "46597af58009af46050cb5885477777234020038ce3554aaad42c4e5bb337e0d"
-    sha256 cellar: :any, ventura:        "570223c980f22c296e4d6fa6e6058e778bb0e74d0dd9745ec49ec3940aeb5863"
-    sha256 cellar: :any, monterey:       "6c57d2ea9ff9e425069580bba25c74f5890f454b807f4a94810271909d47283e"
-    sha256 cellar: :any, big_sur:        "1da6e45f4051477e02acbf2f3d13a7917b8a80a38ca35d6ac8cbaff780df4651"
-    sha256 cellar: :any, catalina:       "c97ee3973b847257ad99f6ffff3c6ba3d33dbf2a333e0bbe289832b7e490f051"
-    sha256               x86_64_linux:   "60e3f628f00ace185e22523a1850f0521184e7477263ef69a1a0fcebd8b0f077"
+    sha256 cellar: :any, arm64_sequoia: "27c60ec1ec86f1f591148d396552f3e646425ba7d6a6e3dab7bb23e585578032"
+    sha256 cellar: :any, arm64_sonoma:  "2ac3fa6884f326b616931d1faab671464e3a3c7b523fa8725b3975d4beeb581f"
+    sha256 cellar: :any, arm64_ventura: "f83c4bf9bb82ff6760a98152f4068a1b8c72b457e1d220f5d2d1a115bc06e67e"
+    sha256 cellar: :any, sonoma:        "f5678fe7400a8aef183cb4754436c01c666cc1b401b2ba5d06f0404de4ca0062"
+    sha256 cellar: :any, ventura:       "b14d4ed4ab4aa2b4e8a18ce641d9d7b8f536a467cce6036ad52c84c660bd926d"
+    sha256               x86_64_linux:  "33e6d0a5c4ca3534b2e14c5f4942cc77d696978be4ed41af47d1b2848bacad37"
   end
 
   def install
-    ENV.cxx11
-    system ".configure", "--prefix=#{prefix}",
-                          "--disable-dependency-tracking",
-                          "--disable-silent-rules"
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 

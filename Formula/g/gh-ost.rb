@@ -6,6 +6,11 @@ class GhOst < Formula
   license "MIT"
   head "https:github.comgithubgh-ost.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "169824cb9a89bebbe882099f1c7af4e7f79c43c7b97d616779af7414d7a4fe32"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "134fe24c116fbfb50514228339a9f3713dabef542c136648196e42a123e954ab"

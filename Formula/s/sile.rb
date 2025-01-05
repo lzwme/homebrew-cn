@@ -1,28 +1,17 @@
 class Sile < Formula
   desc "Modern typesetting system inspired by TeX"
   homepage "https:sile-typesetter.org"
+  url "https:github.comsile-typesettersilereleasesdownloadv0.15.9sile-0.15.9.tar.zst"
+  sha256 "fbda59503b333d82661601db647d1a2ad67aa8b7098e1ef78c6d8216844ac567"
   license "MIT"
-  revision 1
-
-  stable do
-    url "https:github.comsile-typesettersilereleasesdownloadv0.15.8sile-0.15.8.tar.zst"
-    sha256 "64c17abafd5b1ef30419a81b000998870c1b081b6372d55bc31df9c3b83f0f6a"
-
-    # Needed to workaround upstream source dist snafu, see configure phase
-    on_macos do
-      depends_on "autoconf" => :build
-      depends_on "automake" => :build
-      depends_on "libtool" => :build
-    end
-  end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "760dcc9aead85503c481ad2c62bc69e81569258a5188ef79115df15fa0359982"
-    sha256 cellar: :any,                 arm64_sonoma:  "adf6937d8e83cb00293fe7898a042f43461918cd08a87145fc1623bf6c68ef9c"
-    sha256 cellar: :any,                 arm64_ventura: "30a968d237af1c8b46ea79578c6b10ff310ea51fa17b32f5b440d225837f70c0"
-    sha256 cellar: :any,                 sonoma:        "87e0fa9b81ff1c67d684d0fcb1c9fc1dafda1b72156928841b9e6f6c5a892b71"
-    sha256 cellar: :any,                 ventura:       "501370fa5e9e8222f9e7fd549f4b8b468dec0f06f2e32e11c13ece959aa7cb3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e9ba5802d895353c1e6de168a4668d0893bb908d32272cb9fbe544e6a699859"
+    sha256 cellar: :any,                 arm64_sequoia: "9bdd2cd36903daa4b456bff978de83e2053867b0c187e5b163920fac341f7f25"
+    sha256 cellar: :any,                 arm64_sonoma:  "ce23e8b0ef5eb85d0c56e51223391ddfc3dcaeb5c271f97ee407537c455535e8"
+    sha256 cellar: :any,                 arm64_ventura: "e0b404b8ed9e486e26ad6d23e612bbb1a3c1cdf2cad2eb01f0e342194fc9d8e1"
+    sha256 cellar: :any,                 sonoma:        "22e42228910cf28c6369830370ad692651d4ee1c18e94c38272aca96cc6653e1"
+    sha256 cellar: :any,                 ventura:       "575b248e7130192e728a1191be84a9f7960d110f81026c4eefa321dd38975893"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e99d6d665c1caeed954d772dee426485bbb13c5225cd2b6a97071ae8eb16f2f9"
   end
 
   head do
@@ -205,14 +194,6 @@ class Sile < Formula
 
     system ".bootstrap.sh" if build.head?
     system ".configure", *configure_args, *std_configure_args
-    # Work around platform detection results having been baked into the
-    # source dist (generated on Linux) with an extra configure cycle to
-    # regenerate aminclude.m4 *after* having actually run the platform
-    # detection on the target platform and found Darwin.
-    if build.stable? && OS.mac?
-      system "autoreconf", "-fiv"
-      system ".configure", *configure_args, *std_configure_args
-    end
     system "make"
     system "make", "install"
   end

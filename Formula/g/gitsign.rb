@@ -1,17 +1,17 @@
 class Gitsign < Formula
   desc "Keyless Git signing using Sigstore"
   homepage "https:github.comsigstoregitsign"
-  url "https:github.comsigstoregitsignarchiverefstagsv0.11.0.tar.gz"
-  sha256 "5c3d6aaf54cc482638756d32f8a201f65ddb88885368e29a9a2ebd20c9c5f00b"
+  url "https:github.comsigstoregitsignarchiverefstagsv0.12.0.tar.gz"
+  sha256 "80a36439bbb01f4282792cd75257b52689e7eee9b0c6b9a635dfbff2958c9207"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab494ff5ee1a8285de439b716caa7583921d7306f31ea728363897b8d64027f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab494ff5ee1a8285de439b716caa7583921d7306f31ea728363897b8d64027f4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ab494ff5ee1a8285de439b716caa7583921d7306f31ea728363897b8d64027f4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "556b44958ae647b69db84b6fcc0e1585b9e208efd60cd04a72e6048f3114c9e5"
-    sha256 cellar: :any_skip_relocation, ventura:       "ff7316b17434f076950a74a5f55fbbec46b31b6c7dd0081a596bff5be33729d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a9b208e65656564acdc4651a3a3f78dc5d52accee7bbc2efd92c7fc99c86579"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21277de84b9ee9e32baf5f5317c924ba9c93184589e841adf750780b6372c9a3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "21277de84b9ee9e32baf5f5317c924ba9c93184589e841adf750780b6372c9a3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "21277de84b9ee9e32baf5f5317c924ba9c93184589e841adf750780b6372c9a3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "77fc1aade030292552a5d27d185236a0575960f7cd13aa6dde0a0417ec2a90d3"
+    sha256 cellar: :any_skip_relocation, ventura:       "e40818033b724c131c0eb4b5d49a58659144996a0c6948bdffe81e4dc454db29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1b717b8857195599c64f22e1d82a866ef9fc851730ed1a65a6b4fe8343beb71"
   end
 
   depends_on "go" => :build

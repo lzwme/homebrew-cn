@@ -188,7 +188,7 @@ class PythonAT312 < Formula
 
     # Disabled modules - provided in separate formulae
     args += %w[
-      py_cv_module__tkinter=disabled
+      py_cv_module__tkinter=na
     ]
 
     system ".configure", *args

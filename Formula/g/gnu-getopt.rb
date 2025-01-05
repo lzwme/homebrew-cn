@@ -46,7 +46,7 @@ class GnuGetopt < Formula
   keg_only :shadowed_by_macos, "macOS provides BSD getopt"
 
   on_linux do
-    keg_only "conflicts with util-linux"
+    keg_only "it conflicts with util-linux"
   end
 
   def install
@@ -63,9 +63,9 @@ class GnuGetopt < Formula
   end
 
   test do
-    system bin"getopt", "-o", "--test"
+    output = shell_output("#{bin}getopt --longoptions foo --options ab:c test -b bar --foo baz")
+    assert_equal " -b 'bar' --foo -- 'test' 'baz'\n", output
     # Check that getopt is enhanced
-    quiet_system bin"getopt", "-T"
-    assert_equal 4, $CHILD_STATUS.exitstatus
+    assert_empty shell_output("#{bin}getopt --test", 4)
   end
 end

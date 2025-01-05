@@ -18,17 +18,16 @@ class UtilMacros < Formula
 
   def install
     args = %W[
-      --prefix=#{prefix}
+      --disable-silent-rules
       --sysconfdir=#{etc}
       --localstatedir=#{var}
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 
   test do
-    system "pkg-config", "--exists", "xorg-macros"
-    assert_equal 0, $CHILD_STATUS.exitstatus
+    assert_equal version.to_s, shell_output("pkgconf --modversion xorg-macros").chomp
   end
 end

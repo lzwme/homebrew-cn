@@ -43,22 +43,23 @@ class Broot < Formula
   end
 
   test do
-    return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
-
     output = shell_output("#{bin}broot --help")
     assert_match "lets you explore file hierarchies with a tree-like view", output
-
     assert_match version.to_s, shell_output("#{bin}broot --version")
 
     require "pty"
     require "ioconsole"
-    PTY.spawn(bin"broot", "-c", ":print_tree", "--color", "no", "--outcmd", testpath"output.txt",
-                err: :out) do |r, w, pid|
+    PTY.spawn(bin"broot", "-c", ":print_tree", "--color", "no", "--outcmd", testpath"output.txt") do |r, w, pid|
       r.winsize = [20, 80] # broot dependency terminal requires width > 2
       w.write "n\r"
-      assert_match "New Configuration files written in", r.read
-      Process.wait(pid)
+      output = ""
+      begin
+        r.each { |line| output += line }
+      rescue Errno::EIO
+        # GNULinux raises EIO when read is done on closed pty
+      end
+      assert_match "New Configuration files written in", output
+      assert_predicate Process::Status.wait(pid), :success?
     end
-    assert_equal 0, $CHILD_STATUS.exitstatus
   end
 end

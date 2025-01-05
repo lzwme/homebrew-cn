@@ -3,38 +3,26 @@ class YouGet < Formula
 
   desc "Dumb downloader that scrapes the web"
   homepage "https:you-get.org"
-  url "https:files.pythonhosted.orgpackages42f3c4bdf49e31ac1c6bc477711a4ec6a276ae0745a3b8fb143c161bf32e8b49you_get-0.4.1730.tar.gz"
-  sha256 "65457b7b8893f08c082532eb34998dc477f533d32568be3bb34e592bdcb44f88"
+  url "https:files.pythonhosted.orgpackages2d85f4a22b842bc0e0f57dc56ae54266dbc451547cee90bae9480131100ad92ayou_get-0.4.1743.tar.gz"
+  sha256 "cbc1250d577246ec9d422cef113882844c80d8729f32d3183a5fa76648a20741"
   license "MIT"
   head "https:github.comsoimortyou-get.git", branch: "develop"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a19a25f252fdf9e745696c92b25e2f94a68c35a14bb5abb5d9c9173bbd2b88f9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b69e1ed11567beb060af0dc1ca6b866a50d0852c7462cc5171a59946183bfeb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9dbeb9ccf0eeccdbd16b292d3845af8870d04a98580abe63218e6719fd8e9b0b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fd18933cb33bd106f69dd548b93ed663ce3cb408eab047232fca5d6b8d46fb38"
-    sha256 cellar: :any_skip_relocation, ventura:       "4b3e140c94f095b8fc2bc91382a75ca76f639bbef56c9be89f5f70b31e603138"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "307a7aa5cf2a671b668a8129406d209ad209872c16bd511c4ba969a8fc54a0c7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "314517f0c46140c29745902c95fbf80a60afb055de554b4ffe5403d767d4d883"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50cd9cd65f4ca5491d85a72c8c28c38af2d9c5fb5929b34ca60644c69e9709fe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3aa9c9a1fd96d1206f118671ecb8c96b8099d5f8b41687bcebdf926471e274f8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d6b37d0b79da427ea6c53fe8bdd7f1ec8ed1c4fee6f5a150ebd2ebfc753cadfd"
+    sha256 cellar: :any_skip_relocation, ventura:       "1a424c4a6418d15823742c255050cd4920dddc672e356619245da96a0cd3be4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b0837e95bc4aab5d8797a4f11f9de319bc1e132115151f5f0e5fcbcbd272b49"
   end
 
   depends_on "python@3.13"
   depends_on "rtmpdump"
 
   resource "dukpy" do
-    url "https:files.pythonhosted.orgpackagesd10b402194ebcd92bb5a743106c0f4af8cf6fc75bcfeb441b90290accb197745dukpy-0.4.0.tar.gz"
-    sha256 "677ec7102d1c1c511f7ef918078e8099778dbcea7caf3d6a2a2a72f72aa2d135"
-  end
-
-  resource "mutf8" do
-    url "https:files.pythonhosted.orgpackagesca313c57313757b3a47dcf32d2a9bad55d913b797efc8814db31bed8a7142396mutf8-1.0.6.tar.gz"
-    sha256 "1bbbefb67c2e5a57104750bb04b0912200b57b2fa9841be245279e83859cb346"
-  end
-
-  # Fix for compatibility with YouTube html change
-  patch do
-    url "https:github.comsoimortyou-getcommit1c9c0f3ed1b8466239fa8656523658ccce8bb489.patch?full_index=1"
-    sha256 "3f00c40cde45e2e05a0a2704781e6618667fe71227dd6c42edd6ff8eb5a81e3a"
+    url "https:files.pythonhosted.orgpackagesddfe8cef39f269aed53e940c238bf9ceb3ca0f80d7f5be6df2c00a84d87ac5d8dukpy-0.5.0.tar.gz"
+    sha256 "079fe2d65ac5e24df56806c6b4e1a26f92bb7f13dc764f4fb230a6746744c1ad"
   end
 
   def install

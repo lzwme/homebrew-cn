@@ -1,8 +1,8 @@
 class Mimalloc < Formula
   desc "Compact general purpose allocator"
   homepage "https:github.commicrosoftmimalloc"
-  url "https:github.commicrosoftmimallocarchiverefstagsv2.1.7.tar.gz"
-  sha256 "0eed39319f139afde8515010ff59baf24de9e47ea316a315398e8027d198202d"
+  url "https:github.commicrosoftmimallocarchiverefstagsv3.0.1.tar.gz"
+  sha256 "6a514ae31254b43e06e2a89fe1cbc9c447fdbf26edc6f794f3eb722f36e28261"
   license "MIT"
 
   livecheck do
@@ -11,14 +11,12 @@ class Mimalloc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "f789cf5d97f314c7d49563eee1e694fba7ce430983e4b661cd5d43312759df34"
-    sha256 cellar: :any,                 arm64_sonoma:   "608b682e6ccd0030f60d6702909053c79ef9e3a77a3933d4b1354a481390d6c7"
-    sha256 cellar: :any,                 arm64_ventura:  "accd89968019adbd6f0c2935d8c45fd7d1e3ded346d091e5f0a7ed8fa148d938"
-    sha256 cellar: :any,                 arm64_monterey: "a6f3fee4cb7ec76cfd3b68ea5f73439d6ca8433fc7ae0f07423aac3eabac4939"
-    sha256 cellar: :any,                 sonoma:         "4b945d8282ba568c22c75a0cebaaa2ab50cb100331d83bd79fdaee1fdd4898c6"
-    sha256 cellar: :any,                 ventura:        "cfa0af1557483f96b8d09c6c24397d861b37d034e395ca2c93a337ee0b460712"
-    sha256 cellar: :any,                 monterey:       "d20a3725ded827d7ddbdc09f63efa2fb5a4fcce439c882869d6cca281fb25a06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "31c18bcb99d1c0d20b91f7f09f67824cac3af06a2abc4afda6d8e89acaa28b53"
+    sha256 cellar: :any,                 arm64_sequoia: "6d5460e154995c00c5797300a572f0c8c39ecfd16b1813823e63f6448ae53572"
+    sha256 cellar: :any,                 arm64_sonoma:  "b6eb2a1023d020f84b00a2437090dc36cb11e21d816ae0a2a003a8b49bb7d3ca"
+    sha256 cellar: :any,                 arm64_ventura: "a04b923fc266ca31776d4688c311741cbc2781e791c1cebae5fbf9fb7c99ebb2"
+    sha256 cellar: :any,                 sonoma:        "de49a7a337b9c70b83a4868456579ad04b91ea7999ed290e8019615f877ef496"
+    sha256 cellar: :any,                 ventura:       "f0363fcc3261c526dafd2ec80ba2a0e4629f3029a51ca2c977ad333b5cadcae7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d24f6413b70fadc239b156e15bf5a7cde0b587d46d63c1feb6ce5369fe832785"
   end
 
   depends_on "cmake" => :build
