@@ -1,31 +1,18 @@
 class Qcli < Formula
   desc "Report audiovisual metrics via libavfilter"
   homepage "https:bavc.orgpreserve-mediapreservation-tools"
+  url "https:github.combavcqctools.git",
+      tag:      "v1.4",
+      revision: "982619270ff49987328343909ea2179d1af52004"
   license "GPL-3.0-or-later"
-  revision 1
   head "https:github.combavcqctools.git", branch: "master"
 
-  stable do
-    url "https:github.combavcqctools.git",
-        tag:      "v1.3.1",
-        revision: "0573c33953d02db53812a2420f174d6b1233751e"
-
-    # Backport fix for Qt 6.7
-    patch do
-      url "https:github.comvalbokQtAVPlayercommita24033d6636426d4fc1f97b6ee483bf6a7ab6072.patch?full_index=1"
-      sha256 "44396f114cd81c85949cd6dfc017ef51a3255d79be9ba42ae82c57e6a326b0e3"
-      directory "ProjectQtCreatorqctools-QtAVPlayer"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "74f2414ccaac5d53bb8b4649f36df6a1d71affd563f9659a2234ceb0c81805ed"
-    sha256 cellar: :any,                 arm64_ventura:  "d6f507f9162b5c0efd05e676beacb4426a17b6aa910919310f5c451483900277"
-    sha256 cellar: :any,                 arm64_monterey: "63948d79ec70c9d0508708b7d9c646ce56730577af431cdf5aa9dd362091afe4"
-    sha256 cellar: :any,                 sonoma:         "ac8d5ce426a89238dfdb40d584e3af8cd275630b467bfc6e5dbb06407a0d41c3"
-    sha256 cellar: :any,                 ventura:        "61cc358cb9c4afe330d4b2639c990d90c76837f5b788279ec81df02eb61d3ce3"
-    sha256 cellar: :any,                 monterey:       "12bf0f711da97afae0e9cffd4eee084c95fa50b9a7945334a6aa62a010b5c145"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "14e72317eceef670be0d732541e176f143ffafc616cb698dc4052b5c1c589c92"
+    sha256 cellar: :any,                 arm64_sonoma:  "01381abc80e93b31c44d6f50a65f6e4feebb5d82380b4331b9b1fe58f37b9aaa"
+    sha256 cellar: :any,                 arm64_ventura: "5f7e15ca1e3057ef5d2d2c7acc65528922efe573a12affe00f7be4ed37309fba"
+    sha256 cellar: :any,                 sonoma:        "d92539860c22d368cc5a208b3c04053f5d6f047d25647b3f0dbc8a4c8a55c70c"
+    sha256 cellar: :any,                 ventura:       "9fb489755752aa7decd8ec2f38dded60cdb7dcbde86377153d8b6953e511ac6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f87bd6039d932ef08d8b6b42d4adc44f497e54eb4ba9b153a44e439646b30209"
   end
 
   depends_on "pkgconf" => :build

@@ -1,8 +1,8 @@
 class Nng < Formula
   desc "Nanomsg-next-generation -- light-weight brokerless messaging"
   homepage "https:nanomsg.github.ionng"
-  url "https:github.comnanomsgnngarchiverefstagsv1.9.0.tar.gz"
-  sha256 "ff882bda0a854abd184a7c1eb33329e526928ef98e80ef0457dd9a708bb5b0b1"
+  url "https:github.comnanomsgnngarchiverefstagsv1.10.tar.gz"
+  sha256 "7388923985ada3abe73d27400aec1f2abf418df1231875e82ffd88e752a143ba"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Nng < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "39282ce6d5eb11d4887f659138576130e7bbbf2fbe0f5037e6f0e125f77d2231"
-    sha256 cellar: :any,                 arm64_sonoma:  "cee738170b8eac76fe3db0790850242c30b34fc7f72fed41f94cf67fe51ba021"
-    sha256 cellar: :any,                 arm64_ventura: "1e75bbcd3115c7c7cad62926044001fcb6db534661e6d2754e01f49548981355"
-    sha256 cellar: :any,                 sonoma:        "674febf52f58ae7f2afb6418ec4ee6f431015acb10bb733e223bf197067e3805"
-    sha256 cellar: :any,                 ventura:       "8a5496f1d6e3abd7087da2c19f367cc3506d0d5d99856ff759b35eee6d2501b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd2aa82a113b465a5d6188f7a47781ccbf10a33971d2990de57e1d16289c0e0a"
+    sha256 cellar: :any,                 arm64_sequoia: "32d746d712d540f04c2970f599f9d3139d758d8b04ec76d488a5ba78b9e06533"
+    sha256 cellar: :any,                 arm64_sonoma:  "0a36a6700be0c520a162ee5c2bac665bc68180e88f17f77b89bf13d47e90a31b"
+    sha256 cellar: :any,                 arm64_ventura: "e84db04e3b7ec8f22114debf1484a8246507cce7e327d3cf2949a93294867c71"
+    sha256 cellar: :any,                 sonoma:        "5ea2b828b2865a2138107c784676c21d4540a77b9bcef3c22d4a820710ff180b"
+    sha256 cellar: :any,                 ventura:       "b85346233d5785c4f42cff03a5297f6f16cffe4bd6331d85d8cf231652642919"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7dcde6e6c8dbab0c1e3b987e580a150b2d8290378a953f6178314a94a5d29558"
   end
 
   depends_on "asciidoctor" => :build

@@ -13,6 +13,8 @@ cask "nulloy" do
     strategy :github_latest
   end
 
+  depends_on macos: ">= :high_sierra"
+
   app "Nulloy.app"
 
   zap trash: "~LibrarySaved Application Statecom.nulloy.savedState"

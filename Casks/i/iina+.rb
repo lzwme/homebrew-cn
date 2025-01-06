@@ -8,7 +8,7 @@ cask "iina+" do
   homepage "https:github.comxjbetaiina-plus"
 
   auto_updates true
-  depends_on macos: ">= :mojave"
+  depends_on macos: ">= :big_sur"
 
   app "iina+.app"
 

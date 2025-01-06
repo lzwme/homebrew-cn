@@ -2,9 +2,8 @@ class Ngspice < Formula
   desc "Spice circuit simulator"
   homepage "https://ngspice.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/44/ngspice-44.tar.gz"
-  sha256 "8fef0e80b324df1f6ac6c73a9ed9a4120a9a17b62c13e83e1f674a9d9e6a4142"
+  sha256 "3865d13ab44f1f01f68c7ac0e0716984e45dce5a86d126603c26d8df30161e9b"
   license :cannot_represent
-  head "https://git.code.sf.net/p/ngspice/ngspice.git", branch: "master"
 
   livecheck do
     url :stable
@@ -12,17 +11,22 @@ class Ngspice < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "3137db5e486825253c5189af8a360ccba86b51a1f43bcb4bd20903d0558d52d9"
-    sha256 arm64_sonoma:  "bfaa71b5943132e959147136b50c81295aa949d4be3e6e455b15680ee6f380ba"
-    sha256 arm64_ventura: "ae6abd74200c1b1efa83d64c0d2908b30b3cf90836b8f40367c7fdb4b457d9c8"
-    sha256 sonoma:        "3957caa308e93b869cdbdff5d68b88356a1bc5da4e97dce03901037e9b9005c9"
-    sha256 ventura:       "ca0b4853b3efd4df944b12fcd24b5254786e6312fc589c5b0cea0944f58817c8"
-    sha256 x86_64_linux:  "7a233aef2813b9f45d2d1234f7292c35073299762f6b11f0e047f64fae8fba71"
+    rebuild 1
+    sha256 arm64_sequoia: "4065a95b82cd0068743ab9c2ddfeeaa0fcbb17f6fe80bd8e06a69ed63959243d"
+    sha256 arm64_sonoma:  "16cd3c95576f9a01a8d959a9ebf739fd2ba66d19d64fd573b135f1e58bbb57ae"
+    sha256 arm64_ventura: "0a95925e6f1851e96d36e5a3011f65b724f11dec96ebf852c84a5253bf980bee"
+    sha256 sonoma:        "a092da5427590a00c6037df644c7624c69d93894dafd78d6b1e918ddd802011a"
+    sha256 ventura:       "5231f6839262cfa786e058ec34df2c008971abbbeb5c9298fd762f764f780369"
+    sha256 x86_64_linux:  "08f6e7e51b425b129347542106eb86d3024f3492eb0bbdc87ad3edf77e9757d4"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
+  head do
+    url "https://git.code.sf.net/p/ngspice/ngspice.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
 
   depends_on "fftw"
   depends_on "freetype"
@@ -43,9 +47,6 @@ class Ngspice < Formula
   end
 
   def install
-    # upstream bug report on the `configure` script, https://sourceforge.net/p/ngspice/bugs/731/
-    system "./autogen.sh"
-
     # Xft #includes <ft2build.h>, not <freetype2/ft2build.h>, hence freetype2
     # must be put into the search path.
     ENV.append "CFLAGS", "-I#{Formula["freetype"].opt_include}/freetype2"

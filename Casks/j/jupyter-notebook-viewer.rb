@@ -7,7 +7,7 @@ cask "jupyter-notebook-viewer" do
   desc "Utility to render Jupyter notebooks"
   homepage "https:github.comtuxunbviewer-app"
 
-  depends_on macos: ">= :sierra"
+  depends_on macos: ">= :catalina"
 
   app "Jupyter Notebook Viewer.app"
 

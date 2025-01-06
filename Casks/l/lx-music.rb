@@ -11,6 +11,8 @@ cask "lx-music" do
   desc "Music app base on Electron & Vue"
   homepage "https:github.comlyswhutlx-music-desktop"
 
+  depends_on macos: ">= :catalina"
+
   app "lx-music-desktop.app"
 
   zap trash: [

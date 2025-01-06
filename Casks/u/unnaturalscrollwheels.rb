@@ -7,6 +7,8 @@ cask "unnaturalscrollwheels" do
   desc "Tool to invert scroll direction for physical scroll wheels"
   homepage "https:github.comther0nUnnaturalScrollWheels"
 
+  depends_on macos: ">= :high_sierra"
+
   app "UnnaturalScrollWheels.app"
 
   uninstall quit: "com.theron.UnnaturalScrollWheels"

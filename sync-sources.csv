@@ -929,7 +929,6 @@ Homebrew-homebrew-core/Formula/c/clblast.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clean.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/clearlooks-phenix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clens.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/clfft.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clhep.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cli11.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cli53.rb, Homebrew/homebrew-core, 1
@@ -2116,6 +2115,7 @@ Homebrew-homebrew-core/Formula/g/gh-ost.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/ghc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@8.10.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/ghc@9.10.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@9.2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@9.4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ghc@9.6.rb, Homebrew/homebrew-core, 0
@@ -5610,7 +5610,7 @@ Homebrew-homebrew-core/Formula/r/rgbds.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rgf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rgxg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rhash.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/rhino.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rhino.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rhit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rich-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/richgo.rb, Homebrew/homebrew-core, 1
@@ -6265,6 +6265,7 @@ Homebrew-homebrew-core/Formula/s/stow.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/stp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/strace.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/streamlink.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/streamrip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/streamripper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/streamvbyte.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stress-ng.rb, Homebrew/homebrew-core, 1
@@ -6868,6 +6869,7 @@ Homebrew-homebrew-core/Formula/v/vfox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vfuse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vgmstream.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vgrep.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/vgt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vhs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vice.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/victorialogs.rb, Homebrew/homebrew-core, 1
@@ -7266,6 +7268,7 @@ Homebrew-homebrew-core/Formula/y/youplot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/youtube-dl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/youtubedr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/youtubeuploader.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/y/yozefu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yt-dlp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yubico-piv-tool.rb, Homebrew/homebrew-core, 0
@@ -8775,6 +8778,7 @@ Homebrew-homebrew-cask/Casks/f/follow@alpha.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/follow@nightly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/folx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fontbase.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/fontcreator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fontfinagler.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fontforge.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fontgoggles.rb, Homebrew/homebrew-cask, 1
@@ -11483,6 +11487,7 @@ Homebrew-homebrew-cask/Casks/h/heaven.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hedgewars.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/height.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/heimdall-suite.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/h/helio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/helium.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/helo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/heptabase.rb, Homebrew/homebrew-cask, 1
@@ -13000,7 +13005,6 @@ Homebrew-homebrew-cask/Casks/p/polypane.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/polyphone.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pomatez.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pomello.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/p/pomotodo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pomotroid.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pongsaver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pop.rb, Homebrew/homebrew-cask, 0

@@ -7,6 +7,8 @@ cask "simple-comic" do
   desc "Comic viewerreader"
   homepage "https:github.comMaddTheSaneSimple-Comic"
 
+  depends_on macos: ">= :mojave"
+
   app "Simple Comic.app"
 
   zap trash: "~LibraryApplication SupportSimple Comic"

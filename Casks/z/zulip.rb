@@ -12,6 +12,7 @@ cask "zulip" do
   homepage "https:zulipchat.comapps"
 
   auto_updates true
+  depends_on macos: ">= :catalina"
 
   app "Zulip.app"
 

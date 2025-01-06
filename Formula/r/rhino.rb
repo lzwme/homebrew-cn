@@ -1,34 +1,29 @@
 class Rhino < Formula
   desc "JavaScript engine"
-  homepage "https:mozilla.github.iorhino"
-  url "https:github.commozillarhinoreleasesdownloadRhino1_7_15_Releaserhino-1.7.15.zip"
-  sha256 "42fce6baf1bf789b62bf938b8e8ec18a1ac92c989dd6e7221e9531454cbd97fa"
+  homepage "https://mozilla.github.io/rhino/"
+  url "https://repo.maven.apache.org/maven2/org/mozilla/rhino-all/1.8.0/rhino-all-1.8.0.jar"
+  sha256 "a67bc8555c36236fc7eac7042f4083d7cb9eba239a2ed06f68d07af885ada33c"
   license "MPL-2.0"
 
   livecheck do
-    url :stable
-    regex(^(?:Rhino[._-]?)v?(\d+(?:[._]\d+)+)[._-]Release$i)
-    strategy :git do |tags, regex|
-      tags.map { |tag| tag[regex, 1]&.tr("_", ".") }
-    end
+    url "https://search.maven.org/remotecontent?filepath=org/mozilla/rhino/maven-metadata.xml"
+    regex(%r{<version>v?(\d+(?:\.\d+)+)</version>}i)
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "50d816e647a67bc75f5baa56dfa4609f14d01b1622eee1f4926f12f45ddf476e"
+    sha256 cellar: :any_skip_relocation, all: "88bec579e89f74a217422bbaeffa61ad5e85125583cb9722f51e42509ccdad12"
   end
 
-  depends_on "openjdk@11"
+  depends_on "openjdk@21"
 
   conflicts_with "nut", because: "both install `rhino` binaries"
 
   def install
-    rhino_jar = "rhino-#{version}.jar"
-    libexec.install "lib#{rhino_jar}"
-    bin.write_jar_script libexecrhino_jar, "rhino", java_version: "11"
-    doc.install Dir["docs*"]
+    libexec.install "rhino-all-#{version}.jar" => "rhino.jar"
+    bin.write_jar_script libexec/"rhino.jar", "rhino", java_version: "21"
   end
 
   test do
-    assert_equal "42", shell_output("#{bin}rhino -e \"print(6*7)\"").chomp
+    assert_equal "42", shell_output("#{bin}/rhino -e \"print(6*7)\"").chomp
   end
 end

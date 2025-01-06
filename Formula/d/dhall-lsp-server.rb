@@ -2,7 +2,7 @@ class DhallLspServer < Formula
   desc "Language Server Protocol (LSP) server for Dhall"
   homepage "https:github.comdhall-langdhall-haskelltreemasterdhall-lsp-server"
   license "BSD-3-Clause"
-  head "https:github.comdhall-langdhall-haskell.git", branch: "master"
+  head "https:github.comdhall-langdhall-haskell.git", branch: "main"
 
   stable do
     url "https:hackage.haskell.orgpackagedhall-lsp-server-1.1.3dhall-lsp-server-1.1.3.tar.gz"
@@ -12,6 +12,12 @@ class DhallLspServer < Formula
     patch :p2 do
       url "https:github.comdhall-langdhall-haskellcommit5e817a9c6bccf72123a3c67961af149b32d75c10.patch?full_index=1"
       sha256 "f66004893312b9001e2dd122880c63d0e6fccbc7af0e8a549a08a171d99e2d07"
+    end
+
+    # Backport https:github.comdhall-langdhall-haskellcommitd7a024e1ff87b89a64e51699e3f609fd4a719451
+    patch do
+      url "https:raw.githubusercontent.comHomebrewformula-patches039ff700fbd7682314f2ceb0dd0fcb0040e30c46dhall-lsp-serverghc-9.6.patch"
+      sha256 "aff01a4c9fda024a3cf51067a8762cf74ee8b9cc3f8cd63812e9410f6044ed96"
     end
   end
 
@@ -28,12 +34,23 @@ class DhallLspServer < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.4" => :build
+  depends_on "ghc@9.6" => :build
 
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
   def install
+    if build.head?
+      cd name
+    else
+      odie "Try removing workaround!" if version > "1.1.3"
+      # Backport part of https:github.comdhall-langdhall-haskellcommit28d346f00d12fa134b4c315974f76cc5557f1330
+      inreplace "#{name}.cabal" do |s|
+        s.gsub! ", mtl                  >= 2.2.2    && < 2.3", ", mtl                  >= 2.2.2    && < 2.4"
+        s.gsub! ", transformers         >= 0.5.5.0  && < 0.6", ", transformers         >= 0.5.5.0  && < 0.7"
+      end
+    end
+
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args
   end

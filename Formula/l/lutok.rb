@@ -1,8 +1,8 @@
 class Lutok < Formula
   desc "Lightweight C++ API for Lua"
   homepage "https:github.comfreebsdlutok"
-  url "https:github.comfreebsdlutokreleasesdownloadlutok-0.5lutok-0.5.tar.gz"
-  sha256 "9cdc3cf08babec6e70a96a907d82f8b34eac866dd7196abc73b95d5e13701f55"
+  url "https:github.comfreebsdlutokreleasesdownloadlutok-0.6lutok-0.6.tar.gz"
+  sha256 "e4832908d5dfa203860c7a301109cf1daae3456d0beb54d6e70da252e51f6948"
   license "BSD-3-Clause"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,12 +14,12 @@ class Lutok < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4e32874f4a95cdd38f4391253fa9252b443d03fe0bdb8f628f4d118f8ecb5a69"
-    sha256 cellar: :any,                 arm64_sonoma:  "154d00c3114fe64469ec54977d189c8f83815af51ef16c95406a0a7885067a09"
-    sha256 cellar: :any,                 arm64_ventura: "8a9ab6d781bfb340295d4da2bad20ada63a90a9b9eb4a586eab1d0686d7db9fe"
-    sha256 cellar: :any,                 sonoma:        "50ceaa40b7954932f72f101589f03bdf26cf16bfe9c9a3805fd1194d1ff1838f"
-    sha256 cellar: :any,                 ventura:       "e4ba0f8494a46eab869c3443a07eb143fcb7e9715e0f5c44261e460c091bebf6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82aa5ccf29fda46f215b71698a5e36533e5833e14de3d86c3d8d073810978b0c"
+    sha256 cellar: :any,                 arm64_sequoia: "d0d41057b9104a544afc9bb4eab0dd8a4accd776df7aaa6fb2d0523ea3e7d2a2"
+    sha256 cellar: :any,                 arm64_sonoma:  "2aae7b3e3de1ab6b5282fe7c92db1ab3c7b44cfeef37ce38af0455903f2c845e"
+    sha256 cellar: :any,                 arm64_ventura: "3cd059e623da2f9da14ad52b11cbc004a025c6376532f7891c476d99ec53c1a9"
+    sha256 cellar: :any,                 sonoma:        "49b517e8925e63c427c0923f1e13a6ab053fe01e2602f2ff153d9c54b381879e"
+    sha256 cellar: :any,                 ventura:       "4429d677c31a56ab9624aa3def949d8a9debf8a84ce6ba1489a20fa49e553fa5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "408dd0c0d1895bfac6ea6bd3bb23e1cd9cc26f66fb043b90dbffb9211f8a5ca5"
   end
 
   depends_on "autoconf" => :build
@@ -29,12 +29,6 @@ class Lutok < Formula
 
   depends_on "atf"
   depends_on "lua"
-
-  # add configure.ac patch, upstream pr ref, https:github.comfreebsdlutokpull24
-  patch do
-    url "https:github.comfreebsdlutokcommitb2e45d2848f64e1178eb0c6ed44d0b8fc4ea5dea.patch?full_index=1"
-    sha256 "0dbb00bd646343f3b8b61e07222e5ca21ae85028c84772b1eb5b0feba098b4b8"
-  end
 
   def install
     system "glibtoolize", "--force", "--install"

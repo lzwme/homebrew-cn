@@ -8,6 +8,7 @@ cask "jitsi-meet" do
   homepage "https:github.comjitsijitsi-meet-electron"
 
   auto_updates true
+  depends_on macos: ">= :catalina"
 
   app "Jitsi Meet.app"
 

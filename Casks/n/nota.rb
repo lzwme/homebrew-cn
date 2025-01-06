@@ -12,6 +12,7 @@ cask "nota" do
   homepage "https:nota.md"
 
   auto_updates true
+  depends_on macos: ">= :catalina"
 
   app "Nota.app"
   binary "#{appdir}Nota.appContentsResourcesapp.asar.unpackedassetsnota.sh", target: "nota"

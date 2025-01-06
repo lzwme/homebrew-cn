@@ -7,7 +7,7 @@ cask "chai" do
   desc "Utility to prevent the system from going to sleep"
   homepage "https:github.comlvillanichai"
 
-  depends_on macos: ">= :sierra"
+  depends_on macos: ">= :mojave"
 
   app "Chai.app"
 

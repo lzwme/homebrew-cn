@@ -11,6 +11,8 @@ cask "laravel-kit" do
   desc "Desktop Laravel admin panel app"
   homepage "https:tmdh.github.iolaravel-kit"
 
+  depends_on macos: ">= :high_sierra"
+
   app "Laravel Kit.app"
 
   zap trash: [

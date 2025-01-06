@@ -8,6 +8,7 @@ cask "keycastr" do
   homepage "https:github.comkeycastrkeycastr"
 
   auto_updates true
+  depends_on macos: ">= :high_sierra"
 
   app "KeyCastr.app"
 

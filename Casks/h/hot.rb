@@ -8,6 +8,7 @@ cask "hot" do
   homepage "https:github.commacmadeHot"
 
   auto_updates true
+  depends_on macos: ">= :high_sierra"
 
   app "Hot.app"
 

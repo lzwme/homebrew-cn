@@ -3,18 +3,18 @@ class Poetry < Formula
 
   desc "Python package management tool"
   homepage "https:python-poetry.org"
-  url "https:files.pythonhosted.orgpackages089242ed153d5590484fc39a76003262d8e0f102ed8ce5d86c803b23b8d5cc9dpoetry-1.8.5.tar.gz"
-  sha256 "eb2c88d224f58f36df8f7b36d6c380c07d1001bca28bde620f68fc086e881b70"
+  url "https:files.pythonhosted.orgpackagesd4ff02f870cb68af7cf46a112c804920fbeea36b25d538e309e0ffc51238ed0bpoetry-2.0.0.tar.gz"
+  sha256 "9416b1e3657ed02cda9599ae73b604bd68f187adaa2d8d1bcc804dacfa9bcd1f"
   license "MIT"
   head "https:github.compython-poetrypoetry.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98acba9be7f1481da09cbc6f18bd28bbd745be7af9025b303a4cbb8d9f1d73ce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6117a8f802b097c096e4619573b28872cbefb9bf1aa6dc140afa958cad52bbf3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cea3317ba02cd1bd122974f3224d2008c5bb3da1ba847a353ed3b7d0b9e080ea"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fe7ac608ac2c2bc83754143a8b5b69a36a725dfa717fdff856faa2881b51f9c4"
-    sha256 cellar: :any_skip_relocation, ventura:       "3371638c10adabc02d1e09e13f967e016f0b1ba7bcad326be303938a39fb2185"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a4e9ae21c84b5b1353050e93cdfe52ab2ca2498b8d6747e1ee69b867df37b3b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6ccd91fb39ef8c1ed34c3c57e386605dd6eda9cacb58125ed2ee28ca845c844"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7b4bf02a9e332045736e5d53a509bc3ca8bfdde1c8df6c43da4ec926b98cb6e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "513a3999e085cc725d91a0a6397260a3172afb8965a5a3014d064318f89209b5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4956f7e924cf087fdfc11193e99c21f6de20fdf8e2efa6ac54835fb6be5d78b7"
+    sha256 cellar: :any_skip_relocation, ventura:       "aee811b0dd1b2e3a345b05f9d496cd7ec90600146a12c75af251e4b4d7daee77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fda728cd112eb92075aac884789478455f4487c4f7a4c3b48c36bd8f3f05140"
   end
 
   depends_on "cmake" => :build # for rapidfuzz
@@ -40,8 +40,8 @@ class Poetry < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
-    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
+    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
+    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
   end
 
   resource "cleo" do
@@ -60,8 +60,8 @@ class Poetry < Formula
   end
 
   resource "dulwich" do
-    url "https:files.pythonhosted.orgpackages2be2788910715b4910d08725d480278f625e315c3c011eb74b093213363042e0dulwich-0.21.7.tar.gz"
-    sha256 "a9e9c66833cea580c3ac12927e4b9711985d76afca98da971405d414de60e968"
+    url "https:files.pythonhosted.orgpackages6757b4962be0410cf15dc7758fcc40337d09515cc74ac15e45d304f8b70c9b40dulwich-0.22.7.tar.gz"
+    sha256 "d53935832dd182d4c1415042187093efcee988af5cd397fb1f394f5bb27f0707"
   end
 
   resource "fastjsonschema" do
@@ -89,14 +89,24 @@ class Poetry < Formula
     sha256 "47a024b51d0239c0dd8c8540c6c7f484be3b8fcf0b2d85c13825780d3b3f3acd"
   end
 
+  resource "jaraco-context" do
+    url "https:files.pythonhosted.orgpackagesdfadf3777b81bf0b6e7bc7514a1656d3e637b2e8e15fab2ce3235730b3e7a4e6jaraco_context-6.0.1.tar.gz"
+    sha256 "9bae4ea555cf0b14938dc0aee7c9f32ed303aa20a3b73e7dc80111628792d1b3"
+  end
+
+  resource "jaraco-functools" do
+    url "https:files.pythonhosted.orgpackagesab239894b3df5d0a6eb44611c36aec777823fc2e07740dabbd0b810e19594013jaraco_functools-4.1.0.tar.gz"
+    sha256 "70f7e0e2ae076498e212562325e805204fc092d7b4c17e0e86c959e249701a9d"
+  end
+
   resource "jeepney" do
     url "https:files.pythonhosted.orgpackagesd6f4154cf374c2daf2020e05c3c6a03c91348d59b23c5366e968feb198306fdfjeepney-0.8.0.tar.gz"
     sha256 "5efe48d255973902f6badc3ce55e2aa6c5c3b3bc642059ef3a91247bcfcc5806"
   end
 
   resource "keyring" do
-    url "https:files.pythonhosted.orgpackagesae6cbd2cfc6c708ce7009bdb48c85bb8cad225f5638095ecc8f49f15e8e1f35ekeyring-24.3.1.tar.gz"
-    sha256 "c3327b6ffafc0e8befbdb597cacdb4928ffe5c1212f7645f186e6d9957a898db"
+    url "https:files.pythonhosted.orgpackages7009d904a6e96f76ff214be59e7aa6ef7190008f52a0ab6689760a98de0bf37dkeyring-25.6.0.tar.gz"
+    sha256 "0b39998aa941431eb3d9b0d4b2460bc773b9df6fed7621c2dfb291a7e0187a66"
   end
 
   resource "more-itertools" do
@@ -114,11 +124,6 @@ class Poetry < Formula
     sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
   end
 
-  resource "pexpect" do
-    url "https:files.pythonhosted.orgpackages4292cc564bf6381ff43ce1f4d06852fc19a2f11d180f23dc32d9588bee2f149dpexpect-4.9.0.tar.gz"
-    sha256 "ee7d41123f3c9911050ea2c2dac107568dc43b2d3b0c7557a33212c398ead30f"
-  end
-
   resource "pkginfo" do
     url "https:files.pythonhosted.orgpackagesc9a5fa2432da887652e3a0c07661ebe4aabe7f4692936c742da489178acd34depkginfo-1.12.0.tar.gz"
     sha256 "8ad91a0445a036782b9366ef8b8c2c50291f83a553478ba8580c73d3215700cf"
@@ -130,18 +135,8 @@ class Poetry < Formula
   end
 
   resource "poetry-core" do
-    url "https:files.pythonhosted.orgpackagesc75c3609519b7d890ced542fe327ea26a7c8ea55ef298c323c46cca2a011c1cbpoetry_core-1.9.1.tar.gz"
-    sha256 "7a2d49214bf58b4f17f99d6891d947a9836c9899a67a5069f52d7b67217f61b8"
-  end
-
-  resource "poetry-plugin-export" do
-    url "https:files.pythonhosted.orgpackages81bf270ef984c6f4b610a22a6948096b6b9d949de8f77c4c427d981c530ac521poetry_plugin_export-1.8.0.tar.gz"
-    sha256 "1fa6168a85d59395d835ca564bc19862a7c76061e60c3e7dfaec70d50937fc61"
-  end
-
-  resource "ptyprocess" do
-    url "https:files.pythonhosted.orgpackages20e516ff212c1e452235a90aeb09066144d0c5a6a8c0834397e03f5224495c4eptyprocess-0.7.0.tar.gz"
-    sha256 "5c5d0a3b48ceee0b48485e0c26037c0acd7d29765ca3fbb5cb3831d347423220"
+    url "https:files.pythonhosted.orgpackagesdbecdbd9cedc8b68309f1f4c0160355890b4f65f51901b31b1831dbf8c93d6c0poetry_core-2.0.0.tar.gz"
+    sha256 "3317a3cc3932011a61114236b2d49883f4fb1403d2f5e97771ac0d077cfa396f"
   end
 
   resource "pyproject-hooks" do
@@ -150,8 +145,8 @@ class Poetry < Formula
   end
 
   resource "rapidfuzz" do
-    url "https:files.pythonhosted.orgpackagese139e3bcb901c2746734cd70151253bf9e61c688d3c415227b08e6fbf7eb5d7frapidfuzz-3.10.1.tar.gz"
-    sha256 "5a15546d847a915b3f42dc79ef9b0c78b998b4e2c53b252e7166284066585979"
+    url "https:files.pythonhosted.orgpackagesa4aa25e5a20131369d82c7b8288c99c2c3011ec47a3f5953ccc9cb8145720be5rapidfuzz-3.11.0.tar.gz"
+    sha256 "a53ca4d3f52f00b393fab9b5913c5bafb9afc27d030c8a1db1283da6917a860f"
   end
 
   resource "requests" do
@@ -185,13 +180,13 @@ class Poetry < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https:files.pythonhosted.orgpackagesaa63e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66urllib3-2.3.0.tar.gz"
+    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
   end
 
   resource "virtualenv" do
-    url "https:files.pythonhosted.orgpackagesbf7553316a5a8050069228a2f6d11f32046cfa94fbb6cc3f08703f59b873de2evirtualenv-20.28.0.tar.gz"
-    sha256 "2c9c3262bb8e7b87ea801d715fae4495e6032450c71d2309be9550e7364049aa"
+    url "https:files.pythonhosted.orgpackages5039689abee4adc85aad2af8174bb195a819d0be064bf55fcc73b49d2b28ae77virtualenv-20.28.1.tar.gz"
+    sha256 "5d34ab240fdb5d21549b76f9e8ff3af28252f5499fb6d6f031adac4e5a8c5329"
   end
 
   resource "xattr" do
@@ -200,6 +195,9 @@ class Poetry < Formula
   end
 
   def install
+    # poetry > filelock > hatchling, fix to `ZIP does not support timestamps before 1980` error
+    ENV["SOURCE_DATE_EPOCH"] = Time.now.to_i.to_s
+
     virtualenv_install_with_resources
 
     generate_completions_from_executable(bin"poetry", "completions")

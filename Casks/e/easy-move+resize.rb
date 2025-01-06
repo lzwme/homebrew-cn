@@ -7,6 +7,8 @@ cask "easy-move+resize" do
   desc "Utility to support moving and resizing using a modifier key and mouse drag"
   homepage "https:github.comdmarcotteeasy-move-resize"
 
+  depends_on macos: ">= :high_sierra"
+
   app "Easy Move+Resize.app"
 
   zap trash: "~LibraryPreferencesorg.dmarcotte.Easy-Move-Resize.plist"

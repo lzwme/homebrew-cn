@@ -4,6 +4,7 @@ class Nmap < Formula
   url "https:nmap.orgdistnmap-7.95.tar.bz2"
   sha256 "e14ab530e47b5afd88f1c8a2bac7f89cd8fe6b478e22d255c5b9bddb7a1c5778"
   license :cannot_represent
+  revision 1
   head "https:svn.nmap.orgnmap"
 
   livecheck do
@@ -12,14 +13,12 @@ class Nmap < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "79e86674984301bb84449e67ca155af2009dba475e4609c6671dc73e7112961c"
-    sha256 arm64_sonoma:   "cdafb01815d04428742bca04ecd329522933c578bcac7c7210fc92bd7e36cedf"
-    sha256 arm64_ventura:  "948c11d0d852890c2d331674ceee73615fd645daee551b40351045eef48b4411"
-    sha256 arm64_monterey: "2b5079654dc3ab7d015d4eb8aa17a127acbf96a24fca651c7bcaeeb7e0f68d9e"
-    sha256 sonoma:         "773bf1c00d07c15f837efeffe68b2c0606fa0dae27aaa23e830d340b4cc09706"
-    sha256 ventura:        "3273343599a31092f05c677a803be118332eb39fa2c2f0defc4a68883d19be5e"
-    sha256 monterey:       "9ed369a7f81ba3c7c0396e0645ac77173dfb31ddba16cbcfa8faece61a29e2af"
-    sha256 x86_64_linux:   "6dd2f9435f92feb161180cca78a46c323c78e252f4107a709c5355e275516422"
+    sha256 arm64_sequoia: "61a83d0390628d2667adca2335d9093a2f6d11a9501f40ed81c56fef82577ad4"
+    sha256 arm64_sonoma:  "b941d7bcbce3fa7461e4f3a94bc3d1946c7247cb1d82920a9ad786ac5dc067d2"
+    sha256 arm64_ventura: "12d9ac8855eff87666c8cc692a7e9613d7a2080621743f63e35a45bd72568b44"
+    sha256 sonoma:        "dfff65ad50c56d3dcfce4b68ebad5f23fb3b6483607e73670b2dff61a0c9ee02"
+    sha256 ventura:       "068b0bcd068851948112d96628e786e81e7e7845c470e07b26b20e05aa6cc1cd"
+    sha256 x86_64_linux:  "e38545d94571c213618d438533e315ef0dda379bcac8fb903dc172af8fc0067b"
   end
 
   depends_on "liblinear"

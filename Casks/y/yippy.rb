@@ -7,6 +7,8 @@ cask "yippy" do
   desc "Open source clipboard manager"
   homepage "https:github.commattDavoYippy"
 
+  depends_on macos: ">= :high_sierra"
+
   app "Yippy.app"
 
   zap trash: "~LibraryApplication SupportMatthewDavidson.Yippy"

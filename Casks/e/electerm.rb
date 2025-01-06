@@ -11,6 +11,7 @@ cask "electerm" do
   homepage "https:github.comelectermelecterm"
 
   auto_updates true
+  depends_on macos: ">= :high_sierra"
 
   app "electerm.app"
   binary "#{appdir}electerm.appContentsMacOSelecterm"

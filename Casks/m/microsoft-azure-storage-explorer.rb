@@ -11,6 +11,8 @@ cask "microsoft-azure-storage-explorer" do
   desc "Explorer for Azure Storage"
   homepage "https:azure.microsoft.comen-usfeaturesstorage-explorer"
 
+  depends_on macos: ">= :catalina"
+
   app "Microsoft Azure Storage Explorer.app"
 
   zap trash: [

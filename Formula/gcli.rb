@@ -1,12 +1,12 @@
 class Gcli < Formula
   desc "Portable Git(hub|lab|tea) CLI tool"
   homepage "https:github.comherrhotzenplotzgcli"
-  url "https:herrhotzenplotz.degclireleasesgcli-2.5.0gcli-2.5.0.tar.gz"
-  sha256 "6af6b46e63d3ff24fcd3534c80b19030387590b744dcdc45f288fedd39bb15d7"
+  url "https:herrhotzenplotz.degclireleasesgcli-2.6.0gcli-2.6.0.tar.gz"
+  sha256 "b1789362afebd7e5001ef8b1f1be84d79e800c4b4caaf932a364fcd5f75810aa"
   license "BSD-2-Clause"
 
   depends_on "curl"
-  depends_on "pkg-config"
+  depends_on "pkgconf"
 
   def install
     system ".configure", "--prefix=#{prefix}"

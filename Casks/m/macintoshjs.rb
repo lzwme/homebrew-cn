@@ -10,6 +10,8 @@ cask "macintoshjs" do
   desc "Virtual Apple Macintosh with System 8, running in Electron"
   homepage "https:github.comfelixriesebergmacintosh.js"
 
+  depends_on macos: ">= :high_sierra"
+
   app "macintosh.js.app"
 
   zap trash: [

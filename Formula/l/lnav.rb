@@ -11,12 +11,13 @@ class Lnav < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8cfe7f2d7e7b5e91d73a0403114e39b7002d6a30118b473829e173d02e002cea"
-    sha256 cellar: :any,                 arm64_sonoma:  "818f11e9ea89c2846e52dd55bde68e120134559724606ce6d9dfca6e75758a7a"
-    sha256 cellar: :any,                 arm64_ventura: "006e087ddba4a2d4d952b07519b6b133d7789e26128538228a5497fd400da9eb"
-    sha256 cellar: :any,                 sonoma:        "b1c1c47cf54a10a5fb050785ba8bc8e2ac6d104b9bace376c6075b9990659f7d"
-    sha256 cellar: :any,                 ventura:       "4c8db944f681b29e2510cce15fa5f0efa23d2b80ba26d11597b5330c70025877"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2911a883a7cd44aab2c9237748d379c74399e9ae180e8108e2134ef43a1dcacf"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "a55494086aab577c233e4e023f4f4bd68a7fff6856633505248013ebfe9da4e3"
+    sha256 cellar: :any,                 arm64_sonoma:  "07838a7c8f38c0332fcae0cf508af7f666eebcf3dff10afc1f8237e6f1fecc8e"
+    sha256 cellar: :any,                 arm64_ventura: "1e597e57c011e89db872e1f18d96031be7445f98d7b542315c56677e1d22af45"
+    sha256 cellar: :any,                 sonoma:        "5a207bb01325cd16ce465ec12bcd7c28f8aeb2edb0bbaba396abfc6ac370478d"
+    sha256 cellar: :any,                 ventura:       "b40be20b4ec73caedc56d35da7652956b4d5fd91e9940f7bd26cc4c761528e0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec59ca74bd90e1d2fac500906db30720e1dd2c7debba7395ad281dd769bec6cd"
   end
 
   head do
@@ -27,6 +28,7 @@ class Lnav < Formula
     depends_on "re2c" => :build
   end
 
+  depends_on "rust" => :build
   depends_on "libarchive"
   depends_on "ncurses"
   depends_on "pcre2"
@@ -43,11 +45,14 @@ class Lnav < Formula
                           "--with-sqlite3=#{Formula["sqlite"].opt_prefix}",
                           "--with-readline=#{Formula["readline"].opt_prefix}",
                           "--with-libarchive=#{Formula["libarchive"].opt_prefix}",
-                          "--with-ncurses=#{Formula["ncurses"].opt_prefix}"
+                          "--with-ncurses=#{Formula["ncurses"].opt_prefix}",
+                          "--with-rust=#{Formula["rust"].opt_prefix}"
     system "make", "install", "V=1"
   end
 
   test do
     system bin"lnav", "-V"
+
+    assert_match "col1", pipe_output("#{bin}lnav -n -c ';from [{ col1=1 }] | take 1'", "foo")
   end
 end

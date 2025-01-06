@@ -12,6 +12,8 @@ cask "ssokit" do
     strategy :github_latest
   end
 
+  depends_on macos: ">= :high_sierra"
+
   app "SSokit.app"
 
   zap trash: "~LibraryPreferencescn.rangaofei.SSokit.plist"

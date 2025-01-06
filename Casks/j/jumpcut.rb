@@ -8,7 +8,7 @@ cask "jumpcut" do
   desc "Clipboard manager"
   homepage "https:snark.github.iojumpcut"
 
-  depends_on macos: ">= :el_capitan"
+  depends_on macos: ">= :sierra"
 
   app "Jumpcut.app"
 

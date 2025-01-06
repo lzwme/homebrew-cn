@@ -3,23 +3,25 @@ class ZabbixCli < Formula
 
   desc "CLI tool for interacting with Zabbix monitoring system"
   homepage "https:unioslo.github.iozabbix-cli"
-  url "https:github.comunioslozabbix-cliarchiverefstags3.4.2.tar.gz"
-  sha256 "30a44797e38070b7b06e125ac55eb47ba1253dea6ab8cc390a4f3087aec26351"
+  url "https:files.pythonhosted.orgpackagesbff7966ab87074daf3d3d23f4ad5b1937432e8f1268a642d09c8712fafbbe23dzabbix_cli_uio-3.4.2.tar.gz"
+  sha256 "e08e15cc57b0eed9b7eb34be5570433b4ac26052486ce3bf1c5feed34ecda3dc"
   license "GPL-3.0-or-later"
   head "https:github.comunioslozabbix-cli.git", branch: "master"
 
+  # TODO: Remove livecheck once upstream finalizes PyPI package name
   livecheck do
-    url :stable
+    url :head
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "343ce5c3948344305a14576fe4ccae112ec47045cc8b09f5bdd901ccea4e3327"
-    sha256 cellar: :any,                 arm64_sonoma:  "258710aba35b6f152f251b149cb15659303bb224efdca58d881c3542579d5680"
-    sha256 cellar: :any,                 arm64_ventura: "b704e8e6bf142872da848efd670493a72934f5a3095ecbd187b6ecc64081041c"
-    sha256 cellar: :any,                 sonoma:        "68edeed32d08965b6abb1007856399b57f55bede5b4090c161cd5d3a147c9223"
-    sha256 cellar: :any,                 ventura:       "c21329642f94a24d2d3e39c4585f98e5636adffdaf62cf0c0236e1391105efc7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e66579132eb42a5e72e5275c52b5a9d5002d36098bb1f10644b1fd3f347c4221"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "1afbcf90bf13cba8d09961671dc7a645a10826eb72a329b85bc7fc763bf766a4"
+    sha256 cellar: :any,                 arm64_sonoma:  "c43362d7538b95a5098c1c505876a6d9d52fd85e1f59c00f599fb20c48aeebed"
+    sha256 cellar: :any,                 arm64_ventura: "30dfc8bf848cc038690183faebd39bb1845f7ec4b5c44abdbeae3ca186b48869"
+    sha256 cellar: :any,                 sonoma:        "447965425edb9424f7e23f9fbdda0ac67f29ad6cd30047f01526bfd7340e36ae"
+    sha256 cellar: :any,                 ventura:       "28b4b3e587f30b7f1debcef5e5fc81e5d52768cf4389a962d31bdd6f14113bc6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a27be7d2f365333b69cda6e8e90811a18378f6edc26e3494286b66df59505222"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -158,7 +160,12 @@ class ZabbixCli < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    # `shellingham` auto-detection doesn't work in Homebrew CI build environment so
+    # defer installation to allow `typer` to use argument as shell for completions
+    # Ref: https:typer.tiangolo.comfeatures#user-friendly-cli-apps
+    venv = virtualenv_install_with_resources without: "shellingham"
+    generate_completions_from_executable(bin"zabbix-cli", "--show-completion")
+    venv.pip_install resource("shellingham")
   end
 
   test do

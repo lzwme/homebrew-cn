@@ -45,14 +45,20 @@ cask "iterm2" do
   app "iTerm.app"
 
   zap trash: [
+    "~LibraryApplication Scriptscom.googlecode.iterm2.iTermFileProvider",
     "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.googlecode.iterm2.itermai.sfl*",
     "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.googlecode.iterm2.sfl*",
     "~LibraryApplication SupportiTerm",
     "~LibraryApplication SupportiTerm2",
     "~LibraryCachescom.googlecode.iterm2",
+    "~LibraryContainerscom.googlecode.iterm2.iTermFileProvider",
     "~LibraryContainersiTermAI",
     "~LibraryCookiescom.googlecode.iterm2.binarycookies",
+    "~LibraryHTTPStoragescom.googlecode.iterm2",
+    "~LibraryHTTPStoragescom.googlecode.iterm2.binarycookies",
     "~LibraryPreferencescom.googlecode.iterm2.plist",
+    "~LibraryPreferencescom.googlecode.iterm2.private.plist",
     "~LibrarySaved Application Statecom.googlecode.iterm2*.savedState",
+    "~LibraryWebKitcom.googlecode.iterm2",
   ]
 end

@@ -9,6 +9,7 @@ cask "whoozle-android-file-transfer" do
   homepage "https:whoozle.github.ioandroid-file-transfer-linux"
 
   conflicts_with cask: "whoozle-android-file-transfer@nightly"
+  depends_on macos: ">= :sierra"
 
   app "Android File Transfer for Linux.app"
   binary "#{appdir}Android File Transfer for Linux.appContentsSharedSupportbinaft-mtp-cli"

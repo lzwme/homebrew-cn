@@ -29,8 +29,10 @@ cask "keka" do
   end
 
   zap trash: [
+    "~LibraryApplication Scripts*.group.com.aone.keka",
     "~LibraryApplication Scriptscom.aone.keka",
     "~LibraryApplication Scriptscom.aone.keka.KekaFinderIntegration",
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentscom.aone.keka.sfl*",
     "~LibraryApplication SupportKeka",
     "~LibraryCachescom.aone.keka",
     "~LibraryContainerscom.aone.keka",

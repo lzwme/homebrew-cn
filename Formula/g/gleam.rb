@@ -1,8 +1,8 @@
 class Gleam < Formula
   desc "Statically typed language for the Erlang VM"
   homepage "https:gleam.run"
-  url "https:github.comgleam-langgleamarchiverefstagsv1.6.3.tar.gz"
-  sha256 "533498a9915439b2ca61570f453b2079874378e0ae0a890a43fc1f9b3c587197"
+  url "https:github.comgleam-langgleamarchiverefstagsv1.7.0.tar.gz"
+  sha256 "e1a2081705b50c3a335424d6052e0aeb9dd85bca5daf6ab28a7ada7a0ba24841"
   license "Apache-2.0"
   head "https:github.comgleam-langgleam.git", branch: "main"
 
@@ -12,13 +12,12 @@ class Gleam < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e493e40cf5c7fac5155a69266f3e35d3558d2b474aeb82fb7407fb8bdf4ce55b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7788c8df239ed23fe32f761cde94063d4ca849619459d4bfbc8e8179708e3983"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "796d230b4146d703a3adf3ebb724fbfec75680f83acd2ecce3c2fcdb1e53427a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6ec67deafa67f1aa4a83431be9cb25f587b935cdd464bb8f37903406a195ecb7"
-    sha256 cellar: :any_skip_relocation, ventura:       "cecf559db6fb852ac4f488d219cdd2bd248e4388d04c69d4a4e073d73beb805b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ba28ba537f4a339338f492d6b6867040742bfa12bb5e55dc4d796b4ddef2945"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "20a4a69337c93716025873bcd8ac001702a19f74c3cd9160927e9aeca7da6a1f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c54467d4b951e8901697b84d73f6c49fbf61914b3fd711c43d0ad891992b8e72"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8ea4121f6b0c058266eca96340eab9d3cf296fdaa81fe4258868aa841fb046ae"
+    sha256 cellar: :any_skip_relocation, sonoma:        "91e6070391567dd6f8f19e48ed89e7ed740741536e9401f1393ecc6c159bd77f"
+    sha256 cellar: :any_skip_relocation, ventura:       "25737eb9b6972c2a44e3786b299acf1ca849ded5fce9f6f3dfd4e682355d643e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5bc3c2d3839ae56b5eeb3588ca58d70a5b6d28edb9c7cfb4dabcb122d6460533"
   end
 
   depends_on "pkgconf" => :build

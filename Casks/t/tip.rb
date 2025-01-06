@@ -7,6 +7,8 @@ cask "tip" do
   desc "Programmable tooltip that can be used with any app"
   homepage "https:github.comtanin47tip"
 
+  depends_on macos: ">= :mojave"
+
   app "Tip.app"
 
   zap trash: "~LibraryApplication Scriptstanin.tip"

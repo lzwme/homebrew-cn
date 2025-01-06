@@ -1,8 +1,8 @@
 class Liblinear < Formula
   desc "Library for large linear classification"
   homepage "https:www.csie.ntu.edu.tw~cjlinliblinear"
-  url "https:www.csie.ntu.edu.tw~cjlinliblinearoldfilesliblinear-2.47.tar.gz"
-  sha256 "99ce98ca3ce7cfb31f2544c42f23ba5bc6c226e536f95d6cd21fe012f94c65e0"
+  url "https:www.csie.ntu.edu.tw~cjlinliblinearoldfilesliblinear-2.48.tar.gz"
+  sha256 "72ea3853a9fb430b49c3196177d8acdffd2dadb5901832ee323465792087e8cc"
   license "BSD-3-Clause"
   head "https:github.comcjlin1liblinear.git", branch: "master"
 
@@ -12,16 +12,12 @@ class Liblinear < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "ebbb496439ed5cbd2934fe7204ccad94c56071a10ef3dbccbebb2d205798b000"
-    sha256 cellar: :any,                 arm64_sonoma:   "447ba6aa36bec6cb65825dd9d6aad55e07e2eb9cb10537a4ad142546bb015e1f"
-    sha256 cellar: :any,                 arm64_ventura:  "2f7f959e3a537760a29d4f4f4ff949bf5ef8f7206dbbb7f48492e8b733978f78"
-    sha256 cellar: :any,                 arm64_monterey: "3c2ee17592c9ff78f3b58baf9bdae899be678d7c073b471896314896c854c540"
-    sha256 cellar: :any,                 arm64_big_sur:  "c0f811408e6e5d5a29d7c8d94b89d92980d1b149b1c909413bae383a0df0cf31"
-    sha256 cellar: :any,                 sonoma:         "0fafcc1fcf64b944113137b103a7ff4900ceea6c96672979b79a7a88150869c2"
-    sha256 cellar: :any,                 ventura:        "785f3d2ae8640b9689caa8982f13119ad27b88868a432c9ccaaec6a345e2ac68"
-    sha256 cellar: :any,                 monterey:       "2b5c4306ba3b88b67d803d0b5ff4562889f1516d5e2a9b479c3c2ee3eb573a53"
-    sha256 cellar: :any,                 big_sur:        "26e5cca0e853ce2014ccf29cf38513e5a852e4c4a65b4fe1f39220f4a176d6f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed4f81487889a1f54491aed3e6ce5b492c60a16c8e59d782c94c552fc46311dd"
+    sha256 cellar: :any,                 arm64_sequoia: "c8c537286177821c0bd2d45919a47cc842c789fff679b2f054e5adc008edf228"
+    sha256 cellar: :any,                 arm64_sonoma:  "7bcb360515141b322d2b34e29e172b8f332d96c92122811611e07e4a1b4a1846"
+    sha256 cellar: :any,                 arm64_ventura: "90961753c75dfcc6028d8646889e214359b6e3c540455bd5cc8bd21cf0d36b8c"
+    sha256 cellar: :any,                 sonoma:        "a33cab9994c8a76fa5dd80d94c736cb48b520100f590fb5309332c0edb08d02e"
+    sha256 cellar: :any,                 ventura:       "3ff7de89979c7836bb6aaeeececbbd7a93feba336a2e65c6d473fdf8973002b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ad447cb4fdfe17f95da5b04cdc815b749f94f877d57808cc25ee87b850252d3"
   end
 
   # Fix sonames

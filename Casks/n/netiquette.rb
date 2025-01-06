@@ -8,7 +8,7 @@ cask "netiquette" do
   desc "Network monitor"
   homepage "https:objective-see.comproductsnetiquette.html"
 
-  depends_on macos: ">= :mojave"
+  depends_on macos: ">= :catalina"
 
   app "Netiquette.app"
 

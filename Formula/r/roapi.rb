@@ -1,28 +1,20 @@
 class Roapi < Formula
   desc "Full-fledged APIs for static datasets without writing a single line of code"
   homepage "https:roapi.github.iodocs"
-  url "https:github.comroapiroapiarchiverefstagsroapi-v0.12.0.tar.gz"
-  sha256 "09f9099f04f92e92598b16fe00402911fff6b77cc4d32268ad1fb4a0b5894c8c"
+  url "https:github.comroapiroapiarchiverefstagsroapi-v0.12.3.tar.gz"
+  sha256 "3ffb4c3aaa261dd18d8d4def4a2330d498181b4e1ec7f3dd7f1844af85f6d90e"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "12756f6b86bd189b2bcb444d200049b09264d096b5cf7fdbbe1536ea7e1f7ad1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a16d694e11386fc0c3f51e85c09fef77700144bba892fb70fdc1eaecb746ce66"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cba231911f565dca0268339c8c426c45128b1bb088eb480d5b16b12e71a8d0cb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f35f68070f49a803a0f529e558905d1a125dd01dfe01d358ffd9e765d2200f71"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ff6829464f03a64581c991b3acca0253528c0c19a8126ccfbe1fc1558818ab24"
-    sha256 cellar: :any_skip_relocation, ventura:        "aa2f896df54d34d3ef8d9ea636a1b1ae9b3f5d8ca8198ca9cb75c2c0fe5fa354"
-    sha256 cellar: :any_skip_relocation, monterey:       "21047cca3b02f907b1b9738d6a1fad4c8f90dc667eea82a58c6274f5c57660c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3648ef60df4409b75d36fa6d7e87ca7c4849e5b054339e02d984e17bfe0cf390"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac2f2fcd242495a8ee0a8cca2c3f0149998e6e2698399b502cd35ec76e15f300"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73591b92cc358261463e3ee4bc8120989324ffd6620d40b22bc57b21e7af39b5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7c3a85d935b249fe3afd3c41ea6595707325edfe9d0ebe808fe7d5037f629164"
+    sha256 cellar: :any_skip_relocation, sonoma:        "235343dfea88062d54a19833f0e0484b7ee330a9e256476be33f55fbfb63aef2"
+    sha256 cellar: :any_skip_relocation, ventura:       "ed1f8f47e61389ae026c515d8bcd954aff7b2178cf5a061135966958a035eb8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fedd7c0ce890700874a490d1fbbdf0124ca1dd7d0cdce09fdddde74c805b27eb"
   end
 
   depends_on "rust" => :build
-
-  # explicitly specify lifetime for `ExcelSubrange` return type, upstream pr ref, https:github.comroapiroapipull353
-  patch do
-    url "https:github.comroapiroapicommit6f8b597177b5abce1b7672df2c058ca3c3679535.patch?full_index=1"
-    sha256 "eb24da11bd453621824384c2df9295f24fcd4d4f8f5f79aa07a495617ad935b4"
-  end
 
   def install
     # skip default features like snmalloc which errs on ubuntu 16.04

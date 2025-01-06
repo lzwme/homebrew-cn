@@ -7,6 +7,8 @@ cask "doughnut" do
   desc "Podcast client"
   homepage "https:github.comdyercDoughnut"
 
+  depends_on macos: ">= :catalina"
+
   app "Doughnut.app"
 
   zap trash: [

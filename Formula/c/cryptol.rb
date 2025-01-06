@@ -1,7 +1,6 @@
 class Cryptol < Formula
   desc "Domain-specific language for specifying cryptographic algorithms"
   homepage "https:www.cryptol.net"
-  # ghc 9.10 support request, https:github.comGaloisInccryptolissues1737
   url "https:hackage.haskell.orgpackagecryptol-3.2.0cryptol-3.2.0.tar.gz"
   sha256 "ed078965bd7d2468eb403c698374d9525bc2314f9fc53fc7683a7cab5d2ba25b"
   license "BSD-3-Clause"
@@ -19,7 +18,7 @@ class Cryptol < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.8" => :build
+  depends_on "ghc@9.10" => :build
   depends_on "z3"
 
   uses_from_macos "ncurses"

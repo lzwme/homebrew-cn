@@ -7,6 +7,8 @@ cask "notunes" do
   desc "Simple application that will prevent iTunes or Apple Music from launching"
   homepage "https:github.comtomboneznoTunes"
 
+  depends_on macos: ">= :mojave"
+
   app "noTunes.app"
 
   zap trash: "~LibraryPreferencesdigital.twisted.noTunes.plist"

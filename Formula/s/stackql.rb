@@ -1,8 +1,8 @@
 class Stackql < Formula
   desc "SQL interface for arbitrary resources with full CRUD support"
   homepage "https:stackql.io"
-  url "https:github.comstackqlstackqlarchiverefstagsv0.6.32.tar.gz"
-  sha256 "6f1b2a50363be83b75959a6eb7c874ba870cf8c03075bd795b545a315755019c"
+  url "https:github.comstackqlstackqlarchiverefstagsv0.6.50.tar.gz"
+  sha256 "d64a1ef7b154346a4b3bda1ebdcb0d90d3f441a9b47fdf43ec9e18083aadcf47"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Stackql < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "285f2a7008850d71a8febe2546f1578bd1bbad62d448459111d9bdc2d58f52c5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "736d342a9910148d7799b0fa628a5a81c0f3973597b0cdfdf88362b7af2dd6b8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4d47ce2cac54c69569c99c788f535919d85a2a5981a74c37400fe6f20cfec2b6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "803eaabef4536490df1df17f6e3ac74e19baf74a4377696e7e32ca8553159349"
-    sha256 cellar: :any_skip_relocation, ventura:       "81ba7fe4dd2c471904ee8290dc25bb908ad5401a7f5ba4402e0f8bcda829471d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca6a6447746a230722d7cff2045991996fb613a9d43a3cd3a5e6cc15cc35a5bd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae9d5cd9f000d8989ceb57f31f41c83dbb1ac58dfcc54681dac8235025732387"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "04b4868680eda95d3717d8091ffc2af6425bd25c88622a048073813870bd1a4f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "54e2e925428596016694c0880df39e6e72b16205f768899f0eece53630f356b5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "61a86b78f67d378e21b3caa1cba85b9ef22b5624bb3dcdf02b9057eab6b4c0f2"
+    sha256 cellar: :any_skip_relocation, ventura:       "c361a3d437d5f32ccfd2253a7f85dbf91439125897e22f1859a13527cbb662f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "144dff02c7094494a287f020c9f30a785c5cf6250cdfcc302af328278ad64a0c"
   end
 
   depends_on "go" => :build

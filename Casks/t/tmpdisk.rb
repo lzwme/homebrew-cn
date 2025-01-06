@@ -7,7 +7,7 @@ cask "tmpdisk" do
   desc "Ram disk management"
   homepage "https:github.comimotheetmpdisk"
 
-  depends_on macos: ">= :mojave"
+  depends_on macos: ">= :big_sur"
 
   app "TmpDisk.app"
 

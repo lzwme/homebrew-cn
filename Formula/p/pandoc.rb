@@ -16,7 +16,7 @@ class Pandoc < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.8" => :build
+  depends_on "ghc@9.10" => :build
 
   uses_from_macos "unzip" => :build # for cabal install
   uses_from_macos "zlib"
@@ -40,6 +40,6 @@ class Pandoc < Formula
       <p>A package manager for humans. Cats should take a look at
       Tigerbrew.<p>
     HTML
-    assert_equal expected_html, pipe_output("#{bin}pandoc -f markdown -t html5", input_markdown)
+    assert_equal expected_html, pipe_output("#{bin}pandoc -f markdown -t html5", input_markdown, 0)
   end
 end

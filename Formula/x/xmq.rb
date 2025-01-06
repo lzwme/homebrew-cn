@@ -1,17 +1,17 @@
 class Xmq < Formula
   desc "Tool and language to work with xmlhtmljson"
   homepage "https:libxmq.org"
-  url "https:github.comlibxmqxmqarchiverefstags3.2.0.tar.gz"
-  sha256 "d49ea8e3d646fe2c9fe7c50ecab6943f67c55c6b589af469af99f1220521b9d8"
+  url "https:github.comlibxmqxmqarchiverefstags3.2.1.tar.gz"
+  sha256 "77916f6a59a1db3ada1c005eb7475d4009b4fe3323d659be79f2dc975d0330c1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "531a06c7277af3ae405982945abf9d22484ba7d5c18948aeb6d7d9a2fe5878cf"
-    sha256 cellar: :any,                 arm64_sonoma:  "6911f9d2d110060c85f876357d13be734deb187b85e50c9060512a9143054294"
-    sha256 cellar: :any,                 arm64_ventura: "1637573624991929180856259783d5b9eb665b8be846d4c1de0d4d8cf7b37134"
-    sha256 cellar: :any,                 sonoma:        "21a5a573b81f4604c03afbfdd0a2598348f8d568c3999c5c9ff54d42380490ae"
-    sha256 cellar: :any,                 ventura:       "ad89b4482781b7b7f7999feca0c89980c790eba04360344e38986ad4fbf7b241"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e880c815299b3736864aa482ffb98940ca9465e54266e4537ec74e6e637264f"
+    sha256 cellar: :any,                 arm64_sequoia: "d9ef303e02a1bec43a96c79d7bd67e3a8f5832924f7c4a19a7c1dc47dda40744"
+    sha256 cellar: :any,                 arm64_sonoma:  "17a56e365ae329c7b23c24ad1cdb0233bcc2af7aa59759477f8d961ec1abf967"
+    sha256 cellar: :any,                 arm64_ventura: "d85d0dd7dbe843b2a194f075a9bf0d6a72ca08debd17fb549a0aa3a94382b517"
+    sha256 cellar: :any,                 sonoma:        "c417cfeb854a821802d2c430b03e4e7de660ac73ed016fc5477aaa4894824cc0"
+    sha256 cellar: :any,                 ventura:       "458aab78db413a9e090b8f7b65d142feae5819ea73ab1abf1e1d610071fe35bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b739abf70225b0903a5fce4bf31a325b1181b1db66f18765025a17fd0e9425b"
   end
 
   head do

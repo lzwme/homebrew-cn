@@ -10,6 +10,8 @@ cask "vincelwt-chatgpt" do
   desc "Menu bar application for ChatGPT"
   homepage "https:github.comvincelwtchatgpt-mac"
 
+  depends_on macos: ">= :high_sierra"
+
   app "Chatgpt.app"
 
   zap trash: [
