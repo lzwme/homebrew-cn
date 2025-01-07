@@ -34,25 +34,30 @@ class DhallLspServer < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.6" => :build
+  depends_on "ghc@9.8" => :build
 
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
   def install
+    args = []
     if build.head?
       cd name
     else
+      # Backport support for GHC 9.8
       odie "Try removing workaround!" if version > "1.1.3"
-      # Backport part of https:github.comdhall-langdhall-haskellcommit28d346f00d12fa134b4c315974f76cc5557f1330
+      args += ["--allow-newer=dhall-json:aeson"]
       inreplace "#{name}.cabal" do |s|
+        # https:github.comdhall-langdhall-haskellcommit28d346f00d12fa134b4c315974f76cc5557f1330
         s.gsub! ", mtl                  >= 2.2.2    && < 2.3", ", mtl                  >= 2.2.2    && < 2.4"
         s.gsub! ", transformers         >= 0.5.5.0  && < 0.6", ", transformers         >= 0.5.5.0  && < 0.7"
+        # https:github.comdhall-langdhall-haskellcommit587c0875f9539a526037712870c45cc8fe853689
+        s.gsub! "  aeson                >= 1.3.1.1  && < 2.2", "  aeson                >= 1.3.1.1  && < 2.3"
       end
     end
 
     system "cabal", "v2-update"
-    system "cabal", "v2-install", *std_cabal_v2_args
+    system "cabal", "v2-install", *args, *std_cabal_v2_args
   end
 
   test do

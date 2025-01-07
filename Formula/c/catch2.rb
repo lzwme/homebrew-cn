@@ -1,17 +1,17 @@
 class Catch2 < Formula
   desc "Modern, C++-native, header-only, test framework"
   homepage "https:github.comcatchorgCatch2"
-  url "https:github.comcatchorgCatch2archiverefstagsv3.7.1.tar.gz"
-  sha256 "c991b247a1a0d7bb9c39aa35faf0fe9e19764213f28ffba3109388e62ee0269c"
+  url "https:github.comcatchorgCatch2archiverefstagsv3.8.0.tar.gz"
+  sha256 "1ab2de20460d4641553addfdfe6acd4109d871d5531f8f519a52ea4926303087"
   license "BSL-1.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b63c2bff461b22383d01e8edc201f50e7ecbd0590d8d0d8b3d1c481ca3c297f5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c4ee228d315ab1a4aa7525d4188b9b04d3ff46bd336482c6c41b3c93b3b1c01"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bc7f77824fc4be0a1e4597a527f869a4d6383e543569ae79bbc726b9064f1fdb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bfca1a1c225a52d2201b07b63376da26d7e50d2132c5a3ca327211ead70610cd"
-    sha256 cellar: :any_skip_relocation, ventura:       "351b8571546a1fd599ae3f66d974197cb38971bfb3ef62d5a516a2540dc93506"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "992f7bf0a61606f7533bf930c9bfd1a03089ff63eb0982e445c8e70f7d095b59"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "591ec46514fc1c4e1934b8be1e8592d376864ae7a9f1a0de46c266795b6b98af"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba90a4079821a6246f5a9fa302e1b8a5f61eef26732f178913372a8bc2db0eab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d02f3e55951c66fbd0326dddfee7abcec3de50c659de20adc33319784a0e713e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3768de93034cb1c80114c107a828e0664affe03c0d6062104e8f9876c9c48154"
+    sha256 cellar: :any_skip_relocation, ventura:       "1635617308a7b44e6a6c0f9abfda0a5c0ef6d16259333d6b87ceb9092b5c1381"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fddf61b46104e66518b774a67afc1ec16167ffe9cb52d514e2e37fe72d58b3a1"
   end
 
   depends_on "cmake" => :build

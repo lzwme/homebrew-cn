@@ -21,7 +21,7 @@ class Echidna < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca3e2796402ea85f7f013c4cd11827e6f65b462247df88ba8c6ad08c3f510f0c"
   end
 
-  depends_on "ghc@9.6" => :build
+  depends_on "ghc@9.6" => :build # GHC 9.8 PR: https:github.comcryticechidnapull1334
   depends_on "haskell-stack" => :build
 
   depends_on "truffle" => :test

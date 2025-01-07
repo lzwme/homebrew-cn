@@ -18,7 +18,7 @@ class Ormolu < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc" => :build
+  depends_on "ghc@9.10" => :build # GHC 9.12 PR: https:github.comtweagormolupull1140
 
   def install
     system "cabal", "v2-update"

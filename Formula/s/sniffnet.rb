@@ -1,20 +1,18 @@
 class Sniffnet < Formula
   desc "Cross-platform application to monitor your network traffic"
   homepage "https:github.comGyulyVGCsniffnet"
-  url "https:github.comGyulyVGCsniffnetarchiverefstagsv1.3.1.tar.gz"
-  sha256 "535a7002cc0f394332a4f6b2338e55c00b802a59bba11978442f5fdc714edede"
+  url "https:github.comGyulyVGCsniffnetarchiverefstagsv1.3.2.tar.gz"
+  sha256 "92ad92196245f36df9380091623beceb7ba4dc1d3b7f0844791c0dff302a3a46"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comGyulyVGCsniffnet.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4702ec269621cdfc8eedc0dbacec93782ccabe7fa4f57e80b0e8692a33c2f6ed"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a1f464910eb959f955c48730113013fa41b5d723d071aaca24a5542171a25813"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "842c709a2aa21fc5f4a461d30b5cf7b2a5a4e02e8a8cf96194b8fd41f7e69a87"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e40a1bd7e0329cb9f825728903425583c7e7d1f0843621c7bbff42bee2cece01"
-    sha256 cellar: :any_skip_relocation, sonoma:         "496dc80cd9b3f558ed951e70ef981af72856ec3e1ce054d641b2661ad46d0493"
-    sha256 cellar: :any_skip_relocation, ventura:        "438b477c5021fade1d9b8d3f7621ec236ec5b267406ce137621f822c810665fd"
-    sha256 cellar: :any_skip_relocation, monterey:       "724c8c13c31ea6958e0660aefbd6769c865c615f48c762a50aa775d9e3a4d3e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c0755e0b4d6b472940da5d15b977b86fa283a9035804fb13e45a66353cf0c6d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2609e62911aebd894cd36891beb8e0ac93e3ea6f7cca899bf4b6af97564ad65"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3404a406a6c48f5f35d97d9a2e3e383bd56214d928643456994b025d91e89d0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "848d8a0dcb279614da33dd84b0a996622718b943f73747d06041b09e976e74c0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e9d4a0118cecb9c689a67777d8f9f755610bb9220ccdace535ef76c3c21938cd"
+    sha256 cellar: :any_skip_relocation, ventura:       "5275d58ab13e3f747829436216a8e8906847a6f38152c7e0e07078355b8ace4c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9c54e12d99526592752f2afab1de70b7fbbbe51712b3228b67d1a7ca6ad2623"
   end
 
   depends_on "rust" => :build

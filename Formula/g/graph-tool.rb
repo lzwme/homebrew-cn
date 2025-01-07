@@ -3,8 +3,8 @@ class GraphTool < Formula
 
   desc "Efficient network analysis for Python 3"
   homepage "https://graph-tool.skewed.de/"
-  url "https://downloads.skewed.de/graph-tool/graph-tool-2.82.tar.bz2"
-  sha256 "ae687b06e45258a5dce78e90ae911322105ed3aacda24c3781e210811c295bb9"
+  url "https://downloads.skewed.de/graph-tool/graph-tool-2.83.tar.bz2"
+  sha256 "c8559cc3dd2eda34bad9832f200ef1696f47a9d169fe1b65a1ea53562a8d19ca"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -13,12 +13,12 @@ class GraphTool < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "5ca20826ac5228f05ea3187aa01a39475ad0115e97900856a8f9acc54284c49d"
-    sha256                               arm64_sonoma:  "7283060f1e7cbca5d12914338fb67826c9f673daf2832e69dda547a7144abe03"
-    sha256                               arm64_ventura: "81b9517bd11b8f06c3e1bf4adff19a3fcc0ea3ad87ed6255c0431715d1d3f55c"
-    sha256                               sonoma:        "f75fe2e4526bc88d2cc291eb9c749f9d2a5d62b097f041e5ed9957600f51fee4"
-    sha256                               ventura:       "d918ecfa4bc3084a71da45e66f90fe67165a47e8f2e249a7e51e78a8f29dfaac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f810a6d43e38d1f6d2f5db8003c4101ed5535fa947b19c0d4669b9fa06d3edf"
+    sha256                               arm64_sequoia: "b71c8838743436e8898801a985cb9181e6431ee7f24bdcfe79c5866376ea5607"
+    sha256                               arm64_sonoma:  "a7f90110a804220bb450b079f1196e15174ee05ce1327a30b2cc1391a1f0adc4"
+    sha256                               arm64_ventura: "f7ef12625b2034238b81b2051a4ac861086b9cd0876d317e694ebb151b09eb45"
+    sha256                               sonoma:        "31279d83d7a802ecbdf1f9981440f9b6754b3ad124596b42f75df69b29e18a6d"
+    sha256                               ventura:       "3564a92066c5b0e9f3f04799891c17fad5134d79db0ddc2e7d6ebd7538ff775f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8eb2e01a49b32b32f45e3927f30352dac096fd57d9b2a03e5e2b96cad9f7f4bc"
   end
 
   depends_on "google-sparsehash" => :build

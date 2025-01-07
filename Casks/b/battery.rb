@@ -18,6 +18,10 @@ cask "battery" do
   zap trash: [
     "~.battery",
     "~LibraryApplication Supportbattery",
+    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsco.palokaj.battery.sfl*",
+    "~LibraryCachesco.palokaj.battery",
+    "~LibraryCachesco.palokaj.battery.ShipIt",
+    "~LibraryHTTPStoragesco.palokaj.battery",
     "~LibraryLaunchAgentsbattery.plist",
     "~LibraryPreferencesco.palokaj.battery.plist",
     "~LibraryPreferencesorg.mentor.Battery.plist",

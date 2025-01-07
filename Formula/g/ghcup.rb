@@ -22,7 +22,7 @@ class Ghcup < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc" => :build
+  depends_on "ghc@9.10" => :build
 
   uses_from_macos "bzip2"
   uses_from_macos "ncurses"

@@ -4743,6 +4743,7 @@ Homebrew-homebrew-core/Formula/o/openai-whisper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openal-soft.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openapi-diff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openapi-generator.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/openapi-tui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openbao.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openblas.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opencascade.rb, Homebrew/homebrew-core, 1
@@ -7686,6 +7687,7 @@ Homebrew-homebrew-cask/Casks/a/avitools.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/avocode.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/avogadro.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/avtouchbar.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/aw-edid-editor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/awa.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aware.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/awareness.rb, Homebrew/homebrew-cask, 0
@@ -9137,6 +9139,7 @@ Homebrew-homebrew-cask/Casks/font/font-b/font-borel.rb, Homebrew/homebrew-cask, 
 Homebrew-homebrew-cask/Casks/font/font-b/font-bowlby-one-sc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-b/font-bowlby-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-b/font-braah-one.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-b/font-brass-mono.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-b/font-bravura.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-b/font-brawler.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-b/font-bree-serif.rb, Homebrew/homebrew-cask, 1
@@ -11695,7 +11698,7 @@ Homebrew-homebrew-cask/Casks/i/isyncr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/itau.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/itch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/iterm2.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/i/iterm2@beta.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/i/iterm2@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/iterm2@nightly.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/itermai.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ithoughtsx.rb, Homebrew/homebrew-cask, 0

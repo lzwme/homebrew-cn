@@ -1,11 +1,20 @@
 class Koka < Formula
   desc "Compiler for the Koka language"
   homepage "http:koka-lang.org"
-  url "https:github.comkoka-langkoka.git",
-      tag:      "v3.1.2",
-      revision: "3c4e721dd48d48b409a3740b42fc459bf6d7828e"
   license "Apache-2.0"
-  head "https:github.comkoka-langkoka.git", branch: "master"
+  head "https:github.comkoka-langkoka.git", branch: "dev"
+
+  stable do
+    url "https:github.comkoka-langkoka.git",
+        tag:      "v3.1.2",
+        revision: "3c4e721dd48d48b409a3740b42fc459bf6d7828e"
+
+    # Backport fix to build with Cabal
+    patch do
+      url "https:github.comkoka-langkokacommit86eb069440aa3e7da79b4f9b88867cfab4464354.patch?full_index=1"
+      sha256 "97229ae11d735963a29ded3c10adfa6d12672b7d07277190d1af3a898ee6045d"
+    end
+  end
 
   livecheck do
     url :stable
@@ -24,8 +33,8 @@ class Koka < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "40d8791bbc514bb4bee3c4177bcc16fc865de042a5a53627caabbe774c9daa43"
   end
 
-  depends_on "ghc@9.6" => :build
-  depends_on "haskell-stack" => :build
+  depends_on "cabal-install" => :build
+  depends_on "ghc@9.10" => :build
   depends_on "pcre2" => :build
 
   def install
@@ -34,13 +43,9 @@ class Koka < Formula
       s.gsub! '"-march=haswell"', "\"-march=#{ENV.effective_arch}\"" if Hardware::CPU.intel? && build.bottle?
     end
 
-    stack_args = %w[
-      --system-ghc
-      --no-install-ghc
-      --skip-ghc-check
-    ]
-    system "stack", "build", *stack_args
-    system "stack", "exec", "koka", *stack_args, "--",
+    system "cabal", "v2-update"
+    system "cabal", "v2-build", *std_cabal_v2_args.reject { |s| s["install"] }
+    system "cabal", "v2-run", "koka", "--",
            "-e", "utilbundle.kk", "--",
            "--prefix=#{prefix}", "--install", "--system-ghc"
   end

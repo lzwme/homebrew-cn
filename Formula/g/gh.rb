@@ -1,10 +1,9 @@
 class Gh < Formula
   desc "GitHub command-line tool"
   homepage "https:cli.github.com"
-  url "https:github.comclicliarchiverefstagsv2.64.0.tar.gz"
-  sha256 "229fd8fc51325ebb5a357af6af116094d6be6a5f1e0f0923b7892ed01b208abb"
+  url "https:github.comclicliarchiverefstagsv2.65.0.tar.gz"
+  sha256 "af026f1b0368b1444a67a941f179ddce7e97333881ec0bbcb49fed29f4151241"
   license "MIT"
-  revision 1
   head "https:github.comclicli.git", branch: "trunk"
 
   livecheck do
@@ -13,12 +12,12 @@ class Gh < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f3486152dd9a8de49018b2852d61d8514c51b48e22bee427c2d68f6499452178"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3486152dd9a8de49018b2852d61d8514c51b48e22bee427c2d68f6499452178"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f3486152dd9a8de49018b2852d61d8514c51b48e22bee427c2d68f6499452178"
-    sha256 cellar: :any_skip_relocation, sonoma:        "72ce12a9132360b14d7fbb683c97a1ff7b4a356df7b8a62dc8185500e4bd4c91"
-    sha256 cellar: :any_skip_relocation, ventura:       "95ed659503204d7e2016ec5baee6943cc013385edfd2fcf3cc719866add4a5ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8489384447e7f99db786dc20f15e106a8095f564a608456550f8213af006ff8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d968cb4fd20d0eedeffd6de72b4fcf90672037b49b86ea4f785af0b3ae93f90c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d968cb4fd20d0eedeffd6de72b4fcf90672037b49b86ea4f785af0b3ae93f90c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d968cb4fd20d0eedeffd6de72b4fcf90672037b49b86ea4f785af0b3ae93f90c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6f71766ae5956beec415070f2cdca33552c19223feb5730530b1abe4abef467b"
+    sha256 cellar: :any_skip_relocation, ventura:       "2475ad201fb3970f6e1b9d894c328073a7782229c58fa4022e9f8bdea9c1835e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9863a0c954e617b157c2563e7eed03a7d2e233792ebb79c87037dc1650c6270"
   end
 
   depends_on "go" => :build

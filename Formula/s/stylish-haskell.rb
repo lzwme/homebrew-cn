@@ -18,7 +18,7 @@ class StylishHaskell < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.8" => :build
+  depends_on "ghc@9.8" => :build # GHC 9.10 PR: https:github.comhaskellstylish-haskellpull480
 
   def install
     system "cabal", "v2-update"

@@ -17,7 +17,8 @@ cask "xbar" do
 
   app "xbar.app"
 
-  uninstall quit: "com.xbarapp.app"
+  uninstall quit:       "com.xbarapp.app",
+            login_item: "xbar"
 
   zap trash: [
     "~LibraryApplication Supportxbar",

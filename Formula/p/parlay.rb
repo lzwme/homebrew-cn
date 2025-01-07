@@ -1,18 +1,18 @@
 class Parlay < Formula
   desc "Enrich SBOMs with data from third party services"
   homepage "https:github.comsnykparlay"
-  url "https:github.comsnykparlayarchiverefstagsv0.6.4.tar.gz"
-  sha256 "b378e31a7f7ba7ac8373febf26e8d4796e724a1ab57844d928906ff3e25858f4"
+  url "https:github.comsnykparlayarchiverefstagsv0.6.5.tar.gz"
+  sha256 "5f9a8a45b11b44bd0f416b2f6dd60fd7c3ef2bfb5304c8e11270b4a64f0e6463"
   license "Apache-2.0"
   head "https:github.comsnykparlay.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "412eb05356a186c28db0b8eabf85237eae42a52879d13d7ac4ac7543e1e485e4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "412eb05356a186c28db0b8eabf85237eae42a52879d13d7ac4ac7543e1e485e4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "412eb05356a186c28db0b8eabf85237eae42a52879d13d7ac4ac7543e1e485e4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "42e5d0385abe716181c905367121ad2f163c4c4122f894c0ec66784713a365e5"
-    sha256 cellar: :any_skip_relocation, ventura:       "42e5d0385abe716181c905367121ad2f163c4c4122f894c0ec66784713a365e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77b459d62aa512a32cb99f6e0f7eace1b8cf1d6ab187f54a641840507d6584eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf040aa88904a9f362500cfa1d1df6a7705c49c686acef2498228456274f806d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf040aa88904a9f362500cfa1d1df6a7705c49c686acef2498228456274f806d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cf040aa88904a9f362500cfa1d1df6a7705c49c686acef2498228456274f806d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5ce1332d3c30003ac9820c251912913fc66c162c6f0f04cd11fa6d1c65c05755"
+    sha256 cellar: :any_skip_relocation, ventura:       "5ce1332d3c30003ac9820c251912913fc66c162c6f0f04cd11fa6d1c65c05755"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1399055c15e874dc43faae8de44286b549acf9f4a8cf0d781ef9adc9c9f92774"
   end
 
   depends_on "go" => :build

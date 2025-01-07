@@ -27,9 +27,12 @@ cask "stats" do
   zap delete: "LibraryLaunchDaemonseu.exelban.Stats.SMC.Helper.plist",
       trash:  [
         "~LibraryApplication Scriptseu.exelban.Stats.LaunchAtLogin",
+        "~LibraryApplication Scriptseu.exelban.Stats.Widgets",
         "~LibraryCacheseu.exelban.Stats",
         "~LibraryContainerseu.exelban.Stats.LaunchAtLogin",
+        "~LibraryContainerseu.exelban.Stats.Widgets",
         "~LibraryCookieseu.exelban.Stats.binarycookies",
+        "~LibraryGroup Containerseu.exelban.Stats.widgets",
         "~LibraryHTTPStorageseu.exelban.Stats",
         "~LibraryPreferenceseu.exelban.Stats.plist",
       ]

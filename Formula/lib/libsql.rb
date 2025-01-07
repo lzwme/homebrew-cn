@@ -1,8 +1,8 @@
 class Libsql < Formula
   desc "Fork of SQLite that is both Open Source, and Open Contributions"
   homepage "https:turso.techlibsql"
-  url "https:github.comtursodatabaselibsqlreleasesdownloadlibsql-server-v0.24.30source.tar.gz"
-  sha256 "b9334866c74103056747753f940c8e597e78b1ab131c1fe37e5d865b4ca2ea8b"
+  url "https:github.comtursodatabaselibsqlreleasesdownloadlibsql-server-v0.24.31source.tar.gz"
+  sha256 "ca9a321622e632150166cd5625f48185ba88f8807de41b1105e483c920cacde9"
   license "MIT"
   head "https:github.comtursodatabaselibsql.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Libsql < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3e9cbc4f225acc77fac83e2a5275bf8f48ce86988edd2bccc9b30373d6d110f7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c4794b74e1c41e859289271eace0b3fb60eb29086468e3367a0c1241ad6bbf4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7ada14220d7002aed4310020bdf638aafce9329498c7fb9550c4302668ba2e4b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1daa2443761f4516c8faaa022593e614b20b9ee3049490f9adad14165505ac53"
-    sha256 cellar: :any_skip_relocation, ventura:       "68dc549401fb4ec2554ff9c73bf3bf52e9c5e84d5ba19827fdbee40c740739bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85f6e124b4760218f51e22f37d47c4fe876182e6e37f4c5ea8bab872994b4404"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "124609fd5c7f9bc40ce8ebc9cb699e9c94a38c27d276f0975368cace20e1b841"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "99dfa54cfa7e92dbd39d687568c213bca137764c1fe31bb6023b4dca078b8558"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4eb832345e036bbace6c258b2404686f745a1ae9dfbd70c5fe3162b7dbd11101"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8ab1beecbb31806bb2c91eb7b6689838dce424f7c3f3dbe7c8dcce4633a8ea59"
+    sha256 cellar: :any_skip_relocation, ventura:       "91da9d7836d60ea08a7376ad93fdbcb82ff0d0e48a9edd6baf6f474e911c314e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3cd3c6417971f9591f0db9b26822ad536cfd6564717cf58735fb62814f02343"
   end
 
   depends_on "rust" => :build
@@ -30,6 +30,7 @@ class Libsql < Formula
   test do
     pid = spawn(bin"sqld")
     sleep 2
+    sleep 3 if OS.mac? && Hardware::CPU.intel?
     assert_predicate testpath"data.sqld", :exist?
 
     assert_match version.to_s, shell_output("#{bin}sqld --version")

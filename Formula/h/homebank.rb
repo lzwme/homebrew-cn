@@ -2,9 +2,9 @@ class Homebank < Formula
   desc "Manage your personal accounts at home"
   homepage "http://homebank.free.fr"
   # A mirror is used as primary URL because the official one is unstable.
-  url "https://deb.debian.org/debian/pool/main/h/homebank/homebank_5.8.5.orig.tar.gz"
-  mirror "http://homebank.free.fr/public/sources/homebank-5.8.5.tar.gz"
-  sha256 "4eb4451e57840395468c2d6a3fe4d016ada0ba7d47ca7f1cec0418c0a1339e97"
+  url "https://deb.debian.org/debian/pool/main/h/homebank/homebank_5.8.6.orig.tar.gz"
+  mirror "http://homebank.free.fr/public/sources/homebank-5.8.6.tar.gz"
+  sha256 "af138a7bf2cd795c1338c5e3d9e99909ee6b33d920c618dc35c6477fd826ddf5"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -13,12 +13,12 @@ class Homebank < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "94bf4b49f731be4f47f29034b43db67dc2db8e9fcbadb0b55ac6644ded05cbc6"
-    sha256 arm64_sonoma:  "cb68025bcc4d10dc10710bd614b393b520aa2635d72a89c0064c87500acfbd4f"
-    sha256 arm64_ventura: "6397871dffdac218ae42417a09da94949e3cb5fcd275fd37763418764b835d1a"
-    sha256 sonoma:        "e2bb671af014440ce5abd396c9a2aa7779486e281b6406c73226e0291e8962ee"
-    sha256 ventura:       "43f9a4732805e49ca347104054191c26fdb66b723725d76a78021efb3246c707"
-    sha256 x86_64_linux:  "cb439c613da62c89dfc5d8c80f8d7f2057d0834f6016d772ab2f693388cf20b0"
+    sha256 arm64_sequoia: "efab141f793847482f16f90362916f2f09937a6baa3c892df30fe04e3de6b86a"
+    sha256 arm64_sonoma:  "a75d764da8a08f87a173194d81d821ee201636295a9522ac96dad5fd52e679b6"
+    sha256 arm64_ventura: "f7a05e75f18dedecb7a07fa78a1f862b8967274018824829ff33c8efe88aaf70"
+    sha256 sonoma:        "8c979f17c79bf993edbb449c5f2be3f6d2a8123321125cb64744ca1bd15b35e3"
+    sha256 ventura:       "7e8692240976b9a05c7e36ea7fd9f5e0b4af9a41e79918d2a0bb63967bcff906"
+    sha256 x86_64_linux:  "096747e583c538a312c20b541fc8c7388001d86ed9cabb01a0e949d55c3e187c"
   end
 
   depends_on "intltool" => :build

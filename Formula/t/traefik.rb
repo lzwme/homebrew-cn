@@ -1,19 +1,18 @@
 class Traefik < Formula
   desc "Modern reverse proxy"
   homepage "https:traefik.io"
-  url "https:github.comtraefiktraefikreleasesdownloadv3.2.3traefik-v3.2.3.src.tar.gz"
-  sha256 "957997222314116959ce2ff68b261e2b2bc5292566e799dd21e7512b5782feb7"
+  url "https:github.comtraefiktraefikreleasesdownloadv3.3.0traefik-v3.3.0.src.tar.gz"
+  sha256 "c52a59b51f75f61afcc77fbdd5c8ee7f753e39027848110fdbfc251b38162cf1"
   license "MIT"
-  revision 1
   head "https:github.comtraefiktraefik.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4278eda8ff317f2197e0dd4b3dbf7930347353b6d87b2eda8102f1fa95d53cc1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4278eda8ff317f2197e0dd4b3dbf7930347353b6d87b2eda8102f1fa95d53cc1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4278eda8ff317f2197e0dd4b3dbf7930347353b6d87b2eda8102f1fa95d53cc1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "49637254a846716d29d7ff3fe4b6541fa4cb6fda3b4d82abc5327a9572f93ef4"
-    sha256 cellar: :any_skip_relocation, ventura:       "49637254a846716d29d7ff3fe4b6541fa4cb6fda3b4d82abc5327a9572f93ef4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3734b0968cb61e192907d5bc9fd201ecd45cec2ddde2a3afd54e4abd638a9c0e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c85c3ad0a996efbeb6e1f3785cb5fac99eeaa4a67e4463ef07afa4fd8b4fb820"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c85c3ad0a996efbeb6e1f3785cb5fac99eeaa4a67e4463ef07afa4fd8b4fb820"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c85c3ad0a996efbeb6e1f3785cb5fac99eeaa4a67e4463ef07afa4fd8b4fb820"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0ac120266c8ce16695bd4cab00a77d3074f98a79a60b5b89a9c0b589cc155fa8"
+    sha256 cellar: :any_skip_relocation, ventura:       "0ac120266c8ce16695bd4cab00a77d3074f98a79a60b5b89a9c0b589cc155fa8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37a2cd404770a524b2787b2bff1247c306a4547cde98f201c8463d5252134779"
   end
 
   depends_on "go" => :build

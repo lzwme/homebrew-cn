@@ -4,18 +4,20 @@ class Onnx < Formula
   url "https:github.comonnxonnxarchiverefstagsv1.17.0.tar.gz"
   sha256 "8d5e983c36037003615e5a02d36b18fc286541bf52de1a78f6cf9f32005a820e"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d2144e03e0a2c5414c3be8990425d71d5734d53edadcb74a6c587e5167bd123e"
-    sha256 cellar: :any,                 arm64_sonoma:  "de643758f6f3dadc80300b4a842aaeed3837092d26422921eb32cbba2d591ecd"
-    sha256 cellar: :any,                 arm64_ventura: "681bff0d190bb8df52d7e84f54d2fa2a1ce819976c1f7403d3f983a46245e20e"
-    sha256 cellar: :any,                 sonoma:        "f34da28859b67f6450d39ac2efdc2952203d8887756a07a0e126ff166002735a"
-    sha256 cellar: :any,                 ventura:       "cd411a76e28823c7d5e4e32db067a58414c9da18fe33fa0591d0a9c895316ba5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdb60989003bffd5716dc752d9a62fba40dd21a5a4a77089d750c06fbeb7e06f"
+    sha256 cellar: :any,                 arm64_sequoia: "0fe872816c9c83d21d581d36b2cae018c38b5006916ef20130ced9347b70c7a4"
+    sha256 cellar: :any,                 arm64_sonoma:  "ef61f1b356976ba84e28ead5dde241e2695605756690abbc9c750c79dd51e269"
+    sha256 cellar: :any,                 arm64_ventura: "d23869ed31b6263ed7af1184a445fafb28d2f906e49fbc967011de28764eced8"
+    sha256 cellar: :any,                 sonoma:        "0e391f7435c1562de1482c6f620400f47b08946b974c1a079371d98f6dac9edb"
+    sha256 cellar: :any,                 ventura:       "bb93c2d9ed8864e30705560ae553c8c4728677dac7ab019a6f57e7e5d3fd6a39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb6b43d48d9afaeb14483b9825dc92b5cb2b9cbd53fcfa75d9512f7d77e7d194"
   end
 
   depends_on "cmake" => [:build, :test]
-  depends_on "protobuf@21"
+  depends_on "abseil"
+  depends_on "protobuf"
 
   uses_from_macos "python" => :build
 
@@ -88,14 +90,16 @@ class Onnx < Formula
     CPP
 
     (testpath"CMakeLists.txt").write <<~CMAKE
-      cmake_minimum_required(VERSION 3.5)
+      cmake_minimum_required(VERSION 3.10)
       project(test LANGUAGES CXX)
       find_package(ONNX CONFIG REQUIRED)
       add_executable(test test.cpp)
       target_link_libraries(test ONNX::onnx)
     CMAKE
 
-    args = OS.mac? ? [] : ["-DCMAKE_BUILD_RPATH=#{lib}"]
+    ENV.delete "CPATH"
+    args = ["-DCMAKE_FIND_PACKAGE_PREFER_CONFIG=ON"]
+    args << "-DCMAKE_BUILD_RPATH=#{lib};#{HOMEBREW_PREFIX}lib" if OS.linux?
     system "cmake", "-S", ".", "-B", "build", *args
     system "cmake", "--build", "build"
     system ".buildtest"

@@ -18,12 +18,24 @@ class DhallJson < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.6" => :build
+  depends_on "ghc@9.10" => :build
 
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
   def install
+    if build.stable?
+      # Backport support for GHC 9.10
+      inreplace "#{name}.cabal" do |s|
+        # https:github.comdhall-langdhall-haskellcommit28d346f00d12fa134b4c315974f76cc5557f1330
+        s.gsub! "aeson                     >= 1.4.6.0   && < 2.2 ,",
+                "aeson                     >= 1.4.6.0   && < 2.3 ,"
+        # https:github.comdhall-langdhall-haskellcommit277d8b1b3637ba2ce125783cc1936dc9591e67a7
+        s.gsub! "text                      >= 0.11.1.0  && < 2.1 ,",
+                "text                      >= 0.11.1.0  && < 2.2 ,"
+      end
+    end
+
     cd "dhall-json" if build.head?
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args

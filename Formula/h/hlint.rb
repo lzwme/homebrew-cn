@@ -18,11 +18,15 @@ class Hlint < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.8" => :build
+  depends_on "ghc@9.8" => :build # TODO: switch to ghc@9.10 (or newer if supported) in next release
 
   uses_from_macos "ncurses"
 
   def install
+    # GHC 9.10 support: https:github.comndmitchellhlintcommit7aafde56f6bc526aedb95fb282d8fd2b4ea290cc
+    # GHC 9.12 support: https:github.comndmitchellhlintpull1629
+    odie "Update GHC build dependency!" if build.stable? && version > "3.8"
+
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args
     man1.install "datahlint.1"

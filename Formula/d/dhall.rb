@@ -17,12 +17,22 @@ class Dhall < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.8" => :build
+  depends_on "ghc@9.10" => :build
 
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
+  # Use newer metadata revision to relax upper bounds on dependencies for GHC 9.10
+  resource "2.cabal" do
+    url "https://hackage.haskell.org/package/dhall-1.42.1/revision/2.cabal"
+    sha256 "642785a2db236c7e94a5765e70690f88f87ef9c01a891669674b9cbc70a14948"
+  end
+
   def install
+    # Backport support for GHC 9.10
+    odie "Remove resource and workaround!" if version > "1.42.1"
+    resource("2.cabal").stage { buildpath.install "2.cabal" => "dhall.cabal" }
+
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args
     man1.install "man/dhall.1"

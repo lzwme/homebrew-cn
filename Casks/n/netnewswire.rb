@@ -34,12 +34,11 @@ cask "netnewswire" do
   app "NetNewsWire.app"
 
   zap trash: [
-    "~LibraryApplication Scriptscom.ranchero.NetNewsWire-Evergreen",
-    "~LibraryApplication Scriptscom.ranchero.NetNewsWire-Evergreen.Subscribe-to-Feed",
+    "~LibraryApplication Scriptscom.ranchero.NetNewsWire-Evergreen*",
+    "~LibraryApplication Scriptsgroup.com.ranchero.NetNewsWire-Evergreen",
     "~LibraryApplication SupportNetNewsWire",
     "~LibraryCachescom.ranchero.NetNewsWire-Evergreen",
-    "~LibraryContainerscom.ranchero.NetNewsWire-Evergreen",
-    "~LibraryContainerscom.ranchero.NetNewsWire-Evergreen.Subscribe-to-Feed",
+    "~LibraryContainerscom.ranchero.NetNewsWire-Evergreen*",
     "~LibraryGroup Containersgroup.com.ranchero.NetNewsWire-Evergreen",
     "~LibraryPreferencescom.ranchero.NetNewsWire-Evergreen.plist",
     "~LibrarySaved Application Statecom.ranchero.NetNewsWire-Evergreen.savedState",

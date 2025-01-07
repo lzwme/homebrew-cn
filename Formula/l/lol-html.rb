@@ -1,18 +1,18 @@
 class LolHtml < Formula
   desc "Low output latency streaming HTML parserrewriter with CSS selector-based API"
   homepage "https:github.comcloudflarelol-html"
-  url "https:github.comcloudflarelol-htmlarchiverefstagsv2.1.0.tar.gz"
-  sha256 "fbc4eefbffb570f92d1133f092d93a5d2b993777e00bb4f612c17ac79a6e021b"
+  url "https:github.comcloudflarelol-htmlarchiverefstagsv2.2.0.tar.gz"
+  sha256 "4c5fe6a8497b1ced1b6db8d9fb16c934375b1f02f69db765713f6bd367719e65"
   license "BSD-3-Clause"
   head "https:github.comcloudflarelol-html.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0ef081850ef8f28e018b65c4b7dfe9e0ec2c79c7177529d4117cfe05ecf1d429"
-    sha256 cellar: :any,                 arm64_sonoma:  "4d10b3710768cac73e457cae0a22eae41eb18d52440bf405401bd4f5a3531ebf"
-    sha256 cellar: :any,                 arm64_ventura: "5ccd12f21cf76ba28e902f6f5cd18cfb4b072dfa685a61c776a88daac7e541e4"
-    sha256 cellar: :any,                 sonoma:        "80e300bf2b95d7ce03a414eb8f287e6977863d1fe1337022b37a6b4da17a4527"
-    sha256 cellar: :any,                 ventura:       "96abc43b365ea6af2e29a102ec783001a8b926a642c93d1741960e1bfa5cfac9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6cbc32ec855ef188329a705f0ee009275657e4abd0f038b123b24ea6c4bf65cd"
+    sha256 cellar: :any,                 arm64_sequoia: "9531636cc6ee9771e763c277cbac1a8a59677817602ba2042e009a193762ff3b"
+    sha256 cellar: :any,                 arm64_sonoma:  "26f518582c917b12c87513e30c8c475d587f47e2577a53fcea5ecd174f454ca7"
+    sha256 cellar: :any,                 arm64_ventura: "529459d66560903b289b15eb8ba951c973a11bd40c80f8a99205f566f3b4fae2"
+    sha256 cellar: :any,                 sonoma:        "9de53bf6bca25ba74ab51032380b6bb35a677a1ca776d63ca69e0a7217b1896d"
+    sha256 cellar: :any,                 ventura:       "b94d90fb506a5346cf8116a1967964d29c340717052a6435a6629382fe62f0fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc2b1c0c0004fa4d21f5e7149e28aff9175711bc63cc4c71af6c72279cb4cfd1"
   end
 
   depends_on "rust" => :build

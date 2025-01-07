@@ -1,10 +1,19 @@
 class DhallToml < Formula
   desc "Convert between Dhall and Toml"
   homepage "https:github.comdhall-langdhall-haskelltreemaindhall-toml"
-  url "https:hackage.haskell.orgpackagedhall-toml-1.0.3dhall-toml-1.0.3.tar.gz"
-  sha256 "00a9ece5313c8b5ec32516e0b1e326b63062f9b7abb025a084bda5b69cae2935"
   license "BSD-3-Clause"
   head "https:github.comdhall-langdhall-haskell.git", branch: "main"
+
+  stable do
+    url "https:hackage.haskell.orgpackagedhall-toml-1.0.3dhall-toml-1.0.3.tar.gz"
+    sha256 "00a9ece5313c8b5ec32516e0b1e326b63062f9b7abb025a084bda5b69cae2935"
+
+    # Use newer metadata revision to relax upper bounds on dependencies for GHC 9.10
+    resource "2.cabal" do
+      url "https:hackage.haskell.orgpackagedhall-toml-1.0.3revision2.cabal"
+      sha256 "22bbee460a1b85cfb7300fc6d8b78c94d01c3a5f8b9f74836bac3f17302580ee"
+    end
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "780e0f69804e6ec42753ddab457ba65206b731e68ee6e1b655f3dba777507978"
@@ -18,12 +27,18 @@ class DhallToml < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.8" => :build
+  depends_on "ghc@9.10" => :build
 
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
   def install
+    if build.stable?
+      # Backport support for GHC 9.10
+      odie "Remove resource and workaround!" if version > "1.0.3"
+      resource("2.cabal").stage { buildpath.install "2.cabal" => "dhall-toml.cabal" }
+    end
+
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args
   end

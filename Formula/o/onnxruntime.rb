@@ -5,6 +5,7 @@ class Onnxruntime < Formula
       tag:      "v1.20.1",
       revision: "5c1b7ccbff7e5141c1da7a9d963d660e5741c319"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,12 +13,12 @@ class Onnxruntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "aec466ff3c136af218a5c53ddedcdf755a5affb8ea3e4a45a08ece660f997d16"
-    sha256 cellar: :any,                 arm64_sonoma:  "2eca70956aa47707dd4799edcd11bcdff642ddf55e9834b7e5f85986e595b2ea"
-    sha256 cellar: :any,                 arm64_ventura: "c93749fcaeecf6b64e8651de30352acd7d14f1926074a9186f2cf8be13dc82a0"
-    sha256 cellar: :any,                 sonoma:        "975557a04b1d91a9c335adae9c93e643b8987a1bd0cfdefdf340bdbaba16bbce"
-    sha256 cellar: :any,                 ventura:       "f8a9326453bff294371955a114734b6c465d4d55aa2af725a3b5ff6532d77fdd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17c511a8d9e2967f6ef52b22bf88c83ccf42371716a5b2c3768bbfb536bd89ae"
+    sha256 cellar: :any,                 arm64_sequoia: "ebfd468f95f087645049ffe7a1d2a2e843998dec9528c7e642e5df0e9c603b3c"
+    sha256 cellar: :any,                 arm64_sonoma:  "c7c329085d36a72f9dd8313992e15929dc70cb0ca3c3d4ae2ec60b949a7a45e4"
+    sha256 cellar: :any,                 arm64_ventura: "2894a827b91d5b8319c15883373e1fefbe7fbda8459f16c6ab944523c824315c"
+    sha256 cellar: :any,                 sonoma:        "d84c6192b877d6638c4db00ec835f116298dd624e125c13eae59ddba11298e35"
+    sha256 cellar: :any,                 ventura:       "f79c5899acf7b627c9ee4e89eec91ebb99f9f953ce341a7f2d85adc09cf25dcc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0df3f93a5c5a5db780c11af3ecdf2712ec147882191233d05023966f76f09dc"
   end
 
   depends_on "boost" => :build
@@ -31,7 +32,7 @@ class Onnxruntime < Formula
   depends_on "abseil"
   depends_on "nsync"
   depends_on "onnx"
-  depends_on "protobuf@21" # https:github.commicrosoftonnxruntimeissues21308
+  depends_on "protobuf"
   depends_on "re2"
 
   # Need newer than stable `eigen` after https:github.commicrosoftonnxruntimepull21492
@@ -55,6 +56,12 @@ class Onnxruntime < Formula
     sha256 "76f9920e591bc52ea80f661fa0b5b15479960004f1be103467b219e55c73a8cc"
   end
 
+  # Backport support for Protobuf 26+
+  patch do
+    url "https:github.commicrosoftonnxruntimecommit704523c2d8a142f723a5cc242c62f5b20afa4944.patch?full_index=1"
+    sha256 "68a0300b02f1763a875c7f890c4611a95233b7ff1f7158f4328d5f906f21c84d"
+  end
+
   def install
     python3 = which("python3.13")
 
@@ -75,7 +82,7 @@ class Onnxruntime < Formula
       -DFETCHCONTENT_SOURCE_DIR_PYTORCH_CLOG=#{buildpath}build_depspytorch_cpuinfo-src
       -DFETCHCONTENT_TRY_FIND_PACKAGE_MODE=ALWAYS
       -DPYTHON_EXECUTABLE=#{python3}
-      -DONNX_CUSTOM_PROTOC_EXECUTABLE=#{Formula["protobuf@21"].opt_bin}protoc
+      -DONNX_CUSTOM_PROTOC_EXECUTABLE=#{Formula["protobuf"].opt_bin}protoc
       -Donnxruntime_BUILD_SHARED_LIB=ON
       -Donnxruntime_BUILD_UNIT_TESTS=OFF
       -Donnxruntime_GENERATE_TEST_REPORTS=OFF

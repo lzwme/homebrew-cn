@@ -1,6 +1,7 @@
 class HopenpgpTools < Formula
   desc "Command-line tools for OpenPGP-related operations"
   homepage "https:hackage.haskell.orgpackagehopenpgp-tools"
+  # TODO: Check if `ixset-typed` resource can be dropped
   url "https:hackage.haskell.orgpackagehopenpgp-tools-0.23.10hopenpgp-tools-0.23.10.tar.gz"
   sha256 "5a89eab24143ed212b6d91e0df9cc00d9b0ebd3ccf7a0b65b4f29768c4044e29"
   license "AGPL-3.0-or-later"
@@ -16,26 +17,54 @@ class HopenpgpTools < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.6" => :build
+  depends_on "ghc@9.8" => :build
   depends_on "pkgconf" => :build
+  depends_on "gnupg" => :test
   depends_on "nettle"
 
   uses_from_macos "zlib"
 
-  resource "homebrew-key.gpg" do
-    url "https:gist.githubusercontent.comzmwangxbe307671d11cd78985bd3a96182f15earawc7e803814efc4ca96cc9a56632aa542ea4ccf5b3homebrew-key.gpg"
-    sha256 "994744ca074a3662cff1d414e4b8fb3985d82f10cafcaadf1f8342f71f36b233"
+  # TODO: Remove resource once new release ixset-typed release is available
+  resource "ixset-typed" do
+    url "https:hackage.haskell.orgpackageixset-typed-0.5.1.0ixset-typed-0.5.1.0.tar.gz"
+    sha256 "08b7b4870d737b524a8575529ee1901b0d8e39ff72298a6b231f8719b5a8790c"
+
+    # Backport https:github.comwell-typedixset-typedpull23
+    patch do
+      url "https:github.comwell-typedixset-typedcommit460901368dcb452d352a17bcd4b8f60200a6fa71.patch?full_index=1"
+      sha256 "e284534df9ff14f49dad95a6745137c36c7a6335e896201c577d709794882e4c"
+    end
   end
 
   def install
+    # Workaround to use newer GHC
+    (buildpath"cabal.project.local").write "packages: . ixset-typed"
+    (buildpath"ixset-typed").install resource("ixset-typed")
+
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args
   end
 
   test do
-    resource("homebrew-key.gpg").stage do
-      linter_output = shell_output("#{bin}hokey lint <homebrew-key.gpg 2>devnull")
-      assert_match "Homebrew <security@brew.sh>", linter_output
+    (testpath"batch.gpg").write <<~GPG
+      Key-Type: RSA
+      Key-Length: 2048
+      Subkey-Type: RSA
+      Subkey-Length: 2048
+      Name-Real: Testing
+      Name-Email: testing@foo.bar
+      Expire-Date: 1d
+      %no-protection
+      %commit
+    GPG
+
+    gpg = Formula["gnupg"].opt_bin"gpg"
+    begin
+      system gpg, "--batch", "--gen-key", "batch.gpg"
+      output = pipe_output("#{bin}hokey lint", shell_output("#{gpg} --export Testing"), 0)
+      assert_match "Testing <testing@foo.bar>", output
+    ensure
+      system "#{gpg}conf", "--kill", "gpg-agent"
     end
   end
 end
