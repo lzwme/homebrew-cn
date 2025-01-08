@@ -23,7 +23,7 @@ class GitlabCiLocal < Formula
   end
 
   test do
-    (testpath".gitlab-ci.yml").write <<~YML
+    (testpath".gitlab-ci.yml").write <<~YAML
       ---
       stages:
         - build
@@ -44,7 +44,7 @@ class GitlabCiLocal < Formula
           - shared-docker
         script:
           - echo $HELLO
-    YML
+    YAML
 
     system "git", "init"
     system "git", "add", ".gitlab-ci.yml"

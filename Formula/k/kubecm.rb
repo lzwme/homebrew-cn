@@ -1,17 +1,17 @@
 class Kubecm < Formula
   desc "KubeConfig Manager"
   homepage "https:kubecm.cloud"
-  url "https:github.comsunny0826kubecmarchiverefstagsv0.32.1.tar.gz"
-  sha256 "30fd9c306b0820be24f56ebc1319a956eb1c05afeee63ae4ab5779e5fc897692"
+  url "https:github.comsunny0826kubecmarchiverefstagsv0.32.2.tar.gz"
+  sha256 "54aaf537580018ad668af1aa02838c8e8dabc962c734460a06be02835fb6c241"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "225f10417ff1e8833e567eca54e30b5b4ad5e45ff59149f99e53b2c074d0f420"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "225f10417ff1e8833e567eca54e30b5b4ad5e45ff59149f99e53b2c074d0f420"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "225f10417ff1e8833e567eca54e30b5b4ad5e45ff59149f99e53b2c074d0f420"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1d7d521861c8d136d95d9cd9a3698812d7776a1644759a33a42c02710dced62b"
-    sha256 cellar: :any_skip_relocation, ventura:       "1d7d521861c8d136d95d9cd9a3698812d7776a1644759a33a42c02710dced62b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cff271aa2e4ac6f95fe3722ee176cca481a6bdaf959e4a9dd9025da9bc49b9a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4dc5ae00b3513190cfebcc2173588f2c54582b9dd6bd8bb1802503780da1594d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4dc5ae00b3513190cfebcc2173588f2c54582b9dd6bd8bb1802503780da1594d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4dc5ae00b3513190cfebcc2173588f2c54582b9dd6bd8bb1802503780da1594d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "32e7e7ec8f257b21b7d8c7ab3d26947e8bb6ba5a303827be4325a98b5ec5b9a8"
+    sha256 cellar: :any_skip_relocation, ventura:       "32e7e7ec8f257b21b7d8c7ab3d26947e8bb6ba5a303827be4325a98b5ec5b9a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5d97c89eb7838d2098927a62909c4802484ada82b4f07a0acde066b0c5ef623"
   end
 
   depends_on "go" => :build

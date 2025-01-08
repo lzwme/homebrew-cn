@@ -1,8 +1,8 @@
 class GhcAT98 < Formula
   desc "Glorious Glasgow Haskell Compilation System"
   homepage "https://haskell.org/ghc/"
-  url "https://downloads.haskell.org/~ghc/9.8.2/ghc-9.8.2-src.tar.xz"
-  sha256 "e2fb7a7dd7461237d22e8365a83edd9e1a77d2e15d045f3945396845a87781c9"
+  url "https://downloads.haskell.org/~ghc/9.8.4/ghc-9.8.4-src.tar.xz"
+  sha256 "17e8188f3c8a5c2f73fb4e35d01032e8dc258835ec876d52c8ad8ee3d24b2fc5"
   # We build bundled copies of libffi and GMP so GHC inherits the licenses
   license all_of: [
     "BSD-3-Clause",
@@ -16,22 +16,19 @@ class GhcAT98 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "2d815b4bf0d5873313ad00c7bcc2c3a8c3a14892edcb76ae87a8abfcb92bc119"
-    sha256 cellar: :any,                 arm64_sonoma:   "abeced6f03bc0d63eaaa0909167c4cda1585c414e718861ec89aa0f13122a6d5"
-    sha256 cellar: :any,                 arm64_ventura:  "686beedac05e51b8554a6fbdd44ea4a06b5fc5f73cd18ddb5191dee9d8ed1965"
-    sha256 cellar: :any,                 arm64_monterey: "263c6cc8f81369500e6270509468775976987c5557f023126e694c00d7f44ba6"
-    sha256 cellar: :any,                 sonoma:         "64216a95d4b33e2bde661c2fcadc50dc0bcebf09e4279db09b35b7f71b99c6f6"
-    sha256 cellar: :any,                 ventura:        "6905add83dbe5b32468bd06c88ba8f34a6d59bffad1b077ea68ddb74507bf1e2"
-    sha256 cellar: :any,                 monterey:       "a06fc3f77af7df2c5d37e2b2783bcd3174ad1287a939b38c8d6ba2941ee776a1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a0427565c4f24eac5d9eb39fb0f2bd9440cd52011f1c2621d70a511efa13d58e"
+    sha256 cellar: :any,                 arm64_sequoia: "77cf644f73bd7942775f30101b61c4425c9c3d45d8ba5c3af80e6b3c5e689f4a"
+    sha256 cellar: :any,                 arm64_sonoma:  "1a10ae542525f70b3c308122da20a293f26a80ddb9e60df6d4ce3dc7aa1fa0f7"
+    sha256 cellar: :any,                 arm64_ventura: "2a294afb0daafc46a01f07b28ce8b12c99e7cf012636db9e1ec2cad571cb7159"
+    sha256 cellar: :any,                 sonoma:        "1ef721a935beec2ae8dee98c5114688006fba633e326b8fb539c0c579aea6692"
+    sha256 cellar: :any,                 ventura:       "cb6edb4b9148cd65d58e0eb460717156a508e30746a9041913fa9d723b7e4021"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "062b63708890292cd293ab0e7b836807cf7b37751e6f5717490921b777acb517"
   end
 
   keg_only :versioned_formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "python@3.12" => :build
+  depends_on "python@3.13" => :build
   depends_on "sphinx-doc" => :build
   depends_on "xz" => :build
 
@@ -111,7 +108,7 @@ class GhcAT98 < Formula
     ENV["CC"] = ENV["ac_cv_path_CC"] = OS.linux? ? "cc" : ENV.cc
     ENV["CXX"] = ENV["ac_cv_path_CXX"] = OS.linux? ? "c++" : ENV.cxx
     ENV["LD"] = "ld"
-    ENV["PYTHON"] = which("python3.12")
+    ENV["PYTHON"] = which("python3.13")
 
     binary = buildpath/"binary"
     resource("binary").stage do

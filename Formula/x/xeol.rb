@@ -1,17 +1,17 @@
 class Xeol < Formula
   desc "Xcanner for end-of-life software in container images, filesystems, and SBOMs"
   homepage "https:github.comxeol-ioxeol"
-  url "https:github.comxeol-ioxeolarchiverefstagsv0.10.1.tar.gz"
-  sha256 "1b88234abe2c3a1a8507d73cdb8a69d702d1b4cbf132e2f34b1fac2acf63250e"
+  url "https:github.comxeol-ioxeolarchiverefstagsv0.10.2.tar.gz"
+  sha256 "5e0d79a00b191c1fb950b350826966bfa28aa7993a8666cf2bf52f452af301c5"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2bd3e80ca52292192638e11010c592fb32f5a9c21f3f3692daed0a12112385ec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5983ddd7e65eaaf3fcfd8e47ebb633062024ed0a23cacc63dca8fff8b09da984"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f41e6a4a58e186e1026df9037a4b3adbf05d9a5b5d01c285509dd5b5dc518b14"
-    sha256 cellar: :any_skip_relocation, sonoma:        "69bb3213fc0ac10c0d1178920bafd8fe6c7e35032cfb687bd66a5063b0fbecd8"
-    sha256 cellar: :any_skip_relocation, ventura:       "6233ae913cba3a74fddf09b6b6e32f86c61ff257c74a1edc4e8af94b5082a1e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a369ffdb59174b183b75e8992b77e288de42d3ec2d2bb8428194207552efea50"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "834c0966f109b5bb98df2988f16205dac8e1ec4bc8dd6ab48d3c1bf3f23db358"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d25f80d8ad7ff85f10061004890782ac5f3b26c613d4ef881c17965d033aa88"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7b3b7a5bf361e3bb7431b12dde030e44c2fe482f44177f401b966bc14152d1e3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9e49c8d52941a9aa7828b3472c9ab0d45ca7f8ced54eed271afa0ea7efd70b34"
+    sha256 cellar: :any_skip_relocation, ventura:       "0fdfc2749d0346201c9bd2fcc4a63ce72acb3d56a80e9ef85e4272751915dee5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa1240dac7c29ba68c1aae1e13285d24484fb8171ed1be02be6445e3d62c86b4"
   end
 
   depends_on "go" => :build

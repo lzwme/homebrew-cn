@@ -1,8 +1,8 @@
 class Cadical < Formula
   desc "Clean and efficient state-of-the-art SAT solver"
   homepage "https:fmv.jku.atcadical"
-  url "https:github.comarminbierecadicalarchiverefstagsrel-2.1.1.tar.gz"
-  sha256 "6e6ad07dc833d2ae4f49115f9b92b5f78e4b1a9ef37f83f252dbc035c9d41850"
+  url "https:github.comarminbierecadicalarchiverefstagsrel-2.1.2.tar.gz"
+  sha256 "292c2bb8d712d6d05fce3d3df63b922b8fa45e03974a79f7bae5bf68c284f131"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Cadical < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bcda9767eeeb92ee295e5ea771685921675abe36cd05fced553c42dee2ee42e2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6eaa2bba5167b6886cc22cde377134970373454b8726b119567a3c1640e3e2d3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "051ee3a2b14fd87fdb4677ff19c936a08b7a24ef35b0b240cd5f7419082f5822"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bf1bba0754b2f75845bee0419c7a31b2f5b0c7b7513e87ce27b39822bc14e361"
-    sha256 cellar: :any_skip_relocation, ventura:       "9a4ca7ff7f647a65ff10c1cc21a765847fb23fba46f58890b09b789ea0579895"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fd1ec6e2fd2f692e59cf687715c14d4c3b2c1853a6e345491c93392364403b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f75a21e1ffaa7f69973d7e872aecd66b0b4d163f7db768ed22bc1430d137d84"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e2b2c9b7820a481982a846094f17945b3f928ff2dce150f23e63e12e33b5fae"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0f9538d411662d3bde8fc1f97f2a1764f435e62139933b296e481d1c0e197700"
+    sha256 cellar: :any_skip_relocation, sonoma:        "223d1cba8975a91d4ab290906bc3d0abd67af495abeae867509d164baf68dd23"
+    sha256 cellar: :any_skip_relocation, ventura:       "ffce6220b76e5d5949d12329a91c0225b2efa7b289ed12b6fb79937f631e6a68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c879179500dbb11f645039212168444e0344553db8003c08d20c26be0aa552a"
   end
 
   def install

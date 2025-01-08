@@ -11,35 +11,38 @@ class Privoxy < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "4ec5910c8e67367112560e96440ab88fdee51cf3c276d41565ab5cce5bd90d51"
-    sha256 cellar: :any,                 arm64_sonoma:   "2d271db67276295a3c0a95713d1bef904015c7729615380ada8f9228196b2632"
-    sha256 cellar: :any,                 arm64_ventura:  "9e9553d35f57d1857a1518216b4263eb9ffce10cf9e93da7a38f688f23606610"
-    sha256 cellar: :any,                 arm64_monterey: "1b0028627cbd63a818a043537b4357b7bb0105fb56ba0b4d92efe3300cc953f9"
-    sha256 cellar: :any,                 arm64_big_sur:  "583123f742ab84d72e189867ec920940e7ecada0cd4bec3dbb7c2784b51e2b9e"
-    sha256 cellar: :any,                 sonoma:         "5d97667b9c9fbb87ca967ae879c8ae53bda5e56d9870580e3ad04baa6c6f9537"
-    sha256 cellar: :any,                 ventura:        "6dbe6c6a8868cf03772a719adfd6c49bfd7da372067147994c56a9c629c7ff0e"
-    sha256 cellar: :any,                 monterey:       "317d73bfe1c16bf887be0627f7aa27f543aa61dc8d1c9748cac74b11abbc0b14"
-    sha256 cellar: :any,                 big_sur:        "46df2df9e4dcaf3f16ba6540fdc8432db8395d5fd03fc9a6fe51c9629e216be2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a4b3fcb5f8fd5f5479462ae9db4fb99a300dab2005b3f383b78f13cb6a8eed4f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "97f2f5971c167ff964445e8294e6b577ecfab9edc660133281ddc77f066ccc77"
+    sha256 cellar: :any,                 arm64_sonoma:  "08aeaed4a5bceb64b7133cd1b9cedc8caa425de38581020e7b2c8554ec0609fd"
+    sha256 cellar: :any,                 arm64_ventura: "064cbe795744a5e15d18b2f2fa28b92992fcb2eae53fd6de3546908b0f2f041f"
+    sha256 cellar: :any,                 sonoma:        "b209390e2cdaf34c07e1530708abacb1613b08e8c8bec9a237c36200882e4f54"
+    sha256 cellar: :any,                 ventura:       "97bb54f2c404b840d1d12e25a1093b767ceacdb2cb829b3ee7178ac755693deb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d2377396f93e9ddfb8725a754533e1ce4e9077d15087773f6a9f807b50ae533"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on "pcre"
+  depends_on "pcre2"
+
+  uses_from_macos "zlib"
+
+  # Backport PCRE2 support from HEAD. Remove in the next release.
+  # Same patches used by Debian (excluding regression testcase 87253c99)
+  patch do
+    url "https:www.privoxy.orggitweb?p=privoxy.git;a=patch;h=53748ca8ca3c893025be34dd4f104546fcbd0602"
+    sha256 "61861bc3809f06eb77129d466c6e27f35972fa4aef8be2db2b6a789a3700fee8"
+  end
+  patch do
+    url "https:www.privoxy.orggitweb?p=privoxy.git;a=patch;h=e73b93ea9ad1f3e980bd78ed3ebf65dedbb598a2"
+    sha256 "19e58a263c308ada537109092e9b5dbb0e1625ce486b605d1392b72449adc174"
+  end
 
   def install
-    # Find Homebrew's libpcre
-    ENV.append "LDFLAGS", "-L#{HOMEBREW_PREFIX}lib"
-
-    # No configure script is shipped with the source
-    system "autoreconf", "-i"
-
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--sysconfdir=#{etc}privoxy",
-                          "--localstatedir=#{var}"
+    system "autoreconf", "--force", "--install", "--verbose"
+    system ".configure", "--sysconfdir=#{pkgetc}",
+                          "--localstatedir=#{var}",
+                          *std_configure_args
     system "make"
     system "make", "install"
   end
@@ -54,14 +57,14 @@ class Privoxy < Formula
   test do
     bind_address = "127.0.0.1:#{free_port}"
     (testpath"config").write("listen-address #{bind_address}\n")
+    pid = spawn sbin"privoxy", "--no-daemon", testpath"config"
     begin
-      server = IO.popen("#{sbin}privoxy --no-daemon #{testpath}config")
-      sleep 1
-      assert_match "HTTP1.1 200 Connection established",
-                   shell_output("usrbincurl -I -x #{bind_address} https:github.com")
+      sleep 5
+      output = shell_output("curl --head --proxy #{bind_address} https:github.com")
+      assert_match "HTTP1.1 200 Connection established", output
     ensure
-      Process.kill("SIGINT", server.pid)
-      Process.wait(server.pid)
+      Process.kill("SIGINT", pid)
+      Process.wait(pid)
     end
   end
 end

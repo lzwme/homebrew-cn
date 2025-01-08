@@ -1,17 +1,17 @@
 class Wush < Formula
   desc "Transfer files between computers via WireGuard"
   homepage "https:github.comcoderwush"
-  url "https:github.comcoderwusharchiverefstagsv0.4.0.tar.gz"
-  sha256 "724a5b874fdf35856ece92d2967700e56c9f81e932893d5c7bf9ee8dce4fe128"
+  url "https:github.comcoderwusharchiverefstagsv0.4.1.tar.gz"
+  sha256 "77d5a912465d1e8ec478252a9a69a04d39af75a126ac9ed94823f33a60b3d8f9"
   license "CC0-1.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16cfed7a56476d418376426dd9a8343fbfb4aec3ab80a27b985fad241fce72d4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bcb2ed077de332a6fdba62e04e5bec0308214ec107fb28554b30d445f7fe9e56"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "130c9eb5b96b69324ec7b3c593681b32c768d4d78f7b19d9fe563f2d471361c7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cd1ad38154172e585eaab529d187471921191e81eae4c1a10062c335569a019f"
-    sha256 cellar: :any_skip_relocation, ventura:       "94e94cf8b8943dbc27c586cbfc204fec7d1bd86c08e49359a761e6cfa8502b04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4a2c936673fe277bd91f43f837b4d1fbfb399d8bd2cbc9225d647f54d76d3a3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f21f69d5bc1c8bba9a85150bece42c5a97fbf473e39e3dc7c5dc5570e65e2c6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f0ed64c9cde89d6a856e98bcb0509660ada93f676254560d12df8065e127de7c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c2320aac31be8d68acc3218db510cd3f91be381a695c01e5e8b6f9046e7569e4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4ed8074f45bf38496a93c58f184b791b36e47363fda9c79d10cbd9bd8f36235b"
+    sha256 cellar: :any_skip_relocation, ventura:       "d3e82478484e85ab52dcd10f1ec7cda04fb09f4e3f67d6a497c2ba3d50ebdfef"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef23622648237ddf0eb3829977a5137e06d4741d953754bb55029d2855ad96bf"
   end
 
   depends_on "go" => :build

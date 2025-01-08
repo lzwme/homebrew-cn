@@ -78,25 +78,25 @@ class Remarshal < Formula
   end
 
   test do
-    json = "{\"foo.bar\":\"baz\",\"qux\":1}"
-    yaml = <<~YAML.chomp
+    json = <<~JSON
+      {"foo.bar":"baz","qux":1}
+    JSON
+    yaml = <<~YAML
       foo.bar: baz
       qux: 1
-
     YAML
-    toml = <<~TOML.chomp
+    toml = <<~TOML
       "foo.bar" = "baz"
       qux = 1
-
     TOML
-    assert_equal yaml, pipe_output("#{bin}remarshal -if=json -of=yaml", json)
-    assert_equal yaml, pipe_output("#{bin}json2yaml", json)
-    assert_equal toml, pipe_output("#{bin}remarshal -if=yaml -of=toml", yaml)
-    assert_equal toml, pipe_output("#{bin}yaml2toml", yaml)
-    assert_equal json, pipe_output("#{bin}remarshal -if=toml -of=json", toml).chomp
-    assert_equal json, pipe_output("#{bin}toml2json", toml).chomp
-    assert_equal pipe_output("#{bin}remarshal -if=yaml -of=msgpack", yaml),
-      pipe_output("#{bin}remarshal -if=json -of=msgpack", json)
+    assert_equal yaml, pipe_output("#{bin}remarshal -if=json -of=yaml", json, 0)
+    assert_equal yaml, pipe_output("#{bin}json2yaml", json, 0)
+    assert_equal toml, pipe_output("#{bin}remarshal -if=yaml -of=toml", yaml, 0)
+    assert_equal toml, pipe_output("#{bin}yaml2toml", yaml, 0)
+    assert_equal json, pipe_output("#{bin}remarshal -if=toml -of=json", toml, 0)
+    assert_equal json, pipe_output("#{bin}toml2json", toml, 0)
+    assert_equal pipe_output("#{bin}remarshal -if=yaml -of=msgpack", yaml, 0),
+                 pipe_output("#{bin}remarshal -if=json -of=msgpack", json, 0)
 
     assert_match version.to_s, shell_output("#{bin}remarshal --version")
   end

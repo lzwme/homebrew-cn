@@ -1,32 +1,23 @@
 class IsaL < Formula
   desc "Intelligent Storage Acceleration Library"
   homepage "https:github.comintelisa-l"
-  url "https:github.comintelisa-larchiverefstagsv2.31.0.tar.gz"
-  sha256 "e218b7b2e241cfb8e8b68f54a6e5eed80968cc387c4b1af03708b54e9fb236f1"
+  url "https:github.comintelisa-larchiverefstagsv2.31.1.tar.gz"
+  sha256 "5c9da8f2024c1949457e91226d73cd71e52ec4574803899f0d600ee9e58c3561"
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "4e89cb263385ca1c5f99b28cb64b2f1c5c0f9eac958b5dc9f0394ec09ea4ee7a"
-    sha256 cellar: :any,                 arm64_sonoma:   "20183aa5fc7bdf83833ef924ad844a13bee2f95386cf783da45d2756577d00c1"
-    sha256 cellar: :any,                 arm64_ventura:  "c0239e97ea4e8a1d185e49c646d51ec9ea498c70920a89247fadca5b84f5d68e"
-    sha256 cellar: :any,                 arm64_monterey: "3a51e53bf3ad0bb50767d009ebb8697b6aba0b19109bcacf8ba5c9bcb1915ad0"
-    sha256 cellar: :any,                 sonoma:         "e3f0efaabed341b094eea37d2cc6983ead4765ba23ed6b75aa7060bd3f3ef73a"
-    sha256 cellar: :any,                 ventura:        "5167d8bb29d7f9f476be36e32ecfa8e0c2ea72d5ddf5578d5bb9a1c1c55a9de8"
-    sha256 cellar: :any,                 monterey:       "b1539460388da543c470efc592d09f44c2acf5a6ada37d4802d6c7a28d7cff0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "38df9950275b3bf11b6f9df9c060c28d041590cbd73ab217d8f33dee11e5bc4f"
+    sha256 cellar: :any,                 arm64_sequoia: "6bc5013abd53459542e5ae34601a89d12e8d7ef496938cc73ff2ca9e9959f945"
+    sha256 cellar: :any,                 arm64_sonoma:  "d6ed28d3bd60bc3d5101a80a6d0dd115623cc81ae2e3675ed94ab71b8950b43f"
+    sha256 cellar: :any,                 arm64_ventura: "3167c838574ee9cc7c09a31a87b7823a6b2de3d9e522d13ca6ec3f1b70c91b79"
+    sha256 cellar: :any,                 sonoma:        "56a08d986c604d2800e03819b521d2fecac4af595fbdb66c79090b2f3961ca19"
+    sha256 cellar: :any,                 ventura:       "833a3eced0fda7d8e15e6d5d75363c0f221fa91e6f04464099d59dcc3cbc3fb0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe15b388084f75d25b81e4c24dc350fdce19538ae107432fa8a6be740c765e8e"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "nasm" => :build
-
-  # fix mach compilation
-  patch do
-    url "https:github.comintelisa-lcommitf1b144bbab7cd1f603565b3b7f92bfb47b86e646.patch?full_index=1"
-    sha256 "41a300e3155a281dbf05aa79d54250b19eda035a8166f5368c18867467475c0b"
-  end
 
   def install
     system ".autogen.sh"

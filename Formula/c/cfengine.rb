@@ -1,8 +1,8 @@
 class Cfengine < Formula
   desc "Help manage and understand IT infrastructure"
   homepage "https://cfengine.com/"
-  url "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-community-3.24.1.tar.gz"
-  sha256 "c73c3125052ddf3c6f2507a7062705104e3e1495396c71009e3ada3883751b1a"
+  url "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-community-3.25.0.tar.gz"
+  sha256 "5d43f7e75f6197b6cee305bee27b9a41af80a2a17416dbd3b04c538898b88b83"
   license all_of: ["BSD-3-Clause", "GPL-2.0-or-later", "GPL-3.0-only", "LGPL-2.0-or-later"]
 
   livecheck do
@@ -11,14 +11,15 @@ class Cfengine < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "f725b175040ab622809474f57ef2c849d9f0b0610175ad9c24d6e79d52d8e626"
-    sha256 arm64_sonoma:  "169bfd10f3813bb149e10d2e7bc0a30afe8996a5917bd7e95a9213be904bc6d9"
-    sha256 arm64_ventura: "511105a7ebe2c3674679bf6bf0fbfbf2db0f24c5773c5a327b9233f713121ab2"
-    sha256 sonoma:        "543e420accc4bb2463b30b68ecd7c831cbbb9313a70d8fc6fc92d579ffaf95e2"
-    sha256 ventura:       "96ab82d4a0ae7721c2e31a850bcf81a23bb521ff51c6400bb4c7fd27eb91a79f"
-    sha256 x86_64_linux:  "20aa60575821934942208af520fb19e963f8bf5801e684243777d340d05a6c85"
+    sha256 arm64_sequoia: "93ebb9d05d50ee73b9a596c732d93810734155ea7f5889ed6bec14a6cf9bd158"
+    sha256 arm64_sonoma:  "9f6fab1d37d4dcc579c085b85a62aae9fa6f0ace3492ad3457213db9aaa2c326"
+    sha256 arm64_ventura: "515f6ff9b8088c289c9884b222fed773e859c001da5b246848156abd80955682"
+    sha256 sonoma:        "3a5f4caf4491c5d7bd9b52a741a668159bac45b2e305a3bce1715f093c2b1848"
+    sha256 ventura:       "3a50ed243032041f7104fb32a151e9e2a1111df187bb6f3f2c9c07ef5e718a7f"
+    sha256 x86_64_linux:  "51c514abe7c902c1acfb373e3dd028d1786c8877f2b20d77b13618571c117de8"
   end
 
+  depends_on "librsync"
   depends_on "lmdb"
   depends_on "openssl@3"
   depends_on "pcre2"
@@ -31,8 +32,8 @@ class Cfengine < Formula
   end
 
   resource "masterfiles" do
-    url "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-masterfiles-3.24.1.tar.gz"
-    sha256 "f1b05bcf9d7086200666225e77c9bb79cbf2ae3d67512b2122e4fc861a263e17"
+    url "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-masterfiles-3.25.0.tar.gz"
+    sha256 "bbc69bb2d9924feaaeac19ccc1b280a92f010a011b5925ade0357b96ce0074d9"
   end
 
   def install

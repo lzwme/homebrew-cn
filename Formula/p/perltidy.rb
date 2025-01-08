@@ -1,8 +1,8 @@
 class Perltidy < Formula
   desc "Indents and reformats Perl scripts to make them easier to read"
   homepage "https://perltidy.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/perltidy/20240903/Perl-Tidy-20240903.tar.gz"
-  sha256 "22fba4ba84cf2ba5fb4ade3ae65c6deb48a0ee61fe446858d3ae8c5e00f37e81"
+  url "https://downloads.sourceforge.net/project/perltidy/20250105/Perl-Tidy-20250105.tar.gz"
+  sha256 "d2cea2b909da69ab6d09f00dcb27cd9551184a5e4267d825da15d2f52e228632"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,14 +11,12 @@ class Perltidy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bb8899ed668a66a1cf0b1b81d9fa9b3dcb456925b47a8da0312d8dfdaa9336da"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bb8899ed668a66a1cf0b1b81d9fa9b3dcb456925b47a8da0312d8dfdaa9336da"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "3163c8cd853f61f071145fe936c1aefe3690e2fa1c6e162054c46d45ae60446b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3163c8cd853f61f071145fe936c1aefe3690e2fa1c6e162054c46d45ae60446b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "37004c7bca8ec46163442d76e7599b17acba936b4dad26f53fbf4ca578669b78"
-    sha256 cellar: :any_skip_relocation, ventura:        "a0edd728a606f2404c8e72186accf24e5feafb239feeb0ced28da1e823246f03"
-    sha256 cellar: :any_skip_relocation, monterey:       "a0edd728a606f2404c8e72186accf24e5feafb239feeb0ced28da1e823246f03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "74e8a657dd5facba5abd7ee9bb5b1f475be8a8d6f8031368f4cdb0c4b3e2f27e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f18a0a155689a2f7120df199c4a192dd24a5867126d86036d7dafb6842974fa8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f18a0a155689a2f7120df199c4a192dd24a5867126d86036d7dafb6842974fa8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ab241177e3253e48bd4da7303acb9f08c44c8331a81c7716b0d9ea389890dbee"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c21a8f764cfac1c8e3d4749df751353c522932281fbf835432a416aeb5243de6"
+    sha256 cellar: :any_skip_relocation, ventura:       "59bd9d24b6ceeb2dd4f74918ddb2fe1f90d1e158a9f3050358e12d8d67945717"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d7f2df85debb185b949a113126df9a3fe7b7c85ff02538593559055919ea132"
   end
 
   uses_from_macos "perl"

@@ -1,6 +1,6 @@
 cask "fixkey" do
-  version "2.4.3"
-  sha256 "94ed1451537100e6d650476f28a56abc7a3d2933a6a3280d3231dcacfbc0ab66"
+  version "2.4.6"
+  sha256 "fe6038fbf8e71499a1ef2eb832868049c7d8c9f099eec94a71fb33242c133bc1"
 
   url "https://fixkey.download/fixkey%20#{version}.dmg",
       verified: "fixkey.download/"

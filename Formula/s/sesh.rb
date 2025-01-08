@@ -1,18 +1,18 @@
 class Sesh < Formula
   desc "Smart session manager for the terminal"
   homepage "https:github.comjoshmedeskisesh"
-  url "https:github.comjoshmedeskisesharchiverefstagsv2.7.0.tar.gz"
-  sha256 "59d69e130dccad1784357ac31e929178e49396af1478c8964acef9e3de9710d3"
+  url "https:github.comjoshmedeskisesharchiverefstagsv2.8.0.tar.gz"
+  sha256 "a0e0cb66932265aec2f03fd07507c1b4a94748b21fafcc29d1e3b57b19016e79"
   license "MIT"
   head "https:github.comjoshmedeskisesh.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c944f6ce49e1e27619ea86be512e8c47ccaa22f6ca5badf6b4064edd9ac56f6b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c944f6ce49e1e27619ea86be512e8c47ccaa22f6ca5badf6b4064edd9ac56f6b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c944f6ce49e1e27619ea86be512e8c47ccaa22f6ca5badf6b4064edd9ac56f6b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f298fb9a33548818e0dd9060c76a52f3973f3f759de9458a851677444b51b08c"
-    sha256 cellar: :any_skip_relocation, ventura:       "f298fb9a33548818e0dd9060c76a52f3973f3f759de9458a851677444b51b08c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8547866abff65f62744c3840903758232f00cb619ef767ecaf82a2d8f5dccc0b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "868e817bdfc7ede33ef6b77455171ac199b76f788d7e4699a53c1c4173869cd7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "868e817bdfc7ede33ef6b77455171ac199b76f788d7e4699a53c1c4173869cd7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "868e817bdfc7ede33ef6b77455171ac199b76f788d7e4699a53c1c4173869cd7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cf1b635aae0dc117fd21dd58250936e6ea76442edfc648fef5fc99bc47020a93"
+    sha256 cellar: :any_skip_relocation, ventura:       "cf1b635aae0dc117fd21dd58250936e6ea76442edfc648fef5fc99bc47020a93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7c9855bd541b7df9e68554dda7c0da09db3f2138f9ed8b3462b8c4c9ccc9d5b"
   end
 
   depends_on "go" => :build

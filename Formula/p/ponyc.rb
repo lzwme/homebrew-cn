@@ -48,11 +48,11 @@ class Ponyc < Formula
 
     system bin"ponyc", "-rexpr", "#{prefix}packagesstdlib"
 
-    (testpath"testmain.pony").write <<~EOS
+    (testpath"testmain.pony").write <<~PONY
       actor Main
         new create(env: Env) =>
           env.out.print("Hello World!")
-    EOS
+    PONY
     system bin"ponyc", "test"
     assert_equal "Hello World!", shell_output(".test1").strip
   end

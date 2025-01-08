@@ -1,8 +1,8 @@
 class Fw < Formula
   desc "Workspace productivity booster"
   homepage "https:github.combrocodefw"
-  url "https:github.combrocodefwarchiverefstagsv2.19.1.tar.gz"
-  sha256 "f949c3e29e11688c3ab2a7448b9fea2caf07d89d95da7bef00976541f4d957e7"
+  url "https:github.combrocodefwarchiverefstagsv2.20.0.tar.gz"
+  sha256 "b7212f782eefb24e481dd0c361525cbb3ee46ac0cbf2f27bbd6011b4ba49d572"
   license "WTFPL"
 
   # This repository also contains version tags for other tools (e.g., `v4.4.0`
@@ -15,14 +15,12 @@ class Fw < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "eaa4e9987dabe5659dbac380b90c77fffb7c7b8f22dabef470402e2144dfd28a"
-    sha256 cellar: :any,                 arm64_sonoma:   "9439cde7e0767daed5fef07280f6b6d8545fa34b637e36fd206770d7593a6089"
-    sha256 cellar: :any,                 arm64_ventura:  "df06452ad002deb1ae9228d3fa7291bd71d4c2b9ce7f6fb62fd774641598159b"
-    sha256 cellar: :any,                 arm64_monterey: "93860714a4c377a82c1ff7fcd9c11a4214806327ea635ade5fe450e18db83cca"
-    sha256 cellar: :any,                 sonoma:         "3810d6ee07419f3061037bdc5702a7ed9fccc3d3fa64ee29ea31c825c83ff917"
-    sha256 cellar: :any,                 ventura:        "f9844b68fa6c59d909ffd9a91923e0b676169af3df2606a66ed9ff9a11a23183"
-    sha256 cellar: :any,                 monterey:       "100612ba69fff5018c5641aded4920a3fc8830bdf62abc713b8d134ce8b8ca2e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "057863e093e54e7e4e13a7e82097f3aba99a648bbf528e8ee513c7d3f72838f1"
+    sha256 cellar: :any,                 arm64_sequoia: "17217d03e13f9d6bb51bff058d4906abeefd0d88d41ebfd8a0b58de179b84f22"
+    sha256 cellar: :any,                 arm64_sonoma:  "bed94da930d816240dc2afa69c16df737d90d48fc830075a3b945025312cf800"
+    sha256 cellar: :any,                 arm64_ventura: "44e8ec3e5844f12c3ee137ab19a3e8062bff39957dc7e837a9665a04a54df54c"
+    sha256 cellar: :any,                 sonoma:        "1dfb39b2365411508a694fa9832e315674fb00a19b8aead534c13ef20ea998a2"
+    sha256 cellar: :any,                 ventura:       "7a1d6b4ad35e3a7631b67bc1c78637a8c8292ee904cdfbc7a45f04cd39e9b032"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbf2ad75164a1529751022a7a25f8b7e0e1c543ff4227032cf73bcec07ab32e9"
   end
 
   depends_on "rust" => :build

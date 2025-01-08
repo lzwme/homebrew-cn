@@ -2,17 +2,17 @@ class Fcgi < Formula
   desc "Protocol for interfacing interactive programs with a web server"
   # Last known good original homepage: https:web.archive.orgweb20080906064558www.fastcgi.com
   homepage "https:fastcgi-archives.github.io"
-  url "https:github.comFastCGI-Archivesfcgi2archiverefstags2.4.3.tar.gz"
-  sha256 "5273bc54c28215d81b9bd78f937a9bcdd4fe94e41ccd8d7c991aa8a01b50b70e"
+  url "https:github.comFastCGI-Archivesfcgi2archiverefstags2.4.4.tar.gz"
+  sha256 "c0e0d9cc7d1e456d7278c974e2826f593ef5ca555783eba81e7e9c1a07ae0ecc"
   license "OML"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1b243ed770f2e7ac1ada1a8cdb9d24fb6f5fd7f29546a4e09dd5c8be9522563a"
-    sha256 cellar: :any,                 arm64_sonoma:  "10d1524cd9c606406a3b410b852444f5f4be6bee4f628f85f04b72519c15df2d"
-    sha256 cellar: :any,                 arm64_ventura: "19c601d9f25cb7d96a0fa63cc94330a48bb059f90422da9866aa8f07afc6bfdc"
-    sha256 cellar: :any,                 sonoma:        "b12ff1ea9af17f7357b48437cdc56425942fd5438683844af01e6423435fb08d"
-    sha256 cellar: :any,                 ventura:       "5c49c7a4a84514bca3938a3525cbce741d1d8ea6403a11a653779e858d9a43c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e4bb7c9d5baade09a78176687e126eabccd43b892086a3bccbf1384a39128fe"
+    sha256 cellar: :any,                 arm64_sequoia: "5dfbd8e646da528b2193e4259e80296c9cb1b311a8e0b2a8a5d76d59e452a829"
+    sha256 cellar: :any,                 arm64_sonoma:  "edb585bb21c1fafba3124a4fcb285fa5e6074a264a0514c8616bcc38adcf9e34"
+    sha256 cellar: :any,                 arm64_ventura: "a3849663ab04f777cbbeac683d41a01c16d4543d4a8973fb0c421a580f949244"
+    sha256 cellar: :any,                 sonoma:        "da8530a044fb1de39e36cdbd7494e7c58d1a6e8f01cacfce567c0d8a1b19ab70"
+    sha256 cellar: :any,                 ventura:       "448684742a94e680dd2d9e00d255898be0a4af34355b8f873232aeb1c4b59035"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "429fed517696fe00225fb3cdf5552de904295b82526b87c0e887b7d5cd77b668"
   end
 
   depends_on "autoconf" => :build

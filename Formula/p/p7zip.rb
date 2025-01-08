@@ -1,22 +1,17 @@
 class P7zip < Formula
   desc "7-Zip (high compression file archiver) implementation"
   homepage "https:github.comp7zip-projectp7zip"
-  url "https:github.comp7zip-projectp7ziparchiverefstagsv17.05.tar.gz"
-  sha256 "d2788f892571058c08d27095c22154579dfefb807ebe357d145ab2ddddefb1a6"
+  url "https:github.comp7zip-projectp7ziparchiverefstagsv17.06.tar.gz"
+  sha256 "c35640020e8f044b425d9c18e1808ff9206dc7caf77c9720f57eb0849d714cd1"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e162e6e442c02511ec34dab3936dc326ecdaeb995a65fa786cb585deead847f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "19bf0feb4e993c7cfad0d42bf8b9820ba67a9ebbd7ad4efd312a4a7953704a1a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ba7f3e60841e85ab16ae76e7f0be634e15ea1b0c4a3a631cbe57447cbc9d77b6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ed5af58015207456c265187cd73b53a80db239a9029bed1579065faa2391fec1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "145a4d0ecb748931931030b2e8844d5e007cba92cfed3b4ae07b4f15bc461e22"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2827eb7db9135c059d4498667e08ac37e4e020d39df6df0cebb1080d09cea9c5"
-    sha256 cellar: :any_skip_relocation, ventura:        "6b4bac2c955ef9902583dafa2f9bf6e0e3f5d503c81e51c1ed1ddde01b2ae4df"
-    sha256 cellar: :any_skip_relocation, monterey:       "91623462e2bdad09edfa899267359fcfd03ab34d8b70176462b1364e6f23f91c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "663d0ac5174855af24bf4dd7b729ef5693b7a421327379ba2d210b370f12aef0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a421f6e2445fa536da9ab14e83060f3a2949cbdf1e5ac38484339e7b6b22fa04"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "369d3a03a92f93bac16dd14b0a0bdfdd89ca55acbd503a5df2e6bb5db090570a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23da67120f4a22b34c56bf6ab2cae4283088eb5ad1a78a79addbb4a2a499f7c5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f660dc57664af754240e077dd1ed79f78505f40d62ca41630955d0320590a75e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6a651dc223abae92cec444770d67518606edadc976386a7a27da977ee680f7fd"
+    sha256 cellar: :any_skip_relocation, ventura:       "593e544721a4c420f0eb97987f51778b56cc643c7dd7ae4a287489bd01bd167a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8ba01da665c3009888c57246945052cd4bfac19007fe0dd9d9b705152089076"
   end
 
   # Remove non-free RAR sources

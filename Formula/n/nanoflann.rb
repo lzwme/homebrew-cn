@@ -1,8 +1,8 @@
 class Nanoflann < Formula
   desc "Header-only library for Nearest Neighbor search with KD-trees"
   homepage "https:github.comjlblancocnanoflann"
-  url "https:github.comjlblancocnanoflannarchiverefstagsv1.6.2.tar.gz"
-  sha256 "c1b8f2e4d32c040249dad14a89dd03c5106a8c56f3e9ca4e60a0836a59259c0c"
+  url "https:github.comjlblancocnanoflannarchiverefstagsv1.6.3.tar.gz"
+  sha256 "6140542c30b4abd6a6ffe52c591afaae5748f011c65682d1cae6c501e7e6710a"
   license "BSD-3-Clause"
   head "https:github.comjlblancocnanoflann.git", branch: "master"
 
@@ -12,7 +12,7 @@ class Nanoflann < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "cccc62ea14eed8e68abd6d3cf781f2e78d9356cb45259dd806724adfd582908a"
+    sha256 cellar: :any_skip_relocation, all: "45e50c064255d59875d4386f3778b70d0e8ccc1186a7b358d710e48b1cda9f92"
   end
 
   depends_on "cmake" => :build

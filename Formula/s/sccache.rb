@@ -1,8 +1,8 @@
 class Sccache < Formula
   desc "Used as a compiler wrapper and avoids compilation when possible"
   homepage "https:github.commozillasccache"
-  url "https:github.commozillasccachearchiverefstagsv0.9.0.tar.gz"
-  sha256 "df5b8a38f6d29f438dba0be57ec2e6c4c87675c7b9bb4dd2e93d4c9375ca797b"
+  url "https:github.commozillasccachearchiverefstagsv0.9.1.tar.gz"
+  sha256 "150967a59f148f780acc167c9e35961a196953bd804d513ab013344d73deb436"
   license "Apache-2.0"
   head "https:github.commozillasccache.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Sccache < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "33af2ecad32ea80ab0a14ce4daa05b3ac4a8cbad641e42fe2cad0febb65fe379"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "904bcb55b4a124be97a9ad1c2e3c3cc7a37dc0d046a06b08c7f8d974bcb7c587"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "57eab64240c1551072d6c7f85e068724a8b58f7e147237f54a8cce02aef5a354"
-    sha256 cellar: :any_skip_relocation, sonoma:        "44b754073dfd9114e3b7377eab31aa094825f789fe7da9f12168424eeac8430c"
-    sha256 cellar: :any_skip_relocation, ventura:       "b4c6654f68a850c4eaba1ca1b4ced4aca7a84b1bbf6efd899dafc40fc436bc24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "596aa94b890089790430061ddb86d2b26741ecb99b1da18d27a92736426ed34c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aac770af6ee00a27877153f8e15a24ffc0b91fff5eb57fb6132a1a1e1c5c40b6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f292ba31b0b75abf059d48e5e804e5cf8ddf99fdb825769440c37d7cffba1c7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "65c4cc824f22b26e1cafc59640905fe49bcc217393932080d275bd8f403d81f5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aed415b326a1b0270be08d03496e68decda4e881c8e2152ea2c917115a57ee3e"
+    sha256 cellar: :any_skip_relocation, ventura:       "48b1b2c2b3c3ad11bc5986900f43ef5fe5de5f911c83d718d2a4bd9ea407139a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e4a6a0d1cf6a76292c22ba5e513f5f339084463941c04ac14aa88ddc1ac6f47"
   end
 
   depends_on "rust" => :build

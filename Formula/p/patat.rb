@@ -16,7 +16,7 @@ class Patat < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc" => :build
+  depends_on "ghc@9.10" => :build
   depends_on "pandoc" => :build
   depends_on "pkgconf" => :build
 

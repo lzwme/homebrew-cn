@@ -1,10 +1,18 @@
 class HaskellLanguageServer < Formula
   desc "Integration point for ghcide and haskell-ide-engine. One IDE to rule them all"
   homepage "https:github.comhaskellhaskell-language-server"
-  url "https:github.comhaskellhaskell-language-serverreleasesdownload2.9.0.1haskell-language-server-2.9.0.1-src.tar.gz"
-  sha256 "bdcdca4d4ec2a6208e3a32309ad88f6ebc51bdaef44cc59b3c7c004699d1f7bd"
   license "Apache-2.0"
+  revision 1
   head "https:github.comhaskellhaskell-language-server.git", branch: "master"
+
+  stable do
+    url "https:github.comhaskellhaskell-language-serverreleasesdownload2.9.0.1haskell-language-server-2.9.0.1-src.tar.gz"
+    sha256 "bdcdca4d4ec2a6208e3a32309ad88f6ebc51bdaef44cc59b3c7c004699d1f7bd"
+
+    # Backport support for newer GHC 9.8
+    # Ref: https:github.comhaskellhaskell-language-servercommit6d0a6f220226fe6c1cb5b6533177deb55e755b0b
+    patch :DATA
+  end
 
   # we need :github_latest here because otherwise
   # livecheck picks up spurious non-release tags
@@ -14,14 +22,12 @@ class HaskellLanguageServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e50ed5add3e104d152871aa41670d5793907cd835986735dc3cc0c7e139b90b2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "46b1067ee77c8d2741f9e26744786cabc80e62a6b29befcaaf38058067953102"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "56df7ae9fc11ea8d19ccc3adff4a9fd7844f8e15200e5469fa90815b8c8a89b3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a11af473d8a8eaea5159c5fa4827b59551ff705bca1d057d75aa6ae8f40d2a3d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e1e671aa10750b612d12a45f815a35416998662188e954d80a16a55377d9f50e"
-    sha256 cellar: :any_skip_relocation, ventura:        "739cbff9e9abd601ffe31628417f6a0cea26a7c05e70b384bf40b2765f40d9a9"
-    sha256 cellar: :any_skip_relocation, monterey:       "ecfbbe1f719963f7e3f45fe27e14ca98b07218525f8c23af886e67450a9a6242"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "afbb8f67dc62f0f72ebbbc7ce88e10c3e5a65abac2df6d2f86132676f15041d6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ca04aceddff878e084ee95e1b350679f6496ef59f3fa8f888022530241e1a8d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e465529fa959635d64b58f489e565b316530246cdb17fe77caaf9a047958b23"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a4b7056eb268074e77b59c6cd162a4d56b30a711d7504d9b7fad0068df528e21"
+    sha256 cellar: :any_skip_relocation, sonoma:        "feb62de0788a945aa9effc9cf8309a3af9781c2960311c0d09dc403435611e21"
+    sha256 cellar: :any_skip_relocation, ventura:       "5bd0b38d098fff1453dd0fafb897b23ea908872b90df89ff69594c52b7655ba5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37b70a3d3a35c2e55e5227d37f13a136cfa2b191e32917b7feaeeeffa999553a"
   end
 
   depends_on "cabal-install" => [:build, :test]
@@ -33,16 +39,17 @@ class HaskellLanguageServer < Formula
   uses_from_macos "zlib"
 
   def ghcs
-    deps.map(&:to_formula)
-        .select { |f| f.name.match? "ghc" }
+    deps.filter_map { |dep| dep.to_formula if dep.name.match? "ghc" }
         .sort_by(&:version)
   end
 
   def install
-    # Backport newer index-state to get `hashable` fix needed to build on ARM Monterey
-    # Ref: https:github.comhaskellhaskell-language-servercommit376f7f1802298d23aff6aa94592cd46c4d68e61b
+    # Backport newer index-state for GHC 9.8.4 support in ghc-lib-parser.
+    # We use the timestamp of r1 revision to avoid latter part of commit
+    # Ref: https:github.comhaskellhaskell-language-servercommit25c5d82ce09431a1b53dfa1784a276a709f5e479
+    # Ref: https:hackage.haskell.orgpackageghc-lib-parser-9.8.4.20241130revisions
     # TODO: Remove on the next release
-    inreplace "cabal.project", ": 2024-06-13T17:12:34Z", ": 2024-06-29T00:00:00Z" if build.stable?
+    inreplace "cabal.project", ": 2024-06-13T17:12:34Z", ": 2024-12-04T16:29:32Z" if build.stable?
 
     system "cabal", "v2-update"
 
@@ -69,22 +76,33 @@ class HaskellLanguageServer < Formula
   end
 
   test do
-    valid_hs = testpath"valid.hs"
-    valid_hs.write <<~HASKELL
+    (testpath"valid.hs").write <<~HASKELL
       f :: Int -> Int
       f x = x + 1
     HASKELL
 
-    invalid_hs = testpath"invalid.hs"
-    invalid_hs.write <<~HASKELL
+    (testpath"invalid.hs").write <<~HASKELL
       f :: Int -> Int
     HASKELL
 
     ghcs.each do |ghc|
       with_env(PATH: "#{ghc.bin}:#{ENV["PATH"]}") do
-        assert_match "Completed (1 file worked, 1 file failed)",
-          shell_output("#{bin}haskell-language-server-#{ghc.version.major_minor} #{testpath}*.hs 2>&1", 1)
+        hls = bin"haskell-language-server-#{ghc.version.major_minor}"
+        assert_match "Completed (1 file worked, 1 file failed)", shell_output("#{hls} #{testpath}*.hs 2>&1", 1)
       end
     end
   end
 end
+
+__END__
+--- aghcidesrcDevelopmentIDEGHCCompatCore.hs
++++ bghcidesrcDevelopmentIDEGHCCompatCore.hs
+@@ -674,7 +674,7 @@ initObjLinker env =
+ loadDLL :: HscEnv -> String -> IO (Maybe String)
+ loadDLL env str = do
+     res <- GHCi.loadDLL (GHCi.hscInterp env) str
+-#if MIN_VERSION_ghc(9,11,0)
++#if MIN_VERSION_ghc(9,11,0) || (MIN_VERSION_ghc(9, 8, 3) && !MIN_VERSION_ghc(9, 9, 0))
+     pure $
+       case res of
+         Left err_msg -> Just err_msg

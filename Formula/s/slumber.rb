@@ -1,18 +1,18 @@
 class Slumber < Formula
   desc "Terminal-based HTTPREST client"
   homepage "https:slumber.lucaspickering.me"
-  url "https:github.comLucasPickeringslumberarchiverefstagsv2.4.0.tar.gz"
-  sha256 "22a8589b4adb7820870b888a72d2c2bdf139ea1613d87397f2652167759cb505"
+  url "https:github.comLucasPickeringslumberarchiverefstagsv2.5.0.tar.gz"
+  sha256 "14319206deb7691b44d074caa32837b4a6dad558ced5f68d0666671a0fb25089"
   license "MIT"
   head "https:github.comLucasPickeringslumber.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a63d3bf6167eb6f9c62056365aa0877920ad8da5873811e9bb4ab1d3c31c4fa0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7c887d636466785d46ba981c1611461b304a1edcb0047150a8de0974d5ff3b4f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1eee5c503f0aaec6eff40c135b6ccea2921f25c6316c8a00ac2e497c0a05f934"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1b42e60466ee73b26550e35ff1f3933cb6435993252eae3dba246723aaf54ffb"
-    sha256 cellar: :any_skip_relocation, ventura:       "7053df3d88e4a44f876fb732c980d37154d077f866be8fcef5efa499b8420f99"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6550d6a912b59a7f746dc136e737debb7c18efd1f040c043acd8b9771b9dd52"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48f71c3b1ed761714918211b9adca95411bc80c759e7da7b8aa2dd0725798087"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d9fdf7beb9bd23dddb5571697883b49b605a7095b8255358d10629dde10a7ad"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a59bff7aae676dae1bf41bedb0a448aaaaa16fdb4623d705a4bbd8dfa5359da5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b99f4fa4986619733ff51ebbe77c981f7bb749a9e0f2c472c32b9e9bfdf21f3c"
+    sha256 cellar: :any_skip_relocation, ventura:       "d61cfc364cbb000a834a4a1ba1ca968f7373aa4cad83ea2de2af9e3d0409a2d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f9b9aab46ec7c5b6f5e781800bffca45cb61970159e57113b516f3fa97d9b7b"
   end
 
   depends_on "rust" => :build

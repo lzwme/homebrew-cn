@@ -1,21 +1,18 @@
 class Ed < Formula
   desc "Classic UNIX line editor"
   homepage "https://www.gnu.org/software/ed/ed.html"
-  url "https://ftp.gnu.org/gnu/ed/ed-1.20.2.tar.lz"
-  mirror "https://ftpmirror.gnu.org/ed/ed-1.20.2.tar.lz"
-  sha256 "65fec7318f48c2ca17f334ac0f4703defe62037bb13cc23920de077b5fa24523"
+  url "https://ftp.gnu.org/gnu/ed/ed-1.21.tar.lz"
+  mirror "https://ftpmirror.gnu.org/ed/ed-1.21.tar.lz"
+  sha256 "60e24998727d453a5cf02c54664b97536de46a2b34cd1f4f67c1c1a61bbbad75"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2212d012a399dc0bad58e1685eb8ddd5d1878300ffc1c5ae0d5fceb00b501ec6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e5e2085684e3c92fbfd33c36230d0948bf13fce8d79664894213f514dee00811"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "06825e7936586efb4577e2f00f07763e0e126e3415b3cd83b57af05e5695889e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2b57aba94d5a86dedfef793b7f035c20449d7441b4c2c5c96c8f591181830c79"
-    sha256 cellar: :any_skip_relocation, sonoma:         "738c04bc4f1d593dd2b24c4729ef586d66f5b33bb53085c431798d4b065ecefa"
-    sha256 cellar: :any_skip_relocation, ventura:        "a0dcf2f47ca608af30f5ba70fd1c7c0344a728fcdb4812d2a284a4393ac87728"
-    sha256 cellar: :any_skip_relocation, monterey:       "abcf20b00afa925f070a7840b44b01e57a02fd5ccd06632061863f50103a5c55"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "190b7d16443a9415e21a0ee9d93a106d7890680c428f6bfa1a23f0b7d994c67d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "346e65c62e36ccd660d3a3e8d096208a9f8cef99034c0c5c89d0d5f446aa297b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b10cb591d03f09c8963eb95f76ffe5fd458a75d2579bd2188de2fd9637b00fb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "442fde9726aeb2240258d0d1bd8a834b00159d23221094aa0bc047cbdffed950"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bcfb554571f3d459814c8655a4b73f01c8803c3b838927fa2ac2114037134d2a"
+    sha256 cellar: :any_skip_relocation, ventura:       "0d91abb2cb0b5ee4e90240e1c471fd7881705ba65f08e71478650023389944d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4da83510be995babedcf6b48676b40c50169788bb7077ec223978c6f4fc80763"
   end
 
   keg_only :provided_by_macos

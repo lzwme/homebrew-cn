@@ -1,18 +1,18 @@
 class Rbw < Formula
   desc "Unofficial Bitwarden CLI client"
   homepage "https:github.comdoyrbw"
-  url "https:github.comdoyrbwarchiverefstags1.13.1.tar.gz"
-  sha256 "2e3181417732b5ab32456a1babff2febeee695604e85db2c94668270ed8a2036"
+  url "https:github.comdoyrbwarchiverefstags1.13.2.tar.gz"
+  sha256 "afe8887b64c4da6e5f33535d02ad4e1fe75c536a55d63291622b4b339522d138"
   license "MIT"
   head "https:github.comdoyrbw.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f1a7648d23731fb9e8f05674189f7e3a8e909090dd79b19e429e03edd836cfec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b1b24beb9d250f655dc671149564b2c68ad39ad075ee713ceb37a0f1ac223f49"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "eae28b7a7cab047a628b9341c5cf8f12ca9cf1838374987f5ec5a4b71af33ef1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "188b0f9b49a7fa6e51dc30cdf8d6bed0b4c8f51410b97ff5760c8b9868b84cb7"
-    sha256 cellar: :any_skip_relocation, ventura:       "be92a52bc7eb0b091fa3ae6613d09b25691369e22a408117f3617e766aab504d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dede1de19d15948c2719724a7604fb8c6c92c60eda839fbcafd861ff917ff7f2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4530789e51dc8c8dd49ebcc833156206f221b7f2f8128ccbbbf45ad1e04bb88b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "096ca704f5351ff2bcf266995070c381f65042f4348b08b6ec1cbd4fa4211488"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "866f22cdc9c573ecb5a7d394e5b728ca660bc34e1129f3b970eec946015916e3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0f03798d05ce72ccce6b6ae4591c6bcbcd48afe4a1c9296998666de69b8ab037"
+    sha256 cellar: :any_skip_relocation, ventura:       "e0c9f8f7d9ec109da08fff90c25e4cd5329384bd130c1c7c2222e5153b7e321a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d13b82f0928bc39fefe5e9a4ec5445bf4d8035c5a43853739e0353903609d74d"
   end
 
   depends_on "rust" => :build

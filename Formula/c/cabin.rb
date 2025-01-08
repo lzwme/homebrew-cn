@@ -1,19 +1,18 @@
 class Cabin < Formula
   desc "Package manager and build system for C++"
   homepage "https:github.comcabinpkgcabin"
-  url "https:github.comcabinpkgcabinarchiverefstags0.11.0.tar.gz"
-  sha256 "0ffefbfa8aa26a55c9acb058943a35a4d316ad13f588fee0c66ee5e16673e657"
+  url "https:github.comcabinpkgcabinarchiverefstags0.11.1.tar.gz"
+  sha256 "3c9bd2898e6fe692eb988dc71f22214ff938255ef2282d5d7d9c6bdf149d173f"
   license "Apache-2.0"
-  revision 1
   head "https:github.comcabinpkgcabin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c24a7739166e9d08a4cc7f883d3a90b6e8528dd7db622c970d2f53c994c59506"
-    sha256 cellar: :any,                 arm64_sonoma:  "4438f8cd89a498219256b7844de9b129be12d30cdeab3ebcbef42c181dcc9e24"
-    sha256 cellar: :any,                 arm64_ventura: "b266bbce28bcf942c16038b18c11a440f894b022f7411ea6e545158a2a2bc5ce"
-    sha256 cellar: :any,                 sonoma:        "93ddb33c84187fe72debab940444dd25939637210d43eb392535e38231fcecbb"
-    sha256 cellar: :any,                 ventura:       "553462ad734a97b0e7600d0821170cbe11f929668132cfb1aa0221ab28ad0a00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07f5c88feb9dd1a7f6eff05fb0d1c87a33bb46413644eb1c6fa4052744c89319"
+    sha256 cellar: :any,                 arm64_sequoia: "5754d0589d88d6cf7fd750294db721658108f990e4938f59111f28aa9ccb4114"
+    sha256 cellar: :any,                 arm64_sonoma:  "83378766e873a19d9a4a152b5fc7d2a4544fa652cf057f36cbbe31e2158eebea"
+    sha256 cellar: :any,                 arm64_ventura: "e0f4e105b71b65c16c7c0705cf337fa2c352b3f9b08c8988009690a5be45f1e1"
+    sha256 cellar: :any,                 sonoma:        "0b7c588340d8a5d75ae08850a32601aee22b010dc291f2aec1be3dc6e4ced8b2"
+    sha256 cellar: :any,                 ventura:       "18ee9f0222767ca6e8bacf2026b86802655b5ea3dd916d2bb484ebf900f3007e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a08d2c6df86d93a79c66300a2b34f85b9f3288778ddd9cb71ffb0119e416696"
   end
 
   depends_on "nlohmann-json" => :build

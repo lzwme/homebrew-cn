@@ -3,20 +3,18 @@ class Cloudsplaining < Formula
 
   desc "AWS IAM Security Assessment tool"
   homepage "https:cloudsplaining.readthedocs.ioenlatest"
-  url "https:files.pythonhosted.orgpackages27c3a41d0974e00291798d3a5a18c7c0c7fd2880d8fbf69ebe115e89325bde85cloudsplaining-0.7.0.tar.gz"
-  sha256 "2d8a1d1a3261368a39359bb23aa7d6ac9add274728ff24877b710cdfa96d96af"
+  url "https:files.pythonhosted.orgpackages6e09acb8e088d1c6cc6fc9d6d42c1e61168f36339f13b1ea8e54f9a7e93949d1cloudsplaining-0.8.0.tar.gz"
+  sha256 "02029432316a56551e58296496bc80e4778a58468273dbcd61df4ed2c369ede4"
   license "BSD-3-Clause"
-  revision 1
   head "https:github.comsalesforcecloudsplaining.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "7f7ac4cc32819c519f81d7963c7c06f60a1b9a76ac508c74cf40b558c7557b0f"
-    sha256 cellar: :any,                 arm64_sonoma:  "2e4dfb39b5463db00c95d54211e82c9972e29e5416ba3e1df405b173a8cc3208"
-    sha256 cellar: :any,                 arm64_ventura: "d8aab0136a1315522fbc3ef947f56e5fadb20f9fa5bd8953c7950dc9716b70d6"
-    sha256 cellar: :any,                 sonoma:        "45aa727d3dfd85e791400229f234769e128a40194d86b756827077010a7eb43a"
-    sha256 cellar: :any,                 ventura:       "fb9a440d437e2abeac55ca19f98a875b49367446a106cdbe4a2a943e6893d92a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be437d8a03cc9bdf2a741bcd39285b684cc921f92275702b7e43dce08bec67cc"
+    sha256 cellar: :any,                 arm64_sequoia: "1b6d005097d941d05f58342fa112cf112c96ef56b1315e65af0491bf4c579b6b"
+    sha256 cellar: :any,                 arm64_sonoma:  "e4d43bf8c1315747e948bc6790e0d2ad4b6abbc8939b594409533411fc3b6923"
+    sha256 cellar: :any,                 arm64_ventura: "88e4d6e745ace4b7642d74ff2314f9a440fe5bfcbde3cdf76f236b260406a504"
+    sha256 cellar: :any,                 sonoma:        "976c64c751cf51e91f0a7d680918f46a2a7747ca2e2bb6a1120171c09f0e3b30"
+    sha256 cellar: :any,                 ventura:       "4423eb0879d9a2c8c7ad226584824a4715374f4471f16febd9ef5e62e0a15473"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b62297f819b50827990c362a30b984ce787e4fdb68d003f40390aafb16d9d45"
   end
 
   depends_on "rust" => :build # for orjson
@@ -30,13 +28,13 @@ class Cloudsplaining < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackages8008cf2a60bcb6d49764379d78e87f29310458257eb413bb7aa85ebe3d8cd0ccboto3-1.35.87.tar.gz"
-    sha256 "341c58602889078a4a25dc4331b832b5b600a33acd73471d2532c6f01b16fbb4"
+    url "https:files.pythonhosted.orgpackages4c9f866d602492987854ecbec3d29119738d33b584f38c2e8d4ff26e3bf968e8boto3-1.35.93.tar.gz"
+    sha256 "2446e819cf4e295833474cdcf2c92bc82718ce537e9ee1f17f7e3d237f60e69b"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages988d2e49e7a99944cbeef4c1182f59af282fcb164feef35dfa420500c4e0ccb3botocore-1.35.87.tar.gz"
-    sha256 "3062d073ce4170a994099270f469864169dc1a1b8b3d4a21c14ce0ae995e0f89"
+    url "https:files.pythonhosted.orgpackagesd74f95d69a973620d2e9377e5dca0a5ffe0c0767e3a6764161ca995e2bab1636botocore-1.35.93.tar.gz"
+    sha256 "b8d245a01e7d64c41edcf75a42be158df57b9518a83a3dbf5c7e4b8c2bc540cc"
   end
 
   resource "cached-property" do
@@ -45,8 +43,8 @@ class Cloudsplaining < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
-    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
+    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
+    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
   end
 
   resource "click" do
@@ -85,13 +83,13 @@ class Cloudsplaining < Formula
   end
 
   resource "orjson" do
-    url "https:files.pythonhosted.orgpackagese004bb9f72987e7f62fb591d6c880c0caaa16238e4e530cbc3bdc84a7372d75forjson-3.10.12.tar.gz"
-    sha256 "0a78bbda3aea0f9f079057ee1ee8a1ecf790d4f1af88dd67493c6b8ee52506ff"
+    url "https:files.pythonhosted.orgpackages450b8c7eaf1e2152f1e0fb28ae7b22e2b35a6b1992953a1ebe0371ba4d41d3adorjson-3.10.13.tar.gz"
+    sha256 "eb9bfb14ab8f68d9d9492d4817ae497788a15fd7da72e14dfabc289c3bb088ec"
   end
 
   resource "policy-sentry" do
-    url "https:files.pythonhosted.orgpackagesa40575e8953eb5fa564e45fc5afc61696d38ce779169309ca270224561926fa8policy_sentry-0.13.2.tar.gz"
-    sha256 "db2b39f92989077f83fc4dd1d064e3ff20b69cfed82168ebdc060e7dce292e77"
+    url "https:files.pythonhosted.orgpackagesbc4be03bbe626379bfee06c944a01ef25ad14ce30bc9dd86988dfda1cf343347policy_sentry-0.14.0.tar.gz"
+    sha256 "5c52cebebad26e2360393f34af523c1685541d67b0dfd721b0779dbe9e327f1a"
   end
 
   resource "python-dateutil" do

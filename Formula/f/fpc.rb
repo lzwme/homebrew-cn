@@ -101,15 +101,14 @@ class Fpc < Formula
   end
 
   test do
-    hello = <<~EOS
+    (testpath/"hello.pas").write <<~PASCAL
       program Hello;
       uses GL;
       begin
         writeln('Hello Homebrew')
       end.
-    EOS
+    PASCAL
 
-    (testpath/"hello.pas").write(hello)
     system bin/"fpc", "hello.pas"
     assert_equal "Hello Homebrew", shell_output("./hello").strip
   end

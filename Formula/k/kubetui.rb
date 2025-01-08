@@ -1,18 +1,18 @@
 class Kubetui < Formula
   desc "TUI tool for monitoring and exploration of Kubernetes resources"
   homepage "https:github.comsarub0b0kubetui"
-  url "https:github.comsarub0b0kubetuiarchiverefstagsv1.5.4.tar.gz"
-  sha256 "730ebe3a02af4e92a09bc79e94dc95949885abb6552775e7e492c277621d8c30"
+  url "https:github.comsarub0b0kubetuiarchiverefstagsv1.6.0.tar.gz"
+  sha256 "0de0a1a0ade1afdc6461c1ef808d0c81bbe450c543b918fe3dec176dc0221ad7"
   license "MIT"
   head "https:github.comsarub0b0kubetui.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12bc4b165611b7ec6f0559ab050c9753028a92f733f6fc47432a22f860730a43"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32cf812cd8f35532b6a7af47fdb1136abf3ddb01aa41b537e4428be2ce42a300"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "33e1809841fd68bf2aa57695587d12feed1e5b53f071a253aa8aa746e626afd7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "90dedd79247a40d7a1077b8bce37143ec5b7a48c1852b4eb7dd781a8ebf2d12f"
-    sha256 cellar: :any_skip_relocation, ventura:       "13c00c0cb6b11fa6af7fbeee25aececfa863fe2be5e0bd155a0113acd3ce8964"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40b2eecb6b89ffc0502d7228003f5fd87d1af1d62b87d1c9cc4bc682cc02412e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c6bc363d2ae61651db15c72facc2d81c17335294e76979401a41f605da4290d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7197d8fffc8149da26f6395c72e7d9df2ffc64b0a83ba9fc5a4dab6aad7e024f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d6a74b89c3bc86cf838f06f9f744a9ccc5327a0706e3a939b0e8a6a890b2cc57"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e89f054baf4b9d81e211035308fec393045cf89f4510f3b2f23ee671ddb946c8"
+    sha256 cellar: :any_skip_relocation, ventura:       "b1e15ff66f42d8d094695c0b48b385330c5c6ba9ec3e1e6a78d924817f6ed73c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "065d2e0d7aaff02f37db17250ffee1a88c68a51043b19b5b5b9a1a038cc565bf"
   end
 
   depends_on "rust" => :build

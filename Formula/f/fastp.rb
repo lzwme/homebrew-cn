@@ -4,14 +4,15 @@ class Fastp < Formula
   url "https:github.comOpenGenefastparchiverefstagsv0.24.0.tar.gz"
   sha256 "42445973c57be9209c753027e99781261c69381013813c576ad447e413ff3d04"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b3ab9145befee1c91f94affcbff56639d42d51d0ca15968a77a03fe8f3470e34"
-    sha256 cellar: :any,                 arm64_sonoma:  "84d99c79412d7d1d4a7d0a28ce5c053539a0ece96d9895743c164231b88fbdd7"
-    sha256 cellar: :any,                 arm64_ventura: "c95133f539e6d2028c1dcfe77636746afc8b5cae83f62149e30645aecec8319e"
-    sha256 cellar: :any,                 sonoma:        "2fb9b68f0f5e6394ef0fc4f2e9f3f727169276d7036a8c5bf46b26a99680a5f4"
-    sha256 cellar: :any,                 ventura:       "7280ac0a603254ac8711bb1de17acd0c22fdc067de3ad806e3e74fd60fba439b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b9af0aa2d7c574f3522b4ca8dfd39df425f995f0b9a09e7a3fb63adee9a5ff6"
+    sha256 cellar: :any,                 arm64_sequoia: "e4b0ce35397760cb1ae41a5515cdbd6af0f0b9837cb0b9430ba47af0721b1a9b"
+    sha256 cellar: :any,                 arm64_sonoma:  "e40595ad277325c483b90706f5bada72230f910059c2c0ce8be920c4ed3a3ec1"
+    sha256 cellar: :any,                 arm64_ventura: "33d72eca7a0446b28c541cf6b618564cd8ed2a5d7dbe5f012a75793208085303"
+    sha256 cellar: :any,                 sonoma:        "89f6f157df2b06aa301893754a21a0935a711efddfe92888ac6d45ae442db696"
+    sha256 cellar: :any,                 ventura:       "5608702d4e48361821a7aa7df4b2530a62824d0d48ef9e739b9d8d2de52baa49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "329c29e311786da791929dcb3a5b0b4071f5adfcf2216f982e7eab07d74052e2"
   end
 
   depends_on "isa-l"

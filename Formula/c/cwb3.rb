@@ -114,7 +114,7 @@ class Cwb3 < Formula
         shell_output("#{bin}/cqpcl -r registry -D EX 'A=[pos = \"\\w{2}\"]; size A;'"),
         "CQP query works correctly")
 
-      Pathname("test.c").write <<~STOP
+      Pathname("test.c").write <<~C
         #include <stdlib.h>
         #include <cwb/cl.h>
 
@@ -130,7 +130,7 @@ class Cwb3 < Formula
           printf("%d\\n", n_token);
           return 0;
         }
-      STOP
+      C
       cppflags = Utils.safe_popen_read("#{bin}/cwb-config", "-I").strip.split
       ldflags = Utils.safe_popen_read("#{bin}/cwb-config", "-L").strip.split
       system ENV.cc, "-o", "test", *cppflags, "test.c", *ldflags

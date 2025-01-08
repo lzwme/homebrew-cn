@@ -3,8 +3,8 @@ class Redis < Formula
   homepage "https:redis.io"
   # NOTE: Do not bump to v7.4+ as license changed to RSALv2+SSPLv1
   # https:github.comredisredispull13157
-  url "https:download.redis.ioreleasesredis-7.2.6.tar.gz"
-  sha256 "fb10d67a2fe2b4556f6cb840064dd6e6e3175ce8ca035f0726990ec2da9f3d0e"
+  url "https:download.redis.ioreleasesredis-7.2.7.tar.gz"
+  sha256 "72c081e3b8cfae7144273d26d76736f08319000af46c01515cad5d29765cead5"
   license all_of: [
     "BSD-3-Clause",
     "BSD-2-Clause", # depsjemalloc, depslinenoise, srclzf*
@@ -26,12 +26,12 @@ class Redis < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d842dec721e3f9cfca9d83a956ede1879ff4a70e19789c3dd81e56a1abd3ff5f"
-    sha256 cellar: :any,                 arm64_sonoma:  "7009ae4f7236e3c804eee9ff0d13c894210df5ac38ddb45e19fc267c41fb88e5"
-    sha256 cellar: :any,                 arm64_ventura: "a82aaad22347edb2014c22a01ce1eb0cd4f7003450b66d6090326d90f1c79d43"
-    sha256 cellar: :any,                 sonoma:        "cf0ef328040d86d4384b4c98c1c7fb6f1e52dd8435e3a509af4a691c4fa75dc3"
-    sha256 cellar: :any,                 ventura:       "86fd919d0843317ab4e20f9d62355c6534b002be775ddcbe7e095d58ecbb8d85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1028b677934a0257d5c072740db15ea77b7187c53737d040157d0c5c3d9fa650"
+    sha256 cellar: :any,                 arm64_sequoia: "aefa0dd010a6707c9814f24a0d0e20deeaba297958fe901a4786204970815e0f"
+    sha256 cellar: :any,                 arm64_sonoma:  "f52f75401515e756b6ab71953ea1d3c10dbcd6b16bc9afb016ff20695bd2053e"
+    sha256 cellar: :any,                 arm64_ventura: "45d4fd71c45fc068ddef77c8159e5516d73b14d6076c2d8ccf379640ea9dc3be"
+    sha256 cellar: :any,                 sonoma:        "ea691d1b50bf68112f6ba65836ef1af4e9d2869d2aa72959da62cf22075b5402"
+    sha256 cellar: :any,                 ventura:       "db2bbb4405291b3918fe4f0f11b68460f407a5f8d1127b41abfe0acfa9d3bb01"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "35b84640a9a360afa2fabe95ad44cec532c7c8c0a2a46c1a636b874125cf9ca3"
   end
 
   depends_on "openssl@3"

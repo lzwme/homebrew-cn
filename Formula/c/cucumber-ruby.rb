@@ -1,10 +1,9 @@
 class CucumberRuby < Formula
   desc "Cucumber for Ruby"
   homepage "https:cucumber.io"
-  url "https:github.comcucumbercucumber-rubyarchiverefstagsv9.2.0.tar.gz"
-  sha256 "fd8eae54016de9055e84fd4251d873bc9a64d0929b02b4355762ce82ab2874b7"
+  url "https:github.comcucumbercucumber-rubyarchiverefstagsv9.2.1.tar.gz"
+  sha256 "d15fec49a75c2e0d740c87b16818a3cacc317f1751d075444cb93a87ddaaf2dc"
   license "MIT"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,12 +11,12 @@ class CucumberRuby < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5c88e29863e16ab85da2bdd2643008f6cfda6dfa5eb405d9646c25efa247c4e0"
-    sha256 cellar: :any,                 arm64_sonoma:  "345fa4270fa2b3f6299b8cc7c72de8ca93062885d90aca984181cf0f660c63d8"
-    sha256 cellar: :any,                 arm64_ventura: "368f53c28309264a68bdf2d1083a9d8960ed160b1da00738f5d4d926d73c7a5e"
-    sha256 cellar: :any,                 sonoma:        "981eb23c1e51bf9561c3342ea5b344b655802fa590eca52b9063bf8ef77196f6"
-    sha256 cellar: :any,                 ventura:       "d9f836caa2bee5a0e5373652bbe28973bb4a362257bbd87681d4865c35735377"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "332cf9475689eb12111a387cad66d54655d109115809b42c8c7e014d1ccb349a"
+    sha256 cellar: :any,                 arm64_sequoia: "8b48443cf24753ec99cfc462fc9f30423406271af8c9ac8c0422acd1e6d45cc0"
+    sha256 cellar: :any,                 arm64_sonoma:  "ce46817423387c998573530357121d72b4bf36585874b11671253b8fce590ced"
+    sha256 cellar: :any,                 arm64_ventura: "c4e0c8446f9fb07f0417f68dbdfe1fca1d9e0d8c49f502cb21bdc84312323055"
+    sha256 cellar: :any,                 sonoma:        "fcc7218a48ba382994951bb83f292066cf648e153e842dbbceed7ed04638301a"
+    sha256 cellar: :any,                 ventura:       "d8d28f0990273b198d4216ab9ac522be75dd261e4d5e47806b95a2f00d18df57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "837d56a4e7251d6ea2365d0bb38c0b252e1bfc2d2d5ed75a39d842bc2eff580d"
   end
 
   depends_on "pkgconf" => :build
@@ -30,13 +29,13 @@ class CucumberRuby < Formula
   # https:rubygems.orggemscucumberversions9.0.1dependencies
 
   resource "ffi" do
-    url "https:rubygems.orggemsffi-1.16.3.gem"
-    sha256 "6d3242ff10c87271b0675c58d68d3f10148fabc2ad6da52a18123f06078871fb"
+    url "https:rubygems.orggemsffi-1.17.1.gem"
+    sha256 "26f6b0dbd1101e6ffc09d3ca640b2a21840cc52731ad8a7ded9fb89e5fb0fc39"
   end
 
   resource "sys-uname" do
-    url "https:rubygems.orggemssys-uname-1.2.3.gem"
-    sha256 "63c51d55180828c8e58847eb5c24934eed057f87fb016de6062aa11bf1c5490e"
+    url "https:rubygems.orggemssys-uname-1.3.1.gem"
+    sha256 "b7b3eb817a9dd4a2f26a8b616a4f150ab1b79f4682d7538ceb992c8b7346f49c"
   end
 
   resource "multi_test" do
@@ -60,8 +59,8 @@ class CucumberRuby < Formula
   end
 
   resource "cucumber-html-formatter" do
-    url "https:rubygems.orggemscucumber-html-formatter-21.3.0.gem"
-    sha256 "8177d4e989b6035a4108064e60d806768cbe9040c9740f9cfb872cb40685f673"
+    url "https:rubygems.orggemscucumber-html-formatter-21.7.0.gem"
+    sha256 "e116a23dd4827b76f5055e4bcba2899ac5d9391293000486680bf9a14d0bc252"
   end
 
   resource "cucumber-gherkin" do
@@ -75,18 +74,18 @@ class CucumberRuby < Formula
   end
 
   resource "cucumber-cucumber-expressions" do
-    url "https:rubygems.orggemscucumber-cucumber-expressions-17.0.2.gem"
-    sha256 "b1df950bca16843e2948c709592f3b0cf6a20ba4804299e35c30688e15ff4c73"
+    url "https:rubygems.orggemscucumber-cucumber-expressions-17.1.0.gem"
+    sha256 "a1be9df1e5d787f62ff89e5a96c9a78e2e3b989cef7bf698f22cd5efd699d391"
   end
 
   resource "cucumber-tag-expressions" do
-    url "https:rubygems.orggemscucumber-tag-expressions-6.1.0.gem"
-    sha256 "612e521a1ee48495b549f15ae51ecfbfc901ee786245356d38f81c13b6a10ebc"
+    url "https:rubygems.orggemscucumber-tag-expressions-6.1.1.gem"
+    sha256 "ccf1bb8ae92dc5f91571b3e8f034b496b079e2e25cabb802dd64b24975483430"
   end
 
   resource "cucumber-core" do
-    url "https:rubygems.orggemscucumber-core-13.0.1.gem"
-    sha256 "757f9dbfb1e2e0eec19f5fc1091b56a388fb42ba23322be8f10207e6fab3c5c9"
+    url "https:rubygems.orggemscucumber-core-13.0.3.gem"
+    sha256 "e01c28d658dc0a8d5804507e0b63b58ba0e4fbe8e7d50f8f19c17b44872c5344"
   end
 
   resource "cucumber-ci-environment" do
@@ -95,8 +94,8 @@ class CucumberRuby < Formula
   end
 
   resource "builder" do
-    url "https:rubygems.orggemsbuilder-3.2.4.gem"
-    sha256 "99caf08af60c8d7f3a6b004029c4c3c0bdaebced6c949165fe98f1db27fbbc10"
+    url "https:rubygems.orggemsbuilder-3.3.0.gem"
+    sha256 "497918d2f9dca528fdca4b88d84e4ef4387256d984b8154e9d5d3fe5a9c8835f"
   end
 
   def install

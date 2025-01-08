@@ -15,14 +15,7 @@ class Jnv < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ff26530bbe19dc29210440a2a9459583d56e6026291f80e63058c95aede0f5e"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
   depends_on "rust" => :build
-
-  on_linux do
-    depends_on "llvm" => :build
-  end
 
   def install
     system "cargo", "install", *std_cargo_args

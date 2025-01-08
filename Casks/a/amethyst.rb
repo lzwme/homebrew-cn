@@ -17,8 +17,8 @@ cask "amethyst" do
         verified: "github.comianyhAmethyst"
 
     livecheck do
-      url :url
-      strategy :github_latest
+      url "https:ianyh.comamethystappcast.xml"
+      strategy :sparkle, &:short_version
     end
   end
 
