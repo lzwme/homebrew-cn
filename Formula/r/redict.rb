@@ -1,18 +1,18 @@
 class Redict < Formula
   desc "Distributed key/value database"
   homepage "https://redict.io/"
-  url "https://codeberg.org/redict/redict/archive/7.3.1.tar.gz"
-  sha256 "6dbe80d28503a9252048ab81856efcfec109cdf3f924e840411c30237cf8f634"
+  url "https://codeberg.org/redict/redict/archive/7.3.2.tar.gz"
+  sha256 "c00ddb7d9eea879b3effc3dd7d1a8cff954fb472915ab9002ec56068c3af2a73"
   license "LGPL-3.0-only"
   head "https://codeberg.org/redict/redict.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c51d3048902188eb14e48540acf61f15953e3dfa9e79f4768a879770c0260b36"
-    sha256 cellar: :any,                 arm64_sonoma:  "49a97f9241ac71005818654b5cf3df94b723c3aa1d93b215843b1dc47aa5e580"
-    sha256 cellar: :any,                 arm64_ventura: "53252f2cbe9d604eb839e7f3ea35ddeb247e10751faa60ff1045e486ccc54d4a"
-    sha256 cellar: :any,                 sonoma:        "861eda33ab95c62769b9049203817c5a18e1ed04cf6b9b31ff9a56debf00644d"
-    sha256 cellar: :any,                 ventura:       "d59873868022041578819a5f65fdb85390e24433f241582dbb6568e4d8f00d62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e260e15a6db308008c1608f3cb7d3c75e2a281cb8261a5ea37eeb9edab12f4a9"
+    sha256 cellar: :any,                 arm64_sequoia: "328f0f111c46fc1d380c5e1acd5ec33921ba3e09d17d641417a88eadad7175c1"
+    sha256 cellar: :any,                 arm64_sonoma:  "cc7e758ad4aacebedfbd5c37eb24e5307f96503f6b4f4b5d636eb809b801e262"
+    sha256 cellar: :any,                 arm64_ventura: "4cce348e146a06b8d0c37acaca2145c757fb9d06e82d9c4d6e795535b6cd8612"
+    sha256 cellar: :any,                 sonoma:        "2b7de6bb7792f2a638a7f4eb451b2c707edd24f86c64cb7a684ce0c417728bbc"
+    sha256 cellar: :any,                 ventura:       "3b40b26736ebb37ede153bae2781814dfc3483ab1d87453faf6ee54d0780e4b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f263225a18773c4485583261e0d06cb6b7eac9b776713b11c6d58eba584ee2dd"
   end
 
   depends_on "openssl@3"

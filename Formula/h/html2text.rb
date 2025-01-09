@@ -21,10 +21,8 @@ class Html2text < Formula
 
   def install
     ENV.cxx11
-
-    system ".configure", *std_configure_args
-    system "make", "all"
-    system "make", "install", "PREFIX=#{prefix}", "BINDIR=#{bin}", "MANDIR=#{man}", "DOCDIR=#{doc}"
+    system ".configure", "--disable-silent-rules", *std_configure_args
+    system "make", "install"
   end
 
   test do
@@ -37,8 +35,6 @@ class Html2text < Formula
       <html>
     HTML
 
-    output = `#{bin}html2text #{path}`.strip
-    assert_equal "Hello World", output
-    assert_equal 0, $CHILD_STATUS.exitstatus
+    assert_equal "Hello World", shell_output("#{bin}html2text #{path}").strip
   end
 end

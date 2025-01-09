@@ -19,8 +19,8 @@ cask "hammerspoon" do
         verified: "github.comHammerspoonhammerspoon"
 
     livecheck do
-      url :url
-      strategy :github_latest
+      url "https:raw.githubusercontent.comHammerspoonhammerspoonmasterappcast.xml"
+      strategy :sparkle, &:short_version
     end
   end
 

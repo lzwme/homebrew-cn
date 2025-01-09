@@ -11,12 +11,13 @@ class Chrony < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4c6e88d135fc7248907d23dfeeb0dc7d7d59fdb3e4b4bf5d64cb88cbde144e7b"
-    sha256 cellar: :any,                 arm64_sonoma:  "7e9968c5ec5ea5eef8f8e8067102aa76abe5ba51f743ff128ce5a65f77187d38"
-    sha256 cellar: :any,                 arm64_ventura: "92e281e61b4343f5e1adc70edfbd7ef37cee3a810f7ebcbaaaee8494095d73e9"
-    sha256 cellar: :any,                 sonoma:        "47023cbf95a7711a26f5077d40b0a4564b864fbae5eb7d371952120bb4620d53"
-    sha256 cellar: :any,                 ventura:       "a2b6f67ac680be5e10d64b0a8e1c580a64bbd9e53fdabb1b0884562db5b4cef5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55cd6ef009f00d493b55f8ced8b850f4029c6bc9f17e628303d65d4391df69d4"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "bd8606bc58d44abfff04e9574cf0264e5c5ee9f75f64374aadae9096004b55b4"
+    sha256 cellar: :any,                 arm64_sonoma:  "4d47ecab5d75443490dcd062d0b185dcb2fa3c7ac2bc30f4fbcdfdc61736ea6d"
+    sha256 cellar: :any,                 arm64_ventura: "e0785f59cb7309e691469fdeb7ce2a976b8bc49a112125957331ae47c2b95225"
+    sha256 cellar: :any,                 sonoma:        "5e8db7aab33dd0786c52743172f8c0a7a115633d8585da1081c4db87849d0c5d"
+    sha256 cellar: :any,                 ventura:       "201f73994bf3599b53d7512dfad1dac1ab40e998ca4d2ed50bcdc9df6a66d725"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ddc87ece74b77897ffacfefd6c66defc4196c7d7e4a55dbe702479224bc693d"
   end
 
   depends_on "pkgconf" => :build
@@ -31,7 +32,7 @@ class Chrony < Formula
   end
 
   test do
-    (testpath/"test.conf").write "pool pool.ntp.org iburst\n"
+    (testpath/"test.conf").write "pool pool.chrony.eu iburst\n"
     output = shell_output(sbin/"chronyd -Q -f #{testpath}/test.conf 2>&1")
     assert_match(/System clock wrong by -?\d+\.\d+ seconds \(ignored\)/, output)
   end

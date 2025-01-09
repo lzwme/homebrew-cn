@@ -1024,6 +1024,7 @@ Homebrew-homebrew-core/Formula/c/codecov-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/codelimit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/codequery.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coder.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/codesnap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/codespell.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/codevis.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coffeescript.rb, Homebrew/homebrew-core, 1
@@ -10199,6 +10200,9 @@ Homebrew-homebrew-cask/Casks/font/font-n/font-nanum-gothic-coding.rb, Homebrew/h
 Homebrew-homebrew-cask/Casks/font/font-n/font-nanum-gothic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-n/font-nanum-myeongjo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-n/font-nanum-pen-script.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-n/font-nanum-square-neo.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-n/font-nanum-square-round.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-n/font-nanum-square.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-narnoor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-n/font-national-park.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-nats.rb, Homebrew/homebrew-cask, 1
@@ -12085,6 +12089,7 @@ Homebrew-homebrew-cask/Casks/m/maa.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mac-mouse-fix.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mac-mouse-fix@2.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mac2imgur.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/macai.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macast.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/macbreakz.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/maccleaner-pro.rb, Homebrew/homebrew-cask, 0
@@ -12440,7 +12445,7 @@ Homebrew-homebrew-cask/Casks/m/mqttfx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mqttx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/msty.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mtgaprotracker.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/mtmr.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/mtmr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mu-editor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mubu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mucommander.rb, Homebrew/homebrew-cask, 1
@@ -12542,7 +12547,7 @@ Homebrew-homebrew-cask/Casks/n/nessus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nestopia.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/netbeans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/netdownloadhelpercoapp.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/n/neteasemusic.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/neteasemusic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nethackcocoa.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/netiquette.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/netlogo.rb, Homebrew/homebrew-cask, 0
@@ -13505,6 +13510,7 @@ Homebrew-homebrew-cask/Casks/s/sequel-ace.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sequel-pro.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sequential.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/serene.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/serial-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/serial-tools.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/serial.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/serviio.rb, Homebrew/homebrew-cask, 0

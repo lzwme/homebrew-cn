@@ -1,8 +1,8 @@
 class Findent < Formula
   desc "Indent and beautify Fortran sources and generate dependency information"
   homepage "https://www.ratrabbit.nl/ratrabbit/findent/index.html"
-  url "https://downloads.sourceforge.net/project/findent/findent-4.3.3.tar.gz"
-  sha256 "cd91293a44144806e16fbfc677768cc5102cd20dfc92a7b9d242b639d856a16f"
+  url "https://downloads.sourceforge.net/project/findent/findent-4.3.4.tar.gz"
+  sha256 "ca5c7dbdb79eab0499fd66bcaa18f5191f3dc3ff310ccfe78f597f12eda93e73"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,14 +11,12 @@ class Findent < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "dc58685ac19b12f19c514b236cf1f6aa742f26985242441549443f929c26da01"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "811dbae48046410d7190b334697373e2b4cce6c5735edf68454ae83bbf020ce8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9f869ace2c812eaa5dd944a363853bb7c925ce4a45d69a478b257b8f14e634d7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f7408059c20283084436de3228505c5e6ae38a647ee1b05ed2a1b6cc77fe9c61"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9c72cc218415dd6ef7c1eabd8d6d8eb999343c378ec7c6dd0cf5afab29c22d05"
-    sha256 cellar: :any_skip_relocation, ventura:        "243f9a41ae40641221ab2501aeec5ea73fe6a305b4d3509affefe314a848b72f"
-    sha256 cellar: :any_skip_relocation, monterey:       "64d4060095748ea621fdd52eae73c887d1591a460b890e52ed3b618dccaee82e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "44a1715537c947b585f778230f26ae8fa51785d449d82436dfa18ba05bc2906b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df68a325da3ad5cbe46895b59ebd2ba23bbf8a753c9b7f8651c2d14b15c533dd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b7eb9586ca10c6d0a523d139df241b812561fec29e3fbab4967452351c01cde"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "54e4c057c543dd277584ca034aea033ea176876ee8bde6b65353f9e533146dc3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2a16b402c86abc424821f357ed16735a154e317469bf3616681a5f7777e2f5b2"
+    sha256 cellar: :any_skip_relocation, ventura:       "0dbae6a73221d220649cf339511895f15910d463689545130de97c0422566167"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5eacc1629f587c27e05a14b42e83eda8cf769e39fd89b2102bbd0e7cd4a5cc32"
   end
 
   def install

@@ -65,12 +65,11 @@ class Pmdmini < Formula
           pmd_init();
           pmd_play(argv[1], argv[2]);
           pmd_get_title(title);
-          printf("%s\\n", title);
+          printf("%s", title);
       }
     C
     system ENV.cc, "pmdtest.c", "-L#{lib}", "-lpmdmini", "-o", "pmdtest"
-    result = `#{testpath}pmdtest #{testpath}dd06.m #{testpath}`.chomp
-    assert_equal "mus #06", result
+    assert_equal "mus #06", shell_output("#{testpath}pmdtest #{testpath}dd06.m #{testpath}")
   end
 end
 

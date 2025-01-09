@@ -18,7 +18,6 @@ class LibpthreadStubs < Formula
   end
 
   test do
-    system "pkg-config", "--exists", "pthread-stubs"
-    assert_equal 0, $CHILD_STATUS.exitstatus
+    assert_equal version.to_s, shell_output("pkgconf --modversion pthread-stubs").chomp
   end
 end

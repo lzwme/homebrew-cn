@@ -1,18 +1,18 @@
 class Yozefu < Formula
   desc "TUI for exploring data in a Kafka cluster"
   homepage "https:github.comMAIFyozefu"
-  url "https:github.comMAIFyozefuarchiverefstagsv0.0.2.tar.gz"
-  sha256 "057109f56bdebb09b4f602c74f1c31dbed275d0d63f247b994090d64a98f4539"
+  url "https:github.comMAIFyozefuarchiverefstagsv0.0.3.tar.gz"
+  sha256 "a31013c493d268a0db840f7c687df33aebd3187cf83d34939de7a819b78947be"
   license "Apache-2.0"
   head "https:github.comMAIFyozefu.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a2d0b9e15b95f8b15a4613475ab56396229dcd6b7011e73b93a94fe00ed238b2"
-    sha256 cellar: :any,                 arm64_sonoma:  "26ced7f140f7a2db6577a04d287325010920c207e64d6848ad3dac67c07a8307"
-    sha256 cellar: :any,                 arm64_ventura: "4509429f15b40d818a027b8f8d5dd484178353abf46cad2a5abfb4b624d81374"
-    sha256 cellar: :any,                 sonoma:        "f80d5874e60f3db277c10893fde54dc93ea0df9af6e2c4d9f30356d5e7c0ad75"
-    sha256 cellar: :any,                 ventura:       "32a7601f29c5a3b8ae2b06691e4904c7499db6dbbc2e84a0aec78fe98ec2e491"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a471fc50a5de224f6e43c9ab89f7854933e702ffbdc0344cd5982c055294cff2"
+    sha256 cellar: :any,                 arm64_sequoia: "e7ecd9ed35ccbe7eb210620f074f3aa78cc6fae4d8922820079352a7aa657a0d"
+    sha256 cellar: :any,                 arm64_sonoma:  "08cd90866606b12245b42a4b6a21bf5155ceb8e9da387d0be09d039d0cff6731"
+    sha256 cellar: :any,                 arm64_ventura: "4e77454ba41fd1e17b18a663f4a5992f95e482535a49457ad2e1781d49e6293a"
+    sha256 cellar: :any,                 sonoma:        "fda4ac6587777172546ae27aa1b092ea7f57ed8ae1b9c2615c478875d3621e2a"
+    sha256 cellar: :any,                 ventura:       "cba7bb64282c589dd29e20d62436237a3c447643a944a0bd787ec2eb4ec6a5ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05b2937f8a5d3eb05f2692b144d85904f36932657196571462564563014f5bb2"
   end
 
   depends_on "cmake" => :build

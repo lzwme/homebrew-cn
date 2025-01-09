@@ -7,6 +7,11 @@ cask "playcover-community" do
   desc "Sideload iOS apps and games"
   homepage "https:github.comPlayCoverPlayCover"
 
+  livecheck do
+    url "https:raw.githubusercontent.comPlayCoverPlayCoverupdateappcast.xml"
+    strategy :sparkle, &:short_version
+  end
+
   auto_updates true
   conflicts_with cask: "playcover-community@beta"
   depends_on arch: :arm64

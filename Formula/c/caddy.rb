@@ -1,18 +1,18 @@
 class Caddy < Formula
   desc "Powerful, enterprise-ready, open source web server with automatic HTTPS"
   homepage "https:caddyserver.com"
-  url "https:github.comcaddyservercaddyarchiverefstagsv2.9.0.tar.gz"
-  sha256 "955c840f3e5981d9b30e48f818d1f42f5f4765a13b3ec658e210d268b93a7cde"
+  url "https:github.comcaddyservercaddyarchiverefstagsv2.9.1.tar.gz"
+  sha256 "beb52478dfb34ad29407003520d94ee0baccbf210d1af72cebf430d6d7dd7b63"
   license "Apache-2.0"
   head "https:github.comcaddyservercaddy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e121cf9d994c57a4bb0924e059f9e388e386c44b8feb2fc799369ca53843755"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e121cf9d994c57a4bb0924e059f9e388e386c44b8feb2fc799369ca53843755"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2e121cf9d994c57a4bb0924e059f9e388e386c44b8feb2fc799369ca53843755"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0a9c5033e7e6a0534d6e41faaab6addce0490a001e38e573f7189db787abc4ba"
-    sha256 cellar: :any_skip_relocation, ventura:       "0a9c5033e7e6a0534d6e41faaab6addce0490a001e38e573f7189db787abc4ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4677059cad1e3a8790fb10e2ad475b2b9ad48360a967eb2eccdb2af80438e826"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36487e2468a464bd4810d86c4323d1107a6d374f573b43ea07d2b9abf4a6998a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "36487e2468a464bd4810d86c4323d1107a6d374f573b43ea07d2b9abf4a6998a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "36487e2468a464bd4810d86c4323d1107a6d374f573b43ea07d2b9abf4a6998a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7372c7baf68a2da18554d74f44c3f386a441c115c782f89fa1107a9d44a87598"
+    sha256 cellar: :any_skip_relocation, ventura:       "7372c7baf68a2da18554d74f44c3f386a441c115c782f89fa1107a9d44a87598"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dff8317e8eb4749f085266a92ca5b3d7e6a0b6df45ea257744dbcba8a4842f19"
   end
 
   depends_on "go" => :build

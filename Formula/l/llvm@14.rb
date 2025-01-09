@@ -32,10 +32,9 @@ class LlvmAT14 < Formula
   depends_on "cmake" => :build
   # sanitizer_mac.cpp:621:15: error: constexpr function never produces a constant expression [-Winvalid-constexpr]
   # constexpr u16 GetOSMajorKernelOffset() {
-  depends_on maximum_macos: [:sonoma, :build]
-  depends_on "python@3.12" => :build
+  depends_on maximum_macos: [:ventura, :build]
+  depends_on "python@3.12" => [:build, :test]
 
-  uses_from_macos "python" => :test
   uses_from_macos "libedit"
   uses_from_macos "libffi", since: :catalina
   uses_from_macos "ncurses"
@@ -53,9 +52,11 @@ class LlvmAT14 < Formula
   # Backport of https:reviews.llvm.orgD130060
   patch :DATA
 
-  def install
-    python3 = "python3.12"
+  def python3
+    "python3.12"
+  end
 
+  def install
     # The clang bindings need a little help finding our libclang.
     inreplace "clangbindingspythonclangcindex.py",
               ^(\s*library_path\s*=\s*)None$,
@@ -461,10 +462,8 @@ class LlvmAT14 < Formula
       shell_output("#{bin}clang-format -style=google clangformattest.c")
 
     # This will fail if the clang bindings cannot find `libclang`.
-    # We explicitly call `"python3"` instead of the method to be able to do
-    # `uses_from_macos "python" => :test`.
-    with_env(PYTHONPATH: prefixLanguage::Python.site_packages("python3")) do
-      system "python3", "-c", <<~PYTHON
+    with_env(PYTHONPATH: prefixLanguage::Python.site_packages(python3)) do
+      system python3, "-c", <<~PYTHON
         from clang import cindex
         cindex.Config().get_cindex_library()
       PYTHON

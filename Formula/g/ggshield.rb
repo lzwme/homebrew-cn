@@ -3,19 +3,18 @@ class Ggshield < Formula
 
   desc "Scanner for secrets and sensitive data in code"
   homepage "https:www.gitguardian.com"
-  url "https:files.pythonhosted.orgpackages0375faa11bbc86fc2aae6714f62514239c8d88c87b38c7f7d014ce0db7ac069fggshield-1.34.0.tar.gz"
-  sha256 "ff6b5b4f303b371170d29e1adc17ca61834a0420335d57882a5292f0e39a6d44"
+  url "https:files.pythonhosted.orgpackages9903220d9baa3c8987d7d18127f6e2378d272f2da2a7af1c578986e6b82eaa51ggshield-1.35.0.tar.gz"
+  sha256 "8f0dc538f54dad9a092b3b919e58f0bb60bffa9712b67963775ba2667c6112ca"
   license "MIT"
   head "https:github.comGitGuardianggshield.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "96988b5482d5820cb359e2c3d087364c10fd8f2443350068c5bdcd6354f82d7a"
-    sha256 cellar: :any,                 arm64_sonoma:  "8fc13465103de21c0734d3dbd92329b3d645a182776d62770bc02c3e37ad0fb0"
-    sha256 cellar: :any,                 arm64_ventura: "945f94a75349bc0ed5bc4438559a5d9f39c7cdca78f24e303243de65ecd2b70a"
-    sha256 cellar: :any,                 sonoma:        "f40a51cc163fef446f42e519d31637c236ecc7c8d2e24de9287bc996a37891ea"
-    sha256 cellar: :any,                 ventura:       "08c8892b3d195579196f2c9382f532057d1fba15a51547c29e33b8cf0a7f0bae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c964b6045a016cb1b180a32134f95499ce82d6dbc3995b6626dbc57b1672d907"
+    sha256 cellar: :any,                 arm64_sequoia: "1a54406d850eb9ae1b2fcd76311a2bd7cf8dff4eea492cdf549d541af1ff1637"
+    sha256 cellar: :any,                 arm64_sonoma:  "4910d02fb11c334b5a0f3f9010a01f253e4f8122794e93a7922fe13cc999e9f4"
+    sha256 cellar: :any,                 arm64_ventura: "3c976f67ef347d959aab9f3d949f154385574e96f80e9a38c101ae5e81363ca2"
+    sha256 cellar: :any,                 sonoma:        "bdccd80b8314034370e15219670d2f5c29c189f9ce26630e4b6a8f8c13f8550f"
+    sha256 cellar: :any,                 ventura:       "adbfb005ea68da7287b2a7d736784cc8ec46a6899ca2aeccaa0b4ae0fa8a48af"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8776559d2aaed4fb6032dbae94a53788cba8cc776e3505e5111a39871f2d8e85"
   end
 
   depends_on "certifi"
@@ -29,8 +28,8 @@ class Ggshield < Formula
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
+    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
   end
 
   resource "commonmark" do
@@ -74,13 +73,13 @@ class Ggshield < Formula
   end
 
   resource "pygitguardian" do
-    url "https:files.pythonhosted.orgpackagesd1c670870e5f302cbd2955fd493382d25447575e2c87a8a5bf1a2fd162becb3apygitguardian-1.18.0.tar.gz"
-    sha256 "10df1cd99485a3999df442ab56228a7b92eaba642d53e58493f25e4671ac683c"
+    url "https:files.pythonhosted.orgpackages3c3dcf83effe77cdc924888046a44504922df38fb8140f7c877cfe99611a2f7epygitguardian-1.19.0.tar.gz"
+    sha256 "1348a7e3eeab2219aecea76015710d87122fd580146e888f335bfc4af90048db"
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
-    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
+    url "https:files.pythonhosted.orgpackages7c2dc3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84pygments-2.19.1.tar.gz"
+    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
   end
 
   resource "pyjwt" do
@@ -109,8 +108,8 @@ class Ggshield < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages4354292f26c208734e9a7f067aea4a7e282c080750c4546559b58e2e45413ca0setuptools-75.6.0.tar.gz"
-    sha256 "8199222558df7c86216af4f84c30e9b34a61d8ba19366cc914424cdbd28252f6"
+    url "https:files.pythonhosted.orgpackagesac57e6f0bde5a2c333a32fbcce201f906c1fd0b3a7144138712a5e9d9598c5ecsetuptools-75.7.0.tar.gz"
+    sha256 "886ff7b16cd342f1d1defc16fc98c9ce3fde69e087a4e1983d7ab634e5f41f4f"
   end
 
   resource "typing-extensions" do

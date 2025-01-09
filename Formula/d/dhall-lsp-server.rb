@@ -22,6 +22,7 @@ class DhallLspServer < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "be84073f0eab1bca53d11e14033e15d1ba9b98a71bb6f1109d257fed2df6f32f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3aa48be14dd82f80c0b18dbf2749425279a382c68994febf412085f4b219835c"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "404e71e6c61f8838993cdf6640c0b567002ed11a9c9d3c05d375370eeb71eb24"
     sha256 cellar: :any_skip_relocation, arm64_monterey: "65e8c3a933db681ef99efadb8fe8e8461ace1816a5f32f2b038f990d9f0435c5"

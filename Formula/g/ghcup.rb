@@ -14,6 +14,7 @@ class Ghcup < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "611473f27d6f07a103370c58f1572f47e6ee7c55e3a75d73ff8bbe466d5a6b57"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2929bb6239b31767d31a72663cc5926ca38cb4e02a6af97f01931054a63376f6"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "52895db51721d777c0979c6ba63fad6c74108255957f46001ec37c91028fedf1"
     sha256 cellar: :any_skip_relocation, sonoma:        "49b26a9e21b76d40063cf64302d100b5c6b7a628defe349c65051bfda8c5d0e6"

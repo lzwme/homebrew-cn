@@ -46,7 +46,6 @@ class Liblo < Formula
       }
     C
     system ENV.cc, "lo_version.c", "-I#{include}", "-L#{lib}", "-llo", "-o", "lo_version"
-    lo_version = `./lo_version`
-    assert_equal version.to_str, lo_version
+    assert_equal version.to_str, shell_output("./lo_version")
   end
 end

@@ -65,7 +65,7 @@ class UtilLinux < Formula
   end
 
   def install
-    args = %w[--disable-silent-rules --disable-asciidoc]
+    args = %W[--disable-silent-rules --disable-asciidoc --with-bashcompletiondir=#{bash_completion}]
 
     if OS.mac?
       # Support very old ncurses used on macOS 13 and earlier
@@ -82,7 +82,6 @@ class UtilLinux < Formula
       args << "--disable-use-tty-group" # Fix chgrp: changing group of 'wall': Operation not permitted
       args << "--disable-kill" # Conflicts with coreutils.
       args << "--without-systemd" # Do not install systemd files
-      args << "--with-bashcompletiondir=#{bash_completion}"
       args << "--disable-chfn-chsh"
       args << "--disable-login"
       args << "--disable-su"
@@ -92,13 +91,8 @@ class UtilLinux < Formula
       args << "--without-python"
     end
 
-    system ".configure", *args, *std_configure_args.reject { |s| s["--disable-debug"] }
+    system ".configure", *args, *std_configure_args
     system "make", "install"
-
-    # install completions only for installed programs
-    Pathname.glob("bash-completion*") do |prog|
-      bash_completion.install prog if (binprog.basename).exist? || (sbinprog.basename).exist?
-    end
   end
 
   def caveats

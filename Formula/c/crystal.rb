@@ -2,15 +2,14 @@ class Crystal < Formula
   desc "Fast and statically typed, compiled language with Ruby-like syntax"
   homepage "https:crystal-lang.org"
   license "Apache-2.0"
-  revision 1
 
   stable do
-    url "https:github.comcrystal-langcrystalarchiverefstags1.14.0.tar.gz"
-    sha256 "85c74d8654a0e111e2eaec6de38470bc9cb6762bc5b799dd3693d18cce4bc807"
+    url "https:github.comcrystal-langcrystalarchiverefstags1.14.1.tar.gz"
+    sha256 "3e0e30f6c57bd86dbd52ccde4e42fc57c178f6bef47edc96b8c911b3fb12bd5b"
 
     resource "shards" do
-      url "https:github.comcrystal-langshardsarchiverefstagsv0.18.0.tar.gz"
-      sha256 "46a830afd929280735d765e59d8c27ac9ba92eddde9647ae7d3fc85addc38cc5"
+      url "https:github.comcrystal-langshardsarchiverefstagsv0.19.0.tar.gz"
+      sha256 "25204d48ae05e4ad389cea9c34405725f861149b0679b43aa2d9fc8a961a5480"
     end
   end
 
@@ -20,12 +19,12 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "fb7272be811f1eabb551caec4311b46dbaeba5917748d83fd147a41756862de1"
-    sha256 cellar: :any,                 arm64_sonoma:  "325bbb0ee0956f7174440413476586ba7408eef5abffc07299d0d1f97150276a"
-    sha256 cellar: :any,                 arm64_ventura: "166764cd60dc9c7069e14996b5e12f79e64c928e83aad31c277c8e630a203e81"
-    sha256 cellar: :any,                 sonoma:        "23b3cae36e3456ce7d43f5dd07f950415d262daff9eba5f196e5fdfe54850cd7"
-    sha256 cellar: :any,                 ventura:       "fbc3f8bc752de8924efedb52d1521cb78002bae4af1adb4998a97f6f98b5c71d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75e33889ed0b21da2aedad0649d92cb01d13cd51defacd9ebfea60e8cce49b4f"
+    sha256 cellar: :any,                 arm64_sequoia: "dd1c819aae4412d8a3bed08d9ef49946b7163dc36eaf95d4c0dc6c7ef0c48dd3"
+    sha256 cellar: :any,                 arm64_sonoma:  "6e3636f2a0696af1c8cef9f6c7ec2588986e6ff5b32cf689a2972ed3f72e84f0"
+    sha256 cellar: :any,                 arm64_ventura: "2346e6eca00240b7754732b26857d74e1dd28bdd9525b333e9c54828aef006a2"
+    sha256 cellar: :any,                 sonoma:        "3583abf05711c554e2e836595a3392b7491a44dc5f1e7094de7cf52c89c861e3"
+    sha256 cellar: :any,                 ventura:       "d1c433c49d3c9579fb7744bf631ceffa7a1776dc8b1112c6a08330f0b8927841"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61af0672fb356bfc6d9baf6ad3ad4ab9dadeb01c3ed57c3283c985d0ff2ef7c3"
   end
 
   head do

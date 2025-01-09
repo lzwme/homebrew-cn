@@ -23,6 +23,9 @@ class Libgit2AT17 < Formula
 
   keg_only :versioned_formula
 
+  # https:github.comlibgit2libgit2?tab=security-ov-file
+  deprecate! date: "2025-01-08", because: :unsupported
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "libssh2"

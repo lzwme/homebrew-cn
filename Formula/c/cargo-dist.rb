@@ -1,18 +1,18 @@
 class CargoDist < Formula
   desc "Tool for building final distributable artifacts and uploading them to an archive"
   homepage "https:opensource.axo.devcargo-dist"
-  url "https:github.comaxodotdevcargo-distarchiverefstagsv0.27.1.tar.gz"
-  sha256 "c9791b7475cab956cd876905fac32a9e9760cd1e69ebd4bccd25d98e013ff825"
+  url "https:github.comaxodotdevcargo-distarchiverefstagsv0.28.0.tar.gz"
+  sha256 "ef9b7cd1eba124fce752d1bd8414bfa123e06074d370066cb2621992c67d0af4"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comaxodotdevcargo-dist.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba8b03cf44d6ff15c2d1f31d9941c3e5c324da33bdad38ec54e4052ea06697a5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "212a9ba8dd93e4bea961f06663522d39c8df9a1a04a4118678666cac92356445"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0dd2f988d7cce1f18402f9ca650bbf4a6889df63e39006afb31ed12ffa9e5487"
-    sha256 cellar: :any_skip_relocation, sonoma:        "51cbcae1d7ae78287ec3989dd9a932f797f0a6a3cab411a59dff6617b4d8b273"
-    sha256 cellar: :any_skip_relocation, ventura:       "955edf21a2e8f12f3817f07dc9e0f7a473b05f9e9b05a70cc3141890cce81ec0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4181b60cd88138b60e17355aaa92aa7abdcd17289ea3263c7427661287747aba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dba42eaa1e5a3b845739624a819a46263e85a5bf7f85055380d1066a11f0c138"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc2d4878c888c7b3459858acde0c615c082e075e710fddd69fe9ef26ad1b147e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "968f7daeffb1d13273e3c787ee8168f288e336b4e76e7ac400e9c9ee4b7e3cf2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6e73ea41b52d557c939429b8ce4a46cc485857ea79c3365ed25452d0efc61246"
+    sha256 cellar: :any_skip_relocation, ventura:       "2a539f976a6e3c321a4270276641e4dbba0897322f12a0cad104480e5a4697e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec7152a262e3edfce50cd61d60fc7d3d2b7105b4ef82c9aab41970738c08114e"
   end
 
   depends_on "rust" => :build

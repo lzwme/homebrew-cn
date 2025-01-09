@@ -37,14 +37,10 @@ class Lwtools < Formula
     assert_equal [0xe7, 0x89, 0x12, 0x34], code
 
     # lwobjdump
-    dump = `#{bin}/lwobjdump foo.obj`
-    assert_equal 0, $CHILD_STATUS.exitstatus
-    assert dump.start_with?("SECTION foo")
+    assert_match(/^SECTION foo/, shell_output("#{bin}/lwobjdump foo.obj"))
 
     # lwar
     system bin/"lwar", "--create", "foo.lwa", "foo.obj"
-    list = `#{bin}/lwar --list foo.lwa`
-    assert_equal 0, $CHILD_STATUS.exitstatus
-    assert list.start_with?("foo.obj")
+    assert_match(/^foo.obj/, shell_output("#{bin}/lwar --list foo.lwa"))
   end
 end

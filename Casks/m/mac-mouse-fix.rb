@@ -9,8 +9,8 @@ cask "mac-mouse-fix" do
   homepage "https:macmousefix.com"
 
   livecheck do
-    url :url
-    strategy :github_latest
+    url "https:raw.githubusercontent.comnoah-nueblingmac-mouse-fixupdate-feedappcast.xml"
+    strategy :sparkle, &:short_version
   end
 
   auto_updates true

@@ -27,8 +27,7 @@ class ChibiScheme < Formula
   end
 
   test do
-    output = `#{bin}chibi-scheme -mchibi -e "(for-each write '(0 1 2 3 4 5 6 7 8 9))"`
+    output = shell_output("#{bin}chibi-scheme -mchibi -e \"(for-each write '(0 1 2 3 4 5 6 7 8 9))\"")
     assert_equal "0123456789", output
-    assert_equal 0, $CHILD_STATUS.exitstatus
   end
 end

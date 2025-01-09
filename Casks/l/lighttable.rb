@@ -9,6 +9,7 @@ cask "lighttable" do
   homepage "http:lighttable.com"
 
   deprecate! date: "2024-01-06", because: :discontinued
+  disable! date: "2025-01-07", because: :discontinued
 
   app "lighttable-#{version}-macLightTable.app"
   binary "lighttable-#{version}-maclight"

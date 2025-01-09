@@ -3,18 +3,18 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https:snakemake.readthedocs.io"
-  url "https:files.pythonhosted.orgpackages0395b705e4a7fb1787d9829f7e29b32f4d8cc253bfb8c321d67cc38ce765dcb0snakemake-8.26.0.tar.gz"
-  sha256 "b52390cd6c3b591e5c4a0977df93d8f25a4a38a5c43dee4c7e2093393cb1f053"
+  url "https:files.pythonhosted.orgpackages140bb0e763613229a586d0b4b12df2a516a0a0be8ba324713d85ae8eea3b54b0snakemake-8.27.1.tar.gz"
+  sha256 "17fb3c80618dae88c236766a0fe45924119351da9bdc9aa2e8f11dbcfd95aded"
   license "MIT"
   head "https:github.comsnakemakesnakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7006cc09885f71cc8401647bdc150d28b9d2095d73d0da674055ca588ea4c9a9"
-    sha256 cellar: :any,                 arm64_sonoma:  "d4d6f04f1aed14ac12920f49e56b702893d29de2463ca597238e90a3101bebfc"
-    sha256 cellar: :any,                 arm64_ventura: "df80c41a307a1fccb7d08158ee130e708e9ee1fd2e42d76f1a4bc8d250de74f6"
-    sha256 cellar: :any,                 sonoma:        "35bf6f7a530c1387f37c88bb70457160b339b63b05f68040e0c61e7bdf8c184f"
-    sha256 cellar: :any,                 ventura:       "1d46902affb601aae62096e614963703a1e283a9919036a662e52a66dc9c5948"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ea2aa0cc3c158d893c11fa37247d09c2d59dbdade960a662d23a6ab58a5b276"
+    sha256 cellar: :any,                 arm64_sequoia: "6412c22513eb17b40633e5b1047349ce1aa3eda513f63a2d612e5d9f567d78ec"
+    sha256 cellar: :any,                 arm64_sonoma:  "617a55045f1c3236eaf9b925f3ab9a4d5e336fb409aa0b4bd84751f546b4ea78"
+    sha256 cellar: :any,                 arm64_ventura: "7ce4d5f95ddd12101d5bc0c51440152b883d35f66c17dbe7a5c2211761fe7248"
+    sha256 cellar: :any,                 sonoma:        "f0a727d32cc2b9ac5d063a553b5524827c69ac5ca103c468f7f2c14a4a0edeb4"
+    sha256 cellar: :any,                 ventura:       "d4ee587a10377b3e6fe2d34248a24a936630a881fae34a2b2aa3d219c8407b4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5724000a020efc06bc7f8fde0e19dd9da40cea7bdda4caf64c177b92bd25c22d"
   end
 
   depends_on "rust" => :build
@@ -39,8 +39,8 @@ class Snakemake < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
-    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
+    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
+    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
   end
 
   resource "conda-inject" do
@@ -79,13 +79,13 @@ class Snakemake < Formula
   end
 
   resource "gitdb" do
-    url "https:files.pythonhosted.orgpackages190dbbb5b5ee188dec84647a4664f3e11b06ade2bde568dbd489d9d64adef8edgitdb-4.0.11.tar.gz"
-    sha256 "bf5421126136d6d0af55bc1e7c1af1c397a34f5b7bd79e776cd3e89785c2b04b"
+    url "https:files.pythonhosted.orgpackages729463b0fc47eb32792c7ba1fe1b694daec9a63620db1e313033d18140c2320agitdb-4.0.12.tar.gz"
+    sha256 "5ef71f855d191a3326fcfbc0d5da835f26b13fbcba60c32c21091c349ffdb571"
   end
 
   resource "gitpython" do
-    url "https:files.pythonhosted.orgpackagesb6a1106fd9fa2dd989b6fb36e5893961f82992cf676381707253e0bf93eb1662GitPython-3.1.43.tar.gz"
-    sha256 "35f314a9f878467f5453cc1fee295c3e18e52f1b99f10f6cf5b1682e968a9e7c"
+    url "https:files.pythonhosted.orgpackagesc08937df0b71473153574a5cdef8f242de422a0f5d26d7a9e231e6f169b4ad14gitpython-3.1.44.tar.gz"
+    sha256 "c87e30b26253bf5418b01b0660f818967f3c503193838337fe5e573331249269"
   end
 
   resource "humanfriendly" do
@@ -189,8 +189,8 @@ class Snakemake < Formula
   end
 
   resource "smmap" do
-    url "https:files.pythonhosted.orgpackages8804b5bf6d21dc4041000ccba7eb17dd3055feb237e7ffc2c20d3fae3af62baasmmap-5.0.1.tar.gz"
-    sha256 "dceeb6c0028fdb6734471eb07c0cd2aae706ccaecab45965ee83f11c8d3b1f62"
+    url "https:files.pythonhosted.orgpackages44cda040c4b3119bbe532e5b0732286f805445375489fceaec1f48306068ee3bsmmap-5.0.2.tar.gz"
+    sha256 "26ea65a03958fa0c8a1c7e8c7a58fdc77221b8910f6be2131affade476898ad5"
   end
 
   resource "snakemake-interface-common" do

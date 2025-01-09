@@ -1,10 +1,9 @@
 class Echidna < Formula
   desc "Ethereum smart contract fuzzer"
   homepage "https:github.comcryticechidna"
-  url "https:github.comcryticechidnaarchiverefstagsv2.2.5.tar.gz"
-  sha256 "148504b6881727265f4fd87c699cf521b0cb8bb7b0dea4cba42b97e2d588ec16"
+  url "https:github.comcryticechidnaarchiverefstagsv2.2.6.tar.gz"
+  sha256 "699e6f6369e7bd35f0324767c60005ae10ad7c71dc3ac682dd3a3294cd34a8e9"
   license "AGPL-3.0-only"
-  revision 1
   head "https:github.comcryticechidna.git", branch: "master"
 
   livecheck do
@@ -13,12 +12,12 @@ class Echidna < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "15434151c4692b9edb45d66c0ea7924edc304e20ebf9fa37400874fcc089e8fd"
-    sha256 cellar: :any,                 arm64_sonoma:  "ac97f82cfe20ee7565794496ac1e129d9d119fd3f00366e98ea27d0da838e716"
-    sha256 cellar: :any,                 arm64_ventura: "f081bc8f4e357a66b581cc8b1977f25431e03e1de544313cbe622f946dba9a19"
-    sha256 cellar: :any,                 sonoma:        "6ba066a900d1d2d64e25e19db0115f2187106bbf16d1bb0f929034f2b4d14a2d"
-    sha256 cellar: :any,                 ventura:       "e6a88f34daca135244362e116d954ee333e036b621656e70dfc4db2b4aa943cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca3e2796402ea85f7f013c4cd11827e6f65b462247df88ba8c6ad08c3f510f0c"
+    sha256 cellar: :any,                 arm64_sequoia: "6070db61524a6b0dbad453835890ef02ad5826ccae68b96771772a721eb60578"
+    sha256 cellar: :any,                 arm64_sonoma:  "455439b7e0fe4bc487bb76bc859c048c1cf84c23f7ffc27587915da0f7c6fb0c"
+    sha256 cellar: :any,                 arm64_ventura: "8f529c4e97f41611657d0fdfbbc2aa5b88c54af0fe578d176413caca679ea89f"
+    sha256 cellar: :any,                 sonoma:        "169113958d861631bf7ab556fac14807670d4333edf491d12b53ee727ec32da2"
+    sha256 cellar: :any,                 ventura:       "f70af17e76fc6c33f74499e9e5e8fa571c88476fb9497d78aac53d26b6a9fee8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22c09f288e1586ba70df669311ec7ecb02acdd378970fbfd731a76033eacd751"
   end
 
   depends_on "ghc@9.6" => :build # GHC 9.8 PR: https:github.comcryticechidnapull1334

@@ -1,10 +1,19 @@
 class Shellcheck < Formula
   desc "Static analysis and lint tool, for (ba)sh scripts"
   homepage "https:www.shellcheck.net"
-  url "https:github.comkoalamanshellcheckarchiverefstagsv0.10.0.tar.gz"
-  sha256 "149ef8f90c0ccb8a5a9e64d2b8cdd079ac29f7d2f5a263ba64087093e9135050"
   license "GPL-3.0-or-later"
   head "https:github.comkoalamanshellcheck.git", branch: "master"
+
+  stable do
+    url "https:github.comkoalamanshellcheckarchiverefstagsv0.10.0.tar.gz"
+    sha256 "149ef8f90c0ccb8a5a9e64d2b8cdd079ac29f7d2f5a263ba64087093e9135050"
+
+    # Backport upper bound increase for filepath, needed for GHC 9.12
+    patch do
+      url "https:github.comkoalamanshellcheckcommit0ee46a0f33ebafde128e2c93dd45f2757de4d4ec.patch?full_index=1"
+      sha256 "c73663bee3577068700b580140d468834cd42f88f7753f950f501e8781656ff5"
+    end
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5045be1e530288251353848343322f5a423617d061830b7ea7465fe550787364"

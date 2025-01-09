@@ -22,11 +22,6 @@ class Parrot < Formula
     end
   end
 
-  livecheck do
-    url "http:ftp.parrot.orgreleasessupported"
-    regex(%r{href=["']?v?(\d+(?:\.\d+)+)?["' >]}i)
-  end
-
   bottle do
     sha256 arm64_sequoia:  "a51d427d1063c4e9a7bf13f9039a29fb6f9f690cfc751e6d100376435cd3c3ad"
     sha256 arm64_sonoma:   "33247f7453684d5af68220cb3aa6590adaeadeb6f4f45fe51e3e4584502e9b33"
@@ -44,6 +39,9 @@ class Parrot < Formula
     sha256 el_capitan:     "3b78be029276ca642cb2bc705888ed0cd7745c0398cf90bf67031190191c76a8"
     sha256 x86_64_linux:   "26b301714008aa6c10ecd25b10d01bf361ed4772b90af0a9d50936d2108f9013"
   end
+
+  # https:github.comparrotparrotcommitf89a111c06ad0367817c52fda6ff5c24165c005b
+  deprecate! date: "2025-01-09", because: :unmaintained
 
   uses_from_macos "perl" => :build
   uses_from_macos "zlib"
@@ -79,7 +77,7 @@ class Parrot < Formula
 
   test do
     path = testpath"test.pir"
-    path.write <<~EOS
+    path.write <<~PARROT
       .sub _main
         .local int i
         i = 0
@@ -88,10 +86,8 @@ class Parrot < Formula
         inc i
         if i < 10 goto loop
       .end
-    EOS
+    PARROT
 
-    out = `#{bin}parrot #{path}`
-    assert_equal "0123456789", out
-    assert_equal 0, $CHILD_STATUS.exitstatus
+    assert_equal "0123456789", shell_output("#{bin}parrot #{path}")
   end
 end
