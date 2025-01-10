@@ -4,22 +4,23 @@ class Cabin < Formula
   url "https:github.comcabinpkgcabinarchiverefstags0.11.1.tar.gz"
   sha256 "3c9bd2898e6fe692eb988dc71f22214ff938255ef2282d5d7d9c6bdf149d173f"
   license "Apache-2.0"
+  revision 1
   head "https:github.comcabinpkgcabin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5754d0589d88d6cf7fd750294db721658108f990e4938f59111f28aa9ccb4114"
-    sha256 cellar: :any,                 arm64_sonoma:  "83378766e873a19d9a4a152b5fc7d2a4544fa652cf057f36cbbe31e2158eebea"
-    sha256 cellar: :any,                 arm64_ventura: "e0f4e105b71b65c16c7c0705cf337fa2c352b3f9b08c8988009690a5be45f1e1"
-    sha256 cellar: :any,                 sonoma:        "0b7c588340d8a5d75ae08850a32601aee22b010dc291f2aec1be3dc6e4ced8b2"
-    sha256 cellar: :any,                 ventura:       "18ee9f0222767ca6e8bacf2026b86802655b5ea3dd916d2bb484ebf900f3007e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a08d2c6df86d93a79c66300a2b34f85b9f3288778ddd9cb71ffb0119e416696"
+    sha256 cellar: :any,                 arm64_sequoia: "7327067ecb4450c4fbc39652c1d1244d95140de92191c4ac82e6043f23e542e3"
+    sha256 cellar: :any,                 arm64_sonoma:  "b4a7af27d3b278dec5584f8d1e71162281bed77c2d661e731a8f0e8280e87144"
+    sha256 cellar: :any,                 arm64_ventura: "90ca58fc4591819dd7bdb0a62d766d219de1bba32007fda30c85290e595c935c"
+    sha256 cellar: :any,                 sonoma:        "edcff193af9aa1f0eeea737a3b8ca9369c1c8801ccfbbba7ef564911cea2bcaf"
+    sha256 cellar: :any,                 ventura:       "b1605b98b0f7351d70be33d99a7d6d96061519723dbe17d96601bcb3711bfa9a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95337e4be084788162d2ed9c63fbfa120e7e4a91213a0b24638460f3711bd784"
   end
 
   depends_on "nlohmann-json" => :build
   depends_on "toml11" => :build
   depends_on "curl"
   depends_on "fmt"
-  depends_on "libgit2@1.8"
+  depends_on "libgit2"
   depends_on "pkgconf"
   depends_on "tbb"
 

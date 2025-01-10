@@ -31,8 +31,7 @@ class Jd < Formula
       - "bar"
       + "baz"
     EOF
-    output = shell_output("#{bin}jd a.json b.json", 1)
-    assert_equal output, expected
+    assert_equal expected, shell_output("#{bin}jd a.json b.json", 1)
     assert_empty shell_output("#{bin}jd b.json c.json")
   end
 end

@@ -1,19 +1,17 @@
 class GlibNetworking < Formula
   desc "Network related modules for glib"
   homepage "https://gitlab.gnome.org/GNOME/glib-networking"
-  url "https://download.gnome.org/sources/glib-networking/2.80/glib-networking-2.80.0.tar.xz"
-  sha256 "d8f4f1aab213179ae3351617b59dab5de6bcc9e785021eee178998ebd4bb3acf"
+  url "https://download.gnome.org/sources/glib-networking/2.80/glib-networking-2.80.1.tar.xz"
+  sha256 "b80e2874157cd55071f1b6710fa0b911d5ac5de106a9ee2a4c9c7bee61782f8e"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256               arm64_sequoia:  "3d424d6b858a6c4f66d44e51822d375a177c6e3f0b3c42a183c20037abd195ea"
-    sha256               arm64_sonoma:   "30b0bc73d7307c7c10eefefdab0d4e5cbada6062d3af70e87eda5cae0d384078"
-    sha256               arm64_ventura:  "77eaced4c03965b9708daa421f20d056f12e7bbf86b29d48aa5b942fe429d557"
-    sha256               arm64_monterey: "afda408dd3bcd96460597c803669eff4e9c9bf435c2e5201f5b7f20e0295d8c4"
-    sha256 cellar: :any, sonoma:         "c317dcff3c617af81233d1d14402f37142d2e30977349d700ba2b8246b4f2b91"
-    sha256 cellar: :any, ventura:        "e4f6a66cbd7b69a095ac7bdc13ebd23cfac4553ccbe954629d0c935c28164f6d"
-    sha256 cellar: :any, monterey:       "5f7a104feb68e3b2177090774108af661129297f194f84a3381e90a007d793c0"
-    sha256               x86_64_linux:   "b50d23dcdaa8cf997507be5876edc09b0f5afc0639a75051a4c738e1995f40ff"
+    sha256               arm64_sequoia: "3a602d6d04b23f9ea7e3220f9d15f3665df3effb3e23755647ddc37290043851"
+    sha256               arm64_sonoma:  "f4dbd6b6633a8e45f1290c90fd6e97a9ee60e2e0553cea6ff174d8c817beee7d"
+    sha256               arm64_ventura: "f9907f3da38a5bee59b1a5b8dd794c2fa761595befc27c7f9c1abcda599c6275"
+    sha256 cellar: :any, sonoma:        "42ed98bed547bbeae647d95e0b5f0da4a85e7416cb722efbc4a6e9f975c1bdf0"
+    sha256 cellar: :any, ventura:       "051b59d9c1a7d2403a8d34628d6c0acad7c25f50e9d25d4756095c998975e128"
+    sha256               x86_64_linux:  "c20490896cab94dc36f83a54bb58ccefea822fb311c03de4a5624e34b09c68ed"
   end
 
   depends_on "meson" => :build

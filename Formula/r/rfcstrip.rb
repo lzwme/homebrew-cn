@@ -21,10 +21,9 @@ class Rfcstrip < Formula
   end
 
   test do
-    resource("rfc1149").stage do
-      stripped = shell_output("#{bin}rfcstrip rfc1149.txt")
-      assert !stripped.match(\[Page \d+\]) # RFC page numbering
-      assert stripped.exclude?("\f") # form feed a.k.a. Control-L
-    end
+    resource("rfc1149").stage testpath
+    stripped = shell_output("#{bin}rfcstrip rfc1149.txt")
+    refute_match(\[Page \d+\], stripped) # RFC page numbering
+    refute_match "\f", stripped # form feed a.k.a. Control-L
   end
 end

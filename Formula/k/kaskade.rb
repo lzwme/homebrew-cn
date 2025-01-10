@@ -3,17 +3,17 @@ class Kaskade < Formula
 
   desc "TUI for Kafka"
   homepage "https:github.comsauljabinkaskade"
-  url "https:files.pythonhosted.orgpackagesf9f94ebfb0517ea9487ac7581f83eae665bc57b1a2cb8c7d20ffdf21d225874dkaskade-4.0.0.tar.gz"
-  sha256 "900bf2234c2659b56976c77071df53b4ea5c3ce1b9f6c622a2f3551ad1aa5eb3"
+  url "https:files.pythonhosted.orgpackages707af8e5902528fee31a88e85045606c5bfd941cd139c673a369697dbfc63f1dkaskade-4.0.2.tar.gz"
+  sha256 "aeff83257d9a4cc3b47da6aa9456c337800523d7ada22f20c4750a84d902e0f8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2631d71e035c7f78ee634c62750219e0a26559d98f305dd57a0b347d119e1cdf"
-    sha256 cellar: :any,                 arm64_sonoma:  "25c54b830369019613abace5e464f61ae09c3487cb0c143bbe1d3d8ebcbd26d9"
-    sha256 cellar: :any,                 arm64_ventura: "c3aee38169e68ac7d246355f51186d6d90d7767f69a19cc104dfd2ab7edf0139"
-    sha256 cellar: :any,                 sonoma:        "65cc5990bf2a67c5f6d08c6db9face24c7c9e80d499d32bc7d2571bcc394d95e"
-    sha256 cellar: :any,                 ventura:       "cc1f83e143fb67331afc250939864aab81c2d6222c982c90526f51629ec8e13a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1c1e20bf01024719a7b9238b1089fc1e59d95ca255a41482798183ab9dad974"
+    sha256 cellar: :any,                 arm64_sequoia: "0bf953808a7a32b340337bcefeefba92b07453f2d7de45d90e449ea212cdc6fb"
+    sha256 cellar: :any,                 arm64_sonoma:  "e0bd2ae62b5991dbdd09bca01467eae40f350167103cc334311f5a7198d638c2"
+    sha256 cellar: :any,                 arm64_ventura: "e867e62967f3d3788943bb26fa6fc476a4e2131995d54822a23f3d938eb2ebec"
+    sha256 cellar: :any,                 sonoma:        "888a683c51bd2e84a2ebc08b5bd109be29ae88f47b393d3051e73a1b807f2e7c"
+    sha256 cellar: :any,                 ventura:       "3ee7bc39ee64069ef3e31422303332ba96409fb2b0b5f0ae5f9b66b677e11792"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "173b9cf8441bc8e09add23b0186eb252a168cf9d02d412c48f324837acc134b5"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -22,8 +22,8 @@ class Kaskade < Formula
   depends_on "python@3.13"
 
   resource "anyio" do
-    url "https:files.pythonhosted.orgpackagesf640318e58f669b1a9e00f5c4453910682e2d9dd594334539c7b7817dabb765fanyio-4.7.0.tar.gz"
-    sha256 "2f834749c602966b7d456a7567cafcb309f96482b5081d14ac93ccd457f9dd48"
+    url "https:files.pythonhosted.orgpackagesa373199a98fc2dae33535d6b8e8e6ec01f8c1d76c9adb096c6b7d64823038cdeanyio-4.8.0.tar.gz"
+    sha256 "1d9fe889df5212298c0c0723fa20479d1b94883a2df44bd3897aa91083316f7a"
   end
 
   resource "attrs" do
@@ -57,8 +57,8 @@ class Kaskade < Formula
   end
 
   resource "confluent-kafka" do
-    url "https:files.pythonhosted.orgpackagese8b3a46e11f1400dc4f8a2d1502dc06270ca0520a730d7fe4469167a0f6066ccconfluent_kafka-2.7.0.tar.gz"
-    sha256 "bf2b74bb9c68901ad345440e091b9a8a4490a38db3161b87d44f476650f3c0c6"
+    url "https:files.pythonhosted.orgpackagesbda7a6bd180293fd9ac81f60bf7e9488ba133d5fdaa00aa94518900711c206c0confluent_kafka-2.8.0.tar.gz"
+    sha256 "56c4aa8e9de6f6e8e3ecf86d396372e76631ec75b107cdb5248c7405ec7c5fa1"
   end
 
   resource "fastavro" do
@@ -82,8 +82,8 @@ class Kaskade < Formula
   end
 
   resource "httpx" do
-    url "https:files.pythonhosted.orgpackages788208f8c936781f67d9e6b9eeb8a0c8b4e406136ea4c3d1f89a5db71d42e0e6httpx-0.27.2.tar.gz"
-    sha256 "f7c2be1d2f3c3c3160d441802406b206c2b76f5947b11115e6df10c6c65e66c2"
+    url "https:files.pythonhosted.orgpackagesb1df48c586a5fe32a0f01324ee087459e112ebb7224f646c0b5023f5e79e9956httpx-0.28.1.tar.gz"
+    sha256 "75e98c5f16b0f35b567856f597f06ff2270a374470a5c2392242528e3e3e42fc"
   end
 
   resource "idna" do
@@ -127,13 +127,13 @@ class Kaskade < Formula
   end
 
   resource "protobuf" do
-    url "https:files.pythonhosted.orgpackagesa5734e6295c1420a9d20c9c351db3a36109b4c9aa601916cb7c6871e3196a1caprotobuf-5.29.2.tar.gz"
-    sha256 "b2cc8e8bb7c9326996f0e160137b0861f1a82162502658df2951209d0cb0309e"
+    url "https:files.pythonhosted.orgpackagesf7d1e0a911544ca9993e0f17ce6d3cc0932752356c1b0a834397f28e63479344protobuf-5.29.3.tar.gz"
+    sha256 "5da0f41edaf117bde316404bad1a486cb4ededf8e4a54891296f648e8e076620"
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
-    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
+    url "https:files.pythonhosted.orgpackages7c2dc3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84pygments-2.19.1.tar.gz"
+    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
   end
 
   resource "pyrsistent" do
@@ -187,6 +187,9 @@ class Kaskade < Formula
   end
 
   def install
+    # attrs > hatchling, fix to `ZIP does not support timestamps before 1980` error
+    ENV["SOURCE_DATE_EPOCH"] = Time.now.to_i.to_s
+
     virtualenv_install_with_resources
   end
 

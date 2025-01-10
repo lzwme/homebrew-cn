@@ -1,9 +1,9 @@
 class Wireshark < Formula
   desc "Network analyzer and capture tool - without graphical user interface"
   homepage "https://www.wireshark.org"
-  url "https://www.wireshark.org/download/src/all-versions/wireshark-4.4.2.tar.xz"
-  mirror "https://1.eu.dl.wireshark.org/src/all-versions/wireshark-4.4.2.tar.xz"
-  sha256 "6053d97499c83feb87ce1d7f732d9c889c6c18bb334de67e65dca11483b0514e"
+  url "https://www.wireshark.org/download/src/all-versions/wireshark-4.4.3.tar.xz"
+  mirror "https://1.eu.dl.wireshark.org/src/all-versions/wireshark-4.4.3.tar.xz"
+  sha256 "2abb53b958a7701c239093706d373e199ac183550904d490e173b91195e2fab6"
   license "GPL-2.0-or-later"
   head "https://gitlab.com/wireshark/wireshark.git", branch: "master"
 
@@ -15,12 +15,12 @@ class Wireshark < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "79de8ed9e17b4d00454cbdf810c508554790d3b982023d10605e9c4b7a3eb7f4"
-    sha256                               arm64_sonoma:  "db49f80c1e3d4d11ead6d179b28f77b535ebaddab35b5e3df6c19ac4785b2641"
-    sha256                               arm64_ventura: "395d25ffe9937c1cca3dea407255b16e1a1c09177adb2308eddebb3939dc1b71"
-    sha256                               sonoma:        "62ef0848fd5c795557b080f6242f7337ade2ff04a4fb6739afbcfb0c35e9e3f8"
-    sha256                               ventura:       "14f6063b51286d5b4629db52115bd42957c2d5927aa606a152d27c6de8eaf8c3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c220cdded37de23e80a4002ece2cdcdcbc2fe411c705f656441fa48f8093dfd"
+    sha256                               arm64_sequoia: "8e581ea6315d631ae1d500f2760af3e46815c4be7e324d0d2e7230120e3f3067"
+    sha256                               arm64_sonoma:  "8b1280c6aa00323a0bad3595207346307d9229b42be5d8831bbe17bb3f25a211"
+    sha256                               arm64_ventura: "a2d57794f4a78bbf09296c09ad660d94dddfde88b632a5482040c414d9f9f51e"
+    sha256                               sonoma:        "ed5a304fe7209b852c60ec65582c9ddd3542453ce318ab517a2c1dcf6330bd11"
+    sha256                               ventura:       "0ebc9b3551c4540107dd88a00a9c4014445e70facce374677355fdf46a782b33"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9492f11a1af91e8798f85e198762f17c52bc72b3bacd9255488e0c03883013f7"
   end
 
   depends_on "cmake" => :build

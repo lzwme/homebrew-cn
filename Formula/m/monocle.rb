@@ -1,17 +1,17 @@
 class Monocle < Formula
   desc "See through all BGP data with a monocle"
   homepage "https:github.combgpkitmonocle"
-  url "https:github.combgpkitmonoclearchiverefstagsv0.7.1.tar.gz"
-  sha256 "27b7021b3b25102972b35e7d6beed4ddef971a45053da5811b9929d6c48b8e6d"
+  url "https:github.combgpkitmonoclearchiverefstagsv0.7.2.tar.gz"
+  sha256 "6375214d15f780e2e54320841a00d13330d5a1b998a7df357a309b8877d20780"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0d69a2855e16951f555a56eecd549c5c1581ab746b72a2e6191907ab4c5cfc2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f34150ad6b9cafc6a928e66a43871090a2fc7a2dd9d1f8768eeda73ab11eafaf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fefbb2eecc3ee6f164c95b58b74add3721564f13a71fe348944a68b4831a27b2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6f5c07bafb2c4b1095a6286bdeaa86f8da5f65b75741ef6d93bbed0bef4544b6"
-    sha256 cellar: :any_skip_relocation, ventura:       "e8311b37ae40af8b53928daac1456261f1e82e085e7871ca0e6212d2e08d46da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3392ce4f1ce041fd54ba4882c61b30927ac5a417f0a9310712302b94f7ed6aae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6071056a263f14da10efa8b636a62c6553f4cc06b26f0684c624b041d29036f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a23a54bf278b3f5232a451b2fd3a79c390971d7b84f4fa98e27e732a8775536"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1444eccd36ed182eecd0f0a6c7af8c779185c44cf07f3351a67b3e919e5d5dfe"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d86179ca68b5d3070856042e857d0f50d76c67c6600393b71ebf1a1c424ba31e"
+    sha256 cellar: :any_skip_relocation, ventura:       "3a1696c31a32db8138617cf9c55470c25b385c800e3558a902304a4cf191abff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc632d35fa157dc4009323bdc998ea2f5ed267242bc5216f1fc00b6841592035"
   end
 
   depends_on "rust" => :build

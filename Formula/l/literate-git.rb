@@ -3,18 +3,17 @@ class LiterateGit < Formula
 
   desc "Render hierarchical git repositories into HTML"
   homepage "https:github.combennorthliterate-git"
-  url "https:files.pythonhosted.orgpackages7bcc1a6c994c90fa34cfa8e90e017c80f838b149fd0262daa24cdb930c091b48literategit-0.5.0.tar.gz"
-  sha256 "88f9e95749d427c98a397a9c38a845d9760cf3451424441bc217c53c1ec835bd"
+  url "https:files.pythonhosted.orgpackages670ee37f96177ca5227416bbf06e96d23077214fbb3968b02fe2a36c835bf49eliterategit-0.5.1.tar.gz"
+  sha256 "3db9099c9618afd398444562738ef3142ef3295d1f6ce56251ba8d22385afe44"
   license "GPL-3.0-or-later"
-  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9d2b025ddbab295193c1e6f827407d639a9d204c4e5f9cdb5f53fd9621d180c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "796a2f7d9c28026fe53d797479b502dc6f32d2397334c924ea7f058ea857ecd3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7f014c600ce0139cd4e7ed823c48791e4589691ac5556eef4054b6e1e29ff84c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "74385ddd793439f8f9280f1e498e43678bc6b8430c3ff6a31607e89a8a45fa8c"
-    sha256 cellar: :any_skip_relocation, ventura:       "4b9700e863cbe0fe8339cfa29c0b13ca998eb2bf7f763aca819cfcef2484e7a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "441c3d2a61e151bba2931e002e40c737fab41a491daa57174b09d8e821c1f56e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bdea2b194b7f348c15c88755d5ef0d975cd839dfdacc463bae9f36c7979ba822"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "efc79779edc2107eea264ac7c7c712136d42a6de1111239f030e8958f8521788"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3b67ced36559322a068d9d5d68975732a7b9eb0e957d59bb790cafd4a293276c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a894afe0669bc1c7dbdf7443fd16288203f67a162bc0f6469d1c801bf862d762"
+    sha256 cellar: :any_skip_relocation, ventura:       "213b4b3ee58237156691e35265a46e5e5b92765fe642d7eb0ecec5aaa27fe37f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cdd8ab9dcc85ecd5ce09b20c08732ff7017994b8053008c9acda85aeedd129d0"
   end
 
   depends_on "pygit2"
@@ -42,16 +41,19 @@ class LiterateGit < Formula
   end
 
   resource "markupsafe" do
-    url "https:files.pythonhosted.orgpackages875baae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02dMarkupSafe-2.1.5.tar.gz"
-    sha256 "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
+    url "https:files.pythonhosted.orgpackagesb2975d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62markupsafe-3.0.2.tar.gz"
+    sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
-    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
+    url "https:files.pythonhosted.orgpackages7c2dc3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84pygments-2.19.1.tar.gz"
+    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
   end
 
   def install
+    # pygments > hatchling, fix to `ZIP does not support timestamps before 1980` error
+    ENV["SOURCE_DATE_EPOCH"] = Time.now.to_i.to_s
+
     virtualenv_install_with_resources
   end
 

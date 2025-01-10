@@ -13,9 +13,9 @@ cask "djstudio" do
   on_catalina :or_newer do
     arch arm: "-arm64"
 
-    version "3.0.7"
-    sha256 arm:   "2d08ca453c1702bb0424dd34e8b11225760fe8883383f957eb28931727c63a9e",
-           intel: "3072895e2efbbb971efcafc0b06537cb1405c9db129b07e2eeca3e09a2df42e0"
+    version "3.0.9"
+    sha256 arm:   "08023d5688ca434d1a6425296eebdd3a61eb24ada9772e2e359ed3ed65e7359e",
+           intel: "56c0f8778361205776aa91784b779bcd12a884ad70a8b5574776c786f00d837e"
 
     url "https:github.comAppMachinedj-studio-app-updatesreleasesdownloadv#{version}DJ.Studio-#{version}#{arch}.dmg",
         verified: "github.comAppMachinedj-studio-app-updates"

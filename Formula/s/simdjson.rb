@@ -1,18 +1,18 @@
 class Simdjson < Formula
   desc "SIMD-accelerated C++ JSON parser"
   homepage "https:simdjson.org"
-  url "https:github.comsimdjsonsimdjsonarchiverefstagsv3.11.4.tar.gz"
-  sha256 "1029aff6bcca7811fb7b6d5421c5c9024b8e74e84cd268680265723f42e23cf2"
+  url "https:github.comsimdjsonsimdjsonarchiverefstagsv3.11.5.tar.gz"
+  sha256 "509bf4880978666f5a6db1eb3d747681e0cc6e0b5bddd94ab0f14a4199d93e18"
   license "Apache-2.0"
   head "https:github.comsimdjsonsimdjson.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bc319239397e71cf6aa2188a53985f2aa339f63300c35b19434ad5650643d3a4"
-    sha256 cellar: :any,                 arm64_sonoma:  "ce94892fed204ac7b14a8ec5f39a11b8f4b7b2833b93cb858c6c9b7ad1a73bfc"
-    sha256 cellar: :any,                 arm64_ventura: "d94d1744121cd05b80be2d1833523198faa7dc10d665dcad2e9b8e49d09568a0"
-    sha256 cellar: :any,                 sonoma:        "6ecaaec172bd63797e638bdfff11f2168817860e5a9335ada6a21229028f1fc6"
-    sha256 cellar: :any,                 ventura:       "349d3f9accc2bf5242444cde0856ef825bb60dcf9ff1ba306d6d9e030d4fffef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f44c622ea399dd01706e667825545df2da40b87d5696cf7f4dadb065525aa26"
+    sha256 cellar: :any,                 arm64_sequoia: "3cd894d05c2aa3a88a36936b739bb0f576cb360b33b9d50f8f9fc65acdb7abb3"
+    sha256 cellar: :any,                 arm64_sonoma:  "36735b159ae146e6bf58af2d92c30ab95b559604ba4618d2c78b7a1748051aca"
+    sha256 cellar: :any,                 arm64_ventura: "d740e38abc84517c2f659da9d0a30c693be578ac667e746c64dc8f4a8f20effb"
+    sha256 cellar: :any,                 sonoma:        "abedc7d76dc0f203f44decccb4ea7c33670dba7f068568465175799374d78138"
+    sha256 cellar: :any,                 ventura:       "ffd17fa7401b2f61c0ed423d24a11ac149932c20c3172761ce833083e26b527e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67e94a69dae410a578e9065b326afaea8addf2944962de6458277b6919a4673f"
   end
 
   depends_on "cmake" => :build

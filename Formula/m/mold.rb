@@ -1,19 +1,18 @@
 class Mold < Formula
   desc "Modern Linker"
   homepage "https:github.comrui314mold"
-  url "https:github.comrui314moldarchiverefstagsv2.35.1.tar.gz"
-  sha256 "912b90afe7fde03e53db08d85a62c7b03a57417e54afc72c08e2fa07cab421ff"
+  url "https:github.comrui314moldarchiverefstagsv2.36.0.tar.gz"
+  sha256 "3f57fe75535500ecce7a80fa1ba33675830b7d7deb1e5ee9a737e2bc43cdb1c7"
   license "MIT"
-  revision 1
   head "https:github.comrui314mold.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5aaf23f859206a1e26f3439eaa9a3fd6d54a6bb435e6e363efc91424c1bbb08b"
-    sha256 cellar: :any,                 arm64_sonoma:  "7c5a3389cbf29746e6f5e390a23323c2138b085058c33a9740544d932afc7040"
-    sha256 cellar: :any,                 arm64_ventura: "f504d25dfe9da54bb2556b999ff4d2b536ed957e6fab6f126d6b030f7d25ef00"
-    sha256 cellar: :any,                 sonoma:        "914ec638ef8f3f04d5c541c60a3bea75542ad9e965a93f6d76a33bb0d6e1e20a"
-    sha256 cellar: :any,                 ventura:       "554a05b52229527ed8defbf2c84e1bedf94db8988b3afc5dd414318084b1d42f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "def1a7629afea11098114ad7164a9f00e0712232ca082791f3f68aa1f4242382"
+    sha256 cellar: :any,                 arm64_sequoia: "2c242a765890cc9a7a1806b1c4730f1ad89d8d18f9ab82881b24e16b6d641ebf"
+    sha256 cellar: :any,                 arm64_sonoma:  "d1a2f6af8f141288a548f8aa567abf10a76da1cc3cc3610452005fc2ac236662"
+    sha256 cellar: :any,                 arm64_ventura: "fc50abf568516ff9a4253c4651ea98c0c3fe293e222ea328d40533e7926743db"
+    sha256 cellar: :any,                 sonoma:        "bc95ea9a4f7855f5a522ec7327ccfe85b70881c2fee5847086ad52ebaadbb2e7"
+    sha256 cellar: :any,                 ventura:       "90fa1a16a6297a8cc1f1aa868f008bea859cd61fdd2d59f2bc7504eb1e7bc3b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "575316d2b12e2bae5a7708e37674a82b468d57123f09a1e2ae9e73a9a3da3353"
   end
 
   depends_on "cmake" => :build

@@ -1,8 +1,8 @@
 class Maxwell < Formula
   desc "Reads MySQL binlogs and writes row updates as JSON to Kafka"
   homepage "https:maxwells-daemon.io"
-  url "https:github.comzendeskmaxwellreleasesdownloadv1.42.1maxwell-1.42.1.tar.gz"
-  sha256 "f26b367547678ed1968c43f154cf833c31827c5ecf7c3c6c9e6d734ee37ab429"
+  url "https:github.comzendeskmaxwellreleasesdownloadv1.42.2maxwell-1.42.2.tar.gz"
+  sha256 "21c3ce8ca5fbbcf90b52a0fb649e8303c954d293d337a3871af9cc158f84f641"
   license "Apache-2.0"
 
   livecheck do
@@ -11,7 +11,7 @@ class Maxwell < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "15dc74c740a6a571f9736a90eafdc584205137f85cd956d2f483f3afe474735d"
+    sha256 cellar: :any_skip_relocation, all: "5dbc63965ab7e54be926df497dd23d377e391fee0fc5cd713d5b18e6ef35885f"
   end
 
   depends_on "openjdk@11"

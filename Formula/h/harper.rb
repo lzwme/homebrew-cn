@@ -1,18 +1,18 @@
 class Harper < Formula
   desc "Grammar Checker for Developers"
   homepage "https:github.comelijah-potterharper"
-  url "https:github.comelijah-potterharperarchiverefstagsv0.14.0.tar.gz"
-  sha256 "af07f2a621b876cb77a4dfa376bdab0df2e1b0b210816bb26e73e56878367634"
+  url "https:github.comelijah-potterharperarchiverefstagsv0.15.0.tar.gz"
+  sha256 "b04655b10e45b82ba8a32f721b5077e6075c511f6b6f5d1279128ad86f016b1c"
   license "Apache-2.0"
   head "https:github.comelijah-potterharper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "148b0697862806b203e6c7858835277ab3033ec5c3c34e4d6a75b5d6e5d81676"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80e3409272625fc56ebe9b099569471e473438790ba84449e36389d5adfe0102"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "801e9de612fd3326e608db9fb008a4662bf5395ad12e8cad0d2058720bae91d1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "af584e7ecae36e366ce27c8b230071205e1238b010b6ec085979a2946e9bdcec"
-    sha256 cellar: :any_skip_relocation, ventura:       "79b36d95793eb31bdc131811aea09e44a7b07e980486b3d13b815377b719edf0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e33e46db626a6ed286187fefd19e48285d972a82cfbdd5e4333ab5d7c6a2428f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "74f56715d841d5201bce5d0d1f524073ddc225db942c2560257a809d497f904a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "119f04e51dcefa41d5fa66bcf55a8b2b754d2e0585bc79ff45a04728591bc90f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "389fc2c24b50e2cdecf0aeb1be96861fb20728deaca6233421bdf0e1950ea4ef"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a18c374d2934e7ffbed67f4f92a1a67ded4848b717e258c9a83bd019eb57cd50"
+    sha256 cellar: :any_skip_relocation, ventura:       "3817496fb2d8b9f501af754afabc3a359fd2d2dc24ff3066775f0c4111194d51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0189b2dabdadd727e5f68bb5bc0f8e30dabb224d2b4c4bfb1a550cd655013c9"
   end
 
   depends_on "rust" => :build
@@ -36,7 +36,7 @@ class Harper < Formula
     assert_equal "Word", JSON.parse(output.lines.first)["kind"]["kind"]
 
     output = shell_output("#{bin}harper-cli words")
-    assert_equal "A", output.lines.first.chomp
+    assert_equal "B", output.lines.first.chomp
 
     # test harper-ls
     json = <<~JSON

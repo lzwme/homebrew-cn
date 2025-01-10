@@ -1,18 +1,18 @@
 class Lcov < Formula
   desc "Graphical front-end for GCC's coverage testing tool (gcov)"
   homepage "https:github.comlinux-test-projectlcov"
-  url "https:github.comlinux-test-projectlcovreleasesdownloadv2.2lcov-2.2.tar.gz"
-  sha256 "caf5be723aa9ffe7bb7b0e52be7155e8953949fbf96586d088ebf3de6a9db0d0"
+  url "https:github.comlinux-test-projectlcovreleasesdownloadv2.3lcov-2.3.tar.gz"
+  sha256 "9d2b1154e347bd1782f99e5bc022fa25e813262d76278daa5f9a6e657fff62ec"
   license "GPL-2.0-or-later"
   head "https:github.comlinux-test-projectlcov.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2bd4e5ca082fbe1213948c2d3180fb2f2ee7b4824ce1501152a4b90fc8d0dc5b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f00f31738d826ddeddda85ef58945d5a638d2df77e8bc414a7cf775ff364b9a2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3bf2c152352abe854f5856ccf29285664b999e5576727c4cc3a39df77b759006"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4052845ee834ad14ef994f406410748e86dce4a0650dfea716415ed14ec5d802"
-    sha256 cellar: :any_skip_relocation, ventura:       "6293f55969368e397f04eab6c1866f3c8ca84383bf35ab55dc2cc8aa34f0f755"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7b6ff364a4a8dce7ed2dcc5d5aada4237852a1d3955de44e3f63d3ff1d76665"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da409d818411255a85e070522f75a515656f3302506988551bade5cd99f0e67e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e36d979074a6664bf2f9a3e3bfa70d0f1481a553d00ecc027a8f123644c816a1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7d86d28af88bba9566454b6c14e9bc8ab9e5926fde6d19b4bd2b2f2640767eea"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9aef3e8e280fe0e39b99f6f40a7c8c23f579741a6db04c2fb4018b128a716cdc"
+    sha256 cellar: :any_skip_relocation, ventura:       "1cdfbed01600165721fee63852fe3e1f5549fb74b17ccf60c1702e9c6511a4ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a4af98b9e6d4e90f6a177294c89c9c93f3a5e0377f48f288ef19e760972dacb"
   end
 
   uses_from_macos "perl"

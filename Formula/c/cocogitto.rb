@@ -4,20 +4,20 @@ class Cocogitto < Formula
   url "https:github.comcocogittococogittoarchiverefstags6.2.0.tar.gz"
   sha256 "fd7d69fb5b6d64e292877d87a77864d5081906b6e515e20b93348b7f05bd05c1"
   license "MIT"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3475b0711ea44c686df09a0291f4460d7b7ebcc5c875dee87843ad92fb78e37a"
-    sha256 cellar: :any,                 arm64_sonoma:  "d42d4265db5f0b59377c90438b2e0fae62b4bd3df51b87c6b8eea41a65e53283"
-    sha256 cellar: :any,                 arm64_ventura: "1c620a2e86a848bc471f09030b07fd78fa273ef496abd6b4c36bf4a27e135a32"
-    sha256 cellar: :any,                 sonoma:        "5849ca6b15217adc79b5d586a76279c106ca5b55b376b16d637ac491c5a0e2a5"
-    sha256 cellar: :any,                 ventura:       "92a509b0b0abbe45719479c63ed0d487eb47431b85e3c1ef49355a8b9f88e309"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8338df38de50ce8a00b8dcb98805b4ef5cef67ca19963bfea9e844bc8083132c"
+    sha256 cellar: :any,                 arm64_sequoia: "27fbf4df39907711ecc2c82abe07b3c689c876aae77aa5d325bcd9e9b007a7c8"
+    sha256 cellar: :any,                 arm64_sonoma:  "63ca3e4a49d901c0081a84fadbcc1c5c987cadf9d625f083c04c4f55cf5efde8"
+    sha256 cellar: :any,                 arm64_ventura: "95c4df0d2711c35731a3cd661220c2ad34f2fd286915b01910d70513088bdb07"
+    sha256 cellar: :any,                 sonoma:        "79a4836653fa8d60418233598b0b9a3f26c9eb25aaf33031dd4015cb555cfab9"
+    sha256 cellar: :any,                 ventura:       "bd5e839eb51f908c4986ac50cc7e437e3156ee3aec13b167f4c615a503fe8be2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d6c7bb4b0c937d23a8f7131d1df5fa8d129bb2fc98cd68ce5e987a3be79c841"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "libgit2@1.8" # needs https:github.comrust-langgit2-rsissues1109 to support libgit2 1.9
+  depends_on "libgit2"
 
   conflicts_with "cog", because: "both install `cog` binaries"
 
@@ -25,6 +25,11 @@ class Cocogitto < Formula
   patch do
     url "https:github.comcocogittococogittocommit47689fe4f431d7b1371ff34cb430fbffc19f40c5.patch?full_index=1"
     sha256 "508a34432f907500d2a92940647501512e789cac53e85497a83b1b99089ae07b"
+  end
+  # support libgit2 1.9, upstream pr ref, https:github.comcocogittococogittopull439
+  patch do
+    url "https:github.comcocogittococogittocommitbf0933b33e1729161434b7cd92906c6e2d663016.patch?full_index=1"
+    sha256 "5828494ce483901d1169acd714f7baf69a2c17eb1ecd716ea2490376763acef3"
   end
 
   def install
@@ -50,7 +55,7 @@ class Cocogitto < Formula
     linkage_with_libgit2 = (bin"cog").dynamically_linked_libraries.any? do |dll|
       next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
 
-      File.realpath(dll) == (Formula["libgit2@1.8"].opt_libshared_library("libgit2")).realpath.to_s
+      File.realpath(dll) == (Formula["libgit2"].opt_libshared_library("libgit2")).realpath.to_s
     end
 
     assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."

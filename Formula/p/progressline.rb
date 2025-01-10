@@ -1,19 +1,18 @@
 class Progressline < Formula
   desc "Track commands progress in a compact one-line format"
   homepage "https:github.comkattoufProgressLine"
-  url "https:github.comkattoufProgressLinearchiverefstags0.2.3.tar.gz"
-  sha256 "8d4362dc41ba73ccfccd66f5860b512695012e36eae031f84f57e14f67c1bf52"
+  url "https:github.comkattoufProgressLinearchiverefstags0.2.4.tar.gz"
+  sha256 "6649fa7d9b840bf8af2ddef3819c6c99b883dd1e0ca349e6d8bdb93985cb00fa"
   license "MIT"
   head "https:github.comkattoufProgressLine.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a08aa0971dbb4645019cf6a0f0fbc4b872ec8064dfebbf5369e2cc3139cb308"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a7570ba3cdcdf239e8b169c7b658dd2c11edf95357e985b20e27d905752a5ea"
-    sha256 cellar: :any,                 arm64_ventura: "9392899be38e0b052228ee8bb0bdbd9814c7c3ced4ff4c22137cb6020a3ca484"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f7c9b1c6026151cfb3df42ecc479b5ffd3079da8c733fa52e287215164b45049"
-    sha256 cellar: :any,                 ventura:       "e9c144895d1dc13472c380865779d335dba4c685630ea5fa4d7c5eeb45126a46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6cd91a1e0e79936c1d9c40157022109ad4708dc95183a1f87f2927ec1262782"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1ce512768f4802c3951adc6b2dd4add13a71d80ad5e04be15edecf17be6525a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77d1ab6f1922dbb9b14f3eed38fe30ddd33fdd5c058564389ec692af11e2a943"
+    sha256 cellar: :any,                 arm64_ventura: "99959093aafeb1bd100e2f720fbfefc377595338d60e004e31f43b50204e5bf1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4d86284fddc430f9312ff6e74e0ecd510b6d0b34edcdcaca2c4645c4fbf8cd15"
+    sha256 cellar: :any,                 ventura:       "1612ae0bb38a9f3a1897a27b87b14509527208e132d6a9d1c4c238bfd5d518ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8429bc2bf925b50e2794b5e1a192e7a4bc896ea666cea8cd33c235a086872266"
   end
 
   uses_from_macos "swift" => :build, since: :sonoma # swift 5.10+

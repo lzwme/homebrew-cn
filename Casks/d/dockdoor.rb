@@ -1,11 +1,17 @@
 cask "dockdoor" do
-  version "1.6"
-  sha256 "51f59350ce285c9b7ddb82860ec6588ffc77618ffe49a5ce25dc5080890c3192"
+  version "1.6.1"
+  sha256 "907595e192323e16e540741eaef2cebebb1a9580cf293da7775c4ab4795b0f6f"
 
-  url "https:github.comejbillsDockDoorreleasesdownloadv#{version}DockDoor.dmg"
+  url "https:github.comejbillsDockDoorreleasesdownloadv#{version}DockDoor.dmg",
+      verified: "github.comejbillsDockDoor"
   name "DockDoor"
   desc "Window peeking utility app"
-  homepage "https:github.comejbillsDockDoor"
+  homepage "https:dockdoor.net"
+
+  livecheck do
+    url "https:dockdoor.netappcast.xml"
+    strategy :sparkle
+  end
 
   auto_updates true
   depends_on macos: ">= :ventura"
@@ -14,6 +20,8 @@ cask "dockdoor" do
 
   zap trash: [
     "~LibraryApplication SupportDockDoor",
+    "~LibraryCachescom.ethanbills.DockDoor",
+    "~LibraryHTTPStoragescom.ethanbills.DockDoor",
     "~LibraryPreferencescom.ethanbills.DockDoor.plist",
   ]
 end

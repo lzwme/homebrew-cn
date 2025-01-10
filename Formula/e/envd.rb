@@ -1,20 +1,18 @@
 class Envd < Formula
   desc "Reproducible development environment for AIML"
   homepage "https:envd.tensorchord.ai"
-  url "https:github.comtensorchordenvdarchiverefstagsv0.3.45.tar.gz"
-  sha256 "5dc8802b6ffdd9c6859b97de6eff71ebdaf5c6db916a832f8ef694569de79178"
+  url "https:github.comtensorchordenvdarchiverefstagsv0.3.47.tar.gz"
+  sha256 "d4d55f516fa5ca1aac68dbbb096a7bafcc09abc46fa27e8fb5472213df7b9275"
   license "Apache-2.0"
   head "https:github.comtensorchordenvd.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d7c11e4d5e933c0cece9d6fc9af8f81d6ff3ab0b334364c2eb9e32dcb35adc34"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "20b4514e5b71dc23b8a9ac6a51f0d41c243253d2b5d7bd478878bb9997950e68"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fdbfeca300caffd35f51e74ce2dbd71d2131f3da43253689909219f55829783f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c952e29a6e9d957d96a91b469625930df6399aaa119ff84a438aad1a5e106628"
-    sha256 cellar: :any_skip_relocation, sonoma:         "20c354bb829e87b9717f3e7a07383524898a98ba4b95d45cf7bd1fae66524d1e"
-    sha256 cellar: :any_skip_relocation, ventura:        "769b04d7c0432dc3ba36636c45e552618a948118dc10291d4bf4f181f221f694"
-    sha256 cellar: :any_skip_relocation, monterey:       "68222aa5bfdb48c1a4d13fabce1b17becccb7f8f78020a8d304ac52c8870fcaf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf2133c09cd94b30bbef81cea84f8b75a032238a07d8146cea3b04ff30eba238"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bef147fa1f3f31e0b56a2102f8c4f8697b0fbf3e3515fc5116367bbe571d70a1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "84d08797fc2f8a51658c058ec87298618ebe827cd1d8c17ed940daec6e07747c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "09c1e1ad73fc6ade3e64b86226dd02a10610e75f2d1b457e653dfe866c01fd4e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "acf55882906a1c20541b2fca887dfc73a4dfc952171c2474394c4aea97ee9a84"
+    sha256 cellar: :any_skip_relocation, ventura:       "3c8013e537c9c88729c1768158b1e53b7c70cb8c56cc8ca151efe7ab8aaa9b5d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8cda788a34d6fa52e5fb5b8afe9b9e4569047bc62b22daf02351f2c75bc50e1"
   end
 
   depends_on "go" => :build

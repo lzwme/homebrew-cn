@@ -4,7 +4,7 @@ class GitInteractiveRebaseTool < Formula
   url "https:github.comMitMarogit-interactive-rebase-toolarchiverefstags2.4.1.tar.gz"
   sha256 "0b1ba68a1ba1548f44209ce1228d17d6d5768d72ffa991909771df8e9d42d70d"
   license "GPL-3.0-or-later"
-  revision 3
+  revision 4
 
   livecheck do
     url :stable
@@ -12,24 +12,24 @@ class GitInteractiveRebaseTool < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "926261f60068a32cd3229d3ebbea05a4fda9316cd61e0c8b31ad562a70fe0539"
-    sha256 cellar: :any,                 arm64_sonoma:  "6f0be8265fa58fc803e26490fbd39eafef6920195d6330d6dec870a8adf32b31"
-    sha256 cellar: :any,                 arm64_ventura: "b43f15e6d752a5855bb8eb3c173ff2e40852e47bc5532f4b6501b7c2ce6cd7a9"
-    sha256 cellar: :any,                 sonoma:        "7a792dcaa2cdd389bc5bb37bacc87be3b89a88c4bfec8ce1bd5149eb62c0a4eb"
-    sha256 cellar: :any,                 ventura:       "ee00b033f71d593edf749bd9d476b01cc03e307a1e3935741802868061d3d022"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52b752d2fdf28e1cd087140f6ab05d05698fc3021b80821034ad55e273d8f15d"
+    sha256 cellar: :any,                 arm64_sequoia: "be79dedf848897cbce256b691a0baf54fff8ae7138c674a8aac9f0818c6a5eae"
+    sha256 cellar: :any,                 arm64_sonoma:  "8290dbb2de4e0273fc9bf1de29cb27bc564a1ad921c024fcc9bf80911550eea4"
+    sha256 cellar: :any,                 arm64_ventura: "a8d4f2130634d33aff7b2a4ae0dbce99d783cbb07659ec5b40ce4e51f9661852"
+    sha256 cellar: :any,                 sonoma:        "1057b8baf1e744c13106e99148d3157483d33d7052d6c5cf31e07a8ced6941a4"
+    sha256 cellar: :any,                 ventura:       "14d3693aeb6937371f12b737ea2d168843b6c3bd5d08ff4a439603afe4f53a7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a88b6633a37b3db5fceb6ff1dd10dfb3c8c8131d0f0f940fa166d92bddaf7520"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
-  depends_on "libgit2@1.8" # needs https:github.comrust-langgit2-rsissues1109 to support libgit2 1.9
+  depends_on "libgit2"
 
   uses_from_macos "zlib"
 
-  # support libgit2 1.8, upstream pr ref, https:github.comMitMarogit-interactive-rebase-toolpull948
+  # support libgit2 1.9, upstream pr ref, https:github.comMitMarogit-interactive-rebase-toolpull948
   patch do
-    url "https:github.comMitMarogit-interactive-rebase-toolcommit508291ca003d5cd380a1c34f27efde913b488888.patch?full_index=1"
-    sha256 "1256c6e9fa3a7c3ed196d30a2a35b9c05e06434ed954e8a4e58e1d2ceb1ae7d8"
+    url "https:github.comMitMarogit-interactive-rebase-toolcommitf3193b3faae665605d6bac4c1bafa798d3d241ae.patch?full_index=1"
+    sha256 "32c6cc976407c0d2f41e434e35274f86d64b8b396ed18927c833af656551ebd3"
   end
 
   def install
@@ -73,7 +73,7 @@ class GitInteractiveRebaseTool < Formula
     assert_equal expected_git_rebase_todo, todo_file.read
 
     [
-      Formula["libgit2@1.8"].opt_libshared_library("libgit2"),
+      Formula["libgit2"].opt_libshared_library("libgit2"),
     ].each do |library|
       assert check_binary_linkage(bin"interactive-rebase-tool", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
