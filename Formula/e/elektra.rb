@@ -24,6 +24,8 @@ class Elektra < Formula
     sha256 x86_64_linux:   "19c2348d85346bf54e1858e38c256a0c3fc5b53663118dd4a6080f37ab4610f3"
   end
 
+  deprecate! date: "2025-01-10", because: :repo_archived
+
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
 

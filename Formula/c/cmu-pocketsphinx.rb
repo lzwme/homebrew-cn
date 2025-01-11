@@ -1,8 +1,8 @@
 class CmuPocketsphinx < Formula
   desc "Lightweight speech recognition engine for mobile devices"
   homepage "https:cmusphinx.github.io"
-  url "https:github.comcmusphinxpocketsphinxarchiverefstagsv5.0.3.tar.gz"
-  sha256 "5d952cb1c22e0a51ed1fafc36871612df38f145df64fa017fdc8074532ec007f"
+  url "https:github.comcmusphinxpocketsphinxarchiverefstagsv5.0.4.tar.gz"
+  sha256 "9acd63cfdc76bbc85b7b6c6610b7a9cf30c79d5b36a31de7dc2f969e962653d7"
   license "BSD-2-Clause"
   head "https:github.comcmusphinxpocketsphinx.git", branch: "master"
 
@@ -12,14 +12,12 @@ class CmuPocketsphinx < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "4705e9a91c76593611120daadc21808f85440d50d643a28a42de9a59d5145413"
-    sha256 arm64_sonoma:   "175df005d88baaa5ae5c3c87ebf49282d4d0cff420e8103c019f34b802fe39ba"
-    sha256 arm64_ventura:  "37b04476bf3f07d04e2575edd14422e96c8b3916aebb119259be1fd5dedec89c"
-    sha256 arm64_monterey: "fade0f22899ba83dcc7971201f9f7ca27a35ec41eaf96869d9afe39c29d7ca9b"
-    sha256 sonoma:         "e7c843f82e2c03255f068fc38f8397e07998bcce5c922c4ace345f18b3ae027c"
-    sha256 ventura:        "ac9ffe4593490b0fb39c806a569cd1c1a0152d3f50219f8a3cb8ea497eb4262d"
-    sha256 monterey:       "e9ca7f35b9f6846f3606e320af20b32aabc663af8008f404b51506498519f6d1"
-    sha256 x86_64_linux:   "8583092ea181a04dea1250e5f6613e197469c6b3a5be3ad730ba3600a56c0130"
+    sha256 arm64_sequoia: "7b31ea299662e699efe85ccea3092117e8e2ed25233771078c469e7f4c82521d"
+    sha256 arm64_sonoma:  "13fcebdc39149f153302f6c2859a8b96bdc49dd2e0c10dada760ee946bb2d07e"
+    sha256 arm64_ventura: "152c0f76cb442ab833dcdcbd9f17398fc47b5dbbd650694c89be3b92acf53c9c"
+    sha256 sonoma:        "2baa0d2ffe3d6d3608a51c20831cb299d4c85cf19cb048a5f04148e2abf9f163"
+    sha256 ventura:       "9a9bfbfacda1094ff4bc6b6d213111e1ce9bcaec0ef0e8c5d17439988a30fa68"
+    sha256 x86_64_linux:  "5b035c6fbe339151707b82694ad2f9d793c2b6bb2f62bad2990d088bcbf2422b"
   end
 
   depends_on "cmake" => :build

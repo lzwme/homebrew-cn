@@ -1,8 +1,8 @@
 class Lighttpd < Formula
   desc "Small memory footprint, flexible web-server"
   homepage "https://www.lighttpd.net/"
-  url "https://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.76.tar.xz"
-  sha256 "8cbf4296e373cfd0cedfe9d978760b5b05c58fdc4048b4e2bcaf0a61ac8f5011"
+  url "https://download.lighttpd.net/lighttpd/releases-1.4.x/lighttpd-1.4.77.tar.xz"
+  sha256 "acafabdbfa2267d8b6452d03d85fdd2a66525f3f05a36a79b6645c017f1562ce"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,14 +11,12 @@ class Lighttpd < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "19af568eb1e5ab74d431fdc07f2148d520c815742e1f0ecf9828d391e297ddd6"
-    sha256 arm64_sonoma:   "091059b0ac1e2356912caf2fe85f5bb0d88ebde56c43579d28c9a68b5eac1075"
-    sha256 arm64_ventura:  "00fb719b4328a1b7593452f8f6bae234a595ca089492f192bc309bdab055502f"
-    sha256 arm64_monterey: "aa6d7a5fe4662bdbbae1389091aec850c99d47f851dca621a55f9fcf7e5e7844"
-    sha256 sonoma:         "f5604bd4748f47f72e87a7e1192efc40748e1f1d7d271eb555e1bd6444776c75"
-    sha256 ventura:        "685d709d0d522aace4a102e2b28c3c04f2e6a6079de349d6148f999796571a8e"
-    sha256 monterey:       "596921b5fcabab2c21e6b75b54589016755e990cd86728810839b233cb4a830e"
-    sha256 x86_64_linux:   "8aa1c17b796dfc07c3e4d7543abc43af33469b5236aada5531baf3f98f8a66e2"
+    sha256 arm64_sequoia: "ea181efeede65837d89e175b9655334c6324bef636685079a16280734cf99cd1"
+    sha256 arm64_sonoma:  "bfb037e447da708a32a4b863d339c1a41b48af809ca6a47da1510d7b28d0efd7"
+    sha256 arm64_ventura: "853dff40ff89429e50a349b1c595fcd130e175b2a409f21ceb9542afe06b940c"
+    sha256 sonoma:        "85fb623779424c20ac74ca7559a56f9315ee1573acb1d110512a335dd536d8c5"
+    sha256 ventura:       "3e0178fa9120a7a92e49dea1bd4815e17408fe8c5d16838b5a811fb3c118b122"
+    sha256 x86_64_linux:  "91b5e99bae350afd3df2dc183c42c81cba441a64f9488af7e3866ad7fe55c135"
   end
 
   depends_on "autoconf" => :build
@@ -55,15 +53,16 @@ class Lighttpd < Formula
     system "make", "install"
 
     unless File.exist? etc/"lighttpd"
-      (etc/"lighttpd").install "doc/config/lighttpd.conf", "doc/config/modules.conf"
+      (etc/"lighttpd").install "doc/config/lighttpd.conf", "doc/config/lighttpd.annotated.conf",
+        "doc/config/modules.conf"
       (etc/"lighttpd/conf.d/").install Dir["doc/config/conf.d/*.conf"]
-      inreplace etc + "lighttpd/lighttpd.conf" do |s|
+      inreplace etc + "lighttpd/lighttpd.annotated.conf" do |s|
         s.sub!(/^var\.log_root\s*=\s*".+"$/, "var.log_root    = \"#{var}/log/lighttpd\"")
         s.sub!(/^var\.server_root\s*=\s*".+"$/, "var.server_root = \"#{var}/www\"")
         s.sub!(/^var\.state_dir\s*=\s*".+"$/, "var.state_dir   = \"#{var}/lighttpd\"")
         s.sub!(/^var\.home_dir\s*=\s*".+"$/, "var.home_dir    = \"#{var}/lighttpd\"")
         s.sub!(/^var\.conf_dir\s*=\s*".+"$/, "var.conf_dir    = \"#{etc}/lighttpd\"")
-        s.sub!(/^server\.port\s*=\s*80$/, "server.port = 8080")
+        s.sub!(/^#server\.port\s*=\s*80$/, "server.port = 8080")
         s.sub!(%r{^server\.document-root\s*=\s*server_root \+ "/htdocs"$}, "server.document-root = server_root")
 
         s.sub!(/^server\.username\s*=\s*".+"$/, 'server.username  = "_www"')

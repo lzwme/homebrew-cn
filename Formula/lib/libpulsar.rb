@@ -1,19 +1,18 @@
 class Libpulsar < Formula
   desc "Apache Pulsar C++ library"
   homepage "https://pulsar.apache.org/"
-  url "https://dlcdn.apache.org/pulsar/pulsar-client-cpp-3.6.0/apache-pulsar-client-cpp-3.6.0.tar.gz"
-  mirror "https://archive.apache.org/dist/pulsar/pulsar-client-cpp-3.6.0/apache-pulsar-client-cpp-3.6.0.tar.gz"
-  sha256 "522ca67bc911fcd4c0c9e4278628c9167b614a887c63fb04b04370156254d3b3"
+  url "https://dlcdn.apache.org/pulsar/pulsar-client-cpp-3.7.0/apache-pulsar-client-cpp-3.7.0.tar.gz"
+  mirror "https://archive.apache.org/dist/pulsar/pulsar-client-cpp-3.7.0/apache-pulsar-client-cpp-3.7.0.tar.gz"
+  sha256 "3223cfeda484ab7b580f4a8768b5a85739cc064005c765c06cde67c3238639c9"
   license "Apache-2.0"
-  revision 6
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "816b2ec9deccd1d19669f28e487ab75e05ea77055fcfd443f0dcd2dda83fabf4"
-    sha256 cellar: :any,                 arm64_sonoma:  "969e691bd2630a3d97c9291675cd12afe9e1ff81f1fd66ad0f72bcd3cb0c5d38"
-    sha256 cellar: :any,                 arm64_ventura: "9fd142a31a4306e8fcf0d48b958310fd58b555aea54d5caa8d6df698e7d70254"
-    sha256 cellar: :any,                 sonoma:        "e7269ae02774170efad469b1ba26906b0d392202d6b0e5a02c8c1a166c9739a0"
-    sha256 cellar: :any,                 ventura:       "80379aa8ca491a0af30530e8cb27e7c821d4072d4752ee09d61bad51171a15e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ab75ee9e7f26b90493dc4fb98f7f1b71d5decc400a56a4a3d10c9caf297ed8c"
+    sha256 cellar: :any,                 arm64_sequoia: "2762cb88dd01d626ab6dd265e2264b195133c4874b82f189ea8001a918869c7b"
+    sha256 cellar: :any,                 arm64_sonoma:  "34bf8ce2ebbc5f95e33a1dc572e8f08927e8c1adb14bcb68e18b30e978baf6d6"
+    sha256 cellar: :any,                 arm64_ventura: "2aa84c52798c6a67d233b56df26029742569b882c6cca6907cbc7ab46283f3f1"
+    sha256 cellar: :any,                 sonoma:        "28e17003491d94d95f5330fa8345aaea561dd9a021f30fdad0068246faf1e4b5"
+    sha256 cellar: :any,                 ventura:       "b734145006bc1f4cf5697518cd9dec720c42ba7743c6d6f8e21721bc14fede9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcca0ff004a931852586876682e27da0345e55fea30a522c50772a15bef394f1"
   end
 
   depends_on "asio" => :build # FIXME: Not compatible with Boost.Asio 1.87+

@@ -3,18 +3,17 @@ class PodmanCompose < Formula
 
   desc "Alternative to docker-compose using podman"
   homepage "https:github.comcontainerspodman-compose"
-  url "https:files.pythonhosted.orgpackagesbd670f8cf5ef346a22ce73dfdd0e60cf81342329b71a7fc118128929f0c07b62podman_compose-1.2.0.tar.gz"
-  sha256 "e47665546598a48d83d30ca2709a679412824bbe84b93f61779bc863e1a6f060"
+  url "https:files.pythonhosted.orgpackagesa8e70d23c675128a53bc220c296e6abdcbda872dd1fef48d4513f351f4031d24podman_compose-1.3.0.tar.gz"
+  sha256 "e65a70e8fa26bd195d2017ac5893149b40c0df5a0c20d480a338c4f60218b1fa"
   license "GPL-2.0-only"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "2b0450478fc05e29053140b74baf734040c0334cbea9f3738b8ae4ef87d565de"
-    sha256 cellar: :any,                 arm64_sonoma:  "2f5ecb07c5a56e45ba262eddb097708f021b3b8b2fc26b34b5206656be7bab7f"
-    sha256 cellar: :any,                 arm64_ventura: "5f7fa2fb42952693a1c28b0380b2d6ceaae323b6ed7c2829a7bc3a0281dd98b9"
-    sha256 cellar: :any,                 sonoma:        "a4908c77b78817b69d253a671a60c80f974a6c7a5f69af54298b76ff7de5726d"
-    sha256 cellar: :any,                 ventura:       "22fc99aa7a5c268f4adf31897f54e36a207ab73b236300816cd5ccba6d703381"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56271a49c2485596fd9787d20bb1d046783c7afb77909a76ce516004836fe838"
+    sha256 cellar: :any,                 arm64_sequoia: "e9a57d22695b12c676270eac773014f29b71915dc86c54b2fdb7fa04ea1a784e"
+    sha256 cellar: :any,                 arm64_sonoma:  "f04f6a13dc14bce1bd009a15b2a1a5c87b38b2d76040c1ed5eba2a8ce40bc8ff"
+    sha256 cellar: :any,                 arm64_ventura: "096c98f916a1fb28cc5fa2bd80c26a05afdb9a4bab6dfafeb8060957c7180281"
+    sha256 cellar: :any,                 sonoma:        "3da16d68c06a2cd8020cbd587e794b5310ae8c6e8c4a7583e0a08d68d1d8287a"
+    sha256 cellar: :any,                 ventura:       "49ebdb098d3af1a52d20aa9fbf0e9c4cfe85e2936a5e95b35a29696142bf2305"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f5b61059e28b5bcfb7b04605cb01dcb8e6441025baeccfa88bb7a69234ce40b"
   end
 
   depends_on "libyaml"
@@ -56,6 +55,6 @@ class PodmanCompose < Formula
     # If it's trying to connect to Podman, we know it at least found the
     # compose.yml file and parsedvalidated the contents
     expected = OS.linux? ? "Error: cannot re-exec process" : "Cannot connect to Podman"
-    assert_match expected, shell_output("#{bin}podman-compose down 2>&1")
+    assert_match expected, shell_output("#{bin}podman-compose down 2>&1", 1)
   end
 end

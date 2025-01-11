@@ -22,11 +22,15 @@ class Gflags < Formula
   depends_on "cmake" => [:build, :test]
 
   def install
-    mkdir "buildroot" do
-      system "cmake", "..", *std_cmake_args, "-DBUILD_SHARED_LIBS=ON", "-DBUILD_STATIC_LIBS=ON",
-                                             "-DCMAKE_POSITION_INDEPENDENT_CODE=ON"
-      system "make", "install"
-    end
+    args = %w[
+      -DBUILD_SHARED_LIBS=ON
+      -DBUILD_STATIC_LIBS=ON
+      -DCMAKE_POSITION_INDEPENDENT_CODE=ON
+    ]
+
+    system "cmake", "-S", ".", "-B", "_build", *args, *std_cmake_args
+    system "cmake", "--build", "_build"
+    system "cmake", "--install", "_build"
   end
 
   test do

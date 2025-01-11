@@ -18,6 +18,11 @@ class Condure < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "00527a59f46952f13cb4a1af03af0dcf3d894dd1582828bcb3152ab5b070ac93"
   end
 
+  # https:github.comfanoutcondurecommitd70f63b6ed4b60e85fcbf4284a0eab964c94df38
+  # project has been merged into [Pushpin](https:github.comfastlypushpin)
+  # The `pushpin-connmgr` program can be used as a drop-in substitute.
+  deprecate! date: "2025-01-10", because: :repo_archived, replacement: "pushpin"
+
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "cython" => :test # use brew cython as building it in test can cause time out

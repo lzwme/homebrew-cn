@@ -1,8 +1,8 @@
 class Verapdf < Formula
   desc "Open-source industry-supported PDFA validation"
   homepage "https:verapdf.orghome"
-  url "https:github.comveraPDFveraPDF-appsarchiverefstagsv1.26.4.tar.gz"
-  sha256 "49521570d3f9e4c7a05ffa1dc3e6a4ea6e80106e12f52b3a036d57dae6266232"
+  url "https:github.comveraPDFveraPDF-appsarchiverefstagsv1.26.5.tar.gz"
+  sha256 "86a75321defc78c2027a86cbb117ef0011ec6b876de58705c5074965fb3af932"
   license any_of: ["GPL-3.0-or-later", "MPL-2.0"]
   head "https:github.comveraPDFveraPDF-apps.git", branch: "integration"
 
@@ -12,12 +12,12 @@ class Verapdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9051a37603c5015a93936fe2a2dc9c4d544384c6f0ed78d46f494a6422fa0f78"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a5c53172ee15fad9843e14f25e08b591dd4229c80c95bedc84d0e2d3a497549"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "42936a1cc8eb773bcc546a41f8b2a7bde09f295b058488acc1ccca394ea7298b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "46ef89506038222ca5657a20e3f3c65a59080d4e81df24b0e9633107df9180c6"
-    sha256 cellar: :any_skip_relocation, ventura:       "12209fdee769cf0197b5535c76a8b235a4f01da73505d1ab05d92a710c106a9b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "813670751be9f037f1c081e118744a8389fc101394a4c9966025cb5c46f54f49"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "421f58e1c12ca320726e62f858107bba6fbf83ff40f1218d2edf939fdb55dc85"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "31fdef7dd908c4029bdd9b6e2a1aa8eb1b0b7634563edbf584f97f16eb59a494"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6d037040888b3555e6f139c1278f19fc288601aa84ae80085104eb0f89ab7b71"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6a81bacaef4bd6c9a71ac84c9506db0bc0a96357ba4376913b07cd3bacaa1443"
+    sha256 cellar: :any_skip_relocation, ventura:       "69a982bee3a812109c8424b0b2555f69850dd8e8e0ccaca9abdec300be972398"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1066fbf01e66e75e9aa4cea5e973134e9a480118bcede71a544c6ab8b6d118e5"
   end
 
   depends_on "maven" => :build

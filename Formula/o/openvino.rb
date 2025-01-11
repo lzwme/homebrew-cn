@@ -4,6 +4,7 @@ class Openvino < Formula
   desc "Open Visual Inference And Optimization toolkit for AI inference"
   homepage "https:docs.openvino.ai"
   license "Apache-2.0"
+  revision 1
   head "https:github.comopenvinotoolkitopenvino.git", branch: "master"
 
   stable do
@@ -23,13 +24,12 @@ class Openvino < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "edec1a6e256a554147661a1e81088612075daefaac4cb81582b57b79b43fe7a9"
-    sha256 cellar: :any,                 arm64_sonoma:  "43c0ec4a97c8f8d190d6e13d383866b6423ad43394c8c3e860571563e4284962"
-    sha256 cellar: :any,                 arm64_ventura: "6d1ba16e45dd2e478dad822cc0ac9dc9659e8611e0de9418ada30e18a7d1320b"
-    sha256 cellar: :any,                 sonoma:        "9d8591e4e4ebea4128bc062a13559c28f043da6e4aa0d5ef8fce2a531e453e74"
-    sha256 cellar: :any,                 ventura:       "860e8e05cc5939e0dbc42b1c6a183cef71617d753d36b5011f09893244127730"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c126a0bfdccc1420b16d9e8a9267647d79f7ca22b1bcc34e837ea23e7d1c5e1d"
+    sha256 cellar: :any,                 arm64_sequoia: "a4faa7b8e1ece3596a96c874bb8e55c16360d8907b40d4c57da364a427ecbb30"
+    sha256 cellar: :any,                 arm64_sonoma:  "1f3b49b98405e0c249bf6546138aeecff57f11da07293d5fb3914338d679cebd"
+    sha256 cellar: :any,                 arm64_ventura: "0837b1bd566ace9acbfb68a8f993e51c6ca8cc8e74db4af8ff326042a635f84d"
+    sha256 cellar: :any,                 sonoma:        "1f4d12079ca23f7608ea854c5e0bc90c33331b7743b02ed933a4221180eb8624"
+    sha256 cellar: :any,                 ventura:       "d8b1a3f77c248ea78a5cc75e72ba47c4eef6ccabd3335ab7ea87c21b12393bab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d65571898ed813195e4975009d8334a7479235986718489e446b1f4333ed6986"
   end
 
   depends_on "cmake" => [:build, :test]

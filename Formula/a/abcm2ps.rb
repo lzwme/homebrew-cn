@@ -16,6 +16,8 @@ class Abcm2ps < Formula
     sha256 x86_64_linux:   "cb486f3afb52ba110aa20878c5ac7b14bca9a1e4acd6b1a30fc4fd7741a55b93"
   end
 
+  deprecate! date: "2025-01-10", because: :repo_archived
+
   depends_on "pkgconf" => :build
 
   def install

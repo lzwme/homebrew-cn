@@ -4,8 +4,8 @@ class Crystal < Formula
   license "Apache-2.0"
 
   stable do
-    url "https:github.comcrystal-langcrystalarchiverefstags1.14.1.tar.gz"
-    sha256 "3e0e30f6c57bd86dbd52ccde4e42fc57c178f6bef47edc96b8c911b3fb12bd5b"
+    url "https:github.comcrystal-langcrystalarchiverefstags1.15.0.tar.gz"
+    sha256 "4756972eda89e4381e6247f191197ace00b0a1a057b93f15ba3534aab0e35d87"
 
     resource "shards" do
       url "https:github.comcrystal-langshardsarchiverefstagsv0.19.0.tar.gz"
@@ -19,12 +19,12 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "dd1c819aae4412d8a3bed08d9ef49946b7163dc36eaf95d4c0dc6c7ef0c48dd3"
-    sha256 cellar: :any,                 arm64_sonoma:  "6e3636f2a0696af1c8cef9f6c7ec2588986e6ff5b32cf689a2972ed3f72e84f0"
-    sha256 cellar: :any,                 arm64_ventura: "2346e6eca00240b7754732b26857d74e1dd28bdd9525b333e9c54828aef006a2"
-    sha256 cellar: :any,                 sonoma:        "3583abf05711c554e2e836595a3392b7491a44dc5f1e7094de7cf52c89c861e3"
-    sha256 cellar: :any,                 ventura:       "d1c433c49d3c9579fb7744bf631ceffa7a1776dc8b1112c6a08330f0b8927841"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61af0672fb356bfc6d9baf6ad3ad4ab9dadeb01c3ed57c3283c985d0ff2ef7c3"
+    sha256 cellar: :any,                 arm64_sequoia: "b338290a3ab44179bcc6c652daece0ff29c0199b5324e2812466657a3232f85e"
+    sha256 cellar: :any,                 arm64_sonoma:  "2a3faedcbe0766f5c181be0489ce92f02bbebf13ee019523f6245b6ff8c06705"
+    sha256 cellar: :any,                 arm64_ventura: "5c12a164a6d6104c6e697d074a5ec78d50e900f1021735979eb6a5e4c44728e5"
+    sha256 cellar: :any,                 sonoma:        "76e0f35795640fc0f24215407c7f02a4646579033aa35954200e4d9d9abbbc14"
+    sha256 cellar: :any,                 ventura:       "d98cb67c0172f188d17bb6a725e0a7f82cf674fd2fceacc2642e93fa6ee81520"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3901440acea638af8185184093da4b67dbd59591750e969530e9841ebb2631d7"
   end
 
   head do

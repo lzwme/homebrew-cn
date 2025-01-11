@@ -4,7 +4,7 @@ class Rtabmap < Formula
   url "https:github.comintrolabrtabmaparchiverefstags0.21.4.tar.gz"
   sha256 "242f8da7c5d20f86a0399d6cfdd1a755e64e9117a9fa250ed591c12f38209157"
   license "BSD-3-Clause"
-  revision 8
+  revision 9
   head "https:github.comintrolabrtabmap.git", branch: "master"
 
   # Upstream doesn't create releases for all tagged versions, so we use the
@@ -15,11 +15,11 @@ class Rtabmap < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:  "3ab35d0f76835659984b70183d57a20588d9569187523261be461cc6e19cfe99"
-    sha256                               arm64_ventura: "00f968f349ee73d0d29a0b72f85b54ee5436a6b80b94508bfdce8b77afdb0677"
-    sha256                               sonoma:        "8d84b6e2b4575ad988f4d3126120fa3b5feab4e5a96d81fee3d242c1ca79f539"
-    sha256                               ventura:       "6793f08bbcec9446a2320776517c09e2dfd121c5f295938bd423f9c7ee15b88e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e122a1f417172e0e432ae9122748cb065262245a58fd83acb57f3ed756257ab5"
+    sha256                               arm64_sonoma:  "6b2bccb0c4d696140dad2c085f6b1ff97d32d99f21d2e7fa4ba79fe4a159f959"
+    sha256                               arm64_ventura: "6c9dac80b27f6b0db9ee3bff683e06a307ae868a86fa64a732d439fe164a8639"
+    sha256                               sonoma:        "82dbd8db8bdf30a95da1e5588e2e6b17b7d1038e8d596e1daff56a1070c63005"
+    sha256                               ventura:       "d0cca5a2a6a11f4c551696ebb2fb05b55f84c0823979848c5ba9ca06ab8f2b83"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7984f2493c45d8ab3c38774fe6cab20ece348639ade1c1d55653770770d20c2d"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -1,8 +1,8 @@
 class Macpine < Formula
   desc "Lightweight Linux VMs on MacOS"
   homepage "https:beringresearch.github.iomacpine"
-  url "https:github.comberingresearchmacpinearchiverefstagsv1.0.8.tar.gz"
-  sha256 "3486597fc3759779394ab94ba97196b855b039b792008c9b9d9a11a69ad635ad"
+  url "https:github.comberingresearchmacpinearchiverefstagsv1.0.9.tar.gz"
+  sha256 "7ee1af8484d66b0bbeaa14d9f42cda5f4cdc092cf1ec76a4a18e00b069511df3"
   license "Apache-2.0"
   head "https:github.comberingresearchmacpine.git", branch: "main"
 
@@ -21,12 +21,12 @@ class Macpine < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5ad7c31003f246b5ebf9082a40cb2c25cbf6d53a9adaff84481757e4f7b7d8a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e21c4e1389cbf987277c65d26a25d6f8f87c8bad5662aca28211baebb95948ba"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c305d81302289cc3930e71bab2008e55516fa63ffc30b2ee03adeffc9a35d354"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cf5bafcc9ecd19603d381d643ebcef930fd34a09d0bd2693d5fcee00b5cae539"
-    sha256 cellar: :any_skip_relocation, ventura:       "ea4ebefa3db56d95ead4579b89708298254d422576c02e4ecb09e95c090be520"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae114b606c2bb038374dfe452f0b929e08941bacd4de337446e44b6c219ccc6a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d48f9e0a07604ea395d6698bcd1fc47655f80cffb801bbe9011994503cdb348d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ebb4529e5797e102909e9f4472b81e0c5092723c5e7e2b9488902f70e5ca5fdb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7b1b5a2860147437639da7ed89efdbb8938e81f506cc5f81f84369dfa0a24284"
+    sha256 cellar: :any_skip_relocation, sonoma:        "281fc13fca2a499e6c5e1dec0a279f97a8045daf7c51dbc3cdbc4176c9fd1d25"
+    sha256 cellar: :any_skip_relocation, ventura:       "f58f87947a8f91c1ec980f720037d8ad4ac2684d1ab64aae166be6a0da7ee40d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac17e462ab7187f6bed784db61262c8001947147a7c3878e50d9d603fff15fa0"
   end
 
   depends_on "go" => :build

@@ -1,10 +1,19 @@
 class Futhark < Formula
   desc "Data-parallel functional programming language"
   homepage "https:futhark-lang.org"
-  url "https:github.comdiku-dkfutharkarchiverefstagsv0.25.25.tar.gz"
-  sha256 "e7bd5e1cecea2ca45be18220c82cb9b717bead314182853cc739c8f68b657a03"
   license "ISC"
   head "https:github.comdiku-dkfuthark.git", branch: "master"
+
+  stable do
+    url "https:github.comdiku-dkfutharkarchiverefstagsv0.25.25.tar.gz"
+    sha256 "e7bd5e1cecea2ca45be18220c82cb9b717bead314182853cc739c8f68b657a03"
+
+    # Backport support for GHC 9.12
+    patch do
+      url "https:github.comdiku-dkfutharkcommit6fc96847b2cd4056df4cbdcbdab7f91cac2363fa.patch?full_index=1"
+      sha256 "a90f4a6318e3fb96004f91f5c5afb126b36b9021beead2d22be50464c90b5219"
+    end
+  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea8d09876633f3270c02b3b5ddb4ece2ea00269524487ef121f487f0ecfc4aca"

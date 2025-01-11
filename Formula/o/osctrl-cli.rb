@@ -1,17 +1,17 @@
 class OsctrlCli < Formula
   desc "Fast and efficient osquery management"
   homepage "https:osctrl.net"
-  url "https:github.comjmpsecosctrlarchiverefstagsv0.4.1.tar.gz"
-  sha256 "7811d57c38dc02bee256189dada2b9660aedd98d79b08fd19c2ced9063ba3498"
+  url "https:github.comjmpsecosctrlarchiverefstagsv0.4.2.tar.gz"
+  sha256 "afc854ecef0d877f5b56ae93b9e9b115964d8fa1a9762b5e40fc9ef4f0e2f1d0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af0d7a456fd99d58ad4e40fea746b9d8046d4056774a34ed07ab88ff60cceed7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "af0d7a456fd99d58ad4e40fea746b9d8046d4056774a34ed07ab88ff60cceed7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "af0d7a456fd99d58ad4e40fea746b9d8046d4056774a34ed07ab88ff60cceed7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8451126da2b60edd8bee5cfe55a5e9cdab80d5100eeacfcfaac87896cd7197ff"
-    sha256 cellar: :any_skip_relocation, ventura:       "8451126da2b60edd8bee5cfe55a5e9cdab80d5100eeacfcfaac87896cd7197ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8a4d3e093aad48b5a51ac7ab7ca41429aef982337de8f61672d8336bfa0962a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c8d5f1045e561c7be280f0c211f5cbe9b3206892bd0b315eedcdd6263e76611"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7c8d5f1045e561c7be280f0c211f5cbe9b3206892bd0b315eedcdd6263e76611"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7c8d5f1045e561c7be280f0c211f5cbe9b3206892bd0b315eedcdd6263e76611"
+    sha256 cellar: :any_skip_relocation, sonoma:        "728c62d39a674d59bb5191ba2d00234c8cc4a4cf5006baf2e74ce23d1fe0a9b6"
+    sha256 cellar: :any_skip_relocation, ventura:       "728c62d39a674d59bb5191ba2d00234c8cc4a4cf5006baf2e74ce23d1fe0a9b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a94cbc386481347069fa4f4fb2b6a75f23802f12d5fdbf8c9dcae2dcb85ce40a"
   end
 
   depends_on "go" => :build

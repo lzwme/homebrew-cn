@@ -1,30 +1,22 @@
 class GitAbsorb < Formula
   desc "Automatic git commit --fixup"
   homepage "https:github.comtummychowgit-absorb"
-  url "https:github.comtummychowgit-absorbarchiverefstags0.6.16.tar.gz"
-  sha256 "d0fac448801674a4d4d5d42d6ef2d2e21545ad66755023c531a273a47893a573"
+  url "https:github.comtummychowgit-absorbarchiverefstags0.6.17.tar.gz"
+  sha256 "512ef2bf0e642f8c34eb56aad657413bd9e04595e3bc4650ecf1c0799f148ca4"
   license "BSD-3-Clause"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "678f0567eda10a1341972c676ad3c9433269609d5d8aeb03d2d899b015b85df2"
-    sha256 cellar: :any,                 arm64_sonoma:  "674145b9573fccdc080a3e61435cfe4e49f7ad939c48f58759ab088b3ce4decb"
-    sha256 cellar: :any,                 arm64_ventura: "dda96ef119e6eabfe891707e7c049f0abb5ff6d9de1014597cc51ef5fa36febe"
-    sha256 cellar: :any,                 sonoma:        "aeaf6c2d75dd48a3eef2595dceec1edefbd7724e9ccf9e1acbaf7ae48ac6e65a"
-    sha256 cellar: :any,                 ventura:       "b7e617d3c205794b774a5ae137467e67ff1539f327ebedc1de287ad68b677e49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0821ca7fbac6b09e07df65c0f8e74a3a5f04f5ddbbe1fa87eb5de0f3ca0327c5"
+    sha256 cellar: :any,                 arm64_sequoia: "bb985890d415ff167d823f5ecb8a8e627b97375b81efb58fc00db2995dc806b2"
+    sha256 cellar: :any,                 arm64_sonoma:  "4b43c763348b5beb746a35baa22ff81511e89338669a46f5daf979ec30383267"
+    sha256 cellar: :any,                 arm64_ventura: "0fa5ccdc1815c2fed9505950968e1075ee971d4f158b087b4d22f1bd797b1734"
+    sha256 cellar: :any,                 sonoma:        "1bd3b24e9b32f49351555e3e8bea57fcc868a475243df29082f07899a87d3a02"
+    sha256 cellar: :any,                 ventura:       "74aa1215fca2e8df5a019b03ad8b917bc9bd73d24b1be84e9d129054922a3cc5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e75f77c1f10cefb7a8400671d7d2eb307ea41d4d36e0aeb7f71c266e0d1590c3"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "libgit2"
-
-  # patch to use libgit2 1.9, upstream pr ref, https:github.comtummychowgit-absorbpull138
-  patch do
-    url "https:github.comtummychowgit-absorbcommita7d5688f426490a92b5bb73e3a2cfccc565747f8.patch?full_index=1"
-    sha256 "cb6bf13ec90de7c434addf1467a259537d9a993f5d2481e6cba86b3543d38eed"
-  end
 
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"

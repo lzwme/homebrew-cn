@@ -1,18 +1,18 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https:deno.com"
-  url "https:github.comdenolanddenoreleasesdownloadv2.1.4deno_src.tar.gz"
-  sha256 "f48758771a456db3fabdf8665a4576f6d9dc24ff6d75a82f120d093b0307efd1"
+  url "https:github.comdenolanddenoreleasesdownloadv2.1.5deno_src.tar.gz"
+  sha256 "977bd6012cee5fef4578b95625830855652bca4f6dad0eb6f477523bc0cd7523"
   license "MIT"
   head "https:github.comdenolanddeno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "cbea25eb50e3e253dbca78869a2d27addef495ca29da6eee0cf158c70389bf3d"
-    sha256 cellar: :any,                 arm64_sonoma:  "bbfcdb2d257d4743c4e74b9d3f4c1a20f702b9f95fb13a49ef56fb7ef96d9538"
-    sha256 cellar: :any,                 arm64_ventura: "f903f94f919a7bf0a31c5d6af42108d23aa68eeb6711f5eac16d9b22a4d189d4"
-    sha256 cellar: :any,                 sonoma:        "a55d12685836d6d7b0f08f59c9ba9332d1e6b61d62b6a052687be91b9dc6c541"
-    sha256 cellar: :any,                 ventura:       "ff03a0e42d9073a2bfb5c1a03781efb5a87b8bd3beb83e6dc5eb3e13d1434392"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3c197e9e6f880a8843d5652321a944699845cdb5e1cef84806c5e1cca2f6e80"
+    sha256 cellar: :any,                 arm64_sequoia: "d39af61bb9705e833959d14fe5bbfed0634732a2db0ca2a4b4dce83657e7b15a"
+    sha256 cellar: :any,                 arm64_sonoma:  "e9f0f97784d4eacc70836071274d086b6ad10f1f1385438f7e23d021555839a1"
+    sha256 cellar: :any,                 arm64_ventura: "f45c7d4f1af650d8d3baea6e9047318b07c52a68deae58df260638da53a23f9c"
+    sha256 cellar: :any,                 sonoma:        "d67521974a45afc3da5694492500f8c1df34577f28cf3320d02db2e8e0636f1e"
+    sha256 cellar: :any,                 ventura:       "1313d58d03446f14361b440fc05e64413bfff43f09c9c16a4210a7a745f4db3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1dea7a150a33411649d3f44c7cdc4162c1fd985e733f6fa880860d5402769905"
   end
 
   depends_on "cmake" => :build
@@ -38,8 +38,8 @@ class Deno < Formula
   # TODO: Remove this and `v8` resource when https:github.comdenolandrusty_v8issues1065 is resolved
   # VERSION=#{version} && curl -s https:raw.githubusercontent.comdenolanddenov$VERSIONCargo.lock | grep -C 1 'name = "v8"'
   resource "rusty_v8" do
-    url "https:static.crates.iocratesv8v8-130.0.1.crate"
-    sha256 "c23b5c2caff00209b03a716609b275acae94b02dd3b63c4648e7232a84a8402f"
+    url "https:static.crates.iocratesv8v8-130.0.7.crate"
+    sha256 "a511192602f7b435b0a241c1947aa743eb7717f20a9195f4b5e8ed1952e01db1"
   end
 
   # Find the v8 version from the last commit message at:
@@ -52,8 +52,8 @@ class Deno < Formula
 
   # VERSION=#{version} && curl -s https:raw.githubusercontent.comdenolanddenov$VERSIONCargo.lock | grep -C 1 'name = "deno_core"'
   resource "deno_core" do
-    url "https:github.comdenolanddeno_corearchiverefstags0.324.0.tar.gz"
-    sha256 "be30758f15fbd47f250d7cc1aeb87bd5eb5618119150c46f9115892c11526fd8"
+    url "https:github.comdenolanddeno_corearchiverefstags0.330.0.tar.gz"
+    sha256 "d05fb04360a1a193a51399b713f068ee2376b4e389ec3bb3cc7f0996d1bc1292"
   end
 
   # The latest commit from `denolandicu`, go to https:github.comdenolandrusty_v8treev#{rusty_v8_version}third_party

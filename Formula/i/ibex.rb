@@ -31,11 +31,9 @@ class Ibex < Formula
   def install
     ENV.cxx11
 
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args.reject { |s| s["CMAKE_INSTALL_LIBDIR"] }
-      system "make", "SHARED=true"
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args.reject { |s| s["CMAKE_INSTALL_LIBDIR"] }
+    system "cmake", "--build", "build", "--", "SHARED=true"
+    system "cmake", "--install", "build"
 
     pkgshare.install %w[examples benchssolver]
     (pkgshare"examplessymb01.txt").write <<~EOS

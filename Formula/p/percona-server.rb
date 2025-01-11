@@ -4,7 +4,7 @@ class PerconaServer < Formula
   url "https:downloads.percona.comdownloadsPercona-Server-8.0Percona-Server-8.0.36-28sourcetarballpercona-server-8.0.36-28.tar.gz"
   sha256 "8a4b44bd9cf79a38e6275e8f5f9d4e8d2c308854b71fd5bf5d1728fff43a6844"
   license "BSD-3-Clause"
-  revision 5
+  revision 6
 
   livecheck do
     url "https:docs.percona.compercona-serverlatest"
@@ -19,12 +19,12 @@ class PerconaServer < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "fec95e510b9791fb9797228d29d757e9c4c1453d36d8390a53794df17806512f"
-    sha256 arm64_sonoma:  "4ae492edceda80ef8b82348a449092c4b4e5a1f7fd3d52a851f11cb82b07b694"
-    sha256 arm64_ventura: "1587b3cb95c97e79ac2e6d86596d3c948fe5516feffab946a68b976f4b76e4ff"
-    sha256 sonoma:        "c89b003df5aa0d63ed12c7aab667422f563235e70b982074e07f7fb828fa5cb8"
-    sha256 ventura:       "f0abcb7718fa4ecd85751b3a80e83664af0146bba7d37b089bc96f8678010076"
-    sha256 x86_64_linux:  "e878b7107cb796cb84b2472943e95203991dbdd9b6c5b075bbdeb0c2ba271461"
+    sha256 arm64_sequoia: "7c456f1f1415322cdb5f79dd56733ae4992fff109e7d1f7880b09ca88503d032"
+    sha256 arm64_sonoma:  "3782d7bf2f6b76ed88df11b66a3e91079c3c5871b298437bc3ac8a2ab6d0fc6c"
+    sha256 arm64_ventura: "1789387d1bff059bac32c7e2d8c912ff4a03b28aeefbf53845e2b8b18a3969f2"
+    sha256 sonoma:        "bbb07a26cb305c9ff6319d8d8ff8270f665e1e166fa63708dc2ef40badc04be0"
+    sha256 ventura:       "40049e14f51428d0f7e92a58d8456e698d8750dd8dd6587cdaaed813048b2944"
+    sha256 x86_64_linux:  "aed371c8cd1999e1af8a3a208bfcb4ddab0d9263ce75f966489dc1c08a927398"
   end
 
   depends_on "bison" => :build
@@ -63,7 +63,7 @@ class PerconaServer < Formula
 
   # https:github.comperconapercona-serverblobPercona-Server-#{version}cmakeboost.cmake
   resource "boost" do
-    url "https:boostorg.jfrog.ioartifactorymainrelease1.77.0sourceboost_1_77_0.tar.bz2"
+    url "https:downloads.sourceforge.netprojectboostboost1.77.0boost_1_77_0.tar.bz2"
     sha256 "fc9f85fc030e233142908241af7a846e60630aa7388de9a5fafb1f3a26840854"
   end
 

@@ -1,18 +1,18 @@
 class StaticWebServer < Formula
   desc "High-performance and asynchronous web server for static files-serving"
   homepage "https:static-web-server.net"
-  url "https:github.comstatic-web-serverstatic-web-serverarchiverefstagsv2.34.0.tar.gz"
-  sha256 "f0b6ef64f68445c98f1ffd22265d5675e64157e572431fa4fd362970199d0b5e"
+  url "https:github.comstatic-web-serverstatic-web-serverarchiverefstagsv2.35.0.tar.gz"
+  sha256 "adf260f0aa3ccc18955f9f68ce11356c8d0e3fbb0d9b9446b137430427dafb3b"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comstatic-web-serverstatic-web-server.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c91a1af6091454007fda0a0909aa9de0289cbd795ef20de52fd6997b6b83ae54"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2cc809c5be0224d3022c46a40f9d61bd1d88f76cf55ac4b4bfedfc888a25bb64"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fd90fa6188af4c1dbd3453e05d9f4c5038f73abe72a8e6d53b3620586f75d277"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ab3b1eacf3459ab801548c1aed09992ea7e36ea1a3a6ec41a9808c46f75796f6"
-    sha256 cellar: :any_skip_relocation, ventura:       "4be20e0ece975bb370fe6256511aa568968b53d37dd07b15c87d3390de3a6b29"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c8b4240da5289d196616282a921648a2fd8b8d1ca2362f8983fc5bc0fc3311e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b58e4ff611253884ed0e43e25c3c610e5e3b28a16b9bb0200e0e98bb4f4bceae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f87a17dcbbc6f0b5cb89f9eca07c4a7e53bd7c2fac86057b231f8d5fd23ef9a4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "74946d5a408aa4c2a8163c4cfa507b84a65abbac032d32c1f720538fe918af39"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0f82cd0627276009db7cc83b543f6cfa2145f1f05ef48ff15413d5bd7f00d9fe"
+    sha256 cellar: :any_skip_relocation, ventura:       "b590e6cb31e898961e9597a50ad13314eaa7f6fbd4ff2a4eb575c4eb29419efd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01cf8ae595d525edf667ee2ad54d13293c3efb055ff5e0f3cd4cee19abcfb5a2"
   end
 
   depends_on "rust" => :build

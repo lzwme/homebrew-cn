@@ -34,10 +34,8 @@ class LastpassCli < Formula
   def install
     ENV["XML_CATALOG_FILES"] = etc"xmlcatalog"
 
-    mkdir "build" do
-      system "cmake", "..", *std_cmake_args, "-DCMAKE_INSTALL_MANDIR:PATH=#{man}"
-      system "make", "install", "install-doc"
-    end
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_MANDIR=#{man}", *std_cmake_args
+    system "cmake", "--build", "build", "--target", "install", "--target", "install-doc"
 
     bash_completion.install "contriblpass_bash_completion"
     zsh_completion.install "contriblpass_zsh_completion" => "_lpass"

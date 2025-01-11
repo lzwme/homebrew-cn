@@ -2,8 +2,8 @@ class OperatorSdk < Formula
   desc "SDK for building Kubernetes applications"
   homepage "https:sdk.operatorframework.io"
   url "https:github.comoperator-frameworkoperator-sdk.git",
-      tag:      "v1.38.0",
-      revision: "0735b20c84e5c33cda4ed87daa3c21dcdc01bb79"
+      tag:      "v1.39.0",
+      revision: "d5cc16b9818671fc3e23f94037d257cb2f6d6675"
   license "Apache-2.0"
   head "https:github.comoperator-frameworkoperator-sdk.git", branch: "master"
 
@@ -13,12 +13,12 @@ class OperatorSdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c4b04e80ed196e7938f476f1e7c60ea0bf7b635ae998c2343a443786fb94a73"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b4b7c0797185ad1c42483a80094c8b7511b000d2b83136c713c5c97380a7fa26"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d24d19cea8d61af17dc352b596ea1ce6c5b02b76beb099138f87759d973de2dd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "be250ca513dd5b0ce9c3f846305f2bdfc6c5d9940189f6a6d44df1617f727689"
-    sha256 cellar: :any_skip_relocation, ventura:       "24a48c8511256c7c31d17a63d372e0075754a53a1aadc1b148196cae67996225"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5f724fb8c01971fce2322a519ac6b1a9a2d8092c95ceccaa967e7ae54d1fc83"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c84bf745c1c09e7f6068b922feabec5cbb75c9666b937e3097e7458e6372dde5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "407e60e1a00d213e8639955c1c86e7ca26d6b4e841f3dbcdf4bfce7c8abbc183"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5608529be7005fe424e3e712a1aeebd4c9643d32dc36bfe73be21a6eb13773f7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "348ea3b0198cefac3d921c610452cbf62a4309cfe08092339cbd237c6e28a8e0"
+    sha256 cellar: :any_skip_relocation, ventura:       "ec0fd7cf57422f064242dcfaacc6332cd22da70b88d6cc75bc18cbaa7e292cd1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d4dfd1a921e2bea428af8ab47bfa8c3a05e60ee8448a030806c026fbce8eff8"
   end
 
   depends_on "go"

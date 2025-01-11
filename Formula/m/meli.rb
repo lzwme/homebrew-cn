@@ -2,7 +2,7 @@ class Meli < Formula
   desc "Terminal e-mail client and e-mail client library"
   homepage "https://meli-email.org/"
   url "https://git.meli-email.org/meli/meli/archive/v0.8.10.tar.gz"
-  sha256 "09d1a46434a86f5f2d212ade224712f14aa36a6b12a5df7a2660830c8097e775"
+  sha256 "83573e8f2e8770831e35879c84297e9b353ba251d9a55960615eb1e32b9a1901"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,12 +11,13 @@ class Meli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1571c7e82e165e2ec607174e330003e26b41b7c79c38202bedb5250f795ceb3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dfbc0df0186579d1293c1deb7937f4496eae9b4857607cec14b06538d01b8231"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7a8e8667a3b302d0218aee80ef6c1ccdc019b10d09ca883f093071f036e2d329"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5474fed898112584fa8702ab921dc7ad2cfad77a89d80b4cfafc36d6dd58620c"
-    sha256 cellar: :any_skip_relocation, ventura:       "aec465c9719c02383f829231d16dc75ad61df212f77a68c5a654e837b3fa3052"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1b342df05d539c17ce08acae9579e29b14f6cbf3c578971aa0ad482b03be797"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7fdb0e4503db2d806000a92f8ee4744caa71d8535f9a19551c305dfaf2c9c50b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "406b311dace715934695e38f215d77bb44257b76c17a2d85942514f0149fc872"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4cb979565e6613629d73eb5d95566d7fdb0ebfcd5dc6b6df06d5b9e88574e3bd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8c67e8d72899564c60d5d33ad34e4001200682711ff5341e3860ac04b17c06d9"
+    sha256 cellar: :any_skip_relocation, ventura:       "19400aeadea6aada5b91035393b61d3223fbb3001ff8b2863fdddfb7815526f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d63a56252e40706e8e15d9e2c543202ef6789dcb4fbd835c8f3acba2eeefb8a"
   end
 
   depends_on "pkgconf" => :build

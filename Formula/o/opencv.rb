@@ -1,10 +1,9 @@
 class Opencv < Formula
   desc "Open source computer vision library"
   homepage "https:opencv.org"
-  url "https:github.comopencvopencvarchiverefstags4.10.0.tar.gz"
-  sha256 "b2171af5be6b26f7a06b1229948bbb2bdaa74fcf5cd097e0af6378fce50a6eb9"
+  url "https:github.comopencvopencvarchiverefstags4.11.0.tar.gz"
+  sha256 "9a7c11f924eff5f8d8070e297b322ee68b9227e003fd600d4b8122198091665f"
   license "Apache-2.0"
-  revision 18
   head "https:github.comopencvopencv.git", branch: "4.x"
 
   livecheck do
@@ -13,11 +12,11 @@ class Opencv < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:  "bb46def11d27601dc9d1fbcf6bd9bd311dd81af1a123848c961a32945589b102"
-    sha256 arm64_ventura: "eefdda850744472177b609cc9c5e699c4737491f8e76b4b0d22e8d1c1b65ba67"
-    sha256 sonoma:        "de61c25455af862ee8229ea4b630b96c2cd0b138a0954387d62f1d281580ad09"
-    sha256 ventura:       "03fb1235f00b4379519d01e02ba566a96318a317b1dc749679e582a395005a14"
-    sha256 x86_64_linux:  "2a584366f46b875643b87030d061271daf11c1e0fec61c53b5352321b3ee60ba"
+    sha256 arm64_sonoma:  "d035c4506b85c05055ee3116fbfd48bde6633a38a4923e14cb4933aa8ca3e9a8"
+    sha256 arm64_ventura: "9e2476f323c7b24ae18690cdaa4341a87e972a41c2674d20436c089ed9e20671"
+    sha256 sonoma:        "73cff09359f66beeb837e43a4e4123fcdb1bf5999c78bf77bc52a3e9d74b51fe"
+    sha256 ventura:       "d6be06315f928644ad2f90f01700e8f6af37903894d36e9527351fca9bfadf9e"
+    sha256 x86_64_linux:  "b5da4aa096725d6fe1a3254edfc32ffbea13186c49d6aa9b72f9dbc80ef529b6"
   end
 
   depends_on "cmake" => :build

@@ -4,14 +4,15 @@ class Vtk < Formula
   url "https:www.vtk.orgfilesrelease9.4VTK-9.4.1.tar.gz"
   sha256 "c253b0c8d002aaf98871c6d0cb76afc4936c301b72358a08d5f3f72ef8bc4529"
   license "BSD-3-Clause"
+  revision 1
   head "https:gitlab.kitware.comvtkvtk.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "861af55635ecc3501cdbe94f6a839f2fe79590c58f21cd77a8e1e179b1444a71"
-    sha256 cellar: :any,                 arm64_ventura: "c5857daa338929a47c7e4ab43546f9f67b32c586ce6735cdfee2361a7daaa361"
-    sha256 cellar: :any,                 sonoma:        "e9f5ebec5dfedd9dddf72e1f21f2673176d648fab3bb302a2837880d49e0f10f"
-    sha256 cellar: :any,                 ventura:       "5ba7c66ce11cc1deca229c494590d162341d1baa02616342b89a3cf96a808c2f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cbd384a51a64c5e8d35297769d71f7f35087cf423b1c367e093be83fb426b8d4"
+    sha256 cellar: :any,                 arm64_sonoma:  "f254c5cf1ccad940159632c4bb596b0ffd2bd32734147487d4fd9ec902c3a58e"
+    sha256 cellar: :any,                 arm64_ventura: "ca7f25ceb75b2bc9029bb8ac83cc6e4779acfcc2fd7d1692c720f3ada934b4bc"
+    sha256 cellar: :any,                 sonoma:        "c00f790c1ef56226acb35df63719affe69e0583f23c0e9b56960da383508e3e2"
+    sha256 cellar: :any,                 ventura:       "cabbe49856fb972a8f663f17ec84197770ded18a5016abbb3099dba17cb7c8b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9ad32e6ffe89c6ce0312a871c2a159d15d24ef2ac628b7d9a688e665a3dfc94"
   end
 
   depends_on "cmake" => [:build, :test]

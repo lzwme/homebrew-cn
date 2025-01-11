@@ -1,17 +1,17 @@
 class Libmaxminddb < Formula
   desc "C library for the MaxMind DB file format"
   homepage "https:github.commaxmindlibmaxminddb"
-  url "https:github.commaxmindlibmaxminddbreleasesdownload1.12.1libmaxminddb-1.12.1.tar.gz"
-  sha256 "30f8dcdbb0df586a2780fcbca5824300d2365734cfbc464ff306751179ef62ce"
+  url "https:github.commaxmindlibmaxminddbreleasesdownload1.12.2libmaxminddb-1.12.2.tar.gz"
+  sha256 "1bfbf8efba3ed6462e04e225906ad5ce5fe958aa3d626a1235b2a2253d600743"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3ffbb17c6726c153b4bc03e29c7e9a6b8cbcf6a5ee5ef7cd5f71669976f1c95e"
-    sha256 cellar: :any,                 arm64_sonoma:  "b40ceae04dc452083b0433ddd4a7140f07161edc86011cc825396e0be5ea8fc7"
-    sha256 cellar: :any,                 arm64_ventura: "d920a8819e4acf730919982f56530ca0ddfc30393ba13008ec755e0e9ded60c3"
-    sha256 cellar: :any,                 sonoma:        "2abe0a47830d9c59f6ad0d3654911046a8caf6d498b2f0387fac4f28f29ef41f"
-    sha256 cellar: :any,                 ventura:       "d18ba104a623ccd271751a3f897b5cdee8d41ba33160d3f7416913b679120c99"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f3573469c931c658ca3bcf5199c7698a1750b075a79ccfdbc9dee49d9f651f0"
+    sha256 cellar: :any,                 arm64_sequoia: "1b13f50a8072072af83d8fe5851dab623f05967b35868ac4bf95435c4b7a423e"
+    sha256 cellar: :any,                 arm64_sonoma:  "483e40580b6cef8ced628c5c9b072004ae2c7d9f2615473dc62e2b5210d3ec51"
+    sha256 cellar: :any,                 arm64_ventura: "4b4c4de2cf912a0e0e764bd02052efc651160b547f40ee573a5bc0d6d95fb070"
+    sha256 cellar: :any,                 sonoma:        "287f6e846279aba4823828756b8c9a02537fa3ca26f2edd0ed6dfb8b9a43611d"
+    sha256 cellar: :any,                 ventura:       "5621888987d823a633346238e0044ca73d1a0a07a9a5eae43aa06dffd261475d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f050b168b6f1ed601acad6218d45bab50d416eb062317614d662a5a63372f5af"
   end
 
   head do

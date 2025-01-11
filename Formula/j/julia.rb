@@ -60,10 +60,11 @@ class Julia < Formula
   conflicts_with "juliaup", because: "both install `julia` binaries"
 
   # Link against libgcc_s.1.1.dylib, not libgcc_s.1.dylib
-  # https:github.comJuliaLangjuliaissues48056
+  # https:github.comJuliaLangjuliapull56965#event-15826575851
+  # Remove in 1.12
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches202ccbabd44bd5ab02fbdee2f51f87bb88d74417julialibgcc_s-1.8.5.diff"
-    sha256 "1eea77d8024ad8bc9c733a0e0770661bc08228d335b20c4696350ed5dfdab29a"
+    url "https:github.comJuliaLangjuliacommit75cdffeb0f37b438950534712755a4f7cebbdd8c.patch?full_index=1"
+    sha256 "7b62554131a2627c70570b800c8fea35048e863ba2e11fc6c93d6fe26920cda8"
   end
 
   def install

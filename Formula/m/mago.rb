@@ -1,17 +1,17 @@
 class Mago < Formula
   desc "Toolchain for PHP to help developers write better code"
   homepage "https:github.comcarthage-softwaremago"
-  url "https:github.comcarthage-softwaremagoarchiverefstags0.0.18.tar.gz"
-  sha256 "98f1dbcd9d280e8d2a59a9805309c5856c475f82f55f22f44cdaae1830f4274d"
+  url "https:github.comcarthage-softwaremagoarchiverefstags0.0.19.tar.gz"
+  sha256 "31770061b73cfd80bf188c3a783efd77ad30f6191c2314ec0676f28a2a378d9c"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9fb281a9e69d669dbfd6ea50cc25f6c3368e59d570fb8933c9b7b93c547887e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d6809e390185816764b15c14ce5f866a801edc5d845454f5a40b88bd523a064c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "465443107caa45bb6400e0e491ef1bc3cc79a27511e2b88a8a06488381e3d354"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5fef25b166d88397583f91bcd308dcc87a119c18af6c7a29829007ae926302e4"
-    sha256 cellar: :any_skip_relocation, ventura:       "9120647f1fe8fbfab16bb9cd2ab108a9bf0b0da9bc4952b7ee07d683cc401de3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2739abdda55809f42ed18d8034a81435d2fd9d0acfff76294b1c3af0ec85d9b9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eddde4479cb55d65750a8d675e2acbfd1502acbb5dc50ecabe6002c6aaabf408"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7a809eb2f6b4f254f829ae08f75a30856f2d3eab367b7ac78e582acccf62fd5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6e8fc0c297715678de0a6965b7fd78f8981feace2d3149679c71975a793d5141"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2fbda29fe7a477c740c9332d55181f706f75f9b3d8b16f3d04df87f4514552e6"
+    sha256 cellar: :any_skip_relocation, ventura:       "46ed12d96ec8437811f67d62e5ffa71879f61c6d3eb058efb16dc814ad92b865"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e9733fdab2befca9f37151941833bdb05c53b6b6f31875e7c48dd69ab340d14"
   end
 
   depends_on "pkgconf" => :build

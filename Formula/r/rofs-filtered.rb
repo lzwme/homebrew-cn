@@ -15,9 +15,12 @@ class RofsFiltered < Formula
   depends_on :linux # on macOS, requires closed-source macFUSE
 
   def install
-    mkdir "build" do
-      system "cmake", "..", "-DCMAKE_INSTALL_SYSCONFDIR=#{etc}", *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_SYSCONFDIR=#{etc}", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
+  end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}rofs-filtered --version 2>&1")
   end
 end

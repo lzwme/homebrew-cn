@@ -1,10 +1,9 @@
 class Cgns < Formula
   desc "CFD General Notation System"
-  homepage "http:cgns.org"
-  url "https:github.comCGNSCGNSarchiverefstagsv4.4.0.tar.gz"
-  sha256 "3b0615d1e6b566aa8772616ba5fd9ca4eca1a600720e36eadd914be348925fe2"
+  homepage "https:cgns.github.io"
+  url "https:github.comCGNSCGNSarchiverefstagsv4.5.0.tar.gz"
+  sha256 "c72355219318755ba0a8646a8e56ee1c138cf909c1d738d258d2774fa4b529e9"
   license "BSD-3-Clause"
-  revision 1
   head "https:github.comCGNSCGNS.git", branch: "develop"
 
   livecheck do
@@ -13,12 +12,12 @@ class Cgns < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b2e3755ab8b84f161b0429ebbb0b73b4296ce0d92e8e722505e30a72c8c4d506"
-    sha256 cellar: :any,                 arm64_sonoma:  "6d1f0bc2e232b02b4ffb5c439f7a020cc6a5b171814e0930dc66d605581516a9"
-    sha256 cellar: :any,                 arm64_ventura: "f9366047e49d3e96d73726a0bf7ddfd136ac0c132a92fd64071faf50c6b3f6ca"
-    sha256 cellar: :any,                 sonoma:        "beb81ecf8a4db4098991e474e79fac6029ffdb431034bc1bf8b17b7799dffd7d"
-    sha256 cellar: :any,                 ventura:       "e7581a769881c706fd9abffeaa3319aaadd41501c440c3ab02f0ae6e4c311fa6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3405dd84d98233abbd29df9dd28f948a7cf67daea4ad573d907d612aa49a7961"
+    sha256                               arm64_sequoia: "60d460320a92ecb06f0102b192002150f3822f71b0ca08afac1d0d2b2d7a03ee"
+    sha256                               arm64_sonoma:  "059388e3ab976982dd8766d5331ee7c675d465199dadd0e51081332f739f5bcc"
+    sha256                               arm64_ventura: "46b2bb044517369bba1c9dad5b820a3d4f9afeff452e662210d5dba46d1376f9"
+    sha256                               sonoma:        "b0c10740cb9177010cf815816c1f31882d8ac61213022d68729dc2f3b65c43f2"
+    sha256                               ventura:       "73cdae1cc580e91901eb1716e3c63fe55ed314a7f7855b9359f668b32151630b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc3307b328259a4c034e3a8a14c4bae802f8a3d054858f2abb2f942a0e8927ed"
   end
 
   depends_on "cmake" => :build

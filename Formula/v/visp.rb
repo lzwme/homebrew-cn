@@ -4,7 +4,7 @@ class Visp < Formula
   url "https:visp-doc.inria.frdownloadreleasesvisp-3.6.0.tar.gz"
   sha256 "eec93f56b89fd7c0d472b019e01c3fe03a09eda47f3903c38dc53a27cbfae532"
   license "GPL-2.0-or-later"
-  revision 10
+  revision 11
 
   livecheck do
     url "https:visp.inria.frdownload"
@@ -12,11 +12,11 @@ class Visp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "cd46d0345aac25f3459482433444fc604fac8edd647c110966a959c9ae6d9c96"
-    sha256 cellar: :any,                 arm64_ventura: "67b6676dcd3a6b751f87d880a9b6a6be42a17626a06ab0ddda08defaa4272c23"
-    sha256 cellar: :any,                 sonoma:        "6cb4fed15290ad68e0c008815589a4453163323cbcd345be6588cc9b9892513f"
-    sha256 cellar: :any,                 ventura:       "3a1a93587fe3432cda0dfc9adaa78235d71154878cdffd5f92f43ce1bfbffc0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f55415e96b2adca09e489d64b8399f9b14961939f8b0d5b9895ddff1c7f50f9"
+    sha256 cellar: :any,                 arm64_sonoma:  "8de6357bee92823b92ba777a8da84b9675af33b5b6ba5c4615056b03d4051001"
+    sha256 cellar: :any,                 arm64_ventura: "b1775095986f474013a66720ffd491003aa0e5d493a04e44e247cfbe4a67bd84"
+    sha256 cellar: :any,                 sonoma:        "8b05aebbe9cf362755663b48f555f41bee7b028e601ab24ca1d91b1a5b46bab0"
+    sha256 cellar: :any,                 ventura:       "da4233284042269153c4204742777d9511cc5c53abb82e6da7d715eda6a6b54c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffe814594888a9d0c998fae5dfc4abd0d8e53c61b550a025c4fd2eef0ffcd0aa"
   end
 
   depends_on "cmake" => [:build, :test]

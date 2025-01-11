@@ -1,10 +1,9 @@
 class PerconaXtrabackup < Formula
   desc "Open source hot backup tool for InnoDB and XtraDB databases"
   homepage "https:www.percona.comsoftwaremysql-databasepercona-xtrabackup"
-  url "https:downloads.percona.comdownloadsPercona-XtraBackup-LATESTPercona-XtraBackup-8.0.35-31sourcetarballpercona-xtrabackup-8.0.35-31.tar.gz"
-  sha256 "c6bda1e7f983e5a667bff22d1d67d33404db4e741676d03c9c60bbd4b263cabf"
+  url "https:downloads.percona.comdownloadsPercona-XtraBackup-LATESTPercona-XtraBackup-8.0.35-32sourcetarballpercona-xtrabackup-8.0.35-32.tar.gz"
+  sha256 "04982a36e36d0e9dfb8487afa77329dd0d2d38da163a205f0179635ceea1aff1"
   license "GPL-2.0-only"
-  revision 10
 
   livecheck do
     url "https:docs.percona.compercona-xtrabackuplatest"
@@ -19,12 +18,12 @@ class PerconaXtrabackup < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "dcbfa284b06d4e13b0257572b48e4439e399634fa5ec386ebc3441aa1e40bd61"
-    sha256 arm64_sonoma:  "0267922c3ab1bb13088ee69d0f1e193eb6bb51802498faa25d4e743b1303df05"
-    sha256 arm64_ventura: "e3159c40d946ab1d835796752ac8cf58d747be6cba870542f80516c31a653943"
-    sha256 sonoma:        "96bc0828e36471db3a53b7467552b2d454afb6233bc28594c9b45977e3499387"
-    sha256 ventura:       "ac7403309b0a8cdde899985001922fa589e204ff110409c0f65e7cdd2867a94d"
-    sha256 x86_64_linux:  "8dbc24960ca95f9361d0174cc68b38f35192ca13c0ba19237c2f91301461e0bf"
+    sha256 arm64_sequoia: "f21c1256125dcf16feba00f268c88b5e4edd20e396eba3c605b954727c62d432"
+    sha256 arm64_sonoma:  "d624852bd566780d5fc378a45a0c8c880a5c302c7f2c9e2b25cc7949870e2aaa"
+    sha256 arm64_ventura: "69efc01730b8230aea87ce84144fbe8394bf55da92576f9881a4e0ce26f8a989"
+    sha256 sonoma:        "8a9f84bc40e71aae6b5124ea4d58032ab1c08a7c8adb6f2208a0b2fc2877041b"
+    sha256 ventura:       "3fa829ea1354b1cd556d6f52d4806c037a6a0fa0e7d55ccc1151116e012b9e76"
+    sha256 x86_64_linux:  "f2f75e79031d01bf4d44d2a74ae85e19897b95546608136bc54cfcc00fcb8e5d"
   end
 
   depends_on "bison" => :build # needs bison >= 3.0.4
@@ -78,7 +77,7 @@ class PerconaXtrabackup < Formula
 
   # https:github.comperconapercona-xtrabackupblobpercona-xtrabackup-#{version}cmakeboost.cmake
   resource "boost" do
-    url "https:boostorg.jfrog.ioartifactorymainrelease1.77.0sourceboost_1_77_0.tar.bz2"
+    url "https:downloads.sourceforge.netprojectboostboost1.77.0boost_1_77_0.tar.bz2"
     sha256 "fc9f85fc030e233142908241af7a846e60630aa7388de9a5fafb1f3a26840854"
   end
 

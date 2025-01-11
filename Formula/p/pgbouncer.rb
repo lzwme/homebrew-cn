@@ -1,8 +1,8 @@
 class Pgbouncer < Formula
   desc "Lightweight connection pooler for PostgreSQL"
   homepage "https:www.pgbouncer.org"
-  url "https:www.pgbouncer.orgdownloadsfiles1.23.1pgbouncer-1.23.1.tar.gz"
-  sha256 "1963b497231d9a560a62d266e4a2eae6881ab401853d93e5d292c3740eec5084"
+  url "https:www.pgbouncer.orgdownloadsfiles1.24.0pgbouncer-1.24.0.tar.gz"
+  sha256 "e76adf941a3191a416e223c0b2cdbf73159eef80a2a32314af6fbd82e41a1d41"
   license "ISC"
 
   livecheck do
@@ -11,14 +11,12 @@ class Pgbouncer < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "c24c8c4e07821b2bc9aff0c8ee6fe37f84f39b7ce6b3c5c0af84826e67091a77"
-    sha256 cellar: :any,                 arm64_sonoma:   "054274d58e1129965296edcb1867b22829c2bc9a5a8d40c855817a262a0278f0"
-    sha256 cellar: :any,                 arm64_ventura:  "07895230a7f4541ef17ed81c0ca645e66fa6a5a33ea9649bbc3de5339c02ec0b"
-    sha256 cellar: :any,                 arm64_monterey: "742bc9d8abb46d62003003543a79e6b25b34d5bbb036d72cbc51ac01680e1e41"
-    sha256 cellar: :any,                 sonoma:         "6478a0ce1e3651c8043c3ef6cda60a1aafa0c93128b26e4b99dbc41b7d04928e"
-    sha256 cellar: :any,                 ventura:        "e5f91830338d0a52d66db8d287163f303c09d00d2d71304b7f9a37a25b283841"
-    sha256 cellar: :any,                 monterey:       "933cae41059f7198a05d9c73af6f7f522be5af0ac8f7e50797b028e42dd095f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5509640fed151b1d1378d8ce25ce4f054e4af9bea5522028897537490365217b"
+    sha256 cellar: :any,                 arm64_sequoia: "87aa1ebe4c4245e0864976983b532be084388ed482fc9795a2503a5d874e27f8"
+    sha256 cellar: :any,                 arm64_sonoma:  "43a76e841d08d4e0448795dffa6c9f69dfc86b2375a9e0557952d5ae5ed8605d"
+    sha256 cellar: :any,                 arm64_ventura: "1f405a92d760c6af0756ba2b32966d73ce9d4cffce462ac332b3d98f1b3b5f48"
+    sha256 cellar: :any,                 sonoma:        "262b7ed2c5749f2921add6f3065d367be16fc721f65c5bd48d04b3a08045a494"
+    sha256 cellar: :any,                 ventura:       "bcede5ab58af987fa0e16e4dd44ba4bb0356671459859783c2112d67856efbe1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81d527e71fdf0028f6c281340e00462adfa848939d20abe32a6c94ecb65a9be3"
   end
 
   head do

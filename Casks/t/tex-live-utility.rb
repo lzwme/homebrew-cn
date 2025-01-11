@@ -20,6 +20,8 @@ cask "tex-live-utility" do
     "~LibraryApplication SupportTeX Live Utility",
     "~LibraryCachescom.apple.helpdSDMHelpDataOtherEnglishHelpSDMIndexFileTeX Live Utility Help*",
     "~LibraryCachescom.googlecode.mactlmgr.tlu",
+    "~LibraryHTTPStoragescom.googlecode.mactlmgr.tlu",
+    "~LibraryHTTPStoragescom.googlecode.mactlmgr.tlu.binarycookies",
     "~LibraryPreferencescom.googlecode.mactlmgr.tlu.plist",
     "~LibrarySaved Application Statecom.googlecode.mactlmgr.tlu.savedState",
   ]

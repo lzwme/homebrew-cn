@@ -159,7 +159,7 @@ Homebrew-homebrew-core/Formula/a/apache-drill.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apache-flink-cdc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apache-flink.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apache-geode.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/a/apache-opennlp.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/apache-opennlp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apache-pulsar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apache-spark.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apachetop.rb, Homebrew/homebrew-core, 1
@@ -3863,6 +3863,7 @@ Homebrew-homebrew-core/Formula/lib/libstrophe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libstxxl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libsvg-cairo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libsvg.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libsvgtiny.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libsvm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libswiftnav.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libtar.rb, Homebrew/homebrew-core, 0
@@ -5503,7 +5504,7 @@ Homebrew-homebrew-core/Formula/r/rats.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rattler-build.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rav1e.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/raven.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/rawdog.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/rawdog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/raxml-ng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/raylib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rbenv-aliases.rb, Homebrew/homebrew-core, 1
@@ -6447,6 +6448,7 @@ Homebrew-homebrew-core/Formula/t/tenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tenyr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tere.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/term.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/termbg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termbox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termcolor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terminal-notifier.rb, Homebrew/homebrew-core, 1
@@ -11997,7 +11999,7 @@ Homebrew-homebrew-cask/Casks/l/limitless.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/line-bot-designer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/linear-linear.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/linear.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/l/linearmouse.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/l/linearmouse.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lingon-x.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/linkliar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/linn-konfig.rb, Homebrew/homebrew-cask, 0
@@ -13432,6 +13434,7 @@ Homebrew-homebrew-cask/Casks/s/sanesidebuttons.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/santa.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/saoimageds9.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sapmachine-jdk.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/satdump.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/satellite-eyes.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/satyrn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sauce-connect.rb, Homebrew/homebrew-cask, 0

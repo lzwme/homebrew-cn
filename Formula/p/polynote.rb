@@ -3,8 +3,8 @@ class Polynote < Formula
 
   desc "Polyglot notebook with first-class Scala support"
   homepage "https:polynote.org"
-  url "https:github.compolynotepolynotereleasesdownload0.6.0polynote-dist.tar.gz"
-  sha256 "ec4e0e434f5996e83fd9490dbd6b99cbb724a39fa4074d3198eb16662ddf1d4a"
+  url "https:github.compolynotepolynotereleasesdownload0.6.1polynote-dist.tar.gz"
+  sha256 "3d460e6929945591b6781ce11b11df8eebbfb9b6f0b3203861e70687c3eca3a1"
   license "Apache-2.0"
 
   # Upstream marks all releases as "pre-release", so we have to use
@@ -26,13 +26,12 @@ class Polynote < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_sequoia: "3108301f5ac48280748b5bcb39d3d9a58163c01a746298e0fd52c356f60dce9d"
-    sha256 cellar: :any, arm64_sonoma:  "97f65023ac434561f2d6d2805cca4f42d8fd8ebece48db502774abe4451a395d"
-    sha256 cellar: :any, arm64_ventura: "099ee95666dab608cb20e6cf0a3ea6deddd2aa068e17f5d4b4a3e81e4a10f2b3"
-    sha256 cellar: :any, sonoma:        "023f3ec9fbbf8f609f50f2a5af29a219ad0f92bacaaaab04171ac0336e35749b"
-    sha256 cellar: :any, ventura:       "4f615c977c0f8fce74196f5edd3b4b206ecc49642e9488cf429c098633ca052b"
-    sha256               x86_64_linux:  "b45a939832aef9806c719241f96371f4672a7f46bb23f04bd672417083cd3038"
+    sha256 cellar: :any, arm64_sequoia: "9b2efac6f87a4b3c29b2d12a93fffa42f2198d8836ef438ef1e56e40332601f2"
+    sha256 cellar: :any, arm64_sonoma:  "70cfaab129c7d151d28295af6ed37ce251b2a37b619cde49ec20b5325309226b"
+    sha256 cellar: :any, arm64_ventura: "b7d8fe06b593b1b8ee381b6b28d64a6202db69ddb988ac46fef84886bfac5725"
+    sha256 cellar: :any, sonoma:        "07716c02135db664f847fbb3c85676582729d19218ab3bbef44a0f6903debf52"
+    sha256 cellar: :any, ventura:       "3364fdd8e9136617db7a9a647e2175ff16e215cc18bfd85a67c007ce581cd2d3"
+    sha256               x86_64_linux:  "a62217d545dcbb8a7944defde2cade6f1dc802478f10749a688f370e19d0dc4e"
   end
 
   depends_on "numpy" # used by `jep` for Java primitive arrays
@@ -40,8 +39,8 @@ class Polynote < Formula
   depends_on "python@3.13"
 
   resource "jep" do
-    url "https:files.pythonhosted.orgpackages16943bc40b4683442bd34e7c511cbe5c1a1bb8d5d6de1f4955991a07fe02c836jep-4.2.0.tar.gz"
-    sha256 "636368786b4f3dc29510454e0580a432e45e696de99ce973a3caef6faec35287"
+    url "https:files.pythonhosted.orgpackages0e92994ae1013446f26103e9ff71676f4c96a7a6c0a9d6baa8f12805884f7b5ejep-4.2.2.tar.gz"
+    sha256 "4eb79d903133e468c239ba39c8bb5ade021ef202025bf1c9b34a210003e0eab9"
   end
 
   def install
