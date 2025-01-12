@@ -1,19 +1,18 @@
 class Lfe < Formula
   desc "Concurrent Lisp for the Erlang VM"
   homepage "https:lfe.io"
-  url "https:github.comlfelfearchiverefstagsv2.1.5.tar.gz"
-  sha256 "41ea68afc8bbab55c63928505ce41d91bf30751d7fc511de6d8307efdede4a4f"
+  url "https:github.comlfelfearchiverefstagsv2.2.0.tar.gz"
+  sha256 "5c9de979c64de245ac3ae2f9694559a116b538ca7d18bb3ef07716e0e3a696f3"
   license "Apache-2.0"
-  revision 1
   head "https:github.comlfelfe.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "142c6b31bb5bdc207e0fff1994ce38c2f81dd01368ad8648ad38b64578203dad"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f9ca9cc876a23e5031ed016c0ad6ed776c80824f3fed7885474117b2387f1c59"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "34e32f57ba796f4824468d88c9ab77e9dfd571ca2d81d2e33a96831c02d08b27"
-    sha256 cellar: :any_skip_relocation, sonoma:        "22670d643dc72207be0ee37ef5173e73e09b0b7877a650f11a92281adfac81e7"
-    sha256 cellar: :any_skip_relocation, ventura:       "207a697f04f973c1dda1fc74374bb793eaee47e1e8ac20791dd5e7c349cedf86"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70441d2dcde3285428c011695776fdca217e8da4c19867d4e3e98de690a30f69"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a159ef143d797954d5db248f504e2b2886f21687cb7ec19eb851eead8634897e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a57b6e2fe92cc45259a480b3211d1c88c00c9be76c468b02f473c9103a411c56"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "97316cd6885403793add3cd91ca7bbf4cc41f74149a0e245444a79e4d9c7838a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0c4e7f7c678353746db25ee68ec489be421876b19fb42acedd71961260d4dfb6"
+    sha256 cellar: :any_skip_relocation, ventura:       "2f6a92d45737000cf116f91e4576e5da979a934da8c27ab91cc8f28bf9e5aeac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "460cdd4bc3060210efa2bcdb29b2956a38f921cf9b59c5157ba34f3b4509668f"
   end
 
   depends_on "emacs" => :build

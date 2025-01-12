@@ -1,18 +1,18 @@
 class Scipy < Formula
   desc "Software for mathematics, science, and engineering"
   homepage "https:www.scipy.org"
-  url "https:files.pythonhosted.orgpackagesd97b2b8ac283cf32465ed08bc20a83d559fe7b174a484781702ba8accea001d6scipy-1.15.0.tar.gz"
-  sha256 "300742e2cc94e36a2880ebe464a1c8b4352a7b0f3e36ec3d2ac006cdbe0219ac"
+  url "https:files.pythonhosted.orgpackages76c68eb0654ba0c7d0bb1bf67bf8fbace101a8e4f250f7722371105e8b6f68fcscipy-1.15.1.tar.gz"
+  sha256 "033a75ddad1463970c96a88063a1df87ccfddd526437136b6ee81ff0312ebdf6"
   license "BSD-3-Clause"
   head "https:github.comscipyscipy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "51d99f5fe4ea1f86082892e70fbce5cd19ca9f8b7dd94c8807b5d30b5a664796"
-    sha256 cellar: :any,                 arm64_sonoma:  "a07807db407ed6b5b1e656005443e921257249a322035bf07f881e78ca2c3c72"
-    sha256 cellar: :any,                 arm64_ventura: "0a21e8fa8322d501545d7b87f4a8f62abdaad1dda8208dfea614d13ace28bfa5"
-    sha256 cellar: :any,                 sonoma:        "7be516fc1bcd44bcd470841c723c946a60e3dfe1b8a83867c9d982583d05f30d"
-    sha256 cellar: :any,                 ventura:       "73ad4e670effc4712ab06c85e3c258f24710e84a851dab0afba5b3cf04f18b05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96542b1905d985ffb426243b407d6e1bc82cab84d6ec72c764f6d91c9c7d2e00"
+    sha256 cellar: :any,                 arm64_sequoia: "6472d44d3dfa4a422c6cdfab4b8a1cc9ee16b0c9e06b03f0c43c65ef8b6b479a"
+    sha256 cellar: :any,                 arm64_sonoma:  "bc753cc567ec613d2e608bdc3f281d317924a942653ca97c6706854ac86bb75f"
+    sha256 cellar: :any,                 arm64_ventura: "1439cbcfcdbd2703c0dc49255e2687ab98b816d783a3d000da41d1fd0a74b7e1"
+    sha256 cellar: :any,                 sonoma:        "f1704b5265584a54bc1f7ecd6f01f0d111a574a6dae91a6afade3dab17181690"
+    sha256 cellar: :any,                 ventura:       "0399839970756650f097d49c8f690b1c6ef4c6b8e82249b34732970f4aaca0a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33c52f32ca50f844b879507689f4be97a0f6a82b17e95059adc17ccf434e473f"
   end
 
   depends_on "meson" => :build

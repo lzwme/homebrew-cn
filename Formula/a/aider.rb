@@ -3,18 +3,18 @@ class Aider < Formula
 
   desc "AI pair programming in your terminal"
   homepage "https:aider.chat"
-  url "https:files.pythonhosted.orgpackagesbabb40bf7c9e8cfacddc48ea787caba543719ffa79106628333da744b0e89fc1aider_chat-0.70.0.tar.gz"
-  sha256 "1841af4bbf56bdb451e3c5cfd9cdaec13da39015c4c04184a24c635c3d7fd21d"
+  url "https:files.pythonhosted.orgpackages023faf783ff5357d61704ffe1cf2fd0d74f3a100b672542203b6712a5abe60a1aider_chat-0.71.0.tar.gz"
+  sha256 "ceaafc1ccadfda908d799485835d7e0e69d83bedfdc32fda81827d8e72c06d97"
   license "Apache-2.0"
   head "https:github.compaul-gauthieraider.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4f847fd51e0dc936907c0787f10b1ed08d148666a2c7593b51e09deec213bc58"
-    sha256 cellar: :any,                 arm64_sonoma:  "c55de07be72b7969da928ae43a7087f8c278fc5de8dfa8824f05f8763259696d"
-    sha256 cellar: :any,                 arm64_ventura: "ff94a08a9dce7f1cbcd98f1746c0b6600e23e5b4eda52bab9f38e1f7d60aa92c"
-    sha256 cellar: :any,                 sonoma:        "60fc8b8a71983899219f3aa11f0c2061b8d35b4582a72ae8694ab8b5d6e0c21f"
-    sha256 cellar: :any,                 ventura:       "78a87188751fe2b7fddca61332add2fd53647a9769a37e9325ebd574bd68947a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f92f6e562631ce04b86d74e23026578293483501cd012c2d049c423f4336feb"
+    sha256 cellar: :any,                 arm64_sequoia: "9084d6f729b985c7c9667a47b7711a7e1de288269dc1e45593095e96556ab4b9"
+    sha256 cellar: :any,                 arm64_sonoma:  "1ecab51d1a8b7acb243a456823050bada5e3de0fbbcedf9b7be85e25875d8e05"
+    sha256 cellar: :any,                 arm64_ventura: "3b4b5e5279e8fb48111ba9691485394169edf871b6ca308af0cb2fde1cf5e9ad"
+    sha256 cellar: :any,                 sonoma:        "eb2763a6f13ba2d4d754c3251e4ae2d07547aae345fb1c99533cb9227879e86e"
+    sha256 cellar: :any,                 ventura:       "bf46d900b2497797071ad14c733f676993a000784528cf636a15328b65886fb9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a30e8809106328b18127dae339064a7c77a3811b426fe1a7228ab70822b38e5a"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -197,8 +197,8 @@ class Aider < Formula
   end
 
   resource "litellm" do
-    url "https:files.pythonhosted.orgpackages25e2afec4cb067bafe073f98d4ceb7b5e0eeb788b85acfc926518108171c7ef4litellm-1.53.9.tar.gz"
-    sha256 "30f3e920e795f329fd0f02287f9b17e3f46c5e59bbdf69356e0e3ec39e210019"
+    url "https:files.pythonhosted.orgpackages54b3636fe74190e68450df6a87a1694f280f0c1258919d8a7acdd0962feaebf1litellm-1.57.5.tar.gz"
+    sha256 "981461d67dc851ee4dd204c238e9528cbeffb3001a7e9cf2d5c32982373335af"
   end
 
   resource "markdown-it-py" do
@@ -372,8 +372,8 @@ class Aider < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages4354292f26c208734e9a7f067aea4a7e282c080750c4546559b58e2e45413ca0setuptools-75.6.0.tar.gz"
-    sha256 "8199222558df7c86216af4f84c30e9b34a61d8ba19366cc914424cdbd28252f6"
+    url "https:files.pythonhosted.orgpackages92ec089608b791d210aec4e7f97488e67ab0d33add3efccb83a056cbafe3a2a6setuptools-75.8.0.tar.gz"
+    sha256 "c5afc8f407c626b8313a86e10311dd3f661c6cd9c09d4bf8c15c0e11f9f2b0e6"
   end
 
   resource "six" do

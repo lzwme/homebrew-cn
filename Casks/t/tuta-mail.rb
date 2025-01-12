@@ -1,15 +1,14 @@
 cask "tuta-mail" do
-  version "259.241223.2"
-  sha256 "439087daf31f83f13dc51e38edca0d5a1838b11c6afc6429cf3550e3389f2875"
+  version "259.250108.1"
+  sha256 :no_check
 
-  url "https:github.comtutaotutanotareleasesdownloadtutanota-desktop-release-#{version}tutanota-desktop-mac.dmg",
-      verified: "github.comtutaotutanota"
+  url "https://app.tuta.com/desktop/tutanota-desktop-mac.dmg"
   name "Tuta Mail"
   desc "Email client"
-  homepage "https:tuta.com"
+  homepage "https://tuta.com/"
 
   livecheck do
-    url "https:app.tuta.comdesktoplatest-mac.yml"
+    url "https://app.tuta.com/desktop/latest-mac.yml"
     strategy :electron_builder
   end
 
@@ -19,10 +18,10 @@ cask "tuta-mail" do
   app "Tuta Mail.app"
 
   zap trash: [
-    "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsde.tutao.tutanota.sfl*",
-    "~LibraryApplication Supporttutanota-desktop",
-    "~LibraryCachesde.tutao.tutanota",
-    "~LibraryCachesde.tutao.tutanota.ShipIt",
-    "~LibraryPreferencesde.tutao.tutanota.plist",
+    "~/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/de.tutao.tutanota.sfl*",
+    "~/Library/Application Support/tutanota-desktop",
+    "~/Library/Caches/de.tutao.tutanota",
+    "~/Library/Caches/de.tutao.tutanota.ShipIt",
+    "~/Library/Preferences/de.tutao.tutanota.plist",
   ]
 end

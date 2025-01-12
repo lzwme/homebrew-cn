@@ -8,6 +8,7 @@ cask "nocturn" do
   homepage "https:github.comk0kubunNocturn"
 
   deprecate! date: "2024-01-11", because: :discontinued
+  disable! date: "2025-01-11", because: :discontinued
 
   app "Nocturn-darwin-x64Nocturn.app"
 

@@ -1,10 +1,10 @@
 class Cmake < Formula
   desc "Cross-platform make"
   homepage "https:www.cmake.org"
-  url "https:github.comKitwareCMakereleasesdownloadv3.31.3cmake-3.31.3.tar.gz"
-  mirror "http:fresh-center.netlinuxmisccmake-3.31.3.tar.gz"
-  mirror "http:fresh-center.netlinuxmisclegacycmake-3.31.3.tar.gz"
-  sha256 "fac45bc6d410b49b3113ab866074888d6c9e9dc81a141874446eb239ac38cb87"
+  url "https:github.comKitwareCMakereleasesdownloadv3.31.4cmake-3.31.4.tar.gz"
+  mirror "http:fresh-center.netlinuxmisccmake-3.31.4.tar.gz"
+  mirror "http:fresh-center.netlinuxmisclegacycmake-3.31.4.tar.gz"
+  sha256 "a6130bfe75f5ba5c73e672e34359f7c0a1931521957e8393a5c2922c8b0f7f25"
   license "BSD-3-Clause"
   head "https:gitlab.kitware.comcmakecmake.git", branch: "master"
 
@@ -17,12 +17,12 @@ class Cmake < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89891f8bcbec3470764bd7d0460773d354b04f9331baaab97ba0fe2ae86e5036"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b6ac3e359b4e5e2534c9ab556c218ae4744fc00e9121fca7e5f91abe48f3689"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0d3c917fec6e56e93b0eaad41f59887615efb4d4418234cc4170c2972977e4c8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4a8069852f7a0940680ca7834de9818fd661e6eeea1389054eb1b831b913025c"
-    sha256 cellar: :any_skip_relocation, ventura:       "b7a3f9483c6163bf47bab7f1cf44f19a908e6649afc426ed730763afdce34505"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2b0e8d31bf157218a9a119675b26cc2d559d4bd7c2806f3904e689b5406d523"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "038ad9efc2be6564f870d8faafd1a3871e43da6ea398f9c1fe2ffe7e90831718"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "082e2ed3a5ac66054c5f4bc1955250ae95621286863f4cce6fbd4ce860f1b682"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "14552df25322c69da795c7d365486510dc7c935b9eac387b52401ca8b9c4ee77"
+    sha256 cellar: :any_skip_relocation, sonoma:        "12a29092f879bf8d0c996f74338ecfaa46fba61a8f60188dbef230a6e4ddaefa"
+    sha256 cellar: :any_skip_relocation, ventura:       "b8494043df00cee8781f09a386f61f90d567fdba7f9f4a291c73822a84c23018"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f16b2f02b1c3fb1429d78deabfca7149d23e5c56fb621fd8175b96e05e21a86d"
   end
 
   uses_from_macos "ncurses"

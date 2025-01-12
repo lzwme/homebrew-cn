@@ -29,6 +29,8 @@ class LibassuanAT2 < Formula
 
   keg_only :versioned_formula
 
+  deprecate! date: "2025-01-11", because: :versioned_formula
+
   depends_on "libgpg-error"
 
   def install

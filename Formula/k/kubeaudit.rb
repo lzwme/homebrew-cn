@@ -17,6 +17,9 @@ class Kubeaudit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "36c94b606075a297fd812aa94fa7c8c95f5cac0dcec866d0f3d6d7c6ec6e8a74"
   end
 
+  # https:github.comShopifykubeauditpull594
+  deprecate! date: "2025-01-10", because: :repo_archived, replacement: "kube-bench"
+
   depends_on "go" => :build
 
   def install

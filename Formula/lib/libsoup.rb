@@ -1,17 +1,17 @@
 class Libsoup < Formula
   desc "HTTP client/server library for GNOME"
   homepage "https://wiki.gnome.org/Projects/libsoup"
-  url "https://download.gnome.org/sources/libsoup/3.6/libsoup-3.6.1.tar.xz"
-  sha256 "ceb1f1aa2bdd73b2cd8159d3998c96c55ef097ef15e4b4f36029209fa18af838"
+  url "https://download.gnome.org/sources/libsoup/3.6/libsoup-3.6.3.tar.xz"
+  sha256 "a0d84ab07bd168b317d319b0dc40c8b301b4543fba2ec42fa733914b2081afbd"
   license "LGPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_sequoia: "59038c9b01838bd300de8378545f93ac519f5514fdbc46eb5d14f3c14fda283d"
-    sha256 arm64_sonoma:  "0ca5b4869214fdbe8f94a95cadd4f54c76e90e7d654532e2dd47aead8e7115b1"
-    sha256 arm64_ventura: "6e1ca00c8119f8822b07dd5f5afeb3a81b3826aa5996041690e83b41f0325eaa"
-    sha256 sonoma:        "86f64098da67f9990514394e8628395adfec0a74047f95e64b3d72a6be5e3ddd"
-    sha256 ventura:       "e10c4fd428919efd579e021ebfbffd5b99568456503bd8e4f4fd170924fc9dda"
-    sha256 x86_64_linux:  "f104ffff26ffffbc3838c42fe3bdbff8be2f1b25f2e4570d2c30005dc24b3e48"
+    sha256 arm64_sequoia: "8ea0a75139911db1479f6532d02b8164262a7abec64f3afef08eb15633bfedae"
+    sha256 arm64_sonoma:  "bcd716ae7b071110c49ea594388e029a8961e4e9aaae11cee8059bbbbb84376f"
+    sha256 arm64_ventura: "4bf424dc4f8ccae8736d88c98b94404fce2b4d9d806a2de11364e68d16895f05"
+    sha256 sonoma:        "0599b0422068ecae104b556054a7fdaadf007eab0b9ebd2d8f94045e2300feea"
+    sha256 ventura:       "8558478d19c58ee316f59469fc48958412b38ba682cffb74ed5d940297fdd649"
+    sha256 x86_64_linux:  "8183d36dee6b03b7ca41362ed1e1ad226da7e34ee446d964dc55bb6d7ec38b71"
   end
 
   depends_on "gobject-introspection" => :build

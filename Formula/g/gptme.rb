@@ -9,13 +9,13 @@ class Gptme < Formula
   head "https:github.comErikBjaregptme.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "165a2925c6d1183649ad4c21d7df05bb454db9a134d85ca34ce3a2d68708a38f"
-    sha256 cellar: :any,                 arm64_sonoma:  "82e5b81778629824d5c039da861a7c963a664af041fd1a121cfe17266fab2699"
-    sha256 cellar: :any,                 arm64_ventura: "3083c6502e3232b2b6d78fcd35a18912c66d9e30ff00c9d1a93428c350f70d1b"
-    sha256 cellar: :any,                 sonoma:        "c6c9071967c72182cc822cb9aa6d1ad6cdb99c9cc4bfdc2539a9608f5f921e34"
-    sha256 cellar: :any,                 ventura:       "f142a104f6c8f38af1e6123b78b0604394b73faa2ae814e67ceef64c952f4c43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "abf97069180180d2840a081d18c09be4d5186f74832a907e59863695c42aaf92"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "36b9b85831995019c57c19964572068711084959248041431275bf5e998ba077"
+    sha256 cellar: :any,                 arm64_sonoma:  "c03ff4e11a48d124c0a733185a013efeff304774e96503e5489466f8f164c73a"
+    sha256 cellar: :any,                 arm64_ventura: "9b8a9968a1db72c10b69656e73c4585f6b51782f68714ca186a6f86b19a5376f"
+    sha256 cellar: :any,                 sonoma:        "8d5b056bfffe8827001875fe4c7108079053d1d672eb34af1d5d462906be4ef4"
+    sha256 cellar: :any,                 ventura:       "86dc762ce9375a5ac9e636e71fbc9dcab80bdad7431ebd8a81988a2b15620e03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e0e09a86ddc289b9b6c3b16dba6f714273e3c5a1238f413837a3b3d7ec185de"
   end
 
   depends_on "rust" => :build
@@ -276,6 +276,9 @@ class Gptme < Formula
     sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
   end
 
+  # patch to support poetry 2.0, upstream pr ref, https:github.comErikBjaregptmepull392
+  patch :DATA
+
   def install
     virtualenv_install_with_resources
 
@@ -291,3 +294,61 @@ class Gptme < Formula
       shell_output("#{bin}gptme -n 2>&1")
   end
 end
+
+__END__
+diff --git apyproject.toml bpyproject.toml
+index b6ee93e..f6df181 100644
+--- apyproject.toml
++++ bpyproject.toml
+@@ -1,8 +1,10 @@
+-[tool.poetry]
++[project]
+ name = "gptme"
+ version = "0.25.0"
+ description = "Personal AI assistant in your terminal that can use the shell, run code, edit files, browse the web, and use vision. An unconstrained local alternative to ChatGPT's Code Interpreter."
+-authors = ["Erik Bjäreholt <erik@bjareho.lt>"]
++authors = [
++    { name = "Erik Bjäreholt", email = "erik@bjareho.lt>" },
++]
+ readme = "README.md"
+ license = "MIT"
+ packages = [
+@@ -11,24 +13,6 @@ packages = [
+
+ include = ["gptmeserverstatic***", "medialogo.png"]
+
+-[project]
+-name = "gptme"
+-dependencies = [
+-    "python = \"^3.10\"",
+-    "click = \"^8.0\"",
+-    "python-dotenv = \"^1.0.0\"",
+-    "rich = \"^13.5.2\"",
+-    "tabulate = \"*\"",
+-    "pick = \"^2.2.0\"",
+-    "tiktoken = \">=0.7\"",
+-    "tomlkit = \"*\"",
+-    "typing-extensions = \"*\"",
+-    "platformdirs = \"^4.3\"",
+-    "lxml = \"*\"",
+-    "ipython = \"^8.17.2\"",
+-    "bashlex = \"^0.18\"",
+-]
+-
+ [project.scripts]
+ gptme = "gptme.cli:main"
+ gptme-server = "gptme.server.cli:main"
+@@ -42,13 +26,6 @@ Repository = "https:github.comErikBjaregptme"
+ Documentation = "https:gptme.orgdocs"
+ Issues = "https:github.comErikBjaregptmeissues"
+
+-[tool.poetry.scripts]
+-gptme = "gptme.cli:main"
+-gptme-server = "gptme.server.cli:main"
+-gptme-eval = "gptme.eval.main:main"
+-gptme-util = "gptme.util.cli:main"
+-gptme-nc = "gptme.ncurses:main"
+-
+ [tool.poetry.dependencies]
+ python = "^3.10"
+ click = "^8.0"

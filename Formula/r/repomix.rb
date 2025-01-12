@@ -1,17 +1,17 @@
 class Repomix < Formula
   desc "Pack repository contents into a single AI-friendly file"
   homepage "https:github.comyamadashyrepomix"
-  url "https:registry.npmjs.orgrepomix-repomix-0.2.19.tgz"
-  sha256 "a30903fae40f95936229d0f385810865a40ac8e393ce476fdc75d5165979576f"
+  url "https:registry.npmjs.orgrepomix-repomix-0.2.20.tgz"
+  sha256 "b5a2e5454c7de25470d1cdf3ce54da1ecc23a9abe823d3ceacba7f205ce1c585"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "696d0dd6f8c3ce86f36909a8dace1d72b37fa1ce89e196952f6867d680c8de88"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "696d0dd6f8c3ce86f36909a8dace1d72b37fa1ce89e196952f6867d680c8de88"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "696d0dd6f8c3ce86f36909a8dace1d72b37fa1ce89e196952f6867d680c8de88"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b9238e836aab24f2d743582deb33e9c83d8eea7fcfb15eb4954d0cc5b3fb48d2"
-    sha256 cellar: :any_skip_relocation, ventura:       "b9238e836aab24f2d743582deb33e9c83d8eea7fcfb15eb4954d0cc5b3fb48d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "110900214e99c803c194b04807de20197d29c13055959a1190c39adfd71995f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "002f2dd076541382d831c79b134cd59e27e063d49b8b07375e59ffdaf50ad8a6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "002f2dd076541382d831c79b134cd59e27e063d49b8b07375e59ffdaf50ad8a6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "002f2dd076541382d831c79b134cd59e27e063d49b8b07375e59ffdaf50ad8a6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f1dd7048416b69c85e3a8ec703f863e20265091fd2e0daf9ea2cf6b9c8318352"
+    sha256 cellar: :any_skip_relocation, ventura:       "f1dd7048416b69c85e3a8ec703f863e20265091fd2e0daf9ea2cf6b9c8318352"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0f20990cdf8357dc2c446ec6f0506c3c7a11057becf60625e60d512851519c9"
   end
 
   depends_on "node"

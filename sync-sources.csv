@@ -132,14 +132,13 @@ Homebrew-homebrew-core/Formula/a/ansible-language-server.rb, Homebrew/homebrew-c
 Homebrew-homebrew-core/Formula/a/ansible-lint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ansible@10.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/a/ansible@7.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible@8.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansible@9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansifilter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ansilove.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ansiweather.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ant-contrib.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/a/ant.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/ant.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ant@1.9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/antidote.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/antigen.rb, Homebrew/homebrew-core, 1
@@ -1019,6 +1018,7 @@ Homebrew-homebrew-core/Formula/c/coda-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/code-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/code-minimap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/code-server.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/codeberg-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/codec2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/codecov-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/codelimit.rb, Homebrew/homebrew-core, 1
@@ -3164,6 +3164,7 @@ Homebrew-homebrew-core/Formula/k/ktmpl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/ktoblzcheck.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/ktor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kty.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kube-bench.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kube-linter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kube-ps1.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kube-score.rb, Homebrew/homebrew-core, 1
@@ -6454,7 +6455,6 @@ Homebrew-homebrew-core/Formula/t/termcolor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terminal-notifier.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terminalimageviewer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terminator.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/t/termius.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termrec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termscp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termshark.rb, Homebrew/homebrew-core, 1
@@ -9013,6 +9013,8 @@ Homebrew-homebrew-cask/Casks/font/font-a/font-assistant.rb, Homebrew/homebrew-ca
 Homebrew-homebrew-cask/Casks/font/font-a/font-astloch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-asul.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-athiti.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-a/font-atkinson-hyperlegible-mono.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-a/font-atkinson-hyperlegible-next.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-atkinson-hyperlegible.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-atma.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-atomic-age.rb, Homebrew/homebrew-cask, 1
@@ -12751,7 +12753,7 @@ Homebrew-homebrew-cask/Casks/o/openvanilla.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openvisualtraceroute.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/openvpn-connect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/openwebstart.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/o/openzfs.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/o/openzfs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opera-crypto@developer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/opera-gx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/opera-mobile-emulator.rb, Homebrew/homebrew-cask, 0
@@ -14172,7 +14174,7 @@ Homebrew-homebrew-cask/Casks/t/turbo-boost-switcher.rb, Homebrew/homebrew-cask, 
 Homebrew-homebrew-cask/Casks/t/turbovnc-viewer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/turtl.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tusk.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/t/tuta-mail.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/t/tuta-mail.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tuxera-ntfs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tuxguitar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tv-browser.rb, Homebrew/homebrew-cask, 0

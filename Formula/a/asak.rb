@@ -2,17 +2,18 @@ class Asak < Formula
   desc "Cross-platform audio recordingplayback CLI tool with TUI"
   homepage "https:github.comchaosprintasak"
   url "https:github.comchaosprintasakarchiverefstagsv0.3.5.tar.gz"
-  sha256 "dd18f4c777bdba30a87ff4c2d3062ed6a15b8f4ed44f9a19d24fd3896c65aea6"
+  sha256 "da90a31924a6ac7ed06fa54d5060290535afdfe1a6fc3e69ad1ed5bc82757e92"
   license "MIT"
   head "https:github.comchaosprintasak.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27f85372d811d595deb8fe3c4109b6f21e994239cc42960f20feef6f36cbe4a0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b351b44a345d7365a2db6bb171c329ff60a5dca881e149fc69c0374ca573de71"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cb3ba1659b7ea8362939a894ed18d39e9bee1c1fb322a44486e9ceebbeff24c7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1f62eda3c07127c794a1ffe34fd94c3903bcdcfb7fdfe86d1a2e44655ae49c94"
-    sha256 cellar: :any_skip_relocation, ventura:       "1f73391abd8d6f38c3d39815ba4927cf62bd12b96db82d070dd420784379df52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0334dca2e8a77f943f4fc0bfb43b540c7ae9c76452685df22bdbf1e049cee40c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79e247315c14b0a29016ba9856f673d877229af3a7aa4755cc9887ea110b2b20"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01a324c75ba86d32ba07a3184d83921bf05824aaf2c327a5e6c423498969f1c4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "feb576b39f6c74a6876b14a0fa28f5560e1dad477831965465f44a68d465ed5e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4755f43dda07d16847f7a153ea3c6832c0b6de12c4ebf0dfa53d52bc5e48bfee"
+    sha256 cellar: :any_skip_relocation, ventura:       "2d605e4e59e4c111c890547a42f9634fe4781b4b025cd2e8a61f645fafec0d4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a7dc3b8e3729bc5d1d9cd7e35a701187334e6da2f80e02eece663b1d4ec6c9d"
   end
 
   depends_on "pkgconf" => :build
@@ -21,12 +22,6 @@ class Asak < Formula
 
   on_linux do
     depends_on "alsa-lib"
-  end
-
-  # release version patch, upstream pr ref, https:github.comchaosprintasakpull24
-  patch do
-    url "https:github.comchaosprintasakcommit303c9b916cb339e4371a682cb37b7cdc72fa023c.patch?full_index=1"
-    sha256 "e0afa58db64adc57c606aaa0846b7c766a121100e5e574e9a7c4578be439a7c5"
   end
 
   def install

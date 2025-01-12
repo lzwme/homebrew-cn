@@ -17,6 +17,8 @@ class LibspellingAT02 < Formula
 
   keg_only :versioned_formula
 
+  deprecate! date: "2025-01-11", because: :versioned_formula
+
   depends_on "gobject-introspection" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build

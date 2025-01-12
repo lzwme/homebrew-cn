@@ -1,17 +1,17 @@
 class Himalaya < Formula
   desc "CLI email client written in Rust"
   homepage "https:github.compimalayahimalaya"
-  url "https:github.compimalayahimalayaarchiverefstagsv1.0.0.tar.gz"
-  sha256 "2f16737d4ff29b8495979045abb94723b684b200b98cab27ae45f8b270da5b9c"
+  url "https:github.compimalayahimalayaarchiverefstagsv1.1.0.tar.gz"
+  sha256 "bc5ee10ebdb23ea205215650070373dc591f083a96b1d6d038aa23a105256f94"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e66116aba11287b4be107c4d469b2338bf77ed696cd2bfc1afa9ae79e9ebf2ad"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a975bfebc4e4c1bd7d3c265013b26b7001d0ef5642027670ecc5ab9511f68725"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e862a308f1bd66f94583c96c377c38a4711f12b7eeff917116611e9f29a3b86b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "90bb2235eede620bec1c0a372b4aa7ee01f294d262c1f02234f7e8ea83468516"
-    sha256 cellar: :any_skip_relocation, ventura:       "296365ffa8b5da92cddad7153cc32526997d2df49dcc678ed3164466d2e090eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffd3f80deef93d97135976a3bef2c7f40642b0637be71f7bf4c95e2861ccbde4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4faaa05c76bc7dd4d2423479e34af0cff58aba3f95bcd5a96ee6b154326460d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9194d490d1c2356183427ebe2762a813661535944d34daa63e2d75d976ef6bbd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0ef6045f2bf47e807661cf800ff036e9df0c2e99fcea5e7d00ba0bed15a0160e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a2782ddbd515580d4ce47d939155d31b3bf744500ef566c771d839bc32b05f5f"
+    sha256 cellar: :any_skip_relocation, ventura:       "159ef73b0f7b1fbca6cd8a509a993b7d18df156eddce6b04ad5e22360343d35f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b564756c788cadcae7e27532be8008896bf3cf742c7b5f9c861f966576364df4"
   end
 
   depends_on "pkgconf" => :build
@@ -19,6 +19,12 @@ class Himalaya < Formula
 
   on_linux do
     depends_on "openssl@3"
+  end
+
+  # revert `cc` crate to 1.2.7, upstream pr ref, https:github.compimalayahimalayapull542
+  patch do
+    url "https:github.compimalayahimalayacommitea70e7c123fd8b30e5b36ab62bfcfafa63779797.patch?full_index=1"
+    sha256 "44e8c415819272971787761f285be397ddc384a4230890bf1c8494c786b45373"
   end
 
   def install

@@ -1,8 +1,8 @@
 class Libngspice < Formula
   desc "Spice circuit simulator as shared library"
   homepage "https://ngspice.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/44/ngspice-44.tar.gz"
-  sha256 "3865d13ab44f1f01f68c7ac0e0716984e45dce5a86d126603c26d8df30161e9b"
+  url "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/44.2/ngspice-44.2.tar.gz"
+  sha256 "e7dadfb7bd5474fd22409c1e5a67acdec19f77e597df68e17c5549bc1390d7fd"
   license :cannot_represent
 
   livecheck do
@@ -10,13 +10,12 @@ class Libngspice < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "5ca4aafb0d8d00dbec59105f6e9394ad41cac1d336bfa99d6df6f498e092b46d"
-    sha256 cellar: :any,                 arm64_sonoma:  "1dbae25eadece6a55ef3587f036e57637b5445584e01c7f81207d561a0c61157"
-    sha256 cellar: :any,                 arm64_ventura: "976c56210d4d2b8c696a6459655aca268c76c95046823c56b918ac8f2d67e752"
-    sha256 cellar: :any,                 sonoma:        "84ce8f9c8baad54f2fd1fde08a05377ee63105197676e81a3806fccfa4a3a483"
-    sha256 cellar: :any,                 ventura:       "a9d65308d6198d261cc580c5fccef2e3db31e1809f2b244c9e9ab71b6761f787"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5130aeefd3dfecc8dc59bda538e1b11da9c6b6540b225fa5d3ee00fc71db7b09"
+    sha256 cellar: :any,                 arm64_sequoia: "5a4bc846e0ffc9fa23d9c15509b5cf041de5c5dadcf476ffb167302b84f5bf75"
+    sha256 cellar: :any,                 arm64_sonoma:  "be3d94c10d2554bcc43c71f7e6061005280929a551a6c96e3735dcd6060391d5"
+    sha256 cellar: :any,                 arm64_ventura: "63fbc552611b183799b6a0837db9c9f06c0d4f215ccfbfb0f6bc699343931804"
+    sha256 cellar: :any,                 sonoma:        "27eb9642d676e757187eff463ea80dcd2c1bbecb0da4558f4d7c98792e8199b5"
+    sha256 cellar: :any,                 ventura:       "9c9b8a825a59abf6e61518cedf952a3bb62929fa175ac23898603a3a7618c063"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "151d4740e5f524966fa99db6635c338e5a70428b45b098c61ca23d38567fdfef"
   end
 
   head do

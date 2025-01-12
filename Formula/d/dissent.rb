@@ -1,18 +1,28 @@
 class Dissent < Formula
   desc "GTK4 Discord client in Go"
   homepage "https:github.comdiamondburneddissent"
-  url "https:github.comdiamondburneddissentarchiverefstagsv0.0.31.tar.gz"
-  sha256 "0e7ce9abfa6f8fb4c2c88a78ec18a84403d706ef08ceec955d173223835cb17d"
   license "GPL-3.0-or-later"
   head "https:github.comdiamondburneddissent.git", branch: "main"
 
+  stable do
+    url "https:github.comdiamondburneddissentarchiverefstagsv0.0.31.tar.gz"
+    sha256 "0e7ce9abfa6f8fb4c2c88a78ec18a84403d706ef08ceec955d173223835cb17d"
+
+    # Backport support for libspelling 0.4+
+    patch do
+      url "https:github.comdiamondburneddissentcommitb5e6a54c7407522930adc0b3cd39a8ef93bacd61.patch?full_index=1"
+      sha256 "5ba24c584eaf67f9efedc39090e33972515c1922260824bcb5ade8ac714de354"
+    end
+  end
+
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ab4d0479dea0c67a710b925414a9a55b2c3a739c481f975cc19515a6781eee64"
-    sha256 cellar: :any,                 arm64_sonoma:  "24b07f98ed855ec93a1359daea34362b3c36d0ba68843240721e5fdd1f756bbb"
-    sha256 cellar: :any,                 arm64_ventura: "fb20c945259afae12a0733fe88fe95677c1fdbbf2cf138ea36d66b76b341a447"
-    sha256 cellar: :any,                 sonoma:        "4266a0c2b2772822ebe02932638a506f7f3feb0b11f627a7284d757ad0b0d198"
-    sha256 cellar: :any,                 ventura:       "7b64be62c292d8503383de31d2b1a0ba209c1f16cc220d2f02ed8f702099fa9d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8167873b835b53040a38b5d307ffdc2ee67f6b275032417b5f4a9ebfdeb27d5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "d7f234405d49d5cfa1e1733beccfc366d048a3aa78c0053e6fbf4ca799252f1f"
+    sha256 cellar: :any,                 arm64_sonoma:  "f32284f6cc3f48c3bf61ca73388acbaa1fdbc02431ea3438894c412e319a50f2"
+    sha256 cellar: :any,                 arm64_ventura: "a86269627f110e996110801ccbc4b823bb3acf0fd03ccc2227a99afa0122f338"
+    sha256 cellar: :any,                 sonoma:        "42bddfde3dccb451a1bbb783a033e8e02156f379c61636a8847e633139210672"
+    sha256 cellar: :any,                 ventura:       "8ed2bdc466979563c92fb34ef393377dfdce0b923fd97e24c3dae645fd0cd03a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff0e60ec2380e91edf15eef9f71c2230b8eed1facf477810037fe66b414ef78c"
   end
 
   depends_on "go" => :build
@@ -27,7 +37,7 @@ class Dissent < Formula
   depends_on "gtksourceview5"
   depends_on "libadwaita"
   depends_on "libcanberra"
-  depends_on "libspelling@0.2"
+  depends_on "libspelling"
   depends_on "pango"
 
   on_macos do

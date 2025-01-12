@@ -9,6 +9,7 @@ class Bitcoin < Formula
     "BSL-1.0", # srctinyformat.h
     "Sleepycat", # resource("bdb")
   ]
+  revision 1
   head "https:github.combitcoinbitcoin.git", branch: "master"
 
   livecheck do
@@ -17,12 +18,12 @@ class Bitcoin < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9827fe39470644c9e18c2e29a9cc50517d755ab23600dfc15fc73a4c436090df"
-    sha256 cellar: :any,                 arm64_sonoma:  "dadd606914dc46493f9c71f3b12975186f91d15cc139cb3f9630baa4f9207420"
-    sha256 cellar: :any,                 arm64_ventura: "c21b31a816054f9bb708a30d19b7168c4287a1262723d194925ec6550c7152bd"
-    sha256 cellar: :any,                 sonoma:        "0e2895408874d922a18a81df8bbaa65aa67215c8445d6ae7ce856613f18ffd1d"
-    sha256 cellar: :any,                 ventura:       "68e8ddb21ef1fe0a67e2e72f4b5b5f0092304e501deb2aa7ad98ba9850ea5774"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "082c20a351f23b99cb778ae5b643d3ba7d02feeca0cd9adc8474e350fd9c649a"
+    sha256 cellar: :any,                 arm64_sequoia: "25bc41954442f22485590732ca3d73368b2dc8b512ded096f1072e118e97cef1"
+    sha256 cellar: :any,                 arm64_sonoma:  "9118b0e82481236c3ff7f57bf80aaef4a41939d798df28e685aa7139aeec4356"
+    sha256 cellar: :any,                 arm64_ventura: "155d1a175a9d72dd5cfb88cae94fcaa05cddc7ead46044576e084f5c1c4d1bbe"
+    sha256 cellar: :any,                 sonoma:        "888b0308b358613cc6ab1ac905a2ba19e8d6692ecc0e4b902110d9e7bf74c7cc"
+    sha256 cellar: :any,                 ventura:       "b761c3af4225787ee7cf57ecfbf3c47bff7b897885420ce84b0f038fd4286645"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "309692275f6ec837a1d9b8bb58cad44068d0b256affef5b301fd239ed0e64e2e"
   end
 
   depends_on "autoconf" => :build

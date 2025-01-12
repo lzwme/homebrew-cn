@@ -1,19 +1,18 @@
 class Nfpm < Formula
   desc "Simple deb and rpm packager"
   homepage "https:nfpm.goreleaser.com"
-  url "https:github.comgoreleasernfpmarchiverefstagsv2.41.1.tar.gz"
-  sha256 "6fb9713f5b3ec4e44c256b2b22505eb13b8e53a1fa95dc6044a7b7ec2ee9e754"
+  url "https:github.comgoreleasernfpmarchiverefstagsv2.41.2.tar.gz"
+  sha256 "d0b864904b21f2aae6a3066954c8f75bdc456ee1ffa2f76110c24af23b5b3473"
   license "MIT"
   head "https:github.comgoreleasernfpm.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1c4e05ae002983dd31d12081a583b3f1bc905e640b202f9bd190d1de4d2c70e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b1c4e05ae002983dd31d12081a583b3f1bc905e640b202f9bd190d1de4d2c70e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b1c4e05ae002983dd31d12081a583b3f1bc905e640b202f9bd190d1de4d2c70e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "28358161456f6ba210fd3d05ef62266a110c7eeecd7aa1b7c154a675a619d02e"
-    sha256 cellar: :any_skip_relocation, ventura:       "28358161456f6ba210fd3d05ef62266a110c7eeecd7aa1b7c154a675a619d02e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c47d7889d1471ed0f96deb25be8b691c47333b1e6bc29dce1a293d76ebb601aa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "008c765df6a276b766de022374317039ac6f93ea327ba38f21a73dac7dfdf30b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "008c765df6a276b766de022374317039ac6f93ea327ba38f21a73dac7dfdf30b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "008c765df6a276b766de022374317039ac6f93ea327ba38f21a73dac7dfdf30b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0f6ff2785fe44e2bab92e30512ff568866c91c84254db886a7c0ba3490c96c56"
+    sha256 cellar: :any_skip_relocation, ventura:       "0f6ff2785fe44e2bab92e30512ff568866c91c84254db886a7c0ba3490c96c56"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aaaa53b362dda9e766e5713263fe63866983b3ebf981a72fce8bd729efc80692"
   end
 
   depends_on "go" => :build

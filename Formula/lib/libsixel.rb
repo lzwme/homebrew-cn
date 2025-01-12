@@ -1,24 +1,18 @@
 class Libsixel < Formula
   desc "SIXEL encoderdecoder implementation"
   homepage "https:github.comsaitohasixel"
-  url "https:github.comlibsixellibsixelarchiverefstagsv1.10.3.tar.gz"
-  sha256 "028552eb8f2a37c6effda88ee5e8f6d87b5d9601182ddec784a9728865f821e0"
+  url "https:github.comlibsixellibsixelarchiverefstagsv1.10.5.tar.gz"
+  sha256 "b6654928bd423f92e6da39eb1f40f10000ae2cc6247247fc1882dcff6acbdfc8"
   license "MIT"
-  revision 1
   head "https:github.comlibsixellibsixel.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "5d4dacdde6bc424422336bf8ca28625f63f724a9c86bf89cd959c1535c4c55e0"
-    sha256 cellar: :any,                 arm64_sonoma:   "1bef85a71ca069c1cd5a951828e375c28bb7632ed17fbca03abbe132711e47e5"
-    sha256 cellar: :any,                 arm64_ventura:  "22e14314971f7e675545480da01b9b9d32ffb8109f71520071dfe88f82504455"
-    sha256 cellar: :any,                 arm64_monterey: "056f4c105631db9ec5d1ac420ec491a51a130c03707147d5962383611d4d4aba"
-    sha256 cellar: :any,                 arm64_big_sur:  "6742e20e9eef3d16fd501c327abe0ceb535089eea12e07d6ad7a736ff6766400"
-    sha256 cellar: :any,                 sonoma:         "689ab52e2c3b68267ad81c1df629d5c69a66f201aa938074132cfde6b8bcaf87"
-    sha256 cellar: :any,                 ventura:        "c5e4d246b66f25372775f0db1cdf79a1e509f509bf66b5cf04185e5e30e6a32f"
-    sha256 cellar: :any,                 monterey:       "43658b6a576c0792e99734ef9d82e9a9d767fddeaf86e4f7c724cd21ee941746"
-    sha256 cellar: :any,                 big_sur:        "920afd79faa01b7ec960901564a0b38e466ac9a7a29f7742be1d452c83b5e4f3"
-    sha256 cellar: :any,                 catalina:       "1e2c787edf46446c7fd9b40313dc2a72fe8dfa681030d0cf2f213568e8ea460d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f496efefbc5166488888d41e05cbdef0d9c581d152d6c79181a1bdffd0f36ff7"
+    sha256 cellar: :any,                 arm64_sequoia: "88cbe981c41523b73f930f4016f998766c0cea0c208f7689c784dcfd81fc76fa"
+    sha256 cellar: :any,                 arm64_sonoma:  "dc6b0e6415de00ff5a57eb6feb5010418cd3d6550b6203daa32a812404d0124c"
+    sha256 cellar: :any,                 arm64_ventura: "08aa4abca3775c48d84eba8ce64e94ce4f82dfc115f54b7db1125cb38f0d7bfa"
+    sha256 cellar: :any,                 sonoma:        "85f135277174340376fb0e6ba6de5804bc017380224411f4ffca4956c6b4512c"
+    sha256 cellar: :any,                 ventura:       "65e7a29a633dafc3306065c4fea861cedf9a51122f9aa22c3abfd8e3e664547b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afac541b74c1f46fea3c1e2b2c2443e93d769d221d3e512ef9af2a5ce2b292e4"
   end
 
   depends_on "meson" => :build

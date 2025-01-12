@@ -1,8 +1,8 @@
 class Pugixml < Formula
   desc "Light-weight C++ XML processing library"
   homepage "https:pugixml.org"
-  url "https:github.comzeuxpugixmlreleasesdownloadv1.14pugixml-1.14.tar.gz"
-  sha256 "2f10e276870c64b1db6809050a75e11a897a8d7456c4be5c6b2e35a11168a015"
+  url "https:github.comzeuxpugixmlreleasesdownloadv1.15pugixml-1.15.tar.gz"
+  sha256 "655ade57fa703fb421c2eb9a0113b5064bddb145d415dd1f88c79353d90d511a"
   license "MIT"
 
   livecheck do
@@ -11,22 +11,23 @@ class Pugixml < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "0f41be0efe77882d6d0b65ca703a788027b71142b89ddbe434ac39eb8a5c2366"
-    sha256 cellar: :any,                 arm64_sonoma:   "84389a39deb0147cc58ace55574299b2bc0099a405c637aa19d8dd4c511527f8"
-    sha256 cellar: :any,                 arm64_ventura:  "3e5ca11c38b02bc82571af1765c645852d73947047b40b4bba62d3cc64e26367"
-    sha256 cellar: :any,                 arm64_monterey: "d0508642948a557dfe8b0ea0c764d350175e43730b3012ca1996ef3764aa4c4f"
-    sha256 cellar: :any,                 sonoma:         "2b7b7969056aeda0acd1fbe6499c6552f40dd58bbddfbbeddfcdb6fd27a96ce9"
-    sha256 cellar: :any,                 ventura:        "c66d3487911d7ad924b9fd13fbadf4eba2b1e94e723b2cde4275393d20ab97cd"
-    sha256 cellar: :any,                 monterey:       "462e7ae6c93f462a714329abbf4b90256afa45601fad0783fdffb55706a05a7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9816719d30fbd99d13f8bb883699ac4e3b640572e55bf57b9ce04b45ebda7629"
+    sha256 cellar: :any,                 arm64_sequoia: "1d3349e3cf6dc0d06fffd2c52c62801b3c804e36cabcb01f46682738bb1485c2"
+    sha256 cellar: :any,                 arm64_sonoma:  "d648b349479d6bd41c0ee2e22fb9108abb33a553c5ab21584564a6a36fac04c6"
+    sha256 cellar: :any,                 arm64_ventura: "e6641fb533ddb45418980698aab6b06a02a3c5e763cae6ab7bb513289e5248d3"
+    sha256 cellar: :any,                 sonoma:        "32cc92f8679e9a6d8b0c45140a19f0ac5c330e470bbca5cddcf494c6511beae6"
+    sha256 cellar: :any,                 ventura:       "fc421bf66929e255b8a433eae74d0f32482ce73dea8b8da850f9f6efd1970a92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2578c1114075b488ec20a5c627d9616af5a6e5f22d9f99e54d0bb6221a861f77"
   end
 
   depends_on "cmake" => :build
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
-                    "-DBUILD_SHARED_LIBS=ON",
-                    "-DPUGIXML_BUILD_SHARED_AND_STATIC_LIBS=ON"
+    args = %w[
+      -DBUILD_SHARED_LIBS=ON
+      -DPUGIXML_BUILD_SHARED_AND_STATIC_LIBS=ON
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
@@ -50,8 +51,7 @@ class Pugixml < Formula
       <root>Hello world!<root>
     XML
 
-    system ENV.cxx, "test.cpp", "-o", "test", "-I#{include}",
-                    "-L#{lib}", "-lpugixml"
+    system ENV.cxx, "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-lpugixml"
     system ".test"
   end
 end
