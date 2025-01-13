@@ -3,17 +3,17 @@ class Dolphie < Formula
 
   desc "Feature-rich top tool for monitoring MySQL"
   homepage "https:github.comcharles-001dolphie"
-  url "https:files.pythonhosted.orgpackagesd12b264c7e000cfaa75f2209a1d397c1213b5fff8e8f2aec5256d0733e4e827cdolphie-6.6.3.tar.gz"
-  sha256 "1b1b5a96cedc452f5156b37b89fc5aad8af0552c8f6b392086c257ed65d5d8a4"
+  url "https:files.pythonhosted.orgpackagesc62cb7b07018a95f90615575a91f35896b333fd8aef55a5fba3767dd701076d7dolphie-6.7.2.tar.gz"
+  sha256 "8369c1289105af519f390019c70d044c1749308db5ce255ca24881570539ebc6"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "750399e6cb78ff483d484fef15bc90407bd5d5c338a81e31bcea518012dde651"
-    sha256 cellar: :any,                 arm64_sonoma:  "00ee223990acbb3d0b0d07f8b7c6dd19e561e6db37ea1e22327ef9bbc85d66c3"
-    sha256 cellar: :any,                 arm64_ventura: "3fc9b28fe5a0e9994bc52acfad3701302e19c02575021ac3c120ef1cb0de11cd"
-    sha256 cellar: :any,                 sonoma:        "a2312a45462f5cd656386693b6ad790638edb98fece8e2ec59a047eae89b44d6"
-    sha256 cellar: :any,                 ventura:       "553160f9ad229022c5cade9f230aaf1294608a6104c3d9d48daadc88453ccf45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a2b281470889927a1444c9502ae6c3000e17a224cab9564b6c4a8c4b6e887b8"
+    sha256 cellar: :any,                 arm64_sequoia: "8e6fb9f10ab72d60106297df0171edaf53e7074dc49df8f2fc5c946d9660f194"
+    sha256 cellar: :any,                 arm64_sonoma:  "6ca2607208b93e996a791b791473232013e55e8237d02a2c60ccb5a135902c56"
+    sha256 cellar: :any,                 arm64_ventura: "b6806b86367625fe6425c401c5bd067a56d133ee03895a7b7d3ae6a9cafcb8a3"
+    sha256 cellar: :any,                 sonoma:        "2f9fc7288b614e21cd36f3ef2422a5601ae9c223e3fb5f36b3d0475357fd35db"
+    sha256 cellar: :any,                 ventura:       "1f39ac41a8191004889e6317db2792e51b7f6db4742533df9bdee90bc033ccb7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3a748e1161f0852c20c6b8368de0841cae1810f7285472ae75a5bcd1b2e059d"
   end
 
   depends_on "rust" => :build # for orjson
@@ -22,8 +22,8 @@ class Dolphie < Formula
   depends_on "python@3.13"
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
-    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
+    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
+    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
   end
 
   resource "cython" do
@@ -42,8 +42,8 @@ class Dolphie < Formula
   end
 
   resource "loguru" do
-    url "https:files.pythonhosted.orgpackages9e30d87a423766b24db416a46e9335b9602b054a72b96a88a241f2b09b560fa8loguru-0.7.2.tar.gz"
-    sha256 "e671a53522515f34fd406340ee968cb9ecafbc4b36c679da03c18fd8d0bd51ac"
+    url "https:files.pythonhosted.orgpackages3a05a1dae3dffd1116099471c643b8924f5aa6524411dc6c63fdae648c4f1acaloguru-0.7.3.tar.gz"
+    sha256 "19480589e77d47b8d85b2c827ad95d49bf31b0dcde16593892eb51dd18706eb6"
   end
 
   resource "markdown-it-py" do
@@ -67,8 +67,8 @@ class Dolphie < Formula
   end
 
   resource "orjson" do
-    url "https:files.pythonhosted.orgpackagese004bb9f72987e7f62fb591d6c880c0caaa16238e4e530cbc3bdc84a7372d75forjson-3.10.12.tar.gz"
-    sha256 "0a78bbda3aea0f9f079057ee1ee8a1ecf790d4f1af88dd67493c6b8ee52506ff"
+    url "https:files.pythonhosted.orgpackages92f73219b56f47b4f5e864fb11cdf4ac0aaa3de608730ad2dc4c6e16382f35ecorjson-3.10.14.tar.gz"
+    sha256 "cf31f6f071a6b8e7aa1ead1fa27b935b48d00fbfa6a28ce856cfff2d5dd68eed"
   end
 
   resource "packaging" do
@@ -87,13 +87,13 @@ class Dolphie < Formula
   end
 
   resource "psutil" do
-    url "https:files.pythonhosted.orgpackages26102a30b13c61e7cf937f4adf90710776b7918ed0a9c434e2c38224732af310psutil-6.1.0.tar.gz"
-    sha256 "353815f59a7f64cdaca1c0307ee13558a0512f6db064e92fe833784f08539c7a"
+    url "https:files.pythonhosted.orgpackages1f5a07871137bb752428aa4b659f910b399ba6f291156bdea939be3e96cae7cbpsutil-6.1.1.tar.gz"
+    sha256 "cf8496728c18f2d0b45198f06895be52f36611711746b7f30c464b422b50e2f5"
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
-    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
+    url "https:files.pythonhosted.orgpackages7c2dc3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84pygments-2.19.1.tar.gz"
+    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
   end
 
   resource "pymysql" do
@@ -117,13 +117,13 @@ class Dolphie < Formula
   end
 
   resource "sqlparse" do
-    url "https:files.pythonhosted.orgpackages651610f170ec641ed852611b6c9441b23d10b5702ab5288371feab3d36de2574sqlparse-0.4.4.tar.gz"
-    sha256 "d446183e84b8349fa3061f0fe7f06ca94ba65b426946ffebe6e3e8295332420c"
+    url "https:files.pythonhosted.orgpackagese540edede8dd6977b0d3da179a342c198ed100dd2aba4be081861ee5911e4da4sqlparse-0.5.3.tar.gz"
+    sha256 "09f67787f56a0b16ecdbde1bfc7f5d9c3371ca683cfeaa8e6ff60b4807ec9272"
   end
 
   resource "textual" do
-    url "https:files.pythonhosted.orgpackagesa4e876b3aa49dd2f83410ab78b5ab04d65fee095e4720d2811f9ef72f073d11ftextual-0.88.1.tar.gz"
-    sha256 "9c56d953dc7d1a8ddf06acc910d9224027e02416551f92920e70f435bd28e062"
+    url "https:files.pythonhosted.orgpackages4bcbb3ff0e45d812997a527cb581a4cd602f0b28793450aa26201969fd6ce42ctextual-0.89.1.tar.gz"
+    sha256 "66befe80e2bca5a8c876cd8ceeaf01752267b6b1dc1d0f73071f1f1e15d90cc8"
   end
 
   resource "textual-autocomplete" do
@@ -153,8 +153,8 @@ class Dolphie < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https:files.pythonhosted.orgpackagesaa63e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66urllib3-2.3.0.tar.gz"
+    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
   end
 
   resource "zstandard" do

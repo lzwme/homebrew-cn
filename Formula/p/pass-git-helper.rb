@@ -3,18 +3,17 @@ class PassGitHelper < Formula
 
   desc "Git credential helper interfacing with pass"
   homepage "https:github.comlanguitarpass-git-helper"
-  url "https:github.comlanguitarpass-git-helperarchiverefstagsv3.0.0.tar.gz"
-  sha256 "3b0cda7a5eae2e93cc1ccec0ea02716db5a2ce3105c6d631f20fa20152b7a163"
+  url "https:github.comlanguitarpass-git-helperarchiverefstagsv3.1.0.tar.gz"
+  sha256 "98f8250fd0e31d157e4d389c151d02dfa2b0184938fedeeec44aa6fea383cb88"
   license "LGPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87dc6116d4f0e827ab30ad03e7eeebefbc100959d4fed6f0b4af724db871b9d1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc49479ad804837704f42f901f352a8b1b12c05eca21abb8bc20c51022cd51a1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cc49479ad804837704f42f901f352a8b1b12c05eca21abb8bc20c51022cd51a1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "352862920179610c7c5414fff296d3f5c373f0cc983bbddc42c64a49306f8bbb"
-    sha256 cellar: :any_skip_relocation, ventura:       "352862920179610c7c5414fff296d3f5c373f0cc983bbddc42c64a49306f8bbb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1317d6bf961f2a4ca1b114e526d292153b332bbebba6c8b78682f075a04154c5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "74bf55802e49db36d362863e4dda283fdf5b32c065743d4d5bbb173bacd7c981"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "74bf55802e49db36d362863e4dda283fdf5b32c065743d4d5bbb173bacd7c981"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "74bf55802e49db36d362863e4dda283fdf5b32c065743d4d5bbb173bacd7c981"
+    sha256 cellar: :any_skip_relocation, sonoma:        "20ee491913b65aa3bd0a77acabf8c4eac7ea776fe364056de29d475f18b92f7d"
+    sha256 cellar: :any_skip_relocation, ventura:       "20ee491913b65aa3bd0a77acabf8c4eac7ea776fe364056de29d475f18b92f7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74bf55802e49db36d362863e4dda283fdf5b32c065743d4d5bbb173bacd7c981"
   end
 
   depends_on "gnupg" => :test

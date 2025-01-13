@@ -1,8 +1,8 @@
 class VideoTranscoding < Formula
   desc "Tools to transcode, inspect and convert videos"
   homepage "https:github.comlisameltonvideo_transcoding"
-  url "https:github.comlisameltonvideo_transcodingarchiverefstags2025.01.09.tar.gz"
-  sha256 "13310dfa984acd3c7fe473f8a531076e70cfb55fd9caf0ec34bf28b868934032"
+  url "https:github.comlisameltonvideo_transcodingarchiverefstags2025.01.10.tar.gz"
+  sha256 "0190604890e34f574a6fbce4ec5b8b20ff7b7faa990f8bcf67840ed71793703d"
   license "MIT"
 
   depends_on "ffmpeg"

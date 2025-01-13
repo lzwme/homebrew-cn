@@ -1,19 +1,18 @@
 class MagicWormholeRs < Formula
   desc "Rust implementation of Magic Wormhole, with new features and enhancements"
   homepage "https:github.commagic-wormholemagic-wormhole.rs"
-  url "https:github.commagic-wormholemagic-wormhole.rsarchiverefstags0.7.4.tar.gz"
-  sha256 "3ddc40c82faa381e96ffdc54757625a4707c1bd111d67ab2ec733a5bb666a43c"
+  url "https:github.commagic-wormholemagic-wormhole.rsarchiverefstags0.7.5.tar.gz"
+  sha256 "b0560c3310e7ab3c9361d6eae7a471658ed5b5ac991f22094b8e737c8f6f1a64"
   license "EUPL-1.2"
   head "https:github.commagic-wormholemagic-wormhole.rs.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f46eb70c04e3a06978a0bb63cc5aafd2727467931d6ba11a106aae14270a3a1a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "65521995b87468603204f09ea6dea02dd3c60a9c1d906c21caa8e70d41706c20"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7f9823d71411bfd399a6af92c08afcd52dbb164d27cf8a1feaa43fdc3f654359"
-    sha256 cellar: :any_skip_relocation, sonoma:        "983692bbf7dd98cfcc733ee25928504c79a8f2e66d3dd723f9cd4ec5f19927cf"
-    sha256 cellar: :any_skip_relocation, ventura:       "219c8c34004646ae1d079ab541afb7904a7776644e8ebc014bdf28ac94159fb2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f273cd3da5ff6f41cd0178d4a926624b2f397402c807869bd112edfeee0a963e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0b49e021f9139b9ad21f90a9a94be31f197642400626394a62e1f6917e163e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2402ed9a4cf685e07dc1d85e007c1cab5c9677ada4bc1cec5d0f99e32cd033e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "aa6f077f88352fb495121281f716404269b340c09248f077a873b3fadd2ef3b9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e0502598e8d284804ece531825870bf1a2c3839ee651c79fdf1f0411fae5ac2d"
+    sha256 cellar: :any_skip_relocation, ventura:       "9a3f50cf5584e1c85d828309012027fa693519b6e275b843ea9b01dab62ca3fc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7753ab72d6c4140a859107ed211290441565e8f19c2c5f097f70a9fafd1e1b0f"
   end
 
   depends_on "rust" => :build

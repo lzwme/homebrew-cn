@@ -1,18 +1,18 @@
 class Zlint < Formula
   desc "X.509 Certificate Linter focused on Web PKI standards and requirements"
   homepage "https:github.comzmapzlint"
-  url "https:github.comzmapzlintarchiverefstagsv3.6.4.tar.gz"
-  sha256 "548562c1a7470c6d1c602a077c4e0cb5718ccb53a6e16e49e0671ea8337dae45"
+  url "https:github.comzmapzlintarchiverefstagsv3.6.5.tar.gz"
+  sha256 "ce73c3fb8daaad3b4a41473a970e80425d714477d2ef0a6b91829adc1875197b"
   license "Apache-2.0"
   head "https:github.comzmapzlint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c86370f3ad070d0f3c848347100a48bd31ee400aa0225e31029fa51b73e93055"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c86370f3ad070d0f3c848347100a48bd31ee400aa0225e31029fa51b73e93055"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c86370f3ad070d0f3c848347100a48bd31ee400aa0225e31029fa51b73e93055"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0febef86ad445d8aeb0c89144a357e94134971bf0d61d8d0ca6394a4a0b831d8"
-    sha256 cellar: :any_skip_relocation, ventura:       "0febef86ad445d8aeb0c89144a357e94134971bf0d61d8d0ca6394a4a0b831d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbf6bd14ba1a065b0c51325fef84fb1a7d382cbccb6bca6913e83860a650680e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29f795e5e0dab8f87d1e796c42cd7b6157ae36b00cc6cfe60e8388c3bcd3e870"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "29f795e5e0dab8f87d1e796c42cd7b6157ae36b00cc6cfe60e8388c3bcd3e870"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "29f795e5e0dab8f87d1e796c42cd7b6157ae36b00cc6cfe60e8388c3bcd3e870"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7c9a3891731c3a651f571acb39ae62024ebeeabc702a71c458a8a193c1e33403"
+    sha256 cellar: :any_skip_relocation, ventura:       "7c9a3891731c3a651f571acb39ae62024ebeeabc702a71c458a8a193c1e33403"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8bcb5c7126db76b93333ab19ad73b22cb5acb6ed0dc900dbe406586e801bb755"
   end
 
   depends_on "go" => :build

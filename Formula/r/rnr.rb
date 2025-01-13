@@ -1,21 +1,17 @@
 class Rnr < Formula
   desc "Command-line tool to batch rename files and directories"
   homepage "https:github.comismaelgvrnr"
-  url "https:github.comismaelgvrnrarchiverefstagsv0.4.2.tar.gz"
-  sha256 "cde8e5366552263300e60133b82f6a3868aeced2fe83abc91c2168085dff0998"
+  url "https:github.comismaelgvrnrarchiverefstagsv0.5.0.tar.gz"
+  sha256 "b8edab04e1129b8caeb0c8634dd3bbc9986528c5ec479f7e7f072dbe7bf9ba20"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "313748371894c9f870ab24febef4a8d6fb1f3a33a1568addba6cc47f760d369e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "62be4b10381726dd1c6ca96de3473303a32a8b318bb275be2963a992cb4b086a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "13e613c2d00e9e996d6b0bd2b43e1e23bc60f4a5a6d5f0e1a7c33058be9cd98e"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c47dbe0a3e417a52175e9af2d05752ba236ff850f6278b8829efc1a60bdbcb55"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "df46ce33f22472a8c3869bd61f8832340953469bc721b9091e04f35fcc4dea7b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d3fb0b0a538deb237664e82cb04cf00976a1d9cc32005bad6ccda710d520b67a"
-    sha256 cellar: :any_skip_relocation, ventura:        "e7a1f0fbe20e79691075d96a574c6a55adf50bb2e5339242ca9b2b4ab08c1d1f"
-    sha256 cellar: :any_skip_relocation, monterey:       "5d77ebcc4d57548d2c95f5c5753e917896627e9ea117f6e4c05861d18b39408b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "bd2d7d0aafdd9699adc98bfcf5d56c8af2402ed2ae12789734de2fb0471f7380"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a837c604ac4157d95b648d0b9a4885287868eccf522e44f002d06096dc9145a5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fb09c89cda8bafe101e6c2de4d9afd0efd149b21bd37ce9b00653a7fbef1d21"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fdfb6fee01547e1e695afbcac85ec3cd59655d270615aae6269e84bab4697b71"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d7170e9081556544c8b27af2d92e01ad44cbf4efb5e3cf03f9577a50a7e96a92"
+    sha256 cellar: :any_skip_relocation, sonoma:        "353575eefa7409b139607ee46d2d10149759a221687295c6fde7cd13e3c29c91"
+    sha256 cellar: :any_skip_relocation, ventura:       "aeea1bdde84bb59dffaedfc516b70ed439cb66b8ee280c3fe4f269bdc4505577"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c855c741dbb39266333bb2ceac02eaf1cfab99be891bfa88cebe0bbed52c6df"
   end
 
   depends_on "rust" => :build
@@ -35,8 +31,10 @@ class Rnr < Formula
     mkdir "one"
     touch "onefoo.doc"
 
-    system bin"rnr", "-f", "doc", "txt", "foo.doc", "onefoo.doc"
+    system bin"rnr", "regex", "-f", "doc", "txt", "foo.doc", "onefoo.doc"
     refute_predicate testpath"foo.doc", :exist?
     assert_predicate testpath"foo.txt", :exist?
+
+    assert_match version.to_s, shell_output("#{bin}rnr --version")
   end
 end

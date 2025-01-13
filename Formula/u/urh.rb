@@ -3,40 +3,51 @@ class Urh < Formula
 
   desc "Universal Radio Hacker"
   homepage "https:github.comjopohlurh"
-  url "https:files.pythonhosted.orgpackagesd8dca6dcf5686e980530b23bc16936cd9c879c50da133f319f729da6d20bd95burh-2.9.6.tar.gz"
-  sha256 "0dee42619009361e8f5f54d48f31e1c6cf24b171c773dd38f99a34111a0945e1"
+  url "https:files.pythonhosted.orgpackages7bafbe36ae7e9184410c2c6d406a1551d7096f394e238cc5f63cb4ddcfc5f2e5urh-2.9.8.tar.gz"
+  sha256 "864130b19553833827931f48f874045a39a6cee219a310a910bcd2ef02cf96b4"
   license "GPL-3.0-only"
-  revision 2
   head "https:github.comjopohlurh.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7a245b652c23f045e0126d444e311284ff745e55abb0eeec71fcd5fcea51463b"
-    sha256 cellar: :any,                 arm64_sonoma:  "c95d3a91199338f0f7c7d9908a0c73b34ac26adac714e045ac30d5a162440e5c"
-    sha256 cellar: :any,                 arm64_ventura: "6908cc6ffac8f16ac0462417d02e1761630a6a338cb03a8b339be40feb465101"
-    sha256 cellar: :any,                 sonoma:        "531cf6900e8e2f404fbf7f191b4d38ee0d82ff217a9fb68292ff8ab9e7561744"
-    sha256 cellar: :any,                 ventura:       "a2333202e0587108f7641225da241da61c735062a9a0704596afdb6d598d047a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c07f1091b4d163888bde7bfce246c3c94cbfeb8ba76b982dbbdd4f75cef4a16"
+    sha256 cellar: :any,                 arm64_sequoia: "7aab6a172466029fbb7ed528a5edd624866de3c0d5c3c6db9566d5bd7bdd3dc2"
+    sha256 cellar: :any,                 arm64_sonoma:  "aa6362884ac8ca8a644f638728265e2bed585ac5525b43adcf55c891a2c94c37"
+    sha256 cellar: :any,                 arm64_ventura: "3458da9303a91f152666649e6afd3f796f0658152f547be7619927e2f1f6d99a"
+    sha256 cellar: :any,                 sonoma:        "ce3ba9b6b56f7cf06fa761c9c16669a0f9a96f6f22d8950533df042d3e581abc"
+    sha256 cellar: :any,                 ventura:       "46047fe3cc847a20a0d4337bbc5ad093d0447ddee1517f959391b091eb9e8994"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4f4790a0182353030f25e329a0647908722dda1dea6249b3544d64c3d790c30"
   end
 
+  depends_on "cmake" => :build # for numpy
+  depends_on "meson" => :build # for numpy
+  depends_on "ninja" => :build # for numpy
   depends_on "pkgconf" => :build
   depends_on "hackrf"
-  depends_on "numpy"
   depends_on "pyqt@5"
   depends_on "python@3.13"
+
+  on_linux do
+    depends_on "patchelf" => :build # for numpy
+  end
 
   resource "cython" do
     url "https:files.pythonhosted.orgpackages844db720d6000f4ca77f030bd70f12550820f0766b568e43f11af7f7ad9061aacython-3.0.11.tar.gz"
     sha256 "7146dd2af8682b4ca61331851e6aebce9fe5158e75300343f80c07ca80b1faff"
   end
 
+  # upstream issue: https:github.comjopohlurhissues1149
+  resource "numpy" do
+    url "https:files.pythonhosted.orgpackages656e09db70a523a96d25e115e71cc56a6f9031e7b8cd166c1ac8438307c14058numpy-1.26.4.tar.gz"
+    sha256 "2a02aba9ed12e4ac4eb3ea9421c420301a0c6460d9830d74a9df87efa4912010"
+  end
+
   resource "psutil" do
-    url "https:files.pythonhosted.orgpackages26102a30b13c61e7cf937f4adf90710776b7918ed0a9c434e2c38224732af310psutil-6.1.0.tar.gz"
-    sha256 "353815f59a7f64cdaca1c0307ee13558a0512f6db064e92fe833784f08539c7a"
+    url "https:files.pythonhosted.orgpackages1f5a07871137bb752428aa4b659f910b399ba6f291156bdea939be3e96cae7cbpsutil-6.1.1.tar.gz"
+    sha256 "cf8496728c18f2d0b45198f06895be52f36611711746b7f30c464b422b50e2f5"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages4354292f26c208734e9a7f067aea4a7e282c080750c4546559b58e2e45413ca0setuptools-75.6.0.tar.gz"
-    sha256 "8199222558df7c86216af4f84c30e9b34a61d8ba19366cc914424cdbd28252f6"
+    url "https:files.pythonhosted.orgpackages92ec089608b791d210aec4e7f97488e67ab0d33add3efccb83a056cbafe3a2a6setuptools-75.8.0.tar.gz"
+    sha256 "c5afc8f407c626b8313a86e10311dd3f661c6cd9c09d4bf8c15c0e11f9f2b0e6"
   end
 
   def install

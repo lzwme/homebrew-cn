@@ -1,8 +1,8 @@
 class Yq < Formula
   desc "Process YAML, JSON, XML, CSV and properties documents from the CLI"
   homepage "https:github.commikefarahyq"
-  url "https:github.commikefarahyqarchiverefstagsv4.44.6.tar.gz"
-  sha256 "c0acef928168e5fdb26cd7e8320eddde822f30cf1942817f3f6b854dd721653f"
+  url "https:github.commikefarahyqarchiverefstagsv4.45.1.tar.gz"
+  sha256 "074a21a002c32a1db3850064ad1fc420083d037951c8102adecfea6c5fd96427"
   license "MIT"
   head "https:github.commikefarahyq.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Yq < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "895efd8c8aa9ec322d9cd45849e68dcfe6888a75968f50ae6e045bad830a65f5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "895efd8c8aa9ec322d9cd45849e68dcfe6888a75968f50ae6e045bad830a65f5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "895efd8c8aa9ec322d9cd45849e68dcfe6888a75968f50ae6e045bad830a65f5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bb82f632ebd0305b79d05f7c24ef6658ceb7b6eaa746f2625a1e9a2a4c76b453"
-    sha256 cellar: :any_skip_relocation, ventura:       "bb82f632ebd0305b79d05f7c24ef6658ceb7b6eaa746f2625a1e9a2a4c76b453"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cdfc29fd95e76f9b292575b41d1eebc981ec81644c071f771a7ab56b1b97790"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f27d4aadc29c30a6293b6cb9921d1efbc6a94f7031ddc49a32838c3c87ff0bc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f27d4aadc29c30a6293b6cb9921d1efbc6a94f7031ddc49a32838c3c87ff0bc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8f27d4aadc29c30a6293b6cb9921d1efbc6a94f7031ddc49a32838c3c87ff0bc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "62e0c09cced0c3707ccfee427c6938d17bc37f89d9cf239d34f8814bd574b3db"
+    sha256 cellar: :any_skip_relocation, ventura:       "62e0c09cced0c3707ccfee427c6938d17bc37f89d9cf239d34f8814bd574b3db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8cfeabdc6ec19899aac26a851c8ddf557784e643b1d574d75ef18d31fdda961f"
   end
 
   depends_on "go" => :build

@@ -3,18 +3,18 @@ class Poetry < Formula
 
   desc "Python package management tool"
   homepage "https:python-poetry.org"
-  url "https:files.pythonhosted.orgpackagesd4ff02f870cb68af7cf46a112c804920fbeea36b25d538e309e0ffc51238ed0bpoetry-2.0.0.tar.gz"
-  sha256 "9416b1e3657ed02cda9599ae73b604bd68f187adaa2d8d1bcc804dacfa9bcd1f"
+  url "https:files.pythonhosted.orgpackages3c8b5467e3301050055d365e602cc6ba574ee4fbc8163aeec213e5a75b3f219bpoetry-2.0.1.tar.gz"
+  sha256 "a2987c3162f6ded6db890701a6fc657d2cfcc702e9421ef4c345211c8bffc5d5"
   license "MIT"
   head "https:github.compython-poetrypoetry.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6ccd91fb39ef8c1ed34c3c57e386605dd6eda9cacb58125ed2ee28ca845c844"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7b4bf02a9e332045736e5d53a509bc3ca8bfdde1c8df6c43da4ec926b98cb6e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "513a3999e085cc725d91a0a6397260a3172afb8965a5a3014d064318f89209b5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4956f7e924cf087fdfc11193e99c21f6de20fdf8e2efa6ac54835fb6be5d78b7"
-    sha256 cellar: :any_skip_relocation, ventura:       "aee811b0dd1b2e3a345b05f9d496cd7ec90600146a12c75af251e4b4d7daee77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fda728cd112eb92075aac884789478455f4487c4f7a4c3b48c36bd8f3f05140"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "163a2239451e7ca2db311920edc7e2c10c6fce3e4800acdd19d1ab82f2f44254"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d49f874e3be6f309e53a1dd3d3be394652b270aa4608bdeb575c0b5901a104b3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a1b00f252ca9d4e4faa81650abca0bfedea1838b956e737a5953e8d3a0c00c8c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5314d0e0f814dec42d87724cd8907292353f35860d00100f545d9f30f7305a37"
+    sha256 cellar: :any_skip_relocation, ventura:       "e5a93b0151b4e4dfa932205738ae0342f370429bef78baf0273c1b93ca03d768"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b74ad2e4ca08a2b20341a8adbf45a20d7040ec1e51d19b3e579b4e2258bf8596"
   end
 
   depends_on "cmake" => :build # for rapidfuzz
@@ -35,8 +35,8 @@ class Poetry < Formula
   end
 
   resource "cachecontrol" do
-    url "https:files.pythonhosted.orgpackagesd223db12e0b6b241e33f77f7cce01a06b4cc6f8071728656cc0ea262d2a14dadcachecontrol-0.14.1.tar.gz"
-    sha256 "06ef916a1e4eb7dba9948cdfc9c76e749db2e02104a9a1277e8b642591a0f717"
+    url "https:files.pythonhosted.orgpackagesb7a43390ac4dfa1773f661c8780368018230e8207ec4fd3800d2c0c3adee4456cachecontrol-0.14.2.tar.gz"
+    sha256 "7d47d19f866409b98ff6025b6a0fca8e4c791fb31abbd95f622093894ce903a2"
   end
 
   resource "charset-normalizer" do
@@ -135,8 +135,8 @@ class Poetry < Formula
   end
 
   resource "poetry-core" do
-    url "https:files.pythonhosted.orgpackagesdbecdbd9cedc8b68309f1f4c0160355890b4f65f51901b31b1831dbf8c93d6c0poetry_core-2.0.0.tar.gz"
-    sha256 "3317a3cc3932011a61114236b2d49883f4fb1403d2f5e97771ac0d077cfa396f"
+    url "https:files.pythonhosted.orgpackagesc4f589d11008714e0a49cab9cba7cce89c66ea5a94f37cc6d283798cc1725facpoetry_core-2.0.1.tar.gz"
+    sha256 "10177c2772469d9032a49f0d8707af761b1c597cea3b4fb31546e5cd436eb157"
   end
 
   resource "pyproject-hooks" do
@@ -175,8 +175,8 @@ class Poetry < Formula
   end
 
   resource "trove-classifiers" do
-    url "https:files.pythonhosted.orgpackages998592c2667cf221b37648041ce9319427f92fa76cbec634aad844e67e284706trove_classifiers-2024.10.21.16.tar.gz"
-    sha256 "17cbd055d67d5e9d9de63293a8732943fabc21574e4c7b74edf112b4928cf5f3"
+    url "https:files.pythonhosted.orgpackagesdb1b7bb619b31396d550022965673a0c284c914a0a4c68480f78097401e1b3e5trove_classifiers-2025.1.10.15.tar.gz"
+    sha256 "be2c7d25e46cd39d5c7151acd389584df3919f61890f5f163c8ee2090ff71e7f"
   end
 
   resource "urllib3" do
@@ -190,8 +190,8 @@ class Poetry < Formula
   end
 
   resource "xattr" do
-    url "https:files.pythonhosted.orgpackages9e1afd9e33e145a9dffaf859c71a4aaa2bfce9cdbfe46d76b01d70729eecbcb5xattr-1.1.0.tar.gz"
-    sha256 "fecbf3b05043ed3487a28190dec3e4c4d879b2fcec0e30bafd8ec5d4b6043630"
+    url "https:files.pythonhosted.orgpackages62bf8b98081f9f8fd56d67b9478ff1e0f8c337cde08bcb92f0d592f0a7958983xattr-1.1.4.tar.gz"
+    sha256 "b7b02ecb2270da5b7e7deaeea8f8b528c17368401c2b9d5f63e91f545b45d372"
   end
 
   def install

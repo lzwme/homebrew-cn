@@ -4,14 +4,15 @@ class PandocCrossref < Formula
   url "https:github.comlierdakilpandoc-crossrefarchiverefstagsv0.3.18.1.tar.gz"
   sha256 "d41c7fc7e9f1fd3bff72d96c0693458aa18b338f65390692baf277c305f95ec4"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3d162bcce4c55bd1a2d2a40099893593ec6dbc5c41df9d84593fce444dd5fc5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "673133be289e57a36574d6e2f491e3346e385f832b611ae175280247de33c1ca"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "941ca59af3d7f24f63700399c2410975421e262ff88a367f6f3f2f3e0881bd4f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7a9a08fe8d552cedba2fd1e17a82ff77da5ac738026ea5cc1b982061183d4777"
-    sha256 cellar: :any_skip_relocation, ventura:       "e38878a0d191840523257eacbe1aae372a26d08d23ec1f561ebdc591417ddc36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "492887aac29ac862b534be705b0b7714e08675297c37927b9005500d4b38b52d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc2e344a20ad3f0966949de793f6ba5fae6dcf7b1c55a0fcf4fff7bd427069eb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7bdd453f1cfb9c983ca6d81604ced305cb9107268ea45c92d644be9effcca25"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4676c8a3f603420c9673875fa5ad18a75325887028c2a1170555c38f82831d80"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c47ac861f2dd8e5fc94a2a70a9a670afbeb14c4baa177854afcdd48df2b423aa"
+    sha256 cellar: :any_skip_relocation, ventura:       "751fff058b26a4483a42a5e86300fa1e198c8801ac97accba63f61f3b7e4ebc0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24680f6eaba7053555a86356066e07efe3ce10727d8ebb48b3bd58755d6db18d"
   end
 
   depends_on "cabal-install" => :build

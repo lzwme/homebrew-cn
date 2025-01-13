@@ -1,13 +1,12 @@
 class Pkgdiff < Formula
   desc "Tool for analyzing changes in software packages (e.g. RPM, DEB, TAR.GZ)"
   homepage "https:lvc.github.iopkgdiff"
-  url "https:github.comlvcpkgdiffarchiverefstags1.7.2.tar.gz"
-  sha256 "d0ef5c8ef04f019f00c3278d988350201becfbe40d04b734defd5789eaa0d321"
+  url "https:github.comlvcpkgdiffarchiverefstags1.8.tar.gz"
+  sha256 "4b44a933a776500937887134cf89b94a89199304c416ad05b2ac365cce1076d8"
   license "GPL-2.0-only"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, all: "1c25de8323bd487af7aeb730739a6bfcae9aba334da7ef20a0166b56c705341e"
+    sha256 cellar: :any_skip_relocation, all: "d61bc9f1e348b223672343dccd6a023459f729576a4850d91406ef253ccaa8b0"
   end
 
   depends_on "binutils"

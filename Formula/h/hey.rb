@@ -21,6 +21,11 @@ class Hey < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5454552b0eb8d412645a0a5211b0566a41d13fc238149177bfddea36ace56e4"
   end
 
+  # no commits over the past four years
+  # community discussion thread, https:github.comrakyllheyissues269
+  # `oha` is a good alternative
+  deprecate! date: "2025-01-12", because: :unmaintained
+
   depends_on "go" => :build
 
   def install

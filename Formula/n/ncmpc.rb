@@ -1,8 +1,8 @@
 class Ncmpc < Formula
   desc "Curses Music Player Daemon (MPD) client"
   homepage "https://www.musicpd.org/clients/ncmpc/"
-  url "https://www.musicpd.org/download/ncmpc/0/ncmpc-0.49.tar.xz"
-  sha256 "65bbec0ede9e6bcf62ac647b0c706485beb2bdd5db70ca8d60103f32f162cf29"
+  url "https://www.musicpd.org/download/ncmpc/0/ncmpc-0.51.tar.xz"
+  sha256 "e74be00e69bc3ed1268cafcc87274e78dfbde147f2480ab0aad8260881ec7271"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,32 +11,33 @@ class Ncmpc < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "9c977e38aafafb5fed630407adda4d46493e19e48fa5658979c4e6a687e64500"
-    sha256 arm64_sonoma:   "a77a6d24bf2507a9059e103ef4f3c9bbc0161c542a12e0e366e15cf8b0c2bd25"
-    sha256 arm64_ventura:  "15989335a5bc1062e17991a3a1db21beaeb884f6a40a019e3858ba44ccd844d1"
-    sha256 arm64_monterey: "d6c9bf0666b53074ecb94a3ba567768bd4de62800896e4f9adccf2e818bdb45f"
-    sha256 arm64_big_sur:  "0e141cf84da309476a6f32e93b378fb1b6ed69611aef8e801f4686f4dd8cf488"
-    sha256 sonoma:         "029393700d3b2d588df2d80bda58aabdb70c7b56c0f63c90be70765a738c57e3"
-    sha256 ventura:        "a6af63f5f197e00bd933ae8fff37ffdb957dd67c0337dcdfe8d48762d2774561"
-    sha256 monterey:       "a54816a8a15927f3fad83fe079e3fe78dec18f2f7556483a7ce51882cae0d3fa"
-    sha256 big_sur:        "8711f7bddb05dfcdb2c8b8060efda8e03b0595dac98dcdb0c33781ecc0f20f44"
-    sha256 x86_64_linux:   "08a6994f6f47fbfd0f1ea6d947f840dd9e110ecbdcbd8555041ba002e27a8ca9"
+    sha256 arm64_sequoia: "068010e9a68c7d84e1f13932f9dd4adf3d28b0ff95044b30d6c3fe4740134a20"
+    sha256 arm64_sonoma:  "2437913591f67d021d4b1f54c5f93922ec4d104d6f209b4c3736e574e4e4c23b"
+    sha256 arm64_ventura: "f747b415b0fb6a890d55de13a7aeb311ce5900cca982acea9b944762746a786f"
+    sha256 sonoma:        "ceaa62c8a78fe27663c8bb10ac84ede19dd234d907374b15ae768b5011671d43"
+    sha256 ventura:       "4038a0781b9b7344d336e603e87c3e2ccb11e2ed295731258e626fe7e7d53432"
+    sha256 x86_64_linux:  "3b17830a4d437b28793131d0d2c1a7a62f78fc630c745ca3446391c3bfd905bb"
   end
 
   depends_on "boost" => :build
+  depends_on "gettext" => :build
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
-  depends_on "gettext"
+
+  depends_on "fmt"
   depends_on "libmpdclient"
   depends_on "pcre2"
 
+  uses_from_macos "ncurses"
+
   on_macos do
-    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1300
+    depends_on "gettext"
+    depends_on "llvm" if DevelopmentTools.clang_build_version <= 1500
   end
 
   fails_with :clang do
-    build 1300
+    build 1500
     cause "Requires C++20"
   end
 
@@ -46,7 +47,14 @@ class Ncmpc < Formula
   end
 
   def install
-    ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1300)
+    if OS.mac? && (DevelopmentTools.clang_build_version <= 1500)
+      ENV.llvm_clang
+      # Work around failure mixing newer `llvm` headers with older Xcode's libc++:
+      # Undefined symbols for architecture arm64:
+      #   "std::exception_ptr::__from_native_exception_pointer(void*)", referenced from:
+      #       std::exception_ptr std::make_exception_ptr[abi:ne180100]<std::runtime_error>(std::runtime_error) ...
+      ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib/"c++"
+    end
 
     system "meson", "setup", "build", "-Dcolors=false", "-Dnls=enabled", "-Dregex=enabled", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
