@@ -1,8 +1,8 @@
 class GnuGetopt < Formula
   desc "Command-line option parsing utility"
   homepage "https:github.comutil-linuxutil-linux"
-  url "https:mirrors.edge.kernel.orgpublinuxutilsutil-linuxv2.40util-linux-2.40.3.tar.xz"
-  sha256 "0d6429d0cc474eafb972b0f4fee6b9c3d3f31c7bbada012bb3a1e255f00612c5"
+  url "https:mirrors.edge.kernel.orgpublinuxutilsutil-linuxv2.40util-linux-2.40.4.tar.xz"
+  sha256 "5c1daf733b04e9859afdc3bd87cc481180ee0f88b5c0946b16fdec931975fb79"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -33,12 +33,12 @@ class GnuGetopt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2523f22267194e2ad829d5ab201aabd7989a43340bed1ce6d60ca92ada1c158"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f08df33c27885da287e93002062193cd4ad71b638103c90fa5a0ac2d5f34b79"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7b7bf298068157dac4e9cb9dd28d4321125ef3842befaf8768a01ead95e6892c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9ed676cdeb22e00f6d280c9802e99288b3799d995aceb10cffa13d9beec61a83"
-    sha256 cellar: :any_skip_relocation, ventura:       "6fc4e9965fee9e69c8eb0cfe8bb0c6c8bb47f99864cd3db89539ee00ba055cfa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24623fde4cf0fa3643118d179b18ea39e489e4a2934b17a7462c0fea7085f71e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24e3eb7e6c01fff592fbd7164de2d7d50066c1bceaf603be4e7a5ceb5ce50d7a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77bc7ffe11cdcb42f8a881cd5b94387c3256151368838c6aea183aa7d49b4f88"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ec0572e61250be617ecb43f3a510367346b892513c59fe747e5112b18c80605a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a82fd4ac44d93d2ba9ea942bd3508c513d88294bf4fd30dcdf7c9cc506985d7e"
+    sha256 cellar: :any_skip_relocation, ventura:       "74b397b3555d9421d60813e226c75b9ee7d09f3e8a3f78271fe4dd3c0b8fb18a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d1d16f2d1a15fb653999ee2a54691ff400cf87916ec81cae64f28f9f24b48da"
   end
 
   keg_only :shadowed_by_macos, "macOS provides BSD getopt"

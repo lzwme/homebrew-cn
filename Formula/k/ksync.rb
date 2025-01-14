@@ -7,11 +7,6 @@ class Ksync < Formula
   license "Apache-2.0"
   head "https:github.comksyncksync.git", branch: "master"
 
-  livecheck do
-    url :stable
-    regex(^v?(\d+(?:\.\d+)+)$i)
-  end
-
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1620949d8da595167314a38d77d648496ae8f643d95b41020ac84618cbc341a2"

@@ -2,8 +2,8 @@ class NewrelicInfraAgent < Formula
   desc "New Relic infrastructure agent"
   homepage "https:github.comnewrelicinfrastructure-agent"
   url "https:github.comnewrelicinfrastructure-agent.git",
-      tag:      "1.59.1",
-      revision: "6ca760d56f9fcf4598c9836f6aa1609e9bf28834"
+      tag:      "1.59.2",
+      revision: "32575790af35fe1d07b945fb56cd4dfb0c86bced"
   license "Apache-2.0"
   head "https:github.comnewrelicinfrastructure-agent.git", branch: "master"
 
@@ -15,12 +15,12 @@ class NewrelicInfraAgent < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5324cebe37cd0d2de99069c4196368f3c77b982d767c07894161bcd3ec49afd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ecb8c282246d940277f55d8af08ceb3605acfdfee9b5f43da579d1f8488aafb6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1fa9df9abc3718d69257f6adf4dcac4288d89124abe2abd6cfdec853dbd1c8b9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "791a0e3aca48c8b5ed7e15fdd0bceb91e8823fc29092505928d26aef459d8a2b"
-    sha256 cellar: :any_skip_relocation, ventura:       "d2b0d18c37b607990816259c8efde7039d3f1fe285b9001027c42a52d3dffe7c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ba222943c6eaabd632ba205a6fc553d220e0d8d5e41905abf164ed35e1860d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f99109e6f302d2fc1eafbbc89fc12984457a93b87423179dfd57c25c35de12fc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e95a5ca523bfe48abb1534896e5513b177fe7a8999e0784d1c7f9ab94f83bf68"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1e50ef765bd5821accc924fcf568546f8deb011ab36169a1edfdec8849a626f4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "287fdf86ca12ea5b10d31e0b9d7bbecac2c340885b875356b9acb95289a7dc90"
+    sha256 cellar: :any_skip_relocation, ventura:       "6da59779b32fbe060dd1a7b8ee31125458dc401bc77a8f30d8d629c1d4562a14"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1486da111c78da37cd7d30e5c4ba5226a3dc41c50775e60884742c954c0cf100"
   end
 
   depends_on "go" => :build

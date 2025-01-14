@@ -5,11 +5,6 @@ class NodeAT18 < Formula
   sha256 "76037b9bad0ab9396349282dbfcec1b872ff7bd8c8d698853bebd982940858bf"
   license "MIT"
 
-  livecheck do
-    url "https://registry.npmmirror.com/-/binary/node/"
-    regex(%r{href=["']?v?(18(?:\.\d+)+)/?["' >]}i)
-  end
-
   bottle do
     sha256 arm64_sequoia: "434f258d8fc32a3b1fff91bb529069a51bf1e9c79e7d834c70685a408cd7e2ec"
     sha256 arm64_sonoma:  "a09d36a1b0f782ebaa36e170f6789e314cf1c830989d0e7bf8da39ec35234c42"

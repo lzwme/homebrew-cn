@@ -1,17 +1,17 @@
 class Espflash < Formula
   desc "Serial flasher utility for Espressif SoCs and modules based on esptool.py"
   homepage "https:github.comesp-rsespflash"
-  url "https:github.comesp-rsespflasharchiverefstagsv3.2.0.tar.gz"
-  sha256 "62cc57be0e97e0370a6c05de82241b2f3e68c51969d6bca0446bd70c244c055f"
+  url "https:github.comesp-rsespflasharchiverefstagsv3.3.0.tar.gz"
+  sha256 "5f641653d2112904a02d4c67e1fba6564a7fc23fbb34def2df8ce6ac953a4163"
   license any_of: ["MIT", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "112540b70f0d0624b112fb01764d135e58f3ae1d8801a8a26ca5e0d1000d7427"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b21fee967f14e5b4834e2115bdbead2d3f96852ab05f055b97828b8f2bdd9ed"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a32ad9e30171b22dfc08f3e9fa23e6ffb7980d0a8f9325b4e5b294b38c91fb47"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c238983a6a9a9394b676ff8a229e41546e07006c9f91411b3859359fc55d6f24"
-    sha256 cellar: :any_skip_relocation, ventura:       "e17b49c69ee6f1e38527ce406c4b70cd4aeb72b57c8fa3f4f108dbc7c0b96a45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5970508dd04c6c75d2251249e482d1117a2699174eb606e788d12903f2ac81ab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c81a6ed6df9c49a708d7e87ab635a7e786abc835d74b2eb0fa4686122b31e7a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c99e0a9083f12ce47ef06a45bc895deebf5ebdc3b2e5d993dce45109f997934"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cae222d3a510e1fd99493fc84bc30a7a883913d214dde264c5597f50e0c75d3a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c6504173907b67fc7247bfda8c0bace89f37a1852d540cfd264cab8c391a08ce"
+    sha256 cellar: :any_skip_relocation, ventura:       "558ac26ed5f9655a64e6eeecd8a207aa14c0a2cccdb31b341be1a6d5e33eee80"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50eff44ba9819e9af58b258224a56270d72773c2f445b070ec1b1ecd69310092"
   end
 
   depends_on "rust" => :build

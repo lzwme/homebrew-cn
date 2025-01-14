@@ -12,14 +12,13 @@ class MidnightCommander < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "d4a361245ce1023f004e6e8204b11ba919e59b297898e7a66cc96b81ef58a44a"
-    sha256 arm64_sonoma:   "4d8ff2cfd4c5016efb2b731d4266a83900cfd164edb522acb54d2b4d3f732274"
-    sha256 arm64_ventura:  "233f9256cac1000fe98e86173cf2abb1e4555759a888261f76d4e1a3786fd699"
-    sha256 arm64_monterey: "71b2eb7e58eda80f71b0be79e403cc23221ca879611bfa1d42c5fbd8e305c4b2"
-    sha256 sonoma:         "7402ed037582a4c6571c058b2a447abbc7ce7b8b97a4728a7a0d70aedccf385c"
-    sha256 ventura:        "fa3d7102a91c5febc694952d63d1bab5f113fcc79db982a8b7983cabed7f0716"
-    sha256 monterey:       "f7915e04544fe79dd00fe848f603cc500292879d54135c8d2820db50bc36f309"
-    sha256 x86_64_linux:   "10d00a3f8507c74d6128eeb7f93ab82b89cae4f396f7eb0b94516983e11d4fa7"
+    rebuild 1
+    sha256 arm64_sequoia: "ff5a4df237304db15c9c5b94e4f15814a18bb49e7f189dee446da7abc263a183"
+    sha256 arm64_sonoma:  "7d3943764d79ff29e7382500ca321686f077d93123d31fc61c430066b3c4b198"
+    sha256 arm64_ventura: "468bb2d2776bacef0dac42a73c69aa7d25157ca0aa933c468d491a47bf1f8a9f"
+    sha256 sonoma:        "994b3d8cd142aa8750901f095d5cc4b1fcc1fde4a34ac002f68d0b33c735b31c"
+    sha256 ventura:       "c93d522f8cba8bfed62da1feeaa6c8b18efbba6e8204e550f06e2ccc289cc049"
+    sha256 x86_64_linux:  "03878d306fb02d438b384f28df3680991a789efb5f5fcb8f67063f938c23fcbc"
   end
 
   head do

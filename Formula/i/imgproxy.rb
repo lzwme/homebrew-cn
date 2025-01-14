@@ -1,18 +1,18 @@
 class Imgproxy < Formula
   desc "Fast and secure server for resizing and converting remote images"
   homepage "https:imgproxy.net"
-  url "https:github.comimgproxyimgproxyarchiverefstagsv3.27.0.tar.gz"
-  sha256 "2de751ce0a3e3d1b7c39ff7b3a75a4eb0d4be2f6e7e9c06890e10e93a912f65e"
+  url "https:github.comimgproxyimgproxyarchiverefstagsv3.27.1.tar.gz"
+  sha256 "ab09340fbb2e3928d458c3d26bf6af28010e57bded98d04475fa9922d43f6646"
   license "MIT"
   head "https:github.comimgproxyimgproxy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "cceaee11df8994d6653b28fccbee5dedb543e6b6cdf85a07786c1651d79295c2"
-    sha256 cellar: :any,                 arm64_sonoma:  "76c1564fae0f8647b2e7046ad688af8a202fd36e15af62c320d26df893889f77"
-    sha256 cellar: :any,                 arm64_ventura: "3c1ec53c1efe9167abef64141f466a1627bc65b15c6445305aa4ef4f6cf69c79"
-    sha256 cellar: :any,                 sonoma:        "af595cf0b8afc32e678214e879d716581e8f4fd615fd5081a54a6a53d9ddb84c"
-    sha256 cellar: :any,                 ventura:       "ca0d10b3d76240ccf6509365190240c7472d402b40407f6675ace6854cde34fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "962d6f9c0307322e6b0a352d32cbabc9cc05bd0022521363e0277a893a45f6f9"
+    sha256 cellar: :any,                 arm64_sequoia: "1d2c0282b96bf64d1a96246cf42dc6e50e04d348b07f3faf2509c55dcd170076"
+    sha256 cellar: :any,                 arm64_sonoma:  "f0bdf0ae96565aa02c7eb38d2cf53685d82777366b4a796ab05842fb384cf3aa"
+    sha256 cellar: :any,                 arm64_ventura: "2ef9b7d1239dd0da9b9ca43c4a1f1e82b39ceb73f8702962508e4ebb7a2abc23"
+    sha256 cellar: :any,                 sonoma:        "f7ff13716c22f7dd7e5dc7035d5312eb13283a5c08d1ad993cd4d4fedb1f0b5d"
+    sha256 cellar: :any,                 ventura:       "3f01f079c4290c5dcce1cd58b9c1ecca30dc8ea74a22c9ba2daca937e75defc7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec8a6eed15af825dc8a201e96ae4ec8aa9c242777ba135e7e05e59f4ddddb2a6"
   end
 
   depends_on "go" => :build

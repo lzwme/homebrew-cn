@@ -1,8 +1,8 @@
 class Gambit < Formula
   desc "Software tools for game theory"
   homepage "http:www.gambit-project.org"
-  url "https:github.comgambitprojectgambitarchiverefstagsv16.2.1.tar.gz"
-  sha256 "d6b8bf8a7d42f20e157e0452b323feb260eee7fe06940841ed83e1307978dabc"
+  url "https:github.comgambitprojectgambitarchiverefstagsv16.3.0.tar.gz"
+  sha256 "d72e991ce935a3dc893947c413410348e2c2eb9cd912ec3b083699a4ccae4d77"
   license all_of: ["GPL-2.0-or-later", "Zlib"]
 
   livecheck do
@@ -11,12 +11,12 @@ class Gambit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "745f8c733cda2467183b230d3f7d05cbb0ac2cc8f84d8b38eed59a110b978c8c"
-    sha256 cellar: :any,                 arm64_sonoma:  "03cae53ac72bb53922509cbb6433bfa0920c35f6782144db3975415efd5cb861"
-    sha256 cellar: :any,                 arm64_ventura: "029a86328dfa6db4292f222392df2bbf42c3ebce98b858f79e96c0d1061b7cfb"
-    sha256 cellar: :any,                 sonoma:        "20273a54ac60a74e29f4e3ee6a92f2b86b27f03baee6851c8b53ed40950fe074"
-    sha256 cellar: :any,                 ventura:       "2adb4c55e2f2c98b33c1eac1b69cdbafc220dd5d0725b9af58e6f422e25cac45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e11832da5f73d24bf191fad88d973c9de6646a38275d4460138d9518d6122d6"
+    sha256 cellar: :any,                 arm64_sequoia: "6256d9e52330844dda1d10774c65a57368f5209548f2d5a9fbeb2bcdb84a91f1"
+    sha256 cellar: :any,                 arm64_sonoma:  "f2895dba2b2a7ded50d39eb905ae51047dece63c9deb659175a3809edf3ded5d"
+    sha256 cellar: :any,                 arm64_ventura: "dd3135d73ac6f13cb70dd512f0e814df73e5147aa9527a5dcc1ef70189a3b62e"
+    sha256 cellar: :any,                 sonoma:        "222ccdc2f9b564c8c25fc3524745201634a892964ad325779661181dfbb28921"
+    sha256 cellar: :any,                 ventura:       "c3a9408f35080bf0962de6843a662b8184d540a19e81f863131014d7923212d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a87956816c0145f8e347b5a2b65ebb81a51146db66d8b326fd945bfddf48330a"
   end
 
   depends_on "autoconf" => :build

@@ -3,8 +3,8 @@ class ZabbixCli < Formula
 
   desc "CLI tool for interacting with Zabbix monitoring system"
   homepage "https:unioslo.github.iozabbix-cli"
-  url "https:files.pythonhosted.orgpackagesbff7966ab87074daf3d3d23f4ad5b1937432e8f1268a642d09c8712fafbbe23dzabbix_cli_uio-3.4.2.tar.gz"
-  sha256 "e08e15cc57b0eed9b7eb34be5570433b4ac26052486ce3bf1c5feed34ecda3dc"
+  url "https:files.pythonhosted.orgpackagesef9fecd9b7a068289c7d37eeefc00fdcedb3fdbdb48401228765de8b873b0a73zabbix_cli_uio-3.5.0.tar.gz"
+  sha256 "b7d006f56e1d31a46df86d698ba4f186b59974c7e207bf87b8f23b71df8750cc"
   license "GPL-3.0-or-later"
   head "https:github.comunioslozabbix-cli.git", branch: "master"
 
@@ -15,13 +15,12 @@ class ZabbixCli < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "1afbcf90bf13cba8d09961671dc7a645a10826eb72a329b85bc7fc763bf766a4"
-    sha256 cellar: :any,                 arm64_sonoma:  "c43362d7538b95a5098c1c505876a6d9d52fd85e1f59c00f599fb20c48aeebed"
-    sha256 cellar: :any,                 arm64_ventura: "30dfc8bf848cc038690183faebd39bb1845f7ec4b5c44abdbeae3ca186b48869"
-    sha256 cellar: :any,                 sonoma:        "447965425edb9424f7e23f9fbdda0ac67f29ad6cd30047f01526bfd7340e36ae"
-    sha256 cellar: :any,                 ventura:       "28b4b3e587f30b7f1debcef5e5fc81e5d52768cf4389a962d31bdd6f14113bc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a27be7d2f365333b69cda6e8e90811a18378f6edc26e3494286b66df59505222"
+    sha256 cellar: :any,                 arm64_sequoia: "6da1243775c002121042745bceade7aec1c33f623c3ea1712dd815c1064aec4f"
+    sha256 cellar: :any,                 arm64_sonoma:  "331e47e8cd7576a4437b1abaf154be40edbdf9994050a80ffb49824fe222cd06"
+    sha256 cellar: :any,                 arm64_ventura: "7c8d770cb80b5c094b6f3f8bfbfbf91144b7285bdadc0c9a2db6dcf32afee2f4"
+    sha256 cellar: :any,                 sonoma:        "71b61d9f76f01007d37788c3e6bc4fa8216e24a4e51e2b9c4484268b5f3ff667"
+    sha256 cellar: :any,                 ventura:       "64f87b7757dc9aed9a3e9abed428dcf36b40d460032fab5a723ae5ba0647957a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d307198b0871e95b382ab2bd07336ea95d59b5c1b8d4303840e676314b0274a0"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -34,13 +33,13 @@ class ZabbixCli < Formula
   end
 
   resource "anyio" do
-    url "https:files.pythonhosted.orgpackagesf640318e58f669b1a9e00f5c4453910682e2d9dd594334539c7b7817dabb765fanyio-4.7.0.tar.gz"
-    sha256 "2f834749c602966b7d456a7567cafcb309f96482b5081d14ac93ccd457f9dd48"
+    url "https:files.pythonhosted.orgpackagesa373199a98fc2dae33535d6b8e8e6ec01f8c1d76c9adb096c6b7d64823038cdeanyio-4.8.0.tar.gz"
+    sha256 "1d9fe889df5212298c0c0723fa20479d1b94883a2df44bd3897aa91083316f7a"
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
+    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
   end
 
   resource "h11" do
@@ -89,18 +88,18 @@ class ZabbixCli < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackages450f27908242621b14e649a84e62b133de45f84c255eecb350ab02979844a788pydantic-2.10.3.tar.gz"
-    sha256 "cb5ac360ce894ceacd69c403187900a02c4b20b693a9dd1d643e1effab9eadf9"
+    url "https:files.pythonhosted.orgpackages6ac7ca334c2ef6f2e046b1144fe4bb2a5da8a4c574e7f2ebf7e16b34a6a2fa92pydantic-2.10.5.tar.gz"
+    sha256 "278b38dbbaec562011d659ee05f63346951b3a248a6f3642e1bc68894ea2b4ff"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackagesa69f7de1f19b6aea45aeb441838782d68352e71bfa98ee6fa048d5041991b33epydantic_core-2.27.1.tar.gz"
-    sha256 "62a763352879b84aa31058fc931884055fd75089cccbd9d58bb6afd01141b235"
+    url "https:files.pythonhosted.orgpackagesfc01f3e5ac5e7c25833db5eb555f7b7ab24cd6f8c322d3a3ad2d67a952dc0abcpydantic_core-2.27.2.tar.gz"
+    sha256 "eb026e5a4c1fee05726072337ff51d1efb6f59090b7da90d30ea58625b1ffb39"
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
-    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
+    url "https:files.pythonhosted.orgpackages7c2dc3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84pygments-2.19.1.tar.gz"
+    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
   end
 
   resource "rich" do

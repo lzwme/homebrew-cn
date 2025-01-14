@@ -1,18 +1,18 @@
 class Qsv < Formula
   desc "Ultra-fast CSV data-wrangling toolkit"
   homepage "https:github.comdathereqsv"
-  url "https:github.comdathereqsvarchiverefstags2.0.0.tar.gz"
-  sha256 "499820c938e2c9cdb9686cdd02ab7a31e207e9fd803ccc720b5e5ce09dfd7cd6"
+  url "https:github.comdathereqsvarchiverefstags2.1.0.tar.gz"
+  sha256 "b512b1ed78809a004ba8900815190d351750ea86638d031ccb0bc4e7510afb3e"
   license any_of: ["MIT", "Unlicense"]
   head "https:github.comdathereqsv.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b0df2442af410b80010ff676dfdfd317f36777d945339fe2852b8d98cbde152"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ffb0469653d3ceb0c12f45d5289397e6273493b546eeb397f1a943ec1aa11c92"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ac04ae6b7401d0d4dcf0aa97fe334e3344f4eb5fa6c1035121d7fbd5a60efc9e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "be8d55c5997a98f0722dee1b6ae2b3b0ebca6678034588e561207035654d47b8"
-    sha256 cellar: :any_skip_relocation, ventura:       "3ab92df106f5b060116ea094c4575d9752ead76eb030daf4ed250f32471e94f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3bc2cbb9dffec4beacfd8462131a92775ed87025ebd764ffaa928fe26c81f73"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b790e165fcb0939ac4a6d7790a5e923e69299e0a33d66a95aaf7328d025757f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e1b3ad1a7fe8fe2bc07c10a725b66b8422d738021cc444490dc966c883b452f0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "259e1164477593ec50eee0b0e8e19b59e1db094d1ce6b797eb5559267691100f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ccedeaef5cd1c9263c12b2f2770656b2d11e2e614855090bdd22f5566e1905b8"
+    sha256 cellar: :any_skip_relocation, ventura:       "04c8578b26829b303fd32b2311620ceaecd9f4e943d74c0357668e4153d76492"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c5b0a7636bb2e1d9fe535ff0c288f06aeff8892979a72cb3ddb2de506b46eb1"
   end
 
   depends_on "rust" => :build

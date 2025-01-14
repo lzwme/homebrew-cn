@@ -5,11 +5,6 @@ class Swfmill < Formula
   sha256 "db24f63963957faec02bb14b8b61cdaf7096774f8cfdeb9d3573e2e19231548e"
   license "GPL-2.0-only"
 
-  livecheck do
-    url :homepage
-    regex(/href=.*?swfmill[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
-
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "627251dcb91c98bea4455fb35da262880aae7f2f5897162616f62135f1fe9234"
     sha256 cellar: :any,                 arm64_sonoma:   "a9e8c77577b790f0e88eec48aa1e8091c7df0708731aab2d5b61f5379c4ee0ee"
@@ -27,6 +22,9 @@ class Swfmill < Formula
     sha256 cellar: :any,                 el_capitan:     "10165ef551225423c4d0b98b734aa112854bb836b6dcca675a0d2dd2adcee75a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e86fcc5ea5d803ac5f8f4bfe33090c4ceec8369bd8c026db34fdfd1b6aa997b"
   end
+
+  # adobe flash player EOL 12/31/2020, https://www.adobe.com/products/flashplayer/end-of-life-alternative.html
+  deprecate! date: "2025-01-12", because: :unmaintained
 
   depends_on "pkgconf" => :build
   depends_on "freetype"

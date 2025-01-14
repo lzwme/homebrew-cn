@@ -3,18 +3,18 @@ class Tach < Formula
 
   desc "Tool to enforce dependencies using modular architecture"
   homepage "https:docs.gauge.shgetting-startedintroduction"
-  url "https:files.pythonhosted.orgpackagesed7a23d706044859cf8be191a16088ef8b8d7b21116fed188f06a72b561f8303tach-0.19.7.tar.gz"
-  sha256 "b77cc97d1c848b66264b7b25d457436574b63aee06ec4d8e83055deeda833be0"
+  url "https:files.pythonhosted.orgpackages54c84064f6e97abeda0dd5a68a23a9cc46f236850d8247f124847ae3f03f86fftach-0.20.0.tar.gz"
+  sha256 "65ec25354c36c1305a7abfae33f138e9b6026266a19507ff4724f3dda9b55c67"
   license "MIT"
   head "https:github.comgauge-shtach.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "24037ae3edc313eafef43f32f88bcc5475d49b42d64765dc54ff16087cd5c10f"
-    sha256 cellar: :any,                 arm64_sonoma:  "959cbcdd2f5b25558fc7fb14d912d27cc386b19f4c52982e9d63613ffd06606c"
-    sha256 cellar: :any,                 arm64_ventura: "22d2410ae83f88972991e80c2564ca281855f4406a4bc6362f027fb8fae12582"
-    sha256 cellar: :any,                 sonoma:        "1f69c8d1f95daca3b9b47a7187c92b74ab67baa6aa8d6776bb5162cb046734cd"
-    sha256 cellar: :any,                 ventura:       "5c61aa8ff829cc9752e63959d2095a10ff93bfe8493785130bcb274d2e717bbd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36e7681ca0207d8e18bdfc1b621a422c2dfa06547cfd30bc71ecf239d2c422c4"
+    sha256 cellar: :any,                 arm64_sequoia: "1b61d073eaaa85f4c7f44d6109d64b203943804e8d246a3919540a1666221083"
+    sha256 cellar: :any,                 arm64_sonoma:  "940ed6a2e9fd781a7a936c0c45513338b6179baff6f7dd0f873240442c50a71b"
+    sha256 cellar: :any,                 arm64_ventura: "68f6c239e445d5383985d589144f96ba1f9c08bd2a46393474aa83c7f955c376"
+    sha256 cellar: :any,                 sonoma:        "3c86b6591ddde657926f2c09bcfbea40285d6146807664c9d9f57c13ac97c423"
+    sha256 cellar: :any,                 ventura:       "300d2b191937d7cf7c0444116e39802d0b959489442800d9131c01a3a4a78c75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65c2c26fdd89083d43e0bd3b732fd31b66589e4c5ab1d59a8d1fb920e757cdf5"
   end
 
   depends_on "rust" => :build

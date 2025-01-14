@@ -1,18 +1,18 @@
 class Serie < Formula
   desc "Rich git commit graph in your terminal"
   homepage "https:github.comlusinganderserie"
-  url "https:github.comlusinganderseriearchiverefstagsv0.4.1.tar.gz"
-  sha256 "f806e5d818c6211bb1d194b4e751b5ab1dd4571a5857e910fdca29e77c2cf4e8"
+  url "https:github.comlusinganderseriearchiverefstagsv0.4.2.tar.gz"
+  sha256 "34a6afce36e3517449d92b6428ec062c21d64a3569c0a8d0f514641f5a87d0b3"
   license "MIT"
   head "https:github.comlusinganderserie.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6456a66f53969dd3367af21b077fc2932764f732ba8f7743353e6a587309ac61"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dac857c650b3a380959fcbb6fea3fbf4ab6c304d85db9f221d2da1bac9b7f43d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6f4fd7d23914c404e00d161917663d471b0c9ba746bdd6311dc1b80231f45698"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c42af1688492dba546f3bf88b70df537d73da720f6aa6d948de274739285aac1"
-    sha256 cellar: :any_skip_relocation, ventura:       "8af3a8c67e926bcb8243bfa3e50a2cdfd0878befc76808b1ad1cf72bb86e5020"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9f3ef62cad5700569f19914158dd5079583a3a942e1ec1eb5cc3175718071e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1c22424da6fa274671751116389926fbc1ff4408dea9e8310fd8118817a327cf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "440e60d5187cf43014a244fed049717a4c8ee0d1295ccddc279a0673a70d358c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "241df69f243f1379c5a182bd713a19b7593078c89b107bc15366fab1342d7b51"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8dcf46dda281dbbdb5a85051990c5c987326584986b8ebb272f908571b0f7541"
+    sha256 cellar: :any_skip_relocation, ventura:       "cb59ff1c7ff3a4bcb4d08a7a77b4cecdc7ddebeb7bcd469db9db55d34cd5306b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "377b6dd3998041f10a68b164c740a6635757220928e16cac812ebd43fb9bf142"
   end
 
   depends_on "rust" => :build

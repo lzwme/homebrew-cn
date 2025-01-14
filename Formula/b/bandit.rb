@@ -3,18 +3,18 @@ class Bandit < Formula
 
   desc "Security-oriented static analyser for Python code"
   homepage "https:github.comPyCQAbandit"
-  url "https:files.pythonhosted.orgpackages0aa4030de3683f7abda813cc545b4b198842a5ef4ce9cb51a0bc103e14be1e97bandit-1.8.1.tar.gz"
-  sha256 "692553451fb36864c80663cd0d8a0015a2a25359d4c2fdea5255708eb7a82013"
+  url "https:files.pythonhosted.orgpackages9be2c229cdb4eefc124e5b77ac2557eb0a3cb5b9fc89bc465dd2b8dc1033dbb8bandit-1.8.2.tar.gz"
+  sha256 "e00ad5a6bc676c0954669fe13818024d66b70e42cf5adb971480cf3b671e835f"
   license "Apache-2.0"
   head "https:github.comPyCQAbandit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2a15de121cb9ecad8145ae2c8ee54040e5a2a194ea7b6f476e7b555c1ce6198d"
-    sha256 cellar: :any,                 arm64_sonoma:  "b59384b517e005b1d196ec9c6ddb99028f060867f8d2c98e101a1a8af4df9b9e"
-    sha256 cellar: :any,                 arm64_ventura: "2c30af1ab138975b9b48bde73783d0ec43718f5443785d2d1cb8df4604854c67"
-    sha256 cellar: :any,                 sonoma:        "e65fb943305d140ab15d5669b962e31555361242b27b4c615ba09f02017d53ea"
-    sha256 cellar: :any,                 ventura:       "7ed1e0f0ea03eaec6cdbf646cb8790538912b9bc3f75af2a4db1f68cc761d51a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db6fceb58bac873410a4b1cd258e1becb30b85eed3c2dc8ab5cc21782eeb646b"
+    sha256 cellar: :any,                 arm64_sequoia: "67885aa54ed00e6423064b484c1fd2f3c224e60e4ad385b6c3b87d473118ee5a"
+    sha256 cellar: :any,                 arm64_sonoma:  "b801600a7375e2a294f1b07910082ec21e0d44de11af37bd940c5d89d51a6705"
+    sha256 cellar: :any,                 arm64_ventura: "5a0d7c72b11c837d511691f6710a958029579f1b34cfb0cdb94f7ec09c6c1d75"
+    sha256 cellar: :any,                 sonoma:        "3c06a3552079d348c5a1dfb14260631c4a278e944fdc410e2411b18d78f29f24"
+    sha256 cellar: :any,                 ventura:       "47f4fbf1e8fc154a1fa20e553293852d14589c32d817d2270092eebfe7581615"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f9b7281c882be109f49d5390b0df7ba93bf33e192ad44e2f3dfb9c10a6fd1f0"
   end
 
   depends_on "libyaml"

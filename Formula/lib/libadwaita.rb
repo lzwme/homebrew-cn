@@ -14,12 +14,13 @@ class Libadwaita < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "26f03d653282691ea5ce0a2c18cb2ad28da43d553c37de6423e76c6271127533"
-    sha256 arm64_sonoma:  "da53f281421f826009214c96000d2a4f5b228150bc5245eef3743454e9d936aa"
-    sha256 arm64_ventura: "c1deafb1abce0608225f2ce3ab73bcc3aaee43ee2e1b3ec49f99455429f3e840"
-    sha256 sonoma:        "43226479d6a2e6b1781b3166f214bd28fd4fa293b193e74f6b12508ca9e3bdd1"
-    sha256 ventura:       "cc25af66e1d985d6ae2b8f6feb619c805b6ceea9c83820e4661ce78d439230c7"
-    sha256 x86_64_linux:  "c1c215c269ad6fe0870581f8ac085f9c2184ea4e92a13d3f3c9f9c68c9140ca5"
+    rebuild 1
+    sha256 arm64_sequoia: "d19a8a59ff30b6416d24e33f4723831179f437a394243a10716120af1729ec3e"
+    sha256 arm64_sonoma:  "835d589868ffb17c9ceea1ee4bd149615620109c71e87dcfdb4d28853de6fb7f"
+    sha256 arm64_ventura: "4e54928ffc1309940bec37af002e0efe3aa4ffe0b73a4be9dce226015b017232"
+    sha256 sonoma:        "94cfcf6ccb70e2d3415d92d59e80acb0445e92f8fbb740b86ff9932270e319be"
+    sha256 ventura:       "965a0bdaf0ca1b69a95712c6e834b269ed28b5d6b2009d42977ae842947cebfd"
+    sha256 x86_64_linux:  "81251bc1080ef301253096e4a4ce9c26d6b2039e32c69b61ec766e0b75fa4d3a"
   end
 
   depends_on "gettext" => :build
@@ -27,6 +28,7 @@ class Libadwaita < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
+  depends_on "sassc" => :build
   depends_on "vala" => :build
 
   depends_on "appstream"

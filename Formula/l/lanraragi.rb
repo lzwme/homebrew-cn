@@ -1,19 +1,18 @@
 class Lanraragi < Formula
   desc "Web application for archival and reading of mangadoujinshi"
   homepage "https:github.comDifegueLANraragi"
-  url "https:github.comDifegueLANraragiarchiverefstagsv.0.9.30.tar.gz"
-  sha256 "ec3ec61acebaf427e5c8b6873fd477d6aae5b084552ac981112692535ad0fbdf"
+  url "https:github.comDifegueLANraragiarchiverefstagsv.0.9.31.tar.gz"
+  sha256 "a104d84d491d00b27b04edbd05016605ab1a6114c076d9a01cdca1496715804d"
   license "MIT"
   head "https:github.comDifegueLANraragi.git", branch: "dev"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "601a58b6b9eae187deaae655dc68cfa83929614f7def8a7b1125307b6b5c5371"
-    sha256 cellar: :any,                 arm64_sonoma:  "b3c6fd03779b541004f19e02b923a2319a84720d13aba645af8fa0a68b7cd0a3"
-    sha256 cellar: :any,                 arm64_ventura: "1eac6503c04791db40c3709f1ce4d42c0985e0e5c3e9b683c5dcce6557d0751c"
-    sha256 cellar: :any,                 sonoma:        "5273b188612576ea97422ab00ac63d792a377b9918a24a7135643a1aeb946e2f"
-    sha256 cellar: :any,                 ventura:       "f41499e553f2de58c55ddc266669afc94c215984cfb36f72536fb0b716e9ba22"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4bf74bd4be183b84374e7326c2495a4a832d25c9b4f3b5a9c4cdc26766279cc"
+    sha256 cellar: :any,                 arm64_sequoia: "6930cd3f45769b577aca6001119535a83d0eed7f767ba5bd98cd6b54ce129da1"
+    sha256 cellar: :any,                 arm64_sonoma:  "2aa2238d17e5b008c0a381e8ae60ea90cc5f9a7787285e154b0a8975d5f36aba"
+    sha256 cellar: :any,                 arm64_ventura: "8ab0ce5030db23398a998f5e35e9a831799c3887659301fab36d2d35c42c6f18"
+    sha256 cellar: :any,                 sonoma:        "30589b6799023584f70e4e9657e44ba1d5a2849e00179f0e1990e7147599b0ab"
+    sha256 cellar: :any,                 ventura:       "1d111e3daa8782677e1281fe4eea7d60c41abff332e42901b1b56702c0ab77c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc0106b15f6ff7d2fa785a5bd749679900079800399732b846709ca4a7fce8a6"
   end
 
   depends_on "pkgconf" => :build

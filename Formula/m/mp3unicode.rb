@@ -5,12 +5,6 @@ class Mp3unicode < Formula
   sha256 "375b432ce784407e74fceb055d115bf83b1bd04a83b95256171e1a36e00cfe07"
   license "GPL-2.0-only"
 
-  livecheck do
-    url :stable
-    regex((?:mp3unicode[._-])?v?(\d+(?:\.\d+)+)i)
-    strategy :github_latest
-  end
-
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "6612359fa6921d2c5d688200c5406a41a56a344f0ee288f7cb031fa8171ac4cf"
     sha256 cellar: :any,                 arm64_sonoma:   "eb5436a0aedcfc316d8504fc65d4ddb2e9123aa035b31661ae8e5e98f77f530f"

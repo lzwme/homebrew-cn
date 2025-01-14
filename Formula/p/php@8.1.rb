@@ -13,12 +13,13 @@ class PhpAT81 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "2fd310dfbd570b6998906d8f40bd2fd51ba66b6f28a7d8f826ff6dbeef111edc"
-    sha256 arm64_sonoma:  "d0c5eacbbc350721e5d87f301bd3e27e24c7711422bd0af976c077a14ebbff5e"
-    sha256 arm64_ventura: "69596825a94b96775a0c4904ed335d47a472d281efec950ba4aecf49acce974a"
-    sha256 sonoma:        "2585dac48ab45d53e9cf0cba573aeedab04ab133cb13f7bc4ef21856c2a94b5c"
-    sha256 ventura:       "c459e02507d84d26513063b3b8c8f2985971a077dac54b33ea4c215e79f1ae82"
-    sha256 x86_64_linux:  "ecf74cf457d6b821b6a058a01a5531f2f37711fbfe4ee3e2b9548db6e98c9629"
+    rebuild 1
+    sha256 arm64_sequoia: "91f378070315f79e3ea29844fdb760b7c78aa0a3d7ee8b781c0580a6b7a9545e"
+    sha256 arm64_sonoma:  "6ee70538bb6f56be0498bf507f6ba97c15b81d391e3943bee2cf9689bdb11829"
+    sha256 arm64_ventura: "e209c206738287ca105874ebe5fbfaf2a00f0f374ceca12b39033f830b18246c"
+    sha256 sonoma:        "5c6a7694fb43f99910e2dc33f2a6c2f3fad4cfd2f121b2c7ee8750c1f6f75bba"
+    sha256 ventura:       "fd351cb3f3df68e0455be9ffabf287c97f7ba2090fc5f4467d76d3421399c03f"
+    sha256 x86_64_linux:  "ffbf178e5f53e44970e81ef9ea0f3bd65c94849cb53a141822584896fc668ccc"
   end
 
   keg_only :versioned_formula
@@ -119,6 +120,9 @@ class PhpAT81 < Formula
 
     # Prevent homebrew from hardcoding path to sed shim in phpize script
     ENV["lt_cv_path_SED"] = "sed"
+
+    # Identify build provider in phpinfo()
+    ENV["PHP_BUILD_PROVIDER"] = tap.user
 
     # system pkg-config missing
     ENV["KERBEROS_CFLAGS"] = " "

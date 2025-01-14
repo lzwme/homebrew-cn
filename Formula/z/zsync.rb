@@ -1,18 +1,14 @@
 class Zsync < Formula
   desc "File transfer program"
-  homepage "http://zsync.moria.org.uk/"
-  url "http://zsync.moria.org.uk/download/zsync-0.6.2.tar.bz2"
+  # `zsync.moria.org.uk` is no longer accessible, use internet archive urls instead
+  homepage "https://web.archive.org/web/20241223233525/http://zsync.moria.org.uk/"
+  url "https://web.archive.org/web/20241223233525/http://zsync.moria.org.uk/download/zsync-0.6.2.tar.bz2"
   sha256 "0b9d53433387aa4f04634a6c63a5efa8203070f2298af72a705f9be3dda65af2"
   license all_of: [
     "Artistic-2.0",
     "Zlib", # zlib/
     :public_domain, # librcksum/md4.c, libzsync/sha1.c, zlib/inflate.c
   ]
-
-  livecheck do
-    url "http://zsync.moria.org.uk/downloads"
-    regex(/href=.*?zsync[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "242e3632a7cacc43f4b909c69bea7ae3c850921189867c6f6980523fea4f0364"
@@ -31,6 +27,9 @@ class Zsync < Formula
     sha256 cellar: :any_skip_relocation, el_capitan:     "9bbe0e102ca6a2b7ca57af6b2b29984f7da59ce97d15ce550bbbb206f1ad1815"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1961843c2195ae143b2f2ece7e26f91aa4c5a0acc67721441c221b5ae3404150"
   end
+
+  # `zsync.moria.org.uk` is no longer accessible
+  deprecate! date: "2025-01-12", because: :repo_removed
 
   def install
     # Fix compile with newer Clang

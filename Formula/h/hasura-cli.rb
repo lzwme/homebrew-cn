@@ -6,14 +6,6 @@ class HasuraCli < Formula
   license "Apache-2.0"
   head "https:github.comhasuragraphql-engine.git", branch: "master"
 
-  # There can be a notable gap between when a version is tagged and a
-  # corresponding release is created, so we check the "latest" release instead
-  # of the Git tags.
-  livecheck do
-    url :stable
-    strategy :github_latest
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "49604b94ee609871da668a4b566d11ae72e625dfb2b615af548ecf94c0366a9c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49604b94ee609871da668a4b566d11ae72e625dfb2b615af548ecf94c0366a9c"
