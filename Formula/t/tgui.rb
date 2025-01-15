@@ -12,16 +12,17 @@ class Tgui < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "68d876aecf41558861d2e17ff3ea4aded9773977350015de1b9b0f71cf46e8fe"
-    sha256 cellar: :any,                 arm64_sonoma:  "3a24d3b020a457f65ae2dde489267629d190acf8136f330096daf341d5eace2f"
-    sha256 cellar: :any,                 arm64_ventura: "aef7806f9a2d5f54c0c052c5b5b2ae1c9447b0492b362e4d6669f0eabd6a7ab5"
-    sha256 cellar: :any,                 sonoma:        "4ad63bf9364d7d9b52674b4927448a88a287fcd9d8769fb6daee8f1cac9a3e28"
-    sha256 cellar: :any,                 ventura:       "5f96c17afffd6e3497c694e864d9202cbbac1abd3923393258ccfc5427fa524d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f46837a2ada4a9bff27b178d758b8ad2c6c78215f7c25837f64f6f7b356bc463"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "080aa369e3989af0d6356474269a0fbf23a87dca6004225a830b3d1ed35fd0d7"
+    sha256 cellar: :any,                 arm64_sonoma:  "220cd61b22a0bc34084d3a0e0e3b37ee0e8e7b4cefe0c9cd2a3b6477d22b52eb"
+    sha256 cellar: :any,                 arm64_ventura: "0ac91f25c61424cbac1b04aaea23a0180dbc0b2e276695271479e0af17323ac6"
+    sha256 cellar: :any,                 sonoma:        "7f092bf4268f8503af9673cab2ebfaf3e36178dc4c630b06da9201eeaec9f551"
+    sha256 cellar: :any,                 ventura:       "c92b6d820ea57fd04dad69efbd9d4a7a082cd8c0ae0e0a389e72540e6be2a667"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29d9dfeb5710e057b851722005b8caf9752b04904115bde7044f51a8881bb706"
   end
 
   depends_on "cmake" => :build
-  depends_on "sfml@2" # sfml 3.0 build issue report, https:github.comtexusTGUIissues249
+  depends_on "sfml"
 
   def install
     args = %W[
@@ -45,17 +46,25 @@ class Tgui < Formula
       #include <TGUIBackendSFML-Graphics.hpp>
       int main()
       {
-        sf::Text text;
-        text.setString("Hello World");
+        sf::RenderWindow window{sf::VideoMode{{800, 600}}, "TGUI example (SFML-Graphics)"};
+        tgui::Gui gui{window};
+        if (!window.isOpen())
+          return 1;
+        const auto event = window.pollEvent();
+        window.close();
         return 0;
       }
     CPP
 
-    ENV.append_path "LD_LIBRARY_PATH", Formula["sfml@2"].opt_lib if OS.linux?
-    system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}", "-I#{Formula["sfml@2"].opt_include}",
-      "-L#{lib}", "-L#{Formula["sfml@2"].opt_lib}",
+    system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}", "-I#{Formula["sfml"].opt_include}",
+      "-L#{lib}", "-L#{Formula["sfml"].opt_lib}",
       "-ltgui", "-lsfml-graphics", "-lsfml-system", "-lsfml-window",
       "-o", "test"
-    system ".test"
+
+    if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+      assert_match "Failed to open X11 display", shell_output(".test 2>&1", 134)
+    else
+      system ".test"
+    end
   end
 end

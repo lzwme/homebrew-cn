@@ -1,8 +1,8 @@
 class Aptos < Formula
   desc "Layer 1 blockchain built to support fair access to decentralized assets for all"
   homepage "https:aptosfoundation.org"
-  url "https:github.comaptos-labsaptos-corearchiverefstagsaptos-cli-v5.1.0.tar.gz"
-  sha256 "25bf75904803c590f59e351e832f91a67f54bd09a1dd2c248edfe21a9b977c1f"
+  url "https:github.comaptos-labsaptos-corearchiverefstagsaptos-cli-v6.0.0.tar.gz"
+  sha256 "dda490c11aff83a8909cac18c9598de4d6b7e03dd72c34b76346022450da644c"
   license "Apache-2.0"
   head "https:github.comaptos-labsaptos-core.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Aptos < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aee1aeb80e5a35beecd7f4a4e09a792adb0d2110fbe0ea93e21f11e5804eed47"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83c2a900840d183989e30f733eb06d538c790cb48e9e05d8dd61a3d62faea550"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "78750227021e77fe12464fd15521edc9af568c4c2c2e7899780b83c777df40d7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2a2761bb5c291805303546229291c1192ea6f3b4fad2604cd45612567867f052"
-    sha256 cellar: :any_skip_relocation, ventura:       "166ccf8b55ce4a74ef88c72760194f00fe0d89d64e4e057fe566b2e3e11afbf4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a4ef7f9ff39649940b9f6147eeaaf9d62544d245d82974d4825e514a583cd36"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e77175f7e90d69d5aeba965ca9e22ea9a5d48c8b1f63ac24846540fc63995a5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "25691262b844acc0555914780a5bdca0520bd81f8514fd01dc86f10a9245ba6f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2991b604a83362e99ec3e0156026a8fc30cbe83f23b0c22c363221a17aee833e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ee4985aaa3fb639e866e66ccaf12523289fd5eda57d124380431a60c574a063f"
+    sha256 cellar: :any_skip_relocation, ventura:       "1e7e89bc13a7063d77b5360f520cf1ab78c2be1e13b54d8a73cb4bfe6d574904"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbdca5dd6fbfadeaf4455cffc299b62a09d62be183b6ffbe8457a20b3bd9306b"
   end
 
   depends_on "cmake" => :build
@@ -28,6 +28,7 @@ class Aptos < Formula
   on_linux do
     depends_on "pkgconf" => :build
     depends_on "zip" => :build
+    depends_on "elfutils"
     depends_on "openssl@3"
     depends_on "systemd"
   end

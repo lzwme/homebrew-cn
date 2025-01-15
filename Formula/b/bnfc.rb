@@ -1,6 +1,7 @@
 class Bnfc < Formula
   desc "BNF Converter"
   homepage "https:bnfc.digitalgrammars.com"
+  # TODO: Check if `aeson` allow-newer workaround can be removed
   url "https:github.comBNFCbnfcarchiverefstagsv2.9.5.tar.gz"
   sha256 "32a6293b95e10cf1192f348ec79f3c125b52a56350caa4f67087feb3642eef77"
   license "BSD-3-Clause"
@@ -29,12 +30,16 @@ class Bnfc < Formula
   depends_on "openjdk" => :test
 
   def install
-    cd "source" do
-      system "cabal", "v2-update"
-      system "cabal", "v2-install", *std_cabal_v2_args
-      doc.install "CHANGELOG.md"
-      doc.install "srcBNFC.cf" => "BNFC.cf"
-    end
+    # Workaround to build with GHC 9.12, remove after https:github.comhaskellaesonpull1126
+    # is merged and available on Hackage or if `aeson` is willing to provide a metadata revision
+    args = ["--allow-newer=aeson:ghc-prim,aeson:template-haskell"]
+
+    system "cabal", "v2-update"
+    system "cabal", "v2-install", buildpath"source", *args, *std_cabal_v2_args
+
+    doc.install "sourceCHANGELOG.md"
+    doc.install "sourcesrcBNFC.cf" => "BNFC.cf"
+
     cd "docs" do
       system "make", "text", "man", "SPHINXBUILD=#{Formula["sphinx-doc"].bin"sphinx-build"}"
       cd "_build" do
@@ -109,7 +114,7 @@ class Bnfc < Formula
       14 * (3 + 2  5 - 8)
     EOS
 
-    mktemp "c-test" do
+    mkdir "c-test" do
       system bin"bnfc", "-m", "-o.", "--c", testpath"calc.cf"
       system "make", "CC=#{ENV.cc}", "CCFLAGS=#{ENV.cflags}",
              "FLEX=#{Formula["flex"].bin"flex"}",
@@ -118,7 +123,7 @@ class Bnfc < Formula
       assert_equal check_out_c, test_out
     end
 
-    mktemp "cxx-test" do
+    mkdir "cxx-test" do
       system bin"bnfc", "-m", "-o.", "--cpp", testpath"calc.cf"
       system "make", "CC=#{ENV.cxx}", "CCFLAGS=#{ENV.cxxflags}",
              "FLEX=#{Formula["flex"].bin"flex"}",
@@ -127,7 +132,7 @@ class Bnfc < Formula
       assert_equal check_out_c, test_out
     end
 
-    mktemp "agda-test" do
+    mkdir "agda-test" do
       system bin"bnfc", "-m", "-o.", "--haskell", "--text-token",
              "--generic", "--functor", "--agda", "-d", testpath"calc.cf"
       system "make"
@@ -138,10 +143,10 @@ class Bnfc < Formula
     end
 
     ENV.deparallelize do # only the Java test needs this
-      mktemp "java-test" do
+      mkdir "java-test" do
         jdk_dir = Formula["openjdk"].bin
         antlr_bin = Formula["antlr"].bin"antlr"
-        antlr_jar = Dir[Formula["antlr"].prefix"antlr-*-complete.jar"][0]
+        antlr_jar = Formula["antlr"].prefix.glob("antlr-*-complete.jar").first
         ENV["CLASSPATH"] = ".:#{antlr_jar}"
         system bin"bnfc", "-m", "-o.", "--java", "--antlr4", testpath"calc.cf"
         system "make", "JAVAC=#{jdk_dir"javac"}", "JAVA=#{jdk_dir"java"}",

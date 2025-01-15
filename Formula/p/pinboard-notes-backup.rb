@@ -27,7 +27,7 @@ class PinboardNotesBackup < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc" => :build
+  depends_on "ghc@9.10" => :build
 
   uses_from_macos "zlib"
 
@@ -35,7 +35,7 @@ class PinboardNotesBackup < Formula
     system "cabal", "v2-update"
     # Upper bound `tls` to work around "peer does not support Extended Main Secret" HandshakeFailure
     # Ref: https:github.combdeshampinboard-notes-backupissues1
-    system "cabal", "v2-install", *std_cabal_v2_args, "--constraint=tls<2"
+    system "cabal", "v2-install", "--constraint=tls<2", *std_cabal_v2_args
     man1.install "manpnbackup.1"
   end
 

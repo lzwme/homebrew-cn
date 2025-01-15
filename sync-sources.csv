@@ -4191,7 +4191,7 @@ Homebrew-homebrew-core/Formula/m/micropython.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/microsocks.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/midicsv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/midnight-commander.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mighttpd2.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mighttpd2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mihomo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mikmod.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mikutter.rb, Homebrew/homebrew-core, 0
@@ -6216,6 +6216,7 @@ Homebrew-homebrew-core/Formula/s/sshportal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sshs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sshtrix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sshuttle.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sshx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/ssldump.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sslh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/ssllabs-scan.rb, Homebrew/homebrew-core, 1

@@ -1,39 +1,18 @@
 class Prr < Formula
   desc "Mailing list style code reviews for github"
   homepage "https:github.comdanobiprr"
+  url "https:github.comdanobiprrarchiverefstagsv0.20.0.tar.gz"
+  sha256 "fa25e4690a6976af37738b417b01f1fa0df7448efd631239aadea0399a9e862a"
   license "GPL-2.0-only"
-  revision 3
   head "https:github.comdanobiprr.git", branch: "master"
 
-  stable do
-    url "https:github.comdanobiprrarchiverefstagsv0.19.0.tar.gz"
-    sha256 "76d101fefe42456d0c18a64e6f57b9d3a84baaecaf1e3a5e94b93657a6773c11"
-
-    # support libgit2 1.8, upstream pr ref, https:github.comdanobiprrpull67
-    patch do
-      url "https:github.comdanobiprrcommitc860f3d29c3607b10885e6526bea4cfd242815b5.patch?full_index=1"
-      sha256 "208bbbdf4358f98c01b567146d0da2d1717caa53e4d2e5ea55ae29f5adaaaae2"
-    end
-    # support libgit2 1.9, upstream pr ref, https:github.comdanobiprrpull69
-    patch do
-      url "https:github.comdanobiprrcommit84c0d0c324fb5a1334b72dc1fdf65c8e81c2cd01.patch?full_index=1"
-      sha256 "e695229e73e83f5d06c9b9ac9714c053088f6862d6db699e1d3101413b2d06d4"
-    end
-
-    # completion and manpage support, upstream pr ref, https:github.comdanobiprrpull68
-    patch do
-      url "https:github.comdanobiprrcommit8ba7fdc2fcca86236311c65481af5b27a276a806.patch?full_index=1"
-      sha256 "f74882907e25bc1af3e1556407c84e5477b3d7be3e51a2b40178ae17aaafaa0d"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1935f2644eed1aea55ec06e5169cf4768f4add80d324be5bb986ba6e6b4cf416"
-    sha256 cellar: :any,                 arm64_sonoma:  "5eb5d8287cde7049ce2ffc0dac1e5bb46a8d8d112f69cefac3fd2b0af95ba0cc"
-    sha256 cellar: :any,                 arm64_ventura: "a6ca2fcec336fe4248924d153b101e878575a5f64156be4ef656d9ee25e79c0d"
-    sha256 cellar: :any,                 sonoma:        "ae3767c62caefd53b2eac176b08cf87e3ea21396eb75861b710e4d328d7a19da"
-    sha256 cellar: :any,                 ventura:       "9312b31f0f636a53a15ac44e63495421d6c94836bd13e346914cce9da3a6845f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4e577e866ec76b2a49589a6d10cbdaad14cbce93fefa69eb899fae6fb9e6424"
+    sha256 cellar: :any,                 arm64_sequoia: "9c765df97668492a4ad84de57bc6e16f81ca4fe743a05cafc06a6e08080ea206"
+    sha256 cellar: :any,                 arm64_sonoma:  "f3933eff7e8c317e2bac08b82a227160a9759f17204427a40691e7d0dc8deb67"
+    sha256 cellar: :any,                 arm64_ventura: "1456631c5e2b4bc0484b46efc28e6dc1f694bd23958497542962ac0b45c2179f"
+    sha256 cellar: :any,                 sonoma:        "20d2cd9a366af2e2de5c4106b57ca1c1a231fc5b8571fc292581eadb2a6a9088"
+    sha256 cellar: :any,                 ventura:       "5abd0b3b9851360119bf5df5a8693cc70b5de849128ec9073c3f914c337fff1a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1667b82bf92db3853a68148bd85723defa29bffbbc7866bc661667910d979249"
   end
 
   depends_on "pkgconf" => :build

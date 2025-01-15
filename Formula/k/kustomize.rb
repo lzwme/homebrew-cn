@@ -1,8 +1,8 @@
 class Kustomize < Formula
   desc "Template-free customization of Kubernetes YAML manifests"
   homepage "https:github.comkubernetes-sigskustomize"
-  url "https:github.comkubernetes-sigskustomizearchiverefstagskustomizev5.5.0.tar.gz"
-  sha256 "a90ed294c874404934bb5aa132185604d31fbd5622fbcb5ce2c3f56d67eeb322"
+  url "https:github.comkubernetes-sigskustomizearchiverefstagskustomizev5.6.0.tar.gz"
+  sha256 "80822d3227c0dbbd38bff19c4630f4fa7eccbacd0ff269a1795a63aa3a45714f"
   license "Apache-2.0"
   head "https:github.comkubernetes-sigskustomize.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Kustomize < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a34e6a184939183913d0eb56312afde72e28c22dedf305d9c667efd8a36fceb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "377f5b7a4eea752d7553084436d07a5ca12898ca26590a9fdc28a6ed67c27e0e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "16acc2a8548c736dc7634b98588c342f8b53a9798174d51e809a4e66bcfbf0b9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "93211d48a7837e98bc39e013f7274076799e20b1bf7c1d7480ce10c7c27e0f61"
-    sha256 cellar: :any_skip_relocation, ventura:       "6e05b4d3965821a9824a3693c29ee2906720777e867b6336c8144e208bdb217c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0dc01f68d22e7d2834a0af743eabc3c2f01876816d7dd5a0137977cbb175200f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd6b8ee41eaa7b659064ed70af60dd3c79b4064465f66074cf9d5dfc5301dcaa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e8887e642d4af6754b15728feaebd0e326d45547ebd1a6a53ae299d88cce48a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ec32849849c7f51ee4606b6beaad41c83a0e49cdf2b2ce641c201eecaddb83ac"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ce706ccba85d5dc14c50cbd7c91dc99ab27489e5d4fb67880da064d4546f88c9"
+    sha256 cellar: :any_skip_relocation, ventura:       "9f0d69b382c07d38e432cd49d1f141d2e456e87f31f5d8d4d7674ab2c833dea2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f480a2f4d778df050f01c6344d9777c8ce2ee729e44694695732ff064050e2a6"
   end
 
   depends_on "go" => :build

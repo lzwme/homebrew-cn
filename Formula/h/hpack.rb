@@ -1,6 +1,7 @@
 class Hpack < Formula
   desc "Modern format for Haskell packages"
   homepage "https:github.comsolhpack"
+  # TODO: Check if `aeson` allow-newer workaround can be removed
   url "https:github.comsolhpackarchiverefstags0.37.0.tar.gz"
   sha256 "5d292d70744435d67586f9a8a759debbf160cb70a069a8d65403f123fac84091"
   license "MIT"
@@ -23,8 +24,12 @@ class Hpack < Formula
   uses_from_macos "zlib"
 
   def install
+    # Workaround to build with GHC 9.12, remove after https:github.comhaskellaesonpull1126
+    # is merged and available on Hackage or if `aeson` is willing to provide a metadata revision
+    args = ["--allow-newer=aeson:ghc-prim,aeson:template-haskell"]
+
     system "cabal", "v2-update"
-    system "cabal", "v2-install", *std_cabal_v2_args
+    system "cabal", "v2-install", *args, *std_cabal_v2_args
   end
 
   # Testing hpack is complicated by the fact that it is not guaranteed

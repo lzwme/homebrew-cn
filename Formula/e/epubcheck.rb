@@ -1,12 +1,12 @@
 class Epubcheck < Formula
   desc "Validate EPUB files, version 2.0 and later"
   homepage "https:github.comw3cepubcheck"
-  url "https:github.comw3cepubcheckreleasesdownloadv5.2.0epubcheck-5.2.0.zip"
-  sha256 "a88fc7ec19df1eb1c27f50ceb5156772ef0b53e1c418f663c8d750bdbdd0f922"
+  url "https:github.comw3cepubcheckreleasesdownloadv5.2.1epubcheck-5.2.1.zip"
+  sha256 "0532f6291faa2bb729dd253f958868a2a57dbd2c32f881a97c7c980c5940309e"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9078e3e592f0c1f83908f3ce507216c6a4b68d585c2e572c4589eb4861df6d47"
+    sha256 cellar: :any_skip_relocation, all: "ad5ac9fa8cf59163ab7261ae951682ed275478c220724e417966ee68b529af9c"
   end
 
   depends_on "openjdk"

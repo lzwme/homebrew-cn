@@ -1,20 +1,20 @@
 class PhpAT85 < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
-  url "https:github.comphpphp-srcarchivef99d62013bad583f6b06811f8591b5c03027fec3.tar.gz?commit=f99d62013bad583f6b06811f8591b5c03027fec3"
+  url "https:github.comphpphp-srcarchive4c84ed4d98805cbbbe3a174cd9a11b68bec2f88e.tar.gz?commit=4c84ed4d98805cbbbe3a174cd9a11b68bec2f88e"
   version "8.5.0"
-  sha256 "922ae1c643de432b33fa1e5292ce8f05e73afd8a86273d0bb13c225a6417535c"
+  sha256 "e130e82b85dc57b147d4831f38bdff51280de4d3bee79cdfdeb502a4df5ec886"
   license "PHP-3.01"
   revision 2
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    rebuild 27
-    sha256 arm64_sequoia: "0dc41c1c01ad2b32eda2365974e72575d63034f16c0ac900369d6c8294c46385"
-    sha256 arm64_sonoma:  "335c8c2597e7d810f300276ae97daf54aa96c316661486be8efa8efa0365b144"
-    sha256 arm64_ventura: "a0ac00fe58ecd5c7805d6575511a7e404ac8aed1410a99015931562d450520eb"
-    sha256 ventura:       "6386a652fd5311fbf3bf190e69ecadfbd96538b8e7ac6adebf4e7c730a3802d1"
-    sha256 x86_64_linux:  "4d1437b58d1431db833632a57423ec818c281b22f35ad9f115a65a20a385516d"
+    rebuild 28
+    sha256 arm64_sequoia: "cfafe234305052d9d0c888e63e7a934f114b9858a4eaa5af921ea011b56bf3ca"
+    sha256 arm64_sonoma:  "e6ef706a202c513a9a38b9c8ffc85bfa6fb9abc392a05045bf75d4c960a5036c"
+    sha256 arm64_ventura: "2fa27bfb827b83dcfcf0c3529cfa7314ee9f02ed0611a6317d0a6fd30fe58fed"
+    sha256 ventura:       "209ce32bf7134fde9f67450d1bb012620eb49079d179d8c610da19d13b8c041f"
+    sha256 x86_64_linux:  "e76ab6e12eafff75c15feb8a4e69fd3b6d3f903a7906f483b04d0902fb3a78b9"
   end
 
   keg_only :versioned_formula
@@ -95,6 +95,9 @@ class PhpAT85 < Formula
 
     # Prevent homebrew from hardcoding path to sed shim in phpize script
     ENV["lt_cv_path_SED"] = "sed"
+
+    # Identify build provider in php -v output and phpinfo()
+    ENV["PHP_BUILD_PROVIDER"] = "shivammathurhomebrew-php"
 
     # system pkg-config missing
     ENV["KERBEROS_CFLAGS"] = " "

@@ -4,7 +4,7 @@ class Gitg < Formula
   url "https://download.gnome.org/sources/gitg/44/gitg-44.tar.xz"
   sha256 "342a31684dab9671cd341bd3e3ce665adcee0460c2a081ddc493cdbc03132530"
   license "GPL-2.0-or-later"
-  revision 5
+  revision 6
 
   livecheck do
     url :stable
@@ -12,12 +12,12 @@ class Gitg < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "e0859a74d86feac32e25101dbc0be9f8a9aaf60a8b060985a6ed14043c3e74b8"
-    sha256 arm64_sonoma:  "d8616b005506afaf6fb31f29d58772b9596754c690e3aa937002eafc99473f7f"
-    sha256 arm64_ventura: "f364e71d2c5167f2f0af2a1c766d7fb566b250ba0f181191471ae05a9400fb96"
-    sha256 sonoma:        "900544774b44906d1f6fa876f88af4969e431ade7bfebb1174113483680803a1"
-    sha256 ventura:       "aabffb6d9572325f9dc86954c60fce64e32ed2f06ff3721c0c06417243ec264e"
-    sha256 x86_64_linux:  "c5bc7631c776e665c4125c3d3594edd9e8412cf0568bd589c0f9d98353ce0460"
+    sha256 arm64_sequoia: "7573250dd5a9b53bda64fff6ed25f3f8afc4cc2edd0304565c8bc1e2efb71246"
+    sha256 arm64_sonoma:  "3442fb4ac5d87a0acf1ec56e7cb356ae01a94eb1449a8d8fc987843b6971a8e1"
+    sha256 arm64_ventura: "c240b9f00f0451039e51877d7d87594dedc7a91267c1fcef5c1a98b3db8301d9"
+    sha256 sonoma:        "83a586e672472e4366c642728d117503449f3f1ef1a02efe8dce344aa5834a0a"
+    sha256 ventura:       "91cd1b4972e6d1cf5063132a130f2691e29762124f2736f34fb71e83de340ed8"
+    sha256 x86_64_linux:  "f269ef5daf90cbc9b7bdc38f532fc208df31a6e03b156d9bbc15e5c698f302e7"
   end
 
   depends_on "gettext" => :build # for `msgfmt`
@@ -39,8 +39,8 @@ class Gitg < Formula
   depends_on "json-glib"
   depends_on "libdazzle"
   depends_on "libgee"
+  depends_on "libgit2"
   depends_on "libgit2-glib"
-  depends_on "libgit2@1.8"
   depends_on "libhandy"
   depends_on "libpeas@1"
   depends_on "libsecret"
@@ -80,7 +80,7 @@ class Gitg < Formula
       }
     C
 
-    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libgit2@1.8"].opt_lib/"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", Formula["libgit2"].opt_lib/"pkgconfig"
     flags = shell_output("pkgconf --cflags --libs libgitg-1.0").chomp.split
     system ENV.cc, "test.c", "-o", "test", *flags
     system "./test"

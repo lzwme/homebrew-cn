@@ -1,17 +1,17 @@
 class Cyphernetes < Formula
   desc "Kubernetes Query Language"
   homepage "https:cyphernet.es"
-  url "https:github.comAvitalTamircyphernetesarchiverefstagsv0.15.1.tar.gz"
-  sha256 "304d80ee9c103bdcc0ceaf6337fd95cdb1f68f8fb5b834afe281c0acbe19d08d"
+  url "https:github.comAvitalTamircyphernetesarchiverefstagsv0.15.2.tar.gz"
+  sha256 "6f75b0ffd3b479f8c4f52e4a70922894fdc18382e52d960e05047cb2fadbd7c6"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bffa55278e32eddd337d18eeb47d14397fbb81a300db48a311fe415ba7cdd659"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bffa55278e32eddd337d18eeb47d14397fbb81a300db48a311fe415ba7cdd659"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bffa55278e32eddd337d18eeb47d14397fbb81a300db48a311fe415ba7cdd659"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d80fde28927f4799236015cede1a625f28b1ce9379fbeda8d25634692643deb5"
-    sha256 cellar: :any_skip_relocation, ventura:       "d80fde28927f4799236015cede1a625f28b1ce9379fbeda8d25634692643deb5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "175f13f46116d7a76d0494a28ffbe9745eab498851efef9f65bb4c7950fc7dd7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "220b46e99f9831415a9ebb574164bd7ac6f156aa8d8700be6faa2d0c29ae99cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "220b46e99f9831415a9ebb574164bd7ac6f156aa8d8700be6faa2d0c29ae99cb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "220b46e99f9831415a9ebb574164bd7ac6f156aa8d8700be6faa2d0c29ae99cb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2cbd9d7fbbc1dcbd5075b55cac66baa10b5635951d5717bcb8b4683ab759ccd1"
+    sha256 cellar: :any_skip_relocation, ventura:       "2cbd9d7fbbc1dcbd5075b55cac66baa10b5635951d5717bcb8b4683ab759ccd1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d49d216a246d947c431d624b23c92394b6801ca14a24670c1cb97c90cf92ea7e"
   end
 
   depends_on "go" => :build
@@ -24,8 +24,8 @@ class Cyphernetes < Formula
   end
 
   test do
-    output = shell_output("#{bin}cyphernetes query 'MATCH (d:Deployment)->(s:Service) RETURN d'", 1)
-    assert_match("Error getting current context:  current context  does not exist in kubeconfig", output)
+    output = shell_output("#{bin}cyphernetes query 'MATCH (d:Deployment)->(s:Service) RETURN d' 2>&1", 1)
+    assert_match("Error creating provider:  failed to create config: invalid configuration", output)
 
     assert_match version.to_s, shell_output("#{bin}cyphernetes version")
   end

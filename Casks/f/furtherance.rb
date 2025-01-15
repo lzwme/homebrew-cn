@@ -1,6 +1,6 @@
 cask "furtherance" do
-  version "24.12.0"
-  sha256 "1d44f284b4d8d5cba26747b8e622c8cc3d367ce45a3f01576b9b84eee7045211"
+  version "25.1.2"
+  sha256 "37e47729facd31624cb84f91df1e34673f1597936a4f6c75a4472ff3acd6a372"
 
   url "https:github.comunobserved-ioFurtherancereleasesdownload#{version}furtherance-#{version}.dmg",
       verified: "github.comunobserved-ioFurtherance"

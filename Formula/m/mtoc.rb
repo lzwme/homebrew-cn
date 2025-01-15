@@ -1,18 +1,16 @@
 class Mtoc < Formula
   desc "Mach-O to PECOFF binary converter"
   homepage "https:opensource.apple.com"
-  url "https:github.comapple-oss-distributionscctoolsarchiverefstagscctools-1010.6.tar.gz"
-  sha256 "19dadff2a4d23db17a50605a1fe7ad2d4b308fdf142d4dec0c94316e7678dc3f"
+  url "https:github.comapple-oss-distributionscctoolsarchiverefstagscctools-1021.4.tar.gz"
+  sha256 "3d28444b2d33ae53a6ac0119846e98cfebdb5839a224a2436fe7537dcc0d79ae"
   license "APSL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "324c3cfd0929d2e9b08d320206080109caa7dc89682359d179e68d20f9f40e26"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9a2e0cff36af9f659bcbb7165d1f180ef4408a0423af23b85c2f4312db8806f6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb9f6732da0297987d62d37c6f662a9679527fa7a3c80f45f7edf6c0ebda7b6b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "18bf5ccdeeea52a6e5c0172e623b62142c8e52fca847720bbb88fa441c4f31c5"
-    sha256 cellar: :any_skip_relocation, sonoma:         "02c5fb90c5c4195d212cec400aaf85e629f367d42f5924624bc01b20d4850b0a"
-    sha256 cellar: :any_skip_relocation, ventura:        "9d99cef4e8e1bca0c12e33b574f18700f6492929ec302bbbcfc357ed0da27f67"
-    sha256 cellar: :any_skip_relocation, monterey:       "8a66535f89e326120675f1e809ca4c6e53bcc5b26c6616c169d598b1affeda8c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fac0032654cba40741fb4cdd162651efca8c1dc3dc408038a2377de99a276c75"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc0e915cd88cd910b0c5e232b010b94199ca75b0a8f08924fbb5d3848334a231"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "510d19f1eb39b8a8f9f15ea6ebcfde4ffd1c75c9c60a04cf9d0100da94df0caf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "10ada3c174f8a963144da540ed241d89cb10c4ab7c11f006105c337048ed389a"
+    sha256 cellar: :any_skip_relocation, ventura:       "49a1662a7a1741e78834652a49c4629463d96b9eef3903b553cbf7a16e30228c"
   end
 
   depends_on "llvm" => :build

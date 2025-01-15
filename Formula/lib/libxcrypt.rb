@@ -1,8 +1,8 @@
 class Libxcrypt < Formula
   desc "Extended crypt library for descrypt, md5crypt, bcrypt, and others"
   homepage "https:github.combesser82libxcrypt"
-  url "https:github.combesser82libxcryptreleasesdownloadv4.4.37libxcrypt-4.4.37.tar.xz"
-  sha256 "902aa2976f959b5ebe55679b1722b8479f8f13cd4ce2ef432b0a84ae298fffd0"
+  url "https:github.combesser82libxcryptreleasesdownloadv4.4.38libxcrypt-4.4.38.tar.xz"
+  sha256 "80304b9c306ea799327f01d9a7549bdb28317789182631f1b54f4511b4206dd6"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Libxcrypt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "dbbaf4f7983c7190960cc5dbbc81946914f68b504b663d5daab61dfa1a19f482"
-    sha256 cellar: :any,                 arm64_sonoma:  "3ef8b81995024e420c8d23afd17f058183cfcc3fae868d01a4db3235a4406b13"
-    sha256 cellar: :any,                 arm64_ventura: "1baa9fd775d201867bade2ea0a9b8d5b9c8a9a34f732ea51e70fb78b97c3f3da"
-    sha256 cellar: :any,                 sonoma:        "6a65c8955aca11b162fb4f81161512356510df5bfe7971714438e33778c23404"
-    sha256 cellar: :any,                 ventura:       "a9a04fbb57a0c514381eadc50bd517caa16eba8066d50438e2171766d909f5c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9302812e0c3766a187276600cbc3c1c9d44e4f4eca3bbd202d5b19cdc34dfd7"
+    sha256 cellar: :any,                 arm64_sequoia: "a064d22be7cf3136359f8bc7ddfe69d3d1da83cecba23679e8be3d5c3a6715fa"
+    sha256 cellar: :any,                 arm64_sonoma:  "70ff0492ab9b04005ac3a10be7b840926e79c8e1005795a245e10a2845741897"
+    sha256 cellar: :any,                 arm64_ventura: "b44196ecde239115a28ed7470d21bd679cca173739c24a863ce393df04faffd2"
+    sha256 cellar: :any,                 sonoma:        "1eb38a921fe68f9bf101f6ead351a71335a143ff842d1c294a771e1eecfcae88"
+    sha256 cellar: :any,                 ventura:       "7876b0bfad028648259367023f14a2fb6c9b13db5e489bf6b002818fe36ec9f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1835a4d7d45333637814fbd4d0184d6ebdb81b2e7e4a09e2d803202a497cf8a"
   end
 
   keg_only :provided_by_macos

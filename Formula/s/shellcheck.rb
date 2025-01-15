@@ -5,6 +5,7 @@ class Shellcheck < Formula
   head "https:github.comkoalamanshellcheck.git", branch: "master"
 
   stable do
+    # TODO: Check if `aeson` allow-newer workaround can be removed
     url "https:github.comkoalamanshellcheckarchiverefstagsv0.10.0.tar.gz"
     sha256 "149ef8f90c0ccb8a5a9e64d2b8cdd079ac29f7d2f5a263ba64087093e9135050"
 
@@ -31,8 +32,12 @@ class Shellcheck < Formula
   depends_on "pandoc" => :build
 
   def install
+    # Workaround to build with GHC 9.12, remove after https:github.comhaskellaesonpull1126
+    # is merged and available on Hackage or if `aeson` is willing to provide a metadata revision
+    args = ["--allow-newer=aeson:ghc-prim,aeson:template-haskell"]
+
     system "cabal", "v2-update"
-    system "cabal", "v2-install", *std_cabal_v2_args
+    system "cabal", "v2-install", *args, *std_cabal_v2_args
     system ".manpage"
     man1.install "shellcheck.1"
   end

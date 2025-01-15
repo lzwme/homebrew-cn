@@ -1,7 +1,8 @@
 class Mighttpd2 < Formula
   desc "HTTP server"
-  homepage "https://kazu-yamamoto.github.io/mighttpd2/"
-  url "https://hackage.haskell.org/package/mighttpd2-4.0.8/mighttpd2-4.0.8.tar.gz"
+  homepage "https:kazu-yamamoto.github.iomighttpd2"
+  # TODO: Check if `aeson` and `cborg` allow-newer workarounds can be removed
+  url "https:hackage.haskell.orgpackagemighttpd2-4.0.8mighttpd2-4.0.8.tar.gz"
   sha256 "cad7a92e3f9ce636d0099b226e080d0102a2498b9ef9d0abfc6b24e24f1d127b"
   license "BSD-3-Clause"
 
@@ -20,12 +21,20 @@ class Mighttpd2 < Formula
   uses_from_macos "zlib"
 
   def install
+    # Workaround to build with GHC 9.12, remove after https:github.comhaskellaesonpull1126
+    # is merged and available on Hackage or if `aeson` is willing to provide a metadata revision
+    args = ["--allow-newer=aeson:ghc-prim,aeson:template-haskell"]
+
+    # Workaround to build with GHC 9.12, remove after https:github.comwell-typedcborgpull339
+    # is merged and available on Hackage or if `cborg` is willing to provide a metadata revision
+    args << "--allow-newer=serialise:base,serialise:ghc-prim,cborg:base,cborg:ghc-prim"
+
     system "cabal", "v2-update"
-    system "cabal", "v2-install", "-ftls", *std_cabal_v2_args
+    system "cabal", "v2-install", "--flags=tls", *args, *std_cabal_v2_args
   end
 
   test do
-    system bin/"mighty-mkindex"
-    assert (testpath/"index.html").file?
+    system bin"mighty-mkindex"
+    assert_predicate testpath"index.html", :file?
   end
 end
