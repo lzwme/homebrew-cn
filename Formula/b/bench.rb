@@ -31,7 +31,7 @@ class Bench < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.10" => :build
+  depends_on "ghc" => :build
 
   uses_from_macos "zlib"
 

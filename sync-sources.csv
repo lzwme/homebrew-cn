@@ -458,6 +458,7 @@ Homebrew-homebrew-core/Formula/b/beagle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/beakerlib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/beancount-language-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/beancount.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/beanquery.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/beanstalkd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bear.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/beast.rb, Homebrew/homebrew-core, 1
@@ -1486,6 +1487,7 @@ Homebrew-homebrew-core/Formula/d/dovi_tool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/doxygen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/doxymacs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dpcmd.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dpic.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dpkg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dprint.rb, Homebrew/homebrew-core, 1
@@ -12457,7 +12459,7 @@ Homebrew-homebrew-cask/Casks/m/mubu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mucommander.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mudlet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mullvad-browser.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/mullvadvpn.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/mullvadvpn.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mullvadvpn@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/multi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/multiapp.rb, Homebrew/homebrew-cask, 0

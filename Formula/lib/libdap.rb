@@ -1,8 +1,8 @@
 class Libdap < Formula
   desc "Framework for scientific data networking"
   homepage "https:www.opendap.org"
-  url "https:www.opendap.orgpubsourcelibdap-3.21.0-27.tar.gz"
-  sha256 "b5b8229d3aa97fea9bba4a0b11b1ee1c6446bd5f7ad2cff591f86064f465eacf"
+  url "https:www.opendap.orgpubsourcelibdap-3.21.1.tar.gz"
+  sha256 "1f6c084bdbf2686121f9b2f5e767275c1e37d9ccf67c8faabc762389f95a0c38"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,14 +11,12 @@ class Libdap < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "fc8d72a36ba41654a353b364e6c292d2a89ea948d04f414128b905150d2642cd"
-    sha256 arm64_sonoma:   "90d0cfdef210ceec132a9473e3bc8e76c45465048c26812d68028195d0e7f3e5"
-    sha256 arm64_ventura:  "cd3169f768274c0125ebee71b9d4ca50712fc2fab103e040ee792b4aea09d2df"
-    sha256 arm64_monterey: "e396f29602812683b393da1ae2a4e61da18a5d0586e7cb0012b8d9af22587a4a"
-    sha256 sonoma:         "ab456f52c3a3fd0f9bf7e6c212f776e55e59723e39d34b5255f11495e1d8a1da"
-    sha256 ventura:        "6649d7822c449061c9fdc3a55900d604e0002541f39d14bf30a5c18ab73a9d32"
-    sha256 monterey:       "290966591bfa6f0720ee307a9a1c578449c8b22e1f1930af9591a3539d660a86"
-    sha256 x86_64_linux:   "c5a8deb3817eedba2c16b4a380df6539e232a81f2c5d3ce9afc2813f13bd6248"
+    sha256 arm64_sequoia: "1f8e9cd58ca9ef263b5a028262a32a1b06b8903cb2e7166446d25d60f7bbb5bd"
+    sha256 arm64_sonoma:  "d8886f6fbec0a65ec3ed25dfd1bd13c7ac2f2a71c1b7674bd1b4897508477f8c"
+    sha256 arm64_ventura: "3cef6f6506acf42d24cf9d0bf55b8b194ce5938d5d2d6d7e82a155c86e031a8a"
+    sha256 sonoma:        "aecc5c17befb043a3cbf6939b0011190d4b4ebd8ecfe42748c67a0b35fc7e920"
+    sha256 ventura:       "4b9be029b474845cfd29aedbf47548189fed0c2b977687c8778f5180b895a1b4"
+    sha256 x86_64_linux:  "c0bbde3c7deb1480fe9d54028a7ce000692e28784c7e3b926d8c8234ff79c742"
   end
 
   head do

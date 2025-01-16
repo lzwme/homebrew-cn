@@ -2,27 +2,21 @@ class Helm < Formula
   desc "Kubernetes package manager"
   homepage "https:helm.sh"
   url "https:github.comhelmhelm.git",
-      tag:      "v3.16.4",
-      revision: "7877b45b63f95635153b29a42c0c2f4273ec45ca"
+      tag:      "v3.17.0",
+      revision: "301108edc7ac2a8ba79e4ebf5701b0b6ce6a31e4"
   license "Apache-2.0"
   head "https:github.comhelmhelm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f61c05a59036541ac0a3b1760ea8d9ad088b82e323810354d24cfb1e3cf22e3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "efe5549ee3421dab54d41fb9ccfa5c09e710be30cd95efab731aaf35cda3a9f1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "df79b267a94235bf470a15dbea6ad0526eefdb33d3d94792a04727321bbc98ab"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d9f195ddc2121382d1a4c24f764c0359b761356a0c9b215dd04e149135c26a77"
-    sha256 cellar: :any_skip_relocation, ventura:       "dd9273c86d745e7e83763c8a2a2fbf807e61e3060ccc22ff753ed3968ace02ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "104daf1188363a96cba907696468d4d161d9620ec20d2f22b91d87580212f9f2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f590a9aabea8fcb217e343f5c87416a59ee4157c3d46bb83518e5b45e7bb83cd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7664f360847c86cd14bbd77abb97a02f1e5c124121911b9a00f25adfc731ee6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d1b9f49659cccb9f010fa212bc97b10e2411837ce75414af12dc277e08a49eb4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2884e36e7a97b4193f0f83c2ccb2a286646e25dc9c6d5deb81676efec7aafe0d"
+    sha256 cellar: :any_skip_relocation, ventura:       "6a32f9e789ac22eaf5be9688bfc8e80972b2e44d1dd1c826d543cb6d239282fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e1b834536e9cddfba62adf3dc507efe57c24a2f68b8a8a1a4de6215a326d99c"
   end
 
   depends_on "go" => :build
-
-  # fix testchart lint errors, upstream pr ref, https:github.comhelmhelmpull13329
-  patch do
-    url "https:github.comhelmhelmcommitddead08eb8e7e3fbbdbb6d40938dda36905789af.patch?full_index=1"
-    sha256 "471c2d7dcbd48d37eaf69e552d53e928e9ba42efccb021d78bbd354599d80811"
-  end
 
   def install
     system "make", "build"

@@ -7,23 +7,26 @@ class Resvg < Formula
   head "https:github.comRazrFalconresvg.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "28531276a8f61a155cd5d3a13fbb3a4a356b7c097251c204e17145f83693383a"
-    sha256 cellar: :any,                 arm64_sonoma:  "7c252685b1357316339380fa2d9b2234decc48e2225b02850ec62f4302c3d22b"
-    sha256 cellar: :any,                 arm64_ventura: "07ff4b74fc351966c5175af27bc02559f6dc9b4b24da217799f0c40742d1dc44"
-    sha256 cellar: :any,                 sonoma:        "498b1b2d02ff385020bd7d7fe6033b7a79a20903816ef378d1337f7eb1b232ed"
-    sha256 cellar: :any,                 ventura:       "e36cea208fde141c0c174d75b2b6e4a7772633c54c48c7a834e54e045b398395"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11bf96aa1daaab9003c19e0daac5477387f61cc7132dc3069fb855ca92241e3a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "800f2849d0fd12d9eb86ae9c0d419a73dfd51e2b604b0c43b467bdd87969dea0"
+    sha256 cellar: :any,                 arm64_sonoma:  "bc4b170d07afd902670101419319e9179fd613bd7b1b0dc701ead93ca7f74747"
+    sha256 cellar: :any,                 arm64_ventura: "e1db465f10d7532c8143aeb443835a143e8782b298711b4d2a28d30f3a0e5f28"
+    sha256 cellar: :any,                 sonoma:        "378c71885d632bf7f9515faebf9498669167ec8484be7acef543c463363b867f"
+    sha256 cellar: :any,                 ventura:       "173495b3638c1913bd176046ed06a7c3e2bff5d9ebaea0e5aabed8f5656858b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6794d803e9bdcbb48cf5c3b0843363e4e606f32fdd0638b6c036aa7561ec5da"
   end
 
+  depends_on "cargo-c" => :build
   depends_on "rust" => :build
+  depends_on "pkgconf" => :test
 
   def install
     system "cargo", "install", *std_cargo_args(path: "cratesusvg")
     system "cargo", "install", *std_cargo_args(path: "cratesresvg")
 
-    system "cargo", "build", "--locked", "--lib", "--manifest-path", "cratesc-apiCargo.toml", "--release"
-    include.install "cratesc-apiresvg.h", "cratesc-apiResvgQt.h"
-    lib.install "targetrelease#{shared_library("libresvg")}", "targetreleaselibresvg.a"
+    system "cargo", "cinstall", "--jobs", ENV.make_jobs.to_s, "--release", "--locked",
+                    "--manifest-path", "cratesc-apiCargo.toml",
+                    "--prefix", prefix, "--libdir", lib
   end
 
   test do
@@ -66,7 +69,9 @@ class Resvg < Formula
         return 0;
       }
     C
-    system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lresvg", "-o", "test"
+
+    flags = shell_output("pkgconf --cflags --libs resvg").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *flags
     assert_equal "160 35", shell_output(".test #{test_fixtures("test.svg")}").chomp
   end
 end

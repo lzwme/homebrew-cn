@@ -3,15 +3,13 @@ class Whatmp3 < Formula
 
   desc "Small script to create mp3 torrents out of FLACs"
   homepage "https:github.comRecursiveForestwhatmp3"
-  url "https:github.comRecursiveForestwhatmp3archiverefstagsv3.8.tar.gz"
-  sha256 "0d8ba70a1c72835663a3fde9ba8df0ff7007268ec0a2efac76c896dea4fcf489"
+  url "https:github.comRecursiveForestwhatmp3archiverefstagsv3.9.tar.gz"
+  sha256 "4ee468ff5a380c3ee4dbfadfd25ac76797ac63203b21588a997f339e124559f4"
   license "MIT"
-  revision 5
   head "https:github.comRecursiveForestwhatmp3.git", branch: "master"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, all: "33b3b2f4177414409c8c5e06ebf4fbbbe50c6c9537c281881bcf719a9f35fecc"
+    sha256 cellar: :any_skip_relocation, all: "d2a7f02319c285fdb7f1ecd703b2ac07721c727bb2611cef1767d8c36115dfa2"
   end
 
   depends_on "flac"

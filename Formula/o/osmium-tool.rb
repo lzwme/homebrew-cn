@@ -1,22 +1,22 @@
 class OsmiumTool < Formula
   desc "Libosmium-based command-line tool for processing OpenStreetMap data"
   homepage "https:osmcode.orgosmium-tool"
-  url "https:github.comosmcodeosmium-toolarchiverefstagsv1.16.0.tar.gz"
-  sha256 "f98454d9f901be42e0b6751aef40106d734887ee35190c224b174c2f27ef1c0f"
+  url "https:github.comosmcodeosmium-toolarchiverefstagsv1.17.0.tar.gz"
+  sha256 "a7c8e5ee108258a3867c21e80d8bf50ee5b7784c56a12523750d882814e3d6df"
   license "GPL-3.0-or-later"
-  revision 5
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a9935acb79dc891c9293def4ebe33455538b5b9c5df5a5199a36b60e965f9e45"
-    sha256 cellar: :any,                 arm64_sonoma:  "7af99b05b60837be477c18e1a4fc6d46f0a925f1da4f9c0df4c96f3283189762"
-    sha256 cellar: :any,                 arm64_ventura: "0d43f806c48ca293ca43b7b79049da4bdaca569d8dbce79ca64aec2dd8f13157"
-    sha256 cellar: :any,                 sonoma:        "8681a76151572d68f50c1696e62ea71e732112f2658216f016c5381213fa3248"
-    sha256 cellar: :any,                 ventura:       "3489132658ffe95e5410d445b61771fc88ae97257e1ceb4f8ea99c12a74cb9da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d98f2f747206244f51dd7d7b8a40978b2e1e1016b52f08ba0165d6cfae589971"
+    sha256 cellar: :any,                 arm64_sequoia: "101bc0c6519988ec87d24ba7197ff8bb65c2346745b4450478b8d3465c20b302"
+    sha256 cellar: :any,                 arm64_sonoma:  "fd9cb93ea74208732f720f634ce9a0926cabe2a823ab4c986c6aae9008d66f62"
+    sha256 cellar: :any,                 arm64_ventura: "bd7171d46cf4973de8a3731b4ee70220656197e986fe40e1ad936a213e90a43d"
+    sha256 cellar: :any,                 sonoma:        "6bf9507be87996fb4547c9a498578abc9855b8723e457e08f24bbd76a2850b9c"
+    sha256 cellar: :any,                 ventura:       "646c0077105152279a309b63581789fcbb2893b6345d56ac9d85620085bc6a00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7ac2102e5c453bd92a04e7d203172a4c5a48a1606f95ef2fc6df1b7eec83056"
   end
 
   depends_on "cmake" => :build
   depends_on "libosmium" => :build
+  depends_on "nlohmann-json" => :build
   depends_on "pandoc" => :build
   depends_on "boost"
   depends_on "lz4"

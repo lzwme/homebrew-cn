@@ -5,6 +5,11 @@ class LibcapNg < Formula
   sha256 "3ba5294d1cbdfa98afaacfbc00b6af9ed2b83e8a21817185dfd844cc8c7ac6ff"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
 
+  livecheck do
+    url :homepage
+    regex(href=.*?libcap-ng[._-]v?(\d+(?:\.\d+)+)\.ti)
+  end
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, x86_64_linux: "9213f1b147c170ebc3b4cb8e900562183885668dd745d0888d985d9fd0cfdbe3"

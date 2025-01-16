@@ -1,20 +1,18 @@
 class Blis < Formula
   desc "BLAS-like Library Instantiation Software Framework"
   homepage "https:github.comflameblis"
-  url "https:github.comflameblisarchiverefstags1.0.tar.gz"
-  sha256 "9c12972aa1e50f64ca61684eba6828f2f3dd509384b1e41a1e8a9aedea4b16a6"
+  url "https:github.comflameblisarchiverefstags1.1.tar.gz"
+  sha256 "847c035809b8994c077ade737a4813601db96c4cf0d903d08ba6a9b8ee0fe03e"
   license "BSD-3-Clause"
   head "https:github.comflameblis.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "01f6d68c4778655be5f5b5bae6952e5a6979e665c679daa3a39a3e93392d554d"
-    sha256 cellar: :any,                 arm64_sonoma:   "1d2a10987101529132b5b6ff330ae2b267cb724b4c647e995cdfeffafe7f66c4"
-    sha256 cellar: :any,                 arm64_ventura:  "fe6a791c00a37f507387293ad0dcbe87e75d93e6bbf74bcd8df9ab431d318f02"
-    sha256 cellar: :any,                 arm64_monterey: "a65ab186fb8c72a6e7c9bbe01f84c916e8ef841e3f91759a4b32f663df2e0723"
-    sha256 cellar: :any,                 sonoma:         "fa0c1fb994eebe51d4154c880e69508c6b24b28f37f73d66e7da75ba1e1978fe"
-    sha256 cellar: :any,                 ventura:        "65277d9faaa9a63cca586c9979fa271e1c62f14bd5a8113d814a8a85c1eb6ec8"
-    sha256 cellar: :any,                 monterey:       "021d57eed83f4d50a681d37d091b310449572e24fdcbbdbae14e39127376bc3c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c712e39e529db5de74f13c5c28c8645d01c1791bb1489308419a101c8e9ee627"
+    sha256 cellar: :any,                 arm64_sequoia: "7b54027b039fa551a50e4fb6e99c79f732a5b34aff78092d733e22c823450ad9"
+    sha256 cellar: :any,                 arm64_sonoma:  "0709aa01695e7ce672d9d8a0780d28fa3465f2cba5b49f976bd3c96f498c1448"
+    sha256 cellar: :any,                 arm64_ventura: "9630f05d848259bc7ffc9df96102b9655a0cd3284057dd77a5e59256b81a32ec"
+    sha256 cellar: :any,                 sonoma:        "eb365f3d3d6fc8eb1df33f83f72b88ee33984438392b78bdc58e4657f7cec66b"
+    sha256 cellar: :any,                 ventura:       "996841f0627e6a5f43d4f272bb0698e7fecb9f958fe05915c85b0814a6be34ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db5d4aed1ccf53d93eb65d37dd22cda09f5049e7c5fe4bd2f7db556ccaa57ad3"
   end
 
   uses_from_macos "python" => :build

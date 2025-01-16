@@ -1,7 +1,6 @@
 class Texmath < Formula
   desc "Haskell library for converting LaTeX math to MathML"
   homepage "https:johnmacfarlane.nettexmath.html"
-  # TODO: Check if `aeson` allow-newer workaround can be removed
   url "https:hackage.haskell.orgpackagetexmath-0.12.8.13texmath-0.12.8.13.tar.gz"
   sha256 "bb51a51f69d02c7fed411739d61bff62d56865719542bba995c66e5abe96e409"
   license "GPL-2.0-or-later"
@@ -20,12 +19,8 @@ class Texmath < Formula
   depends_on "ghc" => :build
 
   def install
-    # Workaround to build with GHC 9.12, remove after https:github.comhaskellaesonpull1126
-    # is merged and available on Hackage or if `aeson` is willing to provide a metadata revision
-    args = ["--allow-newer=aeson:ghc-prim,aeson:template-haskell"]
-
     system "cabal", "v2-update"
-    system "cabal", "v2-install", "--flags=executable", *args, *std_cabal_v2_args
+    system "cabal", "v2-install", "--flags=executable", *std_cabal_v2_args
   end
 
   test do

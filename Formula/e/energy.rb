@@ -1,17 +1,17 @@
 class Energy < Formula
   desc "CLI is used to initialize the Energy development environment tools"
   homepage "https:energye.github.io"
-  url "https:github.comenergyeenergyarchiverefstagsv2.5.2.tar.gz"
-  sha256 "693ab9fa18633eb7e35089588eb58eb49c9db7886ef175b534aa1ab26862a57c"
+  url "https:github.comenergyeenergyarchiverefstagsv2.5.3.tar.gz"
+  sha256 "0b0c2edb114647ef7baa72bbebe04643a179f03b2700439087027d7dd0ab6eb2"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a3ef92e474f148f82fb68588f66e38a8143676418d088d2c384f805fb504542"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a3ef92e474f148f82fb68588f66e38a8143676418d088d2c384f805fb504542"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6a3ef92e474f148f82fb68588f66e38a8143676418d088d2c384f805fb504542"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0c1e12e3b2587a9f3dea0f0f7c8ba6bbf2a01cfa6ac3553af9d649088a6a87f6"
-    sha256 cellar: :any_skip_relocation, ventura:       "0c1e12e3b2587a9f3dea0f0f7c8ba6bbf2a01cfa6ac3553af9d649088a6a87f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c292e6532b34c19af3f3dbd0dbd1f8f1d162877647be8de3d10a2a7e1505e2ed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e000966c011ae82572a14fe24a554ba75a48babd1c3dc9dfea76932cce543b0a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e000966c011ae82572a14fe24a554ba75a48babd1c3dc9dfea76932cce543b0a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e000966c011ae82572a14fe24a554ba75a48babd1c3dc9dfea76932cce543b0a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7960f117db901c57acaa881bbfc28afe0577376944b7aac075ad718b311b8863"
+    sha256 cellar: :any_skip_relocation, ventura:       "7960f117db901c57acaa881bbfc28afe0577376944b7aac075ad718b311b8863"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f90ac82e49f93aecf5662833e3eb884ec5f99171ddcfb710fe1864d1f1c5bebd"
   end
 
   depends_on "go" => :build

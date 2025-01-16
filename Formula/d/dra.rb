@@ -1,18 +1,18 @@
 class Dra < Formula
   desc "Command-line tool to download release assets from GitHub"
   homepage "https:github.comdevmatteinidra"
-  url "https:github.comdevmatteinidraarchiverefstags0.7.0.tar.gz"
-  sha256 "697923724bea9656507643687dc7fa6d95573b5e036b33af45d2b84d947b6a34"
+  url "https:github.comdevmatteinidraarchiverefstags0.7.1.tar.gz"
+  sha256 "6a607eeb65ed97703f746de228398ff560a812e7b6794eb654e96b5a64aacc1b"
   license "MIT"
   head "https:github.comdevmatteinidra.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f6d4b206beb8b18729358bdfd5a45445936aa4a48f271d48c781bd0f357331e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "096ba75ef29c2a7051e89f83d71e7926d6fb7fd18cf8915a12263bdda415681f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "280a0337157b420e9147da5d3ed551e57a23b374b08011782937692d2234f8d6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d240f6169a581385a1bde14f8798fa16bd0f61df12d98a66d691a5505da17d79"
-    sha256 cellar: :any_skip_relocation, ventura:       "8fdc4c30807c4a6de9783e8206248b3402ffb503221ceb3e660a4757bc5d1156"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "752b8133269cc39b9fb70988ad6b2de988e56bf824089327badad07bd402722c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6fe9bbf58bce98cde75260ebdb7d95209ddbe2d767d11f12c22d6e68cae62f8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44373d8586f6c80fd48133a75e6a02c5ec856d835e874e8cb8013acc6a1506dc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2ee97e77cdc48f5d9476bac172bf86c2489f0dbbda64b5f50ffc24f7dff6ea46"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5c3791ce9979dba28d89e36752cf6fe296a186b6482cec5d44470c466ff9af5d"
+    sha256 cellar: :any_skip_relocation, ventura:       "045b6b3b246446e6c1946c99636b22b529a890682252dbaea73b8ec210773536"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cdc5b6e5a9aca874aafdef816e7830ed07a12a8bdc5267da624cf7fe70072fbf"
   end
 
   depends_on "rust" => :build

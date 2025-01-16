@@ -1,7 +1,6 @@
 class Bnfc < Formula
   desc "BNF Converter"
-  homepage "https:bnfc.digitalgrammars.com"
-  # TODO: Check if `aeson` allow-newer workaround can be removed
+  homepage "https:github.comBNFCbnfc"
   url "https:github.comBNFCbnfcarchiverefstagsv2.9.5.tar.gz"
   sha256 "32a6293b95e10cf1192f348ec79f3c125b52a56350caa4f67087feb3642eef77"
   license "BSD-3-Clause"
@@ -30,33 +29,19 @@ class Bnfc < Formula
   depends_on "openjdk" => :test
 
   def install
-    # Workaround to build with GHC 9.12, remove after https:github.comhaskellaesonpull1126
-    # is merged and available on Hackage or if `aeson` is willing to provide a metadata revision
-    args = ["--allow-newer=aeson:ghc-prim,aeson:template-haskell"]
-
     system "cabal", "v2-update"
-    system "cabal", "v2-install", buildpath"source", *args, *std_cabal_v2_args
+    system "cabal", "v2-install", buildpath"source", *std_cabal_v2_args
+    system "make", "-C", "docs", "text", "man", "SPHINXBUILD=#{Formula["sphinx-doc"].bin}sphinx-build"
 
-    doc.install "sourceCHANGELOG.md"
-    doc.install "sourcesrcBNFC.cf" => "BNFC.cf"
-
-    cd "docs" do
-      system "make", "text", "man", "SPHINXBUILD=#{Formula["sphinx-doc"].bin"sphinx-build"}"
-      cd "_build" do
-        doc.install "text" => "manual"
-        man1.install "manbnfc.1" => "bnfc.1"
-      end
-    end
-    doc.install %w[README.md examples]
+    man1.install "docs_buildmanbnfc.1"
+    doc.install "docs_buildtext" => "manual"
+    doc.install "README.md", "examples", "sourceCHANGELOG.md", "sourcesrcBNFC.cf"
   end
 
   test do
     ENV.prepend_create_path "PATH", testpath"tools-bin"
     system "cabal", "v2-update"
-    system "cabal", "v2-install",
-           "--jobs=#{ENV.make_jobs}", "--max-backjumps=100000",
-           "--install-method=copy", "--installdir=#{testpath"tools-bin"}",
-           "alex", "happy"
+    system "cabal", "v2-install", "alex", "happy", *std_cabal_v2_args.map { |s| s.sub bin, testpath"tools-bin" }
 
     (testpath"calc.cf").write <<~EOS
       EAdd. Exp  ::= Exp  "+" Exp1 ;
@@ -114,32 +99,26 @@ class Bnfc < Formula
       14 * (3 + 2  5 - 8)
     EOS
 
+    flex_bison_args = ["FLEX=#{Formula["flex"].bin}flex", "BISON=#{Formula["bison"].bin}bison"]
+
     mkdir "c-test" do
       system bin"bnfc", "-m", "-o.", "--c", testpath"calc.cf"
-      system "make", "CC=#{ENV.cc}", "CCFLAGS=#{ENV.cflags}",
-             "FLEX=#{Formula["flex"].bin"flex"}",
-             "BISON=#{Formula["bison"].bin"bison"}"
-      test_out = shell_output(".Testcalc #{testpath}test.calc")
-      assert_equal check_out_c, test_out
+      system "make", "CC=#{ENV.cc}", "CCFLAGS=#{ENV.cflags}", *flex_bison_args
+      assert_equal check_out_c, shell_output(".Testcalc #{testpath}test.calc")
     end
 
     mkdir "cxx-test" do
       system bin"bnfc", "-m", "-o.", "--cpp", testpath"calc.cf"
-      system "make", "CC=#{ENV.cxx}", "CCFLAGS=#{ENV.cxxflags}",
-             "FLEX=#{Formula["flex"].bin"flex"}",
-             "BISON=#{Formula["bison"].bin"bison"}"
-      test_out = shell_output(".Testcalc #{testpath}test.calc")
-      assert_equal check_out_c, test_out
+      system "make", "CC=#{ENV.cxx}", "CCFLAGS=#{ENV.cxxflags}", *flex_bison_args
+      assert_equal check_out_c, shell_output(".Testcalc #{testpath}test.calc")
     end
 
     mkdir "agda-test" do
       system bin"bnfc", "-m", "-o.", "--haskell", "--text-token",
              "--generic", "--functor", "--agda", "-d", testpath"calc.cf"
       system "make"
-      test_out = shell_output(".CalcTest #{testpath"test.calc"}") # Haskell
-      assert_equal check_out_hs, test_out
-      test_out = shell_output(".Main #{testpath"test.calc"}") # Agda
-      assert_equal check_out_agda, test_out
+      assert_equal check_out_hs, shell_output(".CalcTest #{testpath}test.calc") # Haskell
+      assert_equal check_out_agda, shell_output(".Main #{testpath}test.calc") # Agda
     end
 
     ENV.deparallelize do # only the Java test needs this
@@ -149,10 +128,9 @@ class Bnfc < Formula
         antlr_jar = Formula["antlr"].prefix.glob("antlr-*-complete.jar").first
         ENV["CLASSPATH"] = ".:#{antlr_jar}"
         system bin"bnfc", "-m", "-o.", "--java", "--antlr4", testpath"calc.cf"
-        system "make", "JAVAC=#{jdk_dir"javac"}", "JAVA=#{jdk_dir"java"}",
+        system "make", "JAVAC=#{jdk_dir}javac", "JAVA=#{jdk_dir}java",
                "LEXER=#{antlr_bin}", "PARSER=#{antlr_bin}"
-        test_out = shell_output("#{jdk_dir}java calc.Test #{testpath}test.calc")
-        assert_equal check_out_java, test_out
+        assert_equal check_out_java, shell_output("#{jdk_dir}java calc.Test #{testpath}test.calc")
       end
     end
   end

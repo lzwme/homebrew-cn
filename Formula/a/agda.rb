@@ -24,6 +24,12 @@ class Agda < Formula
     resource "categories" do
       url "https:github.comagdaagda-categoriesarchiverefstagsv0.2.0.tar.gz"
       sha256 "a4bf97bf0966ba81553a2dad32f6c9a38cd74b4c86f23f23f701b424549f9015"
+
+      # Backport support for stdlib 2.1
+      patch do
+        url "https:github.comagdaagda-categoriescommitac0d9d27a402305f6774a6343f7a21a229822168.patch?full_index=1"
+        sha256 "50dc97c97898c825dd4c85fffc8452dc3e61a7871aa907d65b1711e5642c05fc"
+      end
     end
 
     resource "agda2hs" do
@@ -40,14 +46,13 @@ class Agda < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "efcb6bc585745b2967257a989c96dc870b7e42e8605c36594e0ee204e4b71302"
-    sha256 arm64_sonoma:   "37754c8fe159f96685467a321a30c35c7088c2fa7a5bf9912ba67c972d79399b"
-    sha256 arm64_ventura:  "34042e188e7e31f2c6dbc1596499524f25418d6336484820851f023245133e8d"
-    sha256 arm64_monterey: "d8b64716f20cd7037b6c3bc099b4260cd76d15404a6ace0ffa71313f8cf8a332"
-    sha256 sonoma:         "6aff1192bdc412c72806011171db6e07a3f8f5bcc389f8bb23924810fef15bfd"
-    sha256 ventura:        "341696bc1ea2218202bed2823be2ab56d75410570b25b83274958f63ca463939"
-    sha256 monterey:       "2a81118ecccc5e080caf92f85426a81eda64df40378fc6a1eca0e27e9fac6ddc"
-    sha256 x86_64_linux:   "921f03e6fc741c7be27df3982e9254214688fc9e9e51722950d327ae8d427f5d"
+    rebuild 1
+    sha256 arm64_sequoia: "e572a43ece7ec11b57dbd991045c4fe21316a0fccaf9da3d6aa1ed3348528d30"
+    sha256 arm64_sonoma:  "5fb29154ad623bb9ca13620bbf7b76e74f020dd6465ed395cd381dd56b650839"
+    sha256 arm64_ventura: "bcf7974b32306651d2502f7beb239fe01cdd4ee87ecfc7549f181551714083ee"
+    sha256 sonoma:        "db2640366fd9760d88418030991af9000873b54b9262cd1acae2603a730ab993"
+    sha256 ventura:       "b081242b7a011bafb60e56ddb8de2e929f01f65223a80a743d766338013468dc"
+    sha256 x86_64_linux:  "5e3087b50db140bbf66fabace8c8180c8adbcc6ffa0cb7c35ce4a47898acdbc8"
   end
 
   head do
@@ -78,7 +83,21 @@ class Agda < Formula
   uses_from_macos "zlib"
 
   def install
-    cabal_args = std_cabal_v2_args.reject { |s| s["installdir"] }
+    # Workaround for GHC 9.12 until official support is available
+    # Issue ref: https:github.comagdaagdaissues7574
+    ghc912_args = %w[
+      --allow-newer=Agda:base
+      --allow-newer=agda-stdlib-utils:base
+      --allow-newer=agda2hs:base
+      --allow-newer=agda2hs:filepath
+    ]
+    # Workaround for https:github.comagdaagdacommite11ae9875470aab7b68b98d9d9574e736dbcaddd
+    if build.stable?
+      odie "Remove allow-newer hashable workaround!" if version > "2.6.4.3"
+      ghc912_args << "--allow-newer=Agda:hashable"
+    end
+
+    cabal_args = ghc912_args + std_cabal_v2_args.reject { |s| s["installdir"] }
 
     system "cabal", "v2-update"
     # expose certain packages for building and testing
@@ -89,7 +108,7 @@ class Agda < Formula
 
     # install main Agda library and binaries
     system "cabal", "--store-dir=#{libexec}", "v2-install",
-    "-foptimise-heavily", *std_cabal_v2_args
+           "--flags=optimise-heavily", *std_cabal_v2_args, *ghc912_args
 
     # install agda2hs helper binary and library,
     # relying on the Agda library just installed
@@ -109,7 +128,7 @@ class Agda < Formula
       # Issue ref: https:github.comagdaagda2hsissues347
       inreplace "agda2hs.cabal", ( base .*&&) < 4\.20,, "\\1 < 4.21,", build.stable?
 
-      system "cabal", "--store-dir=#{libexec}", "v2-install", *std_cabal_v2_args
+      system "cabal", "--store-dir=#{libexec}", "v2-install", *std_cabal_v2_args, *ghc912_args
     end
 
     # generate the standard library's documentation and vim highlighting files

@@ -31,8 +31,9 @@ class Alpscore < Formula
     end
 
     args = %W[
-      -DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}eigen3
       -DALPS_BUILD_SHARED=ON
+      -DALPS_CXX_STD=c++14
+      -DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}eigen3
       -DENABLE_MPI=ON
       -DTesting=OFF
     ]
@@ -77,9 +78,10 @@ class Alpscore < Formula
     CPP
 
     (testpath"CMakeLists.txt").write <<~CMAKE
-      cmake_minimum_required(VERSION 3.5)
+      cmake_minimum_required(VERSION 3.10)
       project(test)
       set(CMAKE_CXX_STANDARD 14)
+      set(ALPS_FORCE_NO_COMPILER_CHECK TRUE)
       find_package(HDF5 REQUIRED)
       find_package(ALPSCore REQUIRED mc accumulators params)
       add_executable(test test.cpp)

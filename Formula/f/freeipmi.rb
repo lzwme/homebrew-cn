@@ -1,20 +1,18 @@
 class Freeipmi < Formula
   desc "In-band and out-of-band IPMI (v1.52.0) software"
   homepage "https:www.gnu.orgsoftwarefreeipmi"
-  url "https:ftp.gnu.orggnufreeipmifreeipmi-1.6.14.tar.gz"
-  mirror "https:ftpmirror.gnu.orgfreeipmifreeipmi-1.6.14.tar.gz"
-  sha256 "1a3dac5c76b7ccc4d4f86aa12b8ef9b212baef7489bf05e899b89abb7e14edb5"
+  url "https:ftp.gnu.orggnufreeipmifreeipmi-1.6.15.tar.gz"
+  mirror "https:ftpmirror.gnu.orgfreeipmifreeipmi-1.6.15.tar.gz"
+  sha256 "d6929c354639f5ce75b5b1897e8b366eb63625c23e5c4590a7aea034fe2b8caf"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sequoia:  "c7b6059c94b4f7ff4ab7fab5087dc2e38a85bac93bed5585971984e64c4615ac"
-    sha256 arm64_sonoma:   "21b95705b044601921f5af96f9afb8c0fcb4ce6bcf0097a634532a4dde1f8079"
-    sha256 arm64_ventura:  "da196e655271b9882ba03f3d8c01dc2fe92ef6c6c8e11639843c20160c96d834"
-    sha256 arm64_monterey: "412e0b5e5af95ace23a2ec53cf12d63ca2d37d8a1530aaac6e7559149c33ae2b"
-    sha256 sonoma:         "a761d8d0aff35b9251cb247888adcb53b05eada0fa7b94b9dd32dc7aa8750f68"
-    sha256 ventura:        "33a0544c632284b4d709a18f32787d500aa531fae071422d92cd2a7d0638b955"
-    sha256 monterey:       "8e3c0419e2bd683d2da524f4b3e1afb62489c4395a502eb03d7ea11ed144f51a"
-    sha256 x86_64_linux:   "5edacef806046aedd7972e5995f5e0034ff8aea645a7a1410af9142c8f716061"
+    sha256 arm64_sequoia: "600615952288903808095ab8808b45eae7c2adaa7fdc9d6f4187579fbedd687d"
+    sha256 arm64_sonoma:  "e2c6067bcd9b96a9e85b98d14b5e30038a421314c564c953b6c2ae7903434c7c"
+    sha256 arm64_ventura: "9f74bd59960c7352c0d63ac4fd4ecddddec57bca1d8ac33518bcebde80a0a5a9"
+    sha256 sonoma:        "78711420153a4559ce6a61e5084349b056add23ee61edff9c6d5ed5a77f09df7"
+    sha256 ventura:       "2f72ea86838d3b58e9669f04b87e20f494425d863403aecae7cb30d76bf55d00"
+    sha256 x86_64_linux:  "d49402b292786a8ba64707b8985249bbb64c8c5845005dd5efdc2d6c49c4e9e1"
   end
 
   depends_on "texinfo" => :build

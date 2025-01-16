@@ -1,22 +1,17 @@
 class Uptimed < Formula
   desc "Utility to track your highest uptimes"
   homepage "https:github.comrpodgornyuptimed"
-  url "https:github.comrpodgornyuptimedarchiverefstagsv0.4.6.tar.gz"
-  sha256 "48656498ac30c59b902e98dc5e411e97cbb96278a01946bdf0941d8da72b2ae1"
+  url "https:github.comrpodgornyuptimedarchiverefstagsv0.4.7.tar.gz"
+  sha256 "2f669d2968ca1d0865b7a97791c9dbcca759631a1afc5d6702964f070a57252b"
   license "GPL-2.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "8e67b848c824322ccc30ce39b076e8c8ec8e89de599454a116f905eb92cb40bf"
-    sha256 cellar: :any,                 arm64_sonoma:   "55325d60e2b56a44aae6ba8948ae1a5a6ac369b48d0669f86afe971f90345a09"
-    sha256 cellar: :any,                 arm64_ventura:  "2a1f7a34e47c0ed613fdea3ce29fa96c9339c8eab89b8d0bac9dff97c39875b4"
-    sha256 cellar: :any,                 arm64_monterey: "fe2014e9e8554a794a76538e627b3f7ea2061ec80b8397cbf59a73eb122f0448"
-    sha256 cellar: :any,                 arm64_big_sur:  "35d18dbe25c5f32c163aba74b1c3bd76bef2d1e56daa157b0ee69b9260d31b03"
-    sha256 cellar: :any,                 sonoma:         "fe372355e340d6525010bea042627ddcdd2793b4227e45506d0ada80b627d42b"
-    sha256 cellar: :any,                 ventura:        "b58b5a9358949c5376f3f17697d079dfda8c324b596dee1d8c7133add9f0e20f"
-    sha256 cellar: :any,                 monterey:       "b7d4687e1268f63e2db6c206e3c689f12e1551d33486e76d6bd2630a7a222e5a"
-    sha256 cellar: :any,                 big_sur:        "bae2b12de112b4078b7c27b944685296259fffffa703375c8537fdcf7fcf095f"
-    sha256 cellar: :any,                 catalina:       "809aff2f1b2f94e3806b873087141df575cce1a95178ff5789c936542f0ab521"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "27663baf2b3c2fb110f345fdf3e7d88293d44e92563d36364e29f8e342cf308d"
+    sha256 cellar: :any,                 arm64_sequoia: "ee7bb2f7dc9f48106feb78d76476b6adc63ac69234e0b09e4a032479175aac45"
+    sha256 cellar: :any,                 arm64_sonoma:  "306897fc0a7d58890bd55d642505888b4989db7017b4ddfd1ba0af603ed5365e"
+    sha256 cellar: :any,                 arm64_ventura: "c026d07897983b4e7f7f07ceb14d77aeea163b8c3d26bfbdc2e7e3f5a5b2ed56"
+    sha256 cellar: :any,                 sonoma:        "cfdfb6af9480fc37d99d5bdf24f213de9d42fa5ed907019bd020119a26149b8a"
+    sha256 cellar: :any,                 ventura:       "c7cf1dd6683a839238be3ff06ae5289bde6e97e0a5594d3d3c1f14c8decf0dd9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63fe05bdf7bb27772273516a7d3886a2a196c5fd78487805ff1b57db150ef784"
   end
 
   depends_on "autoconf" => :build

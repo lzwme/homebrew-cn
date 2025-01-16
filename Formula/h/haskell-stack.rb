@@ -21,7 +21,9 @@ class HaskellStack < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.8" => :build
+  # https:github.comcommercialhaskellstackissues6625#issuecomment-2228087359
+  # https:github.comcommercialhaskellstackblobmasterstack-ghc-9.10.1.yaml#L4-L5
+  depends_on "ghc@9.8" => :build # GHC 9.10+ blocked by Cabal 3.12+ API changes
 
   uses_from_macos "zlib"
 
@@ -36,30 +38,15 @@ class HaskellStack < Formula
     system "cabal", "v2-update"
     system "cabal", "v2-install", *std_cabal_v2_args
 
-    generate_completions_from_executable(bin"stack", "--bash-completion-script", bin"stack",
-                                         shells: [:bash], shell_parameter_format: :none)
-    generate_completions_from_executable(bin"stack", "--fish-completion-script", bin"stack",
-                                         shells: [:fish], shell_parameter_format: :none)
-    generate_completions_from_executable(bin"stack", "--zsh-completion-script", bin"stack",
-                                         shells: [:zsh], shell_parameter_format: :none)
-  end
-
-  def caveats
-    on_macos do
-      on_arm do
-        <<~EOS
-          All GHC versions before 9.2.1 requires LLVM Code Generator as a backend
-          on ARM. If you are using one of those GHC versions with `haskell-stack`,
-          then you may need to install a supported LLVM version and add its bin
-          directory to the PATH.
-        EOS
-      end
+    [:bash, :fish, :zsh].each do |shell|
+      generate_completions_from_executable(bin"stack", "--#{shell}-completion-script", bin"stack",
+                                           shells: [shell], shell_parameter_format: :none)
     end
   end
 
   test do
     system bin"stack", "new", "test"
-    assert_predicate testpath"test", :exist?
+    assert_path_exists testpath"test"
     assert_match "# test", (testpath"testREADME.md").read
   end
 end

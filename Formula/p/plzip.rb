@@ -1,9 +1,9 @@
 class Plzip < Formula
   desc "Data compressor"
   homepage "https://www.nongnu.org/lzip/plzip.html"
-  url "https://download.savannah.gnu.org/releases/lzip/plzip/plzip-1.11.tar.gz"
-  mirror "https://download-mirror.savannah.gnu.org/releases/lzip/plzip/plzip-1.11.tar.gz"
-  sha256 "d8e3cbe45c9222383339130e1bcc6e5e884d776b63f188896e6df67bc1d5626b"
+  url "https://download.savannah.gnu.org/releases/lzip/plzip/plzip-1.12.tar.gz"
+  mirror "https://download-mirror.savannah.gnu.org/releases/lzip/plzip/plzip-1.12.tar.gz"
+  sha256 "50d71aad6fa154ad8c824279e86eade4bcf3bb4932d757d8f281ac09cfadae30"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,14 +12,12 @@ class Plzip < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2f4918f35a1c74cbd741ade3f65f52ac0109b20f31e529c8d78844e7e442a702"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c7ed4608e48fc82bb1570ada081e9e425f4c51ec37dc40cf78599b610a3ff9fe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5fd52379b6800e5a8040a4586069dc837b4e902cf31e98c212ea341579e48a3b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "80f66ad184dcd6b079d226119667004ca63c877a9227c781988826bd4fbee76c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "8a007f3feecd82329c6c76e230c3686d8a174d9028860e0dd3edf03fac07ba68"
-    sha256 cellar: :any_skip_relocation, ventura:        "0d5589eed9ac420cab422f50a22f4b48f8ad70e06b948367e208db5ebf90ce51"
-    sha256 cellar: :any_skip_relocation, monterey:       "f25f2b228adb941a62a793f5542c14cdbd03defabac4e57fb5233cb3a92b3937"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "523c2e22ef52117ff7eaa2d12f6e8d374d5f8cf39897a47df3e71e78fb32a85a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90e3cd08078f11ba7ceed4c93c1e0fdc788decf11d2d4d0855c52e803e3ade99"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c69f87f246b7b84977dd3690867ec9db32e05610a415d2fbe9a6be69ff4b63da"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bedd1525dd0a949b298fc354e05ce35f3c08bc9b8edb9778ccc9186e838d0624"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3a6fa3ffd911737b50041ffbede6cf6d39cf54608be10093c755b28dae1d7121"
+    sha256 cellar: :any_skip_relocation, ventura:       "21bed828b80d4dd6b40a0e75b236996f334ab8b76f92155192b3ea984410df6e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a35aab3bc41f9112cd01216df0902af5b126cdbe340c91396acdbf006506fe3d"
   end
 
   depends_on "lzlib"

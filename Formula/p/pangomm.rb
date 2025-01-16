@@ -1,19 +1,17 @@
 class Pangomm < Formula
   desc "C++ interface to Pango"
-  homepage "https://pango.gnome.org"
-  url "https://download.gnome.org/sources/pangomm/2.54/pangomm-2.54.0.tar.xz"
-  sha256 "4a5b1fd1b7c47a1af45277ea82b5abeaca8e08fb10a27daa6394cf88d74e7acf"
+  homepage "https://www.gtk.org/docs/architecture/pango"
+  url "https://download.gnome.org/sources/pangomm/2.56/pangomm-2.56.1.tar.xz"
+  sha256 "539f5aa60e9bdc6b955bb448e2a62cc14562744df690258040fbb74bf885755d"
   license "LGPL-2.1-only"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia:  "cde5d1708cdc2ffcef559a334b4155e9913f40814894004a0f1b3263a4a41f99"
-    sha256 cellar: :any, arm64_sonoma:   "96d6b86cb3c3d9b8df92e5a2d9cbf25a0be17d3fbf6575af6a64d6e7cdcab3f8"
-    sha256 cellar: :any, arm64_ventura:  "a970a47d003c8802cb36f05742d3ba0040b6711801e593ca124a8e7f5d39c7fe"
-    sha256 cellar: :any, arm64_monterey: "27d31ee025f795002d2656cc9bac32d2973f5840c8efccc00999be221d196283"
-    sha256 cellar: :any, sonoma:         "6f9ea0544f66fa351dd460b8b93cf1f64c27f5ddf3594dba8071e4dbd6809346"
-    sha256 cellar: :any, ventura:        "e86aa89885d5051902f1d63c8282de16d1d5852624d16c4ab4b6f745513b80ea"
-    sha256 cellar: :any, monterey:       "711bdbb646de5e52d8214b650cce62755503e79f01c986e50b040265c6f03b1e"
-    sha256               x86_64_linux:   "41a65860c91d42df29ae592b9d9c38cf836fbc33d40a99d3e8ce69cb1cebe1e6"
+    sha256 cellar: :any, arm64_sequoia: "fc97b28b6c7113305951d34c674a9f7a3eb480fe22e934258e1224da19ac8863"
+    sha256 cellar: :any, arm64_sonoma:  "110fdbe5d554355086809c40170027d39daaf2adde15e25dd43001ea968c1303"
+    sha256 cellar: :any, arm64_ventura: "51147a02ebc43f6a0123d07c680512e7135750f0bfe1175217556f578f17ad3b"
+    sha256 cellar: :any, sonoma:        "1bc3b3ef3f4502d595eec7787bc1464723abfdae305ed2b4118c5d1bce59a61d"
+    sha256 cellar: :any, ventura:       "c57567987e6f32bbf3a1cd9860c52df97753f34eaab7dcb5b72539f0a57c0fdc"
+    sha256               x86_64_linux:  "4defbd47ef262aaf9aa021ab3da046d717848c61679f0f412278d74c1877d6f7"
   end
 
   depends_on "meson" => :build

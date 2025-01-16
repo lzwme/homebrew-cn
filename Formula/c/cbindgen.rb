@@ -1,8 +1,8 @@
 class Cbindgen < Formula
   desc "Project for generating C bindings from Rust code"
   homepage "https:github.commozillacbindgen"
-  url "https:github.commozillacbindgenarchiverefstagsv0.26.0.tar.gz"
-  sha256 "b45e1a64875b615702a86ac3084ef69ae32926241cd2b687a30c12474be15105"
+  url "https:github.commozillacbindgenarchiverefstagsv0.28.0.tar.gz"
+  sha256 "b0ed39dda089cafba583e407183e43de151d2ae9d945d74fb4870db7e4ca858e"
   license "MPL-2.0"
 
   # Upstream uses GitHub releases to indicate that a version is released
@@ -14,16 +14,12 @@ class Cbindgen < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "20e50834cf9bedcded966bc6c6e60486d79f3480b689314fbf7a7101fce55ee8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c1cf824d4724dccd013815867348ec646e821df5a7f868e2310afdb65be543af"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ecfa0bec5c75d0d5825976fcd6e553dbad08ee0121cd6d4269be6acf0174c6da"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4baaec615fbb17f470d2634a326545a8bf4cb632f0a8e6bebec009413c132215"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1dc5f3936dca28bac0ed165764cff643713d8e1e5950935c99d7d1d51178532c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9810e3153d17d297f4ec84fc83d3e1b2b7c14a5d3025b80ed3e41c97d239464e"
-    sha256 cellar: :any_skip_relocation, ventura:        "34882ce72bfe4c66e03f532ff551f31b7db581e2202eeaa3487e162b39ff1d1d"
-    sha256 cellar: :any_skip_relocation, monterey:       "c703d487fad25bd3691ec779a23d5290e6fe18ebe69737d0ac0166c75e4bafe9"
-    sha256 cellar: :any_skip_relocation, big_sur:        "289c9451cb7462239c23bfe996a36f5ee19f30be40f99527a0fe3b08b596c356"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "93a1a09a5301c915d7c0b81068b9ce4aefa8873becb9e1aaef8e99d6a0d476e1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0df66e4cab38006433238decb3fe8fd5eaa4a77c76981310e82c1229ee4a8ced"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7f83495c72708ad9815b2e06f663b723f5e0c4e5a20b223cd84769dbe3926b2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8dab680300f1ee305201074750750b01c9d52c5f433d060f95bdb370bdd4f872"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7be18e30d681d36db517850dbaf464fa075d2241d70b0440c537a2e5ad9eed35"
+    sha256 cellar: :any_skip_relocation, ventura:       "7ea8cc561d6dc567fde59dda56db68960fa6c53c4834101771be6126b41cfc3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdc85b8b19a708a8ab78b4650398ad16c6b4e3faf949a8e2164e9d3eeba70f93"
   end
 
   depends_on "rust" => :build

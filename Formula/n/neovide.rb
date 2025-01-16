@@ -34,6 +34,10 @@ class Neovide < Formula
     depends_on "icu4c@76"
     depends_on "jpeg-turbo"
     depends_on "libpng"
+    # `libxcursor` is loaded when using X11 (DISPLAY) instead of Wayland (WAYLAND_DISPLAY).
+    # Once https:github.comrust-windowingwinitcommitaee95114db9c90eef6f4d895790552791cf41ab9
+    # is in a `winit` release, check `lsof -p <neovide-pid>` to see if dependency can be removed
+    depends_on "libxcursor"
     depends_on "libxkbcommon" # dynamically loaded by xkbcommon-dl
     depends_on "mesa" # dynamically loaded by glutin
     depends_on "zlib"

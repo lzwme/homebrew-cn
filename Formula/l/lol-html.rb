@@ -7,20 +7,23 @@ class LolHtml < Formula
   head "https:github.comcloudflarelol-html.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9531636cc6ee9771e763c277cbac1a8a59677817602ba2042e009a193762ff3b"
-    sha256 cellar: :any,                 arm64_sonoma:  "26f518582c917b12c87513e30c8c475d587f47e2577a53fcea5ecd174f454ca7"
-    sha256 cellar: :any,                 arm64_ventura: "529459d66560903b289b15eb8ba951c973a11bd40c80f8a99205f566f3b4fae2"
-    sha256 cellar: :any,                 sonoma:        "9de53bf6bca25ba74ab51032380b6bb35a677a1ca776d63ca69e0a7217b1896d"
-    sha256 cellar: :any,                 ventura:       "b94d90fb506a5346cf8116a1967964d29c340717052a6435a6629382fe62f0fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc2b1c0c0004fa4d21f5e7149e28aff9175711bc63cc4c71af6c72279cb4cfd1"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "45df0bd8f2d9ffbe6e35d78c28460153c7ea027d85a7099a47b1230d8534b028"
+    sha256 cellar: :any,                 arm64_sonoma:  "36a82c0cc34a08b53271a474f07b252b99e023fc575d2c6324c82aee09baaf1c"
+    sha256 cellar: :any,                 arm64_ventura: "2d06a9212960f7f3bb2476917e940a91798d7b8d691a58897341d45f654cba68"
+    sha256 cellar: :any,                 sonoma:        "8a0ca1ae6536161cc06fca2e6114a1eb705ff7d4e4628de76689cd7837a2fd10"
+    sha256 cellar: :any,                 ventura:       "5b28644fd53619b3a41a9f851326fd18476db1c2a031149dbf62367122db1873"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0462c13b05648e3e4080101d9f10b111a9c7cd3826e8059e749f2d713d44bde2"
   end
 
+  depends_on "cargo-c" => :build
   depends_on "rust" => :build
+  depends_on "pkgconf" => :test
 
   def install
-    system "cargo", "build", "--locked", "--lib", "--manifest-path", "c-apiCargo.toml", "--release"
-    include.install "c-apiincludelol_html.h"
-    lib.install "c-apitargetrelease#{shared_library("liblolhtml")}", "c-apitargetreleaseliblolhtml.a"
+    system "cargo", "cinstall", "--jobs", ENV.make_jobs.to_s, "--release", "--locked",
+                    "--manifest-path", "c-apiCargo.toml",
+                    "--prefix", prefix, "--libdir", lib
   end
 
   test do
@@ -38,7 +41,8 @@ class LolHtml < Formula
       }
     C
 
-    system ENV.cc, "test.c", "-L#{lib}", "-llolhtml", "-o", "test"
+    flags = shell_output("pkgconf --cflags --libs lol-html").chomp.split
+    system ENV.cc, "test.c", "-o", "test", *flags
     system ".test"
   end
 end

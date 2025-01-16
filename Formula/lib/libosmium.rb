@@ -1,13 +1,12 @@
 class Libosmium < Formula
   desc "Fast and flexible C++ library for working with OpenStreetMap data"
   homepage "https:osmcode.orglibosmium"
-  url "https:github.comosmcodelibosmiumarchiverefstagsv2.20.0.tar.gz"
-  sha256 "3d3e0873c6aaabb3b2ef4283896bebf233334891a7a49f4712af30ca6ed72477"
+  url "https:github.comosmcodelibosmiumarchiverefstagsv2.21.0.tar.gz"
+  sha256 "5a222e555865f742102d2802a7ad7ef91d6e1c8944c097c70a924214e079c858"
   license "BSL-1.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "9bcbab472389e69a2ad172a5505c6183b7f2a120116bff9ba0b45c4840840b36"
+    sha256 cellar: :any_skip_relocation, all: "e36c3ca06d60a08a72479e436040569bd26405fd07a2fa5c35037a07825f5191"
   end
 
   depends_on "boost" => :build
@@ -19,8 +18,8 @@ class Libosmium < Formula
   uses_from_macos "zlib"
 
   resource "protozero" do
-    url "https:github.commapboxprotozeroarchiverefstagsv1.7.1.tar.gz"
-    sha256 "27e0017d5b3ba06d646a3ec6391d5ccc8500db821be480aefd2e4ddc3de5ff99"
+    url "https:github.commapboxprotozeroarchiverefstagsv1.8.0.tar.gz"
+    sha256 "d95ca543fc42bd22b8c4bce1e6d691ce1711eda4b4910f7863449e6517fade6b"
   end
 
   def install
@@ -68,7 +67,7 @@ class Libosmium < Formula
       }
     CPP
 
-    system ENV.cxx, "test.cpp", "-std=c++11", "-lexpat", "-o", "libosmium_read", "-pthread"
+    system ENV.cxx, "test.cpp", "-std=c++17", "-lexpat", "-o", "libosmium_read", "-pthread"
     system ".libosmium_read", "test.osm"
   end
 end

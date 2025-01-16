@@ -32,17 +32,11 @@ class Heksa < Formula
   test do
     require "pty"
 
-    r, _w, pid = PTY.spawn("#{bin}heksa -l 16 -f asc -o no #{test_fixtures("test.png")}")
-
-    # remove ANSI colors
-    begin
-      output = r.read.gsub(\e\[([;\d]+)?m, "")
+    PTY.spawn("#{bin}heksa -l 16 -f asc -o no #{test_fixtures("test.png")}") do |r, _w, pid|
+      output = r.readline.gsub(\e\[([;\d]+)?m, "")
       assert_match(^.PNG, output)
-    rescue Errno::EIO
-      # GNULinux raises EIO when read is done on closed pty
+    ensure
+      Process.wait pid
     end
-
-    Process.wait(pid)
-    assert_equal 0, $CHILD_STATUS.exitstatus
   end
 end

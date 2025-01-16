@@ -1,7 +1,7 @@
 class Cgrep < Formula
   desc "Context-aware grep for source code"
   homepage "https:github.comawgncgrep"
-  # TODO: Check if `rawfilepath` workaround and `aeson` allow-newer workaround can be removed
+  # TODO: Check if `rawfilepath` workaround can be removed
   url "https:github.comawgncgreparchiverefstagsv8.1.2.tar.gz"
   sha256 "1b705013a432e6ea90247f03e4cfeceb5a37f795d879178e4bf0085ce6191316"
   license "GPL-2.0-or-later"
@@ -43,9 +43,6 @@ class Cgrep < Formula
     end
     # Help resolver pick package versions compatible with newer GHC
     constraints = ["--constraint=async>=2"]
-    # Workaround to build with GHC 9.12, remove after https:github.comhaskellaesonpull1126
-    # is merged and available on Hackage or if `aeson` is willing to provide a metadata revision
-    constraints << "--allow-newer=aeson:ghc-prim,aeson:template-haskell"
 
     system "cabal", "v2-update"
     system "cabal", "v2-install", *constraints, *std_cabal_v2_args

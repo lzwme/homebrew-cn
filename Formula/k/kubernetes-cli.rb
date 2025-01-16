@@ -2,8 +2,8 @@ class KubernetesCli < Formula
   desc "Kubernetes command-line interface"
   homepage "https:kubernetes.iodocsreferencekubectl"
   url "https:github.comkuberneteskubernetes.git",
-      tag:      "v1.32.0",
-      revision: "70d3cc986aa8221cd1dfb1121852688902d3bf53"
+      tag:      "v1.32.1",
+      revision: "e9c9be4007d1664e68796af02b8978640d2c1b26"
   license "Apache-2.0"
   head "https:github.comkuberneteskubernetes.git", branch: "master"
 
@@ -13,12 +13,12 @@ class KubernetesCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83f41dddaff07d9a1b81536f9efef3074976555741125b5650e83f0a78c2a0d6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3c077fc014d4684fcb56068a0871be83e39258a184a5bbd2e950474af6dca2a7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "67c2ac8db6b9a2aff60f14ec5d825496e3f371e26f0d717ba474629c4e7b1e80"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2b7f0d7cec2554add02321d0152e5877f395e48647e3ddab78a7e6f56d180810"
-    sha256 cellar: :any_skip_relocation, ventura:       "248711e05c4b424404a3f75c089f8c43a4abfdba78ddfb3c20d3eca054ad2f60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60a07c101e87d349530e540f8baf9ae504048caa3cfdc37ecdba0a11bf2beb19"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aac791b6b4f85b796c3d149d40eaffdba49182d9cb3c3bcc41bca1ebc0538334"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aa0a61dca2cb9f1f715e5857149712aaa1ea9d102e38a92f3a3551cc04ccc3c0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "037e503894b98f79de995b3121b1b66ebe2b910232f16f5851db774306a2fafd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5d39d7e273202ecb43e863332bb2f4abea67a0046433f6307012a4305683c59e"
+    sha256 cellar: :any_skip_relocation, ventura:       "831f826dcb0548db72a43f76860eb91b6e08ff2a75115cfa9ed0df39346251f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9be01c6761621e0729a8c092c36e7e478cc5f4e7c7b98d0b704b93b43868734f"
   end
 
   depends_on "bash" => :build

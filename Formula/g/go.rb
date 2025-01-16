@@ -5,6 +5,7 @@ class Go < Formula
   mirror "https://fossies.org/linux/misc/go1.23.4.src.tar.gz"
   sha256 "ad345ac421e90814293a9699cca19dd5238251c3f687980bbcae28495b263531"
   license "BSD-3-Clause"
+  revision 1
   head "https://go.googlesource.com/go.git", branch: "master"
 
   livecheck do
@@ -21,13 +22,12 @@ class Go < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "ce9aad234b15d873fcd727306ab7a361db924b449f527904b3614c3aa4773767"
-    sha256 arm64_sonoma:  "ce9aad234b15d873fcd727306ab7a361db924b449f527904b3614c3aa4773767"
-    sha256 arm64_ventura: "ce9aad234b15d873fcd727306ab7a361db924b449f527904b3614c3aa4773767"
-    sha256 sonoma:        "333dc0e36f21c81f8b07f8b0d9125a6cc0b16979de9d996979bf1eff6280b9bf"
-    sha256 ventura:       "333dc0e36f21c81f8b07f8b0d9125a6cc0b16979de9d996979bf1eff6280b9bf"
-    sha256 x86_64_linux:  "b18da6cb774e738cb65bd9840521a85c1eda42323e3264730794624a81dcfa64"
+    sha256 arm64_sequoia: "cf5710a74df36981bf8dda6ce6c32373e294234f686d117c4778ef4d9edc52b0"
+    sha256 arm64_sonoma:  "cf5710a74df36981bf8dda6ce6c32373e294234f686d117c4778ef4d9edc52b0"
+    sha256 arm64_ventura: "cf5710a74df36981bf8dda6ce6c32373e294234f686d117c4778ef4d9edc52b0"
+    sha256 sonoma:        "01f4245c3c9b634c4e61014d648b64d25d7f03728227bea40e25d381ce8be119"
+    sha256 ventura:       "01f4245c3c9b634c4e61014d648b64d25d7f03728227bea40e25d381ce8be119"
+    sha256 x86_64_linux:  "13be2cc9eb9e7792a205709e92905a6f69e5b79b41898c41a0cf0ceabcb3a4d0"
   end
 
   # Don't update this unless this version cannot bootstrap the new version.
@@ -64,12 +64,6 @@ class Go < Formula
   end
 
   def install
-    inreplace "go.env" do |s|
-      # Remove misleading comment about automatically downloading newer toolchains.
-      s.gsub!(/^# Automatically download.*$/, "")
-      s.gsub!(/^GOTOOLCHAIN=.*$/, "GOTOOLCHAIN=local")
-    end
-
     (buildpath/"gobootstrap").install resource("gobootstrap")
     ENV["GOROOT_BOOTSTRAP"] = buildpath/"gobootstrap"
 
@@ -92,17 +86,7 @@ class Go < Formula
     rm_r(libexec/"src/runtime/pprof/testdata")
   end
 
-  def caveats
-    <<~EOS
-      Homebrew's Go toolchain is configured with
-        GOTOOLCHAIN=local
-      per Homebrew policy on tools that update themselves.
-    EOS
-  end
-
   test do
-    assert_equal "local", shell_output("#{bin}/go env GOTOOLCHAIN").strip
-
     (testpath/"hello.go").write <<~GO
       package main
 

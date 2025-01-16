@@ -4,21 +4,25 @@ class YaraX < Formula
   url "https:github.comVirusTotalyara-xarchiverefstagsv0.12.0.tar.gz"
   sha256 "f73f7c3d2b38e7190d9b588bbc4eb6664123cd95a10c30e198f0653da1db8932"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comVirusTotalyara-x.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c11ca224f89e699dcfa63955e012992e7e00d3168fbfeda85778bb8b7308c456"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2654f91b33d943709fdb53f404734d1f860ab5a057895ad0ef702ad9f451f538"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ea3de5b2f6c193a7b76d48a6217556be731e4f177967738c4285c7d1bf9fc60f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5193d8f4e3d614c7a3f973822b61590ef8a159d941f6cd7a73831a184ea88cc6"
-    sha256 cellar: :any_skip_relocation, ventura:       "ea70418bd8a8109b21f74ce340939a5a0aff36a0750b8812c0d18632e5e4742a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd8ec8bd9807a760e9d048969158301e2680168f1479865723ea1eb94db49215"
+    sha256 cellar: :any,                 arm64_sequoia: "bf35e2c0e39fb7959945c139b6d74d36c5f0977087aa53bc869572e804e9ff24"
+    sha256 cellar: :any,                 arm64_sonoma:  "9cc3b18bd091c5cf660c147db7828a1b5e2f31464b22303dd9ba827fd428919f"
+    sha256 cellar: :any,                 arm64_ventura: "1ddfe551dfd0afb79cddc2933b4602a3199fc25eb0cfcbf63cb67588671f2d13"
+    sha256 cellar: :any,                 sonoma:        "f54fe9b68fb8a9f47341bd2a46ed157eebfdd6af7c33549a6f66b942760c9b1f"
+    sha256 cellar: :any,                 ventura:       "32566be496260b1c392236a807e91914a4d04f8ea506f09786dcc5f135cb1c5a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9005a10f98aff7f432e9e1a4693ca4347759fe6e0a5e1e1add6f96deada66dd3"
   end
 
+  depends_on "cargo-c" => :build
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args(path: "cli")
+    system "cargo", "cinstall", "-p", "yara-x-capi", "--jobs", ENV.make_jobs.to_s, "--release",
+                    "--prefix", prefix, "--libdir", lib
 
     generate_completions_from_executable(bin"yr", "completion")
   end
