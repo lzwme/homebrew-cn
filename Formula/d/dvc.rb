@@ -6,14 +6,15 @@ class Dvc < Formula
   url "https:files.pythonhosted.orgpackages082a056ba3592887eb9ed26df5ea58badfd37bc039e464a294cc58ef142f3d90dvc-3.59.0.tar.gz"
   sha256 "d991221eec54a146050f90b948e5a9c0541c81565356bf034e3faf54a6bfb847"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f00e3c575242de816e23f91002520da2229ff196acb44ed6928709d96f74b1f0"
-    sha256 cellar: :any,                 arm64_sonoma:  "9817df031b914d701b633515851273e819cf35c88060d80595bbcf2fa2c90823"
-    sha256 cellar: :any,                 arm64_ventura: "cf2867ca9079ac8b81efcea46c6f4ba068af391670a45ec6577ea9106b2f7ede"
-    sha256 cellar: :any,                 sonoma:        "f564623a3aabad9dd23bb04d1099d3c734b3a3c42b6cc8d485d2830b2043a64e"
-    sha256 cellar: :any,                 ventura:       "5eab67ff2f22cba53c7f5c8dcdb414d9718173363e02ed187ad8ba3fcb44f8a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1408b8f7b10c6e98649572df889fbf08596170980c3cf3fbed3fc4ee7ace4ef8"
+    sha256 cellar: :any,                 arm64_sequoia: "924ec394d7dfe3a4a1d47cd33d0894a49255ed442ef1d0c04e689df30ef0f23e"
+    sha256 cellar: :any,                 arm64_sonoma:  "9bac4d3b412bf02fdc58b9c208f5e432a97bd4fd093e7260f43d74afa777d406"
+    sha256 cellar: :any,                 arm64_ventura: "02a0848dcd131fca558231e13b7a893f87a2a8c9a12581a3685ed363da358b23"
+    sha256 cellar: :any,                 sonoma:        "ca36283236124c7748eb1209e4f898942e04f3b7f73f7c934e0c602b5e6a63c5"
+    sha256 cellar: :any,                 ventura:       "bca54d643c67ae518dd2f6881cfe1329ab8b9d462b1009eb2609edc4dddf088e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8574f6678ec028d219b840733d390cad77bba23ec0f001ab7800a4d9572fdd34"
   end
 
   depends_on "cmake" => :build # for pyarrow

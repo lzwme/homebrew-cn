@@ -1,10 +1,11 @@
 class GoAT122 < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://go.dev/"
-  url "https://go.dev/dl/go1.22.10.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.22.10.src.tar.gz"
-  sha256 "1e94fd48be750d1fafb4d9b3b6dd31a6e9d2735d339bf2462bc97b64ca4c1037"
+  url "https://go.dev/dl/go1.22.11.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.22.11.src.tar.gz"
+  sha256 "a60c23dec95d10a2576265ce580f57869d5ac2471c4f4aca805addc9ea0fc9fe"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url "https://go.dev/dl/?mode=json"
@@ -20,12 +21,12 @@ class GoAT122 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4cb518c163fdc3aa489b279578d1732664af9a491314f091a1548c0e0c79fa0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3925f6b9cf1e61d516ae5d0db73348e59fe446a6083d469166598881f8368c1c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "be8d96dab00981fe6c7cb541677afd4d2b4cf5e51cdeca67a49b3fca89177680"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8bb956d6c479674f9ac509e51638223a4a415985cbd8f935661473c2c2e30967"
-    sha256 cellar: :any_skip_relocation, ventura:       "27e045d92b19fd6fb2cc853162ed9799351a521c2fba549de8b1dae2876a34e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8425571caba6e73914d727cb021a47d7f67ea588595b6c1c7a23d27559d9ef8e"
+    sha256 arm64_sequoia: "bf4bb48caf0fd288afd7fef5221494383054e7760900c54cb3a72c7cfd518d5e"
+    sha256 arm64_sonoma:  "f88650d91eadc4c714dc722de9011b08d9bc30d2f53c9ceb7cef355927232025"
+    sha256 arm64_ventura: "efce25229471aa84fda3cc92b5f0a13f3f1d5269a6b87f08969f3ec93818beda"
+    sha256 sonoma:        "9970ec125b2b0ccbdbecc3855538d60070d1e75dd0835185999d22b297dc71b9"
+    sha256 ventura:       "58bc476df5596177562958ab9419ee0ffefa4b59be39af47e6437ff5ce48665e"
+    sha256 x86_64_linux:  "070f65df59f86b5bd6b8d40183c0574c443e12dc133c8b0ea8cba0fd1d52c3c1"
   end
 
   keg_only :versioned_formula
@@ -33,8 +34,6 @@ class GoAT122 < Formula
   depends_on "go" => :build
 
   def install
-    inreplace "go.env", /^GOTOOLCHAIN=.*$/, "GOTOOLCHAIN=local"
-
     cd "src" do
       ENV["GOROOT_FINAL"] = libexec
       # Set portable defaults for CC/CXX to be used by cgo
@@ -53,17 +52,7 @@ class GoAT122 < Formula
     rm_r(libexec/"src/runtime/pprof/testdata")
   end
 
-  def caveats
-    <<~EOS
-      Homebrew's Go toolchain is configured with
-        GOTOOLCHAIN=local
-      per Homebrew policy on tools that update themselves.
-    EOS
-  end
-
   test do
-    assert_equal "local", shell_output("#{bin}/go env GOTOOLCHAIN").strip
-
     (testpath/"hello.go").write <<~GO
       package main
 

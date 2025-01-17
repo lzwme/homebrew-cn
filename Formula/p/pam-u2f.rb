@@ -1,8 +1,8 @@
 class PamU2f < Formula
   desc "Provides an easy way to use U2F-compliant authenticators with PAM"
   homepage "https:developers.yubico.compam-u2f"
-  url "https:developers.yubico.compam-u2fReleasespam_u2f-1.3.1.tar.gz"
-  sha256 "9a13549947f844f6b3ab691d71afb4f6f00a45d165fed27b01c66c07750a9387"
+  url "https:developers.yubico.compam-u2fReleasespam_u2f-1.3.2.tar.gz"
+  sha256 "38be7d1897271cb3fee391d2383b35afc126ad431a91a9de6e99108c12cc9490"
   license "BSD-2-Clause"
   head "https:github.comYubicopam-u2f.git", branch: "master"
 
@@ -12,12 +12,12 @@ class PamU2f < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "cb7eeace9b9bdf8a2f7a134b54b733f8fcc80ca5fdaae1cc3299c589e82c1497"
-    sha256 cellar: :any,                 arm64_sonoma:  "bec9f7dbb7e75e7b903f7d5c65a105edf592d7474216f2876b7182e88d309b6c"
-    sha256 cellar: :any,                 arm64_ventura: "ddbe763a1b0995ad964121c16e6acfeb4eefa5c682b4d41b69b2f57ed67123c3"
-    sha256 cellar: :any,                 sonoma:        "d1fae29c25e61dbb4dbdd2ca051d01be7751fdd0d0dd0d45d9d8bb87a00f768d"
-    sha256 cellar: :any,                 ventura:       "e6265a55a2dac5c6972d1635878b2108f064ba5bb76482f2b71f7c0bff84a8c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89e4545bc73ffc6824123e9c4bd2440ec97fdf8815f25bbf3b11c7a575141341"
+    sha256 cellar: :any,                 arm64_sequoia: "6a159e34803506bcb44ff6c28db5879ac4ec11b706eddb6df55c956ee89dcae1"
+    sha256 cellar: :any,                 arm64_sonoma:  "2bc91a296c14948e1a7fb9c61a5e6ba9d6e2d169bdc3f1955f4d7f4586d8bc71"
+    sha256 cellar: :any,                 arm64_ventura: "406d09f9b431e7ac540d312dc0b1dc9f7a7db91e7abb5f23457a2f985b19576c"
+    sha256 cellar: :any,                 sonoma:        "c5aa1b4f377072a8a821f9d711afceb700b0ba786581996efa2601c1906b39ae"
+    sha256 cellar: :any,                 ventura:       "be59022d553d437078dbed6dfd29e39d693caf4ac8bff9cc9bb75063573c24ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68c9f977e803714c2c9cc19dba8716aa68b20a306e358e4d06666e91d0fbb3c9"
   end
 
   depends_on "asciidoc" => :build

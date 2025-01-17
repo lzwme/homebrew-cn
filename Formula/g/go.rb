@@ -1,11 +1,10 @@
 class Go < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://go.dev/"
-  url "https://go.dev/dl/go1.23.4.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.23.4.src.tar.gz"
-  sha256 "ad345ac421e90814293a9699cca19dd5238251c3f687980bbcae28495b263531"
+  url "https://go.dev/dl/go1.23.5.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.23.5.src.tar.gz"
+  sha256 "a6f3f4bbd3e6bdd626f79b668f212fbb5649daf75084fb79b678a0ae4d97423b"
   license "BSD-3-Clause"
-  revision 1
   head "https://go.googlesource.com/go.git", branch: "master"
 
   livecheck do
@@ -22,12 +21,12 @@ class Go < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "cf5710a74df36981bf8dda6ce6c32373e294234f686d117c4778ef4d9edc52b0"
-    sha256 arm64_sonoma:  "cf5710a74df36981bf8dda6ce6c32373e294234f686d117c4778ef4d9edc52b0"
-    sha256 arm64_ventura: "cf5710a74df36981bf8dda6ce6c32373e294234f686d117c4778ef4d9edc52b0"
-    sha256 sonoma:        "01f4245c3c9b634c4e61014d648b64d25d7f03728227bea40e25d381ce8be119"
-    sha256 ventura:       "01f4245c3c9b634c4e61014d648b64d25d7f03728227bea40e25d381ce8be119"
-    sha256 x86_64_linux:  "13be2cc9eb9e7792a205709e92905a6f69e5b79b41898c41a0cf0ceabcb3a4d0"
+    sha256 arm64_sequoia: "ffe37169c9f03d4648871fba9d58c4342e59c1665c7ef68493765702ca2a3a44"
+    sha256 arm64_sonoma:  "ffe37169c9f03d4648871fba9d58c4342e59c1665c7ef68493765702ca2a3a44"
+    sha256 arm64_ventura: "ffe37169c9f03d4648871fba9d58c4342e59c1665c7ef68493765702ca2a3a44"
+    sha256 sonoma:        "91888e640405268fa1033ef7b30ae5505078414a34beaa32936dd331412d87cb"
+    sha256 ventura:       "91888e640405268fa1033ef7b30ae5505078414a34beaa32936dd331412d87cb"
+    sha256 x86_64_linux:  "e0d762728d9b395274427ef357610269206b288bd876e8fd345a0f96e4136514"
   end
 
   # Don't update this unless this version cannot bootstrap the new version.

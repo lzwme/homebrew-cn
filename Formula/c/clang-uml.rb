@@ -1,18 +1,18 @@
 class ClangUml < Formula
   desc "Customizable automatic UML diagram generator for C++ based on Clang"
   homepage "https:github.combkryzaclang-uml"
-  url "https:github.combkryzaclang-umlarchiverefstags0.5.6.tar.gz"
-  sha256 "7a92e7b8b4f1d269087f13e05ea7ff2ae3f2ca0a8e3ecd0a4db34444bb8dc4f9"
+  url "https:github.combkryzaclang-umlarchiverefstags0.6.0.tar.gz"
+  sha256 "df50f715ab4b5f8705893aba45f6146b77cbd1c0653e81e2555772d8584601d5"
   license "Apache-2.0"
   head "https:github.combkryzaclang-uml.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e8527b07cfad9e26e73127631eadeadc661d183c6cdb03ff3405244df225f0ef"
-    sha256 cellar: :any,                 arm64_sonoma:  "ac3003dac9ef3014ebc2649d9ba455fdfbd76c8778c1dec13bfe59ebf6e973ac"
-    sha256 cellar: :any,                 arm64_ventura: "b0f65d8510f0a0685972cdd5404165969e743d1782dbfd751d5e29d2fb4ffbb9"
-    sha256 cellar: :any,                 sonoma:        "75a3ad5215b45b54bb74e8646419aaa1ae63a649d43f9bc29d991431edb74b00"
-    sha256 cellar: :any,                 ventura:       "c300dafc9f8abe3422ae79b528277dff1de15c1b62dd6e01ede7ef98637cc3e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a31c7e482ce458b220713abb0e0e5ffd71ca6c829dbd7cb118da6df567e2e16"
+    sha256 cellar: :any,                 arm64_sequoia: "ef69e10427ae18579ded81c976f7ff99b510b8a259c00537e86c623408b5be58"
+    sha256 cellar: :any,                 arm64_sonoma:  "519d24f4f5cf1c8fd66aa25974ae1f22cb2b28d24212c7c257d7614f883572e7"
+    sha256 cellar: :any,                 arm64_ventura: "bca97dfb431d4e18fbfdd1a410ac8ed82322f7e1978d9954e313cffdf69043dd"
+    sha256 cellar: :any,                 sonoma:        "d25f9faa7cfeafd93066cca12d265a0bd88001e659e458941c4cbab4e4a25c4c"
+    sha256 cellar: :any,                 ventura:       "abb5969d6c8223b45daf82408a6ca80bd6f6f0cea2565ba994b17eb9e7ae0864"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9ea7ee16b42512e71a166f1a8227b2be24a645ae7f50a8b0bfcd9c57ebb617f"
   end
 
   depends_on "cmake" => [:build, :test]

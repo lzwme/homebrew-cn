@@ -1,18 +1,17 @@
 class Mods < Formula
   desc "AI on the command-line"
   homepage "https:github.comcharmbraceletmods"
-  url "https:github.comcharmbraceletmodsarchiverefstagsv1.6.0.tar.gz"
-  sha256 "885388ac0e55ecec92648b721baf5d392e33f146cf5b92f9f23f365d9746cc07"
+  url "https:github.comcharmbraceletmodsarchiverefstagsv1.7.0.tar.gz"
+  sha256 "44e15c13d70d74369467df4d18b0a5ad9d977b344e76a39898002a04712271ca"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e545698222cb6a973edd3e8631a495d026909752b4516d8db7d149654ce8680e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e545698222cb6a973edd3e8631a495d026909752b4516d8db7d149654ce8680e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e545698222cb6a973edd3e8631a495d026909752b4516d8db7d149654ce8680e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "01084d35b89c52a6a1bbf88f18fe966a073086f6e9911fbb2b7a08ffc6214aba"
-    sha256 cellar: :any_skip_relocation, ventura:       "01084d35b89c52a6a1bbf88f18fe966a073086f6e9911fbb2b7a08ffc6214aba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c44a335db22b0afe82e7d4f476b1cedac8bb10638b8260d136a4d3aa8f5fbe28"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef4507075257b543ce0352b27723e0b70310221b5af17ee5ad2e45e660d39fb8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef4507075257b543ce0352b27723e0b70310221b5af17ee5ad2e45e660d39fb8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ef4507075257b543ce0352b27723e0b70310221b5af17ee5ad2e45e660d39fb8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6f172da97622950b4d688514b07d9bd7711b4e935bb77602bf642f96525ca8db"
+    sha256 cellar: :any_skip_relocation, ventura:       "6f172da97622950b4d688514b07d9bd7711b4e935bb77602bf642f96525ca8db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f7ce569623766cf59c6ab7df40eb76dd857055683aa1ad75dafc7b3482f0a92"
   end
 
   depends_on "go" => :build

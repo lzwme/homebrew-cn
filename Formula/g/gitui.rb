@@ -1,21 +1,21 @@
 class Gitui < Formula
   desc "Blazing fast terminal-ui for git written in rust"
   homepage "https:github.comextrawurstgitui"
-  url "https:github.comextrawurstgituiarchiverefstagsv0.26.3.tar.gz"
-  sha256 "8075e180f3b01ff0c290b690488a7628c44b4de12346e04a77d823914a48918b"
+  url "https:github.comextrawurstgituiarchiverefstagsv0.27.0.tar.gz"
+  sha256 "55a85f4a3ce97712b618575aa80f3c15ea4004d554e8899669910d7fb4ff6e4b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "c5d995cb59c58bb5d44c61bb2d5b88073164561de392e929422c352ef2b2ccef"
-    sha256 cellar: :any,                 arm64_sonoma:   "d6f7ec14145cf4230fb6370f48f0daaa1c67cd03a6cda7b22979080714a44b7a"
-    sha256 cellar: :any,                 arm64_ventura:  "98bffe2fea54b264392059fff7a0091c7cedc384fdff15cad427eed0390bb5ff"
-    sha256 cellar: :any,                 arm64_monterey: "c882077be795e50d065d975928d3ef66636ab05fe1d884968691841cf8919fd2"
-    sha256 cellar: :any,                 sonoma:         "d8d54259afc4edb877d269603a16dd4097a95926c92c7008783770006c7617b5"
-    sha256 cellar: :any,                 ventura:        "afff6b29de302997785496f4238a3c501e894e6da643228d2dcbbf715285f14e"
-    sha256 cellar: :any,                 monterey:       "eec269d68c591c21ad9c4beee25b00e051e3be34f97b94cfa2965b95848315e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "350a9f635cea158f6d0c49b6859dbb91c65e9b4a29c224e34469362e758b9ac5"
+    sha256 cellar: :any,                 arm64_sequoia: "2b153db2c3519ec2f197cd128b34732ec2e2b90355d7f05e46629853060e5a9d"
+    sha256 cellar: :any,                 arm64_sonoma:  "f5eae626dfbdd29bf9a00bb67f070a08d85b95f1affdae32adc0ba8f9851019a"
+    sha256 cellar: :any,                 arm64_ventura: "911bfd33ff0f35e6f39dd2ae4b472fb2bc42cc51aa378c2b0d4a4280f6cf103a"
+    sha256 cellar: :any,                 sonoma:        "c734edd0329e21b2d5f08cc847f9780eed6eb51e27e029d807270f140ef4e22e"
+    sha256 cellar: :any,                 ventura:       "031988daf2b09dee6f249501354de183538753578d99fc61432da8ba77df4384"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92f54255b0500c4831f812986017344dcfd8c7a971a994de024e945df3f4c886"
   end
 
+  depends_on "cmake" => :build # for libz-ng-sys
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
 
@@ -44,15 +44,15 @@ class Gitui < Formula
     input, _, wait_thr = Open3.popen2 "script -q screenlog.ansi"
     input.puts "stty rows 80 cols 130"
     input.puts "env LC_CTYPE=en_US.UTF-8 LANG=en_US.UTF-8 TERM=xterm #{bin}gitui -d gitui"
-    sleep 1
+    sleep 2
     # select log tab
     input.puts "2"
-    sleep 1
+    sleep 2
     # inspect commit (return + right arrow key)
     input.puts "\r"
-    sleep 1
+    sleep 2
     input.puts "\e[C"
-    sleep 1
+    sleep 2
     input.close
 
     screenlog = (testpath"screenlog.ansi").read

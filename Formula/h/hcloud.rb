@@ -1,17 +1,17 @@
 class Hcloud < Formula
   desc "Command-line interface for Hetzner Cloud"
   homepage "https:github.comhetznercloudcli"
-  url "https:github.comhetznercloudcliarchiverefstagsv1.49.0.tar.gz"
-  sha256 "5b238acf908046205c15c7b720efeed51f50f56c8c0b0bf6d0f9022e1536392d"
+  url "https:github.comhetznercloudcliarchiverefstagsv1.50.0.tar.gz"
+  sha256 "61fb1823a176ec77c102c30b3a7de50c67df7eda6dd8a3bf1f17c882e8c78011"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13efd789d8c373536fec0a1191252ad3da86a005404116a585aa1a6b4f426f9d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13efd789d8c373536fec0a1191252ad3da86a005404116a585aa1a6b4f426f9d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "13efd789d8c373536fec0a1191252ad3da86a005404116a585aa1a6b4f426f9d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ff3863bd0dc0f8af8d38bb1564779031891faf6d49a12caef448e16520d894cb"
-    sha256 cellar: :any_skip_relocation, ventura:       "ff3863bd0dc0f8af8d38bb1564779031891faf6d49a12caef448e16520d894cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d30d38f525e00c5bdae662deeab26c3349407a771044202311ce7b569277f189"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5926c1e2cb28a791212b47aee1fa99ef3a269b7e29325d21cd3844754e2d3053"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5926c1e2cb28a791212b47aee1fa99ef3a269b7e29325d21cd3844754e2d3053"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5926c1e2cb28a791212b47aee1fa99ef3a269b7e29325d21cd3844754e2d3053"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e2916119cdca7afe0d62123300ac9d49649aa19e44cc14aaadfe8f55a1c86582"
+    sha256 cellar: :any_skip_relocation, ventura:       "e2916119cdca7afe0d62123300ac9d49649aa19e44cc14aaadfe8f55a1c86582"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3455977befd86b6dcb02de868e4d1d544134095ba3b2c74772ae1d32747b9954"
   end
 
   depends_on "go" => :build

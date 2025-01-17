@@ -6,39 +6,72 @@ class RakudoStar < Formula
   license "Artistic-2.0"
 
   bottle do
-    sha256 arm64_sequoia: "523d234bf059e1ea81d7633b3caafd94973b9e42f1df746a694b1ccd0d2e1368"
-    sha256 arm64_sonoma:  "6413d986f8f733757258d15ab38de86f8046fb8c312f4d107212b8ab3bf5e6f0"
-    sha256 arm64_ventura: "a1ca5dbba61fe6a6c8b2e333e59f5db3e5e7751d4ac07a212599ea7b65dc2734"
-    sha256 sonoma:        "766709a05b53bcad5ee13ce700159a589ff6ccf6fcb68d0e11c3235f78542a2a"
-    sha256 ventura:       "2030e6969c29ad77c123946f46172e42786a4cb21140aab0bc9ccee0f9bb0088"
-    sha256 x86_64_linux:  "94d39d2e72eb57c4afc4a1bb4733b6cae96d77618cc4a997b495e7cbd728dca7"
+    rebuild 1
+    sha256 arm64_sequoia: "5f333665dfe2213e47659de5c105161f240f0b451907a3041996cec27975db3c"
+    sha256 arm64_sonoma:  "f8fe89c21b5a88b97144615679ce401d28249ed1e4b9e692d5224aded1ca7068"
+    sha256 arm64_ventura: "05e6ee91230256c4e845ecb13005dc39eead7bc11c4c85cc3ed492673ef74850"
+    sha256 sonoma:        "3ca9539f0917ca056c321887a9d848d608310f61dae42ef2b756a4f700227968"
+    sha256 ventura:       "24ce60a9c53bdd182b70b308dabdf32c2932656f52cf292bc583e3b90f813c89"
+    sha256 x86_64_linux:  "1187c0324314df2a54a8e37352f2578b5c70d7899abf8eb351d47472c40b863c"
   end
 
   depends_on "bash" => :build
-  depends_on "gmp"
-  depends_on "icu4c@76"
-  depends_on "openssl@3"
-  depends_on "pcre"
-  depends_on "readline"
+  depends_on "pkgconf" => :build
+  depends_on "sqlite" => [:build, :test]
+  depends_on "libtommath"
+  depends_on "libuv"
+  depends_on "mimalloc"
+  depends_on "openssl@3" # for OpenSSL module, loaded by path
+  depends_on "readline" # for Readline module, loaded by path
+  depends_on "zstd"
+
+  uses_from_macos "perl" => :build
   uses_from_macos "libffi", since: :catalina
+  uses_from_macos "libxml2"
 
   conflicts_with "moar", because: "both install `moar` binaries"
   conflicts_with "moarvm", "nqp", because: "rakudo-star currently ships with moarvm and nqp included"
   conflicts_with "parrot"
   conflicts_with "rakudo"
 
+  # Apply open Config::Parser::json PR to fix unittests run during install
+  # Ref: https:github.comarjancwidlakp6-Config-Parser-jsonpull1
+  patch do
+    url "https:github.comarjancwidlakp6-Config-Parser-jsoncommitca1a355c95178034b08ff9ebd1516a2e9d5bc067.patch?full_index=1"
+    sha256 "d13230dc7d8ec0b72c21bd17e99a62d959fb3559d483eb43ce6be7ded8a0492a"
+    directory "srcrakudo-star-modulesConfig-Parser-json"
+  end
+
+  # Allow adding arguments via inreplace to unbundle libraries in MoarVM
+  patch :DATA
+
   def install
-    if !OS.mac? || MacOS.version < :catalina
-      libffi = Formula["libffi"]
-      ENV.remove "CPPFLAGS", "-I#{libffi.include}"
-      ENV.prepend "CPPFLAGS", "-I#{libffi.lib}libffi-#{libffi.version}include"
-    end
+    # Unbundle libraries in MoarVM
+    moarvm_3rdparty = buildpath.glob("srcmoarvm-*MoarVM-*3rdparty").first
+    %w[dyncall libatomicops libtommath libuv mimalloc].each { |dir| rm_r(moarvm_3rdpartydir) }
+    moarvm_configure_args = %W[
+      --c11-atomics
+      --has-libffi
+      --has-libtommath
+      --has-libuv
+      --has-mimalloc
+      --pkgconfig=#{Formula["pkgconf"].opt_bin}pkgconf
+    ]
+    inreplace "libactionsinstall.bash", "@@MOARVM_CONFIGURE_ARGS@@", moarvm_configure_args.join(" ")
+
+    # Help Readline module find brew `readline` on Linux
+    inreplace "srcrakudo-star-modulesReadlinelibReadline.pm",
+              %r{\((\n *)('libx86_64-linux-gnu',)},
+              "(\\1'#{Formula["readline"].opt_lib}',\\1\\2"
 
     ENV.deparallelize # An intermittent race condition causes random build failures.
 
     # make install runs tests that can hang on sierra
     # set this variable to skip those tests
     ENV["NO_NETWORK_TESTING"] = "1"
+
+    # Help DBIish module find sqlite shared library
+    ENV["DBIISH_SQLITE_LIB"] = Formula["sqlite"].opt_libshared_library("libsqlite3")
 
     # openssl module's brew --prefix openssl probe fails so
     # set value here
@@ -57,8 +90,75 @@ class RakudoStar < Formula
     share.install prefix"man" if (prefix"man").directory?
   end
 
+  def post_install
+    (share"perl6vendorshort").mkpath
+  end
+
   test do
     out = shell_output("#{bin}raku -e 'loop (my $i = 0; $i < 10; $i++) { print $i }'")
     assert_equal "0123456789", out
+
+    # Test OpenSSL module
+    (testpath"openssl.raku").write <<~PERL
+      use OpenSSL::CryptTools;
+      my $ciphertext = encrypt("brew".encode, :aes256, :iv(("0" x 16).encode), :key(('x' x 32).encode));
+      print decrypt($ciphertext, :aes256, :iv(("0" x 16).encode), :key(('x' x 32).encode)).decode;
+    PERL
+    assert_equal "brew", shell_output("#{bin}raku openssl.raku")
+
+    # Test Readline module
+    (testpath"readline.raku").write <<~PERL
+      use Readline;
+      my $response = Readline.new.readline("test> ");
+      print "[$response]";
+    PERL
+    assert_equal "test> brew\n[brew]", pipe_output("#{bin}raku readline.raku", "brew\n", 0)
+
+    # Test LibXML module
+    (testpath"libxml.raku").write <<~PERL
+      use LibXML::Document;
+      my LibXML::Document $doc .=  parse: :string('<Hello>');
+      $doc.root.nodeValue = 'World!';
+      print $doc<Hello>;
+    PERL
+    assert_equal "<Hello>World!<Hello>", shell_output("#{bin}raku libxml.raku")
+
+    # Test DBIish module
+    (testpath"sqlite.raku").write <<~PERL
+      use DBIish;
+      my $dbh = DBIish.connect("SQLite", :database<test.sqlite3>, :RaiseError);
+      $dbh.execute("create table students (name text, age integer)");
+      $dbh.execute("insert into students (name, age) values ('Bob', 14)");
+      $dbh.execute("insert into students (name, age) values ('Sue', 12)");
+      say $dbh.execute("select name from students order by age asc").allrows();
+      $dbh.dispose;
+    PERL
+    assert_equal "([Sue] [Bob])\n", shell_output("#{bin}raku sqlite.raku")
+
+    # Test Config::Parser::json module
+    (testpath"test.json").write <<~JSON
+      { "foo": { "bar": [0, 1] } }
+    JSON
+    (testpath"parser.raku").write <<~PERL
+      use Config;
+      use Config::Parser::json;
+      my $config = Config.new();
+      $config.=read("test.json");
+      print $config.get('foo.bar');
+    PERL
+    assert_equal "0 1", shell_output("#{bin}raku parser.raku")
   end
 end
+
+__END__
+--- alibactionsinstall.bash
++++ blibactionsinstall.bash
+@@ -168,7 +168,7 @@ build_moarvm() {
+ 	fi
+ 
+ 	{
+-		perl Configure.pl "$@" \
++		perl Configure.pl @@MOARVM_CONFIGURE_ARGS@@ "$@" \
+ 		&& make \
+ 		&& make install \
+ 		> "$logfile" \

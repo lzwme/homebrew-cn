@@ -12,36 +12,19 @@ class PerconaToolkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "20acd34ed6c90230cab848cc2d60244eb417bf4eb27ce69fb48a9809681e8f57"
-    sha256 cellar: :any,                 arm64_sonoma:  "9bb2cec45a90341e259b773737d409aaf0ecbb862d9578849c4740785d2d760c"
-    sha256 cellar: :any,                 arm64_ventura: "cf116bff658175721671f8c152c40e669e895ff5dd9a474167fd306fcfbc97df"
-    sha256 cellar: :any,                 sonoma:        "7bab53293a32c33c15b7764666d828125f4abdd244e2e8e1b486f2c078229116"
-    sha256 cellar: :any,                 ventura:       "05a8dc478966a2395d7d83bc1cf816e683795db19d83417a244db43b1caca830"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8ee2ab6048715176684e52a0dcbfcd186addb7bdd791c433df9c8e0f568d291"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a37d5376a12782664896830ae588d515b1bbde0d4452156c9319e6b391a453ea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a37d5376a12782664896830ae588d515b1bbde0d4452156c9319e6b391a453ea"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5986cbc073b8a2f0cf7b6b53b1a2a7e1029e2f498d0471dd46189067884f8f1a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f3cbec25f4fa8beb974b310c074a90e6ef1eb58bcef0c1274f59217931983a93"
+    sha256 cellar: :any_skip_relocation, ventura:       "51e79707676df290463b16f92541773bd254a0b1014dac67b4c238db6cbfb6e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40e8a0ed87eaa24b89d1b6c7c47bd3298281b8fa1ea653bd80761112cbf165d1"
   end
 
   depends_on "go" => :build
-  depends_on "mysql-client"
+  depends_on "perl-dbd-mysql"
 
   uses_from_macos "perl"
-
-  # Should be installed before DBD::mysql
-  resource "Devel::CheckLib" do
-    url "https://cpan.metacpan.org/authors/id/M/MA/MATTN/Devel-CheckLib-1.16.tar.gz"
-    sha256 "869d38c258e646dcef676609f0dd7ca90f085f56cf6fd7001b019a5d5b831fca"
-  end
-
-  resource "DBI" do
-    on_linux do
-      url "https://cpan.metacpan.org/authors/id/H/HM/HMBRAND/DBI-1.645.tgz"
-      sha256 "e38b7a5efee129decda12383cf894963da971ffac303f54cc1b93e40e3cf9921"
-    end
-  end
-
-  resource "DBD::mysql" do
-    url "https://cpan.metacpan.org/authors/id/D/DV/DVEEDEN/DBD-mysql-5.010.tar.gz"
-    sha256 "2ca2ff39d93e89d4f7446e5f0faf03805e9167ee9b8a04ba7cb246e2cb46eee7"
-  end
 
   resource "JSON" do
     on_linux do
@@ -51,43 +34,21 @@ class PerconaToolkit < Formula
   end
 
   def install
-    ENV.prepend_create_path "PERL5LIB", buildpath/"build_deps/lib/perl5"
+    ENV.prepend_path "PERL5LIB", Formula["perl-dbd-mysql"].opt_libexec/"lib/perl5"
     ENV.prepend_create_path "PERL5LIB", libexec/"lib/perl5"
 
-    build_only_deps = %w[Devel::CheckLib]
     resources.each do |r|
       r.stage do
-        install_base = if build_only_deps.include? r.name
-          buildpath/"build_deps"
-        else
-          libexec
-        end
-
-        # Skip installing man pages for libexec perl modules to reduce disk usage
-        system "perl", "Makefile.PL", "INSTALL_BASE=#{install_base}",
+        system "perl", "Makefile.PL", "INSTALL_BASE=#{libexec}",
                                       "INSTALLMAN1DIR=none", "INSTALLMAN3DIR=none",
                                       "NO_PERLLOCAL=1", "NO_PACKLIST=1"
-
-        make_args = []
-        if OS.mac? && r.name == "DBD::mysql"
-          # Reduce overlinking on macOS
-          make_args << "OTHERLDFLAGS=-Wl,-dead_strip_dylibs"
-          # Work around macOS DBI generating broken Makefile
-          inreplace "Makefile" do |s|
-            old_dbi_instarch_dir = s.get_make_var("DBI_INSTARCH_DIR")
-            new_dbi_instarch_dir = "#{MacOS.sdk_path_if_needed}#{old_dbi_instarch_dir}"
-            s.change_make_var! "DBI_INSTARCH_DIR", new_dbi_instarch_dir
-            s.gsub! " #{old_dbi_instarch_dir}/Driver_xst.h", " #{new_dbi_instarch_dir}/Driver_xst.h"
-          end
-        end
-
-        system "make", "install", *make_args
+        system "make", "install"
       end
     end
 
     system "perl", "Makefile.PL", "INSTALL_BASE=#{prefix}", "INSTALLSITEMAN1DIR=#{man1}"
     system "make", "install"
-    bin.env_script_all_files(libexec/"bin", PERL5LIB: libexec/"lib/perl5")
+    bin.env_script_all_files(libexec/"bin", PERL5LIB: ENV["PERL5LIB"])
   end
 
   test do

@@ -1,9 +1,9 @@
 class Dbhash < Formula
   desc "Computes the SHA1 hash of schema and content of a SQLite database"
   homepage "https://www.sqlite.org/dbhash.html"
-  url "https://www.sqlite.org/2024/sqlite-src-3470200.zip"
-  version "3.47.2"
-  sha256 "e6a471f1238225f34c2c48c5601b54024cc538044368230f59ff0672be1fc623"
+  url "https://www.sqlite.org/2025/sqlite-src-3480000.zip"
+  version "3.48.0"
+  sha256 "2d7b032b6fdfe8c442aa809f850687a81d06381deecd7be3312601d28612e640"
   license "blessing"
 
   livecheck do
@@ -11,12 +11,12 @@ class Dbhash < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "190d471fafdf8ff76be71ef4dd978bd7b4cee5928491187e33833a32461502a7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2665ad3ed18493df985374d2a4a16601c69e80c0f2dba3760cf0fd0e7f31440"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "be873cae3d2ff6418cdb6ca6d571ab96afe22a932a9fae942d6976709878edbb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7ecf747b6c10e41a7a1dad2a1cca3579228f84d1b249ecabe11150b5dbfcd67d"
-    sha256 cellar: :any_skip_relocation, ventura:       "64397c6ffbb34a095d9bcba144ff229ff45770c472e9a430b33483af3e7cdb79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f14bc0093356db9130d01fddc89619700f483ad7bd2bb54504546f56412fddc1"
+    sha256 cellar: :any,                 arm64_sequoia: "6ebd2079e9cc3a6362f66c4e06a0ae326972d758c0efd5b43fbd7f12dba070df"
+    sha256 cellar: :any,                 arm64_sonoma:  "652a704bf54c3deaa06c06e6d3fc040461cc0c945ad9880d8277d60b9cead507"
+    sha256 cellar: :any,                 arm64_ventura: "bd790c212dde0493ebc54f85d7ad9d6084cb1b18355331a557c4c0706ff84c73"
+    sha256 cellar: :any,                 sonoma:        "ab19b6eb7ecb9d9b7915ab0f308f1f109fc68f77feea6b06db1f1f8d2c363296"
+    sha256 cellar: :any,                 ventura:       "1086859f60c7e71a3509000f0e5f1c326749ea5635612bab29cfb8b8eaa0788e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "677b60876d0dceb2a9ad6def5320c062778446993857ea92344fe8eec9d13435"
   end
 
   uses_from_macos "tcl-tk" => :build

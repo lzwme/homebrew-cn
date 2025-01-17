@@ -1,8 +1,8 @@
 class Tzdb < Formula
   desc "Time Zone Database"
   homepage "https://www.iana.org/time-zones"
-  url "https://data.iana.org/time-zones/releases/tzdb-2024b.tar.lz"
-  sha256 "22674a67786d3ec1b0547305904011cb2b9126166e72abbbea39425de5595233"
+  url "https://data.iana.org/time-zones/releases/tzdb-2025a.tar.lz"
+  sha256 "86882399c58693976e0fd291994d2bd8520036c303f68836197a56fb135c2815"
   license all_of: ["BSD-3-Clause", :public_domain]
 
   livecheck do
@@ -11,12 +11,12 @@ class Tzdb < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "05a58b175a4b15be423b08a4dfe786f19e2e67cb7d0319d414ab1938da5a024a"
-    sha256 arm64_sonoma:  "a6e15f3501cde82cc7643afa516b86904f42ac6e113f6fe84a58869dd9ce377a"
-    sha256 arm64_ventura: "30e3b2e8f323d95b61aabe2236d553c4e998194a351451059f573bddbf5ff85b"
-    sha256 sonoma:        "ec6139aeae59037853aff9e649cfaca5109276f4707f860ca4438edc15a84091"
-    sha256 ventura:       "2d3686206357190fde0786187e04076b5cff11112152e37ff32cbd10548f1b89"
-    sha256 x86_64_linux:  "c1c661ca728147560f889847f3c48728de29b7948cc4638ff1301289cdb204ad"
+    sha256 arm64_sequoia: "1371ba4fa367e2dfbc70ed6b33e95708883a5ceb5d257b55591b70a0d50dc694"
+    sha256 arm64_sonoma:  "eecc3bb8f8bde2a4837f7516e837f8b422b82a8c0a17a58355415b8b255ebd8c"
+    sha256 arm64_ventura: "c84286138779756e744b65e1e07a99fac1af43d8f6dc4fb4527e9d7b9de67309"
+    sha256 sonoma:        "008371e4fdb2913b2de5113135bb8263b510e5fa4d14bc9aa00530697f621b0c"
+    sha256 ventura:       "b64ce644a2ffd2569644cfcb8e5c580c0ddebd8c572bb282f40d4e007bb10129"
+    sha256 x86_64_linux:  "95dbda0bc9df9eb64f66e913a91d049a11ea9cc2513102e24654dca5119b9377"
   end
 
   on_macos do

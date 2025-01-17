@@ -7,30 +7,36 @@ class Putty < Formula
   head "https://git.tartarus.org/simon/putty.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f09d7bfe2bfd74570c0bd49b31b4f9001715c6cf092076df643835573be8ac55"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e8532e4f40cd79e4c86904d1b55523c162154c59310a9fb708ee191cc7d0d4a0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c4a58c9affe4cfee0189680417c6a67681536cc7d4cc84a192320afb2b80aa76"
-    sha256 cellar: :any_skip_relocation, sonoma:        "85528e9395420ae3468bb87b6d02746f194fe62f30119a159b2b84ae9fe0d268"
-    sha256 cellar: :any_skip_relocation, ventura:       "2015273d08a201df6fc6ac56708eb142ea6c9a1a1f4fd5c75fec5328bdec6c09"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17952b03aea70ccf039020719c23f283031de9de00e49883c4847d02a0f9c4fd"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "1f04c4696642d5238b62e185b9295284d5314bd1fe04468830330961aefe37ca"
+    sha256 cellar: :any,                 arm64_sonoma:  "24503de6b2218e6f97f9bf379eddda08db9ef130c6e745c755b228b8a9c38f68"
+    sha256 cellar: :any,                 arm64_ventura: "d3aebac833117e0ce39ab879d99ef707117af4167a230d896cf12be62520b358"
+    sha256 cellar: :any,                 sonoma:        "c0db739c9cd658dffcf7f94989de0843f9502a4fbac9c09a376ca53151fe39ed"
+    sha256 cellar: :any,                 ventura:       "b92fa9eed52a94f950dc138244837eb6429adf50e756a94b2f96f40abd69f30a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1676a17a56fdf1e36b7500e4e422d95f3b069a4753e0f28b2a12203841b1a60f"
   end
 
   depends_on "cmake" => :build
   depends_on "halibut" => :build
   depends_on "pkgconf" => :build
 
+  depends_on "cairo"
+  depends_on "gdk-pixbuf"
+  depends_on "glib"
+  depends_on "gtk+3"
+  depends_on "pango"
+
   uses_from_macos "perl" => :build
-  uses_from_macos "expect" => :test
+
+  on_linux do
+    depends_on "libx11"
+  end
 
   conflicts_with "pssh", because: "both install `pscp` binaries"
 
   def install
-    build_version = build.head? ? "svn-#{version}" : version
-
-    args = %W[
-      -DRELEASE=#{build_version}
-      -DPUTTY_GTK_VERSION=NONE
-    ]
+    args = ["-DPUTTY_GTK_VERSION=3"]
+    args << "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-dead_strip_dylibs" if OS.mac? # to reduce overlinking
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

@@ -2,8 +2,8 @@ class Kubeseal < Formula
   desc "Kubernetes controller and tool for one-way encrypted Secrets"
   homepage "https:github.combitnami-labssealed-secrets"
   url "https:github.combitnami-labssealed-secrets.git",
-      tag:      "v0.27.3",
-      revision: "fa9307a09c01fd8d347cba44db35f42b2ac875bb"
+      tag:      "v0.28.0",
+      revision: "6b1b331a2cd3a58569ce4d819a7cabc59c0a3e50"
   license "Apache-2.0"
 
   livecheck do
@@ -12,12 +12,12 @@ class Kubeseal < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "785d2b009d47bb897650b9d77c5c060ae265fae830e986432ec0031416d4014e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "755064da7ea131f32462ecfb31b8a64e4f1fbf64b7be6693165255c40c14acc4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f226e28e1c707a9e8d201457c3776c9d7eb1e846b593d451c2b82d1bf659fd02"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3e24a3373a855b7b3254da7d84082b2cf814d323345db366ae1cbef5a48bca13"
-    sha256 cellar: :any_skip_relocation, ventura:       "66a9379d9ef54393e8c19cd5dacfbd972844611b50ca7093d68e8801aa3ab71a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5b90d2fa6326e2ccafb45b61790786c129982c1118c0230b0cc8c289f807457"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df5039a3130b7cea2adf75c3a913c0746eb7a14c29c46dfb34f52a4851989279"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be661f962bdf6ce1f73d92b9e46f1218e7e1fe29dedb66e6bda2a150f572fa59"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f7c772550ed15268303705716d17f58df7097aee181939b2feeb39c571cca4fb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d8995e7f06980a97e9d30ed2c1322749c9dee7633d48b5ff22a438249230eaef"
+    sha256 cellar: :any_skip_relocation, ventura:       "1fe421dab74c282ceaf4c4db173eb9647072f0da4c13c7c82a2689537e69bfc7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fc791690631c17d90d5104a945bb7261246f8d154519e604df761ce8f6b9ea5"
   end
 
   depends_on "go" => :build

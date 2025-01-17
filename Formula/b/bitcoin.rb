@@ -1,15 +1,14 @@
 class Bitcoin < Formula
   desc "Decentralized, peer to peer payment network"
   homepage "https:bitcoincore.org"
-  url "https:bitcoincore.orgbinbitcoin-core-28.0bitcoin-28.0.tar.gz"
-  sha256 "700ae2d1e204602eb07f2779a6e6669893bc96c0dca290593f80ff8e102ff37f"
+  url "https:bitcoincore.orgbinbitcoin-core-28.1bitcoin-28.1.tar.gz"
+  sha256 "c5ae2dd041c7f9d9b7c722490ba5a9d624f7e9a089c67090615e1ba4ad0883ba"
   license all_of: [
     "MIT",
     "BSD-3-Clause", # srccrc32c, srcleveldb
     "BSL-1.0", # srctinyformat.h
     "Sleepycat", # resource("bdb")
   ]
-  revision 1
   head "https:github.combitcoinbitcoin.git", branch: "master"
 
   livecheck do
@@ -18,12 +17,12 @@ class Bitcoin < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "25bc41954442f22485590732ca3d73368b2dc8b512ded096f1072e118e97cef1"
-    sha256 cellar: :any,                 arm64_sonoma:  "9118b0e82481236c3ff7f57bf80aaef4a41939d798df28e685aa7139aeec4356"
-    sha256 cellar: :any,                 arm64_ventura: "155d1a175a9d72dd5cfb88cae94fcaa05cddc7ead46044576e084f5c1c4d1bbe"
-    sha256 cellar: :any,                 sonoma:        "888b0308b358613cc6ab1ac905a2ba19e8d6692ecc0e4b902110d9e7bf74c7cc"
-    sha256 cellar: :any,                 ventura:       "b761c3af4225787ee7cf57ecfbf3c47bff7b897885420ce84b0f038fd4286645"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "309692275f6ec837a1d9b8bb58cad44068d0b256affef5b301fd239ed0e64e2e"
+    sha256 cellar: :any,                 arm64_sequoia: "3b8dd7b2f87fdd035a1a43fb33d815ca5d1b579051f39be65abdea52207787e4"
+    sha256 cellar: :any,                 arm64_sonoma:  "a194275ef4a83ec4ba833598c7e5ae6b90aaee12e3e48141563d4d5c3db58f7c"
+    sha256 cellar: :any,                 arm64_ventura: "6b7ae606988258139e4b8d97d662758d10c4c93c34cc3d05242f274c971cd387"
+    sha256 cellar: :any,                 sonoma:        "448277b6d5eea93cf8fed2417f752034f720b851cb5eae337863646af75bd78b"
+    sha256 cellar: :any,                 ventura:       "3f3dd8b5c72068db2277535f3c449a9338a2079b398376aeebc3963ba78c6f1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5bf3062a9b43ad8e522cf102e21496973249ca5dedada6620e659bec5dc1ae5"
   end
 
   depends_on "autoconf" => :build

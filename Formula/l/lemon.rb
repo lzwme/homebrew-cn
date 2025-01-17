@@ -1,9 +1,9 @@
 class Lemon < Formula
   desc "LALR(1) parser generator like yacc or bison"
   homepage "https://www.hwaci.com/sw/lemon/"
-  url "https://www.sqlite.org/2024/sqlite-src-3470200.zip"
-  version "3.47.2"
-  sha256 "e6a471f1238225f34c2c48c5601b54024cc538044368230f59ff0672be1fc623"
+  url "https://www.sqlite.org/2025/sqlite-src-3480000.zip"
+  version "3.48.0"
+  sha256 "2d7b032b6fdfe8c442aa809f850687a81d06381deecd7be3312601d28612e640"
   license "blessing"
 
   livecheck do
@@ -11,12 +11,12 @@ class Lemon < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "260cc38aebb3667c775e3c9e6d59a9a16d219093ed5d104b66b9279bc4fd0105"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a524850f0a7bbcc06366a661688b1e36ef6247958837c6b388e393a7f8629a6f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "abba3d37ab374c6a75909602b45cac74fd139eca02bdae6d488d895c7d7f2a38"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b398efcb3389b2d70ce184076b01aa049615a77be405762b34853b450f1bf656"
-    sha256 cellar: :any_skip_relocation, ventura:       "4858d1e7657e490f322712695d2d38810a7b30333536ccb7fd55e977c9ca838f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "272456d3190cdfbd85d26d87e155a05837cab8977195fce569ea896a7b6b855b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91cb68ae462c0121b92f0fe141480dd9de2e609ee0c27fc9da122912e250c2a2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3cafedf5ef35351b05e795f2dc50c95039fbb39c1fdc0c6f8f2f3018ddf0b42d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "75c664db3b27df85c9d88d12697f314535c8fb7431b8e7d4db5093dd1d0cae08"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a50ec3bff93951d0615cc09555ab47534922f35741e4a38d796a40e9b1965e3a"
+    sha256 cellar: :any_skip_relocation, ventura:       "0948ebb5ea0c4cc00a0dcc7a9544d44e183e9650f7e85e4b4652b6471bd3d03f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f03aaa8f0e5ad14494abf0f8f89421dadd233d6ee09cd7ce141dbe4fa9104dac"
   end
 
   # Submitted the patch via email to the upstream

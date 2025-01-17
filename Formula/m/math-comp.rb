@@ -4,18 +4,16 @@ class MathComp < Formula
   url "https:github.commath-compmath-comparchiverefstagsmathcomp-1.19.0.tar.gz"
   sha256 "786db902d904347f2108ffceae15ba29037ff8e63a6c58b87928f08671456394"
   license "CECILL-B"
-  revision 5
+  revision 6
   head "https:github.commath-compmath-comp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "56be5fa32ef4fb012b8fed9a47c9c7ae4630013eb31ac350a3cee7f4e152e2f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c65e53df5bd92f7d2b2faa904b51f8aed7b9b7afa0154696787e78c95094ba58"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "5d264a1afa803c6e911fb71cbe8c2105bd966db11fc744a41ce749b4409022de"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "82d8033f4b2d53e096d78553ca15ce4c1b70da10062d9b15d015d6e4b2d90e81"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dbd53984d02d5022a36deca05b2ff0603a18af8bede8433538b6488de162a192"
-    sha256 cellar: :any_skip_relocation, ventura:        "18a7485c231fa966e42e1f92efa65d9d4a90f0638d11115669f8fe1abbd0768c"
-    sha256 cellar: :any_skip_relocation, monterey:       "9a73af8a9943e94f1d6b66bf00062268d490d343d3992ad734553d45f55b4b50"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b26a7b1d822620b5573ee79a908440d66e06eadfede3e0977ac1a60cc57eb85b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37fb1f8770ce323d60e7849b3309f8accaf18b2983133717d75690791f15fe09"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40ed5c77b4b2121aa239a976b013efb9e0e589f0105ad50f44c304cc7388d422"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "315f3de4e2a6edea5d1207fc0220459059fdad6e7c4ce3fd68f84cb023c0c83e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3b4c7071557fe00030e6af03c50ef3b2088971c9321a856460f9d3381463cca8"
+    sha256 cellar: :any_skip_relocation, ventura:       "95303c41552038239d8a4836bbbf1dd5c2529b4c705eb74f0c636ae225b222f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9d62a49ccc03fce4f95434502d11351864301b8dfa8a68bedf21d71a2d65fa7"
   end
 
   depends_on "ocaml" => :build

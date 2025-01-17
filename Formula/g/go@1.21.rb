@@ -5,17 +5,15 @@ class GoAT121 < Formula
   mirror "https://fossies.org/linux/misc/go1.21.13.src.tar.gz"
   sha256 "71fb31606a1de48d129d591e8717a63e0c5565ffba09a24ea9f899a13214c34d"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f38f1b1d5915fc6e17cbb18f66cd0ed7160c61b8c9ee9269979631d190de2918"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c3757ac40700cd4d517029a65b116d6f77566a6a94c40c4596fe1260197b0a36"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2b87a776feaba8fa2acf3ed011a9975889605934252863494074b611bb45bb10"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4bcb9ea33785b35225901a94a79dafe6dd966772932afcded0267095ad473555"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b6a9eb12dc8b09ac64043d014e0d2c4eae6d4037eb04d2716910b1915d790846"
-    sha256 cellar: :any_skip_relocation, ventura:        "ae6a9a23003e4d35ec7ad3c49ef019bd5eb601d3c4fbcae22855214b540f48f9"
-    sha256 cellar: :any_skip_relocation, monterey:       "cc9f41285f92be8306f1d46186042b16daba3ab78977e2cba24ccb72e278d416"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e99701f6ff4d7a776573f0a5b98bfd68194cc7abaa5dc28534142a8426a0f1dc"
+    sha256 arm64_sequoia: "0653847518101d80daf1da2b2e14a2c6fd76c5821c6692ab8b0a492bfdb1761d"
+    sha256 arm64_sonoma:  "67a54a23b293d32ac840196dd114014e6d4b816861aa5a8422a0b1d1850fe7f9"
+    sha256 arm64_ventura: "baa064afbd10120172949e2632e9495537936a063bb73cbcee7b8136ca03441a"
+    sha256 sonoma:        "2e6c282c3dde6d05a2aad83939b28232521afa4530c2dd102e4092bd3faf32f0"
+    sha256 ventura:       "938a31dbe05636643409366c61afc7a6ba5d80abe3f591f8bb8846656e02e764"
+    sha256 x86_64_linux:  "c492b2a277c6abd6ab43cc429277882b5fb23f7195cb3f8aafdcfe41d6dad134"
   end
 
   keg_only :versioned_formula
@@ -27,8 +25,6 @@ class GoAT121 < Formula
   depends_on "go" => :build
 
   def install
-    inreplace "go.env", /^GOTOOLCHAIN=.*$/, "GOTOOLCHAIN=local"
-
     cd "src" do
       ENV["GOROOT_FINAL"] = libexec
       # Set portable defaults for CC/CXX to be used by cgo
@@ -47,17 +43,7 @@ class GoAT121 < Formula
     rm_r(libexec/"src/runtime/pprof/testdata")
   end
 
-  def caveats
-    <<~EOS
-      Homebrew's Go toolchain is configured with
-        GOTOOLCHAIN=local
-      per Homebrew policy on tools that update themselves.
-    EOS
-  end
-
   test do
-    assert_equal "local", shell_output("#{bin}/go env GOTOOLCHAIN").strip
-
     (testpath/"hello.go").write <<~GO
       package main
 

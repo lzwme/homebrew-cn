@@ -3,19 +3,18 @@ class CodecovCli < Formula
 
   desc "Codecov's command-line interface"
   homepage "https:cli.codecov.io"
-  url "https:files.pythonhosted.orgpackages1d91f173918549f01f0feb2d24fc799e19d4d4168a2e020076e58a6b33dc0899codecov-cli-9.1.1.tar.gz"
-  sha256 "8da963600db1da76543a7f6fcbf09db717c68d0287b6bb58d775a605db080930"
+  url "https:files.pythonhosted.orgpackages83f69b3d63763920d96a6299af984aca836b6b324774945c615a168acb29d542codecov_cli-10.0.0.tar.gz"
+  sha256 "637402d0dfbc4347dafc8496969e10e6c21aa96748d55d3931b4ab5ef5ff17a4"
   license "Apache-2.0"
   head "https:github.comcodecovcodecov-cli.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "23fca690cd52cb7f53d19eb3f9ab90b485b14424252db030d8ac25a67b36af81"
-    sha256 cellar: :any,                 arm64_sonoma:  "546c5f22e5b090bc1d26effaad8d5ac4eac73b2b688a820eff33be19c7e0bf13"
-    sha256 cellar: :any,                 arm64_ventura: "ea49b33a3daac4d917a29db36884fd494fbb813cd6820be8672a3d6c04907745"
-    sha256 cellar: :any,                 sonoma:        "f116422e293094de9dde8323733b66e218ab04df2182f81e6e5944fb089c1b02"
-    sha256 cellar: :any,                 ventura:       "f2e58168148720f3cda3417b7c0ab1fb50d29f191aa80264f2c2bbfab0725237"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5f3719d62d9a06e43b845858cf4a1107f75a19e990fda85f887b6c3009ae773"
+    sha256 cellar: :any,                 arm64_sequoia: "110f72c1e6f8704efea595803bb4f6522d2450de6ed9b83b222217ef3521389c"
+    sha256 cellar: :any,                 arm64_sonoma:  "c565abe5d8cba164b54b3531957bafdcd193ccfc22bf6dd10ff6384408131403"
+    sha256 cellar: :any,                 arm64_ventura: "9ec098e1c51f04198cb25c8938b0c6ad0499058a72a7445ca6765f686cd788b4"
+    sha256 cellar: :any,                 sonoma:        "16f2fd7fd3b09fe30c4d2ecdddc3420bfd750f64976c471fade00a1c0ef38983"
+    sha256 cellar: :any,                 ventura:       "e829ab231d358bf1ae2fa083bf300d88d9dbcdd932c091f2c9a329b183654013"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd027ae073e59095d1b1e908c125fa54d34f8b08d31bd5cc9297a13a4b75d80d"
   end
 
   depends_on "rust" => :build
@@ -23,23 +22,28 @@ class CodecovCli < Formula
   depends_on "python@3.13"
 
   resource "anyio" do
-    url "https:files.pythonhosted.orgpackagesf640318e58f669b1a9e00f5c4453910682e2d9dd594334539c7b7817dabb765fanyio-4.7.0.tar.gz"
-    sha256 "2f834749c602966b7d456a7567cafcb309f96482b5081d14ac93ccd457f9dd48"
+    url "https:files.pythonhosted.orgpackagesa373199a98fc2dae33535d6b8e8e6ec01f8c1d76c9adb096c6b7d64823038cdeanyio-4.8.0.tar.gz"
+    sha256 "1d9fe889df5212298c0c0723fa20479d1b94883a2df44bd3897aa91083316f7a"
   end
 
   resource "certifi" do
-    url "https:files.pythonhosted.orgpackagesb0ee9b19140fe824b367c04c5e1b369942dd754c4c5462d5674002f75c4dedc1certifi-2024.8.30.tar.gz"
-    sha256 "bec941d2aa8195e248a60b31ff9f0558284cf01a52591ceda73ea9afffd69fd9"
+    url "https:files.pythonhosted.orgpackages0fbd1d41ee578ce09523c81a15426705dd20969f5abf006d1afe8aeff0dd776acertifi-2024.12.14.tar.gz"
+    sha256 "b650d30f370c2b724812bee08008be0c4163b163ddaec3f2546c1caf65f191db"
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
-    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
+    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
+    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
+    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+  end
+
+  resource "deprecated" do
+    url "https:files.pythonhosted.orgpackages2ea353e7d78a6850ffdd394d7048a31a6f14e44900adedf190f9a165f6b69439deprecated-1.2.15.tar.gz"
+    sha256 "683e561a90de76239796e6b6feac66b99030d2dd3fcf61ef996330f14bbb9b0d"
   end
 
   resource "h11" do
@@ -67,6 +71,41 @@ class CodecovCli < Formula
     sha256 "7f172e6ba1bee0d4c8f8ebd639577bfe429dee0f3f96775a067b8bae4492d8a0"
   end
 
+  resource "importlib-metadata" do
+    url "https:files.pythonhosted.orgpackagescd1233e59336dca5be0c398a7482335911a33aa0e20776128f038019f1a95f1bimportlib_metadata-8.5.0.tar.gz"
+    sha256 "71522656f0abace1d072b9e5481a48f07c138e00f079c38c8f883823f9c26bd7"
+  end
+
+  resource "opentelemetry-api" do
+    url "https:files.pythonhosted.orgpackagesbc8eb886a5e9861afa188d1fe671fb96ff9a1d90a23d57799331e137cc95d573opentelemetry_api-1.29.0.tar.gz"
+    sha256 "d04a6cf78aad09614f52964ecb38021e248f5714dc32c2e0d8fd99517b4d69cf"
+  end
+
+  resource "opentelemetry-distro" do
+    url "https:files.pythonhosted.orgpackages2c3830ad58042eba064796a8c01cf723f587320e23aa2677c69dfd9ee29435d8opentelemetry_distro-0.50b0.tar.gz"
+    sha256 "3e059e00f53553ebd646d1162d1d3edf5d7c6d3ceafd54a49e74c90dc1c39a7d"
+  end
+
+  resource "opentelemetry-instrumentation" do
+    url "https:files.pythonhosted.orgpackages792e2e59a7cb636dc394bd7cf1758ada5e8ed87590458ca6bb2f9c26e0243847opentelemetry_instrumentation-0.50b0.tar.gz"
+    sha256 "7d98af72de8dec5323e5202e46122e5f908592b22c6d24733aad619f07d82979"
+  end
+
+  resource "opentelemetry-sdk" do
+    url "https:files.pythonhosted.orgpackages0c5a1ed4c3cf6c09f80565fc085f7e8efa0c222712fd2a9412d07424705dcf72opentelemetry_sdk-1.29.0.tar.gz"
+    sha256 "b0787ce6aade6ab84315302e72bd7a7f2f014b0fb1b7c3295b88afe014ed0643"
+  end
+
+  resource "opentelemetry-semantic-conventions" do
+    url "https:files.pythonhosted.orgpackagese74ed7c7c91ff47cd96fe4095dd7231701aec7347426fd66872ff320d6cd1fccopentelemetry_semantic_conventions-0.50b0.tar.gz"
+    sha256 "02dc6dbcb62f082de9b877ff19a3f1ffaa3c306300fa53bfac761c4567c83d38"
+  end
+
+  resource "packaging" do
+    url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
+    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
+  end
+
   resource "pyyaml" do
     url "https:files.pythonhosted.orgpackages54ed79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17pyyaml-6.0.2.tar.gz"
     sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
@@ -87,9 +126,14 @@ class CodecovCli < Formula
     sha256 "b82502eb5f09a0289d8e209e7bad71ef3978334f56d09b444253d5ad67bf5253"
   end
 
+  resource "sentry-sdk" do
+    url "https:files.pythonhosted.orgpackages68e86a366c0cd5e129dda6ecb20ff097f70b18182c248d4c27e813c21f98992asentry_sdk-2.20.0.tar.gz"
+    sha256 "afa82713a92facf847df3c6f63cec71eb488d826a50965def3d7722aa6f0fdab"
+  end
+
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages4354292f26c208734e9a7f067aea4a7e282c080750c4546559b58e2e45413ca0setuptools-75.6.0.tar.gz"
-    sha256 "8199222558df7c86216af4f84c30e9b34a61d8ba19366cc914424cdbd28252f6"
+    url "https:files.pythonhosted.orgpackages92ec089608b791d210aec4e7f97488e67ab0d33add3efccb83a056cbafe3a2a6setuptools-75.8.0.tar.gz"
+    sha256 "c5afc8f407c626b8313a86e10311dd3f661c6cd9c09d4bf8c15c0e11f9f2b0e6"
   end
 
   resource "sniffio" do
@@ -107,9 +151,24 @@ class CodecovCli < Formula
     sha256 "6adb123e2f3e56399bbf2359924633c882cc40ee8344885200bca0922f713be5"
   end
 
+  resource "typing-extensions" do
+    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
+    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
+  end
+
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https:files.pythonhosted.orgpackagesaa63e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66urllib3-2.3.0.tar.gz"
+    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
+  end
+
+  resource "wrapt" do
+    url "https:files.pythonhosted.orgpackagesc3fce91cc220803d7bc4db93fb02facd8461c37364151b8494762cc88b0fbcefwrapt-1.17.2.tar.gz"
+    sha256 "41388e9d4d1522446fe79d3213196bd9e3b301a336965b9e27ca2788ebd122f3"
+  end
+
+  resource "zipp" do
+    url "https:files.pythonhosted.orgpackages3f50bad581df71744867e9468ebd0bcd6505de3b275e06f202c2cb016e3ff56fzipp-3.21.0.tar.gz"
+    sha256 "2c9958f6430a2040341a52eb608ed6dd93ef4392e02ffe219417c1b28b5dd1f4"
   end
 
   def install

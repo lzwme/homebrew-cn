@@ -3,18 +3,17 @@ class AnsibleCreator < Formula
 
   desc "CLI tool for scaffolding Ansible Content"
   homepage "https://ansible.readthedocs.io/projects/creator/"
-  url "https://files.pythonhosted.org/packages/2a/a9/b4ece27490fa6a94b9dd73cdedd16184ca09b8bd866c13fb2545b5d6e2e5/ansible_creator-24.12.1.tar.gz"
-  sha256 "b739cb96ba17a76edc0bd2f5fcde76d75244ad7ed6afc63bb0cdb5385ba5234b"
+  url "https://files.pythonhosted.org/packages/52/bc/32cbe5da6d0216d70f83e3f751b16b5cfe1500362fa07e12d1819afe2bc2/ansible_creator-25.0.0.tar.gz"
+  sha256 "f3348e185ae9ec2fb522c4b4cb4eaa4eb67e7f53f767acbdfd6739f22421b8e2"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "429dc82d87b1b3f1bd044fbf65087482139ee4793460ac8d2aaf9b65740d8118"
-    sha256 cellar: :any,                 arm64_sonoma:  "82984adff03bd6d1e557bbe65e622d7a918637463d3c12e4928dd6996d9f5c16"
-    sha256 cellar: :any,                 arm64_ventura: "74d01f08afdaceec5e8bc512bacc2389e78a53393466e1bbdb8d57ec3a32221b"
-    sha256 cellar: :any,                 sonoma:        "d4cf52a179841d4f76d2e7e603ecc73546753f8efae12947e0115a5c13c51ac3"
-    sha256 cellar: :any,                 ventura:       "8f58b659c2e070da08423c2c902e9d69e2db5d04ccf6a37bb57f9459fe8396ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8dfa6b2117e2fc1ee12827cd64d5dc914498ef1da3cc7bcab1afd6ac8353089a"
+    sha256 cellar: :any,                 arm64_sequoia: "85e88791ad7a129725e44441edaabaece13c20a214c9ea5c428e8203c4e1479b"
+    sha256 cellar: :any,                 arm64_sonoma:  "8bc60eff09fe1a4537c731a3096044a6a3489b2ce63c6f380f311ae4aba43753"
+    sha256 cellar: :any,                 arm64_ventura: "9a8fa22dfbc053f033b1cd05827b26fb9d856d6dbbcec17fcf5c3ebb7d49e61a"
+    sha256 cellar: :any,                 sonoma:        "1d1fcab7fa731bf1dd64633572025b9d24ffd89ec56d33d9382663f15837e76d"
+    sha256 cellar: :any,                 ventura:       "80a7911d795852f0f0189a2ea1e9dc4bc8c3048f9e3a4ee6d2ec84028f144b73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20350be282372d53371735f975868fe35c2d0776faf2caf5438ab91c313d66b2"
   end
 
   depends_on "libyaml"

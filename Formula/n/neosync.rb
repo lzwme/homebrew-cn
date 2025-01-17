@@ -1,18 +1,18 @@
 class Neosync < Formula
   desc "CLI for interfacing with Neosync"
   homepage "https:www.neosync.dev"
-  url "https:github.comnucleuscloudneosyncarchiverefstagsv0.5.4.tar.gz"
-  sha256 "ea000359bc19f949b66ac49fecb6dfdec469ec21e605ea488497b3aaf0adf17f"
+  url "https:github.comnucleuscloudneosyncarchiverefstagsv0.5.5.tar.gz"
+  sha256 "97c885caf7b14d74b6953efdefa5905d7ae4a4d3e2d19fa24fd4b3c542b656bc"
   license "MIT"
   head "https:github.comnucleuscloudneosync.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee12ed4168506868ab06e51ad531d896fe21068911964207e7773865c8cbeddf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee12ed4168506868ab06e51ad531d896fe21068911964207e7773865c8cbeddf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ee12ed4168506868ab06e51ad531d896fe21068911964207e7773865c8cbeddf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "47f21f0bb4dbe5e0f000a62e320050ca9d18b3b8fe080733c779e5b5a37204da"
-    sha256 cellar: :any_skip_relocation, ventura:       "47f21f0bb4dbe5e0f000a62e320050ca9d18b3b8fe080733c779e5b5a37204da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "076e89423700c8f9a90b7771282c9656370684fc77553e16438cc95582522ce6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2239d8f2dc5f4102e141fa200ebe47035476471b9b7f8cdfe18205825c0c66aa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2239d8f2dc5f4102e141fa200ebe47035476471b9b7f8cdfe18205825c0c66aa"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2239d8f2dc5f4102e141fa200ebe47035476471b9b7f8cdfe18205825c0c66aa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ecf65cab58881324d0b084aeec0419b1889921f4638601b093e4253711b65bb9"
+    sha256 cellar: :any_skip_relocation, ventura:       "ecf65cab58881324d0b084aeec0419b1889921f4638601b093e4253711b65bb9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b331e64ea7e5f461424fdbb5ebca123c778e427455d5efa0a067f907e2af62c1"
   end
 
   depends_on "go" => :build

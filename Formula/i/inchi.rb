@@ -1,25 +1,21 @@
 class Inchi < Formula
   desc "IUPAC International Chemical Identifier"
   homepage "https:www.inchi-trust.org"
-  url "https:github.comIUPAC-InChIInChIreleasesdownloadv1.07.1INCHI-1-SRC.zip"
-  sha256 "fe6e1ee25714988f7b86420b7615b4e1d7c01fda9b93d63b634a0c021ac9f917"
+  url "https:github.comIUPAC-InChIInChIreleasesdownloadv1.07.2INCHI-1-SRC.zip"
+  sha256 "4a5627befd1ea29853d4920d975563874108648efe9bfcd1d4dfa3a215032cfb"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b229ca55644d5c53c2cd5c070f631a4379806e44059bd370e61d4b94b0b0e784"
-    sha256 cellar: :any,                 arm64_sonoma:  "c4488a6860bbcc789c950bfca39a2b613259346d9abfc822bfa863fcdeaf6427"
-    sha256 cellar: :any,                 arm64_ventura: "f8e910c3ca6711c1a0fb70ce5a4392665e85a2b8c39d1911911346d9475302f1"
-    sha256 cellar: :any,                 sonoma:        "6db049c16f2625d44e971bf9626d58bce066cf698e0eaeb29a889b13c8850f9a"
-    sha256 cellar: :any,                 ventura:       "da10c8873201f570b9797d45f80e88afb35de4654c541f21ea4888dac8d99c87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df02aacc34873e732291793847d59d6ca4ebee54a4956372ec4dc03d9fe88729"
+    sha256 cellar: :any,                 arm64_sequoia: "25f7aebdb481a803f18fa0627ec514de1005582706ca16e4df152721f5a073e2"
+    sha256 cellar: :any,                 arm64_sonoma:  "7473f6e96cc89bd4afe24c8de25e113bb413b7a87aae10e401d30b90fc7f7e33"
+    sha256 cellar: :any,                 arm64_ventura: "32c4b33b8814920aa956f7ba12ba4910846d46a25ce2ce97c56c62c689166021"
+    sha256 cellar: :any,                 sonoma:        "d88925c6975be8a0e19f5519ddd9d4891c72ce8e6440b3dd047627f990c64144"
+    sha256 cellar: :any,                 ventura:       "3a672451ca7f22d991068b6832cf1183b35a91250c27a945f5b3810c02476c52"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6aa1570cbbc5be0acc8e6fb4dada9e301b2bd9d45c430ba558306fae993f8aba"
   end
 
   # These used to be part of open-babel
   link_overwrite "includeinchiinchi_api.h", "liblibinchi.dylib", "liblibinchi.so"
-
-  # Fix dylib file names
-  # PR ref: https:github.comIUPAC-InChIInChIpull62
-  patch :p2, :DATA
 
   def install
     bin.mkpath
@@ -74,31 +70,3 @@ class Inchi < Formula
     EOS
   end
 end
-
-__END__
-diff --git aINCHI-1-SRCINCHI_APIlibinchigccmakefile bINCHI-1-SRCINCHI_APIlibinchigccmakefile
-index 6d5a722..5b953ed 100644
---- aINCHI-1-SRCINCHI_APIlibinchigccmakefile
-+++ bINCHI-1-SRCINCHI_APIlibinchigccmakefile
-@@ -175,7 +175,7 @@ else ifeq ($(OS_ID),2)
- # jwm: linking to .dylib on OS X
- $(API_CALLER_PATHNAME) : $(API_CALLER_OBJS) $(INCHI_LIB_PATHNAME).so$(VERSION)
- 	$(LINKER) -o $(API_CALLER_PATHNAME) $(API_CALLER_OBJS) \
--$(INCHI_LIB_PATHNAME).dylib$(VERSION) -lm
-+$(INCHI_LIB_PATHNAME)$(VERSION).dylib -lm
- else
- # djb-rwth: linking to .so on Linux
- $(API_CALLER_PATHNAME) : $(API_CALLER_OBJS) $(INCHI_LIB_PATHNAME).so$(VERSION)
-@@ -253,9 +253,9 @@ $(INCHI_LIB_PATHNAME).dll$(VERSION): $(INCHI_LIB_OBJS)
- $(INCHI_LIB_OBJS) -Wl$(LINUX_MAP),-soname,$(INCHI_LIB_NAME).dll$(VERSION) -Wl,--subsystem,windows -lm
- else ifeq ($(OS_ID), 2)
- # jwm: creating .dylib on OS X
--$(INCHI_LIB_PATHNAME).dylib$(VERSION): $(INCHI_LIB_OBJS)
--	$(SHARED_LINK) $(SHARED_LINK_PARM) -o $(INCHI_LIB_PATHNAME).dylib$(VERSION)	\
--$(INCHI_LIB_OBJS) -Wl$(LINUX_MAP)$(LINUX_Z_RELRO) -install_name $(INCHI_LIB_NAME).dylib$(VERSION) -lm
-+$(INCHI_LIB_PATHNAME)$(VERSION).dylib: $(INCHI_LIB_OBJS)
-+	$(SHARED_LINK) $(SHARED_LINK_PARM) -o $(INCHI_LIB_PATHNAME)$(VERSION).dylib	\
-+$(INCHI_LIB_OBJS) -Wl$(LINUX_MAP)$(LINUX_Z_RELRO) -install_name $(INCHI_LIB_NAME)$(VERSION).dylib -lm
- else
- # djb-rwth: creating .so on Linux
- $(INCHI_LIB_PATHNAME).so$(VERSION): $(INCHI_LIB_OBJS)

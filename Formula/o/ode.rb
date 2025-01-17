@@ -1,21 +1,18 @@
 class Ode < Formula
   desc "Simulating articulated rigid body dynamics"
   homepage "https://www.ode.org/"
-  url "https://bitbucket.org/odedevs/ode/downloads/ode-0.16.5.tar.gz"
-  sha256 "ba875edd164570958795eeaa70f14853bfc34cc9871f8adde8da47e12bd54679"
+  url "https://bitbucket.org/odedevs/ode/downloads/ode-0.16.6.tar.gz"
+  sha256 "c91a28c6ff2650284784a79c726a380d6afec87ecf7a35c32a6be0c5b74513e8"
   license any_of: ["LGPL-2.1-or-later", "BSD-3-Clause"]
-  revision 1
   head "https://bitbucket.org/odedevs/ode.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "58790fb1f2cc52d91f1bcaead540caa03b531dafef534468786e9ac48e1a109d"
-    sha256 cellar: :any,                 arm64_sonoma:   "1dfefe85ef027eff13206f91fcfb6e3f5c24f620b15351cbf464d26cab397f05"
-    sha256 cellar: :any,                 arm64_ventura:  "c363d1cfd6ba84dfd8193cf0f35d0692892679c8c11c2ea75ccce157c1af3811"
-    sha256 cellar: :any,                 arm64_monterey: "947a229707651468f4ec56e1a16508d495b934070413683d2ba73abf6abd8211"
-    sha256 cellar: :any,                 sonoma:         "7a19db0009214d0c78def3ecb8327137603967f5bc65bc7f11debb715dc7022a"
-    sha256 cellar: :any,                 ventura:        "9334eda731f3105d30a93600393140d690e80fb05791d9a63dc99601641a8888"
-    sha256 cellar: :any,                 monterey:       "7d6ed1dc202b74d76cc339fb17c96626dad0faf626dad2474f957590e0b15165"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5158488ea35492840d91d5d4cfd4cff98c4d26003e230be5214dc1320bca74c1"
+    sha256 cellar: :any,                 arm64_sequoia: "3aa96ecd0a92215d8005fb5f663c51b40df82454815f7bf5ab18f29ecef9d401"
+    sha256 cellar: :any,                 arm64_sonoma:  "18918632c616a8dcebb91fd9f717133b8921bc1fb1c383e2da6b8fee8debb26d"
+    sha256 cellar: :any,                 arm64_ventura: "c36bfd094cdf7c2cc6d877f05e7fba556fb012bd9ef5948b097e14f0b596be15"
+    sha256 cellar: :any,                 sonoma:        "3ee055bde9ea2aca43d4305de3cad0aeda9f54a3a1ff69dde4618487223f792b"
+    sha256 cellar: :any,                 ventura:       "2579b830d5c07a1c799bfee7bc1c0536614da23483a02190ad6d2f87585d84b2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb0f3a0439ddeada4699c0ca1004810a676e4bb07d910464d9641b3b5b4dddc1"
   end
 
   depends_on "autoconf" => :build
