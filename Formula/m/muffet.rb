@@ -1,18 +1,18 @@
 class Muffet < Formula
   desc "Fast website link checker in Go"
   homepage "https:github.comraviqqemuffet"
-  url "https:github.comraviqqemuffetarchiverefstagsv2.10.6.tar.gz"
-  sha256 "8da1668efd6c53e0a0eff584fdc49c591fa9684cd07c5c4154114549157f72d1"
+  url "https:github.comraviqqemuffetarchiverefstagsv2.10.7.tar.gz"
+  sha256 "b278d9aad33f77c4eb48b761592f3220a05c2f692b54ce27245d0e04c5ad095c"
   license "MIT"
   head "https:github.comraviqqemuffet.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed2f4492e254d460defef6238fb4323f4de77dca59405d1308ceb808d0a29fd5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed2f4492e254d460defef6238fb4323f4de77dca59405d1308ceb808d0a29fd5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ed2f4492e254d460defef6238fb4323f4de77dca59405d1308ceb808d0a29fd5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3aed3e5c717e5aa52ece626e0887410a13c358a709b5efd1d9e4b93a63724648"
-    sha256 cellar: :any_skip_relocation, ventura:       "3aed3e5c717e5aa52ece626e0887410a13c358a709b5efd1d9e4b93a63724648"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e93e735b6070dd39bcd3bf21298d0932dab0936545a6b29d4e7e7662eb55415"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b2065a6c0186ffda9fff18085b5c622e723d49769396d1a01289e1d9e5c4176a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2065a6c0186ffda9fff18085b5c622e723d49769396d1a01289e1d9e5c4176a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b2065a6c0186ffda9fff18085b5c622e723d49769396d1a01289e1d9e5c4176a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5e91e049274c923f00da03d29622b6a1236b601100e2b5b771b33d3281f282c6"
+    sha256 cellar: :any_skip_relocation, ventura:       "5e91e049274c923f00da03d29622b6a1236b601100e2b5b771b33d3281f282c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8355f387677d8564a9fe4821572f6c99e76fa33f9a9a291796f049eb0b78f59e"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class LuajitOpenresty < Formula
   desc "OpenResty's Branch of LuaJIT 2"
   homepage "https:github.comopenrestyluajit2"
-  url "https:github.comopenrestyluajit2archiverefstagsv2.1-20241113.tar.gz"
-  sha256 "3b269f3a55c420e5a286bbd6b8ef8a5425dbcb4194fa2beb9e22eea277cd6638"
+  url "https:github.comopenrestyluajit2archiverefstagsv2.1-20250117.tar.gz"
+  sha256 "68ff3dc2cc97969f7385679da7c9ff96738aa9cc275fa6bab77316eb3340ea8e"
   license "MIT"
   version_scheme 1
   head "https:github.comopenrestyluajit2.git", branch: "v2.1-agentzh"
@@ -19,12 +19,12 @@ class LuajitOpenresty < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3ae9fdf36a395c60aab7bab9582ba1b01137cd8df6d43f7da991d35afdeba720"
-    sha256 cellar: :any,                 arm64_sonoma:  "e1fe634c3503c0db79f0f05e068e2780e34d0adc5d15ac4bb662c85c690ac09d"
-    sha256 cellar: :any,                 arm64_ventura: "8d0f221c1f72f6e3ef23e44554cc4d923e21dac08db3001673d43d323b13e4ee"
-    sha256 cellar: :any,                 sonoma:        "f3dab37c00904d880f0acd21ab4acb17335ef0fcdffb27d6d9f31c8bcc669b5a"
-    sha256 cellar: :any,                 ventura:       "1050d2f619431597d0a8b8c3425f7223887964d81df3d93bc993a5f999635739"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42cea076faadb4a92bcc58fbd81085dcfa9505f4c978f5c417ca2e64002be015"
+    sha256 cellar: :any,                 arm64_sequoia: "b42b35a476341208be769e5e52c3c5b2a50c36ff95cc6f782174bb1c0a17a9af"
+    sha256 cellar: :any,                 arm64_sonoma:  "4865cd2c57125dedbce70d3af6921a798f4d81a27000a7d20c4a758ff8e6763b"
+    sha256 cellar: :any,                 arm64_ventura: "6bd280a7968c4bec58727904d802d4ac9f16040ffd8db04b29c65d020b9ed50b"
+    sha256 cellar: :any,                 sonoma:        "eb292ec2d73a634bcf712fa76c13c320904d70c2b1b68cf84da3db830bf273cc"
+    sha256 cellar: :any,                 ventura:       "527754b4089eae5a0c0209244ddf2dd33d51662d97354375adba05635f2386be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c707e14c0302d7affc41d37e59e652003277fc06569239ce22f466e90175f0f"
   end
 
   keg_only "it conflicts with the LuaJIT formula"

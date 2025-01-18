@@ -15,6 +15,10 @@ class Ortp < Formula
       url "https:gitlab.linphone.orgBCpublicbctoolbox-archive5.3.102bctoolbox-5.3.102.tar.bz2"
       sha256 "5332dd2ad7e5b6f8e944d2fc002b72b0ed40a8210df1cd76e5f5458cff26adc2"
 
+      livecheck do
+        formula :parent
+      end
+
       patch :DATA
     end
   end

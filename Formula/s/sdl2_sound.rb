@@ -1,8 +1,8 @@
 class Sdl2Sound < Formula
   desc "Abstract soundfile decoder for SDL"
   homepage "https:icculus.orgSDL_sound"
-  url "https:github.comicculusSDL_soundreleasesdownloadv2.0.2SDL2_sound-2.0.2.tar.gz"
-  sha256 "465a81d6004af731768b881b2f50383150cc58a8d346653bad85e2375829cc3a"
+  url "https:github.comicculusSDL_soundreleasesdownloadv2.0.4SDL2_sound-2.0.4.tar.gz"
+  sha256 "f73f6720dba2e677c0bf70d0c76ca3c96d865d04025e49a8b161711685961931"
   license all_of: [
     "Zlib",
     any_of: ["Artistic-1.0-Perl", "LGPL-2.1-or-later"], # timidity
@@ -10,15 +10,12 @@ class Sdl2Sound < Formula
   head "https:github.comicculusSDL_sound.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "e476f5df233026e8ca3d907f95d22b70131a4f104cfe5793c7db9c14d9a96a59"
-    sha256 cellar: :any,                 arm64_sonoma:   "b5dbb3211b7148b6db375929569eb077f38073e870263aec7ce1a0350728cc3c"
-    sha256 cellar: :any,                 arm64_ventura:  "8eea51b732b96e20c63322757b3b75d6b56e47b20a5431b9167c3a51c77108ad"
-    sha256 cellar: :any,                 arm64_monterey: "716eacab5e22fae2b8fa9319408099115d9b248a0d1106ca42b2066324a6b8c3"
-    sha256 cellar: :any,                 sonoma:         "7f6da7961795af5407b4647dffea3225d64b26b820a3b9f48887e0d3d99ccff0"
-    sha256 cellar: :any,                 ventura:        "59c050c5363b877bc2359c9c05ff279ab369c1d05db4a6dcc191e42ef593408b"
-    sha256 cellar: :any,                 monterey:       "1610ef569e7dd41e1049f0b8dc795c16532fd94bd4c2f3690b428826dd88ca66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d1239f72dacd41eba7fb03d0f5eafc640ae44a1e2a937f4ebfe7aca1340ad7c0"
+    sha256 cellar: :any,                 arm64_sequoia: "ebf816ab8b81d1c57a8fa8464015be9e6e7c1bb59e6756cb1ab955193468933d"
+    sha256 cellar: :any,                 arm64_sonoma:  "1a336df9cbf4dbecdf17c4bd11f1d4fa86a8f8d7b4e31f90e2cd61f80d12b211"
+    sha256 cellar: :any,                 arm64_ventura: "92094e5c2c9ec2fd6962e76d3c61be76c1f87789052a30dfed282ebf268163d5"
+    sha256 cellar: :any,                 sonoma:        "91a1de8932cf5e4dc446e771044d807f000101c18dcbd5f421d5ac0b3d78160d"
+    sha256 cellar: :any,                 ventura:       "fa892b1c33146ebd0a36d74065f18100a787cd4d59d76db28e907ccf8b53a543"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2e558d66a31ac41604bab87abc6c42b41c8a7624bcc4c64ecb75c614b4916d3"
   end
 
   depends_on "cmake" => :build
@@ -65,7 +62,7 @@ class Sdl2Sound < Formula
          File extension "UMX"
          File extension "XM"
          Written by Torbjörn Andersson <d91tan@Update.UU.SE>.
-         http:modplug-xmms.sourceforge.net
+         https:modplug-xmms.sourceforge.net
 
        * MPEG-1 Audio Layer I-III
          File extension "MP3"
@@ -82,7 +79,7 @@ class Sdl2Sound < Formula
        * Audio Interchange File Format
          File extension "AIFF"
          File extension "AIF"
-         Written by TorbjÃ¶rn Andersson <d91tan@Update.UU.SE>.
+         Written by Torbjörn Andersson <d91tan@Update.UU.SE>.
          https:icculus.orgSDL_sound
 
        * SunNeXT audio file format

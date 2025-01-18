@@ -34,6 +34,10 @@ class Xapian < Formula
   resource "bindings" do
     url "https://oligarchy.co.uk/xapian/1.4.27/xapian-bindings-1.4.27.tar.xz"
     sha256 "ba3b5e10809e579acd11bd165779ce3fd29a8904ea37968ef5b57ad97c3618ba"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   def python3

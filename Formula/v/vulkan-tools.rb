@@ -1,8 +1,8 @@
 class VulkanTools < Formula
   desc "Vulkan utilities and tools"
   homepage "https:github.comKhronosGroupVulkan-Tools"
-  url "https:github.comKhronosGroupVulkan-Toolsarchiverefstagsv1.4.304.tar.gz"
-  sha256 "fa17870f531affec06dfd5cab8121cb6e54777f779dab59fccafeb136fe43e19"
+  url "https:github.comKhronosGroupVulkan-Toolsarchiverefstagsv1.4.305.tar.gz"
+  sha256 "55c25e50172428f36e63cc9644c25fcda2a558b31158283f2cbba685f0b94572"
   license "Apache-2.0"
   head "https:github.comKhronosGroupVulkan-Tools.git", branch: "main"
 
@@ -12,12 +12,12 @@ class VulkanTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "00209f402d6a016da15c9f85610fcc37527992a134662c85f5215e7c883783c9"
-    sha256 cellar: :any, arm64_sonoma:  "c60ec0981eee8817b18e516806be7df430252cd75a28854de9f708a04bf260a5"
-    sha256 cellar: :any, arm64_ventura: "481a9305ecf5cabf84db42bdc75f1f28d897b7c852b019fd0ac730d95ab980db"
-    sha256 cellar: :any, sonoma:        "7ba08a4994c11775a71f20f6a8aeb909b22332f09714c1d4e7e9eef64bd44bad"
-    sha256 cellar: :any, ventura:       "6e245b47c855b1528e9972290173c9a23974fc49b415ea7e8c0585b022a29498"
-    sha256               x86_64_linux:  "a0a143db6502b936a5b1bfbcefe272a167dd221a928597697badd73baabf7a47"
+    sha256 cellar: :any, arm64_sequoia: "ba42e8bf27fcfd73a49509ea565e650a56a353baa420eaca6c728def6d05ed22"
+    sha256 cellar: :any, arm64_sonoma:  "2afe4a7f5cf47f9968359a713c533f4c24f276f601b2782913b65731dcf176ba"
+    sha256 cellar: :any, arm64_ventura: "5bf3e4df75ec278ccdc1e79ed61f8a86cf4f45f3f60a15317d64d919e7c8ab1d"
+    sha256 cellar: :any, sonoma:        "5c2dfa8b0a37550fba9d0553af32517b197623a0e782a8404a1e177308dfc291"
+    sha256 cellar: :any, ventura:       "3e157869287308a2a3f9aa825aa25ffcf9079e1d39b9cef355efb9cf2e9e75e4"
+    sha256               x86_64_linux:  "3a19501d1adb3141289c17b8d3fa7135904a167730d1579423cdfe3947689199"
   end
 
   depends_on "cmake" => :build

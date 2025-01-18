@@ -30,6 +30,10 @@ class Omniorb < Formula
   resource "bindings" do
     url "https://downloads.sourceforge.net/project/omniorb/omniORBpy/omniORBpy-4.3.2/omniORBpy-4.3.2.tar.bz2"
     sha256 "cb5717d412a101baf430f598cac7d69231884dae4372d8e2adf3ddeebc5f7ebb"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   def install

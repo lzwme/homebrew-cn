@@ -3,20 +3,18 @@ class Bpython < Formula
 
   desc "Fancy interface to the Python interpreter"
   homepage "https:bpython-interpreter.org"
-  url "https:files.pythonhosted.orgpackagescf7654e0964e2974becb673baca69417b6c6293e930d4ebcf2a2a68c1fe9704abpython-0.24.tar.gz"
-  sha256 "98736ffd7a8c48fd2bfb53d898a475f4241bde0b672125706af04d9d08fd3dbd"
+  url "https:files.pythonhosted.orgpackagesbaddcc02bf66f342a4673867fdf6c1f9fce90ec1e91e651b21bc4af4890101dabpython-0.25.tar.gz"
+  sha256 "c246fc909ef6dcc26e9d8cb4615b0e6b1613f3543d12269b19ffd0782166c65b"
   license "MIT"
-  revision 6
   head "https:github.combpythonbpython.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b360e10d30c6ee1b0ef0bf60b8245731f2202b794dee9c20625191dc4f5ae63"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7750a5fc32efbc4ec1d8658eb91db4b3f657747e02252dc7ca6904f0bf59bf9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4d4e7d7cad4d6d74e7f704ce6d5fce6dee9f91bd90d627a675a27f3825c24668"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2197161d78fa3b89c3806645446ce4a787d384bb9277026589cdbf6a4e3988b3"
-    sha256 cellar: :any_skip_relocation, ventura:       "1a5ff5d5e133a315c19dddf9cb43a2e78e9c43fe822acf1d2f7f444543e27171"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64174373804d35a9235b4d7ee423c887bd122dec1b901a66a6f4e1172ed45767"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "06bf6629f26910b0566487146288f2bfb1a22f2d4475fd8edfa40b846f999a70"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c859efd5a00b94aa9a44b5220ef48454b6f8ec2144334f56c04613bac6ad5471"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "40ded59a27e86ff42fe70298d5c2599ac2a87fcfa9f816e1bcbad96371c2e91f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "688b211f53cd9632034f46c4337bc1840c15e38c14ea430027e80e53204e36e5"
+    sha256 cellar: :any_skip_relocation, ventura:       "c9d34b976f66b6d5519f209703ac1248a16136db2a644f6ffca3485019784f26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7632a46277b96ead7b36d94f1b19d43cd05d96c1e7e5c6f8230f126c436343e9"
   end
 
   depends_on "certifi"
@@ -28,8 +26,8 @@ class Bpython < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
-    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
+    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
+    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
   end
 
   resource "curtsies" do
@@ -53,8 +51,8 @@ class Bpython < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
-    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
+    url "https:files.pythonhosted.orgpackages7c2dc3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84pygments-2.19.1.tar.gz"
+    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
   end
 
   resource "pyxdg" do
@@ -68,13 +66,13 @@ class Bpython < Formula
   end
 
   resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+    url "https:files.pythonhosted.orgpackages94e7b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https:files.pythonhosted.orgpackagesaa63e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66urllib3-2.3.0.tar.gz"
+    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
   end
 
   resource "wcwidth" do
@@ -87,18 +85,7 @@ class Bpython < Formula
   end
 
   def install
-    venv = virtualenv_create(libexec, python3)
-    venv.pip_install resources
-    venv.pip_install buildpath
-
-    # Make the Homebrew site-packages available in the interpreter environment
-    site_packages = Language::Python.site_packages(python3)
-    ENV.prepend_path "PYTHONPATH", HOMEBREW_PREFIXsite_packages
-    ENV.prepend_path "PYTHONPATH", libexecsite_packages
-    combined_pythonpath = ENV["PYTHONPATH"] + "${PYTHONPATH:+:}$PYTHONPATH"
-    %w[bpdb bpython].each do |cmd|
-      (bincmd).write_env_script libexec"bin#{cmd}", PYTHONPATH: combined_pythonpath
-    end
+    virtualenv_install_with_resources
   end
 
   test do

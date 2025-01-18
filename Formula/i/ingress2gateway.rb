@@ -1,20 +1,18 @@
 class Ingress2gateway < Formula
   desc "Convert Kubernetes Ingress resources to Kubernetes Gateway API resources"
   homepage "https:github.comkubernetes-sigsingress2gateway"
-  url "https:github.comkubernetes-sigsingress2gatewayarchiverefstagsv0.3.0.tar.gz"
-  sha256 "87813319e61b317f9c15e6df9db972a314518570c0b5fef5097c58fdba841a9d"
+  url "https:github.comkubernetes-sigsingress2gatewayarchiverefstagsv0.4.0.tar.gz"
+  sha256 "7c511e4c309b62d01ce2128643922637f0ca77524bab2c4c6811bebbb43ff119"
   license "Apache-2.0"
   head "https:github.comkubernetes-sigsingress2gateway.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "af8bbcd1d0ae9124297ad6ffd754f3e409bff17d55ca7c846ce6c7fe61bc8a4c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a489fa8c94579d7efbc7627e15311f52d13ae194911fdef45599e2a0ceb8c968"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d20c2c56a8a896116278ae0d7f149d6a7b83c2e9ba2353c8a661d0fe8b244f76"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e87d2f0c51cc39169b3904b6056df027e8e29c894f0a1e2b83f52dc4909ed7b6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7414be1c00ccac9b96a3987ca25a6dc03234ecc0fda18e2f3ba9dc469b6be881"
-    sha256 cellar: :any_skip_relocation, ventura:        "d823fbdbeec96fd4da4c1a511a1e1b02adb1d1ff24d09fde5c9aa21c2c687969"
-    sha256 cellar: :any_skip_relocation, monterey:       "f7b496925d189bbcdd14c698d12154abffe893591ba975f6e4cef87fc312271c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "802c3e0ceb95f43c1cc4815728cfab1d826e5304209ff2676f9f91f02a4d50e5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "804894e94d5995db30d5c70e8ae93fadb64d95488792ad588f01508178f7c6ab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4fe29eb341d887273844fbbb2ac25d7016ea1c035200bcad34cef8ac3e27a905"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6eef8e59f45e555634acea8f44f91845d3e52c57a807aeeabf5ec4f114c3b75b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b532ae021e34552d352eed71e599c80dae9d6037dba5153b433ce30d0b2b73d8"
+    sha256 cellar: :any_skip_relocation, ventura:       "c23960ce300c4aa2ea510e24e7c480eb510cc2dfc9365109f0a2d6c7f130b1a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a76215216004e804caad4063551e07f7ccba6cf55f44d7e5f97cbc6678f34ef"
   end
 
   depends_on "go" => :build
@@ -63,6 +61,8 @@ class Ingress2gateway < Formula
       apiVersion: gateway.networking.k8s.iov1
       kind: Gateway
       metadata:
+        annotations:
+          gateway.networking.k8s.iogenerator: ingress2gateway-#{version}
         creationTimestamp: null
         name: nginx
         namespace: bar
@@ -87,6 +87,8 @@ class Ingress2gateway < Formula
       apiVersion: gateway.networking.k8s.iov1
       kind: HTTPRoute
       metadata:
+        annotations:
+          gateway.networking.k8s.iogenerator: ingress2gateway-#{version}
         creationTimestamp: null
         name: foo-foo-bar
         namespace: bar

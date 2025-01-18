@@ -38,6 +38,10 @@ class ErlangAT26 < Formula
   resource "html" do
     url "https:github.comerlangotpreleasesdownloadOTP-26.2.5.6otp_doc_html_26.2.5.6.tar.gz"
     sha256 "710fd347fcca0c3262db14c0711c1dace7c31385bea3f2ace6e024590e3d0338"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   def install

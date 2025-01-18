@@ -15,12 +15,13 @@ class Netatalk < Formula
   head "https:github.comNetatalknetatalk.git", branch: "main"
 
   bottle do
-    sha256 arm64_sequoia: "f23ab1e5af4633c2227a6183a38f95bf09f28604da467ee93b3e6dcf56c92730"
-    sha256 arm64_sonoma:  "1042daac030536e7765f1d3485369c87a61ce1ff2571af43855f309be7a2f184"
-    sha256 arm64_ventura: "4b42d75193c290ababad3050241975aa2c107872ee837ca63c25a0e5b19d1a58"
-    sha256 sonoma:        "f1e296c160c78b7e903992549b129bcf52b7b10268246dc38731532675449bcb"
-    sha256 ventura:       "b036cda8da411dfa81793d00ef3e240ba7ece397323f01533a7882e17bee0dd2"
-    sha256 x86_64_linux:  "3bc881ceb7a164ab5b0dbfccce91a7cb5ee35236ea53c0b6bace7201abf03d69"
+    rebuild 1
+    sha256 arm64_sequoia: "4ba400628f24a3994998e25f943cf94dfd323bf1600610f35a1311afa4ed153c"
+    sha256 arm64_sonoma:  "03ad35c38fc00c6f4a077a7fce739f0da273e124146ed6a7eabb469359bbb8d0"
+    sha256 arm64_ventura: "34340d971be79c763026573ccd78ae5bc6fbf1fd1fe41df269b27c4de15981b9"
+    sha256 sonoma:        "f90e2ddca4ed7d35461e445ff78b43637fd2bdf7795e932ea22f6a4dd54e46e0"
+    sha256 ventura:       "9246d1debc2b0f03b6fdda1126c52b3da5d17822d607e36f5122d77c5bec08e1"
+    sha256 x86_64_linux:  "376768c86ebf412a1c352a543e4dddb395b69dbb3bb31c36a9bd06fb5e027524"
   end
 
   depends_on "docbook-xsl" => :build
@@ -32,7 +33,7 @@ class Netatalk < Formula
   depends_on "cracklib"
   depends_on "libevent"
   depends_on "libgcrypt"
-  depends_on "mariadb"
+  depends_on "mariadb-connector-c"
   depends_on "openldap" # macOS LDAP.Framework is not fork safe
 
   uses_from_macos "libxslt" => :build

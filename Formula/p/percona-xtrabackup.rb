@@ -1,12 +1,12 @@
 class PerconaXtrabackup < Formula
   desc "Open source hot backup tool for InnoDB and XtraDB databases"
   homepage "https:www.percona.comsoftwaremysql-databasepercona-xtrabackup"
-  url "https:downloads.percona.comdownloadsPercona-XtraBackup-LATESTPercona-XtraBackup-8.0.35-32sourcetarballpercona-xtrabackup-8.0.35-32.tar.gz"
-  sha256 "04982a36e36d0e9dfb8487afa77329dd0d2d38da163a205f0179635ceea1aff1"
+  url "https:downloads.percona.comdownloadsPercona-XtraBackup-8.4Percona-XtraBackup-8.4.0-2sourcetarballpercona-xtrabackup-8.4.0-2.tar.gz"
+  sha256 "0777e3d3c3b4d4649ed23ed7197ec0aa71379b4a4a41b969b7286f6cf8888b4a"
   license "GPL-2.0-only"
 
   livecheck do
-    url "https:docs.percona.compercona-xtrabackuplatest"
+    url "https:docs.percona.compercona-xtrabackup#{version.major_minor}"
     regex(href=.*?v?(\d+(?:[.-]\d+)+)\.htmli)
     strategy :page_match do |page, regex|
       page.scan(regex).map do |match|
@@ -18,21 +18,19 @@ class PerconaXtrabackup < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "b9bc786870dda248a5015a08f61259c33a7fc94d1f0d9a35e29a8e472bee1d63"
-    sha256 arm64_sonoma:  "c25262ed7de167c267f22163a3adb26003b0b65edfab50e91bb6630f78198042"
-    sha256 arm64_ventura: "05e87d93c0c563600bc6b07d8cc2e705a51a394f484a98cac7af6e4c4fd7f9a1"
-    sha256 sonoma:        "db880cd44776b88bed474495f27c93a8473a5955794cc9ab9190a5246c046243"
-    sha256 ventura:       "3566ba098d8d1e0ffe534833206710421ce4b5f73861c12bd7257580b4dbf2cd"
-    sha256 x86_64_linux:  "f76e910c33eb583506704b3e9e0ad2824fa4b2662cd9febb9ccf19274f415625"
+    sha256 arm64_sequoia: "a876081d4bd690db7df164538407227c484282547c2f2b960040ea79d57b233d"
+    sha256 arm64_sonoma:  "0e4dc0dc18abb1b2aa986fa4e3fcb7f806d38681cbf7ac0cb7617f7b1f29483f"
+    sha256 arm64_ventura: "f527d63a8ba3bfc54aea0923257afcc503419888a26a14313c02739780aa992c"
+    sha256 sonoma:        "916fd8f3057cfa5f1f1a6cde1634757e3a248a4e14e7c5a1addd9196cb5452c9"
+    sha256 ventura:       "d5dfd9b4a66f4f015c92d82b896f140f4d32221ff0ba981726c15c29c77f48f8"
+    sha256 x86_64_linux:  "0caf7c7683ab7a978ffa5926e73ff2b53d762a7e9ff50bac49b1247bec0793a8"
   end
 
   depends_on "bison" => :build # needs bison >= 3.0.4
   depends_on "cmake" => :build
-  depends_on "libevent" => :build
   depends_on "pkgconf" => :build
   depends_on "sphinx-doc" => :build
-  depends_on "mysql@8.0" => :test
+  depends_on "mysql@8.4" => :test
   depends_on "icu4c@76"
   depends_on "libev"
   depends_on "libgcrypt"
@@ -55,16 +53,10 @@ class PerconaXtrabackup < Formula
     depends_on "procps"
   end
 
-  # https:github.comperconapercona-xtrabackupblobpercona-xtrabackup-#{version}cmakeboost.cmake
-  resource "boost" do
-    url "https:downloads.sourceforge.netprojectboostboost1.77.0boost_1_77_0.tar.bz2"
-    sha256 "fc9f85fc030e233142908241af7a846e60630aa7388de9a5fafb1f3a26840854"
-  end
-
   # Apply fix for newer protobuf from MySQL repo. Remove once Percona syncs with MySQL 8.0.40  8.4.3
   patch do
-    url "https:github.commysqlmysql-servercommit269abc0409b22bb87ec88bd4d53dfb7a1403eace.patch?full_index=1"
-    sha256 "ffcee32804e7e1237907432adb3590fcbf30c625eea836df6760c05a312a84e1"
+    url "https:github.commysqlmysql-servercommit941e4ac8cfdacc7c2cd1c11b4d72329b70c46564.patch?full_index=1"
+    sha256 "1c39061a6c90e25a542f547ff8e5463d84c446009b4ab317c2c52184a4f931b8"
   end
 
   # Patch out check for Homebrew `boost`.
@@ -76,9 +68,8 @@ class PerconaXtrabackup < Formula
     # Remove bundled libraries other than explicitly allowed below.
     # `boost` and `rapidjson` must use bundled copy due to patches.
     # `lz4` is still needed due to xxhash.c used by mysqlgcs
-    keep = %w[duktape libkmip lz4 rapidjson robin-hood-hashing]
+    keep = %w[boost libbacktrace libcno libkmip lz4 rapidjson unordered_dense]
     (buildpath"extra").each_child { |dir| rm_r(dir) unless keep.include?(dir.basename.to_s) }
-    (buildpath"boost").install resource("boost")
 
     perl = "usrbinperl"
     if OS.linux?
@@ -104,9 +95,7 @@ class PerconaXtrabackup < Formula
       -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
       -DWITH_ICU=#{icu4c.opt_prefix}
       -DWITH_SYSTEM_LIBS=ON
-      -DWITH_BOOST=#{buildpath}boost
       -DWITH_EDITLINE=system
-      -DWITH_LIBEVENT=system
       -DWITH_LZ4=system
       -DWITH_PROTOBUF=system
       -DWITH_SSL=system
@@ -134,7 +123,7 @@ class PerconaXtrabackup < Formula
   end
 
   test do
-    mysql = Formula["mysql@8.0"]
+    mysql = Formula["mysql@8.4"]
     common_args = %W[--no-defaults --port=#{free_port} --socket=#{testpath}mysql.sock]
     client_args = %w[--user=root --password=]
     server_args = %W[--datadir=#{testpath}mysql --tmpdir=#{testpath}tmp]
@@ -169,17 +158,17 @@ end
 
 __END__
 diff --git aCMakeLists.txt bCMakeLists.txt
-index 42e63d0..5d21cc3 100644
+index 438dff720c5..47863c17e23 100644
 --- aCMakeLists.txt
 +++ bCMakeLists.txt
-@@ -1942,31 +1942,6 @@ MYSQL_CHECK_RAPIDJSON()
+@@ -1948,31 +1948,6 @@ MYSQL_CHECK_RAPIDJSON()
  MYSQL_CHECK_FIDO()
  MYSQL_CHECK_FIDO_DLLS()
 
 -IF(APPLE)
 -  GET_FILENAME_COMPONENT(HOMEBREW_BASE ${HOMEBREW_HOME} DIRECTORY)
 -  IF(EXISTS ${HOMEBREW_BASE}includeboost)
--    FOREACH(SYSTEM_LIB ICU LIBEVENT LZ4 PROTOBUF ZSTD FIDO)
+-    FOREACH(SYSTEM_LIB ICU LZ4 PROTOBUF ZSTD FIDO)
 -      IF(WITH_${SYSTEM_LIB} STREQUAL "system")
 -        MESSAGE(FATAL_ERROR
 -          "WITH_${SYSTEM_LIB}=system is not compatible with Homebrew boost\n"
@@ -193,7 +182,7 @@ index 42e63d0..5d21cc3 100644
 -    ENDFOREACH()
 -  ENDIF()
 -  # Ensure that we look in usrlocalinclude or opthomebrewinclude
--  FOREACH(SYSTEM_LIB ICU LIBEVENT LZ4 PROTOBUF ZSTD FIDO)
+-  FOREACH(SYSTEM_LIB ICU LZ4 PROTOBUF ZSTD FIDO)
 -    IF(WITH_${SYSTEM_LIB} STREQUAL "system")
 -      INCLUDE_DIRECTORIES(SYSTEM ${HOMEBREW_BASE}include)
 -      BREAK()
@@ -201,6 +190,6 @@ index 42e63d0..5d21cc3 100644
 -  ENDFOREACH()
 -ENDIF()
 -
- IF(WITH_AUTHENTICATION_FIDO OR WITH_AUTHENTICATION_CLIENT_PLUGINS)
+ IF(WITH_AUTHENTICATION_WEBAUTHN OR
+   WITH_AUTHENTICATION_CLIENT_PLUGINS)
    IF(WITH_FIDO STREQUAL "system" AND
-     NOT WITH_SSL STREQUAL "system")

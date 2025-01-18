@@ -41,6 +41,10 @@ class Asymptote < Formula
   resource "manual" do
     url "https:downloads.sourceforge.netprojectasymptote2.95asymptote.pdf"
     sha256 "6fa4428a78c6af413ed82173056dd6330a496c5f7e930883b16c5cbfc01394cf"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   def install

@@ -3,17 +3,17 @@ class Kaskade < Formula
 
   desc "TUI for Kafka"
   homepage "https:github.comsauljabinkaskade"
-  url "https:files.pythonhosted.orgpackages707af8e5902528fee31a88e85045606c5bfd941cd139c673a369697dbfc63f1dkaskade-4.0.2.tar.gz"
-  sha256 "aeff83257d9a4cc3b47da6aa9456c337800523d7ada22f20c4750a84d902e0f8"
+  url "https:files.pythonhosted.orgpackageseff026c6901ad2dc37333f655ed454c4a8f37616f5b2ef0a26a29b59d0a7a19bkaskade-4.0.3.tar.gz"
+  sha256 "1a333b4eaa98b000cdb7cb6ed5cec20215c81513160a0af81931888a7beae442"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0bf953808a7a32b340337bcefeefba92b07453f2d7de45d90e449ea212cdc6fb"
-    sha256 cellar: :any,                 arm64_sonoma:  "e0bd2ae62b5991dbdd09bca01467eae40f350167103cc334311f5a7198d638c2"
-    sha256 cellar: :any,                 arm64_ventura: "e867e62967f3d3788943bb26fa6fc476a4e2131995d54822a23f3d938eb2ebec"
-    sha256 cellar: :any,                 sonoma:        "888a683c51bd2e84a2ebc08b5bd109be29ae88f47b393d3051e73a1b807f2e7c"
-    sha256 cellar: :any,                 ventura:       "3ee7bc39ee64069ef3e31422303332ba96409fb2b0b5f0ae5f9b66b677e11792"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "173b9cf8441bc8e09add23b0186eb252a168cf9d02d412c48f324837acc134b5"
+    sha256 cellar: :any,                 arm64_sequoia: "f564b00f1b5966948f27322af11053408f67037b75d9f555328f06b82dc2ca2c"
+    sha256 cellar: :any,                 arm64_sonoma:  "747d06c7e5f90c15ec8579f5971ccd54f2bf9c4cebdf62e8c065ba452ae501e4"
+    sha256 cellar: :any,                 arm64_ventura: "466a402bf474e17ae289c95bde2e67ad38bdb5da0c9b6a780bf8788a93fe855a"
+    sha256 cellar: :any,                 sonoma:        "4eec3d49fcdb588ed73f17e15526c78ed8fc7cc33da49e4059eb459d8889b18b"
+    sha256 cellar: :any,                 ventura:       "75144300f1912e0c6e155f583395028dd8c7741203aaf28ff8d3e33bfe3cc630"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5ebeec6969fc9779b080032a8919e1bd1795b8f78a247f6610f90ff11c4411e"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -142,8 +142,8 @@ class Kaskade < Formula
   end
 
   resource "referencing" do
-    url "https:files.pythonhosted.orgpackages995b73ca1f8e72fff6fa52119dbd185f73a907b1989428917b24cff660129b6dreferencing-0.35.1.tar.gz"
-    sha256 "25b42124a6c8b632a425174f24087783efb348a6f1e0008e63cd4466fedf703c"
+    url "https:files.pythonhosted.orgpackages2732fd98246df7a0f309b58cae68b10b6b219ef2eb66747f00dfb34422687087referencing-0.36.1.tar.gz"
+    sha256 "ca2e6492769e3602957e9b831b94211599d2aade9477f5d44110d2530cf9aade"
   end
 
   resource "requests" do

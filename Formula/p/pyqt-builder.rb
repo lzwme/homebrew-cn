@@ -3,18 +3,18 @@ class PyqtBuilder < Formula
 
   desc "Tool to build PyQt"
   homepage "https:pyqt-builder.readthedocs.io"
-  url "https:files.pythonhosted.orgpackages4d07da6140518dea6cf99b5dd5eac928f93813d7b2dd9f42ff9c193421d2b171pyqt_builder-1.17.1.tar.gz"
-  sha256 "457dcd6a1408ea4bf1264e3511c734d53451ae8a3905e98982d50f7b3fdab724"
+  url "https:files.pythonhosted.orgpackages2b36e0b701f84ab469d0baab0f8973f51deca78224ff08c8dcf454ae926936a6pyqt_builder-1.17.2.tar.gz"
+  sha256 "cef9e06ab78c147235a5e4691e6257c963e93c2235fe3db1fe38c92f11977596"
   license "BSD-2-Clause"
   head "https:github.comPython-PyQtPyQt-builder.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f24de17421e9583c5174d88770393b7ca16459e05e678a537162754455c8b157"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f24de17421e9583c5174d88770393b7ca16459e05e678a537162754455c8b157"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f24de17421e9583c5174d88770393b7ca16459e05e678a537162754455c8b157"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fdd039f3908f55155929be37eaedf8afb4a2cf9ca0d200569f5af48dfe27f9ee"
-    sha256 cellar: :any_skip_relocation, ventura:       "fdd039f3908f55155929be37eaedf8afb4a2cf9ca0d200569f5af48dfe27f9ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc1d12a34b4d18478b572247c2f1108abffaf7e01aa1cf4e60ac77e38f73f605"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4842d3137184bc928a3b4631004c741bf1fdc1a52ac66448b874ae3822ba6312"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4842d3137184bc928a3b4631004c741bf1fdc1a52ac66448b874ae3822ba6312"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4842d3137184bc928a3b4631004c741bf1fdc1a52ac66448b874ae3822ba6312"
+    sha256 cellar: :any_skip_relocation, sonoma:        "83407190b81b2792df81d51cbc4d1fd073835170071b95c5a245413f69944983"
+    sha256 cellar: :any_skip_relocation, ventura:       "83407190b81b2792df81d51cbc4d1fd073835170071b95c5a245413f69944983"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be5e341bd73f0d092e4120eb255ddb5a77de27546407321c5ce219cab0166aa7"
   end
 
   depends_on "python@3.13"
@@ -25,8 +25,8 @@ class PyqtBuilder < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages4354292f26c208734e9a7f067aea4a7e282c080750c4546559b58e2e45413ca0setuptools-75.6.0.tar.gz"
-    sha256 "8199222558df7c86216af4f84c30e9b34a61d8ba19366cc914424cdbd28252f6"
+    url "https:files.pythonhosted.orgpackages92ec089608b791d210aec4e7f97488e67ab0d33add3efccb83a056cbafe3a2a6setuptools-75.8.0.tar.gz"
+    sha256 "c5afc8f407c626b8313a86e10311dd3f661c6cd9c09d4bf8c15c0e11f9f2b0e6"
   end
 
   resource "sip" do

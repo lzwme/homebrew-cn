@@ -10,6 +10,10 @@ class Sratoolkit < Formula
     resource "ncbi-vdb" do
       url "https:github.comncbincbi-vdbarchiverefstags3.2.0.tar.gz"
       sha256 "49fea92d9ec5ab38a5c06d1bcb057d1e7c9d4d39adcb7f31a3485ecc35bd5b77"
+
+      livecheck do
+        formula :parent
+      end
     end
   end
 

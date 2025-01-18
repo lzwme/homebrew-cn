@@ -19,6 +19,10 @@ class Commandbox < Formula
   resource "apidocs" do
     url "https://downloads.ortussolutions.com/ortussolutions/commandbox/6.1.0/commandbox-apidocs-6.1.0.zip"
     sha256 "f4bf29732cc97cfd1ef6bd11af3bed0cb9423030b2365af9806eeb8ff83ffa00"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   def install

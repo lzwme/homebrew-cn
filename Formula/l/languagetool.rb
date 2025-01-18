@@ -13,19 +13,20 @@ class Languagetool < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97c26d8e5411371399984b4885cb6ffd4eccf8eae64f3ea7b362c34d21b22b6f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0869f074714fb4c31fa49c57af0dc47609176b9f00d6258239a31502e2ec0c37"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e9389d2adcd583ec4e1885b48d2e7325c50ac70a9cc292e5dbc1403ef34ca4e0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a0271c888c528c6392a9f96798dc665bc98ab84c6ecf2cb28ec0a03862979874"
-    sha256 cellar: :any_skip_relocation, ventura:       "ae84393965f3efa95ce9527168dd8e89b46187e0a71960ab93d38a15827afc1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3231ad327caaf0cfc04a8fc015dcef3acc2994ba5706fac55a6b7c4da6b53ede"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ca43edb23f4085cf6b1efd37b7876ae4f705980b624cae9dd37ad1e88addba6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05a3e858a94d653b2b3a9a0af29de028af47231418e7daa825e5562cfe8c712f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6f7cb65a2d77faa2bd87f141cb18339b88f5be78f60a469589bb53771d216d71"
+    sha256 cellar: :any_skip_relocation, sonoma:        "50c37f13d72bf2777364a0149ca50a6ba41cadad28436c99d5ee48a5790cc160"
+    sha256 cellar: :any_skip_relocation, ventura:       "ef00fa3c5956c4a7c62e6b6b469367c2a69fb939f7144488f6fd614b2cb7fedc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a17e9f3c0239a8178f2599053402cbefc9f1a995336db3c60d5ffb488ddaa58"
   end
 
   depends_on "maven" => :build
-  depends_on "openjdk@11"
+  depends_on "openjdk@17"
 
   def install
-    java_version = "11"
+    java_version = "17"
     ENV["JAVA_HOME"] = Language::Java.java_home(java_version)
     system "mvn", "clean", "package", "-DskipTests"
 

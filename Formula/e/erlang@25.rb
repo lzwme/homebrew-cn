@@ -37,6 +37,10 @@ class ErlangAT25 < Formula
   resource "html" do
     url "https:github.comerlangotpreleasesdownloadOTP-25.3.2.16otp_doc_html_25.3.2.16.tar.gz"
     sha256 "bdedfbb6702f47252965684caeb8aa750ecd4a56128aa8ab981c5992b455a23b"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   def install

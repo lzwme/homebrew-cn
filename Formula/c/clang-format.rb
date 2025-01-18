@@ -13,16 +13,28 @@ class ClangFormat < Formula
     resource "clang" do
       url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-19.1.7clang-19.1.7.src.tar.xz"
       sha256 "11e5e4ecab5338b9914de3b83a4622cb200de466b7c56ba675afb72fa7d64675"
+
+      livecheck do
+        formula :parent
+      end
     end
 
     resource "cmake" do
       url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-19.1.7cmake-19.1.7.src.tar.xz"
       sha256 "11c5a28f90053b0c43d0dec3d0ad579347fc277199c005206b963c19aae514e3"
+
+      livecheck do
+        formula :parent
+      end
     end
 
     resource "third-party" do
       url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-19.1.7third-party-19.1.7.src.tar.xz"
       sha256 "b96deca1d3097c7ffd4ff2bb904a50bdd56bec7ed1413ffb0d1d01af87b72c12"
+
+      livecheck do
+        formula :parent
+      end
     end
   end
 

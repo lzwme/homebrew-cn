@@ -3,17 +3,17 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://files.pythonhosted.org/packages/ec/b9/9ff4a08cb6d20b30fd86947924996873b16662c48ec73b461f3f527a37ea/borgmatic-1.9.5.tar.gz"
-  sha256 "c1518cd81b2099988a5adb5c788c39a5b246618d95dfe318d48bfce8fc08714f"
+  url "https://files.pythonhosted.org/packages/e9/0c/924bbb887c0bcb066358484c0fc37cda71db7d794d340efafd341112de13/borgmatic-1.9.6.tar.gz"
+  sha256 "1a7748bdf2932ca6f03111c3f321ac0a8c38629bf1aefff477c3b6ae7b2b12b8"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c33eb2088f39a7a1c918066a2ee6337d81d94a34acf1d7f01fdee1b9fe4ffc08"
-    sha256 cellar: :any,                 arm64_sonoma:  "2e3665053ea156a3573f0cf7a00192188ffeb01e0d033d53b2d3374b045d2a54"
-    sha256 cellar: :any,                 arm64_ventura: "c7dc75dfcdc6374d2a46ec48f129f4375b6b6664669730ef5ffde61662ecf49c"
-    sha256 cellar: :any,                 sonoma:        "a88facabf304a54e16faca34fadac5639856066ae3ed54f816c916f8594070aa"
-    sha256 cellar: :any,                 ventura:       "d5457847b8f93a3ae9a676692dc5010cbe50de9b502e1ed3ce8fc3ba67fe0a79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "deadc50d953569a923f4e360d455e7a254e3c797cf03dbd043da0bec2afaa154"
+    sha256 cellar: :any,                 arm64_sequoia: "390200a4074ffc732b101bed16ad8950df29c5c6891767e3deb363af27f5cd29"
+    sha256 cellar: :any,                 arm64_sonoma:  "14e26fd08924f3cc9128604f7f0f0fbff98c6ff4e821dd29c960e5a868059318"
+    sha256 cellar: :any,                 arm64_ventura: "6eed5d5c6f29dc4719d383af37e32cdc5fa745293abc898aa9598bde18922156"
+    sha256 cellar: :any,                 sonoma:        "5407825b8c8a8ce1f91ed7e41796ffbefbaaa8afc260c50f830df6d6e5605cf8"
+    sha256 cellar: :any,                 ventura:       "b6437254f61b4f1b5d20ce0a35f6f936e6fac1a887f2bb9b2345bcacc31d5c06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31eef39b7afd138e3fae16434c0da2c37a4d0db3e1bf978b6f62b901b207a963"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -51,8 +51,8 @@ class Borgmatic < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/99/5b/73ca1f8e72fff6fa52119dbd185f73a907b1989428917b24cff660129b6d/referencing-0.35.1.tar.gz"
-    sha256 "25b42124a6c8b632a425174f24087783efb348a6f1e0008e63cd4466fedf703c"
+    url "https://files.pythonhosted.org/packages/27/32/fd98246df7a0f309b58cae68b10b6b219ef2eb66747f00dfb34422687087/referencing-0.36.1.tar.gz"
+    sha256 "ca2e6492769e3602957e9b831b94211599d2aade9477f5d44110d2530cf9aade"
   end
 
   resource "requests" do
@@ -66,8 +66,8 @@ class Borgmatic < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/29/81/4dfc17eb6ebb1aac314a3eb863c1325b907863a1b8b1382cdffcb6ac0ed9/ruamel.yaml-0.18.6.tar.gz"
-    sha256 "8b27e6a217e786c6fbe5634d8f3f11bc63e0f80f6a5890f28863d9c45aac311b"
+    url "https://files.pythonhosted.org/packages/ea/46/f44d8be06b85bc7c4d8c95d658be2b68f27711f279bf9dd0612a5e4794f5/ruamel.yaml-0.18.10.tar.gz"
+    sha256 "20c86ab29ac2153f80a428e1254a8adf686d3383df04490514ca3b79a362db58"
   end
 
   resource "urllib3" do
@@ -176,13 +176,13 @@ class Borgmatic < Formula
       info --json #{repo_path}
       init --encryption repokey --debug #{repo_path}
       --version
-      create #{repo_path}::{hostname}-{now:%Y-%m-%dT%H:%M:%S.%f} /etc /home #{testpath}/borgmatic-.{8}/./borgmatic/bootstrap #{config_path}
+      create --patterns-from #{testpath}/borgmatic-.{8}/borgmatic/tmp.{8} #{repo_path}::{hostname}-{now:%Y-%m-%dT%H:%M:%S.%f}
       prune --keep-daily 7 --glob-archives {hostname}-* #{repo_path}
       compact #{repo_path}
       info --json #{repo_path}
       check --glob-archives {hostname}-* #{repo_path}
       --version
-      create --json #{repo_path}::{hostname}-{now:%Y-%m-%dT%H:%M:%S.%f} /etc /home #{testpath}/borgmatic-.{8}/./borgmatic/bootstrap #{config_path}
+      create --patterns-from #{testpath}/borgmatic-.{8}/borgmatic/tmp.{8} --json #{repo_path}::{hostname}-{now:%Y-%m-%dT%H:%M:%S.%f}
       prune --keep-daily 7 --glob-archives {hostname}-* #{repo_path}
       compact #{repo_path}
       info --json #{repo_path}

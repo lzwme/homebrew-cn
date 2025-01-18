@@ -2,8 +2,8 @@ class OryHydra < Formula
   desc "OpenID Certified OAuth 2.0 Server and OpenID Connect Provider"
   homepage "https:www.ory.shhydra"
   url "https:github.comoryhydra.git",
-      tag:      "v2.2.0",
-      revision: "57096be9befbde4a1436ef48338d253a248c91c4"
+      tag:      "v2.3.0",
+      revision: "ee8c339ddada3a42529c0416897abc32bad03bbb"
   license "Apache-2.0"
 
   livecheck do
@@ -12,14 +12,12 @@ class OryHydra < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ae38f0ccf2673a0ba2c056846a7201cd900c744046ef69a65c8a5b80dfeabb1a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a3462987e47255f538b486364533d4f06ef2839110a2cd27955eadaaf1b2619a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "786e9c5c5eaa1770cd127c8d20ed14e2394dfe9d60a0bdf5989372b4253902c4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "747fa14d68354836f759157757541620003c362ced3c7ac4e19a3e88d2b46de0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f03e0f5083bbea90e15a2f09db88d4d5bc42061417532b3f68b4191b2d9c9aaa"
-    sha256 cellar: :any_skip_relocation, ventura:        "46cbcb0b1ec62a81da8861df9add4f2a1eab89b13064c19cfac915420dc83737"
-    sha256 cellar: :any_skip_relocation, monterey:       "23b335c7baefd18dd5304455403dd7389b74a560d445cdbcb0197490128146b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "995c3e6a92c19dd5bca6250cd9e5d7c845376e492b758181a0de193977f2269a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c0a3f85167b48e6ea4b107c737e7e90fdbd4cfafe3a7d8b4be67facdb5af4c3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07b89367b51ed83fa91e6d1de162a7f1b0d16c596b47f6b52006e9054b81ee9a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b442320d9096b40cd35481016f883df160319e6b6060cf4ef6ec76820e957ea9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1c8d55ca5dce7f630a4b23042ced6f1c35b1c187c55bdddb7ee05cff0a162826"
+    sha256 cellar: :any_skip_relocation, ventura:       "6c4d52394e2726bf4c408dc69776d09a497c7456631a666b5115963a99a88803"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd7d10f4c7466d31197d3e5a2cf5196fe564f28f84236477b939a84fd7bd7bcb"
   end
 
   depends_on "go" => :build

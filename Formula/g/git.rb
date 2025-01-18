@@ -35,11 +35,19 @@ class Git < Formula
   resource "html" do
     url "https:mirrors.edge.kernel.orgpubsoftwarescmgitgit-htmldocs-2.48.1.tar.xz"
     sha256 "5450321b7de6702f9ec0a41108dfac3626afeb8fdd575b3d9a78febfaa96315c"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   resource "man" do
     url "https:mirrors.edge.kernel.orgpubsoftwarescmgitgit-manpages-2.48.1.tar.xz"
     sha256 "4c0ede7afa4d6dbf602d2f2fd151c36ab57d3224e6b9fd17342e85f05d386886"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   resource "Net::SMTP::SSL" do

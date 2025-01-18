@@ -29,11 +29,19 @@ class Trino < Formula
   resource "trino-src" do
     url "https:github.comtrinodbtrinoarchiverefstags468.tar.gz", using: :nounzip
     sha256 "5d5cf99ff5c74e509372f1ff9a8fa26eaa4ff8879c5116b509f7ae011bef2361"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   resource "trino-cli" do
     url "https:search.maven.orgremotecontent?filepath=iotrinotrino-cli468trino-cli-468-executable.jar"
     sha256 "ddaf3ce6d955ddb7b31626c9751303c1193b5029c7b36e38c172b3f043ffc8b7"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   def install

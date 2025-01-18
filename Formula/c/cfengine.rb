@@ -34,6 +34,10 @@ class Cfengine < Formula
   resource "masterfiles" do
     url "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-masterfiles-3.25.0.tar.gz"
     sha256 "bbc69bb2d9924feaaeac19ccc1b280a92f010a011b5925ade0357b96ce0074d9"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   def install

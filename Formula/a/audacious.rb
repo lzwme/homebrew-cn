@@ -11,6 +11,10 @@ class Audacious < Formula
     resource "plugins" do
       url "https:distfiles.audacious-media-player.orgaudacious-plugins-4.4.2.tar.bz2"
       sha256 "50f494693b6b316380fa718c667c128aa353c01e954cd77a65c9d8aedf18d4bd"
+
+      livecheck do
+        formula :parent
+      end
     end
   end
 

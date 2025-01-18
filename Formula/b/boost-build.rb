@@ -33,14 +33,13 @@ class BoostBuild < Formula
       #include <iostream>
       int main (void) { std::cout << "Hello world"; }
     CPP
-    (testpath"Jamroot.jam").write("exe hello : hello.cpp ;")
+    (testpath"Jamroot.jam").write <<~JAM
+      exe hello : hello.cpp ;
+      install install-bin : hello : <location>"#{testpath}" ;
+    JAM
 
     system bin"b2", "release"
-
-    compiler = File.basename(ENV.cc)
-    out = Dir["bin#{compiler}*releasehello"]
-    assert out.length == 1
-    assert_predicate testpathout[0], :exist?
-    assert_equal "Hello world", shell_output(out[0])
+    assert_path_exists testpath"hello"
+    assert_equal "Hello world", shell_output(".hello")
   end
 end

@@ -29,6 +29,10 @@ class Xsd < Formula
   resource "libxsd" do
     url "https://www.codesynthesis.com/download/xsd/4.2/libxsd-4.2.0.tar.gz"
     sha256 "55caf0038603883eb39ac4caeaacda23a09cf81cffc8eb55a854b6b06ef2c52e"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   def install

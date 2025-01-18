@@ -26,6 +26,10 @@ class Cromwell < Formula
   resource "womtool" do
     url "https:github.combroadinstitutecromwellreleasesdownload87womtool-87.jar"
     sha256 "73b63098ac0a87d586b7c5b8729b6e8b440de3df0f5c8b0daafd796dc4ff734c"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   def install

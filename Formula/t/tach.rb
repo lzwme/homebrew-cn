@@ -3,18 +3,18 @@ class Tach < Formula
 
   desc "Tool to enforce dependencies using modular architecture"
   homepage "https:docs.gauge.shgetting-startedintroduction"
-  url "https:files.pythonhosted.orgpackages54c84064f6e97abeda0dd5a68a23a9cc46f236850d8247f124847ae3f03f86fftach-0.20.0.tar.gz"
-  sha256 "65ec25354c36c1305a7abfae33f138e9b6026266a19507ff4724f3dda9b55c67"
+  url "https:files.pythonhosted.orgpackages8cfa61d4208652b4ddfeb12236a9d582b21831ab4a38b5956ac9210dc521e97ctach-0.21.0.tar.gz"
+  sha256 "628ba343fe84b95998a5652520862e42c306b15c89fd32da88efe0031f986051"
   license "MIT"
   head "https:github.comgauge-shtach.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1b61d073eaaa85f4c7f44d6109d64b203943804e8d246a3919540a1666221083"
-    sha256 cellar: :any,                 arm64_sonoma:  "940ed6a2e9fd781a7a936c0c45513338b6179baff6f7dd0f873240442c50a71b"
-    sha256 cellar: :any,                 arm64_ventura: "68f6c239e445d5383985d589144f96ba1f9c08bd2a46393474aa83c7f955c376"
-    sha256 cellar: :any,                 sonoma:        "3c86b6591ddde657926f2c09bcfbea40285d6146807664c9d9f57c13ac97c423"
-    sha256 cellar: :any,                 ventura:       "300d2b191937d7cf7c0444116e39802d0b959489442800d9131c01a3a4a78c75"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65c2c26fdd89083d43e0bd3b732fd31b66589e4c5ab1d59a8d1fb920e757cdf5"
+    sha256 cellar: :any,                 arm64_sequoia: "59fb05173eaf3168ed40984439eb6105db0c424ca5115b2847f5ad0569fa72e9"
+    sha256 cellar: :any,                 arm64_sonoma:  "cd9abfaa1364fa676999cdd38a96418045ed3cd738bb3b10ddc178bbc3125cc7"
+    sha256 cellar: :any,                 arm64_ventura: "a3eaaad77a5cd53cc9f7291433f5cfa28f819433432405c85cbfc563b9fb9df3"
+    sha256 cellar: :any,                 sonoma:        "67e4eebd17f14d0ed5796ff70fbb02abe861ab7b51db5393d80a2947bb229531"
+    sha256 cellar: :any,                 ventura:       "874b501b205d29971a3e05bed02bf321bbd7284c5db87a5411be3038bdb5c6e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e60d94529845750d6340db5ab3809e2885c074adcd113da67144cfe076aac1a0"
   end
 
   depends_on "rust" => :build
@@ -87,8 +87,8 @@ class Tach < Formula
   end
 
   resource "tomli-w" do
-    url "https:files.pythonhosted.orgpackagesd419b65f1a088ee23e37cdea415b357843eca8b1422a7b11a9eee6e35d4ec273tomli_w-1.1.0.tar.gz"
-    sha256 "49e847a3a304d516a169a601184932ef0f6b61623fe680f836a2aa7128ed0d33"
+    url "https:files.pythonhosted.orgpackages1975241269d1da26b624c0d5e110e8149093c759b7a286138f4efd61a60e75fetomli_w-1.2.0.tar.gz"
+    sha256 "2dd14fac5a47c27be9cd4c976af5a12d87fb1f0b4512f81d69cce3b35ae25021"
   end
 
   resource "wcwidth" do

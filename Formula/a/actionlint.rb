@@ -4,20 +4,27 @@ class Actionlint < Formula
   url "https:github.comrhysdactionlintarchiverefstagsv1.7.6.tar.gz"
   sha256 "59b49d1cabe927d2f1ba67b15f4cd44e56b30ba28eaf48f9bdd71274bedb8061"
   license "MIT"
+  revision 1
   head "https:github.comrhysdactionlint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e665177b2fffd5665cf190c2edc6bef2782e9e3782ff0cadb6002fb0541f6705"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e665177b2fffd5665cf190c2edc6bef2782e9e3782ff0cadb6002fb0541f6705"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e665177b2fffd5665cf190c2edc6bef2782e9e3782ff0cadb6002fb0541f6705"
-    sha256 cellar: :any_skip_relocation, sonoma:        "82a237d075bb2ebbbe4d0a66df413ad136ac040330a94ba0b129668a0148837a"
-    sha256 cellar: :any_skip_relocation, ventura:       "82a237d075bb2ebbbe4d0a66df413ad136ac040330a94ba0b129668a0148837a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cdc5640f5e494d05d9a3d22f36ad5eb1131a8bdb11a6762150e95c4820395b23"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4bd6d76f6e07f1908754e770c907782702154fde31c66651b5296301c9f54947"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4bd6d76f6e07f1908754e770c907782702154fde31c66651b5296301c9f54947"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4bd6d76f6e07f1908754e770c907782702154fde31c66651b5296301c9f54947"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b680789b47bba8b2a0438171315072575432c03845e88f083f89a7d31f6a93e2"
+    sha256 cellar: :any_skip_relocation, ventura:       "b680789b47bba8b2a0438171315072575432c03845e88f083f89a7d31f6a93e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97f300027c75eca3be9900adecb2065a5dcf2f6b349355421d2f258f4d1be5ac"
   end
 
   depends_on "go" => :build
   depends_on "ronn" => :build
   depends_on "shellcheck"
+
+  # Support ARM64 runners, upstream pr ref, https:github.comrhysdactionlintpull503
+  patch do
+    url "https:github.comrhysdactionlintcommit9058a060232e484b6bc958a8f56e908108d1c85c.patch?full_index=1"
+    sha256 "4a721ad09d1be86be8210571666625f8dfdf0387fce2b6776bd0e45ef87e24b9"
+  end
 
   def install
     ldflags = "-s -w -X github.comrhysdactionlint.version=#{version}"

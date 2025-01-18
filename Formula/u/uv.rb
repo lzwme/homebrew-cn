@@ -1,18 +1,18 @@
 class Uv < Formula
   desc "Extremely fast Python package installer and resolver, written in Rust"
   homepage "https:github.comastral-shuv"
-  url "https:github.comastral-shuvarchiverefstags0.5.20.tar.gz"
-  sha256 "d095f4a099d86d06bcdeb5070354f22fc8eafe4a428363bae8c162dd692ae488"
+  url "https:github.comastral-shuvarchiverefstags0.5.21.tar.gz"
+  sha256 "a7de0acb9fcdb4dce09d2d16397c91b30cbf653ceeacc30b250df42c9154edbe"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comastral-shuv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59af07ec55cca270a5fec56a7ec009c2442b57dee45344eaabf1c25a80192c83"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6cd04c380317406e3edb89aba9845691e980c557d70cbab5225bac3d9b966c40"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2bb593fea413cabd1e3f9f0fdb7784048d77a24bea604ae4019dca1bb2622ee5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2888802a8c214a6f81ff4fc50f7127bad62974e3d34dbb339db1abd5ebaf315c"
-    sha256 cellar: :any_skip_relocation, ventura:       "d403bd4c6af8385f15b29f0234b29245fdadcd3f89fcecf1134bcf1b3327aaf1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44902326106870b73afaaecbcfaf80d988e480559dafb262a8d7b5ac839df86d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6719e06e931d44e5bbb35f3942d0e2460413c6271f021a64e09b6d6ad39daa07"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2778f504ad9aad75b9134db4cfca3b801421a38d8aa565e4c9e9a311c26c167"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "37381d7e18e052af0accb756285a4c515a3a07eb6882af6bc777b008d8df01bd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "10ef6c5b1e0d5c1b161038875b8a5c4db8df08bd27ff8d63cc21e938d7b6edf4"
+    sha256 cellar: :any_skip_relocation, ventura:       "eca4bce97b274d51d94d4a5e64bc2d81614e2ec5db14fccd101f490eb7f59619"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7f8b9a9e69405da2549d4705b604adc9050ea4174b29d47ca712e69e3f047ea"
   end
 
   depends_on "pkgconf" => :build

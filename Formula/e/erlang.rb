@@ -44,6 +44,10 @@ class Erlang < Formula
     url "https:github.comerlangotpreleasesdownloadOTP-27.2otp_doc_html_27.2.tar.gz"
     mirror "https:fossies.orglinuxmiscotp_doc_html_27.2.tar.gz"
     sha256 "b403ba1fb75ea7769242b00cd2480919c46d7fc9a5ebab14a553d86cb00d3f07"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   # https:github.comerlangotpblob#{version}makeex_doc_link

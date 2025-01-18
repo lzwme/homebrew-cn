@@ -1,18 +1,18 @@
 class Libsais < Formula
   desc "Fast linear time suffix array, lcp array and bwt construction"
   homepage "https:github.comIlyaGrebnovlibsais"
-  url "https:github.comIlyaGrebnovlibsaisarchiverefstagsv2.8.6.tar.gz"
-  sha256 "35a7956bc018534293573c9867a59301e03b793596430ebb0c3531a6db088148"
+  url "https:github.comIlyaGrebnovlibsaisarchiverefstagsv2.8.7.tar.gz"
+  sha256 "c957a6955eac415088a879459c54141a2896edc9b40c457899ed2c4280b994c8"
   license "Apache-2.0"
   head "https:github.comIlyaGrebnovlibsais.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "774b2a3682dcaa3a7b4f6da95881595bea698298feca4a879a3494d2dcfbdb82"
-    sha256 cellar: :any,                 arm64_sonoma:  "015781a9ffbe3fcda6743d1e47dafe47d6c1af349043b79c0b162139c9c148cd"
-    sha256 cellar: :any,                 arm64_ventura: "4e880ca04f3f27dd125e327131fc2e139a85c3ef25ff2e9bd04801d70fc9b4ea"
-    sha256 cellar: :any,                 sonoma:        "9197910c926a67ca8fb69f680ed41cc9e987cb70868b22bd2e90f55a1f40f818"
-    sha256 cellar: :any,                 ventura:       "0330ec56775d6a3a372f13034caf965b0b0cdae5e7819523b9f6aed4a6e19914"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97689d9ca62d3f5cee9f5667c079287468b92183f3889a6257514bc25ed93f10"
+    sha256 cellar: :any,                 arm64_sequoia: "bf538b93882ea192c1f509700b1aad37730e64c34145a5ade9f2202e9db930ec"
+    sha256 cellar: :any,                 arm64_sonoma:  "f24b3611f2bf0ad53a62941d92b14f9237d32c75a99e4ba27809e905cd27e95f"
+    sha256 cellar: :any,                 arm64_ventura: "5c8d8aabd272721f4ab8bd190b959e6af67bd3ec1e4140b25b561fd4477f967d"
+    sha256 cellar: :any,                 sonoma:        "d82286938bb7fc73cd2d1291e9c79fcd546c6c561900d3a3546d5e1d9c15617b"
+    sha256 cellar: :any,                 ventura:       "ac37c9f70a8a8745b26192976d1caba0f08e169474a829a58489b1822e3f37d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9a95870672e642ee8cacd40c588c7161cbc4bbe2263951e69d4f5a7c7dfbc96"
   end
 
   depends_on "cmake" => :build

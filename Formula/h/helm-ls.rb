@@ -1,18 +1,18 @@
 class HelmLs < Formula
   desc "Language server for Helm"
   homepage "https:github.commrjoshhelm-ls"
-  url "https:github.commrjoshhelm-lsarchiverefstagsv0.1.1.tar.gz"
-  sha256 "f0db0f52c40d18dc18151f8df98c26afb7c1081b5fcf8d8e20c9094e1d3eb369"
+  url "https:github.commrjoshhelm-lsarchiverefstagsv0.2.0.tar.gz"
+  sha256 "098781469caba5783c51cc17ba5d026e0d666a867ad2a59b6994f0d1ece97a72"
   license "MIT"
   head "https:github.commrjoshhelm-ls.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f193b0a9573a888346589280d268c0d3a91fb339aeb9701a10ea60012dad53a1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "65c153d4c0d22755c52f3086558c5672229779e1f0e32f060ab9979a16533d5a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "da2f51751ff951165f7cb6174c25d7da51af31e6613a035ca335d0a983142159"
-    sha256 cellar: :any_skip_relocation, sonoma:        "71c3f75c5e0af7bacb1c6bea9a6bfba4349c329d72f4110371d599821bf17360"
-    sha256 cellar: :any_skip_relocation, ventura:       "b7b8ce3e41b974f76cb8bb58ab4e80a5d143468ca1590c7b0d2aae8a144860d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0ecf7838224ab3a5b71909e22ab4083a0aac846405b403ab8c8ec5d4e451e0b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61cb565d4e4b1d228317e0b8ad4a04cecc45d2bedc36124f48a79c576b9ca059"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef92adc9b8b528ad2b7b854394173ee92cc132fe9eece85c508d0a16542849d1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c2dead86f308cd7837c2de73f57efe2ae3ecf301bb3127a9c5f99bcc18cf8381"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1b83789258ebe57d6ec44b527d27da12b1b1e0e2bf53b99b89817ec136398d61"
+    sha256 cellar: :any_skip_relocation, ventura:       "0595aec7f9a951c496ab97dc047d669770bbb8186816d9018f29fa9418a6aadc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e9dc986a184140c80f19aa16fa54f905f84d034ed98ac235c2ec779aaf59008"
   end
 
   depends_on "go" => :build

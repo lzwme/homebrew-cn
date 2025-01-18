@@ -2,8 +2,8 @@ class Pixie < Formula
   desc "Observability tool for Kubernetes applications"
   homepage "https:px.dev"
   url "https:github.compixie-iopixie.git",
-      tag:      "releasecliv0.8.6",
-      revision: "fb9de19c8c8d89e069b19a46134ad5611bd8c864"
+      tag:      "releasecliv0.8.8",
+      revision: "042e35639f16d32fced41939c5fbc5085e1272ff"
   license "Apache-2.0"
   head "https:github.compixie-iopixie.git", branch: "main"
 
@@ -13,12 +13,12 @@ class Pixie < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f84c71360d5a2174fdbe86c2e63863034b8f3e2462d43b50e044cdf82d92436"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "62bdb8c3169394282b80a07106f30b99266f15a05c2335a8a6543efd76869597"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8cae0b41e59dd379b5eef835d0ccc19a81bfe360718d735d98aaba0240676e13"
-    sha256 cellar: :any_skip_relocation, sonoma:        "259ad6c9723c45287c23b968199cff6156732721fab9394a2c0c95b5dddbef81"
-    sha256 cellar: :any_skip_relocation, ventura:       "060cb1446cb43e2941c5b8d8f4de0899e03313925d2527690050be9984fec607"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e5e89590134e63b06ab9134f0d6d6d0fbd37a3104b18513c5649abdfa19f262"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c7fbaafa23de8f05e452d24747a4edd4c8a0d61a0a01b3ba664ca804c843e8e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76f8833feb8e94f8f7fb33848057603d35acf63c1d6acdbfd02d3a4c22e863fb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1cf672d31b3b683081c257958eb297f56ff5f0b394dc48f51e4be862751f9bce"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8fdd739ced12415fabcad6ceeb96550171e1b585143f274376ec56f776c83d90"
+    sha256 cellar: :any_skip_relocation, ventura:       "afdfd7b18e2528f563336d90b53d9266a72b86d847df1afac796fc70f7f6e8e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da530afc94d1ab1753b32d48e963b6cb6e4c45ef4daaaa2cad0255e54fab966a"
   end
 
   depends_on "go" => :build

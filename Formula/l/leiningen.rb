@@ -16,6 +16,10 @@ class Leiningen < Formula
   resource "jar" do
     url "https:github.comtechnomancyleiningenreleasesdownload2.11.2leiningen-2.11.2-standalone.jar"
     sha256 "7d31ae23ae769e927438b0cd55d15a93e7dabab09fd4fc15877979161e108774"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   def install

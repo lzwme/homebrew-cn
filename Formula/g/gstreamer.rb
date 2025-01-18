@@ -12,6 +12,10 @@ class Gstreamer < Formula
       url "https:gitlab.freedesktop.orggstreamergst-plugins-rs-archivegstreamer-1.24.11gst-plugins-rs-gstreamer-1.24.11.tar.bz2"
       sha256 "1a91972a5ff283a6f3a01f734a22b5dbafdc5cc906ff7dc4acc8913daba0a83f"
 
+      livecheck do
+        formula :parent
+      end
+
       # Backport support for newer `dav1d`
       # upstream commit ref, https:gitlab.freedesktop.orggstreamergst-plugins-rs-commit7e1ab086de00125bc0d596f9ec5d74c9b82b2cc0
       patch do

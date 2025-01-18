@@ -31,7 +31,7 @@ class Minio < Formula
     if build.head?
       system "go", "build", *std_go_args
     else
-      release = `git tag --points-at HEAD`.chomp
+      release = stable.specs[:tag]
       version = release.gsub("RELEASE.", "").chomp.gsub(T(\d+)-(\d+)-(\d+)Z, 'T\1:\2:\3Z')
 
       ldflags = %W[

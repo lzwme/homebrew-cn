@@ -1,8 +1,8 @@
 class Nexttrace < Formula
   desc "Open source visual route tracking CLI tool"
   homepage "https:nxtrace.github.ioNTrace-core"
-  url "https:github.comnxtraceNTrace-corearchiverefstagsv1.3.6.tar.gz"
-  sha256 "ddfae697445b0e86ddada4c0871f6cd7646f26bb2653b33b09e03becdebe7ced"
+  url "https:github.comnxtraceNTrace-corearchiverefstagsv1.3.7.tar.gz"
+  sha256 "94f8893f80b6b0a8d02b2fe709a62557034f3e32879a55807c38cb6ee2f8ab01"
   license "GPL-3.0-only"
   head "https:github.comnxtraceNTrace-core.git", branch: "main"
 
@@ -14,16 +14,15 @@ class Nexttrace < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c57764f36ebfc297e2132aa35dc7b3b991ee4fe5d3d0706f1b5c06d1ac6fb20"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ffe4fae8edb111f8fa2e762a6472ecc6ae1bbf5419031959b64688a11b0e27e0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "eda048fdcb66d64e7b47abcd8884eca52584a0f677539dd86017258db879a6db"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8e2b845a6755e635f570f9a1cc03df29417c4ef496b2ac94320fcf49319524a6"
-    sha256 cellar: :any_skip_relocation, ventura:       "8fa1f225ffacfcafa8a98013465a908323f126575de7bfb132a5594cea2dee67"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be00c4943af521d667ba4dc21000c6f5aeb434ad4c30683e0fc0046549362f23"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a8b5bb14877fa350d7773932829e4335623b50ade2686c3f44d8cf079fd09196"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8b5bb14877fa350d7773932829e4335623b50ade2686c3f44d8cf079fd09196"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a8b5bb14877fa350d7773932829e4335623b50ade2686c3f44d8cf079fd09196"
+    sha256 cellar: :any_skip_relocation, sonoma:        "93a381eb86c70db50cc45be13c35e5572394aec6272f9ce3e307b5adf5971748"
+    sha256 cellar: :any_skip_relocation, ventura:       "93a381eb86c70db50cc45be13c35e5572394aec6272f9ce3e307b5adf5971748"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ca06181781f7224df88e79f8cad3eea96ed4741f5046d527f4d02cfe7d67061"
   end
 
-  # use "go" again after https:github.comnxtraceNTrace-coreissues247 is fixed and released
-  depends_on "go@1.22" => :build
+  depends_on "go" => :build
 
   def install
     ldflags = %W[
@@ -31,7 +30,9 @@ class Nexttrace < Formula
       -X github.comnxtraceNTrace-coreconfig.Version=#{version}
       -X github.comnxtraceNTrace-coreconfig.CommitID=brew
       -X github.comnxtraceNTrace-coreconfig.BuildDate=#{time.iso8601}
+      -checklinkname=0
     ]
+    # checklinkname=0 is a workaround for Go >= 1.23, see https:github.comnxtraceNTrace-coreissues247
     system "go", "build", *std_go_args(ldflags:)
   end
 

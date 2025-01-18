@@ -3,18 +3,18 @@ class Remarshal < Formula
 
   desc "Convert between TOML, YAML and JSON"
   homepage "https:github.comremarshal-projectremarshal"
-  url "https:files.pythonhosted.orgpackages1d86ce916a9bfab4de5e5158d99d6441dae7605419b04e56647354c777b8dcc9remarshal-0.20.0.tar.gz"
-  sha256 "5b73eaa5b0d8ed7d7b2eab3718e532059f7af1586990a17b65413ff926d2e5bf"
+  url "https:files.pythonhosted.orgpackages5a6a5e4c74dcbd8f218235321cdaff165b14d1b9e18a033c47032244a0b2566fremarshal-1.0.0.tar.gz"
+  sha256 "53edc4f65201f35001722d7a7bba405c11f05d7380cca58ecb57e7f7799cee22"
   license "MIT"
   head "https:github.comremarshal-projectremarshal.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5210d8cd03a65d2de31d13f4f6fbcb45a8de5d46ecc24acb29dcc8612af7297"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4f93163b8945300da02e74230a55c7f03de416a61beac625d4205fed76ef4f45"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "81aceb65012dbcf83a1cfbfff3e51381acdaa36e0a127faa02541d20240c640a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "81085cb768f033ea99338c16d4bd705d6b126885079766371d712fbc7179d90f"
-    sha256 cellar: :any_skip_relocation, ventura:       "4ea3ef06611a40eaf7835263d6572eb88561121cadb95ee14e632216e62b02ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9605c3fdf3be441ca4103ebb8972dada0982bf4265a202824e58c6e9ab596b3f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36133f34ccbe538c63d422010e77768939074cfe71335fd3ea947c2c6eeba1e4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "418e4ea525d5368b702cee714bba65bb86d32ef995c0b112061e2fac27726a11"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "011215340f166d19fb4cec173aef49fd0ada1d5dd02c142df305339dfe2b4347"
+    sha256 cellar: :any_skip_relocation, sonoma:        "71178642c769ba1c1fa752b9b8605d29ffbcf85263e66f75396ae44c83b3e021"
+    sha256 cellar: :any_skip_relocation, ventura:       "2bc0de85e4fc381ba1f9d7e898a1ac2f4d70b1ab85dbdfa199e457bce957132b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af55d332e54bb507ccc4c5dcdee15c1f6a50244b4f866044f95995ea16f97bf6"
   end
 
   depends_on "libyaml"
@@ -44,23 +44,23 @@ class Remarshal < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
-    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
+    url "https:files.pythonhosted.orgpackages7c2dc3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84pygments-2.19.1.tar.gz"
+    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
   end
 
   resource "rich" do
-    url "https:files.pythonhosted.orgpackagesaa9e1784d15b057b0075e5136445aaea92d23955aad2c93eaede673718a40d95rich-13.9.2.tar.gz"
-    sha256 "51a2c62057461aaf7152b4d611168f93a9fc73068f8ded2790f29fe2b5366d0c"
+    url "https:files.pythonhosted.orgpackagesab3a0316b28d0761c6734d6bc14e770d85506c986c85ffb239e688eeaab2c2bcrich-13.9.4.tar.gz"
+    sha256 "439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"
   end
 
   resource "rich-argparse" do
-    url "https:files.pythonhosted.orgpackages26f10a5ba24d684012e2f25deec88d9a9a1199d8e26e3bb595b812c8b0218cffrich_argparse-1.5.2.tar.gz"
-    sha256 "84d348d5b6dafe99fffe2c7ea1ca0afe14096c921693445b9eee65ee4fcbfd2c"
+    url "https:files.pythonhosted.orgpackages7feec410251ff6123d4417f2fe8e72c8628f187682b70ce34134a2a3e307a2d5rich_argparse-1.6.0.tar.gz"
+    sha256 "092083c30da186f25bcdff8b1d47fdfb571288510fb051e0488a72cc3128de13"
   end
 
   resource "ruamel-yaml" do
-    url "https:files.pythonhosted.orgpackages29814dfc17eb6ebb1aac314a3eb863c1325b907863a1b8b1382cdffcb6ac0ed9ruamel.yaml-0.18.6.tar.gz"
-    sha256 "8b27e6a217e786c6fbe5634d8f3f11bc63e0f80f6a5890f28863d9c45aac311b"
+    url "https:files.pythonhosted.orgpackagesea46f44d8be06b85bc7c4d8c95d658be2b68f27711f279bf9dd0612a5e4794f5ruamel.yaml-0.18.10.tar.gz"
+    sha256 "20c86ab29ac2153f80a428e1254a8adf686d3383df04490514ca3b79a362db58"
   end
 
   resource "tomlkit" do

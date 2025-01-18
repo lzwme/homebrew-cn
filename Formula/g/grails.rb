@@ -24,6 +24,10 @@ class Grails < Formula
   resource "cli" do
     url "https:github.comgrailsgrails-forgereleasesdownloadv6.2.3grails-cli-6.2.3.zip"
     sha256 "ef78a48238629a89d64996367d0424bc872978caf6c23c3cdae92b106e2b1731"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   def install

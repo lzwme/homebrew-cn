@@ -49,7 +49,7 @@ class Pan < Formula
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     minimal = testpath/"minimal.nzb"
-    minimal.write <<~EOS
+    minimal.write <<~XML
       <?xml version="1.0" encoding="iso-8859-1"?>
       <!DOCTYPE nzb PUBLIC "-//newzBin//DTD NZB 0.9//EN" "http://www.newzbin.com/DTD/nzb/nzb-0.9.dtd">
       <nzb xmlns="http://www.newzbin.com/DTD/2003/nzb">
@@ -62,7 +62,7 @@ class Pan < Formula
           </segments>
         </file>
       </nzb>
-    EOS
+    XML
 
     # this test works only if pan has not yet been configured with news servers
     assert_match "Please configure Pan's news servers before using it as an nzb client.",

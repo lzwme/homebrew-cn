@@ -6,6 +6,11 @@ class Libcss < Formula
   license "MIT"
   head "https://git.netsurf-browser.org/libcss.git", branch: "master"
 
+  livecheck do
+    url :homepage
+    regex(/href=.*?libcss[._-]v?(\d+(?:\.\d+)+)[._-]src\.t/i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "f065539111cfaeb57ffaa1f1918d0a5eb40a27193a0de07a976d8822941bb5a0"
     sha256 cellar: :any,                 arm64_sonoma:  "c7083640028fdeeed54ea337f87d86686a92659392ed2939ed60947f06c95e43"

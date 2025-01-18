@@ -14,6 +14,10 @@ class PhpCodeSniffer < Formula
   resource "phpcbf.phar" do
     url "https:github.comPHPCSStandardsPHP_CodeSnifferreleasesdownload3.11.2phpcbf.phar"
     sha256 "0d69b83f465a48f753342570e32deec4c7c15c34a7c964ea9ad26c23324bb55e"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   def install

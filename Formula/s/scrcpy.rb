@@ -29,6 +29,10 @@ class Scrcpy < Formula
   resource "prebuilt-server" do
     url "https:github.comGenymobilescrcpyreleasesdownloadv3.1scrcpy-server-v3.1", using: :nounzip
     sha256 "958f0944a62f23b1f33a16e9eb14844c1a04b882ca175a738c16d23cb22b86c0"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   def install

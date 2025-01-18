@@ -52,7 +52,7 @@ class Sbcl < Formula
                              SBCL_SOURCE_ROOT: pkgshare/"src",
                              SBCL_HOME:        lib/"sbcl"
     pkgshare.install %w[contrib src]
-    (lib/"sbcl/sbclrc").write <<~'LISP'
+    (lib/"sbcl/sbclrc").write <<~LISP
       (setf (logical-pathname-translations "SYS")
         '(("SYS:SRC;**;*.*.*" #p"#{pkgshare}/src/**/*.*")
           ("SYS:CONTRIB;**;*.*.*" #p"#{pkgshare}/contrib/**/*.*")))
