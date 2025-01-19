@@ -1,19 +1,17 @@
 class Blueutil < Formula
   desc "Getset bluetooth power and discoverable state"
   homepage "https:github.comtoyblueutil"
-  url "https:github.comtoyblueutilarchiverefstagsv2.10.0.tar.gz"
-  sha256 "1558977dd4095ff89768a2f7eaff765e760b56c736a9cd5956b1227ebfee8f2b"
+  url "https:github.comtoyblueutilarchiverefstagsv2.11.0.tar.gz"
+  sha256 "ac003fefe73a0655fc20101fc8c187cf9bcc172916780eb7da6c8d71b3194cfd"
   license "MIT"
   head "https:github.comtoyblueutil.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "061e8edbdab4c9da236494c79209543a8cb679f00e815966456c1b314bcdfbf5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "02e1c9fad6e8b343d5b9e15a4aa0c4b853a1d2b1dac339d01da0b01fcbad86de"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d0c09f20aad162c559723b5c883c63db270c2cb60005283b170f629de63f8313"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a9f5aa947b307b1983cdfe545d47884074364a0db4a912891ca0d0ab4f20f843"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2faeff79878497b5db013e243f8f2a88f54c1932a1df1ab422a671d472ebfd43"
-    sha256 cellar: :any_skip_relocation, ventura:        "288321f9b4d1e1bdd7371dfd70f3faaa5ef87fd8ca19f68a6062cd4d6789f97b"
-    sha256 cellar: :any_skip_relocation, monterey:       "d2d9405fa33c97ca5f9fdbac3e287c44902d97a7c80becf152eb6177f2c33163"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "17ff09c0dd7ec77c78c54698beca6097c420840aa2c3d48d401b4906c9526a47"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e76760d531bc3166b2ab12ba6d3ff4ea96fa15fbcc703cd81051c9ba9622f4e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1f0ad5bc847fd03e8907f32d9caf25a4062406743132caea967fe135be59400a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "118cb6fdc2a3afdfdfa933b3cd63fea9b5bc44cc94192a0712dbcaa582fb1899"
+    sha256 cellar: :any_skip_relocation, ventura:       "aed2a592a1e886d1458b71d3829611a187a9773538143f970d74c543c0288626"
   end
 
   depends_on xcode: :build

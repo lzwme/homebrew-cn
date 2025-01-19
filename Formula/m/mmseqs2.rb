@@ -1,19 +1,19 @@
 class Mmseqs2 < Formula
   desc "Software suite for very fast sequence search and clustering"
   homepage "https:mmseqs.com"
-  url "https:github.comsoedinglabMMseqs2archiverefstags16-747c6.tar.gz"
-  version "16-747c6"
-  sha256 "faeb6841feb8e028651c2391de1346c55c2091a96520b625525d27b99d07ef1d"
+  url "https:github.comsoedinglabMMseqs2archiverefstags17-b804f.tar.gz"
+  version "17-b804f"
+  sha256 "300ebd14bf4e007b339037e5f73d8ff9c4e34f8495204c4a8c59c7672b689db2"
   license "MIT"
   head "https:github.comsoedinglabMMseqs2.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ea1ea5c08498f6ad51699f1893a8e23e0baeed53db5939bafd0a746ef398f63"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "27680634e7c71319cff9d0858fc4f09866983e79fbab178f9f0f1039c8c7fae8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "abf9aebc0cef534728bf7f1632a3ab6f5fccdbbc3f65134795cdd77da6990f72"
-    sha256 cellar: :any_skip_relocation, sonoma:        "634ea04176f89d6a6c149c6ede52ba9ff1f9c12f7cecd9a8008a613956b48871"
-    sha256 cellar: :any_skip_relocation, ventura:       "275e82914a9a19dc429541ce8acc36007ff7c60b77c266c6c4e9c29cf8ff5762"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f06909bd45000c0646b4b4318298f455063c4f63ae51c43ed775c55790770d0f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8daf8dbec7c29c1d3eea5a0121219586ed24ea957d12e00acadb2e290fb96b3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1896588e7c11aecd04b53c19c6ab529f3800ad15f8f4ec7d95d007b486a009eb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e677b94b349b48bfd2d2840db79407fc00055c4780690cd8434b94bf1f288f41"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a4fa462c8bb251cdd7076cc6afe8a25484f676fde45d45e4ce8637e742063e97"
+    sha256 cellar: :any_skip_relocation, ventura:       "137d46f6776eeff0b856cf2eca03c972b49a50238ce083d0f7c7782e2f1eb6d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f75c259b582cc4cf86ee97be763e59f9590e58d4f67a43b5e213bcc8a283401"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -30,10 +30,10 @@ class Mmseqs2 < Formula
     depends_on "gawk"
   end
 
-  # check revision with https:github.comsoedinglabMMseqs2wikiHome_history
+  # `git ls-remote https:github.comsoedinglabMMseqs2.wiki.git HEAD`
   resource "documentation" do
     url "https:github.comsoedinglabMMseqs2.wiki.git",
-        revision: "0e84198b94460abc6bc353021c16469d9543eefd"
+        revision: "b1ccffcaf6be0f857e37670a260311f2416b6794"
   end
 
   def install

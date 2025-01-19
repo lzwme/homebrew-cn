@@ -20,7 +20,7 @@ class Hadolint < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.8" => :build
+  depends_on "ghc@9.10" => :build
 
   uses_from_macos "xz"
 
@@ -50,7 +50,7 @@ diff --git acabal.project bcabal.project
 index 8b2b6d6e..40a32226 100644
 --- acabal.project
 +++ bcabal.project
-@@ -7,5 +7,11 @@ optional-packages:
+@@ -7,5 +7,5 @@ optional-packages:
  source-repository-package
      type: git
      location: https:github.comlorenzoshellcheck
@@ -58,13 +58,6 @@ index 8b2b6d6e..40a32226 100644
 -    --sha256: 114yfgp40klrm32al93j7fh7lzzg7scqqnf8cc953h2m22k0c48q
 +    tag: 248273935cd95afeaf835c688980ac5bccca8d14
 +    --sha256: 1xm38l1fcq2agiwhh2jqikzinv5ldgnfazgir83xyv8r2v6x1ray
-+
-+source-repository-package
-+    type: git
-+    location: https:github.comphadejspdx
-+    tag: 61a9af383682ed09e6360525cfb10c72f6c16a35
-+    --sha256: 1mdrr4xndgs45vsik93ar9ys1gr9yrpfi5i2aq0mbw84l9i69374
-\ No newline at end of file
 diff --git ahadolint.cabal bhadolint.cabal
 index a0469934..7e6d01ab 100644
 --- ahadolint.cabal

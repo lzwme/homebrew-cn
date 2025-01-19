@@ -7,25 +7,27 @@ class Prr < Formula
   head "https:github.comdanobiprr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9c765df97668492a4ad84de57bc6e16f81ca4fe743a05cafc06a6e08080ea206"
-    sha256 cellar: :any,                 arm64_sonoma:  "f3933eff7e8c317e2bac08b82a227160a9759f17204427a40691e7d0dc8deb67"
-    sha256 cellar: :any,                 arm64_ventura: "1456631c5e2b4bc0484b46efc28e6dc1f694bd23958497542962ac0b45c2179f"
-    sha256 cellar: :any,                 sonoma:        "20d2cd9a366af2e2de5c4106b57ca1c1a231fc5b8571fc292581eadb2a6a9088"
-    sha256 cellar: :any,                 ventura:       "5abd0b3b9851360119bf5df5a8693cc70b5de849128ec9073c3f914c337fff1a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1667b82bf92db3853a68148bd85723defa29bffbbc7866bc661667910d979249"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "020e2b1af8b7a3f2b1f39096597b06e80e338ff308a50d8f9f4b73094728a12d"
+    sha256 cellar: :any,                 arm64_sonoma:  "43547eb2228e9fa399f34b9bd5202fbe7aed3257095a1a93f75a667d36d8658d"
+    sha256 cellar: :any,                 arm64_ventura: "1ae08fc4c7d6625baf22b16df0cf1178efee1f699bfc25c6bb961f3f7560f75e"
+    sha256 cellar: :any,                 sonoma:        "ff40fe06171b1047bfadd9391918a99f47090ba502584677085052764ff8f71b"
+    sha256 cellar: :any,                 ventura:       "a3bad778d1010031a272e32535c8ed6c9e487aa0587de878350429f5683cb5ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f78629fe312045ec89e5377a86cf1c165eca5c5ff60114100a111c0ccfe60eef"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "libgit2"
+  depends_on "libssh2"
   depends_on "openssl@3"
 
   uses_from_macos "zlib"
 
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
-    # Ensure the declared `openssl@3` dependency will be picked up.
-    # https:docs.rsopenssllatestopenssl#manual
+    ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
+    # Ensure the correct `openssl` will be picked up.
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
 
@@ -53,6 +55,7 @@ class Prr < Formula
 
     [
       Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["libssh2"].opt_libshared_library("libssh2"),
       Formula["openssl@3"].opt_libshared_library("libssl"),
       Formula["openssl@3"].opt_libshared_library("libcrypto"),
     ].each do |library|

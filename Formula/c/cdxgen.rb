@@ -1,20 +1,22 @@
 class Cdxgen < Formula
   desc "Creates CycloneDX Software Bill-of-Materials (SBOM) for projects"
   homepage "https:github.comCycloneDXcdxgen"
-  url "https:registry.npmjs.org@cyclonedxcdxgen-cdxgen-11.0.10.tgz"
-  sha256 "8b23c8d7c0c7d2d4a9585ace86cf3803e4f21df972ffb830bbf92ef3e68194b3"
+  url "https:registry.npmjs.org@cyclonedxcdxgen-cdxgen-11.1.0.tgz"
+  sha256 "9e3cb280a15128c3e80972e6b71211ae11314e9105f05a12f15ec65ff4f23116"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "484bf5b50a962e8a2675d99b8fe6dd6d156e39c79ce2b064009f8767e3a5b688"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f34e8b2f1501e446f55da40842743e590b752777677c8c785f985c3bd3f1260"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "061bb2e160091fe40a21e514cf7df5bf5d853e6aaf406a6844d46d2ed1757fc6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1ddbb67f5c0f96f54888799e601104e746f26633e4084655dd2d7a6974bfa058"
-    sha256 cellar: :any_skip_relocation, ventura:       "a7e77ad869a59ef4f7ed86654216acf10347e3b3e8d99f736be5c6d7f2247689"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "307568fcf2426432b90623712c58a7f3cb5281b997722cc6aad828cb09927428"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "985a2045b57856fdf91801fadc51f05edbfe89d24f0daf0637aa7c44edf11812"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26844ef60d856146a78b8b1a8d43b8691d235fa0469cb539befa6c936b09cc1f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "61cf704b05482287f9e3fc113d10787f615791e3ece92b703e718195f227e364"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4812036d19d05472dd34b31b46a8f170e6673aeddbbda93555d0ddf981b544cb"
+    sha256 cellar: :any_skip_relocation, ventura:       "294a8944ed37885af5363ce24de40cfbdc1c1f9dc546a67c1e6637fdb6fced24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a131e06b17ca3cdaf7a71ed56568f3c13682e95de0f7cc268a69aefadcd1d9ea"
   end
 
   depends_on "node"
+
+  uses_from_macos "ruby"
 
   def install
     system "npm", "install", *std_npm_args

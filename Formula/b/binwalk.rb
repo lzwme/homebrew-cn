@@ -25,6 +25,8 @@ class Binwalk < Formula
   depends_on "p7zip"
   depends_on "xz"
 
+  uses_from_macos "bzip2"
+
   on_linux do
     depends_on "fontconfig"
     depends_on "freetype"

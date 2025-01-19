@@ -17,7 +17,7 @@ class HopenpgpTools < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.8" => :build
+  depends_on "ghc@9.10" => :build
   depends_on "pkgconf" => :build
   depends_on "gnupg" => :test
   depends_on "nettle"
@@ -41,8 +41,13 @@ class HopenpgpTools < Formula
     (buildpath"cabal.project.local").write "packages: . ixset-typed"
     (buildpath"ixset-typed").install resource("ixset-typed")
 
+    # Workaround to build with GHC 9.10. `data-functor-logistic` is a
+    # dependency of `rank2classes` which uses the same workaround.
+    # Ref: https:github.comblamariogrampablobmastercabal.project#L6
+    args = ["--allow-newer=data-functor-logistic:base"]
+
     system "cabal", "v2-update"
-    system "cabal", "v2-install", *std_cabal_v2_args
+    system "cabal", "v2-install", *args, *std_cabal_v2_args
   end
 
   test do

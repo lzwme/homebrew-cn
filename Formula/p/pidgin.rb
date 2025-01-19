@@ -1,10 +1,47 @@
 class Pidgin < Formula
   desc "Multi-protocol chat client"
   homepage "https:pidgin.im"
-  url "https:downloads.sourceforge.netprojectpidginPidgin2.14.13pidgin-2.14.13.tar.bz2"
-  sha256 "120049dc8e17e09a2a7d256aff2191ff8491abb840c8c7eb319a161e2df16ba8"
   license "GPL-2.0-or-later"
   revision 1
+
+  stable do
+    url "https:downloads.sourceforge.netprojectpidginPidgin2.14.13pidgin-2.14.13.tar.bz2"
+    sha256 "120049dc8e17e09a2a7d256aff2191ff8491abb840c8c7eb319a161e2df16ba8"
+
+    depends_on "intltool" => :build
+    depends_on "at-spi2-core"
+    depends_on "gnutls"
+    depends_on "gtk+"
+    depends_on "libgcrypt"
+    depends_on "libgnt"
+    depends_on "libotr"
+    depends_on "ncurses" # due to `libgnt`
+
+    uses_from_macos "cyrus-sasl"
+    uses_from_macos "expat"
+    uses_from_macos "perl"
+    uses_from_macos "tcl-tk"
+
+    on_macos do
+      depends_on "harfbuzz"
+      depends_on "libgpg-error"
+    end
+
+    on_linux do
+      depends_on "perl-xml-parser" => :build
+      depends_on "libice"
+      depends_on "libsm"
+      depends_on "libx11"
+      depends_on "libxscrnsaver"
+    end
+
+    # Finch has an equal port called purple-otr but it is a NIGHTMARE to compile
+    # If you want to fix this and create a PR on Homebrew please do so.
+    resource "pidgin-otr" do
+      url "https:otr.cypherpunks.capidgin-otr-4.0.2.tar.gz"
+      sha256 "f4b59eef4a94b1d29dbe0c106dd00cdc630e47f18619fc754e5afbf5724ebac4"
+    end
+  end
 
   livecheck do
     url "https:sourceforge.netprojectspidginfilesPidgin"
@@ -20,52 +57,48 @@ class Pidgin < Formula
     sha256 x86_64_linux:  "71e0c8873098b5a1bca073c324da03a5848f3fd8d96100afa854f7c4c608d363"
   end
 
-  depends_on "intltool" => :build
+  head do
+    url "https:keep.imfreedom.orgpidginpidgin", branch: "default", using: :hg
+
+    depends_on "gobject-introspection" => :build
+    depends_on "gstreamer" => :build
+    depends_on "mercurial" => :build
+    depends_on "meson" => :build
+    depends_on "ninja" => :build
+
+    depends_on "gplugin"
+    depends_on "gtk4"
+    depends_on "json-glib"
+    depends_on "libadwaita"
+    depends_on "libsoup"
+    depends_on "sqlite"
+  end
+
+  depends_on "gettext" => :build
   depends_on "pkgconf" => :build
-  depends_on "at-spi2-core"
   depends_on "cairo"
   depends_on "gdk-pixbuf"
   depends_on "glib"
-  depends_on "gnutls"
-  depends_on "gtk+"
-  depends_on "libgcrypt"
-  depends_on "libgnt"
   depends_on "libidn"
-  depends_on "libotr"
-  depends_on "ncurses" # due to `libgnt`
   depends_on "pango"
 
-  uses_from_macos "cyrus-sasl"
-  uses_from_macos "expat"
   uses_from_macos "libxml2"
-  uses_from_macos "perl"
-  uses_from_macos "tcl-tk"
 
   on_macos do
     depends_on "gettext"
-    depends_on "harfbuzz"
-    depends_on "libgpg-error"
-  end
-
-  on_linux do
-    depends_on "gettext" => :build
-    depends_on "perl-xml-parser" => :build
-    depends_on "libice"
-    depends_on "libsm"
-    depends_on "libx11"
-    depends_on "libxscrnsaver"
-  end
-
-  # Finch has an equal port called purple-otr but it is a NIGHTMARE to compile
-  # If you want to fix this and create a PR on Homebrew please do so.
-  resource "pidgin-otr" do
-    url "https:otr.cypherpunks.capidgin-otr-4.0.2.tar.gz"
-    sha256 "f4b59eef4a94b1d29dbe0c106dd00cdc630e47f18619fc754e5afbf5724ebac4"
   end
 
   def install
+    if build.head?
+      # TODO: Patch pidgin to read plugins from HOMEBREW_PREFIX similar to stable build
+      ENV["DESTDIR"] = ""
+      system "meson", "setup", "build", "--force-fallback-for=birb,hasl,ibis,xeme", *std_meson_args
+      system "meson", "compile", "-C", "build", "--verbose"
+      system "meson", "install", "-C", "build"
+      return
+    end
+
     unless OS.mac?
-      ENV.prepend_path "PERL5LIB", Formula["perl-xml-parser"].libexec"libperl5"
       # Fix linkage error due to RPATH missing directory with libperl.so
       perl = DevelopmentTools.locate("perl")
       perl_archlib = Utils.safe_popen_read(perl.to_s, "-MConfig", "-e", "print $Config{archlib}")
@@ -122,6 +155,10 @@ class Pidgin < Formula
       system ".configure", "--prefix=#{prefix}", "--mandir=#{man}"
       system "make", "install"
     end
+  end
+
+  def post_install
+    system Formula["glib"].opt_bin"glib-compile-schemas", HOMEBREW_PREFIX"shareglib-2.0schemas" if build.head?
   end
 
   test do

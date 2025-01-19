@@ -1,6 +1,6 @@
 cask "cakebrewjs" do
-  version "2.67"
-  sha256 "baa5ff7636f84ec03675067426fe34442ca1034db55d0406f31a1e56a5d54acb"
+  version "2.72"
+  sha256 "4bd9844703e19db55b266445c315ad31687f51245d8f556aff7a750f117713ce"
 
   url "https://downloads.sourceforge.net/cakebrewjs/cakebrewjs-#{version}-Darwin.dmg"
   name "cakebrewjs"

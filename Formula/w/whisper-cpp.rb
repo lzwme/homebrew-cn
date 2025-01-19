@@ -33,7 +33,6 @@ class WhisperCpp < Formula
       -DWHISPER_BUILD_TESTS=OFF
       -DWHISPER_BUILD_SERVER=OFF
     ]
-    args << "-DLLAMA_METAL_MACOSX_VERSION_MIN=#{MacOS.version}" if OS.mac?
 
     # avoid installing libggml libraries to "lib" since they would conflict with llama.cpp
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args(install_libdir: "libinternal")
@@ -43,13 +42,12 @@ class WhisperCpp < Formula
     rm_r include
 
     # for backward compatibility with existing installs
-    (bin"whisper-cpp").write <<~EOS
+    (bin"whisper-cpp").write <<~SHELL
       #!binbash
       here="${BASH_SOURCE[0]}"
       echo "${BASH_SOURCE[0]}: warning: whisper-cpp is deprecated. Use whisper-cli instead." >&2
       exec "$(dirname "$here")whisper-cli" "$@"
-    EOS
-    (bin"whisper-cpp").chmod 0755
+    SHELL
 
     pkgshare.install "modelsfor-tests-ggml-tiny.bin", "samplesjfk.wav"
   end
@@ -65,7 +63,8 @@ class WhisperCpp < Formula
   end
 
   test do
-    system bin"whisper-cpp", "-m", pkgshare"for-tests-ggml-tiny.bin", pkgshare"jfk.wav"
-    assert_equal 0, $CHILD_STATUS.exitstatus, "whisper-cpp failed with exit code #{$CHILD_STATUS.exitstatus}"
+    model = pkgshare"for-tests-ggml-tiny.bin"
+    output = shell_output("#{bin}whisper-cli --model #{model} #{pkgshare}jfk.wav 2>&1")
+    assert_match "processing '#{pkgshare}jfk.wav' (176000 samples, 11.0 sec)", output
   end
 end

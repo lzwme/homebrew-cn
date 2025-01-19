@@ -3,18 +3,17 @@ class Gupnp < Formula
 
   desc "Framework for creating UPnP devices and control points"
   homepage "https://wiki.gnome.org/Projects/GUPnP"
-  url "https://download.gnome.org/sources/gupnp/1.6/gupnp-1.6.7.tar.xz"
-  sha256 "4a61d8a5a8a7270e60ce9cfe9661cc4fa326f045a65718d2eb8ff68afdbef805"
+  url "https://download.gnome.org/sources/gupnp/1.6/gupnp-1.6.8.tar.xz"
+  sha256 "70a003cebd68577293fb3e6af49ff902203bf8768b2fc5d651ddc1f0fa1e11e9"
   license "LGPL-2.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_sequoia: "8c18a95efa27ee27156418c2d9a99a8ce4206e06ff3a9ccc4206843f30d90f9a"
-    sha256 cellar: :any, arm64_sonoma:  "9653aa3dddd82aaf175c4e543befdc12f21ce93f920fdbfcc7302fc5e23ca88c"
-    sha256 cellar: :any, arm64_ventura: "e0bc178339fa428d98ec257e561165a2794e11144a591eb13a54d321e44168db"
-    sha256 cellar: :any, sonoma:        "a83e95325c0fcdaaca81451aa20079dd11a348119555462eea2a62fa16e74afb"
-    sha256 cellar: :any, ventura:       "9859c15edf1e93b81d7f17e524ddf6fd418701c83cdb0afa3da712f1ad4545ed"
-    sha256               x86_64_linux:  "b8960e8b3d647fdd3c52312731e2e7f6934ae97807f76631036ad32a45272d5a"
+    sha256 cellar: :any, arm64_sequoia: "0d73be784e10b682d081fa15b4779f54cf372468c0ae538d9d1468a135ca460b"
+    sha256 cellar: :any, arm64_sonoma:  "c2e208114785c8a6891e62c0372c90a44879f1f03551cf7ea0948acf39aca197"
+    sha256 cellar: :any, arm64_ventura: "daf4ba3e00e3c0931a340c6dd4259840deeb0ca477d3f055a48ed517ddf14a25"
+    sha256 cellar: :any, sonoma:        "666d7700b2ad4fb6ef4811186eb2b82fce1029e990bb7fecfec1f680c72eb08e"
+    sha256 cellar: :any, ventura:       "d73e698c784354e7dcefedda8057a17d3fe4d5274ffc0ce96cce07b441639a12"
+    sha256               x86_64_linux:  "6f3b4dbadddd74af18147095bf99055d590bfe0ffce1eca0a4cce2aaf261abb1"
   end
 
   depends_on "docbook-xsl" => :build

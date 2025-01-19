@@ -241,6 +241,7 @@ Homebrew-homebrew-core/Formula/a/ascii2binary.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/asciidoc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asciidoctor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asciidoctorj.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/asciigen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asciinema.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asciiquarium.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/asciitex.rb, Homebrew/homebrew-core, 0
@@ -1765,6 +1766,7 @@ Homebrew-homebrew-core/Formula/f/fanyi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fast_float.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastapi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fastbit.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fastbuild.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastfec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastfetch.rb, Homebrew/homebrew-core, 1
@@ -3527,6 +3529,7 @@ Homebrew-homebrew-core/Formula/lib/libcmph.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libcoap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libconfig.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libconfini.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libcotp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libcouchbase.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libcouchbase@2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libcpuid.rb, Homebrew/homebrew-core, 1
@@ -5020,6 +5023,7 @@ Homebrew-homebrew-core/Formula/p/pelikan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/perceptualdiff.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/percol.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/percona-server.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/percona-server@8.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/percona-toolkit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/percona-xtrabackup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/percona-xtrabackup@8.0.rb, Homebrew/homebrew-core, 1
@@ -7319,6 +7323,7 @@ Homebrew-homebrew-core/Formula/z/zf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zfind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zig.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zigmod.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/z/zigup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zile.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zimg.rb, Homebrew/homebrew-core, 1
@@ -7367,7 +7372,7 @@ Homebrew-homebrew-core/Formula/z/zsh-syntax-highlighting.rb, Homebrew/homebrew-c
 Homebrew-homebrew-core/Formula/z/zsh-system-clipboard.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zsh-vi-mode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zsh-you-should-use.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/z/zsh.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/z/zsh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zshdb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zssh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zstd.rb, Homebrew/homebrew-core, 1
@@ -8877,6 +8882,7 @@ Homebrew-homebrew-cask/Casks/font/font-0/font-0xproto-nerd-font.rb, Homebrew/hom
 Homebrew-homebrew-cask/Casks/font/font-0/font-0xproto.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-3/font-3270-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-3/font-3270.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-4/font-42dot-sans.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-4/font-437-plus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-abeezee.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-abel.rb, Homebrew/homebrew-cask, 1
@@ -9997,6 +10003,7 @@ Homebrew-homebrew-cask/Casks/font/font-l/font-linefont.rb, Homebrew/homebrew-cas
 Homebrew-homebrew-cask/Casks/font/font-l/font-linux-biolinum.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-l/font-linux-libertine.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-l/font-lisu-bosa.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-l/font-liter.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-literata.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-liu-jian-mao-cao.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-livvic.rb, Homebrew/homebrew-cask, 1
@@ -10604,6 +10611,7 @@ Homebrew-homebrew-cask/Casks/font/font-p/font-pigmo00.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/font/font-p/font-pigmo01.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-p/font-pinyon-script.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-pirata-one.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-p/font-pixel-code.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-pixelify-sans.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-plangothic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-plaster.rb, Homebrew/homebrew-cask, 1

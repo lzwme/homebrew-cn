@@ -1,9 +1,10 @@
 class Catch2 < Formula
-  desc "Modern, C++-native, header-only, test framework"
+  desc "Modern, C++-native, test framework"
   homepage "https:github.comcatchorgCatch2"
   url "https:github.comcatchorgCatch2archiverefstagsv3.8.0.tar.gz"
   sha256 "1ab2de20460d4641553addfdfe6acd4109d871d5531f8f519a52ea4926303087"
   license "BSL-1.0"
+  head "https:github.comcatchorgCatch2.git", branch: "devel"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "591ec46514fc1c4e1934b8be1e8592d376864ae7a9f1a0de46c266795b6b98af"

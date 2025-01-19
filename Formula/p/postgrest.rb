@@ -1,8 +1,8 @@
 class Postgrest < Formula
   desc "Serves a fully RESTful API from any existing PostgreSQL database"
   homepage "https:github.comPostgRESTpostgrest"
-  url "https:github.comPostgRESTpostgrestarchiverefstagsv12.2.3.tar.gz"
-  sha256 "52b814cb9255c43d7f59f3be50336ae761e103c7c9b083dc4833d2579dd2abcf"
+  url "https:github.comPostgRESTpostgrestarchiverefstagsv12.2.4.tar.gz"
+  sha256 "c83ebb120eb97d133d9692cd4dd40780029dbff1950c4c4227198ceb5cf6deff"
   license "MIT"
   head "https:github.comPostgRESTpostgrest.git", branch: "main"
 
@@ -12,14 +12,12 @@ class Postgrest < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "eba1e995f952f401c16c7ea727555c2cde35fb099639c3692de26fa6ca2b0ede"
-    sha256 cellar: :any,                 arm64_sonoma:   "68a1b201a0396ca4a9332f68f4a1a039c4239e984dbdd23558778809686237cf"
-    sha256 cellar: :any,                 arm64_ventura:  "73a1a4b53994141d9a64eac3fccc2d174dd899c5ce1c1140b11840929b9ddc25"
-    sha256 cellar: :any,                 arm64_monterey: "d4da709edbc6a334700db58c596495f19690486095c109d175d694346b1c3efc"
-    sha256 cellar: :any,                 sonoma:         "3f8f1332d9b871f608427b742e9d41384a829f21b34bdf1a71a05da6067f8c1e"
-    sha256 cellar: :any,                 ventura:        "24e0aa645cdb647163b94695315dd0cd93d172aed47159caf43e818dee8649a2"
-    sha256 cellar: :any,                 monterey:       "9bc1e3654ec2c4792ca13434f6551af3233d5121db50e1bdfe70c559a041cf5e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "859074efdeb538c72381300a6a9c9e0454fd0927ef4205dbde0ca6bc69cd60b8"
+    sha256 cellar: :any,                 arm64_sequoia: "41fde79e35163d6aa8b7b7a63088564cfc9c7c040dd63524b8ab37e8cfd308b8"
+    sha256 cellar: :any,                 arm64_sonoma:  "5a433b93b413dad693ad729a169dd380781f39586643bdf0ff6e827a92547e08"
+    sha256 cellar: :any,                 arm64_ventura: "1bc7a589b2c890806cf696bed2992eb599b764a687daadbe4b663feb531d46e6"
+    sha256 cellar: :any,                 sonoma:        "1631b65a7ec86bc0fbe7513058ef9bda7425b861f3a0ea9601ec211d49fed5b8"
+    sha256 cellar: :any,                 ventura:       "822b6763e19def87694156a8a92dd6fadaefdfd9daa3e09a02c708d674bf92a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50216bcbb953d5331b04cb40c67587bb5744e61df0d613ad59f4a80d69434684"
   end
 
   depends_on "cabal-install" => :build

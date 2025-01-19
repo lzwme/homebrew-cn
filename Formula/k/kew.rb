@@ -1,18 +1,18 @@
 class Kew < Formula
   desc "Command-line music player"
   homepage "https:github.comravacholkew"
-  url "https:github.comravacholkewarchiverefstagsv3.0.2.tar.gz"
-  sha256 "18ec74dc02c3017923ff16d209e5825ce818177d6b2b8b698ab487016eaccb7b"
+  url "https:github.comravacholkewarchiverefstagsv3.0.3.tar.gz"
+  sha256 "fac446e2c78b6341dff46a88767dd0b9f75a4b2b60e03fc0623b09aa28ec5bba"
   license "GPL-2.0-only"
   head "https:github.comravacholkew.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e37f23746bce83100d3e22d23477f45cd8569cdc1569506b8e0ac93336df6d15"
-    sha256 cellar: :any,                 arm64_sonoma:  "e9119f2c17be4615004681a42cbc80dc979b94f0afb07ced29cc07e53df97fb0"
-    sha256 cellar: :any,                 arm64_ventura: "3c39d169dc5be0428d3629b363820ecf9c2efc9a0d897f670ea7fe3f4467a84f"
-    sha256 cellar: :any,                 sonoma:        "286ff1523960c83c723d07cae536eae7275c906706f201977b0c93e37da140e1"
-    sha256 cellar: :any,                 ventura:       "f57c7947c783edb6b55474e42e27a322dd68e3bc0d6309730c5248f8c90b075a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97d806c1d2b3894dae581c7fbcc18487058d2934fa7ac519df4df40d63908753"
+    sha256 cellar: :any,                 arm64_sequoia: "4e4be42aa4620ace00caa1f3b3865d5c87c56ba063fa1d6729be8333d55a22a0"
+    sha256 cellar: :any,                 arm64_sonoma:  "fd6f2dca29cb1305aa4313f2d93df4be26747ca9bc2850154a186e4c605e7137"
+    sha256 cellar: :any,                 arm64_ventura: "2e84bd91e5cb5b0d79d39f45d271398854d32fc6b231a9c10a89ccc07622eb02"
+    sha256 cellar: :any,                 sonoma:        "aa5ed55a172dfca5ddc5623c23a4c2acc8e8fff944e67c55434ac91950cb9158"
+    sha256 cellar: :any,                 ventura:       "01b423a432cf7f30192fdf0c24334a6aac0da4ef4c7b0a1f4bbe4d0c95ca89ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1b566987f3414fc73bac5c130d52094bc419aabea6c63bd57f119c700f0a811"
   end
 
   depends_on "pkgconf" => :build

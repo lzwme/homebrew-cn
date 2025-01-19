@@ -6,22 +6,37 @@ class GitWorkspace < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "aca4615cfa66778ae5a83c844d9fe1952d7de360694b68623ec46379b8b4ca2e"
-    sha256 cellar: :any,                 arm64_sonoma:  "f12db6ccd51a5f0ec5d15daac7628e238b96686dde7e770411183ed6868e90aa"
-    sha256 cellar: :any,                 arm64_ventura: "2738201a322b30e61be60ff97f4bbbdd3a8f6cbe3bfa20a1fe5865c8b4e3563a"
-    sha256 cellar: :any,                 sonoma:        "9206846d477b1a921ea76ccb71977e356d265ef639d46aaeda0ba243b8fab6ff"
-    sha256 cellar: :any,                 ventura:       "ef8f8e6fdf09e75d75e1193cb548f796c05769a68b528a45ba21498f5e1035e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed2e0ab62b3ce2e7a6f1a71bedf3c994aab673901ff5cede97f2a0a0bffabc9f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "9e68614e31ed33fb7426fbe05bb570d6fef5c156bc78a19c483e9962c5da2297"
+    sha256 cellar: :any,                 arm64_sonoma:  "faf1482a2590678aa304276e8289eec0c1b29b1d255e1448625e7750b7c5b160"
+    sha256 cellar: :any,                 arm64_ventura: "499f183b650efc68eb9b6cd71535995996d3cbf0a4e6e514fc3e1ce435b1a5d9"
+    sha256 cellar: :any,                 sonoma:        "21ed41579cc1a10a68ede6d9c826f547b0907bfb9b412b6ba9ae936cc1aa541f"
+    sha256 cellar: :any,                 ventura:       "83521f5a7cb8977584dc9b4d666070fc53034a532fa4b5cfb3e21a0f2315a225"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff145909e4bca229a0f1e7eb91f3225f0a113f1c3db32c0f7a96c5455098f8f6"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "libgit2"
+  depends_on "libssh2"
   depends_on "openssl@3"
 
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
+    ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
+    # Ensure the correct `openssl` will be picked up.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
+
     system "cargo", "install", *std_cargo_args
+  end
+
+  def check_binary_linkage(binary, library)
+    binary.dynamically_linked_libraries.any? do |dll|
+      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
+
+      File.realpath(dll) == File.realpath(library)
+    end
   end
 
   test do
@@ -32,12 +47,15 @@ class GitWorkspace < Formula
     output = shell_output("#{bin}git-workspace update 2>&1", 1)
     assert_match "Error fetching repositories from Github userorg foo", output
 
-    linkage_with_libgit2 = (bin"git-workspace").dynamically_linked_libraries.any? do |dll|
-      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
-
-      File.realpath(dll) == (Formula["libgit2"].opt_libshared_library("libgit2")).realpath.to_s
+    linked_libraries = [
+      Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["libssh2"].opt_libshared_library("libssh2"),
+      Formula["openssl@3"].opt_libshared_library("libssl"),
+    ]
+    linked_libraries << (Formula["openssl@3"].opt_libshared_library("libcrypto")) if OS.mac?
+    linked_libraries.each do |library|
+      assert check_binary_linkage(bin"git-workspace", library),
+             "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
-
-    assert linkage_with_libgit2, "No linkage with libgit2! Cargo is likely using a vendored version."
   end
 end

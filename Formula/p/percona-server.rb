@@ -1,13 +1,12 @@
 class PerconaServer < Formula
   desc "Drop-in MySQL replacement"
   homepage "https:www.percona.com"
-  url "https:downloads.percona.comdownloadsPercona-Server-8.0Percona-Server-8.0.36-28sourcetarballpercona-server-8.0.36-28.tar.gz"
-  sha256 "8a4b44bd9cf79a38e6275e8f5f9d4e8d2c308854b71fd5bf5d1728fff43a6844"
+  url "https:downloads.percona.comdownloadsPercona-Server-8.4Percona-Server-8.4.3-3sourcetarballpercona-server-8.4.3-3.tar.gz"
+  sha256 "dfb5b46fccd8284ad3a09054f9a62d0a6423a2b703b6fb86d186cec09cee660a"
   license "BSD-3-Clause"
-  revision 6
 
   livecheck do
-    url "https:docs.percona.compercona-serverlatest"
+    url "https:docs.percona.compercona-server#{version.major_minor}"
     regex(href=.*?v?(\d+(?:[.-]\d+)+)\.htmli)
     strategy :page_match do |page, regex|
       page.scan(regex).map do |match|
@@ -19,12 +18,12 @@ class PerconaServer < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "7c456f1f1415322cdb5f79dd56733ae4992fff109e7d1f7880b09ca88503d032"
-    sha256 arm64_sonoma:  "3782d7bf2f6b76ed88df11b66a3e91079c3c5871b298437bc3ac8a2ab6d0fc6c"
-    sha256 arm64_ventura: "1789387d1bff059bac32c7e2d8c912ff4a03b28aeefbf53845e2b8b18a3969f2"
-    sha256 sonoma:        "bbb07a26cb305c9ff6319d8d8ff8270f665e1e166fa63708dc2ef40badc04be0"
-    sha256 ventura:       "40049e14f51428d0f7e92a58d8456e698d8750dd8dd6587cdaaed813048b2944"
-    sha256 x86_64_linux:  "aed371c8cd1999e1af8a3a208bfcb4ddab0d9263ce75f966489dc1c08a927398"
+    sha256 arm64_sequoia: "178d82b3db05a5a7b18d56b3543ca414f8cd39ef81686d3f0b5a22ac6dfa6a7c"
+    sha256 arm64_sonoma:  "102326c938c21077c25a4ccb0e5a86498383d7df20c6ead4511074db8d1ab3a3"
+    sha256 arm64_ventura: "23ca1f5ec39d9c376940923114c2507dfd9d21a294d813f8166944662706902d"
+    sha256 sonoma:        "83f27ea31aec5bfa2135b5cbe052aab9980e0d5aa3466e5f5ecec6f9bfc2e6a4"
+    sha256 ventura:       "bbdc26a2ae63bbaa76f643f28b093db94c60317bf6fa94b961c763959253be6d"
+    sha256 x86_64_linux:  "4c36de24fb32225376a5d306a4c5ef76fe5f0cda206b88aea17552d3901fcafa"
   end
 
   depends_on "bison" => :build
@@ -32,7 +31,6 @@ class PerconaServer < Formula
   depends_on "pkgconf" => :build
   depends_on "abseil"
   depends_on "icu4c@76"
-  depends_on "libevent"
   depends_on "libfido2"
   depends_on "lz4"
   depends_on "openldap" # Needs `ldap_set_urllist_proc`, not provided by LDAP.framework
@@ -49,44 +47,38 @@ class PerconaServer < Formula
   on_linux do
     depends_on "patchelf" => :build
     depends_on "libtirpc"
-    depends_on "readline"
   end
 
   conflicts_with "mariadb", "mysql", because: "percona, mariadb, and mysql install the same binaries"
 
-  # https:bugs.mysql.combug.php?id=86711
-  # https:github.comHomebrewhomebrew-corepull20538
+  # https:github.comperconapercona-serverblob8.4cmakeosDarwin.cmake
   fails_with :clang do
-    build 800
-    cause "Wrong inlining with Clang 8.0, see MySQL Bug #86711"
+    build 999
+    cause "Requires Apple Clang 10.0 or newer"
   end
 
-  # https:github.comperconapercona-serverblobPercona-Server-#{version}cmakeboost.cmake
-  resource "boost" do
-    url "https:downloads.sourceforge.netprojectboostboost1.77.0boost_1_77_0.tar.bz2"
-    sha256 "fc9f85fc030e233142908241af7a846e60630aa7388de9a5fafb1f3a26840854"
-  end
-
-  # Backport support for newer Protobuf. Remove with 8.0.39  8.4.2
-  patch do
-    url "https:github.comperconapercona-servercommit089c011f8e2a865e4bd97715653b4bc0973c43a1.patch?full_index=1"
-    sha256 "aac166f579e636923abeb86cc89934efaf0185df35355aab2d08192d9bf9efd8"
-  end
-  # Backport support for Protobuf 22+ on Linux. Remove with 8.0.40  8.4.3
-  patch do
-    url "https:github.commysqlmysql-servercommit269abc0409b22bb87ec88bd4d53dfb7a1403eace.patch?full_index=1"
-    sha256 "ffcee32804e7e1237907432adb3590fcbf30c625eea836df6760c05a312a84e1"
+  # https:github.comperconapercona-serverblob8.4cmakeosLinux.cmake
+  fails_with :gcc do
+    version "9"
+    cause "Requires GCC 10 or newer"
   end
 
   # Patch out check for Homebrew `boost`.
   # This should not be necessary when building inside `brew`.
   # https:github.comHomebrewhomebrew-test-botpull820
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches030f7433e89376ffcff836bb68b3903ab90f9cdcmysqlboost-check.patch"
-    sha256 "af27e4b82c84f958f91404a9661e999ccd1742f57853978d8baec2f993b51153"
+  patch :DATA
+
+  def datadir
+    var"mysql"
   end
 
   def install
+    # Remove bundled libraries other than explicitly allowed below.
+    # `boost` and `rapidjson` must use bundled copy due to patches.
+    # `lz4` is still needed due to xxhash.c used by mysqlgcs
+    keep = %w[boost coredumper duktape libbacktrace libcno libkmip lz4 opensslpp rapidjson unordered_dense]
+    (buildpath"extra").each_child { |dir| rm_r(dir) unless keep.include?(dir.basename.to_s) }
+
     # Find Homebrew OpenLDAP instead of the macOS framework
     inreplace "cmakeldap.cmake", "NAMES ldap_r ldap", "NAMES ldap"
 
@@ -98,6 +90,8 @@ class PerconaServer < Formula
     # Disable ABI checking
     inreplace "cmakeabi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0" if OS.linux?
 
+    icu4c = deps.find { |dep| dep.name.match?(^icu4c(@\d+)?$) }
+                .to_formula
     # -DINSTALL_* are relative to `CMAKE_INSTALL_PREFIX` (`prefix`)
     args = %W[
       -DCOMPILATION_COMMENT=Homebrew
@@ -109,44 +103,32 @@ class PerconaServer < Formula
       -DINSTALL_MANDIR=shareman
       -DINSTALL_MYSQLSHAREDIR=sharemysql
       -DINSTALL_PLUGINDIR=libpercona-serverplugin
-      -DMYSQL_DATADIR=#{var}mysql
+      -DMYSQL_DATADIR=#{datadir}
       -DSYSCONFDIR=#{etc}
-      -DWITH_EMBEDDED_SERVER=ON
-      -DWITH_INNODB_MEMCACHED=ON
-      -DWITH_UNIT_TESTS=OFF
+      -DBISON_EXECUTABLE=#{Formula["bison"].opt_bin}bison
+      -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
+      -DWITH_ICU=#{icu4c.opt_prefix}
       -DWITH_SYSTEM_LIBS=ON
       -DWITH_EDITLINE=system
       -DWITH_FIDO=system
-      -DWITH_ICU=system
-      -DWITH_LIBEVENT=system
       -DWITH_LZ4=system
       -DWITH_PROTOBUF=system
       -DWITH_SSL=system
-      -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
       -DWITH_ZLIB=system
       -DWITH_ZSTD=system
+      -DWITH_UNIT_TESTS=OFF
+      -DROCKSDB_BUILD_ARCH=#{ENV.effective_arch}
     ]
-
-    # MySQL >5.7.x mandates Boost as a requirement to build & has a strict
-    # version check in place to ensure it only builds against expected release.
-    # This is problematic when Boost releases don't align with MySQL releases.
-    (buildpath"boost").install resource("boost")
-    args << "-DWITH_BOOST=#{buildpath}boost"
-
-    # Percona MyRocks does not compile on macOS
-    # https:bugs.launchpad.netpercona-server+bug1741639
-    args << "-DWITHOUT_ROCKSDB=1"
-
-    # TokuDB does not compile on macOS
-    # https:bugs.launchpad.netpercona-server+bug1531446
-    args << "-DWITHOUT_TOKUDB=1"
+    args << "-DROCKSDB_DISABLE_AVX2=ON" if build.bottle?
+    args << "-DALLOW_NO_SSE42=ON" if Hardware::CPU.intel? && (!OS.mac? || !MacOS.version.requires_sse42?)
+    args << "-DWITH_KERBEROS=system" unless OS.mac?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    (prefix"mysql-test").cd do
-      test_args = ["--vardir=#{Dir.mktmpdir}"]
+    cd prefix"mysql-test" do
+      test_args = ["--vardir=#{buildpath}mysql-test-vardir"]
       # For Linux, disable failing on warning: "Setting thread 31563 nice to 0 failed"
       # Docker containers lack CAP_SYS_NICE capability by default.
       test_args << "--nowarnings" if OS.linux?
@@ -157,18 +139,19 @@ class PerconaServer < Formula
     rm_r(prefix"mysql-test")
 
     # Fix up the control script and link into bin.
-    inreplace "#{prefix}support-filesmysql.server",
+    inreplace prefix"support-filesmysql.server",
               ^(PATH=".*)("),
               "\\1:#{HOMEBREW_PREFIX}bin\\2"
     bin.install_symlink prefix"support-filesmysql.server"
 
     # Install my.cnf that binds to 127.0.0.1 by default
-    (buildpath"my.cnf").write <<~EOS
+    (buildpath"my.cnf").write <<~INI
       # Default Homebrew MySQL server config
       [mysqld]
       # Only allow connections from localhost
       bind-address = 127.0.0.1
-    EOS
+      mysqlx-bind-address = 127.0.0.1
+    INI
     etc.install "my.cnf"
   end
 
@@ -179,10 +162,10 @@ class PerconaServer < Formula
     # Don't initialize database, it clashes when testing other MySQL-like implementations.
     return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    unless (var"mysqlmysqluser.frm").exist?
+    unless (datadir"mysqlgeneral_log.CSM").exist?
       ENV["TMPDIR"] = nil
       system bin"mysqld", "--initialize-insecure", "--user=#{ENV["USER"]}",
-        "--basedir=#{prefix}", "--datadir=#{var}mysql", "--tmpdir=tmp"
+                           "--basedir=#{prefix}", "--datadir=#{datadir}", "--tmpdir=tmp"
     end
   end
 
@@ -190,12 +173,15 @@ class PerconaServer < Formula
     s = <<~EOS
       We've installed your MySQL database without a root password. To secure it run:
           mysql_secure_installation
+
       MySQL is configured to only allow connections from localhost by default
+
       To connect run:
-          mysql -uroot
+          mysql -u root
     EOS
     if (my_cnf = ["etcmy.cnf", "etcmysqlmy.cnf"].find { |x| File.exist? x })
       s += <<~EOS
+
         A "#{my_cnf}" from another install may interfere with a Homebrew-built
         server starting up correctly.
       EOS
@@ -212,16 +198,73 @@ class PerconaServer < Formula
   test do
     (testpath"mysql").mkpath
     (testpath"tmp").mkpath
-    system bin"mysqld", "--no-defaults", "--initialize-insecure", "--user=#{ENV["USER"]}",
-      "--basedir=#{prefix}", "--datadir=#{testpath}mysql", "--tmpdir=#{testpath}tmp"
+
     port = free_port
-    fork do
-      system bin"mysqld", "--no-defaults", "--user=#{ENV["USER"]}",
-        "--datadir=#{testpath}mysql", "--port=#{port}", "--tmpdir=#{testpath}tmp"
+    socket = testpath"mysql.sock"
+    mysqld_args = %W[
+      --no-defaults
+      --mysqlx=OFF
+      --user=#{ENV["USER"]}
+      --port=#{port}
+      --socket=#{socket}
+      --basedir=#{prefix}
+      --datadir=#{testpath}mysql
+      --tmpdir=#{testpath}tmp
+    ]
+    client_args = %W[
+      --port=#{port}
+      --socket=#{socket}
+      --user=root
+      --password=
+    ]
+
+    system bin"mysqld", *mysqld_args, "--initialize-insecure"
+    pid = spawn(bin"mysqld", *mysqld_args)
+    begin
+      sleep 5
+      output = shell_output("#{bin}mysql #{client_args.join(" ")} --execute='show databases;'")
+      assert_match "information_schema", output
+    ensure
+      system bin"mysqladmin", *client_args, "shutdown"
+      Process.kill "TERM", pid
     end
-    sleep 5
-    assert_match "information_schema",
-      shell_output("#{bin}mysql --port=#{port} --user=root --password= --execute='show databases;'")
-    system bin"mysqladmin", "--port=#{port}", "--user=root", "--password=", "shutdown"
   end
 end
+
+__END__
+diff --git aCMakeLists.txt bCMakeLists.txt
+index 438dff720c5..47863c17e23 100644
+--- aCMakeLists.txt
++++ bCMakeLists.txt
+@@ -1948,31 +1948,6 @@ MYSQL_CHECK_RAPIDJSON()
+ MYSQL_CHECK_FIDO()
+ MYSQL_CHECK_FIDO_DLLS()
+
+-IF(APPLE)
+-  GET_FILENAME_COMPONENT(HOMEBREW_BASE ${HOMEBREW_HOME} DIRECTORY)
+-  IF(EXISTS ${HOMEBREW_BASE}includeboost)
+-    FOREACH(SYSTEM_LIB ICU LZ4 PROTOBUF ZSTD FIDO)
+-      IF(WITH_${SYSTEM_LIB} STREQUAL "system")
+-        MESSAGE(FATAL_ERROR
+-          "WITH_${SYSTEM_LIB}=system is not compatible with Homebrew boost\n"
+-          "MySQL depends on ${BOOST_PACKAGE_NAME} with a set of patches.\n"
+-          "Including headers from ${HOMEBREW_BASE}include "
+-          "will break the build.\n"
+-          "Please use WITH_${SYSTEM_LIB}=bundled\n"
+-          "or do 'brew uninstall boost' or 'brew unlink boost'"
+-          )
+-      ENDIF()
+-    ENDFOREACH()
+-  ENDIF()
+-  # Ensure that we look in usrlocalinclude or opthomebrewinclude
+-  FOREACH(SYSTEM_LIB ICU LZ4 PROTOBUF ZSTD FIDO)
+-    IF(WITH_${SYSTEM_LIB} STREQUAL "system")
+-      INCLUDE_DIRECTORIES(SYSTEM ${HOMEBREW_BASE}include)
+-      BREAK()
+-    ENDIF()
+-  ENDFOREACH()
+-ENDIF()
+-
+ IF(WITH_AUTHENTICATION_WEBAUTHN OR
+   WITH_AUTHENTICATION_CLIENT_PLUGINS)
+   IF(WITH_FIDO STREQUAL "system" AND

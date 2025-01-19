@@ -8,18 +8,22 @@ class Jj < Formula
   head "https:github.commartinvonzjj.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e3a956a8e62358766302d59d592f6555fe9a97173c1dd9143534172ff6ba0e9f"
-    sha256 cellar: :any,                 arm64_sonoma:  "420d66af2270b1c3c5f6fae781537ebd0dbacd0d61f5cdd8ed6db77ca527989c"
-    sha256 cellar: :any,                 arm64_ventura: "6dc19cc8fbfd30e51b4d17eec7ee08559f01cdb9719128d026e07ba92830d1c6"
-    sha256 cellar: :any,                 sonoma:        "fdba90d9cbfa97802c6650f5007744e40ebbedd9e514688ac7fc5a0db614ea6f"
-    sha256 cellar: :any,                 ventura:       "1ac2997276b2d2b4f39ca0423df4a117736016554ad59e26bb607041f2bd2b59"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d7cd0534b257658bb96ad207550a7f09e045ac3f4a3fb5e4e3771af49be3416"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "72bf45459f768db11ec4d2f116f1d46b2f63b1197e4d64ef4b3eeaf412b594f8"
+    sha256 cellar: :any,                 arm64_sonoma:  "36e62f131229425ca98a8b6a8705d4e333879913fd94932bf95fe35dc9ac07a5"
+    sha256 cellar: :any,                 arm64_ventura: "705b5e8e49fd8ddb634c21a31e08f924638a8f20ca50e310fec155c1d45fc051"
+    sha256 cellar: :any,                 sonoma:        "a5c8cebe71747c47222f8a443fe7cef1eaab0b39310a13088a3424f56f1eabf8"
+    sha256 cellar: :any,                 ventura:       "42c15f2188ac4a023652985cf78d03b7153cb14a826f17ba108889b570efc7c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b45531574b6d4bc11e553c9c4c9350f4b66167bed7379c0776ed6f9b5798c495"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
+
   depends_on "libgit2"
+  depends_on "libssh2"
   depends_on "openssl@3"
+
   uses_from_macos "zlib"
 
   # patch to use libgit2 1.9, upstream pr ref, https:github.comjj-vcsjjpull5315
@@ -30,6 +34,10 @@ class Jj < Formula
 
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
+    ENV["LIBSSH2_SYS_USE_PKG_CONFIG"] = "1"
+    # Ensure the correct `openssl` will be picked up.
+    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
+    ENV["OPENSSL_NO_VENDOR"] = "1"
 
     system "cargo", "install", *std_cargo_args(path: "cli")
 
@@ -52,6 +60,7 @@ class Jj < Formula
 
     [
       Formula["libgit2"].opt_libshared_library("libgit2"),
+      Formula["libssh2"].opt_libshared_library("libssh2"),
       Formula["openssl@3"].opt_libshared_library("libcrypto"),
       Formula["openssl@3"].opt_libshared_library("libssl"),
     ].each do |library|

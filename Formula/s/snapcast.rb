@@ -1,27 +1,27 @@
 class Snapcast < Formula
   desc "Synchronous multiroom audio player"
   homepage "https:github.combadaixsnapcast"
-  url "https:github.combadaixsnapcastarchiverefstagsv0.29.0.tar.gz"
-  sha256 "ecfb2c96a4920adc4121b1180b37bb86566c359914c14831c0abea4e65d23f92"
+  url "https:github.combadaixsnapcastarchiverefstagsv0.30.0.tar.gz"
+  sha256 "c1e7f745275526a92b4797ca63bb5a8b8b558f8cb35c200e13097244db6c8a1c"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia:  "5d48a09b06c654f46ce0cfd7bd1251be0c37bba213114b2e917c1fe5f0777fbf"
-    sha256 cellar: :any, arm64_sonoma:   "e076ca61d99aeddad5ab382e4f41065351cd22d56e109e60b0ccaf76efe94790"
-    sha256 cellar: :any, arm64_ventura:  "365c1db7191bb5d2f70003ccc55145853432aac3f9bcd84e8e18dfe3ce9907bf"
-    sha256 cellar: :any, arm64_monterey: "f8b852400170331a4fc74987f28014ce13e318efdf78cebf8dbac90750e65926"
-    sha256 cellar: :any, sonoma:         "5f3f8d975856a3fca7883b19bd745b5e29f93c99caf2e23db942298a944abe9d"
-    sha256 cellar: :any, ventura:        "13691ba0b30c5fb0c79e03ef74c58da3af7f8eca534a59b541714d1737b7bc9c"
-    sha256 cellar: :any, monterey:       "f7d46b2c184101630b7f98a8b62f82f465bcf4a4a846756806530c339d9d7d19"
+    sha256 cellar: :any, arm64_sequoia: "5f31b68727ed72b25f68bb5c0597e21aa02b9c5ae122589d34f8b9ce87ed1f4f"
+    sha256 cellar: :any, arm64_sonoma:  "909e2be4d7a59c0d984b74f6c3f190ad57f1106314b66eb998cc216f7965105b"
+    sha256 cellar: :any, arm64_ventura: "05745379bd18636496b7074eb3f9bbd5f8328d9012a985dff877b341459acd0e"
+    sha256 cellar: :any, sonoma:        "c973393e6c198ab2be70ad54decde560ebbf0880e5fc5f00ec622cc644f8543e"
+    sha256 cellar: :any, ventura:       "4deac0a5e90d41a6d361a4684ebb1afb7b381cb21396b0f5b5d5536359616e58"
   end
 
   depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
+
   depends_on "flac"
   depends_on "libogg"
   depends_on "libsoxr"
   depends_on "libvorbis"
+  depends_on "openssl@3"
   depends_on "opus"
 
   uses_from_macos "expat"

@@ -2,10 +2,9 @@ class Mavsdk < Formula
   desc "API and library for MAVLink compatible systems written in C++17"
   homepage "https:mavsdk.mavlink.io"
   url "https:github.commavlinkMAVSDK.git",
-      tag:      "v2.14.1",
-      revision: "2b98c53af5f5c0ad5686816e85b47090569245a4"
+      tag:      "v3.0.0",
+      revision: "e0e4ffb34a1913960f6c9ccdc8bcbea0447d26ad"
   license "BSD-3-Clause"
-  revision 2
 
   livecheck do
     url :stable
@@ -13,12 +12,12 @@ class Mavsdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4e4d8021d0ae281f6988b0ebf503163cd0725628dbadc3954db921c892c36879"
-    sha256 cellar: :any,                 arm64_sonoma:  "007e3ad6b9a90529b5b4fece35da7003b8eab666c3aaf679132c2709e8d9f840"
-    sha256 cellar: :any,                 arm64_ventura: "a525a9066cf47c4449b69dc7b223e6b8fa1649b6b4a7c9da61a41c9ab4374a1a"
-    sha256 cellar: :any,                 sonoma:        "b07cffe59fa26266aad436b7f5b719fc0f31e049a5bb10b39898a7ffbeea9cb5"
-    sha256 cellar: :any,                 ventura:       "06006fc1bdc8be83e4120867a6e3c6743b23fbbf2f4bbc26603106ade6b69c3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a8595255722fe93466a1f9af6d54f19962e6fd14da75f9a72894b97f10d77f9"
+    sha256 cellar: :any,                 arm64_sequoia: "24d79fd3dff6b0a58b84e247e639af4c09fb379113f66c273d8f9cda5d6b3de3"
+    sha256 cellar: :any,                 arm64_sonoma:  "ecd1a55d641d7cacb89672fa1a51dbc6a5e31c8135ffbffdf964e2f69a107e1c"
+    sha256 cellar: :any,                 arm64_ventura: "659bfb1624987980f03a703b511a4618e824e23381a59f14642b06af0da6656d"
+    sha256 cellar: :any,                 sonoma:        "0d6e76c9ad7822e2ca953f64d9eec447a7d10388924e2c6a4c101ac7720b342c"
+    sha256 cellar: :any,                 ventura:       "c2362b72f25abb9ff81e6e45f91eb834be0f0b6546f50710894d6942e26210fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51cb9d4e332deb0ae621273e10cd8557527cfa88f6a5879797751add372efc97"
   end
 
   depends_on "cmake" => :build
@@ -49,11 +48,17 @@ class Mavsdk < Formula
   end
 
   # ver={version} && \
-  # curl -s https:raw.githubusercontent.commavlinkMAVSDKv$verthird_partymavlinkCMakeLists.txt && \
+  # curl -s https:raw.githubusercontent.commavlinkMAVSDKv$verthird_partymavlinkCMakeLists.txt \
   # | grep 'MAVLINK_GIT_HASH'
   resource "mavlink" do
     url "https:github.commavlinkmavlink.git",
-        revision: "f1d42e2774cae767a1c0651b0f95e3286c587257"
+        revision: "5e3a42b8f3f53038f2779f9f69bd64767b913bb8"
+  end
+
+  # macos rpath fix, upstream pr ref, https:github.commavlinkMAVSDKpull2495
+  patch do
+    url "https:github.commavlinkMAVSDKcommit6d11efa589dbe045890c2f3a5db8091833b0f1a3.patch?full_index=1"
+    sha256 "c10aa11c78281eef4326548b4cbc25fd637d709e814f62f2a3025b7d16d5af04"
   end
 
   def install
@@ -75,15 +80,17 @@ class Mavsdk < Formula
 
     # Source build adapted from
     # https:mavsdk.mavlink.iodevelopencontributingbuild.html
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DSUPERBUILD=OFF",
-                    "-DBUILD_SHARED_LIBS=ON",
-                    "-DBUILD_MAVSDK_SERVER=ON",
-                    "-DBUILD_TESTS=OFF",
-                    "-DVERSION_STR=v#{version}-#{tap.user}",
-                    "-DCMAKE_PREFIX_PATH=#{libexec}",
-                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
-                    *std_cmake_args
+    args = %W[
+      -DSUPERBUILD=OFF
+      -DBUILD_SHARED_LIBS=ON
+      -DBUILD_MAVSDK_SERVER=ON
+      -DBUILD_TESTS=OFF
+      -DVERSION_STR=v#{version}-#{tap.user}
+      -DCMAKE_PREFIX_PATH=#{libexec}
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
@@ -97,7 +104,7 @@ class Mavsdk < Formula
       #include <mavsdkmavsdk.h>
       using namespace mavsdk;
       int main() {
-          Mavsdk mavsdk{Mavsdk::Configuration{Mavsdk::ComponentType::GroundStation}};
+          Mavsdk mavsdk{Mavsdk::Configuration{ComponentType::GroundStation}};
           std::cout << mavsdk.version() << std::endl;
           return 0;
       }

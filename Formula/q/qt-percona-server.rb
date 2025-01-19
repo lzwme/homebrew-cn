@@ -4,17 +4,18 @@ class QtPerconaServer < Formula
   url "https://download.qt.io/official_releases/qt/6.7/6.7.3/submodules/qtbase-everywhere-src-6.7.3.tar.xz"
   sha256 "8ccbb9ab055205ac76632c9eeddd1ed6fc66936fc56afc2ed0fd5d9e23da3097"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only", "LGPL-3.0-only"]
+  revision 1
 
   livecheck do
     formula "qt"
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "60bf3e61d61cf447ab0d3f411d95e03c0adf40e46aed63a3a4f7de827083b88a"
-    sha256 cellar: :any,                 arm64_ventura: "ce07eba34a46e36bc779143c694b4814e2089fcc922252c88dba897899046e88"
-    sha256 cellar: :any,                 sonoma:        "db44a66e8a43cdecf0aad8d6c6dd85310754584ca0876f6911ebc9035f24dd86"
-    sha256 cellar: :any,                 ventura:       "a72f065f79433dfb2c27044f2249f629894ec4c2140e81930682cf0a210d0a4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9be1770432fa9425df2bdb36ffc2545ab753ca990337799489c2f473640c32ab"
+    sha256 cellar: :any,                 arm64_sonoma:  "1ddef630fd535a78863fe590869c44ae945fa5440eafcb8a47b1147a5d56d3cf"
+    sha256 cellar: :any,                 arm64_ventura: "de8893b2e841a762a7b9dae8933b5f28bd1872e7504e09b2432a0ecf24cd71e3"
+    sha256 cellar: :any,                 sonoma:        "91e25ff4c6ba990382dd7c97e015163bef458660d7e45c0febe7f335eb1b5698"
+    sha256 cellar: :any,                 ventura:       "1dec6aa1e06b02ae44355af80b74287c5855d8101e74a274006b735a529f0c92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "428c6d820ad63f8121c706c2570c6d227e108ea7eba62a85fbb67eb924d2d5f8"
   end
 
   depends_on "cmake" => [:build, :test]

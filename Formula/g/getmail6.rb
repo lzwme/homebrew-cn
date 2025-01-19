@@ -3,8 +3,8 @@ class Getmail6 < Formula
 
   desc "Extensible mail retrieval system with POP3, IMAP4, SSL support"
   homepage "https:getmail6.org"
-  url "https:github.comgetmail6getmail6archiverefstagsv6.19.05.tar.gz"
-  sha256 "1b8ae957682f446c4c7103c075605c33c7456a4809788d1b769bd469ee90d38b"
+  url "https:github.comgetmail6getmail6archiverefstagsv6.19.06.tar.gz"
+  sha256 "9c7f13a3f0e4345e0cfd9705f681d69aa4ba482ec656a9aea71f3e9e6d6ffb7c"
   license "GPL-2.0-only"
 
   # Upstream uses GitHub releases to indicate that a version is released
@@ -16,12 +16,12 @@ class Getmail6 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d0d3044ddc889dca094c9c74de6b9cebc1990c26ae1cf581472b5846e30e62d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d0d3044ddc889dca094c9c74de6b9cebc1990c26ae1cf581472b5846e30e62d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6d0d3044ddc889dca094c9c74de6b9cebc1990c26ae1cf581472b5846e30e62d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1ad9fc279bfb480b7f89fcd79da25efa69424986fee612443a57a0442670096d"
-    sha256 cellar: :any_skip_relocation, ventura:       "1ad9fc279bfb480b7f89fcd79da25efa69424986fee612443a57a0442670096d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d0d3044ddc889dca094c9c74de6b9cebc1990c26ae1cf581472b5846e30e62d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9bbf4c8110ea08f2c74e41950c103f6e09d8189f1a312ebeab6445fd464d2b9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9bbf4c8110ea08f2c74e41950c103f6e09d8189f1a312ebeab6445fd464d2b9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b9bbf4c8110ea08f2c74e41950c103f6e09d8189f1a312ebeab6445fd464d2b9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "da9a298711699f9dff1c11747dafc6527b8f9938632bc3cdde2998f13b20207c"
+    sha256 cellar: :any_skip_relocation, ventura:       "da9a298711699f9dff1c11747dafc6527b8f9938632bc3cdde2998f13b20207c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9bbf4c8110ea08f2c74e41950c103f6e09d8189f1a312ebeab6445fd464d2b9"
   end
 
   uses_from_macos "python", since: :catalina

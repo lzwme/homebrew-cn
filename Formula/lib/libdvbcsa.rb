@@ -7,6 +7,11 @@ class Libdvbcsa < Formula
   license "GPL-2.0-or-later"
   head "https://code.videolan.org/videolan/libdvbcsa.git", branch: "master"
 
+  livecheck do
+    url "https://get.videolan.org/libdvbcsa/"
+    regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "e5119a840b0c4c13677acc889fc03d4c035c47fd74d6e6913a11786d5826192a"
     sha256 cellar: :any,                 arm64_sonoma:   "dccd0d514954d35f9965c1bd03bf4e917cf7c33b3b8eee56213c4e71b1a427eb"

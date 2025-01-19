@@ -20,10 +20,9 @@ class Libxft < Formula
 
   depends_on "pkgconf" => :build
   depends_on "fontconfig"
+  depends_on "freetype"
+  depends_on "libx11"
   depends_on "libxrender"
-
-  uses_from_macos "bzip2"
-  uses_from_macos "zlib"
 
   def install
     args = %W[
@@ -47,6 +46,5 @@ class Libxft < Formula
       }
     C
     system ENV.cc, "-I#{Formula["freetype"].opt_include}/freetype2", "test.c"
-    assert_equal 0, $CHILD_STATUS.exitstatus
   end
 end

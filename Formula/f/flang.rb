@@ -12,12 +12,13 @@ class Flang < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "df43ebeecaa3fe9c72de26072406fd6cc35e5112e974505d2aefc6aa0333df0d"
-    sha256 cellar: :any,                 arm64_sonoma:  "a690f92f3e3928605457f23397e9cc6758eec62e68840fc626cedf5b2ab9b726"
-    sha256 cellar: :any,                 arm64_ventura: "368ac4fc09a1863179ee89fc40ab0dd67e249ff543a99c4fec9a8cd7b878c740"
-    sha256 cellar: :any,                 sonoma:        "3e3681f074d46f677314bf884dc03122b413ceb8753bccddf68d9159b2848a5c"
-    sha256 cellar: :any,                 ventura:       "07ccb17e0ea3a50758b951e60c2ee10cf60c77e692d12df24f4e0745318a26eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b27f1b803d43b379afa64fa17d35c5f554486e831b19ce1fb2a79fe5144463da"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "88cd183a3fd754f57ba8b4637ea0f7eebf9ca5f225fc5eb951377a705d3bf7d8"
+    sha256 cellar: :any,                 arm64_sonoma:  "9bf49edca702bfe6554da248bbdeb305d82c4068f75508852064ea13659f99ec"
+    sha256 cellar: :any,                 arm64_ventura: "d9b25602d8deb833264d99dd4c4e051cf3e2dd44bfc3d41a3a1411555d4c89f2"
+    sha256 cellar: :any,                 sonoma:        "8429abc9db2a89890efa451c0a5a110021e7404d86291615e58805a015b956ff"
+    sha256 cellar: :any,                 ventura:       "be9edd442a2109b037409ab71af5ad00860e08ffe40f04f31f403db712465a37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db66d721fd417bd732de221ad2d430da6f1195f949d310bb2c115ff4cec6b44d"
   end
 
   depends_on "cmake" => :build
@@ -31,9 +32,12 @@ class Flang < Formula
   end
 
   def install
+    # Generate omp_lib.h and omp_lib.F90 to be used by flang build
+    system "cmake", "-S", "openmp", "-B", "buildprojectsopenmp", *std_cmake_args
+
     llvm = Formula["llvm"]
-    # NOTE: Setting `BUILD_SHARED_LIBRARIES=ON` causes the just-built flang to throw ICE.
     args = %W[
+      -DLLVM_TOOL_OPENMP_BUILD=ON
       -DCLANG_DIR=#{llvm.opt_lib}cmakeclang
       -DFLANG_INCLUDE_TESTS=OFF
       -DFLANG_REPOSITORY_STRING=#{tap&.issues_url}
@@ -46,6 +50,8 @@ class Flang < Formula
       -DMLIR_DIR=#{llvm.opt_lib}cmakemlir
     ]
     args << "-DFLANG_VENDOR_UTI=sh.brew.flang" if tap&.official?
+    # FIXME: Setting `BUILD_SHARED_LIBS=ON` causes the just-built flang to throw ICE on macOS
+    args << "-DBUILD_SHARED_LIBS=ON" if OS.linux?
 
     ENV.append_to_cflags "-ffat-lto-objects" if OS.linux? # Unsupported on macOS.
     system "cmake", "-S", "flang", "-B", "build", *args, *std_cmake_args
@@ -126,6 +132,8 @@ class Flang < Formula
 
     system binflang_driver, "-v", "test.f90", "-o", "test"
     assert_equal "Done", shell_output(".test").chomp
+
+    return if OS.linux?
 
     system "ar", "x", lib"libFortranCommon.a"
     testpath.glob("*.o").each do |object_file|

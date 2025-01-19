@@ -1,18 +1,17 @@
 class Dillo < Formula
   desc "Fast and small graphical web browser"
   homepage "https:dillo-browser.github.io"
-  url "https:github.comdillo-browserdilloreleasesdownloadv3.1.1dillo-3.1.1.tar.bz2"
-  sha256 "5b85adc2315cff1f6cc29c4fa7e285a964cc3adb7b4cd652349c178292a4fb9e"
+  url "https:github.comdillo-browserdilloreleasesdownloadv3.2.0dillo-3.2.0.tar.bz2"
+  sha256 "1066ed42ea7fe0ce19e79becd029c651c15689922de8408e13e70bb5701931bf"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
-    sha256 arm64_sequoia: "9404791603f2b7fb3fa522b7382a6475a9b4f3ac1c0809c06be4d14b5eddc803"
-    sha256 arm64_sonoma:  "2f2b0384243aee474b744a136185f68e0b6f6cb3b2ca6e6e49fde33c67f330d1"
-    sha256 arm64_ventura: "e9534a6faf1057a15b0b202bbab10f111f42cc7549d373fe3206a7294b9ee6f8"
-    sha256 sonoma:        "5d792e66046032a6de934308c3c89ce1deb2860512bd407702de54dcbbac2142"
-    sha256 ventura:       "173dc719442af8f2cd07d93eebe073e1c763650d7fde7d6768687ec4fc893f39"
-    sha256 x86_64_linux:  "ad5c0fc67498f19b19ee7c216cd925b2766c706fe603340ffdc3e4542800a3be"
+    sha256 arm64_sequoia: "0207d59785da8978150221c348a04269db1e6af49b16cea243aeaeb2d874592d"
+    sha256 arm64_sonoma:  "28b93f6b93b643299e98f8f9b543b55784ce83e16e624d460453b2741b4faa61"
+    sha256 arm64_ventura: "91e47bdc6957706b451ad79446f0807b46f7ad3bd52ed9e4b3e7fbf7f68e7656"
+    sha256 sonoma:        "eb64b7f51d5fd459bf3dc5ceffebc8f44a8cccf2e5288fd8bd2bc00e076c7d7a"
+    sha256 ventura:       "d67a1834f6bdb695b18602e11411bf5e6e723df7a2fe4cb513c392da4ec52561"
+    sha256 x86_64_linux:  "b38cf02dc15d8362d04a62438d62eb0f6b7be342d83fd349f414b0c24f5f4989"
   end
 
   head do
@@ -77,6 +76,6 @@ class Dillo < Formula
 
     assert_match "DEFAULT DENY", (testpath".dillocookiesrc").read
 
-    assert_match "Dillo version #{version}", shell_output("#{bin}dillo --version")
+    assert_match version.to_s, shell_output("#{bin}dillo --version")
   end
 end
