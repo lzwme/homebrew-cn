@@ -1,8 +1,8 @@
 class PerconaServerAT80 < Formula
   desc "Drop-in MySQL replacement"
   homepage "https:www.percona.com"
-  url "https:downloads.percona.comdownloadsPercona-Server-8.0Percona-Server-8.0.36-28sourcetarballpercona-server-8.0.36-28.tar.gz"
-  sha256 "8a4b44bd9cf79a38e6275e8f5f9d4e8d2c308854b71fd5bf5d1728fff43a6844"
+  url "https:downloads.percona.comdownloadsPercona-Server-8.0Percona-Server-8.0.40-31sourcetarballpercona-server-8.0.40-31.tar.gz"
+  sha256 "1318670d8e176c24df74019f748f5f233e2787f865dd3d41d61790ab5a772c4e"
   license "BSD-3-Clause"
 
   livecheck do
@@ -18,12 +18,12 @@ class PerconaServerAT80 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "cb125ddd7595efd0e92ccb4f4e053db69c92d9cd739ad31b8b458db863ef9324"
-    sha256 arm64_sonoma:  "c3c879d0b2bd04e9eaa4811a9ba90f99ad82de67a04cc4b65ed09e0f69452041"
-    sha256 arm64_ventura: "d0ac375df688d6fbbf824408f3842d653949cb6fe80730d4b231152f28b704b9"
-    sha256 sonoma:        "485efb2b577503cacec0d48d6da734eb71c21da61bf0f51fc59f54c7c7918651"
-    sha256 ventura:       "315761a59cf60d727ac928cdf3aa6c36f51dd5e1fd71b544858e0495d55a6c03"
-    sha256 x86_64_linux:  "b310c666b0a39f19e9dd6fd0d01e4b2b3b543cffc1e7180a91aec19401eb39f8"
+    sha256 arm64_sequoia: "3874ba009695e9129492858dcf8f330aa4aa6f6beb0a268d0c767ac940b20acd"
+    sha256 arm64_sonoma:  "5454eb67a2865024f19eff4255d196a56fd719b99c15048da71ce2966e150bed"
+    sha256 arm64_ventura: "e136deee3b6ee381aa98ab2a76f5f4eaca3d1e9127268aea175d0461e9e71863"
+    sha256 sonoma:        "4589cfa0478a5fa1097b710a669d968afe26117afd048fa783d02b01b054be6a"
+    sha256 ventura:       "7dd7eaaca4a533017df910d30a1552d688113fd8ff60d6e143d2429da4709215"
+    sha256 x86_64_linux:  "ea4b86f1771f4d3ecc78bcacd53f662ae6a31a766bc13732d820d75e39efcdcf"
   end
 
   keg_only :versioned_formula
@@ -69,23 +69,19 @@ class PerconaServerAT80 < Formula
     end
   end
 
-  # Backport support for newer Protobuf. Remove with 8.0.39
-  patch do
-    url "https:github.comperconapercona-servercommit089c011f8e2a865e4bd97715653b4bc0973c43a1.patch?full_index=1"
-    sha256 "aac166f579e636923abeb86cc89934efaf0185df35355aab2d08192d9bf9efd8"
-  end
-  # Backport support for Protobuf 22+ on Linux. Remove with 8.0.40
-  patch do
-    url "https:github.commysqlmysql-servercommit269abc0409b22bb87ec88bd4d53dfb7a1403eace.patch?full_index=1"
-    sha256 "ffcee32804e7e1237907432adb3590fcbf30c625eea836df6760c05a312a84e1"
-  end
-
   # Patch out check for Homebrew `boost`.
   # This should not be necessary when building inside `brew`.
   # https:github.comHomebrewhomebrew-test-botpull820
   patch do
     url "https:raw.githubusercontent.comHomebrewformula-patches030f7433e89376ffcff836bb68b3903ab90f9cdcmysqlboost-check.patch"
     sha256 "af27e4b82c84f958f91404a9661e999ccd1742f57853978d8baec2f993b51153"
+  end
+
+  # Fix for system ssl add_library error
+  # Issue ref: https:perconadev.atlassian.netjirasoftwarecprojectsPSissuesPS-9641
+  patch do
+    url "https:github.comperconapercona-servercommita693e5d67abf6f27f5284c86361604babec529c6.patch?full_index=1"
+    sha256 "d4afcdfb0dd8dcb7c0f7e380a88605b515874628107295ab5b892e8f1e019604"
   end
 
   def datadir
@@ -96,7 +92,7 @@ class PerconaServerAT80 < Formula
     # Remove bundled libraries other than explicitly allowed below.
     # `boost` and `rapidjson` must use bundled copy due to patches.
     # `lz4` is still needed due to xxhash.c used by mysqlgcs
-    keep = %w[coredumper duktape libkmip lz4 opensslpp rapidjson robin-hood-hashing]
+    keep = %w[coredumper duktape libkmip lz4 opensslpp rapidjson robin-hood-hashing unordered_dense]
     (buildpath"extra").each_child { |dir| rm_r(dir) unless keep.include?(dir.basename.to_s) }
     (buildpath"boost").install resource("boost")
 
@@ -146,6 +142,8 @@ class PerconaServerAT80 < Formula
     args << "-DROCKSDB_DISABLE_AVX2=ON" if build.bottle?
     args << "-DALLOW_NO_SSE42=ON" if Hardware::CPU.intel? && (!OS.mac? || !MacOS.version.requires_sse42?)
     args << "-DWITH_KERBEROS=system" unless OS.mac?
+
+    ENV.append "CXXFLAGS", "-std=c++17"
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

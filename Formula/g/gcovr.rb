@@ -3,19 +3,18 @@ class Gcovr < Formula
 
   desc "Reports from gcov test coverage program"
   homepage "https:gcovr.com"
-  url "https:files.pythonhosted.orgpackages32217f9967a2d5a37d8f77e793ba4c173d0e1e59195028c997a9947b73b652f4gcovr-8.2.tar.gz"
-  sha256 "9a1dddd4585d13ec77555db5d6b6a31ee81587ea6fc604ff9fcd232cb0782df5"
+  url "https:files.pythonhosted.orgpackages409f2883275d71f27f81919a7f000afe7eb344496ab74d62e1c0e4a804918b9fgcovr-8.3.tar.gz"
+  sha256 "faa371f9c4a7f78c9800da655107d4f99f04b718d1c0d9f48cafdcbef0049079"
   license "BSD-3-Clause"
-  revision 1
   head "https:github.comgcovrgcovr.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a09146bcee614db137253e92cc1b78eb60ca8a7827b572179756f72f1b0990e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ce9dfe3b5deb35b8dc6e6b1cf4ed97522468f70badb276aea37073772daec56"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b0713667a59b6036abd8e80a8b871ca88b89278fbd2cc6c87a3d535a844d933e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9ee6e3c4f93a745a2b3fbc3a7a42111796980cb3c9bb3cd862cf98f5de319345"
-    sha256 cellar: :any_skip_relocation, ventura:       "ce114a13425cde927c8f5339da613b7ade8c53a635880d99d0a8bce3148b6b28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e831d5f17f37ade49c96ef94a6264148d887f4975087793233db86fb6ef156b2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e179e2cd37f94eb410806766538397917fd09acf36a6dc96504f28d4f7745c6d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78e813071f2c5b4908a39f3c6516a7a0fc3dc21a43f4edb313cf9fe2f1fe921c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "daec4dc864c1887ccffca64cc88d19e3a9fb19cbc3e4c9c8c3e339a2e407a008"
+    sha256 cellar: :any_skip_relocation, sonoma:        "026ab59c029c65cb1d15e13f3497fa13ccc94ace13ea30b51bf9ebadb4af9ce7"
+    sha256 cellar: :any_skip_relocation, ventura:       "98460e4cc1b0983100acf000888b654b633f9364ff5cefba6e1c456d7eba09fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "762ce9c639ffa7c798e91e1bf2ca2a621467406b34657b6e400c775cec21b48a"
   end
 
   depends_on "python@3.13"
@@ -44,8 +43,8 @@ class Gcovr < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
-    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
+    url "https:files.pythonhosted.orgpackages7c2dc3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84pygments-2.19.1.tar.gz"
+    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
   end
 
   def install

@@ -1,18 +1,18 @@
 class UutilsCoreutils < Formula
   desc "Cross-platform Rust rewrite of the GNU coreutils"
   homepage "https:github.comuutilscoreutils"
-  url "https:github.comuutilscoreutilsarchiverefstags0.0.28.tar.gz"
-  sha256 "b2e8b2531c52e9b09e55a6b41a8875e5770bcea6e5fa7a01d89d7904cf292cb9"
+  url "https:github.comuutilscoreutilsarchiverefstags0.0.29.tar.gz"
+  sha256 "e1904ed6e5b8b441bedcba5afa7e8e8c744ef701f6d392de8c8dcc2ea17a34e2"
   license "MIT"
   head "https:github.comuutilscoreutils.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44e7f020c067e4d7d7b2be14b674e6825ae7514bac2fbe715fbae458a63d468c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a3424eae0c8d22ef736f54f44832aa3c8584fcab9fd8b2f487a3e790a0a80404"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5ef1a909306ea91b9bbc900959193161a16ced3f85e126b15ba8692a33b00e05"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3c9798ce2a8539c8c65c8c9bf19f4f8dc3ef2bbade89b11012455cf8af234b95"
-    sha256 cellar: :any_skip_relocation, ventura:       "0297aed2325488cc048ec14db4b076e1539f18e3077430f3d24448745a013f52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be3cf54225e74bb6317068fb71b3ac949ee0f1ed04a5d9340433092e9effb3bb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "739eef468c041b9846714c0db9dc0ff44d6a399b0fce3406a156dd3269dec126"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb279f00c47c399ea7841e8f917aedd8b68a23ca0e286fb09a5ccb4d41ef1ced"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "93744e1afcd2218f6775584055a2f8e6246fab4f6e98ca71cc00c85c2f311a60"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0e152be33e45f3fedc7b4a17d5f132e539b02abbca73a7935a076ef07493b2c0"
+    sha256 cellar: :any_skip_relocation, ventura:       "4d6dc55cf589c1eb1ea1de4ae9be84a59e9521ef67daf12636811ca5c0d2e031"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75273d2a035762393bb3a75f5747cf51b21ed124013c51323ebc949fbee7999b"
   end
 
   depends_on "make" => :build

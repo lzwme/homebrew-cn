@@ -7,16 +7,13 @@ class PerlBuild < Formula
   head "https:github.comtokuhiromperl-build.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "65330f996da4878f2231c9302be2910c484c4f1c2a4f979a90a931b480bd8a54"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fab20ad3803975d872a837b0094e104a76b477b50358ebc858761609cd95b94a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "88242c3173ebedeb662528ee8d076253fbe18c189cdef42768efc5e377bec466"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "88242c3173ebedeb662528ee8d076253fbe18c189cdef42768efc5e377bec466"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "18c043e60df07f020af0785e1f6dcad1ad1b3782e8f596efb8a5363c78669ccb"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a5a97a22ee550507bb8fc07353054a1c3eb8923a01ac5ad9510ba940b5089afc"
-    sha256 cellar: :any_skip_relocation, ventura:        "9c09caf60e490235fc8366f3d47d32d8be9cf887d71cc3f80213700ef3443a65"
-    sha256 cellar: :any_skip_relocation, monterey:       "9c09caf60e490235fc8366f3d47d32d8be9cf887d71cc3f80213700ef3443a65"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8699ea1e8465d1906944894a63767c339312afe64a850620dea4f0e2f05f3017"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "11ad390432ffb57a2afbb7884722b2539fdd4a9951074eb88c06488d943eb348"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3692d7e9799089d15e95e238a8a666883db875b08aefd182ffb49069bfeee070"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3692d7e9799089d15e95e238a8a666883db875b08aefd182ffb49069bfeee070"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "29f8fbb44085bb547f8a743c7c901f7ab1cd0bb571bb37a80241c874630182ef"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c3c90eb8a0abf4173cc6109f072a647a096e4c038db4384def5e91ed771abfbd"
+    sha256 cellar: :any_skip_relocation, ventura:       "74110bb18dd37b2a407cdcbd7772900d0751740a087bd2b86ee8354b92d9a71b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fa96b05a3ea3bfa998356d31fd7719d938aa9554aae4a72b925b6a68f11db11"
   end
 
   uses_from_macos "perl"
@@ -95,9 +92,7 @@ class PerlBuild < Formula
     ENV.prepend_create_path "PERL5LIB", libexec"libperl5"
 
     # Ensure we don't install the pre-packed script
-    (buildpath"perl-build").unlink
-    # Remove this apparently dead symlink.
-    (buildpath"binperl-build").unlink
+    rm(["perl-build", "binperl-build"])
 
     build_pl = ["Module::Build::Tiny", "CPAN::Perl::Releases::MetaCPAN"]
     resources.each do |r|
@@ -118,22 +113,19 @@ class PerlBuild < Formula
       end
     end
 
-    ENV.prepend_path "PATH", libexec"bin"
-    system "perl", "Build.PL", "--install_base", libexec
+    system "perl", "Build.PL", "--install_base", libexec, "--install_path", "bindoc=#{man1}"
     # Replace the dead symlink we removed earlier.
     (buildpath"bin").install_symlink buildpath"scriptperl-build"
     system ".Build"
     system ".Build", "install"
 
-    %w[perl-build plenv-install plenv-uninstall].each do |cmd|
-      (bincmd).write_env_script(libexec"bin#{cmd}", PERL5LIB: ENV["PERL5LIB"])
-    end
+    bin.install libexec"binplenv-install", libexec"binplenv-uninstall"
+    (bin"perl-build").write_env_script(libexec"binperl-build", PERL5LIB: ENV["PERL5LIB"])
 
     # Replace cellar path to perl with opt path.
     if OS.linux?
-      inreplace Dir[libexec"bin{perl-build,config_data}"] do |s|
-        s.sub! Formula["perl"].bin.realpath, Formula["perl"].opt_bin
-      end
+      inreplace_files = [libexec"binperl-build", libexec"binconfig_data"]
+      inreplace inreplace_files, Formula["perl"].bin.realpath, Formula["perl"].opt_bin, global: false
     end
   end
 

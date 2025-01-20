@@ -28,20 +28,26 @@ class Traildb < Formula
   depends_on "judy"
   depends_on "libarchive"
 
-  on_linux do
-    depends_on "python@3.11" => :build
-  end
+  uses_from_macos "python" => :build
 
   # Update waf script for Python 3
   # Use resource instead of patch since applying corrupts waf
   resource "waf" do
-    url "https:raw.githubusercontent.comtraildbtraildb053ed8e5d0301c792f3ee703cd9936c49ecf41a1waf"
-    sha256 "2e0cf83a63843da127610420cef1d3126f1187d8e572b6b3a28052fc2250d4bf"
+    on_macos do
+      url "https:raw.githubusercontent.comtraildbtraildb053ed8e5d0301c792f3ee703cd9936c49ecf41a1waf"
+      sha256 "2e0cf83a63843da127610420cef1d3126f1187d8e572b6b3a28052fc2250d4bf"
+    end
+    on_linux do
+      # Update `waf` further for Python 3.12+ support. We don't use this on macOS as newer versions
+      # fail to find `libarchive` on non-usrlocal prefix due to wscript PKG_CONFIG_PATH override
+      url "https:waf.iowaf-2.1.4"
+      sha256 "7803d63e698ada49a74ab6979a0fd708a5f9a3456206cba3a3e07387fdcf946d"
+    end
   end
 
   def install
     ENV["PREFIX"] = prefix
-    buildpath.install resource("waf")
+    resource("waf").stage { buildpath.install Dir["*"].first => "waf" }
     system "python3", ".waf", "configure", "install"
   end
 

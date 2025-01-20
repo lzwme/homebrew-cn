@@ -14,16 +14,16 @@ class Hof < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f0e8e9411012fd34e7dee38bb284473b840303bd337d351d2fdb14d1f9a05d3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2814977a66e59242903141f5a0dea62c3b41873890d132c35fc877a65894aac5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ff2fda5f13cb7bd4380b09af1bbd7801ab06c89aada6cfad0e54e70befd4a35f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "46c3e2e2c088c8d5e22b4fe0d866ed336da7f9d8d559b2467a90b57bcc69d49c"
-    sha256 cellar: :any_skip_relocation, ventura:       "906dfda33113f5b1d5a0c77efcd6db259de850575048d7384dd8c08647880a3d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "864e536e05475800bc1303a29f19c1f68a6f73ed05bfbd86112904449ddeb0e9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e5275eb22672ae3f0bcf884becc77d6b34eda2b7ba84ffd3fe562fddbc3d5e5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e5275eb22672ae3f0bcf884becc77d6b34eda2b7ba84ffd3fe562fddbc3d5e5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8e5275eb22672ae3f0bcf884becc77d6b34eda2b7ba84ffd3fe562fddbc3d5e5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "96a01bb5adfdee2ac9d77baf10cdbd99682f95e487ea6fc9b0a0be59d3492c19"
+    sha256 cellar: :any_skip_relocation, ventura:       "96a01bb5adfdee2ac9d77baf10cdbd99682f95e487ea6fc9b0a0be59d3492c19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1649592d767a8d06f0db43de77032c854168d2626ba0113650942c1d3221e935"
   end
 
-  # use "go" again after https:github.comhofstadter-iohofissues391 is fixed and released
-  depends_on "go@1.22" => :build
+  depends_on "go" => :build
 
   def install
     arch = Hardware::CPU.intel? ? "amd64" : Hardware::CPU.arch.to_s
@@ -32,7 +32,7 @@ class Hof < Formula
     ldflags = %W[
       -s -w
       -X github.comhofstadter-iohofcmdhofverinfo.Version=#{version}
-      -X github.comhofstadter-iohofcmdhofverinfo.Commit=
+      -X github.comhofstadter-iohofcmdhofverinfo.Commit=#{tap.user}
       -X github.comhofstadter-iohofcmdhofverinfo.BuildDate=#{time.iso8601}
       -X github.comhofstadter-iohofcmdhofverinfo.GoVersion=#{Formula["go"].version}
       -X github.comhofstadter-iohofcmdhofverinfo.BuildOS=#{os}
@@ -51,7 +51,7 @@ class Hof < Formula
     assert_match version.to_s, shell_output("#{bin}hof version")
 
     system bin"hof", "mod", "init", "brew.shbrewtest"
-    assert_predicate testpath"cue.mod", :exist?
+    assert_path_exists testpath"cue.mod"
     assert_match 'module: "brew.shbrewtest"', (testpath"cue.modmodule.cue").read
   end
 end

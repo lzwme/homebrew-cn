@@ -20,8 +20,7 @@ class Juicefs < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "67bbb702c83dfdcf6b3ac992b760d161e4690d75c01aa1feea6a637da7f8b1e5"
   end
 
-  # use "go" again after https:github.comjuicedatajuicefsissues5047 is resolved and released
-  depends_on "go@1.22" => :build
+  depends_on "go" => :build
 
   def install
     system "make"

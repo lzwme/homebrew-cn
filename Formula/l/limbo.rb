@@ -1,18 +1,18 @@
 class Limbo < Formula
   desc "Interactive SQL shell for Limbo"
   homepage "https:github.comtursodatabaselimbo"
-  url "https:github.comtursodatabaselimboarchiverefstagsv0.0.12.tar.gz"
-  sha256 "a039a332969fe7dd1c4d2e1b11c8ff9fa087cf03f4e2897ff8f158f1ed34f424"
+  url "https:github.comtursodatabaselimboarchiverefstagsv0.0.13.tar.gz"
+  sha256 "1b13620223cd2341b103ce4b1cc80f0072645bca1a267a7277e42e5bc65a4c91"
   license "MIT"
   head "https:github.comtursodatabaselimbo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80598359b24b02276b1607306aa683577ff8cc77c75dc4b763501c3f3cc9fac9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87a010788cc4e5599de0354e444472fd75af5f371d77d4f6c198986e23594e5c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c3daf5636577df1bcd36635d507a4b930cb1e0a9bbe187a466ce75884c90e467"
-    sha256 cellar: :any_skip_relocation, sonoma:        "321e5984d613983c89f7e2f7274306d3a34071fd6477f2c4f938fa51789a81e5"
-    sha256 cellar: :any_skip_relocation, ventura:       "c381670742085a5c9e070650296e9876e7207dbaeed42473751b5bead8bfe55d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6bf60af1bac9e5d11f4523a30cdf3a587bb3a08f6241eafe7fc9195796a440b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "157877270a39667bbefbc0866e7a382aff7f90f1a7b091fc625bf7091832fed7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb488250867c8afd6d5e435f8309a966b827e60f7fb540254715f74c7781a8c6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f921d76ceee558d71a25cad45a3f45041dce3d0c8b93e5644695ac7e60abaa49"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6690560814c95a1352f512b64d93ffca8ba7f3a97bed416bf5f7cf2b7c041165"
+    sha256 cellar: :any_skip_relocation, ventura:       "2721a0ec64d053b6a2fbe0f21d908694e48f65db644680ca4fb31723217820fa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "159bd72c02e7471aaceee4c1f3b71ac0fbf4569c2f00734841616e4b25f3481b"
   end
 
   depends_on "rust" => :build

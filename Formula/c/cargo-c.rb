@@ -1,8 +1,8 @@
 class CargoC < Formula
   desc "Helper program to build and install c-like libraries"
   homepage "https:github.comlu-zerocargo-c"
-  url "https:github.comlu-zerocargo-carchiverefstagsv0.10.8.tar.gz"
-  sha256 "2c7bfff50e9c11801c92280f34f7d308857652b0c3875d0fd0906167623414ac"
+  url "https:github.comlu-zerocargo-carchiverefstagsv0.10.9.tar.gz"
+  sha256 "4542e39aa67bf8712c60f21701cc8e8b5153d0344afe1b618f121f696b578a7f"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class CargoC < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2f56ede8e629a5a5270d86d76bf7de1b3cc257cc5ae8cc437005cdbe64d30fd8"
-    sha256 cellar: :any,                 arm64_sonoma:  "e94e14922d71d70bc01367502c1d0fdc96d55a93f5c49b49d4767970a2197a9f"
-    sha256 cellar: :any,                 arm64_ventura: "44c4d7d150145e1ddf60b71deadb52c055a0ff7b56a35a136d049a0f7e4d9b1b"
-    sha256 cellar: :any,                 sonoma:        "b396556328b67baefe153fd6974de40f3a2cbb35912fd5d75b335c0524fffbb9"
-    sha256 cellar: :any,                 ventura:       "4fc6851877e5221343b72f37d9453cacccdefc1b40430676ea588afe1e9a186f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7d68a013e8af6f53b37482655dc99d9a0f32b73c5aeb417796a9e7c8d88ab0b"
+    sha256 cellar: :any,                 arm64_sequoia: "8e962d96f9a4d59ff326bcd18d9ae76ca6a01b68864134048f375067681bd5cc"
+    sha256 cellar: :any,                 arm64_sonoma:  "bd8b60660ca8d0c236ed303a2baf08dcfb6cbaa28dccc0ebc860fa0e7fa1374a"
+    sha256 cellar: :any,                 arm64_ventura: "f74c2d8c404887078aae7f5f39bcd8aeb83a0e9835a8a67dd784e49d4befb13f"
+    sha256 cellar: :any,                 sonoma:        "aca6f55647d5e338431ace98addcda3709bda3f249ff8cf906d8f2c9d73663b4"
+    sha256 cellar: :any,                 ventura:       "52c389dd8cd35ae4bf06fb3dd991b3a217c042f98139bffd4b5e3a453e305cf1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba9adb66a9a7078a7d61c4c0c2a42e4d480f0adc96ffdde86a8984b538e3a115"
   end
 
   depends_on "pkgconf" => :build
@@ -37,10 +37,6 @@ class CargoC < Formula
     # Ensure the correct `openssl` will be picked up.
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
-
-    # revert `cc` crate to 1.2.7, upstream pr ref, https:github.comlu-zerocargo-cpull437
-    system "cargo", "update", "-p", "cc", "--precise", "1.2.7"
-    odie "remove cc crate update" if version > "0.10.8"
 
     system "cargo", "install", *std_cargo_args
   end

@@ -20,7 +20,7 @@ class Vineyard < Formula
   depends_on "cmake" => [:build, :test]
   depends_on "llvm" => :build # for clang Python bindings
   depends_on "openssl@3" => :build # indirect (not linked) but CMakeLists.txt checks for it
-  depends_on "python@3.12" => :build
+  depends_on "python@3.13" => :build
   depends_on "apache-arrow"
   depends_on "boost@1.85"
   depends_on "cpprestsdk"
@@ -37,7 +37,7 @@ class Vineyard < Formula
   end
 
   def install
-    python3 = "python3.12"
+    python3 = "python3.13"
     venv = virtualenv_create(buildpath"venv", python3)
     venv.pip_install resources
     # LLVM is keg-only.

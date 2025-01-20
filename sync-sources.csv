@@ -378,6 +378,8 @@ Homebrew-homebrew-core/Formula/a/azqr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aztfexport.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azure-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azure-core-cpp.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/azure-storage-blobs-cpp.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/azure-storage-common-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azure-storage-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/azurehound.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/b2-tools.rb, Homebrew/homebrew-core, 1
@@ -1508,7 +1510,6 @@ Homebrew-homebrew-core/Formula/d/drill.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/drogon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dromeaudio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/drone-cli.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/dronedb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dropbear.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dropbox-uploader.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/druid.rb, Homebrew/homebrew-core, 0
@@ -2652,6 +2653,7 @@ Homebrew-homebrew-core/Formula/h/hermit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/heroku.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hesiod.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hevea.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/h/hevi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hexcurse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hexedit.rb, Homebrew/homebrew-core, 1
@@ -6315,6 +6317,7 @@ Homebrew-homebrew-core/Formula/s/suil.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/suite-sparse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sundials.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/superfile.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/superhtml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/superlu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/supermodel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/supertux.rb, Homebrew/homebrew-core, 1
@@ -6568,6 +6571,7 @@ Homebrew-homebrew-core/Formula/t/tinycdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tinymist.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tinyproxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tinysearch.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tinysparql.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tinysvm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tinyxml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tinyxml2.rb, Homebrew/homebrew-core, 1
@@ -7540,6 +7544,7 @@ Homebrew-homebrew-cask/Casks/a/amazon-workdocs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/amazon-workspaces.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/amd-power-gadget.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/amethyst.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/amiberry.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/amie.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/amitv87-pip.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/amm.rb, Homebrew/homebrew-cask, 1
@@ -14741,6 +14746,7 @@ nicerloop-homebrew-nicerloop/Casks/archivewebpage.rb, nicerloop/homebrew-nicerlo
 nicerloop-homebrew-nicerloop/Casks/audiobookbinder.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/cmis-workbench.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/dbptk.rb, nicerloop/homebrew-nicerloop, 1
+nicerloop-homebrew-nicerloop/Casks/deskflow@1.17.2.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/double-trouble.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/epson-printer-drivers.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Casks/fluffydisplay.rb, nicerloop/homebrew-nicerloop, 1

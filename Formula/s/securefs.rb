@@ -24,7 +24,7 @@ class Securefs < Formula
   depends_on "cryptopp"
   depends_on "fruit"
   depends_on "jsoncpp"
-  depends_on "libfuse@2"
+  depends_on "libfuse@2" # FUSE 3 issue: https:github.comnetheril96securefsissues181
   depends_on :linux # on macOS, requires closed-source macFUSE
   depends_on "protobuf"
   depends_on "sqlite"

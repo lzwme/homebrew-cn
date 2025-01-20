@@ -18,7 +18,7 @@ class CucumberCpp < Formula
 
   depends_on "cmake" => :build
   depends_on "nlohmann-json" => :build
-  depends_on "ruby@3.3" => :test # ruby 3.4 support bug report, https:github.comcucumbercucumber-rubyissues1769
+  depends_on "ruby" => :test
   depends_on "asio"
   depends_on "tclap"
 
@@ -39,11 +39,11 @@ class CucumberCpp < Formula
   end
 
   test do
-    ENV.prepend_path "PATH", Formula["ruby@3.3"].opt_bin
+    ENV.prepend_path "PATH", Formula["ruby"].opt_bin
     ENV["GEM_HOME"] = testpath
     ENV["BUNDLE_PATH"] = testpath
 
-    system "gem", "install", "cucumber:9.1.1", "cucumber-wire:7.0.0", "--no-document"
+    system "gem", "install", "cucumber:9.2.1", "cucumber-wire:7.0.0", "--no-document"
 
     (testpath"featurestest.feature").write <<~CUCUMBER
       Feature: Test
@@ -69,20 +69,10 @@ class CucumberCpp < Formula
       }
     CPP
 
-    cxx_args = %W[
-      -std=c++17
-      test.cpp
-      -o
-      test
-      -I#{include}
-      -L#{lib}
-      -lcucumber-cpp
-      -pthread
-    ]
-    system ENV.cxx, *cxx_args
+    system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test", "-I#{include}", "-L#{lib}", "-lcucumber-cpp", "-pthread"
 
     begin
-      pid = fork { exec ".test" }
+      pid = spawn ".test"
       sleep 1
       expected = <<~EOS
         Feature: Test

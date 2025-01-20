@@ -1,18 +1,18 @@
 class Helix < Formula
   desc "Post-modern modal text editor"
   homepage "https:helix-editor.com"
-  url "https:github.comhelix-editorhelixreleasesdownload25.01helix-25.01-source.tar.xz"
-  sha256 "922fba301e1a3d9b933a445ab2d306cffcd689d678ecd06f00870cfc874cffb8"
+  url "https:github.comhelix-editorhelixreleasesdownload25.01.1helix-25.01.1-source.tar.xz"
+  sha256 "12508c4f5b9ae6342299bd40d281cd9582d3b51487bffe798f3889cb8f931609"
   license "MPL-2.0"
   head "https:github.comhelix-editorhelix.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7e40e9ec37277d8fdb510c1bcf617b680a6de9bbb0052961ba6dfc4808451546"
-    sha256 cellar: :any,                 arm64_sonoma:  "ea5debc32010d5307e75180c8899d9142e457e9d7ee6564129362897709ea9ba"
-    sha256 cellar: :any,                 arm64_ventura: "3836943634e9c46af86eb97578c4a0ae161928338b7d4a985b2ff6b057088ce0"
-    sha256 cellar: :any,                 sonoma:        "1e7335cc84a01073b93854889a4e750f524afa97311e117abe3c2c56f03632c3"
-    sha256 cellar: :any,                 ventura:       "1b0c6dfa35d4861bba9b7fa441fc1846cef07156d56072ad07ffd9af254d9a4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "807a5afa9354263f8d3ff44e6c3ed7a823aceb97e6ea6a93d6055f3625a43d29"
+    sha256 cellar: :any,                 arm64_sequoia: "cca895da8d7984d1dc974a69c1cac38111fab2b7c32d5f0bc66e919dbd2bd4a6"
+    sha256 cellar: :any,                 arm64_sonoma:  "b2e86d4e5e3a822615d9173afa64d0de2be5d97fe2fddc7dc7d18a974344bd75"
+    sha256 cellar: :any,                 arm64_ventura: "f5f20d49f3a8c130001741624e440fd9f80335a5d64ef331ae2ef80da48f8fd8"
+    sha256 cellar: :any,                 sonoma:        "3bb3161910930c9f2316b6478a166432b22abd664a72fc5f493e74d705f4ac5e"
+    sha256 cellar: :any,                 ventura:       "42358aa662d5ebf73dd8150e83822b6c347b2f73a7f612bf36100240c3364761"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d890c7a8eec62f5c3864bb272bfdedb09bea2c1b9523f34545db607b353ee88"
   end
 
   depends_on "rust" => :build

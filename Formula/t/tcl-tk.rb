@@ -12,12 +12,13 @@ class TclTk < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "aeeaea787bdc0aa434351c522ac051879d17181a0788a66293e96cf1e3cd2388"
-    sha256 arm64_sonoma:  "13b0cd27c3f3c8e079e80313581d412ef03b88f1d5f8d03ec14ef05a0c384f6d"
-    sha256 arm64_ventura: "abb40f075e37f7aa54369b4d9caab463198fa95028af4c65478b95744d89860c"
-    sha256 sonoma:        "2e656bf381d6e37dd1f2d99c17408339741a409a84c4a5d2c9d89230829b87f3"
-    sha256 ventura:       "650a6e8899dade18e17f3ae535a2191747bcc8cfc7950a0d0dd2506e804d9399"
-    sha256 x86_64_linux:  "0621ca61e59e72e17e267a0bef5c133183752e45a71a759508084c4e2024b4b6"
+    rebuild 1
+    sha256 arm64_sequoia: "27a8119fce7719c02f27d222be7f2e5adf63537e7e9bc3e618223ddb448853f1"
+    sha256 arm64_sonoma:  "0eadc0b7ad6ab03af3a75dfc9ce03a405bbb9c3650aed4052b9bc63aeb216239"
+    sha256 arm64_ventura: "ea408af959f92adf2e3bc27441d98528607103a7036c82f56dbc4be7f513501d"
+    sha256 sonoma:        "adee2c3cadbd8155d71df9aff8d58c092f5a79895a7452340096d700fc3b26b3"
+    sha256 ventura:       "9a562a67f6b533ad35b267cc22b8299ecd869ab1089a2cd19d410e36f30a6c1f"
+    sha256 x86_64_linux:  "f398e29b8ea4cf463eb0c4904e3ef59d70e848089fbd2c9af0c8e753456a307a"
   end
 
   depends_on "libtommath"
@@ -75,7 +76,7 @@ class TclTk < Formula
   resource "itk4" do
     url "https:github.comtcltkitkarchiverefstagsitk-4-2-3.tar.gz"
     version "4.2.3"
-    sha256 "3eea66dfc57259d85ad741a01786b70ae4b3ae9774d27e24f7d0917c7451e94b"
+    sha256 "bc5ed347212fce403e04d3161cd429319af98da47effd3e32e20d2f04293b036"
   end
 
   def install

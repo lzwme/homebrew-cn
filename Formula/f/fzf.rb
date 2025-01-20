@@ -1,19 +1,18 @@
 class Fzf < Formula
   desc "Command-line fuzzy finder written in Go"
   homepage "https:github.comjunegunnfzf"
-  url "https:github.comjunegunnfzfarchiverefstagsv0.57.0.tar.gz"
-  sha256 "d4e8e25fad2d3f75943b403c40b61326db74b705bf629c279978fdd0ceb1f97c"
+  url "https:github.comjunegunnfzfarchiverefstagsv0.58.0.tar.gz"
+  sha256 "c49e5b13c7f3ee28ebc41ce720e48054287f11186212b2152434497a590f1a63"
   license "MIT"
   head "https:github.comjunegunnfzf.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4936470e8ddcd195e4345557c51fd86015e81fd52b9ee3eefef66d37b16e10d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4936470e8ddcd195e4345557c51fd86015e81fd52b9ee3eefef66d37b16e10d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f4936470e8ddcd195e4345557c51fd86015e81fd52b9ee3eefef66d37b16e10d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "afc798baf3dd3230d0fe570dcc682db1e11ec8a4f7e4012d8d49d46afbcaaf50"
-    sha256 cellar: :any_skip_relocation, ventura:       "afc798baf3dd3230d0fe570dcc682db1e11ec8a4f7e4012d8d49d46afbcaaf50"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "278da1e0a4a8321b9b7a331e12717965741d8df9b2b0403118604a7635e93abe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1da4ff05b5503234dbc25e575568c388a162903fc261bb8af148b93e3b879c6f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1da4ff05b5503234dbc25e575568c388a162903fc261bb8af148b93e3b879c6f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1da4ff05b5503234dbc25e575568c388a162903fc261bb8af148b93e3b879c6f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6c7732f6e652a32cb51e59ff1af700ece9759381c99a05d3a1b13fc42922f14a"
+    sha256 cellar: :any_skip_relocation, ventura:       "6c7732f6e652a32cb51e59ff1af700ece9759381c99a05d3a1b13fc42922f14a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ad44d8fbfd736c4e500e80afaeb4f3e4b3876b491541a1ce91c9f0d5db322a0"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class CargoAudit < Formula
   desc "Audit Cargo.lock files for crates with security vulnerabilities"
   homepage "https:rustsec.org"
-  url "https:github.comrustsecrustsecarchiverefstagscargo-auditv0.21.0.tar.gz"
-  sha256 "343242874edd00c2aa49c7481af0c4735ebcf682d04710f0c02a56a9015f6092"
+  url "https:github.comrustsecrustsecarchiverefstagscargo-auditv0.21.1.tar.gz"
+  sha256 "a8ef61e08118fdaa0a9adc18983bc59e904bb1e4a069f8fe73b91da061365969"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comrustsecrustsec.git", branch: "main"
 
@@ -12,12 +12,12 @@ class CargoAudit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d8b35b5ed9aaaa17e8b67f037a02823477b81f0510880469dfb19e8dfdac53b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a71c3d0f60e9a03f06736ef8da99cd3972bb843c4ee0a0eec5d5c9616ed309c9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b6147d9a1d314491ec1944b9c14a812a781ba0f0f98e8efe536eb162b54dc0a0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b4869aa826a6e54647453f3ff38902de373f533a2c9a9bb8e020109c0364b9f5"
-    sha256 cellar: :any_skip_relocation, ventura:       "f7ebf6b00cfce35080e30e96ee1f42d81e2ce50dc56909c1109dcfa3684fe751"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99578791cd07f067b67f092cd7e6362dffbff0ed7e542ce5bc055d25cf2bc8bf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7461ab322993d8923d82272cddfc540c0b1f48422a7c19dce36ec6a26864f253"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b8f73dc1eb5c815b756e8075ae4c3e553cd24fbc457810961e38f2e9e331835"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7e414ec717a9bdfef947a0c1da5e1b0a63141ddff874848c527b3cfda500ccb0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e2a34aca923988211da4fbaa248d9b22880c54809d01a6857187531b361308ae"
+    sha256 cellar: :any_skip_relocation, ventura:       "7cb18b87aaca5f38f42f26b0e19ca437e8fc9d685ed4f858bf621fc62c5152a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40c4b34aab22c8514293604115e3e6faa146c1dd830a2519103c45ef42fd1175"
   end
 
   depends_on "rust" => :build

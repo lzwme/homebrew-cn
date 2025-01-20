@@ -4,7 +4,7 @@ class Bioperl < Formula
   url "https:cpan.metacpan.orgauthorsidCCJCJFIELDSBioPerl-1.7.8.tar.gz"
   sha256 "c490a3be7715ea6e4305efd9710e5edab82dabc55fd786b6505b550a30d71738"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
-  revision 1
+  revision 2
   head "https:github.combioperlbioperl-live.git", branch: "master"
 
   # We specifically match versions with three numeric parts because upstream
@@ -17,14 +17,12 @@ class Bioperl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f3a040d480845d4d81f48d9b166248dbdb805892c32408bb26e79a6cfd9f83fe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7347de2dcd6d853ef48f4eaefb19f57965aac806dde9a9e69b0877986ad415d0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "14640b78f907bc04201e49dc0c2e28627c81f9a0df71b2dec380ac27928ae9bf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2c8eb6a2300984f14864ded0694167956dbf20514efa7353ef9efa555132ec63"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ad6693582068ff397b2a062e0ca52e69760f23ef85d0be9ef2fa4d99fa8570b4"
-    sha256 cellar: :any_skip_relocation, ventura:        "019217d9f2eed33a0cc3400d38c03ba2a4e2e986d7e51308a0264c1564be830e"
-    sha256 cellar: :any_skip_relocation, monterey:       "735f3fc0ccae053cec535f5374695535f1284d5c4e98035d735b57b10f08183b"
-    sha256                               x86_64_linux:   "ffab2601ba841c7a45bb0c5d0c12661a73ee32b0a9079b2715fc838dddec9649"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2908dce831726ddab69edcb252b8b45b1d9b4ba2995bbefc6410dea49a6b230e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d44c606e7a067575bfe21428d84fcd57c7e45daa8b2af2a2cf7b6ae766611b0c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cce1be0687ce0d7b8cbaaaa2192dcc0ee3e624978c7e5296c2676099fb9c647e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a79018530a34ea3fc2515bf85a4db9ed4379ccf7aeb9ef5d744d5fdb3009596e"
+    sha256 cellar: :any_skip_relocation, ventura:       "ff98f524ac97416bd3893e5decb6f4e5deb9340f27fbca59a5b8f231bd800829"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c28697f03736035682992843bd2dae185e38958cea70dde760636d5fe5661f13"
   end
 
   depends_on "cpanminus" => :build

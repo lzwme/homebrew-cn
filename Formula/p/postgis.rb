@@ -1,8 +1,8 @@
 class Postgis < Formula
   desc "Adds support for geographic objects to PostgreSQL"
   homepage "https:postgis.net"
-  url "https:download.osgeo.orgpostgissourcepostgis-3.5.1.tar.gz"
-  sha256 "23706abc117fb1bab45a27a263b589f52fc08ebaff318c0bc0bdc940905306b5"
+  url "https:download.osgeo.orgpostgissourcepostgis-3.5.2.tar.gz"
+  sha256 "fb9f95d56e3aaef6a296473c76a3b99005ac41864d486c197cd478c9b14f791a"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Postgis < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d00d54c4f7f9d6138577e4870af238c0d81ed6df017281b5c6cb7f42a34ea5f1"
-    sha256 cellar: :any,                 arm64_sonoma:  "c2e11423d9c809c7acf8d6d5f47f6faa524ddfc4793fdbdf479636415c53c0b2"
-    sha256 cellar: :any,                 arm64_ventura: "73650c06659fe45546754927ee14d4540bdabdb7d97e477d1355f65e481c0901"
-    sha256 cellar: :any,                 sonoma:        "f170744aeeffe657c8ae932a4ebaa760bf8c61da96b531a26594aa11c30464f7"
-    sha256 cellar: :any,                 ventura:       "aa6db104afd1942a545768bafc17b15001ddfdf21f309a07d02853695ba4a394"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e01f0637fee4dd36e60ddcc99b0334b7a98a8c02e6a6de58e97c9654ba1ed73"
+    sha256 cellar: :any,                 arm64_sequoia: "edabf542e344ecf2e40a4b1db0c110b1857b4c479a1b59a138a0536da64ce60f"
+    sha256 cellar: :any,                 arm64_sonoma:  "4ea1ef6c4f59331a5f77e113dc2e65e7bcfbc953e695f641e06cc2b5787c2fe9"
+    sha256 cellar: :any,                 arm64_ventura: "19b606bdfaecdfe0233b315019a927701f854ec7afec4b3596a77a86676e11e6"
+    sha256 cellar: :any,                 sonoma:        "acf583d17d81f067583bfd5e2e430c11e9122b05fe1c59c5d41b0858dc833ac7"
+    sha256 cellar: :any,                 ventura:       "87a07800f976390905c25b7fc92bfeaf78c8977dbb2d2bd46269bc4da917f51f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3ff7e5e3bb03272bb54faef506571493b0b4d1ba841e981308786fa3178c2ae"
   end
 
   head do

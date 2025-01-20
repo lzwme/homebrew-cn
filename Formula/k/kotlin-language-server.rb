@@ -1,23 +1,27 @@
 class KotlinLanguageServer < Formula
   desc "Intelligent Kotlin support for any editorIDE using the Language Server Protocol"
   homepage "https:github.comfwcdkotlin-language-server"
-  url "https:github.comfwcdkotlin-language-serverarchiverefstags1.3.12.tar.gz"
-  sha256 "6d36c011b9a1f02f2d83570e1e03c77e2481a744ce3f6a7579cc83681f604aa8"
+  url "https:github.comfwcdkotlin-language-serverarchiverefstags1.3.13.tar.gz"
+  sha256 "4cb346f989ef114f6073cb9401968a7dd27eb5cd96993fa6856203610a13f96e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5e8892927c6542dadd2e505e3d05a1c23ad1c01733e7f9f26a3cba8ccac86cd7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7e92605918e7da83a9e1dc913d204ccd74c5f4b8e9aac0cbae0768222203f2a4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b585c23e483af862f96b3e418616275c77f91250dcc9d6c0a10875c4d83574d4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4bb729d83ecf63175071e4954dff5b85f729893512018ba8e23a53aa20711038"
-    sha256 cellar: :any_skip_relocation, sonoma:         "46bf3133b78b99e2146113941d072b7df3f846d69ba5763f9291fdc0624ad036"
-    sha256 cellar: :any_skip_relocation, ventura:        "522688d61beaf748c5508e92fe4ccf5a2e349a4c3f47a5e456efba0231fdf72b"
-    sha256 cellar: :any_skip_relocation, monterey:       "235497b217ef9cd30330ad18e3996ccdec429323c7ea3e3428e066b64d309e94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "fca93e17a9eba4a773f4cbb654369fe8103fa3c446d4fd9cc3cfdd831c0f18e9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a8f715a1cb3d08aba2c7691f832a7d7f080a456b31b7ad27c319e82eaa7b276"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1bb973d9967acd621079bc932a5ad6bf2971020a9b2c75f4f4c2ba56d3d51157"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "70751b17fc9cb655dfff1b5d05c18bdc2ee8de66a41fbc5e9d4882cc0b13b3f5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1aa692e029744e16e952cf8de40b9dfd63f19416e9d5532445cc038745df83b5"
+    sha256 cellar: :any_skip_relocation, ventura:       "06b601dfae36e4909787d1c2f9c01509c4573eb5a35b617806cd36faaf6c3bfb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61b0bc6b824959b614df4e0cc31463ab4d8d3a95030c11dd9263921e2c5c5325"
   end
 
   depends_on "gradle" => :build
   depends_on "openjdk@21"
+
+  # file permission literal patch, upstream pr ref, https:github.comfwcdkotlin-language-serverpull611
+  patch do
+    url "https:github.comfwcdkotlin-language-servercommita788e5f7b449dd701adc642c7cfb129f1895bd3e.patch?full_index=1"
+    sha256 "cc9f6c68a09c76017099ffdd9bfe242a81b51221131bc33f3a7e2baa5bea6d01"
+  end
 
   def install
     ENV["JAVA_HOME"] = Language::Java.java_home("21")

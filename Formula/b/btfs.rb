@@ -16,7 +16,7 @@ class Btfs < Formula
   depends_on "automake" => :build
   depends_on "pkgconf" => :build
   depends_on "curl"
-  depends_on "libfuse@2"
+  depends_on "libfuse@2" # FUSE 3 issue: https:github.comjohangbtfsissues92
   depends_on "libtorrent-rasterbar"
   depends_on :linux # on macOS, requires closed-source macFUSE
   depends_on "openssl@3"

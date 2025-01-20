@@ -1,8 +1,8 @@
 class Nsd < Formula
   desc "Name server daemon"
   homepage "https:www.nlnetlabs.nlprojectsnsd"
-  url "https:www.nlnetlabs.nldownloadsnsdnsd-4.11.0.tar.gz"
-  sha256 "93956d90d45ffa9f84f8ca2f718a42105e4236d094ce032211849f1a12cdc158"
+  url "https:www.nlnetlabs.nldownloadsnsdnsd-4.11.1.tar.gz"
+  sha256 "696e50052008de4fa7ab1d818d5b77eb63247eea2f0575114c9592ff9188a614"
   license "BSD-3-Clause"
 
   # We check the GitHub repo tags instead of
@@ -18,12 +18,12 @@ class Nsd < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "f1dc1057d967c55241155e9fbca1dfed2d84b9747d730276ca44930331937277"
-    sha256 arm64_sonoma:  "468ab3c420d678472b312d20edbf0ae59bc123bafa3b1deaaa73a46d41901319"
-    sha256 arm64_ventura: "42ddd971ecee155ff8a7ed9fb0f3eaf3ef1056503213174579edcc480af5d35e"
-    sha256 sonoma:        "c42a49b9af5291c034e1e2c8722a18135c031940220628569e823396dcf12387"
-    sha256 ventura:       "ba654350358dea4d9bee9a0c19ba7139487528c63e6ee98b5b50365d3f3c27c0"
-    sha256 x86_64_linux:  "5998f6372bf1d7c24c72ec43331e1b69e3397d4f0ecac9a269886d846e34f6f0"
+    sha256 arm64_sequoia: "3df7ec97f7ca8e160691b79694a83a51b9083d502aac81f5979e28ea5b19e92e"
+    sha256 arm64_sonoma:  "7d6cad1d2735a82a50b9d628a4b2cdc695f00ad619019f27c68e0721a631f755"
+    sha256 arm64_ventura: "af424ffb3f1ae124ba47dfa2bd691a1f90d70cf39fc6345b40fe94f386f02479"
+    sha256 sonoma:        "a1b7e2e383c9004617890aa48fdd3873783e643e69d4e1976918e5407319304a"
+    sha256 ventura:       "6ec73c76802f96ba82df3495a19d0188ce06e25f244c852a1ab9e58a0844149c"
+    sha256 x86_64_linux:  "89c40841c0b01e61324d89074a346a3318a9e6eab50561c6407b1eaae02860e7"
   end
 
   depends_on "libevent"

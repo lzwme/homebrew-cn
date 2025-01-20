@@ -6,16 +6,17 @@ class Xmount < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 x86_64_linux: "7693dc80c9ce82caf5cf123dac6bbe8b94be092e1e1c3dcc1c7715deeb40c41e"
+    rebuild 1
+    sha256 x86_64_linux: "eb88a9f07d863af3e661ab1be49b32353d8a5890d2081f9feefcef0e79af504c"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "afflib"
   depends_on "libewf"
-  depends_on "libfuse@2"
+  depends_on "libfuse"
   depends_on :linux # on macOS, requires closed-source macFUSE
-  depends_on "openssl@3"
+  depends_on "zlib"
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

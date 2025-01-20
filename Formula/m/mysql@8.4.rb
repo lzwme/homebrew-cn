@@ -103,16 +103,13 @@ class MysqlAT84 < Formula
       -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
       -DWITH_ICU=#{icu4c.opt_prefix}
       -DWITH_SYSTEM_LIBS=ON
-      -DWITH_BOOST=boost
       -DWITH_EDITLINE=system
-      -DWITH_LIBEVENT=system
       -DWITH_LZ4=system
       -DWITH_PROTOBUF=system
       -DWITH_SSL=system
       -DWITH_ZLIB=system
       -DWITH_ZSTD=system
       -DWITH_UNIT_TESTS=OFF
-      -DWITH_INNODB_MEMCACHED=ON
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -133,13 +130,13 @@ class MysqlAT84 < Formula
     bin.install_symlink prefix"support-filesmysql.server"
 
     # Install my.cnf that binds to 127.0.0.1 by default
-    (buildpath"my.cnf").write <<~EOS
+    (buildpath"my.cnf").write <<~INI
       # Default Homebrew MySQL server config
       [mysqld]
       # Only allow connections from localhost
       bind-address = 127.0.0.1
       mysqlx-bind-address = 127.0.0.1
-    EOS
+    INI
     etc.install "my.cnf"
   end
 
@@ -187,17 +184,33 @@ class MysqlAT84 < Formula
     (testpath"mysql").mkpath
     (testpath"tmp").mkpath
 
-    args = %W[--no-defaults --user=#{ENV["USER"]} --datadir=#{testpath}mysql --tmpdir=#{testpath}tmp]
-    system bin"mysqld", *args, "--initialize-insecure", "--basedir=#{prefix}"
     port = free_port
-    pid = spawn(bin"mysqld", *args, "--port=#{port}")
+    socket = testpath"mysql.sock"
+    mysqld_args = %W[
+      --no-defaults
+      --mysqlx=OFF
+      --user=#{ENV["USER"]}
+      --port=#{port}
+      --socket=#{socket}
+      --basedir=#{prefix}
+      --datadir=#{testpath}mysql
+      --tmpdir=#{testpath}tmp
+    ]
+    client_args = %W[
+      --port=#{port}
+      --socket=#{socket}
+      --user=root
+      --password=
+    ]
+
+    system bin"mysqld", *mysqld_args, "--initialize-insecure"
+    pid = spawn(bin"mysqld", *mysqld_args)
     begin
       sleep 5
-
-      output = shell_output("#{bin}mysql --port=#{port} --user=root --password= --execute='show databases;'")
+      output = shell_output("#{bin}mysql #{client_args.join(" ")} --execute='show databases;'")
       assert_match "information_schema", output
-      system bin"mysqladmin", "--port=#{port}", "--user=root", "--password=", "shutdown"
     ensure
+      system bin"mysqladmin", *client_args, "shutdown"
       Process.kill "TERM", pid
     end
   end

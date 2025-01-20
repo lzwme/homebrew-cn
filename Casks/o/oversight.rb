@@ -6,7 +6,7 @@ cask "oversight" do
       verified: "github.comobjective-seeOverSight"
   name "OverSight"
   desc "Monitors computer mic and webcam"
-  homepage "https:objective-see.comproductsoversight.html"
+  homepage "https:objective-see.orgproductsoversight.html"
 
   depends_on macos: ">= :monterey"
 

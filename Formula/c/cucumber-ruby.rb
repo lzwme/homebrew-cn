@@ -11,16 +11,17 @@ class CucumberRuby < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8b48443cf24753ec99cfc462fc9f30423406271af8c9ac8c0422acd1e6d45cc0"
-    sha256 cellar: :any,                 arm64_sonoma:  "ce46817423387c998573530357121d72b4bf36585874b11671253b8fce590ced"
-    sha256 cellar: :any,                 arm64_ventura: "c4e0c8446f9fb07f0417f68dbdfe1fca1d9e0d8c49f502cb21bdc84312323055"
-    sha256 cellar: :any,                 sonoma:        "fcc7218a48ba382994951bb83f292066cf648e153e842dbbceed7ed04638301a"
-    sha256 cellar: :any,                 ventura:       "d8d28f0990273b198d4216ab9ac522be75dd261e4d5e47806b95a2f00d18df57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "837d56a4e7251d6ea2365d0bb38c0b252e1bfc2d2d5ed75a39d842bc2eff580d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "20381cf2c1bbdb4f7ebea8dc4a0a8ed54da15918a5990a4174da415143f1d614"
+    sha256 cellar: :any,                 arm64_sonoma:  "998779f5565e45a08537c4ee50623709e0a18b9196566b0e38960a550835e19d"
+    sha256 cellar: :any,                 arm64_ventura: "f666102925eaf6f28a901e04718ce7b11a6b212b5ac99facc05976619ead0da1"
+    sha256 cellar: :any,                 sonoma:        "a064069552ea70949964106b212ac03a08545a1ff8cf579866157c3f081625f0"
+    sha256 cellar: :any,                 ventura:       "4a50724c662c7703e7194415b307960575aa2fcdb9a02aa33af952469fdf807a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e9d621e6af198167ae28ec80ffd44a87c2cffee29c5bc81869a1dc9c46e8152"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "ruby@3.3" # ruby 3.4 support bug report, https:github.comcucumbercucumber-rubyissues1769
+  depends_on "ruby"
 
   uses_from_macos "libffi", since: :catalina
 
@@ -116,6 +117,6 @@ class CucumberRuby < Formula
 
   test do
     assert_match "create   features", shell_output("#{bin}cucumber --init")
-    assert_predicate testpath"features", :exist?
+    assert_path_exists testpath"features"
   end
 end

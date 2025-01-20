@@ -5,6 +5,11 @@ class Libfastjson < Formula
   sha256 "ef30d1e57a18ec770f90056aaac77300270c6203bbe476f4181cc83a2d5dc80c"
   license "BSD-2-Clause"
 
+  livecheck do
+    url "https:download.rsyslog.comlibfastjson"
+    regex(href=.*?libfastjson[._-]v?(\d+(?:\.\d+)+)\.ti)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "e9a8424dc257099992210434ed1b30517d31ea60793715f5b2878421144ffa9e"
     sha256 cellar: :any,                 arm64_sonoma:   "a9ca39524509a82daa588a69d3f7cf2c930a9fd4343279a3ecf86ec47391852a"

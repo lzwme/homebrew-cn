@@ -6,6 +6,11 @@ class CargoCyclonedx < Formula
   license "Apache-2.0"
   head "https:github.comCycloneDXcyclonedx-rust-cargo.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(^cargo-cyclonedx[._-]v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0929e7f65dd40618265f765e8018119e9b782336f723cdcab119a3e424264edd"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "783adfef5d79bf8f14dc6f3f667a3188c390fc58e58765fe129ef4b566e1b0f0"

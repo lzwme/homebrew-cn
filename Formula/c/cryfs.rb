@@ -19,7 +19,7 @@ class Cryfs < Formula
   depends_on "boost"
   depends_on "curl"
   depends_on "fmt"
-  depends_on "libfuse@2"
+  depends_on "libfuse@2" # FUSE 3 issue: https:github.comcryfscryfsissues419
   depends_on :linux # on macOS, requires closed-source macFUSE
   depends_on "range-v3"
   depends_on "spdlog"

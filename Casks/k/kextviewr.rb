@@ -6,7 +6,7 @@ cask "kextviewr" do
       verified: "github.comobjective-see"
   name "KextViewr"
   desc "Display all currently loaded kexts"
-  homepage "https:objective-see.comproductskextviewr.html"
+  homepage "https:objective-see.orgproductskextviewr.html"
 
   depends_on macos: ">= :big_sur"
 

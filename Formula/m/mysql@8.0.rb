@@ -54,6 +54,12 @@ class MysqlAT80 < Formula
   end
 
   def install
+    # Remove bundled libraries other than explicitly allowed below.
+    # `boost` and `rapidjson` must use bundled copy due to patches.
+    # `lz4` is still needed due to xxhash.c used by mysqlgcs
+    keep = %w[duktape lz4 rapidjson unordered_dense]
+    (buildpath"extra").each_child { |dir| rm_r(dir) unless keep.include?(dir.basename.to_s) }
+
     # Disable ABI checking
     inreplace "cmakeabi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0" if OS.linux?
 
@@ -91,7 +97,7 @@ class MysqlAT80 < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    (prefix"mysql-test").cd do
+    cd prefix"mysql-test" do
       system ".mysql-test-run.pl", "status", "--vardir=#{buildpath}mysql-test-vardir"
     end
 
@@ -105,13 +111,13 @@ class MysqlAT80 < Formula
     bin.install_symlink prefix"support-filesmysql.server"
 
     # Install my.cnf that binds to 127.0.0.1 by default
-    (buildpath"my.cnf").write <<~EOS
+    (buildpath"my.cnf").write <<~INI
       # Default Homebrew MySQL server config
       [mysqld]
       # Only allow connections from localhost
       bind-address = 127.0.0.1
       mysqlx-bind-address = 127.0.0.1
-    EOS
+    INI
     etc.install "my.cnf"
   end
 
@@ -159,15 +165,35 @@ class MysqlAT80 < Formula
     (testpath"mysql").mkpath
     (testpath"tmp").mkpath
 
-    args = %W[--no-defaults --user=#{ENV["USER"]} --datadir=#{testpath}mysql --tmpdir=#{testpath}tmp]
-    system bin"mysqld", *args, "--initialize-insecure", "--basedir=#{prefix}"
     port = free_port
-    fork { exec bin"mysqld", *args, "--port=#{port}" }
-    sleep 5
+    socket = testpath"mysql.sock"
+    mysqld_args = %W[
+      --no-defaults
+      --mysqlx=OFF
+      --user=#{ENV["USER"]}
+      --port=#{port}
+      --socket=#{socket}
+      --basedir=#{prefix}
+      --datadir=#{testpath}mysql
+      --tmpdir=#{testpath}tmp
+    ]
+    client_args = %W[
+      --port=#{port}
+      --socket=#{socket}
+      --user=root
+      --password=
+    ]
 
-    output = shell_output("#{bin}mysql --port=#{port} --user=root --password= --execute='show databases;'")
-    assert_match "information_schema", output
-    system bin"mysqladmin", "--port=#{port}", "--user=root", "--password=", "shutdown"
+    system bin"mysqld", *mysqld_args, "--initialize-insecure"
+    pid = spawn(bin"mysqld", *mysqld_args)
+    begin
+      sleep 5
+      output = shell_output("#{bin}mysql #{client_args.join(" ")} --execute='show databases;'")
+      assert_match "information_schema", output
+    ensure
+      system bin"mysqladmin", *client_args, "shutdown"
+      Process.kill "TERM", pid
+    end
   end
 end
 

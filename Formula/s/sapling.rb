@@ -31,7 +31,7 @@ class Sapling < Formula
   depends_on "libssh2"
   depends_on "node"
   depends_on "openssl@3"
-  depends_on "python@3.12"
+  depends_on "python@3.12" # Python 3.13 issue: https:github.comfacebooksaplingissues980
 
   uses_from_macos "bzip2"
   # curl-config on ventura builds do not report http2 feature,

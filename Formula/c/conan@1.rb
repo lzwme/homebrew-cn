@@ -28,7 +28,7 @@ class ConanAT1 < Formula
   depends_on "cmake" => :test
   depends_on "certifi"
   depends_on "libyaml"
-  depends_on "python@3.12"
+  depends_on "python@3.12" # https:github.comconan-ioconanissues17220#issuecomment-2437381133
 
   resource "bottle" do
     url "https:files.pythonhosted.orgpackagesfd041c09ab851a52fe6bc063fd0df758504edede5cc741bd2e807bf434a09215bottle-0.12.25.tar.gz"

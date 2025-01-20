@@ -6,7 +6,7 @@ cask "dhs" do
       verified: "github.comobjective-see"
   name "Dylib Hijack Scanner"
   desc "Scans for dylib hijacking"
-  homepage "https:objective-see.comproductsdhs.html"
+  homepage "https:objective-see.orgproductsdhs.html"
 
   livecheck do
     url :url

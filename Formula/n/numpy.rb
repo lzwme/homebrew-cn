@@ -1,18 +1,18 @@
 class Numpy < Formula
   desc "Package for scientific computing with Python"
   homepage "https:www.numpy.org"
-  url "https:files.pythonhosted.orgpackagesf2a5fdbf6a7871703df6160b5cf3dd774074b086d278172285c52c2758b76305numpy-2.2.1.tar.gz"
-  sha256 "45681fd7128c8ad1c379f0ca0776a8b0c6583d2f69889ddac01559dfe4390918"
+  url "https:files.pythonhosted.orgpackagesecd0c12ddfd3a02274be06ffc71f3efc6d0e457b0409c4481596881e748cb264numpy-2.2.2.tar.gz"
+  sha256 "ed6906f61834d687738d25988ae117683705636936cc605be0bb208b23df4d8f"
   license "BSD-3-Clause"
   head "https:github.comnumpynumpy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3cfd91496af13d62ad8e2a84efe4267196ff2f872b59c66313e4741593676872"
-    sha256 cellar: :any,                 arm64_sonoma:  "d4530f16d45d6baf5c6c1f7fe86690e05e47c11c5cdfcb02e4b7c85027dadb83"
-    sha256 cellar: :any,                 arm64_ventura: "927a4cefdea10dbb612908c19711c8916cc2b34d8d2d4ae8b4383c0ed0a5f010"
-    sha256 cellar: :any,                 sonoma:        "eb494266ed71b7bedd3be7760f161b889d77f6254461dd14316b3a45a1aacd19"
-    sha256 cellar: :any,                 ventura:       "e38508170528b7b28e909e6dcc8cd91ca44679aefc8b0ac9e715b27eaa9e9d2d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8b745e86107009664d5a73a9df9655f4028d1d278ae17778c3a6168d984b1d4"
+    sha256 cellar: :any,                 arm64_sequoia: "15cf20d0aea78106ce25189c48fc7357887d90b95412b05ffa13145a2d775267"
+    sha256 cellar: :any,                 arm64_sonoma:  "e3c171aedb059d07be9c03336bf5feb7d562cac774e98e0c52a8d908ff5ae36d"
+    sha256 cellar: :any,                 arm64_ventura: "ad8a60a698802fa51e254e8286cf6e0200bc63376b5f042f300b78e8be6496ad"
+    sha256 cellar: :any,                 sonoma:        "9eb098ae8e2808998f84e9fd6243dc2971fed01b00bb7d9dbefbfd24c4cf8cea"
+    sha256 cellar: :any,                 ventura:       "1a18d737886399ef77c1e6890cc81e055eb21c26c5eae66dab23d7fda1c700d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1157d96cf7f66bad29a97665daa35db303b174543579c270f9dad6637e2492b6"
   end
 
   depends_on "gcc" => :build # for gfortran

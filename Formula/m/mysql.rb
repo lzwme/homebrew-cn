@@ -73,14 +73,6 @@ class Mysql < Formula
     if OS.linux?
       # Disable ABI checking
       inreplace "cmakeabi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0"
-
-      # Work around build issue with Protobuf 22+ on Linux
-      # Ref: https:bugs.mysql.combug.php?id=113045
-      # Ref: https:bugs.mysql.combug.php?id=115163
-      inreplace "cmakeprotobuf.cmake" do |s|
-        s.gsub! 'IF(APPLE AND WITH_PROTOBUF STREQUAL "system"', 'IF(WITH_PROTOBUF STREQUAL "system"'
-        s.gsub! ' INCLUDE REGEX "${HOMEBREW_HOME}.*")', ' INCLUDE REGEX "libabsl.*")'
-      end
     elsif MacOS.version <= :ventura
       ENV["CC"] = Formula["llvm@18"].opt_bin"clang"
       ENV["CXX"] = Formula["llvm@18"].opt_bin"clang++"
@@ -115,21 +107,18 @@ class Mysql < Formula
       -DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}
       -DWITH_ICU=#{icu4c.opt_prefix}
       -DWITH_SYSTEM_LIBS=ON
-      -DWITH_BOOST=boost
       -DWITH_EDITLINE=system
-      -DWITH_LIBEVENT=system
       -DWITH_LZ4=system
       -DWITH_PROTOBUF=system
       -DWITH_SSL=system
       -DWITH_ZLIB=system
       -DWITH_ZSTD=system
       -DWITH_UNIT_TESTS=OFF
-      -DWITH_INNODB_MEMCACHED=ON
     ]
 
     # Add the dependencies to the CMake args
     if OS.mac? && MacOS.version <=(:ventura)
-      %W[
+      args += %W[
         -DABSL_INCLUDE_DIR=#{Formula["abseil"].opt_include}
         -DICU_ROOT=#{Formula["icu4c@76"].opt_prefix}
         -DLZ4_INCLUDE_DIR=#{Formula["lz4"].opt_include}
@@ -137,9 +126,7 @@ class Mysql < Formula
         -DPROTOBUF_INCLUDE_DIR=#{Formula["protobuf"].opt_include}
         -DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}
         -DZSTD_INCLUDE_DIR=#{Formula["zstd"].opt_include}
-      ].each do |arg|
-        args << arg
-      end
+      ]
     end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -221,17 +208,33 @@ class Mysql < Formula
     (testpath"mysql").mkpath
     (testpath"tmp").mkpath
 
-    args = %W[--no-defaults --user=#{ENV["USER"]} --datadir=#{testpath}mysql --tmpdir=#{testpath}tmp]
-    system bin"mysqld", *args, "--initialize-insecure", "--basedir=#{prefix}"
     port = free_port
-    pid = spawn(bin"mysqld", *args, "--port=#{port}")
+    socket = testpath"mysql.sock"
+    mysqld_args = %W[
+      --no-defaults
+      --mysqlx=OFF
+      --user=#{ENV["USER"]}
+      --port=#{port}
+      --socket=#{socket}
+      --basedir=#{prefix}
+      --datadir=#{testpath}mysql
+      --tmpdir=#{testpath}tmp
+    ]
+    client_args = %W[
+      --port=#{port}
+      --socket=#{socket}
+      --user=root
+      --password=
+    ]
+
+    system bin"mysqld", *mysqld_args, "--initialize-insecure"
+    pid = spawn(bin"mysqld", *mysqld_args)
     begin
       sleep 5
-
-      output = shell_output("#{bin}mysql --port=#{port} --user=root --password= --execute='show databases;'")
+      output = shell_output("#{bin}mysql #{client_args.join(" ")} --execute='show databases;'")
       assert_match "information_schema", output
-      system bin"mysqladmin", "--port=#{port}", "--user=root", "--password=", "shutdown"
     ensure
+      system bin"mysqladmin", *client_args, "shutdown"
       Process.kill "TERM", pid
     end
   end

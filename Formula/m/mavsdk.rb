@@ -21,7 +21,7 @@ class Mavsdk < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "python@3.12" => :build
+  depends_on "python@3.13" => :build
   depends_on "abseil"
   depends_on "c-ares"
   depends_on "curl"
@@ -72,7 +72,7 @@ class Mavsdk < Formula
 
     resource("mavlink").stage do
       system "cmake", "-S", ".", "-B", "build",
-                      "-DPython_EXECUTABLE=#{which("python3.12")}",
+                      "-DPython_EXECUTABLE=#{which("python3.13")}",
                       *std_cmake_args(install_prefix: libexec)
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
