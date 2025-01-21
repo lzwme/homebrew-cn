@@ -5,6 +5,13 @@ class Wavpack < Formula
   sha256 "8944b237968a1b3976a1eb47cd556916e041a2aa8917495db65f82c3fcc2a225"
   license "BSD-3-Clause"
 
+  # The first-party download page also links to `xmms-wavpack` releases, so
+  # we have to avoid those versions.
+  livecheck do
+    url "https:www.wavpack.comdownloads.html"
+    regex(%r{href=(?:["']?|.*?)wavpack[._-]v?(\d+(?:\.\d+)+)\.t}i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "34fa8bce44dec654eccbaf58d97fe7e9ae4824f5aaaf3ed3ac8ea8acf5e04f86"
     sha256 cellar: :any,                 arm64_sonoma:   "a52595d292c101c9976c2ef02756e0d90b985a10e58a7305d9a4a31279eecf57"

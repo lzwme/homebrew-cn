@@ -1,8 +1,8 @@
 class Sord < Formula
   desc "C library for storing RDF data in memory"
   homepage "https://drobilla.net/software/sord.html"
-  url "https://download.drobilla.net/sord-0.16.16.tar.xz"
-  sha256 "257f876d756143da02ee84c9260af93559d6249dd87f317e70ab5fffcc975fd0"
+  url "https://download.drobilla.net/sord-0.16.18.tar.xz"
+  sha256 "4f398b635894491a4774b1498959805a08e11734c324f13d572dea695b13d3b3"
   license "ISC"
 
   livecheck do
@@ -11,15 +11,12 @@ class Sord < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_sequoia:  "9534a78d2099f3cc7938d5c25b23e17d270e977dafd203bd3c5e3d5f292ee915"
-    sha256 cellar: :any, arm64_sonoma:   "ccb2cea1a9eb0a3872148c76b00d4010c871b5c6d08b33a7cf558f44abbccdf6"
-    sha256 cellar: :any, arm64_ventura:  "1f98b5a02176c345ebdfdde01c85ec692674f6e1915f7c78ed4121ff0d593bf3"
-    sha256 cellar: :any, arm64_monterey: "0c86de68f0c8c679798fb812879a10bf1186c08df7d811f31b6ecaa36fbc42fc"
-    sha256 cellar: :any, sonoma:         "4da2463d79cd7dcbd974b6b241d502c11e4e3b98bbd3d99d44bc40ba81021c8d"
-    sha256 cellar: :any, ventura:        "68a1b2a740872fd9c03d81531507bc9cbfcc1eba056c6b54db6026767fc6b6a0"
-    sha256 cellar: :any, monterey:       "a3ea28a4fd497a0b142a2c115a4b0eccfee2735740a98f1b6a1c7e0fe9f5f55a"
-    sha256               x86_64_linux:   "56d3b1402f22c80f6c11ce31151a40bf136f2f1c6dd3b42a7db303206cea91d8"
+    sha256 cellar: :any, arm64_sequoia: "9482cf28bd5e2d77ed057903e53157a57e09355e8a6c69eb935fdefc67c79505"
+    sha256 cellar: :any, arm64_sonoma:  "bd8611d53bf08d025037edaa7ef83e635dbe853c3783ed94909a1edfc93d7457"
+    sha256 cellar: :any, arm64_ventura: "41fcd2ff39ea5a50392a5a3b31c523ca5c7e087e1d0124c1b8101da518e40bf8"
+    sha256 cellar: :any, sonoma:        "d1230019e29331722881ff6ecaa0533dd452b350792394a7c8f701f8ffde46dc"
+    sha256 cellar: :any, ventura:       "70e0cf3dced39cd9b5b0a069a0261fed4e758412f625e4803449d27e6fa07f72"
+    sha256               x86_64_linux:  "eee6fa6352554b778e2a51f04791a165d4bf3ca78379ff205481ae157bb2dc35"
   end
 
   depends_on "meson" => :build

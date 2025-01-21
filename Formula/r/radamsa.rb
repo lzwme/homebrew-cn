@@ -15,9 +15,6 @@ class Radamsa < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c32fe0dcf5a76ce7251b8caebf2ecdd09427990a52c88adfd993efeae138fe41"
   end
 
-  # TODO: Remove in follow up
-  conflicts_with "ol", because: "both install `ol` binaries"
-
   # https://gitlab.com/akihe/radamsa/-/blob/v#{version}/Makefile?ref_type=tags#L7
   resource "ol.c" do
     url "https://haltp.org/files/ol-0.2.2.c.gz"

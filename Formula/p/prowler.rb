@@ -3,17 +3,17 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https:prowler.com"
-  url "https:files.pythonhosted.orgpackages99997ea7b8f7ba99b950a724223e3a61cd04cbcb15de139b795010e05bf756caprowler-5.1.3.tar.gz"
-  sha256 "c6ad11b1a2fccc77c61f720171dfabddf201c2f76d1e53f0178a222e3e189ebc"
+  url "https:files.pythonhosted.orgpackages3bd554770c7ceb8761f6cc7e6b88e4d60b4ee439eddc8989ce06270ff3ec4881prowler-5.1.4.tar.gz"
+  sha256 "cc080a1fb2435630e6d4988dad41449a1b0202e4b06ab853be7fe93069746584"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "510205e61720a90c530aac7203a26e95c4bd195c4567203fde86ae2bd995b8d3"
-    sha256 cellar: :any,                 arm64_sonoma:  "44405ed9f32dbfd1cb7b1b1198433eb7cd5ac80a73297852be8e1d814df0b486"
-    sha256 cellar: :any,                 arm64_ventura: "e32e5d4b9c814bfef5c81bc836141dacbf2137cf115ac70182f037d28ad43f8e"
-    sha256 cellar: :any,                 sonoma:        "9b89d849ec3d8cdd4d8ad785f1fb48e1cf0075b65ba5349da0077f8cf82f49e6"
-    sha256 cellar: :any,                 ventura:       "46da3a6d3e54dafbbc6e40dd3b103ec084673baee8044d33a401e20e9418b511"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd2dccce3b039fb42e0d2f681055ef44b4354875e445bb20651502e7b3c0a684"
+    sha256 cellar: :any,                 arm64_sequoia: "c712ef9cb5f2ee956681a1b3948a3112e75b7395b31f35d2324a6584aa8d2de5"
+    sha256 cellar: :any,                 arm64_sonoma:  "87b9112c1332ee4ccc5cbde4ab89fd0c04cb5e16f5d5f34c50ab83d3efd0e2fa"
+    sha256 cellar: :any,                 arm64_ventura: "8dc803354a488b9d0845a293c78859c3d6ec163948a852ecc408e7aa75c8c643"
+    sha256 cellar: :any,                 sonoma:        "d9933b36405586c86aa0a33dcec28731bda2e863b59f5d10f90f817b7a5602ea"
+    sha256 cellar: :any,                 ventura:       "698e98c771ed3ca0b71343122d6dfbf1a3bb8d743262b4d7c7eb6d1a04316be1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cad36357360f97cfebb598033e7b0b662c125b64e389c42aa26114f02e180758"
   end
 
   depends_on "cmake" => :build

@@ -1,8 +1,8 @@
 class Serd < Formula
   desc "C library for RDF syntax"
   homepage "https://drobilla.net/software/serd.html"
-  url "https://download.drobilla.net/serd-0.32.2.tar.xz"
-  sha256 "df7dc2c96f2ba1decfd756e458e061ded7d8158d255554e7693483ac0963c56b"
+  url "https://download.drobilla.net/serd-0.32.4.tar.xz"
+  sha256 "cbefb569e8db686be8c69cb3866a9538c7cb055e8f24217dd6a4471effa7d349"
   license "ISC"
 
   livecheck do
@@ -11,14 +11,12 @@ class Serd < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "6da3bc12299d08bdd94b31b39eb398895133440589a08307fd59f27a41f1deb8"
-    sha256 cellar: :any,                 arm64_sonoma:   "64998f0f202c9dc4d9db24962d225b8575691230c9529e9caf5f51ea1cfe6a51"
-    sha256 cellar: :any,                 arm64_ventura:  "a90f4099dc15980f2d3434153cbb09b5cb4da1e359514f0ec5b7503fa3236d0f"
-    sha256 cellar: :any,                 arm64_monterey: "1b92544391c0b1a50707d923824e5d6762ce7348b4078d108d122a950854f782"
-    sha256 cellar: :any,                 sonoma:         "fc6f974050534d696af8dadbe2540b184cca110684125c5d16b7b8757b414389"
-    sha256 cellar: :any,                 ventura:        "07c535671ae8df56222c86f3033dcac69f998195f048d32c36d3c030bfd7c7b3"
-    sha256 cellar: :any,                 monterey:       "c94b0036ca6c651de4fc692640b055ec09149c13eebcb3ab321f2cf06a86c05f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af54bbd35eed60339757f56f0a603f4d27ba1b44b8c7b60d18bf8b67438eaa21"
+    sha256 cellar: :any,                 arm64_sequoia: "cb7d131a4e36b9af03afd71b9a52977b7f8c03855cf59fe2c1425a82d266efa9"
+    sha256 cellar: :any,                 arm64_sonoma:  "bd0c2273b21fd4823f8ae84a0b927af0e9d20d93f221e8eba269ac2a5f19490d"
+    sha256 cellar: :any,                 arm64_ventura: "42b9a161e5f2b1b4a28183d16ecd0bff483519b292aeb982792f74201c2ff41f"
+    sha256 cellar: :any,                 sonoma:        "a645922619955963c2d58856a30d91cbb0a74e63afd97027127a6c1ec684d7ed"
+    sha256 cellar: :any,                 ventura:       "1206b5fd96a17388d8fa194ba4a1a5c9c59b9e2cefbf9bffa674bf8f71fd874f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52f9da3eed3f941a1c97f3a35764afcc8a5974b19a6ebf0952c28c8b239c6d3e"
   end
 
   depends_on "meson" => :build

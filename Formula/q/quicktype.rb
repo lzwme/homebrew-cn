@@ -1,21 +1,18 @@
 class Quicktype < Formula
   desc "Generate types and converters from JSON, Schema, and GraphQL"
   homepage "https:github.comglideappsquicktype"
-  url "https:registry.npmjs.orgquicktype-quicktype-23.0.170.tgz"
-  sha256 "659d134a323644b799149dc562882092544804d69a5288574af4d657f3c00a57"
+  url "https:registry.npmjs.orgquicktype-quicktype-23.0.171.tgz"
+  sha256 "f33e1c0371aa6d60b37405583be72b16a60d189117cce9b2f4c7d19ab24535f0"
   license "Apache-2.0"
   head "https:github.comglideappsquicktype.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a0165ecdfca165b21db3bf3ea97076058bd2a2b58d822ea665532030f69359c8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2e197f59d0b6c2e62f03322b0e4f014671c657515a16d3bdac7ae1da3369ba16"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "2e197f59d0b6c2e62f03322b0e4f014671c657515a16d3bdac7ae1da3369ba16"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "2e197f59d0b6c2e62f03322b0e4f014671c657515a16d3bdac7ae1da3369ba16"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4e037edc65fcbe0cd256eef1142fe93ed25cf604af3a5ec9432f9a2381e6f614"
-    sha256 cellar: :any_skip_relocation, ventura:        "4e037edc65fcbe0cd256eef1142fe93ed25cf604af3a5ec9432f9a2381e6f614"
-    sha256 cellar: :any_skip_relocation, monterey:       "4e037edc65fcbe0cd256eef1142fe93ed25cf604af3a5ec9432f9a2381e6f614"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a741aad8272c2f841c25a8ce5a919843e84006dfd224eba6395ffbb9f22319f3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58ae1e2db79f0cd36c5ae3bfc03e62c42ac9189dd2e388ad0809b95568da15f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58ae1e2db79f0cd36c5ae3bfc03e62c42ac9189dd2e388ad0809b95568da15f3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "58ae1e2db79f0cd36c5ae3bfc03e62c42ac9189dd2e388ad0809b95568da15f3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b8933a693ee1464a6d04aa81c15a3cb1b9cc26b4b11ac49794051edd5e27aa14"
+    sha256 cellar: :any_skip_relocation, ventura:       "b8933a693ee1464a6d04aa81c15a3cb1b9cc26b4b11ac49794051edd5e27aa14"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58ae1e2db79f0cd36c5ae3bfc03e62c42ac9189dd2e388ad0809b95568da15f3"
   end
 
   depends_on "node"

@@ -1,17 +1,17 @@
 class Rmtrash < Formula
   desc "Move files and directories to the trash"
   homepage "https:github.comTBXarkrmtrash"
-  url "https:github.comTBXarkrmtrasharchiverefstags0.6.6.tar.gz"
-  sha256 "24ba6b5982ded6429a2d8d86d9b5a9d83beb88b1b551a2152d0bc8177d782d2f"
+  url "https:github.comTBXarkrmtrasharchiverefstags0.6.7.tar.gz"
+  sha256 "8c29f30294e1cbf1cdfc4b4f23e595e9d683aac8a21280b7218e894824caa80f"
   license "MIT"
   head "https:github.comTBXarkrmtrash.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "744e6e78555ccb8f228d62ffcba07dd4e58953bff858ec0faa5d6f066f49c394"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e35b0990862fbb7231249bca2fdf4b31dc626914d15b360e4c6ff6c939257974"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cc23209fc8a50556566d5f44cd31defb56e4f060e44ea46fc4225d326c3c0c4e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "65ee0247441bf614d5119a30f692aa757bff75d6723f7d71f56389e17bd37b4b"
-    sha256 cellar: :any_skip_relocation, ventura:       "d8523ffcac38dcf23ee9c9245571373abc09cada9350350b9fd4a9ee6f075975"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0d39cf21e21d67333f356390e8bbc154aa99d12c8e36518bff333f0938c9e01"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7976c1c4d2655020d709a446f64f087ff13b8377d263be19e74d289aae1a00e7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3364b446ee20fc49ff9463af49ef39b40d34915e258e63a4c31745c4f00568f4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "da82689c17a941b96a4f2aae2259ca53fc3ed270a7fd4241ade055b4b8ddb5e1"
+    sha256 cellar: :any_skip_relocation, ventura:       "ecdc721cd6c40658fb43016f0ff30ff693c8d865d018c2c6311c522bd8d4b637"
   end
 
   depends_on xcode: ["12.0", :build]
@@ -20,6 +20,7 @@ class Rmtrash < Formula
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release"
     bin.install ".buildreleasermtrash"
+    man1.install "Manualrmtrash.1"
   end
 
   test do

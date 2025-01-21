@@ -94,6 +94,7 @@ Homebrew-homebrew-core/Formula/a/ali.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aliae.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aliddns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/align.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/alive2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aliyun-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aliyunpan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/all-repos.rb, Homebrew/homebrew-core, 1
@@ -562,6 +563,7 @@ Homebrew-homebrew-core/Formula/b/bnfc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bob.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bochs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bogofilter.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/bold.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bombadillo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bomber.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bonnie++.rb, Homebrew/homebrew-core, 1
@@ -6394,7 +6396,7 @@ Homebrew-homebrew-core/Formula/t/tailor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tailscale.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tailspin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tailwindcss-language-server.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/t/tailwindcss.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tailwindcss.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/takt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/taktuk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tal.rb, Homebrew/homebrew-core, 0
@@ -13851,6 +13853,7 @@ Homebrew-homebrew-cask/Casks/s/stoplight-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stork.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/storyboarder.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stratoshark.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/stratoshark@dev.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/strawberry-wallpaper.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/streamlabs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/streamlink-twitch-gui.rb, Homebrew/homebrew-cask, 1

@@ -1,7 +1,6 @@
 class Apr < Formula
   desc "Apache Portable Runtime library"
   homepage "https://apr.apache.org/"
-  # TODO: Remove `libexec` symlinks in `install` when we no longer have a Big Sur bottle.
   url "https://www.apache.org/dyn/closer.lua?path=apr/apr-1.7.5.tar.bz2"
   mirror "https://archive.apache.org/dist/apr/apr-1.7.5.tar.bz2"
   sha256 "cd0f5d52b9ab1704c72160c5ee3ed5d3d4ca2df4a7f8ab564e3cb352b67232f2"
@@ -33,10 +32,6 @@ class Apr < Formula
 
     system "./configure", *std_configure_args
     system "make", "install"
-
-    # Install symlinks so that linkage doesn't break for reverse dependencies.
-    # Remove when we no longer have a Big Sur bottle.
-    (libexec/"lib").install_symlink lib.glob(shared_library("*"))
 
     rm lib.glob("*.{la,exp}")
 

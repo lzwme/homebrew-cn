@@ -1,18 +1,17 @@
 class Sextractor < Formula
   desc "Extract catalogs of sources from astronomical images"
   homepage "https:github.comastromaticsextractor"
-  url "https:github.comastromaticsextractorarchiverefstags2.28.0.tar.gz"
-  sha256 "36f5afcdfe74cbf1904038a4def0166c1e1dde883e0030b87280dfbdfcd81969"
+  url "https:github.comastromaticsextractorarchiverefstags2.28.2.tar.gz"
+  sha256 "d92c5214ea75b8a70214d7d7f6824207fc53861ec923ceb2cc574f2ec9effa94"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "19c492865d16d4f75a79ff7f5dba818ff508ae8759386bf9a9ae51bb975611e5"
-    sha256 arm64_sonoma:  "04589ae159ff12dad16858c302bebbf00f24f81251e443a0946a1289b24217e4"
-    sha256 arm64_ventura: "34dc39610a43c2c9e1b2d31e0c30ef728a9602c09eeefa4bbe8dc33362ed23e6"
-    sha256 sonoma:        "865ac257113da143885f40e611bfbc1c6c4e9b106b089f86230dee77b36581fd"
-    sha256 ventura:       "4d2ddd02ee25ce672990aa58156ce05d976807290ebd25a07ebe215fbfa27968"
-    sha256 x86_64_linux:  "d0839ccc9e1c008463f6ef4a08856729b2e69a1fecd909c32674952046877804"
+    sha256 arm64_sequoia: "114c7e6368360d1c5ef66850b1a2090bd84f759e323d320e0dd74549baed4714"
+    sha256 arm64_sonoma:  "2138d679b5172a8f2b76d0fbacde1a67de054ccd9db6d3f5bcf5a163107f9098"
+    sha256 arm64_ventura: "ca726287370efe2c960b98a02c8bcbe3b9a8491a584864d6333fd89a020a477d"
+    sha256 sonoma:        "3a7f9a4b0880e0de0dca905679bea7e8747f3a299755f10a8437bd5432f65a30"
+    sha256 ventura:       "9d53959e43245ab7d3ebac8bf8696d42c56a512bcc89672670c9f358fbbb6586"
+    sha256 x86_64_linux:  "6b0fd897f186d16e044a010354109fbf0fd4b7ba4afddc4b7715cca6e741186e"
   end
 
   depends_on "autoconf" => :build
@@ -21,12 +20,6 @@ class Sextractor < Formula
   depends_on "cfitsio"
   depends_on "fftw"
   depends_on "openblas"
-
-  # Switch finite to std::isfinite for ICC and GCC, remove in next release
-  patch do
-    url "https:github.comastromaticsextractorcommitced65570cb5b7073361dbf2c3c60631c3f54d0f9.patch?full_index=1"
-    sha256 "a037f0ece38d7ad57ff831615f22f1d0017a699a78c9c7525c78b4b20cb621be"
-  end
 
   def install
     openblas = Formula["openblas"]

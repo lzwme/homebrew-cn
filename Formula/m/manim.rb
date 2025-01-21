@@ -3,22 +3,21 @@ class Manim < Formula
 
   desc "Animation engine for explanatory math videos"
   homepage "https:www.manim.community"
-  url "https:files.pythonhosted.orgpackages835f717ba528eb191124211036ec710bafd605dc7f7bb948a41219a8dd1124b6manim-0.18.1.tar.gz"
-  sha256 "4bf2b479d258b410259c6828261fe79e107beb8f2dd04ebfa73b96bcefdde93d"
+  url "https:files.pythonhosted.orgpackages527929f287beebcf52464c2cfd88015720992515062dd373bd37c2ed34955cddmanim-0.19.0.tar.gz"
+  sha256 "748115ffc1dea24940fd6d7a3edcae0ccedc3e1874ebc1f5d7e5c6d69a4f4505"
   license "MIT"
-  revision 2
   head "https:github.commanimCommunitymanim.git", branch: "main"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any,                 arm64_sequoia: "071005e968de028db4da5d7a8c68335da00cd3e4a2fbc84241791a574d0aa15d"
-    sha256 cellar: :any,                 arm64_sonoma:  "ac3358678907db9a4befd566e6ed20e13a7a61c98eef00d8f503e2b747bd2175"
-    sha256 cellar: :any,                 arm64_ventura: "10237fc1cd1bfd66a57092a80158b4ea6e2513780829734b8d8be0ee6024e8d6"
-    sha256 cellar: :any,                 sonoma:        "cde620a418bd5325b43b0951c02faa39e4e2475807e67bf298b6f638229f83d4"
-    sha256 cellar: :any,                 ventura:       "12c715f545c99e1021c55399ead35064cd0443d48fe1de60ca160b6112acc438"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a56eee995594da0b0f28bcd00200b899e1ea4afe2cb6d124c8a163f128c01ddf"
+    sha256 cellar: :any,                 arm64_sequoia: "0c12c47570f9f36a78897bc9f6da054d19b3f998ea006b11e8e8c077a74568d8"
+    sha256 cellar: :any,                 arm64_sonoma:  "3b08811b554fe8b591d735197fbd6282119570e898c3195cd62820c931fb8e2e"
+    sha256 cellar: :any,                 arm64_ventura: "85d8948bc2a2205b1b881996712f670ff5036ec7f5fc69dafa8cb9442c31762b"
+    sha256 cellar: :any,                 sonoma:        "b6ff89f0acf709ee9e919a5b07748dd69d7bfaea23247cfe684037711e104f69"
+    sha256 cellar: :any,                 ventura:       "14fc3a46054ff6fe4fb88ba0baa90f47f841e1cb957c35fa3fb15827c43ec8a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bd5aa7de4e8bae579787094e0a49fa01c2e79f3ebde576663ef4d262d6b2818"
   end
 
+  depends_on "cmake" => :build # for mapbox_earcut
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
   depends_on "cairo" # for cairo.h
@@ -48,9 +47,19 @@ class Manim < Formula
     sha256 "e81268da0baa880431b68b1308ab7257eb33f356e57a5f9b1f915dfb13dd1387"
   end
 
+  resource "av" do
+    url "https:files.pythonhosted.orgpackages0c9d486d31e76784cc0ad943f420c5e05867263b32b37e2f4b0f7f22fdc1ca3aav-13.1.0.tar.gz"
+    sha256 "d3da736c55847d8596eb8c26c60e036f193001db3bc5c10da8665622d906c17e"
+  end
+
+  resource "beautifulsoup4" do
+    url "https:files.pythonhosted.orgpackagesb3ca824b1195773ce6166d388573fc106ce56d4a805bd7427b624e063596ec58beautifulsoup4-4.12.3.tar.gz"
+    sha256 "74e3d1928edc070d21748185c46e3fb33490f22f52a3addee9aee0f4f7781051"
+  end
+
   resource "click" do
-    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
+    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
   end
 
   resource "cloup" do
@@ -84,8 +93,8 @@ class Manim < Formula
   end
 
   resource "mapbox-earcut" do
-    url "https:files.pythonhosted.orgpackages234b41fd15bf00ba781ad593b996c3650bcf3fc47a824abdacb18f4a91e07a1cmapbox_earcut-1.0.2.tar.gz"
-    sha256 "83fa0468bcc23f300a1cbf9611bdc30c77aace9ab1d36821649f439490ee7d52"
+    url "https:files.pythonhosted.orgpackages8d700a322197c1178f47941e5e6e13b0a4adeaaa7c465c18e3b4ead3eba49860mapbox_earcut-1.0.3.tar.gz"
+    sha256 "b6bac5d519d9947a6321a699c15d58e0b5740da61b9210ed229e05ad207c1c04"
   end
 
   resource "markdown-it-py" do
@@ -104,8 +113,8 @@ class Manim < Formula
   end
 
   resource "moderngl-window" do
-    url "https:files.pythonhosted.orgpackages3c16de061149e35208cee45f1365019692a237046dc02fa413d07d28549c4811moderngl_window-3.0.3.tar.gz"
-    sha256 "b6108c2396cc54d444c11d7fc77a4db0c2c9a4d74c438ab75ea0ea61949b3143"
+    url "https:files.pythonhosted.orgpackages900292e235891300c901f59647112a0267a07454f58aeb2041aa44f6b85f9cb3moderngl_window-3.1.1.tar.gz"
+    sha256 "29c2827505f87399f3461d480b2778910fddeebe44ea803301215cf212a6c1bc"
   end
 
   resource "networkx" do
@@ -124,8 +133,8 @@ class Manim < Formula
   end
 
   resource "pyglet" do
-    url "https:files.pythonhosted.orgpackagesf7f49ff17629bbb818d6fd88f1d74ef117d4eba3bee8a54c14265f86a6c18f86pyglet-2.0.20.tar.gz"
-    sha256 "702ea52b1fc1b6447904d2edd579212b29f1b3475e098ac49b57647a064accb7"
+    url "https:files.pythonhosted.orgpackages2060bf154aba98e66bcc9d58e3d8bbea3d68a960f05b968a81693b17a76ece99pyglet-2.1.1.tar.gz"
+    sha256 "47f49890a00e9fefc4d0ea74dc5b9d6b9be1c5455bb5746b2df118012cfa3124"
   end
 
   resource "pyglm" do
@@ -134,8 +143,8 @@ class Manim < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
-    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
+    url "https:files.pythonhosted.orgpackages7c2dc3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84pygments-2.19.1.tar.gz"
+    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
   end
 
   resource "pyobjc-core" do
@@ -161,6 +170,11 @@ class Manim < Formula
   resource "skia-pathops" do
     url "https:files.pythonhosted.orgpackagese5854c6ce1f1f3e8d3888165f2830adcf340922416c155647b12ebac2dcc423eskia_pathops-0.8.0.post2.zip"
     sha256 "9e252cdeb6c4d162e82986d31dbd89c675d1677cb8019c2e13e6295d4a557269"
+  end
+
+  resource "soupsieve" do
+    url "https:files.pythonhosted.orgpackagesd7cefbaeed4f9fb8b2daa961f90591662df6a86c1abf25c548329a86920aedfbsoupsieve-2.6.tar.gz"
+    sha256 "e2e68417777af359ec65daac1057404a3c8a5455bb8abc36f1a9866ab1a51abb"
   end
 
   resource "srt" do
@@ -189,8 +203,8 @@ class Manim < Formula
   end
 
   def install
-    # Allow python 3.13: https:github.comManimCommunitymanimcommite74933049e7871832c1a623e128ef7bf82e2b8a4
-    inreplace "pyproject.toml", 'python = ">=3.9,<3.13"', 'python = ">=3.9"'
+    # beautifulsoup4 > hatchling, fix to `ZIP does not support timestamps before 1980` error
+    ENV["SOURCE_DATE_EPOCH"] = Time.now.to_i.to_s
 
     if OS.mac?
       # Help `pyobjc-framework-cocoa` pick correct SDK after removing -isysroot from Python formula

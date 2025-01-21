@@ -17,8 +17,6 @@ class Ol < Formula
 
   uses_from_macos "vim" => :build # for xxd
 
-  conflicts_with "radamsa", because: "both install `ol` binaries"
-
   def install
     # Workaround for newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403

@@ -133,6 +133,35 @@ class Flang < Formula
     system binflang_driver, "-v", "test.f90", "-o", "test"
     assert_equal "Done", shell_output(".test").chomp
 
+    (testpath"omptest.f90").write <<~FORTRAN
+      PROGRAM omptest
+      USE omp_lib
+      !$OMP PARALLEL NUM_THREADS(4)
+      WRITE(*,'(A,I1,A,I1)') 'Hello from thread ', OMP_GET_THREAD_NUM(), ', nthreads ', OMP_GET_NUM_THREADS()
+      !$OMP END PARALLEL
+      ENDPROGRAM
+    FORTRAN
+
+    openmp_flags = %w[-fopenmp]
+    openmp_flags += if OS.mac?
+      %W[-L#{Formula["llvm"].opt_lib}]
+    else
+      libomp_dir = Formula["llvm"].opt_lib"#{Hardware::CPU.arch}-unknown-linux-gnu"
+      %W[-L#{libomp_dir} -Wl,-rpath,#{libomp_dir} -Wl,-rpath,#{lib}]
+    end
+    system binflang_driver, "-v", *openmp_flags, "omptest.f90", "-o", "omptest"
+    testresult = shell_output(".omptest")
+
+    expected_result = <<~EOS
+      Hello from thread 0, nthreads 4
+      Hello from thread 1, nthreads 4
+      Hello from thread 2, nthreads 4
+      Hello from thread 3, nthreads 4
+    EOS
+
+    sorted_testresult = testresult.split("\n").sort.join("\n")
+    assert_equal expected_result.strip, sorted_testresult.strip
+
     return if OS.linux?
 
     system "ar", "x", lib"libFortranCommon.a"

@@ -25,9 +25,9 @@ class Certgraph < Formula
   end
 
   test do
-    output = shell_output("#{bin}certgraph example.com")
-    assert_match "www.example.edu", output
-    assert_match "example.org", output
+    output = shell_output("#{bin}certgraph github.io")
+    assert_match "githubusercontent.com", output
+    assert_match "pages.github.com", output
 
     assert_match version.to_s, shell_output("#{bin}certgraph --version")
   end

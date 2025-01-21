@@ -1,8 +1,8 @@
 class Sratom < Formula
   desc "Library for serializing LV2 atoms to/from RDF"
   homepage "https://drobilla.net/software/sratom.html"
-  url "https://download.drobilla.net/sratom-0.6.16.tar.xz"
-  sha256 "71c157991183e53d0555393bb4271c75c9b5f5dab74a5ef22f208bb22de322c4"
+  url "https://download.drobilla.net/sratom-0.6.18.tar.xz"
+  sha256 "4c6a6d9e0b4d6c01cc06a8849910feceb92e666cb38779c614dd2404a9931e92"
   license "ISC"
 
   livecheck do
@@ -11,14 +11,12 @@ class Sratom < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia:  "3f9500429d1915d9fcfc47e023f383b0b9cdf4acf973a982400be49c44e6da63"
-    sha256 cellar: :any, arm64_sonoma:   "e83b77c4790cd4fbb8a1f37fdb33a78c20298d89b3345559e5990f632d06f533"
-    sha256 cellar: :any, arm64_ventura:  "c8ae52b2eea3191e28ec3fb96bce4b067715c0daca5e37681b368fc44350c43e"
-    sha256 cellar: :any, arm64_monterey: "e9d9c40f47a753b41d128e9d061ff61f39b84483df9f67c6b7d5ca04318b55f3"
-    sha256 cellar: :any, sonoma:         "920202525fe2153f008e5dacf59d6fda97ae33b127e4fa363735c1a7cd4d1598"
-    sha256 cellar: :any, ventura:        "67e160e20bbf18673f2a1a91697a405478310cadf43413989dcb35a7a06ac4cf"
-    sha256 cellar: :any, monterey:       "8d55f793f9a463ac0d7ce4a2e6537f10303b37bc1b8192ff3906bb07987cc670"
-    sha256               x86_64_linux:   "e108a73b3a47181df80686a66bcdfb8fdbbcbb9682aeefc7a5b058699356b395"
+    sha256 cellar: :any, arm64_sequoia: "06905bb6f394ffed730cf2b4e18f80d0bf8829ab1b68bbab7ef98f77e330eaee"
+    sha256 cellar: :any, arm64_sonoma:  "dc753964055fb9efd570db02e1b9489d0b5454f543e4ca1c1ee5d89eb0ce0af3"
+    sha256 cellar: :any, arm64_ventura: "a16df9f144f66a5f40bcfa25e3b4474b55bbe5d076f00e9a4da01d49588af268"
+    sha256 cellar: :any, sonoma:        "d534631148d36ab131d17128cbbf3cbf54b0d101f97eaf377ce5d92332f58cf2"
+    sha256 cellar: :any, ventura:       "2628c0564c30338296d91bb61b737fc3c7c8d38ccc25f7bad06d4b94d51a3021"
+    sha256               x86_64_linux:  "cb03a03254d0fe571376523b49d7363ed984ee238240c67f3e4c627b47f75c43"
   end
 
   depends_on "meson" => :build

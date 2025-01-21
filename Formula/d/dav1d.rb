@@ -1,17 +1,17 @@
 class Dav1d < Formula
   desc "AV1 decoder targeted to be small and fast"
   homepage "https://code.videolan.org/videolan/dav1d"
-  url "https://code.videolan.org/videolan/dav1d/-/archive/1.5.0/dav1d-1.5.0.tar.bz2"
-  sha256 "a6ca64e34cec56ae1c2d359e1da5c5386ecd7a3a62f931d026ac4f2ff72ade64"
+  url "https://code.videolan.org/videolan/dav1d/-/archive/1.5.1/dav1d-1.5.1.tar.bz2"
+  sha256 "4eddffd108f098e307b93c9da57b6125224dc5877b1b3d157b31be6ae8f1f093"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "445294270156e948f56f1e5ebea53b89edeb34e9781447cf30410a32eed6b9a5"
-    sha256 cellar: :any,                 arm64_sonoma:  "9cccc1e358c7ace5deb5633c4bd28b13d4694f69a33592473a06836ae0604f42"
-    sha256 cellar: :any,                 arm64_ventura: "9c8563cc40b59627ebe386f80a6bc571eb207e4695cc87614c2f149c0a0ceb77"
-    sha256 cellar: :any,                 sonoma:        "9ff3e7327aee76d22e451a74649a143f1182c64898209dbffc286b4359e8504f"
-    sha256 cellar: :any,                 ventura:       "29f4a35d228366348fad9c442c5ce244c946679048eb7b80fde7e145cbb97e8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1e32051117de5bacb6aaddf73db231f7428b296aa7c9ccb80142f8405045bd9"
+    sha256 cellar: :any,                 arm64_sequoia: "2cfb486c742fb8c46159b99a193f3c1ae221e7d460df6a01a0daf1bb33de0bb8"
+    sha256 cellar: :any,                 arm64_sonoma:  "1c9d516532c87c8a065e4d98750a3a2d187c1f89f4ddb569315a61055e7ada5d"
+    sha256 cellar: :any,                 arm64_ventura: "554aac9fa65b6d94e721c59a4974182d1d77e5be4ebc31f1408ec1e3fe460ae2"
+    sha256 cellar: :any,                 sonoma:        "0eab150c56858a839a017d529f909abbd7c83092a8815d21e51787e060e79b4f"
+    sha256 cellar: :any,                 ventura:       "d92bf92c696541ec5e5455329f4deb851098ee60203067992b5b28e40e375446"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a75a20ce3d5e586d5778c2a0a324175833352e2cc66ce2eff796dfec55fc867e"
   end
 
   depends_on "meson" => :build
