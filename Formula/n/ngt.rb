@@ -1,8 +1,8 @@
 class Ngt < Formula
   desc "Neighborhood graph and tree for indexing high-dimensional data"
   homepage "https:github.comyahoojapanNGT"
-  url "https:github.comyahoojapanNGTarchiverefstagsv2.3.7.tar.gz"
-  sha256 "eaff74bdd33220987f508d33162b201f13f98b902dceb7423c7a34fa25662f9c"
+  url "https:github.comyahoojapanNGTarchiverefstagsv2.3.9.tar.gz"
+  sha256 "2b0dabe1216ba063068834bed144bd1e077c79a5f8d8e05f53d0df2818d762cd"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Ngt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0fd7fdfa03e21d6cc7c9a91663b5da4008a032a4daebb4dd7ebf2aed3e4eee41"
-    sha256 cellar: :any,                 arm64_sonoma:  "abe52c3805dfb05250f0dbc6f47d71f18db8bc7a0993f410c2946b24b813a6eb"
-    sha256 cellar: :any,                 arm64_ventura: "f9f269b37c4941df394f3557a7633ebe17f8bee17542e690f79ae82a79c7ffdc"
-    sha256 cellar: :any,                 sonoma:        "70786320c841af6a27bb0dc0dd2a14ccd7e6c62d9e1db5817fec0815b7b31b35"
-    sha256 cellar: :any,                 ventura:       "560ed598cdb96b8b9eb755a04467225e5a0fa54ae9a90651e4e827779a402aed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa481d355cd75f6cc2aad13dddea843ffe5bb1a99cf2a5f93169b76734689204"
+    sha256 cellar: :any,                 arm64_sequoia: "3871b5a2e7c0940c550d7ac012abf761f2074655e98818627652d304d30807bd"
+    sha256 cellar: :any,                 arm64_sonoma:  "00bd4d4d3dd8ac7990ac9945c8cbed68cc54575c619823019ea932c3b3acf3fc"
+    sha256 cellar: :any,                 arm64_ventura: "ee39efbe71136e7d5e1f3b07d9f49df8537de6ff9926a7772f99b1957c99502f"
+    sha256 cellar: :any,                 sonoma:        "8f1f411dd3a0bad5497eb22e972afb7b44e96e504de0b6e68ab32c3811a8f262"
+    sha256 cellar: :any,                 ventura:       "59f12bb722907b9f93c3747e0d1fe1a7320abb12ab16e8e3468e753e1edb3ad4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "007182611b0f9d456095f8b88151dafdad06f9763f0a684b97db20d25466ab1f"
   end
 
   depends_on "cmake" => :build

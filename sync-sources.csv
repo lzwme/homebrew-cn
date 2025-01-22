@@ -509,6 +509,7 @@ Homebrew-homebrew-core/Formula/b/bindfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bindgen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bingrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/binkd.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/binocle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/binsider.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/binutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/binwalk.rb, Homebrew/homebrew-core, 1
@@ -667,6 +668,7 @@ Homebrew-homebrew-core/Formula/c/c-kermit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/c10t.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/c2048.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/c2patool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/c2rust.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/c3c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/c4core.rb, Homebrew/homebrew-core, 1
@@ -712,6 +714,7 @@ Homebrew-homebrew-core/Formula/c/cargo-binutils.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-bloat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-bundle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-c.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cargo-cache.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-chef.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-crev.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-cyclonedx.rb, Homebrew/homebrew-core, 1
@@ -3037,6 +3040,7 @@ Homebrew-homebrew-core/Formula/j/json-c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/json-fortran.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/json-glib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/json-table.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/j/json2hcl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/json2ts.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/json2tsv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/json5.rb, Homebrew/homebrew-core, 1

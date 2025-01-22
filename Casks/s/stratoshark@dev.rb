@@ -1,14 +1,15 @@
 cask "stratoshark@dev" do
   arch arm: "Arm", intel: "Intel"
 
-  version "0.9.0,1,9c2c07a7e39d"
-  sha256 arm:   "9307e1364e4653539407b3a0b00a3feeb30738ab28cf49f6727c72448ced8978",
-         intel: "eaf7dde9430bd6e903666d6ed34345af7bf7a1a8a2e4692d073835ed62bd2284"
+  version "0.9.0,9,3d3f9d979f59"
+  sha256 arm:   "6695ae3c7523994462fb9b51e2e557e2e80a595c0758dcb6a09675137c8809cb",
+         intel: "f3a799c6dc92be3a11cdf17f4a87a8bf22631142c022ae0cf8a26733c3807fa0"
 
-  url "https://www.wireshark.org/download/automated/osx/Stratoshark%20#{version.csv.first}-#{version.csv.second}-g#{version.csv.third}%20#{arch}%2064.dmg"
+  url "https://www.wireshark.org/download/automated/osx/Stratoshark%20#{version.csv.first}-#{version.csv.second}-g#{version.csv.third}%20#{arch}%2064.dmg",
+      verified: "wireshark.org/download/"
   name "Stratoshark"
   desc "System calls and log messages analyzer"
-  homepage "https://wiki.wireshark.org/Stratoshark"
+  homepage "https://stratoshark.org/"
 
   livecheck do
     url "https://www.wireshark.org/download/automated/osx/"
