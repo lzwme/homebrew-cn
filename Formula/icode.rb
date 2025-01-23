@@ -1,8 +1,8 @@
 class Icode < Formula
   desc "CNES static code analysis tool"
   homepage "https:github.comcnescatlabi-CodeCNES"
-  url "https:github.comcnescatlabi-CodeCNESreleasesdownload5.0.0icode-5.0.0.zip"
-  sha256 "8f623204b1e9a2987f61ae90e49d837d8e0f4821d133c5f65a56075c9887fc8b"
+  url "https:github.comcnescatlabi-CodeCNESreleasesdownload5.1.0icode-5.1.0.zip"
+  sha256 "fc62a12a4e237ad57d23357bfee94ab0f12ed43f0a8400e25a8b298101929966"
   license "EPL-1.0"
 
   livecheck do

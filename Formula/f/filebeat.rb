@@ -20,27 +20,26 @@ class Filebeat < Formula
 
   depends_on "go" => :build
   depends_on "mage" => :build
-  depends_on "python@3.12" => :build
-
-  uses_from_macos "rsync" => :build
 
   def install
     # remove non open source files
     rm_r("x-pack")
 
+    # remove requirements.txt files so that build fails if venv is used.
+    # currently only needed by docstests
+    rm buildpath.glob("**requirements.txt")
+
     cd "filebeat" do
       # don't build docs because it would fail creating the combined OSSx-pack
       # docs and we aren't installing them anyway
-      inreplace "magefile.go", "mg.SerialDeps(Fields, Dashboards, Config, GenerateModuleIncludeListGo, fieldDocs,",
-                               "mg.SerialDeps(Fields, Dashboards, Config, GenerateModuleIncludeListGo,"
+      inreplace "magefile.go", GenerateModuleIncludeListGo, fieldDocs,\s*filebeat\.CollectDocs,,
+                               "GenerateModuleIncludeListGo,"
 
-      # prevent downloading binary wheels during python setup
-      system "make", "PIP_INSTALL_PARAMS=--no-binary :all", "python-env"
       system "mage", "-v", "build"
       system "mage", "-v", "update"
 
-      (etc"filebeat").install Dir["filebeat.*", "fields.yml", "modules.d"]
-      (etc"filebeat""module").install Dir["buildpackagemodules*"]
+      pkgetc.install Dir["filebeat.*"], "fields.yml", "modules.d"
+      (pkgetc"module").install Dir["buildpackagemodules*"]
       (libexec"bin").install "filebeat"
       prefix.install "buildkibana"
     end

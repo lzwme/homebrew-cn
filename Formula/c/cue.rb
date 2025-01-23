@@ -1,18 +1,18 @@
 class Cue < Formula
   desc "Validate and define text-based and dynamic configuration"
   homepage "https:cuelang.org"
-  url "https:github.comcue-langcuearchiverefstagsv0.11.1.tar.gz"
-  sha256 "a99dabdea26e8f2988b8e4f595ec686c99fcbd045c6ebc84ac8990592314fe8f"
+  url "https:github.comcue-langcuearchiverefstagsv0.11.2.tar.gz"
+  sha256 "361445d72b47216f85d1c91bf5db7a90ef7a3f3484c4b350c2964591493e68a7"
   license "Apache-2.0"
   head "https:github.comcue-langcue.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef7cd7d63fa9e1929dbf2ccdc96ccc188d6ab508cf363d7450dc5c49c9ad289b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef7cd7d63fa9e1929dbf2ccdc96ccc188d6ab508cf363d7450dc5c49c9ad289b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ef7cd7d63fa9e1929dbf2ccdc96ccc188d6ab508cf363d7450dc5c49c9ad289b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0c4bb1663510c17fcaa58910910f369bcbf298810c4468a60bde160d0d70c556"
-    sha256 cellar: :any_skip_relocation, ventura:       "0c4bb1663510c17fcaa58910910f369bcbf298810c4468a60bde160d0d70c556"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a78358221e7ed297460c02093d037ff9b25d11dbeca146f06ccd6d5d39a312ba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9159720cefe51a6e15c79ab16c0604689ee5efbb725d14afe7112bab8736d360"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9159720cefe51a6e15c79ab16c0604689ee5efbb725d14afe7112bab8736d360"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9159720cefe51a6e15c79ab16c0604689ee5efbb725d14afe7112bab8736d360"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2736aab26a841bd541a6b9fd0907e56952ed6f16724aea2eeec66e06c7c4b877"
+    sha256 cellar: :any_skip_relocation, ventura:       "2736aab26a841bd541a6b9fd0907e56952ed6f16724aea2eeec66e06c7c4b877"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a00c3ff18e17e8e80197f7b70830ca0fc9e79081a0d21d1b7157bef42599e198"
   end
 
   depends_on "go" => :build

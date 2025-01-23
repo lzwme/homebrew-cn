@@ -2,19 +2,18 @@ class Podman < Formula
   desc "Tool for managing OCI containers and pods"
   homepage "https:podman.io"
   url "https:github.comcontainerspodman.git",
-      tag:      "v5.3.1",
-      revision: "4cbdfde5d862dcdbe450c0f1d76ad75360f67a3c"
+      tag:      "v5.3.2",
+      revision: "85043bb1a3818102194afa82845cb63841067c9c"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
-  revision 1
   head "https:github.comcontainerspodman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc2f6d0f12baa2db0147c1990f1151f503412cd512223139d5c0f4642d2fae04"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42effe46d485da0512a86c8076d5b95f8f41b6e57efcb68bead15b88d2bb2e13"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "17249555c3b4dd0ff7cdbe7edd95dc5556aef28f3787f71d5d28997ea1c215cd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5faac905a071634b36a174935e05c16efd1ac61c6289409579a3d688b1d41fb9"
-    sha256 cellar: :any_skip_relocation, ventura:       "0c1f1ede7b92f89e4e6b5464a747d8350b29862e29eeb8cc34eb6f2ada45ae01"
-    sha256                               x86_64_linux:  "b354ce1cbcb8a9e34287cfb7168b55a645830ee7717e56e4ff67effc5de3a228"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8dd4222f51fb1ddc2378729d0d9ba398cbab3a961a471e5ea4e5ccf36ada3dc6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "89dcd526528e1ac229bb1485536aa346660e8126edc45c81e1e5074e31e45fab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "60328a1f2ce8bd0bc9454ff13f9093e01ccdaac7d24d4747f7fb2f328ad97a62"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1ca66fa074aaf7f0772830004b6076ae326e727ac6f9ccd73b2714d8525fe579"
+    sha256 cellar: :any_skip_relocation, ventura:       "cbdd3936448de6578ccd9cb8958a2ecdee887602e053d4a0c62a0e71819fc28b"
+    sha256                               x86_64_linux:  "f6d7b93ab8edffb2d26cbb03c641bce3752f9f10a03b55ab40bb298b1fb5f49c"
   end
 
   depends_on "go" => :build
@@ -45,29 +44,29 @@ class Podman < Formula
 
   resource "gvproxy" do
     on_macos do
-      url "https:github.comcontainersgvisor-tap-vsockarchiverefstagsv0.8.1.tar.gz"
-      sha256 "9b7fb12dfc37b0a727f2209ff8b557c4ec922d11cec30a778c192da360db4a2f"
+      url "https:github.comcontainersgvisor-tap-vsockarchiverefstagsv0.8.2.tar.gz"
+      sha256 "57bf983cc636d107cd86ecf3a147674cf2f2c18d7a5a92a9b39da842547bbc51"
     end
   end
 
   resource "vfkit" do
     on_macos do
-      url "https:github.comcrc-orgvfkitarchiverefstagsv0.5.1.tar.gz"
-      sha256 "0825d5efabc5ec8817d2ed89f18717b2b4fa5be804b0f2ccc891b4a23b64d771"
+      url "https:github.comcrc-orgvfkitarchiverefstagsv0.6.0.tar.gz"
+      sha256 "4efaf318729101076d3bf821baf88e5f5bf89374684b35b2674c824a76feafdf"
     end
   end
 
   resource "catatonit" do
     on_linux do
-      url "https:github.comopenSUSEcatatonitarchiverefstagsv0.2.0.tar.gz"
-      sha256 "d0cf1feffdc89c9fb52af20fc10127887a408bbd99e0424558d182b310a3dc92"
+      url "https:github.comopenSUSEcatatonitarchiverefstagsv0.2.1.tar.gz"
+      sha256 "771385049516fdd561fbb9164eddf376075c4c7de3900a8b18654660172748f1"
     end
   end
 
   resource "netavark" do
     on_linux do
-      url "https:github.comcontainersnetavarkarchiverefstagsv1.13.0.tar.gz"
-      sha256 "34862383aee916677333b586f57d8b1d29f94676029da23c9a1ad1fcb509d1c1"
+      url "https:github.comcontainersnetavarkarchiverefstagsv1.13.1.tar.gz"
+      sha256 "b3698021677fb3b0fd1dc5f669fd62b49a7f4cf26bb70f977663f6d1a5046a31"
     end
   end
 

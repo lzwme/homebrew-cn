@@ -1,18 +1,18 @@
 class Xcbeautify < Formula
   desc "Little beautifier tool for xcodebuild"
   homepage "https:github.comcpisciottaxcbeautify"
-  url "https:github.comcpisciottaxcbeautifyarchiverefstags2.21.0.tar.gz"
-  sha256 "1585e079ce0a2d066d6cc2e24fa1034b5ff9a197155b090496f8e86a584c99d8"
+  url "https:github.comcpisciottaxcbeautifyarchiverefstags2.23.0.tar.gz"
+  sha256 "ab354f256bcdfd25590c165e8a182e5c3d82aa309222b082de0a82e9932425d9"
   license "MIT"
   head "https:github.comcpisciottaxcbeautify.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "661f365b474742790013b2851486176fff64475afe7e66044bfa2989b90b753e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00ce3c64cedf63bb4276758b3f71d2b7058d2d264b157471614537e8815880e7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ae7efae73d99d927b1072a492c0f0040ca2c4f291adc415140d6006dbbdc8a5b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "94dfa232fd1d1394b7f567275d8f648f59340e8b4ea9e25931a39d4149f865a0"
-    sha256 cellar: :any_skip_relocation, ventura:       "f876da3cfd8a2e3a8083e1d49108ab59405d908f4fcd80b58c197bbd47a9dc43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53f86e75ca7a532a045c0668966771113beaac83723493689aa3f3caa6e5e822"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32c2a1c1349087c5b81e0ebf97e8fd76a46f1aa97b0af823adf4b303edb78daa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d73774382f6ea8cbb0f34c1b505fa4c1871ecce5c4eb658f622444539dc0191a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "328a971b1095dd4e8f6ea80b7a6933595b27e7b34c58436c71f05a5944320876"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b37ef3cd67dc8ba7683fed85b19a4703520000589a14d14fc50f5d0d5acb4135"
+    sha256 cellar: :any_skip_relocation, ventura:       "cb57412409b6b5e9631ca4664499b079004d3488d353ec34d2987e60c5b843ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "290161b05b8a1f495f28b26406da6728aac7d824477b4ead5d348b2ee3fad36e"
   end
 
   # needs Swift tools version 5.9.0

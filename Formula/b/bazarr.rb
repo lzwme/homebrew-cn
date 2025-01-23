@@ -22,7 +22,7 @@ class Bazarr < Formula
   depends_on "gcc"
   depends_on "numpy"
   depends_on "pillow"
-  depends_on "python@3.12"
+  depends_on "python@3.12" # Python 3.13 issue (closed wo fix): https:github.commorpheus65535bazarrissues2803
   depends_on "unar"
 
   uses_from_macos "libxml2", since: :ventura

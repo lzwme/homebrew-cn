@@ -1,8 +1,8 @@
 class OpenjdkAT11 < Formula
   desc "Development kit for the Java programming language"
   homepage "https:openjdk.java.net"
-  url "https:github.comopenjdkjdk11uarchiverefstagsjdk-11.0.25-ga.tar.gz"
-  sha256 "fc5a473f4679163b65379adbc92083004f7b3ac2402b4ac6097bba8b65443e8e"
+  url "https:github.comopenjdkjdk11uarchiverefstagsjdk-11.0.26-ga.tar.gz"
+  sha256 "85b260f8ac5ed26b9881e353700c98e768d8cb17a484ef062fb0aa56494a32bf"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,12 +11,12 @@ class OpenjdkAT11 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b3b0c90700249c9b37ef4700d23ff27d9961a4ccfa516f215b0a9253947aebe5"
-    sha256 cellar: :any,                 arm64_sonoma:  "31115f0ad3f4ef7db6588adc76b127252d2f25b37113fc854b460b3084c3be76"
-    sha256 cellar: :any,                 arm64_ventura: "541d61d7a7387578dbc2df2e9b456ff943e44cbc8753dd2410b57dfdfcefebb1"
-    sha256 cellar: :any,                 sonoma:        "04b76e07395573a6e56039c1bf826d55d2f78e818d0b7a57c687cdd9db68dddd"
-    sha256 cellar: :any,                 ventura:       "b293e8b9e96c0a2bbeab3735d48c1a403aadb76614f0c25593477afe2e91d699"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9aa19e0427499e93e51d6375f47473e029fa46cd45560b2b1323d3ed072a9116"
+    sha256 cellar: :any,                 arm64_sequoia: "b3c659034bc90ee8ca7ab95ecf827fb931fc2b95cdb5ac919484a815b8a6bf68"
+    sha256 cellar: :any,                 arm64_sonoma:  "f61e43d2c40ca3b9318fb5c40b7efbee0e30ce4a28028147f0192966430a1bf3"
+    sha256 cellar: :any,                 arm64_ventura: "4e4699812eea7effb4edd4808f4db2ef60b524df948c565d51bebfc670b87198"
+    sha256 cellar: :any,                 sonoma:        "91c18c01f5b7c5473b7e3cfcfc385c6a6bbe349dd8a510632d334d0c7b53735d"
+    sha256 cellar: :any,                 ventura:       "b76694cf810f05c71397f8250dd839e080d4902df3d5c04fa0b72b2751152826"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8584a6bab9db1a6571dd5ee9fcd4e27ec58b8cf816ffe69405bf6b0e158901fc"
   end
 
   keg_only :versioned_formula

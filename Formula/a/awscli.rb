@@ -3,23 +3,23 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https:aws.amazon.comcli"
-  url "https:github.comawsaws-cliarchiverefstags2.23.3.tar.gz"
-  sha256 "df83b93ee4c170864298fc60796068d6318ac5e9a025defd33409822d785fac6"
+  url "https:github.comawsaws-cliarchiverefstags2.23.4.tar.gz"
+  sha256 "021d4a2be0cc144bb0166d492a24ee3e3898422d2efd1e25fc44ff60f86cf0bf"
   license "Apache-2.0"
   head "https:github.comawsaws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d61fbf1fc6ff467d15f772fcf02174c2d2ffa16838c682ab32c44fb6bd80a3bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77735878e131224685c37b278966040b8a69aecfea62a03cbac9150ff30ed5b8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e1f5ad962781a6a1b5b34581c2a8b630d2689b988d24d1fc5e386e641de6b279"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fe346848400bca077f5fadd2ec0fd8b87f9c57bda5c706ab3318474f72914de8"
-    sha256 cellar: :any_skip_relocation, ventura:       "2815e09a99c60944b498b7fc2079a228fab24f60561170820308da7a4af9af83"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "996183487e450d4b2edf434f4e051ce5d8332a8fbc69dbcf9deda20b4214ac97"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc25bfaa3e3b3ee493153ea32370002228f5deb543c1cd8922dbeaa94144e875"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50bbe262e6f630b8fb52224f1f7eab4481172f1491d5935c1a0936ceed9dacdf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3f6de93975a82b22ebe66e113de425c74de01edb0d2a5d95c9f7275dd1dc3998"
+    sha256 cellar: :any_skip_relocation, sonoma:        "651eea4cf2f6ae45f83194769db50f958e8f2eec36f1d1058e69b1342c4e2575"
+    sha256 cellar: :any_skip_relocation, ventura:       "fe5fb447e9413d880b0e460dc72945fd7801b4fb8de3faf660d86c8d7f5f7487"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa93d4a3674e2e5e8b14263a61bf9e948901b42b59bf27013d4acec1250bc917"
   end
 
   depends_on "cmake" => :build
   depends_on "cryptography"
-  depends_on "python@3.12"
+  depends_on "python@3.12" # Python 3.13 issue: https:github.comawsaws-cliissues9234
 
   uses_from_macos "libffi"
   uses_from_macos "mandoc"

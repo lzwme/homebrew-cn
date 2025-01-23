@@ -1,11 +1,11 @@
 cask "visual-studio-code@insiders" do
   arch arm: "-arm64"
 
-  version "1.97.0-insider,3d0aeb47a2ecfde9ff5141470b30c36d41c321d9"
-  sha256 arm:   "5a672b9e8f88c12bb77a9fcc7ad0e5f5b62e4178949c761c626d0f90faf7dc77",
-         intel: "33bfc28b8be7d86378de89df57a75b137e214af0b227fcdd12445a56e6f11941"
+  version "1.97.0-insider,1737522488009,d226a2a497b928d78aa654f74c8af5317d3becfb"
+  sha256 arm:   "edc0449316074f6c0379b88bd436650a9aa95fd9f676c4c5b9d0502c0a8b9ae8",
+         intel: "d2774c72d36359edfe4c184b7cd10dc4764c4d6088db9d57e3ebfa5325163a69"
 
-  url "https://vscode.download.prss.microsoft.com/dbazure/download/insider/#{version.csv.second}/VSCode-darwin#{arch}.zip",
+  url "https://vscode.download.prss.microsoft.com/dbazure/download/insider/#{version.csv.third}/VSCode-darwin#{arch}.zip",
       verified: "vscode.download.prss.microsoft.com/"
   name "Microsoft Visual Studio Code Insiders"
   name "VS Code Insiders"
@@ -16,10 +16,11 @@ cask "visual-studio-code@insiders" do
     url "https://update.code.visualstudio.com/api/update/darwin#{arch}/insider/latest"
     strategy :json do |json|
       version = json["productVersion"]
+      timestamp	= json["timestamp"]
       build = json["version"]
-      next if version.blank? || build.blank?
+      next if version.blank? || timestamp.blank? || build.blank?
 
-      "#{version},#{build}"
+      "#{version},#{timestamp},#{build}"
     end
   end
 

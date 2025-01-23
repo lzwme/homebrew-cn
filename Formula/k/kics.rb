@@ -1,8 +1,8 @@
 class Kics < Formula
   desc "Detect vulnerabilities, compliance issues, and misconfigurations"
   homepage "https:kics.io"
-  url "https:github.comCheckmarxkicsarchiverefstagsv2.1.3.tar.gz"
-  sha256 "ccb3412d65938e1445d7ef225bd3275c6f9bf7e356b5ce3514f80c8ebac3ccc0"
+  url "https:github.comCheckmarxkicsarchiverefstagsv2.1.4.tar.gz"
+  sha256 "7914ab3fee9a162e02004df61da54dbbd8a452275117c60397ab148ca5197b76"
   license "Apache-2.0"
   head "https:github.comCheckmarxkics.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Kics < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c5d418b593e494bb9d30ba971ee3f586060e8d443a72d836d54577876c88ddd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd1e58c1111e248d62d9223cb4efa13d9ed025c98e3c06eca150bc7e04a19bd0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b5ad0e5eac5d387dde99bf18c030f4e73adc62b75f58a499b8dd16edcc9b8f3f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1095ac11f3246d95c3e11529c1fe4aa4610477486a27130d8b8af838b0a01237"
-    sha256 cellar: :any_skip_relocation, ventura:       "8b28ecc7321009145023eb10906e4360ddb2d99a75e0dc5560892297973a0b37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11460fbf1e83ef1e419851359e241ac347abb6bdedc5f837bdf7b29165748afd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "715114d5318a40d965ab10d8877106eafedfaf23b552e31afc8d0c33d3687f3a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "caa5e7c1689374bd365165567d1d17e4f7cb8f8882d458fd8ecf78120eb2b321"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3f59abd9072d3745ccf077b70163290ebfdcc4411a4819c8de73ad07eac35b47"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5a9c2a61b42099cf59301f0c0910f26131289563c2dbb95afb0c0790b6642750"
+    sha256 cellar: :any_skip_relocation, ventura:       "a9c40ef16f720523b3fb24af9b4decfde9905c9d093040f8cab663cc01d6d806"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5d6f18f4902ae0feb441938f7947f8df5278a1c6bd6fe4c1b790870c5b8b740"
   end
 
   depends_on "go" => :build

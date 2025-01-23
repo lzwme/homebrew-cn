@@ -3,18 +3,17 @@ class Harlequin < Formula
 
   desc "Easy, fast, and beautiful database client for the terminal"
   homepage "https:harlequin.sh"
-  url "https:files.pythonhosted.orgpackagesbbc10fc47822534938e73f070eb485059be414bb6ee274ac05e1d5d695fb4c24harlequin-1.25.2.tar.gz"
-  sha256 "8319da69b07afd063e1296ebba1569374daa171489b97bd35d2dbdae802e6144"
+  url "https:files.pythonhosted.orgpackagesaedc5661096405bd9987a6a194b027fbfdf5bf6649299c2179b7cfe220084215harlequin-2.0.0.tar.gz"
+  sha256 "d9bb419859bf35263e0a6875592b72b81f4aab70373a55c937cfc608c38585cd"
   license "MIT"
-  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8059369f5a6d0d30c8cd63c8e0f9ead1d0dc734ef9d5a10f116779d1ce0903e2"
-    sha256 cellar: :any,                 arm64_sonoma:  "0b4f5b8feeb5f3c5f66dcdad0e7ced6302a4c0e92b05718633b6f3bdd030f6ab"
-    sha256 cellar: :any,                 arm64_ventura: "726ea9a5824bbbc624d9a7331649dfe126f4edf47fb4492b731e61601526f581"
-    sha256 cellar: :any,                 sonoma:        "a4b3a6d18f3ea50044a787768cc2e812f9c69b6f9fb50588b55390f9dea93d9a"
-    sha256 cellar: :any,                 ventura:       "23fc2185421312ad8230a1745a956e0f4390fc6e56377e1c2a7bc2474fa0fe95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de4d2f4520e2804b0a3f42cc76ecec883216b25e99101a3b7a5f629073d6e392"
+    sha256 cellar: :any,                 arm64_sequoia: "aa72ee60e41704f349d9fa549b1037a8e81f1366e7c85ea4734d269214a322aa"
+    sha256 cellar: :any,                 arm64_sonoma:  "8392708054d267e1c239aca1271a7d4311ae96a6bb6b01fde838a41857a6194e"
+    sha256 cellar: :any,                 arm64_ventura: "ba1754f704f6610348c04d92a79e38040df509f369cbc4deea55eeeed13e3138"
+    sha256 cellar: :any,                 sonoma:        "e21b98c9891e73bb8369c83f9c9993a59b45298531bbb05f63d21c9a1dc13c49"
+    sha256 cellar: :any,                 ventura:       "6006175690b2c4e46ecfc8df21c8be0beeb8931770fb75db0698185e24e9a31f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6ff3859ba22925c897779dd7c52fd43b81bc88e65b624615ab4ef41348e1076"
   end
 
   depends_on "cmake" => :build
@@ -29,8 +28,8 @@ class Harlequin < Formula
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
+    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
   end
 
   resource "cython" do
@@ -44,23 +43,23 @@ class Harlequin < Formula
   end
 
   resource "harlequin-mysql" do
-    url "https:files.pythonhosted.orgpackages80fd410c3a6f6c1d0358359c58a3c36b0ac3519a1da8d0e7f0424f1a00f8bfccharlequin_mysql-0.3.0.tar.gz"
-    sha256 "46ef42c5b658568f5340ee53c241cb1333f3e04914807c1f83741e83517878b3"
+    url "https:files.pythonhosted.orgpackages8a214301627383d091e16190ec3d4271974fe37c840eb3f7c9cd794e984371f4harlequin_mysql-1.0.0.tar.gz"
+    sha256 "8e1f8d391e0980bcb6fa257aca939a4ef35f0fa699fad9a03e4835169b6f4585"
   end
 
   resource "harlequin-odbc" do
-    url "https:files.pythonhosted.orgpackagesd6407757a6aaf4a9925bc3d55c332f6914501d5a7ef239dbbb3592a0bed2c733harlequin_odbc-0.1.1.tar.gz"
-    sha256 "beb2b57836ccdb21b4fa4b151e2cd6fc1b946f4f914eb233de5debc2c08920cf"
+    url "https:files.pythonhosted.orgpackages2915a382080b74b1f08a5b9d985a435afe413623f206ed8fc8a7b03be948da69harlequin_odbc-0.2.0.tar.gz"
+    sha256 "9a61e182959642af1399df38b16c5027aa177af5b0e555f221f74daaafc91397"
   end
 
   resource "harlequin-postgres" do
-    url "https:files.pythonhosted.orgpackages715f2015e5d09c34234f4a764df6083405be045f99ea9bf196473d68d3338058harlequin_postgres-0.4.0.tar.gz"
-    sha256 "d72f12df3e994edf8f660ef9681fdb2a710f740b6a8d9d88ab206d50193c2050"
+    url "https:files.pythonhosted.orgpackages1226dc5d5369f1409e0d322e653bf8f6eb78da8f7002d0e5d854563d6514106bharlequin_postgres-1.0.0.tar.gz"
+    sha256 "d7fb402e4639c33f6539673642c66411afeac740f18ca22255f5d37cebb8c101"
   end
 
   resource "jinja2" do
-    url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
-    sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
+    url "https:files.pythonhosted.orgpackagesaf92b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccffjinja2-3.1.5.tar.gz"
+    sha256 "8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"
   end
 
   resource "linkify-it-py" do
@@ -88,6 +87,7 @@ class Harlequin < Formula
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
   end
 
+  # upstream bug report on pypi artifact issue, https:bugs.mysql.combug.php?id=113396
   resource "mysql-connector-python" do
     url "https:github.commysqlmysql-connector-pythonarchiverefstags8.4.0.tar.gz"
     sha256 "52944d6fa84c903fd70723a47d2f8c3153c50ae91773f1584a7bd30606c58b35"
@@ -104,18 +104,18 @@ class Harlequin < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https:files.pythonhosted.orgpackagesfb93180be2342f89f16543ec4eb3f25083b5b84eba5378f68efff05409fb39a9prompt_toolkit-3.0.36.tar.gz"
-    sha256 "3e163f254bef5a03b146397d7c1963bd3e2812f0964bb9a24e6ec761fd28db63"
+    url "https:files.pythonhosted.orgpackagesa1e1bd15cb8ffdcfeeb2bdc215de3c3cffca11408d829e4b8416dcfe71ba8854prompt_toolkit-3.0.50.tar.gz"
+    sha256 "544748f3860a2623ca5cd6d2795e7a14f3d0e1c3c9728359013f79877fc89bab"
   end
 
   resource "psycopg" do
-    url "https:files.pythonhosted.orgpackagesd1ad7ce016ae63e231575df0498d2395d15f005f05e32d3a2d439038e1bd0851psycopg-3.2.3.tar.gz"
-    sha256 "a5764f67c27bec8bfac85764d23c534af2c27b893550377e37ce59c12aac47a2"
+    url "https:files.pythonhosted.orgpackagese0f2954b1467b3e2ca5945b83b5e320268be1f4df486c3e8ffc90f4e4b707979psycopg-3.2.4.tar.gz"
+    sha256 "f26f1346d6bf1ef5f5ef1714dd405c67fb365cfd1c6cea07de1792747b167b92"
   end
 
   resource "psycopg-c" do
-    url "https:files.pythonhosted.orgpackages53ba74caf4eab78d95a173e65cb81507a589365aeafb1d9c84f374002b51dc53psycopg_c-3.2.3.tar.gz"
-    sha256 "06ae7db8eaec1a3845960fa7f997f4ccdb1a7a7ab8dc593a680bcc74e1359671"
+    url "https:files.pythonhosted.orgpackages1776dbdadd9b93b8ad38cff31402c73a6bb9a23c88a4466fa09655d3c6db4d11psycopg_c-3.2.4.tar.gz"
+    sha256 "22097a04263efb2efd2cc8b00a51fa90e23f9cd4a2e09903fe4d9c6923dac17a"
   end
 
   resource "psycopg-pool" do
@@ -124,13 +124,13 @@ class Harlequin < Formula
   end
 
   resource "pyarrow" do
-    url "https:files.pythonhosted.orgpackages7f7b640785a9062bb00314caa8a387abce547d2a420cf09bd6c715fe659ccffbpyarrow-18.1.0.tar.gz"
-    sha256 "9386d3ca9c145b5539a1cfc75df07757dff870168c959b473a0bccbc3abc8c73"
+    url "https:files.pythonhosted.orgpackages7b01fe1fd04744c2aa038e5a11c7a4adb3d62bce09798695e54f7274b5977134pyarrow-19.0.0.tar.gz"
+    sha256 "8d47c691765cf497aaeed4954d226568563f1b3b74ff61139f2d77876717084b"
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
-    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
+    url "https:files.pythonhosted.orgpackages7c2dc3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84pygments-2.19.1.tar.gz"
+    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
   end
 
   resource "pyodbc" do
@@ -144,8 +144,8 @@ class Harlequin < Formula
   end
 
   resource "questionary" do
-    url "https:files.pythonhosted.orgpackages84d0d73525aeba800df7030ac187d09c59dc40df1c878b4fab8669bdc805535dquestionary-2.0.1.tar.gz"
-    sha256 "bcce898bf3dbb446ff62830c86c5c6fb9a22a54146f0f5597d3da43b10d8fc8b"
+    url "https:files.pythonhosted.orgpackagesa8b8d16eb579277f3de9e56e5ad25280fab52fc5774117fb70362e8c2e016559questionary-2.1.0.tar.gz"
+    sha256 "6302cdd645b19667d8f6e6634774e9538bfcd1aad9be287e743d96cacaf95587"
   end
 
   resource "rich" do
@@ -169,18 +169,18 @@ class Harlequin < Formula
   end
 
   resource "textual" do
-    url "https:files.pythonhosted.orgpackagesf0efd498d5eb07ebe63299517bbee7e4be2fe8e1b4f0835763446cef1c4eaed0textual-0.85.0.tar.gz"
-    sha256 "645c0fd0b4f61cd19383df78a1acd4f3b555e2c514cfa2f454e20692dffc10a0"
+    url "https:files.pythonhosted.orgpackages4bcbb3ff0e45d812997a527cb581a4cd602f0b28793450aa26201969fd6ce42ctextual-0.89.1.tar.gz"
+    sha256 "66befe80e2bca5a8c876cd8ceeaf01752267b6b1dc1d0f73071f1f1e15d90cc8"
   end
 
   resource "textual-fastdatatable" do
-    url "https:files.pythonhosted.orgpackagesb69082cf71355563743cbf5ece0c51dac7b60503c5e3c12fb81f3cb642ec1cd2textual_fastdatatable-0.10.0.tar.gz"
-    sha256 "e39b8ba54cc16fec47f9af8320589707862369bc85138c26bf54f0dc9b69368c"
+    url "https:files.pythonhosted.orgpackages06cc93f2131c7b4e388560cc633b5992c54ea56b7f1ef00a1641c0e33f92a722textual_fastdatatable-0.11.0.tar.gz"
+    sha256 "a2305f5745dc1ab4088a3f0d5c7dcfb8993d711a296954664c3492712fa5cc4b"
   end
 
   resource "textual-textarea" do
-    url "https:files.pythonhosted.orgpackages58ea0b9edcdc13dbf23389980be7e9c2aa9fe3bedd3958138a28294e364651b5textual_textarea-0.14.4.tar.gz"
-    sha256 "560489179b19426b8546b8521750acde22f57021b3afc08b0643557048fb7315"
+    url "https:files.pythonhosted.orgpackagesda85e3dd273455337efe8e9f14bd8b048e7f22a40ad86615a69866a03967715ctextual_textarea-0.15.0.tar.gz"
+    sha256 "1343604a4dc3bac0337c58d926a02ddcf451956fb12532a3d5ade9219905f426"
   end
 
   resource "tomlkit" do

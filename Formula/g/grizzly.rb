@@ -1,17 +1,17 @@
 class Grizzly < Formula
   desc "Command-line tool for managing and automating Grafana dashboards"
   homepage "https:grafana.github.iogrizzly"
-  url "https:github.comgrafanagrizzlyarchiverefstagsv0.7.0.tar.gz"
-  sha256 "7d8c461b8c56e617691f2062ba3a258ba239cbae6dddff7a34ccb9697c1421ef"
+  url "https:github.comgrafanagrizzlyarchiverefstagsv0.7.1.tar.gz"
+  sha256 "81811b684ef1bddd3b7147c5095224552a0b35dc3ff210d10e6cbc5e12331160"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "182ef9838cb68ca168c9310e04be2136c6c7920f95035f360e1fba2d01ae8116"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "182ef9838cb68ca168c9310e04be2136c6c7920f95035f360e1fba2d01ae8116"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "182ef9838cb68ca168c9310e04be2136c6c7920f95035f360e1fba2d01ae8116"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f071774226ab0138ab2154913f6c8e0bbe2bb8d4b68ed4293bfa0889a9703e15"
-    sha256 cellar: :any_skip_relocation, ventura:       "f071774226ab0138ab2154913f6c8e0bbe2bb8d4b68ed4293bfa0889a9703e15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fcc49d4991e6013fc69f02804527388c8fa88afdf38525dda02efa01fe52828b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c00e5b79f192d86d855287c9abb183eede829f47d6892bfef011d0977fb45cc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c00e5b79f192d86d855287c9abb183eede829f47d6892bfef011d0977fb45cc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9c00e5b79f192d86d855287c9abb183eede829f47d6892bfef011d0977fb45cc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "679f770b4eff802b8e9b6eb199fb9ae076f14093ea58342fcc1752d43985415f"
+    sha256 cellar: :any_skip_relocation, ventura:       "679f770b4eff802b8e9b6eb199fb9ae076f14093ea58342fcc1752d43985415f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1cd0d526f55b71f84e88c4bda49551c661b56f7dcace86fbbbb637a27fd4274"
   end
 
   depends_on "go" => :build
