@@ -3,17 +3,17 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://files.pythonhosted.org/packages/e9/0c/924bbb887c0bcb066358484c0fc37cda71db7d794d340efafd341112de13/borgmatic-1.9.6.tar.gz"
-  sha256 "1a7748bdf2932ca6f03111c3f321ac0a8c38629bf1aefff477c3b6ae7b2b12b8"
+  url "https://files.pythonhosted.org/packages/27/ce/3f845b251f1b52a03654d23f9f0ce353787f4feb8998ab875e485dfd11cb/borgmatic-1.9.7.tar.gz"
+  sha256 "81bc712b631cdee0a2d087987b866d8b181bfd4cc63ee68f44c2530cf8e2b6bc"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "390200a4074ffc732b101bed16ad8950df29c5c6891767e3deb363af27f5cd29"
-    sha256 cellar: :any,                 arm64_sonoma:  "14e26fd08924f3cc9128604f7f0f0fbff98c6ff4e821dd29c960e5a868059318"
-    sha256 cellar: :any,                 arm64_ventura: "6eed5d5c6f29dc4719d383af37e32cdc5fa745293abc898aa9598bde18922156"
-    sha256 cellar: :any,                 sonoma:        "5407825b8c8a8ce1f91ed7e41796ffbefbaaa8afc260c50f830df6d6e5605cf8"
-    sha256 cellar: :any,                 ventura:       "b6437254f61b4f1b5d20ce0a35f6f936e6fac1a887f2bb9b2345bcacc31d5c06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31eef39b7afd138e3fae16434c0da2c37a4d0db3e1bf978b6f62b901b207a963"
+    sha256 cellar: :any,                 arm64_sequoia: "e1f5932779116c68ab79c969bef64aee18651a56ca6c4fcd4004be0829bb9a62"
+    sha256 cellar: :any,                 arm64_sonoma:  "df5d3a272497447adce04c6002d4669b429a4833ddcd9a7be8261c18ee92a37a"
+    sha256 cellar: :any,                 arm64_ventura: "39bb8c31c495dc7e5dd0f308251cb0c7f2da07e114b1b00d0af2917c08b96214"
+    sha256 cellar: :any,                 sonoma:        "f3aa471937acf11845b84166a76bec8ce7e4d4d0ade9500d5fd80df9693177b4"
+    sha256 cellar: :any,                 ventura:       "f943d6d4a017537be1c5a034dc6a644531e9006cc26f43d9b2bcce1d398f50e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f2f1817aa1ab9ab50e9f855b56ad8f13ebcba2a0631d614a95a92f2df025c0f"
   end
 
   depends_on "rust" => :build # for rpds-py

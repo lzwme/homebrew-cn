@@ -4067,9 +4067,9 @@ Homebrew-homebrew-core/Formula/m/mapserver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/marcli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb-connector-c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb-connector-odbc.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/mariadb.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mariadb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@10.10.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mariadb@10.11.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mariadb@10.11.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@10.3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@10.4.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@10.5.rb, Homebrew/homebrew-core, 0
@@ -4079,7 +4079,7 @@ Homebrew-homebrew-core/Formula/m/mariadb@10.9.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@11.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@11.1.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@11.2.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/mariadb@11.4.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mariadb@11.4.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/marisa.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/markdown-oxide.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/markdown-toc.rb, Homebrew/homebrew-core, 1
@@ -4160,7 +4160,7 @@ Homebrew-homebrew-core/Formula/m/melody.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/memcache-top.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/memcached.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/memcacheq.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/memray.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/memray.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/memtester.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/menhir.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mentat.rb, Homebrew/homebrew-core, 1
@@ -6390,7 +6390,7 @@ Homebrew-homebrew-core/Formula/t/tailor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tailscale.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tailspin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tailwindcss-language-server.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/t/tailwindcss.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/tailwindcss.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/takt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/taktuk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tal.rb, Homebrew/homebrew-core, 0
@@ -8767,6 +8767,7 @@ Homebrew-homebrew-cask/Casks/f/flock.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/floorp.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/flotato.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/flow.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/flowvision.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/flox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/flrig.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fluent-reader.rb, Homebrew/homebrew-cask, 1
@@ -11806,6 +11807,7 @@ Homebrew-homebrew-cask/Casks/j/joplin.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jordanbaird-ice.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/joshjon-nocturnal.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/josm.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/j/jottacloud.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/journey.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jpadilla-rabbitmq.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jpadilla-redis.rb, Homebrew/homebrew-cask, 1

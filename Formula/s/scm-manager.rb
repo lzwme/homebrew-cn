@@ -1,8 +1,8 @@
 class ScmManager < Formula
   desc "Manage Git, Mercurial, and Subversion repos over HTTP"
   homepage "https://www.scm-manager.org"
-  url "https://packages.scm-manager.org/repository/releases/sonia/scm/packaging/unix/3.6.1/unix-3.6.1.tar.gz"
-  sha256 "4f203120d53ed741f2bebc20f2ab808d0849843fa06bd381f95a0f251d719ec6"
+  url "https://packages.scm-manager.org/repository/releases/sonia/scm/packaging/unix/3.7.0/unix-3.7.0.tar.gz"
+  sha256 "46e26676d7815d57b90a5b9d2884dfe0d78e8b25f91ecb66f03bd87728ebc4d5"
   license all_of: ["Apache-2.0", "MIT"]
 
   livecheck do
@@ -11,7 +11,7 @@ class ScmManager < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d55cedfcb8eccb8e2a53ed7e2231198ecfd424f8f1ba76b7f45375c336c9c195"
+    sha256 cellar: :any_skip_relocation, all: "fb2580ff302551a700795390a6d9c7854d95ad71431a6b377819d26d26628cdf"
   end
 
   depends_on "jsvc"

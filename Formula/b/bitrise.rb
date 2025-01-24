@@ -1,8 +1,8 @@
 class Bitrise < Formula
   desc "Command-line automation tool"
   homepage "https:github.combitrise-iobitrise"
-  url "https:github.combitrise-iobitrisearchiverefstags2.25.2.tar.gz"
-  sha256 "b212652b0350edc16ed525129a0532cc64adc75600fe6cb3bce4dccf509d790e"
+  url "https:github.combitrise-iobitrisearchiverefstags2.26.0.tar.gz"
+  sha256 "3b46e8b136f65817ee85ccaa0a40f7909177738162dacc9be7b4d575b5b53e00"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Bitrise < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f3145d832bbaee63e591bbc67c927a2ede9036f35ef3d3c59f1f7bb565ccb1f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f3145d832bbaee63e591bbc67c927a2ede9036f35ef3d3c59f1f7bb565ccb1f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1f3145d832bbaee63e591bbc67c927a2ede9036f35ef3d3c59f1f7bb565ccb1f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b9cb230df102487836fdf024f945da0b7e75a3ab2bfa8c579d3a9f26164fd454"
-    sha256 cellar: :any_skip_relocation, ventura:       "b9cb230df102487836fdf024f945da0b7e75a3ab2bfa8c579d3a9f26164fd454"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6b95bc86ec03a09d639891e7bb431be878c0706651a9e2380be357770484d1c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "583a03293e5bf059de77dd1685d27a107cd0cbeb3cca2e2560a2a2f78ce28667"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "583a03293e5bf059de77dd1685d27a107cd0cbeb3cca2e2560a2a2f78ce28667"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "583a03293e5bf059de77dd1685d27a107cd0cbeb3cca2e2560a2a2f78ce28667"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c79da3ead37a3da29b1775badf5d419fa69a123211ca8a45a1908c6d2e0b38e9"
+    sha256 cellar: :any_skip_relocation, ventura:       "c79da3ead37a3da29b1775badf5d419fa69a123211ca8a45a1908c6d2e0b38e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4bac54e08bbade2d4444ba747ff8226c708af063cf35324457936ca325674c4d"
   end
 
   depends_on "go" => :build

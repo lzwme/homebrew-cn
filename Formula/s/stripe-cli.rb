@@ -1,25 +1,25 @@
 class StripeCli < Formula
   desc "Command-line tool for Stripe"
   homepage "https:stripe.comdocsstripe-cli"
-  url "https:github.comstripestripe-cliarchiverefstagsv1.23.6.tar.gz"
-  sha256 "5868d029e614b585b84034056458d6ca90470d77a6ded047d3039d893ae8d1fd"
+  url "https:github.comstripestripe-cliarchiverefstagsv1.23.8.tar.gz"
+  sha256 "0f399e6da38d57dea07c59728eee17fe44c9f96a83427801b9bb196d3255e8da"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0514e8db3b85f9a0d4d7cf119913e86038e44946b62537ddb710a546f8402259"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "43180dd9accca6bf8dd319cd13a03eea28bf0bac913f9e2585626e331de4d5e7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "908d1719e7202a73430c156d5855d3acccc08653308abb375bb516d2bb12be6f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b080d5c126052d5b49363f8c2314efeaab64f48781dd6fb363833267c0a23aeb"
-    sha256 cellar: :any_skip_relocation, ventura:       "27105465472cba7e37c93492ed7b0cdf69886db78f65dd6f49e8f6f78656a04a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3c56d3614dbb96103a972a71f714a952e363a8fcf801163bb28134d4e2e2490"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04936f4e38bb683ad0639081225e0dfc79c97d2ff07da9802696242cdabe5f41"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c30d351399c587078a2ec6b73d182f9f79414a050d2a05094c04b7dd753aaa82"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b0cd70ab93adc99155dac9874cad9ab08435d7cee2d71ed180009bf1a5784db3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b123495584ba0c196230305ec261fed932c7f70af86c510f1b8a5e93017f5901"
+    sha256 cellar: :any_skip_relocation, ventura:       "9fa9b9416cd2f305134d5d3d79a304615a2e68d9fe9a4282b2a3be8f0c488013"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3e4f81b76d744c208eb196fe2523d082ffb49f001a15b59236661093325f93c"
   end
 
   depends_on "go" => :build
 
   # fish completion support patch, upstream pr ref, https:github.comstripestripe-clipull1282
   patch do
-    url "https:github.comstripestripe-clicommitef36be45f56821a33ac175bb4f483f08cca3f458.patch?full_index=1"
-    sha256 "e64d6ab6ed1b93749b8d65a429b0132063fb86520960b7d0c87fa6f7f9221252"
+    url "https:github.comstripestripe-clicommitde62a98881671ce83973e1b696d3a7ea820b8d0e.patch?full_index=1"
+    sha256 "2b30ee04680e16b5648495e2fe93db3362931cf7151b1daa1f7e95023b690db8"
   end
 
   def install

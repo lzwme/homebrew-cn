@@ -1,12 +1,12 @@
 class MariadbAT1011 < Formula
   desc "Drop-in replacement for MySQL"
-  homepage "https://mariadb.org/"
-  url "https://archive.mariadb.org/mariadb-10.11.10/source/mariadb-10.11.10.tar.gz"
+  homepage "https:mariadb.org"
+  url "https:archive.mariadb.orgmariadb-10.11.10sourcemariadb-10.11.10.tar.gz"
   sha256 "b06a74650b83a16aa9ab098984482b028e75b000674b11ff288772c619a6f022"
   license "GPL-2.0-only"
 
   livecheck do
-    url "https://downloads.mariadb.org/rest-api/mariadb/all-releases/?olderReleases=false"
+    url "https:downloads.mariadb.orgrest-apimariadball-releases?olderReleases=false"
     strategy :json do |json|
       json["releases"]&.map do |release|
         next unless release["release_number"]&.start_with?(version.major_minor)
@@ -28,8 +28,8 @@ class MariadbAT1011 < Formula
 
   keg_only :versioned_formula
 
-  # See: https://mariadb.com/kb/en/changes-improvements-in-mariadb-1011/
-  # End-of-life on 2028-02-16: https://mariadb.org/about/#maintenance-policy
+  # See: https:mariadb.comkbenchanges-improvements-in-mariadb-1011
+  # End-of-life on 2028-02-16: https:mariadb.orgabout#maintenance-policy
   deprecate! date: "2028-02-16", because: :unsupported
 
   depends_on "bison" => :build
@@ -59,28 +59,34 @@ class MariadbAT1011 < Formula
     depends_on "readline" # uses libedit on macOS
   end
 
+  # system libfmt patch, upstream pr ref, https:github.comMariaDBserverpull3786
+  patch do
+    url "https:github.comMariaDBservercommitb6a924b8478d2fab5d51245ff6719b365d7db7f4.patch?full_index=1"
+    sha256 "77b65b35cf0166b8bb576254ac289845db5a8e64e03b41f1bf4b2045ac1cd2d1"
+  end
+
   def install
     ENV.cxx11
 
     # Set basedir and ldata so that mysql_install_db can find the server
     # without needing an explicit path to be set. This can still
     # be overridden by calling --basedir= when calling.
-    inreplace "scripts/mysql_install_db.sh" do |s|
+    inreplace "scriptsmysql_install_db.sh" do |s|
       s.change_make_var! "basedir", "\"#{prefix}\""
-      s.change_make_var! "ldata", "\"#{var}/mysql\""
+      s.change_make_var! "ldata", "\"#{var}mysql\""
     end
 
     # Use brew groonga
-    rm_r "storage/mroonga/vendor/groonga"
+    rm_r "storagemroongavendorgroonga"
 
     # -DINSTALL_* are relative to prefix
     args = %W[
-      -DMYSQL_DATADIR=#{var}/mysql
-      -DINSTALL_INCLUDEDIR=include/mysql
-      -DINSTALL_MANDIR=share/man
-      -DINSTALL_DOCDIR=share/doc/#{name}
-      -DINSTALL_INFODIR=share/info
-      -DINSTALL_MYSQLSHAREDIR=share/mysql
+      -DMYSQL_DATADIR=#{var}mysql
+      -DINSTALL_INCLUDEDIR=includemysql
+      -DINSTALL_MANDIR=shareman
+      -DINSTALL_DOCDIR=sharedoc#{name}
+      -DINSTALL_INFODIR=shareinfo
+      -DINSTALL_MYSQLSHAREDIR=sharemysql
       -DWITH_LIBFMT=system
       -DWITH_SSL=system
       -DWITH_UNIT_TESTS=OFF
@@ -103,41 +109,41 @@ class MariadbAT1011 < Formula
     system "cmake", "--build", "_build"
     system "cmake", "--install", "_build"
 
-    # Fix my.cnf to point to #{etc} instead of /etc
-    (etc/"my.cnf.d").mkpath
-    inreplace "#{etc}/my.cnf", "!includedir /etc/my.cnf.d",
-                               "!includedir #{etc}/my.cnf.d"
-    touch etc/"my.cnf.d/.homebrew_dont_prune_me"
+    # Fix my.cnf to point to #{etc} instead of etc
+    (etc"my.cnf.d").mkpath
+    inreplace "#{etc}my.cnf", "!includedir etcmy.cnf.d",
+                               "!includedir #{etc}my.cnf.d"
+    touch etc"my.cnf.d.homebrew_dont_prune_me"
 
     # Save space
-    rm_r(prefix/"mysql-test")
-    rm_r(prefix/"sql-bench")
+    rm_r(prefix"mysql-test")
+    rm_r(prefix"sql-bench")
 
     # Link the setup scripts into bin
     bin.install_symlink [
-      prefix/"scripts/mariadb-install-db",
-      prefix/"scripts/mysql_install_db",
+      prefix"scriptsmariadb-install-db",
+      prefix"scriptsmysql_install_db",
     ]
 
     # Fix up the control script and link into bin
-    inreplace "#{prefix}/support-files/mysql.server", /^(PATH=".*)(")/, "\\1:#{HOMEBREW_PREFIX}/bin\\2"
+    inreplace "#{prefix}support-filesmysql.server", ^(PATH=".*)("), "\\1:#{HOMEBREW_PREFIX}bin\\2"
 
-    bin.install_symlink prefix/"support-files/mysql.server"
+    bin.install_symlink prefix"support-filesmysql.server"
 
     # Move sourced non-executable out of bin into libexec
-    libexec.install "#{bin}/wsrep_sst_common"
+    libexec.install "#{bin}wsrep_sst_common"
     # Fix up references to wsrep_sst_common
     %w[
       wsrep_sst_mysqldump
       wsrep_sst_rsync
       wsrep_sst_mariabackup
     ].each do |f|
-      inreplace "#{bin}/#{f}", "$(dirname \"$0\")/wsrep_sst_common",
-                               "#{libexec}/wsrep_sst_common"
+      inreplace "#{bin}#{f}", "$(dirname \"$0\")wsrep_sst_common",
+                               "#{libexec}wsrep_sst_common"
     end
 
     # Install my.cnf that binds to 127.0.0.1 by default
-    (buildpath/"my.cnf").write <<~INI
+    (buildpath"my.cnf").write <<~INI
       # Default Homebrew MySQL server config
       [mysqld]
       # Only allow connections from localhost
@@ -147,22 +153,22 @@ class MariadbAT1011 < Formula
   end
 
   def post_install
-    # Make sure the var/mysql directory exists
-    (var/"mysql").mkpath
+    # Make sure the varmysql directory exists
+    (var"mysql").mkpath
 
     # Don't initialize database, it clashes when testing other MySQL-like implementations.
     return if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
-    unless File.exist? "#{var}/mysql/mysql/user.frm"
+    unless File.exist? "#{var}mysqlmysqluser.frm"
       ENV["TMPDIR"] = nil
-      system bin/"mysql_install_db", "--verbose", "--user=#{ENV["USER"]}",
-        "--basedir=#{prefix}", "--datadir=#{var}/mysql", "--tmpdir=/tmp"
+      system bin"mysql_install_db", "--verbose", "--user=#{ENV["USER"]}",
+        "--basedir=#{prefix}", "--datadir=#{var}mysql", "--tmpdir=tmp"
     end
   end
 
   def caveats
     <<~EOS
-      A "/etc/my.cnf" from another install may interfere with a Homebrew-built
+      A "etcmy.cnf" from another install may interfere with a Homebrew-built
       server starting up correctly.
 
       MySQL is configured to only allow connections from localhost by default
@@ -170,25 +176,25 @@ class MariadbAT1011 < Formula
   end
 
   service do
-    run [opt_bin/"mysqld_safe", "--datadir=#{var}/mysql"]
+    run [opt_bin"mysqld_safe", "--datadir=#{var}mysql"]
     keep_alive true
     working_dir var
   end
 
   test do
-    (testpath/"mysql").mkpath
-    (testpath/"tmp").mkpath
-    system bin/"mysql_install_db", "--no-defaults", "--user=#{ENV["USER"]}",
-      "--basedir=#{prefix}", "--datadir=#{testpath}/mysql", "--tmpdir=#{testpath}/tmp",
+    (testpath"mysql").mkpath
+    (testpath"tmp").mkpath
+    system bin"mysql_install_db", "--no-defaults", "--user=#{ENV["USER"]}",
+      "--basedir=#{prefix}", "--datadir=#{testpath}mysql", "--tmpdir=#{testpath}tmp",
       "--auth-root-authentication-method=normal"
     port = free_port
     fork do
-      system bin/"mysqld", "--no-defaults", "--user=#{ENV["USER"]}",
-        "--datadir=#{testpath}/mysql", "--port=#{port}", "--tmpdir=#{testpath}/tmp"
+      system bin"mysqld", "--no-defaults", "--user=#{ENV["USER"]}",
+        "--datadir=#{testpath}mysql", "--port=#{port}", "--tmpdir=#{testpath}tmp"
     end
     sleep 5
     assert_match "information_schema",
-      shell_output("#{bin}/mysql --port=#{port} --user=root --password= --execute='show databases;'")
-    system bin/"mysqladmin", "--port=#{port}", "--user=root", "--password=", "shutdown"
+      shell_output("#{bin}mysql --port=#{port} --user=root --password= --execute='show databases;'")
+    system bin"mysqladmin", "--port=#{port}", "--user=root", "--password=", "shutdown"
   end
 end

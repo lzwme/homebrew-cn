@@ -8,12 +8,6 @@ class ZabbixCli < Formula
   license "GPL-3.0-or-later"
   head "https:github.comunioslozabbix-cli.git", branch: "master"
 
-  # TODO: Remove livecheck once upstream finalizes PyPI package name
-  livecheck do
-    url :head
-    regex(^v?(\d+(?:\.\d+)+)$i)
-  end
-
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "6da1243775c002121042745bceade7aec1c33f623c3ea1712dd815c1064aec4f"
     sha256 cellar: :any,                 arm64_sonoma:  "331e47e8cd7576a4437b1abaf154be40edbdf9994050a80ffb49824fe222cd06"

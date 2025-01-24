@@ -1,18 +1,18 @@
 class Rqlite < Formula
   desc "Lightweight, distributed relational database built on SQLite"
   homepage "https:www.rqlite.io"
-  url "https:github.comrqliterqlitearchiverefstagsv8.36.6.tar.gz"
-  sha256 "b8b5c4ed87ac6f46e6bd4f2f4eecbdcd59028ecca82f4c87bba3f440045542dd"
+  url "https:github.comrqliterqlitearchiverefstagsv8.36.8.tar.gz"
+  sha256 "ee39930c48c2ae7f9451f25c1b2e69f021c3884d73ed5e1e165e70b4f4d2317d"
   license "MIT"
   head "https:github.comrqliterqlite.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72915f58e0573ea9e7e7596e2d0dfd9314f87c850c5b0434613768b35bf1ca88"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "322c90f3d214b4eef410d5dd941e183a07dc16243119066e8e6063c1e49552f5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2791c85a8ea241639ed78633656d83699b0dbc3dd6db6a9f4dda426fb111c2e8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "942dfd3eabe2655b67d06d60d57800471a41ff981fd76c57481b581f8a875389"
-    sha256 cellar: :any_skip_relocation, ventura:       "2bac784a57e881c0b8613bc028bfe8872f4793724032ed957364f589200b34bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80ad9da85c546a45f2ff0595faa5768625a35cb71f1af24563fda88d8a408b2c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d8f9d7cacfcdb874d667ecb34a6fc8c9d5b3eec9fb5e2caa384092ab5e059bb1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e4631317aaeca3edce800b6a1731fe0e2903d41dc6992f6f96c4026cebacb5a5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "45019d0bf58e0592d087f5e538134eb679a18dfd6a3edf42dbfcc1c8186ad510"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7850d3a0e404e9851bb0b56446058bd4d7593eddd58e3bc9673119f750b3c1fd"
+    sha256 cellar: :any_skip_relocation, ventura:       "522c752687b406bf19bae2fb9fc8fce97b1297dcc2c2dea50c5b26c9848437cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bf8141330842bd2c5ac1e26340671b3c92e667df8d3f250846670faf663e05e"
   end
 
   depends_on "go" => :build
