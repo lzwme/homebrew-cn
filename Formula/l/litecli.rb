@@ -3,13 +3,12 @@ class Litecli < Formula
 
   desc "CLI for SQLite Databases with auto-completion and syntax highlighting"
   homepage "https:github.comdbclilitecli"
-  url "https:files.pythonhosted.orgpackagesff591e7ba81c715049b3eb299e65d29553fb64b3766dcc8669a1829faa0e6559litecli-1.13.2.tar.gz"
-  sha256 "ac374929a5b3d914a9f47e0a7f4a838a7e1f6e963b4893cd7d67a1e2a3ac4762"
+  url "https:files.pythonhosted.orgpackagesc7f8679d84a30b121e02aef33ff430859e047fc03e0f8f92ca82f252307f886alitecli-1.14.0.tar.gz"
+  sha256 "44978803243f936492faf7dae9c2b237653c98d172670e3a1a30ba3b5da38b96"
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "a7f95edb75808431e62435913c9d62047e40aa04ac1645cccc49db3962c42325"
+    sha256 cellar: :any_skip_relocation, all: "d6f59ed89a2c38931529caf2ce1993a1189e00b4e83af3bd820a1d227b01cb1a"
   end
 
   depends_on "python@3.13"
@@ -22,8 +21,8 @@ class Litecli < Formula
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
+    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
   end
 
   resource "configobj" do
@@ -32,18 +31,18 @@ class Litecli < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https:files.pythonhosted.orgpackages2d4ffeb5e137aff82f7c7f3248267b97451da3644f6cdc218edfe549fb354127prompt_toolkit-3.0.48.tar.gz"
-    sha256 "d6623ab0477a80df74e646bdbc93621143f5caf104206aa29294d53de1a03d90"
+    url "https:files.pythonhosted.orgpackagesa1e1bd15cb8ffdcfeeb2bdc215de3c3cffca11408d829e4b8416dcfe71ba8854prompt_toolkit-3.0.50.tar.gz"
+    sha256 "544748f3860a2623ca5cd6d2795e7a14f3d0e1c3c9728359013f79877fc89bab"
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
-    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
+    url "https:files.pythonhosted.orgpackages7c2dc3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84pygments-2.19.1.tar.gz"
+    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
   end
 
   resource "sqlparse" do
-    url "https:files.pythonhosted.orgpackages57615bc3aff85dc5bf98291b37cf469dab74b3d0aef2dd88eade9070a200af05sqlparse-0.5.2.tar.gz"
-    sha256 "9e37b35e16d1cc652a2545f0997c1deb23ea28fa1f3eefe609eee3063c3b105f"
+    url "https:files.pythonhosted.orgpackagese540edede8dd6977b0d3da179a342c198ed100dd2aba4be081861ee5911e4da4sqlparse-0.5.3.tar.gz"
+    sha256 "09f67787f56a0b16ecdbde1bfc7f5d9c3371ca683cfeaa8e6ff60b4807ec9272"
   end
 
   resource "tabulate" do

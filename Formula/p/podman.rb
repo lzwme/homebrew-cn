@@ -4,6 +4,7 @@ class Podman < Formula
   url "https:github.comcontainerspodmanarchiverefstagsv5.3.2.tar.gz"
   sha256 "e7d7abf2d4ecae7217af017a4199d555563721bf6c3ae52e68704ee8268c432b"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
+  revision 1
   head "https:github.comcontainerspodman.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
@@ -17,13 +18,12 @@ class Podman < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "40d0bce7840fc2b4e1c38850cd99e3788cd35bfa2a9bce3e190ac2ab14f7fa41"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "807f8831aef3b4fbd268409bd43f3d1e027b24ff0b8c6a420ec18cc31b14a3e6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ca005bd6f119fc84cbd32e9dbfdac9e72d2024591489d23b63e61f8f30e6fb70"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ff76012e8d04d2112214807873e2309834f659fc3d8b3927703d1e09aa1f0713"
-    sha256 cellar: :any_skip_relocation, ventura:       "3e76b6d472c6cef038eab844853d151583e9ade1d6bc35a87aa521f53fd57b8f"
-    sha256                               x86_64_linux:  "4b7198518ea7728c16aa8c14d9d5ba24f84af23c3fe6cfbeb16fbde63e9362e7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8d3c5a1c99fe2e4309ea96158e12f9132da072786b5cca5d2a6ddeb57a9b49eb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d54aef6a18d43715e8cc5e1e486cf255e3e5931654e46bf95012a83c7341904"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b2779601ca3ae538593ee8399591f51c625027194d28d2c9768b7831f4b8f261"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2aab6be60b444c3dd2470f3b11a5414bb19901f27b6f49e64716f093801e2a9d"
+    sha256 cellar: :any_skip_relocation, ventura:       "4de740a6f9e3a1d5dd61985d03c6a5e5ba0ac62aee27ab1219f2bb617f831fa5"
+    sha256                               x86_64_linux:  "eb228f53621c5be1b1fcec6efca2b06790cd8f1d5ea602e1b91e33de30d0d4b1"
   end
 
   depends_on "go" => :build
@@ -54,8 +54,8 @@ class Podman < Formula
 
   resource "gvproxy" do
     on_macos do
-      url "https:github.comcontainersgvisor-tap-vsockarchiverefstagsv0.8.2.tar.gz"
-      sha256 "57bf983cc636d107cd86ecf3a147674cf2f2c18d7a5a92a9b39da842547bbc51"
+      url "https:github.comcontainersgvisor-tap-vsockarchiverefstagsv0.8.1.tar.gz"
+      sha256 "9b7fb12dfc37b0a727f2209ff8b557c4ec922d11cec30a778c192da360db4a2f"
     end
   end
 

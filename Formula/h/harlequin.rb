@@ -8,19 +8,20 @@ class Harlequin < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "aa72ee60e41704f349d9fa549b1037a8e81f1366e7c85ea4734d269214a322aa"
-    sha256 cellar: :any,                 arm64_sonoma:  "8392708054d267e1c239aca1271a7d4311ae96a6bb6b01fde838a41857a6194e"
-    sha256 cellar: :any,                 arm64_ventura: "ba1754f704f6610348c04d92a79e38040df509f369cbc4deea55eeeed13e3138"
-    sha256 cellar: :any,                 sonoma:        "e21b98c9891e73bb8369c83f9c9993a59b45298531bbb05f63d21c9a1dc13c49"
-    sha256 cellar: :any,                 ventura:       "6006175690b2c4e46ecfc8df21c8be0beeb8931770fb75db0698185e24e9a31f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6ff3859ba22925c897779dd7c52fd43b81bc88e65b624615ab4ef41348e1076"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "a0a478c8a8b76df2fed9160ca3942f434212af647702688518fb14c423155c0d"
+    sha256 cellar: :any,                 arm64_sonoma:  "6073226f8a06d09a1854d9322da3084aa3502458e02427309c91386063ee4cae"
+    sha256 cellar: :any,                 arm64_ventura: "5c43b0250284ef8e3e0d7ceb71341fc1743fc4f05b46beb28d207465f2c4a5bd"
+    sha256 cellar: :any,                 sonoma:        "6f1ea2544477ee6e2ab84fd14b187068be67730f592be0c0ffbb226ca092a773"
+    sha256 cellar: :any,                 ventura:       "ec5cce6a60052237b052c6eec3dcdb447f9da3cb327f9c2cb572c186dc97536e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0ef82b4eaf2e0f1f16eab83ef467feee0de734a4a145facc8fa42ee7b74a688"
   end
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "apache-arrow"
   depends_on "libpq" # psycopg
-  depends_on "python@3.12" # Python 3.13: https:github.comtconbeerharlequinissues697
+  depends_on "python@3.13"
   depends_on "unixodbc" # harlequin-odbc
 
   on_linux do

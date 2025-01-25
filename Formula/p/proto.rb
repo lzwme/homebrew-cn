@@ -1,8 +1,8 @@
 class Proto < Formula
   desc "Pluggable multi-language version manager"
   homepage "https:moonrepo.devproto"
-  url "https:github.commoonrepoprotoarchiverefstagsv0.45.0.tar.gz"
-  sha256 "acf4e26be09320cec85437a3b47d6581c4f8d679d3e314e6b87ad212c4a3ca15"
+  url "https:github.commoonrepoprotoarchiverefstagsv0.45.1.tar.gz"
+  sha256 "e545fa31935bd31fd1b05ec13e2de377824f63953ba014ce572e5a2cf69f2834"
   license "MIT"
   head "https:github.commoonrepoproto.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Proto < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "20340914aeca242845ce49bd19eebb4e46560bf7cd7fcbbba35987a4b044fce6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1819bd9d20cec25e9a1af1134a6ee51090199aed237f8a0385ab6d2590035bfb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4a4f9d5961d7797759f599eadf86b5f954b2f28d272fdf8bafad8a5a34e4c7d3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4d3b78d1e7cf6d61577e97d6c86a6f89335355286cced011eeac565216c1ab0b"
-    sha256 cellar: :any_skip_relocation, ventura:       "c4995a9ab875aa0dc0d6d2c18dad95148966c0e7aaf499ab8fe611a57a5bad06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "653f55abd750438afbc9af4b8f6cc6520b7304378fda473fc8a1d20e55f25df3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d024c49a2dc5fea68872e0630ea7d465081117dd46806701c1f9cd9a0d588134"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3662359f704f1bc2885afb2afad0ed26787c9038d3afead0018b48de56869360"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f0e6207951a3f3bcbd7cbea72ac71f4e3be892f6ed39ebab69f660884fe221f0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0110b442e5402618a399040dd92d156da145f410f8ab658c15e36a593eef46e1"
+    sha256 cellar: :any_skip_relocation, ventura:       "9025e2c92dc797d596864d7d85168fb45baedc9179ef0bbd67cd6c8f49ef58aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "693f06d1e1871da8240fe458baa2e72890f42660d6e247e7f24b47b9a494ab40"
   end
 
   depends_on "pkgconf" => :build
