@@ -1,6 +1,6 @@
 cask "wine-stable" do
-  version "9.0_3"
-  sha256 "e352befbd159225d4ef7c45ad90ccc4efb9797bd4e842f99036a32e850d1b3de"
+  version "10.0"
+  sha256 "e3d837cda8666324cb20044656f601d02e16a4d73fdf489514323d272ccb8995"
 
   # Current winehq packages are deprecated and these are packages from
   # the new maintainers that will eventually be pushed to Winehq.
@@ -41,12 +41,12 @@ cask "wine-stable" do
   app "Wine Stable.app"
   binary "#{appdir}Wine Stable.appContentsResourcesstartbinappdb"
   binary "#{appdir}Wine Stable.appContentsResourcesstartbinwinehelp"
+  binary "#{appdir}Wine Stable.appContentsResourceswinebinmsidb"
   binary "#{appdir}Wine Stable.appContentsResourceswinebinmsiexec"
   binary "#{appdir}Wine Stable.appContentsResourceswinebinnotepad"
   binary "#{appdir}Wine Stable.appContentsResourceswinebinregedit"
   binary "#{appdir}Wine Stable.appContentsResourceswinebinregsvr32"
   binary "#{appdir}Wine Stable.appContentsResourceswinebinwine"
-  binary "#{appdir}Wine Stable.appContentsResourceswinebinwine64"
   binary "#{appdir}Wine Stable.appContentsResourceswinebinwineboot"
   binary "#{appdir}Wine Stable.appContentsResourceswinebinwinecfg"
   binary "#{appdir}Wine Stable.appContentsResourceswinebinwineconsole"

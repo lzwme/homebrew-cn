@@ -884,6 +884,7 @@ Homebrew-homebrew-core/Formula/c/chezmoi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chezscheme.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chibi-scheme.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chicken.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/chiko.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chinadns-c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chipmunk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chisel-tunnel.rb, Homebrew/homebrew-core, 1
@@ -5235,6 +5236,7 @@ Homebrew-homebrew-core/Formula/p/ppss.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/ppsspp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pqiv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pre-commit.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/precious.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/precomp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/prefixsuffix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/premake.rb, Homebrew/homebrew-core, 1
@@ -6736,6 +6738,7 @@ Homebrew-homebrew-core/Formula/t/tzdiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/u-boot-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/uade.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/ubertooth.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/u/ubi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/ucg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uchardet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/ucl.rb, Homebrew/homebrew-core, 1

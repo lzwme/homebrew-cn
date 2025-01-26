@@ -1,8 +1,8 @@
 class Flatbuffers < Formula
   desc "Serialization library for C++, supporting Java, C#, and Go"
   homepage "https:google.github.ioflatbuffers"
-  url "https:github.comgoogleflatbuffersarchiverefstagsv25.1.21.tar.gz"
-  sha256 "7ab210001df1cd6234d0263801eeed3b941098bc9d6b41331832dd29cea4b555"
+  url "https:github.comgoogleflatbuffersarchiverefstagsv25.1.24.tar.gz"
+  sha256 "0b9f8d2bb1d22d553c93cd7e3ecf3eb725469980a58a98db6e21574341b4ed63"
   license "Apache-2.0"
   head "https:github.comgoogleflatbuffers.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Flatbuffers < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f8e6f44ea9900c918a2034bf508e1f2d252fe5a39bcac3b9ca0bace6af88a8c7"
-    sha256 cellar: :any,                 arm64_sonoma:  "dcef57d3f36e3c228b5cf30b9c1e030365f18a53880136426bc9dde1848dca84"
-    sha256 cellar: :any,                 arm64_ventura: "299be281681e5c1cdd7a6c6d23557bb8db2e0536b8e23c8bc4ae1ef08004a1e3"
-    sha256 cellar: :any,                 sonoma:        "d2507f6d7ff316aadfbe9e186ebfffe3533b40bebf3cef4c116c6df7e9dcb3e6"
-    sha256 cellar: :any,                 ventura:       "37186762f1f1a5f928c9b972da7d1a1e11119aeba27bd20be7c50a488942bc72"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77bf45d9fed46bc00875591b109c995c1277627d0e36ee269702afcea7f60781"
+    sha256 cellar: :any,                 arm64_sequoia: "beacf9ab6026cd2301a294d12a39947e80a7a39756cd0d3ef3e451a07154fafe"
+    sha256 cellar: :any,                 arm64_sonoma:  "1fa7ccdc34cf8913caf8b2bda2d6d387c737e35b86e2de4db4401b137b361c85"
+    sha256 cellar: :any,                 arm64_ventura: "d7cd7aec91a27c0440f2a8e9f20da7adb0ba5b892b116e691207511102cfcf19"
+    sha256 cellar: :any,                 sonoma:        "f5f3d819c251dd1b4713a0f68367f5ff636c4aabdf1909f7ab347f320df6f0fc"
+    sha256 cellar: :any,                 ventura:       "cde15451e055680668466a72399e4d369d9ee5b755534935755b952e1b0bae28"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da6ffc45dc92a1b51a42bce65ec5be86f4fb1c17fe7db4c30c8dd3c86d9c2752"
   end
 
   depends_on "cmake" => :build

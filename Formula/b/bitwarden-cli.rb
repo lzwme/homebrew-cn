@@ -1,8 +1,8 @@
 class BitwardenCli < Formula
   desc "Secure and free password manager for all of your devices"
   homepage "https:bitwarden.com"
-  url "https:github.combitwardenclientsarchiverefstagscli-v2025.1.1.tar.gz"
-  sha256 "6159a3028156b1dbbfcc044631b1426b3bffc28f8cc4aea077199fb95551ac42"
+  url "https:github.combitwardenclientsarchiverefstagscli-v2025.1.2.tar.gz"
+  sha256 "560b5ed7b6c5091fdd20a90a2cd3fe45e69e583feee4584264143d164e724c83"
   license "GPL-3.0-only"
 
   livecheck do
@@ -11,12 +11,12 @@ class BitwardenCli < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "b50eb49b4e5a398d92b0acd6dcb0f8dfb2429bab731e46c7ec3ecc37f4bae859"
-    sha256                               arm64_sonoma:  "7ea7d57b5f9655c8484ab4fdd62dabaa197747d86b8fefdaa6266093b8c213bb"
-    sha256                               arm64_ventura: "132caf43bd08cd2d8c03d808575a72feb064fbfcc2d32970931b46890241e431"
-    sha256                               sonoma:        "7d94d1484c0c867b3aac93504dc636a4bf9aa738ed89d72a047463d8eb39717c"
-    sha256                               ventura:       "169dc0dbb68a5ab97496d43c38ce9ded5158a0045b0b9de5fc8d6a3d4e918905"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd0f447f9bed565562acb172ed2c44038a91ba0461d429fab652c69263d249e8"
+    sha256                               arm64_sequoia: "6f9e16447f53708347728157a900de5c32a72965eb048faf0ec2502389306e32"
+    sha256                               arm64_sonoma:  "161695a3a1a0ea6cc4bbaa049d220371e091dd78e6e7c77a9ce5bfebc2cd67a0"
+    sha256                               arm64_ventura: "894b927c61faac5b5f87dadbbba219b6dc3f26963fd4dff1f2681f3e5fd56b3e"
+    sha256                               sonoma:        "f4993e320f093eb5de5e03645a5d5726d60b2ac95896ff8f59dc3ba757e4d56f"
+    sha256                               ventura:       "e0ffd39c3e1802e738249b953f3b04d713a72863b207dfb06afe03662a70078f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5cfae975a1e94a3d687e725739898677f91d04447f01c4d5729a8c19e5c6be92"
   end
 
   depends_on "node"

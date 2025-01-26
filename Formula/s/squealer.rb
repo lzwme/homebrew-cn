@@ -1,18 +1,18 @@
 class Squealer < Formula
   desc "Scans Git repositories or filesystems for secrets in commit histories"
   homepage "https:github.comowenrumneysquealer"
-  url "https:github.comowenrumneysquealerarchiverefstagsv1.2.5.tar.gz"
-  sha256 "de36c88364afd9e3557143058410feb84a6c79c93743a5ea00ef0f22df6e54c3"
+  url "https:github.comowenrumneysquealerarchiverefstagsv1.2.6.tar.gz"
+  sha256 "7b13a6d5d52d2cf54c13b0f25d48b8c5712e5a0d2e9cda7122ecd685f565c76e"
   license "Unlicense"
   head "https:github.comowenrumneysquealer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78883c46b7982ffb270f3a21c7eab367905bfca53fa5ab785e35df45e298be05"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78883c46b7982ffb270f3a21c7eab367905bfca53fa5ab785e35df45e298be05"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "78883c46b7982ffb270f3a21c7eab367905bfca53fa5ab785e35df45e298be05"
-    sha256 cellar: :any_skip_relocation, sonoma:        "37d9029eb70e4b53a38bff7b01047ec81fa750537202778c90f01c78fb9ea2b8"
-    sha256 cellar: :any_skip_relocation, ventura:       "37d9029eb70e4b53a38bff7b01047ec81fa750537202778c90f01c78fb9ea2b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "373cfbf3541dd3dcfd74ed82aae47a99815eb41424225935152133aee356fa7a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f23e33f95306ea726f02a555af2de2518e4104df8c65b1b4c2c1bbe5c8d62ec0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f23e33f95306ea726f02a555af2de2518e4104df8c65b1b4c2c1bbe5c8d62ec0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f23e33f95306ea726f02a555af2de2518e4104df8c65b1b4c2c1bbe5c8d62ec0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5861ae33901906761a6267700c647c91b53dd0db6271f4a5f4bb31c56ea55b53"
+    sha256 cellar: :any_skip_relocation, ventura:       "5861ae33901906761a6267700c647c91b53dd0db6271f4a5f4bb31c56ea55b53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddbce2e011a66b07005de46ca3ca3941ed9c7ef3abd2a2d79d395643f3b69652"
   end
 
   depends_on "go" => :build

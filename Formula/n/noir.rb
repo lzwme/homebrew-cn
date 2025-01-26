@@ -4,6 +4,7 @@ class Noir < Formula
   url "https:github.comowasp-noirnoirarchiverefstagsv0.19.0.tar.gz"
   sha256 "59d62446ce42797f3834a13f7453f80902d80c681e5b8f969dee9118a104b990"
   license "MIT"
+  head "https:github.comowasp-noirnoir.git", branch: "main"
 
   bottle do
     sha256 arm64_sequoia: "205b6311807258e529d6ae93ae60efefca6557aee64023f9e434fc1e28e6b3b5"
@@ -14,8 +15,9 @@ class Noir < Formula
     sha256 x86_64_linux:  "53773fc10ea1dc1056bfb4761ebc79707836ef9a995de4b240d8094c235f2bfc"
   end
 
+  depends_on "crystal" => :build
+  depends_on "pkgconf" => :build
   depends_on "bdw-gc"
-  depends_on "crystal"
   depends_on "libevent"
   depends_on "libyaml"
   depends_on "openssl@3"
@@ -24,19 +26,27 @@ class Noir < Formula
   uses_from_macos "zlib"
 
   def install
-    system "shards", "install"
-    system "shards", "build", "--release", "--no-debug"
+    system "shards", "build", "--production", "--release", "--no-debug"
     bin.install "binnoir"
 
-    generate_completions_from_executable(bin"noir", shell_parameter_format: "--generate-completion=",
-                                                     shells:                 [:bash, :zsh, :fish])
+    generate_completions_from_executable(bin"noir", "--generate-completion")
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}noir --version")
 
-    system "git", "clone", "https:github.comowasp-noirnoir.git"
-    output = shell_output("#{bin}noir -b noir 2>&1")
+    (testpath"api.py").write <<~PYTHON
+      from fastapi import FastAPI
+
+      app = FastAPI()
+
+      @app.get("hello")
+      def hello():
+          return {"Hello": "World"}
+    PYTHON
+
+    output = shell_output("#{bin}noir --no-color --base-path . 2>&1")
     assert_match "Generating Report.", output
+    assert_match "GET hello", output
   end
 end
