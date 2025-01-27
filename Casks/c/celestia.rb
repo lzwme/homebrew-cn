@@ -2,28 +2,15 @@ cask "celestia" do
   version "1.6.4"
   sha256 "bfb0d0070be9a240a9e3df39495a43223a18dc7757f523ba71dbe8f0bdcaf9e3"
 
-  url "https:github.comCelestiaProjectCelestiareleasesdownload#{version}celestia-#{version}-macOS.zip"
+  url "https:github.comCelestiaProjectCelestiareleasesdownload#{version}celestia-#{version}-macOS.zip",
+      verified: "github.comCelestiaProjectCelestia"
   name "Celestia"
   desc "Space simulation for exploring the universe in three dimensions"
-  homepage "https:github.comCelestiaProjectCelestia"
+  homepage "https:celestiaproject.space"
 
-  # Not every GitHub release provides a file for macOS, so we check multiple
-  # recent releases instead of only the "latest" release.
   livecheck do
-    url :url
-    regex(^celestia[._-]v?(\d+(?:\.\d+)+)[._-]?(macOS)?\.(?:dmg|pkg|zip)$i)
-    strategy :github_releases do |json, regex|
-      json.map do |release|
-        next if release["draft"] || release["prerelease"]
-
-        release["assets"]&.map do |asset|
-          match = asset["name"]&.match(regex)
-          next if match.blank?
-
-          match[1]
-        end
-      end.flatten
-    end
+    url "https:celestiaproject.spacedownload.html"
+    regex(href=.*?celestia[._-]v?(\d+(?:\.\d+)+)[._-]macOS\.zipi)
   end
 
   app "Celestia.app"

@@ -7,6 +7,8 @@ class Tarantool < Formula
   version_scheme 1
   head "https:github.comtarantooltarantool.git", branch: "master"
 
+  # The upstream release page (https:www.tarantool.ioendoclatestrelease)
+  # simply links to GitHub releases, so we check the "latest" release directly.
   livecheck do
     url :head
     strategy :github_latest

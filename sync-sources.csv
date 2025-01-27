@@ -390,6 +390,7 @@ Homebrew-homebrew-core/Formula/b/b3sum.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/b43-fwcutter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/babel.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/babeld.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/babelfish.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/babl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/backupninja.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bacon.rb, Homebrew/homebrew-core, 1
@@ -8753,6 +8754,7 @@ Homebrew-homebrew-cask/Casks/f/flacon.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/flame.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/flameshot.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/flash-decompiler-trillix.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/flashspace.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fldigi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fleet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/flexoptix.rb, Homebrew/homebrew-cask, 0
@@ -9135,6 +9137,9 @@ Homebrew-homebrew-cask/Casks/font/font-b/font-biorhyme.rb, Homebrew/homebrew-cas
 Homebrew-homebrew-cask/Casks/font/font-b/font-birthstone-bounce.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-b/font-birthstone.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-b/font-biryani.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-b/font-bitcount-prop-single-ink.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-b/font-bitcount-single-ink.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-b/font-bitcount.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-b/font-bitstream-vera-sans-mono-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-b/font-bitstream-vera.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-b/font-bitter-ht.rb, Homebrew/homebrew-cask, 0
@@ -10173,6 +10178,7 @@ Homebrew-homebrew-cask/Casks/font/font-m/font-monofur-nerd-font.rb, Homebrew/hom
 Homebrew-homebrew-cask/Casks/font/font-m/font-monoid-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-monoid.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-monoisome.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-monomakh.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-monomaniac-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-mononoki-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-mononoki.rb, Homebrew/homebrew-cask, 1
@@ -12030,6 +12036,7 @@ Homebrew-homebrew-cask/Casks/l/line-bot-designer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/linear-linear.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/linear.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/linearmouse.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/l/linearmouse@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lingon-x.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/linkliar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/linn-konfig.rb, Homebrew/homebrew-cask, 0
@@ -12518,6 +12525,7 @@ Homebrew-homebrew-cask/Casks/m/music-widget.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/musicbrainz-picard.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/musictube.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mutedeck.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/muteme.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mutespotifyads.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mutesync.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/muyu.rb, Homebrew/homebrew-cask, 0
@@ -12594,8 +12602,8 @@ Homebrew-homebrew-cask/Casks/n/network-radar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/netxms-console.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nexonplug.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/next.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/n/nextcloud-vfs.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/n/nextcloud.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/n/nextcloud-vfs.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/nextcloud.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nfov.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/ngrok.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nheko.rb, Homebrew/homebrew-cask, 1
@@ -14308,6 +14316,8 @@ Homebrew-homebrew-cask/Casks/v/vagrant-manager.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vagrant-vmware-utility.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vagrant.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/valentina-studio.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/v/valhalla-freq-echo.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/v/valhalla-space-modulator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/valhalla-supermassive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/valkyrie.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/valley.rb, Homebrew/homebrew-cask, 0

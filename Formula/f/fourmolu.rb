@@ -16,7 +16,7 @@ class Fourmolu < Formula
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.10" => :build
+  depends_on "ghc" => :build
 
   def install
     system "cabal", "v2-update"

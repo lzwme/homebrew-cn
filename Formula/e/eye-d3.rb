@@ -9,6 +9,9 @@ class EyeD3 < Formula
   license "GPL-3.0-or-later"
   revision 1
 
+  # The upstream documentation links to https:eyed3.nicfit.netreleases as
+  # the release archive but it returns a 403 (Forbidden) response, so we check
+  # the "latest" release on GitHub as a workaround.
   livecheck do
     url "https:github.comnicfiteyeD3.git"
     strategy :github_latest
