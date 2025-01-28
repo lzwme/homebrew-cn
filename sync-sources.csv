@@ -5396,7 +5396,7 @@ Homebrew-homebrew-core/Formula/p/python-gdbm@3.13.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-launcher.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-lsp-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-markdown.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/python-matplotlib.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/python-matplotlib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-packaging.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/python-setuptools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/python-tabulate.rb, Homebrew/homebrew-core, 1
@@ -5573,6 +5573,7 @@ Homebrew-homebrew-core/Formula/r/redis@6.2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/redka.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redland.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redo.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/redocly-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redpen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redress.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/redshift.rb, Homebrew/homebrew-core, 1
@@ -5860,6 +5861,7 @@ Homebrew-homebrew-core/Formula/s/sdl2_mixer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sdl2_net.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sdl2_sound.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sdl2_ttf.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sdl3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sdl_gfx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sdl_image.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sdl_mixer.rb, Homebrew/homebrew-core, 1
@@ -8390,7 +8392,6 @@ Homebrew-homebrew-cask/Casks/d/diffmerge.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/diffusionbee.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/digikam.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/digital.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/d/dingtalk-lite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dingtalk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dintch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/direqual.rb, Homebrew/homebrew-cask, 0
@@ -8429,6 +8430,7 @@ Homebrew-homebrew-cask/Casks/d/dockdoor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/docker-toolbox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/docker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dockey.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/dockfix.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dockmate.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dockside.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dockstation.rb, Homebrew/homebrew-cask, 1
@@ -8629,7 +8631,6 @@ Homebrew-homebrew-cask/Casks/e/epubmdimporter.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/epubquicklook.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/eqmac.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/equinox.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/e/eset-cyber-security-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/eset-cyber-security.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/espanso.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/espresso.rb, Homebrew/homebrew-cask, 0

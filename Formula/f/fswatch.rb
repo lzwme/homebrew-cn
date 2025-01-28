@@ -1,8 +1,8 @@
 class Fswatch < Formula
   desc "Monitor a directory for changes and run a shell command"
   homepage "https:github.comemcrisostomofswatch"
-  url "https:github.comemcrisostomofswatchreleasesdownload1.18.1fswatch-1.18.1.tar.gz"
-  sha256 "199609ca2aeb3aa7dc07980c616527805d0c5d017945fe7a81ef8d609104e2aa"
+  url "https:github.comemcrisostomofswatchreleasesdownload1.18.2fswatch-1.18.2.tar.gz"
+  sha256 "1e5ec35c0bd8f39d45cb326e85362a0472e6b6b5a65eca7934c357e54926dfeb"
   license all_of: ["GPL-3.0-or-later", "Apache-2.0"]
 
   livecheck do
@@ -11,12 +11,12 @@ class Fswatch < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "53bb4f48e08d8fd3b2f14f8e0ed1ed0992f9dffe1815a9268435419f30167f72"
-    sha256 cellar: :any, arm64_sonoma:  "72e76d4a81b4ff3e7f6f638a9ce0a36f20f568340253eb64c3fcaab1bf53050d"
-    sha256 cellar: :any, arm64_ventura: "a94ec0f8aed86c9e497531fab752cd0e00284bd0a0d837359944b706680bbd60"
-    sha256 cellar: :any, sonoma:        "bb6238c83fb5a73d08f51a3a0d9dc08c91035fc04a52716884bd8a3f57ac73c9"
-    sha256 cellar: :any, ventura:       "0c70ea700fb553324cd1498552c4e735d6b3e614d2c829b2fbc542972f552abf"
-    sha256               x86_64_linux:  "37451a08d50b33275ef47bd0530e364af37777364df9783b3b3f6698c3996b7c"
+    sha256 cellar: :any, arm64_sequoia: "6be389864292dde6b3c0dddc1e49526b16c268c74883b7870dab4c30fe984e6a"
+    sha256 cellar: :any, arm64_sonoma:  "aa63026628cc6e1c90eda516154a5325bccf356a492e6023e4ffa6388d240c98"
+    sha256 cellar: :any, arm64_ventura: "f191a3440e9f4530666f4178666690dea983db5e930657ecf7d403c619b76d1a"
+    sha256 cellar: :any, sonoma:        "ba69935f4fbd020b5be907d73fc46a98c3d1402f587cdf08c846187cd4ff8572"
+    sha256 cellar: :any, ventura:       "89c2390e3b368f922280a3c287d4c17049adc67b87579afa71b3a90a9bba1b3a"
+    sha256               x86_64_linux:  "b7714de26333fb00bf33ac6ebae5260e50bbf8045dffe9ac8535a5aaf83019d1"
   end
 
   def install

@@ -2,18 +2,19 @@ class PythonMatplotlib < Formula
   include Language::Python::Virtualenv
 
   desc "Python library for creating static, animated, and interactive visualizations"
-  homepage "https:matplotlib.org"
-  url "https:files.pythonhosted.orgpackages68ddfa2e1a45fce2d09f4aea3cee169760e672c8262325aa5796c49d543dc7e6matplotlib-3.10.0.tar.gz"
+  homepage "https://matplotlib.org/"
+  url "https://files.pythonhosted.org/packages/68/dd/fa2e1a45fce2d09f4aea3cee169760e672c8262325aa5796c49d543dc7e6/matplotlib-3.10.0.tar.gz"
   sha256 "b886d02a581b96704c9d1ffe55709e49b4d2d52709ccebc4be42db856e511278"
   license "PSF-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5613499b2da59661ef0641bb7511d06ccf3d5bb883d56d850d5aef9c8c631274"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "95de62f87fb1452cd17e312c222365ecce6a5373b44b419463ca3a9253eaa6ef"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ff089ba09fb4be9b99121dc59e8cb4748de748362f14ed6a8720cdcc12271b7f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f24f38951eaf91d7b39a3a62bcef60ae9956ba4783a1b41fd08743a3eca15c91"
-    sha256 cellar: :any_skip_relocation, ventura:       "5fa43def0604ce0e1702d0f1990aa90c930937716dad9baa9d9066d6f848e2e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b56e5a6aae2fc0ad6514c6f5b77114b450a396a700f7eaaad71b730b07e96cf"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "ea109680ad52f0a46ae78c6fc3721ae6b01656d2f20e8b7dc82a1eb30f392206"
+    sha256 cellar: :any,                 arm64_sonoma:  "417255b76b6ff3027ee0a8a3301c4734d475ac6d49688f21c55b16958c2adb8d"
+    sha256 cellar: :any,                 arm64_ventura: "575f7f9d6cf269728c17ed6c80733d71380bc0a3f81c94a8be49d2f1ad961f06"
+    sha256 cellar: :any,                 sonoma:        "91369a90bddfa89047237d4f39318acbcd293551e2dc6f600e8da35b3a1d77fe"
+    sha256 cellar: :any,                 ventura:       "5d4c75b32833904c71cf82d0f224a2a3e058727a95cc9ba59deb75f82fdc16fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59f185b8153044041d2d72f668af792c06f54d95c274187f0a9609085f70b519"
   end
 
   depends_on "meson" => :build
@@ -30,42 +31,42 @@ class PythonMatplotlib < Formula
   end
 
   resource "contourpy" do
-    url "https:files.pythonhosted.orgpackages25c2fc7193cc5383637ff390a712e88e4ded0452c9fbcf84abe3de5ea3df1866contourpy-1.3.1.tar.gz"
+    url "https://files.pythonhosted.org/packages/25/c2/fc7193cc5383637ff390a712e88e4ded0452c9fbcf84abe3de5ea3df1866/contourpy-1.3.1.tar.gz"
     sha256 "dfd97abd83335045a913e3bcc4a09c0ceadbe66580cf573fe961f4a825efa699"
   end
 
   resource "cycler" do
-    url "https:files.pythonhosted.orgpackagesa995a3dbbb5028f35eafb79008e7522a75244477d2838f38cbb722248dabc2a8cycler-0.12.1.tar.gz"
+    url "https://files.pythonhosted.org/packages/a9/95/a3dbbb5028f35eafb79008e7522a75244477d2838f38cbb722248dabc2a8/cycler-0.12.1.tar.gz"
     sha256 "88bb128f02ba341da8ef447245a9e138fae777f6a23943da4540077d3601eb1c"
   end
 
   resource "fonttools" do
-    url "https:files.pythonhosted.orgpackages7661a300d1574dc381393424047c0396a0e213db212e28361123af9830d71a8dfonttools-4.55.3.tar.gz"
+    url "https://files.pythonhosted.org/packages/76/61/a300d1574dc381393424047c0396a0e213db212e28361123af9830d71a8d/fonttools-4.55.3.tar.gz"
     sha256 "3983313c2a04d6cc1fe9251f8fc647754cf49a61dac6cb1e7249ae67afaafc45"
   end
 
   resource "kiwisolver" do
-    url "https:files.pythonhosted.orgpackages854d2255e1c76304cbd60b48cee302b66d1dde4468dc5b1160e4b7cb43778f2akiwisolver-1.4.7.tar.gz"
+    url "https://files.pythonhosted.org/packages/85/4d/2255e1c76304cbd60b48cee302b66d1dde4468dc5b1160e4b7cb43778f2a/kiwisolver-1.4.7.tar.gz"
     sha256 "9893ff81bd7107f7b685d3017cc6583daadb4fc26e4a888350df530e41980a60"
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
+    url "https://files.pythonhosted.org/packages/d0/63/68dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106da/packaging-24.2.tar.gz"
     sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
   end
 
   resource "pyparsing" do
-    url "https:files.pythonhosted.orgpackages8cd5e5aeee5387091148a19e1145f63606619cb5f20b83fccb63efae6474e7b2pyparsing-3.2.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/8c/d5/e5aeee5387091148a19e1145f63606619cb5f20b83fccb63efae6474e7b2/pyparsing-3.2.0.tar.gz"
     sha256 "cbf74e27246d595d9a74b186b810f6fbb86726dbf3b9532efb343f6d7294fe9c"
   end
 
   resource "python-dateutil" do
-    url "https:files.pythonhosted.orgpackages66c00c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6dbpython-dateutil-2.9.0.post0.tar.gz"
+    url "https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz"
     sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
   end
 
   resource "six" do
-    url "https:files.pythonhosted.orgpackages94e7b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2six-1.17.0.tar.gz"
+    url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
     sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
@@ -74,18 +75,14 @@ class PythonMatplotlib < Formula
   end
 
   def install
-    # `matplotlib` needs extra inputs to use system libraries.
-    # Ref: https:github.commatplotlibmatplotlibblobv3.8.3docusersinstallingdependencies.rst#use-system-libraries
-    # TODO: Update build to use `--config-settings=setup-args=...` when `matplotlib` switches to `meson-python`.
-    ENV["MPLSETUPCFG"] = buildpath"mplsetup.cfg"
-    (buildpath"mplsetup.cfg").write <<~EOS
-      [libs]
-      system_freetype = true
-      system_qhull = true
-    EOS
+    venv = virtualenv_create(libexec, python3)
+    venv.pip_install resources
+    system python3, "-m", "pip", "--python=#{venv.root}", "install",
+                                 "--config-settings=setup-args=-Dsystem-freetype=true",
+                                 "--config-settings=setup-args=-Dsystem-qhull=true",
+                                 *std_pip_args(prefix: false, build_isolation: true), "."
 
-    venv = virtualenv_install_with_resources
-    (prefixLanguage::Python.site_packages(python3)"homebrew-matplotlib.pth").write venv.site_packages
+    (prefix/Language::Python.site_packages(python3)/"homebrew-matplotlib.pth").write venv.site_packages
   end
 
   test do

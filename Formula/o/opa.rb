@@ -1,18 +1,18 @@
 class Opa < Formula
   desc "Open source, general-purpose policy engine"
   homepage "https:www.openpolicyagent.org"
-  url "https:github.comopen-policy-agentopaarchiverefstagsv1.0.1.tar.gz"
-  sha256 "5255c1fb4e21889cedaa718ae68be5a6ace759fc4d1782f03f01535b627bc941"
+  url "https:github.comopen-policy-agentopaarchiverefstagsv1.1.0.tar.gz"
+  sha256 "b8b1b6ab1773788fcb41c2a1f00bc7db8526980b7ee94b06cea1085776f5eb39"
   license "Apache-2.0"
   head "https:github.comopen-policy-agentopa.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c3493455db650dde648386ae13e5135106c8af7d9032084a3b7934458c9fb11b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6f6564dca0ce258398fbe535df2c5cc44a81e5b49154960dc860974e029fd93"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "20a7a1f0a5aeaf57d402f23e87cb545efe5cf9eed0bc6f157d50a0d2a5c22143"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6811b6e93ec86b3d2203bb1cba87891b0ebd04d964f94dc490f211d9d2b225e6"
-    sha256 cellar: :any_skip_relocation, ventura:       "c826d7c991fb377702a1044ff379c4586d12df287ad147c722bcafcd267758fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c21b9404ff8655f2003fd54d2718cef44b591e16ead719748746ddc4e88255e7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "57ce9fef97b054b41c64d67b232a3b717d6e681ab23f55f537b3ec72e2c7aaf2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b2744e071de3b64740023ea4ea08f1b3698dd4e0d3ee14de48b0324625493c0e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9269b41c92564451241d8edf56f6711698b6fb6f62d051beb81982ebc37adc21"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e52cdc04d6bf8ad2a911db956b2a917a8f7fa88eeeed77e553fd6aa83e93bc37"
+    sha256 cellar: :any_skip_relocation, ventura:       "9663de80788e1082841833d7b9edb46313fb89ce433a9aa7e59dcbcc84bf4873"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9968c447d6cd113fffcd013dc992f1366a9275d55c85f64a27f91bf84088cc25"
   end
 
   depends_on "go" => :build

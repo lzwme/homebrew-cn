@@ -1,8 +1,8 @@
 class Gmic < Formula
   desc "Full-Featured Open-Source Framework for Image Processing"
   homepage "https:gmic.eu"
-  url "https:gmic.eufilessourcegmic_3.5.0.tar.gz"
-  sha256 "847ddf438bbe73ec1447a8d98916571c75664bed050ac11212e45b2eb4c1cad0"
+  url "https:gmic.eufilessourcegmic_3.5.1.tar.gz"
+  sha256 "6519408a258fcbab1916b479227a030fbb875280d1cfd0833d1391526fe51a95"
   license "CECILL-2.1"
   head "https:github.comGreycLabgmic.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Gmic < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "af7758f64e8dc5dafbea4afd4562506a0345cae23cf3826d44dee8d1a5d15ec0"
-    sha256 cellar: :any,                 arm64_sonoma:  "358dcfe6133017dec8dd73aeeff0739f3a6851e1b6a1b04e5799b4e1ddf4be23"
-    sha256 cellar: :any,                 arm64_ventura: "b53df6080acd6b4a5fc812af57eb78a9370fa7e48579a207fc52685af76ddace"
-    sha256 cellar: :any,                 sonoma:        "918a9e49aaa9f7aa4f8f4dd8f7fcb64b0a982f76839017b36b417b208abf73fd"
-    sha256 cellar: :any,                 ventura:       "eee8261136f04545d64ddd679d4ec2338f19896e32e3374dd2e3b99251ab574a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0c3f3483b3abd4fdf4a67fae670777316344648dd6c07208dfcf4a98dabf3be"
+    sha256 cellar: :any,                 arm64_sequoia: "994e6f4cebcab9ce7b999b25e9f7bb1b529b66725f3407714bce57bdfe1f8ec8"
+    sha256 cellar: :any,                 arm64_sonoma:  "aa925bddf7597c76c8eadc7e7c7e1635b84b082932c29f222ae2d63059afb11b"
+    sha256 cellar: :any,                 arm64_ventura: "0703b26cd6e3ec95e863178117249b158242065417d9c13d4d830ed7948f11b2"
+    sha256 cellar: :any,                 sonoma:        "11d96b77a0e84983b7df4ee978282a50310b190017d9c5e938890083c425eaa0"
+    sha256 cellar: :any,                 ventura:       "83df8434acfc5954f354367412054f6802e1648add637d69fefffc66cf2f76b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b334254731333e1cc1513b100eae9bbf55cf70f84f6c18433101b927a88a256"
   end
 
   depends_on "cmake" => :build
