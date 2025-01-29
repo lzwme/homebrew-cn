@@ -1,8 +1,8 @@
 class Joern < Formula
   desc "Open-source code analysis platform based on code property graphs"
   homepage "https:joern.io"
-  url "https:github.comjoerniojoernarchiverefstagsv4.0.220.tar.gz"
-  sha256 "c149c353ac4d9aa582b011fb8d382eb7f028bf1b54c77c5404720c5cf95734b3"
+  url "https:github.comjoerniojoernarchiverefstagsv4.0.230.tar.gz"
+  sha256 "62c28ecc79ea664da7cd3e854727e2e97fc2bc958b2a62b3580cf29a1f9a6ca4"
   license "Apache-2.0"
 
   livecheck do
@@ -12,12 +12,12 @@ class Joern < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2200cfacd2038a6d24909169c98eac11cce45029720033d096e9ef9f1e2c7a8a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "19e9c8342bd4f98c82b3826d814a5ea71c58356bfcc9a987838f2fe903d14e8d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "19e9c8342bd4f98c82b3826d814a5ea71c58356bfcc9a987838f2fe903d14e8d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9ce5587cd81cb3647a65e3cf18a4ec03c99cc4428bbc8e6e6cd261d07aaed91c"
-    sha256 cellar: :any_skip_relocation, ventura:       "fd78f53e13281378359d93c5280b8c978742c1109765d13e66636d62a1e0cf4f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d02380afb0e04ca8e005780d303d156bcaf1ab9a7d043a918ffa97780f08294"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6fcaad6ace90252bc84f2999fb05f7cd5b811b1d973e781abd201971ab3e4bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ceb99db32ca3c5602f5e43777d522ce8c9a953563ab19735d287d5964ae7ce95"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "617e3d70fc441854376465f64e1cf56264167d7ab401e5d094e3558ce6264718"
+    sha256 cellar: :any_skip_relocation, sonoma:        "91378646396464daf952dcebfdf2b98a03b2d934f93988dcf600fd961e069e28"
+    sha256 cellar: :any_skip_relocation, ventura:       "08e06ef83713078be4a813f78f40b9f596ccc653af7ff832759083a76b525c3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08ff6b6fc66271d4bcd4ecb433e8a99dd93e8b4ce44b2d8b5dcd316c71bc44c3"
   end
 
   depends_on "sbt" => :build

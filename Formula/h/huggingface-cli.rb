@@ -3,17 +3,17 @@ class HuggingfaceCli < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/index"
-  url "https://files.pythonhosted.org/packages/e1/d2/d6976de7542792fc077b498d64af64882b6d8bb40679284ec0bff77d5929/huggingface_hub-0.27.1.tar.gz"
-  sha256 "c004463ca870283909d715d20f066ebd6968c2207dae9393fdffb3c1d4d8f98b"
+  url "https://files.pythonhosted.org/packages/10/fd/c8ff7693942dac1c642ec3a93a2bf7cbac36e2e920dd61a79965d9a662b7/huggingface_hub-0.28.0.tar.gz"
+  sha256 "c2b18c02a47d4384763caddb4d0ab2a8fc6c16e0800d6de4d55d0a896244aba3"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "100e976510b08023a63581a9729cdaa9472a91591371d49cb1dd67dafbcf4601"
-    sha256 cellar: :any,                 arm64_sonoma:  "aac6538c18199792301633a2b491472989480e96fc325224959001fa839b15ec"
-    sha256 cellar: :any,                 arm64_ventura: "1f471aebe67af0363ba4d6bec15c34b4cd1d86b36f56418c6c3142544dcd5846"
-    sha256 cellar: :any,                 sonoma:        "0993476eef16a772dfad4636d0f35ac4764776864baf808d19a7f7a7c83bdad0"
-    sha256 cellar: :any,                 ventura:       "d9875c231e37848aed72354e60ac570ebf9113c27f21a6e0c7add755eaa55f00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95f29985daa48efd1f5a87f416ecb71844eadacab085b23f74f42fa47ce116aa"
+    sha256 cellar: :any,                 arm64_sequoia: "7e5d900bd9abca0990d9ddf9e295950ffcc4ce1fa0c5a1f933ba4453f9f70153"
+    sha256 cellar: :any,                 arm64_sonoma:  "27cf4e293f783fa2947ef0144afc17b5077223b2663a8c8e37bfccc78272378c"
+    sha256 cellar: :any,                 arm64_ventura: "2788d0f8c1c7382523ccc1dfd093c648c03775bf51c51273b3dc95080e3cb237"
+    sha256 cellar: :any,                 sonoma:        "c63e240536fd35e0d366adb21b1ec392585fcdb086b70df7cae0ebf5bcf17ccc"
+    sha256 cellar: :any,                 ventura:       "b4bae207086fcacf6d4e704be512c7de455463d466f2a8dcfb3ac81ffc4dd431"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5b44aa786feb52c55eee12a276a25a576ddb328947c3813eb34e5dddc15ef71"
   end
 
   depends_on "certifi"
@@ -27,8 +27,8 @@ class HuggingfaceCli < Formula
   end
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/9d/db/3ef5bb276dae18d6ec2124224403d1d67bccdbefc17af4cc8f553e341ab1/filelock-3.16.1.tar.gz"
-    sha256 "c249fbfcd5db47e5e2d6d62198e565475ee65e4831e2561c8e313fa7eb961435"
+    url "https://files.pythonhosted.org/packages/dc/9c/0b15fb47b464e1b663b1acd1253a062aa5feecb07d4e597daea542ebd2b5/filelock-3.17.0.tar.gz"
+    sha256 "ee4e77401ef576ebb38cd7f13b9b28893194acc20a8e68e18730ba9c0e54660e"
   end
 
   resource "fsspec" do

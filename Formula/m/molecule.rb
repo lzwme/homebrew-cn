@@ -3,17 +3,17 @@ class Molecule < Formula
 
   desc "Automated testing for Ansible roles"
   homepage "https://molecule.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/a0/26/bfeca24fbfbdf12be51a8cc25f51585b47a972162f392737bc909f40f763/molecule-25.1.0.tar.gz"
-  sha256 "d3d3346465e3e4cf8614db6b083e352b65c76bbe05e511af85fbf42f5950adde"
+  url "https://files.pythonhosted.org/packages/2e/a6/d8f507bedf42a88eb96e10a34cfd93f7266fa29363e76a8c49aa729f7b21/molecule-25.2.0.tar.gz"
+  sha256 "2f74a31ed03a562c0cb453fe80c2f95a92f663c6104429817c56cb101d903047"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2ab0f85806365c8ef0230553ba5a76e17b30991899ac86c123300aee6dd7d016"
-    sha256 cellar: :any,                 arm64_sonoma:  "852fb9b7c7938180c741fc72638d0ce0331aa2bbd1db5ea576a09ae18058f5a2"
-    sha256 cellar: :any,                 arm64_ventura: "5a8064fd5159107f4fbc082c7d416c7ceb2034df485fcdc38726e1d1f0989e9f"
-    sha256 cellar: :any,                 sonoma:        "523af8f6dcc1e3072219092772a5dccf1c5641b2b33f64e8080ed10368f8a186"
-    sha256 cellar: :any,                 ventura:       "3dea6a9559f3a0354126d3b28e6b590fe3558b31574285c0c82ad06bbde39db3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92f664492795f6e6ffefba0220e5b7baa464e8c4a59ae19530fa0990ef6f5988"
+    sha256 cellar: :any,                 arm64_sequoia: "e9a3d547c986058098bfc24eaa3f230f23a495455aaa36d37840901b5b876d99"
+    sha256 cellar: :any,                 arm64_sonoma:  "7c2d2deaae98ddd674129301c742f66752374bfe73715b99afae7c1d72b695b7"
+    sha256 cellar: :any,                 arm64_ventura: "957003b2ac8f53f1c45e709fa3b6874d8a5b8caf3634026a09f87d47b45f16fa"
+    sha256 cellar: :any,                 sonoma:        "ee5158713195e7e9c8e49b177a301a2703674cebddc2c6b6327e683876cd6665"
+    sha256 cellar: :any,                 ventura:       "1b5395ab6de07622fb7697f14cb954e61944ec7df6f6823b9e88c4a68732f226"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b322f3ad48f4a4ccca8066658e571248161c8371ddc4a0542dccc347819faf2"
   end
 
   depends_on "rust" => :build
@@ -30,18 +30,18 @@ class Molecule < Formula
   end
 
   resource "ansible-compat" do
-    url "https://files.pythonhosted.org/packages/59/f9/c48f3a140e3afad144a720f5c29aa8b34087926b2e2fc8778d4d4b5b6323/ansible_compat-24.10.0.tar.gz"
-    sha256 "0ad873e0dae8b2de79bc33ced813d6c92c716c4d7b82f9a4693e1fd57f43776e"
+    url "https://files.pythonhosted.org/packages/19/43/e97e0cadff77f1a0aa96ade3b20cdc824a6343b3c334122f5d806157bcf9/ansible_compat-25.1.0.tar.gz"
+    sha256 "e6d696b0ffe098af2fae7c5b2085fe8fd92c9ed8cb938fe77c8c87af0f2da056"
   end
 
   resource "ansible-core" do
-    url "https://files.pythonhosted.org/packages/42/46/15836f1f48e2682bd5d04f7b3e2cb27e17626bec3cd7a4f2a7b0ccefbbd2/ansible_core-2.18.1.tar.gz"
-    sha256 "14cac1f92bbdae881cb0616eddeb17925e8cb507e486087975e724533d9de74f"
+    url "https://files.pythonhosted.org/packages/c5/07/ccf2e5ac2f43677fb83b3cee6975d9adda42efda9362b1f15faa189d6a03/ansible_core-2.18.2.tar.gz"
+    sha256 "725b047d35942304eb322eb934b98cc5442ac3f49d33827d97171c238c4b69b9"
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/48/c8/6260f8ccc11f0917360fc0da435c5c9c7504e3db174d5a12a1494887b045/attrs-24.3.0.tar.gz"
-    sha256 "8f5c07333d543103541ba7be0e2ce16eeee8130cb0b3f9238ab904ce1e85baff"
+    url "https://files.pythonhosted.org/packages/49/7c/fdf464bcc51d23881d110abd74b512a42b3d5d376a55a831b44c603ae17f/attrs-25.1.0.tar.gz"
+    sha256 "1c97078a80c814273a76b2a298a932eb681c87415c11dee0a6921de7f1b02c3e"
   end
 
   resource "bracex" do
@@ -150,8 +150,8 @@ class Molecule < Formula
   end
 
   resource "referencing" do
-    url "https://files.pythonhosted.org/packages/27/32/fd98246df7a0f309b58cae68b10b6b219ef2eb66747f00dfb34422687087/referencing-0.36.1.tar.gz"
-    sha256 "ca2e6492769e3602957e9b831b94211599d2aade9477f5d44110d2530cf9aade"
+    url "https://files.pythonhosted.org/packages/2f/db/98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2/referencing-0.36.2.tar.gz"
+    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
   end
 
   resource "requests" do

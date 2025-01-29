@@ -1,8 +1,8 @@
 class Kubetail < Formula
   desc "Logging tool for Kubernetes with a real-time web dashboard"
   homepage "https:www.kubetail.com"
-  url "https:github.comkubetail-orgkubetailarchiverefstagscliv0.0.9.tar.gz"
-  sha256 "0a00298523f8cd1b272373145e7bb3087a7b5f640f42b417bb1a4e52a9eac454"
+  url "https:github.comkubetail-orgkubetailarchiverefstagscliv0.1.0.tar.gz"
+  sha256 "b0492f53c2525c628fd978febbfc4c25d4627fb21bc6aa935f39f5229d60ab75"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Kubetail < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c0dc8d1665765c6ad3d26e3613bb844108fc5d9665cd7476c77c37b52c432cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1e4bef4cdae593ae4431508ff1fddb038b7eebcb402ad58fd701503cc18ced2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9c16614d79ddede707789703ff4d96a3ad25d5329688672c3477fda57578b7a6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "69b37a7fafb880546856c6075d542b656c3d5ca4cffd1f75c29365bfeaa4547f"
-    sha256 cellar: :any_skip_relocation, ventura:       "d56a39729cd3ea671095506b3845163c8be746f3870a4cf696e7da510a367053"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64a42a3d13750d3de02227cfe24950fbe1010f3b1368ee3f8f12253dc31c2893"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b32d2e58c892e3f5a446fb87f2f28f39b366f4e2cccb7815629220598874ba34"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "29ec559bf81c17ddeb9b7ef09332a6871c210a69341bf6d9c2779170da9c6d69"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "93f73dd766d97cc1c64a6b006bef229c5de3520bef6233e1b559412dce47e036"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f73639739c7833e57c2a09c1a7cb57f586d5d7dbae0d91f29196585ca7ec19fb"
+    sha256 cellar: :any_skip_relocation, ventura:       "f2cbc1b78dfb2d0df57939bd153f3dbec60ecd3850a12bdcc94ae98f2df719e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07519bc79e16128f656c2ecf6835013cdeb8bdc58822df1a345c9cd2e42eeee0"
   end
 
   depends_on "go" => :build

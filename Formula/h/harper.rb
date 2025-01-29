@@ -1,18 +1,18 @@
 class Harper < Formula
   desc "Grammar Checker for Developers"
   homepage "https:github.comelijah-potterharper"
-  url "https:github.comelijah-potterharperarchiverefstagsv0.18.0.tar.gz"
-  sha256 "c1ab7cd5abb98df442c37e5e8ccda5bdf8ec7b7960f6fadd8c4984f46476b591"
+  url "https:github.comelijah-potterharperarchiverefstagsv0.18.1.tar.gz"
+  sha256 "a8fa46106a3915d513ea24bbdd40ee4cc6d5aaff1f0e85f5b138c1ee20bedd77"
   license "Apache-2.0"
   head "https:github.comelijah-potterharper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5fab5597611b10b7bbc9af9772a7e0f4725425899fc087b2f1d921255ae80dac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bba3bdcb9da39314b5bd18ed5e9e5e0b559ff3d7e19ee7bb96b1e44c4a2c4301"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "576f7c02b75c46484714462afbec2791c77a13f285dbd9e8c2d5200bca097954"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4a4cda8be119c83af13e5ba8af17ad0d55dc53bdf0ec49b6dd53c6b0521678f9"
-    sha256 cellar: :any_skip_relocation, ventura:       "e876891566fcac57f1e18355a09d56d6d6c8709a67942e03f74725aa4bbebe97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64a52606e6126fe5f32ce2a3666c1b8cb7962a6ce5272db956f266d634307ac3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9f79e8d8b1866ff1d3f0aa790bd718bce9061e4dfb2c56fcd17c4832fcca55f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec6dd29f67a1178a4ea02af7b46a988441e0e44b5a3176d6226d73451ddf722f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4da0e786bdf25d00a1cfc416147bd072af6b6022fc1413591abdbe0c5ebfd4b9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "26309e1cc43787d1eea40234a616611babde22bed651487fae29acdd3bd6aa50"
+    sha256 cellar: :any_skip_relocation, ventura:       "934d027fac9473c5a408ebcba333cfae3b4cf976527e7b20d0f8fd6bb18dafd8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb62b27b7a2adfd9c7fb7cbb74a0baf29a0e53b5effe540ba1b99b2768c4b721"
   end
 
   depends_on "rust" => :build

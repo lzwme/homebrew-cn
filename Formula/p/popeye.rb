@@ -1,17 +1,17 @@
 class Popeye < Formula
   desc "Kubernetes cluster resource sanitizer"
   homepage "https:popeyecli.io"
-  url "https:github.comderailedpopeyearchiverefstagsv0.22.0.tar.gz"
-  sha256 "eb6fb55174b0ca27d32bc7287fc1e091f5ef50fde339fe0a07832832b0302477"
+  url "https:github.comderailedpopeyearchiverefstagsv0.22.1.tar.gz"
+  sha256 "f8eef3d6b9cda24f4d9bdc24620c1368cd6a749f1321a499e88b339258e01d92"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c37a28f21ff71320b8fef8e85fb3fc7d614295579de22e35388eb007d0a869af"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0533f002adfb8886b49f70e53c1068538d99b6ccbcd27064ce5162d8e141269"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "903f30109144cb269bfc1d1a332f8d1eeca4dcece0fa57eaa561e858dde1e638"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2395b2de111f001d63822c8fac2b98236fe1ec0ff42517cbf85d9910c5d0a56b"
-    sha256 cellar: :any_skip_relocation, ventura:       "4de272e87f5c33e8fbc030064ff4316cd17efcc534160ff755448d50005821de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91e0a44530846e270d8f8c635a51489cfebd9de8ee407b1d917de8a570f16571"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a29f831f909394c8c98753f0ca3cc25dbe30ce7b69c6241b8350376e40736092"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32632ae7cda036371ba5a29c5826f07665c9fab00d92f08914ddecb34705c709"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "95a5e69a47e586959e8fa11c1ffbd011bcaebbe9b27bb967380812cff73b8ed7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7c2b6d822b30777d3fd02b65cd00595c8e6b8642f57468f423c1a998dfaa91be"
+    sha256 cellar: :any_skip_relocation, ventura:       "df324d577d9723ecf63f7f9aa6e32c6018b30bc71a0cc505095a8c0a5e54f7f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a29bddbc8b4d01dc7c21663db65b1d22f740f0f33544e89ba900f5a0674dd06"
   end
 
   depends_on "go" => :build

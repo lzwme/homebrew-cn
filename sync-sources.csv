@@ -47,7 +47,7 @@ Homebrew-homebrew-core/Formula/a/adr-viewer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/advancecomp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/advancescan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/adwaita-icon-theme.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/a/aerc.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/aerc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aerleon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aescrypt-packetizer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aescrypt.rb, Homebrew/homebrew-core, 0
@@ -6765,6 +6765,7 @@ Homebrew-homebrew-core/Formula/u/uhdm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/ulfius.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/ultralist.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/um.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/u/umka-lang.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/umlet.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/umple.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/unac.rb, Homebrew/homebrew-core, 0
