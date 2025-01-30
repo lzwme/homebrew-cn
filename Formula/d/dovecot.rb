@@ -11,12 +11,13 @@ class Dovecot < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "fb2c8f7783e044942d8b5eb322e76478c3a2cf25d017211eca4821b15860996b"
-    sha256 arm64_sonoma:  "5418d4d77e0c59b320eb402fee0639afc7489b7d163c748234ebdf97028d6ebe"
-    sha256 arm64_ventura: "232e635161c93fb8b8c3bf275dd74c2e57da284d5ccb2b84333c05c70568e4e4"
-    sha256 sonoma:        "621962d79e0d1e92d2d8e2f2be0ae3b68d3acb4ddc9d9178f8181ab61babec46"
-    sha256 ventura:       "0e436bcb8fb0b09056dca78ab457253a641d3fd5e556be24b704073685746f09"
-    sha256 x86_64_linux:  "0bcddfd90524e9ffa6aaef0f6208d4177cdc36aa720b9250bc1b449b859e1e25"
+    rebuild 1
+    sha256 arm64_sequoia: "09ffefff96a42aeb4368075229fcd8439842729c3275211dc45bfb810e0fd046"
+    sha256 arm64_sonoma:  "fb47228aa002ca7a17b580475f202229ff05021438af7f0b8c28bf943a003ee1"
+    sha256 arm64_ventura: "7c02197a94945e427d5edfec3f1647a981a96d707cd2f59f122de8eb0e777476"
+    sha256 sonoma:        "e007ae6fa96aec1e7b6f89b4c4ed1455dd3f0397b59b5aae6f7c3cbd2a4ff64f"
+    sha256 ventura:       "d062efc159a5752d977a820107b8c4f11dc766489e06bff2860f91832f877a0b"
+    sha256 x86_64_linux:  "d352c07b0869e303d279ef574e9b5d595f714b50cbb08d9f10eefe4dc3f07f37"
   end
 
   depends_on "pkgconf" => :build
@@ -49,6 +50,9 @@ class Dovecot < Formula
   patch :DATA
 
   def install
+    # Re-generate file as only Linux has inotify support for imap-hibernate
+    rm "srcconfigall-settings.c" unless OS.linux?
+
     args = %W[
       --libexecdir=#{libexec}
       --sysconfdir=#{etc}

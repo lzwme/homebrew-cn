@@ -2,8 +2,8 @@ class Ipfs < Formula
   desc "Peer-to-peer hypermedia protocol"
   homepage "https:ipfs.tech"
   url "https:github.comipfskubo.git",
-      tag:      "v0.32.1",
-      revision: "901745353f3b14b3dbf295a6d3f5f98a5a2ce38f"
+      tag:      "v0.33.0",
+      revision: "8b657380277b79299dffe42993ec4f7de4a759d3"
   license all_of: [
     "MIT",
     any_of: ["MIT", "Apache-2.0"],
@@ -16,12 +16,12 @@ class Ipfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59616a47887d20d48e2b349b402a5df78d61e9401478a55f2422e4c60cb73667"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "28055da0f805aef41fa41de454be1a6cd54d0b9f53e9e166fb9719e898792f0c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bbf41acc432ce512fdf264f3cb126520929fe8ed4bbd5c22ee262dda7551a64e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c557aa0ed4ad4e372fb9c3b99046e0758c0f4ce9093cccef595d182ccbca1846"
-    sha256 cellar: :any_skip_relocation, ventura:       "b92abcb9223dfabd68ffbecf0501e6e8703d07217811f0a59f2caf6041cda26f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fcdd084e1ac3f4f11cbecb0d261da25fb1ac66844771f510be70151173a21dba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "577d1bcd23f1dc68b98ad492f62d1df0a9630b65fa3fd4831f9822c367204d0d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c93f94e9fb76c4e6824e089ef7190ff3510dd76fab1ad7f0f2ff339110587cbd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "af16468db4aef232a177bd24653de8c75322d3d104f9e0eeaa7a613b6e4ac405"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9cf83cd407ac92e2d365d868aebe4e59b2183b12c91fa7fab988c25eb22ece03"
+    sha256 cellar: :any_skip_relocation, ventura:       "3ef45beb72ddfa1d16ec3114fe714cccfd67b9bbd9d0753aef31addd27acd8bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b3e74559235fb78c0c7fb540f51dc47a42df8e330da21433185f25639440250"
   end
 
   depends_on "go" => :build

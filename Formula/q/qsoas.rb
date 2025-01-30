@@ -1,14 +1,14 @@
 class Qsoas < Formula
   desc "Versatile software for data analysis"
-  homepage "https:bip.cnrs.frgroupsbip06software"
-  url "https:bip.cnrs.frwp-contentuploadsqsoasqsoas-3.3.tar.gz"
+  homepage "https://bip.cnrs.fr/groups/bip06/software/"
+  url "https://bip.cnrs.fr/wp-content/uploads/qsoas/qsoas-3.3.tar.gz"
   sha256 "c5a701dfed23c682892479b43b92aac79a7db5ceb9ed6b6cd0a41129d2690492"
   license "GPL-2.0-only"
   revision 1
 
   livecheck do
-    url "https:github.comfourmondQSoas.git"
-    regex((\d+(?:\.\d+)+)$i)
+    url "https://bip.cnrs.fr/groups/bip06/software/downloads/"
+    regex(/href=.*?qsoas[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -33,14 +33,14 @@ class Qsoas < Formula
     gsl = Formula["gsl"].opt_prefix
     qt5 = Formula["qt@5"].opt_prefix
 
-    system "#{qt5}binqmake", "MRUBY_DIR=#{Formula["mruby"].opt_prefix}",
-                               "GSL_DIR=#{gsl}include",
-                               "QMAKE_LFLAGS=-L#{libexec}lib -L#{gsl}lib"
+    system "#{qt5}/bin/qmake", "MRUBY_DIR=#{Formula["mruby"].opt_prefix}",
+                               "GSL_DIR=#{gsl}/include",
+                               "QMAKE_LFLAGS=-L#{libexec}/lib -L#{gsl}/lib"
     system "make"
 
     if OS.mac?
       prefix.install "QSoas.app"
-      bin.write_exec_script "#{prefix}QSoas.appContentsMacOSQSoas"
+      bin.write_exec_script "#{prefix}/QSoas.app/Contents/MacOS/QSoas"
     else
       bin.install "QSoas"
     end
@@ -50,6 +50,6 @@ class Qsoas < Formula
     # Set QT_QPA_PLATFORM to minimal to avoid error "qt.qpa.xcb: could not connect to display"
     ENV["QT_QPA_PLATFORM"] = "minimal" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
     assert_match "mfit-linear-kinetic-system",
-                 shell_output("#{bin}QSoas --list-commands")
+                 shell_output("#{bin}/QSoas --list-commands")
   end
 end

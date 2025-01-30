@@ -7,8 +7,7 @@ class Sdl2 < Formula
 
   livecheck do
     url :stable
-    regex(release[._-](\d+(?:\.\d+)+)i)
-    strategy :github_latest
+    regex(release[._-](2(?:\.\d+)+)i)
   end
 
   bottle do

@@ -1156,7 +1156,7 @@ Homebrew-homebrew-core/Formula/c/crabz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cracklib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crackpkcs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crane.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/crash.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/crash.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/crates-tui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crc32c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crcany.rb, Homebrew/homebrew-core, 1
@@ -3437,6 +3437,7 @@ Homebrew-homebrew-core/Formula/l/luarocks.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/luau.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/luaver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lucky-commit.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/ludusavi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/luit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lunar-date.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lunchy-go.rb, Homebrew/homebrew-core, 1
@@ -5448,7 +5449,7 @@ Homebrew-homebrew-core/Formula/q/qrtool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qrupdate.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qscintilla2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qshell.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/q/qsoas.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/q/qsoas.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qstat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qsv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qt-libiodbc.rb, Homebrew/homebrew-core, 0

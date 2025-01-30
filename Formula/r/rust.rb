@@ -122,10 +122,6 @@ class Rust < Formula
     end
   end
 
-  def llvm
-    Formula["llvm"]
-  end
-
   def install
     # Ensure that the `openssl` crate picks up the intended library.
     # https:docs.rsopenssllatestopenssl#manual
@@ -173,7 +169,7 @@ class Rust < Formula
       --prefix=#{prefix}
       --sysconfdir=#{etc}
       --tools=#{tools.join(",")}
-      --llvm-root=#{llvm.opt_prefix}
+      --llvm-root=#{Formula["llvm"].opt_prefix}
       --enable-llvm-link-shared
       --enable-profiler
       --enable-vendor
@@ -210,14 +206,6 @@ class Rust < Formula
       MachO::Tools.change_dylib_id(dylib, "@rpath#{File.basename(dylib)}")
       MachO.codesign!(dylib) if Hardware::CPU.arm?
       chmod 0444, dylib
-    end
-    return unless OS.mac?
-
-    # Symlink our LLVM here to make sure the adjacent binrust-lld can find it.
-    # Needs to be done in `postinstall` to avoid having `change_dylib_id` done on it.
-    lib.glob("rustlib*lib") do |dir|
-      # Use `ln_sf` instead of `install_symlink` to avoid resolving this into a Cellar path.
-      ln_sf llvm.opt_libshared_library("libLLVM"), dir
     end
   end
 

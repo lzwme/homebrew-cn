@@ -1,13 +1,13 @@
 class Di < Formula
   desc "Advanced df-like disk information utility"
-  homepage "https://gentoo.com/di/"
+  homepage "https://diskinfo-di.sourceforge.io/"
   url "https://downloads.sourceforge.net/project/diskinfo-di/di-4.54.0.1.tar.gz"
   sha256 "b401e647ecc3c8a697651bd29ad1cc6ae319f69a248b4dc4d3af0742f64b4ffb"
   license "Zlib"
 
   livecheck do
-    url :stable
-    regex(%r{url=.*?/di[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    url :homepage
+    regex(/current version: v?(\d+(?:\.\d+)+)/i)
   end
 
   bottle do

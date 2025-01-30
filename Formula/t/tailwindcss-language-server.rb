@@ -1,8 +1,8 @@
 class TailwindcssLanguageServer < Formula
   desc "LSP for TailwindCSS"
   homepage "https:github.comtailwindlabstailwindcss-intellisensetreeHEADpackagestailwindcss-language-server"
-  url "https:github.comtailwindlabstailwindcss-intellisensearchiverefstagsv0.14.1.tar.gz"
-  sha256 "b2f0d3ec0cfc9e14114455e0207bf206c7c88ac52f68ae9cd464abe7b3435bc1"
+  url "https:github.comtailwindlabstailwindcss-intellisensearchiverefstagsv0.14.2.tar.gz"
+  sha256 "5022a6352a804210b70780cf269492de60d4f56cdde9b2ddd9c6a6826a7294d3"
   license "MIT"
 
   livecheck do
@@ -13,12 +13,12 @@ class TailwindcssLanguageServer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "78616e83cf058326be0e2253b01ec5179e08cacb0c26cd11b20646b65e739194"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "78616e83cf058326be0e2253b01ec5179e08cacb0c26cd11b20646b65e739194"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "78616e83cf058326be0e2253b01ec5179e08cacb0c26cd11b20646b65e739194"
-    sha256 cellar: :any_skip_relocation, sonoma:        "78616e83cf058326be0e2253b01ec5179e08cacb0c26cd11b20646b65e739194"
-    sha256 cellar: :any_skip_relocation, ventura:       "78616e83cf058326be0e2253b01ec5179e08cacb0c26cd11b20646b65e739194"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c940a574eaf55b229298cc93645812a5652f60be74f25456b13b1e6fb852be6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bbfa33a70b068547aaef1c0b3b89f4c928a2f9efcba6c67fd098a5a3c39bc197"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bbfa33a70b068547aaef1c0b3b89f4c928a2f9efcba6c67fd098a5a3c39bc197"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bbfa33a70b068547aaef1c0b3b89f4c928a2f9efcba6c67fd098a5a3c39bc197"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bbfa33a70b068547aaef1c0b3b89f4c928a2f9efcba6c67fd098a5a3c39bc197"
+    sha256 cellar: :any_skip_relocation, ventura:       "bbfa33a70b068547aaef1c0b3b89f4c928a2f9efcba6c67fd098a5a3c39bc197"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c17b5ed40dc01aa037bd9ed8b21e4ea24a653407c2b8cb1d25b7a472e5905d48"
   end
 
   depends_on "pnpm" => :build

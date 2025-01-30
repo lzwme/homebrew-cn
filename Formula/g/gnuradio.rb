@@ -4,7 +4,7 @@ class Gnuradio < Formula
   desc "SDK for signal processing blocks to implement software radios"
   homepage "https:gnuradio.org"
   license "GPL-3.0-or-later"
-  revision 5
+  revision 6
   head "https:github.comgnuradiognuradio.git", branch: "main"
 
   stable do
@@ -24,12 +24,12 @@ class Gnuradio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b5a69ca98194f4a789b67b278e12c5b21a6d55b25759cc1884176c8e26e6015f"
-    sha256 cellar: :any,                 arm64_sonoma:  "f3281080346ffc818c23199ad5d04de2888b824b3b9c0410f1a64805e6c7c824"
-    sha256 cellar: :any,                 arm64_ventura: "f98f7c0aebad4a933246718e007d6b17cd73e695b4589437ac2ee6ec26ac2d13"
-    sha256 cellar: :any,                 sonoma:        "90603f72df66f994cc93b5cf8a551217900fad96053fc8c24d49ffa95b38d617"
-    sha256 cellar: :any,                 ventura:       "72ccfe1ec4474abc73d60dafd1a7843f9e99fb172f9e9a94d46d001e7f3db0bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cdd9096bf4fd0914ce2b68483a50ec240ab42ee331dfad7bdc3284de9098161d"
+    sha256 cellar: :any,                 arm64_sequoia: "c7da226814b5029acd1f58f3777114394ed4132a73a6268a7ab968ce39d3179b"
+    sha256 cellar: :any,                 arm64_sonoma:  "ffc09b95a01d66ad0499e03aff3f10e784e159e68654d1b29706315ceb8ebc25"
+    sha256 cellar: :any,                 arm64_ventura: "4f7b1758ac32a6a72c206119d24030a410e44e1a6dc117783ec34bff8d40d3c5"
+    sha256 cellar: :any,                 sonoma:        "c6d32f9d192888d2d6a763e0e189efad605c6b39a96340bae2a1e93e4c76f637"
+    sha256 cellar: :any,                 ventura:       "9a36b02ff8bbb21b48feda89bad98bb14cbf2e09bf094f11ab57855907f09bfc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdac09fa010ca3cd9acf94adaa6c31fd8a15216176b0937d7e07f856686147a0"
   end
 
   depends_on "cmake" => :build

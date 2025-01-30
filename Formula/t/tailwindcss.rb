@@ -1,8 +1,8 @@
 class Tailwindcss < Formula
   desc "Utility-first CSS framework"
   homepage "https:tailwindcss.com"
-  url "https:registry.npmjs.orgtailwindcss-tailwindcss-4.0.0.tgz"
-  sha256 "72309ed7264bb66a0e4ed4171a064f9f4ea3b92906afe67b8afedbd8f9e78b28"
+  url "https:registry.npmjs.orgtailwindcss-tailwindcss-4.0.1.tgz"
+  sha256 "92667633156f8c06ef1b542011d61d85def080186f3d639c53b8e3a2d220547a"
   license "MIT"
   head "https:github.comtailwindlabstailwindcss.git", branch: "next"
 
@@ -15,19 +15,19 @@ class Tailwindcss < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "6a0c3745b4c7006283ae59f9a456bd3061d31838eab5c02ddc90f62c8a381ecc"
-    sha256                               arm64_sonoma:  "c97e47d897aa2b72420224639af7e7843ad6277564ae6e570c79cbc50e8cc5e6"
-    sha256                               arm64_ventura: "5508f6e69acfc9edd08303948327aebd434d9acbdd66bea745ccfbd6f1ce8aca"
-    sha256                               sonoma:        "12d7fae1500719207be8f1afa619e9f8ab0222b76712f9f02da43e6b7c181b8e"
-    sha256                               ventura:       "fae76c41673de7042fd257448fbc58b43b23cf56559c1e86f6ef662e753448fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9781a9730ee133a7218f96d5bd720ca96aed67d70bd0ae5ec9d0a56a5036930e"
+    sha256                               arm64_sequoia: "6da14e78515f690b7168e86d4503279785d5eea9ff55d06ad2b3e56d752fbfa9"
+    sha256                               arm64_sonoma:  "fc1e38cf04568397783bea14face64aea706ff43092d91d20a404539d76f3ee9"
+    sha256                               arm64_ventura: "522a009491e3ac56679bc4bd5d752c6bacf8e10a9ef58cb72097c89cde765804"
+    sha256                               sonoma:        "b2d4a97eff720a18131df29f4aa735e447eade15f6023441195cf80e2406f188"
+    sha256                               ventura:       "6aaa4bc775eb2f316b58eb5a7c40bc7d455d93930dd87c080fc8fa3b6a1a4255"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b1846ad51121dc222890f426ba432e4d966baafcfd8b0004c9fe97c234c0b58"
   end
 
   depends_on "node"
 
   resource "tailwind-cli" do
-    url "https:registry.npmjs.org@tailwindcsscli-cli-4.0.0.tgz"
-    sha256 "a6a772944d048966e9db2bdc7521053ea3d8bd06cfdff7931fdc4bb2313e6369"
+    url "https:registry.npmjs.org@tailwindcsscli-cli-4.0.1.tgz"
+    sha256 "a4527c1cb630901e0fa10f7f153eb169e3fc794e8dc224fa150ae5a5350f5b44"
   end
 
   def install

@@ -1,17 +1,17 @@
 class AwsCCommon < Formula
   desc "Core c99 package for AWS SDK for C"
   homepage "https:github.comawslabsaws-c-common"
-  url "https:github.comawslabsaws-c-commonarchiverefstagsv0.10.9.tar.gz"
-  sha256 "fd3c452232972ca65f09ba9cd7657bd6e39d5386a4f4eae3f3cd344eee1b88ce"
+  url "https:github.comawslabsaws-c-commonarchiverefstagsv0.11.0.tar.gz"
+  sha256 "88115d6f3e4f79d8b2544ed8a95d8a9699985aed38aeb4779d7c9fffde1fee58"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5053978e40f1495670ccabe5d53fbdd0cf085a764869cf7a5ff21a8a17162bb1"
-    sha256 cellar: :any,                 arm64_sonoma:  "e7d0bc748f7b4b0149ac2291199dc7d55058f168c7784b6e6aa56993d7756444"
-    sha256 cellar: :any,                 arm64_ventura: "5bdc4aded5559019e49ced4988b27375a336ea0b51b4122afbb2f9e610873733"
-    sha256 cellar: :any,                 sonoma:        "c0e613b5282a4d555b7c41b3c81766866ed1b82c76526b91bf59c849974c8600"
-    sha256 cellar: :any,                 ventura:       "dc435a8a6ebea8a2313eea5de8b744fd67bef8b545bb5d609e2ee0427e0d3a3b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72a561624d2eb971c19d3da99e60533ab2db2929d269c2852c1b5537fd0e0647"
+    sha256 cellar: :any,                 arm64_sequoia: "bce1428c815e42ad7aad44f8286b6e4ec706286d51369e9f997415e63d96700c"
+    sha256 cellar: :any,                 arm64_sonoma:  "6ee60c791ec4a97d9de6381bc52bc7e6fd3d5d4849cd573a91db7f9e8eb644ad"
+    sha256 cellar: :any,                 arm64_ventura: "e715063364d59a27a7af8777aae947643fc2958e6d45c5c438ceed082dee5cf9"
+    sha256 cellar: :any,                 sonoma:        "a74527911838d4ba2a838c823fc74d89eb6709e989c230d4f65d4f00a42eebc3"
+    sha256 cellar: :any,                 ventura:       "8a7db116f65d76565407377b4b7f9b1eefe00253aa37d2e8d61dad3b2189e857"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a52e7b56ae58cd67b74730164406213426960f0b5d2fb438d9cedf6e5f45c9e"
   end
 
   depends_on "cmake" => :build
