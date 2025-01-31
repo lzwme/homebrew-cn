@@ -1,8 +1,8 @@
 class MongodbAtlasCli < Formula
   desc "Atlas CLI enables you to manage your MongoDB Atlas"
   homepage "https:www.mongodb.comdocsatlasclistable"
-  url "https:github.commongodbmongodb-atlas-cliarchiverefstagsatlascliv1.36.0.tar.gz"
-  sha256 "0965197a2cae73e55a18eb73b6f6f13ddc41d8abb6cb4dad90571434ad325c2e"
+  url "https:github.commongodbmongodb-atlas-cliarchiverefstagsatlascliv1.37.0.tar.gz"
+  sha256 "c8c5b8b9c41847bf9a1dfed8138060bab451f906be3e46b18fcbeb996d00e3e8"
   license "Apache-2.0"
   head "https:github.commongodbmongodb-atlas-cli.git", branch: "master"
 
@@ -12,12 +12,12 @@ class MongodbAtlasCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d28aa87d844f190dd68536bbd77a41e44bff2cee1dca9f8ecec532dc5caa4820"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6410b8a8672da796dadd3f922db88bd7afe8d59d3e3fb995648796cb67dd857d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "30335c74f810500376fc6a643eb1478ce59547d8a9a03ffb7bf247a331925d5c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4926e7834cfbc1057ab2ac948fbf68364b19a95ad2004f802985672a0755293b"
-    sha256 cellar: :any_skip_relocation, ventura:       "2fe4f237e3d7543722d2915ab4c75ed570b0d127020719978966808e5528c51d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17014113312f703631d1dc2e4119896f2c7aa3306ec822d3ea5b71026b86371e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98ff3e41e507ed6b9bcd11ca1da1024a5b506fd1b26d3d0b27d0d2bc56715be4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8b4510f5ffd3b87faad529e70159fe1f513e215db24670b872d0e59ad810f75"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e565d47ad2cd47838b51e3da4a11e33c872b55bf97a3fc97d7e2e448d40caf40"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bb51d7931b207bc040266fed738bf3f6172be121e8441959d61eba11e767d8e5"
+    sha256 cellar: :any_skip_relocation, ventura:       "3d6136da62cccd13ce999497d27fe5b5881044ae3290139ac2da1ab48837fd11"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a6819802df1ed7b8db362f74ea04d1c427eeabb416c4cd12588c7e6c97366f6"
   end
 
   depends_on "go" => :build

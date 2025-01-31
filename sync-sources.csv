@@ -6517,7 +6517,7 @@ Homebrew-homebrew-core/Formula/t/texlive.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/texmath.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/textidote.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/textract.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/t/texttest.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/texttest.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tf-profile.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfautomv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfel.rb, Homebrew/homebrew-core, 1
@@ -7183,6 +7183,7 @@ Homebrew-homebrew-core/Formula/x/xdpyinfo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xeol.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xerces-c.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/x/xeyes.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xfig.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xgboost.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xh.rb, Homebrew/homebrew-core, 1
@@ -7194,6 +7195,7 @@ Homebrew-homebrew-core/Formula/x/xkcd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xkeyboardconfig.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xlearn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xlispstat.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/x/xlsclients.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xlslib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xlsxio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xmake.rb, Homebrew/homebrew-core, 1
@@ -7222,6 +7224,7 @@ Homebrew-homebrew-core/Formula/x/xpdf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xpipe.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xplanet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xplr.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/x/xprop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xqilla.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xray.rb, Homebrew/homebrew-core, 1
@@ -7242,6 +7245,7 @@ Homebrew-homebrew-core/Formula/x/xtrans.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xurls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xvid.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xwin.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/x/xwininfo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xxh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xxhash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xz.rb, Homebrew/homebrew-core, 1
@@ -8277,6 +8281,7 @@ Homebrew-homebrew-cask/Casks/c/cycling74-max.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dadroit-json-viewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/daedalus-mainnet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/daisydisk.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/dana-dex.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dangerzone.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/darkmodebuddy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/darktable.rb, Homebrew/homebrew-cask, 1
@@ -10082,6 +10087,8 @@ Homebrew-homebrew-cask/Casks/font/font-m/font-manjari.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/font/font-m/font-manrope.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-mansalva.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-manuale.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-cn.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-nf-cn.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-nf.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-marcellus-sc.rb, Homebrew/homebrew-cask, 1
@@ -11650,6 +11657,7 @@ Homebrew-homebrew-cask/Casks/i/imagej.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/imagemin.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/imageoptim.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/imagex.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/i/imaging-edge-webcam.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/imaging-edge.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/imazing-converter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/imazing-profile-editor.rb, Homebrew/homebrew-cask, 0
@@ -13833,6 +13841,7 @@ Homebrew-homebrew-cask/Casks/s/starnet++.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/starnet2.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/starsector.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/start.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/startupfolder.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/startupizer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/staruml.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/stash.rb, Homebrew/homebrew-cask, 0

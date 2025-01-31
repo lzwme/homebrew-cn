@@ -3,18 +3,18 @@ class BumpMyVersion < Formula
 
   desc "Version bump your Python project"
   homepage "https:callowayproject.github.iobump-my-version"
-  url "https:files.pythonhosted.orgpackagese74f57eda33958c5820b462c4c262bc18dc374dca6312bbb63f95606172200cbbump_my_version-0.30.0.tar.gz"
-  sha256 "d53e784c73abc4bb5759e296f510bc71878e1df078eb525542ec9291b5ceb195"
+  url "https:files.pythonhosted.orgpackagesd248fdd8d489ef579d9d72b99593be24995245e30517f875a3c504f4c42679c0bump_my_version-0.30.1.tar.gz"
+  sha256 "cc1a821c51e387c11484fbef0e2749deb2c320ee9bd7117678f5b648694c1acd"
   license "MIT"
   head "https:github.comcallowayprojectbump-my-version.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5eb13d41ed3debff0ee332cea29e37f443a963c5df353af04b5d04c837ac73ae"
-    sha256 cellar: :any,                 arm64_sonoma:  "7cda84317370741936cd73efb21ee7a98a37f64680c3b968466d5165348e7601"
-    sha256 cellar: :any,                 arm64_ventura: "3bb375bb94572a9da25eb9da46c59f80da2b7e64d07a75525b1c781ca7a42574"
-    sha256 cellar: :any,                 sonoma:        "a63c5466ee5f975bfccdf4b51291ef959f67a0526b041c9599ec9ccc1ae56c0a"
-    sha256 cellar: :any,                 ventura:       "5d0d175cb09c26146558b081931d29303e7b5f224d51b07832554f8567b6b2a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cab2b5be2e5ae9b4a850c7d2ed4223dd52ecd761ba9ca8f7fa5b1e7f1267e85"
+    sha256 cellar: :any,                 arm64_sequoia: "3642d9865292e117ef5edd91fd54c1b592621a6e09c0f52f3bdedf785bd6c7c1"
+    sha256 cellar: :any,                 arm64_sonoma:  "0add5c81cf19200001a734d8b7ffae3005030eb27c482c767e6911989e46a851"
+    sha256 cellar: :any,                 arm64_ventura: "e459927a39c81d7a258b822ddd279a8729ab06e5053662c1a467c202dc128409"
+    sha256 cellar: :any,                 sonoma:        "b8d0359b25b4b5f26f8481f95f547807a06b9ab111ba9d16c8d4779588911144"
+    sha256 cellar: :any,                 ventura:       "64c8bd27c32f290c78c39bd390193f11b2832c509579373e2d385d5de290e106"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d09590e8ad0b9236f25c18e201c3ccf85b27c3195c0fbf057cf620116ce8178"
   end
 
   depends_on "rust" => :build # for pydantic_core

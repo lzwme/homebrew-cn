@@ -5,9 +5,11 @@ class Di < Formula
   sha256 "b401e647ecc3c8a697651bd29ad1cc6ae319f69a248b4dc4d3af0742f64b4ffb"
   license "Zlib"
 
+  # This only matches tarballs in the root directory, as a way of avoiding
+  # unstable versions in the `/beta` subdirectory.
   livecheck do
-    url :homepage
-    regex(/current version: v?(\d+(?:\.\d+)+)/i)
+    url :stable
+    regex(%r{url=.*?/files/di[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do

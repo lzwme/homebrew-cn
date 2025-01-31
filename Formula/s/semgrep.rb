@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https:semgrep.dev"
   url "https:github.comsemgrepsemgrep.git",
-      tag:      "v1.104.0",
-      revision: "c13040ce1b5a23f1309820ca99cd27da29ecd0eb"
+      tag:      "v1.106.0",
+      revision: "b0d94360c392d74d4600096dc54d220cbfbc35cf"
   license "LGPL-2.1-only"
   head "https:github.comsemgrepsemgrep.git", branch: "develop"
 
@@ -15,12 +15,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4962672480dc406bea615b48d139560916709b91bd1c851810c167eb9abc441c"
-    sha256 cellar: :any,                 arm64_sonoma:  "91d27f95905d452d6c1199abb4f6a72c9e76b58d0b2135064cdbfdc06e9f372e"
-    sha256 cellar: :any,                 arm64_ventura: "8caf6659359791200fa02fd32f30c9196cb8eda16b2aab9696eb5486246d6f7f"
-    sha256 cellar: :any,                 sonoma:        "2cce5fcd963043bb699352065539d844748b992adf0bcb21b0194749995722c6"
-    sha256 cellar: :any,                 ventura:       "6bc6db4ad6999d5390771f2ecce51e8521a2f9b695732c8283abd9706367846b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "457583255ccafdf517deffeef05386ef79ec16394dcf728e49c485f3e5bf79e1"
+    sha256 cellar: :any,                 arm64_sequoia: "02df5c7882ba6009bf7a68cf3ff3b3b40b6791cacb7f76416675217bfa0df9cf"
+    sha256 cellar: :any,                 arm64_sonoma:  "05e86cc39d122b8cb1d0481b6edb43399cd4257cf0ac691182dbd6c096dfc4f8"
+    sha256 cellar: :any,                 arm64_ventura: "092c5fdfe7aea5cd67398677efe8f80cebd58d001c2df7292d28c6f9cfa33bf3"
+    sha256 cellar: :any,                 sonoma:        "efce780c660c537e7f9eb1730e5d029d6a687f886956707d472608ff1d7f8d5d"
+    sha256 cellar: :any,                 ventura:       "6f71a0ffdb96e462882ef7555a793453dfd07a74eb501e7a2f4928fb65b4b2b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07899c9ef85bafb2864cbebe1b35af24a64c76bc9fd367ee6f3f832bb0164119"
   end
 
   depends_on "autoconf" => :build
@@ -45,8 +45,8 @@ class Semgrep < Formula
   uses_from_macos "curl"
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackages48c86260f8ccc11f0917360fc0da435c5c9c7504e3db174d5a12a1494887b045attrs-24.3.0.tar.gz"
-    sha256 "8f5c07333d543103541ba7be0e2ce16eeee8130cb0b3f9238ab904ce1e85baff"
+    url "https:files.pythonhosted.orgpackages497cfdf464bcc51d23881d110abd74b512a42b3d5d376a55a831b44c603ae17fattrs-25.1.0.tar.gz"
+    sha256 "1c97078a80c814273a76b2a298a932eb681c87415c11dee0a6921de7f1b02c3e"
   end
 
   resource "boltons" do
@@ -85,8 +85,8 @@ class Semgrep < Formula
   end
 
   resource "deprecated" do
-    url "https:files.pythonhosted.orgpackages2ea353e7d78a6850ffdd394d7048a31a6f14e44900adedf190f9a165f6b69439deprecated-1.2.15.tar.gz"
-    sha256 "683e561a90de76239796e6b6feac66b99030d2dd3fcf61ef996330f14bbb9b0d"
+    url "https:files.pythonhosted.orgpackages989706afe62762c9a8a86af0cfb7bfdab22a43ad17138b07af5b1a58442690a2deprecated-1.2.18.tar.gz"
+    sha256 "422b6f6d859da6f2ef57857761bfb392480502a64c3028ca9bbe86085d72115d"
   end
 
   resource "exceptiongroup" do
@@ -195,8 +195,8 @@ class Semgrep < Formula
   end
 
   resource "protobuf" do
-    url "https:files.pythonhosted.orgpackages67dd48d5fdb68ec74d70fabcc252e434492e56f70944d9f17b6a15e3746d2295protobuf-4.25.5.tar.gz"
-    sha256 "7f8249476b4a9473645db7f8ab42b02fe1488cbe5fb72fddd445e0665afd8584"
+    url "https:files.pythonhosted.orgpackages48d5cccc7e82bbda9909ced3e7a441a24205ea07fea4ce23a772743c0c7611faprotobuf-4.25.6.tar.gz"
+    sha256 "f8cfbae7c5afd0d0eaccbe73267339bff605a2315860bb1ba08eb66670a9a91f"
   end
 
   resource "pygments" do
@@ -205,8 +205,8 @@ class Semgrep < Formula
   end
 
   resource "referencing" do
-    url "https:files.pythonhosted.orgpackages2732fd98246df7a0f309b58cae68b10b6b219ef2eb66747f00dfb34422687087referencing-0.36.1.tar.gz"
-    sha256 "ca2e6492769e3602957e9b831b94211599d2aade9477f5d44110d2530cf9aade"
+    url "https:files.pythonhosted.orgpackages2fdb98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2referencing-0.36.2.tar.gz"
+    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
   end
 
   resource "requests" do

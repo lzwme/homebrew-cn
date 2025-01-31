@@ -1,25 +1,24 @@
 cask "gisto" do
-  version "1.13.4"
-  sha256 "40b8cb8654231af8550d0df76d39a8e69eb1e2fc909faba68882f2fe3576800e"
+  arch arm: "aarch64", intel: "x64"
 
-  url "https:github.comGistoGistoreleasesdownloadv#{version}Gisto-#{version}.dmg",
+  version "2.0.0-1"
+  sha256 arm:   "e53304e5bc6ab8ef3a420bf4d02e5507cbb58d3e7993c221cd5a95f7c4ef9643",
+         intel: "f281a9b63ddc1e7660a0c99333145616e377557d95ffb8bc64f29e7db3a6150e"
+
+  url "https:github.comGistoGistoreleasesdownloadv#{version}Gisto_#{version}_#{arch}.dmg",
       verified: "github.comGistoGisto"
   name "Gisto"
-  desc "Snippets management desktop application with (team) sharing options"
-  homepage "https:www.gistoapp.com"
-
-  deprecate! date: "2024-07-11", because: :unmaintained
+  desc "Snippets management desktop application"
+  homepage "https:www.gisto.org"
 
   app "Gisto.app"
 
   zap trash: [
     "~LibraryApplication SupportGisto",
+    "~LibraryCachescom.gistoapp.gisto2",
     "~LibraryLogsGisto",
+    "~LibraryPreferencescom.gistoapp.gisto2.helper.plist",
     "~LibraryPreferencescom.gistoapp.gisto2.plist",
     "~LibrarySaved Application Statecom.gistoapp.gisto2.savedState",
   ]
-
-  caveats do
-    requires_rosetta
-  end
 end

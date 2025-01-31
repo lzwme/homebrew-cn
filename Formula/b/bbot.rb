@@ -8,12 +8,13 @@ class Bbot < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "42520cf37a0628620c7384aa05f914be3cbfa743211a125225adf962db51109d"
-    sha256 cellar: :any,                 arm64_sonoma:  "f6d3df301f510acab518dc812291ee5e4498832aa34dafa9f6dbea96ac9eefc0"
-    sha256 cellar: :any,                 arm64_ventura: "5a9ef3c48fdc57ebcf6ad9369b3162ca20e9fd52c36642699d03ff61b8d8de8e"
-    sha256 cellar: :any,                 sonoma:        "18303883e685a34e3f2d05d4450dc5364897767ea0126c2c9d79b6ce30fd38c4"
-    sha256 cellar: :any,                 ventura:       "60745a3e5c817b5a4d9c29c5cef497457429d3a961ac3573aab7511139e43903"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "868722d4d627ca5fabbfc2eaf75c87ec44eb13182859a96bf4da975eefb27f79"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "2ee4c6c5fb8dbb35e303a5cc5e9bab9ce2831f3b4b6f66663491316404b090f2"
+    sha256 cellar: :any,                 arm64_sonoma:  "a835369320bba8bf947520d44459a0e6a34b37495524b4ee8144fb41979ede16"
+    sha256 cellar: :any,                 arm64_ventura: "2a863ead14fcbb459aa82def472f3b1bef4044f0d5ccd52caa68443c393d6f94"
+    sha256 cellar: :any,                 sonoma:        "c794ff9cb8f2574e1a97684a0b84700e7d244aa73ae3c7e2911030f77fc78141"
+    sha256 cellar: :any,                 ventura:       "719c0d9f4183db792d27bbf3befc40a34e586a1351495b0018d66146b2c7d5c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa0158b6c6e098e51de39b862a3c572c634556ca52546e147e917d5dfcb70b78"
   end
 
   depends_on "cmake" => :build
@@ -312,8 +313,8 @@ class Bbot < Formula
   end
 
   def install
-    # annotated_types > hatchling, fix to `ZIP does not support timestamps before 1980` error
-    ENV["SOURCE_DATE_EPOCH"] = Time.now.to_i.to_s
+    # The source doesn't have a valid SOURCE_DATE_EPOCH, so here we set default.
+    ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
     virtualenv_install_with_resources
   end

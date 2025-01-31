@@ -9,12 +9,13 @@ class Manim < Formula
   head "https:github.commanimCommunitymanim.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0c12c47570f9f36a78897bc9f6da054d19b3f998ea006b11e8e8c077a74568d8"
-    sha256 cellar: :any,                 arm64_sonoma:  "3b08811b554fe8b591d735197fbd6282119570e898c3195cd62820c931fb8e2e"
-    sha256 cellar: :any,                 arm64_ventura: "85d8948bc2a2205b1b881996712f670ff5036ec7f5fc69dafa8cb9442c31762b"
-    sha256 cellar: :any,                 sonoma:        "b6ff89f0acf709ee9e919a5b07748dd69d7bfaea23247cfe684037711e104f69"
-    sha256 cellar: :any,                 ventura:       "14fc3a46054ff6fe4fb88ba0baa90f47f841e1cb957c35fa3fb15827c43ec8a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bd5aa7de4e8bae579787094e0a49fa01c2e79f3ebde576663ef4d262d6b2818"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "86ce8a53e79ff80f036a4d0db7f0530ee449a257f61dc9258fe8b5b87a7c2834"
+    sha256 cellar: :any,                 arm64_sonoma:  "3e0aa0d42452ea76ed4a6518455791f86356910438ab80d5fc1f38ca3b17d8e1"
+    sha256 cellar: :any,                 arm64_ventura: "1a75f199f3ab86fdb7bf6c566c6da67ceb33035f5e028638b08bc7f02c6c0be3"
+    sha256 cellar: :any,                 sonoma:        "cf4b5d144679779e524b99299b51bf112da008ccb700ded181a9b192b7b4831f"
+    sha256 cellar: :any,                 ventura:       "e3c1047b923d039b971f1bcde3c75f9c74e4efb828446ee5b187cf9916a95c82"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae49172db57af504a7455c843c67ca1cfac5e78759388f73107c42173567780e"
   end
 
   depends_on "cmake" => :build # for mapbox_earcut
@@ -203,8 +204,8 @@ class Manim < Formula
   end
 
   def install
-    # beautifulsoup4 > hatchling, fix to `ZIP does not support timestamps before 1980` error
-    ENV["SOURCE_DATE_EPOCH"] = Time.now.to_i.to_s
+    # The source doesn't have a valid SOURCE_DATE_EPOCH, so here we set default.
+    ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
     if OS.mac?
       # Help `pyobjc-framework-cocoa` pick correct SDK after removing -isysroot from Python formula

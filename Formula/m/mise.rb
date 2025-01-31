@@ -54,14 +54,6 @@ class Mise < Formula
     EOS
   end
 
-  def check_binary_linkage(binary, library)
-    binary.dynamically_linked_libraries.any? do |dll|
-      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
-
-      File.realpath(dll) == File.realpath(library)
-    end
-  end
-
   test do
     system bin"mise", "settings", "set", "experimental", "true"
     system bin"mise", "use", "go@1.23"

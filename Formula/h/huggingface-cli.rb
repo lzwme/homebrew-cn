@@ -3,17 +3,17 @@ class HuggingfaceCli < Formula
 
   desc "Client library for huggingface.co hub"
   homepage "https://huggingface.co/docs/huggingface_hub/index"
-  url "https://files.pythonhosted.org/packages/10/fd/c8ff7693942dac1c642ec3a93a2bf7cbac36e2e920dd61a79965d9a662b7/huggingface_hub-0.28.0.tar.gz"
-  sha256 "c2b18c02a47d4384763caddb4d0ab2a8fc6c16e0800d6de4d55d0a896244aba3"
+  url "https://files.pythonhosted.org/packages/e7/ce/a734204aaae6c35a22f9956ebcd8d8708ae5b842e15d6f42bd6f49e634a4/huggingface_hub-0.28.1.tar.gz"
+  sha256 "893471090c98e3b6efbdfdacafe4052b20b84d59866fb6f54c33d9af18c303ae"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7e5d900bd9abca0990d9ddf9e295950ffcc4ce1fa0c5a1f933ba4453f9f70153"
-    sha256 cellar: :any,                 arm64_sonoma:  "27cf4e293f783fa2947ef0144afc17b5077223b2663a8c8e37bfccc78272378c"
-    sha256 cellar: :any,                 arm64_ventura: "2788d0f8c1c7382523ccc1dfd093c648c03775bf51c51273b3dc95080e3cb237"
-    sha256 cellar: :any,                 sonoma:        "c63e240536fd35e0d366adb21b1ec392585fcdb086b70df7cae0ebf5bcf17ccc"
-    sha256 cellar: :any,                 ventura:       "b4bae207086fcacf6d4e704be512c7de455463d466f2a8dcfb3ac81ffc4dd431"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5b44aa786feb52c55eee12a276a25a576ddb328947c3813eb34e5dddc15ef71"
+    sha256 cellar: :any,                 arm64_sequoia: "192e8e4eafe6f8fae03a4c44de0e2056963002243467636b2161751105abc39f"
+    sha256 cellar: :any,                 arm64_sonoma:  "dac32ec2459e58cea995a144bd3237821007ac8ecfc36b6aa04fd603147663bd"
+    sha256 cellar: :any,                 arm64_ventura: "fd42af101934cdfb5cd0f7891a28788328ef3e1ea2343a7620d40d61b7a9126e"
+    sha256 cellar: :any,                 sonoma:        "07ab1faf41a88742b8de946f4340658f857abb5968e4830cc45b102cb5f2f98b"
+    sha256 cellar: :any,                 ventura:       "e2d36b467acd33bf1f57aea5586085d44f2f9254e116b3ab5f98b176daab55d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "156f6176b12fdc9843e04ff340489ded721781d6d12797171d5a42b5cb5793e6"
   end
 
   depends_on "certifi"

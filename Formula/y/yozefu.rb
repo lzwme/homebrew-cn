@@ -28,15 +28,9 @@ class Yozefu < Formula
     system "cargo", "install", *std_cargo_args(path: "cratesbin")
   end
 
-  def check_binary_linkage(binary, library)
-    binary.dynamically_linked_libraries.any? do |dll|
-      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
-
-      File.realpath(dll) == File.realpath(library)
-    end
-  end
-
   test do
+    require "utilslinkage"
+
     assert_match version.to_s, shell_output("#{bin}yozf --version")
 
     output = shell_output("#{bin}yozf config get a 2>&1", 1)
@@ -46,7 +40,7 @@ class Yozefu < Formula
       Formula["openssl@3"].opt_libshared_library("libssl"),
       Formula["openssl@3"].opt_libshared_library("libcrypto"),
     ].each do |library|
-      assert check_binary_linkage(bin"yozf", library),
+      assert Utils.binary_linked_to_library?(bin"yozf", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

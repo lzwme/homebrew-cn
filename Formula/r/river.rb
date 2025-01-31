@@ -30,15 +30,9 @@ class River < Formula
     system "cargo", "install", *std_cargo_args(path: "sourceriver")
   end
 
-  def check_binary_linkage(binary, library)
-    binary.dynamically_linked_libraries.any? do |dll|
-      next false unless dll.start_with?(HOMEBREW_PREFIX.to_s)
-
-      File.realpath(dll) == File.realpath(library)
-    end
-  end
-
   test do
+    require "utilslinkage"
+
     (testpath"example-config.toml").write <<~TOML
       [system]
         [[basic-proxy]]
@@ -52,7 +46,7 @@ class River < Formula
       Formula["openssl@3"].opt_libshared_library("libssl"),
       Formula["openssl@3"].opt_libshared_library("libcrypto"),
     ].each do |library|
-      assert check_binary_linkage(bin"river", library),
+      assert Utils.binary_linked_to_library?(bin"river", library),
              "No linkage with #{library.basename}! Cargo is likely using a vendored version."
     end
   end

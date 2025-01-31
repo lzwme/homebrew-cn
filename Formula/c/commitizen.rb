@@ -9,12 +9,13 @@ class Commitizen < Formula
   head "https:github.comcommitizen-toolscommitizen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e244931e683a33c78cc0f4a9a271eeaa7bc18077931ae6b629579cb9b85becc8"
-    sha256 cellar: :any,                 arm64_sonoma:  "5423ef62c5e9612c3325ff7dd3608c8b909efe9be4f1f0824840f571401d3a07"
-    sha256 cellar: :any,                 arm64_ventura: "30dae956b5c38c6ad46ee182f19c99c9b873aea640caf283fb769b95c1e10875"
-    sha256 cellar: :any,                 sonoma:        "ce438497e193d8339f696fd38a6894720765c3025f1d7ce240926634ebaf9d72"
-    sha256 cellar: :any,                 ventura:       "b938bb04382821bc287ae133b27961eba2e3180ee5da43055c17e4d77d0d82df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5aa42a574500910d47241469e904682fd797fc73303352c8a2d49ac62adadcd1"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "65da9c82c1bc6ef726f4b2939cc4e55ab382ca3a1a081361cfccde733f5ec4a2"
+    sha256 cellar: :any,                 arm64_sonoma:  "068435eac8a29f89b21c61a6d39071ec8443cecc239734c4962d66ef8e6ccad6"
+    sha256 cellar: :any,                 arm64_ventura: "b1363778ca8940d6e18a21239ac4f842ff5e8b1015af5e17bc1f65a68ae00d24"
+    sha256 cellar: :any,                 sonoma:        "cd9000903e5d3a32e73028fe0bed6cd1178a8cb8a4ab72fce043f63a53cca22f"
+    sha256 cellar: :any,                 ventura:       "53296543a70a1b80a2a8342aa1c73a921cb6e79d3fd1c782222636da75c54689"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8482791166fa8a9587fecd171711cbb81fbd12cacc2014a805c9321baf8a6bf5"
   end
 
   depends_on "libyaml"
@@ -86,8 +87,8 @@ class Commitizen < Formula
   end
 
   def install
-    # argcomplete > hatchling, fix to `ZIP does not support timestamps before 1980` error
-    ENV["SOURCE_DATE_EPOCH"] = Time.now.to_i.to_s
+    # The source doesn't have a valid SOURCE_DATE_EPOCH, so here we set default.
+    ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
     virtualenv_install_with_resources
 

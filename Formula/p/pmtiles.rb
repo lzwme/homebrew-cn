@@ -1,8 +1,8 @@
 class Pmtiles < Formula
   desc "Single-file executable tool for creating, reading and uploading PMTiles archives"
   homepage "https:protomaps.comdocspmtiles"
-  url "https:github.comprotomapsgo-pmtilesarchiverefstagsv1.24.1.tar.gz"
-  sha256 "65509b5fa1544d125a89b6a8f48042f90ed82488c19b01721cce7b76b581753c"
+  url "https:github.comprotomapsgo-pmtilesarchiverefstagsv1.25.0.tar.gz"
+  sha256 "8fc03aeaf3b7eab3cc31cd3c03b811abbdbd4ed9bb5b6e5a5560e5a8526cdc14"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class Pmtiles < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77f9cc28a28109a6b7bd615c795b63d9bab192a192b6adc184381672f3051bcc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77f9cc28a28109a6b7bd615c795b63d9bab192a192b6adc184381672f3051bcc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "77f9cc28a28109a6b7bd615c795b63d9bab192a192b6adc184381672f3051bcc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0d01cccbf12fdcb1dad2f68be1571b1151b6abdd60414518f0e02ccfa7c7f4b7"
-    sha256 cellar: :any_skip_relocation, ventura:       "0d01cccbf12fdcb1dad2f68be1571b1151b6abdd60414518f0e02ccfa7c7f4b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3555dca71b58d0516c71302a4236d585401d99df9ffd4139f58c242a6ed2bba6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a7e1c26bfe93da951f3dc7b924b0b7275679233dc63c777107ec097b9aa20a0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a7e1c26bfe93da951f3dc7b924b0b7275679233dc63c777107ec097b9aa20a0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6a7e1c26bfe93da951f3dc7b924b0b7275679233dc63c777107ec097b9aa20a0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8f10727d638e37c6d402a5f742182b88a7bbda245d927b8671171c4913f28d49"
+    sha256 cellar: :any_skip_relocation, ventura:       "8f10727d638e37c6d402a5f742182b88a7bbda245d927b8671171c4913f28d49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a9167fba8118e4b453881d00a8f6b1c5c19eb1d9e7d721ddd9ab0379b789b1c"
   end
 
   depends_on "go" => :build

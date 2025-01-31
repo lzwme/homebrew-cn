@@ -9,12 +9,13 @@ class CyclonedxPython < Formula
   head "https:github.comCycloneDXcyclonedx-python.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a2becf2f0290f93f2275fa05923c713c3c53aece6b5e982bc7c3e365cace19d9"
-    sha256 cellar: :any,                 arm64_sonoma:  "1a2224af96e908514ea47391e6cec5cc1b00546f9aa8b4564b1e385863c4e1ef"
-    sha256 cellar: :any,                 arm64_ventura: "23eb0d17469c2f7b83cccde44d7cb1267f3a67d0865b7838f55e3966cbf6fdde"
-    sha256 cellar: :any,                 sonoma:        "79c68019d982b27a8226dd68eeb1491eac76d0f878af5345d96b1e3f77a8d65f"
-    sha256 cellar: :any,                 ventura:       "a9be60f438140a96ea3dba43f0f3568eefc0f25be6b23605a030fd1bae7104e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70160bd63ad093eb3c84a074addb8709a7dbf0016267659824910ee4a3ba6c8d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "0d5273d9f6d7531d8851e670988cd3109ea18e15728db99e589ff6af6566992d"
+    sha256 cellar: :any,                 arm64_sonoma:  "8b63e5dcd497bd4dba2c1fd769165fa23f49b3c8e631c3504af8d3894ec746b8"
+    sha256 cellar: :any,                 arm64_ventura: "e4d7129c95bd41f7dc6f24d0c8d3afcd97e3ddb4263be62ecb8afd4c66b51ead"
+    sha256 cellar: :any,                 sonoma:        "d5cb828ed6b0bde5ef5b75936dc07e282e7e580177eb86c6936aa7da124bade2"
+    sha256 cellar: :any,                 ventura:       "5211f904da21a27a00177a70d6a30b0fdcfb9c7d8747f36a2a6fd68c77905ef5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f44c4489f0ba56db197b5c0c2b9acb26411d34596e8e2dbbf1b986345159c1ef"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -169,8 +170,8 @@ class CyclonedxPython < Formula
   end
 
   def install
-    # attrs > hatchling, fix to `ZIP does not support timestamps before 1980` error
-    ENV["SOURCE_DATE_EPOCH"] = Time.now.to_i.to_s
+    # The source doesn't have a valid SOURCE_DATE_EPOCH, so here we set default.
+    ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
     virtualenv_install_with_resources
   end

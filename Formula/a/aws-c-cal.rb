@@ -22,10 +22,7 @@ class AwsCCal < Formula
   end
 
   def install
-    args = %W[
-      -DBUILD_SHARED_LIBS=ON
-      -DCMAKE_MODULE_PATH=#{Formula["aws-c-common"].opt_lib}cmake
-    ]
+    args = ["-DBUILD_SHARED_LIBS=ON"]
     args << "-DUSE_OPENSSL=ON" if OS.linux?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
