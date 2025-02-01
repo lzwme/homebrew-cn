@@ -1,10 +1,8 @@
 cask "zen-browser@twilight" do
-  arch arm: "aarch64", intel: "x86_64"
-
-  version "1.7.2"
+  version "1.7.4"
   sha256 :no_check
 
-  url "https:github.comzen-browserdesktopreleasesdownloadtwilightzen.macos-#{arch}.dmg",
+  url "https:github.comzen-browserdesktopreleasesdownloadtwilightzen.macos-universal.dmg",
       verified: "github.comzen-browserdesktop"
   name "Zen Twilight"
   desc "Gecko based web browser"

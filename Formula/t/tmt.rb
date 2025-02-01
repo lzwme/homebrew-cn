@@ -3,17 +3,17 @@ class Tmt < Formula
 
   desc "Test Management Tool"
   homepage "https://tmt.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/6a/27/9e78fab55160db851eb80263f8fa34de9ca43329cb9d6858c41db055521e/tmt-1.41.1.tar.gz"
-  sha256 "74cafa0fadd7d9ad7be267c2d27250979ebc5689c22f4c7fc8df7d4f56cebbf0"
+  url "https://files.pythonhosted.org/packages/fc/eb/5eaeaba925f68cadb62e5af4b394d270c580b6a8586deb253ebe9f669771/tmt-1.42.1.tar.gz"
+  sha256 "9f822f29294841fe8324a30f537462a0b07d215a8ef50a5d78bde579870b41d0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9fbc100068319ef78b35fe4dc5433281defa4de7dc06d4cf64da03493f8f3710"
-    sha256 cellar: :any,                 arm64_sonoma:  "eeb8d8cbdbb1beb588f8c1815035af9a3058a029752ce206e689a1faf89ab007"
-    sha256 cellar: :any,                 arm64_ventura: "c3c210c7afabe33adc23ba4c8501a3cc4572a22c3a8d48b8709325b6a32818ff"
-    sha256 cellar: :any,                 sonoma:        "9a0169bf6b067a7f7907dd1f69e16592194cf3cb29eefe680bc0393241f93f17"
-    sha256 cellar: :any,                 ventura:       "051c3b7024b25a3143cc9d2e09590212e232401b60a8efe76237fe0b1e7d86c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72bcb2a886ca294ecd33080b37e089864b8d7842ff7b5408ce607fbeabf9d7c0"
+    sha256 cellar: :any,                 arm64_sequoia: "39034a302ae70631a6b65ac6dc85fe94cf998710e52639f5899efb1de87873cf"
+    sha256 cellar: :any,                 arm64_sonoma:  "52a9ba9f158f5779633daa99f2fb000ea9c8692ac7c5031e2010cf4e5b6b4d33"
+    sha256 cellar: :any,                 arm64_ventura: "8436d4067fea7673c67a269e2089ed3f4e236b0f1f6c1773f7ba625448d9826f"
+    sha256 cellar: :any,                 sonoma:        "707a43bfb9f61089b6458e152a8904760edb567de2d5917a27b6514d06e10d3e"
+    sha256 cellar: :any,                 ventura:       "b7e908a6f592ae05a8b3145f1fd1af2678adb004a005674e38ac8fa2558cdd63"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f09f05fa3751547e6562291841999008e2d55d5980c8bd1db3b2e55d966b58bb"
   end
 
   depends_on "rust" => :build # for rpds-py

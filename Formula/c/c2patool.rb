@@ -1,8 +1,8 @@
 class C2patool < Formula
   desc "CLI for working with C2PA manifests and media assets"
   homepage "https:contentauthenticity.org"
-  url "https:github.comcontentauthc2pa-rsarchiverefstagsc2patool-v0.13.0.tar.gz"
-  sha256 "c2e952cec5cb50134a33298863d726db34f43f3abc34a1bd9878a86d59b6952d"
+  url "https:github.comcontentauthc2pa-rsarchiverefstagsc2patool-v0.13.1.tar.gz"
+  sha256 "ea1fce5e6e5c998234a33bbaecd8b50445f14a29e1635483950f36860a75b39c"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comcontentauthc2pa-rs.git", branch: "main"
 
@@ -12,12 +12,12 @@ class C2patool < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "00e44df273b434c85abbac3065eee6f4bf1c4d824365bd701c04ee97b9358640"
-    sha256 cellar: :any,                 arm64_sonoma:  "694e9ae71aa22d5ce28edfef9d9c52081b963a68b735791b53b7a18f1e303e33"
-    sha256 cellar: :any,                 arm64_ventura: "3b8a06f938d49043493feb87c9bb5bf694521434a838dc5b1092fe93ae443392"
-    sha256 cellar: :any,                 sonoma:        "edb0e52cf53bcc9c0c203613a7f074cb6be881489d4cc57c842d596260808d0f"
-    sha256 cellar: :any,                 ventura:       "67db8d776f870f17112cc1269ec8dde44887b4821c1f0d8cf1b26d650e44e1b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d35e2fc949f0b01083ebdf81fa77200bfa19782988caf0bf4efff60d1cd3e9da"
+    sha256 cellar: :any,                 arm64_sequoia: "6b75ab55d34bbd970fd600e6f1fc430a94539173b4b9b1e58e5b36df6f06eb5e"
+    sha256 cellar: :any,                 arm64_sonoma:  "3489d936ba36fb8537a693186ee8e2f50e19009abce7f94793b4c8627e82da22"
+    sha256 cellar: :any,                 arm64_ventura: "9edc343cb37d52ed08b24d21a83d46537187e3e0670c4f6ccf2ece6b6bb1a62d"
+    sha256 cellar: :any,                 sonoma:        "266c84052a3b96374f39be0a6d97b8d89f2c771e35a34674d852f631905d4b9c"
+    sha256 cellar: :any,                 ventura:       "ed43b001b832bd157b724633dc4a0bd3a47571b6bee4ae27e37bf294ae35a5dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b32ffbb1560b6f8e0d8a6a6179d93a2371e66b5b933ec18f1dd445cc6375687a"
   end
 
   depends_on "pkgconf" => :build

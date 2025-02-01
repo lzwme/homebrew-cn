@@ -3,18 +3,17 @@ class Bbot < Formula
 
   desc "OSINT automation tool"
   homepage "https:github.comblacklanternsecuritybbot"
-  url "https:files.pythonhosted.orgpackages9719c90ee1a2f492779689600225f39de6439c836f3e27ba6d22cb911f1572fabbot-2.3.1.tar.gz"
-  sha256 "b75a94bb0f53715e3ce436be22c9d2159ef148df945643d934394a474b8864d0"
+  url "https:files.pythonhosted.orgpackages6401f40bb2ad1bf4be92e873f06057e8e5b169a15444bd06a4c49fdb7171152fbbot-2.3.2.tar.gz"
+  sha256 "7ed5bfb4df5299931346394d995117b57d87ccf87abef15c523f20d8be55bd91"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "2ee4c6c5fb8dbb35e303a5cc5e9bab9ce2831f3b4b6f66663491316404b090f2"
-    sha256 cellar: :any,                 arm64_sonoma:  "a835369320bba8bf947520d44459a0e6a34b37495524b4ee8144fb41979ede16"
-    sha256 cellar: :any,                 arm64_ventura: "2a863ead14fcbb459aa82def472f3b1bef4044f0d5ccd52caa68443c393d6f94"
-    sha256 cellar: :any,                 sonoma:        "c794ff9cb8f2574e1a97684a0b84700e7d244aa73ae3c7e2911030f77fc78141"
-    sha256 cellar: :any,                 ventura:       "719c0d9f4183db792d27bbf3befc40a34e586a1351495b0018d66146b2c7d5c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa0158b6c6e098e51de39b862a3c572c634556ca52546e147e917d5dfcb70b78"
+    sha256 cellar: :any,                 arm64_sequoia: "9c7fa99b99c3031387476071262e0c403a70290a26cb8692d9fc3cac89bb2294"
+    sha256 cellar: :any,                 arm64_sonoma:  "02bd99098c2aa59a6d4f3eb4f5cc9db2c5120a5b6da449ea2880de3c9618dde2"
+    sha256 cellar: :any,                 arm64_ventura: "36b925398bc75e49916f56eaab7cad77a2a9aeb326fe05314efcf8ab7f37ab53"
+    sha256 cellar: :any,                 sonoma:        "26b951045d385d23650ecb26b9bbdc3a4587e8c47a63234827d9cdc95ce9a010"
+    sha256 cellar: :any,                 ventura:       "b5f75dd759eb5293f0323218bd5bd2bd32ed90ee8996275d8d1185b859d66995"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08ecc4ab9fd8d3b90627b04f64da75f4d67d564acadc09b3f96aade46d96431f"
   end
 
   depends_on "cmake" => :build
@@ -213,8 +212,8 @@ class Bbot < Formula
   end
 
   resource "pyzmq" do
-    url "https:files.pythonhosted.orgpackagesfd05bed626b9f7bb2322cdbbf7b4bd8f54b1b617b0d2ab2d3547d6e39428a48epyzmq-26.2.0.tar.gz"
-    sha256 "070672c258581c8e4f640b5159297580a9974b026043bd4ab0470be9ed324f1f"
+    url "https:files.pythonhosted.orgpackages5ae38d0382cb59feb111c252b54e8728257416a38ffcb2243c4e4775a3c990fepyzmq-26.2.1.tar.gz"
+    sha256 "17d72a74e5e9ff3829deb72897a175333d3ef5b5413948cae3cf7ebf0b02ecca"
   end
 
   resource "radixtarget" do

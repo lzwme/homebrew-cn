@@ -4772,7 +4772,6 @@ Homebrew-homebrew-core/Formula/o/openconnect.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opencore-amr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opencsg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opencv.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/o/opencv@3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opendbx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opendetex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opendht.rb, Homebrew/homebrew-core, 1
@@ -6479,6 +6478,7 @@ Homebrew-homebrew-core/Formula/t/termscp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/termshark.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tern.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terracognita.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/terraform-cleaner.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terraform-docs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terraform-graph-beautifier.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terraform-inventory.rb, Homebrew/homebrew-core, 1
@@ -6519,6 +6519,7 @@ Homebrew-homebrew-core/Formula/t/textidote.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/textract.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/texttest.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tf-profile.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tf-summarize.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfautomv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfenv.rb, Homebrew/homebrew-core, 1
@@ -6526,6 +6527,7 @@ Homebrew-homebrew-core/Formula/t/tfk8s.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tflint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfmigrate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfocus.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tfprovidercheck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfproviderlint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfschema.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfsec.rb, Homebrew/homebrew-core, 1
@@ -8852,6 +8854,7 @@ Homebrew-homebrew-cask/Casks/f/freecad.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/freecol.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/freedom.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/freedome.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/freelens.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/freemind.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/freenettray.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/freeorion.rb, Homebrew/homebrew-cask, 1
