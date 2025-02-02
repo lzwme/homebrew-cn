@@ -12,9 +12,12 @@ cask "libreoffice" do
   desc "Free cross-platform office suite, fresh version"
   homepage "https:www.libreoffice.org"
 
+  # Upstream may upload a new version to the stable directory
+  # (https:download.documentfoundation.orglibreofficestable) before it's
+  # released, so we check the versions in the release notes instead.
   livecheck do
-    url "https:download.documentfoundation.orglibreofficestable"
-    regex(%r{href=["']v?(\d+(?:\.\d+)+)?["' >]}i)
+    url "https:www.libreoffice.orgdownloadrelease-notes"
+    regex(LibreOffice\s*v?(\d+(?:\.\d+)+)\s*\([^)]+\)[^<]*?Latest\s+Releaseim)
   end
 
   conflicts_with cask: "libreoffice-still"

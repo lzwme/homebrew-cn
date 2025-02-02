@@ -1,23 +1,26 @@
 class Mockery < Formula
   desc "Mock code autogenerator for Golang"
   homepage "https:github.comvektramockery"
-  url "https:github.comvektramockeryarchiverefstagsv2.52.0.tar.gz"
-  sha256 "e985df448c594b37e9e89af16db1a0b070d13310c8d1d4a87a5e600235f159ef"
+  url "https:github.comvektramockeryarchiverefstagsv2.52.1.tar.gz"
+  sha256 "1bc8127b4df281d692c58ca3d10167fad759ca5796e88d4e2c84aed02aed18cd"
   license "BSD-3-Clause"
   head "https:github.comvektramockery.git", branch: "master"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
   livecheck do
     url :stable
     strategy :github_latest
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "907159ef05b2979e146635495aab5251a3cf67f754aba647a7d3f6246f0fc6f7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "907159ef05b2979e146635495aab5251a3cf67f754aba647a7d3f6246f0fc6f7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "907159ef05b2979e146635495aab5251a3cf67f754aba647a7d3f6246f0fc6f7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "354c46ac886ea7a91c68e2cf713db3a85a303363b9eefb010bcb57c4975d86f7"
-    sha256 cellar: :any_skip_relocation, ventura:       "354c46ac886ea7a91c68e2cf713db3a85a303363b9eefb010bcb57c4975d86f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7e06734d16775400161ff9eaeac070a185905f2199f501bff6479acfaf9860f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7cdbe3e96471f4733295066c9aa3c34f47d6aff13b5587355c05cf0cf7a35518"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7cdbe3e96471f4733295066c9aa3c34f47d6aff13b5587355c05cf0cf7a35518"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7cdbe3e96471f4733295066c9aa3c34f47d6aff13b5587355c05cf0cf7a35518"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9fbdd41ce4937ad899474054842e9aa0819d221d32953b6f3df64d49049fa068"
+    sha256 cellar: :any_skip_relocation, ventura:       "9fbdd41ce4937ad899474054842e9aa0819d221d32953b6f3df64d49049fa068"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3a5afc8d499310171fd62956710a29cf163dbddfaecf923157ea7251ae7e58a"
   end
 
   depends_on "go" => :build

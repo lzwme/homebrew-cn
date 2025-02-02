@@ -7,7 +7,8 @@ class EasyrpgPlayer < Formula
   revision 6
 
   livecheck do
-    url "https:github.comEasyRPGPlayer.git"
+    url "https:easyrpg.orgplayerdownloads"
+    regex(href=.*?easyrpg-player[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do

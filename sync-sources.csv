@@ -267,6 +267,7 @@ Homebrew-homebrew-core/Formula/a/ast-grep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/astgen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/astro.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/astrometry-net.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/astroterm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/astyle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/asuka.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/asymptote.rb, Homebrew/homebrew-core, 1
@@ -4423,7 +4424,7 @@ Homebrew-homebrew-core/Formula/m/myman.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mypaint-brushes.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mypy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mysql++.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/mysql-client.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mysql-client.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mysql-client@5.7.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql-client@8.0.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql-client@8.4.rb, Homebrew/homebrew-core, 0
@@ -11460,6 +11461,7 @@ Homebrew-homebrew-cask/Casks/g/gpg-sync.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gpgfrontend.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gplates.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gpodder.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/g/gpt4all.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/gpxsee.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gqrx.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/graalvm-jdk.rb, Homebrew/homebrew-cask, 0
@@ -12003,6 +12005,7 @@ Homebrew-homebrew-cask/Casks/l/lazpaint.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lazy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lazycat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lbry.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/l/leader-key.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/league-displays.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/league-of-legends.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/leanote.rb, Homebrew/homebrew-cask, 1
@@ -14229,6 +14232,7 @@ Homebrew-homebrew-cask/Casks/t/tunnelblick.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tunnelblick@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tuple.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/turbo-boost-switcher.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/turbotax-2024.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/turbovnc-viewer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/turtl.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tusk.rb, Homebrew/homebrew-cask, 1

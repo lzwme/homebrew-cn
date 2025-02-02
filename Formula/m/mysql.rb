@@ -1,6 +1,8 @@
 class Mysql < Formula
   desc "Open source relational database management system"
-  homepage "https:dev.mysql.comdocrefman9.2en"
+  # FIXME: Actual homepage fails audit due to Homebrew's user-agent
+  # homepage "https:dev.mysql.comdocrefman9.2en"
+  homepage "https:github.commysqlmysql-server"
   url "https:cdn.mysql.comDownloadsMySQL-9.2mysql-9.2.0.tar.gz"
   sha256 "a39d11fdf6cf8d1b03b708d537a9132de4b99a9eb4d610293937f0687cd37a12"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
@@ -11,12 +13,13 @@ class Mysql < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "e68409722ac0d0f2cb7632458bcb29dfca76c395c99e6a97a2ea973710089208"
-    sha256 arm64_sonoma:  "01f9df0f35e6b977d394bba0c2df1c77486d6d89cf902e453efdf4749182b4db"
-    sha256 arm64_ventura: "23bbbd590674f0e08d0baa08f2aeba8cb9443df521e3c97d0cba3564f1b12db8"
-    sha256 sonoma:        "a7ca40f8824b33fb1d6061820e152c885c28632b3584a9303e5660f3d4c74ec3"
-    sha256 ventura:       "bba71c25b8bb0520448d4e54f776c1c46e46d55200a1d04db4ec48734fe76999"
-    sha256 x86_64_linux:  "9d6aebb967cfb22f09bdd8e37f15e6051af802ce0eacf6373537b3d58457fdd9"
+    rebuild 1
+    sha256 arm64_sequoia: "fc77970b627f9277451244f990caa84334909a1cf7d1b0a6b7ee8bd00cd7c39f"
+    sha256 arm64_sonoma:  "7e2a598b6208eb28a96beec0a9036511fb764c1775e0b2b80d8ef9422b421f97"
+    sha256 arm64_ventura: "ef6532392f0d4a5f3defa050f6bdc70424f9b627ac95d78988f56d09e31ac48e"
+    sha256 sonoma:        "471e6e241aea5cfdfbd09bcb9dcc2f38d2314e227b10f67cbbb03fa7851c440a"
+    sha256 ventura:       "eb0bb231b64188a8986a08167ce49106781364740a824e16ab577be1c2704970"
+    sha256 x86_64_linux:  "2337362a5f0ed0d0512702af5027e8c7a4083872264b8ef60cef18c2fe3ea2cb"
   end
 
   depends_on "bison" => :build
@@ -34,11 +37,14 @@ class Mysql < Formula
   uses_from_macos "cyrus-sasl"
   uses_from_macos "libedit"
 
-  # std::string_view is not fully compatible with the libc++ shipped
-  # with ventura, so we need to use the LLVM libc++ instead.
   on_ventura :or_older do
-    depends_on "llvm@18"
-    fails_with :clang
+    depends_on "llvm"
+    fails_with :clang do
+      cause <<~EOS
+        std::string_view is not fully compatible with the libc++ shipped
+        with ventura, so we need to use the LLVM libc++ instead.
+      EOS
+    end
   end
 
   on_linux do
@@ -73,18 +79,11 @@ class Mysql < Formula
       # Disable ABI checking
       inreplace "cmakeabi_check.cmake", "RUN_ABI_CHECK 1", "RUN_ABI_CHECK 0"
     elsif MacOS.version <= :ventura
-      ENV["CC"] = Formula["llvm@18"].opt_bin"clang"
-      ENV["CXX"] = Formula["llvm@18"].opt_bin"clang++"
-
-      # The dependencies need to be explicitly added to the environment
-      deps.each do |dep|
-        next if dep.build? || dep.test?
-
-        ENV.append "CXXFLAGS", "-I#{dep.to_formula.opt_include}"
-        ENV.append "LDFLAGS", "-L#{dep.to_formula.opt_lib}"
-      end
-
-      ENV.append "LDFLAGS", "-L#{Formula["llvm@18"].opt_lib}c++ -L#{Formula["llvm@18"].opt_lib} -lunwind"
+      ENV.llvm_clang
+      ENV.append "LDFLAGS", "-L#{Formula["llvm"].opt_lib}unwind -lunwind"
+      # When using Homebrew's superenv shims, we need to use HOMEBREW_LIBRARY_PATHS
+      # rather than LDFLAGS for libc++ in order to correctly link to LLVM's libc++.
+      ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib"c++"
     end
 
     icu4c = deps.find { |dep| dep.name.match?(^icu4c(@\d+)?$) }
@@ -114,19 +113,6 @@ class Mysql < Formula
       -DWITH_ZSTD=system
       -DWITH_UNIT_TESTS=OFF
     ]
-
-    # Add the dependencies to the CMake args
-    if OS.mac? && MacOS.version <=(:ventura)
-      args += %W[
-        -DABSL_INCLUDE_DIR=#{Formula["abseil"].opt_include}
-        -DICU_ROOT=#{Formula["icu4c@76"].opt_prefix}
-        -DLZ4_INCLUDE_DIR=#{Formula["lz4"].opt_include}
-        -DOPENSSL_INCLUDE_DIR=#{Formula["openssl@3"].opt_include}
-        -DPROTOBUF_INCLUDE_DIR=#{Formula["protobuf"].opt_include}
-        -DZLIB_INCLUDE_DIR=#{Formula["zlib"].opt_include}
-        -DZSTD_INCLUDE_DIR=#{Formula["zstd"].opt_include}
-      ]
-    end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
