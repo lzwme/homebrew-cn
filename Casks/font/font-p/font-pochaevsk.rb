@@ -2,9 +2,10 @@ cask "font-pochaevsk" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflpochaevskPochaevsk-Regular.ttf"
+  url "https:github.comgooglefontsrawmainoflpochaevskPochaevsk-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Pochaevsk"
-  homepage "https:github.comslavonicpochaevsk"
+  homepage "https:fonts.google.comspecimenPochaevsk"
 
   font "Pochaevsk-Regular.ttf"
 

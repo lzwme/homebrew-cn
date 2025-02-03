@@ -1,9 +1,8 @@
 class Ipfs < Formula
   desc "Peer-to-peer hypermedia protocol"
   homepage "https:ipfs.tech"
-  url "https:github.comipfskubo.git",
-      tag:      "v0.33.0",
-      revision: "8b657380277b79299dffe42993ec4f7de4a759d3"
+  url "https:github.comipfskuboarchiverefstagsv0.33.0.tar.gz"
+  sha256 "f58da2d4e8552b0d76c95715ec86bf868216fdd539669ea060827a527458cc5f"
   license all_of: [
     "MIT",
     any_of: ["MIT", "Apache-2.0"],
@@ -16,21 +15,25 @@ class Ipfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "577d1bcd23f1dc68b98ad492f62d1df0a9630b65fa3fd4831f9822c367204d0d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c93f94e9fb76c4e6824e089ef7190ff3510dd76fab1ad7f0f2ff339110587cbd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "af16468db4aef232a177bd24653de8c75322d3d104f9e0eeaa7a613b6e4ac405"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9cf83cd407ac92e2d365d868aebe4e59b2183b12c91fa7fab988c25eb22ece03"
-    sha256 cellar: :any_skip_relocation, ventura:       "3ef45beb72ddfa1d16ec3114fe714cccfd67b9bbd9d0753aef31addd27acd8bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b3e74559235fb78c0c7fb540f51dc47a42df8e330da21433185f25639440250"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0cba91012fdd5851f5cf19272b0e2dfd3cfa8c00ad4e064811edc63ccd48c6e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e97d3b417066f176dba54774b161459191e78758b484936c7e80399827dc502"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a66f4eb5d588fdbbe2a934fdd12bcb78be95ce38c9bd25f138f93e066726a622"
+    sha256 cellar: :any_skip_relocation, sonoma:        "df5963b38d0ccfa2d6e88b487f0fec4523b099776a06deefc50a4eda78187600"
+    sha256 cellar: :any_skip_relocation, ventura:       "52f1c4f80e03d426e6840fe8683b16b0944e7eeac1817317076e8a30753825eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a14fd5610a22fbadc9fca0d76f844e3a87166919297ae7031681a8db0ca99028"
   end
 
   depends_on "go" => :build
 
   def install
-    system "make", "build"
-    bin.install "cmdipfsipfs"
+    ldflags = %W[
+      -s -w
+      -X github.comipfskubo.CurrentCommit=#{tap.user}
+    ]
+    system "go", "build", *std_go_args(ldflags:), ".cmdipfs"
 
-    generate_completions_from_executable(bin"ipfs", "commands", "completion", shells: [:bash])
+    generate_completions_from_executable(bin"ipfs", "commands", "completion")
   end
 
   service do
@@ -38,6 +41,6 @@ class Ipfs < Formula
   end
 
   test do
-    assert_match "initializing IPFS node", shell_output(bin"ipfs init")
+    assert_match "initializing IPFS node", shell_output("#{bin}ipfs init")
   end
 end

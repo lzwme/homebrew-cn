@@ -1,9 +1,8 @@
 class Ssh3 < Formula
   desc "Faster and richer secure shell using HTTP3"
   homepage "https:github.comfrancoismichelssh3"
-  url "https:github.comfrancoismichelssh3.git",
-      tag:      "v0.1.7",
-      revision: "31f8242cf30b675c25b981b862f36e73f9fa1d9d"
+  url "https:github.comfrancoismichelssh3archiverefstagsv0.1.7.tar.gz"
+  sha256 "23a88d0d7f54f80d752c22ee5f879fa1daf8c320ece364287209c58b3e98b6b5"
   license "Apache-2.0"
   head "https:github.comfrancoismichelssh3.git", branch: "main"
 

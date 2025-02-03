@@ -54,7 +54,7 @@ class Gnuradio < Formula
   depends_on "pygobject3"
   depends_on "pyqt@5"
   depends_on "python@3.13"
-  depends_on "qt@5"
+  depends_on "qt@5" # Qt6 issue: https:github.comgnuradiognuradioissues7708
   depends_on "qwt-qt5"
   depends_on "soapyrtlsdr"
   depends_on "soapysdr"

@@ -12,7 +12,7 @@ class Asdf < Formula
   end
 
   bottle do
-    rebuild 1
+    rebuild 2
     sha256 cellar: :any_skip_relocation, all: "a94dd362ce5c3a818f4fa56607eac3c616a3c1191e9f41480093bda2dc308af4"
   end
 

@@ -2,9 +2,10 @@ cask "font-triodion" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainofltriodionTriodion-Regular.ttf"
+  url "https:github.comgooglefontsrawmainofltriodionTriodion-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Triodion"
-  homepage "https:github.comslavonicTriodion"
+  homepage "https:fonts.google.comspecimenTriodion"
 
   font "Triodion-Regular.ttf"
 

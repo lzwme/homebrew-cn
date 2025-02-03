@@ -1,9 +1,8 @@
 class Helmsman < Formula
   desc "Helm Charts as Code tool"
   homepage "https:github.comPraqmahelmsman"
-  url "https:github.comPraqmahelmsman.git",
-      tag:      "v3.17.1",
-      revision: "9f1ea20e04d3ddf2e0974f2e1114aa25d71f7f4d"
+  url "https:github.comPraqmahelmsmanarchiverefstagsv3.17.1.tar.gz"
+  sha256 "fd8da6faafe31661cd6690d1aee9bca53b54491264e1392c5f131d3a8e592e97"
   license "MIT"
   head "https:github.comPraqmahelmsman.git", branch: "master"
 
@@ -22,8 +21,7 @@ class Helmsman < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), ".cmdhelmsman"
-    pkgshare.install "examplesexample.yaml"
-    pkgshare.install "examplesjob.yaml"
+    pkgshare.install "examplesexample.yaml", "examplesjob.yaml"
   end
 
   test do
