@@ -1,18 +1,18 @@
 class Astroterm < Formula
   desc "Planetarium for your terminal"
   homepage "https:github.comda-luceastroterm"
-  url "https:github.comda-luceastrotermarchiverefstagsv1.0.6.tar.gz"
-  sha256 "144ad050a4ca3840d321bb0e454cefbfee78f2b85a2e5add154ef4c49e984d86"
+  url "https:github.comda-luceastrotermarchiverefstagsv1.0.7.tar.gz"
+  sha256 "3b8b1597afb31d1cb8ad54030b5766652b4d3f42f0a3d510bbc3191c0c6a4aa5"
   license "MIT"
   head "https:github.comda-luceastroterm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "036452503726262a378258524100a05b94e707cf5da53ff02cfe2f13877eb651"
-    sha256 cellar: :any,                 arm64_sonoma:  "604d56382ab8b716235ffb58fc9b72c1f7698ed7a303fde3907e8885973d6639"
-    sha256 cellar: :any,                 arm64_ventura: "4fd420c68e227aa7cf752508342e103efe42ad1b9f366e1675157dc467c8a700"
-    sha256 cellar: :any,                 sonoma:        "9be14e54e27d8837276013b70ee461c81d445ebee9ec6b50bc44810d0b372e12"
-    sha256 cellar: :any,                 ventura:       "01a5b1c28c12ca3e6d7feb3733d0c13500d11c452928846ae57e3fa83164e299"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a11eedf6721ddd00da0341ca160c8e77676d4f1ee4773cec91dbdfdeeafb8a11"
+    sha256 cellar: :any,                 arm64_sequoia: "91761c77d2816c3ed68f269657e1ff8234ba3391f4e56db01d1b0730ccdbfc10"
+    sha256 cellar: :any,                 arm64_sonoma:  "cf6d3db88af6cead0e19c79763bc24d87e9d8a57be5fc78d8d81e934a4185275"
+    sha256 cellar: :any,                 arm64_ventura: "ff0eae541a834f232688fd1a64be1d4959da0a683648fc2406813ab77c07bd9a"
+    sha256 cellar: :any,                 sonoma:        "dcff897a85fb13ab2b7341577849de53bd4158c2384f60ce09ac39f3a0c764e1"
+    sha256 cellar: :any,                 ventura:       "c48bcaf9ef3af7dd55969efe833400bd5711f4c5b2882929ccd6d65ae71195fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f841a9d3d79cf04ed5f6b03c83ae86c3a859f87930e2652d9b1e895353c51d04"
   end
 
   depends_on "meson" => :build

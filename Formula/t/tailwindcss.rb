@@ -28,9 +28,15 @@ class Tailwindcss < Formula
   resource "tailwind-cli" do
     url "https:registry.npmjs.org@tailwindcsscli-cli-4.0.3.tgz"
     sha256 "d9df4e36cd823bbf90aeb9f7dc8e1bd1886501ef0ff51cba83526d29a41d5402"
+
+    livecheck do
+      formula :parent
+    end
   end
 
   def install
+    odie "tailwind-cli resource needs to be updated" if version != resource("tailwind-cli").version
+
     # install the dedicated tailwind-cli package
     resource("tailwind-cli").stage do
       system "npm", "install", *std_npm_args

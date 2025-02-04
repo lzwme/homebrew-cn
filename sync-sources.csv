@@ -476,6 +476,7 @@ Homebrew-homebrew-core/Formula/b/bedtools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bee.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/beecrypt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/befunge93.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/behaviortree.cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bench.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bender.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/benerator.rb, Homebrew/homebrew-core, 1
@@ -763,6 +764,7 @@ Homebrew-homebrew-core/Formula/c/castget.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/castxml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cataclysm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/catch2.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/catgirl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/catimg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cattle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cava.rb, Homebrew/homebrew-core, 1
@@ -5959,7 +5961,7 @@ Homebrew-homebrew-core/Formula/s/shunit2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shush.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/shyaml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sic.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/s/sickchill.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sickchill.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sickle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sidekick.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/siege.rb, Homebrew/homebrew-core, 0

@@ -1,6 +1,6 @@
 cask "ghostty@tip" do
-  version "9285,c5508e7d1922842ecd3160ea73b97da1282168b3"
-  sha256 "5dd5df262685b69ac8157230262e38f296705d0e37359f5e2a7255741ee62a89"
+  version "9298,cdd209909093cb6c938e8e89dc31f2df5209c2d1"
+  sha256 "e57a5023c61e251d4e12bf38c43b68b74e9def18476b826e47a7ea8b90516e4c"
 
   url "https://tip.files.ghostty.org/#{version.csv.second}/Ghostty.dmg"
   name "Ghostty"

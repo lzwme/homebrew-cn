@@ -7,13 +7,19 @@ class YaraX < Formula
   revision 1
   head "https:github.comVirusTotalyara-x.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bf35e2c0e39fb7959945c139b6d74d36c5f0977087aa53bc869572e804e9ff24"
-    sha256 cellar: :any,                 arm64_sonoma:  "9cc3b18bd091c5cf660c147db7828a1b5e2f31464b22303dd9ba827fd428919f"
-    sha256 cellar: :any,                 arm64_ventura: "1ddfe551dfd0afb79cddc2933b4602a3199fc25eb0cfcbf63cb67588671f2d13"
-    sha256 cellar: :any,                 sonoma:        "f54fe9b68fb8a9f47341bd2a46ed157eebfdd6af7c33549a6f66b942760c9b1f"
-    sha256 cellar: :any,                 ventura:       "32566be496260b1c392236a807e91914a4d04f8ea506f09786dcc5f135cb1c5a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9005a10f98aff7f432e9e1a4693ca4347759fe6e0a5e1e1add6f96deada66dd3"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "9a5a4729ce56e0950aef1df94f3ad469bc18184c748899615d2829e9b35f627f"
+    sha256 cellar: :any,                 arm64_sonoma:  "f48cc85e4dad3afeaf032454de8990dbb9c42360b496a3a03c48afb5a37f1721"
+    sha256 cellar: :any,                 arm64_ventura: "a1b30a033f96edaebe26b64306c14a44d4af44965bb3ffe27d2679d0fd5bef83"
+    sha256 cellar: :any,                 sonoma:        "29d52aa07c219ace39bb37501755496463e8b7907382d18ed9e9cfc95905fa0c"
+    sha256 cellar: :any,                 ventura:       "2cd0fdac5eb77c6329b6ab061e777d2c80dc9fb18517b01a4aced63dfd8bb45c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed661fa8e266886a960a066e790238b68ae0adbdff42cdc331dbc94395febdc1"
   end
 
   depends_on "cargo-c" => :build

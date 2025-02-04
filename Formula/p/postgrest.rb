@@ -1,8 +1,8 @@
 class Postgrest < Formula
   desc "Serves a fully RESTful API from any existing PostgreSQL database"
   homepage "https:github.comPostgRESTpostgrest"
-  url "https:github.comPostgRESTpostgrestarchiverefstagsv12.2.6.tar.gz"
-  sha256 "2cf3d3bce6bf20159117119bd0be7c5600f24cd7847608ba2b0003edab75ea39"
+  url "https:github.comPostgRESTpostgrestarchiverefstagsv12.2.7.tar.gz"
+  sha256 "4e5e74c9bb64ab99ee14b4cd90b12b270d3bfa52500c139206d2ab246940d815"
   license "MIT"
   head "https:github.comPostgRESTpostgrest.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Postgrest < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6b6b7f2cb1f08c4fdef1373bd8062b2a897807aac6eb6063c8360f1f24d825a9"
-    sha256 cellar: :any,                 arm64_sonoma:  "33dfa7743de8688bff33426ac51078e940b12fcad8e507e5ce8e82c311022326"
-    sha256 cellar: :any,                 arm64_ventura: "6e5f6003d9cbbbd3caa1c0262f432b989a77b4b0b23ad94ce52dcbbe8560ee19"
-    sha256 cellar: :any,                 sonoma:        "6a719eb1c71c7e9c4d2a6bfd33a87afb4e0f5873803614388da9268342480fd7"
-    sha256 cellar: :any,                 ventura:       "c3c5e09fae8ea704f1cc33406ab09e4b4712af90154d73ecbf2b6d1298990b3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "feaeba8d7d0981b37dc0a2dd82234feadc69be70d56d7e1d75fa4fc91f18e890"
+    sha256 cellar: :any,                 arm64_sequoia: "247666f06601901f6fd4a0d18ffe9c63f7efe741819768a2a01d81a5227fc2a5"
+    sha256 cellar: :any,                 arm64_sonoma:  "aaff38d08638b71765a9cb008fa666ff04642ef5bc9d1ebfdf33052cffee0704"
+    sha256 cellar: :any,                 arm64_ventura: "8888215eea8573abe277875461d0fe2a41623b4d39aacd054d7fd68c08f964ba"
+    sha256 cellar: :any,                 sonoma:        "a9be01b5156c1700ca0c3487dcb91501a1fd7f859dab9864c806f1276dbcdcf8"
+    sha256 cellar: :any,                 ventura:       "a7b1fc81a398413ed2bc53c008c1abe0446e66877bcbd48ea30373a70a6c6afe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc2545a94bd572c8b0860109e7ff034d282df3c8ddb4b56353170edf2cf4fab3"
   end
 
   depends_on "cabal-install" => :build
