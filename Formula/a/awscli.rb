@@ -3,18 +3,18 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https:aws.amazon.comcli"
-  url "https:github.comawsaws-cliarchiverefstags2.23.11.tar.gz"
-  sha256 "68c5cbcc2547fe7cf3b84fc9cef3f5d59082534d3a142308f20c62cb3d25a0ff"
+  url "https:github.comawsaws-cliarchiverefstags2.23.12.tar.gz"
+  sha256 "72b83c2108168705c1405660975ade4d6a307f7cf1db798c50c297eb5ccc272a"
   license "Apache-2.0"
   head "https:github.comawsaws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "674dd12fc6fbc62d089274c57a1b4d9457625ccb0fd3ea895a7c47402b5a11fe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b39f4cb6fcd0ac839b20e7fb9bc0f606b091a6eab7f63ea0bdf2087e340c9c16"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e7e43ecad51a3b21d4c6de6283ecff5aa418b8021bc7c67b2fd582c71ef98613"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e91ab473a454f6c67a11f638c97a95ed8c6ae49d0584a650fb8526900da245bc"
-    sha256 cellar: :any_skip_relocation, ventura:       "e43dc342b178d0f09716ad5c92747ccf57c4c71181f588b7c94befdb271c9f6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da06998a81ef4284924f732f5dc95f5cedf7e7ad6e795beaa1df5f92784f4eb2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "552a8ac2632dac6a320d4116e5c2dbed1c1ae18b8fddf105d2f0b9517c93d553"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "547e55e90621d1377b2ea90e8cdcd53ba785125cf3dad973c1004b83a1a64b9a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2b7a1935184e08a8c23ad6a2f6f0f272f08788f9fa1bb8c385a364660b51223b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "07881a543177fadd0413160e453514c04b9a255895347d398be5540127aa4dc5"
+    sha256 cellar: :any_skip_relocation, ventura:       "99277ca7a9accbd2715fd52ee22ac57191f592547aad1e19bf35a5299bd4cc6d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39ad534ba98e7d969cfbe29fc080b66c585ee7b47a053cea540f38680a0754e4"
   end
 
   depends_on "cmake" => :build
@@ -29,8 +29,8 @@ class Awscli < Formula
   end
 
   resource "awscrt" do
-    url "https:files.pythonhosted.orgpackagesffbaff910e6c0f51eae21cd517b17bf0fc532230b72b2f759bd0482ac2f8706bawscrt-0.23.4.tar.gz"
-    sha256 "3ef5212a3c3b0549b3b0e85507b7bbdfb891ff40ca4c597e92db07a0bf7b614a"
+    url "https:files.pythonhosted.orgpackagesfe500e3fd91488e5f0a18bc829869fc081cf4d9cd86642d9ee21b32907b02e80awscrt-0.23.8.tar.gz"
+    sha256 "cba55f3ee80ea3192a0a24e84caad778570250800a59d29ef9efbcd4d1612f2f"
   end
 
   resource "colorama" do

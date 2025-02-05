@@ -1,18 +1,18 @@
 class Gauge < Formula
   desc "Test automation tool that supports executable documentation"
   homepage "https:gauge.org"
-  url "https:github.comgetgaugegaugearchiverefstagsv1.6.12.tar.gz"
-  sha256 "65cdf9a0aae28d9f64a42737b2a9c47b4c09d05b12f2b78fec65276a26391c6b"
+  url "https:github.comgetgaugegaugearchiverefstagsv1.6.13.tar.gz"
+  sha256 "7aef626a523c5acd9c821d440bf099c0895a7e857a382ce54c12074e1a81e841"
   license "Apache-2.0"
   head "https:github.comgetgaugegauge.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4440206310fc9b44973983083ca068e96ab85bfb2b2b93b8a28c3a82571ac87"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f9e68faa53d4578172353ceaffbeb7e111867870323f30c7be7788c15808c59"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fdfd3a14d530c7e37529ada331d490c69f6d9b6b62f14a5a997ccfb17de07eb5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c77c9fd76f76a3c317d4e98e9a55d70ddb3d51b6a5c8164718cfdf6fba4f9acb"
-    sha256 cellar: :any_skip_relocation, ventura:       "7e9844ad4e9641381525c53bc5ca002e6f7ce6bc1764da1df838e552f6f3cb84"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d33f3931283ff90bbe90154d69a9239aec4edbc3709c58f8e1f7c9a803f80b67"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "70173747ea411ea7bd1161f433edfbe186c576f7ea4997c6a799c740b24713c6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3c30e060cd789cb662f3ceaeee4de656a4ce25d8649217753283d3aa34722bc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bab49f9df8660a3a803172445c12005f04c5e4883d6ddec3efd63571c5ad61a0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b8d7322e2adb98b56a4e8ad7543ecd328d3d34ea6d4c42f840d5f9c74c5ae42a"
+    sha256 cellar: :any_skip_relocation, ventura:       "af22032a223aceb542d6e0ff0dab128434015ca18189555a001a46ccbc0db0e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22210d1f9b6b3a89d197d724fc49da976bba91e5abfe7fed532c10bd0382c3ec"
   end
 
   depends_on "go" => :build

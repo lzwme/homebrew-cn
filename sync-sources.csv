@@ -2752,6 +2752,7 @@ Homebrew-homebrew-core/Formula/h/hyperestraier.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hyperfine.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hyperkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hyperscan.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/h/hypopg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hypre.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hysteria.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hyx.rb, Homebrew/homebrew-core, 0
@@ -3258,6 +3259,7 @@ Homebrew-homebrew-core/Formula/l/launchctl-completion.rb, Homebrew/homebrew-core
 Homebrew-homebrew-core/Formula/l/launchdns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazydocker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazygit.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lazysql.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lbdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lbfgspp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lbzip2.rb, Homebrew/homebrew-core, 1
@@ -3358,7 +3360,7 @@ Homebrew-homebrew-core/Formula/l/lizard.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lla.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llama.cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lld.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/l/lldpd.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lldpd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/llgo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/llnode.rb, Homebrew/homebrew-core, 1
@@ -4089,6 +4091,7 @@ Homebrew-homebrew-core/Formula/m/markdownlint-cli2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/marked.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/marksman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/marp-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/martin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mas.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mask.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/masscan.rb, Homebrew/homebrew-core, 1
@@ -5053,6 +5056,7 @@ Homebrew-homebrew-core/Formula/p/pgpool-ii.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgrok.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgroonga.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pgrouting.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pgrx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgsync.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgtoolkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgtune.rb, Homebrew/homebrew-core, 1
@@ -5858,6 +5862,7 @@ Homebrew-homebrew-core/Formula/s/sdl2_net.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sdl2_sound.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sdl2_ttf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sdl3.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sdl3_image.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sdl_gfx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sdl_image.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sdl_mixer.rb, Homebrew/homebrew-core, 1

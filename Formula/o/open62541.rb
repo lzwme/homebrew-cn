@@ -1,8 +1,8 @@
 class Open62541 < Formula
   desc "Open source implementation of OPC UA"
   homepage "https:open62541.org"
-  url "https:github.comopen62541open62541archiverefstagsv1.4.9.tar.gz"
-  sha256 "8735e61391cde0d84e6347a4293d2400b6a72838fb44513caf22d70dfca3a0cf"
+  url "https:github.comopen62541open62541archiverefstagsv1.4.10.tar.gz"
+  sha256 "1a2e762e50bb6dae8d80029dfb66fdbc432876a004e62d618f7cf1bb5b4f495f"
   license "MPL-2.0"
 
   livecheck do
@@ -11,22 +11,16 @@ class Open62541 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "89d09102e2f31d95ee3c67696e8ec74a7771e47de7ef386d96d4029f39125f94"
-    sha256 cellar: :any,                 arm64_sonoma:  "7f32a56e1034927481e907575462c1bd92fcc590b7b51c81d08155dc84864617"
-    sha256 cellar: :any,                 arm64_ventura: "1a09930cae916bffce52dec0e305ec0354023f7f1082a9d692b255500b6cc46f"
-    sha256 cellar: :any,                 sonoma:        "4601c3f191764e7eb7e76cceb82e4f09cd839511ef6e679fd151216b0c0acbf9"
-    sha256 cellar: :any,                 ventura:       "f1e926a44b53ee2ffe4a59abbf25665a11051c46d54098ab62910885f1ae78e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62ef12fae4c1b878204994a6bf8197e5eff7fc51cc875929dd560e08f2cbce32"
+    sha256 cellar: :any,                 arm64_sequoia: "0493d584a33cf1e56ca1a0b24cb88c9948bc8b05bca986594726380c30671bef"
+    sha256 cellar: :any,                 arm64_sonoma:  "4223e38bd51fd7b848a8cdebc1d190b916783de12d2a969e8247aef8d3f75798"
+    sha256 cellar: :any,                 arm64_ventura: "57d3e0619dda7bc8f15a35d44b4a35b8057e79702ef764918305ec83f237a8f9"
+    sha256 cellar: :any,                 sonoma:        "086c0815c9d671a4890743765790ecb04dee8ae8dfe025310b4b53c55f5b5b9c"
+    sha256 cellar: :any,                 ventura:       "a62ea26fa86a71d61c09464f508c44eaf4023042aa2700147ab3408551893123"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e40a06787eba77e3b954a91b09dc2f9f0233e71098f3aa1e5e709b033005ad05"
   end
 
   depends_on "cmake" => :build
   uses_from_macos "python" => :build
-
-  # fallback to a normal static mutex initializer for macos builds
-  patch do
-    url "https:github.comopen62541open62541commitddff3a1bd33ccbda6456d9ae2c2d408ea718b47b.patch?full_index=1"
-    sha256 "1f361b583baa3396833370463f2f95fdbac11ed8dda586ac9f3489439590dda1"
-  end
 
   def install
     cmake_args = %w[

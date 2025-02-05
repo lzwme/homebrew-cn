@@ -4,21 +4,31 @@ class Agda < Formula
   # agda2hs.cabal specifies BSD-3-Clause but it installs an MIT LICENSE file.
   # Everything else specifies MIT license and installs corresponding file.
   license all_of: ["MIT", "BSD-3-Clause"]
-  revision 2
 
   stable do
-    url "https:github.comagdaagdaarchiverefstagsv2.6.4.3-r1.tar.gz"
-    sha256 "15a0ebf08b71ebda0510c8cad04b053beeec653ed26e2c537614a80de8b2e132"
-    version "2.6.4.3"
+    url "https:github.comagdaagdaarchiverefstagsv2.7.0.1.tar.gz"
+    sha256 "4a2c0a76c55368e1b70b157b3d35a82e073a0df8f587efa1e9aa8be3f89235be"
 
     resource "stdlib" do
-      url "https:github.comagdaagda-stdlibarchiverefstagsv2.1.tar.gz"
-      sha256 "72ca3ea25094efa0439e106f0d949330414232ec4cc5c3c3316e7e70dd06d431"
+      url "https:github.comagdaagda-stdlibarchiverefstagsv2.2.tar.gz"
+      sha256 "588f94af7fedd5aa1a6a1f0afdfb602d3e4615c7a17e6a0ae9dff326583b7a12"
+
+      # Backport support for building with GHC 9.12
+      patch do
+        url "https:github.comagdaagda-stdlibcommita78700653de116b1043ce5d80bbe99482a705ecc.patch?full_index=1"
+        sha256 "547af4793368a7b37d7b707cc25d0b87bab674233ed69d38d4d685c28e574a58"
+      end
     end
 
     resource "cubical" do
       url "https:github.comagdacubicalarchiverefstagsv0.7.tar.gz"
       sha256 "25a0d1a0a01ba81888a74dfe864883547dbc1b06fa89ac842db13796b7389641"
+
+      # Bump Agda compat
+      patch do
+        url "https:github.comagdacubicalcommit6220641fc7c297a84c5e2c49614fae518cf6307d.patch?full_index=1"
+        sha256 "c6919e394ac9dc6efa016fa6b4e9163ce58142d48f7100b6bc354678fc982986"
+      end
     end
 
     resource "categories" do
@@ -35,8 +45,8 @@ class Agda < Formula
     end
 
     resource "agda2hs" do
-      url "https:github.comagdaagda2hsarchiverefstagsv1.2.tar.gz"
-      sha256 "e80ffc90ff2ccb3933bf89a39ab16d920a6c7a7461a6d182faa0fb6c0446dbb8"
+      url "https:github.comagdaagda2hsarchiverefstagsv1.3.tar.gz"
+      sha256 "0e2c11eae0af459d4c78c24efadb9a4725d12c951f9d94da4adda5a0bcb1b6f6"
     end
   end
 
@@ -48,13 +58,12 @@ class Agda < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_sequoia: "4b97635a593e1b6c9cc86442bebf1965ab8044978d4a9b2beef8f72d19644f0e"
-    sha256 arm64_sonoma:  "3a7273b7e8f396137877528655f277589aa099436b4b89d3c0d9b7410325c407"
-    sha256 arm64_ventura: "374ba6e21398191f1777853e880ef1a4cd972052c9f7f9d06bc95a6e22f6d1bc"
-    sha256 sonoma:        "1b5f5bc0d740c168e40cff9c407a34eedee29954dc9be47f4b400597498b73ee"
-    sha256 ventura:       "af45d9a99fecc0242a489e0e56d2567204ce626916c045bca10d62b34de1452a"
-    sha256 x86_64_linux:  "282d393806f0f432e5443baab37c57a231e14d0922d99d54b8cc40e5a04ce589"
+    sha256 arm64_sequoia: "26f559c86caad9341ce407bbd0bc27451c346b814167a87df05e62740539fcfb"
+    sha256 arm64_sonoma:  "a384bc06a0e0d478fa3313984627acbf93e6b01ea1856828aa3ee29b9c5bb649"
+    sha256 arm64_ventura: "63f087212f64b6c2a7aeac2c71c57d73bc21de6e10dca4026137e8f6b2530bf6"
+    sha256 sonoma:        "b88e608820b221fc925da7673af0b203f7c7c5b2a4ef5828dc1cf842142273f5"
+    sha256 ventura:       "d918822220ae771dd172a852969304550df86e1ddd3a698b722b1b53cc786918"
+    sha256 x86_64_linux:  "22fe1ee4a776725bf50597804430a5429d706963578acf7461fe1fb1c0cb5dfa"
   end
 
   head do
@@ -86,37 +95,30 @@ class Agda < Formula
 
   def install
     agda2hs = buildpath"agda2hs"
-    agdalib = lib"agda"
+    agdalib = pkgshare # for write permissions needed to re-generate .agdai when using different options
     cubicallib = agdalib"cubical"
     categorieslib = agdalib"categories"
+
+    # Add a backwards compatibility symlink. Can consider removing in a future release
+    lib.install_symlink pkgshare
 
     resource("agda2hs").stage agda2hs
     resource("stdlib").stage agdalib
     resource("cubical").stage cubicallib
     resource("categories").stage categorieslib
 
-    # Backport part of https:github.comagdaagda-stdlibcommita78700653de116b1043ce5d80bbe99482a705ecc
-    inreplace agdalib"agda-stdlib-utils.cabal", ( base .*) < 4\.21$, "\\1 < 4.22" if build.stable?
+    # Remove strict stdlib version check in categories
+    inreplace categorieslib"agda-categories.agda-lib", (standard-library)-2\.1$, "\\1", audit_result: build.stable?
 
     (buildpath"cabal.project.local").write <<~HASKELL
       packages: . #{agda2hs}
       package Agda
         flags: +optimise-heavily
+      -- Workaround for GHC 9.12 until official supported, https:github.comagdaagdaissues7574
+      allow-newer: Agda:base, agda2hs:base, agda2hs:filepath
     HASKELL
 
-    cabal_args = std_cabal_v2_args
-    # Workaround for GHC 9.12 until official support is available
-    # Issue ref: https:github.comagdaagdaissues7574
-    cabal_args += %w[
-      --allow-newer=Agda:base
-      --allow-newer=agda2hs:base
-      --allow-newer=agda2hs:filepath
-    ]
-    # Workaround for https:github.comagdaagdacommite11ae9875470aab7b68b98d9d9574e736dbcaddd
-    if build.stable?
-      odie "Remove allow-newer hashable workaround!" if version > "2.6.4.3"
-      cabal_args << "--allow-newer=Agda:hashable"
-    end
+    cabal_args = std_cabal_v2_args.map { |s| s.sub "=copy", "=symlink" }
     # Reduce install size by dynamically linking to shared libraries in store-dir
     # TODO: Linux support, related issue https:github.comhaskellcabalissues9784
     cabal_args += %w[--enable-executable-dynamic --enable-shared] if OS.mac?
@@ -161,12 +163,12 @@ class Agda < Formula
 
     # write out the example libraries and defaults files for users to copy
     (agdalib"example-libraries").write <<~TEXT
-      #{opt_lib}agdastandard-library.agda-lib
-      #{opt_lib}agdadocstandard-library-doc.agda-lib
-      #{opt_lib}agdatestsstandard-library-tests.agda-lib
-      #{opt_lib}agdacubicalcubical.agda-lib
-      #{opt_lib}agdacategoriesagda-categories.agda-lib
-      #{opt_lib}agdaagda2hsagda2hs.agda-lib
+      #{opt_pkgshare}standard-library.agda-lib
+      #{opt_pkgshare}docstandard-library-doc.agda-lib
+      #{opt_pkgshare}testsstandard-library-tests.agda-lib
+      #{opt_pkgshare}cubicalcubical.agda-lib
+      #{opt_pkgshare}categoriesagda-categories.agda-lib
+      #{opt_pkgshare}agda2hsagda2hs.agda-lib
     TEXT
     (agdalib"example-defaults").write <<~TEXT
       standard-library
@@ -181,20 +183,20 @@ class Agda < Formula
       To use the installed Agda libraries, execute the following commands:
 
           mkdir -p $HOME.configagda
-          cp #{opt_lib}agdaexample-libraries $HOME.configagdalibraries
-          cp #{opt_lib}agdaexample-defaults $HOME.configagdadefaults
+          cp #{opt_pkgshare}example-libraries $HOME.configagdalibraries
+          cp #{opt_pkgshare}example-defaults $HOME.configagdadefaults
 
       You can then inspect the copied files and customize them as needed.
     EOS
   end
 
   test do
-    Pathname("#{Dir.home}.configagda").install_symlink opt_lib"agdaexample-libraries" => "libraries"
-    Pathname("#{Dir.home}.configagda").install_symlink opt_lib"agdaexample-defaults" => "defaults"
+    Pathname("#{Dir.home}.configagda").install_symlink opt_pkgshare"example-libraries" => "libraries"
+    Pathname("#{Dir.home}.configagda").install_symlink opt_pkgshare"example-defaults" => "defaults"
 
     simpletest = testpath"SimpleTest.agda"
     simpletest.write <<~AGDA
-      {-# OPTIONS --safe --without-K #-}
+      {-# OPTIONS --safe --cubical-compatible #-}
       module SimpleTest where
 
       infix 4 _≡_
@@ -266,6 +268,7 @@ class Agda < Formula
     agda2hstest = testpath"Agda2HsTest.agda"
     agda2hstest.write <<~AGDA
       {-# OPTIONS --erasure #-}
+      module Agda2HsTest where
       open import Haskell.Prelude
 
       _≤_ : {{Ord a}} → a → a → Set
@@ -302,9 +305,8 @@ class Agda < Formula
     # compile a simple module using the JS backend
     system bin"agda", "--js", simpletest
 
-    # test the GHC backend;
-    # compile and run a simple program
-    system bin"agda", "--ghc-flag=-fno-warn-star-is-type", "--compile", iotest
+    # test the GHC backend; compile and run a simple program
+    system bin"agda", "--compile", iotest
     assert_empty shell_output(testpath"IOTest")
 
     # translate a simple file via agda2hs

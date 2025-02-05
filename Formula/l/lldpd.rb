@@ -1,12 +1,13 @@
 class Lldpd < Formula
   desc "Implementation of IEEE 802.1ab (LLDP)"
-  homepage "https:lldpd.github.io"
-  url "https:media.luffy.cxfileslldpdlldpd-1.0.19.tar.gz"
+  homepage "https://lldpd.github.io/"
+  url "https://media.luffy.cx/files/lldpd/lldpd-1.0.19.tar.gz"
   sha256 "f87df3163d5e5138da901d055b384009785d1eb50fdb17a2343910fcf30a997f"
   license "ISC"
 
   livecheck do
-    url "https:github.comlldpdlldpd.git"
+    url :homepage
+    regex(/href=.*?lldpd[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -31,7 +32,7 @@ class Lldpd < Formula
       --sysconfdir=#{etc}
       --localstatedir=#{var}
       --with-launchddaemonsdir=no
-      --with-privsep-chroot=varempty
+      --with-privsep-chroot=/var/empty
       --with-privsep-group=nogroup
       --with-privsep-user=nobody
       --with-readline
@@ -41,17 +42,17 @@ class Lldpd < Formula
       LDFLAGS=-L#{readline.lib}
     ]
 
-    system ".configure", *args
+    system "./configure", *args
     system "make"
     system "make", "install"
   end
 
   def post_install
-    (var"run").mkpath
+    (var/"run").mkpath
   end
 
   service do
-    run opt_sbin"lldpd"
+    run opt_sbin/"lldpd"
     keep_alive true
     require_root true
   end

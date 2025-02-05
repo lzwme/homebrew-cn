@@ -4,6 +4,7 @@ class Bitrise < Formula
   url "https:github.combitrise-iobitrisearchiverefstags2.27.0.tar.gz"
   sha256 "2dd64874e60208602b5b78c4bd521926dc476766965cb46d5dc0fbd00ecd0ce9"
   license "MIT"
+  head "https:github.combitrise-iobitrise.git", branch: "master"
 
   livecheck do
     url :stable
@@ -11,12 +12,13 @@ class Bitrise < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "166c8dc722a6a385256f923d059dc19ac417c6e14de72cde3b0e65ea7757060f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "166c8dc722a6a385256f923d059dc19ac417c6e14de72cde3b0e65ea7757060f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "166c8dc722a6a385256f923d059dc19ac417c6e14de72cde3b0e65ea7757060f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f3d2c7a0cfa70ce4861972519025c1b7f157c9cccaf3e561a46a4c8e34eb1d56"
-    sha256 cellar: :any_skip_relocation, ventura:       "f3d2c7a0cfa70ce4861972519025c1b7f157c9cccaf3e561a46a4c8e34eb1d56"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a02ea4626d1afea40e3363bc87432a301126235079da383be56010d4fa684bd5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "022489c4fe24310f56ea72aa470c618c6483a885fd793c8080cd0ca8e6cf9557"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "022489c4fe24310f56ea72aa470c618c6483a885fd793c8080cd0ca8e6cf9557"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "022489c4fe24310f56ea72aa470c618c6483a885fd793c8080cd0ca8e6cf9557"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d96bcc72f684bc132a119683197eb2a30a11fe7f9a363f63358a97992431bd8f"
+    sha256 cellar: :any_skip_relocation, ventura:       "d96bcc72f684bc132a119683197eb2a30a11fe7f9a363f63358a97992431bd8f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ef741a7c31117cdd9e205292c2a6c7fb1e252e20246d47c672aadf8e8e46c2e"
   end
 
   depends_on "go" => :build
@@ -27,9 +29,10 @@ class Bitrise < Formula
     ldflags = %W[
       -s -w
       -X github.combitrise-iobitriseversion.VERSION=#{version}
+      -X github.combitrise-iobitriseversion.Commit=#{tap.user}
     ]
 
-    system "go", "build", *std_go_args(ldflags: ldflags.join(" "))
+    system "go", "build", *std_go_args(ldflags: ldflags)
   end
 
   test do

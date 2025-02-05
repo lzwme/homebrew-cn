@@ -7,6 +7,16 @@ class Flagd < Formula
   license "Apache-2.0"
   head "https:github.comopen-featureflagd.git", branch: "main"
 
+  # The upstream repository contains tags like `corev1.2.3`,
+  # `flagd-proxyv1.2.3`, etc. but we're only interested in the `flagdv1.2.3`
+  # tags. Upstream only appears to mark the `corev1.2.3` releases as "latest"
+  # and there isn't usually a notable gap between tag and release, so we check
+  # the Git tags.
+  livecheck do
+    url :stable
+    regex(%r{^flagdv?(\d+(?:[.-]\d+)+)$}i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "73249d24d5e23dc79af8aa5a73b15afdeb956d0fa0eaaf4f1d4cc09f4ec39dda"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73249d24d5e23dc79af8aa5a73b15afdeb956d0fa0eaaf4f1d4cc09f4ec39dda"
