@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https:semgrep.dev"
   url "https:github.comsemgrepsemgrep.git",
-      tag:      "v1.106.0",
-      revision: "b0d94360c392d74d4600096dc54d220cbfbc35cf"
+      tag:      "v1.107.0",
+      revision: "92313a429752186e4a39b2d6f7edeefe80dabbb0"
   license "LGPL-2.1-only"
   head "https:github.comsemgrepsemgrep.git", branch: "develop"
 
@@ -15,12 +15,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "02df5c7882ba6009bf7a68cf3ff3b3b40b6791cacb7f76416675217bfa0df9cf"
-    sha256 cellar: :any,                 arm64_sonoma:  "05e86cc39d122b8cb1d0481b6edb43399cd4257cf0ac691182dbd6c096dfc4f8"
-    sha256 cellar: :any,                 arm64_ventura: "092c5fdfe7aea5cd67398677efe8f80cebd58d001c2df7292d28c6f9cfa33bf3"
-    sha256 cellar: :any,                 sonoma:        "efce780c660c537e7f9eb1730e5d029d6a687f886956707d472608ff1d7f8d5d"
-    sha256 cellar: :any,                 ventura:       "6f71a0ffdb96e462882ef7555a793453dfd07a74eb501e7a2f4928fb65b4b2b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07899c9ef85bafb2864cbebe1b35af24a64c76bc9fd367ee6f3f832bb0164119"
+    sha256 cellar: :any,                 arm64_sequoia: "646b943e2ca7cef8358fa47331d694b84c417d20c41a2d2da4e6e1be45562604"
+    sha256 cellar: :any,                 arm64_sonoma:  "114610fb59c1bbc151ebc0d533e019a0ca84c3bc257ae1b31ec765a170d4a007"
+    sha256 cellar: :any,                 arm64_ventura: "421d56bb809a3f31e4b5862acf36f004dea1ef58c7d8908cb1ea35b616fa5304"
+    sha256 cellar: :any,                 sonoma:        "3f8f4a63997a1585055f6dcfd4e74d979a303840a9137b5e4229c221c3bb6eaf"
+    sha256 cellar: :any,                 ventura:       "ec662474c945662fd7a4b668be65a4f0b2ef6b9e0bf402b1272bf03726df504c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8749386f982b1072113b9a0c8912f687c0999618cd4f19372b80502eb17a59f8"
   end
 
   depends_on "autoconf" => :build

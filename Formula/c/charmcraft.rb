@@ -3,17 +3,17 @@ class Charmcraft < Formula
 
   desc "Tool to build charms and publish them on Charmhub"
   homepage "https://charmhub.io"
-  url "https://files.pythonhosted.org/packages/88/c1/93ac1f61884490dceee6f4426872b9764d9abd47bd2c991feaf75b648128/charmcraft-3.3.2.tar.gz"
-  sha256 "e9f5f0c39ad0bb8d4771f0e5bc4f8a07ebea1c2fb1567f554cdfcd3d19b7985e"
+  url "https://files.pythonhosted.org/packages/4c/3d/20a0273cb18de0bd8946b3e275d7e8bddb352e4990a6046f7133df1fe11b/charmcraft-3.4.1.tar.gz"
+  sha256 "28f639430883ff131e9d88acd9d2d299a82b4cb72772506f0d8ec40d7eaf7e47"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4233f0fcc3513c9288afb5ca1b5f31906d806c804b2801ea3fb7394f5183d489"
-    sha256 cellar: :any,                 arm64_sonoma:  "bb73fb3eef7042fbdcebbd2e06fac67ea124d61a3827825d6862eb115c891577"
-    sha256 cellar: :any,                 arm64_ventura: "76c3dd5f69da9b00965a0299f1bf547c224da2350cb7541035011b323595584c"
-    sha256 cellar: :any,                 sonoma:        "cda961d85f4dd563b649860395ac7c0f1650c57618d71776b980b89d75770298"
-    sha256 cellar: :any,                 ventura:       "147d0d87f31de0024593dd0d31ae8f2e7c0c841e749d0a545b671697a7bba7b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3e2412dcd6bb1dd873eea11f657637264abf1ee1820c71bc825e64e61f6885e"
+    sha256 cellar: :any,                 arm64_sequoia: "109b0183c02bb73cd136fbef0f19ddafde9ed19b0a8a0774699214ef8de4aef4"
+    sha256 cellar: :any,                 arm64_sonoma:  "444369c5d78df9c734820cf2d698f7f7dae0b02ea49203712c1d92582140d2b8"
+    sha256 cellar: :any,                 arm64_ventura: "48423f008156bce8153fa93e0b54aaf17562a7007a2ecfb5c8e9a09ebedfa952"
+    sha256 cellar: :any,                 sonoma:        "e5b339caaac6f0d17ece1e5f8a2a821db41ec7efbc66a6d6c454ec4a5d614bb0"
+    sha256 cellar: :any,                 ventura:       "ec81545216505e69cc674d599fb05479fdd92dd7026c22694cb7af9394659c3d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4ef0b459d51397b3562a9ac2c5ab375d21d745e5921cdd0dabb4fa9a878e194"
   end
 
   depends_on "rust" => :build
@@ -55,8 +55,8 @@ class Charmcraft < Formula
   end
 
   resource "craft-application" do
-    url "https://files.pythonhosted.org/packages/09/a4/03f588d549e60067f3093cd3541b283400a61e5893f0d740d47b9fdedb6e/craft_application-4.8.2.tar.gz"
-    sha256 "4070a035952bc3fa8aa16cc1b488814e92375dc6d27905c250e23cf42849bae7"
+    url "https://files.pythonhosted.org/packages/89/bb/447ed537b8f201a499fa4f908a292249aee7dd6916fe6579e5449767aa6e/craft_application-4.8.3.tar.gz"
+    sha256 "709b08defc8f5678d96bb4c7a15cb598af6e7a79b84c517d8e0158fb2eeae058"
   end
 
   resource "craft-archives" do
@@ -75,8 +75,8 @@ class Charmcraft < Formula
   end
 
   resource "craft-parts" do
-    url "https://files.pythonhosted.org/packages/b1/6c/ff0f9aa805da1670e408c644fbe5740d69056691de4953dbaa7546d80ce6/craft_parts-2.4.1.tar.gz"
-    sha256 "18f6c9a45fb99e5a366fcd9b827df8886d955dace9ded9f08759206f5e5ef729"
+    url "https://files.pythonhosted.org/packages/2a/b2/b876f3d9e1fe110d6f09dbf2e25a2751a6fa91a9ddacd131b03b1027a689/craft_parts-2.5.0.tar.gz"
+    sha256 "334faf23d88a34d6bd845b8ef12616fc03f1dbf87f3d313074ff31275fbcb0ad"
   end
 
   resource "craft-platforms" do
@@ -90,8 +90,8 @@ class Charmcraft < Formula
   end
 
   resource "craft-store" do
-    url "https://files.pythonhosted.org/packages/a9/51/8135945f2e2bad6a30c70fcfb6009194821818a730d306ee28c11e6a0273/craft_store-3.2.0.tar.gz"
-    sha256 "60bbe6b1e65b0b2691d0fe42df88ce0853df312507d2b853d2b508d7e5f80910"
+    url "https://files.pythonhosted.org/packages/78/80/edc3cf128f1e3302f0c591539a278b4bd6a09ad23e959f620494ce8cb285/craft_store-3.2.1.tar.gz"
+    sha256 "0c8ae8870362e6e670c0766026849683f6f4563d108a7acca800d4db024a3a21"
   end
 
   resource "distro" do
@@ -275,8 +275,8 @@ class Charmcraft < Formula
   end
 
   resource "pytz" do
-    url "https://files.pythonhosted.org/packages/3a/31/3c70bf7603cc2dca0f19bdc53b4537a797747a58875b552c8c413d963a3f/pytz-2024.2.tar.gz"
-    sha256 "2aa355083c50a0f93fa581709deac0c9ad65cca8a9e9beac660adcbd493c798a"
+    url "https://files.pythonhosted.org/packages/5f/57/df1c9157c8d5a05117e455d66fd7cf6dbc46974f832b1058ed4856785d8a/pytz-2025.1.tar.gz"
+    sha256 "c2db42be2a2518b28e65f9207c4d05e6ff547d1efa4086469ef855e4ab70178e"
   end
 
   resource "pyxdg" do

@@ -3,17 +3,17 @@ class Dstack < Formula
 
   desc "ML workflow orchestration system designed for reproducibility and collaboration"
   homepage "https://dstack.ai/"
-  url "https://files.pythonhosted.org/packages/02/67/d6af48af0d115d4abe9c18bbfe4ddbca061d8bf0f38078e8214c1df09c46/dstack-0.18.39.tar.gz"
-  sha256 "2c5849459af2b1e75a775bb534943819434434d468748c8a86f89d424fe0599a"
+  url "https://files.pythonhosted.org/packages/45/e6/a730e52afdff0513d4501f5ce8fb8e7bc1c4f2f519c0961f209340502f37/dstack-0.18.40.tar.gz"
+  sha256 "131e22b7ca628ca6e55bcb49a6abb764af9e0e69be955771579d8fca56dcc480"
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e5fe24a273737b01038ba2473911661f43b1ebbc6edef75865bdf928793e4eb1"
-    sha256 cellar: :any,                 arm64_sonoma:  "3560bb431601ec3cdcf931947c96e206fb39e00e9a0d443e83c48c94e9efd493"
-    sha256 cellar: :any,                 arm64_ventura: "728daa78b0622421cf645e32f67ed4e00eec74cc658d221a141098cf32511ac1"
-    sha256 cellar: :any,                 sonoma:        "156d3ef36bcc8001c035bc15b05660cebb6193c4d7fc1314b80c6f299b722eaf"
-    sha256 cellar: :any,                 ventura:       "8f30404e45a50bfc60cb4bb57523bfaffa2d6262a1f0d36fd119c0ed7184493d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f33ce32b2aee19f3196c2306d67807fd1e8bb253eca855e57495f80c86a4f177"
+    sha256 cellar: :any,                 arm64_sequoia: "80babdfc411263d974f36cce5124352686f5e174c18d47608888e04fabe603e5"
+    sha256 cellar: :any,                 arm64_sonoma:  "c7110a1df5fe6a66a60fa02f71eea8a0f12e82ccaff28934c22b938a904beb5a"
+    sha256 cellar: :any,                 arm64_ventura: "112236db5b0ec37e267ecfd5b88ffcfb9606197bb9d6795506969a309e0266cf"
+    sha256 cellar: :any,                 sonoma:        "c56b20d8f32250a58ca9a82cee769be31b6d54a47be47820f0dc6059007bc801"
+    sha256 cellar: :any,                 ventura:       "f92f39b1c6da11250f844fd799079303c93b7e0f0d4827d97f7db9a013a37256"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cdf5c4829d82a11cd93f7e6ededf970f27061cd104b7fd55831813886b27238"
   end
 
   # `pkgconf` and `rust` are for bcrypt.
@@ -36,8 +36,8 @@ class Dstack < Formula
   end
 
   resource "aiosqlite" do
-    url "https://files.pythonhosted.org/packages/0d/3a/22ff5415bf4d296c1e92b07fd746ad42c96781f13295a074d58e77747848/aiosqlite-0.20.0.tar.gz"
-    sha256 "6d35c8c256637f4672f843c31021464090805bf925385ac39473fb16eaaca3d7"
+    url "https://files.pythonhosted.org/packages/13/7d/8bca2bf9a247c2c5dfeec1d7a5f40db6518f88d314b8bca9da29670d2671/aiosqlite-0.21.0.tar.gz"
+    sha256 "131bb8056daa3bc875608c631c678cda73922a2d4ba8aec373b19f18c17e7aa3"
   end
 
   resource "alembic" do
@@ -46,8 +46,8 @@ class Dstack < Formula
   end
 
   resource "alembic-postgresql-enum" do
-    url "https://files.pythonhosted.org/packages/0f/0c/9dbd6bb20839fdab1f6ef3f157d284586785c0eb6fd36cf72fa9f1b1d598/alembic_postgresql_enum-1.6.0.tar.gz"
-    sha256 "1774bfa008fedef2db2199702497df6342488d35206ef7964e9ea4ea333d5662"
+    url "https://files.pythonhosted.org/packages/28/d4/cfbe2ea92268b545103b30f0c68b9156e089db70f54640a4014d67f9af35/alembic_postgresql_enum-1.6.1.tar.gz"
+    sha256 "23b1ab046f47e83b5f304b83be27eb712ace29303539a75b5227463838d1b2db"
   end
 
   resource "anyio" do
@@ -121,13 +121,13 @@ class Dstack < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/01/36/2e445688adf538259f469bd1f415619959df2aa9ac2972df8a5728791898/boto3-1.36.9.tar.gz"
-    sha256 "035ed3868ff3b9afe05a49d0bde35582315bc438e60b5e76727a00b107567bfb"
+    url "https://files.pythonhosted.org/packages/b1/de/3c35089f97f6068beb852b51b9eede70e8f7e39a6c8ddff68f3bcabafe3e/boto3-1.36.13.tar.gz"
+    sha256 "c8031aa1c4a7c331081b2d86c49a362654b86e0b89d0a41fa166a68b226f4aba"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/e9/1e/976c79eeac461ddbf64b27ce42788c1f26e111c138bb931d14b4062127e5/botocore-1.36.9.tar.gz"
-    sha256 "cb3baefdb8326fdfae0750015e5868330e18d3a088a31da658df2cc8cba7ac73"
+    url "https://files.pythonhosted.org/packages/7e/0b/87dcaaa03a7b5bf3e06abfeccb2af328a436a97fd7b6015f174f1350a284/botocore-1.36.13.tar.gz"
+    sha256 "50a3ff292f8dfdde21074b5c916afe847b01e074ab16d9c9fe71b34960c77134"
   end
 
   resource "cached-classproperty" do
@@ -166,8 +166,8 @@ class Dstack < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/a2/f5/3f921e59f189e513adb9aef826e2841672d50a399fead4e69afdeb808ff4/fastapi-0.115.7.tar.gz"
-    sha256 "0f106da6c01d88a6786b3248fb4d7a940d071f6f488488898ad5d354b25ed015"
+    url "https://files.pythonhosted.org/packages/a2/b2/5a5dc4affdb6661dea100324e19a7721d5dc524b464fe8e366c093fd7d87/fastapi-0.115.8.tar.gz"
+    sha256 "0ce9111231720190473e222cdf0f07f7206ad7e53ea02beb1d2dc36e2f0741e9"
   end
 
   resource "filelock" do
@@ -341,8 +341,8 @@ class Dstack < Formula
   end
 
   resource "mako" do
-    url "https://files.pythonhosted.org/packages/5f/d9/8518279534ed7dace1795d5a47e49d5299dd0994eed1053996402a8902f9/mako-1.3.8.tar.gz"
-    sha256 "577b97e414580d3e088d47c2dbbe9594aa7a5146ed2875d4dfa9075af2dd3cc8"
+    url "https://files.pythonhosted.org/packages/62/4f/ddb1965901bc388958db9f0c991255b2c469349a741ae8c9cd8a562d70a6/mako-1.3.9.tar.gz"
+    sha256 "b5d65ff3462870feec922dbccf38f6efb44e5714d7b593a656be86663d8600ac"
   end
 
   resource "markdown-it-py" do
@@ -381,8 +381,8 @@ class Dstack < Formula
   end
 
   resource "opentelemetry-api" do
-    url "https://files.pythonhosted.org/packages/bc/8e/b886a5e9861afa188d1fe671fb96ff9a1d90a23d57799331e137cc95d573/opentelemetry_api-1.29.0.tar.gz"
-    sha256 "d04a6cf78aad09614f52964ecb38021e248f5714dc32c2e0d8fd99517b4d69cf"
+    url "https://files.pythonhosted.org/packages/2b/6d/bbbf879826b7f3c89a45252010b5796fb1f1a0d45d9dc4709db0ef9a06c8/opentelemetry_api-1.30.0.tar.gz"
+    sha256 "375893400c1435bf623f7dfb3bcd44825fe6b56c34d0667c542ea8257b1a1240"
   end
 
   resource "packaging" do
@@ -391,8 +391,8 @@ class Dstack < Formula
   end
 
   resource "paramiko" do
-    url "https://files.pythonhosted.org/packages/1b/0f/c00296e36ff7485935b83d466c4f2cf5934b84b0ad14e81796e1d9d3609b/paramiko-3.5.0.tar.gz"
-    sha256 "ad11e540da4f55cedda52931f1a3f812a8238a7af7f62a60de538cd80bb28124"
+    url "https://files.pythonhosted.org/packages/7d/15/ad6ce226e8138315f2451c2aeea985bf35ee910afb477bae7477dc3a8f3b/paramiko-3.5.1.tar.gz"
+    sha256 "b2c665bc45b2b215bd7d7f039901b14b067da00f3a11e6640995fd58f2664822"
   end
 
   resource "portalocker" do

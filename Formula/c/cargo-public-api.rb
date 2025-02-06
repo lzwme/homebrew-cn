@@ -1,18 +1,18 @@
 class CargoPublicApi < Formula
   desc "List and diff the public API of Rust library crates"
   homepage "https:github.comcargo-public-apicargo-public-api"
-  url "https:github.comcargo-public-apicargo-public-apiarchiverefstagsv0.43.0.tar.gz"
-  sha256 "eccaf5003bd25180363ccf9a4d01bc392741f427be2d7a1f811f1e2805534324"
+  url "https:github.comcargo-public-apicargo-public-apiarchiverefstagsv0.44.0.tar.gz"
+  sha256 "4f62319b6e63de7f5b8a50797074f66f99ff0fc5813c2777c34c7d91d27e2a3b"
   license "MIT"
   head "https:github.comcargo-public-apicargo-public-api.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9142f35d99b13b5f29019a2e74d292c790ad3a7fe7069752826b62275a593a21"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bff1d0622ebbeac32d11033708e18ec2f8ff08e57fcfca92b7284b7b6e408f52"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b7b6987dd606de7d62136b02ee6d97528480970113f50a9ac735278e516e7c66"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4e6325b675113f03117f63895c3b96c6f8a7b6dbdbff0ff2ed76341441d9ad3f"
-    sha256 cellar: :any_skip_relocation, ventura:       "55276fede4b82357c7ac7c08867df27bf892173c05ae7e88ef66d6c712262126"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88bcbd2aa87078551c74d5cdc06cbec7604ccd10f77ec39e58f9124ee65d0fa3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "219fb19a75d3a741234415bfc15194fd58138a73767ec81938249ebb56f5d3ab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "34796f378455927673533bb12dd26e4e9d497dbe79f1f56326c8db358bd9cf6f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ba2b981178ec3490273007001852032644bfe6f24a27f27411ebd5e43bd528c9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1cd3dd1cb79637f25dac30b8c6a5dbc56947ac93821c952e91708bd434b9dfbe"
+    sha256 cellar: :any_skip_relocation, ventura:       "517abe6c4c8f84724f8b3d0cd127084453c8c0d519bb1969afb6f82e21385044"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ef03ec4800938da8474168faf030799599a8a66d5c5f3a372f7cd84d6fafff3"
   end
 
   depends_on "pkgconf" => :build

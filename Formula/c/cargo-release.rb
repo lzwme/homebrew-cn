@@ -1,18 +1,18 @@
 class CargoRelease < Formula
   desc "Cargo subcommand `release`: everything about releasing a rust crate"
   homepage "https:github.comcrate-cicargo-release"
-  url "https:github.comcrate-cicargo-releasearchiverefstagsv0.25.16.tar.gz"
-  sha256 "0bd9cdaf9ba5d964f62105ca0d851fc5dbbc433efe352680d99a3ffd9ffba767"
+  url "https:github.comcrate-cicargo-releasearchiverefstagsv0.25.17.tar.gz"
+  sha256 "38dc83a5307492fb3d0d03c6c8eb3f8fd38e4a89969e86085d429c75071007dd"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comcrate-cicargo-release.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a7ef21e8cdaa8db34e0f5372d40512c3c2d5ed52ecc15d81585342987c547178"
-    sha256 cellar: :any,                 arm64_sonoma:  "ba2338dd9f24ba1f90889034f5ab458ed9d31258864c4073e754120e02412af1"
-    sha256 cellar: :any,                 arm64_ventura: "a292ae824cac262c897e193e37aa941ee4bb7f79334fb29d2fb42d404e603f71"
-    sha256 cellar: :any,                 sonoma:        "8c20d6513cfa91404f9dcd63bf059a41e4ee4a2ad36321007d680ec2ff0e06cc"
-    sha256 cellar: :any,                 ventura:       "07b197f9208dec38e52da22715173078e48b061d4a09c94a133304befd3fe26b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba30daf1ebd78e5c785b085538077a421a7aa15b79ed01615ad6cb8ce343d633"
+    sha256 cellar: :any,                 arm64_sequoia: "841df715164446844ecc32ff62d2d2709ad89513035e6251816e8de4dd25822c"
+    sha256 cellar: :any,                 arm64_sonoma:  "fa050ffa1be06138e43f971240ee4ca40892bdc24fefe9ee2ec0a88fe6ecc5d2"
+    sha256 cellar: :any,                 arm64_ventura: "ad6b291135f0d31f327f60266a165cc3dde080ee71dd990fa71e1ea7c8f23a1e"
+    sha256 cellar: :any,                 sonoma:        "3bf37526c8a3456465d0ce810bb8224ba50adc869bdacf3a3d92a8f65d4d7832"
+    sha256 cellar: :any,                 ventura:       "2b1f9a3cb7f0e3b44678ac6cb3f121baa2a35441a969ccc6043ad9ab8f2a030c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75ed8eaaf7a3d85f41178c69294b654b095eec9071c966b99c75099058707796"
   end
 
   depends_on "pkgconf" => :build

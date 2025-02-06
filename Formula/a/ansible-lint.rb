@@ -3,17 +3,17 @@ class AnsibleLint < Formula
 
   desc "Checks ansible playbooks for practices and behaviour"
   homepage "https://ansible-lint.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/53/f5/9dce6b47275d9ca97cd848f32d39ee123052eb2e73f20b9844e852cd6aa0/ansible_lint-25.1.1.tar.gz"
-  sha256 "52ded593ba69831bf8f2882fea9118f96657f115e75904cac9afe1ea931bf0ab"
+  url "https://files.pythonhosted.org/packages/60/3f/2006d6d77b168ed1173947a37f7c05d8eedec2c0315abf7dd423a48a3cdd/ansible_lint-25.1.2.tar.gz"
+  sha256 "4d9de2726829ca700a9b4cc6d52506f5cc8e086ce52760131eb0aabfe7e61ce5"
   license all_of: ["MIT", "GPL-3.0-or-later"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "26005b881bb24a47c6da87756f6b009c1b56e768f5c48a98b6a062652de7d287"
-    sha256 cellar: :any,                 arm64_sonoma:  "142cd88c146c54ed38d17285d7a9521144fb57bede54cc4af2c2a6cfc8543303"
-    sha256 cellar: :any,                 arm64_ventura: "79d7084068d21b68d262dbd20f1349cc254105a9e4d63afd800ae6f391d9c490"
-    sha256 cellar: :any,                 sonoma:        "61a1151446883909d210b9ff1e59f3131aa9a7abca1fe776c2d6daf0dee53041"
-    sha256 cellar: :any,                 ventura:       "cf7fe04a298bf277ba1d7ac28c7ebea1930e0282fa5a8d5f4bf3f8d686343dfd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd60dcb1a91dab59e6cc5cc213177d014983aa7a65892fa50523f28d5f9567f2"
+    sha256 cellar: :any,                 arm64_sequoia: "8d9cfadbb3904abe3ae818d93c3b44b985aab6dbc44eea4e4043a01be8cd37fd"
+    sha256 cellar: :any,                 arm64_sonoma:  "8cce61c05f681cba160d7713f2c339ee70e7ca2840097c6d7aec2115b44dd093"
+    sha256 cellar: :any,                 arm64_ventura: "24ca58ebea900204ded12a7f4fbcfcdc449ca1466db257c753a1294a75a0363f"
+    sha256 cellar: :any,                 sonoma:        "191958f96e8d173561ff633774a155080d5b567281180b9807c889485fff46c4"
+    sha256 cellar: :any,                 ventura:       "03c73dfae7445b950e0cc08e39bbdccd234404100f77b4a6610a4a8164503072"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4430c1df1419f368291aa2bf4334ada48f67c7b6957aab1bdfe5a57f2ff5ce11"
   end
 
   depends_on "pkgconf" => :build
@@ -24,8 +24,8 @@ class AnsibleLint < Formula
   depends_on "python@3.13"
 
   resource "ansible-compat" do
-    url "https://files.pythonhosted.org/packages/57/ef/d7c9ce5bf5763f039403e7ecbc860ce425b88e7e62dd75418e85fcf08493/ansible_compat-25.1.1.tar.gz"
-    sha256 "b4e4609bb9b91588758be4d26ff25ff46d7ce83e6b8f2cc58cf77d736ec1f1ab"
+    url "https://files.pythonhosted.org/packages/c6/6e/46a414902bc519b08d1c504e034040e2f39c240fe74a1c69b72ba33991ee/ansible_compat-25.1.2.tar.gz"
+    sha256 "0dc51fc1cb35a1dd060ec977290a1290f434bb3e81c864b6375762767c035b25"
   end
 
   resource "ansible-core" do
@@ -39,8 +39,8 @@ class AnsibleLint < Formula
   end
 
   resource "black" do
-    url "https://files.pythonhosted.org/packages/d8/0d/cc2fb42b8c50d80143221515dd7e4766995bd07c56c9a3ed30baf080b6dc/black-24.10.0.tar.gz"
-    sha256 "846ea64c97afe3bc677b761787993be4991810ecc7a4a937816dd6bddedc4875"
+    url "https://files.pythonhosted.org/packages/94/49/26a7b0f3f35da4b5a65f081943b7bcd22d7002f5f0fb8098ec1ff21cb6ef/black-25.1.0.tar.gz"
+    sha256 "33496d5cd1222ad73391352b4ae8da15253c5de89b93a80b3e2c8d9a19ec2666"
   end
 
   resource "bracex" do

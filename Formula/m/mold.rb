@@ -65,7 +65,6 @@ class Mold < Formula
   def caveats
     <<~EOS
       Support for Mach-O targets has been removed.
-      See https:github.combluewhalesystemssold for macOSiOS support.
     EOS
   end
 

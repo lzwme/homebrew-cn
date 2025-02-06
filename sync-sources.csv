@@ -191,6 +191,7 @@ Homebrew-homebrew-core/Formula/a/apt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aptly.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aptos.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aqbanking.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/aqtinstall.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/arabica.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/arangodb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aravis.rb, Homebrew/homebrew-core, 1
@@ -977,6 +978,7 @@ Homebrew-homebrew-core/Formula/c/clojurescript.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/closure-compiler.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cloud-nuke.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cloud-provider-kind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloud-sql-proxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloud-watch.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cloudflare-cli4.rb, Homebrew/homebrew-core, 1
@@ -1547,6 +1549,7 @@ Homebrew-homebrew-core/Formula/d/duck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/duckdb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/ducker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/duckscript.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dud.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/duf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/duff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dufs.rb, Homebrew/homebrew-core, 1
@@ -3518,6 +3521,7 @@ Homebrew-homebrew-core/Formula/lib/libcap.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libcbor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libccd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libcddb.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libcdio-paranoia.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libcdio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libcdr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libcds.rb, Homebrew/homebrew-core, 1
@@ -5043,6 +5047,7 @@ Homebrew-homebrew-core/Formula/p/pfetch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pg_cron.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pg_partman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pg_top.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/pgbackrest.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgbadger.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgbouncer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pgcli.rb, Homebrew/homebrew-core, 0
@@ -5842,6 +5847,7 @@ Homebrew-homebrew-core/Formula/s/scriptcs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scriptisto.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scrollkeeper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/scrub.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/scryer-prolog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scrypt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/scummvm-tools.rb, Homebrew/homebrew-core, 1
