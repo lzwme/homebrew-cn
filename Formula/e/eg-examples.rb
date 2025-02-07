@@ -3,18 +3,17 @@ class EgExamples < Formula
 
   desc "Useful examples at the command-line"
   homepage "https:github.comsrsudareg"
-  url "https:files.pythonhosted.orgpackages5f3ff55eef404adae2d5429728722d6a81ad6ac50a80e9b47be046cfbe97bc44eg-1.2.2.tar.gz"
-  sha256 "8d3745eceb2a4c91507b1923193747b7ae88888e6257eb8aaccf7deae2a300a7"
+  url "https:files.pythonhosted.orgpackagesdc9b9f254b434ed6af1e8566a398660c9f8ecada95ccf03ed799e09637a13b77eg-1.2.3.tar.gz"
+  sha256 "31f221b24701a9fc4b034d9593f081859d943b14bf26b2e98190509b64e2622b"
   license "MIT"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de4a06419ab8e14dd8fc0e0788db94e5ec3f81df50e29fb7cab28cb6ce90573d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de4a06419ab8e14dd8fc0e0788db94e5ec3f81df50e29fb7cab28cb6ce90573d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "de4a06419ab8e14dd8fc0e0788db94e5ec3f81df50e29fb7cab28cb6ce90573d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "022bac6f1c7c991e7b1d147e2e0add5b7cd8f044816af299be4d348b79b6a6ee"
-    sha256 cellar: :any_skip_relocation, ventura:       "022bac6f1c7c991e7b1d147e2e0add5b7cd8f044816af299be4d348b79b6a6ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de4a06419ab8e14dd8fc0e0788db94e5ec3f81df50e29fb7cab28cb6ce90573d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1c10604e24a6e315bb4ac0f066ecd76da2315b225dd7d567ef926fcefe883fb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1c10604e24a6e315bb4ac0f066ecd76da2315b225dd7d567ef926fcefe883fb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d1c10604e24a6e315bb4ac0f066ecd76da2315b225dd7d567ef926fcefe883fb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "56b83d2d2a2927a790dd69e41bdbb033f9ccefbe1b389f8a8378caf05254e1b6"
+    sha256 cellar: :any_skip_relocation, ventura:       "56b83d2d2a2927a790dd69e41bdbb033f9ccefbe1b389f8a8378caf05254e1b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1c10604e24a6e315bb4ac0f066ecd76da2315b225dd7d567ef926fcefe883fb"
   end
 
   depends_on "python@3.13"

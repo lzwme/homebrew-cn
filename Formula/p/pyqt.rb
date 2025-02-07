@@ -1,16 +1,16 @@
 class Pyqt < Formula
   desc "Python bindings for v6 of Qt"
   homepage "https://www.riverbankcomputing.com/software/pyqt/intro"
-  url "https://files.pythonhosted.org/packages/e9/0a/accbebed526158ab2aedd5c84d238159754bd99f481082b3fe7f374c6a3b/PyQt6-6.8.0.tar.gz"
-  sha256 "6d8628de4c2a050f0b74462e4c9cb97f839bf6ffabbca91711722ffb281570d9"
+  url "https://files.pythonhosted.org/packages/ce/bf/ff284a136b39cb1873c18e4fca4a40a8847c84a1910c5fb38c6a77868968/pyqt6-6.8.1.tar.gz"
+  sha256 "91d937d6166274fafd70f4dee11a8da6dbfdb0da53de05f5d62361ddf775e256"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "4ee6b869bf446efb3547621e50fec47d5d6933b1cd3cdd17eee7bc4cddb94182"
-    sha256 cellar: :any,                 arm64_ventura: "78406197de51117f825a6769af4cb068349a50da113f1398a13a94b6fd53d6a0"
-    sha256 cellar: :any,                 sonoma:        "fa2f3e4ae72c5de5f79347401b631372ccf12f57cff2571f4de891bfea68de94"
-    sha256 cellar: :any,                 ventura:       "5f2493c14c6ca882b8222d7d6ed4e008c8f840f2cc1225f5a1b8a950f95a886b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0781bd7c55ef7442e99db90f38d1c29851be123072d6d6d358cba82b117a0f4c"
+    sha256 cellar: :any,                 arm64_sonoma:  "364815998ca1a7e33573c26be81e2e797a09b7bc7a696594fa0d8cd819460989"
+    sha256 cellar: :any,                 arm64_ventura: "45167e6a3bda13e9bf2a9d318aac66b850827270bb1d73e5773f32566710d090"
+    sha256 cellar: :any,                 sonoma:        "46d7cab9f629cd034730806efa47e2fc0e2027d83253f4b111c67d28687b92a8"
+    sha256 cellar: :any,                 ventura:       "11f15fda8de9695960cd83438599af9094b81ce65a54d47a1b751101ed0ec0a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f70ee6d285317d7d405e894f898d89609c3a2372a56a92e0b1ddd1b8c068d2ee"
   end
 
   depends_on "pyqt-builder" => :build
@@ -52,13 +52,6 @@ class Pyqt < Formula
       url "https://gitlab.archlinux.org/archlinux/packaging/packages/pyqt6-webengine/-/raw/85846264bbfd2628fae66786e2f48ae40fddadca/fix-build.patch"
       sha256 "14b523cf26fd6e066ed1900fd59e1e6f8d7abc5900a04fc5b9bc9f3cb831045f"
     end
-  end
-
-  # Apply Arch Linux patch to fix build with Qt 6.8.2.
-  # TODO: Remove on the next release as fix is in pre-release for PyQt 6.8.1
-  patch do
-    url "https://gitlab.archlinux.org/archlinux/packaging/packages/pyqt6/-/raw/0877bb909ba3b9715300ac9f9f82f47c5eeb9209/qt-6.8.2.patch"
-    sha256 "c7dfae13566128bdf9c0503960d754109b35ca93d3f6af1aa56a554b5dc99a63"
   end
 
   def python3

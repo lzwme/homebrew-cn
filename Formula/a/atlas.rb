@@ -3,18 +3,18 @@ class Atlas < Formula
   homepage "https:atlasgo.io"
   # Upstream may not mark patch releases as latest on GitHub; it is fine to ship them.
   # See https:github.comarigaatlasissues1090#issuecomment-1225258408
-  url "https:github.comarigaatlasarchiverefstagsv0.30.0.tar.gz"
-  sha256 "aa01d568af8c46cfc4467d3b09320586d51267f41460f6c31f5a1519b5e2087f"
+  url "https:github.comarigaatlasarchiverefstagsv0.31.0.tar.gz"
+  sha256 "f4464ead567f8183ea0f42808f2cd84f32b1a177852ff20ee18b0df49daf5976"
   license "Apache-2.0"
   head "https:github.comarigaatlas.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c447b525d7fd5beba2fa5da2b0aaf3ae2c19eac8dda06d9b062bbd88b14bb93"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "935034c10dd28f3a87cc0d5973bcd488df713b0500e05051e9b1884b8b2ca54f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "adf0f6ce533a8debbe454e210a20e2c42311d6ad77aaa85f874626eceeda4c21"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2d4da3dd70cbf787728dd4ea06c8cd155eee07222fb7c6f4eaa50880c9d4d553"
-    sha256 cellar: :any_skip_relocation, ventura:       "b654ce40a5200e06693d02e4d7b74c5cc9224c15733a45f9fab899a4e45a8136"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c188954a4259cc8e25804dc0b91989e1e28796b04ae74f2460e862a2d310859f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "06ee68948a297d4baee122be601981fc3b6d2f64c9da75ea7a54ce817627e615"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44f6b09a76bfe3fe030247bd180632587d88d57add9a725009d7cb62211ed127"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f8d80b29311771db36786d37b9434add3fd1acd74b479434b0012c171f463434"
+    sha256 cellar: :any_skip_relocation, sonoma:        "705633629f3d8355ba7e5ce6b17999fa84217cf49e23304505757f6b20815b02"
+    sha256 cellar: :any_skip_relocation, ventura:       "b9cb5ee72f21ed8b04fa6ec0dba25e47567a6e43227440e711caf388d74ad696"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "575e80177a3a1396be2e22fe9691232e116773ce9d2ffa81ab16014cae72054a"
   end
 
   depends_on "go" => :build

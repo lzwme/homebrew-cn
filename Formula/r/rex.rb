@@ -1,17 +1,17 @@
 class Rex < Formula
   desc "Command-line tool which executes commands on remote servers"
   homepage "https://www.rexify.org"
-  url "https://cpan.metacpan.org/authors/id/F/FE/FERKI/Rex-1.15.0.tar.gz"
-  sha256 "a02f2a1ec1d612cd12019adddb6b8971a437404b88ea31bb18f13a890128f3a7"
+  url "https://cpan.metacpan.org/authors/id/F/FE/FERKI/Rex-1.16.0.tar.gz"
+  sha256 "d6d9657d29527e15995c6de33d7bf1111da7860d420ac95385c1161daaea2479"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f5b4c63e054063f8d02ba85b8c5235b8ce1c5ef684c697be583a80c02ae3960"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f5b4c63e054063f8d02ba85b8c5235b8ce1c5ef684c697be583a80c02ae3960"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "36a9b428132fe463f8ac235bb91cf1a61c38229e71435a380c8b8bab67a48089"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fba5b6163d27441c8a03afe2c29311b435833810aa8433639181bf9266e110dd"
-    sha256 cellar: :any_skip_relocation, ventura:       "76b8ff9c88d6c0cdc7969756e62cec006e5f64101213c33c2cfcb6e0b0e0a689"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bba4b386cf1f7aca7cc2cadba6d1e6d6a1ed715fe06cbd0897b7e67d93984d59"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f00580cf78183073fc1f2377f7ab2aa231b6be9479b78a9d1c29a4aaa7c458a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f00580cf78183073fc1f2377f7ab2aa231b6be9479b78a9d1c29a4aaa7c458a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "14c493b9b4c153b1a4f33e1b624d29527ea7f9aa950a64f994a958d1138cd277"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1ec0b657ca4df29ba4c341308588731d66c7b028ea536da079c1fed4663fa45d"
+    sha256 cellar: :any_skip_relocation, ventura:       "dc84e4db07cd881c8757c6b13f96463a0beadd8dd0200f02ec31baab975310ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b27583c8426ff3a5d7eb06d61a2bcfca88283b51e6d83fbca5d1ebae4e09f5f3"
   end
 
   uses_from_macos "expat"

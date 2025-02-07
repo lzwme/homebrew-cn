@@ -1,10 +1,9 @@
 class Tdb < Formula
   desc "Trivial DataBase, by the Samba project"
   homepage "https://tdb.samba.org/"
-  url "https://www.samba.org/ftp/tdb/tdb-1.4.12.tar.gz"
-  sha256 "6ce4b27498812d09237ece65a0d6dfac0941610e709848ecb822aa241084cd7a"
+  url "https://www.samba.org/ftp/tdb/tdb-1.4.13.tar.gz"
+  sha256 "5ee276e7644d713e19e4b6adc00b440afb5851ff21e65821ffaed89e15a5e167"
   license "GPL-3.0-or-later"
-  revision 1
 
   livecheck do
     url "https://www.samba.org/ftp/tdb/"
@@ -12,14 +11,12 @@ class Tdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "a2511841a9090a5d083c4c61dbbda8d378f2237a5638d3c1d2805eec5c08f313"
-    sha256 cellar: :any,                 arm64_sonoma:   "087ce2cb58a14fbf681d9fa4fdabef760b2cb59720c10afde568f9924f519542"
-    sha256 cellar: :any,                 arm64_ventura:  "636099e08034e97b5d496a621b9d0962dbf98a992f1f925e1d021215d23b64d3"
-    sha256 cellar: :any,                 arm64_monterey: "aa58b35c7f2dea471aef80a78fbc1e90361cc6c783fb321ee8781be87a35ee6f"
-    sha256 cellar: :any,                 sonoma:         "f83228b9d5dee8e140c701f797644c98d411c5f2196a4ee14f644c3a8a42871f"
-    sha256 cellar: :any,                 ventura:        "75ce6baff37c0039b05829dcac010deb642ab420f366e3181615f11092323881"
-    sha256 cellar: :any,                 monterey:       "d3b9ac9dfeea91cd2683935359481954544dee063c41e0af0ea6f5b7d06e723f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3757f7a8141b9c77fa03aed41f6718cc5e3ee694d4728cecb467bd21e2453848"
+    sha256 cellar: :any,                 arm64_sequoia: "1bd7cd583b2c42a4f0e634859622b0cac4a48f35410650bf0573b74afff49e20"
+    sha256 cellar: :any,                 arm64_sonoma:  "fea78e4678ef0a6f84e3a6cd57713f150f01e73bf81609f54102ef0ada8467ae"
+    sha256 cellar: :any,                 arm64_ventura: "f77f95a5940ca7a4a40ef08d6611239c5885426311e4f0b3c321a6429d6891a7"
+    sha256 cellar: :any,                 sonoma:        "4152b5bb64a94971afa35b8e7c17ea6d3dba0efafe2031617f53765cd158dc0f"
+    sha256 cellar: :any,                 ventura:       "c9e83486f202b33c0dd32f8debba7b8562374766c2488b630d55d7da8df3dc07"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62725a4b2245ffdeb4792e1032e09f2ec24824b70363c2ca50c6f024a3f4acf0"
   end
 
   uses_from_macos "python" => :build

@@ -1,19 +1,18 @@
 class Nb < Formula
   desc "Command-line and local web note-taking, bookmarking, and archiving"
   homepage "https:xwmx.github.ionb"
-  url "https:github.comxwmxnbarchiverefstags7.15.1.tar.gz"
-  sha256 "ca3e7e233aa848f1fe0f2318a3dbe7c7794173db890730f5af4443fbbf3d4cc7"
+  url "https:github.comxwmxnbarchiverefstags7.16.0.tar.gz"
+  sha256 "12d0356dfa50205a618bf871614cb240a859d0a32bab9c77034c958b092c2486"
   license "AGPL-3.0-or-later"
   head "https:github.comxwmxnb.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f77dc7c286c62b2fb1899636c01c7781b0cdcf296edf06c97d9c7a408cd5b8e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f77dc7c286c62b2fb1899636c01c7781b0cdcf296edf06c97d9c7a408cd5b8e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2f77dc7c286c62b2fb1899636c01c7781b0cdcf296edf06c97d9c7a408cd5b8e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e79f7ea22c434ebf9cd32b77d8fccf0721593c71e05e40406e1e59f8518ffaa2"
-    sha256 cellar: :any_skip_relocation, ventura:       "e79f7ea22c434ebf9cd32b77d8fccf0721593c71e05e40406e1e59f8518ffaa2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f77dc7c286c62b2fb1899636c01c7781b0cdcf296edf06c97d9c7a408cd5b8e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d639b7b83f1977f671d77628979076652d29d27482db67cd9a3dd4faf9f076f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d639b7b83f1977f671d77628979076652d29d27482db67cd9a3dd4faf9f076f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0d639b7b83f1977f671d77628979076652d29d27482db67cd9a3dd4faf9f076f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "39e0d2b4957ea731f22a491c52a687188ac9fb72eb0ccfb551c9ffe33031cd09"
+    sha256 cellar: :any_skip_relocation, ventura:       "39e0d2b4957ea731f22a491c52a687188ac9fb72eb0ccfb551c9ffe33031cd09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d639b7b83f1977f671d77628979076652d29d27482db67cd9a3dd4faf9f076f"
   end
 
   depends_on "bat"

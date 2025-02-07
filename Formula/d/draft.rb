@@ -1,18 +1,18 @@
 class Draft < Formula
   desc "Day 0 tool for getting your app on Kubernetes fast"
   homepage "https:github.comAzuredraft"
-  url "https:github.comAzuredraftarchiverefstagsv0.17.3.tar.gz"
-  sha256 "8d108f2bf9116f7a8e41315976cfb9b775985084dea3a4e14df08731ea0ecd3e"
+  url "https:github.comAzuredraftarchiverefstagsv0.17.4.tar.gz"
+  sha256 "f2f17afc951bfdf195dc6051a9a9d920b2fed348a0423e350ac624aae2a8b94e"
   license "MIT"
   head "https:github.comAzuredraft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61cedc332bf44912b75e16058a06960275e811c70d1e2674a5a6478b3d74df9a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ad4308273f1c528ec446324bccfc6df19369d79c4d0056e2ddad45af20ab84c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9d6528600bb2f93f7b69920b54e1b426a0e945dea339b1ed89be6972ba115468"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c0df1289cdcc43b10ad1227db0f70ae76e4c4ebecb136663b51548b402e32b9a"
-    sha256 cellar: :any_skip_relocation, ventura:       "48df67def42d661668e8952093ac314c779149e9c5e87f080933292911cce293"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22f33a1e6e52e0dd165db4a3e79824ad527541b79ce57f00da55e236c3ce6ef4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b75dc410bd15c8d1875b9c466931f56ef315dea98835f711d7aa870a8dfa1519"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7cae665ea01226bce45161e859e3ea0630b3d0595cfda62e6eefc853dbbe9df7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c5c2f361cddfeea870966da6b5651cade0a23e2bda03830c1fa7a1af10feaf68"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d45517912a7f82d7242b23132605b94333205debb8542bf603a446d4a9be9deb"
+    sha256 cellar: :any_skip_relocation, ventura:       "73699740260ad71533c137edd19975398a0fde0ed27134c36fc5c82de8366376"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57414db9983b14a2b3a578184d0b11d4338c9bb7145c6f8089281e0efd9a5b0d"
   end
 
   depends_on "go" => :build

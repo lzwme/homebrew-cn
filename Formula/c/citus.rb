@@ -1,10 +1,19 @@
 class Citus < Formula
   desc "PostgreSQL-based distributed RDBMS"
   homepage "https:www.citusdata.com"
-  url "https:github.comcitusdatacitusarchiverefstagsv12.1.5.tar.gz"
-  sha256 "bc95a30e93459f0398865e9dced53e61e758483b78c9fdc4eab2bc1317db2ea4"
   license "AGPL-3.0-only"
   head "https:github.comcitusdatacitus.git", branch: "main"
+
+  stable do
+    url "https:github.comcitusdatacitusarchiverefstagsv13.0.1.tar.gz"
+    sha256 "b7fdc3ad6eca9dd6a1066e897a249fdca289e96d81921d4c7bf98cb4302ce817"
+
+    # Backport DLSUFFIX usage to fix extension on macOS
+    patch do
+      url "https:github.comcitusdatacituscommit0f28a69f12418d211ffba5f7ddd222fd0c47daeb.patch?full_index=1"
+      sha256 "b8a350538d75523ecc171ea8f10fc1d0a2f97bd7ac6116169d773b0b5714215e"
+    end
+  end
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -15,18 +24,17 @@ class Citus < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9e940ccb91123ca14d3c286e47bca26357a2d6bc37c5af2ad726c800ea0cd511"
-    sha256 cellar: :any,                 arm64_sonoma:  "60cfd5a3aa56d439ad2fc8762267ac91f459e209c1de60574c6d20bb1b2bc6f2"
-    sha256 cellar: :any,                 arm64_ventura: "e87a8036cd8bbe60c7fbfe001cdbd5e09cb1e06cea2bea884eab0576254a04f1"
-    sha256 cellar: :any,                 sonoma:        "761870536febbfecb3e0ae65460e202fe36a0b412dd2a643ec300c30caad1e75"
-    sha256 cellar: :any,                 ventura:       "9de6617cd2c7accd7640118e45fd800a5cf801d4eccd63f5c7df6b8f2b2c6cb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6157dc81d6fc2df83b60c8d016257a9473a34ae731331945b0d6db7fef6ce1d2"
+    sha256 cellar: :any,                 arm64_sequoia: "49acd5a24baed73f5b367d97fbba89285cfa515fa359d6176cc3850a92f56e6f"
+    sha256 cellar: :any,                 arm64_sonoma:  "44ec4f915050291b58f02e8423a2306d5c24a67ef1fa66cce65aec913d0489df"
+    sha256 cellar: :any,                 arm64_ventura: "87853877c161b9c1f533871c4948d8e9df5018d4f9cda31ad4dafa60972e3e51"
+    sha256 cellar: :any,                 sonoma:        "68a85ce9faf1bd1adbf6745daacedbb320cc691001740750d92e10c8b92198c7"
+    sha256 cellar: :any,                 ventura:       "a6fbe35a9813c2b2bcc8eb7b05487bc1a20c5e02c41d7e7813b57b78fcdd7cbe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42694cb8148e29b50a36b8ce0b48853be1d0a46b9f59a1dca1cee7b5b80b55df"
   end
 
   depends_on "lz4"
   depends_on "openssl@3"
-  depends_on "postgresql@14"
-  depends_on "readline"
+  depends_on "postgresql@17"
   depends_on "zstd"
 
   uses_from_macos "curl"

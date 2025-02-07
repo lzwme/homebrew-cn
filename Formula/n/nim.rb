@@ -1,8 +1,8 @@
 class Nim < Formula
   desc "Statically typed compiled systems programming language"
   homepage "https:nim-lang.org"
-  url "https:nim-lang.orgdownloadnim-2.2.0.tar.xz"
-  sha256 "ce9842849c9760e487ecdd1cdadf7c0f2844cafae605401c7c72ae257644893c"
+  url "https:nim-lang.orgdownloadnim-2.2.2.tar.xz"
+  sha256 "7fcc9b87ac9c0ba5a489fdc26e2d8480ce96a3ca622100d6267ef92135fd8a1f"
   license "MIT"
   head "https:github.comnim-langNim.git", branch: "devel"
 
@@ -12,12 +12,12 @@ class Nim < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bfc74fb77b48f05f8feefd2e643359efadeeaa4eec0a2d94882564aee1563e47"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ae2f159bb433847dc9e26b1ef7b0f9b31afa9f095c88bb54b899fa265b6fa95"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "008118534506dcc73df8daca97ee8437bdbe74cc9201055fe6565c6b26bfe9e0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "01a4e5222e2aaf6708da811abc90381923c8c4fcf843fd5d7ab84225f591a1c8"
-    sha256 cellar: :any_skip_relocation, ventura:       "e85c4c1bda5a6a82059f7fa562e4ed875793c4f2122e6cf9f707bd7d7cffef47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5bb0465231f57d4156acc2fef0671a1fdfb86735e38063ad2e02d98a6d1d7a93"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0340ae372df6f2576a03ced8cf2b01d51cf297fac9a493b4aa2a416339661fe3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7c16338f976e40751ea6f8ce76f5eab72f430f1a2d8a54ac50d9403f6d6a50f4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "078694d8c799818a058d74fa382c11768aea9aef66f37d42d64ff5a580bcaf8c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aa7e2efb3883390c2a2b61c492b7585205b5bd093553fc37bb4b52d6dfde6a13"
+    sha256 cellar: :any_skip_relocation, ventura:       "4ab3f16b347e8c8429dc9da97eda9840eb52b61013ead7e5357e5b55e102d98c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5dae8e50a1e04461da0c654945051de206839b47510810c327b024284ae14cc7"
   end
 
   depends_on "help2man" => :build

@@ -1,9 +1,9 @@
 cask "ibm-cloud-cli" do
   arch arm: "_arm64"
 
-  version "2.32.0"
-  sha256 arm:   "b5ec733db0c121af6fe064975c1c3b4002799249a7b2401509973bc2e17cd332",
-         intel: "a79ce202b7a38488687c40248545a19a07786a9380b68a8adc56c6313a4f1e0a"
+  version "2.32.2"
+  sha256 arm:   "207f9485f220e4dc907a7c80a4c9140bce985722b26148cf08a542aa863f6798",
+         intel: "7e806e07b8571a44090daac41eaa7e25f7894cbac55929f03ccee3b0c1f73fe2"
 
   url "https:download.clis.cloud.ibm.comibm-cloud-cli#{version}IBM_Cloud_CLI_#{version}#{arch}.pkg"
   name "IBM Cloud CLI"

@@ -821,7 +821,6 @@ Homebrew-homebrew-core/Formula/c/certifi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/certigo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/certstrap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/certsync.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/ceylon.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cf2tf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cf4ocl.rb, Homebrew/homebrew-core, 1
@@ -1727,6 +1726,7 @@ Homebrew-homebrew-core/Formula/e/eva.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/eventpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/evernote-backup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/evernote2md.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/e/evil-helix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/evince.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/evtx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/ex-vi.rb, Homebrew/homebrew-core, 0
@@ -2084,6 +2084,7 @@ Homebrew-homebrew-core/Formula/g/gdm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gdrive-downloader.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gdrive.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gdrive@2.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gdtoolkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gdu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gearman.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gebug.rb, Homebrew/homebrew-core, 1
@@ -2320,6 +2321,7 @@ Homebrew-homebrew-core/Formula/g/gmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnirehtet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnmic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnome-autoar.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gnome-builder.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnome-recipes.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnome-themes-extra.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnu-apl.rb, Homebrew/homebrew-core, 0
@@ -2526,7 +2528,7 @@ Homebrew-homebrew-core/Formula/g/grt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grunt-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/grunt-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grype.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/gsan.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gsan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gsar.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gsasl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gsettings-desktop-schemas.rb, Homebrew/homebrew-core, 0
@@ -5222,6 +5224,7 @@ Homebrew-homebrew-core/Formula/p/posh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/poster.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/postgis.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/postgraphile.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/postgresql-hll.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/postgresql@11.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/postgresql@12.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/postgresql@13.rb, Homebrew/homebrew-core, 1
@@ -6522,6 +6525,7 @@ Homebrew-homebrew-core/Formula/t/texinfo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/texlab.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/texlive.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/texmath.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/text-embeddings-inference.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/textidote.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/textract.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/texttest.rb, Homebrew/homebrew-core, 0
@@ -8044,6 +8048,7 @@ Homebrew-homebrew-cask/Casks/c/chatmate-for-whatsapp.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/c/chatology.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatterino.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatty.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/chatwise.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chatwork.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cheatsheet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/checkra1n.rb, Homebrew/homebrew-cask, 0

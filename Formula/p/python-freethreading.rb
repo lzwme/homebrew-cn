@@ -1,8 +1,8 @@
 class PythonFreethreading < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https:www.python.org"
-  url "https:www.python.orgftppython3.13.1Python-3.13.1.tgz"
-  sha256 "1513925a9f255ef0793dbf2f78bb4533c9f184bdd0ad19763fd7f47a400a7c55"
+  url "https:www.python.orgftppython3.13.2Python-3.13.2.tgz"
+  sha256 "b8d79530e3b7c96a5cb2d40d431ddb512af4a563e863728d8713039aa50203f9"
   license "Python-2.0"
 
   livecheck do
@@ -10,12 +10,12 @@ class PythonFreethreading < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "7211fee73765cfcff327a0ebc4ec1b94e0a643fe3d3e129f8de20f96eb4fb07b"
-    sha256 arm64_sonoma:  "6e1c62a4b9a2e5774e3aee4d45cd1843702a6de428ecde40fb530c5101f6b19e"
-    sha256 arm64_ventura: "525f8dcad47a991548d4c5b80de69591ce2f043365d215dcdbf8ca75b7348423"
-    sha256 sonoma:        "ad8826d5a47f1ed24298e7b99cfa4aa7af3f36ff5ef610a06295a519a03abbe2"
-    sha256 ventura:       "b7fa4357a434417197a240e0a7d1eb2b0ec4667608c3f7b110cdd70efbc0064f"
-    sha256 x86_64_linux:  "8a9c28d43f6af78a8ac174a357b37762eebc168597fdc9843c4412f71ee4b7cf"
+    sha256 arm64_sequoia: "bd176f0f766a5b37b8a80941e2a206a8ba08bf48a4e954feeecf8910db7c438b"
+    sha256 arm64_sonoma:  "b2509178785ac76a88dd930e91ff94afc98389c7506a8aa9f72a406b45e7bec6"
+    sha256 arm64_ventura: "b87ca2b77bfb83f18205d64170139a057b159567842efa98c61e86bc81ceeee9"
+    sha256 sonoma:        "25bcc82bb255e281418879acd6157916286003ffd953989ca28772f60b1a06ba"
+    sha256 ventura:       "e37af22cdb717ec351aecd2f8c0be6945e3f9fd55015b5e1da8c47814a519cdd"
+    sha256 x86_64_linux:  "9191c3a4cd7b5589b2c73af3f1e102fbb9e01d9bf5a3ef5568c02a07cd5a4c1d"
   end
 
   depends_on "pkgconf" => :build
@@ -27,7 +27,7 @@ class PythonFreethreading < Formula
   # not actually used, we just want this installed to ensure there are no conflicts.
   uses_from_macos "python" => :test
   uses_from_macos "bzip2"
-  uses_from_macos "expat"
+  uses_from_macos "expat", since: :sequoia
   uses_from_macos "libedit"
   uses_from_macos "libffi", since: :catalina
   uses_from_macos "libxcrypt"

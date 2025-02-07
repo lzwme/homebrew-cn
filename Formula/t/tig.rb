@@ -1,17 +1,17 @@
 class Tig < Formula
   desc "Text interface for Git repositories"
   homepage "https:jonas.github.iotig"
-  url "https:github.comjonastigreleasesdownloadtig-2.5.11tig-2.5.11.tar.gz"
-  sha256 "b36ef52b1a19d87257adfa9047cc3e21d6bd528bbd28458fe49003eb3e374aa7"
+  url "https:github.comjonastigreleasesdownloadtig-2.5.12tig-2.5.12.tar.gz"
+  sha256 "5dda8a098810bb499096e17fc9f69c0a5915a23f46be27209fc8195d7a792108"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "aa61c6a63da8bc0feb8dd2de4d21376d57a5f42b4e727b8ebdf74f5241d85111"
-    sha256 cellar: :any,                 arm64_sonoma:  "b66928d9cc7ba87d4f24eece47a37d72662212283810b27124d0e0244a7f0173"
-    sha256 cellar: :any,                 arm64_ventura: "e5989c7fc20f47bced9febb9124edbdd921312084572af22a611dd3efb814f85"
-    sha256 cellar: :any,                 sonoma:        "9805c1bed21da365e97e99972a3a78a4d1d227ce79421322d4f22fcb2c691068"
-    sha256 cellar: :any,                 ventura:       "8a774db5a2af8a65a4a6444f0ae86ed3fb251d84e097f37f9727185a60aa3df9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "490695435c1d97a9f05d3b8d1f40e9ff2b30336d817e7451a71ad054fa4eb376"
+    sha256 cellar: :any,                 arm64_sequoia: "ec253fa15a03de0700d9c0f9a14c3ae7b08f571699b3825998206ccabd71064d"
+    sha256 cellar: :any,                 arm64_sonoma:  "edb0ab2037d0f64854b02b1a833112a5270a5dbe141b4e75308c738b6e27d020"
+    sha256 cellar: :any,                 arm64_ventura: "6b982e872791e8a01725f6e1db1c488d9c77e321a0b6769568c503284bb4df1b"
+    sha256 cellar: :any,                 sonoma:        "f01d03e19a861f8bd0f0d98cfefed23d5c981ee985c7493c7db8c5d1cf2665b4"
+    sha256 cellar: :any,                 ventura:       "b0a904409d4bd3b97ec6462c54764284783d2ddf93b66ada941b997215c7abd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a4b4183690c0a092452acce166b01db0e86c0fda649dae1b87ca8f5a2de206f"
   end
 
   head do

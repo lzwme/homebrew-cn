@@ -4,6 +4,7 @@ class GitSvn < Formula
   url "https:mirrors.edge.kernel.orgpubsoftwarescmgitgit-2.48.1.tar.xz"
   sha256 "1c5d545f5dc1eb51e95d2c50d98fdf88b1a36ba1fa30e9ae5d5385c6024f82ad"
   license "GPL-2.0-only"
+  revision 1
   head "https:github.comgitgit.git", branch: "master"
 
   livecheck do
@@ -11,12 +12,12 @@ class GitSvn < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8945f482dda309468e921266bb80a9418602d43aac686f842621dfb47b8348d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8945f482dda309468e921266bb80a9418602d43aac686f842621dfb47b8348d7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4de67e0698cd8f91e7edb5899d6f1a15b761897fed1b931a3848093069b09d60"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8945f482dda309468e921266bb80a9418602d43aac686f842621dfb47b8348d7"
-    sha256 cellar: :any_skip_relocation, ventura:       "4de67e0698cd8f91e7edb5899d6f1a15b761897fed1b931a3848093069b09d60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b495bebe6a4b5f0bd571a09f0e2ba16849f669bfd11704e83df69ba781a2baa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f48e28c7b73e4959e54a0e14353993519dd9332d0891883383b80d6e009e07fb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f48e28c7b73e4959e54a0e14353993519dd9332d0891883383b80d6e009e07fb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e1eb898c5b976e718362d3a650bc8e5880066cbf6ee00fb023eb5278faf52896"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f48e28c7b73e4959e54a0e14353993519dd9332d0891883383b80d6e009e07fb"
+    sha256 cellar: :any_skip_relocation, ventura:       "e1eb898c5b976e718362d3a650bc8e5880066cbf6ee00fb023eb5278faf52896"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "627aea18bd22025f3f6a578e4aed3fa8b0b3edba5aef7085ce63a92231d3498a"
   end
 
   depends_on "git"

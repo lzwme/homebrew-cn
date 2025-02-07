@@ -1,17 +1,17 @@
 class NodeSass < Formula
   desc "JavaScript implementation of a Sass compiler"
   homepage "https://github.com/sass/dart-sass"
-  url "https://registry.npmjs.org/sass/-/sass-1.83.4.tgz"
-  sha256 "04dfdce75ec4fc0f4b86f7a04d69dd05ccaa8ec86c79d0145129b9389f253b65"
+  url "https://registry.npmjs.org/sass/-/sass-1.84.0.tgz"
+  sha256 "046598b138ce2bf8d336deffffadd779158898990065bcdacea91db40bdae12d"
   license "MIT"
 
   bottle do
-    sha256                               arm64_sequoia: "8163870a4470b4c142ff63ee78a681be32204f5b665b20170818121cf206b7fe"
-    sha256                               arm64_sonoma:  "409796c3cbb72532b42aa815a74cae473773a2de2441d6f0059f93a53a34ce3c"
-    sha256                               arm64_ventura: "8581c28d8a4a8f584f39f116d4676d84afc7f47a201c85537fc6672af52565d7"
-    sha256                               sonoma:        "7170bdfa3354bf732cf8bcd1288c213429aae638610e1768f2a640a3e4856227"
-    sha256                               ventura:       "4de5d47b865743be1dc633d3c861ee4e8ec00f7082838ba151df67e0228654bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86c13ee2d163ff5c405982908a309f04382685fe509ce5bfa388c5d22e18375c"
+    sha256                               arm64_sequoia: "ea68d45ee0f4d8c2001e3a12f4890c6363eb71dfad0e2dc8d0cc605c39887cf9"
+    sha256                               arm64_sonoma:  "a2f4e6d2840f4b8d8b2c7120d1b4c7b97669c5b4a07b75a4c47c6c86696c7107"
+    sha256                               arm64_ventura: "cdd8b249f4e16aabe775283ed16145bfeb5dc21efaeeb030d7ecec63528435a5"
+    sha256                               sonoma:        "04df622990582bc5216b848903b1236b01e38a2733c845f9926353bbeef9769c"
+    sha256                               ventura:       "3ae7c0be07127d04b3d771d40e8ad44ff77546e20157d61225ff4a9a4ad807b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9fc485c814cb6bca37b8087cb27476020df2a7315fde27492e3f2ad958a9af2"
   end
 
   depends_on "node"

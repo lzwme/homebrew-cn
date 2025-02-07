@@ -1,18 +1,17 @@
 class Haiti < Formula
   desc "Hash type identifier"
   homepage "https:noraj.github.iohaiti#"
-  url "https:github.comnorajhaitiarchiverefstagsv2.1.0.tar.gz"
-  sha256 "ee1fee20c891db567abe753de25e7f1f1d4c7c59d92b6ce28f2e96606f247828"
+  url "https:github.comnorajhaitiarchiverefstagsv3.0.0.tar.gz"
+  sha256 "f6b8bf21104cedda21d1cdfa9931b5f7a6049231aedba984a0e92e49123a3791"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0cc641884533a948e74cddcae36687ab233903722c81582ddf1d365c99d67570"
-    sha256 cellar: :any,                 arm64_sonoma:  "8b0a6b439ca9a9499d344241dcd3350bc14a214b3ce339662d0557db129b580a"
-    sha256 cellar: :any,                 arm64_ventura: "7c0c5a7d08953e7d7a00d105a262fbd083d779dcc3a6854caf8ce268e49102e8"
-    sha256 cellar: :any,                 sonoma:        "f3491dbed77e9cc3a2328492324f1061251e7576bae3f1e15d22e7d5f34b216b"
-    sha256 cellar: :any,                 ventura:       "26b2779b32a9ad7511189ba6347b453cc9b98f62c96228a3832cfbe12c61d48a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c13a3b4a68253847ede94468e90c00ace99cf93095f21fda7064ebc3da96d28"
+    sha256 cellar: :any,                 arm64_sequoia: "6816ddbb4db2f5c6e84917a0ce56e7e96832aa56a68c4f17a94f529a12c9fe5d"
+    sha256 cellar: :any,                 arm64_sonoma:  "91cce63fd959a495cb4b19f875156d118af052136da584628903fa12841d6e5f"
+    sha256 cellar: :any,                 arm64_ventura: "ac675715ee3d7c718cb64b32dccfbf4c6c59f5903e0d6a6f7a002c826ac786dc"
+    sha256 cellar: :any,                 sonoma:        "fbabec938c677d8c8ccf32ae492ada6db536f2c59ddcda7de55c3673c7ec2471"
+    sha256 cellar: :any,                 ventura:       "dd1d952cd49a64a32e4cc2f825f700aee62cb2e88fcee96cb0cfa047cffe4930"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8ef3c1a86e06b06935f2cfba4b037d681d37ad589bc2196f4b882d76e933f02"
   end
 
   # Requires Ruby >= 2.7

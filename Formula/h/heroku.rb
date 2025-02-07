@@ -1,17 +1,17 @@
 class Heroku < Formula
   desc "CLI for Heroku"
   homepage "https://www.npmjs.com/package/heroku/"
-  url "https://registry.npmjs.org/heroku/-/heroku-10.0.2.tgz"
-  sha256 "7207911c15978505886d8acd8467457056466e3dd15887e553431e6657fec007"
+  url "https://registry.npmjs.org/heroku/-/heroku-10.1.0.tgz"
+  sha256 "0e152698a489158e932f1fd8872c1152a5331d594efb7d5b8c81a65eb3aee357"
   license "ISC"
 
   bottle do
-    sha256                               arm64_sequoia: "da4855f6b361569543c5ce11c69eeafbca79ffcb05cdcf5e926e73e40919a178"
-    sha256                               arm64_sonoma:  "97787e6f05d9bd716996fd41d65b90e54fe26e63c9b8d39ed4d4e673dca24388"
-    sha256                               arm64_ventura: "143511f7a10fd36e6e3e059e7c9a8887ca819569c72a8e559758333c9b6a7f11"
-    sha256                               sonoma:        "88880693058b4ee201765587acd4e82fe458052c448b2866fd81711e5b33c486"
-    sha256                               ventura:       "6d1beb0c29afe604a4e26b33b1c761cae11849d3b8443d851d680ccdcd0cd6e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "969f43d8f6efa9ce1d78c68300d760e619b9520463d12b3ad11083d7f18c9d45"
+    sha256                               arm64_sequoia: "34f96d9a4cf809639c6f2ad679f3ff51f8e7711649dc71ed3c0d30f3c4a11f70"
+    sha256                               arm64_sonoma:  "8cf09b86ae7460df68e9309fcd209e3464cd691d3cf2b796926639d6e73b5ee2"
+    sha256                               arm64_ventura: "a677770a0beda13fd802eee902fc14d8a1c4cd3be620ec6539f6f7b22016c9ad"
+    sha256                               sonoma:        "e84ce6a73c263f4bcfa3119f480fef597368f5ee6752446718d7a0ab2bbb984d"
+    sha256                               ventura:       "a1602834735e14fcc8f8fd0fe6cac5acb2caef10d3fffbbbd51630e570462ae6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b33e7c7dbe9230cafe27f501e32a8f574b830f4c0e6036d4c723fcfc37da199"
   end
 
   depends_on "node"

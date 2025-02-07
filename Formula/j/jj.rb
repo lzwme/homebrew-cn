@@ -1,20 +1,18 @@
 class Jj < Formula
   desc "Git-compatible distributed version control system"
   homepage "https:github.comjj-vcsjj"
-  url "https:github.comjj-vcsjjarchiverefstagsv0.25.0.tar.gz"
-  sha256 "3a99528539e414a3373f24eb46a0f153d4e52f7035bb06df47bd317a19912ea3"
+  url "https:github.comjj-vcsjjarchiverefstagsv0.26.0.tar.gz"
+  sha256 "099eeb346f32a4968ebb8273566321eff2e6ca6a7de0c9dcfd7eee016b37cba1"
   license "Apache-2.0"
-  revision 2
   head "https:github.commartinvonzjj.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "72bf45459f768db11ec4d2f116f1d46b2f63b1197e4d64ef4b3eeaf412b594f8"
-    sha256 cellar: :any,                 arm64_sonoma:  "36e62f131229425ca98a8b6a8705d4e333879913fd94932bf95fe35dc9ac07a5"
-    sha256 cellar: :any,                 arm64_ventura: "705b5e8e49fd8ddb634c21a31e08f924638a8f20ca50e310fec155c1d45fc051"
-    sha256 cellar: :any,                 sonoma:        "a5c8cebe71747c47222f8a443fe7cef1eaab0b39310a13088a3424f56f1eabf8"
-    sha256 cellar: :any,                 ventura:       "42c15f2188ac4a023652985cf78d03b7153cb14a826f17ba108889b570efc7c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b45531574b6d4bc11e553c9c4c9350f4b66167bed7379c0776ed6f9b5798c495"
+    sha256 cellar: :any,                 arm64_sequoia: "7cd799ab79d243b5b5a4d6e7e76c8099c28b0611eaac75c4bb262ff92512db47"
+    sha256 cellar: :any,                 arm64_sonoma:  "87ee2ec2eacd2a8776a81e16b32aa57490a3faa740973bfeb49239241674853b"
+    sha256 cellar: :any,                 arm64_ventura: "0475f8f30621838eda92a15364ab044c870fb6535168d019b0edbc9dbe493e1d"
+    sha256 cellar: :any,                 sonoma:        "0fca81f48667c8c017417f7a0a370b15175db25e52cd01332f384de358d5014e"
+    sha256 cellar: :any,                 ventura:       "286c3273628ab71e4ac65fc18f10fdb55fbb0fe06af0a57f597800adacf7ef74"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f83cfb4bd0cdec091d154063fb68aeb3af0a15c487d35b4fdc60ea79a5b2595"
   end
 
   depends_on "pkgconf" => :build
@@ -42,15 +40,17 @@ class Jj < Formula
     system "cargo", "install", *std_cargo_args(path: "cli")
 
     generate_completions_from_executable(bin"jj", shell_parameter_format: :clap)
-
-    (man1"jj.1").write Utils.safe_popen_read(bin"jj", "util", "mangen")
+    system bin"jj", "util", "install-man-pages", man
   end
 
   test do
     require "utilslinkage"
 
-    system bin"jj", "init", "--git"
-    assert_predicate testpath".jj", :exist?
+    touch testpath"README.md"
+    system bin"jj", "git", "init"
+    system bin"jj", "describe", "-m", "initial commit"
+    assert_match "README.md", shell_output("#{bin}jj file list")
+    assert_match "initial commit", shell_output("#{bin}jj log")
 
     [
       Formula["libgit2"].opt_libshared_library("libgit2"),
