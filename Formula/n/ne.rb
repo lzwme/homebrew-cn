@@ -1,20 +1,18 @@
 class Ne < Formula
   desc "Text editor based on the POSIX standard"
   homepage "https:github.comvignane"
-  url "https:github.comvignanearchiverefstags3.3.3.tar.gz"
-  sha256 "4f7509bb552e10348f9599f39856c8b7a2a74ea54c980dd2c9e15be212a1a6f0"
+  url "https:github.comvignanearchiverefstags3.3.4.tar.gz"
+  sha256 "6958b5cd051d85dcdebbf45aeed2af077346a58d1d18ad14e1db477ce5519d29"
   license "GPL-3.0-only"
   head "https:github.comvignane.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia:  "dafb83eb90692275294db01e301fbfc9548d2a6f35da5072c292f03d48700617"
-    sha256 arm64_sonoma:   "8a550b3330062f58387f3addb83b6c8c31a16fb7e41f14486430c61deee7fd91"
-    sha256 arm64_ventura:  "28a91f4763d506a1e7e9bacb1c269e1dfff9f7398004787e1b463d2642cf182c"
-    sha256 arm64_monterey: "8091c957dc10498784eeac265ec6d9abdd44ae8bc877a9deedb57a639c4bd310"
-    sha256 sonoma:         "570cd0bc07142caee0a19dd6102d70c7320a7d449b4c7ee440e5515b1de6d731"
-    sha256 ventura:        "fe7942bde38c0379cc080eba7f19a8efdc687297ba25a1b4bf698127025c9f7c"
-    sha256 monterey:       "ce6c2287f4696841f25219e95282e497ed58b69435addca082756907838fdd8f"
-    sha256 x86_64_linux:   "8acf0230899e5a22ccc93d0e48d582545b76d7f86d199b78a543c7949ddb0ab6"
+    sha256 arm64_sequoia: "0c706c6b164b969590e18e216749428499344301311d38019f7e6e68165d3467"
+    sha256 arm64_sonoma:  "507d64103eaa17b9b593406d7727a8f94919e7b14a06ed35d9f6c85a8138b47e"
+    sha256 arm64_ventura: "c59bbbd54eab62c73c3f51c15022fbd5c68b35bb8f917030ed8006cb990486d3"
+    sha256 sonoma:        "3045ec9a5ff38c4cabefdac8aa0696b311765d09649d47fae57951c8915b9afe"
+    sha256 ventura:       "989c1e6af26b0106dce329c440299b58676f7bccd200ed218be8aa65256281f9"
+    sha256 x86_64_linux:  "17fc5f7fc5234146da65cbb6a18ba1643bdd009ed76822c7cb2efb3837a05631"
   end
 
   depends_on "texinfo" => :build

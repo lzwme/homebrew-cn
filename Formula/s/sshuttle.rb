@@ -3,14 +3,13 @@ class Sshuttle < Formula
 
   desc "Proxy server that works as a poor man's VPN"
   homepage "https:github.comsshuttlesshuttle"
-  url "https:files.pythonhosted.orgpackages946ef9a1fb50cd034cac1ee4efd017a9873301f75103271205a8f1c411a9fb1esshuttle-1.1.2.tar.gz"
-  sha256 "f1f82bc59c45745df7543f38b0fa0f1a6a34d8a9e17dd8d9e5e259f069c763d6"
+  url "https:files.pythonhosted.orgpackages7ca21c5ba56ab6ee872f04abb3b1dfe72c7dd6486d2b5a1c1c2f0e1f4a21ba2bsshuttle-1.2.0.tar.gz"
+  sha256 "d887f9873f4e4358f9d51bd85496dd766ae0461f04130d6bed4276f77a1810fa"
   license "LGPL-2.1-or-later"
   head "https:github.comsshuttlesshuttle.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "65afba150043765a0b7d5e5418fd31c0830db77e71694d9ca7968617cdecab96"
+    sha256 cellar: :any_skip_relocation, all: "62faa7e26ce24e362d5966a8857f238e80352e0537231818cfecbdc58b2beda3"
   end
 
   depends_on "python@3.13"

@@ -1,13 +1,12 @@
 class Topgit < Formula
   desc "Git patch queue manager"
   homepage "https:github.commackyletopgit"
-  url "https:github.commackyletopgitarchiverefstagstopgit-0.19.13.tar.gz"
-  sha256 "eaab17c64c95e70acfcc9d4061e7cc4143eb5f6dbe7bc23a5091cb45885a682c"
+  url "https:github.commackyletopgitarchiverefstagstopgit-0.19.14.tar.gz"
+  sha256 "0556485ca8ddf0cf863de4da36b11351545aca74fbf71581ffe9f5a5ce0718cb"
   license "GPL-2.0-only"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "fe4b9aa22aa1c75a5718b0db398e1351457108d92b5414176e46cadca8a1aa47"
+    sha256 cellar: :any_skip_relocation, all: "00f58e04cdec33f5f8b5a141443aeba8fd6ceb94bc43b834954dbd40eda37e73"
   end
 
   def install

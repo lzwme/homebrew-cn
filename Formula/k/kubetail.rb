@@ -1,8 +1,8 @@
 class Kubetail < Formula
   desc "Logging tool for Kubernetes with a real-time web dashboard"
   homepage "https:www.kubetail.com"
-  url "https:github.comkubetail-orgkubetailarchiverefstagscliv0.1.1.tar.gz"
-  sha256 "d318779a3aa5850a7c605e264fc7602543191b2decea9e7250b36729bc0ef9d5"
+  url "https:github.comkubetail-orgkubetailarchiverefstagscliv0.1.2.tar.gz"
+  sha256 "cd9c421eb43bb47d0510cbe2950d7cc6fd8783ba11f0a994d942a880f2ff3d40"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Kubetail < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2d90c4cd777200f91670e2eca94bd8d4c57d87d8af9095f14b387766834527f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c45d76bdb75cbfc0345bf1d5764ce5204b38b7bf210c83d43c9cebd0373a9a46"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "322075469064d6a21e30429914cc11a57a1e2efb94984f12b02808bfdb39e45a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9133ef47c3bfcbec4d9de05e4933651f8f3c384960938e5ce71fd0f493472ad9"
-    sha256 cellar: :any_skip_relocation, ventura:       "4ce15c57452b2d4ca7d6f27b0a5d36599ee2b64b6d90b0e9e14858e9a0b06a18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4df9fff8ec4eeb025de1da5d3a44a6bf722bb6e70e18692db25c4f16f3e804b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9b7a50076da0aa9c62a57dfba0104f6945c8d50da0621e28a818f7841492344"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "63a8670fbffbf63b7b153f58433916b6aa915d292337adbdf4e6b0cd702c0711"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "aad2eed728b572b381c507f75558ebc0f78d6f6ab9e7fb74ca4bb27684a16417"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5a27e51703a706e70c177b1f98278ef06904518d641a145158683f2f280d2183"
+    sha256 cellar: :any_skip_relocation, ventura:       "dbed94e9eb3a0f0ea8207a3778778689559710344fc96450f04fd86f651065ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7533d06466d66ca85174bdd6bac2637a268be78539e25c4bf07922d946970936"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class SlsaVerifier < Formula
   desc "Verify provenance from SLSA compliant builders"
   homepage "https:github.comslsa-frameworkslsa-verifier"
-  url "https:github.comslsa-frameworkslsa-verifierarchiverefstagsv2.6.0.tar.gz"
-  sha256 "5f8087e6eda61482e928ce209e550d345ee6ce7667dada42cd83a0437065b82e"
+  url "https:github.comslsa-frameworkslsa-verifierarchiverefstagsv2.7.0.tar.gz"
+  sha256 "156190a6c96ef20747a88d28b69ee7fe60dc4d0fce3f9037da86778dcfdd2af8"
   license "Apache-2.0"
   head "https:github.comslsa-frameworkslsa-verifier.git", branch: "main"
 
@@ -15,14 +15,12 @@ class SlsaVerifier < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "df827e49081b703823cbbccb01252d3445101ae7390a4878ad1ea47c212fdcce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ce4b7dda9cf008548c59673522d450c473d1feb47f124a3fb0f076c31b4cc588"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b7e1a021819162cd3cbe24766bc896052bf3152962e225f8281ef13bdb03c2f3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5de731335d288f870a0bc7234a1863ff0289548d269e8763bc554ff0ea5ff013"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6033c9e1b3ca86c150fff5624cd4daa46ae6af4405438a79ba91747310d528be"
-    sha256 cellar: :any_skip_relocation, ventura:        "fd0043c341b5ec63d1c055702fe1ed11b772dd81122f5121695475717e178e27"
-    sha256 cellar: :any_skip_relocation, monterey:       "94906edb8bb402a2dc60dd946a2c8392caf260746c2482f3e442137871a47c18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7ee0e2b74abf16b0a9455f360537208064f5e6824c07736cfec07de82d84447"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2aa2a807e3b7f681fe3a2202b0dbf80310dd26ec55275698354094db272d970b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2aa2a807e3b7f681fe3a2202b0dbf80310dd26ec55275698354094db272d970b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2aa2a807e3b7f681fe3a2202b0dbf80310dd26ec55275698354094db272d970b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "106517b350402f5df5b7593cc10b501f878e1f244dd34a3db73f019846592e49"
+    sha256 cellar: :any_skip_relocation, ventura:       "07fb4459305a82d44c6c128b1255f5a0a996d241f9c07432fd76f6e6ee4c74df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8794fbe8d5196f2e41227ec58833f905557f107199a2735f0ff6b4df7938dcb8"
   end
 
   depends_on "go" => :build

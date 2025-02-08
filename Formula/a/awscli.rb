@@ -3,18 +3,18 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https:aws.amazon.comcli"
-  url "https:github.comawsaws-cliarchiverefstags2.23.15.tar.gz"
-  sha256 "e091b3a704b48d360044158ecaa1754e3b432a946d6f1dd25b9e47a317248d31"
+  url "https:github.comawsaws-cliarchiverefstags2.24.0.tar.gz"
+  sha256 "27124c07f2b66bd077004784df5effe14f6cd1dc34deb9e02e4224b07b152957"
   license "Apache-2.0"
   head "https:github.comawsaws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cfdbe45085673e0223a0f0ec54a6248ee8438c3cdb5cff92d79a21770d6a0641"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e9f17de1f42721bb3e21bfe6fb4d9d346ea0436a19af2fcdf75dd1ef6e8732b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "62a206575f9963f24c95bedf4f2398cf706a71eef9e113bb5687ec5a9c35a053"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bd7b980204b92e169c2fdeb5a51f88bffbc785a83b1f53faeff95de166e969c2"
-    sha256 cellar: :any_skip_relocation, ventura:       "75907b8074db004d82d60851fd26ba187ba22eb145f6a208ee54e500ecb5d7d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c8f8c9e99f4866193e14b08574ef6c934df51d1d92372e7512611cf057fb8fe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0b4862774839450d5f3455e435d88a552691418dcc0a1ac8bcb46e33cd31343"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "581ef96ddc6481396de416f28c46f610be42c857bbd5d1e300ab4adfd713f60c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d21c2735ba284d06348ea154db8d0d8ac43f5c4da937ecbe20021247ae6c252a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2c12dfd56976f3e5d48215efe4ae197a7abbe114efc43bf9829a67de10927cff"
+    sha256 cellar: :any_skip_relocation, ventura:       "e2b4aaba6a98ba41876165d668c941d479ed972c239f0b490437dd627ea61fd6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb5aa053f407118d75e8d692a1aaf5a6261e4f4bf51e936ff4c576d738c5426f"
   end
 
   depends_on "cmake" => :build

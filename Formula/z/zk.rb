@@ -7,6 +7,11 @@ class Zk < Formula
   revision 2
   head "https:github.comzk-orgzk.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia: "10efe9c92516aeb1acd357235201f53a4c7e51ebb61a55f0a099ce8c2d5ed0e4"

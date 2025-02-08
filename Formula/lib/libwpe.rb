@@ -1,8 +1,8 @@
 class Libwpe < Formula
   desc "General-purpose library for WPE WebKit"
   homepage "https:wpewebkit.org"
-  url "https:github.comWebPlatformForEmbeddedlibwpereleasesdownload1.16.1libwpe-1.16.1.tar.xz"
-  sha256 "9cca60f2c4393ea0de53c675ebc3cdbe9c5aa249259dd1d6d81a49b052d37481"
+  url "https:github.comWebPlatformForEmbeddedlibwpereleasesdownload1.16.2libwpe-1.16.2.tar.xz"
+  sha256 "960bdd11c3f2cf5bd91569603ed6d2aa42fd4000ed7cac930a804eac367888d7"
   license "BSD-2-Clause"
   head "https:github.comWebPlatformForEmbeddedlibwpe.git", branch: "master"
 
@@ -12,7 +12,7 @@ class Libwpe < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "e01b8a42552149efe9906c1b281ae2ed01a4a2aab6f5017c7a0357f9b7251d58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a306319524cd2e8d329c387f4f62bf4bc8511c5dd6f58527911c6560f2109ce4"
   end
 
   depends_on "meson" => :build

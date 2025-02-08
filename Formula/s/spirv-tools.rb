@@ -1,8 +1,8 @@
 class SpirvTools < Formula
   desc "API and commands for processing SPIR-V modules"
   homepage "https:github.comKhronosGroupSPIRV-Tools"
-  url "https:github.comKhronosGroupSPIRV-Toolsarchiverefstagsvulkan-sdk-1.4.304.0.tar.gz"
-  sha256 "ad6e8922538c498e7131bcd82a8d6d9f9863b8d7431c5bfa27dd98e26435be07"
+  url "https:github.comKhronosGroupSPIRV-Toolsarchiverefstagsvulkan-sdk-1.4.304.1.tar.gz"
+  sha256 "9fe736980d424c04f1303ae71b94b18bcc6046ae348909c393344a45e1bd7ff8"
   license "Apache-2.0"
   version_scheme 1
   head "https:github.comKhronosGroupSPIRV-Tools.git", branch: "main"
@@ -13,12 +13,12 @@ class SpirvTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "36d7465828c3835c3ab957726a85b1f79e7e876d26fac5a66032e4c3cc6697ad"
-    sha256 cellar: :any,                 arm64_sonoma:  "c9804b1806f7c0b5a09f7d62f462429ee09d5b1219bf2da56d6ae7c26b438252"
-    sha256 cellar: :any,                 arm64_ventura: "a817b536d023e78af94f9a82f72e9f1ec41dcccda23f620cc720446181a2fe10"
-    sha256 cellar: :any,                 sonoma:        "46409fde53dd1dc9a6905c38f10fe99d02ef0fe4f549accc293811a1ce90a519"
-    sha256 cellar: :any,                 ventura:       "5c2c4f586b3b13dbbc56d194e8cd62790306d78ac943cde34e80d4d301716160"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efff53f539568f70854f458fa5578d211322e987d8fcb5a04741ab3abbf2909d"
+    sha256 cellar: :any,                 arm64_sequoia: "dd48bd3884089475e5d4a0788671bae84237472c2d8f4b1e137ee9659dd0d930"
+    sha256 cellar: :any,                 arm64_sonoma:  "3e13659fecef14440ccc1333ee42caae026c64f92bae95733abfa321471ca866"
+    sha256 cellar: :any,                 arm64_ventura: "0c966b165a0aea28bad766d2108f9d0d5eec2687fe969e5806bb3c7cc76b5e39"
+    sha256 cellar: :any,                 sonoma:        "d0da8f7c3b37a8c53f38666d57902a471e51179a7f41f793be54fc2aabedd109"
+    sha256 cellar: :any,                 ventura:       "8a8592b088000444d10b87a0856cbcc7d84b0e4f860549970d44fa918a2caa06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7723fcdc6b02dbe8bea57e040ae3c899366f11b47ad96921a8a5e1c792fd392"
   end
 
   depends_on "cmake" => :build

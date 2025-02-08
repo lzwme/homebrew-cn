@@ -2,9 +2,9 @@ class MariadbConnectorC < Formula
   desc "MariaDB database connector for C applications"
   homepage "https:mariadb.orgdownload?tab=connector&prod=connector-c"
   # TODO: Remove backward compatibility library symlinks on breaking version bump
-  url "https:archive.mariadb.orgconnector-c-3.4.3mariadb-connector-c-3.4.3-src.tar.gz"
-  mirror "https:fossies.orglinuxmiscmariadb-connector-c-3.4.3-src.tar.gz"
-  sha256 "a9033833a88ca74789bd6db565965382c982d06aae1c086097fa9c3e7c7d1eaf"
+  url "https:archive.mariadb.orgconnector-c-3.4.4mariadb-connector-c-3.4.4-src.tar.gz"
+  mirror "https:fossies.orglinuxmiscmariadb-connector-c-3.4.4-src.tar.gz"
+  sha256 "58876fad1c2d33979d78bbfa61d7a3476e8faa2cd0af0f7f8bfeb06deaa1034e"
   license "LGPL-2.1-or-later"
   head "https:github.commariadb-corporationmariadb-connector-c.git", branch: "3.4"
 
@@ -24,12 +24,12 @@ class MariadbConnectorC < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "462f8b1b844ffd11a6848b3db96c9a91eb6d70b0293055375e83f29a2ae58c28"
-    sha256 arm64_sonoma:  "cc5818a3b76aad42d8c8bb2353b1defc925f8fbf77aa9ca8da2fa4481a3b64f7"
-    sha256 arm64_ventura: "c14286f2fad6a45db22b155b50311151628ab0c4626bf29222d3c8827dd72fca"
-    sha256 sonoma:        "3b308c690e20b19c4bed0ffccfb4f5c9b75970ed631e445a664ab146bf7ac86b"
-    sha256 ventura:       "9dd3822cccaefd5770675bf267f65ff6791b2869259bc98ad25f7633d55045af"
-    sha256 x86_64_linux:  "9aa82a00506a9aad0a0bae6054d2eef6ec377eacfb8b0ff6f3416e66a6dac277"
+    sha256 arm64_sequoia: "a2ac7c1cec93be4f68508b4a1f8859c23e07e8bf44053027826d902e4d8bf6ed"
+    sha256 arm64_sonoma:  "0dda6d594349a40127af8a5b10847dc50eebb0f4978a61ae141ca1f4b2104100"
+    sha256 arm64_ventura: "f7255cdf8e6dec5e2b430d95624a25b8b95bc4d0c522bc82257b02c708e2880a"
+    sha256 sonoma:        "636191115f0cc0829927d13553c7bf4dc0f1eae5f71e0c807fdb5aa74e426383"
+    sha256 ventura:       "b2a6bda80bca6974d6a2687d402ff05084ea8401aef6c48b80fe3bed2ecb9b5a"
+    sha256 x86_64_linux:  "5002625fb3830229f79aa43f8b72123a98c61c7f5582478f6b54e221f159468a"
   end
 
   keg_only "it conflicts with mariadb"

@@ -126,6 +126,9 @@ class Mariadb < Formula
 
     bin.install_symlink prefix"support-filesmysql.server"
 
+    # Fix user variable used by su_kill - Credit: https:stackoverflow.comquestions59936589
+    inreplace "#{prefix}support-filesmysql.server", ^user='mysql', "user=$(whoami)"
+
     # Move sourced non-executable out of bin into libexec
     libexec.install "#{bin}wsrep_sst_common"
     # Fix up references to wsrep_sst_common

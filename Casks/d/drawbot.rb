@@ -1,6 +1,6 @@
 cask "drawbot" do
-  version "3.130"
-  sha256 "9cb6bd3cb0061ad6e3e2cc3b78e58fddaa4d5a00dc6c3ab7a3fa08cb1ebebe97"
+  version "3.131"
+  sha256 "da03cd73d2c7ea221977fddd0b77856d0076f4d3833fdd0580823cc76dcaa0dc"
 
   url "https:github.comtypemytypedrawbotreleasesdownload#{version}DrawBot.dmg",
       verified: "github.comtypemytypedrawbot"
@@ -15,8 +15,4 @@ cask "drawbot" do
     "~LibraryPreferencescom.drawbot.plist",
     "~LibrarySaved Application Statecom.drawbot.savedState",
   ]
-
-  caveats do
-    requires_rosetta
-  end
 end

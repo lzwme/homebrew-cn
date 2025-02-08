@@ -6,6 +6,11 @@ class Nickel < Formula
   license "MIT"
   head "https:github.comtweagnickel.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(^v?((?!9\.9\.9)\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b3018dddbf9ee4325c87dcd80c63d235ebd926b510a9ba00b87f21687e9b642"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c948c81c8fd52ece904ec2d0bcae6eaeb76a65cb9213e29f3dfa30981a75006c"

@@ -1,18 +1,18 @@
 class Pioneer < Formula
   desc "Game of lonely space adventure"
   homepage "https:pioneerspacesim.net"
-  url "https:github.compioneerspacesimpioneerarchiverefstags20240710.tar.gz"
-  sha256 "65549552df84edaecf0c2547d01dec137282c9fe20a1299f9494b739c90ef7ed"
+  url "https:github.compioneerspacesimpioneerarchiverefstags20250203.tar.gz"
+  sha256 "5b2814ad63b9b7f995fd6a1b913f97d00b450663d07cfbae59c88cccb97d5604"
   license "GPL-3.0-only"
   head "https:github.compioneerspacesimpioneer.git", branch: "master"
 
   bottle do
-    sha256                               arm64_sequoia: "47094faa61901883b86867f338971f2ae6f1ddd27de5cce9b9386f47561db222"
-    sha256                               arm64_sonoma:  "2b2d1798ef9cacac6aae436bc1ebb9e99fb0ce64d5bab9a117c67b9abc329a69"
-    sha256                               arm64_ventura: "35c406419857a82e18cede4a8820d226b0f0a83e7013a2b388529a48338fba3a"
-    sha256                               sonoma:        "cbf97b200ffbea940d4fb5e6c6d7845b8f0c2830642a5ed60231075fbd157e10"
-    sha256                               ventura:       "1c238e95d5c2ddc4477d0844cc4b21b2bbf871e274d0c88ad0b50b07f916c971"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9b9014de6fef65eece99be722a6fdcc5636c2f26bee124fd42263ff0dc8c649"
+    sha256                               arm64_sequoia: "ec66807324da4c6f218071ce72ce492982e7c227a0c0e1911ad1a545549ac537"
+    sha256                               arm64_sonoma:  "cfd35a8fa9e1f5002fdf1744c6a63ff00e9697fdf6a8b4ce44e2a0d99bdf8b80"
+    sha256                               arm64_ventura: "ef19b8336cd0a91224b95f59d197483feb1f5b1aed366505b507c3b883de733b"
+    sha256                               sonoma:        "7638fd5bf5629ea22a841cad157019fa6881b22887ce35c63a7210fc0118a99e"
+    sha256                               ventura:       "0d454aa25ff8daf19ed076b08fe60c17a369c8d02ef6df5fbcf43cd6667e6229"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a5608bea6d7026c0d36797cdf8fcb73b4679e319300dbc2feb75ffed6f641b6"
   end
 
   depends_on "cmake" => :build

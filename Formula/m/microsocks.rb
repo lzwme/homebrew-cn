@@ -1,20 +1,18 @@
 class Microsocks < Formula
   desc "Tiny, portable SOCKS5 server with very moderate resource usage"
   homepage "https:github.comrofl0rmicrosocks"
-  url "https:github.comrofl0rmicrosocksarchiverefstagsv1.0.4.tar.gz"
-  sha256 "130127a87f55870f18fbe47a64d9b9533020e2900802d36a0f6fd2b074313deb"
+  url "https:github.comrofl0rmicrosocksarchiverefstagsv1.0.5.tar.gz"
+  sha256 "939d1851a18a4c03f3cc5c92ff7a50eaf045da7814764b4cb9e26921db15abc8"
   license "MIT"
   head "https:github.comrofl0rmicrosocks.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "07631a110ef56b6c8c3e4a6b8c85d164887354193b9e58e3b64be7f0e5cc3a26"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9f810e991f89efe41251e4b279c3acc7ad9162b277626ef583da651a3efa2415"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d93dbf5c70af611d6a8cd913fe2d10c45a8b71d0a77c91eb5a2e4fc960caebb5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0c52e86caf306cdc0a23441f96c38559b69c0f8b1e1104990a3f87051d860f6e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6cdb6bbb1ebca5b3e12df5df334ca8ce23cc272bfb81afc1ecfe69bcbbf84041"
-    sha256 cellar: :any_skip_relocation, ventura:        "4132e8ff871b994ccffc35fd5c2534af6793bbe4cc2b6a2163a9df54bd75a0da"
-    sha256 cellar: :any_skip_relocation, monterey:       "690acb24c9ec24c0c646ba60e5ae95164735240d48e473e33ae3ef1ca38d6ade"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "379340265a1a559df23609b12a525d32d1d71dad8722c1f03c6cc9223390adef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ca7d350608642d885c328e674d2e344f0d133845aae976f426fa4796db88fa9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "28592464e90d74dc434146ad23e1a2d8ba86f12ed45e0ebdf65e31b1deda204a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9db6e466fd62a65dec737bb317de8a2651abff75e6e15c3df07eb3380df5e6c8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fd1e474defa7ff10d8effbaae96178ab7698e53c8ab365895b46f19e9aa450d1"
+    sha256 cellar: :any_skip_relocation, ventura:       "c2daa6286809fc95087de6650afd34d977c0f717fc5b2fca4abce58ecebf9e80"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da9b7567d172d896cbf1b8040de3801a26c25608259428a3d7b1a12b0bae6a4e"
   end
 
   def install

@@ -1,17 +1,17 @@
 class Squiid < Formula
   desc "Do advanced algebraic and RPN calculations"
   homepage "https://imaginaryinfinity.net/projects/squiid/"
-  url "https://gitlab.com/ImaginaryInfinity/squiid-calculator/squiid/-/archive/1.2.1/squiid-1.2.1.tar.gz"
-  sha256 "36dd7cc418ad3366d47865ffa2fab63189f3115bdc3b693a10ac37b5101a03c7"
+  url "https://gitlab.com/ImaginaryInfinity/squiid-calculator/squiid/-/archive/1.2.2/squiid-1.2.2.tar.gz"
+  sha256 "75b2ac5526878aa49aa97c63f7041796768fcfc3a7c63e3692fa65648ea5ebfc"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d75e5b1cf12807b0d6eddbe4a80f03adc03e0bd1ba58a1a746f3cdffd88e7576"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03ab55be031ea0dd115b28d5696468b458b989680995c51a78fb57311bd51f0f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a5b00187760880272bff7e30ab10a8a813baff3a0cd9a50b482be0d7bcc1ec3b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d24608b3d73e5ddb2cbdfa6af660a2d6e21b3ee2766af37404855081712225d3"
-    sha256 cellar: :any_skip_relocation, ventura:       "c453840820bc658a883cbc8f77abe60c6cdb014c62e8f1855f60797b3b52698b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2603c2c5e666331d6b7c870069b14531423486b91059478f6841c8841cf65b75"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4980cdb46fcc13a66bfebd3bb71b629872ac9b7017a04f643034cfa4140918ae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "af984d37f42aff9d81eec6bc4fa03261c4eff91dc0414696796c79ce8230e74d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8258de8e85577ce62b5fd983e76a17be11b648f96ef1e4c4c395fe95c5cee972"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8e11ef4bde72599945c4ed5b969e78d7cec2fde57342b5cd9c9c52e8fba9d419"
+    sha256 cellar: :any_skip_relocation, ventura:       "cb1dda1359f08c4c26f20a9a6a8413610a8c4e95ca4f7b0754636358ff41813c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1b8f6f2d75f0b92ca66d8e1e2382dfce20e43155f4237a87fa244edce89bdc2"
   end
 
   depends_on "rust" => :build

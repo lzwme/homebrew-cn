@@ -1,8 +1,8 @@
 class SpirvCross < Formula
   desc "Performing reflection and disassembling SPIR-V"
   homepage "https:github.comKhronosGroupSPIRV-Cross"
-  url "https:github.comKhronosGroupSPIRV-Crossarchiverefstagsvulkan-sdk-1.4.304.0.tar.gz"
-  sha256 "635b9b9ed2318df5ac65a0e1db1f92deb1e9c29e9dac30cd4b14eb3d72be5cf3"
+  url "https:github.comKhronosGroupSPIRV-Crossarchiverefstagsvulkan-sdk-1.4.304.1.tar.gz"
+  sha256 "bd3614abfc83a52760e667536c945b6e136ab013efca72918f222403da081cab"
   license all_of: [
     "Apache-2.0",
     "MIT",
@@ -18,12 +18,12 @@ class SpirvCross < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51864fcd01c93473a67a9961c017a24d512767faeb0ac07a104e4ed74719fd65"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b5a2ed17a2898666ee7f94d66a1572e2aaf9aa93e8519d1defecf5daea91531"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4b010469dbae8fdaf1d86cda20ea8e8ff311fed3e0dbb541bccc6c1b34a7fc4a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "15e2625904616441388ae1f121f58a7fa959c0fe2a2d9ebcd9488f43b61cc057"
-    sha256 cellar: :any_skip_relocation, ventura:       "e4d19e513b8a1f8a4a5f79a2cd4d005fae8d5a0cf3bce111602478c093215622"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04533a135db4e5d4df029621d305a14058576727c218ae6c09f1c34a04c58603"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c09e921570c21f9d34ff782c2a5c203958897a0963363e7b58ad2195d5888c2d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "24683268ca72de5814e9a122db22058f137967a7c4bf78c315e02dc4441b750f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4d0e14a534aabe9618e4faef2a44e936da5a594a65c7578d438378f5cb01cfc2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1a44ef9edc6b634db26328b94ca92edb715cdc365b463fdff01deea15d8d656d"
+    sha256 cellar: :any_skip_relocation, ventura:       "befb13c3a6ba0da979f3b9b4cb931096f7c16f9356d32e7ffa3aa5f495b065ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90d7a7aba16b32ce6f15e4123dcee81df72659f0aedd83b8151f599d8dc40c71"
   end
 
   depends_on "cmake" => :build
