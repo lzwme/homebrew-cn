@@ -242,7 +242,7 @@ class Buku < Formula
     end
 
     begin
-      sleep 10
+      sleep 15
       result = shell_output("curl -s 127.0.0.1:#{port}apibookmarks")
       assert_match "https:github.comHomebrewbrew", result
       assert_match "The missing package manager for macOS", result

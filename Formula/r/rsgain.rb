@@ -1,18 +1,18 @@
 class Rsgain < Formula
   desc "ReplayGain 2.0 tagging utility"
   homepage "https:github.comcomplexlogicrsgain"
-  url "https:github.comcomplexlogicrsgainarchiverefstagsv3.5.3.tar.gz"
-  sha256 "4288ecec00b0d907af86779b38874a2c4dcd67005f1b7fe09f6767ac5dc8e7a6"
+  url "https:github.comcomplexlogicrsgainarchiverefstagsv3.6.tar.gz"
+  sha256 "26f7acd1ba0851929dc756c93b3b1a6d66d7f2f36b31f744c8181f14d7b5c8a7"
   license "BSD-2-Clause"
   head "https:github.comcomplexlogicrsgain.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia: "48be2533df68f7c851ac7905559c1f09527ce68e5f65a552067ac89a0b9e05d4"
-    sha256 arm64_sonoma:  "c5d3fe5be1435575ae0553603dd39ac09f7afed3652423a46a0868c6e0b400d2"
-    sha256 arm64_ventura: "f008912d20a4b46fd6a7d6c2ce3929dcaa2b7714028155dc406c29ff419349dd"
-    sha256 sonoma:        "35c150b328dc2e788571be13e7d34db540d5232a0b61d982e0bb9035e48edf69"
-    sha256 ventura:       "7f2f5e87c52c300e4cf71c7c344a5e64f45371565e2962a7686df0e957d69892"
-    sha256 x86_64_linux:  "721602dddd2dd81d03b44be4655afb5def42600323571e0ab316a8b207fbc141"
+    sha256 arm64_sequoia: "b2433f35b7da266a70a375f995f1a2652856027b3abe1358dc8c0717acabf4e8"
+    sha256 arm64_sonoma:  "22a1683c97acbea8180d40997712b2e8d2ebdef076f0ce07646ff353aa8f95a4"
+    sha256 arm64_ventura: "0c8d037388a23c8fa67502e653531c64168cfadd7664a4222441dba05cf7a1b3"
+    sha256 sonoma:        "0fbc514f29561beba99c42a9b9bba3e8a0e6d26b551308537807cbb264ac602d"
+    sha256 ventura:       "91448967db7a47ddc8677884fa30517deec419b627d595ae9704f301c1447238"
+    sha256 x86_64_linux:  "ff39e7ba90604a02efdb5352c656c67ec5d0b1a3b8cc9871e4a06bad090dcd14"
   end
 
   depends_on "cmake" => :build

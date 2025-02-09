@@ -3,18 +3,18 @@ class RobotFramework < Formula
 
   desc "Open source test framework for acceptance testing"
   homepage "https:robotframework.org"
-  url "https:files.pythonhosted.orgpackages0477bdd9474f19fad4c285971169342924dae415fb4a5e49a488636acdbec08drobotframework-7.2.tar.gz"
-  sha256 "9fc77d40283c26690bbc1563fb7fcadac789afe8695d332ced3fa4696df39eb9"
+  url "https:files.pythonhosted.orgpackages0155e6decd3155929c1ae0156df0219c991377b6e1c19b7c4a2ef88560069724robotframework-7.2.2.tar.gz"
+  sha256 "9c420f6d35e9c8cd4b75b77cc78e36407604534ec4ab0cbddf699d7c0b2fc435"
   license "Apache-2.0"
   head "https:github.comrobotframeworkrobotframework.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "18a580b130790fc3c9d309b1783048c6af034dee53b963c59fb7580d5730e3a8"
-    sha256 cellar: :any,                 arm64_sonoma:  "bddcd5dc1d02113c8016f86b51f6c02ce5eead2d3d57804cc6ee07a53986f92b"
-    sha256 cellar: :any,                 arm64_ventura: "acfa81f727ee4e02dbc9d7181db67b5ce321be24f66fb46a59ce0774f5c9987c"
-    sha256 cellar: :any,                 sonoma:        "8a7518499de52b1e69b8f6dd56b066f2c44feffc295ca076c214e161187afafd"
-    sha256 cellar: :any,                 ventura:       "be6b4f2829b9a91fd0862407c9cb247cff0303b54edd5b713db0b811c7d64b70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77bf774729634e74c050e53c0df7147f75291ff87b95b7377eca3495ab259d28"
+    sha256 cellar: :any,                 arm64_sequoia: "3558e5aaabafce0cae2f67c9acb79c016c383f8feb42a5e48939f20e3e970f96"
+    sha256 cellar: :any,                 arm64_sonoma:  "5c45c44f12732699e6305d4210545dac2871f08db082459333aa9894ca09e51f"
+    sha256 cellar: :any,                 arm64_ventura: "c3f4ac2aa46986aaae2d1d31691a3d345cff5680223fc787495c8600f1d4451c"
+    sha256 cellar: :any,                 sonoma:        "b2e65446ff92261be1a0568c8e5aa2e3a9274a8ae5a90b3dd793abfd67300ee5"
+    sha256 cellar: :any,                 ventura:       "2a29e73d22fbdeb146dadca4b0a15673febbc99ae5242bb2523f44cd208ab514"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e22eb6fe4c7fba6c267182ae133fcfee19bf51350f8c543b79baffa0b29f2ba"
   end
 
   depends_on "rust" => :build # for bcrypt
@@ -26,8 +26,8 @@ class RobotFramework < Formula
   uses_from_macos "zlib"
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackages48c86260f8ccc11f0917360fc0da435c5c9c7504e3db174d5a12a1494887b045attrs-24.3.0.tar.gz"
-    sha256 "8f5c07333d543103541ba7be0e2ce16eeee8130cb0b3f9238ab904ce1e85baff"
+    url "https:files.pythonhosted.orgpackages497cfdf464bcc51d23881d110abd74b512a42b3d5d376a55a831b44c603ae17fattrs-25.1.0.tar.gz"
+    sha256 "1c97078a80c814273a76b2a298a932eb681c87415c11dee0a6921de7f1b02c3e"
   end
 
   resource "bcrypt" do
@@ -56,8 +56,8 @@ class RobotFramework < Formula
   end
 
   resource "paramiko" do
-    url "https:files.pythonhosted.orgpackages1b0fc00296e36ff7485935b83d466c4f2cf5934b84b0ad14e81796e1d9d3609bparamiko-3.5.0.tar.gz"
-    sha256 "ad11e540da4f55cedda52931f1a3f812a8238a7af7f62a60de538cd80bb28124"
+    url "https:files.pythonhosted.orgpackages7d15ad6ce226e8138315f2451c2aeea985bf35ee910afb477bae7477dc3a8f3bparamiko-3.5.1.tar.gz"
+    sha256 "b2c665bc45b2b215bd7d7f039901b14b067da00f3a11e6640995fd58f2664822"
   end
 
   resource "pynacl" do
@@ -101,8 +101,12 @@ class RobotFramework < Formula
   end
 
   resource "selenium" do
-    url "https:files.pythonhosted.orgpackages448c62c47c91072aa03af1c3b7d7f1c59b987db41c9fec0f158fb03a0da51aa6selenium-4.27.1.tar.gz"
-    sha256 "5296c425a75ff1b44d0d5199042b36a6d1ef76c04fb775b97b40be739a9caae2"
+    url "https:files.pythonhosted.orgpackages8838d62d4e8da649ad699b02eb1e95c3cfc20ff400744b9417b9093c5daebd4bselenium-4.28.1.tar.gz"
+    sha256 "0072d08670d7ec32db901bd0107695a330cecac9f196e3afb3fa8163026e022a"
+
+    # Backport fix to build from source distribution
+    # Ref: https:github.comSeleniumHQseleniumcommit9cb1db9392fec6c9b4c617763ed2ee76ed989c5e
+    patch :DATA
   end
 
   resource "sniffio" do
@@ -150,14 +154,14 @@ class RobotFramework < Formula
   end
 
   test do
-    (testpath"HelloWorld.robot").write <<~EOS
+    (testpath"HelloWorld.robot").write <<~ROBOT
       *** Settings ***
       Library         HelloWorld.py
 
       *** Test Cases ***
       HelloWorld
           Hello World
-    EOS
+    ROBOT
 
     (testpath"HelloWorld.py").write <<~PYTHON
       def hello_world():
@@ -166,3 +170,16 @@ class RobotFramework < Formula
     system bin"robot", testpath"HelloWorld.robot"
   end
 end
+
+__END__
+--- apyproject.toml
++++ bpyproject.toml
+@@ -43,9 +43,6 @@ exclude = ["test*"]
+ namespaces = true
+ # include-package-data is `true` by default in pyproject.toml
+ 
+-[[tool.setuptools-rust.ext-modules]]
+-target = "selenium.webdriver.common.selenium-manager"
+-
+ [[tool.setuptools-rust.bins]]
+ target = "selenium.webdriver.common.selenium-manager"

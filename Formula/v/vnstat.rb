@@ -1,20 +1,18 @@
 class Vnstat < Formula
   desc "Console-based network traffic monitor"
   homepage "https:humdi.netvnstat"
-  url "https:humdi.netvnstatvnstat-2.12.tar.gz"
-  sha256 "b7386b12fc1fc6f47fab31f208b12eda61862e63e229e84e95a6fa80406d2852"
+  url "https:humdi.netvnstatvnstat-2.13.tar.gz"
+  sha256 "c9fe19312d1ec3ddfbc4672aa951cf9e61ca98dc14cad3d3565f7d9803a6b187"
   license "GPL-2.0-only"
   head "https:github.comvergohvnstat.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia:  "70a572931b614b41fb3e5957961a0b42f4f6da7c5804c4cfba78e8008f10ed02"
-    sha256 arm64_sonoma:   "b9f2f91ebb02d0abeac163c0964816202483cde13f53832cbb390e477fa344df"
-    sha256 arm64_ventura:  "ba02bb2d0ae58290104e3ee06cdc915d16007f53c45833081083f52bddb4cf6f"
-    sha256 arm64_monterey: "638b93276b154fc5339c440e98961d986fae27d855a1ad22e764cffa53818735"
-    sha256 sonoma:         "f9e45487f466e1d613f2880d278b47f324e6142b0e73b711add74e9d0f672e07"
-    sha256 ventura:        "2ab99304bb533b71dc0df069bbe8795bd053723d724600e538b5aedb0fb7b625"
-    sha256 monterey:       "46d35cbc5297d77dea91df6a1109fb6313e715a201af6051d327853586feb6a9"
-    sha256 x86_64_linux:   "242acd29230207c57e434823a2246674d0e1efbf7f4f61db859437affacb5857"
+    sha256 arm64_sequoia: "01d7585fcf02e3595ca5c701ae5756ca1b9b4e4ee2ef4fb2e76ea07dea677160"
+    sha256 arm64_sonoma:  "cefa8fe3c1f63ad65685d6e812b79176faab950dd28fa1fbc8955d56ad4f2910"
+    sha256 arm64_ventura: "224ef1e8f2893b154ecd52d8999fb9f3f4ce57f4b565ac7881ac9250d5287505"
+    sha256 sonoma:        "d0bb412ae03b8ddd2b071926ca8cd5b92420c9fa435546a2fa7f0570a2d7c6aa"
+    sha256 ventura:       "d719d32162aa76bdfa057cb4ef089a864bafb31855d4355ba1e8e5e1cf3a9db9"
+    sha256 x86_64_linux:  "cb0052ce9d13c668838ca8dcd339f852ab9508fc41b1359ac712baf7322b29b0"
   end
 
   depends_on "gd"
@@ -71,6 +69,7 @@ class Vnstat < Formula
     begin
       stat = IO.popen("#{bin}vnstatd --nodaemon --config vnstat.conf")
       sleep 1
+      sleep 2 if OS.mac? && Hardware::CPU.intel?
     ensure
       Process.kill "SIGINT", stat.pid
       Process.wait stat.pid

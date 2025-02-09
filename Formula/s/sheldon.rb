@@ -1,29 +1,18 @@
 class Sheldon < Formula
   desc "Fast, configurable, shell plugin manager"
   homepage "https:sheldon.cli.rs"
+  url "https:github.comrossmacarthursheldonarchiverefstags0.8.1.tar.gz"
+  sha256 "fa0aade40a2e2f397f5f8734a0bc28391147ed6ad75c087f8ab7db7ce1e49b88"
   license any_of: ["Apache-2.0", "MIT"]
-  revision 2
   head "https:github.comrossmacarthursheldon.git", branch: "trunk"
 
-  stable do
-    url "https:github.comrossmacarthursheldonarchiverefstags0.8.0.tar.gz"
-    sha256 "71c6c27b30d1555e11d253756a4fce515600221ec6de6c06f9afb3db8122e5b5"
-
-    # libgit2 1.9 patch, upstream pr ref, https:github.comrossmacarthursheldonpull192
-    patch do
-      url "https:github.comrossmacarthursheldoncommit7a195493252ca908b88b5ddd82dd0fe5ce4ab811.patch?full_index=1"
-      sha256 "45432a98ab2e8dbd772e083a826e883ee0a2de3958bda2ea518b31fab91cd9f0"
-    end
-  end
-
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "1850ceffe1ef0fcba2b1aac07221a9269b63a60d1bb51820ba06aed90d92393d"
-    sha256 cellar: :any,                 arm64_sonoma:  "5acd3bd5f1a97a9c2e1cf24864404ddc565ed3fa88a0ff57578a73cc4a9bbb6a"
-    sha256 cellar: :any,                 arm64_ventura: "883964af1f657a480c7acf478eba931dd962d440d078426d90170d14bc16fbab"
-    sha256 cellar: :any,                 sonoma:        "e8059857164d2809f5c4e3ba1c785c20c4e03dd283a52d437a561dc6010d2c26"
-    sha256 cellar: :any,                 ventura:       "0de5177015a9be8bda748768364b17bfbe1f2cb47e6b7d2439fe143e8c493d42"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "135d4a23da11bf70b86fba244b4c2efe4f7bfad83067d282fc8c8718b8ee5647"
+    sha256 cellar: :any,                 arm64_sequoia: "3c88c02b826a8a2fdff6b9bcc20e583f89f6e36231c66a3ca273534b0901a29e"
+    sha256 cellar: :any,                 arm64_sonoma:  "5fd35591c4061b133af6d60a72c9a14cb1fd15905aa02bdaae75afef04629c1f"
+    sha256 cellar: :any,                 arm64_ventura: "0b6b02c0826dd2a73cd001523b14ebae3e62dd3eb0f0df3bf496e2c0f0472784"
+    sha256 cellar: :any,                 sonoma:        "14425f9fa0b53c2fb461f2b0a494c29d03f39eafb1ea810868715ca5e32237ce"
+    sha256 cellar: :any,                 ventura:       "616ba594572cc595a5351ce762788298c3b3683c6a69272791c57f9dec2eca80"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd569988b6307ed86b2da07ccd34c07a8fab3f50a8a0fb596949c32232ca6230"
   end
 
   depends_on "pkgconf" => :build

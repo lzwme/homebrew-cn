@@ -3,18 +3,18 @@ class PythonLspServer < Formula
 
   desc "Python Language Server for the Language Server Protocol"
   homepage "https:github.compython-lsppython-lsp-server"
-  url "https:files.pythonhosted.orgpackages989602fc5f696113aeebeab708abe3fbf29e235e476382d37419e661e71ce1c3python_lsp_server-1.12.1.tar.gz"
-  sha256 "bd90fcabf53066f0a66e4246767e96cd99c13ad16e61b95fd3ab622821ea048c"
+  url "https:files.pythonhosted.orgpackagescc0f3d63c5f37edca529a2a003a30add97dcce67a83a99dd932528f623aa1df9python_lsp_server-1.12.2.tar.gz"
+  sha256 "fea039a36b3132774d0f803671184cf7dde0c688e7b924f23a6359a66094126d"
   license "MIT"
   head "https:github.compython-lsppython-lsp-server.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f487ec41428f78c86cd9583ee26bffbf4ff4ef6f9268984f3d3faf1fd6d4d189"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "820e3223ed697f888e179add09fe6186df0e9c6c7a1028ed86c8f9a7a6010b98"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d157112bc9be43f7666f9a0ddd19a69a033064d808f9a74b97bfc93f192bd2b6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eb3c0b46e488e3e68b563055b519ad1f070991caea135b02c3defb46cef5ce70"
-    sha256 cellar: :any_skip_relocation, ventura:       "0f92606f04133762f1644281711b584e118b46e335bd780c0a58a0509e84018b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe9fd341303f9fbc9c584439448955f526c3e80b573d013991dc94a7b0a91f49"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "09e26824b2fc762a010b20771dd5d0c5e948d77fbac433add17a9be4c2d99a00"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5946bfeb95bcea26c07523e5df3ce8a4efa8b880ce34da7c5c4d70923eb63a79"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d8223f1b63a319f769af3457b8a8e1adcf1217c4c81ea0fc753874558fadaeee"
+    sha256 cellar: :any_skip_relocation, sonoma:        "09958cfb289fbad98f382d57307d690e834168c1938ca6b63e64974178c5baab"
+    sha256 cellar: :any_skip_relocation, ventura:       "4a0fb462a375ea36f7c0286d01f77af6435172beb877c51e467f680092eb1a9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57f4b38c13ab091a898b105768ff448fac040603c1c3492c65261893959f6ceb"
   end
 
   depends_on "rust" => :build

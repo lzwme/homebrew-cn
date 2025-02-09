@@ -17,6 +17,9 @@ class EvilHelix < Formula
 
   depends_on "rust" => :build
 
+  conflicts_with "helix", because: "both install `hx` binaries"
+  conflicts_with "hex", because: "both install `hx` binaries"
+
   def install
     ENV["HELIX_DEFAULT_RUNTIME"] = libexec"runtime"
     system "cargo", "install", "-vv", *std_cargo_args(path: "helix-term")

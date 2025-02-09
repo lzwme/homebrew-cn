@@ -19,6 +19,7 @@ class Hex < Formula
 
   depends_on "rust" => :build
 
+  conflicts_with "evil-helix", because: "both install `hx` binaries"
   conflicts_with "helix", because: "both install `hx` binaries"
 
   def install

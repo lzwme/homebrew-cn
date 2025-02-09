@@ -1,18 +1,18 @@
 class Mergiraf < Formula
   desc "Syntax-aware git merge driver"
   homepage "https://mergiraf.org"
-  url "https://codeberg.org/mergiraf/mergiraf/archive/v0.5.0.tar.gz"
-  sha256 "f12a8465255505179eb6fc1049ecbeea73ba0cf258ee9efdda8f2e74a8ccc903"
+  url "https://codeberg.org/mergiraf/mergiraf/archive/v0.5.1.tar.gz"
+  sha256 "90cff495a1c84bb074b0c0846fe22a32b1765e76de0046e3e444d5a209099086"
   license "GPL-3.0-only"
   head "https://codeberg.org/mergiraf/mergiraf.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "73c018a9782bf1e3493e830c8be05756818e6c8ffdaac63f138628808a15fa89"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ff3ca74f6b60ae74099dd7f4b32e3cee677fc543a8bcdbdc4ecd4233cc31908"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2a34f74609d5e5b67169534994bf641f6918af8d1a7f85cb0a327f22836bc2be"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6caddf264f768f9dc1922fb94c2881f1de6f81792d68a79a1b7c6ce18e850b44"
-    sha256 cellar: :any_skip_relocation, ventura:       "95174c9a399ab9dc9119f3e16ac09db68e1ef7c858c57de2d418205aebe98dc7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a22353f19219c4ede7ce5d827edb1129990f7436a66d25d02f8d7d4505c4b56"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04c65fb4be282a9db4ce965ea9b175a1558cc93fb0aae4ded6e2c620b3bbe32f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5702957495e2148e9a8e7e65b0ba73e1f8b69c85d1111bfbc6482a5c5f07b2f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f9b34a9c3b6d40bbbb1d6cedac36ad6ee8f2c27c545d64bbba4899822eedd6f2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ec622b751feb0c3b8c28c2fecc9daf77ed03f01a8eec9c9a1cc9e332afc4e390"
+    sha256 cellar: :any_skip_relocation, ventura:       "66366528bb8a3c98e5fb82ac049256c1a2fc070c16a1189d70a9571483904972"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3784d170ec7f11c8005071d1ec3a6e0918fdad9af81e88835147c7d46214ffd8"
   end
 
   depends_on "rust" => :build

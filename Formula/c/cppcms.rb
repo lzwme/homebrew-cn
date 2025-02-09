@@ -108,9 +108,9 @@ class Cppcms < Formula
       }
     JSON
     system ENV.cxx, "hello.cpp", "-std=c++11", "-L#{lib}", "-lcppcms", "-o", "hello"
-    pid = fork { exec "./hello", "-c", "config.json" }
+    pid = spawn "./hello", "-c", "config.json"
 
-    sleep 1 # grace time for server start
+    sleep 5 # grace time for server start
     begin
       assert_match "Hello World", shell_output("curl http://127.0.0.1:#{port}/hello")
     ensure

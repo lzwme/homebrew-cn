@@ -3,17 +3,17 @@ class Charmcraft < Formula
 
   desc "Tool to build charms and publish them on Charmhub"
   homepage "https://charmhub.io"
-  url "https://files.pythonhosted.org/packages/4c/3d/20a0273cb18de0bd8946b3e275d7e8bddb352e4990a6046f7133df1fe11b/charmcraft-3.4.1.tar.gz"
-  sha256 "28f639430883ff131e9d88acd9d2d299a82b4cb72772506f0d8ec40d7eaf7e47"
+  url "https://files.pythonhosted.org/packages/53/9e/55d1427225ac81563826f595853b11fe8a4c7efe2ecb84d2a2b47e28248b/charmcraft-3.4.2.tar.gz"
+  sha256 "6b7da36e03db9e7533e5953e571e28904b2c25c7db6022889c2282f99d591aa6"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "109b0183c02bb73cd136fbef0f19ddafde9ed19b0a8a0774699214ef8de4aef4"
-    sha256 cellar: :any,                 arm64_sonoma:  "444369c5d78df9c734820cf2d698f7f7dae0b02ea49203712c1d92582140d2b8"
-    sha256 cellar: :any,                 arm64_ventura: "48423f008156bce8153fa93e0b54aaf17562a7007a2ecfb5c8e9a09ebedfa952"
-    sha256 cellar: :any,                 sonoma:        "e5b339caaac6f0d17ece1e5f8a2a821db41ec7efbc66a6d6c454ec4a5d614bb0"
-    sha256 cellar: :any,                 ventura:       "ec81545216505e69cc674d599fb05479fdd92dd7026c22694cb7af9394659c3d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4ef0b459d51397b3562a9ac2c5ab375d21d745e5921cdd0dabb4fa9a878e194"
+    sha256 cellar: :any,                 arm64_sequoia: "fd497e06e5a4b1f8c5befb2a29c5739d0fd00fd1b1957e5bf4263f504a7de541"
+    sha256 cellar: :any,                 arm64_sonoma:  "601f528d2bc771e12ff78f6ecbf1e7d1585f6c51d7b53e7b9f8f3cb42159e13e"
+    sha256 cellar: :any,                 arm64_ventura: "384aa59207d2fa9c12fe04f302ba52c9f9586e70b9634c0a0faffd24ca34bd10"
+    sha256 cellar: :any,                 sonoma:        "4360f449eae41277728e35fa45f6cf17d3561d919bb7d9665169490c28bd59b0"
+    sha256 cellar: :any,                 ventura:       "68428e65d78e01a81992b8ca2e6989c535b18bce63405b5508dbe1dc0cfda212"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "991b07c2ecbbb598272cd137902e5d5e8306af0cd1d304ffb41bf95e21029fc3"
   end
 
   depends_on "rust" => :build
@@ -75,8 +75,8 @@ class Charmcraft < Formula
   end
 
   resource "craft-parts" do
-    url "https://files.pythonhosted.org/packages/2a/b2/b876f3d9e1fe110d6f09dbf2e25a2751a6fa91a9ddacd131b03b1027a689/craft_parts-2.5.0.tar.gz"
-    sha256 "334faf23d88a34d6bd845b8ef12616fc03f1dbf87f3d313074ff31275fbcb0ad"
+    url "https://files.pythonhosted.org/packages/c1/89/a22b2a4e8ae2328dba5e719d2eb47a244b274368a2690a0f3512d4d6e79b/craft_parts-2.6.0.tar.gz"
+    sha256 "74532696167b741c39d1c0eafd6a6b7e52aef0a76c8cd54b176e43dd5e89e1a0"
   end
 
   resource "craft-platforms" do

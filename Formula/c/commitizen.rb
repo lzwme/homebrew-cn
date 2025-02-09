@@ -3,19 +3,18 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https:commitizen-tools.github.iocommitizen"
-  url "https:files.pythonhosted.orgpackages640b4200355aefa1b2adaa1e20ce53f902c4d4dcb964e9e2257d13cba74cbfe0commitizen-4.1.1.tar.gz"
-  sha256 "a2ce2fa0c7960939f48ea01ae2e6db541904e74ef151b8f9dc35c67dbd9b03ac"
+  url "https:files.pythonhosted.orgpackagesd8a377ffc9aee014cbf46c84c9f156a1ddef2d4c7cfb87d567decf2541464245commitizen-4.2.1.tar.gz"
+  sha256 "5255416f6d6071068159f0b97605777f3e25d00927ff157b7a8d01efeda7b952"
   license "MIT"
   head "https:github.comcommitizen-toolscommitizen.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "65da9c82c1bc6ef726f4b2939cc4e55ab382ca3a1a081361cfccde733f5ec4a2"
-    sha256 cellar: :any,                 arm64_sonoma:  "068435eac8a29f89b21c61a6d39071ec8443cecc239734c4962d66ef8e6ccad6"
-    sha256 cellar: :any,                 arm64_ventura: "b1363778ca8940d6e18a21239ac4f842ff5e8b1015af5e17bc1f65a68ae00d24"
-    sha256 cellar: :any,                 sonoma:        "cd9000903e5d3a32e73028fe0bed6cd1178a8cb8a4ab72fce043f63a53cca22f"
-    sha256 cellar: :any,                 ventura:       "53296543a70a1b80a2a8342aa1c73a921cb6e79d3fd1c782222636da75c54689"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8482791166fa8a9587fecd171711cbb81fbd12cacc2014a805c9321baf8a6bf5"
+    sha256 cellar: :any,                 arm64_sequoia: "e20df41e9f22a232b55bdc398bf353cf260abdf48214cba4ef3dee3bcf87a9f7"
+    sha256 cellar: :any,                 arm64_sonoma:  "89dfffc2be872ffa7f74d5946cd660e528297daa205878f7b7658b56f85d5e72"
+    sha256 cellar: :any,                 arm64_ventura: "f1f80bc193d3a1c873533a642be1fa9824f4eabfd510bbd5006d69aa0ad0bf42"
+    sha256 cellar: :any,                 sonoma:        "8b9efe384ebd15764c2515d9b0230cea233032ef4148ab47c9c78d5d778806fc"
+    sha256 cellar: :any,                 ventura:       "9bd9eb9c78bde3862aad8fd3b7a4fd4f85f7aa2da520dbf20dae893e749cb393"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0021894b8c9c634fad7ea306b23a1293f3c398843d3d4f48ec0d755254ae3701"
   end
 
   depends_on "libyaml"

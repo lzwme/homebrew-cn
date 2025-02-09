@@ -1,8 +1,8 @@
 class Sdl2Mixer < Formula
   desc "Sample multi-channel audio mixer library"
   homepage "https:github.comlibsdl-orgSDL_mixer"
-  url "https:github.comlibsdl-orgSDL_mixerreleasesdownloadrelease-2.8.0SDL2_mixer-2.8.0.tar.gz"
-  sha256 "1cfb34c87b26dbdbc7afd68c4f545c0116ab5f90bbfecc5aebe2a9cb4bb31549"
+  url "https:github.comlibsdl-orgSDL_mixerreleasesdownloadrelease-2.8.1SDL2_mixer-2.8.1.tar.gz"
+  sha256 "cb760211b056bfe44f4a1e180cc7cb201137e4d1572f2002cc1be728efd22660"
   license "Zlib"
 
   # This formula uses a file from a GitHub release, so we check the latest
@@ -14,14 +14,12 @@ class Sdl2Mixer < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "fc52f206f42131895725481a89a6f5ba974a664c80fae801897bafb15e1d4b9e"
-    sha256 cellar: :any,                 arm64_sonoma:   "972081963fe5bc4cf9bc169a233a3e303ad0390077f3c24ad3331e6512316812"
-    sha256 cellar: :any,                 arm64_ventura:  "10782c49221f8f1625bf0d18ad3a66f179cb4b59a7cf8db111976f50db298d66"
-    sha256 cellar: :any,                 arm64_monterey: "0e8a4d1a79d71d8a2c80232e98fffac350c3c37f8fe06838551522761d776082"
-    sha256 cellar: :any,                 sonoma:         "b3d4c4483c863040ddf5b7168d10cb62932ed46343e7e1d6f6cac56e1b174848"
-    sha256 cellar: :any,                 ventura:        "28f0d9e87343d9f0e5bcbfa35bb08270090fbe144245e78656e50e3633c490b8"
-    sha256 cellar: :any,                 monterey:       "eb944da0f3bb8a927ff56adfef78f88f1414af872ac2522603b6d7b9931973cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ad00dad0c5461fdb13e972fd1e9185e7acb4754fbe122ec53324a7f7e30dcda"
+    sha256 cellar: :any,                 arm64_sequoia: "5f3347bd3ed1ed620a22442fdf68745fdc41077a826c390283ae178a7052a2a7"
+    sha256 cellar: :any,                 arm64_sonoma:  "7a83841403100148b171146412fef906be77e6e521e5b5f3e02663e1e6be8e9d"
+    sha256 cellar: :any,                 arm64_ventura: "0b350c0850302556db2f8979fa2ef3ab09f091375f06b7bb3f72fcb5751d5700"
+    sha256 cellar: :any,                 sonoma:        "736465b5d143bdef9bffe19b200bd6a92f919554b2df277245efc4986f65933c"
+    sha256 cellar: :any,                 ventura:       "b3586583edbbd7c50ecc3a27e8d4ce50c6c0e04f2ebdc3c434fa3fa42d85e2e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dffaed0bb10b084cad8b4cf926f7d720e33d36eab6dcbaf9d3ed492acd74c42c"
   end
 
   head do

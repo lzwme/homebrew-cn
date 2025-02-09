@@ -1,17 +1,17 @@
 class GoParquetTools < Formula
   desc "Utility to deal with Parquet data"
   homepage "https:github.comhangxieparquet-tools"
-  url "https:github.comhangxieparquet-toolsarchiverefstagsv1.25.13.tar.gz"
-  sha256 "d587c52bfbddde2c29e72b365a1a9b963c5eea61a4d2ef91ffc1092f076c8f07"
+  url "https:github.comhangxieparquet-toolsarchiverefstagsv1.25.14.tar.gz"
+  sha256 "a1c038876059a01c4b485dfef09bdcef1b59d3fae74df9988919e00848a674af"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f5798c246c4a8ca48403cf95350d1607518b7d8dbadc583968172d8afab699d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f5798c246c4a8ca48403cf95350d1607518b7d8dbadc583968172d8afab699d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0f5798c246c4a8ca48403cf95350d1607518b7d8dbadc583968172d8afab699d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1481104f1c54eda210dacbcbe01b73bd506a0cf921eb9aecea302f0a71830d02"
-    sha256 cellar: :any_skip_relocation, ventura:       "1481104f1c54eda210dacbcbe01b73bd506a0cf921eb9aecea302f0a71830d02"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e0d7148524e59aa0b691b9b7bcbcfe66e0dff662d40635f22bc79d55a987425"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "049097b36f511703fa775f1d553659c37b2cb72499e42798875312f3fe620f18"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "049097b36f511703fa775f1d553659c37b2cb72499e42798875312f3fe620f18"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "049097b36f511703fa775f1d553659c37b2cb72499e42798875312f3fe620f18"
+    sha256 cellar: :any_skip_relocation, sonoma:        "368fe0dd513a3b11402af9649e057011c9ae15db729d6efd4ec534bb484c9155"
+    sha256 cellar: :any_skip_relocation, ventura:       "368fe0dd513a3b11402af9649e057011c9ae15db729d6efd4ec534bb484c9155"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0367d549f30bccd01a49e86ac3387c257b493318cffd4ba7a5c9e75203979a5"
   end
 
   depends_on "go" => :build

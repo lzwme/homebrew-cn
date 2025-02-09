@@ -7,6 +7,7 @@ class Woof < Formula
   sha256 "cf29214aca196a1778e2f5df1f5cc653da9bee8fc2b19f01439c750c41ae83c1"
   license "GPL-2.0-or-later"
   revision 1
+  head "https:github.comsimon-budigwoof.git", branch: "master"
 
   bottle do
     rebuild 1
@@ -30,11 +31,8 @@ class Woof < Formula
 
   test do
     port = free_port
-    pid = fork do
-      exec bin"woof", "-s", "-p", port.to_s
-    end
-
-    sleep 2
+    pid = spawn bin"woof", "-s", "-p", port.to_s
+    sleep 5
 
     begin
       read = (bin"woof").read

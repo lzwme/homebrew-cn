@@ -1,17 +1,17 @@
 class Ots < Formula
   desc "Share end-to-end encrypted secrets with others via a one-time URL"
   homepage "https:ots.sniptt.com"
-  url "https:github.comsniptt-officialotsarchiverefstagsv0.3.0.tar.gz"
-  sha256 "2b627dfa22e3f92f3c70b2d4ecaf8a9a63ff8183b31e611dc1933cebb3b0ff22"
+  url "https:github.comsniptt-officialotsarchiverefstagsv0.3.1.tar.gz"
+  sha256 "09f0b0d7ca44ec8414dbf631009df8c00f4750247c0f9ba25a32f0aa270e09cc"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f32ee5d1b1d48f0230e4a3173b1e6c48a932c094242b4698b4a1ac081199985"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f32ee5d1b1d48f0230e4a3173b1e6c48a932c094242b4698b4a1ac081199985"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6f32ee5d1b1d48f0230e4a3173b1e6c48a932c094242b4698b4a1ac081199985"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c06a3654548e7f87b5f8296687914f62f98a6b39d4b6720e8bded704e986dc8c"
-    sha256 cellar: :any_skip_relocation, ventura:       "c06a3654548e7f87b5f8296687914f62f98a6b39d4b6720e8bded704e986dc8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "750f6852f5e1f3b84a9fe856280a13ed278efd9cd6477b23d7242c66686637cf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c078703b06ed8d14bc91d73307528444a9fdbac4b30b36db115fd3936792da45"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c078703b06ed8d14bc91d73307528444a9fdbac4b30b36db115fd3936792da45"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c078703b06ed8d14bc91d73307528444a9fdbac4b30b36db115fd3936792da45"
+    sha256 cellar: :any_skip_relocation, sonoma:        "89e6c1a577e7d626108516f4fbb8c8019d8c48fb7306fe87ba215bb5c9731f95"
+    sha256 cellar: :any_skip_relocation, ventura:       "89e6c1a577e7d626108516f4fbb8c8019d8c48fb7306fe87ba215bb5c9731f95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1885731e0d68230f49366c27402326fdba9697f5ee4ced9ae0affda0127b1a88"
   end
 
   depends_on "go" => :build

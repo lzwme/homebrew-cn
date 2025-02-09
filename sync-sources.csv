@@ -1843,7 +1843,7 @@ Homebrew-homebrew-core/Formula/f/ffmpeg@6.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ffmpegthumbnailer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ffms2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ffsend.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/f/fftw.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/fftw.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ffuf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fgbio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fheroes2.rb, Homebrew/homebrew-core, 1
@@ -5613,7 +5613,7 @@ Homebrew-homebrew-core/Formula/r/reproc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/req.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/reshape.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/restic.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/restview.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/restview.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/resty.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/resvg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/retdec.rb, Homebrew/homebrew-core, 1
@@ -12822,6 +12822,7 @@ Homebrew-homebrew-cask/Casks/o/opgg.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/optimage.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/optimus-player.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oracle-jdk-javadoc.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/o/oracle-jdk-javadoc@21.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oracle-jdk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oracle-jdk@17.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oracle-jdk@21.rb, Homebrew/homebrew-cask, 0

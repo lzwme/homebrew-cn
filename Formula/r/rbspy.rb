@@ -1,17 +1,17 @@
 class Rbspy < Formula
   desc "Sampling profiler for Ruby"
   homepage "https:rbspy.github.io"
-  url "https:github.comrbspyrbspyarchiverefstagsv0.29.0.tar.gz"
-  sha256 "fd375237319b9b1cc906484e3cb63c00ecdbcf93f174f303785be39c81b2af00"
+  url "https:github.comrbspyrbspyarchiverefstagsv0.30.0.tar.gz"
+  sha256 "19497ae1dbffa2d794a58ebfb700445764d8eee3ee6a60f8e44e9e15b4f88a99"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "de31b1d79134828fd02e3ef6e4f1efb1c9e1902a08dd12fb530aa8028e40d7b1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d9bf4500a84c88741c584a12e2ab2d19bdedb18f4b03799f4d6ec432a7977de"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e554cebf40bae44faaf922699a2b00ff1039431cf2fd1d394d709631ba3c1164"
-    sha256 cellar: :any_skip_relocation, sonoma:        "857de6f08db69a579fc01986288eba3ce10b59804ccc7dac075233e6469bb039"
-    sha256 cellar: :any_skip_relocation, ventura:       "255316abae5ec3b703e09389ab800eadb6822f6a8716530a4996807ae7e35812"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25f75ebc2b182def6438574645618a561fd8506bf9ed97a807f3db446534833e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46b6d26a6d2417eea3eec130bbf7f6f4e97f8c1e7f22d9c1143ddc16bfa41f41"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "562c0a9374c95214eab35e04dfa45ce450d981839cdd93ebe16a24685efeaa79"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8c48493f03fca4648ab6b2e5db8795d68f3c18fb82da8103e500394a1303089e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6e85a3b85a2dd031c90a2f1d23ea41d6c1b76b64b1d2c0e740d5a2e741decbec"
+    sha256 cellar: :any_skip_relocation, ventura:       "1ec1d94b3fa00634e7438ddc77bf1fddba58251d542ad7f006e50f866936b2eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa9ecd6192aade6d60c39d1ed7de4d40d78339a26dbce05cad5f364b3f5418d0"
   end
 
   depends_on "rust" => :build

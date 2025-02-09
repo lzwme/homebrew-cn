@@ -1,8 +1,8 @@
 class Flix < Formula
   desc "Statically typed functional, imperative, and logic programming language"
   homepage "https:flix.dev"
-  url "https:github.comflixflixarchiverefstagsv0.57.0.tar.gz"
-  sha256 "d3b9268cce0c7a0d88fa109be22a1f232368e44d39be2a0cfa72e41c5a52bc35"
+  url "https:github.comflixflixarchiverefstagsv0.57.1.tar.gz"
+  sha256 "23396bb2747651661d3399e0f57e98785f235a89543a95074a892655184c521d"
   license "Apache-2.0"
   head "https:github.comflixflix.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Flix < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3fed48bde551863ee55d9303b860c147d07ec38ce2a587069576ac98b0c0bdef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d991f07ad8e22ea85e3b3f8a128615aa547255c872eee0d957ce8c3805951198"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "aea0d3dee278b30bc1c01a76f766090a2847320410b7809704e82eacb3d0817d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "14c05e4bd6923291b1bb58a39b772633a3415dd66000ae5dff76ed91377692a8"
-    sha256 cellar: :any_skip_relocation, ventura:       "260a3e1333e326e69f19864650f5d7b5574353521d87aaf63172eb7f43e2faf9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1c11e8a21a2835c873aa32bf844c7eed0390a91a253f586624be0f0adc94741"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5ff3c70766108139317956337613cb8a5395b747ce6cc69a16775c96e2dc432"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "685c0ee75217fab345cc40dddd4294ae1b0ebbc5640ebe2a1b57711a48e3e43f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "72cf4bee57af586aee7835e9db5334fc973b4fd92b2707563d8073f514e13de1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fc444222f88a8a6f64b2094805f5875aa31473d0848e76318eb0cb49c75b87c5"
+    sha256 cellar: :any_skip_relocation, ventura:       "43f3f1e3bed69d83cb66890d417b9348ec6a8d03300bd5f121464f6aca20398c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f085dcb9bc31d38551a56a27e1c11e45e7d6be92fb144bd29e421b7a831c96b"
   end
 
   depends_on "gradle" => :build

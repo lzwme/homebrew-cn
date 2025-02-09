@@ -1,20 +1,18 @@
 class Envelope < Formula
   desc "Environment variables CLI tool"
   homepage "https:github.commattrighettienvelope"
-  url "https:github.commattrighettienvelopearchiverefstags0.3.11.tar.gz"
-  sha256 "1a378564b07e041fbf3212655e8c6442f8973080cf0698886764ce38982661cc"
+  url "https:github.commattrighettienvelopearchiverefstags0.4.0.tar.gz"
+  sha256 "f855ecc19d5508bb4d08181d4e7c6d87f52faedf066299722056afe14b07b66d"
   license any_of: ["MIT", "Unlicense"]
   head "https:github.commattrighettienvelope.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3b39029d44b63c22689187ba607bfd908704b7a6f1079d8ce703b2e36babc380"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5b1c6693872f280e3835ec2d2d165f7a1573aad8062c6d532e54b64d172bb6a4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e3722c57985931fefbab87d9626cc1fec6540648585b662a0d346401752902cb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4a28d3c6400f252fa81effabe3cf5c2b1deb17f8b165984cce4cd39e934f752f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3840579bcf9c3a0de3826f3a58ee7dbdf345fb4e88d124ee86826e99cbbd43de"
-    sha256 cellar: :any_skip_relocation, ventura:        "0ac1e844f2cb4b61af8b3f14d38a8ca899827b4b5f6bace2cfd19f74ba393482"
-    sha256 cellar: :any_skip_relocation, monterey:       "e4e48ba6d4360ea32d899a859ed2056b539f04a6f11f7c128a573d4b023eaa36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0084ff7d440399bb969e0b3e05bcb197afa8357c36e7832baf44963804784a7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "97769996b52b7dfb3d4dc879f1decb372b7bfb6a7987d5c65d9de8da7535ad30"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f13e878c3298859c728acbbe8d194f7e8ca1d1e5d4f0f8c48f0f82d022dd5563"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a9e3e5f20142d839375290206505376207918d02934f7d2c3e8ce94501421da7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "70634e1d40b81b499516c7e5ef642671d59c6d43937b1431e9c0cf3a8c2614e2"
+    sha256 cellar: :any_skip_relocation, ventura:       "20a95fa5a7496e2c130f390c76af8f6685263e6cd64f7bdf4b5337c0ca211787"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c62ee614d6e26134758eaa05d737f02ec24ebd2953171f67dcf268f8bbd4b4d4"
   end
 
   depends_on "pandoc" => :build
