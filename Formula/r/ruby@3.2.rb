@@ -11,12 +11,13 @@ class RubyAT32 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "38614af215035d17fc203250befc132b8d9dbdbdc3b93c8eb3a87f0c98d8dd03"
-    sha256 arm64_sonoma:  "87e22509ffa021af6285842fe5f556d4c38f686c8cf17c1f5479127078af440e"
-    sha256 arm64_ventura: "518042f4c83136fe220938944d3d84244f433cf6ae8e06a07d2005f7ea7205a6"
-    sha256 sonoma:        "2014ac3799d70bfb6c96be97eeece49c8aea3ba78c897ecb725041f7a7a3d44c"
-    sha256 ventura:       "07d2f6840e7940243ca8054735316079339a0dbd2656283b3161779a2cd6fd2c"
-    sha256 x86_64_linux:  "e6362b4e833adcb6179de8ae70ca1e5116749ffe8c3cf446423d262f438a9202"
+    rebuild 1
+    sha256 arm64_sequoia: "b0e8fc18b801722c9bce70e61dda9a137eac1a86903d9fb2b92146c0d063b1b9"
+    sha256 arm64_sonoma:  "20932a8cdb7605d5e5184a0d4b44a2e335808edf5a75e8d85c19820abe0062b6"
+    sha256 arm64_ventura: "44f7895f2864f5baa1ae95609a63f477cfcce09dce142fff702829ea1a2a235b"
+    sha256 sonoma:        "dd7ac1f4f417211afe92021dd04fa423057a74d7e411d981deb54112032f2895"
+    sha256 ventura:       "9f05163abfdfc024c385c655792942fcf33adf63989523cbcc632c91672158da"
+    sha256 x86_64_linux:  "e0ba023611e9ffd7f838943c6c20bef8b74ea3731ab61d2e44c020f702d13811"
   end
 
   keg_only :versioned_formula
@@ -100,6 +101,19 @@ class RubyAT32 < Formula
 
     # A newer version of ruby-mode.el is shipped with Emacs
     elisp.install Dir["misc*.el"].reject { |f| f == "miscruby-mode.el" }
+
+    if OS.linux?
+      arch = Utils.safe_popen_read(
+        bin"ruby", "-rrbconfig", "-e", 'print RbConfig::CONFIG["arch"]'
+      ).chomp
+      # Don't restrict to a specific GCC compiler binary we used (e.g. gcc-5).
+      inreplace lib"ruby#{api_version}#{arch}rbconfig.rb" do |s|
+        s.gsub! ENV.cxx, "c++"
+        s.gsub! ENV.cc, "cc"
+        # Change e.g. `CONFIG["AR"] = "gcc-ar-11"` to `CONFIG["AR"] = "ar"`
+        s.gsub!((CONFIG\[".+"\] = )"(?:gcc|g\+\+)-(.*)-\d+", '\\1"\\2"')
+      end
+    end
 
     # This is easier than trying to keep both current & versioned Ruby
     # formulae repeatedly updated with Rubygem patches.

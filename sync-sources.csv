@@ -35,6 +35,7 @@ Homebrew-homebrew-core/Formula/a/actionlint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/actions-batch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/activemq-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/activemq.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/ad.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ada-url.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/adamstark-audiofile.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/adb-enhanced.rb, Homebrew/homebrew-core, 0
@@ -2396,6 +2397,7 @@ Homebrew-homebrew-core/Formula/g/golines.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gollama.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gollum.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gom.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gomi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gomodifytags.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gomplate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goocanvas.rb, Homebrew/homebrew-core, 1
@@ -3357,7 +3359,7 @@ Homebrew-homebrew-core/Formula/l/litmusctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/little-cms2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/livekit-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/livekit.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/l/lizard-analyzer.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/l/lizard-analyzer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lizard.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lla.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/llama.cpp.rb, Homebrew/homebrew-core, 1
@@ -12754,6 +12756,7 @@ Homebrew-homebrew-cask/Casks/o/ontime.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/onyx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oolite.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opal-composer.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/o/open-eid.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/open-in-code.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/open-video-downloader.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openaudible.rb, Homebrew/homebrew-cask, 1

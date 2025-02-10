@@ -2,9 +2,9 @@ class MinioMc < Formula
   desc "Replacement for ls, cp and other commands for object storage"
   homepage "https:github.comminiomc"
   url "https:github.comminiomc.git",
-      tag:      "RELEASE.2025-02-04T04-57-50Z",
-      revision: "318e7070718f59198a9c6911f72e46dab1625b3a"
-  version "20250204045750"
+      tag:      "RELEASE.2025-02-08T19-14-21Z",
+      revision: "bd925c01a1ccab367993f20c251b7bae9d22f8a5"
+  version "20250208191421"
   license "AGPL-3.0-or-later"
   head "https:github.comminiomc.git", branch: "master"
 
@@ -17,12 +17,12 @@ class MinioMc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "392db2a57a97aaf9341641ffe7fbed2567f73685a44a6503c4c841beddb93800"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42256aec7fe4480570a102666e076e647abf4bf110d07d239dd55723d0718289"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cbee73974587a102b251a983402f1a925ad6bf0fc1409078a2ea874fb866664a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5e11a57a2d60d7ee3f944e17e1680ab79cc52c8c4e3cc15497563331415d7f41"
-    sha256 cellar: :any_skip_relocation, ventura:       "2ab2b341b4ead14be48241e832c229aac664707a4f6a10ae63948895baa4e62f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55db2129fdc195125c09f9916565ca8d05fc824c9dbc348f617b62ec5e9c574a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d895ac74f1b388b348296f9d7b33f9fc1dbad5e0f79204eed1fbcb93acdbea1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e168255f885be5000160d773c1765f7e6b646911e149186b3de0988ac7ced3ea"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "656d677495820761d651cd318c7f8819dcefa5a510b60c3537a3fe3f8eaed86a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a83e8ee14123cfd6ae43229b6c5717d168b6252866b37827bad0a8fe3af6edf6"
+    sha256 cellar: :any_skip_relocation, ventura:       "4bc572f079cf8b3a002c9696c358d0d135056629d83eca23cbc9e78bc8dc7beb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a89acacd1ebc35063633c9162c346aef4cc626df5bfd4e04a386f03fd5fab24f"
   end
 
   depends_on "go" => :build

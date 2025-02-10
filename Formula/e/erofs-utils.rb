@@ -1,8 +1,8 @@
 class ErofsUtils < Formula
   desc "Utilities for Enhanced Read-Only File System"
   homepage "https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git"
-  url "https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git/snapshot/erofs-utils-1.8.4.tar.gz"
-  sha256 "791587aa074bb9f9fa218c762cc1f60b015e2f51bcb2ce91f682f043856ab494"
+  url "https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git/snapshot/erofs-utils-1.8.5.tar.gz"
+  sha256 "cd8611270e9c86fe062f647103ca6ada9ed710e4430fdd5960d514777919200d"
   license "GPL-2.0-or-later"
   head "https://git.kernel.org/pub/scm/linux/kernel/git/xiang/erofs-utils.git", branch: "master"
 
@@ -12,12 +12,12 @@ class ErofsUtils < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4bca7493668272f6e55904400a266bf694ba8f432fa429938046c4d7e95ee78a"
-    sha256 cellar: :any,                 arm64_sonoma:  "0d82f93be7648579d38311a51b82c7cae29254511efe49137ee5d7aa3f82413c"
-    sha256 cellar: :any,                 arm64_ventura: "66402b6d10b5ad00fc4a9e78cefb93235f86f0f26ca71d7488405364ccec0a20"
-    sha256 cellar: :any,                 sonoma:        "b378faf800cd2871c9ba8efc4dbf64f764493c633ee8b27dd5aa7c2a7007e773"
-    sha256 cellar: :any,                 ventura:       "172c087a7f1e02c833f86c40265d69fab1ddded31cc79d71868a2cfb9ed42346"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "145fdff69802d0a60964a55064973b684638313f9c9ff915d04012cb53114879"
+    sha256 cellar: :any,                 arm64_sequoia: "6d3f3715d9fc1dba241b4aba600bcd8f35d3857652d3a0425cf8150b57f39116"
+    sha256 cellar: :any,                 arm64_sonoma:  "428b9b8a4e10a2f3a25cce145872602accd7d9ddb618279cbc6c5316e2561c76"
+    sha256 cellar: :any,                 arm64_ventura: "a38cd23885c906fbc1bdf875b6ac227ef9e637da96d57bb65b87a7cae4221ba9"
+    sha256 cellar: :any,                 sonoma:        "21f4b75c09d245f3e2a060b0f7b2588085046ee739f26407e102ef146315669c"
+    sha256 cellar: :any,                 ventura:       "fbfb91b675618dfbf828b6ded7fa7a7d695c1420fcceb6ef5a24bfe250be8339"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3379c9f03b066f57bc8c115fd7eeb5639a0811340a91227ced350e403a19c5a"
   end
 
   depends_on "autoconf" => :build

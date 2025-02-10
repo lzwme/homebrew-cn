@@ -1,18 +1,18 @@
 class Kanata < Formula
   desc "Cross-platform software keyboard remapper for Linux, macOS and Windows"
   homepage "https:github.comjtrookanata"
-  url "https:github.comjtrookanataarchiverefstagsv1.7.0.tar.gz"
-  sha256 "eb7e11511f77558d72b5b3b0c9defb04b269637e5c8a4ad9b45d21382e9247d2"
+  url "https:github.comjtrookanataarchiverefstagsv1.8.0.tar.gz"
+  sha256 "396a379d7620001531b856913a2677baa56fa16c5c9d329f6937dfb57d3ac704"
   license "LGPL-3.0-only"
   head "https:github.comjtrookanata.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4f7a14dcaf0958380d869568c7e2080f81fa3f04596fb0401185ccfdd2e8b79"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd7cf9e89759f062308e6959b1e886c7ba3f538283e00e3b825418191a4146c8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a66f9003045cb35e1007c11dc43b999ad4fab326329cde8bc7c38339c715ea86"
-    sha256 cellar: :any_skip_relocation, sonoma:        "80c18dc21e71b7b4d9d3751cb2863b4a9676a38cfd41afd554de7106417c713a"
-    sha256 cellar: :any_skip_relocation, ventura:       "6d3b50c939ef8a45a0b2a9a49ebd805f3d59ec4ac5028fca549e8e254db7f405"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b68c745a366776fd771c26f076ed63e31618d9b09556f977700e32b7e12ce2ee"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00191f3fc71d8c10903c175405b28cf4040814b2f5096e2c610f0c54959d2d98"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23b4089f4435096f85e6e88ab7334b55cdd7ab425f7e9793a74e6e1bf23d33fb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "592dee4c83f875cb32c43f201e5e02995b495e28d28994eaa9548aea775fe89b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d938a6ac03b75093645f7bbe5caa347133bf916ddc9ff66514caa31601560e72"
+    sha256 cellar: :any_skip_relocation, ventura:       "e325b26295ce7c069579b44bc6e429bdaaa14c38345b9e1f6401d3743f4d2747"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7ec4ff4482e231762fbdb25f2f9beb751e00a3ccd09f24f6de701200c8cc2e0"
   end
 
   depends_on "rust" => :build

@@ -2,8 +2,8 @@ class Asymptote < Formula
   desc "Powerful descriptive vector graphics language"
   homepage "https:asymptote.sourceforge.io"
   # Keep version in sync with manual below
-  url "https:downloads.sourceforge.netprojectasymptote2.95asymptote-2.95.src.tgz"
-  sha256 "15604fd02cb6ddbc5b807529d2e6fc617c825a184dd0d7b71390c567aeac78e7"
+  url "https:downloads.sourceforge.netprojectasymptote2.98asymptote-2.98.src.tgz"
+  sha256 "c50239cabc33ce7e8ef843d249c552e309caff9eba937d829e3a2af68385da91"
   license "LGPL-3.0-only"
 
   livecheck do
@@ -12,16 +12,17 @@ class Asymptote < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "a1c56be4c45650d2d5f83bc9542ab89835f84057dfec939c427e829c246b628a"
-    sha256 arm64_sonoma:  "eea6f4fdaa8596fa1e83aa3e160857d5a51464d88d8316c57c32c263e5ecc9e6"
-    sha256 arm64_ventura: "ca60203750f4c53fe9346318ceb5c47b543f26b42bd046b38a709433201aebe7"
-    sha256 sonoma:        "2252c4a0f709df7154cb483c5740f69d4cb7163ec9793ba68325f0bb3cb6a577"
-    sha256 ventura:       "10cf4f66bb72faed0126d9b40775c2a0927741365de994e9c4459fc8d0c6b9a9"
-    sha256 x86_64_linux:  "0f1a1c3e3e400b2e62ff63d3f461c4fc7691220b8e9facfad0729139117c330d"
+    sha256 arm64_sequoia: "bdafe69326937771b01ed9921c14d805c09e83a4c1752a5b0caa36d466d039ea"
+    sha256 arm64_sonoma:  "be9dbe258bd259eac4f8188b91c4c8f39272f47046148e2c31081cb615e75956"
+    sha256 arm64_ventura: "8382960786105dd7895a67916a6d47d832db85dbde2ebfcf9df496522ba071c7"
+    sha256 sonoma:        "f515a38edb13f9c1b4877317136af2bacf3895459f87f08dcabfb78c91c35b63"
+    sha256 ventura:       "431b379967397b9dd5a53726e322f1cc764214078da200e882d2bb0af665aa27"
+    sha256 x86_64_linux:  "62f94d1dbce0bf603bae1f120eb6bb5760b9000c037fda6cd88422f09c57b100"
   end
 
   depends_on "glm" => :build
   depends_on "pkgconf" => :build
+  depends_on "bdw-gc"
   depends_on "fftw"
   depends_on "ghostscript"
   depends_on "gsl"
@@ -33,14 +34,15 @@ class Asymptote < Formula
   uses_from_macos "zlib"
 
   on_linux do
+    depends_on "libtool" => :build
     depends_on "freeglut"
     depends_on "libtirpc"
     depends_on "mesa"
   end
 
   resource "manual" do
-    url "https:downloads.sourceforge.netprojectasymptote2.95asymptote.pdf"
-    sha256 "6fa4428a78c6af413ed82173056dd6330a496c5f7e930883b16c5cbfc01394cf"
+    url "https:downloads.sourceforge.netprojectasymptote2.98asymptote.pdf"
+    sha256 "c1d16d966f6206676c720c54c273ff3ec80d3615aafccdee892b0b048143a491"
 
     livecheck do
       formula :parent
@@ -52,18 +54,13 @@ class Asymptote < Formula
 
     system ".configure", *std_configure_args
 
-    # Avoid use of MacTeX with these commands
-    # (instead of `make all && make install`)
-    touch buildpath"docasy-latex.pdf"
-    system "make", "asy"
-    system "make", "asy-keywords.el"
-    system "make", "install-asy"
-
-    # https:github.comvectorgraphicsasymptoteissues497
-    chmod "+x", pkgshare"GUIxasy.py"
+    # Avoid use of LaTeX with these commands (instead of `make all && make install`)
+    # Also workaround to override bundled bdw-gc. Upstream is not willing to add configure option.
+    # Ref: https:github.comvectorgraphicsasymptoteissues521#issuecomment-2644549764
+    system "make", "install-asy", "GCLIB=#{Formula["bdw-gc"].opt_libshared_library("libgc")}"
 
     doc.install resource("manual")
-    (share"emacssite-lisp").install_symlink pkgshare
+    elisp.install_symlink pkgshare.glob("*.el")
   end
 
   test do
@@ -74,6 +71,6 @@ class Asymptote < Formula
     EOF
 
     system bin"asy", testpath"line.asy"
-    assert_predicate testpath"line.pdf", :exist?
+    assert_path_exists testpath"line.pdf"
   end
 end

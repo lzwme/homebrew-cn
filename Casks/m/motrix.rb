@@ -22,9 +22,9 @@ cask "motrix" do
 
   zap trash: [
     "~LibraryApplication SupportMotrix",
-    "~LibraryCachesnet.agalwood.Motrix",
+    "~LibraryCachesapp.motrix.native",
     "~LibraryLogsMotrix",
-    "~LibraryPreferencesnet.agalwood.Motrix.plist",
-    "~LibrarySaved Application Statenet.agalwood.Motrix.savedState",
+    "~LibraryPreferencesapp.motrix.native.plist",
+    "~LibrarySaved Application Stateapp.motrix.native.savedState",
   ]
 end

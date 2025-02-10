@@ -57,7 +57,7 @@ class Parlay < Formula
     enriched_json = JSON.parse(enriched_output)
 
     package = enriched_json["packages"].first
-    assert_equal "https:github.comljharbconcat-map", package["homepage"]
+    assert_equal "https:github.comljharbconcat-map#readme", package["homepage"]
     assert_equal "MIT", package["licenseConcluded"]
     assert_equal "concatenative mapdashery", package["description"]
   end

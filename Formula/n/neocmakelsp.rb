@@ -1,18 +1,18 @@
 class Neocmakelsp < Formula
   desc "Another cmake lsp"
   homepage "https:neocmakelsp.github.io"
-  url "https:github.comneocmakelspneocmakelsparchiverefstagsv0.8.18.tar.gz"
-  sha256 "41bc9334cc99abb92a1879a240268ffb176423cebddd4db39d9f40e932926adb"
+  url "https:github.comneocmakelspneocmakelsparchiverefstagsv0.8.19.tar.gz"
+  sha256 "e63cf9a59f818c61196ae41136c164d62fe1fe42116c7dd51bee0f9df2ce55ac"
   license "MIT"
   head "https:github.comneocmakelspneocmakelsp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4e6a772dde8e0605008060c6877bec3bd322d3d81177b29f3e670397ec5e92e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f6d61d0ed857fc7f304b5c7854d653bb2499f06a78bea38e61edcf8dce1b08d6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "968a399a31cd3ab520bafead23df29f6d5f417a2f2e9455488420b4ba2a09d20"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e0a535b0797f3c0fd41c840206cd10e9a29a3896965e313b6fedf8fe9e69e916"
-    sha256 cellar: :any_skip_relocation, ventura:       "b25db14a5d09aee9317ab718bf41ff9afeaaa47319277e0f398c841a2b3e4e13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e510618381f6315e48e67e838f7e091e265d3d103f746e5dfabbf0dafd687415"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6e92cdea6c96034023defe7e555b126f537f0ea540344851547e6c1bb3033d9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b4d32242bf79b08f4b658aa843fc41d12a36f13790cbac07a698851e8b26ba1c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "46b8b31a5646929b7ec0bac822a11157c1cb1ebfde6bf86c25c40bd7a21a8b23"
+    sha256 cellar: :any_skip_relocation, sonoma:        "122c5746484cb8c60d9facda43367d5402127827d3ddbb4e065711ef62b9f4b9"
+    sha256 cellar: :any_skip_relocation, ventura:       "3aa31f635e6b08f4efada54b8845d0ab9ed9de32cd8c7d9a0f191bf1bd06d684"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67e149a818be9bfd21fb6cbb0b68f336f05a92534016e30f184fa5d42cc41926"
   end
 
   depends_on "rust" => :build

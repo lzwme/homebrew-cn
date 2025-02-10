@@ -1,18 +1,18 @@
 class Hamlib < Formula
   desc "Ham radio control libraries"
   homepage "http:www.hamlib.org"
-  url "https:github.comHamlibHamlibreleasesdownload4.6.1hamlib-4.6.1.tar.gz"
-  sha256 "0822f59fdda0e40283eb55d94c64fc92e608ec9985414acae93d122fa83dacd4"
+  url "https:github.comHamlibHamlibreleasesdownload4.6.2hamlib-4.6.2.tar.gz"
+  sha256 "b2ac73f44dd1161e95fdee6c95276144757647bf92d7fdb369ee2fe41ed47ae8"
   license "LGPL-2.1-or-later"
   head "https:github.comhamlibhamlib.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3eae3a5652713e89b1ff7f10253283a0ff2f060cd6696a29746576a16febfe07"
-    sha256 cellar: :any,                 arm64_sonoma:  "9107017dcaed5e7ca5b798d1be8ed741396b5abca0ef7de4b24349ef5bd7e45d"
-    sha256 cellar: :any,                 arm64_ventura: "81b3adbc6c35758af9cfca5584cad884fa0f3482ec5dd3dc31aff0b349878518"
-    sha256 cellar: :any,                 sonoma:        "391f4b49ac98fa5d5a0a371d60a166db594e212af4206a85cf676d1e222a8078"
-    sha256 cellar: :any,                 ventura:       "699550dd2156086dbadbf43d7b1563b2508b1ce0e0a4471ae7f0358972578f1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73bd5d82926f140031e8ee51a83cd9dadf9fac353620277251fc2a02d7bacfb6"
+    sha256 cellar: :any,                 arm64_sequoia: "9167a0022aa4c469cc54b917d0f4eccb1df3a8dd16c2bde575939a9bb363053f"
+    sha256 cellar: :any,                 arm64_sonoma:  "c4aa54f5b84ad20d5378a77c1860de8ef5307a36e2ba4d44252c3236115e7f68"
+    sha256 cellar: :any,                 arm64_ventura: "29ca12dd53120b6219a72cf06003ac4f9f7b0136d3a906f2f7c7e283a677ad27"
+    sha256 cellar: :any,                 sonoma:        "6e018327f7f25dc3826e923f7e1aff7c45f20a90a5682b9359f78d548b33e610"
+    sha256 cellar: :any,                 ventura:       "49b659bd45a24723430fc33d608f8bbd247678183a9f67e7cf2ff95d6344fc96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39cd33fc06e7145cca060ed370d7c6b099dcd87eba63947403f947d9eac2d1a0"
   end
 
   depends_on "autoconf" => :build

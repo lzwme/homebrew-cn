@@ -11,12 +11,13 @@ class RubyAT33 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "51ab0716b7af7509a83b2e515fcb61c9416d2c2a02de9ac628cce7b5d654aca3"
-    sha256 arm64_sonoma:  "db67f33f8b6426f7f5a1c740f5a19d0b840f999dbf4746e29cc085bc364fda36"
-    sha256 arm64_ventura: "72a91ae9eb77f74d35e0b4ed5d4c4bc61881b6286f8b826264d9c522b4cadb55"
-    sha256 sonoma:        "e7d113801b6d8c2202930886f6a8780c67576f5d68ab9a5bc5bdac3e2828c780"
-    sha256 ventura:       "3fc3a5dcaac7993857192049e104052f7244a0bc2ee52848be88fb5625f48150"
-    sha256 x86_64_linux:  "963668e073d58036ce4ad6f3e234eb2009f8e89d725dfd7869b8f45bb361d29f"
+    rebuild 1
+    sha256 arm64_sequoia: "ad47293ee871bb8726059a28d830de7a279c4da3b845845bc5f5307ee4adf083"
+    sha256 arm64_sonoma:  "708e1361e0360ddc836296d49bf28ced8245be99fcb1d3e84bfee57e905e7efe"
+    sha256 arm64_ventura: "c9dd0fed316b3b1593c6d191b8819c7434886776911eee1f1f0a8bc73f870b33"
+    sha256 sonoma:        "6d87d4b89a56b48dd7288a54a8da1099161f78c52901b20d12ae1fbb5f284150"
+    sha256 ventura:       "2c59ac608e05ea500300afe4e071a3a54e26c59c7f1a45de53babaae04261f32"
+    sha256 x86_64_linux:  "8b03dbfb6086132a7adb0572148d90996122b4ac071040437b9d39d7f157cd1c"
   end
 
   keg_only :versioned_formula
@@ -113,6 +114,19 @@ class RubyAT33 < Formula
 
     # A newer version of ruby-mode.el is shipped with Emacs
     elisp.install Dir["misc*.el"].reject { |f| f == "miscruby-mode.el" }
+
+    if OS.linux?
+      arch = Utils.safe_popen_read(
+        bin"ruby", "-rrbconfig", "-e", 'print RbConfig::CONFIG["arch"]'
+      ).chomp
+      # Don't restrict to a specific GCC compiler binary we used (e.g. gcc-5).
+      inreplace lib"ruby#{api_version}#{arch}rbconfig.rb" do |s|
+        s.gsub! ENV.cxx, "c++"
+        s.gsub! ENV.cc, "cc"
+        # Change e.g. `CONFIG["AR"] = "gcc-ar-11"` to `CONFIG["AR"] = "ar"`
+        s.gsub!((CONFIG\[".+"\] = )"(?:gcc|g\+\+)-(.*)-\d+", '\\1"\\2"')
+      end
+    end
 
     return if build.head? # Use bundled RubyGems for --HEAD (will be newer)
 

@@ -11,14 +11,13 @@ class RubyAT31 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "484f40a8b1a4b2762e2c689798d3f5677bb966f84864e2880749cd91926e9289"
-    sha256 arm64_sonoma:   "7c5a047c339ba80d2a14b34ef244ed9e0af7102d340b8e5f91eca4d7a0a853bf"
-    sha256 arm64_ventura:  "4440ac18c954c2f1d0cbfa0f470fb87c26ac1aa7a6734b83e87ab9d0ef630c7c"
-    sha256 arm64_monterey: "0fdd2a2e9f8297ca292959540012c00392205312b865d1c7aeb18a09c16db428"
-    sha256 sonoma:         "33a2ac7835348d4812760725fffeacdc1e6d15a5673b6230f2337196054e2b1e"
-    sha256 ventura:        "20e409cb7b524b04e9248c9addb2e2d8a52027a8ddd3c07eb7e594b0e94fd2bf"
-    sha256 monterey:       "015c58f56f84a419659b6e777683c9ac82d87cb3da3e428614ea63161e173084"
-    sha256 x86_64_linux:   "a282cbc26752e31cc3957ee74991e08f6e12b736ecf41d5d56ff7435e8f6027c"
+    rebuild 1
+    sha256 arm64_sequoia: "7c2cfc1d13b3cf6f9d5f512c5db1671ac59a45587e801afffff865e563317591"
+    sha256 arm64_sonoma:  "f56c01cd8d7cf4054fd95503f738e83e87cda639a0f9080441a753e8ccbc88df"
+    sha256 arm64_ventura: "8ebbc78941564e92a8990b2835e142dc7c800f51968563215ebd8a896ff11292"
+    sha256 sonoma:        "55ecb9dfb93f5e3627054c0b549e1c1a1c370c9722a0048d27383233df4168a8"
+    sha256 ventura:       "04616b21752a8d3f7db1280cfb2ef995c1756fc9a604fb247b7e67637745fcde"
+    sha256 x86_64_linux:  "1cbdd53137f42894eec9423fa7bd2b1d9849f7e15f2a9964c9b0e7ba7a9fd56f"
   end
 
   keg_only :versioned_formula
@@ -92,6 +91,19 @@ class RubyAT31 < Formula
 
     # A newer version of ruby-mode.el is shipped with Emacs
     elisp.install Dir["misc*.el"].reject { |f| f == "miscruby-mode.el" }
+
+    if OS.linux?
+      arch = Utils.safe_popen_read(
+        bin"ruby", "-rrbconfig", "-e", 'print RbConfig::CONFIG["arch"]'
+      ).chomp
+      # Don't restrict to a specific GCC compiler binary we used (e.g. gcc-5).
+      inreplace lib"ruby#{api_version}#{arch}rbconfig.rb" do |s|
+        s.gsub! ENV.cxx, "c++"
+        s.gsub! ENV.cc, "cc"
+        # Change e.g. `CONFIG["AR"] = "gcc-ar-11"` to `CONFIG["AR"] = "ar"`
+        s.gsub!((CONFIG\[".+"\] = )"(?:gcc|g\+\+)-(.*)-\d+", '\\1"\\2"')
+      end
+    end
 
     # This is easier than trying to keep both current & versioned Ruby
     # formulae repeatedly updated with Rubygem patches.

@@ -7,12 +7,13 @@ class Nlopt < Formula
   head "https:github.comstevengjnlopt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5bc45b441a6db3d2a2bd91872a88181b73ec43855f8724251706928810099d53"
-    sha256 cellar: :any,                 arm64_sonoma:  "56399d4d815f50ab2dd09e77c6e967ce6c1b45cab6377ab319001b1a8840598c"
-    sha256 cellar: :any,                 arm64_ventura: "fcc202f3741a7b3702fd3f3acf6ac7b9350aeb7b006dd302efc8b9f81e90df57"
-    sha256 cellar: :any,                 sonoma:        "4047f0326b06f45eb780edfadf5a22e39e59d9e5474fd0efaafa06d6d233ec2b"
-    sha256 cellar: :any,                 ventura:       "997538dd9a34c8c7611bcb874567aaa0cb3d3eda6a8a2da85c61bf712df3907f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f545f273dd2d6d583e2acc54b5ad93a7a6d8a53810f3e9cbab05fed1aba6893a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "4b5cfef104d5816a719d35624642efd027d4d4dedfd21e67ae26eed7ceb1d9d6"
+    sha256 cellar: :any,                 arm64_sonoma:  "a09deedc38d8d4d44c105c4c1c603fdf0652d9e5506885c04586ec2d25df650b"
+    sha256 cellar: :any,                 arm64_ventura: "e401c6382cc8b7d25ea8095554443a881fa0cb02e935b7dfd5eece47d7429df8"
+    sha256 cellar: :any,                 sonoma:        "53909c4a84848ff62246d64f07df563bf63afc5076b05a6fde82e3e9095f85cc"
+    sha256 cellar: :any,                 ventura:       "3d1d6b2321c6999b121cc84e40f066f8a909a652dadbc7e0ae3e438155d977fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b98fc2b074ae63ce6fbbedce14c22165c7cd91c661895c9f36aa9aeccf3fe790"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -32,6 +33,9 @@ class Nlopt < Formula
     system "cmake", "--install", "build"
 
     pkgshare.install "testbox.c"
+
+    # Avoid rebuilding dependents that hard-code the prefix.
+    inreplace lib"pkgconfignlopt.pc", prefix, opt_prefix
   end
 
   test do

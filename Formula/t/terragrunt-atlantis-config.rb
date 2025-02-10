@@ -1,17 +1,17 @@
 class TerragruntAtlantisConfig < Formula
   desc "Generate Atlantis config for Terragrunt projects"
   homepage "https:github.comtranscend-ioterragrunt-atlantis-config"
-  url "https:github.comtranscend-ioterragrunt-atlantis-configarchiverefstagsv1.19.0.tar.gz"
-  sha256 "79cf097ca611f65d8134150a430a6843d98fa27d2891e650ddcae59025515bce"
+  url "https:github.comtranscend-ioterragrunt-atlantis-configarchiverefstagsv1.20.0.tar.gz"
+  sha256 "b21ee84341cd94ba369c6f0b3124f6d260ed9141129e345c6c64d76b2f54ce91"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ba1a4023db6d90cb11256764d737d6ead07a988501461f5fec015f016cb50f6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ba1a4023db6d90cb11256764d737d6ead07a988501461f5fec015f016cb50f6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8ba1a4023db6d90cb11256764d737d6ead07a988501461f5fec015f016cb50f6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e2c306175d1aedc0266307ed822db476cf145e7ec695a10b25a809c86e6dba73"
-    sha256 cellar: :any_skip_relocation, ventura:       "e2c306175d1aedc0266307ed822db476cf145e7ec695a10b25a809c86e6dba73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cde2ed2116cb2de91059df9561862880a37ba97ab615be4b893ba430767f0135"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36a77276086d50d1a244decd8348f84ed0cf9782f78e3c15ad81ee1a931ae4fc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "36a77276086d50d1a244decd8348f84ed0cf9782f78e3c15ad81ee1a931ae4fc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "36a77276086d50d1a244decd8348f84ed0cf9782f78e3c15ad81ee1a931ae4fc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a52d65d271801ec108c1f61d041c0cc098840064035908b7f91c238b044838f3"
+    sha256 cellar: :any_skip_relocation, ventura:       "a52d65d271801ec108c1f61d041c0cc098840064035908b7f91c238b044838f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e172a88a31a81fca1a9efac6efea8e6bd509ea68d809ceed5354fc5fd5d17f0f"
   end
 
   depends_on "go" => :build
