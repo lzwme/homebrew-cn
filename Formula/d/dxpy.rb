@@ -3,17 +3,17 @@ class Dxpy < Formula
 
   desc "DNAnexus toolkit utilities and platform API bindings for Python"
   homepage "https:github.comdnanexusdx-toolkit"
-  url "https:files.pythonhosted.orgpackagesec84aee7bf4106e7641d70689fdc1c7cf941e426a363c853b1262e98ee90075fdxpy-0.388.0.tar.gz"
-  sha256 "ba863188dc69eb21d74ab3e52076036c9a0c727627dbacdb2636a4e5e6b87dfc"
+  url "https:files.pythonhosted.orgpackages3917e55b1ee5fc501969d027159eddad0f0ac7d01ad6a9ef57f7975fa4465ff2dxpy-0.389.0.tar.gz"
+  sha256 "fdba8390f27f915e517da5bae8a9b5cd2b3e144af84979bf99454fca30b7f7b4"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2a9c817d8ddd9396d596706ccb8d5410678999682fbf34ef1f269e8d2da0ede"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61ee9dd6fb76b14f2d4571c21c451faa73a684d84a2d4aa63e0181bf3293458f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5f0859bc28e83d91302c3121b452b34f5afccb1735031aec64e621a492d46863"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6e3e693d56cf838a8b821d0393f14c6751cc632f43e12989d0ce60e181d7f695"
-    sha256 cellar: :any_skip_relocation, ventura:       "55e1c76b567a5b92a27066273751b398cd35deea39c97013ba47a861a6d1b753"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "964bcd6aa072a6d4660550b85635479acd2ae7ca1b29d798f7c8e3d06c184a60"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe837029ec4753dd453bd2b954ec9f3b2779fe69cfad6d1c786bc762804fa0e8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff3abcfd175d1fbf92d529130783473843d59bdf5b480df0f7102b6688b7cc7a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8b2125721882ae616545dd4ee6ed52ba443c86a97700d3a2e77ef72d5d5f69da"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2bb5636c3d5addd8b0305a6242dfddd89d8f6180f1b3673f3bfe128a555888fb"
+    sha256 cellar: :any_skip_relocation, ventura:       "3058b9b21d687bf16a27916e10a703e8682231314840470267363702c2f4595f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "651fcc3ba8e78562ec7abde66bf9e082a59e524f291880131d874f6010489665"
   end
 
   depends_on "certifi"

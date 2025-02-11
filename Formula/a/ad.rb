@@ -7,18 +7,22 @@ class Ad < Formula
   head "https:github.comsminezad.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0362655e5d1c192e376fd56ee567e9be2433ed3249cf63b5eaf259868869b3b7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88017d42ccdeeaf111e0f739ccb8dedbb61c4279525c861bb55398aeb931541c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "178214b5293b70bacd98ba7d2bd5577cb951ceed7aadde102240c9032c1dbc8f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9a40d1565fa03746e07bb1ab5fd968fc3f350c711093460b8246f6d619402094"
-    sha256 cellar: :any_skip_relocation, ventura:       "164bd7e2ccd5e4fa23f170f9aef09e1b6fee344196e1503902b67e9142db31d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95139e4a509983eaf89866618c291300b10eeb2ab196012c6ae758aba5feab16"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4073858a0c04f536678cbb56f9ec0bb977171eef6a2da094fd99de1a3816ebd8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5455f22db006e3f64867267e524136bb09b953115feb9ec42cac25367baf952a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "11ebf6ca0cbe9c8709219c4bdd5cc9de7fe25d6d3107f9c1f7f48cfde139ee23"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8617459064ff349b4eef8ed257f686fc5009630ad384ca6af0c1087b968776df"
+    sha256 cellar: :any_skip_relocation, ventura:       "e7884a0711ef9f5adef027ed57dcef814cdecb664135ad37ade1382878864d73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b9964c87ac0c1d8475520eb52560159a1f504e3a4e4a42894e3a7447cfd5127"
   end
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args
+    # remove `doc_prefix` with next release
+    doc_prefix = build.head? ? "docs" : "doc"
+    man.install buildpath"#{doc_prefix}manad.1"
   end
 
   test do

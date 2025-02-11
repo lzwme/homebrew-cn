@@ -2,7 +2,7 @@ class Roxctl < Formula
   desc "CLI for Stackrox"
   homepage "https:www.stackrox.io"
   url "https:github.comstackroxstackroxarchiverefstags4.6.2.tar.gz"
-  sha256 "798267fcc9637cdf4d78b307fe0c64d1c8c41014c4fb722a012a2c0fb64dc247"
+  sha256 "36cbfab7cedf9d0fd294fde6fdf7575067486c86f8f064f54b5527c445de3e45"
   license "Apache-2.0"
   head "https:github.comstackroxstackrox.git", branch: "master"
 
@@ -12,12 +12,13 @@ class Roxctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4906ed737d1f375c43dcce2390a5410e696ab0f8bdc411470067056090e4cc39"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a96e11b74c57b4d7e604f7ccea0d34419e8b4d8f1be7e68fefcce31d1a6ec80"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "da352020b6a22b436612a3649619476dff4cdfd421fa22066579d9d6fced4f0a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "948448ddd1278142b8563aab3cd6ef53c90cfd6b5c2a6b2cd5cc4c60d711f9b1"
-    sha256 cellar: :any_skip_relocation, ventura:       "d88daaca2c1c0ef9f9414dafcdbe3390577df3ef3c05828739863e7a117e5db6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b7758fc1e8e0e52e49a6a2cde1945363f28a29d570414b8a7e2585b26075a5a"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4c30080f70ab321a06e01c6dd53e7676af74a1b8af3fec7f22a2c52c2c4b51e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2771e844a1c87fce6cecc60aaf2332a62587c13638d6e07bb4e0bc47851115d9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c6cfee53c7e6d3d53a42979d041a69bcd3177118b774afbd323b206c0f9e5e7e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d6ef84d1aad9c281b446ad86e26e716e019a575f28e008fb87fa64050b22a4de"
+    sha256 cellar: :any_skip_relocation, ventura:       "b0e916a9672d04cdcf0801b7eef7a91a9d2e33076ff9049c32ac4b6ebcbdb5ad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38817b962f786864180514e6d0ae61674853b7a014a7bc49da65025948aed8e8"
   end
 
   depends_on "go" => :build

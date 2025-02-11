@@ -1,18 +1,16 @@
 class CargoInstruments < Formula
   desc "Easily generate Instruments traces for your rust crate"
   homepage "https:github.comcmyrcargo-instruments"
-  url "https:github.comcmyrcargo-instrumentsarchiverefstagsv0.4.10.tar.gz"
-  sha256 "6d39f893d48527a01d4a30264307b11f339335af891e34e8060f33149f746b08"
+  url "https:github.comcmyrcargo-instrumentsarchiverefstagsv0.4.11.tar.gz"
+  sha256 "170604bf216814b8557eb60aef8d2f586373d8fbe6dacefcd2319e5289c202e8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia:  "d61e8fb856a4e23a2893c9680e142d668aec7aa5a0574b6166372019fcae406b"
-    sha256 cellar: :any, arm64_sonoma:   "63a5f00a93443875ed2df1d44472aa6546861e181aa179ed319c24a2b84d18f0"
-    sha256 cellar: :any, arm64_ventura:  "dd745e70999ce8258115ac318710b22cc936ab4d92a10f16dceb56b110c21811"
-    sha256 cellar: :any, arm64_monterey: "546ab7702caa2b2a7002a55fd5b21d5d5acfe504712cd89c89b5289437cfe548"
-    sha256 cellar: :any, sonoma:         "df9ef1212bc5f2a91caa55b327e5ab5e3264604c7967c48d9de15774b02d4ca2"
-    sha256 cellar: :any, ventura:        "e72738fcf1ce7ab2cad854b78f33e9ff0821be44720e1d49f64431a4ef836d23"
-    sha256 cellar: :any, monterey:       "a2b9cdf6e0faa7272fb062e433dd37a87baae40341044d10cf6d77d902c03e02"
+    sha256 cellar: :any, arm64_sequoia: "62fa7839a37588f824c00b54835855db0fca84898765cf55df91aac9a823c754"
+    sha256 cellar: :any, arm64_sonoma:  "e948eb2795d82441f25e3b6e127a8400e7c32338eeb392e779454edf0c7b5a11"
+    sha256 cellar: :any, arm64_ventura: "c896e3e4e8cab385c7adc9462a2ce49ea0aecba1b6ce4a99ed73e3a339ba45f4"
+    sha256 cellar: :any, sonoma:        "5d5222a25f7bbc73c3f613f1338c7ce04c732f9c45e6da07bacf2da3dea92fc9"
+    sha256 cellar: :any, ventura:       "a2487292ce190bb131b9b0b904a0ee09b79fb7624d9cc33358b46193465b2d6d"
   end
 
   depends_on "rust" => :build

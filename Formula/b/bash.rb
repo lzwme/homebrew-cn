@@ -1,14 +1,14 @@
 class Bash < Formula
   desc "Bourne-Again SHell, a UNIX command interpreter"
-  homepage "https://www.gnu.org/software/bash/"
+  homepage "https:www.gnu.orgsoftwarebash"
   license "GPL-3.0-or-later"
-  head "https://git.savannah.gnu.org/git/bash.git", branch: "master"
+  head "https:git.savannah.gnu.orggitbash.git", branch: "master"
 
   stable do
-    url "https://ftp.gnu.org/gnu/bash/bash-5.2.tar.gz"
-    mirror "https://ftpmirror.gnu.org/bash/bash-5.2.tar.gz"
-    mirror "https://mirrors.kernel.org/gnu/bash/bash-5.2.tar.gz"
-    mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-5.2.tar.gz"
+    url "https:ftp.gnu.orggnubashbash-5.2.tar.gz"
+    mirror "https:ftpmirror.gnu.orgbashbash-5.2.tar.gz"
+    mirror "https:mirrors.kernel.orggnubashbash-5.2.tar.gz"
+    mirror "https:mirrors.ocf.berkeley.edugnubashbash-5.2.tar.gz"
     sha256 "a139c166df7ff4471c5e0733051642ee5556c1cc8a4a78f145583c5c81ab32fb"
     version "5.2.37"
 
@@ -52,10 +52,10 @@ class Bash < Formula
       037 8a2c1c3b5125d9ae5b47882f7d2ddf9648805f8c67c13aa5ea7efeac475cda94
     ].each_slice(2) do |p, checksum|
       patch :p0 do
-        url "https://ftp.gnu.org/gnu/bash/bash-5.2-patches/bash52-#{p}"
-        mirror "https://ftpmirror.gnu.org/bash/bash-5.2-patches/bash52-#{p}"
-        mirror "https://mirrors.kernel.org/gnu/bash/bash-5.2-patches/bash52-#{p}"
-        mirror "https://mirrors.ocf.berkeley.edu/gnu/bash/bash-5.2-patches/bash52-#{p}"
+        url "https:ftp.gnu.orggnubashbash-5.2-patchesbash52-#{p}"
+        mirror "https:ftpmirror.gnu.orgbashbash-5.2-patchesbash52-#{p}"
+        mirror "https:mirrors.kernel.orggnubashbash-5.2-patchesbash52-#{p}"
+        mirror "https:mirrors.ocf.berkeley.edugnubashbash-5.2-patchesbash52-#{p}"
         sha256 checksum
       end
     end
@@ -64,8 +64,8 @@ class Bash < Formula
   # We're not using `url :stable` here because we need `url` to be a string
   # when we use it in the `strategy` block.
   livecheck do
-    url "https://ftp.gnu.org/gnu/bash/?C=M&O=D"
-    regex(/href=.*?bash[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:ftp.gnu.orggnubash?C=M&O=D"
+    regex(href=.*?bash[._-]v?(\d+(?:\.\d+)+)\.ti)
     strategy :gnu do |page, regex|
       # Match versions from files
       versions = page.scan(regex)
@@ -80,7 +80,7 @@ class Bash < Formula
 
       # Simply return the found versions if there isn't a patches directory
       # for the "newest" version
-      patches_directory = page.match(%r{href=.*?(bash[._-]v?#{newest_version.major_minor}[._-]patches/?)["' >]}i)
+      patches_directory = page.match(%r{href=.*?(bash[._-]v?#{newest_version.major_minor}[._-]patches?)["' >]}i)
       next versions if patches_directory.blank?
 
       # Fetch the page for the patches directory
@@ -89,7 +89,7 @@ class Bash < Formula
 
       # Generate additional major.minor.patch versions from the patch files in
       # the directory and add those to the versions array
-      patches_page[:content].scan(/href=.*?bash[._-]?v?\d+(?:\.\d+)*[._-]0*(\d+)["' >]/i).each do |match|
+      patches_page[:content].scan(href=.*?bash[._-]?v?\d+(?:\.\d+)*[._-]0*(\d+)["' >]i).each do |match|
         versions << "#{newest_version.major_minor}.#{match[0]}"
       end
 
@@ -98,38 +98,42 @@ class Bash < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "bbfa520d0ddc11d3230c85d3a542f1665d52e461dad651adca3e372939d80763"
-    sha256 arm64_sonoma:  "6f41bcb71005164c1c72f4117d2635d63bbfa4a8e01a599ad776e68b5dd7b3fa"
-    sha256 arm64_ventura: "93bf8f67f2a81606400d36057373d40ba8e78e13f6df52d0d03d99e811c8b965"
-    sha256 sonoma:        "2889699aab77b51ad10ebceb566b2e35368b1bf8e423e40452cca0482e06da85"
-    sha256 ventura:       "8edad046fe3f173f229ad667aa97c819a7491bbf716d19caf2924b0892412994"
-    sha256 x86_64_linux:  "cf656843709a32e900c8e4e971cf0d0c3c0c568215ded674b1fccf5b7154f97f"
+    rebuild 2
+    sha256 arm64_sequoia: "e77d408d550e8e9f6669abf16759e35d0b867fe2126121eaa1ff39a94921cd86"
+    sha256 arm64_sonoma:  "c447b3c18e307ab9e3e6a5c28ebb09c1e76a51a505ab89948ade6abe8f859bf0"
+    sha256 arm64_ventura: "60bd00499cc9a01361143f2ffe15fcc0aa274db1de4b298dedd10fa2533d7e69"
+    sha256 sonoma:        "1f0af2a4eb5fddcecdd1d02a841e285dc8302a029f975571fddd4100af79ad67"
+    sha256 ventura:       "05a18ddf9001e3fe63f8c972aa24b73df39f6517eb0b5b913ccaf3478c6fa914"
+    sha256 x86_64_linux:  "0f188fcf662add592183d2b4647ea94bdd1fc001ed9a06920ab4bbc2b62bb9f9"
   end
 
+  # System ncurses lacks functionality
+  # https:github.comHomebrewhomebrew-coreissues158667
+  depends_on "ncurses"
+
   def install
-    # When built with SSH_SOURCE_BASHRC, bash will source ~/.bashrc when
+    # When built with SSH_SOURCE_BASHRC, bash will source ~.bashrc when
     # it's non-interactively from sshd.  This allows the user to set
     # environment variables prior to running the command (e.g. PATH).  The
-    # /bin/bash that ships with macOS defines this, and without it, some
+    # binbash that ships with macOS defines this, and without it, some
     # things (e.g. git+ssh) will break if the user sets their default shell to
-    # Homebrew's bash instead of /bin/bash.
+    # Homebrew's bash instead of binbash.
     ENV.append_to_cflags "-DSSH_SOURCE_BASHRC"
 
-    # Allow bash to find loadable modules in lib/bash.
-    ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(target: lib/"bash")}"
+    # Allow bash to find loadable modules in libbash.
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{rpath(target: lib"bash")}"
     # FIXME: Setting `-rpath` flags don't seem to work on Linux.
-    ENV.prepend_path "HOMEBREW_RPATH_PATHS", rpath(target: lib/"bash") if OS.linux?
+    ENV.prepend_path "HOMEBREW_RPATH_PATHS", rpath(target: lib"bash") if OS.linux?
 
-    system "./configure", "--prefix=#{prefix}"
+    system ".configure", "--prefix=#{prefix}", "--with-curses"
     system "make", "install"
 
-    (include/"bash/builtins").install lib/"bash/loadables.h"
-    pkgshare.install lib.glob("bash/Makefile*")
+    (include"bashbuiltins").install lib"bashloadables.h"
+    pkgshare.install lib.glob("bashMakefile*")
   end
 
   test do
-    assert_equal "hello", shell_output("#{bin}/bash -c 'echo -n hello'")
-    assert_equal "csv is a shell builtin\n", shell_output("#{bin}/bash -c 'enable csv; type csv'")
+    assert_equal "hello", shell_output("#{bin}bash -c 'echo -n hello'")
+    assert_equal "csv is a shell builtin\n", shell_output("#{bin}bash -c 'enable csv; type csv'")
   end
 end

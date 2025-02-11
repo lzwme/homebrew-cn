@@ -1,8 +1,8 @@
 class Aflxx < Formula
   desc "American Fuzzy Lop++"
   homepage "https:aflplus.plus"
-  url "https:github.comAFLplusplusAFLplusplusarchiverefstagsv4.30c.tar.gz"
-  sha256 "7c08c81f59b6c1f0bc2428fdee9fb880520e72c50be0683072e66bcde662b480"
+  url "https:github.comAFLplusplusAFLplusplusarchiverefstagsv4.31c.tar.gz"
+  sha256 "8c6e9bef19b3d43020972701553734d1cb435c39a28b253f0dd6668e6ecb86bb"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Aflxx < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "46d322501d9639cf140773e8aa4c46b282689ca4879848fbd38acc4e28e6fde8"
-    sha256 arm64_sonoma:  "400018c237b9178bc43689d1ab9b44e556b4951004d10ba10d988c1c7ab25075"
-    sha256 arm64_ventura: "d6874424713e8fc3e4b22babb5670fba51b7a8934d9d9caf530c0731a9a013ff"
-    sha256 sonoma:        "6de646f64ae790bdf5451fe00000fb935eb8e25f536b5c16d2f66ed8c5b402e7"
-    sha256 ventura:       "8926bc6622d164d5a1c7541649aa244f5cf68bb08046a81253947c47c2efbb9d"
-    sha256 x86_64_linux:  "f247017a775a382986974af0d87f75c95fc830bc9bcbdd08d30802a4b256d5a4"
+    sha256 arm64_sequoia: "4094c5297ade783a623387c6b56b5a70daecb7d665c5190072430fd75b9bfefd"
+    sha256 arm64_sonoma:  "543765f5f4f010a62d3e031754118f843f90fb5075abce697f943413f878978d"
+    sha256 arm64_ventura: "5c1e2e059e2de3fdcf8385baa68397c8d0bda9e3b448d6a199b6625195361999"
+    sha256 sonoma:        "57f97948c048d4bbe73bda674351a332fa1481213d01176dc6709a2cc8af1a60"
+    sha256 ventura:       "937ee8b2f729f7009b412ea9e8feb26cf97728ab932d4c404bebb669dd0f72db"
+    sha256 x86_64_linux:  "35ac3831a47d4e7dc815d91d888a3bad7f84291434dc3cdcc589712802edad73"
   end
 
   depends_on "coreutils" => :build

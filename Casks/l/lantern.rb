@@ -1,18 +1,12 @@
 cask "lantern" do
-  version "8.0.0"
-  sha256 "5ad26312c7b54438675b9a5bcdfcab49213bee6744476a03f0c4fb1e367a75b5"
+  version :latest
+  sha256 :no_check
 
-  url "https:github.comgetlanternlantern-binariesrawmainlantern-installer-#{version}.dmg",
-      verified: "github.comgetlanternlantern-binaries"
+  url "https://s3.amazonaws.com/lantern/lantern-installer.dmg",
+      verified: "s3.amazonaws.com/lantern/"
   name "Lantern"
   desc "Open Internet For All"
-  homepage "https:lantern.io"
-
-  livecheck do
-    url "https:github.comgetlanternlantern-binaries"
-    regex(href=.*?lantern[._-]installer[._-]v?(\d+(?:\.\d+)+)\.dmgi)
-    strategy :page_match
-  end
+  homepage "https://lantern.io/"
 
   app "Lantern.app"
 
@@ -20,9 +14,13 @@ cask "lantern" do
             quit:      "com.getlantern.lantern"
 
   zap trash: [
-    "~LibraryApplication Supportbyteexeclantern",
-    "~LibraryApplication Supportbyteexecsysproxy-cmd",
-    "~LibraryApplication SupportLantern",
-    "~LibraryLogsLantern",
+    "~/Library/Application Support/byteexec/lantern",
+    "~/Library/Application Support/byteexec/sysproxy-cmd",
+    "~/Library/Application Support/Lantern",
+    "~/Library/Logs/Lantern",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

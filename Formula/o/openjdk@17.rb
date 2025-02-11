@@ -11,12 +11,13 @@ class OpenjdkAT17 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "d267604139ce635df62b5acb65ae886091055cf1b4838e2b202e102727547d1d"
-    sha256 cellar: :any, arm64_sonoma:  "e538e4ccd5d8b758e6b391b87e63ec6b634e3a3d2b86cdc2a73c6371f6dfa1af"
-    sha256 cellar: :any, arm64_ventura: "83d7cba0e0e2e071deefbfd5dd33b8417e3807469583a867c8a5d596e4ee9377"
-    sha256 cellar: :any, sonoma:        "c4b9e043faa95edd98c2e8a2363c903b0cab59b197ae19a152b23395e4333c31"
-    sha256 cellar: :any, ventura:       "61283d2a3103bfca129a9ea7b20bf95b2f2ad3c0b249b4d1cb32107dba023077"
-    sha256               x86_64_linux:  "9ad511e1c487b8f914a6a726b4478448602a0837c517cdf5691619d6fe82d775"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "ad49acafe0bbbd4e5459f386239fb2dc44171965d69a5071e4d403f14ea61a2f"
+    sha256 cellar: :any, arm64_sonoma:  "eb099d9774ea93a59997a45931ae4f0da6e19b150e9f291ab369a18fb7f28c67"
+    sha256 cellar: :any, arm64_ventura: "81ecd64940487e9a62da12825a496f6fc75f924a037372605745f02de6bd5adb"
+    sha256 cellar: :any, sonoma:        "9b2695244289840056a1748ca958156a6b69c00af135acac472c1cbf75bd5934"
+    sha256 cellar: :any, ventura:       "2d06a3f21c4f16f13b49abb820b6585e599e85e6708f98be7579bfd6aa396d0a"
+    sha256               x86_64_linux:  "fa34be6d45cdec8a0220df90fac18105ebd40cd5e42180aa4338112134314029"
   end
 
   keg_only :versioned_formula
@@ -36,16 +37,6 @@ class OpenjdkAT17 < Formula
   uses_from_macos "unzip"
   uses_from_macos "zip"
   uses_from_macos "zlib"
-
-  on_macos do
-    if DevelopmentTools.clang_build_version == 1600
-      depends_on "llvm" => :build
-
-      fails_with :clang do
-        cause "fatal error while optimizing exploded image for BUILD_JIGSAW_TOOLS"
-      end
-    end
-  end
 
   on_linux do
     depends_on "alsa-lib"
@@ -84,16 +75,6 @@ class OpenjdkAT17 < Formula
   end
 
   def install
-    if DevelopmentTools.clang_build_version == 1600
-      ENV.llvm_clang
-      ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib
-      # ptrauth.h is not available in brew LLVM
-      inreplace "srchotspotos_cpubsd_aarch64pauth_bsd_aarch64.inline.hpp" do |s|
-        s.sub! "#include <ptrauth.h>", ""
-        s.sub! "return ptrauth_strip(ptr, ptrauth_key_asib);", "return ptr;"
-      end
-    end
-
     boot_jdk = buildpath"boot-jdk"
     resource("boot-jdk").stage boot_jdk
     boot_jdk = "ContentsHome" if OS.mac?
@@ -145,6 +126,10 @@ class OpenjdkAT17 < Formula
       ]
     end
     args << "--with-extra-ldflags=#{ldflags.join(" ")}"
+
+    if DevelopmentTools.clang_build_version == 1600 && MacOS::Xcode.version < "16.2"
+      args << "--with-extra-cflags=-mllvm -enable-constraint-elimination=0"
+    end
 
     system "bash", "configure", *args
 

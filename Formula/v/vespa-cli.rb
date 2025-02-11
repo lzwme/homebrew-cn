@@ -1,8 +1,8 @@
 class VespaCli < Formula
   desc "Command-line tool for Vespa.ai"
   homepage "https:vespa.ai"
-  url "https:github.comvespa-enginevespaarchiverefstagsv8.472.109.tar.gz"
-  sha256 "38c7fadad0c8933b83d5da94253a303811df570a77dee65266ef03296e1bac50"
+  url "https:github.comvespa-enginevespaarchiverefstagsv8.476.30.tar.gz"
+  sha256 "3dc451d01416df7fb4f41992995589892e940ce92b92fe22a99f62e78f9621c5"
   license "Apache-2.0"
 
   livecheck do
@@ -12,12 +12,12 @@ class VespaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ab31aeed7b2adb23b16f78283aff26144668c47365e184c397e0d87e55e4ed2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5ec276607f47db93be0b6149458474f8d317930f524653c5e6951878f45364f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1f316bc419caa4a7fb101a2cb8490d43bc70eee290dcbc287e5d57e06791c260"
-    sha256 cellar: :any_skip_relocation, sonoma:        "559e2c6b69daf4d1c659bc301c3cba526737fa6333e5d636773d5382b1250a74"
-    sha256 cellar: :any_skip_relocation, ventura:       "3210c11b75f078c816cee4b19fe89db4aa6fc80691eaa84559e55a6a2c88a095"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffade0f0dbbde439e063dde6390250f5c1e92ef0e9a12c1359b8fc55774ca196"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e28fc8d7f325a80fae83f64fdf19b2676413b9b26af3be825fb38d33d9e331e7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e457c978b26979df0056c0e6dc92368d0c7403feca49eced390a26760727e0f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1d62a78ab59e4da51364b6541c1f3049c8b0a501b81d4726bc71b4dbb405a3ff"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ed6b9983267512b7db203f7e6de1fc6d2597318ccb45d292361161421bfd31ad"
+    sha256 cellar: :any_skip_relocation, ventura:       "36d0c6bd113d0aedb81b7d85c918aa34079297ff1a7ae2657eb4e57097c8e4d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1647bf4ac6248f6213d4ba8b1e19cb38461eeb51bf1b544805465732077bbc6f"
   end
 
   depends_on "go" => :build

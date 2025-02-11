@@ -3,17 +3,17 @@ class Harlequin < Formula
 
   desc "Easy, fast, and beautiful database client for the terminal"
   homepage "https:harlequin.sh"
-  url "https:files.pythonhosted.orgpackages5cff8ea460457b314d49bd08e888c7086b0029c7293b6b68c4ef89bccdf012e1harlequin-2.0.1.tar.gz"
-  sha256 "d44c8abd9f6d0b8b5fd2975add08f475859a36ebf59fd373a5d3c9e6d4b1c384"
+  url "https:files.pythonhosted.orgpackages5113949231ac99a157445e3e3b6237bb82140036a062444dd7359c43aa09c973harlequin-2.0.3.tar.gz"
+  sha256 "e991ada24ddfcbf5409af3100f95f29aad7dd7e33dcb0ae833d0078a19a78c41"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "197c964755ce6b17843047e1ccb5ea1fed1ca10c097d8d57b48140884acd17b8"
-    sha256 cellar: :any,                 arm64_sonoma:  "49ca909a41094c86e17e291bac774fc6bb76591489118c4e055b085ed50e2eb5"
-    sha256 cellar: :any,                 arm64_ventura: "2e045d3bf6ffd3e50fec49dc29492a399e75af87e690ded9a233b477f98ed049"
-    sha256 cellar: :any,                 sonoma:        "7f1f01cab7bdc9dde16b7bd65d573ba056620ba7404b53323cd0bc84afc9084c"
-    sha256 cellar: :any,                 ventura:       "5bccbb8faa43a8b4909cc0a8ba3452603b1e02141f2a4d99a08088863342ece2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e18cc54e45da8098b24f5c03eeb502096ef0dc7a955e22e3a4175c851867a86"
+    sha256 cellar: :any,                 arm64_sequoia: "de49bff78e170b9fd067a9bccb3a48d60d3b1afcda5c94e473cd5979e6c2b1d1"
+    sha256 cellar: :any,                 arm64_sonoma:  "bbc273a73779a8b07aa110d9d27bb8e6416a25c87a8cfb1ba4641aca1cf81694"
+    sha256 cellar: :any,                 arm64_ventura: "25ce9cc750c9c2d180ea62f806f34c3236817baa0784031265780e3e89bd79ea"
+    sha256 cellar: :any,                 sonoma:        "237404ab59bd8ea57d5ac5540bef2e5654eeb95db4c36bc5150e8be763648488"
+    sha256 cellar: :any,                 ventura:       "5a38aa26fc76b3d8cf45662b231ceb6f3367984af5c5503619303ae1fe21ede7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62d9306b2a1ef14dfb22aae9ad1759bbb6c332617bb806cdd2154e1604e51563"
   end
 
   depends_on "cmake" => :build

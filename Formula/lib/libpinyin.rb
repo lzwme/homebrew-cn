@@ -1,8 +1,8 @@
 class Libpinyin < Formula
   desc "Library to deal with pinyin"
   homepage "https:github.comlibpinyinlibpinyin"
-  url "https:github.comlibpinyinlibpinyinarchiverefstags2.8.1.tar.gz"
-  sha256 "42c4f899f71fc26bcc57bb1e2a9309c2733212bb241a0008ba3c9b5ebd951443"
+  url "https:github.comlibpinyinlibpinyinarchiverefstags2.10.0.tar.gz"
+  sha256 "478d98ce15a2ff887fdd183c904dba82c2724f3cb9439f8441c736f0ff293279"
   license "GPL-3.0-or-later"
 
   # Tags with a 90+ patch are unstable (e.g., the 2.9.91 tag is marked as
@@ -13,13 +13,12 @@ class Libpinyin < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "a97c5a5bbaf53f34f607ea8bfa3a8af862cfc7f4aefde3712bf1f6add88fbc62"
-    sha256 cellar: :any,                 arm64_sonoma:  "0364ce14c457724bb5a3f7bcea2f491977a36bb9b30afeb8b0aa19adc32b7ecd"
-    sha256 cellar: :any,                 arm64_ventura: "119fc40f85b091ede91132993a2cd2b7ea7a5c27a6572e64b23baf778ccaa849"
-    sha256 cellar: :any,                 sonoma:        "6f152f77521d8bca325af78a7a15f755576ef6d0d9d0e7b665f9c5193374c10d"
-    sha256 cellar: :any,                 ventura:       "a5cb0c9b78c3ed3a0b8ebc23020016aff851bf7154955b0dabbca2728ad872c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92a7a7d3ef5801eb1be45427de6ad5b333414fab65663bb170d823b44bc5fed2"
+    sha256 cellar: :any,                 arm64_sequoia: "b8dac5d58d160815c73c53d8fa267cf5ec595d20c99946ab3b0520899a14ef1a"
+    sha256 cellar: :any,                 arm64_sonoma:  "7de23fd9ef7c1df08b5d7b5a4fe483d6cc716ecea6159b64959efb0c8c8ff3cb"
+    sha256 cellar: :any,                 arm64_ventura: "66cef63e3182ab1cc950f068660ccb82907670e4bf02973f68f9c0abbc637804"
+    sha256 cellar: :any,                 sonoma:        "42ac21b0b3d68421af64b543a327303a6055a84d5954b3f5caba3454ad8f840d"
+    sha256 cellar: :any,                 ventura:       "9950ba2086c77bad3f506e3bd18a1d98366de65bb676d80815963446a0620bce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74ba1959f1051f9d85c55e2eaed3c713e361cc881baa2aefa6c20279e4c08353"
   end
 
   depends_on "autoconf" => :build
@@ -45,8 +44,8 @@ class Libpinyin < Formula
   # The language model file is independently maintained by the project owner.
   # To update this resource block, the URL can be found in dataMakefile.am.
   resource "model" do
-    url "https:downloads.sourceforge.netlibpinyinmodelsmodel19.text.tar.gz"
-    sha256 "56422a4ee5966c2c809dd065692590ee8def934e52edbbe249b8488daaa1f50b"
+    url "https:downloads.sourceforge.netlibpinyinmodelsmodel20.text.tar.gz"
+    sha256 "59c68e89d43ff85f5a309489499cbcde282d2b04bd91888734884b7defcb1155"
   end
 
   def install

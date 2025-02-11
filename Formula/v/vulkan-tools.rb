@@ -12,12 +12,13 @@ class VulkanTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "53a007a84b4760f4170873c4c6e99cd61b4eed0430510e07159d791daabe5061"
-    sha256 cellar: :any, arm64_sonoma:  "0f46827cbba868aff6645b933fa16a56f36728843dc5f49efbe5c6ebdb5894d4"
-    sha256 cellar: :any, arm64_ventura: "21ad04ab2d87dc6d7dea8ff491a1270dba70dd5af77dc7b65c5196f5d4577a6c"
-    sha256 cellar: :any, sonoma:        "32597916882f2d6a72713d063100583d059f45bc709f7419ffba61bca72c07ae"
-    sha256 cellar: :any, ventura:       "dbe4cf3cefd966c99e4e3e10ca16239ab378d8c47e4d3c6bab0206d57d35f5a9"
-    sha256               x86_64_linux:  "f8955674f6e14c3c401c4ec454001cd68adbc9d79f790055adc8864f8855c537"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "502e60bb048d10eeba3665bdbf4668279cadfde780048397297be9a81d4557ad"
+    sha256 cellar: :any, arm64_sonoma:  "53e0852f35fadafcda2af7f5b01c2011fff132493f634e3a724564a5e0fe8844"
+    sha256 cellar: :any, arm64_ventura: "9e841e656c68b080846623e2cf491ee950b5487ee6cb49359957b4bce3a41299"
+    sha256 cellar: :any, sonoma:        "f709728ab078f21dc442530b54cd12b5973a8ff40fd495dceaa3b57b1b38ab0e"
+    sha256 cellar: :any, ventura:       "6cb7b4bc120b9917a5fec6f94550b29e0e6a88443964e41e9e689bbc2fc1322e"
+    sha256               x86_64_linux:  "89c318bc51a7fff24370640fba6d4d86de27a0ef17d5ba6998597f3577712be5"
   end
 
   depends_on "cmake" => :build
@@ -46,11 +47,10 @@ class VulkanTools < Formula
       # account for using already-built MoltenVK instead of the source repo
       inreplace "cubeCMakeLists.txt",
                 "${MOLTENVK_DIR}MoltenVKicdMoltenVK_icd.json",
-                "${MOLTENVK_DIR}sharevulkanicd.dMoltenVK_icd.json"
-      inreplace buildpath.glob("*macOS*CMakeLists.txt") do |s|
-        s.gsub! "${MOLTENVK_DIR}PackageReleaseMoltenVKdynamicdylibmacOSlibMoltenVK.dylib",
+                "${MOLTENVK_DIR}etcvulkanicd.dMoltenVK_icd.json"
+      inreplace buildpath.glob("*macOS*CMakeLists.txt"),
+                "${MOLTENVK_DIR}PackageReleaseMoltenVKdynamicdylibmacOSlibMoltenVK.dylib",
                 "${MOLTENVK_DIR}liblibMoltenVK.dylib"
-      end
     end
 
     args = [
@@ -105,7 +105,14 @@ class VulkanTools < Formula
   end
 
   test do
-    ENV["VK_ICD_FILENAMES"] = lib"mock_icdVkICD_mock_icd.json"
-    system bin"vulkaninfo", "--summary"
+    with_env(VK_ICD_FILENAMES: lib"mock_icdVkICD_mock_icd.json") do
+      assert_match "Vulkan Mock Device", shell_output("#{bin}vulkaninfo --summary")
+    end
+
+    return if !OS.mac? || (Hardware::CPU.intel? && ENV["HOMEBREW_GITHUB_ACTIONS"])
+
+    with_env(XDG_DATA_DIRS: testpath) do
+      assert_match "DRIVER_ID_MOLTENVK", shell_output("#{bin}vulkaninfo --summary")
+    end
   end
 end

@@ -429,7 +429,7 @@ Homebrew-homebrew-core/Formula/b/bash-git-prompt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bash-language-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bash-preexec.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bash-snippets.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/b/bash.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/bash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bash_unit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bashate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bashdb.rb, Homebrew/homebrew-core, 0
@@ -5640,6 +5640,7 @@ Homebrew-homebrew-core/Formula/r/riff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rig.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rinetd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ringojs.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rink.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rip2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ripgrep-all.rb, Homebrew/homebrew-core, 1
@@ -6194,7 +6195,7 @@ Homebrew-homebrew-core/Formula/s/sqlfluff.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sqlfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqlite-analyzer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sqlite-utils.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/s/sqlite.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/sqlite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqlitecpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqliteodbc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sqlmap.rb, Homebrew/homebrew-core, 1
@@ -11985,7 +11986,7 @@ Homebrew-homebrew-cask/Casks/l/lando@edge.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/landrop.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/langgraph-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/languagetool.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/l/lantern.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/l/lantern.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lapce.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/laravel-kit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lark.rb, Homebrew/homebrew-cask, 0
@@ -14097,6 +14098,7 @@ Homebrew-homebrew-cask/Casks/t/threema-work.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/threema.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/threema@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/ths.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/thumbhost3mf.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/thumbsup.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/thunder.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/thunderbird.rb, Homebrew/homebrew-cask, 0

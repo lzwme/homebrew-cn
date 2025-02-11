@@ -1,8 +1,8 @@
 class ProbeRsTools < Formula
   desc "Collection of on chip debugging tools to communicate with microchips"
   homepage "https:probe.rs"
-  url "https:github.comprobe-rsprobe-rsarchiverefstagsv0.26.0.tar.gz"
-  sha256 "289f9d882ea43f90a044429b555e8f416af7075927831d0f444a087cc44846d3"
+  url "https:github.comprobe-rsprobe-rsarchiverefstagsv0.27.0.tar.gz"
+  sha256 "6f37bd7ca85eeac29aea089fa39415b484a74f3415d9f21e94049dfe765325d2"
   license "Apache-2.0"
   head "https:github.comprobe-rsprobe-rs.git", branch: "master"
 
@@ -12,12 +12,12 @@ class ProbeRsTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "421b8aaffb2d8b87beede4d4bec92fab5dadf8604ad832b664428151758b9d14"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44db77729bf8969c09b0c8080ef503cc862499703f43ecc0f7a7621d5e9c885c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "63a8b780260b1182d9770ded138de754dd7d748333f375d107c0250dfddb5ba6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bb2a01d21ecb72f717b6ed61933846966794ab8f9e0da49c3ffd0ade9058af58"
-    sha256 cellar: :any_skip_relocation, ventura:       "c278a17df7eff41c08121fbc5548ebcaf78d3530ff1c4358fd026a6972d7dd30"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "522c0ea72a7cd96f86678ff8d25fcec12068b3ad8651612b59d59f40f4b27b35"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "508ec9c47f72df213ba496904849f96a574322bb8526d4bda346a168f6308eab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e32b5cb5ae48ea5cd3c9582e36123874c3b788e3c8742e5cc5926a1de06d31d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bccd39d22e47d157637e9fee024d22993cf6905d670195ec8558532febacc4a3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cd67fb6caca4c506c2871ac742f577521cd623eb12410fdad1fa19d73b196a07"
+    sha256 cellar: :any_skip_relocation, ventura:       "56eb3d189525faa8e5f30727ece08fe63a00671dbc6faf2cb965c888d865c293"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08aa999824302d17acc664b8dcabb80d5f2955f56008feb05d1c74500092c001"
   end
 
   depends_on "cmake" => :build

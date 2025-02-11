@@ -1,8 +1,8 @@
 class CargoNextest < Formula
   desc "Next-generation test runner for Rust"
   homepage "https:nexte.st"
-  url "https:github.comnextest-rsnextestarchiverefstagscargo-nextest-0.9.88.tar.gz"
-  sha256 "77a6029a409f8ab37e5c8bfc31fccc13bc5ea8475ff3309947a5811fdc758ef4"
+  url "https:github.comnextest-rsnextestarchiverefstagscargo-nextest-0.9.89.tar.gz"
+  sha256 "33f9a4d15d0a4ff268b723cff93b9a50e750e870783d468923c9a029c7f5ee29"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class CargoNextest < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4bf87a68bfa48852b4dc8e8b162253d3aff55a755b1e6f25a793844dca579bc7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2959ba88a80a23330c42720d31eb5e582df32e191a9899834b629a9958d52d6a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "10c79f06c0d10f60dbcd9d95c3166735b0b5467b05eb7353d9b66f0e36c092d0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c33deb754b798325ff50af6cf8cf486d42c63af724ee29ef3bb24f37828a8f9d"
-    sha256 cellar: :any_skip_relocation, ventura:       "efcc8a61280ff5c0741c3c116580ee987f1a78bb43035627ae894e7d12cef6dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f13184b4fa92e1aa6015c563b219fef37438a689f6c01da8998ded2f517e2a1d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77b4bff80dad1b9ba735cef43b446724d5b14c437186655cff8ec4b631dd81be"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "662c7d68d3802b9319b8e3c3aa3470627faf8e3e97ecb4178e84b70444c61bfd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6c19d8ffacdcc5330e25a786355bd0918e2604a08a8dfc678789ebe93621e6e5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "df3c1943731fa9e476a2aee14120eebac385543ba7ed87377da62dc30cf41982"
+    sha256 cellar: :any_skip_relocation, ventura:       "bd04a1121006dee086cf951bf6ce63db6f4e8fd3b6a93e22c433338c2fb38744"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea1435e90c2a35c80cb0d2d78d259492ea271c0c2f42d594a00237b2f05cb5dd"
   end
 
   depends_on "rust" => :build

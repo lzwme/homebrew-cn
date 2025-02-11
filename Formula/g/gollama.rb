@@ -1,18 +1,18 @@
 class Gollama < Formula
   desc "Go manage your Ollama models"
   homepage "https:smcleod.net"
-  url "https:github.comsammcjgollamaarchiverefstagsv1.28.13.tar.gz"
-  sha256 "01becc51c33587d1862c257f14d9dbf644d1c3df9b98b44d77e292221d94f4a5"
+  url "https:github.comsammcjgollamaarchiverefstagsv1.29.0.tar.gz"
+  sha256 "a1b87d30478b8a61f7ca0b0b1a580d5084e65c5930e47a3b79fbc949c3cace35"
   license "MIT"
   head "https:github.comsammcjgollama.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a3864a566503ba14b511b764ddcf8256c82e1ad4cc2a5b969fc775b358d8208"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23b7e28cc6f16a0c24b6e61234e06a4ccb7d99de506fa266e35354b33b16824c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d9c594fb4bef94f8c4d707f8087be47895bbf7007c8bea64873207e5ce205bc9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f70da50a6f8b15cce9618313a659b97ca337d9ddb30fc1be6ab0bb656eacfe69"
-    sha256 cellar: :any_skip_relocation, ventura:       "45513c97126593db1c9a25dd2a45cd6c094435994a7cabf10e012cdc7c679597"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1a8099e463ca84c6b7fbda798f496fd734b0601e63304d33b9b58febfa78bd5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "338cdb69c0dc45c2d53e33910c76c821f540b615c0fe40b4daa3f954d3e4c11b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f054622b611846d59a3fe0adbaafd155fe9b89e4d2e371fc8415fd3ab6a0bad8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "adf2e62ead3440fe9d4b125f96bfed4e02bf103b609949e20f642f8fde735cd7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "788c2c8aafdff0edfb101c202eb0f8377c26df911f272c14b731a1c8018b7156"
+    sha256 cellar: :any_skip_relocation, ventura:       "a6dd74aa8691867b99996f8b495d08c4375ba2f2bf4c1248c1f2044329b42c0e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c205fc7d5bd60bad77ed817cc0d03a99febb046d0844e529b4c944ecc173d075"
   end
 
   depends_on "go" => :build

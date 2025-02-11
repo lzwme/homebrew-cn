@@ -1,8 +1,8 @@
 class Mikutter < Formula
   desc "Extensible Twitter client"
   homepage "https://mikutter.hachune.net/"
-  url "https://mikutter.hachune.net/bin/mikutter-5.1.0.tar.gz", using: :homebrew_curl
-  sha256 "86c0b30f38fa6e67ed2c9c5b013497b75ef6895f5c53c58eccc708294693c98d"
+  url "https://mikutter.hachune.net/bin/mikutter-5.1.1.tar.gz", using: :homebrew_curl
+  sha256 "ddff538aae249bd636604128bac1ccb526a4ed5c32f00b45d3c3c1dbcdb655de"
   license "MIT"
   head "git://mikutter.hachune.net/mikutter.git", branch: "develop"
 
@@ -12,12 +12,12 @@ class Mikutter < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4d124ea4e6a09a0e0f387b8e593abea7ba89d8471b70f77d2b3b3847c1325f69"
-    sha256 cellar: :any,                 arm64_sonoma:  "66c769c4f86d1c8374fa14fcc8366c9e102b323db6a881129b17813fe19d035f"
-    sha256 cellar: :any,                 arm64_ventura: "62ffe37f9d7fe15b8f20a81d623d383c6985edb51d493f432f2d1e6f25968f48"
-    sha256 cellar: :any,                 sonoma:        "045860dc68d0852ee06d6532c8f6dc51a44124f560ceba46cfe559370ee8ff07"
-    sha256 cellar: :any,                 ventura:       "9c7925b113c25fdc2bd54295b081a8b359bfd5a2a0ced9d22626dda4c17bff65"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95a729ed83704274712e4803b5fe9c0de3afa33754b404d20e2e62123b735984"
+    sha256 cellar: :any,                 arm64_sequoia: "ee481445aa3a12c60060f4f31d43d8d0378c8189e55c81c7400090b668f48abb"
+    sha256 cellar: :any,                 arm64_sonoma:  "b66c8480c121a81c26ec2b37e653fbb324c68c362c18e398ddc40129c3f9c9a4"
+    sha256 cellar: :any,                 arm64_ventura: "a4fc84de589aa90a7a78dc4c1d143bf4731f9ae7e251ac360bafffbdaa485db4"
+    sha256 cellar: :any,                 sonoma:        "ab93541b1f60859a5d8e524db4e29d532aff212bd97b5e039884bafb3c174861"
+    sha256 cellar: :any,                 ventura:       "b778e25fda7cb17ec806e6fb66166de3832d00af03f72f4b19bafb6319d246db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6009cbdabcfa5a3d06991b1b73bcf84412423289174569e276e3beddd419e3a"
   end
 
   depends_on "at-spi2-core"
@@ -280,10 +280,9 @@ class Mikutter < Formula
     end
 
     gemfile_remove_test!
-    system "bundle", "config",
-           "build.nokogiri", "--use-system-libraries"
-    system "bundle", "install",
-           "--local", "--path=#{lib}/mikutter/vendor"
+    system "bundle", "config", "build.nokogiri", "--use-system-libraries"
+    system "bundle", "config", "set", "--local", "path", "#{lib}/mikutter/vendor"
+    system "bundle", "install"
 
     rm_r("vendor")
     (lib/"mikutter").install "plugin"

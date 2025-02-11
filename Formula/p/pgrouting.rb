@@ -1,8 +1,8 @@
 class Pgrouting < Formula
   desc "Provides geospatial routing for PostGISPostgreSQL database"
   homepage "https:pgrouting.org"
-  url "https:github.compgRoutingpgroutingreleasesdownloadv3.7.2pgrouting-3.7.2.tar.gz"
-  sha256 "953e3368b172fe81881128a6ec078f6b31cf52196b773dfc05df4237bb9c5e26"
+  url "https:github.compgRoutingpgroutingreleasesdownloadv3.7.3pgrouting-3.7.3.tar.gz"
+  sha256 "949ebe7acd60565a5a1c206d8918caa371f836015f6a721bdc29482ca23b8298"
   license "GPL-2.0-or-later"
   head "https:github.compgRoutingpgrouting.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Pgrouting < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "62ef64cd8915e0b5ab7c2d1cd6ce0ad51ee6da6a45944fcc67bc9aa582f77e7d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fa94dd243925a91709e583335c5d5a78f2dc6983ff985a1d2616c2dc66c219e7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cb357e50ab259cc51be07efa3ac9cbac451e519efaeee0e7385426b8d62a61f3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ddc0ebe092c324a569cc017464691f141794b666e3ee2598cecf38ad5619c267"
-    sha256 cellar: :any_skip_relocation, ventura:       "497d9e6479135726897abbd0415576a6c2730c5c55049de71956ba9063f9dc38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db4050839d21a4c44ca82e66f6ac200b933a7a3c701249473424808493870845"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "873cef203b587ed5963ea54d3eb10cda21eca8405c77ae83b45735367e708ec7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00139be4295f5334d8fc395fdc4846a100f458c1ae4caca4fd4f3405416f5ad5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "19fb9c995d67f7c97ef8b26fd0b019a515aa6ccb99325c859d234e97589ff0ca"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c4dcf223081637de2310a42d8c393fc1242a5ca94613490cc650d8ec6ce3c9fe"
+    sha256 cellar: :any_skip_relocation, ventura:       "f90051c9f2d5ffac3b71e058055364a3f64a627acc0a86940496fadb1fda0370"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "457c440557e0a31a621b0adb1109106af6de501b115371fd1df835ad899e8956"
   end
 
   depends_on "boost" => :build

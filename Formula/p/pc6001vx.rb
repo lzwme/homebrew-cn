@@ -2,17 +2,17 @@ class Pc6001vx < Formula
   desc "PC-6001 emulator"
   # http:eighttails.seesaa.net gives 405 error
   homepage "https:github.comeighttailsPC6001VX"
-  url "https:eighttails.up.seesaa.netbinPC6001VX_4.2.10_src.tar.gz"
-  sha256 "82dfae60462770b1497a6131d9420cc32fb23beb44733c98f8e97eaa8df39a26"
+  url "https:eighttails.up.seesaa.netbinPC6001VX_4.2.11_src.tar.gz"
+  sha256 "8ad576192b555d0c21c1317351c52fce7b9ecb02c8ee9bd52ceb5e4b61901b4b"
   license "LGPL-2.1-or-later"
   head "https:github.comeighttailsPC6001VX.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "89277f30e85f0c53b33f4af245efe70e12620d8135d5c6bf96b85847b8577eff"
-    sha256 cellar: :any,                 arm64_ventura: "f5eba22f7175f65796d9a1f69b5c1d6af1e0b571a09b0a142f278ddcb07320f9"
-    sha256 cellar: :any,                 sonoma:        "0f6e6d416491e74e23b8ea156b98e161879c81aed4dd48c70f16c1d474e5fae3"
-    sha256 cellar: :any,                 ventura:       "9b5ef2f68413dd80f20a9605ce7954bd696711e706fa3b5f89c4e0bcda96ffff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e936c5feed6738d8cb60c4b6a94ce0652beba32c096eded43a7a994625dab1e"
+    sha256 cellar: :any,                 arm64_sonoma:  "9fddc92fb7e6ca19f25562ad71eff9a26b863106ebc03216cf4a72dc253ca77a"
+    sha256 cellar: :any,                 arm64_ventura: "f857f85c65c842ad9134cf60192f236148fea7a84c4234528cb9f2e86b9281b8"
+    sha256 cellar: :any,                 sonoma:        "5d2462d66e58c7b68ac15d6baccc9e91eb92ff6e9b208fc8eb70bf0e06a46498"
+    sha256 cellar: :any,                 ventura:       "2d70e0965f8aa7c2378e27d694be1e7bba03e971856a2309f466df96855b5243"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ede1b7b32adbb569385fc75ea1e5ca5c630beaab2a9d578006a192fe3ee299c1"
   end
 
   depends_on "pkgconf" => :build

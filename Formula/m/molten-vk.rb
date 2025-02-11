@@ -59,11 +59,12 @@ class MoltenVk < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "1a3d81152656eca4c1d4980536ee8ad1ea4490df80c2646120e8c6e4dc87b6d0"
-    sha256 cellar: :any, arm64_sonoma:  "c360bd8b969382af39bef1458f3b96dc68191b3f57d2e718e136d0bd106ac9a5"
-    sha256 cellar: :any, arm64_ventura: "4653204b0b3e2a6063a4159fd013b90caddfede7a3cb348e046b9e6026f69c08"
-    sha256 cellar: :any, sonoma:        "5047bfb4b6b324935db3b71a67319e328c6d72d8408cf77e135e7e928352ef5e"
-    sha256 cellar: :any, ventura:       "ed6834d3160715bef1ea0d2b6c55392cac67c1385a40c24ad712ced28e7dbeac"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "306fb6df9ca047fbf61e46b82ae3a3cd9f4fe8c60a236c4940e460f9a42ae169"
+    sha256 cellar: :any, arm64_sonoma:  "36a99f13dd4317c01f7e0024c4bc346c5d3a66084bc8ed1c5e5a20948cd89b2d"
+    sha256 cellar: :any, arm64_ventura: "b39bdae032fa33dfb52e870fbce6b5a75801f8b954a5edeab1f0fa42a3fb0fc2"
+    sha256 cellar: :any, sonoma:        "dcf6fca1aee3f565b9806c0f9586312b0d2f7c0268ba10095dfe0ace8416cf64"
+    sha256 cellar: :any, ventura:       "d229ac36b1021d4d32c347bbd6dcdbed33b2ed54f10b8ef14fb95586c086fbde"
   end
 
   head do
@@ -180,8 +181,8 @@ class MoltenVk < Formula
 
     inreplace "MoltenVKicdMoltenVK_icd.json",
               ".libMoltenVK.dylib",
-              (lib"libMoltenVK.dylib").relative_path_from(share"vulkanicd.d")
-    (share"vulkan").install "MoltenVKicd" => "icd.d"
+              (lib"libMoltenVK.dylib").relative_path_from(prefix"etcvulkanicd.d")
+    (prefix"etcvulkan").install "MoltenVKicd" => "icd.d"
   end
 
   test do
