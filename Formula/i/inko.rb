@@ -1,8 +1,8 @@
 class Inko < Formula
   desc "Safe and concurrent object-oriented programming language"
   homepage "https:inko-lang.org"
-  url "https:releases.inko-lang.org0.17.1.tar.gz"
-  sha256 "752c1881b7029f76f7a900ace23fbc5b81e1ceebea214c7f998c03284fd92dba"
+  url "https:releases.inko-lang.org0.18.0.tar.gz"
+  sha256 "8ebd2c1d8cb3375b50c4236c39f331fd0942861ebeb30b317ec0f904843b5a26"
   license "MPL-2.0"
   head "https:github.cominko-langinko.git", branch: "main"
 
@@ -15,17 +15,17 @@ class Inko < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a6a054979919629af9dc5b93c3caa53863e8035085c9d0f4816d0ceaead78133"
-    sha256 cellar: :any,                 arm64_sonoma:  "17e298645d17fc2f4b0aaa29d622be52b5ef2c467e65fa044eec038cc726749b"
-    sha256 cellar: :any,                 arm64_ventura: "4f19eba4d1fd8a58ed8b21b56c1b8dd8912f6768e62d6d617bd1cf2d9de5a2fb"
-    sha256 cellar: :any,                 sonoma:        "cb722f459dc312af8b58b861afb37d4cbcfb3bd506ed3ddca32c0bfd8acc15eb"
-    sha256 cellar: :any,                 ventura:       "84c3dc1eb5b4e187055055c654f523d8c6be3d59f992857aa3dd4433013cad70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afedc35fa2c235553e564dba014a3840e38de0dee25b271f67c83208da1cacb6"
+    sha256 cellar: :any,                 arm64_sequoia: "8e1910a560f1ca9131acedf7ece2f246e59a65aacbf450e818d7b469838f673c"
+    sha256 cellar: :any,                 arm64_sonoma:  "27c69734fc92663a20ca689d487d97058eeaaa628592264839d5933501d311f3"
+    sha256 cellar: :any,                 arm64_ventura: "c5f4eeabd4fb17588a819fdb8756ab77b86042013e507e85751e1e1688cf4fc6"
+    sha256 cellar: :any,                 sonoma:        "8f0c6eac46643a0c8f8259b3535eb4c4500867cacd13d0d6999a5c9c18b61b24"
+    sha256 cellar: :any,                 ventura:       "3030ff2f27595331f872bfd15f6a5cd47872462742d0659ac349c863d1775c14"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd6186c879ba0979dddf982d5d203491da1c9906a7a239fb51466d8921639da3"
   end
 
   depends_on "coreutils" => :build
   depends_on "rust" => :build
-  depends_on "llvm"
+  depends_on "llvm@17" # see https:github.cominko-langinkoblob4738b81dbec1f50dadeec3608dde855583f80ddacimac.sh#L5
   depends_on "zstd"
 
   uses_from_macos "libffi", since: :catalina

@@ -1,8 +1,8 @@
 class CodeCli < Formula
   desc "Command-line interface built-in Visual Studio Code"
   homepage "https:github.commicrosoftvscode"
-  url "https:github.commicrosoftvscodearchiverefstags1.97.0.tar.gz"
-  sha256 "da8e79abab3bc81e5e06e9d6e4e3975c800b6955cef516ad23d24e6fbce1d6c2"
+  url "https:github.commicrosoftvscodearchiverefstags1.97.1.tar.gz"
+  sha256 "01073cec2ad504a40006a16821a7bace9c9ff725c4c3ed0643beaabbb207f401"
   license "MIT"
   head "https:github.commicrosoftvscode.git", branch: "main"
 
@@ -12,12 +12,12 @@ class CodeCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e7dad0679cb8f4edc8f7c0ad4e730201be177b61c5a759240c6ce5c31a438bdb"
-    sha256 cellar: :any,                 arm64_sonoma:  "c882f256ff3ecaf6966646034225a63eeadd2eef64129f0597a1d2d62e82134a"
-    sha256 cellar: :any,                 arm64_ventura: "27eec9c4570f283d0ddfc3bf2c34d97cd360a1e9ec37d2730088d35c5cacc3fd"
-    sha256 cellar: :any,                 sonoma:        "aef0aa8b0444b4cf73770597976a12e0f430dd6ba06317e1449bfd18cab848ed"
-    sha256 cellar: :any,                 ventura:       "cc104ffbfd2db0d34d972e0f70c6b9304c324fe13caae4b82962f410fb02e0d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d5f2f39cbd503cb1664b2cb5fe84d7a906504459835b5a63a4f91b45f8029de"
+    sha256 cellar: :any,                 arm64_sequoia: "c8e77ac438faa94d01c782fe44a3d4a0b8563d33671bca7ce103ceed2c9519d5"
+    sha256 cellar: :any,                 arm64_sonoma:  "dd732e4dd0ed6dac7b54e7469b960d8a2f78acf2ead49ba53a9fcc7ff0bbd443"
+    sha256 cellar: :any,                 arm64_ventura: "b79f28668db5f98947606ee3f8ac8ae2cf87c1e91c03a5cedf945f2a466edbd2"
+    sha256 cellar: :any,                 sonoma:        "0e5b93af16242b811ac24633ead9ca75bf736b09cbd3c804cd61402692139178"
+    sha256 cellar: :any,                 ventura:       "dfd1a71f2b39b5f4cedd7e07d514dc1f10e73a2dfa5d7ead6c90ef7b6f2cd166"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e85799f5754f0960de8ee47b04cf59f8a0d2d508df354a605e5fe48310d167a2"
   end
 
   depends_on "rust" => :build

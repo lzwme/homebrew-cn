@@ -1,18 +1,18 @@
 class Firefoxpwa < Formula
   desc "Tool to install, manage and use Progressive Web Apps in Mozilla Firefox"
   homepage "https:pwasforfirefox.filips.si"
-  url "https:github.comfilips123PWAsForFirefoxarchiverefstagsv2.13.3.tar.gz"
-  sha256 "d511daae76d3a67a8277adae0c09bf200d5b619f4ab1beb44218f195fc4bf890"
+  url "https:github.comfilips123PWAsForFirefoxarchiverefstagsv2.14.0.tar.gz"
+  sha256 "19b55d4ce77d148313b19fb67ac53fb00ba55f5219b6819e415c5e133bc061da"
   license "MPL-2.0"
   head "https:github.comfilips123PWAsForFirefox.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d66ae57160daa60c2fcbedca1a7f8ac8835199879502c0a97d7cc3c923a8f176"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12eaf8306c2bf632b08ed02cdfdf77a13f154b5791c7bf58754b1c5fc88b7abb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c8551dfa4ff0cc80707645d4f52f07c7a186488846d4877226ec064f023f4b3f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "676eb6f1cf8e6260fdb91e90b6a553594391d46024790d8afc0d17de59c0c87c"
-    sha256 cellar: :any_skip_relocation, ventura:       "335d60b4e467326b9f05f59d78b5fe462125b8d0f122ec8963c8429d79be7ed6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1294b4d9badd2ca8c90e5ffd4f28384eb39ec61cc5d1ef5e5cca61c54f40b535"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eff06c51392a92389440bd706a701350dd446419bb5f0baef92b36a7bc8e2b3e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a31f94657d28d9fa0ea46fd076ad86990782c52f8f3efbdb8799fe7da5b5e2a4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "db3404d0e13adea868d6187c71935ea215920fd5f8d4dc6eadb2afe22b9dd712"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1e9cfeeebe97876516acd293b3a16cc22b8d6ddb30f05cd9439d3996395fe3fb"
+    sha256 cellar: :any_skip_relocation, ventura:       "8c908f1cc9843b8a0f44b0209e9e7e42e83b7631e4c6791145bcc42471a7866a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c609f7932b8fa6dd6a3df4173670d8ece975f950e639b2300d3db3504ce00f0"
   end
 
   depends_on "rust" => :build

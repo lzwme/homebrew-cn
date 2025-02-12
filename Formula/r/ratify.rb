@@ -2,17 +2,18 @@ class Ratify < Formula
   desc "Artifact Ratification Framework"
   homepage "https:ratify.dev"
   url "https:github.comratify-projectratifyarchiverefstagsv1.4.0.tar.gz"
-  sha256 "ee4298819a6d72d1d35b2ee6ba52221800099ce88c360efd8a31d751027f6b35"
+  sha256 "36b18d2070d76a6e85aa86bf94e4e68350c6c277985d6bc8e87a28c78ebb08b8"
   license "Apache-2.0"
   head "https:github.comratify-projectratify.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "03d7fa6ea0483779ecd438b37ad4abf4e5b79bf813191fa38b351b4e724d9208"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03d7fa6ea0483779ecd438b37ad4abf4e5b79bf813191fa38b351b4e724d9208"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "03d7fa6ea0483779ecd438b37ad4abf4e5b79bf813191fa38b351b4e724d9208"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9bcf40d7cb491db9b40ef4264699b440acf5806f20bad0f2ee1a9333f93a74ed"
-    sha256 cellar: :any_skip_relocation, ventura:       "b04d93460c9b39d6541ee0c0e3a7bc93170f09b4008b72a66ea8ec97d37dc099"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17f651e142921c2f9ae135a1bdcffc39bf0b8b55b1a4622beab5da1ff183aa09"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "76678d359f1e6ab18b91b1703a44b6171e3a03d200a41db6a7d3568a9727b334"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76678d359f1e6ab18b91b1703a44b6171e3a03d200a41db6a7d3568a9727b334"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "76678d359f1e6ab18b91b1703a44b6171e3a03d200a41db6a7d3568a9727b334"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4f8913f574364f7b1f4269e539bfe4b1ff128bf4ef3266c2c46c5121fc9132e9"
+    sha256 cellar: :any_skip_relocation, ventura:       "d446ade57aad5022820d43cff3e52206a2521189ea30fe1f39ba198d4789977d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e76330b293fc305772b44b705cc2d7700100276bb27981382984fa474824c851"
   end
 
   depends_on "go" => :build

@@ -8,6 +8,7 @@ cask "pensela" do
   homepage "https:github.comweiameiliPensela"
 
   deprecate! date: "2024-02-11", because: :discontinued
+  disable! date: "2025-02-11", because: :discontinued
 
   app "Pensela.app"
 

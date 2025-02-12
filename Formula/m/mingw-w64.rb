@@ -4,7 +4,7 @@ class MingwW64 < Formula
   url "https://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/mingw-w64-v12.0.0.tar.bz2"
   sha256 "cc41898aac4b6e8dd5cffd7331b9d9515b912df4420a3a612b5ea2955bbeed2f"
   license "ZPL-2.1"
-  revision 1
+  revision 2
 
   livecheck do
     url :stable
@@ -12,14 +12,12 @@ class MingwW64 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "9c50b0cbeac45e0ca35f410e18c14018c665aa4bbdea9adf749ee96e677af13e"
-    sha256 arm64_sonoma:   "00b5146a2b3bbd942ecf749baa930e2f7b1d5a425cadb69a8f233883eb926e63"
-    sha256 arm64_ventura:  "c52e1f08ce3a00d33b125d85bb8a0a12f03f619c35f65ec8eed8adea99e8498f"
-    sha256 arm64_monterey: "883e7f44acb2e714e7a698f576c32a096bf34edc0627f101cd5e48c26f63eb1c"
-    sha256 sonoma:         "dbfb198d40cff9bb93ac41f0a4422fe823fde2fd2610052956dbc4037e51c482"
-    sha256 ventura:        "eed47c1f6336d28f4cebc5644202bfbc8e7723ef16cc8eef1ab50c3577f6a02b"
-    sha256 monterey:       "5c24fa44d33423e55ac48c43575764e522d46675cdea49ad8d1b6d609b7a7509"
-    sha256 x86_64_linux:   "1b00797a89f30786da9886ac657527b5c8e2dc98432679e9fafc7f7d230e9e87"
+    sha256 arm64_sequoia: "6a4be61ef162b604d6611c4eb4ad1e0108b0b0e59c651f1f86fc7c798b91bd04"
+    sha256 arm64_sonoma:  "0a5f1d70d0aa9f9940d35992bacdb127bd0f9287c660519716bb527556aef1ea"
+    sha256 arm64_ventura: "89efec3e856815a99508d8cbdd8b0543fce718f87cae7496ef24c043337dfcba"
+    sha256 sonoma:        "0e919c0f0b9d1c4b6be622d288cc3cbf8123068c8eb0017137af4400a1353567"
+    sha256 ventura:       "ff802381fb2acf5f5064333848580f3f2adca0840c2a9b8b23dea7f9400e436f"
+    sha256 x86_64_linux:  "d141883dac3a136750e0c68126ec6a820947b16c4a8959adf0d133f08fd6c5d7"
   end
 
   # binutils searches for zstd using pkg-config
@@ -36,9 +34,9 @@ class MingwW64 < Formula
   uses_from_macos "zlib"
 
   resource "binutils" do
-    url "https://ftp.gnu.org/gnu/binutils/binutils-2.43.1.tar.bz2"
-    mirror "https://ftpmirror.gnu.org/binutils/binutils-2.43.1.tar.bz2"
-    sha256 "becaac5d295e037587b63a42fad57fe3d9d7b83f478eb24b67f9eec5d0f1872f"
+    url "https://ftp.gnu.org/gnu/binutils/binutils-2.44.tar.bz2"
+    mirror "https://ftpmirror.gnu.org/binutils/binutils-2.44.tar.bz2"
+    sha256 "f66390a661faa117d00fab2e79cf2dc9d097b42cc296bf3f8677d1e7b452dc3a"
   end
 
   resource "gcc" do

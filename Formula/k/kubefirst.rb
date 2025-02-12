@@ -1,8 +1,8 @@
 class Kubefirst < Formula
   desc "GitOps Infrastructure & Application Delivery Platform for kubernetes"
   homepage "https:kubefirst.konstruct.iodocs"
-  url "https:github.comkonstructiokubefirstarchiverefstagsv2.8.2.tar.gz"
-  sha256 "570bf5dbefffc9addba131b6e555b2037c80732b38abc1f964e157e3b7adfdf9"
+  url "https:github.comkonstructiokubefirstarchiverefstagsv2.8.3.tar.gz"
+  sha256 "b954fc1a4b0f32aa69fb42bead45a87410fc23cbe21e0a3d57b615c335d48b20"
   license "MIT"
   head "https:github.comkonstructiokubefirst.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Kubefirst < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fbfc72382dab5fc543129c542cecafd7edb253b345697860274da6d2742d0060"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb6e3de7d057035566c82b7fd56d256ced09140563ed9bff48b4714d4fc4febd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "981170178dee1cd84049aec4188d869a7a7a51fe67059d5cab97201b01b7e47a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f26eb41ee78d01c2e515f358460526514ac1e33e44206d11631044c16d305c50"
-    sha256 cellar: :any_skip_relocation, ventura:       "2228e86017993038593bf895f9cc1f7a7a2a8909afc08337dd09b91aad3d8529"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "790436567dc4c2c3b77c1f8aa938f7259f961f48ebde0be275280d59407e5f5e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2511ccd38fb8fd049b44974efd6b8a212f97285df367c1e589fcd89719477d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b3d3e8c5db5052fc9e64ff0de7ba2c309c0eed42b0e88d8362e3e76e39f75d65"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "74b53b6696a96e1a7a6da3692dea0725e530dc3093057b81177d6b4788aa13c7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "08b0ded01d984400c4219b3d6c9e26695fb9fef92710b0b3697599204be81eed"
+    sha256 cellar: :any_skip_relocation, ventura:       "ab67378bea957d3d7fbc5cbeac68eafe69bc174c54285560d5f5f6c76c6858cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "439b66b478299040ff99e6689b3880466dc956d67158160edbe2269ff9aa36cb"
   end
 
   depends_on "go" => :build

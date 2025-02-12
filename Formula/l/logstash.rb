@@ -1,8 +1,8 @@
 class Logstash < Formula
   desc "Tool for managing events and logs"
   homepage "https:www.elastic.coproductslogstash"
-  url "https:github.comelasticlogstasharchiverefstagsv8.17.1.tar.gz"
-  sha256 "e49d8a6bebdad79e2711c359de0e686003a1bfc26693ee2cccbb06789eea9ff2"
+  url "https:github.comelasticlogstasharchiverefstagsv8.17.2.tar.gz"
+  sha256 "48a7b2296a3609dbda301f572e67532a4f1a75568f56797f87a10f8ad01c2d48"
   license "Apache-2.0"
   version_scheme 1
   head "https:github.comelasticlogstash.git", branch: "main"
@@ -13,12 +13,12 @@ class Logstash < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ced0a8a887342fe206680476d218681b163cb4a72114e1bac668bb58ec7b2800"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0847c1999b8f6b8e2dbed03264f0b7a146b27fc0dfa413f9398f934336955569"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3c52a7474feb28cc28b1b64e7f44377b0127f345356cfc70c0ebeb043f1d975b"
-    sha256 cellar: :any,                 sonoma:        "7bcd25d3d0093124c7ae3fa80a49d2563031959463e1937cd824723b22770fba"
-    sha256 cellar: :any,                 ventura:       "2ea7f965219ee19f67dde2e618dc0cdceaefabf4f4952e541b9319688892e0dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf65b4fb9e73b80a1d423c7d8836b8ee7b3d4e6a310c1c9b204845285033bfda"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2079b76e702a208b0a2b8260334143fa109f3001bf387513157c4c79dd03dda9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c912f700a8378e7938e0c66dbe595b39206f1be4d2d776c5646473c9fc48422b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a77399af32406db54c66863665075c772a1addcff13ba26a1132278089dfd4cd"
+    sha256 cellar: :any,                 sonoma:        "2e1d19d466814a0c7aaf71854660d349511020b32609cbddb204efbf891c1319"
+    sha256 cellar: :any,                 ventura:       "009924eb4bbfe8732f5cbe5e5fbfefced0e6f7784c94972fb7f74c72ed7788a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7cbf79613dd0b9ef1f7805b544316993d904c5bf73672d0eada905a9c74b144"
   end
 
   depends_on "openjdk@17"

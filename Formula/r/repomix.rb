@@ -1,17 +1,17 @@
 class Repomix < Formula
   desc "Pack repository contents into a single AI-friendly file"
   homepage "https:github.comyamadashyrepomix"
-  url "https:registry.npmjs.orgrepomix-repomix-0.2.25.tgz"
-  sha256 "4fdbf0354481376b0bed2dbb497d68558d4e3e0dc06cf842d1f627d6e7abff0b"
+  url "https:registry.npmjs.orgrepomix-repomix-0.2.26.tgz"
+  sha256 "2be6a218bd980b3007f2650f58d6f6736e5b31e226356bc0366eec8ce23e2f80"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "20263e9efb57c09eeea21c835420f740986bdf8f6e4116e5524a1f8196f44791"
-    sha256 cellar: :any,                 arm64_sonoma:  "20263e9efb57c09eeea21c835420f740986bdf8f6e4116e5524a1f8196f44791"
-    sha256 cellar: :any,                 arm64_ventura: "20263e9efb57c09eeea21c835420f740986bdf8f6e4116e5524a1f8196f44791"
-    sha256 cellar: :any,                 sonoma:        "f7cecd58a36dc3b3915653afb00d2127e2ea6819df9005a27877dbef32de3f0a"
-    sha256 cellar: :any,                 ventura:       "f7cecd58a36dc3b3915653afb00d2127e2ea6819df9005a27877dbef32de3f0a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d1178407768349666fd893e8a7cb667422f75d193f99a8482639dc4cf22fe34"
+    sha256 cellar: :any,                 arm64_sequoia: "4599c930ce2876055af758d2ccde39401684fa5439bcbb3959d5fb87628d02ba"
+    sha256 cellar: :any,                 arm64_sonoma:  "4599c930ce2876055af758d2ccde39401684fa5439bcbb3959d5fb87628d02ba"
+    sha256 cellar: :any,                 arm64_ventura: "4599c930ce2876055af758d2ccde39401684fa5439bcbb3959d5fb87628d02ba"
+    sha256 cellar: :any,                 sonoma:        "54dc49b8104fbb6587955b9a5c0a4c20a7541cad11c26a3f50a28b442afa1ade"
+    sha256 cellar: :any,                 ventura:       "54dc49b8104fbb6587955b9a5c0a4c20a7541cad11c26a3f50a28b442afa1ade"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34127b76854d352a77286470d6845651c3157d65e78e6e79b300c61e6d6fbbed"
   end
 
   depends_on "node"

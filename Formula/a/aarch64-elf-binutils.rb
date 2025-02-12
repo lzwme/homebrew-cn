@@ -1,9 +1,9 @@
 class Aarch64ElfBinutils < Formula
   desc "GNU Binutils for aarch64-elf cross development"
   homepage "https://www.gnu.org/software/binutils/"
-  url "https://ftp.gnu.org/gnu/binutils/binutils-2.43.1.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.43.1.tar.bz2"
-  sha256 "becaac5d295e037587b63a42fad57fe3d9d7b83f478eb24b67f9eec5d0f1872f"
+  url "https://ftp.gnu.org/gnu/binutils/binutils-2.44.tar.bz2"
+  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.44.tar.bz2"
+  sha256 "f66390a661faa117d00fab2e79cf2dc9d097b42cc296bf3f8677d1e7b452dc3a"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,14 +11,12 @@ class Aarch64ElfBinutils < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "a12b1c38987aced539910d0d5bcc803999f3783e4c640f366e75f3ffdf9640da"
-    sha256 arm64_sonoma:   "d58aeae4ea9f3f1016c401588502c0f5908693ec904334ebcb4505564cfba1c3"
-    sha256 arm64_ventura:  "4504615ff3eab4d10e2d4ea2c27e7dcf48ae6eed1f98b36869ecf42d7eafdd83"
-    sha256 arm64_monterey: "fc33b4a2f5f4e7a93ea4017b1fa629ded1f4dacbb4072d9c0912ebaecf4d27a2"
-    sha256 sonoma:         "c0f977599a2aedab5da2baa19e42813658143bfc11f6fbe082bb858564b21789"
-    sha256 ventura:        "3509ff0abd672d5dd9f1e822f2da8815ce3a5d12dced44e68b66d8929103f55c"
-    sha256 monterey:       "99158042d186229a5c35dbf47b7bbf54ed279d0195fc989412d450f3e6056124"
-    sha256 x86_64_linux:   "2b9af0cd8bdfa3f67fd1bb431bef2e3507d379922d4a63864d6be56a257d1082"
+    sha256 arm64_sequoia: "ff613c2c092e98c1ed1fab397d4f31c02d4d011bf45fdddad77f42f40ea8aa17"
+    sha256 arm64_sonoma:  "04d64d11771d85fc9b94fe1b998f7093f80ef073a80b60a49459db90ab5ef727"
+    sha256 arm64_ventura: "f07ba9c20e29cbdd0265f5d2e42a2c3b1b34b89a3e72b8fd216ffc10cb058db2"
+    sha256 sonoma:        "dc0f415bbc8f9616257585e972cc38f9a1ae073501365c302003d804a3b0a71e"
+    sha256 ventura:       "e42b87f4f25e29420ed63aebfd7044bfbfab0ee39a19c11eea6ad2b62679a7ae"
+    sha256 x86_64_linux:  "8215c2ae409305a49eef2577a37c49b78a7db9f0b66d113c4f74b5cf4ae2ce63"
   end
 
   depends_on "pkgconf" => :build

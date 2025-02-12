@@ -1,9 +1,9 @@
 class ArmLinuxGnueabihfBinutils < Formula
   desc "FSF/GNU binutils for cross-compiling to arm-linux"
   homepage "https://www.gnu.org/software/binutils/binutils.html"
-  url "https://ftp.gnu.org/gnu/binutils/binutils-2.43.1.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.43.1.tar.bz2"
-  sha256 "becaac5d295e037587b63a42fad57fe3d9d7b83f478eb24b67f9eec5d0f1872f"
+  url "https://ftp.gnu.org/gnu/binutils/binutils-2.44.tar.bz2"
+  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.44.tar.bz2"
+  sha256 "f66390a661faa117d00fab2e79cf2dc9d097b42cc296bf3f8677d1e7b452dc3a"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class ArmLinuxGnueabihfBinutils < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "6942fe8a2cb9b5bf36dc3af17b5e0eaf7646c843fe599f924fe7ab8c1d31da6c"
-    sha256 arm64_sonoma:  "fc58d0db195365cfbae0778ddb159b972bba0f8025a4748d6a622b27b36a4a37"
-    sha256 arm64_ventura: "4b4b2e940fd37153d23adbe7a05fe7c191232cff01ed6fa7545e2ac4018c2ca1"
-    sha256 sonoma:        "14d772054e88d8a57c6f6d96968866130d49943bc72e4943198a988b8c4deab7"
-    sha256 ventura:       "2c8df1295a2dd0f809e069198378358caacd8688d180917d5216c2bda0dbb86c"
-    sha256 x86_64_linux:  "6dca015b099d6221e09b9acfba7514099d538d5bf57fa5b40940a7bf1bb256be"
+    sha256 arm64_sequoia: "efa4af7fe2a1f1af0532a7eba01be51b606d532428364e57abefa1e0c5251b05"
+    sha256 arm64_sonoma:  "f8c07d9d101a620317cf2b25f6544a9faa9e59756645dd1a252dd4f3b404e492"
+    sha256 arm64_ventura: "85c571a268fffa11b63163d14d3531e226c30a012e9dfeaf05cd0f0702528617"
+    sha256 sonoma:        "a5122cdafdf344088a2a34974e209a9c87a54c99f17bee9ae84119b0a6e31a82"
+    sha256 ventura:       "b5d1a4cacf725353dd20a829c3f79a41803b1d680d58b7db77c3ae526a0ed7e0"
+    sha256 x86_64_linux:  "3af94c9946af90084949b00786c4273721977bc466bc69a24c515b4b18d15d50"
   end
 
   depends_on "pkgconf" => :build

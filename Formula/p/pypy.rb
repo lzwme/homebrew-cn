@@ -1,10 +1,9 @@
 class Pypy < Formula
   desc "Highly performant implementation of Python 2 in Python"
   homepage "https:pypy.org"
-  url "https:downloads.python.orgpypypypy2.7-v7.3.17-src.tar.bz2"
-  sha256 "50e06840f4bbde91448080a4118068a89b8fbcae25ff8da1e2bb1402dc9a0346"
+  url "https:downloads.python.orgpypypypy2.7-v7.3.18-src.tar.bz2"
+  sha256 "737435ddfc5afa5b97a7209c87d70d5f1062426c053b9bb8b99a0347cb4891fa"
   license "MIT"
-  revision 1
   head "https:github.compypypypy.git", branch: "main"
 
   livecheck do
@@ -13,12 +12,12 @@ class Pypy < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "fde9ad14a4d4238ffb86ac7678048eb59812d4a80e4806673b5a4aa1920d4c07"
-    sha256 cellar: :any,                 arm64_sonoma:  "a722ce7fead5aa7d217259ac716fe2de88348daacf3f4b6d39c374ebb64b4693"
-    sha256 cellar: :any,                 arm64_ventura: "f91f6d9db8f89df16a513550f0d8bf344da4c05689faab09e675accc8cd3b117"
-    sha256 cellar: :any,                 sonoma:        "26aff7d94b19d7c8a73dfcf547d0ae4933205e70307d7af06eec8374a5908997"
-    sha256 cellar: :any,                 ventura:       "dfc471f6f2dcbedfbad9f928dd2f77d2b7c33e48c954692f3d7e15636302912c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3ec62e5d6a517ee0fd009759b2931a0c040b18e0693414a5d45a74e4f48f644"
+    sha256 cellar: :any,                 arm64_sequoia: "09b0a361e84c58a690a246f94c0f577b16203d6ae0c85f4d904cb7db3244e33a"
+    sha256 cellar: :any,                 arm64_sonoma:  "dbb2e87968e8f93a0154e2c9fa552f6bd9937c86fac8e2bcbb3dcc53b1f5fbcf"
+    sha256 cellar: :any,                 arm64_ventura: "fa95b16aa1a1f5e90b1b37cdf96f2e1b0ed5a15cc041fa08f4f9d4559d468efa"
+    sha256 cellar: :any,                 sonoma:        "074caca2fea633d1e7dc10531e67f45de0ec1eb885c300aea99db85a7ce85776"
+    sha256 cellar: :any,                 ventura:       "6e0cd5fc75060a6fb1a4e310e0ae382e3c51de81458257ab59a0a14cc951e23f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d50a0aa4c456336f1b37cc8274d2bd924483f454b466b9d1e1b4b3fa49b10759"
   end
 
   depends_on "pkgconf" => :build
@@ -46,8 +45,14 @@ class Pypy < Formula
       end
     end
     on_linux do
-      url "https:downloads.python.orgpypypypy2.7-v7.3.11-linux64.tar.bz2"
-      sha256 "ba8ed958a905c0735a4cfff2875c25089954dc020e087d982b0ffa5b9da316cd"
+      on_arm do
+        url "https:downloads.python.orgpypypypy2.7-v7.3.11-aarch64.tar.bz2"
+        sha256 "ea924da1defe9325ef760e288b04f984614e405580f5321eb6a5c8f539bd415a"
+      end
+      on_intel do
+        url "https:downloads.python.orgpypypypy2.7-v7.3.11-linux64.tar.bz2"
+        sha256 "ba8ed958a905c0735a4cfff2875c25089954dc020e087d982b0ffa5b9da316cd"
+      end
     end
   end
 
@@ -74,6 +79,9 @@ class Pypy < Formula
     # Work-around for build issue with Xcode 15.3
     # upstream bug report, https:github.compypypypyissues4931
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
+
+    # Avoid statically linking to libffi
+    inreplace "rpythonrlibclibffi.py", '"libffi.a"', "\"#{shared_library("libffi")}\""
 
     # The `tcl-tk` library paths are hardcoded and need to be modified for non-usrlocal prefix
     tcltk = Formula["tcl-tk@8"]
@@ -144,10 +152,10 @@ class Pypy < Formula
 
     # Tell distutils-based installers where to put scripts
     scripts_folder.mkpath
-    (distutils"distutils.cfg").atomic_write <<~EOS
+    (distutils"distutils.cfg").atomic_write <<~INI
       [install]
       install-scripts=#{scripts_folder}
-    EOS
+    INI
 
     %w[setuptools pip].each do |pkg|
       resource(pkg).stage do

@@ -3,8 +3,8 @@ class GraphTool < Formula
 
   desc "Efficient network analysis for Python 3"
   homepage "https://graph-tool.skewed.de/"
-  url "https://downloads.skewed.de/graph-tool/graph-tool-2.88.tar.bz2"
-  sha256 "fe6af66e247fbc6d5628ba4c6e2b6fec8708b100df9b5eb1c79e62f13bab01dc"
+  url "https://downloads.skewed.de/graph-tool/graph-tool-2.91.tar.bz2"
+  sha256 "3c850e92b35efdd71ef2abd26d9fe5c0212ec2a07990fbe7323408e127a3fd02"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -13,12 +13,12 @@ class GraphTool < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "a58fc544b8173440817f8c29726f3f87ba4237c8b7a1c9797ee05c5d7a60e8b8"
-    sha256                               arm64_sonoma:  "1c04f70196d55250bb7143dd6146982bd7887e914efbeee113bf7791efd64a10"
-    sha256                               arm64_ventura: "f2a02a0dbd8cc76234f0b205d3c0077eb2c4765a16c78e24acab7570c9ee5cda"
-    sha256                               sonoma:        "21c090ec50518b0f0b9abab2cc16067ddfd5ae34d61eee207d2baf507ecfd4b7"
-    sha256                               ventura:       "6594a9cdbf552a5295d3c93afd3944abea68eb780635a42c9403fd507c88d148"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "568c50609a927e7818cb251a43294e898725f8ee1ccebd4f54105a6ab0bfd2e3"
+    sha256                               arm64_sequoia: "6176f2eea0a40489e2378d46637397651119f3ad526ea54957600ae4d2bdd606"
+    sha256                               arm64_sonoma:  "5b3ff6077584d7b08481d9b1c8ac529b1abcc4ac386f11038aeff29a1acad613"
+    sha256                               arm64_ventura: "d1287da26e96483cd93ed5f4b5f3601eec4dc0bc5685b3d2ee0292cabd1c578b"
+    sha256                               sonoma:        "0fc00dec9fdee4e02501ef93ae7b008fbf5f2d1b6ee31e0a66cd1a286322b2e2"
+    sha256                               ventura:       "35095ae32c6a17514fbb93f7638e4985998968c2afc104c3208831657fff350c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2970f28e5c862f638c412456457c3b20195a28374133abc6bf4ca10a0b7f38f"
   end
 
   depends_on "google-sparsehash" => :build
@@ -64,8 +64,8 @@ class GraphTool < Formula
   end
 
   resource "fonttools" do
-    url "https://files.pythonhosted.org/packages/76/61/a300d1574dc381393424047c0396a0e213db212e28361123af9830d71a8d/fonttools-4.55.3.tar.gz"
-    sha256 "3983313c2a04d6cc1fe9251f8fc647754cf49a61dac6cb1e7249ae67afaafc45"
+    url "https://files.pythonhosted.org/packages/1c/8c/9ffa2a555af0e5e5d0e2ed7fdd8c9bef474ed676995bb4c57c9cd0014248/fonttools-4.56.0.tar.gz"
+    sha256 "a114d1567e1a1586b7e9e7fc2ff686ca542a82769a296cef131e4c4af51e58f4"
   end
 
   resource "kiwisolver" do

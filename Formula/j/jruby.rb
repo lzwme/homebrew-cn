@@ -1,8 +1,8 @@
 class Jruby < Formula
   desc "Ruby implementation in pure Java"
   homepage "https://www.jruby.org/"
-  url "https://search.maven.org/remotecontent?filepath=org/jruby/jruby-dist/9.4.11.0/jruby-dist-9.4.11.0-bin.tar.gz"
-  sha256 "cf4067bdc3a6ab518c786588e2486adc047b9cea0b96a43218b03ac651d26e11"
+  url "https://search.maven.org/remotecontent?filepath=org/jruby/jruby-dist/9.4.12.0/jruby-dist-9.4.12.0-bin.tar.gz"
+  sha256 "05c5d203d6990c92671cc42f57d2fa1c1083bbfd16fa7023dc5848cdb8f0aa2e"
   license any_of: ["EPL-2.0", "GPL-2.0-only", "LGPL-2.1-only"]
 
   livecheck do
@@ -11,12 +11,12 @@ class Jruby < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d29112c3d437c467d682403e7c4d1f8b2f0f53f5099e61831d1f721741c56e67"
-    sha256 cellar: :any,                 arm64_sonoma:  "d29112c3d437c467d682403e7c4d1f8b2f0f53f5099e61831d1f721741c56e67"
-    sha256 cellar: :any,                 arm64_ventura: "d29112c3d437c467d682403e7c4d1f8b2f0f53f5099e61831d1f721741c56e67"
-    sha256 cellar: :any,                 sonoma:        "a0c37585cd19fb7aaa729b436d1e2e6dfcc96af3e75404db4f107b7276a93cfe"
-    sha256 cellar: :any,                 ventura:       "a0c37585cd19fb7aaa729b436d1e2e6dfcc96af3e75404db4f107b7276a93cfe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbc2730462aacbb4344ad57c859ad1981b71945f805d862286a9f435163d40b4"
+    sha256 cellar: :any,                 arm64_sequoia: "d146ced4843359f4e1292a53a3d7275721716ed16045d4b9bf638948034a2258"
+    sha256 cellar: :any,                 arm64_sonoma:  "d146ced4843359f4e1292a53a3d7275721716ed16045d4b9bf638948034a2258"
+    sha256 cellar: :any,                 arm64_ventura: "d146ced4843359f4e1292a53a3d7275721716ed16045d4b9bf638948034a2258"
+    sha256 cellar: :any,                 sonoma:        "c1f32aafec98d8c1e38e0482b40a554adb21c7b05ebb6acd2818e77f0c1e5062"
+    sha256 cellar: :any,                 ventura:       "c1f32aafec98d8c1e38e0482b40a554adb21c7b05ebb6acd2818e77f0c1e5062"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49da0e54dca76b9d1967e3b1aae453618dcfe6f1f04b85ac6d5dd16982ebf672"
   end
 
   depends_on "openjdk"

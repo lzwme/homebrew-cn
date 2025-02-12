@@ -1,18 +1,18 @@
 class Sdb < Formula
   desc "Ondiskmemory hashtable based on CDB"
   homepage "https:github.comradareorgsdb"
-  url "https:github.comradareorgsdbarchiverefstags2.0.2.tar.gz"
-  sha256 "8fc030eb8bb5b8b02af95615317ea5d7c9fbc1a06cbb46703e3fc8a6b428a3ae"
+  url "https:github.comradareorgsdbarchiverefstags2.1.0.tar.gz"
+  sha256 "877f1540f8890ee32ddfe5a03c3455d7d9bf344bc55a6ac42bdcc7ba241e8ab9"
   license "MIT"
   head "https:github.comradareorgsdb.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "58d13c328d1ed7b41fbb692d7bcd87e657ca2a2f7e0d583820436ac82a3c7079"
-    sha256 cellar: :any,                 arm64_sonoma:  "0cd0d6f75a622d04d4b0e4a11bd88713bbcda7ab6bff745a0af845614e944baf"
-    sha256 cellar: :any,                 arm64_ventura: "b447543663b247729c12bbcf5191d564b7dd7702cc66d019f3d03a7f9ab20503"
-    sha256 cellar: :any,                 sonoma:        "70701ffdde52ba8e647a94e320246fcb758dbda7d6b91bb0b33543ccb96c7966"
-    sha256 cellar: :any,                 ventura:       "1075c34dba2bd26539fde81339e210d0852c2b4c2589439ba35a4c4603d93f0d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4f53aa55609f3bfd90b1bccf2503ce7ec281d8662992beef201f2b577a91b1c"
+    sha256 cellar: :any,                 arm64_sequoia: "fe7fce5a05792a0d970268a111172ff4a92abd948f98499b7b48304e7c17fba0"
+    sha256 cellar: :any,                 arm64_sonoma:  "460a6293a18f7925c2794221c34781a085e279e7d73b1ed54b531e35771456f4"
+    sha256 cellar: :any,                 arm64_ventura: "a32fdde7aebe6d674e9427d2de15766a28f30c741b96e14dd2c3b0cc241ce8cb"
+    sha256 cellar: :any,                 sonoma:        "6c66504eaf55a72603ed5b724b06927f1aac64a9a5b3bd1e80205c8ae8a20c38"
+    sha256 cellar: :any,                 ventura:       "85295727af6d4942c6a2c1f9611d5c22437da0d9a72155b4803a68e3d49433ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "224892c60361f6e6bfecca83ae56e73648bd7f3a439880e9403e2b3dbbc3750d"
   end
 
   depends_on "meson" => :build

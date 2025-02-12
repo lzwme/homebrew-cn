@@ -2,19 +2,19 @@ class Odin < Formula
   desc "Programming language with focus on simplicity, performance and modern systems"
   homepage "https:odin-lang.org"
   url "https:github.comodin-langOdin.git",
-      tag:      "dev-2025-01",
-      revision: "2aae4cfd461860bd10dcb922f867c98212a11449"
-  version "2025-01"
+      tag:      "dev-2025-02",
+      revision: "584fdc0d4ab9dcc01e218e499fdaef9969223d65"
+  version "2025-02"
   license "BSD-3-Clause"
   head "https:github.comodin-langOdin.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4e7bdc1317a42ae5abbf25913daf9d45412abdf651eba3a8e47abb8dcf9fca61"
-    sha256 cellar: :any,                 arm64_sonoma:  "307893ac9b98be7a83ec48b5ed4e4e6c4fbd0e9318179d9c4fbdd9985f00b042"
-    sha256 cellar: :any,                 arm64_ventura: "361128b9c3353870dd9a91a5630e8fa9725484114c75808c0479bac638d19c40"
-    sha256 cellar: :any,                 sonoma:        "e0271a0dcecc2d8098a5cab9c2c0e1f76e10492090e25af96046864757261f21"
-    sha256 cellar: :any,                 ventura:       "add63569ff77ba21247fa8ec3b4489773a190287abd89183daac98a969b9c706"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8efa7d664380ed3f899f5f70ebab76e58c8162206821361100fe30378eb2a03b"
+    sha256 cellar: :any,                 arm64_sequoia: "bfd4fda54aaca18281829f65d9f5838b504fc195808ddf618601f65526cc89e1"
+    sha256 cellar: :any,                 arm64_sonoma:  "eabbee587494f382dcdfed775c15f8496204ab4f6a2e516544d20671405e0355"
+    sha256 cellar: :any,                 arm64_ventura: "5e1cd30876b826e47ba7553ecb00c556a87a420d1699f8c000ab20ddea96a8a6"
+    sha256 cellar: :any,                 sonoma:        "3ca0a95c444acbcc212f0d9828a57c5af890be43b54641c16f4c986083d14698"
+    sha256 cellar: :any,                 ventura:       "7f5802fbac7a3634ac2e8905ffd3da52ac41a6a00dba03a13389c31f4bc220d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "addb05b9b538535055b9f0c21f5788d0e81367b80efeb1b62afb6a1ddfd56f7c"
   end
 
   depends_on "glfw"

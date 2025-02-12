@@ -1,9 +1,9 @@
 class X8664ElfBinutils < Formula
   desc "GNU Binutils for x86_64-elf cross development"
   homepage "https://www.gnu.org/software/binutils/"
-  url "https://ftp.gnu.org/gnu/binutils/binutils-2.43.1.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.43.1.tar.bz2"
-  sha256 "becaac5d295e037587b63a42fad57fe3d9d7b83f478eb24b67f9eec5d0f1872f"
+  url "https://ftp.gnu.org/gnu/binutils/binutils-2.44.tar.bz2"
+  mirror "https://ftpmirror.gnu.org/binutils/binutils-2.44.tar.bz2"
+  sha256 "f66390a661faa117d00fab2e79cf2dc9d097b42cc296bf3f8677d1e7b452dc3a"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,14 +11,12 @@ class X8664ElfBinutils < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "55454cfd30d76e3f05f5bf39c1ec876f8a955a2f31295bc8c2bfb900dad83968"
-    sha256 arm64_sonoma:   "6b3304e1337d392828c800cecca791267f3682c7d7ecc406648e0ac01726698f"
-    sha256 arm64_ventura:  "339e160848752b6486f5364369749b333dfa43ce2cf29f2de2105b8c683ecfb4"
-    sha256 arm64_monterey: "b71f4dd4f0181b5bb1ab8a5c56253346f919020f13e17938824e98eff182dfce"
-    sha256 sonoma:         "0791226bb834c669237c872b14878ea182ea7f009622826cc6b6eeb8bdb3455c"
-    sha256 ventura:        "f494ac13ac40d3eb258accf5fc635d6036e06ff617f6e9a033f9f52d1644c3d9"
-    sha256 monterey:       "d3336e5c8c288f63f980f081648ce62fe6bd85d6bdac64bcad96d24a8e8ef6d1"
-    sha256 x86_64_linux:   "f0ed12582580e7fa52c4a1db664ceeef57c921ba29aa110673ae6aeb7ed3e7cf"
+    sha256 arm64_sequoia: "2afacd61b85a74db24bf4d3f307e9c18ca5b7144c5d79d00db82c7f3e5d1add6"
+    sha256 arm64_sonoma:  "4215b24625bf23b01a6e6a1d667f812794784f3a58b7045568f63807a1663f9c"
+    sha256 arm64_ventura: "d25d18b7765a1757c299d2a8745b15a7a0d8e9a57e28b602802b313d5be1ca5b"
+    sha256 sonoma:        "66b1a985e3174d0ee92f25c4a4d16c08d973ce5d500057c3cafbac6c9d8d0b0e"
+    sha256 ventura:       "66fd8173cc8e438f22e4921bf64cd570047eb8a19cff0ae3d99e95a59e79d7d1"
+    sha256 x86_64_linux:  "a40dc5fe1fd0de0ce1877546c73423bbe4bd6cccdccf24dc8f34b695b74e5dc4"
   end
 
   depends_on "pkgconf" => :build

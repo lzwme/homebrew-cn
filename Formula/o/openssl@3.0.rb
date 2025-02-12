@@ -1,8 +1,8 @@
 class OpensslAT30 < Formula
   desc "Cryptography and SSLTLS Toolkit"
   homepage "https:openssl-library.org"
-  url "https:github.comopensslopensslreleasesdownloadopenssl-3.0.15openssl-3.0.15.tar.gz"
-  sha256 "23c666d0edf20f14249b3d8f0368acaee9ab585b09e1de82107c66e1f3ec9533"
+  url "https:github.comopensslopensslreleasesdownloadopenssl-3.0.16openssl-3.0.16.tar.gz"
+  sha256 "57e03c50feab5d31b152af2b764f10379aecd8ee92f16c985983ce4a99f7ef86"
   license "Apache-2.0"
 
   livecheck do
@@ -11,14 +11,12 @@ class OpensslAT30 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "0fbecf9a927e6cb2432283e6cf06cfce59067556a91b496528a6bdf66217a2e8"
-    sha256 arm64_sonoma:   "5f48e4f3391e514597cf9959a95daaafc1295ce4df9a26964d3ce0cb705a041f"
-    sha256 arm64_ventura:  "90d988c61932197830a7962e9dfe3997a139689489763ffa55ec54a607b69d0e"
-    sha256 arm64_monterey: "4491fd5d9e0bd3f27cd45d6b3026f2f1e9f648b1dff73cd41514bdeb55d8bae4"
-    sha256 sonoma:         "49d60e1d467c46db85643ff1ec0fc0d7883698b878f0456467c4e36758ae6197"
-    sha256 ventura:        "2330210545b943f2989ef8b30f712eeca2b2ba6762b6ac6de19f82d6f9c2d41f"
-    sha256 monterey:       "e6815ce49c0657d581fac3ffdabbac99c47ea9903d43f5e812621091b8bd9921"
-    sha256 x86_64_linux:   "88feaacad8c06a6308c1b1bf4d322e812d069b9e7a9808982debf89c5a226e39"
+    sha256 arm64_sequoia: "233627d17c14610b73e61d9fbe8483047964a25288129439f75796cfdfbec284"
+    sha256 arm64_sonoma:  "46463e4f63526dc94b47d5cf35742fc9f582037af4701408a47ff67d460b8729"
+    sha256 arm64_ventura: "68703232022ea59ffbaa9df18af2729deafd8156d429eeee776d8ef3bdb71d42"
+    sha256 sonoma:        "78f7c4e520022d939f044b633e445285464d750335673415580e4276edd4832d"
+    sha256 ventura:       "99481795ad61ca2c0c5d4b2b04289e34d60af0e4a134cb45cb51c959b97f70fb"
+    sha256 x86_64_linux:  "8bb05cb857db7d6c328960cf1bfc9ba72b566cc0a4efaddab5879b91b44d369f"
   end
 
   keg_only :versioned_formula
@@ -33,9 +31,9 @@ class OpensslAT30 < Formula
     end
 
     resource "Test::More" do
-      url "https:cpan.metacpan.orgauthorsidEEXEXODISTTest-Simple-1.302201.tar.gz"
-      mirror "http:cpan.metacpan.orgauthorsidEEXEXODISTTest-Simple-1.302201.tar.gz"
-      sha256 "956185dc96c1f2942f310a549a2b206cc5dd1487558f4e36d87af7a8aacbc87c"
+      url "https:cpan.metacpan.orgauthorsidEEXEXODISTTest-Simple-1.302209.tar.gz"
+      mirror "http:cpan.metacpan.orgauthorsidEEXEXODISTTest-Simple-1.302209.tar.gz"
+      sha256 "dde1a388b94e178808039361f6393c7195f72518c39967a7a3582299b8c39e3e"
     end
 
     resource "ExtUtils::MakeMaker" do

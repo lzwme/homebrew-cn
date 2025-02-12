@@ -3,12 +3,12 @@ class Jsbeautifier < Formula
 
   desc "JavaScript unobfuscator and beautifier"
   homepage "https://beautifier.io"
-  url "https://files.pythonhosted.org/packages/8c/fb/309b9b87222957a1314087e8ac5103463444c692b2a082532a463641d4a1/jsbeautifier-1.15.2.tar.gz"
-  sha256 "6aff11af2c6cb9a2ce135f33a5b223cf5ee676ab7ff5da0edac01e23734f5755"
+  url "https://files.pythonhosted.org/packages/cf/74/a37cc6fe8ab3f217657d345dfba0612758807536dca5ca5d2f6a81e3623d/jsbeautifier-1.15.3.tar.gz"
+  sha256 "5f1baf3d4ca6a615bb5417ee861b34b77609eeb12875555f8bbfabd9bf2f3457"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "cce5b8bda633aee3495f20a134bb64a090b20fc762c63a3c1832e35c79b9f7fc"
+    sha256 cellar: :any_skip_relocation, all: "6f26c3a774e92e6146da1ba23fd9292346e2fad5cdc2cca362e7da1cb885c3c9"
   end
 
   depends_on "python@3.13"

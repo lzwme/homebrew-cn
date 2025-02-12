@@ -1,8 +1,8 @@
 class Yazi < Formula
   desc "Blazing fast terminal file manager written in Rust, based on async IO"
   homepage "https:github.comsxyaziyazi"
-  url "https:github.comsxyaziyaziarchiverefstagsv0.4.2.tar.gz"
-  sha256 "88995c90954d140f455cf9ca4f87f9ca36390717377be86b0672456e1eb5f65f"
+  url "https:github.comsxyaziyaziarchiverefstagsv25.2.11.tar.gz"
+  sha256 "d3879b85465e036abfd69c53488e9bc90c9ad52a31080511a0fcd1b11f81f10b"
   license "MIT"
   head "https:github.comsxyaziyazi.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Yazi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ba54da545d0115236664e029b3ae1d419afe51b056e66e29a3e1f5b05c8f05c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf5865c823c7b3ce10ff1d4736e0f53389f25752cdfa594f1dbf9dae3618d6c8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3247b4c5ef816299cac1f4136d6315d832b34f4d91c837d3ac508909a2d11639"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b4ab2c77a3f8ec2223d7f23e75881ceceb244345cd2bba2a6138ce5eedf250e9"
-    sha256 cellar: :any_skip_relocation, ventura:       "9b0b58d92279e841ad17061c8be648ff024abebc79c9b5f682a7f3258e2ee71b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6031243911f37d5038d6efd4fa2c2e492aef7e630dd3ab154503593272f84156"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d571bca833d1939f5175d44fd82e12916febacbb9dd556cf865016ee4b40584"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "513291f863e16f702e65b45370f8042348b0b4900c7ae5f851da6c07b9b58bc1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "06c7ead29db712de1bca78ad1d00262a230201b2516dc8d720e5a3f5dda501b6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "788fa0204b13d072af4b1431e424373fedb84a92aa5fe0d25fda32644cc483b7"
+    sha256 cellar: :any_skip_relocation, ventura:       "7d2e683f3ef04866188bba0625cfd04fca10fa1741b0affc7f8e4534752f9aa8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "89f9aa23e9d02cd8c89e632a93872d9b4a5b6786b0a07785fba9554f9f86b280"
   end
 
   depends_on "rust" => :build

@@ -20,6 +20,7 @@ class Envconsul < Formula
   end
 
   deprecate! date: "2024-02-05", because: "depends on soon to be deprecated consul"
+  disable! date: "2025-02-08", because: "depends on soon to be disabled consul"
 
   depends_on "go" => :build
   depends_on "consul" => :test

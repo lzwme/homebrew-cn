@@ -1,18 +1,18 @@
 class Regal < Formula
   desc "Linter and language server for Rego"
   homepage "https:docs.styra.comregal"
-  url "https:github.comStyraIncregalarchiverefstagsv0.30.2.tar.gz"
-  sha256 "930fad89c17f5398ce0416dc63143816b07b95bd95d067583f9afaf46a3ef91b"
+  url "https:github.comStyraIncregalarchiverefstagsv0.31.0.tar.gz"
+  sha256 "0a79b76da09ffa79d4b77d6868deec646a05861c16e8afec61ff27d613f27bfc"
   license "Apache-2.0"
   head "https:github.comStyraIncregal.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee54dbbb18c9ae9dc8cb2e1b8600f175c04c4bbf65fa80627ffe3525d33766a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee54dbbb18c9ae9dc8cb2e1b8600f175c04c4bbf65fa80627ffe3525d33766a6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ee54dbbb18c9ae9dc8cb2e1b8600f175c04c4bbf65fa80627ffe3525d33766a6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1593b674198dd97e49f0a73168e9a960765c3aefae7c57cbaf7a559771e37c37"
-    sha256 cellar: :any_skip_relocation, ventura:       "1593b674198dd97e49f0a73168e9a960765c3aefae7c57cbaf7a559771e37c37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf646109956a9a32f93c87e80e768dc85f909d9ba39386dc398b37cb18dae5f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11c6065e1b04985e6fab3391a4a84ebee52e6f37904767891f6fe52784ab7570"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "11c6065e1b04985e6fab3391a4a84ebee52e6f37904767891f6fe52784ab7570"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "11c6065e1b04985e6fab3391a4a84ebee52e6f37904767891f6fe52784ab7570"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b160b39ae54d99257f1b3ba136dc099b54537ada0c6d1ca1a8355de54238e1cf"
+    sha256 cellar: :any_skip_relocation, ventura:       "b160b39ae54d99257f1b3ba136dc099b54537ada0c6d1ca1a8355de54238e1cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71870cae9373e9269970e4375d9a424f55f7a54f823992329ac528451f2ab6c3"
   end
 
   depends_on "go" => :build
