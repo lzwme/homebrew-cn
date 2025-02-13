@@ -1,19 +1,18 @@
 class Garble < Formula
   desc "Obfuscate Go builds"
   homepage "https:github.comburrowersgarble"
-  url "https:github.comburrowersgarblearchiverefstagsv0.14.0.tar.gz"
-  sha256 "9fb75bad82fc89afe08bbdb26c9bbbba8766a1663f8bb585318cf363fd3eedbf"
+  url "https:github.comburrowersgarblearchiverefstagsv0.14.1.tar.gz"
+  sha256 "0eb231e6ad91793f0fcf086fb57a1654f0c2056284a79fb12ac955ade6791737"
   license "BSD-3-Clause"
-  revision 1
   head "https:github.comburrowersgarble.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9abc206d2d2b7eb241c831f4c747c3751cbf0889a55a5f8c43035597dcdfaa6b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9abc206d2d2b7eb241c831f4c747c3751cbf0889a55a5f8c43035597dcdfaa6b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9abc206d2d2b7eb241c831f4c747c3751cbf0889a55a5f8c43035597dcdfaa6b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ccb7bd3ccd7f7b6f72ed7d83be99078b881a4afb7640120e05046e7eb04a4215"
-    sha256 cellar: :any_skip_relocation, ventura:       "ccb7bd3ccd7f7b6f72ed7d83be99078b881a4afb7640120e05046e7eb04a4215"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bf42f55a4caabbf26e018ee60d7eb8333fb7a51b490cc1b65d6d50169b062e7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3f6c231be0fe7870ee79a9145748a531a5a8a6f646cc8378ed7ce10193a4b07a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f6c231be0fe7870ee79a9145748a531a5a8a6f646cc8378ed7ce10193a4b07a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3f6c231be0fe7870ee79a9145748a531a5a8a6f646cc8378ed7ce10193a4b07a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bb922347255628df364c15b261e8e3d2446ed7f2b3611681df5295ca7b86410d"
+    sha256 cellar: :any_skip_relocation, ventura:       "bb922347255628df364c15b261e8e3d2446ed7f2b3611681df5295ca7b86410d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfadb7ca5285681fd936bb3a4a81959d5c05896c04690fc6e68ca2ed3101e1e8"
   end
 
   depends_on "go" => [:build, :test]

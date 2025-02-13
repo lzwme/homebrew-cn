@@ -1,8 +1,8 @@
 class GoCritic < Formula
   desc "Opinionated Go source code linter"
   homepage "https:go-critic.com"
-  url "https:github.comgo-criticgo-criticarchiverefstagsv0.11.5.tar.gz"
-  sha256 "df5771670f222759300edc2199dfd46090a876e7ecf5ac230984059cef0b0b83"
+  url "https:github.comgo-criticgo-criticarchiverefstagsv0.12.0.tar.gz"
+  sha256 "e981f7135bd0a21de3e94c05f5d393e6cf8c499c86251c94b1b9b11e9dcce153"
   license "MIT"
   head "https:github.comgo-criticgo-critic.git", branch: "master"
 
@@ -12,12 +12,12 @@ class GoCritic < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b813049e20570cd0574c868ede6d8fde0ef5bd4384cdac881327d5f61ba1cd43"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b813049e20570cd0574c868ede6d8fde0ef5bd4384cdac881327d5f61ba1cd43"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b813049e20570cd0574c868ede6d8fde0ef5bd4384cdac881327d5f61ba1cd43"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f9498a478613227e62615b0c3d66f57fc6e97a526cf1d77d8da6f7a8e5076b04"
-    sha256 cellar: :any_skip_relocation, ventura:       "f9498a478613227e62615b0c3d66f57fc6e97a526cf1d77d8da6f7a8e5076b04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3efaa09f0c7c9cba4db3cce6a5b2fb12ac347374456f988d2ef18520c0cb7aa0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71e20f1f03c0ea8130dc3e4b2f5ae63c04a1f06bd7bd1eba4a73d54b9177b8c5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "71e20f1f03c0ea8130dc3e4b2f5ae63c04a1f06bd7bd1eba4a73d54b9177b8c5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "71e20f1f03c0ea8130dc3e4b2f5ae63c04a1f06bd7bd1eba4a73d54b9177b8c5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "345050ba8932fb0b2ff4fbf8829a85e2132ec7c758749ede1827f58a06d93308"
+    sha256 cellar: :any_skip_relocation, ventura:       "345050ba8932fb0b2ff4fbf8829a85e2132ec7c758749ede1827f58a06d93308"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41f56fa0256d325890f1a53f5cc1339ab2c0b1547259df4e12030d649a939397"
   end
 
   depends_on "go"

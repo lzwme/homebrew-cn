@@ -3,12 +3,12 @@ class Internetarchive < Formula
 
   desc "Python wrapper for the various Internet Archive APIs"
   homepage "https:github.comjjjakeinternetarchive"
-  url "https:files.pythonhosted.orgpackages206021597a25b00f091e692b78aa744e0eaad4e827bd16eb51bf50bfc364cffcinternetarchive-5.2.0.tar.gz"
-  sha256 "73aaffdb1e91bcb5ef4721822c92f5f3667e46c0721b93efee070de8ab6223e7"
+  url "https:files.pythonhosted.orgpackages0bdc58f34ec10b4046a230d430dc750cedc44dc3a5278fce286bfecc65cad12binternetarchive-5.2.1.tar.gz"
+  sha256 "ba526000a2f820ff2701b956c5098f417678de664e386b6e4f71f1f5346776fe"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "39af952143a2af2fe2a085a1f6713b07d3e3a4fe6215ac24ba7e237acacd0284"
+    sha256 cellar: :any_skip_relocation, all: "fcd19796bba9b7a8dcf08eaaf4f05e74401d7d7840ac1a2f77e0bf272b136abc"
   end
 
   depends_on "certifi"

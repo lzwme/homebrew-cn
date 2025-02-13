@@ -2,7 +2,7 @@ class Faiss < Formula
   desc "Efficient similarity search and clustering of dense vectors"
   homepage "https:github.comfacebookresearchfaiss"
   url "https:github.comfacebookresearchfaissarchiverefstagsv1.10.0.tar.gz"
-  sha256 "18a1604867021641cb3bafcd9fbca4df944fd65e45747e186b69c7e7f72d0f3b"
+  sha256 "65b5493d6b8cb992f104677cab255a9b71ef1e1d2ea3b1500dc995c68b429949"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,13 @@ class Faiss < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ea4c801a9adfe8f0808739579dc3c40324fcda29c107aecbdc40759b1d8adab0"
-    sha256 cellar: :any,                 arm64_sonoma:  "23884ab573352bdd8604a436cf7d36bfea3a5a5e3407d39fc241c545fc58da68"
-    sha256 cellar: :any,                 arm64_ventura: "5e4a9752316103e044097b208b702b979b68ce23e9f9508dceeee91afe775484"
-    sha256 cellar: :any,                 sonoma:        "481d24a6506fe7b4265b4a1f97c72b36cfe27f62561ccf09052275687a0d21cd"
-    sha256 cellar: :any,                 ventura:       "c78ac06fa01a566dc87c8f60b2b1a92c4993ccab17adfe2bb4a916e726fc39af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d414069d3aa7819fed98bf5f0d8908c47239fd0c870215e3323d8b2541d4951"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "2bb622b747d36f69a21edaaab34b1874fe497111576d99619aa08846ddbcadb4"
+    sha256 cellar: :any,                 arm64_sonoma:  "c235f84427a5f1576cfb21d3538aa838c9242d0c655ab3ce60fb1aee33374d7e"
+    sha256 cellar: :any,                 arm64_ventura: "6ba791214c0285485725e09a62007e049e53797f3987afb356855e1ddcdf664e"
+    sha256 cellar: :any,                 sonoma:        "713c401369b088c8030df5205237b19c58e1fa2540ffe3f3f8a1e096379e2a7e"
+    sha256 cellar: :any,                 ventura:       "93b405f414c4020646204b7ec71f73192e61ac1e2f9b48631765e8b848232f86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c3e64ff3daaf77a1e80de4bb96fbb9d5d9a4eeb04686dffcd087ba175363a57"
   end
 
   depends_on "cmake" => :build

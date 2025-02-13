@@ -1,18 +1,18 @@
 class Hcledit < Formula
   desc "Command-line editor for HCL"
   homepage "https:github.comminamijoyohcledit"
-  url "https:github.comminamijoyohcleditarchiverefstagsv0.2.16.tar.gz"
-  sha256 "fc7a91a11b0dcba039d34425f5acd4f786824a58c39e53aa6c553097287532bc"
+  url "https:github.comminamijoyohcleditarchiverefstagsv0.2.17.tar.gz"
+  sha256 "007e8ba0c8be6272793fc4714cb60b93cb4cdfdc48ab5ad5a6566e44f99d200e"
   license "MIT"
   head "https:github.comminamijoyohcledit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2d194861571963e5e60773623c3a6f0b20c39b62f7484ad5cad1d41ddfe4857"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f2d194861571963e5e60773623c3a6f0b20c39b62f7484ad5cad1d41ddfe4857"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f2d194861571963e5e60773623c3a6f0b20c39b62f7484ad5cad1d41ddfe4857"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2a201ba527e406a1b0d2005b736613294217ad2a6634a656a1dc99f192e7ebc4"
-    sha256 cellar: :any_skip_relocation, ventura:       "2a201ba527e406a1b0d2005b736613294217ad2a6634a656a1dc99f192e7ebc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3d1694eb92ee46fcd13872c9a9124bfc33cb1f1b44bfd99b3f11c285152edf1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f337eedfe77241c8a1e9e1be22fcc53322fc34343950d7cb7a52908f5452c4e0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f337eedfe77241c8a1e9e1be22fcc53322fc34343950d7cb7a52908f5452c4e0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f337eedfe77241c8a1e9e1be22fcc53322fc34343950d7cb7a52908f5452c4e0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0b20a51f695f3783df9862c041c4c969061476b870efee585cbbc0e676c49542"
+    sha256 cellar: :any_skip_relocation, ventura:       "0b20a51f695f3783df9862c041c4c969061476b870efee585cbbc0e676c49542"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "502832282bfe2438b7fec2233905a46cf484e94240e86b854e7fdc85bd634603"
   end
 
   depends_on "go" => :build

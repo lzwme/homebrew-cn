@@ -1,20 +1,18 @@
 class Tfproviderlint < Formula
   desc "Terraform Provider Lint Tool"
   homepage "https:github.combfladtfproviderlint"
-  url "https:github.combfladtfproviderlintarchiverefstagsv0.30.0.tar.gz"
-  sha256 "c62be00c7745ae6d2662e09df9d2192d73c4062a765a596b4ff4fc5bb54c956e"
+  url "https:github.combfladtfproviderlintarchiverefstagsv0.31.0.tar.gz"
+  sha256 "9defa750077052ebf1639532e771a9e986b7a53948b6a16cb647ceaf60cfbce1"
   license "MPL-2.0"
   head "https:github.combfladtfproviderlint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "899b4934ed99c3cfaa213808c2122a7041fd05fddd7a1a5ffae477eb51b391bc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0c2c25e4b2784edc72ad3b250a15a1770b75be362bc7a852efbc39f19fc158b0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0c2c25e4b2784edc72ad3b250a15a1770b75be362bc7a852efbc39f19fc158b0"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0c2c25e4b2784edc72ad3b250a15a1770b75be362bc7a852efbc39f19fc158b0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "64f4d0cb403a4faa50f652c61def6d45002c2d0ce5788bf05d39eddd4c653eb1"
-    sha256 cellar: :any_skip_relocation, ventura:        "64f4d0cb403a4faa50f652c61def6d45002c2d0ce5788bf05d39eddd4c653eb1"
-    sha256 cellar: :any_skip_relocation, monterey:       "64f4d0cb403a4faa50f652c61def6d45002c2d0ce5788bf05d39eddd4c653eb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e77634c400b92b99188b9b09682daac604a1aa16fdf712ca16652e7d7c4679e5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8a842d454ed661bacbc63d64cf741cb0009cd5ce8c4e2a8bc6d6459bc721252"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8a842d454ed661bacbc63d64cf741cb0009cd5ce8c4e2a8bc6d6459bc721252"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c8a842d454ed661bacbc63d64cf741cb0009cd5ce8c4e2a8bc6d6459bc721252"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2105a162d222608f8b6366c43367d89821e40d187e60f303d26165f2149a9069"
+    sha256 cellar: :any_skip_relocation, ventura:       "2105a162d222608f8b6366c43367d89821e40d187e60f303d26165f2149a9069"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc744960d7e4d5eb0cb62edfec08243469eed81700a99a5a33fb31a8e215354b"
   end
 
   depends_on "go" => [:build, :test]

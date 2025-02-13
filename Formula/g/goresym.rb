@@ -1,18 +1,18 @@
 class Goresym < Formula
   desc "Go symbol recovery tool"
   homepage "https:github.commandiantGoReSym"
-  url "https:github.commandiantGoReSymarchiverefstagsv3.0.1.tar.gz"
-  sha256 "f5bfd29ca10336a13b63f28cc7523ae75288a06d8933ef9f6783e30b9920f0d7"
+  url "https:github.commandiantGoReSymarchiverefstagsv3.0.2.tar.gz"
+  sha256 "1522ab5e5d108a9501d54817a5e7d444e4c40e6dcd1d98041307e811267033d6"
   license "MIT"
   head "https:github.commandiantGoReSym.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9e5356d79abca5a087a9b300a0b3380e51dd628edf60ef41d68bd0eb0bf28a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9e5356d79abca5a087a9b300a0b3380e51dd628edf60ef41d68bd0eb0bf28a6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b9e5356d79abca5a087a9b300a0b3380e51dd628edf60ef41d68bd0eb0bf28a6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b406c1ff5e8eba933266227f7efa0143ce4750afa7cd9cb8f62774616b329ba2"
-    sha256 cellar: :any_skip_relocation, ventura:       "b406c1ff5e8eba933266227f7efa0143ce4750afa7cd9cb8f62774616b329ba2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bff0c0b39b08a22e4fb8d13876551d466fe51ad1c989bf0c7512999b47bb1fac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77a9fb3d32d9b3005befae33e51fc76749d458e8ad80590c96cabd0d360bb4b3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77a9fb3d32d9b3005befae33e51fc76749d458e8ad80590c96cabd0d360bb4b3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "77a9fb3d32d9b3005befae33e51fc76749d458e8ad80590c96cabd0d360bb4b3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c696147556ba2c0a077910777245cb9d2756dbd3ab0673d152f83740a9f8b864"
+    sha256 cellar: :any_skip_relocation, ventura:       "c696147556ba2c0a077910777245cb9d2756dbd3ab0673d152f83740a9f8b864"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d53da90f5f41a6decb0b9a8eecddf9c5c868792eb68fcee81bf790899abcdfe"
   end
 
   depends_on "go" => :build

@@ -5,7 +5,7 @@ class ClickhouseOdbc < Formula
   url "https:github.comClickHouseclickhouse-odbcarchiverefstagsv1.2.1.20220905.tar.gz"
   sha256 "ca8666cbc7af9e5d4670cd05c9515152c34543e4f45e2bc8fa94bee90d724f1b"
   license "Apache-2.0"
-  revision 7
+  revision 8
   head "https:github.comClickHouseclickhouse-odbc.git", branch: "master"
 
   livecheck do
@@ -14,12 +14,12 @@ class ClickhouseOdbc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2dede9beae8a3bccb0bb370835ceba0a5621746db5fb07bb1d04d62a180ea621"
-    sha256 cellar: :any,                 arm64_sonoma:  "cebcb25fe92aaa4157a764a170d377b983e5966b01e499eae89f822b7784f5d2"
-    sha256 cellar: :any,                 arm64_ventura: "c3fb8ef17692a36c5119115db53f2f2ddd83f7833ac5e02c87ef628cccc3c984"
-    sha256 cellar: :any,                 sonoma:        "2cc6e5bf96a77fe04b61f9edc073d21aed7b6a24b000acbade86f6b8bee3f8c6"
-    sha256 cellar: :any,                 ventura:       "f8309c8c83b07dfff445dd2c094b7c64ac2e6251d459f0036897d8adffc7096c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ab019654dc81b5162e4575b3a3118653fe3ea9d9b884b6820599a0df6925b26"
+    sha256 cellar: :any,                 arm64_sequoia: "c1185466785c3f5c56f7661e40bae6746b10579364030b4ed8ea456a2ce13d7e"
+    sha256 cellar: :any,                 arm64_sonoma:  "8adeef554e1dd5f037ecdbbef0f9813eb5f008484dbb70059d9b56f21ac74231"
+    sha256 cellar: :any,                 arm64_ventura: "2775d4fe0aee5bd86de1438d5735968a68bd6f7c45a38482935572f1132142f9"
+    sha256 cellar: :any,                 sonoma:        "d7a0ffe3d1dbf29d20c3b947689881c5d15c5fa81c731e0b942bd0ed59ca851d"
+    sha256 cellar: :any,                 ventura:       "32e97d139ff2b07e24342f84327f71578ace5a0d0466fcefbae9bdcc4b2e1853"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20dfbb88c417ca8fdfa9fe4f186a84baa09d02f856a54d7251d3fdfa9b91be61"
   end
 
   depends_on "cmake" => :build

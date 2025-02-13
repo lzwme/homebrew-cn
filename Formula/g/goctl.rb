@@ -1,8 +1,8 @@
 class Goctl < Formula
   desc "Generates server-side and client-side code for web and RPC services"
   homepage "https:go-zero.dev"
-  url "https:github.comzeromicrogo-zeroarchiverefstagstoolsgoctlv1.7.6.tar.gz"
-  sha256 "1e06959e58d42b94c04260409a82ec29c56d25890d41ff8e95700fda0913f12c"
+  url "https:github.comzeromicrogo-zeroarchiverefstagstoolsgoctlv1.7.7.tar.gz"
+  sha256 "6bd4f06a7170c86bcf9d1afcd46250ce8d5e5ed629bf8e9ee9a7c299ffbb68b0"
   license "MIT"
 
   livecheck do
@@ -11,15 +11,21 @@ class Goctl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "346ef97064156677b060804941f06affb3513f1e41815a2683311b50f53f27ce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "346ef97064156677b060804941f06affb3513f1e41815a2683311b50f53f27ce"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "346ef97064156677b060804941f06affb3513f1e41815a2683311b50f53f27ce"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2a240cf2114d726b23f76369a63e3210325973119142f28a421c2eec6846acc1"
-    sha256 cellar: :any_skip_relocation, ventura:       "2a240cf2114d726b23f76369a63e3210325973119142f28a421c2eec6846acc1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a9d20a313cb09bfbce54e40619e73ed0761e5e11bc7277f476dd90e0dd8a480"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4cd528fbec2987dfe0384bd171e5bc32bd4efb785ee57491cf14d898c3a84eec"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4cd528fbec2987dfe0384bd171e5bc32bd4efb785ee57491cf14d898c3a84eec"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4cd528fbec2987dfe0384bd171e5bc32bd4efb785ee57491cf14d898c3a84eec"
+    sha256 cellar: :any_skip_relocation, sonoma:        "197af2fddbd9088b9ddaef8e9a862cb8fb6aa8666026a0a50022e7b9dabdda87"
+    sha256 cellar: :any_skip_relocation, ventura:       "197af2fddbd9088b9ddaef8e9a862cb8fb6aa8666026a0a50022e7b9dabdda87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6619bbc538401203a780d4694be262b4e541479cc0fcff949fcdce80546ed17a"
   end
 
   depends_on "go" => :build
+
+  # version patch pr, https:github.comzeromicrogo-zeropull4645
+  patch do
+    url "https:github.comzeromicrogo-zerocommit05eb6e846e746941ccafc852ac3a242d02e33a42.patch?full_index=1"
+    sha256 "5b2d87638e11cf3b53685c2b62ab31fdcd9135136b73752dad64059f7e7f89a3"
+  end
 
   def install
     chdir "toolsgoctl" do

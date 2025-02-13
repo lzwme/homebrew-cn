@@ -1,17 +1,17 @@
 class Liblc3 < Formula
   desc "Low Complexity Communication Codec library and tools"
   homepage "https:github.comgoogleliblc3"
-  url "https:github.comgoogleliblc3archiverefstagsv1.1.2.tar.gz"
-  sha256 "6903e2ea3221fcd55d03b9ab390a7921f7ef2147a3934155690664b30d6ff9ec"
+  url "https:github.comgoogleliblc3archiverefstagsv1.1.3.tar.gz"
+  sha256 "276752ff54ce6a77d54ec133397b9d7e71f90caf3d9afa32d8b0e891b8ecb8af"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "36b49aa6444c3a17440f2590aa83e3ffabc06b5230ebb607fc96975ee019e3a3"
-    sha256 cellar: :any,                 arm64_sonoma:  "478bbd8548ab3034dc0731593b0ada9d999f63a004b99634b297925a974b89f1"
-    sha256 cellar: :any,                 arm64_ventura: "316420a59e0580f02eb43a75035b82a51ed3a881b7bbedae7e45ed1aaf4aeb1c"
-    sha256 cellar: :any,                 sonoma:        "490f992c96cfb8b4c71f94a10a57cbdc2f4191bb31ba73e8e25067689717a86e"
-    sha256 cellar: :any,                 ventura:       "ecb61d892d0a6b2f7df4d7b1ea0991c1c69551c33c7e6e07b8f9733ba023587c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca49f4e46a38cb4933d8289af6cd676343f164713b23c0cc23b23f2557699b50"
+    sha256 cellar: :any,                 arm64_sequoia: "997b5d2fdfceb35010b61b89004b9ce8e2a5630aa9c90d1f322e62db53641dae"
+    sha256 cellar: :any,                 arm64_sonoma:  "3fc0c2cb6555286a50609efa75f46c88d9addde79781a17165b1bd90e17e14ae"
+    sha256 cellar: :any,                 arm64_ventura: "00fa4c793aaa4ccea249c31fab37842e72d5564d581a2b022bde1727ef2c4830"
+    sha256 cellar: :any,                 sonoma:        "e0e1764a4d3c5d39c850c2289748cb18789a0f06e4264d88b119f5aebb83bba2"
+    sha256 cellar: :any,                 ventura:       "b8c8cb040fcc528c0224dff4e3e8e6a9e016639187ee365d66679afed1dd3458"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f6f3cff68a823732f72eca5847e4774b34c9d545b1eae5838f4b5cb0b73fc53"
   end
 
   depends_on "meson" => :build

@@ -1,17 +1,17 @@
 class Sshx < Formula
   desc "Fast, collaborative live terminal sharing over the web"
   homepage "https:sshx.io"
-  url "https:github.comekzhangsshxarchiverefstagsv0.3.1.tar.gz"
-  sha256 "3bc2abc59be26c9eefaf7fc999aa4a3723d2916414c319fd06555415278acb64"
+  url "https:github.comekzhangsshxarchiverefstagsv0.4.1.tar.gz"
+  sha256 "ab6de41546b849726faa3b964466c1f8bb558bd27ee2452a9758405ff013108f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b84aa6e2ad4daa270b250eb0cd6e150414e175d8703a1d9dea0a07d93f025880"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "15863a29663b38898f9ffe09bf78000ace55838767097d606b810927357a8081"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0516ecb4d0f5521d6668f9bb189e4c77ed216a0e3feaafe02daeaa51494671ed"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c0fc18f4c9e7b205c7cddfb4b7caa2077b2e231fc178fd308d01b85ae5566771"
-    sha256 cellar: :any_skip_relocation, ventura:       "26101a064282be47211f8c5006e95802295deefd9a23ff030a811842a481e7b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0afe4a7685bef08efbbd171c50b1e04cb9fde96d8089de191b48251b66488562"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebd4783508a0db2af33c4d72a8b31d340f822c9d2624061301545f312e05075d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e3598a6c4352b930499296f07e1bae871eed59cd974a24e31301706c2f6c70ae"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9b6e4d71103322becc0361d2940862a5f7289d8677076aa230ceb77c12c9fd3e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "acb77c27444b26c774e81104783ae34f10773a454f43116ae97d368ddf26fc5a"
+    sha256 cellar: :any_skip_relocation, ventura:       "a42df234bc853d19f5c67d6b980fa9c6947063fa37e64471d5be0f194444ab21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71d9f3653dbfd7c5b4699821fa328d4681686bea5a21a6dea4f832f4efa45333"
   end
 
   depends_on "protobuf" => :build

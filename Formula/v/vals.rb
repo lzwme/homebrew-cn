@@ -1,18 +1,18 @@
 class Vals < Formula
   desc "Helm-like configuration values loader with support for various sources"
   homepage "https:github.comhelmfilevals"
-  url "https:github.comhelmfilevalsarchiverefstagsv0.39.0.tar.gz"
-  sha256 "cf96c8f554260ed2ef64bd551625809189bae8a40db57b4776d11826c20721cb"
+  url "https:github.comhelmfilevalsarchiverefstagsv0.39.1.tar.gz"
+  sha256 "4bd8d630100b8d5dc27b0e86d7b543f8b000b936dba5c4d06b8dfbe7f96239dc"
   license "Apache-2.0"
   head "https:github.comhelmfilevals.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c7a51afa8fae54dde0e65715207216f3e62567b1cf29f6fbc4a5087ba39381c4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7a51afa8fae54dde0e65715207216f3e62567b1cf29f6fbc4a5087ba39381c4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c7a51afa8fae54dde0e65715207216f3e62567b1cf29f6fbc4a5087ba39381c4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b31a57b0905fa42e8cc0db07e83d85b7222329833a158cc7b656fd94b43d016b"
-    sha256 cellar: :any_skip_relocation, ventura:       "b31a57b0905fa42e8cc0db07e83d85b7222329833a158cc7b656fd94b43d016b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "05cbf236eea9cfd72fc90657a7c4b7ef63a2a6d807187684d1b73072b822ebc8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "599bec763daa69f8b2f552805a3586081cf3a0bd92843e2efcd584a5f95fbb6b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "599bec763daa69f8b2f552805a3586081cf3a0bd92843e2efcd584a5f95fbb6b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "599bec763daa69f8b2f552805a3586081cf3a0bd92843e2efcd584a5f95fbb6b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0f2ac293b278d5c05b8fbcd2b01471be59a9ab0a99bf038aaf7f5b311787a424"
+    sha256 cellar: :any_skip_relocation, ventura:       "0f2ac293b278d5c05b8fbcd2b01471be59a9ab0a99bf038aaf7f5b311787a424"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b318e04b972c5cd5c6dff1ccce1760dcef40ef053d0300d0eb792384262d230"
   end
 
   depends_on "go" => :build

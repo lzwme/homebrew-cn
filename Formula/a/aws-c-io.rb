@@ -1,17 +1,17 @@
 class AwsCIo < Formula
   desc "Event driven framework for implementing application protocols"
   homepage "https:github.comawslabsaws-c-io"
-  url "https:github.comawslabsaws-c-ioarchiverefstagsv0.15.4.tar.gz"
-  sha256 "e5202033b09df61ffb2a57284a04735ac013296decc107de1c4abd1ce7d5cfda"
+  url "https:github.comawslabsaws-c-ioarchiverefstagsv0.15.5.tar.gz"
+  sha256 "0ebf91f9d0be8b4d342fa13d85be5da97de532ed75955fb518b17c111abec8ab"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5bc7c81d9c29a20ce26ce6fac7b04f6d325e6e29a7fe3d34cff17a090a983cc8"
-    sha256 cellar: :any,                 arm64_sonoma:  "9c2d9789fbcfaec6f0ecbbbef374fa3de81f76ece9803812ed6d1c3cb0716063"
-    sha256 cellar: :any,                 arm64_ventura: "a1087c828ba6191ebd020adbddf0ac1186c3a265da8d49d6a5da13a9d8d473c7"
-    sha256 cellar: :any,                 sonoma:        "12dba0c11d0f37ca2581699395657e4fb24bacb84222853e634c2e8512394ad0"
-    sha256 cellar: :any,                 ventura:       "40069e67bd3f47da854aa2fecc8d5ced5a44ebea79467751544f994c3bdc3aa7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe14feb814aceeb8bbfc433e3e1f55f3fb3283688e5538f9755c2a23f2e70e88"
+    sha256 cellar: :any,                 arm64_sequoia: "f267e2e472ed0c799b14a0fa163eee8fbf423ff8e7aa5f33f6bfcef27ad238c3"
+    sha256 cellar: :any,                 arm64_sonoma:  "4adc1606293b12ce53ed5f98a21ca3998bb46ba31a25183652acbe16fb6178eb"
+    sha256 cellar: :any,                 arm64_ventura: "15de2ad7c96cd7791cb1d6262834d138b7f5926047661d45c5152a436530c6d4"
+    sha256 cellar: :any,                 sonoma:        "68365b5235235bc1b8632e2742166e709977d05256b162745b442e0d9b6e67b9"
+    sha256 cellar: :any,                 ventura:       "fdf1624dbb32e85d984fb62cec99532192bdcd9818aa0ae5fd88a27a99b66687"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bb1db2c1735741e10fdcf0a27044e95ea54d619d44ea19c656504520af2776c"
   end
 
   depends_on "cmake" => :build

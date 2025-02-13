@@ -3,18 +3,18 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https:snakemake.readthedocs.io"
-  url "https:files.pythonhosted.orgpackages140bb0e763613229a586d0b4b12df2a516a0a0be8ba324713d85ae8eea3b54b0snakemake-8.27.1.tar.gz"
-  sha256 "17fb3c80618dae88c236766a0fe45924119351da9bdc9aa2e8f11dbcfd95aded"
+  url "https:files.pythonhosted.orgpackagese92cbf8f2feccfcda25604ba62f03f687b90ca05ac917c8ee64068e093c7c538snakemake-8.28.0.tar.gz"
+  sha256 "71d1f849c558116e4539ab4135c730adde11c1344b1a80ba8f1987cae1462273"
   license "MIT"
   head "https:github.comsnakemakesnakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6412c22513eb17b40633e5b1047349ce1aa3eda513f63a2d612e5d9f567d78ec"
-    sha256 cellar: :any,                 arm64_sonoma:  "617a55045f1c3236eaf9b925f3ab9a4d5e336fb409aa0b4bd84751f546b4ea78"
-    sha256 cellar: :any,                 arm64_ventura: "7ce4d5f95ddd12101d5bc0c51440152b883d35f66c17dbe7a5c2211761fe7248"
-    sha256 cellar: :any,                 sonoma:        "f0a727d32cc2b9ac5d063a553b5524827c69ac5ca103c468f7f2c14a4a0edeb4"
-    sha256 cellar: :any,                 ventura:       "d4ee587a10377b3e6fe2d34248a24a936630a881fae34a2b2aa3d219c8407b4f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5724000a020efc06bc7f8fde0e19dd9da40cea7bdda4caf64c177b92bd25c22d"
+    sha256 cellar: :any,                 arm64_sequoia: "86df4fd0de4791ea82d255ff020fb835557c9aa8474a2e44664ba36d68b9a2ec"
+    sha256 cellar: :any,                 arm64_sonoma:  "6aab7c4ac95f83456bedd377734a9a110e4ecd9a75b0748447d587d7e4c19ada"
+    sha256 cellar: :any,                 arm64_ventura: "321c143bbdc4160af18976a881673631d4025e3abe9bfc32287e446eea1867b0"
+    sha256 cellar: :any,                 sonoma:        "6a1b51fa1a54cd597c821aced45d69bac6b2489ef41eaae3624129ec2c703a5f"
+    sha256 cellar: :any,                 ventura:       "19b10c0ae793751df2622bd9b85dcf31128650025680d5e871e30bc855707002"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4953d305614339df531ce7a7b287e0152de4f3bb0b29e8c349ada186d799f568"
   end
 
   depends_on "rust" => :build
@@ -34,8 +34,8 @@ class Snakemake < Formula
   end
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackages48c86260f8ccc11f0917360fc0da435c5c9c7504e3db174d5a12a1494887b045attrs-24.3.0.tar.gz"
-    sha256 "8f5c07333d543103541ba7be0e2ce16eeee8130cb0b3f9238ab904ce1e85baff"
+    url "https:files.pythonhosted.orgpackages497cfdf464bcc51d23881d110abd74b512a42b3d5d376a55a831b44c603ae17fattrs-25.1.0.tar.gz"
+    sha256 "1c97078a80c814273a76b2a298a932eb681c87415c11dee0a6921de7f1b02c3e"
   end
 
   resource "charset-normalizer" do
@@ -164,8 +164,8 @@ class Snakemake < Formula
   end
 
   resource "referencing" do
-    url "https:files.pythonhosted.orgpackages995b73ca1f8e72fff6fa52119dbd185f73a907b1989428917b24cff660129b6dreferencing-0.35.1.tar.gz"
-    sha256 "25b42124a6c8b632a425174f24087783efb348a6f1e0008e63cd4466fedf703c"
+    url "https:files.pythonhosted.orgpackages2fdb98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2referencing-0.36.2.tar.gz"
+    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
   end
 
   resource "requests" do
@@ -234,13 +234,13 @@ class Snakemake < Formula
   end
 
   resource "wrapt" do
-    url "https:files.pythonhosted.orgpackages24a1fc03dca9b0432725c2e8cdbf91a349d2194cf03d8523c124faebe581de09wrapt-1.17.0.tar.gz"
-    sha256 "16187aa2317c731170a88ef35e8937ae0f533c402872c1ee5e6d079fcf320801"
+    url "https:files.pythonhosted.orgpackagesc3fce91cc220803d7bc4db93fb02facd8461c37364151b8494762cc88b0fbcefwrapt-1.17.2.tar.gz"
+    sha256 "41388e9d4d1522446fe79d3213196bd9e3b301a336965b9e27ca2788ebd122f3"
   end
 
   resource "yte" do
-    url "https:files.pythonhosted.orgpackages78fbb29e57ea7466423796882b363f3b257fb2b084f4ccadd37f211113ffbd79yte-1.5.5.tar.gz"
-    sha256 "2c49831859f3216f313a17688900690872e05f8fbe77cb5d151bdb896357d57e"
+    url "https:files.pythonhosted.orgpackages2eea6173085d15e5cf55884b2706ab3f35d38a0680fc45c5b9e33b40c4a71bdbyte-1.5.7.tar.gz"
+    sha256 "1e22a74e7c4d1aa70c54fe79d23938cb249d08c0804ad764ab97d5c587cbbad2"
   end
 
   def install

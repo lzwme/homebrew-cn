@@ -1,8 +1,8 @@
 class K3d < Formula
   desc "Little helper to run CNCF's k3s in Docker"
   homepage "https:k3d.io"
-  url "https:github.comk3d-iok3darchiverefstagsv5.8.1.tar.gz"
-  sha256 "b4835360685b89ce1e13e1ccaa3f4d0cd7775b09c7ebe6dfc9b0e3d64f952487"
+  url "https:github.comk3d-iok3darchiverefstagsv5.8.2.tar.gz"
+  sha256 "666c6666be63baea6f574c83a61ffcf323d7a1949780ee42775e934b6e352948"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class K3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0f84fb5b90d26a4df00624c9db1444aa910c7b086030b8e2ac6def5c54bc4ec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e0f84fb5b90d26a4df00624c9db1444aa910c7b086030b8e2ac6def5c54bc4ec"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e0f84fb5b90d26a4df00624c9db1444aa910c7b086030b8e2ac6def5c54bc4ec"
-    sha256 cellar: :any_skip_relocation, sonoma:        "40e775dd6859febfdff60b3b6afbbabe3528d7585874ba939bb56fcc33c5e600"
-    sha256 cellar: :any_skip_relocation, ventura:       "40e775dd6859febfdff60b3b6afbbabe3528d7585874ba939bb56fcc33c5e600"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db1ea3f973ce4c8374e36b7fe2ff608d8122ffa80d3a34354704ad82c0abfed7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d870a75c145eba14049a1d4ca95a0f7b692cd2d22e95164ccce9b878e5d8ab29"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d870a75c145eba14049a1d4ca95a0f7b692cd2d22e95164ccce9b878e5d8ab29"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d870a75c145eba14049a1d4ca95a0f7b692cd2d22e95164ccce9b878e5d8ab29"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5c49e125bf15670f4c4cdd120e42c663c807e9a333ee3822268d736570df4471"
+    sha256 cellar: :any_skip_relocation, ventura:       "5c49e125bf15670f4c4cdd120e42c663c807e9a333ee3822268d736570df4471"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15b9277ca60355e4786ce7bb7804959420e796930bb232a3eceb7d1f146241f0"
   end
 
   depends_on "go" => :build

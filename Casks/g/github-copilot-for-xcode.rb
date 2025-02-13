@@ -1,6 +1,6 @@
 cask "github-copilot-for-xcode" do
-  version "0.29.0"
-  sha256 "3018f63dfc31e95955835851a33712de4e3d00b186b424288e624ba640546f5e"
+  version "0.31.0"
+  sha256 "f29662f9411e2c69fa89a9d073ea05cbc680650039bb5fde14abfcac40270b19"
 
   url "https:github.comgithubCopilotForXcodereleasesdownload#{version}GitHubCopilotForXcode.dmg"
   name "GitHub Copilot for Xcode"

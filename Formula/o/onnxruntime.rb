@@ -2,10 +2,9 @@ class Onnxruntime < Formula
   desc "Cross-platform, high performance scoring engine for ML models"
   homepage "https:github.commicrosoftonnxruntime"
   url "https:github.commicrosoftonnxruntime.git",
-      tag:      "v1.20.1",
-      revision: "5c1b7ccbff7e5141c1da7a9d963d660e5741c319"
+      tag:      "v1.20.2",
+      revision: "8608bf02f21774be0388d2aa3a9f886d009d0b4c"
   license "MIT"
-  revision 2
 
   livecheck do
     url :stable
@@ -13,12 +12,12 @@ class Onnxruntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "54b636db39e0709ae8ef519d439f1cd25ba1bfb31c95f9a8741acaa7e82101ee"
-    sha256 cellar: :any,                 arm64_sonoma:  "40c47657bc79aaa749f6af63853d98d9708409e28158b1ab9f1b9fb059920d4f"
-    sha256 cellar: :any,                 arm64_ventura: "87e6968978cce93294832e3392ee95eba70b10918cbd5350aea561f93cf1d41f"
-    sha256 cellar: :any,                 sonoma:        "8848ad4182f703e9e92af4a1e545fe90748c04d0f9d81efa37345e54d5dc3053"
-    sha256 cellar: :any,                 ventura:       "7afbc62d688112a542508373adb7f8833cfd6cdc064232edf6309ae05124a4a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0efdfb2d6cc18aa54b44ed6aecdb9d56c8e4a96ead5f00a53bec8d9925ed62a5"
+    sha256 cellar: :any,                 arm64_sequoia: "c6744238c6732f7d2a0191771cf70336219390d91ec36dff3d8f5ecad56e4fd6"
+    sha256 cellar: :any,                 arm64_sonoma:  "136615d2825b3b687f97c8afe00c1f5439e4b1f415103281179724c591be1640"
+    sha256 cellar: :any,                 arm64_ventura: "4add4f59367066ac9d18bc75e296f851f638c3543d2ccf7860f30b09f5122f6c"
+    sha256 cellar: :any,                 sonoma:        "d06de9bf6dc24efecd13ff5e4b1cb7501119bc8e99249a572792a780c62fec5b"
+    sha256 cellar: :any,                 ventura:       "0cb437a417c351214f324f56bb3da427d591887aeee60fe05a0effeaaad3e361"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d837a37a45678b84bca31d82cc2b2e7eb76bd71e3e5516731fe88039202ab512"
   end
 
   depends_on "boost" => :build
@@ -46,8 +45,8 @@ class Onnxruntime < Formula
 
   # https:github.commicrosoftonnxruntimeblobv#{version}cmakedeps.txt#L52
   resource "pytorch_cpuinfo" do
-    url "https:github.compytorchcpuinfoarchiveca678952a9a8eaa6de112d154e8e104b22f9ab3f.tar.gz"
-    sha256 "c8f43b307fa7d911d88fec05448161eb1949c3fc0cb62f3a7a2c61928cdf2e9b"
+    url "https:github.compytorchcpuinfoarchive8a1772a0c5c447df2d18edf33ec4603a8c9c04a6.tar.gz"
+    sha256 "37bb2fd2d1e87102baea8d131a0c550c4ceff5a12fba61faeb1bff63868155f1"
   end
 
   # Backport fix for build on Linux

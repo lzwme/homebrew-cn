@@ -1,18 +1,18 @@
 class PinboardNotesBackup < Formula
   desc "Efficiently back up the notes you've saved to Pinboard"
   homepage "https:github.combdeshampinboard-notes-backup"
-  url "https:github.combdeshampinboard-notes-backuparchiverefstagsv1.0.6.tar.gz"
-  sha256 "7c296c1d42ed3c059d72e303f5a35d0d575d7bb2bb0a28a5fae1f36bf151ac77"
+  url "https:github.combdeshampinboard-notes-backuparchiverefstagsv1.0.7.tar.gz"
+  sha256 "bd26a1cd7ec4e0a83cd06c1234420ac9262d39c926a42820958502967005f63c"
   license "GPL-3.0-or-later"
   head "https:github.combdeshampinboard-notes-backup.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "54901aecd1ce3df91e8332f9e7c711156422dfdb2b0d91c08facf995f5fd4b24"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6db312954370b05b042448cf967fbff5c966fb2c4e6d68ad17883d2890ac29f0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ca53a06af4eb68273975f8c20d784a12eca64c9df6d4b96377bfff77ac273cb5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2ed4c5804e37c9be4f243675456e023183d737b94a8c310a24b71bb382431037"
-    sha256 cellar: :any_skip_relocation, ventura:       "203ff0729e4baad033699c6c24cc1f2ec46612aa372ffbb56ac1bb18c6ce62e2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25b7c77c34baa4f08c806812392c94182ef7b9360a4bf0498dfee76796eb61b5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db4446ba2acc253e4311931498466fcbb817a7d4f0a40586c57a398199e28272"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "269d2c336cc103226d08d1347b641d2ed03a98b41468e14b97c619b1ec0182b4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0bbaa3f7e02e6359afb9b42066fc2e975c31f2ed2cfc3cfb4e5cfdf3649da43c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "878786cea9c65cb998b04c9986bd0ef267203e57bac2c0c413b914a79c2b3215"
+    sha256 cellar: :any_skip_relocation, ventura:       "1e1d6084bee6d414a922988d46a79f8f8d34d20fb983d151049889ded6a47154"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c73c136aeeb04488e72260d28b820e81791f13cdcf7da540f0e80352a4a3365d"
   end
 
   depends_on "cabal-install" => :build

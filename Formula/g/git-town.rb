@@ -1,17 +1,17 @@
 class GitTown < Formula
   desc "High-level command-line interface for Git"
   homepage "https:www.git-town.com"
-  url "https:github.comgit-towngit-townarchiverefstagsv17.3.0.tar.gz"
-  sha256 "9bcca42a4bd0a84fbb55c35d027746d81869e5232058f819c7e683c80bf9f121"
+  url "https:github.comgit-towngit-townarchiverefstagsv18.0.0.tar.gz"
+  sha256 "ad43a375e27df630666017b8e961618350f6fe83d3eae4267338f0e67f972d1f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ffce04801150d89a0b1f6872b00d26908abb9ba241f61dd6651fa8b9ddf9005e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ffce04801150d89a0b1f6872b00d26908abb9ba241f61dd6651fa8b9ddf9005e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ffce04801150d89a0b1f6872b00d26908abb9ba241f61dd6651fa8b9ddf9005e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a7c5ed33b67f9797b1dc581b65d632af92cde9f00a05c6ccf5f8e93d301197a5"
-    sha256 cellar: :any_skip_relocation, ventura:       "a7c5ed33b67f9797b1dc581b65d632af92cde9f00a05c6ccf5f8e93d301197a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfa5752aa3a0894f28ae28f4ed0aadc2e8d83f44880138901b52b89f1b1d08e3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18f0349384856bf6f3a518816e39aed2406e737c99533ac537da17f0e70983fd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18f0349384856bf6f3a518816e39aed2406e737c99533ac537da17f0e70983fd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "18f0349384856bf6f3a518816e39aed2406e737c99533ac537da17f0e70983fd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "57756feb05ec793601251c518a12f57e7bd1438941698a7dd13e0759473ea493"
+    sha256 cellar: :any_skip_relocation, ventura:       "57756feb05ec793601251c518a12f57e7bd1438941698a7dd13e0759473ea493"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0356ec3056c33a7ab6234d3c2efb836123dde0b2fcf2ad602c3dcba928570f3a"
   end
 
   depends_on "go" => :build

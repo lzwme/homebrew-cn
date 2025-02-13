@@ -1,8 +1,8 @@
 class Inko < Formula
   desc "Safe and concurrent object-oriented programming language"
   homepage "https:inko-lang.org"
-  url "https:releases.inko-lang.org0.18.0.tar.gz"
-  sha256 "8ebd2c1d8cb3375b50c4236c39f331fd0942861ebeb30b317ec0f904843b5a26"
+  url "https:releases.inko-lang.org0.18.1.tar.gz"
+  sha256 "498d7062ab2689850f56f5a85f5331115a8d1bee147e87c0fdfe97894bc94d80"
   license "MPL-2.0"
   head "https:github.cominko-langinko.git", branch: "main"
 
@@ -15,36 +15,30 @@ class Inko < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8e1910a560f1ca9131acedf7ece2f246e59a65aacbf450e818d7b469838f673c"
-    sha256 cellar: :any,                 arm64_sonoma:  "27c69734fc92663a20ca689d487d97058eeaaa628592264839d5933501d311f3"
-    sha256 cellar: :any,                 arm64_ventura: "c5f4eeabd4fb17588a819fdb8756ab77b86042013e507e85751e1e1688cf4fc6"
-    sha256 cellar: :any,                 sonoma:        "8f0c6eac46643a0c8f8259b3535eb4c4500867cacd13d0d6999a5c9c18b61b24"
-    sha256 cellar: :any,                 ventura:       "3030ff2f27595331f872bfd15f6a5cd47872462742d0659ac349c863d1775c14"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd6186c879ba0979dddf982d5d203491da1c9906a7a239fb51466d8921639da3"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "ee26a0c11c1c527151fde51739a7f4fe5ac5f721805deb98e1a5f2bd3024d038"
+    sha256 cellar: :any,                 arm64_sonoma:  "44fc95eba234a04e7cfe132a17874892a86fdcf0b198a07de3ca5807fdead3be"
+    sha256 cellar: :any,                 arm64_ventura: "e61d4dd6bacfdb7d01a885493de960998271cf10f6bf4931a2deecef27a59eec"
+    sha256 cellar: :any,                 sonoma:        "487151f34bc632c5d5618cb65d06efd23afd8f8dac3becf13f2b2597e18aa4e5"
+    sha256 cellar: :any,                 ventura:       "f4b935a853326a2422c5f2bb826c765d9cfa27dd32ebf8005e1d1f7bdbdd58f9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7af46ba20d2d34d8d5ec23574d97caa98a50278eca21fd9e1573856cf58ee24f"
   end
 
-  depends_on "coreutils" => :build
   depends_on "rust" => :build
   depends_on "llvm@17" # see https:github.cominko-langinkoblob4738b81dbec1f50dadeec3608dde855583f80ddacimac.sh#L5
-  depends_on "zstd"
 
   uses_from_macos "libffi", since: :catalina
-  uses_from_macos "ncurses"
-  uses_from_macos "ruby", since: :sierra
-  uses_from_macos "zlib"
-
-  on_macos do
-    depends_on "z3"
-  end
 
   def install
-    ENV.prepend_path "PATH", Formula["coreutils"].opt_libexec"gnubin"
+    # Avoid statically linking to LLVM
+    inreplace "compilerCargo.toml", 'features = ["prefer-static"]', 'features = ["force-dynamic"]'
+
     system "make", "build", "PREFIX=#{prefix}"
     system "make", "install", "PREFIX=#{prefix}"
   end
 
   test do
-    (testpath"hello.inko").write <<~EOS
+    (testpath"hello.inko").write <<~INKO
       import std.stdio (Stdout)
 
       class async Main {
@@ -52,7 +46,7 @@ class Inko < Formula
           Stdout.new.print('Hello, world!')
         }
       }
-    EOS
+    INKO
     assert_equal "Hello, world!\n", shell_output("#{bin}inko run hello.inko")
   end
 end

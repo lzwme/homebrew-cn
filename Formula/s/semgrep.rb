@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https:semgrep.dev"
   url "https:github.comsemgrepsemgrep.git",
-      tag:      "v1.107.0",
-      revision: "92313a429752186e4a39b2d6f7edeefe80dabbb0"
+      tag:      "v1.108.0",
+      revision: "2fc9561439da51936a772afda12e3db28bc4f8db"
   license "LGPL-2.1-only"
   head "https:github.comsemgrepsemgrep.git", branch: "develop"
 
@@ -15,12 +15,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "646b943e2ca7cef8358fa47331d694b84c417d20c41a2d2da4e6e1be45562604"
-    sha256 cellar: :any,                 arm64_sonoma:  "114610fb59c1bbc151ebc0d533e019a0ca84c3bc257ae1b31ec765a170d4a007"
-    sha256 cellar: :any,                 arm64_ventura: "421d56bb809a3f31e4b5862acf36f004dea1ef58c7d8908cb1ea35b616fa5304"
-    sha256 cellar: :any,                 sonoma:        "3f8f4a63997a1585055f6dcfd4e74d979a303840a9137b5e4229c221c3bb6eaf"
-    sha256 cellar: :any,                 ventura:       "ec662474c945662fd7a4b668be65a4f0b2ef6b9e0bf402b1272bf03726df504c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8749386f982b1072113b9a0c8912f687c0999618cd4f19372b80502eb17a59f8"
+    sha256 cellar: :any,                 arm64_sequoia: "98b3eb36af861d7e875498b4a75cb8f6e1bfb293f9f307978c1c90450e16dbdf"
+    sha256 cellar: :any,                 arm64_sonoma:  "fbe122ded2693332c472a867a2d69941dda17709c0dac2874e301cca3bd4f81d"
+    sha256 cellar: :any,                 arm64_ventura: "436609fa9063d90008e317c26f1846bbc99efeed73277aeb966ac04c424c5590"
+    sha256 cellar: :any,                 sonoma:        "0f856f442b2eefa60f161da343e6a0666a046154731a82491f31c61167419272"
+    sha256 cellar: :any,                 ventura:       "b5af41e169e2de6a401077261d2281d39fbc36ff62a361599db146fda5d62dff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e6f176873a0c6a87eaf1c2e1a865630d4dda73f50cd323e28885d7a50355751"
   end
 
   depends_on "autoconf" => :build
@@ -190,8 +190,8 @@ class Semgrep < Formula
   end
 
   resource "peewee" do
-    url "https:files.pythonhosted.orgpackagesb4dc832bcf4ea5ee2ebc4ea42ef36e44a451de5d80f8b9858bf2066e30738c67peewee-3.17.8.tar.gz"
-    sha256 "ce1d05db3438830b989a1b9d0d0aa4e7f6134d5f6fd57686eeaa26a3e6485a8c"
+    url "https:files.pythonhosted.orgpackages57094393bd378e70b7fc3163ee83353cc27bb520010a5c2b3c924121e7e7e068peewee-3.17.9.tar.gz"
+    sha256 "fe15cd001758e324c8e3ca8c8ed900e7397c2907291789e1efc383e66b9bc7a8"
   end
 
   resource "protobuf" do

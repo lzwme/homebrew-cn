@@ -1,17 +1,17 @@
 class Terragrunt < Formula
   desc "Thin wrapper for Terraform e.g. for locking state"
   homepage "https:terragrunt.gruntwork.io"
-  url "https:github.comgruntwork-ioterragruntarchiverefstagsv0.73.0.tar.gz"
-  sha256 "5e717a3a6c9e23cedde6f2821a4c96a25e79121d267cb040ce4b1791664520c4"
+  url "https:github.comgruntwork-ioterragruntarchiverefstagsv0.73.1.tar.gz"
+  sha256 "ee8836be617784058d1e831e031091fda5ac6502a72d4b5275bf6a5cd097d009"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "28c5b40ea2e4a782e6ec5342d9957bef389c7a1e83acd8cd91a6e1bb16eb38d4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "28c5b40ea2e4a782e6ec5342d9957bef389c7a1e83acd8cd91a6e1bb16eb38d4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "28c5b40ea2e4a782e6ec5342d9957bef389c7a1e83acd8cd91a6e1bb16eb38d4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9525b70b713e5cf817b029c765d3c12eb8772608f33b864abfa8246bc54c47d6"
-    sha256 cellar: :any_skip_relocation, ventura:       "9525b70b713e5cf817b029c765d3c12eb8772608f33b864abfa8246bc54c47d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fce62d5062db0982ba5b1dad09150d09ff880d3056ce94550b052a3aad86e7ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f784358b889cb03215dbb1bb262eed9e791f90a31fe5308a63d236f88abe910d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f784358b889cb03215dbb1bb262eed9e791f90a31fe5308a63d236f88abe910d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f784358b889cb03215dbb1bb262eed9e791f90a31fe5308a63d236f88abe910d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9553aea9fbf625107b489041bb55664d03033d0bd5b9ef2e6a92141511873487"
+    sha256 cellar: :any_skip_relocation, ventura:       "9553aea9fbf625107b489041bb55664d03033d0bd5b9ef2e6a92141511873487"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2219b414cf6badaee82244876f3a17b0fee94eb5b9667b1a03e2560d2337a5cf"
   end
 
   depends_on "go" => :build

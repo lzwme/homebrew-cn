@@ -13,13 +13,13 @@ class Ldns < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "e41ddef970a42de70fcfe79435f15862e391b78380b27e4b3b1d383509df6c4b"
-    sha256 cellar: :any,                 arm64_sonoma:  "8a37413be9cdcac1aa759799854adb6228ab6b536080437c44be0bea5e19e340"
-    sha256 cellar: :any,                 arm64_ventura: "1982bf6d463f906656151e0c815c8ebdbeae2754c8d31c6176619d0788a4ed03"
-    sha256 cellar: :any,                 sonoma:        "e3e22b8607518dd64f222619e49714ebfa7d4d03c6810f43dea8153ead2d1372"
-    sha256 cellar: :any,                 ventura:       "f13681ca699403540adc4c598880a572d1b69d969d3a88952d6a02aa2c5d66ee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22400444cfcbb07362c0148c795d1c6c7de58c65aaf5ec3978849bd30cb96a88"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "2707eaadad1873f87ee5f9daf71f7710aee3be3ca4116768c2f1514f59704d65"
+    sha256 cellar: :any,                 arm64_sonoma:  "3006f0623486121db7991757fa52fc933f285aa0d98439ffe75a053dc4c7dcc7"
+    sha256 cellar: :any,                 arm64_ventura: "eb53602f7be7e1ba9d42c2a1dcb3f70e926a85007d1338dceebb43b81f65598c"
+    sha256 cellar: :any,                 sonoma:        "40cbf3faab35cbab0f7b832df080aa47f972131042eb0be3ec5fc6ac44d5f4ab"
+    sha256 cellar: :any,                 ventura:       "2d2f7f630d32e895bf745396161bdfbb24b6cca7d0bf9e9528f461376c19ddfc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0677ecaba9460fa437cc99fe78a048ec2acceb109f9ccc6e414bcb5ded94cdac"
   end
 
   depends_on "swig" => :build
@@ -27,6 +27,12 @@ class Ldns < Formula
   depends_on "python@3.13"
 
   conflicts_with "drill", because: "both install a `drill` binary"
+
+  # build patch to work with swig 4.3.0, upstream pr ref, https:github.comNLnetLabsldnspull257
+  patch do
+    url "https:github.comNLnetLabsldnscommit49b2e4a938d263bb8c532e64f33690551e43ca0c.patch?full_index=1"
+    sha256 "e7dd20b06cf1b0728d0822118a8ae231405579a9f35b0d66ac6422249c2be518"
+  end
 
   def python3
     "python3.13"

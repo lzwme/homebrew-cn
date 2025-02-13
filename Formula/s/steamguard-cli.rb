@@ -1,17 +1,17 @@
 class SteamguardCli < Formula
   desc "CLI for steamguard"
   homepage "https:github.comdyc3steamguard-cli"
-  url "https:github.comdyc3steamguard-cliarchiverefstagsv0.15.0.tar.gz"
-  sha256 "0dc655447a1fdd10edfdd5e3abfffcbbd7d4fb779c5ee10c007e7928404eeabb"
+  url "https:github.comdyc3steamguard-cliarchiverefstagsv0.16.0.tar.gz"
+  sha256 "b57f1c2238ae3f5a08a106d8f42d5c72c288f458cdbeba0b37d5f83fb1cc3a9f"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2bc2fea7ba9eda272a82ad0753cc5bcfbaee5dae66cdfc02eeaa05abfc994846"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2fe36fe5920f16f359e910b05f65613d09d830076253443aebdf64577c588067"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b5865c2d041ce521b21d9086fad28d5b70e6d437e86a447f2d232b3e18614e9e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b94b9a702865492c969cf80319e36a257b94cac391679445ba23262aa915949f"
-    sha256 cellar: :any_skip_relocation, ventura:       "a49f95cffbc3c033120433feceb2def215df26eec50d3beb30419f7fe5c57d88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e6e0f24ddb3c2163f20feb6298ef557bce4d9ed3bb3ec0e16452d8f9b20fec5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da90c2f8e8182e5b9dcac1ea061fb98ed69ec65fee7d9246976a2bc8c1d56499"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0888e2818a15ee485674368a2e703f9f53ef9ef7d3c8d13c8f7fdacde6d9adf6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "addd417cd0b2cce815ffcd08cfde925021815d1053e9b71c72fcfe2918da150b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "64f8b4287b795d0eb4246ad9a8d024bd639fba17382b748db076ab320d2c470b"
+    sha256 cellar: :any_skip_relocation, ventura:       "cc6bea182abebee804675f170153061ba678f73b8f35dc8aa8ca4d66df95f25b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47d2c72e74aa0aea06bfb8b8dcfdc55d58738fb758853e45615cddfb749d8e8b"
   end
 
   depends_on "rust" => :build
