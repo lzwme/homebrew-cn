@@ -20,8 +20,6 @@ class Hello < Formula
     sha256                               x86_64_linux:   "7935d0efdae69742f5140d514ef2e3e50d1d7cb82104cf6033ad51b900c12749"
   end
 
-  conflicts_with "perkeep", because: "both install `hello` binaries"
-
   def install
     ENV.append "LDFLAGS", "-liconv" if OS.mac?
 

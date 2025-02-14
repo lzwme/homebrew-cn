@@ -4,14 +4,15 @@ class Llgo < Formula
   url "https:github.comgoplusllgoarchiverefstagsv0.9.9.tar.gz"
   sha256 "705fed97ef8b337863fd9bbb40653c22fd93ba689f879db06801d37e5d8fe809"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "e4f7a4e54a80876defc9ef22d779e0043f897c3dd146efb4494a4dac722018f1"
-    sha256 cellar: :any, arm64_sonoma:  "e302707dcf587e2526f815f75dc9a25f571b09621ccf5245743899b452f2bc07"
-    sha256 cellar: :any, arm64_ventura: "4b4c2d0f8f722bc2c4053bd34bceb98d97e52a8068bda9b07a33366ca684e768"
-    sha256 cellar: :any, sonoma:        "67851d672f74c74b34652788de4175098dc1636b717c97574e5bcc804af5241f"
-    sha256 cellar: :any, ventura:       "66fe74269b0f47db75f1d5c283f8dda84166d7d95be5b225e2be458c40a99d5e"
-    sha256               x86_64_linux:  "f90f9374df031d8dcf2a554da1226937d77e1e71c82ae77b583afaa72f56769a"
+    sha256 cellar: :any, arm64_sequoia: "0eef02db81b85e529e3ab1312f9817892cb07d47f49db77bcd322490bccb7432"
+    sha256 cellar: :any, arm64_sonoma:  "588654804dcef5836318a2fa1e7ddcf5baa1c2409f59fa630031e390dcc8c3af"
+    sha256 cellar: :any, arm64_ventura: "d39e10b6eaede8376dca9d4ece753d9d59ef05a9b2df5747ea62f88214b6b3e9"
+    sha256 cellar: :any, sonoma:        "e40074e4a6d5c9ccf0d296a3ee6e2f12ee86546d17e3127e51eae0d32712be0e"
+    sha256 cellar: :any, ventura:       "04c84b6d696f5b9c68897d9fd39426e07e06a52eefd911c95645298a3634c734"
+    sha256               x86_64_linux:  "10a922642cecc66b75420e9d661e4c12409c2ed7d379123c0d52d339b86de938"
   end
 
   depends_on "bdw-gc"

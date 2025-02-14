@@ -1,23 +1,29 @@
 class Hiredis < Formula
   desc "Minimalistic client for Redis"
   homepage "https:github.comredishiredis"
-  url "https:github.comredishiredisarchiverefstagsv1.2.0.tar.gz"
-  sha256 "82ad632d31ee05da13b537c124f819eb88e18851d9cb0c30ae0552084811588c"
   license "BSD-3-Clause"
   head "https:github.comredishiredis.git", branch: "master"
 
+  stable do
+    url "https:github.comredishiredisarchiverefstagsv1.2.0.tar.gz"
+    sha256 "82ad632d31ee05da13b537c124f819eb88e18851d9cb0c30ae0552084811588c"
+
+    # Makefile: correctly handle version suffixes on macOS
+    # Remove with `stable` block on next release.
+    patch do
+      url "https:github.comredishirediscommit77bcc73ebbc562d8e8173832b710bfbfa4327b13.patch?full_index=1"
+      sha256 "1f6d2266b258f32da36a9f2ce9c03d492920e13444925cf01fe0cb4cde1d6e2c"
+    end
+  end
+
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "f330d6ee8e148d934c22b5db5bbe158b45a1687106ce09349f25cb29013c5026"
-    sha256 cellar: :any,                 arm64_sonoma:   "cbf3d6f42b38399ecd917d2efc963457831c8992dd6dfc458ab5b8e169aa8c93"
-    sha256 cellar: :any,                 arm64_ventura:  "9970a5ff45d25be488b5f3e843fb777624b4824510d8434b23565fc9b703a59a"
-    sha256 cellar: :any,                 arm64_monterey: "bf180f8a975c907210d5c130be249f21a9cc050710c83acc9dd6b699c398ae24"
-    sha256 cellar: :any,                 arm64_big_sur:  "f1d1112d4969beb75a30b43faa1fb953f0b869ffe5d9dc02af2f16780abe34ad"
-    sha256 cellar: :any,                 sonoma:         "55627ae2c171d51464a2d7c2b6fb3e2194c7769d5e9173a286781f3ab491f065"
-    sha256 cellar: :any,                 ventura:        "ca336f556d8c10e7cfae516c8e6d5333f5e55533d0971e68f8ed2a730bb765fd"
-    sha256 cellar: :any,                 monterey:       "33a1ced3df2be2279bb716e924f948d1be77f3dc3f831880900655f71daf2e95"
-    sha256 cellar: :any,                 big_sur:        "de9df908dc8e52a552d1f6faed0bc839750f44aad97666d835dd0f7634e3e051"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8c2054cf967b075da6153fea843f3b48e285213aa5944aab4d4b6e14e650bb1"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "4e524056481b35899b3faa28ac1ae3f4f716ad3c5b714ec9daf9ae6657e48823"
+    sha256 cellar: :any,                 arm64_sonoma:  "ed340b77f0d20b01316f004565559d8d50d275aa1ccbd08e5d14427a0de5ca2b"
+    sha256 cellar: :any,                 arm64_ventura: "5ad4bd7bb1d271bc70336abb292491952d11ac567165bbff27675a2aedee4c7e"
+    sha256 cellar: :any,                 sonoma:        "1e6b61f4ffd1cf76ce8e87e4444f4bfad88aa64baa87d31667b8f84845a46583"
+    sha256 cellar: :any,                 ventura:       "d1dfee9546fdcc55d414bb4998ddcc72338cebfbd806fbd9e9d74fb6cb96b818"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fb485ff3050d1ca96db614b96ec92b9595249f967e1d5851acc1633324780d4"
   end
 
   depends_on "openssl@3"

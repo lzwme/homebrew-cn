@@ -1,8 +1,8 @@
 class DockerCredentialHelperEcr < Formula
   desc "Docker Credential Helper for Amazon ECR"
   homepage "https:github.comawslabsamazon-ecr-credential-helper"
-  url "https:github.comawslabsamazon-ecr-credential-helperarchiverefstagsv0.9.0.tar.gz"
-  sha256 "6067a2cb36f8b451878b4336e4bef202999281b6c31727bcda97f62cfb4aa19a"
+  url "https:github.comawslabsamazon-ecr-credential-helperarchiverefstagsv0.9.1.tar.gz"
+  sha256 "0f186c04c4f90fde02add338cf85f7136a2b7aa52bf2f6ae2130244ce1132393"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class DockerCredentialHelperEcr < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "162b30db65989114c0d53c3866eabcdd14ad39e656e52968a602441dd7315af8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "162b30db65989114c0d53c3866eabcdd14ad39e656e52968a602441dd7315af8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "162b30db65989114c0d53c3866eabcdd14ad39e656e52968a602441dd7315af8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0698aafc16bf4a94fe87a73fad1845f6fdfc3d62bc256590698bed8958c365ae"
-    sha256 cellar: :any_skip_relocation, ventura:       "0698aafc16bf4a94fe87a73fad1845f6fdfc3d62bc256590698bed8958c365ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b778b0daccf6fd640c2d3dc04355ed2fbb8791971d79cd4f4650c1a7b0a331ff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fedaf37d87aae03d6e661d21a997d2913dd09e77754f0574ad6936405fcd1597"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fedaf37d87aae03d6e661d21a997d2913dd09e77754f0574ad6936405fcd1597"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fedaf37d87aae03d6e661d21a997d2913dd09e77754f0574ad6936405fcd1597"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4a7e351e896541eb5048280a91cfbfc0888ecdc9f0a6111c2d18391d4dd7366f"
+    sha256 cellar: :any_skip_relocation, ventura:       "4a7e351e896541eb5048280a91cfbfc0888ecdc9f0a6111c2d18391d4dd7366f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b885a402893475b5e4fb09e712a50af51a7ad9f1edfae2adaa782f8444fc373"
   end
 
   depends_on "go" => :build

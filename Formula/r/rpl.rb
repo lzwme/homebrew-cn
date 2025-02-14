@@ -3,17 +3,17 @@ class Rpl < Formula
 
   desc "Text replacement utility"
   homepage "https:github.comrrthomasrpl"
-  url "https:files.pythonhosted.orgpackagesd252762474c7ec7b36b2dbc5f4494137dc9ec31129aa482107a7a619dae6d78arpl-1.16.1.tar.gz"
-  sha256 "5539b8294e7d624e74d6d51d567e33ddb171f4eb74d020cbf471a57f8e3fb78e"
+  url "https:files.pythonhosted.orgpackages3ebae65ee036e822b6aea002e3b5f36bceee6ce1238bfbe15d0cf544ae591894rpl-1.17.tar.gz"
+  sha256 "6f1fbb7b4c9d033fc977501833d333d68a3d487986dbb717179d0dd4861de201"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2f2688bbf2f3c0992730e9e74e951a16a90fc363e395928205e92b6b654eec9f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a3bde49799ea9c9df361f7906b77ced1024a65ee48cb0ae86e95c851959ae1ab"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6c198651e00d89a8dc1b5a9a0a44519f69c16d09c27b052682f5833003e66e49"
-    sha256 cellar: :any_skip_relocation, sonoma:        "be1ebeb43eb88d18eab4598f38c27ac768ad35885eaf3238b7d8d18b235f1ed5"
-    sha256 cellar: :any_skip_relocation, ventura:       "24b4f7e1a0f50a9cddbc61a5fe831bd5aa1b5c74213e5ae70dd5942143d4acce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "690ee22d68487bc065efa26e1e92df9c1f963d6d1beb8b438fce6d56ef84b887"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e806d2c42dc8d1420cf01b83ab5550b2658a3c6c3179702b1541d644aca6955f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61c70a726d8783bcc32fb4cf699408e7c8ae92d5a333753393c4c166e0674fdb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "04a909a86e8fe5f6944b22e35e68e9916eeda813375e94f07b10a530f4114689"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3c4998c00f2183aef2e1e179b24df70f17f36fa3dcd97ed0c2b61ccdf70fd726"
+    sha256 cellar: :any_skip_relocation, ventura:       "7ed680b959b9e11320f58e42d4ce9d081cc612284e334ba414f7b956c217e267"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a07f3dc7b549e7fa5d73a990467e948fc05dcc1de58160796c3098db56c5ae8"
   end
 
   depends_on "python@3.13"

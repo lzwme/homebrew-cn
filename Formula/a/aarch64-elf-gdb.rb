@@ -1,9 +1,9 @@
 class Aarch64ElfGdb < Formula
   desc "GNU debugger for aarch64-elf cross development"
   homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftp.gnu.org/gnu/gdb/gdb-16.1.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gdb/gdb-16.1.tar.xz"
-  sha256 "c2cc5ccca029b7a7c3879ce8a96528fdfd056b4d884f2b0511e8f7bc723355c6"
+  url "https://ftp.gnu.org/gnu/gdb/gdb-16.2.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gdb/gdb-16.2.tar.xz"
+  sha256 "4002cb7f23f45c37c790536a13a720942ce4be0402d929c9085e92f10d480119"
   license "GPL-3.0-or-later"
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Aarch64ElfGdb < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "3077698e6ced74e70eef8e393d91d5b98427ef30269b1810d28e4be6e7f99c13"
-    sha256 arm64_sonoma:  "2a33aa05debdc6eafac67e3b621ca53a466251ea071c14c41fd17faf2d16b2fa"
-    sha256 arm64_ventura: "4939ada2dc1adba22309c7be4ed4ddaa808d23be549567f32cbe15277f7cfd4e"
-    sha256 sonoma:        "708cc9feadf8db92a817697a1d76279404b92511eb5f04cbcde0add61a7aca6f"
-    sha256 ventura:       "f0f7505907b6fe4f3a1ec632f12a4ba7020d6ba65f190ab764b8366e1bb4a112"
-    sha256 x86_64_linux:  "37cf17baa9186c4ceb09d80958d399f3f3c45dfa27b0a58b8a6a0851c3d21203"
+    sha256 arm64_sequoia: "324a6c319ea8a9d175e6327d89593fc9eea7d1fbe484d41533479f5b1795b3a8"
+    sha256 arm64_sonoma:  "9a79fc135975687ba9f0ec19696895f6df8c0ba831930e3abf66bc9814f49a4b"
+    sha256 arm64_ventura: "5c1056bf8a6b599855947d3c449e43f439c0367dd0e9a2a2d7501e039f69e250"
+    sha256 sonoma:        "07d44f785b149db031e9b6f9c65ab4bc96bad7cf348c047e7023f8b8618d3026"
+    sha256 ventura:       "96bc5b3fa085b1ca452460f1619eeef4c1a9109616e5f0d5891d36aeb9682a7c"
+    sha256 x86_64_linux:  "b424c1bce12d07f93a06767ea48703bdcf10a6bcba460b1ef4b4b99a4c3c36cf"
   end
 
   depends_on "pkgconf" => :build
@@ -36,10 +36,6 @@ class Aarch64ElfGdb < Formula
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build
   end
-
-  # Fix build on Linux
-  # Ref: https://sourceware.org/bugzilla/show_bug.cgi?id=32578
-  patch :DATA
 
   def install
     target = "aarch64-elf"
@@ -78,31 +74,3 @@ class Aarch64ElfGdb < Formula
           shell_output("#{bin}/aarch64-elf-gdb -batch -ex 'info address _start' a.out")
   end
 end
-
-__END__
-diff --git a/bfd/Makefile.in b/bfd/Makefile.in
-index aec3717485a..ee674a36c5b 100644
---- a/bfd/Makefile.in
-+++ b/bfd/Makefile.in
-@@ -1318,7 +1318,7 @@ REGEN_TEXI = \
- 	$(MKDOC) -f $(srcdir)/doc/doc.str < $< > $@.tmp; \
- 	texi=$@; \
- 	texi=$${texi%.stamp}.texi; \
--	test -e $$texi || test ! -f $(srcdir)/$$texi || $(LN_S) $(srcdir)/$$texi $$texi; \
-+	test -e $$texi || test ! -f $(srcdir)/$$texi || $(LN_S) $(abs_srcdir)/$$texi $$texi; \
- 	$(SHELL) $(srcdir)/../move-if-change $@.tmp $$texi; \
- 	touch $@; \
- 	)
-diff --git a/bfd/doc/local.mk b/bfd/doc/local.mk
-index 97d658b5a48..9b75402387c 100644
---- a/bfd/doc/local.mk
-+++ b/bfd/doc/local.mk
-@@ -101,7 +101,7 @@ REGEN_TEXI = \
- 	$(MKDOC) -f $(srcdir)/%D%/doc.str < $< > $@.tmp; \
- 	texi=$@; \
- 	texi=$${texi%.stamp}.texi; \
--	test -e $$texi || test ! -f $(srcdir)/$$texi || $(LN_S) $(srcdir)/$$texi $$texi; \
-+	test -e $$texi || test ! -f $(srcdir)/$$texi || $(LN_S) $(abs_srcdir)/$$texi $$texi; \
- 	$(SHELL) $(srcdir)/../move-if-change $@.tmp $$texi; \
- 	touch $@; \
- 	)

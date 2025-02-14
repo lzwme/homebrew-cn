@@ -18,7 +18,8 @@ class TrezorBridge < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0039559d527cb2841e04cff9bb7bc59b6db17f6f74f442768af8a81776ccacd9"
   end
 
-  depends_on "go" => :build
+  # Use "go" again when https:github.comtrezortrezord-goissues303 is fixed and released
+  depends_on "go@1.23" => :build
 
   # upstream patch ref, https:github.comtrezortrezord-gopull300
   patch do

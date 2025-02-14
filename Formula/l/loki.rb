@@ -1,8 +1,8 @@
 class Loki < Formula
   desc "Horizontally-scalable, highly-available log aggregation system"
   homepage "https:grafana.comloki"
-  url "https:github.comgrafanalokiarchiverefstagsv3.3.2.tar.gz"
-  sha256 "dd2e80ee40b981aaa414f528a76ab218931e5a53d50540e8fb9659f9e2446f43"
+  url "https:github.comgrafanalokiarchiverefstagsv3.4.1.tar.gz"
+  sha256 "8e496f9abc85f7d4fa05efb70fbff419bc581f342574afdb13fd3c4ec33a77bf"
   license "AGPL-3.0-only"
   head "https:github.comgrafanaloki.git", branch: "main"
 
@@ -12,22 +12,15 @@ class Loki < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5fd0beded217871d642e1f09eca8198cfff0e480b1851f1139fb2349e377d70b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9536ea8a854152b333305728480ed1af59bf5a3ba9fa7fc76f1f27fb06fcd971"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7dfd2b5f0f0b314654dd9298f2403212ac4abdaaad87e1ec1858532a63cfd54e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9d1d8c5232fd60805acabf75955e860a781a40de47171f3cd439ef71af255617"
-    sha256 cellar: :any_skip_relocation, ventura:       "685c61f7b828b0e6e37326001c10522533cc9d37341b6592cc44f3d0d23afeab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04d00ca11fc0cf92bb0493bb4f965410ba887c18399d4f276bff76259764aa65"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "41f2e7b10c7b78cbd4e6211e30f0dc7b4b78d5b158ac40d5faa0137cf4cb06de"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c3f865bc2d1ce88bfa16d4ea12ce1121053f95838cf9f2cfe55ec5350fefe0c0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d764c1357dadcd38b49da050a9988a7e45d632ba36d382d6e2c5ec29d422c609"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1b63648c7cfe3dc178de58d61c0017caf697a283cbb29c9e438570cddac9feb6"
+    sha256 cellar: :any_skip_relocation, ventura:       "24d968a524f9a987c81f1a29ab8cd9590d3bf7ea8ce8944f7ba2290229f4b812"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7e1d274b01c9010203fd92e3c6915c7a5a9999d440ac1688174b018bd0d082c"
   end
 
   depends_on "go" => :build
-
-  # Fix to yaml: unmarshal errors
-  # Issue ref: https:github.comgrafanalokiissues15039, upstream pr ref, https:github.comgrafanalokipull15059
-  patch do
-    url "https:github.comgrafanalokicommit5c8542036609f157fee45da7efafbba72308e829.patch?full_index=1"
-    sha256 "733203854fa0dd828b74e291a72945a511a20b68954964ad56c815f118fc68d6"
-  end
 
   def install
     cd "cmdloki" do

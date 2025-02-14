@@ -4,6 +4,7 @@ class GoCritic < Formula
   url "https:github.comgo-criticgo-criticarchiverefstagsv0.12.0.tar.gz"
   sha256 "e981f7135bd0a21de3e94c05f5d393e6cf8c499c86251c94b1b9b11e9dcce153"
   license "MIT"
+  revision 1
   head "https:github.comgo-criticgo-critic.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,12 @@ class GoCritic < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71e20f1f03c0ea8130dc3e4b2f5ae63c04a1f06bd7bd1eba4a73d54b9177b8c5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "71e20f1f03c0ea8130dc3e4b2f5ae63c04a1f06bd7bd1eba4a73d54b9177b8c5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "71e20f1f03c0ea8130dc3e4b2f5ae63c04a1f06bd7bd1eba4a73d54b9177b8c5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "345050ba8932fb0b2ff4fbf8829a85e2132ec7c758749ede1827f58a06d93308"
-    sha256 cellar: :any_skip_relocation, ventura:       "345050ba8932fb0b2ff4fbf8829a85e2132ec7c758749ede1827f58a06d93308"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41f56fa0256d325890f1a53f5cc1339ab2c0b1547259df4e12030d649a939397"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "09f7971b219070c3ed47764115b9cd3106fbc57eb303898ee1a8c6352c1f40bb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "09f7971b219070c3ed47764115b9cd3106fbc57eb303898ee1a8c6352c1f40bb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "09f7971b219070c3ed47764115b9cd3106fbc57eb303898ee1a8c6352c1f40bb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a0effe3e1a941ce554259f64fda6556d38fd3e14de8ad28e3e511120345469c8"
+    sha256 cellar: :any_skip_relocation, ventura:       "a0effe3e1a941ce554259f64fda6556d38fd3e14de8ad28e3e511120345469c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da0f4be399a039a0de00ab26a5bbd9dbf52e4977483251d3a3ffdfec9a7e1aa7"
   end
 
   depends_on "go"

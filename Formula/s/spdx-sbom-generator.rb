@@ -19,6 +19,8 @@ class SpdxSbomGenerator < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd798a009fd918ecc7ebc002b181fc87aa382722f07d6ffdc5b2ab0481ea3951"
   end
 
+  deprecate! date: "2025-02-13", because: :repo_archived
+
   depends_on "go" => [:build, :test]
 
   def install

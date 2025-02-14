@@ -1,8 +1,8 @@
 class Onedpl < Formula
   desc "C++ standard library algorithms with support for execution policies"
   homepage "https:github.comoneapi-srconeDPL"
-  url "https:github.comoneapi-srconeDPLarchiverefstagsoneDPL-2022.7.1-release.tar.gz"
-  sha256 "0e6a1bee7a4f4375091c98b0b5290edf3178bb810384e0e106bf96c03649a754"
+  url "https:github.comoneapi-srconeDPLarchiverefstagsoneDPL-2022.8.0-release.tar.gz"
+  sha256 "d500007e64efb778a72d34f25508db5b8e0f596eb2ec58f4c9211f9b461ef70b"
   # Apache License Version 2.0 with LLVM exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
 
@@ -12,7 +12,7 @@ class Onedpl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "91836cae67bc7b9123778574e3f9a2521f5f838bc8f89bbc789ba13c8d90d95a"
+    sha256 cellar: :any_skip_relocation, all: "ac492d8a27791d6d828725a273b0473275bfc32ea4f9fc56406b9f171d049144"
   end
 
   depends_on "cmake" => :build

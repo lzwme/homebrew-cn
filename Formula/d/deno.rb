@@ -1,18 +1,18 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https:deno.com"
-  url "https:github.comdenolanddenoreleasesdownloadv2.1.9deno_src.tar.gz"
-  sha256 "536d092b01eb43e51ab2f9cbf2bd3abede3e79fc8e9a009ca0d145f96aed0738"
+  url "https:github.comdenolanddenoreleasesdownloadv2.1.10deno_src.tar.gz"
+  sha256 "4b2224b197fe01d78d451048e984b90d36fdd09f3ec8519f3bca30eeef65732c"
   license "MIT"
   head "https:github.comdenolanddeno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b175f171a43cfd273a0720e4501872014ad7c8f85667342ba49d7df2d324674a"
-    sha256 cellar: :any,                 arm64_sonoma:  "1788267eca4687199e4a296f2b888cf8e262515dc4bd1f05cc0483bdbf932d2f"
-    sha256 cellar: :any,                 arm64_ventura: "0f24114153964a81ad5a78a33c873ce476b30b42db2d309ad7550ce438786868"
-    sha256 cellar: :any,                 sonoma:        "6b865005bfad0eccc9964f3ca0f99e76d6102abb3da5cfbcea9e9fb258fb414f"
-    sha256 cellar: :any,                 ventura:       "5d551ad676e55e13fde8a3d5448bd3398ad2dc0f487f9d1ced72d73a665022fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12caa24122c51a015cfead5e35ca385e014995d2dc07512a449bb88adf4f71ee"
+    sha256 cellar: :any,                 arm64_sequoia: "a0087c09104d4cc890ca2ea877a07f508a06de7768884a52efa956ff7a6cc639"
+    sha256 cellar: :any,                 arm64_sonoma:  "8fb398963760559ba2f22df86d0b3ee8ab07f97b28562b33f4cc3b3b6e430752"
+    sha256 cellar: :any,                 arm64_ventura: "99f62a3b85f2e3d58dab7e443fffd38b1051b89f5e90d4957be2c5f5d5ce8dd5"
+    sha256 cellar: :any,                 sonoma:        "6257ad5acc96f6da0677d8d427cff8373a317163b76efe02aa2ae6df1cfa58df"
+    sha256 cellar: :any,                 ventura:       "6bf6188b60ab780fbf09a0e00ca88723674201793c2c6ce8fff317ef1fe673d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "910604364da0df39035b4f9b590facc8e3090cdf8bb6bac4da9f5ab1595038a7"
   end
 
   depends_on "cmake" => :build

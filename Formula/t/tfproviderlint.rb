@@ -4,15 +4,16 @@ class Tfproviderlint < Formula
   url "https:github.combfladtfproviderlintarchiverefstagsv0.31.0.tar.gz"
   sha256 "9defa750077052ebf1639532e771a9e986b7a53948b6a16cb647ceaf60cfbce1"
   license "MPL-2.0"
+  revision 1
   head "https:github.combfladtfproviderlint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8a842d454ed661bacbc63d64cf741cb0009cd5ce8c4e2a8bc6d6459bc721252"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8a842d454ed661bacbc63d64cf741cb0009cd5ce8c4e2a8bc6d6459bc721252"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c8a842d454ed661bacbc63d64cf741cb0009cd5ce8c4e2a8bc6d6459bc721252"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2105a162d222608f8b6366c43367d89821e40d187e60f303d26165f2149a9069"
-    sha256 cellar: :any_skip_relocation, ventura:       "2105a162d222608f8b6366c43367d89821e40d187e60f303d26165f2149a9069"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc744960d7e4d5eb0cb62edfec08243469eed81700a99a5a33fb31a8e215354b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7ed7fe0393b6cc3591ca9dbcce920c84698ff11ab9446e29e93888a67a494f8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7ed7fe0393b6cc3591ca9dbcce920c84698ff11ab9446e29e93888a67a494f8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f7ed7fe0393b6cc3591ca9dbcce920c84698ff11ab9446e29e93888a67a494f8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a6ff646a23f8738c5e0b3dcb848c09b1125182d03e0d7925d58927bb6b066f36"
+    sha256 cellar: :any_skip_relocation, ventura:       "a6ff646a23f8738c5e0b3dcb848c09b1125182d03e0d7925d58927bb6b066f36"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45dcc2992373e36bd948f80f3a4e9db317c4d209ee2e449c476fbd1e4490854c"
   end
 
   depends_on "go" => [:build, :test]

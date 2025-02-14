@@ -25,9 +25,6 @@ class Rarian < Formula
   depends_on "pkgconf" => :build
   depends_on "tinyxml2"
 
-  conflicts_with "scrollkeeper",
-    because: "rarian and scrollkeeper install the same binaries"
-
   def install
     # Regenerate `configure` to fix `-flat_namespace` bug.
     system "autoreconf", "--force", "--install", "--verbose"

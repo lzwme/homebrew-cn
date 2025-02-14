@@ -35,7 +35,11 @@ class WpCli < Formula
   end
 
   test do
-    output = shell_output("#{bin}wp core download --path=wptest")
+    assert_match version.to_s, shell_output("#{bin}wp --version")
+
+    # workaround to fix memory exhaustion error
+    # see https:make.wordpress.orgclihandbookguidescommon-issues#php-fatal-error-allowed-memory-size-of-999999-bytes-exhausted-tried-to-allocate-99-bytes
+    output = shell_output("php -d memory_limit=512M #{bin}wp core download --path=wptest")
     assert_match "Success: WordPress downloaded.", output
   end
 end

@@ -1,8 +1,8 @@
 class DoviTool < Formula
   desc "CLI tool for Dolby Vision metadata on video streams"
   homepage "https:github.comquietvoiddovi_tool"
-  url "https:github.comquietvoiddovi_toolarchiverefstags2.1.3.tar.gz"
-  sha256 "299d225fccb6360c5aaa2b8b35416d30f416d6f1746d9ec5820a16f6bbe5fa02"
+  url "https:github.comquietvoiddovi_toolarchiverefstags2.2.0.tar.gz"
+  sha256 "44a5f860301ab6ef1a02d8943e210c201ff3733d52b5929a5ab72a09e555041d"
   license "MIT"
   head "https:github.comquietvoiddovi_tool.git", branch: "main"
 
@@ -12,12 +12,12 @@ class DoviTool < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "120beef3c83a0d8828289c5bbf7645c9950224e88089a8b6aed625b219ce6c1c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8632fc24a977fc8d228abc6b872ae80baa030d07eed4696e7b42f8fed802ad78"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a80d5309a8239a519a3baee66ec521e4e3f9ce62d2954c1e76eb20e06d06f8ea"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2e9cc14d2757a0adf25e84b2bbddc662d08232b6599678979dbceee2ff98715e"
-    sha256 cellar: :any_skip_relocation, ventura:       "a0c6e809d88c62e090f557ed407f4cc9c138e498933d7b3ad55f854fdb984b9e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "47a6672f164310531f016c712a65629f0c0d4a96407536c6d509808b87895788"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6c34699e13bf1c5fd04879f2c64a0074032c6d3effc79ee56fac744892bd4d36"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5573809c7af735d6adaef77e998bf34f3ad2fab891fac4a11668241e9c8cb48d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2e35381caf2775371ce2a35f7a9aa71d2f69dd272a1777158cf499fa667e8f54"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f22ff979e01886de1db7d0fa4f293839c367eb15ddee1aaaccf7de1f00bad9d2"
+    sha256 cellar: :any_skip_relocation, ventura:       "e20491c0a0cd8351119f2c933bbd2c965b3a17ec77b6a499d64779ce49734a89"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8254aec7392a826c86b3bbbdcd12c7399ca78f863ff6b9909ee899e948f02072"
   end
 
   depends_on "rust" => :build

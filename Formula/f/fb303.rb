@@ -1,18 +1,18 @@
 class Fb303 < Formula
   desc "Thrift functions for querying information from a service"
   homepage "https:github.comfacebookfb303"
-  url "https:github.comfacebookfb303archiverefstagsv2024.12.02.00.tar.gz"
-  sha256 "5dd2c37f2de67bcf0442818442bfa3c9439ce38d4316dbf9365e3b1732de537e"
+  url "https:github.comfacebookfb303archiverefstagsv2025.02.10.00.tar.gz"
+  sha256 "7409cb710adb1fe21db4c70641f601a72068ce432f5eb13657171004cbf1e503"
   license "Apache-2.0"
   head "https:github.comfacebookfb303.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ab7fa461822d474d9f0d6c2b74f66c947755d49be5f94b51271ab0cf79c315e7"
-    sha256 cellar: :any,                 arm64_sonoma:  "961478be2f4e9c8685fec0ba28b99e2fa59fc95fe1193ff83732a41d16f60fac"
-    sha256 cellar: :any,                 arm64_ventura: "4b5f17bc8f33fa2e1140b2c87acea01853d035c2e051b3d1395c649463cd4abc"
-    sha256 cellar: :any,                 sonoma:        "fa3c8654097ed4b5d96f415ecf8075ad7c249d87fb4f9995f8c6ceb94df50cfa"
-    sha256 cellar: :any,                 ventura:       "665a72ace1f64a1c8d946ffef58ce3c62b43bc81dd45d544724e7d503f6f52fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4d3d13bb568b771c1bf903f451cea8abdf4e676efa36c7f1d4905124beaa56a"
+    sha256 cellar: :any,                 arm64_sequoia: "68dd96beab44c4f232986d6e705b2fa6337fcf50c6a41ee7122a10f19d80e323"
+    sha256 cellar: :any,                 arm64_sonoma:  "9aff2133fec20560e7912d0b43352472876d443f59534f3bde0c767cc0e0dc4b"
+    sha256 cellar: :any,                 arm64_ventura: "c36fb049782e86c28050e0899f85592ca127df79e7535800a14c6273b692a4ee"
+    sha256 cellar: :any,                 sonoma:        "5fb65b2369fa5f99f5397316cf43dba1b1ee8ae7b25002d64d72dafe1502f6f5"
+    sha256 cellar: :any,                 ventura:       "4e4b7acbd07162ece2802fc2172739d67e7d7da88267c87ad6070d193cbfb878"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f71e5268efbe8a7e713cc750ab77a5d341dbae60eeae3c49cc35267ba076a8fd"
   end
 
   depends_on "cmake" => :build

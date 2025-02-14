@@ -19,20 +19,21 @@ class Manticoresearch < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "f9cd06d7a60865cb5e903715569159aa0982a43e0c92c88303968d5a6138d1a0"
-    sha256 arm64_sonoma:  "5b3ae70847a9f113129794daf5f6334c5bfdb25cb26d9ace58348ff818757d6e"
-    sha256 arm64_ventura: "4b34465eb0a51a6c8a1d2e445cb29289e064cefdd01e62d1b494a815ffd0d327"
-    sha256 sonoma:        "3eba3b20b169fc783cc4d4263068d4cb4b07f8d6ffa3c4397b71be0a12e6feb7"
-    sha256 ventura:       "f885e6069dedf497b1260e584e597d0b75c69ecc3fef89f90b81f858790b37f4"
-    sha256 x86_64_linux:  "17b7c8d8284cd3d36691c692675d7a266ac733e410b9beb012b64cd36a515b6c"
+    rebuild 1
+    sha256 arm64_sequoia: "422a03fdb8873324737b12f9f7e3d05a96c1e44f0f5878357f2e8557f199b03f"
+    sha256 arm64_sonoma:  "2de81aeb9cb432d12b7af8095fde6272b5de42684b41a197a6ffb5e9476fda88"
+    sha256 arm64_ventura: "6def5c583a0ace0b0a31eacf7ad2f47624d6229b85e5f2e6177fccce3156eae1"
+    sha256 sonoma:        "0809d593c4e7443651048ede91390f46691f70a85c438e9effc7d575460f7761"
+    sha256 ventura:       "aa142882babaebf878ff76434707f02729a7407cf7f2e36416d07937391141d4"
+    sha256 x86_64_linux:  "6b3e2a854b9e1af25ae087b74659cabd316082345e1960d4bd6e3e91677fa71c"
   end
 
-  depends_on "boost@1.85" => :build
   depends_on "cmake" => :build
   depends_on "nlohmann-json" => :build
   depends_on "snowball" => :build # for libstemmer.a
 
   # NOTE: `libpq`, `mariadb-connector-c`, `unixodbc` and `zstd` are dynamically loaded rather than linked
+  depends_on "boost@1.85"
   depends_on "cctz"
   depends_on "icu4c@76"
   depends_on "libpq"
@@ -50,6 +51,9 @@ class Manticoresearch < Formula
   uses_from_macos "zlib"
 
   def install
+    # Avoid statically linking to boost
+    inreplace "srcCMakeLists.txt", "set ( Boost_USE_STATIC_LIBS ON )", "set ( Boost_USE_STATIC_LIBS OFF )"
+
     # Work around error when building with GCC
     # Issue ref: https:github.commanticoresoftwaremanticoresearchissues2393
     ENV.append_to_cflags "-fpermissive" if OS.linux?

@@ -1,21 +1,19 @@
 class LicenseEye < Formula
   desc "Tool to check and fix license headers and resolve dependency licenses"
   homepage "https:github.comapacheskywalking-eyes"
-  url "https:www.apache.orgdyncloser.lua?path=skywalkingeyes0.6.0skywalking-license-eye-0.6.0-src.tgz"
-  mirror "https:archive.apache.orgdistskywalkingeyes0.6.0skywalking-license-eye-0.6.0-src.tgz"
-  sha256 "4d2fc42551b7d07c930733968802bd4fd17157c4bc723d6c7cdad867a9fcd2fc"
+  url "https:www.apache.orgdyncloser.lua?path=skywalkingeyes0.7.0skywalking-license-eye-0.7.0-src.tgz"
+  mirror "https:archive.apache.orgdistskywalkingeyes0.7.0skywalking-license-eye-0.7.0-src.tgz"
+  sha256 "d4663ac8222aa9610abba48670c22bb1ab4fb893bd2f9592c2efd4b6c0225b50"
   license "Apache-2.0"
   head "https:github.comapacheskywalking-eyes.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3745e11daa3f162dfdb8b9227b365fc38a6b8c7c47fed39a5513b1bdb3590aee"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "32960a241b58ff4392f75d02fa08c1bab86a694ec24d839f36dde8d68c90cf77"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c178b17ffbdac22ee74067560320bb31da0417e9527679c2f335f236133c7614"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "ac62c503e1d693cda38478e6f80430f67349575182354926bbcccb026196953e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6c3e2236737d0bfadc5572af143b9a71e12c484830ebcfe2ad7e35dafc9c8890"
-    sha256 cellar: :any_skip_relocation, ventura:        "969b10a3f93dc2c1f39fb73407fa0826aa0bff19d8204d76cbf2219e802758ce"
-    sha256 cellar: :any_skip_relocation, monterey:       "e08082a93235e42405f1c95e9d7036635ea5f19ef6dc623ee04ddeb8a33ea653"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9655d42858b5eecfea966b2d9320e9e8890cf6b1c012e9e8d572ea3fa73b5647"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "967c6117d179e994b401c6e503c477dec9b3b783a27cbcc30e69f44b7f91fbc2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "967c6117d179e994b401c6e503c477dec9b3b783a27cbcc30e69f44b7f91fbc2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "967c6117d179e994b401c6e503c477dec9b3b783a27cbcc30e69f44b7f91fbc2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1b919d6615ed5fa1169c192a1142a853d643b93a954cd9491a199775e8127994"
+    sha256 cellar: :any_skip_relocation, ventura:       "1b919d6615ed5fa1169c192a1142a853d643b93a954cd9491a199775e8127994"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cdd6daeda967110aec797de72b28d868a1b8620755dfb1cdab2031a78817c8e"
   end
 
   depends_on "go" => :build

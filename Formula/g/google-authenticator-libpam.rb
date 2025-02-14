@@ -1,19 +1,17 @@
 class GoogleAuthenticatorLibpam < Formula
   desc "PAM module for two-factor authentication"
   homepage "https:github.comgooglegoogle-authenticator-libpam"
-  url "https:github.comgooglegoogle-authenticator-libpamarchiverefstags1.10.tar.gz"
-  sha256 "6fe08e7a73ed8f176569c3ad6ad95a5677873e59300d463a2d962c92685a8596"
+  url "https:github.comgooglegoogle-authenticator-libpamarchiverefstags1.11.tar.gz"
+  sha256 "3ee08a6dd46aace7dba1c88cf47e9cd267447ccd1cd8be1d5a05fd0e6816062d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "0fa32fdd385e9319cee1c3acb1101789a37dcbb1fa8d215ab4a919c9ff830008"
-    sha256 cellar: :any,                 arm64_sonoma:   "c130f29a24800a76d13547a22463c9ad4ee38214760ab53e9f3962b00d4493a1"
-    sha256 cellar: :any,                 arm64_ventura:  "c37f8bf7b51cc2be2491a9d8fceabcbdbf9bea26e401bc36bae438327f3f947e"
-    sha256 cellar: :any,                 arm64_monterey: "7050f1ebe26b7ca31601eef8cab6231b9b0e8856e59d9c47c4d2bce99803e8c8"
-    sha256 cellar: :any,                 sonoma:         "2043b4d7e700e9716e2e20c7289794e3f744db11e33f8ff97531d884f9a78ace"
-    sha256 cellar: :any,                 ventura:        "a08e6a718f468c1ccc218258ad304b57dec57a14a7dd4384c00edcf6ae45548a"
-    sha256 cellar: :any,                 monterey:       "e59df1d930b00b2caf4f03e9b2e9c0a6f0502706e98bb1f2c0873d96ce9f7a32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d9a5c7680d94e3ff83b8c38eec4450c933e15d9135b7e270508f500b0ebe920"
+    sha256 cellar: :any,                 arm64_sequoia: "f2452e49e52b39b37fdbbdadc0d18cee36e55b0e75ccec2c46656597a7c839d5"
+    sha256 cellar: :any,                 arm64_sonoma:  "35fe2b51a3349de745e6d29f7debd894b6d2430933b3a39e7b0b32500a3ee945"
+    sha256 cellar: :any,                 arm64_ventura: "a74302d80e616251e9e877a99ec537d7fe8ac1d8054278df74c85bd84cb24436"
+    sha256 cellar: :any,                 sonoma:        "e8b04f1bb3a6d429869277493bde331a2423ebb8d4f79e59b2eda25f6878521d"
+    sha256 cellar: :any,                 ventura:       "31ab70bcbadee31ff695efad9503ad90d0041d0bae0168aaae4dfb72b4613f97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "664d3b02168d36aedad5165ad643a50686c1cc673b26333d119ffecc51ab92bc"
   end
 
   depends_on "autoconf" => :build

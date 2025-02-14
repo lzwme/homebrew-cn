@@ -1,29 +1,27 @@
 class Flexiblas < Formula
   desc "BLAS and LAPACK wrapper library with runtime exchangable backends"
-  homepage "https://www.mpi-magdeburg.mpg.de/projects/flexiblas"
-  url "https://csc.mpi-magdeburg.mpg.de/mpcsc/software/flexiblas/flexiblas-3.4.4.tar.xz"
-  sha256 "f3b4db7175f00434b1ad1464c0fd004f9b9ddf4ef8d78de5a75382a1f73a75dd"
+  homepage "https:www.mpi-magdeburg.mpg.deprojectsflexiblas"
+  url "https:csc.mpi-magdeburg.mpg.dempcscsoftwareflexiblasflexiblas-3.4.5.tar.xz"
+  sha256 "626b698bb73877019d64cf258f853885d28d3c6ac820ccd2c1a77fb7542a34a0"
   license all_of: [
     "LGPL-3.0-or-later",
-    "LGPL-2.1-or-later", # libcscutils/
-    "BSD-3-Clause-Open-MPI", # contributed/
+    "LGPL-2.1-or-later", # libcscutils
+    "BSD-3-Clause-Open-MPI", # contributed
   ]
-  head "https://gitlab.mpi-magdeburg.mpg.de/software/flexiblas-release.git", branch: "master"
+  head "https:gitlab.mpi-magdeburg.mpg.desoftwareflexiblas-release.git", branch: "master"
 
   livecheck do
     url :homepage
-    regex(/href=.*?flexiblas[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?flexiblas[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
-    sha256 arm64_sequoia:  "85c5e7cc7cb883d37d387adb373ff940259e07e71e5d3dde745aee51b657ec8d"
-    sha256 arm64_sonoma:   "144a287222ffe00ffc4c12190a63b3da143f4f1392de28a00caf3386ead4d3d8"
-    sha256 arm64_ventura:  "082787d3a84f8c9cc680c8c06d4ec26f7b3c09f0af57b00e3babac0d63bac2c1"
-    sha256 arm64_monterey: "0d582036b81e7b61e9b8df071569ff2c3eb856b1f94f32159d6835411ee8e150"
-    sha256 sonoma:         "548e8910615427d94a6d3585ae53a6759a00af6ef70811b3b5c3713cd23a57bd"
-    sha256 ventura:        "4723c25e4e8f206f0bfe2c0d373ba24ec0827f0f0bb026e999994e003fd2a5de"
-    sha256 monterey:       "166ec9738f3faa20546e6cc0a7ea69ce657026450d80acd3df5d3c4df060cd2a"
-    sha256 x86_64_linux:   "e8286f52769a07dbcaf7dc0d3845e46b63d5c2c31ce516828e612eef952dcd81"
+    sha256 arm64_sequoia: "81a6bd02a4470c49a02bb0ba140bd5c00ec38059d663b898fd5e94d8beca4aa5"
+    sha256 arm64_sonoma:  "89310043062ecb77eeb2da42028a1c0eb897d7466074b793987b946b149b64ec"
+    sha256 arm64_ventura: "0bb756b92366da37fb73d75a4d1b12ab88c5f093cd586f714a2ae03dcfda7a04"
+    sha256 sonoma:        "ea77b40631ddeef92fb906dc36a03bdbf5a2d0f814c88b7cb86be444f346fcb1"
+    sha256 ventura:       "acc87e21dc68cd426558496c53782a3c29da31620e6a74a61009679c5aa3b2a9"
+    sha256 x86_64_linux:  "7ef88457713b30a28faf7491cf78686d301c680bf520e47ec570a8116260b923"
   end
 
   depends_on "cmake" => :build
@@ -50,14 +48,20 @@ class Flexiblas < Formula
     backends
   end
 
+  # 3.4.5 build patch, upstream commit ref, https:gitlab.mpi-magdeburg.mpg.desoftwareflexiblas-release-commit80e00aaca18857ea02e255e88f1f282580940661
+  patch do
+    url "https:raw.githubusercontent.comchenrui333homebrew-tapf6261b3c60d3fb6fa1d464a6ad13e0639e96e67epatchesflexiblas3.4.5.patch"
+    sha256 "5f0d5a6e293aba60b4692739b9c3fa09985068682ffa81f0814d90a83d12868f"
+  end
+
   def install
     # Remove -flat_namespace usage
-    inreplace "src/fallback_blas/CMakeLists.txt", " -flat_namespace\"", '"'
+    inreplace "srcfallback_blasCMakeLists.txt", " -flat_namespace\"", '"'
 
     # Add HOMEBREW_PREFIX path to default searchpath to allow detecting separate formulae
     inreplace "CMakeLists.txt",
-              %r{(FLEXIBLAS_DEFAULT_LIB_PATH "\${CMAKE_INSTALL_FULL_LIBDIR}/\${flexiblasname}/)"},
-              "\\1:#{HOMEBREW_PREFIX}/lib/${flexiblasname}\""
+              %r{(FLEXIBLAS_DEFAULT_LIB_PATH "\${CMAKE_INSTALL_FULL_LIBDIR}\${flexiblasname})"},
+              "\\1:#{HOMEBREW_PREFIX}lib${flexiblasname}\""
 
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}
@@ -74,27 +78,27 @@ class Flexiblas < Formula
       -DMklTBB=OFF
     ]
 
-    etc_before = etc.glob("flexiblasrc.d/*")
+    etc_before = etc.glob("flexiblasrc.d*")
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    # Let brew manage linking/deleting config files that are intended to be read-only
-    (prefix/"etc/flexiblasrc.d").install (etc.glob("flexiblasrc.d/*") - etc_before)
+    # Let brew manage linkingdeleting config files that are intended to be read-only
+    (prefix"etcflexiblasrc.d").install (etc.glob("flexiblasrc.d*") - etc_before)
   end
 
   def caveats
     <<~EOS
       FlexiBLAS includes the following backends: #{blas_backends.join(", ")}
-      #{blas_backends.first} has been set as the default in #{etc}/flexiblasrc
+      #{blas_backends.first} has been set as the default in #{etc}flexiblasrc
     EOS
   end
 
   test do
-    assert_match "Active Default: #{blas_backends.first} (System)", shell_output("#{bin}/flexiblas print")
+    assert_match "Active Default: #{blas_backends.first} (System)", shell_output("#{bin}flexiblas print")
 
-    (testpath/"test.c").write <<~C
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <stdlib.h>
       #include <math.h>
@@ -120,7 +124,7 @@ class Flexiblas < Formula
         return 0;
       }
     C
-    system ENV.cc, "test.c", "-I#{include}/flexiblas", "-L#{lib}", "-lflexiblas", "-o", "test"
+    system ENV.cc, "test.c", "-I#{include}flexiblas", "-L#{lib}", "-lflexiblas", "-o", "test"
 
     blas_backends.each do |backend|
       expected = <<~EOS
@@ -128,7 +132,7 @@ class Flexiblas < Formula
         11.000000 -9.000000 5.000000 -9.000000 21.000000 -1.000000 5.000000 -1.000000 3.000000
       EOS
       with_env(FLEXIBLAS: backend) do
-        assert_equal expected.strip, shell_output("./test").strip
+        assert_equal expected.strip, shell_output(".test").strip
       end
     end
   end

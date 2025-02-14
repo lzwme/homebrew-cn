@@ -1,19 +1,17 @@
 class Networkit < Formula
   desc "Performance toolkit for large-scale network analysis"
   homepage "https:networkit.github.io"
-  url "https:github.comnetworkitnetworkitarchiverefstags11.0.tar.gz"
-  sha256 "3cba54b384db4adfd88c984805647a3b74ed52168b6178cba6dd58f1cbd73120"
+  url "https:github.comnetworkitnetworkitarchiverefstags11.0.1.tar.gz"
+  sha256 "fbdc86b6ac6486ce4e0898f386c5371bd07b9a420293306f2e632549378f4b86"
   license "MIT"
-  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "67512bde8a3002943fbce9661f044a4fe2b9f5d32d9eab170842eeb27886553e"
-    sha256 cellar: :any,                 arm64_sonoma:  "52caf31178048201b41939aea1b67931197ce1a89ff98e61395a4e8da534b891"
-    sha256 cellar: :any,                 arm64_ventura: "cfe6b92239a4fbd03806c6bfe96b21845fad629e9cf8a90c816cd9ecb649ffc9"
-    sha256 cellar: :any,                 sonoma:        "9fcaf27378c203f149f19a4c5017102c1962b016f3869ed024bf960c8c4b047f"
-    sha256 cellar: :any,                 ventura:       "9e861c9718997e41723b0a6bea6710ad70eebef92000f8488fce3547b193b552"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69a25d994bee1c505e3e08a6bd472b5562d08af6066c4512ed9238474f385dee"
+    sha256 cellar: :any,                 arm64_sequoia: "e2e46abe8a139444c007427c3274477679059c5b8a4193dc9e448470c0d7b12a"
+    sha256 cellar: :any,                 arm64_sonoma:  "8286df44e96a2d384adb8c516771cb8f378d8a951ceb5f92c1c9ea0950f53e1e"
+    sha256 cellar: :any,                 arm64_ventura: "6096292d1c1f3541228a90a376168871956b9f1bde1adf29721bc42ca0215eed"
+    sha256 cellar: :any,                 sonoma:        "59c725a50e5dca22f434f78ee172454dbe8c33356c6d89f765a53e3a4ca3a618"
+    sha256 cellar: :any,                 ventura:       "ee91d3e7326708b2285b1b9448d7437a29d52a85c69125a114648a375f563b8b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "428bb5a7ce28317e629968d05ba61368287fce55b1f77622ab6a210ed8d5cfef"
   end
 
   depends_on "cmake" => :build
@@ -33,12 +31,6 @@ class Networkit < Formula
 
   def python3
     which("python3.13")
-  end
-
-  # Add compat for numpy 2.0
-  patch do
-    url "https:github.comnetworkitnetworkitcommit165503580caac864c7a31558b4c5fee27bcb007e.patch?full_index=1"
-    sha256 "67bd2d1fe3ebccb42ccdd1f7cf5aeea40967caa4e9bc96cc69737dc14ffa9654"
   end
 
   def install

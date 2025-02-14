@@ -1,8 +1,8 @@
 class Promtail < Formula
   desc "Log agent for Loki"
   homepage "https:grafana.comloki"
-  url "https:github.comgrafanalokiarchiverefstagsv3.3.2.tar.gz"
-  sha256 "dd2e80ee40b981aaa414f528a76ab218931e5a53d50540e8fb9659f9e2446f43"
+  url "https:github.comgrafanalokiarchiverefstagsv3.4.1.tar.gz"
+  sha256 "8e496f9abc85f7d4fa05efb70fbff419bc581f342574afdb13fd3c4ec33a77bf"
   license "AGPL-3.0-only"
   head "https:github.comgrafanaloki.git", branch: "main"
 
@@ -11,12 +11,12 @@ class Promtail < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c327a20a092e22b436044f7d2f52f0c64e08deeba519f907773b9231bd4b65b2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13489ec35a2bf94c582823eaf9a44f3dd82c01285ab744c7bedd035d981b8866"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "804f580bfa400f674bce4e4b4d766b1ed7fbc2909078016e585c600ea311d10d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "779b37392f462f360d333f4495e517d7123d8622b41094f3becf8f242eff21c9"
-    sha256 cellar: :any_skip_relocation, ventura:       "6f8b25b6ff9c30a47604f35b109220dae432eefb9389c989abaee3c23ae6bfbf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1164b17aa1229aba3f930a40f3d7210c0fa2ba0a08fba0d57dcf972bc8e7f687"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0f603fe20475e16f98bdc46fa4ad1216957a98248ff8b51769e4ca3cd7f0ce4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d99eb7a8513cead8bad284b6e615da6df38b4484406d490d3c404eaa71613976"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bf12520b675704a129b24ad63731419e6d0de887e8b713333b05ccd97c4225b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "25e6bcb58a1af6f113cb64cf1a401b46ecc65b3600f982358af9bf628708774e"
+    sha256 cellar: :any_skip_relocation, ventura:       "635888a6aadab951239c86840b86866e2e832850ca3ca9c176db18548158a406"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "786a680397bb5e343afc1e4f98a794afeafbfc35b2b1e21cd1128f65347303d6"
   end
 
   depends_on "go" => :build

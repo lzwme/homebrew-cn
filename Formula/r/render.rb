@@ -7,12 +7,13 @@ class Render < Formula
   head "https:github.comrender-osscli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "681dddef0b20697c1913c74aea32849ab4764d08d0c77d1c7380348b288accf6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "681dddef0b20697c1913c74aea32849ab4764d08d0c77d1c7380348b288accf6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "681dddef0b20697c1913c74aea32849ab4764d08d0c77d1c7380348b288accf6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "135115371cc49b22b825566d5e4ad40f3f46a3d302a22ae8e403844cb1cc8bac"
-    sha256 cellar: :any_skip_relocation, ventura:       "135115371cc49b22b825566d5e4ad40f3f46a3d302a22ae8e403844cb1cc8bac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6304d7700a199f1684d339d7dfeecd67949a86373fcaed0b6b585437fe3a29ee"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e96e67b0026c03994984904c9f04b34bfbc1618f00cf2620c42698763b7bb49a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e96e67b0026c03994984904c9f04b34bfbc1618f00cf2620c42698763b7bb49a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e96e67b0026c03994984904c9f04b34bfbc1618f00cf2620c42698763b7bb49a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "668d6be46967a7a95f0fe53479f86ebebda33997781fd65f92e0200599c0fe73"
+    sha256 cellar: :any_skip_relocation, ventura:       "668d6be46967a7a95f0fe53479f86ebebda33997781fd65f92e0200599c0fe73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3bdaed3e1e32be9841660912c4bf07003306532d1952957b2551c821f72017c2"
   end
 
   depends_on "go" => :build
@@ -20,7 +21,7 @@ class Render < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comrenderincclipkgcfg.Version=#{version}
+      -X github.comrender-ossclipkgcfg.Version=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:)
   end

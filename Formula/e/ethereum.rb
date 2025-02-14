@@ -1,8 +1,8 @@
 class Ethereum < Formula
   desc "Official Go implementation of the Ethereum protocol"
   homepage "https:geth.ethereum.org"
-  url "https:github.comethereumgo-ethereumarchiverefstagsv1.15.0.tar.gz"
-  sha256 "b720c91aa6d721ba1f9ec753fa216b27880d0fdcb3204d0725d411d215507a13"
+  url "https:github.comethereumgo-ethereumarchiverefstagsv1.15.1.tar.gz"
+  sha256 "5819ef3768229913dc26226af09dc4521ce30d337ec8b436273defd6e5c1354d"
   license "LGPL-3.0-or-later"
   head "https:github.comethereumgo-ethereum.git", branch: "master"
 
@@ -12,15 +12,16 @@ class Ethereum < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18ea2d65b0920a84220d0990f99bb1710476c6f47810e8baa2894429b5023f04"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d21db4489b02089d028aa86b968174e9766ee72aadd84076033db575788d905b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b92cd7a8aec12ae55aaa429e13d87275a6e8e8fec8e74ce6d05f15c0d8c5a10a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c1301eb97ce0bd81b4e4af5e0deb2c14544115dc5fb5546b1dcd980bbcaf44b6"
-    sha256 cellar: :any_skip_relocation, ventura:       "318625ff790c0aa3a27adcee3ad9fe48daa6fd54ac6abc01d685ab4646dd3cf3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5c5d3d6d76a20cd42d3fcdc6f2ce2e83347481ec188b40d7ceff00d32238fc0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51d83a41dbce99fc5af22f9af9add53c8db17d0ade1e7e7ec27fe7cca6153755"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd9ea239409fc289e5c11e6e3c65813a0a7eae56073acd64d9b606c3e1c2a876"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c5b2a920f00d0f2afb0275546294047d548b0875141fedc02923948a89b422f7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c9283f569f8c19dcf0afbc34a2054f7e9fce036b1712f637a009a7ab94ce0f2d"
+    sha256 cellar: :any_skip_relocation, ventura:       "eea5ee9f9dc9b76febf4d40c124823bf864fde2be19e138040821eb99d4bbbb9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7be5bb99bf32fa47b483de3da2b1e268ce72b0f9112debcda9ff6cf9bbde3bc"
   end
 
-  depends_on "go" => :build
+  # Use "go" again when https:github.comethereumgo-ethereumissues31072 is fixed and released
+  depends_on "go@1.23" => :build
 
   conflicts_with "erigon", because: "both install `evm` binaries"
 

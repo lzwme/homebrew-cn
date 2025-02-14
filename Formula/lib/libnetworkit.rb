@@ -1,8 +1,8 @@
 class Libnetworkit < Formula
   desc "NetworKit is an OS-toolkit for large-scale network analysis"
   homepage "https:networkit.github.io"
-  url "https:github.comnetworkitnetworkitarchiverefstags11.0.tar.gz"
-  sha256 "3cba54b384db4adfd88c984805647a3b74ed52168b6178cba6dd58f1cbd73120"
+  url "https:github.comnetworkitnetworkitarchiverefstags11.0.1.tar.gz"
+  sha256 "fbdc86b6ac6486ce4e0898f386c5371bd07b9a420293306f2e632549378f4b86"
   license "MIT"
 
   livecheck do
@@ -10,14 +10,12 @@ class Libnetworkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "ffb3aa63de3e3cb1f54e74b8b82c52e9483eb095b872cbfa1160760227594b6f"
-    sha256 cellar: :any,                 arm64_sonoma:   "35247ec81aa371424653681f3d267f554791441ec7097fe1f0531498581091fe"
-    sha256 cellar: :any,                 arm64_ventura:  "62f3647720ab3848ab4db7e5b437c3cb895f0f92ceb282ef3a8c436251566841"
-    sha256 cellar: :any,                 arm64_monterey: "b8e918851ccbb196bcf2bc59183f4ac6cd4b35144d2b65626f3639a0d1a47174"
-    sha256 cellar: :any,                 sonoma:         "1e75379743db5e3a1e6ab2c4d7a9f6aa1040fd402249b1ed64fcd6c7ee30e567"
-    sha256 cellar: :any,                 ventura:        "07d2338f357a0afa08f64ec9021859a003949bc6c60c4363d058639a91e6f35a"
-    sha256 cellar: :any,                 monterey:       "73369add0bbe7627aac329ff24d64d1f47adc151b34184e32da5578e10c7a471"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dc9b743d4a5ba133a23756198605f0af47d6665f6123411c42e124a0afc6da76"
+    sha256 cellar: :any,                 arm64_sequoia: "979a10b9b22a6b62428e9e2fbfd3e053f8a8e77361f2baac63a1bda73545af92"
+    sha256 cellar: :any,                 arm64_sonoma:  "45494707da7380f58d607b5cd0b2168a9f58a17a588ae57070d66c8bfcacd956"
+    sha256 cellar: :any,                 arm64_ventura: "6036015738905fb86f1651492e6a0575be48926460dc6fd545f19d9b41489f67"
+    sha256 cellar: :any,                 sonoma:        "039b9ea8c75a1d6422582e059634bf5bf97e3c83828dae0ac54ea231fa847659"
+    sha256 cellar: :any,                 ventura:       "f8aa5a83ed8b7785a53c7ec63f6ab410fdc242e13efb3ea082c3cfd4902b0373"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e14848c11c3d18ddf4f62f996affdfbd75664279cb343ea7c7357bf413ccd5c"
   end
 
   depends_on "cmake" => :build

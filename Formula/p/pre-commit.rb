@@ -9,12 +9,13 @@ class PreCommit < Formula
   head "https:github.compre-commitpre-commit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ec425622736978659e978cbc39251bb7750504622c0c1847e8f2e699a97d8608"
-    sha256 cellar: :any,                 arm64_sonoma:  "5c6a82e6a2549a2969b6c287fb65ed7aa481c1a381ae84afd14ae25a84412433"
-    sha256 cellar: :any,                 arm64_ventura: "37bf8dc10005b3c9d68ea55d937819ad87184f7a5531df7f0cdc023d6a55da25"
-    sha256 cellar: :any,                 sonoma:        "b5a40f3551eeddc2bf4e1b7491784bcd6267684d8c238f891bfd8f8d4076f372"
-    sha256 cellar: :any,                 ventura:       "c4fb09fbe85430f4e2df6e2f9d8a41c52218e6a7ceb30dfa6b0f84b6e6c3bb35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3908f181204927923aee99146af31bd73674588fbf1309f90afe62a24dbed699"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "734176ac95c15e280885ad9eb98bc7de726f6773afb3767796eff4c913c95cf2"
+    sha256 cellar: :any,                 arm64_sonoma:  "393f024ff7ef27ec8e43fcff20f26cbeded94e7a79bbc32424eb2c0f660e59cf"
+    sha256 cellar: :any,                 arm64_ventura: "8b09d54f0dd55ec613944f7defed9ba122218eff6fa3901ab83f7a92ea0d7c3f"
+    sha256 cellar: :any,                 sonoma:        "168a9d6cb61aa9a0ead5208c288ea746d2a0a8bf1ec8b31c05da03b09308e183"
+    sha256 cellar: :any,                 ventura:       "aa0366972c337f9233551d5e2ecb09eacb4ad6721f1aca813def750030f3a0e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bfc1911800f93eed813a96a7127e14229e663078af9b539bd7d7c44dae1ec6d"
   end
 
   depends_on "libyaml"
@@ -71,24 +72,6 @@ class PreCommit < Formula
               "f'INSTALL_PYTHON={shlex.quote(\"#{opt_libexec}bin#{python3}\")}\\n'"
 
     virtualenv_install_with_resources
-  end
-
-  # Avoid relative paths
-  def post_install
-    xy = Language::Python.major_minor_version Formula["python@3.13"].opt_binpython3
-    python_opt = Formula["python@3.13"].opt_prefix
-    python_cellar = python_opt.realpath
-    dirs_to_fix = [libexec"libpython#{xy}"]
-    dirs_to_fix << (libexec"bin") if OS.linux?
-    dirs_to_fix.each do |folder|
-      folder.each_child do |f|
-        next unless f.symlink?
-
-        abspath = f.realpath.sub python_cellar, python_opt
-        rm f
-        ln_s abspath, f
-      end
-    end
   end
 
   test do

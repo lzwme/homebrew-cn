@@ -1,18 +1,18 @@
 class Nextdns < Formula
   desc "CLI for NextDNS's DNS-over-HTTPS (DoH)"
   homepage "https:nextdns.io"
-  url "https:github.comnextdnsnextdnsarchiverefstagsv1.44.5.tar.gz"
-  sha256 "b8cd06c0ca9dfc4b71af611ba15c58c9e8d0191d60e244f5989ccc73c5e15983"
+  url "https:github.comnextdnsnextdnsarchiverefstagsv1.44.6.tar.gz"
+  sha256 "81f697646a8d363293ab18c3bf45e80f405c284547794da37565bbf43d3023ab"
   license "MIT"
   head "https:github.comnextdnsnextdns.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a59590e7b6db5e1d57d1a081ee3a4256d3642311d79af6f3e384df55b0d2d7e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "724b9d60b5ee01fe9974b96865ec8ab40a6893d18852f2c326713dff92544d6b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "efe01366eb31bcd17100db85b7074ca3a72d2b59b5438adb9529ff817c293ab9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c4becd19cca9b3165d34af8a10c4222517440ddf654db8aee36c67b50b217049"
-    sha256 cellar: :any_skip_relocation, ventura:       "eb740b83b831627d147e0e5640755245f60628c7cd72ed17dcea13d2b0444cc0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6edacd60473810d34e2b493e7edb4160acdea11cd72bafe95d6c0ea61fb636e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "12c9e9a5456452f673919b66d6af187af345fe3e732e808dbe90cfb23e338660"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4bf866c3b162efb5dafdd123396da2c98bd4e11b800ec78a67af46765e1dfb02"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "723e151d10bad60c7eb5b0121cefd7fc8ab7d9b429cbe58ac015654a6b1ca958"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e56f0c75689b84b6deb79c210779ec544faf9476ccb20220baa29865adb5616d"
+    sha256 cellar: :any_skip_relocation, ventura:       "37f04be89c69bc3acc359b2353a2b4f2f0a5d07a4fdf39782bbb6a3b8381a5aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5bff941057570f209d9f3ffff8aa44f777d4d0c6c0e86ba774a11b55f07bb80"
   end
 
   depends_on "go" => :build

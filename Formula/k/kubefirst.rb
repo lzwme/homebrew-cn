@@ -36,7 +36,7 @@ class Kubefirst < Formula
     assert_match "k1-paths:", (testpath".kubefirst").read
     assert_predicate testpath".k1logs", :exist?
 
-    output = shell_output("#{bin}kubefirst version")
+    output = shell_output("#{bin}kubefirst version 2>&1")
     expected = if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
       ""
     else

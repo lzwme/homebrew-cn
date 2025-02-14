@@ -1,8 +1,8 @@
 class V2ray < Formula
   desc "Platform for building proxies to bypass network restrictions"
   homepage "https:v2fly.org"
-  url "https:github.comv2flyv2ray-corearchiverefstagsv5.27.0.tar.gz"
-  sha256 "6b0849902c2e08068101e19b101b6c534bad08a3525da393a595cfd9673bf54b"
+  url "https:github.comv2flyv2ray-corearchiverefstagsv5.28.0.tar.gz"
+  sha256 "94f05846f6b0d97924b78f0cd11859d91e4ca371af465932e18827f80fd014b5"
   license all_of: ["MIT", "CC-BY-SA-4.0"]
   head "https:github.comv2flyv2ray-core.git", branch: "master"
 
@@ -12,12 +12,12 @@ class V2ray < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a70f3790d772a97febee09e6b1757fc4bec65dbc4db1f13326c6e1ad5ceb51e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a70f3790d772a97febee09e6b1757fc4bec65dbc4db1f13326c6e1ad5ceb51e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1a70f3790d772a97febee09e6b1757fc4bec65dbc4db1f13326c6e1ad5ceb51e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "377687dd4f3cc120d5ea4594fe437180aa52c779870adbd01a8ad741cce9b017"
-    sha256 cellar: :any_skip_relocation, ventura:       "377687dd4f3cc120d5ea4594fe437180aa52c779870adbd01a8ad741cce9b017"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dcbc8eeef845236be486f04016eba788fe26932d88088ef3e2381474542c6f5d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00be2bce1064a8f24afd49c7cb6ca3d31605af6ea4de5b4804c97b1fe3e8e678"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00be2bce1064a8f24afd49c7cb6ca3d31605af6ea4de5b4804c97b1fe3e8e678"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "00be2bce1064a8f24afd49c7cb6ca3d31605af6ea4de5b4804c97b1fe3e8e678"
+    sha256 cellar: :any_skip_relocation, sonoma:        "19580e463da85acee075fbf5ce254573df01680bd67828f3231c598bc1d32877"
+    sha256 cellar: :any_skip_relocation, ventura:       "19580e463da85acee075fbf5ce254573df01680bd67828f3231c598bc1d32877"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60c53a81eed7e25d9d879ba20ab914890b636b1fb2bb7584a07cb6271fc9626b"
   end
 
   depends_on "go" => :build
@@ -33,8 +33,8 @@ class V2ray < Formula
   end
 
   resource "geosite" do
-    url "https:github.comv2flydomain-list-communityreleasesdownload20250209081110dlc.dat"
-    sha256 "797e75a9cf898b45101510b809a8cf8d1b0ea939c0cf57e889a703146a6ae3c5"
+    url "https:github.comv2flydomain-list-communityreleasesdownload20250212030559dlc.dat"
+    sha256 "81ce6fa7d40ba952a5d036e6ab2b79eb25f302fcf86c753f8208801636b346de"
   end
 
   def install

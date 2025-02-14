@@ -1,9 +1,9 @@
 class X8664ElfGdb < Formula
   desc "GNU debugger for x86_64-elf cross development"
   homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftp.gnu.org/gnu/gdb/gdb-16.1.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gdb/gdb-16.1.tar.xz"
-  sha256 "c2cc5ccca029b7a7c3879ce8a96528fdfd056b4d884f2b0511e8f7bc723355c6"
+  url "https://ftp.gnu.org/gnu/gdb/gdb-16.2.tar.xz"
+  mirror "https://ftpmirror.gnu.org/gdb/gdb-16.2.tar.xz"
+  sha256 "4002cb7f23f45c37c790536a13a720942ce4be0402d929c9085e92f10d480119"
   license "GPL-3.0-or-later"
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
@@ -12,12 +12,12 @@ class X8664ElfGdb < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "40c9445990e50f46055a0538f1803b246701a882e6740af896d789cc7f1bd328"
-    sha256 arm64_sonoma:  "8da4e750b4483692102f5ec3b365630f57a087d37b27c8a56f5669952ca923ac"
-    sha256 arm64_ventura: "8c9a7760a391ae720c0cc576e4fb92fd88f91f1b1129a923a6983cff36ca49a8"
-    sha256 sonoma:        "b92c1c95c1872453d4d20a800e9fd39cf5e0872f2fc63d921c5e9224e36ba35d"
-    sha256 ventura:       "ae6a4fc8e7d8e14c0af677a55a00c7cf621d80f17e985fadca29fb7299fd9570"
-    sha256 x86_64_linux:  "da73f347e389919605693884a55a353b236a895b657118203034222417317516"
+    sha256 arm64_sequoia: "de74875cbd1859e8c1fa82848274c39547668f7be7d97b722177017c61ea8497"
+    sha256 arm64_sonoma:  "30072350c40b7764e703fef9a4829e3ed6b7d6e9aa78845a5c3f9e00a4ce094f"
+    sha256 arm64_ventura: "5992bcfc7efda98494052c965cb6b0360e1680c2c1b6ac6299d962d2cde71b01"
+    sha256 sonoma:        "8a0f7aca58e0736c3faead51e6f80fad9565a67e8097214c85ead9fd913ca874"
+    sha256 ventura:       "184ee71eb79f730ca61b2edbd673cfd096b9085b792547070cf45e9245fd5360"
+    sha256 x86_64_linux:  "0e74c4348f72702b1ddf300469815ef0e919780a17176dcdd8c2c5550fa833e1"
   end
 
   depends_on "x86_64-elf-gcc" => :test
@@ -34,10 +34,6 @@ class X8664ElfGdb < Formula
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build
   end
-
-  # Fix build on Linux
-  # Ref: https://sourceware.org/bugzilla/show_bug.cgi?id=32578
-  patch :DATA
 
   def install
     target = "x86_64-elf"
@@ -71,31 +67,3 @@ class X8664ElfGdb < Formula
     assert_match "Symbol \"_start\" is a function at address 0x", output
   end
 end
-
-__END__
-diff --git a/bfd/Makefile.in b/bfd/Makefile.in
-index aec3717485a..ee674a36c5b 100644
---- a/bfd/Makefile.in
-+++ b/bfd/Makefile.in
-@@ -1318,7 +1318,7 @@ REGEN_TEXI = \
- 	$(MKDOC) -f $(srcdir)/doc/doc.str < $< > $@.tmp; \
- 	texi=$@; \
- 	texi=$${texi%.stamp}.texi; \
--	test -e $$texi || test ! -f $(srcdir)/$$texi || $(LN_S) $(srcdir)/$$texi $$texi; \
-+	test -e $$texi || test ! -f $(srcdir)/$$texi || $(LN_S) $(abs_srcdir)/$$texi $$texi; \
- 	$(SHELL) $(srcdir)/../move-if-change $@.tmp $$texi; \
- 	touch $@; \
- 	)
-diff --git a/bfd/doc/local.mk b/bfd/doc/local.mk
-index 97d658b5a48..9b75402387c 100644
---- a/bfd/doc/local.mk
-+++ b/bfd/doc/local.mk
-@@ -101,7 +101,7 @@ REGEN_TEXI = \
- 	$(MKDOC) -f $(srcdir)/%D%/doc.str < $< > $@.tmp; \
- 	texi=$@; \
- 	texi=$${texi%.stamp}.texi; \
--	test -e $$texi || test ! -f $(srcdir)/$$texi || $(LN_S) $(srcdir)/$$texi $$texi; \
-+	test -e $$texi || test ! -f $(srcdir)/$$texi || $(LN_S) $(abs_srcdir)/$$texi $$texi; \
- 	$(SHELL) $(srcdir)/../move-if-change $@.tmp $$texi; \
- 	touch $@; \
- 	)
