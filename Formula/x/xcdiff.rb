@@ -2,28 +2,22 @@ class Xcdiff < Formula
   desc "Tool to diff xcodeproj files"
   homepage "https:github.combloombergxcdiff"
   url "https:github.combloombergxcdiff.git",
-      tag:      "0.12.0",
-      revision: "8ae8a1074662dfbef271140bfb4ae424b331dde9"
+      tag:      "0.13.0",
+      revision: "99301ee4578224f0660a1312abc465c5a37176c5"
   license "Apache-2.0"
   head "https:github.combloombergxcdiff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "06240c49805b2754aa58f4af7ef68d27cc040617edfe955197425c664aec8909"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4832eb6d349280c80983cdbe96bf82e7e50c90b84415af332f9d052d2e45a67c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ae3e9ee0a986720d74a76539312f5a3d7c2e1ea4551863ecc87da4438dd94c5a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3fe13c6d9dff8984aa4a448e01cefeec459bd5ab2a0ee0c7334de9671d4ba1d0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b369ccc6c11ee006349b4c35579eaec40f0d80e5bbbae8d5fdd87ed2af1169a9"
-    sha256 cellar: :any_skip_relocation, ventura:        "066813b4a4cf35c7a0b07f4927abcebd97dee931d0c3f0cd19a57eae07eb7864"
-    sha256 cellar: :any_skip_relocation, monterey:       "3e462aeba27a92ed9e1c7c532891ed6eef0d73f27396c389acd2855a9462ca9d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd62e3b0b02971f946bea613e95a4ceeb8ab41ede5383518148c542b5908ef04"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "350423748bd984e66f473e60a4545125870b8589807b8d82b01745e0a45cad50"
+    sha256 cellar: :any,                 arm64_ventura: "2ba598baf440f1a76a105f07489776c4e81a1a1803d49c396209e88599e20410"
+    sha256 cellar: :any_skip_relocation, sonoma:        "23083c0664be219b75633a64827762ea19a078b11d76558336df3c82928312e3"
+    sha256 cellar: :any,                 ventura:       "fa904d1ebca63b4ba8e032e8406279535f91bc0f6e62a94edec04ce1f4123950"
   end
 
   depends_on :macos
-  depends_on xcode: "14.1"
 
-  resource "homebrew-testdata" do
-    url "https:github.combloombergxcdiffarchiverefstags0.10.0.tar.gz"
-    sha256 "c093e128873f1bb2605b14bf9100c5ad7855be17b14f2cad36668153110b1265"
-  end
+  uses_from_macos "swift" => :build, since: :sonoma # swift 5.10+
 
   def install
     system "make", "update_version"
@@ -33,6 +27,11 @@ class Xcdiff < Formula
   end
 
   test do
+    resource "homebrew-testdata" do
+      url "https:github.combloombergxcdiffarchiverefstags0.10.0.tar.gz"
+      sha256 "c093e128873f1bb2605b14bf9100c5ad7855be17b14f2cad36668153110b1265"
+    end
+
     assert_match version.to_s, shell_output("#{bin}xcdiff --version").chomp
     project = "Fixturesios_project_1Project.xcodeproj"
     diff_args = "-p1 #{project} -p2 #{project}"

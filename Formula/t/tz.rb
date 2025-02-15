@@ -1,19 +1,18 @@
 class Tz < Formula
   desc "CLI time zone visualizer"
   homepage "https:github.comoztz"
-  url "https:github.comoztzarchiverefstagsv0.7.0.tar.gz"
-  sha256 "0672552741bd9b2e6334906c544b98fc53997e282c93265de9b332a6af7d3932"
+  url "https:github.comoztzarchiverefstagsv0.8.0.tar.gz"
+  sha256 "dfb6829483e7455e6d2038e946243022db15ea5475c096ad18f091eb9f6eb5ad"
   license "GPL-3.0-or-later"
   head "https:github.comoztz.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5510e9d4d0a6cba3ed231a8036f55414352924495ec7d027dc1fcfe62004021f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5510e9d4d0a6cba3ed231a8036f55414352924495ec7d027dc1fcfe62004021f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5510e9d4d0a6cba3ed231a8036f55414352924495ec7d027dc1fcfe62004021f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fecfd326efe5aaedea6afd1b998f337ab8319158da33a98828705d9592996f74"
-    sha256 cellar: :any_skip_relocation, ventura:       "fecfd326efe5aaedea6afd1b998f337ab8319158da33a98828705d9592996f74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d1e72e63e14a004a0ab74f84f8c2076872ed232f98dc684796ad81f4a83a574"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d201f92d60530fcf9037fd2064ab8cc4843fcbc1d5c65a881d12874de7696d0a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d201f92d60530fcf9037fd2064ab8cc4843fcbc1d5c65a881d12874de7696d0a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d201f92d60530fcf9037fd2064ab8cc4843fcbc1d5c65a881d12874de7696d0a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ab630a5fcbb3eb9f3809a33defe7c6aae3af94c7f70474463bee74f0c8e7ec59"
+    sha256 cellar: :any_skip_relocation, ventura:       "ab630a5fcbb3eb9f3809a33defe7c6aae3af94c7f70474463bee74f0c8e7ec59"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e1921d53e895df6d45df6aad030ea2300f072117d5bffa8c31ae3de1807b20e"
   end
 
   depends_on "go" => :build

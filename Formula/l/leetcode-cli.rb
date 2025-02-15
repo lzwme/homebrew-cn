@@ -1,18 +1,18 @@
 class LeetcodeCli < Formula
   desc "May the code be with you"
   homepage "https:github.comclearloopleetcode-cli"
-  url "https:github.comclearloopleetcode-cliarchiverefstagsv0.4.5.tar.gz"
-  sha256 "073b4725ee6ff92e51cd25093e1c30fd51c82b2076e1a1e32d60fef3a9a176f1"
+  url "https:github.comclearloopleetcode-cliarchiverefstagsv0.4.6.tar.gz"
+  sha256 "0b7af5782947a2ae5fab7233c8ca6dd59441287033e9116e332673ee6613a9e3"
   license "MIT"
   head "https:github.comclearloopleetcode-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f1344c75b2a3f07c843a8c91ef51ecbcf75f99af9cc4ac47021f7b38a8cb95f7"
-    sha256 cellar: :any,                 arm64_sonoma:  "e1087c05f54a3c5632365451648cd7cc20c169a1719d0eb8ef5f19f5ee36540c"
-    sha256 cellar: :any,                 arm64_ventura: "82a5a6b5c2078241b06f529b2a3361e15c798c66b961b8106b57065bb1a7ee41"
-    sha256 cellar: :any,                 sonoma:        "9f350b776b649f22bf8028d4abc4b90024ae46d8b72a4ac7f1a03aaac19bdf81"
-    sha256 cellar: :any,                 ventura:       "34e5536419363a2c3224228ffb43e00fef01fbdfbe20075e0917e434a75dcfd7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81db49df8f9fc26dab488cfce816d8512d381cdb89cbb901e93b95dd49c26d8c"
+    sha256 cellar: :any,                 arm64_sequoia: "74e049034f26697cbb450932850add1cbfd9d9dccb52d61d2109184f04987f6d"
+    sha256 cellar: :any,                 arm64_sonoma:  "02fb5ce2daa5f0c662fc4b69b4dd82f6f7ac7ce12f4f1507e449fb91107d20e8"
+    sha256 cellar: :any,                 arm64_ventura: "56de48e4618446f7e796e118826eab3da85760eddbd170c360ec85cf0d12b85c"
+    sha256 cellar: :any,                 sonoma:        "54a05fea76f766c5f43250de16f9e54ed10f1866f00e9108d356e81a2aa3d42e"
+    sha256 cellar: :any,                 ventura:       "c945df73ce1df6261bd90a466813d1c70403e073ced3122d8c7c06e1b4c6b281"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24708a20685911223a7b8b32575473081a36fe6bc0135f415d27b5343cdb96a6"
   end
 
   depends_on "pkgconf" => :build

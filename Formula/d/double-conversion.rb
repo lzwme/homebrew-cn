@@ -1,22 +1,18 @@
 class DoubleConversion < Formula
   desc "Binary-decimal and decimal-binary routines for IEEE doubles"
   homepage "https:github.comgoogledouble-conversion"
-  url "https:github.comgoogledouble-conversionarchiverefstagsv3.3.0.tar.gz"
-  sha256 "04ec44461850abbf33824da84978043b22554896b552c5fd11a9c5ae4b4d296e"
+  url "https:github.comgoogledouble-conversionarchiverefstagsv3.3.1.tar.gz"
+  sha256 "fe54901055c71302dcdc5c3ccbe265a6c191978f3761ce1414d0895d6b0ea90e"
   license "BSD-3-Clause"
   head "https:github.comgoogledouble-conversion.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "98ff7ac5f00c5b3d65a3a335382b0d08e508ee9d6697064cb46d541d837b2975"
-    sha256 cellar: :any,                 arm64_sonoma:   "5764a27a4392e020618a4a70c00d71f9a253419a55ae8c16dd965270eeb99cd1"
-    sha256 cellar: :any,                 arm64_ventura:  "8945e3a31e2b8954f22e64dd6ebd1990bcf168151103264a8fcfd1eca21f9848"
-    sha256 cellar: :any,                 arm64_monterey: "8280c82873f4b691376a017938aa3d3a1f59eb7b9e55130754d4e45fe4e0a8c6"
-    sha256 cellar: :any,                 arm64_big_sur:  "4ab4afb8f5c68036a1122acadd11f610587ab139d1024be1713802da40867022"
-    sha256 cellar: :any,                 sonoma:         "6df479d59d4b2f4b6ff88057175db4c04cb92ac9420cbe375f3bf68ca34a5ad6"
-    sha256 cellar: :any,                 ventura:        "6841cb06c7313798c03cf02e2db00bc82f207a4a7e9c5449c39d25489b86f3a0"
-    sha256 cellar: :any,                 monterey:       "7e9022b96cdce599dcf671a7a5e75ded3fd5111174cd16b12c01382e36486d1f"
-    sha256 cellar: :any,                 big_sur:        "ed09e4f725aeb68de24babf7d76b340c024ae83dfda74b4cf588ea8bc27b5d97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "66164b85ecc6253cfbf62fe31224be35260f54fc452bae70a69b75f2ee96e0e0"
+    sha256 cellar: :any,                 arm64_sequoia: "e45a082cb2703fa9054e6399e96aee5104cbeb25ce5e30799af503585e2015d4"
+    sha256 cellar: :any,                 arm64_sonoma:  "39944e2a07013b8b8d9dfa6a03eac9123233acdaffd0f79cc3f347defa089c11"
+    sha256 cellar: :any,                 arm64_ventura: "5c8a894e848ad27eacaf72d7131731d268292619e8030e51acfcafb4392c3f40"
+    sha256 cellar: :any,                 sonoma:        "a6b67d2639ee5159aed9ef0a45f5f2ad4962b4f05d69ef538be5b81fb59bf42b"
+    sha256 cellar: :any,                 ventura:       "894479ef1f84789d21a4418decf91ad17e46bcf4622f4a6a7f42be82960f9e24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d4229ebfd66a40cef9b63c02533b75762b79d066ffb52da5aca069b4183b849"
   end
 
   depends_on "cmake" => :build

@@ -1,18 +1,18 @@
 class Rclone < Formula
   desc "Rsync for cloud storage"
   homepage "https:rclone.org"
-  url "https:github.comrclonerclonearchiverefstagsv1.69.0.tar.gz"
-  sha256 "9b360793108d0b9a3208dacece76e72f5d9253c6710da1c08a1eb8a91eeb9854"
+  url "https:github.comrclonerclonearchiverefstagsv1.69.1.tar.gz"
+  sha256 "2fe258d1b4257aef98b53794c27d1b254ee0f2e307634f94fbf3c71786e3b1b5"
   license "MIT"
   head "https:github.comrclonerclone.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0040483ccaae59a96fe435d3ac4575924178cc65c614dbfd65912d29feda6b45"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8374a11a76a5cadfb1849da60e831b17fca79f2fa52b2eb25866a617b62b4b90"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fb12dc35dbc88ba3ef5efc9399a74769e1d28d685a87f3335272cdc16fe2b8e3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a8f8cc7cd60cdd74c492b2c6a191eb8dbdef89c66fc64280610f528a4bad5b0b"
-    sha256 cellar: :any_skip_relocation, ventura:       "c34ef4370262d1186176d71ef9510ef5408d715660396c9a95a01766c3adb64f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d672d2068ae75e419e054de3d84853c2c2cb8a7e00947aecb83303c256568284"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fdbb9d2d564721b13cc5296527cfb25140d8c699bd8b063d818e8b4dccf49dda"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a1066862490c164eb51bf93c29d0db794be99c7199b9e6c872a67e78e1fadb1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f20745a0f87a9fa79f8cecd87ac9e1520b6e898fa1bba064f74cae6eef184d57"
+    sha256 cellar: :any_skip_relocation, sonoma:        "77ebad89275e6bb3e10610341fd81f7542e63d968620c5dc84a6f9e4e32cfc74"
+    sha256 cellar: :any_skip_relocation, ventura:       "1a49f175cf0fcfdfa6d1f18f3a0ded73f8850d919964cfd746db59b04c5a1fd9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16b80e630e9b42c842267747c179e35d9d52be7dafde956e161bd021841d8614"
   end
 
   depends_on "go" => :build

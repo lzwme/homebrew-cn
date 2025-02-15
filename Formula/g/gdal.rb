@@ -1,10 +1,9 @@
 class Gdal < Formula
   desc "Geospatial Data Abstraction Library"
   homepage "https:www.gdal.org"
-  url "https:github.comOSGeogdalreleasesdownloadv3.10.1gdal-3.10.1.tar.gz"
-  sha256 "b1c739256d074be42d67c6c3d33eee94c90a490ebb02fcb7fc21c569a6fc78bd"
+  url "https:github.comOSGeogdalreleasesdownloadv3.10.2gdal-3.10.2.tar.gz"
+  sha256 "ca710aab81eb4d638f5dbd4f03d4d4b902aeb6ee73a3d4a8c5e966b6b648b0da"
   license "MIT"
-  revision 2
 
   livecheck do
     url "https:download.osgeo.orggdalCURRENT"
@@ -12,12 +11,12 @@ class Gdal < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "94921c7f36a7763c05e71eecf4c20a81cfc45bf4bfcb93241d949bca60989b45"
-    sha256 arm64_sonoma:  "1e5a5c2c0d613b2329ae3367002a5f9f1243d2fa7f3533068486f7cb1e3a7845"
-    sha256 arm64_ventura: "498d7cfeb3831d085269c0c136084d1d97d9bfbb0e04cc68c23549c42695c3ba"
-    sha256 sonoma:        "65acd9c14b940f08cf057716f111be5c4f710b30ded382f19cc661df18917ab0"
-    sha256 ventura:       "fdad06a01155baf56759527adfb8dbefad937208c1372657e96e81e0cd806ec9"
-    sha256 x86_64_linux:  "a65968e019b1f6327d70d96cb4cd5c28506ab6db1cbb9d8747438d8786eeedd3"
+    sha256 arm64_sequoia: "06325237c39345ae5312877a92ead83372d851aa7a74e3a2aa0a4200baa7e350"
+    sha256 arm64_sonoma:  "f527bc6c7ec57f31fdc1ca69d31da9164b236ca7e5c92170a5f27ff27eb53126"
+    sha256 arm64_ventura: "d763635b98c7ff5e63771a180652ecf3a2d4dbab706e42aeec4742079edf9a44"
+    sha256 sonoma:        "0988d28ecc64e0a8722cd9b5633884b3d9cbcf7bca38c2a49d01d3fcb84c1960"
+    sha256 ventura:       "b4a1decd1349ee4f4f28445ba92e7554e78acc53eb4f8a1956f4908ba4507621"
+    sha256 x86_64_linux:  "f80409e468b0df14108501c0bceefcf22b74b2f1195cb5c25cf3cd296deb6520"
   end
 
   head do
@@ -90,12 +89,6 @@ class Gdal < Formula
 
   def python3
     "python3.13"
-  end
-
-  # poppler 25.02.0 build patch, upstream pr ref, https:github.comOSGeogdalpull11805
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patchesea59760694bf0187189f7008aac7cff70260db3cgdalgdal-3.10.1-poppler-25.02.0.patch"
-    sha256 "67b2d107c913d155dd8ba7ff4c534bbd6a85a48a003e01e7d59a69a066fab570"
   end
 
   def install

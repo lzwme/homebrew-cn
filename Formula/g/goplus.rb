@@ -42,7 +42,7 @@ class Goplus < Formula
 
     assert_equal "v#{version}", shell_output("#{bin}gop env GOPVERSION").chomp
     system bin"gop", "fmt", "hello.gop"
-    assert_equal "Hello World\n", shell_output("#{bin}gop run hello.gop")
+    assert_equal "Hello World\n", shell_output("#{bin}gop run hello.gop 2>&1")
 
     (testpath"go.mod").write <<~GOMOD
       module hello
@@ -50,6 +50,6 @@ class Goplus < Formula
 
     system "go", "get", "github.comgoplusgopbuiltin"
     system bin"gop", "build", "-o", "hello"
-    assert_equal "Hello World\n", shell_output(".hello")
+    assert_equal "Hello World\n", shell_output(".hello 2>&1")
   end
 end

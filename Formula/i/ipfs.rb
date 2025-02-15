@@ -1,8 +1,8 @@
 class Ipfs < Formula
   desc "Peer-to-peer hypermedia protocol"
   homepage "https:ipfs.tech"
-  url "https:github.comipfskuboarchiverefstagsv0.33.1.tar.gz"
-  sha256 "2208e5942fd456852695de225f7ef5b20c511af9fc928364699fd28d165f99a8"
+  url "https:github.comipfskuboarchiverefstagsv0.33.2.tar.gz"
+  sha256 "0dcab7d932a7c613fe0421ba1a5a0c71138709c151610f57666a15d163c982b2"
   license all_of: [
     "MIT",
     any_of: ["MIT", "Apache-2.0"],
@@ -15,12 +15,12 @@ class Ipfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7c453647bd157362b7a32aaf94959c343e275245953082a4dd9915f9fca8bdd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b9592f403158a7ed95d831c7c3730de5b38606ac18f3fd8856257167f2b6e31"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6abdafaef215711254e97f96f6f8d3f3213427ac32777b58858fd1a8931a62f5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4e5d6d42b5eb0cb0a52e19a4e95b6c0876568ef6ac02a2390754a66cfe8a2f90"
-    sha256 cellar: :any_skip_relocation, ventura:       "38118c5256a4b647eb09e0253189f65acfe2acb4157d92d5741d5ba5e9262a78"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2097664a01a62032cf010eb9e6883c3a160e3c7721afaccdc8cf9d687567e24"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d8402630fe2e3525db8d312c948f517dbe53bea144b820edc395af7335e04c5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f78d388fc0212cf8ae3312810ffd4791c9e21de5abb36bdf3da41e8b1833362"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "023544a2e99ea0fbb51fafc223ae7f118e4e9416bf36efc00e6dda8c6fcbc0ad"
+    sha256 cellar: :any_skip_relocation, sonoma:        "299dde4379e501d00353e2848c8b85800b513bfcc3e105b54c6fb8ef4e3586db"
+    sha256 cellar: :any_skip_relocation, ventura:       "ff9825ca14eaa62e0c24c0c17acb0db345e22d9c752666c96fe4e9a0b33d3235"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3bad6f1dd371c42957eebd2aaa9edd91edec4cb37e70236558888ba2a705e1ca"
   end
 
   depends_on "go" => :build

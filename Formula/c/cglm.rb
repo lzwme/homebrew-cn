@@ -1,17 +1,17 @@
 class Cglm < Formula
   desc "Optimized OpenGLGraphics Math (glm) for C"
   homepage "https:github.comrecpcglm"
-  url "https:github.comrecpcglmarchiverefstagsv0.9.5.tar.gz"
-  sha256 "1e40e87bc934ba8567ef84484d31d5d64ca084d3f0a7523ec67988bc94d76435"
+  url "https:github.comrecpcglmarchiverefstagsv0.9.6.tar.gz"
+  sha256 "be5e7d384561eb0fca59724a92b7fb44bf03e588a7eae5123a7d796002928184"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4724a513eae03317bebeb2e0032e1d1b67b1ab2fc1798f24974f86a68a4c2190"
-    sha256 cellar: :any,                 arm64_sonoma:  "6d32234b10c2897e67e61c582e4839720852e53678b74841b69862f15af7edb2"
-    sha256 cellar: :any,                 arm64_ventura: "85beb3f46156f507f4e40e251a4df3497c2fcb072469da56287027a5b59241c2"
-    sha256 cellar: :any,                 sonoma:        "f53d89482d4b21c22851a1c52c691bc6abf4160196c2116dd1b128a1bb94b24c"
-    sha256 cellar: :any,                 ventura:       "2e68e38ad9cc1fc5964955ea76e35865a2fd7879e8a3cb67aa909d26cfe700bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9941e1474328c6fae09a7e8dfdec4316f0a061c020e5e1a5499767924621fd4b"
+    sha256 cellar: :any,                 arm64_sequoia: "2a4e8d2c345846e569a51d36bf21c611c83c91ac112c6fd75a084c662eeeef52"
+    sha256 cellar: :any,                 arm64_sonoma:  "9225092fc1d388b4a5f960a647b8a80e37364698fa073ead2911a6409f06af3d"
+    sha256 cellar: :any,                 arm64_ventura: "82d198d51c5aadf126647acd3854e2182291c1b693faba90cdbafd2d66e26d55"
+    sha256 cellar: :any,                 sonoma:        "7d9694362e4b318417b226674b69b217246e14325d404190197c3f993473cdb2"
+    sha256 cellar: :any,                 ventura:       "2decb2f877d789d9982abca215c65c2a641f13dcd0f4b30439b1d2bdbed27318"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e6d1b5f157811a284f493a0b8847b5e011c96557579ae56aafaabf2ef6fb77b"
   end
 
   depends_on "autoconf" => :build

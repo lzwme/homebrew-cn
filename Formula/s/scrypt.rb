@@ -1,19 +1,17 @@
 class Scrypt < Formula
   desc "Encrypt and decrypt files using memory-hard password function"
   homepage "https:www.tarsnap.comscrypt.html"
-  url "https:www.tarsnap.comscryptscrypt-1.3.2.tgz"
-  sha256 "d632c1193420ac6faebf9482e65e33d3a5664eccd643b09a509d21d1c1f29be2"
+  url "https:www.tarsnap.comscryptscrypt-1.3.3.tgz"
+  sha256 "1c2710517e998eaac2e97db11f092e37139e69886b21a1b2661f64e130215ae9"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "0d7e64dd207cba97c39704e864ad290bd1acf4a06f002d551d0ce61a6595e275"
-    sha256 cellar: :any,                 arm64_sonoma:   "bcaf79c22f7e771cc3de6daf16bc780cd096d64c0e58a0bb3f566847e26d27ca"
-    sha256 cellar: :any,                 arm64_ventura:  "c8a4497efd6560ce5f4863ddddee72f26bd40093518d2a689c84dfb55b5b07b9"
-    sha256 cellar: :any,                 arm64_monterey: "d5aaaeead2e355122d8627e5eced65f890c711ab53e0e0c12ad4a2430c485b87"
-    sha256 cellar: :any,                 sonoma:         "5b89c96efd423b5d9db1f4f02257e170db5d5c1aa176799c4c8e7fa636248be4"
-    sha256 cellar: :any,                 ventura:        "1f6aecb338fd4c428186119c5d164f1900d67e6d5cdb939683c7a87bea6930fc"
-    sha256 cellar: :any,                 monterey:       "675517b089005b5693f13719ab5fefd91ee18e10cda8f4a06ce6b9ea3ab3e3db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8663d530d116f3197993aff60d0cd23aed96eeb49ff86d317fa7d58d4961d74"
+    sha256 cellar: :any,                 arm64_sequoia: "086c6480fd2730ac530d61e01beafeb057e0ba787ecd7461015d2eebe2faf127"
+    sha256 cellar: :any,                 arm64_sonoma:  "d3c54c7d270128101ecce159c9d199637da3e5d84b282c92e0a6cbc65d3962a1"
+    sha256 cellar: :any,                 arm64_ventura: "ca2d00727c2c9341fc476d525d5317cc04fdf8972ca73500b2b39d0e388306f7"
+    sha256 cellar: :any,                 sonoma:        "a229f4170e58803a154fc60d7354497f0cb8ccb21f65b00cc1945ed81a9e7e6e"
+    sha256 cellar: :any,                 ventura:       "cdd6ae43fbebe770617c06ad1a1ecdde3672f7d206503b169b073da5fd646987"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7ea3f7f130c909269e84c6a6d70697f38589de63f248e6ffbb8d118dfac00d1"
   end
 
   head do

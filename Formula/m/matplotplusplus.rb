@@ -1,18 +1,16 @@
 class Matplotplusplus < Formula
   desc "C++ Graphics Library for Data Visualization"
   homepage "https:github.comalandefreitasmatplotplusplus"
-  url "https:github.comalandefreitasmatplotplusplusarchiverefstagsv1.2.1.tar.gz"
-  sha256 "9dd7cc92b2425148f50329f5a3bf95f9774ac807657838972d35334b5ff7cb87"
+  url "https:github.comalandefreitasmatplotplusplusarchiverefstagsv1.2.2.tar.gz"
+  sha256 "c7434b4fea0d0cc3508fd7104fafbb2fa7c824b1d2ccc51c52eaee26fc55a9a0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:   "c32ca572fd775cc0659be1314e06047f9d9f245e02d3c43ad4500ac84a9a7290"
-    sha256 cellar: :any,                 arm64_ventura:  "4882c11bd408f3e4532558b98f76b831775bb154a9645c8cf7f6d2d72295e1fa"
-    sha256 cellar: :any,                 arm64_monterey: "faf64ded9d8bd33a4992f4e17266c98ccb0299944135afcab9996423c1768068"
-    sha256 cellar: :any,                 sonoma:         "093db12d6f31223aec6dc8624cb1d4034739ebf62b74c188a42d252df7087dbb"
-    sha256 cellar: :any,                 ventura:        "2912de97be2ee340f216877e8f3660ceebd7b3e6d0c603784bd764b409e44e83"
-    sha256 cellar: :any,                 monterey:       "23fa45235767c6d820822eefcdcba209ae48ad175b7261f4c1d244fb08cbc7c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dff586197efba0a30a6bfd7d7ea51712e6b34d430efc9d6e512b7f65e8306124"
+    sha256 cellar: :any,                 arm64_sonoma:  "19c28227de5d694cef734a453ae5a5fa9235100178c330a89e0bf69b1152c9c3"
+    sha256 cellar: :any,                 arm64_ventura: "a6ea197fbc598aea232a2a2ee3f34a49d901fe7bcb5ef1669fad420bc9761df9"
+    sha256 cellar: :any,                 sonoma:        "fd6ad4314564c49faa1c3a579059e691bd42ad7bc806bfdd9b6da50de1493136"
+    sha256 cellar: :any,                 ventura:       "1629d3f81ffeea448e2a23ce724c64108e4b98d28fff1c94c9caf42aad066fd8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b326b9d0868c29fc1ca8749f38f40b7941baddf059b9342a15f64c8dab70ad1"
   end
 
   depends_on "cmake" => :build

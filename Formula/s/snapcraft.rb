@@ -3,8 +3,8 @@ class Snapcraft < Formula
 
   desc "Package any app for every Linux desktop, server, cloud or device"
   homepage "https:snapcraft.io"
-  url "https:github.comcanonicalsnapcraftarchiverefstags8.6.1.tar.gz"
-  sha256 "793a4c4ed598eb73279e77a0a308a99d360e79ff79a6983281768c56fe4ea056"
+  url "https:github.comcanonicalsnapcraftarchiverefstags8.6.2.tar.gz"
+  sha256 "3b58cb007be3d7eb808575ee102863553de835cfe76225396fcc6ea131dd68aa"
   license "GPL-3.0-only"
   head "https:github.comcanonicalsnapcraft.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Snapcraft < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e50e6fa78748616bb6e39ffb47e855a1071824ad3654d477769b505ae6ea8178"
-    sha256 cellar: :any,                 arm64_sonoma:  "5339fc6fa86773f03daa597f72950da51f4bc5ec4f8e54a27fd4e202495c2329"
-    sha256 cellar: :any,                 arm64_ventura: "88768e6e151abf4102b3ade32ee58d351d8d751d603d9bba00c98ac84ad5c6ce"
-    sha256 cellar: :any,                 sonoma:        "10feb17d2c929a410fcc9745e22070939ebc61135206251c8a21b51bea10989d"
-    sha256 cellar: :any,                 ventura:       "5c141d754d37afe98abf4c0444c42aee81164f319b642632595955afd954c5d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee92318c9a031e9167f4afc42ff1d2ffd06ed912be9545cb3171f62b6216fa65"
+    sha256 cellar: :any,                 arm64_sequoia: "ca0bf87e44a9b483ca935245c0ae5494857bbb26323f8a45f3523a0721705629"
+    sha256 cellar: :any,                 arm64_sonoma:  "a12776b619f8a7411362c393146844d510aa630aa58b68d948cfee72c31e0db7"
+    sha256 cellar: :any,                 arm64_ventura: "b2a7563bdcbd4b035bd5c5c20e7e54f57bb984418a502b7d68100bac3b049031"
+    sha256 cellar: :any,                 sonoma:        "8ec83232450296605ac0f906a75bdaf764b1349ee5986766e68116048d9bc153"
+    sha256 cellar: :any,                 ventura:       "28eadec75033bad9fa994b82e9081ae0bb6a8b90b273cc088056b8100ddc0bb1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7285a9f6e85f9748bf96f66dd4e0129d5d6dd3ba287c4191432690e2d11efff3"
   end
 
   depends_on "rust" => :build # for pydantic_core

@@ -1,8 +1,8 @@
 class Libphonenumber < Formula
   desc "C++ Phone Number library by Google"
   homepage "https:github.comgooglelibphonenumber"
-  url "https:github.comgooglelibphonenumberarchiverefstagsv8.13.54.tar.gz"
-  sha256 "95a2f6b522aad6834920ec53d94dd7ef676358ecbf2c95ee58918a5cce6d7044"
+  url "https:github.comgooglelibphonenumberarchiverefstagsv8.13.55.tar.gz"
+  sha256 "0a4af8d319bde54565ebefd6ec9c2708fd9e145f6ee0469345b3bf07d2e4c8b6"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Libphonenumber < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "06903692b080c80052b9aab9a22c7d55341c00d5703ed31d1cc52ce47ce056f9"
-    sha256 cellar: :any,                 arm64_sonoma:  "bd5fc712388b8635b687e0ca7503e5a768c2dc03d5b76a43ab30f5250a61c7cb"
-    sha256 cellar: :any,                 arm64_ventura: "2aef679f10b3a14912f59d843b39952c602aaff3dd2ee7e55d1f9f41e2d236ac"
-    sha256 cellar: :any,                 sonoma:        "d9a5452cbed48b566abb54bd418388f2cb02acf465595ab4752f7a20d887070c"
-    sha256 cellar: :any,                 ventura:       "a2f0643cc717b783155c891c318a92a0b10c698b7a0738d06ae99786efbc0d89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "448e954495ebfecfb00beee849ea1b615e25c34fb8ef3db5ecd58ee529bdc2a7"
+    sha256 cellar: :any,                 arm64_sequoia: "2e584b78baad509bf1692eed2cf6c7154386c450231d26f67f465610e1ffe120"
+    sha256 cellar: :any,                 arm64_sonoma:  "78f884086fb1fafda46dd9eecd83bd1edd1f2d98dfc6efd7c56400835a290331"
+    sha256 cellar: :any,                 arm64_ventura: "6202d40f88a74330f8c394e73da772e93ffc20059ed92f5c3905541ebb075427"
+    sha256 cellar: :any,                 sonoma:        "ba219e3b3c17de35aa0d30d75e3b6d3b00220b1d6183fa971470c08b17e4385a"
+    sha256 cellar: :any,                 ventura:       "6d8de6288cd5d0c0284f260f7e7aa81490161be6b3267ae0be063d693a13ed8f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "439c5e2a0a77cabf9a1df954d075b28640fd09b30caf844df46bdc13ef965ad8"
   end
 
   depends_on "cmake" => [:build, :test]

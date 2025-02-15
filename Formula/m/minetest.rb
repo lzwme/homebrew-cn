@@ -4,8 +4,8 @@ class Minetest < Formula
   license "LGPL-2.1-or-later"
 
   stable do
-    url "https:github.comminetestminetestarchiverefstags5.10.0.tar.gz"
-    sha256 "2a3161c04e7389608006f01280eda30507f8bacfa1d6b64c2af1b820a62d2677"
+    url "https:github.comminetestminetestarchiverefstags5.11.0.tar.gz"
+    sha256 "70e531d0776988ce6e579ea5490fdf6be3e349a4ade5281f5111aa4fdd8ee510"
 
     resource "minetest_game" do
       url "https:github.comminetestminetest_gamearchiverefstags5.8.0.tar.gz"
@@ -19,12 +19,12 @@ class Minetest < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "0cc31303d48f9c83845989868c8bc78d5132096ad3de8938dd116068773be1f1"
-    sha256 cellar: :any, arm64_sonoma:  "5cc8cd918fd8cf6887f5c9667ffb4ce576e709a0de9710a00804d7aa568c093d"
-    sha256 cellar: :any, arm64_ventura: "703c818a629e6b467e7b6228e61cdb10edea4b35352dda30549ac6b6e97a3da4"
-    sha256 cellar: :any, sonoma:        "e25ddc0f89ed707a2f5bf7611d496098340457c896e1dbca492f4f21edca6f76"
-    sha256 cellar: :any, ventura:       "5f466fa264f0817a939d9165352d9a8eee12cd20928618717d270422925abc36"
-    sha256               x86_64_linux:  "81295a377962e1212a9a1217e1284622a0d8411f7b3ec796b03493cd33607df3"
+    sha256 cellar: :any, arm64_sequoia: "9ff03cc17ac3b53b2f7715298ed614e4b02157ae6d6cd2a9a6d7a10d08d38644"
+    sha256 cellar: :any, arm64_sonoma:  "3583b7f63bc30c3ddb8d63ff21cbf92533af3e64f98949946bae0169d27477f6"
+    sha256 cellar: :any, arm64_ventura: "6bad098cf55692d28cfb1b08a99ab8d8ccd38ceb9f0abbacbbc2356d48031143"
+    sha256 cellar: :any, sonoma:        "76e0b80ebb30a408fab7184f2122a693432e71af40949f85d73838454f431f71"
+    sha256 cellar: :any, ventura:       "6905ae40165af014ebb852e26a13b87a6f90ff5fe5a898744fc7ea18cc796756"
+    sha256               x86_64_linux:  "4b08c9839555bdfd8cf5d515eb33cecabdc1f864dc5c094750ec6fad3adb3f5e"
   end
 
   head do

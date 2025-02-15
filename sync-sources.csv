@@ -38,6 +38,7 @@ Homebrew-homebrew-core/Formula/a/activemq.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/ad.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ada-url.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/adamstark-audiofile.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/adapterremoval.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/adb-enhanced.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/adios2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/admesh.rb, Homebrew/homebrew-core, 1
@@ -2210,6 +2211,7 @@ Homebrew-homebrew-core/Formula/g/git-interactive-rebase-tool.rb, Homebrew/homebr
 Homebrew-homebrew-core/Formula/g/git-lfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-machete.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-mediate.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/git-mob.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-multipush.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-now.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-number.rb, Homebrew/homebrew-core, 1
@@ -3803,6 +3805,7 @@ Homebrew-homebrew-core/Formula/lib/libplist.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libpng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libpointing.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libpoker-eval.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libpostal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libpq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libpqxx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libprelude.rb, Homebrew/homebrew-core, 0
@@ -5517,6 +5520,7 @@ Homebrew-homebrew-core/Formula/r/raptor.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rargs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rarian.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rasqal.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/ratarmount.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ratchet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ratfor.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rathole.rb, Homebrew/homebrew-core, 1
@@ -5758,6 +5762,7 @@ Homebrew-homebrew-core/Formula/r/rustcat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustls-ffi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustscan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rustup.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rustywind.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rxvt-unicode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ry.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rye.rb, Homebrew/homebrew-core, 1
@@ -6182,6 +6187,7 @@ Homebrew-homebrew-core/Formula/s/spring-loaded.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sproxy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spytrap-adb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sq.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sql-formatter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sql-language-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sql-lint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sql-migrate.rb, Homebrew/homebrew-core, 1
@@ -7264,6 +7270,7 @@ Homebrew-homebrew-core/Formula/y/yamcha.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yamdi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yaml-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yaml-language-server.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/y/yamlfix.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yamlfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yamllint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yank.rb, Homebrew/homebrew-core, 1
@@ -7744,6 +7751,7 @@ Homebrew-homebrew-cask/Casks/b/background-music.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/backlog.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/backuploupe.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/backyard-ai.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/badgeify.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/badlion-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/baiduinput.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/baidunetdisk.rb, Homebrew/homebrew-cask, 0
