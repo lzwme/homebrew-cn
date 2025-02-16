@@ -8,29 +8,20 @@ class Esphome < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "cb0af02acaede1c70f73d78a525630b3dd694672848639f553cee31382848271"
-    sha256 cellar: :any,                 arm64_sonoma:  "b67af9d6bb4c5a5723dea079b1eeae3bfd7b11e089190aa323aaa5f8f1c391fe"
-    sha256 cellar: :any,                 arm64_ventura: "7a341338b02133ef94bf6f018f496c10d0bfaaed417b5abfd00843c431ceb9ca"
-    sha256 cellar: :any,                 sonoma:        "5d9bce7bea6a323b33e350df13c83e9ca9d1be6c51d66815cec469f831137be4"
-    sha256 cellar: :any,                 ventura:       "3acdd2e1e7853c7e5680a311ad13ca1a5fcb299488a322d1dd90dc9d4be8ba35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd7de1ab7d4afb96fdb7a865c2f30ec4481901492e7c38a77c12908fea1faba3"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "b4fcc1410f080182c8b6d8379b46068a75bf5c87ef21b71eb190b3a73b864ba7"
+    sha256 cellar: :any,                 arm64_sonoma:  "38fa611f56b935eb46308446e8160adf13eb4b6419ac6465d0db52fe7896d414"
+    sha256 cellar: :any,                 arm64_ventura: "67111bcb80394f679b804dc8e6364f81640aba1e8214be318d4fd0ebeb7cb851"
+    sha256 cellar: :any,                 sonoma:        "ae4797578612caefd637964bf9fc2d163c55439eb2ae74a59c1730c55941cacb"
+    sha256 cellar: :any,                 ventura:       "3e9edfb1d5ea5cfa716fbd8c6311f4e230c07b2412d97350bbf9f12610d75096"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3691956ae0b4183620d7c6508e1f1e8d0a68704a1763a9000f7843ed7924830e"
   end
 
-  depends_on "pkgconf" => :build
   depends_on "certifi"
   depends_on "cryptography"
-  depends_on "freetype"
-  depends_on "jpeg-turbo"
-  depends_on "libmagic"
-  depends_on "libraqm"
-  depends_on "libtiff"
   depends_on "libyaml"
-  depends_on "little-cms2"
   depends_on "pillow"
   depends_on "python@3.13"
-  depends_on "webp"
-
-  uses_from_macos "zlib"
 
   resource "aioesphomeapi" do
     url "https:files.pythonhosted.orgpackages894de5b6826e7256abc0783876a382797fd26b632b860eecc61698abb46a52caaioesphomeapi-24.6.2.tar.gz"
@@ -38,8 +29,8 @@ class Esphome < Formula
   end
 
   resource "aiohappyeyeballs" do
-    url "https:files.pythonhosted.orgpackages7f55e4373e888fdacb15563ef6fa9fa8c8252476ea071e96fb46defac9f18bf2aiohappyeyeballs-2.4.4.tar.gz"
-    sha256 "5fdd7d87889c63183afc18ce9271f9b0a7d32c2303e394468dd45d514a757745"
+    url "https:files.pythonhosted.orgpackages0807508f9ebba367fc3370162e53a3cfd12f5652ad79f0e0bfdf9f9847c6f159aiohappyeyeballs-2.4.6.tar.gz"
+    sha256 "9b05052f9042985d32ecbe4b59a77ae19c006a78f1344d7fdad69d28ded3d0b0"
   end
 
   resource "ajsonrpc" do
@@ -63,13 +54,13 @@ class Esphome < Formula
   end
 
   resource "async-interrupt" do
-    url "https:files.pythonhosted.orgpackagesef7c5a2d74465037b33ccdaf830e3d9ac008bccdbe4b0657983b90dc89191626async_interrupt-1.2.0.tar.gz"
-    sha256 "d147559e2478501ad45ea43f52df23b246456715a7cb96e1aebdb4b71aed43d5"
+    url "https:files.pythonhosted.orgpackages6e1596fb85b0f1a87d8feae8069351d32fe0bfa196f5b4aa0cf9cad191781d14async_interrupt-1.2.1.tar.gz"
+    sha256 "52b8cbf763d8328c79946b1c9b4c34108370e9022cf285ad0c6c53042dabc82f"
   end
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackages48c86260f8ccc11f0917360fc0da435c5c9c7504e3db174d5a12a1494887b045attrs-24.3.0.tar.gz"
-    sha256 "8f5c07333d543103541ba7be0e2ce16eeee8130cb0b3f9238ab904ce1e85baff"
+    url "https:files.pythonhosted.orgpackages497cfdf464bcc51d23881d110abd74b512a42b3d5d376a55a831b44c603ae17fattrs-25.1.0.tar.gz"
+    sha256 "1c97078a80c814273a76b2a298a932eb681c87415c11dee0a6921de7f1b02c3e"
   end
 
   resource "bitarray" do
@@ -90,6 +81,11 @@ class Esphome < Formula
   resource "chacha20poly1305-reuseable" do
     url "https:files.pythonhosted.orgpackagesc1ff6ca12ab8f4d804cfe423e67d7e5de168130b106a0cb749a1043943c23b6bchacha20poly1305_reuseable-0.13.2.tar.gz"
     sha256 "dd8be876e25dfc51909eb35602b77a76e0d01a364584756ab3fa848e2407e4ec"
+  end
+
+  resource "chardet" do
+    url "https:files.pythonhosted.orgpackagesf30df7b6ab21ec75897ed80c17d79b15951a719226b9fababf1e40ea74d69079chardet-5.2.0.tar.gz"
+    sha256 "1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7"
   end
 
   resource "charset-normalizer" do
@@ -128,8 +124,8 @@ class Esphome < Formula
   end
 
   resource "fonttools" do
-    url "https:files.pythonhosted.orgpackages7661a300d1574dc381393424047c0396a0e213db212e28361123af9830d71a8dfonttools-4.55.3.tar.gz"
-    sha256 "3983313c2a04d6cc1fe9251f8fc647754cf49a61dac6cb1e7249ae67afaafc45"
+    url "https:files.pythonhosted.orgpackages1c8c9ffa2a555af0e5e5d0e2ed7fdd8c9bef474ed676995bb4c57c9cd0014248fonttools-4.56.0.tar.gz"
+    sha256 "a114d1567e1a1586b7e9e7fc2ff686ca542a82769a296cef131e4c4af51e58f4"
   end
 
   resource "freetype-py" do
@@ -143,8 +139,8 @@ class Esphome < Formula
   end
 
   resource "gflanguages" do
-    url "https:files.pythonhosted.orgpackagesb30626a486767797b6b0aae0d34c3ddafb5a8ac314569e425bc60b516ba0c0eegflanguages-0.7.2.tar.gz"
-    sha256 "f1997f52ea5c982e1f17e8f5acb70c1a26f23656c0c2449aa669e428ff4064b3"
+    url "https:files.pythonhosted.orgpackagesf4c0f71e8ba0e65f2bd5e9162d9d6be0488ba68f293858a4af3fe6497210b8abgflanguages-0.7.3.tar.gz"
+    sha256 "0516cf0fad6a6f5fc204f86ffe31a688b0dd77698716a0ae821603b9a781a39e"
   end
 
   resource "glyphsets" do
@@ -153,8 +149,8 @@ class Esphome < Formula
   end
 
   resource "glyphslib" do
-    url "https:files.pythonhosted.orgpackages875dc69ff84ad33983f95056dfc98e3e0d555d49a54eb5eaebea0468011e3449glyphslib-6.9.5.tar.gz"
-    sha256 "e081c3514d6bc12e62e5c849e1d222ae7607ff7ed58628848a72323e88277c6f"
+    url "https:files.pythonhosted.orgpackagesa0e4583b3f1f82b3401254c68a70f5cacc3e2cdd16aee7c2f0e4d01f9f1bc3a7glyphslib-6.10.1.tar.gz"
+    sha256 "6175a778132c694d473a4fb765288c93231594ebd2b534a5f5bd43eb8efd09cc"
   end
 
   resource "h11" do
@@ -188,8 +184,8 @@ class Esphome < Formula
   end
 
   resource "marshmallow" do
-    url "https:files.pythonhosted.orgpackagesb88543b8e95251312e8d0d3389263e87e368a5a015db475e140d5dd8cb8dcb47marshmallow-3.25.1.tar.gz"
-    sha256 "f4debda3bb11153d81ac34b0d582bf23053055ee11e791b54b4b35493468040a"
+    url "https:files.pythonhosted.orgpackagesab5e5e53d26b42ab75491cda89b871dab9e97c840bf12c63ec58a1919710cd06marshmallow-3.26.1.tar.gz"
+    sha256 "e6d8affb6cb61d39d26402096dc0aee12d5a26d490a121f118d2e81dc0719dc6"
   end
 
   resource "noiseprotocol" do
@@ -198,8 +194,8 @@ class Esphome < Formula
   end
 
   resource "openstep-plist" do
-    url "https:files.pythonhosted.orgpackages9c36edffefa5f2f679fc7c146303c035fc18b015a1c5b7c48b5beb2d53abc2b9openstep_plist-0.4.0.tar.gz"
-    sha256 "453a56cdf534c6f42d24934d2ed7f95bc77c3d1a8acbc1881a4aa061a7d601a2"
+    url "https:files.pythonhosted.orgpackages1e01e55052a0abf3b527e199c440fba4eeacd647fe14a31ed076ce17daccc28fopenstep_plist-0.5.0.tar.gz"
+    sha256 "daf386652ae086bce8b18784c59a8252523faca3b1ded876bbf393594d862b78"
   end
 
   resource "packaging" do
@@ -210,11 +206,6 @@ class Esphome < Formula
   resource "paho-mqtt" do
     url "https:files.pythonhosted.orgpackagesf8dd4b75dcba025f8647bc9862ac17299e0d7d12d3beadbf026d8c8d74215c12paho-mqtt-1.6.1.tar.gz"
     sha256 "2a8291c81623aec00372b5a85558a372c747cbca8e9934dfe218638b8eefc26f"
-  end
-
-  resource "pillow" do
-    url "https:files.pythonhosted.orgpackagescd74ad3d526f3bf7b6d3f408b73fde271ec69dfac8b81341a318ce825f2b3812pillow-10.4.0.tar.gz"
-    sha256 "166c1cd4d24309b30d61f79f4a9114b7b2313d7450912277855ff5dfd7cd4a06"
   end
 
   resource "platformio" do
@@ -303,8 +294,8 @@ class Esphome < Formula
   end
 
   resource "tzdata" do
-    url "https:files.pythonhosted.orgpackagese134943888654477a574a86a98e9896bae89c7aa15078ec29f490fef2f1e5384tzdata-2024.2.tar.gz"
-    sha256 "7d85cc416e9382e69095b7bdf4afd9e3880418a2413feec7069d533d6b4e31cc"
+    url "https:files.pythonhosted.orgpackages430ffa4723f22942480be4ca9527bbde8d43f6c3f2fe8412f00e7f5f6746bc8btzdata-2025.1.tar.gz"
+    sha256 "24894909e88cdb28bd1636c6887801df64cb485bd593f2fd83ef29075a81d694"
   end
 
   resource "tzlocal" do
@@ -313,8 +304,8 @@ class Esphome < Formula
   end
 
   resource "ufolib2" do
-    url "https:files.pythonhosted.orgpackages1ee1d20226fc36ce7df772500409879c3a856f77a07ba8a5e1629449f219a656ufolib2-0.17.0.tar.gz"
-    sha256 "891524052b3636a25b9a92f13f7fd8c24e15483bac96ccd0245ae947d127248b"
+    url "https:files.pythonhosted.orgpackagesfb4a45e392757bd28148d954c7418b99afbed4b45c334b52f42daaceed885aa5ufolib2-0.17.1.tar.gz"
+    sha256 "f6ab3171ff20615bb81c888faae1d871566bd14de6bdc94cc8f3971f6377bbd0"
   end
 
   resource "unicodedata2" do

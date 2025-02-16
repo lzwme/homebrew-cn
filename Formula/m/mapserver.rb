@@ -1,13 +1,13 @@
 class Mapserver < Formula
   desc "Publish spatial data and interactive mapping apps to the web"
-  homepage "https:mapserver.org"
-  url "https:download.osgeo.orgmapservermapserver-8.4.0.tar.gz"
+  homepage "https://mapserver.org/"
+  url "https://download.osgeo.org/mapserver/mapserver-8.4.0.tar.gz"
   sha256 "b0cb3612cd58458cca0808b117c16b9415b3231af39aefb90d668e8b8b188e2c"
   license "MIT"
 
   livecheck do
-    url "https:mapserver.orgdownload.html"
-    regex(href=.*?mapserver[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://mapserver.org/download.html"
+    regex(/href=.*?mapserver[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
@@ -25,7 +25,6 @@ class Mapserver < Formula
   depends_on "cairo"
   depends_on "fcgi"
   depends_on "freetype"
-  depends_on "gd"
   depends_on "gdal"
   depends_on "geos"
   depends_on "giflib"
@@ -33,6 +32,7 @@ class Mapserver < Formula
   depends_on "libpng"
   depends_on "libpq"
   depends_on "libxml2"
+  depends_on "pcre2"
   depends_on "proj"
   depends_on "protobuf-c"
   depends_on "python@3.13"
@@ -44,18 +44,10 @@ class Mapserver < Formula
   end
 
   def install
-    # Workaround for: Built-in generator --c_out specifies a maximum edition
-    # PROTO3 which is not the protoc maximum 2023.
-    # Remove when fixed in `protobuf-c`:
-    # https:github.comprotobuf-cprotobuf-cpull711
-    inreplace "CMakeLists.txt",
-              "COMMAND ${PROTOBUFC_COMPILER}",
-              "COMMAND #{Formula["protobuf"].opt_bin}protoc"
-
     if OS.mac?
-      mapscript_rpath = rpath(source: prefixLanguage::Python.site_packages(python3)"mapscript")
+      mapscript_rpath = rpath(source: prefix/Language::Python.site_packages(python3)/"mapscript")
       # Install within our sandbox and add missing RPATH due to _mapscript.so not using CMake install()
-      inreplace "srcmapscriptpythonCMakeLists.txt", "${Python_LIBRARIES}",
+      inreplace "src/mapscript/python/CMakeLists.txt", "${Python_LIBRARIES}",
                                                        "-Wl,-undefined,dynamic_lookup,-rpath,#{mapscript_rpath}"
     end
 
@@ -76,16 +68,16 @@ class Mapserver < Formula
                     "-DWITH_SOS=ON",
                     "-DWITH_WFS=ON",
                     "-DPython_EXECUTABLE=#{which(python3)}",
-                    "-DPHP_EXTENSION_DIR=#{lib}phpextensions",
+                    "-DPHP_EXTENSION_DIR=#{lib}/php/extensions",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), ".buildsrcmapscriptpython"
+    system python3, "-m", "pip", "install", *std_pip_args(build_isolation: true), "./build/src/mapscript/python"
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}mapserv -v")
+    assert_match version.to_s, shell_output("#{bin}/mapserv -v")
     system python3, "-c", "import mapscript"
   end
 end

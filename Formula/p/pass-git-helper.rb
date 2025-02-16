@@ -3,17 +3,17 @@ class PassGitHelper < Formula
 
   desc "Git credential helper interfacing with pass"
   homepage "https:github.comlanguitarpass-git-helper"
-  url "https:github.comlanguitarpass-git-helperarchiverefstagsv3.2.0.tar.gz"
-  sha256 "98287dca8b75376e1829f8e0fffd7db66030ad94bf81f824312b0425d42bd64c"
+  url "https:github.comlanguitarpass-git-helperarchiverefstagsv3.3.0.tar.gz"
+  sha256 "d602ddf2ab45ecaa6ec50815f4468fdeafccfb979ac5191e541a53b54b658e33"
   license "LGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b86c6b2b028740ecf4ff353b021949d7c399734c82e25a6aceb8003fb085cd06"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b86c6b2b028740ecf4ff353b021949d7c399734c82e25a6aceb8003fb085cd06"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b86c6b2b028740ecf4ff353b021949d7c399734c82e25a6aceb8003fb085cd06"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8302608b32535b74bf1189b15c18043ab614bed447590555b7039548866d80b9"
-    sha256 cellar: :any_skip_relocation, ventura:       "8302608b32535b74bf1189b15c18043ab614bed447590555b7039548866d80b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b86c6b2b028740ecf4ff353b021949d7c399734c82e25a6aceb8003fb085cd06"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8173dc09953993aae822147c4929171be223c97cda7241a00d86a3bbec556b08"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8173dc09953993aae822147c4929171be223c97cda7241a00d86a3bbec556b08"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8173dc09953993aae822147c4929171be223c97cda7241a00d86a3bbec556b08"
+    sha256 cellar: :any_skip_relocation, sonoma:        "734b7c223f2a2c32694c7ebbbb5448c43fe87612d7fac5257c2a7a4470a9a1e4"
+    sha256 cellar: :any_skip_relocation, ventura:       "734b7c223f2a2c32694c7ebbbb5448c43fe87612d7fac5257c2a7a4470a9a1e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8173dc09953993aae822147c4929171be223c97cda7241a00d86a3bbec556b08"
   end
 
   depends_on "gnupg" => :test

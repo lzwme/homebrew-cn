@@ -1,8 +1,9 @@
 class Bazel < Formula
   desc "Google's own build tool"
   homepage "https:bazel.build"
-  url "https:github.combazelbuildbazelreleasesdownload7.4.1bazel-7.4.1-dist.zip"
-  sha256 "83386618bc489f4da36266ef2620ec64a526c686cf07041332caff7c953afaf5"
+  # TODO: Try removing `bazel@7` workaround whenever new release is available
+  url "https:github.combazelbuildbazelreleasesdownload8.1.0bazel-8.1.0-dist.zip"
+  sha256 "e08b9137eb85da012afae2d5f34348e5622df273e74d4140e8c389f0ea275f27"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +12,12 @@ class Bazel < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d0e1ab6f5803279244b510d252b7da929451f871dd84bc69089de5399b23170"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "182820919fd8a4729c3769fad482783bc15f42da84b3128d9db5ffec2e6ec900"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3fff3607b0e68a3ef19810fe60418093e9ba3ac59fa6dc1af71a8187ba8c304a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "819cc3996a5b758d2ee1892f777c8236849fd480fd9b742d4fb11cf13598fee8"
-    sha256 cellar: :any_skip_relocation, ventura:       "d8d1a7f56fd5131c04fdf8c12056dbbee07252f371e0971d684591cec46600cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b464c711857cfa9533e99754eef2a5d2acfd227f992777ac0973d373d6560bfb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "472f77f944556bba51535e45a2d92a0bbc0a2bde37d797df21b702df908c9d09"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "868faa558046e2712a88b567c0b8b48037d5da1e63cba385cd1b37f8569b7d90"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a9394432b0545c80b2056a0387145521b6f288e55e132c4426a2193464048f4e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "da0b1863a2c1738b2148f51e82c923b9746d38cced6eade4888cfc2100b35bbd"
+    sha256 cellar: :any_skip_relocation, ventura:       "6e8ef16299213c72697d8afb14697c564204e3a4ef6920b0cf062a8fdc92c19c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2d5846c6e545d20e7b2de8bd0ac3ffd72236b8272d50073a1adc30fb956458b"
   end
 
   depends_on "python@3.13" => :build
@@ -25,6 +25,19 @@ class Bazel < Formula
 
   uses_from_macos "unzip"
   uses_from_macos "zip"
+
+  if DevelopmentTools.clang_build_version >= 1600
+    depends_on "bazel@7" => :build
+
+    resource "bazel-src" do
+      url "https:github.combazelbuildbazelarchiverefstags8.1.0.tar.gz"
+      sha256 "bc2b40c9e4bfe17dd60e2adff47fad75a34788b9b3496e4f8496e3730066db69"
+
+      livecheck do
+        formula :parent
+      end
+    end
+  end
 
   on_linux do
     on_intel do
@@ -61,7 +74,34 @@ class Bazel < Formula
     (buildpath"sources").install buildpath.children
 
     cd "sources" do
-      system ".compile.sh"
+      if DevelopmentTools.clang_build_version >= 1600
+        # Work around an error which is seen bootstrapping Bazel 8 on newer Clang
+        # from the `-fmodules-strict-decluse` set by `layering_check`:
+        #
+        #   externalabseil-cpp+abslcontainerinternalraw_hash_set.cc:26:10: error:
+        #   module abseil-cpp+abslcontainer:raw_hash_set does not depend on a module
+        #   exporting 'abslbaseinternalendian.h'
+        #
+        # TODO: Try removing when newer versions of dependencies (e.g. abseil-cpp >= 20250127.0)
+        # are available in https:github.combazelbuildbazelblob#{version}MODULE.bazel
+
+        # The dist zip lacks some files to build directly with Bazel
+        odie "Resource bazel-src needs to be updated!" if resource("bazel-src").version != version
+        rm_r(Pathname.pwd.children)
+        resource("bazel-src").stage(Pathname.pwd)
+        rm(".bazelversion")
+
+        extra_bazel_args += %W[
+          --compilation_mode=opt
+          --stamp
+          --embed_label=#{ENV["EMBED_LABEL"]}
+        ]
+        system Formula["bazel@7"].bin"bazel", "build", *extra_bazel_args, "src:bazel_nojdk"
+        Pathname("output").install "bazel-binsrcbazel_nojdk" => "bazel"
+      else
+        system ".compile.sh"
+      end
+
       system ".outputbazel", "--output_user_root=#{buildpath}output_user_root",
                                "build",
                                "scripts:bash_completion",

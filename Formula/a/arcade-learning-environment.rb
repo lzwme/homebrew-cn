@@ -3,22 +3,22 @@ class ArcadeLearningEnvironment < Formula
 
   desc "Platform for AI research"
   homepage "https:github.comFarama-FoundationArcade-Learning-Environment"
-  url "https:github.comFarama-FoundationArcade-Learning-Environmentarchiverefstagsv0.10.1.tar.gz"
-  sha256 "7e0473de29b63f59054f8a165a968cf5a168bd9c07444d377a1f70401d268894"
+  url "https:github.comFarama-FoundationArcade-Learning-Environmentarchiverefstagsv0.10.2.tar.gz"
+  sha256 "901a2dd3a5709361d5e6f95eb4798a749870c924a549c20b516b12da4fa43457"
   license "GPL-2.0-only"
   head "https:github.comFarama-FoundationArcade-Learning-Environment.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d2dc919768a30ae5a1eb6c9f14fc17dc0c147d31f605da455c209c3c19a41d6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e6158a024610dcc4152be365fd0a2207d893c9cfbdb9f517738a9044aade0669"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d8015a500d5336680a7abe821b1df3a5bdb5b33c19e233879523ab3ca2b85d85"
-    sha256 cellar: :any_skip_relocation, sonoma:        "83feffd8c4a60349927a1db51771d4b15e01e703e1a27b22c161a2269152789c"
-    sha256 cellar: :any_skip_relocation, ventura:       "bbbaa60dd14855a7bc812370a90fe5c7f50bf26eb0c71cfec076869b68389755"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b8980ab1f4041955854a8801dfa13117fec012ce3a338ed52044ea84709e016"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebc5e9d5ab5b21c306f8e3ab6f7dfeae1f05ba7cad8e0471a9a6d48c76a8feae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46b5a4e075120dda1d70eb59f119da585337ade688775b9f2824f77122f2c94e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9b00e5f0b6686381e93f86545abeb34008be3b083ddd51e7125eb0f4e9af4c15"
+    sha256 cellar: :any_skip_relocation, sonoma:        "99df6e80824a3a2ae33a2dc70dcf934ff6e316a83c0d8a54812b07c76ad72f5f"
+    sha256 cellar: :any_skip_relocation, ventura:       "dfac6d27455017d764d3dd4762511a4647289403c9f6fdb94b7d7921b92598ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79f9e05386444744b3c2304eec9df1f4c874448c79f3a258ee88831f0cdb33b5"
   end
 
   depends_on "cmake" => :build
+  depends_on "ninja" => :build
   depends_on "pybind11" => :build
   depends_on "python-setuptools" => :build
   depends_on macos: :catalina # requires std::filesystem

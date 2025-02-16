@@ -2,9 +2,10 @@ cask "font-shafarik" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflshafarikShafarik-Regular.ttf"
+  url "https:github.comgooglefontsrawmainoflshafarikShafarik-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Shafarik"
-  homepage "https:github.comslavonicshafarik"
+  homepage "https:fonts.google.comspecimenShafarik"
 
   font "Shafarik-Regular.ttf"
 

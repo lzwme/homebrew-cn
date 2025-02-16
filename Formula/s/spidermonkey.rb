@@ -35,8 +35,6 @@ class Spidermonkey < Formula
   uses_from_macos "m4" => :build
   uses_from_macos "zlib"
 
-  conflicts_with "narwhal", because: "both install a js binary"
-
   # From pythonmozbuildmozbuildtestconfiguretest_toolchain_configure.py
   fails_with :gcc do
     version "7"

@@ -7,12 +7,13 @@ class Eigenpy < Formula
   head "https:github.comstack-of-taskseigenpy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f91ccf704ca0be672a5dd0cdd717932d47aaadc0da341161f18d1fe1016a55ee"
-    sha256 cellar: :any,                 arm64_sonoma:  "2fa1b0ff99a80285c38242cd8d5e897b08008685ba4bc5b1b635fd756c2f86ee"
-    sha256 cellar: :any,                 arm64_ventura: "a4b65834d9b90114926641995130d131a39a45c02841a28c09716dfda3a36bf1"
-    sha256 cellar: :any,                 sonoma:        "5dec65c481a651e44b360fcd893f40dbd4b076b7dfe9037a1d7a6c7ea1efb169"
-    sha256 cellar: :any,                 ventura:       "9b109d518d5a28777b69a878acf89b0c9c095ec1dd3fe817fa8f01b0709b2413"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8ffbb57aeab9c4fd0340a28326d9c8a25b417c4a29c0b1f9991c3a26342e7ff"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "b82abe0f7777ac483a834270cb6e440b5ee0e02d6b6d79b3e1fabd5be153b66e"
+    sha256 cellar: :any,                 arm64_sonoma:  "9dea42502d4283aedd3c2e5d4fe9c54b657399549d7ddac2ec6a3cfb8b78e037"
+    sha256 cellar: :any,                 arm64_ventura: "6a95ce53e270f94576dc95ed61e5fe8531ccf24b6baaf5d31377bcb2e6653f23"
+    sha256 cellar: :any,                 sonoma:        "126e7a7b9a76b036717ce3f446dcf01e1af56ebc3e736c2976d0ac19e9674c6e"
+    sha256 cellar: :any,                 ventura:       "f5f0714168a5a98d65b9e945fa7a954082e1286d6bf0454c2ae59e7f0ce0be83"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8da8406a32c0300e587be9f725b87fa8fae7d6ec66665a77d00b6653ebc9261a"
   end
 
   depends_on "boost" => :build
@@ -33,10 +34,15 @@ class Eigenpy < Formula
     ENV.prepend_path "PYTHONPATH", Formula["numpy"].opt_prefixLanguage::Python.site_packages(python3)
     ENV.prepend_path "Eigen3_DIR", Formula["eigen"].opt_share"eigen3cmake"
 
-    system "cmake", "-S", ".", "-B", "build",
-                    "-DPYTHON_EXECUTABLE=#{which(python3)}",
-                    "-DBUILD_UNIT_TESTS=OFF",
-                    *std_cmake_args
+    args = %W[
+      -DPYTHON_EXECUTABLE=#{which(python3)}
+      -DBUILD_UNIT_TESTS=OFF
+    ]
+    # Avoid linkage to boost container and graph modules
+    # Issue ref: https:github.comboostorgboostissues985
+    args += %w[MODULE SHARED].map { |type| "-DCMAKE_#{type}_LINKER_FLAGS=-Wl,-dead_strip_dylibs" } if OS.mac?
+
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

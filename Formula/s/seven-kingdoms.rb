@@ -11,25 +11,19 @@ class SevenKingdoms < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "032a3a0307bd45b73dd33ebaf29a83670fe45ddaa8db0e5043cb49d45c9ff625"
-    sha256 arm64_sonoma:   "0538f01561c991e0ef25767624f8128516e2886fff6892c045163add87b82b03"
-    sha256 arm64_ventura:  "7f964ac849ddfcb41f1deb913ac3f87e4d426a0caabb2f327ef2aa9f1820d29c"
-    sha256 arm64_monterey: "368104c0637397af096cf0c77a02c16360e94e7007906a910f2d32588876a597"
-    sha256 arm64_big_sur:  "b8cb6def3fcc6b7d7f501825caea49f9a79e11c8233a9b7f5c2c8330ed12e209"
-    sha256 sonoma:         "d1c5fe322a26ee51c9a467b65b09da51f79f338bf9c9c765ceb2964884781ade"
-    sha256 ventura:        "caccaab293176a553d5de69b2ad00b641292e8a716ab670c55cf4eecd2ea9946"
-    sha256 monterey:       "de4af0d1f139d9315cdc9e026885bbae192c0d0a8bc7258760fad0010b273109"
-    sha256 big_sur:        "38ef036f2d21f70bc7a89a7603ec581dc185e076a747200630a7f55f6b835b29"
-    sha256 x86_64_linux:   "b3ba3202ca789169da6b0eb0173e686b97866e37ac12f0f10429e747c4ce0751"
+    rebuild 1
+    sha256 arm64_sequoia: "b2d889d8c50a32132e8a843b6e11fb74f2201d8b8a5518b0e05494c425c3d38b"
+    sha256 arm64_sonoma:  "e041776b87a11f71a2b25a732df463a85965a7a9730a6fdc86ead47b88269250"
+    sha256 arm64_ventura: "5cfe334ad3d1727e92bc7c5cd43da8bd89f64b33212ee903bd3bb88946ae6b6b"
+    sha256 sonoma:        "190571e9d1291c690b91c25523469fb56448e458d9271b5927b5f6298a3901be"
+    sha256 ventura:       "0e4c24744884c459603a2fef964656acd72f417d20eb66582c58ad2c73b87cd7"
+    sha256 x86_64_linux:  "2309306fa67efdf1de1e05fd01bb50448f9f1ca9b6688ed9ede4cd826fca877f"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "enet"
   depends_on "sdl2"
-  uses_from_macos "curl"
 
   on_macos do
-    depends_on "gcc"
     depends_on "gettext"
   end
 
@@ -37,10 +31,27 @@ class SevenKingdoms < Formula
     depends_on "openal-soft"
   end
 
-  fails_with :clang
+  # Multiplayer support requires -mfpmath=387. Otherwise it is automatically
+  # disabled, which also disables `enet` and `curl` usage.
+  on_intel do
+    depends_on "enet"
+
+    on_macos do
+      depends_on "gcc"
+    end
+
+    # FIXME: `uses_from_macos` is not allowed in `on_intel` block
+    on_linux do
+      depends_on "curl"
+    end
+
+    fails_with :clang do
+      cause "needs support for -mfpmath=387"
+    end
+  end
 
   def install
-    system "./configure", *std_configure_args
+    system "./configure", "--disable-silent-rules", *std_configure_args
     system "make"
     system "make", "install"
   end

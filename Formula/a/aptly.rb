@@ -1,18 +1,23 @@
 class Aptly < Formula
   desc "Swiss army knife for Debian repository management"
   homepage "https:www.aptly.info"
-  url "https:github.comaptly-devaptlyarchiverefstagsv1.6.0.tar.gz"
-  sha256 "4748d722f66859f24096f21c750f5d0961b906f81524ca3542dd1f206698f120"
+  url "https:github.comaptly-devaptlyarchiverefstagsv1.6.1.tar.gz"
+  sha256 "0488bc0717a1becda77fe1094a5eb4972ef1b6cd335f4108ddbbf89c6f917410"
   license "MIT"
   head "https:github.comaptly-devaptly.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00afc5743bb99def2fe714eb4e53e74b820b34eb9d6645e789876ec2737fad43"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00afc5743bb99def2fe714eb4e53e74b820b34eb9d6645e789876ec2737fad43"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "00afc5743bb99def2fe714eb4e53e74b820b34eb9d6645e789876ec2737fad43"
-    sha256 cellar: :any_skip_relocation, sonoma:        "931925d2fb70f5853905dab848cdd4de31de4803ed157f8595eac575bae73b07"
-    sha256 cellar: :any_skip_relocation, ventura:       "931925d2fb70f5853905dab848cdd4de31de4803ed157f8595eac575bae73b07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2bec25970b0507190160fd5a8c3d777f286ff018517972039a98bc9152b20b0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "135fdf1a0b34d87659f430d7be2f552062cd15982bba236d1741bee4ba5a4675"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "135fdf1a0b34d87659f430d7be2f552062cd15982bba236d1741bee4ba5a4675"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "135fdf1a0b34d87659f430d7be2f552062cd15982bba236d1741bee4ba5a4675"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f762cd5fa3143bcf4cb16bb8495b5a007d88335b117eaa537676bb23ee41d3fe"
+    sha256 cellar: :any_skip_relocation, ventura:       "f762cd5fa3143bcf4cb16bb8495b5a007d88335b117eaa537676bb23ee41d3fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bcf9a9430011265aaa5b98175f8dc1c3cf2d73e3034f719d175567bcf549126"
   end
 
   depends_on "go" => :build

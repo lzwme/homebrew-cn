@@ -1,18 +1,18 @@
 class BoshCli < Formula
   desc "Cloud Foundry BOSH CLI v2"
   homepage "https:bosh.iodocscli-v2"
-  url "https:github.comcloudfoundrybosh-cliarchiverefstagsv7.9.2.tar.gz"
-  sha256 "17553db2e5e81ff09f07435ac6dac48089f213f7c132cb37b664e9fb92d51859"
+  url "https:github.comcloudfoundrybosh-cliarchiverefstagsv7.9.3.tar.gz"
+  sha256 "e876b71513db424b8607333b6c87ef4880225d68fc285e8260c6b2c93cdd376e"
   license "Apache-2.0"
   head "https:github.comcloudfoundrybosh-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c28f0128490f6a90ffd446c9c53a311ed987bc46b70067b21e15ee3f80caad13"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c28f0128490f6a90ffd446c9c53a311ed987bc46b70067b21e15ee3f80caad13"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c28f0128490f6a90ffd446c9c53a311ed987bc46b70067b21e15ee3f80caad13"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fba6932ffbf32ffdd06630f37bf1eae6d556a4176b4cf005f1232ec5590184a4"
-    sha256 cellar: :any_skip_relocation, ventura:       "fba6932ffbf32ffdd06630f37bf1eae6d556a4176b4cf005f1232ec5590184a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82ecec81ce92b4b39348d11191ce62dd5bdb6612b4d29acf9a3bd019e601502f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4628193bc6444af1905d6415ae44e212303fc1285d207d8bea9baed0551386de"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4628193bc6444af1905d6415ae44e212303fc1285d207d8bea9baed0551386de"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4628193bc6444af1905d6415ae44e212303fc1285d207d8bea9baed0551386de"
+    sha256 cellar: :any_skip_relocation, sonoma:        "53774c3322fa45478842a8614ca4f0004a0685dead6a396970951bd2baa99652"
+    sha256 cellar: :any_skip_relocation, ventura:       "53774c3322fa45478842a8614ca4f0004a0685dead6a396970951bd2baa99652"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "770d70ca708ab7bce0ee6cdc497ae74026f7e82f6b518981b4569e197aaa8240"
   end
 
   depends_on "go" => :build

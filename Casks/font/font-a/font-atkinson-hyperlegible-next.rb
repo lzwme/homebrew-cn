@@ -3,10 +3,11 @@ cask "font-atkinson-hyperlegible-next" do
   sha256 :no_check
 
   url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
       only_path: "oflatkinsonhyperlegiblenext"
   name "Atkinson Hyperlegible Next"
-  homepage "https:github.comgooglefontsatkinson-hyperlegible-next"
+  homepage "https:fonts.google.comspecimenAtkinson+Hyperlegible+Next"
 
   font "AtkinsonHyperlegibleNext-Italic[wght].ttf"
   font "AtkinsonHyperlegibleNext[wght].ttf"

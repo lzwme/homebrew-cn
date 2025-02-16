@@ -7,12 +7,13 @@ class AdaUrl < Formula
   head "https:github.comada-urlada.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0ec7baa4bd1fee4eb4479194d095359d2c5214cc5fb2bc8324d7ac21a4a49a8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad352edb0bb4aafbf0ffac0093c734d49077f2325039fe41aad082e03bec6aaf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "41403fb9fda15248c752323fdbf81d08ee6d704a79b6a04aa6372358674d1323"
-    sha256 cellar: :any_skip_relocation, sonoma:        "93c4a4053bdcfd8d046a47e9e756f17fbb5e48d66880d68294484f1e530558c0"
-    sha256 cellar: :any_skip_relocation, ventura:       "a804cbbe41f8ff60a65aed2046c3af90548bfc32f11fa200d2caa2f671e0e28e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f2f90e5da3460bfbcc1e74ef788f545cbb1f871d429272d90dcd55d5b87144d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "d29a1fe8c29e80fc1c4e67971dc0248212a668b9a99cf9595a687b8846ca61b6"
+    sha256 cellar: :any,                 arm64_sonoma:  "855aff20e4e54fb21c21e95f81ae599a518322764716541ecf113106409639c0"
+    sha256 cellar: :any,                 arm64_ventura: "7a360074ed6cb17f10147c0d38b31ac9f81d3de597cfb97d56c907b663c05d65"
+    sha256 cellar: :any,                 sonoma:        "c12aebdb57629353d15f298d5adbb7f2fb625abd967e3bfbcb0c0ddfd9157b5f"
+    sha256 cellar: :any,                 ventura:       "10e36bc046fa3991458c0f4145f94a63e5c96b3f4892fd79e4f858eb93160a74"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cff81c6cd7bdf4d5a066a99e3fe4aeadfe77e5a5e46af18ef51074beb035f3e"
   end
 
   depends_on "cmake" => :build
@@ -36,7 +37,7 @@ class AdaUrl < Formula
   def install
     ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1500
 
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

@@ -1,8 +1,8 @@
 class Diary < Formula
   desc "Text-based journaling program"
   homepage "https://diary.p0c.ch"
-  url "https://code.in0rdr.ch/diary/archive/diary-v0.15.tar.gz"
-  sha256 "51103df0ddb33a1e86bb85e435ba7b7a5ba464ce49234961ca3e3325cd123d4c"
+  url "https://code.in0rdr.ch/diary/archive/diary-v0.16.tar.gz"
+  sha256 "9140762d44251ebce08d5ae45878a30fc9c35dcdd98fe64da618cdd2062552dc"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Diary < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a366f0be6bb1d23a3c0365b4c9e3c1308a9f25fe98949faa0344bfbde84e4393"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "596cf38b2aa8ef25fef5533c74673718d05150b9605f8fdd703a064eb40604a3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "07272e5e6d3df2aefe2401bd9adf0c2bac89011c7dcf7829a8e63eaf4f1482c5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e2be54322972d89253aa4036eb889863f9b76b02d4182a73ebd18e7f27f905a7"
-    sha256 cellar: :any_skip_relocation, ventura:       "db5ed2d29ada410541262e0104a6cbbcef5a7a76e027e61463af6f28efe8f2a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45417001ea62ec5dd28ef4620cc0f78da5d100b02e922c5948e961cb24328671"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d646d24e89a8eb7dce47ec54e42214c09010d070e893c29e2a55427cfe7e846b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30581920926485a47ab45731defce3acf5dd1c2366e4551a9b25952d03c171ea"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0b4f3a31788c1181823adcb3236ac4353eb442e293f39e320d9af8706cc6a098"
+    sha256 cellar: :any_skip_relocation, sonoma:        "48d82219a584be1acb7add11dce24b2258c38baf4b5e39f7b3afcbdb4a7c3976"
+    sha256 cellar: :any_skip_relocation, ventura:       "609b1792141d8537dfef086956db2cd0c81815ef038aae86bbb31343c10bbfe6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9916f762d45e4d351e2d678b938d05a5d4ce2ac7a366488706d2c3de3627a9ca"
   end
 
   depends_on "pkgconf" => :build

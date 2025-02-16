@@ -1,17 +1,17 @@
 class C4core < Formula
   desc "C++ utilities"
   homepage "https:github.combiojppmc4core"
-  url "https:github.combiojppmc4corereleasesdownloadv0.2.4c4core-0.2.4-src.tgz"
-  sha256 "7f258990a1c62a734b39246a79dbb20d0b99cfb12c1d75739b4f142e81703dce"
+  url "https:github.combiojppmc4corereleasesdownloadv0.2.5c4core-0.2.5-src.tgz"
+  sha256 "758f23718cbdc9465f104249561c4028858caf3355a90616b54d1dd937a981b1"
   license all_of: ["MIT", "BSL-1.0"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d68a3124bb9f730ca8501c812ff162ae7b5ad2203addeaa7b4b66854dd13b86c"
-    sha256 cellar: :any,                 arm64_sonoma:  "d277fb0f4552fcd3d699049bfdc7f1e6bf5cf361c280ec83f738349b0fec8a5c"
-    sha256 cellar: :any,                 arm64_ventura: "16f956aa7a00ba7df107781e206ddf57d85560d3603a76569d2faa54282dac61"
-    sha256 cellar: :any,                 sonoma:        "bc2fbc726e40c95056d1b81cb96298a5267d35805913c84c3f4b4edb8aeb8aed"
-    sha256 cellar: :any,                 ventura:       "b244d29f28e57255a079d784572b64fb68882ca3c0876af7e39527328251507d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3814841f468554c1f2355143a7fe83475e9bf012ea82ed8a37181a8f64e8d5e"
+    sha256 cellar: :any,                 arm64_sequoia: "db1b389a792b0c706e60ca3dc45a91038721ecd3f0b6bfc9a8997cf8564f0c2e"
+    sha256 cellar: :any,                 arm64_sonoma:  "3d406c980d9a46189724a5413f3047a0dd78ea3d254ecbad9ec366bde3cc67e8"
+    sha256 cellar: :any,                 arm64_ventura: "da3f3b490903b89c121305fd112b372e2cff4cf32eae6d1e44c9fb64f10bbe8d"
+    sha256 cellar: :any,                 sonoma:        "cfe600abd4d4d911e2416c8b07d51693db2432238e79d3efcd278b1b02c22028"
+    sha256 cellar: :any,                 ventura:       "8c5b12b46d37916e0b5e5f11bc4b00260467a905ac490858c2d172410d0ac6a3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "069cce0a054094573cdd0338332b80640a38fa412d4d4c0cf3b653297a24ebb9"
   end
 
   depends_on "cmake" => [:build, :test]
