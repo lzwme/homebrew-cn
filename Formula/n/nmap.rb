@@ -13,12 +13,13 @@ class Nmap < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "61a83d0390628d2667adca2335d9093a2f6d11a9501f40ed81c56fef82577ad4"
-    sha256 arm64_sonoma:  "b941d7bcbce3fa7461e4f3a94bc3d1946c7247cb1d82920a9ad786ac5dc067d2"
-    sha256 arm64_ventura: "12d9ac8855eff87666c8cc692a7e9613d7a2080621743f63e35a45bd72568b44"
-    sha256 sonoma:        "dfff65ad50c56d3dcfce4b68ebad5f23fb3b6483607e73670b2dff61a0c9ee02"
-    sha256 ventura:       "068b0bcd068851948112d96628e786e81e7e7845c470e07b26b20e05aa6cc1cd"
-    sha256 x86_64_linux:  "e38545d94571c213618d438533e315ef0dda379bcac8fb903dc172af8fc0067b"
+    rebuild 1
+    sha256 arm64_sequoia: "50ff67cd6a9106fd4813f23563e93afb1c010e72d2440210547ab1e85a9a2f8b"
+    sha256 arm64_sonoma:  "903b327e4d5670592fce8006045465c25f4906860124a6fadd09c8c6f075173d"
+    sha256 arm64_ventura: "ea8100a4be7170fc892f4b07ae93c6a783cdf4b73637f8bc6b77e70e1a3da9e2"
+    sha256 sonoma:        "29886e3599134f930e515d864133d5560ca4fa6688683d6d6651a3e74659bd1e"
+    sha256 ventura:       "7960ae55e221cd465ec9c81bab21c68e3deba12a42ba54a062b5a7357d8aedf2"
+    sha256 x86_64_linux:  "6d61d459f9d25a07da0695b7c6be96392fcb8f662babb6bedb64b371575da6d5"
   end
 
   depends_on "liblinear"
@@ -34,6 +35,7 @@ class Nmap < Formula
   uses_from_macos "zlib"
 
   conflicts_with "cern-ndiff", "ndiff", because: "both install `ndiff` binaries"
+  conflicts_with "nping", because: "both install `nping` binaries"
 
   def install
     ENV.deparallelize

@@ -29,6 +29,7 @@ class Duplicity < Formula
   depends_on "openssl@3" # for cryptography
   depends_on "python@3.13"
 
+  uses_from_macos "libffi"
   uses_from_macos "libxml2", since: :ventura
   uses_from_macos "libxslt"
 

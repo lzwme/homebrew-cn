@@ -11,14 +11,13 @@ class Libxmlxx < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia:  "3d646ead3d15603ed585f7e1c8cd6c0a4304b5aa91478665e4bdc1e9daadc31d"
-    sha256 cellar: :any, arm64_sonoma:   "ecc4bfa5bec6222f62d35af0afa054dd14dbbc768619e59b751535af9e1d2c40"
-    sha256 cellar: :any, arm64_ventura:  "90bb4a37548aef72c8884931767231a8db350f92587fe71540384fa4a665f089"
-    sha256 cellar: :any, arm64_monterey: "3c9aed5436d578af2db72c4beacb9597d3641c452a5ae89f53c2e7f760e7b6e6"
-    sha256 cellar: :any, sonoma:         "f94ee80dbab0f76742730875f9c96bbf9ffb150cabaeb59934f3465a5bad628e"
-    sha256 cellar: :any, ventura:        "0a44a4c9705798b962ec67053415810a8ce79211df06f7b9401f4ff1d3059098"
-    sha256 cellar: :any, monterey:       "2c2578ab09f0b69f9155aee5d0591c63b9f6da95f0e6b0c2193d78c96125c4c8"
-    sha256               x86_64_linux:   "3005c784682af5d78591f50de19cbd70a72dad5032a58b2be657e467c17a4bcb"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "ea4bb7ccf2905b3c6d0bcb737a0df4c68c6f1d74aa0a40a7e85358fb8babecfa"
+    sha256 cellar: :any, arm64_sonoma:  "8ed9c8aeafaa5c37a6c883ebc7d91c1a419bb2181bb98e6e6930061967362069"
+    sha256 cellar: :any, arm64_ventura: "7ee27c6995a0afb593127e45a431c1a2ac2a2e9c45897c3ce9a960e7f574e41b"
+    sha256 cellar: :any, sonoma:        "eb848276ab7187fe00cdb41076afa5ebd82b81b3acf6bfb70b6b0553f68c9868"
+    sha256 cellar: :any, ventura:       "fa93706f20eea80fcecd503fe8760b6613b9b46997ad49be56f75c046036aeb7"
+    sha256               x86_64_linux:  "aa6277a0000377577cd64566aea608746cf3b6e748e3aea17964bf6d36276e95"
   end
 
   depends_on "meson" => :build

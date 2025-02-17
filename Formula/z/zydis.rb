@@ -3,20 +3,18 @@ class Zydis < Formula
   homepage "https:zydis.re"
   # pull from git tag to get submodules
   url "https:github.comzyantificzydis.git",
-      tag:      "v4.1.0",
-      revision: "569320ad3c4856da13b9dbf1f0d9e20bda63870e"
+      tag:      "v4.1.1",
+      revision: "a2278f1d254e492f6a6b39f6cb5d1f5d515659dc"
   license "MIT"
   head "https:github.comzyantificzydis.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "263d39ea63e80fa442ab2b1dd6891fcb87cc0941cb72825999a8150353392e3c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2f7f72365b14908bbdfdf6b97cc058250e587f7edca69a75d3d63ac113f1933e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "db12deb4305fb8967c2900ba080d5a02c7a57c8aaac3dee595b301115dc81276"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7b9f1a1d12f1cf6db4a24835b7b2b4ba069d4003471b71615b5e56c5740cd325"
-    sha256 cellar: :any_skip_relocation, sonoma:         "a0f44abbde404047f49cc7c6d558c21040100f104952af5dbd6587badcaf9072"
-    sha256 cellar: :any_skip_relocation, ventura:        "27de11023e425dd95749c1188ba14213706ef99907086ce405582ed3189871e8"
-    sha256 cellar: :any_skip_relocation, monterey:       "55fe031082cf04e183669954faa236dcc5561aa1cca00852362652432f40e68d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f300c27bd81d350987eb65ed20958866564e7d410018bff4b99978cd375b259"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f925b7d0345acb686c8e62409639b866e7a1123e1209508de02393d5e7af0bee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a59d5b51d0d85f0a7d4970e9e1f9c88a4e70d1f2edb032954ef841868ac3e4c3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ae399b5f60c5d4bda9a1423990471f8dd13f53dafedffcba423fa911d89265d9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0f1bd1d7a92035759a01a25a9c2e7657e5c7a6a0c64d121ca3821dd0d5bf6c26"
+    sha256 cellar: :any_skip_relocation, ventura:       "9cef22740cd31a9e97983504c80eddfb4201860fccbe6887dd9692577ea7897d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57fa80a8a5f5de2515de7c9e0ec1df9c29bed0035716ca4abd64fadbc1e868ce"
   end
 
   depends_on "cmake" => :build

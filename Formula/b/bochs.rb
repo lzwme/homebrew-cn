@@ -1,8 +1,8 @@
 class Bochs < Formula
   desc "Open source IA-32 (x86) PC emulator written in C++"
   homepage "https://bochs.sourceforge.io/"
-  url "https://downloads.sourceforge.net/project/bochs/bochs/2.8/bochs-2.8.tar.gz"
-  sha256 "a85b13aff7d8411f7a9f356ba6c33b5f5dc1fbb107eb5018cc23a62639da0059"
+  url "https://downloads.sourceforge.net/project/bochs/bochs/3.0/bochs-3.0.tar.gz"
+  sha256 "cb6f542b51f35a2cc9206b2a980db5602b7cd1b7cf2e4ed4f116acd5507781aa"
   license "LGPL-2.0-or-later"
 
   livecheck do
@@ -11,14 +11,12 @@ class Bochs < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "829ff76b53d139c6e587138fbdbcf4ad8ddc587a42867df4485e8a734019650c"
-    sha256 arm64_sonoma:   "cbf7d0822dc3621c522b35dd08f0c6b13229b09cc8486b03714cdc9720c13b8a"
-    sha256 arm64_ventura:  "554222dd225e1e45dbbcc66835e725b8e7ee948819bee598332baccda2a74361"
-    sha256 arm64_monterey: "863d294eb8184e8c789f1d10d6d317033da4b0e29b975f8fd9e5b04ace9e017d"
-    sha256 sonoma:         "fab7abe0dd5d19498de67f51071ff85fd2e4c7b06ed4a19422321412a5bb76a9"
-    sha256 ventura:        "b8157f821216b5c7ed9ccc378415f05a5effd7533921b54089c7f3379585c05a"
-    sha256 monterey:       "174f8941f3e15e18fce21a3f8dc3933d0e749793cedbe11619a6f23b39c0ee15"
-    sha256 x86_64_linux:   "62d0ad82342936b765efec9a5b9a2525d5daf1ebfa86be5d89530a0c585e7969"
+    sha256 arm64_sequoia: "771309e968819d820ed0b538ed7a6c2365182b6e939e8de95c5a64265dcd0f28"
+    sha256 arm64_sonoma:  "7fc4fd6a6ead512d3b9fb13964529682f17356ffe7e10a7692e6c42940d48f21"
+    sha256 arm64_ventura: "9c9acd2ad176ca2cde5e04bf1041e62649cf32d3ff11a0e272fc0394092c82f4"
+    sha256 sonoma:        "308e5183b90eca43959de4064497c3d76e279c9b7849a7c8a68578fe8e0ec838"
+    sha256 ventura:       "1b8557fd5e2ba1133050f72867b8254401003ac7064d81788046025446367efc"
+    sha256 x86_64_linux:  "ad4f70d9e3cb7e9139e9542f351869f3e2175903c7bead372d988bb31ea784aa"
   end
 
   depends_on "pkgconf" => :build
@@ -30,6 +28,9 @@ class Bochs < Formula
   on_linux do
     depends_on "readline"
   end
+
+  # include `<libgen.h>` for macos build, upstream bug report, https://sourceforge.net/p/bochs/bugs/1466/
+  patch :DATA
 
   def install
     args = %W[
@@ -96,3 +97,20 @@ class Bochs < Formula
     assert_match(expected, stderr)
   end
 end
+
+__END__
+diff --git a/gui/keymap.cc b/gui/keymap.cc
+index 3426b6b..7bf76d8 100644
+--- a/gui/keymap.cc
++++ b/gui/keymap.cc
+@@ -30,6 +30,10 @@
+ #include "gui.h"
+ #include "keymap.h"
+
++#if defined(__APPLE__)
++#include <libgen.h>
++#endif
++
+ // Table of bochs "BX_KEY_*" symbols
+ // the table must be in BX_KEY_* order
+ const char *bx_key_symbol[BX_KEY_NBKEYS] = {

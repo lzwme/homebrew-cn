@@ -1,29 +1,26 @@
 class Cdncheck < Formula
   desc "Utility to detect various technology for a given IP address"
   homepage "https:projectdiscovery.io"
-  url "https:github.comprojectdiscoverycdncheckarchiverefstagsv1.1.1.tar.gz"
-  sha256 "f94c62d4f4b1b5cb84c2cc6a465d364b747b585c8f7522f10a6983f26b318236"
+  url "https:github.comprojectdiscoverycdncheckarchiverefstagsv1.1.5.tar.gz"
+  sha256 "5fbf2dc4883385db1fb9e0b48edeb6120d86c6b23b70f76476c5432a0515fdf1"
   license "MIT"
   head "https:github.comprojectdiscoverycdncheck.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b98b2e27061e8ebf22a7625667a3c9f9489330735d60fcb14ee51d53fe08243"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4d9f26d46ae4123bcdd840b9f1a94a73c42e49fcd027e21fbe9e392f9e9dcab"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cdbe0a1551b6813b1f9d190fff1ec388dd5cc12dc87939288c401bbf36c9c71c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "745f96d5edd38a3f67da29cee0a9c4b32977c9b405701948a04add71de6b1a02"
-    sha256 cellar: :any_skip_relocation, ventura:       "bc6856a7f455b221b71611f31f33cc51720c939f870512bb168a4d7819b579ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aff7fedd41ee458172e0e158ac47fc41f9c70489d89d082b8d2acc72459e7d5c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1b991bff51dd0f5e385bb241f0b9629ae931d98c30ea731ece4dd7f43636c39"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe5cbef0f22f783bb8078b1800cc1dea07a55fc71fe376696502b900bbd410cc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "07e8b26e3e635736e7f8b55eb38bbf8325306e8c1e7215d79adfb010d22b093d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "57f99718789ea379cdfe439a56f6e0ab946835cd497c64535ef56aec72094249"
+    sha256 cellar: :any_skip_relocation, ventura:       "458d4562d7fc6ff101cd0a3792171f2a01d8b48309d7376ef2477fd6821c0ddd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4717d6325a9afe8115a3a238b20279d02946bcc9a277fd3f5ac03939cefac2d"
   end
 
   depends_on "go" => :build
-
-  # Fix for incorrect version. The commit was made after the release. At the
-  # time of the next release, ensure that the commit updating the version is
-  # part of the release. Remove this patch in the next release.
-  patch do
-    url "https:github.comprojectdiscoverycdncheckcommita1c2dc71a1cf5c773a9adc44b2ae76bc041cc452.patch?full_index=1"
-    sha256 "2ad6e32682eb4a74d838087fe93b5aeb7864d0b982087e18a143a68278f6fca6"
-  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdcdncheck"

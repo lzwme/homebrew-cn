@@ -11,14 +11,13 @@ class Gtkmm3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia:  "34f51a1502979c61cb7b92921770e9bf0a388acf0cac71f15c589b9ee583c8ee"
-    sha256 cellar: :any, arm64_sonoma:   "fb81c07b62bf93741751146db60e01d13dd0f2e2f10686286703133e8356668a"
-    sha256 cellar: :any, arm64_ventura:  "a96cef2e81067ac9239b8eeadd95f1e13f33f02058e43a6f2b349b56b5579c2c"
-    sha256 cellar: :any, arm64_monterey: "417c16642451874e4444883262d2850241e35607d87e8bf02c534b041b798f3d"
-    sha256 cellar: :any, sonoma:         "ddebda42ae26f02c468c9fa4d990ec4c6a110c281c90d63f4a6db1ab6eb53ba6"
-    sha256 cellar: :any, ventura:        "94b66c7c5c18c00262020c88f2abed754cbf9e500f1838d2c9e634f99b91ea6b"
-    sha256 cellar: :any, monterey:       "059230eadd967c816ea5c01903c5eb07c39690dbc9c54cdec0cbbcf5760c1a91"
-    sha256               x86_64_linux:   "548ac36e8284ef35d9bb0700f63a50deb54ebfb67b27de3e72b0ab45793b6232"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "cf9813fbf23737aaed77daf604cbacf65182ff4309de217110225c3d3dd48b85"
+    sha256 cellar: :any, arm64_sonoma:  "9e03a68ddce555fe0e879142657d4139581b1b9536cc6a70c4e0dc99fa5f3bff"
+    sha256 cellar: :any, arm64_ventura: "93d2dc85c050f407a1f5d4777b3952df2a40ae9aa11300ecd380c92baf2af7ce"
+    sha256 cellar: :any, sonoma:        "86c82d4acaae1dcde4b5f13cecfe4ca8d3695f109490d5cfa77a2bba3347c73b"
+    sha256 cellar: :any, ventura:       "b596f92767d4d557fb310652aaefbbd0099a3b2f6e1dcc38415b28d96401e4fa"
+    sha256               x86_64_linux:  "00afd547bdbe9407bbab31d5ef4c5e47543608c5810ef59bc011df9cfe210bfd"
   end
 
   depends_on "meson" => :build

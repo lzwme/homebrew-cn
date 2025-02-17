@@ -12,14 +12,13 @@ class GlibmmAT266 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia:  "09f7e9e0f71ca1c71d18121565ae99838f482f009b6e3fb9789092276fdbb916"
-    sha256 cellar: :any, arm64_sonoma:   "1466172346191c3cf8989fd4bed922ad0bf8ef0b00395b1dd005f1cf6f27db50"
-    sha256 cellar: :any, arm64_ventura:  "9fa6fe82b00364519f11c54063f12cd9bd2f502a92d8a7562292a11e28e445fe"
-    sha256 cellar: :any, arm64_monterey: "8ade0f784ae08c3a84a6fb594039066598fc3c653a096e431a37c03151116d7b"
-    sha256 cellar: :any, sonoma:         "0b33fc5295ae68bed483e2719b3ab0e92abcecb8c4a2a52368b45a3608c7dfee"
-    sha256 cellar: :any, ventura:        "1742adfa35be37169c4c5ee0ae6b37815fe4e7de541a07fd5c36dddbf44910d6"
-    sha256 cellar: :any, monterey:       "1c8f922d8b1b0bb3298fffd5fbb59c308ae9fa375cc0eaf0b0cc7b4150f46568"
-    sha256               x86_64_linux:   "e73a3eb58812790f1057663483cb3047cb1c33f80497faa11393ddf8e411c20b"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "67a6951ce935397adedefb3e6ffdc816c542620ad3ced041182efcf9f8bbcede"
+    sha256 cellar: :any, arm64_sonoma:  "cdf2d5c9409820fbeff140b1c3e92ecd487c0062cdab4b368024ac33e76257af"
+    sha256 cellar: :any, arm64_ventura: "bba1b6926d6d5042543a9e6be57c2dac83b98a8a3107e61d19cb4a592d150352"
+    sha256 cellar: :any, sonoma:        "bafe81da0b2a2fdd2bea4963ef0a43c0f697e7b017b48b11e39c0400c32440ac"
+    sha256 cellar: :any, ventura:       "1ece8762552236ebbf6372948b183fb23eea5e20e2bce0a97ae7551f8d951884"
+    sha256               x86_64_linux:  "f6809b377f3b8e34b75f0f0166371ee29903fbcb1ad833dddc552ddf125a5ea7"
   end
 
   depends_on "meson" => :build

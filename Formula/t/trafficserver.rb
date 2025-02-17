@@ -27,6 +27,7 @@ class Trafficserver < Formula
   depends_on "nuraft"
   depends_on "openssl@3"
   depends_on "pcre" # PCRE2 issue: https:github.comapachetrafficserverissues8780
+  depends_on "pcre2"
   depends_on "xz"
   depends_on "yaml-cpp"
 

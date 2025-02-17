@@ -46,6 +46,7 @@ class Pcl < Formula
   depends_on "vtk"
 
   on_macos do
+    depends_on "freetype"
     depends_on "libomp"
   end
 

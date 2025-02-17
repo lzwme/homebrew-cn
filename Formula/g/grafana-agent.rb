@@ -5,6 +5,7 @@ class GrafanaAgent < Formula
   sha256 "ef8b19e0bda6214ad1856d636226c50e9c9690da45791c5da090227f81fba65a"
   license "Apache-2.0"
 
+  # Keep livecheck until 2025-11-01
   livecheck do
     url :stable
     strategy :github_latest
@@ -18,6 +19,11 @@ class GrafanaAgent < Formula
     sha256 cellar: :any_skip_relocation, ventura:       "c9cc0258e949864468d103b764f1f9a7abb64db194efa5151d07ccf8d7d51f9b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "96a26aad76428d765023b479df15a501ca44fe3220788ec5337ed0263ad27713"
   end
+
+  # Needs EOL Go 1.22 to build (https:github.comgrafanaagentissues6972)
+  # and deprecated upstream though will get security fixes until 2025-10-31.
+  # Disable date set 3 months after planned EOL date of 2025-11-01.
+  disable! date: "2026-02-01", because: :deprecated_upstream
 
   # use "go" again when https:github.comgrafanaagentissues6972 is resolved and released
   depends_on "go@1.22" => :build

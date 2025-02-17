@@ -4,7 +4,7 @@ class Jj < Formula
   url "https:github.comjj-vcsjjarchiverefstagsv0.26.0.tar.gz"
   sha256 "099eeb346f32a4968ebb8273566321eff2e6ca6a7de0c9dcfd7eee016b37cba1"
   license "Apache-2.0"
-  head "https:github.commartinvonzjj.git", branch: "main"
+  head "https:github.comjj-vcsjj.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "7cd799ab79d243b5b5a4d6e7e76c8099c28b0611eaac75c4bb262ff92512db47"

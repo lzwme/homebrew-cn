@@ -7,20 +7,22 @@ class Hebcal < Formula
   head "https:github.comhebcalhebcal.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a4a6970a6e0656faf5030875dc9e473004ce20e6948e09048f6d674f65e3bd2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a4a6970a6e0656faf5030875dc9e473004ce20e6948e09048f6d674f65e3bd2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0a4a6970a6e0656faf5030875dc9e473004ce20e6948e09048f6d674f65e3bd2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9db84c2ee5ff902d51984eaaf68f35199556b7cdd75d62c330fe4fe9ab01e394"
-    sha256 cellar: :any_skip_relocation, ventura:       "9db84c2ee5ff902d51984eaaf68f35199556b7cdd75d62c330fe4fe9ab01e394"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e79fc6d26d27e5f0cb46f202f91556adde8b2648dc9d9d404d289b3139a1aec0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29b4c545ce82fdd87512f859b1377b3cae30a6cd092ba1a5be4c6cec6fb7a868"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "29b4c545ce82fdd87512f859b1377b3cae30a6cd092ba1a5be4c6cec6fb7a868"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "29b4c545ce82fdd87512f859b1377b3cae30a6cd092ba1a5be4c6cec6fb7a868"
+    sha256 cellar: :any_skip_relocation, sonoma:        "641185644af7b9ccf87fe96cb9be7261a67a51b07e45712c27be7f881a43f917"
+    sha256 cellar: :any_skip_relocation, ventura:       "641185644af7b9ccf87fe96cb9be7261a67a51b07e45712c27be7f881a43f917"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72ce8d3960251c1e1813b16b5f559d08bed22e5749a205c850d0d281033eee72"
   end
 
   depends_on "go" => :build
 
   def install
     # populate DEFAULT_CITY variable
-    system "make", "dcity.go"
+    system "make", "dcity.go", "man"
     system "go", "build", *std_go_args(ldflags: "-s -w")
+    man1.install "hebcal.1"
   end
 
   test do

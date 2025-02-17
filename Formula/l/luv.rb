@@ -1,18 +1,18 @@
 class Luv < Formula
   desc "Bare libuv bindings for lua"
   homepage "https:github.comluvitluv"
-  url "https:github.comluvitluvarchiverefstagsv1.50.0-0.tar.gz"
-  sha256 "9d56b793138a2e7dbf53148740a3ee4777d2d51842d175ba85fa907d71f079dc"
+  url "https:github.comluvitluvarchiverefstags1.50.0-1.tar.gz"
+  sha256 "bb4f0570571e40c1d2a7644f6f9c1309a6ccdb19bf4d397e8d7bfd0c6b88e613"
   license "Apache-2.0"
   head "https:github.comluvitluv.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9aa88f6497caef7418024eb961a30f5bb5db097d2e1af90ef79939a15b8140f6"
-    sha256 cellar: :any,                 arm64_sonoma:  "0f83dcb1ff76d6e3a4c0cc4d4dff46fab4bc22b64e268ba6bfcebd7aedefbf48"
-    sha256 cellar: :any,                 arm64_ventura: "ec0979b54e5fd5471582f53d9c45003181fdd1f7f1865a3a90698839ffef729a"
-    sha256 cellar: :any,                 sonoma:        "29aa7d58757c2219fc4f5a80ee7b9626e24830536ee03fa44a50da5a19b16c4a"
-    sha256 cellar: :any,                 ventura:       "43e34238e63cfd0d5f5dfce09a52a31d59b06751e0eb07cc9439a223e30634b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dffec8b9bf27ef16fd38a28cf73b076044ce6451085eda4e82663f965b5f8687"
+    sha256 cellar: :any,                 arm64_sequoia: "d90f24b39208b2d38575647b97796e59711e86da665350d2e04f1eba29014e2e"
+    sha256 cellar: :any,                 arm64_sonoma:  "7a1f6cb24fb6cfb862bd44c23995326b0f45816e792522c9ff19bd9ea5ea1a71"
+    sha256 cellar: :any,                 arm64_ventura: "8e31ff6907a7e940f8b461fd5c8ea8896c546641d7038eb21d6da0e32ee4a004"
+    sha256 cellar: :any,                 sonoma:        "5495b4d31f5856d371bf0fc4d7f5db89f6cb08dc1e0dfbfeb4f0903bd5eb28f1"
+    sha256 cellar: :any,                 ventura:       "d0f47a32674eb2aae12ab50cd2ba3749a41ee581fadb3b4114477e9503385263"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da9083575ea116986d84c08971cc2f80011996968c2c7e3d02d0505c9407def6"
   end
 
   depends_on "cmake" => :build
@@ -21,8 +21,8 @@ class Luv < Formula
   depends_on "libuv"
 
   resource "lua-compat-5.3" do
-    url "https:github.comlunarmoduleslua-compat-5.3archiverefstagsv0.14.3.tar.gz"
-    sha256 "db8ffa2c5562fac4fce5e5f48fd25763e79190af5e3d3d91f0699e4711cfbf10"
+    url "https:github.comlunarmoduleslua-compat-5.3archiverefstagsv0.14.4.tar.gz"
+    sha256 "a9afa2eb812996039a05c5101067e6a31af9a75eded998937a1ce814afe1b150"
   end
 
   def install

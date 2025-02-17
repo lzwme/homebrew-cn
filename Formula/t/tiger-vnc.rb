@@ -6,11 +6,9 @@ class TigerVnc < Formula
   license "GPL-2.0-or-later"
   revision 1
 
-  # Tags with a 90+ patch are unstable (e.g., the 1.9.90 tag is used for the
-  # 1.10.0 beta release) and this regex should only match the stable versions.
   livecheck do
     url :stable
-    regex(^v?(\d+\.\d+\.(?:\d|[1-8]\d+)(?:\.\d+)*)$i)
+    strategy :github_latest
   end
 
   bottle do
@@ -61,6 +59,6 @@ class TigerVnc < Formula
 
   test do
     output = shell_output("#{bin}vncviewer -h 2>&1", 1)
-    assert_match "TigerVNC Viewer v#{version}", output
+    assert_match(TigerVNC [Vv]iewer v#{version}, output)
   end
 end

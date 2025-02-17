@@ -10,7 +10,8 @@ class Chrpath < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "00a03fa6ee632a4c0dbba7e0b581501b3e6118fd1cc6cfe1c0e6f53b900dca68"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "5401a0819599b170252c91c03bbef3b8a4e7e61f3a4333fcc9c271afd897ee8c"
   end
 
   depends_on :linux
@@ -24,9 +25,9 @@ class Chrpath < Formula
     assert_match "chrpath version #{version}", shell_output("#{bin}/chrpath -v")
     (testpath/"test.c").write "int main(){return 0;}"
     system ENV.cc, "test.c", "-Wl,-rpath,/usr/local/lib"
-    assert_match "a.out: RPATH=/usr/local/lib", shell_output("#{bin}/chrpath a.out")
-    assert_match "a.out: new RPATH: /usr/lib/", shell_output("#{bin}/chrpath -r /usr/lib/ a.out")
-    assert_match "a.out: RPATH=/usr/lib/",      shell_output("#{bin}/chrpath a.out")
+    assert_match "a.out: RUNPATH=/usr/local/lib", shell_output("#{bin}/chrpath a.out")
+    assert_match "a.out: new RUNPATH: /usr/lib/", shell_output("#{bin}/chrpath -r /usr/lib/ a.out")
+    assert_match "a.out: RUNPATH=/usr/lib/",      shell_output("#{bin}/chrpath a.out")
     system bin/"chrpath", "-d", "a.out"
     assert_match "a.out: no rpath or runpath tag found.", shell_output("#{bin}/chrpath a.out", 2)
   end

@@ -39,7 +39,6 @@ class Mesa < Formula
   depends_on "python@3.13" => :build
   depends_on "xorgproto" => :build
 
-  depends_on "expat"
   depends_on "libx11"
   depends_on "libxcb"
   depends_on "libxext"
@@ -47,6 +46,7 @@ class Mesa < Formula
   depends_on "libxrandr"
 
   uses_from_macos "flex" => :build
+  uses_from_macos "expat"
   uses_from_macos "llvm"
   uses_from_macos "zlib"
 

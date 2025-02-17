@@ -1,8 +1,8 @@
 class Zigmod < Formula
   desc "Package manager for the Zig programming language"
   homepage "https:nektro.github.iozigmod"
-  url "https:github.comnektrozigmodarchiverefstagsr93.tar.gz"
-  sha256 "302162e6ba66ee8abe028b5d61fe1c474ec50eadfb6481dc782702126fddb639"
+  url "https:github.comnektrozigmodarchiverefstagsr94.tar.gz"
+  sha256 "139e990afccff7ab33b864ea479dad1217c293355583c8ad864571f77764b7a2"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Zigmod < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "420f7558e02cced834ae9109dfb12b93a864510c582af36d097cbb25a3379fc0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ada99291a14a4b050d9021469d4912be19098785d6d557ccfd09f7613dbce43"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6dde24eaa99843a68b0f5c59f95c3a7116afd326b315d8a30f519cd6eb099c79"
-    sha256 cellar: :any_skip_relocation, sonoma:        "61702ca7b0671790b8598c55957f3cd53b6f215907be3add1f9de06f3da746ad"
-    sha256 cellar: :any_skip_relocation, ventura:       "dfd79a1b16483e86d85867b7494952d6a9c05dbc26c0924fd952106370e41500"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41a39652f9ed4f90a02280a3064bfa9a16746fda7af518d886280e86dceeb068"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5bfae8b75eb13ff8c0d4e2b0595ecae4c6d32ad969d098612919f5dcfda257d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22ecae4483dd909ac23fbb018e7c10da835f21c415627674e4999f3306c8452f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e84ecb51e81353a55855dcb6c8411572fa05730c8a70a7bb57411ffc9a33d5ec"
+    sha256 cellar: :any_skip_relocation, sonoma:        "51afc652ad9869c5fa57c388cc9c9e970444db44c476992bf5e15b23e22a43ac"
+    sha256 cellar: :any_skip_relocation, ventura:       "91066de4ef3b96479f7b19328b2ff76ffd3c8275a97d41c4e299a5983f1c1607"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4986c6e8b71077323fb1879e29c69245330811be31240a8b12bc4926f9b81a1b"
   end
 
   depends_on "pkgconf" => :build

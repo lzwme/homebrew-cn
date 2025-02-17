@@ -1,9 +1,9 @@
 class Httping < Formula
   desc "Ping-like tool for HTTP requests"
   homepage "https:github.comfolkertvanheusdenHTTPing"
-  url "https:github.comfolkertvanheusdenHTTPingarchiverefstagsv2.9.tar.gz"
-  sha256 "37da3c89b917611d2ff81e2f6c9e9de39d160ef0ca2cb6ffec0bebcb9b45ef5d"
-  license "GPL-3.0-only"
+  url "https:github.comfolkertvanheusdenHTTPingarchiverefstagsv4.4.0.tar.gz"
+  sha256 "87fa2da5ac83c4a0edf4086161815a632df38e1cc230e1e8a24a8114c09da8fd"
+  license "AGPL-3.0-only"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead
@@ -14,19 +14,15 @@ class Httping < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "c6a1ee0e3a64c03c26a9c17a4d3f23a89faf5603d55052187f05202b94d9e701"
-    sha256 cellar: :any,                 arm64_sonoma:   "f23584840d9dcfe8b4b7feefd73ac8fab046f59d67289ac23f3c85669dcdd2f3"
-    sha256 cellar: :any,                 arm64_ventura:  "3141fe1d3df5213ea50d737dcbe5a22d19470b1b71bb5224cc31ab8cae5b1c7e"
-    sha256 cellar: :any,                 arm64_monterey: "94510b3f65c4e5e09f50416ed42dc3cea4919d423b44fb535abf33c931852fff"
-    sha256 cellar: :any,                 arm64_big_sur:  "a8986b877e0394d14426ddf81cdd2434bdaea19d77b5a89fde3b15abbf7a52f6"
-    sha256 cellar: :any,                 sonoma:         "e4105852026458d7ded9139afb2f37fd0dac185b1a267cbe957e73cd49092bde"
-    sha256 cellar: :any,                 ventura:        "fbd0751a4589fc47844450fbdf7ed2addd0209e5fe5cd1e9fcf67a0fd5e9f97a"
-    sha256 cellar: :any,                 monterey:       "b81b8e64adb726690636e16e1b321a105b7ea74c2976334c555ee2057735b193"
-    sha256 cellar: :any,                 big_sur:        "cb7cf7e658c4d92d83fcbaa36779c4ed3b5d03b64cd764a77c68b83be85997f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "94b00c89e3f72041ad7e5aee324783437ad76f99c1b5bfdacf858e6aaa4d101d"
+    sha256 arm64_sequoia: "2edf3ec3576fcb84bcd40124d94c84e80fedba5975fa7c22aa30375e40ab48c6"
+    sha256 arm64_sonoma:  "f51c8f88fcfdf499b9402d73c8e694395f1ee09af0a1d988774f02cdd7ae9fed"
+    sha256 arm64_ventura: "cd0bd242c917ce8ce4699733fb6bd36cfccefd36bd8b0b7fba4822842601a351"
+    sha256 sonoma:        "5c887df378bbfbe24b8049e579a6325bbd7d8cba076eebe392ae3dab8dd6f832"
+    sha256 ventura:       "12e2cbfeb500c53bd2cde0ec98d9426a9736d4a40cce70035869b5220108ff6f"
+    sha256 x86_64_linux:  "d216d2e231fe96782beab3f205156d657da0c91f6c6c98e2a2ab1218a1db0f33"
   end
 
+  depends_on "cmake" => :build
   depends_on "gettext" => :build # for msgfmt
   depends_on "openssl@3"
 
@@ -36,13 +32,16 @@ class Httping < Formula
     depends_on "gettext" # for libintl
   end
 
+  # enable TCP Fast Open on macOS, upstream pr ref, https:github.comfolkertvanheusdenHTTPingpull48
+  patch do
+    url "https:github.comfolkertvanheusdenHTTPingcommit79236affb75667cf195f87a58faaebe619e7bfd4.patch?full_index=1"
+    sha256 "765fd15dcb35a33141d62b70e4888252a234b9f845c8e35059654852a0d19d1c"
+  end
+
   def install
-    # Reported upstream, see: https:github.comfolkertvanheusdenHTTPingissues4
-    inreplace "utils.h", "useconds_t", "unsigned int"
-    # Reported upstream, see: https:github.comfolkertvanheusdenHTTPingissues7
-    inreplace %w[configure Makefile], "lncursesw", "lncurses"
-    ENV.append "LDFLAGS", "-lintl" if OS.mac?
-    system "make", "install", "PREFIX=#{prefix}"
+    system "cmake", "-S", ".", "-B", "build", "-DUSE_SSL=ON", "-DUSE_GETTEXT=ON", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

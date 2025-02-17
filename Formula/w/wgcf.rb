@@ -1,18 +1,18 @@
 class Wgcf < Formula
   desc "Generate WireGuard profile from Cloudflare Warp account"
   homepage "https:github.comViRb3wgcf"
-  url "https:github.comViRb3wgcfarchiverefstagsv2.2.24.tar.gz"
-  sha256 "f4ebecc1df2235190dde2f8876f1811e9064cbac8b113db1f63e7f20b828358a"
+  url "https:github.comViRb3wgcfarchiverefstagsv2.2.25.tar.gz"
+  sha256 "1f994953aa4e9d6718dd7629957db9ee82f766e22975808cded1dcaf722734d8"
   license "MIT"
   head "https:github.comViRb3wgcf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c56f4c91cec0dd2847d79ea2ea2bb6058f5074b071251dd319334c6cdcbffea9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c56f4c91cec0dd2847d79ea2ea2bb6058f5074b071251dd319334c6cdcbffea9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c56f4c91cec0dd2847d79ea2ea2bb6058f5074b071251dd319334c6cdcbffea9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a46299d7984157151643e57b0add53bcbf851047bff8356f7751e0400dab24d5"
-    sha256 cellar: :any_skip_relocation, ventura:       "a46299d7984157151643e57b0add53bcbf851047bff8356f7751e0400dab24d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8f54a5b2684df99cb051007a25888871134cbb54bca6c0b07c7248ab175823c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b383c6977ca74792c84672bdb3976bdaf31a0edc633d96856326c3bdcf1bfa38"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b383c6977ca74792c84672bdb3976bdaf31a0edc633d96856326c3bdcf1bfa38"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b383c6977ca74792c84672bdb3976bdaf31a0edc633d96856326c3bdcf1bfa38"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a3c1021119382ce1430e4d403b8a6ff31b792b0f275dea883f1a4e27a0ac5a67"
+    sha256 cellar: :any_skip_relocation, ventura:       "a3c1021119382ce1430e4d403b8a6ff31b792b0f275dea883f1a4e27a0ac5a67"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a885819fd0e7a141073bdb9c44e2d010b4321ee8d682e41e13a2bdd329c5fce"
   end
 
   depends_on "go" => :build

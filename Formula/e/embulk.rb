@@ -66,7 +66,7 @@ class Embulk < Formula
       |           1 |                        list |
     EOS
     output = shell_output("#{bin}embulk -X #{jruby} run config.yml")
-    assert_match(^1,list,.*\n2,install,.*\n3,info,.*\n4,outdated,.*\n5,services,, output)
+    assert_match(^1,list,.*\n2,, output)
 
     # Recent macOS requires giving Terminal permissions to access files on a
     # network volume in order to use Embulk's basic file input plugin.

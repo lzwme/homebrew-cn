@@ -9,13 +9,13 @@ class YelpTools < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any,                 arm64_sequoia: "19cea9b4aea4306c27cf8670b72009111acd01359e9896850231cc6a4c13ccdb"
-    sha256 cellar: :any,                 arm64_sonoma:  "8e94caafb0c2920ce1e46bc4d4499033e1ad366e240c8e9aed59cade7e18feef"
-    sha256 cellar: :any,                 arm64_ventura: "f7b601e215e171c88e066bc78dcb06238ecc8fe0c23b38ef97c852546a07a953"
-    sha256 cellar: :any,                 sonoma:        "b5a88a52c0e06460d402f94f56eb2afc2faefb1dfc256f01d8ec2bcb03482390"
-    sha256 cellar: :any,                 ventura:       "85810d052d35bb12a405a1b6d2411db345980b8fdb848b9cc46215face0631e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f2e4140b9a219e6c08455422ea64ee0dbd07907cf457707f469f778db0083ad"
+    rebuild 5
+    sha256 cellar: :any,                 arm64_sequoia: "b7fdc8113c53b2269004863275eb727529213a7306fe048195c6d772d068f9a7"
+    sha256 cellar: :any,                 arm64_sonoma:  "fecff16b031b801b36674d3ce40d9076a53d50a588874b6c1c003d2a53dd8c65"
+    sha256 cellar: :any,                 arm64_ventura: "552d5b45480d56d8c411142fdd7f7a425e63d84869d1f5bf67f1cc16fbea0ce7"
+    sha256 cellar: :any,                 sonoma:        "eb9926b85d1ba6364f317753ef6bbff66e60935d6acebbe0dbf760a2773357ab"
+    sha256 cellar: :any,                 ventura:       "9d91490539a030c77b1110b8c0a66a5a82ba7f904c958a3eff9b436e56f5f10c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f59435fcac44fa0fb975fe0f65fbc6a2d93649c97b004fff1decd049dbc43517"
   end
 
   depends_on "gettext" => :build
@@ -29,19 +29,25 @@ class YelpTools < Formula
   uses_from_macos "libxslt"
 
   resource "lxml" do
-    url "https://files.pythonhosted.org/packages/2b/b4/bbccb250adbee490553b6a52712c46c20ea1ba533a643f1424b27ffc6845/lxml-5.1.0.tar.gz"
-    sha256 "3eea6ed6e6c918e468e693c41ef07f3c3acc310b70ddd9cc72d9ef84bc9564ca"
+    url "https://files.pythonhosted.org/packages/ef/f6/c15ca8e5646e937c148e147244817672cf920b56ac0bf2cc1512ae674be8/lxml-5.3.1.tar.gz"
+    sha256 "106b7b5d2977b339f1e97efe2778e2ab20e99994cbb0ec5e55771ed0795920c8"
   end
 
   resource "yelp-xsl" do
-    url "https://download.gnome.org/sources/yelp-xsl/42/yelp-xsl-42.0.tar.xz"
-    sha256 "29b273cc0bd16efb6e983443803f1e9fdc03511e5c4ff6348fd30a604d4dc846"
+    url "https://download.gnome.org/sources/yelp-xsl/42/yelp-xsl-42.1.tar.xz"
+    sha256 "238be150b1653080ce139971330fd36d3a26595e0d6a040a2c030bf3d2005bcd"
+  end
+
+  resource "mallard-rng" do
+    url "https://deb.debian.org/debian/pool/main/m/mallard-rng/mallard-rng_1.1.0.orig.tar.bz2"
+    sha256 "66bc8c38758801d5a1330588589b6e81f4d7272a6fbdad0cd4cfcd266848e160"
   end
 
   def install
-    venv = virtualenv_create(libexec, "python3.13")
-    venv.pip_install resource("lxml")
-    ENV.prepend_path "PATH", venv.root/"bin"
+    resource("mallard-rng").stage do
+      system "./configure", "--disable-silent-rules", *std_configure_args(prefix: libexec)
+      system "make", "install"
+    end
 
     resource("yelp-xsl").stage do
       system "./configure", "--disable-silent-rules", *std_configure_args
@@ -49,10 +55,17 @@ class YelpTools < Formula
       ENV.append_path "PKG_CONFIG_PATH", share/"pkgconfig"
     end
 
+    venv = virtualenv_create(libexec, "python3.13")
+    venv.pip_install resource("lxml")
+    ENV.prepend_path "PATH", venv.root/"bin"
+
     system "meson", "setup", "build", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"
     rewrite_shebang python_shebang_rewrite_info(venv.root/"bin/python"), *bin.children
+
+    xml_catalog_files = libexec/"etc/xml/mallard/catalog"
+    bin.env_script_all_files(libexec/"bin", XML_CATALOG_FILES: "${XML_CATALOG_FILES:-#{xml_catalog_files}}")
   end
 
   test do

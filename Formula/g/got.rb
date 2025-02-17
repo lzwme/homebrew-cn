@@ -1,8 +1,8 @@
 class Got < Formula
   desc "Version control system"
   homepage "https://gameoftrees.org/"
-  url "https://gameoftrees.org/releases/portable/got-portable-0.108.tar.gz"
-  sha256 "6c8d320add3587ae47c06da32d41fee4087ed661931ba64dc6de77bf432bd3e2"
+  url "https://gameoftrees.org/releases/portable/got-portable-0.109.tar.gz"
+  sha256 "22d2dd54e15bc63fa0e55b289b4d587a43db33672414213c2ef718c5332c6a81"
   license "ISC"
 
   livecheck do
@@ -11,12 +11,12 @@ class Got < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "4b317fd1541850813b3fefa9b723827aa5c3872d84cba8e15c9f426909e702b0"
-    sha256 arm64_sonoma:  "6f4e689ee764bfa52c9d1327479ccd2e8d738914fd4c9d1a147630eb1b768ce8"
-    sha256 arm64_ventura: "041c1bb1a98f5ee4a5255a308926a1bd07096f9f8f3d3de5f176dda51abfd19c"
-    sha256 sonoma:        "4894907eed2a19ad3ca85f431a08120494cb7cb8fb17e7cda895171f4487edac"
-    sha256 ventura:       "8e087740c4353eeaf57a8e3af87dbac09a212fd70fd4796f2265064ff7e8f35b"
-    sha256 x86_64_linux:  "3674927819e58479337e7b5c9c4c451496cb446b0fb0d40bc2dd9708d872dafb"
+    sha256 arm64_sequoia: "77f6fd1aeb61eb78b4de7248bd401034316db1d6824faa0ec983b01fd6749f7f"
+    sha256 arm64_sonoma:  "59ff98e5deb2562b153c8abf3a0f112bc09e645588bfcdb3a10cb448c00fc5d8"
+    sha256 arm64_ventura: "8b2fdefa811cd339365e682681ce7b3d66f2a75e4e8a0be7ee52bb749c5a5ebe"
+    sha256 sonoma:        "5702ddc87e6a05505358e82d658cffc1e21f5d79b394336d76a1d84798de0fda"
+    sha256 ventura:       "64101d4f757ccca917976887bd4a502a629ab190216c5b5f7d750c2eac43f297"
+    sha256 x86_64_linux:  "b1b25611d17af76ded04cfc4ad0a56530b60a6497cefead881ea979915f650fd"
   end
 
   depends_on "bison" => :build

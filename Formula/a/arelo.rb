@@ -1,18 +1,18 @@
 class Arelo < Formula
   desc "Simple auto reload (live reload) utility"
   homepage "https:github.commakiuchi-darelo"
-  url "https:github.commakiuchi-dareloarchiverefstagsv1.14.0.tar.gz"
-  sha256 "44f014aece1c9032dcf887b8186701d003d87fd89609f738d70784c5e984d1dd"
+  url "https:github.commakiuchi-dareloarchiverefstagsv1.14.1.tar.gz"
+  sha256 "ad01be3582f0a89fc74907b488a1d19467c24c65f53415cf4e05a62fca58a6bb"
   license "MIT"
   head "https:github.commakiuchi-darelo.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "975eb1633c6ffcee068cea3aa392dfa28173111b0a4ddba8317b9aecc3beacef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "975eb1633c6ffcee068cea3aa392dfa28173111b0a4ddba8317b9aecc3beacef"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "975eb1633c6ffcee068cea3aa392dfa28173111b0a4ddba8317b9aecc3beacef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "82c759c685e7c8f2cd5ee2b5af91d8a0036218c080c336b3657c153ed6eef8a2"
-    sha256 cellar: :any_skip_relocation, ventura:       "82c759c685e7c8f2cd5ee2b5af91d8a0036218c080c336b3657c153ed6eef8a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ad820c73cac71c8c312e2f61db8d284eb91fdab5678eb20f91dc41658de4854"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "004dda4498091c9e31eed59807f4c927f4a6bb691f97102604c7f81e6dc3f32c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "004dda4498091c9e31eed59807f4c927f4a6bb691f97102604c7f81e6dc3f32c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "004dda4498091c9e31eed59807f4c927f4a6bb691f97102604c7f81e6dc3f32c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b8656cef98a651a508f92fb61044308241002f8e8804b3ddc8922a4efc26cc9d"
+    sha256 cellar: :any_skip_relocation, ventura:       "b8656cef98a651a508f92fb61044308241002f8e8804b3ddc8922a4efc26cc9d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00a84420a3ed2428661d3a81a173872cce1aeea4a6ca383e11ba48a047f557cc"
   end
 
   depends_on "go" => :build

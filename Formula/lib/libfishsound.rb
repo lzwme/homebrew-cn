@@ -1,46 +1,30 @@
 class Libfishsound < Formula
   desc "Decode and encode audio data using the Xiph.org codecs"
-  homepage "https:xiph.orgfishsound"
-  url "https:downloads.xiph.orgreleaseslibfishsoundlibfishsound-1.0.0.tar.gz", using: :homebrew_curl
-  mirror "https:ftp.osuosl.orgpubxiphreleaseslibfishsoundlibfishsound-1.0.0.tar.gz"
-  sha256 "2e0b57ce2fecc9375eef72938ed08ac8c8f6c5238e1cae24458f0b0e8dade7c7"
+  homepage "https://xiph.org/fishsound/"
+  url "https://downloads.xiph.org/releases/libfishsound/libfishsound-1.0.1.tar.gz", using: :homebrew_curl
+  mirror "https://ftp.osuosl.org/pub/xiph/releases/libfishsound/libfishsound-1.0.1.tar.gz"
+  sha256 "03eb1601e2306adc88c776afdf212217c6547990d2d0f9ca544dad9a8a9dbb8f"
   license "BSD-3-Clause"
 
   livecheck do
-    url "https:ftp.osuosl.orgpubxiphreleaseslibfishsound?C=M&O=D"
-    regex(href=.*?libfishsound[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://ftp.osuosl.org/pub/xiph/releases/libfishsound/?C=M&O=D"
+    regex(/href=.*?libfishsound[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "0a0f168b3c4eff67acabafddabd5761b2ec933f888da5be15e50076afa9d4e29"
-    sha256 cellar: :any,                 arm64_sonoma:   "400dcecfd4285d5914d8a94217969cd7306051beeaa3d54fde5d93058e620297"
-    sha256 cellar: :any,                 arm64_ventura:  "adb772f247d86852efce4345ef9a4d7496648412c5233e6417476256b531ddef"
-    sha256 cellar: :any,                 arm64_monterey: "04042bd85b176dc50f99153f267fae3e5f82176ad010aaccff0c71d1434ab550"
-    sha256 cellar: :any,                 arm64_big_sur:  "3ec17aed1c22c99831e01e1938bf9b240439f45c130422dd90e06ccd8a57cd74"
-    sha256 cellar: :any,                 sonoma:         "b52e1edac05246c7c500c250f61c33e1908c713d121c8ed4096ff7aa1d3ff6b6"
-    sha256 cellar: :any,                 ventura:        "05f682b7c9612e5a31bb0cef75d324aa20ade7c5cf205a3999d973a3f7fb80bd"
-    sha256 cellar: :any,                 monterey:       "7c299a38462e967259b6e396193585bf37c2a0d5bbce0e4dbbff32b15e9ed102"
-    sha256 cellar: :any,                 big_sur:        "a1ae8b29698509de3de412402ce463cf32a08573348526dc42020731fdaff314"
-    sha256 cellar: :any,                 catalina:       "5599c6eaed21c2f66ebb8209ca8e436fd306214de6d9db6ccf21bd9c2710e1b7"
-    sha256 cellar: :any,                 mojave:         "f232242d49e8c2ae954e282e879e4a4a86b80d3e46364d74247af92efd613d96"
-    sha256 cellar: :any,                 high_sierra:    "726c79b6e3ce5d71e9cf1d6b556a6daed33b5e8bd7269e2219b1474549dac17d"
-    sha256 cellar: :any,                 sierra:         "50187bc6adea9322f20e1706d66859c941d6d2e8d1d8bfab091f088b20061760"
-    sha256 cellar: :any,                 el_capitan:     "9cf94c3c6963895940e8720aef21c29b001257c918fce6b65685c33f8430f0e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5db56944c47f7f4084a4645ef252841be006ad54ee48fb55530eda206e6732c3"
+    sha256 cellar: :any,                 arm64_sequoia: "316f6dd41ed7a843e382feacdaae02401cdf541c064f6802b95678aa1457a6d2"
+    sha256 cellar: :any,                 arm64_sonoma:  "fde7d0521745d9a556999337b24fac1422d8f1c07302de7be5d892157dc88c5f"
+    sha256 cellar: :any,                 arm64_ventura: "4fe1b44bee66fc57a820a3838cc0d38cf410b1f22a88c56dd996072edff460de"
+    sha256 cellar: :any,                 sonoma:        "dc4573276c3c89484244b1ab2b121ab7d954d6e360c1a0e170dcaceb6d829e24"
+    sha256 cellar: :any,                 ventura:       "a6ff774dad2e7d8bd2d46a33192b0aa1d53f6b34a6fbf49da9cc7a5d2718fd65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfaa33c5d408f6f60308bc962a9815b0456de64c8f559c797589ab3f4118f4c3"
   end
 
   depends_on "pkgconf" => :build
   depends_on "libvorbis"
 
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
-    sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
-  end
-
   def install
-    system ".configure", *std_configure_args
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 end

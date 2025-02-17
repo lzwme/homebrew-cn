@@ -1,8 +1,8 @@
 class Ocamlbuild < Formula
   desc "Generic build tool for OCaml"
   homepage "https:github.comocamlocamlbuild"
-  url "https:github.comocamlocamlbuildarchiverefstags0.16.0.tar.gz"
-  sha256 "104fa954c28a6d731674f2844e3f0c87b08db51d38f4ea25f4653bb60ef2e8f1"
+  url "https:github.comocamlocamlbuildarchiverefstags0.16.1.tar.gz"
+  sha256 "2ba6857f2991b7f69368e8db818b163d31cf5a367f15f5953bf8f01a77b3d4fc"
   license "LGPL-2.0-only" => { with: "OCaml-LGPL-linking-exception" }
   head "https:github.comocamlocamlbuild.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Ocamlbuild < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "08cc2b5b68add1540e18daea2f78816ef97d8f3010bf79271eda532a24cf8554"
-    sha256 arm64_sonoma:  "64a005e1fb2d0b38cfbce962e7320e2d7ab63f4f8d2eba3c1f4ced0a1db5ad54"
-    sha256 arm64_ventura: "6635f2766e9079b483b30dbd39d49af0a1571149e7e3ed86276a2ffb910eba2a"
-    sha256 sonoma:        "65c4df3a62eb2d689bdc34e94a0ada93ad2f3d056a23260795f55a0a9410fd25"
-    sha256 ventura:       "128d7aead5beb36f0633f3d2ca7374f8c85c5045a9264331a3e91b37567a6126"
-    sha256 x86_64_linux:  "d34295292a90e8ee00d73e2d8cfed013e34d676c8032246d9ad5011249c04c06"
+    sha256 arm64_sequoia: "d102e1f07c6ccb751e1923efcd604fb73bbc46bcf4c5a71c9aab572200f62cb8"
+    sha256 arm64_sonoma:  "e852cc2b3119c4b0d0cc5fb252d2f637ca0733e59500574ce07998bf72bbce35"
+    sha256 arm64_ventura: "c882d5db337ec2c28a818c1060945ec5a0944e0c4c4596504ad229ff59a17f2f"
+    sha256 sonoma:        "7caad9fb8e6256e894222ad3ebf15d9e0a5fb540e461032d5cdf74abafa09dcb"
+    sha256 ventura:       "6000d51b9774218b3e11998c0230a140e12b1eb373f124e6c12bf875d80741a8"
+    sha256 x86_64_linux:  "664739d1911bb25c0a5375231fe48dd950acfd5e85e1f59154b5de9c01368e08"
   end
 
   depends_on "ocaml"
