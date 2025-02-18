@@ -1,18 +1,18 @@
 class Fizz < Formula
   desc "C++14 implementation of the TLS-1.3 standard"
   homepage "https:github.comfacebookincubatorfizz"
-  url "https:github.comfacebookincubatorfizzreleasesdownloadv2025.02.10.00fizz-v2025.02.10.00.tar.gz"
+  url "https:github.comfacebookincubatorfizzreleasesdownloadv2025.02.17.00fizz-v2025.02.17.00.tar.gz"
   sha256 "8773e707a4fb219086b3c9f26600d6ef93aa08b2ddaa0ea51850f45048d7f84d"
   license "BSD-3-Clause"
   head "https:github.comfacebookincubatorfizz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e72bed90bb7fe6401d1f5e26f37454aad7450f69e9735a290bfd50897a95feaa"
-    sha256 cellar: :any,                 arm64_sonoma:  "bc2ee3e55eba735eafdf76a9a18ff3a88bf19ef8261b43baf1a10358f607aa5c"
-    sha256 cellar: :any,                 arm64_ventura: "86d6c727ccb9a7e177b99f28fd31c16a3006ea43a5d7a9b26f3400dfc194d013"
-    sha256 cellar: :any,                 sonoma:        "ec9d39872aac68eadf700538d10ec62c96d0496005afcb139eb1c1abaf792728"
-    sha256 cellar: :any,                 ventura:       "c77f96a02a7d9a5ec9dd930af36348046fb26dd5ca3f3ff1b0ffa6e47c3871e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b06070ec0a3012c17dd2ce8eaf0a03c6b6fb7bef548b274eec752e3e19ca3b96"
+    sha256 cellar: :any,                 arm64_sequoia: "258a5a08314f6e92f6a42b25ed6874e9977fcceae793b86fd9311a1e5f88290a"
+    sha256 cellar: :any,                 arm64_sonoma:  "036b794877e9a0f75b8e78b59b68afe46ccbdf6979241f02111f5f971c3e9b15"
+    sha256 cellar: :any,                 arm64_ventura: "57ea1fb8b1af06080457b432346b3d2a15f0cf0bc9b08ddc82695377acef9260"
+    sha256 cellar: :any,                 sonoma:        "147fc24a267d2cd0b1412a6d791a305e3317df8d8cbeb59db115ceea235089db"
+    sha256 cellar: :any,                 ventura:       "46236e6bcafdc1d78205f552dd2b349c11598700eb7afff5c838df0c81e7586b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14ab98781f3d33a49260caf9c8d54feabc5531da5ba077edb9d4ee94e859ea9e"
   end
 
   depends_on "cmake" => [:build, :test]

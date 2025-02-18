@@ -1,9 +1,9 @@
 class Libtrace < Formula
   desc "Library for trace processing supporting multiple inputs"
   homepage "https:github.comLibtraceTeamlibtrace"
-  url "https:github.comLibtraceTeamlibtracearchiverefstags4.0.27-1.tar.gz"
-  version "4.0.27"
-  sha256 "68441ff9152f4c52f094480320417b2a157dd8e7f3532a619ec5bb890ea949bf"
+  url "https:github.comLibtraceTeamlibtracearchiverefstags4.0.28-1.tar.gz"
+  version "4.0.28"
+  sha256 "94406738d590a4a65172dcb1a1957f00781b793398f212e35e8119598ff95bcc"
   license all_of: ["GPL-2.0-or-later", "LGPL-3.0-or-later"]
 
   livecheck do
@@ -15,12 +15,12 @@ class Libtrace < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0a7c74fac12db97c5ddad96cacba7901ae88cafa728c6cb1557df8c8f0aae276"
-    sha256 cellar: :any,                 arm64_sonoma:  "c9fae135e6826672a3b3bcabd0231976a27d3eb04e8f9c4bfed4bcca0c99a4f5"
-    sha256 cellar: :any,                 arm64_ventura: "51768fc77d5e92cfe1b0607af347803d1cc4de47908a542515461bb8183591c4"
-    sha256 cellar: :any,                 sonoma:        "3bd010c9886d69bd850ef700f828f113f4ebff75e472ef53ce7dee354ee65a1d"
-    sha256 cellar: :any,                 ventura:       "0f0002e2f6d990f2a7c8816416ed00043b296c71bb0c1b659c7ecb20a53de07a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b623ca7363e69a6395643acec0e2e87e10b53362b3cd5c4aaff9e8459d67fda"
+    sha256 cellar: :any,                 arm64_sequoia: "33385a076780758c33ac37e59d3667304c9733792265ceaf9c7a9c5453a628e6"
+    sha256 cellar: :any,                 arm64_sonoma:  "5fa670f301736144c77b8bb1c88aae1aff35c1dd5fe0bcb260a086946c14b646"
+    sha256 cellar: :any,                 arm64_ventura: "f924814b1274c1d3d21471eb9c49ab2efb61f75e22a61557b7dbbb14d0f7d088"
+    sha256 cellar: :any,                 sonoma:        "21c92f7c30fdf1fa0ed6aabd48b1777c0fe252dbc73106cb7be465de8ef840e6"
+    sha256 cellar: :any,                 ventura:       "a5980413f55fefc4f1754526e060520257aae1f70f322d5da291d4ab0501526f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb7b948eb96dd83e18188176de55f4964f1d2e27e8f8a3bfab6a6275f99a9cdc"
   end
 
   depends_on "autoconf" => :build

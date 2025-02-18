@@ -193,6 +193,7 @@ Homebrew-homebrew-core/Formula/a/aptly.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aptos.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aqbanking.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aqtinstall.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/aqua.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/arabica.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/arangodb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aravis.rb, Homebrew/homebrew-core, 1
@@ -1470,6 +1471,7 @@ Homebrew-homebrew-core/Formula/d/docker-slim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docker-squash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dockerfile-language-server.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dockerfilegraph.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dockerize.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dockly.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dockutil.rb, Homebrew/homebrew-core, 1
@@ -3058,6 +3060,7 @@ Homebrew-homebrew-core/Formula/j/jsonpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jsonrpc-glib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jsonschema2pojo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jsontoolkit.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/j/jsrepo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jsvc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jtbl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jthread.rb, Homebrew/homebrew-core, 0
@@ -7065,6 +7068,7 @@ Homebrew-homebrew-core/Formula/w/wellington.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wemux.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/werf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/west.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/wfa2-lib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wgcf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wget.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wget2.rb, Homebrew/homebrew-core, 0

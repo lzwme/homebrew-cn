@@ -1,17 +1,17 @@
 class Gaze < Formula
   desc "Execute commands for you"
   homepage "https:github.comwtetsugaze"
-  url "https:github.comwtetsugazearchiverefstagsv1.2.0.tar.gz"
-  sha256 "d5aec83c31e892acb8ee2c2e04a80d4a465ef76253391d4047b9de161b869868"
+  url "https:github.comwtetsugazearchiverefstagsv1.2.1.tar.gz"
+  sha256 "ba2878f5b0ddd385afbe6c8b3fcf92acdcd722113b97e52d2fafc53ee3cef918"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1bad9012985c147353807f307eceb3637b79520c6631c015b8b6b695583be96d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1bad9012985c147353807f307eceb3637b79520c6631c015b8b6b695583be96d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1bad9012985c147353807f307eceb3637b79520c6631c015b8b6b695583be96d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "10d94693513e71beca63ac0ba9da572831d2763f665fc86b1d5be7a4723e8fa8"
-    sha256 cellar: :any_skip_relocation, ventura:       "10d94693513e71beca63ac0ba9da572831d2763f665fc86b1d5be7a4723e8fa8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40d765ab4b2954432d9cc23f3c551d02e2290da5cfd1225db0db62df90cfccf6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86b270f20437476abf6aa88f367b734e8176376cfd491bdcb83c657388b612e4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "86b270f20437476abf6aa88f367b734e8176376cfd491bdcb83c657388b612e4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "86b270f20437476abf6aa88f367b734e8176376cfd491bdcb83c657388b612e4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8165d4fde34b016e36c5455ee3578c475e90e6e13e21f14f07e67738a4ffa4fd"
+    sha256 cellar: :any_skip_relocation, ventura:       "8165d4fde34b016e36c5455ee3578c475e90e6e13e21f14f07e67738a4ffa4fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5704cda4c55581a1a1c2fbf7e6cce916ad75276ac2bbde5b2389823c0c2f6cdd"
   end
 
   depends_on "go" => :build

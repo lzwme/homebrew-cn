@@ -1,17 +1,17 @@
 class Symengine < Formula
   desc "Fast symbolic manipulation library written in C++"
   homepage "https:www.sympy.orgenindex.html"
-  url "https:github.comsymenginesymenginearchiverefstagsv0.13.0.tar.gz"
-  sha256 "f46bcf037529cd1a422369327bf360ad4c7d2b02d0f607a62a5b09c74a55bb59"
+  url "https:github.comsymenginesymenginearchiverefstagsv0.14.0.tar.gz"
+  sha256 "11c5f64e9eec998152437f288b8429ec001168277d55f3f5f1df78e3cf129707"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ab15943b07b49eef917b3b107764f52fd7f8952e428a7b2af8a10241c4e58194"
-    sha256 cellar: :any,                 arm64_sonoma:  "ced7720251ccbc29f375dd0f71133bfd1981c11ba3db7521536f3c0c6594db1f"
-    sha256 cellar: :any,                 arm64_ventura: "e15d6d50c5d13cd087bff7e030bc8f18ebcab6241790977b022f7d00d6a562d5"
-    sha256 cellar: :any,                 sonoma:        "ac919504afc4391b943682f3d582c133a9ff209a229cf7c2c92f0cf50809cb05"
-    sha256 cellar: :any,                 ventura:       "a98d934c888a9aca724d592b54c40f3522c3f757245cfa1f9417e3508ebf9c2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4da25736de0ce6db3ae9ca178d5b0d421879dcc03bd83eaaa6d0920dd069e676"
+    sha256 cellar: :any,                 arm64_sequoia: "1093eac02a81bf30400cfc0b28194d530ae61368216873af5b9824d2a7100b3e"
+    sha256 cellar: :any,                 arm64_sonoma:  "6b9be76401992e79f0ddf186746ff54f2ea2756edb48f0df53f46fac0c57d547"
+    sha256 cellar: :any,                 arm64_ventura: "347528d194e04b1e457adc403b70d7a87817246018d21b5045cdcadaf23c4eab"
+    sha256 cellar: :any,                 sonoma:        "3396e3a400feb30be0be6bf7baf8fd9ca4614753f551bf206c5a848414df347f"
+    sha256 cellar: :any,                 ventura:       "8204889f800fe9b42941140d81271ac3d8fcdf704dbe3e62ea730a51615f1443"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e50c7116028e7df7b0556e9f256423ccf7705763c783eaef5dd8873958edb291"
   end
 
   depends_on "cereal" => :build

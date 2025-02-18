@@ -1,8 +1,8 @@
 class I2p < Formula
   desc "Anonymous overlay network - a network within a network"
   homepage "https:geti2p.net"
-  url "https:github.comi2pi2p.i2preleasesdownloadi2p-2.7.0i2psource_2.7.0.tar.bz2"
-  sha256 "54eebdb1cfdbe6aeb1f60e897c68c6b2921c36ce921350d45d21773256c99874"
+  url "https:github.comi2pi2p.i2parchiverefstagsi2p-2.8.1.tar.gz"
+  sha256 "e41d586c6d68735ece638459a8f3954581e1eefded9a810e56fbb26fe95f6893"
   license :cannot_represent
 
   livecheck do
@@ -11,12 +11,12 @@ class I2p < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "343b650514b2a3256bcbaeda5a89f4e869d201460cb62daf724d76b173e345b3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "57db7082ff0f054a016877f123ee9bca2a2f1351e51e98979f23875b5bb767ea"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a394ee6a32b5bb05261f0ee7a41b61e12a5eeeb34fcc033b650df197bffca15d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a85e7c921aa09030fd3058a358d67b591183fa3616a985255a7f3f7015bbf882"
-    sha256 cellar: :any_skip_relocation, ventura:       "4561da032d1b0fb02e77434304a6accd15db7946698e30700e2638e545135ae7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c3f813ed31c1ca74d9936d39c62ef573c1c96e6802ee8bae3c6292eab8ef7ea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd86478ec232802b19bb9ed3edfd106c16c0406fe04d54e35faee5a4b172fc20"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8a9dcc6ef3766be3330b819a749ff0eb6cc132a8b876fc47371aec9e6b735c4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7354dc5211c8a5a3f89eb165648b3c62d891f3b6ba0ac0184a6234b30d467b98"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4570ad4e3e3cab9c57a2118e2b4f96904af8304d1df4ac4ba19d0a32d3b5e50d"
+    sha256 cellar: :any_skip_relocation, ventura:       "dc4ee1a92a6e3c10657f0a170f6ca9430bc9ab0481e077195d3cd6ef23dbf5a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84964e56cd7ada0f7721a9f14175d6ac85559a5701a176e092eda67d2bee521e"
   end
 
   depends_on "ant" => :build

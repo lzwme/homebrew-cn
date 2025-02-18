@@ -1,9 +1,9 @@
 class Logtalk < Formula
   desc "Declarative object-oriented logic programming language"
   homepage "https:logtalk.org"
-  url "https:github.comLogtalkDotOrglogtalk3archiverefstagslgt3890stable.tar.gz"
-  version "3.89.0"
-  sha256 "78174128b65713c1ba33b8c3249cafd9fcc36d175bd077946cdb928693505e2b"
+  url "https:github.comLogtalkDotOrglogtalk3archiverefstagslgt3891stable.tar.gz"
+  version "3.89.1"
+  sha256 "6ebca8de86b6589cd7cceede6200049c4bb267e8c563702d58bd5c56c9944f12"
   license "Apache-2.0"
   head "https:github.comLogtalkDotOrglogtalk3.git", branch: "master"
 
@@ -13,12 +13,12 @@ class Logtalk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "282159ae479f934271a7ce10cb245d030e436f98e54bd7c86b32646f9cf07c36"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8ba61e29d620300eb4264b17fa0c1e234107ef0460f971288b4a914c50bb564"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "23df59e2602c5306bcfb2b95b259fb3cb9d107c61a4b4c77e4aa8b3be49d56b8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d96b2319cc3a807c9d4ab78db2066fb02e9320b4f3214dc7cbbcd0be63de2aa7"
-    sha256 cellar: :any_skip_relocation, ventura:       "b57ec5b770e678d0e220f905855691dac1d15f11a25623d73af144764225fd95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59a89e5adf20b7efdea3e4a10eca4d6414d5e8b8a6f48645c0605ae3c7ddfea5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27f09bd805c653a73a144ab9be9f01450d819e580088be20b885522f75ee0e46"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d19e0b16d9d7862d8a389a277d1c1bbe079764c0f747219a6c9c88c6ce167a1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c1023d16c0b2132746b0fc01c9e7d55667ffb70b0d965672515d5f35a384ca2e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5f7db918dd58eb18cdb664f9c1d7faa81f2530bc7c3165294591c901888aec60"
+    sha256 cellar: :any_skip_relocation, ventura:       "615de0b1780e08654babf7278b844d53422a493dd688c65abacb442b42df6ecd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b726616b45c37b3eb1a760f452372a1654c69c8f1b3149992d770fef95d7cb1a"
   end
 
   depends_on "gnu-prolog"

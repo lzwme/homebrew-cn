@@ -1,18 +1,18 @@
 class Slackdump < Formula
   desc "Export Slack data without admin privileges"
   homepage "https:github.comrusqslackdump"
-  url "https:github.comrusqslackdumparchiverefstagsv3.0.6.tar.gz"
-  sha256 "d31780da1c7426c7d84b8c410976051a76e1608a09dbff8aee712a55e5a90397"
+  url "https:github.comrusqslackdumparchiverefstagsv3.0.7.tar.gz"
+  sha256 "b529e796888bbccbd00385cc40c3a062b7ad5b86e7008d9c9ba5da15a9cd6976"
   license "GPL-3.0-only"
   head "https:github.comrusqslackdump.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "604984a0a5c960c3d0be14c2e3b8742094931ab4d9855c92d1550d70a2239d65"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "604984a0a5c960c3d0be14c2e3b8742094931ab4d9855c92d1550d70a2239d65"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "604984a0a5c960c3d0be14c2e3b8742094931ab4d9855c92d1550d70a2239d65"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bbe2c8b0be234d96571c828eee9126c7175b0d336eacfcdf1a100882f9b2f84e"
-    sha256 cellar: :any_skip_relocation, ventura:       "bbe2c8b0be234d96571c828eee9126c7175b0d336eacfcdf1a100882f9b2f84e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9d26306755a5ac72d0d9f32a8e17d91c313961fb7afd88b3d470bf04ed7ee70"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34ecfb5ee1c0072cef53813d5ae1094a43ff851ee8784af77f4c6712ea054df3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "34ecfb5ee1c0072cef53813d5ae1094a43ff851ee8784af77f4c6712ea054df3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "34ecfb5ee1c0072cef53813d5ae1094a43ff851ee8784af77f4c6712ea054df3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "87bba95573ce8cb21b32d045cd68e6ca498a2156a8e0e3bd67da3bea4889c0cc"
+    sha256 cellar: :any_skip_relocation, ventura:       "87bba95573ce8cb21b32d045cd68e6ca498a2156a8e0e3bd67da3bea4889c0cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07388d163a8eb81460e38e38a69852764f78e72acad9ffc614fe873b50207e7e"
   end
 
   depends_on "go" => :build

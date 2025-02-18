@@ -1,10 +1,9 @@
 class S2geometry < Formula
   desc "Computational geometry and spatial indexing on the sphere"
   homepage "https:github.comgoogles2geometry"
-  url "https:github.comgoogles2geometryarchiverefstagsv0.11.1.tar.gz"
-  sha256 "bdbeb8ebdb88fa934257caf81bb44b55711617a3ab4fdec2c3cfd6cc31b61734"
+  url "https:github.comgoogles2geometryarchiverefstagsv0.12.0.tar.gz"
+  sha256 "c09ec751c3043965a0d441e046a73c456c995e6063439a72290f661c1054d611"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url :homepage
@@ -12,14 +11,12 @@ class S2geometry < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "42a3c92e44c8a87963d691a53ef3ea50efeb0aeef11e4678af4e58f4cf673995"
-    sha256 cellar: :any,                 arm64_sonoma:   "182a06b04d14b0bbfec1bd35d4b1dc70f19fad84a83886fb206e2867a230c5bf"
-    sha256 cellar: :any,                 arm64_ventura:  "93b5347b89211b4644a76a6f2295cb67bbbe7a39d02d2db417b6bde16555d787"
-    sha256 cellar: :any,                 arm64_monterey: "2f48215b6cbe1a2adc02816547f5e74451834d8699ec930561cdef84400b3c03"
-    sha256 cellar: :any,                 sonoma:         "925bb60f693beab6ecb42552c015359e83c228ff9e2830daf392ea30fe30a4c9"
-    sha256 cellar: :any,                 ventura:        "eb04ac86cf47797fbe79dbf6f0d47bef60989751856b90f8d687fb38ed92a0ad"
-    sha256 cellar: :any,                 monterey:       "01e0d337b9c57c8143bdafb2f8f669992dd4bf9aa74f7d010bed080ad30ab04f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6134ee01fed57ff44842e5131ae7844e0f152c08679aa65a6c6cbdfedd8d5cda"
+    sha256 cellar: :any,                 arm64_sequoia: "42509d7410e496dac516d3860660972ee3891b85539a709f552250cb67413b85"
+    sha256 cellar: :any,                 arm64_sonoma:  "497a78de8feeecc24682e19e09810b564706648ff28ee2b80eb5c27fbf1d6b1e"
+    sha256 cellar: :any,                 arm64_ventura: "13d05f9f88513c578e73b063b23f9f6a9df5174531f0217f7ae991677179ad38"
+    sha256 cellar: :any,                 sonoma:        "c88b904bd6591a0f13524e1e591eb5f8983f852c753636e7d84a516b9a1549eb"
+    sha256 cellar: :any,                 ventura:       "df84f8602037761b8285f3124a9e46648ba0d71bfa24b794ac3a6d740db0454d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "669ca453ee0a13bf1d08e201a35633dd38bf95844069f46bf61d116640b3f25f"
   end
 
   depends_on "cmake" => [:build, :test]

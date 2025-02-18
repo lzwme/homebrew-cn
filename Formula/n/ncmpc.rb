@@ -1,8 +1,8 @@
 class Ncmpc < Formula
   desc "Curses Music Player Daemon (MPD) client"
   homepage "https://www.musicpd.org/clients/ncmpc/"
-  url "https://www.musicpd.org/download/ncmpc/0/ncmpc-0.51.tar.xz"
-  sha256 "e74be00e69bc3ed1268cafcc87274e78dfbde147f2480ab0aad8260881ec7271"
+  url "https://www.musicpd.org/download/ncmpc/0/ncmpc-0.52.tar.xz"
+  sha256 "3af225496fe363a8534a9780fb46ae1bd17baefd80cf4ba7430a19cddd73eb1a"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Ncmpc < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "068010e9a68c7d84e1f13932f9dd4adf3d28b0ff95044b30d6c3fe4740134a20"
-    sha256 arm64_sonoma:  "2437913591f67d021d4b1f54c5f93922ec4d104d6f209b4c3736e574e4e4c23b"
-    sha256 arm64_ventura: "f747b415b0fb6a890d55de13a7aeb311ce5900cca982acea9b944762746a786f"
-    sha256 sonoma:        "ceaa62c8a78fe27663c8bb10ac84ede19dd234d907374b15ae768b5011671d43"
-    sha256 ventura:       "4038a0781b9b7344d336e603e87c3e2ccb11e2ed295731258e626fe7e7d53432"
-    sha256 x86_64_linux:  "3b17830a4d437b28793131d0d2c1a7a62f78fc630c745ca3446391c3bfd905bb"
+    sha256 arm64_sequoia: "3e4c3f1696738bc7953a5e066430fabe411a08ac18637c0055237f7fbec8461b"
+    sha256 arm64_sonoma:  "e6c82a7bfc8790701e5ae101608cd015c84f18f0a31e007b80ec5b3078555e62"
+    sha256 arm64_ventura: "f7c1bf501994b1028ab1fbd9ac4dd4d83c96bb3ab83b25b4ce8cf8f0e8f692fe"
+    sha256 sonoma:        "9d2b5eb8ff59ba6b5cf65df8c0106197cdfb69a7970198950e433407087c005b"
+    sha256 ventura:       "709d7f29cb41e2e081f09941a33fc2e49f9cb7bd47e9231acf8baf4869106cb0"
+    sha256 x86_64_linux:  "f47ead26271a682a4c3bff3720dce9a2ef700a80d92123477d7254056c2d1fb3"
   end
 
   depends_on "boost" => :build

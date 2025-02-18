@@ -1,18 +1,18 @@
 class Envd < Formula
   desc "Reproducible development environment for AIML"
   homepage "https:envd.tensorchord.ai"
-  url "https:github.comtensorchordenvdarchiverefstagsv0.4.3.tar.gz"
-  sha256 "4524206b20e371507bfc4d7eaaa631188e6542132d47638280a641c1656071a4"
+  url "https:github.comtensorchordenvdarchiverefstagsv1.0.1.tar.gz"
+  sha256 "2e2c437e97086642eb66afd5be4434e1cffb54eed5361bc9e26147d62f60fe8e"
   license "Apache-2.0"
   head "https:github.comtensorchordenvd.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e27cc64092b3fae645f85cc04fbedb4544db7e66f850fc287c932aac058df287"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "380655aaa5b9c458320bba15603fccaa8b37f97644ffdd2efb3be8d99a172709"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9670557698e24a077ff59e82056b210cf107ec8c458132969f0e5617f35304fc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "12b5bfe20ad6451276b6c5f51a509d76a8655ae401246f3d72b46d877f8f3231"
-    sha256 cellar: :any_skip_relocation, ventura:       "a760096210ca7768bb142e5529af18c416b3f69257bc7044219b18e96e45ccd1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2a078fe8d9d3ac1b0e3f91e988e98145d6f107483d531c2bf8b7f64ad0d44fc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f1f8852bd2195d598da6a86e594790cd01c25302a00a1bfeee9bd9d70dda360"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be6a21bc661656cd79347c9fa3cade01ab45c8e6ab0e47f611246b0b279ebd0c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "996506ee111508cd082f77153d9eac3e774ae430f8e34f697c7c73cb5ffeeacc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "efdb92e6412a34d8fbbbf4fee13f675dfffbaa4632d4acf25d724ada5bf1cc6e"
+    sha256 cellar: :any_skip_relocation, ventura:       "8aa234357c07f4a5669624b5ba7945b052db1d4c0bf38e03d5c331c061030095"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1eead99367973994188c7a971fd64aa4a4642bdbfd8d22463d4203c9e034013d"
   end
 
   depends_on "go" => :build

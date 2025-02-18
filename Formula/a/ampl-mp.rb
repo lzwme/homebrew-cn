@@ -1,8 +1,8 @@
 class AmplMp < Formula
   desc "Open-source library for mathematical programming"
   homepage "https:ampl.com"
-  url "https:github.comamplmparchiverefstagsv4.0.0.tar.gz"
-  sha256 "9ac4b03dd03285cfcf998d81b53410611dd3ba0515463b70980965ec51e29f0f"
+  url "https:github.comamplmparchiverefstagsv4.0.2.tar.gz"
+  sha256 "12b01027392bb1b657d43de3785dd33d6fd83b2e9a6c3190d6c670c844050290"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class AmplMp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "07c2f88aaeea323a876870c8c4fb107193cee09fc8e591cf39c9710812be85e7"
-    sha256 cellar: :any,                 arm64_sonoma:  "3daf4ac5b5d9765794ed359c5838c3e07183f7e209e962a4d30a0f2a8bf06062"
-    sha256 cellar: :any,                 arm64_ventura: "3984cfa43e3ec758a3d4cda736af4f70d51a55e4c8fbc271b691a3fc6a42e33d"
-    sha256 cellar: :any,                 sonoma:        "81efa3c47b7241ad4adf50e1a50653472de841337c8a72620b8b8015eda4ba02"
-    sha256 cellar: :any,                 ventura:       "d102b69020fdb1d2d0c49b2e4bb70498b154a1950533640b0dcfec0ab0069f8c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1548c6099ab8d8e657a0ab983deb4c7b4f1c32d0658f40c90336d7571e0b19ed"
+    sha256 cellar: :any,                 arm64_sequoia: "d16d465e947201a4a899c32a2bcebe0b7c0d01b3cd75a90e22be090c72ca99f4"
+    sha256 cellar: :any,                 arm64_sonoma:  "a2cdd6391aa7bed8a31de72b663cb4330400a6de125ecf3952e81118fda96775"
+    sha256 cellar: :any,                 arm64_ventura: "5bac1dd2f1ece8673455369d939542547419e7539a473a6158d0a137372659d7"
+    sha256 cellar: :any,                 sonoma:        "4d587a2d6d846dc717ed1011ffa314c41a248745d79a9d89374e94158d194f00"
+    sha256 cellar: :any,                 ventura:       "8a679cea3a7e0afbb132275170537c467cfaad703a05b3b4c9f3b0f99018312b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0baaeab25d92212b75ea817115aa2186adf0b19dadad895e8c9abd86440ba5c1"
   end
 
   depends_on "cmake" => :build

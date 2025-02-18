@@ -2,8 +2,8 @@ class Scorecard < Formula
   desc "Security health metrics for Open Source"
   homepage "https:github.comossfscorecard"
   url "https:github.comossfscorecard.git",
-      tag:      "v5.1.0",
-      revision: "b0143fc57d8d38748990027266de715052806f4b"
+      tag:      "v5.1.1",
+      revision: "cd152cb6742c5b8f2f3d2b5193b41d9c50905198"
   license "Apache-2.0"
   head "https:github.comossfscorecard.git", branch: "main"
 
@@ -16,12 +16,12 @@ class Scorecard < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3f7c03f1004fc26c16a67afebb2ecca61806733ebaee6505cad42dfc2ac756e9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f7c03f1004fc26c16a67afebb2ecca61806733ebaee6505cad42dfc2ac756e9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3f7c03f1004fc26c16a67afebb2ecca61806733ebaee6505cad42dfc2ac756e9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ebb0456b9d61894ede39f484ced49ff46f77897844cb72372891982539811742"
-    sha256 cellar: :any_skip_relocation, ventura:       "ebb0456b9d61894ede39f484ced49ff46f77897844cb72372891982539811742"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "747d5f1a5d383717e487cde6e80d55c70590954a5a613b4a80a16c9c9220569b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce30de52c69e14aebfafa7b3e444f535d23086698c7957bc2d485fe8574af53b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce30de52c69e14aebfafa7b3e444f535d23086698c7957bc2d485fe8574af53b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ce30de52c69e14aebfafa7b3e444f535d23086698c7957bc2d485fe8574af53b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "01c5ef2f4c26bfa9871482b527bc3b76bbeee8168abf3938065d7a8f1f9d999c"
+    sha256 cellar: :any_skip_relocation, ventura:       "01c5ef2f4c26bfa9871482b527bc3b76bbeee8168abf3938065d7a8f1f9d999c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3bd114bbac21e5885bccbdf061621b332879b1fd478b88c8e04d98c55691cc1d"
   end
 
   depends_on "go" => :build

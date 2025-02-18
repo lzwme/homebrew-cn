@@ -1,13 +1,14 @@
 class DependencyCheck < Formula
   desc "OWASP dependency-check"
   homepage "https:owasp.orgwww-project-dependency-check"
-  url "https:github.comjeremylongDependencyCheckreleasesdownloadv12.1.0dependency-check-12.1.0-release.zip"
+  url "https:github.comdependency-checkDependencyCheckreleasesdownloadv12.1.0dependency-check-12.1.0-release.zip"
   sha256 "0e5ba6ae58e753d5841048c6c8e495dbc4c7a4ea921a2b14daeac65195700532"
   license "Apache-2.0"
-  head "https:github.comjeremylongDependencyCheck.git", branch: "main"
+  head "https:github.comdependency-checkDependencyCheck.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7a544b181ccc16b74084bb1fa5f3da563a732bd64d824717879e334b19f58556"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "a566364f6c008c5b2597ee44e7a541db0d657067ae5223822118c162a44b577d"
   end
 
   depends_on "openjdk"
@@ -46,7 +47,7 @@ class DependencyCheck < Formula
     EOS
     system bin"dependency-check", "-P", "temp-props.properties", "-f", "XML",
               "--project", "dc", "-s", libexec, "-d", testpath, "-o", testpath,
-              "--nvdDatafeed", "https:jeremylong.github.ioDependencyCheckhb_nvd",
+              "--nvdDatafeed", "https:dependency-check.github.ioDependencyCheckhb_nvd",
               "--disableKnownExploited"
     assert_predicate testpath"dependency-check-report.xml", :exist?
   end

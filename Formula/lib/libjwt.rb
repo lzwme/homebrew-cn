@@ -1,8 +1,8 @@
 class Libjwt < Formula
   desc "JSON Web Token C library"
-  homepage "https:github.combenmcollinslibjwt"
-  url "https:github.combenmcollinslibjwtreleasesdownloadv2.1.1libjwt-2.1.1.tar.bz2"
-  sha256 "e50e7d88a5a6f04e3dbaffca5218869b7a14a26d8ecc9c791df858a1442a04d7"
+  homepage "https:libjwt.io"
+  url "https:github.combenmcollinslibjwtreleasesdownloadv3.2.0libjwt-3.2.0.tar.xz"
+  sha256 "17ee4e25adfbb91003946af967ff04068a5c93d6b51ad7ad892f1441736b71b9"
   license "MPL-2.0"
   head "https:github.combenmcollinslibjwt.git", branch: "master"
 
@@ -12,26 +12,24 @@ class Libjwt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "daa5896792307e4f7d10abe0d6cc7ddeb73f3d47aa0df00118084bee5bbb99e5"
-    sha256 cellar: :any,                 arm64_sonoma:  "a6d8c2b927ba2a9a2c714a0cad90679740117584a335d09148b27e266da2ad2d"
-    sha256 cellar: :any,                 arm64_ventura: "f1c799be3d920d4ce7733277a44068e149852e4160f01ed12b077443668a482b"
-    sha256 cellar: :any,                 sonoma:        "ea8e79823c9a61dc7c6e9baf5e22751eeac5d88d70f4a32b4d215ea461697128"
-    sha256 cellar: :any,                 ventura:       "abe2f477659a84800560e9e04f1cf75b3a1feedf8b546ce65f0d60c630bd3b6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "759f89d1e9d8b9ab0fa8fbaada2b5235855d52db35c6106bb4af23d31fb31452"
+    sha256 cellar: :any,                 arm64_sequoia: "5d4f3d28567daf4a427ff7d98aafa1a812e917159bf5da992a68d9c5cbde3402"
+    sha256 cellar: :any,                 arm64_sonoma:  "a7af31abe96a7a3f1cca4508376e19471783bfee1729749eed6476f0aa7305a6"
+    sha256 cellar: :any,                 arm64_ventura: "96f02b4299ca14c11385c2cf9700f6938d415c4ac304e087199c2a7608003280"
+    sha256 cellar: :any,                 sonoma:        "f2099c80842a0edd9655d3e2f4cb255f3d94d963a957c5f830f0ddf1c80b0082"
+    sha256 cellar: :any,                 ventura:       "317b411b882679040c72d2d62d42fb86c706111650386689df2e9a75495f5f20"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1defb719e07be7e05546b3512320ba7b01cd015ac71063d89e3c609747911b31"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
+  depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "gnutls"
   depends_on "jansson"
   depends_on "openssl@3"
 
   def install
-    system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", "--disable-silent-rules", *std_configure_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", "-DWITH_TESTS=OFF", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -39,9 +37,11 @@ class Libjwt < Formula
       #include <stdlib.h>
       #include <jwt.h>
 
-      int main() {
-        jwt_t *jwt = NULL;
-        if (jwt_new(&jwt) != 0) return 1;
+      int main(void) {
+        jwt_builder_t *builder = jwt_builder_new();
+        char *token = jwt_builder_generate(builder);
+        free(token);
+        jwt_builder_free(builder);
         return 0;
       }
     C

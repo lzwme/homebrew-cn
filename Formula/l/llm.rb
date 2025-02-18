@@ -3,17 +3,17 @@ class Llm < Formula
 
   desc "Access large language models from the command-line"
   homepage "https://llm.datasette.io/"
-  url "https://files.pythonhosted.org/packages/30/c6/877bb731c2e36208e0438184023546040c8784a92c6aef25008ad171079a/llm-0.21.tar.gz"
-  sha256 "ac1717e7cb68275271ad90d8f045407e59215a69b4ccc222ef4e60c43edeb95e"
+  url "https://files.pythonhosted.org/packages/11/75/b05a3014a18e70ecf1c8ed79e4a46ccb0c381ae7cd218defb11a9a96394d/llm-0.22.tar.gz"
+  sha256 "3b52cfa6048092df3c6ddd375353b636166bf2d1028b454951865eae4c63d38b"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ac1fa8eebebd93714f2465b8074416c0c1e3ab60a71d230c39540654a4d6afa5"
-    sha256 cellar: :any,                 arm64_sonoma:  "04ddd19f3b45d92154ae93d55d1939354adc051e17d8a4615e9a73bcbd38e1a7"
-    sha256 cellar: :any,                 arm64_ventura: "195bd7a4fb0c036690534c905a7989152ac550f0a5179950c1904c616c94ccb1"
-    sha256 cellar: :any,                 sonoma:        "416ca90a4f270eab535a3ad7a5211bd179a30d2e8450dd2358a088309a7686b8"
-    sha256 cellar: :any,                 ventura:       "3b619ba1b422cbf4d3d7a9eb235088294918b052d7b0f2267745788eaf4f2970"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2692954c2fbb5f03df027f626afbba1d33f6dd89b7c8010ebfb99f953b97f95e"
+    sha256 cellar: :any,                 arm64_sequoia: "b314a3f1daecd5ab22972f3bfbc063dee60e99082f797c746372047a525ed491"
+    sha256 cellar: :any,                 arm64_sonoma:  "0c584d64365942653fba3294b811c6692a14aa94ae7cfd9b965c057ea239c094"
+    sha256 cellar: :any,                 arm64_ventura: "b7fad57c68f43e66507411e090a89a332b9c08b5d4143d1fd3cdd02482054e55"
+    sha256 cellar: :any,                 sonoma:        "afbfa7c4de58cbf6c476b1df8893cee5aa90bb552d5c53b4ae428f6f5e93d012"
+    sha256 cellar: :any,                 ventura:       "bd861ae8e3985405f9da597c7f9cffc330099a75048068a8d56246b40a5d82ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73ecc978d464774bc9f4b56232f56627cc52b33a0cdd712ce4812029dc3ea90e"
   end
 
   depends_on "rust" => :build
@@ -72,8 +72,8 @@ class Llm < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/32/2a/b3fa8790be17d632f59d4f50257b909a3f669036e5195c1ae55737274620/openai-1.61.0.tar.gz"
-    sha256 "216f325a24ed8578e929b0f1b3fb2052165f3b04b0461818adaa51aa29c71f8a"
+    url "https://files.pythonhosted.org/packages/4f/32/2049e973a646801df425aecdf88c6504ca878bdb3951fe12076fc30f2977/openai-1.63.0.tar.gz"
+    sha256 "597d7a1b35b113e5a09fcb953bdb1eef44f404a39985f3d7573b3ab09221fd66"
   end
 
   resource "pluggy" do

@@ -1,17 +1,17 @@
 class Edgevpn < Formula
   desc "Immutable, decentralized, statically built p2p VPN"
   homepage "https:mudler.github.ioedgevpn"
-  url "https:github.commudleredgevpnarchiverefstagsv0.30.0.tar.gz"
-  sha256 "f152cc7aceb5252a4cb395a2e4f06968900c45d1ecd34269d3d69eb0f311ed00"
+  url "https:github.commudleredgevpnarchiverefstagsv0.30.1.tar.gz"
+  sha256 "576d0e64c4ac665787e63e97634c4379f2ad646e9b1ab74e4c62124380d5ebb7"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1c5d0a36fe3d4726eeb6c6cf24b64f16cc89d9c36182351c7e5ac8cb91304dfa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c5d0a36fe3d4726eeb6c6cf24b64f16cc89d9c36182351c7e5ac8cb91304dfa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1c5d0a36fe3d4726eeb6c6cf24b64f16cc89d9c36182351c7e5ac8cb91304dfa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "721785b9b67741766e76ad44d2a674baa22149534d0bd8c30ff78a640062b291"
-    sha256 cellar: :any_skip_relocation, ventura:       "721785b9b67741766e76ad44d2a674baa22149534d0bd8c30ff78a640062b291"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f82e98cd7c86ef8622b27d692b5b78ae55974846483295588c7fcab8a8ccae68"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d4110c762e1783ef3a98bbca249fe45e7e4c61d9394014f66cb118f66a01175"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d4110c762e1783ef3a98bbca249fe45e7e4c61d9394014f66cb118f66a01175"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6d4110c762e1783ef3a98bbca249fe45e7e4c61d9394014f66cb118f66a01175"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0bc199ec38a7027cc1115f93f788693597bc0227c625ac98f4935f69348b8a0b"
+    sha256 cellar: :any_skip_relocation, ventura:       "0bc199ec38a7027cc1115f93f788693597bc0227c625ac98f4935f69348b8a0b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c552dea00fe83f63838068767124e6cee18178628b1800b4015ae59284157c2a"
   end
 
   depends_on "go" => :build

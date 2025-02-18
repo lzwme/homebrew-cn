@@ -172,7 +172,6 @@ class HomeassistantCli < Formula
 
   def install
     virtualenv_install_with_resources
-    bin.install_symlink libexec"binhass-cli"
     generate_completions_from_executable(bin"hass-cli", shells:                 [:fish, :zsh],
                                                          shell_parameter_format: :click)
   end
