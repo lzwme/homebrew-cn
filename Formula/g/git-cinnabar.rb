@@ -37,7 +37,6 @@ class GitCinnabar < Formula
     return if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     system "git", "clone", "hg::https:www.mercurial-scm.orgrepohello"
-    assert_predicate testpath"hellohello.c", :exist?,
-                     "hello.c not found in cloned repo"
+    assert_path_exists testpath"hellohello.c", "hello.c not found in cloned repo"
   end
 end

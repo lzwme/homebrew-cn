@@ -69,7 +69,7 @@ class VulkanProfiles < Formula
     # FIXME: when GitHub Actions Intel Mac runners support the use of Metal,
     # remove this weakened version and conditional
     if OS.mac? && Hardware::CPU.intel?
-      assert_predicate share"vulkanexplicit_layer.dVkLayer_khronos_profiles.json", :exist?
+      assert_path_exists share"vulkanexplicit_layer.dVkLayer_khronos_profiles.json"
     else
       ENV.prepend_path "VK_LAYER_PATH", share"vulkanexplicit_layer.d"
 

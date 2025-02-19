@@ -35,8 +35,8 @@ class PythonBuild < Formula
   test do
     stable.stage do
       system bin"pyproject-build"
-      assert_predicate Pathname.pwd"distbuild-#{stable.version}.tar.gz", :exist?
-      assert_predicate Pathname.pwd"distbuild-#{stable.version}-py3-none-any.whl", :exist?
+      assert_path_exists Pathname.pwd"distbuild-#{stable.version}.tar.gz"
+      assert_path_exists Pathname.pwd"distbuild-#{stable.version}-py3-none-any.whl"
     end
   end
 end

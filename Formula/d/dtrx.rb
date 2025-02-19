@@ -42,13 +42,13 @@ class Dtrx < Formula
     system "zip", "test.zip", "test1", "test2", "test3"
     %w[test1 test2 test3].each do |f|
       rm f
-      refute_predicate testpathf, :exist?, "Text files should have been removed!"
+      refute_path_exists testpathf, "Text files should have been removed!"
     end
 
     system bin"dtrx", "--flat", "test.zip"
 
     %w[test1 test2 test3].each do |f|
-      assert_predicate testpathf, :exist?, "Failure unzipping test.zip!"
+      assert_path_exists testpathf, "Failure unzipping test.zip!"
     end
 
     assert_equal "Hello!", (testpath"test1").read

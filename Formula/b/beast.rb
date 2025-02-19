@@ -57,7 +57,7 @@ class Beast < Formula
 
     %w[ops log trees].each do |ext|
       output = "testUCRelaxedClockLogNormal." + ext
-      assert_predicate testpathoutput, :exist?, "Failed to create #{output}"
+      assert_path_exists testpathoutput, "Failed to create #{output}"
     end
   end
 end

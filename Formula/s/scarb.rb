@@ -1,8 +1,8 @@
 class Scarb < Formula
   desc "Cairo package manager"
   homepage "https:docs.swmansion.comscarb"
-  url "https:github.comsoftware-mansionscarbarchiverefstagsv2.9.3.tar.gz"
-  sha256 "43ead01c43b0cd7abc4bae1b866991c743fefce24a2b41221a1b7986bf86a04e"
+  url "https:github.comsoftware-mansionscarbarchiverefstagsv2.10.0.tar.gz"
+  sha256 "ddea066873fc3069d7a8b947f280cbd47d04906eddb352a23eaf742bc2c3b857"
   license "MIT"
   head "https:github.comsoftware-mansionscarb.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Scarb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b490331dd1c01fc323dc8f259a3ae8ce013c6f4b74ce6f3557d9ea67ab9e2863"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8ed5cbe966f5dc9479876512f0c6f95d181d62b54afc45e8e62b03a7f45ddf9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "68d453d4fc8a6af5dade1d78a4f5667cc8dace53a6123dadb3eb2942808a84de"
-    sha256 cellar: :any_skip_relocation, sonoma:        "70a0ff0fa59a86959a5e504d5e5e96130d0e354e3f5ca1644c124149937cb27f"
-    sha256 cellar: :any_skip_relocation, ventura:       "4be13b97fcc97dfa6b6077ddfd3f70833daa3db5cfa9ccc64d6cafe9ce985818"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82bfaa6332428e6dd181fe223733d8ed98eb35712782c541adf3362861a4da99"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b754edca0cdb559c2de4fd7aebc9cb9991db7233b313bb9e31c557e7d3683baa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "021cf5e2adefc1685c6a238df54574190e9fe6268c09d92673dc708afe63de06"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "53e52357634fe8fde8521cdf866f0332eeffa8b69b2e819f793749bdf4e61e2b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9311c9d995bee3ffde03f5426bf66e59d5126c919ec5fef96b440aa49c036044"
+    sha256 cellar: :any_skip_relocation, ventura:       "18508a6ddd5f54e19ad284c305e43b4350a374866e42d080fcba47c122da0c82"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa3debed957015dce5115a798ff6f9c2ea207662d82e6c476b04af37abd7d293"
   end
 
   depends_on "rust" => :build
@@ -41,7 +41,7 @@ class Scarb < Formula
     assert_match "#{testpath}Scarb.toml", shell_output("#{bin}scarb manifest-path")
 
     system bin"scarb", "init", "--name", "brewtest", "--no-vcs"
-    assert_predicate testpath"srclib.cairo", :exist?
+    assert_path_exists testpath"srclib.cairo"
     assert_match "brewtest", (testpath"Scarb.toml").read
 
     assert_match version.to_s, shell_output("#{bin}scarb --version")

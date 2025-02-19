@@ -29,6 +29,6 @@ class VrcGet < Formula
   test do
     ENV["XDG_DATA_HOME"] = testpath"data-home"
     system bin"vrc-get", "update"
-    assert_predicate testpath"data-homeVRChatCreatorCompanionReposvrc-official.json", :exist?
+    assert_path_exists testpath"data-homeVRChatCreatorCompanionReposvrc-official.json"
   end
 end

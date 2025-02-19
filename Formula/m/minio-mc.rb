@@ -2,9 +2,9 @@ class MinioMc < Formula
   desc "Replacement for ls, cp and other commands for object storage"
   homepage "https:github.comminiomc"
   url "https:github.comminiomc.git",
-      tag:      "RELEASE.2025-02-08T19-14-21Z",
-      revision: "bd925c01a1ccab367993f20c251b7bae9d22f8a5"
-  version "20250208191421"
+      tag:      "RELEASE.2025-02-15T10-36-16Z",
+      revision: "383560b1c3d6912042e8c8c275bb78e83e67ef2b"
+  version "20250215103616"
   license "AGPL-3.0-or-later"
   head "https:github.comminiomc.git", branch: "master"
 
@@ -17,12 +17,12 @@ class MinioMc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d895ac74f1b388b348296f9d7b33f9fc1dbad5e0f79204eed1fbcb93acdbea1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e168255f885be5000160d773c1765f7e6b646911e149186b3de0988ac7ced3ea"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "656d677495820761d651cd318c7f8819dcefa5a510b60c3537a3fe3f8eaed86a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a83e8ee14123cfd6ae43229b6c5717d168b6252866b37827bad0a8fe3af6edf6"
-    sha256 cellar: :any_skip_relocation, ventura:       "4bc572f079cf8b3a002c9696c358d0d135056629d83eca23cbc9e78bc8dc7beb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a89acacd1ebc35063633c9162c346aef4cc626df5bfd4e04a386f03fd5fab24f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25b554a914ee6a583ae19a5eb500c32c528bf834847500ec629e9bb62c9980f5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a9fb0558fe7ecd8b810e6bd1797351e455c1bef6cd2147de47bee0f92982f35"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c9b2c70af898c7be0352c92ae03511abb949d105b609dad079ce63c063a4d085"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a0dd0a8183f30edc86a8b736e6c0aef59461b2ced97da97578cba7f57d06bb68"
+    sha256 cellar: :any_skip_relocation, ventura:       "01ffa1d64968f3ebb87cee8b80d3452f855997e6e594da6e4fa5ba28338536cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa609e0ad31c6381995d7120941780b3b0d15a24a710d01b5ffd882fdeedb488"
   end
 
   depends_on "go" => :build
@@ -56,6 +56,6 @@ class MinioMc < Formula
                  "`version` is incorrect"
 
     system bin"mc", "mb", testpath"test"
-    assert_predicate testpath"test", :exist?
+    assert_path_exists testpath"test"
   end
 end

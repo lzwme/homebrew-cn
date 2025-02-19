@@ -1,6 +1,6 @@
 class GambitScheme < Formula
   desc "Implementation of the Scheme Language"
-  homepage "https:github.comgambitgambit"
+  homepage "https:gambitscheme.org"
   url "https:github.comgambitgambitarchiverefstagsv4.9.5.tar.gz"
   sha256 "758da7b4afe6411e9c4fed14b0cc5ada39b5f1393c1edd4d3dd9c9a06127c310"
   license "Apache-2.0"

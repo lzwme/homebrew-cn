@@ -69,7 +69,7 @@ class Sourcedocs < Formula
         system bin"sourcedocs", "generate",
                "--spm-module", "foo",
                "--output-folder", testpath"DocumentationReference"
-        assert_predicate testpath"DocumentationReferenceREADME.md", :exist?
+        assert_path_exists testpath"DocumentationReferenceREADME.md"
       end
     end
   end

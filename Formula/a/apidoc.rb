@@ -49,6 +49,6 @@ class Apidoc < Formula
       }
     JSON
     system bin"apidoc", "-i", ".", "-o", "out"
-    assert_predicate testpath"outassetsmain.bundle.js", :exist?
+    assert_path_exists testpath"outassetsmain.bundle.js"
   end
 end

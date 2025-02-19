@@ -1,6 +1,6 @@
 class UniversalCtags < Formula
   desc "Maintained ctags implementation"
-  homepage "https:github.comuniversal-ctagsctags"
+  homepage "https:ctags.io"
   url "https:github.comuniversal-ctagsctagsarchiverefstagsp6.1.20250216.0.tar.gz"
   version "p6.1.20250216.0"
   sha256 "189351ccda100ddfea793bd4a22ab11d1f94182530b1db2376c0d44a0db7880e"

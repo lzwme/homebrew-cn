@@ -1,6 +1,6 @@
 class Gssh < Formula
   desc "SSH automation tool based on Groovy DSL"
-  homepage "https:github.comint128groovy-ssh"
+  homepage "https:gradle-ssh-plugin.github.io"
   url "https:github.comint128groovy-ssharchiverefstags2.11.2.tar.gz"
   sha256 "0e078b37fe1ba1a9ca7191e706818e3b423588cac55484dda82dbbd1cdfe0b24"
   license "Apache-2.0"

@@ -2,7 +2,7 @@ class Gnuradio < Formula
   include Language::Python::Virtualenv
 
   desc "SDK for signal processing blocks to implement software radios"
-  homepage "https:gnuradio.org"
+  homepage "https:www.gnuradio.org"
   license "GPL-3.0-or-later"
   revision 7
   head "https:github.comgnuradiognuradio.git", branch: "main"

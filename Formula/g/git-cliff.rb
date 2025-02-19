@@ -1,6 +1,6 @@
 class GitCliff < Formula
   desc "Highly customizable changelog generator"
-  homepage "https:github.comorhungit-cliff"
+  homepage "https:git-cliff.org"
   url "https:github.comorhungit-cliffarchiverefstagsv2.8.0.tar.gz"
   sha256 "dfcf7b7d903c6479e58c8e7594364d67ce59e3e50351b3277eb33482a783418d"
   license all_of: ["Apache-2.0", "MIT"]

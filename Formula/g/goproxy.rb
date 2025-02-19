@@ -1,6 +1,6 @@
 class Goproxy < Formula
   desc "Global proxy for Go modules"
-  homepage "https:github.comgoproxyiogoproxy"
+  homepage "https:goproxy.io"
   url "https:github.comgoproxyiogoproxyarchiverefstagsv2.0.7.tar.gz"
   sha256 "d87f3928467520f8d6b0ba8adcbf5957dc6eb2dc9936249edd6568ceb01a71ca"
   license "MIT"

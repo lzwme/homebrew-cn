@@ -18,7 +18,7 @@ class Shellspec < Formula
   test do
     system bin"shellspec", "--init"
     assert_match "--require spec_helper", (testpath".shellspec").read
-    assert_predicate testpath"specspec_helper.sh", :exist?
+    assert_path_exists testpath"specspec_helper.sh"
 
     (testpath"specexample_spec.sh").write <<~SPEC
       Describe 'hello.sh'

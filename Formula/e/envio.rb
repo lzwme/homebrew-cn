@@ -46,7 +46,7 @@ class Envio < Formula
     begin
       output = shell_output("#{bin}envio create brewtest -g #{testpath}.gnupgtrustdb.gpg", 1)
       assert_match "Profiles directory does not exist creating it now..", output
-      assert_predicate testpath".envioprofilesbrewtest.env", :exist?
+      assert_path_exists testpath".envioprofilesbrewtest.env"
 
       output = shell_output("#{bin}envio list")
       assert_empty output

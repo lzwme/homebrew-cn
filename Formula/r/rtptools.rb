@@ -1,6 +1,6 @@
 class Rtptools < Formula
   desc "Set of tools for processing RTP data"
-  homepage "https:github.comirtlabrtptools"
+  homepage "https:www.cs.columbia.eduirtsoftwarertptools"
   url "https:github.comirtlabrtptoolsarchiverefstags1.22.tar.gz"
   sha256 "ac6641558200f5689234989e28ed3c44ead23757ccf2381c8878933f9c2523e0"
   license "BSD-3-Clause"

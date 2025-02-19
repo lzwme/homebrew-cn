@@ -88,15 +88,15 @@ class Squashfs < Formula
     # Test mksquashfs can make a valid squashimg.
     #   (Also tests that `xz` support is properly linked.)
     system bin"mksquashfs", "intest1", "intest2", "intest3", "test.xz.sqsh", "-quiet", "-comp", "xz"
-    assert_predicate testpath"test.xz.sqsh", :exist?
+    assert_path_exists testpath"test.xz.sqsh"
     assert_match "Found a valid SQUASHFS 4:0 superblock on test.xz.sqsh.",
       shell_output("#{bin}unsquashfs -s test.xz.sqsh")
 
     # Test unsquashfs can extract files verbatim.
     system bin"unsquashfs", "-d", "out", "test.xz.sqsh"
-    assert_predicate testpath"outtest1", :exist?
-    assert_predicate testpath"outtest2", :exist?
-    assert_predicate testpath"outtest3", :exist?
+    assert_path_exists testpath"outtest1"
+    assert_path_exists testpath"outtest2"
+    assert_path_exists testpath"outtest3"
     assert shell_output("diff -r in out")
   end
 end

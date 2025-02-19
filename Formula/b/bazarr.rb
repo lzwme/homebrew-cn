@@ -126,7 +126,7 @@ class Bazarr < Formula
       Process.kill "TERM", wait_thr.pid
     end
 
-    assert_predicate (testpath"configconfig.ini.old"), :exist?
+    assert_path_exists (testpath"configconfig.ini.old")
     assert_includes (testpath"configconfig.yaml").read, "#{testpath}custom_backup"
     assert_match "BAZARR is started and waiting for request", (testpath"logbazarr.log").read
   end

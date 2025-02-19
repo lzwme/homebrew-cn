@@ -26,6 +26,6 @@ class Gwt < Formula
 
   test do
     system bin"webAppCreator", "sh.brew.test"
-    assert_predicate testpath"srcshbrewtest.gwt.xml", :exist?
+    assert_path_exists testpath"srcshbrewtest.gwt.xml"
   end
 end

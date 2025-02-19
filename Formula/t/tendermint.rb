@@ -41,8 +41,8 @@ class Tendermint < Formula
   test do
     mkdir(testpath"staging")
     shell_output("#{bin}tendermint init full --home #{testpath}staging")
-    assert_predicate testpath"stagingconfiggenesis.json", :exist?
-    assert_predicate testpath"stagingconfigconfig.toml", :exist?
-    assert_predicate testpath"stagingdata", :exist?
+    assert_path_exists testpath"stagingconfiggenesis.json"
+    assert_path_exists testpath"stagingconfigconfig.toml"
+    assert_path_exists testpath"stagingdata"
   end
 end

@@ -1,6 +1,6 @@
 class Ucg < Formula
   desc "Tool for searching large bodies of source code (like grep)"
-  homepage "https:github.comgvansickleucg"
+  homepage "https:gvansickle.github.ioucg"
   license "GPL-3.0-or-later"
 
   stable do

@@ -46,7 +46,7 @@ class Helmify < Formula
     YAML
 
     system "cat #{test_service} | #{bin}helmify brewtest"
-    assert_predicate testpath"brewtestChart.yaml", :exist?
+    assert_path_exists testpath"brewtestChart.yaml"
     assert_equal expected_values_yaml, (testpath"brewtestvalues.yaml").read
 
     assert_match version.to_s, shell_output("#{bin}helmify --version")

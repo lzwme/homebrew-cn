@@ -91,7 +91,7 @@ class ClangUml < Formula
       @enduml
     EOS
 
-    assert_predicate testpath"diagrams""test_class.puml", :exist?
+    assert_path_exists testpath"diagrams""test_class.puml"
 
     assert_match expected_output, (testpath"diagramstest_class.puml").read
   end

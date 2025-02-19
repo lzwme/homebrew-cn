@@ -39,7 +39,7 @@ class CargoGenerate < Formula
 
     system bin"cargo-generate", "gen", "--git", "https:github.comashleygwilliamswasm-pack-template",
                                  "--name", "brewtest"
-    assert_predicate testpath"brewtest", :exist?
+    assert_path_exists testpath"brewtest"
     assert_match "brewtest", (testpath"brewtestCargo.toml").read
 
     linked_libraries = [

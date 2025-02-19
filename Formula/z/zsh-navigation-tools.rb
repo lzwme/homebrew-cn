@@ -1,6 +1,6 @@
 class ZshNavigationTools < Formula
   desc "Zsh curses-based tools, e.g. multi-word history searcher"
-  homepage "https:github.comz-shellzsh-navigation-tools"
+  homepage "https:wiki.zshell.devecosystempluginszsh-navigation-tools"
   url "https:github.comz-shellzsh-navigation-toolsarchiverefstagsv2.2.7.tar.gz"
   sha256 "ee832b81ce678a247b998675111c66aa1873d72aa33c2593a65626296ca685fc"
   license any_of: ["GPL-3.0-only", "MIT"]

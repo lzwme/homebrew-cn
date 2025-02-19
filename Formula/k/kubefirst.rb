@@ -1,8 +1,8 @@
 class Kubefirst < Formula
   desc "GitOps Infrastructure & Application Delivery Platform for kubernetes"
   homepage "https:kubefirst.konstruct.iodocs"
-  url "https:github.comkonstructiokubefirstarchiverefstagsv2.8.3.tar.gz"
-  sha256 "b954fc1a4b0f32aa69fb42bead45a87410fc23cbe21e0a3d57b615c335d48b20"
+  url "https:github.comkonstructiokubefirstarchiverefstagsv2.8.4.tar.gz"
+  sha256 "020a245191e8e247a417e623bd467e98644fe4456c0a2ca3cefa7ba0cda81c45"
   license "MIT"
   head "https:github.comkonstructiokubefirst.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Kubefirst < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2511ccd38fb8fd049b44974efd6b8a212f97285df367c1e589fcd89719477d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b3d3e8c5db5052fc9e64ff0de7ba2c309c0eed42b0e88d8362e3e76e39f75d65"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "74b53b6696a96e1a7a6da3692dea0725e530dc3093057b81177d6b4788aa13c7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "08b0ded01d984400c4219b3d6c9e26695fb9fef92710b0b3697599204be81eed"
-    sha256 cellar: :any_skip_relocation, ventura:       "ab67378bea957d3d7fbc5cbeac68eafe69bc174c54285560d5f5f6c76c6858cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "439b66b478299040ff99e6689b3880466dc956d67158160edbe2269ff9aa36cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "802f8bcd8cef477f962c58d2640fa06bbe993bf5c4499f0bd4b32f30e5b73895"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6193337592081faa0bd3c7aa1f0881e4a1a09ff0ba7eec7e76ba49c20a4f1a62"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8f824f371e912db8d34c3cb87b03fa27dd41bff1d590deaef592ee4a75c49b39"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5cd14a498f4fde2cca1f8b90bbe81eb05efe280dd75e408db4299b2cacfa650c"
+    sha256 cellar: :any_skip_relocation, ventura:       "940edbf4ddbe5edeca5ca6118bba9e2cdd463354af9f2770990346252674cdf6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d6cfe745f9bd922a71b445721c8acb18afe7cf538188dcd41c4f6a14c91bdf2"
   end
 
   depends_on "go" => :build
@@ -34,7 +34,7 @@ class Kubefirst < Formula
   test do
     system bin"kubefirst", "info"
     assert_match "k1-paths:", (testpath".kubefirst").read
-    assert_predicate testpath".k1logs", :exist?
+    assert_path_exists testpath".k1logs"
 
     output = shell_output("#{bin}kubefirst version 2>&1")
     expected = if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]

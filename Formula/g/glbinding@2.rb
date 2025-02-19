@@ -1,6 +1,6 @@
 class GlbindingAT2 < Formula
   desc "C++ binding for the OpenGL API"
-  homepage "https:github.comcginternalsglbinding"
+  homepage "https:glbinding.org"
   url "https:github.comcginternalsglbindingarchiverefstagsv2.1.4.tar.gz"
   sha256 "cb5971b086c0d217b2304d31368803fd2b8c12ee0d41c280d40d7c23588f8be2"
   license "MIT"

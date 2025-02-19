@@ -1,7 +1,6 @@
 class TtyShare < Formula
   desc "Terminal sharing over the Internet"
-  # too many redirects issue with the homepage, https:github.comelisescutty-shareissues83
-  homepage "https:github.comelisescutty-share"
+  homepage "https:tty-share.com"
   url "https:github.comelisescutty-sharearchiverefstagsv2.4.1.tar.gz"
   sha256 "abc186307a95f55f1750592a38871d4839d2ff26365880110bdf107675ea264a"
   license "MIT"

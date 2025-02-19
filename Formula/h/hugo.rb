@@ -1,8 +1,8 @@
 class Hugo < Formula
   desc "Configurable static site generator"
   homepage "https:gohugo.io"
-  url "https:github.comgohugoiohugoarchiverefstagsv0.144.0.tar.gz"
-  sha256 "319688f8245fc31e185a19acd95a1b43e4832b533c3dd52631d970dd0c810707"
+  url "https:github.comgohugoiohugoarchiverefstagsv0.144.1.tar.gz"
+  sha256 "991b59b293c63564ded2d28c1e6f49fb0114b6a47df5a94d9a5f49f82c9e5f00"
   license "Apache-2.0"
   head "https:github.comgohugoiohugo.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Hugo < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75050457835a937031d51c83ed2a7726ad5a2ee4d6838f13170ff4e767dbf3bd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "94cfd2d8a2051493d52db714655aa2745758e618411eae0dd3aa7f6a4c328075"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "617ff421e5312abe8aac0ac9677e70e16ef750128fa37aa9acc04dc953cf53de"
-    sha256 cellar: :any_skip_relocation, sonoma:        "be24be40ee4edcecc6f4889922cc16d04ca1b6cc607bbaf101539de69119fd4c"
-    sha256 cellar: :any_skip_relocation, ventura:       "3a2e752a760a9b6a61b9d80a3c995900e5c278c5cac2e260582775aaac75d30e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f50e8a5bfc5a90a5e5d0aa2369765b7b80616be3510a11eb811008ea4493f42c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d084f6997918b50ac7631b1e55e3620364367e49eddfb7824dad99b4be7ad43"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "71e28cc727d4c3b510815dcee138ca7563c82538000943fc07dfab0553b187b3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "996453d71c6cafd7746ea06f48cd2d4a132c8c5e99db02508aa538e09a515333"
+    sha256 cellar: :any_skip_relocation, sonoma:        "582178c7a643c53f41649ce59474d2a64a2735e5e9533b53d725cde675dada74"
+    sha256 cellar: :any_skip_relocation, ventura:       "df5cadf7333cf3534a360f8c8a686065a638a2a2a8ddc20bb156a420da93dd0d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1330285512b7d4dc4bfa38ad75adc10e3f94097d618d536891503e76c7360c0d"
   end
 
   depends_on "go" => :build
@@ -38,7 +38,7 @@ class Hugo < Formula
   test do
     site = testpath"hops-yeast-malt-water"
     system bin"hugo", "new", "site", site
-    assert_predicate site"hugo.toml", :exist?
+    assert_path_exists site"hugo.toml"
 
     assert_match version.to_s, shell_output(bin"hugo version")
   end

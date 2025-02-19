@@ -1,6 +1,6 @@
 class Nickel < Formula
   desc "Better configuration for less"
-  homepage "https:github.comtweagnickel"
+  homepage "https:nickel-lang.org"
   url "https:github.comtweagnickelarchiverefstags1.10.0.tar.gz"
   sha256 "15404075e20e45da3ff0e6ad54e94109c8fba2fbde1c2def00c1f3f4e8e3cbc8"
   license "MIT"

@@ -37,6 +37,6 @@ class Evernote2md < Formula
       <en-export>
     EOF
     system bin"evernote2md", "export.enex"
-    assert_predicate testpath"notesTest.md", :exist?
+    assert_path_exists testpath"notesTest.md"
   end
 end

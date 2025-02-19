@@ -63,6 +63,6 @@ class Pyinstaller < Formula
     PYTHON
     system bin"pyinstaller", "-F", "--distpath=#{testpath}dist", "--workpath=#{testpath}build",
                               "#{testpath}easy_install.py"
-    assert_predicate testpath"disteasy_install", :exist?
+    assert_path_exists testpath"disteasy_install"
   end
 end

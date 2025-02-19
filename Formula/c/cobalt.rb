@@ -25,6 +25,6 @@ class Cobalt < Formula
   test do
     system bin"cobalt", "init"
     system bin"cobalt", "build"
-    assert_predicate testpath"_siteindex.html", :exist?
+    assert_path_exists testpath"_siteindex.html"
   end
 end

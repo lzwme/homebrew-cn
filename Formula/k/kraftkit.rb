@@ -1,8 +1,8 @@
 class Kraftkit < Formula
   desc "Build and use highly customized and ultra-lightweight unikernel VMs"
   homepage "https:unikraft.orgdocscli"
-  url "https:github.comunikraftkraftkitarchiverefstagsv0.11.0.tar.gz"
-  sha256 "a0ca6e51259fa74cb68ec4fdce6030f24aeedb131eb2d6da5011d1292ccff704"
+  url "https:github.comunikraftkraftkitarchiverefstagsv0.11.1.tar.gz"
+  sha256 "8c7b00b33de1ced06d7f7cf690a7ef421c599a92b69c955ae31b7a29cad5d5a2"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,12 +11,12 @@ class Kraftkit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5063dba34c2028caf346510b8c1357e433667c6956366178ca903c354998c3ae"
-    sha256 cellar: :any,                 arm64_sonoma:  "bd4be5cd5c15a5c8ea68c82b8714117abb711d873ad728ab63b8e714d8700b66"
-    sha256 cellar: :any,                 arm64_ventura: "cf1b1f4d7aad9715de814e30003330a84516d79f69f80531049974926585bbd3"
-    sha256 cellar: :any,                 sonoma:        "a7ffb3fa267ecbfba2d6d3811bd8871b1bba85ee567aedfd35ff51737e17d340"
-    sha256 cellar: :any,                 ventura:       "7999ff1ddaed31bf299655f4886093141182967488acc1814780a744b4cb3d2d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b15e1e15898ab9c3b81b70ed29c5e5ee20697db597cf55e16f131a50306f49ac"
+    sha256 cellar: :any,                 arm64_sequoia: "46dffe3bf84748907638e56f6e07cafd528ef87c4b010cae089b213f6aeaf121"
+    sha256 cellar: :any,                 arm64_sonoma:  "7e9b6692f23617c5c1bc888ee19db320f7d53d63b2648fa9fcc30629b992f38a"
+    sha256 cellar: :any,                 arm64_ventura: "0877a96b35fe07cf1a93b43702c8e205c36f35f2115ed4d4d284306ac5ae0658"
+    sha256 cellar: :any,                 sonoma:        "235425a03f952cbcc66a4a7861aa801611962012020e028c7f7cd7187045aeeb"
+    sha256 cellar: :any,                 ventura:       "dd8a8e67e3f69ccb14ad7cb2264254fd068ff825cae5c2fa37ef8491fed58970"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fc768a584852f65fd9aaab1ae902f13705392dc2eccb488a845047ce5904e75"
   end
 
   depends_on "go" => :build

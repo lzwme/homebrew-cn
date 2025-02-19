@@ -48,6 +48,6 @@ class HasuraCli < Formula
 
   test do
     system bin"hasura", "init", "testdir"
-    assert_predicate testpath"testdirconfig.yaml", :exist?
+    assert_path_exists testpath"testdirconfig.yaml"
   end
 end

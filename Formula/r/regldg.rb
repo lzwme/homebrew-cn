@@ -1,7 +1,6 @@
 class Regldg < Formula
   desc "Regular expression grammar language dictionary generator"
-  # raised an site issue, https:github.comPatrickCroninregldgissues6
-  homepage "https:github.comPatrickCroninregldg"
+  homepage "https:regldg.com"
   url "https:github.comPatrickCroninregldgreleasesdownloadv1.0.1regldg-1.0.1.tar.gz"
   sha256 "f5f401c645a94d4c737cefa2bbcb62f23407d25868327902b9c93b501335dc99"
   license "MIT"

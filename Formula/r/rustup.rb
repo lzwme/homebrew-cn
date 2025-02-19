@@ -1,6 +1,6 @@
 class Rustup < Formula
   desc "Rust toolchain installer"
-  homepage "https:github.comrust-langrustup"
+  homepage "https:rust-lang.github.iorustup"
   url "https:github.comrust-langrustuparchiverefstags1.27.1.tar.gz"
   sha256 "f5ba37f2ba68efec101198dca1585e6e7dd7640ca9c526441b729a79062d3b77"
   license any_of: ["Apache-2.0", "MIT"]

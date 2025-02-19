@@ -1,6 +1,6 @@
 class Ubertooth < Formula
   desc "Host tools for Project Ubertooth"
-  homepage "https:github.comgreatscottgadgetsubertoothwiki"
+  homepage "https:greatscottgadgets.comubertoothone"
   url "https:github.comgreatscottgadgetsubertoothreleasesdownload2020-12-R1ubertooth-2020-12-R1.tar.xz"
   version "2020-12-R1"
   sha256 "93a4ce7af8eddcc299d65aff8dd3a0455293022f7fea4738b286353f833bf986"

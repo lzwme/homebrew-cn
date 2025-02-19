@@ -37,7 +37,7 @@ class Kubevpn < Formula
 
   test do
     assert_match "Version: v#{version}", shell_output("#{bin}kubevpn version")
-    assert_predicate testpath".kubevpnconfig.yaml", :exist?
-    assert_predicate testpath".kubevpndaemon", :exist?
+    assert_path_exists testpath".kubevpnconfig.yaml"
+    assert_path_exists testpath".kubevpndaemon"
   end
 end

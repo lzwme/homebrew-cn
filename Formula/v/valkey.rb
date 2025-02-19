@@ -51,6 +51,6 @@ class Valkey < Formula
 
   test do
     system bin"valkey-server", "--test-memory", "2"
-    %w[run dbvalkey log].each { |p| assert_predicate varp, :exist?, "#{varp} doesn't exist!" }
+    %w[run dbvalkey log].each { |p| assert_path_exists varp, "#{varp} doesn't exist!" }
   end
 end

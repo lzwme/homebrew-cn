@@ -1,17 +1,17 @@
 class Descope < Formula
   desc "Command-line utility for performing common tasks on Descope projects"
   homepage "https:www.descope.com"
-  url "https:github.comdescopedescopecliarchiverefstagsv0.8.11.tar.gz"
-  sha256 "fa5460f3c96ca0596b2bfe72bd20cd689bd5adad3b6603c23533565de9210f18"
+  url "https:github.comdescopedescopecliarchiverefstagsv0.8.12.tar.gz"
+  sha256 "2d41eed7b13e2872a762d703588d169a92e1cdcd772dcfb9b4a5aea63e626a69"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0bb4ae8bb4c29c8f185d060ac3750ee3116da5df67cd11a4a9667570ee325349"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0bb4ae8bb4c29c8f185d060ac3750ee3116da5df67cd11a4a9667570ee325349"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0bb4ae8bb4c29c8f185d060ac3750ee3116da5df67cd11a4a9667570ee325349"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8ac7654197187d0184db64d24514ea7656c4c325e9544f9eae77ba89722a05db"
-    sha256 cellar: :any_skip_relocation, ventura:       "8ac7654197187d0184db64d24514ea7656c4c325e9544f9eae77ba89722a05db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f61d3bb6de69dac1d3ee6ece1e8251ae41c56cc85688ea2a8bdb9325f7f44e61"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c07783b013845132a0038eb043aea7b2d74d722619a8c125e24ca126e999a2b0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c07783b013845132a0038eb043aea7b2d74d722619a8c125e24ca126e999a2b0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c07783b013845132a0038eb043aea7b2d74d722619a8c125e24ca126e999a2b0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "852a000cf19c5021c184e52604964ce26b7bb770d6251d5f0918ad937eaa875e"
+    sha256 cellar: :any_skip_relocation, ventura:       "852a000cf19c5021c184e52604964ce26b7bb770d6251d5f0918ad937eaa875e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51a8741bd2a4054b6e672e497a90f22c6ba61712a66a256f8fa0e89d07426ccb"
   end
 
   depends_on "go" => :build

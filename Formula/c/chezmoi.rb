@@ -45,6 +45,6 @@ class Chezmoi < Formula
     assert_match "built by #{tap.user}", shell_output("#{bin}chezmoi --version")
 
     system bin"chezmoi", "init"
-    assert_predicate testpath".localsharechezmoi", :exist?
+    assert_path_exists testpath".localsharechezmoi"
   end
 end

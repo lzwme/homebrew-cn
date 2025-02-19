@@ -63,7 +63,7 @@ class SpirvCross < Formula
 
     EOS
 
-    (Dir["*.comp"]).each do |shader_file|
+    Dir["*.comp"].each do |shader_file|
       inreplace shader_file, before, after
     end
 

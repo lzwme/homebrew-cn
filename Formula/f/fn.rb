@@ -1,18 +1,18 @@
 class Fn < Formula
   desc "Command-line tool for the fn project"
   homepage "https:fnproject.io"
-  url "https:github.comfnprojectcliarchiverefstags0.6.36.tar.gz"
-  sha256 "14f7ba45f9ed4a561ccdd52c45f25a1964093a326a6d7cc75b1d29e4f4f60c2c"
+  url "https:github.comfnprojectcliarchiverefstags0.6.38.tar.gz"
+  sha256 "de610147032702662b57028a383436c5923cf0f0e6332b1e5dcb96ceaa31b94b"
   license "Apache-2.0"
   head "https:github.comfnprojectcli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77836944153a672852e11a35fc5977cafc252a1917262309fb47ece9d8c75772"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77836944153a672852e11a35fc5977cafc252a1917262309fb47ece9d8c75772"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "77836944153a672852e11a35fc5977cafc252a1917262309fb47ece9d8c75772"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b7b09f2149d95e346fb9a86987516db8827d0cf1a0b61b205af7f1e4bfa3c06b"
-    sha256 cellar: :any_skip_relocation, ventura:       "b7b09f2149d95e346fb9a86987516db8827d0cf1a0b61b205af7f1e4bfa3c06b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffcd70fab9ee15d9cad54a1932ce37b579193f273304f0ced02effa6e26d49e7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ebbfb724ac53f90ad55600c24333e9a6287cde7e19097b81c8e343275c0e7a4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ebbfb724ac53f90ad55600c24333e9a6287cde7e19097b81c8e343275c0e7a4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2ebbfb724ac53f90ad55600c24333e9a6287cde7e19097b81c8e343275c0e7a4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "302c1ca22f7bebfcdca994397cf658fb99a36a3182e34bd40122c4acd1255090"
+    sha256 cellar: :any_skip_relocation, ventura:       "302c1ca22f7bebfcdca994397cf658fb99a36a3182e34bd40122c4acd1255090"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d96af2e3101d7c78dbd05203c4351561acb84715b397936f8836af6430b82489"
   end
 
   depends_on "go" => :build
@@ -24,8 +24,8 @@ class Fn < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}fn --version")
     system bin"fn", "init", "--runtime", "go", "--name", "myfunc"
-    assert_predicate testpath"func.go", :exist?, "expected file func.go doesn't exist"
-    assert_predicate testpath"func.yaml", :exist?, "expected file func.yaml doesn't exist"
+    assert_path_exists testpath"func.go", "expected file func.go doesn't exist"
+    assert_path_exists testpath"func.yaml", "expected file func.yaml doesn't exist"
     port = free_port
     server = TCPServer.new("localhost", port)
     pid = fork do

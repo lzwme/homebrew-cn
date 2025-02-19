@@ -1,6 +1,6 @@
 class Render < Formula
   desc "Command-line interface for Render"
-  homepage "https:github.comrender-osscli"
+  homepage "https:render.comdocscli"
   url "https:github.comrender-osscliarchiverefstagsv2.0.0.tar.gz"
   sha256 "a7bcc78fd4d38df7a19fcfcd3958dc89ded4353c12b5ed695cd215c6998c9926"
   license "Apache-2.0"

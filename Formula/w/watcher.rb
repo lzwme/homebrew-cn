@@ -1,18 +1,18 @@
 class Watcher < Formula
   desc "Filesystem watcher, works anywhere, simple, efficient and friendly"
   homepage "https:github.come-dantwatcher"
-  url "https:github.come-dantwatcherarchiverefstags0.13.4.tar.gz"
-  sha256 "fe67b866a9fd4f460126411d30e25c9d3a8d7baf7f41ec6119d3086858412a07"
+  url "https:github.come-dantwatcherarchiverefstags0.13.5.tar.gz"
+  sha256 "3d5c3809e7be28f06eb6b8d077cfb3fab4fd05ac653d2540643b05c93273803a"
   license "MIT"
   head "https:github.come-dantwatcher.git", branch: "release"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e8955fe0084d72554ab241d30960740d796d331f6a989dbb0f03ac293b27ddee"
-    sha256 cellar: :any,                 arm64_sonoma:  "3a6f35e9d7f7cf7bb004ca3824bc671ed43ee83d39d327e66dde0e5770b91405"
-    sha256 cellar: :any,                 arm64_ventura: "63d6baae4dab2518d96ba28a201cd25eb6f7bbb582e7bf4824cb174cf42c2c25"
-    sha256 cellar: :any,                 sonoma:        "b4b61cf95949d1646d377a9ee4b1b22270dbf86e5049d981058682d35d27c4c0"
-    sha256 cellar: :any,                 ventura:       "867e554001654e54d763c2c8b750d0e572fdddeaa4fdb3c7e92abe515a337fc8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8fd5559c9f70958c783c71c9a8df7829b4b5a35f8d04cf35855617bd2669dae"
+    sha256 cellar: :any,                 arm64_sequoia: "71d27cb20d333bddbe57770a8b59aefa5646ce23eaa943b4d25ac0ce3fb49102"
+    sha256 cellar: :any,                 arm64_sonoma:  "d5ebbf8298ddbdcc5394cc263ba4aadb5580717683c95c30145b159760d4aed4"
+    sha256 cellar: :any,                 arm64_ventura: "53157a0f1edf216242266fd6a9f7d0c8932d0ce54effc46f545bf54658c9e792"
+    sha256 cellar: :any,                 sonoma:        "c7f39e92be6da2d9f7146e06c379eea38819886c6a39da7df10e4dd766550725"
+    sha256 cellar: :any,                 ventura:       "18a9f158c5b2bdb1bdfb8ca6e1222a0990826234590fd4badca6c7a424b02585"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b48edcac1609f95123e313cd24069ffcc0f5de6aa10d594892d4492ffd3e54e"
   end
 
   depends_on "cmake" => :build

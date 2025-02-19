@@ -47,7 +47,7 @@ class Kopia < Formula
     assert_match(%r{#{version} build: .* from:}, output)
 
     system bin"kopia", "repository", "create", "filesystem", "--path", testpath"repo", "--no-persist-credentials"
-    assert_predicate testpath"repokopia.repository.f", :exist?
+    assert_path_exists testpath"repokopia.repository.f"
     system bin"kopia", "snapshot", "create", testpath"testdir"
     system bin"kopia", "snapshot", "list"
     system bin"kopia", "repository", "disconnect"

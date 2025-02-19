@@ -1,6 +1,6 @@
 class Ulfius < Formula
   desc "HTTP Framework for REST Applications in C"
-  homepage "https:github.combabelouestulfius"
+  homepage "https:babelouest.github.ioulfius"
   url "https:github.combabelouestulfiusarchiverefstagsv2.7.15.tar.gz"
   sha256 "19cf789b2af1919b69f77c7701237bfc318a9781ec657b68fd4b6ffa9d53f111"
   license "LGPL-2.1-only"

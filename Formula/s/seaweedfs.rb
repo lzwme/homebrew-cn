@@ -2,8 +2,8 @@ class Seaweedfs < Formula
   desc "Fast distributed storage system"
   homepage "https:github.comseaweedfsseaweedfs"
   url "https:github.comseaweedfsseaweedfs.git",
-      tag:      "3.84",
-      revision: "5e46960651b68add6be02d93f34183218d8ca431"
+      tag:      "3.85",
+      revision: "7d7e06681dd40b3fd48be7d66b179ecdb31218e8"
   license "Apache-2.0"
   head "https:github.comseaweedfsseaweedfs.git", branch: "master"
 
@@ -13,13 +13,12 @@ class Seaweedfs < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4fd88aaf1a1134700f9c9fc6b33b08333fd71ace51b416dc26336daa7e2e14e3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f64ebefbbb3bfaf6bc5cabc8e5d8db43a16d455ce879b840c62148ec02bc585"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1366063897269471617cdec04a465ab0fb37a0142d1f4be595fd7e611c511013"
-    sha256 cellar: :any_skip_relocation, sonoma:        "be9e793affc8808a5f414ad326b30872fe8106ccc7e12e78904c0e56776507c1"
-    sha256 cellar: :any_skip_relocation, ventura:       "c4489f33397700e2e81cb02fdc15f1a8265cfe0a611fad91f3b9192599f359ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a480ce75234c0a826fae0847e33e70bea260ff7eb0d2f4ac9772382da797ab5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab282dcfc56cb702265ad33f2c0bca9f43e8c557bff9c74da6de8e50b30dcda4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b9227280b89f33f61e5347a851adb5eb19dc93011b230dc0cfc63b1412a0a30"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8edcce1adb3b1990f8db4e9c220a38f8c60d8783b02c85f40b8fd5d7fa7b7d6f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7322d9c1f7b56946e9c9cc960ca4f35d30685f5a41ae305baf53bc676f11fcb6"
+    sha256 cellar: :any_skip_relocation, ventura:       "69ed5580fe61c1001dcf120ff9499972fc2030625ea3afbdb31dd86d753b64be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "251707a5db33f1daa0cf7f0fb94f6b3080a86ae24591d865343f9ddb9b3c773c"
   end
 
   depends_on "go" => :build

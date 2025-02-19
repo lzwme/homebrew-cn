@@ -1,6 +1,6 @@
 class Umple < Formula
   desc "Modeling toolprogramming language that enables Model-Oriented Programming"
-  homepage "https:www.umple.org"
+  homepage "https:cruise.umple.orgumple"
   url "https:github.comumpleumplereleasesdownloadv1.35.0umple-1.35.0.7523.c616a4dce.jar"
   version "1.35.0"
   sha256 "493b637b7432396418ebf9dcd90f4b08ec0f91a0a3247de8dbb326e0a0f80bb3"
@@ -28,7 +28,7 @@ class Umple < Formula
   test do
     (testpath"test.ump").write("class X{ a; }")
     system bin"umple", "test.ump", "-c", "-"
-    assert_predicate testpath"X.java", :exist?
-    assert_predicate testpath"X.class", :exist?
+    assert_path_exists testpath"X.java"
+    assert_path_exists testpath"X.class"
   end
 end

@@ -25,6 +25,6 @@ class Dud < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}dud version")
     system bin"dud", "init"
-    assert_predicate testpath".dudconfig.yaml", :exist?
+    assert_path_exists testpath".dudconfig.yaml"
   end
 end

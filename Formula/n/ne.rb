@@ -1,6 +1,6 @@
 class Ne < Formula
   desc "Text editor based on the POSIX standard"
-  homepage "https:github.comvignane"
+  homepage "https:ne.di.unimi.it"
   url "https:github.comvignanearchiverefstags3.3.4.tar.gz"
   sha256 "6958b5cd051d85dcdebbf45aeed2af077346a58d1d18ad14e1db477ce5519d29"
   license "GPL-3.0-only"

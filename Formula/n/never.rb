@@ -1,6 +1,6 @@
 class Never < Formula
   desc "Statically typed, embedded functional programming language"
-  homepage "https:never-lang.readthedocs.io"
+  homepage "https:never-lang.readthedocs.ioenlatest"
   url "https:github.comnever-langneverarchiverefstagsv2.3.9.tar.gz"
   sha256 "9ca3ea42738570f128708404e2f7aad35ef2b8b4b178d64508430c675713e41f"
   license "MIT"

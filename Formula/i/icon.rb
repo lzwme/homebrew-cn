@@ -1,6 +1,6 @@
 class Icon < Formula
   desc "General-purpose programming language"
-  homepage "https:www.cs.arizona.eduicon"
+  homepage "https:www2.cs.arizona.eduicon"
   url "https:github.comgtownsendiconarchiverefstagsv9.5.24b.tar.gz"
   version "9.5.24b"
   sha256 "85d695ab34d62f86d5b08f5bde91200026c1fc5a67f33f47c498f96e72543c62"

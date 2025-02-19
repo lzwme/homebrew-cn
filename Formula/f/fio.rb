@@ -1,8 +1,8 @@
 class Fio < Formula
   desc "IO benchmark and stress test"
   homepage "https:github.comaxboefio"
-  url "https:github.comaxboefioarchiverefstagsfio-3.38.tar.gz"
-  sha256 "73b3ca18a66fb88a90dae73b9994fdd18d35161d914ffe2089380760af5533cf"
+  url "https:github.comaxboefioarchiverefstagsfio-3.39.tar.gz"
+  sha256 "e2f4ff137061b44ceb83a55eb9ca8856fe188db6d9b00cb59f8629c9162afe0a"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,12 +11,12 @@ class Fio < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "654a917a60065aa8aebb4f1432956030130e0d94e36919bdd954062bf070f809"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "067e8d1d644620efa3a45d83077f9fcea61c0a7b1259841f3121fd1da032b874"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "201e1936bf800e1be7315bc53a1706ea3d45d22064c0b76755cdcb371a467c19"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ccc727fa315f45e7c596ba3f9ddd0e4247ecd17b6e96802db60feb28dc360a67"
-    sha256 cellar: :any_skip_relocation, ventura:       "2c49f227e53f2906dec0471c99ea4c3dc8d8b763c140fc5f4a021b493f68c4d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5894295d238757320da3650b40ca675cd4793ae050017f7ab211c319077bce4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d18e22916e18eaf7cb1422de669df9a988949303cb1acf981e9f2ba177a9489"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "223012be7afd1fbab0bfa118ce1b2568dd2e3ecc10c40864527c3158012fcd5c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "89a8142a97e2c12770689292796870b88cea1a2e7b3905acc9a12367c2824066"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0bbf859ba02c06a4635c1593eaa02079717f084efa5c2c2a6f70e9ccc5d37f09"
+    sha256 cellar: :any_skip_relocation, ventura:       "87de1303a14d5cef747d4a1e088a9c25229071d2c7bddeba24131d0e7716dc74"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9575eda2dcf3407132b222e95d4410bdf7451271c91b327e5cb31c5ba512ada"
   end
 
   uses_from_macos "zlib"

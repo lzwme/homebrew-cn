@@ -54,6 +54,6 @@ class CryticCompile < Formula
              "--export-format=solc", "--export-dir=#{testpath}export"
     end
 
-    assert_predicate testpath"exportcombined_solc.json", :exist?
+    assert_path_exists testpath"exportcombined_solc.json"
   end
 end

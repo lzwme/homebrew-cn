@@ -30,6 +30,6 @@ class DitaOt < Formula
   test do
     system bin"dita", "--input=#{libexec}docsrcsite.ditamap",
            "--format=html5", "--output=#{testpath}out"
-    assert_predicate testpath"outindex.html", :exist?
+    assert_path_exists testpath"outindex.html"
   end
 end

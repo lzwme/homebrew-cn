@@ -1,6 +1,6 @@
 class Ipfs < Formula
   desc "Peer-to-peer hypermedia protocol"
-  homepage "https:ipfs.tech"
+  homepage "https:docs.ipfs.techhow-tocommand-line-quick-start"
   url "https:github.comipfskuboarchiverefstagsv0.33.2.tar.gz"
   sha256 "0dcab7d932a7c613fe0421ba1a5a0c71138709c151610f57666a15d163c982b2"
   license all_of: [

@@ -48,7 +48,7 @@ class Stubby < Formula
   end
 
   test do
-    assert_predicate etc"stubbystubby.yml", :exist?
+    assert_path_exists etc"stubbystubby.yml"
     (testpath"stubby_test.yml").write <<~YAML
       resolution_type: GETDNS_RESOLUTION_STUB
       dns_transport_list:

@@ -124,6 +124,6 @@ class Grayskull < Formula
     assert_equal version, shell_output("#{bin}grayskull --version").strip
 
     system bin"grayskull", "pypi", "grayskull"
-    assert_predicate testpath"grayskullmeta.yaml", :exist?
+    assert_path_exists testpath"grayskullmeta.yaml"
   end
 end

@@ -19,13 +19,13 @@ class Manticoresearch < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "422a03fdb8873324737b12f9f7e3d05a96c1e44f0f5878357f2e8557f199b03f"
-    sha256 arm64_sonoma:  "2de81aeb9cb432d12b7af8095fde6272b5de42684b41a197a6ffb5e9476fda88"
-    sha256 arm64_ventura: "6def5c583a0ace0b0a31eacf7ad2f47624d6229b85e5f2e6177fccce3156eae1"
-    sha256 sonoma:        "0809d593c4e7443651048ede91390f46691f70a85c438e9effc7d575460f7761"
-    sha256 ventura:       "aa142882babaebf878ff76434707f02729a7407cf7f2e36416d07937391141d4"
-    sha256 x86_64_linux:  "6b3e2a854b9e1af25ae087b74659cabd316082345e1960d4bd6e3e91677fa71c"
+    rebuild 2
+    sha256 arm64_sequoia: "23b9f82bba64cd82f47fe1df8c2bcd76563a8270e5ea27d50a2fad2ba5703889"
+    sha256 arm64_sonoma:  "03245d85200575b4e4c87842cf0ebe41b63be66a48dce4d5ec391230ad9c26b5"
+    sha256 arm64_ventura: "94753adf68046638f9773fc1c893629d46409f092982354e929a66b480b23217"
+    sha256 sonoma:        "9ca10dd355103c9d92272466583836b43e2b2feba151448051a0238a7505ee7a"
+    sha256 ventura:       "b9bd3aa87501c7b4acc03ec4f0afe0d85736fd19c9234e79ea26ccf46d94f12a"
+    sha256 x86_64_linux:  "295595ebca01296aabcf0b686ffc589df0ec829ac07c601ad53079b0b090be15"
   end
 
   depends_on "cmake" => :build
@@ -33,7 +33,7 @@ class Manticoresearch < Formula
   depends_on "snowball" => :build # for libstemmer.a
 
   # NOTE: `libpq`, `mariadb-connector-c`, `unixodbc` and `zstd` are dynamically loaded rather than linked
-  depends_on "boost@1.85"
+  depends_on "boost"
   depends_on "cctz"
   depends_on "icu4c@76"
   depends_on "libpq"
@@ -49,6 +49,10 @@ class Manticoresearch < Formula
   uses_from_macos "expat"
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
+
+  # Allow building with Boost 1.87.0. Issue reported upstream following CONTRIBUTING.md
+  # Issue ref: https:github.commanticoresoftwaremanticoresearchissues3099
+  patch :DATA
 
   def install
     # Avoid statically linking to boost
@@ -113,3 +117,36 @@ class Manticoresearch < Formula
     Process.wait(pid)
   end
 end
+
+__END__
+diff --git asrcsearchdbuddy.cpp bsrcsearchdbuddy.cpp
+index 7faf78557..36f030edc 100644
+--- asrcsearchdbuddy.cpp
++++ bsrcsearchdbuddy.cpp
+@@ -14,7 +14,7 @@
+ #include "netreceive_ql.h"
+ #include "client_session.h"
+ 
+-#include <boostasioio_service.hpp>
++#include <boostasioio_context.hpp>
+ #include <boostasioread_until.hpp>
+ #include <boostprocess.hpp>
+ #if _WIN32
+@@ -32,7 +32,7 @@ static CSphString g_sUrlBuddy;
+ static CSphString g_sStartArgs;
+ 
+ static const int PIPE_BUF_SIZE = 2048;
+-static std::unique_ptr<boost::asio::io_service> g_pIOS;
++static std::unique_ptr<boost::asio::io_context> g_pIOS;
+ static std::vector<char> g_dPipeBuf ( PIPE_BUF_SIZE );
+ static CSphVector<char> g_dLogBuf ( PIPE_BUF_SIZE );
+ static std::unique_ptr<boost::process::async_pipe> g_pPipe;
+@@ -357,7 +357,7 @@ BuddyState_e TryToStart ( const char * sArgs, CSphString & sError )
+ 	g_pPipe.reset();
+ 	g_pIOS.reset();
+ 
+-	g_pIOS.reset ( new boost::asio::io_service );
++	g_pIOS.reset ( new boost::asio::io_context );
+ 	g_pPipe.reset ( new boost::process::async_pipe ( *g_pIOS ) );
+ 
+ 	std::unique_ptr<boost::process::child> pBuddy;

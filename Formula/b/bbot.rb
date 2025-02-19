@@ -321,7 +321,7 @@ class Bbot < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}bbot -s --version")
 
-    assert_predicate testpath".configbbotbbot.yml", :exist?
-    assert_predicate testpath".configbbotsecrets.yml", :exist?
+    assert_path_exists testpath".configbbotbbot.yml"
+    assert_path_exists testpath".configbbotsecrets.yml"
   end
 end

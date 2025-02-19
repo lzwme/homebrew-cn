@@ -1,6 +1,6 @@
 class Nyancat < Formula
   desc "Renders an animated, color, ANSI-text loop of the Poptart Cat"
-  homepage "https:github.comklangenyancat"
+  homepage "https:nyancat.dakko.us"
   url "https:github.comklangenyancatarchiverefstags1.5.2.tar.gz"
   sha256 "88cdcaa9c7134503dd0364a97fa860da3381a09cb555c3aae9918360827c2032"
   license "NCSA"

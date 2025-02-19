@@ -2,7 +2,7 @@ class Icdiff < Formula
   include Language::Python::Shebang
 
   desc "Improved colored diff"
-  homepage "https:github.comjeffkaufmanicdiff"
+  homepage "https:www.jefftk.comicdiff"
   url "https:github.comjeffkaufmanicdiffarchiverefstagsrelease-2.0.7.tar.gz"
   sha256 "147ebdd0c2b8019d0702bbbb1349d77442a4f05530cba39276b58b005ca08c77"
   license "PSF-2.0"

@@ -1,11 +1,17 @@
 class Monero < Formula
   desc "Official Monero wallet and CPU miner"
   homepage "https:www.getmonero.org"
-  url "https:github.commonero-projectmonero.git",
-      tag:      "v0.18.3.4",
-      revision: "b089f9ee69924882c5d14dd1a6991deb05d9d1cd"
   license "BSD-3-Clause"
   revision 1
+
+  stable do
+    # TODO: Remove `boost@1.85` and move `boost` out of HEAD in next release
+    url "https:github.commonero-projectmonero.git",
+        tag:      "v0.18.3.4",
+        revision: "b089f9ee69924882c5d14dd1a6991deb05d9d1cd"
+
+    depends_on "boost@1.85" # Boost 1.87+ issue ref: https:github.commonero-projectmoneroissues9596
+  end
 
   livecheck do
     url :stable
@@ -21,27 +27,31 @@ class Monero < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e39e7a8b79f8c13ba55872e5f389a76fee2ca3741e43deee0c6b21c830b8079"
   end
 
+  head do
+    url "https:github.commonero-projectmonero.git", branch: "master"
+
+    depends_on "boost" # TODO: use on stable in 0.18.4.0
+    depends_on "libusb" # TODO: use on stable in 0.19 (?)
+    depends_on "protobuf" # TODO: use on stable in 0.19 (?)
+  end
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on "boost@1.85" # Boost 1.87+ issue ref: https:github.commonero-projectmoneroissues9596
   depends_on "hidapi"
   depends_on "libsodium"
-  depends_on "libusb"
   depends_on "openssl@3"
-  depends_on "protobuf"
   depends_on "readline"
   depends_on "unbound"
   depends_on "zeromq"
 
   conflicts_with "wownero", because: "both install a wallet2_api.h header"
 
-  # Backport fix needed for boost 1.86.0+. Remove in the next release
-  patch do
-    url "https:github.commonero-projectmonerocommit83dd5152e6d115426afbb57a94a832ec91b58a46.patch?full_index=1"
-    sha256 "b727fe58ff1211080141a0b14eaf451c98b9493195f0c2d356aee7709f0c5ef6"
-  end
-
   def install
+    # Boost 1.87.0 fix has been backported to release-0.18 branch so should make it into 0.18.4.0
+    # Ref: https:github.commonero-projectmonerocommit01bcd52924244ec8d2a24c10fcef8959289d09ff
+    # Ref: https:github.commonero-projectmoneroissues9758
+    odie "Remove `boost@1.85` and move `boost` out of HEAD!" if build.stable? && version >= "0.18.4.0"
+
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

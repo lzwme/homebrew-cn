@@ -32,7 +32,7 @@ class Pyoxidizer < Formula
 
   test do
     system bin"pyoxidizer", "init-rust-project", "--system-rust", "hello_world"
-    assert_predicate testpath"hello_worldCargo.toml", :exist?
+    assert_path_exists testpath"hello_worldCargo.toml"
 
     cd "hello_world" do
       if Hardware::CPU.arm? && OS.mac? && MacOS.version < :ventura

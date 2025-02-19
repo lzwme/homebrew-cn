@@ -1,19 +1,18 @@
 class Xh < Formula
   desc "Friendly and fast tool for sending HTTP requests"
   homepage "https:github.comducaalexh"
-  url "https:github.comducaalexharchiverefstagsv0.23.1.tar.gz"
-  sha256 "3f7dc6a3c8809f57a32c9aae7a192b54e87702a65d426784c1775676eea2e67f"
+  url "https:github.comducaalexharchiverefstagsv0.24.0.tar.gz"
+  sha256 "80ecef9ca262b5564a951f41e11cf6125e5c4a62e66b87b071f6a333b6f40e5a"
   license "MIT"
   head "https:github.comducaalexh.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf026bfa5cbc26343dc02123476e897362491bb86c77d2d82d92ccfef4f288fa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9120640e68c2d6c4259413a2b6be5bfceb05e6477de159bc9f751aa4b978644"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "abe934355399d3360301f432adb9fceb41d933e0cb85d0aa45a12b386e60f8a4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d804da80a06c3fa1f0702aacabb85468a0d5b3065ed749e56ecc9e869b856f4d"
-    sha256 cellar: :any_skip_relocation, ventura:       "b41325090cf596f0d66c6344abeeee23cec0fa3dc197154a2526eb59e49cf100"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "427b3200809c3c8a198031d1f65354d921eb16c020560b1a862fd17c0ca43bb6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "614e2f4004420fc73625a49c57d8ab2c6239d0475a631e8f2592692a3d585094"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26dadc18c7a71191006efe3ddf251a3d1a15144447df81cc551bb9e7ac485f47"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "851d029f70f421569a2e6ad39624c28ac71bd1969397efc5cb8e44b6598e86a8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ed62d206f4000099ffa4ebf28d30d6fd33801c224065a7e1598910f4bf3f4ea8"
+    sha256 cellar: :any_skip_relocation, ventura:       "3c7acef4c3353d345b1b43395733feeed01f02f9fd481e3d7a57b2def080659c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24c7791c326b3f823d8777cb4ed9d041cf9b2a74ae1aac5167af69170d1695e5"
   end
 
   depends_on "rust" => :build

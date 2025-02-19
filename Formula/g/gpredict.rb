@@ -1,6 +1,6 @@
 class Gpredict < Formula
   desc "Real-time satellite trackingprediction application"
-  homepage "https:gpredict.oz9aec.net"
+  homepage "https:oz9aec.dkgpredict"
   license "GPL-2.0-or-later"
   revision 4
 

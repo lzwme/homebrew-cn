@@ -15,6 +15,13 @@ cask "jcryptool" do
 
   app "JCrypTool.app"
 
+  zap trash: [
+    "~LibraryApplication SupportJCrypTool",
+    "~LibraryCachesorg.jcryptool.JCrypTool",
+    "~LibraryPreferencesorg.jcryptool.JCrypTool.plist",
+    "~LibrarySaved Application Stateorg.jcryptool.JCrypTool.savedState",
+  ]
+
   caveats do
     depends_on_java "11"
     requires_rosetta

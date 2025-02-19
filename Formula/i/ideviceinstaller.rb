@@ -1,6 +1,6 @@
 class Ideviceinstaller < Formula
   desc "Tool for managing apps on iOS devices"
-  homepage "https:www.libimobiledevice.org"
+  homepage "https:libimobiledevice.org"
   url "https:github.comlibimobiledeviceideviceinstallerreleasesdownload1.1.1ideviceinstaller-1.1.1.tar.bz2"
   sha256 "deb883ec97f2f88115aab39f701b83c843e9f2b67fe02f5e00a9a7d6196c3063"
   license "GPL-2.0-or-later"

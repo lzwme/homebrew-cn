@@ -32,7 +32,7 @@ class Gauge < Formula
     JSON
 
     system(bin"gauge", "install")
-    assert_predicate testpath".gaugeplugins", :exist?
+    assert_path_exists testpath".gaugeplugins"
 
     system(bin"gauge", "config", "check_updates", "false")
     assert_match "false", shell_output("#{bin}gauge config check_updates")

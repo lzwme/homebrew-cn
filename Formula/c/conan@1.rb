@@ -133,6 +133,6 @@ class ConanAT1 < Formula
     system bin"conan", "search", "zlib", "--remote", "conancenter"
 
     system bin"conan", "install", "zlib1.2.11@", "--build"
-    assert_predicate testpath".conandatazlib1.2.11", :exist?
+    assert_path_exists testpath".conandatazlib1.2.11"
   end
 end

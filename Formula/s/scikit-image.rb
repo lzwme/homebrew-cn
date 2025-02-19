@@ -3,18 +3,18 @@ class ScikitImage < Formula
 
   desc "Image processing in Python"
   homepage "https:scikit-image.org"
-  url "https:files.pythonhosted.orgpackages83e5496a74ccfc1206666b9c7164a16657febdfeb6df0e458cb61286b20102c9scikit_image-0.25.1.tar.gz"
-  sha256 "d4ab30540d114d37c35fe5c837f89b94aaba2a7643afae8354aa353319e9bbbb"
+  url "https:files.pythonhosted.orgpackagesc7a83c0f256012b93dd2cb6fda9245e9f4bff7dc0486880b248005f15ea2255escikit_image-0.25.2.tar.gz"
+  sha256 "e5a37e6cd4d0c018a7a55b9d601357e3382826d3888c10d0213fc63bff977dde"
   license "BSD-3-Clause"
   head "https:github.comscikit-imagescikit-image.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c36e102435c60e49eb073e05d1689017cf2b6f3a2b13a8baa5c5047624b1278"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b39780e17b00ba8e2a74cd575ebaab999542357288c7109f8fee87c93bd6e5b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "630e470830b29ea04e07aca484db3f87a51576ee2c61061499b506e23ee5860a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ada55e3b6fb626358951b54f489486ed0dce5ddc91fc49e406b241c0a145caba"
-    sha256 cellar: :any_skip_relocation, ventura:       "475146c0cb35a563dacfc909c07273f5ce084bf5010f2850209b72381f98f3ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2c5c35aa990ee9ee207d1f9d9c0378083b498feab28a821632135feb7b3212a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f92c634789c248e5faa16af8c885c76a797561f9caa90ad3ba6771ee8adc65a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dfcc775c8fdda7398e80b2684303c3c68310221e1fb0e83bcd69df31f4d25971"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5aabdc0e3471dda66884980b61a1c2f6f762a26016e724bcbde3f7659c2d1412"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dad009c5f2e033d67da433674f7e4900f84a47ae676050d58adf14808fc2c565"
+    sha256 cellar: :any_skip_relocation, ventura:       "06de5f36d41949dd79b01e05bd6e10f27f8a1d808b7cb096b607484eb6af6632"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0426a7009a7096077fc58841681b3606ce906feb7abb54d15dcea8fa6cdaeb1c"
   end
 
   depends_on "meson" => :build

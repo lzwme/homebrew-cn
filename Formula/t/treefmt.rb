@@ -1,6 +1,6 @@
 class Treefmt < Formula
   desc "One CLI to format the code tree"
-  homepage "https:github.comnumtidetreefmt"
+  homepage "https:treefmt.comlatest"
   url "https:github.comnumtidetreefmtarchiverefstagsv2.1.1.tar.gz"
   sha256 "4cd20c3cf763bbf4054b9241e6d59de4d59bb4705a758a666d1661685294f2e7"
   license "MIT"

@@ -35,7 +35,7 @@ class Rsyncy < Formula
         testing
       EOS
       system bin"rsyncy", "-r", testpath"afoo", testpath"abar"
-      assert_predicate testpath"abarone.txt", :exist?
+      assert_path_exists testpath"abarone.txt"
     end
   end
 end

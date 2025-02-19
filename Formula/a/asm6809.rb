@@ -1,8 +1,8 @@
 class Asm6809 < Formula
   desc "Cross assembler targeting the Motorola 6809 and Hitachi 6309"
   homepage "https://www.6809.org.uk/asm6809/"
-  url "https://www.6809.org.uk/asm6809/dl/asm6809-2.14.tar.gz"
-  sha256 "c7b5c8a17f329a88c8ec466ebf000047879bab3716f7df2ed2579e2623f22c0c"
+  url "https://www.6809.org.uk/asm6809/dl/asm6809-2.15.tar.gz"
+  sha256 "7fb09e82853f49cd9cf9b6d7a54cfc92e09fbacea02b34dd813f3a51e041c914"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Asm6809 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c6f5c6fa28e50311352db7cb70d61249b3599f8b503d251f1b2eb4556af5806"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "440d94ef4c3690acade80e470c130b75fd1cae46fcd4dd8fd5f2e11f1189382d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b111e038025e87b3807110d05c09aa0dcd3447724ab8d43acc9bc815948e2582"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d32c8faaedd4d50873f97c5bff6a3a73a5ffa41bf8fe5e4022d401273f0603a3"
-    sha256 cellar: :any_skip_relocation, ventura:       "76cdcd5a6f3ba1ae307387f6e5549070d749857609cbe2a319ea056867df6116"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "120c79fe414840ab14ae87b675c6b83d5128dd377feabb11d937821d47996985"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c6ef57b6242a353744ce49ec015674cf0a90f5b58cbda4fbe3dcaacc48f1a04"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8961ff637c9faef483a87f88f5a83912b6890f996a180e818a53e994426bdda4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "90fe61540aa6bf9dc8b1cf5653144c62c750e142c4b5287973eb36001e70da29"
+    sha256 cellar: :any_skip_relocation, sonoma:        "709c34e4b22eeaafcbadf3afa236692e1164051a15ca367a4da18b7d86a3f663"
+    sha256 cellar: :any_skip_relocation, ventura:       "4693ee67232d5cbc10622dc754b76faceb8db80de259c435d1e1aadc823d5070"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d9ef991772bb7e72626b8abbf584a04cc9e75d858a2565627e13837a4e57562"
   end
 
   head do

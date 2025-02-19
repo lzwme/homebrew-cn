@@ -1,6 +1,6 @@
 class Tart < Formula
   desc "macOS and Linux VMs on Apple Silicon to use in CI and other automations"
-  homepage "https:github.comcirruslabstart"
+  homepage "https:tart.run"
   # NOTE: 1.x uses non-open source license
   # https:tart.runblog20230211changing-tart-license
   url "https:github.comcirruslabstartarchiverefstags0.38.0.tar.gz"

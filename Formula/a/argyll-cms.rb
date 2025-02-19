@@ -111,7 +111,7 @@ class ArgyllCms < Formula
     system bin"printtarg", testpath"test.ti1"
 
     %w[test.ti1.ps test.ti1.ti1 test.ti1.ti2].each do |f|
-      assert_predicate testpathf, :exist?
+      assert_path_exists testpathf
     end
 
     # Skip this part of the test on Linux because it hangs due to lack of a display.

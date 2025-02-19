@@ -24,6 +24,6 @@ class Xwin < Formula
 
   test do
     system bin"xwin", "--accept-license", "splat", "--disable-symlinks"
-    assert_predicate testpath".xwin-cachesplat", :exist?
+    assert_path_exists testpath".xwin-cachesplat"
   end
 end

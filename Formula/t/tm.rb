@@ -63,8 +63,8 @@ class Tm < Formula
 
     # node
     system bin"tm", "generate", "node", "foo-node"
-    assert_predicate testpath"foo-nodeserverless.yaml", :exist?
-    assert_predicate testpath"foo-nodehandler.js", :exist?
+    assert_path_exists testpath"foo-nodeserverless.yaml"
+    assert_path_exists testpath"foo-nodehandler.js"
 
     runtime = "https:raw.githubusercontent.comtriggermeshknative-lambda-runtimemasternode10runtime.yaml"
     yaml = File.read("foo-nodeserverless.yaml")
@@ -72,8 +72,8 @@ class Tm < Formula
 
     # python
     system bin"tm", "generate", "python", "foo-python"
-    assert_predicate testpath"foo-pythonserverless.yaml", :exist?
-    assert_predicate testpath"foo-pythonhandler.py", :exist?
+    assert_path_exists testpath"foo-pythonserverless.yaml"
+    assert_path_exists testpath"foo-pythonhandler.py"
 
     runtime = "https:raw.githubusercontent.comtriggermeshknative-lambda-runtimemasterpython37runtime.yaml"
     yaml = File.read("foo-pythonserverless.yaml")
@@ -81,8 +81,8 @@ class Tm < Formula
 
     # go
     system bin"tm", "generate", "go", "foo-go"
-    assert_predicate testpath"foo-goserverless.yaml", :exist?
-    assert_predicate testpath"foo-gomain.go", :exist?
+    assert_path_exists testpath"foo-goserverless.yaml"
+    assert_path_exists testpath"foo-gomain.go"
 
     runtime = "https:raw.githubusercontent.comtriggermeshknative-lambda-runtimemastergoruntime.yaml"
     yaml = File.read("foo-goserverless.yaml")
@@ -90,8 +90,8 @@ class Tm < Formula
 
     # ruby
     system bin"tm", "generate", "ruby", "foo-ruby"
-    assert_predicate testpath"foo-rubyserverless.yaml", :exist?
-    assert_predicate testpath"foo-rubyhandler.rb", :exist?
+    assert_path_exists testpath"foo-rubyserverless.yaml"
+    assert_path_exists testpath"foo-rubyhandler.rb"
 
     runtime = "https:raw.githubusercontent.comtriggermeshknative-lambda-runtimemasterruby25runtime.yaml"
     yaml = File.read("foo-rubyserverless.yaml")

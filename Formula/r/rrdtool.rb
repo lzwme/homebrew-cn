@@ -1,6 +1,6 @@
 class Rrdtool < Formula
   desc "Round Robin Database"
-  homepage "https:oss.oetiker.chrrdtoolindex.en.html"
+  homepage "https:oss.oetiker.chrrdtool"
   license "GPL-2.0-only"
 
   stable do

@@ -65,7 +65,7 @@ class Pipx < Formula
   test do
     assert_match "PIPX_HOME", shell_output("#{bin}pipx --help")
     system bin"pipx", "install", "csvkit"
-    assert_predicate testpath".localbincsvjoin", :exist?
+    assert_path_exists testpath".localbincsvjoin"
     system bin"pipx", "uninstall", "csvkit"
     refute_match "csvjoin", shell_output("#{bin}pipx list")
   end

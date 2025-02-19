@@ -245,6 +245,6 @@ class RubyAT30 < Formula
     EOS
     system bin"bundle", "exec", "ls" # https:github.comHomebrewhomebrew-coreissues53247
     system bin"bundle", "install", "--binstubs=#{testpath}bin"
-    assert_predicate testpath"bingithub-markup", :exist?, "github-markup is not installed in #{testpath}bin"
+    assert_path_exists testpath"bingithub-markup", "github-markup is not installed in #{testpath}bin"
   end
 end

@@ -33,6 +33,6 @@ class Pgrx < Formula
     system "rustup", "set", "profile", "minimal"
 
     system "cargo", "pgrx", "new", "my_extension"
-    assert_predicate testpath"my_extensionmy_extension.control", :exist?
+    assert_path_exists testpath"my_extensionmy_extension.control"
   end
 end

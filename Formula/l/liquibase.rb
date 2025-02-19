@@ -1,8 +1,8 @@
 class Liquibase < Formula
   desc "Library for database change tracking"
   homepage "https:www.liquibase.org"
-  url "https:github.comliquibaseliquibasereleasesdownloadv4.31.0liquibase-4.31.0.tar.gz"
-  sha256 "ffcf80c34c8b05a50c32c423ad2899aa9e7a5cd40097628f2bc739b70654962d"
+  url "https:github.comliquibaseliquibasereleasesdownloadv4.31.1liquibase-4.31.1.tar.gz"
+  sha256 "0555808b59941d497f0c1114c3f2225698afde11c60d191c88e449506a60a3ea"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Liquibase < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df6f2b2fc8d3b627e141125d14d028c7353962108759ddda0abfa52c1a8fe72a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df6f2b2fc8d3b627e141125d14d028c7353962108759ddda0abfa52c1a8fe72a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "df6f2b2fc8d3b627e141125d14d028c7353962108759ddda0abfa52c1a8fe72a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bc43fe10d79006ce9259a3498d6de2deabe61686a79164be9cbbccc592276662"
-    sha256 cellar: :any_skip_relocation, ventura:       "bc43fe10d79006ce9259a3498d6de2deabe61686a79164be9cbbccc592276662"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df6f2b2fc8d3b627e141125d14d028c7353962108759ddda0abfa52c1a8fe72a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b25c49301574fe40a67ab16d944c363dffec2de0c8ad8680835dcd44c648837b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b25c49301574fe40a67ab16d944c363dffec2de0c8ad8680835dcd44c648837b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b25c49301574fe40a67ab16d944c363dffec2de0c8ad8680835dcd44c648837b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cb951450860829e9d7ba103ca5df2a5c7ab2aef156ac9799e45fbd088374307b"
+    sha256 cellar: :any_skip_relocation, ventura:       "cb951450860829e9d7ba103ca5df2a5c7ab2aef156ac9799e45fbd088374307b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b25c49301574fe40a67ab16d944c363dffec2de0c8ad8680835dcd44c648837b"
   end
 
   depends_on "openjdk"

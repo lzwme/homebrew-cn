@@ -24,6 +24,6 @@ class BashPreexec < Formula
 
   test do
     # Just testing that the file is installed
-    assert_predicate testpath"#{prefix}etcprofile.dbash-preexec.sh", :exist?
+    assert_path_exists testpath"#{prefix}etcprofile.dbash-preexec.sh"
   end
 end
