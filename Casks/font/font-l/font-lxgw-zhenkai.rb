@@ -8,6 +8,7 @@ cask "font-lxgw-zhenkai" do
   homepage "https:github.comlxgwLxgwZhenKai"
 
   deprecate! date: "2024-02-18", because: :discontinued
+  disable! date: "2025-02-19", because: :discontinued
 
   font "LXGWZhenKai.ttf"
 

@@ -3,17 +3,17 @@ class Molecule < Formula
 
   desc "Automated testing for Ansible roles"
   homepage "https://molecule.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/d7/6e/304492b6c99f4927f382d9a109459efa2226d36d0a54cd405e73cd95d125/molecule-25.3.0.tar.gz"
-  sha256 "8c2148be7220e5cce7c8d709a03f60dba7207f1a7ea30ff1d134c9160a58bd22"
+  url "https://files.pythonhosted.org/packages/d6/fe/de492105b3d8973c82231bad57a6468c8ca4d1eaae2a2a93edd7725fbc1b/molecule-25.3.1.tar.gz"
+  sha256 "c8766907c8b8bfec88d7d1a5df1232bd4606a0c53d9cb95d38e84b455a6993a6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "da08bb016e080bf0cc0822faa663b11a08dc6c9e3e0c395b60ccba192b550adb"
-    sha256 cellar: :any,                 arm64_sonoma:  "33125a16ed5a662357022c617486fb4826538f795f83570a9a6ecf7e82e57756"
-    sha256 cellar: :any,                 arm64_ventura: "3dc0163066957c97c05fb6c7b6bab42a129ec96146c41847f820513c7955ea99"
-    sha256 cellar: :any,                 sonoma:        "886c99f02bdf552d44dee29e47bd361c57ec407df45d952474196a7af6ab4005"
-    sha256 cellar: :any,                 ventura:       "bedb8a95f463c568fc37f86a906b3e45c2cb8aa2a11122ce382e8ac3e1704c50"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12f2097e5e315c03469cdb708b15e9de0cd0b90ea036500b07055753a3bbb519"
+    sha256 cellar: :any,                 arm64_sequoia: "7e0aa9a25d195c37074e7aab917ebdb95c886794d98c09b385f7cd182cf0da6a"
+    sha256 cellar: :any,                 arm64_sonoma:  "f056cee7bf5aee8c600f20fe83787506970f0124ae81633819ab9a6879481b74"
+    sha256 cellar: :any,                 arm64_ventura: "00fc5e4056d54356511a990d0f9ac0b7f1ddfbb6472a52b00c56865811fec352"
+    sha256 cellar: :any,                 sonoma:        "140cbee54624d455c91d709f82e3ea798cae71e904697c73eae66122fbd1df2d"
+    sha256 cellar: :any,                 ventura:       "31f334d544197809516a0690ae7ccd17c6133ec2dab9548bbb5b60f5be23d125"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39120889709fd5e3082deb9b1a24bde17d9800c3842b5c228a5722aecc3964c8"
   end
 
   depends_on "rust" => :build

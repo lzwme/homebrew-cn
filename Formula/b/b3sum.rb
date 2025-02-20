@@ -1,17 +1,17 @@
 class B3sum < Formula
   desc "Command-line implementation of the BLAKE3 cryptographic hash function"
   homepage "https:github.comBLAKE3-teamBLAKE3"
-  url "https:github.comBLAKE3-teamBLAKE3archiverefstags1.5.5.tar.gz"
-  sha256 "6feba0750efc1a99a79fb9a495e2628b5cd1603e15f56a06b1d6cb13ac55c618"
+  url "https:github.comBLAKE3-teamBLAKE3archiverefstags1.6.0.tar.gz"
+  sha256 "cc6839962144126bc6cc1cde89a50c3bb000b42a93d7e5295b1414d9bdf70c12"
   license any_of: ["CC0-1.0", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9082de4e1d3f9390c44ff4f38d4e379509b2fec34517a3e1f9a5a9a09c0ada96"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "71e34b5afc894772d32d0d983499bd86d5ddff03023cf637d3390db4202cbc49"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b6db680bdafce5253681b4a7840b01367146682dc258f48a4c2a438f47595860"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6230145a2c86105180567a79296ebbae941f7091444238e83dac659a855d2df9"
-    sha256 cellar: :any_skip_relocation, ventura:       "9a4948a3ead4ee1ffffb910b032627da971bb343c59bb3a64821c6c96c000a94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "064f2d5353a0cb664ebdb227d00cd6444e5fb3b0adb2a5e9f10ea9b0fd4cda83"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ebbefb5b4354c704b356f90d3a5fe0340940ac3a30985fddf2bd9188bd179e6a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8000691d184f32303ce8331bbe48e53f8f2ee16562afaab94a82b9bcc3f580c2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "be4ac2df9948ef8891027aba01a14fec63c82f0ac91be0be5327c374f6a033d5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1f63c32ad268ea59102275a6636928bf92fb99104bc834f8602bbf85faae71ee"
+    sha256 cellar: :any_skip_relocation, ventura:       "7580fdb189977c8d23d01caa4edebb256d03f312bc8163205640e78436b8a48b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a94459a01a8cac6d82d8e8268ea230c184f08a0f2da3c9340a7020f290db927"
   end
 
   depends_on "rust" => :build

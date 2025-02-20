@@ -6,15 +6,17 @@ class Libdpp < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e041426c1fbfe60b1f751fd4223a5daae7d6b01f51f7398058f91b330c07c55e"
-    sha256 cellar: :any,                 arm64_sonoma:  "7d1f71ae80c3b9f1af8ca633658092b75d01545eb7a32d5eaac79674633b5a7a"
-    sha256 cellar: :any,                 arm64_ventura: "cc4dbaf15b453c352c5af33ed24259245832edb50354bdcf2eb508f8839ce973"
-    sha256 cellar: :any,                 sonoma:        "a187b0a03194c894eb3dd574585ecadb53b3885385f0a76f480ae9dd6e054169"
-    sha256 cellar: :any,                 ventura:       "0dda8005329206e980a1e0aa5875f0193ebc5df90839a1e6e321e68a169c7463"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8e268ad44b11da37020f457c7ae9108057a286d989adc38780e9362326bfce2"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "cb77910370788f5e76d754b8af942de607af64be8a0d4d54bb1873b640bd0f09"
+    sha256 cellar: :any,                 arm64_sonoma:  "d0f9149351006277ca0adb82fc28373f079737120a4b848b4aa86f9cd025a42b"
+    sha256 cellar: :any,                 arm64_ventura: "b1f6b78be46f887a9ee35eaf55a80677a3565c8877a42353bfc5fbe31f25a3b6"
+    sha256 cellar: :any,                 sonoma:        "bea496c05d0e5421ab9099bc2cf497909484450a3e1b723d3fd8d86f7fc60815"
+    sha256 cellar: :any,                 ventura:       "658e968e1df3e5562da1da0648d37c45c5246664cc63d46d7d904d9c06e27df0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f49b2d9cd65d0dfc27cf75ea7ce866a57b00b0f70f8e2797f307f3c60bf22b1"
   end
 
   depends_on "cmake" => :build
+  depends_on "nlohmann-json" => :build
   depends_on "openssl@3"
   depends_on "opus"
   depends_on "pkgconf"
@@ -22,7 +24,13 @@ class Libdpp < Formula
   uses_from_macos "zlib"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", "-DDPP_BUILD_TEST=OFF", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DDPP_BUILD_TEST=OFF",
+                    "-DDPP_NO_CONAN=ON",
+                    "-DDPP_NO_VCPKG=ON",
+                    "-DDPP_USE_EXTERNAL_JSON=ON",
+                    "-DRUN_LDCONFIG=OFF",
+                    *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

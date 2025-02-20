@@ -1,18 +1,18 @@
 class PixiPack < Formula
   desc "Pack and unpack conda environments created with pixi"
-  homepage "https:github.comquantcopixi-pack"
-  url "https:github.comquantcopixi-packarchiverefstagsv0.3.1.tar.gz"
-  sha256 "d0c6eb4d20747a5ea47093dc06e80e15a46ec3fd9c3c1e93ee035480e3b0a75a"
+  homepage "https:pixi.shlatestadvancedproduction_deployment#pixi-pack"
+  url "https:github.comquantcopixi-packarchiverefstagsv0.3.2.tar.gz"
+  sha256 "52c15d74879c5593f52e9b6c3db19dacb2a9a127bd9f247c2282fe1d21d70ca0"
   license "BSD-3-Clause"
   head "https:github.comquantcopixi-pack.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c92b366fcc6817e56e3e59ef867cd001aef2d2778399a8ed8fe1b92b3d75c26a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3aac9b6f567d34050e684c236dfffb8e9b073c7bfa764d6ba603997f6cb11d73"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2243e0179886c73fa74939ee0a16982d6595806dfd3a0208696a04a8c871b305"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ea582b6d7cd63c5ae192b6e969858d122fb2d534be58ebe53f7d78ac65396b1e"
-    sha256 cellar: :any_skip_relocation, ventura:       "4581a3e8a26d8230ff5ae74889d3579df25f5591785dd5a54cef11113e747947"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a73baa4e8a18e3d24c190fe3462a3eee06970ec109b1d1cca1931a381e067b1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "28dc271695cfc038a4e082f2df0b0d73612f0dae8df0d2e5d5c9b91d04921741"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "306cd31ee6d09c61a2d2e8fb0ce5b7a6146d4d8f911f895518cf810fbc50c4c4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c21a947dfc2cdceb210c93dc8b123996e01b61122a1f7ea8821bab0ac12ce644"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e54b820cae5a8ce2b38248ffdbe2e41250086d981ad6a0a6f1c95209e5396b36"
+    sha256 cellar: :any_skip_relocation, ventura:       "e03575675a2287ea01398038f049ff2069736256ae3351e51a75478bb18330b5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7c19b49f0ffe4ce2a84b05955ec53ce0763acf0343cb9d2fe8e565144028057"
   end
 
   depends_on "cmake" => :build
@@ -51,6 +51,13 @@ class PixiPack < Formula
         size: 159003
         timestamp: 1725018903918
     YAML
+
+    (testpath"pixi.toml").write <<~TOML
+      [project]
+      name = "test"
+      version = "0.1.0"
+    TOML
+
     system bin"pixi-pack", "pack", "--platform", "linux-64"
     assert_path_exists testpath"environment.tar"
   end

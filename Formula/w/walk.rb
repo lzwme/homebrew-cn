@@ -1,17 +1,17 @@
 class Walk < Formula
   desc "Terminal navigator"
   homepage "https:github.comantonmedvwalk"
-  url "https:github.comantonmedvwalkarchiverefstagsv1.12.0.tar.gz"
-  sha256 "81db744bbd36d55bde26f7fafce8a067baa6d1d81ae59aa090f48c93023a2bd4"
+  url "https:github.comantonmedvwalkarchiverefstagsv1.13.0.tar.gz"
+  sha256 "9f62377438908757fcb2210bd08bf346391858f21d0ef664d7998abf635880cb"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a96aaac9cca43e22e99167c63d64293629f3f43c05ce16f424f2efcea5196028"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a96aaac9cca43e22e99167c63d64293629f3f43c05ce16f424f2efcea5196028"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a96aaac9cca43e22e99167c63d64293629f3f43c05ce16f424f2efcea5196028"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f10992a2e962121750542c6a908e008787d3fed5e3e8da171b2d59fc3fd80f43"
-    sha256 cellar: :any_skip_relocation, ventura:       "f10992a2e962121750542c6a908e008787d3fed5e3e8da171b2d59fc3fd80f43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d35b3db13dc18c195d01f40c8d01f1fbed2ac542300dec80e4e121d956ba5a8f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cce3ab82e4e2280c930d6f3c532440a20749e42175316a90fb64d7f00cea7d1f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cce3ab82e4e2280c930d6f3c532440a20749e42175316a90fb64d7f00cea7d1f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cce3ab82e4e2280c930d6f3c532440a20749e42175316a90fb64d7f00cea7d1f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9719de03b75d0b1697d97ca68da9481bc29191c5cb3d89e5d899f7ff8c61ef1b"
+    sha256 cellar: :any_skip_relocation, ventura:       "9719de03b75d0b1697d97ca68da9481bc29191c5cb3d89e5d899f7ff8c61ef1b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfa31d4ff035f46edf2aa77d9b6165e4edb93278f268b059325bed36d3b8e42e"
   end
 
   depends_on "go" => :build

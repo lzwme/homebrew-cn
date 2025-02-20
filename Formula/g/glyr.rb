@@ -4,20 +4,15 @@ class Glyr < Formula
   url "https:github.comsahibglyrarchiverefstags1.0.10.tar.gz"
   sha256 "77e8da60221c8d27612e4a36482069f26f8ed74a1b2768ebc373c8144ca806e8"
   license "LGPL-3.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "75c0b25000de973e7ea592d3ae07a610f54038c6e73adddf93ca8f50e0df12ff"
-    sha256 cellar: :any,                 arm64_sonoma:   "74187740cb6f6aabc0c532714c8753435c33a49408407c3ba5b0236c5b85cc03"
-    sha256 cellar: :any,                 arm64_ventura:  "0b11085d86604b659fe43f99e91838695ff2c6bb4a1e5f2790e6af6fc90246da"
-    sha256 cellar: :any,                 arm64_monterey: "800ed9d047c06e8490f6318b36c88c34feb4dac7dbe60a539edd752f4568a08e"
-    sha256 cellar: :any,                 arm64_big_sur:  "498252c79958a96c42f3bea2936366f692d5c25cf12d6b3ee3c8ac1a5747f4b8"
-    sha256 cellar: :any,                 sonoma:         "8cb3930704acecdc21f9035ed8bccd3c326db8cdd14a3b03e731533c072aea3b"
-    sha256 cellar: :any,                 ventura:        "5c2a9dbf3b8f41d091f36b78e8c5597fe3ec3f5153eb5d60577b911b92d6a68b"
-    sha256 cellar: :any,                 monterey:       "ff357ecf355067543f989182c6dc6a113d0aa64dca00aa3df67a080d68ba2ca5"
-    sha256 cellar: :any,                 big_sur:        "86ce9cf96d67fdbe9b174f4bc302f9c31abffcfb7790ec07fef5294f66beca17"
-    sha256 cellar: :any,                 catalina:       "9ef809e699349c1fa1bb8e83f23aee567d1de60af6ddd7bef19409ecd58f8cf6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f147edbece71a6cac950c74f75b974da8d821139fbe1db95faeb0e08b67182af"
+    sha256 cellar: :any,                 arm64_sequoia: "9ff02541efeba578a7e20d6d3ba1cd80c71d4f80e37306a35cb9b13e1e9ef4e8"
+    sha256 cellar: :any,                 arm64_sonoma:  "783ce52f8a68f8d5900429fd33baf4d728523e19fe63fec93c1de3242ab157f3"
+    sha256 cellar: :any,                 arm64_ventura: "d2cf724c8cfdb04e0c94643c4fc456ca85a75148429198eb11b3746c1d23047b"
+    sha256 cellar: :any,                 sonoma:        "894c3d629641e0ed82a2f10ac0559658173e91d212605ffc32cfd824ef0c13e0"
+    sha256 cellar: :any,                 ventura:       "244b65728e18b1514ca9b3fb77c09d835ce07d98656567b0b62f90365716ea92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "299191466994be32c6b0fd7ffe958623ddbffb940428b95c25eba2fa6b5bff21"
   end
 
   depends_on "cmake" => :build

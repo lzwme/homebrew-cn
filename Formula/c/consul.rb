@@ -23,7 +23,7 @@ class Consul < Formula
   end
 
   # https:www.hashicorp.combloghashicorp-adopts-business-source-license
-  deprecate! date: "2024-02-15", because: "will change its license to BUSL on the next release"
+  disable! date: "2025-02-19", because: "uses BUSL license"
 
   depends_on "go" => :build
 

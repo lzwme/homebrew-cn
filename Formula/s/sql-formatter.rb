@@ -6,14 +6,15 @@ class SqlFormatter < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "f72f7d24b87e4051c9a0cdf673c00e9b718fd22e92e200ad633348b01d85ba31"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "2475f3bc8e434b5b474789fa78e7ffd1383f541e60d4e7c51b2385c5e16ed35e"
   end
 
   depends_on "node"
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec/"bin/sql-formatter"
+    bin.install_symlink libexec.glob("bin/*")
   end
 
   test do

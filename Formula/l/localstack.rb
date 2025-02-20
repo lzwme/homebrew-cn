@@ -6,14 +6,15 @@ class Localstack < Formula
   url "https://files.pythonhosted.org/packages/5b/dd/1023e7b50f09d13f6fd96624016f03494524dafd26b220518c6a6ef7f7bc/localstack-4.1.1.tar.gz"
   sha256 "531d8cab11f1f1ec92d0e4e4ff63290cee705555f0aed68b38b2d9e5d17a9175"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6c107410121fde82182da9d0b3830b75e4dba75e396ec708f4af572f7245e7f2"
-    sha256 cellar: :any,                 arm64_sonoma:  "1ca671edc6b96cecd9046de8f2a28fa9827a89610883bc230be66da817354939"
-    sha256 cellar: :any,                 arm64_ventura: "dc6cfab775b9a4aa2b9eb02b40118982b06b18a7affaf803407912a596087353"
-    sha256 cellar: :any,                 sonoma:        "9380bc066242e921b023ea36851c60d5ce9fd4c0e74f6bede5e0483eb33fd30e"
-    sha256 cellar: :any,                 ventura:       "ed477e5d5dfa7c457ee8c062fdde2c095f46b05bc1e6d642d54966a2179379c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfa7b2670bf990ae6fdedc61064b506eb0cb545c81f69bef16c1380a1e20474f"
+    sha256 cellar: :any,                 arm64_sequoia: "d639daae1270a27f00691333160811756b48821bcc6db43c58a03e0417428c99"
+    sha256 cellar: :any,                 arm64_sonoma:  "77d509f145be18f820796f5566f420fac77533ac1b8d827cd9665f9876dd5fcd"
+    sha256 cellar: :any,                 arm64_ventura: "70372fd120e4c8beeb659511227f2c93881e627ddad315269be7b8d023608bee"
+    sha256 cellar: :any,                 sonoma:        "a1f04c0d3eb5ef8892d24dc03a09e61d447d3f43029c59cbca03e778c503e010"
+    sha256 cellar: :any,                 ventura:       "2b8895aa3dac2da5ae0abf1ad2dd6e2bda928117129077315c41049846cea915"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e42935f855a4a288d4ec01af06e181e3f725d02af41d967bde58b2207575a2c1"
   end
 
   depends_on "docker" => :test
@@ -98,13 +99,13 @@ class Localstack < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/1f/5a/07871137bb752428aa4b659f910b399ba6f291156bdea939be3e96cae7cb/psutil-6.1.1.tar.gz"
-    sha256 "cf8496728c18f2d0b45198f06895be52f36611711746b7f30c464b422b50e2f5"
+    url "https://files.pythonhosted.org/packages/2a/80/336820c1ad9286a4ded7e845b2eccfcb27851ab8ac6abece774a6ff4d3de/psutil-7.0.0.tar.gz"
+    sha256 "7be9c3eba38beccb6495ea33afd982a44074b78f28c434a1f51cc07fd315c456"
   end
 
   resource "pyasn1" do
-    url "https://files.pythonhosted.org/packages/ba/e9/01f1a64245b89f039897cb0130016d79f77d52669aae6ee7b159a6c4c018/pyasn1-0.6.1.tar.gz"
-    sha256 "6f580d2bdd84365380830acf45550f2511469f673cb4a5ae3857a3170128b034"
+    url "https://files.pythonhosted.org/packages/a4/db/fffec68299e6d7bad3d504147f9094830b704527a7fc098b721d38cc7fa7/pyasn1-0.4.8.tar.gz"
+    sha256 "aef77c9fb94a3ac588e87841208bdec464471d9871bd5050a287cc9a475cd0ba"
   end
 
   resource "pygments" do
@@ -133,8 +134,8 @@ class Localstack < Formula
   end
 
   resource "python-jose" do
-    url "https://files.pythonhosted.org/packages/e4/19/b2c86504116dc5f0635d29f802da858404d77d930a25633d2e86a64a35b3/python-jose-3.3.0.tar.gz"
-    sha256 "55779b5e6ad599c6336191246e95eb2293a9ddebd555f796a65f838f07e5d78a"
+    url "https://files.pythonhosted.org/packages/8e/a0/c49687cf40cb6128ea4e0559855aff92cd5ebd1a60a31c08526818c0e51e/python-jose-3.4.0.tar.gz"
+    sha256 "9a9a40f418ced8ecaf7e3b28d69887ceaa76adad3bcaa6dae0d9e596fec1d680"
   end
 
   resource "pyyaml" do

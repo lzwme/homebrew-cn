@@ -4,12 +4,12 @@ class Picotool < Formula
   license "BSD-3-Clause"
 
   stable do
-    url "https:github.comraspberrypipicotoolarchiverefstags2.1.0.tar.gz"
-    sha256 "9062fea171661c6aa13294e092f0dc92641382d2b6f95315529bfbe9fb1521e4"
+    url "https:github.comraspberrypipicotoolarchiverefstags2.1.1.tar.gz"
+    sha256 "19200c6dc4be5acd6fb53de3d7f35c826af596c18879d56f214b795300100260"
 
     resource "pico-sdk" do
-      url "https:github.comraspberrypipico-sdkarchiverefstags2.1.0.tar.gz"
-      sha256 "5e3abc511955dd2179809d0c33f05fe6f94544d8d0ca436842e6638bb655d4d2"
+      url "https:github.comraspberrypipico-sdkarchiverefstags2.1.1.tar.gz"
+      sha256 "179c5531e75ac7f82d0679e70b6e8881f871738dc0ef17baf3b4ff4679291c41"
 
       livecheck do
         formula :parent
@@ -18,12 +18,12 @@ class Picotool < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "9f18704812babde0c3ada9b4b7b0639517e168531a9775f5f31eeb8f57d9d83a"
-    sha256 arm64_sonoma:  "bf230f25264224a7a1dd23a130d26fb99fa1420fed1541aaef83fcf3a35957e5"
-    sha256 arm64_ventura: "d3cecbf0608f1bcf0335b36e9ab90770a3f1499b76166e23bee84228c6ffbc62"
-    sha256 sonoma:        "cfe0c43600912bd4dbeab08ed2527bb06344ccefdc65762184995eee828ec15c"
-    sha256 ventura:       "9084cfd0418efff106d863b5a482d9e0e439c0a6385642752bc28c7e43df702a"
-    sha256 x86_64_linux:  "585aa0ccd95425b82848f4cdf9410a96da20c02bf46ec6ec32c88a170539209c"
+    sha256 arm64_sequoia: "8e51e1b6845de5e0b23a077e14d62833a1a278dd152af0c3dfef5e61cc2256b5"
+    sha256 arm64_sonoma:  "cd8546607360520cf90fb05023ddedf4314f5091a405b26a14258671de27d43f"
+    sha256 arm64_ventura: "d4f3ee5104586f5333b44791ddab8cb73335674e9c34bba6087ac2b5173977bb"
+    sha256 sonoma:        "5a30e1353a4d3ab7d2dfc5ceb9e129e24d5909fd2a78e49a15f440c47d99b832"
+    sha256 ventura:       "968e9358bedbeb778f48ceea8aac90f86be7166073f560273a4a1175a17a1f74"
+    sha256 x86_64_linux:  "e1eedbfbeb6bbd81d3e6bdf3e3c086ef33689ea341967e00b1cdeef528f77ce8"
   end
 
   head do

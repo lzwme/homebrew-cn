@@ -1,23 +1,22 @@
 class Fastnetmon < Formula
   desc "DDoS detection tool with sFlow, Netflow, IPFIX and port mirror support"
   homepage "https:github.compavel-odintsovfastnetmon"
-  url "https:github.compavel-odintsovfastnetmonarchiverefstagsv1.2.7.tar.gz"
-  sha256 "c21fcbf970214dd48ee8aa11e6294e16bea86495085315e7b370a84b316d0af9"
+  url "https:github.compavel-odintsovfastnetmonarchiverefstagsv1.2.8.tar.gz"
+  sha256 "d16901b00963f395241c818d02ad2751f14e33fd32ed3cb3011641ab680e0d01"
   license "GPL-2.0-only"
-  revision 13
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "94a4afafebcb477c4171204e4efb4c344337fdc423c1018fdfe344bd658a28dd"
-    sha256 cellar: :any,                 arm64_sonoma:  "5cf0a95b80bcbeb28557a4ab0b4a6269fb9ddff1b29c6dd319091f578b3f41c5"
-    sha256 cellar: :any,                 arm64_ventura: "e95ad2e1ee99d55f05a0f50083d7afaa662e6c728da2d50ade27785d08a4bced"
-    sha256 cellar: :any,                 sonoma:        "2bf4d7fa19878783ceebc5f4bdca9496e51ac23625a8f22d65c9d484eaa7fddc"
-    sha256 cellar: :any,                 ventura:       "56630066e33de6ef149915be410fcae31914111b3a29075b431cd3a3a3ad47e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f7d1d7a2fb5c973e911e6f4639a7415e31a4b196487cd551534f3cc7f1e6fc9"
+    sha256 cellar: :any,                 arm64_sequoia: "638658ab7298845a7ada3ff294d311c069953300d0939c6d267516b1507a3c55"
+    sha256 cellar: :any,                 arm64_sonoma:  "a819b7f6fe350da014f764cc1995739533c9749705f2c29e1b305b99b77daee2"
+    sha256 cellar: :any,                 arm64_ventura: "8f520a724c106048497f95582cdfccac459aa843780129f575c3960decee0cac"
+    sha256 cellar: :any,                 sonoma:        "17124cde58f9903e0cf040dae31171b223828a0e8523db7b50fe0643ef47c938"
+    sha256 cellar: :any,                 ventura:       "9b622e36a421de8688af751ee6c1ca1424fa40bf6da6224568d6896877b7fe0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0854348dff38e295a8cb9f82b52dd731d6d858d1872fc34547323e5cf39d514"
   end
 
   depends_on "cmake" => :build
   depends_on "abseil"
-  depends_on "boost@1.85" # Boost 1.87+ issue: https:github.compavel-odintsovfastnetmonissues1027
+  depends_on "boost"
   depends_on "capnp"
   depends_on "grpc"
   depends_on "hiredis"
@@ -26,24 +25,31 @@ class Fastnetmon < Formula
   depends_on "mongo-c-driver"
   depends_on "openssl@3"
   depends_on "protobuf"
+
+  uses_from_macos "libpcap"
   uses_from_macos "ncurses"
 
   on_linux do
     depends_on "elfutils"
     depends_on "libbpf"
-    depends_on "libpcap"
   end
 
-  # Fix build failure with gRPC 1.67.
-  # https:github.compavel-odintsovfastnetmonpull1023
+  # Backport support for Boost 1.87.0
   patch do
-    url "https:github.compavel-odintsovfastnetmoncommitb6cf2e7222c24343b868986e867ddb7adad0bf30.patch?full_index=1"
-    sha256 "3a3f719f7434e52db01a512ed3891cf0e3794d4576323e3c2fd3b31c69fb39be"
+    url "https:github.compavel-odintsovfastnetmoncommitf02063204d2b07a525d70e502571b31514653604.patch?full_index=1"
+    sha256 "273d22bdfae85e464ab8cc1044423b2589800bef1db649f664049030f2cf719b"
+  end
+
+  # Backport fix to build with Clang
+  patch do
+    url "https:github.compavel-odintsovfastnetmoncommit8a91b5a8c8be1af0fe96ffe1ee1c002c30494662.patch?full_index=1"
+    sha256 "cb2dd41177c73ed3ef4ee3a372d8f99b6471f695041dc1c05299ea03a572a202"
   end
 
   def install
     system "cmake", "-S", "src", "-B", "build",
-                    "-DLINK_WITH_ABSL=TRUE",
+                    "-DCMAKE_CXX_STANDARD=20",
+                    "-DLINK_WITH_ABSL=ON",
                     "-DSET_ABSOLUTE_INSTALL_PATH=OFF",
                     *std_cmake_args
     system "cmake", "--build", "build"
@@ -70,7 +76,7 @@ class Fastnetmon < Formula
 
     pid = spawn opt_sbin"fastnetmon", "--configuration_file", testpath"fastnetmon.conf", "--log_to_console"
     sleep 60
-    sleep 30 if OS.mac? && Hardware::CPU.intel?
+    sleep 40 if OS.mac? && Hardware::CPU.intel?
 
     assert_path_exists testpath"fastnetmon.dat"
     assert_path_exists testpath"fastnetmon_ipv6.dat"

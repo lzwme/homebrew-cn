@@ -1,18 +1,17 @@
 class Sonobuoy < Formula
   desc "Kubernetes component that generates reports on cluster conformance"
   homepage "https:github.comvmware-tanzusonobuoy"
-  url "https:github.comvmware-tanzusonobuoyarchiverefstagsv0.57.2.tar.gz"
-  sha256 "8cc661fefbc959262991d4cc4076577e428d10b08aa0682ec32a5ff0bca56e07"
+  url "https:github.comvmware-tanzusonobuoyarchiverefstagsv0.57.3.tar.gz"
+  sha256 "d581032898c17f1df6db90e85aae8dae6429e8cd2a1b54e1728ddeaa7d9a989c"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "adcc616b8f507e2b0de352a29d4b1181811a972d32bfa076b5b12c00bab99b1f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "adcc616b8f507e2b0de352a29d4b1181811a972d32bfa076b5b12c00bab99b1f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "adcc616b8f507e2b0de352a29d4b1181811a972d32bfa076b5b12c00bab99b1f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "770e51d31207cb5b85d1e6980ed711e633fb92ef7c1a4084c625ea1334828dae"
-    sha256 cellar: :any_skip_relocation, ventura:       "770e51d31207cb5b85d1e6980ed711e633fb92ef7c1a4084c625ea1334828dae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e913c9c7c07875859a46d3a0fc8033e1c6c47f31d89c1074af0a8dbc783055d2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c32da42e3e5b57b9ced6921ad5c275ac8ff076ce9dbabafb30ba0d57d520a251"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c32da42e3e5b57b9ced6921ad5c275ac8ff076ce9dbabafb30ba0d57d520a251"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c32da42e3e5b57b9ced6921ad5c275ac8ff076ce9dbabafb30ba0d57d520a251"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a63e81012251bc72c4dee7f3c82fcded580417bfb68774d772980e5489560902"
+    sha256 cellar: :any_skip_relocation, ventura:       "a63e81012251bc72c4dee7f3c82fcded580417bfb68774d772980e5489560902"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11b4dd588a290681b0a297cdbee378b83cfcccb2bb8cb4c40033531e30b38d76"
   end
 
   depends_on "go" => :build

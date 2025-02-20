@@ -3,21 +3,21 @@ class Flit < Formula
 
   desc "Simplified packaging of Python modules"
   homepage "https:github.compypaflit"
-  url "https:files.pythonhosted.orgpackages0346f84b8815d161e7392d124d3de6e5880d1d36a74162a77a5e2839dc3c8c68flit-3.10.1.tar.gz"
-  sha256 "9c6258ae76d218ce60f9e39a43ca42006a3abcc5c44ea6bb2a1daa13857a8f1a"
+  url "https:files.pythonhosted.orgpackages8bc13482d40966e55808bae4dbd8b158c700146ed5d916cc98f0f5dcb4e23addflit-3.11.0.tar.gz"
+  sha256 "58d0a07f684c315700c9c54a661a1130995798c3e495db0db53ce6e7d0121825"
   license "BSD-3-Clause"
   head "https:github.compypaflit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "486150dd0f88e121b5edbe5525e1e01432d5791b8481f9ed3198ed48f26dc898"
+    sha256 cellar: :any_skip_relocation, all: "d76b337f079e07bb57e59623a2caaab05386b9affcd7549d1615e8e08b338ea0"
   end
 
   depends_on "certifi"
   depends_on "python@3.13"
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
-    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
+    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
+    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
   end
 
   resource "docutils" do
@@ -26,8 +26,8 @@ class Flit < Formula
   end
 
   resource "flit-core" do
-    url "https:files.pythonhosted.orgpackagesd5ae09427bea9227a33ec834ed5461432752fd5d02b14f93dd68406c91684622flit_core-3.10.1.tar.gz"
-    sha256 "66e5b87874a0d6e39691f0e22f09306736b633548670ad3c09ec9db03c5662f7"
+    url "https:files.pythonhosted.orgpackagesbc18b9b81cab2b8f63e6e7f72e1ba2766a0454fcd563e7a77b8299cb917ba805flit_core-3.11.0.tar.gz"
+    sha256 "6ceeee3219e9d2ea282041f3e027c441597b450b33007cb81168e887b6113a8f"
   end
 
   resource "idna" do
@@ -41,13 +41,13 @@ class Flit < Formula
   end
 
   resource "tomli-w" do
-    url "https:files.pythonhosted.orgpackagesd419b65f1a088ee23e37cdea415b357843eca8b1422a7b11a9eee6e35d4ec273tomli_w-1.1.0.tar.gz"
-    sha256 "49e847a3a304d516a169a601184932ef0f6b61623fe680f836a2aa7128ed0d33"
+    url "https:files.pythonhosted.orgpackages1975241269d1da26b624c0d5e110e8149093c759b7a286138f4efd61a60e75fetomli_w-1.2.0.tar.gz"
+    sha256 "2dd14fac5a47c27be9cd4c976af5a12d87fb1f0b4512f81d69cce3b35ae25021"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https:files.pythonhosted.orgpackagesaa63e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66urllib3-2.3.0.tar.gz"
+    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
   end
 
   def install

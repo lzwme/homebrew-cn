@@ -1,18 +1,18 @@
 class Doppler < Formula
   desc "CLI for interacting with Doppler secrets and configuration"
   homepage "https:docs.doppler.comdocs"
-  url "https:github.comDopplerHQcliarchiverefstags3.72.0.tar.gz"
-  sha256 "6489f31222ae5c9a5a81d98685563c1bed1ea8da83948015ee2e2d1e58fe630e"
+  url "https:github.comDopplerHQcliarchiverefstags3.72.1.tar.gz"
+  sha256 "5885361ea19967842b13c7006f22be6bcfd7c0acbc78334b1bf92ed81816eaeb"
   license "Apache-2.0"
   head "https:github.comDopplerHQcli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80eb45ea9c15cd4fae4f71ea7e2a8dd2a1c562598099f0db3597564c9264f22a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80eb45ea9c15cd4fae4f71ea7e2a8dd2a1c562598099f0db3597564c9264f22a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "80eb45ea9c15cd4fae4f71ea7e2a8dd2a1c562598099f0db3597564c9264f22a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1c433c9ecd9f8066fb25b1a8d55fee457e6b5c8b1b52e738b03603bfe752f405"
-    sha256 cellar: :any_skip_relocation, ventura:       "1c433c9ecd9f8066fb25b1a8d55fee457e6b5c8b1b52e738b03603bfe752f405"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "681caa3d57e13f6d2af78d514f1f4a6f2b562f08687026b2f296745165d19ff4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0edea4ed6fbcbd23accf0cb37154bbbdb221b062a46489d5f9b0c2e582eaa79"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d0edea4ed6fbcbd23accf0cb37154bbbdb221b062a46489d5f9b0c2e582eaa79"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d0edea4ed6fbcbd23accf0cb37154bbbdb221b062a46489d5f9b0c2e582eaa79"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0086d1fb6d6bbdaaa67fba352518eb72c1da642b907a8dc829cbb77c52bd3967"
+    sha256 cellar: :any_skip_relocation, ventura:       "0086d1fb6d6bbdaaa67fba352518eb72c1da642b907a8dc829cbb77c52bd3967"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4947b7ec6c9afeb25f7f6f832a9ed66e0ce1aa4090ea3d6ef91d3ef0d2fa7e92"
   end
 
   depends_on "go" => :build

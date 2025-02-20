@@ -1,18 +1,18 @@
 class Hk < Formula
   desc "Git hook and pre-commit lint manager"
   homepage "https:hk.jdx.dev"
-  url "https:github.comjdxhkarchiverefstagsv0.2.4.tar.gz"
-  sha256 "ca726c524c9451628e602686150c8db95c1431b5428ea56284220f00ac7e4cb1"
+  url "https:github.comjdxhkarchiverefstagsv0.3.3.tar.gz"
+  sha256 "583829ba1c025186bf3dcd79b7e3d3cebd20d4f5a5a1a0cd751366723ba1b812"
   license "MIT"
   head "https:github.comjdxhk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5a8b8bf948306620ef8c59db4c6ec83abd84a336209048edad2da114dac4c7b8"
-    sha256 cellar: :any,                 arm64_sonoma:  "f03bd7c664001ee1e0568baedb24f10b7a0ef0d23d919f206842d7a238188457"
-    sha256 cellar: :any,                 arm64_ventura: "52c7b3397c5e8d41dbbe8ce941103567cd41ea305aa67d6f21d4880a9b3251ca"
-    sha256 cellar: :any,                 sonoma:        "2ed065451c5076c7b406535ceffba428c90904b1ee9d4fed032b0c7a3e575a5e"
-    sha256 cellar: :any,                 ventura:       "eb9e126c8c1e8715809c326bb5e58197131e6833b50225cdcaa565f8ba245245"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85eb31f7db7de0711758060fb21632005ab69d397ca3d4375e343b0e10382b24"
+    sha256 cellar: :any,                 arm64_sequoia: "cf79db827d41fdfb7d7c3928cd28248c36dd96d238152b7b1f86150f8dda365a"
+    sha256 cellar: :any,                 arm64_sonoma:  "d0f061813132df93b6cf16d2098771ceac632368eb2833ebb0492cf1af8cead5"
+    sha256 cellar: :any,                 arm64_ventura: "f1b435d63ef284a234d30d60526159b51c8f35cb31c16f8160c414e527cece8c"
+    sha256 cellar: :any,                 sonoma:        "505c57230bdc8a09abe760b228fb8eabd7d1ab6c2da8e8471c8ececcd73f6eeb"
+    sha256 cellar: :any,                 ventura:       "87e7ca5fd3fed1778ff85947505a167fc970c6c230960b4ae104996a2aba7df8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6196e62b8055557af930699cb4e8a10a036e7ccf14ed138ffc66b5c9203dddd8"
   end
 
   depends_on "rust" => [:build, :test]

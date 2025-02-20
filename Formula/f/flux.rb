@@ -2,8 +2,8 @@ class Flux < Formula
   desc "Lightweight scripting language for querying databases"
   homepage "https:www.influxdata.comproductsflux"
   url "https:github.cominfluxdataflux.git",
-      tag:      "v0.195.2",
-      revision: "c2433e6a9351b50e9c1c7de8a52a72176e08b845"
+      tag:      "v0.196.1",
+      revision: "ba61b9b27df5368b0fbf05df5bbbfcfb60c96dd7"
   license "MIT"
   head "https:github.cominfluxdataflux.git", branch: "master"
 
@@ -13,14 +13,12 @@ class Flux < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "9d6a8a7113bff0d3fad44e9e52b80ef4bf4660c771ee42dad7cc210cf2288f8c"
-    sha256 cellar: :any,                 arm64_sonoma:   "5d6804ec22c6a4e3d6a62dff38610d848880ae1e761e67b7911f2098b4ce1b97"
-    sha256 cellar: :any,                 arm64_ventura:  "1fbb64166d19183afaa136cb4d2a9bace5e0bd30406ffecf1aa0463e57ab008d"
-    sha256 cellar: :any,                 arm64_monterey: "50a5fb7f388d21ae20ced7ba4f9b8b8a7c5c6b322416786a5d7f5232480b54eb"
-    sha256 cellar: :any,                 sonoma:         "62ba74293ea0038e39caa8fcda02fee03bf8fbeee7a2575e87a7e1dfb63b2bea"
-    sha256 cellar: :any,                 ventura:        "885fdb467e7e27b997ea219c972e674794a333b1c9d9e86436d043669c71d601"
-    sha256 cellar: :any,                 monterey:       "e4b79e24f763168081efc0b25bfbe1cb21fd8807c70207ceb365950a66d747c2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e1b70709a8013fe55aa0d613b3ba05f2830cd43c8c0b1f2e599f3f3844d3a04"
+    sha256 cellar: :any,                 arm64_sequoia: "b6686adac661513f008b49b99c017158de41036cc5a49ecab3354f65c1d94f23"
+    sha256 cellar: :any,                 arm64_sonoma:  "0825082d32c9df11d1350e7dee2dc8a6cf6de47b7a1bfaca5272750227666570"
+    sha256 cellar: :any,                 arm64_ventura: "97fc685fa00d084bd8f0efd2e573cfb7f415f6ba1345fe9a36e5a395499869d7"
+    sha256 cellar: :any,                 sonoma:        "e61e9d7e89ed29cfccb6d7855348dca8ce2d88ac8076f5b00d263374f7bca4a6"
+    sha256 cellar: :any,                 ventura:       "9378570b7b39faa410f873c2d2973cf98c8e627aa9ea0e31efb435cdcc41a5ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff900b3355d134a5d1ede2c417a4858656f4e307ae9894ab5be092037e2feef6"
   end
 
   depends_on "go" => :build
@@ -42,12 +40,6 @@ class Flux < Formula
       url "https:raw.githubusercontent.cominfluxdatafluxv#{LATEST_VERSION}go.mod"
       regex(pkg-config\s+v?(\d+(?:\.\d+)+)i)
     end
-  end
-
-  # rust 1.83.0 build patch, upstream pr ref, https:github.cominfluxdatafluxpull5516
-  patch do
-    url "https:github.cominfluxdatafluxcommit08b6cb784759242fd1455f1d28e653194745c0c6.patch?full_index=1"
-    sha256 "3c40b88897c1bd34c70f277e13320148cbee44b8ac7b8029be6bf4f541965302"
   end
 
   def install

@@ -1,18 +1,18 @@
 class Rtl433 < Formula
   desc "Program to decode radio transmissions from devices"
   homepage "https:github.commerbananrtl_433"
-  url "https:github.commerbananrtl_433archiverefstags24.10.tar.gz"
-  sha256 "e5ab1597a723bf9e0eaa56be988b23dae3670471c6472510ba07b3b588407dcb"
+  url "https:github.commerbananrtl_433archiverefstags25.02.tar.gz"
+  sha256 "5a409ea10e6d3d7d4aa5ea91d2d6cc92ebb2d730eb229c7b37ade65458223432"
   license "GPL-2.0-or-later"
   head "https:github.commerbananrtl_433.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "32f8c90c98bff20b7f7a74bebc611fc3c3d917a1c19ee9a6558ed85d3338fdac"
-    sha256 cellar: :any,                 arm64_sonoma:  "6c95bbf6fc2409649172688480da895fbc382128c7e98d613d02fb115dd6237f"
-    sha256 cellar: :any,                 arm64_ventura: "58b0d9e8ac9e8959f4a7c99416ab07ee70027ac05edbb2e52dd0af4db90f8c8c"
-    sha256 cellar: :any,                 sonoma:        "411281a288eec7b0b4210191aec08ba5cb8798eb5bad69f120f3d6f8faf28ae1"
-    sha256 cellar: :any,                 ventura:       "2c2b71299c4dfaaf7a6f531d0d0532d77f3d45c821cfe25a054afd7814bfeb34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f45fedbaa73f2e0d800e6e64d52a209c4d242c9291ff82022907b915a542ed64"
+    sha256 cellar: :any,                 arm64_sequoia: "cadc9ac43692b5342a8d9fd305bf36598ce8e8f9cbcf088f3b87e7117f569f4c"
+    sha256 cellar: :any,                 arm64_sonoma:  "6e8b6406520ac6b02a6d5292ed085c377edc6214dd817e27850a91d1216883b0"
+    sha256 cellar: :any,                 arm64_ventura: "ed54be9e72784603e4e6b1b7b1ae679f15ab03cf1ee92efa7c36151b40b81274"
+    sha256 cellar: :any,                 sonoma:        "9ba535a042f8ea9bb058ae0b78ed860f4a3157ff228b68c2b5dbe7bd9eea8d2e"
+    sha256 cellar: :any,                 ventura:       "e5165eebfca6801f1c588fac131f5b054d37974adc912fc6aead1286e60629f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bb83d5f1303cc5aa8dd4d79d7609f0fc9c2ec1d530584a7c7e6648fdd4d0a42"
   end
 
   depends_on "cmake" => :build

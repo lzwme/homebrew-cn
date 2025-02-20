@@ -1,18 +1,18 @@
 class Swiftdraw < Formula
   desc "Convert SVG into PDF, PNG, JPEG or SF Symbol"
   homepage "https:github.comswhittySwiftDraw"
-  url "https:github.comswhittySwiftDrawarchiverefstags0.18.3.tar.gz"
-  sha256 "a85c9fbd600f97a23055a41a258c6600338c7ac8e817ad03e0567f7d572587c5"
+  url "https:github.comswhittySwiftDrawarchiverefstags0.19.0.tar.gz"
+  sha256 "17fa99b6e7e4d1ce556af5903b93d00f23d7fc9baa39d4038562e6278af52558"
   license "Zlib"
   head "https:github.comswhittySwiftDraw.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "28b4b8e8323745eb9629303bca2eb0c502eca6d4dcf3aad503d157c4628d3a5b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1584d9f0e9bfaeccc1d679f0921404fa9ec3c0c9ef2301dddeaef9b5f2a05a74"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d3deb6e040c72346e1ac3a615b5a39845681c4db6c45f34008ea23fa38fe1788"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f48b633a9da7e29150895f1932e58dd86a7a9eebdfb09b5f86b024d48c25c3a4"
-    sha256 cellar: :any_skip_relocation, ventura:       "e487e85a5d23cfb226428695dffabfcff50aa672d0596574a45e71ddf28f365c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60b286666af63c8d2568b2caa2692b10da28723268307dae7dbb6bebe480d34d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d4ce592b977ff2760ee21403b7d24a7f84fed3d1c748b7e77a6506f2a07c79f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32d96fa1995cc9e11e85366b513cdc5e71a6097856214f332552b032b3ebbbd8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2c2c92ae072b567ec4b00aabb5509f002f9c2bda3b5aad64d1ddcc2737f05006"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ef22f3a2698093ef006bcb42af6a34b9a413b2522c3bb1aab236776bd896a2bf"
+    sha256 cellar: :any_skip_relocation, ventura:       "753cdba79222ce445b2366903bced65f7d8ab14001e6ba42bcce2406a05c6acb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da825bfc8cf39cbc5bcff4a95ec72d852fa348d2ca1db5861246c9938848f6f4"
   end
 
   depends_on xcode: ["14.0", :build]
