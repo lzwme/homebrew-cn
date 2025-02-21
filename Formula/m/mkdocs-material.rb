@@ -2,17 +2,17 @@ class MkdocsMaterial < Formula
   include Language::Python::Virtualenv
   desc "Material Design theme for MkDocs"
   homepage "https://squidfunk.github.io/mkdocs-material/"
-  url "https://files.pythonhosted.org/packages/9b/80/4efbd3df76c6c1ec27130b43662612f9033adc5a4166f1df2acb8dd6fb1b/mkdocs_material-9.6.4.tar.gz"
-  sha256 "4d1d35e1c1d3e15294cb7fa5d02e0abaee70d408f75027dc7be6e30fb32e6867"
+  url "https://files.pythonhosted.org/packages/38/4d/0a9f6f604f01eaa43df3b3b30b5218548efd7341913b302815585f48abb2/mkdocs_material-9.6.5.tar.gz"
+  sha256 "b714679a8c91b0ffe2188e11ed58c44d2523e9c2ae26a29cc652fa7478faa21f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f7bb57e29fc5a83a0101d0e98fef19e4f6ee86032288ad8f9b45dbce14b7370c"
-    sha256 cellar: :any,                 arm64_sonoma:  "4d6d26ca898277ed91bb4fb5cd06701cbc28d8953e63ffd5e26762104effc29f"
-    sha256 cellar: :any,                 arm64_ventura: "70b5b662097dcf5da782bc1a0f649dec17df8d794dac0fb96fa2bbe6abc72778"
-    sha256 cellar: :any,                 sonoma:        "987f73edda765093dd18e1231b29f3e34b416abb601b5d3ada87866df182fee3"
-    sha256 cellar: :any,                 ventura:       "dbc9b9ae1beab54bcf37627fcda9a87735cfbaf2b8738d25cfc0fbc437617e7d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "488558d74c164b4421ce3388a6fc10d94869137befc1da247720a7265b4133b9"
+    sha256 cellar: :any,                 arm64_sequoia: "65c64290bbcb8c66c2fea063870fb0cfd395dccf1d1b99b9f30f444caf15b0ee"
+    sha256 cellar: :any,                 arm64_sonoma:  "79535649040c560f46be2709553171b067eb3d092e4aba7ff63854ba17feb53f"
+    sha256 cellar: :any,                 arm64_ventura: "3c47a675f9b09fcf89912c282f4f855b32a20b34b7b33ca65c0d8a6d4aa9ae41"
+    sha256 cellar: :any,                 sonoma:        "a2c033dd105408c2c322baf4ba24798a5c780d1a9564da1ddd3450609b82d2f5"
+    sha256 cellar: :any,                 ventura:       "b8dbb306079113ed70d86f98da823abcda0b29748f2e25df9db40a6970d648c7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c94eff1d214659675f8ab570820653ff0ea65daf2c103ccc4ef522ee94bbbe6"
   end
 
   depends_on "libyaml"

@@ -2,8 +2,8 @@ class Docker < Formula
   desc "Pack, ship and run any application as a lightweight container"
   homepage "https:www.docker.com"
   url "https:github.comdockercli.git",
-      tag:      "v27.5.1",
-      revision: "9f9e4058019a37304dc6572ffcbb409d529b59d8"
+      tag:      "v28.0.0",
+      revision: "f9ced58158d5e0b358052432244b483774a1983d"
   license "Apache-2.0"
   head "https:github.comdockercli.git", branch: "master"
 
@@ -13,13 +13,12 @@ class Docker < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c83347930e258f0e330059da5d9fb7ce03b0842e45677280b00814c5c38a53f0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c83347930e258f0e330059da5d9fb7ce03b0842e45677280b00814c5c38a53f0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c83347930e258f0e330059da5d9fb7ce03b0842e45677280b00814c5c38a53f0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "937b1fd00bdd873b21a92a9749ae2c804364a5c2f93ef55a6b4b993063d7fbcd"
-    sha256 cellar: :any_skip_relocation, ventura:       "937b1fd00bdd873b21a92a9749ae2c804364a5c2f93ef55a6b4b993063d7fbcd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23acc432f5ddb092e2181fcd6419abd81a1c39cdfd1d80a4cda555fc436a3123"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd998255908222eb848970f978a0ee57f3a63fc8e81e56a7756ccd38088bc535"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd998255908222eb848970f978a0ee57f3a63fc8e81e56a7756ccd38088bc535"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cd998255908222eb848970f978a0ee57f3a63fc8e81e56a7756ccd38088bc535"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4d689950228d9e676224bbc9a7be9ee72b4200f053339ed5b60eedd19292aee5"
+    sha256 cellar: :any_skip_relocation, ventura:       "4d689950228d9e676224bbc9a7be9ee72b4200f053339ed5b60eedd19292aee5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4854f5ef50b9d84e8ad34057889af00ec690938b244e338a29a420a9a56c690f"
   end
 
   depends_on "go" => :build

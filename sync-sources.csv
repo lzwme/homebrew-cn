@@ -1117,6 +1117,7 @@ Homebrew-homebrew-core/Formula/c/corsixth.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cortex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cortexso.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cosign.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cotila.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cotp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coturn.rb, Homebrew/homebrew-core, 1
@@ -5157,6 +5158,7 @@ Homebrew-homebrew-core/Formula/p/pkg-config-wrapper.rb, Homebrew/homebrew-core, 
 Homebrew-homebrew-core/Formula/p/pkgconf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pkgdiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pkgx.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pkl-lsp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pkl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pktanon.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pla.rb, Homebrew/homebrew-core, 1
@@ -12746,6 +12748,7 @@ Homebrew-homebrew-cask/Casks/o/obs-websocket.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/obs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/obs@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/obsbot-center.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/o/obscura-vpn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/obsidian.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/ocenaudio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oclint.rb, Homebrew/homebrew-cask, 1

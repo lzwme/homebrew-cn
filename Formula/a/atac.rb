@@ -1,18 +1,18 @@
 class Atac < Formula
   desc "Simple API client (Postman-like) in your terminal"
   homepage "https:atac.julien-cpsn.com"
-  url "https:github.comJulien-cpsnATACarchiverefstagsv0.18.1.tar.gz"
-  sha256 "40595898622b3cf2540d6e6e1bb38959d1a59451c4da8a86d3660ea8e1ef94e8"
+  url "https:github.comJulien-cpsnATACarchiverefstagsv0.18.2.tar.gz"
+  sha256 "1674d189fad115b60aa2c1925aa1731cb389e52b98fb15b1c55f4e850198b556"
   license "MIT"
   head "https:github.comJulien-cpsnATAC.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ce5f3928fbc429786e273084c33babc88f907d0175f747d625a852197db074af"
-    sha256 cellar: :any,                 arm64_sonoma:  "956cf68c882c25a7212e4c9d6d2312005e9f5e271565c77a9bb7f7f8e24627a5"
-    sha256 cellar: :any,                 arm64_ventura: "6b80f5ab9dcadfab3e7670a00446bc466bdedb77bb95c068fa13d883fd208b58"
-    sha256 cellar: :any,                 sonoma:        "d1bc5efb7dfc5b69ee1b482943c58c38df7e3ae49364edde5ea162b173978341"
-    sha256 cellar: :any,                 ventura:       "3ada5c6a72f1c794d9ca65fd5c5f53d49371bd05ea4d3cfd5598fc16106689fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d028a40d0235c7325ef751b42ef33f2f9ad66c357990bbc29ab39361d23738c1"
+    sha256 cellar: :any,                 arm64_sequoia: "2b7b4a41884bbef798cfe2833b2588f078b726579b7c8b29ddcb38e3bc19f6af"
+    sha256 cellar: :any,                 arm64_sonoma:  "ae6546e8b3a8591708719a4c4bf49e9d2ec7250f7b7a82e741c9f3a0b073d137"
+    sha256 cellar: :any,                 arm64_ventura: "393952e028e44fa8edeeef41b4251057143586b3d190a0ad40b5f1a63cc301a8"
+    sha256 cellar: :any,                 sonoma:        "856c0ddf288e36d11ecabe69df2dc916a70348ed32374477bf923cec6595c91b"
+    sha256 cellar: :any,                 ventura:       "ea2c327647fc9d16286f9c13d236c29563b07a34e0cc6f06569600fb391a442d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b95b0a0e37560cf2ad834b306ebdf25cfd59d1c4fc0b3937122675375661e0a"
   end
 
   depends_on "pkgconf" => :build

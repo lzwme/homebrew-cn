@@ -25,11 +25,18 @@ class Mercury < Formula
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
 
+  on_linux do
+    depends_on "readline"
+  end
+
   def install
-    system "./configure", "--prefix=#{prefix}",
-                          "--mandir=#{man}",
-                          "--infodir=#{info}",
-                          "mercury_cv_is_littleender=yes" # Fix broken endianness detection
+    # Make readline/libedit usage explicit rather than relying on automatic detection
+    args = if OS.mac?
+      %w[--without-readline --with-editline]
+    else
+      %w[--with-readline --without-editline]
+    end
+    system "./configure", *args, *std_configure_args
     system "make", "install", "PARALLEL=-j"
 
     # Remove batch files for windows.

@@ -1,17 +1,17 @@
 class CargoUdeps < Formula
   desc "Find unused dependencies in Cargo.toml"
   homepage "https:github.comest31cargo-udeps"
-  url "https:github.comest31cargo-udepsarchiverefstagsv0.1.54.tar.gz"
-  sha256 "52fcea433a514bf85493432c94704c790ae1a86d3c01fe5670ddd1000ed0a206"
+  url "https:github.comest31cargo-udepsarchiverefstagsv0.1.55.tar.gz"
+  sha256 "bc84beb17213c69fd452d240a85697b96b167e45f43207e8f9202b5bd4277926"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9948d03a6d73cd1b24d92ed23124100b90cc8e9759320c43c8e92c579231d8bb"
-    sha256 cellar: :any,                 arm64_sonoma:  "1b104b0da1cff640149424c422654aa07b1381f5bbccd701a83bb90a8455a551"
-    sha256 cellar: :any,                 arm64_ventura: "fd9a023e3f281d9005d320e775fae7318d7b6764553c769693cd0a09df918d6a"
-    sha256 cellar: :any,                 sonoma:        "7c9e822cb92d531d8154d11f5f2d26bdbd241027cbcf601f1895f63d456b837a"
-    sha256 cellar: :any,                 ventura:       "576c0e57d430456463c5196f6ec621a46a8f095c25cf116e2c0b2b05af37f28b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ea064ab046be39feb1f62b3b9b7d9151c0101fd113ff8095a75c14af2d5acd0"
+    sha256 cellar: :any,                 arm64_sequoia: "667c084abc9e6a266bf67e636a0a639353563ae250b07061f0b73e762dc3da57"
+    sha256 cellar: :any,                 arm64_sonoma:  "b47b6cc533aa11dc4bb65235a7dde433613d420d12d569c2e95d4f0202614094"
+    sha256 cellar: :any,                 arm64_ventura: "8c7aaf65ba61a034e24ae83e8e69dcb6d9abc5bae632a9c01045a74f237b01b0"
+    sha256 cellar: :any,                 sonoma:        "8ec7010ac3faee5ac94316a16a770b39ea9f2038d10f9b29f726fa6373c7818c"
+    sha256 cellar: :any,                 ventura:       "663032427fc3280d388c78ad1e7ddede092fab440f1c14fbdce105f185a08374"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a5c175ef1dbc2df1ec423b863c47a453e4efafacc402bd50943fdafc1352cbe"
   end
 
   depends_on "pkgconf" => :build

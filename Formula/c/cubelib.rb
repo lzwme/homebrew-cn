@@ -1,7 +1,7 @@
 class Cubelib < Formula
-  desc "Cube, is a performance report explorer for Scalasca and Score-P"
+  desc "Performance report explorer for Scalasca and Score-P"
   homepage "https:scalasca.orgsoftwarecube-4.xdownload.html"
-  url "https:apps.fz-juelich.descalascareleasescube4.8distcubelib-4.8.2.tar.gz", using: :homebrew_curl
+  url "https:apps.fz-juelich.descalascareleasescube4.8distcubelib-4.8.2.tar.gz"
   sha256 "d6fdef57b1bc9594f1450ba46cf08f431dd0d4ae595c47e2f3454e17e4ae74f4"
   license "BSD-3-Clause"
 

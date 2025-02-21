@@ -1,7 +1,7 @@
 class Freetds < Formula
   desc "Libraries to talk to Microsoft SQL Server and Sybase databases"
   homepage "https:www.freetds.org"
-  url "https:www.freetds.orgfilesstablefreetds-1.4.26.tar.bz2", using: :homebrew_curl
+  url "https:www.freetds.orgfilesstablefreetds-1.4.26.tar.bz2"
   sha256 "74641a66cc2bfae302c2a64a4b268a3db8fb0cc7364dc7975c44c57d65cd8d1c"
   license "GPL-2.0-or-later"
 

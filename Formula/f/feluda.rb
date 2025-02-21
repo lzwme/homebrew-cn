@@ -1,8 +1,8 @@
 class Feluda < Formula
   desc "Detect license usage restrictions in your project"
   homepage "https:github.comanistarkfeluda"
-  url "https:github.comanistarkfeludaarchiverefstags1.3.0.tar.gz"
-  sha256 "bd04174970289dd7636bffdff1ca9f275d205a084e1bea6cc8255a3d08e34c8b"
+  url "https:github.comanistarkfeludaarchiverefstags1.5.0.tar.gz"
+  sha256 "ed201fbe53f6073e6f2526a3802cbd3a3850fb1a169e97d65f0a5e7cb76797d5"
   license "MIT"
   head "https:github.comanistarkfeluda.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Feluda < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4ade29a11d407a76a8a3dcb063f66ee1892e92280d5198ff7e1830f048e52d3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f84090458eff4c02e7a3d79b56a157b19abcee483f749778eb8d8a5e420bad4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2d2e97928d083344aeabfb42eb3b5e15ef651ef5ef4cf775a5f614cf7272a8e1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3851de57965b8cdf75686f653fbdd164f3759e803992911776e9965b74c82a24"
-    sha256 cellar: :any_skip_relocation, ventura:       "86593140ef88c4fa7f154b71cfe9c5ef2407764bb20f812c9b8f5e8a7108ba41"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "183ab11d5cb7756ab03d2a70e67f8121e9be0fd370ca194b365eaca222d9d631"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7cc681be8a5bbcfd728c27251c002cc8b8afca06653c2bb91e10b07147b1f42"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c784b53b22902e3b5812aa3bcf76528645a353aa063a7aa43a7ac1da869182e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3bec18e07516125db1ff3a4def4081dcb9bee9494d13767ff0957b085a9838ba"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1fc1440b5f1e1fe7ad6c965e0f7640d8e10d5e92ef0d1917d6f8baa4a1e6f320"
+    sha256 cellar: :any_skip_relocation, ventura:       "4f0ee8967278210faf7a02288d01d65261f8901d338e5be9635a652bf66fc324"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ab90393101dd0c7025b41017036d7bc83bc5bb71eface26bcd1f348707082e2"
   end
 
   depends_on "rust" => :build
@@ -32,7 +32,7 @@ class Feluda < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}feluda --version")
 
-    output = shell_output("#{bin}feluda --path #{testpath} 2>&1", 1)
-    assert_match "Unable to detect project type", output
+    output = shell_output("#{bin}feluda --path #{testpath}")
+    assert_match " All dependencies passed the license check!", output
   end
 end

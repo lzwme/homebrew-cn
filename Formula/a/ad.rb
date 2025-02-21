@@ -1,28 +1,25 @@
 class Ad < Formula
   desc "Adaptable text editor inspired by vi, kakoune, and acme"
   homepage "https:github.comsminezad"
-  url "https:github.comsminezadarchiverefstags0.2.0.tar.gz"
-  sha256 "7bb4aba27b34e0eb0814bfa14c3b6d87a0c411e8ae12de2c62f76f23ab358a70"
+  url "https:github.comsminezadarchiverefstags0.3.1.tar.gz"
+  sha256 "809cd09550daf38b1c4b7d19b975e6dbeb85f424f8942f20fc9cd7808c1ef196"
   license "MIT"
   head "https:github.comsminezad.git", branch: "develop"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4073858a0c04f536678cbb56f9ec0bb977171eef6a2da094fd99de1a3816ebd8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5455f22db006e3f64867267e524136bb09b953115feb9ec42cac25367baf952a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "11ebf6ca0cbe9c8709219c4bdd5cc9de7fe25d6d3107f9c1f7f48cfde139ee23"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8617459064ff349b4eef8ed257f686fc5009630ad384ca6af0c1087b968776df"
-    sha256 cellar: :any_skip_relocation, ventura:       "e7884a0711ef9f5adef027ed57dcef814cdecb664135ad37ade1382878864d73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b9964c87ac0c1d8475520eb52560159a1f504e3a4e4a42894e3a7447cfd5127"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4874d80cf8ec7d9a713ac0403e759fb024deea5a0aa9b0baaf77bb75da6dc379"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed349050f01a8877ff816ab5a680f2bdfdce30c022a78f7b2a68ec2a87f4665d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1b292412f05f615a3d450d6a45359307330b4b492f822b19c888bab607a191d3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "811782a9dfec54873725b526d03d7820f0c07b7ea4c3559cc298a63b7b68ea41"
+    sha256 cellar: :any_skip_relocation, ventura:       "42174e0d98492a910e6109919c4217b8653f2e3b43917dc18e79fcf379ba1ee8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69c603b8ed8f547bbf1bbefe0001e8c828de418ee9f1e0e74e19161581b7767f"
   end
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args
-    # remove `doc_prefix` with next release
-    doc_prefix = build.head? ? "docs" : "doc"
-    man.install buildpath"#{doc_prefix}manad.1"
+    man.install buildpath"docsmanad.1"
   end
 
   test do

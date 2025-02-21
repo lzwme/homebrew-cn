@@ -1,18 +1,18 @@
 class Reposurgeon < Formula
   desc "Edit version-control repository history"
   homepage "http://www.catb.org/esr/reposurgeon/"
-  url "https://gitlab.com/esr/reposurgeon/-/archive/5.2/reposurgeon-5.2.tar.gz"
-  sha256 "25c6386739be5bd304cded51d7a92440d8d1cbcbfa9d3c147d1c9b9a373e904e"
+  url "https://gitlab.com/esr/reposurgeon/-/archive/5.3/reposurgeon-5.3.tar.gz"
+  sha256 "a13e758e6bba5f4d17cdfa0ad8956bb864f336ba248b175353f741c3e5d3b089"
   license "BSD-2-Clause"
   head "https://gitlab.com/esr/reposurgeon.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f78605c847f5325f10e4f87add3eeb3059a1bb1400c433b3337cd9ba19e9ddc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1817a5d5f77af949e83c58217ff25f1527ff629b2b7e3ac47f82265c75c37cba"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6b99edff141b3c552b9fb8aaa5b0256ba32b57f7cc8ee80beda391e6ecda531e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c4c448dd0f5b3c86a35eb39ce280d86bfeb98931f0b47d2bed1cb2217a4facc7"
-    sha256 cellar: :any_skip_relocation, ventura:       "a9adf2ca4d3266f218594e28b73c11c912313ba5a2fd9e71eaad8f0163aa534a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e41771387c7f1220d82c9e77e4174e1cc5428d68d39b630b692f9bb0c147fa8a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "102e0f3f46f350bfd96d6568ad92250a6779ec45cb0608c5b96eeee7acb113e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5050fc7b8b308327099fc78cfffeff27c0e41f63db65eb8b5d94648c51f88983"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f6045878a2a1f779ed09291a9c6d21eff4698be4377a7b6f958ef17faf3017c6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "479f8b063e2fb806b3b2585bb65fb65308b0209b3c7687d5d3bb44ff641d131f"
+    sha256 cellar: :any_skip_relocation, ventura:       "97eba5c7136a5397bdf4ed46af8a7068edf5710e1d0c893081078cc64eaf5fc8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d79f22e49216e32de6b2e6e1575dae5a1d3c7dc140bd672ecbe203862fa30b08"
   end
 
   depends_on "asciidoctor" => :build

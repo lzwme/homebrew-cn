@@ -1,24 +1,25 @@
 class Hk < Formula
   desc "Git hook and pre-commit lint manager"
   homepage "https:hk.jdx.dev"
-  url "https:github.comjdxhkarchiverefstagsv0.3.3.tar.gz"
-  sha256 "583829ba1c025186bf3dcd79b7e3d3cebd20d4f5a5a1a0cd751366723ba1b812"
+  url "https:github.comjdxhkarchiverefstagsv0.4.1.tar.gz"
+  sha256 "dd36dd2c2cfb4131d7329df47f68b8c6eaf8695dcac4d84e71c9dfe69d0a39a5"
   license "MIT"
   head "https:github.comjdxhk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "cf79db827d41fdfb7d7c3928cd28248c36dd96d238152b7b1f86150f8dda365a"
-    sha256 cellar: :any,                 arm64_sonoma:  "d0f061813132df93b6cf16d2098771ceac632368eb2833ebb0492cf1af8cead5"
-    sha256 cellar: :any,                 arm64_ventura: "f1b435d63ef284a234d30d60526159b51c8f35cb31c16f8160c414e527cece8c"
-    sha256 cellar: :any,                 sonoma:        "505c57230bdc8a09abe760b228fb8eabd7d1ab6c2da8e8471c8ececcd73f6eeb"
-    sha256 cellar: :any,                 ventura:       "87e7ca5fd3fed1778ff85947505a167fc970c6c230960b4ae104996a2aba7df8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6196e62b8055557af930699cb4e8a10a036e7ccf14ed138ffc66b5c9203dddd8"
+    sha256 cellar: :any,                 arm64_sequoia: "faf64fd6927145fcc6fbc3979a4778695beb1555df7aa7969d85151a59c0798b"
+    sha256 cellar: :any,                 arm64_sonoma:  "7bc03b199daffcf1f1faa641741b42b0c16e6cf0ed16521322b35cd91e1631e3"
+    sha256 cellar: :any,                 arm64_ventura: "d85e835badbd6180d9ef70dfbb6d45acef2d94ad45d6dfb36077ee03ac273ab6"
+    sha256 cellar: :any,                 sonoma:        "87ab6176cb39f90330dd731aa33354e85611ff25022d22cec3a8df48d45f2476"
+    sha256 cellar: :any,                 ventura:       "f6dda7fb6c861d5be01687b42b6fa6f0f8c4d2e04346807f3c623b6e7cb44077"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fc44c8255c45b165ceaa794c9dc9b324596b3b600f62bec772ca67ad6c40c2b"
   end
 
   depends_on "rust" => [:build, :test]
-  depends_on "usage" => :build
+
   depends_on "openssl@3"
   depends_on "pkl"
+  depends_on "usage"
 
   uses_from_macos "zlib"
 
@@ -32,14 +33,29 @@ class Hk < Formula
   end
 
   test do
-    (testpath"hk.pkl").write <<~PKL
-      amends "https:hk.jdx.devv0hk.pkl"
-      import "https:hk.jdx.devv0builtinscargo_clippy.pkl"
-      import "https:hk.jdx.devv0builtinscargo_fmt.pkl"
+    assert_match version.to_s, shell_output("#{bin}hk --version")
 
-      `pre-commit` {
-          ["cargo-clippy"] = new cargo_clippy.CargoClippy {}
-          ["cargo-fmt"] = new cargo_fmt.CargoFmt {}
+    (testpath"hk.pkl").write <<~PKL
+      amends "package:github.comjdxhkreleasesdownloadv#{version}hk@#{version}#Config.pkl"
+
+      linters {
+          ["cargo-clippy"] {
+              glob = new { "*.rs" }
+              check = "cargo clippy -- -D warnings"
+              fix = "cargo clippy --fix --allow-dirty"
+          }
+          ["cargo-fmt"] {
+              glob = new { "*.rs" }
+              check = "cargo fmt -- --check"
+              fix = "cargo fmt"
+          }
+      }
+
+      hooks {
+          ["pre-commit"] {
+              ["cargo-clippy"] = new Fix {}
+              ["cargo-fmt"] = new Fix {}
+          }
       }
     PKL
 

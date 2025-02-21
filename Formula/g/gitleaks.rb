@@ -1,8 +1,8 @@
 class Gitleaks < Formula
   desc "Audit git repos for secrets"
   homepage "https:gitleaks.io"
-  url "https:github.comgitleaksgitleaksarchiverefstagsv8.23.3.tar.gz"
-  sha256 "4b49931c46180954fd323eecd1aac1d91a6f742347fa173262ccc6769364a5cf"
+  url "https:github.comgitleaksgitleaksarchiverefstagsv8.24.0.tar.gz"
+  sha256 "a0c1e7c3b5d0ee621f1e48b3d502132f8a3e20f9ac2ce3f450c6fca55c702038"
   license "MIT"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,12 +14,12 @@ class Gitleaks < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "47044c063f2e26b0f12000dbb8c4c20d035b15fcdecfead85828817a47482455"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "47044c063f2e26b0f12000dbb8c4c20d035b15fcdecfead85828817a47482455"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "47044c063f2e26b0f12000dbb8c4c20d035b15fcdecfead85828817a47482455"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cfb1947de146bdc4b999595ea13dc8f39edb718be233974cba6ef4531d42e94a"
-    sha256 cellar: :any_skip_relocation, ventura:       "cfb1947de146bdc4b999595ea13dc8f39edb718be233974cba6ef4531d42e94a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "872360b4ec895e249db989d6a78ddaad115ba98764bc14904a2e1249f787cd34"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "02a18ba61b96ac979833ab9be8bf880e748a0e1b7dae8c2d92e1a96d2da8d699"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "02a18ba61b96ac979833ab9be8bf880e748a0e1b7dae8c2d92e1a96d2da8d699"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "02a18ba61b96ac979833ab9be8bf880e748a0e1b7dae8c2d92e1a96d2da8d699"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4997c84dd411d6d1c16d01974e45130c6713b891f5e050444e7ecf852d05d5a4"
+    sha256 cellar: :any_skip_relocation, ventura:       "4997c84dd411d6d1c16d01974e45130c6713b891f5e050444e7ecf852d05d5a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81b529c5b03a7338274b89f6de4a2ea807f12796d41f6495bc2b5148b318d849"
   end
 
   depends_on "go" => :build

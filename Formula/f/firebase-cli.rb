@@ -1,18 +1,18 @@
 class FirebaseCli < Formula
   desc "Firebase command-line tools"
   homepage "https:firebase.google.comdocscli"
-  url "https:registry.npmjs.orgfirebase-tools-firebase-tools-13.31.1.tgz"
-  sha256 "a525c68a3cf3a8c5f369991a4897c09d79899690d0b1a9a3d1db2ca0463de27a"
+  url "https:registry.npmjs.orgfirebase-tools-firebase-tools-13.31.2.tgz"
+  sha256 "5e61aa29df1606a3f81e55e8ac380293c179a4dc44bf09bb9f679cdb95aa9b5e"
   license "MIT"
   head "https:github.comfirebasefirebase-tools.git", branch: "master"
 
   bottle do
-    sha256                               arm64_sequoia: "11e1f19524a38b794585db6f444ad1352b030a6872ce6d553870aabd988998ff"
-    sha256                               arm64_sonoma:  "a7b66cb2aad3de30a69aa90a675c680b13e273ef2ba14d376aa1d9eadf930b75"
-    sha256                               arm64_ventura: "07a94b399534e4caedaaefb52ac22ba0ac4856ecd96535721d0c34cfbb2ba3d2"
-    sha256                               sonoma:        "74bbcc83f8e78395f2ff0e99c4d51bb0e5c67b31693efc9e6463b1af74c2dee4"
-    sha256                               ventura:       "5b10ca3e7cb505e9cc635574dc96fad84a75ea03b64160882e5e985c2e35a4c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "531b65315006d820f94e617e846ad9bfd1525d6e1e65f5d5a8a59e215f87aa4b"
+    sha256                               arm64_sequoia: "a579c006f8e9b6afda8daa967e3bbcae2cc4b8cf1a58185e95ba92b238403ef6"
+    sha256                               arm64_sonoma:  "90f7bf03073b2e67964c3646dae17e553222d0373ef69729c466edc7d814365b"
+    sha256                               arm64_ventura: "d053b30c853b9d2796a2e6cda4eb8e7121c9ade47d5384b6f3fb242cd98ecb47"
+    sha256                               sonoma:        "038041b2492d2d5243c3efddf7736c144c2244a34ba655cda3e9b8b2e806cbba"
+    sha256                               ventura:       "8214bfab5da32d543edeb95a68c6ba28026a0571cf005f3e887abf5c92c87aa8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d631b0b743e3a74c2aa05f904999edb22c5f40b4f28a6b86f90f337cd2decbf"
   end
 
   depends_on "node"

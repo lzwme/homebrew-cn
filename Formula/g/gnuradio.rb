@@ -3,20 +3,10 @@ class Gnuradio < Formula
 
   desc "SDK for signal processing blocks to implement software radios"
   homepage "https:www.gnuradio.org"
+  url "https:github.comgnuradiognuradioarchiverefstagsv3.10.12.0.tar.gz"
+  sha256 "fe78ad9f74c8ebf93d5c8ad6fa2c13236af330f3c67149d91a0647b3dc6f3958"
   license "GPL-3.0-or-later"
-  revision 7
   head "https:github.comgnuradiognuradio.git", branch: "main"
-
-  stable do
-    url "https:github.comgnuradiognuradioarchiverefstagsv3.10.11.0.tar.gz"
-    sha256 "9ca658e6c4af9cfe144770757b34ab0edd23f6dcfaa6c5c46a7546233e5ecd29"
-
-    # Backport support for Boost 1.87.0
-    patch do
-      url "https:github.comgnuradiognuradiocommit111a4ff8b868791dae74d8cdf8c1e0684840f51a.patch?full_index=1"
-      sha256 "1a18b00346a149562ea2a1c8117039162896eb9ccab3290ed2a7a568ca9b642e"
-    end
-  end
 
   livecheck do
     url :stable
@@ -24,12 +14,12 @@ class Gnuradio < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "fd7fbde6407ecddcd71ad291ac5c390bf6508385b1a877e50cb6a3ef0eb1c76b"
-    sha256 cellar: :any,                 arm64_sonoma:  "f20e104aae730523a85bdccb57d2de9f0deeae2e90217f8d01e36cb98ee43e23"
-    sha256 cellar: :any,                 arm64_ventura: "990223da9851a96dfe1db0a4a01ab0b2d7c6b5097a1a5815fd3435953e2a14c8"
-    sha256 cellar: :any,                 sonoma:        "da8e853596a23189cbee90c73a497e49ffe5f7865d3b53cc6617006ca7a9b943"
-    sha256 cellar: :any,                 ventura:       "4e1e0022db5be21ced5ad8c7b095b0f002ad55a8d774164fb532b5def25b1a76"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f865655179aacac2a70ceaece1b5734f734e9b8a30b0532249fcfe9bcc0a351d"
+    sha256 cellar: :any,                 arm64_sequoia: "5ce8a40fccb766d26fff338eddd403b74cf6ef5df3660cfd4112c97874071617"
+    sha256 cellar: :any,                 arm64_sonoma:  "1d94820f8c757bdb999b72974e8ab20aada2665993fa593621b79b0aeec6d49a"
+    sha256 cellar: :any,                 arm64_ventura: "d6b6b21ca113c0be63f97f798a6c4d7524d180cccb753e511f243dabbf6da854"
+    sha256 cellar: :any,                 sonoma:        "21dc5154d0e5dac2af2996072c42fd352e372a53f2d34478f5884ffcc9519080"
+    sha256 cellar: :any,                 ventura:       "c5f502111a876a6d8dd033b19a97d9cf1055e08ade0ffb4c3fe1809af290e4eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c665ac786d58e1a893c60aadbf6ae81f3bdaf368ece894e4e0f3887e632bb73a"
   end
 
   depends_on "cmake" => :build
@@ -85,13 +75,13 @@ class Gnuradio < Formula
   # * setuptools - gr-utilsmodtoolclibase.py
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackagesfc0faafca9af9315aee06a89ffde799a10a582fe8de76c563ee80bbcdc08b3fbattrs-24.2.0.tar.gz"
-    sha256 "5cfb1b9148b5b086569baec03f20d7b6bf3bcacc9a42bebf87ffaaca362f6346"
+    url "https:files.pythonhosted.orgpackages497cfdf464bcc51d23881d110abd74b512a42b3d5d376a55a831b44c603ae17fattrs-25.1.0.tar.gz"
+    sha256 "1c97078a80c814273a76b2a298a932eb681c87415c11dee0a6921de7f1b02c3e"
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
+    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
   end
 
   resource "jsonschema" do
@@ -105,13 +95,13 @@ class Gnuradio < Formula
   end
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackagese76b20c3a4b24751377aaa6307eb230b66701024012c29dd374999cc92983269lxml-5.3.0.tar.gz"
-    sha256 "4e109ca30d1edec1ac60cdbe341905dc3b8f55b16855e03a54aaf59e51ec8c6f"
+    url "https:files.pythonhosted.orgpackageseff6c15ca8e5646e937c148e147244817672cf920b56ac0bf2cc1512ae674be8lxml-5.3.1.tar.gz"
+    sha256 "106b7b5d2977b339f1e97efe2778e2ab20e99994cbb0ec5e55771ed0795920c8"
   end
 
   resource "mako" do
-    url "https:files.pythonhosted.orgpackagesfa0b29bc5a230948bf209d3ed3165006d257e547c02c3c2a96f6286320dfe8dcmako-1.3.6.tar.gz"
-    sha256 "9ec3a1583713479fae654f83ed9fa8c9a4c16b7bb0daba0e6bbebff50c0d983d"
+    url "https:files.pythonhosted.orgpackages624fddb1965901bc388958db9f0c991255b2c469349a741ae8c9cd8a562d70a6mako-1.3.9.tar.gz"
+    sha256 "b5d65ff3462870feec922dbccf38f6efb44e5714d7b593a656be86663d8600ac"
   end
 
   resource "markupsafe" do
@@ -125,8 +115,8 @@ class Gnuradio < Formula
   end
 
   resource "pygccxml" do
-    url "https:files.pythonhosted.orgpackages831636c43ffd40f8b7326bb0d095fc705ccadee2ae0a6e5bcbbfa002185959a2pygccxml-2.6.0.tar.gz"
-    sha256 "7185c55867561e2b1082eadc5ddc3b3019b0328a1fd9e64d4b813a83e06131a6"
+    url "https:files.pythonhosted.orgpackages2644a9fef507f807be838fa0991517df226abd26233cf75fb8d4e97970552174pygccxml-2.6.1.tar.gz"
+    sha256 "fc1b483c91848dada921efbe0e172648e2c6aa42d78ec920a372375e4ee32841"
   end
 
   resource "pyyaml" do
@@ -135,18 +125,18 @@ class Gnuradio < Formula
   end
 
   resource "referencing" do
-    url "https:files.pythonhosted.orgpackages995b73ca1f8e72fff6fa52119dbd185f73a907b1989428917b24cff660129b6dreferencing-0.35.1.tar.gz"
-    sha256 "25b42124a6c8b632a425174f24087783efb348a6f1e0008e63cd4466fedf703c"
+    url "https:files.pythonhosted.orgpackages2fdb98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2referencing-0.36.2.tar.gz"
+    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
   end
 
   resource "rpds-py" do
-    url "https:files.pythonhosted.orgpackages2380afdf96daf9b27d61483ef05b38f282121db0e38f5fd4e89f40f5c86c2a4frpds_py-0.21.0.tar.gz"
-    sha256 "ed6378c9d66d0de903763e7706383d60c33829581f0adff47b6535f1802fa6db"
+    url "https:files.pythonhosted.orgpackages0180cce854d0921ff2f0a9fa831ba3ad3c65cee3a46711addf39a2af52df2cfdrpds_py-0.22.3.tar.gz"
+    sha256 "e32fee8ab45d3c2db6da19a5323bc3362237c8b653c70194414b892fd06a080d"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages4354292f26c208734e9a7f067aea4a7e282c080750c4546559b58e2e45413ca0setuptools-75.6.0.tar.gz"
-    sha256 "8199222558df7c86216af4f84c30e9b34a61d8ba19366cc914424cdbd28252f6"
+    url "https:files.pythonhosted.orgpackages92ec089608b791d210aec4e7f97488e67ab0d33add3efccb83a056cbafe3a2a6setuptools-75.8.0.tar.gz"
+    sha256 "c5afc8f407c626b8313a86e10311dd3f661c6cd9c09d4bf8c15c0e11f9f2b0e6"
   end
 
   def python3

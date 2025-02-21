@@ -1,7 +1,8 @@
 class OpusTools < Formula
   desc "Utilities to encode, inspect, and decode .opus files"
-  homepage "https://www.opus-codec.org"
-  url "https://archive.mozilla.org/pub/opus/opus-tools-0.2.tar.gz", using: :homebrew_curl
+  homepage "https://www.opus-codec.org/"
+  url "https://ftp.osuosl.org/pub/xiph/releases/opus/opus-tools-0.2.tar.gz"
+  mirror "https://archive.mozilla.org/pub/opus/opus-tools-0.2.tar.gz"
   sha256 "b4e56cb00d3e509acfba9a9b627ffd8273b876b4e2408642259f6da28fa0ff86"
   license "BSD-2-Clause"
   revision 1

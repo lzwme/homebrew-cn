@@ -1,19 +1,18 @@
 class Weechat < Formula
   desc "Extensible IRC client"
   homepage "https:weechat.org"
-  url "https:weechat.orgfilessrcweechat-4.5.1.tar.xz"
-  sha256 "67c143c7bc70e689b9ea86df674c9a9ff3cf44ccc9cdff21be6a561d5eafc528"
+  url "https:weechat.orgfilessrcweechat-4.5.2.tar.xz"
+  sha256 "1a65466dcd3edb7378f27a611e06e2f7f45a6028ae54d3e1696ca91e85ec1459"
   license "GPL-3.0-or-later"
-  revision 1
   head "https:github.comweechatweechat.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia: "1d67c5430fb275208b17667d4d46efb27f73407d16b74b87450e21f6da71b990"
-    sha256 arm64_sonoma:  "eb160a670b4fe6283c27439b8ef204fd5cef1960657ab42f22d4b9deed6a3a35"
-    sha256 arm64_ventura: "ec8f40a100219d9e16f3ec871a8df4be7516318c85b99c7edaacc0be8993f8b5"
-    sha256 sonoma:        "4bb5fba2ce14d53c8a7be428c86bfff71628f56413fa3110cf0937e8ba24ccb4"
-    sha256 ventura:       "0fef6a116c728fc85aed039a03fb8ae0e9b850cb8156e689f3f63d26dc6ae803"
-    sha256 x86_64_linux:  "22e73215745c6ca186413a0b85847bffbc1d744090e2a5542afbb129b9e2fb24"
+    sha256 arm64_sequoia: "3f93bbbe217723dda5abf20b5564c53da5f697dcf8944be63b77cbf14f5070d7"
+    sha256 arm64_sonoma:  "6f9314e37647daf68b5d2a4d656a428e81a1d294cbb6e6fa03a2773142ef0d7e"
+    sha256 arm64_ventura: "3fcd8af2fd73e2eb06261897fb46a58b2bdf92bdf6a5c4d8fe47bf6faa362e29"
+    sha256 sonoma:        "a7806666c3317823c07fe0524f1f5c74ab40abb3119b6f07f353ab3013e2ea07"
+    sha256 ventura:       "22915d3e4913a3c522b1c46515a923acf232b5744769dc6761a8f7c6b4900cf0"
+    sha256 x86_64_linux:  "5d5ceec518682cc720d346f2a5d0f06cd5c7fe240c286cf075aa9e196c59d01f"
   end
 
   depends_on "asciidoctor" => :build

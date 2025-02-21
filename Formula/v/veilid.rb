@@ -1,18 +1,18 @@
 class Veilid < Formula
   desc "Peer-to-peer network for easily sharing various kinds of data"
   homepage "https://veilid.com/"
-  url "https://gitlab.com/veilid/veilid/-/archive/v0.4.2/veilid-v0.4.2.tar.bz2"
-  sha256 "d5f29128e9160154b9d12e3b2ed3187b9c94bfcd24593eb9bb570351866b4c3a"
+  url "https://gitlab.com/veilid/veilid/-/archive/v0.4.3/veilid-v0.4.3.tar.bz2"
+  sha256 "979bdfeb6b125d20959fd28f44c7b1afc919859770d02daf123d58826df06427"
   license "MPL-2.0"
   head "https://gitlab.com/veilid/veilid.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c046030d564e4758abcf41e47e30c0dabafe8a0cdab2dd8718e7e466b786119f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70a3dffdfeb1a8ed8417b27957f73ef87226e534d9b60c5d8a4db7ec435c9fb2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3a2fff9d5ba289bd4de747c7d4c66cab52f1f92ec3b09d89a2301f9b889c1369"
-    sha256 cellar: :any_skip_relocation, sonoma:        "47b4d5a8c3433a7bc61a5a73de3ecc1802840e86106e0015b97858b61e308b5c"
-    sha256 cellar: :any_skip_relocation, ventura:       "c0d8f33ed367c5e8842daa09556194f618a9e20b74605a4e4ef5a602b43d7031"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39940657abc13f80d9de0ea7e6f441dcf86b357b39c4dcbda46d713e1bebb154"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee4304922bd7c98519f8f0be1979b9205cc8763992200b3f782a6d8590920fb9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a542683bcb170da20273db06922991fb846d11cd38c535959672d8bdf1b0d46"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "702efed0e2a6539e1872f98657053303f9bed1acda9344cd01322d2cf95549e2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a2d70d95d8018a74d50576c4db3fe1e48e3067b43227b99408251c94c00c15a0"
+    sha256 cellar: :any_skip_relocation, ventura:       "9e1cf70d7cc5d4a737aeeb340ec53283105de02d91305491655eb2ea210377f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5554744fb5b82c3553b7853ebf05f33c7cbbf18d6bc4d8a45395393d25773556"
   end
 
   depends_on "cmake" => :build

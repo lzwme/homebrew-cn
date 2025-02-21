@@ -3,19 +3,18 @@ class CyclonedxPython < Formula
 
   desc "Creates CycloneDX Software Bill of Materials (SBOM) from Python projects"
   homepage "https:cyclonedx.org"
-  url "https:files.pythonhosted.orgpackages681e78106d309f58e06247c3c2a19dd475f36c5ad7c3b04492dd54c0430dd313cyclonedx_bom-5.1.2.tar.gz"
-  sha256 "69cbabd884d1ca0c500d0307c42bdd93b0e42ee302a316fc5e45b5609bd898c7"
+  url "https:files.pythonhosted.orgpackagesf073fa71371a6b25f493668a42c98f18739ce614a0ab495bf03adcc298676f71cyclonedx_bom-5.2.0.tar.gz"
+  sha256 "4a4ac184dc050a34e90cc0826cebe7952b834e4ff252abbaf5a40de9d67bc310"
   license "Apache-2.0"
   head "https:github.comCycloneDXcyclonedx-python.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "0d5273d9f6d7531d8851e670988cd3109ea18e15728db99e589ff6af6566992d"
-    sha256 cellar: :any,                 arm64_sonoma:  "8b63e5dcd497bd4dba2c1fd769165fa23f49b3c8e631c3504af8d3894ec746b8"
-    sha256 cellar: :any,                 arm64_ventura: "e4d7129c95bd41f7dc6f24d0c8d3afcd97e3ddb4263be62ecb8afd4c66b51ead"
-    sha256 cellar: :any,                 sonoma:        "d5cb828ed6b0bde5ef5b75936dc07e282e7e580177eb86c6936aa7da124bade2"
-    sha256 cellar: :any,                 ventura:       "5211f904da21a27a00177a70d6a30b0fdcfb9c7d8747f36a2a6fd68c77905ef5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f44c4489f0ba56db197b5c0c2b9acb26411d34596e8e2dbbf1b986345159c1ef"
+    sha256 cellar: :any,                 arm64_sequoia: "fb9fdddce33b1e5f57b1d7e85c60527d57bb1cc5cb3efb19a66ccc56e13fa54f"
+    sha256 cellar: :any,                 arm64_sonoma:  "9c1cf9b7c23bc0d59d6398065965ad99b2238718f99f1d3c2180c37b129c7529"
+    sha256 cellar: :any,                 arm64_ventura: "b9e381559bed3a244308a5db7c98ee780830431e45af7ae3f8fc9a01a26c276d"
+    sha256 cellar: :any,                 sonoma:        "5c3d26888861743dd00fffe6bf978551409ab0ddf83cdd75fb8454a8bbdfa162"
+    sha256 cellar: :any,                 ventura:       "1d4321bd84682c25e105b0066d8f49a28e43b33e694b6382b1549f63336dc168"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fe2e894028c425c93048a3d959a6dd3fe070dd591b8aebfc527c5d901511ff3"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -30,8 +29,8 @@ class CyclonedxPython < Formula
   end
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackages48c86260f8ccc11f0917360fc0da435c5c9c7504e3db174d5a12a1494887b045attrs-24.3.0.tar.gz"
-    sha256 "8f5c07333d543103541ba7be0e2ce16eeee8130cb0b3f9238ab904ce1e85baff"
+    url "https:files.pythonhosted.orgpackages497cfdf464bcc51d23881d110abd74b512a42b3d5d376a55a831b44c603ae17fattrs-25.1.0.tar.gz"
+    sha256 "1c97078a80c814273a76b2a298a932eb681c87415c11dee0a6921de7f1b02c3e"
   end
 
   resource "boolean-py" do
@@ -45,8 +44,8 @@ class CyclonedxPython < Formula
   end
 
   resource "cyclonedx-python-lib" do
-    url "https:files.pythonhosted.orgpackages67a8c735131c5e2a4e778c335b9f2c0500829d947b095e20331c401cfd0b6ef6cyclonedx_python_lib-8.5.0.tar.gz"
-    sha256 "35f7a139042e4df17ff414fa228cec83c7e4e493bdec990847357791ca72f3a5"
+    url "https:files.pythonhosted.orgpackagesba5d266fab8eb5c5306889472d6e166f438d65daaff6c7c4d8b0e6d7b8926410cyclonedx_python_lib-8.8.0.tar.gz"
+    sha256 "181e7215c247ed185d1bdfad2dfdc142fd98485af3d531db12388abce9e5523a"
   end
 
   resource "defusedxml" do
@@ -90,8 +89,8 @@ class CyclonedxPython < Formula
   end
 
   resource "lxml" do
-    url "https:files.pythonhosted.orgpackagese76b20c3a4b24751377aaa6307eb230b66701024012c29dd374999cc92983269lxml-5.3.0.tar.gz"
-    sha256 "4e109ca30d1edec1ac60cdbe341905dc3b8f55b16855e03a54aaf59e51ec8c6f"
+    url "https:files.pythonhosted.orgpackageseff6c15ca8e5646e937c148e147244817672cf920b56ac0bf2cc1512ae674be8lxml-5.3.1.tar.gz"
+    sha256 "106b7b5d2977b339f1e97efe2778e2ab20e99994cbb0ec5e55771ed0795920c8"
   end
 
   resource "packageurl-python" do
@@ -125,8 +124,8 @@ class CyclonedxPython < Formula
   end
 
   resource "referencing" do
-    url "https:files.pythonhosted.orgpackages2732fd98246df7a0f309b58cae68b10b6b219ef2eb66747f00dfb34422687087referencing-0.36.1.tar.gz"
-    sha256 "ca2e6492769e3602957e9b831b94211599d2aade9477f5d44110d2530cf9aade"
+    url "https:files.pythonhosted.orgpackages2fdb98b5c277be99dd18bfd91dd04e1b759cad18d1a338188c936e92f921c7e2referencing-0.36.2.tar.gz"
+    sha256 "df2e89862cd09deabbdba16944cc3f10feb6b3e6f18e902f7cc25609a34775aa"
   end
 
   resource "rfc3339-validator" do

@@ -2,7 +2,7 @@ class Otf2 < Formula
   desc "Open Trace Format 2 file handling library"
   homepage "https:www.vi-hps.orgprojectsscore-p"
   # TODO: check if we can remove `autoconf` + `automake` at version bump.
-  url "https:perftools.pages.jsc.fz-juelich.decicdotf2tagsotf2-3.0.3otf2-3.0.3.tar.gz", using: :homebrew_curl
+  url "https:perftools.pages.jsc.fz-juelich.decicdotf2tagsotf2-3.0.3otf2-3.0.3.tar.gz"
   sha256 "18a3905f7917340387e3edc8e5766f31ab1af41f4ecc5665da6c769ca21c4ee8"
   license "BSD-3-Clause"
 

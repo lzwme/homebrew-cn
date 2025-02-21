@@ -1,7 +1,8 @@
 class Libopusenc < Formula
   desc "Convenience library for creating .opus files"
-  homepage "https://opus-codec.org/"
-  url "https://archive.mozilla.org/pub/opus/libopusenc-0.2.1.tar.gz", using: :homebrew_curl
+  homepage "https://www.opus-codec.org/"
+  url "https://ftp.osuosl.org/pub/xiph/releases/opus/libopusenc-0.2.1.tar.gz"
+  mirror "https://archive.mozilla.org/pub/opus/libopusenc-0.2.1.tar.gz"
   sha256 "8298db61a8d3d63e41c1a80705baa8ce9ff3f50452ea7ec1c19a564fe106cbb9"
   license "BSD-3-Clause"
 
@@ -23,7 +24,7 @@ class Libopusenc < Formula
   end
 
   head do
-    url "https://gitlab.xiph.org/xiph/libopusenc.git"
+    url "https://gitlab.xiph.org/xiph/libopusenc.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build

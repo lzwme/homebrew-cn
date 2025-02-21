@@ -1,9 +1,9 @@
 class Genders < Formula
   desc "Static cluster configuration database for cluster management"
   homepage "https:github.comchaosgenders"
-  url "https:github.comchaosgendersarchiverefstagsgenders-1-29-1.tar.gz"
-  version "1.29.1"
-  sha256 "42c37c53a831e007b4fd5a5596060417186724e18cbd5c9dbb3a7185144200c2"
+  url "https:github.comchaosgendersarchiverefstagsgenders-1-30-1.tar.gz"
+  version "1.30.1"
+  sha256 "6cbe717add68b45d27685fb9f324b5eb531da660ca22aa4430738b27c3e19bf2"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -15,14 +15,12 @@ class Genders < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "e4fb31da5615e88dcc18ad6c9ef273e4af10e79bd9c3e5a1a6184988277295de"
-    sha256 cellar: :any,                 arm64_sonoma:   "24687149f4c7eae6083d96d72ab233d6f15f009d86fc0aca12459f9bf7da5996"
-    sha256 cellar: :any,                 arm64_ventura:  "987feaf1eba85ac7554b72e1b341779dec8e5b5785daa0cf490079345256f1d5"
-    sha256 cellar: :any,                 arm64_monterey: "568666f7f26b9d68df7c5bce2db3f953b09fe9ef5e92d8adf2f48f81a6e1d388"
-    sha256 cellar: :any,                 sonoma:         "9fcca30c146588f81f9fadf833022d70898612723f2526eef1e2836fc395b4ea"
-    sha256 cellar: :any,                 ventura:        "dbe0fbc6daf625e29b3db27cb6b7ddc8416145f41db930bdec9d0d66c905eacf"
-    sha256 cellar: :any,                 monterey:       "fbfe9f9bd3d171bc75d73c7cee9dc009370f052d134aee3a5fda3aabe95bf5c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3eb2859efed178704493b7801a8b182f82068c1d6bae6962a30ff8a169b79eef"
+    sha256 cellar: :any,                 arm64_sequoia: "3dc6003d34054ca5fbd0798270fefd9255623536ad58f18a0e05a8d864337314"
+    sha256 cellar: :any,                 arm64_sonoma:  "f26d79af42864c5576c9e7e59303f32403cc7611094df8595d2b0e4fddc1fd16"
+    sha256 cellar: :any,                 arm64_ventura: "1ea15002ed41220dc87ac706e3495b545d7bd40e8ab7dbdf0342762138497998"
+    sha256 cellar: :any,                 sonoma:        "20a7d3a16430a0d20425d688387d1b0cddf1706d254f8dade3dc8515b3c629da"
+    sha256 cellar: :any,                 ventura:       "71a2a71c741ac16fe8d54345ff909917ad71b936899381896ae486cefa026837"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18c1e118e576282e550f16e34d1ae820a7b5baf48b30efa5403106428ebc9389"
   end
 
   uses_from_macos "bison" => :build

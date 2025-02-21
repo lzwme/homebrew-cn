@@ -3,18 +3,18 @@ class CheckJsonschema < Formula
 
   desc "JSON Schema CLI"
   homepage "https:github.compython-jsonschemacheck-jsonschema"
-  url "https:files.pythonhosted.orgpackages88d41751a16868afea8d369444022d5c2e6ee65db90755fa0d77d050f7c012edcheck_jsonschema-0.31.1.tar.gz"
-  sha256 "32138447bd55fb97791b3eee8441aa8ea0af993ce6b2ca295e91ad39dada20de"
+  url "https:files.pythonhosted.orgpackagesf9e03378b03943ac488797e99be0b2f035cd8a410a4f51f0a6a593dc50a77566check_jsonschema-0.31.2.tar.gz"
+  sha256 "a99203b8f82cadbfc3bac787174a15e8336820c24ac58c5b65c627075563401f"
   license "Apache-2.0"
   head "https:github.compython-jsonschemacheck-jsonschema.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ae70cb3d82303fb146b9f50efaa4a0ba67e2ee45a93e0ac5964a704435af5e1f"
-    sha256 cellar: :any,                 arm64_sonoma:  "9308873459406fa0abedcfe911344d8e33f7119ab56966f1f09df748de1d1fdd"
-    sha256 cellar: :any,                 arm64_ventura: "5c322f6c539f7cd00175fc934844ac1c136a6e3333a0004d2c1acba85cb273df"
-    sha256 cellar: :any,                 sonoma:        "0dbd8da1a14e071f53d06ba68f824cd96bf0f7b900a8e8111448a60407d133f7"
-    sha256 cellar: :any,                 ventura:       "72e4005954b4346ee6f784697c0314ae35d5f40e0277be7e373d6c9cc0a8aed2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84c242d1b193b7f1f8558bc8f957b36cd05c1d032737ef350ee319a6a7367725"
+    sha256 cellar: :any,                 arm64_sequoia: "1beedeadab4841bb5f5d98dc831d5c9cbe27d4385fac3ad97851fa4e461cfefb"
+    sha256 cellar: :any,                 arm64_sonoma:  "d090adda193f0316477978d30ea2069fde72f0e735ff5a62bfb3e81d877614fe"
+    sha256 cellar: :any,                 arm64_ventura: "67912a10709db7a8c0af702ea4526659101261437b0e834ed35818ed246c353b"
+    sha256 cellar: :any,                 sonoma:        "08bffa53ef8a12bac4d003139855b0035e92121f3f44ba6143a74de3d51770e3"
+    sha256 cellar: :any,                 ventura:       "e770d5ad0177724f8b4c0218c92866df3f106a0c6c1dceef61650d4a1b0f9dd8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9841b6e95b80e17534253e3d4938fd46d62411a348b29301c3ecd338da969201"
   end
 
   depends_on "rust" => :build

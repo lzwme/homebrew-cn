@@ -1,19 +1,19 @@
 class Hbase < Formula
   desc "Hadoop database: a distributed, scalable, big data store"
   homepage "https:hbase.apache.org"
-  url "https:www.apache.orgdyncloser.lua?path=hbase2.6.1hbase-2.6.1-bin.tar.gz"
-  mirror "https:archive.apache.orgdisthbase2.6.1hbase-2.6.1-bin.tar.gz"
-  sha256 "76e6eeff822593cd8db4d11c2adf2e2db707f27f351277313af9193b09369150"
+  url "https:www.apache.orgdyncloser.lua?path=hbase2.6.2hbase-2.6.2-bin.tar.gz"
+  mirror "https:archive.apache.orgdisthbase2.6.2hbase-2.6.2-bin.tar.gz"
+  sha256 "5ff9a3993031f5a9e1d94fd795fb9ff8ee003b90570e476c63af6d3dd744a583"
   # We bundle hadoop-lzo which is GPL-3.0-or-later
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
 
   bottle do
-    sha256 arm64_sequoia: "ef9abda0df4a73dc7dc79fc84bafb0458a28bd9214152f2c94724b40ebb3a6b5"
-    sha256 arm64_sonoma:  "2e29b17434154655014f2748b84333fade9c3a147ad0283cbe2dae9ec90659b6"
-    sha256 arm64_ventura: "29e6c268eae626c43cf0c0e56ade1fbbdf30a69368f05dc3c615db1a3164c431"
-    sha256 sonoma:        "47438928d3738dc6e906ea0665bc851d1795ffa865fb66b5938395cde0833ea4"
-    sha256 ventura:       "c33cf0818f374ef77bcfc09ce58a1eb7ccaea69dadf24aaeebdd99e79a8ec043"
-    sha256 x86_64_linux:  "d779413909edc9803f495fcb53eee1414e0f98f8b4496761df4350fdb6e4e767"
+    sha256 arm64_sequoia: "d76a13a786aad736dc835a851093884a5f546000537f1c0dbc9787e8a53046b9"
+    sha256 arm64_sonoma:  "a38e8f800db8309eef49ce43641250bba09b54df5db0f6e6be3b2db630870993"
+    sha256 arm64_ventura: "fe7c197d0041aefe2b7c087ebc8309da66974a2395db77d763b0c056513813bf"
+    sha256 sonoma:        "03d6287c185c479d6fa135e85ddf90947df47b496d793720cfc994682e7f6ddc"
+    sha256 ventura:       "f37ea71e025d1d3daa046013a6c55bc4d50118efa4a93513cd92cc278a5e9d2b"
+    sha256 x86_64_linux:  "5ed28e89fd22d263715dc6579d1185ed053546ed2f76ab6de8ec34dde3c88e0c"
   end
 
   depends_on "ant" => :build

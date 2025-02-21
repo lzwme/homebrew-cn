@@ -1,7 +1,7 @@
 class Libzip < Formula
   desc "C library for reading, creating, and modifying zip archives"
   homepage "https://libzip.org/"
-  url "https://libzip.org/download/libzip-1.11.3.tar.xz", using: :homebrew_curl
+  url "https://libzip.org/download/libzip-1.11.3.tar.xz"
   sha256 "9509d878ba788271c8b5abca9cfde1720f075335686237b7e9a9e7210fe67c1b"
   license "BSD-3-Clause"
 

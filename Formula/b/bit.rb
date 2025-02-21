@@ -1,7 +1,7 @@
 class Bit < Formula
   desc "Distributed Code Component Manager"
   homepage "https:bit.dev"
-  url "https:registry.npmjs.orgbit-bin-bit-bin-14.8.8.tgz", using: :homebrew_curl
+  url "https:registry.npmjs.orgbit-bin-bit-bin-14.8.8.tgz"
   sha256 "25d899bacd06d77fad41026a9b19cbe94c8fb986f5fe59ead7ccec9f60fd0ef9"
   license "Apache-2.0"
   revision 1
