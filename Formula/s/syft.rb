@@ -1,18 +1,18 @@
 class Syft < Formula
   desc "CLI for generating a Software Bill of Materials from container images"
   homepage "https:github.comanchoresyft"
-  url "https:github.comanchoresyftarchiverefstagsv1.19.0.tar.gz"
-  sha256 "fed1e6c5307255096dbfa44760873889edf6927add52b479d9347520bf2bd8d9"
+  url "https:github.comanchoresyftarchiverefstagsv1.20.0.tar.gz"
+  sha256 "922deefedc1321f6f74fde7690e9321494a5bef11f4d5c4a6dfe8aa8df70f00c"
   license "Apache-2.0"
   head "https:github.comanchoresyft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "19b050cdeadf3b64ae8a611b2bd202fbc95b48a38984671d109b148e3a690de9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c76a0d94e56572f949fd64246052a0848cdfaee3e2b7c071182b0e856e9918c5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d62883455650956bafe23938ab1f67c37c4bc6efcb1a58659f23f64ce630079b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "08202eb51f0b128a7f14cf6546d97284f1cbd79855272d636444f583b4325887"
-    sha256 cellar: :any_skip_relocation, ventura:       "585f2e61287590fdb3bf4a024c84b7ddeebe9d73cab3cb720786ac862cc0a9c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f823e648ed68f67a85886e3e45c53ce04baa7e565efcd1667913b58ba539b19e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cbd19b80d83c2e300571b6cf24eb8d836613dfde4c3528a61b42fbe55f260b4d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8160e3832be4715289bf0341caf7ed61020edf8f76c99a1f812cc4384fe2038"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "02389d7b58d6038b5665e7adc42050f964d517a0a246652a1d0d31fb54f8a853"
+    sha256 cellar: :any_skip_relocation, sonoma:        "04be740307b95f989da0d61e5aa77e547566c0b48b0bbed456de95c9bd3da2a9"
+    sha256 cellar: :any_skip_relocation, ventura:       "72d0458bfba07a54f5ef41ba5303916163ab224646708ea95df52c3a9e052a8f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82190c60c39ca668b50884baca7855b1241703f85e93f3930bc86412d2633e48"
   end
 
   depends_on "go" => :build

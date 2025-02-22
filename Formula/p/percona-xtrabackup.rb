@@ -6,8 +6,10 @@ class PerconaXtrabackup < Formula
   license "GPL-2.0-only"
 
   livecheck do
-    url "https:docs.percona.compercona-xtrabackup#{version.major_minor}"
-    regex(href=.*?v?(\d+(?:[.-]\d+)+)\.htmli)
+    url "https:www.percona.comproducts-api.php", post_form: {
+      version: "Percona-XtraBackup-#{version.major_minor}",
+    }
+    regex(value=["']?[^"' >]*?v?(\d+(?:[.-]\d+)+)["' >]i)
     strategy :page_match do |page, regex|
       page.scan(regex).map do |match|
         # Convert a version like 1.2.3-4.0 to 1.2.3-4 (but leave a version like

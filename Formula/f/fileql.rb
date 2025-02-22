@@ -1,18 +1,18 @@
 class Fileql < Formula
   desc "Run SQL-like query on local files instead of database files using the GitQL SDK"
   homepage "https:github.comAmrDeveloperFileQL"
-  url "https:github.comAmrDeveloperFileQLarchiverefstags0.9.0.tar.gz"
-  sha256 "34a749bdc8c3346d386b817af6c4786a56b99ce39e8cb699f2c02c4863e397e7"
+  url "https:github.comAmrDeveloperFileQLarchiverefstags0.10.0.tar.gz"
+  sha256 "c85976ffd14454be0f3f973d6d97621f10d8dc0d4814448bd66d2a376f6dfdc2"
   license "MIT"
   head "https:github.comAmrDeveloperFileQL.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5eb8d9177e0f0777a7dd183be3ec4a20a20621ab8b26898c62859902fce2f19"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26ce2e997cdbc92088b542d1486b4c75981b976604ab88afde694ee4ab940393"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "16996653b04cc26692f3c2943c437f7423c738a9a37b6e8bc0af43e7c5ce6e1e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9489d0febff0359a5fa7638cb0797abf5ff63b2dc8cdd301a136ca6160986cbc"
-    sha256 cellar: :any_skip_relocation, ventura:       "53f2fd9e804e440c14534788165a06cb2d67e52374273b8e0d9bc97cbda45582"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce043761b6076eae3b5794f8fad52ba35954f2e2231731aead47018dd8e2d6b2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "396ae437cffbace021b760b42ed66c39e78a15edcc82be54a444517922cb7dfb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4161567f1ab380b7a69cbc9528c54a1959eec0c77c09b1563f6bc0fc75172ac"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "26b7e5b7d36985905e3c637de9e1a3fec9162cdd948894b99f16e1c8d295c615"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d86657e76e6854b5a4924936988f6f7ab2d46346a8409d6c44341acb37f27c1e"
+    sha256 cellar: :any_skip_relocation, ventura:       "7608a695e3020c871be877d0e5084605a8f2afa3b405232b11fd8a386c063270"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cea79c715f434f14436ebe2cebb5d7ede2f5c2576a6956c18df1c5a0c25426b5"
   end
 
   depends_on "rust" => :build

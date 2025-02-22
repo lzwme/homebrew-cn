@@ -12,11 +12,12 @@ class Visp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "e0fccaaa3c745ff7bfa1832352aeece2ebb7938a28031126e8679857a95bf678"
-    sha256 cellar: :any,                 arm64_ventura: "2023ab9447e70c638539f1283a0c54de6057c64c1c4ef1562ffcdaa364161dd7"
-    sha256 cellar: :any,                 sonoma:        "8b77d8eb4b5e71c65c8f30ce71a457e487b20c43ac6bab4c0e756e6b5a38e805"
-    sha256 cellar: :any,                 ventura:       "cf0aa30416a2a183703845c093f5c657d73c36240a24c3a4e6475ed19c72882d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edffcb3d2cf0ed3c7dc1d56e792222b8331d4c4c829baa25a0df14da27e77e8d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:  "197058b2a70ae6fc5e6580a8ea2731d8e216bda129bc3e8db005444bae2cedb0"
+    sha256 cellar: :any,                 arm64_ventura: "e2b3438f159032a21560f52dbb0d68a568ca3b8632aec346b2ea19a89548e3fb"
+    sha256 cellar: :any,                 sonoma:        "d4632621c0ee950c0eeeb735e1d02fb3a2ac20335ff92ca5b1e6cc7b67007623"
+    sha256 cellar: :any,                 ventura:       "2a09d4389720dc4a12bbc5aa36f1f3ec228ab7d25e30d02afbf6cc9e8449f318"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8f8167b50dd6426974952daeb120e2c425b0dca84bb9c985d978d8e34e43819"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -148,6 +149,21 @@ class Visp < Formula
     # Make sure software built against visp don't reference opencv's cellar path either
     inreplace [lib"pkgconfigvisp.pc", lib"cmakevispVISPConfig.cmake", lib"cmakevispVISPModules.cmake"],
               opencv.prefix.realpath, opencv.opt_prefix
+  end
+
+  def post_install
+    # Replace SDK paths in bottle when pouring on different OS version than bottle OS.
+    # This avoids error like https:github.comorgsHomebrewdiscussions5853
+    # TODO: Consider handling this in brew, e.g. as part of keg cleaner or bottle relocation
+    if OS.mac? && Tab.for_formula(self).poured_from_bottle && MacOS.version != bottle&.tag&.to_macos_version
+      sdk_path_files = [
+        lib"cmakevispVISPConfig.cmake",
+        lib"cmakevispVISPModules.cmake",
+        lib"pkgconfigvisp.pc",
+      ]
+      bottle_sdk_path = MacOS.sdk_for_formula(self, bottle&.tag&.to_macos_version).path
+      inreplace sdk_path_files, bottle_sdk_path, MacOS.sdk_for_formula(self).path, audit_result: false
+    end
   end
 
   test do

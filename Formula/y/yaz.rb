@@ -1,8 +1,8 @@
 class Yaz < Formula
   desc "Toolkit for Z39.50SRWSRU clientsservers"
   homepage "https:www.indexdata.comresourcessoftwareyaz"
-  url "https:ftp.indexdata.compubyazyaz-5.34.3.tar.gz"
-  sha256 "ce4cb9e483e865ce57d32c2956b6ab65eed28cfe6dc904068c3abe4c54dba4c0"
+  url "https:ftp.indexdata.compubyazyaz-5.34.4.tar.gz"
+  sha256 "c470a73f8d79cfa10971b43685f4542504d1d3bc45f2cd057870e0ffc2e12ead"
   license "BSD-3-Clause"
 
   # The latest version text is currently omitted from the homepage for this
@@ -13,12 +13,12 @@ class Yaz < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "65518d2c2df2c6c4ec6f7a9f0dfe274d790a581226bdf414d5249b2df29d2886"
-    sha256 cellar: :any,                 arm64_sonoma:  "39aae1432cd9dbe5a61f20eee14b53f47d1ff7055aabf25c31b76e220eb96a11"
-    sha256 cellar: :any,                 arm64_ventura: "217a709a081272964ed3fb136b1e1ba9bf8b7b07767ae23aa680cc896412c86e"
-    sha256 cellar: :any,                 sonoma:        "1d7bb3180287d7526099784cadf721ed1234efac4ff76fd845080c9ccad180d0"
-    sha256 cellar: :any,                 ventura:       "f74577c87219ab04264c78c157a2262ca8462c6ff519bcc657c09eb4afbcd913"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31d0cdbc299e8f2759a05e41bd1add117fe7d15379f79480c2733c329c875a52"
+    sha256 cellar: :any,                 arm64_sequoia: "86d6ac8398c7d0915e4b639bf06ee83528019a073689f6f2c0d69364e17d1196"
+    sha256 cellar: :any,                 arm64_sonoma:  "eda1c906146eaaa0c6ae585914f5f25c25f99cb49b7a63b116baac27d0a8087f"
+    sha256 cellar: :any,                 arm64_ventura: "7ba4fd7ab5c69a521e19516f5545a8c8a9f40e89992fb5b627ccf62b833095bb"
+    sha256 cellar: :any,                 sonoma:        "b548846853836492f2983fc96ff6bf0bcb15b5994542440bd172792921aa1a97"
+    sha256 cellar: :any,                 ventura:       "89e3b86c66b86147606a914906923a7adb81e5f46e96ffe4a148963209c862dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78fad0e6e761be1f36227bad55aa2830df9d536fde45f8cb254029083221d2db"
   end
 
   head do

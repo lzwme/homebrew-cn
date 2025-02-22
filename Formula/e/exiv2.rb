@@ -1,8 +1,8 @@
 class Exiv2 < Formula
   desc "EXIF and IPTC metadata manipulation library and tools"
   homepage "https:exiv2.org"
-  url "https:github.comExiv2exiv2archiverefstagsv0.28.4.tar.gz"
-  sha256 "65cb3a813f34fb6db7a72bba3fc295dd6c419082d2d8bbf96518be6d1024b784"
+  url "https:github.comExiv2exiv2archiverefstagsv0.28.5.tar.gz"
+  sha256 "e1671f744e379a87ba0c984617406fdf8c0ad0c594e5122f525b2fb7c28d394d"
   license "GPL-2.0-or-later"
   head "https:github.comExiv2exiv2.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Exiv2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "67453fd4287cb90da83fd03489357cda4ec07aa779a5ceb5a3c2bb4c67088dcf"
-    sha256 cellar: :any,                 arm64_sonoma:  "928454e2274e05cf1d0c79d41212899e8af8905e05f24f1e85d85cba5bc1d437"
-    sha256 cellar: :any,                 arm64_ventura: "7227b9d4ea7570b1a6a5408cac19728bc1b94bd6622e61b8b44b795ff5cc2cdc"
-    sha256 cellar: :any,                 sonoma:        "edbebf507efe7bf0558373b5e2ea77b6cac2a6e74fdfb830419220f7db6fd8cc"
-    sha256 cellar: :any,                 ventura:       "6c9fc3cdaee5b0bc97a83eb8895c53c02944b60d50b90e001b89c123b6c54d13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b27e53e9a52c29211ad3f3a499cad8e32c8960af25193e61a1f890c3ffa043dc"
+    sha256 cellar: :any,                 arm64_sequoia: "5225bfe7d15357bd7cc7d26d4a958435351e4239e9260d5343e2668f5977d1f8"
+    sha256 cellar: :any,                 arm64_sonoma:  "bd0206f7ef7c3f0f0a6582c2a1fa91cc60e79b733568d7b029a57e6037da71af"
+    sha256 cellar: :any,                 arm64_ventura: "324a396d02a60943e980cf9b50426eae98c192ca22ca095a48f905e96fa8126d"
+    sha256 cellar: :any,                 sonoma:        "dcb1e5a8e88a3e73d6a7fe7bcfc29287f5bfd316707b11885243123a72513098"
+    sha256 cellar: :any,                 ventura:       "478a00d6b64bc104d295c5ba17dd1ee2ee4d0abb402156637197bfbd9d89458a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cabdc713bdbfcedd5f85a543e9a573b4976cb074ad9ee7556ca0323a23184c6b"
   end
 
   depends_on "cmake" => :build

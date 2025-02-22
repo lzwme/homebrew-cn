@@ -21,7 +21,6 @@ class Todoman < Formula
   depends_on "python@3.13"
 
   conflicts_with "bash-snippets", because: "both install `todo` binaries"
-  conflicts_with "devtodo", because: "both install a `todo` binary"
 
   resource "atomicwrites" do
     url "https:files.pythonhosted.orgpackages87c653da25344e3e3a9c01095a89f16dbcda021c609ddb42dd6d7c0528236fb2atomicwrites-1.4.1.tar.gz"

@@ -15,11 +15,12 @@ class Rtabmap < Formula
   end
 
   bottle do
-    sha256                               arm64_sonoma:  "6b2bccb0c4d696140dad2c085f6b1ff97d32d99f21d2e7fa4ba79fe4a159f959"
-    sha256                               arm64_ventura: "6c9dac80b27f6b0db9ee3bff683e06a307ae868a86fa64a732d439fe164a8639"
-    sha256                               sonoma:        "82dbd8db8bdf30a95da1e5588e2e6b17b7d1038e8d596e1daff56a1070c63005"
-    sha256                               ventura:       "d0cca5a2a6a11f4c551696ebb2fb05b55f84c0823979848c5ba9ca06ab8f2b83"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7984f2493c45d8ab3c38774fe6cab20ece348639ade1c1d55653770770d20c2d"
+    rebuild 1
+    sha256                               arm64_sonoma:  "efd50883572aa0c10a2fa435f148bca43bf7822d0d65948b5fbfa21cfa052d80"
+    sha256                               arm64_ventura: "38d22af33407cf0e98dc8076775e55699f0c445311bac17bcfcbc2fefcbdd8ab"
+    sha256                               sonoma:        "44e60e0677742e0e9da6ec271c0080625abd04c05f58b38457ba286538643864"
+    sha256                               ventura:       "27c9873f7e95a90fddd2c15d7a57b71eba01714f314b84897c6f4a6ced24f798"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c80825db603f2696e1ddbbdd608c6422295fdd41d600482384b543b704bccecb"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -48,29 +49,25 @@ class Rtabmap < Formula
   end
 
   def install
-    # Work around an Xcode 15 linker issue which causes linkage against LLVM's
-    # libunwind due to it being present in a library search path.
-    if DevelopmentTools.clang_build_version >= 1500
-      recursive_dependencies
-        .select { |d| d.name.match?(^llvm(@\d+)?$) }
-        .map { |llvm_dep| llvm_dep.to_formula.opt_lib }
-        .each { |llvm_lib| ENV.remove "HOMEBREW_LIBRARY_PATHS", llvm_lib }
-    end
-
-    args = %W[
-      -DCMAKE_INSTALL_RPATH=#{rpath}
-    ]
-
-    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
     # Replace reference to OpenCV's Cellar path
     opencv = Formula["opencv"]
     inreplace lib.glob("rtabmap-*RTABMap_coreTargets.cmake"), opencv.prefix.realpath, opencv.opt_prefix
+
+    return unless OS.mac?
+
+    # Remove SDK include paths from CMake config files to avoid requiring specific SDK version
+    sdk_include_regex = Regexp.escape("#{MacOS.sdk_for_formula(self).path}usrinclude")
+    inreplace lib.glob("rtabmap-*RTABMap_{core,utilite}Targets.cmake"), ;#{sdk_include_regex}([;"]), "\\1"
   end
 
   test do
+    # Check all references to SDK path were removed from CMake config files
+    prefix.glob("***.cmake") { |cmake| refute_match %r{MacOSX[\d.]*\.sdk}, cmake.read } if OS.mac?
+
     output = if OS.linux?
       # Linux CI cannot start windowed applications due to Qt plugin failures
       shell_output("#{bin}rtabmap-console --version")

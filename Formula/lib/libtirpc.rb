@@ -6,13 +6,19 @@ class Libtirpc < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "698863d4347f952d77d796520cbe9857146c83983789691c08d848c63f045fa4"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "c16ef4d7037e9f47895388ed87cabd6204ec34131e0093267f6526eed8f9ee6c"
+    sha256 cellar: :any,                 arm64_sonoma:  "8ee7ac3b3b1df398b032656eccd643b5acc54d7e02959f1615690ecde92116e1"
+    sha256 cellar: :any,                 arm64_ventura: "75b9446214bec564b88e7d765cffb241497d1ae41e349fd6f584de3d8cbc5c26"
+    sha256 cellar: :any,                 sonoma:        "72e659c72370584a373cc916acafe7a51db67a10ad7c8fbaa9fc311fc49ff790"
+    sha256 cellar: :any,                 ventura:       "7a87780cba64ee5fa5e65686d4bcc51236ccf4b33a11c8732d0ad59ad7b003c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "93daf0554770cfcd883a74d9bcbb208702c23b8d90d0c1daa9b040be52b9657c"
   end
 
   depends_on "krb5"
-  depends_on :linux
 
   def install
+    ENV.append_to_cflags "-D__APPLE_USE_RFC_3542" if OS.mac?
     system "./configure", "--disable-silent-rules", *std_configure_args.reject { |s| s["--disable-debug"] }
     system "make", "install"
   end

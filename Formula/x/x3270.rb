@@ -1,8 +1,8 @@
 class X3270 < Formula
   desc "IBM 3270 terminal emulator for the X Window System and Windows"
   homepage "https://x3270.bgp.nu/"
-  url "http://x3270.bgp.nu/download/04.03/suite3270-4.3ga10-src.tgz"
-  sha256 "398c11a4bc862cb3f8536fe26a4c576d6f18756a446718af89b4fa5a972154c6"
+  url "https://x3270.bgp.nu/download/04.04/suite3270-4.4ga4-src.tgz"
+  sha256 "075e8ab0a1a901d879550629bae59b73ea8aed2c9b4d38c14d79c72e0cfbc07d"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,17 +11,18 @@ class X3270 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "e0a50602a236f191cd93a8aadb1ecb1ffdfb8332c2fc46018c3c801b573483dd"
-    sha256 arm64_sonoma:  "928d0a205bbf28583b87124807574012c0ddfbb55be731b105c7b34bd2179b3b"
-    sha256 arm64_ventura: "5944432475eeacf621090f117dd36cd4fd829397a83b41dcb25581c7e90de386"
-    sha256 sonoma:        "b14a00d5f2e2c7a596e6f17cabf29cf45d0f85c8d37745d7891f8776dac099fe"
-    sha256 ventura:       "78c70e7aacfed1f6162ee4260ab1f210cdfa2e2383f596da7dd5960c5268b722"
-    sha256 x86_64_linux:  "a09b51f8fcd15a28844963ffecda7b30a6a3dae2624dc3019e0dbea23fbcbf02"
+    sha256 arm64_sequoia: "c8d4e2ca525793a35b138372d394c8219ac247314d31fe7fbde494d0bb20b5ea"
+    sha256 arm64_sonoma:  "95472ae345dc2591ba5896bec6f14c07bd59040f44748a4215d3d1a00881e7f4"
+    sha256 arm64_ventura: "6f2a137b7f813429169957ecf0327c6b708944ce82bab84342f05c1fda28d8b5"
+    sha256 sonoma:        "28a8ec4ab0d4f43d1f37b5453f64bafe38f72e24f8280b3f67b6b0b0a210fca8"
+    sha256 ventura:       "112ef2a0be9ca1ae41d8a8949cc9d2a161247c97d718c2d235223e155d33820e"
+    sha256 x86_64_linux:  "1aaf147804e1a41c7646f248f7fb32543cbb5bce2a0c71018b14c4278e59e7eb"
   end
 
   depends_on "openssl@3"
   depends_on "readline"
 
+  uses_from_macos "python" => :build
   uses_from_macos "ncurses"
 
   on_linux do
@@ -29,6 +30,10 @@ class X3270 < Formula
   end
 
   def install
+    # Fix to read SOURCE_DATE_EPOCH as an unix timestamp not a date string
+    inreplace "Common/mkversion.py", "strptime(os.environ['SOURCE_DATE_EPOCH'], '%a %b %d %H:%M:%S %Z %Y')",
+                                     "fromtimestamp(int(os.environ['SOURCE_DATE_EPOCH']))"
+
     ENV.append "CPPFLAGS", "-I#{Formula["tcl-tk@8"].opt_include}/tcl-tk" if OS.linux?
 
     args = %w[

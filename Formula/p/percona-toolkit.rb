@@ -7,8 +7,10 @@ class PerconaToolkit < Formula
   head "lp:percona-toolkit", using: :bzr
 
   livecheck do
-    url "https://docs.percona.com/percona-toolkit/version.html"
-    regex(/Percona\s+Toolkit\s+v?(\d+(?:\.\d+)+)\s+released/im)
+    url "https://www.percona.com/products-api.php", post_form: {
+      version: "percona-toolkit",
+    }
+    regex(/value=["']?[^"' >]*?v?(\d+(?:[.-]\d+)+)["' >]/i)
   end
 
   bottle do

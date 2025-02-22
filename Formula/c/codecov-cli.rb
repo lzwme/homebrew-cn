@@ -3,18 +3,18 @@ class CodecovCli < Formula
 
   desc "Codecov's command-line interface"
   homepage "https:cli.codecov.io"
-  url "https:files.pythonhosted.orgpackagesda063f623cb42b0a9f6bb050a82fdb3ba6611e91859f0806dd3abcfd12f6a30fcodecov_cli-10.0.1.tar.gz"
-  sha256 "6c91dbdada1c26c3ff261c8c23edc0fb1de6eac24d8037b5917113ed68218543"
+  url "https:files.pythonhosted.orgpackages57b8ff5edc3f3887a62daac908021d0c3cd2b14a4f7f04d5e10727fc412aeccccodecov_cli-10.1.1.tar.gz"
+  sha256 "332a0262b3e8dbf5df7eaa9ba36f83275a9ff8759e2eea2c472c28569e1708b0"
   license "Apache-2.0"
   head "https:github.comcodecovcodecov-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "fc6471330bab9738c952308ce513e646be357b5c3855e3443ae6706e467e1442"
-    sha256 cellar: :any,                 arm64_sonoma:  "552f1dedb3a697150794c5a7f91c3568a99f59551a4f215ec643ab29fa43bd7c"
-    sha256 cellar: :any,                 arm64_ventura: "5ef3b77a12da7c4f452ffbfb012c34f9689f63aea9b762ef2739512db2845e67"
-    sha256 cellar: :any,                 sonoma:        "5f9c6b7ea387f4b305d700e53625e8bf4f6d65bc44f7dc3c7719c6b3c5541fca"
-    sha256 cellar: :any,                 ventura:       "bfa97d5f294c4843fdec1aef085ed6848a140cffefe4f7f3eb8aaa6746d72c79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "abdaf7fd3173f574a810f25396b3a63d92acdc9c90cc180cb55719f5a4261409"
+    sha256 cellar: :any,                 arm64_sequoia: "3587d9a6bc9df506edfc8f41bbab9fbd2c1f4a881bcc594f8910c20466e82066"
+    sha256 cellar: :any,                 arm64_sonoma:  "b146edb5ea847ea7b55050f006432615f3a18c3eb605e91cdcdf43caf9457203"
+    sha256 cellar: :any,                 arm64_ventura: "0f0430142732c9f9b43aaa6edd13fef0dfbfe1e4611b1e326a57aec1b9d48cbe"
+    sha256 cellar: :any,                 sonoma:        "6fbc36c299fbc743c4e937d4db96b7507ab574b386d28a046af6e7c18e7e4e33"
+    sha256 cellar: :any,                 ventura:       "16706aa9f32fe627d9b0f036d95549e7a3748de834380f8db655146bd0364a60"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8bba663e116f91ae6e2bd0011dbd74be2f3fdb511764fa7bb33714d3c22e6e48"
   end
 
   depends_on "rust" => :build
@@ -27,8 +27,8 @@ class CodecovCli < Formula
   end
 
   resource "certifi" do
-    url "https:files.pythonhosted.orgpackages0fbd1d41ee578ce09523c81a15426705dd20969f5abf006d1afe8aeff0dd776acertifi-2024.12.14.tar.gz"
-    sha256 "b650d30f370c2b724812bee08008be0c4163b163ddaec3f2546c1caf65f191db"
+    url "https:files.pythonhosted.orgpackages1cabc9f1e32b7b1bf505bf26f0ef697775960db7932abeb7b516de930ba2705fcertifi-2025.1.31.tar.gz"
+    sha256 "3d5da6925056f6f18f119200434a4780a94263f10d1c21d032a6f6b2baa20651"
   end
 
   resource "charset-normalizer" do
@@ -87,8 +87,8 @@ class CodecovCli < Formula
   end
 
   resource "sentry-sdk" do
-    url "https:files.pythonhosted.orgpackages68e86a366c0cd5e129dda6ecb20ff097f70b18182c248d4c27e813c21f98992asentry_sdk-2.20.0.tar.gz"
-    sha256 "afa82713a92facf847df3c6f63cec71eb488d826a50965def3d7722aa6f0fdab"
+    url "https:files.pythonhosted.orgpackages81b6662988ecd2345bf6c3a5c306a9a3590852742eff91d0a78a143398b816f3sentry_sdk-2.22.0.tar.gz"
+    sha256 "b4bf43bb38f547c84b2eadcefbe389b36ef75f3f38253d7a74d6b928c07ae944"
   end
 
   resource "setuptools" do
