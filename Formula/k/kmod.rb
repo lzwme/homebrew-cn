@@ -1,8 +1,8 @@
 class Kmod < Formula
   desc "Linux kernel module handling"
   homepage "https://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git"
-  url "https://mirrors.edge.kernel.org/pub/linux/utils/kernel/kmod/kmod-33.tar.xz"
-  sha256 "dc768b3155172091f56dc69430b5481f2d76ecd9ccb54ead8c2540dbcf5ea9bc"
+  url "https://mirrors.edge.kernel.org/pub/linux/utils/kernel/kmod/kmod-34.tar.xz"
+  sha256 "12e7884484151fbd432b6a520170ea185c159f4393c7a2c2a886ab820313149a"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
 
   livecheck do
@@ -11,22 +11,30 @@ class Kmod < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "22ddfea85715ea371171452f7cb754e1433bcea2135fb786c480d4cfee27ab70"
+    sha256 x86_64_linux: "46807b3e434fcdf1a9d60c69d09e0df25295f3a04ad7a44c2a087534e6f95d1b"
   end
 
+  depends_on "meson" => :build
+  depends_on "ninja" => :build
+  depends_on "pkgconf" => :build
   depends_on "scdoc" => :build
   depends_on :linux
+  depends_on "openssl@3"
+  depends_on "xz"
+  depends_on "zlib"
+  depends_on "zstd"
 
   def install
-    system "./configure", "--with-bashcompletiondir=#{bash_completion}", "--disable-silent-rules", *std_configure_args
-    system "make", "install"
-
-    bin.install_symlink "kmod" => "depmod"
-    bin.install_symlink "kmod" => "lsmod"
-    bin.install_symlink "kmod" => "modinfo"
-    bin.install_symlink "kmod" => "insmod"
-    bin.install_symlink "kmod" => "modprobe"
-    bin.install_symlink "kmod" => "rmmod"
+    args = %W[
+      -Dbashcompletiondir=#{bash_completion}
+      -Dfishcompletiondir=#{fish_completion}
+      -Dzshcompletiondir=#{zsh_completion}
+      -Dsysconfdir=#{etc}
+      -Dmanpages=true
+    ]
+    system "meson", "setup", "build", *args, *std_meson_args
+    system "meson", "compile", "-C", "build", "--verbose"
+    system "meson", "install", "-C", "build"
   end
 
   test do

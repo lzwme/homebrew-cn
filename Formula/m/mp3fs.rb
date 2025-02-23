@@ -4,11 +4,10 @@ class Mp3fs < Formula
   url "https:github.comkhenriksmp3fsreleasesdownloadv1.1.1mp3fs-1.1.1.tar.gz"
   sha256 "942b588fb623ea58ce8cac8844e6ff2829ad4bc9b4c163bba58e3fa9ebc15608"
   license "GPL-3.0-or-later"
-  revision 4
+  revision 5
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "04bf8e04493815f4cde80f7c8f429a22cfd8d7720e5f4a9c5ef741a700b7c7c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "db1aaedbc1b394893b7b3344b0861aeb573f22009c72559c3e2e7cf8037cc986"
   end
 
   depends_on "pkgconf" => :build

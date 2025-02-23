@@ -1,8 +1,8 @@
 class CargoC < Formula
   desc "Helper program to build and install c-like libraries"
   homepage "https:github.comlu-zerocargo-c"
-  url "https:github.comlu-zerocargo-carchiverefstagsv0.10.9.tar.gz"
-  sha256 "4542e39aa67bf8712c60f21701cc8e8b5153d0344afe1b618f121f696b578a7f"
+  url "https:github.comlu-zerocargo-carchiverefstagsv0.10.11.tar.gz"
+  sha256 "8a6d6dc589d6d70bd7eb95971e3c608240e1f9c938dd5b54a049977333b59f05"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class CargoC < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8e962d96f9a4d59ff326bcd18d9ae76ca6a01b68864134048f375067681bd5cc"
-    sha256 cellar: :any,                 arm64_sonoma:  "bd8b60660ca8d0c236ed303a2baf08dcfb6cbaa28dccc0ebc860fa0e7fa1374a"
-    sha256 cellar: :any,                 arm64_ventura: "f74c2d8c404887078aae7f5f39bcd8aeb83a0e9835a8a67dd784e49d4befb13f"
-    sha256 cellar: :any,                 sonoma:        "aca6f55647d5e338431ace98addcda3709bda3f249ff8cf906d8f2c9d73663b4"
-    sha256 cellar: :any,                 ventura:       "52c389dd8cd35ae4bf06fb3dd991b3a217c042f98139bffd4b5e3a453e305cf1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba9adb66a9a7078a7d61c4c0c2a42e4d480f0adc96ffdde86a8984b538e3a115"
+    sha256 cellar: :any,                 arm64_sequoia: "72922f9c6392a632e273f4c5ccb3fcfcd244a40be53c86c3b6db568e41843c6d"
+    sha256 cellar: :any,                 arm64_sonoma:  "2f7695eb2b1076b9300adfde23ea2fe15227500823687969a7f9eb4390616abb"
+    sha256 cellar: :any,                 arm64_ventura: "6d31ed9a27a0d2609bf55af6c6a01671bdeab5e45b79b1a3be17c19633a6a2b0"
+    sha256 cellar: :any,                 sonoma:        "762a8cea56c31c21404c17cada0a25ab162c2bb6a8296be4dd337efc5ff79bf5"
+    sha256 cellar: :any,                 ventura:       "1cf30254d83901dbfa27cbf8585cc0d027d0cf15e725c08c585302c206d1e30b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "836cb915f1bfa3ed234d56b364027f8dc00f0c80916bace72688bbd2376abeb3"
   end
 
   depends_on "pkgconf" => :build

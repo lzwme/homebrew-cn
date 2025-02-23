@@ -4,6 +4,7 @@ class Allegro < Formula
   url "https:github.comliballegallegro5releasesdownload5.2.10.1allegro-5.2.10.1.tar.gz"
   sha256 "2ef9f77f0b19459ea2c7645cc4762fc35c74d3d297bfc38d8592307757166f05"
   license "Zlib"
+  revision 1
   head "https:github.comliballegallegro5.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,12 @@ class Allegro < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "79f3b5c3b0bd394ed78f59d83c0c600bab8a40de1048dfba4044addb8ce84e48"
-    sha256 cellar: :any,                 arm64_sonoma:  "0bff19547f67acd417d503ffa601c4abbc1c0677018383608f74231bed2181e1"
-    sha256 cellar: :any,                 arm64_ventura: "aa3dea47c0887752b899daed2e4d672094a197c321e4c2dc21dbb1f6d299b3ee"
-    sha256 cellar: :any,                 sonoma:        "165885c74f91990ba86bacdd0b27e655e51e3a1c628b3b9dde8e8b17a890fca4"
-    sha256 cellar: :any,                 ventura:       "1357c95194e2a91e4520515c8730067a0cd22606e7717f8923266c4cdd3437c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f335668957c66cd3f4a6151af0b45cc19e0b1963d9fc304711907237f5e49c76"
+    sha256 cellar: :any,                 arm64_sequoia: "3b43e0f8503452a10313f09425c881b2904307185834e264d169902ec2211e38"
+    sha256 cellar: :any,                 arm64_sonoma:  "d9485d8eb15902bf533254101a297e5f04d44b8fdb3c86bd70cda6d609bdde8d"
+    sha256 cellar: :any,                 arm64_ventura: "559055fd2e03e6cd292370bb4a72b838e89f2917a17e152cc1e00a1567232efe"
+    sha256 cellar: :any,                 sonoma:        "0a8120e62d0f2f95d57db7d238348b02cf5ba6e23f707d26fb982348c2f49603"
+    sha256 cellar: :any,                 ventura:       "4c6e94c6ab57cad68876ed6fc2ddfe02dddfe8499199bfc21542b479762435dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13e7ac2228a2a3f2b975bd5da105c7c63a15b88b76582f5e47510f54f6ad92a0"
   end
 
   depends_on "cmake" => :build
@@ -25,6 +26,7 @@ class Allegro < Formula
   depends_on "flac"
   depends_on "freetype"
   depends_on "libogg"
+  depends_on "libopenmpt"
   depends_on "libvorbis"
   depends_on "opusfile"
   depends_on "physfs"

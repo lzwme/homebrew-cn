@@ -4,6 +4,7 @@ class Vice < Formula
   url "https://downloads.sourceforge.net/project/vice-emu/releases/vice-3.8.tar.gz"
   sha256 "1d7dc4d0f2bbcc2a871bb954ff4a5df63048dea9c16f5f1e9bc8260fa41a1004"
   license "GPL-2.0-or-later"
+  revision 1
   head "https://svn.code.sf.net/p/vice-emu/code/trunk/vice"
 
   livecheck do
@@ -12,14 +13,12 @@ class Vice < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "27ee6052b18ef33d3506287af4026da0058bafcbba1c4f2c42653b2ebff55275"
-    sha256 arm64_sonoma:   "163a28f5f228bda4494e240c888a18f33d9fc92a45999d65431c91d196bb4279"
-    sha256 arm64_ventura:  "649950d292263d4acd2003e830bcc8d5f53d570f71ae9b9c1d15b0ee17e95ed1"
-    sha256 arm64_monterey: "f1ae86341d60851431b2500e01047610456dee0d4f5173ad0e44b921dd143859"
-    sha256 sonoma:         "1399cd7f168537868340913dc9daf51dc45f9f936ed17b19e7552ef05c165e6e"
-    sha256 ventura:        "11775c1d4596bde29837c632e6bcb6f0746d93461bedded7d25f81f2e52aadfa"
-    sha256 monterey:       "7e31e99728c4aa15570848d3da0839f8b3af34c654dc2bbb24a864fb49a0a0c3"
-    sha256 x86_64_linux:   "56cbe974416e6d4e257df439151d9fa8a4594e3a305df4aff2a42c10239472ef"
+    sha256 arm64_sequoia: "5b90dae6e48945d2a2e9bcb171d3e738f84eaa4509b271464f077306cac2170c"
+    sha256 arm64_sonoma:  "df507a393d84b5b9a26ba24dd7b25cf5970d9e863c3434192b8acf17b0e6c87d"
+    sha256 arm64_ventura: "d1acd6e4620e02665f26fadb7a17a3d61de4d17a5f0b0a32bfbc2f85ac4199d2"
+    sha256 sonoma:        "d2ce9b6154fb38eeba565303cd320235184c8bb45d17479f4a8d067efe284d8e"
+    sha256 ventura:       "4748297e9155eae2c4afd61c48e6385b0dbc5ec342850f34b4624d13421818d1"
+    sha256 x86_64_linux:  "8cd08ba6580c9d429534acdc4bb5a8edad01f1a1c30000c78258b9366bd2a4b3"
   end
 
   depends_on "autoconf" => :build

@@ -6,6 +6,7 @@ class VampPluginSdk < Formula
   mirror "https:code.soundsoftware.ac.ukattachmentsdownload2691vamp-plugin-sdk-2.10.0.tar.gz"
   sha256 "aeaf3762a44b148cebb10cde82f577317ffc9df2720e5445c3df85f3739ff75f"
   license all_of: ["X11", "BSD-3-Clause"]
+  revision 1
   head "https:code.soundsoftware.ac.ukhgvamp-plugin-sdk", using: :hg
 
   # code.soundsoftware.ac.uk has SSL certificate verification issues, so we're
@@ -18,19 +19,12 @@ class VampPluginSdk < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "6b8edd5860223b4cbce7f7e5b699b5005a7f58f2d7fe0a58c0d0756bd6be7f75"
-    sha256 cellar: :any,                 arm64_sonoma:   "512e071cd37ef5a5a4c930402fb4ceaf215732c18e4b62cf848d9d3b0ad39065"
-    sha256 cellar: :any,                 arm64_ventura:  "44b58e44044cc29d6a56f0e4feeb15db3fb619f393c63800c91240eb82ab16f4"
-    sha256 cellar: :any,                 arm64_monterey: "e10a03b4cbf89602757ef2f2bd43757bc7a734d3c200ca2a4258b304c05e9351"
-    sha256 cellar: :any,                 arm64_big_sur:  "aa6184c469e855de77725477097a0c6998a04d4753bc852aa756123edaac446c"
-    sha256 cellar: :any,                 sonoma:         "0d5956f557b4083410402f00920ac98520f4cbcafe3e7f4b92d59ea9fc51202c"
-    sha256 cellar: :any,                 ventura:        "1ebd73fe29f4263a5633bd47cd33bb87e3108479fe0d4d875ca025ad5f36af9b"
-    sha256 cellar: :any,                 monterey:       "2e24031117d9bed00ea07b4bb2b3ca4c09305a001647a2a256928f2e29e2a999"
-    sha256 cellar: :any,                 big_sur:        "21e590739905e6794c11e4f7037adfa6fa83da4d7c2ab2b083c43563449d8a45"
-    sha256 cellar: :any,                 catalina:       "b31926ceedbd7f79dc9783da8092b543c549d800705d9d8e8d8d0fd451d093de"
-    sha256 cellar: :any,                 mojave:         "ee8d69d0b8c72e3e9ed1c79bfa7ca6650d10e36a2b110215b3d803f841ae2ec0"
-    sha256 cellar: :any,                 high_sierra:    "834812edc745c782511f1397fb5e3e6995b9fd25b42426ec784cd5610dbc9eb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d07d32893d2d362347c137dfb133d7d2bd0ef0c5815b618f5cf2780de28f40d"
+    sha256 cellar: :any,                 arm64_sequoia: "0fd18a6d81ea391818744555984ec3b2f8052f801a097be6511dc4589d9810fc"
+    sha256 cellar: :any,                 arm64_sonoma:  "1ba7dd45b17c25c2eecfa787ee7ca90509534e91492351c5237acd33be37b3b7"
+    sha256 cellar: :any,                 arm64_ventura: "000ee83ec09f5d546c480315b154076d94e56006892509f8bf31796d9361331d"
+    sha256 cellar: :any,                 sonoma:        "046ceaa07d234cb1e8bb83998f35a0a9d8188e0a650c5f56b89556ca2926cc95"
+    sha256 cellar: :any,                 ventura:       "db668adf1c325b7714a5212f2c8aaf55f6eed7cf9486e58a4573334a13555812"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9cb9dabefa0df5e50224c77c88a1b892f59fecbad8f987ac2cc94a87fd09a55"
   end
 
   depends_on "automake" => :build

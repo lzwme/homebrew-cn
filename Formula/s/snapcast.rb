@@ -4,13 +4,14 @@ class Snapcast < Formula
   url "https:github.combadaixsnapcastarchiverefstagsv0.31.0.tar.gz"
   sha256 "d38d576f85bfa936412413b6860875ba3b462a8e67405f3984a0485778f2fdac"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "6b17c4eedd473db0afc71acd236274684301d5f2afd59a4ac3fcea1ac70e9fd3"
-    sha256 cellar: :any, arm64_sonoma:  "9fb4e448fd43f004e193bc6d6329d5ceb20e7d2c9744dd63b344ef9727e9ad1a"
-    sha256 cellar: :any, arm64_ventura: "397cdd8dd74abb4e6eaa1f9e79432c62916b26323e314b4846bf3239d4dd6080"
-    sha256 cellar: :any, sonoma:        "c7df35a8fc084671ac76e12d9408d047f77bea3ef5da4cfd5ad5760495eb96ab"
-    sha256 cellar: :any, ventura:       "273d7eb4aca4df0376c1ac091e764c25554eed4a2a1c252f70a30fa0eb2f5260"
+    sha256 cellar: :any, arm64_sequoia: "503bcd02e9c1cee66a0fe1c31b4fb92c456e0403dbeff251ab37a89d097800ba"
+    sha256 cellar: :any, arm64_sonoma:  "5148be65fd513313ab9eae89eada1ab878e311c5bf7bae260adc8d9742005213"
+    sha256 cellar: :any, arm64_ventura: "0dbfc1421b25651a69006ac4f2dc5995c79ad832f582b57877b53deed618b47e"
+    sha256 cellar: :any, sonoma:        "e7a695a5486603ca20361ee1ea25680f77cbfefe31b073b2f881c1f4dd7e7302"
+    sha256 cellar: :any, ventura:       "7c12245e729a102ec2b284ce3cc5ff11532269effd442175acc8890c440a1b7f"
   end
 
   depends_on "boost" => :build
@@ -42,21 +43,17 @@ class Snapcast < Formula
   end
 
   test do
-    server_pid = fork do
-      exec bin"snapserver"
+    server_pid = spawn bin"snapserver"
+    sleep 2
+
+    begin
+      output_log = testpath"output.log"
+      client_pid = spawn bin"snapclient", [:out, :err] => output_log.to_s
+      sleep 10
+      assert_match("Connected to", output_log.read)
+    ensure
+      Process.kill("SIGTERM", client_pid)
     end
-
-    r, w = IO.pipe
-    client_pid = spawn bin"snapclient", out: w
-    w.close
-
-    sleep 10
-    Process.kill("SIGTERM", client_pid)
-
-    output = r.read
-    r.close
-
-    assert_match("Connected to", output)
   ensure
     Process.kill("SIGTERM", server_pid)
   end

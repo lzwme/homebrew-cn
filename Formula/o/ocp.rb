@@ -4,6 +4,7 @@ class Ocp < Formula
   url "https:stian.cubic.orgocpocp-3.0.1.tar.xz"
   sha256 "60a03d73883ea9c5dd94253907fc2002aa229e0fc41febb17d7baa341b228db1"
   license "GPL-2.0-or-later"
+  revision 1
   head "https:github.commywave82opencubicplayer.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,12 @@ class Ocp < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "4d4d287a60ac8edc317dffcb07feb6c23bf1cb54007ba45dfdbd3f4470b32059"
-    sha256 arm64_sonoma:  "962b118d6aa52c978601e4e883cb5bcc126c71ea7f79da884fff7586f4cd36f4"
-    sha256 arm64_ventura: "8047661b61d3c6108da0f3afa9a1f378c514e6dae83aecdbc39770bddd2533c7"
-    sha256 sonoma:        "29f04bc146add83b8a79e4e429de670ca2b3b05aedf5ace9153ff01c9f9d7a8e"
-    sha256 ventura:       "c490c649231ce92725e67f5ca97acc59649f157403f89fb7e3e721d0efc64226"
-    sha256 x86_64_linux:  "82469d6356888ba79497060ddf9c1cc7223a84e555aacf9116c7724b8af03feb"
+    sha256 arm64_sequoia: "91d33fe0137ccd8a79cb3419fcb61925135333944dcf031546efc859e28ed89c"
+    sha256 arm64_sonoma:  "7d079e34e69bc73e5cb3bdcbb998c1fc647f1c7bb6e22a39715e3530170cad1a"
+    sha256 arm64_ventura: "4423dcac99faa9af574011771a2ef04b3e45d573ed6e0c836c5ddf28fdaf13e2"
+    sha256 sonoma:        "20d4860786caf5f9c84a3def8e2e87501f72c896247c689c0de3735168950984"
+    sha256 ventura:       "de51895938a849610a1d82aa709256b1f03ba2c1f67cdf4ec9caa21f3439d890"
+    sha256 x86_64_linux:  "1d624e55ecfc0b8b13c788690519f474588b41f7fe3960bd57e39f3371d5cbe5"
   end
 
   depends_on "pkgconf" => :build

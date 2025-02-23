@@ -4,15 +4,16 @@ class Rizin < Formula
   url "https:github.comrizinorgrizinreleasesdownloadv0.7.4rizin-src-v0.7.4.tar.xz"
   sha256 "f7118910e5dc843c38baa3e00b30ec019a1cdd5c132ba2bc16cf0c7497631201"
   license "LGPL-3.0-only"
+  revision 1
   head "https:github.comrizinorgrizin.git", branch: "dev"
 
   bottle do
-    sha256 arm64_sequoia: "c9854ebc1a48bd0c3ad95e6280bd64286eec7c9da4a786816d56966b49dddbc4"
-    sha256 arm64_sonoma:  "3c1915fd5bcd0e5c405c89345ef5b11bc1ff0439a26e014d197830b94d409307"
-    sha256 arm64_ventura: "36e6d99be00280b12b61e2a26867bced9c8d9b804207d660955f9935f9899191"
-    sha256 sonoma:        "f1f5b38a621a1a3a9da4027d564bf4fd7399a1a42b575d10c1f51b200fd9d1b9"
-    sha256 ventura:       "ecada780645e39bd0f85be6129b89e2e85b80d81fb1bad621bc476bb88829385"
-    sha256 x86_64_linux:  "a8cbce5bb6b3ae52b611b07247208d023ffcdde27ab6abb9cd432e084e064211"
+    sha256 arm64_sequoia: "72e7554b32c691c794bc33fec7e9a22568a44ace68bd0ada691f8536be27f865"
+    sha256 arm64_sonoma:  "c2b60efec9e77b47d5295b947c0d67a25e7377a11a0496b41b8119d653df4857"
+    sha256 arm64_ventura: "d0b7c57ace5a8845a7a9cb1cea2bd722f96772376bba6a2ed9932ac6234a269b"
+    sha256 sonoma:        "9b0e91753ad69d002f079108bad3fc7182041d5cc540c88ee79595e2809b724a"
+    sha256 ventura:       "022364accc372f60791c70e778d7a93f4ce065dc44a17767f0789b98a5680e3b"
+    sha256 x86_64_linux:  "4f10fb6b1caced9fc229536a711097b10c143f9ff3b946cb82681d419bcdc5c5"
   end
 
   depends_on "meson" => :build

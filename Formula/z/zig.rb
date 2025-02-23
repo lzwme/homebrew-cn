@@ -4,6 +4,7 @@ class Zig < Formula
   url "https:ziglang.orgdownload0.13.0zig-0.13.0.tar.xz"
   sha256 "06c73596beeccb71cc073805bdb9c0e05764128f16478fa53bf17dfabc1d4318"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https:ziglang.orgdownload"
@@ -11,20 +12,17 @@ class Zig < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "0cd64ccf3ff42f7857000ead7b3b2f09b78c2d4e1e0f661f8f4cb6552b6ad88e"
-    sha256 cellar: :any,                 arm64_sonoma:   "e2fdab9f70dba65551d21e6e9fc47d98336bcdb52658ff3f7799ad244aa2f500"
-    sha256 cellar: :any,                 arm64_ventura:  "09cbcd8fdc15b0c5cdcbdecd2f0e42337a2ddac0070b50189fb02e5db1942633"
-    sha256 cellar: :any,                 arm64_monterey: "2f197b24ce0a0d7167eacf89314407ef21103e963916c05c9a094d79d152ecc4"
-    sha256 cellar: :any,                 sonoma:         "193e35179c6695aee629a8551920237cf3c94a8a8853b9edf61e91ac7ba709e2"
-    sha256 cellar: :any,                 ventura:        "dda3491dea9cdda74d5ab8ef63a38f88ad1e73e1d7ec58c4e54333e9a3333b54"
-    sha256 cellar: :any,                 monterey:       "ea39859d4c94d9a3b5c03d5faa7552275ad74d13d24c3ea558ae3f6397a9879e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca207335ca7208dbe6198f0c12d593f7c8251457e924bc05f3cd1875874cc3af"
+    sha256 cellar: :any,                 arm64_sequoia: "265d2269f0f6bfef74a37c6b80229475549c21b8772e5c68a43603dfff255824"
+    sha256 cellar: :any,                 arm64_sonoma:  "bc7414541dd009f1e35b83931b3f8d566af0d900b42505c4adb4ef4c5a433f50"
+    sha256 cellar: :any,                 arm64_ventura: "c03e335f865bd4692f0d7b15c5aae7cc72a24711da05c892550ce0ad30d2faa8"
+    sha256 cellar: :any,                 sonoma:        "794a173900285d266245e1079da5bfb3b8edc2523f8931f1bcea3b71a5c3f0c5"
+    sha256 cellar: :any,                 ventura:       "675cab707430f952c7a25efec1934e90a1384d1b0a97c59a5ecee86ddd988219"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c26c173a280a0eb435f921530947eaa81ca87f3a21d0592ecaf42e6fa27dfeeb"
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm" => :build
+  depends_on "llvm@18" => :build
   depends_on macos: :big_sur # https:github.comziglangzigissues13313
-  depends_on "z3" # Remove when using versioned LLVM
   depends_on "zstd"
 
   uses_from_macos "ncurses"

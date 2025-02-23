@@ -4,16 +4,15 @@ class Flac123 < Formula
   url "https:github.comflac123flac123archiverefstagsv2.1.1.tar.gz"
   sha256 "c09676dce51383ce4fe7a553e67f4369918cf40ee6d922e585e50c11bce9e227"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "9e700b54a0a992a7383e2eb9bceccf66da63c51895d58931c37512334f0ec690"
-    sha256 cellar: :any,                 arm64_sonoma:   "a1c6d6d2d1d764ba31918fb6f0c50756771a04ee3868944484f5bbdd05775ecf"
-    sha256 cellar: :any,                 arm64_ventura:  "8a3a466680bff98485b1be1f5ec2be0d68522debbec2206d08b122981af0abfb"
-    sha256 cellar: :any,                 arm64_monterey: "3b98b988e1528c56b970fa9984663916ea59173ca4b6fd09979be8832abe5ab0"
-    sha256 cellar: :any,                 sonoma:         "3a1075db8609cf8bdd5e676898f7723800590d24d06fb2cbcd20bb15ec4efa81"
-    sha256 cellar: :any,                 ventura:        "92b75dfcc6ab5d40cc211bb857c8c1fa1b769173ab8c0a3e2064298ae177a872"
-    sha256 cellar: :any,                 monterey:       "ae9674662b893127e538689b04c7cb2904e7199997fd679444eeb471ba69901c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "20f164d6d0294b5ca226c8a5e9b8fec7e0c7a517cc4ab38c282585c53600d0d0"
+    sha256 cellar: :any,                 arm64_sequoia: "f1d6d3f1269accb9be1c482d9cfa9179a29423fe0dcc9ab8823132e4de9d861f"
+    sha256 cellar: :any,                 arm64_sonoma:  "5f3eec5bb05991c31ad6d90767ba8a83ca4892bd0a07b14db323d4886c4a2d0c"
+    sha256 cellar: :any,                 arm64_ventura: "81c798f14de5a0de0d9337f9c01416060d2a3cd8252a8a804dfdd15f0783ff69"
+    sha256 cellar: :any,                 sonoma:        "6a11b91f03fd6601ce00e41b8835d2635a428ce78bdf1dce23db3b4b79da9365"
+    sha256 cellar: :any,                 ventura:       "ed0839c5d9d6ba86b97c1d1482f5a3371c32a41c88f62cd42fe7526ba6ea56f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3afd087ed1f308b93681775fc2f35572d49156534cfba450cc3aaef4b0d10885"
   end
 
   depends_on "autoconf" => :build

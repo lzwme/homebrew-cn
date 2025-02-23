@@ -2,6 +2,7 @@ class Neovim < Formula
   desc "Ambitious Vim-fork focused on extensibility and agility"
   homepage "https:neovim.io"
   license "Apache-2.0"
+  revision 1
 
   stable do
     url "https:github.comneovimneovimarchiverefstagsv0.10.4.tar.gz"
@@ -58,12 +59,12 @@ class Neovim < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "70a2ed00de4a0e7bfeef6a6b9d3bec7623f086dd06266ea6d11d2e4ae7eeb381"
-    sha256 arm64_sonoma:  "9d4af9c53f7394a20cdf4014b594a52d14b8f0f83b39fa041ab2d5ddc78da7e3"
-    sha256 arm64_ventura: "f9ec03101ec565907c6f9a4b18d9673d75c642dbd6adb695e6dbe80b099cdfe2"
-    sha256 sonoma:        "1ac71c2cc3b0c3521de71bb6ccb2c8d7da80cdccc1709c702792890379090503"
-    sha256 ventura:       "f3503f4c9a4b6173067dbc2f7c6f00ed93b59c7be10875c1cf3ffe45206304c6"
-    sha256 x86_64_linux:  "029a46cbee1a908551a0ff837881b6362d0d469fecd44b5736d9977e8691101b"
+    sha256 arm64_sequoia: "5dba7a88706d1bbd6970e54497fd4b683562d7fd5a36eaf0579eef5b4b1775e7"
+    sha256 arm64_sonoma:  "9f26317af89d0cf523f869e4882541ed65c4e42253d5eea24670e7af8ca85185"
+    sha256 arm64_ventura: "a4318a9a09591d105a5ee2706f304a030b26d4164bc5cba3aedf0d0ca9572780"
+    sha256 sonoma:        "ca00e06378e7c09fa7ff5bcd5f6d92a2bb5c2e1d493677305838c773df3e5760"
+    sha256 ventura:       "67541d212919003d95be850e2633a8faa8740391559c7df41a07a6c0d203d165"
+    sha256 x86_64_linux:  "fc5f70eb71c65ce02570ae163676ae2f268dd522fba3c4a016a82175234e14fc"
   end
 
   head do

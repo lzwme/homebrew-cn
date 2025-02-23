@@ -1,9 +1,9 @@
 class Flac < Formula
   desc "Free lossless audio codec"
   homepage "https://xiph.org/flac/"
-  url "https://downloads.xiph.org/releases/flac/flac-1.4.3.tar.xz", using: :homebrew_curl
-  mirror "https://ftp.osuosl.org/pub/xiph/releases/flac/flac-1.4.3.tar.xz"
-  sha256 "6c58e69cd22348f441b861092b825e591d0b822e106de6eb0ee4d05d27205b70"
+  url "https://downloads.xiph.org/releases/flac/flac-1.5.0.tar.xz", using: :homebrew_curl
+  mirror "https://ftp.osuosl.org/pub/xiph/releases/flac/flac-1.5.0.tar.xz"
+  sha256 "f2c1c76592a82ffff8413ba3c4a1299b6c7ab06c734dee03fd88630485c2b920"
   license all_of: [
     "BSD-3-Clause",
     "GPL-2.0-or-later",
@@ -20,16 +20,12 @@ class Flac < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "aaed493bc3a3d841318f952a119cb5cd2646f9a9950f20e9458717969f6c662f"
-    sha256 cellar: :any,                 arm64_sonoma:   "ce19f4c9e89fb7b89c5ea1c070bb6cdb7deedf800a6843bd042ceb902b43ed03"
-    sha256 cellar: :any,                 arm64_ventura:  "3962fce4abb2716cd21a9b9ebeda4f2e5c4bea08c32ea3cc0316f369da054019"
-    sha256 cellar: :any,                 arm64_monterey: "187cfc571ab437b847cb2da754706a271be30727637cde5b60fa982568ebcf91"
-    sha256 cellar: :any,                 arm64_big_sur:  "08f362bb71849942d8dcbf6603172b06b0abf2188f34fcce45bd6a525cd050f0"
-    sha256 cellar: :any,                 sonoma:         "a38b2616d47bd13a0002124b05a13e121bbb8a6b4fb566d5e20d58d88d4eecee"
-    sha256 cellar: :any,                 ventura:        "643038462da4e717c7d7dc5c3925e1544db2d0448f816954281fba3cb7ee9c24"
-    sha256 cellar: :any,                 monterey:       "6d3f6605110bddf5f11eb290622b1043f1309229bf49d0cb66e485f73e9c1074"
-    sha256 cellar: :any,                 big_sur:        "6fb65cf0ac1991a168c0be6116bb04ba56393f5af3947ab011b3eba17744c39c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "45cbf41355347a7d84d726195785238b5fff48155bdfa95db12eeb401e18e19f"
+    sha256 cellar: :any,                 arm64_sequoia: "c9698bcebe8e99ab84adf49a347cad5a9f122c45b80622a9fe2acbaeab902545"
+    sha256 cellar: :any,                 arm64_sonoma:  "2595081ed6509f8f4442067e6b73e1ceccb0e8d68b17e5330ad0c57c9f031b80"
+    sha256 cellar: :any,                 arm64_ventura: "52c6aaad150497211c7372401de3017312b4c1587fcf931e4778c17c32ffe07e"
+    sha256 cellar: :any,                 sonoma:        "8b3a61d7bedcef1e927057d3d7ef21b1ae69fddfb6a462b98def7f57e306a6a4"
+    sha256 cellar: :any,                 ventura:       "f1c784569961db85af848fd5d816d975a987ee986e54d9b48c45effe698755f1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85f5cec1705ffb8d93fb9abbb0b7b0f197d61633d8e0de2a29de825526790006"
   end
 
   head do

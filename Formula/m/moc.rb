@@ -2,7 +2,7 @@ class Moc < Formula
   desc "Terminal-based music player"
   homepage "https:moc.daper.net"
   license "GPL-2.0-or-later"
-  revision 8
+  revision 9
 
   stable do
     url "https:ftp.daper.netpubsoftmocstablemoc-2.5.2.tar.bz2"
@@ -43,14 +43,12 @@ class Moc < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "00f4a5601d8f7d75cf8ac0dfccd99960c64b125c02b815177261440134b80302"
-    sha256 arm64_sonoma:   "3d2be9bbd88ca175407d8852d2711796d4b391202a418a8e7eecafd3cd92ec03"
-    sha256 arm64_ventura:  "161367cc683c8292aaaebd85805f1b4f57f56b4345d94932e96fb6357597718b"
-    sha256 arm64_monterey: "93c436057264891cfab1658f79b6b33192755107c5619e0d1f34a9556812d614"
-    sha256 sonoma:         "7fd5ca668b20ddb6ff8f6b25871de75e8d0ac1fff3a50032a960c9b709a2ec11"
-    sha256 ventura:        "e6759d0aaebfaa03fea50065da4cc6e12b66192191821abb274ec6769d46bfbc"
-    sha256 monterey:       "88b28596fd214730528be0c8ec3d6f5af13808bcd222ada7455d8c256c28294e"
-    sha256 x86_64_linux:   "5226928bc5fe64461826f8d4ac78ee53212e1065a5acf656753077eb9863b886"
+    sha256 arm64_sequoia: "e9223da03ee6fb8b0a003965bcc1b70eb1d1078166bbc1355b1ee2740edc1767"
+    sha256 arm64_sonoma:  "bc82b57489544a590736ab42f4a1c1810cc70b9d53f5e56f180bbe2462d0ae68"
+    sha256 arm64_ventura: "d5f03722679fc2b038e2f0709f47ff9281cad1b2757bd63cbd0285e3637678fc"
+    sha256 sonoma:        "73e8219df52bfdcd621661fa01cb631c7036e61bc700ec162a1876f5bf5d24b0"
+    sha256 ventura:       "3313aab434fb9bde3549f270b69f44ab5afe310e3414f7fec7fadde822001e2d"
+    sha256 x86_64_linux:  "8111723e66986c9ad5af3c8ce31210ad50755b7f7aa31d5d31636a6bb8eaddd7"
   end
 
   head do
@@ -81,6 +79,10 @@ class Moc < Formula
   end
 
   def install
+    # macOS iconv implementation is slightly broken since Sonoma.
+    # upstream bug report: https:savannah.gnu.orgbugsindex.php?66541
+    ENV["am_cv_func_iconv_works"] = "yes" if OS.mac? && MacOS.version == :sequoia
+
     # Not needed for > 2.5.2
     system "autoreconf", "--force", "--install", "--verbose"
     system ".configure", *std_configure_args

@@ -6,7 +6,7 @@ cask "font-iosevka-comfy" do
   name "Iosevka-Comfy"
   homepage "https:github.comprotesilaosiosevka-comfy"
 
-  deprecate! date: "2024-02-19", because: :discontinued, replacement: "font-aporetic"
+  deprecate! date: "2025-02-19", because: :discontinued, replacement: "font-aporetic"
 
   font "iosevka-comfy-#{version}iosevka-comfy-duoTTFiosevka-comfy-duo-normalbolditalic.ttf"
   font "iosevka-comfy-#{version}iosevka-comfy-duoTTFiosevka-comfy-duo-normalboldupright.ttf"

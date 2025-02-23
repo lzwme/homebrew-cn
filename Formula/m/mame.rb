@@ -5,6 +5,7 @@ class Mame < Formula
   version "0.274"
   sha256 "f8112eb0b175935cf6db93f708186dcaeec5a89400ecf3d5782fd2c0b94907c8"
   license "GPL-2.0-or-later"
+  revision 1
   head "https:github.commamedevmame.git", branch: "master"
 
   # MAME tags (and filenames) are formatted like `mame0226`, so livecheck will
@@ -19,12 +20,12 @@ class Mame < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e268028e7aef29387ac172773a2ee5d03cd3403f5b8a97cce4579ae006bec5b4"
-    sha256 cellar: :any,                 arm64_sonoma:  "3eada365005eade9fedfd9cc5c53c7c49abd24fea1170de23056ecad0dd19f09"
-    sha256 cellar: :any,                 arm64_ventura: "dbd9341a1cc2c188815c5bab660a28b7adae9e17aab1fe9ebafbb1c5eafb6f57"
-    sha256 cellar: :any,                 sonoma:        "049d0b2de47e41ab350aeb1de2bf6eeb892e73be613e65e8d74df82519131724"
-    sha256 cellar: :any,                 ventura:       "896825ca6de93af5f44aef0853593db98ef6dc069e99a208df9ac93440f5907d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07339b35fea1846d8357a57bee12eb3a454b38d465fcd88fa29c429f80e49c9e"
+    sha256 cellar: :any,                 arm64_sequoia: "df96f4ed544700a481418f37cddded41737fe0f4c7fa3531debebf43894b7df8"
+    sha256 cellar: :any,                 arm64_sonoma:  "eb900cf58e7273d4cbf6b56db9450b9f55792c178bd59a604616af7b7f416544"
+    sha256 cellar: :any,                 arm64_ventura: "dde05d2b69f5265b1e35d3f3d47aadfefd8d27fa1b8acdd01cf99534cb4601cb"
+    sha256 cellar: :any,                 sonoma:        "dcfc48ffed46e6589f09325470d5937549366707078fb3a1b484b928b4f7b6e0"
+    sha256 cellar: :any,                 ventura:       "8ce5209294d93493b8abe10b567f718280542ba604e03a172dfcb52308166920"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1aeb6d2228745e067b60a97975f9361faf0aaa75b7450f99b9ad10d19779bc0b"
   end
 
   depends_on "asio" => :build

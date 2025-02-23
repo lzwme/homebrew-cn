@@ -54,7 +54,6 @@ class Mariadb < Formula
   end
 
   conflicts_with "mysql", "percona-server", because: "mariadb, mysql, and percona install the same binaries"
-  conflicts_with "mytop", because: "both install `mytop` binaries"
 
   # system libfmt patch, upstream pr ref, https:github.comMariaDBserverpull3786
   patch do

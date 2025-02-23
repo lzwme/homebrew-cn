@@ -5,6 +5,7 @@ class Libopenmpt < Formula
   version "0.7.13"
   sha256 "dcd7cde4f9c498eb496c4556e1c1b81353e2a74747e8270a42565117ea42e1f1"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url "https://lib.openmpt.org/files/libopenmpt/src/"
@@ -12,12 +13,12 @@ class Libopenmpt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "de53708b6627a52650fff543f027194c113a948ed6e548027b9430ef8a5d522b"
-    sha256 cellar: :any,                 arm64_sonoma:  "209c8b3da72dec59f33451bb89a6b8370e8fcec9feab1e920ea1cc35db3ac9d4"
-    sha256 cellar: :any,                 arm64_ventura: "7a14897fb13fbe42a3067e7cada494fb614ee1f1ada58b81167e63e056424d6d"
-    sha256 cellar: :any,                 sonoma:        "47996528e1e90e053f1b569b2096d01543090083de79548c7951c3b415a96e34"
-    sha256 cellar: :any,                 ventura:       "2e643f6611d1683d84feccc50ec07c299e980a2277bd5238e4d53d5a7c8efc15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a561021a4c0e7da15ac380cbe3cc9ea6e428e98cd8d8f8ba03bb3fc4db0851b"
+    sha256 cellar: :any,                 arm64_sequoia: "6b767ef8ae5e15125c2a852db9bec69c57c997c3c151a20368fdcc16197b255f"
+    sha256 cellar: :any,                 arm64_sonoma:  "1bb5f077a947f245ffeaf0eb9f4942cd33c3b5569fd1e9b400127f0d0943a0d6"
+    sha256 cellar: :any,                 arm64_ventura: "62a4ef42a7ed523d0ae62092fec43cbd55e587b009bf030ffe04a5dee2dc0606"
+    sha256 cellar: :any,                 sonoma:        "9fe4c4ccb2ca7eff6f24bbe9eaf963daf681ddb16bd9225c7385539ef6644e53"
+    sha256 cellar: :any,                 ventura:       "75e06237d8e5a42527e7d2f33399feb6bcc6dafcaf2f8ac43123d6a915fda6fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7ed3050c7743f0fed603d3a001463d2e9c039526561b128492032841a83ff8c"
   end
 
   depends_on "pkgconf" => :build

@@ -4,20 +4,15 @@ class Sox < Formula
   url "https:downloads.sourceforge.netprojectsoxsox14.4.2sox-14.4.2.tar.gz"
   sha256 "b45f598643ffbd8e363ff24d61166ccec4836fea6d3888881b8df53e3bb55f6c"
   license all_of: ["LGPL-2.0-only", "GPL-2.0-only"]
-  revision 5
+  revision 6
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "87d0fedd63d061dcce9a85a218415c57301aa6b7d0a2846c133b8773ad730b7c"
-    sha256 cellar: :any,                 arm64_sonoma:   "15d7b75e38dbcf26b77356f79a1c184293bf664521098254f8279f417fe6ed9c"
-    sha256 cellar: :any,                 arm64_ventura:  "1669b614365ee6f54c3b974aa2e25c6e88353caeb73a2763f31c5f71d7032705"
-    sha256 cellar: :any,                 arm64_monterey: "170cf704ff002b6d97b5c5f081e3dda5d87a9860860a13b1e8a7efbb4b4dba53"
-    sha256 cellar: :any,                 arm64_big_sur:  "ac3d7cf23b479a1bf067f82636cd5345d2e43de29e57d687206922c8d260ee9f"
-    sha256 cellar: :any,                 sonoma:         "1b5e546c0a5bf131dfa78725e1c607257041f6d3642fbf5788cfc28344654c91"
-    sha256 cellar: :any,                 ventura:        "54d7c86a22ce014e0924791450e8c8a2630fc2609f5086d1620bfd1fa901544a"
-    sha256 cellar: :any,                 monterey:       "dec8603f276fe6a1928a320ff498267785b75fcfa9523647de2f623367d2e896"
-    sha256 cellar: :any,                 big_sur:        "bf59b93291ad51588e8e4183165ee8d945cde82f0ea22ae61e1c5076a5be10f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7bb06054835fa3a2be758935d05d245b9edb5330b484b6f1e57d77ab60f772ad"
+    sha256 cellar: :any,                 arm64_sequoia: "dd3179a8e7d8399ef404e8e19e199d7cb2d43bc7472cc6e5932777dd204ea20f"
+    sha256 cellar: :any,                 arm64_sonoma:  "ec5c73d125f2ac73ddde98d2264a298611f2dd819a873e115178f083216064bd"
+    sha256 cellar: :any,                 arm64_ventura: "719011d445046c330686ae5fef7df2561b14c9f966025263bb948b176b528552"
+    sha256 cellar: :any,                 sonoma:        "b9caf7383de463f53526e60b33f07792bcbd89a99d358ed76ed91df4ac580b58"
+    sha256 cellar: :any,                 ventura:       "a582da3eaee0febd63765341ba7e70fabc57895f7595641fe1565dff40929231"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c44da47de6f97f6e1542c5757a01e7aa1dad4ba631d2ae3eb0c24c1bca09a5d"
   end
 
   depends_on "pkgconf" => :build

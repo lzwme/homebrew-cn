@@ -3,6 +3,7 @@ class Llvm < Formula
   homepage "https:llvm.org"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
+  revision 1
   head "https:github.comllvmllvm-project.git", branch: "main"
 
   stable do
@@ -39,12 +40,12 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e50b0d9c194d216535a4c16a502a23e8f7ca56d13b18fe9e4b67dc73366262c5"
-    sha256 cellar: :any,                 arm64_sonoma:  "c96e83652971506a44f470e881146b1fa98f7e11f03a9bf5489ed5aff4522510"
-    sha256 cellar: :any,                 arm64_ventura: "cb28216cc9873e416a34789d5cab08088021b2bdf8c40deb44540d32680463da"
-    sha256 cellar: :any,                 sonoma:        "f04f459af78e2767a2e0ff3541fdbeb5e405013ffd5208f66cb408cbcf442e98"
-    sha256 cellar: :any,                 ventura:       "1a2422b0f31182cac110cf2d33ad60d9ef8d48f4e3e22441e661d5b72d685822"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54c7c81642c84221d09fda9c682f991f8e189d2713d02584118dcd2960364b95"
+    sha256 cellar: :any,                 arm64_sequoia: "2bfa1ded659b3a1647e9718af2e8baa895da228af148d3c0d5f55273dca50b54"
+    sha256 cellar: :any,                 arm64_sonoma:  "59fccc302e31b030a3ffa6ba75441a902dea8e1c2d069f3fc1e38445187ab335"
+    sha256 cellar: :any,                 arm64_ventura: "4c471348ebb70d36a8840f36aeadf5fe5f229ed23ef49e99778054b6bdc6ea56"
+    sha256 cellar: :any,                 sonoma:        "eab56bb7092bb23a667808915dc4aad048140395194b955bbc743cb65ef65697"
+    sha256 cellar: :any,                 ventura:       "f33aecd068fcdc3c8c646ddef416942cf29f66277372cd32e22565d90356113b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4eb62edbba509c7cf907647f91f50367a5cdfff48c50a13d2109ea773cfceed"
   end
 
   keg_only :provided_by_macos

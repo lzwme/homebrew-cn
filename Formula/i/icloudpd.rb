@@ -5,18 +5,18 @@ class Icloudpd < Formula
   homepage "https:github.comicloud-photos-downloadericloud_photos_downloader"
   # We use a git checkout as scriptspatch_version runs git commands to update SHA
   url "https:github.comicloud-photos-downloadericloud_photos_downloader.git",
-      tag:      "v1.26.1",
-      revision: "10af090d86661f427c7b1575cfbf63e84dadf4ce"
+      tag:      "v1.27.0",
+      revision: "4e75ff7d178f45ea1146c52e789b1fd72c3f2a77"
   license "MIT"
   head "https:github.comicloud-photos-downloadericloud_photos_downloader.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d131557f5c6edd2d1fffb9ecbbd8436f16017a07df05b171d42d8d0f68f72907"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92c46d0c5134da96a89b3520370570c13aa7904a5a50508035db333ea6b88683"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d07bfd45249251691841cf58dca28453f57a7c9296cdb453a46d2794f195e69b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9284168294e014de3b616228ea1c3d5257a06d3131f7dc34582309d09e557290"
-    sha256 cellar: :any_skip_relocation, ventura:       "77343262d546af5fc5dd6ed78d6a3d18b06157a723b13243ed62af339cc0f00b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b77f2e503b9eb3459acef3b32dbac073f7c709beb6ef08e9134397148548eea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42e875328c2157e722807f58c812e0a10f6951dcd463ee55161300a750926b14"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e537671ce4b8327c5471a38fe1c3ecb6c341ae813e67ddf70d17b298d04718e8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5ed01649f14dede9efce3d272bdcd9c8a9200801ff465cac5cae002cfb76da34"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a145c6d1a539502da863f4de54500f668d257cb0d480eef7e856847cd7cdd908"
+    sha256 cellar: :any_skip_relocation, ventura:       "64d6f89ed63d3ca274855efa06b8c9c2a3392e66e245d172649e4cb7544ffc0b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69d0d3b1f15a3d375ff2af740fd2e8477063fdef07e95f2cd2a897e16109307d"
   end
 
   depends_on "certifi"

@@ -9,7 +9,7 @@ class VorbisTools < Formula
     "GPL-2.0-or-later", # share
     "GPL-2.0-only", # oggenc, vorbiscomment
   ]
-  revision 1
+  revision 2
 
   livecheck do
     url "https:ftp.osuosl.orgpubxiphreleasesvorbis?C=M&O=D"
@@ -17,17 +17,12 @@ class VorbisTools < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "8a0617cdde502190f7ecc8b4a0acc41f291732edde5e53ab2f5294e3ded85591"
-    sha256 cellar: :any,                 arm64_sonoma:   "489cbfd6edf230c8b989d3d8850b40a7d955d6081689a8553cf481930e892bc3"
-    sha256 cellar: :any,                 arm64_ventura:  "fe8d1f90aa3e1c38f87be9e4593dbe8131282b4ed77effccd4c5e075c8af1330"
-    sha256 cellar: :any,                 arm64_monterey: "81cc875b622067697081eaa3a72c2b36882d8fd3bef460563a124ae1fc6e3b99"
-    sha256 cellar: :any,                 arm64_big_sur:  "02ea853ec06df9531f696865b196fc91fbca1360d7ab563859dfe37289cb7f9c"
-    sha256 cellar: :any,                 sonoma:         "90a083123079cf3be3b6b3a73dfb35ef30e9537977c4ca8ae910a7973bd2f2bb"
-    sha256 cellar: :any,                 ventura:        "eb58d309267de842f0c2cef39c535143038d262f8bad12c0c0a8a3a62c81d941"
-    sha256 cellar: :any,                 monterey:       "b342fad37a61d9c407199ea27e78b10f9335a340488d6afdf3e76a70ab46981d"
-    sha256 cellar: :any,                 big_sur:        "5557f52038523ac9030787fc23c2597bccdc56e64fecbca062a2cb6e0ff7597c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5bf7cdf6990819e485ad13b82e4206b9b9d53864533b2015361893e1611c494"
+    sha256 cellar: :any,                 arm64_sequoia: "343a4e371842b02770f028c3d99da8e7ccd69d4355236e325f8cc5bce821f624"
+    sha256 cellar: :any,                 arm64_sonoma:  "60fb0e8aa8c078b0da5dbb0dfe85a3c4c5c1839250747f295b06a4e207f8b76b"
+    sha256 cellar: :any,                 arm64_ventura: "fec9739002fb209a076dee4dadd61d3d33821dada8b0fd3bd626dea4b6c97434"
+    sha256 cellar: :any,                 sonoma:        "5d78e28782150b8c4cc7513b247f5a3581b9e43e7d44bd96506653c9d4836e4a"
+    sha256 cellar: :any,                 ventura:       "1c2ba768164d520ec340d8e64123def553d68ae9a1e5a563de0189002de51fb9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "adbea8feac0228f61088ab0fbe5c5280794f00dcc5cb28daf7e7b80ec8f7176a"
   end
 
   depends_on "pkgconf" => :build

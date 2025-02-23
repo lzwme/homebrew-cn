@@ -4,24 +4,23 @@ class Rust < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   stable do
-    url "https:static.rust-lang.orgdistrustc-1.84.1-src.tar.gz"
-    sha256 "5e2fb5d49628a549f7671b2ccf9855ab379fd442831a7c2af16e0cdcc31bb375"
+    url "https:static.rust-lang.orgdistrustc-1.85.0-src.tar.gz"
+    sha256 "2f4f3142ffb7c8402139cfa0796e24baaac8b9fd3f96b2deec3b94b4045c6a8a"
 
     # From https:github.comrust-langrusttree#{version}srctools
     resource "cargo" do
-      url "https:github.comrust-langcargoarchiverefstags0.85.0.tar.gz"
-      sha256 "5e708627470d41be5d615b0f064d5cbe40509cab62e751a2876936fb53ca0bcd"
+      url "https:github.comrust-langcargoarchiverefstags0.86.0.tar.gz"
+      sha256 "2a63784f9ea81e291b8305dbc84607c5513b9c597ed7e8276973a748036db303"
     end
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "6fe0e14f08adae82662551b478fdfaeb87f516be7762c60d28203e830c5caa91"
-    sha256 cellar: :any,                 arm64_sonoma:  "ded9d66d7a87295fe9570cec1ce54814068aa3fc000d26a5d9e509e6cdf6be62"
-    sha256 cellar: :any,                 arm64_ventura: "3a96ac743681822906e48f4bb8f481c78cc7823ebff3db20c41cdc35cb8fab91"
-    sha256 cellar: :any,                 sonoma:        "7af190ff67405820a8e48e3a00613414d5918944305c6b760584322a21b8d740"
-    sha256 cellar: :any,                 ventura:       "ca6593daae0d01d89d6f57762311bac3313aa8182ade7d79549b0d8d84c97809"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14875a6dce2f6ae3d1e2e8d0d1a27bb3e24990e3feef0776c4eb33e6497a0a9a"
+    sha256 cellar: :any,                 arm64_sequoia: "6184b7cc9e0f4b41dd6fd3cccf8420328a71b1868962b27339a6b24b0a5a84e8"
+    sha256 cellar: :any,                 arm64_sonoma:  "7e04977b516e4470e111c83208d04c68fdd13659b16795a5807a44cc986ebe60"
+    sha256 cellar: :any,                 arm64_ventura: "e8c6edf61b4e6a039ebc9d8cb15719718859036dc4e0264a4706e22f149d0ee5"
+    sha256 cellar: :any,                 sonoma:        "946e602f325865d18b7a6ddb2d017aa4d28a9b97d0a685c4818f3bd6a84d5ff6"
+    sha256 cellar: :any,                 ventura:       "f5c3a5094a4d10645c2bc7351c88f81230e023ec21d50fb7f9cc2a79d01d1810"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb16dcc66e595ba48f01f815c8430f7a149550d1426bacf25450564aaa3aedc3"
   end
 
   head do

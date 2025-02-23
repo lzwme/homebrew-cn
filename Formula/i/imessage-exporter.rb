@@ -1,17 +1,17 @@
 class ImessageExporter < Formula
   desc "Command-line tool to export and inspect local iMessage database"
   homepage "https:github.comReagentXimessage-exporter"
-  url "https:github.comReagentXimessage-exporterarchiverefstags2.3.0.tar.gz"
-  sha256 "b4e4b27b48bda00a0d30af3dfa1e5df4c7002cc36b379865f0842ab826600f03"
+  url "https:github.comReagentXimessage-exporterarchiverefstags2.4.0.tar.gz"
+  sha256 "cd81342af7bdd8524d845a4e94a75a3d50f841f7b279151670ab7975cd246723"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "885867793eb363b75b8eb73a02843ee918318066eb6fe57173296a968385a87f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ba8243fa5760bfd96fb7cdd22b3d7085a18259833d6b8c0e410dec7d0b82d9a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "79770f48f4e8c92e772f632af1e2118db3164c665d58722af0112ac99eec523b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c97c8e5602e47fc2366bd23b66befcb22c4d692d375f04335b6e55f72752523b"
-    sha256 cellar: :any_skip_relocation, ventura:       "713f14d44bf9ce89c884ffaa354bdf33f0e4c524b0725531a2dd6001b46abbbd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4b218b39b27315c11e3b7a3366c13681b552d299c59501db0cea6b48ed17911"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21bdf000967fa0701ff92e878401dc37360bf788eef885a518c50da00adf9661"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "130baa3f8194f0262151bafd8f249c99a9a4b643a46cc132748254901183ca05"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f96e6082c878c07f3addadfab8062017751de48b71e0820049a7b522a1d624d3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b549e5e8485abd5979f64c6806e50f2fc810b0839b6c0d0b24e78521b0ec9b8f"
+    sha256 cellar: :any_skip_relocation, ventura:       "34aa52774258b041abc402601559ff1b5fa7639d5143fc394e5118efd0bd6c5a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0eee2db3e11f80892b574e66bebbb46b5c57b9b1a20a33c21bbe8075f48b27ca"
   end
 
   depends_on "rust" => :build

@@ -4,7 +4,7 @@ class Sdl2Mixer < Formula
   url "https:github.comlibsdl-orgSDL_mixerreleasesdownloadrelease-2.8.1SDL2_mixer-2.8.1.tar.gz"
   sha256 "cb760211b056bfe44f4a1e180cc7cb201137e4d1572f2002cc1be728efd22660"
   license "Zlib"
-
+  revision 1
   # This formula uses a file from a GitHub release, so we check the latest
   # release version instead of Git tags.
   livecheck do
@@ -14,12 +14,12 @@ class Sdl2Mixer < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5f3347bd3ed1ed620a22442fdf68745fdc41077a826c390283ae178a7052a2a7"
-    sha256 cellar: :any,                 arm64_sonoma:  "7a83841403100148b171146412fef906be77e6e521e5b5f3e02663e1e6be8e9d"
-    sha256 cellar: :any,                 arm64_ventura: "0b350c0850302556db2f8979fa2ef3ab09f091375f06b7bb3f72fcb5751d5700"
-    sha256 cellar: :any,                 sonoma:        "736465b5d143bdef9bffe19b200bd6a92f919554b2df277245efc4986f65933c"
-    sha256 cellar: :any,                 ventura:       "b3586583edbbd7c50ecc3a27e8d4ce50c6c0e04f2ebdc3c434fa3fa42d85e2e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dffaed0bb10b084cad8b4cf926f7d720e33d36eab6dcbaf9d3ed492acd74c42c"
+    sha256 cellar: :any,                 arm64_sequoia: "1c7c1592895fc8bc86a246445698cd3258f835e319a4017d596ae8d67966d605"
+    sha256 cellar: :any,                 arm64_sonoma:  "2203b3fe60c59ca2f77fed180fb25598c083bfc25baff79bd84ffea16fa12623"
+    sha256 cellar: :any,                 arm64_ventura: "bc6a8a9f8e3b8f145873f2f18d428549286923304887c75eae9e0c6153b9f8cd"
+    sha256 cellar: :any,                 sonoma:        "2a0833b4e5b3d6b5e650e6260ea32fe5f07a9fa4ed66a8f4343d5d9c65c26f9e"
+    sha256 cellar: :any,                 ventura:       "721f0f56d5b954e4e5cc484fa4046712b2099aafa4849091772aae71afb19145"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7022d2cdf02890e277cf56cfa6e15e5940a000886b92991027b8efbf8332927"
   end
 
   head do

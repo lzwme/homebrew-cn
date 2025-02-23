@@ -4,22 +4,19 @@ class Libsndfile < Formula
   url "https:github.comlibsndfilelibsndfilereleasesdownload1.2.2libsndfile-1.2.2.tar.xz"
   sha256 "3799ca9924d3125038880367bf1468e53a1b7e3686a934f098b7e1d286cdb80e"
   license "LGPL-2.1-or-later"
-
+  revision 1
   livecheck do
     url :stable
     strategy :github_latest
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia:  "10ef77f1b249abb5012c6bfa498aae3786894e4c4c475dfd4ac14a14562fe1dd"
-    sha256 cellar: :any,                 arm64_sonoma:   "0e8ccf402d37e1be344af315c4b06c5faf3fb1307bce6d4a79d198ffbb9d2ad0"
-    sha256 cellar: :any,                 arm64_ventura:  "a78c706387bf29a9df4ac87f6642334d92191fd641d868a15058e98ebc5d62cf"
-    sha256 cellar: :any,                 arm64_monterey: "ff1229550d6d68c6de3258942addae073a9a6ffcfbd350716ada06a2573fb9c0"
-    sha256 cellar: :any,                 sonoma:         "95febe4d68e594a59a1b2d12e835263dd71bcd62cef9ba822ebc7c38c9142f28"
-    sha256 cellar: :any,                 ventura:        "0e4063508906f9adbd3cbae4abb6e20aba8b529631300a663d6ab9ef3e3095af"
-    sha256 cellar: :any,                 monterey:       "608f24002de2227bbc10e170cc4d4d47d077981530185db47a98c25ad9f1bd99"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "208e7c63412df3a225c37c7305acf39a1eddac9e0983950051f937ed74960fbc"
+    sha256 cellar: :any,                 arm64_sequoia: "2d6a8173ef41359c3da4c78a5d5eb402846e480c509b868f671b80a17726f9c4"
+    sha256 cellar: :any,                 arm64_sonoma:  "b28dda5bedf544be14e36938d2862ef2f3066a34a85158a50d414deb4a9614f2"
+    sha256 cellar: :any,                 arm64_ventura: "a8be24e321ff07f12a3cef98ab42868f44fa507b11dab9c93f0f78936baea171"
+    sha256 cellar: :any,                 sonoma:        "ea6ba9a5dc801a8b736ad39a5e417af93c5d0514ea5a741e92da88d9327a7988"
+    sha256 cellar: :any,                 ventura:       "3c43fbe437bfd52c5ed12ec4bb3126ca15ffb4c5c189c791ccebf4101d03682a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b40061adc0ea00923ea38c2c472eccc172e702398c2ddd3c705bf0dd6b16cbed"
   end
 
   depends_on "cmake" => :build

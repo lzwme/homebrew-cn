@@ -1,8 +1,8 @@
 class Socat < Formula
   desc "SOcket CAT: netcat on steroids"
   homepage "http://www.dest-unreach.org/socat/"
-  url "http://www.dest-unreach.org/socat/download/socat-1.8.0.2.tar.gz"
-  sha256 "e9498367cb765d44bb06be9709c950f436b30bf7071a224a0fee2522f9cbb417"
+  url "http://www.dest-unreach.org/socat/download/socat-1.8.0.3.tar.gz"
+  sha256 "a9f9eb6cfb9aa6b1b4b8fe260edbac3f2c743f294db1e362b932eb3feca37ba4"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,12 +11,12 @@ class Socat < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9aa036ab160f852e00acf8ca18f254621db08faa077acf7cb3cb2a789d4f6d0e"
-    sha256 cellar: :any,                 arm64_sonoma:  "7603611810edc52d879190e0ff205174490aaca4516a4f27227d783f230f7989"
-    sha256 cellar: :any,                 arm64_ventura: "b307f8e247019d7c84341ab3f9fbb814caaf8c3191875c206004580aab5e03b4"
-    sha256 cellar: :any,                 sonoma:        "321911c967a6a040aafc91f2a5a78677598002cabd8b4ed58bacbc076b4c6091"
-    sha256 cellar: :any,                 ventura:       "411df96a083340a5a553b90a899e383ba7d551ed3626d3a518e9d5e0e2ed1ce3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a688fbf499b32938427d608ed08462ad31ec82074a4628bee59579eb74583efd"
+    sha256 cellar: :any,                 arm64_sequoia: "2aaa10446c3d48a4abae274444c3ab9de518616dec42dde68146220d1cc58cf9"
+    sha256 cellar: :any,                 arm64_sonoma:  "137815efa3654ce88233eadb28d740d3fee351d89f2d65a31ae30d1fa32e77ed"
+    sha256 cellar: :any,                 arm64_ventura: "ed40e4fd40e2cf47cc732fbe1b188922e7b41d13df5917509fab2335f24f7398"
+    sha256 cellar: :any,                 sonoma:        "c418f4b948cc59f250fa1467eed47b1cf088d6a17ea8c94f6525348693af2339"
+    sha256 cellar: :any,                 ventura:       "5986bf1538a59cb4ee5d285f54d17f3ee893d993d174ee9ce2cedb2a2c567779"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90337fcfe325651b99280dcb87e3e9bdfc4ad25dfaf7a9fbb7227fac4ff68cad"
   end
 
   depends_on "openssl@3"

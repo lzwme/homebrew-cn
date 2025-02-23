@@ -15,6 +15,7 @@ class Gecode < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad8b1f55cda826d0c844f5a243c6af5d0ca16fa8e5b6af0bed593f1821939c16"
   end
 
+  depends_on "pkgconf" => :test
   depends_on "qt"
 
   # Backport support for Qt6 from release6.3.0 branch
@@ -76,32 +77,19 @@ class Gecode < Formula
       }
     CPP
 
-    args = %W[
-      -std=c++17
-      -fPIC
-      -DQT_NO_VERSION_TAGGING
-      -I#{Formula["qt"].opt_include}
+    flags = %W[
       -I#{include}
+      -L#{lib}
       -lgecodedriver
       -lgecodesearch
       -lgecodeint
       -lgecodekernel
       -lgecodesupport
       -lgecodegist
-      -L#{lib}
-      -o test
     ]
-    if OS.linux?
-      args += %W[
-        -L#{Formula["qt"].opt_lib}
-        -lQt6Core
-        -lQt6Gui
-        -lQt6Widgets
-        -lQt6PrintSupport
-      ]
-    end
+    flags += shell_output("pkgconf --cflags --libs Qt6Widgets").chomp.split
 
-    system ENV.cxx, "test.cpp", *args
+    system ENV.cxx, "-std=c++17", "test.cpp", "-o", "test", *flags
     assert_match "{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}", shell_output(".test")
   end
 end

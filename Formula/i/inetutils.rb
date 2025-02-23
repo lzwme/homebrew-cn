@@ -1,21 +1,18 @@
 class Inetutils < Formula
   desc "GNU utilities for networking"
   homepage "https://www.gnu.org/software/inetutils/"
-  url "https://ftp.gnu.org/gnu/inetutils/inetutils-2.5.tar.xz"
-  mirror "https://ftpmirror.gnu.org/inetutils/inetutils-2.5.tar.xz"
-  sha256 "87697d60a31e10b5cb86a9f0651e1ec7bee98320d048c0739431aac3d5764fb6"
+  url "https://ftp.gnu.org/gnu/inetutils/inetutils-2.6.tar.xz"
+  mirror "https://ftpmirror.gnu.org/inetutils/inetutils-2.6.tar.xz"
+  sha256 "68bedbfeaf73f7d86be2a7d99bcfbd4093d829f52770893919ae174c0b2357ca"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia:  "a6def7fbd9a1c7ef2f4e9c582fc5e40ae572b95d0eaf6dedf5349c08f70179d0"
-    sha256 arm64_sonoma:   "e6afa68602fd3a2789d7488c2080fb88acab6021aadc8e4c8cdb7fb5c1168e39"
-    sha256 arm64_ventura:  "9b554572efb13f9762a17d4abfa721c1e9b4d757a78ac67eb56bfcd777852ba4"
-    sha256 arm64_monterey: "8dd6e104cc9092a2225c205dfa346ad7a9f0134f0608e8f58e454f6c749b6714"
-    sha256 sonoma:         "251dcd9d1fee54a85c35ccc0c29e5ca1f9bbccc7edb71ae714ee6cab51f52e54"
-    sha256 ventura:        "f77f7f7460b637f6d90997cd8b0ab2edf1a94ce62b79d5d167e1f02b0ab9a475"
-    sha256 monterey:       "6f6271408faa0f220506dd46ca5eb1fbf353f77071139c94d84406a10a7c3cfd"
-    sha256 x86_64_linux:   "d76a8cb2d5cf6eb61e23d0cd6fa0527dea4e0649830a5e562d423df4cadcb0ce"
+    sha256 arm64_sequoia: "d6effc6962c93d36abc4c5912fad2235fb8a22660e0564134e04d4bab636b6b3"
+    sha256 arm64_sonoma:  "c597d9559731d11246683d104edfe3a0cefc5051cf2c522e865540a19e39b225"
+    sha256 arm64_ventura: "2fcf900ec14e1c171d02ca16dc8f39123de7a3efd2a9881770fe6ed095bab2b4"
+    sha256 sonoma:        "67ec5c370542a4a6e30bb446748481336eebc34d5b7e26c83f2209990cf76272"
+    sha256 ventura:       "01116c7159a47d9ad41d61ef5d7e6c671e06f80a0473d0e6459e1d51e2a48aa2"
+    sha256 x86_64_linux:  "d14270a7f2d5b24df4526319374f9038b2ebc430e5e2432262eff1d78195232a"
   end
 
   depends_on "help2man" => :build
@@ -49,9 +46,6 @@ class Inetutils < Formula
     list << "whois" # whois
     list
   end
-
-  # upstream bug report, https://savannah.gnu.org/bugs/index.php?65093
-  patch :DATA
 
   def install
     system "./configure", *std_configure_args,
@@ -129,19 +123,3 @@ class Inetutils < Formula
     assert_match "Connected to ftp.gnu.org.\n220 GNU FTP server ready", output
   end
 end
-
-__END__
-diff --git a/src/syslogd.c b/src/syslogd.c
-index 918686d..dd8c359 100644
---- a/src/syslogd.c
-+++ b/src/syslogd.c
-@@ -278,7 +278,9 @@ void logerror (const char *);
- void logmsg (int, const char *, const char *, int);
- void printline (const char *, const char *);
- void printsys (const char *);
-+#if !__APPLE__
- char *ttymsg (struct iovec *, int, char *, int);
-+#endif
- void wallmsg (struct filed *, struct iovec *);
- char **crunch_list (char **oldlist, char *list);
- char *textpri (int pri);

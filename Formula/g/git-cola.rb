@@ -3,17 +3,17 @@ class GitCola < Formula
 
   desc "Highly caffeinated git GUI"
   homepage "https:git-cola.github.io"
-  url "https:files.pythonhosted.orgpackagesc911b9cb698d1172faedaa21dfe31e5034a24c4dd3bafe87aeeee6e74fd856e4git_cola-4.11.0.tar.gz"
-  sha256 "50be00d2f9197db8dd6118e13f6ab472857436dc8d0149db30a5e1a119d712e9"
+  url "https:files.pythonhosted.orgpackages8efce8f90350ac7a07fac83877963793dd372611e0c6b459ce71227847aa6594git_cola-4.12.0.tar.gz"
+  sha256 "e87ae8fedbd7b58d0929f48edb80e09bd14d554624b2d6c27caf001e08c5c0f4"
   license "GPL-2.0-or-later"
   head "https:github.comgit-colagit-cola.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f67b824ff935438bba393678532d055651b43f46bafb0f5aca21c8fb2618f76a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f67b824ff935438bba393678532d055651b43f46bafb0f5aca21c8fb2618f76a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "41883996494401689e2af58ec5d9cffb5db24af9478c2865cb781eaee67360b1"
-    sha256 cellar: :any_skip_relocation, ventura:       "41883996494401689e2af58ec5d9cffb5db24af9478c2865cb781eaee67360b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f67b824ff935438bba393678532d055651b43f46bafb0f5aca21c8fb2618f76a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4190d6a926a2b45de30f7c45e185de3923289c1e9df4122aa132e20eddd58a1e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4190d6a926a2b45de30f7c45e185de3923289c1e9df4122aa132e20eddd58a1e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "625a74350e8052f7ba9c65ebde06318bbbe3fb906ae23e356cf8ac60b4301e9d"
+    sha256 cellar: :any_skip_relocation, ventura:       "625a74350e8052f7ba9c65ebde06318bbbe3fb906ae23e356cf8ac60b4301e9d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4190d6a926a2b45de30f7c45e185de3923289c1e9df4122aa132e20eddd58a1e"
   end
 
   depends_on "pyqt"
@@ -30,8 +30,8 @@ class GitCola < Formula
   end
 
   resource "qtpy" do
-    url "https:files.pythonhosted.orgpackagese51051e0e50dd1e4a160c54ac0717b8ff11b2063d441e721c2037f61931cf38dqtpy-2.4.2.tar.gz"
-    sha256 "9d6ec91a587cc1495eaebd23130f7619afa5cdd34a277acb87735b4ad7c65156"
+    url "https:files.pythonhosted.orgpackages7001392eba83c8e47b946b929d7c46e0f04b35e9671f8bb6fc36b6f7945b4de8qtpy-2.4.3.tar.gz"
+    sha256 "db744f7832e6d3da90568ba6ccbca3ee2b3b4a890c3d6fbbc63142f6e4cdf5bb"
   end
 
   def install

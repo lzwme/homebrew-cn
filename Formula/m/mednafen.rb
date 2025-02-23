@@ -4,6 +4,7 @@ class Mednafen < Formula
   url "https:mednafen.github.ioreleasesfilesmednafen-1.32.1.tar.xz"
   sha256 "de7eb94ab66212ae7758376524368a8ab208234b33796625ca630547dbc83832"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https:mednafen.github.ioreleases"
@@ -11,14 +12,12 @@ class Mednafen < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "e470c0ad19de2a320749499e83cfc09e7bceeef5ba5196e27756aaec147554e7"
-    sha256 arm64_sonoma:   "b72bcc13e2b1d434445671be362e53a972a3a0c87cc891eb1fcdb10f4ed248ad"
-    sha256 arm64_ventura:  "6c642b401c177c0f9afe5c2676c2aa1fcffc0eba991db44fc446494e87ea4641"
-    sha256 arm64_monterey: "6ee3639bd5e939d6438c536e2505724710d3f2d09ca4d251019fe3db330eec80"
-    sha256 sonoma:         "3b70d0a28be268ef8799149e20d3ea2dac1f75d9b5afbb56771eee373dc931c6"
-    sha256 ventura:        "0944ef9b874ae58c2263e3dc87f4f64151ec08fdfec7fcac7a65e1c6c2354495"
-    sha256 monterey:       "961f06c1b8a639e416bdbe6c39b96a47abfd6fafc11c0cef11ff4f3641e4c8d6"
-    sha256 x86_64_linux:   "2b0e225a4706c1e3667c25ffa52181a63a97b2dad8e9d2f8520adbdcf1a5eb0f"
+    sha256 arm64_sequoia: "e100baeaab0eb1f32d42f02ed07741683c6e344d9df1a73498b5ae1388d69329"
+    sha256 arm64_sonoma:  "1a44117a0ab7696c1fc8a53fe01857dc50c79687f22191b669cb3fb0ba2eb762"
+    sha256 arm64_ventura: "41f73f24d64c67f03e321ca8c5e69cb63af7335865894bd977d1733ffc47a2dd"
+    sha256 sonoma:        "64d38f660b3c5b464efe66424b0cbd5b20601a69a00b138733bc706ffa88cc55"
+    sha256 ventura:       "b40afba5777537935fe7c79d0b275e0ef186d91d4220cdc82de150d31d212575"
+    sha256 x86_64_linux:  "dfd1940dfa9917d20668ee7f53f30b682d49b6674a768b43dd77db6f181d135d"
   end
 
   depends_on "gettext" => :build

@@ -3,17 +3,17 @@ class Borgmatic < Formula
 
   desc "Simple wrapper script for the Borg backup software"
   homepage "https://torsion.org/borgmatic/"
-  url "https://files.pythonhosted.org/packages/4c/98/1b84863918f026906b5b2d1938490a07f6cc60063456dada809ba5556eae/borgmatic-1.9.10.tar.gz"
-  sha256 "ee1a22121d92c50b6b430e015db8d0632ffd9452b466919811d20d78f3e1bb74"
+  url "https://files.pythonhosted.org/packages/d7/76/08482d4a2ba9fe46ad97950f2bbef2056c9baf5aff2f95202c9add4d2fc0/borgmatic-1.9.11.tar.gz"
+  sha256 "986ef8491625b6a6d5e0827c4406ef0ec53f10131f7f10e432c70cb0917678a3"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3c83dd5b0deed75f4b410951f1d82ef40fafadacf15e760eaef4a8e3242c4946"
-    sha256 cellar: :any,                 arm64_sonoma:  "e0a80648d74e29673fcc8f97ed5b4719a2f35ab6ffcc6c5692e090d2e477ab4d"
-    sha256 cellar: :any,                 arm64_ventura: "bcbb2135e797282f5c1e449091aeab845af16e2cb31bd6fc00a36ca3889f73a1"
-    sha256 cellar: :any,                 sonoma:        "867dea42d4557723864f21f21a7e774aeadc54f08c6759e3d69926e41f779982"
-    sha256 cellar: :any,                 ventura:       "4a894af40b519d2ff34a7e926db3a42b7f371a4a60523d81bcca6e84d4600f8e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a257bdfd5b69c3ca45477b8c0c34c5f0d61613415b40b7154597952c55441103"
+    sha256 cellar: :any,                 arm64_sequoia: "e5e19ffd01aff937b5ba78b65302a5653f402e3d2ec1001ac16423da406b0f32"
+    sha256 cellar: :any,                 arm64_sonoma:  "8d5d7431ac9b693f3cb7123916721ae352389eb67562bc0592d8dafaaaee2239"
+    sha256 cellar: :any,                 arm64_ventura: "1487f71a08710c55c57305adb647984f1d6b1783e0fcd8517afe89fa307c796a"
+    sha256 cellar: :any,                 sonoma:        "7a42db37c8c42376cc44c601fc8fb590fb7da76d920d383b13099f8a2fc0252c"
+    sha256 cellar: :any,                 ventura:       "896cabc21cc6abf0b59ca5c60e50e3ad9f059400eb28319fc6d07a25edee5785"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea049578737d891b6234c153a49611d796e7718df7b4f08e4d5e13a1015314cc"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -61,8 +61,8 @@ class Borgmatic < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/01/80/cce854d0921ff2f0a9fa831ba3ad3c65cee3a46711addf39a2af52df2cfd/rpds_py-0.22.3.tar.gz"
-    sha256 "e32fee8ab45d3c2db6da19a5323bc3362237c8b653c70194414b892fd06a080d"
+    url "https://files.pythonhosted.org/packages/0a/79/2ce611b18c4fd83d9e3aecb5cba93e1917c050f556db39842889fa69b79f/rpds_py-0.23.1.tar.gz"
+    sha256 "7f3240dcfa14d198dba24b8b9cb3b108c06b68d45b7babd9eefc1038fdf7e707"
   end
 
   resource "ruamel-yaml" do

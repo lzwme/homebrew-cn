@@ -1,18 +1,18 @@
 class Nomino < Formula
   desc "Batch rename utility"
   homepage "https:github.comyaa110nomino"
-  url "https:github.comyaa110nominoarchiverefstags1.6.0.tar.gz"
-  sha256 "b5e1cf426b19bf859f7098311a47b5917459caf10ef1514282c599fb2bcae18c"
+  url "https:github.comyaa110nominoarchiverefstags1.6.1.tar.gz"
+  sha256 "8d6a664b7b557d7d3e7f057eada63e153a26af68bedbbce45523164641d497c0"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comyaa110nomino.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f9c863f49f35ecbf66d13d9ed192146fd85e009bac9b6041eae25406024012ae"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "36110b02b2b113e4cdab15c77a502152146fd51c2a24e647faf5a929859552df"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ab9be5e189c1cbd8e6a2a3f1b4085132d0c3293e1c73321335d6ab25644eeb48"
-    sha256 cellar: :any_skip_relocation, sonoma:        "70ded034b35dfd10c2435de06b37e09b4b6e124d7e6b8ae83f01f8a88b9aacd3"
-    sha256 cellar: :any_skip_relocation, ventura:       "b9446f6c83dc70436c970969ea41db2ca797b1930d81e5e31bf99ffd2e7660af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4243d252ad89f21f40c82f7d40705f4d019132e0f308e3a7d8e042e79ba9010e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b95d0c88287d5238b0a97ab6798ead5edba94048077558a4725efee43b32fb51"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3c6d478132735d240053a7e633e4c95427aecd54a056ac286da8442a40021c55"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b4471731584112265bb13937d2dd8fbb861100d74d9fde989ee81fbc1569504b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "17a299ee5a482716c18c115614d95a176790afe2fe003d1f26b81b3efda2a267"
+    sha256 cellar: :any_skip_relocation, ventura:       "9c6ce75e5565cdcac444af92b510379cf5b7f7723f71eb4ac96a01c74b8fad22"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbff625abb4d8f07a1e052a6e3149c0f7d58ea5c4d66939fa42e82facffec17c"
   end
 
   depends_on "rust" => :build

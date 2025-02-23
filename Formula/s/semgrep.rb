@@ -7,6 +7,7 @@ class Semgrep < Formula
       tag:      "v1.109.0",
       revision: "2ec9863737aa717004411cf64ec3232278ebfd2b"
   license "LGPL-2.1-only"
+  revision 1
   head "https:github.comsemgrepsemgrep.git", branch: "develop"
 
   livecheck do
@@ -15,12 +16,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c18db36aeef3a5d878a0c526943be6319687730f3aa757c9eda7e799f9a9e6d2"
-    sha256 cellar: :any,                 arm64_sonoma:  "d76d1210157702480eede5f25a536e0277b4745c232ed2979ee0cac53c8d7d40"
-    sha256 cellar: :any,                 arm64_ventura: "5782fcd10736204cce0858fa8bc39e17ea75d0aee2dffd6156ae647fa545f231"
-    sha256 cellar: :any,                 sonoma:        "46e55cb29b27f7d3e25ab1a0589a974c14e33fe3c2639984d95e3ccf9af8d008"
-    sha256 cellar: :any,                 ventura:       "8c6cbd8963e5bd6d755d91cb11888e43ed948b6f8e0625e6c142df8663330c76"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eccc3b90e54e55ea1c9a8ae36404ec55fdd407f2deba1d36a0c8df5c6c23f9aa"
+    sha256 cellar: :any,                 arm64_sequoia: "93179abcaee59a3bb90e117392c7073eb7c2b7a5812b01aaac5826c1de35cada"
+    sha256 cellar: :any,                 arm64_sonoma:  "014371aad5b0e8425f0e73e2a55d4cd2092e84d72d04e21782eb5e1e67219d87"
+    sha256 cellar: :any,                 arm64_ventura: "7cd124c55addeda9b9a5ba292c243afc01554632dbd5027311e12f25edb76016"
+    sha256 cellar: :any,                 sonoma:        "400d1385f21d42c5c5b15eb8c254dd0b6f179b3ffdb1e4b65e25b51b8d7142d2"
+    sha256 cellar: :any,                 ventura:       "f173f5de21c3c15d6c2f4200c43e10a68167f3d40b88549c72ab17c872faa5ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "281c52dce9c226a1cd279d8bbde0d8c120916a7b7e307d477781ef98d538ef5b"
   end
 
   depends_on "autoconf" => :build

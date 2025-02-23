@@ -1,18 +1,18 @@
 class CloudProviderKind < Formula
   desc "Cloud provider for KIND clusters"
   homepage "https:github.comkubernetes-sigscloud-provider-kind"
-  url "https:github.comkubernetes-sigscloud-provider-kindarchiverefstagsv0.5.0.tar.gz"
-  sha256 "ba3fad794370b1ff14e608edfa5883cb455e1e6e89d6a63187c5f47bf4e23251"
+  url "https:github.comkubernetes-sigscloud-provider-kindarchiverefstagsv0.6.0.tar.gz"
+  sha256 "61f7efdd17f2b1100f153c162494eba240f4bace459ec3d76fc5348d829e5f78"
   license "Apache-2.0"
   head "https:github.comkubernetes-sigscloud-provider-kind.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "82743514320e02d3a5bd8fb46b9e8e4e8c39e0b71270b998559c930d3a85061e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "82743514320e02d3a5bd8fb46b9e8e4e8c39e0b71270b998559c930d3a85061e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "82743514320e02d3a5bd8fb46b9e8e4e8c39e0b71270b998559c930d3a85061e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "597af62080bacddce17502631e2513d4846873be929c2792c7264368ced03d74"
-    sha256 cellar: :any_skip_relocation, ventura:       "597af62080bacddce17502631e2513d4846873be929c2792c7264368ced03d74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5545b87301dda62fe2db61748cd20f8560777c781f1333c769b23d77dcff92a6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "596d1ff6c56251c8fb41e89ad8220dd476808b04e7e87fc7c98eeb6f278a4757"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a83dda7961b6246015d269cb7f3090b8f9010648d78c3ecd1dd2ef570a349029"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "38654267338cd317e2ac0d5eee6dafcbe16b5c6788f2a9293e3cbcdf26e8ae7e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "00597c278dbbf8e47c1b9312126f579d101daef091ca7f07903c2ccc32fd5c86"
+    sha256 cellar: :any_skip_relocation, ventura:       "5882ef85ba5cb771df59a6f2b18d3ecef31c1464cf76d46f8af03a231e31aaae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5600f3b4a6051d1db96676692611da07417b677a30b8b6b94606a2fa57680af7"
   end
 
   depends_on "go" => :build

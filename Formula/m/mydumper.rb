@@ -21,11 +21,12 @@ class Mydumper < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "pcre" => :build # still needs pcre.h
   depends_on "pkgconf" => :build
   depends_on "sphinx-doc" => :build
   depends_on "glib"
   depends_on "mariadb-connector-c"
-  depends_on "pcre"
+  depends_on "pcre2"
 
   def install
     # Avoid installing config into etc

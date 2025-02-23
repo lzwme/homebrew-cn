@@ -4,6 +4,7 @@ class Scummvm < Formula
   url "https:downloads.scummvm.orgfrsscummvm2.9.0scummvm-2.9.0.tar.xz"
   sha256 "d5b33532bd70d247f09127719c670b4b935810f53ebb6b7b6eafacaa5da99452"
   license "GPL-3.0-or-later"
+  revision 1
   head "https:github.comscummvmscummvm.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,11 @@ class Scummvm < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "fd386b790796cd93212f0a48afa615a96f38dab6f8100b9a106d7b162daa575e"
-    sha256 arm64_sonoma:  "b5d4e2c4810e5891a7e4cf6a81a393cefb136ad120542995d5f05ea28c9f7e46"
-    sha256 arm64_ventura: "11a8e89fafed34c094e689e1b93457afd24a56416fe49f3e6eb085dfb40bebe0"
-    sha256 sonoma:        "6043f6417fbbfd4b12b4412804ad9e11ccc1874eb9a846a182aa182f9cf3d30d"
-    sha256 ventura:       "7972f1c506a5241495960fcbc77d366567a7d0f66ecd0b01ebbc351a2e9d5851"
+    sha256 arm64_sequoia: "2772b8bf2e6a646edb3e99dbeb28c963d843585763a030b4b22e1a5d620ad16e"
+    sha256 arm64_sonoma:  "1a28258561716796a44065436d30cd651d64329375c23a0237a40ac1433e74c5"
+    sha256 arm64_ventura: "fa5357d50358654f04d462eaa2458f6ef707c30f1c1ee07a8eced50dc31e058c"
+    sha256 sonoma:        "fe1e116080ede23f15a5ce52a2403bbb252491c5b1745315e8ff8b09db4d6766"
+    sha256 ventura:       "5278a0db160646fd32761711dcf7286dfd9998eaf5c5c451a8600431b7e7c0ac"
   end
 
   depends_on "a52dec"

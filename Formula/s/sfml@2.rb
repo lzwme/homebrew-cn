@@ -4,14 +4,15 @@ class SfmlAT2 < Formula
   url "https:www.sfml-dev.orgfilesSFML-2.6.2-sources.zip"
   sha256 "19d6dbd9c901c74441d9888c13cb1399f614fe8993d59062a72cfbceb00fed04"
   license "Zlib"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "81de83008ed518d05566483013d6bd9fcf2deb990a9c573e196e63d3010cc630"
-    sha256 cellar: :any,                 arm64_sonoma:  "1a4898bf9ea25abe225a1eb962e24881917c2f849ac8132537eec72b12ad919d"
-    sha256 cellar: :any,                 arm64_ventura: "5e5b2f83eec7708a256fab87bc043860b5fc9893acd6e72e016fac2b01f654f7"
-    sha256 cellar: :any,                 sonoma:        "16a4f0fdc73c761f4559ea19eb8dc5d41436db882b2c38309484212f88e0e2b2"
-    sha256 cellar: :any,                 ventura:       "6c889bce31b21d4b1c127923f98042b0a37588cc89ae4353ab0a4f9d7deaadea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14656fa808b17eed41a0dff41bb3d0dd0aacea4d03c8651ebbb8402e9109d507"
+    sha256 cellar: :any,                 arm64_sequoia: "7cb3afc70bc71a9a3c45edd4bf9ca54dc9514bc576a894f5f01d58c3b04e0b44"
+    sha256 cellar: :any,                 arm64_sonoma:  "529996e0afcd2b27ad6c7f5e124067fb940d2c6c4b3dface4d21db5694c16b2e"
+    sha256 cellar: :any,                 arm64_ventura: "8d76a3051365d997d2fcbe5b24c3042bb217df18f3f64d25bb0708875cdcbc91"
+    sha256 cellar: :any,                 sonoma:        "96b5e8246f95125ed017da1a3b0ebf37ec9006c644efb2587d8e7e6d3fb4a5ec"
+    sha256 cellar: :any,                 ventura:       "d7f41e0d4c78d3c6ecd487c9d8ba1f094ec42bf7dbddc3678bccc13e13091ed0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83c161b5438b103ca014927de4b1ccba2782c9e6a654cce77e6041e02c91d1f3"
   end
 
   keg_only :versioned_formula

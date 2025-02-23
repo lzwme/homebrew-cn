@@ -5,15 +5,16 @@ class Alive2 < Formula
       tag:      "v19.0",
       revision: "84041960f183aec74d740ff881c95a4ce5234d3d"
   license "MIT"
+  revision 1
   head "https:github.comAliveToolkitalive2.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e1b49e7b8ff1d75cf940356abbae5fb24e1eb4c98eb5996cb82c8f468c57be12"
-    sha256 cellar: :any,                 arm64_sonoma:  "eef8b5e1808dad01e28663608edd5cf4c196a58aa21e8c19b43ed3bdca7a13a9"
-    sha256 cellar: :any,                 arm64_ventura: "a0b0620bac542b9a9067fae258a7aa472e73dd9f3e96259cea710cd9f0aa82a5"
-    sha256 cellar: :any,                 sonoma:        "a268d8150ed4ce823ce936b72b0705cc3b9caf98caa2d712d3fffad91cd7bb6d"
-    sha256 cellar: :any,                 ventura:       "b592aab1e5a63b34937635b6ded501eb00165cff0f6aae27ec34dabcc610f1f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57e1edb38168efd19ee4f31d290ae1f30fd1a73591ca49177090e13a938a1dca"
+    sha256 cellar: :any,                 arm64_sequoia: "b0e3e3a540b8d9d2fee6e28caf8392b234771bdef828dd290fa7b96f455d069a"
+    sha256 cellar: :any,                 arm64_sonoma:  "5514d92df672c7073060c36b23c1eb1b3c752c82a0282a93e029a020d4e5aa8a"
+    sha256 cellar: :any,                 arm64_ventura: "3bc3b48d9232f046ec198571cad9bd4efbe8f3a2b521ef3b0cb77f4b6aee5c1b"
+    sha256 cellar: :any,                 sonoma:        "69a9e839094cf26f9a364bc9fb2b602b4008b361dd38296bad5f70c370d40323"
+    sha256 cellar: :any,                 ventura:       "e67a8a8978bb0abdc51e51378876212569de77f90357e86e9d3dc6cecdc3385b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a35fac67b30fbc40e37bbe6e4aaef4dbd0a19cd774095c0485b2c03c6e0c6d1e"
   end
 
   depends_on "cmake" => :build

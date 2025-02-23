@@ -1,21 +1,21 @@
 class Oil < Formula
   desc "Bash-compatible Unix shell with more consistent syntax and semantics"
-  homepage "https://www.oilshell.org/"
-  url "https://www.oilshell.org/download/oil-0.24.0.tar.gz"
-  sha256 "f199f5384e72c53eeb8a159ee7ac1b92819adc13a6dc5644ccae33e7ceaa9c72"
+  homepage "https://oils.pub/"
+  url "https://oils.pub/download/oil-0.27.0.tar.gz"
+  sha256 "7461e9a7bc35e807d90dd878a1e6642167699e7bb19cf605ce075b08e0a7588c"
   license "Apache-2.0"
 
   livecheck do
-    url "https://www.oilshell.org/releases.html"
+    url "https://oils.pub/releases.html"
     regex(/href=.*?oil[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
-    sha256 arm64_sequoia: "d83f409a0561c48d8a3d05a0d3ce1e89975fdf4fb99f678fc4a3e801fea4860f"
-    sha256 arm64_sonoma:  "5952024bb52e3635cd5d6661b6c442b628698ba5721c13809de7837ae6a97e54"
-    sha256 arm64_ventura: "db8b40d42bdcfb8033e4c4c2c8d45f3aa8e9272ccd2c441cdaacae678e59050b"
-    sha256 sonoma:        "9be93a8e62ce0032a1e4f044925990a7d174bf744adf814cc5f321ea1e2b581f"
-    sha256 ventura:       "6204da4afc98af8aed93fa1e12995bc62fd7489b9ef74f467e16e1058f5e3351"
+    sha256 arm64_sequoia: "697b294785828f50543a383c065c99196c22698872cf750cd5a631dadeb23f3e"
+    sha256 arm64_sonoma:  "76b175019bafdb0133930f013ee47660de76e7edc50378bc04597af1d3e28380"
+    sha256 arm64_ventura: "0cd75c3725dcf147a99f7335c2a1e3d043ca9c808ca2e234781b709d2e076d32"
+    sha256 sonoma:        "a850521ca51a69380f6189baf11dc1929e4588ec3be4c9d0715929bd1d7387a8"
+    sha256 ventura:       "5979cf10da30579477c17a0226a985d4e39577f6160021183d8b9ce7ed7f4de1"
   end
 
   depends_on "readline"
@@ -24,6 +24,9 @@ class Oil < Formula
   conflicts_with "etsh", "omake", because: "both install 'osh' binaries"
 
   def install
+    # Workaround for newer Clang/GCC
+    ENV.append_to_cflags "-Wno-implicit-function-declaration"
+
     system "./configure", "--prefix=#{prefix}",
                           "--datarootdir=#{share}",
                           "--with-readline=#{Formula["readline"].opt_prefix}"

@@ -1,13 +1,13 @@
 class Crow < Formula
   desc "Fast and Easy to use microframework for the web"
   homepage "https:crowcpp.org"
-  url "https:github.comCrowCppCrowarchiverefstagsv1.2.1.tar.gz"
-  sha256 "552f2e447adf70ed4c667d6f82db53dfc70710b50431004ab1405f5b53f04c30"
+  url "https:github.comCrowCppCrowarchiverefstagsv1.2.1.2.tar.gz"
+  sha256 "dc008515f64c9054250909a16bf0d9173af845d2c6d4e49ed6d3f0f32dfdc747"
   license "BSD-3-Clause"
   head "https:github.comCrowCppCrow.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9a24a5efe8bdb0ffab3bf58391375a00c5c5868217cd7d52bbf34066baa39f69"
+    sha256 cellar: :any_skip_relocation, all: "97c63829c1a1d5eb88a3f75fa7e924bd424fd92c97b33d6f5c147dedf43748d5"
   end
 
   depends_on "cmake" => :build
@@ -29,7 +29,7 @@ class Crow < Formula
       }
     CPP
 
-    system ENV.cxx, "test.cpp", "-std=c++11", "-o", "test"
+    system ENV.cxx, "test.cpp", "-std=c++17", "-o", "test"
     system ".test"
   end
 end

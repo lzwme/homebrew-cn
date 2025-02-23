@@ -4,17 +4,15 @@ class Minidlna < Formula
   url "https://downloads.sourceforge.net/project/minidlna/minidlna/1.3.3/minidlna-1.3.3.tar.gz"
   sha256 "39026c6d4a139b9180192d1c37225aa3376fdf4f1a74d7debbdbb693d996afa4"
   license "GPL-2.0-only"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "870534ea2c84fb92abc96978f8da8b22f75dc5e681884602cffd4ed4f76fbffa"
-    sha256 cellar: :any,                 arm64_sonoma:   "5cdc4271499e5b8b3e6c7effab75da360de272d956e592c74ceb272012cbedc2"
-    sha256 cellar: :any,                 arm64_ventura:  "cfd00cc9d042aa7c6348edb85ccd3d46e961cf5db7889a983c3db86b7c426350"
-    sha256 cellar: :any,                 arm64_monterey: "4ca9b45f96b3db7f8623ac80b17861b25091e851bd0d3b98ab018c2b70593797"
-    sha256 cellar: :any,                 sonoma:         "0f9c174c508fe889e1e5849b43e779b360186fbc416303037379445fe0d713bd"
-    sha256 cellar: :any,                 ventura:        "c4934d6d2fbc41afce5d1bf4a2f79b9fe9ffeef3dbf2c303c42e71db9bf27794"
-    sha256 cellar: :any,                 monterey:       "321cde081415e6c35efe2c8522808c746578c3c5127f7a08df1bc3986c57ee4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "257e53c6ef6bd70fc2369d097e0c7e0da5013dc8e9c763a0762ba5df0bc9588a"
+    sha256 cellar: :any,                 arm64_sequoia: "d3a971dd6797fd9bc19c0473305861658dea94629092eeb4599f0820388b22b4"
+    sha256 cellar: :any,                 arm64_sonoma:  "ec3048945b8e139ac5f5c5f155716e5e78b8a752ba539661148e1aac1d9c6e46"
+    sha256 cellar: :any,                 arm64_ventura: "a0e8d265dd82a964d6e912a74e35b174eba83329466180ccc7b6fcce918c3f3b"
+    sha256 cellar: :any,                 sonoma:        "359ca672fd75a717663eac68d270f1d855002404cc82dc7fe22ab72eedc70601"
+    sha256 cellar: :any,                 ventura:       "c6e43a0397d8e87ddba11a2d75f8e656d6340af549c9e72132a327ca459dbef1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4b4e7f1931b7df49351bc9a5b982346ef79188ce57e7b3f977846664d1b942b"
   end
 
   head do
@@ -28,16 +26,13 @@ class Minidlna < Formula
 
   depends_on "ffmpeg@6" # ffmpeg 7 issue: https://sourceforge.net/p/minidlna/bugs/363/
   depends_on "flac"
+  depends_on "gettext"
   depends_on "jpeg-turbo"
   depends_on "libexif"
   depends_on "libid3tag"
   depends_on "libogg"
   depends_on "libvorbis"
   depends_on "sqlite"
-
-  on_macos do
-    depends_on "gettext"
-  end
 
   # Add missing include: https://sourceforge.net/p/minidlna/bugs/351/
   patch :DATA
@@ -93,7 +88,12 @@ class Minidlna < Formula
     port = free_port
 
     io = IO.popen("#{sbin}/minidlnad -d -f minidlna.conf -p #{port} -P #{testpath}/minidlna.pid", "r")
-    io.expect("debug: Initial file scan completed", 30)
+    timeout = if Hardware::CPU.arm?
+      30
+    else
+      50
+    end
+    io.expect("debug: Initial file scan completed", timeout)
     assert_path_exists testpath/"minidlna.pid"
 
     # change back to localhost once https://sourceforge.net/p/minidlna/bugs/346/ is addressed

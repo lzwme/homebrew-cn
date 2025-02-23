@@ -5,16 +5,16 @@ class Sfml < Formula
   url "https:www.sfml-dev.orgfilesSFML-3.0.0-sources.zip"
   sha256 "8cc41db46b59f07c44ecf21c74a0f956d37735dec9d90ff4522856cb162ba642"
   license "Zlib"
+  revision 1
   head "https:github.comSFMLSFML.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "fff37927fb4f670430d85f49261b6154978e0216d55768b7d5a1a5168232d18f"
-    sha256 cellar: :any,                 arm64_sonoma:  "ff020fbbaccb4b711f2fb9eff376c43f6ccd900e3f1e48d20636524aaa67c9b9"
-    sha256 cellar: :any,                 arm64_ventura: "3dfa4ab8f4d7242edb31a6f9e862c1f4322f45fec06fefc992e7c9d1764d6c80"
-    sha256 cellar: :any,                 sonoma:        "b941f80dc54ebbf31d9853ceef9a5c72641e10810f2dbbbf40375d32da1a95cb"
-    sha256 cellar: :any,                 ventura:       "31f1099add9105e6d52e114b60587fb84a4c11c5a2f9e4312d7c5a6336fde916"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2caae5a406d4744b0bf2e718a56b20d0a51e3f936d7343802a6bcd2a552dfc72"
+    sha256 cellar: :any,                 arm64_sequoia: "841d0e1423e34e33e51de92e86b4467d6d5d22d3ee69a2f6860336d9fa36225b"
+    sha256 cellar: :any,                 arm64_sonoma:  "e24405eaf1b0ef6c425aab8b0facf4cdd8fdfb08c07910ae37e390c3cab6bed0"
+    sha256 cellar: :any,                 arm64_ventura: "70ebb93655fbae8872a022eeb87261e309a156d2b3b6391dc68b6fefd0722018"
+    sha256 cellar: :any,                 sonoma:        "56f6a53b8f21d6c5e107af718c21015f7bd4d3ef7f07ce78c5d65a049dd1ae0e"
+    sha256 cellar: :any,                 ventura:       "cfedbdb752f826191781241bcbeb9e892e33ce1002728c4a6ddd21b3c82ffbe9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48d843038a6686959a999821bbdb94ec35f99de5fd1eb66ca3d38c546f0eb85e"
   end
 
   depends_on "cmake" => :build

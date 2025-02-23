@@ -5,6 +5,7 @@ class RomTools < Formula
   version "0.274"
   sha256 "f8112eb0b175935cf6db93f708186dcaeec5a89400ecf3d5782fd2c0b94907c8"
   license "GPL-2.0-or-later"
+  revision 1
   head "https:github.commamedevmame.git", branch: "master"
 
   livecheck do
@@ -12,12 +13,12 @@ class RomTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "75c6dc853b68f049c9607055535af7bce06d1d31e5db0cb2300de56cf77acb5f"
-    sha256 cellar: :any,                 arm64_sonoma:  "12321bfa6ac42100757792f1e367066b52a61a3225450d35a5c4c786b55ad20a"
-    sha256 cellar: :any,                 arm64_ventura: "5c5fd12805ba96cb0b6d18c125f51d7e684e97a08802fa377301434c4284dd82"
-    sha256 cellar: :any,                 sonoma:        "131ad1731ef232d1fffdde926ab269d86bb961184ad40f3a0aaf9efe8766fcdf"
-    sha256 cellar: :any,                 ventura:       "dd648b7c0324fe3b641957dc95fcf70ccac76e3c82edbfc07849392210f0e7f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efb18e1320919a9a47a9759222fb57caefc84f2d4d147ebf7932ff52a76c1cf2"
+    sha256 cellar: :any,                 arm64_sequoia: "5188627d52e07e31f1daeecd80d0ee1059a48e499a05c00fbeb3e646bd8cb53a"
+    sha256 cellar: :any,                 arm64_sonoma:  "7223ac1362b9895c25a1a63e6d3f74bc160e5eee3d63775c70eda32b0f4bc6b0"
+    sha256 cellar: :any,                 arm64_ventura: "f8f9ef9b687489c7f0509d0bb97a5ba41f66bda542d8b9dfb14563de37b2cf7d"
+    sha256 cellar: :any,                 sonoma:        "33461a11ac7b133b80c1a13fbaa03560ee10f7ff2164dfc674c1f52305c9b87f"
+    sha256 cellar: :any,                 ventura:       "1bb0d1445bfb480e585dd0410c1b20f8a44b3ce7d9504a74fa7d6eacb990905d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa6ebd8aeb9700f81a96342c128f4bd496e057620d7d58cfbf24b0b5c53c7868"
   end
 
   depends_on "asio" => :build

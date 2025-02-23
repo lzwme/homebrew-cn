@@ -1,8 +1,8 @@
 class Kubie < Formula
   desc "Much more powerful alternative to kubectx and kubens"
   homepage "https:blog.sbstp.caintroducing-kubie"
-  url "https:github.comsbstpkubiearchiverefstagsv0.24.1.tar.gz"
-  sha256 "ccf6bbe16e80c73cf9d17b50342cfc31886e5a8cc6b35bc794dd12ac4a781257"
+  url "https:github.comsbstpkubiearchiverefstagsv0.25.0.tar.gz"
+  sha256 "9707a3b7498b54c840a0a7d516a31a3e9b6a62aae4826c1b06f999f49f6607f5"
   license "Zlib"
   head "https:github.comsbstpkubie.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Kubie < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1b16ccfe63c6ed61c72afa127f78445edddcacd54bfc94886b7749168e38feb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac8838d9439d8092f3abb50c030d22f29758f3d646b6ae4cd0deeeba1526ac2d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "800c0c924f626a558b70b3900e7c33046e1a725470484a195dda79420cf6cc7d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6970d8a6195102b16fad9138908a66b777e8f912dad2b5ba8880425e2bf628e9"
-    sha256 cellar: :any_skip_relocation, ventura:       "f96de1a443a0314810b5c5b7a932a493a01d17f69c806b3c6f33f085b553e33e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e5fbc19c1a0169f83fad9f030261c6ae9db4873df862358b80ec3ce2e4c912e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f3267705f0deb6ddf28644e972911d5ce52415cc6687c811dee63f49405e94a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d06df9f8658aa31fe10e529b3297644d36bfbf9652250754279d0c6148cdfcd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d4a50008ca2387c7491ab379c6065a4443228f0128cd6789aff7a320f7978c79"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6759ed224915f6734595772570ce6bdc7125b7ce100d8e584d1796e2526e183c"
+    sha256 cellar: :any_skip_relocation, ventura:       "7a5bd60607814212266a76816e37288f212e224ccf71f12e3c101333000bf679"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "307e2bbd03609cf02b77ea9d117af573abc257786dd3e60498db5cac949d157c"
   end
 
   depends_on "rust" => :build

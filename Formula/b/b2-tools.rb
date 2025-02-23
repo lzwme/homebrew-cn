@@ -3,17 +3,17 @@ class B2Tools < Formula
 
   desc "B2 Cloud Storage Command-Line Tools"
   homepage "https:github.comBackblazeB2_Command_Line_Tool"
-  url "https:files.pythonhosted.orgpackages59b70dbbec4d89ae2fa6744c01e1d6cf1d4151c459e66c3c876025ede5dabe59b2-4.3.0.tar.gz"
-  sha256 "e4576f5d6417e8b89fe0391022257661ab4d18dc4cea366c16e6baddc673a988"
+  url "https:files.pythonhosted.orgpackagesa1e33387477b1adbd9a483a0612cca79b3dd30fdc19291dd1fc501145eedb35bb2-4.3.1.tar.gz"
+  sha256 "9c8fe9e92be6726c0e574e0521acae6f25816a3bca410bd0555f5b7bbd2a94a2"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8b8a38ee4c53eabfbd8501ca0995d1dc8571b5023d637aaa9ce7d148e448db4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8b8a38ee4c53eabfbd8501ca0995d1dc8571b5023d637aaa9ce7d148e448db4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b8b8a38ee4c53eabfbd8501ca0995d1dc8571b5023d637aaa9ce7d148e448db4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c643304891cb5d10d5676e788a55b47cf43a5df62df97f8b90ef36fd9cba74b8"
-    sha256 cellar: :any_skip_relocation, ventura:       "c643304891cb5d10d5676e788a55b47cf43a5df62df97f8b90ef36fd9cba74b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8069e94efa85df384361b932573729b5213d4dc4ef6773931cda9ba89484cab"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a1b0267d10834f2a32ff61375ba5c9e2bc4e9a488307120e04c0613a4d7f7bb9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a1b0267d10834f2a32ff61375ba5c9e2bc4e9a488307120e04c0613a4d7f7bb9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a1b0267d10834f2a32ff61375ba5c9e2bc4e9a488307120e04c0613a4d7f7bb9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bc7aeabdd9f1faf8d83013f7af26a10808aa4dfe5f2f07fe6ea5ea8b6a841300"
+    sha256 cellar: :any_skip_relocation, ventura:       "bc7aeabdd9f1faf8d83013f7af26a10808aa4dfe5f2f07fe6ea5ea8b6a841300"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4e9775d8a3ca1c082c252b722d3216dcc34d93abc736a8a527b2ebabec5d98e"
   end
 
   depends_on "certifi"
@@ -37,8 +37,8 @@ class B2Tools < Formula
   end
 
   resource "b2sdk" do
-    url "https:files.pythonhosted.orgpackages82417f57b9246416e51200d9910bc76e20e0001e3cc4a552f557bde44de6fb78b2sdk-2.7.0.tar.gz"
-    sha256 "efd9a5c59dcddfe626a7860caa7f420ec4b1c50b0ad30972ccebf17392795cf9"
+    url "https:files.pythonhosted.orgpackagesd5d1a2935719662b392ef8e5cc2035c62c8c62d652ec3693ae78142028e0e44bb2sdk-2.8.0.tar.gz"
+    sha256 "e5a75b20b37b45d17fdb7fae491c8bb5d8adac67d99383cda3506f6b10c96710"
   end
 
   resource "charset-normalizer" do
