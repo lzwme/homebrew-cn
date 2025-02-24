@@ -20,6 +20,9 @@ class Tunnel < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a079e012dffd514c536355269716695a150db0dc30cd3ea2c27aee789615805"
   end
 
+  # `https:tunnel.labstack.comdocs` is no longer accessible
+  deprecate! date: "2025-02-23", because: :unmaintained
+
   depends_on "go" => :build
 
   def install

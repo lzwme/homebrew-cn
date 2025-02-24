@@ -26,6 +26,7 @@ class Snag < Formula
 
   # https:github.comTonkpilssnagissues66
   deprecate! date: "2024-02-24", because: :unmaintained
+  disable! date: "2025-02-24", because: :unmaintained
 
   depends_on "go" => :build
 

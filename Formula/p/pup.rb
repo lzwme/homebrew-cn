@@ -24,6 +24,7 @@ class Pup < Formula
 
   # https:github.comericchiangpupissues189
   deprecate! date: "2024-02-20", because: :unmaintained
+  disable! date: "2025-02-24", because: :unmaintained
 
   depends_on "go" => :build
   depends_on "gox" => :build

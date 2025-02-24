@@ -24,6 +24,7 @@ class AutoconfAT213 < Formula
   end
 
   deprecate! date: "2024-02-22", because: :unsupported
+  disable! date: "2025-02-24", because: :unsupported
 
   uses_from_macos "m4"
 

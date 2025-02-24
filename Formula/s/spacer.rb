@@ -1,17 +1,17 @@
 class Spacer < Formula
   desc "Small command-line utility for adding spacers to command output"
   homepage "https:github.comsamwhospacer"
-  url "https:github.comsamwhospacerarchiverefstagsv0.3.1.tar.gz"
-  sha256 "65c14dde2e90827c8b91353824cece614e1e645657ee3200eafa13165f27a3da"
+  url "https:github.comsamwhospacerarchiverefstagsv0.3.8.tar.gz"
+  sha256 "56e10af707cb060d6974559d3464e2ba0cb60db70d4e9d81e961ba88058b2925"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c788e3391fe8dd06b5a6f9cf80819d2fe273aa582562d38dea99bc5ba1736ba1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f9446270b0bed14747c41b85a257fe6ddbf04ef4b8cecf04f56e7a22d8ea720f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "03afc1903f2a05f2b01857e66ab3577f9c1f8dd8a6f915f27670fd928007fe76"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b7fbeb2d5cb59acbb8686dc0bee23948df426a75f82d5844f3cda320a6de7da6"
-    sha256 cellar: :any_skip_relocation, ventura:       "0cc6076dccf36226e875aeff6d1adbed3f52eee43100ad2d1a388def333ed41d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dba9b36ef4b0e1c2b1ba5df6e540e95ea81174644e401205826e96a4a9e38546"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef7c78d2acc3602cdb46a27796ac03606fc237761f6390866a8d47eb2973dff1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e1b47b321f4163d43c930df2f0a8826f627a6976296e90097d6cc7d66168f23"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "47cfb84321dbf61d82f44bd6a184861380297d3f692950f7224d9689386d103e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bf34987b91b26af106233a25fbaaebf94a872e62794f686d227a1e6979659307"
+    sha256 cellar: :any_skip_relocation, ventura:       "5c9f8b395088c5c2635f9f39d2efa4b517365e1469e823c9e75c23d77ada6802"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce5f27c262e2a2d6dd9c9bb69d59244b02088303de9080d275db287741c24182"
   end
 
   depends_on "rust" => :build

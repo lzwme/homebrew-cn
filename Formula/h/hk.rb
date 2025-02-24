@@ -1,18 +1,18 @@
 class Hk < Formula
   desc "Git hook and pre-commit lint manager"
   homepage "https:hk.jdx.dev"
-  url "https:github.comjdxhkarchiverefstagsv0.4.4.tar.gz"
-  sha256 "3a067511d78203e86d02a820411fa496e8ada2f2caf5f6232f5035152d6d35c5"
+  url "https:github.comjdxhkarchiverefstagsv0.4.5.tar.gz"
+  sha256 "e2a02db455cfdc7445ccc95b932eb1a62c32e9cdc643ee3010eed4d2b98c6f7c"
   license "MIT"
   head "https:github.comjdxhk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "629d44fb084b4757f309129c8ec2ecc20d8daf6336278fd2a2c9df88c6774e0e"
-    sha256 cellar: :any,                 arm64_sonoma:  "524c910869c793dcc5f75f1b457414e6f3b7874bc201b2e543b45149064ab66b"
-    sha256 cellar: :any,                 arm64_ventura: "e7361c72b30691af24fe3c702da4e921169f9867eca30bed7b84be6bc175a023"
-    sha256 cellar: :any,                 sonoma:        "95cf9228def240a4394e15a40fb8b069b6494e414a0cfd7003900413beaf0739"
-    sha256 cellar: :any,                 ventura:       "67c4ce913148e7c8f61a0a05409a8100fc1ad716bd404353c08230f080887f73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66b0158141e505f0c115a39fe038c8030fede291a23f80147f72c316c351ad32"
+    sha256 cellar: :any,                 arm64_sequoia: "f846f67851461fe0da7a5c3a5557eb9565ed8ffbc3e1067f3370e8c57dffc8e7"
+    sha256 cellar: :any,                 arm64_sonoma:  "c7980890aff713c0efef366f6d25178e8b79fde281ec3b518946cfabcafb9a75"
+    sha256 cellar: :any,                 arm64_ventura: "47d27e833216a657ff8030dae790c67acfd4118e89db0254db91b48e12182085"
+    sha256 cellar: :any,                 sonoma:        "cdcfd2583c60c9cfdbcb2bb4f30feaecfb58f8d66410ae1b7e7916bfc58e72f7"
+    sha256 cellar: :any,                 ventura:       "fa8970909385086d8aa268d6c57a142dc3f6d220200548d5f634f3ca166b0278"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdbffcf0824112cf041f38a6fd844d3ee1cb95df0525278898c90a1d71e29492"
   end
 
   depends_on "rust" => [:build, :test]
@@ -55,6 +55,6 @@ class Hk < Formula
     system "git", "commit", "-m", "Initial commit"
 
     output = shell_output("#{bin}hk run pre-commit --all -v 2>&1")
-    assert_match(cargo-clippy\s* ✓ done, output)
+    assert_match(cargo-clippy\s* ✓, output)
   end
 end

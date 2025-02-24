@@ -1,20 +1,18 @@
 class Nave < Formula
   desc "Virtual environments for Node.js"
   homepage "https:github.comisaacsnave"
-  url "https:github.comisaacsnavearchiverefstagsv3.5.2.tar.gz"
-  sha256 "df8d71ae46a0c9a29e68ced233fdc3a73f4068b9098e7c6b5bc4679019ffe1d9"
+  url "https:github.comisaacsnavearchiverefstagsv3.5.3.tar.gz"
+  sha256 "ab4b82c0ed7a2859be9ba3f5bdad7bc6db6709596972f53305fae48c150a4c99"
   license "ISC"
   head "https:github.comisaacsnave.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6fa8936560f72fb97eb2eacd801c1e4425f07976cf1dc9adc677c539a46595fe"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f7d5089779ae230ae95e2903325d017f9d3b43d46fa52f44b973edcad113ef6c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7d5089779ae230ae95e2903325d017f9d3b43d46fa52f44b973edcad113ef6c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f7d5089779ae230ae95e2903325d017f9d3b43d46fa52f44b973edcad113ef6c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ae8cbe12b22ffa4fea1b26c66331a91bf373e61d150d2d09cf5e43c7d3c69279"
-    sha256 cellar: :any_skip_relocation, ventura:        "ae8cbe12b22ffa4fea1b26c66331a91bf373e61d150d2d09cf5e43c7d3c69279"
-    sha256 cellar: :any_skip_relocation, monterey:       "ae8cbe12b22ffa4fea1b26c66331a91bf373e61d150d2d09cf5e43c7d3c69279"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7d5089779ae230ae95e2903325d017f9d3b43d46fa52f44b973edcad113ef6c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a384a370f3003cd572826d6f3c4d6d632390dfad819bd1b2c547dfed93db013"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a384a370f3003cd572826d6f3c4d6d632390dfad819bd1b2c547dfed93db013"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0a384a370f3003cd572826d6f3c4d6d632390dfad819bd1b2c547dfed93db013"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3d72f53b87436b7c80c41f5577e7cb6528dde9487bfba6b2e5ca3393d4256625"
+    sha256 cellar: :any_skip_relocation, ventura:       "3d72f53b87436b7c80c41f5577e7cb6528dde9487bfba6b2e5ca3393d4256625"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a384a370f3003cd572826d6f3c4d6d632390dfad819bd1b2c547dfed93db013"
   end
 
   def install

@@ -575,6 +575,7 @@ Homebrew-homebrew-core/Formula/b/bochs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bogofilter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bold.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bombadillo.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/bombardier.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bomber.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bonnie++.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bookloupe.rb, Homebrew/homebrew-core, 0
@@ -1544,6 +1545,7 @@ Homebrew-homebrew-core/Formula/d/dtc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dtm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dtools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dtrx.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dtsroll.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dua-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dub.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/duc.rb, Homebrew/homebrew-core, 1
@@ -5729,6 +5731,7 @@ Homebrew-homebrew-core/Formula/r/rubberband.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/ruby-build.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby-install.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/ruby-lsp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby@2.7.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ruby@3.0.rb, Homebrew/homebrew-core, 1
@@ -7362,6 +7365,7 @@ Homebrew-homebrew-core/Formula/z/zmap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zmqpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/znapzend.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/znc.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/z/zns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zola.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zookeeper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zopfli.rb, Homebrew/homebrew-core, 1

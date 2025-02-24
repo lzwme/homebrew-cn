@@ -1,18 +1,18 @@
 class PixiPack < Formula
   desc "Pack and unpack conda environments created with pixi"
   homepage "https:pixi.shlatestadvancedproduction_deployment#pixi-pack"
-  url "https:github.comquantcopixi-packarchiverefstagsv0.3.2.tar.gz"
-  sha256 "52c15d74879c5593f52e9b6c3db19dacb2a9a127bd9f247c2282fe1d21d70ca0"
+  url "https:github.comquantcopixi-packarchiverefstagsv0.3.3.tar.gz"
+  sha256 "378edb90cfad421f56a354728d186b46a2246aebe1b07917319d8df5e5045f64"
   license "BSD-3-Clause"
   head "https:github.comquantcopixi-pack.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "28dc271695cfc038a4e082f2df0b0d73612f0dae8df0d2e5d5c9b91d04921741"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "306cd31ee6d09c61a2d2e8fb0ce5b7a6146d4d8f911f895518cf810fbc50c4c4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c21a947dfc2cdceb210c93dc8b123996e01b61122a1f7ea8821bab0ac12ce644"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e54b820cae5a8ce2b38248ffdbe2e41250086d981ad6a0a6f1c95209e5396b36"
-    sha256 cellar: :any_skip_relocation, ventura:       "e03575675a2287ea01398038f049ff2069736256ae3351e51a75478bb18330b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7c19b49f0ffe4ce2a84b05955ec53ce0763acf0343cb9d2fe8e565144028057"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c235ca6af94757a8bd72d902ca2d9ee4fc367f0c1ca46eef1045f5326e97853"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92720262af79fb4d6307807f9f642e994e4bf19ab9bc6b738c650188bec91ea0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "84bdc7c4a43b85f235a97d02721bd6749c2222e449abc0632204b60a85f50506"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d2cb68c459415177019116f3a842e89bccc9b37c78b8adf2f9beaaacee7266f9"
+    sha256 cellar: :any_skip_relocation, ventura:       "3ad8af133284de647a951342ca225aef401d293919b9205ea32b5a375d0c18cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c52dc82928a1f0f949abc4b6689e1141f65013b35dc72d07f756d6c6d58e415"
   end
 
   depends_on "cmake" => :build

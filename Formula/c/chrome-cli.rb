@@ -1,19 +1,17 @@
 class ChromeCli < Formula
   desc "Control Google Chrome from the command-line"
   homepage "https:github.comprasmussenchrome-cli"
-  url "https:github.comprasmussenchrome-cliarchiverefstags1.10.0.tar.gz"
-  sha256 "d8ff25fb608ca4145d4af688e999ea106128e75b95fb1edc6861499133e9bb8c"
+  url "https:github.comprasmussenchrome-cliarchiverefstags1.10.2.tar.gz"
+  sha256 "05684ef64ee1c9cc9f53e4da83aee6c72e4ba67e913af36e959e48e1e39fe74f"
   license "MIT"
   head "https:github.comprasmussenchrome-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2210e8b8154ae8a886bf9917bd25f60a06e51a30c136e1a396d91541220bb6ad"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6dbfcf2110ce0c98549762695f3f1ea7a9d4d2b6858151607cadf5ed13bc981b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6423c14b6452d94b9f79ebcc3a71c8e0b6158c12810f57c9efc1be57d1ab2169"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "63ae694a49b249cfeca26389f5c201417ea4b7d56c0db46669856993a67f5702"
-    sha256 cellar: :any_skip_relocation, sonoma:         "d34831217ca47d2f91e19643307e7dba5c8b31a136380ceabc469ce8f13ce730"
-    sha256 cellar: :any_skip_relocation, ventura:        "a5094b212f9f4d9edc5af49a0df72a8046605ab450b7c72d9aa13fd593305880"
-    sha256 cellar: :any_skip_relocation, monterey:       "bd67692c870bc96c11800fdddeac4db57fbe6abc5bc01e2d1e82464320f8eaa8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b742b1edd9b7ea6de7197882e75c63530e68cc21434be76614e11aba76f335bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a0b0479359ba08144c0f56607a2097b04218051807cc0ae60bc73a60e46574f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5499c8160724eda14b5498f411971ec8c216f319c580a43a2a00d7f0fe9ab687"
+    sha256 cellar: :any_skip_relocation, sonoma:        "87d2ad8690168f33d50b18c00022f96cddc5d1de38c4ecb65ea0d3a093d91f6e"
+    sha256 cellar: :any_skip_relocation, ventura:       "9eb66895d46bdd9c55ad13c23c4a53ceecf4ad93e7cf766f7dd786765dbd7fb7"
   end
 
   depends_on xcode: :build

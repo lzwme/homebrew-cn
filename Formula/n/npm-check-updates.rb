@@ -1,17 +1,17 @@
 class NpmCheckUpdates < Formula
   desc "Find newer versions of dependencies than what your package.json allows"
   homepage "https:github.comraineorshinenpm-check-updates"
-  url "https:registry.npmjs.orgnpm-check-updates-npm-check-updates-17.1.14.tgz"
-  sha256 "4d6d8f73aeb7fb7db28bec3640bf70e0bb8ed190ae6bc1bb40337c431e28b44c"
+  url "https:registry.npmjs.orgnpm-check-updates-npm-check-updates-17.1.15.tgz"
+  sha256 "4bbd011ec2a0c26f6105c6c2e7652e6f5674ab6324bf46aabdafbcd8dff88201"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "70216dedf167fb43b9571e82588e6dac49632cf5f3106365fc4a6964e5fcdecd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70216dedf167fb43b9571e82588e6dac49632cf5f3106365fc4a6964e5fcdecd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "70216dedf167fb43b9571e82588e6dac49632cf5f3106365fc4a6964e5fcdecd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "079eb7c988be53219f9f3aee8aa83bfaa60cf962c637fafc31ecd6d18bca524f"
-    sha256 cellar: :any_skip_relocation, ventura:       "079eb7c988be53219f9f3aee8aa83bfaa60cf962c637fafc31ecd6d18bca524f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70216dedf167fb43b9571e82588e6dac49632cf5f3106365fc4a6964e5fcdecd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a7e6065f8bb9d50aa175d8d9a4409414cf5f04c05fce96837283a474812a94fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a7e6065f8bb9d50aa175d8d9a4409414cf5f04c05fce96837283a474812a94fe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a7e6065f8bb9d50aa175d8d9a4409414cf5f04c05fce96837283a474812a94fe"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e4856b560bb049bca4ecc7195503c749abde1a579bb5f9ebd7aa7dafaefb10e3"
+    sha256 cellar: :any_skip_relocation, ventura:       "e4856b560bb049bca4ecc7195503c749abde1a579bb5f9ebd7aa7dafaefb10e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7e6065f8bb9d50aa175d8d9a4409414cf5f04c05fce96837283a474812a94fe"
   end
 
   depends_on "node"

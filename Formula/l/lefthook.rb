@@ -1,18 +1,18 @@
 class Lefthook < Formula
   desc "Fast and powerful Git hooks manager for any type of projects"
   homepage "https:github.comevilmartianslefthook"
-  url "https:github.comevilmartianslefthookarchiverefstagsv1.10.11.tar.gz"
-  sha256 "ef39da4219e34f6d9d189bcff54c82bf67b7b0a28c68a6ec72de91e535bf1640"
+  url "https:github.comevilmartianslefthookarchiverefstagsv1.11.0.tar.gz"
+  sha256 "427dd33e5913278b4802e64342831f725bd5255a55b6b126d423d38caaa0763b"
   license "MIT"
   head "https:github.comevilmartianslefthook.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afb15d32c59d41d0e2f7613b0ec545a42ff2f7596e721c8d62d5319600dac7c9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "afb15d32c59d41d0e2f7613b0ec545a42ff2f7596e721c8d62d5319600dac7c9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "afb15d32c59d41d0e2f7613b0ec545a42ff2f7596e721c8d62d5319600dac7c9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6af03b1846d7ab0621f0d84f4cc26766a81b58056325ed14efce9133d0028a1d"
-    sha256 cellar: :any_skip_relocation, ventura:       "6af03b1846d7ab0621f0d84f4cc26766a81b58056325ed14efce9133d0028a1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76f8caa7607f70c8e90a7c52015ae4a4e5eadbe43d1a63ea4e2d287ca6b48d5c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4256e957a9c96715e3f09c6c9224b977c12bd6bde3b456ac96c790824e6aea3e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4256e957a9c96715e3f09c6c9224b977c12bd6bde3b456ac96c790824e6aea3e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4256e957a9c96715e3f09c6c9224b977c12bd6bde3b456ac96c790824e6aea3e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dc4a161a2f8b198cfec4bd7398cb3ef96478c560ab26f4b9acb5fa5386fad99e"
+    sha256 cellar: :any_skip_relocation, ventura:       "dc4a161a2f8b198cfec4bd7398cb3ef96478c560ab26f4b9acb5fa5386fad99e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2d9d9ff90b0667af3bf4a9f5350b1b6c03bc3b9be7921ab7f4143e18181286c"
   end
 
   depends_on "go" => :build

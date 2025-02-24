@@ -1,18 +1,18 @@
 class Code2prompt < Formula
   desc "CLI tool to convert your codebase into a single LLM prompt"
   homepage "https:github.commufeedvhcode2prompt"
-  url "https:github.commufeedvhcode2promptarchiverefstagsv2.0.0.tar.gz"
-  sha256 "cf08be573e816ebe8852cd8afa6fd122f6b5c00c081ac058ada326647cf8251c"
+  url "https:github.commufeedvhcode2promptarchiverefstagsv2.1.0.tar.gz"
+  sha256 "f1864a5d9e8e23270e0ef17ec56d709dad0ba4134950cf72b310a63b548b5c2d"
   license "MIT"
   head "https:github.commufeedvhcode2prompt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4f179492006ab58d5c5580a03a7dc21d673153aa285c07575d6e7a587202f8da"
-    sha256 cellar: :any,                 arm64_sonoma:  "f0a0f2e88c04be7c391912f28028287e098a506a142647b6d0064e8858576639"
-    sha256 cellar: :any,                 arm64_ventura: "b7899afb82de80cb90b75839b97a32dc5f91f2ea07ba1468df6d6350dad33df8"
-    sha256 cellar: :any,                 sonoma:        "202ed5eb3d2fc4f0a9b7538d1c9c367d4444c54ef5ab5c918804ef7c6f562b35"
-    sha256 cellar: :any,                 ventura:       "a62b2139d7aed8266d802ff9ff859dd5b0a8819d02d3df56db5531cc7999b28b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7c755d05cdb1ea38d6ea26f861d95d102e638f2161e788e25d48194af566f2e"
+    sha256 cellar: :any,                 arm64_sequoia: "a1dc66e144a2dfeff7dda031cc0d16632d282119d736b0993cf50a7a5b005b67"
+    sha256 cellar: :any,                 arm64_sonoma:  "8c40b3ece87ed6c35ea242579e781faf9fd20686a94b7fe432abe3a13ab32736"
+    sha256 cellar: :any,                 arm64_ventura: "db469773a77d1e02a4ddb2a95a451eb8615aca0ef682e40bd6101b789887f999"
+    sha256 cellar: :any,                 sonoma:        "20723e1b0317cc845d3a485f4bc117e2555d302f897e91711bf15f463da9af09"
+    sha256 cellar: :any,                 ventura:       "2dd202385ad7dd7ae77789cd49776a2ca7156f99040d26fcb5fc926bde3bb57b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9344860f7461bba1dae2a42a0d29c35279a5fde630d1dc1589137de249cdcdfa"
   end
 
   depends_on "pkgconf" => :build

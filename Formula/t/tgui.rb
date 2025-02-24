@@ -1,10 +1,9 @@
 class Tgui < Formula
   desc "GUI library for use with sfml"
   homepage "https:tgui.eu"
-  url "https:github.comtexusTGUIarchiverefstagsv1.7.0.tar.gz"
-  sha256 "7d40359770e2f8e534a57332c99fd56c72cf79a8b59642676e01394fe05cb1fa"
+  url "https:github.comtexusTGUIarchiverefstagsv1.8.0.tar.gz"
+  sha256 "d2e56ac67972d4345b4fddeae6751e86819e886097d33c6e93f6809efaae70e2"
   license "Zlib"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,13 +11,12 @@ class Tgui < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "080aa369e3989af0d6356474269a0fbf23a87dca6004225a830b3d1ed35fd0d7"
-    sha256 cellar: :any,                 arm64_sonoma:  "220cd61b22a0bc34084d3a0e0e3b37ee0e8e7b4cefe0c9cd2a3b6477d22b52eb"
-    sha256 cellar: :any,                 arm64_ventura: "0ac91f25c61424cbac1b04aaea23a0180dbc0b2e276695271479e0af17323ac6"
-    sha256 cellar: :any,                 sonoma:        "7f092bf4268f8503af9673cab2ebfaf3e36178dc4c630b06da9201eeaec9f551"
-    sha256 cellar: :any,                 ventura:       "c92b6d820ea57fd04dad69efbd9d4a7a082cd8c0ae0e0a389e72540e6be2a667"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29d9dfeb5710e057b851722005b8caf9752b04904115bde7044f51a8881bb706"
+    sha256 cellar: :any,                 arm64_sequoia: "15ff78d8c464055c7944dc3d57c41c01789ba87ed9458909ef7a135690d526a0"
+    sha256 cellar: :any,                 arm64_sonoma:  "2299e5b4b46b72e25a2cca5b39a5be0ae48a1ee5360f905212b258457aad6789"
+    sha256 cellar: :any,                 arm64_ventura: "692587abd04e2d5269df879e6d2f53b72269e7a940560318f801dbd5cdbe806c"
+    sha256 cellar: :any,                 sonoma:        "3d01c3459b2750d8e0a2550930712b88889c0513b6cddd25fa3344903118f03d"
+    sha256 cellar: :any,                 ventura:       "ed77565acba8b915bd61752d6dfa5c59662d357d35d7b34155f98d26a1f50ae3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "464b4d2c59774b1aac1661da43a28d3c12e7e894eb5a8f4d6b2c8ba9b12092b0"
   end
 
   depends_on "cmake" => :build

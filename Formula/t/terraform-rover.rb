@@ -22,6 +22,7 @@ class TerraformRover < Formula
   # https:github.comim2nguyenroverissues125
   # https:github.comim2nguyenroverissues133
   deprecate! date: "2024-02-22", because: "depends on soon-to-be-deprecated terraform"
+  disable! date: "2025-02-24", because: "depends on terraform"
 
   depends_on "go" => :build
   depends_on "node"

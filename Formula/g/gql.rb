@@ -1,18 +1,18 @@
 class Gql < Formula
   desc "Git Query language is a SQL like language to perform queries on .git files"
   homepage "https:amrdeveloper.github.ioGQL"
-  url "https:github.comAmrDeveloperGQLarchiverefstags0.36.0.tar.gz"
-  sha256 "741a5160e4f60f4b19fa55a0ad265207393d8799576075cd2cf6b2494fa182f2"
+  url "https:github.comAmrDeveloperGQLarchiverefstags0.37.0.tar.gz"
+  sha256 "56cd23d5d8236c0e103195cdf284b773844eccd8f3caa0b6b7b473df1503baea"
   license "MIT"
   head "https:github.comAmrDeveloperGQL.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1cfcf9e9c70b4883b51f7eccbfa50fa101af57f8ed6ee766bb15f6a8c802621"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef15ac7fa7faeea0d975f273e759343521d8acb6cecbf0bf71e8a95b9237a178"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d728dac46e7bf5d696694bb8c451e3a4e5cc64643ff150aefea0d52127708c96"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4ea102723a836bd4df36467debf17f8c281399c16dd8356a2c1e8cfedbb57bbc"
-    sha256 cellar: :any_skip_relocation, ventura:       "916f098fd3282615228fa26babe703a7d2ab7e6dcd1fc6f5801e802f365637d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f4615e5a45b78aa3e6ab6849cdbb352d6f297e5756b31f4c239b093af398b04"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90f2c8ffc7d36eaf22cc442045428f59e47234277162aae07ba975bf9ddc1802"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f582bbd42c0d5cfd49982581f43c4cf28bd8cf6a81d8b91eecbcd7ed64c433e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d136ead59c7e6a5ff5e87e9a2aa0df9badbab9a6cb3e43be843a11d01da52d2d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "71068d471ed38f63c0038accf17734c02c737c70de501aad3edbc1034a1a9338"
+    sha256 cellar: :any_skip_relocation, ventura:       "b0130e6d00ae6db3aa7032b1b841fc9a7beae6d3ad1709c7f54caeb9f17bc58b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88307577f7da841ef7432ba83def7d627d423d6fb909bb20630c17c00636b1b4"
   end
 
   depends_on "cmake" => :build

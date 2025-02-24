@@ -22,6 +22,7 @@ class JujuWait < Formula
   # [DEPRECATED] Since Juju 3, there's a native Juju command covering this -
   # https://juju.is/docs/olm/juju-wait-for. Please use that instead.
   deprecate! date: "2024-02-22", because: :deprecated_upstream
+  disable! date: "2025-02-24", because: :deprecated_upstream
 
   depends_on "juju"
   depends_on "libyaml"
