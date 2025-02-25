@@ -1,6 +1,6 @@
 class Spatialindex < Formula
   desc "General framework for developing spatial indices"
-  homepage "https:libspatialindex.org"
+  homepage "https:libspatialindex.orgenlatest"
   url "https:github.comlibspatialindexlibspatialindexreleasesdownload2.1.0spatialindex-src-2.1.0.tar.bz2"
   sha256 "c59932395e98896038d59199f2e2453595df6d730ffbe09d69df2a661bcb619b"
   license "MIT"

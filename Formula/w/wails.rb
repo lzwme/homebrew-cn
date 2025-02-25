@@ -1,18 +1,18 @@
 class Wails < Formula
   desc "Create beautiful applications using Go"
   homepage "https:wails.io"
-  url "https:github.comwailsappwailsarchiverefstagsv2.10.tar.gz"
-  sha256 "fb167f939af39496f2aa193406d66913aa811ac593668d3725b90c933d5da29a"
+  url "https:github.comwailsappwailsarchiverefstagsv2.10.1.tar.gz"
+  sha256 "b070be6f9ac1e74f748cf68acc4a774d4f392d4a0992ea4967c73d4990b8b43f"
   license "MIT"
   head "https:github.comwailsappwails.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f37c08f4eedd52fcc8388822488aa3936b24638e0eaa28d1cb13ec24ca2f563"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f37c08f4eedd52fcc8388822488aa3936b24638e0eaa28d1cb13ec24ca2f563"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6f37c08f4eedd52fcc8388822488aa3936b24638e0eaa28d1cb13ec24ca2f563"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7890d919d9491bf947a8dc0ca6da2266a850cc8815ab51f9519f88f84a825588"
-    sha256 cellar: :any_skip_relocation, ventura:       "7890d919d9491bf947a8dc0ca6da2266a850cc8815ab51f9519f88f84a825588"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e61512a7494d2124bd65cc65531e65bbfd19cf5bc5ff5bc8956c4b97b034a115"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eedfb70909484e5c4da70504dbcaa205bfef6216b7375ad6331a117f64855d68"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eedfb70909484e5c4da70504dbcaa205bfef6216b7375ad6331a117f64855d68"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "eedfb70909484e5c4da70504dbcaa205bfef6216b7375ad6331a117f64855d68"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ef05dad5de93685291443e22e2660fb36e916b4386d84f1340a7db0bf8003e1f"
+    sha256 cellar: :any_skip_relocation, ventura:       "ef05dad5de93685291443e22e2660fb36e916b4386d84f1340a7db0bf8003e1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b449adccd4326fd0fba4faf293798d7a3e3ab0f258616cbfc22fcc528b5496d"
   end
 
   depends_on "go"

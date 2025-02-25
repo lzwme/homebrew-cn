@@ -1,18 +1,18 @@
 class Cpuid < Formula
   desc "CPU feature identification for Go"
   homepage "https:github.comklauspostcpuid"
-  url "https:github.comklauspostcpuidarchiverefstagsv2.2.9.tar.gz"
-  sha256 "d0aa17338c623af41fe17bb542ebaac5313a56c5f0a400577ee89319d054b4ca"
+  url "https:github.comklauspostcpuidarchiverefstagsv2.2.10.tar.gz"
+  sha256 "6064676aebe4848dff0aee73fe73efd0ecbf6f521faff94d266ce88283cf568b"
   license "MIT"
   head "https:github.comklauspostcpuid.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f95188e40b7e55fc5451537908b22ccb1d6ad6c092834a69c2a8d99de6f53fe7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f95188e40b7e55fc5451537908b22ccb1d6ad6c092834a69c2a8d99de6f53fe7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f95188e40b7e55fc5451537908b22ccb1d6ad6c092834a69c2a8d99de6f53fe7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1860157d6df98e8353bb72b0201c0a044a4c7766e6d8e0d764abe1e49bfc749f"
-    sha256 cellar: :any_skip_relocation, ventura:       "1860157d6df98e8353bb72b0201c0a044a4c7766e6d8e0d764abe1e49bfc749f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cb7c366b4d4e397d0a7c0f76ce0319756403b89cc1302a27eae587f201b5646"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "407aa5d6b2f38800ef7c9163a0b36458accb97585c79216200fbafd66a734c0c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "407aa5d6b2f38800ef7c9163a0b36458accb97585c79216200fbafd66a734c0c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "407aa5d6b2f38800ef7c9163a0b36458accb97585c79216200fbafd66a734c0c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ecfa112b44890d4e7f642b877c481cb42f97bbde314fc3f129a2c013dd897e60"
+    sha256 cellar: :any_skip_relocation, ventura:       "ecfa112b44890d4e7f642b877c481cb42f97bbde314fc3f129a2c013dd897e60"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ce13ee61313acec4f188de11c6707403489972057906b950aaf19bf5af8c6f6"
   end
 
   depends_on "go" => :build

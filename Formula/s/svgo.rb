@@ -1,6 +1,6 @@
 class Svgo < Formula
   desc "Nodejs-based tool for optimizing SVG vector graphics files"
-  homepage "https:github.comsvgsvgo"
+  homepage "https:svgo.dev"
   url "https:github.comsvgsvgoarchiverefstagsv3.3.2.tar.gz"
   sha256 "bf79f18acd85764bd12ed7335f2d8fdc7d11760e7c4ed8bd0dc39f1272825671"
   license "MIT"

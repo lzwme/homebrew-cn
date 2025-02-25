@@ -1,6 +1,6 @@
 class Scnlib < Formula
   desc "Scanf for modern C++"
-  homepage "https:scnlib.dev"
+  homepage "https:www.scnlib.dev"
   url "https:github.comeliaskosunenscnlibarchiverefstagsv4.0.1.tar.gz"
   sha256 "ece17b26840894cc57a7127138fe4540929adcb297524dec02c490c233ff46a7"
   license "Apache-2.0"

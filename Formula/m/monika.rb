@@ -1,17 +1,17 @@
 class Monika < Formula
   desc "Synthetic monitoring made easy"
   homepage "https://monika.hyperjump.tech"
-  url "https://registry.npmjs.org/@hyperjumptech/monika/-/monika-1.21.2.tgz"
-  sha256 "a9280ac4c288a79c77c28263042fab1d4cc785ef08f94d0cfd3cb25b7e40dce4"
+  url "https://registry.npmjs.org/@hyperjumptech/monika/-/monika-1.22.0.tgz"
+  sha256 "2b2ed6ac3186d72a9f060efb62d183c4b156494b2c37de9808c108f54655b84c"
   license "MIT"
 
   bottle do
-    sha256                               arm64_sequoia: "cf7bd831f3b50b22b53a45be3fc9468fd3449e77d16ecc6a14a7fc91a0c2048e"
-    sha256                               arm64_sonoma:  "02f1de44e451e3bf0595b7d12f1905534d9bbb377e062c61828221464f41b370"
-    sha256                               arm64_ventura: "ee92b0a0707890c6ec213c46e5d2f4812ba1fc4a867eb82129c8e1a8cbb1f95f"
-    sha256                               sonoma:        "d7a43499c51096dbfb3c6e75ff208c97f56a455f8280d24d64e99a8e17f959dd"
-    sha256                               ventura:       "e29d95f54d6d00802440e3531649ac1253ba2a4843e029cb61f10d7badfb3753"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad68335a7a0fad36f34fa12a266e997cbc583f6ade8c160bc70278bf6e3f82ca"
+    sha256                               arm64_sequoia: "b454a3a9c3ab9b5ae518e59e49ffa26ef65cf251158612f1bf035de1d8a94e73"
+    sha256                               arm64_sonoma:  "dbb6ee7aad6c0737edfcdb194fb4c198b9314ad759a3c09136cd5a934da61fe4"
+    sha256                               arm64_ventura: "432a1fa231644bc3afab36e6b57c1103a7763bbb4c32e308edb9f83adffa7541"
+    sha256                               sonoma:        "6d1e3680020b3fb8fabd44383bd2ef3d802742142781bac50f3602ab527932c7"
+    sha256                               ventura:       "36ff8854590a71d7ada5d70fbcbe314c1d8259a830fac7f86a06bff3427798a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a1daac5d355750602a48ef01fcc34867c21ce4a725659e431f94f277ac818ff"
   end
 
   depends_on "node"

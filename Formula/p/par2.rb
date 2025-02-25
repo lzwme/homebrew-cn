@@ -11,23 +11,26 @@ class Par2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "95cc7e3ca0290205fbe2fbe37ab41a5b06f09460cac8022934c1496de54da0ab"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ef5c6da210f1b3187afc10811d4018aa32d56e4b5838b3f8f0db6ac4161af8dc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "4a78c87048a0affed47c398b897881db15e3bb45e1e36d5120beb40c13f30c1c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "fb4dab9fec0be03e27ff19f97c08170b4603f01c232eb0b75f0f2422e34a9b19"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1a31a28b5aa927f4b5fbf4778e0df5ce27e567cfd1db41f60ad5374c70a7d24b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "62c24d1b510c7c2b76d34450ce6444e55e154ad43c357aa08a28eb2345fa35c9"
-    sha256 cellar: :any_skip_relocation, ventura:        "8b2bc4895eb17efe76871c2ea199119f2bbb0cba1c54d8bb468a6cc833e73ae5"
-    sha256 cellar: :any_skip_relocation, monterey:       "21124f8c1c080a67ee9ad88adbf361163031672a0a7446fead075644628bb56d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "8379fe417ad00b81929cef774072179d9f2497156a5b06b706a6cf182d2f93dd"
-    sha256 cellar: :any_skip_relocation, catalina:       "26609c45028599a4845f68cda2a5cd08c2a0dc37ae3987d4abf86aed99499f50"
-    sha256 cellar: :any_skip_relocation, mojave:         "cded10d8f18c5ab236ceb624854afb672681bd1a86f21e47d70de793db378580"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "35477bcfecd91b7fe885739737f576b63545aab51ba997bc60f9a74927b775dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68a34f74212b806d82f10515575e8f62a90eb2066d6fffb24c5f422a380854fb"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "795991988f29eb7e8df0f57048255c00746b50902eccce965ea17da9408f81ef"
+    sha256 cellar: :any,                 arm64_sonoma:  "2f5c0869b28661cea99e5279375b9bdfc8afa2096fcc3581429672b432ce1ca2"
+    sha256 cellar: :any,                 arm64_ventura: "f21d77bd344c16d64f1d44f8b309036fb79ef49e1c99cbf9e2247f24047ccb4b"
+    sha256 cellar: :any,                 sonoma:        "cfc8a814c3b8ba36172906eaa4154a4c005147fc4ae0f8b337a15c13ac76798e"
+    sha256 cellar: :any,                 ventura:       "d15d4e51a0fe805edb56606cca24c5080540e67f310aa768d367f4827f43ddd2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f150c779b555d4dae48eb29f99551489979909c9db4871ca62c022ec1eb2b6b"
+  end
+
+  on_macos do
+    depends_on "libomp"
   end
 
   def install
-    system ".configure", "--prefix=#{prefix}"
+    if OS.mac?
+      libomp = Formula["libomp"]
+      ENV.append_to_cflags "-Xpreprocessor -fopenmp -I#{libomp.opt_include} -L#{libomp.opt_lib} -lomp"
+    end
+
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 

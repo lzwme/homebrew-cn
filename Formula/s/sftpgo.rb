@@ -1,17 +1,17 @@
 class Sftpgo < Formula
   desc "Fully featured SFTP server with optional HTTPS, FTPS and WebDAV support"
-  homepage "https:github.comdrakkansftpgo"
-  url "https:github.comdrakkansftpgoreleasesdownloadv2.6.5sftpgo_v2.6.5_src_with_deps.tar.xz"
-  sha256 "d59ff577b786db01bce358c74b99faf9170e53451d89200d9a51276b67ae1e29"
+  homepage "https:sftpgo.com"
+  url "https:github.comdrakkansftpgoreleasesdownloadv2.6.6sftpgo_v2.6.6_src_with_deps.tar.xz"
+  sha256 "02d36a540e79ee877585c145cbe294bd48b03db98d2b577273cad4c8b6cf482c"
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 arm64_sequoia: "dd8ffef87c5e1d736d739ffbdb258611272ccb887a470529931f6fcd8f24c624"
-    sha256 arm64_sonoma:  "764b808d6d018cbb50d905e7cfa032d43e40bebe09ec9ed22117ca9dda5ab221"
-    sha256 arm64_ventura: "e496193a0c5cbf89b8ed3e65495cac46fc73467d77f78d250cda86e3b7289e94"
-    sha256 sonoma:        "b6cb2ff30c136936fbcb5639283fffd6c93ef1f1e19b18ead441b3a871751542"
-    sha256 ventura:       "b5a8dcf5b622e0104d9ac313f6118db1f08d7594517ed89cd3a00b077bb30baa"
-    sha256 x86_64_linux:  "bb4471bf1bb9a3a7927fd6c49e3b3e247638e69104d16be53dc2d3fcbcc04400"
+    sha256 arm64_sequoia: "618de2bf3a3e61caeb84a818715060a7793e35dea8309b529c42715e10382778"
+    sha256 arm64_sonoma:  "cf13ba2d5b0ef2cf8cc20ef3c6e7ba8719fcca93e88b545924ac0976dbc0d9bb"
+    sha256 arm64_ventura: "f5b1195ebb945df9faa935aff174de9305be4e66deb7d015271255c23df2293c"
+    sha256 sonoma:        "b0e1b0c942ab7489cae8fd45b1f8586ecccf2c9f95e08d3c21b762690e4af66e"
+    sha256 ventura:       "b8be7324b8fc6d0ba8c3d833043f042cf0a161d4c31242686ef0915773aad7cd"
+    sha256 x86_64_linux:  "e1b0617a0ea156c8d4a002fbfdeb8d3b1fa448e8bb8167dd9c5f5f0934af1efc"
   end
 
   depends_on "go" => :build

@@ -24,15 +24,11 @@ class Bold < Formula
     else Hardware.oldest_cpu
     end
 
-    args = %W[
-      --prefix #{prefix}
-      -Doptimize=ReleaseSafe
-      -Dstrip=true
-    ]
+    args = ["-Dstrip=true"]
 
     args << "-Dcpu=#{cpu}" if build.bottle?
 
-    system "zig", "build", *args
+    system "zig", "build", *args, *std_zig_args
   end
 
   test do

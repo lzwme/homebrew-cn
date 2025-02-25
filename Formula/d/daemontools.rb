@@ -12,14 +12,18 @@ class Daemontools < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5f93a24d9a69ffa3bad993a4a92a5ebc5023ac175741f71d5a61491f01a1c1c6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a4d55eb82da586265d67f9fdb355715ee396417a002ed2e121d40b51ac3d0863"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "991fcc92f0c958384e3f434fab21761059a51fa58cac8c345ce61cfc98972863"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5c9a82746468fb2b1eaea00ff04d1202099d6a0af27dc7e6287f1745a44028e9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "6835770574462a78160eb7c9d9139b18a493804b5984409a549b394eb90c5fe5"
-    sha256 cellar: :any_skip_relocation, ventura:        "265702ded875f506c1e35e56c8620cb108fce3dd6ed2b5809e792e15c26a0509"
-    sha256 cellar: :any_skip_relocation, monterey:       "e57d6d6f618a545f245c2465038d63946310aa08e887eda8526dd154aff9db21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0b6e2a4ebdbbc3105db2cc0425d85d782a5f0cccd10def1e0a7c63c05e13c2b1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1caba2a88c37b416bf48c950f376693b1412a06f54bc62c815a6e8679f30b41d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4079bdac80d383b3423b5daf190a2abc5583db2d5e33939ccd0e3c637ab57033"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "414c519a3f46d28c74e28d95f882b68dae09dcd9604b8f207c93539d4af34cd3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b2fbc29b09bf37004b7a31ff2a7f57bd705e757cef0b1970b2b9723f624bc8d9"
+    sha256 cellar: :any_skip_relocation, ventura:       "813c64aa076209409ab420484007a7d43e7bfa86ce26842829d8800501e9b138"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f527c08fac6754686403613d81fe344434ead8477130d596ffa05862b4962fe"
+  end
+
+  resource "man" do
+    url "https:deb.debian.orgdebianpoolmainddaemontoolsdaemontools_0.76-8.1.debian.tar.xz"
+    sha256 "b9a1ed0ea88172d921738237c48e67cbe3b04e5256fea8ec00f32116c9ef74c0"
   end
 
   # Fix build failure due to missing #include <errno.h> on Linux.
@@ -49,6 +53,10 @@ class Daemontools < Formula
 
       system "packagecompile"
       bin.install Dir["command*"]
+    end
+
+    resource("man").stage do
+      man8.install Dir["daemontools-man*.8"]
     end
   end
 

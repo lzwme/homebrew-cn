@@ -1,8 +1,8 @@
 class BareosClient < Formula
   desc "Client for Bareos (Backup Archiving REcovery Open Sourced)"
   homepage "https:www.bareos.com"
-  url "https:github.combareosbareosarchiverefstagsRelease23.1.1.tar.gz"
-  sha256 "468fbe12a509b65ca3de5041a901eb0cf1da5c9a4f1729ca57ed39f45fd428e7"
+  url "https:github.combareosbareosarchiverefstagsRelease24.0.1.tar.gz"
+  sha256 "8bc642ba8b96e5975251aa68c7529ac44f27e91ca1f0a0c2a059356761075efc"
   license "AGPL-3.0-only"
 
   livecheck do
@@ -11,19 +11,24 @@ class BareosClient < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "2ad752307a647086463caa7c0c66392a19963b963e76c6278a4303581ea82ee3"
-    sha256 arm64_sonoma:  "cf629a37f5340eb00e82b38136c78d59a86353f8a0ca013645a3f331563d581b"
-    sha256 arm64_ventura: "945c8b7a8c7a61b923eaad54f22cf9e3106d7b7e9a18049626e559511a2deaeb"
-    sha256 sonoma:        "95fab9a2bdfc872b0bc5ffec51149d57aa7151a9f868216f646d4a4e443be511"
-    sha256 ventura:       "5e7eb17048a2087046dc9c4bfbee31bd463a88098d5fd7fae8186815e38469a5"
-    sha256 x86_64_linux:  "d7ac818be759920e3a5fe1f97a167245fb5e2f5399ee7ddd3ad639a776449385"
+    sha256 arm64_sequoia: "b29347f35018fb95e04816cb91c4fcab7b0818c94975df87fc50fa77ffe3f967"
+    sha256 arm64_sonoma:  "8d5be7d7a9e0f1fa91874ed15688f75b68f57395b0901f90d7247bb64ab35007"
+    sha256 arm64_ventura: "ad9a62670f5816ad63e075788808aeef8de07bbadd08f45e18a585300189516f"
+    sha256 sonoma:        "2acbbfaff90e57e6efb5dd4d7014995959784674477f2ba86d376b3bf7e24609"
+    sha256 ventura:       "669991fa52951fcb757226d23df6d78834dd34bae10863d2f494023bf1065356"
+    sha256 x86_64_linux:  "d8de68039c06cd98fabbd0eba0bfd779ca013682ff1bcfc8ede1997609acf7f7"
   end
 
+  depends_on "cli11" => :build
   depends_on "cmake" => :build
+  depends_on "cpp-gsl" => :build
+  depends_on "fmt" => :build
+  depends_on "utf8cpp" => :build
   depends_on "jansson"
   depends_on "lzo"
   depends_on "openssl@3"
   depends_on "readline"
+  depends_on "xxhash"
 
   uses_from_macos "zlib"
 
@@ -56,6 +61,10 @@ class BareosClient < Formula
     inreplace "corecmakeFindReadline.cmake",
               "${HOMEBREW_PREFIX}optreadlineliblibreadline.a",
               Formula["readline"].opt_libshared_library("libreadline")
+
+    inreplace "coresrcfiledCMakeLists.txt",
+              "bareos-fd PROPERTIES INSTALL_RPATH \"@loader_path..${libdir}\"",
+              "bareos-fd PROPERTIES INSTALL_RPATH \"${libdir}\""
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
                     "-DENABLE_PYTHON=OFF",

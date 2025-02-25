@@ -25,12 +25,11 @@ class Superhtml < Formula
     end
 
     args = %W[
-      --prefix #{prefix}
       -Dforce-version=#{version}
     ]
 
     args << "-Dcpu=#{cpu}" if build.bottle?
-    system "zig", "build", *args
+    system "zig", "build", *args, *std_zig_args
   end
 
   test do

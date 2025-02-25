@@ -1,8 +1,8 @@
 class Pdal < Formula
   desc "Point data abstraction library"
   homepage "https:www.pdal.io"
-  url "https:github.comPDALPDALreleasesdownload2.8.3PDAL-2.8.3-src.tar.bz2"
-  sha256 "13dfdb0d634bdd568b351fd535aaa03f7611df4c2cdb8be938117751355ad09b"
+  url "https:github.comPDALPDALreleasesdownload2.8.4PDAL-2.8.4-src.tar.bz2"
+  sha256 "c27dc79af0b26f9cb3209b694703e9d576f1b0c8c05b36206fd5e310494e75b5"
   license "BSD-3-Clause"
   head "https:github.comPDALPDAL.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Pdal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "26d1d4ed1b031144b62268a9c0f74cf36f9ecbf7e27a3f5fa0ef75a4e6c9f091"
-    sha256 cellar: :any,                 arm64_sonoma:  "56fbea7788025185698ee4cf03b968680d74eff15642699377e4d173f5fff98d"
-    sha256 cellar: :any,                 arm64_ventura: "2fd2da8d217867eb5352d55ed8c57e3eda314701ff1e1f6e52d73209eedd08d3"
-    sha256 cellar: :any,                 sonoma:        "325e064a1414f52472476b7d2e2995a0d1ce9aec1837bbb566d457e57350f1dd"
-    sha256 cellar: :any,                 ventura:       "20e92ec713b9ff101f8d2a7825a712da679b7d90370ee4d063dee8a92a7011df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8018c396ed11230df80026163d5170818d45f94d3ada48a1248610c642af3933"
+    sha256 cellar: :any,                 arm64_sequoia: "dd95047f6de4b38a442111118ce2919521f8f2a16e5ab10b852ba2393e8a7492"
+    sha256 cellar: :any,                 arm64_sonoma:  "8c728e287001a7ac379b008d61ab69a6cc386c400c76c1d4213081554a80928f"
+    sha256 cellar: :any,                 arm64_ventura: "b0c76a50476b61a65383d23a5eab04d0ef440dd13ec21897f9c4fa98a91a72e6"
+    sha256 cellar: :any,                 sonoma:        "211bab94d8693306e418561c117a4c782bd874d458d2de73b29803216f029207"
+    sha256 cellar: :any,                 ventura:       "e474576399ed86e49ec9eed7cb8e8f565fa1d18b678e75fcc38bae8992640c6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4d4645ee0ea9b43b2694f9b6c8ea89481fa1bcaa62cc6269209fc04825bf748"
   end
 
   depends_on "cmake" => :build

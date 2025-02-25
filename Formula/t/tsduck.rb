@@ -1,24 +1,18 @@
 class Tsduck < Formula
   desc "MPEG Transport Stream Toolkit"
   homepage "https:tsduck.io"
-  url "https:github.comtsducktsduckarchiverefstagsv3.39-3956.tar.gz"
-  sha256 "1a391504967bd7a6ffb1cabd98bc6ee904a742081c0a17ead4d6639d58c82979"
+  url "https:github.comtsducktsduckarchiverefstagsv3.40-4165.tar.gz"
+  sha256 "d499fd4571e3ebb6660de70b0ca3217423bf8d66b929e7bc0b92cfb6f01c9d04"
   license "BSD-2-Clause"
+  head "https:github.comtsducktsduck.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "85fcccc144054ae42b8e3fc935b61a17f3de645bebbdf937f27b4b844fcbea1e"
-    sha256 cellar: :any,                 arm64_sonoma:  "d6971736a613a09dc3ff5d4b6c2596f448e4430ce704c7ab4f31480a32c2821a"
-    sha256 cellar: :any,                 arm64_ventura: "bb3a3198574de64b13c459858e3d9e4a0bd5c4df853d77c2a871cfb68891f010"
-    sha256 cellar: :any,                 sonoma:        "49de30577f310a4f960c8edf64e33f1313cf40171e7e60a602d50d1f68ac0bdf"
-    sha256 cellar: :any,                 ventura:       "18819fa81eaebdf055ab92176acb3e06962969e1efb12bd522aea05a45303f21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27c7b137281536685aad911ccab6fe3dd99aa6fbea5d65e4b286d340d7446b5c"
-  end
-
-  head do
-    url "https:github.comtsducktsduck.git", branch: "master"
-
-    # will be needed for the next release
-    uses_from_macos "zlib"
+    sha256 cellar: :any,                 arm64_sequoia: "8811f4d35772f8d2f33d296e83dbfa5e0a871d4b3199d4eaca70f51c371b1397"
+    sha256 cellar: :any,                 arm64_sonoma:  "0c00dae84b5fed39ea58cd7026d0fab834e06c0fa7ec6a1e291edb1af22c7d9b"
+    sha256 cellar: :any,                 arm64_ventura: "51c022c41fea15c8aa592bc07a52134c3c06d0fd6363859cdd1b11586d8dba9d"
+    sha256 cellar: :any,                 sonoma:        "86170581f6a47ae249719e20f1f6d6ae0c0790629e259645f19d0cd9969df73b"
+    sha256 cellar: :any,                 ventura:       "b32c4b0d3949c9d4002c792ff62ef31a5e203437ddf06c42c3a196961ef38e93"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ef0a792b04b22c32b7d6fbacf6fe97f0f36ce8e5306a772db4fa4d8986e7105"
   end
 
   depends_on "asciidoctor" => :build
@@ -36,10 +30,18 @@ class Tsduck < Formula
   uses_from_macos "curl"
   uses_from_macos "libedit"
   uses_from_macos "pcsc-lite"
+  uses_from_macos "zlib"
 
   on_macos do
     depends_on "bash" => :build
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1599
     depends_on "make" => :build
+  end
+
+  # Needs clang 16
+  fails_with :clang do
+    build 1599
+    cause "Requires full C++20 support"
   end
 
   def install

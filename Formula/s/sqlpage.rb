@@ -1,18 +1,18 @@
 class Sqlpage < Formula
   desc "Web app builder using SQL queries to create dynamic webapps quickly"
   homepage "https:sql-page.com"
-  url "https:github.comsqlpageSQLpagearchiverefstagsv0.33.0.tar.gz"
-  sha256 "32a6fc9e8c1c41a50a1b64df35b5b1bcf279c3f647a65279a466c7b0d62973c7"
+  url "https:github.comsqlpageSQLpagearchiverefstagsv0.33.1.tar.gz"
+  sha256 "b41f289292e528b1d72dff0efbca10bbc8238a0496dd9d60dd566ce190359fcb"
   license "MIT"
   head "https:github.comsqlpageSQLpage.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "272bfe9898241a2b108f81ebf3341366fdc4c9c7da795b9a64f36d2e251bf749"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c46f69f1d9e1a5c2258c4b275997ada4f7be3437c438dfacdcc275b5a1e536a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5b85bf3f143758ac1a79e83be47e92244882c2266cf1e4e899a6bc9894e32a00"
-    sha256 cellar: :any_skip_relocation, sonoma:        "262f06fe4da4aa4f898c836fce499e6ed0bad54fdca0e4e10d79b380ac58b17b"
-    sha256 cellar: :any_skip_relocation, ventura:       "f6491ca63c2caf4c1fd3a123fac59cd7c12d701e153389cd813213a13e5bb462"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7376d9ef646e04048229a7e7a839cc985c7726dd1b7bb11f9415e007dd1dbfea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5b277e32a10b8b0f5e01eeb2385c2c7863f9bda8910bf4349b286e5aef3f703"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "34f61bfc9655cb6573a8cd7fe26a9dce907b74936df213cda5dbfbb55a096a56"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f1a36d0fe75c46a5ed8333067be544dd0013e1b2fca07be69dc0eccc13221407"
+    sha256 cellar: :any_skip_relocation, sonoma:        "432b1aed1bf0ec9c553e3df05a31e5306465fae89656fe9e6a0c0753107df613"
+    sha256 cellar: :any_skip_relocation, ventura:       "e82e68b7b7a84a8ab38e62460114730e0a850b51445200287c68fc9c78418ece"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32fb9b725a76631fd85f2b341a7abc170d626798ed3522dcbf00c65be62fa220"
   end
 
   depends_on "rust" => :build

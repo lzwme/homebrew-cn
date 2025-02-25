@@ -1,6 +1,6 @@
 class StructurizrCli < Formula
   desc "Command-line utility for Structurizr"
-  homepage "https:structurizr.com"
+  homepage "https:docs.structurizr.comcli"
   url "https:github.comstructurizrclireleasesdownloadv2024.12.07structurizr-cli.zip"
   sha256 "3c22f0820f92496514030e7e99af234cac710ade373f157dd3dc8abe3bc7af37"
   license "Apache-2.0"

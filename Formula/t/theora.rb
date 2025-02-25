@@ -4,8 +4,8 @@ class Theora < Formula
   license "BSD-3-Clause"
 
   stable do
-    url "https:downloads.xiph.orgreleasestheoralibtheora-1.1.1.tar.bz2", using: :homebrew_curl
-    mirror "https:ftp.osuosl.orgpubxiphreleasestheoralibtheora-1.1.1.tar.bz2"
+    url "https:ftp.osuosl.orgpubxiphreleasestheoralibtheora-1.1.1.tar.bz2"
+    mirror "https:mirror.csclub.uwaterloo.caxiphreleasestheoralibtheora-1.1.1.tar.bz2"
     sha256 "b6ae1ee2fa3d42ac489287d3ec34c5885730b1296f0801ae577a35193d3affbc"
 
     # Fix -flat_namespace being used on Big Sur and later.
@@ -17,7 +17,7 @@ class Theora < Formula
 
   livecheck do
     url "https:ftp.osuosl.orgpubxiphreleasestheora?C=M&O=D"
-    regex(href=.*?libtheora[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(%r{href=(?:["']?|.*?)libtheora[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do

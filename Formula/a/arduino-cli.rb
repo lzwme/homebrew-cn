@@ -1,8 +1,8 @@
 class ArduinoCli < Formula
   desc "Arduino command-line interface"
-  homepage "https:github.comarduinoarduino-cli"
-  url "https:github.comarduinoarduino-cliarchiverefstagsv1.1.1.tar.gz"
-  sha256 "df09593aee5f9e03b4aa4321fca90def01336f11681d87d57e5c73e4574a92cc"
+  homepage "https:arduino.github.ioarduino-clilatest"
+  url "https:github.comarduinoarduino-cliarchiverefstagsv1.2.0.tar.gz"
+  sha256 "f576e40873037e39cdd1a8297b34aa8305b53e2268307944765778a925dba0f1"
   license "GPL-3.0-only"
   head "https:github.comarduinoarduino-cli.git", branch: "master"
 
@@ -12,12 +12,12 @@ class ArduinoCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51b5219c8412797db3f85fe4b76b7f798888b196ecb2b77a300e1fa8850bcbf5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "387e38355220131a489480a27033753f75f3e5610d0fc21ef1e927b3e104d54f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6aa0feb6773b341ad300530935f7a260f6b6d7813cbebd9da874fd81bd533605"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f9ecb96cf5fba04ee9d2703d6e9bf498069a34d15f65383ac3513f70e1f0c25c"
-    sha256 cellar: :any_skip_relocation, ventura:       "c49eb0ad4e988fbe9c0168a6f6ae87bb48bcfe704483a5b89c96aa7a0023e4cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14865f8788eb71b03378ff7dc9c6d444f1bbab7b079dc8b770828cabd4daa042"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "65c18aeb457e1a171941dac4d882f57467dd1fe886bc02e77e19bf91c793b2b2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "443e3135d25adec258831b6022fb88ae84cf6e00693c8eb57a9494311096effa"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fde8ba1329da35e65f4a2f9644a9379bc34cbf3575c5d253bdfd285810e5f783"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e474d3c5083fde1f94a3b784dc82ed48f43098c3f03414d81aa1f9a73aeec27e"
+    sha256 cellar: :any_skip_relocation, ventura:       "fefb8aa5d54ba49d51eb1596796ea112f074ca4e412d287043031a222b536aaa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fba9b977f224e3a63dd8f946c6fd75141e178a4d285bf62b8144d91282ae571"
   end
 
   depends_on "go" => :build
@@ -25,9 +25,9 @@ class ArduinoCli < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comarduinoarduino-cliversion.versionString=#{version}
-      -X github.comarduinoarduino-cliversion.commit=#{tap.user}
-      -X github.comarduinoarduino-cliversion.date=#{time.iso8601}
+      -X github.comarduinoarduino-cliinternalversion.versionString=#{version}
+      -X github.comarduinoarduino-cliinternalversion.commit=#{tap.user}
+      -X github.comarduinoarduino-cliinternalversion.date=#{time.iso8601}
     ]
     system "go", "build", *std_go_args(ldflags:)
 

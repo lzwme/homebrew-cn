@@ -1,14 +1,14 @@
 class Libvorbis < Formula
-  desc "Vorbis General Audio Compression Codec"
-  homepage "https://xiph.org/vorbis/"
-  url "https://downloads.xiph.org/releases/vorbis/libvorbis-1.3.7.tar.xz", using: :homebrew_curl
-  mirror "https://ftp.osuosl.org/pub/xiph/releases/vorbis/libvorbis-1.3.7.tar.xz"
+  desc "Vorbis general audio compression codec"
+  homepage "https:xiph.orgvorbis"
+  url "https:ftp.osuosl.orgpubxiphreleasesvorbislibvorbis-1.3.7.tar.xz"
+  mirror "https:github.comxiphvorbisreleasesdownloadv1.3.7libvorbis-1.3.7.tar.xz"
   sha256 "b33cc4934322bcbf6efcbacf49e3ca01aadbea4114ec9589d1b1e9d20f72954b"
   license "BSD-3-Clause"
 
   livecheck do
-    url "https://ftp.osuosl.org/pub/xiph/releases/vorbis/?C=M&O=D"
-    regex(/href=.*?libvorbis[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    url "https:ftp.osuosl.orgpubxiphreleasesvorbis?C=M&O=D"
+    regex(%r{href=(?:["']?|.*?)libvorbis[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -26,7 +26,7 @@ class Libvorbis < Formula
   end
 
   head do
-    url "https://gitlab.xiph.org/xiph/vorbis.git", branch: "master"
+    url "https:gitlab.xiph.orgxiphvorbis.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -37,22 +37,22 @@ class Libvorbis < Formula
   depends_on "libogg"
 
   resource("oggfile") do
-    url "https://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg"
+    url "https:upload.wikimedia.orgwikipediacommonscc8Example.ogg"
     sha256 "f57b56d8aae4c847cf01224fb45293610d801cfdac43d932b5eeab1cd318182a"
   end
 
   def install
-    system "./autogen.sh" if build.head?
+    system ".autogen.sh" if build.head?
     inreplace "configure", " -force_cpusubtype_ALL", ""
-    system "./configure", *std_configure_args
+    system ".configure", *std_configure_args
     system "make", "install"
   end
 
   test do
-    (testpath/"test.c").write <<~C
+    (testpath"test.c").write <<~C
       #include <stdio.h>
       #include <assert.h>
-      #include "vorbis/vorbisfile.h"
+      #include "vorbisvorbisfile.h"
       int main (void) {
         OggVorbis_File vf;
         assert (ov_open_callbacks (stdin, &vf, NULL, 0, OV_CALLBACKS_NOCLOSE) >= 0);
@@ -66,6 +66,6 @@ class Libvorbis < Formula
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lvorbisfile",
                    "-o", "test"
     assert_match "2 channel, 44100Hz\nEncoded by: Lavf59.27.100",
-                 shell_output("./test < Example.ogg")
+                 shell_output(".test < Example.ogg")
   end
 end

@@ -4,15 +4,16 @@ class Zellij < Formula
   url "https:github.comzellij-orgzellijarchiverefstagsv0.41.2.tar.gz"
   sha256 "12e7f0f80c1e39deed5638c4662fc070855cee0250a7eb1d76cefbeef8c2f376"
   license "MIT"
+  revision 1
   head "https:github.comzellij-orgzellij.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3985d14a2d7fc0c66ed878ed2c600f5cd238229f694c9087d011b6a82b289185"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "acb39aaf105fbd7512268fa99df97b1869752078aeb8f76c84a4d5e196716738"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6f7515d90e07423228cdc194e31352d808dae128ed5daa982bb8b570c14bd0ec"
-    sha256 cellar: :any_skip_relocation, sonoma:        "515bd15cac534bd20f41aa2ebc77c45646e2dd8bc1a8c41ef307e89988b52b8c"
-    sha256 cellar: :any_skip_relocation, ventura:       "0535d3328feca430ce40127148a36b13510d993f0f34977700edac74c136485b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e3bf727ff5681b0f7a4b83173f259f7b34f6d95bccbc4d41669c481d3652800"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "655a14105b71be3b1700071975b75bfa48f975f37ce7926bece12b3a9e92028c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc009615009b732e182ce55a7fcefb7509cc380b21291e2559474cc3df77c07d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fd94c8d0825ec15968d604d9c5f414294b45e475e2f2c5287edc9405b0d4a9cb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "92066edbda62a75e2a33d4fb215a7d013b44750e30884714defcba388b9df8d2"
+    sha256 cellar: :any_skip_relocation, ventura:       "34dcb5019bec333fd3b6e0b7b104def083e545f0ef1555ad8d408bcbcfe8e2dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fd72990ffbded09db184dfbce2e3fb5caf1cfc784cee5fa24978197a021f571"
   end
 
   depends_on "rust" => :build

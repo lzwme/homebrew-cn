@@ -1,19 +1,18 @@
 class Nzbget < Formula
   desc "Binary newsgrabber for nzb files"
   homepage "https:nzbget.com"
-  url "https:github.comnzbgetcomnzbgetarchiverefstagsv24.5.tar.gz"
-  sha256 "d8a26fef9f92d63258251c69af01f39073a479e48c14114dc96d285470312c83"
+  url "https:github.comnzbgetcomnzbgetarchiverefstagsv24.6.tar.gz"
+  sha256 "93626dff2e725a1f1d99d14377826b264c7ae500559c6ad29d7cdd3c6d2dc6a3"
   license "GPL-2.0-or-later"
-  revision 1
   head "https:github.comnzbgetcomnzbget.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "cfb625c14570f9ad326f3f92b01383473c94fadedb324f6b51d5f8e58a573558"
-    sha256 cellar: :any,                 arm64_sonoma:  "9a79e5a56c6e0e176711be00a643789561d3422b91adc6f62c013785bb0f54e7"
-    sha256 cellar: :any,                 arm64_ventura: "13ef54d1cb4b17fb7cb91e0fdfa82297c455cd1dd01c63d03fdf385347aaf732"
-    sha256                               sonoma:        "54cf30d56515995e3b417af8927f889b8f8406352ee4c8e302d2e1bfbcb7d73d"
-    sha256                               ventura:       "d6c9ffebed9e93a4b14480f0ed02fee96da6a6ccdd6df7892d3ccdcbbe1afe96"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0038ebe43a06bf603373d93f7d83fcf43504fa81682cad9b63e370935f993fc7"
+    sha256 cellar: :any,                 arm64_sequoia: "0b61cb20345b1fb54b98edd863b48b47da5f906b4cbff3486352296af0f57ba8"
+    sha256 cellar: :any,                 arm64_sonoma:  "5b736189675da556ea77485bf2b12f1c2b80e1399a596880ffc52ea7a24d2c3c"
+    sha256 cellar: :any,                 arm64_ventura: "df109ed7741f8148f8cda7a6d61d0d1c05677237ac25bc00fdd1b5b2e0596450"
+    sha256                               sonoma:        "1251b23e8d642da652e285d4d021f436361ae574da4c089f01a232b588190fdc"
+    sha256                               ventura:       "80d686d49febbe498c90beae74e82f572050d07c816206fa769ad934437183d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ccde90d75fdbe04df2ab283f0df4cac588d282fc8d37b136460d1ae804110f34"
   end
 
   depends_on "cmake" => :build

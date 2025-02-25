@@ -34,7 +34,7 @@ class Ncdu < Formula
     else Hardware.oldest_cpu
     end
 
-    args = %W[--prefix #{prefix} --release=fast]
+    args = []
     args << "-Dpie=true" if OS.mac?
     args << "-Dcpu=#{cpu}" if build.bottle?
 
@@ -48,7 +48,7 @@ class Ncdu < Formula
 
     # Avoid the Makefile for now so that we can pass `-Dcpu` to `zig build`.
     # https:code.blicky.netyorhelncduissues185
-    system "zig", "build", *args
+    system "zig", "build", *args, *std_zig_args
     man1.install "ncdu.1"
   end
 

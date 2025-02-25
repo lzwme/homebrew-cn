@@ -1,14 +1,14 @@
 class Speex < Formula
   desc "Audio codec designed for speech"
   homepage "https://speex.org/"
-  url "https://downloads.xiph.org/releases/speex/speex-1.2.1.tar.gz", using: :homebrew_curl
-  mirror "https://ftp.osuosl.org/pub/xiph/releases/speex/speex-1.2.1.tar.gz"
+  url "https://ftp.osuosl.org/pub/xiph/releases/speex/speex-1.2.1.tar.gz"
+  mirror "https://mirror.csclub.uwaterloo.ca/xiph/releases/speex/speex-1.2.1.tar.gz"
   sha256 "4b44d4f2b38a370a2d98a78329fefc56a0cf93d1c1be70029217baae6628feea"
   license "BSD-3-Clause"
 
   livecheck do
     url "https://ftp.osuosl.org/pub/xiph/releases/speex/?C=M&O=D"
-    regex(/href=.*?speex[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(%r{href=(?:["']?|.*?/)speex[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -25,11 +25,19 @@ class Speex < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ea2ee48a402525421cb3ef8b83173d4bc57741c10e84fe6fae66691905293ec"
   end
 
+  head do
+    url "https://gitlab.xiph.org/xiph/speex.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
+
   depends_on "pkgconf" => :build
   depends_on "libogg"
 
   def install
-    ENV.deparallelize
+    system "./autogen.sh" if build.head?
     system "./configure", *std_configure_args
     system "make", "install"
   end

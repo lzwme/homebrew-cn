@@ -1,17 +1,17 @@
 class Libxmp < Formula
   desc "C library for playback of module music (MOD, S3M, IT, etc)"
   homepage "https://xmp.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/xmp/libxmp/4.6.1/libxmp-4.6.1.tar.gz"
-  sha256 "af605e72c83b24abaf03269347e24ebc3fc06cd7b495652a2c619c1f514bc5cb"
+  url "https://downloads.sourceforge.net/project/xmp/libxmp/4.6.2/libxmp-4.6.2.tar.gz"
+  sha256 "acac1705be2c4fb4d2d70dc05759853ba6aab747a83de576b082784d46f5a4b9"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7221a84d10e70543b1a038487f3ba79e51a820441e7e9bd91bec492d94a567a8"
-    sha256 cellar: :any,                 arm64_sonoma:  "75cd02122e6e123f76b3edf2b2e463a7b332da21ce5c4b2c18248d10fda3c7b9"
-    sha256 cellar: :any,                 arm64_ventura: "16f5e6cf7416fbf9e41a143279bb08ee8dfc4d00b8dfe3d8a7d7307b8eb089f2"
-    sha256 cellar: :any,                 sonoma:        "7f3cf128ae887cf581b87085847568fc5ed15c87fe79a1c4df670fe8364338e0"
-    sha256 cellar: :any,                 ventura:       "839d29df4edf70ea6cc0626b74b40bfdc5128de75c56aeebf8fc0d6d73650d14"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7802dd184e45c01811f34636e77424930583a34b0dfe0f524ff9c74a701c7f87"
+    sha256 cellar: :any,                 arm64_sequoia: "cad29336b72066c119b14cdc151ed153791f48891205ad0c8165083e0a767e82"
+    sha256 cellar: :any,                 arm64_sonoma:  "db3b303b12e4c78572f024758e708eb450a6f88f56c8f6235d4ca1f71f99a759"
+    sha256 cellar: :any,                 arm64_ventura: "33d0997205204bb8d3c5f8a94f7e0a53cbd81eb0b8cc0525a10f047642763054"
+    sha256 cellar: :any,                 sonoma:        "ae85827745c2959cc955737668515f20db08780bf0dc4599f4d8a5dea77c1058"
+    sha256 cellar: :any,                 ventura:       "f78dc6db1f4a004cb580e35d8cd32cf104a4de1796d90267f198dd50390828f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8bd56a6ee5dace91cadfbb3e015f92a98c334f39820eaf0240f47695702bcd8a"
   end
 
   head do

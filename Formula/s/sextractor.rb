@@ -1,6 +1,6 @@
 class Sextractor < Formula
   desc "Extract catalogs of sources from astronomical images"
-  homepage "https:github.comastromaticsextractor"
+  homepage "https:www.astromatic.netsoftwaresextractor"
   url "https:github.comastromaticsextractorarchiverefstags2.28.2.tar.gz"
   sha256 "d92c5214ea75b8a70214d7d7f6824207fc53861ec923ceb2cc574f2ec9effa94"
   license "GPL-3.0-or-later"

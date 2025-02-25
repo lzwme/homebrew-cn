@@ -1,18 +1,18 @@
 class Kool < Formula
   desc "Web apps development with containers made easy"
   homepage "https:kool.dev"
-  url "https:github.comkool-devkoolarchiverefstags3.3.0.tar.gz"
-  sha256 "0b614cf4317a16c71edd7ad5973a10930b5f5ef342eb6dd840ada9debab61d70"
+  url "https:github.comkool-devkoolarchiverefstags3.4.0.tar.gz"
+  sha256 "706051161e8b97a79e9144e58a59a1bfae0553febc13de65726f0e3e67727be6"
   license "MIT"
   head "https:github.comkool-devkool.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5e462831f84464e6dd2ccd9b412851430d07aefbbbebafa02b6ca924debdef6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5e462831f84464e6dd2ccd9b412851430d07aefbbbebafa02b6ca924debdef6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c5e462831f84464e6dd2ccd9b412851430d07aefbbbebafa02b6ca924debdef6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b615c087c3c76e1824e4cc5e4589f013c7fa751b00615f6027fc5f7638ea9c8d"
-    sha256 cellar: :any_skip_relocation, ventura:       "b615c087c3c76e1824e4cc5e4589f013c7fa751b00615f6027fc5f7638ea9c8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d8bbefb970f59bb5d970eba3f2ecb5b82b607b06eeeaf4e1b93c8fe8497e598"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6eeec48a93221e8c641a1eda7f6954fa3a22764152678dc2d707fbc7433a1a04"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6eeec48a93221e8c641a1eda7f6954fa3a22764152678dc2d707fbc7433a1a04"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6eeec48a93221e8c641a1eda7f6954fa3a22764152678dc2d707fbc7433a1a04"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5e16937382c6f8f7c99575b832a5990c6881ae73bc46348f45e2a1bf41ff86bb"
+    sha256 cellar: :any_skip_relocation, ventura:       "5e16937382c6f8f7c99575b832a5990c6881ae73bc46348f45e2a1bf41ff86bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "082b32596a7d62e8e53034608a8d96e8056d5cacb5343f65a24ed655ff436c20"
   end
 
   depends_on "go" => :build

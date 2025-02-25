@@ -1,9 +1,15 @@
 class Speexdsp < Formula
   desc "Speex audio processing library"
-  homepage "https:github.comxiphspeexdsp"
-  url "https:github.comxiphspeexdsparchiverefstagsSpeexDSP-1.2.1.tar.gz"
-  sha256 "d17ca363654556a4ff1d02cc13d9eb1fc5a8642c90b40bd54ce266c3807b91a7"
+  homepage "https://speex.org/"
+  url "https://ftp.osuosl.org/pub/xiph/releases/speex/speexdsp-1.2.1.tar.gz"
+  mirror "https://mirror.csclub.uwaterloo.ca/xiph/releases/speex/speexdsp-1.2.1.tar.gz"
+  sha256 "8c777343e4a6399569c72abc38a95b24db56882c83dbdb6c6424a5f4aeb54d3d"
   license "BSD-3-Clause"
+
+  livecheck do
+    url "https://ftp.osuosl.org/pub/xiph/releases/speex/?C=M&O=D"
+    regex(%r{href=(?:["']?|.*?/)speexdsp[._-]v?(\d+(?:\.\d+)+)\.t}i)
+  end
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "c19e5962197be02c5124dc4c2cef39ef6a6b00bddb5f3cb7dca9c3e31929d086"
@@ -19,15 +25,38 @@ class Speexdsp < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c417e96a3739f41fb59aca0ceba32fd45b07f79175d8eda837dd125159098453"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
-  depends_on "libtool" => :build
+  head do
+    url "https://gitlab.xiph.org/xiph/speexdsp.git", branch: "master"
+
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
+  end
+
   depends_on "pkgconf" => :build
 
   def install
-    system ".autogen.sh"
-    system ".configure", *std_configure_args
-    system "make"
+    system "./autogen.sh" if build.head?
+    system "./configure", *std_configure_args
     system "make", "install"
+  end
+
+  test do
+    (testpath/"test.c").write <<~C
+      #include <speex/speex_resampler.h>
+      #include <stdlib.h>
+
+      int main()
+      {
+          SpeexResamplerState *st = speex_resampler_init(1, 8000, 12000, 10, NULL);
+          speex_resampler_set_rate(st, 96000, 44100);
+          speex_resampler_skip_zeros(st);
+          speex_resampler_destroy(st);
+
+          return 0;
+      }
+    C
+    system ENV.cc, "test.c", "-L#{lib}", "-lspeexdsp", "-o", "test"
+    system "./test"
   end
 end

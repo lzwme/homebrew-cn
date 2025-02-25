@@ -1,19 +1,18 @@
 class AdaUrl < Formula
   desc "WHATWG-compliant and fast URL parser written in modern C++"
   homepage "https:github.comada-urlada"
-  url "https:github.comada-urladaarchiverefstagsv3.1.0.tar.gz"
-  sha256 "c93255bd9d3a5fa890843a34fbe9f7d2e233eea4b0c4075d401c32ac8e80a9df"
+  url "https:github.comada-urladaarchiverefstagsv3.1.1.tar.gz"
+  sha256 "0e0edf137208fe66a8d215718d6a69154a9f2f59bceb2914c372d68df38d3630"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comada-urlada.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "d29a1fe8c29e80fc1c4e67971dc0248212a668b9a99cf9595a687b8846ca61b6"
-    sha256 cellar: :any,                 arm64_sonoma:  "855aff20e4e54fb21c21e95f81ae599a518322764716541ecf113106409639c0"
-    sha256 cellar: :any,                 arm64_ventura: "7a360074ed6cb17f10147c0d38b31ac9f81d3de597cfb97d56c907b663c05d65"
-    sha256 cellar: :any,                 sonoma:        "c12aebdb57629353d15f298d5adbb7f2fb625abd967e3bfbcb0c0ddfd9157b5f"
-    sha256 cellar: :any,                 ventura:       "10e36bc046fa3991458c0f4145f94a63e5c96b3f4892fd79e4f858eb93160a74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cff81c6cd7bdf4d5a066a99e3fe4aeadfe77e5a5e46af18ef51074beb035f3e"
+    sha256 cellar: :any,                 arm64_sequoia: "56a79d829a487fc2e92c2ff773f7bbf7c065ebaf31940d6eb60134790fdb6f1d"
+    sha256 cellar: :any,                 arm64_sonoma:  "dffb673880fe615a9fc1fd76b3c99bab7b7c8ea78fa084bf88a45fb00856037c"
+    sha256 cellar: :any,                 arm64_ventura: "9f32d817121ff54a32145fb8a5a29e271938611e7840da5499ffa3065484c3cf"
+    sha256 cellar: :any,                 sonoma:        "94c20b144ea257b444134d35ce48bc5310fd31cc5ff625adb84b1de592fd1ef5"
+    sha256 cellar: :any,                 ventura:       "fd771ee2631385f6e662c8d1c608b6bdbd157ac9a26fb4e4b8dad82ce0215daa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26941cba214609b3fe2f534be64d79d99af6d47a8301411ab519b5262132f6aa"
   end
 
   depends_on "cmake" => :build

@@ -1,10 +1,16 @@
 class Libogg < Formula
   desc "Ogg Bitstream Library"
-  homepage "https://www.xiph.org/ogg/"
-  url "https://ftp.osuosl.org/pub/xiph/releases/ogg/libogg-1.3.5.tar.gz"
+  homepage "https:www.xiph.orgogg"
+  url "https:ftp.osuosl.orgpubxiphreleasesogglibogg-1.3.5.tar.gz"
+  mirror "https:github.comxiphoggreleasesdownloadv1.3.5libogg-1.3.5.tar.gz"
   sha256 "0eb4b4b9420a0f51db142ba3f9c64b333f826532dc0f48c6410ae51f4799b664"
   license "BSD-3-Clause"
-  head "https://gitlab.xiph.org/xiph/ogg.git", branch: "master"
+  head "https:gitlab.xiph.orgxiphogg.git", branch: "master"
+
+  livecheck do
+    url "https:ftp.osuosl.orgpubxiphreleasesogg?C=M&O=D"
+    regex(%r{href=(?:["']?|.*?)libogg[._-]v?(\d+(?:\.\d+)+)\.t}i)
+  end
 
   bottle do
     rebuild 2
@@ -23,7 +29,7 @@ class Libogg < Formula
   depends_on "cmake" => :build
 
   resource("oggfile") do
-    url "https://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg"
+    url "https:upload.wikimedia.orgwikipediacommonscc8Example.ogg"
     sha256 "f57b56d8aae4c847cf01224fb45293610d801cfdac43d932b5eeab1cd318182a"
   end
 
@@ -33,12 +39,12 @@ class Libogg < Formula
     system "cmake", "--install", "build"
     system "cmake", "-S", ".", "-B", "build-static", "-DBUILD_SHARED_LIBS=FALSE", *std_cmake_args
     system "cmake", "--build", "build-static"
-    lib.install "build-static/libogg.a"
+    lib.install "build-staticlibogg.a"
   end
 
   test do
-    (testpath/"test.c").write <<~C
-      #include <ogg/ogg.h>
+    (testpath"test.c").write <<~C
+      #include <oggogg.h>
       #include <stdio.h>
 
       int main (void) {
@@ -68,8 +74,8 @@ class Libogg < Formula
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-logg",
                    "-o", "test"
     # Should work on an OGG file
-    shell_output("./test < Example.ogg")
+    shell_output(".test < Example.ogg")
     # Expected to fail on a non-OGG file
-    shell_output("./test < #{test_fixtures("test.wav")}", 1)
+    shell_output(".test < #{test_fixtures("test.wav")}", 1)
   end
 end

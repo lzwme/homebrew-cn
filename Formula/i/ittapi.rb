@@ -1,18 +1,18 @@
 class Ittapi < Formula
   desc "Intel Instrumentation and Tracing Technology (ITT) and Just-In-Time (JIT) API"
   homepage "https:github.comintelittapi"
-  url "https:github.comintelittapiarchiverefstagsv3.25.4.tar.gz"
-  sha256 "e32c760e936add2353e7e4268c560acb230dd1fdf2e2abb1c7d8e8409ca1d121"
+  url "https:github.comintelittapiarchiverefstagsv3.25.5.tar.gz"
+  sha256 "2d19243e7ac8a7de08bfd005429a308c1db52a18e5b7b66d29a6c19f066946e3"
   license "GPL-2.0-only"
   head "https:github.comintelittapi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "32a49c41057cc92264c320ad96226cdadccd906bec15965a619660729bdae75d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58b16cfbadacd597225d4e3ed8376635219a881e34de961fcb589d58d86ae6fb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a7f4c0f155a0e5b95afb6bf7301f2a619001b87ba1a77f64f5316caf33bcf09f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f4db3d96e18424c2a43e2e647dc4e330c137ea8640b60a974707652d25d488a8"
-    sha256 cellar: :any_skip_relocation, ventura:       "4968ac8ca683221e4d0ecea36695013c3950040e76547dd9d647c6043a6a728a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad6b4a0761fbdefd860818f4bca1ee43834a1ce822d148bf893324f2c3297f8c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "956b0c9fe7993a46da3a49133a88af419e547c3d821cf2bce98e6c9e4ed6c30a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f0e12409a1ba59ae6e673fc70a509c4a74cb6f76864eaef461ab919d81398f2e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "77730e201944e4ad0d74edc0ce6d074a9f8cb66398c4cbddedc27ecf087c0bda"
+    sha256 cellar: :any_skip_relocation, sonoma:        "929cc096155ade33af92e3e59d2a8fe142630db805a9b455413380fdcc236674"
+    sha256 cellar: :any_skip_relocation, ventura:       "6d289436aa1ddaf4e73c133ee11ee6ebdcaa8b041d58255f60d2276aa5b72406"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f362d43b190473d8fe34bb58be9c6204df811bb2963cc816e6966755b8bc3d4d"
   end
 
   depends_on "cmake" => :build

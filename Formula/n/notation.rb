@@ -1,18 +1,18 @@
 class Notation < Formula
   desc "CLI tool to sign and verify OCI artifacts and container images"
   homepage "https:notaryproject.dev"
-  url "https:github.comnotaryprojectnotationarchiverefstagsv1.3.0.tar.gz"
-  sha256 "ed3f59b96470de1d53da64283a0b81000e3d3193f1b8c80f764834d8124a697c"
+  url "https:github.comnotaryprojectnotationarchiverefstagsv1.3.1.tar.gz"
+  sha256 "4b37f74646fd02ce05a4fd7eea48e463540133171c8811b486dff90da41bc07e"
   license "Apache-2.0"
   head "https:github.comnotaryprojectnotation.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93c93fda8136ff9f88209e2ccc520e4557edad0d5006f6c70d2e7da4b26f27bf"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93c93fda8136ff9f88209e2ccc520e4557edad0d5006f6c70d2e7da4b26f27bf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "93c93fda8136ff9f88209e2ccc520e4557edad0d5006f6c70d2e7da4b26f27bf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5bc38bf0a9afe139774c69c796856069c5474bd22b687b5d82bf48300babe7d9"
-    sha256 cellar: :any_skip_relocation, ventura:       "5bc38bf0a9afe139774c69c796856069c5474bd22b687b5d82bf48300babe7d9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "051c86bc0519f990ade4cdc6c8b60ee5110bffffc19dac693552e80c9f419884"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "169ccb885aefbadc0af07d8496520ee14b7e96a6946d9b1ab1580c99121ce055"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "169ccb885aefbadc0af07d8496520ee14b7e96a6946d9b1ab1580c99121ce055"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "169ccb885aefbadc0af07d8496520ee14b7e96a6946d9b1ab1580c99121ce055"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ac41c269d2f3a8265ecc4afa4aa090e753a2642b752f3ba93c6305941001410c"
+    sha256 cellar: :any_skip_relocation, ventura:       "ac41c269d2f3a8265ecc4afa4aa090e753a2642b752f3ba93c6305941001410c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea9b03114d7f26134611c39adc596139a7a8408a87f4021d819a1d7bee37f32b"
   end
 
   depends_on "go" => :build

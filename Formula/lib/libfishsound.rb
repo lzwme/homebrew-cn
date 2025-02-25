@@ -1,14 +1,14 @@
 class Libfishsound < Formula
   desc "Decode and encode audio data using the Xiph.org codecs"
   homepage "https://xiph.org/fishsound/"
-  url "https://downloads.xiph.org/releases/libfishsound/libfishsound-1.0.1.tar.gz", using: :homebrew_curl
-  mirror "https://ftp.osuosl.org/pub/xiph/releases/libfishsound/libfishsound-1.0.1.tar.gz"
+  url "https://ftp.osuosl.org/pub/xiph/releases/libfishsound/libfishsound-1.0.1.tar.gz"
+  mirror "https://mirror.csclub.uwaterloo.ca/xiph/releases/libfishsound/libfishsound-1.0.1.tar.gz"
   sha256 "03eb1601e2306adc88c776afdf212217c6547990d2d0f9ca544dad9a8a9dbb8f"
   license "BSD-3-Clause"
 
   livecheck do
     url "https://ftp.osuosl.org/pub/xiph/releases/libfishsound/?C=M&O=D"
-    regex(/href=.*?libfishsound[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(%r{href=(?:["']?|.*?/)libfishsound[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do

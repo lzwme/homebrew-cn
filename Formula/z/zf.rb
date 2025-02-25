@@ -4,7 +4,7 @@ class Zf < Formula
   url "https:github.comnatecraddockzfarchiverefstags0.10.2.tar.gz"
   sha256 "b8e41f942c7033536fd64f9edea467a7ff4f45d52885d585f0adafb7803ac0ed"
   license "MIT"
-  head "https:github.comnatecraddockzf.git", branch: "master"
+  head "https:github.comnatecraddockzf.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca18e30ed084337c77376f0af8b97d3f10bc3ccb20660f7d74c15644fbcae1e7"
@@ -18,9 +18,8 @@ class Zf < Formula
   depends_on "zig" => :build
 
   def install
-    system "zig", "build", "-Doptimize=ReleaseSafe"
+    system "zig", "build", *std_zig_args
 
-    bin.install "zig-outbinzf"
     man1.install "doczf.1"
     bash_completion.install "completezf"
     fish_completion.install "completezf.fish"

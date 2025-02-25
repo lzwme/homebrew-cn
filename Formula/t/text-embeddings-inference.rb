@@ -1,6 +1,6 @@
 class TextEmbeddingsInference < Formula
   desc "Blazing fast inference solution for text embeddings models"
-  homepage "https:github.comhuggingfacetext-embeddings-inference"
+  homepage "https:huggingface.codocstext-embeddings-inferencequick_tour"
   url "https:github.comhuggingfacetext-embeddings-inferencearchiverefstagsv1.6.0.tar.gz"
   sha256 "e044ba139ab30dc539fc20a0917a95b1ebc07f643c3684f9482c3acd60b7ca3e"
   license "Apache-2.0"

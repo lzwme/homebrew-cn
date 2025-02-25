@@ -1,17 +1,17 @@
 class Testscript < Formula
   desc "Integration tests for command-line applications in .txtar format"
   homepage "https:github.comrogpeppego-internaltreemastercmdtestscript"
-  url "https:github.comrogpeppego-internalarchiverefstagsv1.13.1.tar.gz"
-  sha256 "97914f4c73520fdc6740f9b5232e39e07cba569ae649eab537ee629a64288358"
+  url "https:github.comrogpeppego-internalarchiverefstagsv1.14.0.tar.gz"
+  sha256 "6d2c3c05a2ace6d7aeb825fb39011506bc33a61a0a120481ba649a25b42e9f58"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4cdcc70a5722dc60bdf040b4337f5cc85d0f687ad19c7de96776495b1ce57e0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d4cdcc70a5722dc60bdf040b4337f5cc85d0f687ad19c7de96776495b1ce57e0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d4cdcc70a5722dc60bdf040b4337f5cc85d0f687ad19c7de96776495b1ce57e0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "38c202aa10a22ae303d9b1adfd6da3f4e33641f922829417bec96d13e14030df"
-    sha256 cellar: :any_skip_relocation, ventura:       "38c202aa10a22ae303d9b1adfd6da3f4e33641f922829417bec96d13e14030df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c62263de0b1654e6a5645f86e509702aa30c7555415e36585d7dc49cd24311a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca475c8cdcede0e760e23157e5d4c994de35bce7498350bf515a3e996d246f4d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca475c8cdcede0e760e23157e5d4c994de35bce7498350bf515a3e996d246f4d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ca475c8cdcede0e760e23157e5d4c994de35bce7498350bf515a3e996d246f4d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dd3fb337e2a76f2de8a9c619dbb4bb8a9792dd07a5f2be8060714a9747bd1282"
+    sha256 cellar: :any_skip_relocation, ventura:       "dd3fb337e2a76f2de8a9c619dbb4bb8a9792dd07a5f2be8060714a9747bd1282"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34281b32f4cfab8f7d2f8f7ffea6822e8e38213da4c4bb465c9c0d010de52d23"
   end
 
   depends_on "go" => :build

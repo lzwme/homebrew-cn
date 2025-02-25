@@ -1,8 +1,8 @@
 class Gopls < Formula
   desc "Language server for the Go language"
   homepage "https:github.comgolangtoolstreemastergopls"
-  url "https:github.comgolangtoolsarchiverefstagsgoplsv0.18.0.tar.gz"
-  sha256 "2fec8592c5f2e447cc1671c2addd4fe682e67a4ef0c10e7aa38376eb18378be9"
+  url "https:github.comgolangtoolsarchiverefstagsgoplsv0.18.1.tar.gz"
+  sha256 "e49fae5dd964432a0ea1661868e858acd2aa66aaf7e1c1d646fb8506f15c8e52"
   license "BSD-3-Clause"
 
   livecheck do
@@ -12,12 +12,12 @@ class Gopls < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44453a66c6f21449ca5f9d53db42980de8f206c788ed33887d1268732f3f98d3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44453a66c6f21449ca5f9d53db42980de8f206c788ed33887d1268732f3f98d3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "44453a66c6f21449ca5f9d53db42980de8f206c788ed33887d1268732f3f98d3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1bc20f7e64c4c3a3d9a39c9a29f7e19e17ad14e064782555173faf11a11d8c2d"
-    sha256 cellar: :any_skip_relocation, ventura:       "1bc20f7e64c4c3a3d9a39c9a29f7e19e17ad14e064782555173faf11a11d8c2d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "189abb3af5c9251468a37ac3a5d09ab46084df0051bf893181cafe15f866d549"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a51103714879c3a9c45b9da97c4c489179e12292b992c5c5d5190c4f684862c8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a51103714879c3a9c45b9da97c4c489179e12292b992c5c5d5190c4f684862c8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a51103714879c3a9c45b9da97c4c489179e12292b992c5c5d5190c4f684862c8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f3e6bae6f127a45cbcece58178bb2a25867e6bc8c209e57ebe58bb815af628cb"
+    sha256 cellar: :any_skip_relocation, ventura:       "f3e6bae6f127a45cbcece58178bb2a25867e6bc8c209e57ebe58bb815af628cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71942ac2fc52efc631a25de23fa00ad34ec720d30dbf4d037d5d062bce31ace0"
   end
 
   depends_on "go" => :build

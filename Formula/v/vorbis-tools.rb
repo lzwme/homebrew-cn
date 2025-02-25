@@ -1,8 +1,8 @@
 class VorbisTools < Formula
   desc "Ogg Vorbis CODEC tools"
   homepage "https:github.comxiphvorbis-tools"
-  url "https:downloads.xiph.orgreleasesvorbisvorbis-tools-1.4.2.tar.gz", using: :homebrew_curl
-  mirror "https:ftp.osuosl.orgpubxiphreleasesvorbisvorbis-tools-1.4.2.tar.gz"
+  url "https:ftp.osuosl.orgpubxiphreleasesvorbisvorbis-tools-1.4.2.tar.gz"
+  mirror "https:mirror.csclub.uwaterloo.caxiphreleasesvorbisvorbis-tools-1.4.2.tar.gz"
   sha256 "db7774ec2bf2c939b139452183669be84fda5774d6400fc57fde37f77624f0b0"
   license all_of: [
     "LGPL-2.0-or-later", # intl (libintl)
@@ -13,7 +13,7 @@ class VorbisTools < Formula
 
   livecheck do
     url "https:ftp.osuosl.orgpubxiphreleasesvorbis?C=M&O=D"
-    regex(href=.*?vorbis-tools[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(%r{href=(?:["']?|.*?)vorbis-tools[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
   bottle do
@@ -43,20 +43,15 @@ class VorbisTools < Formula
   end
 
   def install
-    if OS.mac?
-      # Prevent linkage with Homebrew Curl on macOS because of `using: :homebrew_curl` above.
-      ENV.remove "HOMEBREW_DEPENDENCIES", "curl"
-      ENV.remove "HOMEBREW_INCLUDE_PATHS", Formula["curl"].opt_include
-      ENV.remove "HOMEBREW_LIBRARY_PATHS", Formula["curl"].opt_lib
-
+    if OS.mac? && (MacOS.version >= :monterey)
       # Workaround for Xcode 14 ld.
-      system "autoreconf", "--force", "--install", "--verbose" if MacOS.version >= :monterey
+      system "autoreconf", "--force", "--install", "--verbose"
     end
 
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
-    system ".configure", *std_configure_args, "--disable-nls"
+    system ".configure", *std_configure_args, "--disable-nls", "--without-speex"
     system "make", "install"
   end
 

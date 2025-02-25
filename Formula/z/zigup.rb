@@ -24,13 +24,9 @@ class Zigup < Formula
     else Hardware.oldest_cpu
     end
 
-    args = %W[
-      --prefix #{prefix}
-      -Doptimize=ReleaseSafe
-    ]
-
+    args = []
     args << "-Dcpu=#{cpu}" if build.bottle?
-    system "zig", "build", *args
+    system "zig", "build", *args, *std_zig_args(release_mode: :safe)
   end
 
   test do

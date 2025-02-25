@@ -1,19 +1,18 @@
 class SwiftProtobuf < Formula
   desc "Plugin and runtime library for using protobuf with Swift"
   homepage "https:github.comappleswift-protobuf"
-  url "https:github.comappleswift-protobufarchiverefstags1.28.2.tar.gz"
-  sha256 "d086deab3ca0b74751fcc1905d268697b0d471e747fb50eced94941f28b35fb8"
+  url "https:github.comappleswift-protobufarchiverefstags1.29.0.tar.gz"
+  sha256 "0a37b1f0aab5aca1e47d0729b878004a4e3c1d5a79ad9aedc51b62d19d36f67d"
   license "Apache-2.0"
-  revision 1
   head "https:github.comappleswift-protobuf.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd56104efbff42d8793ec02ed212fe8eedd011a045e9063dd9f11fb602a8580a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d205878109743b4bc66bbdab6ecb6e4271a99a5a2fd929faf6648524107f3cd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b51e076ed77a2e55bb899f75e4626ff9ff89794362b7fc14d84304c4cf3a9dd5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "67eedb80e3f078c92b6770a09a198bde2cae63dc60b8138b561481b579114433"
-    sha256 cellar: :any_skip_relocation, ventura:       "8d2430ecad2190aa1106d3b917c2bec66a6e4380c3fd741f23515bd24c15ebef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0290054e89192d859c7bdca84ebf40cb8cd90c0cf3cda9b4bc43ccfd6c6f7961"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d11f47bfbbbdf427ae5af21ccc1165e77d2cfc851db714b01ab2dbac764c1520"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d013a8dca6f3acace6deb1a55bc9e170429cdbb6bc1765e7bd8abe6051d14498"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2600bb6e8d77d8ad51b7d00bbb05c2648f1cde0a67076ec1735fbbf6b13b90dc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "876fb05e81951bc16d828cd4b6fc6eec24132ca96900b35f4310f617180a4275"
+    sha256 cellar: :any_skip_relocation, ventura:       "2a684814cc304f25e1ea59d3079dd6835b6701d84946919db538f76caf1d87c4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6dc45f84a76c05d6fc9060801d94394a46b8e3bb541161d6aeef4f160f29b2b"
   end
 
   depends_on xcode: ["14.3", :build]

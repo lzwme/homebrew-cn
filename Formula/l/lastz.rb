@@ -1,18 +1,18 @@
 class Lastz < Formula
   desc "Pairwise aligner for DNA sequences"
   homepage "https:lastz.github.iolastz"
-  url "https:github.comlastzlastzarchiverefstags1.04.41.tar.gz"
-  sha256 "ade7c8619e1f83aae1b1e6e16a9bc74d283756565f0bb9f6a6ca28f8d862227e"
+  url "https:github.comlastzlastzarchiverefstags1.04.45.tar.gz"
+  sha256 "cb7d971915f59089341e7916139a98a5da94d724de21c7eea8baa0a0bdbaa7e8"
   license "MIT"
   head "https:github.comlastzlastz.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "249337411a2223d7f7ee95924d423e7683bcff9b571359389d58eaae99749a6d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b85092ed452764b74babb30fb3946385b52bc5ddee17596cc8da60fd9b65919"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ec14cbb84beb440df19bbc51ce5ea1dcf2471634cc3c3045087fd7723043aa56"
-    sha256 cellar: :any_skip_relocation, sonoma:        "41587e47d108426ce7b08e07388d41d65c4463f5bb52aea00691cf6ad65f49d1"
-    sha256 cellar: :any_skip_relocation, ventura:       "b841bdcbdd690d8f6ea78f42a747e1950e666dea691be901ecf4c9858b5b3b80"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b8d64d120c976a50b01d5430607295a4e5a9668b8e4b5cca6a225dc8371085c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42ce031cd09d74b7ae2ae82d9a9189b32e3df8433188f7eb612447a32b9bea42"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f6e2d5edc6d4c169458d5ff27e6a3b8340f470f15a5b82a8f59ca19e72c1f44f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a8ba0e448acf38b7da9a386ddfbef6ee8b3bde7a7e0aa8c5232ea0f6e58c7e74"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ac376ea25d1996a6d8120d11aa011f640090c783726178e4f69c82f7aadffba1"
+    sha256 cellar: :any_skip_relocation, ventura:       "324119d3aab25c48c04efc5243964098ffd65164363590d146f375107f73bdac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83d679ed18fb5c5e9cefd794abb3654dbd7bcf76f89420e9ff98b1716679d5c3"
   end
 
   def install

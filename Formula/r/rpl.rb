@@ -3,17 +3,17 @@ class Rpl < Formula
 
   desc "Text replacement utility"
   homepage "https:github.comrrthomasrpl"
-  url "https:files.pythonhosted.orgpackages3ebae65ee036e822b6aea002e3b5f36bceee6ce1238bfbe15d0cf544ae591894rpl-1.17.tar.gz"
-  sha256 "6f1fbb7b4c9d033fc977501833d333d68a3d487986dbb717179d0dd4861de201"
+  url "https:files.pythonhosted.orgpackagesf08581cd913d43251f923a56b44586c717f41e8ff5e4ea35d2ced60e9de00bbdrpl-1.18.tar.gz"
+  sha256 "378d38de283f6682f85e93695396f3461d719778e17a8013f64bd87d7f671d7e"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e806d2c42dc8d1420cf01b83ab5550b2658a3c6c3179702b1541d644aca6955f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61c70a726d8783bcc32fb4cf699408e7c8ae92d5a333753393c4c166e0674fdb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "04a909a86e8fe5f6944b22e35e68e9916eeda813375e94f07b10a530f4114689"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3c4998c00f2183aef2e1e179b24df70f17f36fa3dcd97ed0c2b61ccdf70fd726"
-    sha256 cellar: :any_skip_relocation, ventura:       "7ed680b959b9e11320f58e42d4ce9d081cc612284e334ba414f7b956c217e267"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a07f3dc7b549e7fa5d73a990467e948fc05dcc1de58160796c3098db56c5ae8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f3a92c152aa85e38ecfa5e723ac3976e7c922bad0a11541fe4fffdfbaaac227"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "027eb212bc7e4016600eec213bf22696297124dad33d0c1ac476c6b833677dc8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "161eab6b8c8144193155d77567883c9ffc7421a2047217c51cfb4766e20ad3fb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6c8fbc594de8ca5db2fed2073a9b20fa736c2a5a413ccb5037d4ad544e078350"
+    sha256 cellar: :any_skip_relocation, ventura:       "52b0ecfa8e85d9075f871a7de4a4e86c51f31cc8cbc0458ceeea1e3552b5ebec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07d8974cf495884f8d2a663b0e15b9864f05733d0b6e1333567703ff05cbca2c"
   end
 
   depends_on "python@3.13"

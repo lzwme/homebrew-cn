@@ -3,17 +3,17 @@ class Ramalama < Formula
 
   desc "Goal of RamaLama is to make working with AI boring"
   homepage "https:github.comcontainersramalama"
-  url "https:files.pythonhosted.orgpackageseef022c24f3e42a90ccff3bc7ce8e9934e9dfa73d57dd02c955e6308d2c08248ramalama-0.6.1.tar.gz"
-  sha256 "ea5a58d56f1588c275dcc19baa47e6a2cd167d9349e853a8d449af6c27b22e6f"
+  url "https:files.pythonhosted.orgpackagesc2c5d4878a1f888a6c2272c06c7343ab11b92f6a450fdc85e872541afcfca9deramalama-0.6.2.tar.gz"
+  sha256 "2f1763b38bcabc20bbee41b3bf0b0fa3c31e19c30659333a2f0ec368c0a28f4c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "67aa8b9f4e99b8ba7a66a015c20852deaca6ed43ce00476faf49ce45a991a97e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "67aa8b9f4e99b8ba7a66a015c20852deaca6ed43ce00476faf49ce45a991a97e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "67aa8b9f4e99b8ba7a66a015c20852deaca6ed43ce00476faf49ce45a991a97e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "040a81abcba18d77d06fafa9060ce576910088d9987ef39e7a5c8f6f9e5497f3"
-    sha256 cellar: :any_skip_relocation, ventura:       "040a81abcba18d77d06fafa9060ce576910088d9987ef39e7a5c8f6f9e5497f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07ed70afbcfe838aabc24826f1257921e3976a00fc0612ff81849ecaff03a141"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a832d71a761e74f69cf7111ada507843023b3869666fa234ec973d3420543b4a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a832d71a761e74f69cf7111ada507843023b3869666fa234ec973d3420543b4a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a832d71a761e74f69cf7111ada507843023b3869666fa234ec973d3420543b4a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2018fc643fc16d5a8ec760b43f896a1898f66f861d6b3f481c6233e51ddb9dbc"
+    sha256 cellar: :any_skip_relocation, ventura:       "2018fc643fc16d5a8ec760b43f896a1898f66f861d6b3f481c6233e51ddb9dbc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6aef9dd9ab509216691bc48f0e7255d5dac4bc1f5f271029877be63bc559b844"
   end
 
   depends_on "python@3.13"

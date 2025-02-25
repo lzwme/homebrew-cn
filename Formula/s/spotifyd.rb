@@ -1,6 +1,6 @@
 class Spotifyd < Formula
   desc "Spotify daemon"
-  homepage "https:github.comSpotifydspotifyd"
+  homepage "https:spotifyd.rs"
   license "GPL-3.0-only"
   head "https:github.comSpotifydspotifyd.git", branch: "master"
 

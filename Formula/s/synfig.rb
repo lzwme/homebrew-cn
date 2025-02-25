@@ -1,6 +1,6 @@
 class Synfig < Formula
   desc "Command-line renderer"
-  homepage "https:synfig.org"
+  homepage "https:www.synfig.org"
   # TODO: Update livecheck to track only stable releases when 1.6.x is available.
   url "https:github.comsynfigsynfigreleasesdownloadv1.5.3synfig-1.5.3.tar.gz"
   sha256 "913c9cee6e5ad8fd6db3b3607c5b5ae0312f9ee6720c60619e3a97da98501ea8"

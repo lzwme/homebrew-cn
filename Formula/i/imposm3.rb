@@ -1,18 +1,17 @@
 class Imposm3 < Formula
   desc "Imports OpenStreetMap data into PostgreSQLPostGIS databases"
   homepage "https:imposm.orgdocsimposm3latest"
-  url "https:github.comomniscaleimposm3archiverefstagsv0.14.0.tar.gz"
-  sha256 "d6b012497eff1b8faa25d125ce0becb97f68c95a68dd2c35cf65a0bf3c34b833"
+  url "https:github.comomniscaleimposm3archiverefstagsv0.14.1.tar.gz"
+  sha256 "aec2a5e95929891afa5cb68cfa9f6b1bf326c949a002d36f3171ed194f99fc0a"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "6e6978e709dcf02b68670fe3989e91597ad345f4c5aa33e4ad118e433d44c918"
-    sha256 cellar: :any,                 arm64_sonoma:  "688528b320a8a29762059b6396c81591bb8bccdbb0fc38401b6bdbd368f271c2"
-    sha256 cellar: :any,                 arm64_ventura: "392619f76111001dae5e466bd44fe49048a07bcdd4322bd6c825bd26fd660371"
-    sha256 cellar: :any,                 sonoma:        "95fa7c5fde0ca11df2bc4b6a7fd491e7202ab380b6c7baddd1f47b43506059af"
-    sha256 cellar: :any,                 ventura:       "adaec3d25f4e2e91faccbeb55c8b1fe73203cbfdf3182cdc870bdf7dac04e314"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da189939a9103dfca0b32d55b6a2160687c972018c01232e752f9eb89c8b142c"
+    sha256 cellar: :any,                 arm64_sequoia: "0b981fc39b89a99f0d613371f665d06c0ef397a0d669b175e4df290a2b641e28"
+    sha256 cellar: :any,                 arm64_sonoma:  "287e762f448341c9f4c4d27756ee9aca1dbf0383778197237fe2380aa2f3333b"
+    sha256 cellar: :any,                 arm64_ventura: "cad098da6f178da1722aad7bda43bfc701d7b2227d41c6e29256f7b100e3ff26"
+    sha256 cellar: :any,                 sonoma:        "923730f19c0d45256c9fe8f3dc19edd7fc5b7467b5bb5173ae98c44e4e256da4"
+    sha256 cellar: :any,                 ventura:       "4bdf8a9074e1072f1573c175e3541bcf4098f3a6149d75c1f53bf4a6c888cfed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27929945a7f1302d1bc192ec024181fca4cfec9ebb5b1eab90c4bc0e1430af9d"
   end
 
   depends_on "go" => :build

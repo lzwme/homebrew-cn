@@ -1,6 +1,6 @@
 class Scala < Formula
   desc "JVM-based programming language"
-  homepage "https:www.scala-lang.org"
+  homepage "https:dotty.epfl.ch"
   url "https:github.comscalascala3releasesdownload3.6.3scala3-3.6.3.tar.gz"
   sha256 "23e3d83d244b4bc434489fc1100a05c01ec4705111669379a46703e5c1b094d5"
   license "Apache-2.0"

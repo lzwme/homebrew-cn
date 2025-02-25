@@ -6,6 +6,11 @@ class Libopusenc < Formula
   sha256 "8298db61a8d3d63e41c1a80705baa8ce9ff3f50452ea7ec1c19a564fe106cbb9"
   license "BSD-3-Clause"
 
+  livecheck do
+    url "https://ftp.osuosl.org/pub/xiph/releases/opus/?C=M&O=D"
+    regex(%r{href=(?:["']?|.*?/)libopusenc[._-]v?(\d+(?:\.\d+)+)\.t}i)
+  end
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "9c857d079a3c385ac89d89869fa2ed74d6115a3b86d87149bd9d4d5796da3141"

@@ -1,18 +1,18 @@
 class Kuzu < Formula
   desc "Embeddable graph database management system built for query speed & scalability"
   homepage "https:kuzudb.com"
-  url "https:github.comkuzudbkuzuarchiverefstagsv0.8.1.tar.gz"
-  sha256 "4d78110e47832eafbeeb6d57efe862a74d2c282233550218ccb1563b0c52b282"
+  url "https:github.comkuzudbkuzuarchiverefstagsv0.8.2.tar.gz"
+  sha256 "e802083bd0d4337210bc4e49261f22a3fc6535cca1214c054a7ebcffbddc8b43"
   license "MIT"
   head "https:github.comkuzudbkuzu.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d398a6e349f862f332d0c69057f0ab503f80b6753777a43d8b2f7249a0e3e21f"
-    sha256 cellar: :any,                 arm64_sonoma:  "934594dcb163be71eeab324572929d34354880699634d04011895eb834f4d4e1"
-    sha256 cellar: :any,                 arm64_ventura: "922c1f9fa1ea0a9ee52fdab82f25c670d84169abb49b0592e4392bd3225fbff2"
-    sha256 cellar: :any,                 sonoma:        "ba6af14278b00d20000601c0fed8206e11ec48d1edec6c212f6bd84fb8c0acca"
-    sha256 cellar: :any,                 ventura:       "71c1cf9fc580c303ccf289d6f25d3eef7add80a1a36c72807bfd4f011a8c1277"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17eeb27f61ff0c5f78d832e2ca58c47122ddfa497739546e2475fb324df89fee"
+    sha256 cellar: :any,                 arm64_sequoia: "a19ac88070f4bdf5a644e96a8e781b96e14472f85edcd3f62d8761c8cc5fefa7"
+    sha256 cellar: :any,                 arm64_sonoma:  "3ef2e0d449b23c811d328b7dfe79fd8a0a4222f2281fcacd7ec5c3a08ef9ba6f"
+    sha256 cellar: :any,                 arm64_ventura: "d6cc5e8c40385bd0337d772ab5280b8dcb79b981122644670a45afb2643d4736"
+    sha256 cellar: :any,                 sonoma:        "80bd178664fa223908b9df2c9c52fc54f1f65c2e5086adecb8d3eb89ff6ab04a"
+    sha256 cellar: :any,                 ventura:       "e33cf3d0648cda5ea7d04d33c5bae524b8d631764cf7385d83c9a5b68bcd3d1b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4bb1a201fcbb64a450da340c951d39e248e1a51ecddc1b615f74453e3408f732"
   end
 
   depends_on "cmake" => :build
