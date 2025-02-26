@@ -1,18 +1,18 @@
 class Chkbit < Formula
   desc "Check your files for data corruption"
   homepage "https:github.comlaktakchkbit"
-  url "https:github.comlaktakchkbitarchiverefstagsv6.1.0.tar.gz"
-  sha256 "d05a1c8435e58b4b85f649f06b3c9303e0c9c79cb202acd958607f60f57924e2"
+  url "https:github.comlaktakchkbitarchiverefstagsv6.2.0.tar.gz"
+  sha256 "faaf2d26d44a5a74855c40aabe07d6a41030c3fdfe1181993290ed04e9f62bb9"
   license "MIT"
   head "https:github.comlaktakchkbit.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5124a342100712f819c81a41df32a9bd3161e811661c0d86588c1b36096f7015"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5124a342100712f819c81a41df32a9bd3161e811661c0d86588c1b36096f7015"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5124a342100712f819c81a41df32a9bd3161e811661c0d86588c1b36096f7015"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e99e3920f1c496daf9c0553f091d4d503ff063cf1ba9e6f657bbb45587d05f1e"
-    sha256 cellar: :any_skip_relocation, ventura:       "e99e3920f1c496daf9c0553f091d4d503ff063cf1ba9e6f657bbb45587d05f1e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03548b3d8f8a4b045184eb817a280ea02d541f28c6455d58ae6e8d45bfaff318"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58e8e69d9610b0742ec35814b7ac92bb381db23aefc895e0821a1031494952f5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58e8e69d9610b0742ec35814b7ac92bb381db23aefc895e0821a1031494952f5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "58e8e69d9610b0742ec35814b7ac92bb381db23aefc895e0821a1031494952f5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2b402adc9887d56427bbf671726cf64d49891c206ab817c8373e1bd50c0a2753"
+    sha256 cellar: :any_skip_relocation, ventura:       "2b402adc9887d56427bbf671726cf64d49891c206ab817c8373e1bd50c0a2753"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d94fe5b41c65242f1f7e97aa6ef720f65d308bba135728b8e22a489eff59103d"
   end
 
   depends_on "go" => :build

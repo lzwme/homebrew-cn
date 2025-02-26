@@ -2054,6 +2054,7 @@ Homebrew-homebrew-core/Formula/g/gammaray.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gammu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/garble.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/garmintools.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/garnet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gateway-go.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gator.rb, Homebrew/homebrew-core, 1
@@ -7722,6 +7723,7 @@ Homebrew-homebrew-cask/Casks/a/autodmg.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/autofirma.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/autogram.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/automattic-texts.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/automounterhelper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/automute.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/autopkgr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/autovolume.rb, Homebrew/homebrew-cask, 1
@@ -8762,7 +8764,6 @@ Homebrew-homebrew-cask/Casks/f/find-any-file.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/find-empty-folders.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/find-my-ports.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/findergo.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/f/fing-cli.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fing.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/finicky.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/firealpaca.rb, Homebrew/homebrew-cask, 0
@@ -11882,6 +11883,7 @@ Homebrew-homebrew-cask/Casks/j/julia@lts.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/julia@nightly.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jump-desktop-connect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jump.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/j/jumpcloud-password-manager.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jumpcut.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jumpshare.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jupyter-notebook-ql.rb, Homebrew/homebrew-cask, 1

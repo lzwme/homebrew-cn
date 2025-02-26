@@ -1,16 +1,16 @@
 class Qxmpp < Formula
   desc "Cross-platform C++ XMPP client and server library"
   homepage "https:github.comqxmpp-projectqxmpp"
-  url "https:github.comqxmpp-projectqxmpparchiverefstagsv1.10.0.tar.gz"
-  sha256 "04117461cc608af74ab299a7b96be4e38efbb0b67f50839fb59b17f3903725ee"
+  url "https:github.comqxmpp-projectqxmpparchiverefstagsv1.10.1.tar.gz"
+  sha256 "a9e95847c432cbf9ad36aa6d1596d66aa8f644d6983926457235fb64343bc42c"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "b08da35f296845ef3808e1f58edfa30b26c0e28e29cc9a9a91859e28d5d85d91"
-    sha256 cellar: :any,                 arm64_ventura: "905e757d7ddfcc6ab81fbf026002ef175830d04ced2abb9c2afbd70ef8fd6960"
-    sha256 cellar: :any,                 sonoma:        "403c0c5f5c6ad4e3ebf9ea05ae835eb10e643d57d6d3e1b72d47af0882507c52"
-    sha256 cellar: :any,                 ventura:       "ed7fd65cefca9335950593162d8708db379f2c9db3ff478c705eb25b8ec13c88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff94a67bf15b68d02cef1c7cff8d55c741205420938dfc1a7e9b158aefee2f2e"
+    sha256 cellar: :any,                 arm64_sonoma:  "c5292bd029b65ed692753b673448f0dfd02f1dd3616662f09bd8b9a6eea6efe0"
+    sha256 cellar: :any,                 arm64_ventura: "d5fff6b8d73a8b7926035e5cd89095e2d287706969d6887c575bfe727812b09f"
+    sha256 cellar: :any,                 sonoma:        "a40ddbf29f1ecf3d8ce8e19a2457f9883b8041913becb16aab6b5182d790e807"
+    sha256 cellar: :any,                 ventura:       "2503b260efbe8630212aec8a1f31279350fa90b318d990fb727f682c8845484a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fff1b3a44d308322051bea804dfa75283d69a23a624e27b9831027aba30b768"
   end
 
   depends_on "cmake" => :build

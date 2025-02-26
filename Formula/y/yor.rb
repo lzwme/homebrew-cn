@@ -1,18 +1,18 @@
 class Yor < Formula
   desc "Extensible auto-tagger for your IaC files"
   homepage "https:yor.io"
-  url "https:github.combridgecrewioyorarchiverefstags0.1.199.tar.gz"
-  sha256 "1852cfd744d3680d60e3af045e5129d2a714079f0707c39898d4a81040f81645"
+  url "https:github.combridgecrewioyorarchiverefstags0.1.200.tar.gz"
+  sha256 "157f2fc97aafa815dc5efaf1b398950181678953beff5e7736943b73b618b96a"
   license "Apache-2.0"
   head "https:github.combridgecrewioyor.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "add161546ea037ca791427da0e8970f296b353ded3647123f58be512171a9509"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5ba4db629f59e900f0a7b752a37248bde740abf02f51253db305d9915b32280"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "aba57a6a7dd44edbf2e1c0809e9e240c11cb59e811753695e6f047fe1fb6428e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1a21fd35f91937dbd3d27bc4d22c58e23c4bfe9996fb378819d31746b8864ad9"
-    sha256 cellar: :any_skip_relocation, ventura:       "8ebec36b59a55e788f79adfebb6c1af2649fc5f8fb1aaf23988f69d86f6ad95c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46f04666cd4d097b5395e4516d2bb396f9c868dce659571054e503926eb13e33"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bec81b4e0759d619616eecc9f20be5c595c59a4a3d54d2931048317a6ce32a7b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc53606bf732f1838b233ea2a92f3550accf86204ebfe9e4020abcb77931cb2d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5292c622765f09f2c292a85bf3a74738aca1f1d39a3ca0f368d18c62803ec2c3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a2d75e2772ffaf1f6f57a6dedf7c535543e373d7dc640e2a9b2cb1c3671504a4"
+    sha256 cellar: :any_skip_relocation, ventura:       "a8d04551bd36e0df696da02646ef12f9cf2baecfb15b83a88f191f6a82b8c77e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f04dc74ea3f0833efc5b250eec99459aea5d626f7ce9d08845fb30878919fcdc"
   end
 
   depends_on "go" => :build

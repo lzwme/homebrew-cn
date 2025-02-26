@@ -7,14 +7,6 @@ class Icu4cAT75 < Formula
   license "ICU"
   revision 1
 
-  livecheck do
-    url :stable
-    regex(^release[._-]v?(75(?:[.-]\d+)+)$i)
-    strategy :git do |tags, regex|
-      tags.filter_map { |tag| tag[regex, 1]&.tr("-", ".") }
-    end
-  end
-
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "4f07c25ad9219c64a89315c92926a4ed100abee56ca8239697f4d4ed96fc8c4e"
     sha256 cellar: :any,                 arm64_sonoma:  "992749cb6ae752008a3ae031fdc6972833f7ccece25557990797abedb65cdc34"
@@ -25,6 +17,9 @@ class Icu4cAT75 < Formula
   end
 
   keg_only :versioned_formula
+
+  # Disable date set 1 year after ICU 76.1 release
+  disable! date: "2025-10-24", because: :versioned_formula
 
   def install
     odie "Major version bumps need a new formula!" if version.major.to_s != name[@(\d+)$, 1]

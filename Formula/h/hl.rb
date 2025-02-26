@@ -7,18 +7,22 @@ class Hl < Formula
   head "https:github.compamburushl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "88ec7527a5a24dba4be691e4bf070d20fb2357142236b0dc8e4c55401962795e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b7e09debd5f49ae7697195c014bba6a6ad83f22fa9edd0d3a67d414e8cd2fc9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ffc21768b2567f55716ada4e2c881469c1b55f12289d162ceeb6811b41f5ab6b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "277ea2dcfef835944504d65687804d09949bf6b090eeee6f17bd22cd88acd98f"
-    sha256 cellar: :any_skip_relocation, ventura:       "16584dfbbb07ac85b35f93187dba3c24304c0e8a3d79691939cdbebca61ee509"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "80cb3f081fb3bca61dac1cfc770a8e341caa849deb8180f1e9df8bbab708f01c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39332d35ab08653903415ae2b25fe088a27140e04969c35e19838a0de765c0a2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "43115f00e90c0ac5d2d8605b21672af88c623ed02360f1e860cddee411603a86"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1416f08345ffbfab6aced24fc76729ce8f8ddebfa32ef667352eeb5a002546d2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "52aaaccf683665e46f04941533b01163374a1adb29ddf75153f3beb4e42d006b"
+    sha256 cellar: :any_skip_relocation, ventura:       "690cf05f187a31395a766e9575e51c6099ca87c3834278aec7940606e9d07fa8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "faa756318e65f2f492eaab6fb9e1371b055bbd85e91d6b850c4d551ceb5bfa27"
   end
 
   depends_on "rust" => :build
 
   def install
     system "cargo", "install", *std_cargo_args
+
+    generate_completions_from_executable(bin"hl", "--shell-completions")
+    (man1"hl.1").write Utils.safe_popen_read(bin"hl", "--man-page")
   end
 
   test do

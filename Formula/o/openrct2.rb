@@ -2,19 +2,18 @@ class Openrct2 < Formula
   desc "Open source re-implementation of RollerCoaster Tycoon 2"
   homepage "https:openrct2.io"
   url "https:github.comOpenRCT2OpenRCT2.git",
-      tag:      "v0.4.19.1",
-      revision: "455f22bbca7b519f41d90705ee323df36b37ed9a"
+      tag:      "v0.4.20",
+      revision: "1c1b6d4b26e0f7d564b00a4d10e1770b93bfbda7"
   license "GPL-3.0-only"
-  revision 1
   head "https:github.comOpenRCT2OpenRCT2.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "151fc96e845d34a043ba5173dd308b91e245a2667c66ada76e5c588ae8dfb27d"
-    sha256 cellar: :any, arm64_sonoma:  "be41a1165c36050fb56812f06f0005055c3a9b36f6607c77ae8a48cf70c02e47"
-    sha256 cellar: :any, arm64_ventura: "0f9f20e65f091440b1f5f67d757504596b7e2d1707f21141cea76d47ce36c3ef"
-    sha256 cellar: :any, sonoma:        "144610b7bcb76c26f88d37c94c0828d342e0ab18c6d8a1cddc23deb8597ef5d1"
-    sha256 cellar: :any, ventura:       "40ca0ff2fe6a3df5805280bc815bba722d88c58d4aa009d4b81e1067f257143b"
-    sha256               x86_64_linux:  "40b26fcec25cbf140ab398a4e4d1b245d3eec9771e42934b0af33973da0fe410"
+    sha256 cellar: :any, arm64_sequoia: "85e91290d31164f934e3146a99f5d01bb24c52bf5f2bd737a3e55caf29b23ccb"
+    sha256 cellar: :any, arm64_sonoma:  "5fe8f61a9562e91ed19c9919661ef69a0900d7b506bc86ca56bc5bb38b566b4d"
+    sha256 cellar: :any, arm64_ventura: "90045bf9b69c66f139baa09a59dd6f3953af8d7808d7cf234090647b9f93538c"
+    sha256 cellar: :any, sonoma:        "5132f90ba139709b05545942c6a95218a26af98f1bf8083257c7e1e187be653e"
+    sha256 cellar: :any, ventura:       "25f781765024485f834d64bb271a3a0d75bbf38b210bc15a4a3b8a063584e959"
+    sha256               x86_64_linux:  "484e6392a840c93bb3a5c954d09377e477d6d0952d5b789b7a723a960e908320"
   end
 
   depends_on "cmake" => :build

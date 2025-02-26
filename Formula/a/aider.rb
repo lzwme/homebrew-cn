@@ -3,18 +3,18 @@ class Aider < Formula
 
   desc "AI pair programming in your terminal"
   homepage "https:aider.chat"
-  url "https:files.pythonhosted.orgpackages37f27e92fa2d7d9516a23652061291851403cc24a5545db0bf73874011ccdd54aider_chat-0.74.2.tar.gz"
-  sha256 "47fca536698e9ac3daa148ccc447d5b220a4c6126ab05034225ee51cd8d69014"
+  url "https:files.pythonhosted.orgpackages046182fb836df2fc9c1691fe757b0ff08b44a50114e4f0be1e625936bff7a82eaider_chat-0.75.1.tar.gz"
+  sha256 "e770f3f4a036f97d0dd75d193551e7e6edf937540415f41be6584a4581688750"
   license "Apache-2.0"
   head "https:github.compaul-gauthieraider.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0a30025b7c7913e5a06ebcc45ebf071cb909d2a65922db1ca8a8a6a224541ba9"
-    sha256 cellar: :any,                 arm64_sonoma:  "8fdfc0a32255f2dc3407977e0178d65e5643cd0ccc0f9a86202ea6d1800c5bd6"
-    sha256 cellar: :any,                 arm64_ventura: "b0dbbd2c2311cc57cb897bdd9b46e801f45c18ae2d4b9916db505ffaf62b33ed"
-    sha256 cellar: :any,                 sonoma:        "43a3ce8019c7fdc012f2cd142ed6980aff841d3b97d50c7b54c5b28b05af0096"
-    sha256 cellar: :any,                 ventura:       "e875a3b60b0a8724b2f55bf82a4a9aa1d229796aff12925930a768cc256e0223"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28610f0f0a2c2f8c5514b1ace4ca45e721fc22a2badfc9d38af4a53838eb62a0"
+    sha256 cellar: :any,                 arm64_sequoia: "cf2b33efdd254dc5c54db79949bdda3ba1e995ec93d189a89b90d0019fd21be6"
+    sha256 cellar: :any,                 arm64_sonoma:  "010910660e1c90730664f71ec4fd6be726cf50d279fa311eab092d6fd97255fc"
+    sha256 cellar: :any,                 arm64_ventura: "fdc8cd7dd17721e29e19ab55ca83a5e56243beda8053d4ccc8c2bcdccffdce2e"
+    sha256 cellar: :any,                 sonoma:        "a67306a3fe4a301eaaf2fa49ede59d83adc4caab7c3a01ad1223d392a4b12f4a"
+    sha256 cellar: :any,                 ventura:       "0244f34e9e631836e583b90fedbce098416cf54128f645b4b2006b7996947cb4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48ca539e2f7e4d6fab881a71eec2712cdfe6ef4f8dab64d096e77c5911f35e16"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -27,13 +27,13 @@ class Aider < Formula
   depends_on "scipy"
 
   resource "aiohappyeyeballs" do
-    url "https:files.pythonhosted.orgpackages7f55e4373e888fdacb15563ef6fa9fa8c8252476ea071e96fb46defac9f18bf2aiohappyeyeballs-2.4.4.tar.gz"
-    sha256 "5fdd7d87889c63183afc18ce9271f9b0a7d32c2303e394468dd45d514a757745"
+    url "https:files.pythonhosted.orgpackages0807508f9ebba367fc3370162e53a3cfd12f5652ad79f0e0bfdf9f9847c6f159aiohappyeyeballs-2.4.6.tar.gz"
+    sha256 "9b05052f9042985d32ecbe4b59a77ae19c006a78f1344d7fdad69d28ded3d0b0"
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackagesfeedf26db39d29cd3cb2f5a3374304c713fe5ab5a0e4c8ee25a0c45cc6adf844aiohttp-3.11.11.tar.gz"
-    sha256 "bb49c7f1e6ebf3821a42d81d494f538107610c3a705987f53068546b0e90303e"
+    url "https:files.pythonhosted.orgpackages374b952d49c73084fb790cb5c6ead50848c8e96b4980ad806cf4d2ad341eaa03aiohttp-3.11.12.tar.gz"
+    sha256 "7603ca26d75b1b86160ce1bbe2787a0b706e592af5b2504e12caa88a217767b0"
   end
 
   resource "aiosignal" do
@@ -62,8 +62,8 @@ class Aider < Formula
   end
 
   resource "beautifulsoup4" do
-    url "https:files.pythonhosted.orgpackagesb3ca824b1195773ce6166d388573fc106ce56d4a805bd7427b624e063596ec58beautifulsoup4-4.12.3.tar.gz"
-    sha256 "74e3d1928edc070d21748185c46e3fb33490f22f52a3addee9aee0f4f7781051"
+    url "https:files.pythonhosted.orgpackagesf03cadaf39ce1fb4afdd21b611e3d530b183bb7759c9b673d60db0e347fd4439beautifulsoup4-4.13.3.tar.gz"
+    sha256 "1bd32405dacc920b42b83ba01644747ed77456a65760e285fbc47633ceddaf8b"
   end
 
   resource "charset-normalizer" do
@@ -82,8 +82,8 @@ class Aider < Formula
   end
 
   resource "cython" do
-    url "https:files.pythonhosted.orgpackages844db720d6000f4ca77f030bd70f12550820f0766b568e43f11af7f7ad9061aacython-3.0.11.tar.gz"
-    sha256 "7146dd2af8682b4ca61331851e6aebce9fe5158e75300343f80c07ca80b1faff"
+    url "https:files.pythonhosted.orgpackages5a25886e197c97a4b8e254173002cdc141441e878ff29aaa7d9ba560cd6e4866cython-3.0.12.tar.gz"
+    sha256 "b988bb297ce76c671e28c97d017b95411010f7c77fa6623dd0bb47eed1aee1bc"
   end
 
   resource "diff-match-patch" do
@@ -107,8 +107,8 @@ class Aider < Formula
   end
 
   resource "flake8" do
-    url "https:files.pythonhosted.orgpackages3772e8d66150c4fcace3c0a450466aa3480506ba2cae7b61e100a2613afc3907flake8-7.1.1.tar.gz"
-    sha256 "049d058491e228e03e67b390f311bbf88fce2dbaa8fa673e7aea87b7198b8d38"
+    url "https:files.pythonhosted.orgpackages58163f2a0bb700ad65ac9663262905a025917c020a3f92f014d2ba8964b4602cflake8-7.1.2.tar.gz"
+    sha256 "c586ffd0b41540951ae41af572e6790dbd49fc12b3aa2541685d253d9bd504bd"
   end
 
   resource "frozenlist" do
@@ -117,8 +117,8 @@ class Aider < Formula
   end
 
   resource "fsspec" do
-    url "https:files.pythonhosted.orgpackagesee11de70dee31455c546fbc88301971ec03c328f3d1138cfba14263f651e9551fsspec-2024.12.0.tar.gz"
-    sha256 "670700c977ed2fb51e0d9f9253177ed20cbde4a3e5c0283cc5385b5870c8533f"
+    url "https:files.pythonhosted.orgpackagesb57968612ed99700e6413de42895aa725463e821a6b3be75c87fcce1b4af4c70fsspec-2025.2.0.tar.gz"
+    sha256 "1c24b16eaa0a1798afa0337aa0db9b256718ab2a89c425371f5628d22c3b6afd"
   end
 
   resource "gitdb" do
@@ -132,8 +132,8 @@ class Aider < Formula
   end
 
   resource "grep-ast" do
-    url "https:files.pythonhosted.orgpackages62e88f958679bd46525101166c3ea9be97dd953ade8d80de39d9f6869164077agrep_ast-0.4.1.tar.gz"
-    sha256 "f7097ecf23437c04bc4ed708485b0d41894c1a9c4a9941159542b8c67c49a563"
+    url "https:files.pythonhosted.orgpackagesea5f3d226aeaa4e788ffe9d028b18f4f29380cb37e6026f0872e5729ac7ac126grep_ast-0.6.1.tar.gz"
+    sha256 "b904580a991497afd4135c51a217d001b27086323bc7529673a1dd4003ee24d0"
   end
 
   resource "h11" do
@@ -147,13 +147,13 @@ class Aider < Formula
   end
 
   resource "httpx" do
-    url "https:files.pythonhosted.orgpackages788208f8c936781f67d9e6b9eeb8a0c8b4e406136ea4c3d1f89a5db71d42e0e6httpx-0.27.2.tar.gz"
-    sha256 "f7c2be1d2f3c3c3160d441802406b206c2b76f5947b11115e6df10c6c65e66c2"
+    url "https:files.pythonhosted.orgpackagesb1df48c586a5fe32a0f01324ee087459e112ebb7224f646c0b5023f5e79e9956httpx-0.28.1.tar.gz"
+    sha256 "75e98c5f16b0f35b567856f597f06ff2270a374470a5c2392242528e3e3e42fc"
   end
 
   resource "huggingface-hub" do
-    url "https:files.pythonhosted.orgpackages10fdc8ff7693942dac1c642ec3a93a2bf7cbac36e2e920dd61a79965d9a662b7huggingface_hub-0.28.0.tar.gz"
-    sha256 "c2b18c02a47d4384763caddb4d0ab2a8fc6c16e0800d6de4d55d0a896244aba3"
+    url "https:files.pythonhosted.orgpackagese2ac9f7010c8b050d80b64bfddcc09ef4a4450ae4369940d1b01fa13f5d083dehuggingface_hub-0.29.0.tar.gz"
+    sha256 "64034c852be270cac16c5743fe1f659b14515a9de6342d6f42cbb2ede191fc80"
   end
 
   resource "idna" do
@@ -197,8 +197,8 @@ class Aider < Formula
   end
 
   resource "litellm" do
-    url "https:files.pythonhosted.orgpackages86b0c8ec06bd1c87a92d6d824008982b3c82b450d7bd3be850a53913f1ac4907litellm-1.59.8.tar.gz"
-    sha256 "9d645cc4460f6a9813061f07086648c4c3d22febc8e1f21c663f2b7750d90512"
+    url "https:files.pythonhosted.orgpackagesa84081785cf0a61c23039322eafea23caac2a4e98da994044469a209ca10a1ddlitellm-1.61.9.tar.gz"
+    sha256 "792263ab0e40ce10e5bb05f789bbef4578a0caaf40b7a4fc1c373a6eabf9aa0d"
   end
 
   resource "markdown-it-py" do
@@ -242,8 +242,8 @@ class Aider < Formula
   end
 
   resource "openai" do
-    url "https:files.pythonhosted.orgpackages08ae8d9706b8ff2363287b4a8807de2dd29cdbdad5424e9d05d345df724320f5openai-1.60.2.tar.gz"
-    sha256 "a8f843e10f2855713007f491d96afb2694b11b5e02cb97c7d01a0be60bc5bb51"
+    url "https:files.pythonhosted.orgpackagese61c11b520deb71f9ea54ced3c52cd6a5f7131215deba63ad07f23982e328141openai-1.63.2.tar.gz"
+    sha256 "aeabeec984a7d2957b4928ceaa339e2ead19c61cfcf35ae62b7c363368d26360"
   end
 
   resource "packaging" do
@@ -262,8 +262,8 @@ class Aider < Formula
   end
 
   resource "posthog" do
-    url "https:files.pythonhosted.orgpackagesa1f9ffb682dfcfe43ff38c501791b8b4c01ba25f772c5d16bdb8c0f992f099fdposthog-3.11.0.tar.gz"
-    sha256 "42a1f88cbcddeceaf6e8900a528db62d84fc56f6e5809f3d6dfb40e6f743091e"
+    url "https:files.pythonhosted.orgpackages5b16422ef6b6d4068d83b8c12b411c2a63807c233b73c83d09fb5f9e10e017e2posthog-3.14.1.tar.gz"
+    sha256 "c8ea74ac6b3dff726e08d9e0f11f4726be46f0b4d335cc51ea25568fc8d23d99"
   end
 
   resource "prompt-toolkit" do
@@ -277,8 +277,8 @@ class Aider < Formula
   end
 
   resource "psutil" do
-    url "https:files.pythonhosted.orgpackages1f5a07871137bb752428aa4b659f910b399ba6f291156bdea939be3e96cae7cbpsutil-6.1.1.tar.gz"
-    sha256 "cf8496728c18f2d0b45198f06895be52f36611711746b7f30c464b422b50e2f5"
+    url "https:files.pythonhosted.orgpackages2a80336820c1ad9286a4ded7e845b2eccfcb27851ab8ac6abece774a6ff4d3depsutil-7.0.0.tar.gz"
+    sha256 "7be9c3eba38beccb6495ea33afd982a44074b78f28c434a1f51cc07fd315c456"
   end
 
   resource "ptyprocess" do
@@ -391,6 +391,11 @@ class Aider < Formula
     sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
   end
 
+  resource "socksio" do
+    url "https:files.pythonhosted.orgpackagesf85c48a7d9495be3d1c651198fd99dbb6ce190e2274d0f28b9051307bdec6b85socksio-1.0.0.tar.gz"
+    sha256 "f88beb3da5b5c38b9890469de67d0cb0f9d494b78b106ca1845f96c10b91c4ac"
+  end
+
   resource "sounddevice" do
     url "https:files.pythonhosted.orgpackages802db04ae180312b81dbb694504bee170eada5372242e186f6298139fd3a0513sounddevice-0.5.1.tar.gz"
     sha256 "09ca991daeda8ce4be9ac91e15a9a81c8f81efa6b695a348c9171ea0c16cb041"
@@ -407,8 +412,8 @@ class Aider < Formula
   end
 
   resource "tiktoken" do
-    url "https:files.pythonhosted.orgpackages3702576ff3a6639e755c4f70997b2d315f56d6d71e0d046f4fb64cb81a3fb099tiktoken-0.8.0.tar.gz"
-    sha256 "9ccbb2740f24542534369c5635cfd9b2b3c2490754a78ac8831d99f89f94eeb2"
+    url "https:files.pythonhosted.orgpackageseacf756fedf6981e82897f2d570dd25fa597eb3f4459068ae0572d7e888cfd6ftiktoken-0.9.0.tar.gz"
+    sha256 "d02a5ca6a938e0490e1ff957bc48c8b078c88cb83977be1625b1fd8aac792c5d"
   end
 
   resource "tokenizers" do

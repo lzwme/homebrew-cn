@@ -1,17 +1,17 @@
 class Inchi < Formula
   desc "IUPAC International Chemical Identifier"
   homepage "https:www.inchi-trust.org"
-  url "https:github.comIUPAC-InChIInChIreleasesdownloadv1.07.2INCHI-1-SRC.zip"
-  sha256 "4a5627befd1ea29853d4920d975563874108648efe9bfcd1d4dfa3a215032cfb"
+  url "https:github.comIUPAC-InChIInChIreleasesdownloadv1.07.3INCHI-1-SRC.zip"
+  sha256 "b42d828b5d645bd60bc43df7e0516215808d92e5a46c28e12b1f4f75dfaae333"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "25f7aebdb481a803f18fa0627ec514de1005582706ca16e4df152721f5a073e2"
-    sha256 cellar: :any,                 arm64_sonoma:  "7473f6e96cc89bd4afe24c8de25e113bb413b7a87aae10e401d30b90fc7f7e33"
-    sha256 cellar: :any,                 arm64_ventura: "32c4b33b8814920aa956f7ba12ba4910846d46a25ce2ce97c56c62c689166021"
-    sha256 cellar: :any,                 sonoma:        "d88925c6975be8a0e19f5519ddd9d4891c72ce8e6440b3dd047627f990c64144"
-    sha256 cellar: :any,                 ventura:       "3a672451ca7f22d991068b6832cf1183b35a91250c27a945f5b3810c02476c52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6aa1570cbbc5be0acc8e6fb4dada9e301b2bd9d45c430ba558306fae993f8aba"
+    sha256 cellar: :any,                 arm64_sequoia: "f8c679765ab69cc6aae5b2fa81f6bbeea4c903826060410d0b36f4794211f005"
+    sha256 cellar: :any,                 arm64_sonoma:  "b7fc7a880952735827136cd6ef79d7d624b5543faaa6bc2223f4ebbf63c3f111"
+    sha256 cellar: :any,                 arm64_ventura: "21ecf31cb3a08690a8f126b4de6b1c6763555e1d976951c36fad7adbf8e30a6f"
+    sha256 cellar: :any,                 sonoma:        "3db52eb01148b9f7bd51984b0f3a74bd094df492135d7aee961a593df7c052a8"
+    sha256 cellar: :any,                 ventura:       "2cdfe8cc8a2577264d50d5b3f577d12fd2f75781bcfc7e020e0579b1383a20c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4154598d70aa3ff9644319a6f181b3044748779833d3d1d7544005ce1162268"
   end
 
   # These used to be part of open-babel

@@ -1,8 +1,8 @@
 class Zint < Formula
   desc "Barcode encoding library supporting over 50 symbologies"
   homepage "https://www.zint.org.uk/"
-  url "https://downloads.sourceforge.net/project/zint/zint/2.14.0/zint-2.14.0-src.tar.gz"
-  sha256 "5ceb8a169a315402a99a2493ea42f7b832cf7aea0051da9beaddfbf7e2e64a07"
+  url "https://downloads.sourceforge.net/project/zint/zint/2.15.0/zint-2.15.0-src.tar.gz"
+  sha256 "bce37d9b86e6127cac63c8b6267ac421116d4ac086519d726eb724f5462d98c7"
   license "GPL-3.0-or-later"
   head "https://git.code.sf.net/p/zint/code.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Zint < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "462d72fd02fe5277525558b943d6032b77ced0ea4080128eb6ea10af81fabe5d"
-    sha256 cellar: :any,                 arm64_sonoma:  "071c41160def6543a47544d88d7bc461845e29943ebf539e1e1f257f49f3c937"
-    sha256 cellar: :any,                 arm64_ventura: "43f90242fedfe89427d93afe142796966c5cd642ce42393603ed2506a5f648c4"
-    sha256 cellar: :any,                 sonoma:        "a15ef5ea60821b67cd995dbc271cb305edcdcd64c207e907047f8c92e21745cf"
-    sha256 cellar: :any,                 ventura:       "e1a6c6f8f964ecd0111d5140c55c3864bc2839b21c370ddfcbe5d0ae75d83658"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "547aff314d6e71ec65afd097c0c11f5d836a92d03779a739378b3b8890b9ab7c"
+    sha256 cellar: :any,                 arm64_sequoia: "c5d7f8040c04a1c080f2e6bbfe80eb2fdf78d92871cd39c9b1e9ad3ff25ba12e"
+    sha256 cellar: :any,                 arm64_sonoma:  "7d8b21def98c08bac6c057bad1f0e1e46c0f31cc50d55ea3eb6a0dc272f57693"
+    sha256 cellar: :any,                 arm64_ventura: "ae1fe857c6cb02ccdc61ac948f55a0bc4e1cd40a0185b6fdb4df2eac5a79e741"
+    sha256 cellar: :any,                 sonoma:        "6758e30095b4f04942810c3cbfc9d70ea8d80091d9cb7292fcbc4dfa9821ab12"
+    sha256 cellar: :any,                 ventura:       "8c644792c866b56195e2d3ffcf2014c0543e6deb06018fdf17288f91d356ab75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa3c1b905b3ec72b674dbe41efe695a000f9db414d05f9bf0def635f3a9b0105"
   end
 
   depends_on "cmake" => :build

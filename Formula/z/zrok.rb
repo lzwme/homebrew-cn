@@ -1,19 +1,19 @@
 class Zrok < Formula
   desc "Geo-scale, next-generation sharing platform built on top of OpenZiti"
   homepage "https:zrok.io"
-  url "https:github.comopenzitizrokarchiverefstagsv0.4.48.tar.gz"
-  sha256 "43c6550b43b49ec2f311668e44551c6a2560aa8f89bca2092b63727b3e94df31"
+  url "https:github.comopenzitizrokreleasesdownloadv0.4.49source-v0.4.49.tar.gz"
+  sha256 "624d0ced7dadbb5e4b7e9b31bf0b3a3b38d028a92cbf26c29e1bad4e4fa44b3a"
   # The main license is Apache-2.0. ACKNOWLEDGEMENTS.md lists licenses for parts of code
   license all_of: ["Apache-2.0", "BSD-3-Clause", "MIT"]
   head "https:github.comopenzitizrok.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "461c41aa835b4230ac14a4750091c6a36f9a13d4e34ed8ab3c6fb879726cd804"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "15d01ee6fa23035816ac55f48a5d5453b50536647e34dd64bec013c2b0a8c90c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "87fcfe3e4bcc472d35d34f4933149462c3119948d16e81ec5ce20ca066de3ff4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "79a40907ddb8e6b65a9a3645f090e86279dddcd333701f0b07a8104f999fdb08"
-    sha256 cellar: :any_skip_relocation, ventura:       "c44d1cc576808a715b7089a1a09d27c06bdb52d75fbc5b86c178cfd46e3000e1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afed55f742fe5dcbb8db3af7779d47b0a904825333644c0033f89f898f7d1d39"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db449b406dfde36a631fb522d1f12c32ce310fbc90a0a09e5f937d0379579794"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "206493664a84786bf7baa395ac9a0f47f60ec485cc3d0a8b1a283c3b32d82329"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "85ed884cfe867204b28baabef000fd0d8d5d91b55c9e27151d568ba0007c023c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "24c5970f9c1bee500255afbd87a81d17f6ff9ca267118c5047cad2bc053ceb3f"
+    sha256 cellar: :any_skip_relocation, ventura:       "54147b91a77f9c444237cc1d77448fbb9edc01da15a269ec7185a9c5dfdcb04b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9257fac67db4bc71af02c81cbf6dc9948d95965c7de28d59e5710f971ad315e"
   end
 
   depends_on "go" => :build

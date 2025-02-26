@@ -1,19 +1,17 @@
 class Modsecurity < Formula
   desc "Libmodsecurity is one component of the ModSecurity v3 project"
   homepage "https:github.comowasp-modsecurityModSecurity"
-  url "https:github.comowasp-modsecurityModSecurityreleasesdownloadv3.0.13modsecurity-v3.0.13.tar.gz"
-  sha256 "86b4881164a161b822a49df3501e83b254323206906134bdc34a6f3338f4d3f2"
+  url "https:github.comowasp-modsecurityModSecurityreleasesdownloadv3.0.14modsecurity-v3.0.14.tar.gz"
+  sha256 "f7599057b35e67ab61764265daddf9ab03c35cee1e55527547afb073ce8f04e8"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "28915cb87fa22a69e9975175c8752811a070de7ac3c7abd731bf983d07cd4852"
-    sha256 cellar: :any,                 arm64_sonoma:   "feb85b8f1d5cfe4992dcac840ecc468b0b5bb158d3d131f0c607029409266702"
-    sha256 cellar: :any,                 arm64_ventura:  "d7f4470ddcd149ca17f9df55efc216c7b50744ddaa8c15ed927cf3e619fa5183"
-    sha256 cellar: :any,                 arm64_monterey: "2aedcc4915f55fb3ce1bb60e473b9cc0ac130f51bdc2998e7da44d90f66948d2"
-    sha256 cellar: :any,                 sonoma:         "01b24dc6e02e93c31bce18e53503408f40c355de92c0b3d007e6396dc94cbee6"
-    sha256 cellar: :any,                 ventura:        "3dae4f88099a330fafd0864a1e45196187e2383a939928c3e89cd2bde5626257"
-    sha256 cellar: :any,                 monterey:       "d4d7a7a96547426688ae799b3f81527f2620ad2407f183e15f0bf407d9d5c377"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca19e80f6115c942465ee2564c44527ff5b466a39fddc36a179cbc3825934802"
+    sha256 cellar: :any,                 arm64_sequoia: "ef880da82b470f1bc5b1cce0c581ebeb87738b43f47d99928e7f90705a723d2c"
+    sha256 cellar: :any,                 arm64_sonoma:  "d35bb9b47ef663af1e0d66564f39a3f70e600a891ab82d30349208a2ce01e620"
+    sha256 cellar: :any,                 arm64_ventura: "fd6422cba66fea2a371e066e34a43ae75c2539ae7dc8d78c6e9198681a97e7cb"
+    sha256 cellar: :any,                 sonoma:        "84fc44c8c036e373762e66acf75e21caf5e97cdfa24c4b03f50082694078414d"
+    sha256 cellar: :any,                 ventura:       "f97fbde36e55908673885cae90d1bee0a5394f93fb97b10a8f3ad07acd061aee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7c83f85fb33704ab113e7f38f1cbc94d8105ed4ca0e5228ef524c73b04fd3e8"
   end
 
   depends_on "autoconf" => :build

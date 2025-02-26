@@ -1,17 +1,17 @@
 class MinioWarp < Formula
   desc "S3 benchmarking tool"
   homepage "https:github.comminiowarp"
-  url "https:github.comminiowarparchiverefstagsv1.1.0.tar.gz"
-  sha256 "f8a0f0bbb2bbca40b945c7ab3d5e1936390dfc796e12c2b87e61bcd7b1faadc5"
+  url "https:github.comminiowarparchiverefstagsv1.1.1.tar.gz"
+  sha256 "567aab773f0cf27aa37a9e8df5d0f609be0a0a3a41cb9ddee9255b2249152f75"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "50aa830d00b14e9700cf15bd79763c385c18218f4853b711e8c12e5fd3830c15"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59f37f93180c3923192e3cf1192ca2b6cf1143f254ef9bd9b1086b470d6ebace"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "264cae23fbb0b1ac14b1fa8c530b478542b8a321662531ea3a61483a5e1a1d56"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e2b57408488a75c15ec3f8bea580e10382af3b1828d45e8f65b7ec43ed4007ab"
-    sha256 cellar: :any_skip_relocation, ventura:       "2ff12cd5f860a12a4f6514b362f68342cfb647a30c8589482aedd10654027e3a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c597d155ef70239f9f508d0f85a28fd1b705c23cb610b6e130648eeba957280d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ecb99932d941444df1fc3d1ba1a267adc6aee55b0eb0099d2454dd5609ad2d82"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58f2c8111b08ea2caac2cd982910b64823ef6f56eff448e366218adba26451a9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "003be8fff7bceffb44772aa3dbe2c176084c5f434d10492058585975116876be"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3c74de0d3812181974bbc2b753753eeb8d10805bf6cb58c4cf77db14c58ee282"
+    sha256 cellar: :any_skip_relocation, ventura:       "bb7372298656447aa37f9626d97809b85e9a1a4f54859f67131486ab945c7297"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70f01e4d457b6f37fcd81327600e6b4b8d59e0759557dba415315d63c9bc9353"
   end
 
   depends_on "go" => :build

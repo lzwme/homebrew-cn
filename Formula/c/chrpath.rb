@@ -1,8 +1,8 @@
 class Chrpath < Formula
   desc "Tool to edit the rpath in ELF binaries"
   homepage "https://tracker.debian.org/pkg/chrpath"
-  url "https://deb.debian.org/debian/pool/main/c/chrpath/chrpath_0.16.orig.tar.gz"
-  sha256 "bb0d4c54bac2990e1bdf8132f2c9477ae752859d523e141e72b3b11a12c26e7b"
+  url "https://deb.debian.org/debian/pool/main/c/chrpath/chrpath_0.18.orig.tar.gz"
+  sha256 "f09c49f0618660ca11fc6d9580ddde904c7224d4c6d0f6f2d1f9bcdc9102c9aa"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -10,13 +10,15 @@ class Chrpath < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5401a0819599b170252c91c03bbef3b8a4e7e61f3a4333fcc9c271afd897ee8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a820a2841f592b3045eb6e0dc4bdbb6a86789402dea2d97367ec0a58f7d3706f"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
   depends_on :linux
 
   def install
+    system "autoreconf", "--force", "--install", "--verbose"
     system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"
   end

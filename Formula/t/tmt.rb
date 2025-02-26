@@ -3,17 +3,17 @@ class Tmt < Formula
 
   desc "Test Management Tool"
   homepage "https://tmt.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/fc/eb/5eaeaba925f68cadb62e5af4b394d270c580b6a8586deb253ebe9f669771/tmt-1.42.1.tar.gz"
-  sha256 "9f822f29294841fe8324a30f537462a0b07d215a8ef50a5d78bde579870b41d0"
+  url "https://files.pythonhosted.org/packages/83/ac/e26eaa08ca1dbcd77f7f70206a64e82554a2d60cf756ee348dc614771df7/tmt-1.43.0.tar.gz"
+  sha256 "81d33c0f0edd71fd265d51a07245d783fa608264adac1a55db90059ff7a012da"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "39034a302ae70631a6b65ac6dc85fe94cf998710e52639f5899efb1de87873cf"
-    sha256 cellar: :any,                 arm64_sonoma:  "52a9ba9f158f5779633daa99f2fb000ea9c8692ac7c5031e2010cf4e5b6b4d33"
-    sha256 cellar: :any,                 arm64_ventura: "8436d4067fea7673c67a269e2089ed3f4e236b0f1f6c1773f7ba625448d9826f"
-    sha256 cellar: :any,                 sonoma:        "707a43bfb9f61089b6458e152a8904760edb567de2d5917a27b6514d06e10d3e"
-    sha256 cellar: :any,                 ventura:       "b7e908a6f592ae05a8b3145f1fd1af2678adb004a005674e38ac8fa2558cdd63"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f09f05fa3751547e6562291841999008e2d55d5980c8bd1db3b2e55d966b58bb"
+    sha256 cellar: :any,                 arm64_sequoia: "1219b1e7df3216230a11041afbde85331b63a0ddf0a21fdebcedc54749b6f8e2"
+    sha256 cellar: :any,                 arm64_sonoma:  "f45b8ecc5fd0e1feb0a509b8e113074859dd95e9f1519910bd3e39d7f3a821a6"
+    sha256 cellar: :any,                 arm64_ventura: "ab55c1b60712c368fdbf65d72e81998e1c6898db5891587401845e8c31f53904"
+    sha256 cellar: :any,                 sonoma:        "5fe5245c2b084f00b128afc4d6281596734c00efe3fbce52a52619de622b97b3"
+    sha256 cellar: :any,                 ventura:       "19d123a1e6a991441703f71be065f74ad3f88861f7df66da1601776b0ad99cdd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b05b64f640b9204eec3cb800e8df8646bb5352507afb56af5b21dcf50a37fba"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -132,8 +132,8 @@ class Tmt < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/01/80/cce854d0921ff2f0a9fa831ba3ad3c65cee3a46711addf39a2af52df2cfd/rpds_py-0.22.3.tar.gz"
-    sha256 "e32fee8ab45d3c2db6da19a5323bc3362237c8b653c70194414b892fd06a080d"
+    url "https://files.pythonhosted.org/packages/0a/79/2ce611b18c4fd83d9e3aecb5cba93e1917c050f556db39842889fa69b79f/rpds_py-0.23.1.tar.gz"
+    sha256 "7f3240dcfa14d198dba24b8b9cb3b108c06b68d45b7babd9eefc1038fdf7e707"
   end
 
   resource "ruamel-yaml" do

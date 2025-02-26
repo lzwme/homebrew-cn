@@ -3,18 +3,18 @@ class Vunnel < Formula
 
   desc "Tool for collecting vulnerability data from various sources"
   homepage "https:github.comanchorevunnel"
-  url "https:files.pythonhosted.orgpackages482bdb704a74eb47110b279b75350a214f0c122e2b8be214a849ba927947d546vunnel-0.30.0.tar.gz"
-  sha256 "e3af3725921e612c3bbeca015463e306819e8f2737ba751406d2cad63c682030"
+  url "https:files.pythonhosted.orgpackages4242d00c34e440ca4dc47f622cd453b25d8470ce2453bd8365b874803d933360vunnel-0.31.0.tar.gz"
+  sha256 "b3120162a21e67d51bf7fa5b3b591c2372597b16a06368b4ac2aed247c9ba2cc"
   license "Apache-2.0"
   head "https:github.comanchorevunnel.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f2a721ee33e08141a75a0a48d98dd531030fa0d962ed0278294dc486d89df31f"
-    sha256 cellar: :any,                 arm64_sonoma:  "8df7a96cc5b60627be85da2c4d3c36e54d8e3c1dc7145c1465fc91e173a8aada"
-    sha256 cellar: :any,                 arm64_ventura: "267e95bd4be8de8989fe90223bf66d196f98624c86878e909948507d559949ae"
-    sha256 cellar: :any,                 sonoma:        "d9ed5f4f79a449450ce8b3b7debb68970603f88d0663ed163d934b05956f76be"
-    sha256 cellar: :any,                 ventura:       "8628315bc527768c4f6b817654f21b5b68be048204f68cb1c04d2b118690234d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e51392920f3c4a1566096904ede5c5c03503f8bc6a476dba6a4036a91dec4e0e"
+    sha256 cellar: :any,                 arm64_sequoia: "eb1cac75438e921c61cac2556443c8516006060b5324dcb273ae6653cd11e198"
+    sha256 cellar: :any,                 arm64_sonoma:  "9c7c2d3e765470519807ff8e9a90e8849225f13744469dac4f4a270d39edf7cd"
+    sha256 cellar: :any,                 arm64_ventura: "1dcf8198392c0aad1f6234dc52d39121b80b5a9c016490668dfc5510c8e01be2"
+    sha256 cellar: :any,                 sonoma:        "09c8f3539e82d1a0a8b91438eaebe5ca5082f0a31adeaed7c988f1254c5bd437"
+    sha256 cellar: :any,                 ventura:       "9d119c6fb82c8aadaa53272ccf8c6d5f710868da5ffd47e5f331969947905d51"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08cfef8568f2980c05ba2ac8982cc44dbc70902b38c813545ae0ac7ddbec1932"
   end
 
   depends_on "rust" => :build
