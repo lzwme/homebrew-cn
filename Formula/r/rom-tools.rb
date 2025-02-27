@@ -1,11 +1,10 @@
 class RomTools < Formula
   desc "Tools for Multiple Arcade Machine Emulator"
   homepage "https:www.mamedev.org"
-  url "https:github.commamedevmamearchiverefstagsmame0274.tar.gz"
-  version "0.274"
-  sha256 "f8112eb0b175935cf6db93f708186dcaeec5a89400ecf3d5782fd2c0b94907c8"
+  url "https:github.commamedevmamearchiverefstagsmame0275.tar.gz"
+  version "0.275"
+  sha256 "cf12c3c40a94f7bc67deefa69923a0769f99b66dc15bd7e2505b3130df6130bb"
   license "GPL-2.0-or-later"
-  revision 1
   head "https:github.commamedevmame.git", branch: "master"
 
   livecheck do
@@ -13,12 +12,12 @@ class RomTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5188627d52e07e31f1daeecd80d0ee1059a48e499a05c00fbeb3e646bd8cb53a"
-    sha256 cellar: :any,                 arm64_sonoma:  "7223ac1362b9895c25a1a63e6d3f74bc160e5eee3d63775c70eda32b0f4bc6b0"
-    sha256 cellar: :any,                 arm64_ventura: "f8f9ef9b687489c7f0509d0bb97a5ba41f66bda542d8b9dfb14563de37b2cf7d"
-    sha256 cellar: :any,                 sonoma:        "33461a11ac7b133b80c1a13fbaa03560ee10f7ff2164dfc674c1f52305c9b87f"
-    sha256 cellar: :any,                 ventura:       "1bb0d1445bfb480e585dd0410c1b20f8a44b3ce7d9504a74fa7d6eacb990905d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa6ebd8aeb9700f81a96342c128f4bd496e057620d7d58cfbf24b0b5c53c7868"
+    sha256 cellar: :any,                 arm64_sequoia: "271ffcfcec49cd9b886cb448e81a02544e8bb002e03274ce858b9eccc6d72382"
+    sha256 cellar: :any,                 arm64_sonoma:  "378f1856f64e56905fedb4322126bf2e7e791bd3b9b4ffabaa9c41f6b4918edf"
+    sha256 cellar: :any,                 arm64_ventura: "332278e88a33328716fc9127b884054defd6c49126429ade1270db642f8d9b0d"
+    sha256 cellar: :any,                 sonoma:        "37e3f86fe65f3f8d6533c44b316e9a895ba5ab69903cf98aa93b7d6f6c64b7c4"
+    sha256 cellar: :any,                 ventura:       "f0303cbdf3d9d04ad5f2b000cc684f967fa3b4dbbca77b9bd4c4286cb7e65e02"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "64b4266a478b52a0b1903ac566ce3617411d437ed86d97553222711883844135"
   end
 
   depends_on "asio" => :build

@@ -4,17 +4,17 @@ class Openstackclient < Formula
   desc "Command-line client for OpenStack"
   homepage "https://openstack.org"
   # TODO: remove `setuptools` from pypi_formula_mappings.json after https://review.opendev.org/c/openstack/pbr/+/924216
-  url "https://files.pythonhosted.org/packages/89/6c/4d7cc407d4c8b99285f35cc276a12ed33bf95cc17fc26d32a3f424e540b0/python_openstackclient-7.3.1.tar.gz"
-  sha256 "d382072d92ee53375a5999fd4142ddcb5f012c85392ffd0aa7415792ad4080b0"
+  url "https://files.pythonhosted.org/packages/9f/08/d53dc0e3d52a03ad6abe2c301ed0504e0eeb8054f52b672d6bdfafa2132f/python_openstackclient-7.4.0.tar.gz"
+  sha256 "e817e11a01cb2b516fbd99dce45c099c8e41c43d11bb11e6672703a838449d9f"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f94ec0d345fa920d40c3ef079f84959f908412386dbf4121212035fab6159639"
-    sha256 cellar: :any,                 arm64_sonoma:  "7e61c1cf5616bc532892eb992d00a9dbe525b7cf90ce7ce7f48646c84b968121"
-    sha256 cellar: :any,                 arm64_ventura: "e08774f73ccf309fc76baa13ab85f42d878b3275e9a9686c4431cd3237651fac"
-    sha256 cellar: :any,                 sonoma:        "efadd2b16fd7ef332ec034270279b523f4e61b6b71c49c8341806ddd02b75a62"
-    sha256 cellar: :any,                 ventura:       "2ff8d7c280a685751a14b8b477014e2a318d4e1f926386df4db28aff7b27ccad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0350458ea5ea67ceb3727b13b4bd91a480af71bd1571671f98689fb28e7ec320"
+    sha256 cellar: :any,                 arm64_sequoia: "ee04b724e53d9080117f6df5ed4ed2bd4bfd5f5982e364fc5e6fa8cc0fdaccc7"
+    sha256 cellar: :any,                 arm64_sonoma:  "a8f6063aefa0a90251debf40a781a2f975597ea433b07e5d7648a95dbd450897"
+    sha256 cellar: :any,                 arm64_ventura: "62c0608841762a0c11e4eb66d0d05142fec8dd57ade0e0712105ddbf87bf01b7"
+    sha256 cellar: :any,                 sonoma:        "e35fce80adbb4e456336192200036858432a0413bb7f22ab9520fd7959e0da4d"
+    sha256 cellar: :any,                 ventura:       "3b75e4270ef3bc69d00711764744da537eeb442cbe73d39fb8fc78979f514df4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "718b2dad7167c3a00fe5d9e86dd695f92442f8f7fbb05821eb7b6aafaba633f1"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -66,8 +66,8 @@ class Openstackclient < Formula
   end
 
   resource "decorator" do
-    url "https://files.pythonhosted.org/packages/66/0c/8d907af351aa16b42caae42f9d6aa37b900c67308052d10fdce809f8d952/decorator-5.1.1.tar.gz"
-    sha256 "637996211036b6385ef91435e4fae22989472f9d571faba8927ba8253acbc330"
+    url "https://files.pythonhosted.org/packages/43/fa/6d96a0978d19e17b68d634497769987b16c8f4cd0a7a05048bec693caa6b/decorator-5.2.1.tar.gz"
+    sha256 "65f266143752f734b0a7cc83c46f4618af75b8c5911b00ccb61d0ac9b6da0360"
   end
 
   resource "dogpile-cache" do
@@ -351,8 +351,8 @@ class Openstackclient < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/92/ec/089608b791d210aec4e7f97488e67ab0d33add3efccb83a056cbafe3a2a6/setuptools-75.8.0.tar.gz"
-    sha256 "c5afc8f407c626b8313a86e10311dd3f661c6cd9c09d4bf8c15c0e11f9f2b0e6"
+    url "https://files.pythonhosted.org/packages/e8/42/0e5f75d734f181367de4acd9aba8f875453a5905169c5485ca8416b015ae/setuptools-75.8.1.tar.gz"
+    sha256 "65fb779a8f28895242923582eadca2337285f0891c2c9e160754df917c3d2530"
   end
 
   resource "six" do

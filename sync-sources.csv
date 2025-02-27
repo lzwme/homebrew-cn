@@ -1746,6 +1746,7 @@ Homebrew-homebrew-core/Formula/e/exiftran.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/exim.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/exiv2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/exodriver.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/e/exomizer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/expat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/expect.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/exploitdb.rb, Homebrew/homebrew-core, 0
@@ -1998,6 +1999,7 @@ Homebrew-homebrew-core/Formula/f/frege-repl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/frege.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/frei0r.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fribidi.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fricas.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/frizbee.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/frotz.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/frozen.rb, Homebrew/homebrew-core, 1
@@ -6973,6 +6975,7 @@ Homebrew-homebrew-core/Formula/v/vrc-get.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vroom.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vrpn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vsce.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/vscli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vscode-langservers-extracted.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vsearch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vsftpd.rb, Homebrew/homebrew-core, 1
@@ -8588,7 +8591,6 @@ Homebrew-homebrew-cask/Casks/e/egovframedev.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/eiskaltdcpp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/ejector.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/elan.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/e/elasticwolf.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/elecom-mouse-util.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/electerm.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/electorrent.rb, Homebrew/homebrew-cask, 1
@@ -13125,7 +13127,7 @@ Homebrew-homebrew-cask/Casks/p/popsql.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/portfolioperformance.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/porting-kit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/portx.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/p/positron.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/p/positron.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/post-haste.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/postbird.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/postbox.rb, Homebrew/homebrew-cask, 0
@@ -14577,6 +14579,7 @@ Homebrew-homebrew-cask/Casks/w/windows-app.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/windows95.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/windscribe.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/windsurf.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/w/windsurf@next.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/windterm.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wine-stable.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wine@devel.rb, Homebrew/homebrew-cask, 1

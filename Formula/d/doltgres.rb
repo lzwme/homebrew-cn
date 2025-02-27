@@ -1,8 +1,8 @@
 class Doltgres < Formula
   desc "Dolt for Postgres"
   homepage "https:github.comdolthubdoltgresql"
-  url "https:github.comdolthubdoltgresqlarchiverefstagsv0.17.0.tar.gz"
-  sha256 "27d597099a640ef8deb069ba1cd67f0fcc8bd4989f75a8446a0b2f9171a4676f"
+  url "https:github.comdolthubdoltgresqlarchiverefstagsv0.17.1.tar.gz"
+  sha256 "e3f229f5ccc907f4dcd66f8d62ac4ea6c50cb095c0e9e02d581812b68c9a37c2"
   license "Apache-2.0"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,12 +14,12 @@ class Doltgres < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48dad9326f83273d51cb56b777f7b6293e148d4f0a78afc162187fce9b60c455"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e4c8d934be57acb30880313954a977f518af9c252bbfcb49bef1f2ec5bd65a1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6c06486489e16b270c09845aa4132fb7f505ee9bb67e11671681161f4fd4a2e1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b0efa4f0ff5d210f64c3275988942fea91cf712a8ba699f94c79df52ab1c1128"
-    sha256 cellar: :any_skip_relocation, ventura:       "9f6c1fb482a089047b97bcd3425f816f798ddb514c41e8a6c602664e4afa47c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa58ba6f655369b92af413c89a2ebcbd87c43e3d1c5a202979d0216082feb241"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "be8640680bac464c218aec0693c178d3fe9394393e32af652463e0b59a56ffd2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6c7fdbb30bcd60cc9c571ef4d890f91fa64e17b57fda67dc46211838b69bd9fb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d11fea914fdc1f5dbcba4b18e883a37ffdb448355bd39541c3d888657432cfc6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4070e353770650e670af352ca32c340b255a36de5d8f68efe0720eefea89b5d5"
+    sha256 cellar: :any_skip_relocation, ventura:       "594a07bc191068eec42a1bcd85273273613d63366f30dd040f9630fd16c24173"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5b31f891e5f0174ece5d5cf3b48f2651a55bf4b1561908367c04eb904511aa5"
   end
 
   depends_on "go" => :build

@@ -1,18 +1,18 @@
 class Libxlsxwriter < Formula
   desc "C library for creating Excel XLSX files"
   homepage "https:libxlsxwriter.github.io"
-  url "https:github.comjmcnamaralibxlsxwriterarchiverefstagsv1.2.0.tar.gz"
-  sha256 "242821862d5841e68ce9b0d7c774cd3b2c9136bb684a2b0c26cea9447cc31ff3"
+  url "https:github.comjmcnamaralibxlsxwriterarchiverefstagsv1.2.1.tar.gz"
+  sha256 "f3a43fb6b4dab2d65bcbce56088f58c94a8ae7fb5746106c069d77ef87794a24"
   license "BSD-2-Clause"
   head "https:github.comjmcnamaralibxlsxwriter.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b0c544fb8d5ebd9156cafa4d34260d31a85385449200c3ad715a8e82255de653"
-    sha256 cellar: :any,                 arm64_sonoma:  "5146c64ded6a518fdb65c65921fa9177adbfcf02c1c2afc0bc165a161341b4ed"
-    sha256 cellar: :any,                 arm64_ventura: "3ba9c1eb798bca58a7580d208c5a5990323185639449ffe550ff73dfe95a2907"
-    sha256 cellar: :any,                 sonoma:        "19f5a3386d69981572a0c0b49d47d4ea85399ddd44abcc39fde9ae5c0c9c7289"
-    sha256 cellar: :any,                 ventura:       "ccd43296c8d90b562a0732721967d317f81efa391768550062fb0047db369830"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "873367fb88babfc34ead224e216d2ade9e43a59af0e5ef1a6cabb38f226834a8"
+    sha256 cellar: :any,                 arm64_sequoia: "fe1efe1c387d62c42ba87edc67bd8e13970afe6a8eaaa34f6d6e039aff822e6c"
+    sha256 cellar: :any,                 arm64_sonoma:  "45e430944382db08daa5a7654eac86814e6efe0abd2c7d968a26496a745fba22"
+    sha256 cellar: :any,                 arm64_ventura: "f9c7643970f84f28e3440721629a1388c58b0983e4585d41a688eaf21fea41f0"
+    sha256 cellar: :any,                 sonoma:        "045187c9f34dca248ecb15c671bf788403f6d4e8277b78cb8593c15fcece78f6"
+    sha256 cellar: :any,                 ventura:       "4d305cc2bf4b78783c50f36b6c91920e9e3ededeeb98a611b796064206fa2288"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b9249af47fe8cf665e057dfe679ffdcf4110184b7f31d27272456ad26d2a3cb"
   end
 
   uses_from_macos "zlib"

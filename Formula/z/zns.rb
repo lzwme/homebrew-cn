@@ -1,18 +1,18 @@
 class Zns < Formula
   desc "CLI tool for querying DNS records with readable, colored output"
   homepage "https:github.comznsclizns"
-  url "https:github.comznscliznsarchiverefstagsv0.2.0.tar.gz"
-  sha256 "4a54ccbc0d2d027ea6a56ccef0f3b40c284cc2ad014467181dc2c7c74641314d"
+  url "https:github.comznscliznsarchiverefstagsv0.3.0.tar.gz"
+  sha256 "5e7b4cf641429fa153df24d2088744ed5d09ec9d77151c828611262f85feaa15"
   license "MIT"
   head "https:github.comznsclizns.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c77a27a8771587f16fb718f16b4685037d8860f0ba6a2c2851f42d8a999131f8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c77a27a8771587f16fb718f16b4685037d8860f0ba6a2c2851f42d8a999131f8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c77a27a8771587f16fb718f16b4685037d8860f0ba6a2c2851f42d8a999131f8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f8a96e4b0379acb1d3e38a7345147b2738bac2a37a6ff10819a5d2335faaaba3"
-    sha256 cellar: :any_skip_relocation, ventura:       "f8a96e4b0379acb1d3e38a7345147b2738bac2a37a6ff10819a5d2335faaaba3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e33a19b79bf18eb61ddc8ae3d9baa512b3cf6f70d679fcdba27095f97baeeb8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b44e23dcd5f00ee7363edded2f65a8cff2e348a89af0ed97c267278625e285d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b44e23dcd5f00ee7363edded2f65a8cff2e348a89af0ed97c267278625e285d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6b44e23dcd5f00ee7363edded2f65a8cff2e348a89af0ed97c267278625e285d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9fbfa115c982914deef04f605327e1c320967d436718a3d2c0389156713ece26"
+    sha256 cellar: :any_skip_relocation, ventura:       "9fbfa115c982914deef04f605327e1c320967d436718a3d2c0389156713ece26"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18f3eb0b09363071f64391d43668b0437106910ec44340a3afd00dc27116bd92"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class RosaCli < Formula
   desc "RedHat OpenShift Service on AWS (ROSA) command-line interface"
   homepage "https:www.openshift.comproductsamazon-openshift"
-  url "https:github.comopenshiftrosaarchiverefstagsv1.2.50.tar.gz"
-  sha256 "60b0684a813c27a542f0895fb1d3893a8cf68b0d93005caa5769bf8b19a1e03d"
+  url "https:github.comopenshiftrosaarchiverefstagsv1.2.51.tar.gz"
+  sha256 "217c4ece00169eb9f7a5cf92efba928d20baa69753c44c5be6fa7d5f857be7fa"
   license "Apache-2.0"
   head "https:github.comopenshiftrosa.git", branch: "master"
 
@@ -12,12 +12,12 @@ class RosaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "910f77217c227af4a23efe6eaca5f30a3cd44961d9309904d79aac70af204898"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73edbb7a9cf46b6b00ab52eb897932c072f3f39a46e8a04962e9dfab66d78259"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0efff9eb67702302901f58718789980cafc540e1297575ee6e03173f3e115d86"
-    sha256 cellar: :any_skip_relocation, sonoma:        "64cfb26cfe7dbe0098aa733a3f5018a63ab4fec4abd0cc7573aa5129e946c60a"
-    sha256 cellar: :any_skip_relocation, ventura:       "c68416b8e18d55be56c4fb4d258326dba19bcedf7015b6f56066c3563c2aa1b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "10ead50bb905841d60af80ebb573ea8cbfb99eff095074c8551728d2eb2c1c72"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "54aa498005b23a600bd7fe16550a103b81b051b209c4f4bb7e8f489d8f2c683d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef77e07b8ce383a140aac0b8c9ff48c598ac7d32add78c90aeebbe4ee19e2dcf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5f6b6fac8cd77dccae6160f4d6d43ea38b4838369a637ca7c82c4d3a09a1159c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2b8a5a7acb161545a8d10155a6eb43f98d964e37b182d76f8e9b102f51e36ebd"
+    sha256 cellar: :any_skip_relocation, ventura:       "19c1a140274ac1c89cfd89fbe5d6ee2369db5eef37fe6ba4dd0ab4765c04cb21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5b397c3f8222d023e7ddea54bf1e46a9268c3ab089840a60651aa52d506bf1f"
   end
 
   depends_on "go" => :build

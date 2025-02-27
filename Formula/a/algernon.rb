@@ -1,8 +1,8 @@
 class Algernon < Formula
   desc "Pure Go web server with Lua, Markdown, HTTP2 and template support"
   homepage "https:github.comxyprotoalgernon"
-  url "https:github.comxyprotoalgernonarchiverefstagsv1.17.2.tar.gz"
-  sha256 "2c9998c78170e431990ab0ce395567f1d7de051161044811b9e9d3468fa033df"
+  url "https:github.comxyprotoalgernonarchiverefstagsv1.17.3.tar.gz"
+  sha256 "fa65d1f42719b23309259af4c5b02b1ae435771ea7ecb39c44ba27974d1431c6"
   license "BSD-3-Clause"
   version_scheme 1
   head "https:github.comxyprotoalgernon.git", branch: "main"
@@ -13,12 +13,12 @@ class Algernon < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d4960f8b8ab5ea79304230b68ebb91bb2a11d78e618e35413ce9f30de8a6974"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c772456f9441b400656bb527c81e715a0cb3f8063b95844856c33e8aadae8c81"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8c7d078c7cd0ed7eea3ffe2ace1a62e678b5452a6c0d53ead7af1d0d354d29d8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "54c2c525550b6b07d2693867100a3c4e20008e3535d77248609f7442aa947f70"
-    sha256 cellar: :any_skip_relocation, ventura:       "1b1802108b7b03611cb91edf8fc85b0e78dfa2354bae76290fc3c8baae839af6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e99310d3d041c74da5e61dc6bc64d90ffb104c1b8b5d21ac1b978891e45cde1f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f45cc8bc25c0e58336d003756bb56fd64e7fd0ccd4632092c669f7c9dd84d425"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6fcc88380fdbe56754e03780462af0b6bed267bc208a6605464eeafaf25f1e8b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a2e43bb0117c0506fc5380ade27f49e0291c4d3321ebef4c180fd3ad267fa4c4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dafb99f1425261d43809009f66dc86eb5496d12255358f22ab62e131845e5877"
+    sha256 cellar: :any_skip_relocation, ventura:       "afe85eae1aa3f78180566e9d0764b3d3d362af421754494cc023015ebf894336"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30ab869540b7d63439b0bc438f3309b90eeaf9f80915089e5ba072083afa0301"
   end
 
   depends_on "go" => :build

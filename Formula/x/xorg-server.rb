@@ -1,17 +1,17 @@
 class XorgServer < Formula
   desc "X Window System display server"
   homepage "https:www.x.org"
-  url "https:www.x.orgreleasesindividualxserverxorg-server-21.1.15.tar.xz"
-  sha256 "841c82901282902725762df03adbbcd68153d4cdfb0d61df0cfd73ad677ae089"
+  url "https:www.x.orgreleasesindividualxserverxorg-server-21.1.16.tar.xz"
+  sha256 "b14a116d2d805debc5b5b2aac505a279e69b217dae2fae2dfcb62400471a9970"
   license all_of: ["MIT", "APSL-2.0"]
 
   bottle do
-    sha256 arm64_sequoia: "da384bbf7907580328b19bd260d4297133081fec86df0a36397e4c3f26f28bbe"
-    sha256 arm64_sonoma:  "db3cb3b2450ecae3fe883348607120451778f6f2254892cc161c6ca476dbe359"
-    sha256 arm64_ventura: "47bbc240f25c91a73ab35b4df2fa089955ad18ffc1a5f4e796069fe556cb2ed2"
-    sha256 sonoma:        "96d25305aeff7f1ba96090a396cad3ef95e18742c54c4e75095b863ec3298948"
-    sha256 ventura:       "e2ce400b5f1192569337c85792841966eea31d11676673d23ab67fa739b9f3fa"
-    sha256 x86_64_linux:  "10b25721ee179b39c9dbeeb816be020d8f418ab1ec7c54f384f562c29c2d4575"
+    sha256 arm64_sequoia: "c8c981ad73c464046aea344aa2b3c2f1da9d369dea5d3efc7b3f1434404261e5"
+    sha256 arm64_sonoma:  "c801d9b92dfa0e22215ec713a529adc21aee251f58e36209a131968b0810a2fc"
+    sha256 arm64_ventura: "95d06c50ea36876e214d2da78bb45e9e46e56d98b10a44d9d3e29bc387afb1f5"
+    sha256 sonoma:        "018cbca8852500f6e6ecffe0b01084c60f301c13e8e81fa274975f3025f410cc"
+    sha256 ventura:       "f37023286d3363eb226fa6a5216f10aa2f63eaab56b26bdd7e5f77260d965671"
+    sha256 x86_64_linux:  "e32e75a94165706b41839706f6a4473c402403a6d7d37f7b3122cf4f74262ab8"
   end
 
   depends_on "font-util"   => :build

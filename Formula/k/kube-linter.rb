@@ -1,18 +1,18 @@
 class KubeLinter < Formula
   desc "Static analysis tool for Kubernetes YAML files and Helm charts"
   homepage "https:github.comstackroxkube-linter"
-  url "https:github.comstackroxkube-linterarchiverefstagsv0.7.1.tar.gz"
-  sha256 "6b61b9dd7c458bc3509f8c4f4e68fa1e34a0419e4995b61a19a477bc0422f5df"
+  url "https:github.comstackroxkube-linterarchiverefstagsv0.7.2.tar.gz"
+  sha256 "e6718eef1f964cd9ef82144deb79db4c4bf0907115613f77091951cbabd4e8bb"
   license "Apache-2.0"
   head "https:github.comstackroxkube-linter.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8b15ddd54eace35740eed7fe6afb9eaf5191383c7caec0393d7337973729d3b7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b15ddd54eace35740eed7fe6afb9eaf5191383c7caec0393d7337973729d3b7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8b15ddd54eace35740eed7fe6afb9eaf5191383c7caec0393d7337973729d3b7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e7a673e1cd1ca187060209047efcd97005a3bd0c230bc7b81bc24d8bb0feccff"
-    sha256 cellar: :any_skip_relocation, ventura:       "e7a673e1cd1ca187060209047efcd97005a3bd0c230bc7b81bc24d8bb0feccff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0aa74112dd141d09a850c5c84d92df32f3c16880db8d76193171a225f3f5a363"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87b59ecf25a7798396243cea61f112484c033d51b3a0f6f114504caa0de38f8b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87b59ecf25a7798396243cea61f112484c033d51b3a0f6f114504caa0de38f8b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "87b59ecf25a7798396243cea61f112484c033d51b3a0f6f114504caa0de38f8b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4188d431207630a63971c36d03d615f5e223bf22278aaa607c8b706c4454c818"
+    sha256 cellar: :any_skip_relocation, ventura:       "4188d431207630a63971c36d03d615f5e223bf22278aaa607c8b706c4454c818"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9664b67c1bbdf51da6e5fc9c5d3350211f3893a86586e8cfee6a5260933e6565"
   end
 
   depends_on "go" => :build

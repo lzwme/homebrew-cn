@@ -1,26 +1,20 @@
 class Ksops < Formula
   desc "Flexible Kustomize Plugin for SOPS Encrypted Resources"
   homepage "https:github.comviaduct-aikustomize-sops"
-  url "https:github.comviaduct-aikustomize-sopsarchiverefstagsv4.3.3.tar.gz"
-  sha256 "a843b5bbb036027c72bc37fce29135362b8a13e58e6d53a760ed0b7dbe8fe66b"
+  url "https:github.comviaduct-aikustomize-sopsarchiverefstagsv4.4.0.tar.gz"
+  sha256 "d498284ee6a523fd4b87d284693b313fea289b4a374f2c0d1b5023f2b18bf77a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c851554d1663594aeedb701c14d4c21334585127d1395a02141ed112f9cb9f3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c851554d1663594aeedb701c14d4c21334585127d1395a02141ed112f9cb9f3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4c851554d1663594aeedb701c14d4c21334585127d1395a02141ed112f9cb9f3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ba4199945f5682c4cc98067651b0a77f8ef649f0ca598d4e331c03e371a587f0"
-    sha256 cellar: :any_skip_relocation, ventura:       "ba4199945f5682c4cc98067651b0a77f8ef649f0ca598d4e331c03e371a587f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a5a67b172d1685c7eb4b4bd22c08445db9afe73a139c9827d3dcd1ce4ceda07"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3aa747b7c1f4bcfabfd3942ff92a66ee859762d82a495509742df676e0682a48"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3aa747b7c1f4bcfabfd3942ff92a66ee859762d82a495509742df676e0682a48"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3aa747b7c1f4bcfabfd3942ff92a66ee859762d82a495509742df676e0682a48"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c9665ddf3104edd404a8a6b8bdf7e4aa823327c976584a0ea0fe7ed9f8b33456"
+    sha256 cellar: :any_skip_relocation, ventura:       "c9665ddf3104edd404a8a6b8bdf7e4aa823327c976584a0ea0fe7ed9f8b33456"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03ac64e22aa36b5d1664fbf1748a08b76d3f984f00277c1ac329757cffaa475a"
   end
 
   depends_on "go" => :build
-
-  # update go.mod, upstream pr ref, https:github.comviaduct-aikustomize-sopspull269
-  patch do
-    url "https:github.comviaduct-aikustomize-sopscommitfeb0eae92c10c1e248928be55f6577f28b6468a8.patch?full_index=1"
-    sha256 "a9dbae051b35f209bb64bf783f3d2c36f6b26cd395abe3d92dbbd996793a965d"
-  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w")

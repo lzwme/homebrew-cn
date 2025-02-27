@@ -1,21 +1,27 @@
 class Facad < Formula
   desc "Modern, colorful directory listing tool for the command-line"
   homepage "https:github.comyellow-footed-honeyguidefacad"
-  url "https:github.comyellow-footed-honeyguidefacadarchiverefstagsv2.18.0.tar.gz"
-  sha256 "2c4b487fce0046767e37fbbfe77e530b38d4184a5a82710c9fdd74d184b71f0a"
+  url "https:github.comyellow-footed-honeyguidefacadarchiverefstagsv2.20.5.tar.gz"
+  sha256 "592b973a2c889f0a509fb332d6390c36ceed01114e1e6ebe97afbec53f209a1d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c254eed36076c6b8d245084f8a81728d821eaac846c0b51a9e464062181efe27"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52e69e6903590f5b7a7908b0c31a714a841ecf57905a93cc26dd8e4ad7790308"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d67892e3de277927b006478e9beae4039db3e02f7c4ca599a06bb9ec9078721f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d109477775cc9e45648c9713d16452dbb3453449a3b52ad6a085f116cf2393c1"
-    sha256 cellar: :any_skip_relocation, ventura:       "f358dd6f18d143fc6af661391998eaad63d3d11a54e7d89aba4cbc328049667b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62058b41a686d0bf5aa4e55b0efb2dadd14778b52a9591991b1fe69bd60d9adb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6aff9457ec05764b7e7f78910282e06b3116ffe19805a146aaf6f4df5816d10a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8baaa813307fad605954518d0518d96c80217f9e1a8e435b1018149bddc5577d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "42ccecd8c25a8d50b5b2ced3ab619e83353c1f4ad9386974adf3122dc450646c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3b2d58dd9aba6ed9f7ea0acc1e6a3cc8d305804442970e84127f9ccd50abd77a"
+    sha256 cellar: :any_skip_relocation, ventura:       "9c695fddd8ed8f2f0ff27b97c63fac7620683e7d67d95f5ac296eb5e5da8401b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad2577bf3591cf5d08e4cddd9c67f2c6de94ad9721faa5fb7c944f914eb6588d"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
+
+  # this patch includes header with `PATH_MAX` macro on macOS
+  patch do
+    url "https:github.comyellow-footed-honeyguidefacadcommit94defddf0b4c4ee5ba1e81c784d4285b508cae43.patch?full_index=1"
+    sha256 "b818ee8f3109b6b483545624cee042c07d25e7b052467ff2de6cf98acb192e88"
+  end
 
   def install
     system "meson", "setup", "build", *std_meson_args

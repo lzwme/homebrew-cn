@@ -1,5 +1,5 @@
 cask "tabtab" do
-  version "1.3.2"
+  version "1.3.3"
   sha256 :no_check
 
   url "https:github.comriccqiTabTabAppreleasesdownloadprodtabtab.dmg",

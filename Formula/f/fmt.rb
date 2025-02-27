@@ -1,18 +1,18 @@
 class Fmt < Formula
   desc "Open-source formatting library for C++"
   homepage "https:fmt.dev"
-  url "https:github.comfmtlibfmtreleasesdownload11.1.3fmt-11.1.3.zip"
-  sha256 "7df2fd3426b18d552840c071c977dc891efe274051d2e7c47e2c83c3918ba6df"
+  url "https:github.comfmtlibfmtreleasesdownload11.1.4fmt-11.1.4.zip"
+  sha256 "49b039601196e1a765e81c5c9a05a61ed3d33f23b3961323d7322e4fe213d3e6"
   license "MIT"
   head "https:github.comfmtlibfmt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "176baae8cf6882363e48404f538b8181b5564c93897688350744c63b0a6852fb"
-    sha256 cellar: :any,                 arm64_sonoma:  "2869ca6363bcfbf99d5b1906d5a043c2f5cd0b38cdef3310fbd07d98c18eb332"
-    sha256 cellar: :any,                 arm64_ventura: "352c08d6e66b6ea062093fe7c20613cd6ab2ebeb02359bda0790937233345f56"
-    sha256 cellar: :any,                 sonoma:        "1f4a3dccfa9769b8545be00c4178e45ec26db6d2eaa8e01656543abc13685def"
-    sha256 cellar: :any,                 ventura:       "01c711a37b515fa3183ff3fcc1eb4bc5fc508f36928b0575842039ba883391ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40e03be1e1707a4238df9d0513bf9d0f4c415ab5044c26891420b8d263ddad90"
+    sha256 cellar: :any,                 arm64_sequoia: "a66ba523ff4d827b679de7e9ed284a1f3fc091c06152c64946e4c536f284d8c0"
+    sha256 cellar: :any,                 arm64_sonoma:  "bd4ba9753212bb107c8e0a5dcc4f78afa076537a718987d9f302f09c447ce275"
+    sha256 cellar: :any,                 arm64_ventura: "dd8071bddd6d4c1b2d21e5cd4caa4d78cdcf7218caedf65c58ef8e58071bac12"
+    sha256 cellar: :any,                 sonoma:        "4c472ff65bc9d0f5d5bc0631dcd97c2ed17d3d5dc8f4b3deae3d6b87cb62de56"
+    sha256 cellar: :any,                 ventura:       "4fc070f491d3b1396aac67c75c882b73457a3b40877f5bf53d1b72e4e74d6cca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cd54b7682a79a203e780740e07aa1658998392f7b5787dd3cf8c7d17da2680b"
   end
 
   depends_on "cmake" => :build

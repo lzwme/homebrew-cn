@@ -1,15 +1,15 @@
 class Mockolo < Formula
   desc "Efficient Mock Generator for Swift"
   homepage "https:github.comubermockolo"
-  url "https:github.comubermockoloarchiverefstags2.3.0.tar.gz"
-  sha256 "af978fdafe12502962b8ff82f888d003718a7c6307e375f85ed3b5b56a21f5b4"
+  url "https:github.comubermockoloarchiverefstags2.3.1.tar.gz"
+  sha256 "b4cf043d0f606b8e7744a5febdcef907c63f38fd35c4b11cb14ce90242eb56e5"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "423a9cbf73963abb378ffe583100d5656a2d900fa94bb709dbd20f0e9fe129d4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "10bb4abb22eea3e56c5f9cb2981f66111a3a934ebe97bde368573097419f2ce8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c2061ed9b5348e2c2bfbf58b7e26e0945635d742b031386e7020a281897f7518"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45d0e1c2070c81438b016dd1e7df1b3304b6d41fb5490a696dad54b01034a998"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21db991c7dc13e12fbd75ed7f6692222ed005c211eef03f27a18a23b115cf06f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b0726cdef7ae2ee5e4248a36dce0c4bdec6a6c8fcb1f9a7cd65f3e206819910"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6e8778005fb76e85b0eba303110ef437760803943622425ba7bf08f261018bda"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de62f57ed9cb0ede299a2b323a257edbeca7336c243433f4b9eda7ea48926b24"
   end
 
   depends_on xcode: ["15.3", :build]

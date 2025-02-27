@@ -1,8 +1,8 @@
 class Pypy < Formula
   desc "Highly performant implementation of Python 2 in Python"
   homepage "https:pypy.org"
-  url "https:downloads.python.orgpypypypy2.7-v7.3.18-src.tar.bz2"
-  sha256 "737435ddfc5afa5b97a7209c87d70d5f1062426c053b9bb8b99a0347cb4891fa"
+  url "https:downloads.python.orgpypypypy2.7-v7.3.19-src.tar.bz2"
+  sha256 "8703cdcb01f9f82966dd43b6a6018f140399db51ebb43c125c1f9a215e7bb003"
   license "MIT"
   head "https:github.compypypypy.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Pypy < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "09b0a361e84c58a690a246f94c0f577b16203d6ae0c85f4d904cb7db3244e33a"
-    sha256 cellar: :any,                 arm64_sonoma:  "dbb2e87968e8f93a0154e2c9fa552f6bd9937c86fac8e2bcbb3dcc53b1f5fbcf"
-    sha256 cellar: :any,                 arm64_ventura: "fa95b16aa1a1f5e90b1b37cdf96f2e1b0ed5a15cc041fa08f4f9d4559d468efa"
-    sha256 cellar: :any,                 sonoma:        "074caca2fea633d1e7dc10531e67f45de0ec1eb885c300aea99db85a7ce85776"
-    sha256 cellar: :any,                 ventura:       "6e0cd5fc75060a6fb1a4e310e0ae382e3c51de81458257ab59a0a14cc951e23f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d50a0aa4c456336f1b37cc8274d2bd924483f454b466b9d1e1b4b3fa49b10759"
+    sha256 cellar: :any,                 arm64_sequoia: "58bb108411e8647d3dd78869113ae11b982b243785136d876c9181a8e1d35132"
+    sha256 cellar: :any,                 arm64_sonoma:  "04f649d0679c90024d9c74bada227b201e119d427a30c0221ae1569e5cd78501"
+    sha256 cellar: :any,                 arm64_ventura: "bd4c3f56ba5df8881c381dde593ea05084fc2aed6aeaf023700f1e62d84666e1"
+    sha256 cellar: :any,                 sonoma:        "731e075bdfe1a731a2f95731def57dc4effc35a9eff413b9710874996d24cc38"
+    sha256 cellar: :any,                 ventura:       "1c0d7f23afe5b128b2be5c93af7c22dab16af4c76bd8fac5626050b5223e099c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3eb0b648e17940b5e7c4bbb7f5c04ad0cee9bdfab7f7585a384dedd53c027329"
   end
 
   depends_on "pkgconf" => :build

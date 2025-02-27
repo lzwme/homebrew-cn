@@ -4,8 +4,8 @@
 class Mu < Formula
   desc "Tool for searching e-mail messages stored in the maildir-format"
   homepage "https:www.djcbsoftware.nlcodemu"
-  url "https:github.comdjcbmureleasesdownloadv1.12.8mu-1.12.8.tar.xz"
-  sha256 "6c7d43e95ad228990defe5dfd61101aa7a7217d631add303cce1fb29f7a204d0"
+  url "https:github.comdjcbmureleasesdownloadv1.12.9mu-1.12.9.tar.xz"
+  sha256 "ed493ef4eab536815ca8f948848370cd00b4383bc006b6527ccdf21d38e16de5"
   license "GPL-3.0-or-later"
   head "https:github.comdjcbmu.git", branch: "master"
 
@@ -18,12 +18,12 @@ class Mu < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "bd21f7afbcdbbf99cea1b4b448fc18061af53cf6905fd5dc1607ed46ef253811"
-    sha256 cellar: :any, arm64_sonoma:  "9fedabf1413897ab7c5d00c6c4fe86a7f2ad463db8232ec700eaed827ea32df9"
-    sha256 cellar: :any, arm64_ventura: "99bd6352ebf8244bc10bd79268faa622026db5c9915e87bd5598343b84110b8c"
-    sha256 cellar: :any, sonoma:        "876264ceac69288357d99a9e79e8207a24e75220af2e3437e9d75987ca5ec3ac"
-    sha256 cellar: :any, ventura:       "5a423d8cc16836297af967d12f09ab74da31091409bb93f62f0c3a7f16d4214d"
-    sha256               x86_64_linux:  "9ddb8fceff83dd45696bb55158caec1678820ae038d6a25a97cdf1dd7424e6f5"
+    sha256 cellar: :any, arm64_sequoia: "60a4e1989b14c11df602038e46aec6e643bb596888deedbb574117e5624a9d3e"
+    sha256 cellar: :any, arm64_sonoma:  "45cd356412b5937ae8ec03e00dec0c5a8ef840a132bf9a7f56c5f35483169bbc"
+    sha256 cellar: :any, arm64_ventura: "18abf1014ca9bc182be4d1528f29090cf8039f3cc5bf23bf84b025548607a81f"
+    sha256 cellar: :any, sonoma:        "a82f66383b70d7df47be82d4caa5f366ee62feb48cdd326b1cdd402be9cc5788"
+    sha256 cellar: :any, ventura:       "7a6a22ea68bcefc37dff039b33719023917ccad18a92d4820f151e604e05d02b"
+    sha256               x86_64_linux:  "8c490262357176df7e899c2911184079b752ebdb42f00696d70a70ce37f80f51"
   end
 
   depends_on "emacs" => :build

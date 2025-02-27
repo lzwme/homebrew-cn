@@ -1,8 +1,8 @@
 class TektoncdCli < Formula
   desc "CLI for interacting with TektonCD"
   homepage "https:github.comtektoncdcli"
-  url "https:github.comtektoncdcliarchiverefstagsv0.39.1.tar.gz"
-  sha256 "b434088571bde59a699d9c053bfa219aaf77bb13dd027831a2493f80d2dcc8b4"
+  url "https:github.comtektoncdcliarchiverefstagsv0.40.0.tar.gz"
+  sha256 "682f56835596b0d55c72bf1e393ea5b9a16d338b40799a546a908b794615901f"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class TektoncdCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b284d44b31fa614511ecde0a828de970c38b4cee8ca9b10842600a818ab1761"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc1382d8bd6648768348ac672cd4090ebcb57c6929c61454a17050d786b0cd45"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2bc468ce1dd4bf09dd6520510d7c2f7d273e9463b3e15d1db81f4087d3c6f666"
-    sha256 cellar: :any_skip_relocation, sonoma:        "294194d4a4ff864ef8e5b6cbd9e4644815a9762aecb5012e4c6aef1feaf61feb"
-    sha256 cellar: :any_skip_relocation, ventura:       "27f557c41164310772b24ecbd3f110f07ac0830c687937aa887584372b018863"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "227ff65030824d14d6c5b9e934bff191d5c6a3f547fb40090b21ff65bf59aa6e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f007aff9cfb81337f1017cb9648a9bf494ce329a8e6240d32d424ac0c23fea55"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2916dedf40f334b4aeabc62c417167b4b6223e1df2cea55f31650b8684806f3b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d3c8a69268bb37ec5beb0716e7cee2a3c3dff358ef2583b2c35e0bd65c4a37df"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5d70361c241a222d0f109c16d1eb2a6c9815105a18811434971f3024f099e8c2"
+    sha256 cellar: :any_skip_relocation, ventura:       "7bdd8d402587a5c373f7f59ef5a14384e3b58fa8fa875c810e4186464909c3a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "794a9bf68544c01e3bf6d55b24146dd5751c739af235318de23408dc85c5e327"
   end
 
   depends_on "go" => :build

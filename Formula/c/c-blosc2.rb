@@ -1,18 +1,18 @@
 class CBlosc2 < Formula
   desc "Fast, compressed, persistent binary data store library for C"
   homepage "https:www.blosc.org"
-  url "https:github.comBloscc-blosc2archiverefstagsv2.16.0.tar.gz"
-  sha256 "9c2d4a92b43414239120cedf757cbdfbe1e5d9ba21c8779396c553fc0c883f3a"
+  url "https:github.comBloscc-blosc2archiverefstagsv2.17.0.tar.gz"
+  sha256 "f8d5b7167f6032bc286b4de63a7feae281d1845d962edcfa21d81a025eef2bb2"
   license "BSD-3-Clause"
   head "https:github.comBloscc-blosc2.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5bf2771df920dd70388d5425663d557f44094acd499dd4252e4bee5f1be225ac"
-    sha256 cellar: :any,                 arm64_sonoma:  "583b4af01cc5c4ca9b11d7e773c6917b7c7408916601da1e0bdeed91d5538494"
-    sha256 cellar: :any,                 arm64_ventura: "5783e022aec98664d5739374c51c4f5ad19c6f980182d7cc060396b5541e4ec1"
-    sha256 cellar: :any,                 sonoma:        "8094ba7ac79c4d159ac7c65ae907c21e675e02c8d6150c7b0deafe5f84d062f8"
-    sha256 cellar: :any,                 ventura:       "76acd6f4c6a352302ed31bfa708653a28218c241253322e59bd173dc33516544"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5b7dc4fc8845a7e127372bcf62420a33a18f65c7294e2dd6760739e2dc39411"
+    sha256 cellar: :any,                 arm64_sequoia: "c1c2f86f261cc31f6def5abaf8edc8180eaa401512a2123caf10b6def7a599c7"
+    sha256 cellar: :any,                 arm64_sonoma:  "24bb535454241a339692d86ee2c6cf8e594bba7c2e667958a0d9531ffc034dab"
+    sha256 cellar: :any,                 arm64_ventura: "87fad3d9f01a6b3a6875a863b716b7c3c94f4a88b632ebcf7d14d54f00fa91de"
+    sha256 cellar: :any,                 sonoma:        "3dad5b1fbac9f11ba573f7d6705cc9ada47bb190380b72c31844606b9195c01d"
+    sha256 cellar: :any,                 ventura:       "a599182a883be6c842874df5efb6d0620c6eca30c2679e81e17fa5fc43949d08"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f780bb9ba93e846788dc7ed5044563fb59293bfb028e8d01e177b3ccf8e7537"
   end
 
   depends_on "cmake" => :build

@@ -1,17 +1,17 @@
 class Lmod < Formula
   desc "Lua-based environment modules system to modify PATH variable"
   homepage "https:lmod.readthedocs.io"
-  url "https:github.comTACCLmodarchiverefstags8.7.56.tar.gz"
-  sha256 "b7ee903b79ccd5bf195921f09bfc13879ad09d2b4598f4a0c2346bad9faaf28c"
+  url "https:github.comTACCLmodarchiverefstags8.7.57.tar.gz"
+  sha256 "9adac555230f0d95cf696619e1a6b19329dd96a304b40c0f7ce85f403965b76a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25a2de1353a96e78bbacd1b5fbe2900b4afcc00bf3f3c1b79f83c7278f595ee0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f9df3e72985c268eeb9f2d6e60c91ccb1067a9e9d688f44ceed2dc0b2092f27"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9734e33a34dc24e96706c8c4724ac287b2fdde1a520117739d3c7fd62743f79d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dcac60bd0670029683e3c0abc5926bb0d432ecde9767b82d6c691e93a547a011"
-    sha256 cellar: :any_skip_relocation, ventura:       "38c978d21d3dba5e908f8b8cf592367dc94cebb1e81bff2ce3a0f4b22b3c37be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8fcceb408a5f4e15151295d5249130d8692a5737ae3f18b809350240a685378"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29a665ce15f7c81543deef159dc435965403740a11cdcc405f54a6aaf92a0943"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45b26c9df6f7017de37086a55778f06dea5e9628930630bcccae7ede1bbac9dd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a7874fc81abad3dc79457f2e6e5d9234e90ae4c092c4ff554de66cc4cdeb19f8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e9f4215399a85c7f6f87734fce11a5bd7aa9b199778f3d20647b697790af7a4e"
+    sha256 cellar: :any_skip_relocation, ventura:       "7e523695ee41e4e181b5e51147f87d8a543c809b9089984ee96ff38e73741623"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4094908159e99ac0290b70d816820ed3a61a1c8f5aeb465fca6ec1a4e2c0e01d"
   end
 
   depends_on "luarocks" => :build
@@ -37,8 +37,8 @@ class Lmod < Formula
   end
 
   resource "luaposix" do
-    url "https:github.comluaposixluaposixarchiverefstagsv36.2.1.tar.gz"
-    sha256 "44e5087cd3c47058f9934b90c0017e4cf870b71619f99707dd433074622debb1"
+    url "https:github.comluaposixluaposixarchiverefstagsv36.3.tar.gz"
+    sha256 "82cd9a96c41a4a3205c050206f0564ff4456f773a8f9ffc9235ff8f1907ca5e6"
   end
 
   def install

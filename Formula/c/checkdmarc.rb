@@ -3,13 +3,13 @@ class Checkdmarc < Formula
 
   desc "Command-line parser for SPF and DMARC DNS records"
   homepage "https:domainaware.github.iocheckdmarc"
-  url "https:files.pythonhosted.orgpackagese4013e98a21916719cc1968d49b7c8c19bd775c468eba672a0dda785cc95a050checkdmarc-5.7.11.tar.gz"
-  sha256 "248d5f51dd6a8be85b7206ea418c98dd7c234417fd9507b6ee02b6d27c9786af"
+  url "https:files.pythonhosted.orgpackages8acef3f612203806326e6538175fe048b8b9ec36bd445cbb78230b827b09b7d7checkdmarc-5.8.0.tar.gz"
+  sha256 "4d3e3f53a463622183cb7333a0707c156352b90777fb89371efa360fdf7becc8"
   license "Apache-2.0"
   head "https:github.comdomainawarecheckdmarc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4913d8613364aee6ce23d85586f4f1fdec6fc838493b4b05a0a1a6bdaa53926d"
+    sha256 cellar: :any_skip_relocation, all: "bf863cc4e703b6d13d6a98f4d3f7b2f9130fb0e8a5e86ac295547a8c29a233c6"
   end
 
   depends_on "certifi"
@@ -42,8 +42,8 @@ class Checkdmarc < Formula
   end
 
   resource "publicsuffixlist" do
-    url "https:files.pythonhosted.orgpackagesfafcc381f2f56d2283a83bda6dc73df593e1e424f780d468aa3aa8094c9d03d3publicsuffixlist-1.0.2.20241225.tar.gz"
-    sha256 "cea5d299e3a3bd20627c39a61cdc11eee6227a0af2f4af1d7cee88b823fd92b8"
+    url "https:files.pythonhosted.orgpackages43150bb327fbbee1e76077ed47abe4f22a96c3a101fccea658b5dfd2ed802730publicsuffixlist-1.0.2.20250225.tar.gz"
+    sha256 "fb78dab1e437a84aacaed63c40fd18a0d34e0bf280d6d8acab890b472fdfd764"
   end
 
   resource "pyleri" do
@@ -52,8 +52,8 @@ class Checkdmarc < Formula
   end
 
   resource "pyopenssl" do
-    url "https:files.pythonhosted.orgpackagesc1d41067b82c4fc674d6f6e9e8d26b3dff978da46d351ca3bac171544693e085pyopenssl-24.3.0.tar.gz"
-    sha256 "49f7a019577d834746bc55c5fce6ecbcec0f2b4ec5ce1cf43a9a173b8138bb36"
+    url "https:files.pythonhosted.orgpackages9f26e25b4a374b4639e0c235527bbe31c0524f26eda701d79456a7e1877f4cc5pyopenssl-25.0.0.tar.gz"
+    sha256 "cd2cef799efa3936bb08e8ccb9433a575722b9dd986023f1cabc4ae64e9dac16"
   end
 
   resource "requests" do
