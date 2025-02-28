@@ -1,8 +1,8 @@
 class RailsCompletion < Formula
   desc "Bash completion for Rails"
   homepage "https:github.commernencompletion-ruby"
-  url "https:github.commernencompletion-rubyarchiverefstagsv1.0.2.tar.gz"
-  sha256 "70b9ae9154076b561f0d7b2b74893258dc00168ded3e8686f14e349f4a324914"
+  url "https:github.commernencompletion-rubyarchiverefstagsv1.0.3.tar.gz"
+  sha256 "cbcd002bba2a43730cff54f5386565917913d9dec16dcd89345fbe298fe4316b"
   license "MIT"
   version_scheme 1
   head "https:github.commernencompletion-ruby.git", branch: "main"
@@ -12,7 +12,7 @@ class RailsCompletion < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b648cf339e8e076fde0c7da1877daf90924b80a8c0cab31f583622fa2b1cbfc7"
+    sha256 cellar: :any_skip_relocation, all: "c8a61b7b584a29b0be33464a28714a01f798a7fcaceaf1c96f1b447363bc51f3"
   end
 
   def install

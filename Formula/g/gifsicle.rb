@@ -1,8 +1,8 @@
 class Gifsicle < Formula
   desc "GIF imageanimation creatoreditor"
   homepage "https:www.lcdf.orggifsicle"
-  url "https:www.lcdf.orggifsiclegifsicle-1.95.tar.gz"
-  sha256 "b2711647009fd2a13130f3be160532ed46538e762bfc0f020dea50618a7dc950"
+  url "https:www.lcdf.orggifsiclegifsicle-1.96.tar.gz"
+  sha256 "fd23d279681a6dfe3c15264e33f344045b3ba473da4d19f49e67a50994b077fb"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,14 +11,12 @@ class Gifsicle < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ba90fe9c8699b146bf0b44d09fcd82de129ecd4b13adbecfdebcfa13f8a80fa2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "47546a82fae6efc95d68737cfeb31d602d7ad2f33cd2ba2fa35caf8a22d2b3fa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "77137576a3a3cfc1ce005b89934f59e33bf20129004597dfdd35a986144a25ae"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "eef0d504edee2dc94eba412e0d9a9e72a4954deb9286e4d95044d04d62784895"
-    sha256 cellar: :any_skip_relocation, sonoma:         "c848a63a7ab4074aa514051301a276c367156b969fcb816abbb76aef8cdc46b3"
-    sha256 cellar: :any_skip_relocation, ventura:        "92bce8d736d3c03c8a11ada61cde7beee8b687af98dcaaa26af7f15a17e9770f"
-    sha256 cellar: :any_skip_relocation, monterey:       "143c0be0bfb5affecdf96f409c1e879ae7931dc43bbd62ea958bf3c828facc24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "5ce49462da5c4afda892a7cea190a59a89f9125b483d2dc19da2088f25e71277"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75b564ba2a3671f341b02b63b0a8429ea02db301a6ecf1ab346a31d158f44139"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "90eddb31b7d51d074eb66c11a6f7dcbb39e086adf5fa37465e3d6c53f7eb9790"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bddb0e3c75d143311b6d718302aa0aaa73c2ffa7dec3506087c3302d1397c09e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fddb207d04bf9452a711aa8fdfad464e8a11ced975329263f41025abf1dfaa5c"
+    sha256 cellar: :any_skip_relocation, ventura:       "19fe7f8c9fc05b0998a762d8b57d4736d858e56a24e97b4f23078ab17bbd1e9e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1e4342a1be7ae45ff3d7edacfdaee5f4f57753835353ad86e0dc5b3c528e302"
   end
 
   head do

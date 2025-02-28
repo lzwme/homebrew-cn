@@ -1,8 +1,8 @@
 class RakeCompletion < Formula
   desc "Bash completion for Rake"
   homepage "https:github.commernencompletion-ruby"
-  url "https:github.commernencompletion-rubyarchiverefstagsv1.0.2.tar.gz"
-  sha256 "70b9ae9154076b561f0d7b2b74893258dc00168ded3e8686f14e349f4a324914"
+  url "https:github.commernencompletion-rubyarchiverefstagsv1.0.3.tar.gz"
+  sha256 "cbcd002bba2a43730cff54f5386565917913d9dec16dcd89345fbe298fe4316b"
   license "MIT"
   head "https:github.commernencompletion-ruby.git", branch: "main"
 
@@ -11,7 +11,7 @@ class RakeCompletion < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3ab3230b051ec32510036be28e4d2bb89fb6cee106e74ec9a14f11b859d88adc"
+    sha256 cellar: :any_skip_relocation, all: "5004cd20889962fc9ce3a921f56e27cb5a28e0f88fde57ae1428e28e0dbf89bb"
   end
 
   def install

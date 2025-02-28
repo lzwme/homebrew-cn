@@ -989,6 +989,7 @@ Homebrew-homebrew-core/Formula/c/cloudflare-wrangler.rb, Homebrew/homebrew-core,
 Homebrew-homebrew-core/Formula/c/cloudflared.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloudformation-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloudformation-guard.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cloudfoundry-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloudfox.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloudiscovery.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cloudlist.rb, Homebrew/homebrew-core, 1
@@ -7366,6 +7367,7 @@ Homebrew-homebrew-core/Formula/z/zita-convolver.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zix.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/z/zizmor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zk.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/z/zlib-ng-compat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zlib-ng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zlib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/zlint.rb, Homebrew/homebrew-core, 1
@@ -8912,6 +8914,7 @@ Homebrew-homebrew-cask/Casks/f/fujitsu-scansnap-home.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/f/functionflip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/funter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/furtherance.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/f/fuse-t.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fuse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/futubull.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/futurerestore-gui.rb, Homebrew/homebrew-cask, 1
@@ -11011,6 +11014,7 @@ Homebrew-homebrew-cask/Casks/font/font-s/font-sf-compact.rb, Homebrew/homebrew-c
 Homebrew-homebrew-cask/Casks/font/font-s/font-sf-georgian.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-sf-hebrew.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-sf-mono-for-powerline.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-s/font-sf-mono-nerd-font-ligaturized.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-sf-mono.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-sf-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-shadows-into-light-two.rb, Homebrew/homebrew-cask, 1
@@ -14239,6 +14243,7 @@ Homebrew-homebrew-cask/Casks/t/tqsl.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/trackerzapper.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/trader-workstation.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tradingview.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/trae.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/trailer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/trainerroad.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/transcribe.rb, Homebrew/homebrew-cask, 0
@@ -14624,7 +14629,6 @@ Homebrew-homebrew-cask/Casks/w/workspace-one-intelligent-hub.rb, Homebrew/homebr
 Homebrew-homebrew-cask/Casks/w/workspaces.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/worldpainter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wormhole.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/w/wow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wowmatrix.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wowup.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wpsoffice-cn.rb, Homebrew/homebrew-cask, 0

@@ -1,18 +1,18 @@
 class Rainfrog < Formula
   desc "Database management TUI for Postgres"
   homepage "https:github.comachristmascarlrainfrog"
-  url "https:github.comachristmascarlrainfrogarchiverefstagsv0.2.13.tar.gz"
-  sha256 "e45c13452026d9fe2f5b5db58053704e2c6846b1d9fe182c0b70a296f09b9dba"
+  url "https:github.comachristmascarlrainfrogarchiverefstagsv0.2.14.tar.gz"
+  sha256 "4e485fec86dd9b49b9ac9fc12037d33d471c714e1ef559c438638de9714ed98e"
   license "MIT"
   head "https:github.comachristmascarlrainfrog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2ab4c84882adcc8f6b982300ab6b48a7228948eb68cb8289a59253ab7e74733d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2fb48af3972a6c6f95a6ba9eb55b034dc79cce27cee2792dd582408f8105a775"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "88d34d540ce2e8b84d01b3a2e413de3b63ed12f49fac5d87908ef863ee49c78f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "08f7817e3e823c800a2b130168888e25771834988c70f4f84f8491a912efc28a"
-    sha256 cellar: :any_skip_relocation, ventura:       "813e6ae0de7609e2bfe704caad40862e77bb636f54b734da3a39dccd83ef3a46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c0b707db98845d9a82d9c445dc7e59f10871bcc31fb64d1b9b284aea2176ed8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b85473ae3f12d8e828627f445590585ff2dab57369b877467f7864508f43ec6c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "27817a12a9d96dfe893c3e4333a19acff8e042bb289a383ce7928fcd23c0ae0a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "796a80fab7ddd2edcd052e89ce3e2566965a3051d5c97a9628d08109d18726b7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f95544e53098d2d98d16d60fa0d22067f3b565516d10d5a83532cbf475ab43ae"
+    sha256 cellar: :any_skip_relocation, ventura:       "344d570bd4280f08d1619bf7c2c7c21a22b0e63bc904861f3d111a09f537bdd0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b9a822fef42d247dae412fd5012085d6072dcfb8bd22873676cea4e6e111d85"
   end
 
   depends_on "rust" => :build

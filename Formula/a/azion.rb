@@ -1,17 +1,17 @@
 class Azion < Formula
   desc "CLI for the Azion service"
   homepage "https:github.comaziontechazion"
-  url "https:github.comaziontechazionarchiverefstags2.5.3.tar.gz"
-  sha256 "313548c6c73732ffcd0b2b36c11dd43626a1eae08ea137a4db50279d8f3b33bf"
+  url "https:github.comaziontechazionarchiverefstags2.6.0.tar.gz"
+  sha256 "077c7be4a91783d4bd727d19af88fe5906afd7e70babae9d88a3fb31dbd831a7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "612aeb2d9ac6377ff19e116504d617fbd6a09fe486d858a75e07fba525cd5119"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "612aeb2d9ac6377ff19e116504d617fbd6a09fe486d858a75e07fba525cd5119"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "612aeb2d9ac6377ff19e116504d617fbd6a09fe486d858a75e07fba525cd5119"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7bdefebbb2d7df2f6f0866a9e0cf2cef82ce04d4ca679d1825840fcfcf540b1a"
-    sha256 cellar: :any_skip_relocation, ventura:       "7bdefebbb2d7df2f6f0866a9e0cf2cef82ce04d4ca679d1825840fcfcf540b1a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2d9e0f0df6a55bf7789371bef9dae023994319309d961cb9811c1b6190f758d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b08a369ce65c1d8e291fe817272ded86ab253725d1861b842aad96763be2c436"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b08a369ce65c1d8e291fe817272ded86ab253725d1861b842aad96763be2c436"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b08a369ce65c1d8e291fe817272ded86ab253725d1861b842aad96763be2c436"
+    sha256 cellar: :any_skip_relocation, sonoma:        "61b963a04cae24b9d21efa3182cfa4578dad2286a73ac436367fd9c597036dac"
+    sha256 cellar: :any_skip_relocation, ventura:       "61b963a04cae24b9d21efa3182cfa4578dad2286a73ac436367fd9c597036dac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "baf32b0c002bd0d951a94e1f1d52b17cb66cca75ed8f9f76a5cb7f749507479f"
   end
 
   depends_on "go" => :build

@@ -4,10 +4,9 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https:semgrep.dev"
   url "https:github.comsemgrepsemgrep.git",
-      tag:      "v1.109.0",
-      revision: "2ec9863737aa717004411cf64ec3232278ebfd2b"
+      tag:      "v1.110.0",
+      revision: "ffdd67f8d6c987c713a1b60732a3bdb65e07425e"
   license "LGPL-2.1-only"
-  revision 1
   head "https:github.comsemgrepsemgrep.git", branch: "develop"
 
   livecheck do
@@ -16,12 +15,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "93179abcaee59a3bb90e117392c7073eb7c2b7a5812b01aaac5826c1de35cada"
-    sha256 cellar: :any,                 arm64_sonoma:  "014371aad5b0e8425f0e73e2a55d4cd2092e84d72d04e21782eb5e1e67219d87"
-    sha256 cellar: :any,                 arm64_ventura: "7cd124c55addeda9b9a5ba292c243afc01554632dbd5027311e12f25edb76016"
-    sha256 cellar: :any,                 sonoma:        "400d1385f21d42c5c5b15eb8c254dd0b6f179b3ffdb1e4b65e25b51b8d7142d2"
-    sha256 cellar: :any,                 ventura:       "f173f5de21c3c15d6c2f4200c43e10a68167f3d40b88549c72ab17c872faa5ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "281c52dce9c226a1cd279d8bbde0d8c120916a7b7e307d477781ef98d538ef5b"
+    sha256 cellar: :any,                 arm64_sequoia: "728a02147a142b65279974b69608c8c08e7176679fa24aee8f6846c81b1c07dd"
+    sha256 cellar: :any,                 arm64_sonoma:  "96ae1f4c1944afe2503d8db40c2ca1d67f7ab0fa08e619ef652a8c6519bc8367"
+    sha256 cellar: :any,                 arm64_ventura: "59470c374ed89623eba2d26ce9cff3e045cd589fc13db47669c076d3601bd194"
+    sha256 cellar: :any,                 sonoma:        "d57807999e470a0700db491cb68864aaed2bb155ac5d4dea89ce9f0da15c3b97"
+    sha256 cellar: :any,                 ventura:       "fccf1d3136cb66cc4818fceed37a38ee29cd63e2aa3982998f2a8b65c771736b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "17eb6a53239d4326e0b4a809a03cbd9f2e8f1fc61a69f9a58ff46a99d5366572"
   end
 
   depends_on "autoconf" => :build
@@ -41,6 +40,7 @@ class Semgrep < Formula
   depends_on "python@3.13"
   depends_on "sqlite"
   depends_on "tree-sitter"
+  depends_on "zstd"
 
   uses_from_macos "rsync" => :build
   uses_from_macos "curl"
@@ -269,6 +269,7 @@ class Semgrep < Formula
     # Ensure dynamic linkage to our libraries
     inreplace "srcmainflags.sh" do |s|
       s.gsub!("$(brew --prefix libev)liblibev.a", Formula["libev"].opt_libshared_library("libev"))
+      s.gsub!("$(brew --prefix zstd)liblibzstd.a", Formula["zstd"].opt_libshared_library("libzstd"))
       s.gsub!("$(pkg-config gmp --variable libdir)libgmp.a", Formula["gmp"].opt_libshared_library("libgmp"))
       s.gsub!(
         "$(pkg-config tree-sitter --variable libdir)libtree-sitter.a",
@@ -302,7 +303,7 @@ class Semgrep < Formula
       ENV["OPAMSOLVERTIMEOUT"] = "1200"
 
       system "opam", "init", "--no-setup", "--disable-sandboxing"
-      ENV.deparallelize { system "opam", "switch", "create", "ocaml-base-compiler.4.14.0" }
+      ENV.deparallelize { system "opam", "switch", "create", "ocaml-base-compiler.5.2.1" }
 
       # Manually run steps from `opam exec -- make setup` to link Homebrew's tree-sitter
       system "opam", "update", "-y"

@@ -1,8 +1,8 @@
 class Rye < Formula
   desc "Package Management Solution for Python (consider the successor \"uv\" instead)"
   homepage "https:rye.astral.sh"
-  url "https:github.comastral-shryearchiverefstags0.43.0.tar.gz"
-  sha256 "e4106514141a2369802852346ad652f9b10d30b42e89d2e8e6c4a1dcbc65db6b"
+  url "https:github.comastral-shryearchiverefstags0.44.0.tar.gz"
+  sha256 "6ef86ccba82b59edfc4f6deba39be6394e7866fe2250596b96124c20327f0581"
   license "MIT"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,13 +14,12 @@ class Rye < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8738dbbddc915bc6f23f256396423e4a9f723eef7925b30457ba0a35e1ba65d0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "af7fa020f3f928eba9626f7561ba901415e8aaac93a1e1a20004cb504474134b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "efc7b793ab8ee7beb7b37c8b29b1d4d6f79d97bd64dbfe00af85ef9130ed97f5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d0c3950c924c3a54493a32aa22aae2d87e7d01bd8460a10b9461051edd0a75f2"
-    sha256 cellar: :any_skip_relocation, ventura:       "99aeeaac2232d2888854bdd2a12ffcf90fb23c2837fdc64d4c679a77ad80be38"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c848dd8dda2193696a7f30ffcfa6aa8de93ec4b549968ec38d254781752ab46a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "84c1ce8ddff03d794c636fdd224c0ccf873a0a74b330d2eb3b56b7c481ccb9f5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b68d8c0f567cb5d26d3ae99cacb29c56cb7cc1ef4233c73c43d554681a20c740"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bc5259ed968232a6ee88fa9afeba7dd6429dc7eea4a3fafa3dc1eeda259c6a27"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b3a8e7efb4d1cb5070a3182778474e5e196f9f2e94edf30a8584de32bbe1f050"
+    sha256 cellar: :any_skip_relocation, ventura:       "e15f3bbaa74bc6ef7b7fe65e79af32a812567394c27f5074f675726e3f0da24a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c57f18a9a1dd66aca420ceb0bdd53d91915bfd9b93298b5cfa12411af9558a7"
   end
 
   depends_on "rust" => :build

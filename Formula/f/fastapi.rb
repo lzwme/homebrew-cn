@@ -3,17 +3,17 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/a2/b2/5a5dc4affdb6661dea100324e19a7721d5dc524b464fe8e366c093fd7d87/fastapi-0.115.8.tar.gz"
-  sha256 "0ce9111231720190473e222cdf0f07f7206ad7e53ea02beb1d2dc36e2f0741e9"
+  url "https://files.pythonhosted.org/packages/ab/dd/d854f85e70f7341b29e3fda754f2833aec197bd355f805238758e3bcd8ed/fastapi-0.115.9.tar.gz"
+  sha256 "9d7da3b196c5eed049bc769f9475cd55509a112fbe031c0ef2f53768ae68d13f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3bd7343a6a31af899e77b3898c96d58b9d1b39a60eb1a67c4a04eb08c8276a01"
-    sha256 cellar: :any,                 arm64_sonoma:  "0719697051e284b1b804add9b528d0d4a69e44907dcb738e38c7b32d731be788"
-    sha256 cellar: :any,                 arm64_ventura: "8d6dc14109c62100369051a3f6794ac18a6ed8b235ed76b4f8d9a8a90e68650a"
-    sha256 cellar: :any,                 sonoma:        "999c10918b4f162997dde48d6ef2adb25427e7a8e9f15e0e34d3e6b1df34786b"
-    sha256 cellar: :any,                 ventura:       "5b157fce8eaf75a85731745633d0765725096be7704f26c3d17a20ac5dfd9a9a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30eb5288436b938ef029a4d2e1b04dc9a36adced7bd049615742ba1459b6aa41"
+    sha256 cellar: :any,                 arm64_sequoia: "ae595008c5decddee4953f83069abdb64175b341e2abcf4d26418a783994c5cf"
+    sha256 cellar: :any,                 arm64_sonoma:  "d2fa4aa7de6971938eb6e9f941893552c528a81523a5d7e135ca92b9662db1ba"
+    sha256 cellar: :any,                 arm64_ventura: "a1e239812ca92aa50072528c6b13b954b69d7e5a89dd26a42ebcdf57014d0f31"
+    sha256 cellar: :any,                 sonoma:        "a1b2b71787bcdcc2f6a78a979f00cf777f0ed07c77a4236487bbc88f5f54df06"
+    sha256 cellar: :any,                 ventura:       "0e795404d5ed5aafac023713dee7f85e93d5b6a6680d94aeb2f742c90435c052"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98390a8c4b93444c1c04f1baaf9ae92de08d0f1b883baac529a36a372f674a38"
   end
 
   depends_on "rust" => :build # for pydantic
@@ -181,8 +181,8 @@ class Fastapi < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/94/54/8359678c726243d19fae38ca14a334e740782336c9f19700858c4eb64a1e/websockets-14.2.tar.gz"
-    sha256 "5059ed9c54945efb321f097084b4c7e52c246f2c869815876a69d1efc4ad6eb5"
+    url "https://files.pythonhosted.org/packages/2e/7a/8bc4d15af7ff30f7ba34f9a172063bfcee9f5001d7cef04bee800a658f33/websockets-15.0.tar.gz"
+    sha256 "ca36151289a15b39d8d683fd8b7abbe26fc50be311066c5f8dcf3cb8cee107ab"
   end
 
   def install

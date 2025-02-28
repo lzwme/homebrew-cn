@@ -1,18 +1,18 @@
 class BaconLs < Formula
   desc "Rust diagnostic provider based on Bacon"
   homepage "https:github.comcrisidevbacon-ls"
-  url "https:github.comcrisidevbacon-lsarchiverefstags0.16.0.tar.gz"
-  sha256 "db782e4c79f8aeeec9370bd10a986a991e0929055ce92baa0dd9a4847c171590"
+  url "https:github.comcrisidevbacon-lsarchiverefstags0.17.0.tar.gz"
+  sha256 "ef4e343d9fe8f98364304d493e581a08d3f9b1edfd6c96d80c8d62dd1f226309"
   license "MIT"
   head "https:github.comcrisidevbacon-ls.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4940f897ca1df93ae9f9e96b1e430c10747022d9058832b591632ee884873e09"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76bec4b7e2c68e524d1eb999e2ab9739b88564056444146979425dda18e8a2b3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "54cdb4ed83b36564d155ec092a8fe9c2ef5fe888d2946fb4ec0c64a0b77c98e1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4f98d8853bcc964491cb6f40bafe0a617684d2fb5ead9b95864276c5ae25f450"
-    sha256 cellar: :any_skip_relocation, ventura:       "dfe548f5eb42ed54f9f7e3554c2fbbe4ec10e944cdab05e01b160c58090f2aac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f25e1dacac50c72b5299d39f4b8c7bad145fc03cbdbdab04008ae090532a9e1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d84423dac9c3f03feedfe8f1e2e2ed4f911e6221b77baec533a2b0637383808a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b20233e53a19f7fd7e732f2763f2ab86d2971c6af67dcf99be37602a6c7f4681"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "440fa5ee618049d95b59a07fdfc1fd54d19a28df8bf3c399906b477661461459"
+    sha256 cellar: :any_skip_relocation, sonoma:        "90f2f785217f8bd191edfee3487348aa9af740b955787c73abf7a422978e12f3"
+    sha256 cellar: :any_skip_relocation, ventura:       "06e7b56d5c48ff01ec2122e1f31b152a4a613a64d33c378ec58a23a252840b4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9326c99d012c82632ba760173e85c75b0f3d8749cd6a86c5f5b5093805ab5ff2"
   end
 
   depends_on "rust" => :build

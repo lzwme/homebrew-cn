@@ -1,18 +1,18 @@
 class Rustywind < Formula
   desc "CLI for organizing Tailwind CSS classes"
   homepage "https:github.comavencerarustywind"
-  url "https:github.comavencerarustywindarchiverefstagsv0.23.1.tar.gz"
-  sha256 "d7ba13370721df4cc6728ca6b956f9a92ab260de08c03ef445a105a87e382546"
+  url "https:github.comavencerarustywindarchiverefstagsv0.24.0.tar.gz"
+  sha256 "90559cb75c9b28bfafd04a1e800b482e374eadcfc21a6be1ed369651d066ac4d"
   license "Apache-2.0"
   head "https:github.comavencerarustywind.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e05b9993506c365685c99f7b05d720e88c8ca2327ab1ceb1fcbc081f681667a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a520c723738b1bddc8d486daf4f824a49a3b5b7d6b4e7b89476b86cc02ed176"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "44726d34333e418935756b19684d159ab1bb27db577f9725b88b315588dd4a25"
-    sha256 cellar: :any_skip_relocation, sonoma:        "83c06900245ea815e2b9786455420adc6182d3f54de8b48c08570eda701f2bed"
-    sha256 cellar: :any_skip_relocation, ventura:       "e319851c4b8d0fa6739c868b4d1e40152af226b66fe999cb237898299d057168"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7e803756988646dbed34dbb9bb803e42a65ff504f4c5caf7619b04aaadb0664"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa6fc45b7eb5a94e38d0e14501733e4830ad1651d7fc1b4bb99540d4a79a06c4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be6c62e9eaf19501ad9da415b8188525c650dc1cdce403badb622b69abbf3953"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "440358b83270c570a29ac7ec98b95ea0f6a8635c0612644661d6d6c90efe4ae0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f6875be6f7d2da731a802a1cab0080ec1f4fbdc0d9c647830363702ca43769fc"
+    sha256 cellar: :any_skip_relocation, ventura:       "98ff021f7a53e32a4bf2eb01f6deface7b30d3bbbfc18848253a3e7e8039643d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aaa846b03600f391088b6bcaeebb11b9e9bde7ce2eae48b84ce73a34295c5fa5"
   end
 
   depends_on "rust" => :build

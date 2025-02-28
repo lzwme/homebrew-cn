@@ -1,19 +1,17 @@
 class Glow < Formula
   desc "Render markdown on the CLI"
   homepage "https:github.comcharmbraceletglow"
-  url "https:github.comcharmbraceletglowarchiverefstagsv2.0.0.tar.gz"
-  sha256 "55872e36c006e7e715b86283baf14add1f85b0a0304e867dd0d80e8d7afe49a8"
+  url "https:github.comcharmbraceletglowarchiverefstagsv2.1.0.tar.gz"
+  sha256 "f1875a73ed81e5d8e6c81443e9a9d18bd9d1489c563c9fa2ff5425f2f8e2af6f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "285b38283a9d92de47832c73aacb9ef46db02adf6814e2b3962a2dba321d7f9d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f2fb47736f87b48761db48dfed4a9590363d9add8862ca9f71ef492e350bd476"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f2fb47736f87b48761db48dfed4a9590363d9add8862ca9f71ef492e350bd476"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f2fb47736f87b48761db48dfed4a9590363d9add8862ca9f71ef492e350bd476"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dce632f932d1e7d7548dafb8187d02b5752f4071505df75905e45bc1858f98b1"
-    sha256 cellar: :any_skip_relocation, ventura:        "dce632f932d1e7d7548dafb8187d02b5752f4071505df75905e45bc1858f98b1"
-    sha256 cellar: :any_skip_relocation, monterey:       "dce632f932d1e7d7548dafb8187d02b5752f4071505df75905e45bc1858f98b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8c0a44d1f7c7a47053fc73f3fef4d05e12c5fd30de38d409f875f5d1f5d6e66f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd8739a4a46a74b58470bc11187fee3cb54a16070712be0777c47fb2742f4280"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd8739a4a46a74b58470bc11187fee3cb54a16070712be0777c47fb2742f4280"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cd8739a4a46a74b58470bc11187fee3cb54a16070712be0777c47fb2742f4280"
+    sha256 cellar: :any_skip_relocation, sonoma:        "11be2e19dda176223a008ae2cc898f986c66c843701b1c0709ccdaafa038114c"
+    sha256 cellar: :any_skip_relocation, ventura:       "11be2e19dda176223a008ae2cc898f986c66c843701b1c0709ccdaafa038114c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5bf819b4a5d008ee5bfbea78893b8ca67427f1335a8a090185b5691b1f7f79d"
   end
 
   depends_on "go" => :build

@@ -1,18 +1,18 @@
 class Html2markdown < Formula
   desc "Convert HTML to Markdown"
   homepage "https:html-to-markdown.com"
-  url "https:github.comJohannesKaufmannhtml-to-markdownarchiverefstagsv2.2.2.tar.gz"
-  sha256 "6d45930df912143f7f8bc8097e28f9c93f39d733e7536a3801e294abbfe7eddb"
+  url "https:github.comJohannesKaufmannhtml-to-markdownarchiverefstagsv2.3.0.tar.gz"
+  sha256 "39b0078fc5deff3990a3fbaab43083ca083fc562ea73302a1d7583495c4699e2"
   license "MIT"
   head "https:github.comJohannesKaufmannhtml-to-markdown.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c49578941f00d7f66318cdef1ece3d09b9cced00e27a76ac7bde1b9db6b115c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4c49578941f00d7f66318cdef1ece3d09b9cced00e27a76ac7bde1b9db6b115c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4c49578941f00d7f66318cdef1ece3d09b9cced00e27a76ac7bde1b9db6b115c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "662ab7768938a28f8135a1f4f3a6d6f2f218b1c2217ba73b78df0a6b9d51d0a0"
-    sha256 cellar: :any_skip_relocation, ventura:       "662ab7768938a28f8135a1f4f3a6d6f2f218b1c2217ba73b78df0a6b9d51d0a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca32e272b8621aad6ecd4572399e61d614d2af2dec2157741f31203a3fa672b4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb21d1313f47f5e2110e1145d7e0649b568f57226d1fd2605d3fd7b962e4c00f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb21d1313f47f5e2110e1145d7e0649b568f57226d1fd2605d3fd7b962e4c00f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bb21d1313f47f5e2110e1145d7e0649b568f57226d1fd2605d3fd7b962e4c00f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "805eb6b305354ca461fad370a9ac75d61e48cfb89392561be5c105e1eda4a4dc"
+    sha256 cellar: :any_skip_relocation, ventura:       "805eb6b305354ca461fad370a9ac75d61e48cfb89392561be5c105e1eda4a4dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e29074c57de20e57f8b2bd3335542ed1931c8517a09aa0e4e97c2f64f141531a"
   end
 
   depends_on "go" => :build

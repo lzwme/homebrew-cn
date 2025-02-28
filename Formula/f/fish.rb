@@ -1,8 +1,8 @@
 class Fish < Formula
   desc "User-friendly command-line shell for UNIX-like operating systems"
   homepage "https:fishshell.com"
-  url "https:github.comfish-shellfish-shellreleasesdownload3.7.1fish-3.7.1.tar.xz"
-  sha256 "614c9f5643cd0799df391395fa6bbc3649427bb839722ce3b114d3bbc1a3b250"
+  url "https:github.comfish-shellfish-shellreleasesdownload4.0.0fish-4.0.0.tar.xz"
+  sha256 "2fda5bd970357064d8d4c896e08285ba59965ca2a8c4829ca8a82bf3b89c69f3"
   license "GPL-2.0-only"
 
   livecheck do
@@ -13,26 +13,25 @@ class Fish < Formula
   pour_bottle? only_if: :default_prefix
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "6f00c494ab15af26f19ec21c2ca954b3870d400d8b22203a5bf7f1cf86465570"
-    sha256 cellar: :any,                 arm64_sonoma:   "479ae1960544dc4a84c961f125bb9cc42c194ec2a04f0ffb1591e0c3c1d7d577"
-    sha256 cellar: :any,                 arm64_ventura:  "51719eb992cbea31b99828036479b510011c1b4eef131a7b684bf4835f01374e"
-    sha256 cellar: :any,                 arm64_monterey: "0261f26bf449353f84f83ebfe3922fb2d6a0f98e65c551f3d3b14d0e26e78723"
-    sha256 cellar: :any,                 sonoma:         "a5b25fde2926a00b08d77798c52030543252418733442fc25eb1e0ce99b95010"
-    sha256 cellar: :any,                 ventura:        "f2d8ddb5b5e4a29dc9e39230845b514c9fc169e5f2922a1369bd72decc141886"
-    sha256 cellar: :any,                 monterey:       "8518a301b9136ecbd87373b39c6736fae1fc0569da2fa8be7d5f066f1b320fd0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c69075343a17848c5f56d4af091e84604f7447fd91d62ebd92ce20b9eb67f2b5"
+    sha256                               arm64_sequoia: "c80c84237d87bf967035f6280a53c0f46456cd6591c312a96144125715ef0eaf"
+    sha256                               arm64_sonoma:  "34df79081d628dd1d3e8faae3e7d66a7aa9389a4f1e91f6dc50feed7b9f37e93"
+    sha256                               arm64_ventura: "c7653c2c30a335fb258797a4e7f76e6fff809d96549e148b6f8b0aa7c3877c9f"
+    sha256                               sonoma:        "730165471007c9503b260b3bd22f7ed5536d91f80662cf4c9277514c644f88e8"
+    sha256                               ventura:       "56e340b82a17af418c5b1ef6ad0c98fa674faa585eabfd4b2fb07219df77d460"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3675238178e72e615a0386f6d2302701d8d4b8b7b0fe499d04bd06636a6c52c7"
   end
 
   head do
     url "https:github.comfish-shellfish-shell.git", branch: "master"
 
-    depends_on "rust" => :build
     depends_on "sphinx-doc" => :build
   end
 
   depends_on "cmake" => :build
+  depends_on "rust" => :build
   # Apple ncurses (5.4) is 15+ years old and
   # has poor support for modern terminals
+  # The library itself is not needed, but the terminfo database is
   depends_on "ncurses"
   depends_on "pcre2"
 

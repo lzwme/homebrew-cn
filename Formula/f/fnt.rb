@@ -1,22 +1,26 @@
 class Fnt < Formula
   desc "Apt for fonts, the missing font manager for macOSlinux"
   homepage "https:github.comalexmyczkofnt"
-  url "https:github.comalexmyczkofntarchiverefstags1.8.tar.gz"
-  sha256 "9d0888ead98aae4d47ecb23d8208d4d48faea1c1628d49d00cea7c795afb8b65"
+  url "https:github.comalexmyczkofntarchiverefstags1.9.tar.gz"
+  sha256 "4801b58e007aa5d84b112afbea3a5e449fb8d73124fb34182efe228fc37ac3e0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c203667f19a6d4c8380bea8d798f2796562bf5cf8a7e3e0110ea44c0714984b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c203667f19a6d4c8380bea8d798f2796562bf5cf8a7e3e0110ea44c0714984b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5c203667f19a6d4c8380bea8d798f2796562bf5cf8a7e3e0110ea44c0714984b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ee0fc8f0dd7c4b3d122d870fb2e3c8591d33f69c8510dd85bf7dda90e2e0205f"
-    sha256 cellar: :any_skip_relocation, ventura:       "ee0fc8f0dd7c4b3d122d870fb2e3c8591d33f69c8510dd85bf7dda90e2e0205f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c203667f19a6d4c8380bea8d798f2796562bf5cf8a7e3e0110ea44c0714984b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7643970e5f382eee3b375961250697f97f3699b4d6372629ec8aeda86826ddde"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7643970e5f382eee3b375961250697f97f3699b4d6372629ec8aeda86826ddde"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7643970e5f382eee3b375961250697f97f3699b4d6372629ec8aeda86826ddde"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8285538de10d36c7c20adf1275759cfbba3d3dc44c7852e9d69938a3c9b74562"
+    sha256 cellar: :any_skip_relocation, ventura:       "8285538de10d36c7c20adf1275759cfbba3d3dc44c7852e9d69938a3c9b74562"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7643970e5f382eee3b375961250697f97f3699b4d6372629ec8aeda86826ddde"
   end
 
   depends_on "chafa"
   depends_on "lcdf-typetools"
   depends_on "xz"
+
+  on_macos do
+    depends_on "md5sha1sum"
+  end
 
   def install
     bin.install "fnt"
