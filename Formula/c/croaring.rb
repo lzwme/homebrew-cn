@@ -1,18 +1,18 @@
 class Croaring < Formula
   desc "Roaring bitmaps in C (and C++)"
   homepage "https:roaringbitmap.org"
-  url "https:github.comRoaringBitmapCRoaringarchiverefstagsv4.2.3.tar.gz"
-  sha256 "9f28c04bc5b818757e4bd857e7b78507b6fc9145d8f8da9bb2191c7c04fc3b9b"
+  url "https:github.comRoaringBitmapCRoaringarchiverefstagsv4.3.0.tar.gz"
+  sha256 "cd31d1f9637b1fd92345957c35000c9c0adc7065679c26fe6616df506f4cbc56"
   license "Apache-2.0"
   head "https:github.comRoaringBitmapCRoaring.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a77d36c1c11baef9624f2fb3c8c78a069d9787380a50c14e62ee1bf6f8e52b36"
-    sha256 cellar: :any,                 arm64_sonoma:  "14fdab96a5f7eed28b6eeaa8a6d2ddf103808dac850754cccddb4d1c36452686"
-    sha256 cellar: :any,                 arm64_ventura: "ffc2400109130139b6d1e7ce9a3f99ca6633e1fa53d79e4a06fdbcb573c2a3cf"
-    sha256 cellar: :any,                 sonoma:        "0c6750ab26fb3c6fd089c2389ba0a443fdc9e8bf10197b3e1896f3c16dc28ed6"
-    sha256 cellar: :any,                 ventura:       "d5e50f7de7f0dde7a2fcdcbf2b0e6b7fa14531319cf578bd041623ff13fde565"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bc5ca8011247c040782ef96b3289a5b4fd0b7af0195a99c917985413933119e"
+    sha256 cellar: :any,                 arm64_sequoia: "2bf39d304d6460d3e4a18c29864bc77804df23b5f8adeaacf0bee19dc8c8a46e"
+    sha256 cellar: :any,                 arm64_sonoma:  "9463071c3335531bb98b376fa0fdd3840fa8eadc6d654e800890cdc4b4df23f4"
+    sha256 cellar: :any,                 arm64_ventura: "569ea7794ba38fa6c889732ae684386d3f7887b68dddf9105b0785961190b280"
+    sha256 cellar: :any,                 sonoma:        "49ec19d127c0d6931ab3f4ce60264e8ab58207f9ae57ebbfd5b446a4fcdf79c0"
+    sha256 cellar: :any,                 ventura:       "a3724fbf3cb4a1130b57bf865bc26f6b6a0c1998c1798d6d6beede244c13fbd6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db12a1c6f66d89e88ee9c1c2331e1378d6daec332e7ec622058a7d50c904247e"
   end
 
   depends_on "cmake" => :build

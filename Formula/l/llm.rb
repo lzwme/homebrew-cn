@@ -3,17 +3,17 @@ class Llm < Formula
 
   desc "Access large language models from the command-line"
   homepage "https://llm.datasette.io/"
-  url "https://files.pythonhosted.org/packages/11/75/b05a3014a18e70ecf1c8ed79e4a46ccb0c381ae7cd218defb11a9a96394d/llm-0.22.tar.gz"
-  sha256 "3b52cfa6048092df3c6ddd375353b636166bf2d1028b454951865eae4c63d38b"
+  url "https://files.pythonhosted.org/packages/61/0d/012b8d57d78f247c5f3878d3911e7431a8c7c4b8a6ecd9c984145ed019d3/llm-0.23.tar.gz"
+  sha256 "552e549a46cbcae6f3414b8f5952d6651a7f8b60b5f09444057a7a52793a6c8e"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b314a3f1daecd5ab22972f3bfbc063dee60e99082f797c746372047a525ed491"
-    sha256 cellar: :any,                 arm64_sonoma:  "0c584d64365942653fba3294b811c6692a14aa94ae7cfd9b965c057ea239c094"
-    sha256 cellar: :any,                 arm64_ventura: "b7fad57c68f43e66507411e090a89a332b9c08b5d4143d1fd3cdd02482054e55"
-    sha256 cellar: :any,                 sonoma:        "afbfa7c4de58cbf6c476b1df8893cee5aa90bb552d5c53b4ae428f6f5e93d012"
-    sha256 cellar: :any,                 ventura:       "bd861ae8e3985405f9da597c7f9cffc330099a75048068a8d56246b40a5d82ff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73ecc978d464774bc9f4b56232f56627cc52b33a0cdd712ce4812029dc3ea90e"
+    sha256 cellar: :any,                 arm64_sequoia: "f44c420971b7ced931f641c53daf9e512240780e65f58fccc534e2ba686b1f9d"
+    sha256 cellar: :any,                 arm64_sonoma:  "4711a11eb9927c385e6e104d50100f3c6e711db9f2619976d7b8d3c044a3fe16"
+    sha256 cellar: :any,                 arm64_ventura: "564725bac1368ea8e330f0ce1b7de4c8308303a1a2dc6c62aa60909ae84afbe8"
+    sha256 cellar: :any,                 sonoma:        "fcdcdb9f57daf54703dacf92bb7fe826ae9936b0899995e25eaf37984986fceb"
+    sha256 cellar: :any,                 ventura:       "5d202b91eef2c6eb8b959f85ebf294245c6949130f700ad6c8d5ebdf3e329fbe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92fa512e4b66d4dce6a04c48d157dbe07459cf7cca6b811fd9433ea162448deb"
   end
 
   depends_on "rust" => :build
@@ -72,8 +72,8 @@ class Llm < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/4f/32/2049e973a646801df425aecdf88c6504ca878bdb3951fe12076fc30f2977/openai-1.63.0.tar.gz"
-    sha256 "597d7a1b35b113e5a09fcb953bdb1eef44f404a39985f3d7573b3ab09221fd66"
+    url "https://files.pythonhosted.org/packages/5b/99/b7c99aaf4ab0b433556ece264d2295232704f7eebdef37d7fe3fd276f114/openai-1.65.1.tar.gz"
+    sha256 "9d9370a20d2b8c3ce319fd2194c2eef5eab59effbcc5b04ff480977edc530fba"
   end
 
   resource "pluggy" do
@@ -112,8 +112,8 @@ class Llm < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/92/ec/089608b791d210aec4e7f97488e67ab0d33add3efccb83a056cbafe3a2a6/setuptools-75.8.0.tar.gz"
-    sha256 "c5afc8f407c626b8313a86e10311dd3f661c6cd9c09d4bf8c15c0e11f9f2b0e6"
+    url "https://files.pythonhosted.org/packages/d1/53/43d99d7687e8cdef5ab5f9ec5eaf2c0423c2b35133a2b7e7bc276fc32b21/setuptools-75.8.2.tar.gz"
+    sha256 "4880473a969e5f23f2a2be3646b2dfd84af9028716d398e46192f84bc36900d2"
   end
 
   resource "six" do

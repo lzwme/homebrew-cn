@@ -6,6 +6,11 @@ class CloudfoundryCli < Formula
   license "Apache-2.0"
   head "https:github.comcloudfoundrycli.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(^v?((?!9\.9\.9)\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b84b9fd93860fd4c4d27b10fc10163d83205bd38429a24c175c3ded3ffb28792"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b84b9fd93860fd4c4d27b10fc10163d83205bd38429a24c175c3ded3ffb28792"

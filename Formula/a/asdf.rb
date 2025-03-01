@@ -12,12 +12,13 @@ class Asdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3ccae5c4cdbbea464bcdb967d2aa594c784512401f3fa2bdf121b6b397699215"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3ccae5c4cdbbea464bcdb967d2aa594c784512401f3fa2bdf121b6b397699215"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3ccae5c4cdbbea464bcdb967d2aa594c784512401f3fa2bdf121b6b397699215"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c97d96964302047dd0372fb9707f5b121b1f63749d91326937345a4a39e4796a"
-    sha256 cellar: :any_skip_relocation, ventura:       "c97d96964302047dd0372fb9707f5b121b1f63749d91326937345a4a39e4796a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f861eb34da725ab46d0aead2f7efc1a76dba28fd5ba8b3101883bbb519a87def"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c1dd4007177e58892fae2a75114d7de4948e78ce8a9b98a417e98448953ffeb9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1dd4007177e58892fae2a75114d7de4948e78ce8a9b98a417e98448953ffeb9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c1dd4007177e58892fae2a75114d7de4948e78ce8a9b98a417e98448953ffeb9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "66337c0d0e4e7115ded298ec3bff0bf38a92a2c1584161927ca5cb18be43b398"
+    sha256 cellar: :any_skip_relocation, ventura:       "66337c0d0e4e7115ded298ec3bff0bf38a92a2c1584161927ca5cb18be43b398"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97c2bc741439f811ac0ae93b4595f506e154a745f5075503f4b52543bd3cf15a"
   end
 
   depends_on "go" => :build
@@ -25,6 +26,7 @@ class Asdf < Formula
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), ".cmdasdf"
     generate_completions_from_executable(bin"asdf", "completion")
+    libexec.install Dir["asdf.*"]
   end
 
   test do

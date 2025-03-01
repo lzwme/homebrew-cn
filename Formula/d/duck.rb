@@ -1,8 +1,8 @@
 class Duck < Formula
   desc "Command-line interface for Cyberduck (a multi-protocol file transfer tool)"
   homepage "https:duck.sh"
-  url "https:dist.duck.shduck-src-9.1.2.42722.tar.gz"
-  sha256 "13f496860b36358dedbbba1d45d40758566b9ec8f657e789bcdcac1a66f3b72c"
+  url "https:dist.duck.shduck-src-9.1.3.42945.tar.gz"
+  sha256 "04e7a5db5d2f513f314fdf85e893ab6976ed4495c875722f01a033ed00e946c4"
   license "GPL-3.0-only"
   head "https:github.comiterate-chcyberduck.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Duck < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "de5427ed1c9db98edd4c633d948b8a1a8d488077e28cfca013159785d7cb4c96"
-    sha256 cellar: :any, arm64_sonoma:  "d18bdc35d038bc7a8667c10b41a9c9b8367b553adaf2920b0c1b52a64950f38d"
-    sha256 cellar: :any, arm64_ventura: "5a345c332e1f280810bccbc6b1e78cbd7676032e29a23b4c3b522c82221958c4"
-    sha256 cellar: :any, sonoma:        "6b9f64369e33d5c0a580990eb0ea3d18c9f37698842f30e2dcbb9bdd8479a754"
-    sha256 cellar: :any, ventura:       "05b443e05dab27348dc8d331b1e79c3e65570d15fd8bf69569942bd40c0e1bd3"
-    sha256               x86_64_linux:  "eeb0cfd0629c64025dc5dda88b9be7059254da331d53c0ae5bd8f7ece093f485"
+    sha256 cellar: :any, arm64_sequoia: "f277eaa9c7ae08b9595053a7e3b321f839f0767b2cecf0d2a8639478d838755c"
+    sha256 cellar: :any, arm64_sonoma:  "0a4a451e488552fe764bd16332d723aa273d6597563ddf0bc29ab5fa67a5f6f2"
+    sha256 cellar: :any, arm64_ventura: "11bfc50049d90a411de5c0c85d98125cd8089f2846898cc3bf6997b54b02bab5"
+    sha256 cellar: :any, sonoma:        "7b2b873e4b820c24f2911d7c4407b28fa5b0c028a2304ddd80d09d36fbb17a5e"
+    sha256 cellar: :any, ventura:       "75ecee54c2369560ca942d8a929ec13575cda5f5bd5390123c778f5fbae11ecb"
+    sha256               x86_64_linux:  "e2fe7084857f46a3e16623f5ceef60a206013792508b21868b13cf11a08c4f24"
   end
 
   depends_on "ant" => :build
@@ -47,13 +47,13 @@ class Duck < Formula
   conflicts_with "duckscript", because: "both install `duck` binaries"
 
   resource "jna" do
-    url "https:github.comjava-native-accessjnaarchiverefstags5.15.0.tar.gz"
-    sha256 "30f857756ea29870c8a0c7eff5f0e0b38fdd01c1f26bd9b0f4af02a7d3643179"
+    url "https:github.comjava-native-accessjnaarchiverefstags5.16.0.tar.gz"
+    sha256 "a81f9b6f076d47c22bb83617bace398332c276d8b6bb726c6e1013b613dde1a0"
   end
 
   resource "rococoa" do
-    url "https:github.comiterate-chrococoaarchiverefstags0.9.1.tar.gz"
-    sha256 "62c3c36331846384aeadd6014c33a30ad0aaff7d121b775204dc65cb3f00f97b"
+    url "https:github.comiterate-chrococoaarchiverefstags0.10.0.tar.gz"
+    sha256 "8ce789a7b27c37ed37dcb6517b76de8eee144bf7269c3c645d791f21c20a3046"
   end
 
   resource "JavaNativeFoundation" do

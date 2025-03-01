@@ -1,17 +1,17 @@
 class DbmlCli < Formula
   desc "Convert DBML file to SQL and vice versa"
   homepage "https://www.dbml.org/cli/"
-  url "https://registry.npmjs.org/@dbml/cli/-/cli-3.9.6.tgz"
-  sha256 "c29747649432b597b46a402b66b0bebcad7f347b7045ca6497cafa461a5695fc"
+  url "https://registry.npmjs.org/@dbml/cli/-/cli-3.10.1.tgz"
+  sha256 "9f7a07bc4b6d79bc8538cf61837563332c2553d93001dadef40eca6155b6511d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9053b0f1b3976d703b7f27529f2bff4e3951e43049ee1ac89a26e360c44b77c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9053b0f1b3976d703b7f27529f2bff4e3951e43049ee1ac89a26e360c44b77c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d9053b0f1b3976d703b7f27529f2bff4e3951e43049ee1ac89a26e360c44b77c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "63b63d33667c07793b3514520c93d321a826c2d8e379e99e7fb09fa52b9d4f33"
-    sha256 cellar: :any_skip_relocation, ventura:       "63b63d33667c07793b3514520c93d321a826c2d8e379e99e7fb09fa52b9d4f33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5eb0853e4deab5654cdccb368c45d2ed47a85d8bfa54d25515460ed6d171fec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3bf7fa5231df6beadd8de4edd7d7027aeb8c034e8f11651a275790ae503cf2ad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3bf7fa5231df6beadd8de4edd7d7027aeb8c034e8f11651a275790ae503cf2ad"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3bf7fa5231df6beadd8de4edd7d7027aeb8c034e8f11651a275790ae503cf2ad"
+    sha256 cellar: :any_skip_relocation, sonoma:        "71f4ce9e22b52da5087c663db90a8956cbf47209b268251c216ee235ab1393dd"
+    sha256 cellar: :any_skip_relocation, ventura:       "71f4ce9e22b52da5087c663db90a8956cbf47209b268251c216ee235ab1393dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3bf7fa5231df6beadd8de4edd7d7027aeb8c034e8f11651a275790ae503cf2ad"
   end
 
   depends_on "node"

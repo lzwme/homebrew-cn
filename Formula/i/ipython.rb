@@ -3,18 +3,18 @@ class Ipython < Formula
 
   desc "Interactive computing in Python"
   homepage "https:ipython.org"
-  url "https:files.pythonhosted.orgpackages36804d2a072e0db7d250f134bc11676517299264ebe16d62a8619d49a78ced73ipython-8.32.0.tar.gz"
-  sha256 "be2c91895b0b9ea7ba49d33b23e2040c352b33eb6a519cca7ce6e0c743444251"
+  url "https:files.pythonhosted.orgpackagesde39264894738a202ddaf6abae39b3f84671ddee23fd292dbb3e10039e70300cipython-9.0.0.tar.gz"
+  sha256 "9368d65b3d4a471e9a698fed3ea486bbf6737e45111e915279c971b77f974397"
   license "BSD-3-Clause"
   head "https:github.comipythonipython.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30530a603d1af4d3e316c407a7121efb876e48e81da08eb0f8c07b044b17f50e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30530a603d1af4d3e316c407a7121efb876e48e81da08eb0f8c07b044b17f50e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "30530a603d1af4d3e316c407a7121efb876e48e81da08eb0f8c07b044b17f50e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e923fdee672486fd8cab5665afba57464c17d3b8cfcb547f9278a755b582a5a8"
-    sha256 cellar: :any_skip_relocation, ventura:       "e923fdee672486fd8cab5665afba57464c17d3b8cfcb547f9278a755b582a5a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30530a603d1af4d3e316c407a7121efb876e48e81da08eb0f8c07b044b17f50e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "efcaa7aaf499974ed5196554c9c76581fc297b90c7def21aae4d1b66f23659c9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "efcaa7aaf499974ed5196554c9c76581fc297b90c7def21aae4d1b66f23659c9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "efcaa7aaf499974ed5196554c9c76581fc297b90c7def21aae4d1b66f23659c9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7a60c5a80c96e7858084bda23a6a6d8a5cad40d5daffc1d0ab3f559498b48add"
+    sha256 cellar: :any_skip_relocation, ventura:       "7a60c5a80c96e7858084bda23a6a6d8a5cad40d5daffc1d0ab3f559498b48add"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efcaa7aaf499974ed5196554c9c76581fc297b90c7def21aae4d1b66f23659c9"
   end
 
   depends_on "python@3.13"
@@ -25,13 +25,18 @@ class Ipython < Formula
   end
 
   resource "decorator" do
-    url "https:files.pythonhosted.orgpackages660c8d907af351aa16b42caae42f9d6aa37b900c67308052d10fdce809f8d952decorator-5.1.1.tar.gz"
-    sha256 "637996211036b6385ef91435e4fae22989472f9d571faba8927ba8253acbc330"
+    url "https:files.pythonhosted.orgpackages43fa6d96a0978d19e17b68d634497769987b16c8f4cd0a7a05048bec693caa6bdecorator-5.2.1.tar.gz"
+    sha256 "65f266143752f734b0a7cc83c46f4618af75b8c5911b00ccb61d0ac9b6da0360"
   end
 
   resource "executing" do
     url "https:files.pythonhosted.orgpackages9150a9d80c47ff289c611ff12e63f7c5d13942c65d68125160cefd768c73e6e4executing-2.2.0.tar.gz"
     sha256 "5d108c028108fe2551d1a7b2e8b713341e2cb4fc0aa7dcf966fa4327a5226755"
+  end
+
+  resource "ipython-pygments-lexers" do
+    url "https:files.pythonhosted.orgpackagesef4c5dd1d8af08107f88c7f741ead7a40854b8ac24ddf9ae850afbcf698aa552ipython_pygments_lexers-1.1.1.tar.gz"
+    sha256 "09c0138009e56b6854f9535736f4171d855c8c08a563a0dcd8022f78355c7e81"
   end
 
   resource "jedi" do
