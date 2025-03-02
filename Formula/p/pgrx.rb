@@ -1,17 +1,17 @@
 class Pgrx < Formula
   desc "Build Postgres Extensions with Rust"
   homepage "https:github.compgcentralfoundationpgrx"
-  url "https:github.compgcentralfoundationpgrxarchiverefstagsv0.13.0.tar.gz"
-  sha256 "daa6e011de5e15b1a8445b98f31f3d6416de11cd36bdb5c351e3ab29968b3ef7"
+  url "https:github.compgcentralfoundationpgrxarchiverefstagsv0.13.1.tar.gz"
+  sha256 "4416fc78cf5758931d0fd220c8343d3a8255e98af81833e87234fe35f02df7a0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "885e886fefe593a730fc3420d89865378174af70f4e1e9cf62c3cff1f3c125bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c97cae30168b41d2545896d59658b1a7a159d43b5b98ff5a95a0c0246931ed7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ab0cfe190d0d3148d8874fec5836d42e5152766e2bd787e334b27b5819c900fc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4449a9f1c3d891c061e84e4d250ab5766130ee285d8b90c747115df11e34d0c7"
-    sha256 cellar: :any_skip_relocation, ventura:       "da27217b7c40c8b4e28ca145bdc879d4e8b37a2ff11564662be4d23a3f7956fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3e8f6316113c5c0f5a8847ddc8d938306a98872e9f2d0a50b8bb5bc109eeb83"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "229720422d7a56ee5780fe8dd87d086820b9151829153493f67fb8a85390f188"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bdf3c63cdef75b4570d7b43db86878446054ee6f5ac2888232c4749ca6a1db8a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "371bc19c907b50402cf6100f191c597c7130afdd539f206150e87c55799887d2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "01040beae0a8e57c3680c1368f1927a1b4c0a3a42b4734da79235d1a098ef17b"
+    sha256 cellar: :any_skip_relocation, ventura:       "54b5e97dbcfc280f1d884d6de16fd660d5b2df7c93070033d41e66c46067b782"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f9cad5d2f19aabb5fdccc23b76c05c90df5366d80a8c7f89c6544522f2c93da"
   end
 
   depends_on "pkgconf" => :build

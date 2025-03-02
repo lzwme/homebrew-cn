@@ -3,18 +3,17 @@ class Posting < Formula
 
   desc "Modern API client that lives in your terminal"
   homepage "https:github.comdarrenburnsposting"
-  url "https:github.comdarrenburnspostingarchiverefstags2.3.0.tar.gz"
-  sha256 "960b95c8bb2ae11db3cc4cb6b7ec20af87cd47218f77b62b80a527c8c590a595"
+  url "https:github.comdarrenburnspostingarchiverefstags2.3.1.tar.gz"
+  sha256 "0d3706c593614a41424fcc8769ba82bdd28186d99b8e58d8202d11c17a20b7de"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "d1e1abeec94bb888ea6549df88e0eed4e60f714770c60de56c052c0fd4b0423b"
-    sha256 cellar: :any,                 arm64_sonoma:  "8f30ea9df52a0e28779d4a35111f4b041a36400c1f10091bca484bb2266a470b"
-    sha256 cellar: :any,                 arm64_ventura: "f8272e44085616ef40d575e76b1fd6bdce35a52deed313dcc49785c6d159d56a"
-    sha256 cellar: :any,                 sonoma:        "06ee31748eae16f0158364e0c0fd0cfb37b7f43f6f40b584e0ab98c27519843e"
-    sha256 cellar: :any,                 ventura:       "6c547d736a01f64ec37f78f9dff26792e42144d5316a6ec3867b1a768b8f5230"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e1ab39d1e3eedaa8bc7f635c05cafec0831094da5f10d2ba80686c71d4b52a4"
+    sha256 cellar: :any,                 arm64_sequoia: "2e48e0d64f242b91ddfe627121b3579d5b97c359536cfedd4a0dec411b81581c"
+    sha256 cellar: :any,                 arm64_sonoma:  "88c4ddb4a6f24f0a59c8a91c5f803a4020460ee7d06422c365d3d99fd9bd3b71"
+    sha256 cellar: :any,                 arm64_ventura: "c6dff974dcc973068320b5262a3eb6b496a3c0a1db05a36f124a9221f5530616"
+    sha256 cellar: :any,                 sonoma:        "51f4fb28bc33a7b41543f4918716567452b3031e20d245ad2f6e1bf27d2df78c"
+    sha256 cellar: :any,                 ventura:       "72244a093581651a9aef71c7cf47373d1be461e1029fbcd39951d8e044def487"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58ea92691259316d747f5974085d7cdb01f0f7d577eaaed4efd2aceb99735a4d"
   end
 
   depends_on "cmake" => :build

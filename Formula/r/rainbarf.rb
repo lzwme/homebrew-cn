@@ -7,18 +7,8 @@ class Rainbarf < Formula
   head "https:github.comcreaktiverainbarf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "52aacc9a2497802a07356e28df78f8ea5da302b719c5ec088c1c704b402faa51"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ad16c485a0cb8c9f09c48a8747c0989e69ee897c77699e6441e9e1778eea4607"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a149026ada66d61e40b18aac888eb0502cd0d63b539116761cdd559949ceb14b"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a149026ada66d61e40b18aac888eb0502cd0d63b539116761cdd559949ceb14b"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ef63dec71481ba7ea8f46ebe302945b5d09845825dde684183a2cf2bc65c3684"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ad16c485a0cb8c9f09c48a8747c0989e69ee897c77699e6441e9e1778eea4607"
-    sha256 cellar: :any_skip_relocation, ventura:        "a149026ada66d61e40b18aac888eb0502cd0d63b539116761cdd559949ceb14b"
-    sha256 cellar: :any_skip_relocation, monterey:       "a149026ada66d61e40b18aac888eb0502cd0d63b539116761cdd559949ceb14b"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ef63dec71481ba7ea8f46ebe302945b5d09845825dde684183a2cf2bc65c3684"
-    sha256 cellar: :any_skip_relocation, catalina:       "cc3cc692fe18a6c757c92ed7c251a2b23dc04df3d2e88acd30fc776620cd8059"
-    sha256 cellar: :any_skip_relocation, mojave:         "cc3cc692fe18a6c757c92ed7c251a2b23dc04df3d2e88acd30fc776620cd8059"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c4ef99243fcd96fe02779e6261d3301dbc7e6b20338c84337ec516e1587e56c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "4787b85e42e62b921b5729449bc86ba7ac7accdb165bf20a8f2a43e190dd2173"
   end
 
   depends_on "pod2man" => :build

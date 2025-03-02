@@ -1,8 +1,8 @@
 class Cortex < Formula
   desc "Long term storage for Prometheus"
   homepage "https:cortexmetrics.io"
-  url "https:github.comcortexprojectcortexarchiverefstagsv1.18.1.tar.gz"
-  sha256 "667a0d78c9c3c319ccee503951237883f1402dda33cf27f2e64af2faaa54412e"
+  url "https:github.comcortexprojectcortexarchiverefstagsv1.19.0.tar.gz"
+  sha256 "7cb6b312f67263e40fef3a99afb7d12bce69fe035e7b787b9c1efb4bf7a693bc"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Cortex < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb49d58ab8929c00c1358ba9ac9f51e4534fdffd4a7bb19e48e8db3252b827f2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb49d58ab8929c00c1358ba9ac9f51e4534fdffd4a7bb19e48e8db3252b827f2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fb49d58ab8929c00c1358ba9ac9f51e4534fdffd4a7bb19e48e8db3252b827f2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6800a1e6a4f9cca0921493e0df9f1c2090b7a7e1892824acfebe255dce203883"
-    sha256 cellar: :any_skip_relocation, ventura:       "6800a1e6a4f9cca0921493e0df9f1c2090b7a7e1892824acfebe255dce203883"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3efe5ab3e11b093a16037a06b05038d1eaab6e7b845b266e1657c83a806c4826"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ddcda7547e90bde4e7466eed576f853d1b024fa730f6a2083f35db2ece003a0f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ddcda7547e90bde4e7466eed576f853d1b024fa730f6a2083f35db2ece003a0f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ddcda7547e90bde4e7466eed576f853d1b024fa730f6a2083f35db2ece003a0f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6b2f54b88703909eb151d7d7af35b576a36bb1d6f58c1401f7b1e884e14ca123"
+    sha256 cellar: :any_skip_relocation, ventura:       "6b2f54b88703909eb151d7d7af35b576a36bb1d6f58c1401f7b1e884e14ca123"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e5fd77ae5c2bc6afe90da427f3a780adb07896bb655c09c57b92e5b0423de2c"
   end
 
   depends_on "go" => :build
@@ -45,6 +45,7 @@ class Cortex < Formula
 
     # A minimal working config modified from
     # https:github.comcortexprojectcortexblobmasterdocsconfigurationsingle-process-config-blocks.yaml
+    (testpath"dataalerts").mkpath
     (testpath"cortex.yaml").write <<~YAML
       server:
         http_listen_port: #{port}
@@ -58,6 +59,15 @@ class Cortex < Formula
         backend: filesystem
         filesystem:
           dir: #{testpath}datatsdb
+
+      alertmanager:
+        external_url: http:localhostalertmanager
+
+      alertmanager_storage:
+        backend: local
+        local:
+          # Make sure file exist
+          path:  #{testpath}dataalerts
     YAML
 
     Open3.popen3(

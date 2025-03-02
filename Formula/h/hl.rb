@@ -1,19 +1,18 @@
 class Hl < Formula
   desc "Fast and powerful log viewer and processor"
   homepage "https:github.compamburushl"
-  url "https:github.compamburushlarchiverefstagsv0.30.3.tar.gz"
-  sha256 "184011987aa1b3a76a322364bcf44219633ef8f388db57eb4693f64139f0db3b"
+  url "https:github.compamburushlarchiverefstagsv0.30.4.tar.gz"
+  sha256 "b32769af62391a55e04f0074ab36662307deecabca3df8e5fab70ec84b3bb367"
   license "MIT"
   head "https:github.compamburushl.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39332d35ab08653903415ae2b25fe088a27140e04969c35e19838a0de765c0a2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "43115f00e90c0ac5d2d8605b21672af88c623ed02360f1e860cddee411603a86"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1416f08345ffbfab6aced24fc76729ce8f8ddebfa32ef667352eeb5a002546d2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "52aaaccf683665e46f04941533b01163374a1adb29ddf75153f3beb4e42d006b"
-    sha256 cellar: :any_skip_relocation, ventura:       "690cf05f187a31395a766e9575e51c6099ca87c3834278aec7940606e9d07fa8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "faa756318e65f2f492eaab6fb9e1371b055bbd85e91d6b850c4d551ceb5bfa27"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61dbbd38bd14f245fb4d7ff0c11242a65facf2509d13acc2778c8c94af833ee8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f2b1ef208836da9046fe46c318a982245f795862157179deded25e9968db3d68"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "abb9ebc3a9c7dcaa07f84644f75e71f9d07f624925d721a97afebcee7231b8f0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2f3c402a8dbe81c7046d8c6a6df031abdcb5780ee23b8ada1b4b2fc53a2f8e47"
+    sha256 cellar: :any_skip_relocation, ventura:       "96a7f95cafd8fd3bef142a8e1a458dbfc41e829a0474b1e999a129f5e5b51b81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fee1ae71a1f2b45035734bb20abd1e9aa5cf774467d9dcb42f159de33764dce"
   end
 
   depends_on "rust" => :build

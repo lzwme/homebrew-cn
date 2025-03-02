@@ -1,17 +1,17 @@
 class Vte3 < Formula
   desc "Terminal emulator widget used by GNOME terminal"
   homepage "https://wiki.gnome.org/Apps/Terminal/VTE"
-  url "https://download.gnome.org/sources/vte/0.78/vte-0.78.3.tar.xz"
-  sha256 "97e2ac3a27bc5755358a223f55f5a2518654aa0361bfc61a196c1c2e08798eff"
+  url "https://download.gnome.org/sources/vte/0.78/vte-0.78.4.tar.xz"
+  sha256 "2dea4e412266592b6460a3fe4488f5e3d50712f139815790c0ecb44710f7e17e"
   license "LGPL-2.0-or-later"
 
   bottle do
-    sha256 arm64_sequoia: "5d8b90728b495a1096a6519af078466be82f3e4e22e245655b5a76493aaac870"
-    sha256 arm64_sonoma:  "94efbe279a73f05e0b9964969f941238d6712425b26972a312afdba931724b2c"
-    sha256 arm64_ventura: "588d74599bb9bd4b45ab980188726e675e5cb33ecdb016fe42e5993c3237529f"
-    sha256 sonoma:        "ceba24ff8e472681504cd95f8e669d77c2966aee52942dd046c9705a30ce3c0c"
-    sha256 ventura:       "f780a09b36b91c8005ba86f301b2ac88d117b284b23380c7bcd89b437d484213"
-    sha256 x86_64_linux:  "be8db3c2db6111a98b9920a5d7e7d739c81b08e144a8ecb3c99637929fcae81b"
+    sha256 arm64_sequoia: "92a5b05be7b9fa0f1ef3a3bb55c721a8b83f2f866989fc393b568c596abec82f"
+    sha256 arm64_sonoma:  "7c6b8ee8a9900dc64c72718a816d635be8b25e94fcd514cee60a47bbe3978a89"
+    sha256 arm64_ventura: "2495520897d6e4b62798706623be9adb9cbcfbcffb51a4bf3c0281dc126bc9e3"
+    sha256 sonoma:        "238302bef935cbba004d5cc3b13e8a8cf612d20abd0d55490df967368fe10e76"
+    sha256 ventura:       "b4f1ed59e9f4f3363e05e092544aa680e2476ccf38241694db103e58e6a77b47"
+    sha256 x86_64_linux:  "f19d4a506cb7284330f4fa8bc7112d295ee9fb7b99e8f25865ba72d76fbcd996"
   end
 
   depends_on "gettext" => :build

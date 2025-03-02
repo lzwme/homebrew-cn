@@ -1,16 +1,16 @@
 class Docfx < Formula
   desc "Tools for building and publishing API documentation for .NET projects"
   homepage "https:dotnet.github.iodocfx"
-  url "https:github.comdotnetdocfxarchiverefstags2.78.2.tar.gz"
-  sha256 "0b0f53532fc887a1b7444d8c45f89d49250b6d26d8a24f8865563c4e916c1621"
+  url "https:github.comdotnetdocfxarchiverefstagsv2.78.3.tar.gz"
+  sha256 "d97142ff71bd84e200e6d121f09f57d28379a0c9d12cb58f23badad22cc5c1b7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5bb8a82895b1ddb4721e6270e4f51e9c3e2e8d07f43c369fccb67a7efb6ea213"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e70aa4aa303dc525b97bccce9228e0a26d0268dd3046eae0785b4665812fb928"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "75bf66e4af1da6da77ac5c25007082280340b8a40c142f81f56cb213acc6765f"
-    sha256 cellar: :any_skip_relocation, ventura:       "189b92cafeaf9437f082c044a848830ee569ae69ce4c41843c522eb3608c62b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fad1e16707f9965f898ba6f8782aa79d1538ad0b87d48a0f2285703c1ed2ed4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc0289068670e27af69eba93033c124d627aa4bb97143abe05f1c9d4ad6684da"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ca94216d682bdd0a229071d1c72de96f2ddbe47f82e72d1e66eed970a24c394"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "36dcefda17bf44a0a09f883a6f32ef2e4cd21c17e15675b64e462e7957424a66"
+    sha256 cellar: :any_skip_relocation, ventura:       "b03b64889ca251603291b374c0416464b895c47d73abed2f3e565eafa40c82dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb3af6fd91667aa0f5f693eb9513a2aefa3ac3b8c5d607bb2ebc4af364a5b958"
   end
 
   depends_on "dotnet"

@@ -1,18 +1,17 @@
 class Mqttui < Formula
   desc "Subscribe to a MQTT Topic or publish something quickly from the terminal"
   homepage "https:github.comEdJoPaTomqttui"
-  url "https:github.comEdJoPaTomqttuiarchiverefstagsv0.21.1.tar.gz"
-  sha256 "34caa9a540c107738b7156f8a67cbbd2d1f6a25522f964142943aae7d3099501"
+  url "https:github.comEdJoPaTomqttuiarchiverefstagsv0.22.0.tar.gz"
+  sha256 "49bb8839b8c27d2a879c73bd3a26231c1a69263eca8af0b469365b115fadb3ad"
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "785c02e782d4705b8856b3a2e7efafcf4316c96b82ef40f09b1941be8d890ad4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46e79fe9bd4008a24b0a4747578225a3c7499ab6325d0b4409df68e8ca511f6e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1cdd4e2052248e29d0c8d68187310d53cbaf4b64eee1d9b2fdcdc788f02bdf72"
-    sha256 cellar: :any_skip_relocation, sonoma:        "446294e3a949a6d148b8f9910a2bd8de85f6fe20a63aeabbac6c05000dad1b72"
-    sha256 cellar: :any_skip_relocation, ventura:       "5f7ffb503ce101b1e29010d9b35e22f9816e3168cd89b7aa62bf4ab5e21891f1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51fede45d21c05b4d32da4164d1305d8b8021b20e3103b18fa70f62b2b26a192"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21c7111d662ab3e1ec89bdf8da9c7e6fa25cbc9c423dbe8383da04af47e02f0a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0380abf2943a31a1e3698548d26c3a70961489f2873304b05b7cf3d8aa262ee8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9a31abded39cd0fa66efb8289f430472ad24662d287bcbca66f9fdb67b79dfd1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "16c209141f52cf46bd1dfaebb14a6510d58d374d2094b1f9772f4fd50e358cce"
+    sha256 cellar: :any_skip_relocation, ventura:       "6216299aeabdc5bf0400e9f078c8a0623b3e64a2717eb3c1cca12126ca33f1e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "906dad6b4a5f3e1587edd4769357095c421023cd58070b05690153bd759d021d"
   end
 
   depends_on "rust" => :build

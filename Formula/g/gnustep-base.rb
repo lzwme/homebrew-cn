@@ -1,10 +1,9 @@
 class GnustepBase < Formula
   desc "Library of general-purpose, non-graphical Objective C objects"
-  homepage "https:www.gnustep.org"
-  url "https:github.comgnusteplibs-basereleasesdownloadbase-1_30_0gnustep-base-1.30.0.tar.gz"
-  sha256 "00b5bc4179045b581f9f9dc3751b800c07a5d204682e3e0eddd8b5e5dee51faa"
+  homepage "https:github.comgnusteplibs-base"
+  url "https:github.comgnusteplibs-basereleasesdownloadbase-1_31_1gnustep-base-1.31.1.tar.gz"
+  sha256 "e7546f1c978a7c75b676953a360194a61e921cb45a4804497b4f346a460545cd"
   license "GPL-2.0-or-later"
-  revision 2
 
   livecheck do
     url :stable
@@ -18,12 +17,12 @@ class GnustepBase < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ea43137e462651bed14654d6f3568cc8492737a08f5c46d8be3e20af283e69ac"
-    sha256 cellar: :any,                 arm64_sonoma:  "ecf6464f4da0a825cc66b56634ca7c2cf002206e329ed1675744b69fa054ee85"
-    sha256 cellar: :any,                 arm64_ventura: "1e74001b2ebbe64808248f9ea1fcf883f8214b94acb11034e1a588026d835c01"
-    sha256 cellar: :any,                 sonoma:        "c656ea5e74ef316bdff831a8179ca085f5a8339f5b347ee9385fff91ebada811"
-    sha256 cellar: :any,                 ventura:       "9afc177e4bb6eaea89c6920e9fc2574037596b5976034c0d861d9195ae9ac933"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6f9704b5d7ceae3cf1d3500f852493a7d9dc8dd37d75ee58566f8003907a4dd"
+    sha256 cellar: :any,                 arm64_sequoia: "ede50b79bcb8a6c0a47339bfcdf39f048962d1514015c5cbdd6c9a4760aee69b"
+    sha256 cellar: :any,                 arm64_sonoma:  "3b2e44ee9247c8d63b84912e4a4726820d5d8bc9092ae5566853d9b119aada50"
+    sha256 cellar: :any,                 arm64_ventura: "f218b318c4b8835c31c1bcb6eeac58cdfa0894a2021d7e26c1cdf5bdce6a80f2"
+    sha256 cellar: :any,                 sonoma:        "812aa8fae123bd2799b8b1841d4b01bcff9b2b8e25f9b897659d89d962c28420"
+    sha256 cellar: :any,                 ventura:       "fe4f0cc328ef0dc600196af6c7b1796bf4b7f2a05f0ff418b63f723c8a08be9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a906c5120ed08dc88fe2de568fbd905cf90beedc1151c5f1d2238a6a0b4b46d0"
   end
 
   depends_on "gnustep-make" => :build
@@ -45,12 +44,6 @@ class GnustepBase < Formula
     depends_on "libobjc2"
     depends_on "zstd"
     fails_with :gcc
-  end
-
-  # fix incompatible pointer error, upstream pr ref, https:github.comgnusteplibs-basepull414
-  patch do
-    url "https:github.comgnusteplibs-basecommit2b2dc3da7148fa6e01049aae89d3e456b5cc618f.patch?full_index=1"
-    sha256 "680a1911a7a600eca09ec25b2f5df82814652af2c345d48a8e5ef23959636fe6"
   end
 
   def install

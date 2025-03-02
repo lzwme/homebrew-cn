@@ -1,18 +1,17 @@
 class Decasify < Formula
   desc "Utility for casting strings to title-case according to locale-aware style guides"
   homepage "https:github.comalerquedecasify"
-  url "https:github.comalerquedecasifyreleasesdownloadv0.8.0decasify-0.8.0.tar.zst"
-  sha256 "1d35006ffc8bdc7e01fe7fc471dfdf0e99d3622ab0728fc4d3bb1aea9148214e"
+  url "https:github.comalerquedecasifyreleasesdownloadv0.9.1decasify-0.9.1.tar.zst"
+  sha256 "c486b545229f0401693c79d600aa3e38bafdac70cd8c40c44f506c377b742a93"
   license "LGPL-3.0-only"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "67f3d8fe3d2b2075bd394ce73e74212d34dcb0ee895d47a8f7dad900713e57de"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de0e5675ed1a3e5f9efce89db8c16fdd8786e196905ee844207d91648eed3648"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f48107a2056c18adf1ba70fde014d373465f7596d30d04126f0697f12e4c9a07"
-    sha256 cellar: :any_skip_relocation, sonoma:        "31cb66b6d9eca38f3b9b5910414193c0bed89c706c2abafbaf607aa2f465ccfc"
-    sha256 cellar: :any_skip_relocation, ventura:       "47646a4c162f98a43fb12b95e4f4584754ef66568b538c242c30087d8ffe76fa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43c42908bc43fa322a6761703a4dbe5d364593c5d440f4e67e55c271018688c5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "201ec2162c0785af3408ff3b1fd5dea5ace9ef47d5d161ee2fd61f71d636f751"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ddf5299581f0714d50c387715a04596c3ecdd580d1777162baeafd735640d20"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1a2752af8048e52388ff82ab208ef428db1bed9717d6915da338512a3e267a61"
+    sha256 cellar: :any_skip_relocation, sonoma:        "91bac4b9e1137df31b82455d6969e2a0a27443144fa96e045b12e5ba797fbf47"
+    sha256 cellar: :any_skip_relocation, ventura:       "4715b1a045b481936cd403fd5be3e47fb8018a5b91eaf254fed20acabf3d84c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b411294a5ede09d29a53d8b215d8a099f079381c72d6f2eaede2293bb29164ac"
   end
 
   head do

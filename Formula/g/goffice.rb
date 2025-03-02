@@ -1,19 +1,17 @@
 class Goffice < Formula
   desc "Gnumeric spreadsheet program"
   homepage "https://gitlab.gnome.org/GNOME/goffice"
-  url "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.57.tar.xz"
-  sha256 "66bfd7e31d2f6756d5a62c3670383cbba02b3cb4c1042950192a801b72a3c9ab"
+  url "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.59.tar.xz"
+  sha256 "b08f7173325594b71fbbea476a30b5b3120c3dadff5c0a26d140e4e524916622"
   license any_of: ["GPL-3.0-only", "GPL-2.0-only"]
 
   bottle do
-    sha256 arm64_sequoia:  "d4ca91bb298e7dc0444609b9a09ceb404b81743329d462f1eb62a2a2046d525d"
-    sha256 arm64_sonoma:   "a946184d2ad6fc95b59fb4c68a598aefebd8df3633d49a9b53decebea9eee6c9"
-    sha256 arm64_ventura:  "c50b18823cc2a8efc038b7487dc1f229425709be9398e29b558d5747b2454006"
-    sha256 arm64_monterey: "d28569db16793e715714a51758ab7429f8be117d964d8035e7062550c03b3a4d"
-    sha256 sonoma:         "32b61c93a65c288cad554a876550c1793e41a3465e792557bc6810c339b8bf8b"
-    sha256 ventura:        "88b7b7f99dae20d363f196ec55427158efd1ea0b0da3f2985b14fc0e637e6a63"
-    sha256 monterey:       "dea1e444318e1364a1a9c96ec0a2b76b74df27b0576d820a354dfc378d4ef519"
-    sha256 x86_64_linux:   "6d3ceb9fbd03a344ad62974ed5cd4365242c42397d323b89c3421416191ecb20"
+    sha256 arm64_sequoia: "f9d3ab0788e1062443680621dc3c842ac1feb8a43f64f833e4444af8d6a2338e"
+    sha256 arm64_sonoma:  "3b5acae5f179e394cb1fbe1d8bfa72be79fd277d26d0345681f85d54b30b177a"
+    sha256 arm64_ventura: "80dff5d4cec61b9eb1b00c336f695b9dc4330354dfe5e941d0e2f65ba36c8ef1"
+    sha256 sonoma:        "6d2a1f621b9e1b566175ae8009ce596af26eb1627b131930629ae12932ac3e95"
+    sha256 ventura:       "28ae6bfa295c143a57dc073e361d44adde10c38a729b99d3b31c463f6484bf7e"
+    sha256 x86_64_linux:  "997be7bf90f3a411067e99056514c271a28ea09b98a01b58d3ab9a07fef85f4f"
   end
 
   head do

@@ -1,18 +1,18 @@
 class Cxgo < Formula
   desc "Transpiling C to Go"
   homepage "https:github.comgotranspilecxgo"
-  url "https:github.comgotranspilecxgoarchiverefstagsv0.4.3.tar.gz"
-  sha256 "231230723572d49bc74b9d58c9f15700cbd3b9287d6e281b8d53cb580ad58d3e"
+  url "https:github.comgotranspilecxgoarchiverefstagsv0.5.0.tar.gz"
+  sha256 "bbfe93f9e6351c5005af355dd13f58ab8bc81d810f2f112f0888fc647e0325df"
   license "MIT"
   head "https:github.comgotranspilecxgo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e46f296a649e4f4f524de427e79cf5a8c28ac4d5b55f3e5aae9243b7ea31f31"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e46f296a649e4f4f524de427e79cf5a8c28ac4d5b55f3e5aae9243b7ea31f31"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8e46f296a649e4f4f524de427e79cf5a8c28ac4d5b55f3e5aae9243b7ea31f31"
-    sha256 cellar: :any_skip_relocation, sonoma:        "52cc457a3e45486011265da5f3c5b9f702cfa593fc943d23c4606d2708406b91"
-    sha256 cellar: :any_skip_relocation, ventura:       "52cc457a3e45486011265da5f3c5b9f702cfa593fc943d23c4606d2708406b91"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42180c97c67c678111bed63bd39aae1663b8527e8adade1bffffdc048a676ead"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5dd98d1f2f7f29dd96eaa932cc87246ef7cf884e089ee615a56cdea66a4281f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5dd98d1f2f7f29dd96eaa932cc87246ef7cf884e089ee615a56cdea66a4281f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c5dd98d1f2f7f29dd96eaa932cc87246ef7cf884e089ee615a56cdea66a4281f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "273da06ccf344c7c9c44216f2df4df5d09e1170b732e9e600a1a98d131938692"
+    sha256 cellar: :any_skip_relocation, ventura:       "273da06ccf344c7c9c44216f2df4df5d09e1170b732e9e600a1a98d131938692"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8d9f75c1c1e3a3bec9a8c07cfe120208f804a6ae35ba92fe385f2edf492e67a"
   end
 
   depends_on "go" => :build

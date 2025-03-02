@@ -7,6 +7,11 @@ class CloudflareQuiche < Formula
   license "BSD-2-Clause"
   head "https:github.comcloudflarequiche.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "ce4557b96999526df17af6542bbe364a39b543e2439864be53014137397c69d1"
     sha256 cellar: :any,                 arm64_sonoma:  "220432f61056cebfe7c8ec17fb517952453129fbd1e901712ccf9778c5f8c067"

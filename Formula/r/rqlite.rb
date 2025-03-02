@@ -1,18 +1,18 @@
 class Rqlite < Formula
   desc "Lightweight, distributed relational database built on SQLite"
   homepage "https:www.rqlite.io"
-  url "https:github.comrqliterqlitearchiverefstagsv8.36.11.tar.gz"
-  sha256 "d985a233c1f28003c6b848bd8262dc3128d656ef9cd4917ec36294403a4f5b53"
+  url "https:github.comrqliterqlitearchiverefstagsv8.36.12.tar.gz"
+  sha256 "6a3165bf226499ed6a599f926dfb81458d962826961486cd417b488db0b167fd"
   license "MIT"
   head "https:github.comrqliterqlite.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4fb928d4750307abd0b389d90f071f8157c8b075e3f1b5fd5f0c4a80e3c48a30"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec72868f7bd22de10fbdecdc12d2742b63f5d2f6e6e764c6506ab5945faf94c7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "157351c69c210c3d3d34e698667230321cf92536c82c867162f943c8d0dfdd03"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2cf33b36746d27a20afe251a6417ee06b8397507231d5961a28a8b85bf0867c9"
-    sha256 cellar: :any_skip_relocation, ventura:       "7b3945a6ddf7f27afc91a721486fdac26d41e905448ecb6792dc6dce351e6434"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dccaf1242283f1b0a1f9d56e6cb30d97ff4d702e59e160b294158f3914789532"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a14d240b54b90ed69da883074af13a97bfc44e01a926922e21bf67bcb81af15f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e3c8c596a513a88e6169b662c6001e780f95cd4c867135fbf2a3aaf18569e7a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "78fd41a49bd6696052af10dec67fca6c310150350b03db27c4928d9f6d702500"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b20a56e5d0f4b7e917debd1ed97ce2b6d058c5b0770e10addf28bd11a04fc5d1"
+    sha256 cellar: :any_skip_relocation, ventura:       "2597cbde41ad46113065e318525868d750d8d2a0f06bd72334bc9e34449504eb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c967655447837df0b8f6b0a406dda020329e3dc9dff536b139cbea72f8c7d89"
   end
 
   depends_on "go" => :build

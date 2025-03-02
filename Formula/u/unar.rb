@@ -4,17 +4,16 @@ class Unar < Formula
   url "https:github.comMacPawXADMasterarchiverefstagsv1.10.8.tar.gz"
   sha256 "652953d7988b3c33f4f52b61c357afd1a7c2fc170e5e6e2219f4432b0c4cd39f"
   license "LGPL-2.1-or-later"
-  revision 4
+  revision 5
   head "https:github.comMacPawXADMaster.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "d4b0a3b71bc47380d1943926d4a6c83a99bed46a56926f8b76a74a76acda48ae"
-    sha256 cellar: :any,                 arm64_sonoma:  "9837652e6d7199c4f646a7b0f051277114de2ebcfca8697fc584bfeeca4da371"
-    sha256 cellar: :any,                 arm64_ventura: "833640682b2af5f3efbdf529ddf4cbe142e3d393a3b5731dee82c0e852cc9bf7"
-    sha256 cellar: :any,                 sonoma:        "5280a2f2372afc63774151b2d317d808c3b7364d66b302ad66d54604a11dd86f"
-    sha256 cellar: :any,                 ventura:       "3e631ff43685b02c54e4e97a3aa478ceadd50eb46ec8382a5e32e7fe10204d49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91434ce00eb53726ccecd0958606598d911e396a5e09e65d9e55f05340adb81c"
+    sha256 cellar: :any,                 arm64_sequoia: "88b011e1e61a3422988ca90b01e71fac6d7883db613c3291fba1b35046090c22"
+    sha256 cellar: :any,                 arm64_sonoma:  "e3914d0d21ef96d413f94bc0d3bcdb2dd4bba6e17b1e5543940297f6747ff3bd"
+    sha256 cellar: :any,                 arm64_ventura: "11743466c012f30198def083984fb8c4b0d31447012df6109c3a04f8445f13b9"
+    sha256 cellar: :any,                 sonoma:        "cae1803e4689f0ed4c392408bd22b602c9c4ec4ed24d16f52b239e01cf286ae7"
+    sha256 cellar: :any,                 ventura:       "fad1370b6b0fafde0cf8ccf525754ef6bb1d736df80968f3ca44073605407984"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df779ffa5a0db66776069dfce6b15428c565360f7664bc19309144f8b180f8e0"
   end
 
   depends_on xcode: :build

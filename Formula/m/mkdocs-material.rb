@@ -2,17 +2,17 @@ class MkdocsMaterial < Formula
   include Language::Python::Virtualenv
   desc "Material Design theme for MkDocs"
   homepage "https://squidfunk.github.io/mkdocs-material/"
-  url "https://files.pythonhosted.org/packages/38/4d/0a9f6f604f01eaa43df3b3b30b5218548efd7341913b302815585f48abb2/mkdocs_material-9.6.5.tar.gz"
-  sha256 "b714679a8c91b0ffe2188e11ed58c44d2523e9c2ae26a29cc652fa7478faa21f"
+  url "https://files.pythonhosted.org/packages/26/b2/4244c578bf00f88181c55a76e484efb429159a1a49db60eaf6b696783760/mkdocs_material-9.6.6.tar.gz"
+  sha256 "06141bd720b0b235829bd59e8afc11d5587c35ae7fc340612d2b3f554e6a69d8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "65c64290bbcb8c66c2fea063870fb0cfd395dccf1d1b99b9f30f444caf15b0ee"
-    sha256 cellar: :any,                 arm64_sonoma:  "79535649040c560f46be2709553171b067eb3d092e4aba7ff63854ba17feb53f"
-    sha256 cellar: :any,                 arm64_ventura: "3c47a675f9b09fcf89912c282f4f855b32a20b34b7b33ca65c0d8a6d4aa9ae41"
-    sha256 cellar: :any,                 sonoma:        "a2c033dd105408c2c322baf4ba24798a5c780d1a9564da1ddd3450609b82d2f5"
-    sha256 cellar: :any,                 ventura:       "b8dbb306079113ed70d86f98da823abcda0b29748f2e25df9db40a6970d648c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c94eff1d214659675f8ab570820653ff0ea65daf2c103ccc4ef522ee94bbbe6"
+    sha256 cellar: :any,                 arm64_sequoia: "8f23753b56e5e6aa80a521d15da0dbb7790316f0b068b5875dae9bb2188d5f79"
+    sha256 cellar: :any,                 arm64_sonoma:  "aebc24a2d789fb6227eef493c60d3f721867405e0ddad748838c7d657273bf9f"
+    sha256 cellar: :any,                 arm64_ventura: "a9c181f6597e5aecbd8357dd3aa3daf9a634072a553c52a73e2c3b56df05360f"
+    sha256 cellar: :any,                 sonoma:        "2462c77e1e84690a978ea70fab457082497b2fcfd1ba0a5cb6a3be50a5b96e8d"
+    sha256 cellar: :any,                 ventura:       "9aade731b7480e4c09df20ed2f0e73c9898a80fc155a673d929fe9240e56a569"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec7f2f8dc2afbcaabe193807d788468e9bedb07f1cfffd9f09a15e19bb9c4809"
   end
 
   depends_on "libyaml"
@@ -23,6 +23,11 @@ class MkdocsMaterial < Formula
   resource "babel" do
     url "https://files.pythonhosted.org/packages/7d/6b/d52e42361e1aa00709585ecc30b3f9684b3ab62530771402248b1b1d6240/babel-2.17.0.tar.gz"
     sha256 "0c54cffb19f690cdcc52a3b50bcbf71e07a808d1c80d549f2459b9d2cf0afb9d"
+  end
+
+  resource "backrefs" do
+    url "https://files.pythonhosted.org/packages/6c/46/caba1eb32fa5784428ab401a5487f73db4104590ecd939ed9daaf18b47e0/backrefs-5.8.tar.gz"
+    sha256 "2cab642a205ce966af3dd4b38ee36009b31fa9502a35fd61d59ccc116e40a6bd"
   end
 
   resource "certifi" do
@@ -133,11 +138,6 @@ class MkdocsMaterial < Formula
   resource "pyyaml-env-tag" do
     url "https://files.pythonhosted.org/packages/fb/8e/da1c6c58f751b70f8ceb1eb25bc25d524e8f14fe16edcce3f4e3ba08629c/pyyaml_env_tag-0.1.tar.gz"
     sha256 "70092675bda14fdec33b31ba77e7543de9ddc88f2e5b99160396572d11525bdb"
-  end
-
-  resource "regex" do
-    url "https://files.pythonhosted.org/packages/8e/5f/bd69653fbfb76cf8604468d3b4ec4c403197144c7bfe0e6a5fc9e02a07cb/regex-2024.11.6.tar.gz"
-    sha256 "7ab159b063c52a0333c884e4679f8d7a85112ee3078fe3d9004b2dd875585519"
   end
 
   resource "requests" do

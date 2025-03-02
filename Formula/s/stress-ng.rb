@@ -1,17 +1,17 @@
 class StressNg < Formula
   desc "Stress test a computer system in various selectable ways"
   homepage "https:wiki.ubuntu.comKernelReferencestress-ng"
-  url "https:github.comColinIanKingstress-ngarchiverefstagsV0.18.10.tar.gz"
-  sha256 "bb729844b5a3c8953e58ddb705dce8a62078ad75f0b6f49092f8027d9c699700"
+  url "https:github.comColinIanKingstress-ngarchiverefstagsV0.18.11.tar.gz"
+  sha256 "f4388c4d4d53172431cd77e029139ddd0dacb249ef59053dbc1f0c42188e3e35"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "42e5d911125805f47e652edd1d05effb95b7ab1ba877f381e028c5bed8918755"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b698dd30598d6fb76da743a622ea61d5ebf803e1aba165cb3e33460a31e938b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "675d9bea25e7bb3d2c86153baa4a00d5653404ca414762b2056501d7ba4e22be"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2cca717547bab2a7452ec311850c79fbec88d217e445600935ab349beaa17a25"
-    sha256 cellar: :any_skip_relocation, ventura:       "34a170fc0fc10703776f2dc2c56aad7228bdea735c02b9d34a79ceccd4fa1044"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d76049d085156ffbccd20204faac1c8c075af53ef568cc4d060579d457734da7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8bf0fe7c588bd60b0f9f0f8892a39341cefdba296ac3b0ea5569e2e8f4f5fdd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "28b53eb6acaf59f8ceadc71205b23ddb82c9688b9c38f3cbd0cefd1c94e9ae76"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8d171c294d8c0077f1bba9e74014bb77dfe150b596e8e7e53125f3a111086a59"
+    sha256 cellar: :any_skip_relocation, sonoma:        "367e906d323f35bc994815639ef299c5349e5848251c714a68585f72acf5bcd3"
+    sha256 cellar: :any_skip_relocation, ventura:       "d0a379aedaf756c727904b9842541b152a4356d84e4bc2a3750da8990a842541"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddfaa29ce4bd87d311b044efda4dc4df9f297e69ca4fa1e7d443d5aeffcbc5e0"
   end
 
   depends_on macos: :sierra
