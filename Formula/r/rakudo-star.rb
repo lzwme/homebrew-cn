@@ -5,6 +5,11 @@ class RakudoStar < Formula
   sha256 "34c2853614c6a5b830fc7efccfde3281960a815023e6fac6835643bf8ae9f779"
   license "Artistic-2.0"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 arm64_sequoia: "aec110488a4c209dc1d209e721a3059f0e8b22dd6b60fe047bf42ce67649583f"
     sha256 arm64_sonoma:  "1a9a5050c1f9729cb5c844dee4248b2b4200f98f5d77e8e535202ea591b03b00"

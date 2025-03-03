@@ -1,9 +1,9 @@
 class Tarlz < Formula
   desc "Data compressor"
   homepage "https://www.nongnu.org/lzip/tarlz.html"
-  url "https://download.savannah.gnu.org/releases/lzip/tarlz/tarlz-0.26.tar.lz"
-  mirror "https://download-mirror.savannah.gnu.org/releases/lzip/tarlz/tarlz-0.26.tar.lz"
-  sha256 "53fe055ef70348570975d220cead5636f9175f0c07bbec8e450baff18b9998e4"
+  url "https://download.savannah.gnu.org/releases/lzip/tarlz/tarlz-0.27.tar.lz"
+  mirror "https://download-mirror.savannah.gnu.org/releases/lzip/tarlz/tarlz-0.27.tar.lz"
+  sha256 "d2e1a4091f120dc804e0166cac4a374386a4cb1a2d0d748b29097b7a13660dcb"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -12,12 +12,12 @@ class Tarlz < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f226b870f51c28d8f4243680f4741f6027795e3bc2f8e9b386505066dde88b88"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "852db23175e4c9d9f626b3d263e66d7a27cc5ad70a4d8c99ed7cbaa50a9579d6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d627f225865b0aad38a4fe79066a0f5e0352d360d784734c7f4051a73171658b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d36183f2a6e0bfd1941a75f6119a13b3ac902e88a55445f71ef77ae4b748e225"
-    sha256 cellar: :any_skip_relocation, ventura:       "fde27f67dfada1b594952d9a55e205a217059462bd06781b041a7c9fdcafbd4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d535a40442b811556f3047254be35c3079ea2168ca50ee11b9af41797e6a9104"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f9237adc704df5a7ceb0fdce9e4779bf9310401527b98fd6089712fc0306882a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "baf84e41a27bfa481884de8ab4184454d7ec29b209e7c12680118f063b1f296c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c3bc1b0182f61134d0dfe880a65024e2547db6cb82f66aa26c2be50c86c1db16"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a8d1b3cb2c30cf6e368939658c1b5403cb5456ddc00f6858cef7a8c5c2573d5d"
+    sha256 cellar: :any_skip_relocation, ventura:       "2343de6438b8ba32c11c71cdd43383e1a82d85c71c36a8483e51b29b9d8deed3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db270cb089ddfed167fcb1797a08b537b3917cc70fb8a6ce0edafedcba5e0d53"
   end
 
   depends_on "lzlib"

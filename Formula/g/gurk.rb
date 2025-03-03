@@ -1,17 +1,17 @@
 class Gurk < Formula
   desc "Signal Messenger client for terminal"
   homepage "https:github.comboxdotgurk-rs"
-  url "https:github.comboxdotgurk-rsarchiverefstagsv0.6.2.tar.gz"
-  sha256 "515b14272b21d83a040310e1aee008b64c6f549215fc2a819a2e87bd8fa1fec3"
+  url "https:github.comboxdotgurk-rsarchiverefstagsv0.6.3.tar.gz"
+  sha256 "b3d2a3c87e7cb4ceaad42ed329423abd03ef54fb0ca5502f815de0f81c86368b"
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bc799e32ce54e898f19af4f63173c7681ba4d30ebc870d4d3705f3fbc3705bc5"
-    sha256 cellar: :any,                 arm64_sonoma:  "bc2bf1c05fa53ac73322bb90f450dfa1fc390665d6ff5d665b4452f7c33bda98"
-    sha256 cellar: :any,                 arm64_ventura: "a8cc0339b3774d2297b0e918923ed0829ad8a1501d125b6371158816a4f1d1af"
-    sha256 cellar: :any,                 sonoma:        "4091e8b495d49a3c448280a869263f94edb8e5181c8450dc1ac36de0b77d8b31"
-    sha256 cellar: :any,                 ventura:       "33d76c063f21b281f5ba8475e395ea3d2936765b863a074910011dd239c96264"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c8e108bd4ffa28b00f219162d1e513f85424d702828afd168c27ef8f7555a13"
+    sha256 cellar: :any,                 arm64_sequoia: "d37761fa3cd22bd63ca63c1b5eb09e7ee674d7ef135f859753c47fab6cbc684c"
+    sha256 cellar: :any,                 arm64_sonoma:  "2dfe640a2cf3f4b4b0b505fc875be364d01bd9a1b666f9d0f3db4028f009a0f6"
+    sha256 cellar: :any,                 arm64_ventura: "abc5dcabec944112aec1b323612b4f00cab9d25b20aff7b2f9c4898d69d90b9e"
+    sha256 cellar: :any,                 sonoma:        "fbc0f0178fed933b72871bcc1ff842ea45ed636d0beaecb6564f0087e7cb6d26"
+    sha256 cellar: :any,                 ventura:       "43c4bc23d13c40e4b6b2855735d28ebccf648ab715b93cb926ca5bfa99453f9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7e157ab0d880b840a15ab2f1b1c83956cb2796f6db2482acbaa76177dc53ba8"
   end
 
   depends_on "pkgconf" => :build

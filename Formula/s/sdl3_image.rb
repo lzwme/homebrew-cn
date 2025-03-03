@@ -1,18 +1,18 @@
 class Sdl3Image < Formula
   desc "Library for loading images as SDL surfaces and textures"
   homepage "https:github.comlibsdl-orgSDL_image"
-  url "https:github.comlibsdl-orgSDL_imagereleasesdownloadrelease-3.2.0SDL3_image-3.2.0.tar.gz"
-  sha256 "1690baea71b2b4ded9895126cddbc03a1000b027d099a4fb4669c4d23d73b19f"
+  url "https:github.comlibsdl-orgSDL_imagereleasesdownloadrelease-3.2.2SDL3_image-3.2.2.tar.gz"
+  sha256 "fc6669329eb9f5ae644ca6ffa8ce0ee8749ab51c197b51476991df7407d8cf24"
   license "Zlib"
   head "https:github.comlibsdl-orgSDL_image.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7b4a40bd5b49da068f9f7b1aa6416ea1608435a6b962880d1f4005b3c12c63c3"
-    sha256 cellar: :any,                 arm64_sonoma:  "ce64145b5f82c159ee9791c5bdb8a2d44090b3de8851f8454458f8b2124c43cb"
-    sha256 cellar: :any,                 arm64_ventura: "b2576e6ef14d01ef979668451f3894258e3f4ec10620f974cf276f06a1a6a49c"
-    sha256 cellar: :any,                 sonoma:        "0a5582939101f4c5fddc3cc4a17f288778a55b18164412b059c9fc503bcaf752"
-    sha256 cellar: :any,                 ventura:       "5db9220c012cc50214d03950d86eab0aca7d529387e3119706fc66216def2ff2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a4806be12a2ccd946d99cdfdf6ed5022ee19a35091da9222845cae2e1bceb23"
+    sha256 cellar: :any,                 arm64_sequoia: "453aee27b49161b98c7befafe8606244f7298ea4655092fcd767310d7b302c09"
+    sha256 cellar: :any,                 arm64_sonoma:  "090ac7e69870590e675a691c92f09ad8554eb3f8497eb7ab2e6e718569e0a0e7"
+    sha256 cellar: :any,                 arm64_ventura: "f5e92e62cc4f37634047dccdd417c2bb4ee9e248cdcab711a7b91132661e407c"
+    sha256 cellar: :any,                 sonoma:        "1ca40866631b8e4462e69545c19d8c4cf2f6b32828e04a728d03645cf623bf8a"
+    sha256 cellar: :any,                 ventura:       "bceb89f44e523ac5d13c56873df53e55e80775d71dbd6cf1ba98277533c0af57"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1e509adb16a39e7d7658f81b3fb96cf23da105a1d625a199dcecfe0228e0ad1"
   end
 
   depends_on "cmake" => :build

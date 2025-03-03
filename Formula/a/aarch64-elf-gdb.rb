@@ -1,11 +1,11 @@
 class Aarch64ElfGdb < Formula
   desc "GNU debugger for aarch64-elf cross development"
-  homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftp.gnu.org/gnu/gdb/gdb-16.2.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gdb/gdb-16.2.tar.xz"
+  homepage "https:www.gnu.orgsoftwaregdb"
+  url "https:ftp.gnu.orggnugdbgdb-16.2.tar.xz"
+  mirror "https:ftpmirror.gnu.orggdbgdb-16.2.tar.xz"
   sha256 "4002cb7f23f45c37c790536a13a720942ce4be0402d929c9085e92f10d480119"
   license "GPL-3.0-or-later"
-  head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
+  head "https:sourceware.orggitbinutils-gdb.git", branch: "master"
 
   livecheck do
     formula "gdb"
@@ -29,9 +29,16 @@ class Aarch64ElfGdb < Formula
   depends_on "xz" # required for lzma support
   depends_on "zstd"
 
-  uses_from_macos "expat"
+  uses_from_macos "expat", since: :sequoia # minimum macOS due to python
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
+
+  # Workaround for https:github.comHomebrewbrewissues19315
+  on_sequoia :or_newer do
+    on_intel do
+      depends_on "expat"
+    end
+  end
 
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build
@@ -41,9 +48,9 @@ class Aarch64ElfGdb < Formula
     target = "aarch64-elf"
     args = %W[
       --target=#{target}
-      --datarootdir=#{share}/#{target}
-      --includedir=#{include}/#{target}
-      --infodir=#{info}/#{target}
+      --datarootdir=#{share}#{target}
+      --includedir=#{include}#{target}
+      --infodir=#{info}#{target}
       --mandir=#{man}
       --enable-tui
       --with-curses
@@ -58,8 +65,8 @@ class Aarch64ElfGdb < Formula
     ]
 
     mkdir "build" do
-      system "../configure", *args, *std_configure_args
-      ENV.deparallelize # Error: common/version.c-stamp.tmp: No such file or directory
+      system "..configure", *args, *std_configure_args
+      ENV.deparallelize # Error: commonversion.c-stamp.tmp: No such file or directory
       system "make"
 
       # Don't install bfd or opcodes, as they are provided by binutils
@@ -68,9 +75,9 @@ class Aarch64ElfGdb < Formula
   end
 
   test do
-    (testpath/"test.c").write "void _start(void) {}"
-    system "#{Formula["aarch64-elf-gcc"].bin}/aarch64-elf-gcc", "-g", "-nostdlib", "test.c"
+    (testpath"test.c").write "void _start(void) {}"
+    system "#{Formula["aarch64-elf-gcc"].bin}aarch64-elf-gcc", "-g", "-nostdlib", "test.c"
     assert_match "Symbol \"_start\" is a function at address 0x",
-          shell_output("#{bin}/aarch64-elf-gdb -batch -ex 'info address _start' a.out")
+          shell_output("#{bin}aarch64-elf-gdb -batch -ex 'info address _start' a.out")
   end
 end

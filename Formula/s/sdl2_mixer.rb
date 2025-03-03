@@ -5,12 +5,10 @@ class Sdl2Mixer < Formula
   sha256 "cb760211b056bfe44f4a1e180cc7cb201137e4d1572f2002cc1be728efd22660"
   license "Zlib"
   revision 1
-  # This formula uses a file from a GitHub release, so we check the latest
-  # release version instead of Git tags.
+
   livecheck do
     url :stable
-    regex(release[._-]v?(\d+(?:\.\d+)+)i)
-    strategy :github_latest
+    regex(^(?:release[._-])?v?(2(?:\.\d+)+)$i)
   end
 
   bottle do

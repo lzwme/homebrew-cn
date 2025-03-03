@@ -3,19 +3,18 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https:docs.keeper.ioenprivileged-access-managercommander-clioverview"
-  url "https:files.pythonhosted.orgpackages887da2e829e26939837214e59c612e4a94d623ff14ac5456a7dbbd36d1c9686ekeepercommander-17.0.6.tar.gz"
-  sha256 "0a5f36db2c74301211f41cc169b064533884912b392ea6b135bea63fa4fd3ab1"
+  url "https:files.pythonhosted.orgpackagesde0dfab8514dd3a522b1a2a66e9ed7e425b6c2aad1c2034e5923c1f873c0c6a8keepercommander-17.0.8.tar.gz"
+  sha256 "e3c082c02132b22e0e20d44b7c6440a0663941e5e3b405cedc13745fccd80a3f"
   license "MIT"
   head "https:github.comKeeper-SecurityCommander.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "9b86aef722c3f6c044bfd06164d19b07a2274aad265a1d9efa2259fe576b17d2"
-    sha256 cellar: :any,                 arm64_sonoma:  "6c07f2e41a45d114a444bd1fb95068057e7fc662d4d84708b68544e678d8913a"
-    sha256 cellar: :any,                 arm64_ventura: "bc76942aad21e77df1fe2cbd8f68074405f83737feaf36b189b931f5dfb6b574"
-    sha256 cellar: :any,                 sonoma:        "e1d6a15227de6d0e90d721110b468beace476e56fd00e9a6c020bd45eeffaa72"
-    sha256 cellar: :any,                 ventura:       "400c94398a91548e1e2ef75ac5083362931e38e59d456dcca90c174fb7ad5008"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b433ccdcf01491147e7b8e2e89fe82528f7e3770f6667a5b7024dfb8f643bc19"
+    sha256 cellar: :any,                 arm64_sequoia: "728a5d165e650e94d98b33be4a0b65db4c2a3ad55852c8d3b61be2a9052111ac"
+    sha256 cellar: :any,                 arm64_sonoma:  "2783108c6fb02eaa3ca64242508f9866d4895e1e0b93b69a020d519e5d6aadc4"
+    sha256 cellar: :any,                 arm64_ventura: "05fab0098f7954b7eafd49b1bc68fd87e16de11b06225f3948b090b68fedbb47"
+    sha256 cellar: :any,                 sonoma:        "10ba16f0a00b17ac94e02a5d9c655c8850b9a9d6d7eb422fad19502b5310a34d"
+    sha256 cellar: :any,                 ventura:       "354e0651a47ec314d938fc90188a34726b7fe4e8c13ef5b46c61bba6a3e8958b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b31d05ae22bc75fc901390b96758e91bd83b5f9aeb0bbe3f2e0d5eb8a44897c8"
   end
 
   # bcrypt dependencies
@@ -37,8 +36,8 @@ class KeeperCommander < Formula
   end
 
   resource "bcrypt" do
-    url "https:files.pythonhosted.orgpackages568cdd696962612e4cd83c40a9e6b3db77bfe65a830f4b9af44098708584686cbcrypt-4.2.1.tar.gz"
-    sha256 "6765386e3ab87f569b276988742039baab087b2cdb01e809d74e74503c2faafe"
+    url "https:files.pythonhosted.orgpackagesbb5d6d7433e0f3cd46ce0b43cd65e1db465ea024dbb8216fb2404e919c2ad77bbcrypt-4.3.0.tar.gz"
+    sha256 "3a3fd2204178b6d2adcf09cb4f6426ffef54762577a7c9b54c159008cb288c18"
   end
 
   resource "charset-normalizer" do
@@ -112,8 +111,8 @@ class KeeperCommander < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages92ec089608b791d210aec4e7f97488e67ab0d33add3efccb83a056cbafe3a2a6setuptools-75.8.0.tar.gz"
-    sha256 "c5afc8f407c626b8313a86e10311dd3f661c6cd9c09d4bf8c15c0e11f9f2b0e6"
+    url "https:files.pythonhosted.orgpackagesd15343d99d7687e8cdef5ab5f9ec5eaf2c0423c2b35133a2b7e7bc276fc32b21setuptools-75.8.2.tar.gz"
+    sha256 "4880473a969e5f23f2a2be3646b2dfd84af9028716d398e46192f84bc36900d2"
   end
 
   resource "tabulate" do

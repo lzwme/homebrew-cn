@@ -9,6 +9,11 @@ class Sdl2Sound < Formula
   ]
   head "https:github.comicculusSDL_sound.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(^(?:release[._-])?v?(2(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "ebf816ab8b81d1c57a8fa8464015be9e6e7c1bb59e6756cb1ab955193468933d"
     sha256 cellar: :any,                 arm64_sonoma:  "1a336df9cbf4dbecdf17c4bd11f1d4fa86a8f8d7b4e31f90e2cd61f80d12b211"

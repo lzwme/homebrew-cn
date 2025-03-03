@@ -6,15 +6,18 @@ class Mummer < Formula
   license "Artistic-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "531fd07a35db174253c4ef9793b769ef8fb9eda7c18665fcd910d1ecdc644d29"
-    sha256 cellar: :any,                 arm64_sonoma:  "10ea871df20fefead713e4bd505c41b60d89f6baa3acc9a53608b53b9dba8bb7"
-    sha256 cellar: :any,                 arm64_ventura: "6a0f7b4ad59e2edd7e2e1f5efd20fd1dc96ba70f8190450f9835c616591b5c49"
-    sha256 cellar: :any,                 sonoma:        "6fafc17a6f92671ab3bbbe782da92288f0987d108ef6c919fb78832ec86054b5"
-    sha256 cellar: :any,                 ventura:       "275577377003c87c3c04ac07992f7b508f107a30be3a5a9906c26243b0f07820"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfdbd99b231c881102c83c2f902dd3ab5c1b499ed27e9307baf5272e3439ff9b"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "4ef96b830de6516a971c825d97a1de9b020f6fd2e6fd8a61fc3ed3529ac03ea9"
+    sha256 cellar: :any,                 arm64_sonoma:  "0850acd96974b0be3972f4869f021f275bb13c745febb4c3dca281b4aaf34042"
+    sha256 cellar: :any,                 arm64_ventura: "34d55037263abf3c69c4c78620f5e8a43edae45192938be22744bc5b81326b60"
+    sha256 cellar: :any,                 sonoma:        "b3d22a6054a15ec85880b9f3880f1404d6d49a945d6a98fd62ba2e47dd33d2ab"
+    sha256 cellar: :any,                 ventura:       "717f648282b990e25757252a3acc3be4ba1dcaf1f8600913f6fcae8ed92af3b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d131ccce92a6642ca9ede2ddf4097dd88a48b96748a9a64724fdc9e509b049bc"
   end
 
-  depends_on "gcc"
+  on_macos do
+    depends_on "gcc"
+  end
 
   fails_with :clang do
     cause <<~CAUSE

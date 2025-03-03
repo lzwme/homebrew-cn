@@ -1,11 +1,11 @@
 class ArmNoneEabiGdb < Formula
   desc "GNU debugger for arm-none-eabi cross development"
-  homepage "https://www.gnu.org/software/gdb/"
-  url "https://ftp.gnu.org/gnu/gdb/gdb-16.2.tar.xz"
-  mirror "https://ftpmirror.gnu.org/gdb/gdb-16.2.tar.xz"
+  homepage "https:www.gnu.orgsoftwaregdb"
+  url "https:ftp.gnu.orggnugdbgdb-16.2.tar.xz"
+  mirror "https:ftpmirror.gnu.orggdbgdb-16.2.tar.xz"
   sha256 "4002cb7f23f45c37c790536a13a720942ce4be0402d929c9085e92f10d480119"
   license "GPL-3.0-or-later"
-  head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
+  head "https:sourceware.orggitbinutils-gdb.git", branch: "master"
 
   livecheck do
     formula "gdb"
@@ -26,9 +26,16 @@ class ArmNoneEabiGdb < Formula
   depends_on "python@3.13"
   depends_on "xz" # required for lzma support
 
-  uses_from_macos "expat"
+  uses_from_macos "expat", since: :sequoia # minimum macOS due to python
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
+
+  # Workaround for https:github.comHomebrewbrewissues19315
+  on_sequoia :or_newer do
+    on_intel do
+      depends_on "expat"
+    end
+  end
 
   on_system :linux, macos: :ventura_or_newer do
     depends_on "texinfo" => :build
@@ -38,19 +45,19 @@ class ArmNoneEabiGdb < Formula
     target = "arm-none-eabi"
     args = %W[
       --target=#{target}
-      --datarootdir=#{share}/#{target}
-      --includedir=#{include}/#{target}
-      --infodir=#{info}/#{target}
+      --datarootdir=#{share}#{target}
+      --includedir=#{include}#{target}
+      --infodir=#{info}#{target}
       --mandir=#{man}
       --with-lzma
-      --with-python=#{Formula["python@3.13"].opt_bin}/python3.13
+      --with-python=#{Formula["python@3.13"].opt_bin}python3.13
       --with-system-zlib
       --disable-binutils
     ]
 
     mkdir "build" do
-      system "../configure", *args, *std_configure_args
-      ENV.deparallelize # Error: common/version.c-stamp.tmp: No such file or directory
+      system "..configure", *args, *std_configure_args
+      ENV.deparallelize # Error: commonversion.c-stamp.tmp: No such file or directory
       system "make"
 
       # Don't install bfd or opcodes, as they are provided by binutils
@@ -59,9 +66,9 @@ class ArmNoneEabiGdb < Formula
   end
 
   test do
-    (testpath/"test.c").write "void _start(void) {}"
-    system "#{Formula["arm-none-eabi-gcc"].bin}/arm-none-eabi-gcc", "-g", "-nostdlib", "test.c"
+    (testpath"test.c").write "void _start(void) {}"
+    system "#{Formula["arm-none-eabi-gcc"].bin}arm-none-eabi-gcc", "-g", "-nostdlib", "test.c"
     assert_match "Symbol \"_start\" is a function at address 0x",
-          shell_output("#{bin}/arm-none-eabi-gdb -batch -ex 'info address _start' a.out")
+          shell_output("#{bin}arm-none-eabi-gdb -batch -ex 'info address _start' a.out")
   end
 end

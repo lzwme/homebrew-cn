@@ -4,7 +4,10 @@ cask "taskwarrior-pomodoro" do
 
   url "https:github.comcoddingtonbeartaskwarrior-pomodororeleasesdownloadv#{version}taskwarrior-pomodoro-#{version}.dmg"
   name "Taskwarrior-Pomodoro"
+  desc "Pomodoro timer for Taskwarrior"
   homepage "https:github.comcoddingtonbeartaskwarrior-pomodoro"
+
+  deprecate! date: "2025-03-02", because: :unmaintained
 
   app "Taskwarrior Pomodoro.app"
 

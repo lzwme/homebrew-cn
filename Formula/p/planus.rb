@@ -1,18 +1,18 @@
 class Planus < Formula
   desc "Alternative compiler for flatbuffers,"
   homepage "https:github.complanus-orgplanus"
-  url "https:github.complanus-orgplanusarchiverefstagsv1.0.0.tar.gz"
-  sha256 "deeb35ca7db3ec0126a9ccb88b7db2d32a6aa1681f31719c0b061508a6ad2627"
+  url "https:github.complanus-orgplanusarchiverefstagsv1.1.1.tar.gz"
+  sha256 "d79f5d9a1acfcadc86376537c297853dcd6f326016f8049c28df57bb4f39c957"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.complanus-orgplanus.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f2f44196c4ecf6d8f6af707acaec708fb11672e7272c64aeb982acf2428a882"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a14952c5a270fa20c60213c43cd5141b948261e282f903cab5c8901d90801e95"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7f9f34194fac099e18356c098e93bdd9699219dab0316c0550cae77e0fbd3ea7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3b4a197cd3ee25d5108bd20ac2baa34a7a8b6e3a5f26fc072c4e872b704786ee"
-    sha256 cellar: :any_skip_relocation, ventura:       "5834c12f26403a0c54ef8ba1052247d7dfbac4c9f44b6b56cbed6120c871999a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00fa289dad3f69131943019476ad2f475e88031193ca8088c1364722fa206695"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9dba48be6e547ba8587b1817226ca0ae1f55641cdc1d6f2dd9c41c9c8fb1903"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4cb483d4499fe5f26af67e782d259a6177668d94189c234f583a61d2191c41b5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "72c79d7843232d9129eb468d6754bb7c3f01743de385b026b83f83f815935199"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b447d497d16a77f75046ec5e21dfd4d460a89bfa80d59d7b66cfb78beff0c917"
+    sha256 cellar: :any_skip_relocation, ventura:       "e211abbe537766952f09d5d299cb0e07bafe15d274756ed313416734aa1c2203"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01b73a1936dac8940d36d78673f5cdd9d8643981b70eaa71afc2c38256904226"
   end
 
   depends_on "rust" => :build

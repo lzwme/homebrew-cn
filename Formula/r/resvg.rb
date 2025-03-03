@@ -1,19 +1,18 @@
 class Resvg < Formula
   desc "SVG rendering tool and library"
   homepage "https:github.comRazrFalconresvg"
-  url "https:github.comRazrFalconresvgarchiverefstagsv0.44.0.tar.gz"
-  sha256 "b45c906b4c72ff46405d74eb98ec1b93842f1528a8e835860f22b057b210306a"
+  url "https:github.comRazrFalconresvgarchiverefstags0.45.0.tar.gz"
+  sha256 "871a1583da6af849f8bafd44abc0a75fa7bc9d8ccb242b9e0eae5b5cd4e156c1"
   license "MPL-2.0"
   head "https:github.comRazrFalconresvg.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "800f2849d0fd12d9eb86ae9c0d419a73dfd51e2b604b0c43b467bdd87969dea0"
-    sha256 cellar: :any,                 arm64_sonoma:  "bc4b170d07afd902670101419319e9179fd613bd7b1b0dc701ead93ca7f74747"
-    sha256 cellar: :any,                 arm64_ventura: "e1db465f10d7532c8143aeb443835a143e8782b298711b4d2a28d30f3a0e5f28"
-    sha256 cellar: :any,                 sonoma:        "378c71885d632bf7f9515faebf9498669167ec8484be7acef543c463363b867f"
-    sha256 cellar: :any,                 ventura:       "173495b3638c1913bd176046ed06a7c3e2bff5d9ebaea0e5aabed8f5656858b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6794d803e9bdcbb48cf5c3b0843363e4e606f32fdd0638b6c036aa7561ec5da"
+    sha256 cellar: :any,                 arm64_sequoia: "4424c1fdb6ba193b3d1d8936a1bf570fc378b3c0fc540f14cc6177dae02b110b"
+    sha256 cellar: :any,                 arm64_sonoma:  "fb45c826007c113259ea5a91d383d754cd8f305bb0c72eb2da0f889c2f8705eb"
+    sha256 cellar: :any,                 arm64_ventura: "34ca2202af5af900d1c571c6ee2386201f9ae7d52ced1c8b12c4c678dd690101"
+    sha256 cellar: :any,                 sonoma:        "5e0c32ce71b85fab8be04e2ded1b9a79d557dde2869982b59d653ce2c33c0cfe"
+    sha256 cellar: :any,                 ventura:       "2c1d0f6f5556afe3dbc9436974dff0530781368aa5d4aa0c43b0fcde4d63e945"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8b26ecacd503c5bf26523931514a338cab017f8ca23171b5ad1baaaae5ee9d2"
   end
 
   depends_on "cargo-c" => :build

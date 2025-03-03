@@ -6,6 +6,11 @@ class Hishtory < Formula
   license "MIT"
   head "https:github.comddworkenhishtory.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e34db19bb53a5227bdda758dd4511b3268bba2a5edf4e97ab312d96a164f8c24"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e34db19bb53a5227bdda758dd4511b3268bba2a5edf4e97ab312d96a164f8c24"

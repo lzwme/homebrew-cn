@@ -17,22 +17,19 @@ class Votca < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
+  depends_on "python@3.13" => :build
   depends_on "boost"
   depends_on "eigen"
   depends_on "fftw"
-  depends_on "gcc" # for OpenMP
   # add gromacs dep back once it was built with clang
   depends_on "hdf5"
   depends_on "libecpint"
   depends_on "libint"
   depends_on "libxc"
-  depends_on "numpy"
-  depends_on "python@3.13"
 
   uses_from_macos "expat"
 
   on_macos do
-    depends_on "libaec"
     depends_on "libomp"
   end
 

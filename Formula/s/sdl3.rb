@@ -1,8 +1,8 @@
 class Sdl3 < Formula
   desc "Low-level access to audio, keyboard, mouse, joystick, and graphics"
   homepage "https:libsdl.org"
-  url "https:github.comlibsdl-orgSDLreleasesdownloadrelease-3.2.4SDL3-3.2.4.tar.gz"
-  sha256 "2938328317301dfbe30176d79c251733aa5e7ec5c436c800b99ed4da7adcb0f0"
+  url "https:github.comlibsdl-orgSDLreleasesdownloadrelease-3.2.6SDL3-3.2.6.tar.gz"
+  sha256 "096a0b843dd1124afda41c24bd05034af75af37e9a1b9d205cc0a70193b27e1a"
   license "Zlib"
   head "https:github.comlibsdl-orgSDL.git", branch: "main"
 
@@ -13,12 +13,12 @@ class Sdl3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0d81ba62f36a806ef3134d93f91fd3434aa29e52802179c79b731679b5240bb2"
-    sha256 cellar: :any,                 arm64_sonoma:  "a70b7313235cf2b3b75db0794f84cba21c643fa9a76ca372964079a14df750bd"
-    sha256 cellar: :any,                 arm64_ventura: "95b0232ae1ed7b13c1d83fb8e3c5eb004c2f0b125259888f374f65770ae595a5"
-    sha256 cellar: :any,                 sonoma:        "11d5f3f8225328a52ea607214d4ba0dbead65c675e0db9edba4b2f09781be201"
-    sha256 cellar: :any,                 ventura:       "10ea4af0d5b1b6ffb090cc1a52ddd73b1b616a8c057ce451f407a2e05c92c411"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afd857765284ff2311b9a1c90634188299c2faa51892a6c86921ae397c4e78a1"
+    sha256 cellar: :any,                 arm64_sequoia: "3e59cef196344b5586b396ccfc1e4b449ebe3d5f1fc46082623d00b530d35b78"
+    sha256 cellar: :any,                 arm64_sonoma:  "3962edf9e10486839a270f9391325e1241f8d5cea9dc14b9f8e29a19e2749677"
+    sha256 cellar: :any,                 arm64_ventura: "4ba179f9710461f8af8ff78dc5105f090296d762805473dfd568d73de5618be7"
+    sha256 cellar: :any,                 sonoma:        "deb27d834eba7c77c5b0c9ce6aae471fdfc898f78daa5ae62b709ee4d9ab3153"
+    sha256 cellar: :any,                 ventura:       "a610d6cf2ebd3bfa0f3d5674cdb028857702865a4e882633cb410b1943475855"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5463c8faf86df9214f14c8797e6ce8f5bb5991264339bc805794e2d2ce680112"
   end
 
   depends_on "cmake" => :build

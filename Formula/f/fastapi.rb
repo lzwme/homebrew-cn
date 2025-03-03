@@ -3,17 +3,17 @@ class Fastapi < Formula
 
   desc "CLI for FastAPI framework"
   homepage "https://fastapi.tiangolo.com/"
-  url "https://files.pythonhosted.org/packages/00/48/96e3cf457a5a64c23abe8453358b68ebc6755ac1b2bc4c8874c3cc94cd56/fastapi-0.115.10.tar.gz"
-  sha256 "920cdc95c1c6ca073656deae80ad254512d131031c2d7759c87ae469572911ee"
+  url "https://files.pythonhosted.org/packages/b5/28/c5d26e5860df807241909a961a37d45e10533acef95fc368066c7dd186cd/fastapi-0.115.11.tar.gz"
+  sha256 "cc81f03f688678b92600a65a5e618b93592c65005db37157147204d8924bf94f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "fb36adba2a2d81a0a8790b07ac1d5208addb6074fe38b9c762e6ce8e695ab1ac"
-    sha256 cellar: :any,                 arm64_sonoma:  "16544353f6a6900a4cd1ae930c394ae773b2dc047fcd7ffa9507db72ec5e475d"
-    sha256 cellar: :any,                 arm64_ventura: "3eef31cf89f7336b32cc2693eb66c5f3617bf9143b76637cf0efbee5eaf5a88b"
-    sha256 cellar: :any,                 sonoma:        "2f0ce5801e412ff07c91ccdd78805ae170a0a9b8e54d195f020cbe78b8bb67fe"
-    sha256 cellar: :any,                 ventura:       "91d99366ae80921e1c80f1c0b33f24004ce11d24626dc282b3809f1cbbe8dca2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8859200942c752041dd5668faa9605f6185134b7d4ddf7402746f319856dff02"
+    sha256 cellar: :any,                 arm64_sequoia: "c0249fb0532df51408e1a21270e00ce3bcc298fd32e47baa4189846c1385d291"
+    sha256 cellar: :any,                 arm64_sonoma:  "d37cca40414a2b52bce7bbe0c29ad599a168e1ed008a42e463e5ba61e40f7159"
+    sha256 cellar: :any,                 arm64_ventura: "28a9107ed04517fa5dbec2aaab60c894ee41f280314ca0cd5cee4ab41864e744"
+    sha256 cellar: :any,                 sonoma:        "758615d14d8d52f834d8d47901dda913b880895849163419ea2ab0c5df60fa3b"
+    sha256 cellar: :any,                 ventura:       "d911b95085d6d11b370a2e095d0c092658fa3c9894bbfd482cce1e9a2f0d35f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5039571c84193b1e5b355e89d1fccd2989529d3ded251b2244f197e3acad6c6"
   end
 
   depends_on "rust" => :build # for pydantic

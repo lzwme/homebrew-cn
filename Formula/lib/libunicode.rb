@@ -27,8 +27,8 @@ class Libunicode < Formula
   end
 
   fails_with :gcc do
-    version "11"
-    cause "Requires C++20"
+    version "12"
+    cause "Requires C++20 std::format, https:gcc.gnu.orggcc-13changes.html#libstdcxx"
   end
 
   def install

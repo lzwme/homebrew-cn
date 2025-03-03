@@ -6,6 +6,11 @@ class Batt < Formula
       revision: "a6952e4423e9f9cd175db5175e9b62de96edc6b7"
   license "GPL-2.0-only"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e386881441aa6f47e924c68949b6ae352942a3afa4db2f224396a26f14a2f6d2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0810f6d7f6f8dccad981dde2c0bed237665e8ee03a752c12d521bfa66441fead"

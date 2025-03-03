@@ -5,12 +5,9 @@ class Sdl2Net < Formula
   sha256 "4e4a891988316271974ff4e9585ed1ef729a123d22c08bd473129179dc857feb"
   license "Zlib"
 
-  # NOTE: This should be updated to use the `GithubLatest` strategy ifwhen the
-  # GitHub releases provide downloadable artifacts and the formula uses one as
-  # the `stable` URL (like `sdl2_image`, `sdl2_mixer`, etc.).
   livecheck do
-    url :head
-    regex(^release[._-]v?(\d+(?:\.\d+)+)$i)
+    url :stable
+    regex(^(?:release[._-])?v?(2(?:\.\d+)+)$i)
   end
 
   bottle do

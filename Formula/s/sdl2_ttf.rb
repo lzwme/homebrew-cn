@@ -5,12 +5,9 @@ class Sdl2Ttf < Formula
   sha256 "0b2bf1e7b6568adbdbc9bb924643f79d9dedafe061fa1ed687d1d9ac4e453bfd"
   license "Zlib"
 
-  # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
-  # labeled as "pre-release" on GitHub before the version is released, so it's
-  # necessary to use the `GithubLatest` strategy.
   livecheck do
     url :stable
-    strategy :github_latest
+    regex(^(?:release[._-])?v?(2(?:\.\d+)+)$i)
   end
 
   bottle do

@@ -6,8 +6,6 @@ class Irssi < Formula
   license "GPL-2.0-or-later" => { with: "openvpn-openssl-exception" }
   revision 1
 
-  # This formula uses a file from a GitHub release, so we check the latest
-  # release version instead of Git tags.
   livecheck do
     url :stable
     strategy :github_latest

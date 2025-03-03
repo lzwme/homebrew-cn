@@ -1,8 +1,8 @@
 class Node < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v23.7.0/node-v23.7.0.tar.xz"
-  sha256 "8de192ef2fee2ee8a230dd8d0e9aee182ee9c9856ccdb5fd95188abe84f77242"
+  url "https://registry.npmmirror.com/-/binary/node/v23.9.0/node-v23.9.0.tar.xz"
+  sha256 "c6b420bedbb049a6538c33af28abaf89011ccc879f0f0f81791675263c238f97"
   license "MIT"
   head "https://github.com/nodejs/node.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "fa212d020ebe27ec7b9ab94acacf723a68a44b4df05605d20fbcd400c954d2b5"
-    sha256 arm64_sonoma:  "6dafc72cee35075df496e7a96ff5e666906576dfc7c315bfd67c128dca0c5428"
-    sha256 arm64_ventura: "ac717359a1096ac553f6ddcf81a1bc2e82e537dde601c80d28b9ade79d9bd917"
-    sha256 sonoma:        "ae067ede633d1e446fbc07fa0c3fdcdcc86eec45eb64a3b107477b57a6238dc1"
-    sha256 ventura:       "44b8e75249508519c81bdb6e579f9b290aaa8a04050ab479f42fe0e75d4f55d4"
-    sha256 x86_64_linux:  "25dd0ca724d0a46608098fa1972acdca9d0a3e3d6e06e70e00facb6156e1d882"
+    sha256 arm64_sequoia: "57e1da8a3afbd55a86fc84896c6fc26c9540307b8133025306e22468df245794"
+    sha256 arm64_sonoma:  "814474a24476b34dc1c7c3c4e9d3301bc23d837271771f8863fbf55767e6fb4f"
+    sha256 arm64_ventura: "daf3b721086554a30ac684b28129497ef425cf5de1d0ad32de99b40aae7c0e72"
+    sha256 sonoma:        "a5dd17ffbbb098060620a34d8ea48317122f10e1d14aca2d90e1b229eaf1ef5b"
+    sha256 ventura:       "40e63a434aaecc214d4986a339c399b35f3530b0f252183bb6654e3687f57cbf"
+    sha256 x86_64_linux:  "853778f8d87627477986aefd6c8dcab1466630b2bb41850bbef94a9dbbe267ac"
   end
 
   depends_on "pkgconf" => :build
@@ -33,14 +33,25 @@ class Node < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    depends_on "llvm" => [:build, :test] if DevelopmentTools.clang_build_version <= 1100
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1500
   end
 
+  on_linux do
+    # Avoid newer GCC which creates binary with higher GLIBCXX requiring runtime dependency
+    depends_on "gcc@12" => :build if DevelopmentTools.gcc_version("/usr/bin/gcc") < 12
+  end
+
+  # https://github.com/swiftlang/llvm-project/commit/94461822c75d5080bf648f86552f7a59b76905c9
   fails_with :clang do
-    build 1100
-    cause <<~EOS
-      error: calling a private constructor of class 'v8::internal::(anonymous namespace)::RegExpParserImpl<uint8_t>'
-    EOS
+    build 1500
+    cause "needs std::ranges::elements_view"
+  end
+
+  # https://github.com/nodejs/node/blob/main/BUILDING.md#supported-toolchains
+  # https://github.com/ada-url/ada?tab=readme-ov-file#requirements
+  fails_with :gcc do
+    version "11"
+    cause "needs GCC 12 or newer"
   end
 
   # We track major/minor from upstream Node releases.
@@ -51,7 +62,7 @@ class Node < Formula
   end
 
   def install
-    ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
+    ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1500
 
     # The new linker crashed during LTO due to high memory usage.
     ENV.append "LDFLAGS", "-Wl,-ld_classic" if DevelopmentTools.clang_build_version >= 1500
@@ -87,9 +98,9 @@ class Node < Formula
 
     # Enabling LTO errors on Linux with:
     # terminate called after throwing an instance of 'std::out_of_range'
-    # Pre-Catalina macOS also can't build with LTO
+    # macOS also can't build with LTO when using LLVM Clang
     # LTO is unpleasant if you have to build from source.
-    args << "--enable-lto" if OS.mac? && MacOS.version >= :catalina && build.bottle?
+    args << "--enable-lto" if OS.mac? && DevelopmentTools.clang_build_version > 1500 && build.bottle?
 
     system "./configure", *args
     system "make", "install"

@@ -17,12 +17,12 @@ class Opencolorio < Formula
 
   depends_on "cmake" => :build
   depends_on "pybind11" => :build
+  depends_on "python@3.13" => [:build, :test] # for bindings, avoid runtime dependency due to `expat`
   depends_on "imath"
   depends_on "little-cms2"
   depends_on "minizip-ng"
   depends_on "openexr"
   depends_on "pystring"
-  depends_on "python@3.13"
   depends_on "yaml-cpp"
 
   uses_from_macos "expat"

@@ -11,27 +11,31 @@ class Gdcm < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "d0561a6d8ee2b31305adfec2635876226ed217d5ac3ad8cc7355e0395ec6d545"
-    sha256 arm64_sonoma:  "b93f40bfae7fe20b367cf26010142d9baa88ce4dd9e11b3930a6aa506e4a7854"
-    sha256 arm64_ventura: "53f749235948d44c0a61dfe1d16aa25e63a00d5742434702b4148a84363bbdfa"
-    sha256 sonoma:        "8bad60afc9f145ffc913c78d8e8fb813eefa09e9080db5e7fc907dfa32bf605c"
-    sha256 ventura:       "86e513e03c33cd69b5e341bfb74292ddb7975c3a1bbff5c39d48328f0fd6dea5"
-    sha256 x86_64_linux:  "a443980c665157dbfb2919d3035d44947e299f9474a0703177293fc9784db186"
+    rebuild 2
+    sha256 arm64_sequoia: "29f4afca40589ee225e365d19784cefaea6a645bb74c8846fc380b4ab6182020"
+    sha256 arm64_sonoma:  "fde25b20f1705d89a85dec3c6e159877d6725b90ca38574083a3ba6beac9c0b3"
+    sha256 arm64_ventura: "5de66afd7a971ab36ee2a088d9cad724e664a9c54f86de0487097d4100603537"
+    sha256 sonoma:        "709bd1ed5c21684c70b26bc5eb01557c1651be434a17a7d29bec098c3c4d695b"
+    sha256 ventura:       "23c61e5a51e3c5d5b0abb2a9df18b06c4a5eda9e14c05850643bca44a9bdbae1"
+    sha256 x86_64_linux:  "8bc43d0b2244b3218545c1aa4fba961b365c514d85bb3a158087e4fbe421350d"
   end
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
+  depends_on "python@3.13" => [:build, :test] # for bindings, avoid runtime dependency due to `expat`
   depends_on "swig" => :build
+  depends_on "charls"
+  depends_on "json-c"
   depends_on "openjpeg"
   depends_on "openssl@3"
-  depends_on "python@3.13"
 
   uses_from_macos "expat"
+  uses_from_macos "libxml2"
   uses_from_macos "zlib"
 
   on_linux do
+    depends_on "python@3.13"
     depends_on "util-linux" # for libuuid
   end
 
@@ -56,11 +60,14 @@ class Gdcm < Formula
       "-DGDCM_BUILD_EXAMPLES=OFF",
       "-DGDCM_BUILD_DOCBOOK_MANPAGES=OFF",
       "-DGDCM_USE_VTK=OFF", # No VTK 9 support: https:sourceforge.netpgdcmbugs509
+      "-DGDCM_USE_SYSTEM_CHARLS=ON",
       "-DGDCM_USE_SYSTEM_EXPAT=ON",
-      "-DGDCM_USE_SYSTEM_ZLIB=ON",
-      "-DGDCM_USE_SYSTEM_UUID=ON",
+      "-DGDCM_USE_SYSTEM_JSON=ON",
+      "-DGDCM_USE_SYSTEM_LIBXML2=ON",
       "-DGDCM_USE_SYSTEM_OPENJPEG=ON",
       "-DGDCM_USE_SYSTEM_OPENSSL=ON",
+      "-DGDCM_USE_SYSTEM_UUID=ON",
+      "-DGDCM_USE_SYSTEM_ZLIB=ON",
       "-DGDCM_WRAP_PYTHON=ON",
       "-DPYTHON_EXECUTABLE=#{python3}",
       "-DPYTHON_INCLUDE_DIR=#{python_include}",
@@ -89,8 +96,7 @@ class Gdcm < Formula
       }
     CPP
 
-    system ENV.cxx, "-std=c++11", "-isystem", "#{include}gdcm-3.0", "-o", "test.cxx.o", "-c", "test.cxx"
-    system ENV.cxx, "-std=c++11", "test.cxx.o", "-o", "test", "-L#{lib}", "-lgdcmDSED"
+    system ENV.cxx, "-std=c++11", "test.cxx", "-o", "test", "-I#{include}gdcm-3.0", "-L#{lib}", "-lgdcmDSED"
     system ".test"
 
     system python3, "-c", "import gdcm"
