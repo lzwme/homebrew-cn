@@ -1,8 +1,8 @@
 class Libvirt < Formula
   desc "C virtualization API"
   homepage "https://libvirt.org/"
-  url "https://download.libvirt.org/libvirt-11.0.0.tar.xz"
-  sha256 "01a176ff4042ad58cf83c09fe0925d6bc8eed0ecce1e0ee19b8ef4c1ffa3806e"
+  url "https://download.libvirt.org/libvirt-11.1.0.tar.xz"
+  sha256 "19aebfd98d209792d569cdcf944dafb85c00d264f3b55fa1216b18f9bc9cb226"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
   head "https://gitlab.com/libvirt/libvirt.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Libvirt < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "b092d35546e041875cb44212534c268af1edd890ca43dc8791cf7343600a9854"
-    sha256 arm64_sonoma:  "1b6ecfc3ea7683e43b90981597f48e377d4f84c1043d685f63f132e436dde12f"
-    sha256 arm64_ventura: "6da44d956b8aee804e02e07f1a06cba44d3016ef006dd2df82368b25eba56c62"
-    sha256 sonoma:        "f34fff265b817ce46160c0ff32a9db3829cf0c36763c5b0eeb60f2646fc352fc"
-    sha256 ventura:       "40fb73f7ac0a824916e4db73995dd128088c95d656c683ed4d3167fb2d4c7a00"
-    sha256 x86_64_linux:  "ba000a71c66398bf89a6df3887355bcab3acf94fbe9432ba5cee54e94cc20321"
+    sha256 arm64_sequoia: "a2834e193627742a0792d62c550f4cc61d31705b3d136fb3a350dd472c14617b"
+    sha256 arm64_sonoma:  "435e61cafd93a5b2cc492565c38ceb074c25b4861cdc84a23addc67502bba128"
+    sha256 arm64_ventura: "11951d2a0b8921bdf07df12483a3e697498369f7b296344e756620d95b782e4b"
+    sha256 sonoma:        "351eb9b6506bb82a30b5ca998a98d487af28699309a7240a11a317508803da39"
+    sha256 ventura:       "2f2e88c83b1f27796201ad77ef9ebfa1b7e5ec862aabd46889094bdb7f62393a"
+    sha256 x86_64_linux:  "b50ca36bab8cb3ff635146841bd60b05fce265e8a0bf7df9f6a2780c39345e82"
   end
 
   depends_on "docutils" => :build

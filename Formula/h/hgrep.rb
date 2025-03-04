@@ -1,18 +1,18 @@
 class Hgrep < Formula
   desc "Grep with human-friendly search results"
   homepage "https:github.comrhysdhgrep"
-  url "https:github.comrhysdhgreparchiverefstagsv0.3.7.tar.gz"
-  sha256 "66e30cad042791afea218f7a31f82ffcb7b92b57ba44c7adee1f792029d9cd86"
+  url "https:github.comrhysdhgreparchiverefstagsv0.3.8.tar.gz"
+  sha256 "a8c554bab136be4083429e97a41d70b8cabcdf113ac3a2ce6c801b5c8710d1d2"
   license "MIT"
   head "https:github.comrhysdhgrep.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5aa7107eba4b90c77c23b1fa3b1cbfc73cd7506bc3ff3f55cb03654fb60402b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca9b2c3054e524995f8dcabdede8ed47ad009f3a189a0f0e0c273f63a5f650ed"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f34f0cc58b92e9061c0591042a55455b03130214746504be509dc926197d7698"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ab4157c7237348c2592358c4519644964118cd3494b0216e6738f387863554a7"
-    sha256 cellar: :any_skip_relocation, ventura:       "996382e2809c829808cb9763949e5b766344121e547736230b906e883e0e2dcb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7c6c0f7b280917573b6d4d14e7870cec2b8beec186524551bb9b7f40aa71779"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bdc73fc805440e15b720a25825a116fe80353b8b7169932f6fdd0b2d15259184"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d49c3f35512cd5f2c75ee590bd320c5a4d24785181319e00b63e08be3af99280"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9df4b9b5224a7972f504d5c34ba609ee631abb70a2ae1749753a4dd50216b3a7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a874051334cff79a342cfae5c56daebfd5d0f4c78e8d32ab0290e456b980eebb"
+    sha256 cellar: :any_skip_relocation, ventura:       "1f2b68a3c41557c21771eb8d59946310a58f2df48aa505c0e9e8f2b0e9e4f07e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "471b142b6b7286f5f3a0240fe951dc555cd29be2a5233a95af1fd08983673c18"
   end
 
   depends_on "rust" => :build

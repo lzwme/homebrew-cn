@@ -1,8 +1,8 @@
 class LandoCli < Formula
   desc "Cli part of Lando"
   homepage "https:docs.lando.devcli"
-  url "https:github.comlandocorearchiverefstagsv3.24.0.tar.gz"
-  sha256 "7c730924e3b41ca8dbc2e4350d3ee57511a1809f276d4ae84283fb59c58146c2"
+  url "https:github.comlandocorearchiverefstagsv3.24.1.tar.gz"
+  sha256 "3c01582ccd2f9b0e104ef9ce5105cde3913052788b64ac9b471f2d4a9859451b"
   license "GPL-3.0-or-later"
   head "https:github.comlandocore.git", branch: "main"
 
@@ -12,12 +12,12 @@ class LandoCli < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "102619f90a266e698ff6f0d7b62baebd05fd9f6d54e76908f245ec18f3748bc3"
-    sha256                               arm64_sonoma:  "99c8c7d28982afcb26802ff121ae431c120932d20d6f49074411407ebf4abc28"
-    sha256                               arm64_ventura: "a01c91ae729f7ac1d1d411ad3f77832713c1a237d0f6500d254d761c8dbce66c"
-    sha256                               sonoma:        "a18c0d8f507774295521503be259d30bb06fcc1c9bc2c9d3ac7c7f847196b883"
-    sha256                               ventura:       "4b2d6e09495d666f08e63fceb2ab7693048b45d5fc5929ecebd944cb2ccf4a2a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9df0b922de211072f4ea6e23ffba885da2a87199a2fdbc10f20b4fa150f16fb0"
+    sha256                               arm64_sequoia: "fa6bfd59747e96af0d71917a22d12eed66637c7313de3803aa80a4b0f6ae990e"
+    sha256                               arm64_sonoma:  "cb7cd03cae986777db9ed3805587e86ca31cd828fac7c4265458c7ecd48d37c9"
+    sha256                               arm64_ventura: "6284e612f1ca5940122a555f11671f27f904c2dc03e2bafe1410efe9555dd935"
+    sha256                               sonoma:        "dcde16e9c342fc1d438a17ccd8862717fd06d8fe0966f9ae6b4839599ffabae5"
+    sha256                               ventura:       "926f53af4b9ab4ed2eaaac30f972159c702d5da35216b8d44579542290da85c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e95c33c4fe877e07eb1897339a612d2619f14d2e183960a68fcaac71bbd0bca"
   end
 
   depends_on "node"

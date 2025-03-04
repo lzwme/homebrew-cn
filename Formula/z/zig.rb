@@ -12,12 +12,13 @@ class Zig < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "265d2269f0f6bfef74a37c6b80229475549c21b8772e5c68a43603dfff255824"
-    sha256 cellar: :any,                 arm64_sonoma:  "bc7414541dd009f1e35b83931b3f8d566af0d900b42505c4adb4ef4c5a433f50"
-    sha256 cellar: :any,                 arm64_ventura: "c03e335f865bd4692f0d7b15c5aae7cc72a24711da05c892550ce0ad30d2faa8"
-    sha256 cellar: :any,                 sonoma:        "794a173900285d266245e1079da5bfb3b8edc2523f8931f1bcea3b71a5c3f0c5"
-    sha256 cellar: :any,                 ventura:       "675cab707430f952c7a25efec1934e90a1384d1b0a97c59a5ecee86ddd988219"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c26c173a280a0eb435f921530947eaa81ca87f3a21d0592ecaf42e6fa27dfeeb"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "17784661a18ed940e5ca7f851d5e625e71c90d16c826e439fa01f8fa834ef241"
+    sha256 cellar: :any,                 arm64_sonoma:  "bb7838db2d04fc4b92176a626946e6911f007c76aef67f7d548a5b1f64c1579f"
+    sha256 cellar: :any,                 arm64_ventura: "b1e01694ffbde41aa5cb5a1b9854443d4c6e45958884aeb2a27d2f750bbd2e02"
+    sha256 cellar: :any,                 sonoma:        "a7bba266b97942083b54ea6c117128b0ccb09d70c58a5b3bb8548c7e60e2889a"
+    sha256 cellar: :any,                 ventura:       "ebeb4e27ed049b3df9978a7efd8074a11282f7ce7d2bfa598fb3f9a6821c7480"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13ff67f794f962c1d73be3191df29c78f806f7f4b64407ee7c581cc3c94ca37a"
   end
 
   depends_on "cmake" => :build
@@ -27,6 +28,9 @@ class Zig < Formula
 
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
+
+  # https:github.comHomebrewhomebrew-coreissues209483
+  skip_clean "libziglibcdarwinlibSystem.tbd"
 
   def install
     llvm = deps.find { |dep| dep.name.match?(^llvm(@\d+)?$) }
@@ -68,6 +72,24 @@ class Zig < Formula
     ZIG
     system bin"zig", "build-exe", "hello.zig"
     assert_equal "Hello, world!", shell_output(".hello")
+
+    arches = ["aarch64", "x86_64"]
+    systems = ["macos", "linux"]
+    arches.each do |arch|
+      systems.each do |os|
+        system bin"zig", "build-exe", "hello.zig", "-target", "#{arch}-#{os}", "--name", "hello-#{arch}-#{os}"
+        assert_path_exists testpath"hello-#{arch}-#{os}"
+        file_output = shell_output("file --brief hello-#{arch}-#{os}").strip
+        if os == "linux"
+          assert_match(\bELF\b, file_output)
+          assert_match(\b#{arch.tr("_", "-")}\b, file_output)
+        else
+          assert_match(\bMach-O\b, file_output)
+          expected_arch = (arch == "aarch64") ? "arm64" : arch
+          assert_match(\b#{expected_arch}\b, file_output)
+        end
+      end
+    end
 
     # error: 'TARGET_OS_IPHONE' is not defined, evaluates to 0
     # https:github.comziglangzigissues10377

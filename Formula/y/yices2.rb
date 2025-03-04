@@ -6,6 +6,11 @@ class Yices2 < Formula
   license "GPL-3.0-only"
   head "https:github.comSRI-CSLyices2.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(^Yices[._-]v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "7aa9455d40cdd55ef92337c0216bbd59eb9a79436112ba5048371762c2ef6447"
     sha256 cellar: :any,                 arm64_sonoma:  "0ebe8f48d46ba45ce6f51e16731dc13419c44274b68909ed9635dcb13b6387cc"

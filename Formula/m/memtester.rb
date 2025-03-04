@@ -1,8 +1,8 @@
 class Memtester < Formula
   desc "Utility for testing the memory subsystem"
   homepage "https://pyropus.ca/software/memtester/"
-  url "https://pyropus.ca/software/memtester/old-versions/memtester-4.7.0.tar.gz", using: :homebrew_curl
-  sha256 "33271805f8aa30c119fbbf5ec4e7a298e9f4c2bc9d2d9302022a3ed301eb7028"
+  url "https://pyropus.ca/software/memtester/old-versions/memtester-4.7.1.tar.gz", using: :homebrew_curl
+  sha256 "e427de663f7bd22d1ebee8af12506a852c010bd4fcbca1e0e6b02972d298b5bb"
   license "GPL-2.0-only"
 
   # Despite the name, all the versions are seemingly found on this page. If this
@@ -13,12 +13,12 @@ class Memtester < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d17a57953082eda2a4efad8ce3999a3e939e34eb69b70809d2636c0869e3ebb7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "55c24c6b00dfc86a11edeedbab05eaa2b9ccbefe5712cd8c79f6f8d6b4603249"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "feb67620bcf7242224227ec13c0dd5cfae4968524d74d9aa40cfe7e219bcab0c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a3a698b2e817b8e1f7a6d72db8ca7dd52b8a1ab4cfa7b1cbbc6c0ff35840635e"
-    sha256 cellar: :any_skip_relocation, ventura:       "2378767f21fcd8cb8024c61538705490fcadb608c7c0443f871b55f200d62436"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef916295490ef4ddb3936c6d3a26275af440a6a333b1407f227fca4a6ad03b23"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf486cb5e72380acf5f3b1396af8d854151452be5be0dc5103322dd27bbbec81"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0fb85d1c32821cb299a52a432788a47a12c9f10b683f7a1eef67c8d135eaeb31"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "db421b0bd918efef4c65a5fda3c6f87e979d0a3d0af630c09ad1369f835e1729"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dafebaa8af7e2774e55142b2b6c8ea9e741c6c69c2c757f6deecdfc5574d0379"
+    sha256 cellar: :any_skip_relocation, ventura:       "5429e15d860dc1dc4339ed93beb76756f4b123108c20334a1bc4820043c63d34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09e87a3a5d5b2b187c4e48b815f6e3bd5b70a2e1024add16f0c3ef12952c91e3"
   end
 
   def install

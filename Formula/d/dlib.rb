@@ -1,8 +1,8 @@
 class Dlib < Formula
   desc "C++ library for machine learning"
   homepage "http:dlib.net"
-  url "https:github.comdaviskingdlibarchiverefstagsv19.24.7.tar.gz"
-  sha256 "fb3213872b4755cbc75d88cdd3cf77555d353ac89bc105f7acb33bf665f4b2a7"
+  url "https:github.comdaviskingdlibarchiverefstagsv19.24.8.tar.gz"
+  sha256 "819cfd28639fe80ca28039f591a15e01772b7ada479de4a002b95bcb8077ce80"
   license "BSL-1.0"
   head "https:github.comdaviskingdlib.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Dlib < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "52dd001745814c924a87cf42e3a82a00d4fa35061da36038e623d77ebe8cb6c0"
-    sha256 cellar: :any,                 arm64_sonoma:  "7d6b9431c4c80283cab042f29859d806a899e98d0b521f1b18c279701a6bc68c"
-    sha256 cellar: :any,                 arm64_ventura: "6c13f0a4c98d13b642c297dc8ced48ac0826233edbe1b88c67449a9ac1d60765"
-    sha256 cellar: :any,                 sonoma:        "29cceffca57a7529f134d56dcd31747b0a8af60a4575839677d855fd8a331008"
-    sha256 cellar: :any,                 ventura:       "e714e65742db67b08dfa50ad9b73f683fc4864bce7f8e1ee916e5d012ee76b36"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6d56996e946269b3ba5cde4519f5bbe39bb98b86673144968ec3f6d7fefb91b"
+    sha256 cellar: :any,                 arm64_sequoia: "e216992b453822949a4eb33609281347e6da267c5fbfbed27b31dc7f6894b598"
+    sha256 cellar: :any,                 arm64_sonoma:  "ec44f8bd772b8f2ecef5edc35de034dbc22cb1d2e4f494dd4f0a200a4f51becb"
+    sha256 cellar: :any,                 arm64_ventura: "f0901f40485da2a73754ee3e2badb330ed26c11956f30014c155f3a78be4f473"
+    sha256 cellar: :any,                 sonoma:        "ce1d25c470eab70aeab6ce93ce72f1e208d680ed9aa66873ea5094c29ae70e04"
+    sha256 cellar: :any,                 ventura:       "58b309a698357a39bfaa908f473f0f33df35aaad22b4120ab87f3b284abe34a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b223e31660981e25df9e9febb186ec33796f9fc7a9e78a7c2adc46f762e06e57"
   end
 
   depends_on "cmake" => :build

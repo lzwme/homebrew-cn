@@ -1,25 +1,22 @@
 class Libgnt < Formula
   desc "NCurses toolkit for creating text-mode graphical user interfaces"
   homepage "https://keep.imfreedom.org/libgnt/libgnt"
-  url "https://downloads.sourceforge.net/project/pidgin/libgnt/2.14.3/libgnt-2.14.3.tar.xz"
-  sha256 "57f5457f72999d0bb1a139a37f2746ec1b5a02c094f2710a339d8bcea4236123"
+  url "https://keep.imfreedom.org/libgnt/libgnt/archive/v2.14.4.tar.gz"
+  sha256 "40840dd69832fdae930461e95d8505dabc8854b98a02c258c8833e0519eabe69"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
-    url "https://sourceforge.net/projects/pidgin/rss?path=/libgnt"
-    regex(%r{url=.*?/libgnt[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    url "https://keep.imfreedom.org/libgnt/libgnt/tags"
+    regex(%r{href=["']?[^"' >]*?/rev/v?(\d+(?:\.\d+)+)["' >]}i)
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia:  "06e99df7a279d7a4f75274f96a0db2f6afe0c6b234bbc92d967f289d001cc4c5"
-    sha256 cellar: :any, arm64_sonoma:   "92cb079a6648bbd97c733c00ab6d0ca2bbaa10fa07dd7edafe0e467d59cd928d"
-    sha256 cellar: :any, arm64_ventura:  "cef0929d73436e28d17b5373a7088b7cbebddb53cd2aa5ae332e8b3c7264b2d5"
-    sha256 cellar: :any, arm64_monterey: "0345644c556d7cca3a1974f1d716ca906b3a9819122b8832af2f5fe436febe44"
-    sha256 cellar: :any, sonoma:         "b935c28f5db2f8b807c8550f02eb766793bf324a7b6beaa5f7e83b4dd4671e37"
-    sha256 cellar: :any, ventura:        "9e74dedfc9bc7dd2d44936fa08782aa46bf4e8b9fcf448ba6dfbab1390b229d5"
-    sha256 cellar: :any, monterey:       "b8ee230409a87a54eb1739b0df20eb82c121d0a6d53674b2d8503476fd315b27"
-    sha256               x86_64_linux:   "a1aeee55bd6025c795083d7889415358ab4241b74bc37cd7392833e971eae98d"
+    sha256 cellar: :any, arm64_sequoia: "83d17065c582bdcf162513a0523c19c44db30b00842cda416a2d335b7abc0eb9"
+    sha256 cellar: :any, arm64_sonoma:  "40ab4a1893fe00347a02fb7b4cdf258598e1ae27e1594a1c4dff5461633f1a8a"
+    sha256 cellar: :any, arm64_ventura: "c564614df4b284c52854d467589dd9603a3502f38c9a07f11a8c35e778617c8b"
+    sha256 cellar: :any, sonoma:        "4f3826fd8c722f84e3c568a74c27d48bc3f6a3a15db15721da56447c3f9d9d15"
+    sha256 cellar: :any, ventura:       "567c90442a84e13142d104bd45b65df01359f65aa38b67f52f644d4cd1f5c90f"
+    sha256               x86_64_linux:  "23fe502bda696d00cfd7dd0f0f4022c46268337ae7bea8b0470b497d89540240"
   end
 
   depends_on "gtk-doc" => :build
@@ -35,9 +32,6 @@ class Libgnt < Formula
   on_macos do
     depends_on "gettext"
   end
-
-  # build patch for ncurses 6
-  patch :DATA
 
   def install
     ENV["XML_CATALOG_FILES"] = etc/"xml/catalog"
@@ -76,105 +70,3 @@ class Libgnt < Formula
     system "./test"
   end
 end
-
-__END__
-diff --git a/gntwm.c b/gntwm.c
-index ffb1f4a..2ca4a6a 100644
---- a/gntwm.c
-+++ b/gntwm.c
-@@ -161,47 +161,49 @@ static void
- work_around_for_ncurses_bug(void)
- {
- #ifndef NO_WIDECHAR
--	PANEL *panel = NULL;
--	while ((panel = panel_below(panel)) != NULL) {
--		int sx, ex, sy, ey, w, y;
--		cchar_t ch;
--		PANEL *below = panel;
--
--		sx = getbegx(panel->win);
--		ex = getmaxx(panel->win) + sx;
--		sy = getbegy(panel->win);
--		ey = getmaxy(panel->win) + sy;
--
--		while ((below = panel_below(below)) != NULL) {
--			if (sy > getbegy(below->win) + getmaxy(below->win) ||
--					ey < getbegy(below->win))
--				continue;
--			if (sx > getbegx(below->win) + getmaxx(below->win) ||
--					ex < getbegx(below->win))
--				continue;
--			for (y = MAX(sy, getbegy(below->win)); y <= MIN(ey, getbegy(below->win) + getmaxy(below->win)); y++) {
--				if (mvwin_wch(below->win, y - getbegy(below->win), sx - 1 - getbegx(below->win), &ch) != OK)
--					goto right;
--				w = widestringwidth(ch.chars);
--				if (w > 1 && (ch.attr & 1)) {
--					ch.chars[0] = ' ';
--					ch.attr &= ~ A_CHARTEXT;
--					mvwadd_wch(below->win, y - getbegy(below->win), sx - 1 - getbegx(below->win), &ch);
--					touchline(below->win, y - getbegy(below->win), 1);
--				}
-+    PANEL *panel = NULL;
-+    while ((panel = panel_below(panel)) != NULL) {
-+        int sx, ex, sy, ey, w, y;
-+        cchar_t ch;
-+        PANEL *below = panel;
-+        WINDOW *panel_win = panel_window(panel);
-+
-+        sx = getbegx(panel_win);
-+        ex = getmaxx(panel_win) + sx;
-+        sy = getbegy(panel_win);
-+        ey = getmaxy(panel_win) + sy;
-+
-+        while ((below = panel_below(below)) != NULL) {
-+            WINDOW *below_win = panel_window(below);
-+            if (sy > getbegy(below_win) + getmaxy(below_win) ||
-+                    ey < getbegy(below_win))
-+                continue;
-+            if (sx > getbegx(below_win) + getmaxx(below_win) ||
-+                    ex < getbegx(below_win))
-+                continue;
-+            for (y = MAX(sy, getbegy(below_win)); y <= MIN(ey, getbegy(below_win) + getmaxy(below_win)); y++) {
-+                if (mvwin_wch(below_win, y - getbegy(below_win), sx - 1 - getbegx(below_win), &ch) != OK)
-+                    goto right;
-+                w = widestringwidth(ch.chars);
-+                if (w > 1 && (ch.attr & 1)) {
-+                    ch.chars[0] = ' ';
-+                    ch.attr &= ~ A_CHARTEXT;
-+                    mvwadd_wch(below_win, y - getbegy(below_win), sx - 1 - getbegx(below_win), &ch);
-+                    touchline(below_win, y - getbegy(below_win), 1);
-+                }
- right:
--				if (mvwin_wch(below->win, y - getbegy(below->win), ex + 1 - getbegx(below->win), &ch) != OK)
--					continue;
--				w = widestringwidth(ch.chars);
--				if (w > 1 && !(ch.attr & 1)) {
--					ch.chars[0] = ' ';
--					ch.attr &= ~ A_CHARTEXT;
--					mvwadd_wch(below->win, y - getbegy(below->win), ex + 1 - getbegx(below->win), &ch);
--					touchline(below->win, y - getbegy(below->win), 1);
--				}
--			}
--		}
--	}
-+                if (mvwin_wch(below_win, y - getbegy(below_win), ex + 1 - getbegx(below_win), &ch) != OK)
-+                    continue;
-+                w = widestringwidth(ch.chars);
-+                if (w > 1 && !(ch.attr & 1)) {
-+                    ch.chars[0] = ' ';
-+                    ch.attr &= ~ A_CHARTEXT;
-+                    mvwadd_wch(below_win, y - getbegy(below_win), ex + 1 - getbegx(below_win), &ch);
-+                    touchline(below_win, y - getbegy(below_win), 1);
-+                }
-+            }
-+        }
-+    }
- #endif
- }
-
-@@ -2287,5 +2289,3 @@ void gnt_wm_set_event_stack(GntWM *wm, gboolean set)
- {
- 	wm->event_stack = set;
- }
--
--

@@ -1685,7 +1685,6 @@ Homebrew-homebrew-core/Formula/e/enter-tex.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/entityx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/entr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/envchain.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/e/envconsul.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/envd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/envelope.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/envio.rb, Homebrew/homebrew-core, 1
@@ -2854,6 +2853,7 @@ Homebrew-homebrew-core/Formula/i/imgproxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/imlib2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/immer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/immich-cli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/i/immich-go.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/immortal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/immudb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/imposm3.rb, Homebrew/homebrew-core, 1
@@ -3105,6 +3105,7 @@ Homebrew-homebrew-core/Formula/k/k6.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/k8sgpt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/k9s.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kafka.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kafkactl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kahip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kaitai-struct-compiler.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kakoune.rb, Homebrew/homebrew-core, 1
@@ -3116,6 +3117,7 @@ Homebrew-homebrew-core/Formula/k/kamel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kanata.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kanif.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kapacitor.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kapp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/karchive.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/karmadactl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/karn.rb, Homebrew/homebrew-core, 1
@@ -4871,6 +4873,7 @@ Homebrew-homebrew-core/Formula/o/orc-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/orc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/orcania.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ord.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/org-formation.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/orgalorg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/organize-tool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/orientdb.rb, Homebrew/homebrew-core, 0
@@ -4910,6 +4913,7 @@ Homebrew-homebrew-core/Formula/o/otree.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ots.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ott.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ouch.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/ov.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/overarch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/overdrive.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/overmind.rb, Homebrew/homebrew-core, 1
@@ -6620,6 +6624,7 @@ Homebrew-homebrew-core/Formula/t/tlsx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tlx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmate.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmpmail.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmpreaper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tmpwatch.rb, Homebrew/homebrew-core, 0
@@ -12028,7 +12033,6 @@ Homebrew-homebrew-cask/Casks/k/kube-forwarder.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kubecontext.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kubenav.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kubernetic.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/k/kugoumusic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kunkun.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kvirc.rb, Homebrew/homebrew-cask, 1
@@ -12982,6 +12986,7 @@ Homebrew-homebrew-cask/Casks/p/parallels@17.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/parallels@18.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/parallels@19.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/paraview.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/pareto-security.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/parse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/parsec.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/parsehub.rb, Homebrew/homebrew-cask, 0
@@ -14333,6 +14338,7 @@ Homebrew-homebrew-cask/Casks/t/typinator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/typora.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/typora@dev.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tysimulator.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/u/ua-midi-control.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/ubar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/u/ubersicht.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/u/ubiquiti-unifi-controller.rb, Homebrew/homebrew-cask, 0

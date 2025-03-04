@@ -6,12 +6,13 @@ class Freerdp < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 arm64_sequoia: "91fc4a4df12c1a66cf7b95ff1c1017ccac1c0bf58a851df922b5e478754d986b"
-    sha256 arm64_sonoma:  "15bdac25ccca811a48a0ed2522ed169448b3648e90f76fa083221afb091da015"
-    sha256 arm64_ventura: "d87510345bd2fffac9498fd32661bf99800446a41f861fd0c1e0496801982752"
-    sha256 sonoma:        "2449c626348d18e6492cd99abd773884867f04ed82e91b4686c3be204d203939"
-    sha256 ventura:       "193ceeb980e95f2674a517450f09981450c5c66bf80cb12f4075454344d7cf39"
-    sha256 x86_64_linux:  "6e0d20e3eac5043cd97fd2c4e63f4a06556f732d0bcd38ee111dfebfda74ee6e"
+    rebuild 1
+    sha256 arm64_sequoia: "c1ba78bba954e8fe3d5563cbb1b0401eb7171a701d9c9728ac31e8c57d103c00"
+    sha256 arm64_sonoma:  "ecd9a93ed98884ed2e403ea8fd2f94cb3ca2533134b65ab0da375c53f9b841c7"
+    sha256 arm64_ventura: "b4e69e0b52c7878a4b841f5ac8bfa0ef3437cf730b0c60fe914d3d154445d403"
+    sha256 sonoma:        "933dbf0082e6635a8c5e0cb38acb2cd07cadb3c8159bb37ea9e0171ecbc1d9dd"
+    sha256 ventura:       "2624baba673aee63a79e3c5cd979a63733f9bbf47581b99fbe01df78e5b06279"
+    sha256 x86_64_linux:  "9f3e179c7c68f247dcb59d296c8d20078dbf9893b8445fd9c93f297394f8f57d"
   end
 
   head do
@@ -36,15 +37,14 @@ class Freerdp < Formula
   depends_on "libxv"
   depends_on "openssl@3"
   depends_on "pkcs11-helper"
-  depends_on "sdl2"
-  depends_on "sdl2_ttf"
+  depends_on "sdl3"
+  depends_on "sdl3_ttf"
 
   uses_from_macos "cups"
   uses_from_macos "zlib"
 
   on_linux do
     depends_on "alsa-lib"
-    depends_on "ffmpeg"
     depends_on "glib"
     depends_on "icu4c@76"
     depends_on "krb5"
@@ -54,8 +54,6 @@ class Freerdp < Formula
   end
 
   def install
-    ENV.append_to_cflags "-I#{Formula["sdl2_ttf"].opt_include}SDL2"
-
     args = %W[
       -DBUILD_SHARED_LIBS=ON
       -DCMAKE_INSTALL_NAME_DIR=#{lib}
@@ -64,6 +62,8 @@ class Freerdp < Formula
       -DWITH_MANPAGES=OFF
       -DWITH_WEBVIEW=OFF
       -DWITH_CLIENT_SDL=ON
+      -DWITH_CLIENT_SDL2=OFF
+      -DWITH_CLIENT_SDL3=ON
     ]
 
     # Native macOS client and server implementations are unmaintained and use APIs that are obsolete on Sequoia.

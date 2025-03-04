@@ -1,17 +1,17 @@
 class Faac < Formula
   desc "ISO AAC audio encoder"
   homepage "https:sourceforge.netprojectsfaac"
-  url "https:github.comknik0faacarchiverefstagsfaac-1.31.tar.gz"
-  sha256 "92894e3205ca7fbb0b0d38161ae94c9e884efe5af65886e5ad60eb1a318c78f1"
+  url "https:github.comknik0faacarchiverefstagsfaac-1.31.1.tar.gz"
+  sha256 "3191bf1b131f1213221ed86f65c2dfabf22d41f6b3771e7e65b6d29478433527"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "eec6c8c0a73c04dc3b3eb84d6ad8bcbef4295c4979876a91fc9d241ae63cb1cf"
-    sha256 cellar: :any,                 arm64_sonoma:  "d475a9653d888e375953c98822ecb934181adecd681e4db21a62a02fb732b1a0"
-    sha256 cellar: :any,                 arm64_ventura: "21b6fb8977f3f5135b2d07b1756f86a253af2d570437b99ac3bdc04ad504a656"
-    sha256 cellar: :any,                 sonoma:        "959d62ee5f16c4c474b0d4bcc1dd6f918d8fc5a9cf8780402c5dd22f0b4ef764"
-    sha256 cellar: :any,                 ventura:       "3983d0dcdece97a9fa3ee713046cd332b16a5b5dc7c0a77b7180c7ff66989cbd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71e49d2a602524e54ef23f3b8dc2730e5881f74a14fcbb62f5252a239aed24f0"
+    sha256 cellar: :any,                 arm64_sequoia: "8daa11b4e9cf3a79ee7cd68c63e5f5902a127fe7546d2ce93d7ca2fb345ef2ab"
+    sha256 cellar: :any,                 arm64_sonoma:  "2cdb819aadff92bd69b07f182b9fa709d30694fec7df650f211a341e1fc3128c"
+    sha256 cellar: :any,                 arm64_ventura: "1a0d7a2fc58b61e1d5b01e72377c884975322848de30125eae644c0fb75517f7"
+    sha256 cellar: :any,                 sonoma:        "89a3968e3fcff90660fc6de8c59173f4b0b36769141875971edf0100956a428d"
+    sha256 cellar: :any,                 ventura:       "b4f7efe2d732e7df635323384fd884a319d3bd9852d8f1afc7e2e7b65ced184d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30940df984b4f44d7c7b4bb0f55de660262490bf0e0288edfe5f5e673c26cea9"
   end
 
   depends_on "autoconf" => :build

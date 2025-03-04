@@ -43,7 +43,7 @@ class Systemd < Formula
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
-  depends_on "python@3.12" => :build
+  depends_on "python@3.13" => :build
   depends_on "glib"
   depends_on "libcap"
   depends_on "libxcrypt"
@@ -70,7 +70,7 @@ class Systemd < Formula
   end
 
   def install
-    venv = virtualenv_create(buildpath"venv", "python3.12")
+    venv = virtualenv_create(buildpath"venv", "python3.13")
     venv.pip_install resources
     ENV.prepend_path "PATH", venv.root"bin"
     ENV.append "LDFLAGS", "-Wl,-rpath,#{lib}systemd"

@@ -1,8 +1,8 @@
 class Sdl2Image < Formula
   desc "Library for loading images as SDL surfaces and textures"
   homepage "https:github.comlibsdl-orgSDL_image"
-  url "https:github.comlibsdl-orgSDL_imagereleasesdownloadrelease-2.8.6SDL2_image-2.8.6.tar.gz"
-  sha256 "b71903ef444e6011b7d7751f2cf1bc90994810e199818f2706be62d45b10a848"
+  url "https:github.comlibsdl-orgSDL_imagereleasesdownloadrelease-2.8.8SDL2_image-2.8.8.tar.gz"
+  sha256 "2213b56fdaff2220d0e38c8e420cbe1a83c87374190cba8c70af2156097ce30a"
   license "Zlib"
   head "https:github.comlibsdl-orgSDL_image.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Sdl2Image < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "84f09de299de6c147ccbfd0d5258c27f7a4a7075d644a9fe72ffe8e7c7ef168e"
-    sha256 cellar: :any,                 arm64_sonoma:  "9dcdf97793f42c2f013449a7640d853466af49cca7f5ba2e5d36f56638a33173"
-    sha256 cellar: :any,                 arm64_ventura: "720eb383ff0a81410128e960513fdd3d27a520ed44ba2ebecfe607c1f575e738"
-    sha256 cellar: :any,                 sonoma:        "e0c534f82cd0b5be59945daa7560b5a68dea1dba96a77c65ec238e57a324c093"
-    sha256 cellar: :any,                 ventura:       "098a17cf7e7c06ac7ff7ad901ce4b6c17979cf05835774f403c430111878da12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24042d09ac43805f8d0834349c93a26ef72093044936aa5660fa24e8d9fbd433"
+    sha256 cellar: :any,                 arm64_sequoia: "ce895628c0e84843740799c0001d8097cc5bb424edb45f150ee10d33d9031288"
+    sha256 cellar: :any,                 arm64_sonoma:  "1655c170513f87b2bddc7cf740ff876d8dce6db804ca961ea94a5805aee6b495"
+    sha256 cellar: :any,                 arm64_ventura: "57d15c79fb8f64048038e6dfc079805751275bdfc83baa9d14cedd10ea9034b5"
+    sha256 cellar: :any,                 sonoma:        "5ced16f1eb8d4c522a1ad4e9fd3021f8441b517be78f9ccb5433815b069220c2"
+    sha256 cellar: :any,                 ventura:       "25a9eec92d2e56b6edcd10ddefd0bfba6cb2fab1c6ed775886e5c91092e8c8dd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57196690a97f3513f2a57897c5ecd6972b3d162ec42a68960768dab89d76fbf0"
   end
 
   depends_on "autoconf" => :build

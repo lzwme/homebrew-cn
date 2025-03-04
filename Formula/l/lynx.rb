@@ -1,29 +1,23 @@
 class Lynx < Formula
   desc "Text-based web browser"
   homepage "https:invisible-island.netlynx"
-  url "https:invisible-mirror.netarchiveslynxtarballslynx2.8.9rel.1.tar.bz2"
-  mirror "https:fossies.orglinuxwwwlynx2.8.9rel.1.tar.bz2"
-  version "2.8.9rel.1"
-  sha256 "387f193d7792f9cfada14c60b0e5c0bff18f227d9257a39483e14fa1aaf79595"
+  url "https:invisible-mirror.netarchiveslynxtarballslynx2.9.2.tar.bz2"
+  mirror "https:fossies.orglinuxwwwlynx2.9.2.tar.bz2"
+  sha256 "7374b89936d991669e101f4e97f2c9592036e1e8cdaa7bafc259a77ab6fb07ce"
   license "GPL-2.0-only"
-  revision 2
 
   livecheck do
     url "https:invisible-mirror.netarchiveslynxtarballs?C=M&O=D"
-    regex(href=.*?lynx[._-]?v?(\d+(?:\.\d+)+(?:rel\.?\d+))\.ti)
+    regex(href=.*?lynx[._-]?v?(\d+(?:\.\d+)+(?:rel\.?\d+)?)\.ti)
   end
 
   bottle do
-    sha256 arm64_sequoia:  "77b514e4f24993fdb1bf4f332f2552e45971f1aef49d348dc18f0fd4b84436aa"
-    sha256 arm64_sonoma:   "1c1ef4b6949b00b43d737ba5e8ccf3e124fed1b494a0cfc65734d5e17612cebf"
-    sha256 arm64_ventura:  "9ad07e45267b2d2a0fa26be01b173f83215d032e0bf8b69433088c7d417125a0"
-    sha256 arm64_monterey: "76e51e0b9ba892fbb5878889350ea77fe937bd2e0c9818b9ae362725f401526d"
-    sha256 arm64_big_sur:  "107f756e65f4e6951f09c2350e0d7f32d834f9b7bb4dd4b7a958da83031effae"
-    sha256 sonoma:         "b436864802c7742341ad002bf0417bbcd3197c7f41ba06ebdc4299f562c209d6"
-    sha256 ventura:        "17f1561b38270a60458f803772cae95dc8ec462f2e3635ac6a35281055c32e51"
-    sha256 monterey:       "77c3625b281264e341610e3e10d1c90cf6227463283d905d42d812d1a4b02c71"
-    sha256 big_sur:        "d2130d2129d4782859cb3f4a6eee800f3be0973be0c1db5b3292c84363eae807"
-    sha256 x86_64_linux:   "e3c88be4b4e635db98f6b286f73e30858cd17e89e260ccd3aa2d892ccc9e5476"
+    sha256 arm64_sequoia: "d19f769a462343c54bade40fe15b7a3a6ea52a927dd1e3494ea1b2301fe63b81"
+    sha256 arm64_sonoma:  "4bf5b522776f2578692e8a19f113007fd9849131731782e9b681a6317103b945"
+    sha256 arm64_ventura: "20953b360eb23fd1ef4b7a7ee5f3b846e01d7d6c1190280aabf202d68245a46e"
+    sha256 sonoma:        "37094ec003457ab4fed45872f08bd9452331c57421c46c7fe2e59c494ef7f936"
+    sha256 ventura:       "f54a50e56b2b754653afdffde634524b10bc607fc5f6f24d8b4c1cd417fbd48d"
+    sha256 x86_64_linux:  "2d30e3d55c3916b4a3c488034680170553d4ef090e717cf74d6782348115cdd6"
   end
 
   # Move to brew ncurses to fix screen related bugs

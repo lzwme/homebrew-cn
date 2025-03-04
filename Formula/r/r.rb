@@ -63,11 +63,6 @@ class R < Formula
   # needed to preserve executable permissions on files without shebangs
   skip_clean "lib/R/bin", "lib/R/doc"
 
-  fails_with :gcc do
-    version "11"
-    cause "Unknown. FIXME."
-  end
-
   def install
     # `configure` doesn't like curl 8+, but convince it that everything is ok.
     # TODO: report this upstream.

@@ -1,18 +1,18 @@
 class Diesel < Formula
   desc "Command-line tool for Rust ORM Diesel"
   homepage "https:diesel.rs"
-  url "https:github.comdiesel-rsdieselarchiverefstagsv2.2.7.tar.gz"
-  sha256 "8125fe5dc1aa24e823a182ed721eaa3a8340bff094ec3a3339fbdf3e59749eae"
+  url "https:github.comdiesel-rsdieselarchiverefstagsv2.2.8.tar.gz"
+  sha256 "dc5a7e39b45899ff9757d8fbc6bffb3567696bcd92de949fe971c8b934281b52"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comdiesel-rsdiesel.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6ece9b7b589213b1e5d76f9d00a0efc5094feb28b4b9c4004820c257b6e2d33d"
-    sha256 cellar: :any,                 arm64_sonoma:  "079f2bed063bb953f1ee5f88d5759c90cc06527a1bd385784121f0197698d0c3"
-    sha256 cellar: :any,                 arm64_ventura: "ac3a404e0ae39de2a9dcac3cc06b7a66694f2ff6fc6218ead26fb3e7fe7e2ecf"
-    sha256 cellar: :any,                 sonoma:        "df9470055cff5d8540411d61eee2190b6f3b3da396e5299cfd5661c5657fb724"
-    sha256 cellar: :any,                 ventura:       "73a0b69b180cc97f4709f1c998a41fb076d3cd968380a34468ae1d7b028015b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e259d42212cccc6fb862813936ee4c40b1144dee31bba5c3cf2083b8ab82fc33"
+    sha256 cellar: :any,                 arm64_sequoia: "abbc99d543cea69579b63adee1a1a920db0a3bc23202b4a1cc1046f0ef3f8800"
+    sha256 cellar: :any,                 arm64_sonoma:  "fae99171ef51d390632736d5a2bdd12918485abba576bfec90aa99ed8d336712"
+    sha256 cellar: :any,                 arm64_ventura: "d6c2f3ed273793d37338b985e2a7efc12c455ea3e35dc71dc81477259b5e6ede"
+    sha256 cellar: :any,                 sonoma:        "c54b1de5a20edbe60bfde4f4ed5034a8a824362ede8ac520404168e2a65a7ab2"
+    sha256 cellar: :any,                 ventura:       "b224b6daee039f726cbebfb389f8771c736c6cc4195b9b1bf2fd73b8e3525a4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cca7aa8c33be07c369d822f21bb7f3b02a783dd3b991f18122570d38604984a"
   end
 
   depends_on "rust" => [:build, :test]

@@ -3,18 +3,18 @@ class Ipython < Formula
 
   desc "Interactive computing in Python"
   homepage "https:ipython.org"
-  url "https:files.pythonhosted.orgpackagesde39264894738a202ddaf6abae39b3f84671ddee23fd292dbb3e10039e70300cipython-9.0.0.tar.gz"
-  sha256 "9368d65b3d4a471e9a698fed3ea486bbf6737e45111e915279c971b77f974397"
+  url "https:files.pythonhosted.orgpackages9d331901c9a842b301d8674f367dee597e654e402548a903faf7280aae8fc2d4ipython-9.0.1.tar.gz"
+  sha256 "377ea91c8226b48dc9021ac9846a64761abc7ddf74c5efe38e6eb06f6e052f3a"
   license "BSD-3-Clause"
   head "https:github.comipythonipython.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "efcaa7aaf499974ed5196554c9c76581fc297b90c7def21aae4d1b66f23659c9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "efcaa7aaf499974ed5196554c9c76581fc297b90c7def21aae4d1b66f23659c9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "efcaa7aaf499974ed5196554c9c76581fc297b90c7def21aae4d1b66f23659c9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7a60c5a80c96e7858084bda23a6a6d8a5cad40d5daffc1d0ab3f559498b48add"
-    sha256 cellar: :any_skip_relocation, ventura:       "7a60c5a80c96e7858084bda23a6a6d8a5cad40d5daffc1d0ab3f559498b48add"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efcaa7aaf499974ed5196554c9c76581fc297b90c7def21aae4d1b66f23659c9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "768fa5bbaf1df0ca01dfebd8c96d4b2d17d84e8514d7f6a1f256b17212d2e2ae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "768fa5bbaf1df0ca01dfebd8c96d4b2d17d84e8514d7f6a1f256b17212d2e2ae"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "768fa5bbaf1df0ca01dfebd8c96d4b2d17d84e8514d7f6a1f256b17212d2e2ae"
+    sha256 cellar: :any_skip_relocation, sonoma:        "909d3dbc74a7dfea9bc2133882855bab22e84fe84d1bfff1fc571dc77e869b95"
+    sha256 cellar: :any_skip_relocation, ventura:       "909d3dbc74a7dfea9bc2133882855bab22e84fe84d1bfff1fc571dc77e869b95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "768fa5bbaf1df0ca01dfebd8c96d4b2d17d84e8514d7f6a1f256b17212d2e2ae"
   end
 
   depends_on "python@3.13"

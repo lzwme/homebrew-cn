@@ -47,19 +47,6 @@ class Vtk < Formula
   uses_from_macos "tcl-tk"
   uses_from_macos "zlib"
 
-  on_macos do
-    on_arm do
-      if DevelopmentTools.clang_build_version == 1316
-        depends_on "llvm" => :build
-
-        # clang: error: unable to execute command: Segmentation fault: 11
-        # clang: error: clang frontend command failed due to signal (use -v to see invocation)
-        # Apple clang version 13.1.6 (clang-1316.0.21.2)
-        fails_with :clang
-      end
-    end
-  end
-
   on_linux do
     depends_on "gl2ps"
     depends_on "libx11"
@@ -73,7 +60,14 @@ class Vtk < Formula
     odie "Try removing netCDF workaround!" if Formula["netcdf"].stable.version > "4.9.2"
     inreplace "CMakeFindNetCDF.cmake", "find_package(netCDF CONFIG QUIET)", "# \\0"
 
-    ENV.llvm_clang if DevelopmentTools.clang_build_version == 1316 && Hardware::CPU.arm?
+    # Work around superenv to avoid mixing `expat` usage in libraries across dependency tree.
+    # Brew `expat` usage in Python has low impact as it isn't loaded unless pyexpat is used.
+    # TODO: Consider adding a DSL for this or change how we handle Python's `expat` dependency
+    if OS.mac? && MacOS.version < :sequoia
+      env_vars = %w[CMAKE_PREFIX_PATH HOMEBREW_INCLUDE_PATHS HOMEBREW_LIBRARY_PATHS PATH PKG_CONFIG_PATH]
+      ENV.remove env_vars, (^|:)#{Regexp.escape(Formula["expat"].opt_prefix)}[^:]*
+      ENV.remove "HOMEBREW_DEPENDENCIES", "expat"
+    end
 
     python = "python3.13"
     qml_plugin_dir = lib"qmlVTK.#{version.major_minor}"
@@ -128,9 +122,6 @@ class Vtk < Formula
   end
 
   test do
-    # Force use of Apple Clang on macOS that needs LLVM to build
-    ENV.clang if DevelopmentTools.clang_build_version == 1316 && Hardware::CPU.arm?
-
     vtk_dir = lib"cmakevtk-#{version.major_minor}"
     vtk_cmake_module = vtk_dir"VTK-vtk-module-find-packages.cmake"
     assert_match Formula["boost"].version.to_s, vtk_cmake_module.read, "VTK needs to be rebuilt against Boost!"

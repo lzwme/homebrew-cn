@@ -27,12 +27,12 @@ class Cabin < Formula
   depends_on "tbb"
 
   on_macos do
-    depends_on "llvm" => [:build, :test] if DevelopmentTools.clang_build_version <= 1200
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1499
   end
 
   on_ventura do
     # Ventura seems to be missing the `source_location` header.
-    depends_on "llvm" => [:build, :test]
+    depends_on "llvm" => :build
   end
 
   on_linux do
@@ -40,7 +40,7 @@ class Cabin < Formula
   end
 
   fails_with :clang do
-    build 1200
+    build 1499
     cause "Requires C++20"
   end
 
@@ -50,14 +50,13 @@ class Cabin < Formula
   end
 
   def install
-    ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1200 || MacOS.version == :ventura)
+    ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1499 || MacOS.version == :ventura)
     # Avoid cloning `toml11` at build-time.
     (buildpath"buildDEPStoml11").install_symlink Formula["toml11"].opt_include
     system "make", "RELEASE=1", "PREFIX=#{prefix}", "install"
   end
 
   test do
-    ENV.clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1200 || MacOS.version == :ventura)
     system bin"cabin", "new", "hello_world"
     cd "hello_world" do
       assert_equal "Hello, world!", shell_output("#{bin}cabin run").split("\n").last

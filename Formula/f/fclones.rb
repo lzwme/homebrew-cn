@@ -1,19 +1,17 @@
 class Fclones < Formula
   desc "Efficient Duplicate File Finder"
   homepage "https:github.compkolaczkfclones"
-  url "https:github.compkolaczkfclonesarchiverefstagsv0.34.0.tar.gz"
-  sha256 "5e8c94bb5fb313a5c228bdc870cf6605487338f31c5a14305e54e7e3ac15d0ad"
+  url "https:github.compkolaczkfclonesarchiverefstagsv0.35.0.tar.gz"
+  sha256 "9d8bb36076190f799f01470f80e64c6a1f15f0d938793f8f607a2544cdd6115a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "066372287675aca1dc5b9235734ad7eacd79945e6ace1992ba97fde2241e6701"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d720767853cc23dd6fb8a35008d39c8b005f99b367c0d260b1197d1a9d4c19dd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "16fa6fb02ca993ef54bd942f18860dd602ea04946149c296fabaaecde93dd55c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "68841eacebe1435bb4e39325ed55522bc51d8668ceeb7f108fb9482c7c32f49f"
-    sha256 cellar: :any_skip_relocation, sonoma:         "87e479b0556ee718fa992c697584d1c64eb6e8d55c1fc30ce0d2851179bff293"
-    sha256 cellar: :any_skip_relocation, ventura:        "30095d67ac23b747bddc931e8a083394809b22e7a479f390d50b234a7e045481"
-    sha256 cellar: :any_skip_relocation, monterey:       "dc7a8ba4486994b7296fda40c49d0df7c7178042b55677ec64a333ff9e7455f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "774daef5f511aac75797d39d11b8076ab58a6e004fbb604dc4a4fd7ca1c2d802"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "927be0b6f1222da4daae5b7a30b18171260b1c98c9d277523d4558359a846629"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2100aa85953e7ae1f36e8b63dc8bf6b4a6d819427baf398d8a829b80af3285dd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7d4155d6cd85ca0abcfd36e2f9c010d8f598e731eb05b2d3c80a03c4aede7182"
+    sha256 cellar: :any_skip_relocation, sonoma:        "92a41e489d01e0e26fd142e765e1c0e25369e5039b5e3947d638da3ed54c4408"
+    sha256 cellar: :any_skip_relocation, ventura:       "9952ed3909b1d2c9b840ce2fba135c4dc067094291ff4cfa9f1e9b555c35d0ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eea61b6f1d552320357ffda10b5b9b8d6ebafc9f22bbf4572df706d3d3d742b3"
   end
 
   depends_on "rust" => :build
