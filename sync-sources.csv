@@ -246,7 +246,6 @@ Homebrew-homebrew-core/Formula/a/ascii2binary.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/asciidoc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asciidoctor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asciidoctorj.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/asciigen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asciinema.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asciiquarium.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/asciitex.rb, Homebrew/homebrew-core, 0
@@ -1093,7 +1092,6 @@ Homebrew-homebrew-core/Formula/c/conserver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/console_bridge.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/consul-backinator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/consul-template.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/consul.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/container-diff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/container-structure-test.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/contentful-cli.rb, Homebrew/homebrew-core, 1
@@ -2322,6 +2320,7 @@ Homebrew-homebrew-core/Formula/g/glslviewer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/glui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/glulxe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gluon.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/glyph.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/glyr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gmail-backup.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gmailctl.rb, Homebrew/homebrew-core, 1
@@ -3270,6 +3269,7 @@ Homebrew-homebrew-core/Formula/l/languagetool-rust.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/languagetool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lanraragi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lapack.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/largetifftools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lasi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lasso.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lastpass-cli.rb, Homebrew/homebrew-core, 1
@@ -5911,6 +5911,7 @@ Homebrew-homebrew-core/Formula/s/selene.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/selenium-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/semgrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/semtag.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/semver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sendemail.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sendme.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/senpai.rb, Homebrew/homebrew-core, 0
@@ -5920,6 +5921,7 @@ Homebrew-homebrew-core/Formula/s/seqkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/seqtk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sequin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sequoia-sq.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/sequoia-sqv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/ser2net.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/serd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/serf.rb, Homebrew/homebrew-core, 1
@@ -7004,7 +7006,7 @@ Homebrew-homebrew-core/Formula/v/vstr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vtable-dumper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vtclock.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vte3.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/v/vtk.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/vtk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vttest.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vue-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vue-language-server.rb, Homebrew/homebrew-core, 1
@@ -8251,6 +8253,7 @@ Homebrew-homebrew-cask/Casks/c/connect-fonts.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/connectiq.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/connectmenow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/console.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/consul.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/container-ps.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/contexts.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/continuity-activation-tool.rb, Homebrew/homebrew-cask, 1
@@ -8851,6 +8854,7 @@ Homebrew-homebrew-cask/Casks/f/fmail.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fmail2.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fman.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fme.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/focu.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/focus-booster.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/focus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/focusatwill.rb, Homebrew/homebrew-cask, 0
@@ -13651,7 +13655,7 @@ Homebrew-homebrew-cask/Casks/s/serial-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/serial-tools.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/serial.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/serviio.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/s/servo.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/servo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/servpane.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/session-manager-plugin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/session.rb, Homebrew/homebrew-cask, 1

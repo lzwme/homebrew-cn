@@ -21,6 +21,7 @@ class Erigon < Formula
   # https:github.comledgerwatcherigon?tab=readme-ov-file#how-to-run-erigon-as-a-separate-user-eg-as-a-systemd-daemon
   # Trying to build library from source only works with `conan` which would use their pre-built libraries.
   deprecate! date: "2024-02-29", because: "needs a pre-built copy of libsilkworm_capi"
+  disable! date: "2025-03-04", because: "needs a pre-built copy of libsilkworm_capi"
 
   depends_on "gcc" => :build
   depends_on "go" => :build

@@ -22,6 +22,13 @@ class Libavif < Formula
 
   uses_from_macos "zlib"
 
+  # Review for removal on 1.2.1 release
+  # https:github.comAOMediaCodeclibavifissues2653
+  patch do
+    url "https:github.comAOMediaCodeclibavifcommit7cc1dccabd45864dc0945882faa0348dcded847f.patch?full_index=1"
+    sha256 "904feeb044dc3e8dc9029764125333bcd3a48e400691f9c67f64929ab20cff89"
+  end
+
   def install
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}

@@ -1,9 +1,9 @@
 cask "chatwise" do
   arch arm: "aarch64", intel: "x64"
 
-  version "0.7.13"
-  sha256 arm:   "b998cbe0ea1299b5ecd3ef595d8199ec565b03674bda66816a344a336ee9aafc",
-         intel: "5b79bc4bb7859f24df34ac9dd5fc32116ef7e4a586b971eaf311799db25fe202"
+  version "0.7.17"
+  sha256 arm:   "0542eafddd84dbe226f7fa7cbda6d4d2ab8539d5a9e22378472d6bcdf817a41b",
+         intel: "bdc56437b8010f1654253cd0750435503fbf5738bac33b052dc08f1a49b77105"
 
   url "https:github.comegoistchatwise-releasesreleasesdownloadv#{version}ChatWise_#{version}_#{arch}.dmg",
       verified: "github.comegoistchatwise-releases"

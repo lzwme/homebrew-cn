@@ -1,9 +1,9 @@
 class ApacheArrowGlib < Formula
   desc "GLib bindings for Apache Arrow"
   homepage "https:arrow.apache.org"
-  url "https:www.apache.orgdyncloser.lua?path=arrowarrow-19.0.0apache-arrow-19.0.0.tar.gz"
-  mirror "https:archive.apache.orgdistarrowarrow-19.0.0apache-arrow-19.0.0.tar.gz"
-  sha256 "f89b93f39954740f7184735ff1e1d3b5be2640396febc872c4955274a011f56b"
+  url "https:www.apache.orgdyncloser.lua?path=arrowarrow-19.0.1apache-arrow-19.0.1.tar.gz"
+  mirror "https:archive.apache.orgdistarrowarrow-19.0.1apache-arrow-19.0.1.tar.gz"
+  sha256 "acb76266e8b0c2fbb7eb15d542fbb462a73b3fd1e32b80fad6c2fafd95a51160"
   license "Apache-2.0"
   head "https:github.comapachearrow.git", branch: "main"
 
@@ -12,12 +12,12 @@ class ApacheArrowGlib < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "e420ce8d7c772054c9040a326f54be83306741c3b13f1f95c1aa660bcc3419bc"
-    sha256 cellar: :any, arm64_sonoma:  "f7f697c4bb8922d0fd7ebea9fdedcb03798bb3ce641525bd5b5def7e30d9dbe4"
-    sha256 cellar: :any, arm64_ventura: "90c37373807d0607465aeb66dfa6a8f4e1073a1c609ac3d3968234f2f63b12ef"
-    sha256 cellar: :any, sonoma:        "2f66ab77233cfaebd4a6cb35ee75a33b6533973ee25608c88a6a4e0f074762c7"
-    sha256 cellar: :any, ventura:       "8339abe968a0697213167673c40071a958f1eb636f02da0ce33e4f61d3a8de2a"
-    sha256               x86_64_linux:  "6776b45d6bafd3bdc32f1d6d0be57e7ed60b8bf0171e87c5931ad76a176a2191"
+    sha256 cellar: :any, arm64_sequoia: "8358dd7648c6dd2077b0a38a705fc66100d9f73f76df365b32d20fa2895cd8ad"
+    sha256 cellar: :any, arm64_sonoma:  "552a212f5b31f7148b84b9b7d608fea7aa81169959f414a908eaab14aeddbf10"
+    sha256 cellar: :any, arm64_ventura: "c14735c1e5bf66ad3cdbefd5eb0d94529c4e1525684c6bb59a56b6bd9c73e928"
+    sha256 cellar: :any, sonoma:        "c8b1852c876c2b0ebd49d70f29e2ece594d3b9e6987a7b20969114b7cb8663ee"
+    sha256 cellar: :any, ventura:       "543ca4c13245ec92239a913bab4ebfba44d3e0c8069db9773801ddda6ceb8d42"
+    sha256               x86_64_linux:  "4582ac91ab357cd8bed148c3293eb85be84fcc24d867a1f43b1f1531a5188444"
   end
 
   depends_on "gobject-introspection" => :build

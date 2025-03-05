@@ -1,9 +1,9 @@
 class Inform6 < Formula
   desc "Design system for interactive fiction"
   homepage "https://inform-fiction.org/inform6.html"
-  url "https://ifarchive.org/if-archive/infocom/compilers/inform6/source/inform-6.42-r6.tar.gz"
-  version "6.42-r6"
-  sha256 "495b0886f95654ad145a0c8bf3962eb9e13dd8243d44081a501aee20ecc6a30c"
+  url "https://ifarchive.org/if-archive/infocom/compilers/inform6/source/inform-6.42-r7.tar.gz"
+  version "6.42-r7"
+  sha256 "63b1266ce43db3892281525f51699d895ef0764084e87ad64f87f7720bd0bb38"
   license "Artistic-2.0"
   head "https://gitlab.com/DavidGriffith/inform6unix.git", branch: "master"
 
@@ -13,12 +13,12 @@ class Inform6 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "08efdc6b03b5d780921e28a6b2c592adaa4ef611f002f832185bd06868daf96d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8add27532fbcf6b1f77212958581cb96fb58197ae6822e0b029b124c6187ff93"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "788226d2bab59288932ae188f1fad70763d15e0cec48c99a29818c5448e9afd1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8c6e07b2ced98ce5569037b148cc7f891a3f7f0e72ad6d10012b678fc8ec57c4"
-    sha256 cellar: :any_skip_relocation, ventura:       "d274681d031f1238217f95ab2ebfc3405b1fcf419a16e624f9ef7ef270c6b07a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26e8af3f4de94383537d8a8f92dd031bea47a668a27f7617feac3941bc7d88fb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9a851576dd94e3d4277496c9dfce363790e23ce927653b6e4500e1acb4c04c2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "014d7cb3a7c88810a099a50e91ef2643caf5d7898e540ea8cdd9552d3430fb75"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5dbe557b3090c8cef2d83e6a5397fb10e341dbb897a57ae546c243342340f23c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d0e8f33dae9540199a38198a65484e6949d36da6dc976001e88f0bf23aaadd84"
+    sha256 cellar: :any_skip_relocation, ventura:       "7a1288c1469e66ebcf1fc251683d9319f43f021d1ee13a22dacc929625340696"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cb35901e4cda912ae55b5dacc1c0790c5649114fa43bdc91416ffcbc3fd8629"
   end
 
   def install

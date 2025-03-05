@@ -13,12 +13,13 @@ class GraphTool < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "2bd1978b3f33ac8ff24015cb853ffec11ed4249fb347efda0b5ac340e65dc780"
-    sha256                               arm64_sonoma:  "dd3496583b016d9b2488c6a0b94be784bc341cb97aab8b059060521bb849db47"
-    sha256                               arm64_ventura: "d764891338606d136cb00c38a1a464e77f7d32a9cec66314df66e14a862cb79b"
-    sha256                               sonoma:        "b0261a2932bdc498f91f869aedaa6e50a150c4b179318f9d896f4cbc1c2b173f"
-    sha256                               ventura:       "494463f895563281bf0724f0c2daf39e0a53e2c9bf5d2f462740741721333525"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb5baffcab58223b343388f4805de1c5aea515a6487659471c7e04c7f37174d0"
+    rebuild 1
+    sha256                               arm64_sequoia: "b39b658ce63acd962686e2daee962eb35f20abcaf85aa4f530d38f68b056c4d1"
+    sha256                               arm64_sonoma:  "503f102f969078cab0502f886776a4a6edd3a7c10e43de300dea59b702a14946"
+    sha256                               arm64_ventura: "b5ab2d5c133a6a9e703f2c5bd0f9e8d994ce5a6f8638f3aac09a16a2fa00d193"
+    sha256                               sonoma:        "1fd067e38d96186ce8344e69df587c436f95b48753dcbdbac48d74e5ae278c30"
+    sha256                               ventura:       "44aabd913da7f08a04f193d2c0867d72f5ec7a8674b109fd38502b152906cddb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54fd8e3186d5b2b21369eb86d4cfe57fb972e3bd823a5731c7b628fb223170c7"
   end
 
   depends_on "google-sparsehash" => :build
@@ -116,6 +117,15 @@ class GraphTool < Formula
   patch :DATA
 
   def install
+    # Work around superenv to avoid mixing `expat` usage in libraries across dependency tree.
+    # Brew `expat` usage in Python has low impact as it isn't loaded unless pyexpat is used.
+    # TODO: Consider adding a DSL for this or change how we handle Python's `expat` dependency
+    if OS.mac? && MacOS.version < :sequoia
+      env_vars = %w[CMAKE_PREFIX_PATH HOMEBREW_INCLUDE_PATHS HOMEBREW_LIBRARY_PATHS PATH PKG_CONFIG_PATH]
+      ENV.remove env_vars, /(^|:)#{Regexp.escape(Formula["expat"].opt_prefix)}[^:]*/
+      ENV.remove "HOMEBREW_DEPENDENCIES", "expat"
+    end
+
     site_packages = Language::Python.site_packages(python3)
     xy = Language::Python.major_minor_version(python3)
     skipped = ["matplotlib", "zstandard"]

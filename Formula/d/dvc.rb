@@ -6,14 +6,15 @@ class Dvc < Formula
   url "https:files.pythonhosted.orgpackagesec3bfb2256d3637dcf42cf8351356a6edda15173f62fea852fc3b31b2a883736dvc-3.59.1.tar.gz"
   sha256 "76c9cadc97a458321845424ff91489e8a2c5c6eaf36e52a79d8609beaed78cd6"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d69d42c7261c287617cb5e2ae3a30609788587c446eb7995c045452741c83ab5"
-    sha256 cellar: :any,                 arm64_sonoma:  "612607eaa4be9ecd992e1805e78236e840379ab3488d7ad8aeb01bf3862f8425"
-    sha256 cellar: :any,                 arm64_ventura: "dfdee8aa2867310be4f0d0b3019750d7032cbdca884db2b53e6732af69da0833"
-    sha256 cellar: :any,                 sonoma:        "6993aaf475bbf58161c62614d48c0e5a384b885f0d9eede3630d5c44e2192ccf"
-    sha256 cellar: :any,                 ventura:       "0c3d9b3f503bb3b71b9948d0e2d59cc8af22dcc85ad405981954db31005adae3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "101ec95c0bb8c769b36d4df188c60ef8f0c58cae4fe30d0f62672d3a1da61bed"
+    sha256 cellar: :any,                 arm64_sequoia: "ef9186d2a7c941d8d07b612c38f0797ea6cd64f3727de29e3cc37c717611ffb5"
+    sha256 cellar: :any,                 arm64_sonoma:  "7db5568b0c18b6eee666df10ac5a0bab79029c461799123f224d85625cd45363"
+    sha256 cellar: :any,                 arm64_ventura: "af06a0e4e13a5f6a36c05c59d0bc4719d5b9050c6c03c1840dbd9299d4c095bd"
+    sha256 cellar: :any,                 sonoma:        "56292df1b2a565c02b41f1e0d6226433e0496945d1b02275bbf172a94fc218c9"
+    sha256 cellar: :any,                 ventura:       "c3aa031830a8d4b12e77f03dde6c70a911bbae31ed390e23f8b56243eba106b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c36c3546566a2141ad59dcca54344a3bfa0a0a033a6ad1531a8b0fc50a9953c8"
   end
 
   depends_on "cmake" => :build # for pyarrow
@@ -593,8 +594,8 @@ class Dvc < Formula
   end
 
   resource "pyarrow" do
-    url "https:files.pythonhosted.orgpackages7b01fe1fd04744c2aa038e5a11c7a4adb3d62bce09798695e54f7274b5977134pyarrow-19.0.0.tar.gz"
-    sha256 "8d47c691765cf497aaeed4954d226568563f1b3b74ff61139f2d77876717084b"
+    url "https:files.pythonhosted.orgpackages7f09a9046344212690f0632b9c709f9bf18506522feb333c894d0de81d62341apyarrow-19.0.1.tar.gz"
+    sha256 "3bf266b485df66a400f282ac0b6d1b500b9d2ae73314a153dbe97d6d5cc8a99e"
   end
 
   resource "pyasn1" do

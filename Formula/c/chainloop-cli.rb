@@ -1,18 +1,18 @@
 class ChainloopCli < Formula
   desc "CLI for interacting with Chainloop"
   homepage "https:docs.chainloop.dev"
-  url "https:github.comchainloop-devchainlooparchiverefstagsv0.176.0.tar.gz"
-  sha256 "17f41668de5b31d7ccf3a22f7fe022ded6ab7f03a058a2421799f5bab6d646c2"
+  url "https:github.comchainloop-devchainlooparchiverefstagsv0.177.0.tar.gz"
+  sha256 "2cbe5adee57e25131901de5611f1beafc6753810c4b1ac3e4fd5b77cfb7f4e73"
   license "Apache-2.0"
   head "https:github.comchainloop-devchainloop.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3cbb4e8d51a30d7005c8c914c88920e589d0bdc8a395f351f681b6a5bb22ffe1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3cbb4e8d51a30d7005c8c914c88920e589d0bdc8a395f351f681b6a5bb22ffe1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3cbb4e8d51a30d7005c8c914c88920e589d0bdc8a395f351f681b6a5bb22ffe1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3aebf74e656aadc81909580e48805bc69e7c7503f61d501d9d0d2ff33c3f0197"
-    sha256 cellar: :any_skip_relocation, ventura:       "a7d14d51aefea599247aabe8dccb280b789caef1751522e748ad484057ca5bef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fc063ce6952c4632cad22a3c9987bcbdfd41d85d3f8919236dd743e9665cb43"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fc6711ee21771ecb3d73ba29e5d716eeeb228878cd70fa53a81c365e8f23cfff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc6711ee21771ecb3d73ba29e5d716eeeb228878cd70fa53a81c365e8f23cfff"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fc6711ee21771ecb3d73ba29e5d716eeeb228878cd70fa53a81c365e8f23cfff"
+    sha256 cellar: :any_skip_relocation, sonoma:        "db913d804b0b120a316824e1eae747a8119bf858746d22674ef42235f89fc2fb"
+    sha256 cellar: :any_skip_relocation, ventura:       "acdfe62298fde3989804314e0c1abbea36405d1096212a6e0607aefff6c7b479"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "58778ed7aef5b11d126f8f77cd7b290b6ce424c3bac0856011ee4ac58dfed2cc"
   end
 
   depends_on "go" => :build

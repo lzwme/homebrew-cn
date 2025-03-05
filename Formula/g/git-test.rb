@@ -11,6 +11,7 @@ class GitTest < Formula
   end
 
   deprecate! date: "2024-03-04", because: :repo_archived
+  disable! date: "2025-03-04", because: :repo_archived
 
   def install
     bin.install "git-test"

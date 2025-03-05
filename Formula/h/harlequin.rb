@@ -6,20 +6,22 @@ class Harlequin < Formula
   url "https:files.pythonhosted.orgpackagesb15e51ead1fa6392454afd7252ebb9b6a554115dd2c1a5fb3463a64e8407bc73harlequin-2.0.5.tar.gz"
   sha256 "ae56df3ba8a0a43ef522c0361e4aa49c7f668248918b07143bef6aa850348311"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "71e2be60cc1c19bbfef824eaa0476f737610fd64e9eae2a355ef73b213c41753"
-    sha256 cellar: :any,                 arm64_sonoma:  "bfefe1012fd755e1ca0e3aa399bb9395c581a8ed14e7015ba3ced37f33ba0795"
-    sha256 cellar: :any,                 arm64_ventura: "4a0c01c5877b6028d24f6c0c406f11f27f841226fd7838cf4656fa4157d39a9b"
-    sha256 cellar: :any,                 sonoma:        "9d7d021c8ee60b99509bc84092cd94c06cad7331997013e944565dbaa22be226"
-    sha256 cellar: :any,                 ventura:       "9efe1f65553245ab2953b16f47047b2512519b32985a9a1c718dc9d2b2186d84"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c49f3c046e8a2e794390238c7e297a604af6e7dc810b92c3a7c635a56cfbc5b"
+    sha256 cellar: :any,                 arm64_sequoia: "b2235593d3d0cc6110a6a04910329ab6c5bd764503a984919cb085e4b21c272a"
+    sha256 cellar: :any,                 arm64_sonoma:  "5aae6a40ebaebb310a9d929bf44c6106a861ba601882b6b01a3cfd03098c6cb8"
+    sha256 cellar: :any,                 arm64_ventura: "df21b65e486cf3f12660714c4b5c36327d118d08dc9a21f4edd7f2c993ec4c80"
+    sha256 cellar: :any,                 sonoma:        "86b74198d9a4656f241a7df9a2e0a5faaec9ec378f900ccfa3682e28e11495b1"
+    sha256 cellar: :any,                 ventura:       "07fbe0577d5ba096dcc7758e5262ebcf4bba70cf04d5e1083b8c44e072ce5115"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ace110299e9c164e46d3dff0b72a07eb6399d5251a2e9a81f86d55ae921fdb3"
   end
 
   depends_on "cmake" => :build
   depends_on "ninja" => :build
   depends_on "apache-arrow"
   depends_on "libpq" # psycopg
+  depends_on "numpy"
   depends_on "python@3.13"
   depends_on "unixodbc" # harlequin-odbc
 
@@ -38,8 +40,8 @@ class Harlequin < Formula
   end
 
   resource "duckdb" do
-    url "https:files.pythonhosted.orgpackagesa0d7ec014b351b6bb026d5f473b1d0ec6bd6ba40786b9abbf530b4c9041d9895duckdb-1.1.3.tar.gz"
-    sha256 "68c3a46ab08836fe041d15dcbf838f74a990d551db47cb24ab1c4576fc19351c"
+    url "https:files.pythonhosted.orgpackagese3e25e6820ec8cc50c4ab6172debea68e2236ea6a5d9caa56297cfb42fca1fa2duckdb-1.2.0.tar.gz"
+    sha256 "a5ce81828e6d1c3f06836d3bda38eef8355765f08ad5ce239abd6f56934dd1f8"
   end
 
   resource "harlequin-mysql" do
@@ -93,11 +95,6 @@ class Harlequin < Formula
     sha256 "52944d6fa84c903fd70723a47d2f8c3153c50ae91773f1584a7bd30606c58b35"
   end
 
-  resource "numpy" do
-    url "https:files.pythonhosted.orgpackages656e09db70a523a96d25e115e71cc56a6f9031e7b8cd166c1ac8438307c14058numpy-1.26.4.tar.gz"
-    sha256 "2a02aba9ed12e4ac4eb3ea9421c420301a0c6460d9830d74a9df87efa4912010"
-  end
-
   resource "platformdirs" do
     url "https:files.pythonhosted.orgpackages13fc128cc9cb8f03208bdbf93d3aa862e16d376844a14f9a0ce5cf4507372de4platformdirs-4.3.6.tar.gz"
     sha256 "357fb2acbc885b0419afd3ce3ed34564c13c9b95c89360cd9563f73aa5e2b907"
@@ -124,8 +121,8 @@ class Harlequin < Formula
   end
 
   resource "pyarrow" do
-    url "https:files.pythonhosted.orgpackages7b01fe1fd04744c2aa038e5a11c7a4adb3d62bce09798695e54f7274b5977134pyarrow-19.0.0.tar.gz"
-    sha256 "8d47c691765cf497aaeed4954d226568563f1b3b74ff61139f2d77876717084b"
+    url "https:files.pythonhosted.orgpackages7f09a9046344212690f0632b9c709f9bf18506522feb333c894d0de81d62341apyarrow-19.0.1.tar.gz"
+    sha256 "3bf266b485df66a400f282ac0b6d1b500b9d2ae73314a153dbe97d6d5cc8a99e"
   end
 
   resource "pygments" do
@@ -154,8 +151,8 @@ class Harlequin < Formula
   end
 
   resource "rich-click" do
-    url "https:files.pythonhosted.orgpackages9a31103501e85e885e3e202c087fa612cfe450693210372766552ce1ab5b57b9rich_click-1.8.5.tar.gz"
-    sha256 "a3eebe81da1c9da3c32f3810017c79bd687ff1b3fa35bfc9d8a3338797f1d1a1"
+    url "https:files.pythonhosted.orgpackageseae3ff1c715b673ec9e01f4482d8d0edfd9adf891f3630d83e695b38337a3889rich_click-1.8.6.tar.gz"
+    sha256 "8a2448fd80e3d4e16fcb3815bfbc19be9bae75c9bb6aedf637901e45f3555752"
   end
 
   resource "setuptools" do
