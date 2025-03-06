@@ -31,8 +31,10 @@ cask "xquartz" do
         "~LibraryHTTPStoragesorg.xquartz.X11",
         "~LibraryLogsX11org.xquartz.log",
         "~LibraryLogsX11org.xquartz.log.old",
+        "~LibraryPreferencesorg.macosforge.xquartz.X11.plist",
         "~LibraryPreferencesorg.xquartz.X11.plist",
         "~LibrarySaved Application Stateorg.xquartz.X11.savedState",
+        "~LibraryWebKitorg.xquartz.X11",
       ],
       rmdir: [
         "~.fonts",

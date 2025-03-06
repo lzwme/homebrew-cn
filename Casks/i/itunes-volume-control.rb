@@ -8,11 +8,9 @@ cask "itunes-volume-control" do
   desc "Control the volume of Apple Music and Spotify using keyboard volume keys"
   homepage "https:github.comalberti42Volume-Control"
 
-  # Upstream doesn't use GitHub releases or reliably create tags for new
-  # versions. Instead, we match the file links in the README.
   livecheck do
-    url "https:raw.githubusercontent.comalberti42Volume-ControlmainREADME.md"
-    regex(VolumeControl[._-]v?(\d+(?:\.\d+)+)\.zipi)
+    url "https:raw.githubusercontent.comalberti42Volume-ControlmainReleasesVolumeControlCast.xml"
+    strategy :sparkle, &:short_version
   end
 
   auto_updates true

@@ -1,5 +1,5 @@
 cask "zen-browser@twilight" do
-  version "1.8.2"
+  version "1.9t"
   sha256 :no_check
 
   url "https:github.comzen-browserdesktopreleasesdownloadtwilightzen.macos-universal.dmg",
@@ -9,9 +9,10 @@ cask "zen-browser@twilight" do
   homepage "https:zen-browser.app"
 
   livecheck do
-    url "https:github.comzen-browserdesktopreleases?q=twilight"
-    regex(%r{tagtwilight[^>]+?>.+?v?(\d+(?:\.\d+)+(?:[._-][a-z]\.\d+)?)}i)
-    strategy :page_match
+    url "https:updates.zen-browser.appupdatesbrowserDarwin_aarch64-gcc3twilightupdate.xml"
+    strategy :xml do |xml|
+      xml.get_elements("update").map { |item| item.attributes["appVersion"] }
+    end
   end
 
   auto_updates true

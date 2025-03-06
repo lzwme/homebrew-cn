@@ -1,18 +1,18 @@
 class Grype < Formula
   desc "Vulnerability scanner for container images and filesystems"
   homepage "https:github.comanchoregrype"
-  url "https:github.comanchoregrypearchiverefstagsv0.87.0.tar.gz"
-  sha256 "487ba946a94e9fe19fbb067e2b636ea784d55c2cbc6c3b3bbb9c2db83ad22012"
+  url "https:github.comanchoregrypearchiverefstagsv0.88.0.tar.gz"
+  sha256 "7d0adadbe0ff88b4b62782f8de7f2ecf7ce17c61560cadd9a1c0fcd1f85d1b0c"
   license "Apache-2.0"
   head "https:github.comanchoregrype.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5cec1bcfaf81a3fd5ef0f3d25d1559e25faec1ea022877016c4ec77ae0c4c8d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "64cec4b0be9b3d3fe9b50bb1b90143f7b9f72c8776942206df4d051d5a86b421"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1eb834ff4dd7bf0174668f4760c2c3eabc53666ea3dae11b4bb4334d28d75dad"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6e36daa61d4ced9d6533dde284a50f98373e7cec437607a6337e04fcf51ba9c5"
-    sha256 cellar: :any_skip_relocation, ventura:       "725d59bd42672f55f0d08619eb45df120ebefcf076393592c9b893c3eb1da724"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae757be7728f6ff8cc0df1cbb6013b5aad9e8d111abcb9ee78d66ccd099e84cc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6bb3a0ebfe23953fa49429db498e453f5fc9ec877444255f1e584514d89772d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4282b276d18fa6f8019cbbb8927f2e793a790ddf2404a5387ebe809521c98cff"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "40305dda4dd0f2c020e9d0e3f4dbec42a9ac0605f898c4b90a3ca2dfb0991408"
+    sha256 cellar: :any_skip_relocation, sonoma:        "deb95a46b7e1408529e9c57f955637de203912d30b238837e2de49274c2931ba"
+    sha256 cellar: :any_skip_relocation, ventura:       "03ec00d72cb32493c97c7be8418bbda3eeef4fb538073de763d3590a41fbc214"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07522c92ba8dbfe0e6e08c456c9323bdfc8b268ed777afff8eaec992c48cb593"
   end
 
   depends_on "go" => :build
@@ -25,7 +25,7 @@ class Grype < Formula
   end
 
   test do
-    assert_match "database metadata not found", shell_output("#{bin}grype db status 2>&1", 1)
+    assert_match "database does not exist", shell_output("#{bin}grype db status 2>&1", 1)
     assert_match "update to the latest db", shell_output("#{bin}grype db check", 100)
     assert_match version.to_s, shell_output("#{bin}grype version 2>&1")
   end

@@ -1,8 +1,8 @@
 class WasmTools < Formula
   desc "Low level tooling for WebAssembly in Rust"
   homepage "https:github.combytecodealliancewasm-tools"
-  url "https:github.combytecodealliancewasm-toolsarchiverefstagsv1.226.0.tar.gz"
-  sha256 "309be504ff75f3810208342036569aa73cd87a44be99157e0529364822b7c3f0"
+  url "https:github.combytecodealliancewasm-toolsarchiverefstagsv1.227.0.tar.gz"
+  sha256 "d9d406ed03c3fa156907759a48ade8e73bf7c98c68a2f491bf1d49f809eca9c7"
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https:github.combytecodealliancewasm-tools.git", branch: "main"
 
@@ -12,12 +12,12 @@ class WasmTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fca461b870ad0daa3b9071e6753d32aebbb8f0d7ee775810a09a7a69b765bc39"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "531cea549f459d2835afdab804046d606aecffff7e4cd809553dd91413529e22"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9fc5507326ff9ef0eb4a3eaf05f6c521f1fc6b9e8777186c2afe646fd84cdb5a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "96b67d9bc51e55e57a17442237109544e947aae8c609db47ccf525a4f471956a"
-    sha256 cellar: :any_skip_relocation, ventura:       "cc908c025138e2593d698fe10bdb341e1cbd5557d0ee40d5525cf9a0fd18c9f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fc3355befe5083a3685a77810f84f79d8b42aaaa6524dcd02e0023fcdb2e534"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4072d2e3cf26c8813791d4d717759237bf400c71de66541554b92005c5533b4f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "97821906cc2f756d174a4cb9a871f23057eaa03fab2a4739bbb5ec63ef31c03e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4bbc5c303d82fda47de94e7da40c17b456d38c071942af3a71570cf947201ab3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d374f2d07618cd74700c65007fd43307b147b24170eb1dd9152ce79da755d936"
+    sha256 cellar: :any_skip_relocation, ventura:       "049e00eb7b438ddc39a78cb122f93a7c293602916547e2981c8d19dc17d26481"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01ee04610373df63dd16eb28a4b0c590d99f188aa14063b755868736a5180744"
   end
 
   depends_on "rust" => :build

@@ -8,6 +8,7 @@ cask "harbor" do
   homepage "https:github.commadeintandemharbor"
 
   deprecate! date: "2024-03-05", because: :unmaintained
+  disable! date: "2025-03-05", because: :unmaintained
 
   app "Harbor.app"
 end

@@ -1,8 +1,8 @@
 class Infisical < Formula
   desc "CLI for Infisical"
   homepage "https:infisical.comdocsclioverview"
-  url "https:github.comInfisicalinfisicalarchiverefstagsinfisical-cliv0.36.5.tar.gz"
-  sha256 "995130d12a8ecffc5bb82e8efddc5b67584cd8b563952a5d0c23cd546556561f"
+  url "https:github.comInfisicalinfisicalarchiverefstagsinfisical-cliv0.36.8.tar.gz"
+  sha256 "928ba9b5f61f9fefe0f8f8abc5e4144536fa6da6b004f164bbe95cc4908b5447"
   license "MIT"
   head "https:github.comInfisicalinfisical.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Infisical < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3919cb27cce611e7afd4e598819497616568bc72574a3bb716f4afa7efeb6312"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3919cb27cce611e7afd4e598819497616568bc72574a3bb716f4afa7efeb6312"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3919cb27cce611e7afd4e598819497616568bc72574a3bb716f4afa7efeb6312"
-    sha256 cellar: :any_skip_relocation, sonoma:        "de1593f1e35c1e2dc794e0ccbbe7191cdbacd1e9f21a76dd6882cfd1c6d690e8"
-    sha256 cellar: :any_skip_relocation, ventura:       "de1593f1e35c1e2dc794e0ccbbe7191cdbacd1e9f21a76dd6882cfd1c6d690e8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9bd3d0e0ea36d710a66db31c26044b567769979e1370c289b533a4c81910479"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8e946c836833e0f94a9317ced236d11a9d03c498c313f908684b0fcf81b4f1ab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e946c836833e0f94a9317ced236d11a9d03c498c313f908684b0fcf81b4f1ab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8e946c836833e0f94a9317ced236d11a9d03c498c313f908684b0fcf81b4f1ab"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f16bbb65e74585b48ecf7b150a5fedab9683b1fb6b183ac014d097b8e25eff24"
+    sha256 cellar: :any_skip_relocation, ventura:       "f16bbb65e74585b48ecf7b150a5fedab9683b1fb6b183ac014d097b8e25eff24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5376869637d0149307dc7396c12646e849ffb8d174ce21a21f0c1efb37c3c4b"
   end
 
   depends_on "go"
