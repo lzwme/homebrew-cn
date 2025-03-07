@@ -6,6 +6,7 @@ class Checkov < Formula
   url "https://files.pythonhosted.org/packages/4f/00/9f53aa8a743908b167d0055906d567681ebf8f71c6439d6fd77ac99047ea/checkov-3.2.380.tar.gz"
   sha256 "4e634cf361e8162db49072a52d2cfac9dd9f3887e575c119c641d82892e0577a"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https://pypi.org/rss/project/checkov/releases.xml"
@@ -17,12 +18,12 @@ class Checkov < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8a1925a6f7a88cabcacf58118833dab91c4a2854a55081d57c3a97a0c456e151"
-    sha256 cellar: :any,                 arm64_sonoma:  "fe322fb33848a2627fffc5b5c54d9b20b72e67a1ffc3195e6a1a76c7b23694f1"
-    sha256 cellar: :any,                 arm64_ventura: "08c7edec02b74cf7e34d1cef5aaf9d39dfebcc74c340f72b0fbc33202ee00e01"
-    sha256 cellar: :any,                 sonoma:        "014d6074aed9fff0bd8230af13eefd3a057444e0b83a4d3c2a95baf489fd969f"
-    sha256 cellar: :any,                 ventura:       "ab4e8d172226a7570ff84790163f97b95a30633d3732cf18390098f9fec04914"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fffe19653a5efd8ac4196a79b23e7ba161feb7fbfb57fcf9d8c9339c7019ac18"
+    sha256 cellar: :any,                 arm64_sequoia: "f1a5134050bef521bda54aaf95a14e012efced5c13cb7e3f1a0d8eeae9aea2f3"
+    sha256 cellar: :any,                 arm64_sonoma:  "a2aff1ddbac9d04f709148d3b0896a21adaa9025af0e2679021000c353cb1694"
+    sha256 cellar: :any,                 arm64_ventura: "b6bb3a155dc6939408e5fbb352880cd56aae624b0f5f986ef76c460546c5949f"
+    sha256 cellar: :any,                 sonoma:        "fe3ec268a4d50b7be08f80ff6191283dc8590cd4560764aeb9d276a69930079c"
+    sha256 cellar: :any,                 ventura:       "30d8887751fcb3de2904cafe315d10d239db210f020fb42f2e3acef925f2b63e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8dc9437c246309545edaf717f681b0b3309cdb95a07bcdab4d1b0444be269f3f"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -40,8 +41,8 @@ class Checkov < Formula
   end
 
   resource "aiohappyeyeballs" do
-    url "https://files.pythonhosted.org/packages/de/7c/79a15272e88d2563c9d63599fa59f05778975f35b255bf8f90c8b12b4ada/aiohappyeyeballs-2.4.8.tar.gz"
-    sha256 "19728772cb12263077982d2f55453babd8bec6a052a926cd5c0c42796da8bf62"
+    url "https://files.pythonhosted.org/packages/a2/0c/458958007041f4b4de2d307e6b75d9e7554dad0baf26fe7a48b741aac126/aiohappyeyeballs-2.5.0.tar.gz"
+    sha256 "18fde6204a76deeabc97c48bdd01d5801cfda5d6b9c8bbeb1aaaee9d648ca191"
   end
 
   resource "aiohttp" do
@@ -65,8 +66,8 @@ class Checkov < Formula
   end
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/0c/be/6c23d80cb966fb8f83fb1ebfb988351ae6b0554d0c3a613ee4531c026597/argcomplete-3.5.3.tar.gz"
-    sha256 "c12bf50eded8aebb298c7b7da7a5ff3ee24dffd9f5281867dfe1424b58c55392"
+    url "https://files.pythonhosted.org/packages/ee/be/29abccb5d9f61a92886a2fba2ac22bf74326b5c4f55d36d0a56094630589/argcomplete-3.6.0.tar.gz"
+    sha256 "2e4e42ec0ba2fff54b0d244d0b1623e86057673e57bafe72dda59c64bd5dee8b"
   end
 
   resource "attrs" do
@@ -220,8 +221,8 @@ class Checkov < Formula
   end
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/af/92/b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccff/jinja2-3.1.5.tar.gz"
-    sha256 "8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"
+    url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"
+    sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
   end
 
   resource "jmespath" do

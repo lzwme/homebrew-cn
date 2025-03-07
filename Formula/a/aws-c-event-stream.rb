@@ -1,17 +1,17 @@
 class AwsCEventStream < Formula
   desc "C99 implementation of the vnd.amazon.eventstream content-type"
   homepage "https:github.comawslabsaws-c-event-stream"
-  url "https:github.comawslabsaws-c-event-streamarchiverefstagsv0.5.3.tar.gz"
-  sha256 "98f66598f9af0f9ee714a441b0ce99777c76a0493c4802dd960dc24caa293400"
+  url "https:github.comawslabsaws-c-event-streamarchiverefstagsv0.5.4.tar.gz"
+  sha256 "cef8b78e362836d15514110fb43a0a0c7a86b0a210d5fe25fd248a82027a7272"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ff0567aba4c3d4ecd7590547eb64078652fd07230b30cdf27ecf36089ea256f5"
-    sha256 cellar: :any,                 arm64_sonoma:  "55a247841d9eb16db4c83047a429730547fff242d1ec6c38bb758bb1727abb9f"
-    sha256 cellar: :any,                 arm64_ventura: "d9f5861deec4f78f719b906567392cbbbde3923e33585b892c7d5805ade1c7be"
-    sha256 cellar: :any,                 sonoma:        "fe75094326e171a572c46313d8938400315ad515ce5e80671735477490a8fd38"
-    sha256 cellar: :any,                 ventura:       "edb161c76b125fadafdb283d411f1ebf1c6f5184055909f38bffb69ad77c22a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fabd2be9904d78bf4ce4872a6d185c0b26b5251b5ab4f9bdef141219351bbf0b"
+    sha256 cellar: :any,                 arm64_sequoia: "7bb1c234fc76207143274392938efa1c7912b82db36c2d7bd3e1ff31c2b21a97"
+    sha256 cellar: :any,                 arm64_sonoma:  "22adf47866d7f196b5296469044723b94223a3c536590517605930a8c76461ec"
+    sha256 cellar: :any,                 arm64_ventura: "fea45020a2341c46d9671671bc59bc788c4301615d5365e44cde87fca734f0f6"
+    sha256 cellar: :any,                 sonoma:        "50ab76b1c74f6639a8af58478426de6e91201d1f0a32a81d3d20b63c6da44de1"
+    sha256 cellar: :any,                 ventura:       "7cb1403ff68bd39da60c9051539cb3b9f88447baf5e199e6805bcdb8ec2a2ea2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4bd0d80ba4c490b1e0548caad95670e5c6937e5056b8945e11c2f58bde41d36"
   end
 
   depends_on "cmake" => :build

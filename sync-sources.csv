@@ -2532,7 +2532,6 @@ Homebrew-homebrew-core/Formula/g/gron.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/groonga.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/groovy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/groovysdk.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/g/grpc-swift.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grpc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grpc@1.54.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grpcui.rb, Homebrew/homebrew-core, 1
@@ -3291,6 +3290,7 @@ Homebrew-homebrew-core/Formula/l/launchdns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazydocker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazygit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazyjj.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lazyjournal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lazysql.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lbdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lbfgspp.rb, Homebrew/homebrew-core, 1
@@ -5317,6 +5317,7 @@ Homebrew-homebrew-core/Formula/p/protobuf@3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protoc-gen-go-grpc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protoc-gen-go.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protoc-gen-grpc-java.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/protoc-gen-grpc-swift.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protoc-gen-grpc-web.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protoc-gen-js.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protolint.rb, Homebrew/homebrew-core, 1
@@ -5675,7 +5676,7 @@ Homebrew-homebrew-core/Formula/r/rio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rip2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ripgrep-all.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ripgrep.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/r/ripmime.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/ripmime.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ripsecrets.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/riscv64-elf-binutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/riscv64-elf-gcc.rb, Homebrew/homebrew-core, 0
@@ -12776,6 +12777,7 @@ Homebrew-homebrew-cask/Casks/n/numi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nutstore.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nvalt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nvidia-geforce-now.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/nvidia-nsight-compute.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nvidia-nsight-systems.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nvs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nwjs.rb, Homebrew/homebrew-cask, 0

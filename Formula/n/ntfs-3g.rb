@@ -28,7 +28,7 @@ class Ntfs3g < Formula
   depends_on "pkgconf" => :build
   depends_on "coreutils" => :test
   depends_on "gettext"
-  depends_on "libfuse@2"
+  depends_on "libfuse@2" # FUSE 3 issue: https:github.comtuxerantfs-3gissues54
   depends_on :linux # on macOS, requires closed-source macFUSE
 
   def install

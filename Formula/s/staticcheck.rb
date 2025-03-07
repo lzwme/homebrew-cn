@@ -1,19 +1,18 @@
 class Staticcheck < Formula
   desc "State of the art linter for the Go programming language"
   homepage "https:staticcheck.dev"
-  url "https:github.comdominikhgo-toolsarchiverefstags2025.1.tar.gz"
-  sha256 "314e7858de2bc35f7c8ded8537cecf323baf944e657d7075c0d70af9bb3e6d47"
+  url "https:github.comdominikhgo-toolsarchiverefstags2025.1.1.tar.gz"
+  sha256 "259aaf528e4d98e7d3652e283e8551cfdb98cd033a7c01003cd377c2444dd6de"
   license "MIT"
-  revision 2
   head "https:github.comdominikhgo-tools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e7f6fe45223ef01c310834e4f879a7c6e6b80b348ab96406b8d918a3151ca14"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e7f6fe45223ef01c310834e4f879a7c6e6b80b348ab96406b8d918a3151ca14"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4e7f6fe45223ef01c310834e4f879a7c6e6b80b348ab96406b8d918a3151ca14"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5e586d4cf482096aceb131f8fd22740e4c1a4d654ebdf785274479a87d64f247"
-    sha256 cellar: :any_skip_relocation, ventura:       "5e586d4cf482096aceb131f8fd22740e4c1a4d654ebdf785274479a87d64f247"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46771f9be661baa5fe1db4049c3f0475b95250267f3e662bf7ec4d0a8e598a44"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "568d26b0cd97bf3efc7f538a4dcedb4771bfbfadb6aef6ad91d963e1679a2a40"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "568d26b0cd97bf3efc7f538a4dcedb4771bfbfadb6aef6ad91d963e1679a2a40"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "568d26b0cd97bf3efc7f538a4dcedb4771bfbfadb6aef6ad91d963e1679a2a40"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f1bb67d07eab5bde74d2139172abd699122fe426d24bc29419b56b08596c7d84"
+    sha256 cellar: :any_skip_relocation, ventura:       "f1bb67d07eab5bde74d2139172abd699122fe426d24bc29419b56b08596c7d84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1056fd6a5ef767cb1d90ba19773e15f8c7dc52a95d0a9b0a7bfa6f122322c97"
   end
 
   depends_on "go"

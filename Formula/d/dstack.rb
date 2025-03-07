@@ -6,14 +6,15 @@ class Dstack < Formula
   url "https://files.pythonhosted.org/packages/98/0c/5e0c8c16d42dfba4f80d96eef802cd7902581e043f437843882b190acacc/dstack-0.18.44.tar.gz"
   sha256 "26495d341265e77c374d5971d5c12b7a95514f65e07639a76f72f247aa21f4c8"
   license "MPL-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0f9833133ac3e684ca9192f856a9c3329c78ef7137b4050ebb99d25d45f4d209"
-    sha256 cellar: :any,                 arm64_sonoma:  "b650668061715c6662f8607e0dab05077073c3db4f6037a40177ad3eba9bee85"
-    sha256 cellar: :any,                 arm64_ventura: "ca645458673991ff63b91f1ac8a0939b1f534c22a20dc7f0a4fbc4a8befe97e9"
-    sha256 cellar: :any,                 sonoma:        "cfe809d27dee3e2b5265ce6c7cc985be2768941b55dc6e5fd22afe28c9336fa4"
-    sha256 cellar: :any,                 ventura:       "fe4dd516dc7c902341fdf0ac1cd5fd19af8a824df0012bfc0fc866a32d654a1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65fafb5118d32541a56a73b7e20351ae4d5504e6e1f03584a562a700faff45eb"
+    sha256 cellar: :any,                 arm64_sequoia: "2ac2e1adc7f5ceed255476ef761463540c2e292fa56c68de61404b268970aea7"
+    sha256 cellar: :any,                 arm64_sonoma:  "afddb712738d7c9e57e1bb3a74944f15867b38f535069edc79a8bfa8e9d1d0fd"
+    sha256 cellar: :any,                 arm64_ventura: "bf227c86823bd50f808aeb1e7b2179f4cc09f8905b9e2c881fe0ccaa452cdf0e"
+    sha256 cellar: :any,                 sonoma:        "2b3cbd817ea8acec4bd73c5981e129af1c92514a769359671a295792f785db2d"
+    sha256 cellar: :any,                 ventura:       "061166da0fac0aa513e439b0fc97c1461691bcaf2cb65d0dfa35fb91ff1c5e60"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aebe2f068659f54d8a29050349e6fff8cc852b77a8ea8f968b50460e19677c8d"
   end
 
   # `pkgconf` and `rust` are for bcrypt.
@@ -61,8 +62,8 @@ class Dstack < Formula
   end
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/0c/be/6c23d80cb966fb8f83fb1ebfb988351ae6b0554d0c3a613ee4531c026597/argcomplete-3.5.3.tar.gz"
-    sha256 "c12bf50eded8aebb298c7b7da7a5ff3ee24dffd9f5281867dfe1424b58c55392"
+    url "https://files.pythonhosted.org/packages/ee/be/29abccb5d9f61a92886a2fba2ac22bf74326b5c4f55d36d0a56094630589/argcomplete-3.6.0.tar.gz"
+    sha256 "2e4e42ec0ba2fff54b0d244d0b1623e86057673e57bafe72dda59c64bd5dee8b"
   end
 
   resource "asyncpg" do
@@ -126,13 +127,13 @@ class Dstack < Formula
   end
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/ce/88/16007b67c2835670741076bcd06d20ac35a8e503674d9e1bbaf75bdcc85f/boto3-1.37.6.tar.gz"
-    sha256 "e2f4a1edb7e6dbd541c2962117e1c6fea8d5a42788c441a958700a43a3ca7c47"
+    url "https://files.pythonhosted.org/packages/6b/e6/40f8c1fb52c02adad1c104c4c4ac0488bf8f2b1397f24db07779322e420b/boto3-1.37.7.tar.gz"
+    sha256 "ac2e022edcd6a94a2adbb21f0ad373a16557ec14a8910366bee0bbc7138fc72a"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/41/ac/c84cabfc7db679ea64e938edd1e639872c53f7496a70b340a86e6914855c/botocore-1.37.6.tar.gz"
-    sha256 "2cb121a403cbec047d76e2401a402a6b2efd3309169037fbac588e8f7125aec4"
+    url "https://files.pythonhosted.org/packages/53/4b/096b2fac3ba92ace94f69f238eea9948af568b487c3898e9a8881bfe506b/botocore-1.37.7.tar.gz"
+    sha256 "2faeac11766db912bc444669b04359080b7b83b2f57a3906c77c8105b70ce1e8"
   end
 
   resource "cached-classproperty" do
@@ -196,8 +197,8 @@ class Dstack < Formula
   end
 
   resource "google-api-python-client" do
-    url "https://files.pythonhosted.org/packages/73/d0/4a82e36c514437fa977d9b24f15328cd4505a0d92fcab9a18c81210b0f72/google_api_python_client-2.162.0.tar.gz"
-    sha256 "5f8bc934a5b6eea73a7d12d999e6585c1823179f48340234acb385e2502e735a"
+    url "https://files.pythonhosted.org/packages/29/9f/535346bb1469ec91139c38f0438ad70bd229a6b11452367065fe49303860/google_api_python_client-2.163.0.tar.gz"
+    sha256 "88dee87553a2d82176e2224648bf89272d536c8f04dcdda37ef0a71473886dd7"
   end
 
   resource "google-auth" do
@@ -281,13 +282,13 @@ class Dstack < Formula
   end
 
   resource "grpcio" do
-    url "https://files.pythonhosted.org/packages/f0/b2/127eb0e2c86423157eb0249f690518a1f72128417173c457777b1be83d53/grpcio-1.71.0rc2.tar.gz"
-    sha256 "4ee4370673f97bac2f0b5c1c72b0d00e5f1bde86dd19ff8e0b28abadfd3953d6"
+    url "https://files.pythonhosted.org/packages/69/e1/4b21b5017c33f3600dcc32b802bb48fe44a4d36d6c066f52650c7c2690fa/grpcio-1.70.0.tar.gz"
+    sha256 "8d1584a68d5922330025881e63a6c1b54cc8117291d382e4fa69339b6d914c56"
   end
 
   resource "grpcio-status" do
-    url "https://files.pythonhosted.org/packages/56/98/fc67b4bd4273b0ff12c43d2d4f9d4931ae57a08cd7338db0c321c4792d12/grpcio_status-1.71.0rc2.tar.gz"
-    sha256 "b52855140e320503552aca90a7ac309b903651fe3ee30e1c79092143d6f4e362"
+    url "https://files.pythonhosted.org/packages/4c/d1/2397797c810020eac424e1aac10fbdc5edb6b9b4ad6617e0ed53ca907653/grpcio_status-1.70.0.tar.gz"
+    sha256 "0e7b42816512433b18b9d764285ff029bde059e9d41f8fe10a60631bd8348101"
   end
 
   resource "h11" do
@@ -326,8 +327,8 @@ class Dstack < Formula
   end
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/af/92/b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccff/jinja2-3.1.5.tar.gz"
-    sha256 "8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"
+    url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"
+    sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
   end
 
   resource "jmespath" do
@@ -581,8 +582,8 @@ class Dstack < Formula
   end
 
   resource "tzlocal" do
-    url "https://files.pythonhosted.org/packages/33/cc/11360404b20a6340b9b4ed39a3338c4af47bc63f87f6cea94dbcbde07029/tzlocal-5.3.tar.gz"
-    sha256 "2fafbfc07e9d8b49ade18f898d6bcd37ae88ce3ad6486842a2e4f03af68323d2"
+    url "https://files.pythonhosted.org/packages/8b/2e/c14812d3d4d9cd1773c6be938f89e5735a1f11a9f184ac3639b93cef35d5/tzlocal-5.3.1.tar.gz"
+    sha256 "cceffc7edecefea1f595541dbd6e990cb1ea3d19bf01b2809f362a03dd7921fd"
   end
 
   resource "uritemplate" do

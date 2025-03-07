@@ -1,17 +1,17 @@
 class Jsrepo < Formula
   desc "Build and distribute your code"
   homepage "https://jsrepo.dev/"
-  url "https://registry.npmjs.org/jsrepo/-/jsrepo-1.41.3.tgz"
-  sha256 "7bd9cb919c22fa30cb009cef6ad0245a5643ee8f7a976459ed66a80ca55640c0"
+  url "https://registry.npmjs.org/jsrepo/-/jsrepo-1.42.0.tgz"
+  sha256 "fd9ae71b9c00bf0f673c40112b9be012a0862288f179526e04377455f9fe5b33"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d46c770fa25f35c142559ba7d0b43b10138e3cd45767609ddc7236e6b39b3d1e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d46c770fa25f35c142559ba7d0b43b10138e3cd45767609ddc7236e6b39b3d1e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d46c770fa25f35c142559ba7d0b43b10138e3cd45767609ddc7236e6b39b3d1e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2dc2c7f9a69161f381a9ff5be7fd246ad639de91e54229c907ef70870d88de49"
-    sha256 cellar: :any_skip_relocation, ventura:       "2dc2c7f9a69161f381a9ff5be7fd246ad639de91e54229c907ef70870d88de49"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d46c770fa25f35c142559ba7d0b43b10138e3cd45767609ddc7236e6b39b3d1e"
+    sha256 cellar: :any,                 arm64_sequoia: "8d03b75a8dbf44029618f10e5babb7f0750581610a7c78040451cd686f75ddf3"
+    sha256 cellar: :any,                 arm64_sonoma:  "8d03b75a8dbf44029618f10e5babb7f0750581610a7c78040451cd686f75ddf3"
+    sha256 cellar: :any,                 arm64_ventura: "8d03b75a8dbf44029618f10e5babb7f0750581610a7c78040451cd686f75ddf3"
+    sha256 cellar: :any,                 sonoma:        "57982e725005fd3eeeb7472b0729385f09b24fd5a1ff10e1aec16319c326a0f5"
+    sha256 cellar: :any,                 ventura:       "57982e725005fd3eeeb7472b0729385f09b24fd5a1ff10e1aec16319c326a0f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1714e756f04b7aa581b58e509c3897d989e2430b8ce7130f70ab3a42e390dd64"
   end
 
   depends_on "node"

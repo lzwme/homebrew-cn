@@ -1,8 +1,8 @@
 class Mise < Formula
   desc "Polyglot runtime manager (asdf rust clone)"
   homepage "https:mise.jdx.dev"
-  url "https:github.comjdxmisearchiverefstagsv2025.3.0.tar.gz"
-  sha256 "8b8a325250018403c48025aae340e7cbef4ec7514ca2a70dc7c336abafec7a30"
+  url "https:github.comjdxmisearchiverefstagsv2025.3.1.tar.gz"
+  sha256 "ca1c8853792d28bc8b3ccbaff738199bcee2b1c7e7e09596800a73aacdd0c970"
   license "MIT"
   head "https:github.comjdxmise.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Mise < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fac19b8044c8176c5f569801d8f56411ed55548fcc9ae4f376c50d18d6696af8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81be7fed40b66d94d89b57c5f525cdd55e7a1f23df8a21c8721e93e5b2aacd04"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0c9d7a842c6149fe9b86695a46a536d8ec8207f29893c229cadc933169c92e64"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1098709741e484ac4d26c318003f2f9959ba031a923b17ce2e6f2f466acad3c7"
-    sha256 cellar: :any_skip_relocation, ventura:       "09acf020003b877507bddacd8f4638695cee9d3eb50dada2883815a517c7873d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88ff1135c15b3da35da4b8c0f5b5cbd8eecd8eb119c728204c308f85d2392800"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4f43ba5f6654b5c29f4ff69782e9bab2595992d40929770725b7121bbb62645"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "67abf5a6121f87200c2d8f6243e6d119ecc90a07dddf56e28d961dc4330d9dd4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8de9789687e807b466151219080aa8f0ed3374fcaf2837a7540d08ea6d51ca26"
+    sha256 cellar: :any_skip_relocation, sonoma:        "556e77183a006a016fa5e8dbaea335e6dc3096adde94232634137fc651328b78"
+    sha256 cellar: :any_skip_relocation, ventura:       "5aea80dc676ea830071f37c0f0031bf263d9749f820d0a204d9ee9cedda03d84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27956740d6b59be45e992a6c985334d22b8b15384354abfaef73f81ba3e12c94"
   end
 
   depends_on "pkgconf" => :build
