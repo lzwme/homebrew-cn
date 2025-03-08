@@ -1,8 +1,8 @@
 class Swc < Formula
   desc "Super-fast Rust-based JavaScriptTypeScript compiler"
   homepage "https:swc.rs"
-  url "https:github.comswc-projectswcarchiverefstagsv1.11.7.tar.gz"
-  sha256 "9dd58cd426a482dec174e894303a483b970aeb9a04a948cc5d853db49895f400"
+  url "https:github.comswc-projectswcarchiverefstagsv1.11.8.tar.gz"
+  sha256 "e8ae4d133728f46ef20e4805cf13889ba40ce28f2a979f424a832bca54d9a61e"
   license "Apache-2.0"
   head "https:github.comswc-projectswc.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Swc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3fdd24fe4d3cb4f3cf90d16bd2c645272a282fd255e183be05dd5220e8bc6934"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b3cf9d28d74279ebaf9a54dcef883e21a29cda6518ef2c6c8fa80c2909efab17"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1f5ea95955865d2ac239a52302c66e5cfa2b669858684bfc05d026a73655242e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "27f9a9856df7fdf0b4de6aaf86db362ef64647a0a5eca293bc35ac542933668e"
-    sha256 cellar: :any_skip_relocation, ventura:       "eb5dd493dc9d32ca85c5132f045c0455910ee62b179051f79fb54eee239441a9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1015de757036bb27a3cb4dd46a64ff789ebeb9c160b22360e50a4bf4712bd6e3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8cb4d4fd35ea467a758f649ad42cbf85851016490cf4593a5d3c2788c718841b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b839c0caa22bab7a2d0b19c056df75e65df7fddc2010871726b5fea5a8a49be5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1d7089db631429e0b397da4b04137908bec107469dbc481c9470dcade99a423d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0763f32d77eb6bdb8d5c41c8e02bb634587532dcb792d62df95f81df6478e668"
+    sha256 cellar: :any_skip_relocation, ventura:       "7af5039664ded793a7a724f23301578a6f5012fb7e6459a97272ba3099b8e55c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d0c0e25719ebcd61747557f3929193a6e293392917b6a6691532c56720ccfd5"
   end
 
   depends_on "rust" => :build

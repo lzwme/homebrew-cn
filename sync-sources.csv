@@ -92,6 +92,7 @@ Homebrew-homebrew-core/Formula/a/alembic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/alexjs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/algernon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/algol68g.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/algolia.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ali.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aliae.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aliddns.rb, Homebrew/homebrew-core, 1
@@ -273,6 +274,7 @@ Homebrew-homebrew-core/Formula/a/astroterm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/astyle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/asuka.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/asymptote.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/async_simple.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asyncapi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/asyncplusplus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/at-spi2-core.rb, Homebrew/homebrew-core, 0
@@ -1529,7 +1531,7 @@ Homebrew-homebrew-core/Formula/d/dromeaudio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/drone-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dropbear.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dropbox-uploader.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/d/druid.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/druid.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dry.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dscanner.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dsda-doom.rb, Homebrew/homebrew-core, 1
@@ -1584,6 +1586,7 @@ Homebrew-homebrew-core/Formula/d/dvdbackup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dvdrtools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dvm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dvorak7min.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/d/dvr-scan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dwarf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dwarfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dwarfutils.rb, Homebrew/homebrew-core, 1
@@ -4550,6 +4553,7 @@ Homebrew-homebrew-core/Formula/n/netcdf-cxx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/netcdf-fortran.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/netcdf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/netdata.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/netfetch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nethack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nethogs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/netlify-cli.rb, Homebrew/homebrew-core, 1
@@ -4618,6 +4622,7 @@ Homebrew-homebrew-core/Formula/n/nodebrew.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nodeenv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nodenv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/noir.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/nom.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nomad.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nomino.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nopoll.rb, Homebrew/homebrew-core, 0
@@ -8690,7 +8695,7 @@ Homebrew-homebrew-cask/Casks/e/enjoyable.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/enpass.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/ente-auth.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/ente.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/e/entry.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/e/entry.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/envkey.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/enzymex.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/eobcanka.rb, Homebrew/homebrew-cask, 0

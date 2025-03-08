@@ -1,18 +1,18 @@
 class Dyff < Formula
   desc "Diff tool for YAML files, and sometimes JSON"
   homepage "https:github.comhomeportdyff"
-  url "https:github.comhomeportdyffarchiverefstagsv1.10.0.tar.gz"
-  sha256 "14a97d26f9be98e4279f05ffd49c59e5362fa2d6804fa54b0f9dc624d9335184"
+  url "https:github.comhomeportdyffarchiverefstagsv1.10.1.tar.gz"
+  sha256 "8f20ba3580fbb45957211efdf5ac4fc60dd339a2f798db0ecf521c930fdb0be0"
   license "MIT"
   head "https:github.comhomeportdyff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71644bb1480bfa00dcbf95ffe19fab13762b65bf89ec8376f8997c5d16a5d787"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "71644bb1480bfa00dcbf95ffe19fab13762b65bf89ec8376f8997c5d16a5d787"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "71644bb1480bfa00dcbf95ffe19fab13762b65bf89ec8376f8997c5d16a5d787"
-    sha256 cellar: :any_skip_relocation, sonoma:        "69d7f3fcf049dd6d871a0ed0d295acd100f59ebb5cdbd34189041be5e484b4c7"
-    sha256 cellar: :any_skip_relocation, ventura:       "69d7f3fcf049dd6d871a0ed0d295acd100f59ebb5cdbd34189041be5e484b4c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "559b783c03afad5742ff656a445947b3a4e586d3e977083f99057488ca3f881d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d709739f34f69642ebbadc8aa382b0ef0a4914593dbf31722ad409a79007fd2b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d709739f34f69642ebbadc8aa382b0ef0a4914593dbf31722ad409a79007fd2b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d709739f34f69642ebbadc8aa382b0ef0a4914593dbf31722ad409a79007fd2b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "37093d31497ba88d80070b9aa1516f93f745d5b4e145a815bb93fdc3c161a5d3"
+    sha256 cellar: :any_skip_relocation, ventura:       "37093d31497ba88d80070b9aa1516f93f745d5b4e145a815bb93fdc3c161a5d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86b077cc452fadf472c80a323c7fb655b0ee104aba3f9fe5fd46951d4f9896ba"
   end
 
   depends_on "go" => :build

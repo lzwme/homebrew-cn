@@ -1,10 +1,9 @@
 class Cdi < Formula
   desc "C and Fortran Interface to access Climate and NWP model Data"
   homepage "https://code.mpimet.mpg.de/projects/cdi"
-  url "https://code.mpimet.mpg.de/attachments/download/29833/cdi-2.5.0.tar.gz"
-  sha256 "19654af187d8b29e708b1c7e4726143cf26547966dceba8cc5b68690281ddad9"
+  url "https://code.mpimet.mpg.de/attachments/download/29860/cdi-2.5.1.tar.gz"
+  sha256 "7e369ed455d153bfbfcb5abd343779dc254b798b0d5ea641cd497a49e39f4de5"
   license "GPL-2.0-only"
-  revision 1
 
   livecheck do
     url "https://code.mpimet.mpg.de/projects/cdi/files"
@@ -12,12 +11,12 @@ class Cdi < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a9384cb54ff1da2c04928284bda73501795e0fb8b296e583fdfb9fc29c2ddae9"
-    sha256 cellar: :any,                 arm64_sonoma:  "c08d7982373c7bc94e1a7252d715f8a1369d6ed0be7cda29fcb96f638d2777f2"
-    sha256 cellar: :any,                 arm64_ventura: "3ad05327085edbc43f76e6e7f801548b032f63ee8acbd683a0c700a5c8f92eca"
-    sha256 cellar: :any,                 sonoma:        "dd18385eb9c2e36f0c722c31dcd3facf9947694da7a1a72e3245e90368cef2f6"
-    sha256 cellar: :any,                 ventura:       "88c6a19964183954695a733c9bcc583b6597eb9a38f1590c5bcaceb19f5c6617"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5bd8ce8bcea57dd2460252dbc8920bf20703b8c64f69d488c7292f35a31513ce"
+    sha256 cellar: :any,                 arm64_sequoia: "1a2af30986bdf223d03abb0eadea7cd2a925f12edd0c33170b4e533378a3d579"
+    sha256 cellar: :any,                 arm64_sonoma:  "16025104184587aedd23423d3b5852d3fe70e0784d7716dbaaa8446d4bb498bd"
+    sha256 cellar: :any,                 arm64_ventura: "67bca1e2d7b566358cce8f0d334cf4e7cdd9988ade451eb529916f133c1d55f4"
+    sha256 cellar: :any,                 sonoma:        "2479b5cfe6dc105af9800571e330422934c0b532cfea292d33c7fbfef936068d"
+    sha256 cellar: :any,                 ventura:       "4239b14c23ec729a89006d68e81e342c81e04d014c487d60fc915b9ff3dd50e0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8f0e635a82532348a73894dec184a2081e04ddff27562766ff1f1b30c345398"
   end
 
   depends_on "eccodes"

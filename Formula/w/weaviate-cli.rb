@@ -3,17 +3,17 @@ class WeaviateCli < Formula
 
   desc "Command-line interface for managing and interacting with Weaviate"
   homepage "https://pypi.org/project/weaviate-cli/"
-  url "https://files.pythonhosted.org/packages/33/ed/7876b2cae15c70d6a2c827d6244058b6ee2cee2c5433e2af2d008ac1f607/weaviate_cli-3.1.2.tar.gz"
-  sha256 "c37c412b57d926a497c1c681f2c616ebcb788777264723466ad170dc6e04911b"
+  url "https://files.pythonhosted.org/packages/c3/88/62c900784d00fb2e7ea4ddd223fe01cf1f5814eb49c04b820f5f0f59d7ba/weaviate_cli-3.1.3.tar.gz"
+  sha256 "5ab6ba2ef8d10f9c930f36257c9808f08d2f4006fcdc51cab4e50ff6bf7e96d7"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5bf4b5361499b8819f5f00c58a569e482914fc4b6dc5c7389918e3c63db4e683"
-    sha256 cellar: :any,                 arm64_sonoma:  "3d472f20e202805d7fa3d5f4e493488228633397488dc102c7e5a80086905a17"
-    sha256 cellar: :any,                 arm64_ventura: "401ab9d73da7cd1c09c8eb6e01a24da1b45f048759d9b524270df35397b21f4f"
-    sha256 cellar: :any,                 sonoma:        "548e952ae9abe903f29bd0646e388c7e996e8730e30a8cf2ddc16ec478ff5a38"
-    sha256 cellar: :any,                 ventura:       "156b70a7f3c17c5d80dff4768a39d49dc66030b93eb422aa3f67c195b7ab3ab9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44640bd20bf58e20efda72724a8de7508eb72e1d6d70382da18c4b9a154c4bcd"
+    sha256 cellar: :any,                 arm64_sequoia: "0e8ea5255aa1bb02af6c4ca4373b47854ea1bd86c945084d57b6352aeb920918"
+    sha256 cellar: :any,                 arm64_sonoma:  "b386268366828e91aecb96164c85f751ff668e59a0d4cb9224785f221aa292ca"
+    sha256 cellar: :any,                 arm64_ventura: "49ab6392be7ad4de65bcf047e5920663cb7024f78d97c5c72c49633246e465e9"
+    sha256 cellar: :any,                 sonoma:        "654b2d60dc6dc5d076c9a3a0d980681e6c0b0d472a9639f6a83b6e00ecea3333"
+    sha256 cellar: :any,                 ventura:       "9cb4b9549c679dadce4807872de6008a8b1504b8b2b02ecb41f82b139aa6c221"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "295acdbe91df2ebd8985e0acac9c1320dea4a0d6ff17b58d94656200a6c13b2a"
   end
 
   depends_on "ninja" => :build
