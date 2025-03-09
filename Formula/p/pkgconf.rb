@@ -1,11 +1,10 @@
 class Pkgconf < Formula
   desc "Package compiler and linker metadata toolkit"
   homepage "https:github.compkgconfpkgconf"
-  url "https:distfiles.ariadne.spacepkgconfpkgconf-2.3.0.tar.xz"
-  mirror "http:distfiles.ariadne.spacepkgconfpkgconf-2.3.0.tar.xz"
-  sha256 "3a9080ac51d03615e7c1910a0a2a8df08424892b5f13b0628a204d3fcce0ea8b"
+  url "https:distfiles.ariadne.spacepkgconfpkgconf-2.4.0.tar.xz"
+  mirror "http:distfiles.ariadne.spacepkgconfpkgconf-2.4.0.tar.xz"
+  sha256 "981ba79da1ef30339faf8da9a905d367d94cd618cb028ba9ac402742f39313e5"
   license "ISC"
-  revision 1
 
   livecheck do
     url "https:distfiles.ariadne.spacepkgconf"
@@ -13,14 +12,12 @@ class Pkgconf < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 arm64_sequoia: "78eb90197457d6dc23bec69f88822c811a0d57ce1d42fba0b346ea7533f19f28"
-    sha256 arm64_sonoma:  "bee6257d97fd7331e4b6c1bc7f150a230d7f2f49e9104cf98cc52e04c26fb69d"
-    sha256 arm64_ventura: "a4b704e993c8129fb60951d175733f3d5eb34d3b5bc7c56695b41dab0aa4a047"
-    sha256 sequoia:       "3bf4feae9c1cbf18dd3cc1bbd2aca05e34ffa1a5b55444d57ccf1bb7985b725e"
-    sha256 sonoma:        "fb3a6a6fcba8172e5e7512080ff0fb802526e4a93c384508d2e4031bd297e697"
-    sha256 ventura:       "3f6b06fa2e6d99fbd6607c32691b1d7fcab827c80a81d70b01264d922aea040c"
-    sha256 x86_64_linux:  "67699e7fc430708e7e591e1af5d088e719293018e87a9bccd664ad401f18b6f2"
+    sha256 arm64_sequoia: "962166ef924ed34d5806c8c345666281e5a60e55ea9a8fd84a59dd3bab020d5f"
+    sha256 arm64_sonoma:  "518c4c7ef904ec828e76c09a7c8eefa668866d00cad9d10bd1f767551c50b2c8"
+    sha256 arm64_ventura: "2a3b8d8e0686f51c20ed0079fd132f2747b15416970df2c26fb86eb3e7c95c86"
+    sha256 sonoma:        "b864ffba1311bd5843b3f709341e5a5aa2a9fa05d5d2212a4694544044116d6d"
+    sha256 ventura:       "7199fff663e6ca7a5cf2339a2e650daf3370230a27302347b6eae793aa9314f4"
+    sha256 x86_64_linux:  "53ee05448762c74e246705b2f76579ded289324b29b01729b94e1b0acc2b3d8a"
   end
 
   head do

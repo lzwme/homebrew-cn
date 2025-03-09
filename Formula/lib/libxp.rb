@@ -29,7 +29,9 @@ class Libxp < Formula
   depends_on "libtool" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "util-macros" => :build
+
   depends_on "libx11"
+  depends_on "libxau"
   depends_on "libxext"
 
   resource "printproto" do

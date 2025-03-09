@@ -1810,7 +1810,7 @@ Homebrew-homebrew-core/Formula/f/fauna-shell.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/faust.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fava.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/favirecon.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/f/fb-client.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fb-client.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fb303.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fblog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fbthrift.rb, Homebrew/homebrew-core, 1
@@ -11131,6 +11131,8 @@ Homebrew-homebrew-cask/Casks/font/font-s/font-space-grotesk.rb, Homebrew/homebre
 Homebrew-homebrew-cask/Casks/font/font-s/font-space-mono-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-space-mono.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-special-elite.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-s/font-special-gothic-condensed-one.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-s/font-special-gothic-expanded-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-spectral-sc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-spectral.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-spicy-rice.rb, Homebrew/homebrew-cask, 1

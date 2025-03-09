@@ -1,19 +1,17 @@
 class LuckyCommit < Formula
   desc "Customize your git commit hashes!"
   homepage "https:github.comnot-an-aardvarklucky-commit"
-  url "https:github.comnot-an-aardvarklucky-commitarchiverefstagsv2.2.3.tar.gz"
-  sha256 "1631a48a535517c603850ba8cc8f44bf8b11cde2c269d6fb1ae72fb07bf37349"
+  url "https:github.comnot-an-aardvarklucky-commitarchiverefstagsv2.2.4.tar.gz"
+  sha256 "48652d8016f9584840783cd7a98f0023134e9e38ec948207271d7f7dbc478f05"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "968d315896e179ee3dbaf5083be25fd4aa28d1b0ac59848d746d77fb53fc3c07"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "79dd8e23e5e34aafc38583104a02e4fba9a8f0600b05ad823ce6434c9cec4d12"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ee5bb3255c98f7752964997984ab36b9b135b5054f06b51b326b612b1a527305"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a89e18b1ce6f2b07933aa6f175fae7692a70f17864a0cf778a0cbc8e48170680"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f56ffe7449f23459d455ae73e44b0d4574ff9ae724a4473b78419372b2a02ac5"
-    sha256 cellar: :any_skip_relocation, ventura:        "130a557e9dfb9e429b39d178f9ddada08b3dc46e98d163312f1e2cb0d6f98bdf"
-    sha256 cellar: :any_skip_relocation, monterey:       "f5db99e022a0a520dcf2ae78090633541dc5b7d2317f65c69870f3df07e37de0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2001eb19052ec4411157c629934a56dd4a4e090d8343ad5a577ab0321a6c7c7e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9409afd283e5b2003020c3c1ba4835800ed6aeac9086caea545fee380e55514"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c446995ddbb07b918dc1f5740b829fe8a8144a99a5a9202f2d56bfd6a5fecd36"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e16c7e01ed3ee28ba540cac685fa5841431c3baebbf966a14e4c9ce01c9a04ed"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eadab6dbb7ff27594d7e7f91477d00362807694120914b1f795143c25805d317"
+    sha256 cellar: :any_skip_relocation, ventura:       "4b801b069b937283e115c280e9fba092a45aaaa4412bbb278925900756813b81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45322d43c334601cd776812b1b3269f6e3ff7cf28f43ca354f199d9e607f9ebc"
   end
 
   depends_on "rust" => :build

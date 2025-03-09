@@ -1,18 +1,18 @@
 class LibgeditGfls < Formula
   desc "Gedit Technology - File loading and saving"
   homepage "https://gitlab.gnome.org/World/gedit/libgedit-gfls"
-  url "https://gitlab.gnome.org/World/gedit/libgedit-gfls/-/archive/0.2.1/libgedit-gfls-0.2.1.tar.bz2"
-  sha256 "a286902dce8c02edc134f5eb0e674ad7b3378bebad3f041fc5187c5baf6e485e"
+  url "https://gitlab.gnome.org/World/gedit/libgedit-gfls/-/archive/0.3.0/libgedit-gfls-0.3.0.tar.bz2"
+  sha256 "a53c847a2dc16f35a9295b2176bde4dbaa91bd1410af8546992fd65236bccf95"
   license "LGPL-3.0-or-later"
   head "https://gitlab.gnome.org/World/gedit/libgedit-gfls.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8662b92890c2c3dfc32eb4b582a8464f3d44586a9ac49c49a44430ec4eadee8e"
-    sha256 cellar: :any,                 arm64_sonoma:  "b04dbb63a1b14450aa40ef218b50510754b9bf558639f0e8985e4d65593cf401"
-    sha256 cellar: :any,                 arm64_ventura: "a613ffbefe64500340ab6223620f7d9e718a6a5afa9bbdf6b7e713b1d95a999f"
-    sha256 cellar: :any,                 sonoma:        "ebae2677d8f6ad7abfa89e4214b5483a5875c106171018dd0a7278719631d405"
-    sha256 cellar: :any,                 ventura:       "0247b766950405b91390c9aa8ef80511e7a6d17fed29e2db948c222e8fe1ea46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "007db5e00747953c2dc33218505fbd76943c4f66fb14d2cd6d56aa953391c1e7"
+    sha256 cellar: :any, arm64_sequoia: "4d224b0d0ecad55f58e7faad216c4456bc8a034b31f120714d94bed236360dc2"
+    sha256 cellar: :any, arm64_sonoma:  "217681e399331b45c9a8e12a7eeb02e520dcab102e634163292907005cb83b16"
+    sha256 cellar: :any, arm64_ventura: "910ff5cc9d9f6bf34bc028886291f5b865830872e538115c3610d5a62a15b570"
+    sha256 cellar: :any, sonoma:        "db720dd55a7f2c887fef60c79036d93d65d439c7f8e159f339ccb3c2ef66ba32"
+    sha256 cellar: :any, ventura:       "4eb809e0498a4a2844c2afa2d2255cdb5d7827b9d1925d7d561540b58bbcc248"
+    sha256               x86_64_linux:  "56b8e1b605aa397988beb3cb33cc9d394a83413468c7e68d22e78daab6d174fd"
   end
 
   depends_on "gobject-introspection" => :build

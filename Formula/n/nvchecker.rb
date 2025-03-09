@@ -8,12 +8,13 @@ class Nvchecker < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6734cb1c2faef177a4a410c3b061134f47d0964575d8c1a9a15d4dbf5cbb9622"
-    sha256 cellar: :any,                 arm64_sonoma:  "6844adee3e3689ac09d7a0c6d1b390044fd61c1e6ef4c38f44e782050fef13f0"
-    sha256 cellar: :any,                 arm64_ventura: "338d470c60339b4d4110a00787a5f9f9b923cae80bfedc8a18b05371e5e0c113"
-    sha256 cellar: :any,                 sonoma:        "a1c6ebb73d117b38c53049a406838c5d1e3438af096e44b92e4894c1d91faf51"
-    sha256 cellar: :any,                 ventura:       "0be60d1abbd3e2f59767fe7fa8f4757b0eb59c4c7a316e4d4902c617291c5977"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fcc81533608a5be3f12b965d04f00704e51a8863b69281db9412174acc935b08"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "686023c6a0a3dfed64bd7a6d0055504c9aba23f7167d52b9633eebadbf1984e8"
+    sha256 cellar: :any,                 arm64_sonoma:  "5414a54705945d0601f935340af272df3849366a3974b3fc55c1d7e0a88f96b0"
+    sha256 cellar: :any,                 arm64_ventura: "eb2e3cdf1413ac91aab74b95c07f29291d2f191345c6ae1b7093f0dd0c8d5dd3"
+    sha256 cellar: :any,                 sonoma:        "1715f0c344c9ed592184361ae35a3efac29e3da1a0025850e2e0250a53e9b8dc"
+    sha256 cellar: :any,                 ventura:       "7f7d3c35002dafd6b250fa2abb5ffe2e40b7716ff37497cd86ce5a592021ac24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8320d361449b9d258ffb38bf9e6ebc70820d2ef4888ac1a7f9bbb1f719ace5a8"
   end
 
   depends_on "curl"
@@ -31,13 +32,13 @@ class Nvchecker < Formula
   end
 
   resource "pycurl" do
-    url "https:files.pythonhosted.orgpackagesc95ae68b8abbc1102113b7839e708ba04ef4c4b8b8a6da392832bb166d09ea72pycurl-7.45.3.tar.gz"
-    sha256 "8c2471af9079ad798e1645ec0b0d3d4223db687379d17dd36a70637449f81d6b"
+    url "https:files.pythonhosted.orgpackages7135fe5088d914905391ef2995102cf5e1892cf32cab1fa6ef8130631c89ec01pycurl-7.45.6.tar.gz"
+    sha256 "2b73e66b22719ea48ac08a93fc88e57ef36d46d03cb09d972063c9aa86bb74e6"
   end
 
   resource "structlog" do
-    url "https:files.pythonhosted.orgpackages78a3e811a94ac3853826805253c906faa99219b79951c7d58605e89c79e65768structlog-24.4.0.tar.gz"
-    sha256 "b27bfecede327a6d2da5fbc96bd859f114ecc398a6389d664f62085ee7ae6fc4"
+    url "https:files.pythonhosted.orgpackages25fe578db23e17392a8693b45a7b7dc6985370f51dd937157def8ecc7b20930dstructlog-25.1.0.tar.gz"
+    sha256 "2ef2a572e0e27f09664965d31a576afe64e46ac6084ef5cec3c2b8cd6e4e3ad3"
   end
 
   resource "tornado" do

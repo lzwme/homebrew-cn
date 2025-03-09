@@ -6,6 +6,11 @@ class Netfetch < Formula
   license "MIT"
   head "https:github.comdeggjanetfetch.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(^v?(0(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f5ca9443c70310c77897987bdc5c8d285c8a86b718c4ef31fbbb7ad0f614f8f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5f5ca9443c70310c77897987bdc5c8d285c8a86b718c4ef31fbbb7ad0f614f8f"

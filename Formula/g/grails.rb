@@ -30,6 +30,10 @@ class Grails < Formula
     end
   end
 
+  def java_version
+    "17"
+  end
+
   def install
     odie "cli resource needs to be updated" if version != resource("cli").version
 
@@ -42,7 +46,7 @@ class Grails < Formula
       bash_completion.install "bingrails_completion" => "grails"
     end
 
-    bin.env_script_all_files libexec"bin", Language::Java.overridable_java_home_env("17")
+    bin.env_script_all_files libexec"bin", Language::Java.overridable_java_home_env(java_version)
   end
 
   def caveats
@@ -53,10 +57,36 @@ class Grails < Formula
   end
 
   test do
+    assert_match "Grails Version: #{version}", shell_output("#{bin}grails --version")
+
     system bin"grails", "create-app", "brew-test"
     assert_path_exists testpath"brew-testgradle.properties"
     assert_match "brew.test", File.read(testpath"brew-testbuild.gradle")
 
-    assert_match "Grails Version: #{version}", shell_output("#{bin}grails --version")
+    cd "brew-test" do
+      system bin"grails", "create-controller", "greeting"
+      rm "grails-appcontrollersbrewtestGreetingController.groovy"
+      Pathname("grails-appcontrollersbrewtestGreetingController.groovy").write <<~GROOVY
+        package brew.test
+        class GreetingController {
+            def index() {
+                render "Hello Homebrew"
+            }
+        }
+      GROOVY
+
+      # Test that scripts are compatible with OpenJDK version
+      port = free_port
+      ENV["JAVA_HOME"] = Language::Java.java_home(java_version)
+      system ".gradlew", "--no-daemon", "assemble"
+      pid = spawn ".gradlew", "--no-daemon", "bootRun", "-Dgrails.server.port=#{port}"
+      begin
+        sleep 20
+        assert_equal "Hello Homebrew", shell_output("curl --silent http:localhost:#{port}greetingindex")
+      ensure
+        Process.kill "TERM", pid
+        Process.wait pid
+      end
+    end
   end
 end

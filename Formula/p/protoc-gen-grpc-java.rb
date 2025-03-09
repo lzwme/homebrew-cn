@@ -14,10 +14,17 @@ class ProtocGenGrpcJava < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5409cf2417b4765cfed0343613f998845d3290c31028b514ee8125e18bce4be"
   end
 
-  depends_on "openjdk@21" => :build # due to Gradle 8.5
+  depends_on "gradle" => :build
+  depends_on "openjdk" => :build
   depends_on "pkgconf" => :build
   depends_on "abseil"
   depends_on "protobuf"
+
+  # Backport support for newer Gradle
+  patch do
+    url "https:github.comgrpcgrpc-javacommit60f6ea7b8eec1692fc877ec82dd67d6bb888f706.patch?full_index=1"
+    sha256 "75f1061860e3a01f1e9c57c05bbdf461cd5b9bc3301f94f2b3db683264dee63b"
+  end
 
   def install
     # Workaround for newer Protobuf to link to Abseil libraries
@@ -34,9 +41,7 @@ class ProtocGenGrpcJava < Formula
       s.gsub! ', "-static-libgcc"', ""
     end
 
-    # Fails with brew `gradle` due to animalsniffer 1.7.1
-    # Ref: https:github.comxvikgradle-animalsniffer-pluginissues100
-    system ".gradlew", "--no-daemon", "--project-dir=compiler", "-PskipAndroid=true", "java_pluginExecutable"
+    system "gradle", "--no-daemon", "--project-dir=compiler", "-PskipAndroid=true", "java_pluginExecutable"
     bin.install "compilerbuildexejava_pluginprotoc-gen-grpc-java"
 
     pkgshare.install "examplessrcmainprotohelloworld.proto"

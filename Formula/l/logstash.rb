@@ -13,15 +13,16 @@ class Logstash < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ea864fb804819bdfbb0b87ad67d8fd1272373e6efc6c3f8dd493ab518885858"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8f99c1ea576143026991cca725c2ec24cf6732b9fc69ff8efa77d67d4d2f3f1e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "72081ca85e9a97e3bf6ca69b2824eae2498f64b3ea55b3000ff41e1fb389906a"
-    sha256 cellar: :any,                 sonoma:        "6b1c41559bc8c8217fa5fb87648062b37e0da9e19fbe7c0803ba5f597192b4dc"
-    sha256 cellar: :any,                 ventura:       "6d84b198011fbef1331bcb1921ebbc39284d8580a1b97c2d97d19bf2b96c3dc0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1062bf4edc476a537dc665eb04426f17b8076d94a2370eb398df7b9ba8608dd"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "957a75a3bf21e8fa6136904f131b3925179e32a18c2e93aeab1197e64df87ddb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b9a895b94ada47b845518b32d915a7ab3e5fb036c27f674b8ae0cc5cad23302e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "731920a00fc30d6947ad95fab25dd3ee3a355faf12ccf5092cb6683c2560903c"
+    sha256 cellar: :any,                 sonoma:        "23ce9e31ba57773cca57429a976357ca9d376aee13826a84d7f2c1024bcb4776"
+    sha256 cellar: :any,                 ventura:       "39b8fc6e2221f741cbaf9f6a3ebff2d1e81e35509835b56110ebdc81eaebeb5b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "846c3d24bcbe97ebdf2c0900ce8cb11f31e3e0630ff28ccd36e420c2f27d5c53"
   end
 
-  depends_on "openjdk@17"
+  depends_on "openjdk@21"
 
   uses_from_macos "ruby" => :build
 
@@ -61,7 +62,7 @@ class Logstash < Formula
     rm_r(libexec"config")
 
     bin.install libexec"binlogstash", libexec"binlogstash-plugin"
-    bin.env_script_all_files libexec"bin", LS_JAVA_HOME: "${LS_JAVA_HOME:-#{Language::Java.java_home("17")}}"
+    bin.env_script_all_files libexec"bin", LS_JAVA_HOME: "${LS_JAVA_HOME:-#{Language::Java.java_home("21")}}"
 
     # remove non-native architecture pre-built libraries
     paths = [

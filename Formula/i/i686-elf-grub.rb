@@ -1,20 +1,21 @@
 class I686ElfGrub < Formula
   desc "GNU GRUB bootloader for i686-elf"
   homepage "https://savannah.gnu.org/projects/grub"
-  url "https://ftp.gnu.org/gnu/grub/grub-2.06.tar.xz"
-  mirror "https://mirrors.ocf.berkeley.edu/gnu/grub/grub-2.06.tar.xz"
-  sha256 "b79ea44af91b93d17cd3fe80bdae6ed43770678a9a5ae192ccea803ebb657ee1"
+  url "https://ftp.gnu.org/gnu/grub/grub-2.12.tar.xz"
+  mirror "https://mirrors.ocf.berkeley.edu/gnu/grub/grub-2.12.tar.xz"
+  sha256 "f3c97391f7c4eaa677a78e090c7e97e6dc47b16f655f04683ebd37bef7fe0faa"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sequoia: "5e69ba0912b4af63d9096b700661f94d7eee58f29cc6918a9bddbd1464ba6ab4"
-    sha256 arm64_sonoma:  "589a6326426f6af516b6f4e9c5de899d0e04e65da8e6818be289c0773b79f727"
-    sha256 arm64_ventura: "6019c03071dfb8b6317748ab2179c9db42f0a5fb5bc99e6beceb2f6f45c0a3a2"
-    sha256 sonoma:        "3016d288f6ea2fd6493e4217ce393b063615b95581fc4cd1c24579f8801bb019"
-    sha256 ventura:       "92b92f9ff2d8fdb59fe50b96556d481d3d247639e0354cf03eac74abf2827f6f"
-    sha256 x86_64_linux:  "6b00321d73386ac1e2c3a338fd6ea69b509bf0bd1bf6ea2025ff0a7740fc983a"
+    sha256 arm64_sequoia: "16923a4a52103eb6468129a574eb7b3c85d771adb37773d8e2a6850225805931"
+    sha256 arm64_sonoma:  "ceb84b9c359fbb659e7b355065513d605bd013fde1a642c4c9838d08499e5959"
+    sha256 arm64_ventura: "acfedbdc6b331ec2a1257cb55303befd965280978678c2f6e34f9dd45d6bd7e6"
+    sha256 sonoma:        "f72297ff2a716b0347a300c27b8ea3e0f40090b243b5500f0fe2c824de003ac3"
+    sha256 ventura:       "154a14a89653bdf2f8a521ae150c8e998e2bd51f2d9bf78560509b4a2d9791e8"
+    sha256 x86_64_linux:  "f6f03a027b9c884fedcc5c9c3fb85599a4d279ea38263afbb64824fb7148db84"
   end
 
+  depends_on "gawk" => :build
   depends_on "help2man" => :build
   depends_on "i686-elf-binutils" => :build
   depends_on "i686-elf-gcc" => [:build, :test]
@@ -33,6 +34,9 @@ class I686ElfGrub < Formula
 
   def install
     ENV.append_to_cflags "-Wno-error=incompatible-pointer-types"
+    ENV["PATH"]=prefix/"opt/gawk/libexec/gnubin:#{ENV["PATH"]}"
+
+    touch buildpath/"grub-core/extra_deps.lst"
 
     mkdir "build" do
       args = %W[

@@ -2,8 +2,8 @@ class Onnxruntime < Formula
   desc "Cross-platform, high performance scoring engine for ML models"
   homepage "https:github.commicrosoftonnxruntime"
   url "https:github.commicrosoftonnxruntime.git",
-      tag:      "v1.20.2",
-      revision: "8608bf02f21774be0388d2aa3a9f886d009d0b4c"
+      tag:      "v1.21.0",
+      revision: "e0b66cad282043d4377cea5269083f17771b6dfc"
   license "MIT"
 
   livecheck do
@@ -12,12 +12,12 @@ class Onnxruntime < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c6744238c6732f7d2a0191771cf70336219390d91ec36dff3d8f5ecad56e4fd6"
-    sha256 cellar: :any,                 arm64_sonoma:  "136615d2825b3b687f97c8afe00c1f5439e4b1f415103281179724c591be1640"
-    sha256 cellar: :any,                 arm64_ventura: "4add4f59367066ac9d18bc75e296f851f638c3543d2ccf7860f30b09f5122f6c"
-    sha256 cellar: :any,                 sonoma:        "d06de9bf6dc24efecd13ff5e4b1cb7501119bc8e99249a572792a780c62fec5b"
-    sha256 cellar: :any,                 ventura:       "0cb437a417c351214f324f56bb3da427d591887aeee60fe05a0effeaaad3e361"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d837a37a45678b84bca31d82cc2b2e7eb76bd71e3e5516731fe88039202ab512"
+    sha256 cellar: :any,                 arm64_sequoia: "7274f49bd2b56ea21a92a81b83afbdd2576fa94ba5829cbd674f6bacefdf2484"
+    sha256 cellar: :any,                 arm64_sonoma:  "f0decf50d64c68d6cf3d91a540d14002cb7126cafe1e3e49dd3c0c04f3a7c5c4"
+    sha256 cellar: :any,                 arm64_ventura: "b38052bf7959968170b0397f226ca8a32912afc7ab8d919833c059620d4c4895"
+    sha256 cellar: :any,                 sonoma:        "e446360155e5c58a757cb142e76ab307272bcf037cfcc8630bfde8b7bf35d06d"
+    sha256 cellar: :any,                 ventura:       "87a8e6152b8f73557e2bda6ee7673c51565362b4a53e675502ac07528716ce55"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "450d2d06a7b3cf547d26410cec335198aaeb28530159e1fb9df58b96173e1d8e"
   end
 
   depends_on "boost" => :build
@@ -39,37 +39,18 @@ class Onnxruntime < Formula
   #
   # https:github.commicrosoftonnxruntimeblobv#{version}cmakedeps.txt#L25
   resource "eigen" do
-    url "https:gitlab.comlibeigeneigen-archivee7248b26a1ed53fa030c5c459f7ea095dfd276aceigen-e7248b26a1ed53fa030c5c459f7ea095dfd276ac.tar.bz2"
-    sha256 "a3f1724de1dc7e7f74fbcc206ffcaeba27fd89b37dc71f9c31e505634d0c1634"
+    url "https:gitlab.comlibeigeneigen-archive1d8b82b0740839c0de7f1242a3585e3390ff5f33eigen-1d8b82b0740839c0de7f1242a3585e3390ff5f33.tar.bz2"
+    sha256 "37c2385d5b18471d46ac8c971ce9cf6a5a25d30112f5e4a2761a18c968faa202"
   end
 
-  # https:github.commicrosoftonnxruntimeblobv#{version}cmakedeps.txt#L52
+  # https:github.commicrosoftonnxruntimeblobv#{version}cmakedeps.txt#L51
   resource "pytorch_cpuinfo" do
     url "https:github.compytorchcpuinfoarchive8a1772a0c5c447df2d18edf33ec4603a8c9c04a6.tar.gz"
     sha256 "37bb2fd2d1e87102baea8d131a0c550c4ceff5a12fba61faeb1bff63868155f1"
   end
 
-  # Backport fix for build on Linux
-  patch do
-    url "https:github.commicrosoftonnxruntimecommit4d614e15bd9e6949bc3066754791da403e00d66c.patch?full_index=1"
-    sha256 "76f9920e591bc52ea80f661fa0b5b15479960004f1be103467b219e55c73a8cc"
-  end
-
-  # Backport support for Protobuf 26+
-  patch do
-    url "https:github.commicrosoftonnxruntimecommit704523c2d8a142f723a5cc242c62f5b20afa4944.patch?full_index=1"
-    sha256 "68a0300b02f1763a875c7f890c4611a95233b7ff1f7158f4328d5f906f21c84d"
-  end
-
   def install
     python3 = which("python3.13")
-
-    # Workaround to use brew `nsync`. Remove in future release with
-    # https:github.commicrosoftonnxruntimecommit88676e62b966add2cc144a4e7d8ae1dbda1148e8
-    inreplace "cmakeexternalonnxruntime_external_deps.cmake" do |s|
-      s.gsub!( NAMES nsync unofficial-nsync$, " NAMES nsync_cpp")
-      s.gsub!(\bunofficial::nsync::nsync_cpp\b, "nsync_cpp")
-    end
 
     resources.each do |r|
       (buildpath"build_deps#{r.name}-src").install r

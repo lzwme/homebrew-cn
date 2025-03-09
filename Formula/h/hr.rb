@@ -1,14 +1,13 @@
 class Hr < Formula
   desc "<hr >, for your terminal window"
   homepage "https:github.comLuRsThr"
-  url "https:github.comLuRsThrarchiverefstags1.4.tar.gz"
-  sha256 "decaf6e09473cb5792ba606f761786d8dce3587a820c8937a74b38b1bf5d80fb"
+  url "https:github.comLuRsThrarchiverefstags1.5.tar.gz"
+  sha256 "d4bb6e8495a8adaf7a70935172695d06943b4b10efcbfe4f8fcf6d5fe97ca251"
   license "MIT"
   head "https:github.comLuRsThr.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "2b4ca59ba24ac04e3a7c8d76f3a75b1ea8fb01f919e7a5ef7b7ee01a36820ac4"
+    sha256 cellar: :any_skip_relocation, all: "ef156edf072a61b38e5fd50fa8eb8e71f651ed459132490b8994737eb2691ed7"
   end
 
   def install

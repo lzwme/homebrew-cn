@@ -22,7 +22,9 @@ class Libdom < Formula
   depends_on "netsurf-buildsystem" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "libhubbub"
+  depends_on "libparserutils"
   depends_on "libwapcaplet"
+
   uses_from_macos "expat"
 
   def install

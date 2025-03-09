@@ -6,6 +6,14 @@ class Mold < Formula
   license "MIT"
   head "https:github.comrui314mold.git", branch: "main"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "b1774e7dd9dbe03d0b1eeba002c7a30b0c46c144112c1b78a1996a8d24b32ec3"
     sha256 cellar: :any,                 arm64_sonoma:  "1f27c0091228bf3a186112c4388939ca696c96d89666275e5216258a361afb1c"

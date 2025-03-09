@@ -4,6 +4,7 @@ class Urdfdom < Formula
   url "https:github.comrosurdfdomarchiverefstags4.0.1.tar.gz"
   sha256 "46b122c922f44ec32674a56e16fd4b5d068b53265898cbea2c3e1939ecccc62a"
   license "BSD-3-Clause"
+  revision 1
 
   # Upstream uses Git tags (e.g. `1.0.0`) to indicate a new version. They
   # created a few releases on GitHub in the past but now they simply use tags.
@@ -14,12 +15,12 @@ class Urdfdom < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d9c585056b45fa2d64da4613371f508b31ad4611f6510c7fe4f90ead4586fbfd"
-    sha256 cellar: :any,                 arm64_sonoma:  "2fc91d9d915c001a4bb09644ed81c3826da2bf2ac9c28c344d39f1bc68c635d5"
-    sha256 cellar: :any,                 arm64_ventura: "dd66ef35d29fcb96739777b2861277b7f26aa4300595d6c32d52a391c80a575b"
-    sha256 cellar: :any,                 sonoma:        "0c1cfbccf4ec391988a01790b5bc2c2d50d2335f74c55599772465c13e6f0505"
-    sha256 cellar: :any,                 ventura:       "fc7e201c27e4dff5f55208e03489194374f0b237b09cf4151561fb172e9b60f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3c2301cc4856402689959e4d995486c4c1b754a4fe3ca18128b2a202a986669"
+    sha256 cellar: :any,                 arm64_sequoia: "108b88071225f236dc04e2e6189c902e03b31be1cd8fa0d9c0653d37414fd18c"
+    sha256 cellar: :any,                 arm64_sonoma:  "618b3f4019cfd53385022f5d5013bd52e7dc49ee854202eec08248e3410f4017"
+    sha256 cellar: :any,                 arm64_ventura: "fc33f8045fbf5038b6c31220757525ff7a238495f3af954c78e1b6c4b9c4f55d"
+    sha256 cellar: :any,                 sonoma:        "65ccd92b9505b5fcb36025705eea6e0afb58f407686fa741645b5cae9dc5fbfd"
+    sha256 cellar: :any,                 ventura:       "fbd5af7974404db7c9e393a1260452fcac2075798f10910bb7f68bbb16facc12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dcf978305068ebc3082801f8aa67c683d821a66f8d3cfb60712676c62df9c14e"
   end
 
   depends_on "cmake" => :build

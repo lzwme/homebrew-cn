@@ -1,29 +1,22 @@
 class MacosTrash < Formula
   desc "Move files and folders to the trash"
   homepage "https:github.comsindresorhusmacos-trash"
-  url "https:github.comsindresorhusmacos-trasharchiverefstagsv1.2.0.tar.gz"
-  sha256 "c4472b5c8024806720779bc867da1958fe871fbd93d200af8a2cc4ad1941be28"
+  url "https:github.comsindresorhusmacos-trasharchiverefstagsv2.0.0.tar.gz"
+  sha256 "95eeea2a96e5d989145da4697206062798b9f708101dc426ae5a489969619114"
   license "MIT"
   head "https:github.comsindresorhusmacos-trash.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "291cf5358523a9a84842f779f09d36f7dccfe4c5f1cf6b5146b13e3098c4e3e6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "34f68f4aaee66e7a5db78072b47c51b9926b11b03b4fad43a71338f5db9e06b7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "14d22be61e2e75a7592b42234d0e62696340551aef10bb53d1996bd7e6af649d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0cff573086ce20b6b3c1ace838570390605cd758965e455c1b36b097b3130ccb"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "557c7c851c37f3cc90607e0565ee96e01f346ea675dcd2d894d5949471c90375"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3338a9e0978aa7763eeaacc726a284754ee3ec0120b40cad11b2a9013ccfe859"
-    sha256 cellar: :any_skip_relocation, ventura:        "f9e177eaa76b291ca8aab09866bcf8ad323fabc12f2c9ceeece59131cd3b67a3"
-    sha256 cellar: :any_skip_relocation, monterey:       "14e572ed0ed3b36e475357e7fe67b2a575da6f17b190350c9aec51fb08f45e7f"
-    sha256 cellar: :any_skip_relocation, big_sur:        "42e5185162cd75cb1e660beacfff18fa404dc98dcb5c5249d117c8dfe5fa6a53"
-    sha256 cellar: :any,                 catalina:       "bee0b6a9d5e1f9b23a9513a58d89b924ab3343613e94a62846eed2f9df8108d4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2428e281cfd65f72086b510be7e425635e855f4fda1d272964c30b5253a9df4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8aff9fa300a5df44f6659bfc66c7976e79b8e3aee583c22148ee50062517b281"
+    sha256 cellar: :any_skip_relocation, sonoma:        "240b1bf992d89a5b41c1f5346188c5059bd5b2ed0ba8c475f7a02310cc299e31"
   end
 
   keg_only :shadowed_by_macos
 
-  depends_on xcode: ["12.0", :build]
+  depends_on xcode: ["16.0", :build]
   depends_on :macos
-  uses_from_macos "swift", since: :big_sur # Swift 5.5.0
+  uses_from_macos "swift", since: :sonoma # Swift 6.0
 
   def install
     system "swift", "build", "--disable-sandbox", "-c", "release"

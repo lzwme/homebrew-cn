@@ -3,14 +3,13 @@ class GitRemoteHg < Formula
 
   desc "Transparent bidirectional bridge between Git and Mercurial"
   homepage "https:github.comfelipecgit-remote-hg"
-  url "https:github.comfelipecgit-remote-hgarchiverefstagsv0.6.tar.gz"
-  sha256 "1d49ffda290c8a307d32191655bdd85015e0e2f68bb2d64cddea04d8ae50a4bf"
+  url "https:github.comfelipecgit-remote-hgarchiverefstagsv0.7.tar.gz"
+  sha256 "ada593c2462bed5083ab0fbd50b9406b8e83b04a6c882de80483e7c77ce8bf07"
   license "GPL-2.0-only"
-  revision 3
   head "https:github.comfelipecgit-remote-hg.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "6592f095be3024d5ecca8b285d7fad64f9852c232e1c670d53961a0ee6d1c193"
+    sha256 cellar: :any_skip_relocation, all: "9c34492a26b47d11afe1c03ccd0e9ab9ec8f08050c8d54b70f5530d227a2aac5"
   end
 
   depends_on "asciidoctor" => :build

@@ -1,20 +1,18 @@
 class LibgeditAmtk < Formula
   desc "Actions, Menus and Toolbars Kit for GTK applications"
   homepage "https://gedit-technology.net"
-  url "https://gitlab.gnome.org/World/gedit/libgedit-amtk/-/archive/5.9.0/libgedit-amtk-5.9.0.tar.bz2"
-  sha256 "ce800b862793a0c00239a14983a86657792e8777a9122bdb32d8ec81eea243ce"
+  url "https://gitlab.gnome.org/World/gedit/libgedit-amtk/-/archive/5.9.1/libgedit-amtk-5.9.1.tar.bz2"
+  sha256 "2f7d5da4d42821965f096b2a66d8b5b5f8d7d76705fd23a907de160c995d35f4"
   license "LGPL-3.0-or-later"
   head "https://gitlab.gnome.org/World/gedit/libgedit-amtk.git", branch: "main"
 
   bottle do
-    sha256 arm64_sequoia:  "70ed2bfc3b08a403167d5a96a023bca4324c11e55a14fe04af86041f6f7f82ae"
-    sha256 arm64_sonoma:   "c3bbe730b463ba9fcc65eaafcb6247f0320eb566716e3c0d0abbb9d353add130"
-    sha256 arm64_ventura:  "f49182644bcf5261e8578adcf6cca696ea596fbeeee3a7334c215a6319ce959b"
-    sha256 arm64_monterey: "5abf449fbaec5ccefabd03ff812d35d4235a1134da09a38e47d4729016b86a40"
-    sha256 sonoma:         "8e8c682514431c8042a6bcab02dd2a9f5c829621d284ad03ace17772f0260bef"
-    sha256 ventura:        "3a41ed675a07e493126f4deb8d5c85426698eaa9f9ba0544b87106bb7c4871a0"
-    sha256 monterey:       "2e89649e6395b42bf253432cfbd1604465930bc95485d6ace2e699f15c0fd508"
-    sha256 x86_64_linux:   "99ba215bd56bf06c96ade75b1ebae5c9965155f69f869c014a1878685dee0519"
+    sha256 arm64_sequoia: "c6afbf2a294bb479782b425c6b9bf7258b0cf38031652aa8031dbb3ba32a2778"
+    sha256 arm64_sonoma:  "6c9760110e1cda5406ff084d6ce38622e14bfa203147b7f3cf8927f4e8c21d71"
+    sha256 arm64_ventura: "ec1031d95d3f32843a0020ff64017a23107ebad3d7d58560994be02dd1eb59ee"
+    sha256 sonoma:        "781ca6310c4334487c1378c6b733506584f878031c609965b99066c7b3036597"
+    sha256 ventura:       "715abfe98dd941d44bdca2d019a812441b331630900587f23e34319ec43e477e"
+    sha256 x86_64_linux:  "27205ec858d8f5f8af6325219c3b4fa8a851e30183e8ece633a5cad4840301bd"
   end
 
   depends_on "gobject-introspection" => :build

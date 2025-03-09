@@ -1,17 +1,17 @@
 class Ducker < Formula
   desc "Slightly quackers Docker TUI based on k9s"
   homepage "https:github.comrobertpsoaneducker"
-  url "https:github.comrobertpsoaneduckerarchiverefstagsv0.2.4.tar.gz"
-  sha256 "86f4a8aa3c1f50cd92a0203c6d71bbc07dcf7db5cf7798f3396a34404cda0d93"
+  url "https:github.comrobertpsoaneduckerarchiverefstagsv0.3.0.tar.gz"
+  sha256 "122026ec9d835ded2f623993918e25ef60f753a7e1210d73d3d1d3728836ecb8"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3af1d18af65f740713421aa230e4eb191ed67ab511d6ab4d152549536dba7f89"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9389ad2835f4f929c00dedbadafe93a1c9f94a7e9188fef336fac4fe8c1d7466"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a1bdc24f5072e07d36180a5340a7a062c947b81ab37074c8ec7374747ecf937e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0ba9413e6e8d1309115db3ad01afc5d71dab595f831bb001358714e77499cf87"
-    sha256 cellar: :any_skip_relocation, ventura:       "a8cc46a86928f70349fd891794f115c808d8f483b09a0f328dc3afec3120583a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84679a1cbf9f9ce9554521f11b3851b3c322b9b75c8861d45a7e6ada164b494b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "879ee0904c0c8d6604d6c4df86566910b0934c304a3f47d1903e09af01a734c8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de041d0416d502a00f6fc6431cf742f5c796683a709aa95cfe764f340f280494"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3f2d51a8877db9e944e862e8f19d6372f0bcee65cbb59ddc06a6b284d56c74f5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a06955cdf22f6b67ea433a47be4b070f399bd9d272e074ae432b2f8184fee7b2"
+    sha256 cellar: :any_skip_relocation, ventura:       "613bef7394717defcb7ddc43b29bfb72c4ace6a6c4e4298d0a6c3111127af2f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23dbe74594546f8e990291b4ade931849aa513f5c775d44c04859243fb760927"
   end
 
   depends_on "rust" => :build
