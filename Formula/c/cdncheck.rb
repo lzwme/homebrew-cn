@@ -1,8 +1,8 @@
 class Cdncheck < Formula
   desc "Utility to detect various technology for a given IP address"
   homepage "https:projectdiscovery.io"
-  url "https:github.comprojectdiscoverycdncheckarchiverefstagsv1.1.8.tar.gz"
-  sha256 "0140424474c6b920fb0eaaa11140dc4c43c194a153b3681ad65ae952b2928bc4"
+  url "https:github.comprojectdiscoverycdncheckarchiverefstagsv1.1.9.tar.gz"
+  sha256 "a1e1e86309c44b81a40d258505517d1071ec6d3d4e7599836f6ee95b114dde01"
   license "MIT"
   head "https:github.comprojectdiscoverycdncheck.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Cdncheck < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a8b0068faa5672ab65a1c21aec90eb4c45b1676a59acfcdc62405cc17332443"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "266656802b450c810e68643abed5c7510a9d5cfceddea13cbfeba8462b85544e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "de2d3fc0b1e1459de756522f86a02282cbb4706289771a529fd263f088be5cdb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3dc740975e40cb8382261421807303e80fa252e5d531032efc8470c0d9191c01"
-    sha256 cellar: :any_skip_relocation, ventura:       "d303886921a37cb0d63e35919a7910e008f833c822ccff8eed0c6d8fce967d06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82c11a7cffe76914f8831a6346c1ac18b78280d2c75fa24b09660fe726c4ca32"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7f3e75b164947a0bf5032a8cc101d4fc1459d9499be52a6de829152df4e6b08"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a062719a3ac34239bf19638ca359878eda465ff30045a39c628d44a6384b378"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d588f0612ae4d3b67f5ec685677dd5cac99254a21dfca54c553b5a131367c89f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "512e72037305fc6d73a28587be401f05abd8e648bbaf4066c56f9b26707f5364"
+    sha256 cellar: :any_skip_relocation, ventura:       "2eb90eb0b0649cb932c7037b23218d7d7e8b1993102e0b37a386324b15d099d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09a73a92e33adf54f7b900206bb4a93324b5c530ea5c93a3e2178f39aca61e48"
   end
 
   depends_on "go" => :build

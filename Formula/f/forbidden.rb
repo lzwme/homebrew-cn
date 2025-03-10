@@ -3,22 +3,22 @@ class Forbidden < Formula
 
   desc "Bypass 4xx HTTP response status codes and more"
   homepage "https:github.comivan-sincekforbidden"
-  url "https:files.pythonhosted.orgpackagesa3bd07a1b00ed63815153713a6b7fa814174b798ab0c1fa97d6e6b6d0d50ccabforbidden-12.6.tar.gz"
-  sha256 "c4bee241622d64b813295f9f58681fb05cc3fd547264ef6bd6495c2fca74f605"
+  url "https:files.pythonhosted.orgpackages281471974166379e5e57750a6855932f7326b37091733fb42d5259918b9df97eforbidden-13.0.tar.gz"
+  sha256 "b61e7cf6ce9cce031eba22b1c562bb3c11ce34d1e44230b7f8e0ef3996f60d34"
   license "MIT"
   head "https:github.comivan-sincekforbidden.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "ead1ae99f5e4ed83ca0ef2aca44b1bf788c70198dfa15530ec5cb81b41364fa7"
-    sha256 cellar: :any,                 arm64_sonoma:  "272b15b904ed2e42f556717c9e23e772d02a0ffeb6b53bcd548da84faf66f98a"
-    sha256 cellar: :any,                 arm64_ventura: "9e1073e7764530dad93dfe18953f8cbf6dc45e235e8b197eeddf228cf2718650"
-    sha256 cellar: :any,                 sonoma:        "d96f75eb99b2fd7361a174547a9e3867c9b59493cbc7f4c9073e15411cba3299"
-    sha256 cellar: :any,                 ventura:       "1bcb540499b1059abb4b2e1b962f13b2c9047a1f897550895cc6ff88c1e3b820"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f1c0ac8cd94daec578dec11c971a8f45bbdc409428cb94622f70302c7a76365"
+    sha256 cellar: :any,                 arm64_sequoia: "d6543f959f8249d1f5fda731f4c77809c60ba2f7bb1b2fdeb4a074bbaba3e7c7"
+    sha256 cellar: :any,                 arm64_sonoma:  "84c84210c7f87864f200af806a867453ce1c62497920f4ea075f112ee0408156"
+    sha256 cellar: :any,                 arm64_ventura: "7f9156c0e8415ee35cd7182788567797077e8bde5ddfd287607c09f9b992e4ab"
+    sha256 cellar: :any,                 sonoma:        "25f2376cac3fdcca7419102f9f17b1ec010c114fc33159d7a1ab6316087092d3"
+    sha256 cellar: :any,                 ventura:       "27af14a3880f890208202e49bab4b64e12c2463e4ba144caf46a19b90fe41455"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50d6a8151053fd830385b2d09f1e0669333053c52779ad718536ffbea582b522"
   end
 
   depends_on "certifi"
+  depends_on "cryptography"
   depends_on "curl"
   depends_on "openssl@3"
   depends_on "python@3.13"
@@ -29,13 +29,18 @@ class Forbidden < Formula
   end
 
   resource "alive-progress" do
-    url "https:files.pythonhosted.orgpackages6acfde25c4f6123c3b3eb5acc87144d3e017df25b32c16806b14572a259939acalive-progress-3.1.5.tar.gz"
-    sha256 "42e399a66c8150dc507602dff7b7953f105ef11faf97ddaa6d27b1cbf45c4c98"
+    url "https:files.pythonhosted.orgpackages2866c2c1e6674b3b7202ce529cf7d9971c93031e843b8e0c86a85f693e6185b8alive-progress-3.2.0.tar.gz"
+    sha256 "ede29d046ff454fe56b941f686f89dd9389430c4a5b7658e445cb0b80e0e4deb"
+  end
+
+  resource "bot-safe-agents" do
+    url "https:files.pythonhosted.orgpackages6a06a557cece31bdf2992db8099f3e0e3296e955cf681f0cab4a5dc89779c984bot_safe_agents-1.0.tar.gz"
+    sha256 "8b2d9e435ec10a89563b10a6ca977bbf8fb43cf4eca7d8e412e2e69c8aff400c"
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
-    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
+    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
+    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
   end
 
   resource "colorama" do
@@ -54,27 +59,18 @@ class Forbidden < Formula
   end
 
   resource "pycurl" do
-    url "https:files.pythonhosted.orgpackagesc95ae68b8abbc1102113b7839e708ba04ef4c4b8b8a6da392832bb166d09ea72pycurl-7.45.3.tar.gz"
-    sha256 "8c2471af9079ad798e1645ec0b0d3d4223db687379d17dd36a70637449f81d6b"
-
-    # Remove -flat_namespace
-    # PR ref: https:github.compycurlpycurlpull855
-    on_sequoia :or_newer do
-      patch do
-        url "https:github.compycurlpycurlcommit7deb85e24981e23258ea411dcc79ca9b527a297d.patch?full_index=1"
-        sha256 "a49fa9143287398856274f019a04cf07b0c345560e1320526415e9280ce2efbc"
-      end
-    end
+    url "https:files.pythonhosted.orgpackages7135fe5088d914905391ef2995102cf5e1892cf32cab1fa6ef8130631c89ec01pycurl-7.45.6.tar.gz"
+    sha256 "2b73e66b22719ea48ac08a93fc88e57ef36d46d03cb09d972063c9aa86bb74e6"
   end
 
   resource "pyjwt" do
-    url "https:files.pythonhosted.orgpackagesfb68ce067f09fca4abeca8771fe667d89cc347d1e99da3e093112ac329c6020epyjwt-2.9.0.tar.gz"
-    sha256 "7e1e5b56cc735432a7369cbfa0efe50fa113ebecdc04ae6922deba8b84582d0c"
+    url "https:files.pythonhosted.orgpackagese746bd74733ff231675599650d3e47f361794b22ef3e3770998dda30d3b63726pyjwt-2.10.1.tar.gz"
+    sha256 "3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953"
   end
 
   resource "regex" do
-    url "https:files.pythonhosted.orgpackagesf938148df33b4dbca3bd069b963acab5e0fa1a9dbd6820f8c322d0dd6faeff96regex-2024.9.11.tar.gz"
-    sha256 "6c188c307e8433bcb63dc1915022deb553b4203a70722fc542c363bf120a01fd"
+    url "https:files.pythonhosted.orgpackages8e5fbd69653fbfb76cf8604468d3b4ec4c403197144c7bfe0e6a5fc9e02a07cbregex-2024.11.6.tar.gz"
+    sha256 "7ab159b063c52a0333c884e4679f8d7a85112ee3078fe3d9004b2dd875585519"
   end
 
   resource "requests" do
@@ -93,8 +89,8 @@ class Forbidden < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https:files.pythonhosted.orgpackagesaa63e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66urllib3-2.3.0.tar.gz"
+    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
   end
 
   def install
@@ -103,6 +99,6 @@ class Forbidden < Formula
 
   test do
     output = shell_output("#{bin}forbidden -u https:brew.sh -t methods -f GET")
-    assert_match '"code": 200', output
+    assert_match "\"status\": 200", output
   end
 end

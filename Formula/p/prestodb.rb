@@ -16,10 +16,11 @@ class Prestodb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "17327469b90b34fed7a4ec15f9de93dade68120221296b8962f53db98f0f66b4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "1bc6a7c18c6d8b8cfa26f0b235c7d0b6e9706fe3d7a3feed66cede28b878bb39"
   end
 
-  depends_on "openjdk@11"
+  depends_on "openjdk@17"
   depends_on "python@3.13"
 
   resource "presto-cli" do
@@ -32,6 +33,7 @@ class Prestodb < Formula
   end
 
   def install
+    java_version = "17"
     odie "presto-cli resource needs to be updated" if version != resource("presto-cli").version
 
     # Manually extract tarball to avoid multiple copiesmoves of over 2GB of files
@@ -71,13 +73,12 @@ class Prestodb < Formula
     (libexec"etccatalogjmx.properties").write "connector.name=jmx"
 
     rewrite_shebang detected_python_shebang, libexec"binlauncher.py"
-    env = Language::Java.overridable_java_home_env("11")
-    env["PATH"] = "$JAVA_HOMEbin:$PATH"
+    env = Language::Java.overridable_java_home_env(java_version)
     (bin"presto-server").write_env_script libexec"binlauncher", env
 
     resource("presto-cli").stage do
       libexec.install "presto-cli-#{version}-executable.jar"
-      bin.write_jar_script libexec"presto-cli-#{version}-executable.jar", "presto", java_version: "11"
+      bin.write_jar_script(libexec"presto-cli-#{version}-executable.jar", "presto", java_version:)
     end
 
     # Remove incompatible pre-built binaries

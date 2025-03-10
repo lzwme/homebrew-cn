@@ -1,17 +1,18 @@
 class Vscli < Formula
   desc "CLITUI that launches VSCode projects, with a focus on dev containers"
   homepage "https:github.commichidkvscli"
-  url "https:github.commichidkvscliarchiverefstagsv1.2.0.tar.gz"
-  sha256 "5d3eed6c34541fca9f98d766a94b287f648af43d219d68e8546f9862abc34259"
+  url "https:github.commichidkvscliarchiverefstagsv1.3.0.tar.gz"
+  sha256 "91384db69cf5b32af96178df79634d5707eaffaf3517a567e965d3c5a32f81fb"
   license "MIT"
+  head "https:github.commichidkvscli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a7c075db90e8c2d6a452882b22ee9bcd0cf5982aae60c86e5c26b0564b50d535"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "827740cead93055a587501613a5ee3a96e09a142d33a3be520d2a89cbfc7c856"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9eae28c580f3823adf4dc5e35e914b087a62738dea0451937a8dcdd04c5a98d1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "87fac2025b44db077d1d81139a159b7cb7bab01be03feb53a10b06bcfe76ffe4"
-    sha256 cellar: :any_skip_relocation, ventura:       "bff70db8826ea88914067619f660bdb5aee3f0e9db34487a4810e88d8997e565"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2983fb995eb3a50c2625eeb980831fb431e6201929f8deb8e48b6ed7800e95a1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ccb604795d27bcc966a4aa2a33100b1162c808d2ec875a6e1420e8f879e1416"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00054eac8e8afb076cb0fdca4d5ff2eef8523963bf88ccbbb8e2a79c438813ce"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e8c0b3a54aa8f18e0e3bdf96941855a4641f73374e4c9c282c72b2aba9decb89"
+    sha256 cellar: :any_skip_relocation, sonoma:        "367ff1a937fc6b20de3ac0f80feb8626e352bdb543ec0ac8958bd9e58a10d2c3"
+    sha256 cellar: :any_skip_relocation, ventura:       "fa1962291453a1152836cd93461515b4eef44d9ae99c70de6f4f204836e7450d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8e75d6e48da77d6493750ce4d02c5de079d684e62908f7d3db2219477a8c250"
   end
 
   depends_on "rust" => :build
@@ -23,7 +24,7 @@ class Vscli < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}vscli --version")
 
-    output = pipe_output("#{bin}vscli open --dry-run 2>&1")
-    assert_match "No dev container found, opening on host system with code..", output
+    output = shell_output("#{bin}vscli open --dry-run 2>&1", 1)
+    assert_match "No dev container found, opening on host system with Visual Studio Code...", output
   end
 end

@@ -1,11 +1,20 @@
 class Beast < Formula
   desc "Bayesian Evolutionary Analysis Sampling Trees"
   homepage "https:beast.community"
-  url "https:github.combeast-devbeast-mcmcarchiverefstagsv1.10.4.tar.gz"
-  sha256 "6e28e2df680364867e088acd181877a5d6a1d664f70abc6eccc2ce3a34f3c54a"
   license "LGPL-2.1-or-later"
   revision 1
   head "https:github.combeast-devbeast-mcmc.git", branch: "master"
+
+  stable do
+    url "https:github.combeast-devbeast-mcmcarchiverefstagsv1.10.4.tar.gz"
+    sha256 "6e28e2df680364867e088acd181877a5d6a1d664f70abc6eccc2ce3a34f3c54a"
+
+    # Backport support for building on newer OpenJDK
+    patch do
+      url "https:github.combeast-devbeast-mcmccommit3b91c1d391daf350c92f84c5900b58ff72a889af.patch?full_index=1"
+      sha256 "64511255b4cd3339ad9be5a6b1cb98283cb279cab5a60913b9a1619433b702f7"
+    end
+  end
 
   livecheck do
     url :stable
@@ -13,28 +22,28 @@ class Beast < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5f161a2d0544992fe9471b5b6b03dde90fdc0f02c7a92d1a56ba8e692026b9e8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8530ad41042e8638c8aaa89dcee67c4f9a1cce11e192722d8d10c055fb85d10e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3475a2a399c4c91c538e8d5f802070826df46a9f1f7efcdc92ef643558013784"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b7f6d9ba542e77f28f82574b63097ef4a5000661ce725f9a7aa7e77e9d3f4e52"
-    sha256 cellar: :any_skip_relocation, ventura:       "5290a805fd0c62089889729bc188fd7ddb6ea51e077c1a33045e6b2ff630585e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d830864a6ea1dd1d984b70cb438ce3b17dabb3120640decf0e8136b37483517"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ec7cd636c5eb6427da2a75bb75976143fbae45c8d91e572d6dadb98913ac181"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "28cab0636b496492f69e99401ef9ab308380020d757534983109f09d6a2237ae"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "dc1635820e1fc7927203e32b9889e9a40046347d41da139a5242732b69113003"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bb2c0e36ea56bc4da5acd32fc8b94d3790b4941ae0a96c329edc09bdcda964f5"
+    sha256 cellar: :any_skip_relocation, ventura:       "addf828a1d4ee838921507d1c937a9ca17ea2b4666193461237fc218a1b1bddc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8974bcba1ac12db8bad1ccdd47976f468ea9f7739eb0d43fe120bb93e1cef388"
   end
 
   depends_on "ant" => :build
   depends_on "beagle"
-  depends_on "openjdk@11"
+  depends_on "openjdk"
 
   def install
-    ENV["JAVA_HOME"] = Language::Java.java_home("11")
+    ENV["JAVA_HOME"] = Language::Java.java_home
     system "ant", "linux"
     libexec.install Dir["releaseLinuxBEASTv**"]
     pkgshare.install_symlink libexec"examples"
     bin.install Dir[libexec"bin*"]
 
-    env = Language::Java.overridable_java_home_env("11")
-    env["PATH"] = "$JAVA_HOMEbin:$PATH" if OS.linux?
+    env = Language::Java.overridable_java_home_env
+    env["PATH"] = "${JAVA_HOME}bin:${PATH}" if OS.linux?
     bin.env_script_all_files libexec"bin", env
     inreplace libexec"binbeast", "usrlocal", HOMEBREW_PREFIX
   end

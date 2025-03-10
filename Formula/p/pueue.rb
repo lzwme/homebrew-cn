@@ -1,19 +1,18 @@
 class Pueue < Formula
   desc "Command-line tool for managing long-running shell commands"
   homepage "https:github.comNukesorpueue"
-  url "https:github.comNukesorpueuearchiverefstagsv3.4.1.tar.gz"
-  sha256 "868710de128db49e0a0c4ddee127dfc0e19b20cbdfd4a9d53d5ed792c5538244"
+  url "https:github.comNukesorpueuearchiverefstagsv4.0.0.tar.gz"
+  sha256 "b7add2bdd6cdce683eea5b24932ed12534b76c29143d8183216c4afc60beef04"
   license "MIT"
   head "https:github.comNukesorpueue.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "069ad84e3ec9d9513ebfbe1272a18352cd6b0594ee9b3a03912b735a5bf97676"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "12dac34c9a768b35c11abd2e91798085c8af6dbe5957741ba2887a2435f2d2d9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f66df95de1cdf2bef246ba8d327779dbeebd77314496c8a90be1c222a22ab72b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e2cd03a375f5ee42700ba2698ba3a11fb453faebd7c9797b184229cb675dc37a"
-    sha256 cellar: :any_skip_relocation, ventura:       "513cf264a536c71dac1211a840db4aaa18a45103d5486c523f3e42eeea4dbfa5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36b77846f503d5b2a7ae1262f26b11511b94f151498b103b0ed5aeb4045ad667"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "170ca77ac6679b9328df9d5da9a8d3227161031ff17feec521b271fad097ed43"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44245c1005018aeefff4fe0885265e55ded796af87f194e04d359dad6fc3dad8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "938eef3100512ec81969982800e41b84cb2efa2f4dfcf262c2ef67f146a77dfa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b68235503ed828ea8d81cd592700abb5e996fc6b24394583182dae26afc643d8"
+    sha256 cellar: :any_skip_relocation, ventura:       "f33c771f11eebc356e0ad2415b690c2e22ce9540894813f4ed2c3d78d36a73cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6cf0e61c3073f9afa2cb68f6e6f4e0a7de02c0142bc845a3e7ed509bacd34a10"
   end
 
   depends_on "rust" => :build

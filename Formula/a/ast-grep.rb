@@ -1,18 +1,18 @@
 class AstGrep < Formula
   desc "Code searching, linting, rewriting"
   homepage "https:github.comast-grepast-grep"
-  url "https:github.comast-grepast-greparchiverefstags0.35.0.tar.gz"
-  sha256 "bc143bef9bbec56c5fd85cc1936e0bc4215c71b0f4a9013b2aa86b2280352875"
+  url "https:github.comast-grepast-greparchiverefstags0.36.0.tar.gz"
+  sha256 "aa8c1199d191859d61f4b407ad8ad34aa46a5a57575110b6605a1bf74f7f2363"
   license "MIT"
   head "https:github.comast-grepast-grep.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2fa2885945a9bb7afc3527b5e071c9054269c66d0bb75ecdc83917ecc802fb2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e501e74fdcbd525512543da393644ec7162707de7c403891ba2e193719ed1887"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4792575b1932dd6848eac8c51eb2f17e9a0adcc25d0e6d5229972662e7a96c4d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "90b54b7e27bdfb1b33a99df4161fc919f2aed11cd5a7d405dd48095b6c92e8ed"
-    sha256 cellar: :any_skip_relocation, ventura:       "93e0b24137db995c82e993ecc48bb5bae8daf902a881b9cb0d8e7b31d19e2be5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b1245c9a794dd10167016c676be6356152656d1e15dd1d77e2a9f86946cb66e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ffc499e3d774e8fdabfa6167e05423ca05081c9c72098af2bcc2fbb5038f0ec6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a1c904269697f38365985b4e70b8b6699112a817c48eeda55892c399010efe26"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4b08c7b8f128eae34fd696529911a24be248236e90882e3a6da64917ba44210e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "24b59e7cf3d612ee05bc8a2ef0c06d427288690e11082d446d9bb83cf2b1e448"
+    sha256 cellar: :any_skip_relocation, ventura:       "830ea5dc261697a9c094bcc113cd688ae7649cfe0fc889e6afc2b519526b5832"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "424a5578df720bede27a7b8334ba0ccf084755be1bec1e8dc438587868d575a0"
   end
 
   depends_on "rust" => :build

@@ -6,14 +6,15 @@ class Ocrmypdf < Formula
   url "https://files.pythonhosted.org/packages/07/cf/d207aea8442a8e5a63b16faae89af2b9e3474d8d5925a5ea8c4f10f73fa9/ocrmypdf-16.10.0.tar.gz"
   sha256 "d5b907a7b92951f1f3617f0f5ca002d866143d94fd168546a70e51756bf6412e"
   license "MPL-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7dc0816282934a40bfc6d6151bd20916f5230369d76b7541980aa0e997fba59e"
-    sha256 cellar: :any,                 arm64_sonoma:  "3482046886175ed9f4b196b013a9e44a3d8ced91b6893035b3a1b6f057a42290"
-    sha256 cellar: :any,                 arm64_ventura: "8d32eb8324f557eecf2c4f5fd70a6dd4523599648dc77c2a16f3082329f7ad16"
-    sha256 cellar: :any,                 sonoma:        "8a9d0b027c9bf343357844bdb3ce496ade94534f57565f356cf76a8cea796d5b"
-    sha256 cellar: :any,                 ventura:       "55b4854a0affc3f2af2ed48ef73f463cb14b5b24dd06e964458af607b16c13b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6b3fff271ac8746adbb7d7aab41922b6958583729e117127a45f35742ebe90a"
+    sha256 cellar: :any,                 arm64_sequoia: "1188e0366cb4c5b43be5f16b247257b9096b73eb9a3335736f1c26a66da142d1"
+    sha256 cellar: :any,                 arm64_sonoma:  "1985541922050ae776a9e64e76792a4babe548cf3f3cc46c458fe22364004d88"
+    sha256 cellar: :any,                 arm64_ventura: "bb0092ad31c407c37a6a660b6263c5b489166efd8de5aa65f0a7026d46f4aa97"
+    sha256 cellar: :any,                 sonoma:        "734b8231f66bdbd5d2fdbeccd7545a1345cdd4c3bcd4afd6686f7a48749ba862"
+    sha256 cellar: :any,                 ventura:       "2f2275dfaa08ceaac5932e9deec3d84f335ad31d3d3c9435c9f17c36e1543a6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af7782bb4b312000ce9fbb4863a37f286c44061010a86a7a81825771a29c1275"
   end
 
   depends_on "pkgconf" => :build

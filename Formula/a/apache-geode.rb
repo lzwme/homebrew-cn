@@ -8,24 +8,43 @@ class ApacheGeode < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "48da66d985afa6956fc68c6be0fc4b78c02d6a206282e9c1e5536fea83cd3bdb"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, all: "36121f60a1dd6f9a614219b11e6f4d3e9fd91e76dc91af213b54af1cbeab0ae0"
   end
 
-  depends_on "openjdk@11"
+  depends_on "openjdk"
 
   def install
     rm("bin/gfsh.bat")
     bash_completion.install "bin/gfsh-completion.bash" => "gfsh"
     libexec.install Dir["*"]
-    (bin/"gfsh").write_env_script libexec/"bin/gfsh", Language::Java.java_home_env("11")
+    (bin/"gfsh").write_env_script libexec/"bin/gfsh", Language::Java.overridable_java_home_env
   end
 
   test do
-    flags = "--dir #{testpath} --name=geode_locator_brew_test"
-    output = shell_output("#{bin}/gfsh start locator #{flags}")
+    output = shell_output("#{bin}/gfsh start locator --name=locator1")
     assert_match "Cluster configuration service is up and running", output
+
+    output = shell_output("#{bin}/gfsh -e connect -e 'start server --name=server1 --server-port=#{free_port}'")
+    assert_match "server1 is currently online", output
+
+    output = shell_output("#{bin}/gfsh -e connect -e 'create region --name=regionA --type=REPLICATE_PERSISTENT'")
+    assert_match 'Region "/regionA" created on "server1"', output
+
+    output = shell_output("#{bin}/gfsh -e connect -e 'put --region=regionA --key=\"1\" --value=\"one\"'")
+    assert_match(/Result\s*:\s*true/, output)
+
+    output = shell_output("#{bin}/gfsh -e connect -e 'put --region=regionA --key=\"2\" --value=\"two\"'")
+    assert_match(/Result\s*:\s*true/, output)
+
+    output = shell_output("#{bin}/gfsh -e connect -e 'query --query=\"select * from /regionA\"'")
+    assert_match <<~EOS, output
+      Result
+      ------
+      two
+      one
+    EOS
   ensure
-    quiet_system "pkill", "-9", "-f", "geode_locator_brew_test"
+    system bin/"gfsh", "-e", "connect", "-e", "shutdown --include-locators=true"
   end
 end

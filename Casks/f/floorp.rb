@@ -9,8 +9,8 @@ cask "floorp" do
   homepage "https:floorp.app"
 
   livecheck do
-    url :url
-    strategy :github_latest
+    url "https:floorp.appendownload"
+    regex(%r{v?(\d+(?:\.\d+)+)floorp[._-]macOS[._-]universal\.dmg}i)
   end
 
   auto_updates true

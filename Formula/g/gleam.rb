@@ -1,8 +1,8 @@
 class Gleam < Formula
   desc "Statically typed language for the Erlang VM"
   homepage "https:gleam.run"
-  url "https:github.comgleam-langgleamarchiverefstagsv1.8.1.tar.gz"
-  sha256 "5ad243c092fb229d0ae77214beaa462cd9a53018e553decb9b12a2ea1fab6494"
+  url "https:github.comgleam-langgleamarchiverefstagsv1.9.0.tar.gz"
+  sha256 "ba3121d6e335f086caa5eeaf1caca61960a75f25f60e6d99c7b129d52f12153d"
   license "Apache-2.0"
   head "https:github.comgleam-langgleam.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Gleam < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff54bd662e5e3614a6de98eebce6a9c87a17fde112ad1e4e49406817c1d4f566"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "500d920e194c8105fae37115ac8b8db04c5c17f23eaba3bec376abce2b2b7543"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c259f4f274702f0ccd412551242d2353dc03c551f0de5ba2a49de400562af5ca"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bddb5a83c9e90c56e63288f90124fc1bbad3e6ddec577e76333d53db28aceb4b"
-    sha256 cellar: :any_skip_relocation, ventura:       "0e5c30c8bd01453d2120ca7fe81ceb6872a80a9a1bd9d7c3209dcb4fa64cb334"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3be37d497809c98ce7024dec46e83cb9582801af02c59ba962d5065db54819cd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8daa4b12b8fdd0e90ff238750ec746746723ef7395e43b31753b2e98d95b7429"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3565ea2c12aa3ff4ab0f137ff08839ad687a6776963fb186a0da792a2db524f1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a6cdbe42c0db9e87ab10e258563b3fa92dbfef20020ea8ad9954978955723214"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7ddeadab537cb83dd0da419ae08a25b0c6b65224f6ee8808d691ee6a0b91e5ef"
+    sha256 cellar: :any_skip_relocation, ventura:       "12131137986c37afe246a61668bb40991a5ca09494d16f7e64d55836489cc0d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ab435fc91d1a6cb6496c2c03ebf395909e9c874de4967e29cbe2a019cf4975a"
   end
 
   depends_on "pkgconf" => :build
@@ -26,7 +26,7 @@ class Gleam < Formula
   depends_on "rebar3"
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "compiler-cli")
+    system "cargo", "install", *std_cargo_args(path: "gleam-bin")
   end
 
   test do

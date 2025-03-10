@@ -1731,6 +1731,7 @@ Homebrew-homebrew-core/Formula/e/ettercap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/euler-py.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/eureka.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/eva.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/e/evans.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/eventpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/evernote-backup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/evernote2md.rb, Homebrew/homebrew-core, 1
@@ -2829,6 +2830,7 @@ Homebrew-homebrew-core/Formula/i/iftop.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ifuse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ignite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/igraph.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/iguana.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/igv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/ii.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/iir1.rb, Homebrew/homebrew-core, 1
@@ -2984,6 +2986,7 @@ Homebrew-homebrew-core/Formula/j/jello.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jellyfish.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jemalloc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jena.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/j/jenkins-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jenkins-job-builder.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jenkins-lts.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jenkins.rb, Homebrew/homebrew-core, 1
@@ -3128,6 +3131,7 @@ Homebrew-homebrew-core/Formula/k/kaskade.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/katago.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/katana.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kawa.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/kbld.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kcat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kcgi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kconf.rb, Homebrew/homebrew-core, 1
@@ -4803,7 +4807,7 @@ Homebrew-homebrew-core/Formula/o/opencoarrays.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opencolorio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openconnect.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opencore-amr.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/o/opencsg.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/o/opencsg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opencv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/opendbx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opendetex.rb, Homebrew/homebrew-core, 1
@@ -4915,6 +4919,7 @@ Homebrew-homebrew-core/Formula/o/ossp-uuid.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/osv-scanner.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/osx-cpu-temp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/osxutils.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/otel-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/otf2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/otf2bdf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/otree.rb, Homebrew/homebrew-core, 1
@@ -5649,6 +5654,7 @@ Homebrew-homebrew-core/Formula/r/reproc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/req.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/reshape.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/restic.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/restish.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/restview.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/resty.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/resvg.rb, Homebrew/homebrew-core, 1
@@ -8198,6 +8204,7 @@ Homebrew-homebrew-cask/Casks/c/cloud189.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cloudash.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cloudcompare.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cloudflare-warp.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/cloudflare-warp@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cloudmounter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cloudnet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cloudup.rb, Homebrew/homebrew-cask, 0
@@ -8435,6 +8442,7 @@ Homebrew-homebrew-cask/Casks/d/denemo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/descript.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/deskpad.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/deskreen.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/d/desktime.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/desktoppr.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/desktoputility.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/desmume.rb, Homebrew/homebrew-cask, 1
@@ -11125,6 +11133,7 @@ Homebrew-homebrew-cask/Casks/font/font-s/font-souliyo.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/font/font-s/font-sour-gummy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-source-code-pro-for-powerline.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-source-code-pro.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-s/font-source-han-code-jp.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-source-sans-3.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-source-serif-4.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-space-grotesk.rb, Homebrew/homebrew-cask, 1
@@ -13830,6 +13839,7 @@ Homebrew-homebrew-cask/Casks/s/softmaker-freeoffice.rb, Homebrew/homebrew-cask, 
 Homebrew-homebrew-cask/Casks/s/softorino-youtube-converter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/softraid.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/softube-central.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/sokim.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sol.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/solar2d.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/solvespace.rb, Homebrew/homebrew-cask, 1
@@ -13856,6 +13866,7 @@ Homebrew-homebrew-cask/Casks/s/soulver-cli.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/soulver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sound-control.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sound-siphon.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/soundanchor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/soundboosterlite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/soundflower.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/soundflowerbed.rb, Homebrew/homebrew-cask, 1

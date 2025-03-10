@@ -1,46 +1,41 @@
 class Opencsg < Formula
   desc "Constructive solid geometry rendering library"
-  homepage "https://www.opencsg.org/"
-  url "https://www.opencsg.org/OpenCSG-1.8.0.tar.gz"
-  sha256 "cb2fca02f73d9846566a97cd40863a68143a141aff34c75935be452e52efdb10"
+  homepage "https:www.opencsg.org"
+  url "https:www.opencsg.orgOpenCSG-1.8.1.tar.gz"
+  sha256 "afcc004a89ed3bc478a9e4ba39b20f3d589b24e23e275b7383f91a590d4d57c5"
   license "GPL-2.0-or-later"
 
   livecheck do
     url :homepage
-    regex(/href=.*?OpenCSG[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    regex(href=.*?OpenCSG[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3593c6eaad9f71c123a0812369c2e73d8ba7b130e83d9d8260580ce931e6e688"
-    sha256 cellar: :any,                 arm64_sonoma:  "df8adadeacc94919520029a57d1aea0bc10cce4a3283ad8c553249e60111b699"
-    sha256 cellar: :any,                 arm64_ventura: "877b8b0e60156bf6b5dbf7ac59bf985009feac839253357ad6053294ebec072c"
-    sha256 cellar: :any,                 sonoma:        "c8988828a3e4baf9a1111262498e0253fb30af2b5fb9a0100cb94f12f188d45f"
-    sha256 cellar: :any,                 ventura:       "bb2ce70f809a01ca27fdf9a3dd6cfc0cc7befb4d3811cc76e8e8a3735b5f68a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0ab095beec175e194a91f8ee2cdb4019c8e62e639f3f3bf8d52dca372d1e903"
+    sha256 cellar: :any,                 arm64_sequoia: "f92caa541b802161c2c60e745a49574ba379dcd40492dfb2cc9c4e123c89920d"
+    sha256 cellar: :any,                 arm64_sonoma:  "07b56281fbb460cadee1c2117d80a52d3967069363af998d99c7f2dc46ef1891"
+    sha256 cellar: :any,                 arm64_ventura: "e7ca2f7b0365b03aeea72adc6e87c80d8153f07bef3108fdc56eaab0682ad6c1"
+    sha256 cellar: :any,                 sonoma:        "89f9db42762d2ab1958e8bd5654c4f46644a1a831e1966f3581932925ea2212a"
+    sha256 cellar: :any,                 ventura:       "2c2c3b7ba27e8ee0190776fa0f35729e4bf0d27bb7d581e56f3cdf62d1d95fc4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6dc9589d54eb362645b8563f62c66b5e29bd44c50c0c4c483db011b3aac5ee5"
   end
 
   depends_on "cmake" => :build
   depends_on "glew"
 
+  # glew linkage patch, upstream pr ref, https:github.comfloriankirschOpenCSGpull16
+  patch do
+    url "https:github.comfloriankirschOpenCSGcommit881a41b52ebee60fb3f4511cd63813b06e8e05c1.patch?full_index=1"
+    sha256 "97e56d7a8bf01d153bce8b5685b0f06eb2befdefa07bb644a12dc79e4143f9ab"
+  end
+
   def install
-    # Add GLEW configuration and linkage
-    inreplace "src/CMakeLists.txt",
-              "find_package(OpenGL REQUIRED)",
-              "find_package(OpenGL REQUIRED)\nfind_package(GLEW REQUIRED)"
-
-    # Target "opencsg" links to: OpenGL::OpenGL but the target was not found.
-    # create linked to GLEW::GLEW
-    inreplace "src/CMakeLists.txt",
-              "target_link_libraries(opencsg PRIVATE OpenGL::OpenGL)",
-              "target_link_libraries(opencsg PRIVATE GLEW::GLEW)"
-
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_EXAMPLE=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
 
   test do
-    (testpath/"test.cpp").write <<~CPP
+    (testpath"test.cpp").write <<~CPP
       #include <opencsg.h>
       class Test : public OpenCSG::Primitive {
         public:
@@ -53,6 +48,6 @@ class Opencsg < Formula
     CPP
     gl_lib = OS.mac? ? ["-framework", "OpenGL"] : ["-lGL"]
     system ENV.cxx, "test.cpp", "-o", "test", "-L#{lib}", "-lopencsg", *gl_lib
-    system "./test"
+    system ".test"
   end
 end

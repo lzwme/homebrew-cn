@@ -1,18 +1,18 @@
 class Goku < Formula
   desc "HTTP load testing tool"
   homepage "https:github.comjcaromiqgoku"
-  url "https:github.comjcaromiqgokuarchiverefstagsv1.1.7.tar.gz"
-  sha256 "799e155c93937ccba830670fa25890d5fe53ceb01737926914d480ce0c39c752"
+  url "https:github.comjcaromiqgokuarchiverefstagsv1.1.8.tar.gz"
+  sha256 "d03020d63d36465bda0f07b3f3790b9e33579afe176a25fd01e89e9e9d066fc1"
   license "MIT"
   head "https:github.comjcaromiqgoku.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "657aa18fdf805a37325589e45c5e5bc1a25cba05b2177f7f14014f4acd12c525"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6184dca87b2a076aeb54c91f4550746364ee1f771e63d9f66163b64e0d5ca0da"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4013b6e044b064b1b23bf957758f95516f86101c4c57a115a0b63be0f4d6600c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "644ba3fc5c112ba74948d5db227a8e497a03c88a255b1cc90ab4667ce2c56ab3"
-    sha256 cellar: :any_skip_relocation, ventura:       "a04067161f92ebba9334d19183d32badc121e775690d6fb18459406e41fd8c6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e46c4374fbf1f3216b25c3e5b7a78ea69a4c62c80bbf82eefadbc23e28be2db"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "100754f13107f0414f552aebbf087ffa1ee892777cc9fb29ba9836cab4f5f65b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7cf2053dc80e501e5c0cf9755da15df707dcf922f5afb9d4bff62c5cd778e02"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "83e19267ed4940b2f1b5831d712e193ea56105d1d5d5277bb2300f4cf8df45fa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "41fc9a7fbc8b4314e4732287613fbcb653afa01960786781f66af564c4828c5a"
+    sha256 cellar: :any_skip_relocation, ventura:       "041d9131b78280d3e2b11a4a1c01bed36b6ed74c637c5229b43635752225b36c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08a058051f645a93d9f5c9eb5f18adad0eea699259b173873d077d6464211d0b"
   end
 
   depends_on "rust" => :build

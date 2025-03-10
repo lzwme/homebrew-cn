@@ -1,17 +1,17 @@
 class Xinit < Formula
   desc "Start the X Window System server"
   homepage "https:gitlab.freedesktop.orgxorgappxinit"
-  url "https:www.x.orgreleasesindividualappxinit-1.4.3.tar.xz"
-  sha256 "86409f21a6a31148d2c1c17bf5f2d904eb5ef455f9dc67c49fbd0c10ab18fd5a"
+  url "https:www.x.orgreleasesindividualappxinit-1.4.4.tar.xz"
+  sha256 "40a47c7a164c7f981ce3787b4b37f7e411fb43231dcde543d70094075dacfef9"
   license all_of: ["MIT", "APSL-2.0"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bb20865ddc2fe6e5123d6e1df7c2129d39fd72cd58351e5c2d3ba05acb1204cf"
-    sha256 cellar: :any,                 arm64_sonoma:  "7500ac28c23f8cfbfc59ea644444b98af60a73007a5cb8c76bbd3dd9dce3c92c"
-    sha256 cellar: :any,                 arm64_ventura: "02eb58a0617439998119b310aaf221f592b83e3ee6de1d15f3507007651e9ebb"
-    sha256                               sonoma:        "9aa7c0122c4bca16d1b53eb364488c1959a5c8ef1ad8499498dff34d2d0457a0"
-    sha256                               ventura:       "69ece21933341509a5527fd78154d1201501d8bd0ba844a296275a901826f857"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25405ab346588208060cd6f6a2862d31c6689691360bd02416ab77413d971db0"
+    sha256 arm64_sequoia: "f032d2ee9b34ba1ee42d99701266d51e3dcbdcb30d66883ec8f05033894356bb"
+    sha256 arm64_sonoma:  "12231945f0af6967b64ea1e6f992caedcc760a7ed13d142590dab52ae7fc3e96"
+    sha256 arm64_ventura: "6f5350a1fceed943594b743212e2ae40e37559e1daa82c31e617311a706ee25a"
+    sha256 sonoma:        "14ad40b8e7143eb60fd252ecadaa4012428a33d9572920fc7e4968ac52904d38"
+    sha256 ventura:       "caf7be003b70bc8a6a0a2c0fd64df3b6f1479ecb437ecbb00b4675660bf15319"
+    sha256 x86_64_linux:  "8b8186133c32e00a1411809fa7b2569bffacaa9fd2ddbd575605abd3555c6316"
   end
 
   depends_on "pkgconf" => :build

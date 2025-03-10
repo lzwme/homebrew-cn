@@ -16,7 +16,7 @@ class Swagger2markupCli < Formula
     sha256 cellar: :any_skip_relocation, all: "371bbc9c30ce8cb116cc9d7ad64b97d87ef6116db53877b067878a2643c3cb95"
   end
 
-  depends_on "openjdk@11"
+  depends_on "openjdk@11" # JDK 17+ issue: https:github.comSwagger2Markupswagger2markupissues423
 
   def install
     libexec.install "swagger2markup-cli-#{version}.jar"

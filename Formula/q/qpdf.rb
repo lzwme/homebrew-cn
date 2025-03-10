@@ -1,17 +1,17 @@
 class Qpdf < Formula
   desc "Tools for and transforming and inspecting PDF files"
   homepage "https:github.comqpdfqpdf"
-  url "https:github.comqpdfqpdfreleasesdownloadv11.10.1qpdf-11.10.1.tar.gz"
-  sha256 "defca435cf57d26f8a0619864841aa21f5469fddc6eb5662f62d8443021c069d"
+  url "https:github.comqpdfqpdfreleasesdownloadv12.0.0qpdf-12.0.0.tar.gz"
+  sha256 "7380fe9d5b612a6c912cbf3a5875d9e27c20db6c559ebca51360da5125f351b8"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1e038e1c17d7593c41d5971eff18e7510d1efafc3b60839467c2550079a65d30"
-    sha256 cellar: :any,                 arm64_sonoma:  "18d4d89c87492f32ed836f306097cf06f093e7b221d505a815878647001be4d2"
-    sha256 cellar: :any,                 arm64_ventura: "2300bcf8a73a671839b72555c67953d1b36d2af87c4e75459279edf2e337e8a7"
-    sha256 cellar: :any,                 sonoma:        "dd1ee4a66287745cbc12abc120425d98b56f7efa80be7e70b1ca996a20b0ff8e"
-    sha256 cellar: :any,                 ventura:       "f4d84d400a1378795f947c42993f0fe58b24d2dd2523a7f9d39a1da2880470a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33ba8bd0a4b41646a4bd54a51e1cc93a6de3827061846d16e44434a7975b4d20"
+    sha256 cellar: :any,                 arm64_sequoia: "3dbff64de52b5d5ed9e8c226480cd9ab0ccd6a02eab7ce58ff0a2b9d30fb095e"
+    sha256 cellar: :any,                 arm64_sonoma:  "a383846cf9a02dbede64283084f87f3f609cf399ae094218f2165a8ebcb7fc43"
+    sha256 cellar: :any,                 arm64_ventura: "7683c68e9c32e24e6ade2ef3dd874573c84460718ae4d6938f9a8b6b7f422bff"
+    sha256 cellar: :any,                 sonoma:        "f6bcf73cb90386ceda5252824f5b9711e43a0eebc73a39fbe38d6502a518089c"
+    sha256 cellar: :any,                 ventura:       "25a7234671a5dab044eca1514ee2ea0bc2851472fae626f8d1d0b52964dc7d4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3891c559f8b47d57a026336015f5ad73a91ac2a8f71a0e11e65e09f30dc79c1"
   end
 
   depends_on "cmake" => :build
