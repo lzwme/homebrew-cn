@@ -3,17 +3,17 @@ class SnowflakeCli < Formula
 
   desc "CLI for snowflake"
   homepage "https://docs.snowflake.com/developer-guide/snowflake-cli/index"
-  url "https://files.pythonhosted.org/packages/28/38/be596c64fb933eb240683911369af019ec22298dbc5045be0c5005977da8/snowflake_cli-3.4.1.tar.gz"
-  sha256 "a982340690acf314a68764c12681cd58426afba9f8bc9fcf95a56a0a4f7ee9b2"
+  url "https://files.pythonhosted.org/packages/f1/fe/c9ac6c878e44752c86949fb78c0c8132b36e596f96eb79160af57888e81e/snowflake_cli-3.5.0.tar.gz"
+  sha256 "161b748f541b4c724eab36cdba765c28807154a34daf3b2cc707e4c615979b08"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6c39b900fa1769f393361be9bb3337c68f8fbc19dc6c1cd35824e43d1941400d"
-    sha256 cellar: :any,                 arm64_sonoma:  "0f187f3b2ab218dece862284739fac6357b0f73f31ac771bcd4b412965fba28f"
-    sha256 cellar: :any,                 arm64_ventura: "727e5b98c8a26b004d9abcf9ca51191f20e716f62ca0a448e9b295883038faa1"
-    sha256 cellar: :any,                 sonoma:        "69be7af1361846cf0ce736448c5403a2b723b0ff6adfa2c97c03abb757dccd1d"
-    sha256 cellar: :any,                 ventura:       "006ddcd2b789e1b2f57bc9afdc2917678546c65dd966ca87f45f2d863add5097"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bba7e9928d118e01e0fb95707f77591b2fdbc580172a4b0d124376ebbf25dd9d"
+    sha256 cellar: :any,                 arm64_sequoia: "e0fe944a3cd365deeb5ccf0bf64dc82ad93b83baaab0cedaf5c04710f064c4e1"
+    sha256 cellar: :any,                 arm64_sonoma:  "ea5347afd9ca12d9f379f39856df68b7529f53e9b144d175ef395eafa7adb0cb"
+    sha256 cellar: :any,                 arm64_ventura: "1ba454fb4f3ff61579b5bdbc94368c4a998e29c09f282ef70ad155837da813c2"
+    sha256 cellar: :any,                 sonoma:        "17838c99f7ba77aca6171f8b6087d8641ec79a85597ada82d9e9e20c8d889a79"
+    sha256 cellar: :any,                 ventura:       "bb8cfb54b74947ba9bd8b62d2bf278493ca77a449975b0cce677a982aa1cb2c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e711b1a2827830155ea84db3a205cf349bc63513d65c40c361935ad2a296283e"
   end
 
   depends_on "rust" => :build # for pydantic-core
@@ -77,9 +77,14 @@ class SnowflakeCli < Formula
     sha256 "70f7e0e2ae076498e212562325e805204fc092d7b4c17e0e86c959e249701a9d"
   end
 
+  resource "jeepney" do
+    url "https://files.pythonhosted.org/packages/7b/6f/357efd7602486741aa73ffc0617fb310a29b588ed0fd69c2399acbb85b0c/jeepney-0.9.0.tar.gz"
+    sha256 "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732"
+  end
+
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/af/92/b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccff/jinja2-3.1.5.tar.gz"
-    sha256 "8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"
+    url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"
+    sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
   end
 
   resource "keyring" do
@@ -123,8 +128,8 @@ class SnowflakeCli < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/70/7e/fb60e6fee04d0ef8f15e4e01ff187a196fa976eb0f0ab524af4599e5754c/pydantic-2.10.4.tar.gz"
-    sha256 "82f12e9723da6de4fe2ba888b5971157b3be7ad914267dea8f05f82b28254f06"
+    url "https://files.pythonhosted.org/packages/b7/ae/d5220c5c52b158b1de7ca89fc5edb72f304a70a4c540c84c8844bf4008de/pydantic-2.10.6.tar.gz"
+    sha256 "ca5daa827cce33de7a42be142548b0096bf05a7e7b365aebfa5f8eeec7128236"
   end
 
   resource "pydantic-core" do
@@ -143,8 +148,8 @@ class SnowflakeCli < Formula
   end
 
   resource "pyopenssl" do
-    url "https://files.pythonhosted.org/packages/c1/d4/1067b82c4fc674d6f6e9e8d26b3dff978da46d351ca3bac171544693e085/pyopenssl-24.3.0.tar.gz"
-    sha256 "49f7a019577d834746bc55c5fce6ecbcec0f2b4ec5ce1cf43a9a173b8138bb36"
+    url "https://files.pythonhosted.org/packages/9f/26/e25b4a374b4639e0c235527bbe31c0524f26eda701d79456a7e1877f4cc5/pyopenssl-25.0.0.tar.gz"
+    sha256 "cd2cef799efa3936bb08e8ccb9433a575722b9dd986023f1cabc4ae64e9dac16"
   end
 
   resource "pytz" do
@@ -172,6 +177,11 @@ class SnowflakeCli < Formula
     sha256 "439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"
   end
 
+  resource "secretstorage" do
+    url "https://files.pythonhosted.org/packages/53/a4/f48c9d79cb507ed1373477dbceaba7401fd8a23af63b837fa61f1dcd3691/SecretStorage-3.3.3.tar.gz"
+    sha256 "2403533ef369eca6d2ba81718576c5e0f564d5cca1b58f73a8b23e7d4eeebd77"
+  end
+
   resource "setuptools" do
     url "https://files.pythonhosted.org/packages/92/ec/089608b791d210aec4e7f97488e67ab0d33add3efccb83a056cbafe3a2a6/setuptools-75.8.0.tar.gz"
     sha256 "c5afc8f407c626b8313a86e10311dd3f661c6cd9c09d4bf8c15c0e11f9f2b0e6"
@@ -188,8 +198,8 @@ class SnowflakeCli < Formula
   end
 
   resource "snowflake-connector-python" do
-    url "https://files.pythonhosted.org/packages/dc/17/5116a21c97acafd1376831449d784ae6b3b65c1f55800bc49174c5fa3ce0/snowflake_connector_python-3.13.2.tar.gz"
-    sha256 "c9954a5e237566420e087a4fcef227775e0c62fbfc821e0ef6f81325fd44c904"
+    url "https://files.pythonhosted.org/packages/49/f5/f36873ba13a4bc0f673f02d8723862118a61e09633a24682b6c2df3ef9a7/snowflake_connector_python-3.14.0.tar.gz"
+    sha256 "baa10f3f8a2cdbe2be0ff973f2313df684f4d0147db6a4f76f3b311bedc299ed"
   end
 
   resource "sortedcontainers" do
@@ -203,13 +213,13 @@ class SnowflakeCli < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/c5/58/a79003b91ac2c6890fc5d90145c662fd5771c6f11447f116b63300436bc9/typer-0.12.5.tar.gz"
-    sha256 "f592f089bedcc8ec1b974125d64851029c3b1af145f04aca64d69410f0c9b722"
+    url "https://files.pythonhosted.org/packages/cb/ce/dca7b219718afd37a0068f4f2530a727c2b74a8b6e8e0c0080a4c0de4fcd/typer-0.15.1.tar.gz"
+    sha256 "a0588c0a7fa68a1978a069818657778f86abe6ff5ea6abf472f940a08bfe4f0a"
   end
 
   resource "types-setuptools" do
-    url "https://files.pythonhosted.org/packages/c3/20/794589df23b1e7d3c1a1f86285e749f2a83ef845d90f2461bc2912b8f989/types_setuptools-75.8.0.20250210.tar.gz"
-    sha256 "c1547361b2441f07c94e25dce8a068e18c611593ad4b6fdd727b1a8f5d1fda33"
+    url "https://files.pythonhosted.org/packages/4f/18/a996861f5225e7d533a8d8b6aa61bcc9183429a6b8bc93b850aa2e22974d/types_setuptools-75.8.2.20250305.tar.gz"
+    sha256 "a987269b49488f21961a1d99aa8d281b611625883def6392a93855b31544e405"
   end
 
   resource "typing-extensions" do

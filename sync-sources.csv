@@ -5,6 +5,7 @@ Homebrew-homebrew-core/Formula/a/aamath.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aarch64-elf-binutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aarch64-elf-gcc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/aarch64-elf-gdb.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/ab-av1.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/abcde.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/abcl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/abcm2ps.rb, Homebrew/homebrew-core, 0
@@ -1979,6 +1980,7 @@ Homebrew-homebrew-core/Formula/f/fpc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fpdns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fping.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fplll.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fpm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fprettify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fprobe.rb, Homebrew/homebrew-core, 0
@@ -2404,6 +2406,7 @@ Homebrew-homebrew-core/Formula/g/godap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goffice.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gofumpt.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/goimports.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gojq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gokart.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gokey.rb, Homebrew/homebrew-core, 1
@@ -4352,7 +4355,7 @@ Homebrew-homebrew-core/Formula/m/monit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/monitoring-plugins.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/monkeysphere.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mono-libgdiplus.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mono.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mono.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/monocle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/monolith.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/montage.rb, Homebrew/homebrew-core, 1
@@ -5934,6 +5937,7 @@ Homebrew-homebrew-core/Formula/s/sendme.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/senpai.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sentencepiece.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sentry-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sentry-native.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/seqkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/seqtk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sequin.rb, Homebrew/homebrew-core, 1

@@ -1,18 +1,18 @@
 class Benthos < Formula
   desc "Stream processor for mundane tasks written in Go"
   homepage "https:github.comredpanda-databenthos"
-  url "https:github.comredpanda-databenthosarchiverefstagsv4.45.0.tar.gz"
-  sha256 "0f4103615fadbc2c6182b26316194ce4f24566a45e451c54bf54f5141d1c00e2"
+  url "https:github.comredpanda-databenthosarchiverefstagsv4.45.1.tar.gz"
+  sha256 "eda6ef4ef9c765976d47653156a2d9353d4d0febaf3bdc071e864e3071707a6c"
   license "MIT"
   head "https:github.comredpanda-databenthos.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6546f7499024a86442422258dc1c401b144ffb68f7f462532619c5f37460ad4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e6546f7499024a86442422258dc1c401b144ffb68f7f462532619c5f37460ad4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e6546f7499024a86442422258dc1c401b144ffb68f7f462532619c5f37460ad4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "90394bf7187f5f34eb9c63f1274b95eb8dfb1327aea0c1d1b94e9af459204109"
-    sha256 cellar: :any_skip_relocation, ventura:       "90394bf7187f5f34eb9c63f1274b95eb8dfb1327aea0c1d1b94e9af459204109"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d455098f0a7adb5e26e1b45ff43d2bcdbae202fc802f58d294ecf8d72f51306"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fb88d29f617933a0f508f6430c3863be877223759cf5d7cd3920b5002fef1065"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb88d29f617933a0f508f6430c3863be877223759cf5d7cd3920b5002fef1065"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fb88d29f617933a0f508f6430c3863be877223759cf5d7cd3920b5002fef1065"
+    sha256 cellar: :any_skip_relocation, sonoma:        "490999a67e84e5e5f859261b8ea5ea1997b316b515c0a184f19cdedd27a680a4"
+    sha256 cellar: :any_skip_relocation, ventura:       "490999a67e84e5e5f859261b8ea5ea1997b316b515c0a184f19cdedd27a680a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7a16749edc19759fe56b5beaf9f561d3207d05c73bf7dd52b672d6d2708ba8f"
   end
 
   depends_on "go" => :build

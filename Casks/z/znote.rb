@@ -1,9 +1,9 @@
 cask "znote" do
   arch arm: "-arm64"
 
-  version "3.0.4"
-  sha256 arm:   "3f1304f1ec76668a79873430d8ee772a30458b4654edf31ec7b30f868b65d021",
-         intel: "54e851308b6955dbe87b1921031001a703f9124557213e8fb9249a9e41a38ea8"
+  version "3.0.6"
+  sha256 arm:   "2281726da3e087b6077158a4bd6975c64529ee00a1653609f6a42a8adbbe2512",
+         intel: "3589830e47caf00bdfb7e9547f631dd3f7052191f0dcf551c2bf28f3d5f57e57"
 
   url "https:github.comalagredeznote-appreleasesdownloadv#{version}znote-#{version}#{arch}.dmg",
       verified: "github.comalagredeznote-app"

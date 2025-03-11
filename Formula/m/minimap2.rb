@@ -4,6 +4,7 @@ class Minimap2 < Formula
   url "https:github.comlh3minimap2archiverefstagsv2.28.tar.gz"
   sha256 "5ea6683b4184b5c49f6dbaef2bc5b66155e405888a0790d1b21fd3c93e474278"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,25 +12,23 @@ class Minimap2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "460b065b3c5d2574c09b7b6f2e20692574d77153b150e8161b0ec5cdd8450987"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5bfd4d2c1731ffbc45839fda3a405dfa930208b497c08de8f53770d4b942e690"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "47cef6f5132e485823d26e03caba808de26301d29dff56a59d51006d00f5e4cd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b0a6571f41113568817ec781db7b4c9a31ac15fbe1aff96691dd04a6db12148d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7948260fe80260ff50ae0541174e6b404f8699f4b3ad1dfcaef7619fee42cd75"
-    sha256 cellar: :any_skip_relocation, ventura:        "27681877ccc90d85eb51cfb7126d8b242998eb145eb985331f110cfaf8b81383"
-    sha256 cellar: :any_skip_relocation, monterey:       "fcefb72704e3e02c7ce06c694cb6ff12d9d8d84983025e0e3e61a48358410e43"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca4b9be1d24ab45476ef3008a956aee3b4f62ebb5bf0172745928d04cce44e66"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7892d7b6dadbe330c7b9f089ffbc8d1ce7b7090785cedcfb668e470c306a0bfc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "91f0f660030b496f34f119694e94a9e5f21e192ae9a242772800d2347134b200"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8393b64e8433871aa7f0f69ba4774bab7504f07833a436042872fcfc01a1f5f0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5502e3cf0b1ec825425b20fb1197f2507a08662f2c13151556eee608c4999609"
+    sha256 cellar: :any_skip_relocation, ventura:       "9ae2dfa074f8f987c30d18a4e6634c5ba7eb2cb3634514bf15662b32f30b5b4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fd42a0a8241e19a154f8caae8f18ab682edd88274a0e68df0d3a805cc825d3e"
   end
 
   uses_from_macos "zlib"
 
   def install
     if Hardware::CPU.arm?
-      system "make", "arm_neon=1", "aarch64=1"
+      system "make", "arm_neon=1", "aarch64=1", "extra"
     else
-      system "make"
+      system "make", "extra"
     end
-    bin.install "minimap2"
+    bin.install "minimap2", "sdust"
     pkgshare.install "test"
   end
 

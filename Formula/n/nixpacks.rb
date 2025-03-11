@@ -1,18 +1,18 @@
 class Nixpacks < Formula
   desc "App source + Nix packages + Docker = Image"
   homepage "https:nixpacks.comdocsgetting-started"
-  url "https:github.comrailwayappnixpacksarchiverefstagsv1.34.0.tar.gz"
-  sha256 "aa716d2039e4875e8659c453f7536aa9d6ccffff1d7547bf929a64f04297769f"
+  url "https:github.comrailwayappnixpacksarchiverefstagsv1.34.1.tar.gz"
+  sha256 "62c940db93fd282c429eb5ef66abf3a88d9d7846dac7213ebb5b183e197f7315"
   license "MIT"
   head "https:github.comrailwayappnixpacks.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "591da985a57a4c45803f5aad35b63f5d109b03b2e5fae2843f5afcc2fdd91407"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "91c5b5b827ee7e6d70374e0250f450712fd4e55551d2aa2ac5d3ec962498b00a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f4f53922ce6446c79d92c7285d7098dac1f424bae2df3432b744d433dfaf366e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e7b9c29c1f3d9b5c35385ecd761653420d637237fc2e0d25a6054a8f5c02e83d"
-    sha256 cellar: :any_skip_relocation, ventura:       "36e82a687f49a5d65f708a694752edbfaf39e1e9fab7ec90fb49bf9fa762bcb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4d6f75d5bf8f353bc9ba3f9b286d532da3dd558d33d04f38b3003d4d4cf11a7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92f174d100ed146bb596503180dfa3fdd3dcd3967cae08614cbef33966da2e67"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc54faf7e553233703bc00b59220153c653c2dec4eaeaa4bef6ec3c985f5a716"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6059b725fb33cf85991dadf71aafd97429198ec19eacc380c7ff9f4510840ca7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f7155c4592aa423713a34f6242d7b349bcdb5405e067a9b8f999f01b685be4c4"
+    sha256 cellar: :any_skip_relocation, ventura:       "a0ad90ae560194a6ed3f96ad22ee0613163a9596f0edf0b078c62aa20d0d6f41"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6845520f9ea9be92688453056cb489cd55cbc7b8db35c53b1df7a2d89fd454d"
   end
 
   depends_on "rust" => :build

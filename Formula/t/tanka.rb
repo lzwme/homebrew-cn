@@ -1,8 +1,8 @@
 class Tanka < Formula
   desc "Flexible, reusable and concise configuration for Kubernetes using Jsonnet"
   homepage "https:tanka.dev"
-  url "https:github.comgrafanatankaarchiverefstagsv0.31.2.tar.gz"
-  sha256 "82ae2a379313c25d60f4a44a55af35de065c85e249b4e9c936f1173fca0a5908"
+  url "https:github.comgrafanatankaarchiverefstagsv0.31.3.tar.gz"
+  sha256 "b4f44d9d3f09e8b7b1e39a534e4cc9379c0dde63f7a8942eabb28200b021e38d"
   license "Apache-2.0"
   head "https:github.comgrafanatanka.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Tanka < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d54baac79128b9d9a49ee4c50e32e64e68b8703a3822c5630f75f1e721a30d1a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d54baac79128b9d9a49ee4c50e32e64e68b8703a3822c5630f75f1e721a30d1a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d54baac79128b9d9a49ee4c50e32e64e68b8703a3822c5630f75f1e721a30d1a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "afab90f615ba32ae74b4c75c0e9c381f762177e9922dad3f805a7de4d4321808"
-    sha256 cellar: :any_skip_relocation, ventura:       "afab90f615ba32ae74b4c75c0e9c381f762177e9922dad3f805a7de4d4321808"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9076896004af6516b143d467ba7538095319c43b9ee794d0e6d53e7c2eee14c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "63a079d7bbd728a5d9a4e0a24e810259eb7902e63d9fb92819f92d42604a0e61"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "63a079d7bbd728a5d9a4e0a24e810259eb7902e63d9fb92819f92d42604a0e61"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "63a079d7bbd728a5d9a4e0a24e810259eb7902e63d9fb92819f92d42604a0e61"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d96e07d734bc5edcf536071bed1a7823a7b14bd8db1dbaf8d9415793863f67bb"
+    sha256 cellar: :any_skip_relocation, ventura:       "d96e07d734bc5edcf536071bed1a7823a7b14bd8db1dbaf8d9415793863f67bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66b7f5a4be1ac6269df5025cf0beae1408a000ad3b5b3e0bee0a6fd2205d14ee"
   end
 
   depends_on "go" => :build

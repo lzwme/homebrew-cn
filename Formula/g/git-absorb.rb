@@ -1,19 +1,21 @@
 class GitAbsorb < Formula
   desc "Automatic git commit --fixup"
   homepage "https:github.comtummychowgit-absorb"
-  url "https:github.comtummychowgit-absorbarchiverefstags0.6.17.tar.gz"
-  sha256 "512ef2bf0e642f8c34eb56aad657413bd9e04595e3bc4650ecf1c0799f148ca4"
+  url "https:github.comtummychowgit-absorbarchiverefstags0.7.0.tar.gz"
+  sha256 "65f5b80bcb726a0c40eeda94ccb47fce7f3fc4ed16021465196a37b907083eb8"
   license "BSD-3-Clause"
+  head "https:github.comtummychowgit-absorb.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bb985890d415ff167d823f5ecb8a8e627b97375b81efb58fc00db2995dc806b2"
-    sha256 cellar: :any,                 arm64_sonoma:  "4b43c763348b5beb746a35baa22ff81511e89338669a46f5daf979ec30383267"
-    sha256 cellar: :any,                 arm64_ventura: "0fa5ccdc1815c2fed9505950968e1075ee971d4f158b087b4d22f1bd797b1734"
-    sha256 cellar: :any,                 sonoma:        "1bd3b24e9b32f49351555e3e8bea57fcc868a475243df29082f07899a87d3a02"
-    sha256 cellar: :any,                 ventura:       "74aa1215fca2e8df5a019b03ad8b917bc9bd73d24b1be84e9d129054922a3cc5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e75f77c1f10cefb7a8400671d7d2eb307ea41d4d36e0aeb7f71c266e0d1590c3"
+    sha256 cellar: :any,                 arm64_sequoia: "2a0a02563c008f357386f98611bd4fc620d9cde08ef34601e8153d114ba41bbb"
+    sha256 cellar: :any,                 arm64_sonoma:  "67c6e9f547b87f4eb0993fc813746d0a352b1ff6077a59f25e8ac95f301d7e6f"
+    sha256 cellar: :any,                 arm64_ventura: "2460eca14e40946b5d739f9b89b9de70acbd87b7f0849e464a60e58b6de7daed"
+    sha256 cellar: :any,                 sonoma:        "ad181f87d1bb47476db2e533b3b03d4c6f9e8c9a2aa9db914aa7df416259d5a4"
+    sha256 cellar: :any,                 ventura:       "6a8785c9939b7fb75b2595ea5f3d1dffcb2b6dde34ceb58572f68ca25fb73974"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1955fcb9602e4dab7e6ac246f16337c6b4565cc5d0a5f8abca1d0542d6f10248"
   end
 
+  depends_on "asciidoctor" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "libgit2"
@@ -23,8 +25,11 @@ class GitAbsorb < Formula
 
     system "cargo", "install", *std_cargo_args
 
-    man1.install "Documentationgit-absorb.1"
     generate_completions_from_executable(bin"git-absorb", "--gen-completions")
+    cd "Documentation" do
+      system "asciidoctor", "-b", "manpage", "git-absorb.adoc"
+      man1.install "git-absorb.1"
+    end
   end
 
   test do

@@ -1,19 +1,19 @@
 class Trufflehog < Formula
   desc "Find and verify credentials"
   homepage "https:trufflesecurity.com"
-  url "https:github.comtrufflesecuritytrufflehogarchiverefstagsv3.88.15.tar.gz"
-  sha256 "240aa463d294d512696d7120e432d7b8acf0a04a425630feb090dd552d4d464b"
+  url "https:github.comtrufflesecuritytrufflehogarchiverefstagsv3.88.16.tar.gz"
+  sha256 "8f0bce9d8ac390a5288cc83feef782f91c223e0607897b2c15b4820194e28990"
   # upstream license ask, https:github.comtrufflesecuritytrufflehogissues1446
   license "AGPL-3.0-only"
   head "https:github.comtrufflesecuritytrufflehog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf7c91b7b70c3da5115619315ce4b0c5c912a946461644065c4c97189d70f5ba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30d13ab2a1299ce151f609ea3769f6e753ebd8ad0a40bd1dc256912d540bb5e5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9cdc1d4e6c2164dc2061d70d5690163319d29b26587a02c86542638cbc017e4a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "674cc5e6942543546233ff750ee786b4fac00cbb531a1514cd10388ea6a3bc7b"
-    sha256 cellar: :any_skip_relocation, ventura:       "ab02da0f91538061b54609bd194301253e27808f245fe7fec8039c08404cec7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a73e8818da5ebcc6edee003bf7550bc938ea9f29e6b2a8da1018fc1130c6445a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "17c64ce2a74f3852c7188ab3e017512420ae90864572a491a246416b0fec0610"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1aef711af50fb91deb89222afef63fc3ae3738e2a281dee2a0601bd3e6e8d26c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e9b6a75405448aecfb9bfded0635952ed6c34dc14ab49d2d3fa6b5643cf778c6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "665817985e776c2a56e7eecc5313a6df71201fecf419a626434c82a1c97b498e"
+    sha256 cellar: :any_skip_relocation, ventura:       "c5bca7de4e39efe60e5239eb251b266d13d2cd0f410d5c0ba49ba72db7d310f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4e0e4a6233533ba96c9680adecf96bf5f151ea4052de74467cdbc8b37299c3d"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class Htop < Formula
   desc "Improved top (interactive process viewer)"
   homepage "https:htop.dev"
-  url "https:github.comhtop-devhtoparchiverefstags3.3.0.tar.gz"
-  sha256 "1e5cc328eee2bd1acff89f860e3179ea24b85df3ac483433f92a29977b14b045"
+  url "https:github.comhtop-devhtoparchiverefstags3.4.0.tar.gz"
+  sha256 "7a45cd93b393eaa5804a7e490d58d0940b1c74bb24ecff2ae7b5c49e7a3c1198"
   license "GPL-2.0-or-later"
   head "https:github.comhtop-devhtop.git", branch: "main"
 
@@ -12,15 +12,12 @@ class Htop < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "3ef4d2047472d6f8fff23cc60e4171fb5cb1ad6a546f0b54e97b43e8d5f97053"
-    sha256 cellar: :any,                 arm64_sonoma:   "ea457e022296c96a73ebecc31119ea225c2b41670426a9099bccf5f1d17673ec"
-    sha256 cellar: :any,                 arm64_ventura:  "5895685e6db67598024850ca3c440e1244ee5dd54bc7c6b5345b28d74f9fa4f0"
-    sha256 cellar: :any,                 arm64_monterey: "91b0b5fe4ffb977e6381664d74ec48e890da908a346473b5e4d88f8117a2dc23"
-    sha256 cellar: :any,                 sonoma:         "c3ee757e215de2dfd151ea9eb68ef53bb64ba86c5d07a443c6477bdb952f02bf"
-    sha256 cellar: :any,                 ventura:        "69f690190833cf309baa396b7a7a8218ec012ca93e0825a2b2a4d9f0d5cafb33"
-    sha256 cellar: :any,                 monterey:       "9872ffeea0cbab0d5f2e418fd06442663a113b67be12e15b0ece20e701f4ada3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "85ee4a9f06bc81442fc93e02f8aa875a7641781aa147aab1f863e5c4d744b47d"
+    sha256 cellar: :any,                 arm64_sequoia: "677c0a92041b0e6ac154165ffbcfd67a6213e54a7f76c02c77c7f857f38f47ae"
+    sha256 cellar: :any,                 arm64_sonoma:  "22187a55adee8dd80b5ad15fd746d5f6284a88d5c4e450e38c463e0c957f8811"
+    sha256 cellar: :any,                 arm64_ventura: "890cb59f4dade937992d35ac71c571c429da4ba3f858174647dae00d2b30f044"
+    sha256 cellar: :any,                 sonoma:        "49b47ec58f7bdf9fa2fe65b3cbadf6f80290745ddd8b6b7d9a71df89da9ebf65"
+    sha256 cellar: :any,                 ventura:       "4a9209d7c67437994a49dcbf4560148283152b655ffef51111e3160700fff430"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66dbb45ffe4c0a28e0bef60a2819db27d2f61b03ad8417b3d6a95fc19eb5243d"
   end
 
   depends_on "autoconf" => :build

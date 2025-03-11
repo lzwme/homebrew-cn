@@ -1,13 +1,13 @@
 class FastFloat < Formula
   desc "Fast and exact implementation of the C++ from_chars functions for number types"
   homepage "https:github.comfastfloatfast_float"
-  url "https:github.comfastfloatfast_floatarchiverefstagsv8.0.0.tar.gz"
-  sha256 "8c017d31e9a324fdde4ff26c6c0206fc618addbd71491e76da0d7b038c4bf6d0"
+  url "https:github.comfastfloatfast_floatarchiverefstagsv8.0.1.tar.gz"
+  sha256 "18f868f0117b359351f2886be669ce9cda9ea281e6bf0bcc020226c981cc3280"
   license "Apache-2.0"
   head "https:github.comfastfloatfast_float.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b90b036d596c0ddac53885003989ab00138c09f537796002a2a95a05fb9bbf2b"
+    sha256 cellar: :any_skip_relocation, all: "bd8e1d486cf9a2acd60e9bdc3d0d3924e1ad92fa91048cf3ee39961ca3dbcc5e"
   end
 
   depends_on "cmake" => :build

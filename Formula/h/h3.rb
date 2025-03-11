@@ -1,17 +1,17 @@
 class H3 < Formula
   desc "Hexagonal hierarchical geospatial indexing system"
   homepage "https:uber.github.ioh3"
-  url "https:github.comuberh3archiverefstagsv4.2.0.tar.gz"
-  sha256 "438db46fc2b388785d2a0d8e26aa5509739240a7b50b2510c416778d871a4e11"
+  url "https:github.comuberh3archiverefstagsv4.2.1.tar.gz"
+  sha256 "1b51822b43f3887767c5a5aafd958fca72b72fc454f3b3f6eeea31757d74687d"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b02873c2bb46bad3ecb164b0de7010a6cf05e88c24d836be8a623edcd33cb123"
-    sha256 cellar: :any,                 arm64_sonoma:  "cdf8ec4cb1d06bd4016315b3c05da5fea167121fdceeae714bc75d63eb780a12"
-    sha256 cellar: :any,                 arm64_ventura: "faa658aedc04d5397bcfc3f1c772405c9de7cc586b8ad8d665cb4f0d055ee6e5"
-    sha256 cellar: :any,                 sonoma:        "0cfeedcff049140ebefbae1c958833b2a13fbc96a476ac5f5bcef8f01881534f"
-    sha256 cellar: :any,                 ventura:       "221c57284d6e1838e6f4deaf5b3090ff628c575a1ec088c5897f90582efd682f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "089248aae3b5dbd2725d56efd962839e3886f4cd0cf99e8f9ac0c05b804ec761"
+    sha256 cellar: :any,                 arm64_sequoia: "7be49d20c152264ea989f2e96be5b0b4cdabc41769a3577ceb7d6c7e0a6b481b"
+    sha256 cellar: :any,                 arm64_sonoma:  "3ae20dda8f2138be8d79d77a20d82f92caa7a7a0828c9a0aeb4e2f64b29cc8db"
+    sha256 cellar: :any,                 arm64_ventura: "a72d460ce48392a312f9713131c9e526c32421a30f862c9c65ef2c9c009dbf0d"
+    sha256 cellar: :any,                 sonoma:        "d0849d830aca26ddaff870a0d725dfc24ac2e3e8cf827a4f89bdb71587ba2d8b"
+    sha256 cellar: :any,                 ventura:       "32cceafc84e5fa584523be35756aa6cdc437457b2712cd0a2d1a03bdea31b1b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3410f81c6368a364ef33073653ec88928912738e9f653b99a3b01694dd510b41"
   end
 
   depends_on "cmake" => :build

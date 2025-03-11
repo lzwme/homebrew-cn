@@ -1,19 +1,17 @@
 class Lout < Formula
   desc "Text formatting like TeX, but simpler"
   homepage "https:savannah.nongnu.orgprojectslout"
-  url "https:github.comwilliam8000loutarchiverefstags3.43.tar.gz"
-  sha256 "b95f1d0d75f31d3a59fd9ab6d15901e49155b94f000b5798b45c47b63eac6407"
+  url "https:github.comwilliam8000loutarchiverefstags3.43.1.tar.gz"
+  sha256 "e18e220d69726f1375164334107bc33237f05bd82a6d8ff11741bebdee924540"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sequoia:  "ca58a4f9c17d8f1945c7463ae5b3c40649978d19edb6ed00f7313d2e0f2e4669"
-    sha256 arm64_sonoma:   "46be9ac6c081f6757dd0501b7cf6edda88724f37e1765f43db1529f952d85cc2"
-    sha256 arm64_ventura:  "c216a68f6acb79b202cd49b4f47d6a01d48d8d18adcf5ffb7c075f8b52622890"
-    sha256 arm64_monterey: "893a8a4cb6d07e906cc61b37a4448284b3166d31389dfbf9021c5ed9a449afd3"
-    sha256 sonoma:         "6bfe5d76715131438b0db2b129c818862f76f9da5d16492c1a679e9b2dd42155"
-    sha256 ventura:        "d8d51b0edbdc2a09a78d3bbb6ba6a0e55d79e9a8768071aa380638f05a83f2a8"
-    sha256 monterey:       "174686a36deeacde11aa8296d80968fa66e09a19d3f8cc3ac20b31fd69392487"
-    sha256 x86_64_linux:   "ae6f004e3bb16e2a669f59c9d6f5e656e047592af4f9f95a791e2df77cd64c59"
+    sha256 arm64_sequoia: "e9ed13c897900b56cba3a52f2fa83d11e6868917ca964b6aad735df9ddc72c19"
+    sha256 arm64_sonoma:  "db75b1eb4376ba587377030f1c154a1c5dc1026c3e69ccf7f3f4bca310ab09d2"
+    sha256 arm64_ventura: "36d4dbcfb60cd3e34ef95b0149b63c95d0f6c80d3a1f091077f2099dc6d059c0"
+    sha256 sonoma:        "557fabce8567fc87281e2fca29f967ba46a52e99e30263a37dfd106eb41505e4"
+    sha256 ventura:       "2fdb333adee5e2d4c51b1357b60887993cebb74c00e6ec90dbff285ba7e11b29"
+    sha256 x86_64_linux:  "4066e6e926425dd434b6f48343e4cdf8a8a0e1ecf54638f16d483aeda4183b26"
   end
 
   def install

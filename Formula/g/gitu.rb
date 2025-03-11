@@ -1,18 +1,18 @@
 class Gitu < Formula
   desc "TUI Git client inspired by Magit"
   homepage "https:github.comaltsemgitu"
-  url "https:github.comaltsemgituarchiverefstagsv0.28.2.tar.gz"
-  sha256 "6ff5b7caac401341ae5b2f01749e5c2ab49ab2a44b4e1e139fc2e7601223499e"
+  url "https:github.comaltsemgituarchiverefstagsv0.29.0.tar.gz"
+  sha256 "eb65c9470bcf59ce76f7e73893a2a40302a39fd339af38a746b78c596d80615f"
   license "MIT"
   head "https:github.comaltsemgitu.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1a661359988c38166a22b5a1cd2f372e65acc6e2fd81fdd334d8338496847b1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "742d966fa2247083051fa8ef4df3d0ee91de80a38f4bf4b40fcc0f8bae76eed5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7ab2aab5e9ee419f64ee102236a0380a41678ee545bc765402f8996d54937f8b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e640a1bc3d4841ed5c3e083fb30ef01144b9cd8b0b9a1313c79ac45b02e5ad19"
-    sha256 cellar: :any_skip_relocation, ventura:       "d2c113b919890dcbadbb16515e31a7b7fccb1cfc5203e32caae7c8f1ed9749fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa5c0ef5e9ae82a2b3d8e2b8833183bc52a687aca8f4379c9dfe1c70b3aa01ac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "81a5a48a585eb2b259b4765df3e5abcdd07ccf7ed3edccd1cc7cf11f9ff39e28"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d4d3bd2c0760c705e8db14273ea7ac4fad5afeda1790fba6fcf9684c74fce88"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b324b0578a7767123b6dc583dfc5c2f0acd92eff163a995e56a55c3dc6f3c080"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ba9b0717f0cc0cab86a87fb8586688f254d1397221331c3d4bbdf4421cfe3546"
+    sha256 cellar: :any_skip_relocation, ventura:       "666802de4cfe1467f2c7824716be5f6ddc76f698a95861093e701a2bf03457b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "daf49de50f2a9222931f9f584aa4238a877ae67466644a368344ba44f9613cf8"
   end
 
   depends_on "rust" => :build
