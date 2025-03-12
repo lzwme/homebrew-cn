@@ -1,8 +1,8 @@
 class Juju < Formula
   desc "DevOps management tool"
   homepage "https:juju.is"
-  url "https:launchpad.netjuju3.63.6.3+downloadjuju-core_3.6.3.tar.gz"
-  sha256 "f45e998dd1fe407ca6a54c68e6555acc5c04e69d393293bd46dbf3da97629a80"
+  url "https:launchpad.netjuju3.63.6.4+downloadjuju-core_3.6.4.tar.gz"
+  sha256 "816dcaab44fc878c4010273941ff2b03734c769aba7016eb81b3726676672794"
   license "AGPL-3.0-only"
   version_scheme 1
   head "https:github.comjujujuju.git", branch: "develop"
@@ -16,12 +16,12 @@ class Juju < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f1c5460cf42c49d82e875dd2e4c4b2771edf8b26567aa84a874bac2810cf588"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f61fc3a41defb1d7a0d6adc34f98e11b51e56d70a4163fe97ccd6dfd7811c58f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9698e0d4a4108534c529ae4e8a427e976a45ece22784a93859a65acb4e38487a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c5d651019de01b7a4139becb5cf3d8e2a35c6c80a8453ada362c49c5fc86d2e6"
-    sha256 cellar: :any_skip_relocation, ventura:       "b1e997da3861777b2d5b7eeeee48aa3333dd4c2dc1a92132b938ecc27cc2ffae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4dd0f4207ce76cbca4f715d404c650b92c0ed43930d42bdbd0ed874eca0d5c88"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "274d1d03dab1dd8b640934f8e10cf1694409551ff4ce60b2a2c0ab2b9103cc4f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "963548a37300cb533055dd38e2d3b9e6318253d1a04f81225d7cf099cfce8fd1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "93fdc3e012711a5c567507c9727168dcbc7a4c8bf1cc740e6dd6fbb79a6d942f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fc66fca2f7d37de0df9e41db117481ad6a53efbbecfafd67f6179b7fafc77521"
+    sha256 cellar: :any_skip_relocation, ventura:       "8baf5d3b899bab3542248b87dbbd344881805faddbe31002a02a81b16175927f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a0b382ca13ff9d2c9c830c3295dd841b427793b30cdaa84d50cec5af8dc0d5d"
   end
 
   depends_on "go" => :build

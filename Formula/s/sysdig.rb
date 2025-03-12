@@ -1,20 +1,10 @@
 class Sysdig < Formula
   desc "System-level exploration and troubleshooting tool"
   homepage "https:sysdig.com"
+  url "https:github.comdraiossysdigarchiverefstags0.40.1.tar.gz"
+  sha256 "f4d465847ba8e814958b5f5818f637595f3d78ce93dbc3b8ff3ee65a80a9b90f"
   license "Apache-2.0"
-  revision 16
-
-  stable do
-    url "https:github.comdraiossysdigarchiverefstags0.38.1.tar.gz"
-    sha256 "68085ea118a4209dbde8f1b75584f9f84610b5856e507ffb0703d8add6331132"
-
-    # Update to value of FALCOSECURITY_LIBS_VERSION with
-    # VERSION=#{version} && curl -fsSL https:raw.githubusercontent.comdraiossysdig$VERSIONcmakemodulesfalcosecurity-libs.cmake | grep -o 'set(FALCOSECURITY_LIBS_VERSION "[0-9.]*")' | awk -F'"' '{print $2}'
-    resource "falcosecurity-libs" do
-      url "https:github.comfalcosecuritylibsarchiverefstags0.17.2.tar.gz"
-      sha256 "5c4f0c987272b7d5236f6ab2bbe3906ffdaf76b59817b63cf90cc8c387ab5b15"
-    end
-  end
+  head "https:github.comdraiossysdig.git", branch: "dev"
 
   livecheck do
     url :stable
@@ -22,86 +12,55 @@ class Sysdig < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "10e48ef9eeec0d5669fb74a701c7b56f14ecde55e5fac23ef18fed8b9151819c"
-    sha256                               arm64_sonoma:  "a7f09c2dfd4ae9188473a982df684e6ffb13f90dd6a1888a0747972f01b2c87b"
-    sha256                               arm64_ventura: "edde771b93afc34fe1f702a3d620a69f172f1406afdccdd9eee432cefeb9b126"
-    sha256                               sonoma:        "cf22c0f58a531675d6ddd045c597caf8c1b2c993b42bfeb4a86b3353b974c923"
-    sha256                               ventura:       "8852c89b06aa29c2c32b0b8a6d9f00344db8e7712ce5c8b5b818901710ad6ea2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "293ea9eedf018f38f77d9c318520655cd0f1f16cb919cc3932e2f5d87fa47a50"
-  end
-
-  head do
-    url "https:github.comdraiossysdig.git", branch: "dev"
-
-    resource "falcosecurity-libs" do
-      url "https:github.comfalcosecuritylibs.git", branch: "master"
-    end
+    sha256                               arm64_sequoia: "eb1dce084f4165754b69538c6b8e454c9aeec3b615c8183c80f448b0bcf74ca8"
+    sha256                               arm64_sonoma:  "3a19ff09d40e20b06229ddc66b887d5c39c7ca52c3e9153b7170ce3778fde5f1"
+    sha256                               arm64_ventura: "2e529abfbb23fe431f8ec0f6ce1a6704eb3e359327e91aee202a0e055ca987b4"
+    sha256                               sonoma:        "887232ecdaa980a68cea3c023ba358212b4446b73a194610c982f9ee7f473d89"
+    sha256                               ventura:       "23914115de4402ed85a7f94eefea6cc242ff572cee6a42d2c6156cedf15febbe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ea6b2ec1e8bf9cfec26c4c3300c9ff1cf09abacf885d95d0473c27748a8cb6b"
   end
 
   depends_on "cmake" => :build
   depends_on "nlohmann-json" => :build
-  depends_on "valijson" => :build
+  depends_on "pkgconf" => :build
+  depends_on "falcosecurity-libs"
   depends_on "jsoncpp"
   depends_on "luajit"
   depends_on "ncurses" # for `newterm` function
-  depends_on "re2"
-  depends_on "tbb"
-  depends_on "uthash"
   depends_on "yaml-cpp"
 
-  uses_from_macos "curl"
-  uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "libb64" => :build
-    depends_on "abseil"
-    depends_on "elfutils"
-    depends_on "grpc"
-    depends_on "jq"
-    depends_on "openssl@3"
-    depends_on "protobuf"
-    depends_on "zstd"
-  end
-
-  # More info on https:gist.github.comjuniorz9986999
-  resource "homebrew-sample_file" do
-    url "https:gist.githubusercontent.comjuniorz9986999rawa3556d7e93fa890a157a33f4233efaf8f5e01a6fsample.scap"
-    sha256 "efe287e651a3deea5e87418d39e0fe1e9dc55c6886af4e952468cd64182ee7ef"
+  on_macos do
+    depends_on "re2"
+    depends_on "tbb"
   end
 
   def install
-    (buildpath"falcosecurity-libs").install resource("falcosecurity-libs")
-
-    # fix `libzstd.so.1: error adding symbols: DSO missing from command line` error
-    # https:stackoverflow.coma55086637
-    ENV.append "LDFLAGS", "-Wl,--copy-dt-needed-entries" if OS.linux?
+    # Workaround to find some headers
+    # TODO: Fix upstream to use standard paths, e.g. sinsp.h -> libsinspsinsp.h
+    ENV.append_to_cflags "-I#{Formula["falcosecurity-libs"].opt_include}falcosecuritylibsinsp"
+    ENV.append_to_cflags "-I#{Formula["falcosecurity-libs"].opt_include}falcosecuritydriver" if OS.linux?
 
     # Keep C++ standard in sync with `abseil.rb`.
     args = %W[
       -DSYSDIG_VERSION=#{version}
       -DUSE_BUNDLED_DEPS=OFF
-      -DCREATE_TEST_TARGETS=OFF
-      -DBUILD_LIBSCAP_EXAMPLES=OFF
       -DDIR_ETC=#{etc}
-      -DFALCOSECURITY_LIBS_SOURCE_DIR=#{buildpath}falcosecurity-libs
     ]
-
-    # `USE_BUNDLED_*=OFF` flags are implied by `USE_BUNDLED_DEPS=OFF`, but let's be explicit.
-    %w[CARES JSONCPP LUAJIT OPENSSL RE2 TBB VALIJSON CURL NCURSES ZLIB B64 GRPC JQ PROTOBUF].each do |dep|
-      args << "-DUSE_BUNDLED_#{dep}=OFF"
-    end
-
-    args += ["-DBUILD_DRIVER=OFF", "-DBUILD_LIBSCAP_MODERN_BPF=OFF"] if OS.linux?
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
-
-    (pkgshare"demos").install resource("homebrew-sample_file").files("sample.scap")
   end
 
   test do
-    output = shell_output("#{bin}sysdig -r #{pkgshare}demossample.scap")
+    # More info on https:gist.github.comjuniorz9986999
+    resource "homebrew-sample_file" do
+      url "https:gist.githubusercontent.comjuniorz9986999rawa3556d7e93fa890a157a33f4233efaf8f5e01a6fsample.scap"
+      sha256 "efe287e651a3deea5e87418d39e0fe1e9dc55c6886af4e952468cd64182ee7ef"
+    end
+
+    testpath.install resource("homebrew-sample_file").files("sample.scap")
+    output = shell_output("#{bin}sysdig --read=#{testpath}sample.scap")
     assert_match "tmpsysdigsample", output
   end
 end

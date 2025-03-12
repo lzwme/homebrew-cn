@@ -3,19 +3,18 @@ class Yamllint < Formula
 
   desc "Linter for YAML files"
   homepage "https:github.comadrienvergeyamllint"
-  url "https:files.pythonhosted.orgpackagesda06d8cee5c3dfd550cc0a466ead8b321138198485d1034130ac1393cc49d63eyamllint-1.35.1.tar.gz"
-  sha256 "7a003809f88324fd2c877734f2d575ee7881dd9043360657cc8049c809eba6cd"
+  url "https:files.pythonhosted.orgpackagesccb6d17e75cc0b1b0a93cb04bb0b350c6ab10f48271f35897849c5d136b7a037yamllint-1.36.0.tar.gz"
+  sha256 "3835a65994858679ea06fd998dd968c3f71935cd93742990405999d888e21130"
   license "GPL-3.0-or-later"
   head "https:github.comadrienvergeyamllint.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia: "cb74d6cc51501733531acd25b26fd474557d19374b98eb7de16271ff2c257860"
-    sha256 cellar: :any,                 arm64_sonoma:  "e36b43d6b87028fe2005878cb15c78edec6ddb898e9a86ff7b901fe093cf9c0e"
-    sha256 cellar: :any,                 arm64_ventura: "3591f98aaaebba5e9360926f5ca756dbd85c6a46de0554042376ac83548c7fb3"
-    sha256 cellar: :any,                 sonoma:        "3889369233f5f342b73cc70625748a52d72117603b92f352af00a9ebd27cb1c4"
-    sha256 cellar: :any,                 ventura:       "209883378df0edf4a0691fd2dbf6f2e8da7776bd9c0de0fc70fa04dd0fc51c8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "993514320174f1147d538719552131a73d34cf66dc9f82c38f6ed28b16cea287"
+    sha256 cellar: :any,                 arm64_sequoia: "4f9a506570cecc0addc1076714ac339bb67af57ba252d8f30475930acb83b154"
+    sha256 cellar: :any,                 arm64_sonoma:  "8168715104079553284e3f30ce04d73fff05b8b01732221b3d767cfdb2113fcc"
+    sha256 cellar: :any,                 arm64_ventura: "c897f2a97134743b7e1572b577312b414fce087c0e46b4101d2502c4fa91b618"
+    sha256 cellar: :any,                 sonoma:        "7dc2ee95d7fc2d82fda7939cb37afd6bab9f7ea69894a6e6767439eabdff5d35"
+    sha256 cellar: :any,                 ventura:       "3ae0668a20d7dc39bd33d29d5f07f5e5d756c5de27162d692cafdc9012163584"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3afca6d3c399ad14916ddfd9e1f6e5621d4139aacc681c0471fc2b36541f0c7f"
   end
 
   depends_on "libyaml"

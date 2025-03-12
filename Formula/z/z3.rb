@@ -1,8 +1,8 @@
 class Z3 < Formula
   desc "High-performance theorem prover"
   homepage "https:github.comZ3Proverz3"
-  url "https:github.comZ3Proverz3archiverefstagsz3-4.14.0.tar.gz"
-  sha256 "63430c3aab76f75b1d2c53177f94351caeca26e218f4cc060a1fc029059af683"
+  url "https:github.comZ3Proverz3archiverefstagsz3-4.14.1.tar.gz"
+  sha256 "81a02c2c64c64d6c3df233f59186b95627990ada0c4c2fc901c9c25a7072672a"
   license "MIT"
   head "https:github.comZ3Proverz3.git", branch: "master"
 
@@ -13,12 +13,12 @@ class Z3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5f1560108f24911160e1df9aacbe876e583707b4647f51d830a1d660845183da"
-    sha256 cellar: :any,                 arm64_sonoma:  "18bdbf244edc945b7f1c8f8a53e3b608884f46cc35fa9bbb2d17f438bab882c5"
-    sha256 cellar: :any,                 arm64_ventura: "bdc2d6f403ce4b791217d622573aa48ff1da6f10127b38abcaf52cae653e2c5b"
-    sha256 cellar: :any,                 sonoma:        "0d091791e14b23d1e296861e13063b67fde37d42c6870567196e83ac69611b93"
-    sha256 cellar: :any,                 ventura:       "089035bcdb9064fe7e43550afcad316eb0e16663cfc61a1076ba36aa76dc14a3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e4a74b790e8de5c4b18ad8a6f1266e1f108f021c7c53f4595220ecb5bc69d8c"
+    sha256 cellar: :any,                 arm64_sequoia: "0090d3a9aac7fbbbb0734cdb24c0a8f891d99b97bc5e527ecf6db407cb17b4d2"
+    sha256 cellar: :any,                 arm64_sonoma:  "417eee5d3418c20ab826556d37a9ec57e5c48bdfb124d74d9afea1afe7d6e812"
+    sha256 cellar: :any,                 arm64_ventura: "e7c48be023485b5ffa72321ee393746a12605d51d16edc1c63c3d24155dd73a1"
+    sha256 cellar: :any,                 sonoma:        "4b1741f4f67c61f3940928952d35fb3b100181f01800b6f6709c57a8ffe65e07"
+    sha256 cellar: :any,                 ventura:       "8fda087e030d4037ca1a93192b6687062a603adf11023950967cfa094b6b97ba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77d76c62a96c651909152362695d8e74d6125af4d3f6d79ce3559d2e5d96bea9"
   end
 
   depends_on "cmake" => :build

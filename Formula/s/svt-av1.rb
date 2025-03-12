@@ -1,18 +1,18 @@
 class SvtAv1 < Formula
   desc "AV1 encoder"
   homepage "https:gitlab.comAOMediaCodecSVT-AV1"
-  url "https:gitlab.comAOMediaCodecSVT-AV1-archivev3.0.0SVT-AV1-v3.0.0.tar.bz2"
-  sha256 "852d3be2cea244dc76747a948dfcffb82d42dc42e1bd86830e591ea29b91c4fd"
+  url "https:gitlab.comAOMediaCodecSVT-AV1-archivev3.0.1SVT-AV1-v3.0.1.tar.bz2"
+  sha256 "f1d1ad8db551cd84ab52ae579b0e5086d8a0b7e47aea440e75907242a51b4cb9"
   license "BSD-3-Clause"
   head "https:gitlab.comAOMediaCodecSVT-AV1.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d3f0d3053f8a54fc6fa5caa6e1919b0e51d8dd5eb5edcdfa6416d62949655d26"
-    sha256 cellar: :any,                 arm64_sonoma:  "2bf3193467977046d5ef71ee2a4aa24109783c21e36daf168daa343aab0d92d8"
-    sha256 cellar: :any,                 arm64_ventura: "dacfa8b73f8ad0ac60d251985feced522df46823292ee69fb229ab39d75ee832"
-    sha256 cellar: :any,                 sonoma:        "371916e5ccaa49612d526d09e480e5bc354c81024b79eb4691c10bd0a1b5105d"
-    sha256 cellar: :any,                 ventura:       "4fdfe36af2a2dda9dc62ed6c29317c78c45f40aae896d69a2b7467abc19d0ff5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a87fca934604b26adc20f188d5cf9eead041d3cf3a918a79cf518ccb1ea550d6"
+    sha256 cellar: :any,                 arm64_sequoia: "f2c57586c7e9424b894d23ff735ed9a9979872a243e04964c980d6667131aca5"
+    sha256 cellar: :any,                 arm64_sonoma:  "684176968c86f82c3c099ed8371ecc7764556b9b5a098ded4df6d473447dfa8d"
+    sha256 cellar: :any,                 arm64_ventura: "d402791bdc3b1c81d11829c7ddb3b31cffefb5467143a0c599bad37808581b16"
+    sha256 cellar: :any,                 sonoma:        "9805dfe1b36ee2f89682c19f6008562f9ad9d4b96c53607281056c83424c5415"
+    sha256 cellar: :any,                 ventura:       "622952ca1a70c125b62420a57d53e3f9b921c177444c5175ef6c14c1029f67ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97172cec2603dcc637b21a845dc6b14f86cbfe9abd299c59b04d65979c9bf4fe"
   end
 
   depends_on "cmake" => :build

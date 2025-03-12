@@ -6,6 +6,14 @@ class Libdex < Formula
   license "LGPL-2.1-or-later"
   head "https://gitlab.gnome.org/GNOME/libdex.git", branch: "main"
 
+  # We restrict matching to versions with an even-numbered minor version number,
+  # as an odd-numbered minor version number indicates a development version:
+  # https://gitlab.gnome.org/GNOME/libdex/-/issues/22#note_2368290
+  livecheck do
+    url :stable
+    regex(/^v?(\d+\.\d*[02468](?:\.\d+)*)$/i)
+  end
+
   bottle do
     rebuild 1
     sha256 cellar: :any, arm64_sequoia: "de849fbc65398cd3211401ec52da982cb0de056560f41b3e2160d1feb7a73439"

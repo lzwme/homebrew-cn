@@ -1783,6 +1783,7 @@ Homebrew-homebrew-core/Formula/f/faiss.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fakeroot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/falco.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/falcoctl.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/falcosecurity-libs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fancy-cat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fann.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fantom.rb, Homebrew/homebrew-core, 1
@@ -2087,6 +2088,7 @@ Homebrew-homebrew-core/Formula/g/gcc@9.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gcem.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gci.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gcovr.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gcr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gcsfuse.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gcviewer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gd.rb, Homebrew/homebrew-core, 1
@@ -3682,6 +3684,7 @@ Homebrew-homebrew-core/Formula/lib/libgrapheme.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgsf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgsm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgtop.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libgudev.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgusb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgweather.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgxps.rb, Homebrew/homebrew-core, 0
@@ -7320,6 +7323,7 @@ Homebrew-homebrew-core/Formula/y/yaegi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yaf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yafc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yajl.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/y/yalantinglibs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yamale.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yamcha.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yamdi.rb, Homebrew/homebrew-core, 0

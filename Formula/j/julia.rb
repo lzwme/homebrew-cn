@@ -6,8 +6,8 @@ class Julia < Formula
   stable do
     # Use the `-full` tarball to avoid having to download during the build.
     # TODO: Check if we can unbundle `curl`: https:github.comJuliaLangDownloads.jlissues260
-    url "https:github.comJuliaLangjuliareleasesdownloadv1.11.3julia-1.11.3-full.tar.gz"
-    sha256 "027b258b47b4e1a81d1ecdd355adeffdb6c0181c9ad988e717f5e475a12a1de8"
+    url "https:github.comJuliaLangjuliareleasesdownloadv1.11.4julia-1.11.4-full.tar.gz"
+    sha256 "c4936562d05128842d7fe2be30734333519ea94a54861b5d0bfe38d103e96b5b"
 
     depends_on "libgit2@1.8"
 
@@ -30,13 +30,12 @@ class Julia < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "6ea8593028babf39b143a62508270ef26d269e3f83ee9685c9e7c7b57f644d83"
-    sha256 cellar: :any,                 arm64_sonoma:  "ccd746c88700b1d22e17c22458f6bdab649a60b1d64c42c02865c74731dd4bde"
-    sha256 cellar: :any,                 arm64_ventura: "ec3b72f48bf2c2be114f822e49684cd45d38aeaad4cbcc85f5284ed36b9df3d4"
-    sha256 cellar: :any,                 sonoma:        "d0511e1200d1262d182a0ffcf4339418c1592c5264976fbdf9edf2193aa1fa1e"
-    sha256 cellar: :any,                 ventura:       "c08bdd15e1644414c2d4047a7ad5ceddfa0d2a7c856dd20fad8a5355acd41147"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f084cee91baaeff584c5e2baf946bf35aa368bbb23033eb0d915049485557bf"
+    sha256 cellar: :any,                 arm64_sequoia: "6c154308bdda48864cb79b1fe0f2b5059046b3dc70cdd3a801731a8f153fe194"
+    sha256 cellar: :any,                 arm64_sonoma:  "15d965551b2351563d03fcce84c5aa5a402ccb3ae2677c7bd6e4bd8e0f2ffd1e"
+    sha256                               arm64_ventura: "f9a6c03acc919df75cccc0f8b46f7b0e6c3465c137d760ebb4c731137efbf180"
+    sha256 cellar: :any,                 sonoma:        "e1f431c50408b250864e3856ae725ef15dd31fed01a2c4e76f0b872425dea0d0"
+    sha256 cellar: :any,                 ventura:       "947c10f6feefb7b18a291a412b6c8d7fcef592ca1e8bde9efad344dc4bd98422"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b051b6f1bcd4234ac79417c7c5e990697ce2e06ea81070f45ff5040f93bc8775"
   end
 
   head do
