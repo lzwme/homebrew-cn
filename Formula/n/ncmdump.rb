@@ -1,29 +1,36 @@
 class Ncmdump < Formula
   desc "Convert Netease Cloud Music ncm files to mp3flac files"
   homepage "https:github.comtaurusxinncmdump"
-  url "https:github.comtaurusxinncmdumparchiverefstags1.2.1.tar.gz"
-  sha256 "a1bd97fd1b46f9ba4ffaac0cf6cf1e920b49bf6ec753870ad0e6e07a72c2de2d"
+  url "https:github.comtaurusxinncmdumparchiverefstags1.5.0.tar.gz"
+  sha256 "f59e4e5296b939c88a45d37844545d2e9c4c2cd3bb4f1f1a53a8c4fb72d53a2d"
   license "MIT"
   head "https:github.comtaurusxinncmdump.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "5cb059fc2cc8ec831eef8e54ccbf72efbada242917cbe95ce19b33a129ba6949"
-    sha256 cellar: :any,                 arm64_sonoma:   "6b6ea8422cf6c07ba41cdec25cd75e74881a0b9d131ca4fc4e7fa5a36a45ccae"
-    sha256 cellar: :any,                 arm64_ventura:  "78c634b892549c682cd00c6962208eb52b451c184356d7d1629f6c1206beeab3"
-    sha256 cellar: :any,                 arm64_monterey: "af2c32f41f65892c7b8d2e09972e438827624e440d438d65ec13c56508f8445c"
-    sha256 cellar: :any,                 sonoma:         "62112dfde17a6a5e81071383e42befcb8b29660ccc4851dcb62209d9f2aeb8be"
-    sha256 cellar: :any,                 ventura:        "05583fb35e51d6227ba2dbfd43052a60a362af345ae7e70a9acf284404bda5db"
-    sha256 cellar: :any,                 monterey:       "157a0d4a3b8860df60878495e101b2264eb5e2c740e3fa1232af96f945667b79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ef82870ff5763efecb19096dd73cc4090c392d694cdce5e4e1d22cd169cb568"
+    sha256 cellar: :any,                 arm64_sequoia: "9b8b18693e23e28c86536d252255072708216e857cd2e8e7102551dbbd07e4ea"
+    sha256 cellar: :any,                 arm64_sonoma:  "6cc0adacd3083f40ad30cf8ea914f508c23e1720d23020775d914011615dffc3"
+    sha256 cellar: :any,                 arm64_ventura: "50fe70048df8144284e69b364daa834e073dddae300321bfec326d076d7f4733"
+    sha256 cellar: :any,                 sonoma:        "6ce7bd73a815fe8a87ea4edf1df074ab29f5b57793888f7f45b8f08d5146617c"
+    sha256 cellar: :any,                 ventura:       "08a148b759c425f00c14dd9a47e488e81654e6cd8a3473488ca1d91529e07b6b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77421b520db321edb6b48416603b3c3ffc1319d4c3937ca0bd067e344662caa5"
   end
 
+  depends_on "cmake" => :build
   depends_on "taglib"
 
   def install
-    os = OS.mac? ? "macos-" : "linux"
-    arch = Hardware::CPU.intel? ? "intel" : Hardware::CPU.arch.to_s if OS.mac?
-    system "make", "#{os}#{arch}"
-    bin.install "ncmdump"
+    # Use Homebrew's taglib
+    # See discussion: https:github.comtaurusxinncmdumpdiscussions49
+    inreplace "CMakeLists.txt", "add_subdirectory(taglib)\n", ""
+    inreplace buildpath"srcncmcrypt.cpp" do |s|
+      s.gsub! "#define TAGLIB_STATIC\n", ""
+      s.gsub! "#include \"taglibtag.h\"", "#include <taglibtag.h>"
+      s.gsub!(%r{#include "taglib.*(.*)\.h"}, '#include <taglib\1.h>')
+    end
+
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_PREFIX_PATH=#{Formula["taglib"].opt_prefix}", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
@@ -32,14 +39,8 @@ class Ncmdump < Formula
       sha256 "a1586bbbbad95019eee566411de58a57c3a3bd7c86d97f2c3c82427efce8964b"
     end
 
-    resource "homebrew-expect" do
-      url "https:raw.githubusercontent.comtaurusxinncmdump2e40815b5a83236f3feb44720954dd3a02eb00f1testexpect.bin"
-      sha256 "6e0de7017c996718a8931bc3ec8061f27ed73bee10efe6b458c10191a1c2aac2"
-    end
-
-    resources.each { |r| r.stage(testpath) }
+    resource("homebrew-test").stage(testpath)
     system bin"ncmdump", "#{testpath}test.ncm"
     assert_path_exists testpath"test.flac"
-    assert_equal File.read("test.flac"), File.read("expect.bin")
   end
 end

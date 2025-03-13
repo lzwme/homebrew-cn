@@ -1,8 +1,8 @@
 class Faust < Formula
   desc "Functional programming language for real time signal processing"
   homepage "https:faust.grame.fr"
-  url "https:github.comgrame-cncmfaustreleasesdownload2.77.3faust-2.77.3.tar.gz"
-  sha256 "3685348ba2482547fc7675b345caea490ff380814c5dcabc8a5f772682617c0e"
+  url "https:github.comgrame-cncmfaustreleasesdownload2.79.3faust-2.79.3.tar.gz"
+  sha256 "ca2171cb136f135960be10fee2c1728304865a5d5190e9a03cace88b4936c558"
   license "GPL-2.0-or-later"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,13 +14,12 @@ class Faust < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "72afaf325ad50d677fa9741080501a3ea25e71f3413e1495434a0427544bb7b4"
-    sha256 cellar: :any,                 arm64_sonoma:  "d556688303764f6645d20301a1a47669e337240a12ca715d7702c97016577411"
-    sha256 cellar: :any,                 arm64_ventura: "4bd907b439c79eb53981e3f83fd168527eaf4955b25c0246ab7bfd5275a10ce0"
-    sha256 cellar: :any,                 sonoma:        "c297a021412fd064f8d790b19d6da9f08edbcd752e760cc2f1ab4affe8396ed2"
-    sha256 cellar: :any,                 ventura:       "bd3dbd54042efc8a83f64cec75325e8fb21f944bd51d684141306a59768cb323"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "40d93a0c90132426d4087657e4ba77c64f47c180ca4dc08ea748e36f5e64a5d3"
+    sha256 cellar: :any,                 arm64_sequoia: "8f2d2825b45f8abff31f6c0883567208f6491a4d617c03f8a352d6690e817818"
+    sha256 cellar: :any,                 arm64_sonoma:  "adbcdc945b4702906971f7256d228b086adaa619a94101d13f69a47f148fb2d1"
+    sha256 cellar: :any,                 arm64_ventura: "4eb43d2bfddac4f5ace07635cbdc45209c8fd248604f167221b507af376d2e88"
+    sha256 cellar: :any,                 sonoma:        "44ed258f265cb9c8bf69d7165febfb8ce2ab78046883d46fffae0173ff858606"
+    sha256 cellar: :any,                 ventura:       "35d557f845bd2f50b9cba2478f095f5c26e1194d733dd1afd461da2e61ef797d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d6fcc600583028c1535b9e09c4d5796668673889aca3e66e847d49efb7b9c11"
   end
 
   depends_on "cmake" => :build

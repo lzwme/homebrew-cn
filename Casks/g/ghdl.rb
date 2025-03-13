@@ -35,8 +35,11 @@ cask "ghdl" do
 
   directory = "ghdl-llvm-#{version}-macos#{macos_version}-#{arch}"
 
-  binary "#{directory}binghdl"
-  binary "#{directory}binghwdump"
+  ghdlbins = ["ghdl", "ghwdump", "ghdl1-llvm"]
+  ghdlbins.each do |bin|
+    binary "#{directory}bin#{bin}"
+  end
+
   binary "#{directory}includeghdl", target: "#{HOMEBREW_PREFIX}includeghdl"
   binary "#{directory}libghdl", target: "#{HOMEBREW_PREFIX}libghdl"
 

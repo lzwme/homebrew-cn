@@ -1,23 +1,24 @@
 cask "bluej" do
   arch arm: "aarch64", intel: "x64"
 
-  version "5.4.1"
-  sha256 arm:   "6f872911314bae55dd0a1a9251b4adcd4b45a1b98db80e820dca7f086823048c",
-         intel: "3de98acc9862578e9ad892237ef42714546ec661b29f8a6dc8a5b25ed01163d6"
+  version "5.4.2"
+  sha256 arm:   "6fbd02badb9185880542596bdb9c24803323a5b435db259f07a29bc45f8a3463",
+         intel: "ce174a12ada0436bacfcf794e598df7464a54b93764ea935bc444c95c4794acf"
 
-  url "https://www.bluej.org/download/files/BlueJ-mac-#{arch}-#{version.no_dots}.dmg"
+  url "https:github.comk-pet-groupBlueJ-GreenfootreleasesdownloadBLUEJ-RELEASE-#{version}BlueJ-mac-#{arch}-#{version}.dmg",
+      verified: "github.comk-pet-groupBlueJ-Greenfoot"
   name "BlueJ"
   desc "Java Development Environment designed for beginners"
-  homepage "https://www.bluej.org/"
+  homepage "https:www.bluej.org"
 
   livecheck do
     url :homepage
-    regex(/Version\s*v?(\d+(?:\.\d+)+)/i)
+    regex(Version\s*v?(\d+(?:\.\d+)+)i)
   end
 
   depends_on macos: ">= :sierra"
 
   app "BlueJ.app"
 
-  zap trash: "~/Library/Preferences/org.bluej"
+  zap trash: "~LibraryPreferencesorg.bluej"
 end

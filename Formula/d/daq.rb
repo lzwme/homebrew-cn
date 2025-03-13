@@ -1,19 +1,19 @@
 class Daq < Formula
   desc "Network intrusion prevention and detection system"
   homepage "https:www.snort.org"
-  url "https:github.comsnort3libdaqarchiverefstagsv3.0.18.tar.gz"
-  mirror "https:fossies.orglinuxmisclibdaq-3.0.18.tar.gz"
-  sha256 "301db00d33ccd7be546ffb40cd9f4fc41031a5d67196b48bd8b76ae36e10f078"
+  url "https:github.comsnort3libdaqarchiverefstagsv3.0.19.tar.gz"
+  mirror "https:fossies.orglinuxmisclibdaq-3.0.19.tar.gz"
+  sha256 "28d026de46f8206b1a74dd6bf7de10ca19d7a7c95a463744b9f79e51958e5889"
   license "GPL-2.0-only"
   head "https:github.comsnort3libdaq.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "203059c4390dbf47222f967da593a46fd7b65714dfd1ab7b55c1b804b9f69939"
-    sha256 cellar: :any,                 arm64_sonoma:  "c06f5b8975806be9f8125a4fd6bed0d7bae16fca467faefb8fa36e55e37d39a2"
-    sha256 cellar: :any,                 arm64_ventura: "2df06832261bb93693a9ae56c7e5c56bf135951a1f66094c14a10ff8da01491b"
-    sha256 cellar: :any,                 sonoma:        "ace25267b03f1dc835fe63b6226d81762c7798c738e056895a071a7335bc37d0"
-    sha256 cellar: :any,                 ventura:       "112f058f184698fdef0bddb9a5a1c761f2d0e3c5ae4052007f6918e44f0b9549"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "62e607192ee0bdab140fec82d992728d1edc7345df53ebd5c59a8c0a7ea476e6"
+    sha256 cellar: :any,                 arm64_sequoia: "de5fecd1ca4361de4a8435280165af94aab2dc93ef0e5596a1bf7ad5e52213ed"
+    sha256 cellar: :any,                 arm64_sonoma:  "95684f5dbb32aee8326a248018e22ccf2457e1d0d8c6513bf5886663588987e4"
+    sha256 cellar: :any,                 arm64_ventura: "c698259bece3eeaca5400f4834b6868f182545137c31ef3b55320ab72b7c3ec6"
+    sha256 cellar: :any,                 sonoma:        "97f451492598266dd1802c7ef01306793f3093e1199c432714240831956c0dc1"
+    sha256 cellar: :any,                 ventura:       "e36b53523a795b1b2d1b6c706760ca98021982e001c29efe44aecc67008f4f83"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "274a26aa6ea3813c7551a43f8f9176293eb20ce87e813fb86d6ee4de08daf7d5"
   end
 
   depends_on "autoconf" => :build

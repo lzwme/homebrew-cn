@@ -1,18 +1,17 @@
 class Grpcurl < Formula
   desc "Like cURL, but for gRPC"
   homepage "https:github.comfullstorydevgrpcurl"
-  url "https:github.comfullstorydevgrpcurlarchiverefstagsv1.9.2.tar.gz"
-  sha256 "9259935b6ef86d701caef60be338600798348368c0f4dca063a45cf88d8186a8"
+  url "https:github.comfullstorydevgrpcurlarchiverefstagsv1.9.3.tar.gz"
+  sha256 "bb555087f279af156159c86d4d3d5dd3f2991129e4cd6b09114e6851a679340d"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "18b1180ca2627a4fd5f3da775a9095d3349c14b1c030bce929faddfed56e7e02"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18b1180ca2627a4fd5f3da775a9095d3349c14b1c030bce929faddfed56e7e02"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "18b1180ca2627a4fd5f3da775a9095d3349c14b1c030bce929faddfed56e7e02"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5202cec41fc1afc38feb1357e896ed8287454b414a556a3d2efc98bbce229848"
-    sha256 cellar: :any_skip_relocation, ventura:       "5202cec41fc1afc38feb1357e896ed8287454b414a556a3d2efc98bbce229848"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b4a1cef08d364c3a0f0f2692820901146493aeb4aaf8bb47ff7e6dd035e7ad6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b6be18c234287de07dc328bcf18ab337dc9b89a477e20110546d7615bd31815"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b6be18c234287de07dc328bcf18ab337dc9b89a477e20110546d7615bd31815"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0b6be18c234287de07dc328bcf18ab337dc9b89a477e20110546d7615bd31815"
+    sha256 cellar: :any_skip_relocation, sonoma:        "73e6d2427885ab08ae862f8e43be8b3d988917a1fdc722026cdd587be1629d1e"
+    sha256 cellar: :any_skip_relocation, ventura:       "73e6d2427885ab08ae862f8e43be8b3d988917a1fdc722026cdd587be1629d1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14e2492169d85b40c8251c3ca7891c58d35f2f12cd781b720c29582573e12c9a"
   end
 
   depends_on "go" => :build

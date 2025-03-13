@@ -3,18 +3,18 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https:docs.keeper.ioenprivileged-access-managercommander-clioverview"
-  url "https:files.pythonhosted.orgpackagesde0dfab8514dd3a522b1a2a66e9ed7e425b6c2aad1c2034e5923c1f873c0c6a8keepercommander-17.0.8.tar.gz"
-  sha256 "e3c082c02132b22e0e20d44b7c6440a0663941e5e3b405cedc13745fccd80a3f"
+  url "https:files.pythonhosted.orgpackagesa60fc03afbcc879c72e9e5f84ba015ccee8c43d38e1585e78644fdca316f80a4keepercommander-17.0.9.tar.gz"
+  sha256 "82f551c79c757dfd0faf0df316ee8880dbe965fbea2bee65206877ef66c615f6"
   license "MIT"
   head "https:github.comKeeper-SecurityCommander.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "728a5d165e650e94d98b33be4a0b65db4c2a3ad55852c8d3b61be2a9052111ac"
-    sha256 cellar: :any,                 arm64_sonoma:  "2783108c6fb02eaa3ca64242508f9866d4895e1e0b93b69a020d519e5d6aadc4"
-    sha256 cellar: :any,                 arm64_ventura: "05fab0098f7954b7eafd49b1bc68fd87e16de11b06225f3948b090b68fedbb47"
-    sha256 cellar: :any,                 sonoma:        "10ba16f0a00b17ac94e02a5d9c655c8850b9a9d6d7eb422fad19502b5310a34d"
-    sha256 cellar: :any,                 ventura:       "354e0651a47ec314d938fc90188a34726b7fe4e8c13ef5b46c61bba6a3e8958b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b31d05ae22bc75fc901390b96758e91bd83b5f9aeb0bbe3f2e0d5eb8a44897c8"
+    sha256 cellar: :any,                 arm64_sequoia: "f3a75fad9dfc31a77ae81fa5e6370b0fae710356ed4a6849f8dce03b5d36ad24"
+    sha256 cellar: :any,                 arm64_sonoma:  "5de82d6c2ea5a690bf3cc1cbdf635a71ec27d9e647dcd248097e0ad8c4c4ef5f"
+    sha256 cellar: :any,                 arm64_ventura: "f9bbb0e597822747c3e843a4af5307df461a8721f27176c148cd3972cfa5425c"
+    sha256 cellar: :any,                 sonoma:        "7d81cf482d8782eaca60cf2f99e7cf60ae6f2b40138b6ea05ba40b15570c45ad"
+    sha256 cellar: :any,                 ventura:       "a58bbac93a60b62e0bcb3bc1333353f242e9be4d0c435bc7fce649128b00ee03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c287dc62c6d3eb5a6fe684458a0bffdb9f337209e4cdb97042b6fe5a8f35d95"
   end
 
   # bcrypt dependencies
@@ -76,8 +76,8 @@ class KeeperCommander < Formula
   end
 
   resource "protobuf" do
-    url "https:files.pythonhosted.orgpackagesf7d1e0a911544ca9993e0f17ce6d3cc0932752356c1b0a834397f28e63479344protobuf-5.29.3.tar.gz"
-    sha256 "5da0f41edaf117bde316404bad1a486cb4ededf8e4a54891296f648e8e076620"
+    url "https:files.pythonhosted.orgpackages536a2629bb3529e5bdfbd6c4608ff5c7d942cd4beae85793f84ba543aab2548aprotobuf-6.30.0.tar.gz"
+    sha256 "852b675d276a7d028f660da075af1841c768618f76b90af771a8e2c29e6f5965"
   end
 
   resource "pycryptodomex" do
@@ -105,14 +105,19 @@ class KeeperCommander < Formula
     sha256 "3f8804571ebe159c380ac6de37643bb4685970655d3bba243530d6558b799aa0"
   end
 
+  resource "python-dotenv" do
+    url "https:files.pythonhosted.orgpackagesbc57e84d88dfe0aec03b7a2d4327012c1627ab5f03652216c63d49846d7a6c58python-dotenv-1.0.1.tar.gz"
+    sha256 "e324ee90a023d808f1959c46bcbc04446a10ced277783dc6ee09987c37ec10ca"
+  end
+
   resource "requests" do
     url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
     sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesd15343d99d7687e8cdef5ab5f9ec5eaf2c0423c2b35133a2b7e7bc276fc32b21setuptools-75.8.2.tar.gz"
-    sha256 "4880473a969e5f23f2a2be3646b2dfd84af9028716d398e46192f84bc36900d2"
+    url "https:files.pythonhosted.orgpackages32d27b171caf085ba0d40d8391f54e1c75a1cda9255f542becf84575cfd8a732setuptools-76.0.0.tar.gz"
+    sha256 "43b4ee60e10b0d0ee98ad11918e114c70701bc6051662a9a675a0496c1a158f4"
   end
 
   resource "tabulate" do
@@ -136,8 +141,8 @@ class KeeperCommander < Formula
   end
 
   resource "websockets" do
-    url "https:files.pythonhosted.orgpackages2e7a8bc4d15af7ff30f7ba34f9a172063bfcee9f5001d7cef04bee800a658f33websockets-15.0.tar.gz"
-    sha256 "ca36151289a15b39d8d683fd8b7abbe26fc50be311066c5f8dcf3cb8cee107ab"
+    url "https:files.pythonhosted.orgpackages21e626d09fab466b7ca9c7737474c52be4f76a40301b08362eb2dbc19dcc16c1websockets-15.0.1.tar.gz"
+    sha256 "82544de02076bafba038ce055ee6412d68da13ab47f0c60cab827346de828dee"
   end
 
   resource "zipp" do

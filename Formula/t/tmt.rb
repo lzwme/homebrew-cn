@@ -3,18 +3,17 @@ class Tmt < Formula
 
   desc "Test Management Tool"
   homepage "https://tmt.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/83/ac/e26eaa08ca1dbcd77f7f70206a64e82554a2d60cf756ee348dc614771df7/tmt-1.43.0.tar.gz"
-  sha256 "81d33c0f0edd71fd265d51a07245d783fa608264adac1a55db90059ff7a012da"
+  url "https://files.pythonhosted.org/packages/b1/b4/4a681ea94c91f6280236bedd8b0082493f9eb107522f39c0a191f76145ac/tmt-1.44.0.tar.gz"
+  sha256 "21e417563333a0ef49c90ab78506f3df9701e37200bf7e89a6ce72051587b3a6"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "986abeb4e7392267af156d7a4c38ecd5a2fd9d8789bebcce4f8d201415a09c31"
-    sha256 cellar: :any,                 arm64_sonoma:  "0449dfc2a046b0cf593468d7ea4a5b87767065258ed42392ba752a2c0b507367"
-    sha256 cellar: :any,                 arm64_ventura: "2503858fd03a60f2d116916b5f4a1496824a34ca74b4280a43676475e31a9739"
-    sha256 cellar: :any,                 sonoma:        "59aed1f8de7ae4d9db5e77eff9219246ed8dd4f22a1d08f4cd2bbd7a1cfa82f7"
-    sha256 cellar: :any,                 ventura:       "8dacdeb76576f73c39fe7d78c4071906198a36fe8e8a2782ab44f4630fa71657"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03407489d29645cbad5be7432a54e0da40f051f2d11d64f278fbc4494283a26f"
+    sha256 cellar: :any,                 arm64_sequoia: "f3eb4c35c3005e07a901d8add34a6b29a6036804d77f8804b5f175d6511d0482"
+    sha256 cellar: :any,                 arm64_sonoma:  "db94235d589ab8007e91152850328d7af914e0de8be649cc2119f9a1b796510f"
+    sha256 cellar: :any,                 arm64_ventura: "33885964540ecc5b8815ab6eedb0530c29b8acd3cccab20a50149f263d10d02a"
+    sha256 cellar: :any,                 sonoma:        "1a1581f7940e69411dc04b378f76e36e6774cc0b2fd41bcb0e92d160c334db2a"
+    sha256 cellar: :any,                 ventura:       "e5cf27d1350d58d2e5f0419cfe6fe4828345000997f2294e0acf71f19bc81934"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "749cbe2b99eceae87fee799a07c96af978f888f4c29df3bf94e28c9315897530"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -28,8 +27,8 @@ class Tmt < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/49/7c/fdf464bcc51d23881d110abd74b512a42b3d5d376a55a831b44c603ae17f/attrs-25.1.0.tar.gz"
-    sha256 "1c97078a80c814273a76b2a298a932eb681c87415c11dee0a6921de7f1b02c3e"
+    url "https://files.pythonhosted.org/packages/69/82/3c4e1d44f3cbaa2a578127d641fe385ba3bff6c38b789447ae11a21fa413/attrs-25.2.0.tar.gz"
+    sha256 "18a06db706db43ac232cce80443fcd9f2500702059ecf53489e3c5a3f417acaf"
   end
 
   resource "charset-normalizer" do
@@ -63,8 +62,8 @@ class Tmt < Formula
   end
 
   resource "fmf" do
-    url "https://files.pythonhosted.org/packages/52/1f/c8e8e74f0c40e9a0230dad81b87b4a4d7afad7c51db54e16350aaecefded/fmf-1.6.1.tar.gz"
-    sha256 "cf80a4ac3ca1d9cad4453fe8205ee02912d27269d6384723d6a6aa1808b43c2e"
+    url "https://files.pythonhosted.org/packages/2c/fe/aed3f3befc18d725776c10fe621790002671d0c4d50a6287d71fa371cf90/fmf-1.7.0.tar.gz"
+    sha256 "131b557786b912f99d49d8dcc84196e3c2f39c5ce5ffe8b78e48150afd380dc3"
   end
 
   resource "idna" do

@@ -1,18 +1,18 @@
 class Rover < Formula
   desc "CLI for managing and maintaining data graphs with Apollo Studio"
   homepage "https:www.apollographql.comdocsrover"
-  url "https:github.comapollographqlroverarchiverefstagsv0.27.2.tar.gz"
-  sha256 "afdaa5ab4d1afc3d1138a93aca207aa666e9d262e4a3484d352969420868e186"
+  url "https:github.comapollographqlroverarchiverefstagsv0.28.0.tar.gz"
+  sha256 "2dd9e43ae166147dc687a026464ceecce261b87d78a6bdb199f0155c6e152ae6"
   license "MIT"
   head "https:github.comapollographqlrover.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "644b6aaabe5a07d17b60d486d84995b700cafc5c4ee15a4474f6da07061274a4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bdd683d0abdd2d5b204ce66ee17c55d063149f22bedf9174097c33fc5d9541e9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1a2d5d98f7884a211fe933f3cc16d7a8b83b096395d23e048b57e9ea0c73d1c5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "adec5cc860f6bb0558aff3ca95ef202edcfb4d69809d7f66e4eb4a7f729aa593"
-    sha256 cellar: :any_skip_relocation, ventura:       "d15e91441e7aab048401ba531b78e3872220ac0c9b3507a64d9e37b78b44cf69"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50117a3e0f89677cbce619fbcfda3a3a643bc57e6a297fce796e79108bc6fd16"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3727e11322747407187c2421227c529373daed0f5b823888441dfa3877a9190f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff5d3c1503d47b5285ae6e5c000209c62b292ae3da7ceb5c2226920970c43580"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "244a27dfab5c0e5899bec0e58f43dba5fef7046220526af77034e93a671c0a85"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3aee76c0cb21cfb144d42babdab7ad061b02edbe9b84fec174edef70d4c1fe38"
+    sha256 cellar: :any_skip_relocation, ventura:       "a08a3b43008300af9164dd33daa01b9b17f0e187c3186b3909c0b6bf407221a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2192bb86611728b5fcac517da12db68d4d7f031f616203bbaf83abeae9059bbc"
   end
 
   depends_on "rust" => :build

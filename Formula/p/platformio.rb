@@ -3,13 +3,13 @@ class Platformio < Formula
 
   desc "Your Gateway to Embedded Software Development Excellence"
   homepage "https:platformio.org"
-  url "https:files.pythonhosted.orgpackages4eb617fe1083ba10575132db3050fc68ac20a8752dcc41babd39ae8316ff49ceplatformio-6.1.17.tar.gz"
-  sha256 "f2364cfeed1d30d99f04ee359754c82591a43c83b6ce2de5bf1334c364f85332"
+  url "https:files.pythonhosted.orgpackages2fc5ba3c1ba120b0466bb621615e4075a5c4752400c6adbf2a15edd91b9aefe9platformio-6.1.18.tar.gz"
+  sha256 "6ea19c66fba3c5272378afa6ae11abbf883243dd8e503ac5f4ff8ac277ccc7c6"
   license "Apache-2.0"
   head "https:github.complatformioplatformio-core.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "aeadd2ff97659f8e4512022598a2c2fb3ba9fc09f97c4a8fb740680f3487a5fe"
+    sha256 cellar: :any_skip_relocation, all: "b561469654cb856725e68ed36ae1cccb9a3e31bedced4cef5ee7fa75be34d2c9"
   end
 
   depends_on "certifi"
@@ -36,8 +36,8 @@ class Platformio < Formula
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
+    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
   resource "colorama" do
@@ -66,8 +66,8 @@ class Platformio < Formula
   end
 
   resource "pyelftools" do
-    url "https:files.pythonhosted.orgpackages88560f2d69ed9a0060da009f672ddec8a71c041d098a66f6b1d80264bf6bbdc0pyelftools-0.31.tar.gz"
-    sha256 "c774416b10310156879443b81187d182d8d9ee499660380e645918b50bc88f99"
+    url "https:files.pythonhosted.orgpackagesb9ab33968940b2deb3d92f5b146bc6d4009a5f95d1d06c148ea2f9ee965071afpyelftools-0.32.tar.gz"
+    sha256 "6de90ee7b8263e740c8715a925382d4099b354f29ac48ea40d840cf7aa14ace5"
   end
 
   resource "pyserial" do
@@ -91,8 +91,8 @@ class Platformio < Formula
   end
 
   resource "starlette" do
-    url "https:files.pythonhosted.orgpackagesfffb2984a686808b89a6781526129a4b51266f678b2d2b97ab2d325e56116df8starlette-0.45.3.tar.gz"
-    sha256 "2cbcba2a75806f8a41c722141486f37c28e30a0921c5f6fe4346cb0dcee1302f"
+    url "https:files.pythonhosted.orgpackages041b52b27f2e13ceedc79a908e29eac426a63465a1a01248e5f24aa36a62aeb3starlette-0.46.1.tar.gz"
+    sha256 "3c88d58ee4bd1bb807c0d1acb381838afc7752f9ddaec81bbe4383611d833230"
   end
 
   resource "tabulate" do

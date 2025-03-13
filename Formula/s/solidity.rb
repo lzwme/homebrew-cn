@@ -1,10 +1,9 @@
 class Solidity < Formula
   desc "Contract-oriented programming language"
   homepage "https:soliditylang.org"
-  url "https:github.comethereumsolidityreleasesdownloadv0.8.28solidity_0.8.28.tar.gz"
-  sha256 "ec756e30f26a5a38d028fd6f401ef0a7f5cfbf4a1ce71f76c2e3e1ffb8730672"
+  url "https:github.comethereumsolidityreleasesdownloadv0.8.29solidity_0.8.29.tar.gz"
+  sha256 "fe76237f513b7d6727a93cd5b83f92747650c8dc5f8f89457a41e8f54119ed38"
   license all_of: ["GPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0", "CC0-1.0"]
-  revision 2
 
   livecheck do
     url :stable
@@ -12,12 +11,12 @@ class Solidity < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "aa6ea61e77891d4b07512a4f0d376a276a9e9da023fd35d61384cf7bec8881fd"
-    sha256 cellar: :any,                 arm64_sonoma:  "c6cfc02eaf2b37f9599b0244b9264d9aef9a1e6f4f1ce7e240665e438de7ad9e"
-    sha256 cellar: :any,                 arm64_ventura: "06585c25a8af2fab80b72ec8b5765406638322f3eb2b606854c92b8b1248e29f"
-    sha256 cellar: :any,                 sonoma:        "0b31144825498cc45ad6e1032e73ab889f8b1ec60f337edf48b4e88598cceec2"
-    sha256 cellar: :any,                 ventura:       "db923317dab7f9f285127343dc9b34e04232293f27871d2598c137dc5cfa5363"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d87936e98edbed99275f8c30d847bd715edce12dab50dfd1aa7f4e023f24411"
+    sha256 cellar: :any,                 arm64_sequoia: "1e2b446d615f9904d2404d7617bcbb5cd1a4649599bd2e6bb21660456a7c3d67"
+    sha256 cellar: :any,                 arm64_sonoma:  "7e1748faeffb013047dc05b34b46d00fa40d7b4ee7fdefecde7cdfbb67853eb7"
+    sha256 cellar: :any,                 arm64_ventura: "0aead765921ab4db364f04a1d2ad0a44e63f47df58ec025cb573462288c0273d"
+    sha256 cellar: :any,                 sonoma:        "6f72f70d6f5ed6f143871f0031340c28356f08236320046db522989b1dd024a0"
+    sha256 cellar: :any,                 ventura:       "a07fb17c1e38185be12b87b810cff01f7eca72af593967055c65ed8fced61538"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a05ea5b761308854461ea6e7848a80ecc447919f46b3c916726d11d7eb615da"
   end
 
   depends_on "cmake" => :build

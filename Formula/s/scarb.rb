@@ -1,8 +1,8 @@
 class Scarb < Formula
   desc "Cairo package manager"
   homepage "https:docs.swmansion.comscarb"
-  url "https:github.comsoftware-mansionscarbarchiverefstagsv2.11.1.tar.gz"
-  sha256 "613ab337a19c131da49d87336335227770419513c6f4bbf336ca44cb9862c715"
+  url "https:github.comsoftware-mansionscarbarchiverefstagsv2.11.2.tar.gz"
+  sha256 "d07b7f1190c75d84731481c9b64b99806940d0e11f915b4b83088e25aba0fae6"
   license "MIT"
   head "https:github.comsoftware-mansionscarb.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Scarb < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1dfc28db7190bbe57995e9225d000a779bf3ebb5e9bba15f1e85c9f6f88d3da8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0d96926a7abe797f2916888e5c55a1e4d50bd24655562c54630c83536d12205"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fb333a8bd69325d91ba3b2c11167f39044283b87f6687ce2baaf03e4889905a5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "114a0448ef201be8e01e22d80a37cab834cf93ad6b45bb9a446844cd7710f085"
-    sha256 cellar: :any_skip_relocation, ventura:       "47b8ab563a01fd4023241ad00229d15ba4a3fd0db2d403bf8921b38b7c42bf1b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e171e071fb3b0d9134a6d66b32cafc78ef2030e57f7dc7f61b7a9004fd2f916"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ffb303bc63591f68d45c3f32ad7ac704145cf4a2c9835ff55d5eb756b8487807"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4096cc42fb8dde182ffd554ffb04ac2c0167058afcacd2af6581063cc768bbed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2493d4a84e12fce0d94431c7f2d8062c80956c1e7e6c192b7875589e3185d914"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0c4d353bbdd41fa4d6e5cf5fbb2eaba944860868766a5ec6e0b1114c2c4d3b33"
+    sha256 cellar: :any_skip_relocation, ventura:       "8ddb4a0ae970bf7c64ce8ebeeafc37a5e3bdd46e2f06ac9ba64cf9ca343d6487"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e303dc4efe9367f106ff8c0db3435d3b867a0b79afe6eb221fadc9cb9368c089"
   end
 
   depends_on "rust" => :build

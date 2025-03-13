@@ -4,23 +4,16 @@ class Vimpc < Formula
   url "https:github.comboysetsfrogvimpcarchiverefstagsv0.09.2.tar.gz"
   sha256 "caa772f984e35b1c2fbe0349bc9068fc00c17bcfcc0c596f818fa894cac035ce"
   license "GPL-3.0-or-later"
+  revision 1
   head "https:github.comboysetsfrogvimpc.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia:  "d7224868acdc3f21753f66baf1e1a5631651da85e89d7885f49b48137d9a1e67"
-    sha256 arm64_sonoma:   "08b6a0c50415af4361a442810e8d4fb190e64f123230087604359fd00b10e654"
-    sha256 arm64_ventura:  "a738652b8bbf20ab0449d5eea600f10aa602d5d7a490324c17efe2961afbbce5"
-    sha256 arm64_monterey: "80a71521b623830617733116cbce155ba0598dac8604c7e19438207946ec1406"
-    sha256 arm64_big_sur:  "fcbb4aae0e232572c4d44a0d08b5a59500978e0c428480d74d00b244345b3527"
-    sha256 sonoma:         "0d936d2061ea8086c97950031cdebef46aac8061bcf45e77d2d24dd610dc25ab"
-    sha256 ventura:        "a3963e103150ade1c6470703d7071530d15c760921bd329ed12c77996cdd2755"
-    sha256 monterey:       "7484bfac23ae149460ca6292a86c3b54860fd96edc08d5f27cf3f6f621acfced"
-    sha256 big_sur:        "493ef1f2bc8c9f52f41de234816fd93eb886393006be2b3cea1de40ddc0419ca"
-    sha256 catalina:       "c8d1936d4ff7a8b85de154b64e7f7a276b6265c703029cca7c2e56ee4ca32abd"
-    sha256 mojave:         "83dd8968d8fc7830c2dc90db35441c01bd62c567b8d2749e00edba7ee7429487"
-    sha256 high_sierra:    "d457ed5a1b85e88f721d7617753aee99a3a8ed17806b5925b6458c9fb9477423"
-    sha256 sierra:         "af41091db0a875b5fa05d0b1cc969df649693f4ceb4e14b8cdd72a3b6527a741"
-    sha256 x86_64_linux:   "e2a99a63aaa638c00b002546903cffd1f63a085856dd5e62235102caac000162"
+    sha256 arm64_sequoia: "1fcf1d047f24ee3ba7d4ef487535073559d3cd25129d607581784f2625e40bcf"
+    sha256 arm64_sonoma:  "e1e7386a32a897ad76ea0a934d81f3c694f32638df2a7ec6a440703e00086f00"
+    sha256 arm64_ventura: "c8ba4e9529a838e511d9a8cef03df1fff057074983c6ec28a8b89b5b948257d3"
+    sha256 sonoma:        "f176d799036dee333704bb6fbc5c682703b384df24710d566353fbd36c5c73c1"
+    sha256 ventura:       "5c2aaf2d541312c5cc94edee59489088f397a5345e548e869057b1c62eb32d65"
+    sha256 x86_64_linux:  "20f51a883a9520406f7cbfd7e8c8d9bc533efbb03ce4ecd63e3578aca351daa4"
   end
 
   depends_on "autoconf" => :build

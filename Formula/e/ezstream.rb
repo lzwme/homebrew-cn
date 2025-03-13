@@ -5,6 +5,7 @@ class Ezstream < Formula
   mirror "https:mirror.csclub.uwaterloo.caxiphreleasesezstreamezstream-1.0.2.tar.gz"
   sha256 "11de897f455a95ba58546bdcd40a95d3bda69866ec5f7879a83b024126c54c2a"
   license "GPL-2.0-only"
+  revision 1
 
   livecheck do
     url "https:ftp.osuosl.orgpubxiphreleasesezstream?C=M&O=D"
@@ -12,18 +13,12 @@ class Ezstream < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "9ad0d33e1b488f6859b2a467ccc55030a94eb8c07d12f13948f37aecf470d26c"
-    sha256 cellar: :any,                 arm64_sonoma:   "14f8fd11da1cc6663aeffd97153a5b843e5b0bc4442ca26dbb6b3eae975fe348"
-    sha256 cellar: :any,                 arm64_ventura:  "2dd9d7371e6fd462547e28d93e82f1351059b847a50b46dbb1a309c628c99fa7"
-    sha256 cellar: :any,                 arm64_monterey: "22efe55635691409ca6c53eda5be73a7667c8ca59f0076b46380b67e663f5283"
-    sha256 cellar: :any,                 arm64_big_sur:  "188838a38d3573fc77ffd5684e0e7759b24d550ffdd895243425e13c29e038c2"
-    sha256 cellar: :any,                 sonoma:         "0fa4e1ba8a56f1ebec16abfc48be404bd85e4e1c7646c000398e121132f100d6"
-    sha256 cellar: :any,                 ventura:        "ce167e9399770af979c88253224ef5e852192aef03ec4c5a64243612b91ec742"
-    sha256 cellar: :any,                 monterey:       "07ec03e5e37aee0593f5d9121b9bc0ccb071df6c5ee520fc619991820ca90f31"
-    sha256 cellar: :any,                 big_sur:        "fbfe1082559a1313ee3ff071ad35866fb20d5fb360fbfc634fbf85ac48c3e94d"
-    sha256 cellar: :any,                 catalina:       "2854c21def8d7e97747aeca5e856833d17780698739e581a192059c58f50ffa2"
-    sha256 cellar: :any,                 mojave:         "cfc4088a51cdcb0a586ee2a796d5a515d89007bebfae0f7bfd6b2a4c7a2c13f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0c88f43345c0ebb3eca025869b579fa86820e12268fdb0e79d77fa2ee16a296"
+    sha256 cellar: :any,                 arm64_sequoia: "34332f32987c8a53a1d5368b7f9a08d46410609e7c82132d8b8e124a51f2b1aa"
+    sha256 cellar: :any,                 arm64_sonoma:  "f707c6216526edfd36d62e773bccfbf616dc72071955b6811b60de26d923995b"
+    sha256 cellar: :any,                 arm64_ventura: "6f96ec34c4132e9c10c5418f8515f09c113f871e775c3550a35823f6ef97e914"
+    sha256 cellar: :any,                 sonoma:        "1fcd81d78cde696329fde5219e6f4137a494afd8212d06219957234822a95bcf"
+    sha256 cellar: :any,                 ventura:       "b4403b4d9aa440098ffe49937e5830639f54063bad5b5dd0899baca8b304d345"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4227d8f8ab41ba89783745d543c132aec8b2e3edef500adce8472f8055f7bca"
   end
 
   head do

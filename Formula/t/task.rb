@@ -1,8 +1,8 @@
 class Task < Formula
   desc "Feature-rich console based todo list manager"
   homepage "https:taskwarrior.org"
-  url "https:github.comGothenburgBitFactorytaskwarriorreleasesdownloadv3.3.0task-3.3.0.tar.gz"
-  sha256 "7fd1e3571f673679758f001b5f44963eee59fd0d2cac887a5807cf2fd90856a1"
+  url "https:github.comGothenburgBitFactorytaskwarriorreleasesdownloadv3.4.0task-3.4.0.tar.gz"
+  sha256 "8a4b1a062ff656e31c8abf842da9f1bfe8189102ce9240bf730e92378d52ecc2"
   license "MIT"
   head "https:github.comGothenburgBitFactorytaskwarrior.git", branch: "develop"
 
@@ -12,12 +12,12 @@ class Task < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "1ef979eb7314c0a8ca74f96e7f935fba946b7128bd1614a1d7bf97d155901087"
-    sha256                               arm64_sonoma:  "cfb3f2ca6cb41ffba4fea6adb21d8549e2d893cccbb7b0d8ffc53d160bdc41e8"
-    sha256                               arm64_ventura: "7ccbcc8c40f100e4700f0926041946d45bafe6da725545fb9bf0be7be4392232"
-    sha256                               sonoma:        "fab3bdfd1bfc3c86525b6b00c67c4bb1dc0168d8605711d333b59ca3fdd6ad4f"
-    sha256                               ventura:       "b34afc2fc079048ff7f573e9b1509554171753dc511f6d71106eb1002d4d06ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c7526a9f1bc1c91caed713777dc56860544fd67ecb78d40d7bfed24bc9d4763"
+    sha256                               arm64_sequoia: "a89d423ee764f4d612b94edc61920bf7745c41b7d34fe85c077450934c097ba9"
+    sha256                               arm64_sonoma:  "1302e7fcb695fca0eaca9f6ba18f4e4674eb57596f8d544b7f535673c625472e"
+    sha256                               arm64_ventura: "50062f1153caa66b43833c65177c97e1e0362e19ec343896b616a1fc54e340e1"
+    sha256                               sonoma:        "9762be06acb586f27e6c4001865297b75ecb19ea4e553fd03fafbd4e6911f4f1"
+    sha256                               ventura:       "af992a0f16d61dc04a0ad2b00118f647436ccee2bd8901f2b58d24bd2348c81d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07bf2d32012a31ee0f7231f5bbdb070a833845671a18ee80ac4b12890817d655"
   end
 
   depends_on "cmake" => :build

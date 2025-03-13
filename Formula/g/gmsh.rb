@@ -22,54 +22,57 @@ class Gmsh < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f3a1e40de95ab46acc5ac50e87dd5b0faf1ecdf4cb44829909e65fb13419f81d"
-    sha256 cellar: :any,                 arm64_sonoma:  "68e0199110b83ebe53d765ac46f4a9efed10020b5acd4982b064bb16a4d88416"
-    sha256 cellar: :any,                 arm64_ventura: "5ba12aaf463673839cfec13a4ec5e488fb00db19010678c140fc6dfb3c217263"
-    sha256 cellar: :any,                 sonoma:        "7045a9dc996683f1f6ee02300ec61fa08d52c1154a16a5c9c329ad1a113f3dc1"
-    sha256 cellar: :any,                 ventura:       "d5870e45349737e9a3fb0e8b7d9cd52aff3a8b6ccb4212953b8897ebd6f9af51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d95c744bda9ff11d63447ed1a86907be4f5d9ca4498365d0f1e86634314fe2d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "cf5c8f43758e346366f53bf60865e5d6f03298eba5e26f251a88e42af4716552"
+    sha256 cellar: :any,                 arm64_sonoma:  "8ba053b9490f1568a75c46dd7b2ec7d806a4dfa82c4a8461c98a6814ca101adb"
+    sha256 cellar: :any,                 arm64_ventura: "e659b97a98f1047d2b83b2265d3a05a1cc2ec8b819869979ca713fe0b12aaf57"
+    sha256 cellar: :any,                 sonoma:        "7c06d9608699dd84a080a9dc8e265260c3a666b834b9d76d7214e8075971bec3"
+    sha256 cellar: :any,                 ventura:       "e527cf0fa674c848605096e23d24c687455e2fa56b427d7d6e90bf6d9c345a87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "053b6c6984b71f7bb1c5763dd75ee6c3c1adda0db4cfc080efcffe46443615f1"
   end
 
   depends_on "cmake" => :build
+  depends_on "eigen" => :build
   depends_on "cairo"
   depends_on "fltk"
-  depends_on "gcc" # for gfortran
   depends_on "gmp"
   depends_on "jpeg-turbo"
   depends_on "libpng"
-  depends_on "open-mpi"
+  depends_on "metis"
   depends_on "opencascade"
 
   uses_from_macos "zlib"
 
   on_macos do
     depends_on "freetype"
+    depends_on "libomp"
   end
 
   on_linux do
-    depends_on "libx11"
     depends_on "mesa"
     depends_on "mesa-glu"
   end
 
   def install
+    # Remove some bundled libraries to make sure brew formula is used
+    rm_r(%w[
+      contrib/eigen
+      contrib/metis
+    ])
+
     # Fix compile with newer Clang
     ENV.append_to_cflags "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1403
 
     ENV["CASROOT"] = Formula["opencascade"].opt_prefix
 
-    args = %W[
-      -DENABLE_OS_SPECIFIC_INSTALL=0
-      -DGMSH_BIN=#{bin}
-      -DGMSH_LIB=#{lib}
-      -DGMSH_DOC=#{pkgshare}/gmsh
-      -DGMSH_MAN=#{man}
+    args = %w[
+      -DENABLE_OS_SPECIFIC_INSTALL=OFF
       -DENABLE_BUILD_LIB=ON
       -DENABLE_BUILD_SHARED=ON
-      -DENABLE_NATIVE_FILE_CHOOSER=ON
       -DENABLE_PETSC=OFF
       -DENABLE_SLEPC=OFF
       -DENABLE_OCC=ON
+      -DENABLE_SYSTEM_CONTRIB=ON
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

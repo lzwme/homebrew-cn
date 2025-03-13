@@ -12,17 +12,22 @@ class Asdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afceac20abb167cd85d4da04e1c89acdd06098f2aa4373deb640729bf7c0012f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "afceac20abb167cd85d4da04e1c89acdd06098f2aa4373deb640729bf7c0012f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "afceac20abb167cd85d4da04e1c89acdd06098f2aa4373deb640729bf7c0012f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "27e44c008fffe03e266a992090543f73f66d189b68579a6e6e1048c969a3e89e"
-    sha256 cellar: :any_skip_relocation, ventura:       "27e44c008fffe03e266a992090543f73f66d189b68579a6e6e1048c969a3e89e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b804f7d106519efff0a355dcf4c62b8edea0997abef667a1c9b4d5462fd9000"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90346d0b6c2cb065be3deee9dc0b0e4c903984a9f047ba7c481020efbe9f368a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "90346d0b6c2cb065be3deee9dc0b0e4c903984a9f047ba7c481020efbe9f368a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "90346d0b6c2cb065be3deee9dc0b0e4c903984a9f047ba7c481020efbe9f368a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "29933f1ae2ea276c92d7a22df8aa27ce74863d9889e76b361d5eff9424861997"
+    sha256 cellar: :any_skip_relocation, ventura:       "29933f1ae2ea276c92d7a22df8aa27ce74863d9889e76b361d5eff9424861997"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e4548068a801b520156702ed76fb907b80e9f0518151a89b9b724b62cfdfda2"
   end
 
   depends_on "go" => :build
 
   def install
+    # fix https:github.comasdf-vmasdfissues1992
+    # relates to https:github.comHomebrewhomebrew-coreissues163826
+    ENV["CGO_ENABLED"] = OS.mac? ? "1" : "0"
+
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}"), ".cmdasdf"
     generate_completions_from_executable(bin"asdf", "completion")
     libexec.install Dir["asdf.*"]

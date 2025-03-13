@@ -1,18 +1,18 @@
 class CargoMsrv < Formula
   desc "Find the minimum supported Rust version (MSRV) for your project"
   homepage "https:foresterre.github.iocargo-msrv"
-  url "https:github.comforesterrecargo-msrvarchiverefstagsv0.18.1.tar.gz"
-  sha256 "81ae871c3aba6d044b7f3fcee7d7a102f5f673f45883afb23e57663e98ef6bb9"
+  url "https:github.comforesterrecargo-msrvarchiverefstagsv0.18.3.tar.gz"
+  sha256 "5ebe6dd493cd9641d31cf736458ea0ef61a74d162ca0364b56c91239efc88ee6"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comforesterrecargo-msrv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0df347ec1d758f93f77fd9ca1c92006dc0c6be8472dddc3793acc9b97906b00"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "203dcc24f69c8c1b8ad44aa052942af6ba1db514edf1aeb7db9df25c6aaa4b31"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "297f0b7e6c31db06098f1bdf013a96a0af000cc7d0143faca349f5141a075da5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "be27e3b2fa6f82735ac92237b3cb2af8aafcbc7b1bdf5a994e1f2fe0c3cfd7f2"
-    sha256 cellar: :any_skip_relocation, ventura:       "a8fa3e5a881a11dcf3aaaf5815ad5c37eb584f67ea9089b881fb98d49ee797b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f71b8cbec3a53b019947df3d65ae4760cb213dcbf7880ef7c39e56ccae869f2e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc1ba56ad77fbd7b986c1d4645eabfcbf5e945b62a2b6e3913433d433c56ec12"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ccfbb358d7fa2a26c3c0cf8d2c5e4e33cdc1c20e3142b249e02ff637bd96f9e3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "daf377e846a33a704032ffa2884671eeaf14b4c424f8647278643a8cfb578878"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a4c2df9052995c392d2593f76dec47f4e59b391f27b32c834f14416dd178d50f"
+    sha256 cellar: :any_skip_relocation, ventura:       "44d546a93282b93cdc519eb82c43e6a7ff0a317959ce08558ce0486605338fb2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3071bf253f249aa4e37d5a52a5b52b0d03427d7c99f7adeaa69c4f2f655e4111"
   end
 
   depends_on "rust" => :build

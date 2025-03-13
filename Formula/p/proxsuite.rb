@@ -1,18 +1,18 @@
 class Proxsuite < Formula
   desc "Advanced Proximal Optimization Toolbox"
   homepage "https:github.comSimple-Roboticsproxsuite"
-  url "https:github.comSimple-Roboticsproxsuitereleasesdownloadv0.7.1proxsuite-0.7.1.tar.gz"
-  sha256 "8c7f89d2c7a52e157ba5fb20ff2a73117574d7ec629a11f9c5f05b549c59bf7b"
+  url "https:github.comSimple-Roboticsproxsuitereleasesdownloadv0.7.2proxsuite-0.7.2.tar.gz"
+  sha256 "dedda8e06b2880f99562622368abb0c0130cc2ab3bff0dc0b26477f88458a136"
   license "BSD-2-Clause"
   head "https:github.comSimple-Roboticsproxsuite.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d546a7cd609698f91c6d4c3684f8ea880f60d1dc6c4874529e17bbae7c17d627"
-    sha256 cellar: :any,                 arm64_sonoma:  "cb40fd24a5bcc9ec13177b53d773c119c841eb5a72cca96f4d03d1e02bb048f1"
-    sha256 cellar: :any,                 arm64_ventura: "c069ce8923f38d1ca4f5cdb31db25cd4117ba2fe9a4d70a6b2933c6b595a31b2"
-    sha256 cellar: :any,                 sonoma:        "ae9b59b5e84d7efa3bfd6f3ff3ca550864cc7ff10c3473efa41e4a80d172d145"
-    sha256 cellar: :any,                 ventura:       "70fdde88324ecbc6e83a70900c5eefefb59ce7266f1a6b4e4ec581fa22bee591"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f051d245e6c499705c1229f2b46dd52140ca231de2c64a23145c7864393ec364"
+    sha256 cellar: :any,                 arm64_sequoia: "55eeaba27c0759020f1af4fee87c57cd7f06250654985fcb314aafd65bd94bc2"
+    sha256 cellar: :any,                 arm64_sonoma:  "039089b526b129afda357462b2c41773e3a711ba40cfd5570cdfa97265e3bd8e"
+    sha256 cellar: :any,                 arm64_ventura: "bd8a4c2c6c377eddc448910028a0afde9db6185a77c4bcf600191384c6529eb6"
+    sha256 cellar: :any,                 sonoma:        "03ca17384128ebc8d2b88b241ccb12947e808186bc52fe15b84499953172bfe7"
+    sha256 cellar: :any,                 ventura:       "a09b9bbd5e73a56ca6b74b63e278a434adcd3d93d3fd3502dfdbb55e72526212"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57b4ac4f02b44ae31592270e00b6119b22be2e99d685b2d7981cb9b02820eb06"
   end
 
   depends_on "cmake" => :build

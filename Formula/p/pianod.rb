@@ -4,6 +4,7 @@ class Pianod < Formula
   url "https://deviousfish.com/Downloads/pianod2/pianod2-410.tar.gz"
   sha256 "28c1b28b320acff3fe46c79748c55370ba4333544e0c27e90a3520d42a9914cf"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https://deviousfish.com/Downloads/pianod2/"
@@ -11,12 +12,12 @@ class Pianod < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "a911756ebac227c58abeea0a91807874b0d7d38a4a11973e3e17aaa2bfdd60a6"
-    sha256 arm64_sonoma:  "ff6373292d7123dccd009ef75f727aae03da1add04cd060368e7cddee61a1bce"
-    sha256 arm64_ventura: "a5e25b9c61d4dcb1c93d341dd7a8193ee7ca1311bd4a36a85573ebf28d64eef8"
-    sha256 sonoma:        "914efeba3a89993dd1b56e829828eda02769a6c81f456c96819b6dbbd6f70bba"
-    sha256 ventura:       "424f04d45c5ef09c4a2e36be8a79a4fa612054a12143f890c1dd09feaf062dba"
-    sha256 x86_64_linux:  "e77a1a7ef596fc317dcbd37cd759afb271f1e3269d70e1af64dc7dc0125591d6"
+    sha256 arm64_sequoia: "65b0b7edda8a3ebe8dba97e532141dd9b985ec7ec2cc799b00b1086337a35c85"
+    sha256 arm64_sonoma:  "92a0bf60d6c4f5a5b57cbe70d6cb357373420514b401bd1a463ced3a1fa3fd0e"
+    sha256 arm64_ventura: "8fa61c25c901c6c762ca574b5c398281b579a92e940c2adcdc9cbf452cbf86b3"
+    sha256 sonoma:        "16275adaae7a5388bbda493535d734b6a5a9b84dfa3c566d600adb42751633e5"
+    sha256 ventura:       "327ae74f956db17289622864bb4e272fe0184ee0c54f1b542c9601160a0e3765"
+    sha256 x86_64_linux:  "03553138132bc05944d3eaa1e23ebbbae75831148c38eed4b4567fd36d2b4314"
   end
 
   depends_on "pkgconf" => :build

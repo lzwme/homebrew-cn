@@ -1,18 +1,18 @@
 class Talosctl < Formula
   desc "CLI for out-of-band management of Kubernetes nodes created by Talos"
   homepage "https:www.talos.dev"
-  url "https:github.comsiderolabstalosarchiverefstagsv1.9.4.tar.gz"
-  sha256 "8f0e4f8a5721cee6461f13d73a9cfbc2a2da2071fa333344898a6740f03b2c0f"
+  url "https:github.comsiderolabstalosarchiverefstagsv1.9.5.tar.gz"
+  sha256 "7e1b54db4f08b00ba07e273fac08ae708f53a230b4dd0868343f08c120f93b6f"
   license "MPL-2.0"
   head "https:github.comsiderolabstalos.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a74aaf468eb95139c94da174cbb692e76a31e42120d83c670208395be659c277"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a219e50302201ede8efed1b1ab25d871af8b5b2cc13ae38173ed0bf726cb8d3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "dbb44ef911f265785424f33b464fb407666e3d894f2f370d5de916d90ad6d167"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bde98185359f5c60a460acc9198e67fb85bf03ecda4e57422789e09d86d4eac2"
-    sha256 cellar: :any_skip_relocation, ventura:       "b5ef9d33fdeac48f67c03b15163ff51321229ed253cf63bc38eb8e0d1d1155c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34071472fa0aa4854d7e841fe1ebeca1dcb883d9d7b2a1ba01c06145824cfab2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d209848443d9537433016eebbdf1ce22e22825e17fda98fcf669149ae57b2ea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1473dffb355f90a7dd1d6d97b8919ace17f4be0f6e6c6eb9a4bf9544cdfaacf8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f1d0f4f75beb980995206162d1e296c9d57c6ee5d3de78ade167fa2cf5432bc5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "480c6c3cda8a63bc95b08a3a3843064e2d373de714fda6c7dfdd372e1684541d"
+    sha256 cellar: :any_skip_relocation, ventura:       "c566e2c0270921e1b5a43736edefb9b34eb8ea3ae67530d1af5f8cb1c9fb4d1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d12645871af8f3a1cb8e491d31a0fcbe84c1b0c732b943d593f9b3460c784be"
   end
 
   depends_on "go" => :build

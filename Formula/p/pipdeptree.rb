@@ -3,17 +3,17 @@ class Pipdeptree < Formula
 
   desc "CLI to display dependency tree of the installed Python packages"
   homepage "https:github.comtox-devpipdeptree"
-  url "https:files.pythonhosted.orgpackages9be6ccebfbb786e3804446ec35e336e5ebcb91e8f5a50e193e04eba8d74c11b2pipdeptree-2.25.0.tar.gz"
-  sha256 "029bcdcbd2e0130ec33b222c7833b8b5e52f674760dcf2df40b4ae6ff007a74f"
+  url "https:files.pythonhosted.orgpackages684bd8547814b41dc896063a1bcc3a48cef440d7da3d5d879c586ec7de65bdd3pipdeptree-2.25.1.tar.gz"
+  sha256 "8fb788c97b8b605bdd105a6eb847bd762caa49c4942176b31eee162ba2cc7389"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48f0ef115694b6916120a89ad2dc2cbffec26bb2ca104f64ac691c9c89c2d9a3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48f0ef115694b6916120a89ad2dc2cbffec26bb2ca104f64ac691c9c89c2d9a3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "48f0ef115694b6916120a89ad2dc2cbffec26bb2ca104f64ac691c9c89c2d9a3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bb63199d2b749836e54b4bcc5ec8c97f827c22ca8ef32333f9a642b16ad3c55a"
-    sha256 cellar: :any_skip_relocation, ventura:       "bb63199d2b749836e54b4bcc5ec8c97f827c22ca8ef32333f9a642b16ad3c55a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48f0ef115694b6916120a89ad2dc2cbffec26bb2ca104f64ac691c9c89c2d9a3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "450a249f014ef208cafbeedba9e10f6dbd2cd251b15f9d1545b01d6230660cf6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "450a249f014ef208cafbeedba9e10f6dbd2cd251b15f9d1545b01d6230660cf6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "450a249f014ef208cafbeedba9e10f6dbd2cd251b15f9d1545b01d6230660cf6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d89d83cc573b8535cb665825c9d05733dcaafb5bfa3185075b31eadac5401926"
+    sha256 cellar: :any_skip_relocation, ventura:       "d89d83cc573b8535cb665825c9d05733dcaafb5bfa3185075b31eadac5401926"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "450a249f014ef208cafbeedba9e10f6dbd2cd251b15f9d1545b01d6230660cf6"
   end
 
   depends_on "python@3.13"

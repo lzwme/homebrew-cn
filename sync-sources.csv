@@ -2216,6 +2216,7 @@ Homebrew-homebrew-core/Formula/g/git-ftp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-game.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-gerrit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-grab.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/git-graph.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-gui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-hooks-go.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-hound.rb, Homebrew/homebrew-core, 1
@@ -3206,6 +3207,7 @@ Homebrew-homebrew-core/Formula/k/kqwait.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kraftkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/krakend.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/krb5.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/krep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/krew.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/ksh93.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/ksops.rb, Homebrew/homebrew-core, 1
@@ -4621,6 +4623,7 @@ Homebrew-homebrew-core/Formula/n/nng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nnn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/no-more-secrets.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/node-build.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/n/node-red.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/node-sass.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/node.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/node@16.rb, Homebrew/homebrew-core, 1
@@ -7952,7 +7955,7 @@ Homebrew-homebrew-cask/Casks/b/bluebubbles.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bluefish.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bluegriffon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/blueharvest.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/b/bluej.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/bluej.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bluejeans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bluesense.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bluesnooze.rb, Homebrew/homebrew-cask, 1
@@ -11971,6 +11974,7 @@ Homebrew-homebrew-cask/Casks/k/karabiner-elements.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/karafun.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/katalon-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/katana.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/k/kate.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/katrain.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kawa.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kdenlive.rb, Homebrew/homebrew-cask, 0

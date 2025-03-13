@@ -3,18 +3,18 @@ class Sby < Formula
 
   desc "Front-end for Yosys-based formal verification flows"
   homepage "https:symbiyosys.readthedocs.ioenlatest"
-  url "https:github.comYosysHQsbyarchiverefstagsv0.50.tar.gz"
-  sha256 "e538809f527628010830b2bbc450863c41617181972f3ab183728a6ab3194255"
+  url "https:github.comYosysHQsbyarchiverefstagsv0.51.tar.gz"
+  sha256 "7564ecf8420b088cbbe0c87d4bd20962f04ce157bea456e153de1f0f1bcb6db1"
   license "ISC"
   head "https:github.comYosysHQsby.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "376d2144b6d49b7a8e9dc940ff49f991d9e8fc47626f9ee1d8030715937e8a95"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "376d2144b6d49b7a8e9dc940ff49f991d9e8fc47626f9ee1d8030715937e8a95"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "376d2144b6d49b7a8e9dc940ff49f991d9e8fc47626f9ee1d8030715937e8a95"
-    sha256 cellar: :any_skip_relocation, sonoma:        "376d2144b6d49b7a8e9dc940ff49f991d9e8fc47626f9ee1d8030715937e8a95"
-    sha256 cellar: :any_skip_relocation, ventura:       "376d2144b6d49b7a8e9dc940ff49f991d9e8fc47626f9ee1d8030715937e8a95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6039a94b53fec50e67c6e94f691a8ba58ecd9acc5631c1379b421416961033a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d19349780750bb29ff7e12546fa835372575e0fb08414dd801909a42dd2a6b54"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d19349780750bb29ff7e12546fa835372575e0fb08414dd801909a42dd2a6b54"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d19349780750bb29ff7e12546fa835372575e0fb08414dd801909a42dd2a6b54"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d19349780750bb29ff7e12546fa835372575e0fb08414dd801909a42dd2a6b54"
+    sha256 cellar: :any_skip_relocation, ventura:       "d19349780750bb29ff7e12546fa835372575e0fb08414dd801909a42dd2a6b54"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1626456c18c14e6ecc2c7c49c53c7e6bacaf9dfcb6de95ea0f206c10738a8c4"
   end
 
   depends_on "yices2" => :test

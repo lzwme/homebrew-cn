@@ -1,17 +1,17 @@
 class DartSdk < Formula
   desc "Dart Language SDK, including the VM, dart2js, core libraries, and more"
   homepage "https:dart.dev"
-  url "https:github.comdart-langsdkarchiverefstags3.7.1.tar.gz"
-  sha256 "ec8cc8ddc145f55129777c911c83b826c663e8a735dd59df9b2b152f94b18ceb"
+  url "https:github.comdart-langsdkarchiverefstags3.7.2.tar.gz"
+  sha256 "cbbd5a98ce4678b33e52a91378b9ecb7a5899e676fbd686c4a0023c7dd263504"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf555e59da47aa3c5813364791028a48c1182bfc5d6469e6242232a6fdfc2f6f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8eb1459c187853ee27800e7e5a262ee32f55fbfed77160781362b1d00239fc7a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "31cc8af74a94cdf4cd243046bb9a77759268cd5d59c915a256a41df0053e393d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "af9bd9a9d7243e92e82f5f10ff98093fb8918b2105d3250cb11b0c8008806f76"
-    sha256 cellar: :any_skip_relocation, ventura:       "11a180a311220e7d1fcb3260ddeea29e8733d33cd62e4e8adbf3d1773f76c3a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3a50d9db1b8b12b092f695fd8370819f68c66de91f873dbb66f57c6b4fadbbf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "941de6fca1c6743b6609a2836b85bdebbc2f4f8682ed3021869390b017e57ce8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c91314dadbeba5de73f4ceac3dfadd2941f574e4b13100e06105132093aae7bf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e81408fd448e14620d78dd9b21a8bbd89ccdb6b9ccad847451cad9da02f0dffa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3c0cc2adc157ad9ee87f155dbd9eca74a8f5d2848a73a7f0d23419c822ce8f66"
+    sha256 cellar: :any_skip_relocation, ventura:       "eb2904adbeba335b81e205e9bbaff97b880f5173847d773f7686f3d7fa8c0a4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9893ac760d7db4f244671119e9cdccd18320b14008f098821ff47c61a46cb69d"
   end
 
   depends_on "ninja" => :build
@@ -24,7 +24,7 @@ class DartSdk < Formula
   # always pull the latest commit from https:chromium.googlesource.comchromiumtoolsdepot_tools.git+refsheadsmain
   resource "depot-tools" do
     url "https:chromium.googlesource.comchromiumtoolsdepot_tools.git",
-        revision: "678f73bd0e221ed8492033d88b4205707ebbc844"
+        revision: "0445e00a089e163c4dcf1659b9fe38edec2d5adc"
   end
 
   def install

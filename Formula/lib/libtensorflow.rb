@@ -1,17 +1,17 @@
 class Libtensorflow < Formula
   desc "C interface for Google's OS library for Machine Intelligence"
   homepage "https:www.tensorflow.org"
-  url "https:github.comtensorflowtensorflowarchiverefstagsv2.18.0.tar.gz"
-  sha256 "d7876f4bb0235cac60eb6316392a7c48676729860da1ab659fb440379ad5186d"
+  url "https:github.comtensorflowtensorflowarchiverefstagsv2.19.0.tar.gz"
+  sha256 "4691b18e8c914cdf6759b80f1b3b7f3e17be41099607ed0143134f38836d058e"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9295aa55cc7f99f0021c13230ebcebe9270a7ef1535e576d48b5054087a2ad6f"
-    sha256 cellar: :any,                 arm64_sonoma:  "6abf790f545c5ba17533eb1abe081dbdcdcc27a82911553e1340670a094eb659"
-    sha256 cellar: :any,                 arm64_ventura: "0c852319c52d4794afa128be413c79f939ab7a267572eb6311f5432b0d3d7c67"
-    sha256 cellar: :any,                 sonoma:        "15aa6eda5eb1f9dc710eb775f69be11ca913f728cb7f07560638ef0eebe273b5"
-    sha256 cellar: :any,                 ventura:       "da2cc0d4ab5534253c27924fa2072c8e30bae529d100974d8ff18421d1d55ee1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c50ad77474753dcdee580cb3141fcf6068d6850400ba1ba555d41fcb67ea5fd9"
+    sha256 cellar: :any,                 arm64_sequoia: "1bf7b3c26c250f360644872a55d62bd004d9942d7fafc8b4919c4ec35f62a65d"
+    sha256 cellar: :any,                 arm64_sonoma:  "3791602f5afcc011af9b4af29ec426d1c562cd714acde446f23bdead8d71f1ce"
+    sha256 cellar: :any,                 arm64_ventura: "5c014042a2f83884cd76a05b8d1b50d7ff888381c60ca91ff6dff4305cc8841f"
+    sha256 cellar: :any,                 sonoma:        "f1e9d7d80dfbe576c05c845979110d4233eb5dc76280384653d957ec99c17947"
+    sha256 cellar: :any,                 ventura:       "22aa1c72047649b2523889072290a0612111dddfa91529e74a78e56e4b8852f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b335f3b7c4182aa7174cbf945440f8771f2fd997c22676b60e88badefc3c0aa"
   end
 
   depends_on "bazelisk" => :build

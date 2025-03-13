@@ -1,10 +1,9 @@
 class Libxslt < Formula
   desc "C XSLT library for GNOME"
   homepage "http://xmlsoft.org/XSLT/"
-  url "https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.42.tar.xz"
-  sha256 "85ca62cac0d41fc77d3f6033da9df6fd73d20ea2fc18b0a3609ffb4110e1baeb"
+  url "https://download.gnome.org/sources/libxslt/1.1/libxslt-1.1.43.tar.xz"
+  sha256 "5a3d6b383ca5afc235b171118e90f5ff6aa27e9fea3303065231a6d403f0183a"
   license "X11"
-  revision 1
 
   # We use a common regex because libxslt doesn't use GNOME's "even-numbered
   # minor is stable" version scheme.
@@ -14,12 +13,12 @@ class Libxslt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1e5743ac455f3135b1238d5bfc26860f5421093761b7c6974579d9db6dbd68d8"
-    sha256 cellar: :any,                 arm64_sonoma:  "3027548c825b0f6715294f5ba996e580b09c6530d459788044a6a095cf789a24"
-    sha256 cellar: :any,                 arm64_ventura: "ac34533e43ac19e2c259598ee0b233b7f75e66547423b7fe0a99f5b27be5c7fd"
-    sha256 cellar: :any,                 sonoma:        "bd9313ff618b8a9a2c4b55948d3a57162017e1c01deb2cc7e2529814be41f904"
-    sha256 cellar: :any,                 ventura:       "5ed5bfee0e7dbfc436885d85dd498beac016647ff997fe3da54ae3972899fdf2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09861e3e118d40c2ab0eae14761182f95aa6c71600c5850bea1c0ee32afe0b1e"
+    sha256 cellar: :any,                 arm64_sequoia: "882f9071165800a694e3dc146e614c984b70d80cf8fa284cc78dd0f35f096a2f"
+    sha256 cellar: :any,                 arm64_sonoma:  "ba204e6736fe30b763bc9372a464f050daa8c5d66aebbff6c8659abbc796d4ae"
+    sha256 cellar: :any,                 arm64_ventura: "68fbcc1a39a1af56dda4c550816f0a4796ed8b70608518b184331f1e13a1ff1b"
+    sha256 cellar: :any,                 sonoma:        "c2432ea083f92c5d6ffd4968f7a0e3d675f7c2098f27e2742b607a9ba68d1f6d"
+    sha256 cellar: :any,                 ventura:       "96311a902a7c1ce991bfb90a01b11442d5ede675238afd8ed22980f7d91b415f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "595b354dd8c9dc086224701709d5a471f7a916693ebf52e5d68eea1f454bd98d"
   end
 
   head do

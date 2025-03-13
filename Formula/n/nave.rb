@@ -1,18 +1,18 @@
 class Nave < Formula
   desc "Virtual environments for Node.js"
   homepage "https:github.comisaacsnave"
-  url "https:github.comisaacsnavearchiverefstagsv3.5.4.tar.gz"
-  sha256 "6986eec520788e71696b62be6d1158bc9358659335a20deb9b969cbc537d0e0d"
+  url "https:github.comisaacsnavearchiverefstagsv3.5.5.tar.gz"
+  sha256 "102b1fced7aad7746cbe9c1871984cea2560747f0369fb777857c1992dc09a7a"
   license "ISC"
   head "https:github.comisaacsnave.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4087fa452d7171010ab7cbceb255e705115d8b5eb65601e1993a2554aae644cb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4087fa452d7171010ab7cbceb255e705115d8b5eb65601e1993a2554aae644cb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4087fa452d7171010ab7cbceb255e705115d8b5eb65601e1993a2554aae644cb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6b568361104024a9adab2f50103a82850d3eb1aa8f35dc89133cde8485c2860d"
-    sha256 cellar: :any_skip_relocation, ventura:       "6b568361104024a9adab2f50103a82850d3eb1aa8f35dc89133cde8485c2860d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4087fa452d7171010ab7cbceb255e705115d8b5eb65601e1993a2554aae644cb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf0777ec6f533a7c1d68910219d1d5d87d5e75c01411e39113781bfea4ba31ee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf0777ec6f533a7c1d68910219d1d5d87d5e75c01411e39113781bfea4ba31ee"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cf0777ec6f533a7c1d68910219d1d5d87d5e75c01411e39113781bfea4ba31ee"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8ac556a8a994120d89fd325ec1e851d601ba006baa180045fe5659f8c0d1276d"
+    sha256 cellar: :any_skip_relocation, ventura:       "8ac556a8a994120d89fd325ec1e851d601ba006baa180045fe5659f8c0d1276d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf0777ec6f533a7c1d68910219d1d5d87d5e75c01411e39113781bfea4ba31ee"
   end
 
   def install

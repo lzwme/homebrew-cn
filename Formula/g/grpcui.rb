@@ -1,8 +1,8 @@
 class Grpcui < Formula
   desc "Interactive web UI for gRPC, along the lines of postman"
   homepage "https:github.comfullstorydevgrpcui"
-  url "https:github.comfullstorydevgrpcuiarchiverefstagsv1.4.2.tar.gz"
-  sha256 "8548a3ccde0b886ae14ea78fae3e58d28922079e78a08d29e6ef7b9230190375"
+  url "https:github.comfullstorydevgrpcuiarchiverefstagsv1.4.3.tar.gz"
+  sha256 "7fa3039bfa6c06a688c1094177445f759c592be2f04574a234da7a88ab2d0efd"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,12 @@ class Grpcui < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d539469158ca6d9251f59f73f8e28fde16cb9ac1aa4b020779dff541a598c4e3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d539469158ca6d9251f59f73f8e28fde16cb9ac1aa4b020779dff541a598c4e3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d539469158ca6d9251f59f73f8e28fde16cb9ac1aa4b020779dff541a598c4e3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "81fba7a344784edf9b66f342b3ff5d25b06382575af0a88dbc7feb72ebe28010"
-    sha256 cellar: :any_skip_relocation, ventura:       "81fba7a344784edf9b66f342b3ff5d25b06382575af0a88dbc7feb72ebe28010"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81f9ea45b95ffbb8d29ca4104421829b02ed3079f570d745620e77ac9afcde98"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ac35799e9b7d1c2a6c9eb8b1672f10ba975d0e32efe2665de2ecdc55d10ceeb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ac35799e9b7d1c2a6c9eb8b1672f10ba975d0e32efe2665de2ecdc55d10ceeb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9ac35799e9b7d1c2a6c9eb8b1672f10ba975d0e32efe2665de2ecdc55d10ceeb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ba7e1920f634f492ee2b36de11763a0dc3b3f16e6c4691ef66bf5d1a6c651a30"
+    sha256 cellar: :any_skip_relocation, ventura:       "ba7e1920f634f492ee2b36de11763a0dc3b3f16e6c4691ef66bf5d1a6c651a30"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a604659d4ba4f40852cc1d2b7924e0540f3e59f9f5628472826dfc6b0022dde"
   end
 
   depends_on "go" => :build

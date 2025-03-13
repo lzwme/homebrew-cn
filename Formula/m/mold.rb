@@ -1,8 +1,8 @@
 class Mold < Formula
   desc "Modern Linker"
   homepage "https:github.comrui314mold"
-  url "https:github.comrui314moldarchiverefstagsv2.37.0.tar.gz"
-  sha256 "28372bbc2ce069aa0362ba84ad5d1b0f2c0bcf84e95a0f533ecf79cb3aff232c"
+  url "https:github.comrui314moldarchiverefstagsv2.37.1.tar.gz"
+  sha256 "b8e36086c95bd51e9829c9755c138f5c4daccdd63b6c35212b84229419f3ccbe"
   license "MIT"
   head "https:github.comrui314mold.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Mold < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b1774e7dd9dbe03d0b1eeba002c7a30b0c46c144112c1b78a1996a8d24b32ec3"
-    sha256 cellar: :any,                 arm64_sonoma:  "1f27c0091228bf3a186112c4388939ca696c96d89666275e5216258a361afb1c"
-    sha256 cellar: :any,                 arm64_ventura: "f8ce75a4a77d6c81e231439a099c9db929b1da7f54577f5c010dd80264ceb91c"
-    sha256 cellar: :any,                 sonoma:        "5f35ff948d9a9ba2cbaaf2c15fac4edc7f7401ab2a8290f1d9467646a797042d"
-    sha256 cellar: :any,                 ventura:       "cb34be9df2307683cbe550393af78de6c5e9d8f6680da9ce064766a0c3fe7389"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c577a5aeb6236cdc024879d6ce5fd3a7526b8848a603834e741dd96438f829b7"
+    sha256 cellar: :any,                 arm64_sequoia: "754d3f7e93b50799f496acf6c733a14dbea40afe21600e4d104e58cfa84c91f5"
+    sha256 cellar: :any,                 arm64_sonoma:  "58ea61668167277550f8d6241da90f3a03a115fe4bc504d128e5f51a4653a2b7"
+    sha256 cellar: :any,                 arm64_ventura: "5308f7e694c87f590b89ad9a554f1c5b0957505eb92ecc5dc2bed8e40962380b"
+    sha256 cellar: :any,                 sonoma:        "c7d9a547a9029b62e7c45496ca0c434b7ee8c2f930efdfc5ad4abad2fa97d15b"
+    sha256 cellar: :any,                 ventura:       "3187bce6504192da7322d47e1d1769dacb609d0c84c6a0c8158af24669406554"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "321f3aec5e244aa7a8cf53e656f1254fffb77084196bfa47a4b8366edba9b148"
   end
 
   depends_on "cmake" => :build

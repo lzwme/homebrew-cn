@@ -1,10 +1,19 @@
 class Feluda < Formula
   desc "Detect license usage restrictions in your project"
   homepage "https:github.comanistarkfeluda"
-  url "https:github.comanistarkfeludaarchiverefstags1.5.0.tar.gz"
-  sha256 "ed201fbe53f6073e6f2526a3802cbd3a3850fb1a169e97d65f0a5e7cb76797d5"
   license "MIT"
   head "https:github.comanistarkfeluda.git", branch: "main"
+
+  stable do
+    url "https:github.comanistarkfeludaarchiverefstags1.5.1.tar.gz"
+    sha256 "7a011aae95cf26927730aa31e4470600b35feeb01a03b39be5c01a3b171797e1"
+
+    # version patch
+    patch do
+      url "https:github.comanistarkfeludacommita9b3cbab62baff0bae23afa3f02426e8eeab38d3.patch?full_index=1"
+      sha256 "139fabfcfc2a929894f4b95278ae911fbf2839b29059ceb6ff02546ce936581e"
+    end
+  end
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's
@@ -15,12 +24,12 @@ class Feluda < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7cc681be8a5bbcfd728c27251c002cc8b8afca06653c2bb91e10b07147b1f42"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c784b53b22902e3b5812aa3bcf76528645a353aa063a7aa43a7ac1da869182e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3bec18e07516125db1ff3a4def4081dcb9bee9494d13767ff0957b085a9838ba"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1fc1440b5f1e1fe7ad6c965e0f7640d8e10d5e92ef0d1917d6f8baa4a1e6f320"
-    sha256 cellar: :any_skip_relocation, ventura:       "4f0ee8967278210faf7a02288d01d65261f8901d338e5be9635a652bf66fc324"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ab90393101dd0c7025b41017036d7bc83bc5bb71eface26bcd1f348707082e2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bde60255804528b16024a0a5cf6a2374c7b4c7c66704e81226d553170149a523"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7de367d5168b7fae342d04d23b36e64d926c428c40c379fd19b98ddd9465d154"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2e866b0c1a6fed729999e9f589d47483cdc1da0d8b0bb3697e0a8d8a2295b336"
+    sha256 cellar: :any_skip_relocation, sonoma:        "458b17566634cc889dd0da29a915671d31695bdb64fcbdd62b5b37e4823a3118"
+    sha256 cellar: :any_skip_relocation, ventura:       "3bdf9918d0c175880b5fe45e5612e9434772e0da0367723a24d850362fa4aad7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3433062dd336c05b3dc2ba8f6e81e14bee38ea01014031a119329930df9f745d"
   end
 
   depends_on "rust" => :build

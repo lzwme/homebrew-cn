@@ -4,15 +4,16 @@ class Navidrome < Formula
   url "https:github.comnavidromenavidromearchiverefstagsv0.54.5.tar.gz"
   sha256 "38d20258b418a33ffbb8b36db9a82c4efc49edf434de4f4e36e2ec7d01010f77"
   license "GPL-3.0-only"
+  revision 1
   head "https:github.comnavidromenavidrome.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f6ee9356037c8afa1e79f7c31897ef195ef13559b85c2f9151a44e4607edf15b"
-    sha256 cellar: :any,                 arm64_sonoma:  "3fa20ed39d2c7b8de69774a11f4746f4ea4e05d55344bb79d85ae923334a0e26"
-    sha256 cellar: :any,                 arm64_ventura: "b0c2b2431f1097a40bc6bc8c656e8a8cc0f0d42d80c81a528961ae05bf942011"
-    sha256 cellar: :any,                 sonoma:        "b2c2a235b21eedbbedb0f180c89fda33dd7feea07f144451854bd9239f3a740f"
-    sha256 cellar: :any,                 ventura:       "8594f5a76c5e65a9b3e51a9b266f7605c8a1442a69f9c58a78527f6e6b1b4fcf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33892f28f1a6d46da00ccdfb7f32ae97a2be5cff8f7771efecd7aa71a501b583"
+    sha256 cellar: :any,                 arm64_sequoia: "c7b07175a67e8a6a2aa2bb03ded78a6b6d5c661c94e5dfaebd3bc708029c1c23"
+    sha256 cellar: :any,                 arm64_sonoma:  "3167920dbbbda78da339a4cbdfd2784850c461e137db25c7a1b463a0d4b612da"
+    sha256 cellar: :any,                 arm64_ventura: "0c79f92539519aabf93b5cb2a5850b43ef5948980d7b32a22a75e2ce5cfe291c"
+    sha256 cellar: :any,                 sonoma:        "6ed7c4b5c5a96c09271c3f9fe4bdb9f470cfaea94537a25de4fbbf3cbe9bbcb4"
+    sha256 cellar: :any,                 ventura:       "b484825374fcfb454edb157d6203349c9220195c34d0fe1e534ba6595e18ad4d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e45938bf1f352eb076475a1206550a45ed4788609ec688a10c017d78c396647"
   end
 
   depends_on "go" => :build
@@ -38,7 +39,7 @@ class Navidrome < Formula
     port = free_port
     pid = spawn bin"navidrome", "--port", port.to_s
     sleep 20
-    sleep 60 if OS.mac? && Hardware::CPU.intel?
+    sleep 100 if OS.mac? && Hardware::CPU.intel?
     assert_equal ".", shell_output("curl http:localhost:#{port}ping")
   ensure
     Process.kill "KILL", pid

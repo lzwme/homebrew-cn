@@ -3,17 +3,17 @@ class WeaviateCli < Formula
 
   desc "Command-line interface for managing and interacting with Weaviate"
   homepage "https://pypi.org/project/weaviate-cli/"
-  url "https://files.pythonhosted.org/packages/c3/88/62c900784d00fb2e7ea4ddd223fe01cf1f5814eb49c04b820f5f0f59d7ba/weaviate_cli-3.1.3.tar.gz"
-  sha256 "5ab6ba2ef8d10f9c930f36257c9808f08d2f4006fcdc51cab4e50ff6bf7e96d7"
+  url "https://files.pythonhosted.org/packages/46/55/df93ab71a702167a63c01b95e0031c5061ab93cc1928ccc4686b3196f33f/weaviate_cli-3.1.4.tar.gz"
+  sha256 "b47be99e36f3998d90e552166e4fdb7c6c36b412a4efe594358cddf961fa28f4"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0e8ea5255aa1bb02af6c4ca4373b47854ea1bd86c945084d57b6352aeb920918"
-    sha256 cellar: :any,                 arm64_sonoma:  "b386268366828e91aecb96164c85f751ff668e59a0d4cb9224785f221aa292ca"
-    sha256 cellar: :any,                 arm64_ventura: "49ab6392be7ad4de65bcf047e5920663cb7024f78d97c5c72c49633246e465e9"
-    sha256 cellar: :any,                 sonoma:        "654b2d60dc6dc5d076c9a3a0d980681e6c0b0d472a9639f6a83b6e00ecea3333"
-    sha256 cellar: :any,                 ventura:       "9cb4b9549c679dadce4807872de6008a8b1504b8b2b02ecb41f82b139aa6c221"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "295acdbe91df2ebd8985e0acac9c1320dea4a0d6ff17b58d94656200a6c13b2a"
+    sha256 cellar: :any,                 arm64_sequoia: "8de747c4b91efbf8da6d4a5e30899ed861e0776c2caee9993c177183eb2908f3"
+    sha256 cellar: :any,                 arm64_sonoma:  "b94bf95a44913f19fdab8f7f2dbbcbff5c93dbdb35ab27ce9754593bbdab6639"
+    sha256 cellar: :any,                 arm64_ventura: "5ce9ce0e4fef8df462ab879b4ba3aebf787882221597ac57b44ad6d7a04b2d8a"
+    sha256 cellar: :any,                 sonoma:        "c10aa5f088506ac841ffdda612c1d4f316bb44dc428c7d241185b7fb2169157a"
+    sha256 cellar: :any,                 ventura:       "cdaf7f41821df8329ccbbdeafbcf2b9246d9f180563ff8b24c6baecaaaae097f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7182969154fc7c76e16404bb83c2e60970108035b99edc3c79f53b104caa250"
   end
 
   depends_on "ninja" => :build
@@ -51,18 +51,18 @@ class WeaviateCli < Formula
   end
 
   resource "grpcio" do
-    url "https://files.pythonhosted.org/packages/69/e1/4b21b5017c33f3600dcc32b802bb48fe44a4d36d6c066f52650c7c2690fa/grpcio-1.70.0.tar.gz"
-    sha256 "8d1584a68d5922330025881e63a6c1b54cc8117291d382e4fa69339b6d914c56"
+    url "https://files.pythonhosted.org/packages/1c/95/aa11fc09a85d91fbc7dd405dcb2a1e0256989d67bf89fa65ae24b3ba105a/grpcio-1.71.0.tar.gz"
+    sha256 "2b85f7820475ad3edec209d3d89a7909ada16caab05d3f2e08a7e8ae3200a55c"
   end
 
   resource "grpcio-health-checking" do
-    url "https://files.pythonhosted.org/packages/07/37/33de60a6ee4c6cf67abbe781bc8c69e7f04610997874383eded02d4ab133/grpcio_health_checking-1.70.0.tar.gz"
-    sha256 "ca5fc86a7c609848c3877d11b5d2d2ed27e2923151e2bf61e47051c7d3c10d1b"
+    url "https://files.pythonhosted.org/packages/8b/0e/62743c098e80dde057afc50f9d681a5ef06cfbd4be377801d0d7e2a0737d/grpcio_health_checking-1.71.0.tar.gz"
+    sha256 "ff9bd55beb97ce3322fda2ae58781c9d6c6fcca6a35ca3b712975d9f75dd30af"
   end
 
   resource "grpcio-tools" do
-    url "https://files.pythonhosted.org/packages/c1/fe/3adf1035c1f9e9243516530beae67e197f2acc17562ec75f03a0ba77fc55/grpcio_tools-1.70.0.tar.gz"
-    sha256 "e578fee7c1c213c8e471750d92631d00f178a15479fb2cb3b939a07fc125ccd3"
+    url "https://files.pythonhosted.org/packages/05/d2/c0866a48c355a6a4daa1f7e27e210c7fa561b1f3b7c0bce2671e89cfa31e/grpcio_tools-1.71.0.tar.gz"
+    sha256 "38dba8e0d5e0fb23a034e09644fdc6ed862be2371887eee54901999e8f6792a8"
   end
 
   resource "h11" do
@@ -121,8 +121,8 @@ class WeaviateCli < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/d1/53/43d99d7687e8cdef5ab5f9ec5eaf2c0423c2b35133a2b7e7bc276fc32b21/setuptools-75.8.2.tar.gz"
-    sha256 "4880473a969e5f23f2a2be3646b2dfd84af9028716d398e46192f84bc36900d2"
+    url "https://files.pythonhosted.org/packages/32/d2/7b171caf085ba0d40d8391f54e1c75a1cda9255f542becf84575cfd8a732/setuptools-76.0.0.tar.gz"
+    sha256 "43b4ee60e10b0d0ee98ad11918e114c70701bc6051662a9a675a0496c1a158f4"
   end
 
   resource "sniffio" do

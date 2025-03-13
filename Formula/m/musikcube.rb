@@ -13,6 +13,7 @@ class Musikcube < Formula
     "bcrypt-Solar-Designer", # src3rdparty{include,src}md5.*
     "blessing", # src3rdparty{include,src}sqlitesqlite3*
   ]
+  revision 1
   head "https:github.comclangenmusikcube.git", branch: "master"
 
   livecheck do
@@ -21,15 +22,12 @@ class Musikcube < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "d04141a58c24c85ffa338bee5422ce3962667bb68549f9ecac5def08532034c6"
-    sha256 cellar: :any,                 arm64_sonoma:   "00e57d9c9357ab897d8323351cf88191b9cad6287137d0ae825f75bf0372e353"
-    sha256 cellar: :any,                 arm64_ventura:  "e6ca7dd553d722a0770980c8a28fca32bfff4493a14e09e09e9767ec223f727b"
-    sha256 cellar: :any,                 arm64_monterey: "20dea11a6b5a33fca28fa4bd4f78b3c81a464d14e441c95d402cd3c751b5fbf7"
-    sha256 cellar: :any,                 sonoma:         "0d6f7ff35bdd8033ba4b90d3b027b8d64cb1429dfcee43b084bfa1ae7804d3f3"
-    sha256 cellar: :any,                 ventura:        "4dd0a8e8881f3e1ca1cb537b13c5b0492af99838e9c2d14b2c60b4c2820fad4f"
-    sha256 cellar: :any,                 monterey:       "b57720e0c6a394c9e52406ed7bbc942ec61b01e9d1705b2caecf571fcbd478a5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a1615f9ef8bf8645ecf31d0679e1a96a526e881beddbc1e25d0fe8089f6385eb"
+    sha256 cellar: :any,                 arm64_sequoia: "f73dfdfe63a9d034ac0bfff95a25efe4144b6f82955335ef1d8e11db6d78cad0"
+    sha256 cellar: :any,                 arm64_sonoma:  "686b56f4049b753532bab59ed5b36981f705d8689654b1670438774add89a6d0"
+    sha256 cellar: :any,                 arm64_ventura: "4ec1abcb7d9a85fc28ceae28af1a1014d7de50e3aef60411d09922f6021762ee"
+    sha256 cellar: :any,                 sonoma:        "7df9f38a3362c63f77a79bd668021e4fde8351d389768808a23599ea37c12662"
+    sha256 cellar: :any,                 ventura:       "089a80a914b6798ddc2280b64f0a4db3bb9df588538b53b22b2e760080452ceb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b9242501e64de113097a77d7b3e5353ec15192e4261e25637f046a3aa392331"
   end
 
   depends_on "asio" => :build

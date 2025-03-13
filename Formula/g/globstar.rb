@@ -1,17 +1,17 @@
 class Globstar < Formula
   desc "Static analysis toolkit for writing and running code checkers"
   homepage "https:globstar.dev"
-  url "https:github.comDeepSourceCorpglobstararchiverefstagsv0.4.1.tar.gz"
-  sha256 "976aa520de6b3727f84f0a6e74efdd9baddc78d498f1953160c4fb1f7bfee2f2"
+  url "https:github.comDeepSourceCorpglobstararchiverefstagsv0.5.0.tar.gz"
+  sha256 "9d56b84722fd95999f69646b87afce8cd166f74ad29da31bfd46a5a7084b77ae"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4242c4ed808e1c0d2b5fceb5daef93e979036896d9150a19b5081a1349fa5fc9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ce1d87d65cd514c242699874788763b910de6f6beace0595f89bebc409fe18d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "586d5995c98e5b985ec03e6ef8bd483ac1d4efd4b2096ea415ac02a57f6a66f4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "24d345e4676ef8d863911d46c473f8b5a73ed0930872648f17d090adc598bab8"
-    sha256 cellar: :any_skip_relocation, ventura:       "5f4f7568b465ad37258c9f9134b1479f2137b31b718263bb63f893d638877a0a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe23b6b6cf5b418475d7e48b0e8a4fe44e5f9258a9b8b094d4ce1c6c18eb6313"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "86602cf26e12eee612048bd54f971415b520bb0c6688d1843b0aa8375fafa41c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53d557d29358d9cad38c5c64196f32145478dc62f572e50172006d62097b1118"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ca1fe29b075c256b708942a0362b0bd057372f654a605cb0ec75ec2f3a89cbed"
+    sha256 cellar: :any_skip_relocation, sonoma:        "273386e83fdf02388d56e4b68347b579e151980ea5876c5235251281327209c9"
+    sha256 cellar: :any_skip_relocation, ventura:       "4834ae2163f809777e60b8e454b1a1f089dd441b911751f480d210784207475d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9936485bf91a145a15ad20b9dae1010d3a95dcf64aa8f5aa942efcad86873925"
   end
 
   depends_on "go" => :build

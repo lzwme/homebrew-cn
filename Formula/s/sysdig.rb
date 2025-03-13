@@ -12,12 +12,13 @@ class Sysdig < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "eb1dce084f4165754b69538c6b8e454c9aeec3b615c8183c80f448b0bcf74ca8"
-    sha256                               arm64_sonoma:  "3a19ff09d40e20b06229ddc66b887d5c39c7ca52c3e9153b7170ce3778fde5f1"
-    sha256                               arm64_ventura: "2e529abfbb23fe431f8ec0f6ce1a6704eb3e359327e91aee202a0e055ca987b4"
-    sha256                               sonoma:        "887232ecdaa980a68cea3c023ba358212b4446b73a194610c982f9ee7f473d89"
-    sha256                               ventura:       "23914115de4402ed85a7f94eefea6cc242ff572cee6a42d2c6156cedf15febbe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ea6b2ec1e8bf9cfec26c4c3300c9ff1cf09abacf885d95d0473c27748a8cb6b"
+    rebuild 1
+    sha256                               arm64_sequoia: "1d74a1743a589ba247d4418317ab1bf2e37841f23287196591870b64456dd905"
+    sha256                               arm64_sonoma:  "5416d6073f468637103ca9339dfeebbd4fc20dd35987081fd2cc0cd0afe39033"
+    sha256                               arm64_ventura: "e65cd00a0b2a04345e83ef69050785bdf90387a1a0e8d0f3e959e9161319462d"
+    sha256                               sonoma:        "4d98a1b66242689aad51ad2b449963c912588d9e0ce2bf54a5e8315d4c777f88"
+    sha256                               ventura:       "ee53edd8462e80357fff2ffbd899fe170e73e641fe1b7e811e33ac3b64546705"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ff8e6dad512d69e79be769177d8bdd78e0b506d5b622d320c6855e1d4b5cc71"
   end
 
   depends_on "cmake" => :build
@@ -34,6 +35,8 @@ class Sysdig < Formula
     depends_on "tbb"
   end
 
+  link_overwrite "etcbash_completion.dsysdig"
+
   def install
     # Workaround to find some headers
     # TODO: Fix upstream to use standard paths, e.g. sinsp.h -> libsinspsinsp.h
@@ -44,7 +47,6 @@ class Sysdig < Formula
     args = %W[
       -DSYSDIG_VERSION=#{version}
       -DUSE_BUNDLED_DEPS=OFF
-      -DDIR_ETC=#{etc}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
