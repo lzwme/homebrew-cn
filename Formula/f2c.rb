@@ -40,7 +40,7 @@ class F2c < Formula
             end
     EOS
     system bin/"f2c", "test.f"
-    assert_predicate (testpath/"test.c"), :exist?
+    assert_path_exists (testpath/"test.c")
     system ENV.cc.to_s, "-O", "-o", "test", "test.c", "-I#{Formula["libf2c"].opt_include}",
 "-L#{Formula["libf2c"].opt_lib}", "-lf2c"
     assert_equal " hello world\n", `#{testpath}/test`

@@ -1,8 +1,8 @@
 class DbusGlib < Formula
   desc "GLib bindings for the D-Bus message bus system"
   homepage "https://wiki.freedesktop.org/www/Software/DBusBindings/"
-  url "https://dbus.freedesktop.org/releases/dbus-glib/dbus-glib-0.112.tar.gz"
-  sha256 "7d550dccdfcd286e33895501829ed971eeb65c614e73aadb4a08aeef719b143a"
+  url "https://dbus.freedesktop.org/releases/dbus-glib/dbus-glib-0.114.tar.gz"
+  sha256 "c09c5c085b2a0e391b8ee7d783a1d63fe444e96717cc1814d61b5e8fc2827a7c"
   license all_of: [
     "GPL-2.0-or-later", # dbus/dbus-bash-completion-helper.c
     any_of: ["AFL-2.1", "GPL-2.0-or-later"],
@@ -14,18 +14,12 @@ class DbusGlib < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "5eed90b160bea86016fa557ad060ecf04074b5cee3b102043c5ec0f5822a00a8"
-    sha256 cellar: :any,                 arm64_sonoma:   "2a3f225b37e1ba7f5f8bdaf96e410172458c03ff5d61973962f4fafe12b56cfc"
-    sha256 cellar: :any,                 arm64_ventura:  "c88874e0737f46cfc08bcc30c2b2d1feddeb95b19ef1725a1d006bef17999968"
-    sha256 cellar: :any,                 arm64_monterey: "24a79926eb518b6de78cacfc8d6893655bdbc6c62ad5b84c89131697fa97a568"
-    sha256 cellar: :any,                 arm64_big_sur:  "d87340d630e5e4e08fcaf5c557ad1577736069561e3903f763cb50396b417830"
-    sha256 cellar: :any,                 sonoma:         "4cbc2aa17c117612d9d671b54a9f859e5422ea870c2d7c7f57f1478a65418591"
-    sha256 cellar: :any,                 ventura:        "ed1a98a4ab509c8179f348c10c8b7e9d07762388abf988c4c9e0857daf8a642d"
-    sha256 cellar: :any,                 monterey:       "22c039588770bd957a8905eccdc7bb460b19ffaf193d3e9ae30332a48d653b7a"
-    sha256 cellar: :any,                 big_sur:        "b8b40647f906afbe0c3c35be698d77b02e22fe204cad83e1cda62842aba68ea2"
-    sha256 cellar: :any,                 catalina:       "5f964469ee5636271ebb40d0df69cd2e71dc292cf229b59be6b0a15543016373"
-    sha256 cellar: :any,                 mojave:         "ba4476464714dcde25a52ba1a3ae3a9646b9a293ab63ceb2f0ea5fc4192df97a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "40299090266efbefb057847af56cbccedf7c96ba98107c86fe4c7c0b8254cf0c"
+    sha256 cellar: :any,                 arm64_sequoia: "c6b0c2054217bf77789f11c4cf02732d2397576cdb25ed828845bc8c6808dbd7"
+    sha256 cellar: :any,                 arm64_sonoma:  "2fccf8368eafc625c759030d1c3528bd42e60e5212f1d9c8255875280c20c799"
+    sha256 cellar: :any,                 arm64_ventura: "d257be9b74a17d6e35a8b8c5e89491ff2fb9f83a828f442e787110c27a9c5cd2"
+    sha256 cellar: :any,                 sonoma:        "4c988a24f589781b5bb28327a21c4747b63f791f322373697a5ce5638b618cc2"
+    sha256 cellar: :any,                 ventura:       "92ba5dadd11f3b7371bdc9d508ca8223f565649e61eb22e678d1de9faaa272de"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc8cacd16db1b5c793b1d76dc356a774f6bdac23866e441276e9d28faaf2125a"
   end
 
   depends_on "pkgconf" => :build

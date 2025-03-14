@@ -2,9 +2,9 @@ class PhpAT81 < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
   # Should only be updated if the new version is announced on the homepage, https:www.php.net
-  url "https:www.php.netdistributionsphp-8.1.31.tar.xz"
-  mirror "https:fossies.orglinuxwwwphp-8.1.31.tar.xz"
-  sha256 "c4f244d46ba51c72f7d13d4f66ce6a9e9a8d6b669c51be35e01765ba58e7afca"
+  url "https:www.php.netdistributionsphp-8.1.32.tar.xz"
+  mirror "https:fossies.orglinuxwwwphp-8.1.32.tar.xz"
+  sha256 "c582ac682a280bbc69bc2186c21eb7e3313cc73099be61a6bc1d2cd337cbf383"
   license "PHP-3.01"
 
   livecheck do
@@ -13,13 +13,12 @@ class PhpAT81 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "91f378070315f79e3ea29844fdb760b7c78aa0a3d7ee8b781c0580a6b7a9545e"
-    sha256 arm64_sonoma:  "6ee70538bb6f56be0498bf507f6ba97c15b81d391e3943bee2cf9689bdb11829"
-    sha256 arm64_ventura: "e209c206738287ca105874ebe5fbfaf2a00f0f374ceca12b39033f830b18246c"
-    sha256 sonoma:        "5c6a7694fb43f99910e2dc33f2a6c2f3fad4cfd2f121b2c7ee8750c1f6f75bba"
-    sha256 ventura:       "fd351cb3f3df68e0455be9ffabf287c97f7ba2090fc5f4467d76d3421399c03f"
-    sha256 x86_64_linux:  "ffbf178e5f53e44970e81ef9ea0f3bd65c94849cb53a141822584896fc668ccc"
+    sha256 arm64_sequoia: "9ddd52f093334b8f40712dc83ed9f3b83c05e8fba1a248f3ae67d7b9c524cc16"
+    sha256 arm64_sonoma:  "6012fa408b8d5095da04bfa460df7008eb4332fd4b618cba8b4306e98ad78bd8"
+    sha256 arm64_ventura: "ade4a8b7ae793f39f312204daeb78c24ec09c7fd4ceba943f26591416984a27d"
+    sha256 sonoma:        "c8c551f8465d3de966cf80df2c4347092eccb61b3f30a85c0157e3b04ed2e4bc"
+    sha256 ventura:       "0f52dbb0543fdbd3a3e58e90c6a3abfc6c33e2a1735914b2b4018d467e8fdfee"
+    sha256 x86_64_linux:  "a35e3d563bf4273ac582f176ba73132092aaf1a93963cf3cd38cd94f078b8bbf"
   end
 
   keg_only :versioned_formula
@@ -62,13 +61,6 @@ class PhpAT81 < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    # Apply MacPorts patch for Xcode 16. Upstream fix doesn't cleanly apply
-    # Ref: https:github.comphpphp-srccommite2e2b3ab62686af85fb079a403b5dda75595f6dd
-    patch do
-      url "https:raw.githubusercontent.commacportsmacports-portsf6c30c5b3a810d4154ab8c85bb23274baa020fe1langphpfilespatch-php81-zend_string_equal_val.diff"
-      sha256 "382b1815dda418f539799c05674c3bfc22ec7e1da7494afd9f883938b4b3a1e2"
-    end
-
     # PHP build system incorrectly links system libraries
     # see https:github.comphpphp-srcissues10680
     patch :DATA

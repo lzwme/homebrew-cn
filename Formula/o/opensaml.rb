@@ -1,8 +1,8 @@
 class Opensaml < Formula
   desc "Library for Security Assertion Markup Language"
   homepage "https://wiki.shibboleth.net/confluence/display/OpenSAML/Home"
-  url "https://shibboleth.net/downloads/c++-opensaml/3.3.0/opensaml-3.3.0.tar.bz2"
-  sha256 "99ee5091a20783c85aca9c6827a2ea4eb8da8b47c4985f99366a989815d89ce8"
+  url "https://shibboleth.net/downloads/c++-opensaml/3.3.1/opensaml-3.3.1.tar.bz2"
+  sha256 "d8e24e070fc6bb80682632ca32c8569a9f3ef170ba57e3b82818322e75b6a37e"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Opensaml < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ef3bcbf1661bd845ddaaf679bc4ac1c97be7322e540dcac03eea07c6e4f0870e"
-    sha256 cellar: :any,                 arm64_sonoma:  "e271048b419d93cdce4c3b93c1e0e275fb089e9751d29145670f8b4bd757c1cf"
-    sha256 cellar: :any,                 arm64_ventura: "0124f112da5200068af7735cf823f0b49c2c7cf4f71de7a1424f63096a5a0f4e"
-    sha256 cellar: :any,                 sonoma:        "c9dd4f9976072123348f5523c303b195fd1e2d846312b341db00bc2585c14c03"
-    sha256 cellar: :any,                 ventura:       "1642d4e0c2ee412a24f2003c883bdf62e03d142dd7882474f6025d85a91a21d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "252f721596bf59190b2acb8b37ac0aa8b77aa47c8c9fa7de236bdd35a5217a13"
+    sha256 cellar: :any,                 arm64_sequoia: "424750ca3b4b621fc165bd65c1fa43bf8380b1e2edc02e54a69c8c0d0a362848"
+    sha256 cellar: :any,                 arm64_sonoma:  "598d3f098f2019a58c6eb7e0209166386ba5b95aa2c65fbe295efefd1667004b"
+    sha256 cellar: :any,                 arm64_ventura: "8cb5d53e9ce9c54089927ec316df7ffe533fef191704f7f32af88ae09010689e"
+    sha256 cellar: :any,                 sonoma:        "5d4e1be03c528a97e4e4ac17af63b712a61022c8fd26d2abd83f65732dc66b41"
+    sha256 cellar: :any,                 ventura:       "024e4168fb0530e8b68440549a53534c99b0943d5ef1278012c816ec8a766660"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21dc02829bae8f62f56be0d9c0456fd804ba004bf41c13ad16ca0f534a759e80"
   end
 
   depends_on "pkgconf" => :build

@@ -1,8 +1,8 @@
 class Aspectj < Formula
   desc "Aspect-oriented programming for Java"
   homepage "https:eclipse.devaspectj"
-  url "https:github.comeclipse-aspectjaspectjreleasesdownloadV1_9_22_1aspectj-1.9.22.1.jar"
-  sha256 "348c98561248197cfebcd568010cd8b037e639873842b47324659e4234b85f45"
+  url "https:github.comeclipse-aspectjaspectjreleasesdownloadV1_9_23aspectj-1.9.23.jar"
+  sha256 "3d7aa5451d914a48507617aa23b9da00eb6085c475f02f9aba007d4002925ea2"
   license "EPL-2.0"
 
   livecheck do
@@ -17,14 +17,12 @@ class Aspectj < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "54aabd2f689a5d4d2ca3a2ee88a03cae442f4316af396e68a919182d321b0e8c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3e54988e0976a8353299cf6834d7b7a0081f0937cadef5a9d2bf901fdcb4c0cf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b35032d71ef261589b7c13fd826300db39032c0b683058f4066919b9dca4db15"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "425f8a5c1a68e427643c38437b0a2538e1e11a05fdba830de9c681f93e23634e"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2a19fa57fe4c374b7a7bed752101efa6cc443dae1a2d78e5e1602b55acc6d644"
-    sha256 cellar: :any_skip_relocation, ventura:        "592d0669e3c41fa2e8438ef3cc68377a830f4856bc1fa7b1ce89c778f1424a91"
-    sha256 cellar: :any_skip_relocation, monterey:       "d2eb36aff3ddc79a01510f8a8536ae9acfc5742052744e285aaf0b686250653c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0861454e156f00ad3b6a21034842531e4474506f49a1d4d01f56f773662ec118"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "36f16cd45a206bf4a062f1e3f607a4ae5a3080fd96c3a428e279715ac9fb504a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e4838a659d617af43091402334cfd0e1f1183efee9c90cc4e91f69d993b41e6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8742821d35e1751c011f1101ee71e92fb651d1a757469e6e0bed65eb4aaba93e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fbf6c1c609aa1c15f3e9b81011d2eecc880ff0142efc1203ee321edfea150a2b"
+    sha256 cellar: :any_skip_relocation, ventura:       "197198fd436e667e64609b24f2f24eb5ac69fc2a73e78a905c18ff316d2e6ba9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "124f217589a14c449f55ba92cec515d7e0dc8bac0bfce87e9bf541a9ba56ee02"
   end
 
   depends_on "openjdk"

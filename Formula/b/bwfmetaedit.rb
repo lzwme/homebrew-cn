@@ -1,8 +1,8 @@
 class Bwfmetaedit < Formula
   desc "Tool for embedding, validating, and exporting BWF file metadata"
   homepage "https://mediaarea.net/BWFMetaEdit"
-  url "https://mediaarea.net/download/binary/bwfmetaedit/24.10/BWFMetaEdit_CLI_24.10_GNU_FromSource.tar.bz2"
-  sha256 "fa32a60a4bc2be654c35a55b42a57fe861bf7f1e52e83f4504a20b329a751416"
+  url "https://mediaarea.net/download/binary/bwfmetaedit/25.03/BWFMetaEdit_CLI_25.03_GNU_FromSource.tar.xz"
+  sha256 "c48b6de1037951b44051c4217038f2b6c6a169fa9fd86aaea78dc22ac11cb9f4"
   license "0BSD"
 
   livecheck do
@@ -11,12 +11,12 @@ class Bwfmetaedit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f0ecd2f1740f7191778621bf35d68b97ba486db31ebc1f9ed5a9c150cf27200f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1546efb0639f856d5410a8531a27d4ced04de940e388808e5abee8d22a332873"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d303028529f94d21d6610d6e3741da52c49878c3e7b3a1d4fe09597c926dd79d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0889b2b8937bcc182bd2f98649114f51dca93f9fe8fcf1540ccc030bbc3bc424"
-    sha256 cellar: :any_skip_relocation, ventura:       "20974bd0e43a7d6068358eea11f0b330807f9646265af45df3e0d541581a5670"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9523b923b075bb47cd1b8eb10d59613392742b2eeacda1edf142ea84cd6b9b4d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce0354cf96e37536f7c1c73142e7da7bcc5271a9cf24a69aa46f9a6b0d7c15b9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9e3c97b9d2e869fda29305f101d923f1bc1f8611d4ba9f32895631086d4c9f7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ea1bda591966ce23cfad2827f52190b74cd3f1c3beb9e5430848d3bfa1a14eee"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a92e5daf4cd9bb128c343c120397eff72ddbe10636a610b3ced1bf91a1af2eb7"
+    sha256 cellar: :any_skip_relocation, ventura:       "52028cdff6de53c1a891d9125423696eb0c65de65d8c0627224ae6671a6431f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28dea660744b206b0bb01ceeb9ad5778d1fb25b0684b83bd6f34d9c2c4624646"
   end
 
   def install

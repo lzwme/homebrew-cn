@@ -1,8 +1,8 @@
 class Fish < Formula
   desc "User-friendly command-line shell for UNIX-like operating systems"
   homepage "https:fishshell.com"
-  url "https:github.comfish-shellfish-shellreleasesdownload4.0.0fish-4.0.0.tar.xz"
-  sha256 "2fda5bd970357064d8d4c896e08285ba59965ca2a8c4829ca8a82bf3b89c69f3"
+  url "https:github.comfish-shellfish-shellreleasesdownload4.0.1fish-4.0.1.tar.xz"
+  sha256 "4ed63a70207283e15cf21fc5f21db4230421e4f98d4826b5b1c8254d69c762b5"
   license "GPL-2.0-only"
 
   livecheck do
@@ -13,12 +13,12 @@ class Fish < Formula
   pour_bottle? only_if: :default_prefix
 
   bottle do
-    sha256                               arm64_sequoia: "c80c84237d87bf967035f6280a53c0f46456cd6591c312a96144125715ef0eaf"
-    sha256                               arm64_sonoma:  "34df79081d628dd1d3e8faae3e7d66a7aa9389a4f1e91f6dc50feed7b9f37e93"
-    sha256                               arm64_ventura: "c7653c2c30a335fb258797a4e7f76e6fff809d96549e148b6f8b0aa7c3877c9f"
-    sha256                               sonoma:        "730165471007c9503b260b3bd22f7ed5536d91f80662cf4c9277514c644f88e8"
-    sha256                               ventura:       "56e340b82a17af418c5b1ef6ad0c98fa674faa585eabfd4b2fb07219df77d460"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3675238178e72e615a0386f6d2302701d8d4b8b7b0fe499d04bd06636a6c52c7"
+    sha256                               arm64_sequoia: "0c09f67dbf606569669b5802a03fd282c67a231c3f6e501e40fae146e011e569"
+    sha256                               arm64_sonoma:  "48b500ec374d0c8b3eac85f7b7bd564d3614b30c0502734ccf641a05cb339297"
+    sha256                               arm64_ventura: "d537e8a0d317a2790010808136d44925c6fbfff6851f28ace82e989a78f9721e"
+    sha256                               sonoma:        "6b4cd39a87dc54c2ebedf23174c60a5165fc0c1f1768dfa736374402d7bd4a2a"
+    sha256                               ventura:       "cf916fcfcb0821cd85e190bf7f974bfe155cc269e2476a757fef2307930acb1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "580f786d6a20d4cd7f604588b205d3b2e4affd93104d03e1c7ab8c6b7efe945b"
   end
 
   head do

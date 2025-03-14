@@ -1,19 +1,18 @@
 class PhpAT81 < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
-  url "https:www.php.netdistributionsphp-8.1.31.tar.xz"
-  mirror "https:fossies.orglinuxwwwphp-8.1.31.tar.xz"
-  sha256 "c4f244d46ba51c72f7d13d4f66ce6a9e9a8d6b669c51be35e01765ba58e7afca"
+  url "https:www.php.netdistributionsphp-8.1.32.tar.xz"
+  mirror "https:fossies.orglinuxwwwphp-8.1.32.tar.xz"
+  sha256 "c582ac682a280bbc69bc2186c21eb7e3313cc73099be61a6bc1d2cd337cbf383"
   license "PHP-3.01"
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    rebuild 1
-    sha256 arm64_sequoia: "dc6e636eb2187386d06712fc87fcc7b30a7712ca7318c002bdaafa5b3c6fd11c"
-    sha256 arm64_sonoma:  "b8f0465c31c5493e1fbae0991b43b719f36d12ae533e631712af23d13f58c22e"
-    sha256 arm64_ventura: "07c3b894ed9b4927945dd5677698d85b66e8044ef2347c1bb297c9e87ba9e13d"
-    sha256 ventura:       "6140fd9ae60c30383dc09240bfa28cbd638c55df5efa5a844363073590b5f4f7"
-    sha256 x86_64_linux:  "a3b01d6736c596bb46412ae3cd0996264514356bfeef700c41a1e334417c08a1"
+    sha256 arm64_sequoia: "24d01d921af1a42a5d9e8329db547ef3c03cd04d193c67ecca1f0fa969e0cbaa"
+    sha256 arm64_sonoma:  "8171430807377a76288cc0193a1573cdb6f7dd1019d90ee673b2f03f11141610"
+    sha256 arm64_ventura: "b3507c0ef89a3e9c9eab479dbaaed8f7fa62df75cb724fb14ed400db0e157dea"
+    sha256 ventura:       "638cf93c328242da5a4bb9db32d3786a48b72c9f6b031ad5c7a41f45370f94ce"
+    sha256 x86_64_linux:  "6bbb3906fa6e4e792f728188289ea248639445aa25f54314f1efc27b5035006c"
   end
 
   keg_only :versioned_formula
@@ -57,13 +56,6 @@ class PhpAT81 < Formula
   uses_from_macos "zlib"
 
   on_macos do
-    # Apply MacPorts patch for Xcode 16. Upstream fix doesn't cleanly apply
-    # Ref: https:github.comphpphp-srccommite2e2b3ab62686af85fb079a403b5dda75595f6dd
-    patch do
-      url "https:raw.githubusercontent.commacportsmacports-portsf6c30c5b3a810d4154ab8c85bb23274baa020fe1langphpfilespatch-php81-zend_string_equal_val.diff"
-      sha256 "382b1815dda418f539799c05674c3bfc22ec7e1da7494afd9f883938b4b3a1e2"
-    end
-
     # PHP build system incorrectly links system libraries
     # see https:github.comphpphp-srcissues10680
     patch :DATA

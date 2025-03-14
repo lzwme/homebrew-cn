@@ -1,8 +1,8 @@
 class WpebackendFdo < Formula
   desc "Freedesktop.org backend for WPE WebKit"
   homepage "https:wpewebkit.org"
-  url "https:github.comIgaliaWPEBackend-fdoreleasesdownload1.14.3wpebackend-fdo-1.14.3.tar.xz"
-  sha256 "10121842595a850291db3e82f3db0b9984df079022d386ce42c2b8508159dc6c"
+  url "https:github.comIgaliaWPEBackend-fdoreleasesdownload1.16.0wpebackend-fdo-1.16.0.tar.xz"
+  sha256 "beddf321232d5bd08106c179dbc600f8ce88eb3620b4a59a6329063b78f64635"
   license "BSD-2-Clause"
   head "https:github.comIgaliaWPEBackend-fdo.git", branch: "master"
 
@@ -12,7 +12,7 @@ class WpebackendFdo < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "2bab7093c2eaba0cde2fec85b7b413585d05fef38ddeb9b69ebef34deff304b3"
+    sha256 x86_64_linux: "a1a62d1c3651a0e4cc927c5277c6174702776116108f42d6691507e7bdca6e75"
   end
 
   depends_on "meson" => :build

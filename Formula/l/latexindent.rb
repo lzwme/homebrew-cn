@@ -1,18 +1,17 @@
 class Latexindent < Formula
   desc "Add indentation to LaTeX files"
   homepage "https:latexindentpl.readthedocs.io"
-  url "https:github.comcmhugheslatexindent.plarchiverefstagsV3.24.4.tar.gz"
-  sha256 "7b7216604d1e544b7f22cf520b3ca1817222e70e28fe2865bcc4d0e3284c497c"
+  url "https:github.comcmhugheslatexindent.plarchiverefstagsV3.24.5.tar.gz"
+  sha256 "3bafd91da0bfd8c530cd9e8bd8dd98948d95850d314cfb459bb180f12a608b83"
   license "GPL-3.0-or-later"
-  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83b002051cf480f85aa240da502d46ad9c0cd213f743b4134e681a76a65e5e90"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ae745f0c6cbb2af7c11b147f35d42234f2150cca8c2c30ea638be01956e19d7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7c6472b59100a2d5f779e3775b1a5447cc956dea402a9acf59061388b032ccc5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6e3c07fa210342825f57e594544f4c0ca65c5e442d6ec9c4069c645997c4a37b"
-    sha256 cellar: :any_skip_relocation, ventura:       "cd2a76ce01cb9345068a69e6fea12c58f25feaf82f650cf90a65e22c7c6bf9ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a56577072a5f0a17392a1e787eb8877c78f54e7fa865b96941fa1461920dadba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2bf72b8cc5d67a8afe53a67cef85c8fcaee2699677e304f43b0fdc83064d4f4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e828c85b94bcef9e778fe159dd7abc4e104af9a6786c7e89ebdebb97fc544b3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f6934be9ae329867d95351426800ffd0bd99543811fd612ceb2d14dbec380a4b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4544e9da8ec45f93c96438daa746d829b91239ddc01af35d6983ef4013fb895d"
+    sha256 cellar: :any_skip_relocation, ventura:       "9efa31412f1197251a1ede89fd5f2e8fdb7ec250a11b193f578305143651878a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12aef561c51f10cdf8241733bc21a6f70abcdc229dd30f9933dedd2184972879"
   end
 
   depends_on "perl"
@@ -30,8 +29,8 @@ class Latexindent < Formula
   end
 
   resource "Class::Data::Inheritable" do
-    url "https:cpan.metacpan.orgauthorsidRRSRSHERERClass-Data-Inheritable-0.09.tar.gz"
-    sha256 "44088d6e90712e187b8a5b050ca5b1c70efe2baa32ae123e9bd8f59f29f06e4d"
+    url "https:cpan.metacpan.orgauthorsidRRSRSHERERClass-Data-Inheritable-0.10.tar.gz"
+    sha256 "aa1ae68a611357b7bfd9a2f64907cc196ddd6d047cae64ef9d0ad099d98ae54a"
   end
 
   resource "Devel::GlobalDestruction" do
@@ -125,8 +124,8 @@ class Latexindent < Formula
   end
 
   resource "Specio" do
-    url "https:cpan.metacpan.orgauthorsidDDRDROLSKYSpecio-0.48.tar.gz"
-    sha256 "0c85793580f1274ef08173079131d101f77b22accea7afa8255202f0811682b2"
+    url "https:cpan.metacpan.orgauthorsidDDRDROLSKYSpecio-0.50.tar.gz"
+    sha256 "467baf0582681626266318e3154727497d7205996fbd76674ba58ed79e10640e"
   end
 
   resource "Sub::Exporter::Progressive" do
@@ -150,8 +149,8 @@ class Latexindent < Formula
   end
 
   resource "Try::Tiny" do
-    url "https:cpan.metacpan.orgauthorsidEETETHERTry-Tiny-0.31.tar.gz"
-    sha256 "3300d31d8a4075b26d8f46ce864a1d913e0e8467ceeba6655d5d2b2e206c11be"
+    url "https:cpan.metacpan.orgauthorsidEETETHERTry-Tiny-0.32.tar.gz"
+    sha256 "ef2d6cab0bad18e3ab1c4e6125cc5f695c7e459899f512451c8fa3ef83fa7fc0"
   end
 
   resource "Unicode::LineBreak" do
@@ -170,13 +169,13 @@ class Latexindent < Formula
   end
 
   resource "YAML::Tiny" do
-    url "https:cpan.metacpan.orgauthorsidEETETHERYAML-Tiny-1.74.tar.gz"
-    sha256 "7b38ca9f5d3ce24230a6b8bdc1f47f5b2db348e7f7f9666c26f5955636e33d6c"
+    url "https:cpan.metacpan.orgauthorsidEETETHERYAML-Tiny-1.76.tar.gz"
+    sha256 "a8d584394cf069bf8f17cba3dd5099003b097fce316c31fb094f1b1c171c08a3"
   end
 
   resource "namespace::autoclean" do
-    url "https:cpan.metacpan.orgauthorsidEETETHERnamespace-autoclean-0.29.tar.gz"
-    sha256 "45ebd8e64a54a86f88d8e01ae55212967c8aa8fed57e814085def7608ac65804"
+    url "https:cpan.metacpan.orgauthorsidEETETHERnamespace-autoclean-0.31.tar.gz"
+    sha256 "d3b32c82e1d2caa9d58b8c8075965240e6cab66ab9350bd6f6bea4ca07e938d6"
   end
 
   resource "namespace::clean" do

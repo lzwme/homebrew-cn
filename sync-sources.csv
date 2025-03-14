@@ -2345,6 +2345,7 @@ Homebrew-homebrew-core/Formula/g/gnirehtet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnmic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnome-autoar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gnome-builder.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gnome-online-accounts.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnome-recipes.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnome-themes-extra.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gnu-apl.rb, Homebrew/homebrew-core, 0
@@ -2503,6 +2504,7 @@ Homebrew-homebrew-core/Formula/g/gradle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gradle@6.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gradle@7.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/grafana-agent.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/grafana-alloy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grafana.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grails.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grammarly-languageserver.rb, Homebrew/homebrew-core, 1
@@ -3161,6 +3163,7 @@ Homebrew-homebrew-core/Formula/k/keychain.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/keydb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/keyring.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/keystone.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/keyutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kfr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/khal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/khard.rb, Homebrew/homebrew-core, 1
@@ -3677,6 +3680,7 @@ Homebrew-homebrew-core/Formula/lib/libgit2@1.6.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgit2@1.7.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgit2@1.8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgnt.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libgoa.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgosu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgpg-error.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgphoto2.rb, Homebrew/homebrew-core, 1
@@ -6836,6 +6840,7 @@ Homebrew-homebrew-core/Formula/u/ultralist.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/um.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/umka-lang.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/umlet.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/u/umockdev.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/umple.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/unac.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/unar.rb, Homebrew/homebrew-core, 1
@@ -12594,6 +12599,7 @@ Homebrew-homebrew-cask/Casks/m/mountain-duck.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mountain.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mounty.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mouseless.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/mouseless@preview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mousepose.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/movist-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mp3gain-express.rb, Homebrew/homebrew-cask, 0
@@ -14871,6 +14877,7 @@ nicerloop-homebrew-nicerloop/Formula/graph-easy.rb, nicerloop/homebrew-nicerloop
 nicerloop-homebrew-nicerloop/Formula/hfsprescue.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/icode.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/improv-wifi-serial-client.rb, nicerloop/homebrew-nicerloop, 1
+nicerloop-homebrew-nicerloop/Formula/inputsourceselector.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/jailer.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/jpdftweak.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/kindletool.rb, nicerloop/homebrew-nicerloop, 1

@@ -4,25 +4,19 @@ class Zile < Formula
   # Before bumping to a new version, check the NEWS file to make sure it is a
   # stable release: https:git.savannah.gnu.orgcgitzile.gitplainNEWS
   # For context, see: https:github.comHomebrewhomebrew-coreissues67379
-  url "https:ftp.gnu.orggnuzilezile-2.6.2.tar.gz"
-  mirror "https:ftpmirror.gnu.orgzilezile-2.6.2.tar.gz"
-  sha256 "77eb7daff3c98bdc88daa1ac040dccca72b81dc32fc3166e079dd7a63e42c741"
+  url "https:ftp.gnu.orggnuzilezile-2.6.3.tar.gz"
+  mirror "https:ftpmirror.gnu.orgzilezile-2.6.3.tar.gz"
+  sha256 "66720b062c150a2a96fa2831f55cf95dfa21c9c2d6c0487fa92a5a1e4074006f"
   license "GPL-3.0-or-later"
   version_scheme 1
 
   bottle do
-    sha256 arm64_sequoia:  "a62ddd28f792d9c103e598ef490c0e763b200e492647d7c1cfb6f605843e56da"
-    sha256 arm64_sonoma:   "ddb2671d7631144a74ada4803e49ebdf005f6d46a3f0cad1f088fdff076215e2"
-    sha256 arm64_ventura:  "1268429ea4818cca64c876e674d4995fc7d04712b7830c846d0132bc3fabf965"
-    sha256 arm64_monterey: "2fbea44ef3130aff7733469b94bc24e75978bdb5cf8858e848a9bc23c1ddd97e"
-    sha256 arm64_big_sur:  "2975be9af2cd9d330bcf85dc81f9f74b2f30d17972e987db3fd225212b0483ff"
-    sha256 sonoma:         "c8fcd40bc3bd5b5481aca14a25b7f0b72fbd3d02cb53fb13c50061d380c4cba3"
-    sha256 ventura:        "115e3fd1f729eaa56b32f2ca64b7d9c6835643692f6a8ed73940f9ff2b09e08c"
-    sha256 monterey:       "dfa880a340b349ada0e41f391743c4a9ea15f012e89d29695ae3f2f8c6da24ef"
-    sha256 big_sur:        "128190a766b6a418d57718f597e33502b381ee1441b01edb35396fc486196665"
-    sha256 catalina:       "a57829f30757e2cd9092e0178505a8f6b6dce9f50f5b9fada78b0c1eb2cbd692"
-    sha256 mojave:         "bfac60d46d213913b7bccc3d6cdf998f487d080fef4a46c5608d20ab09a8b988"
-    sha256 x86_64_linux:   "d300cfd773adeb8071731a7cdc19a68be46732e17e95ffd6373844b8ae6c4e0d"
+    sha256 arm64_sequoia: "1e8c4e55e5fd847876d83c47dd94ac35c8bb259806cbf287b927f163eadbbbfc"
+    sha256 arm64_sonoma:  "2626abe8f48706311b64d18713917ae526357169d1d6fcab0fe4d4bd6c96787d"
+    sha256 arm64_ventura: "0cb7cbd3030e94fddfdde2c7117ebd2206df4d63c60f9ac6103f45a80779e522"
+    sha256 sonoma:        "42a771caf90019b6ea975f0d672daeaa170edc24bf3fbfeea03f7db2e468372b"
+    sha256 ventura:       "2a0bfe55a5ba022a214452812fb48ed1bc322d4676b7f02b2c46eba085a83255"
+    sha256 x86_64_linux:  "dad50ecdec4c215137db0a61da5c12164462737ec485e80f6c15c36af9fd06b1"
   end
 
   depends_on "help2man" => :build

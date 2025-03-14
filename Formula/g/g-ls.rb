@@ -1,18 +1,18 @@
 class GLs < Formula
   desc "Powerful and cross-platform ls"
   homepage "https:g.equationzhao.space"
-  url "https:github.comEquationzhaogarchiverefstagsv0.29.2.tar.gz"
-  sha256 "061a939523b79c60c98993e9d2dbe46da529112cbfe20ec9e0e8778a65eb05c4"
+  url "https:github.comEquationzhaogarchiverefstagsv0.30.0.tar.gz"
+  sha256 "73e4e10c5dcf43bd81d42a83383381d97dcf670c0bea43b9416d01d38d882f56"
   license "MIT"
   head "https:github.comEquationzhaog.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d1ee7558957de48fe5cf5778d8dde8f9e1f9166d14315c1cb2f604ddf85ab7a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8c1b0966690decd1b3b7d1c2878d0077b300469889fde8bcaa087cc9519fae9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d47a2317ee3fa8164b58e368d8678be53abf32e6e7d73c56b11387520bc57ebd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a919a43bb65b29768c6de8e518a07e064e9a8b158aad61e0b588aef699be4635"
-    sha256 cellar: :any_skip_relocation, ventura:       "c44b1529773a09cec1e3ce8c82b3f50aa004a64764d5ec02f92b6706e36bea53"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5698244f02ef325348fe5478d29baf01156dcd8219dbeb10bdc7222ab8d67785"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83fa173d73d17b242bc399e7086d4f2ebff552260aa848ea0a4be9fff646db7d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fc6f9f4cdfc077f396a62b909794f6c10b5eb9ba10de1070e9e4369e587645c9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bab9bfb7fd1a139dd48d247e395606887dd2f416cbee9e3fe03ded72289abb69"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9baa235cea5dc56311eb013505af0afd6b24d060eef4a6a551e951b89763558e"
+    sha256 cellar: :any_skip_relocation, ventura:       "f68871f3f5094736b91ea6b62c9771da05b57c4be6f2792c3d2066add2900e79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fea068620a47dedaf81c15dce9710bc3e3a3f6218313d40a64df3b87df5e276"
   end
 
   depends_on "go" => :build

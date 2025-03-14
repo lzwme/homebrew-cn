@@ -23,7 +23,7 @@ class GrafanaAgent < Formula
   # Needs EOL Go 1.22 to build (https:github.comgrafanaagentissues6972)
   # and deprecated upstream though will get security fixes until 2025-10-31.
   # Disable date set 3 months after planned EOL date of 2025-11-01.
-  disable! date: "2026-02-01", because: :deprecated_upstream
+  disable! date: "2026-02-01", because: :deprecated_upstream, replacement: "grafana-alloy"
 
   # use "go" again when https:github.comgrafanaagentissues6972 is resolved and released
   depends_on "go@1.22" => :build

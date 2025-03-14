@@ -1,20 +1,18 @@
 class Libstrophe < Formula
   desc "XMPP library for C"
   homepage "https:strophe.imlibstrophe"
-  url "https:github.comstrophelibstrophearchiverefstags0.13.1.tar.gz"
-  sha256 "0268509f150d72ef63e830db9e6f0d4ecff9727ee0976ffb99a6feb6eb4100c7"
+  url "https:github.comstrophelibstrophearchiverefstags0.14.0.tar.gz"
+  sha256 "adeb9e673d7f8b8cd20a2437cc220a8de581abf6e46594896b622e3e0dfa5c1f"
   license all_of: ["GPL-3.0-only", "MIT"]
   head "https:github.comstrophelibstrophe.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "36c9cef915123528efb7d774ae976c386b4c58e0c64e757e63895c5042241d69"
-    sha256 cellar: :any,                 arm64_sonoma:   "902dcba315b0ce926f99a15f5f7dc0ac802a13a24dee1f5e1492af9bc65e12ae"
-    sha256 cellar: :any,                 arm64_ventura:  "923cf6f7907fe086f31956910790a9585f643b11566b4a832f8e31bd3fc5b85c"
-    sha256 cellar: :any,                 arm64_monterey: "fdcba4273478eed63187409bde68ee5027126ff9b3a77d79547c143e06a016e4"
-    sha256 cellar: :any,                 sonoma:         "0278227c427a15ad1800483c3fbdf5f80d4d10583d0744819c3780e0bb445d44"
-    sha256 cellar: :any,                 ventura:        "278baea5795453581e16ec35f9b682de22b7e4d61e8b73a35fba051925f3399d"
-    sha256 cellar: :any,                 monterey:       "83fafe1791afdbd3927816fd63ebd253519e99b6995da87048656eac8962b157"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "36117cdb479c36a81b0afdb0264664fdc77dbd3a79ccced9234b39a6298fd45f"
+    sha256 cellar: :any,                 arm64_sequoia: "9b73c7be79de4da6cdf71493be1d7cfebeb793118cc3e8c81f38e1e300c7655a"
+    sha256 cellar: :any,                 arm64_sonoma:  "26a68ff8af0c493458d249c831bc9951d9167f67524a61a815aefe3735c90b05"
+    sha256 cellar: :any,                 arm64_ventura: "871b9da7491c846d8577fbd1497bf835abc2c529148d94f9124953fe602568da"
+    sha256 cellar: :any,                 sonoma:        "91bae15485f397f9eb581cd9611f636320aa76e2671981bd702893f2095b360b"
+    sha256 cellar: :any,                 ventura:       "f56d42d26c8a1540ef92878b9a89262a1769c39904604bd878139570f977bbb5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82556dd0b8ebd7541b35c3ea0e4c4079f802a4588c0424043a64b277416394fc"
   end
 
   depends_on "autoconf" => :build

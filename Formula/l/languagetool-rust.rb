@@ -1,18 +1,18 @@
 class LanguagetoolRust < Formula
   desc "LanguageTool API in Rust"
   homepage "https:docs.rslanguagetool-rust"
-  url "https:github.comjeertmanslanguagetool-rustarchiverefstagsv2.1.4.tar.gz"
-  sha256 "8fbd18fd9b6a7e049fec39d9d4ebcc3563ab7779b849ad5aa2df1d737002c30a"
+  url "https:github.comjeertmanslanguagetool-rustarchiverefstagsv2.1.5.tar.gz"
+  sha256 "db1da3e821976c2e5e85c26037301dd43fe8baff6bff243c498f74f7c5e57d37"
   license "MIT"
   head "https:github.comjeertmanslanguagetool-rust.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "47b10bf2de0130d24efd9ea4a32f8dbdd9eb262d307d4367df02d3685af28849"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5ed4daa41e0d546f5cf3bcc8bc014b07f5f7e9c0113455ddf7dfb3856ce827b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "54d468c22a3c6f189e256663475a4edecb38def544719de48f95c02a08b49c04"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9d7a475df6ab2ca6ec30fd0e30a924e41bad42b533c26069c3f7cfea92929eff"
-    sha256 cellar: :any_skip_relocation, ventura:       "201755fbdc71478a020286fe7ee5f1d583dd83d8d31665b156a02c49a3ff8fe5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c416e6b8e170a537063f6f9a5f82f382afb6e1997bb20d87a04343822b810e8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58375defa38ac43d3943c08967a4fab9ac2bec7ffd69d042f02296defb1abbe2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "088c12e33f0960eca09b131d46e8e821947d7d330efdef500f6bf31c1587e295"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "353bb7ad7e99b30e66312284a0ee1b8058479f3892da5a3ee336b80a9d58cf10"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b2dcfbb19328a045c4a6bebea59fa674bfcb6d4827938cd4d5ff2b0f6a63c095"
+    sha256 cellar: :any_skip_relocation, ventura:       "53961fe44f3a0564943b62dd179df6e2760bc33b7ecef8927cc6d6c20f44b8fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c575d0c3dbfe53942702f762527241952714188e2952e05c3a7f08e0273da048"
   end
 
   depends_on "pkgconf" => :build

@@ -3,17 +3,17 @@ class Streamrip < Formula
 
   desc "Scriptable music downloader for Qobuz, Tidal, SoundCloud, and Deezer"
   homepage "https:github.comnathomstreamrip"
-  url "https:github.comnathomstreamriparchiverefstagsv2.0.5.tar.gz"
-  sha256 "83ee51192faeb8134ba29e772fee949de9778f6f9c7987abe421044e44b49bb4"
+  url "https:files.pythonhosted.orgpackagesb8c96997772e0217f3081e4e692c7b8b104aaa564c008f2593341e81bbbd2396streamrip-2.1.0.tar.gz"
+  sha256 "e59b4b406f9ac77eb59c927a1a082644e0902152ffeb6212b6b24af7fbef5540"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "efb4aa3d9b9f640b598c4f314c43a5789c4e4cee44c84843343bc5380bc6ca8f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b7628d4f3c24da152c34f76115e7666e76426fabe23fe93e977296b2b6ff7a32"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "77dc15a0363d29f30a821a2d0bc5dba3e2af5e260d8544143aaa32c0ed90b71d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5767bfb01b4a9e299f21385613dbf4394c8fe21e1e78d8e185c82832712dd1ba"
-    sha256 cellar: :any_skip_relocation, ventura:       "19eb260e6a8862ea8564731a134086d21c6362e414a9b98756f5313ddcc28ba2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b3e831cb2a5f56573671636c32b64e9ddbfb1ddda4a7f548f5ebe9ceefc57b4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b89f47880d731ba9be311bc15dc854f4d22fb4e07dc70d5013d64a9147e42690"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dfe0bcd9118f58d6b377d2eea6fa87ccfbd5c450322305e8815e8dbb23c54979"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "65cdb9c66cf1cba0f43d803c6528b23820c5a6f84579f84bbf0d63677dca7729"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c21cb2ddf71eeeb687a0654b95a84c39408115364acf288f087ba4a5dcff6545"
+    sha256 cellar: :any_skip_relocation, ventura:       "6b8eec41a964e5205609053b4beac6b0b97e49d98fc849a3e279e7b6d1ef4d98"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "249bcfb1dafa43ba6f3c753c43a2209653583c997b48e48ee8214f60692f80f0"
   end
 
   depends_on "certifi"
@@ -34,13 +34,13 @@ class Streamrip < Formula
   end
 
   resource "aiohappyeyeballs" do
-    url "https:files.pythonhosted.orgpackages7f55e4373e888fdacb15563ef6fa9fa8c8252476ea071e96fb46defac9f18bf2aiohappyeyeballs-2.4.4.tar.gz"
-    sha256 "5fdd7d87889c63183afc18ce9271f9b0a7d32c2303e394468dd45d514a757745"
+    url "https:files.pythonhosted.orgpackages2630f84a107a9c4331c14b2b586036f40965c128aa4fee4dda5d3d51cb14ad54aiohappyeyeballs-2.6.1.tar.gz"
+    sha256 "c3f9d0113123803ccadfdf3f0faa505bc78e6a72d1cc4806cbd719826e943558"
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackagesfeedf26db39d29cd3cb2f5a3374304c713fe5ab5a0e4c8ee25a0c45cc6adf844aiohttp-3.11.11.tar.gz"
-    sha256 "bb49c7f1e6ebf3821a42d81d494f538107610c3a705987f53068546b0e90303e"
+    url "https:files.pythonhosted.orgpackagesb33fc4a667d184c69667b8f16e0704127efc5f1e60577df429382b4d95fd381eaiohttp-3.11.13.tar.gz"
+    sha256 "8ce789231404ca8fff7f693cdce398abf6d90fd5dae2b1847477196c243b1fbb"
   end
 
   resource "aiolimiter" do
@@ -59,8 +59,8 @@ class Streamrip < Formula
   end
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackages48c86260f8ccc11f0917360fc0da435c5c9c7504e3db174d5a12a1494887b045attrs-24.3.0.tar.gz"
-    sha256 "8f5c07333d543103541ba7be0e2ce16eeee8130cb0b3f9238ab904ce1e85baff"
+    url "https:files.pythonhosted.orgpackages69823c4e1d44f3cbaa2a578127d641fe385ba3bff6c38b789447ae11a21fa413attrs-25.2.0.tar.gz"
+    sha256 "18a06db706db43ac232cce80443fcd9f2500702059ecf53489e3c5a3f417acaf"
   end
 
   resource "cffi" do
@@ -149,8 +149,8 @@ class Streamrip < Formula
   end
 
   resource "propcache" do
-    url "https:files.pythonhosted.orgpackages20c82a13f78d82211490855b2fb303b6721348d0787fdd9a12ac46d99d3acde1propcache-0.2.1.tar.gz"
-    sha256 "3f77ce728b19cb537714499928fe800c3dda29e8d9428778fc7c186da4c09a64"
+    url "https:files.pythonhosted.orgpackages9276f941e63d55c0293ff7829dd21e7cf1147e90a526756869a9070f287a68c9propcache-0.3.0.tar.gz"
+    sha256 "a8fd93de4e1d278046345f49e2238cdb298589325849b2645d4a94c53faeffc5"
   end
 
   resource "pycares" do
@@ -169,13 +169,13 @@ class Streamrip < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
-    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
+    url "https:files.pythonhosted.orgpackages7c2dc3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84pygments-2.19.1.tar.gz"
+    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
   end
 
   resource "pytest" do
-    url "https:files.pythonhosted.orgpackages053530e0d83068951d90a01852cb1cef56e5d8a09d20c7f511634cc2f7e0372apytest-8.3.4.tar.gz"
-    sha256 "965370d062bce11e73868e0335abac31b4d3de0e82f4007408d242b4f8610761"
+    url "https:files.pythonhosted.orgpackagesae3cc9d525a414d506893f0cd8a8d0de7706446213181570cdbd766691164e40pytest-8.3.5.tar.gz"
+    sha256 "f4efe70cc14e511565ac476b57c279e12a855b11f48f212af1080ef2263d3845"
   end
 
   resource "pytest-asyncio" do
@@ -219,6 +219,9 @@ class Streamrip < Formula
   end
 
   def install
+    # The source doesn't have a valid SOURCE_DATE_EPOCH, so here we set default.
+    ENV["SOURCE_DATE_EPOCH"] = "1451574000"
+
     virtualenv_install_with_resources
   end
 

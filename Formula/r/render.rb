@@ -1,19 +1,18 @@
 class Render < Formula
   desc "Command-line interface for Render"
   homepage "https:render.comdocscli"
-  url "https:github.comrender-osscliarchiverefstagsv2.0.0.tar.gz"
-  sha256 "a7bcc78fd4d38df7a19fcfcd3958dc89ded4353c12b5ed695cd215c6998c9926"
+  url "https:github.comrender-osscliarchiverefstagsv2.1.0.tar.gz"
+  sha256 "505634bd333e2a5472b2420b35885684cbef7b266dc7810e89aa2329e0a580ca"
   license "Apache-2.0"
   head "https:github.comrender-osscli.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e96e67b0026c03994984904c9f04b34bfbc1618f00cf2620c42698763b7bb49a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e96e67b0026c03994984904c9f04b34bfbc1618f00cf2620c42698763b7bb49a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e96e67b0026c03994984904c9f04b34bfbc1618f00cf2620c42698763b7bb49a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "668d6be46967a7a95f0fe53479f86ebebda33997781fd65f92e0200599c0fe73"
-    sha256 cellar: :any_skip_relocation, ventura:       "668d6be46967a7a95f0fe53479f86ebebda33997781fd65f92e0200599c0fe73"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3bdaed3e1e32be9841660912c4bf07003306532d1952957b2551c821f72017c2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b36becb41418a39165bbb06fa21d1a47eff1ee7f8259f85fef281bfcf531b0fb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b36becb41418a39165bbb06fa21d1a47eff1ee7f8259f85fef281bfcf531b0fb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b36becb41418a39165bbb06fa21d1a47eff1ee7f8259f85fef281bfcf531b0fb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7c5cb83b0cf4c49ef867a8fe7bea466b885a04ab5a824c1918fff5a59e1716c0"
+    sha256 cellar: :any_skip_relocation, ventura:       "7c5cb83b0cf4c49ef867a8fe7bea466b885a04ab5a824c1918fff5a59e1716c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "400efede4482ea042ec9c39016fc6955fa98878970f4d085f75258d227262f94"
   end
 
   depends_on "go" => :build

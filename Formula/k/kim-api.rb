@@ -1,10 +1,9 @@
 class KimApi < Formula
   desc "Knowledgebase of Interatomic Models (KIM) API"
   homepage "https://openkim.org"
-  url "https://s3.openkim.org/kim-api/kim-api-2.3.0.txz"
-  sha256 "93673bb8fbc0625791f2ee67915d1672793366d10cabc63e373196862c14f991"
+  url "https://s3.openkim.org/kim-api/kim-api-2.4.0.txz"
+  sha256 "0fa030843ce89ae399d27a61e9a075a60328df618868fdad92f24fdf9fd33032"
   license "CDDL-1.0"
-  revision 1
 
   livecheck do
     url "https://openkim.org/kim-api/previous-versions/"
@@ -12,17 +11,12 @@ class KimApi < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "811ee36c198aa16f4c386447742ac00e8fd201e4e94ba600914db99b97f8ab9a"
-    sha256 cellar: :any,                 arm64_sonoma:   "38c367b05aa6f93acdc85720ff28641867cf76675fe1c3f971c5490fce66e9cb"
-    sha256 cellar: :any,                 arm64_ventura:  "86f1c14a312882376a61772792e0da4265f84bdd432db6db42afd2355b4c142f"
-    sha256 cellar: :any,                 arm64_monterey: "a18d11cf459f99ca0c0f8a1d08d3f6a2ea762a1ca029e282b77227cdd3f432a9"
-    sha256 cellar: :any,                 arm64_big_sur:  "c4d038b0db6fc374be824cfa325a775f8dd8556b406b69f8bce1cd51edab6ed5"
-    sha256 cellar: :any,                 sonoma:         "92b6449a564453976bb94d098a7a04cd6542ac62f8e2245b47d604005c27b8ca"
-    sha256 cellar: :any,                 ventura:        "0ee35d2e4ef210881f5245363970d59d6ca3a8f77a03f6c09f9e229e66649b59"
-    sha256 cellar: :any,                 monterey:       "bfd052878e3b8a58ea1c496cc5c13499056af16c9ccdcdb95fa69db2f28b2525"
-    sha256 cellar: :any,                 big_sur:        "f59251974403a7a5396aef8cd77cbe28d5a614fcadfa414c3d6a41de9e7863b1"
-    sha256 cellar: :any,                 catalina:       "a02ca35858e1449c7022ca563b87367b639bd2905e1a9476029a2d01ab51d503"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ee5ac6fe8da70f2734003c6348e8f094b354324bd7b6976e2ceaeb0d09c6ea1"
+    sha256 cellar: :any,                 arm64_sequoia: "0a9a82aee329b1ac9049c763053f5b97114bc546fdadd69f830ab7cbf49024e0"
+    sha256 cellar: :any,                 arm64_sonoma:  "1bd044a9580fc0761c012c3c91d7d784ab5d31ad9d0a35e731ec05931a2fdfd0"
+    sha256 cellar: :any,                 arm64_ventura: "1ffa80813a49f7990fee29ec83c4ef03182e92e3cf1ad3e174ff6c6042ed670a"
+    sha256 cellar: :any,                 sonoma:        "6ab3b70a938f7a2b2c1e97f59640c4c12bf34fca9f9bab2f1002ff64f33eb0b4"
+    sha256 cellar: :any,                 ventura:       "e612e98c59c0a7650513e7d775ee45099ba82d8bb563825eb3e3e82b22905cd5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15501b1a05f5a4f1fd5d3bffaed6d1715d6a1b4964a2ff37add87dca7919bc76"
   end
 
   depends_on "cmake" => :build

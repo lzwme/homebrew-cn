@@ -1,22 +1,18 @@
 class Libharu < Formula
   desc "Library for generating PDF files"
   homepage "https:github.comlibharulibharu"
-  url "https:github.comlibharulibharuarchiverefstagsv2.4.4.tar.gz"
-  sha256 "227ab0ae62979ad65c27a9bc36d85aa77794db3375a0a30af18acdf4d871aee6"
+  url "https:github.comlibharulibharuarchiverefstagsv2.4.5.tar.gz"
+  sha256 "0ed3eacf3ceee18e40b6adffbc433f1afbe3c93500291cd95f1477bffe6f24fc"
   license "Zlib"
   head "https:github.comlibharulibharu.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "72ed7673beee330f8ade885552a080b59ce3c1fc3cc161e7cb0588c086291bb1"
-    sha256 cellar: :any,                 arm64_sonoma:   "e4b858b562266a0505c2cfcf35cd0ce115fa96389a9f003e8cb9467d0a11a030"
-    sha256 cellar: :any,                 arm64_ventura:  "aa47accfc4c264abadf915678fea03c4e1ab2b26337c45e64309e67b877f0f99"
-    sha256 cellar: :any,                 arm64_monterey: "c7d14744968e672370f3beb7bfab56799ef5ca933a47b88076cb1278b88e2f9b"
-    sha256 cellar: :any,                 arm64_big_sur:  "dc6537336d278f2d6f765f8d3813aff20d4d7d964fa7173d1501f043d3a7692f"
-    sha256 cellar: :any,                 sonoma:         "bbb1ff1d6931b3978945d4153209b44205a9aea49a49eb58a10bb7d7996da4fa"
-    sha256 cellar: :any,                 ventura:        "f9c1c32e65c90f56242be549c70836c9f18ea38a54baaeebb0c78da5f6b3dcef"
-    sha256 cellar: :any,                 monterey:       "42ef7186005b05bff5aa26a415b5cf4f3812b75a9f2797d9a13b336c70bd0f56"
-    sha256 cellar: :any,                 big_sur:        "96e3ea582ff115742396fba648f75468e41ebc9f6366a0db3127d50f57751cb8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b88bead6378993ba8a58e180619b1604a899bc94f3724df4b0a1a78c7c97f890"
+    sha256 cellar: :any,                 arm64_sequoia: "9c7a27f6e339997261bedf2c177bc414e108390ad21eee1a102f855183b2d8f1"
+    sha256 cellar: :any,                 arm64_sonoma:  "5830f3184260a06dadbea0233a05bdcc1cf2c5d0f53291f985dca7511963fccd"
+    sha256 cellar: :any,                 arm64_ventura: "370df233f9ade42e8febcc4563eb80e6e112c553474d86ae9707519d2875f20a"
+    sha256 cellar: :any,                 sonoma:        "c0f5f184237e5b4351a2d79b3c301a4d70483bc678665524298048941938d166"
+    sha256 cellar: :any,                 ventura:       "599507ae5f1714845532e3499bd1206e3bb0736d218494ba897a723db02e9d1b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "111c4ee131b6aa6e5126b9c223ea209f12de631932c1db0e02f70a1002fdde58"
   end
 
   depends_on "cmake" => :build

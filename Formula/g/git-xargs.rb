@@ -1,8 +1,8 @@
 class GitXargs < Formula
   desc "CLI for making updates across multiple Github repositories with a single command"
   homepage "https:github.comgruntwork-iogit-xargs"
-  url "https:github.comgruntwork-iogit-xargsarchiverefstagsv0.1.15.tar.gz"
-  sha256 "18122dd0b524064920a083937b18ee50533200425110606b6f204c0a77bd31aa"
+  url "https:github.comgruntwork-iogit-xargsarchiverefstagsv0.1.16.tar.gz"
+  sha256 "baf43133e9b361860982f2c13e6edbe193f825af864ea3fe81ec54464eda1857"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class GitXargs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "167caf47d40b4ca8023166a57ca035387237769fcd4aebbb5d961fec74577cb4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "167caf47d40b4ca8023166a57ca035387237769fcd4aebbb5d961fec74577cb4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "167caf47d40b4ca8023166a57ca035387237769fcd4aebbb5d961fec74577cb4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7c85b6e85851c35895e61ab79ef5cc16cabb963f6b50a42d7887bd4b1309c1b5"
-    sha256 cellar: :any_skip_relocation, ventura:       "7c85b6e85851c35895e61ab79ef5cc16cabb963f6b50a42d7887bd4b1309c1b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f14cf4558666920c26b6cff51917d57c43843502f7ac81fdd7809ca3270032c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6bc4e8e5eb6319a5d70c81c6a87f66fa20d55890b395e5d8a829c84c17cf36a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e6bc4e8e5eb6319a5d70c81c6a87f66fa20d55890b395e5d8a829c84c17cf36a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e6bc4e8e5eb6319a5d70c81c6a87f66fa20d55890b395e5d8a829c84c17cf36a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7e638bfc967c4b2216e20dcaf486033b03a54be584b0bcff1751cbb5f5530344"
+    sha256 cellar: :any_skip_relocation, ventura:       "7e638bfc967c4b2216e20dcaf486033b03a54be584b0bcff1751cbb5f5530344"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c79ef94b3c3a848f5e1265ed5a155b153d18f9a746b04f490899521f995d06c"
   end
 
   depends_on "go" => :build

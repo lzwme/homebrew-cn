@@ -1,9 +1,9 @@
 class Ncftp < Formula
   desc "FTP client with an advanced user interface"
   homepage "https://www.ncftp.com/"
-  url "https://www.ncftp.com/public_ftp/ncftp/ncftp-3.2.7-src.tar.xz"
-  mirror "https://fossies.org/linux/misc/ncftp-3.2.7-src.tar.xz"
-  sha256 "d41c5c4d6614a8eae2ed4e4d7ada6b6d3afcc9fb65a4ed9b8711344bef24f7e8"
+  url "https://www.ncftp.com/public_ftp/ncftp/ncftp-3.2.8-src.tar.gz"
+  mirror "https://fossies.org/linux/misc/ncftp-3.2.8-src.tar.gz"
+  sha256 "db7da662458a1643209d6869465c38ec811f8975a6ac54fd20c63a3349f7dbf4"
   license "ClArtistic"
 
   livecheck do
@@ -12,14 +12,12 @@ class Ncftp < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "d83a44de643f84beafe658ac72254cc4076969ba0d21af37fcb8657e5e111009"
-    sha256 arm64_sonoma:   "d19dfe3a0904aed345087215372912f60d56b9d4d45d0ecb3a53d56df63f7b08"
-    sha256 arm64_ventura:  "bf0baa98f6a3d4f479fa472bc07e0fc1b30e1e52ee74033e6512546b10ffa167"
-    sha256 arm64_monterey: "b04b6ca30d0613e686747b504c398c9379f50a8d3ccf0f2164e515a78387e44f"
-    sha256 sonoma:         "ef11591a8ac1d0da3730428ad875f2b3c0e562b294384bd957dd62483107d26c"
-    sha256 ventura:        "99349738380dad087e367e45a51ccc0e691b48f6685117946cf7ab9f20240ed9"
-    sha256 monterey:       "249376244141988531b03e7ce0346f0f680ec316ff4aee37888760927451623b"
-    sha256 x86_64_linux:   "21cf1eb7c37bd26452cb6749fcded064471432468eb1afeaf17e5355aee8503f"
+    sha256 arm64_sequoia: "164bdc8c174f830f6063b4ea03d4688aead49f7c3eb94ac65b8ff48081e1ac74"
+    sha256 arm64_sonoma:  "450afa5bf09451c3857979dbf70577b84984a4eb72c84f475e5a64163259abad"
+    sha256 arm64_ventura: "95020ea454e90f40b23a676b472e6c63fe1cc5b48b509f731d73562fd22e19ce"
+    sha256 sonoma:        "ee78c0477c351cca5c1b38a1032b48ac9835de45a3da1c3fa336e3623aed7750"
+    sha256 ventura:       "7e549bde13344ec0f9d9d6e7e636cee53dea762a82171d69771651db048c6951"
+    sha256 x86_64_linux:  "ed8aa817bced3e29f0a3fd6017b9947817822be713bf65ad8ee5454ab6ca70c3"
   end
 
   uses_from_macos "ncurses"

@@ -1,17 +1,17 @@
 class SpytrapAdb < Formula
   desc "Test a phone for stalkerware and suspicious configuration using usb debugging"
   homepage "https:github.comspytrap-orgspytrap-adb"
-  url "https:github.comspytrap-orgspytrap-adbreleasesdownloadv0.3.3spytrap-adb-0.3.3.tar.gz"
-  sha256 "440182e5387085b5ef3635b1d167bd4e3b238961398ef855cef6bfc84a51d41a"
+  url "https:github.comspytrap-orgspytrap-adbreleasesdownloadv0.3.4spytrap-adb-0.3.4.tar.gz"
+  sha256 "8553beb5c403f3cbcf7b5e7ded052e4b31efe8e798ec81e2bcc16aba315f5429"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "915081387c21b2fb8d759c80bb81d56d60c90812d292f6b584adc4609e12f935"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6273760a4ff7dd3521db402e8803f7f9c87204078b223a313f965d266fd6183c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e8429d19cd730a2e9cca586a87deeed3acec92567fe76e7a930d7d71b6ab8c73"
-    sha256 cellar: :any_skip_relocation, sonoma:        "775867e687d968b6e4479d56008fe9769f3ad1198e73a7b332da2500977d17ab"
-    sha256 cellar: :any_skip_relocation, ventura:       "0a58a3338a6a43ad303db539b4817ac6fb11ae4147a90f1235f74dab07e3c7e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "11311754c13ea45906c6e97a8a120bd2dd45d2ee403ce3169f25ec0059d45768"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "767ab98c11d10e8e8511f5ae28fe2d4f8c0b22b33f25c2cedc7d4930f4a49fe7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1da4d2335d1376e64a7c7ff85e35a720b024ba221e961143d413af1770d17901"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "608c7bfa4cfb114233756f3e22752012de20440a87497135e1a47fdfb7524205"
+    sha256 cellar: :any_skip_relocation, sonoma:        "26072c153a6aa612ea399f0d047edf7221c7074e2bfb4d398f0b6311d01cd47f"
+    sha256 cellar: :any_skip_relocation, ventura:       "e3e6bf1cb665f4ede66a844472452a8301daf939039a969deb3fad2c5d4feb4a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "669e16b037b182eab249fcd9f60678995c16ce97cabb25b8b8daf820eeb6c384"
   end
 
   depends_on "rust" => :build
