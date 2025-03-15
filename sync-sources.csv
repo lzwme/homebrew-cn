@@ -4684,7 +4684,7 @@ Homebrew-homebrew-core/Formula/n/nu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nuclei.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nudoku.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nuget.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/n/nuitka.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/nuitka.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/num-utils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/numactl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/numbat.rb, Homebrew/homebrew-core, 1
@@ -5323,6 +5323,7 @@ Homebrew-homebrew-core/Formula/p/progress.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/progressline.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proguard.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proj.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/projectable.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/projectm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/prometheus-cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/prometheus.rb, Homebrew/homebrew-core, 1
@@ -8119,6 +8120,7 @@ Homebrew-homebrew-cask/Casks/c/chai.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chainner.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chalk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/charles.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/charles@4.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/charlessoft-timetracker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/charmstone.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chatall.rb, Homebrew/homebrew-cask, 1
@@ -8322,6 +8324,7 @@ Homebrew-homebrew-cask/Casks/c/corretto@21.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/corretto@8.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/coscreen.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/coteditor.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/coterm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/couchbase-server-community.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/couchbase-server-enterprise.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/couchpotato.rb, Homebrew/homebrew-cask, 1
@@ -11843,6 +11846,7 @@ Homebrew-homebrew-cask/Casks/i/iris.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/iriunwebcam.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/irpf2023.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/irpf2024.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/i/irpf2025.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/isabelle.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/ishare.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/ishowu-instant.rb, Homebrew/homebrew-cask, 0
@@ -13372,6 +13376,7 @@ Homebrew-homebrew-cask/Casks/q/qsync-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/qsyncthingtray.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/qt-creator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/qt-creator@dev.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/q/qt-design-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/qt3dstudio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/qth.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/qtox.rb, Homebrew/homebrew-cask, 1

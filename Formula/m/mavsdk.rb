@@ -2,10 +2,9 @@ class Mavsdk < Formula
   desc "API and library for MAVLink compatible systems written in C++17"
   homepage "https:mavsdk.mavlink.io"
   url "https:github.commavlinkMAVSDK.git",
-      tag:      "v3.0.0",
-      revision: "e0e4ffb34a1913960f6c9ccdc8bcbea0447d26ad"
+      tag:      "v3.1.0",
+      revision: "effa4a8ff433ce1d6734c990b5105d1f358399d7"
   license "BSD-3-Clause"
-  revision 2
 
   livecheck do
     url :stable
@@ -13,12 +12,12 @@ class Mavsdk < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "ba32de795393af37153edf55c8e7df6db52cfa1af0ebdbadcc310726195d4989"
-    sha256                               arm64_sonoma:  "cab43a90c3f146057643d8cf11f8119bebd45d9e1d6ac8ce0ef4d1ad62f8dc0d"
-    sha256                               arm64_ventura: "2573540e3362a3bd68185b12874499eab4b082271e4ea4e080fa9b977cba21e5"
-    sha256 cellar: :any,                 sonoma:        "494bb9fad8a2b0dc7405d6eea342ad95b73a3f86654c6c79a3edb10847e1248f"
-    sha256 cellar: :any,                 ventura:       "dfa1b5f7d18d477b54cd8c50082dcf8e806787fe9b40534ec79b2c8229d05dbd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01150e8239bf5034217e9082389ab6714b2a86dd21fba7012214e10dfb7efbe8"
+    sha256                               arm64_sequoia: "f62b521d2ffd61f2ed85a2805309f95b4b9fe9047cec49d13e96dcacdbcfab5f"
+    sha256                               arm64_sonoma:  "223e73749a9ab2301659baad42620515a0fe98887ab343e91d87bf742fc31bcc"
+    sha256                               arm64_ventura: "98281048c7f655f9c4efd5166902da688cf817d0b3663a827a518abc21ff6138"
+    sha256 cellar: :any,                 sonoma:        "01c20f9524b230d80c87d8a7c4100a4d32bcf49a1d9e04356aee67410fb5154f"
+    sha256 cellar: :any,                 ventura:       "639127f982b40712ea321cd133d7e436be991d70d6253ab35a98a1ff32909e6f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8cc592ea9d794440191f2c5ed01626e3db60d8a24b9f7c660d931f9b040c285c"
   end
 
   depends_on "cmake" => :build
@@ -54,12 +53,6 @@ class Mavsdk < Formula
   resource "mavlink" do
     url "https:github.commavlinkmavlink.git",
         revision: "5e3a42b8f3f53038f2779f9f69bd64767b913bb8"
-  end
-
-  # macos rpath fix, upstream pr ref, https:github.commavlinkMAVSDKpull2495
-  patch do
-    url "https:github.commavlinkMAVSDKcommit6d11efa589dbe045890c2f3a5db8091833b0f1a3.patch?full_index=1"
-    sha256 "c10aa11c78281eef4326548b4cbc25fd637d709e814f62f2a3025b7d16d5af04"
   end
 
   def install

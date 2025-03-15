@@ -1,18 +1,18 @@
 class Bacon < Formula
   desc "Background rust code check"
   homepage "https:dystroy.orgbacon"
-  url "https:github.comCanopbaconarchiverefstagsv3.11.0.tar.gz"
-  sha256 "a27b37af7e38be0888003eb5da4ce01b803fa78758a1cc8c857a4689e774a0eb"
+  url "https:github.comCanopbaconarchiverefstagsv3.12.0.tar.gz"
+  sha256 "729d4672793369a2de7e120232e39c656f15745e4403cb7af6bafc17a6781b4c"
   license "AGPL-3.0-or-later"
   head "https:github.comCanopbacon.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee81b93e97acf5ea02071b4cfa68069b1ea68d8c92a65798b3c482b419bbe0d1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a14dcc33c3db2ca4d868a54aaf4037a3c763486df589446e7cc8b7fed508d30"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cb1ccb3e02811c9f41cc58f3cdf5a51c63e81d7a52d534c6318c22753053e8c8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cb40b66d09e45f7b23ac43011e5a24b688276904bf67bb6227679fa46e62c626"
-    sha256 cellar: :any_skip_relocation, ventura:       "da89c20458ec19a36daf5af2167802ded4940045450eea67998edbe7768f487c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edbe377d3c31c3d781270fd03984ddaac33a5a7f86f170212076f20c4a92f4b4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1938e8afa580247ae121c4a04fa55966ebf9dc1b03dd1b4af1bac58c154c969e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23009702417125eb10fe54513b0d1a8ad2d961344c3849b4bd95074250d047ac"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1fee05e3379620cd24a134b7dadc988969c33587ff4c683754b8d7f4cdb7d983"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7ae982afd40edd0eb55179ce3b9c3bf3d1c363f67945eb32a2de3f20e5c22ef7"
+    sha256 cellar: :any_skip_relocation, ventura:       "3be5ae926f0cd88cdda979059a69f7e4c3ccb0837147c39de11878a2f1c204ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "375c8f7853e306f9b914b7b340662bbdece1b5b39d9e766e1332cbfa36a4a0bf"
   end
 
   depends_on "pkgconf" => :build

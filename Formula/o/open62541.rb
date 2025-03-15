@@ -1,8 +1,8 @@
 class Open62541 < Formula
   desc "Open source implementation of OPC UA"
   homepage "https:open62541.org"
-  url "https:github.comopen62541open62541archiverefstagsv1.4.10.tar.gz"
-  sha256 "1a2e762e50bb6dae8d80029dfb66fdbc432876a004e62d618f7cf1bb5b4f495f"
+  url "https:github.comopen62541open62541archiverefstagsv1.4.11.1.tar.gz"
+  sha256 "2979c0f09b766fd6470bdf06c8500c90ed51327aae1c22af132641a44178b722"
   license "MPL-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Open62541 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0493d584a33cf1e56ca1a0b24cb88c9948bc8b05bca986594726380c30671bef"
-    sha256 cellar: :any,                 arm64_sonoma:  "4223e38bd51fd7b848a8cdebc1d190b916783de12d2a969e8247aef8d3f75798"
-    sha256 cellar: :any,                 arm64_ventura: "57d3e0619dda7bc8f15a35d44b4a35b8057e79702ef764918305ec83f237a8f9"
-    sha256 cellar: :any,                 sonoma:        "086c0815c9d671a4890743765790ecb04dee8ae8dfe025310b4b53c55f5b5b9c"
-    sha256 cellar: :any,                 ventura:       "a62ea26fa86a71d61c09464f508c44eaf4023042aa2700147ab3408551893123"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e40a06787eba77e3b954a91b09dc2f9f0233e71098f3aa1e5e709b033005ad05"
+    sha256 cellar: :any,                 arm64_sequoia: "bab00b791dd245527043b24a26b8ae566387fda5f8fc65fe5113184564576ea4"
+    sha256 cellar: :any,                 arm64_sonoma:  "bc830bc0a7e51c72006cb7f7473fe9667b5fa8927abfc0e924137ebbdfa254d2"
+    sha256 cellar: :any,                 arm64_ventura: "36dd694037fd7a1ec784f8f1028b1125e6f87094bf2a7fedd64449b06a7873ae"
+    sha256 cellar: :any,                 sonoma:        "46bc477948bb7bffe96b79869908190d74573d14a041af11fb0971a6ac14ef06"
+    sha256 cellar: :any,                 ventura:       "a71cf4c6c1cdfbcd06ad9bf6061be6555026665f7356e8552e03108137772d25"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "974799a2dc8ee460e4053a40cd5d83ab72bb483e4ee90f48892150f80ecb1e39"
   end
 
   depends_on "cmake" => :build

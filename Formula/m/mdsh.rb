@@ -1,23 +1,27 @@
 class Mdsh < Formula
   desc "Markdown shell pre-processor"
   homepage "https:zimbatm.github.iomdsh"
-  url "https:github.comzimbatmmdsharchiverefstagsv0.9.0.tar.gz"
-  sha256 "6d87498bf600ef3b0d5ac8813e676ee1e7913057cf9290a288b4d93c7ffcc4e9"
+  url "https:github.comzimbatmmdsharchiverefstagsv0.9.1.tar.gz"
+  sha256 "d380bb4646e272282966e152a7c3c17c71ace59c2ec1cb105327b969d1410b62"
   license "MIT"
   head "https:github.comzimbatmmdsh.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5bef5cf5387264ba779d84ad53391a311573cd9a59cbc678b6a0fab6c4219f00"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7cb6ad949b1853f9d378b1677bafe46d2eefdce5fa236789ba20b41f86a9d6ab"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fd1175a75d3a77ae26605493aeac7473025081b7b962c3c1b9c9a587e6b3100a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f59e1fed6183d5910b70de5cb5aa1b6663456cdbbed62f160fac931944d6cbd7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "2f514330a4e5407ea8ed0087f32bbc1c8b32e908b71663852768d54e47d21e1b"
-    sha256 cellar: :any_skip_relocation, ventura:        "e21b5ebc1a866e457fedeba187f68e9ab7dcce67b71f51e60e05a17720f1b5f8"
-    sha256 cellar: :any_skip_relocation, monterey:       "36730e48b121e9a0357c215021eb2db025849ad2dc8eda3469084cb5b25ed085"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "417d4e50323892d738d5634208d579873994f28ea7fd0110b6035ca50abe48fb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a48a337c5f71631cc3e47f0350f6fb4e7b865273b3b4f9346fcea38fc7415374"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "abed6ca16f2f5a1ab1b9f88860e14560e1f20c117ed2f17c110596662db355d4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "24c7f79310cf30f81ee20146ad8744134e398b0ed2d184d2eb218eea183e0e05"
+    sha256 cellar: :any_skip_relocation, sonoma:        "af7bbc42f91f88a12c07c12462fc448f28cc62b74737416969941a5f25ab7983"
+    sha256 cellar: :any_skip_relocation, ventura:       "356d028288a44f7652c7071789b1c70583299b848acef36c2cee54041307819f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f817e388a2c6a2509f783cc1e2174a79a685e70a8b066f694d1e4722ed5fddd"
   end
 
   depends_on "rust" => :build
+
+  # version flag patch, PR: https:github.comzimbatmmdshpull80
+  patch do
+    url "https:github.comzimbatmmdshcommitbef17517e9176f7807f80a4f074fb7db8968a026.patch?full_index=1"
+    sha256 "937aaa314e606463dee16fc7fda30aff8b981eb96e22fa7f5904e12c1ff6a907"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

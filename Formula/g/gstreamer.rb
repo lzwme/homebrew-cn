@@ -2,33 +2,18 @@ class Gstreamer < Formula
   desc "Development framework for multimedia applications"
   homepage "https:gstreamer.freedesktop.org"
   license all_of: ["LGPL-2.0-or-later", "LGPL-2.1-or-later", "MIT"]
-  revision 3
 
   stable do
-    url "https:gitlab.freedesktop.orggstreamergstreamer-archive1.24.12gstreamer-1.24.12.tar.bz2"
-    sha256 "23c0e1de51ce96be8ef26c79f9b971a11ab82c8e6267cea8c3933ede28fba155"
-
-    # Backport support for `svt-av1` >= 3.0.0
-    # upstream commit ref, https:gitlab.freedesktop.orggstreamergstreamer-commit6bdfaa4606c417be8a64f4494fe95ea30421c24b
-    patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches6cf03eafb8a3e77dcd4a7ddfc668f142dd42f9eegstreamergst-plugins-bad-svtav1.patch"
-      sha256 "a45f7a192df14b22c4bd106a63ad691ca6f8a219a37904f7a6e9dab9cc9dafea"
-    end
+    url "https:gitlab.freedesktop.orggstreamergstreamer-archive1.26.0gstreamer-1.26.0.tar.bz2"
+    sha256 "a0fa96f7fa7fc4d37db08c5a8a2007ef3baf7cc554ba54e9165bd37099182916"
 
     # When updating this resource, use the tag that matches the GStreamer version.
     resource "rs" do
-      url "https:gitlab.freedesktop.orggstreamergst-plugins-rs-archivegstreamer-1.24.12gst-plugins-rs-gstreamer-1.24.12.tar.bz2"
-      sha256 "da0a07f5163c59da00b1306be4843d2a2b6849c87a8af470e04fb91afbf8da3d"
+      url "https:gitlab.freedesktop.orggstreamergst-plugins-rs-archivegstreamer-1.26.0gst-plugins-rs-gstreamer-1.26.0.tar.bz2"
+      sha256 "808d8baa2d556117d3fea28cc461260739866383241318daf18353a6007162c6"
 
       livecheck do
         formula :parent
-      end
-
-      # Backport support for newer `dav1d`
-      # upstream commit ref, https:gitlab.freedesktop.orggstreamergst-plugins-rs-commit7e1ab086de00125bc0d596f9ec5d74c9b82b2cc0
-      patch do
-        url "https:raw.githubusercontent.comHomebrewformula-patches6fff2c4c62f1fb32b5ade46ec9246fc239935d7agstreamergst-plugins-rs-dav1d.patch"
-        sha256 "d17677a523af021b226969937550f19151b8042f6962eae9fa39ee0e0fc0fe3a"
       end
     end
   end
@@ -39,12 +24,12 @@ class Gstreamer < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "a38da309e4747f9a178d8dc557091175bf07b3d3a7d383f54319e79c609edf27"
-    sha256 arm64_sonoma:  "f1240f7461e8fc7a53394d3a436cbd5b1fd558d708236f63156efb623ce94ca4"
-    sha256 arm64_ventura: "0a7c3c0a1a4bc917f0cb5610a323fa50cf8dea1355fdc627f1cbd55275e79066"
-    sha256 sonoma:        "f52a86f4395812dbf4a0330b7d248cbc75a046a1b81a3451ac59e99aa40ae832"
-    sha256 ventura:       "b08db4711208311934a634be7038a8646c2f7daee1a117fd71dcb66aebebc6aa"
-    sha256 x86_64_linux:  "ea55a9a147fc5b4b03b5780d46f196929a37c2e266e07dd3d2e32066bcb77dd2"
+    sha256 arm64_sequoia: "4adf4d3fa3de5513b2eb79a0e538b5cc3dcc6e5be5f9cb84a610bdc6a1e51977"
+    sha256 arm64_sonoma:  "bff65d606c2511a878e585788e1a4fc55aba28b8701595a901ceb197b102aeb3"
+    sha256 arm64_ventura: "711ebce7bed0a6919d6d7a3d1383d843a3d8c1e7c681e9e93b2003259911b402"
+    sha256 sonoma:        "a32f6414f98f4afd36cbdcdbb492996c6f7ed597af344ea53dc433e79bf0a190"
+    sha256 ventura:       "5ddd03422b27bf91d68ff43f9241bdbdabb41084b74d261e278e60700e379999"
+    sha256 x86_64_linux:  "21cd7b2b7ddef45220f72e6ac354407e5831b765068757a408da6614bed20755"
   end
 
   head do
@@ -229,9 +214,20 @@ class Gstreamer < Formula
     plugin_dir = lib"gstreamer-1.0"
     rpath_args = [loader_path, rpath(source: plugin_dir)].map { |path| "-rpath,#{path}" }
     ENV.append "RUSTFLAGS", "--codegen link-args=-Wl,#{rpath_args.join(",")}"
-    inreplace "subprojectsgst-plugins-rscargo_wrapper.py",
-              "env['RUSTFLAGS'] = shlex_join(rust_flags)",
-              "env['RUSTFLAGS'] = ' '.join(rust_flags)"
+
+    # On Linux, adjust processing of RUSTFLAGS to avoid using shlex, which may mangle our
+    # RPATH-related flags, due to the presence of `$` in $ORIGIN.
+    if OS.linux?
+      wrapper_files = %w[
+        subprojectsgst-plugins-rscargo_wrapper.py
+        subprojectsgst-devtoolsdots-viewercargo_wrapper.py
+      ]
+      inreplace wrapper_files do |s|
+        s.gsub!(shlex\.split\(env\.get\(("RUSTFLAGS"|'RUSTFLAGS'), (""|'')\)\),
+                "' '.split(env.get(\"RUSTFLAGS\", \"\"))")
+        s.gsub! "shlex_join(rust_flags)", "' '.join(rust_flags)"
+      end
+    end
 
     # Make sure the `openssl-sys` crate uses our OpenSSL.
     ENV["OPENSSL_NO_VENDOR"] = "1"
@@ -304,18 +300,19 @@ diff --git asubprojectsgst-pythongioverridesmeson.build bsubprojectsgst-pythongi
 index 20aeb06ac9..3c53eab6d7 100644
 --- asubprojectsgst-pythongioverridesmeson.build
 +++ bsubprojectsgst-pythongioverridesmeson.build
-@@ -7,8 +7,10 @@ python.install_sources(pysources,
+@@ -7,9 +7,11 @@ python.install_sources(pysources,
  host_system = host_machine.system()
  if host_system == 'windows'
    gst_dep_for_gi = gst_dep
 +  python_ext_dep = python_dep
  else
    gst_dep_for_gi = gst_dep.partial_dependency(compile_args: true, includes: true, sources: true)
+   gstanalytics_dep_for_gi = gstbad_dep.partial_dependency(compile_args:true, includes:true, sources:true)
 +  python_ext_dep = python_dep.partial_dependency(compile_args: true)
  endif
 
  gstpython = python.extension_module('_gi_gst',
-@@ -17,7 +19,7 @@ gstpython = python.extension_module('_gi_gst',
+@@ -18,7 +20,7 @@ gstpython = python.extension_module('_gi_gst',
      install_dir : pygi_override_dir,
      install_tag: 'python-runtime',
      include_directories : [configinc],

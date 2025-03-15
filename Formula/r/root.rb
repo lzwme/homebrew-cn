@@ -1,19 +1,10 @@
 class Root < Formula
   desc "Analyzing petabytes of data, scientifically"
   homepage "https:root.cern"
+  url "https:root.cerndownloadroot_v6.34.04.source.tar.gz"
+  sha256 "e320c5373a8e87bb29b7280954ca8355ad8c4295cf49235606f0c8b200acb374"
   license "LGPL-2.1-or-later"
   head "https:github.comroot-projectroot.git", branch: "master"
-
-  stable do
-    url "https:root.cerndownloadroot_v6.32.08.source.tar.gz"
-    sha256 "29ad4945a72dff1a009c326a65b6fa5ee2478498823251d3cef86a2cbeb77b27"
-
-    # Backport fix for RPATH on macOS
-    patch do
-      url "https:github.comroot-projectrootcommit0569d5d7bfb30d96e06c4192658aed4b78e4da64.patch?full_index=1"
-      sha256 "24553b16f66459fe947d192854f5fa6832c9414cc711d7705cb8e8fa67d2d935"
-    end
-  end
 
   livecheck do
     url "https:root.cerninstallall_releases"
@@ -24,12 +15,12 @@ class Root < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "c1bfbeb7e3b575aae166c61272d178037aaf520fd92d62412cf53693e174f98b"
-    sha256 arm64_sonoma:  "c9493b1209d72dde8a29ebe3c5b7cf8cab840399bbada9f3205393b82dd29c8b"
-    sha256 arm64_ventura: "55d9cb47591f8802fc38c1f84d4dbc5114ade1d46598099bf89867cbfe84ec54"
-    sha256 sonoma:        "41b8bb0e19a62eec938a89e8aa5ed5cbefa49d2298f9f9d16010f5c44a7b6230"
-    sha256 ventura:       "7c4bd4f672dfe680fb02353c0a7c7d315601079e9797c863bde708696e6caddd"
-    sha256 x86_64_linux:  "b324dbc173966910292f9bbc64b2d66837f604eb6a6eb4930421b1b69f35c544"
+    sha256 arm64_sequoia: "c795614a01a887ebf51918e4e0f5d50dd32b29fdbb8540cdbf56b50d5d56b939"
+    sha256 arm64_sonoma:  "943fa93aa59e03e53bca7b9723d88b09e2a8ecb004de93930056348e009d55fc"
+    sha256 arm64_ventura: "92e704a197505f29cd9530ec158496cb87d8e0696e7cf88d60f475fde6a38204"
+    sha256 sonoma:        "a108f575edca912e22e468b2cf013d0def14fe0e5bfd1c718835ae17a0aed7ec"
+    sha256 ventura:       "f565e670a9aeab04be5f665119681f4093d334a94ebecbbba4de5b766bf9678a"
+    sha256 x86_64_linux:  "9254f31ab37919c5eb58fe3c0d275f98424bbf1e57c1249a0632c676c930ceb4"
   end
 
   depends_on "cmake" => :build
@@ -66,6 +57,10 @@ class Root < Formula
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 
+  on_ventura :or_older do
+    depends_on :xcode
+  end
+
   on_linux do
     depends_on "giflib"
     depends_on "jpeg-turbo"
@@ -89,7 +84,9 @@ class Root < Formula
     # Skip modification of CLING_OSX_SYSROOT to the unversioned SDK path
     # Related: https:github.comHomebrewhomebrew-coreissues135714
     # Related: https:github.comroot-projectclingissues457
-    inreplace "interpreterclinglibInterpreterCMakeLists.txt", '"MacOSX[.0-9]+\.sdk"', '"SKIP"'
+    if OS.mac? && MacOS.version > :ventura
+      inreplace "interpreterclinglibInterpreterCMakeLists.txt", '"MacOSX[.0-9]+\.sdk"', '"SKIP"'
+    end
 
     inreplace "cmakemodulesSearchInstalledSoftware.cmake" do |s|
       # Enforce secure downloads of vendored dependencies. These are
@@ -161,14 +158,8 @@ class Root < Formula
       -GNinja
     ]
 
-    compiledata = if build.head?
-      "cmakeunixcompiledata.sh"
-    else
-      args << "-Dbuiltin_afterimage=ON"
-      "buildunixcompiledata.sh"
-    end
     # Workaround the shim directory being embedded into the output
-    inreplace compiledata, "`type -path $CXX`", ENV.cxx
+    inreplace "cmakeunixcompiledata.sh", "`type -path $CXX`", ENV.cxx
 
     # Homebrew now sets CMAKE_INSTALL_LIBDIR to lib, which is incorrect
     # for ROOT with gnuinstall, so we set it back here.

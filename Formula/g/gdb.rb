@@ -8,10 +8,13 @@ class Gdb < Formula
   head "https:sourceware.orggitbinutils-gdb.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 sonoma:       "c595592e4c42917f8eba3065e18362bf7fec8ef3b1840ae73a112f1404c82697"
-    sha256 ventura:      "5a62c5a00665a7967495420c857bb9f40af5b2bcdd73d213b36cc7d6ce6d51e3"
-    sha256 x86_64_linux: "fd1842ea508afcb72be94f466259cc0e355be3834bb440f5e9acde27cb7734d5"
+    rebuild 2
+    sha256 arm64_sequoia: "e19f455ea5aed064e4d91c6a1aff73f1ce2d7183c188dc48c587d0cc35fc3d61"
+    sha256 arm64_sonoma:  "dd538bad2a1415e5ddfedf6b3b466871d9abbe17ee880dc34425f80b03616360"
+    sha256 arm64_ventura: "21a37a8e18f1974a8342e9fd0b089829b7ce17b93c75300d8b25def54a681638"
+    sha256 sonoma:        "b20978682d45b707576385b6f28bb51e7e5400e2e1b885ebcef52ba5e9823c2a"
+    sha256 ventura:       "583530e65b7112358a1d4b8d200b597bb348e91863c51cdc7eea515f83e0be7d"
+    sha256 x86_64_linux:  "90ef1f376c0cf3534e765206a918d294129598b0953ab6a983371b0ebc0f0ed7"
   end
 
   depends_on "gmp"
@@ -21,10 +24,6 @@ class Gdb < Formula
 
   uses_from_macos "expat", since: :sequoia # minimum macOS due to python
   uses_from_macos "ncurses"
-
-  on_macos do
-    depends_on arch: :x86_64 # gdb is not supported on macOS ARM
-  end
 
   # Workaround for https:github.comHomebrewbrewissues19315
   on_sequoia :or_newer do
@@ -61,6 +60,13 @@ class Gdb < Formula
       --with-python=#{which("python3.13")}
       --disable-binutils
     ]
+
+    # Fix: Apple Silicon build, this is only way to build native GDB
+    if OS.mac? && Hardware::CPU.arm?
+      # Workaround: "--target" must be "faked"
+      args << "--target=x86_64-apple-darwin20"
+      args << "--program-prefix="
+    end
 
     mkdir "build" do
       system "..configure", *args, *std_configure_args

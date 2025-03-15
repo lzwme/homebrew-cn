@@ -1,18 +1,18 @@
 class Ruff < Formula
   desc "Extremely fast Python linter, written in Rust"
   homepage "https:docs.astral.shruff"
-  url "https:github.comastral-shruffarchiverefstags0.10.0.tar.gz"
-  sha256 "5daefd48e2c0b4de5e5f3f2187ff06d87626ba0bbcdbd58c269fedcf22dd4cc5"
+  url "https:github.comastral-shruffarchiverefstags0.11.0.tar.gz"
+  sha256 "506f828f24a7dde70d8683bac000e4d18e4bb14a4dbec7a42a42ea1b1b257386"
   license "MIT"
   head "https:github.comastral-shruff.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7e22df7cb8e4f855fd4f2484da5307314c5c32dd3c03effc07723c86449ae8b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d87220589eccfc11416db0e2efd4960f3d36ed81a5003c1592aaa2c392b792c3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "53a3a8adef4e96927e173e817539e457d6cff0eb6467558dbb9bbe08162cfbe6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4987953f3415d8202e56de5efce2f9bab3477a0d0c55d292a48f25f8807f4426"
-    sha256 cellar: :any_skip_relocation, ventura:       "74b58c27609588fe83796a7a9f5afc41f4259c3ffb472bb643100b394b115e25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69572e0413c75496a801385d27b0ea48423fbb88e445b9c32ef92b3700f034df"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb4b191bad6654208bce504bc120a20da418fbdb4cd574de1357e0161bf4fd33"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f055d8897e84d8be764d75d791c6268aaa91680db624e6ac72cc4f6e74bd633d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9efb048cdf0317577cc5e270feb0746001f27a770dbbd98b7b8b551a9e3abf43"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dc7dcb1fdeed03f384010a95ccbf5e940acf8ecc3c170523ef1759d9c4ca2565"
+    sha256 cellar: :any_skip_relocation, ventura:       "36892fc01d86694b3666d566192a87156cca7692e46ee689f6018b5089b82e76"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "226eae01d1ea0a119c8af586e3118194958e6749ed92718f560189c5bd6d0bb9"
   end
 
   depends_on "rust" => :build

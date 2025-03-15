@@ -1,18 +1,18 @@
 class Chsrc < Formula
   desc "Change Source for every software on every platform from the command-line"
   homepage "https:github.comRubyMetricchsrc"
-  url "https:github.comRubyMetricchsrcarchiverefstagsv0.1.9.tar.gz"
-  sha256 "29ed92853355495561c238d19abd1df4f7336217ca576611c273c35c74175e37"
+  url "https:github.comRubyMetricchsrcarchiverefstagsv0.2.0.tar.gz"
+  sha256 "0f44119b8ecb58166913ddabced4f1e8143e283d142f6198482042582ba914f8"
   license "GPL-3.0-or-later"
   head "https:github.comRubyMetricchsrc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5fb55224200e74a6cbd0345a1cccd583f64a3b24418664586422fee2bb16bd0f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aff6154136a890bb478a7d7c0b468bc06eaeb789fabce73a05afe25c399fe9a3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8801a24bfcee5d9b813fd04c89094359136776ee22dcadfa4bd8854b2f1d17a8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a3fe5d32d07d638e25f0d00f51aed05a88144c69959ff402a1ba34c624a91e93"
-    sha256 cellar: :any_skip_relocation, ventura:       "750620a10ceab6349edd948955bed55b182a6f4f4e2676e0209ff07c4469bd1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4c7f104abc446a5c5846d7b9b27c97932b9cb4951ca708fa9fc6ca4c1590cbd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "359ffd13818c49d1bc3abbb8653d30111b31b183bd0282fd7c23d43d05408434"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0700b46bc8aa46cdd21674f47be66a1a7b1c15536cdd6fa678a0ac08b812c4b2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4bc3e7e0fd869be0b80bf330500a82b4dab8146b978006af00f9c0b43fff2103"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6d95d65e5b8951e1447c5ab9d588923466f96ac97808a68664e54833b76f6a5a"
+    sha256 cellar: :any_skip_relocation, ventura:       "899dee75126247dbe76e0d7b06d1ebf7046802083c882833356f8c9f1d917911"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3be0c8102ea86fb2ed74a87e3c006974cb7beb76ab94b5436c06f2aec974ca66"
   end
 
   def install

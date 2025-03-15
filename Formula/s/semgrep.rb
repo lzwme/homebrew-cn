@@ -4,8 +4,8 @@ class Semgrep < Formula
   desc "Easily detect and prevent bugs and anti-patterns in your codebase"
   homepage "https:semgrep.dev"
   url "https:github.comsemgrepsemgrep.git",
-      tag:      "v1.111.0",
-      revision: "798077d4ee4cc45b0bd73129f3cac9fff82ad170"
+      tag:      "v1.112.0",
+      revision: "b9523dbfc4c4b1d0aff3253b56764296215119c8"
   license "LGPL-2.1-only"
   head "https:github.comsemgrepsemgrep.git", branch: "develop"
 
@@ -15,12 +15,12 @@ class Semgrep < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1ee7e661845ed2cc699ca6f813291b3876effbd7549fc588ef72297b7426005a"
-    sha256 cellar: :any,                 arm64_sonoma:  "6ba8dd10f0195d735c85b3e1238b1882160c8b2feaf850e1130c5e59fa426dbf"
-    sha256 cellar: :any,                 arm64_ventura: "1c3fa69e57b8f5cf4a445f58d413f480d57fd2ca8d1393cfd21dc18436ca688a"
-    sha256 cellar: :any,                 sonoma:        "78643cb3379235e0e261a94085abb644bc2c43ef6d8da17aa2ffe74eee5d5cd9"
-    sha256 cellar: :any,                 ventura:       "6550df6b2ed10817ea5795f7c0f77c82e6a85286258a6b22cf7f9558c1786969"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a004b8dd900bffb8afe88b84df7483ea6fd69047e18561c500cbe5f5af71f73"
+    sha256 cellar: :any,                 arm64_sequoia: "6fb6e444467f497235c806d869d31eda04ecae25a53c2bc2a7feac78289023aa"
+    sha256 cellar: :any,                 arm64_sonoma:  "eafa6a978169a7182105b8532422f8d39addb52081b86716db52f76b31000662"
+    sha256 cellar: :any,                 arm64_ventura: "9fbfe27730bdb97fbac31ee0ed777f9e843c1c8633e2d3fbe40d95761f7a289a"
+    sha256 cellar: :any,                 sonoma:        "0583ffdf8085d6ccdb3dca9630c759d189d657a0d63d9b29070177e9d547b5f7"
+    sha256 cellar: :any,                 ventura:       "97b96544dff7e899608c340ca73561bade06e461ce13990c36860f70e518e261"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69dac396da38f65a07f7681ae6a9e819affdfdf589552165c7374b2e0e3d08fb"
   end
 
   depends_on "autoconf" => :build
@@ -46,8 +46,8 @@ class Semgrep < Formula
   uses_from_macos "curl"
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackages497cfdf464bcc51d23881d110abd74b512a42b3d5d376a55a831b44c603ae17fattrs-25.1.0.tar.gz"
-    sha256 "1c97078a80c814273a76b2a298a932eb681c87415c11dee0a6921de7f1b02c3e"
+    url "https:files.pythonhosted.orgpackages5ab01367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24attrs-25.3.0.tar.gz"
+    sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"
   end
 
   resource "boltons" do
@@ -106,8 +106,8 @@ class Semgrep < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https:files.pythonhosted.orgpackagesc2926bb11dad062ad7cc40665d0a8986193d54f1a0032b510e84e7182df9e661googleapis_common_protos-1.69.0.tar.gz"
-    sha256 "5a46d58af72846f59009b9c4710425b9af2139555c71837081706b213b298187"
+    url "https:files.pythonhosted.orgpackages414fd8be74b88621131dfd1ed70e5aff2c47f2bdf2289a70736bbf3eb0e7bc70googleapis_common_protos-1.69.1.tar.gz"
+    sha256 "e20d2d8dda87da6fe7340afbbdf4f0bcb4c8fae7e6cadf55926c31f946b0b9b1"
   end
 
   resource "idna" do
@@ -231,8 +231,8 @@ class Semgrep < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesd15343d99d7687e8cdef5ab5f9ec5eaf2c0423c2b35133a2b7e7bc276fc32b21setuptools-75.8.2.tar.gz"
-    sha256 "4880473a969e5f23f2a2be3646b2dfd84af9028716d398e46192f84bc36900d2"
+    url "https:files.pythonhosted.orgpackages32d27b171caf085ba0d40d8391f54e1c75a1cda9255f542becf84575cfd8a732setuptools-76.0.0.tar.gz"
+    sha256 "43b4ee60e10b0d0ee98ad11918e114c70701bc6051662a9a675a0496c1a158f4"
   end
 
   resource "tomli" do

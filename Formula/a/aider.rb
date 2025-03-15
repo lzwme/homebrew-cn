@@ -3,18 +3,18 @@ class Aider < Formula
 
   desc "AI pair programming in your terminal"
   homepage "https:aider.chat"
-  url "https:files.pythonhosted.orgpackages1eec413293852bc930a6b410b5c82ffc7c21cc19aeef21893dcf092f0be91eb1aider_chat-0.76.2.tar.gz"
-  sha256 "8235dc5ee15d765cc94470cb925f70d46cb1e62884460adfc198ed93e4271dd4"
+  url "https:files.pythonhosted.orgpackagesa61dbc433cbd3df48abccf6f90a9cd27dff3d44e7dc3abe089566898f6ccad1aaider_chat-0.77.0.tar.gz"
+  sha256 "5797ee354f084aa072719986b9aaaad60aff651189fde47326c66d6e3c7f3e98"
   license "Apache-2.0"
   head "https:github.compaul-gauthieraider.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1dd4619a4898d3ece3c1f9c27729346784e4b47a76e473b3f96094dacab48a18"
-    sha256 cellar: :any,                 arm64_sonoma:  "a294a54bf2ee087aefc17807f9bf28357a29b89f423c8a43bfbd1a7713736cdb"
-    sha256 cellar: :any,                 arm64_ventura: "ab962a17d4ff7d3e2dc2ccf4c7bbdc73959bcc29fc0c2391012d0343cde53f69"
-    sha256 cellar: :any,                 sonoma:        "5282219d2257cdca632221842754cc2694f691b15390cc65e29e0f13b7fe782c"
-    sha256 cellar: :any,                 ventura:       "ab899be98c60aa0da3d99d92553c262f7c13203495dd57411452f3f657401d60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "079225823f0161cc6e4afc6995db9199e820a729f17189b653845f35b58aead2"
+    sha256 cellar: :any,                 arm64_sequoia: "652409d58aa7c2e9d07e6cb9d9268c805e8326f1d815255a1755915b3b50e9f3"
+    sha256 cellar: :any,                 arm64_sonoma:  "2ecfc29b262c359cfa657f7a214c8efedb44efadb5872495d1d8c1fadbc25324"
+    sha256 cellar: :any,                 arm64_ventura: "92846ac66a6b8321b01d60c2e782435f5a5746f9a635d8d09d0ad365f2803095"
+    sha256 cellar: :any,                 sonoma:        "29647392581a86f690128878f55a7450d9b38c01ee75daf1651e2adeaba93d57"
+    sha256 cellar: :any,                 ventura:       "8bc3f56674ba393f92a4b2603dd98d143da2841b4fdb4971408b038758e0fe6e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14541a87c748ad1fb5a5539acf25648ced364dddb4cc102841a90218b2eef124"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -27,8 +27,8 @@ class Aider < Formula
   depends_on "scipy"
 
   resource "aiohappyeyeballs" do
-    url "https:files.pythonhosted.orgpackagesa20c458958007041f4b4de2d307e6b75d9e7554dad0baf26fe7a48b741aac126aiohappyeyeballs-2.5.0.tar.gz"
-    sha256 "18fde6204a76deeabc97c48bdd01d5801cfda5d6b9c8bbeb1aaaee9d648ca191"
+    url "https:files.pythonhosted.orgpackages2630f84a107a9c4331c14b2b586036f40965c128aa4fee4dda5d3d51cb14ad54aiohappyeyeballs-2.6.1.tar.gz"
+    sha256 "c3f9d0113123803ccadfdf3f0faa505bc78e6a72d1cc4806cbd719826e943558"
   end
 
   resource "aiohttp" do
@@ -52,8 +52,8 @@ class Aider < Formula
   end
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackages497cfdf464bcc51d23881d110abd74b512a42b3d5d376a55a831b44c603ae17fattrs-25.1.0.tar.gz"
-    sha256 "1c97078a80c814273a76b2a298a932eb681c87415c11dee0a6921de7f1b02c3e"
+    url "https:files.pythonhosted.orgpackages69823c4e1d44f3cbaa2a578127d641fe385ba3bff6c38b789447ae11a21fa413attrs-25.2.0.tar.gz"
+    sha256 "18a06db706db43ac232cce80443fcd9f2500702059ecf53489e3c5a3f417acaf"
   end
 
   resource "backoff" do
@@ -132,8 +132,8 @@ class Aider < Formula
   end
 
   resource "grep-ast" do
-    url "https:files.pythonhosted.orgpackages0aebd6d317226089288f5715158dfb29cd9b7ff3aa4c6a1adb67a0bd0a1f7251grep_ast-0.7.2.tar.gz"
-    sha256 "e2ddb885f526dc67d448b3920ad465010db2ba6c45c337f229de1d96ffa4e115"
+    url "https:files.pythonhosted.orgpackages33c82b6e6f6967a4310989b743f635f297cb1e7e5f9d6750ec213412a65c4fc2grep_ast-0.8.1.tar.gz"
+    sha256 "8faf285f44042af47dc6a45f1e1f8029866048563d758a719b0539cad264187f"
   end
 
   resource "h11" do
@@ -152,8 +152,8 @@ class Aider < Formula
   end
 
   resource "huggingface-hub" do
-    url "https:files.pythonhosted.orgpackages58b2f8b3c9842a794e8203448725aefa02d7c9e0da42d5f22f4ed806057cc36ehuggingface_hub-0.29.2.tar.gz"
-    sha256 "590b29c0dcbd0ee4b7b023714dc1ad8563fe4a68a91463438b74e980d28afaf3"
+    url "https:files.pythonhosted.orgpackagese5f9851f34b02970e8143d41d4001b2d49e54ef113f273902103823b8bc95adahuggingface_hub-0.29.3.tar.gz"
+    sha256 "64519a25716e0ba382ba2d3fb3ca082e7c7eb4a2fc634d200e8380006e0760e5"
   end
 
   resource "idna" do
@@ -197,8 +197,8 @@ class Aider < Formula
   end
 
   resource "litellm" do
-    url "https:files.pythonhosted.orgpackages7a8f96d3e388d43a2712b97fb7dc35e8e6849eca6ae7813dfa4819c6693b554flitellm-1.63.5.tar.gz"
-    sha256 "c48a20ea147b07951c1244731a092f732bb15a94083b4dcd0e32a4b7532b688a"
+    url "https:files.pythonhosted.orgpackages5c7a6c1994a239abd1b335001a46ae47fa055a24c493b6de19a9fa1872187fe9litellm-1.63.7.tar.gz"
+    sha256 "2fbd7236d5e5379eee18556857ed62a5ed49f4f09e03ff33cf15932306b984f1"
   end
 
   resource "markdown-it-py" do
@@ -242,8 +242,8 @@ class Aider < Formula
   end
 
   resource "openai" do
-    url "https:files.pythonhosted.orgpackages56cfe02fb2c5a834803e6f29f43fd3dfe010303282d1ea450a5b95e28608860aopenai-1.65.5.tar.gz"
-    sha256 "17d39096bbcaf6c86580244b493a59e16613460147f0ba5ab6e608cdb6628149"
+    url "https:files.pythonhosted.orgpackagesa3775172104ca1df35ed2ed8fb26dbc787f721c39498fc51d666c4db07756a0copenai-1.66.3.tar.gz"
+    sha256 "8dde3aebe2d081258d4159c4cb27bdc13b5bb3f7ea2201d9bd940b9a89faf0c9"
   end
 
   resource "packaging" do
@@ -489,7 +489,7 @@ class Aider < Formula
       assert_match "You need to specify a --model and an --api-key to use", output
       ENV["OPENAI_API_KEY"] = "invalid"
       output = shell_output("#{bin}aider --yes --exit --message=test --no-check-update 2>&1")
-      assert_match "Incorrect API key", output
+      assert_match "API key provided: invalid", output
     end
   end
 end

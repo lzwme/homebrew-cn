@@ -1,8 +1,8 @@
 class Webkitgtk < Formula
   desc "GTK interface to WebKit"
   homepage "https://webkitgtk.org"
-  url "https://webkitgtk.org/releases/webkitgtk-2.46.6.tar.xz"
-  sha256 "f2b31de693220ba9bab76ce6ddfe5b0bfab2515cb2b0a70f3c54d4050766c32b"
+  url "https://webkitgtk.org/releases/webkitgtk-2.48.0.tar.xz"
+  sha256 "94904a55cf12d44a4e36ceadafff02d46da73d76be9b4769f34cbfdf0eebf88e"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,7 +11,7 @@ class Webkitgtk < Formula
   end
 
   bottle do
-    sha256 x86_64_linux: "de1ab9a5b037567c06c77d39ae96d5cc5ab78b2512d7e8cf651dfcb316c8bcc6"
+    sha256 x86_64_linux: "f14ed787af08198e35135b0ebfd9bab5c31c83f6a3f1d333f4a1f2eb322ca483"
   end
 
   depends_on "cmake" => :build
@@ -72,6 +72,7 @@ class Webkitgtk < Formula
       -DENABLE_DOCUMENTATION=OFF
       -DENABLE_GAMEPAD=OFF
       -DENABLE_MINIBROWSER=ON
+      -DENABLE_SPEECH_SYNTHESIS=OFF
       -DUSE_AVIF=ON
       -DUSE_GTK4=OFF
       -DUSE_JPEGXL=ON

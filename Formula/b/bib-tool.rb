@@ -5,6 +5,14 @@ class BibTool < Formula
   sha256 "e1964d199b0726f431f9a1dc4ff7257bb3dba879b9fa221803e0aa7840dee0e0"
   license "GPL-2.0-or-later"
 
+  livecheck do
+    url :stable
+    regex(^BibTool[._-]v?(\d+(?:[._-]\d+)+)$i)
+    strategy :git do |tags, regex|
+      tags.map { |tag| tag[regex, 1]&.tr("_", ".") }
+    end
+  end
+
   bottle do
     sha256                               arm64_sequoia:  "ce609aa4354f5b345611a48f17823affc614c23600940ec1c90b9945b7199512"
     sha256                               arm64_sonoma:   "20a1020682e98e6b692a2096aea9d9963c6294f12c810ce0aa9135ca26bf6da1"

@@ -1,8 +1,8 @@
 class Bitrise < Formula
   desc "Command-line automation tool"
   homepage "https:github.combitrise-iobitrise"
-  url "https:github.combitrise-iobitrisearchiverefstagsv2.30.4.tar.gz"
-  sha256 "1f6cd79458585d28f4458473dfa1c1aad73f5ac8d31b4946e8d89308ada2c3e6"
+  url "https:github.combitrise-iobitrisearchiverefstagsv2.30.5.tar.gz"
+  sha256 "56022d48981ff5b18e50b57bcf6f95c57b3e6d4987805194b6c32088a09589e5"
   license "MIT"
   head "https:github.combitrise-iobitrise.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Bitrise < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "34bc4223cb930796f2660b3eac8dfd0d1b52c0e672f6ec681ac7272b9ff8a947"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "34bc4223cb930796f2660b3eac8dfd0d1b52c0e672f6ec681ac7272b9ff8a947"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "34bc4223cb930796f2660b3eac8dfd0d1b52c0e672f6ec681ac7272b9ff8a947"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d8ed3228dffdf093e1dbef5866b4029584955d510b826d61a3fb0e98066ea8ad"
-    sha256 cellar: :any_skip_relocation, ventura:       "d8ed3228dffdf093e1dbef5866b4029584955d510b826d61a3fb0e98066ea8ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4165624ac319b6c0edd0bd400c4a337589335c64910f80737675dda1c4458ac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "58f08e60d460640780fa06fa67cae4624dc86fc09867f57c1454a3621237fb6e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58f08e60d460640780fa06fa67cae4624dc86fc09867f57c1454a3621237fb6e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "58f08e60d460640780fa06fa67cae4624dc86fc09867f57c1454a3621237fb6e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9379288e16c5b18454d1af6c6551e4353ed08e9ae275e2c4a66fd2f523f6d407"
+    sha256 cellar: :any_skip_relocation, ventura:       "9379288e16c5b18454d1af6c6551e4353ed08e9ae275e2c4a66fd2f523f6d407"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9eb97176c9c56084eb5c16987d6ba3cd0d656ad483b327ff2980bad4a968b13b"
   end
 
   depends_on "go" => :build

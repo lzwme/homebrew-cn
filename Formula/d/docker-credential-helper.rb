@@ -1,18 +1,18 @@
 class DockerCredentialHelper < Formula
   desc "Platform keystore credential helper for Docker"
   homepage "https:github.comdockerdocker-credential-helpers"
-  url "https:github.comdockerdocker-credential-helpersarchiverefstagsv0.9.2.tar.gz"
-  sha256 "bdad4f712244f11dc64890db2f915166306bb4b040149f4497c31f33c7a87327"
+  url "https:github.comdockerdocker-credential-helpersarchiverefstagsv0.9.3.tar.gz"
+  sha256 "1111c403d50fc26bee310db8bed4fb7d98a43e88850e2ad47403e8f2e9109860"
   license "MIT"
   head "https:github.comdockerdocker-credential-helpers.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fcd1300d81482b2caafb3bf72f4c92a7ffb7729101fad076ae6cf4cf40f3d301"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aaaffe49a54c96fc6b6ad778e9fde495d49f4cca60f49343aa7736b87594d0b7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "268897c05a0ceef58f40bb067c4ae8fe7bd2da45826edda4996ce87fd7918a0d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "267746edfe93981ddd4f761bd5e6ec2516fa3910120d5c6f167fdb04aae10081"
-    sha256 cellar: :any_skip_relocation, ventura:       "8f7e5511f55c528bd31f897a4b15b35271fc61e793d25e1bd0f5346a9b560c25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45b56edbcfe9483e55d2aee15d7f4cca6a7484709b2118e346b7da76746d4df7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a366588cad8733a471b83be8c4ecd16b9d3e46a21981ebb1aaac7e5d975eb218"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "65cf8b678861bf541c2add288c76ffd8f55449e0d785531ee886335dc548cfed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e7d0a074a828667999d5ccbc63a9014c496d8080f5588c5ca97c3f960ffab3e1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "87eb53c2e0c38484d644a34fa771252fa80a9357b448029a6878e5e8e8db58e7"
+    sha256 cellar: :any_skip_relocation, ventura:       "e1fe2f7169aa164531f1184404d8213af4725dd85c9ff5257487c28d260788a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a87eaee572a78cf7b00111afa196e6732f05794d83189620bb7be85c4dd217ed"
   end
 
   depends_on "go" => :build

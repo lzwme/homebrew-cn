@@ -1,17 +1,17 @@
 class AwsCS3 < Formula
   desc "C99 library implementation for communicating with the S3 service"
   homepage "https:github.comawslabsaws-c-s3"
-  url "https:github.comawslabsaws-c-s3archiverefstagsv0.7.12.tar.gz"
-  sha256 "096ac66bc830c8a29cb12652db095e03a2ed5b15645baa4d7c78de419a0d6a54"
+  url "https:github.comawslabsaws-c-s3archiverefstagsv0.7.13.tar.gz"
+  sha256 "b8aeb26072995f2fd4764c788a09a4498002c3e506ef4c2797c559ab018ae0d3"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "799f60ad9662ce3146c742bdd23320a2c94cc85e648b4176f2faac0cd26c51ea"
-    sha256 cellar: :any,                 arm64_sonoma:  "0ef42217cf7f0aef34bdd5609577092ddbe6c90d11634b79e863b58a60119b5a"
-    sha256 cellar: :any,                 arm64_ventura: "a89e68bee2d886d87acedb08feba1937a6c2b16d48dca4ab086caabd0369973d"
-    sha256 cellar: :any,                 sonoma:        "79d76f327013c5622ffa011f9a3896fe90dfc11e625e9517e1db4556fe0607c0"
-    sha256 cellar: :any,                 ventura:       "67821f7e86bc18438b0824c24d239b6f883d0fe6b912787bf85764d2013f44dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28d19f90e169bb63d65cd34da8baaa7307320fe7483ab7af7b2c322f9b92957c"
+    sha256 cellar: :any,                 arm64_sequoia: "d7195ae87ee6e26eb67fcf33ad76fe023fce167fb1151036af29622d95d3fa6a"
+    sha256 cellar: :any,                 arm64_sonoma:  "3b1aba2bb1217f38ee279ae2ab77d5a10f1f993c7c20a0201beaaba0d717b43c"
+    sha256 cellar: :any,                 arm64_ventura: "50cf4b8629f56a904e55df6ce373bc4e507d1b43bbfa2cf85eeb886deb56e819"
+    sha256 cellar: :any,                 sonoma:        "ebbdee082f2c056c52f1a12c93998ef7f1512171eb7b23ba54e3354b64ca9dbc"
+    sha256 cellar: :any,                 ventura:       "d1de6afe0129c64aeeaa329b92a435d079c04028b64260df2e1f22f77be7ce6a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd5f53e9bc9f2e17ac05e91f254b010ac45bed015569ee019c624c107b94c4f0"
   end
 
   depends_on "cmake" => :build

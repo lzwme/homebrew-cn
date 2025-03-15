@@ -3,18 +3,18 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https:docs.keeper.ioenprivileged-access-managercommander-clioverview"
-  url "https:files.pythonhosted.orgpackagesa60fc03afbcc879c72e9e5f84ba015ccee8c43d38e1585e78644fdca316f80a4keepercommander-17.0.9.tar.gz"
-  sha256 "82f551c79c757dfd0faf0df316ee8880dbe965fbea2bee65206877ef66c615f6"
+  url "https:files.pythonhosted.orgpackagesf24e18d6e6635f8bc007349e86cec30873fdbf0abe83a57ae3db0fdf603eaf99keepercommander-17.0.10.tar.gz"
+  sha256 "0678434f4ca632a68b41a05f861a9f5f22ae13a715866e7395a924d8b7d99999"
   license "MIT"
   head "https:github.comKeeper-SecurityCommander.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f3a75fad9dfc31a77ae81fa5e6370b0fae710356ed4a6849f8dce03b5d36ad24"
-    sha256 cellar: :any,                 arm64_sonoma:  "5de82d6c2ea5a690bf3cc1cbdf635a71ec27d9e647dcd248097e0ad8c4c4ef5f"
-    sha256 cellar: :any,                 arm64_ventura: "f9bbb0e597822747c3e843a4af5307df461a8721f27176c148cd3972cfa5425c"
-    sha256 cellar: :any,                 sonoma:        "7d81cf482d8782eaca60cf2f99e7cf60ae6f2b40138b6ea05ba40b15570c45ad"
-    sha256 cellar: :any,                 ventura:       "a58bbac93a60b62e0bcb3bc1333353f242e9be4d0c435bc7fce649128b00ee03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c287dc62c6d3eb5a6fe684458a0bffdb9f337209e4cdb97042b6fe5a8f35d95"
+    sha256 cellar: :any,                 arm64_sequoia: "75027ed5e3d4ca0c9225e70ffa11c8b972caaac7118bbbfe388b8c10cb785e68"
+    sha256 cellar: :any,                 arm64_sonoma:  "11e44f064d782a1f95f5b213a50a1ea5cd62c76d8566a3d63c088a41cfa67122"
+    sha256 cellar: :any,                 arm64_ventura: "ce6e53a70dfe6be928b3f7f91504ee019c80f0035f3e463e52fcc72b690228f4"
+    sha256 cellar: :any,                 sonoma:        "8e9c1caf06e46a849716fd7a6248acdb698b6dba865a9531b6f9c74472a59b80"
+    sha256 cellar: :any,                 ventura:       "e7634acb7899cd3e70ccc7745de857e10ad1a0e712455ee87f26238d4c43af62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bb961866e2e05be87e4de88d808d80f388192efdf6190acee31d7e8bfa78783"
   end
 
   # bcrypt dependencies
@@ -76,8 +76,8 @@ class KeeperCommander < Formula
   end
 
   resource "protobuf" do
-    url "https:files.pythonhosted.orgpackages536a2629bb3529e5bdfbd6c4608ff5c7d942cd4beae85793f84ba543aab2548aprotobuf-6.30.0.tar.gz"
-    sha256 "852b675d276a7d028f660da075af1841c768618f76b90af771a8e2c29e6f5965"
+    url "https:files.pythonhosted.orgpackages55de8216061897a67b2ffe302fd51aaa76bbf613001f01cd96e2416a4955dd2bprotobuf-6.30.1.tar.gz"
+    sha256 "535fb4e44d0236893d5cf1263a0f706f1160b689a7ab962e9da8a9ce4050b780"
   end
 
   resource "pycryptodomex" do

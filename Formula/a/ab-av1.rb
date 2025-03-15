@@ -1,18 +1,18 @@
 class AbAv1 < Formula
   desc "AV1 re-encoding using ffmpeg, svt-av1 & vmaf"
   homepage "https:github.comalexhereticab-av1"
-  url "https:github.comalexhereticab-av1archiverefstagsv0.9.2.tar.gz"
-  sha256 "9f5926f9e11c1d7ad86d9c993fbf2bed00bc64e3710cba16f89dca706eceea55"
+  url "https:github.comalexhereticab-av1archiverefstagsv0.9.3.tar.gz"
+  sha256 "bd1b16ead392a58dfe7851d872e9296ffe63a15940fcee62a60e804596186e4e"
   license "MIT"
   head "https:github.comalexhereticab-av1.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb6575659db45c41b513d1501402ea133a567f4d313bc12f1564e6f8e0c8872c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "81265d1f80b4c66a6d638ccde86115f597d53cb8b30d18ce57e99bedff30a0f8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a0f29a5e3f2cf738a56f972bde4630a6a7785d16c8140060b85395ba0c09172d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "138996029202461b5a53ca6be0e1f6bf27d2e7aa8e31a49c69c2036412ed3e87"
-    sha256 cellar: :any_skip_relocation, ventura:       "b63035f379c8907b750c2a21e01dd59d25b07bdd045a799f5459be73be0d8167"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ba12601b3ae443186290445556655b42be739944c1c9bdfb0cce8268316bbe96"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "369e78e67daf8c152e0056759b705c3846b2275057c2efc598b89a46a0d4b550"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0df51a681c8acc463b4dd5462686e94057fa9bd9431b30a090c375f8563af3e5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a37bd68b59b2c45360a4c0f98cb7576724721b5da8e5edb741580af9162a2c2b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b218932b4ac28bb9d37643bd9d9e178268e5ffe1ae3bbd35d3db8bc569c6cdef"
+    sha256 cellar: :any_skip_relocation, ventura:       "5cc90e3553454c11c1538c2a19248feca6edae9047268863c2f27331cd7d3998"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "697001bcb02b52018af6b8e45eca402d141136cacfc8a4cfbbab5d6f69dd1f64"
   end
 
   depends_on "rust" => :build

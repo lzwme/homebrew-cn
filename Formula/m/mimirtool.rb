@@ -2,8 +2,8 @@ class Mimirtool < Formula
   desc "CLI for interacting with Grafana Mimir"
   homepage "https:grafana.comdocsmimirlatestoperators-guidetoolsmimirtool"
   url "https:github.comgrafanamimir.git",
-        tag:      "mimir-2.15.0",
-        revision: "24e4281c138d873772076c5ac276a0f20f633d0d"
+        tag:      "mimir-2.15.1",
+        revision: "0c1e06f13b90434e0e4da6118dcc2191ea23e8d7"
   license "AGPL-3.0-only"
   head "https:github.comgrafanamimir.git", branch: "main"
 
@@ -17,12 +17,12 @@ class Mimirtool < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "046b37b66986207773688c77710e658845580d0dd2543dc638592533024ba503"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1df096d6cea6d5a52255b13ec1bf6324a9c920a16af48d7962c6403333c6c8e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6dd7cc35a7a011cf2f3f60bed0686cd6f3bcf052faa9ab49da8bc98f82485593"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7d7653c2142e53044844df5cf645e0f6536007c5d08865f220de37cdaa9c81d6"
-    sha256 cellar: :any_skip_relocation, ventura:       "f211afc6e8718f63910f20b637c169fe7a0ac5618cab11e9604f391f15495346"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c2b657dc537a4b4261f691a79c3c1366e4d8445d0966c21ea29bb9bd38cef80"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1bee111002e87264d6013a6fcbfef9d7dbf3ad8d7155614615493c834d3ae2e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "36c5aa6039b5a98fbca79a27eee9468e7555be5a04212cd2e140ff839de87bce"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ba40ca4b91244547783bb8c0bc1cc1e2f2c0793e71b82035d2f4195052a0ee9d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "94c0a0c6cdb83d4216adeb96605834bcc3d32c80a8f2c549dbcc84cb8a40ef9d"
+    sha256 cellar: :any_skip_relocation, ventura:       "df58ce8ffc682dfc50b66c64fa9e68d92362f809d5a461646be89ef177157feb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d918084085fa4a6c10fc20c50b59d3f1164309a08dab6fed6d590983e818cc8e"
   end
 
   depends_on "go" => :build
