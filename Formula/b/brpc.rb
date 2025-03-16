@@ -4,15 +4,16 @@ class Brpc < Formula
   url "https:dlcdn.apache.orgbrpc1.12.1apache-brpc-1.12.1-src.tar.gz"
   sha256 "6b315b33ae264e17e4f84bebbd4c3b7c313f5a64de7b398764c68a1dbb4a9e8e"
   license "Apache-2.0"
+  revision 1
   head "https:github.comapachebrpc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "df58cedaa897dd10c04705d1848044f888e61e8ec91be4f53d3baabe3cb68205"
-    sha256 cellar: :any,                 arm64_sonoma:  "7f25540edd6cb683afbfb7f5bd8b2691cb99b7ebe44884318e883fc563704a2b"
-    sha256 cellar: :any,                 arm64_ventura: "e01414f778fb7f10e9f6eef1018d80604d474c7107155e24c4c2544be7db76ac"
-    sha256 cellar: :any,                 sonoma:        "424a6f1bf623b331a7e994f01e4e7aa9c428b932006844d6267556baa64e1ac2"
-    sha256 cellar: :any,                 ventura:       "58d7a787321608a32799cd063242ad728d5ca64289652e51173385c0b53085ef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86170b8a2df17d343f671bd837046eab5320bb859f29925c3519e698a1f452d5"
+    sha256 cellar: :any,                 arm64_sequoia: "01b7b624e32ab5abbe8dd7aca55c22a5033732b5379eac5c04087b600de372f5"
+    sha256 cellar: :any,                 arm64_sonoma:  "a8410a6437e519c6ff5f25522375603a18569d3438909478dc8a3c525c5935ba"
+    sha256 cellar: :any,                 arm64_ventura: "f9b1b76688f679da1eed4b5fe3ac4e5e86a62f8427391153d0914c4b495b1c1d"
+    sha256 cellar: :any,                 sonoma:        "e8f6647979e2f24fbb48f544e0860689a9c0fc0820f5babcf089db7e8685e3bb"
+    sha256 cellar: :any,                 ventura:       "2b8430f800339fdb0fad0f3da628241332a7d8046edc4e9062f4a32f7d6a5a3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7c9317000db1d52c4c36a0e1bc91bac602bca630af7988f3a0931127ed667d8"
   end
 
   depends_on "cmake" => :build
@@ -21,7 +22,7 @@ class Brpc < Formula
   depends_on "gperftools"
   depends_on "leveldb"
   depends_on "openssl@3"
-  depends_on "protobuf"
+  depends_on "protobuf@29"
 
   on_linux do
     depends_on "pkgconf" => :test
@@ -84,7 +85,7 @@ class Brpc < Formula
       }
     CPP
 
-    protobuf = Formula["protobuf"]
+    protobuf = Formula["protobuf@29"]
     gperftools = Formula["gperftools"]
     flags = %W[
       -I#{include}

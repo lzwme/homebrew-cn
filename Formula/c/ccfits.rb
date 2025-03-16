@@ -1,10 +1,9 @@
 class Ccfits < Formula
   desc "Object oriented interface to the cfitsio library"
   homepage "https://heasarc.gsfc.nasa.gov/fitsio/CCfits/"
-  url "https://heasarc.gsfc.nasa.gov/fitsio/CCfits/CCfits-2.6.tar.gz"
-  sha256 "2bb439db67e537d0671166ad4d522290859e8e56c2f495c76faa97bc91b28612"
+  url "https://heasarc.gsfc.nasa.gov/FTP/software/fitsio/ccfits/CCfits-2.7.tar.gz"
+  sha256 "f63546d2feecbf732cc08aaaa80a2eb5334ada37fb2530181b7363a5dbdeb01a"
   license "CFITSIO"
-  revision 1
 
   livecheck do
     url :homepage
@@ -12,16 +11,12 @@ class Ccfits < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "c0b2097286d045051ae1f6ab9f4a98333ecd874d9c59e83f96402209b33b2d1b"
-    sha256 cellar: :any,                 arm64_sonoma:   "38ef0469e244e5e54e735472717186ac523f41a06bfce07219c6fd39ce46e457"
-    sha256 cellar: :any,                 arm64_ventura:  "8f1e70f55129b991cc5bb8035c8e0eb92901225984af325857cf7124180a2b02"
-    sha256 cellar: :any,                 arm64_monterey: "5c222b5a44e8de98ffb844eaf585b718979f8e7a0f9f8ec0b3e34a74045310c1"
-    sha256 cellar: :any,                 arm64_big_sur:  "17a553e7d2b1bd6ac44e54ab8a6cbb101a212d8732aeb785068d7fca13f6d431"
-    sha256 cellar: :any,                 sonoma:         "aed703bfc5a5d08d7fceccb6e4db4bff6dec8b2fcaad1188bdfd3ce8e5b41213"
-    sha256 cellar: :any,                 ventura:        "11c18cd3d891784215ce49c01335e936c4c7dad470b9354260b2a6cf0021750d"
-    sha256 cellar: :any,                 monterey:       "9f88ac9b101bdb715eb5c17714a49850550485a74d4bd152c46b4085420c4da9"
-    sha256 cellar: :any,                 big_sur:        "5567fdf74dea208531b63f0014da6f9b528beeaf58eeda3251f90f5b0fd4cba3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a4e46548887f6794b6a28674f506071ed6070bc368c616086bb423b30301495e"
+    sha256 cellar: :any,                 arm64_sequoia: "da6f787ac55d5f93ad25617af795ac878443371ca2bab55bf9fd64736d592cfd"
+    sha256 cellar: :any,                 arm64_sonoma:  "057ee421d9fde174bd2e7dde06b8e72ed3c987c782f08e41f433d40025d31c0c"
+    sha256 cellar: :any,                 arm64_ventura: "b0490e303998fd2eab1ecffd498b1fa052581b27d92b7cdde9265a52a4e713c6"
+    sha256 cellar: :any,                 sonoma:        "a7d684bbb48a13f09a4b8e6d70228d2d06cfcfb975a52070e4e9adcc250f3a88"
+    sha256 cellar: :any,                 ventura:       "512d95b2fae5a3be154661f93801a8ff9232c87e14a6284492fa74e053793f9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fe8e6f44ecc655e7951eab676f718f070e76e4d00bbfca35c8e42478ae1b0a6"
   end
 
   depends_on "cfitsio"

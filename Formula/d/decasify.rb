@@ -1,17 +1,17 @@
 class Decasify < Formula
   desc "Utility for casting strings to title-case according to locale-aware style guides"
   homepage "https:github.comalerquedecasify"
-  url "https:github.comalerquedecasifyreleasesdownloadv0.9.1decasify-0.9.1.tar.zst"
-  sha256 "c486b545229f0401693c79d600aa3e38bafdac70cd8c40c44f506c377b742a93"
+  url "https:github.comalerquedecasifyreleasesdownloadv0.10.1decasify-0.10.1.tar.zst"
+  sha256 "5cf9781df864c211d191f73ae014da7de1e02cad6507850728fea5a0b9f946e7"
   license "LGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "201ec2162c0785af3408ff3b1fd5dea5ace9ef47d5d161ee2fd61f71d636f751"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ddf5299581f0714d50c387715a04596c3ecdd580d1777162baeafd735640d20"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1a2752af8048e52388ff82ab208ef428db1bed9717d6915da338512a3e267a61"
-    sha256 cellar: :any_skip_relocation, sonoma:        "91bac4b9e1137df31b82455d6969e2a0a27443144fa96e045b12e5ba797fbf47"
-    sha256 cellar: :any_skip_relocation, ventura:       "4715b1a045b481936cd403fd5be3e47fb8018a5b91eaf254fed20acabf3d84c6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b411294a5ede09d29a53d8b215d8a099f079381c72d6f2eaede2293bb29164ac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35c382d68af07363f18cc1384c4f532d7844423e80da9463e99e1e5f6f0ac799"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae81a1439bc5fd75fe76d00beac0d7ca2f3a353406cda1ea185d04a4669c3e62"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1d08eb9e9cf5109f3f98550bfd95e9034c708f892164f564aef14caef1b050dc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9ba5797890e07052e2551b57eb6bbb658f8b5dc153acc3fee17c08a0dca66a6c"
+    sha256 cellar: :any_skip_relocation, ventura:       "b5c26c8f65ce573687bcfc1dde10b6533f7e459ac015da51aefdf881449a98e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd970ae1d4b0e1b67a015c65d80e633657761fbc357a0c9e60075ca991c83658"
   end
 
   head do

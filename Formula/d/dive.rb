@@ -4,25 +4,18 @@ class Dive < Formula
   url "https:github.comwagoodmandivearchiverefstagsv0.12.0.tar.gz"
   sha256 "2b69b8d28220c66e2575a782a370a0c05077936ae3ce69180525412fcca09230"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bf611f1db98b6448498c325f832af72d2073dcf4341ed7d13b1e6c9a992d3704"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3d2f18e2bd91ef512aaa1dd5b973131c4ba4cf6925cbc9164bcad22f60b1aad1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "9596d77ba519803a3180c20c0c331d2d6378531d8444b54a0b5453db94ecadde"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "27d97e07f727d8a28efb7cda0d9240828971f8f7b037d5eaeff6df48742dd106"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4696a476e34df99d220d6a9c219edaed6b4f97debf887555a50e522761058283"
-    sha256 cellar: :any_skip_relocation, ventura:        "7e617151108b1c92f81af06cc3887ab583aa5b7edf5f80b6cf07745ad524b9df"
-    sha256 cellar: :any_skip_relocation, monterey:       "d67f10f4ab04a964ab795752fcce1f278678e633f9f9b39ce15bca4fb14c0e18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2c7664c34f83d86f2869bf8b36d729d357c2bf989c74d3e5baa1fc46383e121b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44b9241dc0d0cedd1eec7b294b1fcfea2f01afc319709b88ad5ba61fb7c69df4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44b9241dc0d0cedd1eec7b294b1fcfea2f01afc319709b88ad5ba61fb7c69df4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "44b9241dc0d0cedd1eec7b294b1fcfea2f01afc319709b88ad5ba61fb7c69df4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8e2e5f58c3bd4a14dd5439a912ad552fe5396fe9d2e318995fa1a0e50c7ea275"
+    sha256 cellar: :any_skip_relocation, ventura:       "8e2e5f58c3bd4a14dd5439a912ad552fe5396fe9d2e318995fa1a0e50c7ea275"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e45819927ba03dad0ff53a6549135d7bfc7b84c6e49ad6cac64829fa13e124ac"
   end
 
   depends_on "go" => :build
-
-  on_linux do
-    depends_on "gpgme" => :build
-    depends_on "pkgconf" => :build
-    depends_on "device-mapper"
-  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}")

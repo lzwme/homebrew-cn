@@ -1,8 +1,8 @@
 class Libdex < Formula
   desc "Future-based programming for GLib-based applications"
   homepage "https://gitlab.gnome.org/GNOME/libdex"
-  url "https://gitlab.gnome.org/GNOME/libdex/-/archive/0.9.1/libdex-0.9.1.tar.gz"
-  sha256 "8106d034bd34fd3dd2160f9ac1c594e4291aa54a258c5c84cca7a7260fce2fe1"
+  url "https://gitlab.gnome.org/GNOME/libdex/-/archive/0.10.0/libdex-0.10.0.tar.gz"
+  sha256 "1795d8cb281df4e4d292725d4ed8982a424bf258f13e866bd1a3818c5bd4ea4c"
   license "LGPL-2.1-or-later"
   head "https://gitlab.gnome.org/GNOME/libdex.git", branch: "main"
 
@@ -15,13 +15,12 @@ class Libdex < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_sequoia: "de849fbc65398cd3211401ec52da982cb0de056560f41b3e2160d1feb7a73439"
-    sha256 cellar: :any, arm64_sonoma:  "29dfd7bc1929d344f4c3f6f494cadc6128dda0878a1aadfc36c7c3c176c6341d"
-    sha256 cellar: :any, arm64_ventura: "5be369e6134c47622e5b011578440873938ef02d947367ae7fa0bf39a6dd4f71"
-    sha256 cellar: :any, sonoma:        "2febc85628e62c50dde34a00489a9305c4e5685a5dccbef795be377ef4f546e3"
-    sha256 cellar: :any, ventura:       "7a42ee50ef5afa0d4708c3004bca40f4fd6457dda4c5665497842d2995822280"
-    sha256               x86_64_linux:  "8452e353f07907069edccfd963920c8545673aa759047e0b1a9e253b226c57f5"
+    sha256 cellar: :any, arm64_sequoia: "c0e9bbf2bcc49dc00563b61dc7d7af875afb2238a4ba624888507fa78497036a"
+    sha256 cellar: :any, arm64_sonoma:  "7225def607ef3bf0c9e4ef35c5a4e342bfd2c50316fc6801261568d6abc7741d"
+    sha256 cellar: :any, arm64_ventura: "d028731c282bd751c94e87bec4f93a3657b6b48b3f318f9cfa28f7eb3cd29bf5"
+    sha256 cellar: :any, sonoma:        "b1442c9ce97b8d63af832cb2b9a0b6e0c340433e8b212131a7abf2e52034f6c4"
+    sha256 cellar: :any, ventura:       "7a6ac6f6fe4b4225cec26e320f583eaba048f5091ebeda8ce983d4529c5a33cd"
+    sha256               x86_64_linux:  "6015425230e2435737f5a901fea985eec735f26e60c0d788a0a989378a73dd50"
   end
 
   depends_on "gobject-introspection" => :build
@@ -30,13 +29,6 @@ class Libdex < Formula
   depends_on "pkgconf" => [:build, :test]
   depends_on "vala" => :build # for vapigen
   depends_on "glib"
-
-  # Guards a libatomic check that fails on macOS
-  # Upstream ref: https://gitlab.gnome.org/GNOME/libdex/-/merge_requests/21
-  patch do
-    url "https://gitlab.gnome.org/GNOME/libdex/-/commit/24e6bddd32c7db70235bb1576c33731a26609ffb.diff"
-    sha256 "f7b0e4b92cd1a3cebfb1a62f5ffd74b7d77f550be74627311c3a29e8ad991cd4"
-  end
 
   def install
     args = %w[

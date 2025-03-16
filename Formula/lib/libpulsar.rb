@@ -5,14 +5,15 @@ class Libpulsar < Formula
   mirror "https://archive.apache.org/dist/pulsar/pulsar-client-cpp-3.7.0/apache-pulsar-client-cpp-3.7.0.tar.gz"
   sha256 "3223cfeda484ab7b580f4a8768b5a85739cc064005c765c06cde67c3238639c9"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2762cb88dd01d626ab6dd265e2264b195133c4874b82f189ea8001a918869c7b"
-    sha256 cellar: :any,                 arm64_sonoma:  "34bf8ce2ebbc5f95e33a1dc572e8f08927e8c1adb14bcb68e18b30e978baf6d6"
-    sha256 cellar: :any,                 arm64_ventura: "2aa84c52798c6a67d233b56df26029742569b882c6cca6907cbc7ab46283f3f1"
-    sha256 cellar: :any,                 sonoma:        "28e17003491d94d95f5330fa8345aaea561dd9a021f30fdad0068246faf1e4b5"
-    sha256 cellar: :any,                 ventura:       "b734145006bc1f4cf5697518cd9dec720c42ba7743c6d6f8e21721bc14fede9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcca0ff004a931852586876682e27da0345e55fea30a522c50772a15bef394f1"
+    sha256 cellar: :any,                 arm64_sequoia: "e937ba8b9230a840dff62707c799e478720b9d4a01b96c0cf112c4185df95bb3"
+    sha256 cellar: :any,                 arm64_sonoma:  "90212ffaaa73f7c17c8fe95d67686bb3533285869df4adef757598ec8863f634"
+    sha256 cellar: :any,                 arm64_ventura: "7fa9b18338c6c0c89222cb85750cd42eca9af31bc8e3198125e63beedf570457"
+    sha256 cellar: :any,                 sonoma:        "6707b7473cdcd2d99a4175f22f944957b2bb7017761105eb6399edecb90d472c"
+    sha256 cellar: :any,                 ventura:       "eef1c13ae3c8c21c5cb4979f65f0744061295215b33a267ae59ffa83db95901f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3f05721483717a63f13231d9009470d6354ba662ad8780dcf8662487dd3fd4f"
   end
 
   depends_on "asio" => :build # FIXME: Not compatible with Boost.Asio 1.87+
@@ -22,7 +23,7 @@ class Libpulsar < Formula
 
   depends_on "abseil"
   depends_on "openssl@3"
-  depends_on "protobuf"
+  depends_on "protobuf@29"
   depends_on "snappy"
   depends_on "zstd"
 

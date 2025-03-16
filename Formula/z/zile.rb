@@ -4,19 +4,19 @@ class Zile < Formula
   # Before bumping to a new version, check the NEWS file to make sure it is a
   # stable release: https:git.savannah.gnu.orgcgitzile.gitplainNEWS
   # For context, see: https:github.comHomebrewhomebrew-coreissues67379
-  url "https:ftp.gnu.orggnuzilezile-2.6.3.tar.gz"
-  mirror "https:ftpmirror.gnu.orgzilezile-2.6.3.tar.gz"
-  sha256 "66720b062c150a2a96fa2831f55cf95dfa21c9c2d6c0487fa92a5a1e4074006f"
+  url "https:ftp.gnu.orggnuzilezile-2.6.4.tar.gz"
+  mirror "https:ftpmirror.gnu.orgzilezile-2.6.4.tar.gz"
+  sha256 "d5d44b85cb490643d0707e1a2186f3a32998c2f6eabaa9481479b65caeee57c0"
   license "GPL-3.0-or-later"
   version_scheme 1
 
   bottle do
-    sha256 arm64_sequoia: "1e8c4e55e5fd847876d83c47dd94ac35c8bb259806cbf287b927f163eadbbbfc"
-    sha256 arm64_sonoma:  "2626abe8f48706311b64d18713917ae526357169d1d6fcab0fe4d4bd6c96787d"
-    sha256 arm64_ventura: "0cb7cbd3030e94fddfdde2c7117ebd2206df4d63c60f9ac6103f45a80779e522"
-    sha256 sonoma:        "42a771caf90019b6ea975f0d672daeaa170edc24bf3fbfeea03f7db2e468372b"
-    sha256 ventura:       "2a0bfe55a5ba022a214452812fb48ed1bc322d4676b7f02b2c46eba085a83255"
-    sha256 x86_64_linux:  "dad50ecdec4c215137db0a61da5c12164462737ec485e80f6c15c36af9fd06b1"
+    sha256 arm64_sequoia: "0d218900aa4e2a8504325c958be05c5e888d83b319dd7f69c4a47d6bd8ad4c2b"
+    sha256 arm64_sonoma:  "64b800f85f1370a2a560b128b16b767dae780c8adfac7384ec8c493c1e998374"
+    sha256 arm64_ventura: "93a981404b8329b697eaa73bc973bfcac3b941e22ce378c267d8dc4d8b413e7f"
+    sha256 sonoma:        "e2026f3432e32618c9627439100db48f8a36654cf90dbf22c2baa25edc2bb1f5"
+    sha256 ventura:       "c029f82ef50328547756ce4932f995994f42a6c262fd286e596862df8fa22a64"
+    sha256 x86_64_linux:  "b580ca192a5f2714cb7cb91ac4d101794c4ae98b1c799c87f73c9970be2bcb93"
   end
 
   depends_on "help2man" => :build

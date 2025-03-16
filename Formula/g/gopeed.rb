@@ -4,6 +4,7 @@ class Gopeed < Formula
   url "https:github.comGopeedLabgopeedarchiverefstagsv1.6.11.tar.gz"
   sha256 "58f0fcd9e9caa6af3449a8265f2c6f9d21df050996eeda2825ae8c54825e991f"
   license "GPL-3.0-or-later"
+  head "https:github.comGopeedLabgopeed.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "58890e8df0506dc36a567750bf1d47abd802a29125ffd9bd7891c210de703b96"
@@ -14,7 +15,7 @@ class Gopeed < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f43c7f0aa535829ac56440cce653883818bbb7f3555eae5564f8100ebc883364"
   end
 
-  depends_on "go"
+  depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdgopeed"

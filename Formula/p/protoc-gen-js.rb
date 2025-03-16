@@ -4,21 +4,21 @@ class ProtocGenJs < Formula
   url "https:github.comprotocolbuffersprotobuf-javascriptarchiverefstagsv3.21.4.tar.gz"
   sha256 "8cef92b4c803429af0c11c4090a76b6a931f82d21e0830760a17f9c6cb358150"
   license "BSD-3-Clause"
-  revision 7
+  revision 8
   head "https:github.comprotocolbuffersprotobuf-javascript.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "10a6dc802499f1666dd19e86c0edada7bbda19d07580da53e1a006539338c18b"
-    sha256 cellar: :any,                 arm64_sonoma:  "c36d467208286205d4d2d146f8855b4664d5e2f94e2a986563e52a8022cffccb"
-    sha256 cellar: :any,                 arm64_ventura: "4de2c36868a911ea09814303d961351b73baa9c7cdb822e5e66b184ead56b9de"
-    sha256 cellar: :any,                 sonoma:        "4432f9ef2b0d3a8d6097c4a5eb5feee2578863db91b10466a21ddc5f20ba9713"
-    sha256 cellar: :any,                 ventura:       "c8a8278f6a1de7e6405d79d45fee1b10b0c0f88d38957522749ef9f69e279e70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0f6aeb71ad79dd68b09b710f35be757f370939fc436ce7e2e232794f2f0e7c7"
+    sha256 cellar: :any,                 arm64_sequoia: "cbb18a5e1f74549805df90aeb3c51863148b745d727155e8fbe66db7e7f3c2f8"
+    sha256 cellar: :any,                 arm64_sonoma:  "4a844f516417b1b7f26d0afa7201787c29774d25145b83b7db55dd20160458b8"
+    sha256 cellar: :any,                 arm64_ventura: "beda6ac3c389b97f9576a937f9f05a7d5eb080266616cbc3f5c128dc640087d0"
+    sha256 cellar: :any,                 sonoma:        "b27424da44d8473270ad385e5d02b652e812f6fffbc6463bc7db9298532cfd13"
+    sha256 cellar: :any,                 ventura:       "ef8957fa3237a984dd1cb5abca15f38578e2705041f54ffa98853e99b7775651"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b73db501545dd71f9d63bdac58dd15dbab247ecabcb1f20798323af9c5280d90"
   end
 
   depends_on "pkgconf" => :build
   depends_on "abseil"
-  depends_on "protobuf"
+  depends_on "protobuf@29"
 
   # We manually build rather than use Bazel as Bazel will build its own copy of Abseil
   # and Protobuf that get statically linked into binary. Check for any upstream changes at
@@ -38,7 +38,7 @@ class ProtocGenJs < Formula
         string name = 2;
       }
     PROTO
-    system Formula["protobuf"].bin"protoc", "--js_out=import_style=commonjs:.", "person.proto"
+    system Formula["protobuf@29"].bin"protoc", "--js_out=import_style=commonjs:.", "person.proto"
     assert_path_exists testpath"person_pb.js"
     refute_predicate (testpath"person_pb.js").size, :zero?
   end

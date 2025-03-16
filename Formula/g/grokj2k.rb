@@ -14,12 +14,13 @@ class Grokj2k < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "cabdf80b062bd6d4c9feca303d914cfd55a059472db1c377fb06b7f7fb0dc608"
-    sha256 cellar: :any,                 arm64_sonoma:  "c7cc9733e185533df52da8a683438dad8ca8930bd43df11ac737a22c1c8595e9"
-    sha256 cellar: :any,                 arm64_ventura: "e2520c5e92f5fd63c0e7b240bab1a4d1a2ee8a7bb8292e5c9c94e564de81fa8a"
-    sha256 cellar: :any,                 sonoma:        "002121ff77b1e45b4231c757c4ab652a0288021d734b7c0b796292c77d2716f4"
-    sha256 cellar: :any,                 ventura:       "d46acfb58425dea5f9bd6a928b04ab662f0a21e868779db1988953b6bde69917"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f90e1bf0b372c9ce3534011e2dc1ba6c16e77c5989168286f210835d99522c9"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "5149d78f8c62ba15378406a5cf7069664610210b6217407a84f525b8d4f3a503"
+    sha256 cellar: :any,                 arm64_sonoma:  "77b72bff592cea45f9a58ac582c40936a40f43c5043a03f776c66ebcb243c4a8"
+    sha256 cellar: :any,                 arm64_ventura: "671bcbcd63e92dcec776dd40f283af775c20ac48b8db218df2bf434b1e2745bc"
+    sha256 cellar: :any,                 sonoma:        "9ced0cf80ece1940de03f7aa539c7ab8343cee8e180322bbd13746d715f47fb5"
+    sha256 cellar: :any,                 ventura:       "55af09dd82eabdd8ccdec7300c92598cc194f59d4f67c7f7dfd36abc99617c37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61435c3633d1ba62db43e0ade8388ed6fe95e4c6601ef6446223d1e9f2527cd4"
   end
 
   depends_on "cmake" => :build
@@ -56,7 +57,7 @@ class Grokj2k < Formula
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1200)
 
     # Fix: ExifTool Perl module not found
-    ENV.prepend_path "PERL5LIB", Formula["exiftool"].opt_libexec"lib"
+    ENV.prepend_path "PERL5LIB", Formula["exiftool"].opt_libexec"libperl5"
 
     # Ensure we use Homebrew libraries
     %w[liblcms2 libpng libtiff libz].each { |l| rm_r(buildpath"thirdparty"l) }

@@ -1,18 +1,18 @@
 class Proj < Formula
   desc "Cartographic Projections Library"
   homepage "https:proj.org"
-  url "https:github.comOSGeoPROJreleasesdownload9.5.1proj-9.5.1.tar.gz"
-  sha256 "a8395f9696338ffd46b0feb603edbb730fad6746fba77753c77f7f997345e3d3"
+  url "https:github.comOSGeoPROJreleasesdownload9.6.0proj-9.6.0.tar.gz"
+  sha256 "d8cae521c311c39513193657e75767f7cfbf2f91bd202fcd4a200028d3b57e14"
   license "MIT"
   head "https:github.comOSGeoproj.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia: "c45845ace46c4164cb83ba2830526e995c45b7186810ff6ede827f5aff19754f"
-    sha256 arm64_sonoma:  "3c982d2d1e098fd1af5c933f3b3e858a934a4d4ed4a13ddff2f6bbdc0f19c4ea"
-    sha256 arm64_ventura: "38a0b4d4eb667cf12f3ff7e35caec9eeae3b052b9ebbd808d18136374eac7b03"
-    sha256 sonoma:        "30eb5c830c5d0f7aa4660102dcee7abfe66bcc4accb9d8a3ba4906b10ca635d5"
-    sha256 ventura:       "9230636c4187be1b0e923ca3f356411e1b27cc7e5a716debc22eca232569b69b"
-    sha256 x86_64_linux:  "6fe61c5481a8f5a8b53d97120c62260fbe74db4e8c969ffb10e241a98d0a7779"
+    sha256 arm64_sequoia: "0261f2c43f7824430e3c60e5babb33aeb669aced7984ec4780d12dd392a59e2c"
+    sha256 arm64_sonoma:  "6d269647a386547eee11e8e093f94540c9f6beb262181ca897f8bf5b248a90da"
+    sha256 arm64_ventura: "074e44f24a5afb86a56562189c6355f9b409fd6740a5c04a4dc556f3600af078"
+    sha256 sonoma:        "e45bde228e370c95135aa3e8fa3a678ef3bf66e00de487819a784d917420fc40"
+    sha256 ventura:       "22297d1171aa46943b6761b2be9d40b9916c6f15479b678b13808661ce3c716c"
+    sha256 x86_64_linux:  "7109cbe388e8dbbc74ffb1511b9dae09dec6ad05e43a59c6ba032171ff3b270a"
   end
 
   depends_on "cmake" => :build
@@ -29,8 +29,8 @@ class Proj < Formula
 
   # The datum grid files are required to support datum shifting
   resource "proj-data" do
-    url "https:download.osgeo.orgprojproj-data-1.20.zip"
-    sha256 "a83c6dc5e98350c9c78d5029c8e211db1598ff01b1f6db18e4c21cc25dcf2165"
+    url "https:download.osgeo.orgprojproj-data-1.21.zip"
+    sha256 "6bc292cd5dddefed1972549876587a8d45add1bf05824b6ad48637053719de74"
   end
 
   def install

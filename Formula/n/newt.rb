@@ -1,10 +1,9 @@
 class Newt < Formula
   desc "Library for color text mode, widget based user interfaces"
   homepage "https:pagure.ionewt"
-  url "https:releases.pagure.orgnewtnewt-0.52.24.tar.gz"
-  sha256 "5ded7e221f85f642521c49b1826c8de19845aa372baf5d630a51774b544fbdbb"
+  url "https:releases.pagure.orgnewtnewt-0.52.25.tar.gz"
+  sha256 "ef0ca9ee27850d1a5c863bb7ff9aa08096c9ed312ece9087b30f3a426828de82"
   license "LGPL-2.0-or-later"
-  revision 2
 
   livecheck do
     url "https:releases.pagure.orgnewt"
@@ -12,12 +11,12 @@ class Newt < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0dcef640f944ee4c90cd5a2ed528681e94dc9b43ddfe156c01edff8d6a5cade4"
-    sha256 cellar: :any,                 arm64_sonoma:  "3ae123a831c21b56e66b175e428e5f90ec223c317af3db8dae551d502d9add01"
-    sha256 cellar: :any,                 arm64_ventura: "131824dbbd51648d4db88157885cee03db0bd1145d69fcdc6d01c64c4ef2519c"
-    sha256 cellar: :any,                 sonoma:        "79766179662f464005df2db159e98fe8286ce0670ec18e8a29f46d843ad14e49"
-    sha256 cellar: :any,                 ventura:       "635561263b0b1267d029fb6d9cb34a235eeeda85116b784f3a603cf3fea83ec0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5942b5e99097a17fd736ab763c7af5dcc4f020aff7ab94befd41e56ce3f694d"
+    sha256 cellar: :any,                 arm64_sequoia: "55c3fff9cb1b7ecc4d79bf8d424722951ae868232a23e0d052f1075b48f8bd90"
+    sha256 cellar: :any,                 arm64_sonoma:  "2ba4e9d33882026f010c930fbc36e47158e1ef840a5a4fff21543a9a8c3199ff"
+    sha256 cellar: :any,                 arm64_ventura: "9b26e7c2f6783d465fb10251fe5ace9ca123935fd8d62405b0cdafc09b239421"
+    sha256 cellar: :any,                 sonoma:        "0070ed88421803c94c0e9dc89b28893de88485c3d96d044a52371f1d3f1973f2"
+    sha256 cellar: :any,                 ventura:       "2e7bed21a287498a91d39efa5a5efc0ef17fd5f521640d761510118a8be03876"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc5fc54cd40c63896f983126433758a86bc3435c39188ae3c3e45569759f2170"
   end
 
   depends_on "popt"
@@ -43,8 +42,10 @@ class Newt < Formula
         # don't link to libpython.dylib
         # causes https:github.comHomebrewhomebrewissues30252
         # https:bugzilla.redhat.comshow_bug.cgi?id=1192286
-        s.gsub! "`$$pyconfig --ldflags`", '"-undefined dynamic_lookup"'
-        s.gsub! "`$$pyconfig --libs`", '""'
+        s.gsub! "`$$pyconfig --ldflags --embed || $$pyconfig --ldflags`", '"-undefined dynamic_lookup"'
+
+        s.gsub! "`$$ver -c \"import sysconfig; print(sysconfig.get_path('platlib'))\"`",
+                "#{lib}python3.13site-packages"
       end
     end
 

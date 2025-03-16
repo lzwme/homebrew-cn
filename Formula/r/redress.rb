@@ -1,8 +1,8 @@
 class Redress < Formula
   desc "Tool for analyzing stripped Go binaries compiled with the Go compiler"
   homepage "https:github.comgoretkredress"
-  url "https:github.comgoretkredressarchiverefstagsv1.2.19.tar.gz"
-  sha256 "b7c4076b83f4c70cea241920b317069ae1b5cce6ce8169b6add2294f3efa6574"
+  url "https:github.comgoretkredressarchiverefstagsv1.2.20.tar.gz"
+  sha256 "92bc399f01628991b719d4b99eab9207d2cc7a0da9bd60b935e9a8951723159f"
   license "AGPL-3.0-only"
   head "https:github.comgoretkredress.git", branch: "develop"
 
@@ -12,12 +12,12 @@ class Redress < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a2151d39fbc6e6b2a920f2050569911a4d5127bc74295c069c43390631190a95"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2151d39fbc6e6b2a920f2050569911a4d5127bc74295c069c43390631190a95"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a2151d39fbc6e6b2a920f2050569911a4d5127bc74295c069c43390631190a95"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9c3d88884a2d9f7e988a2e6ca4ba051376198d073b25c784f2e6b3d04d36b639"
-    sha256 cellar: :any_skip_relocation, ventura:       "9c3d88884a2d9f7e988a2e6ca4ba051376198d073b25c784f2e6b3d04d36b639"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9e189d0dea58df0fd2b888df74be89c980a1292fab941d1b51f61db2124f5e1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db6d4c58ca07e77659bcbf9fccfc87edc2747667192cd988f63fe33431f3a5e3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db6d4c58ca07e77659bcbf9fccfc87edc2747667192cd988f63fe33431f3a5e3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "db6d4c58ca07e77659bcbf9fccfc87edc2747667192cd988f63fe33431f3a5e3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ff787febf01102cac10e4de8f41d60b8054de7e55e1f69ab458f3908d310e26c"
+    sha256 cellar: :any_skip_relocation, ventura:       "ff787febf01102cac10e4de8f41d60b8054de7e55e1f69ab458f3908d310e26c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "331a687ba86a088c70d7ef5c13c7c86875e4bec52e72521406e0453d5192d890"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class Pumba < Formula
   desc "Chaos testing tool for Docker"
   homepage "https:github.comalexei-ledpumba"
-  url "https:github.comalexei-ledpumbaarchiverefstags0.10.1.tar.gz"
-  sha256 "bcf3c97da8f61febcf6d239e57d156c8593e76fdd28bd39dd7f2efe19148b8b2"
+  url "https:github.comalexei-ledpumbaarchiverefstags0.11.0.tar.gz"
+  sha256 "3ed3cad724d9367e5acc55206a7304cd3eb3a6a28afd5ed00871e3a6266435d2"
   license "Apache-2.0"
   head "https:github.comalexei-ledpumba.git", branch: "master"
 
@@ -12,16 +12,12 @@ class Pumba < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "39b29f3d525559adde5e8560bc3218de78900a1a0d7bc2db01a7759f631c4953"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b92a5355efbd2150e97340df0a8e51d18585bb33339a9d80d150985b8d28ee60"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "77f912f81252725e4fa18d6c7e7439192e17561b2f11990db1ef08ff1344f673"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "6289f50c1a0e902802f5bd62df73186722456b640593108c77f6e934a5143835"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "51dc8f2ea1052d6fe9c0308ce7aa47e20879b071d37db6e4c3165a38f07f197b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "599b9b0af904ea0f9449fbb30d162622da1c8055ad2d8c2e1488653c215cf279"
-    sha256 cellar: :any_skip_relocation, ventura:        "8fab4867017f6b121a4ac5e66d593111b50d638ce11b11772a498846a26b2866"
-    sha256 cellar: :any_skip_relocation, monterey:       "5296c98082cc77718b35eb86c9bf136aae3f0bf3af7845e9e043e3b8f91bbdb5"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6418e931f4f0ff9563c7e3992697a8682bddefa92203fd15af12be1906176acf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7271bdcccfaa6d1f88b5270bb06b0c3c41e2631fa21ccaeed5264cea2cc1ab63"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd30e2a7943986344f501cd9d95df10a688422516a7b2ef4f32af85de5563a06"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd30e2a7943986344f501cd9d95df10a688422516a7b2ef4f32af85de5563a06"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bd30e2a7943986344f501cd9d95df10a688422516a7b2ef4f32af85de5563a06"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7cdbafb2e72fd78bc08d3a1d6e02e719ee6b7f6139be3d5f1fc1e1770688fe38"
+    sha256 cellar: :any_skip_relocation, ventura:       "7cdbafb2e72fd78bc08d3a1d6e02e719ee6b7f6139be3d5f1fc1e1770688fe38"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "477e8f8511df86beb38f862d30cf4d08e08225dbe39d9e4623ae61ff85b945a2"
   end
 
   depends_on "go" => :build

@@ -103,6 +103,7 @@ Homebrew-homebrew-core/Formula/a/aliyun-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aliyunpan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/all-repos.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/allegro.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/alloy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/allure.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/allureofthestars.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/alluxio.rb, Homebrew/homebrew-core, 0
@@ -1746,7 +1747,7 @@ Homebrew-homebrew-core/Formula/e/exempi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/exercism.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/exif.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/exiftags.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/e/exiftool.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/e/exiftool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/exiftran.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/exim.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/exiv2.rb, Homebrew/homebrew-core, 1
@@ -2968,6 +2969,7 @@ Homebrew-homebrew-core/Formula/j/jack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jackett.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jadx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jags.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/j/jaguar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jailkit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jam.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/janet.rb, Homebrew/homebrew-core, 1
@@ -5337,6 +5339,7 @@ Homebrew-homebrew-core/Formula/p/proto.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protobuf-c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protobuf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protobuf@21.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/protobuf@29.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protobuf@3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protoc-gen-go-grpc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protoc-gen-go.rb, Homebrew/homebrew-core, 1
@@ -5536,6 +5539,7 @@ Homebrew-homebrew-core/Formula/q/qwt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qxmpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/r.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/r3.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/ra-multiplex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rabbitmq-c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rabbitmq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/radamsa.rb, Homebrew/homebrew-core, 0
@@ -10746,6 +10750,8 @@ Homebrew-homebrew-cask/Casks/font/font-p/font-playball.rb, Homebrew/homebrew-cas
 Homebrew-homebrew-cask/Casks/font/font-p/font-playfair-display-sc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playfair-display.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playfair.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-p/font-playpen-sans-arabic.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-p/font-playpen-sans-hebrew.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playpen-sans.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-ar-guides.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-ar.rb, Homebrew/homebrew-cask, 1
@@ -11357,6 +11363,7 @@ Homebrew-homebrew-cask/Casks/font/font-w/font-wellfleet.rb, Homebrew/homebrew-ca
 Homebrew-homebrew-cask/Casks/font/font-w/font-wendy-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-w/font-whisper.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-w/font-windsong.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-w/font-winky-rough.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-w/font-winky-sans.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-w/font-wire-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-w/font-wittgenstein.rb, Homebrew/homebrew-cask, 1

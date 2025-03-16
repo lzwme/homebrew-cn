@@ -1,9 +1,9 @@
 class Vcpkg < Formula
   desc "C++ Library Manager"
   homepage "https:github.commicrosoftvcpkg"
-  url "https:github.commicrosoftvcpkg-toolarchiverefstags2025-02-11.tar.gz"
-  version "2025.02.11"
-  sha256 "19003c7958ea5cfc8583c6a90f9abd57bf1fe48d8bc5e8a757697edd0050b0c6"
+  url "https:github.commicrosoftvcpkg-toolarchiverefstags2025-03-13.tar.gz"
+  version "2025.03.13"
+  sha256 "63cd7075c5beae841112933b4c82856d8a8196b5eb62d661e7457746d2fbf639"
   license "MIT"
   head "https:github.commicrosoftvcpkg-tool.git", branch: "main"
 
@@ -21,12 +21,12 @@ class Vcpkg < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a47eb26c863a212c65cdb57652d68ddc01f74ac8ecfd67944fd857ff9b1765b8"
-    sha256 cellar: :any,                 arm64_sonoma:  "e4610572138fdb6f67208d9eb772827fd5b8895f27138a5b620e8be2d0e6e407"
-    sha256 cellar: :any,                 arm64_ventura: "d503b7872a0cfb3508e5cad284796a268cf876b12fafd324789819e1b2199e02"
-    sha256 cellar: :any,                 sonoma:        "9bc9447c59b7d55ea1d483c7263be3ea0ef6ee639d6a288c8caf0f7434f2f9e2"
-    sha256 cellar: :any,                 ventura:       "826ab7c281d97569a18bf93585804d28968140cf7e69eb0dc1b257968cf14475"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7093b31be7244b6a3be6da679023a040954ae2696608514a6c31f0b81c899b3b"
+    sha256 cellar: :any,                 arm64_sequoia: "e602922e40a89f0c9df7b9c022745206d31976ee251075db045ecd4040f8a04c"
+    sha256 cellar: :any,                 arm64_sonoma:  "8ee2fd61d9e57347ebdd1203a7c76f1c7eac84b991c820d8c32b7bd267416e3f"
+    sha256 cellar: :any,                 arm64_ventura: "1479c4d83b06137bb95d1b3897c0e97424eda69aeb2568c10b703b2c992cc56e"
+    sha256 cellar: :any,                 sonoma:        "e8060fa9e2fc621020b458ee3ce6cca4649f5de74dc13ffaf6a76a4a5c236360"
+    sha256 cellar: :any,                 ventura:       "1e47b5fef0855eac2496be1d12e9382f924228fefd587e14e4cd2189f68322a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4455b3c89973661776af7d8b2309f53aaa6e6ed735d0e3a4d3c7108389f5faae"
   end
 
   depends_on "cmake" => :build

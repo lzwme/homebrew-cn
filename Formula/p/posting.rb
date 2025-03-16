@@ -3,17 +3,17 @@ class Posting < Formula
 
   desc "Modern API client that lives in your terminal"
   homepage "https:github.comdarrenburnsposting"
-  url "https:files.pythonhosted.orgpackages094c268522087625286ad9ca5211ea5a9430fc1621468a826e198a63f3c34d1cposting-2.4.0.tar.gz"
-  sha256 "7784cc49eaeed3ea78252ad4fff20db49284aa1e29a33ed21ed4920bfdbf58c4"
+  url "https:files.pythonhosted.orgpackagesa8d64d9b3b7337125e7006c76df9835d90953786c7fc3f226a8ac1c05e550750posting-2.5.4.tar.gz"
+  sha256 "c066531a98a92dd343a6b639e230025cc9998ba73a992cf9f5af4a9fe02a82fc"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "db5bacb9e3415a563054975eb822abb7455ac007b96cfa24c9366f0f6a8cb78b"
-    sha256 cellar: :any,                 arm64_sonoma:  "36ad92f37d84037625154b4e286ae9d696b5f947bf7afcbee6caf6e6c64bbe84"
-    sha256 cellar: :any,                 arm64_ventura: "139238538f4448a17afef6ee6a7d0d1a039bc71e46611be2edde81f8d5612705"
-    sha256 cellar: :any,                 sonoma:        "6c2f05a39f78af233bdbb27c5536d95a58bc490ae09cbd2654a785800ecf4850"
-    sha256 cellar: :any,                 ventura:       "d8874d2b55ea61bbfa1bcf37de30f2ad17f8f28f54662b4ebe0b02f0e5b07624"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0f98dfd62e6cc92ac6118ed4d28a504bfa703642ad8afcf178388440e277c35"
+    sha256 cellar: :any,                 arm64_sequoia: "b6f3d03281b8f56165d579aa5216fc621869406507c0a0b424d33f7fb82e92e3"
+    sha256 cellar: :any,                 arm64_sonoma:  "cc949d9fc5bb97f4dc22c83171dbf324f9028de72903722dd14d632fae6a058d"
+    sha256 cellar: :any,                 arm64_ventura: "7df3b969e322e94c452251f240626e9149104ed6d7cd6fc8c942c86010a66877"
+    sha256 cellar: :any,                 sonoma:        "e6bbd72834b9b41b76c70156d61e663af9e63fe0eca082efaf88459c0c1b35b6"
+    sha256 cellar: :any,                 ventura:       "bb73b8da211684ebf2e4ca25c958e373aca840552be9c5e7d3dc68099d08a1b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "651b1ff573b378703f8dea3739f3acffcf3a6badb181fd4f0ccc535a0d47fd1e"
   end
 
   depends_on "cmake" => :build
@@ -85,6 +85,11 @@ class Posting < Formula
     sha256 "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"
   end
 
+  resource "openapi-pydantic" do
+    url "https:files.pythonhosted.orgpackages022e58d83848dd1a79cb92ed8e63f6ba901ca282c5f09d04af9423ec26c56fd7openapi_pydantic-0.5.1.tar.gz"
+    sha256 "ff6835af6bde7a459fb93eb93bb92b8749b754fc6e51b2f1590a19dc3005ee0d"
+  end
+
   resource "platformdirs" do
     url "https:files.pythonhosted.orgpackages13fc128cc9cb8f03208bdbf93d3aa862e16d376844a14f9a0ce5cf4507372de4platformdirs-4.3.6.tar.gz"
     sha256 "357fb2acbc885b0419afd3ce3ed34564c13c9b95c89360cd9563f73aa5e2b907"
@@ -136,13 +141,13 @@ class Posting < Formula
   end
 
   resource "textual" do
-    url "https:files.pythonhosted.orgpackages1aa7b0c42e9ccea22dc59b4074c848e2daf9f9d82250ae56f4bd2c918d5f3f2ctextual-2.1.1.tar.gz"
-    sha256 "c1dd54fce53c3abe87a021735efbbfd8af5313191f0729a02ecdb3083367cf62"
+    url "https:files.pythonhosted.orgpackages41624af4689dd971ed4fb3215467624016d53550bff1df9ca02e7625eec07f8btextual-2.1.2.tar.gz"
+    sha256 "aae3f9fde00c7440be00e3c3ac189e02d014f5298afdc32132f93480f9e09146"
   end
 
   resource "textual-autocomplete" do
-    url "https:files.pythonhosted.orgpackagesbdd37837e2ee1807c72e2a8a185c6e5e729dbe68161d8476055d989f3a2db348textual_autocomplete-3.0.0a13.tar.gz"
-    sha256 "db5a4ae956dd7d6dece53f7f695e97f2ab75819dd96b8a1c064ec5966b3ab113"
+    url "https:files.pythonhosted.orgpackages06708540596d2f6c00657fe346c49d8ceb09785e5333d6be969d781cf51260c6textual_autocomplete-4.0.0a0.tar.gz"
+    sha256 "c2c8e680e0ef1607dbcaac56de3b07f3c242f33d1365038284b82272cef00076"
   end
 
   # Unmaintained package and so use a fork of original
@@ -183,9 +188,9 @@ class Posting < Formula
     # https:web.archive.orgweb20230505222426https:swagger.iodocsspecificationbasic-structure
     (testpath"minimal.yaml").write <<~YAML
       ---
-      openapi: 3.0.3
+      openapi: 3.1.1
       info:
-        version: 0.0.0
+        version: "0.0.0"
         title: Sample API
       servers:
         - url: http:api.example.comv1
@@ -205,6 +210,7 @@ class Posting < Formula
                       type: array
                       items:
                         type: string
+      components: {}
     YAML
     output = shell_output("#{bin}posting import minimal.yaml")
     assert_match "Successfully imported OpenAPI spec", output

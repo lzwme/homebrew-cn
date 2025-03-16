@@ -1,8 +1,8 @@
 class GitCredentialLibsecret < Formula
   desc "Git helper for accessing credentials via libsecret"
   homepage "https:git-scm.com"
-  url "https:mirrors.edge.kernel.orgpubsoftwarescmgitgit-2.48.1.tar.xz"
-  sha256 "1c5d545f5dc1eb51e95d2c50d98fdf88b1a36ba1fa30e9ae5d5385c6024f82ad"
+  url "https:mirrors.edge.kernel.orgpubsoftwarescmgitgit-2.49.0.tar.xz"
+  sha256 "618190cf590b7e9f6c11f91f23b1d267cd98c3ab33b850416d8758f8b5a85628"
   license "GPL-2.0-or-later"
   head "https:github.comgitgit.git", branch: "master"
 
@@ -11,12 +11,12 @@ class GitCredentialLibsecret < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f7c1b13de8b0338a523e748559f73d45512a9d08055dbbdb980c5a8c5dfca09a"
-    sha256 cellar: :any,                 arm64_sonoma:  "844b82d9dc18941b7f2a572fdeff8e2f0593d366342b0134dadfb0df37bb6bef"
-    sha256 cellar: :any,                 arm64_ventura: "444d4e43204c2946294ba59e96da8823707739757213fed36c725783adc7d458"
-    sha256 cellar: :any,                 sonoma:        "4297e87be8d6d5ac187f0dfce3d963c51ab77e882d743d69b72b93284ad2c33a"
-    sha256 cellar: :any,                 ventura:       "4677fce731872ffe0aa7780e382fe9146a3eb83e76f7638a9515aff79944fd2c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "249d1fc0520de693f2895dbbcce5884d63ab6eb0a5dd06d44f50c56eb32895f3"
+    sha256 cellar: :any,                 arm64_sequoia: "1e223f37a57a8e577b74f364695b2d0c9cd6f7525046cef4b2bc1a1e7fb85913"
+    sha256 cellar: :any,                 arm64_sonoma:  "6fbfe94965969bfe72d9a628b66d48d4fd989c89776fae5937fa3e9413b82440"
+    sha256 cellar: :any,                 arm64_ventura: "678e488118ce50b0508050942f62278db699df722623ac0e878fd2d04d52d6bb"
+    sha256 cellar: :any,                 sonoma:        "0ea8d08fa5f2c6232f2e02e662103368212447c4c8f2befe3e4a93ec51aac83e"
+    sha256 cellar: :any,                 ventura:       "b49735c2fbb0c3dfb5866560ca1045fdd914494d2f733432db0073450f3042f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0224bb1302993382a34c111dac7415d3a32940ba18ca02e8b2329eed1a9b292a"
   end
 
   depends_on "pkgconf" => :build

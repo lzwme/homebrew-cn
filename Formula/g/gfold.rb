@@ -6,6 +6,11 @@ class Gfold < Formula
   license "Apache-2.0"
   head "https:github.comnickgeracegfold.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(^(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "7bb9ab4516cf303807d550bd93f23554e10f4f4482369d3ab1fbf7506e4a605b"
     sha256 cellar: :any,                 arm64_sonoma:  "56125c3b687ac854b0ffb3bb5b34d0e4c158395b43fa8f86151220322cecd4fb"

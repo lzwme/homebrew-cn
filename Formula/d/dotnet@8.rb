@@ -2,8 +2,8 @@ class DotnetAT8 < Formula
   desc ".NET Core"
   homepage "https:dotnet.microsoft.com"
   # Source-build tag announced at https:github.comdotnetsource-builddiscussions
-  url "https:github.comdotnetdotnetarchiverefstagsv8.0.13.tar.gz"
-  sha256 "0a94878182682c7945712c2dbaeacdf9aeac2996c6b0f49921913e0b47fdb8cd"
+  url "https:github.comdotnetdotnetarchiverefstagsv8.0.14.tar.gz"
+  sha256 "a7b2f955a92f278feaf366bb0484e91b8248650f7e11bb079ff3616f34dc9787"
   license "MIT"
 
   livecheck do
@@ -12,11 +12,11 @@ class DotnetAT8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a9f0f1f8711ff76deb10496c24bd2daf843aab668b57898fc9304aac0431c384"
-    sha256 cellar: :any,                 arm64_sonoma:  "e7957558faea782a21b19e7234cc2a43205338d66cb3883ff969f9f221584c86"
-    sha256 cellar: :any,                 arm64_ventura: "95a8231577db9ce5d892bd0faa007ad1d5323e21796e77e0ddc165d86190850c"
-    sha256 cellar: :any,                 ventura:       "bb04d278df05e3bbc022c415cd0705ba88484c7316381d33d09c7492274cff53"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75db5f0b5c406f90f0b65551d5f389e96efc3e35a3aecbeade45e23ceaf7a3b8"
+    sha256 cellar: :any,                 arm64_sequoia: "2557c5ee9bd33430354768dd87732feb5b2fc34d7285d94c62d85344afa0e25c"
+    sha256 cellar: :any,                 arm64_sonoma:  "5306ef47e7a5ecaca02c0deffddd197fa437df5ada5a0ce5a5f72d041b1afb41"
+    sha256 cellar: :any,                 arm64_ventura: "cd69966c6b185241aaada6e6298f38be3c4609ebf4d2ea14d61328ec124c3b93"
+    sha256 cellar: :any,                 ventura:       "74ac6910f1d57c321c3780f87e1c93c5a242860ccd6034394ae2b361184f76bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ff5e73f23ebe73461d8c18ef82b7477a60eaf10ad61a35d0ec2caae682ca866"
   end
 
   keg_only :versioned_formula
@@ -43,19 +43,12 @@ class DotnetAT8 < Formula
   end
 
   resource "release.json" do
-    url "https:github.comdotnetdotnetreleasesdownloadv8.0.13release.json"
-    sha256 "f3645df35c207c72171243389cebe50df6c6bae2d448971f5dfa00d06089365b"
+    url "https:github.comdotnetdotnetreleasesdownloadv8.0.14release.json"
+    sha256 "9a99b5f5fc0861e597b6cba7b5b080890f593cba296af909cd02ea9fe12886b9"
 
     livecheck do
       formula :parent
     end
-  end
-
-  # Backport fix to build with Xcode 16
-  patch do
-    url "https:github.comdotnetruntimecommit562efd6824762dd0c1826cc99e006ad34a7e9e85.patch?full_index=1"
-    sha256 "435002246227064be19db8065b945e94565b59362e75a72ee6d6322a25baa832"
-    directory "srcruntime"
   end
 
   def install

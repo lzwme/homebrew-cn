@@ -4,18 +4,17 @@ class Px < Formula
   desc "Ps and top for human beings (px  ptop)"
   homepage "https:github.comwallespx"
   url "https:github.comwallespx.git",
-      tag:      "3.6.5",
-      revision: "837bd0e16a0abfd4a315f7d240d6227a6b861e07"
+      tag:      "3.6.7",
+      revision: "fd13adf8defba0418efdb0dbdb7ce9df4be3d92a"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4350398d48afc4a81e5ab15545d9203c0213e5cbf7a78c2f5a9ebc5c37695c7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4350398d48afc4a81e5ab15545d9203c0213e5cbf7a78c2f5a9ebc5c37695c7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f4350398d48afc4a81e5ab15545d9203c0213e5cbf7a78c2f5a9ebc5c37695c7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b792aaadadd03222ca09221ce9b5769ed0e1cf941455c2ec2cde90f11399ce27"
-    sha256 cellar: :any_skip_relocation, ventura:       "b792aaadadd03222ca09221ce9b5769ed0e1cf941455c2ec2cde90f11399ce27"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4350398d48afc4a81e5ab15545d9203c0213e5cbf7a78c2f5a9ebc5c37695c7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4396edcf0b1021d6451d14e87c6eebac51b2603d344422afe05d047b24033ed9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4396edcf0b1021d6451d14e87c6eebac51b2603d344422afe05d047b24033ed9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4396edcf0b1021d6451d14e87c6eebac51b2603d344422afe05d047b24033ed9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "045b254c4f66c7f5618b943ceff0bf8ea9a3e27046354034e16a826c9d738b03"
+    sha256 cellar: :any_skip_relocation, ventura:       "045b254c4f66c7f5618b943ceff0bf8ea9a3e27046354034e16a826c9d738b03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4396edcf0b1021d6451d14e87c6eebac51b2603d344422afe05d047b24033ed9"
   end
 
   depends_on "python@3.13"
@@ -26,6 +25,8 @@ class Px < Formula
   conflicts_with "pixie", because: "both install `px` binaries"
 
   def install
+    system "python3", "devbinupdate_version_py.py"
+
     virtualenv_install_with_resources
 
     man1.install Dir["doc*.1"]

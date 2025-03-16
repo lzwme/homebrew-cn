@@ -14,7 +14,7 @@ class Aicommit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "848a5368d7881eb41335e58e54eb995252a4339ef65802360df8abcd05928b6b"
   end
 
-  depends_on "go"
+  depends_on "go" => :build
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=v#{version}"), ".cmdaicommit"

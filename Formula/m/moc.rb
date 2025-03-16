@@ -2,7 +2,7 @@ class Moc < Formula
   desc "Terminal-based music player"
   homepage "https:moc.daper.net"
   license "GPL-2.0-or-later"
-  revision 9
+  revision 10
 
   stable do
     url "https:ftp.daper.netpubsoftmocstablemoc-2.5.2.tar.bz2"
@@ -43,12 +43,12 @@ class Moc < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "e9223da03ee6fb8b0a003965bcc1b70eb1d1078166bbc1355b1ee2740edc1767"
-    sha256 arm64_sonoma:  "bc82b57489544a590736ab42f4a1c1810cc70b9d53f5e56f180bbe2462d0ae68"
-    sha256 arm64_ventura: "d5f03722679fc2b038e2f0709f47ff9281cad1b2757bd63cbd0285e3637678fc"
-    sha256 sonoma:        "73e8219df52bfdcd621661fa01cb631c7036e61bc700ec162a1876f5bf5d24b0"
-    sha256 ventura:       "3313aab434fb9bde3549f270b69f44ab5afe310e3414f7fec7fadde822001e2d"
-    sha256 x86_64_linux:  "8111723e66986c9ad5af3c8ce31210ad50755b7f7aa31d5d31636a6bb8eaddd7"
+    sha256 arm64_sequoia: "0c9fa6831440aa41b25064c9f2d93e9827f0d4f1ea0f2e1184def14041366d1b"
+    sha256 arm64_sonoma:  "f9698a87a21e1695cfc81523056a86d2a08b3ecb013b978c46b0584a2cff566e"
+    sha256 arm64_ventura: "5494731a8b584382705cf06e159d10c42fd869150ab605cf4a096b2112e61d65"
+    sha256 sonoma:        "4c15f75d82b37a05b79efddabd6e670076d94570d4e25a0e72a17cf72ed82d1c"
+    sha256 ventura:       "f8def0f81c78bf06d1add5d086418a0522cd207cdb3ee177d5aad5b2f3ef0c26"
+    sha256 x86_64_linux:  "a62b0dee94dd77f8368039d0e86b76282df94055c16cca501dcdd8ae719251f6"
   end
 
   head do
@@ -66,6 +66,7 @@ class Moc < Formula
   depends_on "ffmpeg@4" # FFmpeg 5 issue: https:moc.daper.netnode3644
   depends_on "flac"
   depends_on "jack"
+  depends_on "libmodplug"
   depends_on "libogg"
   depends_on "libsamplerate"
   depends_on "libsndfile"

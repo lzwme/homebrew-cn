@@ -1,18 +1,18 @@
 class EditorconfigChecker < Formula
   desc "Tool to verify that your files are in harmony with your .editorconfig"
   homepage "https:github.comeditorconfig-checkereditorconfig-checker"
-  url "https:github.comeditorconfig-checkereditorconfig-checkerarchiverefstagsv3.2.0.tar.gz"
-  sha256 "caa296ed32e34edd579ca239cdbbfd74d5e00f8736c56a1fca7d0350fe18492d"
+  url "https:github.comeditorconfig-checkereditorconfig-checkerarchiverefstagsv3.2.1.tar.gz"
+  sha256 "e9824828c30f22be07b85618ef72d2e68753315aaf8353a0aade1bdd0a6d7f71"
   license "MIT"
   head "https:github.comeditorconfig-checkereditorconfig-checker.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4af3b8717a3b2077ecf64e7165e0665bc403afa8ec62c0a5710bf33a45aa148"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4af3b8717a3b2077ecf64e7165e0665bc403afa8ec62c0a5710bf33a45aa148"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f4af3b8717a3b2077ecf64e7165e0665bc403afa8ec62c0a5710bf33a45aa148"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8ab433bbead68e79dbbe8f3d339f5519bc94ec5670054ac515c96215e03551eb"
-    sha256 cellar: :any_skip_relocation, ventura:       "8ab433bbead68e79dbbe8f3d339f5519bc94ec5670054ac515c96215e03551eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0062e974be954072f792cfe9bedb17f0c6124ef2aab67211c7a765ae43438b0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef4fb857d605eee3fa212a00fe4fcfd8d8c8a26cfeadddaacf95370c80fc22cd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ef4fb857d605eee3fa212a00fe4fcfd8d8c8a26cfeadddaacf95370c80fc22cd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ef4fb857d605eee3fa212a00fe4fcfd8d8c8a26cfeadddaacf95370c80fc22cd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "177d95538d868e6c0550c938f01ddf23870928a100440bc5d78ac0c07d358438"
+    sha256 cellar: :any_skip_relocation, ventura:       "177d95538d868e6c0550c938f01ddf23870928a100440bc5d78ac0c07d358438"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "debf7a2aeeee9904208b3e5b025a062b1f78ff00a5938c166e2b26d95b78cdf5"
   end
 
   depends_on "go" => :build

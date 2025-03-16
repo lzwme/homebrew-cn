@@ -20,7 +20,7 @@ class Infisical < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cdb15afc7bde0b1f0fd18e80a540615845a83670e88360e65b00a3ff9bfe7836"
   end
 
-  depends_on "go"
+  depends_on "go" => :build
 
   def install
     cd "cli" do
