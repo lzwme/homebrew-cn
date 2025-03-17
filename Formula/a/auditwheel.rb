@@ -3,12 +3,12 @@ class Auditwheel < Formula
 
   desc "Auditing and relabeling cross-distribution Linux wheels"
   homepage "https:github.compypaauditwheel"
-  url "https:files.pythonhosted.orgpackages6f004fbdf82259d8aa4c45912f46ed51a51ccb49515138ce2537f27d1686478bauditwheel-6.2.0.tar.gz"
-  sha256 "4fc9f778cd81dac56820e8cdee9842dc44b8f435f8783606dabd4964d4638b30"
+  url "https:files.pythonhosted.orgpackagese46a9582a6a14bdde843f57ef34a4a92197e80fd3a1dab64f8d3c10f96fa9fb4auditwheel-6.3.0.tar.gz"
+  sha256 "05c70a234fa14c140aa6d9076135d9550962d95849911b8d5d0419a3add09f00"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ed7e4d6d91cd9ac6d655127ccaf2619d493aedbeed65cfea6801dfb736d0144c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "7255376045ab11d4661892684a730b0074bc2e9f562b80c8d42830123a69c3aa"
   end
 
   depends_on :linux
@@ -20,8 +20,8 @@ class Auditwheel < Formula
   end
 
   resource "pyelftools" do
-    url "https:files.pythonhosted.orgpackages88560f2d69ed9a0060da009f672ddec8a71c041d098a66f6b1d80264bf6bbdc0pyelftools-0.31.tar.gz"
-    sha256 "c774416b10310156879443b81187d182d8d9ee499660380e645918b50bc88f99"
+    url "https:files.pythonhosted.orgpackagesb9ab33968940b2deb3d92f5b146bc6d4009a5f95d1d06c148ea2f9ee965071afpyelftools-0.32.tar.gz"
+    sha256 "6de90ee7b8263e740c8715a925382d4099b354f29ac48ea40d840cf7aa14ace5"
   end
 
   def install

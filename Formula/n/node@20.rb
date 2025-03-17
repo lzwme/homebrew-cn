@@ -4,6 +4,7 @@ class NodeAT20 < Formula
   url "https://registry.npmmirror.com/-/binary/node/v20.19.0/node-v20.19.0.tar.xz"
   sha256 "5ac2516fc905b6a0bc1a33e7302937eac664a820b887cc86bd48c035fba392d7"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https://registry.npmmirror.com/-/binary/node/"
@@ -11,12 +12,12 @@ class NodeAT20 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "3da10e6572976216b043db9f9d98535c8175c2f16533d93d4e1c787afe776a0d"
-    sha256 arm64_sonoma:  "cc29c7c6b2ac60782d97222a16bfe44c8cc70d122b1e640a89a95eb7f085c142"
-    sha256 arm64_ventura: "d1b42e020e567442816cfeb7c4d87cab1df739073a1c13e3c48d1e46532115e4"
-    sha256 sonoma:        "c981f2e821987c3674de51c16d7542cbd3c051325a5461aa4530be45cf7d6d88"
-    sha256 ventura:       "676a01e4e1716239b5495f9505aaeffbac0943a94f7442ace6f4df6de689d409"
-    sha256 x86_64_linux:  "eef8fc15cd8660c62dd27545e65bf47d194d061a52ef183c636fbfbb0c6d960f"
+    sha256 arm64_sequoia: "6dbede32ed7d323ceeed43a83789824ab7cdfaf9df92041a2486eb522ca6769e"
+    sha256 arm64_sonoma:  "055407d0f413c52142e700b193a4fac6b309e4e6bc90a14e6f7ee59d848d18d2"
+    sha256 arm64_ventura: "cd12c0e1b8d6bf21f683165fbaf5cf59826d9e9b153edd279e2903275bd7547c"
+    sha256 sonoma:        "a5d4e6820e57c3ffc0e18ca743d8b691e9c4767a8446fede3033bf0fe9c712f4"
+    sha256 ventura:       "27208e60a4e8c5efeb422ae6511e4a7e8136ab68e7c1d8b7122d41f386fac6b2"
+    sha256 x86_64_linux:  "839975a075d3f16bf8d6cc47e229b8a3a0bbd43146356bba927de449135dcbb8"
   end
 
   keg_only :versioned_formula
@@ -29,7 +30,7 @@ class NodeAT20 < Formula
   depends_on "python@3.13" => :build
   depends_on "brotli"
   depends_on "c-ares"
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "libnghttp2"
   depends_on "libuv"
   depends_on "openssl@3"

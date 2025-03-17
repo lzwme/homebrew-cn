@@ -4,14 +4,15 @@ class Sile < Formula
   url "https:github.comsile-typesettersilereleasesdownloadv0.15.9sile-0.15.9.tar.zst"
   sha256 "fbda59503b333d82661601db647d1a2ad67aa8b7098e1ef78c6d8216844ac567"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9bdd2cd36903daa4b456bff978de83e2053867b0c187e5b163920fac341f7f25"
-    sha256 cellar: :any,                 arm64_sonoma:  "ce23e8b0ef5eb85d0c56e51223391ddfc3dcaeb5c271f97ee407537c455535e8"
-    sha256 cellar: :any,                 arm64_ventura: "e0b404b8ed9e486e26ad6d23e612bbb1a3c1cdf2cad2eb01f0e342194fc9d8e1"
-    sha256 cellar: :any,                 sonoma:        "22e42228910cf28c6369830370ad692651d4ee1c18e94c38272aca96cc6653e1"
-    sha256 cellar: :any,                 ventura:       "575b248e7130192e728a1191be84a9f7960d110f81026c4eefa321dd38975893"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e99d6d665c1caeed954d772dee426485bbb13c5225cd2b6a97071ae8eb16f2f9"
+    sha256 cellar: :any,                 arm64_sequoia: "86e99ccc07b6ea49eb6a61e6bc5bba9975899ffd81e8ee3c649d73c85be2d457"
+    sha256 cellar: :any,                 arm64_sonoma:  "cdab701dfa371989e59a06b59664702506064f4a268fbef0bdfa0569b5d2fa89"
+    sha256 cellar: :any,                 arm64_ventura: "59556dc29d5cd7ef908968c605bf5f65a779f375c8ca1747a9fdc7a5a241003d"
+    sha256 cellar: :any,                 sonoma:        "717bd3c35f1663b7732df553489e8789085f645ab80b85791668ba4ec4c94e9f"
+    sha256 cellar: :any,                 ventura:       "138be23e31a9a6a09bde2c2e1eb596b3fbc51fe01a16cb218e9cc5a1940b9f71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "385222574158101866e47748ef6242c1a9b373c9eadfb2a8d59365f8da464723"
   end
 
   head do
@@ -29,7 +30,7 @@ class Sile < Formula
 
   depends_on "fontconfig"
   depends_on "harfbuzz"
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "libpng"
   depends_on "luajit"
   depends_on "luarocks"

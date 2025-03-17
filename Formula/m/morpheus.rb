@@ -26,7 +26,6 @@ class Morpheus < Formula
   depends_on "ninja" => :build
   depends_on "ffmpeg"
   depends_on "graphviz"
-  depends_on "libomp"
   depends_on "libtiff"
   depends_on "qt@5"
 
@@ -34,9 +33,13 @@ class Morpheus < Formula
   uses_from_macos "libxml2"
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "libomp"
+  end
+
   def install
     # has to build with Ninja until: https://gitlab.kitware.com/cmake/cmake/-/issues/25142
-    args = ["-G Ninja"]
+    args = ["-G", "Ninja"]
 
     if OS.mac?
       args << "-DMORPHEUS_RELEASE_BUNDLE=ON"
@@ -58,10 +61,8 @@ class Morpheus < Formula
   end
 
   def post_install
-    return unless OS.mac?
-
     # Sign to ensure proper execution of the app bundle
-    system "/usr/bin/codesign", "-f", "-s", "-", "#{prefix}/Morpheus.app" if Hardware::CPU.arm?
+    system "/usr/bin/codesign", "-f", "-s", "-", "#{prefix}/Morpheus.app" if OS.mac? && Hardware::CPU.arm?
   end
 
   test do

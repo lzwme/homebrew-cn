@@ -5,19 +5,18 @@ class Icloudpd < Formula
   homepage "https:github.comicloud-photos-downloadericloud_photos_downloader"
   # We use a git checkout as scriptspatch_version runs git commands to update SHA
   url "https:github.comicloud-photos-downloadericloud_photos_downloader.git",
-      tag:      "v1.27.0",
-      revision: "4e75ff7d178f45ea1146c52e789b1fd72c3f2a77"
+      tag:      "v1.27.1",
+      revision: "27ee59cc449428e2a3df986cb4dfb228b816369d"
   license "MIT"
-  revision 1
   head "https:github.comicloud-photos-downloadericloud_photos_downloader.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4da6a22120369f7ed6264547aa454f0b63f82170a4184815d99d6dfdcfbcc022"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "62b51f2f17bd5e76cc23ff3fbd8bd740e631ab0e355aa2c03df9a101e3357845"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "92f6920d0b9ba94472cdb68853203643fa5080ef62cfdf11b292b84f6fc7102c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0ecf40731883157c59e623c65a109818f8be2009fe1c7b94967c23806a142dc7"
-    sha256 cellar: :any_skip_relocation, ventura:       "8fcf9c57df1bb378af37eb86e6f21e3ac2e5ce9dd330ba699311be15483d644c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3dd62860a03e47738eab6d3543c8140edea80775bf53fb0671ae0385323c5a39"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7d4a2a6135336b3066c788a4096fd8eb7d90c8f23cf618f334daf6657c9d0e74"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a7cfd1744a11bba6e85808cfb49a4ae6057f5f53168dee0d2531d0b7e1e58b8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "43851e457063fcc81ec2497a88d9556ef72b3ed4615dcf30a803ce2b1fd9af43"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e577871b4b6244bf58eab7bcdce8ba0c80ae2f30829cbaeba2fd86d32e2250bc"
+    sha256 cellar: :any_skip_relocation, ventura:       "8450c0eb070860a1b01c72342a70bfd0104d136b0e6b9e841320f5e7bc283d27"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9337ccb41469a23872ee03d789d68e02126177b90a49c499645b9296d6e7b2f5"
   end
 
   depends_on "certifi"

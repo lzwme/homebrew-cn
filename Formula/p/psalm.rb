@@ -5,6 +5,11 @@ class Psalm < Formula
   sha256 "bb5ac9ba99d6f7562d45c01923ce59196553de68ebc830ae081e1190a68abc38"
   license "MIT"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6147b482bdd9a60eebbf2247b78bb1c32fc950bc011ede145e9d3e91d6e9f4c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c6147b482bdd9a60eebbf2247b78bb1c32fc950bc011ede145e9d3e91d6e9f4c"

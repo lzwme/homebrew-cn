@@ -1,8 +1,8 @@
 class Vsce < Formula
   desc "Tool for packaging, publishing and managing VS Code extensions"
   homepage "https:code.visualstudio.comapiworking-with-extensionspublishing-extension#vsce"
-  url "https:registry.npmjs.org@vscodevsce-vsce-3.2.2.tgz"
-  sha256 "c64c08c922ce0a093ec7ac3d0bf9951f46cdca4ea0241d66c3e0b14fca8c645a"
+  url "https:registry.npmjs.org@vscodevsce-vsce-3.3.0.tgz"
+  sha256 "62872641b49fc7ee306a0cf482a5815230d7f61f333fde2d2c1e5bc5acde8295"
   license "MIT"
   head "https:github.commicrosoftvscode-vsce.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Vsce < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "24261af6cc16b71e40e70a36bffd6ebe67fd8d720cd8cb02a95c60698bddf4e9"
-    sha256                               arm64_sonoma:  "edd2a12bf1dc9000b6fb9c743c1babfa0c8b2d8befbfb08fae6d870560384f96"
-    sha256                               arm64_ventura: "682eef5425c284bc6eb2a6d74b138a3713f83180c754ec9a9a2eae77a35b33f2"
-    sha256                               sonoma:        "64d98d7c886d1418cb68f88a337661c0b5812fb627e46593b9caf5380c77688a"
-    sha256                               ventura:       "4eb0b82505cb75f1100b484568613e4eae745517ce78e47d395b642504a0eab6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c72f49e1af7962731fcb0a8e3c7ee950d89cb4d886df290b561e4059bda06633"
+    sha256                               arm64_sequoia: "cc8e386c9ef456ea3f994750c5068b41dfeea997842199568bd09d44cb1930a3"
+    sha256                               arm64_sonoma:  "db07f5a8784826ac05f4e44edf56ac51b58173271536e15f9e52e8ee893d7c6b"
+    sha256                               arm64_ventura: "28083d90ccc596385b60b38c6b8430e69af847232a294f8bfd5dc8870002f9f7"
+    sha256                               sonoma:        "5b8838497a1ba2bdf7506493648bb72da4568dda62b1b33347a80d7f0637725f"
+    sha256                               ventura:       "66f34bda0af6336d57c0286c820c1c7c1cc8efd0becd340ebf8666cec2a4fe66"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75d8ce19d34f6380c08188a1c4858e29953b0fd3831b3044861c73cbb78c9698"
   end
 
   depends_on "node"

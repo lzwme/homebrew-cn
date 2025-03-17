@@ -4,6 +4,7 @@ class Libphonenumber < Formula
   url "https:github.comgooglelibphonenumberarchiverefstagsv9.0.1.tar.gz"
   sha256 "853f980ac2aa549e8a5bc12e0edcd7124a44ac2160d0b8611f35cbf613793fd7"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,19 +12,19 @@ class Libphonenumber < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3ea10289f9fee100c0706c97921829a35fd751bc0743eb7f57e9eff34678a49c"
-    sha256 cellar: :any,                 arm64_sonoma:  "95dee821c89ef1aa6b419f39f2ef49f8739b46f7470433c6528486dbadaa6293"
-    sha256 cellar: :any,                 arm64_ventura: "fca93d49438738a556e991f711f1c2f71870800098e2abd921049ed280cf017c"
-    sha256 cellar: :any,                 sonoma:        "da2c5476918245138cba888df162398db5ffad75e9b4c1de874adf3743dcf67f"
-    sha256 cellar: :any,                 ventura:       "1e84d9fddfd3fee928a9cc3f1da71c78e893e8a250ed44761af200200b51f836"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d14bf208b582fd278ee92af2bb579844d5e81125325ab36ca51da6a46b5d2ee"
+    sha256 cellar: :any,                 arm64_sequoia: "a2801a4d5467c469b5853bc984e4e16a31fed65984a03ca24a20ce0af610fdce"
+    sha256 cellar: :any,                 arm64_sonoma:  "b3479f804dd561b3c4afe62142aa42c762cca8ac0fc8886cf7061bfd596a0c41"
+    sha256 cellar: :any,                 arm64_ventura: "4eb0cfe2197dda2104a6f52c17233d0a1331bd30bf0c45db89ace3c7c45c669b"
+    sha256 cellar: :any,                 sonoma:        "136d70d15b6395e826f5dbf7ebb227ffb9204ec09395750b4e71c63767f7809a"
+    sha256 cellar: :any,                 ventura:       "af2cc2c37e3579551ca4cc2d6f92c2807e6ebb160bf8b3832d48ed37036f573a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23d5e67dba454d441d28a4ac8fa7b2e673356f560f393f5d2fa7fb1c562ca255"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "openjdk" => :build
   depends_on "abseil"
   depends_on "boost"
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "protobuf"
 
   def install

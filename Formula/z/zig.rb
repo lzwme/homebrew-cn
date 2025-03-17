@@ -4,6 +4,7 @@ class Zig < Formula
   url "https:ziglang.orgdownload0.14.0zig-0.14.0.tar.xz"
   sha256 "c76638c03eb204c4432ae092f6fa07c208567e110fbd4d862d131a7332584046"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https:ziglang.orgdownload"
@@ -11,12 +12,12 @@ class Zig < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a17b92f1104e62390a01a8e31e295c71dd52d79508499708b4b5b799082f245d"
-    sha256 cellar: :any,                 arm64_sonoma:  "c1f2f16abedca60a68a1bc74276637584977c6247437a9e06a0ac2a8c9192dd3"
-    sha256 cellar: :any,                 arm64_ventura: "1acb25e4cd4a8a64370fde167a782a12b45a2e1a88f75956a8eba92ca28e60f7"
-    sha256 cellar: :any,                 sonoma:        "baa5432cfb71ed4753567a363aaacbbf8abf21ce0b4d073ba8fee26b871096db"
-    sha256 cellar: :any,                 ventura:       "76cdb82a0f756ad875823349f092d16ace69b42d7f1c0a28b5b43997729d4c55"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3bec4d81efadf0922823ec4b711abc304b844941551427261d1f47080106405"
+    sha256 cellar: :any,                 arm64_sequoia: "582c6da9e4c1d916fc318c8d25ee4981941d5c1e89f2e9dac1981173337390b6"
+    sha256 cellar: :any,                 arm64_sonoma:  "3ff0ad19dc0d0ed496395844745da89a89d021b7611d28b96fb5f4c208941e9f"
+    sha256 cellar: :any,                 arm64_ventura: "b7cadbfbaea540925472f28df0e119c4e26233335cb8886b755ceb1663b5e00a"
+    sha256 cellar: :any,                 sonoma:        "1b9125a527782269930c27e0d67a62c3c36656e01906725f080ac972f6bbf3a7"
+    sha256 cellar: :any,                 ventura:       "537e3e061b77ad9ca512aa866b9aae06fee5d1e2faa85128cf903aa3d18dc9ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a71266139b1fe7f17638b0ad92b36a424295db899797bcef6fd9a6e64d68d6bc"
   end
 
   depends_on "cmake" => :build
@@ -32,6 +33,10 @@ class Zig < Formula
 
   # https:github.comHomebrewhomebrew-coreissues209483
   skip_clean "libziglibcdarwinlibSystem.tbd"
+
+  # Fix linkage with libc++.
+  # https:github.comziglangzigpull23264
+  patch :DATA
 
   def install
     llvm = deps.find { |dep| dep.name.match?(^llvm(@\d+)?$) }
@@ -106,3 +111,38 @@ class Zig < Formula
     assert_equal "Hello, world!", shell_output(".hello")
   end
 end
+
+__END__
+From 8f9216e7d10970c21fcda9e8fe6af91a7e0f7db9 Mon Sep 17 00:00:00 2001
+From: Michael Dusan <michael.dusan@gmail.com>
+Date: Mon, 10 Mar 2025 17:32:00 -0400
+Subject: [PATCH] macos stage3: add link support for system libc++
+
+- activates when -DZIG_SHARED_LLVM=ON
+- activates when llvm_config is used and --shared-mode is shared
+- otherwise vendored libc++ is used
+
+closes #23189
+---
+ build.zig | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+diff --git abuild.zig bbuild.zig
+index 15762f0ae881..ea729f408f74 100644
+--- abuild.zig
++++ bbuild.zig
+@@ -782,7 +782,13 @@ fn addCmakeCfgOptionsToExe(
+                 mod.linkSystemLibrary("unwind", .{});
+             },
+             .ios, .macos, .watchos, .tvos, .visionos => {
+-                mod.link_libcpp = true;
++                if (static or !std.zig.system.darwin.isSdkInstalled(b.allocator)) {
++                    mod.link_libcpp = true;
++                } else {
++                    const sdk = std.zig.system.darwin.getSdk(b.allocator, b.graph.host.result) orelse return error.SdkDetectFailed;
++                    const @"libc++" = b.pathJoin(&.{ sdk, "usrliblibc++.tbd" });
++                    exe.root_module.addObjectFile(.{ .cwd_relative = @"libc++" });
++                }
+             },
+             .windows => {
+                 if (target.abi != .msvc) mod.link_libcpp = true;

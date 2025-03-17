@@ -4,7 +4,7 @@ class Pazpar2 < Formula
   url "https:ftp.indexdata.compubpazpar2pazpar2-1.14.1.tar.gz"
   sha256 "9baf590adb52cd796eccf01144eeaaf7353db1fd05ae436bdb174fe24362db53"
   license "GPL-2.0-or-later"
-  revision 7
+  revision 8
 
   livecheck do
     url "https:ftp.indexdata.compubpazpar2"
@@ -12,12 +12,12 @@ class Pazpar2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "89b1e41cd5d2e65a1de2f1fe4cbd6ac0a1e73df8fde396660f6dc50f9e50d9c1"
-    sha256 cellar: :any,                 arm64_sonoma:  "9b93075658654c4973673e33871b57bddab889d280b5998e361232398f917fa0"
-    sha256 cellar: :any,                 arm64_ventura: "2a91e720dfd0c5eb4726c811acb56458a4295f5ff7ed92c51ea9c39c94d14b34"
-    sha256 cellar: :any,                 sonoma:        "297db5e1489989de6fb86879857521caf51aaa3ffc891163c99cab33a20cf13d"
-    sha256 cellar: :any,                 ventura:       "b4edf2957701a7fb4cff9e309d0d96a703c3c09a98e572739e8ae527650acb1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b66983c640e3d06e9e07f7c337ca14506097c790dbdc3f140eb3d614da0218c"
+    sha256 cellar: :any,                 arm64_sequoia: "44eb9c8baaa3da4352d9bffbbc57a4d97023c2f26ac3c82f11791cc43b17012d"
+    sha256 cellar: :any,                 arm64_sonoma:  "2aa9e4eb2662d4e016671bd0c1dd0c23f185ff7d98d5b1ad77fe59ae5728a6a6"
+    sha256 cellar: :any,                 arm64_ventura: "f30a7a5de7036e177a68214b7f727ead6dbcc832d52389d80d01521b3c636d91"
+    sha256 cellar: :any,                 sonoma:        "2c60c0c004da43eb19a4b349a22d6f4da124acefb48238881550625bfbb9a129"
+    sha256 cellar: :any,                 ventura:       "489ed1569becf8b4dad09fb19fa0085a40dca876351f8165c404cf6c1ecaabf3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5dc29a2de7c71fb13f0defd9fc5e20d4466a9a74d1d67afb3b1710f52be869bc"
   end
 
   head do
@@ -29,7 +29,7 @@ class Pazpar2 < Formula
 
   depends_on "pkgconf" => :build
 
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "yaz"
 
   uses_from_macos "libxml2"

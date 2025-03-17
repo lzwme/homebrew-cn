@@ -1,17 +1,17 @@
 class Czkawka < Formula
   desc "Duplicate file utility"
   homepage "https:github.comqarminczkawka"
-  url "https:github.comqarminczkawkaarchiverefstags8.0.0.tar.gz"
-  sha256 "df67ca80b1307e8497afee057e139498ff5d80edc65e6c1f14b467bdf212033d"
+  url "https:github.comqarminczkawkaarchiverefstags9.0.0.tar.gz"
+  sha256 "2b2f419e1c733cad763eceb95eff28b1302e0926c247fdfd98e2f29f6f7866ee"
   license all_of: ["MIT", "CC-BY-4.0"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4251216db038715034c03c6c7771256c5d09c4d02fe3bbb89a1c676c319628b9"
-    sha256 cellar: :any,                 arm64_sonoma:  "7d0ccb7fdcf7ddc1dc4ebfe4a831009063b1405868f58b885b573d636b326ef1"
-    sha256 cellar: :any,                 arm64_ventura: "3bb60036c0938c900b5e5f1b3e05515645ffeacf1c5dbe2d73526ffbe4522604"
-    sha256 cellar: :any,                 sonoma:        "f435560c9131d7857c778d5825445ad1c57cda37d914015ee1cb20f01a1cf00e"
-    sha256 cellar: :any,                 ventura:       "8c92f1b6344fea9416061d451a9017fdf7bd0e9fb5c3d384a5ae4742f23e7cb1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a014f1f3b9dd05b8a3b91738400b106e78458301a2315ab140e3be34357aa172"
+    sha256 cellar: :any,                 arm64_sequoia: "c28c1d127ad049a7ea6ca83b912d198125fd1ff907a6f695512a23698692c235"
+    sha256 cellar: :any,                 arm64_sonoma:  "af4ae38ba517763f591b5f2ab52b0b3fead5627d2ee80bda8db3db596e2760c4"
+    sha256 cellar: :any,                 arm64_ventura: "0e0b5690c9450849adf554fdd0bfb7604160ee8030a3522f038c48d286d86afa"
+    sha256 cellar: :any,                 sonoma:        "b962385e937d55de3c73bde9ff005a445060683d1eb1fe935cf4796d729c9baa"
+    sha256 cellar: :any,                 ventura:       "4845dcbc5835c39c85987bebc64eaa14f449b6a36a8d669e8f0799bab7c22cb1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df85cb1e5414b32e3026bd639dab932af37063363e1eb9cf58a8b46d0408f8e7"
   end
 
   depends_on "rust" => :build

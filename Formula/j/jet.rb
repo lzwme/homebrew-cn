@@ -1,18 +1,18 @@
 class Jet < Formula
   desc "Type safe SQL builder with code generation and auto query result data mapping"
   homepage "https:github.comgo-jetjet"
-  url "https:github.comgo-jetjetarchiverefstagsv2.12.0.tar.gz"
-  sha256 "4003b5c8188937031bd0a89e8442b5afb9c687e8b488d31eccbaa2895c42b4e9"
+  url "https:github.comgo-jetjetarchiverefstagsv2.13.0.tar.gz"
+  sha256 "c894001609443aa970cf19744e1cfe968eddc9bdb42b5fa29944842a5309c02b"
   license "Apache-2.0"
   head "https:github.comgo-jetjet.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3c010d2b36641394ac115bb7fc445e9e5e291128900d0a78ed443c820ea2a41f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f45fc3dbb06636d172e43877f9aa3ad5a540d759259340f81b46b1fce44acb5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "291b20bb8a1ad9fbfb041a62970c1e28d44d7c5c0015d9bcf719ca6b8f9b9558"
-    sha256 cellar: :any_skip_relocation, sonoma:        "506860133d5ea4bc6d3c83f119a3ff666381326185ec29317e218fb74f81a49d"
-    sha256 cellar: :any_skip_relocation, ventura:       "54bd30e44b46376d305b9c6de7350ba5eb33282c767413ddd625be5323d86be0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59978daf20497c7dda0ec7dde02caba7958a832bd0c90a30f8258d8d278b88a8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6bc8620eb569a95d635d373a9e4aba5a5701cb3e65f01be861c487113e8320c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b6470f69cfe07e82ff68c810ae85a2f38cac94879cedd617ebefdc3609a875e9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6a3b7a7b6d1e9ab19982340dc4b6057f055168dd0f5366ffa6acdd3a6fafd2ec"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6a605164b15e304d64a64330e9efe19f8310a83e1820bceebf011de1a0a7eccb"
+    sha256 cellar: :any_skip_relocation, ventura:       "a2f0f05fe960b81a9a9c94045714607f094f3b212a8455fa7c707075c62906c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "047e7b158e3854c321f6df0e440a8fc3173ecf583293d716c131c22ecc5e03d7"
   end
 
   depends_on "go" => :build

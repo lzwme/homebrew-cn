@@ -1,8 +1,8 @@
 class Flint < Formula
   desc "C library for number theory"
   homepage "https:flintlib.org"
-  url "https:github.comflintlibflintreleasesdownloadv3.2.0flint-3.2.0.tar.gz"
-  sha256 "6d182c4a05d3d6bfc611565d6331d02f94066a3be32df36ed880264afa9c30f4"
+  url "https:github.comflintlibflintreleasesdownloadv3.2.1flint-3.2.1.tar.gz"
+  sha256 "ca7be46d77972277eb6fe0c4f767548432f56bb534aa17d6dba2d7cce15cd23f"
   license "LGPL-3.0-or-later"
 
   livecheck do
@@ -12,12 +12,12 @@ class Flint < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "839b5058a9e91b957e71680c87328b80fbcf2d8726cb7e23ed6d23e2e2634d74"
-    sha256 cellar: :any,                 arm64_sonoma:  "bf006ac05be415eda95ee2ebc60518b65363dc19d86346b31e0f5fbdc499813d"
-    sha256 cellar: :any,                 arm64_ventura: "0aa084847f6995bb50ceed260d102c2b815052a1fd41e9766502db6d930aeb13"
-    sha256 cellar: :any,                 sonoma:        "e686d711a77241640d911df9b58d0207bc4d689e214128e7d2a735dd86a3d23a"
-    sha256 cellar: :any,                 ventura:       "55d70f7cda2ad6e4017756afdddc487b0921cfebd10bf2959954021bbb3f90f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ecc4006406b1224cbe329b56c931cf881e6416bd19475bf09a7d109fcdf03d2d"
+    sha256 cellar: :any,                 arm64_sequoia: "5d715de5272e80063dd98da69a86bc4cdd0d6d69bc42361a81be32171dfb77f9"
+    sha256 cellar: :any,                 arm64_sonoma:  "662879fcfbb601e3f2be9a13d517ca9ef438569c2b0af828f9c97b9ef814f8f0"
+    sha256 cellar: :any,                 arm64_ventura: "6ca5ea66e8b50398757e7444d621c19e26e1c5e747f716e9b6c10390471068d8"
+    sha256 cellar: :any,                 sonoma:        "84876c70546dd71f2cc77640bcae5fc6cbe028bea892fbd1daa7ac6eaa32de24"
+    sha256 cellar: :any,                 ventura:       "0f36a9fb023bee735056ccaf445a54e42f506fc70241e8116d0986909924dc4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "43caf9afd90b88354f9e1f8a2fdee0053e30abc350f2072a03f8e5205c5fae2c"
   end
 
   head do

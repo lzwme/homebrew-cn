@@ -4,6 +4,7 @@ class PerconaServer < Formula
   url "https:downloads.percona.comdownloadsPercona-Server-8.4Percona-Server-8.4.3-3sourcetarballpercona-server-8.4.3-3.tar.gz"
   sha256 "dfb5b46fccd8284ad3a09054f9a62d0a6423a2b703b6fb86d186cec09cee660a"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url "https:www.percona.comproducts-api.php", post_form: {
@@ -20,19 +21,19 @@ class PerconaServer < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "178d82b3db05a5a7b18d56b3543ca414f8cd39ef81686d3f0b5a22ac6dfa6a7c"
-    sha256 arm64_sonoma:  "102326c938c21077c25a4ccb0e5a86498383d7df20c6ead4511074db8d1ab3a3"
-    sha256 arm64_ventura: "23ca1f5ec39d9c376940923114c2507dfd9d21a294d813f8166944662706902d"
-    sha256 sonoma:        "83f27ea31aec5bfa2135b5cbe052aab9980e0d5aa3466e5f5ecec6f9bfc2e6a4"
-    sha256 ventura:       "bbdc26a2ae63bbaa76f643f28b093db94c60317bf6fa94b961c763959253be6d"
-    sha256 x86_64_linux:  "4c36de24fb32225376a5d306a4c5ef76fe5f0cda206b88aea17552d3901fcafa"
+    sha256 arm64_sequoia: "689410674b030514d85279efeb1819f7a84d826345eccb75d613d0a095010026"
+    sha256 arm64_sonoma:  "c5e8b400e58dc34108a9fb12b74398d0138b5bd487eaf4c9c74459a3f9428b19"
+    sha256 arm64_ventura: "eba15e82ac32b828941cbec8414bc811264b81e1aac0dcd036fc53f09995ce9a"
+    sha256 sonoma:        "f75edb329502e3bdefc73d1ebc8a9af66ef364fe59f7ee074897f88281c9db1b"
+    sha256 ventura:       "ca586019a171a5a9c9f867485add80c0539c6da38272d03a8291f95757a2d068"
+    sha256 x86_64_linux:  "3466f23f0595c51c01400826c30489528151138678c430d3f9668b877edfc83e"
   end
 
   depends_on "bison" => :build
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "abseil"
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "libfido2"
   depends_on "lz4"
   depends_on "openldap" # Needs `ldap_set_urllist_proc`, not provided by LDAP.framework

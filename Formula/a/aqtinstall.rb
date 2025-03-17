@@ -3,24 +3,24 @@ class Aqtinstall < Formula
 
   desc "Another unofficial Qt installer"
   homepage "https:github.commiurahraqtinstall"
-  url "https:files.pythonhosted.orgpackagesabe865c7eb453e2ee9fe433347b1f4af3d4a09dcf1a88ff78bf94fd009462f7faqtinstall-3.2.0.tar.gz"
-  sha256 "860b2fb20556229d2142ee38d2a6c96e32eecab267fbe3b13be50b9a3a1f3cba"
+  url "https:files.pythonhosted.orgpackagesdec64e122b226120407b76b473433b24a7628853ce4c4405ed3d56d52f8e6a9eaqtinstall-3.2.1.tar.gz"
+  sha256 "80005d4f8eebd50487a87fec2de4d4f808bb72fc923026eef9e3575795f801bf"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "82f9597cabf10586c985245754d44cefde95b6164e40429490201e1c3cd6b5d8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a59ae26ba6e67eea4f8217e10321334a79a5eeb90c7c51e08a86fd6bedcd73cb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "271e56eec17151de23fac4c80cfc254fa755ce5d35136505c939932680296bde"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d22d23a4eceaffad925b0f5eb1c18fc48bf4516c5da2dbb7f054c3b70f9d5a0c"
-    sha256 cellar: :any_skip_relocation, ventura:       "30a32db7a9a714e03fed45fea75e69639162734eb816d5538c741fe90a18887b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a47ce5dd04e96e80d699c9041e6285ebeedf32d80eade48fece3b5a333e35fc2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6bae085ca061fadbcbf0d15c6e1fc5a36776dd51e62161bd89e0a2b05e786b2e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18587357a412fa3e04beb885a50eda950ff5346e682ac082612548a35b7a5ca9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "602f0515af58cced1f36ac5e133172e40f7c8a19df70dd544cf5c224f607410d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "25dbc8e783e9558de958fca4a5b88ed4d00be16633762117ab966d5c78a9918d"
+    sha256 cellar: :any_skip_relocation, ventura:       "d404a32e21f3a5e5bdc86f316afc0577e21605db9fa4af30a6d26dc28ccf4e21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ebd32bd548797fff9f1d3d66d72941a6bf61fead384f965fded846449fd490f"
   end
 
   depends_on "python@3.13"
 
   resource "beautifulsoup4" do
-    url "https:files.pythonhosted.orgpackages52f4c64f8d746f61edb305afc057c58895d0ded4b01532472aff6a5e15ba4655beautifulsoup4-4.13.2.tar.gz"
-    sha256 "da9184389e6848818cf31c970ba3cbe6f33c2b8fbabd70d5bd4a2bfa0c1c4272"
+    url "https:files.pythonhosted.orgpackagesf03cadaf39ce1fb4afdd21b611e3d530b183bb7759c9b673d60db0e347fd4439beautifulsoup4-4.13.3.tar.gz"
+    sha256 "1bd32405dacc920b42b83ba01644747ed77456a65760e285fbc47633ceddaf8b"
   end
 
   resource "brotli" do
@@ -49,8 +49,8 @@ class Aqtinstall < Formula
   end
 
   resource "humanize" do
-    url "https:files.pythonhosted.orgpackages6a4064a912b9330786df25e58127194d4a5a7441f818b400b155e748a270f924humanize-4.11.0.tar.gz"
-    sha256 "e66f36020a2d5a974c504bd2555cf770621dbdbb6d82f94a6857c0b1ea2608be"
+    url "https:files.pythonhosted.orgpackages5b8c4f2f0784d08a383b5de3d3b1d65a6f204cc5dc487621c91c550388d756afhumanize-4.12.1.tar.gz"
+    sha256 "1338ba97415c96556758a6e2f65977ed406dddf4620d4c6db9bbdfd07f0f1232"
   end
 
   resource "idna" do
@@ -74,8 +74,8 @@ class Aqtinstall < Formula
   end
 
   resource "psutil" do
-    url "https:files.pythonhosted.orgpackages1f5a07871137bb752428aa4b659f910b399ba6f291156bdea939be3e96cae7cbpsutil-6.1.1.tar.gz"
-    sha256 "cf8496728c18f2d0b45198f06895be52f36611711746b7f30c464b422b50e2f5"
+    url "https:files.pythonhosted.orgpackages2a80336820c1ad9286a4ded7e845b2eccfcb27851ab8ac6abece774a6ff4d3depsutil-7.0.0.tar.gz"
+    sha256 "7be9c3eba38beccb6495ea33afd982a44074b78f28c434a1f51cc07fd315c456"
   end
 
   resource "py7zr" do
@@ -89,8 +89,8 @@ class Aqtinstall < Formula
   end
 
   resource "pycryptodomex" do
-    url "https:files.pythonhosted.orgpackages11dce66551683ade663b5f07d7b3bc46434bf703491dbd22ee12d1f979ca828fpycryptodomex-3.21.0.tar.gz"
-    sha256 "222d0bd05381dd25c32dd6065c071ebf084212ab79bab4599ba9e6a3e0009e6c"
+    url "https:files.pythonhosted.orgpackagesbad5861a7daada160fcf6b0393fb741eeb0d0910b039ad7f0cd56c39afdd4a20pycryptodomex-3.22.0.tar.gz"
+    sha256 "a1da61bacc22f93a91cbe690e3eb2022a03ab4123690ab16c46abb693a9df63d"
   end
 
   resource "pyppmd" do

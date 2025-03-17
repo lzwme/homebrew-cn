@@ -4,7 +4,7 @@ class EasyrpgPlayer < Formula
   url "https:easyrpg.orgdownloadsplayer0.8easyrpg-player-0.8.tar.xz"
   sha256 "06e6d034348d1c52993d0be6b88fc3502a6c7718e366f691401539d5a2195c79"
   license "GPL-3.0-or-later"
-  revision 6
+  revision 7
 
   livecheck do
     url "https:easyrpg.orgplayerdownloads"
@@ -12,12 +12,12 @@ class EasyrpgPlayer < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "66c7961634bf8c5e03ce836f43305bd1c0b26243b11a18bd891fc373598e4126"
-    sha256 cellar: :any,                 arm64_sonoma:  "18ca681626d5cd3567cb66c707f852c331bbdff76aa3b3d2ed8d4c20ac58333e"
-    sha256 cellar: :any,                 arm64_ventura: "10561454e76eccb05d5a54f019514737275771deba52204d71292247d961da97"
-    sha256 cellar: :any,                 sonoma:        "5334ddbe087aa9294f7b7492cd2d263d27cd20dcaa2f17a81c6f7708b350ce5e"
-    sha256 cellar: :any,                 ventura:       "8b8cfa026ce4c30fa3fb4b3b1ee9a5830a8635555f19f8dde776c35992100bbb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6a5222eaa4447b239eb868aceae4dbec632cb4aa2ad4573f99efc99c675b57d"
+    sha256 cellar: :any,                 arm64_sequoia: "a32ab95798e512a5e7aedbf1ed9427fa5b7f61c26e7b9eca46b8ec5309fa52b5"
+    sha256 cellar: :any,                 arm64_sonoma:  "a235adad11b54f8cff2742248e2feb77553091870043fbac8f86376c4396df2c"
+    sha256 cellar: :any,                 arm64_ventura: "0647aaa793ff98d38f4ab33a51739fd4a38e38b115f3a88c63e9cd750b32e653"
+    sha256 cellar: :any,                 sonoma:        "3a0abcf7abbdf8843d99e2a41d29f53b09117d26ca081a5dee9aed20dbd9a7ae"
+    sha256 cellar: :any,                 ventura:       "aa01edc79c1b3c6ac0b0ff91e292f5b0e47cbc42149419318a1204b13ea0edc4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5dd92702f1a18aded2ddebeb9bda83e8f08f46aa78bcb956205bad2315403efc"
   end
 
   depends_on "cmake" => :build
@@ -25,7 +25,7 @@ class EasyrpgPlayer < Formula
   depends_on "fmt"
   depends_on "freetype"
   depends_on "harfbuzz"
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "liblcf"
   depends_on "libpng"
   depends_on "libsndfile"

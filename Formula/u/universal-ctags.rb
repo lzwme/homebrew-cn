@@ -1,9 +1,9 @@
 class UniversalCtags < Formula
   desc "Maintained ctags implementation"
   homepage "https:ctags.io"
-  url "https:github.comuniversal-ctagsctagsarchiverefstagsp6.1.20250302.0.tar.gz"
-  version "p6.1.20250302.0"
-  sha256 "814f8273f811a3e386cbb9409a5ec6e90ebd2d0115a19589c0c23759621f4bc5"
+  url "https:github.comuniversal-ctagsctagsarchiverefstagsp6.1.20250316.0.tar.gz"
+  version "p6.1.20250316.0"
+  sha256 "d8b86961c621781be5293d8204f8efce152b71fd8e49b3e8cd882de48d74b02e"
   license "GPL-2.0-only"
   head "https:github.comuniversal-ctagsctags.git", branch: "master"
 
@@ -13,12 +13,12 @@ class UniversalCtags < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d3a3924e4bc26d740d1c29af1624569fea934f160a56190ec1a03ff9897d4d1a"
-    sha256 cellar: :any,                 arm64_sonoma:  "2aa9a0145b78fb557cd0caf69baf887208759e68896f1fc93a6f07af9a1a612b"
-    sha256 cellar: :any,                 arm64_ventura: "3e5bef6878a8fa5177dee790f3ab7c6f4e981969dc7de7359b6139c1f4bed0c1"
-    sha256 cellar: :any,                 sonoma:        "400a3a279a8b2b2446a0ff56bb4e0e12db0a14367b0660bd74f28c0d8a127b1d"
-    sha256 cellar: :any,                 ventura:       "9d33cdaebaa982e25e5314fa3226123e720f64dc6dc85b6dd638bbfd549bd942"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d70e1a4ea6f1fda7b9e282e5d161c75369409951ec7e31dbae1b5f0b0d7df9b"
+    sha256 cellar: :any,                 arm64_sequoia: "c09427cb42737ab5d6002ff01f4858564e441ca7027ca8401f40b28278400da9"
+    sha256 cellar: :any,                 arm64_sonoma:  "b9043ed04bfceeacc42c030205b70d4afbdcd70bdab2e0a50164bba10da7e4da"
+    sha256 cellar: :any,                 arm64_ventura: "36ac331a645a92a4d11c095dbf9da2614a9a3193f11e5ecda7ce44babe414a13"
+    sha256 cellar: :any,                 sonoma:        "1235f0be3b3da53145595db373e706c7bec716bfc85c300d4d2f712d60dd089a"
+    sha256 cellar: :any,                 ventura:       "ab36ea8c5223a69e64e4eaaa4f68359ffb2bdc1fa6495e41356232e79edd75d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90c5bc7cf12d8359b5bf2bfaa2e0be26d3ddc1d814afca9018e8b48158ac6520"
   end
 
   depends_on "autoconf" => :build

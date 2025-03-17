@@ -4,6 +4,7 @@ class Yaz < Formula
   url "https:ftp.indexdata.compubyazyaz-5.34.4.tar.gz"
   sha256 "c470a73f8d79cfa10971b43685f4542504d1d3bc45f2cd057870e0ffc2e12ead"
   license "BSD-3-Clause"
+  revision 1
 
   # The latest version text is currently omitted from the homepage for this
   # software, so we have to check the related directory listing page.
@@ -13,12 +14,12 @@ class Yaz < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "86d6ac8398c7d0915e4b639bf06ee83528019a073689f6f2c0d69364e17d1196"
-    sha256 cellar: :any,                 arm64_sonoma:  "eda1c906146eaaa0c6ae585914f5f25c25f99cb49b7a63b116baac27d0a8087f"
-    sha256 cellar: :any,                 arm64_ventura: "7ba4fd7ab5c69a521e19516f5545a8c8a9f40e89992fb5b627ccf62b833095bb"
-    sha256 cellar: :any,                 sonoma:        "b548846853836492f2983fc96ff6bf0bcb15b5994542440bd172792921aa1a97"
-    sha256 cellar: :any,                 ventura:       "89e3b86c66b86147606a914906923a7adb81e5f46e96ffe4a148963209c862dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78fad0e6e761be1f36227bad55aa2830df9d536fde45f8cb254029083221d2db"
+    sha256 cellar: :any,                 arm64_sequoia: "660fa5a3f3a8e2f24adedc9ac254b565cb1522d6bb7ff7753a7500aa4907702a"
+    sha256 cellar: :any,                 arm64_sonoma:  "116966d101d57e93f2061804df1d81e5e5f225b8ad3e1e110e25242e91755cee"
+    sha256 cellar: :any,                 arm64_ventura: "dad29db81f758274b742df91a4dcf55e84216c7f85e5e3228506c52dbd60f073"
+    sha256 cellar: :any,                 sonoma:        "faf4630be5ec0d91dc5425b7f945de23015520b27230d4edeff9929773bac7c4"
+    sha256 cellar: :any,                 ventura:       "4220cfb4b7ef156e7eae996530d795e9f31f8488ae1ef1b6128f5c77b4e1cc35"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa98f9b19fe40242fdb36768f4f2af63813a539d73c1b82aecebc9bda5a80282"
   end
 
   head do
@@ -35,7 +36,7 @@ class Yaz < Formula
 
   depends_on "pkgconf" => :build
   depends_on "gnutls"
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "readline" # Possible opportunistic linkage. TODO: Check if this can be removed.
 
   uses_from_macos "libxml2"

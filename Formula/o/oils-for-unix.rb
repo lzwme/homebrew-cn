@@ -1,8 +1,8 @@
 class OilsForUnix < Formula
   desc "Bash-compatible Unix shell with more consistent syntax and semantics"
   homepage "https://oils.pub/"
-  url "https://oils.pub/download/oils-for-unix-0.27.0.tar.gz"
-  sha256 "ab539162dffc1694fd5ae89c00e405cc5f7b73660159ec5b269bedea631df17d"
+  url "https://oils.pub/download/oils-for-unix-0.28.0.tar.gz"
+  sha256 "266d14b16d90d4a07fe774881eafa0ecdbbc8411cf1c75f8b6e256370b668e35"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class OilsForUnix < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "043ebeb7cea64d6d87a88bd4125720825b8c08076a4e01df1424ad2118bf505f"
-    sha256 cellar: :any,                 arm64_sonoma:  "1e202947e9f9c74d7356e7257836bd66633c98b26e2336ac8be3a8969343b6dc"
-    sha256 cellar: :any,                 arm64_ventura: "a590a7f925138f280837ca34a067f2469098e49702e378e70da319bc5091d9e6"
-    sha256 cellar: :any,                 sonoma:        "d9fd1e355a7ec5f258f2938a479c5b3c48677c7400275d7797ccd30bab7be022"
-    sha256 cellar: :any,                 ventura:       "020f459af9410aab58b31ac659263b7e3c7362e6338f29aea705569f3a499964"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9a5d5d2911ff0f206145a0318f874a984f6a14c68c6e23f1cdfa6508f29171b"
+    sha256 cellar: :any,                 arm64_sequoia: "cb1851923cebb32aff65474b7d9ba8d892799724f89930873c4a6b6fde74e583"
+    sha256 cellar: :any,                 arm64_sonoma:  "224e6e0e9dd1e7a57f1fac75cd43a0abbeff9644f8cc555a11690da8e8820c19"
+    sha256 cellar: :any,                 arm64_ventura: "0e47cd2f6dd8cabc8410e8576422508d6a85ce6bc99df61cbc7408ec0fd7d2f7"
+    sha256 cellar: :any,                 sonoma:        "37f150e38d46cde4a7c484ef51e063cc6217b8b92ccf679690a6c3282fc1356e"
+    sha256 cellar: :any,                 ventura:       "4e2e73fde180077d979483698d8ee46b46403e24f72ea31cfef3f12b611b14b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b20d2964a8ac756395f447decc0df3275dfae56ac3fd1dd8f08dc3fc7872f2f"
   end
 
   depends_on "readline"

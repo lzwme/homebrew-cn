@@ -4,6 +4,7 @@ class Node < Formula
   url "https://registry.npmmirror.com/-/binary/node/v23.10.0/node-v23.10.0.tar.xz"
   sha256 "b39e5fbd3debb8318ddea6af3e89b07dafb891421fb7ca99fbe19c99adabe5fd"
   license "MIT"
+  revision 1
   head "https://github.com/nodejs/node.git", branch: "main"
 
   livecheck do
@@ -12,19 +13,19 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "1fc894d21c8c416fb1ef9e275d1d52e1fe5346058ad99c55d71682f68990f72d"
-    sha256 arm64_sonoma:  "7f337052521b6acc5ddd4e1a6803d939fac901497f5069ba959ebdbd72929d9f"
-    sha256 arm64_ventura: "e1ddc8461d32a0db416f6dffafaaba1835293db266227cf829aac2c8333a5c0b"
-    sha256 sonoma:        "d9499ee602cd4a4ba0e812598952731aeb2fe7764a973af8df49b48074fa285a"
-    sha256 ventura:       "352d6302a56ff5774e78ee2d947e8ff749cddc37fe621b283f83902c006f8510"
-    sha256 x86_64_linux:  "5107e1555c9fd41c82688c6766e2e42695d691a8240ae2895c98c842511515fc"
+    sha256 arm64_sequoia: "bef7730ca87fb725b93d319b193d7839c4af337c59ca7996b384b4673f88031b"
+    sha256 arm64_sonoma:  "f389e3e035df6e3101ad2b1262f3cca1ea988ae4a730f0f7f05a088afa091ae6"
+    sha256 arm64_ventura: "67657af6984a81015ddcb538012097b1b52ff617f283ff21dd0c7d15b5a2caa6"
+    sha256 sonoma:        "6abb406a70df7da11f945c6467fb9013ef4ca787a8d449b5153f858a9ed1c41d"
+    sha256 ventura:       "4c89fdc0c9e5bc72dbe8edeca9135d4d915307f0480711bf0683ad471cb3adba"
+    sha256 x86_64_linux:  "4cdd55c14faa8ae39e34a313dda01f0d11b1437a8efded89720ccebecf876472"
   end
 
   depends_on "pkgconf" => :build
   depends_on "python@3.13" => :build
   depends_on "brotli"
   depends_on "c-ares"
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "libnghttp2"
   depends_on "libuv"
   depends_on "openssl@3"

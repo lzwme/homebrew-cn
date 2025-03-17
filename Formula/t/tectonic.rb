@@ -2,7 +2,7 @@ class Tectonic < Formula
   desc "Modernized, complete, self-contained TeXLaTeX engine"
   homepage "https:tectonic-typesetting.github.io"
   license "MIT"
-  revision 3
+  revision 4
   head "https:github.comtectonic-typesettingtectonic.git", branch: "master"
 
   stable do
@@ -31,12 +31,12 @@ class Tectonic < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ec1722650c30319f61d56d7d8cca8db7cc9e076ad4893606facfbd9ee69ae7b3"
-    sha256 cellar: :any,                 arm64_sonoma:  "721748a97a49ff72d7104f4ac681a9bb4dc45b03918dc8ad381ad8222ed0fc66"
-    sha256 cellar: :any,                 arm64_ventura: "60ddb06cede028376f301c6943862850df6a94dc51d019c2c0a7d8a34e1ad39f"
-    sha256 cellar: :any,                 sonoma:        "94aae850c22adffae6daa088513cd87f5c33fc51413e3548fd781990d6743e6f"
-    sha256 cellar: :any,                 ventura:       "a45fab4582fb61a2a8c09c4556c4c450c6a21bfda04fd3e8c0bd6e2a5ece07c4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf78eafd736c3ef80d839669766e9c4ceb283772facbbe8aaa236084d6eda476"
+    sha256 cellar: :any,                 arm64_sequoia: "ffc8602e1b2f1a67000d75005c1cbaae38bdd947e553c9f0b2691b808c37b485"
+    sha256 cellar: :any,                 arm64_sonoma:  "d285d2e6edecf5aa4eff882adfc33da8b77f42e5c38e830f71f4df3bfeaa51f2"
+    sha256 cellar: :any,                 arm64_ventura: "f32891c5831052e3bb42bc8fb0e16b03bd9c4d7589c352f5aaf44d75f025b23c"
+    sha256 cellar: :any,                 sonoma:        "fa701da13aceb845275ab33d2be416e8e920de049200aa24f3b59f0ece64e7df"
+    sha256 cellar: :any,                 ventura:       "56ce8b708073b61d53ad803ac2b7977023b3361db901051e314387d15f1ed766"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "729380f2cf1ff68094a032dc5c4dc21fcbfc70dba58bbf2c597b1b2d675fcbc3"
   end
 
   depends_on "pkgconf" => :build
@@ -44,7 +44,7 @@ class Tectonic < Formula
   depends_on "freetype"
   depends_on "graphite2"
   depends_on "harfbuzz"
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "libpng"
   depends_on "openssl@3"
 

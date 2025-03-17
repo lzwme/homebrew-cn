@@ -1,8 +1,8 @@
 class Srtp < Formula
   desc "Implementation of the Secure Real-time Transport Protocol"
   homepage "https:github.comciscolibsrtp"
-  url "https:github.comciscolibsrtparchiverefstagsv2.6.0.tar.gz"
-  sha256 "bf641aa654861be10570bfc137d1441283822418e9757dc71ebb69a6cf84ea6b"
+  url "https:github.comciscolibsrtparchiverefstagsv2.7.0.tar.gz"
+  sha256 "54facb1727a557c2a76b91194dcb2d0a453aaf8e2d0cbbf1e3c2848c323e28ad"
   license "BSD-3-Clause"
   head "https:github.comciscolibsrtp.git", branch: "master"
 
@@ -12,14 +12,12 @@ class Srtp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "434b6f64c212cee50599b634ff07f3c9204bdf83514793b0e77a71ae1a5988c2"
-    sha256 cellar: :any,                 arm64_sonoma:   "f4659edc90366755154d729abdc17c15cd3f0afd5db88a34e113570b123fb32f"
-    sha256 cellar: :any,                 arm64_ventura:  "c3ce5d112378cb65da6076012f3e57071e449cec1624aed7cb643c6875325114"
-    sha256 cellar: :any,                 arm64_monterey: "d5caefa466b896041eb0eeaf3da044b75d19e63361b3bee650ac7ab99dc79ae7"
-    sha256 cellar: :any,                 sonoma:         "7b016d3673afb8f2a19a6b25117562eb7749732b67830e94c389a45f2313ad60"
-    sha256 cellar: :any,                 ventura:        "6854e02c592b23a903e2005f32686c5c2fbeab8bb2b442b19837db2b9f63bb61"
-    sha256 cellar: :any,                 monterey:       "96ec600ba0b44ae3989159641862b20da7149af4d345d60d8b968918038b14eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eae0dbd9de36ab4ca28ded9160425af7fa9ab1928b5de1d94049866627b514b1"
+    sha256 cellar: :any,                 arm64_sequoia: "bfae1fd49d88223c76e1181f78b81bbe5f4cdfb02a4aec7fbeaf071e49725796"
+    sha256 cellar: :any,                 arm64_sonoma:  "473e73636853af42e2173d6fe231380473d0bf5e7ff804ba53a2fc4a7b9b20f7"
+    sha256 cellar: :any,                 arm64_ventura: "ffda680f84d2f5cb9cf8ea9d078b8386cf2f0cf223d2dfe5147bb739f8631c9f"
+    sha256 cellar: :any,                 sonoma:        "7ac6524572afcc2962a2a22562f8253d0ef1f1bc80a78488c9a4a8fe5bdc7f3d"
+    sha256 cellar: :any,                 ventura:       "57406d7cd6cada27a6c8717c32550234e716f9ae7989e28959f53204dc5a20a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0dcfb6ace5a4cec086e56117194b86fe25292173d200abe1b6530b5cb7a9fd6d"
   end
 
   depends_on "pkgconf" => :build

@@ -4,6 +4,7 @@ class NodeAT22 < Formula
   url "https://registry.npmmirror.com/-/binary/node/v22.14.0/node-v22.14.0.tar.xz"
   sha256 "c609946bf793b55c7954c26582760808d54c16185d79cb2fb88065e52de21914"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https://registry.npmmirror.com/-/binary/node/"
@@ -11,12 +12,12 @@ class NodeAT22 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "f8ee3b626072192acc1b6fe9d0d6143eeb73da08f4daae24f2d2d3cc8a7daefd"
-    sha256 arm64_sonoma:  "4968ed429bd8555ff5e047e7227c9b67ff3353e054747e9eb8551e2d2e8546a0"
-    sha256 arm64_ventura: "cf1a14ee110b74d7cbcd179d0f179b1a58ed73e35fab49ca2283520a6d1d990f"
-    sha256 sonoma:        "dbca59031a13141494c5adcd5f8b6ac73bc53ce12a07768f93be35e6168e3d48"
-    sha256 ventura:       "d127879bc17ff60a17b6db0dd6d62a17d7b36c8ffe81cfcf98ceca00f49e27f1"
-    sha256 x86_64_linux:  "e107a39c46091c59356bb97bb4927f22c58956f0a4bc20a695d9cd02ffa8fcab"
+    sha256 arm64_sequoia: "59a2fbc6d8877fad781048c8cfeca10ca973befb564611b3879e901a074cf654"
+    sha256 arm64_sonoma:  "b4f0376880d08294e3d361d1da7c2a9857b75586ee3ec29e16107420fb280c0f"
+    sha256 arm64_ventura: "b3cc3ed610a2e53fe096241a91bbd46f047584235e456f49999e60b3aba73351"
+    sha256 sonoma:        "b31280c3f58310ebf4e24acdda393b2e1d4e78a6b2e4741fb9a3165b178fba8e"
+    sha256 ventura:       "986eb123404c0939f92cdde234bd27da79e8d6da5936a1a9959bea40e1215560"
+    sha256 x86_64_linux:  "abda95a82a5626a7588898044e0de5ea6c2a3413bbad273a555d7aabb4397a10"
   end
 
   keg_only :versioned_formula
@@ -29,7 +30,7 @@ class NodeAT22 < Formula
   depends_on "python@3.13" => :build
   depends_on "brotli"
   depends_on "c-ares"
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "libnghttp2"
   depends_on "libuv"
   depends_on "openssl@3"

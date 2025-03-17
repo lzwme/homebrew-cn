@@ -3,13 +3,13 @@ class Fortls < Formula
 
   desc "Fortran language server"
   homepage "https:fortls.fortran-lang.org"
-  url "https:files.pythonhosted.orgpackages9c4df20faeaa25127087f5ca08c19a5b23b5fc1138c333a78a048274530ce8f5fortls-3.2.1.tar.gz"
-  sha256 "33d0f8eddc22778d06380c95a37d2d59baf56ca390268bf1408840ac415ab830"
+  url "https:files.pythonhosted.orgpackagesc12bdb1e5cd07fc9e74a2e4fb8f65946f8fd79ef72211001af00982a04d977d5fortls-3.2.2.tar.gz"
+  sha256 "b43b2b8cbd447ae848c63b8f008c2df96fd48c3a967b33f6ed64b3421496883b"
   license "MIT"
   head "https:github.comfortran-langfortls.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "2c1f32d947a705c480f9bfef022f1883ace204bc9a2e977920c46c72dc0c3dfc"
+    sha256 cellar: :any_skip_relocation, all: "2e980f563b225a9b162047bb788e5e4cc6c6c2a4567f3f49c94533779c7f1b8a"
   end
 
   depends_on "python@3.13"

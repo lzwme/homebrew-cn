@@ -1,8 +1,8 @@
 class Goplus < Formula
   desc "Programming language for engineering, STEM education, and data science"
   homepage "https:goplus.org"
-  url "https:github.comgoplusgoparchiverefstagsv1.3.5.tar.gz"
-  sha256 "3534daa7e530af7b96001f489c1026757590e2d8b43c483633635101ef982b8c"
+  url "https:github.comgoplusgoparchiverefstagsv1.3.6.tar.gz"
+  sha256 "17d23bbc2683bdf41093f24e3b5a1f454efe43f470b1e050a243b0dc25b3a7bb"
   license "Apache-2.0"
   head "https:github.comgoplusgop.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Goplus < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "70d4814e1abc891b2f45ae0eb181ce378f69d74b0dd9e79153c96bacf9da8f79"
-    sha256 arm64_sonoma:  "a1a6c7e825903a396d6381d8e03b7c251b5e1e94d71be019ce2b70c4b9383263"
-    sha256 arm64_ventura: "5714291116ba39ad1cc884ea7a1f1749d0acca6df6a1d9a1b99d04bd3220f035"
-    sha256 sonoma:        "5345c05ece1a1cf65e3b833e536bbb81872a5ed60ad0e08e07256512f70734bc"
-    sha256 ventura:       "641516cdc902dedaa625c7cafb04fe6a94a1396b9707171efcc0c36e8da4703f"
-    sha256 x86_64_linux:  "2d892d6bce2cc174e8efa0e77623d57eae04e45122d95b0980188cd34b5c76fb"
+    sha256 arm64_sequoia: "01cc09ea290add0c43e611a7293db540fe5b701e07e458fe743ee05ad8b5eba7"
+    sha256 arm64_sonoma:  "218f47f9152d8800f538c8eb29608e02d4bb4cbfa5882061115bc11d203754ea"
+    sha256 arm64_ventura: "fa6ea7dc93a69320c9b766d83e8545dbabbee5fd41447babba1bdf1896ab33b7"
+    sha256 sonoma:        "2c5e93d6f512327da1a6c511bb0317c2a4934507121f777bfa175df5bbdbf80f"
+    sha256 ventura:       "9006008c9c2651244df2e32e866d9bdd573d32ce5e72f1cfdfe7b23f09b47582"
+    sha256 x86_64_linux:  "a18d51d6913166891ae349596a0768c9ae09d66846bfb52785ab88488c1bd41b"
   end
 
   depends_on "go"

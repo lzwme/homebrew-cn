@@ -1,11 +1,9 @@
 class Proftpd < Formula
   desc "Highly configurable GPL-licensed FTP server software"
   homepage "http:www.proftpd.org"
-  url "https:github.comproftpdproftpdarchiverefstagsv1.3.8c.tar.gz"
-  mirror "https:fossies.orglinuxmiscproftpd-1.3.8c.tar.gz"
-  mirror "https:ftp.osuosl.orgpubblfsconglomerationproftpdproftpd-1.3.8c.tar.gz"
-  version "1.3.8c"
-  sha256 "2a48f2ca338456e750d2373bf671025ed799e04e0baa16c7bb8dbfd67d8734d2"
+  url "https:github.comproftpdproftpdarchiverefstagsv1.3.9.tar.gz"
+  mirror "https:fossies.orglinuxmiscproftpd-1.3.9.tar.gz"
+  sha256 "4a5f13b666226813b4da0ade34535d325e204ab16cf8008c7353b1b5a972f74b"
   license "GPL-2.0-or-later"
 
   # Proftpd uses an incrementing letter after the numeric version for
@@ -18,12 +16,12 @@ class Proftpd < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "1855c711b92d4a36d8397111357c35aaa8c1a59472a2c650e086d22aee015f35"
-    sha256 arm64_sonoma:  "b245d90b59026c93156b048d2321038183d835f0a0042bfcd6e5f6ccd780f1a1"
-    sha256 arm64_ventura: "f9769026c0b9cbd52e52cb35e8900cc9a2b72acd77457cc074166041dccc38fb"
-    sha256 sonoma:        "07fd7469de19bcfdd2fdf3dad73105f45f209f61f2a612aa85a6647c4682c8d5"
-    sha256 ventura:       "c0cf5bcbf240ca802a6e35fe82f16a107d84f108b329c2402dcbad33ea948a33"
-    sha256 x86_64_linux:  "80acad415435df2d07dcdf9e83ac3b4d8ef755f1d4b8e859d70e934f3f19c4f5"
+    sha256 arm64_sequoia: "ff2411cecf1ed7c49a47ab0f432baa31b5e27b9483cc8404179fe4454d0ce186"
+    sha256 arm64_sonoma:  "47c7285cac71305d24a585f231085421221949f7e41da52c4f2d807b5c63e68d"
+    sha256 arm64_ventura: "556493e923eed83521dbf6cc4cdc92f9feb3ef635e7d00b01eabd0ade523abdb"
+    sha256 sonoma:        "56b20b6b84180fff26fa7f09d6a09a5622912eeafbe47edbdab48dc17ed5d0aa"
+    sha256 ventura:       "cbaa7686fe01b1ee6e707a15cc997cf28b34b9d6ef963ec62680f06cfb322518"
+    sha256 x86_64_linux:  "3f9384ff1b02d1c0374398868a325d671d60bd9e8a47f7943dd4b7f799c83759"
   end
 
   uses_from_macos "libxcrypt"

@@ -3,18 +3,17 @@ class Nvchecker < Formula
 
   desc "New version checker for software releases"
   homepage "https:github.comlilydjwgnvchecker"
-  url "https:files.pythonhosted.orgpackagesd9e369783bbb2a81098a7c6cad793b3cf8fced05d1d874b4492e3baf85bc270envchecker-2.16.tar.gz"
-  sha256 "c17ee55fbe14a8f8b38c339cda6dafad25279b86ef3a268695533d4fbde2ac86"
+  url "https:files.pythonhosted.orgpackages09a9d1ae2b45e798593b31fcc2a9f9aa91df169c8592f03fdddbc0a2a1037f21nvchecker-2.17.tar.gz"
+  sha256 "06995aec5a5e81e8ac19796741095609916b6f5bea46dd803e0b0aedb4fa2fb6"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "686023c6a0a3dfed64bd7a6d0055504c9aba23f7167d52b9633eebadbf1984e8"
-    sha256 cellar: :any,                 arm64_sonoma:  "5414a54705945d0601f935340af272df3849366a3974b3fc55c1d7e0a88f96b0"
-    sha256 cellar: :any,                 arm64_ventura: "eb2e3cdf1413ac91aab74b95c07f29291d2f191345c6ae1b7093f0dd0c8d5dd3"
-    sha256 cellar: :any,                 sonoma:        "1715f0c344c9ed592184361ae35a3efac29e3da1a0025850e2e0250a53e9b8dc"
-    sha256 cellar: :any,                 ventura:       "7f7d3c35002dafd6b250fa2abb5ffe2e40b7716ff37497cd86ce5a592021ac24"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8320d361449b9d258ffb38bf9e6ebc70820d2ef4888ac1a7f9bbb1f719ace5a8"
+    sha256 cellar: :any,                 arm64_sequoia: "c75e3685064ce5156714f628fd0a778ac51d9f5a3df9971073eaccf9df910475"
+    sha256 cellar: :any,                 arm64_sonoma:  "0bdcef43afc810b011ba8d26bc73c6c2f5f335fd991d390313fe5161a88430c2"
+    sha256 cellar: :any,                 arm64_ventura: "b1e3b628d384309fce5cd6c696855ecbb4e98c6cc394f8464afafaa58fc408a9"
+    sha256 cellar: :any,                 sonoma:        "f3c1c657166a0e5b205bd0f77afb03742a9547f444950eb8953c79ebcbc92aa0"
+    sha256 cellar: :any,                 ventura:       "ca5c0620d36e8944cc21d3ec4ebd39a038f1d40e883b59a945b6b596a41796ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "626bf81b2fd4f36f58e9ea5d5cc2058c9bc778d2f877de91913048c4a2493bad"
   end
 
   depends_on "curl"
@@ -37,8 +36,8 @@ class Nvchecker < Formula
   end
 
   resource "structlog" do
-    url "https:files.pythonhosted.orgpackages25fe578db23e17392a8693b45a7b7dc6985370f51dd937157def8ecc7b20930dstructlog-25.1.0.tar.gz"
-    sha256 "2ef2a572e0e27f09664965d31a576afe64e46ac6084ef5cec3c2b8cd6e4e3ad3"
+    url "https:files.pythonhosted.orgpackages78b8d3670aec25747e32d54cd5258102ae0d69b9c61c79e7aa326be61a570d0dstructlog-25.2.0.tar.gz"
+    sha256 "d9f9776944207d1035b8b26072b9b140c63702fd7aa57c2f85d28ab701bd8e92"
   end
 
   resource "tornado" do

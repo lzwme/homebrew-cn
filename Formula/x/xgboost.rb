@@ -1,17 +1,17 @@
 class Xgboost < Formula
   desc "Scalable, Portable and Distributed Gradient Boosting Library"
   homepage "https:xgboost.ai"
-  url "https:github.comdmlcxgboostreleasesdownloadv2.1.4xgboost-2.1.4.tar.gz"
-  sha256 "b6ce5870d03cc1233cad5ff8460f670a2aff78625adfb578c0b9eec3b8b88406"
+  url "https:github.comdmlcxgboostreleasesdownloadv3.0.0xgboost-src-3.0.0.tar.gz"
+  sha256 "431222b47085b9c3504d77ef59cfa23ae4fe9d701085313f47217e49e8823326"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "45584408cfb5974a7a160c856b552731244033f599c6abe43757a11cf59d52cd"
-    sha256 cellar: :any,                 arm64_sonoma:  "d8fe6f0f5b263fbacec037d1759b2bbf153e349d7c3794c795420db6f1ebdd1c"
-    sha256 cellar: :any,                 arm64_ventura: "0149c8754df7b50ea90da45e83a0ec5987b20e47fc0e4520bd3ceb794071577b"
-    sha256 cellar: :any,                 sonoma:        "2e10271e89bc9acb501934f1de692333a7b97f41b68774a33230ff4d0fd6e9f2"
-    sha256 cellar: :any,                 ventura:       "2af882c2b535c533107bcb2b8115613f08c0fcb15c1d462242c75ef7200dc44a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6aff5f14417875de40f9acadd0c7bfbb142b1a503aa34de719dda5efae28df60"
+    sha256 cellar: :any,                 arm64_sequoia: "816bbf526b721b6148e1f45f0847b5f4f3dd5112380a2b8ec51e194ba4967241"
+    sha256 cellar: :any,                 arm64_sonoma:  "da1936de67d47a562398b23de44450b3478b3cbc4f61ffb143b7cb0d0294993e"
+    sha256 cellar: :any,                 arm64_ventura: "171a801dd77c6307080a660c262eab6c23ad348b2cb659ba843f33c0fb0e2d39"
+    sha256 cellar: :any,                 sonoma:        "7ce28b44718e3415d78bb6ef198241440cd25652e9e710377e493ea1fe8800f7"
+    sha256 cellar: :any,                 ventura:       "35f94a6e6164a0bb74cba08dfc5cbea5a06f34d0e9d870313fefef4fe2e92733"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce3db74dd3619467a24975aa1bb2d291124f40adbda6c0c653d35a8d42cd6c5c"
   end
 
   depends_on "cmake" => :build

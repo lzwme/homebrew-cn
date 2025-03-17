@@ -4,7 +4,7 @@ class Znc < Formula
   url "https://znc.in/releases/znc-1.9.1.tar.gz"
   sha256 "e8a7cf80e19aad510b4e282eaf61b56bc30df88ea2e0f64fadcdd303c4894f3c"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   livecheck do
     url "https://znc.in/releases/"
@@ -12,12 +12,12 @@ class Znc < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "fa46912e004aa7a922c78ebf80bcd9f631c6249d0a0623ac53ee19f6ed442cb3"
-    sha256 arm64_sonoma:  "72e7f439e9be2f133e350eb3a7863631c8c6665dde041faa3e821fccb4a3443e"
-    sha256 arm64_ventura: "4c7ba69f4759a738e23525146f3fc98c5c86711a2bc4bbc73bcef38671ec62a7"
-    sha256 sonoma:        "7c8609060264f3ecf8c0344ba17eb973deb4f6c71d0abe21f3166545d7a38cc2"
-    sha256 ventura:       "10e610e16d4fde7ada8aca30dba893c55ed54289072539373156b364ffb60d24"
-    sha256 x86_64_linux:  "5789bd364614f4e326bb8131c1873ac2077a2474df17ad2ae20917f3db627b86"
+    sha256 arm64_sequoia: "44377fa4fab824dc91a14da204da3e1b7c549f6299d180ab68aa123ca471d0cd"
+    sha256 arm64_sonoma:  "b5fadf44a225327d8b0e1b4949bf378bd4ce783884f0bffcc59518b734f21929"
+    sha256 arm64_ventura: "caa374a728a369288be5b9582538dbd7f043e57a2629eb7f83c4b39ee2922a4a"
+    sha256 sonoma:        "6a456589aaf33f7ba8528a29f66405a73350ae0ad3ed46358a7b37dfe3917971"
+    sha256 ventura:       "246b93b260aa766a2579713e92374f9148efa7576a0b1b08ec4001660bbddf9b"
+    sha256 x86_64_linux:  "112ccffa7fac288d64cf57f17a9eaf779821ec404d2c3ebe5b5f8ab15c2a84ad"
   end
 
   depends_on "cmake" => :build
@@ -25,7 +25,7 @@ class Znc < Formula
   depends_on "pkgconf" => :build
   depends_on "boost"
   depends_on "cctz"
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "openssl@3"
   depends_on "python@3.13"
 

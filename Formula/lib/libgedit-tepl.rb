@@ -4,15 +4,16 @@ class LibgeditTepl < Formula
   url "https:gitlab.gnome.orgWorldgeditlibgedit-tepl-archive6.12.0libgedit-tepl-6.12.0.tar.bz2"
   sha256 "2170a6db99803b08fe7437bd8382ed2938baf4f5838349ba90dee1308a7dc08d"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https:gitlab.gnome.orgWorldgeditlibgedit-tepl.git", branch: "main"
 
   bottle do
-    sha256 arm64_sequoia: "3bd2190b0dc85fa95f6f54efb237fae81c8f8b85c536d963c8d908921be66982"
-    sha256 arm64_sonoma:  "b274c179ab02621eaa256e26e6fcb41ccfa8eb0802ff02fbc4d28be925d7fa30"
-    sha256 arm64_ventura: "9c072da54b10399e2419a09f0a77c379ad078b99cb3bc469b4b436d82cd5140e"
-    sha256 sonoma:        "5adc56a4593f5a01a32579662820fe48d5304beae43071c72c93d33131ecfb7c"
-    sha256 ventura:       "df23620dda9571a0de98491dd967fd3e7b70a506df45037f2e9804a78c344918"
-    sha256 x86_64_linux:  "ad6912a898e0df486baf1927c24db4092293a826f951c38724435d0340ea458e"
+    sha256 arm64_sequoia: "1639136e618ccf1505430d4dd92ffc5f89df511fc05d79fb5f5f383fc703821f"
+    sha256 arm64_sonoma:  "b60450b8dd4c41ddf2673d56e61a6c265b3f0c20e55014fcc42cd24bc4e61fbd"
+    sha256 arm64_ventura: "1167ee128e824585b45df8e3389f46405ab4a609b168f9e531c0b529dc951cc5"
+    sha256 sonoma:        "9a0e5b5e46b3be3704292ad30bc36466918861c5c9fcae041296c67921e93130"
+    sha256 ventura:       "f1706c88da1a09b7e1ccb09d46ee09df38f4464b29c24d3f80b85a11c131f6b4"
+    sha256 x86_64_linux:  "ee28703044b88fce3aa6f9fc9a518de2de76da2c92bb1e0568191626303033ec"
   end
 
   depends_on "gettext" => :build
@@ -23,7 +24,7 @@ class LibgeditTepl < Formula
   depends_on "cairo"
   depends_on "glib"
   depends_on "gtk+3"
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "libgedit-amtk"
   depends_on "libgedit-gfls"
   depends_on "libgedit-gtksourceview"

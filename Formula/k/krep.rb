@@ -1,17 +1,23 @@
 class Krep < Formula
   desc "High-Performance String Search Utility"
   homepage "https:davidesantangelo.github.iokrep"
-  url "https:github.comdavidesantangelokreparchiverefstagsv0.1.6.tar.gz"
-  sha256 "5d6109fec2248b0567b699b6ca7e56f85158329041063ad368106ab4b8734cc4"
+  url "https:github.comdavidesantangelokreparchiverefstagsv0.1.7.tar.gz"
+  sha256 "a42f1d70dd1826bcfc5ffc91c9a6f52ff3e85bb47bda7b67038f549dd6c00982"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb613c2cbd2315eabfa8a1d2192aff85ccbf3736be14519d9a7452cb6699f4a4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a07aaa8acc5da2b0fb3f4ae5343ba42f48fadba474024e92ae3f1cc8dc452da4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "29ef0d3f225f3de7374a3538dbbaf7f02a33fa3a302a544a73fda74f8eedfb5f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9486b7cbafe9a735c639e95d115f4a118b3beb852b062c0137d13dd4ccc26d7d"
-    sha256 cellar: :any_skip_relocation, ventura:       "a1f64b52bb6425d2e7e551e0f063e8674f22d03732ba62f961b5eb1ab4e7a7b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "955ec84c7f26cdd84f17debbdfc0d2088cd8509e4569f623bcfc8ba052f91d80"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "344fd0cc3c14c4e8e757bc4c7b83cb5d2c568935f021faee0c2762b794829652"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "735169c73ed3610ec8dc079216086ff06464fba9db32bc3b6899e1e59992e6f4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "16b777782f2aa49e6eb4866c2cab287d8f801893f4bfdcc2c75092d676733cd5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8c327701bf9824a272194d492d705f46d528b3ea0608cf8c8a612c1b89ed830b"
+    sha256 cellar: :any_skip_relocation, ventura:       "60361e418894afcba4e48e9ddcc17104c830f9470ad21743932985311e754251"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ee3401fc0295b747eb1af5d787538af453240f369c89544f3628fbdd01e05f8"
+  end
+
+  # version patch, PR: https:github.comdavidesantangelokreppull14
+  patch do
+    url "https:github.comdavidesantangelokrepcommitd3957a2100961b29ba1259a1d2c8d4028d187e78.patch?full_index=1"
+    sha256 "fcedb45bf86c870173595eb5353ca64d03fc69ff8a074043f6e198f84e13a57a"
   end
 
   def install

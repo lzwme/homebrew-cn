@@ -25,6 +25,7 @@ class Sysprof < Formula
   depends_on "ninja" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "cairo"
+  depends_on "elfutils"
   depends_on "glib"
   depends_on "graphene"
   depends_on "gtk4"

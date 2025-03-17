@@ -4,6 +4,7 @@ class Libical < Formula
   url "https:github.comlibicallibicalreleasesdownloadv3.0.20libical-3.0.20.tar.gz"
   sha256 "e73de92f5a6ce84c1b00306446b290a2b08cdf0a80988eca0a2c9d5c3510b4c2"
   license any_of: ["LGPL-2.1-or-later", "MPL-2.0"]
+  revision 1
 
   livecheck do
     url :stable
@@ -11,18 +12,18 @@ class Libical < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "35480b405819775d6e24f123e979102e7de19ffea229979a661ff54ed12e84bc"
-    sha256 cellar: :any,                 arm64_sonoma:  "17aaa90443b2d8f8020deb16fdc9c1e9462e8a672aa25ff8035cafbf44b26417"
-    sha256 cellar: :any,                 arm64_ventura: "a24c31e2cb01569dfb136fd87a609641b6d777161d45f5b7102c84ef6be5e5f7"
-    sha256 cellar: :any,                 sonoma:        "bd8acae626a452145ba4fca7377c7debdd34936b6facfd590a39503cdcfba675"
-    sha256 cellar: :any,                 ventura:       "f14953f23eda899e6a93307ed876024abb032fef5ce485bfd6a1e6935774d830"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f68ee179a8806178f0498671136b1e7ee5d317ec0be41dbdb4255db6714f4eb3"
+    sha256 cellar: :any,                 arm64_sequoia: "f9456c87474eaba72b8161d536585beead8a8be4de54b053b8876e1e5ee8c455"
+    sha256 cellar: :any,                 arm64_sonoma:  "78b1a1c587516767bd8d12e977fac2e5df784c46b93c61a9a3b503475aa1592e"
+    sha256 cellar: :any,                 arm64_ventura: "989541e8c1084836db8846d7fee606fa7c62c1d4e2087af88cdcd0b76911862b"
+    sha256 cellar: :any,                 sonoma:        "6c42ef3607c1a8d19f558b65bc237a9f9bf8a1a224b0f9ea92e1a25baa493b58"
+    sha256 cellar: :any,                 ventura:       "15a4f6945fd75f1bef1338746aca9445c9ad57899c6ceb3a23ae63b12592a20b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e37f1ea7e90528d641fdb663673c6b29d9aac026f1ae932c4ea2c510a4152fa"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "glib"
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
 
   uses_from_macos "libxml2"
 

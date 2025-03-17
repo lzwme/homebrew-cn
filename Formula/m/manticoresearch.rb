@@ -9,6 +9,7 @@ class Manticoresearch < Formula
     { "GPL-2.0-only" => { with: "x11vnc-openssl-exception" } }, # galera
     { any_of: ["Unlicense", "MIT"] }, # uni-algo (our formula is too new)
   ]
+  revision 1
   version_scheme 1
   head "https:github.commanticoresoftwaremanticoresearch.git", branch: "master"
 
@@ -19,12 +20,12 @@ class Manticoresearch < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "8dbbccbe82cd65d385e84b558ab6847ef73cab317b2439b12fda12fc1d0bfda4"
-    sha256 arm64_sonoma:  "fc29444a70ad4254b29e5eafb1a721e466a1da62bab306ad11409baac8282a77"
-    sha256 arm64_ventura: "09d2155cea5ca7ff9e53480991b8592427eb067efefa2b8e0c9bd189c1fcb5b9"
-    sha256 sonoma:        "2367a4fcff3d32982c260c92348625f3ea6b2159e40865e8b9353a61bedced81"
-    sha256 ventura:       "464efbf92f3e980cc475a49dc4586cce1f87d7c0f3357ee086c312aeee4ec295"
-    sha256 x86_64_linux:  "cc0f951ddfe97b0fd5c51c06de8a3c14888aadb78fc6305a46080765db90fc33"
+    sha256 arm64_sequoia: "56c19826137702dbbeecf89f987ae2a707c75cf5d418ba52ad4d7762bc0b855a"
+    sha256 arm64_sonoma:  "c43d97d7afb287c0f4600cd0a0d3d5fdba5c7ffa44a4192c2f29910e268879bb"
+    sha256 arm64_ventura: "229035329a3b01f25026ccc761894b4da5f33acfc581a7bb18a30c29200cda5a"
+    sha256 sonoma:        "5900027fb06a504770a336736f5542608d6567980683bb1509fff1d628505551"
+    sha256 ventura:       "c52d2a1d121db1e48ad3c3d3dc4947852b9953a27fc67c286374ace0162288c0"
+    sha256 x86_64_linux:  "8c709ccb795665629b6e3929f793b4320c9c7da2d168c516ae3603303b50db78"
   end
 
   depends_on "cmake" => :build
@@ -34,7 +35,7 @@ class Manticoresearch < Formula
   # NOTE: `libpq`, `mariadb-connector-c`, `unixodbc` and `zstd` are dynamically loaded rather than linked
   depends_on "boost"
   depends_on "cctz"
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "libpq"
   depends_on "mariadb-connector-c"
   depends_on "openssl@3"

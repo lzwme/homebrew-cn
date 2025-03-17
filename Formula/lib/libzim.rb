@@ -4,22 +4,22 @@ class Libzim < Formula
   url "https:github.comopenzimlibzimarchiverefstags9.2.3.tar.gz"
   sha256 "7c6e7fcaf5bc82447edb12c6c573779af6d77b3b79227da57586e81c4e13f1bf"
   license "GPL-2.0-or-later"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "00a0a3a9e17a6cf09d3de5ff755527249bff3d816f99a5adb1d6afa47968fba9"
-    sha256 cellar: :any, arm64_sonoma:  "2c0d7acbee282b749a9c760c88f6fb8e7af12d7dba0e3f6311aa555b3f248514"
-    sha256 cellar: :any, arm64_ventura: "b4a7c832065ec969960e9fcbdfc1e6a88d11c880a1d16aba435fd8312633b8de"
-    sha256 cellar: :any, sonoma:        "e01388b83bd200d3ff68a46874b22b1ae97498e4b3d5f9c5329e6673be6cd48c"
-    sha256 cellar: :any, ventura:       "08a2d63cabf9559ddd61a62fced46ce4ea8e1c9efbdda6f6c28f08f9487b6bda"
-    sha256               x86_64_linux:  "a3ffacd30b339af12c349bdc37c1891446c03790e817ffc9aaff6a5175e39fb4"
+    sha256 cellar: :any, arm64_sequoia: "0f7b5ed88d189f946020179039adfe64ba74df4a6c6fd9e16c7fc37d2353da44"
+    sha256 cellar: :any, arm64_sonoma:  "d9c654e92d111e38f9ae04f4eb6735b064873a7b34c8f3df06dd813740a3f46b"
+    sha256 cellar: :any, arm64_ventura: "1826eb83d9904bd839fd9459f8bf0effb234e25d3724b14f06ab9d065a284a70"
+    sha256 cellar: :any, sonoma:        "5701596ba77fb25c9b4990ac647592844d0a53bbf6213dd4c5afedbf2921eba5"
+    sha256 cellar: :any, ventura:       "44801a35ab9a4ad761fe566e565cb2d41d3faf1e2a132b977a46902686570150"
+    sha256               x86_64_linux:  "92e210cb78cc081b61445f86c3311afbc469ab8edf2eb2a04c6f3f96ba8dbc5a"
   end
 
   depends_on "meson" => :build
   depends_on "ninja" => :build
   depends_on "pkgconf" => :build
 
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "xapian"
   depends_on "xz"
   depends_on "zstd"

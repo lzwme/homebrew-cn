@@ -1,8 +1,8 @@
 class Qrcp < Formula
   desc "Transfer files to and from your computer by scanning a QR code"
   homepage "https:qrcp.sh"
-  url "https:github.comclaudiodangelisqrcparchiverefstagsv0.11.4.tar.gz"
-  sha256 "d8f860a22fd0a1a450b6f5c449cf4c10a47f1c70ae0196898f866bb7618ec6c7"
+  url "https:github.comclaudiodangelisqrcparchiverefstagsv0.11.6.tar.gz"
+  sha256 "a3eff505f366713fcb7694e0e292ff2da05e270f9539b6a8561c4cf267ec23c8"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Qrcp < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c60d772f6858493e7cf3b1f32e29fa634dece4a22624df5ae6d2ba93172025b0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c60d772f6858493e7cf3b1f32e29fa634dece4a22624df5ae6d2ba93172025b0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c60d772f6858493e7cf3b1f32e29fa634dece4a22624df5ae6d2ba93172025b0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "23786e9d1e6633643a2ff886208d483a2da9944bf5adcf0b23c7e01107ae5a33"
-    sha256 cellar: :any_skip_relocation, ventura:       "23786e9d1e6633643a2ff886208d483a2da9944bf5adcf0b23c7e01107ae5a33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f9e828594359fe1fe0ba1ef8ac8390c0969190dbbc622afe2960dbc26f66fbd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30cabeb3467581c02c9d1a4927d837fc5ac96b8dea21e9f1b92ce2ee14addecd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30cabeb3467581c02c9d1a4927d837fc5ac96b8dea21e9f1b92ce2ee14addecd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "30cabeb3467581c02c9d1a4927d837fc5ac96b8dea21e9f1b92ce2ee14addecd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2210e68f4eeae23cf63041718cdce05fedbd072ceb434f9f1f1761667091e862"
+    sha256 cellar: :any_skip_relocation, ventura:       "2210e68f4eeae23cf63041718cdce05fedbd072ceb434f9f1f1761667091e862"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cedce7a5fa2e8b0c5277bcce76038ca2f03a9eca77673d5636676717cd41134d"
   end
 
   depends_on "go" => :build

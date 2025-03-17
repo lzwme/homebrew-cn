@@ -1,11 +1,10 @@
 class Mkvtoolnix < Formula
   desc "Matroska media files manipulation tools"
   homepage "https://mkvtoolnix.download/"
-  url "https://mkvtoolnix.download/sources/mkvtoolnix-90.0.tar.xz"
-  mirror "https://fossies.org/linux/misc/mkvtoolnix-90.0.tar.xz"
-  sha256 "35d2585454723e6a621e10ba61fbe2a7723f4d60ee67503d4d9e984d4d070ab0"
+  url "https://mkvtoolnix.download/sources/mkvtoolnix-91.0.tar.xz"
+  mirror "https://fossies.org/linux/misc/mkvtoolnix-91.0.tar.xz"
+  sha256 "451320ee90a041cf85b42dbb4683316bf288d2382c54cdd8cd33b1e0258a3bb3"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url "https://mkvtoolnix.download/sources/"
@@ -13,11 +12,11 @@ class Mkvtoolnix < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:  "49f104d9b15874f3e8912c280925a4fa58b5943ce6caf6ae76fb4453a3606e9c"
-    sha256 cellar: :any, arm64_ventura: "c6abad89614fd4634dc4b3a56975e3defc00384a8d581efe2947390ff3e65e76"
-    sha256 cellar: :any, sonoma:        "f9dd3eaf8e1e093bd69d44c8eb05b7189248bdc1e74eca068c300c11c6af717b"
-    sha256 cellar: :any, ventura:       "1ad34eb2a2d367d3d9e8735e32e3cfbc69ee2201100141a241c774a712a4e216"
-    sha256               x86_64_linux:  "dd33c9bb3a72ec232dc86faa432dc931933aee640142289d56ce1da6aaba8c46"
+    sha256 cellar: :any, arm64_sonoma:  "5f1874c61f080afbe358da31e47638f35fbc03dbcd263e9becd6c29937be50da"
+    sha256 cellar: :any, arm64_ventura: "f4471f81b819da0d9686625b02cb60548eae92acc748d2ffb326672f3579a243"
+    sha256 cellar: :any, sonoma:        "337f08cb0d4356722e613d7140020bfcbef402633cc1457ab29f3c2934562c54"
+    sha256 cellar: :any, ventura:       "0c3b61f8dbd4a1a37c5a1f91504f5671ccbe443118755eb6f25c6d48987bcab8"
+    sha256               x86_64_linux:  "0162f07a06d2789a06fdde831dc8c2c3e409515ca2ac622ec6b5addedfb388b5"
   end
 
   head do

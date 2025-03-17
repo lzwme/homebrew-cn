@@ -4,6 +4,7 @@ class PostgresqlAT14 < Formula
   url "https:ftp.postgresql.orgpubsourcev14.17postgresql-14.17.tar.bz2"
   sha256 "6ce0ccd6403bf7f0f2eddd333e2ee9ba02edfa977c66660ed9b4b1057e7630a1"
   license "PostgreSQL"
+  revision 1
 
   livecheck do
     url "https:ftp.postgresql.orgpubsource"
@@ -11,19 +12,19 @@ class PostgresqlAT14 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "269a76614f8e5b8f9e9d4a6b704e0fb13364171c7b4a509d4120c5be9f6a569f"
-    sha256 arm64_sonoma:  "642443fab21df3720e57c794a267ce04cf376f869b8e592bb145f110e96f8a46"
-    sha256 arm64_ventura: "59449cc08dc5c4c9301b3f171d4dd75f4270811c61f828cd55891638fb5abc2d"
-    sha256 sonoma:        "a34c71754db8a6f5082993f79c2c236ab2d19f3820332994919305f573f2a911"
-    sha256 ventura:       "154b2db641085017ae2c2a4025b09a270e1f9e5b8caf29d19fd1027e06629762"
-    sha256 x86_64_linux:  "116577341c60ec67d12e776b8ccafa6ba78bd8acc5eae2e44026aa45bb6933a0"
+    sha256 arm64_sequoia: "88d837ae15b1d87e93770700c1616dcaf98ada1547f5d877bd701a9ba3632dfb"
+    sha256 arm64_sonoma:  "2a70ffcb5f8d18aa61c7c5974db741fdbb6c099feff27098e575c6c8953e9186"
+    sha256 arm64_ventura: "46fe2d7204221525795de6c47429f5faf6c4afb53633918e7e407e563f186a3b"
+    sha256 sonoma:        "a44badaa8944f58f4e2637e011af7247a18f4dd056e1c6b057f97b2d23ff3ad6"
+    sha256 ventura:       "590ce4ed9f348abc6ab012dd636f59041e472afb110ee5e64e99c68f680d5029"
+    sha256 x86_64_linux:  "3debb0cd234c156ed0fd93695cdc54ee87041b8a10bd26f80502e661e27a76ed"
   end
 
   # https:www.postgresql.orgsupportversioning
   deprecate! date: "2026-11-12", because: :unsupported
 
   depends_on "pkgconf" => :build
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
 
   # GSSAPI provided by Kerberos.framework crashes when forked.
   # See https:github.comHomebrewhomebrew-coreissues47494.

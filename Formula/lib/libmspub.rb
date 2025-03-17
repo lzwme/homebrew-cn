@@ -4,7 +4,7 @@ class Libmspub < Formula
   url "https://dev-www.libreoffice.org/src/libmspub/libmspub-0.1.4.tar.xz"
   sha256 "ef36c1a1aabb2ba3b0bedaaafe717bf4480be2ba8de6f3894be5fd3702b013ba"
   license "MPL-2.0"
-  revision 17
+  revision 18
 
   livecheck do
     url "https://dev-www.libreoffice.org/src/"
@@ -12,18 +12,18 @@ class Libmspub < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "46498702c9fbd8ee646cd137afa86d3d4a1cffcab85b95a379234ab36bf02190"
-    sha256 cellar: :any,                 arm64_sonoma:  "9934e56fcb78fc1403f3223df2ed62226ce5fe9615037b76930f22e1a58d9106"
-    sha256 cellar: :any,                 arm64_ventura: "009cdc0dfadb6a728fa11315d3104655206839dc0a2dd256c45725d1c12ea69f"
-    sha256 cellar: :any,                 sonoma:        "36b77a094590874fe4cc27f3d781471c72a8d94704cf2162b24fd9caa4bd7aee"
-    sha256 cellar: :any,                 ventura:       "b8198c7e9d9ea481b6e07be4714322729f71029fae8ca3dc17ff7ede5c1f94e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e79e91b8bc1bee60c4f6a920edc0490a24f06ec6f31e6ba81fb9d192b647c8ac"
+    sha256 cellar: :any,                 arm64_sequoia: "1847309881161a713cb9c37bec7a23c452cdc44bf87c28c016f449c101b57b84"
+    sha256 cellar: :any,                 arm64_sonoma:  "249d78a5299e65bd9ef5df4ea21d70aae17f40c3f075f34e04923b3880fb0257"
+    sha256 cellar: :any,                 arm64_ventura: "fca947dbb384a02a7384989d0f5aa87e74d51460ef01e90555414d3b6b221473"
+    sha256 cellar: :any,                 sonoma:        "363ef78cf1ad4658325059fb88d5ffbd1ff9dfb755a46480d7bf355dad00a07c"
+    sha256 cellar: :any,                 ventura:       "3ff4c780cd0546ea13e77aeffa63b9b8b5e31dd6a12c1b34bcc9275239942965"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "256986816dfba4c397abe672d087ed464766aff3aaad05f80c4a99672fb155d4"
   end
 
   depends_on "boost" => :build
   depends_on "libwpg" => :build
   depends_on "pkgconf" => :build
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "librevenge"
   depends_on "libwpd"
 

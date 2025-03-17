@@ -2,18 +2,18 @@ class Gossip < Formula
   desc "Desktop client for Nostr written in Rust"
   homepage "https:github.commikedilgergossip"
   url "https:github.commikedilgergossip.git",
-      tag:      "v0.13",
-      revision: "90712385f6f79b60c01ae588464be4c960e76836"
+      tag:      "v0.14.0",
+      revision: "53ba02c672e1f2e14da1df11a0fc43fcf19d2526"
   license "MIT"
   head "https:github.commikedilgergossip.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5fdfbb83cdbeac9861dc02492374789e71f5e81a0051384e0cc9127196904887"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ccc7bfdabed68903460f725ec7ee4faca3da5abf4a33ee84a40419989e8e6e4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9823af97210635cbca983bbc1499803609b49e1f4f237c671606662d78b65d5a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8387d914d747f3e706b036cd6c909770e3929830c33997afd40edf7e410f01ff"
-    sha256 cellar: :any_skip_relocation, ventura:       "93bfdc6916c089ee492aeb1b41eff174d5d298d91e815040f53389d9bbac5249"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "266e409cb760cb7b52aa23c7bc98bde2e35cacb1fe8903d1fed42ff42facd758"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "094397fd6b7fc10ccb5abfa09aacb87bc1bf9785e5931428e1147bbac8053a5c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22707c47f4bc31392a931bf3b3eff6edd2e56dba3a038c4dbbce58e85db35843"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e16ee0487520298ce54b97437576af2fea08c177c436126734109125f74b00a6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bba898419ef93f501fef1bc643215d94f7b0fc2d335798cdb14ac222f300698d"
+    sha256 cellar: :any_skip_relocation, ventura:       "3b547d284bcaf51552faa323dc36f67a1b0e70a7ba8fe925f557794adb67f233"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96696a0e96b1d6726003ed559c0a659df7925d310dcd3af9fc2623f5b48b3ba2"
   end
 
   depends_on "rust" => :build
