@@ -19,6 +19,8 @@ class Mummer < Formula
     depends_on "gcc"
   end
 
+  conflicts_with "gd", because: "both install `annotate` binaries"
+
   fails_with :clang do
     cause <<~CAUSE
       Clang+libstdc++ seem to have issues:

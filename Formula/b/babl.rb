@@ -1,8 +1,8 @@
 class Babl < Formula
   desc "Dynamic, any-to-any, pixel format translation library"
   homepage "https:www.gegl.orgbabl"
-  url "https:download.gimp.orgpubbabl0.1babl-0.1.110.tar.xz"
-  sha256 "bf47be7540d6275389f66431ef03064df5376315e243d0bab448c6aa713f5743"
+  url "https:download.gimp.orgpubbabl0.1babl-0.1.112.tar.xz"
+  sha256 "fb696682421787c8fecc83e8aab48121dec8ee38d119b65291cfcbe315028a79"
   license "LGPL-3.0-or-later"
   # Use GitHub instead of GNOME's git. The latter is unreliable.
   head "https:github.comGNOMEbabl.git", branch: "master"
@@ -13,12 +13,12 @@ class Babl < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "147cea64ffccae5da20c8e6896db601e3c12fe1df5f6f5c2580a746af348be4e"
-    sha256                               arm64_sonoma:  "2c4f97f6ea0da560095f5d93285b47e00c37edadadffd133679662a15232a854"
-    sha256                               arm64_ventura: "6e624a1cfb00d2718c1da20e8f64a40356fa5248d5c343458b58c11c20d4e28b"
-    sha256                               sonoma:        "6cf45b37cb88356d1f68d5047fe351ebee46150ed9003b8f2fc6308e67c9a7c3"
-    sha256                               ventura:       "6b340ce32c9b0095fddf0d5ea61d9c1bdca667e3610f74110eb6491d00ab6aa6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3179d3e7472775e90a8befb85f6d611a68f0860c60e1386ea868686a89b443b2"
+    sha256 arm64_sequoia: "a58f2a505e49069e5296b46d6aa8bee3e5761b74f044a96f44e262000cba9c32"
+    sha256 arm64_sonoma:  "333e8751c49a04a3bc4e5772f352bc7c8fe743dc34dc9df2f78e4dbb4bb518d3"
+    sha256 arm64_ventura: "f14266a96e73d8adca2f443b9a2772bd9f6dc8bc36d9a8ac6dc6457a2979622b"
+    sha256 sonoma:        "3bf47b936a8167c8cc60c0e5c3fcef99a740bb6e55378d509acf43fe8798339e"
+    sha256 ventura:       "ed297904acf6419d5b230c5902a07f6571f623d28089f8f6249aea0de47cafd9"
+    sha256 x86_64_linux:  "d59490c60c6f01018183a4bab2a42a5d95a1da63cb8b467a48b40e60cfc88f31"
   end
 
   depends_on "glib" => :build # to add to PKG_CONFIG_PATH for gobject-introspection
@@ -29,6 +29,12 @@ class Babl < Formula
   depends_on "pkgconf" => :build
   depends_on "vala" => :build
   depends_on "little-cms2"
+
+  uses_from_macos "libffi" => :build # to add to PKG_CONFIG_PATH for glib
+
+  on_linux do
+    depends_on "util-linux" => :build # to add to PKG_CONFIG_PATH for glib
+  end
 
   def install
     system "meson", "setup", "build", "-Dwith-docs=false", *std_meson_args

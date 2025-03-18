@@ -48,6 +48,8 @@ class Netatalk < Formula
     depends_on "linux-pam"
   end
 
+  conflicts_with "ad", because: "both install `ad` binaries"
+
   def install
     inreplace "distribinitscriptsmacos.netatalk.in", "@sbindir@", opt_sbin
     inreplace "distribinitscriptsmacos.netatalk.plist.in", "@bindir@", opt_bin

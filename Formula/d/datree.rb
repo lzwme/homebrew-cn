@@ -23,7 +23,11 @@ class Datree < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X github.comdatreeiodatreecmd.CliVersion=#{version}"), "-tags", "main"
+    ldflags = %W[
+      -s -w
+      -X github.comdatreeiodatreecmd.CliVersion=#{version}
+    ]
+    system "go", "build", *std_go_args(ldflags:, tags: "main")
 
     generate_completions_from_executable(bin"datree", "completion")
   end

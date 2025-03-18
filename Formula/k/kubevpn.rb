@@ -1,17 +1,18 @@
 class Kubevpn < Formula
   desc "Offers a Cloud-Native Dev Environment that connects to your K8s cluster network"
-  homepage "https:www.kubevpn.cn"
+  homepage "https:www.kubevpn.dev"
   url "https:github.comkubenetworkskubevpnarchiverefstagsv2.4.1.tar.gz"
   sha256 "e734f22be1b18f379916059300a448a64ab84f8b9fea896750ef9cc3bd002315"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c756572ee994a2525534eb85b959b72b1d5747e76e1f901deb6266e06d22179"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "409d2c204f7d84be4cda23aa1b124600b4d920e3dc1fdfa061c83cfec68da3ca"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0535d9184514d7eabc5708a63840618f53ea4f8b78f80e82331aaea056cb2409"
-    sha256 cellar: :any_skip_relocation, sonoma:        "38203c2fbaf6076c7759b153647815c9b067d158d2655bf2a19c7928a4017278"
-    sha256 cellar: :any_skip_relocation, ventura:       "2bd82c5b0263c298cc54bcbb9d0d24b8efeb4dae8dd51dabca49a9aae52e2cca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3dd78154e25c48213312ecf8c19944b58117e0466643009a8a1306bfcb6f5fa8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c9f807b32245fbd8d9754cb6bb58e369851ac0c4e5d1cb0b4d958c29bb97ba1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b8a68419bf69937e88a4da864860714be16a5b870757c26741919e8dd337fc9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "49d1bea9b4c9a6e4b5aa269aac80281affb2640e93855f36fa688f7a116e7b22"
+    sha256 cellar: :any_skip_relocation, sonoma:        "45345c411c89d3545626049d31fc28bd0a1e7dec6689516553ca80bf3664471c"
+    sha256 cellar: :any_skip_relocation, ventura:       "68812a6bcc8b26e66cebc919d702347851c17d667f30414dcc2045dcfb8c180e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5165de9fc2dbaa9bcab06ef72a67bf6e14156fb5f5b857a2f37d6e7a51952a01"
   end
 
   depends_on "go" => :build
@@ -23,14 +24,14 @@ class Kubevpn < Formula
     project = "github.comwencaiwuluekubevpnv2"
     ldflags = %W[
       -s -w
-      -X #{project}pkgconfig.Image=docker.ionaisonkubevpn:v#{version}
+      -X #{project}pkgconfig.Image=ghcr.iokubenetworkskubevpn:v#{version}
       -X #{project}pkgconfig.Version=v#{version}
       -X #{project}pkgconfig.GitCommit=brew
       -X #{project}cmdkubevpncmds.BuildTime=#{time.iso8601}
       -X #{project}cmdkubevpncmds.Branch=master
       -X #{project}cmdkubevpncmds.OsArch=#{goos}#{goarch}
     ]
-    system "go", "build", *std_go_args(ldflags:), "-tags", tags, ".cmdkubevpn"
+    system "go", "build", *std_go_args(ldflags:, tags:), ".cmdkubevpn"
 
     generate_completions_from_executable(bin"kubevpn", "completion")
   end

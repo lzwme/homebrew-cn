@@ -21,7 +21,7 @@ class Ntfy < Formula
   def install
     system "make", "cli-deps-static-sites"
     ldflags = "-s -w -X main.version=#{version} -X main.date=#{time.iso8601} -X main.commit=#{tap.user}"
-    system "go", "build", *std_go_args(ldflags:), "-tags", "noserver"
+    system "go", "build", *std_go_args(ldflags:, tags: "noserver")
   end
 
   test do

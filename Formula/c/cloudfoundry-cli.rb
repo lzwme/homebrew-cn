@@ -22,6 +22,8 @@ class CloudfoundryCli < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "cf", because: "both install `cf` binaries"
+
   def install
     ldflags = %W[
       -s -w

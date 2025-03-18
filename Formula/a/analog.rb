@@ -1,29 +1,25 @@
 class Analog < Formula
   desc "Logfile analyzer"
   homepage "https:www.c-amie.co.uksoftwareanalog"
-  url "https:github.comc-amieanalog-cearchiverefstags6.0.17.tar.gz"
-  sha256 "0e5794c2eaa5826dc014916e413e90eb2714a646ff8d6ec026437182d789b117"
+  url "https:github.comc-amieanalog-cearchiverefstags6.0.18.tar.gz"
+  sha256 "6c5d3f05643196b64eadeccb7b5063e2508c0155ac34c1fe848f6d055c371933"
   license "GPL-2.0-only"
   head "https:github.comc-amieanalog-ce.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia:  "f97fdc8ec46989bcbb3d1804f04d3a7e63fce8f743dc2b2616b083ba1438907e"
-    sha256 arm64_sonoma:   "224cffe764447dfce53e8ba3c36316f43fcc45c756ad8a26d7eac8e51207714d"
-    sha256 arm64_ventura:  "b042b7f5fcfd04f54e5af93246fbb78b177cf451bffef7846d0dced79033d140"
-    sha256 arm64_monterey: "a74246c3d600b97bda4fd849c0caf64411b31e16655556af926bb5d88f44cfe8"
-    sha256 arm64_big_sur:  "beb7f7127ad0f454f40cccaa66f4077794ebd5934f05e9c840597b45334cf481"
-    sha256 sonoma:         "0ae630fe7c76b730440a4b79d99e24fe8dbbdb2fc65029359d4c6ca916b7528e"
-    sha256 ventura:        "5cb38b8b847b525e7175d5e2521cfcd1917cf3093944c14a3ee37281979fe3c6"
-    sha256 monterey:       "287cc493b5904e13b3ef413c0ef77adcab7ffa3594de77a9faea8191b3778efb"
-    sha256 big_sur:        "50fa1aeee5b2e43b579d4b0186f77e8686e9db57c8e9d7c7a0c598bba7c4693d"
-    sha256 catalina:       "e0cb5d41e7a8d9d36e056d3f32cd2c0250541b9d2b778fca7748a58d3be17778"
-    sha256 x86_64_linux:   "7ed66e29509cf19e47fc7b4b0b063aa2fdc0bd7a04ec9684cbca21f9bbdb9829"
+    sha256 arm64_sequoia: "cf6b6b5922287fd9aad880021dbc161e361b3e1a485ae29ebba5a205085c9bd1"
+    sha256 arm64_sonoma:  "566c70a3d0443d7072dd51cacc8d0717fbc0d39d34c7a5ea2283b85238e565b5"
+    sha256 arm64_ventura: "6165d65fc23d23b5abf3ee30b59ede9b9626de03259e6ce24779adb72870925e"
+    sha256 sonoma:        "67ef4efa366ab045c74c946acfee46f118d1053b90f477493476e814a4247c30"
+    sha256 ventura:       "7b02e3af7264089c6f6c9fbf9e7f5568be220104ca01bc17a640d4e4979b2dc2"
+    sha256 x86_64_linux:  "f81a6b3348847b5dbbcfad4242a43d9a98266c7cbc037a22656a610a3ffa2104"
   end
 
   depends_on "gd"
   depends_on "jpeg-turbo"
   depends_on "libpng"
-  depends_on "pcre"
+  depends_on "minizip"
+  depends_on "pcre2"
 
   uses_from_macos "bzip2"
   uses_from_macos "zlib"
@@ -33,8 +29,10 @@ class Analog < Formula
       "CC=#{ENV.cc}",
       "CFLAGS=#{ENV.cflags}",
       %Q(DEFS='-DLANGDIR="#{pkgshare}lang"' -DHAVE_GD -DHAVE_ZLIB -DHAVE_BZLIB -DHAVE_PCRE),
-      "LIBS=-lgd -lpng -ljpeg -lz -lbz2 -lpcre -lm",
+      "LIBS=-lgd -lpng -ljpeg -lz -lbz2 -lpcre2-8 -lminizip -lm",
       "OS=#{OS.mac? ? "OSX" : "UNIX"}",
+      "SUBDIRS=libgd",
+      "SUBDIROBJS=libgdgdfontf.o",
     ]
     system "make", *args
 

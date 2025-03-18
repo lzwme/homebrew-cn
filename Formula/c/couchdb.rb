@@ -1,19 +1,18 @@
 class Couchdb < Formula
   desc "Apache CouchDB database server"
   homepage "https://couchdb.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=couchdb/source/3.4.2/apache-couchdb-3.4.2.tar.gz"
-  mirror "https://archive.apache.org/dist/couchdb/source/3.4.2/apache-couchdb-3.4.2.tar.gz"
-  sha256 "d27ff2a13356000296a98ab884caf3d175927cf21727963ff90fab3a747544cf"
+  url "https://www.apache.org/dyn/closer.lua?path=couchdb/source/3.4.3/apache-couchdb-3.4.3.tar.gz"
+  mirror "https://archive.apache.org/dist/couchdb/source/3.4.3/apache-couchdb-3.4.3.tar.gz"
+  sha256 "0357511b6fed70e3e64f4e75aa5d7cc2000cb0f264ef301702b1816427f72f20"
   license "Apache-2.0"
-  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "06b02add6e120e4df95c2eb6073c83f06f528513f5af9c3fb4c0e800f345428e"
-    sha256 cellar: :any,                 arm64_sonoma:  "fad551c743492776a307e4bddfd3e1e362a640eef3d168e229781109433fb60f"
-    sha256 cellar: :any,                 arm64_ventura: "3ee4eca7d8bbd049d283e4cd158d4c2011de978a46f808b4dcbed6fbb4a7ff39"
-    sha256 cellar: :any,                 sonoma:        "fd88d185441c311938997a7ec5c93b50a1247a49868c6190b25be2e28ad61620"
-    sha256 cellar: :any,                 ventura:       "e2c31acb9b022927dd5f47e892be61fd0b5a2ab4d2b56157772cd5484b18a937"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00d08debcab99db20dfeeecd0a6a3058d38b21b23cb763441f8c79bd7cca3343"
+    sha256 cellar: :any,                 arm64_sequoia: "e523011eea3b22172feb254072a28c8ca073d18816c60c90a5b9bb5eba1d66d5"
+    sha256 cellar: :any,                 arm64_sonoma:  "7b24890f9d483d21b827da7e999d2ff0d8b72123ef19e06a7eeaeb0ebae62565"
+    sha256 cellar: :any,                 arm64_ventura: "a5fda03cc86a01e22957ac602e14e6c80f35d944f966574e246770666aab7eec"
+    sha256 cellar: :any,                 sonoma:        "b4d4bd31011ec25fe363e19b8283334d539f484657109d59e3b0d64ab384db54"
+    sha256 cellar: :any,                 ventura:       "2a3f22dc854e999240438bee07c370b7a567b0ed27361da7770ee86c485cd92a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59f05ef6aa4da41b497c2aad008acdb68ee9d8319c73951ce69cbd1f03ee17c7"
   end
 
   depends_on "autoconf" => :build

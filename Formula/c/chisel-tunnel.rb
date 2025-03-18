@@ -19,6 +19,7 @@ class ChiselTunnel < Formula
   depends_on "go" => :build
 
   conflicts_with "chisel", because: "both install `chisel` binaries"
+  conflicts_with "foundry", because: "both install `chisel` binaries"
 
   def install
     ldflags = "-s -w -X github.comjpillorachiselshare.BuildVersion=v#{version}"

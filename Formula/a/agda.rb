@@ -4,6 +4,7 @@ class Agda < Formula
   # agda2hs.cabal specifies BSD-3-Clause but it installs an MIT LICENSE file.
   # Everything else specifies MIT license and installs corresponding file.
   license all_of: ["MIT", "BSD-3-Clause"]
+  revision 1
 
   stable do
     url "https:github.comagdaagdaarchiverefstagsv2.7.0.1.tar.gz"
@@ -58,12 +59,12 @@ class Agda < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "26f559c86caad9341ce407bbd0bc27451c346b814167a87df05e62740539fcfb"
-    sha256 arm64_sonoma:  "a384bc06a0e0d478fa3313984627acbf93e6b01ea1856828aa3ee29b9c5bb649"
-    sha256 arm64_ventura: "63f087212f64b6c2a7aeac2c71c57d73bc21de6e10dca4026137e8f6b2530bf6"
-    sha256 sonoma:        "b88e608820b221fc925da7673af0b203f7c7c5b2a4ef5828dc1cf842142273f5"
-    sha256 ventura:       "d918822220ae771dd172a852969304550df86e1ddd3a698b722b1b53cc786918"
-    sha256 x86_64_linux:  "22fe1ee4a776725bf50597804430a5429d706963578acf7461fe1fb1c0cb5dfa"
+    sha256 arm64_sequoia: "490a11d0bbcbd3f24f5f93b9bb3e3ddafd5eb12f146102947f694f7beef4f265"
+    sha256 arm64_sonoma:  "82eeeadbf9509eb0aa895ae08816a0e44360be3d37446bfb7d43e9314d81e9fc"
+    sha256 arm64_ventura: "36482626ec686b45ccbdd4b3687a9712b9e6536289aa9ca837800ef7c412a94f"
+    sha256 sonoma:        "4fc274813a4bd8253be86441068fe9d9839ec63f9b0e2054353363924c93afda"
+    sha256 ventura:       "a308ed26bc07c352ddc0dcaca281fe4071394dafe727634df199dbce741b9df9"
+    sha256 x86_64_linux:  "5f40483798d6b0f2bee203693b81ff5c500c1bd8ebf93386e0fb2ca6bee803d4"
   end
 
   head do

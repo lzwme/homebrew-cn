@@ -3,24 +3,26 @@ class Forbidden < Formula
 
   desc "Bypass 4xx HTTP response status codes and more"
   homepage "https:github.comivan-sincekforbidden"
-  url "https:files.pythonhosted.orgpackages281471974166379e5e57750a6855932f7326b37091733fb42d5259918b9df97eforbidden-13.0.tar.gz"
-  sha256 "b61e7cf6ce9cce031eba22b1c562bb3c11ce34d1e44230b7f8e0ef3996f60d34"
+  url "https:files.pythonhosted.orgpackagesed80eb80e899c8ac2357aa9b001600e64177a1a68c32b466becadf1eb0a09e01forbidden-13.2.tar.gz"
+  sha256 "e560b121b1419393695505a4bf61ab82230a34bffc9b1779ca75a33ab3f62916"
   license "MIT"
   head "https:github.comivan-sincekforbidden.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d6543f959f8249d1f5fda731f4c77809c60ba2f7bb1b2fdeb4a074bbaba3e7c7"
-    sha256 cellar: :any,                 arm64_sonoma:  "84c84210c7f87864f200af806a867453ce1c62497920f4ea075f112ee0408156"
-    sha256 cellar: :any,                 arm64_ventura: "7f9156c0e8415ee35cd7182788567797077e8bde5ddfd287607c09f9b992e4ab"
-    sha256 cellar: :any,                 sonoma:        "25f2376cac3fdcca7419102f9f17b1ec010c114fc33159d7a1ab6316087092d3"
-    sha256 cellar: :any,                 ventura:       "27af14a3880f890208202e49bab4b64e12c2463e4ba144caf46a19b90fe41455"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50d6a8151053fd830385b2d09f1e0669333053c52779ad718536ffbea582b522"
+    sha256 cellar: :any,                 arm64_sequoia: "2245b94b8c99ed3559cc4adb14dd697f91470ed94a9deee99f747db03a25022e"
+    sha256 cellar: :any,                 arm64_sonoma:  "b477ba383c03cea30975ed2963b0fcd32b7a1ff7f667f1c6330560abf189857d"
+    sha256 cellar: :any,                 arm64_ventura: "18eb7d97360f621c07c4f49e408940a273be58e051212720fb93c57522d464eb"
+    sha256 cellar: :any,                 sonoma:        "65007aa53d56c3695b661ead36a7f80c7fa8265bee1e2535c0944887a2b1673d"
+    sha256 cellar: :any,                 ventura:       "288400dd51340b542c352fb9899300fea07a2a2a528e785274c4a79eebf3697e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7b94130c1ae5812ca69f9492c9155eed553c1dfef6799066429acb99ff58ce3"
   end
 
   depends_on "certifi"
+  depends_on "cffi"
   depends_on "cryptography"
   depends_on "curl"
   depends_on "openssl@3"
+  depends_on "pycparser"
   depends_on "python@3.13"
 
   resource "about-time" do

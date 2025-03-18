@@ -4,15 +4,16 @@ class Neovide < Formula
   url "https:github.comneovideneovidearchiverefstags0.14.1.tar.gz"
   sha256 "ca89ddd63b2a321ff0b7fb2afbaa33d125c207ed6b8663e5fb6d6f665329b899"
   license "MIT"
+  revision 1
   head "https:github.comneovideneovide.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a42ebb37b45dcda42c98a5420699936cbb51a26613ebc70c89b893ea8ba1c650"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b22958ff06b5237e06d249085fea2a1ff8d16fc0d64a49315621c8118139956d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "93955570f9ab9c32a29452a2463239e623cfedc4a75d05e4a9a17dddddbf36f2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "972c0ed2bc64aec9f43db835e9409068ac5a633dbc162beaf710267ff9bf3879"
-    sha256 cellar: :any_skip_relocation, ventura:       "c1b294340ac56aea0e228306e283577d7b1e624e6f77330275051afeb7d34a1b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4052904691427ea9f23916b19ee1a52020324e7e326edd5f7fe939cae2767816"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6fe6421436c0452f8fada6d8d27b8cdf8035bcca3369949d0573cef8cd377ce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d809b5451c96327c4c574097ed0432d37307733fa816ce2ae821341be29744d4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b125091a42af4296ee697e7286f692a0181aca313a05aff63206109582953a01"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1176698a9e5736a4b687eda38e0428d61441fd443fbf1963bd5eedf5109416b9"
+    sha256 cellar: :any_skip_relocation, ventura:       "f03febcf44a281ebd18b93d6bc8b1805f9ae0adfaa3eefe49418ad22d538d90a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d615931f3e1f8c12fb29257c41e349d6fd08cf5bb701178d023986a14ae7f2d7"
   end
 
   depends_on "ninja" => :build
@@ -31,7 +32,7 @@ class Neovide < Formula
     depends_on "fontconfig"
     depends_on "freetype"
     depends_on "harfbuzz"
-    depends_on "icu4c@76"
+    depends_on "icu4c@77"
     depends_on "jpeg-turbo"
     depends_on "libpng"
     # `libxcursor` is loaded when using X11 (DISPLAY) instead of Wayland (WAYLAND_DISPLAY).

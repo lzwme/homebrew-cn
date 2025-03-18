@@ -20,6 +20,8 @@ class JbossForge < Formula
 
   depends_on "openjdk"
 
+  conflicts_with "foundry", because: "both install `forge` binaries"
+
   def install
     rm(Dir["bin/*.bat"])
     libexec.install %w[addons bin lib logging.properties]

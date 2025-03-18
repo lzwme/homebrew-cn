@@ -47,9 +47,8 @@ class Llgo < Formula
       -X github.comgoplusllgoxenv.buildTime=#{time.iso8601}
       -X github.comgoplusllgoxtoolenvllvm.ldLLVMConfigBin=#{llvm.opt_bin"llvm-config"}
     ]
-    build_args = *std_go_args(ldflags:)
-    build_args += ["-tags", "byollvm"] if OS.linux?
-    system "go", "build", *build_args, "-o", libexec"bin", ".cmdllgo"
+    tags = "byollvm" if OS.linux?
+    system "go", "build", *std_go_args(ldflags:, tags:), "-o", libexec"bin", ".cmdllgo"
 
     libexec.install "LICENSE", "README.md"
 

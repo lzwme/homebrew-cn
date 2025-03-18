@@ -1,17 +1,17 @@
 class OsmiumTool < Formula
   desc "Libosmium-based command-line tool for processing OpenStreetMap data"
   homepage "https:osmcode.orgosmium-tool"
-  url "https:github.comosmcodeosmium-toolarchiverefstagsv1.17.0.tar.gz"
-  sha256 "a7c8e5ee108258a3867c21e80d8bf50ee5b7784c56a12523750d882814e3d6df"
+  url "https:github.comosmcodeosmium-toolarchiverefstagsv1.18.0.tar.gz"
+  sha256 "5438f57043c9df05137ca4bd1b1e4a5fb1c9c8c49cb4bec43a5f1ef30ed68fb5"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "101bc0c6519988ec87d24ba7197ff8bb65c2346745b4450478b8d3465c20b302"
-    sha256 cellar: :any,                 arm64_sonoma:  "fd9cb93ea74208732f720f634ce9a0926cabe2a823ab4c986c6aae9008d66f62"
-    sha256 cellar: :any,                 arm64_ventura: "bd7171d46cf4973de8a3731b4ee70220656197e986fe40e1ad936a213e90a43d"
-    sha256 cellar: :any,                 sonoma:        "6bf9507be87996fb4547c9a498578abc9855b8723e457e08f24bbd76a2850b9c"
-    sha256 cellar: :any,                 ventura:       "646c0077105152279a309b63581789fcbb2893b6345d56ac9d85620085bc6a00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7ac2102e5c453bd92a04e7d203172a4c5a48a1606f95ef2fc6df1b7eec83056"
+    sha256 cellar: :any,                 arm64_sequoia: "dee9a76f1c9ba7b231c42a5f565c77e7e24b02ca5b6c8eff21f0045231011ec6"
+    sha256 cellar: :any,                 arm64_sonoma:  "583163fcd84f74cbbd5dd3884dc2ee46e97d531710f6e35e691e7803e6cf73ed"
+    sha256 cellar: :any,                 arm64_ventura: "a2d21fcc118f03e866c9bd7e2a43cb052fad51ed27f0573b565707e71b6a8c00"
+    sha256 cellar: :any,                 sonoma:        "fd7e9601f040612eda9e745b187469bd7d4f4fceea3acc92543045f331cdb71b"
+    sha256 cellar: :any,                 ventura:       "47e5cf6a115a3f64d6da0d339ab83bdcc33b6e17d0528174a512fdef8f830ef0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c34dbce2276a3c0273ac6b610c9e5c5840c953e414bc7e0e486b4bfe651dbd13"
   end
 
   depends_on "cmake" => :build

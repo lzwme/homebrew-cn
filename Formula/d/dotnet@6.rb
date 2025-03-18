@@ -6,12 +6,13 @@ class DotnetAT6 < Formula
       tag:      "v6.0.136",
       revision: "d638663530d923adbe0442604b7a6562127321e9"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "50966bc99116591a7fcfd12df0791a5865cb5829cf39a6ce23f0c6f904a67c0c"
-    sha256 cellar: :any,                 arm64_sonoma:  "b8ccf36b8d7bee74bfe225bb8b7b769e4bc6abb4c4c81a6a79af8059397ffbd4"
-    sha256 cellar: :any,                 sonoma:        "7891aacef4e9bb862a0ddb742b0436c99f54d1355a22068e681f5c1ceff5abb4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0880c4ba48755bcc91c4a66c88b84db0aa874e76e45ed8ad1bd38069767f21d5"
+    sha256 cellar: :any,                 arm64_sequoia: "17a1b695a3859a75a1379c9ff5aa044a1e0d4517d27454ab699a88992ed4054c"
+    sha256 cellar: :any,                 arm64_sonoma:  "3842fe4efbd79ee741fddf3e27f33e9d3a14533c4a7a8b27ebc9fa6423906cf7"
+    sha256 cellar: :any,                 sonoma:        "10a9849193aa400d0542751ba82dfc7c03721f01c38a143fcf7f7bdd1e762349"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a66fa701d2a875604a253d37f89772910bb6aae1ed402abe5c52444f62264ecf"
   end
 
   keg_only :versioned_formula
@@ -22,7 +23,7 @@ class DotnetAT6 < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "python@3.13" => :build
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "openssl@3"
 
   uses_from_macos "llvm" => :build

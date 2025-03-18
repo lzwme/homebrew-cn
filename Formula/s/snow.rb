@@ -23,6 +23,8 @@ class Snow < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a378fd9d38675c5924d6fa4a91283e8bb0fcc4e92695c3b222dd55d186ba8ba9"
   end
 
+  conflicts_with "snowflake-cli", because: "both install `snow` binaries"
+
   def install
     # main.c:180:10: error: call to undeclared library function 'strcmp' with type 'int (const char *, const char *)'
     # main.c:180:10: note: include the header <string.h> or explicitly provide a declaration for 'strcmp'

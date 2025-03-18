@@ -1,17 +1,17 @@
 class GsettingsDesktopSchemas < Formula
   desc "GSettings schemas for desktop components"
   homepage "https://download.gnome.org/sources/gsettings-desktop-schemas/"
-  url "https://download.gnome.org/sources/gsettings-desktop-schemas/47/gsettings-desktop-schemas-47.1.tar.xz"
-  sha256 "a60204d9c9c0a1b264d6d0d134a38340ba5fc6076a34b84da945d8bfcc7a2815"
+  url "https://download.gnome.org/sources/gsettings-desktop-schemas/48/gsettings-desktop-schemas-48.0.tar.xz"
+  sha256 "e68f155813bf18f865a8b2c8e9d473588b6ccadcafbb666ab788857c6c2d1bd3"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e42eec92d68e461084cf34eed8eb1a306213860d6ed4ebabecb9a34aa489fb5d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e42eec92d68e461084cf34eed8eb1a306213860d6ed4ebabecb9a34aa489fb5d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e42eec92d68e461084cf34eed8eb1a306213860d6ed4ebabecb9a34aa489fb5d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e42eec92d68e461084cf34eed8eb1a306213860d6ed4ebabecb9a34aa489fb5d"
-    sha256 cellar: :any_skip_relocation, ventura:       "e42eec92d68e461084cf34eed8eb1a306213860d6ed4ebabecb9a34aa489fb5d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c4804607789ff762c44c3fcc63afea62ed99dcc60782fbd17c5e50e5b5dc714"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "28388575b4cdde9dbca9351e2589c4445e531fb7e4fa43905d96d3d89dd78d29"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "28388575b4cdde9dbca9351e2589c4445e531fb7e4fa43905d96d3d89dd78d29"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "28388575b4cdde9dbca9351e2589c4445e531fb7e4fa43905d96d3d89dd78d29"
+    sha256 cellar: :any_skip_relocation, sonoma:        "28388575b4cdde9dbca9351e2589c4445e531fb7e4fa43905d96d3d89dd78d29"
+    sha256 cellar: :any_skip_relocation, ventura:       "28388575b4cdde9dbca9351e2589c4445e531fb7e4fa43905d96d3d89dd78d29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "961057773b8eaa48b7a348fc0ac5ce5d14f8caa7785dc64bfb162b35e93e3bf3"
   end
 
   depends_on "gettext" => :build

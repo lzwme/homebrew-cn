@@ -32,7 +32,7 @@ class Sq < Formula
       netgo sqlite_vtable sqlite_stat4 sqlite_fts5 sqlite_introspect
       sqlite_json sqlite_math_functions
     ]
-    system "go", "build", *std_go_args(ldflags:), "-tags", tags.join(" ")
+    system "go", "build", *std_go_args(ldflags:, tags:)
     generate_completions_from_executable(bin"sq", "completion")
     (man1"sq.1").write Utils.safe_popen_read(bin"sq", "man")
   end

@@ -30,7 +30,7 @@ class Coder < Formula
       -X github.comcodercoderv2buildinfo.tag=#{version}
       -X github.comcodercoderv2buildinfo.agpl=true
     ]
-    system "go", "build", *std_go_args(ldflags:), "-tags", "slim", ".cmdcoder"
+    system "go", "build", *std_go_args(ldflags:, tags: "slim"), ".cmdcoder"
   end
 
   test do

@@ -5,6 +5,7 @@ class DotnetAT8 < Formula
   url "https:github.comdotnetdotnetarchiverefstagsv8.0.14.tar.gz"
   sha256 "a7b2f955a92f278feaf366bb0484e91b8248650f7e11bb079ff3616f34dc9787"
   license "MIT"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,11 +13,11 @@ class DotnetAT8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2557c5ee9bd33430354768dd87732feb5b2fc34d7285d94c62d85344afa0e25c"
-    sha256 cellar: :any,                 arm64_sonoma:  "5306ef47e7a5ecaca02c0deffddd197fa437df5ada5a0ce5a5f72d041b1afb41"
-    sha256 cellar: :any,                 arm64_ventura: "cd69966c6b185241aaada6e6298f38be3c4609ebf4d2ea14d61328ec124c3b93"
-    sha256 cellar: :any,                 ventura:       "74ac6910f1d57c321c3780f87e1c93c5a242860ccd6034394ae2b361184f76bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ff5e73f23ebe73461d8c18ef82b7477a60eaf10ad61a35d0ec2caae682ca866"
+    sha256 cellar: :any,                 arm64_sequoia: "2e1c4cb8e644f50be47509db117687a364c3f191bdb5ef167a309d282dfe68b1"
+    sha256 cellar: :any,                 arm64_sonoma:  "16095a4f03a84b4b497357a88d09d858049b2a3295a41130b10ddfbe43fe27bc"
+    sha256 cellar: :any,                 arm64_ventura: "97446e5f447b9241b2ad4acd04f77efa2941ec4bad9d106a2fe45a0ef8843d57"
+    sha256 cellar: :any,                 ventura:       "b49d389eaca065c5ddc14395ca31434efd496986bc2b9e98459804f5a68e8229"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57e8f351d9d2524a138bef3575b98e5c3ae0508c0bf179fe1c54a0befa9b626f"
   end
 
   keg_only :versioned_formula
@@ -26,7 +27,7 @@ class DotnetAT8 < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "openssl@3"
 
   uses_from_macos "python" => :build, since: :catalina

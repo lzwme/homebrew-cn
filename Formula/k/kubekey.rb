@@ -45,7 +45,7 @@ class Kubekey < Formula
       -X #{project}version.gitTreeState=clean
       -X #{project}version.buildDate=#{time.iso8601}
     ]
-    system "go", "build", *std_go_args(ldflags:, output: bin"kk"), "-tags", tags, ".cmdkk"
+    system "go", "build", *std_go_args(ldflags:, tags:, output: bin"kk"), ".cmdkk"
 
     generate_completions_from_executable(bin"kk", "completion", "--type", shells: [:bash, :zsh])
   end

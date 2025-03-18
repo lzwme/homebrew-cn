@@ -4,15 +4,15 @@ class Urweb < Formula
   url "https:github.comurweburwebreleasesdownload20200209urweb-20200209.tar.gz"
   sha256 "ac3010c57f8d90f09f49dfcd6b2dc4d5da1cdbb41cbf12cb386e96e93ae30662"
   license "BSD-3-Clause"
-  revision 11
+  revision 12
 
   bottle do
-    sha256 arm64_sequoia: "e1fc49213a5c984c84898202dd078b55bf3cf6baf72a9f7ede2e28b6ffd2fb81"
-    sha256 arm64_sonoma:  "ee1d643f45eb35714ec50820311651b322651f892526a4bc7a0f362e3eecb720"
-    sha256 arm64_ventura: "2054bc84d32c0a2dce1b55c13e765dfef2543f47bb8558c632da848bc4669fb5"
-    sha256 sonoma:        "4d5a47544891ae36a6726b43fabfa525db32450f6e40fa2bbb258ca7c3d1cd39"
-    sha256 ventura:       "80869fade6a1b20b7003666b42a1951330b1ea7d5ee073c150e96f0bc5780c86"
-    sha256 x86_64_linux:  "7556e09718c5a0e4ad6fd6b3e30ba6ad6db1632b572659d7f6bcfa5184bfe117"
+    sha256 arm64_sequoia: "6b9b4b19d55dd9fa56d0e848f3730131b1d9942e7752af3c4d4cbe9e7865cac5"
+    sha256 arm64_sonoma:  "5ae2a880693f266d5a4c97a701f6c275be9af42c6a5001285df1fd5943cf9020"
+    sha256 arm64_ventura: "22c6a1384b9b1eceff5db2458d95a6fd4204e7db2073bae3b4b790cf3f3e0fa3"
+    sha256 sonoma:        "99566a5188759af116d5a8f53f8250d0b41d81d790712536a17647c98ff7e063"
+    sha256 ventura:       "7c0dcc4ba08622d7a5c46e5d71c946c1327adda0c3024a6fa6e2927c7544e5d6"
+    sha256 x86_64_linux:  "85193d19fd4b3065379dce5a2123a7838157f229e84fa71a14fd6e6cc298e62c"
   end
 
   depends_on "autoconf" => :build
@@ -20,7 +20,7 @@ class Urweb < Formula
   depends_on "libtool" => :build
   depends_on "mlton" => :build
   depends_on "gmp"
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "openssl@3"
 
   # Patch to fix build for icu4c 68.2

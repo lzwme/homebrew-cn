@@ -9,6 +9,7 @@ class Dwarfs < Formula
   livecheck do
     url :stable
     regex(^(?:release[._-])?v?(\d+(?:\.\d+)+)$i)
+    strategy :github_latest
   end
 
   bottle do

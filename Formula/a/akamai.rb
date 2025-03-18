@@ -17,7 +17,11 @@ class Akamai < Formula
   depends_on "go" => [:build, :test]
 
   def install
-    system "go", "build", "-tags", "noautoupgrade nofirstrun", *std_go_args(ldflags: "-s -w"), ".cli"
+    tags = %w[
+      noautoupgrade
+      nofirstrun
+    ]
+    system "go", "build", *std_go_args(ldflags: "-s -w", tags:), ".cli"
   end
 
   test do

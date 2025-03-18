@@ -1,8 +1,8 @@
 class Ghc < Formula
   desc "Glorious Glasgow Haskell Compilation System"
   homepage "https://haskell.org/ghc/"
-  url "https://downloads.haskell.org/~ghc/9.12.1/ghc-9.12.1-src.tar.xz"
-  sha256 "4a7410bdeec70f75717087b8f94bf5a6598fd61b3a0e1f8501d8f10be1492754"
+  url "https://downloads.haskell.org/~ghc/9.12.2/ghc-9.12.2-src.tar.xz"
+  sha256 "0e49cd5dde43f348c5716e5de9a5d7a0f8d68d945dc41cf75dfdefe65084f933"
   # We build bundled copies of libffi and GMP so GHC inherits the licenses
   license all_of: [
     "BSD-3-Clause",
@@ -17,12 +17,12 @@ class Ghc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0cbc0801cb71cda95756b1926ee60ccfcff38a5113b0eedfbbae8f3bcbe03216"
-    sha256 cellar: :any,                 arm64_sonoma:  "2b87f819d22a4f5dfb112dc02bcea4e9f7abefc792192b1623c5dfb2dedf488f"
-    sha256 cellar: :any,                 arm64_ventura: "8a321896cc41c9cd2b626ddd87ac23dc10c6744da2fe2c445ae638b5f8eb7c03"
-    sha256 cellar: :any,                 sonoma:        "a9ea60687b80e702b59a4435abe8938d8d73335655453ef1bf6c498ef900007f"
-    sha256 cellar: :any,                 ventura:       "0415a4cda74b5b5377eb9e8711973af0b48953608453c3277a634178a4b78b57"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a582bb99457e8305100a0b452a51879b4ab029205e7fec58853fbf022bb2f157"
+    sha256 cellar: :any,                 arm64_sequoia: "c6a8718a792bb467bc76fb5a338e7c9db23255584d4fb570677f2241458bbee0"
+    sha256 cellar: :any,                 arm64_sonoma:  "2dcb19546603dd64cda9ad4f1c9a38b4541164085ba4b62f004769a6b011db7f"
+    sha256 cellar: :any,                 arm64_ventura: "7705ba9d0f9d329fa15d979a1fa908f068974162bbe9163e6e4b4b3c51d4567c"
+    sha256 cellar: :any,                 sonoma:        "9ec5bd71034e4b11205baeec399925589a06967c2ab45d62c68b05c3aeaea945"
+    sha256 cellar: :any,                 ventura:       "11c438cb71237329a613904a51677a307fbe2c7728c339480db690d1de125fe2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b06492e4ea2fabe96cd970279255d4f1d35a779e3acb01f5b2b3a4acd416d42"
   end
 
   depends_on "autoconf" => :build

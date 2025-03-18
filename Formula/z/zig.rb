@@ -97,6 +97,10 @@ class Zig < Formula
       end
     end
 
+    native_os = OS.mac? ? "macos" : OS.kernel_name.downcase
+    native_arch = Hardware::CPU.arm? ? "aarch64" : Hardware::CPU.arch
+    assert_equal "Hello, world!", shell_output(".hello-#{native_arch}-#{native_os}")
+
     # error: 'TARGET_OS_IPHONE' is not defined, evaluates to 0
     # https:github.comziglangzigissues10377
     ENV.delete "CPATH"
@@ -107,8 +111,13 @@ class Zig < Formula
         return 0;
       }
     C
-    system bin"zig", "cc", "hello.c", "-o", "hello"
-    assert_equal "Hello, world!", shell_output(".hello")
+    system bin"zig", "cc", "hello.c", "-o", "hello-c"
+    assert_equal "Hello, world!", shell_output(".hello-c")
+
+    return unless OS.mac?
+
+    # See https:github.comHomebrewhomebrew-corepull211129
+    assert_includes (bin"zig").dynamically_linked_libraries, "usrliblibc++.1.dylib"
   end
 end
 

@@ -1,8 +1,8 @@
 class Pumba < Formula
   desc "Chaos testing tool for Docker"
   homepage "https:github.comalexei-ledpumba"
-  url "https:github.comalexei-ledpumbaarchiverefstags0.11.3.tar.gz"
-  sha256 "eff8edd57972754bf0401f600e57c7f21c61bcaa3bb8a41d33a48859a4306164"
+  url "https:github.comalexei-ledpumbaarchiverefstags0.11.6.tar.gz"
+  sha256 "50df612ecd3cfb2b99c41732f5ed80018aea4e4cdaa8dfee2a60ea9ff9d474eb"
   license "Apache-2.0"
   head "https:github.comalexei-ledpumba.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Pumba < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15cf3d601e95dc76edee70e46867617015f0585c1d615f4185e45c10e2d1263e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "15cf3d601e95dc76edee70e46867617015f0585c1d615f4185e45c10e2d1263e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "15cf3d601e95dc76edee70e46867617015f0585c1d615f4185e45c10e2d1263e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4e2c502b740eb6c77c96a3abddf2eaacdb704f214e3a70c4011763d870648d46"
-    sha256 cellar: :any_skip_relocation, ventura:       "4e2c502b740eb6c77c96a3abddf2eaacdb704f214e3a70c4011763d870648d46"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "373bb9d0a6afe21c38024a8c7225e9f9b5836fdbd4063b9036fbbb6f5567d8d2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a9f66c6aa33a8fb69c81a1da31157c7db688de6a28e774a09cea0c77b6a9d73"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a9f66c6aa33a8fb69c81a1da31157c7db688de6a28e774a09cea0c77b6a9d73"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6a9f66c6aa33a8fb69c81a1da31157c7db688de6a28e774a09cea0c77b6a9d73"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7449b4acb586f84c5de04d97f71c5f4fa56451e1437d46e0c8f001f53f5ac74b"
+    sha256 cellar: :any_skip_relocation, ventura:       "7449b4acb586f84c5de04d97f71c5f4fa56451e1437d46e0c8f001f53f5ac74b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5edfec7bb124601265d2a2654435bef2118e3e6187d60b48e746a6d8abb9dee9"
   end
 
   depends_on "go" => :build

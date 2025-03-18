@@ -6,15 +6,15 @@ class Tracker < Formula
       tag:      "3.6.0",
       revision: "624ef729966f2d9cf748321bd7bac822489fa8ed"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
-  revision 3
+  revision 4
 
   bottle do
-    sha256 arm64_sequoia: "7bc9ae43638dc877591fddf360e63423faca1c263a80eaec7016c56c526c7891"
-    sha256 arm64_sonoma:  "97c7afc9f1177586a46d70761edd999dfb89db9e824750894dbc357dceb26a53"
-    sha256 arm64_ventura: "49f5ca10fcc3bb45bb6c82a20b5c112fefd5e8c94b81e0f1abdbe1aa80b1810c"
-    sha256 sonoma:        "85b6515fcef419b02070410794f79047fb646aa1fa12693d94b7a1b349f6cdda"
-    sha256 ventura:       "17e2d6239703864d719f29322f28d0e17b588a99b3b40dead296242c4857642d"
-    sha256 x86_64_linux:  "83e5feea79a2bc65e893cd9dd6cbc7204d30f9dd51f857ce49c6e02aa67ae89e"
+    sha256 arm64_sequoia: "34218a3697312858347f19f7b687ad25626b65dd8f78c10efd462df9327eb078"
+    sha256 arm64_sonoma:  "cb0d4881cc33a9e7a2d68c2c02f1011840ed28a4a1c3333bad6d4a254861a3e7"
+    sha256 arm64_ventura: "3d7d3a10c25bbc2c3161945c5eee127b3b6a0adb40db702cd5a13bed35602ec4"
+    sha256 sonoma:        "5d7a0c796901eb167fb888acabff2a609ecf161dba2e8bf8df1066e9a7360cf3"
+    sha256 ventura:       "d2f1ea7776a2aeb58a5c9adafe33bfa75c405cbd47059c6c8b86700118006514"
+    sha256 x86_64_linux:  "11ce63277d3d02cf375c31b84744a10cccac59b65b8227c8c7f08c9dbe377528"
   end
 
   depends_on "gobject-introspection" => :build
@@ -26,7 +26,7 @@ class Tracker < Formula
 
   depends_on "dbus"
   depends_on "glib"
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "json-glib"
   depends_on "libsoup"
   depends_on "sqlite"

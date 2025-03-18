@@ -1,19 +1,17 @@
 class Libcbor < Formula
   desc "CBOR protocol implementation for C and others"
   homepage "https:github.comPJKlibcbor"
-  url "https:github.comPJKlibcborarchiverefstagsv0.11.0.tar.gz"
-  sha256 "89e0a83d16993ce50651a7501355453f5250e8729dfc8d4a251a78ea23bb26d7"
+  url "https:github.comPJKlibcborarchiverefstagsv0.12.0.tar.gz"
+  sha256 "5368add109db559f546d7ed10f440f39a273b073daa8da4abffc83815069fa7f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "1316d2dd79be63a69f00cf06f50dc76fd24ad9e08552cff8afcfac0ef405e858"
-    sha256 cellar: :any,                 arm64_sonoma:   "173091f8ffca1b73c4c17bbe5a7a6034da4e561b9e13d6e78ca536f56e364015"
-    sha256 cellar: :any,                 arm64_ventura:  "2adc8eddfa152c381152c94e3514cbabcc1594b56db0f89ac0d63a1461254f15"
-    sha256 cellar: :any,                 arm64_monterey: "a50c96cf0fd55aff2d31a5b2115f9464b65d7f405339bbbde736413a29d67a59"
-    sha256 cellar: :any,                 sonoma:         "d7862b97499968a3bdf6ca866c806bbc81664b465c4703788ff4501e7d77269f"
-    sha256 cellar: :any,                 ventura:        "cb26f56b5ff9f67eeefcde7767e6a83263ba3736cdfcb3ed632aa2f4acb71197"
-    sha256 cellar: :any,                 monterey:       "edb0c54d2580c8ddff49ffc2cea205af83cbbddbb6baf9f9443ffdf5496b06be"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f26df577970defa0194f44b476b2f91d606bce7798c15b5d98cf80038db2f67a"
+    sha256 cellar: :any,                 arm64_sequoia: "a4b607654d91133a0a38fcc6106bfe3504e82101f6a3ebcba6ca81109645ffd0"
+    sha256 cellar: :any,                 arm64_sonoma:  "4702c138e675003b441360be3cb2933d759f54988e592f9646cf3fac08b24780"
+    sha256 cellar: :any,                 arm64_ventura: "8e069118ed51f891cab2278d3c9e43d4a0b4a64a166bf5936b71c82d426a9b00"
+    sha256 cellar: :any,                 sonoma:        "21328c3ce137192785b4c98e5fdc8d4e1ec5ec3055012dc1a8c0b3ba47c76f00"
+    sha256 cellar: :any,                 ventura:       "c0ae5159e74053c98a47f273cf6765351e75c6218f08ad93ef3f491f6ac46a73"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db399e91ac8ece593925568d7c87be22096e2a2ce0a7b1dcc8fef67aea4166d4"
   end
 
   depends_on "cmake" => :build
@@ -24,9 +22,9 @@ class Libcbor < Formula
       -DBUILD_SHARED_LIBS=ON
     ]
 
-    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
-    system "cmake", "--build", "build"
-    system "cmake", "--install", "build"
+    system "cmake", "-S", ".", "-B", "builddir", *args, *std_cmake_args
+    system "cmake", "--build", "builddir"
+    system "cmake", "--install", "builddir"
   end
 
   test do

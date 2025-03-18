@@ -3,18 +3,18 @@ class Yamllint < Formula
 
   desc "Linter for YAML files"
   homepage "https:github.comadrienvergeyamllint"
-  url "https:files.pythonhosted.orgpackagesd81ef08445d56c0d32551c9c7e8324888446ccc49ac021ca3b136ab384cef35ayamllint-1.36.1.tar.gz"
-  sha256 "a287689daaafc301a80549b2d0170452ebfdcabd826e3fe3b4c66e322d4851fa"
+  url "https:files.pythonhosted.orgpackages03b8e63eaaee35fb1c0c318addc0855ae7a08aa267dca3fe13c369df84d9e467yamllint-1.36.2.tar.gz"
+  sha256 "c9ccc818659736e7b13f7e2f9c3c9bb9ac77445be13e789e7d843e92cb8428ef"
   license "GPL-3.0-or-later"
   head "https:github.comadrienvergeyamllint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7b43cc15cd0027083c23fd5490ce871a385a0e1e8f43d866296aef78328d01be"
-    sha256 cellar: :any,                 arm64_sonoma:  "22a169489ae0eabd60073302e086997f712f0c30864c230a4e986a6836d47057"
-    sha256 cellar: :any,                 arm64_ventura: "6c8cf751400bffa7f96b5e2fc3b2bbed42cc6e0e10143675701edf75dca54291"
-    sha256 cellar: :any,                 sonoma:        "44527f65bd7a554f4148f3c11450bf875549a0368c93c494679ecd2e2ddc7722"
-    sha256 cellar: :any,                 ventura:       "d3d440cfb3f2363e755a6918e40491409ad17a62dd3449397d7825ed3e9dd4d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d5faad7918e8de86646be149e4733803746c09ff7b9df35ffe4d4ffc8773e3d"
+    sha256 cellar: :any,                 arm64_sequoia: "73141e0ebd56f6abe21bdf119dd66b68ff408817e5e9023069d3b569bb90c1a7"
+    sha256 cellar: :any,                 arm64_sonoma:  "507d3e73a7d0090768eeff549092af1aea442bff60bd64483ff9d0f036f13c15"
+    sha256 cellar: :any,                 arm64_ventura: "7c6432ecbe2d02c8fc00e1fe04d999238bf49c8308cf908ead6dbc2cc4cb40e3"
+    sha256 cellar: :any,                 sonoma:        "77654786b69c881f40bb9816fc88b51a2edba8f9ded99f3e33f924d832c7a1bc"
+    sha256 cellar: :any,                 ventura:       "4764f5b53ef49c4b556bff4bae73f1177ee89b7aced6d0214149fc6ebbeed0b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eda95cea6ab415ed02e5b05bed4ba76f08c800b63a2ce4a85b5ec42c1f1098e9"
   end
 
   depends_on "libyaml"

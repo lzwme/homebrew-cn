@@ -11,23 +11,49 @@ class RedwaxTool < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f4bfdaf79e00c2210bfe58d5e1d8ed8ed6c8030f27f45e6489915f2d58f00e64"
-    sha256 cellar: :any,                 arm64_sonoma:  "cdec549c64d66941f7dc430f8e07a250be8618d8c148c820bf9b9fdadd89bca5"
-    sha256 cellar: :any,                 arm64_ventura: "fc00c0e3e33b710cc410aae1346ad44f62a970da7c28857353660ecca83300af"
-    sha256 cellar: :any,                 sonoma:        "f98470864037231a2c0233be3207e3f42fe425c4f2107a8ae49b0a0d47315a04"
-    sha256 cellar: :any,                 ventura:       "e14ff284ee29c52c18f0c3d7a5bc5c770d05f9a3c442e61bf814cb4874c8aabd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa1966c450f5a57151f5c0f050f0e7628d48985a2d2e1acb3cf0e819e54d2fc3"
+    rebuild 1
+    sha256 arm64_sequoia: "34eff8a283e59a1c44b65e59c11bfb6626e54e848b441441a5ab7bc16bbc1402"
+    sha256 arm64_sonoma:  "2ea52c78dc303b33b192473aaf3b3f2766acd168d2002ac5173030c0e4109838"
+    sha256 arm64_ventura: "6c1582c3ddf1c69440b407e9108080dedd6f290ed7ed7e1a0ad00c4b20e04262"
+    sha256 sonoma:        "a6ee226d0dd5d1344a5406c2d47f3a818586d1d30ead84b86648403b2a3acf81"
+    sha256 ventura:       "07b54891be06b8e8347481b0ac8c6667f895f8fde8a64ad042af1b75c89aede8"
+    sha256 x86_64_linux:  "04dfeac846d6e6714d15df10879fd6f76950a54cc52a69e952c556bd4f3230b3"
   end
 
   depends_on "pkgconf" => :build
   depends_on "apr"
   depends_on "apr-util"
+  depends_on "ldns"
+  depends_on "libical"
+  depends_on "nspr"
+  depends_on "nss"
   depends_on "openssl@3"
+  depends_on "p11-kit"
+  depends_on "unbound"
 
   uses_from_macos "expat"
 
   def install
-    system "./configure", "--disable-silent-rules", "--with-openssl", *std_configure_args
+    # Work around superenv to avoid mixing `expat` usage in libraries across dependency tree.
+    # Brew `expat` usage in Python has low impact as it isn't loaded unless pyexpat is used.
+    # TODO: Consider adding a DSL for this or change how we handle Python's `expat` dependency
+    if OS.mac? && MacOS.version < :sequoia
+      env_vars = %w[CMAKE_PREFIX_PATH HOMEBREW_INCLUDE_PATHS HOMEBREW_LIBRARY_PATHS PATH PKG_CONFIG_PATH]
+      ENV.remove env_vars, /(^|:)#{Regexp.escape(Formula["expat"].opt_prefix)}[^:]*/
+      ENV.remove "HOMEBREW_DEPENDENCIES", "expat"
+    end
+
+    args = %w[
+      --disable-silent-rules
+      --with-openssl
+      --with-nss
+      --with-p11-kit
+      --with-libical
+      --with-ldns
+      --with-unbound
+    ]
+    args << "--with-keychain" if OS.mac?
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 

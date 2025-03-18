@@ -17,6 +17,8 @@ class JiraCli < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "go-jira", because: "both install `jira` binaries"
+
   def install
     ldflags = %W[
       -s -w

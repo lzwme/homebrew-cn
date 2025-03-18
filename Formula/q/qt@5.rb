@@ -11,6 +11,7 @@ class QtAT5 < Formula
   mirror "https:mirrors.ocf.berkeley.eduqtarchiveqt5.155.15.16singleqt-everywhere-opensource-src-5.15.16.tar.xz"
   sha256 "efa99827027782974356aceff8a52bd3d2a8a93a54dd0db4cca41b5e35f1041c"
   license all_of: ["GFDL-1.3-only", "GPL-2.0-only", "GPL-3.0-only", "LGPL-2.1-only", "LGPL-3.0-only"]
+  revision 1
 
   livecheck do
     url "https:download.qt.ioofficial_releasesqt5.15"
@@ -18,13 +19,12 @@ class QtAT5 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "a6dd01b7ec7947a57746cdd2312d73f1212373e2135b7fe85732f8f2d751f6e3"
-    sha256 cellar: :any,                 arm64_sonoma:  "80fed092b239768eb90ac99a9d9b4ffa708c0037af694a7d54da548527c84df6"
-    sha256 cellar: :any,                 arm64_ventura: "a44fda9fb0e9b2991f96ff9009ac8928ed504a12da972bc6e907b41e836eaddd"
-    sha256 cellar: :any,                 sonoma:        "792bbee9b400b508bd111d5168e716a60bda128e30fef9812d1b370489730526"
-    sha256 cellar: :any,                 ventura:       "b4e1765dceddb6ab8a2608087468f38544c4fafd0daf51b8089c0bfb131879c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be5dd9995c4674ffc938b0bb23fd90227207fe933993c99d85c7b05b758abbd4"
+    sha256 cellar: :any,                 arm64_sequoia: "0c2f38e6f0aa7ba7dad718f8336310d6a98eb1d028cd669d215f5db237969b7b"
+    sha256 cellar: :any,                 arm64_sonoma:  "ba92b152852c5b9d85d70c03b379b63176fab1f749fba0a7da6c2d0df378e2eb"
+    sha256 cellar: :any,                 arm64_ventura: "38936f729d5e6fd7586b54bb02f69913925bcd50b7e2d5f5518f3fa8d63c16e6"
+    sha256 cellar: :any,                 sonoma:        "40295d27fc3af5aae8336250530e65ff053f1d72427a8cc452d1426babd0babf"
+    sha256 cellar: :any,                 ventura:       "ba79d4ca919cff610ef09756dd7f9f0e1cdc8e7ecb2f988ce435599d8799488c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0736a062d875d9d218b63aabe20ae81882f1bf207ffb39ef50c4c5c40fb5b17f"
   end
 
   keg_only :versioned_formula
@@ -64,7 +64,7 @@ class QtAT5 < Formula
     depends_on "expat"
     depends_on "fontconfig"
     depends_on "harfbuzz"
-    depends_on "icu4c@76"
+    depends_on "icu4c@77"
     depends_on "libdrm"
     depends_on "libevent"
     depends_on "libice"

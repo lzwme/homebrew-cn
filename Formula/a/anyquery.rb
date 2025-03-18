@@ -23,8 +23,8 @@ class Anyquery < Formula
       fts5
       sqlite_json
       sqlite_math_functions
-    ].join(",")
-    system "go", "build", "-tags", tags, *std_go_args(ldflags: "-s -w")
+    ]
+    system "go", "build", *std_go_args(ldflags: "-s -w", tags:)
     generate_completions_from_executable(bin"anyquery", "completion")
   end
 

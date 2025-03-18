@@ -18,9 +18,12 @@ class Rclone < Formula
   depends_on "go" => :build
 
   def install
-    args = *std_go_args(ldflags: "-s -w -X github.comrclonerclonefs.Version=v#{version}")
-    args += ["-tags", "brew"] if OS.mac?
-    system "go", "build", *args
+    ldflags = %W[
+      -s -w
+      -X github.comrclonerclonefs.Version=v#{version}
+    ]
+    tags = "brew" if OS.mac?
+    system "go", "build", *std_go_args(ldflags:, tags:)
     man1.install "rclone.1"
     system bin"rclone", "genautocomplete", "bash", "rclone.bash"
     system bin"rclone", "genautocomplete", "zsh", "_rclone"

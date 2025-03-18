@@ -2,18 +2,18 @@ class HopenpgpTools < Formula
   desc "Command-line tools for OpenPGP-related operations"
   homepage "https:hackage.haskell.orgpackagehopenpgp-tools"
   # TODO: Check if `ixset-typed` resource can be dropped
-  url "https:hackage.haskell.orgpackagehopenpgp-tools-0.23.10hopenpgp-tools-0.23.10.tar.gz"
-  sha256 "5a89eab24143ed212b6d91e0df9cc00d9b0ebd3ccf7a0b65b4f29768c4044e29"
+  url "https:hackage.haskell.orgpackagehopenpgp-tools-0.23.11hopenpgp-tools-0.23.11.tar.gz"
+  sha256 "2a056bd320caafe0f7ac3c95d56819f9fef02ddafe11b59802ea5a678d88a54f"
   license "AGPL-3.0-or-later"
   head "https:salsa.debian.orgclinthOpenPGP.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "454c7f1db4aa75a3b8645cbfdcd55b0c3a1c48faefe3f4ea5b9d7fddd862544d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "842b69bcbeacdb7a8debb729a1165d7ad16bc62e9938b20fbf98a136cf02a422"
-    sha256 cellar: :any,                 arm64_ventura: "8d996b1a36cd2565b0cc00dfde4a820220d905acbba85d41d0620888a11da727"
-    sha256 cellar: :any_skip_relocation, sonoma:        "824baa8add32bd98dda8c7a6358bbe789d1ee535c1ccc947eecc68e337544799"
-    sha256 cellar: :any,                 ventura:       "36be45e7e532005ef1c836aee093666fdddc2cae27855146c13ac0dbc0b37ee9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "522e51de7cf2aec5233d680e28502cc2f76deb153f5130a9a7ef89df87471f7e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "41b5917c6be661736f37f098bff90219a3c4f5cd87b396abf57389d219c1ccb4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ea0bdb57778391700816112db32d245f0bb3ec0d8baeecca58764d3bfc9f54b"
+    sha256 cellar: :any,                 arm64_ventura: "b83d81cff76f58a88f73c353b6807a82bb6186419bc525f7e90aaddea2e0c272"
+    sha256 cellar: :any_skip_relocation, sonoma:        "81a7de6f22c94c9e6511f74ac6caab00902a992db025cc63503746ff7ddebe95"
+    sha256 cellar: :any,                 ventura:       "8d3b9bf6403e965b552105bf02b1dd620325f5c37174d3c3959899eae71fe055"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e51c27ef595c911cb7a2f208b6a5c5426e767240f3651e072b5af7bd6213156"
   end
 
   depends_on "cabal-install" => :build

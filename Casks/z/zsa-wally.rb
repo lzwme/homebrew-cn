@@ -8,7 +8,7 @@ cask "zsa-wally" do
   desc "Flash tool for ZSA keyboards"
   homepage "https:ergodox-ez.compageswally"
 
-  disable! date: "2024-12-16", because: :discontinued
+  disable! date: "2024-12-16", because: :discontinued, replacement: "keymapp"
 
   app "Wally.app"
 
@@ -16,12 +16,4 @@ cask "zsa-wally" do
     "~LibraryPreferencescom.zsa.wally.plist",
     "~LibrarySaved Application Statecom.zsa.wally.savedState",
   ]
-
-  caveats do
-    <<~EOS
-      Keymapp is the official successor to this software:
-
-        brew install --cask keymapp
-    EOS
-  end
 end

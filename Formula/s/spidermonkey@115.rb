@@ -5,6 +5,7 @@ class SpidermonkeyAT115 < Formula
   version "115.21.0"
   sha256 "ff118b1d6d17cefe8eef08bba74ae0d47939010d21afdbaadd8859fd4016b674"
   license "MPL-2.0"
+  revision 1
 
   # Spidermonkey versions use the same versions as Firefox, so we simply check
   # Firefox ESR release versions.
@@ -14,12 +15,12 @@ class SpidermonkeyAT115 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "79c292c235d28ccca95422e38e8a3bb11ed17679317181238cffa071c50868bb"
-    sha256 cellar: :any, arm64_sonoma:  "84811a850e6e15e66ed67ae1320fe4e15245eba812db65c271c73528388f902c"
-    sha256 cellar: :any, arm64_ventura: "97a40a74ef64335ebe21243b7ab85a8ba854744e392537295fa33cfc21ef51f8"
-    sha256 cellar: :any, sonoma:        "17d17df8dfd81ff1770fc07dfa26d7fedc0a18f65fc796c6034c1d6e7fa9fe36"
-    sha256 cellar: :any, ventura:       "96e59d8369db111c6a8b23246db3ee300c04ceb60725aa312cab0c6b3008d708"
-    sha256               x86_64_linux:  "7728fbaf5bf6f373925398791504801841204a496ac84e1b7addbc0cd004bfc4"
+    sha256 cellar: :any, arm64_sequoia: "edf502b1dc33265137abe3ed2363700e2ec0d5cdd9a26d4a72f363b911f46ea1"
+    sha256 cellar: :any, arm64_sonoma:  "a569d72fd4c611fa3e5e0f7ea085e665dbb7345bd5e574a596aa9bc476dc4ccc"
+    sha256 cellar: :any, arm64_ventura: "9545a3797e37bead09a4d8fac19b94a288b25d58a037bea78aaaece74ae25d22"
+    sha256 cellar: :any, sonoma:        "661ebc84360d1d729ae27c61dc32a1a444abd51206ffbe76a09fd143544955f5"
+    sha256 cellar: :any, ventura:       "ad4a8f9f92f2f2f0a4a3369defe4de6875acb4fe36a6e1a4914cd15931670a76"
+    sha256               x86_64_linux:  "860166d69b32fb34418ea53dc42b42a07ac1cbbce0af86ec232b28f4cd280d82"
   end
 
   disable! date: "2025-07-01", because: :versioned_formula
@@ -27,7 +28,7 @@ class SpidermonkeyAT115 < Formula
   depends_on "pkgconf" => :build
   depends_on "python@3.11" => :build # https:bugzilla.mozilla.orgshow_bug.cgi?id=1857515
   depends_on "rust" => :build
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "nspr"
   depends_on "readline"
 

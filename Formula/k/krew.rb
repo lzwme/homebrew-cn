@@ -32,8 +32,7 @@ class Krew < Formula
       -X sigs.k8s.iokrewinternalversion.gitTag=v#{version}
     ]
 
-    system "go", "build", *std_go_args(output: bin"kubectl-krew", ldflags:),
-           "-tags", "netgo", ".cmdkrew"
+    system "go", "build", *std_go_args(output: bin"kubectl-krew", ldflags:, tags: "netgo"), ".cmdkrew"
   end
 
   test do

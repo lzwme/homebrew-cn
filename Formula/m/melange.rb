@@ -1,8 +1,8 @@
 class Melange < Formula
   desc "Build APKs from source code"
   homepage "https:github.comchainguard-devmelange"
-  url "https:github.comchainguard-devmelangearchiverefstagsv0.22.2.tar.gz"
-  sha256 "1453c824125fab5b1ab570b40f58a006d4637adddb279a865b3269aa5f5ab91f"
+  url "https:github.comchainguard-devmelangearchiverefstagsv0.23.0.tar.gz"
+  sha256 "b563934514552d86fed57879489f3ed3d534265d5839fcfb488bf4534001e10b"
   license "Apache-2.0"
   head "https:github.comchainguard-devmelange.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Melange < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fde28e0484fb5196751587f518d6bacfd1fa851fc19d9fbc4a37dd1467d68872"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec979815491265180b0f631fe6f69a7f0cb58efa847ded409e018b7f2da3fc0e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a15c3cec41a389cba386c45df23477a08385b435f9f5afc0a0affe318f29444d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a058502dbf5aab72c91d2540027ae8d25e8ab601d3213bfac2066609155a9861"
-    sha256 cellar: :any_skip_relocation, ventura:       "6c5c94335b52e9068665e6dc67b98ee9653574e59f05a11288facf4b1525e1d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc200c990947e288861d0b47b4cb353fe354439c18db0ff5819c11ded92b3ed6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9957fbf4838d0cb235fe54921d56836d949fa82d3a901afeca6952c1d8f956b7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e1e1cef4ca3f83d926e436404e0e88782c05f833b1aa8cde9c6ae7f1be680276"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8b9e733968b3304f19b7e87e60518f3ee52c88822ca7cb5cd293c9d3ab98cd41"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c3c9f36b7d16e495b5ce8a43ef64c758dfb424ca23d2c8456b55a51f444d8d5d"
+    sha256 cellar: :any_skip_relocation, ventura:       "8d1d05aa19b0d8577a572aab02a3171ae487024c64a5627f9dff7554d497770c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dde91434b23312fe80cfb29c156093831a95e2d04182058daa5dda0186171d80"
   end
 
   depends_on "go" => :build

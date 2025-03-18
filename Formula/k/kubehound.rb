@@ -32,7 +32,7 @@ class Kubehound < Formula
       -X github.comDataDogKubeHoundpkgconfig.BuildOs=#{goos}
       -X github.comDataDogKubeHoundpkgconfig.BuildArch=#{goarch}
     ]
-    system "go", "build", *std_go_args(ldflags:), "-tags", "no_backend", ".cmdkubehound"
+    system "go", "build", *std_go_args(ldflags:, tags: "no_backend"), ".cmdkubehound"
 
     generate_completions_from_executable(bin"kubehound", "completion")
   end

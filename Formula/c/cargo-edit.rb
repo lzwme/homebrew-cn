@@ -1,17 +1,17 @@
 class CargoEdit < Formula
   desc "Utility for managing cargo dependencies from the command-line"
   homepage "https:killercup.github.iocargo-edit"
-  url "https:github.comkillercupcargo-editarchiverefstagsv0.13.1.tar.gz"
-  sha256 "11a973bc77ef1562a599e8acc844bf763be4e9caf6e5a650239bc9c6d2077e5b"
+  url "https:github.comkillercupcargo-editarchiverefstagsv0.13.2.tar.gz"
+  sha256 "8f94d5fd27ec8297728a12172c9ec14ecb55c8b1331049ecc04de3c101f4485f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "763cdcd9740bfc003f77a4001544d2382c7f29076c4f6f27ba3617fd6488df48"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf9cdb02a17bf8057c62cec26e9d06e765f8a607c1e6a5ec22c7414d084d3dbb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "23e9636f546189449194584d254d124f4bad412218f3905bdaf2314e59d48465"
-    sha256 cellar: :any_skip_relocation, sonoma:        "26d3e85d2ad06e42df060290510ced395aac62a24bb7b86c0d2f2da0bb42ac3c"
-    sha256 cellar: :any_skip_relocation, ventura:       "66641ae544ca6b5b42a00e1248ae64bfaf7453354a3cdb2d81eb2c7b724098a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "119bd0a56a3cc5fe61eec7ae8b6bfc09ed4be06d8222c231c61e92d5b5de7178"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d6aa35a5b8f210ab6231054e6a852dea374a7265515861e93f7271e7f9b1bf9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cbf2296c9b452c13069967e92507d2552a1b6acfdb701e9bae05d867e1b2af0b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "33f4619f40d80eccddbefa65d3c18e5ff3ba014a16e61069bed47b1f489bbe03"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5982e547b66d413935c4f4f1b4653ffac3f9c0be7d241a65cf77e155dd285ddb"
+    sha256 cellar: :any_skip_relocation, ventura:       "31c7d7b4794cb9d4b156bcf20a1521b611fe721e76705ed52322851aea096470"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cdf2bed1dbf1d0bd008abd5515698cf1e9cf4f4acda2fc9fda912ddca2ba63e9"
   end
 
   depends_on "pkgconf" => :build

@@ -32,8 +32,12 @@ class Stackql < Formula
       -X github.comstackqlstackqlinternalstackqlcmd.BuildDate=#{time.iso8601}
       -X stackqlinternalstackqlplanbuilder.PlanCacheEnabled=true
     ]
+    tags = %w[
+      json1
+      sqleanall
+    ]
 
-    system "go", "build", *std_go_args(ldflags:), "--tags", "json1 sqleanall", ".stackql"
+    system "go", "build", *std_go_args(ldflags:, tags:), ".stackql"
   end
 
   test do

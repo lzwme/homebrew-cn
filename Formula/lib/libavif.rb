@@ -1,17 +1,17 @@
 class Libavif < Formula
   desc "Library for encoding and decoding .avif files"
   homepage "https:github.comAOMediaCodeclibavif"
-  url "https:github.comAOMediaCodeclibavifarchiverefstagsv1.2.0.tar.gz"
-  sha256 "2182f4900d1a9617cee89746922a58dd825f2a3547f23907b8d78dc3685f7d8c"
+  url "https:github.comAOMediaCodeclibavifarchiverefstagsv1.2.1.tar.gz"
+  sha256 "9c859c7c12ccb0f407511bfe303e6a7247f5f6738f54852662c6df8048daddf4"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9710e3232886b071086be9e829ed33cd2adab962a021384d9aa9d09e585d23d4"
-    sha256 cellar: :any,                 arm64_sonoma:  "4011a89e3ff4ff9679994aeed8b1d9a9b0c43a4147685f5cc7e48d8dc28e95e7"
-    sha256 cellar: :any,                 arm64_ventura: "365a31ff1a0b7dcff98b7744231fc3b0c702d37a817d549367078a025d04ce03"
-    sha256 cellar: :any,                 sonoma:        "499ead99a083721c808997faf3698d61b300db23d8048f9e45abbe882cc3ea8c"
-    sha256 cellar: :any,                 ventura:       "7874295d5f1e1916a3d0a832d99aa6a9f3960025d4cad0ff9c70bfc44ad1d92c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e236e3c9182095c5b944fcbda529735fcef4c8afc67909bae93b84a71a85c37"
+    sha256 cellar: :any,                 arm64_sequoia: "5c44c28b7141328d5a3eca015fa7ac4fc13ecf42f137405358f658646264c766"
+    sha256 cellar: :any,                 arm64_sonoma:  "c82c77f895818aab922235f77fceaf50f2ef974dfe126297685c2457d6f73e3f"
+    sha256 cellar: :any,                 arm64_ventura: "ac77cb3a2d3454bdb65849f62eb012d462c36e2c99e9ce4cb5943ac995ece7f7"
+    sha256 cellar: :any,                 sonoma:        "017c5e8e2fd2c29e85a549292d4df072b7e25bb22553538d9fde27f9f458ca7f"
+    sha256 cellar: :any,                 ventura:       "29c4fe070f05b1fd6f67fb9987001a570c736fa39ceefe7dfa7fa92c7136612e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8513ff0924eec754250e1ea79370950fbb6be068a7a155583b58b5ad1ac34f60"
   end
 
   depends_on "cmake" => :build
@@ -21,13 +21,6 @@ class Libavif < Formula
   depends_on "libpng"
 
   uses_from_macos "zlib"
-
-  # Review for removal on 1.2.1 release
-  # https:github.comAOMediaCodeclibavifissues2653
-  patch do
-    url "https:github.comAOMediaCodeclibavifcommit7cc1dccabd45864dc0945882faa0348dcded847f.patch?full_index=1"
-    sha256 "904feeb044dc3e8dc9029764125333bcd3a48e400691f9c67f64929ab20cff89"
-  end
 
   def install
     args = %W[

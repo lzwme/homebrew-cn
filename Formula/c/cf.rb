@@ -21,6 +21,8 @@ class Cf < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "78ac7581dae658e0e16a2413c5c9fda7725460394f707c3f78c65b99f9557692"
   end
 
+  conflicts_with "cloudfoundry-cli", because: "both install `cf` binaries"
+
   def install
     system "./configure", "--prefix=#{prefix}"
     system "make"

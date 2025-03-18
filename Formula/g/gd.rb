@@ -35,6 +35,8 @@ class Gd < Formula
   depends_on "libtiff"
   depends_on "webp"
 
+  conflicts_with "mummer", because: "both install `annotate` binaries"
+
   # revert breaking changes in 2.3.3, remove in next release
   patch do
     url "https:github.comlibgdlibgdcommitf4bc1f5c26925548662946ed7cfa473c190a104a.patch?full_index=1"

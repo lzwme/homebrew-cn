@@ -20,7 +20,7 @@ class Zbctl < Formula
   def install
     project = "github.comcamunda-community-hubzeebe-client-gov8cmdzbctlinternalcommands"
     ldflags = "-s -w -X #{project}.Version=#{version} -X #{project}.Commit=#{tap.user}"
-    system "go", "build", "-tags", "netgo", *std_go_args(ldflags:), ".cmdzbctl"
+    system "go", "build", *std_go_args(ldflags:, tags: "netgo"), ".cmdzbctl"
 
     generate_completions_from_executable(bin"zbctl", "completion")
   end

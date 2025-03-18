@@ -4,6 +4,7 @@ class GnustepBase < Formula
   url "https:github.comgnusteplibs-basereleasesdownloadbase-1_31_1gnustep-base-1.31.1.tar.gz"
   sha256 "e7546f1c978a7c75b676953a360194a61e921cb45a4804497b4f346a460545cd"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -17,12 +18,12 @@ class GnustepBase < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ede50b79bcb8a6c0a47339bfcdf39f048962d1514015c5cbdd6c9a4760aee69b"
-    sha256 cellar: :any,                 arm64_sonoma:  "3b2e44ee9247c8d63b84912e4a4726820d5d8bc9092ae5566853d9b119aada50"
-    sha256 cellar: :any,                 arm64_ventura: "f218b318c4b8835c31c1bcb6eeac58cdfa0894a2021d7e26c1cdf5bdce6a80f2"
-    sha256 cellar: :any,                 sonoma:        "812aa8fae123bd2799b8b1841d4b01bcff9b2b8e25f9b897659d89d962c28420"
-    sha256 cellar: :any,                 ventura:       "fe4f0cc328ef0dc600196af6c7b1796bf4b7f2a05f0ff418b63f723c8a08be9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a906c5120ed08dc88fe2de568fbd905cf90beedc1151c5f1d2238a6a0b4b46d0"
+    sha256 cellar: :any,                 arm64_sequoia: "022cbc646ea0a05743c51cb7d804549b78d53bd2b9900113421ba9b37853e515"
+    sha256 cellar: :any,                 arm64_sonoma:  "c87551242fea4d1739d7c651a590113ef97ec2f25a7e5ed3067ef4d5d382d62b"
+    sha256 cellar: :any,                 arm64_ventura: "32af6ef0e1a74f765fb361e8012b32a0f8b0d47d8d0ccd3f37eb616992c554e0"
+    sha256 cellar: :any,                 sonoma:        "7ca4a56508b6eaa4fb8ba7d3f111795bf180588709537e3dda6657a86925b328"
+    sha256 cellar: :any,                 ventura:       "c396d40c48b47283351eff5a976ad62cb4d11a3456e9d96abd4364d2fd457c39"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fa791efd053cb237f8194a380d86325b69ed5a65fcc7ba442265f89bcb9c5ad"
   end
 
   depends_on "gnustep-make" => :build
@@ -37,7 +38,7 @@ class GnustepBase < Formula
   uses_from_macos "zlib"
 
   on_system :linux, macos: :big_sur_or_older do
-    depends_on "icu4c@76"
+    depends_on "icu4c@77"
   end
 
   on_linux do

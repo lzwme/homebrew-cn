@@ -29,7 +29,8 @@ class Hugo < Formula
       -X github.comgohugoiohugocommonhugo.buildDate=#{time.iso8601}
       -X github.comgohugoiohugocommonhugo.vendorInfo=brew
     ]
-    system "go", "build", *std_go_args(ldflags:), "-tags", "extended,withdeploy"
+    tags = %w[extended withdeploy]
+    system "go", "build", *std_go_args(ldflags:, tags:)
 
     generate_completions_from_executable(bin"hugo", "completion")
     system bin"hugo", "gen", "man", "--dir", man1

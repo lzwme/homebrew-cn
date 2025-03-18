@@ -4,7 +4,7 @@ class Hfstospell < Formula
   url "https:github.comhfsthfst-ospellreleasesdownloadv0.5.4hfst-ospell-0.5.4.tar.bz2"
   sha256 "ab644c802f813a06a406656c3a873d31f6a999e13cafc9df68b03e76714eae0e"
   license "Apache-2.0"
-  revision 3
+  revision 4
 
   livecheck do
     url :stable
@@ -12,19 +12,19 @@ class Hfstospell < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1a5abc098f35bafed06807e2a6fcb5d9628ec031082e574752c6b94b897d93ca"
-    sha256 cellar: :any,                 arm64_sonoma:  "f4f59fbdc8ac56b4a9875ecae70904099b5e6967cab2353d01faee5e14b2278b"
-    sha256 cellar: :any,                 arm64_ventura: "54090c096a5b65d691da0b9eeae97761fe51a65e5d667189309e0987ab429ea8"
-    sha256 cellar: :any,                 sonoma:        "4afb0aec6411f6d48112f5150c18a996f32421f6f989b1f26f8be7d1a37593eb"
-    sha256 cellar: :any,                 ventura:       "caac1fea5a7b3fe47e8cafd75347fe19838af7f23535d9dfe67aedffb20c21a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fc01d70da2bb94ee86ae40f49fe5f2d49649b3d2f0e697f184442569d63569e"
+    sha256 cellar: :any,                 arm64_sequoia: "512a7ec1987a6ea4ba00e0e97744fe569cf086f8599fc1116d3a286430e51b82"
+    sha256 cellar: :any,                 arm64_sonoma:  "b9620e78ab2a3afaa6dbfeeb225da7e9f1e5da55a0bf82e8bff66bf51a1c6bdb"
+    sha256 cellar: :any,                 arm64_ventura: "68701bdb5dbcfc7e2874ed38329b15851fac68b5ffd6a9b4cd52017d63490f20"
+    sha256 cellar: :any,                 sonoma:        "fd2830d383ff448efa33c3061360e7f95226c985a50cb01780f2220de2e1d1f5"
+    sha256 cellar: :any,                 ventura:       "1f4cc82befe7f5e77bb255468434d980c15baa8b9eca1fd7a67003dcbdb17e8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87395934d55bf05dbd13fa44c20c36d417a883bfb1080ca2fdb5b03be5237e8d"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
   depends_on "pkgconf" => :build
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "libarchive"
 
   def install

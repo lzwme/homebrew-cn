@@ -28,7 +28,7 @@ class Nomad < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), "-tags", "ui"
+    system "go", "build", *std_go_args(ldflags: "-s -w", tags: "ui")
   end
 
   def caveats

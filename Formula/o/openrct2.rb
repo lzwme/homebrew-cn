@@ -5,15 +5,16 @@ class Openrct2 < Formula
       tag:      "v0.4.20",
       revision: "1c1b6d4b26e0f7d564b00a4d10e1770b93bfbda7"
   license "GPL-3.0-only"
+  revision 1
   head "https:github.comOpenRCT2OpenRCT2.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "85e91290d31164f934e3146a99f5d01bb24c52bf5f2bd737a3e55caf29b23ccb"
-    sha256 cellar: :any, arm64_sonoma:  "5fe8f61a9562e91ed19c9919661ef69a0900d7b506bc86ca56bc5bb38b566b4d"
-    sha256 cellar: :any, arm64_ventura: "90045bf9b69c66f139baa09a59dd6f3953af8d7808d7cf234090647b9f93538c"
-    sha256 cellar: :any, sonoma:        "5132f90ba139709b05545942c6a95218a26af98f1bf8083257c7e1e187be653e"
-    sha256 cellar: :any, ventura:       "25f781765024485f834d64bb271a3a0d75bbf38b210bc15a4a3b8a063584e959"
-    sha256               x86_64_linux:  "484e6392a840c93bb3a5c954d09377e477d6d0952d5b789b7a723a960e908320"
+    sha256 cellar: :any, arm64_sequoia: "3d7be0481dc7f68bf48cadc426910773ef6358819654ee8976b48007f76969c1"
+    sha256 cellar: :any, arm64_sonoma:  "407dd50764631d508a4fec2f22894b3d6837496498680e80f6a4c92b2fec5deb"
+    sha256 cellar: :any, arm64_ventura: "4f80d98a1b7a40ddb3289e70b9d70b56caf52a6a05c20b903444d2865eb1ff5a"
+    sha256 cellar: :any, sonoma:        "52e99cca0287d7e88696fe5209d5272d2b16f187cd8bf729c3a133e210b5c87a"
+    sha256 cellar: :any, ventura:       "018561814658f374c1f423df99168abe8762f3c406195c7d6ae78a775d35077b"
+    sha256               x86_64_linux:  "16d529dd1728164ba6be80b31b7ee896a4daba7bae646e67b563bfdf511eff72"
   end
 
   depends_on "cmake" => :build
@@ -23,7 +24,7 @@ class Openrct2 < Formula
   depends_on "duktape"
   depends_on "flac"
   depends_on "freetype"
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "libogg"
   depends_on "libpng"
   depends_on "libvorbis"

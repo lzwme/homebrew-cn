@@ -39,7 +39,7 @@ class Cql < Formula
       -X github.comCovenantSQLCovenantSQLconf.RoleTag=C
       -X github.comCovenantSQLCovenantSQLutilslog.SimpleLog=Y
     ]
-    system "go", "build", *std_go_args(ldflags:), "-tags", "sqlite_omit_load_extension", ".cmdcql"
+    system "go", "build", *std_go_args(ldflags:, tags: "sqlite_omit_load_extension"), ".cmdcql"
 
     bash_completion.install "bincompletioncql-completion.bash"
     zsh_completion.install "bincompletion_cql"

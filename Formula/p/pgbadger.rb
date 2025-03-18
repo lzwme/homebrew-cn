@@ -1,18 +1,18 @@
 class Pgbadger < Formula
   desc "Log analyzer for PostgreSQL"
   homepage "https:pgbadger.darold.net"
-  url "https:github.comdaroldpgbadgerarchiverefstagsv13.0.tar.gz"
-  sha256 "4cfaa24e6e7623e3f54e4a9dc35cc8030f7d2486931dc018d677d73181ba3626"
+  url "https:github.comdaroldpgbadgerarchiverefstagsv13.1.tar.gz"
+  sha256 "9658ff222ed7b387d3cb76c3e3d90d1862b885c13b26aa9ff652e133f5d018f1"
   license "PostgreSQL"
   head "https:github.comdaroldpgbadger.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94aa1fdd34d44e52c4b8a61de9aa2d4f93e31108c00086c6fad2bd89e8203096"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "94aa1fdd34d44e52c4b8a61de9aa2d4f93e31108c00086c6fad2bd89e8203096"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "777f851682d287a083d4e77c240fc8675070df16bfeb868750d249213d3168eb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c858ea71c3dc74d999c1d64f5e5225963dabf18136444bf8f4ffd4a1d9c1584b"
-    sha256 cellar: :any_skip_relocation, ventura:       "2963fb8da4935daae96d8a17a7abb70b4a1c5173c5d25b5593029d600a092fcc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "997a32aa91ebc0335121777abc59b8701f132ec87611be733d0f36d8d241500e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3e83fad1caf40cefd5ac3dd5d536286e5d1de2ba73cacb5c91de04ff359088f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3e83fad1caf40cefd5ac3dd5d536286e5d1de2ba73cacb5c91de04ff359088f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "aaffda73eea02684a47c7e8fbba2d1ba4787be1cea304204a938408fa3ea9022"
+    sha256 cellar: :any_skip_relocation, sonoma:        "93fe9851cb986a58f8db18251ec636ab6e09d317f0813bbc7600b65f5989d284"
+    sha256 cellar: :any_skip_relocation, ventura:       "5fd44b906bbbbfa63e11b886b1514b97f2913d73a026d132f4cf84cbe4811657"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24267f87df6ab44c1a9abd0b000338804af5514d865d7a82c1101bb9a9ae96d3"
   end
 
   def install

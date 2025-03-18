@@ -30,7 +30,7 @@ class Navidrome < Formula
 
     system "make", "setup"
     system "make", "buildjs"
-    system "go", "build", *std_go_args(ldflags:), "-buildvcs=false", "-tags=netgo"
+    system "go", "build", *std_go_args(ldflags:, tags: "netgo"), "-buildvcs=false"
   end
 
   test do

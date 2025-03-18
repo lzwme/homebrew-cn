@@ -1,17 +1,17 @@
 class Cdxgen < Formula
   desc "Creates CycloneDX Software Bill-of-Materials (SBOM) for projects"
   homepage "https:github.comCycloneDXcdxgen"
-  url "https:registry.npmjs.org@cyclonedxcdxgen-cdxgen-11.2.1.tgz"
-  sha256 "dddacdc2ca8ed2b0ede47fb7de64c699d4831fbe0b3e07dc2d23c928120aa711"
+  url "https:registry.npmjs.org@cyclonedxcdxgen-cdxgen-11.2.2.tgz"
+  sha256 "4952a313c611dc7a2341d97dc28d1809fc2e7cfb7bb9858b53353ba4fd2a16e0"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a88f92b188979823b9a4840cfc71797d35672f04acc5920880764d6322c34c2c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87985773ae476c27cdcf4ca6292f4d89e66d4756b9260c8190f66c23d02a791f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8a8885eb7dc46036641069730868489b4accb2e06f0442eaa7a38ce2a1dce575"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8842f26c78a4100a629eb068ec47a148c3b46396ede0ab17f0889fd701e09ba0"
-    sha256 cellar: :any_skip_relocation, ventura:       "852fe7b4d3ece805caaa00a22544b78602f517e6034c6e2e6db356c1d4b9f3d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6206e8414e3c3cf0c0ef551833a798d40847f3cfd30e41892df58fc6972b735c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf5cf693fbb9bea3d5e5b2152a7c1992f777c56e3d105e064b98f4f521e73910"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0acd6cae3ec4d9d84757291444177feea095accca3a0f9dea58671cfd9a4243a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d507bdc2e1a1abaa3021d88a1e9df3a1712daeb22d15dd46a2f231a3c84f13f6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "22b892b3a44786dc7de5c301ab9840b5e18817a1e260339f2924732da48af98f"
+    sha256 cellar: :any_skip_relocation, ventura:       "5bbe082f8c4eb8e8f4dee1bffa0835a14aa50b7598f84599663f59bac00a19fd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a70aae36079f0b984b065365b55dc52cc3fd409fb84fce0c016c161a80b7d0d"
   end
 
   depends_on "node"

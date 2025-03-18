@@ -40,7 +40,7 @@ class GrafanaAlloy < Formula
     system "yarn", "--cwd", "internalwebui"
     system "yarn", "--cwd", "internalwebui", "run", "build"
 
-    system "go", "build", "-tags=#{tags.join(",")}", *std_go_args(ldflags:, output: bin"alloy")
+    system "go", "build", *std_go_args(ldflags:, tags:, output: bin"alloy")
 
     generate_completions_from_executable(bin"alloy", "completion")
   end

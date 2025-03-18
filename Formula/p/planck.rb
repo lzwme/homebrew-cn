@@ -4,23 +4,23 @@ class Planck < Formula
   url "https:github.complanck-replplanckarchiverefstags2.28.0.tar.gz"
   sha256 "44f52e170d9a319ec89d3f7a67a7bb8082354f3da385a83bd3c7ac15b70b9825"
   license "EPL-1.0"
-  revision 2
+  revision 3
   head "https:github.complanck-replplanck.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ab34e0ef0e2e78aa190ca2ba821bd8e4ccfc7f4ba3b79fc1d7a74c697095512e"
-    sha256 cellar: :any,                 arm64_sonoma:  "96f747019fe7702ddf88fa4d7d2267b6031436df2417073f3bbcabb8c6b5d66d"
-    sha256 cellar: :any,                 arm64_ventura: "342f71f4a83296fa7754cc6244c4979a8976f0a4a5a6ea1ebad661ad6d6e329e"
-    sha256 cellar: :any,                 sonoma:        "d8d0fd48c44530bc3ef14f7eaa733c596356a686c6acba27da55224a936d0172"
-    sha256 cellar: :any,                 ventura:       "0ed48e120f059d43836251a16464488a85e46826a428838317bdef1bda516bea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f73054a3ff20c391c8f63196e146ff267143c1c3f72a4177d205f63bd2a1aa6"
+    sha256 cellar: :any,                 arm64_sequoia: "94dbee8e25f82b3d6af4c0f5aa768b072b5f42c37c17a6ee55820a6c3e9a9210"
+    sha256 cellar: :any,                 arm64_sonoma:  "9b48ec0e76cc42f5a7bcee1704e043b6ee37cecbcc65acc9f9926367cb99b54a"
+    sha256 cellar: :any,                 arm64_ventura: "698191a3c5a7d477a3d21bd0f7638b67fbc34c8d71b69fa44d5814dcc842ac2b"
+    sha256 cellar: :any,                 sonoma:        "1569b2fbd7b63d35aa7a8c86df20494825214a1b66e5f789cbf4c72c3a595560"
+    sha256 cellar: :any,                 ventura:       "bc7daa8d9acfdf57759f78bacf47c2f5d03843bfb9885e29f87c288dfeee2c44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f833bad418d1787df2686c970188abd9dfad3657707a309827773253dfa5487b"
   end
 
   depends_on "clojure" => :build
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on xcode: :build
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "libzip"
 
   uses_from_macos "vim" => :build # for xxd

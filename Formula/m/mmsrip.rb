@@ -1,14 +1,9 @@
 class Mmsrip < Formula
   desc "Client for the MMS:// protocol"
-  homepage "https://nbenoit.tuxfamily.org/index.php?page=MMSRIP"
-  url "https://nbenoit.tuxfamily.org/projects/mmsrip/mmsrip-0.7.0.tar.gz"
+  homepage "https://web.archive.org/web/20241016171436/https://nbenoit.tuxfamily.org/index.php?page=MMSRIP"
+  url "https://web.archive.org/web/20161207201859/https://nbenoit.tuxfamily.org/projects/mmsrip/mmsrip-0.7.0.tar.gz"
   sha256 "5aed3cf17bfe50e2628561b46e12aec3644cfbbb242d738078e8b8fce6c23ed6"
   license "GPL-2.0-or-later"
-
-  livecheck do
-    url :homepage
-    regex(/href=.*?mmsrip[._-]v?(\d+(?:\.\d+)+)\.t/i)
-  end
 
   bottle do
     rebuild 1
@@ -28,6 +23,13 @@ class Mmsrip < Formula
     sha256 cellar: :any_skip_relocation, el_capitan:     "cf0bc6b407f4861b174eddf55ae5da45330d37abc428013ca19f173d36a96d2a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e3d2396067956a932acbac5b815338b0e46e05ffa157dc20833725f01af8630"
   end
+
+  # Deprecation reasons:
+  # * TuxFamily URLs are no longer available (https://forum.tuxfamily.org/topic/775/is-tuxfamily-slowly-dying/)
+  # * Analytics on deprecation date were "0 (30 days), 0 (90 days), 5 (365 days)"
+  # * Last release in 2006
+  # * The MMS protocol was deprecated in 2003
+  deprecate! date: "2025-03-17", because: :unmaintained
 
   def install
     system "./configure", "--disable-debug", "--disable-dependency-tracking",

@@ -30,7 +30,7 @@ class Earthly < Formula
       -X main.BuiltBy=homebrew
     ]
     tags = "dfrunmount dfrunsecurity dfsecrets dfssh dfrunnetwork dfheredoc forceposix"
-    system "go", "build", "-tags", tags, *std_go_args(ldflags:), ".cmdearthly"
+    system "go", "build", *std_go_args(ldflags:, tags:), ".cmdearthly"
 
     generate_completions_from_executable(bin"earthly", "bootstrap", "--source", shells: [:bash, :zsh])
   end

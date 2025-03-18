@@ -1,14 +1,19 @@
 class Lume < Formula
   desc "Create and manage Apple Silicon-native virtual machines"
-  homepage "https:github.comtrycualume"
-  url "https:github.comtrycualumearchiverefstagsv0.1.9.tar.gz"
-  sha256 "6be0e43366187b753c4f9645d20e27ffda5b06092ef8db0ac798707932bf5373"
+  homepage "https:github.comtrycuacomputer"
+  url "https:github.comtrycuacomputerarchiverefstagslume-v0.1.17.tar.gz"
+  sha256 "500958838bab32743e9cb6fa4970cb14e86dec1c3c9228a21dc706e0a20a47f6"
   license "MIT"
-  head "https:github.comtrycualume.git", branch: "main"
+  head "https:github.comtrycuacomputer.git", branch: "main"
+
+  livecheck do
+    url :stable
+    regex(^(?:lume[._-])?v?(\d+(?:\.\d+)+)$i)
+  end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4df79bd82fda01c6eadfad7575496c8c888cab6a007e72ae22014547db7e225"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c655fdab0f83facb0d66f6280d739eb0de9648d6f54f4dbde541cf15ef7599c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98f762b5aca3b54bb0c6b88f3e1ff255e1ba8993679d9102b3a95e53b29d92fa"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8c40105451369b06eb6536a4cc6c49922536133db30f637c05e9bc75cf579ed"
   end
 
   depends_on xcode: ["16.0", :build]
@@ -16,9 +21,13 @@ class Lume < Formula
   depends_on :macos
 
   def install
-    system "swift", "build", "--disable-sandbox", "-c", "release", "--product", "lume"
-    system "usrbincodesign", "-f", "-s", "-", "--entitlement", "resourceslume.entitlements", ".buildreleaselume"
-    bin.install ".buildreleaselume"
+    cd "libslume" do
+      system "swift", "build", "--disable-sandbox", "-c", "release", "--product", "lume"
+      system "usrbincodesign", "-f", "-s", "-",
+             "--entitlement", "resourceslume.entitlements",
+             ".buildreleaselume"
+      bin.install ".buildreleaselume"
+    end
   end
 
   test do

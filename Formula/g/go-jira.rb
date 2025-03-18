@@ -28,6 +28,8 @@ class GoJira < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "jira-cli", because: "both install `jira` binaries"
+
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"jira"), "cmdjiramain.go"
   end

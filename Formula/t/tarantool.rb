@@ -4,6 +4,7 @@ class Tarantool < Formula
   url "https:download.tarantool.orgtarantoolsrctarantool-3.3.1.tar.gz"
   sha256 "c0f9d2160da2fa73a7dfb7e87d064d35554bf90358464e4c4ab9cced4695264e"
   license "BSD-2-Clause"
+  revision 1
   version_scheme 1
   head "https:github.comtarantooltarantool.git", branch: "master"
 
@@ -15,17 +16,17 @@ class Tarantool < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f03e8db8b668fe87a24439a71f3bbc52c3226fadf791b83061f1926a5c3e8352"
-    sha256 cellar: :any,                 arm64_sonoma:  "4b98a50aca0c19485215f3e9c5c461e5870e72370bb7459a84d7fc5d9ea9824e"
-    sha256 cellar: :any,                 arm64_ventura: "b8ba71cd9c98e584949bf3e19f27a1f4346951911b6e45f2367cb7fd40f09be2"
-    sha256 cellar: :any,                 sonoma:        "5eaad296be43d3ef6bda96f740ed7eeddf66ec2c60b5922ae441991974bdde45"
-    sha256 cellar: :any,                 ventura:       "9d64cfee36b26abedbf58ab12296fcb6045ee58c14ac0cc2dbb2dc417e1f84ec"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e98ef1935e7ceee4a5e0a816207decec98c2e984ecb6062b79a27c3d46f81b9"
+    sha256 cellar: :any,                 arm64_sequoia: "5298f8fd26ac5cca02095bed524f471102e6e732477d7417e451ac2dfecae86b"
+    sha256 cellar: :any,                 arm64_sonoma:  "7b71b83056da025a166c42b201cb34fbb2dd759d15530aad69eb5f3c3d6c6f68"
+    sha256 cellar: :any,                 arm64_ventura: "48c9a273d79164f5058427033540616bd4dda795507860149725a46a2ffc5cda"
+    sha256 cellar: :any,                 sonoma:        "114182d89ca1081c142002c70e52e62048fd5c012fc43860ef11ebab24a8af2e"
+    sha256 cellar: :any,                 ventura:       "e680a57e44b09e2aeac0d1e3753849ede9bda9bf646b45bd9d257a44b72b76f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c16a9f89d4e515a874b56577571ddf3b568a742dbeb06a9184241c578d6fc8ce"
   end
 
   depends_on "cmake" => :build
   depends_on "curl" # curl 8.4.0+
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "libyaml"
   depends_on "openssl@3"
   depends_on "readline"

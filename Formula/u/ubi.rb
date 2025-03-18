@@ -1,18 +1,18 @@
 class Ubi < Formula
   desc "Universal Binary Installer"
   homepage "https:github.comhouseabsoluteubi"
-  url "https:github.comhouseabsoluteubiarchiverefstagsv0.5.2.tar.gz"
-  sha256 "a4a92d120e6d8ccb8fcf6722b6a6ac87357ff87b2d50296d428216b62a038377"
+  url "https:github.comhouseabsoluteubiarchiverefstagsv0.6.0.tar.gz"
+  sha256 "77ec5b786066168d25b8ae98c14f144c3b4bf9f0f3ddfc423c9e808c30d69dbb"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comhouseabsoluteubi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b7ec47fb63209d5871eb9836e1a2f19e1dbf54d092715fc3a000930d04d69b0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d43ef587509f1a31df3e8827340cf75e2d7622b99124cb0307d14fe349d13137"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c601f5856f6241abb52a6125c4a95432766f07c9b10fa0ac8b77a7913ff4fdfd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fa8af992b3ce1f958d0595db60407484b13f5d47b9c87e8ac6125617620112a0"
-    sha256 cellar: :any_skip_relocation, ventura:       "e67f2960e5f9c639dbde3717eac7300579adf288e978dbd1f9f2b56dba7ce48e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08f8efcbf5bf3e5bc2afdd29e8d592f83153e18f1642920bbc220e150052b21a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2e18242d6a70b1bd72c2a6036f84fa3c07e75ab8330d215738ae81baa8d078c7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "498923a422cfcfa64b62d9ee592ffdfd696cbf02a523ffffcdce8363ec7aa617"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0f7574296000a1700ffd07a1744489338b2565d4736998c7b6eda02f874e4d1f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "44257cb41db407825d261d588f275ba056a84b55384a774fbd55b1b35fd4a40b"
+    sha256 cellar: :any_skip_relocation, ventura:       "d4eefb519a19102f04f9e6105a828a9529199994f4ab72bb3d86863ea4d73853"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cceff241f5369796b38303d5c2d768d383cefb9ea99f9cbabe5c0c9a65e5b779"
   end
 
   depends_on "pkgconf" => :build

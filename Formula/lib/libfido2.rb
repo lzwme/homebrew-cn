@@ -4,16 +4,15 @@ class Libfido2 < Formula
   url "https:github.comYubicolibfido2archiverefstags1.15.0.tar.gz"
   sha256 "32e3e431cfe29b45f497300fdb7076971cb77fc584fcfa80084d823a6ed94fbb"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "b07f0c07f5b2bc30b51b11ab15bb6424bc6f12c2d777af1c88f5fc51eabd0456"
-    sha256 cellar: :any,                 arm64_sonoma:   "af63db962f5466784b450d1052475668fdb7fd8588f6f0f52c952e4445739fda"
-    sha256 cellar: :any,                 arm64_ventura:  "33c05cce853e59f211ae4dd2bac144b57d27a94537a79ffbee97c5efa34cbd4a"
-    sha256 cellar: :any,                 arm64_monterey: "451806f5a0f08d301a6789d705614f2cf1c7dceeaa88005c584280f907924447"
-    sha256 cellar: :any,                 sonoma:         "c25ffe40fef70db5d37372fcbe4d3e34eb50ba9c5c0e3714d3cbb09d07c9a73d"
-    sha256 cellar: :any,                 ventura:        "2592f9c608fddf4d40e6dc9eb0d64e56fe3e960dbd51ef8abfe928c40ac1e27c"
-    sha256 cellar: :any,                 monterey:       "139818589401f84797b5e581312b3a0208d0ce308eb0b7ae55e9546cd5bf674a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7ebead53de6c6dd99885d4b3fb94cf0c753995a280824cb06b63b26e0bd1d40"
+    sha256 cellar: :any,                 arm64_sequoia: "77a7f87267cbe477df703af3d80958c0de22f3a8466c1fa56c6f0dfbbdf790b8"
+    sha256 cellar: :any,                 arm64_sonoma:  "71e2af315c37d9f530adaaaafb3f0507ee0dffd4006aa242df8ca5553270ea97"
+    sha256 cellar: :any,                 arm64_ventura: "275606b563b5b5da93406363be140811b4b935e8a9de78757a73667d96d78011"
+    sha256 cellar: :any,                 sonoma:        "722486b1889bcbd088be7e361ebc8f770a902f770b181fce53a19e851dcb2b69"
+    sha256 cellar: :any,                 ventura:       "73955c899e3ef7463e3033045adcfa5a18731f58aa5dbc53f108fd96dabdd0f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d8cbd9a644cc9317ee7742693b6a1066a8afeba5adb45e0c5b29d8bae0bb706"
   end
 
   depends_on "cmake" => :build
