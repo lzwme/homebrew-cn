@@ -1,10 +1,9 @@
 class Zk < Formula
   desc "Plain text note-taking assistant"
   homepage "https:zk-org.github.iozk"
-  url "https:github.comzk-orgzkarchiverefstagsv0.14.2.tar.gz"
-  sha256 "51956ab37595f2c95d97594e1a825d35de9be0c31af2f32f2e2d4468b7b88e0c"
+  url "https:github.comzk-orgzkarchiverefstagsv0.15.0.tar.gz"
+  sha256 "a99c3a3ef376b9afb3d35cc955b588ce35b35e2ebe3492e65b21d9fe4e9ba4e9"
   license "GPL-3.0-only"
-  revision 1
   head "https:github.comzk-orgzk.git", branch: "main"
 
   livecheck do
@@ -13,12 +12,12 @@ class Zk < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "79a8bf894b660fc6434833710a2545e1a01477bd52365c7f56696bc2d66d7ea2"
-    sha256 cellar: :any,                 arm64_sonoma:  "12ba68014a20014e794c864399165ef2b1cecf2c5a12ca131b32671b09b4632f"
-    sha256 cellar: :any,                 arm64_ventura: "7218edc02ca8d75ff11da7899546b8514dfe686b969f53e8ea5e46bd85f28f50"
-    sha256 cellar: :any,                 sonoma:        "a4d1dc245f7a61d8ab8add359eed41230868ab9e8e8296eb22d7de4a3670e1e9"
-    sha256 cellar: :any,                 ventura:       "e7dff217adae10898bc1345bbf4ecae9c5f517a97ae2c250e2b97099f4cd7438"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b71f2405deeda4fd3894cdd7dd101e0995fcf77eb3e2139ae075d8b0b9fb0c3a"
+    sha256 cellar: :any,                 arm64_sequoia: "ef3376e7cd77f58a3c20478ace283c444db22dfdc43033571ca4c2d3729e4d21"
+    sha256 cellar: :any,                 arm64_sonoma:  "78b63d840567a03590f82e3b7ff0ed05f078a140bef579be7e18fd4cbc28464e"
+    sha256 cellar: :any,                 arm64_ventura: "3a03654ae49e4bdbbf1cc7f0a01e8d6c27fd2a1451a1fc1b3ffcb7d42834625d"
+    sha256 cellar: :any,                 sonoma:        "f9b0141cbbbd6fa771a81d7021c5ac420662a54b64ab4748da29f88ba84deffd"
+    sha256 cellar: :any,                 ventura:       "7cec72e73e0b125467cc0a1d1743820a2d75be1361e97b2f69af1f0d1f8fdea5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1985206d3802d58c635741d386f84509437aacf07a2c2fa9c2e933ca584d017b"
   end
 
   depends_on "go" => :build

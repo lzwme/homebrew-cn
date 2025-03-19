@@ -4,7 +4,7 @@ class EasyrpgPlayer < Formula
   url "https:easyrpg.orgdownloadsplayer0.8easyrpg-player-0.8.tar.xz"
   sha256 "06e6d034348d1c52993d0be6b88fc3502a6c7718e366f691401539d5a2195c79"
   license "GPL-3.0-or-later"
-  revision 7
+  revision 8
 
   livecheck do
     url "https:easyrpg.orgplayerdownloads"
@@ -12,16 +12,15 @@ class EasyrpgPlayer < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a32ab95798e512a5e7aedbf1ed9427fa5b7f61c26e7b9eca46b8ec5309fa52b5"
-    sha256 cellar: :any,                 arm64_sonoma:  "a235adad11b54f8cff2742248e2feb77553091870043fbac8f86376c4396df2c"
-    sha256 cellar: :any,                 arm64_ventura: "0647aaa793ff98d38f4ab33a51739fd4a38e38b115f3a88c63e9cd750b32e653"
-    sha256 cellar: :any,                 sonoma:        "3a0abcf7abbdf8843d99e2a41d29f53b09117d26ca081a5dee9aed20dbd9a7ae"
-    sha256 cellar: :any,                 ventura:       "aa01edc79c1b3c6ac0b0ff91e292f5b0e47cbc42149419318a1204b13ea0edc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5dd92702f1a18aded2ddebeb9bda83e8f08f46aa78bcb956205bad2315403efc"
+    sha256 cellar: :any,                 arm64_sequoia: "91a3f17478db7d87e435ede9a774f9aaa60efd9d1643bd40a1b46d41b6cb583f"
+    sha256 cellar: :any,                 arm64_sonoma:  "ee017d61080f9d8f939b265c48baa3a951c639539d7e60fc630a8ea59d75ceef"
+    sha256 cellar: :any,                 arm64_ventura: "07a6d81fc75427bb8844e9bd79b6b457def126c37ad2db8e386cf4eb979f5b37"
+    sha256 cellar: :any,                 sonoma:        "96816388fdb23de41c554995d0d4b52aa348c50430495d1e6248e425934f3c9f"
+    sha256 cellar: :any,                 ventura:       "7d669fe4965e4a7739897bd749ed5f184778d9493eb6e9938135ba23a9058f12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "900ef138e0241d3b323307182d08e38ae55d1e7f99ca82ec7cbf9e3bbc1c4124"
   end
 
   depends_on "cmake" => :build
-  depends_on "expat"
   depends_on "fmt"
   depends_on "freetype"
   depends_on "harfbuzz"
@@ -36,6 +35,7 @@ class EasyrpgPlayer < Formula
   depends_on "sdl2"
   depends_on "speexdsp"
 
+  uses_from_macos "expat"
   uses_from_macos "zlib"
 
   on_macos do

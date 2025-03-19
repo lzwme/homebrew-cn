@@ -1,18 +1,18 @@
 class Tealdeer < Formula
   desc "Very fast implementation of tldr in Rust"
   homepage "https:tealdeer-rs.github.iotealdeer"
-  url "https:github.comtealdeer-rstealdeerarchiverefstagsv1.7.1.tar.gz"
-  sha256 "2b10e141774d2a50d25a1d3ca3d911dedc0e1313366ce0a364068c7a686300d8"
+  url "https:github.comtealdeer-rstealdeerarchiverefstagsv1.7.2.tar.gz"
+  sha256 "d0675b9aa48c00e78abafc318b9bfbcb7ea3cce63e58a42c1f9e2395abcfe0e8"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comtealdeer-rstealdeer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98e3ea943307c047c4bcbd4e71c0c6e753adce66af57e4881fab360b6ad91ca0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e8645f8f68c525cd9b66cf9b703b28f795cd5aee6c875378dca042b0461f70a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fa8716deaae90b75e9597e54474aa7a2c4e55fde790a7b33d4f99f1e5927f516"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3d21e8203993929078c44ae1862a9ea569177acf75b773310ae4d5309d35adce"
-    sha256 cellar: :any_skip_relocation, ventura:       "ab81dc0b6f9bf01f565d731a64b6500b816a5f616edcfd6416b5e56d3060beba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fcf5d4d0516caa738d291d7319a78b7dbba8875256ed34e0b3a57d1f905d235"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "762b6cf9ec14e22cdd155410a249c1d1c06132350e3574c9c372a88860249833"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2fa102755f201bb1a209fc9006b2106d0a31a09a83648772d78ce30e81060886"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c60761d865a1475a4b04d2881eaec1737c43caaa5498ce0769098071ddc44cd0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0af151c2275b86b52ae1c2a38c5705e27524222f7bd23ae79b5092fe348d1100"
+    sha256 cellar: :any_skip_relocation, ventura:       "858b2bb36dee9c444b211d2c74cb1b2c85d36362683c568d4e93591095ffaccc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0a019576229e3bf8767b4f8fe4aeb32aa7e6f05f5d2ed303be22263e78481fc"
   end
 
   depends_on "rust" => :build

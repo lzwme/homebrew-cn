@@ -12,6 +12,7 @@ class Acl < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_linux:  "695b06a8bbf631dcdb24b378b679def88f3886857a631cbb2e99bbcce753f223"
     sha256 x86_64_linux: "576bd92b4005247b37258f8c637e0158e7298e7e29779899e5a1287fd9f856cf"
   end
 

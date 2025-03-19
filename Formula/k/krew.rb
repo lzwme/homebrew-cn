@@ -2,22 +2,18 @@ class Krew < Formula
   desc "Package manager for kubectl plugins"
   homepage "https:sigs.k8s.iokrew"
   url "https:github.comkubernetes-sigskrew.git",
-      tag:      "v0.4.4",
-      revision: "343e657d45564940387fe028bb3310a6eaf147d3"
+      tag:      "v0.4.5",
+      revision: "e7e5b619d0defd3fe53f66ce7e7330b21386e944"
   license "Apache-2.0"
   head "https:github.comkubernetes-sigskrew.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "02580fb9cbe538d6f26aae270dfdc1671cfe60236e278417bc88d931516383d6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "33b93a07f10a575d8710808a3c40e22bb89be4c5bbb10e07c91b87ba6b005574"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "64f4e15c95d629c47695c6dd5d859171d2578a292073646fc20d5d99f344b3bf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "64f4e15c95d629c47695c6dd5d859171d2578a292073646fc20d5d99f344b3bf"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "64f4e15c95d629c47695c6dd5d859171d2578a292073646fc20d5d99f344b3bf"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e83243eb10d103959aa054eaa3205217de28253f50873e93378720bb727235cd"
-    sha256 cellar: :any_skip_relocation, ventura:        "ec4b6962d442c61691cfa4348ddcea989e22d18af1822123b1629ea8aae17d87"
-    sha256 cellar: :any_skip_relocation, monterey:       "ec4b6962d442c61691cfa4348ddcea989e22d18af1822123b1629ea8aae17d87"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ec4b6962d442c61691cfa4348ddcea989e22d18af1822123b1629ea8aae17d87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7366454b250d713ba13a7b2f009ebcb4bae855fcf98cb5443b7f8e9f8bf2a244"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2612180540b05504e2f9c3aae82cb6335ffa55e88ac9e27f2bdad18390c22dc0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2612180540b05504e2f9c3aae82cb6335ffa55e88ac9e27f2bdad18390c22dc0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2612180540b05504e2f9c3aae82cb6335ffa55e88ac9e27f2bdad18390c22dc0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "97a497441f46ee46bd7c458d3d369697ca2fe43c75fc58a861db755a2d205ff5"
+    sha256 cellar: :any_skip_relocation, ventura:       "97a497441f46ee46bd7c458d3d369697ca2fe43c75fc58a861db755a2d205ff5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67e4f1ed2eb1d0d9871d87749e10251448e279bafbfe74ab1e13229cb3151841"
   end
 
   depends_on "go" => :build

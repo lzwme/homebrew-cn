@@ -755,6 +755,7 @@ Homebrew-homebrew-core/Formula/c/cargo-public-api.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-release.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-run-bin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-shuttle.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cargo-spellcheck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-sweep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-udeps.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-update.rb, Homebrew/homebrew-core, 1
@@ -1474,7 +1475,6 @@ Homebrew-homebrew-core/Formula/d/docker-machine-driver-vultr.rb, Homebrew/homebr
 Homebrew-homebrew-core/Formula/d/docker-machine-nfs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docker-machine-parallels.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docker-machine.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/d/docker-slim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docker-squash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dockerfile-language-server.rb, Homebrew/homebrew-core, 1
@@ -4299,6 +4299,7 @@ Homebrew-homebrew-core/Formula/m/minizinc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minizip-ng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minizip.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mint.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mintoolkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minuit2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/miruo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mise.rb, Homebrew/homebrew-core, 1
@@ -4635,6 +4636,7 @@ Homebrew-homebrew-core/Formula/n/nmail.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nmap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nmh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nmrpflash.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/nmstatectl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nnn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/no-more-secrets.rb, Homebrew/homebrew-core, 1
@@ -12748,6 +12750,7 @@ Homebrew-homebrew-cask/Casks/n/netbeans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/netdownloadhelpercoapp.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/neteasemusic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nethackcocoa.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/n/nethlink.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/netiquette.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/netlogo.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/netnewswire.rb, Homebrew/homebrew-cask, 1

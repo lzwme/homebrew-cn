@@ -15,6 +15,7 @@ class GnuTar < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "a9a0d278cd686a626b45cbfd43aa8f34adbf8347c1f58c3849e9dc7f78016b4b"
     sha256 cellar: :any_skip_relocation, ventura:        "a5a14e7862c152e90e14c3efaf4973f0e93db2c24b23e793b7e2938ef4174ec7"
     sha256 cellar: :any_skip_relocation, monterey:       "cfc20759e66fb504327deba772787d6b9780b09c11c8fe64000cee054dbc9aa0"
+    sha256                               arm64_linux:    "3d978a1e268ac4c54b0f56a2204abdf025a624352d47fb860e10b102088de8c7"
     sha256                               x86_64_linux:   "c990300939509bf4ad6eb70e19d5bf47d8812295bf591de75e84ca163942ced6"
   end
 

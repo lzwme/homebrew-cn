@@ -1,18 +1,18 @@
 class Sendme < Formula
   desc "Tool to send files and directories, based on iroh"
   homepage "https:iroh.computersendme"
-  url "https:github.comn0-computersendmearchiverefstagsv0.24.0.tar.gz"
-  sha256 "e57885e097d5fd2ec46813b69c57943bc831207c317069ed9c5ac440baaff77d"
+  url "https:github.comn0-computersendmearchiverefstagsv0.25.0.tar.gz"
+  sha256 "d50c39cbe828947a5acf67f4c0d1db46017ff9e2fe2c8e77970dd515b1b024d7"
   license "MIT"
   head "https:github.comn0-computersendme.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52350173ae98d8b6294d9bc093eb53c476364976a3ae24f62212ed85dec5f7fb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce4fa5369ee7bc52464960e94aad679e57680421a84429dca4491097cf40d420"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5ed3896c3229be36bca39ab24a6f5702f509381f5035ddedfe152d13eede8170"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d547c26d3265b54c4b4e0aa2176ee93a36a19fb1bd9bd10d49016595eb58872f"
-    sha256 cellar: :any_skip_relocation, ventura:       "c25fa5b5e18e41f67bbc93ec25f353148505c2750bfd2bce4648b1e12819ec22"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0278655226c8298a67dd27b0c78d1fdba4ffc4470144598c26717d58bfbc8f48"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80ab0de98e09c5b9915a44a75e441d0724b91342aabddae8839183c3fef5292c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4943b7174fcf8759dc6820853270f84da3272581f448973c0eed2f659b31f317"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a8d1390110f8326011e78646117cbf07ef5df02abb0cb672e5b19fa5c0e65b37"
+    sha256 cellar: :any_skip_relocation, sonoma:        "902ae570d8182e3dab7c0e190e41349bbe240fee4fa4ee60c63510e9d285fd84"
+    sha256 cellar: :any_skip_relocation, ventura:       "7f9e7975131baf76c40bf5c6f8af2b421d9058473f7a96201703ba702e5cb949"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cbf6e22046177118629a060d27565012c52c5b3e98c955a9ba9b9853051693be"
   end
 
   depends_on "rust" => :build

@@ -1,18 +1,18 @@
 class Dprint < Formula
   desc "Pluggable and configurable code formatting platform written in Rust"
   homepage "https:dprint.dev"
-  url "https:github.comdprintdprintarchiverefstags0.49.0.tar.gz"
-  sha256 "e97c1cf1a67decdea7c79174fab33cae3b6a95e480e51d8cafa6a827becbef59"
+  url "https:github.comdprintdprintarchiverefstags0.49.1.tar.gz"
+  sha256 "df019b295ff137ccaec3ad8c7a39282b485b6381ff5a3519ec18bd3d7c89ba72"
   license "MIT"
   head "https:github.comdprintdprint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4946ccf00f43d736cd67257e52b0babcbefeb7979fa4a342004438010f06df33"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "394f37f3d96c5de24838bce8e3833b62f3665b9db34fb8cb6881fa5151db8c27"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a6026f7af2c0ef125a328b02ca1816fe6e7af33d13f70ce75aa41abc681ec258"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f63b66d10e587b123847c6d73f4d9c11bc99cec8881a673016a126e8417aedf3"
-    sha256 cellar: :any_skip_relocation, ventura:       "657a366bbc1cb683ccb2bd8c578cd99c293dd1f691a4a65787ec7c31d8fd1eaf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b9c5c4d58fa8f53799b17014ab56a44ff8408f62dc897316f309420e452765c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b0e4b377e98ad778793484a3dff59f74b29906ccde4b94f52acafb9917195a7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "10a11ad7af71def0ba4b5a24c8aabc87563cbe745aa4b9899308e22ecbdbf844"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4b317e6c03f9dbfb204b69c5600b46a480969b4754939d6790ba84ef504a5f21"
+    sha256 cellar: :any_skip_relocation, sonoma:        "76c79faf66dab060c0f8a12748640b27b4749751c52e61ec066120cc8e49e48b"
+    sha256 cellar: :any_skip_relocation, ventura:       "888304a28f1df47eb8dc5acbfe7c7ab7ea3ed82bf2dc01b8fa6e4cad48b3d526"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7408ff0f353f0797570b56ba614081abe5fbc553f97d11c4ef7b2f0b175c581c"
   end
 
   depends_on "rust" => :build

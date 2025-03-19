@@ -1,17 +1,17 @@
 class Step < Formula
   desc "Crypto and x509 Swiss-Army-Knife"
   homepage "https:smallstep.com"
-  url "https:github.comsmallstepclireleasesdownloadv0.28.5step_0.28.5.tar.gz"
-  sha256 "59c83465365e1964f70471a8c823b9f172bfce8da31bfaf31f399e2960c35efb"
+  url "https:github.comsmallstepclireleasesdownloadv0.28.6step_0.28.6.tar.gz"
+  sha256 "1ab8ba1472e5dca30d863703c1b874541e5a1b5382ba9f2c26a00f652a75a2f1"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69bc520bba7fc493a71df4067021e0b548d4aade28de1a940025f214c7e8356b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "58c8644fd3290adb3699bcc73797ef71da1b276cfb478edd743d36264a6235f3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b398ccec95246ac4cfad47bfcbd450f3c3eae3b179fb39d688055dccb394953d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ad0ea8e71e69e2e050aa122f5a0b0b00970ad86cb4c222b93e321a700648b5e9"
-    sha256 cellar: :any_skip_relocation, ventura:       "4c0241f265669f5b5c5e4e1654eb6d34723cd9fecf846f29260ca7f9f3053329"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0dec70028074c9dfad392bc1372e61090dfb57ac2ef165b1dc908220d892bd1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa444b239b3f7fbfd974fea34286d6e4f5721a8fe182fbf59a00dbdc378f55da"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "044242cb1f678a5a2b1a9f8117f14fd27de2aa25da1b07c3ad76959c8b05ffb4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "266aa8b378b9da8f379ac59b0839e2de1f1cdf0ca313115f1a781ebfb1282454"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bffab46cffe650a4df16627e862ed30f1f763c4c3edfe06a299501916bb14ecd"
+    sha256 cellar: :any_skip_relocation, ventura:       "d70b34f83c66b289b062d2637a9a03ae116d76274d3bc1d8f6a9b477d0c1d353"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8571a590547b33f37b8df1392608f2c55ba7fc2be0b6cb86d7508b14af044447"
   end
 
   depends_on "go" => :build

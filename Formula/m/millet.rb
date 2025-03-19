@@ -1,18 +1,18 @@
 class Millet < Formula
   desc "Language server for Standard ML (SML)"
   homepage "https:github.comazdavismillet"
-  url "https:github.comazdavismilletarchiverefstagsv0.14.8.tar.gz"
-  sha256 "8009a3441eba86d965de1482b1453947b21d36fe94f2287735a39e2d7bfe2ca4"
+  url "https:github.comazdavismilletarchiverefstagsv0.14.9.tar.gz"
+  sha256 "5efff3cafade17b33a8b9b2748a8c064dbd51932934de01f8d2a14c88ac829c5"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comazdavismillet.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb302fc566189bc784b66c41e349e3f3fc7b0f5a0796b4ed993fc1a828aca678"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "439a08b77bae4e8e6ae6f0a818734284632071582d1a65baf45f2865b438c15d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ed41078db233116bd6339fd1310b21836c69a18f6adfb797e120959dfa645296"
-    sha256 cellar: :any_skip_relocation, sonoma:        "51eb5c7b5c5444577af054c15e57396877acf8c06aa5a2eba362dd4d3d74860d"
-    sha256 cellar: :any_skip_relocation, ventura:       "879e9aadf0be9827af083b1153e1375c466edb15df4129137dfeabe35b126147"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5870da021524dd1a04cf8e9a8942d4d5a45e6e8482af1f40cfcc9a493f2ebe4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4461ab5dae2b2e3216a970e293c5b7287a685cd2227d3a9fe9484d3c4b5a334"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c90a66817e56189faf6b56cf3c5f257d7e281b5de0c4b1642a1e08fd10ec5121"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0d6cc53a1c690a8aca2ec156245e57eab2ff0ac033c6f9902f3f0c19b568912c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5c1473be0100ce02de27fb0ab410d04c7318053f969d215a2d5e8569925ce935"
+    sha256 cellar: :any_skip_relocation, ventura:       "0cd78d743593adb18fd831df1d7dd3fb48bab36b9b37f97bee4ecc52996a1fb9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad26eaf3f79857774cf8b33f0d09ef507245473871b0df9c8c6fbed9521b1365"
   end
 
   depends_on "rust" => :build

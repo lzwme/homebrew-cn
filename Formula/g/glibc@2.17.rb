@@ -68,6 +68,7 @@ class GlibcAT217 < Formula
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   bottle do
+    sha256 arm64_linux:  "6ebe28ab78de15442370cb484cb1773840ddcbeb6966a60c50d60575a5eb23b3"
     sha256 x86_64_linux: "8c44f4dd3d7c604e4990f912f1daee1ded753a6a405d32ccaafc10314bd5028d"
   end
 

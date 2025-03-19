@@ -1,25 +1,21 @@
 class Vapor < Formula
   desc "Command-line tool for Vapor (Server-side Swift web framework)"
   homepage "https:vapor.codes"
-  url "https:github.comvaportoolboxarchiverefstags18.7.5.tar.gz"
-  sha256 "0322fee24872b713e1e495070e6b7b1fca468bed19f48bcf7a1397ffdf701e9a"
+  url "https:github.comvaportoolboxarchiverefstags19.0.0.tar.gz"
+  sha256 "30bc592c82748459794be67b457a328f93afc9f6ecbd4ed9e267d1ff16456bf6"
   license "MIT"
-  revision 1
   head "https:github.comvaportoolbox.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b457b119c396cd83259510166ddf9d9cccf7b699052baf04ab94b63b19ac53f4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2192519ec8d2181f08f86d0b735b9ce722612659e068481415c7483f4e1616a5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "28fab09761f167d57d34130f67925049db4bdb5002c0f3dbd75cb1027c4353d8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9b811fd0499f54a6fa4dd3397d608f2daabba985bdb68d88a6670ad50de149b5"
-    sha256 cellar: :any_skip_relocation, ventura:       "839f36608641d08575dddcf5614850ffc9125459bb67c2560f52f70c990e0607"
-    sha256                               x86_64_linux:  "421fd857c04941c7c5443faac4183e79cf919db6b2066668022a40fb57d0c78b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a46e47be3d2250ce51a34e41e8f29d00cd87cc7f8b693942fe640034bcb47637"
+    sha256 cellar: :any,                 arm64_sonoma:  "ee37255888c4b068b3d002b284ef469e4714762541a437fa58463d0bdfadfde1"
+    sha256 cellar: :any,                 arm64_ventura: "4c982a9008de33951836fbb0a1b8b89c6e846304e4fb9cafd4ca11223f5fdee5"
+    sha256 cellar: :any,                 sonoma:        "79e86e4f188d7f72b36f5cdf26439b309bcc195a55518894fc03bb2ab0256ec7"
+    sha256 cellar: :any,                 ventura:       "a334109fa4c2f74b195d0a9b1318b027d0bfc93caad40d4e9f1a9391e4ec0bb1"
+    sha256                               x86_64_linux:  "d276ef8fe4346dcdcf16f51887e2aae8fdf0f5ba774097ccc729a10f29c75399"
   end
 
-  # vapor requires Swift 5.6.0
-  depends_on xcode: "13.3"
-
-  uses_from_macos "swift"
+  uses_from_macos "swift", since: :sequoia # Swift 6.0
 
   def install
     args = if OS.mac?
