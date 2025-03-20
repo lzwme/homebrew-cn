@@ -17,6 +17,7 @@ class Liblinear < Formula
     sha256 cellar: :any,                 arm64_ventura: "90961753c75dfcc6028d8646889e214359b6e3c540455bd5cc8bd21cf0d36b8c"
     sha256 cellar: :any,                 sonoma:        "a33cab9994c8a76fa5dd80d94c736cb48b520100f590fb5309332c0edb08d02e"
     sha256 cellar: :any,                 ventura:       "3ff7de89979c7836bb6aaeeececbbd7a93feba336a2e65c6d473fdf8973002b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5df01b9f8e93a7429b42d4d9925287c5ca3456cfccac4c3e5fb0a4cae22c7218"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ad447cb4fdfe17f95da5b04cdc815b749f94f877d57808cc25ee87b850252d3"
   end
 

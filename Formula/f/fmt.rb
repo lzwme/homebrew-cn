@@ -12,6 +12,7 @@ class Fmt < Formula
     sha256 cellar: :any,                 arm64_ventura: "dd8071bddd6d4c1b2d21e5cd4caa4d78cdcf7218caedf65c58ef8e58071bac12"
     sha256 cellar: :any,                 sonoma:        "4c472ff65bc9d0f5d5bc0631dcd97c2ed17d3d5dc8f4b3deae3d6b87cb62de56"
     sha256 cellar: :any,                 ventura:       "4fc070f491d3b1396aac67c75c882b73457a3b40877f5bf53d1b72e4e74d6cca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b65b9f67358eb90827d888f0ede3eba6c1bc0a5da34fe4187d067852a65fe5b7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cd54b7682a79a203e780740e07aa1658998392f7b5787dd3cf8c7d17da2680b"
   end
 

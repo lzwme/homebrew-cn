@@ -16,6 +16,7 @@ class Aribb24 < Formula
     sha256 cellar: :any,                 monterey:       "58a30ff5299bfc9311c30ae8ff571f156eb336add5b25d35d36c6e2a8e8d5534"
     sha256 cellar: :any,                 big_sur:        "fe1e9015a5c0791019bcdf64b980730d8736c85ea6cf306beef8e06ce8ebfaf9"
     sha256 cellar: :any,                 catalina:       "31520472d7d33c860fff359b7ca6cd3e724bf504d9926c601a4db798d21df600"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "c7b8880e65830477c4e7a14bad00f040eb8db469aab352003869dd1845cc1779"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a53b1584bef9b5d6aead4cc62266c67a9e642ea7234479516f4c083d0316f34"
   end
 

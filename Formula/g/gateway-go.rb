@@ -23,7 +23,7 @@ class GatewayGo < Formula
       -X github.comOpenIoTHubgateway-goinfo.Version=#{version}
       -X github.comOpenIoTHubgateway-goinfo.Commit=
       -X github.comOpenIoTHubgateway-goinfo.Date=#{Time.now.iso8601}
-      -X github.comOpenIoTHubgateway-goinfo.BuiltBy=homebrew
+      -X github.comOpenIoTHubgateway-goinfo.BuiltBy=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:)
     (etc"gateway-go").install "gateway-go.yaml"

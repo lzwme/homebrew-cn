@@ -1,18 +1,10 @@
 class MicroInetd < Formula
   desc "Simple network service spawner"
-  homepage "https://acme.com/software/micro_inetd/"
-  url "https://acme.com/software/micro_inetd/micro_inetd_14Aug2014.tar.gz"
+  homepage "https://web.archive.org/web/20241115023917/https://acme.com/software/micro_inetd/"
+  url "https://pkg.freebsd.org/ports-distfiles/micro_inetd_14Aug2014.tar.gz"
   version "2014-08-14"
   sha256 "15f5558753bb50ed18e4a1445b3e8a185f3b1840ec8e017a5e6fc7690616ec52"
   license "BSD-2-Clause"
-
-  livecheck do
-    url :homepage
-    regex(/href=.*?micro_inetd[._-](\w+)\.t/i)
-    strategy :page_match do |page, regex|
-      page.scan(regex).map { |match| Date.parse(match[0])&.strftime("%Y-%m-%d") }
-    end
-  end
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9693aed7c6ab1caf581335fefd2eea3fcde0e3b62fbbe1378cd81bba864410a4"
@@ -27,6 +19,9 @@ class MicroInetd < Formula
     sha256 cellar: :any_skip_relocation, catalina:       "04b4028a1fab40575b422ea45b44317dc69170f85bf4fa07b4eb7d2f8df165ee"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c12f725a115ea5becccc0b125b34d285af5b5fc2be361cec10ba745ba8b238c"
   end
+
+  # Original URLs are dead and last release from 2014-08-14
+  deprecate! date: "2025-03-18", because: :unmaintained
 
   uses_from_macos "netcat" => :test
 

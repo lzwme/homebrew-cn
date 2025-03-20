@@ -31,6 +31,7 @@ class Redis < Formula
     sha256 cellar: :any,                 arm64_ventura: "45d4fd71c45fc068ddef77c8159e5516d73b14d6076c2d8ccf379640ea9dc3be"
     sha256 cellar: :any,                 sonoma:        "ea691d1b50bf68112f6ba65836ef1af4e9d2869d2aa72959da62cf22075b5402"
     sha256 cellar: :any,                 ventura:       "db2bbb4405291b3918fe4f0f11b68460f407a5f8d1127b41abfe0acfa9d3bb01"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b338972f19b921f9e25cfcd7c16d9aff055cb4d28adda38e8f256a55e5b4fb27"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "35b84640a9a360afa2fabe95ad44cec532c7c8c0a2a46c1a636b874125cf9ca3"
   end
 

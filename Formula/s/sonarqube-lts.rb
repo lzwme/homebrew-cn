@@ -5,11 +5,6 @@ class SonarqubeLts < Formula
   sha256 "07d9100c95e5c19f1785c0e9ffc7c8973ce3069a568d2500146a5111b6e966cd"
   license "LGPL-3.0-or-later"
 
-  livecheck do
-    url "https://www.sonarsource.com/page-data/products/sonarqube/downloads/page-data.json"
-    regex(/SonarQube\s+v?\d+(?:\.\d+)+\s+LT[AS].*?sonarqube[._-]v?(\d+(?:\.\d+)+)\.zip/im)
-  end
-
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "88c36a1d661bd9a1bc41df5754e6a872602bf42ed1ec8e52675a9eb0be16a7fe"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "88c36a1d661bd9a1bc41df5754e6a872602bf42ed1ec8e52675a9eb0be16a7fe"
@@ -18,6 +13,10 @@ class SonarqubeLts < Formula
     sha256 cellar: :any_skip_relocation, ventura:       "88c36a1d661bd9a1bc41df5754e6a872602bf42ed1ec8e52675a9eb0be16a7fe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca425d2efdd9e8b788c6ea8c80d21b72de5cd1adecb9d0e9911c6d60081dd86c"
   end
+
+  # Upstream no longer provides a Community Build for LTA releases.
+  # See: https://www.sonarsource.com/blog/better-free-sonarqube-experience/
+  deprecate! date: "2025-03-19", because: :deprecated_upstream
 
   depends_on "openjdk@17"
 

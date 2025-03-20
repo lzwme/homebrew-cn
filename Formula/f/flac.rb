@@ -25,6 +25,7 @@ class Flac < Formula
     sha256 cellar: :any,                 arm64_ventura: "52c6aaad150497211c7372401de3017312b4c1587fcf931e4778c17c32ffe07e"
     sha256 cellar: :any,                 sonoma:        "8b3a61d7bedcef1e927057d3d7ef21b1ae69fddfb6a462b98def7f57e306a6a4"
     sha256 cellar: :any,                 ventura:       "f1c784569961db85af848fd5d816d975a987ee986e54d9b48c45effe698755f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e19e26751f4f5c93122102114d7954329b2b1223ada59e8d92afd350a56702b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "85f5cec1705ffb8d93fb9abbb0b7b0f197d61633d8e0de2a29de825526790006"
   end
 

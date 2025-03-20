@@ -1,8 +1,8 @@
 class Libsecret < Formula
   desc "Library for storing/retrieving passwords and other secrets"
   homepage "https://wiki.gnome.org/Projects/Libsecret"
-  url "https://download.gnome.org/sources/libsecret/0.21/libsecret-0.21.6.tar.xz"
-  sha256 "747b8c175be108c880d3adfb9c3537ea66e520e4ad2dccf5dce58003aeeca090"
+  url "https://download.gnome.org/sources/libsecret/0.21/libsecret-0.21.7.tar.xz"
+  sha256 "6b452e4750590a2b5617adc40026f28d2f4903de15f1250e1d1c40bfd68ed55e"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later", "Apache-2.0"]
 
   # libsecret doesn't use GNOME's "even-numbered minor is stable" version
@@ -14,12 +14,12 @@ class Libsecret < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "4276a39237897a4ab5d19eadb4ff5039f4e6d277ae72b5e2d1e86e50f32f7f2d"
-    sha256 cellar: :any, arm64_sonoma:  "295d7e264d8ee325eb0ff2143f02ad81148495e47cd1dd4e7174661f4dfe5dc2"
-    sha256 cellar: :any, arm64_ventura: "628038371a126d7c0ce143990a42d758bc1bdf2b59524a42763a689cb4477496"
-    sha256 cellar: :any, sonoma:        "84dd23695183b1b623265e938722950ab9b6a808a1d36d1654fd7ee002fea297"
-    sha256 cellar: :any, ventura:       "4f156a011bda9e27985a1cf8ccc7ff88fd4c5b5742ab01dcf7d1d3d69bfcacf3"
-    sha256               x86_64_linux:  "1d3495802ba6577f91b1c62e5270b0af6950cb0c7f7f5d08bcf5c24f2b09ef91"
+    sha256 cellar: :any, arm64_sequoia: "79874cb427ebe11a1e139f777e566d34c8be68ca97a25020f128c8052d7b2f7b"
+    sha256 cellar: :any, arm64_sonoma:  "cc698c5f2d961f9f09a8ba413bd5dc05f138714f2eabf2317f508cc5672ac0c1"
+    sha256 cellar: :any, arm64_ventura: "27509297a2f39d82ec33dbd654c24927bcbcf05e117cc1f3fcd32b31038188a8"
+    sha256 cellar: :any, sonoma:        "dde2b7e3ab77bca9a397532ff32e89a715ae2fca9121c76296fdd6d88310b5f0"
+    sha256 cellar: :any, ventura:       "bad849e6cac866d1140597af61bbd3770fca70af8900b4fb86ad82d1ac9725bd"
+    sha256               x86_64_linux:  "223ea87975e39fd3bb9ef2d04ea31c1c13b7f797199db96d2d2796b7e7856bf5"
   end
 
   depends_on "docbook-xsl" => :build
@@ -32,6 +32,7 @@ class Libsecret < Formula
   depends_on "glib"
   depends_on "libgcrypt"
   uses_from_macos "libxslt" => :build
+  uses_from_macos "expat"
 
   on_macos do
     depends_on "gettext"

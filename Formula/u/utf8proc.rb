@@ -12,6 +12,7 @@ class Utf8proc < Formula
     sha256 cellar: :any,                 arm64_ventura: "be90c358d69294427f51905783aa6bb9fd9e10f3b5c2fa499f7629186fc61d6c"
     sha256 cellar: :any,                 sonoma:        "94a054d454bd5df62734457a4ac938ab20b3637ae8ee9d36e37fa72fb9adaf41"
     sha256 cellar: :any,                 ventura:       "7086a1eb8b0caa36a1abfad15c613a158ba78800bdfe3f8539d78ad8f10f8a1d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7fac4dfa22dc71bd6f850963bf2aa3833c18febd6eae8ee1285b60598b8c925"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b814bb33469856d652a662d92121da8b878a2fa3630dda62ba6646d943dae7e"
   end
 

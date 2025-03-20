@@ -18,6 +18,7 @@ class Mbedtls < Formula
     sha256 cellar: :any,                 arm64_ventura: "7b09a07c271d4ea1f91d084e95118793d1ea9cc54d49124b975786ebe43ad820"
     sha256 cellar: :any,                 sonoma:        "ce7b2b5556e35cb94435e318e93d4878d36d3ef78d271aba6fa1cdb842d44d1f"
     sha256 cellar: :any,                 ventura:       "696fabe2b3da431fe4852751ef036a790cb4ea4d27f3c5bf22a397dece28c0f3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b745f6a5939c8ab20970e9bf89ed577776ed9d89ebf5ccd23904b3f276eda4ef"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0591255d3f83ef14d18eadf4383876d2826cdd913477e4dba7f7539a11155ce1"
   end
 

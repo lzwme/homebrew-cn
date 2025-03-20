@@ -19,6 +19,7 @@ class Exiftool < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "92be4c9bcf1a5cc15d0add39b99e4f5700370ada508249b6260bd16819f9f238"
     sha256 cellar: :any_skip_relocation, sonoma:        "8cd715cfc5873d8fb4896e96f23d2177aac470ee4967133f36a8af86483c97e9"
     sha256 cellar: :any_skip_relocation, ventura:       "116d159c783674cb3c4f8e5b926793f9aa57deadabb09b90cf750468cfba0db7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c38feb087f1c9b44fddf4e278f4416b48b0d71ec81f146bdff43e43440398d2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "778d74fe43eebb6c5693be1b5ae560397129455717b50b9cb63512844aaf0b06"
   end
 

@@ -16,6 +16,7 @@ class Libxcrypt < Formula
     sha256 cellar: :any,                 arm64_ventura: "b44196ecde239115a28ed7470d21bd679cca173739c24a863ce393df04faffd2"
     sha256 cellar: :any,                 sonoma:        "1eb38a921fe68f9bf101f6ead351a71335a143ff842d1c294a771e1eecfcae88"
     sha256 cellar: :any,                 ventura:       "7876b0bfad028648259367023f14a2fb6c9b13db5e489bf6b002818fe36ec9f0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc5e89a07cd3d52af14132f1323096d2b0e9519dd71b1b52e192697817547500"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1835a4d7d45333637814fbd4d0184d6ebdb81b2e7e4a09e2d803202a497cf8a"
   end
 

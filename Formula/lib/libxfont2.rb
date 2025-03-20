@@ -13,6 +13,7 @@ class Libxfont2 < Formula
     sha256 cellar: :any,                 sonoma:         "59052815ebda654383a9c9d8169bac87e8185d8b6590bb3c1323379d1aa16306"
     sha256 cellar: :any,                 ventura:        "6a5489db0d7264a996eec1726eb2a2d990d1579af46708dfafe08d66c4937b45"
     sha256 cellar: :any,                 monterey:       "73b90f18a8c56a14ffe1c4e8194102865f1719bbf362d05231203ee179e75013"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b5b559d35ae934e89ce10273910623dd767c8bc2ca5bfb6c5b6bf99c26ec613e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1290f56a9f831c1a2c8d8765bc300519e448bc334d6a156061cc5e05162a3c5f"
   end
 

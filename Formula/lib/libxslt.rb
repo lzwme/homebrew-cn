@@ -18,6 +18,7 @@ class Libxslt < Formula
     sha256 cellar: :any,                 arm64_ventura: "68fbcc1a39a1af56dda4c550816f0a4796ed8b70608518b184331f1e13a1ff1b"
     sha256 cellar: :any,                 sonoma:        "c2432ea083f92c5d6ffd4968f7a0e3d675f7c2098f27e2742b607a9ba68d1f6d"
     sha256 cellar: :any,                 ventura:       "96311a902a7c1ce991bfb90a01b11442d5ede675238afd8ed22980f7d91b415f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "847d260b760e00468ab47ce7b72514ef3381622fdb396512926ef4c82d54d1cc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "595b354dd8c9dc086224701709d5a471f7a916693ebf52e5d68eea1f454bd98d"
   end
 

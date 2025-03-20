@@ -17,6 +17,7 @@ class Vde < Formula
     sha256 monterey:       "88cc1ceea76bdf304ec6750a2c54c979b34869d853fe6942aff1b23ea213f83e"
     sha256 big_sur:        "05e4b0a57c14a91bf9fbf6afc1cda903fe07504da5545ba4de72c7bf09d53893"
     sha256 catalina:       "ff106fafad478b7380d270d0969584e753b0f3592f59b2f43dca8bc86246b2e0"
+    sha256 arm64_linux:    "522952a405fbeafae167b3a044c95156d29ee89adbe317818906e750c0edf557"
     sha256 x86_64_linux:   "d9ab4e00d44ce831749d0d4363ffee5332295292a5ebcf2d5379d64796b549d9"
   end
 

@@ -12,6 +12,7 @@ class Onnx < Formula
     sha256 cellar: :any,                 arm64_ventura: "659c30029169d73e83576f329bcc763c68d58abce20e8804c49e925e8f32d9e8"
     sha256 cellar: :any,                 sonoma:        "b7e82d8aa9249584dd31b9ef4ecaf02a3db6b0e21eb02c27cc6e7f52d9b508e2"
     sha256 cellar: :any,                 ventura:       "420747385c34f1e206621833cda55671498db1e5fb9347dbe1253d5e778e3d0e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c414e153d76c0cc85e5a43a1d1f0dd262780851cf428c87aa398dba9d2faece6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "871a22ab93d134215af8e58dd94e1d7e8082ed35b703dc03d5e028722e01cfd3"
   end
 

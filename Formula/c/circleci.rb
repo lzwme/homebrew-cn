@@ -22,7 +22,7 @@ class Circleci < Formula
   def install
     ldflags = %W[
       -s -w
-      -X github.comCircleCI-Publiccircleci-cliversion.packageManager=homebrew
+      -X github.comCircleCI-Publiccircleci-cliversion.packageManager=#{tap.user}
       -X github.comCircleCI-Publiccircleci-cliversion.Version=#{version}
       -X github.comCircleCI-Publiccircleci-cliversion.Commit=#{Utils.git_short_head}
       -X github.comCircleCI-Publiccircleci-clitelemetry.SegmentEndpoint=https:api.segment.io

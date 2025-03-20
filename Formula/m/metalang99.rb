@@ -1,14 +1,13 @@
 class Metalang99 < Formula
   desc "C99 preprocessor-based metaprogramming language"
   homepage "https:github.comHirrolotmetalang99"
-  url "https:github.comHirrolotmetalang99archiverefstagsv1.13.3.tar.gz"
-  sha256 "91fe8d4edcc2e7f91c5b567a2b90f2e30c2373f1ebbabcf209ea0d74f63bc1e9"
+  url "https:github.comHirrolotmetalang99archiverefstagsv1.13.5.tar.gz"
+  sha256 "f3d1607d76b4b081d3295661c4c2b8d5fde4d5018b1aa409c84fb3a6660ffb90"
   license "MIT"
   head "https:github.comHirrolotmetalang99.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "3727bb2cae31e9169ccd276a34128d690a3ac7c488226fb51666021896397ea2"
+    sha256 cellar: :any_skip_relocation, all: "72f34a9d242be857c7fbb45ddc50c1c6f0ca5a034d831ee1909d25f2037d600c"
   end
 
   def install

@@ -11,6 +11,7 @@ class Libice < Formula
     sha256 cellar: :any,                 arm64_ventura: "7197a6fa7f40caa23c06e2a8276c199f1e35a0284050d7042711a278725045ed"
     sha256 cellar: :any,                 sonoma:        "c62d9319100ce6332a7c6335c3365b2e2a216f7df9aa5bf1daae891bdb88edd0"
     sha256 cellar: :any,                 ventura:       "902b4b280d60b9ce71177d3ff0bc0e87213afa56f99b418fd02ec57b748fc6a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4347742f36796e398b33430cd91fd1935f50aa73473dfea2aedb48bf62b5943"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4031d0484219c9a701184de11ae283694a3e1067a0103ff661a29e165acc52b"
   end
 

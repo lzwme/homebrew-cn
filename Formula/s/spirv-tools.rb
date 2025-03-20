@@ -18,6 +18,7 @@ class SpirvTools < Formula
     sha256 cellar: :any,                 arm64_ventura: "9bba6a4515cb43ae13bc4ebff4bfe2c8bb6fe5b28df55aa7d05a21f6160ad6be"
     sha256 cellar: :any,                 sonoma:        "7154e89ba9cb1f3563278fd15275871aa544ad8604ceb423939fca7a0d2f88b1"
     sha256 cellar: :any,                 ventura:       "36bbd5099b5a79720e187a4fd58eb7da8ce7bd3a3627cff0ce2642dbcccb822f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "88e79536d3037ce4e565d7b67f7dc98deb3bedb69f6ce58796b7fafc6ea1231e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f6d416dacf98bd3c2422672d6ab8fbc8b0abfcc38a5d6b5521bc72cb0a86fbd"
   end
 

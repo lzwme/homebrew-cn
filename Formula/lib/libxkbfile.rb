@@ -13,6 +13,7 @@ class Libxkbfile < Formula
     sha256 cellar: :any,                 sonoma:         "0a17cc951fb5fca888c90ba27f8f9dfb9696a00984f02772d6aca1dde438abcc"
     sha256 cellar: :any,                 ventura:        "0f9bc440b8317515984e5aefd9a1ad1f6e9c72c2882c94af5d91fb6df20f3e7c"
     sha256 cellar: :any,                 monterey:       "182270371f7c7b1c6f7ccd0e9712c947c64d80391d12ab7561c614d89d7ae307"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "e3ec817afdb538ad032d91648d53da21c4d9033dde8c117410381577c19db407"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5298209c95e682bf215c5335aa140c4e0249f68aa2d086f058c42f5fc5446197"
   end
 

@@ -12,6 +12,7 @@ class Srt < Formula
     sha256 cellar: :any,                 arm64_ventura: "806fa132d70ecfff69e3cecb0f4c70d8e994293e748ca21b7c30290c09e7db05"
     sha256 cellar: :any,                 sonoma:        "a32f1c565c530f10c2a9e1d943d0eacac64b129ba745a2eb6da520d574bd798b"
     sha256 cellar: :any,                 ventura:       "0d2f45e1447a367914e64e12d4039f7488a6c9675a2d8206abe65d741e553f7c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "58d61f9d71831b4739cfc90208ccb2bc051e417e30f88ff91b131cd3a679be21"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6e779a8068e881ea3977fd8ede3863b108f621589ee1f87a28360fd6d6ee257"
   end
 

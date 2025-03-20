@@ -27,7 +27,7 @@ class Logcli < Formula
       -s -w
       -X github.comgrafanalokipkgutilbuild.Branch=main
       -X github.comgrafanalokipkgutilbuild.Version=#{version}
-      -X github.comgrafanalokipkgutilbuild.BuildUser=homebrew
+      -X github.comgrafanalokipkgutilbuild.BuildUser=#{tap.user}
       -X github.comgrafanalokipkgutilbuild.BuildDate=#{time.iso8601}
     ]
 

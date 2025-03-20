@@ -15,6 +15,7 @@ class Pipx < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ca676ccaaf770e835c5a9ae2d3a648ef4539893c02aa8a70875bfd3e338b8484"
     sha256 cellar: :any_skip_relocation, sonoma:        "69ef5656f96b42ca04100279ec7319a7c82217550028e245ccf5f05638986799"
     sha256 cellar: :any_skip_relocation, ventura:       "69ef5656f96b42ca04100279ec7319a7c82217550028e245ccf5f05638986799"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c2f3a3c349cb76bc1cbb52c387500db77c0bdb79d9acc835a008efdac9d1630"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "621bb41e77afe49a6f4b2042485659267c80617331e8a1728ee1f31ff02c0c10"
   end
 

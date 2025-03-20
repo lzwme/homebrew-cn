@@ -11,6 +11,7 @@ class P7zip < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f660dc57664af754240e077dd1ed79f78505f40d62ca41630955d0320590a75e"
     sha256 cellar: :any_skip_relocation, sonoma:        "6a651dc223abae92cec444770d67518606edadc976386a7a27da977ee680f7fd"
     sha256 cellar: :any_skip_relocation, ventura:       "593e544721a4c420f0eb97987f51778b56cc643c7dd7ae4a287489bd01bd167a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1355071d140bc9e5b5f6453fa5352e5e378bb9abcbd7361ee8c9e06893ce3d69"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8ba01da665c3009888c57246945052cd4bfac19007fe0dd9d9b705152089076"
   end
 

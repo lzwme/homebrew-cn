@@ -12,6 +12,7 @@ class Libsamplerate < Formula
     sha256 cellar: :any,                 arm64_ventura: "e3503b414dc2371bf89d19291377b45241255a4b538d81912c228c84a170bda9"
     sha256 cellar: :any,                 sonoma:        "6c59b98bd83a71ff444c2cd2a480d78459244174fb8ec7234ba9438b03ca53d5"
     sha256 cellar: :any,                 ventura:       "dac109c36e9c06cb12473b9eb767e44bbd0330f18ffdcfbb77af7574038eb7d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7db3ed51b5ddf4558e0e86efae945c98fb2d2040f3ce614f39737bcbf6cadccc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1223ba0942433dd6c68ce167723d32e2e40ee2f454054001008d487a8256ff6"
   end
 

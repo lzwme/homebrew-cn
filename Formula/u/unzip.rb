@@ -23,6 +23,7 @@ class Unzip < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "86fbf9a289406fbe3fff052c0818431d757b6123e5776418c3e13370ee2d4af9"
     sha256 cellar: :any_skip_relocation, big_sur:        "94f235026d1d96ebb52961dcfb6880701d11efdc9cd9869987f8e4712714f9a5"
     sha256 cellar: :any_skip_relocation, catalina:       "b6cb709857bee04881acb626d24ddb1dcccf50b4508c16a9599625667b4b7617"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "11112a2c74f3a7faa6561406d9206412d7754b753fe680acee32a1d96df300b3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "baf15e19852a0f9756e3302fa6f3866eaeccc06730c9907bffc19f32861d64bf"
   end
 

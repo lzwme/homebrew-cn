@@ -7,6 +7,7 @@ class Libnsl < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "b5f2c97b5782dfde6d350ebe54cacf87db18a1626afcf91998aaa8d6c5930890"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "fa7613b30e9bfe15166339d119c19115ec21f13cea259280182e0c083502ff40"
   end
 

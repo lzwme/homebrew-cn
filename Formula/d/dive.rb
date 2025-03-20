@@ -5,6 +5,7 @@ class Dive < Formula
   sha256 "2b69b8d28220c66e2575a782a370a0c05077936ae3ce69180525412fcca09230"
   license "MIT"
   revision 1
+  head "https:github.comwagoodmandive.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "44b9241dc0d0cedd1eec7b294b1fcfea2f01afc319709b88ad5ba61fb7c69df4"

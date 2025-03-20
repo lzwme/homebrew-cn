@@ -104,6 +104,7 @@ class Bash < Formula
     sha256 arm64_ventura: "60bd00499cc9a01361143f2ffe15fcc0aa274db1de4b298dedd10fa2533d7e69"
     sha256 sonoma:        "1f0af2a4eb5fddcecdd1d02a841e285dc8302a029f975571fddd4100af79ad67"
     sha256 ventura:       "05a18ddf9001e3fe63f8c972aa24b73df39f6517eb0b5b913ccaf3478c6fa914"
+    sha256 arm64_linux:   "925a4ad99d47b25e8dfdd554312acf5f50c0251f7ab003d1d694740f214f8ef1"
     sha256 x86_64_linux:  "0f188fcf662add592183d2b4647ea94bdd1fc001ed9a06920ab4bbc2b62bb9f9"
   end
 

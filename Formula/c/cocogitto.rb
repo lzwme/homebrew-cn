@@ -1,18 +1,17 @@
 class Cocogitto < Formula
   desc "Conventional Commits toolbox"
   homepage "https:docs.cocogitto.io"
-  url "https:github.comcocogittococogittoarchiverefstags6.2.0.tar.gz"
-  sha256 "fd7d69fb5b6d64e292877d87a77864d5081906b6e515e20b93348b7f05bd05c1"
+  url "https:github.comcocogittococogittoarchiverefstags6.3.0.tar.gz"
+  sha256 "bf78a06ec20cd33c4f9bcddb427067de34d005fb6d4a41727239b7b1e8e916e0"
   license "MIT"
-  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "27fbf4df39907711ecc2c82abe07b3c689c876aae77aa5d325bcd9e9b007a7c8"
-    sha256 cellar: :any,                 arm64_sonoma:  "63ca3e4a49d901c0081a84fadbcc1c5c987cadf9d625f083c04c4f55cf5efde8"
-    sha256 cellar: :any,                 arm64_ventura: "95c4df0d2711c35731a3cd661220c2ad34f2fd286915b01910d70513088bdb07"
-    sha256 cellar: :any,                 sonoma:        "79a4836653fa8d60418233598b0b9a3f26c9eb25aaf33031dd4015cb555cfab9"
-    sha256 cellar: :any,                 ventura:       "bd5e839eb51f908c4986ac50cc7e437e3156ee3aec13b167f4c615a503fe8be2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d6c7bb4b0c937d23a8f7131d1df5fa8d129bb2fc98cd68ce5e987a3be79c841"
+    sha256 cellar: :any,                 arm64_sequoia: "653bfecc7e5bf0d31506f6b7e0e6a39d42a1786df4320071e4bae07dadf57f0b"
+    sha256 cellar: :any,                 arm64_sonoma:  "32504a5766eefb9b00ce51cb505f25c287c683bc244f29792113df3b8b7e2131"
+    sha256 cellar: :any,                 arm64_ventura: "0f133691154d002414e87fde8af45598f7e1bbb73db79cd0a36cdfadf7bc0978"
+    sha256 cellar: :any,                 sonoma:        "de432bba61a74787063511a9c4346b036572c7579748af9056c583d9b0f22a8e"
+    sha256 cellar: :any,                 ventura:       "3bc5fbfef19cf37d680111f4b16d9bc70f046ffcbd07f801d5ed09769724c8a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fa05ff9b1e802473de9ababb53942b8c3aeb6ea3d7ca9aefbdf5a80e53aeb61"
   end
 
   depends_on "pkgconf" => :build
@@ -20,17 +19,6 @@ class Cocogitto < Formula
   depends_on "libgit2"
 
   conflicts_with "cog", because: "both install `cog` binaries"
-
-  # support libgit2 1.8, upstream pr ref, https:github.comcocogittococogittopull433
-  patch do
-    url "https:github.comcocogittococogittocommit47689fe4f431d7b1371ff34cb430fbffc19f40c5.patch?full_index=1"
-    sha256 "508a34432f907500d2a92940647501512e789cac53e85497a83b1b99089ae07b"
-  end
-  # support libgit2 1.9, upstream pr ref, https:github.comcocogittococogittopull439
-  patch do
-    url "https:github.comcocogittococogittocommitbf0933b33e1729161434b7cd92906c6e2d663016.patch?full_index=1"
-    sha256 "5828494ce483901d1169acd714f7baf69a2c17eb1ecd716ea2490376763acef3"
-  end
 
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"

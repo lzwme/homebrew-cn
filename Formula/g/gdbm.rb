@@ -14,6 +14,7 @@ class Gdbm < Formula
     sha256 cellar: :any, sonoma:         "20b4d20aab87fe96f59914aa5d012066342519b86bd6961696feade676b80fa9"
     sha256 cellar: :any, ventura:        "de0719d7d530b03c71fb7f4d29244d9eac7691b614f570475a4ef22bf568fd20"
     sha256 cellar: :any, monterey:       "3aa7e2f745e8ca1f6f8425c48a290855c34cac823c7d42a8e7d0ff0933e5e0d8"
+    sha256               arm64_linux:    "754e0e633d3feca22dcdb861aad78439554fea3b586e626202ecef43185d3490"
     sha256               x86_64_linux:   "7fd35749fc28a0bf5e2f3c7cc74d8e2da38914d3009127cbedf9cf617cb6fe61"
   end
 

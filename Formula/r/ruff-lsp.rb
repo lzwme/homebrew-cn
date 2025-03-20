@@ -7,6 +7,12 @@ class RuffLsp < Formula
   sha256 "4a1704dc96dc1353557b5edd0733768f3948cfc92042fd332927648e080754bc"
   license "MIT"
 
+  # This minimal `livecheck` block enables us to continue identifying new
+  # versions as long as upstream continues publishing them.
+  livecheck do
+    url :stable
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "9923bd6918b8ee785e265492ded1e3422e9e2f4ea2dfcbed11801acde3a3751c"
   end

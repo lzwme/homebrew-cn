@@ -12,6 +12,7 @@ class Libtirpc < Formula
     sha256 cellar: :any,                 arm64_ventura: "75b9446214bec564b88e7d765cffb241497d1ae41e349fd6f584de3d8cbc5c26"
     sha256 cellar: :any,                 sonoma:        "72e659c72370584a373cc916acafe7a51db67a10ad7c8fbaa9fc311fc49ff790"
     sha256 cellar: :any,                 ventura:       "7a87780cba64ee5fa5e65686d4bcc51236ccf4b33a11c8732d0ad59ad7b003c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "016bd1553348df8e15bc09280a00b40562da46aa875f9741292f129bd0666467"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "93daf0554770cfcd883a74d9bcbb208702c23b8d90d0c1daa9b040be52b9657c"
   end
 

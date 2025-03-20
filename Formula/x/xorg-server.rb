@@ -6,12 +6,13 @@ class XorgServer < Formula
   license all_of: ["MIT", "APSL-2.0"]
 
   bottle do
-    sha256 arm64_sequoia: "c8c981ad73c464046aea344aa2b3c2f1da9d369dea5d3efc7b3f1434404261e5"
-    sha256 arm64_sonoma:  "c801d9b92dfa0e22215ec713a529adc21aee251f58e36209a131968b0810a2fc"
-    sha256 arm64_ventura: "95d06c50ea36876e214d2da78bb45e9e46e56d98b10a44d9d3e29bc387afb1f5"
-    sha256 sonoma:        "018cbca8852500f6e6ecffe0b01084c60f301c13e8e81fa274975f3025f410cc"
-    sha256 ventura:       "f37023286d3363eb226fa6a5216f10aa2f63eaab56b26bdd7e5f77260d965671"
-    sha256 x86_64_linux:  "e32e75a94165706b41839706f6a4473c402403a6d7d37f7b3122cf4f74262ab8"
+    rebuild 1
+    sha256 arm64_sequoia: "e9ff9b62d898703ddca09e82b036a67351e6aa14c1f08ebe4bf2772fadbd7055"
+    sha256 arm64_sonoma:  "36fe7319a1317e7ea64b09a794a0c86d14f2066e887733dda516f23cdd05f773"
+    sha256 arm64_ventura: "725bff18ee85feaa9c758250a57fa14253cd087ab2e25805024a2758fc1c71cf"
+    sha256 sonoma:        "07f8f3a4e8e88b19c022a54f3e5512a95ca5984529ed435a0831284867e5b581"
+    sha256 ventura:       "a593137347c22716ea4098ecda532c2f9d8082c51d128de11059a78645a8e8cb"
+    sha256 x86_64_linux:  "ba290274fa63ac05cfb29e29e31944fe9e9f118ef5ef69b08e1b369c28f1add3"
   end
 
   depends_on "font-util"   => :build
@@ -39,7 +40,7 @@ class XorgServer < Formula
   depends_on "xcb-util-renderutil"
   depends_on "xcb-util-wm"
   depends_on "xkbcomp"
-  depends_on "xkeyboardconfig"
+  depends_on "xkeyboard-config"
 
   on_macos do
     depends_on "libapplewm"

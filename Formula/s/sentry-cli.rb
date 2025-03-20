@@ -1,18 +1,18 @@
 class SentryCli < Formula
   desc "Command-line utility to interact with Sentry"
   homepage "https:docs.sentry.iocli"
-  url "https:github.comgetsentrysentry-cliarchiverefstags2.42.3.tar.gz"
-  sha256 "6f8e1fd9ab7194a6d14b5d192482a742d030fc022a0cb1253d3d013a413291ec"
+  url "https:github.comgetsentrysentry-cliarchiverefstags2.42.4.tar.gz"
+  sha256 "1713f10ec317f7b1d40c18e72bb901e576eb4899b05a74f5a207f25b8b9d87d0"
   license "BSD-3-Clause"
   head "https:github.comgetsentrysentry-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a13c7e949a6ea37b7d6833b5379d0081d71a0b314c9ea23a0a49c4e543abfa85"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "16dd5b91e64b0cd940d2fdeb930215e9ebbb0de960da29038e9201b9806e9817"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b0af28d357b288dd02b5e0e01df29de0243323e67f66cc3845ed2765dccac295"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8f0abe436c40368f9b60e4b665ebffc221636236bca015ccc5d9f9b689b310c0"
-    sha256 cellar: :any_skip_relocation, ventura:       "364a14e7c6ce33ec204ff15cfa806020db6004fe5be445b4e9bd562e6f99bced"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "199b909808330da633f2531608f6583754cb41d49467e778a9d3f49beab862b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "305a83c5a57533c72da413fb6f8611ae6d0ce274068ffb946a7f8fc201a5b732"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "189679fa82c8702308c6612fc3864ff6597789669d8971551a5c9b3c3f061cab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "af995079009413cb4e1263515883bbe63d6168be3405cd324e07883b130d40bc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fc6072aaf65af9137302112b121b61cceb9ea3727d1d5a0822a48a9cbd8ed1df"
+    sha256 cellar: :any_skip_relocation, ventura:       "8a4157263351ceb0446b1856909a72a24aff23e83ad7a3994ee75f632b33f3f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59121de3c282cd0e4597a4e1bd0aadd019f1b1c46321625cd6c102dc7e827f3e"
   end
 
   depends_on "pkgconf" => :build

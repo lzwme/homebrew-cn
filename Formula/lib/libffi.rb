@@ -16,6 +16,7 @@ class Libffi < Formula
     sha256 cellar: :any,                 arm64_ventura: "423220c0d91181fd0bea9739d023402deb68f6af4dafba772de1153cc9b960f6"
     sha256 cellar: :any,                 sonoma:        "98bac85bf39a8b7d0f9bafef282793a8b5ab85bb17e502b27c0bf5f7d5cf8a1b"
     sha256 cellar: :any,                 ventura:       "8c6ddb10ef9d24f35611f9aca29eb290baf1f89ce8835a6fa0a19caac2531020"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1d61627d5b6db0933fa7110e5b5f4de98a703e5b9793a1ebc0cce07ad28b7af"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea07199765ba473ae2b693aea558e8865a60358ccc1ae209dd8bbd94f219048b"
   end
 

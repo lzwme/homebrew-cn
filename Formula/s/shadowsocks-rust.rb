@@ -1,18 +1,18 @@
 class ShadowsocksRust < Formula
   desc "Rust port of Shadowsocks"
   homepage "https:shadowsocks.org"
-  url "https:github.comshadowsocksshadowsocks-rustarchiverefstagsv1.22.0.tar.gz"
-  sha256 "2857372667b66aa7f8ef2d27a8a19209cbf3e5da2e6d1d1d493411d72d173861"
+  url "https:github.comshadowsocksshadowsocks-rustarchiverefstagsv1.23.0.tar.gz"
+  sha256 "13307594159cfe23f91e69c8b08ba7a41a17a2f36a4bfb3821476026f7518cac"
   license "MIT"
   head "https:github.comshadowsocksshadowsocks-rust.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "019c5f23cb3676ec1774b49a9134a49b597680363e42d62c47a293de4514107c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e030e4abe5e96fa0364f5609cfb134ba0d165ffe946540e8074284616d2efeb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a1c016821c9cd5c96c4fe6e33cb70f7200da3d938edf45afbff634cb8642f74f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b21ccba1c553071f190d689eea861846d558245f36e20ad2c8928f10eeacc840"
-    sha256 cellar: :any_skip_relocation, ventura:       "c227603f53a0219a36917fcc56c29780713208b3c89c945f3481e0a2702158cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ee251afad6da19d3bc60433e74adf252c864eb47b247ab27381ee5092f73953"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ce8f75a0bb9047986b21fab8f37d9e351bac9c0749169c560091e28205e2f08"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e50c7fed3820941a7037d962acaf5259436c68cec68ee08a0fd7a25122951e57"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "da5871c5927e00ae0fea8bd4d3d38dba89afac1e75a0c599e1be3560bc42d3ad"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ba5688e7decce29ee801cfb57b867620ac42cbb90d44c8a811316818add759fe"
+    sha256 cellar: :any_skip_relocation, ventura:       "266827450700226be43271113bddecedbea8b2d450f90d7100c522efa68c9781"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c81673b40baeb7f9add3e5103d26d14dbb80914a2b1718f600b0455d8ce55dc8"
   end
 
   depends_on "rust" => :build

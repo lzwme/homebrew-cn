@@ -18,6 +18,7 @@ class Ninja < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1c7814f2fc23794608edce7b86d8dfcf20fd810acbd5a66515f8731aeafd0585"
     sha256 cellar: :any_skip_relocation, sonoma:        "8cf692e5eabf45fee86530ee3313fa68a3942405587606e3ee39cadc781e3ff5"
     sha256 cellar: :any_skip_relocation, ventura:       "e2fa65aa91a9ec6054bf01c693ca4c8a9c086270020c7c281d729dc3a5cef70e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e50a8c0ecd4e893f973b313e213fe3a8dd1ee883ac121ee5204f1f5fd818b03"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "99758937cfb53c0e214a4e752b50d38bf9e32e87ec31c7802b84953a802cbe6c"
   end
 

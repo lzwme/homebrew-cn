@@ -16,6 +16,7 @@ class Gzip < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "3ceb7fbd84af53592664bb539e35aa67ca850c61638c9b6e76f631579fb92179"
     sha256 cellar: :any_skip_relocation, monterey:       "dc0fdc85159932f9f7e5fa0626246aaa8e15e5161e6ee45c953fcd3b424cbf9d"
     sha256 cellar: :any_skip_relocation, big_sur:        "bfc4297fa730a00992dccd456d9f3629c820bb23dfd02dff908b21573d5b48e8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2ab247379573e14c241892ffe32aa033350bdc92cbdfb861b498d58d69812de4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "118bb27498a8169304d2635231cdefc07bb405b31b464df54c64129977f7581a"
   end
 

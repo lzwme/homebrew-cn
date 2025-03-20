@@ -11,6 +11,7 @@ class Libxshmfence < Formula
     sha256 cellar: :any,                 arm64_ventura: "b1ce7b250aec924e67c460575448f347782cdcfb9d2fd18f4c04ad5d994e46f7"
     sha256 cellar: :any,                 sonoma:        "b48d848198caab47d17a71cd910556d018ff81ea8f3f2d48b5165faec9da8e2c"
     sha256 cellar: :any,                 ventura:       "704aa281d7881a37f4c95f351a3a558898f5d153830edb3d03b16b6d13e42d9b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0a90e1f18cc19078d0e7ad95b023deb2ffad6cd1b064e3fc86bc480553b5177"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6db4447d0738071d8c69faf8cafc59b4178b79b732324e0412d15733dc6cb323"
   end
 

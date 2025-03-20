@@ -17,6 +17,7 @@ class Oniguruma < Formula
     sha256 cellar: :any,                 arm64_ventura: "b0c3bbabe91edecb282b400150f05ba77360b5ea0a5950df70f0ae53b79d3d68"
     sha256 cellar: :any,                 sonoma:        "174fa500f45c9421915e22c34f51abc2849cbce2c05b64f013e4949bf2edd7e0"
     sha256 cellar: :any,                 ventura:       "38ea1c89b9e4fe235788557ce0eaa3812d5287c66b217fe798a95f436c241918"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9c6066f02e365ccac0ca20cbcb8ca5d586c0ae781977d363bd411594946d944"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "49eb885ab9a80ce30edc0aaa5f531fc0079a17e5cf41c2b6c34be0e53e763993"
   end
 

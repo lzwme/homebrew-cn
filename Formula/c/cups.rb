@@ -19,6 +19,7 @@ class Cups < Formula
     sha256 arm64_ventura: "e8b56d92ae803cbce09b2390b90705c520a3475607fb9c61ec6d2b9095000f3e"
     sha256 sonoma:        "bfdb13e6164cc005e1387d8d53df0e3aa5fb21c85546ff36e2838bf22a2a4102"
     sha256 ventura:       "0d1726c5edfcdba47a6ab127d39e8cbfa72c000746692db8f3fdc0213dbbfaf2"
+    sha256 arm64_linux:   "00c8f9ae51d1df790c1f5ccaa85e6262eb34e185ba3dc1d94ecbd9ad1e47975f"
     sha256 x86_64_linux:  "450c1b750daf7df268f6107c5bd585c9a1d20fe20914ff9f038e9f5bbf028380"
   end
 

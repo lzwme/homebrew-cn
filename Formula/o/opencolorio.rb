@@ -1,18 +1,18 @@
 class Opencolorio < Formula
   desc "Color management solution geared towards motion picture production"
   homepage "https:opencolorio.org"
-  url "https:github.comAcademySoftwareFoundationOpenColorIOarchiverefstagsv2.4.1.tar.gz"
-  sha256 "d4eb15408b33dffd6ba0bba9a53328085b40bdd9319fa3d0d7348d06a8cbe842"
+  url "https:github.comAcademySoftwareFoundationOpenColorIOarchiverefstagsv2.4.2.tar.gz"
+  sha256 "2d8f2c47c40476d6e8cea9d878f6601d04f6d5642b47018eaafa9e9f833f3690"
   license "BSD-3-Clause"
   head "https:github.comAcademySoftwareFoundationOpenColorIO.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "09ace865c0e44550c5642cb0710fc72bcfa40e7b22f38aafe07458d6dbc794d0"
-    sha256 cellar: :any,                 arm64_sonoma:  "87b0c29f5595d393a76ac33db2efd96a99e1bb531a792a57708f9dbaaef97994"
-    sha256 cellar: :any,                 arm64_ventura: "e6bfaa96d7d4bacffc8cabb48e9ce40eb1a7c973e67f22beac0da0b138d94f6c"
-    sha256 cellar: :any,                 sonoma:        "9b5789f446304b85ad4ff79fe73b353a1acfa6d564d021c86a5f766b97039a88"
-    sha256 cellar: :any,                 ventura:       "fe6b6df8642a3a1a8c5c6690042fbf44ae59559d3a27d56bb1c44b8b3cf4da1c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5294782fb736ba42baedbd1d9999f5b2611b76c6711f61d9f2867c3e0f3c172"
+    sha256 cellar: :any,                 arm64_sequoia: "fd4ce40466893d4cfb51455109afc4b3f69024d6a4fdd008f87cc61658e4fd37"
+    sha256 cellar: :any,                 arm64_sonoma:  "da363d024bb2473440be47e1c3cb5720219ab747815fc96e83ccb16558720e22"
+    sha256 cellar: :any,                 arm64_ventura: "7df6dc5b16c82aaecc3c6d5366b471f908e479e5583152948d5829b2a9fc024f"
+    sha256 cellar: :any,                 sonoma:        "4be7e329a8f5b155d8fa8209d01d2fcb8bb1953bdbd9ffc64282f3fe28eade8f"
+    sha256 cellar: :any,                 ventura:       "4c67b15aaaaba4b75bcd3d0dba1193edeb25ab3d9ca77365a35fb11970efe86d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e366c2cf6a6dab2e5abac729a3b08af8bb16c1711e2c6642e05e23802df2a1f2"
   end
 
   depends_on "cmake" => :build

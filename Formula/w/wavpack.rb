@@ -18,6 +18,7 @@ class Wavpack < Formula
     sha256 cellar: :any,                 arm64_ventura: "885ff22f136e5db9b1b5fb4ddd578cc8715f958b8e7c02fa177f5b8e3550523a"
     sha256 cellar: :any,                 sonoma:        "db86d639bbac1a81d89399fdaf1f540c2176eaa37843045ca1b342b05cd821ac"
     sha256 cellar: :any,                 ventura:       "1166057de1b8298cf43af6c40e3bf12675179f43a8da756dfce3a04fc1790af5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd64ae0ca071579ada44ea6eae97f3ab97f84c6e4f3b2d8c97995937091958f5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fbe02a0b9e22e0628253a9ae6bb85a9195108cd2469a0623c66f41fb0464e25"
   end
 

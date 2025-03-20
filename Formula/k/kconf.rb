@@ -23,7 +23,7 @@ class Kconf < Formula
     ldflags = %W[
       -s -w
       -X github.comparticledecaykconfbuild.Version=#{version}
-      -X github.comparticledecaykconfbuild.Commit=Homebrew
+      -X github.comparticledecaykconfbuild.Commit=#{tap.user}
       -X github.comparticledecaykconfbuild.Date=#{time.iso8601}"
     ]
 

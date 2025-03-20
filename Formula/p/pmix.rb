@@ -25,6 +25,7 @@ class Pmix < Formula
     sha256 arm64_ventura: "f8b40d4e1fb759ddb4e8a4a77c602ba6ffbaf4c7d8f6ff8ef8c1c972feda6769"
     sha256 sonoma:        "5346c6ffb4f6a63210fe911e3d8b7bbcb6523b81a4ffd682cce01924b131acee"
     sha256 ventura:       "98b66984039760a5571856cb75936132471588bc4d11cc22fd7bd1ac963829b4"
+    sha256 arm64_linux:   "64add2d20f4411a0c5055cb8f8b2f6c4f06eda089f8cb7f20745ad647277d62b"
     sha256 x86_64_linux:  "eda624ee8c86875ea6d1f59f787c10e088c6a03bab3c2042e96cfbf2df5c2e31"
   end
 

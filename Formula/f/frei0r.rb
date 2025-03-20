@@ -13,6 +13,7 @@ class Frei0r < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "7499dc7a7e179e486b641d68d31ee0b7c6f9a16949f58da91e4702ddb970eb32"
     sha256 cellar: :any_skip_relocation, ventura:        "80dd7d731c9bc516931aa77f313eb9a2016e9f0e50adec2e5e8966c0c860584b"
     sha256 cellar: :any_skip_relocation, monterey:       "3d74d9a45e232e70927cdc16f9bb90b839efb979297bf887da998c8b1b479747"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "79baa56d60ecd2123a9155db2aa02d49b4e290e4a5c87d084f3643ebd699ac4b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f85bc09b930b41d316d408e81c26f99f275a578bad4eeb3a24aa8796ca19835d"
   end
 

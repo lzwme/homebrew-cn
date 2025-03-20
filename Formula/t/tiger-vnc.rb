@@ -1,10 +1,9 @@
 class TigerVnc < Formula
   desc "High-performance, platform-neutral implementation of VNC"
   homepage "https:tigervnc.org"
-  url "https:github.comTigerVNCtigervncarchiverefstagsv1.14.1.tar.gz"
-  sha256 "579d0d04eb5b806d240e99a3c756b38936859e6f7db2f4af0d5656cc9a989d7c"
+  url "https:github.comTigerVNCtigervncarchiverefstagsv1.15.0.tar.gz"
+  sha256 "7f231906801e89f09a212e86701f3df1722e36767d6055a4e619390570548537"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,12 +11,12 @@ class TigerVnc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "7bc176a2d61c328fb349c89517136f824ba6a24e8bd1ce2742212b0a72779136"
-    sha256 cellar: :any, arm64_sonoma:  "7cf35ae52dae8555f601816857569539b6f4a4567d0430aca2069ffd064afa30"
-    sha256 cellar: :any, arm64_ventura: "d3a0850c956e85032de86105e5f41e4b9d0a284ac459325787689f9a0f1620f8"
-    sha256 cellar: :any, sonoma:        "0d423088741028380b8ac0e6afb22e83820f8551d6eeea5c46a68c4b04f62c2d"
-    sha256 cellar: :any, ventura:       "9276bf7e39d26bd7822f00b894e36a59851d201c60f478d2404636da226736d5"
-    sha256               x86_64_linux:  "7387518d8ad605dd07089fdb78ac5894aa3c9c15bd763d80458a3a907e74cba3"
+    sha256 cellar: :any, arm64_sequoia: "a5283ed63187173fe553e5beca0be9171e20bb26be778af47f232df26376cf0e"
+    sha256 cellar: :any, arm64_sonoma:  "b74a31a13cf7229b1624f299e64b6c7ac7a1e94b4fd952b8cfc1266d49e6048b"
+    sha256 cellar: :any, arm64_ventura: "c65397dac1671e42fdbc3df44d242ef44e21fa7671901f9f56e96a88526ab3cf"
+    sha256 cellar: :any, sonoma:        "31e91e161513884c41ad3e821d96b2972ac93f3bac5352b56ea94031d5c6b376"
+    sha256 cellar: :any, ventura:       "73dc4363e534ffeb8b4370ad23d4cfb6af0cecf6c5cb0e22f44bb6838feb356c"
+    sha256               x86_64_linux:  "a55108da56f37feaa9f9b1f3da1837bae065ac4f4d8bbcbf9de80676c03d205f"
   end
 
   depends_on "cmake" => :build

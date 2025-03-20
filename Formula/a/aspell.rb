@@ -15,6 +15,7 @@ class Aspell < Formula
     sha256 sonoma:         "960e34fc76f8dfeeb3115236cfdaea24b2339791070411a5ea19e38d6e60f5de"
     sha256 ventura:        "0a07e16a5486cae75a1c146e0a5001709e77172385c0887234d1119eb691bb94"
     sha256 monterey:       "6ceca17185c9b563d91f81c8665fd2a31ddf37248fce447ded97c9ac9e82f7b9"
+    sha256 arm64_linux:    "22099f2f381de2e95ea9ec72370f29fd0da0baad59bb18664513f25081da78a5"
     sha256 x86_64_linux:   "d0a434bcc48c8bebdf070e31e07a14cd7ae3bc3988abb0b111baeb809e5be448"
   end
 

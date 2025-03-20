@@ -16,6 +16,7 @@ class XcbUtilKeysyms < Formula
     sha256 cellar: :any,                 monterey:       "246f9361f2802f7dac2fdc20c762c2cb50a86c0393b519529b52201e69fff053"
     sha256 cellar: :any,                 big_sur:        "0e25691158d5d28c473634d285e0fbb7ae59eeca5ec55305ea814536e03cd069"
     sha256 cellar: :any,                 catalina:       "9b08f8c1ee577cea420903ab5593ed8367eedd92da4cddc0d4c6ef2235dd7c76"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2bd06b66ac056a9d7defd40425046fd621bcc86d1b1a7ee73a6f5ada247f17df"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "269947922f6128006e0201a6972c1cf622dc93200268c0dfa5801b8899902c35"
   end
 

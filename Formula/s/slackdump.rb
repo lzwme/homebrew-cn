@@ -18,12 +18,7 @@ class Slackdump < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.version=#{version}
-      -X main.date=#{time.iso8601}
-      -X main.commit=Homebrew
-    ]
+    ldflags = "-s -w -X main.version=#{version} -X main.date=#{time.iso8601} -X main.commit=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:), ".cmdslackdump"
   end
 

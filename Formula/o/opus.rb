@@ -19,6 +19,7 @@ class Opus < Formula
     sha256 cellar: :any,                 sonoma:         "858dbe63f7a6489d18c9ab19114496081881623319bce3b917e686e63550dd84"
     sha256 cellar: :any,                 ventura:        "742d2b0dabd25100776c6a57743fde9e05b02e154612ead68dc25c1ef57fcc3d"
     sha256 cellar: :any,                 monterey:       "becc7d03c9219308c69f7704d33cc7cf0579a2db902e82ef33bf5266f69a54c1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "289beb9cfacf46917db19b01dc58f2409265bc7029ddfbf0dc2def345baf8f53"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d35c066cdcaad6a6b9f840fc2dd70da4ca02000c11b08674fa065b8bf7a9b925"
   end
 

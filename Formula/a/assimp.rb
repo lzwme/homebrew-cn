@@ -22,6 +22,7 @@ class Assimp < Formula
     sha256 cellar: :any,                 sonoma:         "97806c9287013e10f6cd45d131e2936639c714048393699d607189f302d4b457"
     sha256 cellar: :any,                 ventura:        "fdee9585eca259f83b827a0b7f7161599a914150cf3ded457e8d9c51eed5a6a7"
     sha256 cellar: :any,                 monterey:       "6b2af335f9c9c4a0706e9a111d45e33a1feaf78aaffa00d8c8361e0e2f5bd1cd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "882b3c50f9882e2f2b2ee67d7a5bb949979c0da89c343fb7caca913bad65649e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "46b2c127678c024d31c2e873fb39739a65ce04718439d1e6661a8dc7aacdd4ec"
   end
 

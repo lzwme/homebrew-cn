@@ -26,7 +26,7 @@ class Ipsw < Formula
     ldflags = %W[
       -s -w
       -X github.comblacktopipswcmdipswcmd.AppVersion=#{version}
-      -X github.comblacktopipswcmdipswcmd.AppBuildCommit=Homebrew
+      -X github.comblacktopipswcmdipswcmd.AppBuildCommit=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:), ".cmdipsw"
     generate_completions_from_executable(bin"ipsw", "completion")

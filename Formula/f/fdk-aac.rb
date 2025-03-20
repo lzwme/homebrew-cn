@@ -13,6 +13,7 @@ class FdkAac < Formula
     sha256 cellar: :any,                 sonoma:         "b0c350cb884700c516fbc0ab88a8f600500972f97a6e0031bc1947ef36904c33"
     sha256 cellar: :any,                 ventura:        "635b76c14fa7e66275239c9f4aa8fc6f5a40f94664b03a343e937a0b204e1ebe"
     sha256 cellar: :any,                 monterey:       "44b4edbabe686922c8726e8566b35ea54d83f7036798f907a488b5a2e149d214"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0e22fdcb7f0c9863a317d4a9be3b2baa2e484b2b1885f761872074a58f7040b7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "90a5fa30abf8a37117855a3a6ac400d35c4f23f9de475ea870ee282c5e5feac2"
   end
 

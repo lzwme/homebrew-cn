@@ -22,6 +22,7 @@ class Libvorbis < Formula
     sha256 cellar: :any,                 ventura:        "4e1a3b6ba6e8f790974930a7ceda16a3fb0b50d544021f6e39d1b38392e98512"
     sha256 cellar: :any,                 monterey:       "bd3125f7734f888f4ae9065f0b41a2baa281064686068f6c4189044d2408d0a8"
     sha256 cellar: :any,                 big_sur:        "6401378d08490ed76f4894b7e0812ef5cfbade699331dc07b7e88ad5438f7a78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f3dac34ab6697f236712689aede48c8519f66cb6f3c69d6fb98169ed546ba198"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "41daf79ce53910061acbe1f63ca95f53b4149d3ebb2b97c2bb4d31845820f219"
   end
 

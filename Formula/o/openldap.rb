@@ -18,6 +18,7 @@ class Openldap < Formula
     sha256 arm64_ventura: "f9f450125e7b6548a81b0d9f83babf08409a6cbe80d40617b8c3f256261a2a6b"
     sha256 sonoma:        "1c584b75365da368f6aec0830d6e5cddbdb1dc5fb7a16a818c299574c173f904"
     sha256 ventura:       "542bbb6594a79baf910a87c265ae57d33d6cd0dec19ed536596ab26b2131b623"
+    sha256 arm64_linux:   "3fca9fbb6de4c3c9115041de0adef3c683f51e347e8af2990bba5c37e687c418"
     sha256 x86_64_linux:  "f4ae258483526f378f60511ec5ecb77f3aeea3819ac2b9d369d6c76d2d74c563"
   end
 

@@ -21,6 +21,7 @@ class Argon2 < Formula
     sha256 cellar: :any,                 mojave:         "a76192a41826619fc399e7f6de5e6cb1c8a5fbe6bea4f2c1554daa830fa0e296"
     sha256 cellar: :any,                 high_sierra:    "830016982e60870f50b3f6fc9a215d8cc4bda6061595f4883f7c11ab19ecba39"
     sha256 cellar: :any,                 sierra:         "21889ac6ed40c792f1b372b5aa0d6b3be1be86577a4c1b06b08569124d2d0da2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1149cb3482d46eb06f07d77b2d3e3ff3f71599f573bf32553c4407f0b470c45c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "58b4014f120e135a991f1023f210366ef3e9175a37a05a3fffb06a9fe3c23ff4"
   end
 

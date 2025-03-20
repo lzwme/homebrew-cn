@@ -15,6 +15,7 @@ class Automake < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "5548bc61f131a45a0aad86b38f044530a51b10243a95188101438e42842f10d9"
     sha256 cellar: :any_skip_relocation, ventura:        "5548bc61f131a45a0aad86b38f044530a51b10243a95188101438e42842f10d9"
     sha256 cellar: :any_skip_relocation, monterey:       "5548bc61f131a45a0aad86b38f044530a51b10243a95188101438e42842f10d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "560980404766bba3c998179b0055afd67cfbab0ce09d8f001530fe31988b7565"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca591433edbdc896db26cea86f61dfbacea15e794828e7280482de2126d89e3e"
   end
 

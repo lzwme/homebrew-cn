@@ -1,8 +1,8 @@
 class Gcr < Formula
   desc "Library for bits of crypto UI and parsing"
   homepage "https://gitlab.gnome.org/GNOME/gcr"
-  url "https://download.gnome.org/sources/gcr/4.3/gcr-4.3.1.tar.xz"
-  sha256 "b2f070fff1840eef70546a28be80235427c116aadc593b5b68ccc869be3aa09d"
+  url "https://download.gnome.org/sources/gcr/4.4/gcr-4.4.0.1.tar.xz"
+  sha256 "0c3c341e49f9f4f2532a4884509804190a0c2663e6120360bb298c5d174a8098"
   license all_of: [
     "LGPL-2.0-or-later",
     "LGPL-2.1-or-later",
@@ -20,12 +20,12 @@ class Gcr < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "48695c463b081f11bf5a01d56bb60eff12937d98cec4fa84ab96e68f60978383"
-    sha256 arm64_sonoma:  "3fdc72dd94c511e5015848fc98e51a05d16b191ccd655dbfff4d09b963ece956"
-    sha256 arm64_ventura: "cae0a6f29bd0788fcf76ddceb83cec01285bb2efe6556161523a6c8eb7852f68"
-    sha256 sonoma:        "7b508d0794660e0b2953414f6ef83d26e3cd7811bf77e77a4b9e7f212793645e"
-    sha256 ventura:       "07092cb9612568e58f652cf543ee2bfac09194aec8b075ab6611166eb74611d8"
-    sha256 x86_64_linux:  "7613ae7fbb8eb5b86076407007ce98992d97dfdee6d7c224ae8209184eeffe42"
+    sha256 arm64_sequoia: "c6dd2aaccd60bf27c4b3edca83a5ca7f087277840eccf91dffa5e4242e177ff1"
+    sha256 arm64_sonoma:  "01875e5b7918fab6462935245afd7b2a9a5ea53da81c0d91c01a485f90aa00c8"
+    sha256 arm64_ventura: "6d9fe7fd9e40c9a54abc080bb879e2ac30d9c9eba2e5623f4e0f61a1c95c276c"
+    sha256 sonoma:        "004a771f4d6e7194c3a1650d26be0eca85adbc5b3df92876ccc74d5aefe9ea1b"
+    sha256 ventura:       "0bc1474bbbf46af21896b8f8f5beedc58978b29fe106046481cd83c775d855dc"
+    sha256 x86_64_linux:  "7ea854a5ee93e6e1ca91d593571b5881f3b387dc3a4ac5bb2e44daf3b4e99111"
   end
 
   depends_on "gettext" => :build

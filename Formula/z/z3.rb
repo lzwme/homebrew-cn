@@ -18,6 +18,7 @@ class Z3 < Formula
     sha256 cellar: :any,                 arm64_ventura: "e7c48be023485b5ffa72321ee393746a12605d51d16edc1c63c3d24155dd73a1"
     sha256 cellar: :any,                 sonoma:        "4b1741f4f67c61f3940928952d35fb3b100181f01800b6f6709c57a8ffe65e07"
     sha256 cellar: :any,                 ventura:       "8fda087e030d4037ca1a93192b6687062a603adf11023950967cfa094b6b97ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "384fddca3102165fcf519aabe8e1e8d98f66bed2b33b700eb17e4dd54fb5afe9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "77d76c62a96c651909152362695d8e74d6125af4d3f6d79ce3559d2e5d96bea9"
   end
 

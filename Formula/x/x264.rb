@@ -46,6 +46,7 @@ class X264 < Formula
     sha256 cellar: :any,                 sonoma:         "815879af6a928c8c92730a0fd92e6633b3c77e1c17a2156865769d5f03207c7d"
     sha256 cellar: :any,                 ventura:        "6477590c867a8e4f016cd5562eb55bd45dd51acbd8aac5476bcd95a810dc2c80"
     sha256 cellar: :any,                 monterey:       "3b19033d9ff3b40030f1fb721c68e6ec308bb978d0a16af6951ab2aff004a94f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5a0349b5e1388cf5f6e2434bbefaeeec63a3d835290b701d115ecf1b6b007069"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "aeeb090700f4e1fdf948ed265f6b63353aea4980709d05b6a9314473fd1c802e"
   end
 

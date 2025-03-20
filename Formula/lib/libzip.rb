@@ -16,6 +16,7 @@ class Libzip < Formula
     sha256 cellar: :any,                 arm64_ventura: "a5f5cad9a74903117c3168e95aed359880001176cec4012caf3347768e4653b4"
     sha256 cellar: :any,                 sonoma:        "e3a656692093ac165b0c07c830cc053dffc85f916168b584538d02c4c0205692"
     sha256 cellar: :any,                 ventura:       "6b4c562f07821355fd8c641a42da8fde595ade1c1a26ab76c218e3394e6f318f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "03718195387870f33ceb6951a3caa487d2325823b23034811f49b4ba0fe71521"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ce5e38e6c13fcce7176c9acd84abdd28d495a1377b1e9b1d622ebdefebe11f7"
   end
 

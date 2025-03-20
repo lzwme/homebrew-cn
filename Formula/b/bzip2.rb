@@ -21,6 +21,7 @@ class Bzip2 < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "2cf2591f8865d9a806736a6f1b74f0905477b5520dd730f025aa12d4c5e0749b"
     sha256 cellar: :any_skip_relocation, monterey:       "fc4dd056738e20b1c850c6834405e27071a992f7671137306c1764c7c0eef350"
     sha256 cellar: :any_skip_relocation, big_sur:        "d222e089bf7b4ab714b150ad754cb76b88b548f57c4bdbbaa4857d6e0541a096"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "3a85918b5e50c5e958e9a322630a2acab61aa4ac8857ab70c7967eeedded42e1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a731afa70daaafec28359b4f10f1c68455c1955ae66cdbb6b6d52eee277bbd3e"
   end
 

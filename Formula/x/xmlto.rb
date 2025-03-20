@@ -18,6 +18,7 @@ class Xmlto < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "94b2d369c743d833b9e4fa2f6658c47f4a85fa8c94202ddcd6db88244f27e7d4"
     sha256 cellar: :any_skip_relocation, ventura:        "fbcc16655585b93b6c3598bd2e712551f88e48bc6062f045914e7f22b4c6bf38"
     sha256 cellar: :any_skip_relocation, monterey:       "6c44cf87fbed1ee9587e74be7fa06d5a8cc392509a05d9f6a37f69d99e765822"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f699cf8ced80aa5aa63079d7f44b35a12445b5df94923ba64843596832ca8757"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "350a0d789e034e3717a5e03ce2110787ded5b6b9a4582b38152c670b10909e0e"
   end
 

@@ -16,6 +16,7 @@ class Jemalloc < Formula
     sha256 cellar: :any,                 monterey:       "27ae29c02d718c38ee5f623c3ef08ad3530a6fd3595d16d2ddadd6552bf32c12"
     sha256 cellar: :any,                 big_sur:        "72aef17aa140b457400c4f2b74d0473bf1160616c3df7cb8604ac2bf734afea5"
     sha256 cellar: :any,                 catalina:       "3f5cf334d16ab432bf210c7e171510d0edcd834f939b57bddfd428af5ed248ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9a0c9835c0efd14f2e79a8ce59ef17cd0ba160f50db1f359e4a690b4f43abd6a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "240b20cc078b21d90c32bd34447952b9b464958b1858ae109f168558993f9278"
   end
 

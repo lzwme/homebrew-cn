@@ -18,6 +18,7 @@ class Nasm < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "81b2abb78f56dc299b3cd69a8626b04997f6fd06df71f3d56058331089a58a4e"
     sha256 cellar: :any_skip_relocation, ventura:        "79b87e6bfcb38df38909219e8ae172e970324236074912a5a23704449e5e097b"
     sha256 cellar: :any_skip_relocation, monterey:       "7d00b410fdb6d366f344057cb17fa58b5d65c6ee888394bd14c5e210122d0b8a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1b5609eb18359a83013e5dfa1371b802602d9676802736df2ed0a1cef211c582"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "138876a9a24c01fda90cecba6aaba7b6e8e94e95768215338e709cc63b80821c"
   end
 

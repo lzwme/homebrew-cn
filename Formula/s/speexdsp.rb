@@ -22,6 +22,7 @@ class Speexdsp < Formula
     sha256 cellar: :any,                 monterey:       "b4d9cbbd5ad3e85630759fe8183c61fa94d772888c62f9a819b11b32ed1b7664"
     sha256 cellar: :any,                 big_sur:        "58d8bf8055672d3d7192c74a6381109c03507ea2ac11c0b1e40fd6b29c288415"
     sha256 cellar: :any,                 catalina:       "3499528f9bfb7c9a1bdff9d1da7f3de4c3dc5d54d25693e156592e76dec5f1d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "e4f60d49f781e99446057cfcee58ac1ebc00f3d003d377a8615b662b56a5b9b3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c417e96a3739f41fb59aca0ceba32fd45b07f79175d8eda837dd125159098453"
   end
 

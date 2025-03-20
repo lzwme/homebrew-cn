@@ -16,6 +16,7 @@ class Swig < Formula
     sha256 arm64_ventura: "47238f89090c776858220e951ead3c6fff0c200ac1a4a1ccaaa37ea943b2c981"
     sha256 sonoma:        "5cce1106f16209f9b522be787c6bbdacc6e43d461acb041faa73b1ddd79d4474"
     sha256 ventura:       "d5903d5bbe73a1c358c251728806ba25c4e4b337dd253a611519059a1b8a47f9"
+    sha256 arm64_linux:   "51f701e9c24059106558da16a38353e2a1c3f4347853430b8dc2f87274e9ade7"
     sha256 x86_64_linux:  "fcacf510dcbe25a622bf98ba5b71450723e086ca81a28e2d6ce63e17d775eba2"
   end
 

@@ -20,6 +20,7 @@ class Mpdecimal < Formula
     sha256 cellar: :any,                 sonoma:         "377dc5e30dd1292ac1666dd43a447b861ad283024f70a3e914c7e11572ae869e"
     sha256 cellar: :any,                 ventura:        "bb1729bd410275aab1bd276f99fb22678b6ad53de2c9c474fdda854ed0ebaebd"
     sha256 cellar: :any,                 monterey:       "266a3f517227bb9f3806b18313c3b8a33688f9659e5001751e15f1f38538dacc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "4e33dc493fe68f28d37ffe15f2888fe90205fc4cb4d36a39f85b87f142fc5410"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca79318fa094531bd57b3f07d5b8574cd9986bac4c876043336ea4176e8c294f"
   end
 

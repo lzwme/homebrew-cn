@@ -19,6 +19,7 @@ class Jq < Formula
     sha256 cellar: :any,                 sonoma:         "6bc01de99fd7f091b86880534842132a876f2d3043e3932ea75efc5f51c40aea"
     sha256 cellar: :any,                 ventura:        "03227348d3845fe16ed261ad020402c1f23c56e73f65799ce278af4bac63c799"
     sha256 cellar: :any,                 monterey:       "25aab2c539a41e4d67cd3d44353aac3cdd159ea815fec2b8dd82fbf038c559cc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "843a48d2e76247b33f28189973245dffb356459ff019e5721b4c8ab4f374befa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9559d8278cf20ad0294f2059855e1bc9d2bcabfd2bd5b5774c66006d1f201ad8"
   end
 

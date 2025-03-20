@@ -1,20 +1,27 @@
 class Tfel < Formula
   desc "Code generation tool dedicated to material knowledge for numerical mechanics"
   homepage "https:thelfer.github.iotfelwebindex.html"
-  url "https:github.comthelfertfelarchiverefstagsTFEL-4.2.2.tar.gz"
-  sha256 "021864ad5b27ffce1915bcacc8f39f3e8a72ce6bd32e80a61ea0998a060180e5"
   license "GPL-1.0-or-later"
-  revision 2
   head "https:github.comthelfertfel.git", branch: "master"
 
+  stable do
+    url "https:github.comthelfertfelarchiverefstagsTFEL-5.0.0.tar.gz"
+    sha256 "fe1ec39eba7f23571c2b0c773dab1cc274fee4512c5b2f2fc54b231da4502e87"
+
+    # Backport fix for https:github.comthelfertfelissues703
+    patch do
+      url "https:github.comthelfertfelcommitc4c564ab09a7c13c87ef3628ed89d2abe1c2aa0d.patch?full_index=1"
+      sha256 "34b217330ef72b12d19b820a7edd994f0107e295f96c779dfe40a990528e1c3a"
+    end
+  end
+
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "51bcb05474db6dbc83b46a31d58c041a3b0f62eaa337cd54a5792654d5fa7040"
-    sha256 arm64_sonoma:  "b64b19003aa0a2455bbdf1da89226b7b6507518501ffce59e122929c9375557d"
-    sha256 arm64_ventura: "88ab880674337b0af62a452d4a817cc53556f59b65619e6217e581108894450c"
-    sha256 sonoma:        "082209d55113110e980075de67480022bcdb34bf483b1130217d15bc4f6487e0"
-    sha256 ventura:       "54ab0c599adba2e9dcbf46c4d31e8775cbe5b8cc968079f6ddaa3fd082198a2b"
-    sha256 x86_64_linux:  "5ec48c46e25bcf9c403d2639de829bfc3eaac60e734c5311ca42e4b8f50bc089"
+    sha256 arm64_sequoia: "5f1c6d68fbfbfe5934ad3228edfb85923725bbb15733519edae03f98569bf66d"
+    sha256 arm64_sonoma:  "1500133b1f232bf7b8436b5e6d540f0f76582c0b49b64e177b4012c7061599a5"
+    sha256 arm64_ventura: "d2e37e3eecf517353ad9df9a47a92921aab78066867f7c897800fd4efd7f7676"
+    sha256 sonoma:        "a64912de5088e357f13b2ace49fb391c707acaba8baf84682303ca4b3393df28"
+    sha256 ventura:       "9d519e1e1fac5faa8b55d7ace4da8b0b7c289666bca34eeecb700d403d7d9a6b"
+    sha256 x86_64_linux:  "399bd5e6c80879eb68cd9e92b717cd5ae745bb4432c2cdc177c0d1904c682591"
   end
 
   depends_on "cmake" => :build

@@ -11,6 +11,7 @@ class Dav1d < Formula
     sha256 cellar: :any,                 arm64_ventura: "554aac9fa65b6d94e721c59a4974182d1d77e5be4ebc31f1408ec1e3fe460ae2"
     sha256 cellar: :any,                 sonoma:        "0eab150c56858a839a017d529f909abbd7c83092a8815d21e51787e060e79b4f"
     sha256 cellar: :any,                 ventura:       "d92bf92c696541ec5e5455329f4deb851098ee60203067992b5b28e40e375446"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "15ef0f5a59a18f57a8af1f2b50d5fda7c85ccb47e9d7b8040a6315d73d7f90f2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a75a20ce3d5e586d5778c2a0a324175833352e2cc66ce2eff796dfec55fc867e"
   end
 

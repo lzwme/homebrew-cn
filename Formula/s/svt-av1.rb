@@ -12,6 +12,7 @@ class SvtAv1 < Formula
     sha256 cellar: :any,                 arm64_ventura: "d402791bdc3b1c81d11829c7ddb3b31cffefb5467143a0c599bad37808581b16"
     sha256 cellar: :any,                 sonoma:        "9805dfe1b36ee2f89682c19f6008562f9ad9d4b96c53607281056c83424c5415"
     sha256 cellar: :any,                 ventura:       "622952ca1a70c125b62420a57d53e3f9b921c177444c5175ef6c14c1029f67ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "454ffac36a950f5bb54fca98e51c052100837413369d0ef4e53fbb0fd2e7c122"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "97172cec2603dcc637b21a845dc6b14f86cbfe9abd299c59b04d65979c9bf4fe"
   end
 

@@ -17,6 +17,7 @@ class NodeAT20 < Formula
     sha256 arm64_ventura: "cd12c0e1b8d6bf21f683165fbaf5cf59826d9e9b153edd279e2903275bd7547c"
     sha256 sonoma:        "a5d4e6820e57c3ffc0e18ca743d8b691e9c4767a8446fede3033bf0fe9c712f4"
     sha256 ventura:       "27208e60a4e8c5efeb422ae6511e4a7e8136ab68e7c1d8b7122d41f386fac6b2"
+    sha256 arm64_linux:   "204ccf94c351e5d9b53cc06e3954f60afb4d1abfe623c5182cafd652bff9acef"
     sha256 x86_64_linux:  "839975a075d3f16bf8d6cc47e229b8a3a0bbd43146356bba927de449135dcbb8"
   end
 

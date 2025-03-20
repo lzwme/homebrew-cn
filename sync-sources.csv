@@ -201,7 +201,6 @@ Homebrew-homebrew-core/Formula/a/aqua.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/arabica.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/arangodb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aravis.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/arb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/arcade-learning-environment.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/archey4.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/archi-steam-farm.rb, Homebrew/homebrew-core, 1
@@ -2269,6 +2268,7 @@ Homebrew-homebrew-core/Formula/g/git-trim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-url-sub.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-vendor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-when-merged.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/git-who.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-workspace.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git-xargs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/git.rb, Homebrew/homebrew-core, 1
@@ -4254,7 +4254,7 @@ Homebrew-homebrew-core/Formula/m/mg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mgba.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mgis.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mhash.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/mhonarc.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mhonarc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/micro.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/micro_inetd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/micromamba.rb, Homebrew/homebrew-core, 1
@@ -4268,7 +4268,7 @@ Homebrew-homebrew-core/Formula/m/mighttpd2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mihomo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mikmod.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mikutter.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/mill.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mill.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/miller.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/millet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mimalloc.rb, Homebrew/homebrew-core, 1
@@ -7288,7 +7288,7 @@ Homebrew-homebrew-core/Formula/x/xinput.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xk6.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xkbcomp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xkcd.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/x/xkeyboardconfig.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/x/xkeyboard-config.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xlearn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xlispstat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xlsclients.rb, Homebrew/homebrew-core, 0
@@ -7549,6 +7549,7 @@ Homebrew-homebrew-cask/Casks/a/accord.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/accordance.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/accurics.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ace-link.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/ace-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/acorn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/acreom.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/acronis-true-image-cleanup-tool.rb, Homebrew/homebrew-cask, 0
@@ -11993,6 +11994,7 @@ Homebrew-homebrew-cask/Casks/j/jupyter-notebook-viewer.rb, Homebrew/homebrew-cas
 Homebrew-homebrew-cask/Casks/j/jupyterlab.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/juxtacode.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jyutping.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/k/k6-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/k8studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kactus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kakapo.rb, Homebrew/homebrew-cask, 1
@@ -14235,6 +14237,7 @@ Homebrew-homebrew-cask/Casks/t/the-unofficial-homestuck-collection.rb, Homebrew/
 Homebrew-homebrew-cask/Casks/t/thebrain.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/thedesk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/theiaide.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/thelowtechguys-cling.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/themeengine.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/there.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/therm.rb, Homebrew/homebrew-cask, 1

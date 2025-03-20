@@ -16,6 +16,7 @@ class Pugixml < Formula
     sha256 cellar: :any,                 arm64_ventura: "e6641fb533ddb45418980698aab6b06a02a3c5e763cae6ab7bb513289e5248d3"
     sha256 cellar: :any,                 sonoma:        "32cc92f8679e9a6d8b0c45140a19f0ac5c330e470bbca5cddcf494c6511beae6"
     sha256 cellar: :any,                 ventura:       "fc421bf66929e255b8a433eae74d0f32482ce73dea8b8da850f9f6efd1970a92"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dfd7825a7cb16dab42a7884e8626dc8d7380081f0e163517037e28bd5136491f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2578c1114075b488ec20a5c627d9616af5a6e5f22d9f99e54d0bb6221a861f77"
   end
 

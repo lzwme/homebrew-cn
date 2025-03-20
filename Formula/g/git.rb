@@ -17,6 +17,7 @@ class Git < Formula
     sha256 arm64_ventura: "c7929c0bf264ff32908bc84dfb3ceba14aa49e76fb5198378844aed57bf42849"
     sha256 sonoma:        "a70ad86dbc6a66082eabba15d36bf99d98d143e132d1ab87bd3e9d0cebdd6cb5"
     sha256 ventura:       "659039899bf999a8c461495e1d09f05a82fa4bb6ab88cdb4b33644a1269a1acc"
+    sha256 arm64_linux:   "ab966a61530ff00a70f09ceae3fdd814723de7f44ac35f9a7fcd5059f0c691d8"
     sha256 x86_64_linux:  "af9d9ec1116d609058099016b1a013b99cc60a6016dc80c5df12ab30560e3a5d"
   end
 

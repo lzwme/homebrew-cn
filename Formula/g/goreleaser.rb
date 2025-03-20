@@ -19,13 +19,7 @@ class Goreleaser < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = %W[
-      -s -w
-      -X main.version=#{version}
-      -X main.commit=#{Utils.git_head}
-      -X main.builtBy=homebrew
-    ]
-
+    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{Utils.git_head} -X main.builtBy=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:)
 
     # Install shell completions

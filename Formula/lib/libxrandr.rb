@@ -13,6 +13,7 @@ class Libxrandr < Formula
     sha256 cellar: :any,                 sonoma:         "c400393add3a4dab2a9be13192af2cafdf443234c527a57bb9e22ecfa28cb019"
     sha256 cellar: :any,                 ventura:        "1cd8ea19e0bdef49383720d3d4aa1c639981a36c9c0a2763c1e9b73afe6a9f06"
     sha256 cellar: :any,                 monterey:       "52f7889369a183269ec67a15b65bc4bdc41fb5209bc4d291fb7c91abb5455319"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5d5d28081dd9152f7866682e673bf2cc425a0d0bdcfc8917ad54edcad5d1bbed"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c48b622aed3d5e99e225601dca2d129fda08585571d948f8737f3e6a4bcb2a56"
   end
 

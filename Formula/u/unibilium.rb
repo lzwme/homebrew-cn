@@ -11,6 +11,7 @@ class Unibilium < Formula
     sha256 cellar: :any,                 arm64_ventura: "db2c6a451a395ff30ceff7e6dbfd30f7b02343bf08e850ae9d0e20d6c9da42b1"
     sha256 cellar: :any,                 sonoma:        "19a58769977601b8bbc47959efeefb4bad5cc938d7dcde0c083c8227d8296026"
     sha256 cellar: :any,                 ventura:       "0fc063e7d4d00b0b93b8b71c5d57921afad9d09d21ddb044e4e6cc44cecfe9ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "239e6447b0d84b67599683cea8cadae7f8dd273e51426f819603f635577a4dc8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "62bf69d2c9fe15ec8c9fe12e690befc1d8971c05b7f3f2fb890e2f4740e88798"
   end
 

@@ -14,6 +14,7 @@ class Libtommath < Formula
     sha256 cellar: :any,                 sonoma:         "cba9f676decfce08aedbc85a2caf32603d93eb186e93b2af1e96fe8bf595b11f"
     sha256 cellar: :any,                 ventura:        "b0e54d27c97e9bad7b9377cb2ba3621c59c5ecd2e231d71b2181316febb008b5"
     sha256 cellar: :any,                 monterey:       "edc215c19f0ee0fd1daa89879a7bc933bf25ddee3b374e4e7b60a8acbaa6f5c3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "99f57fc8332837cb3574ed6b078763693050495a233907bcb9c4b63198414e57"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a7023ad5964a1ccfbbbe850cb0979ffa220a65177efd87e0bb751bcf5a3832ba"
   end
 

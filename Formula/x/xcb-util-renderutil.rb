@@ -16,6 +16,7 @@ class XcbUtilRenderutil < Formula
     sha256 cellar: :any,                 monterey:       "2f416f529c5764d88b98ea0c29d1afad765affb466aa69e465d998b7bd042fba"
     sha256 cellar: :any,                 big_sur:        "3a61dcebbe56e1dcff526e7ea2fe39007bf8bc1b40900f230ab4d3d318e40211"
     sha256 cellar: :any,                 catalina:       "444c4008a4d37a2a687b13316302e1fc67a1794f9bcb83f91d23e9e4ba532ad8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "4e290a280c48d596dd1946a5d3d8670ce85b6d24ecdd565d2c46106fdaa8128f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9de153c6d1351a146e6cd98c7b8b0b5dddc413dbbc5baa739d3310813186839d"
   end
 

@@ -16,6 +16,7 @@ class Libgit2AT18 < Formula
     sha256 cellar: :any,                 arm64_ventura: "94ef273252c464c308e859ebfb3b78814516f6a740d40c57394805c4fbcbcb58"
     sha256 cellar: :any,                 sonoma:        "4848894348322217f276122ab1d3307778f473430abbc51dc22818273b06cf83"
     sha256 cellar: :any,                 ventura:       "9a389072e0da2cb33c2c82bf7d57c49844c92c82be47d19f7e25f0b6666aa8c2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4d124965d0952c612e40c46a4fe3423220509d57cc61118fe15eecce3dbc2ce"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "105c2c951f86f9de73797b314f92b46bddab6b6bb779cee7303d9eebec8a1c18"
   end
 

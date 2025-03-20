@@ -19,6 +19,7 @@ class Autoconf < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "32c6ff07058a61e7fada66d171fee246502fcd1f5b98b65a1ef5b0acfcfa28c2"
     sha256 cellar: :any_skip_relocation, ventura:        "32c6ff07058a61e7fada66d171fee246502fcd1f5b98b65a1ef5b0acfcfa28c2"
     sha256 cellar: :any_skip_relocation, monterey:       "ab03a9de5759022fd4c341a085adc41ef34b00829a21d5f98a76538ce7ec4908"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "55fcb698584173e2d750696d104f3658dbe37fae4651dc7c72d28e6b3a2fb4e9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "55e5cfc7d6f3d91895fe5a345b2158498f8e96b05574b073edf667de4122413d"
   end
 

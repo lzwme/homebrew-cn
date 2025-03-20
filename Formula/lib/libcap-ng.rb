@@ -12,6 +12,7 @@ class LibcapNg < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "981ae5326e20f2844c171f30110902780b64b3860c8f96e4e631434434a230bc"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "9213f1b147c170ebc3b4cb8e900562183885668dd745d0888d985d9fd0cfdbe3"
   end
 

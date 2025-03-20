@@ -12,6 +12,7 @@ class Luv < Formula
     sha256 cellar: :any,                 arm64_ventura: "8e31ff6907a7e940f8b461fd5c8ea8896c546641d7038eb21d6da0e32ee4a004"
     sha256 cellar: :any,                 sonoma:        "5495b4d31f5856d371bf0fc4d7f5db89f6cb08dc1e0dfbfeb4f0903bd5eb28f1"
     sha256 cellar: :any,                 ventura:       "d0f47a32674eb2aae12ab50cd2ba3749a41ee581fadb3b4114477e9503385263"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "46ec46647ebd9d2f08e136f88413081fcec19fe80536ee0f467a2ae14ca01169"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "da9083575ea116986d84c08971cc2f80011996968c2c7e3d02d0505c9407def6"
   end
 

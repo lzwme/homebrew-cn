@@ -13,6 +13,7 @@ class Cjson < Formula
     sha256 cellar: :any,                 sonoma:         "1b0c17ed9045b0feb0ba140a31ab247876055ac753cd1fe1d55c0e9fc334e332"
     sha256 cellar: :any,                 ventura:        "d9587b4d465d2fb40c4cfc6a7c843a97fc9f0aef817b036ffd7418b10cbdd6d1"
     sha256 cellar: :any,                 monterey:       "5173b927f124a5e5f1cdc8c9625e41b91d489f779837e59e245b9fae38b36cc2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "57ba06b3ad967e32a2ce13c1b63d908624e377ac1679b323800ffa7d9ef84613"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ad376a8e59ceadee7ca6ec2ba000a8d1b5359a38e964afb3ca05fed166294da"
   end
 

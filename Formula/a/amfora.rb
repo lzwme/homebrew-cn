@@ -23,7 +23,7 @@ class Amfora < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.builtBy=homebrew"
+    ldflags = "-s -w -X main.version=#{version} -X main.commit=#{tap.user} -X main.builtBy=#{tap.user}"
     system "go", "build", *std_go_args(ldflags:)
     pkgshare.install "contribthemes"
   end

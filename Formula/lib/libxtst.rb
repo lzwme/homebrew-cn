@@ -13,6 +13,7 @@ class Libxtst < Formula
     sha256 cellar: :any,                 sonoma:         "fac9520eabdd31b4defc300ec39c860da9809c8850415b2c8ba799e1849e5f2f"
     sha256 cellar: :any,                 ventura:        "1b29a72e003a2f5b3ea2bf308ed8be1218146051fa941177a1eca49099558362"
     sha256 cellar: :any,                 monterey:       "252a0ae6686b4d4f5098360cb7ed9a2f25d8dd122ae79150af3533509da1e102"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "270e406f0aa8cdbd35a39c76ebaea72a79325ac23ee3342d1cc5f7c930a8f337"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "51cacd4573d0d4e1cc33c83574cf4838d93de28276a9cd3c69496da8a4466771"
   end
 

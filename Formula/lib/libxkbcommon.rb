@@ -7,12 +7,13 @@ class Libxkbcommon < Formula
   head "https:github.comxkbcommonlibxkbcommon.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia: "e0bd4e7de132b9dc9fe4d051e3b5e4ac1e46faa09383f98cf706f3b0f4fccbd7"
-    sha256 arm64_sonoma:  "6c4e05bd7349ed1549012fceed6970fc16cb2d850fcc0918d2fc0c3807fc8d9d"
-    sha256 arm64_ventura: "87add7188454d224c1eb5c7212ed1d99bfa4c27f892227a8dfab391395b39736"
-    sha256 sonoma:        "13ab9316b224c237e2b430b7bed5ca098d80f3b003364e8c3a15395ba6034b85"
-    sha256 ventura:       "caab4aa6d03006afd61175a910f4e16c101aab8ef021c906125cd47ab2cd7801"
-    sha256 x86_64_linux:  "de292897967057f3dc9d2f5fc087ddb83e71a407a7498bb37485ed52b042c664"
+    rebuild 1
+    sha256 arm64_sequoia: "e17a7165d667abfde67eeaa55201022f41f070d603b35be24f06675ff729c83d"
+    sha256 arm64_sonoma:  "6d73b7fe3cc56ed4bf9423dbc3169e0ee71de814446c672dfb0d813140c7f66b"
+    sha256 arm64_ventura: "32d6a4a4c35d77fcf33d9d11b056fe44bced10436d776304a89fee455460c6df"
+    sha256 sonoma:        "8d90850aee4b259ff81c341de91f048da624ed6821113f4513ab9a669a0b23f3"
+    sha256 ventura:       "db65eb514edb1dd5fb91987846c63b67cdeb9c151d653fa65e3f67202d82ef68"
+    sha256 x86_64_linux:  "2613c577fd0374fcadc3f5d5123408f980c94e4b8e46f53dee14f80a9c2b853d"
   end
 
   depends_on "bison" => :build
@@ -21,7 +22,7 @@ class Libxkbcommon < Formula
   depends_on "pkgconf" => :build
 
   depends_on "libxcb"
-  depends_on "xkeyboardconfig"
+  depends_on "xkeyboard-config"
   depends_on "xorg-server"
 
   uses_from_macos "libxml2"

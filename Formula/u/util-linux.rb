@@ -29,6 +29,7 @@ class UtilLinux < Formula
     sha256 arm64_ventura: "5813684b14b36ef9eb21ae44778509a3b5317177d36424e5684f93e6d38dd2ed"
     sha256 sonoma:        "4e510ac6858c30bf51f48704554f479afa65651e9d70cecead695be3b27bab31"
     sha256 ventura:       "a3ffdf52748b08c8ac4a59685dad9d61c6bb97eec580b101e5e573412184ca41"
+    sha256 arm64_linux:   "cedcefe892fdab71ae5330dae10d830b74f924758abff56320b2867f1c7a877c"
     sha256 x86_64_linux:  "5472eb4abe7ce0d30ff3548dda8da1edab2adc47b10acac6fc5f467171519616"
   end
 

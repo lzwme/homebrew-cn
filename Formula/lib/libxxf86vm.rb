@@ -11,6 +11,7 @@ class Libxxf86vm < Formula
     sha256 cellar: :any,                 arm64_ventura: "363d3b25237b106818012a000ebed92fc21a145c5253c97685801128da9a510b"
     sha256 cellar: :any,                 sonoma:        "0f40e51b6211395733b458f27cb329543cc0c1458217d4bca2bcf2c8b12d1401"
     sha256 cellar: :any,                 ventura:       "75add9e909d354f98af9dc286327692f470fdfd4b32dcd96ea4455adac6e35a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9432dbcf9ae56adcb8735725c1388cc35bcaccef431ac2a78308c1c866f0be24"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d916bedfca3e0ba33a43ebc5524d0178fcfd3a6eb95f9b793ca66d8b76d60fb"
   end
 

@@ -17,6 +17,7 @@ class PythonAT313 < Formula
     sha256 sequoia:       "f5590bc156e48a3ae4c1e73098c1c800beec3f27f4747af2cb6b9bad4b50bb4a"
     sha256 sonoma:        "80bc6fa7aa500fc462edecdc6839a54071a6e6c79e155d77b7d9d32c0c9be452"
     sha256 ventura:       "6cd37a46af6b079b8b93c54c8c25c6b7254aed009f9e429b3949aa064bd21589"
+    sha256 arm64_linux:   "1af0c16167673c424d6a6d1bec721dd2ddd4ead1675d7a65b2cf18c645f9cc75"
     sha256 x86_64_linux:  "1d36bb0df2bf2fee8f000459fdbfdf74ac33c6537d51329a62b8b37225cc21b3"
   end
 

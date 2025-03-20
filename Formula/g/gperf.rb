@@ -21,6 +21,7 @@ class Gperf < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "d71157cd1baddf951e91477b85b533ade99dfe97a5876bb993fe7f6e8336f780"
     sha256 cellar: :any_skip_relocation, sierra:         "3cbaa18692ac53ce98a754d46e07e89d6dddca4bef3bbb312e762abf5a30093d"
     sha256 cellar: :any_skip_relocation, el_capitan:     "27f661ef9546ff113279654e92c08bb8d8ab837f7dc8b308c1a2beeafdcebc76"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9d55185cb8e10048ad8fd7ae159c521fddb336330729623532e2e6443deb1d07"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a91b89f648c21ae225074e0a9f4e54154b4f2744cc0a37e8421e84ee7ac61a95"
   end
 

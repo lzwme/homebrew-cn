@@ -1,20 +1,18 @@
 class Alpscore < Formula
   desc "Applications and libraries for physics simulations"
   homepage "https:alpscore.org"
-  url "https:github.comALPSCoreALPSCorearchiverefstagsv2.3.1.tar.gz"
-  sha256 "384f25cd543ded1ac99fe8238db97a5d90d24e1bf83ca8085f494acdd12ed86c"
+  url "https:github.comALPSCoreALPSCorearchiverefstagsv2.3.2.tar.gz"
+  sha256 "bd9b5af0a33acc825ffedfaa0bf794a420ab2b9b50f6a4e634ecbde43ae9cc24"
   license "GPL-2.0-only"
-  revision 2
   head "https:github.comALPSCoreALPSCore.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia: "4a5c92030e5c1a446db1062b1007ffc8d1314cd77efdf5f9194ac8347b5cdbe4"
-    sha256 cellar: :any,                 arm64_sonoma:  "241dd3c647a0d5191a7e50d97f57cdfafd10cad5d1cbb8fac7b9f3065587fa09"
-    sha256 cellar: :any,                 arm64_ventura: "9290875a72e7c89cef6888519d3ea0c0f3ae95fb08c6d0cef0e4f07443cb7693"
-    sha256 cellar: :any,                 sonoma:        "87f9dbe716b04a95d46c7d850b9778a21abf5dec122d58de265b65420c494437"
-    sha256 cellar: :any,                 ventura:       "8a7ca50ba1331ad8a116d7c3189dfe258bec8f476963659c767292680406efc6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6592d3e7563ea45cd9fd053c1b1341c1f7e0b784616fd887b680ecb7fefa494"
+    sha256 cellar: :any,                 arm64_sequoia: "d32af432da55d533b24bd30a60f8e2845ae2bfe97a3b00d5f53e0d58282eeafe"
+    sha256 cellar: :any,                 arm64_sonoma:  "d8e1ec2c2f445c059c8a6097f6900c4b3366b61f17bb4e985a047dfc71545cb5"
+    sha256 cellar: :any,                 arm64_ventura: "7c51b1fafed3d6683f0a7711239ae8dfb960a3f9242e98d04889397112a0bbed"
+    sha256 cellar: :any,                 sonoma:        "ded6b4a5102bf72ee89b709f48c7363e592435dbf8cab002ec173c7d392ccf47"
+    sha256 cellar: :any,                 ventura:       "5bb961582c752e10a6d731ccbd7d546c1c2d4193af2c0f5cc1254e193d4568b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "992bb58ad888c4accb8a6758f3ec2b4b378af7523626efa5d6785de54c32bf3b"
   end
 
   depends_on "cmake" => [:build, :test]

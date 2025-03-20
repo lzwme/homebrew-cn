@@ -1,32 +1,24 @@
 class Tcpsplit < Formula
   desc "Break a packet trace into some number of sub-traces"
-  homepage "https://web.archive.org/web/20230609122227/https://www.icir.org/mallman/software/tcpsplit/"
-  url "https://web.archive.org/web/20230609122227/https://www.icir.org/mallman/software/tcpsplit/tcpsplit-0.2.tar.gz"
-  sha256 "885a6609d04eb35f31f1c6f06a0b9afd88776d85dec0caa33a86cef3f3c09d1d"
+  homepage "https://www.icir.org/mallman/software/tcpsplit/"
+  url "https://www.icir.org/mallman/software/tcpsplit/tcpsplit-0.3.tar.gz"
+  sha256 "9ba0a12d294fa4ccc8cad8d9662126f01b436ced48642c3fb2520121943f5cf5"
   # The license is similar to X11 but with a different phrasing to the no advertising clause
   license :cannot_represent
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "59062e48ff67f9fc5a6b0f8d0cc397c888b1914c2881ac663d6ce8f9a074a34d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "a3d3cd3c37dce379aa221133969b74a0b2bd61a6d7605172b952b26e3398a0cf"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "5bf4362d064b7f982e0fb8cb2e79010c80c19f555b79f18dd0e4f3a9dbfda8a1"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f40f957faef51ed496030a97cda8ca0eb0716826969872185080bb8e94780f36"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4223a133c41217be90d0880fd1480e68e2b540fe4ab448144a14afa6d4139811"
-    sha256 cellar: :any_skip_relocation, ventura:        "1931a69c46a6669e5a5a9716b260413bcbf24af89bb567ccde1bb17e1827f55a"
-    sha256 cellar: :any_skip_relocation, monterey:       "51e4f267ddd4cd76011a85b0e094d78d4df67b4a3d16d6dd918834a929cba203"
-    sha256 cellar: :any_skip_relocation, big_sur:        "49781c99d1496c5c0c8ec3e56e2edc604f5e8643f36e93b0ff8b974d448363d1"
-    sha256 cellar: :any_skip_relocation, catalina:       "ab3131cd8829f943cc4142dc616adfa696ff9d0af5dc21f94408d114f59434cd"
-    sha256 cellar: :any_skip_relocation, mojave:         "b3a7f083a50a33edf1799fc16b6d52db71eee85bd69bad9d1d3d42e6de5cfa6f"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "0b603f1737a000ec2452bd3ac48df7c4e04d6cfb15fc48dabca96bd23137f40a"
-    sha256 cellar: :any_skip_relocation, sierra:         "2e9d12ee609d30075f141527c3804ce78a8c312e5b72ce6eb655ed08521faf45"
-    sha256 cellar: :any_skip_relocation, el_capitan:     "5014edcbc87913b2103c9347dd4b132ca1b4c3b1a007c853eda75213481e7d30"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f90bcbd78ee73c48c113f3f2b974c5aa6b2e17cecb6fa531be3a62a40fa0fb9f"
+  livecheck do
+    url :homepage
+    regex(/href=.*?tcpsplit[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  # Upstream has an incomplete certificate chain,
-  # so fetching and livechecking no longer work.
-  # Last release on 2013-02-27
-  disable! date: "2024-09-05", because: :unmaintained
+  bottle do
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1b13d6af21036479f6a802039f11fc02a16a1d1cbda789af99ecba3100d88130"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a6891aac6306a346be1a28c7ee462636576a7835c8e7a796d6a3d64cd5ceb7f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "415a55da3fec588f476a348a4d5424ab7fa2a4bfdbdfb30e8e5d7a225f1bee56"
+    sha256 cellar: :any_skip_relocation, sonoma:        "098840d4bbc97133040b4697034b972fc24acaeb6175bee7da477c495df5c5c7"
+    sha256 cellar: :any_skip_relocation, ventura:       "9cf285c0719876d2dbd4df148886919cdec7d0b51bc8e59bc0feeffe733cab87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be8f207776a5ace12166e89d26b391cb43a7bf4c289d620b49ea4c948d1d91e9"
+  end
 
   uses_from_macos "libpcap"
 

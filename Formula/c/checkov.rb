@@ -3,10 +3,9 @@ class Checkov < Formula
 
   desc "Prevent cloud misconfigurations during build-time for IaC tools"
   homepage "https://www.checkov.io/"
-  url "https://files.pythonhosted.org/packages/4f/00/9f53aa8a743908b167d0055906d567681ebf8f71c6439d6fd77ac99047ea/checkov-3.2.380.tar.gz"
-  sha256 "4e634cf361e8162db49072a52d2cfac9dd9f3887e575c119c641d82892e0577a"
+  url "https://files.pythonhosted.org/packages/c5/30/5c8a0843c3ee4e5cb4cb03e507d3b88dc33ea66a218fa57b1efb0f4c005b/checkov-3.2.390.tar.gz"
+  sha256 "309d061babdd6832cb8461920928f445c7589b8b2b8c4b2aa21b4290ec913621"
   license "Apache-2.0"
-  revision 1
 
   livecheck do
     url "https://pypi.org/rss/project/checkov/releases.xml"
@@ -18,12 +17,12 @@ class Checkov < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f1a5134050bef521bda54aaf95a14e012efced5c13cb7e3f1a0d8eeae9aea2f3"
-    sha256 cellar: :any,                 arm64_sonoma:  "a2aff1ddbac9d04f709148d3b0896a21adaa9025af0e2679021000c353cb1694"
-    sha256 cellar: :any,                 arm64_ventura: "b6bb3a155dc6939408e5fbb352880cd56aae624b0f5f986ef76c460546c5949f"
-    sha256 cellar: :any,                 sonoma:        "fe3ec268a4d50b7be08f80ff6191283dc8590cd4560764aeb9d276a69930079c"
-    sha256 cellar: :any,                 ventura:       "30d8887751fcb3de2904cafe315d10d239db210f020fb42f2e3acef925f2b63e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8dc9437c246309545edaf717f681b0b3309cdb95a07bcdab4d1b0444be269f3f"
+    sha256 cellar: :any,                 arm64_sequoia: "0c57540cbbe8ce04fb3ceeb7648e2b094fc3f8aa7b46de32a036f8097b0a29ea"
+    sha256 cellar: :any,                 arm64_sonoma:  "9c89b98cf60e084e9a630726254e7a9323c0c2c38fcc27b6e06d55292b3de641"
+    sha256 cellar: :any,                 arm64_ventura: "aada830051ce4cbfd8339d6877af6ec28b265a6a4c72b2ca64533206ac586555"
+    sha256 cellar: :any,                 sonoma:        "87bb1f8b46a5ad451b1763c95100fc98e53f53cbd335c26f30553ae4351e8469"
+    sha256 cellar: :any,                 ventura:       "cfc3c911b2e80bb5cf90f6e50fcef9682fded3c9f20e406f74ddb49c19be248f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b57cd5139f519f618b7f6115c77bfb0af4fb9a554198eb1817f84ce69430292d"
   end
 
   depends_on "cmake" => :build # for igraph
@@ -41,13 +40,13 @@ class Checkov < Formula
   end
 
   resource "aiohappyeyeballs" do
-    url "https://files.pythonhosted.org/packages/a2/0c/458958007041f4b4de2d307e6b75d9e7554dad0baf26fe7a48b741aac126/aiohappyeyeballs-2.5.0.tar.gz"
-    sha256 "18fde6204a76deeabc97c48bdd01d5801cfda5d6b9c8bbeb1aaaee9d648ca191"
+    url "https://files.pythonhosted.org/packages/26/30/f84a107a9c4331c14b2b586036f40965c128aa4fee4dda5d3d51cb14ad54/aiohappyeyeballs-2.6.1.tar.gz"
+    sha256 "c3f9d0113123803ccadfdf3f0faa505bc78e6a72d1cc4806cbd719826e943558"
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/b3/3f/c4a667d184c69667b8f16e0704127efc5f1e60577df429382b4d95fd381e/aiohttp-3.11.13.tar.gz"
-    sha256 "8ce789231404ca8fff7f693cdce398abf6d90fd5dae2b1847477196c243b1fbb"
+    url "https://files.pythonhosted.org/packages/6c/96/91e93ae5fd04d428c101cdbabce6c820d284d61d2614d00518f4fa52ea24/aiohttp-3.11.14.tar.gz"
+    sha256 "d6edc538c7480fa0a3b2bdd705f8010062d74700198da55d16498e1b49549b9c"
   end
 
   resource "aiomultiprocess" do
@@ -71,13 +70,13 @@ class Checkov < Formula
   end
 
   resource "attrs" do
-    url "https://files.pythonhosted.org/packages/49/7c/fdf464bcc51d23881d110abd74b512a42b3d5d376a55a831b44c603ae17f/attrs-25.1.0.tar.gz"
-    sha256 "1c97078a80c814273a76b2a298a932eb681c87415c11dee0a6921de7f1b02c3e"
+    url "https://files.pythonhosted.org/packages/5a/b0/1367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24/attrs-25.3.0.tar.gz"
+    sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"
   end
 
   resource "bc-detect-secrets" do
-    url "https://files.pythonhosted.org/packages/9e/86/c3f100ad41e4666dd006d14c0a437ac3dacd602389e74191f14d2790f084/bc_detect_secrets-1.5.36.tar.gz"
-    sha256 "2e1c86e3c22427131d82edd76aa430a205b3258ae810ae44e15844ab5c4c0626"
+    url "https://files.pythonhosted.org/packages/63/06/98541eaf4f1bdf0c5637746e5d9897a167adb44e8fc12ea48d9801c14e32/bc_detect_secrets-1.5.37.tar.gz"
+    sha256 "6ad6e7b5caf8b10424dca23a5c4c436ea6f259d485217752b1ba175e58e178f8"
   end
 
   resource "bc-jsonpath-ng" do
@@ -266,8 +265,8 @@ class Checkov < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/d6/be/504b89a5e9ca731cd47487e91c469064f8ae5af93b7259758dcfc2b9c848/multidict-6.1.0.tar.gz"
-    sha256 "22ae2ebf9b0c69d206c003e2f6a914ea33f0a932d4aa16f236afc049d9958f4a"
+    url "https://files.pythonhosted.org/packages/82/4a/7874ca44a1c9b23796c767dd94159f6c17e31c0e7d090552a1c623247d82/multidict-6.2.0.tar.gz"
+    sha256 "0085b0afb2446e57050140240a8595846ed64d1cbd26cef936bfab3192c673b8"
   end
 
   resource "networkx" do

@@ -12,6 +12,7 @@ class Cffi < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b143786bb8ede8b8ad7230b6be8c004f276dacccbd4647a3f169099a536fd3a6"
     sha256 cellar: :any_skip_relocation, sonoma:        "8e1c24e4e78f041f98e0394a6a07ef560ea84d980f0f3c3dd3ea7fb6c3f91aa4"
     sha256 cellar: :any_skip_relocation, ventura:       "7c8eea38ba0103ddbb0243d0ed9f74a79875f1f0dfe9d8421f3e2f45dca69da5"
+    sha256                               arm64_linux:   "8001ef146f7ab75ab198ec20c59f6383ecf439feb687c76b8ee5f3279a00c30f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a49b146e624fa887497252f89c76d8e7cfcdc4d9a4ec444a5b8db856324198cf"
   end
 

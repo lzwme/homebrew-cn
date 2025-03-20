@@ -21,7 +21,7 @@ class Stencil < Formula
     ldflags = %W[
       -s -w
       -X go.rgst.iostencilv2internalversion.version=#{version}
-      -X go.rgst.iostencilv2internalversion.builtBy=homebrew
+      -X go.rgst.iostencilv2internalversion.builtBy=#{tap.user}
     ]
 
     system "go", "build", *std_go_args(ldflags:), ".cmdstencil"

@@ -11,6 +11,7 @@ class Libcbor < Formula
     sha256 cellar: :any,                 arm64_ventura: "8e069118ed51f891cab2278d3c9e43d4a0b4a64a166bf5936b71c82d426a9b00"
     sha256 cellar: :any,                 sonoma:        "21328c3ce137192785b4c98e5fdc8d4e1ec5ec3055012dc1a8c0b3ba47c76f00"
     sha256 cellar: :any,                 ventura:       "c0ae5159e74053c98a47f273cf6765351e75c6218f08ad93ef3f491f6ac46a73"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c927b338e13e1ed044b7832773076fb068dc602f535f87f47cb6343852262d4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "db399e91ac8ece593925568d7c87be22096e2a2ce0a7b1dcc8fef67aea4166d4"
   end
 

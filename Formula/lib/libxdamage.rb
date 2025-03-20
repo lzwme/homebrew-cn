@@ -15,6 +15,7 @@ class Libxdamage < Formula
     sha256 cellar: :any,                 ventura:        "0a57b493cab139a05dfd0d497b01a98525161094a456568fe35175043bd5f792"
     sha256 cellar: :any,                 monterey:       "f4a6249de91d6f556fe83f4d092233a7b45dff9fe2a3dcf7c23f43e8cb502b9a"
     sha256 cellar: :any,                 big_sur:        "682e7654ca8a9c91c37b156e173f2280fef06e51ba6604062a8fc3966ef01028"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ff8793c23cc1bcc97ab649cfae7bdc9b4756d8635bc1bf1ff554d3b14e31854b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d888f5feb3f6cbaf35ca9d4f6af015555e30be8295bb378594290081e74c29f"
   end
 

@@ -13,6 +13,7 @@ class Gpatch < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7bac8e7a0b6b1862a61bc686ab6df327c3eede8c28bd524127ed1b45000ecb1c"
     sha256 cellar: :any_skip_relocation, sonoma:        "f4d79d31ed845a3389abd1e7e8d59d62544f6371348d22592ec95e28023ef446"
     sha256 cellar: :any_skip_relocation, ventura:       "bb8c06471dbfa2cf24efa88eaede791bd8f4d39ea5f08e5b92b38108e54b5c27"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1adbdac31fdec09f4baf97ce1fe13f26cd5b7b36f9bca3578c0d977587d4785d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f10fc17d95257c9de34edf1ea0a8d852a41cc6f7d5bbb18d62c75d7a295469f9"
   end
 

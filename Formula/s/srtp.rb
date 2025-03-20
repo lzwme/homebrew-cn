@@ -17,6 +17,7 @@ class Srtp < Formula
     sha256 cellar: :any,                 arm64_ventura: "ffda680f84d2f5cb9cf8ea9d078b8386cf2f0cf223d2dfe5147bb739f8631c9f"
     sha256 cellar: :any,                 sonoma:        "7ac6524572afcc2962a2a22562f8253d0ef1f1bc80a78488c9a4a8fe5bdc7f3d"
     sha256 cellar: :any,                 ventura:       "57406d7cd6cada27a6c8717c32550234e716f9ae7989e28959f53204dc5a20a8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ccb20fac89e4f213d8802f02a061735b5a55ba134d9e2c3bb4b581044c45ef51"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0dcfb6ace5a4cec086e56117194b86fe25292173d200abe1b6530b5cb7a9fd6d"
   end
 

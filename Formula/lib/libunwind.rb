@@ -11,6 +11,7 @@ class Libunwind < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "9774401f2bc0bf08e61959e37da77e571cea9fdc0e2a36f414cb094af73ac2bd"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "81f89b76defac2b351bfb10864fcb7a9169b126f6e62a0c37c235873034fea7d"
   end
 

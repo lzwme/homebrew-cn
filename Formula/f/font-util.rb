@@ -15,6 +15,7 @@ class FontUtil < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "b6a7600ba11c04222874464dc5b7e01976f88f01f1fa4e33336c3bb5aa593aeb"
     sha256 cellar: :any_skip_relocation, monterey:       "7463821e99f23ec109e6ea41d5c4a6bd79d6cbdbd8d52d58e727212c6fc215db"
     sha256 cellar: :any_skip_relocation, big_sur:        "48980593c214141ef4ad5c85e70104446df26b82689cf361128c740c1a48b8fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "cfca6531f01331fe8df5e5d90008f0106cdb1cd867d82ad68995558e66afbe17"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "deb3137c5cba7ee33ca8733cc79348b69bf8d337cb20037d12de3bf4eff593dd"
   end
 

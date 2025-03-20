@@ -21,7 +21,7 @@ class GoParquetTools < Formula
       -s -w
       -X github.comhangxieparquet-toolscmd.version=v#{version}
       -X github.comhangxieparquet-toolscmd.build=#{time.iso8601}
-      -X github.comhangxieparquet-toolscmd.source=Homebrew
+      -X github.comhangxieparquet-toolscmd.source=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:, output: bin"parquet-tools")
   end

@@ -1,14 +1,13 @@
 class Interface99 < Formula
   desc "Full-featured interfaces for C99"
   homepage "https:github.comHirrolotinterface99"
-  url "https:github.comHirrolotinterface99archiverefstagsv1.0.1.tar.gz"
-  sha256 "ddc7cd979cf9c964a4313a5e6bdc87bd8df669142f29c8edb71d2f2f7822d9aa"
+  url "https:github.comHirrolotinterface99archiverefstagsv1.0.2.tar.gz"
+  sha256 "8bd007c48cf05436ced60884e8e3a05ede46105f3efae9bf29e0f4d30f938f9e"
   license "MIT"
   head "https:github.comHirrolotinterface99.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "c3300aa00993da5cbe12d0e1feaafe44d6c8e2e5f039ac3854bd5b9a1cadea40"
+    sha256 cellar: :any_skip_relocation, all: "cdcd1817a2f31b433c04ed591b2f5de07141a3e783de280b0c7431b68dec2556"
   end
 
   depends_on "metalang99"

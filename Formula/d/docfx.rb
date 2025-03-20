@@ -6,13 +6,15 @@ class Docfx < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc0289068670e27af69eba93033c124d627aa4bb97143abe05f1c9d4ad6684da"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ca94216d682bdd0a229071d1c72de96f2ddbe47f82e72d1e66eed970a24c394"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "36dcefda17bf44a0a09f883a6f32ef2e4cd21c17e15675b64e462e7957424a66"
-    sha256 cellar: :any_skip_relocation, ventura:       "b03b64889ca251603291b374c0416464b895c47d73abed2f3e565eafa40c82dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb3af6fd91667aa0f5f693eb9513a2aefa3ac3b8c5d607bb2ebc4af364a5b958"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "abb66975d8752e67e031dd9f7a29bf6c3e896f5b424815d5dc088436ecfd8a40"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f97bed8a6dde6e7a73af444d845a63027029dc9dcb604177f166c712dc871d7e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "063a6dc7fb65e9d026503301fe0fe7b840d2e08b22015cb72773a9f7d92e4089"
+    sha256 cellar: :any_skip_relocation, ventura:       "b1792841cb03d32d705e997d97ce7cc5a1e92ed3293de92b84d7055c7cdc5d2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41d6acfb56f458d4113e56c3a4b3368a29247d8ad4cf2caea98d2d7583fe38c8"
   end
 
+  depends_on "node" => :build
   depends_on "dotnet"
 
   def install
@@ -34,6 +36,10 @@ class Docfx < Formula
       -p:TargetFrameworks=net#{dotnet.version.major_minor}
     ]
 
+    cd "templates" do
+      system "npm", "install", *std_npm_args(prefix: false)
+      system "npm", "run", "build"
+    end
     system "dotnet", "publish", "srcdocfx", *args
 
     (bin"docfx").write_env_script libexec"docfx",
@@ -43,5 +49,6 @@ class Docfx < Formula
   test do
     system bin"docfx", "init", "--yes", "--output", testpath"docfx_project"
     assert_path_exists testpath"docfx_projectdocfx.json", "Failed to generate project"
+    assert_match "modern", shell_output("#{bin}docfx template list")
   end
 end

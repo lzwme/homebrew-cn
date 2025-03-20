@@ -16,6 +16,7 @@ class UserspaceRcu < Formula
     sha256 cellar: :any,                 arm64_ventura: "382b08ef29134ccfe9f7602277174166c4efec6aa9a0250758f5a586043b6513"
     sha256 cellar: :any,                 sonoma:        "98db909a5f8d435a97f719f591aed551ff339ce0dbed53016b42196361914da9"
     sha256 cellar: :any,                 ventura:       "e078d7b289f0dde96dd60f6397146b3e67b076d8843267c5812e09592889947d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0aca902724285d0fce858f8e0253b15606c22e1cb648ebe5d608babf52ce0344"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7e6918916e2c888dbd677a33429f01ec181c1fe965a729c0d471f2957bcb5c3"
   end
 

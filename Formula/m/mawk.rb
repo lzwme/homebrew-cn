@@ -16,6 +16,7 @@ class Mawk < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "87970558c84e6172003dfede622bf5fe3b78309f709a3c5a81dfcf2f8a44d24f"
     sha256 cellar: :any_skip_relocation, sonoma:        "056917eaa79d45b640add493c114d8e027cab6d5dbe954f1dd5cc5654b482f09"
     sha256 cellar: :any_skip_relocation, ventura:       "bec5bb0e31eb1bb02091352669b80053544c636cbfb591ba96ea57c5639abe8c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e43b15161774ffd1beaa7373041268f90ec6f41ae1078ea01708d566e813bde8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a6fd86d47f102fd70685b287128bb0d7b71e1c1cb5814d4fdb31b674598b00a"
   end
 

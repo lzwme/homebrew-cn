@@ -4,15 +4,16 @@ class Sops < Formula
   url "https:github.comgetsopssopsarchiverefstagsv3.9.4.tar.gz"
   sha256 "3e0fc9a43885e849eba3b099d3440c3147ad0a0cd5dd77a9ef87c266a8488249"
   license "MPL-2.0"
-  head "https:github.comgetsopssops.git", branch: "master"
+  head "https:github.comgetsopssops.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "47fb0da48816583bb499374230d9a1eb3d568dbfb3e5dad262b2b416f13c71c6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "47fb0da48816583bb499374230d9a1eb3d568dbfb3e5dad262b2b416f13c71c6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "47fb0da48816583bb499374230d9a1eb3d568dbfb3e5dad262b2b416f13c71c6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b6714897154831757549504869480fdd212b3ff6249f547b1c321e8173fa4750"
-    sha256 cellar: :any_skip_relocation, ventura:       "b6714897154831757549504869480fdd212b3ff6249f547b1c321e8173fa4750"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8787fc174766bbf18e0014ae7b80438e12db9a5db76d0b9645842c867135d10"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "37e076fb5868d03a09f4d1dc0362985f6287277f2f6e52071319d909c5ee572a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37e076fb5868d03a09f4d1dc0362985f6287277f2f6e52071319d909c5ee572a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "37e076fb5868d03a09f4d1dc0362985f6287277f2f6e52071319d909c5ee572a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7044f03ea020947e1e855ca703de6044fbd778f06d892652da35725ff6db2100"
+    sha256 cellar: :any_skip_relocation, ventura:       "7044f03ea020947e1e855ca703de6044fbd778f06d892652da35725ff6db2100"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6f5356d7cc9fb4b00f111872dfe2a6d06a60f11cf083d993c74de2ca3f821f07"
   end
 
   depends_on "go" => :build

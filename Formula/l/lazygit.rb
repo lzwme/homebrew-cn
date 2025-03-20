@@ -23,7 +23,7 @@ class Lazygit < Formula
   depends_on "go" => :build
 
   def install
-    ldflags = "-s -w -X main.version=#{version} -X main.buildSource=homebrew"
+    ldflags = "-s -w -X main.version=#{version} -X main.buildSource=#{tap.user}"
     system "go", "build", "-mod=vendor", *std_go_args(ldflags:)
   end
 

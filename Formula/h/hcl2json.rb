@@ -1,18 +1,18 @@
 class Hcl2json < Formula
   desc "Convert HCL2 to JSON"
   homepage "https:github.comtmccombshcl2json"
-  url "https:github.comtmccombshcl2jsonarchiverefstagsv0.6.5.tar.gz"
-  sha256 "97d1a180b0226ea3863f7d5fa35899573310b3299abb0220e26e313fdc4f403a"
+  url "https:github.comtmccombshcl2jsonarchiverefstagsv0.6.6.tar.gz"
+  sha256 "5dd497f852e4c00b2e80c9f327b5650446d7eb794f8671563f39748dc847b9ba"
   license "Apache-2.0"
   head "https:github.comtmccombshcl2json.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb1256d5d5a729c140febba5d54ad6995c372d115687d2fb65b0338fd204e51a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb1256d5d5a729c140febba5d54ad6995c372d115687d2fb65b0338fd204e51a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "eb1256d5d5a729c140febba5d54ad6995c372d115687d2fb65b0338fd204e51a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ad3f419c1ce650002624bcfdc51a04ca3d9d61bf375c250d2ef89d689128d0eb"
-    sha256 cellar: :any_skip_relocation, ventura:       "ad3f419c1ce650002624bcfdc51a04ca3d9d61bf375c250d2ef89d689128d0eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b5535409c8bfb869237ddd8b045cb7eddc9dc9f6ebbfe2014af997d9fa4a588"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e27f21fb355a56ebd9c4784bc4504552688914c115700db28fc27e367559b5e5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e27f21fb355a56ebd9c4784bc4504552688914c115700db28fc27e367559b5e5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e27f21fb355a56ebd9c4784bc4504552688914c115700db28fc27e367559b5e5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e3c268c918f1d3697a839b6b4beb1514f9870a1d49d8576186791bbb97b41df2"
+    sha256 cellar: :any_skip_relocation, ventura:       "e3c268c918f1d3697a839b6b4beb1514f9870a1d49d8576186791bbb97b41df2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18de64ea83b3b25b19bf06414bf7220a23e76530f539cc696c0dd6686f4183c1"
   end
 
   depends_on "go" => :build

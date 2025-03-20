@@ -1,18 +1,18 @@
 class Thriftgo < Formula
   desc "Implementation of thrift compiler in go language with plugin mechanism"
   homepage "https:github.comcloudwegothriftgo"
-  url "https:github.comcloudwegothriftgoarchiverefstagsv0.3.19.tar.gz"
-  sha256 "9c43535bd1d783965649dd7ebb1c50dded05a3b031e4e126275c958b732a45ce"
+  url "https:github.comcloudwegothriftgoarchiverefstagsv0.4.1.tar.gz"
+  sha256 "b6a1555e5fb0264075231ff72babe5c28ccfb1893aec4dd26baf9a0e8fc1908f"
   license "Apache-2.0"
   head "https:github.comcloudwegothriftgo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c5a49664eb60e348c1f782e0f5afcb8204c931b938e02feb53d5dc167512d6f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c5a49664eb60e348c1f782e0f5afcb8204c931b938e02feb53d5dc167512d6f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8c5a49664eb60e348c1f782e0f5afcb8204c931b938e02feb53d5dc167512d6f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ce698cd1707511318f8d6e47f28c69312a2182e4925ca7d9a86b8f90b86d9620"
-    sha256 cellar: :any_skip_relocation, ventura:       "ce698cd1707511318f8d6e47f28c69312a2182e4925ca7d9a86b8f90b86d9620"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33c4d6fe440ee8bd15020d233ae29e3acbbd69df77a221985b61b6f4c6942d35"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53f3fbca6aa77b1b588d06197096cfea7ba232bb3b1e2cabb0b9b390e16e93a5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53f3fbca6aa77b1b588d06197096cfea7ba232bb3b1e2cabb0b9b390e16e93a5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "53f3fbca6aa77b1b588d06197096cfea7ba232bb3b1e2cabb0b9b390e16e93a5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8837a082a7a66b5f89a4f707077cf73c278d84a41f6c4ec6d001059885b272ce"
+    sha256 cellar: :any_skip_relocation, ventura:       "8837a082a7a66b5f89a4f707077cf73c278d84a41f6c4ec6d001059885b272ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "887cf03d5742f5eb02c9e8dabaeb50dcc22b44f4e580f6a61422d5223b276c00"
   end
 
   depends_on "go" => :build

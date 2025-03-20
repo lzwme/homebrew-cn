@@ -17,6 +17,7 @@ class Hello < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "62534bceb8f7074827fa2146dd13603018aaf07c82e22cfef96571c8133ce8a1"
     sha256 cellar: :any_skip_relocation, big_sur:        "480a77f0f4e0ea6aa4175b3853feba7bdeda9f0b3dd808ad02eeb358b8a48f4a"
     sha256 cellar: :any_skip_relocation, catalina:       "c30c2be3191bd643f36e96b45b1282b5a750219bc8cab2e31d3c23d4cad5d70c"
+    sha256                               arm64_linux:    "97d3ee7869f6b785392190092cde2939d3e0414839d5638d0001d60481727fd8"
     sha256                               x86_64_linux:   "7935d0efdae69742f5140d514ef2e3e50d1d7cb82104cf6033ad51b900c12749"
   end
 

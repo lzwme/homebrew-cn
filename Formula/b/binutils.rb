@@ -12,6 +12,7 @@ class Binutils < Formula
     sha256                               arm64_ventura: "4101f3e3a14a52f49d9bc7c351b39b906acf62d37dc3d572ed810959a0bfa192"
     sha256                               sonoma:        "70c843be6cdcc54590c4e5a7f27ea5cd2604bfc0cb60eba86e519b9b7420bcf5"
     sha256                               ventura:       "268c62a8bffcb217e0756adf307af666911ab3d9596e660652680363057dc2da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e0554ddadbcca0412f3ee09b452c4fb9c01f6ad0ef3bdc3d28e15b6249c3b5d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ea2efa458ca43f31bb2ce2588b8c095849e6145791a2212cec7df1ae873684c"
   end
 

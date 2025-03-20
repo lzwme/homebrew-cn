@@ -19,6 +19,7 @@ class Expat < Formula
     sha256 cellar: :any,                 arm64_ventura: "22d09ee4dbf761c226901d06fabd35d8e9a4f15e35f30870aae3fe0f736ca89e"
     sha256 cellar: :any,                 sonoma:        "31c37b7b40448b460e724883603abd254a0f53c1a0c992a5d67c19aed6dbd994"
     sha256 cellar: :any,                 ventura:       "40accb553b0e58b8276951df31b5da6c8dcf09f8db11489b192e3bcead0624c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "56d67fea05f002488f0cbd377084b62455f0cb980965ed788568573d81be0a64"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7316d923371fd99181674bc590ffce24771bb4a3cf5d2377c4f2bb5c199b986a"
   end
 

@@ -33,6 +33,7 @@ class Theora < Formula
     sha256 cellar: :any,                 big_sur:        "7ba57255df2c2f4563767031c6b9ead9a93883217644e9e64b5523e26d7b1088"
     sha256 cellar: :any,                 catalina:       "1fcbd50039f580bd85554af2d831c28f83613b5d26969f577f7fe87b3c55db67"
     sha256 cellar: :any,                 mojave:         "6fdb09d75fc6e64b266a185e711c2964e803d8f10c0d40ccb8d572c536c24d3a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "8235b8c9b7f4f086e49a8d9845002f10eef213f0d51d8b7b580d87edb19c7bc3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ac10b8e87b29874cd0e6d61de22b1123cbc7757f0eae7e5c195dd8c1ab70ef8"
   end
 

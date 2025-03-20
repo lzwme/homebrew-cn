@@ -2,8 +2,8 @@ class StellarCore < Formula
   desc "Backbone of the Stellar (XLM) network"
   homepage "https:www.stellar.org"
   url "https:github.comstellarstellar-core.git",
-      tag:      "v22.0.0",
-      revision: "721fd0a654d5e82d38c748a91053e530a475193d"
+      tag:      "v22.2.0",
+      revision: "e6c1f3bfcf9ef7b07b718b4984283c1c0bb91acd"
   license "Apache-2.0"
   head "https:github.comstellarstellar-core.git", branch: "master"
 
@@ -16,12 +16,12 @@ class StellarCore < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c957356fe42af606a2ff611716c12cb5cd22661c7a4a4359a8fd353258044858"
-    sha256 cellar: :any,                 arm64_sonoma:  "5b1763530f2255bd30ec9f9dd6e55b9dc47c1071216b66af4a426da6b7b324f9"
-    sha256 cellar: :any,                 arm64_ventura: "cd41dd53666990a82bbce2c5103d033c0def90039df14e458714bf06f203ec41"
-    sha256 cellar: :any,                 sonoma:        "52e34cdd2d0c43cd942e5a3d3f67d0b219565fe0be16feb1b2ee6c6df7c2ba8b"
-    sha256 cellar: :any,                 ventura:       "adb33b8efc941647c6362489677824282e7a6365b80c0f665959bb63adb25a94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee7b47ae6a39d43b88ef02b8fd79aa9431fde22f3ebb9589413e2bd0b49000b7"
+    sha256 cellar: :any,                 arm64_sequoia: "226fc71cead41d70628e8c7a54e0c27b0e51601259d276d4300a7b2edee85c53"
+    sha256 cellar: :any,                 arm64_sonoma:  "69dabc43e9c9cfefcb7d2acfb4cd34a9c3f748d7ddd2c275d652aa1234e650ee"
+    sha256 cellar: :any,                 arm64_ventura: "925f3a5acdcb3238b5b33b1809d3b46f52cf7488dea06fbb912f9b397ed0ec94"
+    sha256 cellar: :any,                 sonoma:        "c26b081ddccec3cb08251aeec08c9fcdcffeae48065ab62b8c7e884852970811"
+    sha256 cellar: :any,                 ventura:       "1ad8bf4a3cb97b6f649d2ab07a7b50457a2307fc4b31174b6f339965d333926b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03a5c12e89785725ea1baa9c5ac05ed422b4609e78f897d6506187d77fbd7569"
   end
 
   depends_on "autoconf" => :build

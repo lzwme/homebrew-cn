@@ -15,6 +15,7 @@ class GnuSed < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "4d10e5703feb75bc37e450178f2c6bdc3a6b2cf9eb72594cfab90f89b270136c"
     sha256 cellar: :any_skip_relocation, ventura:        "66f640fbd1291801c04dc8af37378c051aa1ddbb3a620df2b4b85b9f0f6df80e"
     sha256 cellar: :any_skip_relocation, monterey:       "0f63397072520ce4c163974de6f0313a9117d106890c8cb0fb9344c723543674"
+    sha256                               arm64_linux:    "890a8710d5e8ad38035932ee4bd99471b298f0a0b0b53019ff93a210ff0462b0"
     sha256                               x86_64_linux:   "6ecac3ffdd0517ed1516ff18d79d4ea44f761b6fb2a5040c124bb51da35c03e1"
   end
 

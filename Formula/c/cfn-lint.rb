@@ -3,17 +3,17 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https:github.comaws-cloudformationcfn-lint"
-  url "https:files.pythonhosted.orgpackages64e0ecaa114492f9ce9de84852016a010e1b689438e473be1e5a73e51d59ca15cfn_lint-1.31.0.tar.gz"
-  sha256 "0a1ef7c3ad400fc8530c7785c6597706727ee7d3fc525e541f20d547c86fcd5d"
+  url "https:files.pythonhosted.orgpackages0821631959f9412b586db1ccdd009148cb9ea133f1cffc227ba27a9c9d9cc34ccfn_lint-1.31.3.tar.gz"
+  sha256 "94fdd8ae154af77750c2502e4d78bbfcfeeaa9437d883de72adda91c3ee0d957"
   license "MIT-0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3e7feacef24de93bdf0c4c0c4fe723c1d99b3c6d64342afc6488937065e41442"
-    sha256 cellar: :any,                 arm64_sonoma:  "e99fec0f1143f69f500e2b243f3156839c68bab086113d0fcd3d792e120c20ab"
-    sha256 cellar: :any,                 arm64_ventura: "a1a328cbf955494a873ba6aa574e667e5c283f44960b1875a8e37c91a1687ec2"
-    sha256 cellar: :any,                 sonoma:        "5d2593072ad88ff558874515fec9c1701638045b12d43922372e30dc171bb661"
-    sha256 cellar: :any,                 ventura:       "aed58b334a95148118394c138ce789d12dd5edb4354252be09631ceb00604130"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a421274b23c787c68d07452274c0d889b1aff8819e2490118f7156abf140cce4"
+    sha256 cellar: :any,                 arm64_sequoia: "293bb9d8f5b6ebb5973f206debaf8cf4170f0c0a78d3c0559c7e93ebe401e2bb"
+    sha256 cellar: :any,                 arm64_sonoma:  "24c3fe02fe1e70011957d2e3d199107d48c6e0359a6817338179ad75063ac324"
+    sha256 cellar: :any,                 arm64_ventura: "8425e0875b83c56dbbf2e2d7a3001ea8541db8ba95178133a421a9c02436c153"
+    sha256 cellar: :any,                 sonoma:        "78b6d084fa2b6a8d15fa421fd00fddeddde51ee0a3d005c2d95c27d7fe1f6f14"
+    sha256 cellar: :any,                 ventura:       "72bf329c0c2f1dc36046d3bc87191656d6907f0f14a5d6495b6b33c541bdb00c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6b1ff830b17bc1b41c749c037a4a6cc07b21fcae3470e5477dd96f76e20cd21"
   end
 
   depends_on "rust" => :build

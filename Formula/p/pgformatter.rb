@@ -1,21 +1,17 @@
 class Pgformatter < Formula
   desc "PostgreSQL syntax beautifier"
   homepage "https:sqlformat.darold.net"
-  url "https:github.comdaroldpgFormatterarchiverefstagsv5.5.tar.gz"
-  sha256 "8ed79247afe41c145f6c5f3fa82d714e5fd4a9c20b5af0e1c817318f73fc7894"
+  url "https:github.comdaroldpgFormatterarchiverefstagsv5.6.tar.gz"
+  sha256 "21a7f958cd3fe5d9c7851a882948278440bc9fd609e1a79ed5b8cf613d267fab"
   license "PostgreSQL"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0e7dbf0cda0abe59042912f4d489d53724ffe2a3f2a32ef915e948922936f2b6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5bf3d26c14d04d969ffbda591452fad5676f730279e946ea83bb7b26d8a72eb6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f55a58ffba124482444519c77f9e29cfab2bb7148b78da263eb20f64a3a184c4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "f55a58ffba124482444519c77f9e29cfab2bb7148b78da263eb20f64a3a184c4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "19b902f507e8db9da9f1c17367a4427edae7a92cf5a935bcbd61cced35803129"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dba88452f13c2be2c123bf5d26ea45d8d590ccc96ac0688549b9dbc609634f2a"
-    sha256 cellar: :any_skip_relocation, ventura:        "5ed298cd9259c04e657f25ba10211677c940c568212188af3f1af11c960ece6e"
-    sha256 cellar: :any_skip_relocation, monterey:       "5ed298cd9259c04e657f25ba10211677c940c568212188af3f1af11c960ece6e"
-    sha256 cellar: :any_skip_relocation, big_sur:        "b9bc5a12c9188639e69b5aa6c418e0f16005fe60643a7dd23fc2d9ad117352e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "186f7f4b0fe30734daa469c0432147d25295c6c8e6719ddf821679ff33f81c32"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a96e7ddda61fab03d6dd3ecac2ebf62a0342d1d53b66b24101e012241e4dfe31"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a96e7ddda61fab03d6dd3ecac2ebf62a0342d1d53b66b24101e012241e4dfe31"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "eb7e8053fc84262c6514411081df0468ba5d3b487133bfe6584ee3c0421cbc6e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "490179e8a81e00b47ad1e798df25009fa4b17cd5a0e0bf209a5b05f12933a67f"
+    sha256 cellar: :any_skip_relocation, ventura:       "462fff310c1dabda0ae24884c4bf25c61d8e3d9efe589bdf10581847160234e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a5af8f5f719b5c58be11c02afa9eff6dc15e249b7f22431a5118d7005912e1b"
   end
 
   def install

@@ -13,6 +13,7 @@ class PerlXmlParser < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "6d8331557430f37f003b838ab9dce30073e0876bddacaa1dbc07aed0ab2c3e2d"
     sha256 cellar: :any_skip_relocation, sonoma:        "636cdbf8bf30e94da13d51d4785cf3c4bd578338cc5f84c2b219a26b788886f4"
     sha256 cellar: :any_skip_relocation, ventura:       "9876b8022ee76c8f4b100bc392c04c7fc65975b2a2b08cd24edb7057fe6d1419"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "428b10afda30e79f0fd6a06f9eadbfe784c00ab92a2add9c25f4ff8ab1eb4cef"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b353076b4fc4b713b7ae09fd42468ff3f77bed5ac08106c7558d4dd3347316e"
   end
 

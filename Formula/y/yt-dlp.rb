@@ -13,6 +13,7 @@ class YtDlp < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c1e1378e282c9c7868722d99b1ebb429e28e20fdc4ab81c5e66a5c2bbd2f9d24"
     sha256 cellar: :any_skip_relocation, sonoma:        "d0be624afe3e48865ebc2faad066ac0136d729b97141db3d246d74b5d5c476a5"
     sha256 cellar: :any_skip_relocation, ventura:       "757ad06a870bb7c508450f7200d50c4f3c93d4d969304d45b405b8de7eb72302"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "66d71bd901029e76676ccc8e3eba27728353fb20903629ef422c93dbe926fce9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3de3c3eb194fadb2d6c2564a46d7ebb3cf09c81cd6f04a264da2282bdfc2545"
   end
 

@@ -16,6 +16,7 @@ class Protobuf < Formula
     sha256 cellar: :any,                 arm64_ventura: "8753131a2e62a9db951e367d0a68285302873b1ea98f1de42b1e2873c1ea8d9a"
     sha256 cellar: :any,                 sonoma:        "1a3e4e68678b839bf130a3a78f5249efc2d37002c36aba45ab26dba2655dfd15"
     sha256 cellar: :any,                 ventura:       "db720629e1ab49f4ab7adc14e796c10b05a820a6c7cead816141a73a62252bee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bcdcb24188a33cfe579bf07bf635ccfc4e3372cc03ee91749b42ea077d1dba62"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "63215a7811024353ef11418dc0210033ab677194c7b78defa105e69dadb648da"
   end
 

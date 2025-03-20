@@ -23,6 +23,7 @@ class Mandoc < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "6e8f22f43770525c78280535cf293a4500eba441baab688dbe04e4c872a505a7"
     sha256 cellar: :any_skip_relocation, big_sur:        "a4f63ae6f10fe8912986b92fecc22f7421ed0bad4495811f6159b895d5b42f6d"
     sha256 cellar: :any_skip_relocation, catalina:       "0190c6cc439cedfb1eb83d60b5be68974e12b993bafc87387ced2b948b526a2c"
+    sha256                               arm64_linux:    "43d5c42978ac400ff4d16be038df91fb52d5dd794e6a6c69b86edf3253553682"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "048e9149279a52292a203c6e6b4fd688b7b32501b8e05d806a5708587526a83c"
   end
 

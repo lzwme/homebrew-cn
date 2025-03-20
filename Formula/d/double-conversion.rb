@@ -12,6 +12,7 @@ class DoubleConversion < Formula
     sha256 cellar: :any,                 arm64_ventura: "5c8a894e848ad27eacaf72d7131731d268292619e8030e51acfcafb4392c3f40"
     sha256 cellar: :any,                 sonoma:        "a6b67d2639ee5159aed9ef0a45f5f2ad4962b4f05d69ef538be5b81fb59bf42b"
     sha256 cellar: :any,                 ventura:       "894479ef1f84789d21a4418decf91ad17e46bcf4622f4a6a7f42be82960f9e24"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "95f103473424f26b95f2100e815664d5370eae8b19a9c1e09678d8bcfa89eb0b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d4229ebfd66a40cef9b63c02533b75762b79d066ffb52da5aca069b4183b849"
   end
 

@@ -1,9 +1,8 @@
 class Tmpreaper < Formula
   desc "Clean up files in directories based on their age"
   homepage "https://packages.debian.org/sid/tmpreaper"
-  url "https://deb.debian.org/debian/pool/main/t/tmpreaper/tmpreaper_1.6.17.tar.gz"
-  mirror "https://fossies.org/linux/misc/tmpreaper_1.6.17.tar.gz"
-  sha256 "1ca94d156eb68160ec9b6ed8b97d70fbee996de21437f0cf7d0c3b46709fecbc"
+  url "https://ftp.debian.org/debian/pool/main/t/tmpreaper/tmpreaper_1.6.18.tar.xz"
+  sha256 "2ae7de0775b49abd222d09ad71360d795b40aa7c31253363e64c182966a37c00"
   license "GPL-2.0-only"
 
   livecheck do
@@ -12,17 +11,12 @@ class Tmpreaper < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3a26e69ab594fb996389673eabbc333ac9294f435438ac0eb4f11bd1483b79c2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6675dc99eb04817727f87ce62de8e975ba316925d734e72db858a6481a98f27e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "6f9987a8435e18ce63b2214cd6bedbb56902c09c8cf88614c0dfab73d418c003"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "0b17b5648f769f3c80d2d596deecd90a5af28bdd9b3317944f933bf7b469627a"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f3c26e98c4ec6ccd7d0f4d8724732009a657c6d147d3343bec352cd3e9fc6805"
-    sha256 cellar: :any_skip_relocation, sonoma:         "464fd6dfc7a7bd6713409483aae734020f755deb32da491ceca6eb018ed4ff83"
-    sha256 cellar: :any_skip_relocation, ventura:        "714d2ff483bc2027650c7fd229d3244fae4213e7d1a26a73e14e75f4fa1c61b2"
-    sha256 cellar: :any_skip_relocation, monterey:       "ff0057f9690d3aa599b4a9d7c5fbeb9f40b1ac9034883609c15945d0e23fe9f6"
-    sha256 cellar: :any_skip_relocation, big_sur:        "d01353b90faaf5008d624b4230578610b957db76447b48e03f67a53b8b5f7a11"
-    sha256 cellar: :any_skip_relocation, catalina:       "f93c52bb2db3eab2e179e1184847d867a008300c7d00cee89f868e60a161eec2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c41062bf046a8d1ca4d6cbb1a9ee38133d4e50d85d83ccac9afcd812139a164"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a134d1977bb0607e2b93a5e35fbfa2979310e58042604a858f91ebe5bef87b4f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f35e698b40aab74ca34120de8327b518a4770ec4e07d1fb44d6d46a7c589cb68"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "aa1b0ab8c36bf2ba8f9bbb2d9be36eaaf5395c9d6f2a9a904ad25ebfbcbaa783"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a0e097e2544698d880b83f4a8284105917b8f09628484ead21888bd31b5051cb"
+    sha256 cellar: :any_skip_relocation, ventura:       "f2810c2ef580d6317db1e5089a75f6fad8542e7d9f6798d7a3cfd75ab4eb1024"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c0688fa5f46502a1b12339adaf4d7af1a746046dea9f400729968265944f1fe"
   end
 
   depends_on "autoconf" => :build
@@ -30,6 +24,7 @@ class Tmpreaper < Formula
 
   on_linux do
     depends_on "e2fsprogs"
+    depends_on "util-linux"
   end
 
   def install

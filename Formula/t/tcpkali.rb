@@ -1,7 +1,7 @@
 class Tcpkali < Formula
   desc "High performance TCP and WebSocket load generator and sink"
-  homepage "https:github.comsatori-comtcpkali"
-  url "https:github.comsatori-comtcpkalireleasesdownloadv1.1.1tcpkali-1.1.1.tar.gz"
+  homepage "https:web.archive.orgweb20230303212249https:github.comsatori-comtcpkali"
+  url "https:www.mirrorservice.orgsitesdistfiles.macports.orgtcpkalitcpkali-1.1.1.tar.gz"
   sha256 "a9a15a1703fc4960360a414ee282d821a7b42d4bbba89f9e72a796164ff69598"
   license "BSD-2-Clause"
 
@@ -22,6 +22,8 @@ class Tcpkali < Formula
     sha256 cellar: :any_skip_relocation, el_capitan:     "2d0075b2fca885fb694660a3914362030be255c8e3dfed407bb8ca96c996bbf7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ae1230bcf9879d1d8f09d5e0a3b80c9baf7f59c2bfa77a296a06ed6a821d5be7"
   end
+
+  deprecate! date: "2025-03-19", because: :repo_removed
 
   uses_from_macos "bison" => :build
   uses_from_macos "ncurses"

@@ -1,17 +1,18 @@
 class Blake3 < Formula
   desc "C implementation of the BLAKE3 cryptographic hash function"
   homepage "https:github.comBLAKE3-teamBLAKE3"
-  url "https:github.comBLAKE3-teamBLAKE3archiverefstags1.6.1.tar.gz"
-  sha256 "1f2fbd93790694f1ad66eef26e23c42260a1916927184d78d8395ff1a512d285"
+  url "https:github.comBLAKE3-teamBLAKE3archiverefstags1.7.0.tar.gz"
+  sha256 "59bb6f42ecf1bd136b40eaffe40232fc76488b03954ef25cb588404b8d66a7e0"
   license any_of: ["CC0-1.0", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "30d327d236551e0f5d44b748ccc1ffa1708cec2f873e8e744004176466c73efd"
-    sha256 cellar: :any,                 arm64_sonoma:  "ca77e185ee72b22d95d77fa4a0414339bfbb15166ab59a9c53149ea6e4cce7be"
-    sha256 cellar: :any,                 arm64_ventura: "484317c04a4d68713e9f9c2e2a059fe4a9a54001b31c5f4f4ee8482a35696c7d"
-    sha256 cellar: :any,                 sonoma:        "6cbabfe00f67dc7bb20ed2234d52694798615d46b077cef3eba220e21794cc69"
-    sha256 cellar: :any,                 ventura:       "b352b089146d718d8f912ef05d237f29e2dd5f1b10d4457067aa7cc9b4e37218"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c642c53051c3aca9e8e87f68c934102128183570add1b35911eaa467411cb3e"
+    sha256 cellar: :any,                 arm64_sequoia: "ca8530fbf5d567840978be46bc79ac6785b8afc76ca7f85c334c955899c5b4df"
+    sha256 cellar: :any,                 arm64_sonoma:  "46daa8ac5192643fdf561f0d7b1ae4638db382a1c9fa9595c94bbb1e66fec231"
+    sha256 cellar: :any,                 arm64_ventura: "307c1b8cd50a6d785b2fd0a3077062afa3d1911e2d3e4e5a7506a1846388a2ef"
+    sha256 cellar: :any,                 sonoma:        "fc1bb7f40a27e2f6f0773d645f595854a6742d9c3e05f7bf9aea44282c1e7a41"
+    sha256 cellar: :any,                 ventura:       "fd6eb2e84a42713f32d1ee86fd0571b904dbef11730f50d1d85ff1073981503b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a18828ddb9b96c6d8c579caa59cb068e121d83256f7187a6a905980409f8c7ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8db865f0ad29f90a9d99dc84f31edacc113f99742df8a85d29dd53d62b57eac"
   end
 
   depends_on "cmake" => :build

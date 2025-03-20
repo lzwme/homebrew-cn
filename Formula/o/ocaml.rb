@@ -29,6 +29,7 @@ class Ocaml < Formula
     sha256 cellar: :any, arm64_ventura: "bbc25adfbb86c127354d2d53d2981a4ad86daad08011b77ca32e82fd5efbe87f"
     sha256 cellar: :any, sonoma:        "97ba2b31fa0ff21902f5cf1fb12ffe1460abd5a5501ccd6737cdf860b3cac073"
     sha256 cellar: :any, ventura:       "2c59bbe9532886d0240b4d8e1c3cd084042e62d4eaadf86004dcdab7e2c47f0c"
+    sha256               arm64_linux:   "cb0092ebb8c80fbb2fc64101e0d6fb9f371498a2932b92284aee1ecfd2692317"
     sha256               x86_64_linux:  "8bb80e167c8c295f6c078ab998b5f12d54c764bed796f0b576e951691c8de384"
   end
 

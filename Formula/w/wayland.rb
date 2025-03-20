@@ -13,6 +13,7 @@ class Wayland < Formula
   end
 
   bottle do
+    sha256 arm64_linux:  "b796850dbd4cdb487d3a1ed75d2e0a16cd7df3299636262fe11b1be50de006dc"
     sha256 x86_64_linux: "7579271ba889ad24f0be1099df176f7c9789c5b40acefacdd51bd86cb3184c0b"
   end
 

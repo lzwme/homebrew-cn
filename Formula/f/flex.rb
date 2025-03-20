@@ -27,6 +27,7 @@ class Flex < Formula
     sha256 big_sur:        "89ec2b04b1aab94297f490c60fe6ca2bcde7de9b7661482728b07931e635d21c"
     sha256 catalina:       "e563a7a42aceff203cca4f420ebc6a8bbd5075a2b0007d46724f037ebc7b41a5"
     sha256 mojave:         "687132db0837bdcb6e02b5715f6a07f658bdf109b5353908f260d46d354f7bdb"
+    sha256 arm64_linux:    "87601a69b6f78fbd8135aad3717263a9fc4469de7a34418bbffc8b035c8d4837"
     sha256 x86_64_linux:   "b2bff056ad86d8a1cb1a08944867b5f60636ad4e7edca623810937330d87d8eb"
   end
 

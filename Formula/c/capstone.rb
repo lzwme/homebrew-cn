@@ -17,6 +17,7 @@ class Capstone < Formula
     sha256 cellar: :any,                 arm64_ventura: "03937ed3eeec92f076cf96d499dcf03c5662563af09dcd4af3794d6d2afe09fc"
     sha256 cellar: :any,                 sonoma:        "711163343b8868aa9667a4d42967e3904b5061e91df878ae8cb9119e53fc89af"
     sha256 cellar: :any,                 ventura:       "9529d3a62e7f73079e7caee2f37dede263353a84aa2b3c30b025cdb27a7745b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "48805c1e946305efc7cef8e50903fefbb4fc8c1ad292df2eb2d21fb7a4cd3f5a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d839f160daddbc91c6ae416e827c51b4b5429f6eccf9619e8cfe27f8504ec8f"
   end
 

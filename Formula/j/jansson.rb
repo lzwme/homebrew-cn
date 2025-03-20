@@ -17,6 +17,7 @@ class Jansson < Formula
     sha256 cellar: :any,                 big_sur:        "bb129dc922c0610c35a7b161429033a9123f03c4171df35717ff086b9cb52922"
     sha256 cellar: :any,                 catalina:       "ddf25d83863396b864697529e837b869220ce86b8bb7b2cc03b77bdf1129563c"
     sha256 cellar: :any,                 mojave:         "e219fa24f9fa034654592f6626c4a09d01fdeb888343a259a08ab4b1d08ac4ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "bbb4f3a796b0c41b6fcafebb74e13d9c243a840c16d0002508d8dac934426857"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4f29060c36272b9dd76c5215e4118c04c0ef9235565281f87c34f8e8029cc3cb"
   end
 

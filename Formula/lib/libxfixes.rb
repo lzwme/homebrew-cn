@@ -15,6 +15,7 @@ class Libxfixes < Formula
     sha256 cellar: :any,                 ventura:        "ade02ac4b73db0272d8bdb95bd05f8c8c11683daa944c66a10f1e72740bac364"
     sha256 cellar: :any,                 monterey:       "bae672517d9d8a3af7481ecb71dc13d835231b51917b6848d069550a725a09f9"
     sha256 cellar: :any,                 big_sur:        "5fb3942149518881721a07646cb045b3dd0478e6333617409d3cf25a8254740e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "4d72cccea52617216275c3aecbe6fa1435673735507bf7e8f61f2f9ab6f454d3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "dd98561e1f625057b34be07c81541d7759f29756d5d7272b59bd9e86af0d7d22"
   end
 

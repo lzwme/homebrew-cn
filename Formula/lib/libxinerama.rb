@@ -16,6 +16,7 @@ class Libxinerama < Formula
     sha256 cellar: :any,                 monterey:       "88432ad0c1e14a8511e0fb345d9bcf0e9ee67e7b634b32b31b75ce2d66ac0051"
     sha256 cellar: :any,                 big_sur:        "0f99b4d8757fdfe3b0c087b1112d49dc625c1d342f6e5c6beba44063f8c1ae33"
     sha256 cellar: :any,                 catalina:       "c11a3acfe1397ac78ff73b16f33781af781bb510773f29c4cde93a80b37ffacc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f0700b04d2961c8e119cced69fde04a873cbc61801fc94e687ccbe727432a24f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8bcf697bd80954325c6994d562554f890ab0fd6e35ae671f0886a05bcacc29b"
   end
 

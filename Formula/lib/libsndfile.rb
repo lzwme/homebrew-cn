@@ -16,6 +16,7 @@ class Libsndfile < Formula
     sha256 cellar: :any,                 arm64_ventura: "a8be24e321ff07f12a3cef98ab42868f44fa507b11dab9c93f0f78936baea171"
     sha256 cellar: :any,                 sonoma:        "ea6ba9a5dc801a8b736ad39a5e417af93c5d0514ea5a741e92da88d9327a7988"
     sha256 cellar: :any,                 ventura:       "3c43fbe437bfd52c5ed12ec4bb3126ca15ffb4c5c189c791ccebf4101d03682a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba22269018452e319778db8f9dfff4f0ddbab0570bd9f44412cf8ea8cccc517a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b40061adc0ea00923ea38c2c472eccc172e702398c2ddd3c705bf0dd6b16cbed"
   end
 

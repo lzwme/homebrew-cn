@@ -5,15 +5,16 @@ class Zrok < Formula
   sha256 "2980581c45514240598135deed8a999bc65359527ded31a5bb855d05e70f2254"
   # The main license is Apache-2.0. ACKNOWLEDGEMENTS.md lists licenses for parts of code
   license all_of: ["Apache-2.0", "BSD-3-Clause", "MIT"]
+  revision 1
   head "https:github.comopenzitizrok.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a701fe9ad7f4e1672e5d22ef3d2f0ac7d0a8d886b60d9199efc72dc5914a96ab"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7110048ebb57c75c64040758497bd0f566f2e0df6d8361ff71b4fe2faf9dd8b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "949a3f94b23f91f365ec3c0d3ff5289b5ddab4550117059f614a7ac406ac28b0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4588ec2cf25b480f33941b16e51fe212861754e24a55412b6fb5321b75f1172d"
-    sha256 cellar: :any_skip_relocation, ventura:       "bb4c14e51334372b7faa45125ffb561d6a295bbf016ec87a13f4a88836a49d4a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e51c1c81f855c01e57308adc8c2fde57eee08a7f08ef1b160d30fa98a129b6ae"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c7aa5f6d29e3cb5af602fd845f34404f43c4495e03896001f8836196005c1c23"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ef624440b9ea50d95dc834a7b3980088fb5d3f45a93d22071f1705b978d8a5b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bae096032a1faeb5b6a2b24aea888e20d4705131032b12d2ffd1b675c94190f2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fd2d884eb55636fdcb590f00d4cb607c98edd0aaec9529c0b5441dfe4ac0f20f"
+    sha256 cellar: :any_skip_relocation, ventura:       "65027a113a959f0ee8d3665e92f8e38d569760666a149e25fbcaa058d9633262"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1da8cbfcbd4d0e3fcf7d340a3a5295ddd8db3c35f25aa72c69f5a600b9af3965"
   end
 
   depends_on "go" => :build
@@ -29,7 +30,7 @@ class Zrok < Formula
 
     ldflags = %W[
       -s -w
-      -X github.comopenzitizrokbuild.Version=#{version}
+      -X github.comopenzitizrokbuild.Version=v#{version}
       -X github.comopenzitizrokbuild.Hash=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:), ".cmdzrok"
@@ -50,7 +51,7 @@ class Zrok < Formula
     YAML
 
     version_output = shell_output("#{bin}zrok version")
-    assert_match(version.to_s, version_output)
+    assert_match(\bv#{version}\b, version_output)
     assert_match([[a-f0-9]{40}], version_output)
 
     status_output = shell_output("#{bin}zrok controller validate #{testpath}ctrl.yml 2>&1")

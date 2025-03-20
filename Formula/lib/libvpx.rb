@@ -12,6 +12,7 @@ class Libvpx < Formula
     sha256 cellar: :any,                 arm64_ventura: "68b0b266de2faa807df3dcd3c85e0028c8c12c93d22874c0c2676575101a3362"
     sha256 cellar: :any,                 sonoma:        "823e82b27cf734c2a64525934a6909e3c07e09e0cb75a398afc2fbc66be0af78"
     sha256 cellar: :any,                 ventura:       "bfe84c4076b989468d359f0ebf2f46ad601da3383e6d50719accc374346b6853"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbb0de3aebd92b66a9ba25ef5cac9b8f0419599e434fea7b5d4dd31de104278b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a56173a7f792054fab125d92e8d5441329041b09bb26d1ee6e69efd3bac77df"
   end
 

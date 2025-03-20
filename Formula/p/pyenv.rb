@@ -18,6 +18,7 @@ class Pyenv < Formula
     sha256 cellar: :any,                 arm64_ventura: "a61158edfa568d0ed26daf71b3900c4603287898577872bcac6cc7b2fe62c4ab"
     sha256 cellar: :any,                 sonoma:        "9b1bddfa59dc37ea1c8f199ed3c498cd91d993db3c3fd84e91d11288ad11e83e"
     sha256 cellar: :any,                 ventura:       "7002c316524abb07bc03e86daf0c500b55eb18dc87c7140869683df2091a1b29"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9f330c81957157a3c371ef575e09d0b7c4f092b1ee130fac25805677802a703"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "64565f42a626bd823ca52452d50b3539bb4c2d73dfed0e2bbdf29947c1473fbc"
   end
 

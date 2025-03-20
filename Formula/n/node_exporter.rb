@@ -26,7 +26,7 @@ class NodeExporter < Formula
     ldflags = %W[
       -s -w
       -X github.com/prometheus/common/version.Version=#{version}
-      -X github.com/prometheus/common/version.BuildUser=Homebrew
+      -X github.com/prometheus/common/version.BuildUser=#{tap.user}
     ]
     system "go", "build", *std_go_args(ldflags:)
 

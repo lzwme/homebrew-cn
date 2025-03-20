@@ -20,6 +20,7 @@ class A52dec < Formula
     sha256 cellar: :any,                 ventura:        "d365954f1957b92868f9a3335509eff98e4d52437b75a868165742c6849555d6"
     sha256 cellar: :any,                 monterey:       "36ff9fa73cae7a8d1850cafa0f75d27df33d5f8bf5d57bf10a064de09e234194"
     sha256 cellar: :any,                 big_sur:        "cf1809cf8444fb50bbbe685e0f8ac697b84969cc0662d5079fa817c8eadd1ec3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b81010ab1db1eb4740dc4a587fdee7a4340873c6a61d16b17c51bb6ac33371f3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a3d786826405966046c6962db674c563b89e86bf9ff5a53aecb9cea18f4df3d"
   end
 

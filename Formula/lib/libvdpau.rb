@@ -21,6 +21,7 @@ class Libvdpau < Formula
     sha256 monterey:       "b1ca92eb755c147f47c63a590705159a099cb74f97b0bb3260e26e46979acd04"
     sha256 big_sur:        "19e0e92759c99ab2942d2b750bd32065b31829015bee25c384929a12f9eea5ca"
     sha256 catalina:       "d5bdf31825ef0083a0a426f98de307d1f00376804d03e020d096bee5da273def"
+    sha256 arm64_linux:    "298a8659f47956680197cbcaa0c06efe10ac94b863c0e1c62bf680390315d024"
     sha256 x86_64_linux:   "efe7bfed2aff2b6b4d259a9adc1601a17c8c567750a2dfa0ba354a7d9ba0ca42"
   end
 

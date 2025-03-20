@@ -1,20 +1,20 @@
 class Garnet < Formula
   desc "High-performance cache-store"
   homepage "https:microsoft.github.iogarnet"
-  url "https:github.commicrosoftgarnetarchiverefstagsv1.0.59.tar.gz"
-  sha256 "69f9addeeea587aa47f2610d82eb9e7b3260ce02d6f9037cedc2a008d0ae031a"
+  url "https:github.commicrosoftgarnetarchiverefstagsv1.0.60.tar.gz"
+  sha256 "c9e4377f9996306d1eed9dbb5ba64306e99db2083cc43d32c2271d5a74e43c1e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "957698c6db789a8511e2eac79413af01cb483a552b9040530ee7f29004af57ce"
-    sha256 cellar: :any,                 arm64_sonoma:  "5b8c136f153cf7651e006f8ed7f89f5ef354b8d571674658a4091c61aa6d1969"
-    sha256 cellar: :any,                 arm64_ventura: "c86a7e9cde6f6b354b8e2449b7b147a4352b17450ea7e64ba540b52073f710ed"
-    sha256 cellar: :any,                 ventura:       "b2e6c8a4310db455e51bf61c02b4a4a9e83ae62b3ac782a5603bb9c902e126c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "042c1890436413f79f2f0cef12f00ef24f8cf78f3cb527ba60766d045d8df073"
+    sha256 cellar: :any,                 arm64_sequoia: "9e8aba62e2110a9e432dd7ac211878e88eb8ac6702c298488d1f4558481ff33d"
+    sha256 cellar: :any,                 arm64_sonoma:  "afb58a797870ffe10fa64ab02f433fcdee5bee5e884b25428b64d829b1660f1f"
+    sha256 cellar: :any,                 arm64_ventura: "218c20ae98f5513925497ae20208c3dc7db109ee1135d88c768f6c0b2e8f2286"
+    sha256 cellar: :any,                 ventura:       "2671840549efec1b96e2c2925a00d9f6cd4326be8d1f157ee882d41092e39a87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "99420a3aeb83129340b5bab671176be4a7068f9fbde657f3730a0fd8320e7ff2"
   end
 
   depends_on "redis" => :test
-  depends_on "dotnet@8"
+  depends_on "dotnet"
 
   on_linux do
     depends_on "cmake" => :build
@@ -32,7 +32,7 @@ class Garnet < Formula
       end
     end
 
-    dotnet = Formula["dotnet@8"]
+    dotnet = Formula["dotnet"]
     args = %W[
       --configuration Release
       --framework net#{dotnet.version.major_minor}

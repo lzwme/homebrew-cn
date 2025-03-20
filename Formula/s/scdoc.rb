@@ -13,6 +13,7 @@ class Scdoc < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "4546aace4ad6725de9e7e788533896a8600cc99495de6c86cca71b8fc8038dda"
     sha256 cellar: :any_skip_relocation, ventura:        "01fcd247b749191d4d6154498b0d324d856a8da745f3571b643ddebe18919bc6"
     sha256 cellar: :any_skip_relocation, monterey:       "f5c4019c594ac3e10d08e1a7f44a560d16e661a33051e0bca823521937b2e691"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "998b1d189ac54d1f50be511cc66479fb7cecb219870200ce3d9f5a17db47b48b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e73b822f530807cec33251c40cf375923318cbb1b889f8f494afc33ae34cc932"
   end
 

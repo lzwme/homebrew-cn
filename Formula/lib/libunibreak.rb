@@ -21,6 +21,7 @@ class Libunibreak < Formula
     sha256 cellar: :any,                 sonoma:         "e567abc03dc6d7df4bb3f5e6347dd58b8738d1b79cb03e151b44fce2ea9b6ce1"
     sha256 cellar: :any,                 ventura:        "60c6227dc928dca0478e06214ecb17f1e8103cfb42c7109509d4ed565acfde91"
     sha256 cellar: :any,                 monterey:       "871afc806ba2cae52184f857040c6b74f354025f502edebef37a443355994902"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "dc218bf31fe34b65e6888466900ffa5659033b9f1811e69034af6d2a87a2a1cc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a2662de1e1149d0aa2ed06f7bed26ab1ad27f7fc1bc5aa1689a9a320179b124a"
   end
 

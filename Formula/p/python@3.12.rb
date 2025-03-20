@@ -16,6 +16,7 @@ class PythonAT312 < Formula
     sha256 arm64_ventura: "baf24645f477ac3ee234d093faa555784ab9bc031dd204c3b8244314e724f318"
     sha256 sonoma:        "f6c2cd7fcb21085baca22c9806d3887429f77e1bbe77803b7d27be3fd0640e5a"
     sha256 ventura:       "e119ba92f3944191dc95a6b9e0ff05f26f818b7dbdd02274b23af896d12bc914"
+    sha256 arm64_linux:   "474569979d7df458321de14ac8018c98324abba75184ebbd2dbfeb6987275c5e"
     sha256 x86_64_linux:  "ccd07e056195c9929284bc1d1de1ac5c1a29a80a1930ac07571b39f7df140f72"
   end
 

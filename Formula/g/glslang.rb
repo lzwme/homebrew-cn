@@ -31,6 +31,7 @@ class Glslang < Formula
     sha256 cellar: :any,                 arm64_ventura: "d2f5ca41a945434e67d0ac6ac48ee1903f24ccb02febd5e2a6b215926fb97ec1"
     sha256 cellar: :any,                 sonoma:        "12987fe9368dfd4a4cfbf9ec2d8be0292fbb199b23fd148260023e895ae54d16"
     sha256 cellar: :any,                 ventura:       "24d32a6307452552ecdf9fcd21c6000b1bf16c3faf2c56370ea5e501496a0be3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a13bb0a37a1cf9609c8747b9de973124869b3da75c02bb84d512c638c21d03d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3968014ff1d39cb6760dddb458c74b05c5d539c630db05ead07b2d2d23a7e284"
   end
 

@@ -1,18 +1,18 @@
 class Anyquery < Formula
   desc "Query anything with SQL"
   homepage "https:anyquery.dev"
-  url "https:github.comjulien040anyqueryarchiverefstags0.4.0.tar.gz"
-  sha256 "bcadb61a2af9ae23f81ca55318d2b3f263cdd4012b4d136d16be3462e623c3e2"
+  url "https:github.comjulien040anyqueryarchiverefstags0.4.1.tar.gz"
+  sha256 "31b3fa6506aadabda9b53c977964d7548602a7311acacb6f407f09a78d6005ca"
   license "AGPL-3.0-only"
   head "https:github.comjulien040anyquery.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5b6e24b8e94777dccc686edf15b2969d75c6aca82695ad1da949196693f8020"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f467fd2cf8d7f6f65b86b9f4f2bf8cce8030b9391fda28ddc49d07105ad70770"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9fd1f6bc159bdaba1c5b72aaf46acb641d3cadeef4b99c34a8245611d9563698"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6cd293246bffc75773851e498c7a4e0f3965230e9440706d3eea6cafcce68559"
-    sha256 cellar: :any_skip_relocation, ventura:       "263847bc660b69f116e926987bf4a570688cd036b5fc5b15b129976af44b4777"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f979906506f75715e4a8f47b77e1722c43b3d01891b31907db0d512a77b6a7f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b363cd009398d2392c99117f66858a2e4c8a4500d45cfe3625ead058cb09bea9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7c9394f9d0e66ed4b3ad67b3ca08a632c41233d4b4fa04131c38697c4be76214"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "44bbaf4e254068d5e88da2bfefff78fd29e45fa7311a51282bee8ab42ebaa03b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "627ac11a9ad4c6c243e4a6306ff5f53b6f1d37355c23a4fae3e7fcccf1ea3636"
+    sha256 cellar: :any_skip_relocation, ventura:       "83bccaa1b8a214c6e371bef27b982757f21d9c1bad4cf59bf010b80c74749ed8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bc174f34b9a509d9876d2d4902b2f5ea3ca5643b29af184f73fdcb5bd280a9a"
   end
 
   depends_on "go" => :build

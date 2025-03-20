@@ -1,8 +1,8 @@
 class Libtickit < Formula
   desc "Library for building interactive full-screen terminal programs"
   homepage "https://www.leonerd.org.uk/code/libtickit/"
-  url "https://www.leonerd.org.uk/code/libtickit/libtickit-0.4.3.tar.gz"
-  sha256 "a830588fa1f4c99d548c11e6df50281c23dfa01f75e2ab95151f02715db6bd63"
+  url "https://www.leonerd.org.uk/code/libtickit/libtickit-0.4.5.tar.gz"
+  sha256 "8f3d9ec4a8fcfa57425621eb21dc7c6cefc2f24b2a93d28db0ace9d1eab627c6"
   license "MIT"
 
   livecheck do
@@ -11,14 +11,12 @@ class Libtickit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "be1d18b2fdb6476d875f51359663d992278add215249058aa36d11d431aeaca6"
-    sha256 cellar: :any,                 arm64_sonoma:   "51b38ea86c54e7e7066a4a647fb54a5ead901cad66351864fff9c13b7d7ad5d2"
-    sha256 cellar: :any,                 arm64_ventura:  "977351edbb07a69bb5fd6e8ac66beea1c21079a5222a9d99cd8682ea3bf19869"
-    sha256 cellar: :any,                 arm64_monterey: "62791be08577ec55964ae31b4773ea1b40f5e6eded04c5a7d53db91f9a4f6aa5"
-    sha256 cellar: :any,                 sonoma:         "f8b70ed83814c613ec565f63c620a3a610d577351b82a88c43092d8607f70c84"
-    sha256 cellar: :any,                 ventura:        "8e05bb158469669b22f12becd2ef300edee426be92d0bd32a0664bb658e77d77"
-    sha256 cellar: :any,                 monterey:       "4b6947249116e4c22a74bd74ba2db83b5b66b31ef1efb2a732ea4783ea0baf2b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c521424137d6ff8325dd9baa8102c2ba32b2f3429a50998016d3931c69f9dc6e"
+    sha256 cellar: :any,                 arm64_sequoia: "51f8cb2afcb7f3ddf657cf19f3443d137d446f4cb507a5e9832321a978aaa65a"
+    sha256 cellar: :any,                 arm64_sonoma:  "6ec0c3165a73423aa8e34fe65319418fb116768b7b71115341a1bcc4a5c6ffe3"
+    sha256 cellar: :any,                 arm64_ventura: "c105a349bb5d28ea65b1ae84f6f1f8490cf6476ed5060b1b630ec95b9dcfa7ab"
+    sha256 cellar: :any,                 sonoma:        "10dc3acf43ae29195233e836585da752b48e46e57baaea697217724309bfdfa8"
+    sha256 cellar: :any,                 ventura:       "60e09a74122d538fbd5908b73325751ef74b7b4266785bcf7e34b00b2d6542c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a10701b8ac09fe1cd30ace8bad096ac9916b8f266a07af0ba162c8ce4cb0e8e7"
   end
 
   depends_on "libtool" => :build
