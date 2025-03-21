@@ -16,6 +16,7 @@ class Tevent < Formula
     sha256 cellar: :any,                 arm64_ventura: "f31c16f2155d9ab99761f758df8c64464ade64525b3e0603261c6b2c68fdb58b"
     sha256 cellar: :any,                 sonoma:        "685425f7ed027ead68df7354672600841413b18f702484094ec2d3bf40bfdc35"
     sha256 cellar: :any,                 ventura:       "15bab6c124d0f8afc3d83ca9f8f20b79211fe1ce33ab06e60ce2552ad78c78e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "91b7e00fe6fab5edf5cd35f2abffd2f842c456d9c3f098edf007d79eabc397be"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "36aa2419325a2300e1afcefaa32ef7982bbb44855a9ea104322c1c6e43f49a3c"
   end
 

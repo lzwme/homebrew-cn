@@ -1,8 +1,8 @@
 class Ipfs < Formula
   desc "Peer-to-peer hypermedia protocol"
   homepage "https:docs.ipfs.techhow-tocommand-line-quick-start"
-  url "https:github.comipfskuboarchiverefstagsv0.33.2.tar.gz"
-  sha256 "0dcab7d932a7c613fe0421ba1a5a0c71138709c151610f57666a15d163c982b2"
+  url "https:github.comipfskuboarchiverefstagsv0.34.0.tar.gz"
+  sha256 "0294057f8b6c1246773b17eabbbfe68d76073df9809d0eb3c19cf238c0175e0b"
   license all_of: [
     "MIT",
     any_of: ["MIT", "Apache-2.0"],
@@ -15,12 +15,12 @@ class Ipfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d8402630fe2e3525db8d312c948f517dbe53bea144b820edc395af7335e04c5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f78d388fc0212cf8ae3312810ffd4791c9e21de5abb36bdf3da41e8b1833362"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "023544a2e99ea0fbb51fafc223ae7f118e4e9416bf36efc00e6dda8c6fcbc0ad"
-    sha256 cellar: :any_skip_relocation, sonoma:        "299dde4379e501d00353e2848c8b85800b513bfcc3e105b54c6fb8ef4e3586db"
-    sha256 cellar: :any_skip_relocation, ventura:       "ff9825ca14eaa62e0c24c0c17acb0db345e22d9c752666c96fe4e9a0b33d3235"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3bad6f1dd371c42957eebd2aaa9edd91edec4cb37e70236558888ba2a705e1ca"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8317f25311e67877f662a2044bd432703645e9ab2372fd990f19724970b0e22d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "da2886c935dda907ddb4842c2f2a4d10863a614b6dada22752aed515a8f6701a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3e9578300561388b99c5ad7df004c154ed6b65c71ee93cac68820376858dab12"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a4c1e505832c8da0508cc371ddb16e32710e03b6e4c7713d82d79d7f1191a11b"
+    sha256 cellar: :any_skip_relocation, ventura:       "41aa87a0984c910ea3e8fdbbb5523901cb3e9d15a9255a40cecab411c09fbfee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f19129b64d516a3a26aa2c4187177fa29f146a6b9ec3e6b081624982c7d3f11"
   end
 
   depends_on "go" => :build

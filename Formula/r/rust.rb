@@ -4,8 +4,8 @@ class Rust < Formula
   license any_of: ["Apache-2.0", "MIT"]
 
   stable do
-    url "https:static.rust-lang.orgdistrustc-1.85.0-src.tar.gz"
-    sha256 "2f4f3142ffb7c8402139cfa0796e24baaac8b9fd3f96b2deec3b94b4045c6a8a"
+    url "https:static.rust-lang.orgdistrustc-1.85.1-src.tar.gz"
+    sha256 "0f2995ca083598757a8d9a293939e569b035799e070f419a686b0996fb94238a"
 
     # From https:github.comrust-langrusttree#{version}srctools
     resource "cargo" do
@@ -15,12 +15,12 @@ class Rust < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6184b7cc9e0f4b41dd6fd3cccf8420328a71b1868962b27339a6b24b0a5a84e8"
-    sha256 cellar: :any,                 arm64_sonoma:  "7e04977b516e4470e111c83208d04c68fdd13659b16795a5807a44cc986ebe60"
-    sha256 cellar: :any,                 arm64_ventura: "e8c6edf61b4e6a039ebc9d8cb15719718859036dc4e0264a4706e22f149d0ee5"
-    sha256 cellar: :any,                 sonoma:        "946e602f325865d18b7a6ddb2d017aa4d28a9b97d0a685c4818f3bd6a84d5ff6"
-    sha256 cellar: :any,                 ventura:       "f5c3a5094a4d10645c2bc7351c88f81230e023ec21d50fb7f9cc2a79d01d1810"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb16dcc66e595ba48f01f815c8430f7a149550d1426bacf25450564aaa3aedc3"
+    sha256 cellar: :any,                 arm64_sequoia: "9950d70e5b75da10e6a1a8fd3fedfd5d3a6e097cfe135f6617693af65921a5c6"
+    sha256 cellar: :any,                 arm64_sonoma:  "3973476d7ebb914d211fc36e38300654f7b4512259d5cc4684492e0260350f4f"
+    sha256 cellar: :any,                 arm64_ventura: "5a23b1e5859096c6b19ce56dfae869563a6a8f3cf0336cfb9c4baaac4fa3f674"
+    sha256 cellar: :any,                 sonoma:        "c37414b743c3114eeaa163922a1bfcba0b83c1ab12c66b63cba8050e75977968"
+    sha256 cellar: :any,                 ventura:       "fe0ac879556f203342252595d7a338c89d7b5946fe7e3583c1da4fa636846e3b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "220ee3938f62168f0e6edf5d2d95bb07759ad7891f98622a0483505e33e213f8"
   end
 
   head do

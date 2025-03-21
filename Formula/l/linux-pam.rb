@@ -8,6 +8,7 @@ class LinuxPam < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_linux:  "397ff4ee01be3b3ce59d057bafd45489c9d08a0d9ae8d2003ea2b433431e9bf6"
     sha256 x86_64_linux: "25349579d56222786116f3d058bf872934732859e6744a74037d064f23df040d"
   end
 

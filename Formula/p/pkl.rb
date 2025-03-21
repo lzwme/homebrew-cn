@@ -11,6 +11,7 @@ class Pkl < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b133fc52f010e03e4939940d8845e36c35be3b57b18d5abbfe0ea818a2fb55b8"
     sha256 cellar: :any_skip_relocation, sonoma:        "61066a3ecd9413817ab7019808a3ec925065df53a2364cc059e99755919186c7"
     sha256 cellar: :any_skip_relocation, ventura:       "49cec8f488cb4126fb8e1dd3efcdd6c8149a077e93eac1cea7986eb0235381c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa4e9979260d0dcadae6db80c85b3a74ae47bc7a12cc0eeb2f0854a8165f2e68"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef1965b55aa5fad265c00a1a46c723f42217079a1dec338878625dc1497678ee"
   end
 

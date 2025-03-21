@@ -25,6 +25,7 @@ class Qhull < Formula
     sha256 cellar: :any,                 ventura:        "8c5922f72dbf8061a0e6e0b459e6eca4898ee2236223965daae35fca77309b5c"
     sha256 cellar: :any,                 monterey:       "67ee6237ae95266f7acbb4e19ec2db41fd3fe22faa60060d9988e87cd473e073"
     sha256 cellar: :any,                 big_sur:        "dfd8138816f958dece1b6f30188ad3bfa53c3c8c74abf2ab22f3462477924b84"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "674616b881abea9139c0f2db580b813eecdc401e46842f792b19f843cff5eb11"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1dc32a7258d2f678417041a1dbd2ea922369e67209062ada7b19caee4fd2c55c"
   end
 

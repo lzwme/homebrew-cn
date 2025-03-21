@@ -16,6 +16,7 @@ class Uchardet < Formula
     sha256 cellar: :any,                 ventura:        "a553c6d711641482107e7604e8d81e00a615932f1a79cdb2cdfca9cd22a3d6db"
     sha256 cellar: :any,                 monterey:       "52b6ebd4f6db0057634f195332a98b18d0f1dff5e7911e550291cb91c86b54cb"
     sha256 cellar: :any,                 big_sur:        "8da0b45a3f4d87647b96aea829a3db161ef364eb131529b6393b718f5478006a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9fbe4342fd9a7bfd00ec092ca4cf8931d8dba18b79a7158496e60755790b18d9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6392159b044059cbf22acfbe579343e119a8639dcea266e93a49b5e1a0bf08df"
   end
 

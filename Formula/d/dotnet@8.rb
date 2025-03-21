@@ -17,6 +17,7 @@ class DotnetAT8 < Formula
     sha256 cellar: :any,                 arm64_sonoma:  "16095a4f03a84b4b497357a88d09d858049b2a3295a41130b10ddfbe43fe27bc"
     sha256 cellar: :any,                 arm64_ventura: "97446e5f447b9241b2ad4acd04f77efa2941ec4bad9d106a2fe45a0ef8843d57"
     sha256 cellar: :any,                 ventura:       "b49d389eaca065c5ddc14395ca31434efd496986bc2b9e98459804f5a68e8229"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "15b2c5e9c5ef956d5934da561c57c4870a75a6af28441651494fcb711148453d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "57e8f351d9d2524a138bef3575b98e5c3ae0508c0bf179fe1c54a0befa9b626f"
   end
 

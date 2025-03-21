@@ -18,6 +18,7 @@ class Makedepend < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "c6874f996ef7a5687bf1f83a0f1697c0e8360b4dda635b18be0926411dfabb7a"
     sha256 cellar: :any_skip_relocation, ventura:        "9b32d643af15de0c40854c16e50b5f6c5972825156d58b5fc03433cc1c4b63c8"
     sha256 cellar: :any_skip_relocation, monterey:       "febb3e4989051d186f36914a7df4ce155d52784a5a9d702a8c81ef6cc34d0e6c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d285353719e76dfc8b61c138d72ed14b3e3167b3aeb817a3dfd5b2a6710250a4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3513c65618644fc944f76db3cb1975f843d82eaf6198d58770c23ee145c1efed"
   end
 

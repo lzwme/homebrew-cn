@@ -12,6 +12,7 @@ class Libsixel < Formula
     sha256 cellar: :any,                 arm64_ventura: "08aa4abca3775c48d84eba8ce64e94ce4f82dfc115f54b7db1125cb38f0d7bfa"
     sha256 cellar: :any,                 sonoma:        "85f135277174340376fb0e6ba6de5804bc017380224411f4ffca4956c6b4512c"
     sha256 cellar: :any,                 ventura:       "65e7a29a633dafc3306065c4fea861cedf9a51122f9aa22c3abfd8e3e664547b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "93f446a2e99e9751229ad41532799e0f4c40983088c6dd47d026c80270f74541"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "afac541b74c1f46fea3c1e2b2c2443e93d769d221d3e512ef9af2a5ce2b292e4"
   end
 

@@ -12,6 +12,7 @@ class N < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "81646c87b6a7b3f3f74de589a2246cc12f9477a1b04a1fa3dadc08d991842a74"
     sha256 cellar: :any_skip_relocation, sonoma:        "658d2c03d442e49143a223a77d49a462ec2ce5ee40d22da4a932e178920234d4"
     sha256 cellar: :any_skip_relocation, ventura:       "658d2c03d442e49143a223a77d49a462ec2ce5ee40d22da4a932e178920234d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "81646c87b6a7b3f3f74de589a2246cc12f9477a1b04a1fa3dadc08d991842a74"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "81646c87b6a7b3f3f74de589a2246cc12f9477a1b04a1fa3dadc08d991842a74"
   end
 

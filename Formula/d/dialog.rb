@@ -16,6 +16,7 @@ class Dialog < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c592b9a7cc4715b80b7461cd020a4de1672f17b845d70c2e77bb55670b660bd9"
     sha256 cellar: :any_skip_relocation, sonoma:        "38c5ed508d93b2fc7635c23d7fb5dbfc7c5edf336dc461e4b8b351b34ea09643"
     sha256 cellar: :any_skip_relocation, ventura:       "c1ba6e432599dae77a21e6a22107b5b432bfc66d5036d0adfde9c52aa181f7de"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7421e7e70ba47204b66907bab7aebe101a3b35ed94b92f8c1b2f10ff81284711"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f46ba5552ed2d230e0a3fb2aa544e98a2638f7ff6e6af8731a1d69726840179"
   end
 

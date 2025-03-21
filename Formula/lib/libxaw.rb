@@ -14,6 +14,7 @@ class Libxaw < Formula
     sha256 sonoma:         "8500c636998ace11a0cf584ed9a45fc6c4ee5c505f04f2279c223a8214e4dfef"
     sha256 ventura:        "97953eebb88716cfbc585f5bd4cf80d299beca4aa19b62eaa1fdc1c43ea810b7"
     sha256 monterey:       "27c02e2745a3e97ddf364ca4a41191a65ea63a038f1c971a3c367b1a7b2d6c17"
+    sha256 arm64_linux:    "6819d4477ad52c23eb7023c0679d339adf59b43852cc05ef74f4a40f91a4d423"
     sha256 x86_64_linux:   "b848eb55c4b41ebc2923e5f0dd8a3fcd0fcf7ec6700347f6469ff88b958857da"
   end
 

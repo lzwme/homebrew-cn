@@ -11,6 +11,7 @@ class AwsCSdkutils < Formula
     sha256 cellar: :any,                 arm64_ventura: "342b24652cac5e4f854f6477ee33fbe21f09098632260b2cea671ee99f957e39"
     sha256 cellar: :any,                 sonoma:        "6ed10199d115287519157ebc4b866ee0450802ad706760dbf6739351229cc1ac"
     sha256 cellar: :any,                 ventura:       "5c5280da68e63344eaa93be23bb2ab6b63ff1c4c192212713d303413ed90c75a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "533800eab3e542e474b861824cdb7771fd21742707cd92cc628af138661991a0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0ab4b00678163b075582a2b214667a44dc547ad17e0bd5314cd4d1ee0696dc9"
   end
 

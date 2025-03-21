@@ -23,6 +23,7 @@ class Hiredis < Formula
     sha256 cellar: :any,                 arm64_ventura: "5ad4bd7bb1d271bc70336abb292491952d11ac567165bbff27675a2aedee4c7e"
     sha256 cellar: :any,                 sonoma:        "1e6b61f4ffd1cf76ce8e87e4444f4bfad88aa64baa87d31667b8f84845a46583"
     sha256 cellar: :any,                 ventura:       "d1dfee9546fdcc55d414bb4998ddcc72338cebfbd806fbd9e9d74fb6cb96b818"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "64980bfc905c8212e0e4c2e1de41ee95c7246c5537b4634bb5205b2c2bb54c54"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fb485ff3050d1ca96db614b96ec92b9595249f967e1d5851acc1633324780d4"
   end
 

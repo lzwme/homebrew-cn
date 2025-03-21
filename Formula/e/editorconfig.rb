@@ -14,6 +14,7 @@ class Editorconfig < Formula
     sha256 cellar: :any,                 sonoma:         "ac46d5659ab9aaafd7552a796ce848b72c6872fb26d1542f84ea87370e8b0b86"
     sha256 cellar: :any,                 ventura:        "ed9992d208d2eceeabcd646ad6c5a2d8d5ac36e8da10dd61ee4080cf97cc4148"
     sha256 cellar: :any,                 monterey:       "20c4080381d9f63379cdaf63e5b827f03698334ed2c3d65ae7cbe936124a713f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "da0b49ae920c2a24b6614374194e1e05a2e44408fe2cd6d5cd62cef9c9255e4d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "edae75cc4622ec47783d0c1293c84f0f3eb4d2f1d1c4f0e837f636a1810c18c0"
   end
 

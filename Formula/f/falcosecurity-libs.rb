@@ -20,6 +20,7 @@ class FalcosecurityLibs < Formula
     sha256 cellar: :any,                 arm64_ventura: "34039bf2d3496a572bf2ac212b3f9cc38345a0e80e56e8d793bc5968debff22b"
     sha256 cellar: :any,                 sonoma:        "83488cbd04dfd36f495d901d219ad43d14b0acdd92dd72796a442229054c4586"
     sha256 cellar: :any,                 ventura:       "3b3d9451afb904eb09553ea09f17d8f23959dd5aa0deeaa0f84219f9c7b8d637"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e813a5f7afbf2097931699e748fff735474d5ab0ab5ca70822fba459188dedb2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a691bd6a78782032b328fb7a70d3c16b743c58a644602f020a5c0c60eec65361"
   end
 

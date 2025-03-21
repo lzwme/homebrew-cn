@@ -11,6 +11,7 @@ class Libxc < Formula
     sha256 cellar: :any,                 arm64_ventura: "8a8f6c2dedb5446e4e0dfb6eef6c38acb7a134a2559e3828c2b7bca7c6cff747"
     sha256 cellar: :any,                 sonoma:        "6bcdc1b4b2820d7124c5b4c0b39566ff52cac816054945a960ef1c3a43838308"
     sha256 cellar: :any,                 ventura:       "1f2419e77039100f1a1adc062484e54a0866944235db1695fda292a0ea024894"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "89f20334a32a623644fa01b73d2c7fb1e8ba63bb94aff2e52154b2fb794a0b01"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfd3bd380e66af839073487bcdb4934684b437f48b8880334cdc2afed1e4782c"
   end
 

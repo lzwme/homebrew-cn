@@ -12,6 +12,7 @@ class OpenclHeaders < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "48ca1aea759fd7b22344fb9b3103c071b892e2bae7a47717306c5ed857d8793b"
     sha256 cellar: :any_skip_relocation, sonoma:        "48ca1aea759fd7b22344fb9b3103c071b892e2bae7a47717306c5ed857d8793b"
     sha256 cellar: :any_skip_relocation, ventura:       "48ca1aea759fd7b22344fb9b3103c071b892e2bae7a47717306c5ed857d8793b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb2cfe0d4bcf9b84ada89ca96c58bf6fb9573f84c9bdfcf1103d0a5ea61a7060"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "23cb70827358da453160139e62a4f60bfbb65499b5f03dd8c2468ef63cf3f315"
   end
 

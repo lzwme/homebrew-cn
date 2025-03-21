@@ -11,6 +11,7 @@ class Lftp < Formula
     sha256 arm64_ventura: "47191323a1e714ea7534413bdc8d4dc90960cebe01cd634c85f44d100790c438"
     sha256 sonoma:        "e4cb328becffa3416e370bd627bbea0e29505fe162f3d1c4ff54ad1da50ebb3b"
     sha256 ventura:       "91432c67fc43b779976229a1c2982e4cfa32cff893d68cfe0e382fd175259ea3"
+    sha256 arm64_linux:   "ad07c842761f21a2452fe69d76b1212725274ce09df5061bacd09ac77667b6b5"
     sha256 x86_64_linux:  "a4b7a6b989cdc30e9f5070e0d3669e2717e53b13984aef179035b99f0e2c2ab6"
   end
 

@@ -14,6 +14,7 @@ class RiemannClient < Formula
     sha256 cellar: :any,                 sonoma:         "426da29c687af12a8f693ad486f02a4fb7a1f6cca60416bb6715a536c5d62ffb"
     sha256 cellar: :any,                 ventura:        "8bd9e8528e663ba4aab929be622df0830433aa554c0c133e131350d507c3f539"
     sha256 cellar: :any,                 monterey:       "6dac6669b4d4b2fd9af0bde77fcd4ae7e5187ec8801eb0e26b7fa8796f8b3e1a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "c15ce11aff7a4925e518713074b6fc53c8746eef3efc5540dc975ca83a026147"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fc7736635610401fa99e4911155329f537c997b57d218821538f0e6b8b212111"
   end
 

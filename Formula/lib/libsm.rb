@@ -11,6 +11,7 @@ class Libsm < Formula
     sha256 cellar: :any,                 arm64_ventura: "3175340d660c4b58e19c9625cef2479ba0e5b10f73a9f9afc433deb2f46710e0"
     sha256 cellar: :any,                 sonoma:        "4b4f15ad71a83a96941c9162bd1fedbaa2889c14558bee37198e8e6c30acb743"
     sha256 cellar: :any,                 ventura:       "a06561a9dee2db28337b87ac73fdf1ea55a88c31b3b98534e350b3feeb4c74c8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "94ce571df236e9e1d56c3dce8055e0d5c4755eddad55646c263c95505ac07ad2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f1cb49ab246f356b91a633720a6043f3817b654f2933ed72445b2ab2c20a91e"
   end
 

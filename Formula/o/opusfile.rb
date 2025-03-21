@@ -22,6 +22,7 @@ class Opusfile < Formula
     sha256 cellar: :any,                 ventura:        "3f71655f0ae4529bbe68cdf389f44b835130e77078758674f0f433327aa7341f"
     sha256 cellar: :any,                 monterey:       "fa8d9e078297d10e650883b4c259d46bf955031174af802849e4151ef3b5dccc"
     sha256 cellar: :any,                 big_sur:        "f97ed204769d1f151372469bc4364076add0c7e15035bdba1a9aa630c2ee2063"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "4c2071a6fa1b8fba96beadcc92aae367174e03567220c066457a3490a629f919"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4b0a03f7494d92eb31cdc658c7aca5d971a1c9482ad899a2fe6643715d887f4"
   end
 

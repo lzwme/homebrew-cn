@@ -12,6 +12,7 @@ class Libparserutils < Formula
     sha256 cellar: :any,                 arm64_ventura: "6399bff8eeb1132f74e99f92c4795152ad7cc247039e90e7b56bcee7789506ca"
     sha256 cellar: :any,                 sonoma:        "24f00f6da2bc5e10f716aee6e32847f42dcacd22babda850c2cd654c05181c7f"
     sha256 cellar: :any,                 ventura:       "03f0248e3f07e65085701e82621d7a12807560f60a040111c07d867b14d1ddd3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "32ad8bbb44e2b6f06027e1117d02dced9c41c8961bc1a40aeefa8dd7c778a486"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f36934cb62bb14686eb7383c94055e3e965295aad1c1338357940527eab90e3"
   end
 

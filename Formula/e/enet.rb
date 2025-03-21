@@ -19,6 +19,7 @@ class Enet < Formula
     sha256 cellar: :any,                 sonoma:         "826941d0ca8527b5be6121478c8f713b3f72ca69413cf43ef655a616ca0e0551"
     sha256 cellar: :any,                 ventura:        "ef5837ce67084857ced1dcc5d467f644420a4eb0eac7cb846134274e1c58d0b5"
     sha256 cellar: :any,                 monterey:       "f6eb8f65dc979ec67b61ece60ffad7543b6c246b37400f48809c97a0d56ee987"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "3508a6482efac67de8c2891deef55af7bfa8dca3599e8445e39bc9a795ab5d67"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4f47239030ad6e2af53bb52c6a040f0bb46424ffd3909819c190e939a63a8a3"
   end
 

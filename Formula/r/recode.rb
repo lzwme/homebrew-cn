@@ -11,6 +11,7 @@ class Recode < Formula
     sha256 cellar: :any,                 arm64_ventura: "18e154be855e36d7352b192f4a886cb461bd9580496b90100b2c3d8eb2b14297"
     sha256 cellar: :any,                 sonoma:        "99fce903fbcf4b521eef4e7f9017f4cd11b772b5ae6eda8b85841a83b4d47436"
     sha256 cellar: :any,                 ventura:       "ee4a5b927e4e1de464895aadc1a9b6d51bad94ac2617ef91fc49678fee7f6685"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae507a89cd038723bbc75c818979f9519917eb3ad718ed0debb023130eedc571"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0863f449422de1753db9eec031492961cbbdb64e76b75211ed354b320cb96a0b"
   end
 

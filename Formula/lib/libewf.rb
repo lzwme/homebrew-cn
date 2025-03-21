@@ -21,6 +21,7 @@ class Libewf < Formula
     sha256 cellar: :any,                 sonoma:         "85fbf4280d4b14162dbee0956d5fc13e61bd018d183e920fff921d157dff06ee"
     sha256 cellar: :any,                 ventura:        "d67b1dbed6b0bb1b20eeb6d294451821bd19deb21b79d1ba8cdaf94d4eb34913"
     sha256 cellar: :any,                 monterey:       "e63d530c15de2669b9957557fe72585795f783fa66684b492dc9c6c0e75d4f06"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "189d67460fe4ede4cbfabdb18ea999ca1b170e2577457c2373cce8eec2dd3623"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3ebd71fc7c67743ebcfa1cb95debe60db4d085ca3235b0c6cebec9836b13dba"
   end
 

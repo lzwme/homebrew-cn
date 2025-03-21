@@ -15,6 +15,7 @@ class Intltool < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "a15ddf828a10f73b8ecbc8126bc6a5b9c659c94dcc9f8c3f761cda1a40e725cb"
     sha256 cellar: :any_skip_relocation, ventura:        "a15ddf828a10f73b8ecbc8126bc6a5b9c659c94dcc9f8c3f761cda1a40e725cb"
     sha256 cellar: :any_skip_relocation, monterey:       "a15ddf828a10f73b8ecbc8126bc6a5b9c659c94dcc9f8c3f761cda1a40e725cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "dfd00166b42210512d2499bf7d45eb3bd86bc4b64f0c40f9da0f57b15710ba22"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3760928e8e228b469f78ad5ebf3468a745b6dedbbeb7b7968b4f4ac7ae40bd5"
   end
 

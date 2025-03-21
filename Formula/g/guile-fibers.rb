@@ -11,6 +11,7 @@ class GuileFibers < Formula
     sha256 arm64_ventura: "c4efa5f223403ee3bb438ef926dca0775564e5756e6ce9c0e754698542c7b90a"
     sha256 sonoma:        "e314596a82b167bcd6548de44fd5d415987b257d8b46e2640a5924cc3c741530"
     sha256 ventura:       "b1fc7b219a7f68cded6c9786daedae1450870fcf5feccdd04cb38ce3ad4bc5b2"
+    sha256 arm64_linux:   "d65a242acbf399e5666386ab6cf904c76389046dad4781aec73567acc72c4d26"
     sha256 x86_64_linux:  "d94c75d9e2acfbf27ba8387935d757398f54287c38654ae9a51169934f54c096"
   end
 

@@ -17,6 +17,7 @@ class Dwarfutils < Formula
     sha256 arm64_ventura: "c76a679482e874f69993afcc0977c9902195f05dab9c27943b53d6c666488d5d"
     sha256 sonoma:        "6465cb24d88a78309be0d57e915e4bded2e53be288ab470b6f57f5a7149557d1"
     sha256 ventura:       "c64584bbd209938f60b72fffe19abdc4105391f71496bafb951f970b6b238bdc"
+    sha256 arm64_linux:   "3363b3d6996e15c780904883eb7d4edbc1b78d8cfeb5d8781c83e96c8a229317"
     sha256 x86_64_linux:  "f32720e90c4ae83dacde105e2b06c5aa1fb9c82f5d79a7d1e57831276f45344a"
   end
 

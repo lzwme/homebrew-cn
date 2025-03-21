@@ -17,6 +17,7 @@ class Libspectre < Formula
     sha256 cellar: :any,                 arm64_ventura: "aac4fe3f1a81468053f6652fd67dec5416b759b86060a5e62cb804f5ed4bb6a2"
     sha256 cellar: :any,                 sonoma:        "ef295c014933eb73252356d5f6ef9fcbadacf864fb02335c232f3f109d9c1733"
     sha256 cellar: :any,                 ventura:       "5c11e5bf8c575510008c9d7f3cb0cd540d35897521a70d81fb30eb0099bbf658"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "826f5672b813a31c1d4b8ca84c8f32adcaf053bd46773446df2080ba0352c6d5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "749030918fe30fbba3b0332ad978765f638c0ce4b1a79b26cf8a632c10631cb4"
   end
 

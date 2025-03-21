@@ -22,6 +22,7 @@ class Opendht < Formula
     sha256 cellar: :any,                 sonoma:         "21ec7e6bbed004aa0b93e91449de67cc200e9bf0e18497e54432ff1f892e5574"
     sha256 cellar: :any,                 ventura:        "c4256ffe8b296d1b5a895066994ee7b2f552b898c6f89a61fa2df615cebbff47"
     sha256 cellar: :any,                 monterey:       "a7e9b341adbf6bc5666409ad11de5cab83ef0cbc60231b694d7ab518a3c22acd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7dc6f1b972b64a44427d920f7e4b230dcf73f9c16b11c17e0e0e82e1fbbbf8d6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac478380e718e9891e1f412497ac42960d879fae556ea1e17e3604f464f7362d"
   end
 

@@ -18,6 +18,7 @@ class Lapack < Formula
     sha256                               arm64_ventura: "fe4b0a8f8d36fe2351183e4760e1b79e60e4acabf6820bdd56b42a3fe64d55d1"
     sha256 cellar: :any,                 sonoma:        "ca9ab67cbfe96618babf11e67e0471c710cd7a3bb1f2f94aa6dcd5252e2a477e"
     sha256 cellar: :any,                 ventura:       "7d8b411cb368aaf73b9d16b83e5293aec80dd86a53696d35a8336ec013688369"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "733c1a52d5e40d17d54d87706534e013f5fb5505a52194b3d792ea13d7b0423f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a687f1b7990d523993bc1e4ee24c025206c11b9995f9172128142e98a6fc147"
   end
 

@@ -19,6 +19,7 @@ class GccAT13 < Formula
     sha256                               sonoma:         "4c479e51e3e4dc9eefacd32a8fce5f8f0f707311df3e06e2f6b470dd8713a6eb"
     sha256                               ventura:        "24838fe887472d23d42eefd4b3cb15461fa6974690ec84973d856c80f7ad27e7"
     sha256                               monterey:       "2726062334206e315f78b1c354b32cfa0b9d3d94e0a20e5eefe8b12da70ca6b3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "20bb008fc2c3cdbb566161dc28be43f6302d71228a92e6543ce43b3addd63632"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2e725ff21e23929d6d84f92e2b8f559df6ea6b6550cc55e647aaeb7dd345436"
   end
 

@@ -11,6 +11,7 @@ class Ugrep < Formula
     sha256                               arm64_ventura: "7d03d258f1aba9b8697c54e5575f74d30a9f12c0efe5e6039bedf4a1c5219abb"
     sha256                               sonoma:        "76c8118b88df177ef450920568152187aedd390e9a6181a05a82c1dc828f198a"
     sha256                               ventura:       "b4087a3efc66a43ad67c66e1a463f34477ca499488d981b47e2caa4e6db2bbb9"
+    sha256                               arm64_linux:   "3b9f3809d3a93b68512a4c8f44074c644765879b13b77a70350e0e16022c9e3d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cc91a7319f6e11e7c783956889940bec51c1ff05875696b624dcd2d3f31b8ab"
   end
 

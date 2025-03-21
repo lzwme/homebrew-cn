@@ -17,6 +17,7 @@ class Librist < Formula
     sha256 cellar: :any,                 arm64_ventura: "891def5dc77ba1e982ab1cb27efe8f47383988e7f503b91d844ceab49a3bac5a"
     sha256 cellar: :any,                 sonoma:        "e3d7ba37bcb616c8e01ec27539761d081b734a33ea109ae7cb40a0794c97e4da"
     sha256 cellar: :any,                 ventura:       "6c5a48f683db99c537f41f16056a48a645487e3f6c49742a68d9beafc8e7fb98"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b20b6b0ec94438a5591f40fda416bbac8b05a078070227dcee776ee95a8cd49"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "16cee2bf08b7c7a1ac67d23025f25c71ca5af8fa2a6627376eb6cecd4cb26323"
   end
 

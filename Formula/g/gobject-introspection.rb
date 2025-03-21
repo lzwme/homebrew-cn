@@ -15,6 +15,7 @@ class GobjectIntrospection < Formula
     sha256 arm64_ventura: "7d63768077cc24f658149b380daaf6c4d736b09dd3b8a7dc44ac1c94b0ff5472"
     sha256 sonoma:        "893ed8eba9a90e94c95be128bb8acd9a81386204607e8bed4a53c290fb06fc32"
     sha256 ventura:       "540635fb9a734b24b2f77740f1e7ca457b9b3644121ff9e938c61738be9827f3"
+    sha256 arm64_linux:   "94ef84004e675184fff0cf433f01f1afb1443b1fd08f2d8ab93fb8e025a06174"
     sha256 x86_64_linux:  "c34513885c5ac7c1df5e3f1f4ddb972194a572d19097980e6e67e4d8e8047319"
   end
 

@@ -18,6 +18,7 @@ class John < Formula
     sha256 arm64_ventura: "08bdd817308d691493a5766687aef952d5f2310bed7342b0f8f9a6de10d9a73d"
     sha256 sonoma:        "5bcb36b0fe61d6b2b432944ce913e6f04230ea487b857d931555cba2ab6d37f1"
     sha256 ventura:       "452c5df9c3715d40aa5297a1b3b07f53eb03cff46601f4293904a9d07335d473"
+    sha256 arm64_linux:   "24e50afd7e32fae180e8cc88443bb9fbf2328f39e427e7f3999cba7a8cd8d085"
     sha256 x86_64_linux:  "5eed6eadc7ebee51813a7909faf2d436c7c66291f20e0ef1880936faa8b03269"
   end
 

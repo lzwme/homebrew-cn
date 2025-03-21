@@ -11,6 +11,7 @@ class Inchi < Formula
     sha256 cellar: :any,                 arm64_ventura: "21ecf31cb3a08690a8f126b4de6b1c6763555e1d976951c36fad7adbf8e30a6f"
     sha256 cellar: :any,                 sonoma:        "3db52eb01148b9f7bd51984b0f3a74bd094df492135d7aee961a593df7c052a8"
     sha256 cellar: :any,                 ventura:       "2cdfe8cc8a2577264d50d5b3f577d12fd2f75781bcfc7e020e0579b1383a20c1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f11430d8f96d6a69e1f8604bc297108ea4e7871c4209b0a02cf7c0da382f07a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4154598d70aa3ff9644319a6f181b3044748779833d3d1d7544005ce1162268"
   end
 

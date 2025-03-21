@@ -19,6 +19,7 @@ class Coinutils < Formula
     sha256 cellar: :any,                 sonoma:         "fd5cccbd3701e3df7a839b033758d9f89875145301eab36151f7199c20f41773"
     sha256 cellar: :any,                 ventura:        "74fa09ea8b717beaba24b5320e452f0d2d1856b567add648ca67181e47902338"
     sha256 cellar: :any,                 monterey:       "5e926b104d3e5bfa2764a33aafca6eabc9f381ffecb385fa3e10bfa69035e76d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1bc2f75c35c2574e870abd5529474cb0b15f705884d70b8ad351327aa7fe3b80"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4edc2b29842e702e87695df91ab2044beec5cc72aaf454af76e8265eac83bef"
   end
 

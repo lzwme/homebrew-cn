@@ -17,6 +17,7 @@ class MongoCDriver < Formula
     sha256 cellar: :any,                 arm64_ventura: "3e3797c1b3afb92ac3735f24fefd37538bc62e4c2d271582d371203afee4adad"
     sha256 cellar: :any,                 sonoma:        "3ffda9abb00eaf6679997f0f3f9a132e94d31ceae9795538ae717ba4cf6572f8"
     sha256 cellar: :any,                 ventura:       "48296c8aa08d70a3ea1c68b0696a8ee41d6cf4e6cbe96699a22f2e5860768327"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0bc0b2d8fe455186465e54c541572da488e67a4c86715e540fe0443646067e66"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "28e1ebf7816f3553b3a0bd82b2a078177f1ddef47020adea67144781a459e0b2"
   end
 

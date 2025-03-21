@@ -19,6 +19,7 @@ class Ldns < Formula
     sha256 cellar: :any,                 arm64_ventura: "eb53602f7be7e1ba9d42c2a1dcb3f70e926a85007d1338dceebb43b81f65598c"
     sha256 cellar: :any,                 sonoma:        "40cbf3faab35cbab0f7b832df080aa47f972131042eb0be3ec5fc6ac44d5f4ab"
     sha256 cellar: :any,                 ventura:       "2d2f7f630d32e895bf745396161bdfbb24b6cca7d0bf9e9528f461376c19ddfc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e068612edda67b9d8024855a41b7133e4af0003173e741f80e2f45abdaaab7c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0677ecaba9460fa437cc99fe78a048ec2acceb109f9ccc6e414bcb5ded94cdac"
   end
 

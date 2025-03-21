@@ -13,6 +13,7 @@ class Libnghttp3 < Formula
     sha256 cellar: :any,                 arm64_ventura: "9961791586720420ed53ce0f9c848574dd2a52ff1c6de6e86df634ad4f947a5f"
     sha256 cellar: :any,                 sonoma:        "4da00024ffb21953eaf885c1d16f070bdea28922f9757c8caa97e37ca5a24212"
     sha256 cellar: :any,                 ventura:       "5847cc1611cb01366f87a2f9b3821fe85ec1b56c281c4edf5034be2103bc1af7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0bf6b0f19726f9a31f49919f998fbc4fec7ab0ee92c8d9673dd62c6fda1c832d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fadae98658ff0cbf5777fce0c4bc23e553e76ec2986766cb545066ac0a17ac4c"
   end
 

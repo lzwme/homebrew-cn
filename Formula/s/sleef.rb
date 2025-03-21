@@ -12,6 +12,7 @@ class Sleef < Formula
     sha256 cellar: :any,                 arm64_ventura: "e11e41f584a86a846b5cd8e4488b4deb3c88cde3d063c04f1c250e55aebde862"
     sha256 cellar: :any,                 sonoma:        "b0bb1670f0687e90eccb70db7a8406109e3b2f63839dba0664047e5a4cf2497b"
     sha256 cellar: :any,                 ventura:       "0c5407110ecd8adc8a7276df202f2eef550fb82357a31e33ceeb1c9d59900d8c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef0ff87c8f625f961175c18a582f61098fd33db9b02346ff4d95bab9a729acde"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2723b060f3e1596f398cffd6e722304e063bfd3ebf35e9f65aa9fc3c49fee324"
   end
 

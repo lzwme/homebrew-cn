@@ -11,6 +11,7 @@ class Libcdio < Formula
     sha256 cellar: :any,                 arm64_ventura: "ee59e92928e52ec430a22e42664cb30312c77b89a5f9142a984841c129b03b6d"
     sha256 cellar: :any,                 sonoma:        "40dfe0a999ecbb9daf288bd22512152d4bd51de75c6970ced86bffa556e5cd3a"
     sha256 cellar: :any,                 ventura:       "082c88816cd181eb9b11f93a8efc07b699fa2bc07ee6891c98d2ec2250dc4392"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8db10577fa1ee081c45c704784b84e16671813ac8030890989b6673808337efc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9526b1ceafc1de7a14e44eef691aa7c863b68d6df90f33cdfd5d5763022c4aa7"
   end
 

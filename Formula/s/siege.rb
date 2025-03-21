@@ -16,6 +16,7 @@ class Siege < Formula
     sha256 arm64_ventura: "2e23a74480a04cfcba9aa6cab0d1f50cb5d6bfd048875c08f639dfce8b0f95da"
     sha256 sonoma:        "f76ae74125c7a43c4750a53af619149d76b80ddf3db0d49bfd0fcdaa44325796"
     sha256 ventura:       "2f96c850f0183940d41a32597e3eade26482d3c1e976c3655792867da71d5aef"
+    sha256 arm64_linux:   "4d52a6c4509c34b372dfa5ed3766252be8890b517ce7041134137aa86a94c4b7"
     sha256 x86_64_linux:  "eebf365d3688b6e2d26a82deac2260ea8f1f7049b4fe602ade5d3c287631a341"
   end
 

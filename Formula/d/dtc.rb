@@ -17,6 +17,7 @@ class Dtc < Formula
     sha256 cellar: :any,                 arm64_ventura: "0bc0e5c7f5681e49a92833da2abecfbd10d11d7c938cab0c668df1aedec703da"
     sha256 cellar: :any,                 sonoma:        "e4eb4991109e9112f5edb62b92cec046239268ecedf2de275e21c9be7302016b"
     sha256 cellar: :any,                 ventura:       "e3702ff36779cb65af9bf30d5ae6be3bf2a03320567edbf0821251abc66c4113"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca5cc69857d826ebc8b792e60d7fbc695785443f5a03bff22cd6a80d96953e52"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a73d1c865cba2244acd9bb059eae7fa4377506b64438ce12608f8f87d01e6640"
   end
 

@@ -11,6 +11,7 @@ class Sfsexp < Formula
     sha256 cellar: :any,                 arm64_ventura: "77e62444ee703cec04f5954922c54aa32d65a02294c3a154448d8e944c004229"
     sha256 cellar: :any,                 sonoma:        "4e312aea24c7d1274a99753d578e75cfdf1a35054082e2f2524977cbdf770969"
     sha256 cellar: :any,                 ventura:       "ab57777f8d6f986c0cd673e9ee487dd7703f12f7b2b31c0747d920c78040c2e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ff705f2b247288b7ae07ea297499af24c7d7b599359c0a4eb7f3996017e2bc1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "38e4511f902951c709a20aab4f8c56209c45c86ddf83efe86185242a0f6adadf"
   end
 

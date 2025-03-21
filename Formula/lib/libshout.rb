@@ -22,6 +22,7 @@ class Libshout < Formula
     sha256 cellar: :any,                 ventura:        "89f4593d901019c32468604a871a46524d30b48a9dbd09a060e00e99e487a99a"
     sha256 cellar: :any,                 monterey:       "8ab0df70741deb6cec78b95f37fb60ff5504a3f077033c2b4c7ae76745d8987f"
     sha256 cellar: :any,                 big_sur:        "97acacadd869bf35f1a8ae8fb4c5771a028d531272313b5dbc55348ce197ebd1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5036709d1848f381cc792e27ef58fc9b52aba7adad1cf7a5f175357f9ad6e31f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "898c7da67e779f3cce1a4b3f7b5cff8af87725d7235b3a138c06396db1b2eeec"
   end
 

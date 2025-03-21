@@ -26,6 +26,7 @@ class VulkanTools < Formula
     sha256 cellar: :any, arm64_ventura: "0ebb2a9e369a8f3c54231a539134a13541e8f4714e5b64d6404fb7669ead7db9"
     sha256 cellar: :any, sonoma:        "08569572e842bb312bc1c961b4ad8b5a238ea2dc6419f5bea6571e0dcbbe6769"
     sha256 cellar: :any, ventura:       "38247a40071f92852287e424db5f4cc578f18349a5dcfeddfad563ac77adf17c"
+    sha256               arm64_linux:   "bea441877553646d0bb258a29830fc930869094a98e5163ab6f6d5585c981086"
     sha256               x86_64_linux:  "9bf51a09e52537a6a739342b288ba9aea66cac390cc97d166dcf22fd05b3c625"
   end
 

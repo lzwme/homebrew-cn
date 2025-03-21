@@ -16,6 +16,7 @@ class Xe < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "fa22ab803e09d78b5aca3d0b4c9773b3a1db1bcd4f5f254a39f1af6a2daf578b"
     sha256 cellar: :any_skip_relocation, monterey:       "fe9fe7ccd998c7030b507f8e382986b7a4c599fdcc7dad851f1dbca173317333"
     sha256 cellar: :any_skip_relocation, big_sur:        "f2eb0cdecdd23ec242f05977a913055d8170c8cf9d793641c7633f54599e52d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "dd2b69d64dbad650050a09b32d026d15b07da7997e4c9af9f905501a7de30f32"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b67d52094aa34b8882194aa6fa429b13ed8866abbc33ae906d3f0253b52ff61"
   end
 

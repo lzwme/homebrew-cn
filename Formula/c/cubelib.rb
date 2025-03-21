@@ -1,8 +1,8 @@
 class Cubelib < Formula
   desc "Performance report explorer for Scalasca and Score-P"
   homepage "https:scalasca.orgsoftwarecube-4.xdownload.html"
-  url "https:apps.fz-juelich.descalascareleasescube4.8distcubelib-4.8.2.tar.gz"
-  sha256 "d6fdef57b1bc9594f1450ba46cf08f431dd0d4ae595c47e2f3454e17e4ae74f4"
+  url "https:apps.fz-juelich.descalascareleasescube4.9distcubelib-4.9.tar.gz"
+  sha256 "a0658f5bf3f74bf7dcf465ab6e30476751ad07eb93618801bdcf190ba3029443"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,16 +11,12 @@ class Cubelib < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia:  "a75f38bf5b5d38ddccdee16c72c4a3612edd497933e5f05c4cbb212ac60644d2"
-    sha256                               arm64_sonoma:   "2b11087f52488b50b2828f240d8ab658c30c92aa29512b59d8b18dfe3366df43"
-    sha256                               arm64_ventura:  "1d811d0574291b83062360b03a449d381dac2b229296bea739f33aeb1a17edfb"
-    sha256                               arm64_monterey: "aadd710f61fc65f005f5e07ba91eebd5b4d7c91d47779b0fde316b9eeeb36992"
-    sha256                               arm64_big_sur:  "323e03f8439b4fb0250fbb0016bf7950ab3816a7a9cf8b47c1ab29a5c2d42c86"
-    sha256                               sonoma:         "44e70a9911bebf2ecac7827c87c1107d497fd2d791cf61e65f30d310dc741da3"
-    sha256                               ventura:        "fe41d2cf6093309fc12bb5564e7cbb6b641451aec92956f3d89920e5cd6bc441"
-    sha256                               monterey:       "9dc98f1eaa021114b31615d0c9b804cea0755d7c839f1dd7a0df2889ca2d2131"
-    sha256                               big_sur:        "d66981b620159dd57d48bb0c45240dc6cf37085acdf288d9c5500ff07bc828ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "305d53e0974ea15cf0e27a487bf1383eec50e7e2bf03f54e82c2d2c1654f57e0"
+    sha256 arm64_sequoia: "066378b05ed9eb15c6bbf9202e641a932e72e5c4e24ed5071a8df8b95f36fbe3"
+    sha256 arm64_sonoma:  "0e1252ac62492b97973bbd9194104d68094c7b0c2fe66238a009e7883b027ad1"
+    sha256 arm64_ventura: "6db4378728b7fef0376f751dff698b109b1690cbbd8847ca2ed9d4dc5708c2c2"
+    sha256 sonoma:        "3b34171b089bddc118864151d5f16a6f9fd7ecf2061530b43a5f3d2f92ac9bd5"
+    sha256 ventura:       "6e8cee9a4b318d0bf9846d6ee66d82550f33188ea584415fc74f548a4ff0dee3"
+    sha256 x86_64_linux:  "f23523ee48a74275d61f881645e96f3a1f37f18a8ca70570e2a915a62930f2dc"
   end
 
   uses_from_macos "zlib"

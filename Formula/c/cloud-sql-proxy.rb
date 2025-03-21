@@ -1,18 +1,18 @@
 class CloudSqlProxy < Formula
   desc "Utility for connecting securely to your Cloud SQL instances"
   homepage "https:github.comGoogleCloudPlatformcloud-sql-proxy"
-  url "https:github.comGoogleCloudPlatformcloud-sql-proxyarchiverefstagsv2.15.1.tar.gz"
-  sha256 "fc549384f888a23f3c4a26aae4a8381fbe973a65ae9273afda403f0553bd3b13"
+  url "https:github.comGoogleCloudPlatformcloud-sql-proxyarchiverefstagsv2.15.2.tar.gz"
+  sha256 "ea0e69da591fdf3194c695aebf4188515f2567876fab0df3a834c28783cb8d0c"
   license "Apache-2.0"
   head "https:github.comGoogleCloudPlatformcloud-sql-proxy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af06011f26010c30a4a945ef460c6e508a1d8f08f8e028d83524eab78ce7c3dd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "af06011f26010c30a4a945ef460c6e508a1d8f08f8e028d83524eab78ce7c3dd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "af06011f26010c30a4a945ef460c6e508a1d8f08f8e028d83524eab78ce7c3dd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2e816d797bcdb365224188a4da6cbffd14ea15c87e46aa1e89cb3234bd578cfc"
-    sha256 cellar: :any_skip_relocation, ventura:       "2e816d797bcdb365224188a4da6cbffd14ea15c87e46aa1e89cb3234bd578cfc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03805457754f5bd50eb0ab70e08d1b638fda203ce26b3e25437792178f04dc36"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4f32c83181fc459b594ef6a58ebf86aa26ae2c00c3cd504da32915b11a642cf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c4f32c83181fc459b594ef6a58ebf86aa26ae2c00c3cd504da32915b11a642cf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c4f32c83181fc459b594ef6a58ebf86aa26ae2c00c3cd504da32915b11a642cf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f58c315d9a8a17516f93c223ff6849120f8367c78deb4d64e725535a704c040f"
+    sha256 cellar: :any_skip_relocation, ventura:       "f58c315d9a8a17516f93c223ff6849120f8367c78deb4d64e725535a704c040f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d6fa95c36b2866be7fdfd833b83d9a132c47dd94099decc065eef1d17a0adaf"
   end
 
   depends_on "go" => :build

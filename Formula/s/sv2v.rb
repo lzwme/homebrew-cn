@@ -1,17 +1,17 @@
 class Sv2v < Formula
   desc "SystemVerilog to Verilog conversion"
   homepage "https:github.comzachjssv2v"
-  url "https:github.comzachjssv2varchiverefstagsv0.0.12.tar.gz"
-  sha256 "b64312c995f2d2792fbe610f4a0440259e7e2a9ad9032b37beabf621da51c6da"
+  url "https:github.comzachjssv2varchiverefstagsv0.0.13.tar.gz"
+  sha256 "4ce7df8c6fa3857da6a2b69343c29e7c627a4283090f2b07221aa9ef956a88c8"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b3b60e445a1391fb5155d3e745f2e53ae712e8e36d93340597e3dc34fdf6c6b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3f220b7b729109d382b64888eb876d54c5cf37089cfd3579fc441e4dd6c35a8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "da6d7bfa9beabf5db683cb311da63880d9402171ab76cd576e043f0c86fe5fa6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f31c05a6e0c9c7cfc27667d23a0a26bb2f58ac23a9123a022ec88f36d93df196"
-    sha256 cellar: :any_skip_relocation, ventura:       "6ad398d9d6778c71e2b31c6aefe8a85400c3630be54be7d4d651c2c450e9ba52"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e5ded89060d8e416910dc0538759d5e9dc1cb074dcc6ba2d21bc98ecb725161"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49224a9f8e4f1904b037465be2abcdeba583826c51cf8269cb0397413ced8a56"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a0767a722606d8f2395ed5af345e7c3905d8ea5a5f9c64c81245f6d161f7c4f6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "252e933952b8d680607936324cf65e335bf6287c676ec9b99b853a9a4b10ad64"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6b210f350cfb69d6df2a46f06277e59d62b0e2310ca52b89de86e57125dda49e"
+    sha256 cellar: :any_skip_relocation, ventura:       "ffd19a1ab08b2e06e7d04ddafd34ca60231aa9c591e6c642ae0a2658af2b03b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1718ff41c4a8701aa9b5ef78f9ea0856fa2de5e739237b70e6cb64ce6f61096"
   end
 
   depends_on "cabal-install" => :build

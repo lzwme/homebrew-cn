@@ -16,6 +16,7 @@ class LibsigcxxAT2 < Formula
     sha256 cellar: :any,                 monterey:       "155cb09e024335504393bc4ea4921348449bbcbf08384f7e6e1210c2cee3f403"
     sha256 cellar: :any,                 big_sur:        "5ea91db7ec5618625126b12e5bf7de2b2d8cc21b77170536f0d9d33de3bc8ffa"
     sha256 cellar: :any,                 catalina:       "f4aa31cd03380890a69669687fee5a978586ea8cd8613e871864f2a5dcc7bd97"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9e5595dae73183a87ecf0c2beb1a742ae2f980d8ccaa476b32c279daaa9696fe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a2909597897d782656e62646e426c9e0f29a11d845b986de0f13a0e07adcd77"
   end
 

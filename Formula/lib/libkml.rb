@@ -17,6 +17,7 @@ class Libkml < Formula
     sha256 cellar: :any,                 ventura:        "8c1aad6dd48f07f59db92056f984a4ea23de92a1f5103b39314e6995d7c7e43a"
     sha256 cellar: :any,                 monterey:       "8fea3543dfb5a38bcc28fdf049d30657ce12b20ab4435b41d0d4634856b28bd9"
     sha256 cellar: :any,                 big_sur:        "19bf29c790ba047803ce5ac8f33192d1bfd281458026870d74f18ee91c732203"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "18bf187fc45bb5fb71649813c9647d91ae0b27a4097dd8858dfc1c642ba18589"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b827ac73d49a0fb2d3d0073ef374d6c9a54688698daf7600670594aa10ea6149"
   end
 

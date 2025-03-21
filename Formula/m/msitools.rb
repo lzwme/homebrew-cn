@@ -1,8 +1,8 @@
 class Msitools < Formula
   desc "Windows installer (.MSI) tool"
   homepage "https://wiki.gnome.org/msitools"
-  url "https://download.gnome.org/sources/msitools/0.103/msitools-0.103.tar.xz"
-  sha256 "d17622eebbf37fa4c09b59be0bc8db08b26be300a6731c74da1ebce262bce839"
+  url "https://download.gnome.org/sources/msitools/0.106/msitools-0.106.tar.xz"
+  sha256 "1ed34279cf8080f14f1b8f10e649474125492a089912e7ca70e59dfa2e5a659b"
   license "LGPL-2.1-or-later"
 
   # msitools doesn't seem to use the GNOME version scheme, so we have to
@@ -13,16 +13,12 @@ class Msitools < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "68e661be46cc7452fe15b99dc90f3cbe572d7cf644fd399707c7313dc3bcb52b"
-    sha256 arm64_sonoma:   "ee10c9cb4bc12d8b4576418734817953546f1aaae34b94b1aa19fa0649159bdf"
-    sha256 arm64_ventura:  "01b5cc782019274ccbad9e4afe6c5a27cc2e109dfa6bfb7ee143fd09a63a38a6"
-    sha256 arm64_monterey: "5a6840a0a0b3c0e54e55ef878605137f4eb4e2c1082ca7ba62bc02b484fdea2e"
-    sha256 arm64_big_sur:  "76e21c30adc03a9a4cb84106f51b3c54d31c9f326b2d9222f3e35adbf186a401"
-    sha256 sonoma:         "cb728cc524057356ccb7d6cd0af3c60e029e7b49398909c0a48f1d5764926fa8"
-    sha256 ventura:        "62b2ae934d45e550a1cbe0ba9ac658e5e0fba3dded31ef04f98c8d903918291e"
-    sha256 monterey:       "e7439f8b6c48cd20c91511bd38c9c9865f82eb2b6523f77c3f5c529f0e1ee240"
-    sha256 big_sur:        "9b37bccc09e4ab2bf6bb43c43091200a88f5718041ac90b51cb71b76decbdf68"
-    sha256 x86_64_linux:   "093a2c2b753afb2114b81cca5af13e414ce77b11e0ba1a0b3a9c8d913f6a523c"
+    sha256 arm64_sequoia: "12fe70c934de768f9374ebeedaf658c477dbdb3ab0f0a96dd3baf66101c0083d"
+    sha256 arm64_sonoma:  "efa74fbc638ff57c0af2e6036eedbde4c5ba367b25099bcfb7983abe29891d0a"
+    sha256 arm64_ventura: "b44ed9f4798de3add43ba4b2d4eab8d19de501e6550f33bb14a70cd929ae4e7b"
+    sha256 sonoma:        "828f74c79ab546bff9163b165e186f9a071593ac7ef94b8980ae1295a64ec2eb"
+    sha256 ventura:       "9643bfd74e73e44cb051d236b2ad71ec2ffe7f45a7466ecb44758b6909c91cbd"
+    sha256 x86_64_linux:  "6361381386fa074d2bed5ced54c6ffac0902bd01add061c47b7a35b603c0757d"
   end
 
   depends_on "bison" => :build

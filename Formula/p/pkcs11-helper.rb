@@ -20,6 +20,7 @@ class Pkcs11Helper < Formula
     sha256 cellar: :any,                 sonoma:         "6e3be91e06ad419132aec259d8d7d2700e8672f2011493da0b8635409523fc0e"
     sha256 cellar: :any,                 ventura:        "322d2589c5b33c6ee5ed63b379661701b3bafb3ffb468dc862b33476765448e8"
     sha256 cellar: :any,                 monterey:       "c809e4cf49d88ce528e2469be931667f121cbe243e04bf549da28bbe20c05ac3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "4b3b99c82949368e2f0d2f44ba07e37f59ea6b9dc48596c7cab2259d27234dee"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ce66c1a7dcf6725cf1b4f480e734cd4b7ff2f74835b4464c2bf182ce9640d1b"
   end
 

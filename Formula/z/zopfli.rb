@@ -18,6 +18,7 @@ class Zopfli < Formula
     sha256 cellar: :any,                 monterey:       "6f02f39b1b143725890fb1d1a33e6f587daf33ef473ff2991189e2fd1d1a5f85"
     sha256 cellar: :any,                 big_sur:        "64f2102bff6163156d073e4554532c990c3a65669b7a52d2cec83a22d5b32d4c"
     sha256 cellar: :any,                 catalina:       "288d48544556b28451e536b142dcc2235ea9dfe52dfe79d0b1d5f50db85c16dd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "3424c6b2263832ea51f0b089bc7b8d1bbdfe041006847803ec32a7cc348c67c4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6994139461f1d64975551091d1254a906a8957c3ce08c0c2b6d8d5c995b66f05"
   end
 

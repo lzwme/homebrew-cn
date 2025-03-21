@@ -15,6 +15,7 @@ class HttpServer < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "b8798ac5ea1972bc153b971db14968ada2527c73c4ac4c442f3c3e2c2d2b0802"
     sha256 cellar: :any_skip_relocation, ventura:        "b8798ac5ea1972bc153b971db14968ada2527c73c4ac4c442f3c3e2c2d2b0802"
     sha256 cellar: :any_skip_relocation, monterey:       "b8798ac5ea1972bc153b971db14968ada2527c73c4ac4c442f3c3e2c2d2b0802"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "aef704031b11e99b66edc4bd3807d1ea4b4c365582ae6d5d6b669303e2368332"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9f714a6e9f2aae98529f5cf3c01587a9c3ff867ad8aa8446453a62688ff4bb4"
   end
 

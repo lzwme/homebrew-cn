@@ -13,6 +13,7 @@ class Libxmu < Formula
     sha256 cellar: :any,                 sonoma:         "da9a3c49863a7674bd512cebf16c226be2b23fb576d7d40bee6912df3af5ebcf"
     sha256 cellar: :any,                 ventura:        "759a61777107ae7f9893f1a3f443be2f5605335cb63f64885b16ade1c1b9a22e"
     sha256 cellar: :any,                 monterey:       "1cf9194a1441427380e06054903045d3f247a93dc00943b7126db6badd715e93"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "002c127dd8dc9650c27a53829ad56073d729ea1487c6f0f1ac1e92b095010be7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1da14c69af817c5faa1fc53dcf66a32a9319c75769562941f7e0ac20dbe2347b"
   end
 

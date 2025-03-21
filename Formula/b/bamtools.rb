@@ -13,6 +13,7 @@ class Bamtools < Formula
     sha256 cellar: :any,                 arm64_ventura: "0104d42510158aced69f6108ab3de5c363e32ca9fc4b6eec8acb7f3858d3f5d7"
     sha256 cellar: :any,                 sonoma:        "aa7b96819c55b2e59c375501932eee2e32d091bc64b9a5be8cdad68c18a071b3"
     sha256 cellar: :any,                 ventura:       "90df0038551d0a60a82e5f9b43438d5e7731bbeb2a73f0054fe79fb9c97c594c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc024aec0c01995edd1a1a0450cc4dd94d05498b22dd5a1ec7b600c3e118b32a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "696b432ed15581f9ddc4dd262c03e0b7cdee1ba19b387a86f10e88650740fbf0"
   end
 

@@ -13,6 +13,7 @@ class Xrootd < Formula
     sha256 cellar: :any,                 arm64_ventura: "2350884b3be92271750eb48554eb852f2c3b90b6270fbfd85f039802949bf41c"
     sha256 cellar: :any,                 sonoma:        "d619829552fadfb55aa967e449a57b050768c494e9ece2bcd28363171b283337"
     sha256 cellar: :any,                 ventura:       "57dc4fd0887221c8dc9b3ac0406122061dec4cd65e06009f7a4ce1aac30f97db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d17f6e5e9e8c5e83b0bc69de469ae6e8714b3aada9f3e6ad4361cb72a360a3f3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6d60a74372fd55b5883ed4a3e9824ee349a448716a4152b8b1f66d64ca4a36d"
   end
 

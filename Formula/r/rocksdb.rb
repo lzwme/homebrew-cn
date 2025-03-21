@@ -12,6 +12,7 @@ class Rocksdb < Formula
     sha256 cellar: :any,                 arm64_ventura: "1265ce793f334c1790e83918174bae5b6240018401208b164fee2f57ac73ace2"
     sha256 cellar: :any,                 sonoma:        "39704fcfeedfd735c4028aad23dcda4c51ed8b35eae9f6de99738ec7e0a141d5"
     sha256 cellar: :any,                 ventura:       "8333e6d8d415903217efcdefc818f4d1170da05c5f47238acd11feb3b9ec32de"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ac0e120cfc86c99a6680521552b7642221dfdf7271c259fd5329647ae3baf9c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "03ad6f90e165a4af08bd5c2d5608e6149843457d86d424ba355379f27854f329"
   end
 

@@ -19,6 +19,7 @@ class Adns < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "fefe889ad072b0186eb26a445a13bff68e1f1e0914fce32273be408449c6518e"
     sha256 cellar: :any_skip_relocation, ventura:        "903ec0367e65867e0c69b536c535c24de0e588ceac6b2b53b6a0880194ce3e52"
     sha256 cellar: :any_skip_relocation, monterey:       "7f461bac71655ec0e4c05041dcd456e2648b2a1960ea8a633198ae35f1ba5557"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "61536298beb99ff2010ca729c20656b74b9ce355d246bb5df0e2b187b01501ee"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4ac86275f06493e6589ea7f3c6306281891074deb2d4b3318652ee5e3d66d594"
   end
 

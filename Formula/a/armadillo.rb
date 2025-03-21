@@ -16,6 +16,7 @@ class Armadillo < Formula
     sha256 cellar: :any,                 arm64_ventura: "c0405c7e2bcee6d1bab7b4048da4bed2aad8277f05cdffece6c47b6ee652c804"
     sha256 cellar: :any,                 sonoma:        "fd74940e6a4ee176dd42b94e3dd8c7d43b53e5181fe3a41b07c55f7292558acb"
     sha256 cellar: :any,                 ventura:       "567b497b0e43974f47a434f17d2b0ca65838b32d2197cf0e5fa0564bf4cb470b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "49f9c6ed3754971bf7332055d5881e21c735840887ecea35a48cf1ce215af3a3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "08f10419e278da2e82ecb541f6368edf0efafa75fdccbd5a3ea5712cc63d3cb4"
   end
 

@@ -16,6 +16,7 @@ class Libdap < Formula
     sha256 arm64_ventura: "3cef6f6506acf42d24cf9d0bf55b8b194ce5938d5d2d6d7e82a155c86e031a8a"
     sha256 sonoma:        "aecc5c17befb043a3cbf6939b0011190d4b4ebd8ecfe42748c67a0b35fc7e920"
     sha256 ventura:       "4b9be029b474845cfd29aedbf47548189fed0c2b977687c8778f5180b895a1b4"
+    sha256 arm64_linux:   "bd0b6ca36a3f872a08c4401e9f1b24dbde3c08e2b97514d6175f7779815344ea"
     sha256 x86_64_linux:  "c0bbde3c7deb1480fe9d54028a7ce000692e28784c7e3b926d8c8234ff79c742"
   end
 

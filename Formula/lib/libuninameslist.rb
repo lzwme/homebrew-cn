@@ -19,6 +19,7 @@ class Libuninameslist < Formula
     sha256 cellar: :any,                 sonoma:         "058a9be1c073ea75b776da75a266fdcc21fd3a20244705b2d426c91c16092bac"
     sha256 cellar: :any,                 ventura:        "44e94ef3192ab2052ec7c36460e307dbfd5e2aa75e445a1c285a4dc805bf81f0"
     sha256 cellar: :any,                 monterey:       "4ba6f06973d3507936496ade35a2ebe95e8b3fcaedfce6b82ba25274f6cc22be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a64c4667a64658502fdbfa6512dca1479c9b8721865ea9175983677c3cda405d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e69b85f779f074776a2f4d8da6a1ae610b3b1a8760192a9ab1aa392622c8492a"
   end
 

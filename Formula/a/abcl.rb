@@ -23,6 +23,7 @@ class Abcl < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "682505e8bf32bcd1c89bab05bee6563ef541cdcee8cb563ad0b9a37e3777aa39"
     sha256 cellar: :any_skip_relocation, monterey:       "923b22698e40554a1920f55c4657153a236e3a3dad6a48266f84ec740dbba6ee"
     sha256 cellar: :any_skip_relocation, big_sur:        "d8a077488cce7889466e0cd135e9c83d5d6c1425d7b3f794d9ed863ed6c70056"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "996a3421c3c9543e959914c14736756e4a9f4c30bbf77eb45db1ae8f7756a21c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "461c7a8fe2a872e92ff82e19767b6b80cb69cb6985676ef751dc169fc05737ab"
   end
 

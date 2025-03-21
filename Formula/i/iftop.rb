@@ -30,6 +30,7 @@ class Iftop < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "c582f943657323d52493e9b85d05a9ac5b079dd1bb74075fbcd5952f2758fbd7"
     sha256 cellar: :any_skip_relocation, sierra:         "3a75c5edf29f6cbac19641910661423ed2f0b83f3e0de28c8417be76f4ce5c38"
     sha256 cellar: :any_skip_relocation, el_capitan:     "e7b9ed6bef435d7de8e986cedfc76779f2655bfac7ed780afb33a42e92b8d01d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "74167e8ae57c728a312c3008a6039f7ef440bc59e0cd6f7a80db27a244697133"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "eef5cd5b14c8b7b2e7964b39a3833a2cbe3253d93905157f92632c78555a8190"
   end
 

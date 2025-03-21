@@ -16,6 +16,7 @@ class X8664LinuxGnuBinutils < Formula
     sha256 arm64_ventura: "3e90b1013bef3131b597fe612ea8ed2ab7617ddcb0c89dfaa632a1f9c0fecfcf"
     sha256 sonoma:        "0332609f6a0bb2aba6f6eccb6fbddb1afbb5c3242e9cef35358a36f0b4d370e2"
     sha256 ventura:       "675425789a28b7c3dee6165a593e22ada9bc39aad1b3f301df3cd28ab02c11d3"
+    sha256 arm64_linux:   "647cb36d34c7ab5fa8df2d5d81b5ff999986d934ed7459c6186ba60572ddec12"
     sha256 x86_64_linux:  "7f98564cb604be445bf6d819ef1baea435e7f3d30e7db1fca6205cbe6cdb8b3a"
   end
 

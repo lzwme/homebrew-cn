@@ -21,6 +21,7 @@ class Jsonnet < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "0e43c89b55909edbe4d9afe85c6da8e6ae31e148ec91ff494eb7e4a3115fd4bb"
     sha256 cellar: :any_skip_relocation, monterey:       "08c2a197781b175611f446838028d3a9c23982c0d6031af98cf6408ebc24a6a8"
     sha256 cellar: :any_skip_relocation, big_sur:        "468ec8c830e8cb239534389e54eb086a78b5b4b9261ae0a174a2ad40cfb792d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2a73f0fa12e38e9ce011303f8e79b90447e14d17fb0dcd0eaa052507325116e9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c93bb362a5b6c22590afb2ba44ab597ae623cddc650d8bc1a65eae169c43105"
   end
 

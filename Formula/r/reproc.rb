@@ -14,6 +14,7 @@ class Reproc < Formula
     sha256 cellar: :any,                 sonoma:         "d3c2d756ae1b3b10b4c5d4d4f820612a7d47b5c0a028b19da44bc730dbe3f862"
     sha256 cellar: :any,                 ventura:        "12c715872d3f5471d6290cd8e9500caca92f5cd366d66c27a5a97deb5d7621eb"
     sha256 cellar: :any,                 monterey:       "7da06d575b4806cf58d434e9a86194173dd19eb30e7c34d08850da3124d61123"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "cbfbe1cfa82ec3ccb364ab971a8d7dcfaacd98c708a57f1c3b4031381e745896"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "693fb2c4503373a230ecae82f0b78cf91c2c83da3d7e16bb88c4d7efc86b7fae"
   end
 

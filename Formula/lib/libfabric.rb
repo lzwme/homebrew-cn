@@ -17,6 +17,7 @@ class Libfabric < Formula
     sha256 cellar: :any,                 arm64_ventura: "744ab1d09613ed90b5daf9ca56f157b0a5be99107e572394622dbd58e10285e3"
     sha256 cellar: :any,                 sonoma:        "cde9e6629221b066db676576f7b6f76250db1a3cb0bf18447eab63d2fb5ae39d"
     sha256 cellar: :any,                 ventura:       "7ff1b4a7c98bc71d9e86b20ecbd042482addef9db83f835e6d77b84fb26a4ad7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2850f3048c57104572aff425bdc2dc4877612dc6272e0b2ffabb591f298a51f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8572d2600655e04cc2e5ed5d09d9e811f6dc79e0e948ec9fc08e470cd3241184"
   end
 

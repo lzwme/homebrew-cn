@@ -12,6 +12,7 @@ class Httpd < Formula
     sha256 arm64_ventura: "cfc960b54bf8dbdc87fc91de6cbad9a9e8c1775d69659ee206d6bbdd0d9d8cea"
     sha256 sonoma:        "e0854ef063e66912912753c71fd85f4e92cc59930ed824974ca2b9709ddcaaaf"
     sha256 ventura:       "d873c7c33a633d07739c0cef9551074dc53d5480a16e82c302f0ec0e9c01359b"
+    sha256 arm64_linux:   "0d503fbd29ac1ba3f7b4ceed16358437ffabdebfae412386073dcf9986593468"
     sha256 x86_64_linux:  "82136824ca8efeb096ba9236bf103b87d91d52e2c2de3081775fcbc9e7df55eb"
   end
 

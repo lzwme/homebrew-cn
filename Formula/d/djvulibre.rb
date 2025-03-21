@@ -21,6 +21,7 @@ class Djvulibre < Formula
     sha256 ventura:        "437c4982f64bf9f3c17d3dc6e07a204770a8028ee924f23ddd0f09af9cd4fbc4"
     sha256 monterey:       "5c208fecddc8a56aae519f38d52a06c2b6f261b094077e05b43cebc9d452f3cd"
     sha256 big_sur:        "d325152b1930974548997efcf819595fefcddd23cebaee2e22718cc3296d1957"
+    sha256 arm64_linux:    "0a162655cbf3a5344f2557b5863b79845330f1783b61da7ed9c8b4806c5f9ed8"
     sha256 x86_64_linux:   "16b50bba79b4dba1593db9633d8a396633e02dd015f5858f19eb8ad9aff3142f"
   end
 

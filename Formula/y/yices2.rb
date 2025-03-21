@@ -17,6 +17,7 @@ class Yices2 < Formula
     sha256 cellar: :any,                 arm64_ventura: "e9f1e7539230db974013b318edcb79b903d4481f535412a15a011e8db1e848a7"
     sha256 cellar: :any,                 sonoma:        "df4295c2f41d0c4615eddc34ec1a6027ac42f1878ef5a480073b9173e6694966"
     sha256 cellar: :any,                 ventura:       "e6ef02af7980cac20b6421c387b7273c96526b00979764eed016201d08ae2f4b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab2b4ae5de11f2261d60972181d48b4174c90a9a0c1eaaba39a7ede75d16d4b3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e262428f6fe4f84fb209b35479ed9210fa975ec908120e77dcea8f797fc6752"
   end
 

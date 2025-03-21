@@ -13,6 +13,7 @@ class Xkbcomp < Formula
     sha256 cellar: :any,                 sonoma:         "748bc8b2b4367a4a2a429939d866cad1d3f2c39827d817dcc8005677decfdec4"
     sha256 cellar: :any,                 ventura:        "64d4dd5de94b681390d9488addba6c89d1d2cfdc64fc84d3daa7c308868bf3d7"
     sha256 cellar: :any,                 monterey:       "4bf88bfe3df2a85e6a4e16cb61b92f7a1e91b4e7b1f526014912fc789de34205"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "e96e612b7dabac0251953af322c5045f238c702df84100378d3ebc6e0d4ec6fa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6be95ca9ca5cb1c2afaa4e0d2cf31d75f5daa5e543a824c3c9cb9f6d895c25e2"
   end
 

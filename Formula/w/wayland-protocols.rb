@@ -11,6 +11,7 @@ class WaylandProtocols < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "fc32e1e06f7f937451ac8361076639b13b4ba1dbfd0c7ef57446312e814f3930"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "fc32e1e06f7f937451ac8361076639b13b4ba1dbfd0c7ef57446312e814f3930"
   end
 

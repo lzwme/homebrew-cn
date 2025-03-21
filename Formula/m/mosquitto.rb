@@ -19,6 +19,7 @@ class Mosquitto < Formula
     sha256 cellar: :any,                 arm64_ventura: "8454c87786ea6c22427a93837a9245f5e11e361e9cf0bbf0dc65b4e606c9df92"
     sha256 cellar: :any,                 sonoma:        "6f3c1be1652b15e940304f6354f8d9dfaee1df2d773d58e6cc9dfb8246d4574d"
     sha256 cellar: :any,                 ventura:       "b48c0a1ca034fc2c958686125ac443db99b66149b0bf50b1fc0ce56d2577661a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c3ed1d516bd691d832028634921690f4b1a64c7ec9a15ab00ccb771d6845a75"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b8eccb6a949e8194b38e90d7d35c94a7df188058ab656bc9e0d961c5e119978"
   end
 

@@ -3,17 +3,17 @@ class Weasyprint < Formula
 
   desc "Convert HTML to PDF"
   homepage "https://www.courtbouillon.org/weasyprint"
-  url "https://files.pythonhosted.org/packages/6c/a0/f6b3ef688e747488b17b3b39d27fe7438d3ec88d1b79d5524485a5458020/weasyprint-64.1.tar.gz"
-  sha256 "28b02f2c6409bafce1b1220d9d76a7345875bd3bd08c4f6dfbf510bb92a94757"
+  url "https://files.pythonhosted.org/packages/97/3c/5cb34d190928c16a3a8fd6ea00c6d12f4d0afe5e31069af147f2b7871fe5/weasyprint-65.0.tar.gz"
+  sha256 "3c679de96a7c871ae00f08cd1e77200f33e2a49d35e209c721159327578df988"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa8ab16397a6418c6ec0e7477a65cd0b37c14c4df530562dc10cc87c26d81c73"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39572f30dabbcc1ee85cd4cf86790600ca6f4f9154bdb859574b2de2ab72570c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "295aac96d7713dc23d01b81e8183b72eaed217194500188dfbebc19c3697fb12"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cd68e09e33bf8b0ada1b5b2f2408d2d200abbffbcd532f0de7cbd708579c50d4"
-    sha256 cellar: :any_skip_relocation, ventura:       "46f97035f495a30cc9163c37522976b0c1280de53d1f2269182a26cb89548f8e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51617cc139e8e70a44de14c13fc542727aec6a83492e0c9e0d9f73d488959c07"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64a8d8e7c8df0e78cd8e7de00af14b2de9316e43525474a20c488843f30b36e2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e66e567aaf3de16f289fea0835e43ee2266e57c89dd00e7e9a7ffee0c3339874"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2049c84ed6795c62d6c26a0450b63077fcecfd3bd4a250f1b81866f62d6b4cf0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "27557f500576bfc3f7ed67ec5e024a1631044b054eccb9b88fdee0e6edd789e9"
+    sha256 cellar: :any_skip_relocation, ventura:       "6e613821c9a3c1df2ab61308a243924bc63806771846faaa5e240978d3686406"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd8713b93d51c784ee9d7290641c416f6050616862f5409ffae5374db6786ef9"
   end
 
   depends_on "pango"
@@ -33,8 +33,8 @@ class Weasyprint < Formula
   end
 
   resource "cssselect2" do
-    url "https://files.pythonhosted.org/packages/e7/fc/326cb6f988905998f09bb54a3f5d98d4462ba119363c0dfad29750d48c09/cssselect2-0.7.0.tar.gz"
-    sha256 "1ccd984dab89fc68955043aca4e1b03e0cf29cad9880f6e28e3ba7a74b14aa5a"
+    url "https://files.pythonhosted.org/packages/9f/86/fd7f58fc498b3166f3a7e8e0cddb6e620fe1da35b02248b1bd59e95dbaaa/cssselect2-0.8.0.tar.gz"
+    sha256 "7674ffb954a3b46162392aee2a3a0aedb2e14ecf99fcc28644900f4e6e3e9d3a"
   end
 
   resource "fonttools" do

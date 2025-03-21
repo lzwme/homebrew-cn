@@ -17,6 +17,7 @@ class NodeAT22 < Formula
     sha256 arm64_ventura: "b3cc3ed610a2e53fe096241a91bbd46f047584235e456f49999e60b3aba73351"
     sha256 sonoma:        "b31280c3f58310ebf4e24acdda393b2e1d4e78a6b2e4741fb9a3165b178fba8e"
     sha256 ventura:       "986eb123404c0939f92cdde234bd27da79e8d6da5936a1a9959bea40e1215560"
+    sha256 arm64_linux:   "43325813af64b9038b3f5914e03b5cdf7c3f35f1c4d2d3042309b0ba8173a1bd"
     sha256 x86_64_linux:  "abda95a82a5626a7588898044e0de5ea6c2a3413bbad273a555d7aabb4397a10"
   end
 

@@ -17,6 +17,7 @@ class Eccodes < Formula
     sha256 arm64_ventura: "d119abb244cf287d71c062655d2833c82b717575a14cec8c72c927c4202ee39f"
     sha256 sonoma:        "f9113e5a8427be24b469da5794ad46f67143fc127c2255b2c96f972d52a90faa"
     sha256 ventura:       "bda65f7d3788109e09e48ac2f7c704c105a0c3d83f2682db4e3637cbb9272dd1"
+    sha256 arm64_linux:   "d850a4f42c58c2b16ba5bac48a04f59b2194fa5179f97d431b3f8f9954280419"
     sha256 x86_64_linux:  "9fb1affd973a32a59c3472384e611e36ff51b9b2d32d0243ab0dab35ab4c1c4a"
   end
 

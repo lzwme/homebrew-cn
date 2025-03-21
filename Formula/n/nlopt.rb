@@ -13,6 +13,7 @@ class Nlopt < Formula
     sha256 cellar: :any,                 arm64_ventura: "e401c6382cc8b7d25ea8095554443a881fa0cb02e935b7dfd5eece47d7429df8"
     sha256 cellar: :any,                 sonoma:        "53909c4a84848ff62246d64f07df563bf63afc5076b05a6fde82e3e9095f85cc"
     sha256 cellar: :any,                 ventura:       "3d1d6b2321c6999b121cc84e40f066f8a909a652dadbc7e0ae3e438155d977fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "633654bcc4170038a67d07575d365a02e470ced5d15d97c098460c522adf09c4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b98fc2b074ae63ce6fbbedce14c22165c7cd91c661895c9f36aa9aeccf3fe790"
   end
 

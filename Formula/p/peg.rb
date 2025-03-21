@@ -22,6 +22,7 @@ class Peg < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "dde90ca660bdf7d086e1552195a2f6523550c77ce846a1ce6b72381046594861"
     sha256 cellar: :any_skip_relocation, ventura:        "c5093be933ee74c35e8eef5805da9db1cc5f4f5312482039dec5abdc39a9da75"
     sha256 cellar: :any_skip_relocation, monterey:       "e0189aa87097be5b4d6bdb026201d3920fc085df5aa33b250cd7c3c0bc0228b9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d4cf66155b03b7df188f33b1df5bf9b7f529a3544416292795414a6fb613b741"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "344b71933baafa8d0d1e9c685b67f73726f5f6372953346ae8460edab2acc015"
   end
 

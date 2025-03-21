@@ -22,6 +22,7 @@ class Libgxps < Formula
     sha256 cellar: :any, ventura:        "d23e0dfb5092636567f86a31839a04fc0831253eb73dc0863929c9c71d648be2"
     sha256 cellar: :any, monterey:       "e523554e0a7faa5c8f0a4ff842f4b462d9cb24411d3f855cb4f7e4eaded44fe2"
     sha256 cellar: :any, big_sur:        "187f95bca68a60db5155a911033be4eab80537598f5dd788a3edbbb7303fe5a5"
+    sha256               arm64_linux:    "c230ad46a5f67b2e3862f8d76c1a2e8b92fb59815e06d9265704d6940ae8e218"
     sha256               x86_64_linux:   "0fda080a2b1da025e6d6aef7a9e4934fefaabda48cc9c080088e1146cead5558"
   end
 

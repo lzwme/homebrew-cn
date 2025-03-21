@@ -13,6 +13,7 @@ class Hydra < Formula
     sha256 cellar: :any,                 arm64_ventura: "ddfa012421a719f0299339726f34303ac70cfc84bb8be9f60faee15c9c670ac2"
     sha256 cellar: :any,                 sonoma:        "8e7d6db10c76332a98db7be88357089ad50d984fa057382f1513aaed157f1bfd"
     sha256 cellar: :any,                 ventura:       "0cf381bd263ece00b7174f9cf025055616688e77774bf9c9bf7a298a0876a33d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d8c55399e4bbb56fb9e2f50f99f894d7d729582cdc53e8cd2682f0593928f80"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b289ab00cf96e4b7a327102991a0d1787756dcdca1af594828c05ecc4e86e075"
   end
 

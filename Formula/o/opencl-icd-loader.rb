@@ -12,6 +12,7 @@ class OpenclIcdLoader < Formula
     sha256 cellar: :any,                 arm64_ventura: "5a4d5eadae6145a4af771b5ad522c1aded5748287844d02dd22917f292a3fec6"
     sha256 cellar: :any,                 sonoma:        "a639175e931247933d74fc27cff123e75c313ab12b53d45037f58d86a0a15636"
     sha256 cellar: :any,                 ventura:       "738951620c894c8550ee9bec207375649f79c3b8dcbb8c13b528d19df336ed42"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "197ba359c64d660b2a44bb0f9e688eddba9c033bbaf377b9d55c3a3daa8662d4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "86de1cb308f14d4b4bc63ad1bf3b7107a2ab8da41735bdbd287b584ce1902986"
   end
 

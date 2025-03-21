@@ -12,6 +12,7 @@ class Zix < Formula
     sha256 cellar: :any,                 arm64_ventura: "b8c3832ec02675aab399184719cee2875f180499de50384dd22b49a725458e28"
     sha256 cellar: :any,                 sonoma:        "36f4526e82d1f62246b84b8237752be4d9931cc2490704b8a99cd88fe47fd487"
     sha256 cellar: :any,                 ventura:       "8150b763b4d195e8f6a891ec43780af77851c7c7abd516b856177570323452ea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aeae53fce7afe265ce9ea5a32dfe62f64c937e534273f6cb6b6d199a490b47df"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d635d3fd06b65cff8b6d49c9a78e33b214937b63c4a0c43b0df6ace47e2ecedd"
   end
 

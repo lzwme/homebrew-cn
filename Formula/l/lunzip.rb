@@ -16,6 +16,7 @@ class Lunzip < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f061dbeb231b41011d5c925239ec0679c7456eb9242bab6155c55553930bd7b8"
     sha256 cellar: :any_skip_relocation, sonoma:        "71198791087ef6380858c64097848d8f9d8860e65fd6fbab3fa1c45e018f39b4"
     sha256 cellar: :any_skip_relocation, ventura:       "1a41f6efcd7b83a0ee333075ab595c66eabd0e7228ee2fdd3629d34e1d474d74"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c3ce13001ea04a7c88a7611cb9f2447bd2cbfa654cef5382a461b42538d0218"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "33207f9159131abd7656dc1f657bca8a18b90853a83f32506fa82996296d265a"
   end
 

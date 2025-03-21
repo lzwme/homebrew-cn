@@ -11,6 +11,7 @@ class Lsof < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "03d4db66c9789321451d318f624429d10ecb8eb4e6a6f8673a7cfa77d0417901"
     sha256 cellar: :any_skip_relocation, sonoma:        "6b39fb2ccf6675270d8c3ab4e4e28b25622b5416b6772e53c59bb8c49f72bb06"
     sha256 cellar: :any_skip_relocation, ventura:       "140084e5e184dc4a3543bee49fb67183a440c998d28c8f9c1ac3089b02f557f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e24fc77e7ff568fda5a3a5bc1866c763b99949d5cafed8e01f33dfb10028d16"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "888180a7668c87bd0f636a1c3699e4221c1fcf2ffc9def34538f7687def47a09"
   end
 

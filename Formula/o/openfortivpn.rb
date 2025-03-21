@@ -12,6 +12,7 @@ class Openfortivpn < Formula
     sha256 arm64_ventura: "39bd9a1bd6b7a26eb5a10a4bbd2a3ed9d50b72aa1b80d64fffe95430734a36d8"
     sha256 sonoma:        "638d300356138d5dfb66500e01e71b2e07d7fdfbf6151cf4b3d389db04744c33"
     sha256 ventura:       "b3c8630701ae6d1ee308c0e4e72885e296d59bd83fec77eb21d7046e3c6a50fe"
+    sha256 arm64_linux:   "9803841bf3a552d2220d7a213b6337cbae3cdb6759632105aa5c98bedaeeee51"
     sha256 x86_64_linux:  "9182218ccc8af0571af8445f8458843d61056e6186407293707c2d27f2e88903"
   end
 

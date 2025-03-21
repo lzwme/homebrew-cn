@@ -17,6 +17,7 @@ class Dlib < Formula
     sha256 cellar: :any,                 arm64_ventura: "f0901f40485da2a73754ee3e2badb330ed26c11956f30014c155f3a78be4f473"
     sha256 cellar: :any,                 sonoma:        "ce1d25c470eab70aeab6ce93ce72f1e208d680ed9aa66873ea5094c29ae70e04"
     sha256 cellar: :any,                 ventura:       "58b309a698357a39bfaa908f473f0f33df35aaad22b4120ab87f3b284abe34a8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3083eaf4ca63b9f2359c0e9f0d7a9176c387e4e74924261282937ab8c41ea600"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b223e31660981e25df9e9febb186ec33796f9fc7a9e78a7c2adc46f762e06e57"
   end
 

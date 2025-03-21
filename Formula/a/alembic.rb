@@ -12,6 +12,7 @@ class Alembic < Formula
     sha256 cellar: :any,                 arm64_ventura: "805fdb868569c1d52f0014d0fe5c33ec94351295713cabd827d6604ec59b931a"
     sha256 cellar: :any,                 sonoma:        "9b999957a0cd7bb166cbaab35e65c2b29fa7571366d7140548469cb416fa0a7e"
     sha256 cellar: :any,                 ventura:       "b0156c9b787c034db3f133800446abae92cb2d9ad778cc28e76c8e2794b9a72f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf3154912b2a9e4e2bdb3c8b96774ac964729107d0696c8edda544444693b849"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fef41d868f2c1ab7bfe69219612f1958056e6396dd5055d8320a6a952dca4e2d"
   end
 

@@ -14,6 +14,7 @@ class Fonttools < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "cc45b11ac5b23e27ed420660d66b5d1185f2f987b9962866476deaf51c36b209"
     sha256 cellar: :any_skip_relocation, sonoma:        "ff809f1f4207d28dd5f91cea615302a2d62052ad077a77e45382f406b933e2c1"
     sha256 cellar: :any_skip_relocation, ventura:       "dbbb69addadc5fe910e44d27057975defca804f759fd1b55d624f9d24c9d22ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ae168694a9dfe22640f677a10c14fc08226a2fba8f9003b9168f4e9545cd515"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "60ee4762156e4e54b7ac029d08b0790c20c4138e6b467b1f08963fe3c11b8d48"
   end
 

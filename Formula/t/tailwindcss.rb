@@ -1,8 +1,8 @@
 class Tailwindcss < Formula
   desc "Utility-first CSS framework"
   homepage "https:tailwindcss.com"
-  url "https:registry.npmjs.org@tailwindcsscli-cli-4.0.14.tgz"
-  sha256 "a0b7af4177aa9354c6dae9e4e8c4eab3a83dcccec102def2cb7915be60593053"
+  url "https:registry.npmjs.org@tailwindcsscli-cli-4.0.15.tgz"
+  sha256 "c3816027d8566634437762da8a17635b5c50007e496b884a4fcdbe0e9cef8ed4"
   license "MIT"
   head "https:github.comtailwindlabstailwindcss.git", branch: "next"
 
@@ -15,12 +15,12 @@ class Tailwindcss < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "c231f2865bd4aa6f632de9d8df243a10db2c789994c6a43395eb3d9a3927736b"
-    sha256                               arm64_sonoma:  "84987d0b7d512de77c2fd070b1d8c84fad63d25c36e8cc1b9d28c31a144c50bc"
-    sha256                               arm64_ventura: "de36572cf74d355c24d7ecd1eb6b1a56567b419a632ea30f74135fd3a2525632"
-    sha256                               sonoma:        "921643935d5d20cf213e9a8635c1fcec0ab16c62d14fff7fcda00df407c619f1"
-    sha256                               ventura:       "2364e1f16be46e83652dda0f824f853afda5b06f391f0a7a4d7bbdde36a72595"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2da3b18334d9248ee748ce2eb75c39c656c3417742c22ffa01ebb3d3b6a195f"
+    sha256                               arm64_sequoia: "7ea79a2756f9a60b3ab473134b7677c85b2c8c1db647cd5a1504ccb28408f200"
+    sha256                               arm64_sonoma:  "c218e09361876533cc506865e777ed776b4be5f06a07ca0bee5f5d7b35fa4b09"
+    sha256                               arm64_ventura: "090b8213e9fe89f3ade8d8ffce952e7f62ca1f07bbe6c07d600040a46d782461"
+    sha256                               sonoma:        "aa25501ba9c1e7a6890be38e1d2ebb2535542c0ff9d6427d88032a0c1aad3269"
+    sha256                               ventura:       "b6afac39b38f0b18671ad136786c3c1cff358cf0782bdbcb9e0a23e067636bce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "397095bfff1eb9020e0c5fd6923c921a0690d720c094a905181bd3ade38f6592"
   end
 
   depends_on "node"

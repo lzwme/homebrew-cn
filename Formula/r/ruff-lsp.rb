@@ -3,8 +3,8 @@ class RuffLsp < Formula
 
   desc "Language Server Protocol implementation for Ruff"
   homepage "https:github.comastral-shruff-lsp"
-  url "https:files.pythonhosted.orgpackages8c36d1dae5ae5cc7b9da0d4aebb0f579dc9154f588e76280dbbe51141f1ffdfcruff_lsp-0.0.61.tar.gz"
-  sha256 "4a1704dc96dc1353557b5edd0733768f3948cfc92042fd332927648e080754bc"
+  url "https:files.pythonhosted.orgpackages18118e445dc55753efd45e09882ad0468f4a5650f33aecdbd15c7a52e8e0c3c4ruff_lsp-0.0.62.tar.gz"
+  sha256 "6db2a39375973ecb16c64d3c8dc37e23e1e191dcb7aebcf525b1f85ebd338c0d"
   license "MIT"
 
   # This minimal `livecheck` block enables us to continue identifying new
@@ -14,7 +14,7 @@ class RuffLsp < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9923bd6918b8ee785e265492ded1e3422e9e2f4ea2dfcbed11801acde3a3751c"
+    sha256 cellar: :any_skip_relocation, all: "3eb98e50688bf67252e5779a8948914ae7d063ba511672001fb12d2f498d5316"
   end
 
   deprecate! date: "2025-02-06", because: :deprecated_upstream, replacement: "ruff"
@@ -23,8 +23,8 @@ class RuffLsp < Formula
   depends_on "ruff"
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackages497cfdf464bcc51d23881d110abd74b512a42b3d5d376a55a831b44c603ae17fattrs-25.1.0.tar.gz"
-    sha256 "1c97078a80c814273a76b2a298a932eb681c87415c11dee0a6921de7f1b02c3e"
+    url "https:files.pythonhosted.orgpackages5ab01367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24attrs-25.3.0.tar.gz"
+    sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"
   end
 
   resource "cattrs" do

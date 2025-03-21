@@ -30,6 +30,7 @@ class Augeas < Formula
     sha256 sonoma:         "8a2fe89ec726bcc30aeb669014f3a22dee5f5d649cd35f32839fb41f01ac1e10"
     sha256 ventura:        "9ecddaf5c923d43477fcd22de3949bf85bdadd5c69c424af840e7e636ecd47de"
     sha256 monterey:       "39ec06ee5c541c591d89ed0770a9b6de354f4df19413217d70eecf272e4662b2"
+    sha256 arm64_linux:    "ba1db64d2aeb385be8c6b34cae38571d0c05693ce273115b0e88a8352a801aba"
     sha256 x86_64_linux:   "b42ec1edf00ea7a66acff5ea7286a68b5bbbfa49442a3ab818f8c6c13eafdb32"
   end
 

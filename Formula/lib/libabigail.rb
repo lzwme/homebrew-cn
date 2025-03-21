@@ -11,6 +11,7 @@ class Libabigail < Formula
   end
 
   bottle do
+    sha256 arm64_linux:  "ce24e91aa88f6787d8cbe126381cd8972e679328b7cbdaf64d9b57d80dd6ac0b"
     sha256 x86_64_linux: "39bfad0c9e5cbb11821b3ee99ae6e599d84a20343eb8ae49294c88d2514da12a"
   end
 

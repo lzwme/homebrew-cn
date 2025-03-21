@@ -22,6 +22,7 @@ class Yara < Formula
     sha256 cellar: :any,                 sonoma:         "08745850a5902430099341798ccf146d61db89764d85d32d559b9bfd608f5868"
     sha256 cellar: :any,                 ventura:        "36b82987bed553aeff295abd55ee25469db18714cff30d504e49fe15d01c4294"
     sha256 cellar: :any,                 monterey:       "b8a993c8e96054b76a06e3c0f0248ea9b628ae2588f22c70d75a2c0a824036c8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "05a66f4358b789e051898934b3986fe9915c39490860db7849133d52b0875d7a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "37f94439dd9022c68397c7b3dee8de603e58a052fc5170d9674bcf57e9a74dd7"
   end
 

@@ -17,6 +17,7 @@ class TransmissionCli < Formula
     sha256 arm64_ventura: "8176400e94d9c4f5a33034b353021ccc35f55663f8d31f11bbf23ce78123527c"
     sha256 sonoma:        "0237d99f85751e50e87c31577c7903680c5f16051c1541a0b84865bb22e237ec"
     sha256 ventura:       "3268040e7f67f734934bdaa0e7c439bc120c4ba12ac06f345e74b2b633298ae1"
+    sha256 arm64_linux:   "6c0d31567892d665e133f24ce529e7dde3fceeaeadcadb776c7d7a18cf77b971"
     sha256 x86_64_linux:  "ef83d1cad5d89e26eea96e4ed7fe42769c94947735ca013fe7b8a8bdc0e007e2"
   end
 

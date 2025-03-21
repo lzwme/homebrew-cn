@@ -19,6 +19,7 @@ class Gmssl < Formula
     sha256 cellar: :any,                 sonoma:         "7455eb22baeafa0ad277b44ba5a04f60fdbfc87e9140562bdf6231b747c17083"
     sha256 cellar: :any,                 ventura:        "ab4cced1064fee652a7f88d0fd34d2658ed53e0bd657ec1cf82905651a4c4977"
     sha256 cellar: :any,                 monterey:       "748de4b6cfb67d0e170f69355f6ab82bfb3709fc2e744b48bb173f66a11fdb29"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "518ec7266886c426bcd7d409d53bf012d681efd2701a4454ce29082547a8ab9b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "623f545c3d4d999cba1a76c2ac9960008aefa519965b1b86b431505617eee727"
   end
 

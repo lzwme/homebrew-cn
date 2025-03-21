@@ -6,6 +6,11 @@ class Limbo < Formula
   license "MIT"
   head "https:github.comtursodatabaselimbo.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d16dd128bb231a5350944f62b9bdaa698bae5ffec78ddf97cb9c80601f21c6f9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44a672b940eac21b6602e6c9517cfbaaed4a3202050603ec97d691dbd2a7fced"

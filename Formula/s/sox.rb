@@ -12,6 +12,7 @@ class Sox < Formula
     sha256 cellar: :any,                 arm64_ventura: "719011d445046c330686ae5fef7df2561b14c9f966025263bb948b176b528552"
     sha256 cellar: :any,                 sonoma:        "b9caf7383de463f53526e60b33f07792bcbd89a99d358ed76ed91df4ac580b58"
     sha256 cellar: :any,                 ventura:       "a582da3eaee0febd63765341ba7e70fabc57895f7595641fe1565dff40929231"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "526bdf965df84741c4e639c24931f3f03e9b19d438caa735192214e1831d809f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c44da47de6f97f6e1542c5757a01e7aa1dad4ba631d2ae3eb0c24c1bca09a5d"
   end
 

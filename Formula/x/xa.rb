@@ -18,6 +18,7 @@ class Xa < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "fd9d22c1fce31ad677470ef11937c660ed9ff4c852b57e232f1b09cd1ad19d38"
     sha256 cellar: :any_skip_relocation, ventura:        "e7aa2f3a2f025247bf99f94effbaac96b06949b604baa03d8777160cacb782d5"
     sha256 cellar: :any_skip_relocation, monterey:       "52344939bcd8aa7e47a27f2bce0b0f2b0f4d94145dd5bd1ae11a01bcf513e5d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "988caaf9671af8cb7f041f4ef6380bf738ee75080321c41f4e45a391bf984a26"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4e35f6c603bbc9e5a84d41c3b9980f572989c8573139ff3438e36304745a5950"
   end
 

@@ -17,6 +17,7 @@ class Radare2 < Formula
     sha256 arm64_ventura: "dfaea432a6a13e9b8a614dcf3b3011acd19e7264d545b134a31527da74c5387b"
     sha256 sonoma:        "a8077a79e428ab9ea479720de7639374bbdf27c1458ed464fb0e2cb7d6a35a94"
     sha256 ventura:       "4688b0cdaff8b2d8ab3910b8f4c40d3df69282ae89c742735e0155564ceb6e0a"
+    sha256 arm64_linux:   "8cc9896896aa6f94299dae64f0e793075604f900fdb5620a1761e2254895eb6d"
     sha256 x86_64_linux:  "3945a5e9b1b47d9f11b14c44c5ccf849dcae3be42aca6f3d7b112cd8601c11f3"
   end
 

@@ -13,6 +13,7 @@ class Axel < Formula
     sha256 cellar: :any, sonoma:         "10439c6710098fb8022d91ce619e8c459810845beee5d20f2aab33c6cf1a13df"
     sha256 cellar: :any, ventura:        "5ca2bc10eba04c8efaf32c380ac81f6b3da6a3a8a0dd28013a9000d06a76dd4e"
     sha256 cellar: :any, monterey:       "70f5c6208758d713185fe924ef3778b4a72e81c29660b495c1cdab5c2e968685"
+    sha256               arm64_linux:    "5a1e69568f0649bd3fc53694bf840b8a626e507c11cbb12496b8485ac82553af"
     sha256               x86_64_linux:   "bf422304c452796fc7a1c020f7bf067fe1ff5eb7be4757a56b249eef815dfa9d"
   end
 

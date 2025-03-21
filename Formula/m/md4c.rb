@@ -13,6 +13,7 @@ class Md4c < Formula
     sha256 cellar: :any,                 sonoma:         "1c0f5cba7d83945b1d458e5dfe5b0fbffd698f7f15a04c63b19f96ed8967a6dc"
     sha256 cellar: :any,                 ventura:        "74a1f6056f0ee6860fa3ea51e0018ccfeabfb6f9db19b3f2ac924c3792c8644a"
     sha256 cellar: :any,                 monterey:       "e1ac92816bcad76852239c7963853b648d99f39d46fee483027ccd3997e104ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "bddcdff231d805814edf2992309a92dee28f6db946465d74cae3bb4888509a97"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "70158ffa050cd2f2ca59f5341051208cc96ca416f026e09e8db469683eb93eac"
   end
 

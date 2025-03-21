@@ -17,6 +17,7 @@ class Mac < Formula
     sha256 cellar: :any,                 arm64_ventura: "db0479855c6cdb25ad011997b36e081496f7c336664e91d83d63b4bac7a5fdc2"
     sha256 cellar: :any,                 sonoma:        "3e718d7aacc7d15046aa7fdd95e651a3119ccd5489325123ac07079a026ce7cf"
     sha256 cellar: :any,                 ventura:       "4faf7f64d4a7d532ff27e349f06cf89f19329a17bb98dec19ca9f4bac29705f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba43955138dcd4bc32b8e7ad4a9ffb62c86918145288e1b5b10db2c15fc56211"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d22279e7212b6ee3b924609b33a8a7092bf2ffaf8d654c814c9197909e90ca7"
   end
 

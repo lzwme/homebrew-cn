@@ -12,6 +12,7 @@ class Spdlog < Formula
     sha256 cellar: :any,                 arm64_ventura: "3f8d302da9534fe6144c8abf8d9091f48d0a193822af0c66065c4bcf8a384c8d"
     sha256 cellar: :any,                 sonoma:        "7d5bf4df33d3a3b76010510e8120c49a7cd827be44a709207ee065dc5884f06a"
     sha256 cellar: :any,                 ventura:       "08824198423b4bfa3365c00a7680118b3941212db20fe8cbe7da27498f2de9a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "874232f6402a61681545052f0c911e27217bae27789f2e8f13d79d7ab03eb3b5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "08192ff5ff7f276d9727f5c8c4215be2e4c5b565544a777b4f238888102b854e"
   end
 

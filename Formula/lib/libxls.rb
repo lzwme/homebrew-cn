@@ -11,6 +11,7 @@ class Libxls < Formula
     sha256 cellar: :any,                 arm64_ventura: "d265631b00cebb4c0afc5dce7e1aa31c332e50022b1b3718acdb10bc68639021"
     sha256 cellar: :any,                 sonoma:        "dfbc41b4db8cb154d168ccd41d8a730400fd49b73239cb6fc1d2b1ef15b80e96"
     sha256 cellar: :any,                 ventura:       "6ba571cf05be33a069621adc5e455983a26ce132f55bbee5ed2b3b6cab98cde7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "773ca56b2f5b6b529843780b77ebcb600a813970eaedeb0a07cdac45fa8b8d85"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "af8e8be72b0f2317a9901db68e14b77595d48da2294df10ef3aafc2aeaa9df02"
   end
 

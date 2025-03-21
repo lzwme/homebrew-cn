@@ -17,6 +17,7 @@ class AvroC < Formula
     sha256 cellar: :any,                 sonoma:         "9b78764d59ba53b7472c07367e63f04b3168ddbb0dac230216e4188165285b10"
     sha256 cellar: :any,                 ventura:        "21ab5db9c56aeda49e97fd561116d8e554b7bba66d2d3cb7d19db4cb40fc1852"
     sha256 cellar: :any,                 monterey:       "fe874bc1b1f28d006e362b10543cb63b06ceb99baaa90b1d4ac9c87b33d24ffe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "856002dd51c19c19e61cab28f5d6990a9b4f1e923f1bab94f3096b8136eb2dce"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0385f75fb76a3c8bf9cb71e85a0db0c5b1563481ec19afdb6f985a58065c4141"
   end
 

@@ -3,24 +3,29 @@ class Pylint < Formula
 
   desc "It's not just a linter that annoys you!"
   homepage "https:github.compylint-devpylint"
-  url "https:files.pythonhosted.orgpackagesd5e73616e8caa61f918c4864db075800a6bd7422621618045c188fd45c3f7a2bpylint-3.3.5.tar.gz"
-  sha256 "38d0f784644ed493d91f76b5333a0e370a1c1bc97c22068a77523b4bf1e82c31"
+  url "https:files.pythonhosted.orgpackages69a7113d02340afb9dcbb0c8b25454e9538cd08f0ebf3e510df4ed916caa1a89pylint-3.3.6.tar.gz"
+  sha256 "b634a041aac33706d56a0d217e6587228c66427e20ec21a019bc4cdee48c040a"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "31df50fd578fd30941d707c499d7772a797c0eba3ffd0f9c3ed6e71238e1ead2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "31df50fd578fd30941d707c499d7772a797c0eba3ffd0f9c3ed6e71238e1ead2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "31df50fd578fd30941d707c499d7772a797c0eba3ffd0f9c3ed6e71238e1ead2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "900e103636d3202dd1f8020868156ff9435f34035770c3353c0ed5a73f71b1fe"
-    sha256 cellar: :any_skip_relocation, ventura:       "900e103636d3202dd1f8020868156ff9435f34035770c3353c0ed5a73f71b1fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71232164d324ef1d97f08471ab538f64df0884a2641d53f1aec7a6bde6b7c4e7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a9aabc718cabdf37f82b21f653afbf7ee80ce71d6312eaa3a80e89b183a25e1b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9aabc718cabdf37f82b21f653afbf7ee80ce71d6312eaa3a80e89b183a25e1b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a9aabc718cabdf37f82b21f653afbf7ee80ce71d6312eaa3a80e89b183a25e1b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "28a575b0b0b228a89d98654c3dc8a19918dd217e7275f8d69d5e0633754e55d8"
+    sha256 cellar: :any_skip_relocation, ventura:       "61a5b3fd549cc307a71a2ee6dd7473681c81143b1002aee0bd00ebc7409c3677"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee51774a3f3f096cb0bb517b7e0e52c3323960adb9d37a7f015cf6ee73b1480c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c88c619245a7f5c33aeca56d9704b9f23815327f634c65f0db1e24645f4ef233"
   end
 
   depends_on "python@3.13"
 
   resource "astroid" do
-    url "https:files.pythonhosted.orgpackages80c55c83c48bbf547f3dd8b587529db7cf5a265a3368b33e85e76af8ff6061d3astroid-3.3.8.tar.gz"
-    sha256 "a88c7994f914a4ea8572fac479459f4955eeccc877be3f2d959a33273b0cf40b"
+    url "https:files.pythonhosted.orgpackages3933536530122a22a7504b159bccaf30a1f76aa19d23028bd8b5009eb9b2efeaastroid-3.3.9.tar.gz"
+    sha256 "622cc8e3048684aa42c820d9d218978021c3c3d174fb03a9f0d615921744f550"
+
+    # fix `setuptools.errors.InvalidConfigError: 'project.license-files' is defined already`
+    # commit ref, https:github.compylint-devastroidcommit9faee90fdb66049162834a8bb066c6cb40a0e449
+    patch :DATA
   end
 
   resource "dill" do
@@ -39,8 +44,8 @@ class Pylint < Formula
   end
 
   resource "platformdirs" do
-    url "https:files.pythonhosted.orgpackages13fc128cc9cb8f03208bdbf93d3aa862e16d376844a14f9a0ce5cf4507372de4platformdirs-4.3.6.tar.gz"
-    sha256 "357fb2acbc885b0419afd3ce3ed34564c13c9b95c89360cd9563f73aa5e2b907"
+    url "https:files.pythonhosted.orgpackagesb62d7d512a3913d60623e7eb945c6d1b4f0bddf1d0b7ada5225274c87e5b53d1platformdirs-4.3.7.tar.gz"
+    sha256 "eb437d586b6a0986388f0d6f74aa0cde27b48d0e3d66843640bfb6bdcdb6e351"
   end
 
   resource "tomlkit" do
@@ -60,3 +65,36 @@ class Pylint < Formula
     system bin"pylint", "--exit-zero", "pylint_test.py"
   end
 end
+
+__END__
+diff --git apyproject.toml bpyproject.toml
+index b0078e8..fcc3996 100644
+--- apyproject.toml
++++ bpyproject.toml
+@@ -4,15 +4,15 @@ build-backend = "setuptools.build_meta"
+
+ [project]
+ name        = "astroid"
+-license     = {text = "LGPL-2.1-or-later"}
+ description = "An abstract syntax tree for Python with inference support."
+ readme      = "README.rst"
+ keywords    = ["static code analysis", "python", "abstract syntax tree"]
++license     = "LGPL-2.1-or-later"
++license-files = [ "LICENSE", "CONTRIBUTORS.txt" ]
+ classifiers = [
+     "Development Status :: 6 - Mature",
+     "Environment :: Console",
+     "Intended Audience :: Developers",
+-    "License :: OSI Approved :: GNU Lesser General Public License v2 (LGPLv2)",
+     "Operating System :: OS Independent",
+     "Programming Language :: Python",
+     "Programming Language :: Python :: 3",
+@@ -40,9 +40,6 @@ dynamic = ["version"]
+ "Bug tracker"    = "https:github.compylint-devastroidissues"
+ "Discord server" = "https:discord.ggEgy6P8AMB5"
+
+-[tool.setuptools]
+-license-files = ["LICENSE", "CONTRIBUTORS.txt"]  # Keep in sync with setup.cfg
+-
+ [tool.setuptools.package-dir]
+ "" = "."

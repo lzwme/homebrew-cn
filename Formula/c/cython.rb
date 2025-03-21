@@ -11,6 +11,7 @@ class Cython < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c9a43ca2229987dc45aecf953209472b3ec76d5bd8e155b139680019e7dc7bce"
     sha256 cellar: :any_skip_relocation, sonoma:        "aeaa52ed2d4fc58b91577811eed2e022e6b24da4d4cd8372d862c834c1d5f887"
     sha256 cellar: :any_skip_relocation, ventura:       "1a9c68f744399dd4ae2685056120c84a3a7c6e2c82ada4917635484f4ed8bde5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c741c3b0f335532211ab4746082a1c50e766f558eb9af037747e3bad342f9039"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d62655bdfcaacdaa6776745dc1f9eb03afc1d704eb981907e4d519f33ead631f"
   end
 

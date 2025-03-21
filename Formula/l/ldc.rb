@@ -1,8 +1,8 @@
 class Ldc < Formula
   desc "Portable D programming language compiler"
   homepage "https:wiki.dlang.orgLDC"
-  url "https:github.comldc-developersldcreleasesdownloadv1.40.0ldc-1.40.0-src.tar.gz"
-  sha256 "80a3ddd7b7292818cdf6c130e55f1246a19b5fce96139a49b45ccf4e2be99e5f"
+  url "https:github.comldc-developersldcreleasesdownloadv1.40.1ldc-1.40.1-src.tar.gz"
+  sha256 "b643bee2ee6f9819084ef7468cf739257974a99f3980364d20201bc806a4a454"
   license "BSD-3-Clause"
   head "https:github.comldc-developersldc.git", branch: "master"
 
@@ -12,13 +12,12 @@ class Ldc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_sequoia: "e808f999194ca3eba130a0af7a1d22dc3f4b3517585ac8cc9c7683b297660871"
-    sha256                               arm64_sonoma:  "f1d86593fcaea9f4b538b3fbe5d670f0b34fad8e164b6f065f6bd789e5628fe8"
-    sha256                               arm64_ventura: "e5c0f5489f286dd3e95a96a7bd5e83d2ee3fc603492ff5a36379332b25215b47"
-    sha256                               sonoma:        "ac627761215658218e7ada36064408e571b6aab4478a269e51d9f2e1f1e35560"
-    sha256                               ventura:       "f7991b66fa0f9fe37b009ff096d3ab0800f4707ed1e594b20082fedd57c2ba82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efc8a940fd3aa01005a8b9f646eb8937da4c98d1141a4f7c661dee6aeead8fe4"
+    sha256                               arm64_sequoia: "679a6edb5cf0936eccf07bfb8911c26d94be9a512031ce56d1279403ff58ef1b"
+    sha256                               arm64_sonoma:  "0c413b0142d6a685bc3ce3d2e602fa186c7ccace9fc499da333fab528c55cd6c"
+    sha256                               arm64_ventura: "109a5a8abc99967277d3b843328bb226614fa512e933215319014c9ba58c3541"
+    sha256                               sonoma:        "a1ed0483de3d6acd31100020c3cf2ba3826f09f2e3182c5151ee15b9651beaf4"
+    sha256                               ventura:       "d2b16171d9e8985cff0253cba8c2023bdc8c67a81d9ec7cd48c489e729e58a70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56996dab133b4cfc6997306069b043b4c60ca28554ab4a2e356fd81bd323b7a0"
   end
 
   depends_on "cmake" => :build

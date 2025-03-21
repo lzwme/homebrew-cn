@@ -18,6 +18,7 @@ class LlvmAT14 < Formula
     sha256 cellar: :any,                 sonoma:         "88ef0c0f3a9876fe2831f1b7f38aee95b43fadd816b6622b76583461d685bbae"
     sha256 cellar: :any,                 ventura:        "e66da1e873688670be544c1bd796edaabfb1bd75704bf0726ec0eeb4001c9a20"
     sha256 cellar: :any,                 monterey:       "a17201d682ba0390cf148afa82e0796cfb95c8d0bd0029abd4553a4a16cd041b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f022789750bb9997fc7bfa5810d35cd3dbae901787885e92e4ef16e3b13a7ae9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "584cd6ac9de19540bce25bfb1e35af872d34f0ad5723dbb5a63c7561dfd1091d"
   end
 

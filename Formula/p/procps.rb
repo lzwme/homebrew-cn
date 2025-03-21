@@ -7,6 +7,7 @@ class Procps < Formula
   head "https://gitlab.com/procps-ng/procps.git", branch: "master"
 
   bottle do
+    sha256 arm64_linux:  "e72429535b856a66c6eef1a52332377a5f9299f6075465d1c3aeb90f0109e270"
     sha256 x86_64_linux: "db70a3ee416f46a0d7b5618a3e3036afeec4e79dc4dddaa1802f4c2475c99c48"
   end
 

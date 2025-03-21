@@ -11,6 +11,7 @@ class Cljfmt < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "50f4081bb32838491dcb65ef9b7cdb2add762058e50f57fdad550f05596e4ac9"
     sha256 cellar: :any_skip_relocation, sonoma:        "dd025dd7d09de7ef107ebe4a2c45f21a555fda1e2d400a55c64f64231f157357"
     sha256 cellar: :any_skip_relocation, ventura:       "b30d786b75af924518e992817a11bda8592e3c4b5a85365a95e22fd720c2498f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "76b02f9fe65ebe04d81ae14c5892631e4f4cdc87646be6c1764ee2b74184c5d3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e70919c21b1b7be1814c6ee3d4f7255f6d5194e456de5be43ce70e10a66e94c6"
   end
 

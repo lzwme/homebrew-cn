@@ -13,6 +13,7 @@ class Smake < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "f46933438ba16e6944354e43afc1ed55572ded080b4267af8cb2e6fb7744107c"
     sha256 cellar: :any_skip_relocation, ventura:        "76c0564c658f45e7d92c1ffaaedf2b5394ace1f29a124867288a47575f40a339"
     sha256 cellar: :any_skip_relocation, monterey:       "8cf227992ec09344d3a74e81e4aa24b5c3b6747896bba6fdf8bc5b8ca55f57cc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "3f79e77a426444a0a251b6f839ea29f95a29552b912e660ccd21cf08c5a3a851"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6b51d8b0c121455fff0ae8f7b5329566f202885e5d4ca0a8720e9a42c489435f"
   end
 

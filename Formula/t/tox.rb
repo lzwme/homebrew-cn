@@ -13,6 +13,7 @@ class Tox < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7427d21cc3fa5aa8b8a7c83b1df901f1d674e00c60bc42c010283d5d16ccdd2e"
     sha256 cellar: :any_skip_relocation, sonoma:        "063756b11bd0ad386dbf87837affb6e6c4f5ea62bc69a0de22eb5992ccf83e12"
     sha256 cellar: :any_skip_relocation, ventura:       "063756b11bd0ad386dbf87837affb6e6c4f5ea62bc69a0de22eb5992ccf83e12"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd9204109d880366ffcb97b3b9f74d8a5d4f1323b8ec0a673d47de90039760d9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e3108799b0462889e0ab49d054541308426fef2d9be8f5e1c274465a4d3f486"
   end
 

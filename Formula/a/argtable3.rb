@@ -21,6 +21,7 @@ class Argtable3 < Formula
     sha256 cellar: :any,                 arm64_ventura: "baa86eebd002149a8653eb04d365be6b4526551c7ae43cbf9753642093bad9e7"
     sha256 cellar: :any,                 sonoma:        "ab5266a8ad714236feda7b450da27138538019d765fd7311d613596cd9a82140"
     sha256 cellar: :any,                 ventura:       "b88c3b8acd8fe222ddadd092036daabe726784c2583e2665da98188af700b669"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6651b1d66020b8752956e2d278c447bbbee872f09db99828c81dbd75817c08c8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1582d82a062451b9b81bd1739f541876e41b2c821b274aba6a51f9d3009ac7a5"
   end
 

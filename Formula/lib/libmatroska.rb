@@ -22,6 +22,7 @@ class Libmatroska < Formula
     sha256 cellar: :any,                 monterey:       "e2282bbaca89473b275731eee79be5a8ac1f5402c9603be4a0545c65b2d929d5"
     sha256 cellar: :any,                 big_sur:        "1b3b6df53eb2070d742dec37fcf4f2ebf81728bfe1c64e82ac4a78bb58c80288"
     sha256 cellar: :any,                 catalina:       "3a4ca07a150e0719bc8bacedced44c6cec1116e0050095e8c669d37a4d47eb6c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1f6f5188ac26a332bf87653ef4627f5ed1220ac05aeed89f616bc5f9e4898fbb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "61b54ecbcbef470960678043620106e649fb75f05ba3b26ef6d24aad0476a9fe"
   end
 

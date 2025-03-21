@@ -20,6 +20,7 @@ class Urdfdom < Formula
     sha256 cellar: :any,                 arm64_ventura: "fc33f8045fbf5038b6c31220757525ff7a238495f3af954c78e1b6c4b9c4f55d"
     sha256 cellar: :any,                 sonoma:        "65ccd92b9505b5fcb36025705eea6e0afb58f407686fa741645b5cae9dc5fbfd"
     sha256 cellar: :any,                 ventura:       "fbd5af7974404db7c9e393a1260452fcac2075798f10910bb7f68bbb16facc12"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a19abb2c31c68f0112e1d39066385fb09c50a50b3b1b56ef989fb363455198d0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dcf978305068ebc3082801f8aa67c683d821a66f8d3cfb60712676c62df9c14e"
   end
 

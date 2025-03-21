@@ -16,6 +16,7 @@ class Cracklib < Formula
     sha256 arm64_ventura: "5798b58bebd1cd635c356812c0aa23c606b78395c193669efcb0bc8691b9d5b6"
     sha256 sonoma:        "106cf73076dbca2480f870e24c63057044b6c1bcebb4423ef74aae8c65dc154f"
     sha256 ventura:       "766a21b910e679477f796177b5241589b2abb2fd834bc6b32144ba7d731a8dc0"
+    sha256 arm64_linux:   "447895f60058339604a3bfb9956e48b4494e4c2be57cf102e3cbbf0aa5717516"
     sha256 x86_64_linux:  "3032a4afab1d0877faa7b2e27740d11632a394b3478d5e7aeb690b6badef3cc6"
   end
 

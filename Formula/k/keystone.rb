@@ -13,6 +13,7 @@ class Keystone < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a1b296425709c379e4ba6e27054a06aafa876b1fea1f4a5e8d72ff131faf2e86"
     sha256 cellar: :any_skip_relocation, sonoma:        "51d036d346993a190ad6e348e4188590bd9c953a440d4dcf2e044e2e3c700ebd"
     sha256 cellar: :any_skip_relocation, ventura:       "eba0bcccc49e5776fe9e53cdf27c2577c150ff5628d6596da02d8dd1d95f3b24"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7b6e10619b3e6bfcf7ae709db1d468690f5afd260516c982df46d1180ed414ac"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bc74b3742a7af0e95d1bda251428ebd57ff0bb6062fca7ca14d54c4ea92a176"
   end
 

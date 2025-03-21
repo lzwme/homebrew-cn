@@ -11,6 +11,7 @@ class AwsCCommon < Formula
     sha256 cellar: :any,                 arm64_ventura: "398d4669689fdff23c896412d76cd1775a1f55c771d6edec05b895a1b066193c"
     sha256 cellar: :any,                 sonoma:        "be95c58d2ec4b99edc75fb7ca9d51df9a883cb1bacd1bda30d148613cd79caa8"
     sha256 cellar: :any,                 ventura:       "4ebc8dba6139f9aceb47bf05fa70be256dac23c674229f564060391682c31361"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "426c7d0f7ca865f8c9908e0191f1a022f0909e30f025e567ac9d6290c5bf623d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f1ccb676a0d032e378e0e1bc22ebed58065bca2f3e8f21a6dad0d5c057437a1"
   end
 

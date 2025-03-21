@@ -19,6 +19,7 @@ class BdwGc < Formula
     sha256 cellar: :any,                 sonoma:         "54cd5df410fb01fc0f7a9b212b5ef40e8160e360e597b5d20e6e489df306ce37"
     sha256 cellar: :any,                 ventura:        "71c1beb334094059de83c81be4f1239e4ece22a1f7baf5c98d9682a2243b13bb"
     sha256 cellar: :any,                 monterey:       "33e2046794356d765327d03b638c8449e38a69055f801542ee4abd2ea6329f49"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "050c231beec4610f2d0a3c7bcc5cf8a7c7c6f93317fb8f990db26ba1c8950b66"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f666fdf55ce3b41704f5869120ddfd3e973051d1fc0dc32a80733f20ba15ea0c"
   end
 

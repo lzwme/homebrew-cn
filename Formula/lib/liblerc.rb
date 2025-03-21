@@ -20,6 +20,7 @@ class Liblerc < Formula
     sha256 cellar: :any,                 ventura:        "436d533a3de8a6ec1f4a099d9ee816c9a1b01cfcc1b2b933b8f5a1d4e10bcd51"
     sha256 cellar: :any,                 monterey:       "222a3e3fad0f4528161894f262458ec850ce1e8525475b7c3b4e0158f0d3c944"
     sha256 cellar: :any,                 big_sur:        "f3d0aa49310e3fcc3b88c07f8609dc1988990b9f270e3d002947a9a237ca2c5b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9f777d122d1776bb11be82bb12a18c4cfa17e2b9cc4aa5f8c807b1d16eb1138c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d409346584f40f2fd9aafa46860d7a5668b9c5f42b3de930868cf65daf556d7"
   end
 

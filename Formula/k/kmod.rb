@@ -11,6 +11,7 @@ class Kmod < Formula
   end
 
   bottle do
+    sha256 arm64_linux:  "c0b3d6bf433c975073cbab969478db7fb7b50f5e8adfa5264f2286685482f8f3"
     sha256 x86_64_linux: "a9c448f63fbe982988fd1a823f89ea41adfbf2460b8fd3f03eccae799b8064db"
   end
 

@@ -1,19 +1,17 @@
 class Unp < Formula
   desc "Unpack everything with one command"
-  homepage "https://packages.debian.org/source/stable/unp"
-  url "https://deb.debian.org/debian/pool/main/u/unp/unp_2.0~pre10.tar.xz"
-  version "2.0-pre10"
-  sha256 "e3d7a87bdc6dc0e86ab522cc93ce368d10a0bdb12959c91a01d3b4f0e3c56800"
+  homepage "https://tracker.debian.org/pkg/unp"
+  url "https://deb.debian.org/debian/pool/main/u/unp/unp_2.0.tar.xz"
+  sha256 "651764eeed41331e699ead891334e3d9512048f6891d55db7761412323622970"
   license "GPL-2.0-only"
 
   livecheck do
-    url :homepage
+    url "https://deb.debian.org/debian/pool/main/u/unp/"
     regex(/href=.*?unp[._-]v?(\d+(?:\.\d+)+(?:~pre\d+)?)\.t/i)
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "9d9e14ab7a49de2c7b75129cfde894bba09ab91ac9aa36b2fcf3214928ab0889"
+    sha256 cellar: :any_skip_relocation, all: "f8e6eebe12a5258e2798298cf372b0fd8dd80085420656f9dc7b48206073a8a0"
   end
 
   depends_on "p7zip"

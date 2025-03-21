@@ -22,6 +22,7 @@ class Halibut < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "edef3d404fd16343e22399f1f559d6b937585e4e6dbd6f2ff2a3a954f2147cba"
     sha256 cellar: :any_skip_relocation, big_sur:        "4e224f4d6f3757b28c0620022e925ea494c8d416db51c9306c87aba7619f7c45"
     sha256 cellar: :any_skip_relocation, catalina:       "df8f9c9f491fe0ac2cb55271a2f578260833733dfc7ce3d9f88ee3c9c865c5ce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5db7dd744d114aef3647f5ff961716ad0996cdc3f9efa96c9810047181483c4a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b074c7854ab9c65b56a04c63512c77e8bae8958a2beb2f0eff3b791264fc354"
   end
 

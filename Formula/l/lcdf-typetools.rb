@@ -21,6 +21,7 @@ class LcdfTypetools < Formula
     sha256 ventura:        "1dd345c1b3f20d16d2303573c9324047172f728999ecb497cb6e13c56e31c96a"
     sha256 monterey:       "81daa75ad3bfaf2257c2967749981284d2a9076bbdd60176f6ee845b6419a90e"
     sha256 big_sur:        "34f194d4996198a1c3f5ffb49b65c2e00af73e88db861d49a22f7ee9dcf3ea3c"
+    sha256 arm64_linux:    "934b2e2900efd242c6ca0f1d6a4b4c25e92e5ba0f6548fb6899fd8ae83a529f6"
     sha256 x86_64_linux:   "bc299e560c0228488ee8205b9e9a91d007d205beddd06c0461fa6e8d4e9d2589"
   end
 

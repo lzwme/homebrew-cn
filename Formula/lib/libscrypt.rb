@@ -16,6 +16,7 @@ class Libscrypt < Formula
     sha256 cellar: :any,                 monterey:       "d8e0b6fe9b5e2f14fc281fa859fb3339eb98610863cb0b39652f5cb6522205ad"
     sha256 cellar: :any,                 big_sur:        "836c0ae075b9e3b580eea4d3c1b554f861166f74657303103bb0415c34650fb8"
     sha256 cellar: :any,                 catalina:       "d53d94bee86fdb65f96abdb62f07f5f2867773fd0719562a21ad320465ebd686"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2a407f084d02366dfdbc3dd3801036bee1cf4a7c33f51337ce0418761532939c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "62ae9fdeea1cbe282839585250e2adacea715d313975bf6eb863a579aa669a21"
   end
 

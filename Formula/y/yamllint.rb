@@ -14,6 +14,7 @@ class Yamllint < Formula
     sha256 cellar: :any,                 arm64_ventura: "7c6432ecbe2d02c8fc00e1fe04d999238bf49c8308cf908ead6dbc2cc4cb40e3"
     sha256 cellar: :any,                 sonoma:        "77654786b69c881f40bb9816fc88b51a2edba8f9ded99f3e33f924d832c7a1bc"
     sha256 cellar: :any,                 ventura:       "4764f5b53ef49c4b556bff4bae73f1177ee89b7aced6d0214149fc6ebbeed0b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "94ec616c71aaf31eafe44c93bcbb5986c0f62e81cda0df05b4cca3fcb7316909"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "eda95cea6ab415ed02e5b05bed4ba76f08c800b63a2ce4a85b5ec42c1f1098e9"
   end
 

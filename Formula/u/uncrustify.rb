@@ -12,6 +12,7 @@ class Uncrustify < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8dc2eb428f5d4cb4ca7f302074859c88e1c8b4ced9b61811ce89866c1bbb09ac"
     sha256 cellar: :any_skip_relocation, sonoma:        "a95b0762b9ae4860c58a0f776e54f6cbe7cc0a722b6501e8671debc6b131f53e"
     sha256 cellar: :any_skip_relocation, ventura:       "547a9696faaf9b80195e72ace9a0caf59d68ad0394e5aa2862cb43017c66023a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9fd1e80df05f05e200787dadf2be03a4ce475f6166c505184f4364cf9a79f3d9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ab2a6cd25ee6ef310d75e2052933f6779cbf482c2f52c01f32aba887a5901cd"
   end
 

@@ -21,6 +21,7 @@ class Soapysdr < Formula
     sha256 cellar: :any,                 arm64_ventura: "d091d29209ae4319ddb8db5f2bc8c3f828953db36b619f2288df08c6cb2f2db1"
     sha256 cellar: :any,                 sonoma:        "e90833db385d8e3ce0c8eb4f138834d1da1db6879ca46be2f5f52a4f68957e44"
     sha256 cellar: :any,                 ventura:       "dbbc7e560136986fb5604d2c752890d5ee299725768fa61dc5ddd2bfd2e73be0"
+    sha256                               arm64_linux:   "20de753561fae444f356d230eff4d1d67dee481e6db1bed339dd419d710eaf64"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1227202d6306ddbc0d33b3f94904cc51b6ebfd61802fd411fb51fdd306e2f4a"
   end
 

@@ -15,6 +15,7 @@ class Fcl < Formula
     sha256 cellar: :any,                 sonoma:         "24a08459f44fe31c2021fe74d4e3cc05dbc32141ad8d941e60c60863229e6635"
     sha256 cellar: :any,                 ventura:        "06b3d235437c8047c3aa7d3951e15e254a6a81dc45546fb34d8732ddeaac68ba"
     sha256 cellar: :any,                 monterey:       "199ee80d6917e61d200cb4ce8fd9516542270ce9eefdfb3139d98f203251fade"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ba0e24c6cbceb1fde43ffafecf538b4b8b6c45ed1cd361deb12cca64db7136a1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5840ff43dc2df33f18284bf49f0c29c254d5993d71da5d9939bb18ce316da35d"
   end
 

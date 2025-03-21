@@ -11,6 +11,7 @@ class Opensearch < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8558d7931c85816fd73ef706c60c2db5503802a6aeb432b920e80b69d020224e"
     sha256 cellar: :any_skip_relocation, sonoma:        "cfd02cbd48e512cb8f5e6d22d4013e404c1204175dae23d6e9ccff74c139d76b"
     sha256 cellar: :any_skip_relocation, ventura:       "26ae205cc0fdee615e9d8df9b5f5a874cb768cbc6cab66ccfedcaa631a3322d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ef29cc5d6d64c195fbe329b5ef8a29bf5c0dd9eee7ec9e31b6bfb692e6d5448"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4da9417e5528f8fd3331ca2eab5348b40e9530bf916da6f37abbfa61d285158"
   end
 

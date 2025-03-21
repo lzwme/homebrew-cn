@@ -16,6 +16,7 @@ class Orc < Formula
     sha256 cellar: :any,                 arm64_ventura: "fede6fc3e9d0b04237bff31412097f951b2744a28270dacb0746a8fe61b27952"
     sha256 cellar: :any,                 sonoma:        "825f58d2fd7605ce40ae7876b1c79480e6f502340d9c572cfd6b7ac5a75856cf"
     sha256 cellar: :any,                 ventura:       "dabcd68e29c8efe82ea9763f6a481568147bc50b02d04b6db6df0684b3f77b18"
+    sha256                               arm64_linux:   "4e5427467da0b9ffb697dc68629c29663b98593a80146e01f75149cc6e2322d2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "80a5318eccb15cd2ce95c016f3406eeef7957647b409c43875b194e83d8d6666"
   end
 

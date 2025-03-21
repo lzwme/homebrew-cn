@@ -3,8 +3,8 @@ class Trino < Formula
 
   desc "Distributed SQL query engine for big data"
   homepage "https:trino.io"
-  url "https:search.maven.orgremotecontent?filepath=iotrinotrino-server472trino-server-472.tar.gz"
-  sha256 "9fba8cbc593f07e0fcb8fe55d44956e99412b7817106c979b306c28313cc6ded"
+  url "https:search.maven.orgremotecontent?filepath=iotrinotrino-server473trino-server-473.tar.gz"
+  sha256 "9d1e19a73ed475ac415132ddcb1d2a3cdac32d47a9fc70d1d68a2b781d609632"
   license "Apache-2.0"
 
   livecheck do
@@ -13,21 +13,20 @@ class Trino < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96c60c8ff89e7861b914097fbd2f826d688b8487ebdf48194a0a7d2f2d314cd8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "96c60c8ff89e7861b914097fbd2f826d688b8487ebdf48194a0a7d2f2d314cd8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "96c60c8ff89e7861b914097fbd2f826d688b8487ebdf48194a0a7d2f2d314cd8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fcae76bf95503a48c172a19a293bcb507d1167e984c09c26301fff4543279e6b"
-    sha256 cellar: :any_skip_relocation, ventura:       "fcae76bf95503a48c172a19a293bcb507d1167e984c09c26301fff4543279e6b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b94a1d2777883a6e33f705c247d8a4126bf6e6209b549667245ddb571a9e031e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b958974b95e47151b1307beee249f0f22d3b307a5a0dc34dd29488ce344bfa0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9b958974b95e47151b1307beee249f0f22d3b307a5a0dc34dd29488ce344bfa0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9b958974b95e47151b1307beee249f0f22d3b307a5a0dc34dd29488ce344bfa0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f100354027e15d68045cd3205497f46c6390555dbfa48e85842a0ece2a1740a8"
+    sha256 cellar: :any_skip_relocation, ventura:       "f100354027e15d68045cd3205497f46c6390555dbfa48e85842a0ece2a1740a8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d5ac77ef1b62f625fab59cf7953e82789d3549d442f5147d1ab2b5e2c722fd5"
   end
 
   depends_on "go" => :build
   depends_on "openjdk"
 
   resource "trino-src" do
-    url "https:github.comtrinodbtrinoarchiverefstags472.tar.gz"
-    sha256 "3bb5a4ae8f9a797110f49ae728bee6266cd2194561b11326a1901e91ebbc7ae4"
+    url "https:github.comtrinodbtrinoarchiverefstags473.tar.gz"
+    sha256 "f1edf76c7241f87f1e99d32c6eee1bd1bdd89d87c325430f1e7c12cafeca6ebe"
 
     livecheck do
       formula :parent
@@ -35,8 +34,8 @@ class Trino < Formula
   end
 
   resource "trino-cli" do
-    url "https:search.maven.orgremotecontent?filepath=iotrinotrino-cli472trino-cli-472-executable.jar"
-    sha256 "ff2df904ea7b88750a615dbb840246acd15fcbb3990842bbb8dd8748088ef59a"
+    url "https:search.maven.orgremotecontent?filepath=iotrinotrino-cli473trino-cli-473-executable.jar"
+    sha256 "f7644a166cdd606a447a6cda693f46c98445395457ff3770f37c862b1500fce6"
 
     livecheck do
       formula :parent

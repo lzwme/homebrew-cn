@@ -34,6 +34,7 @@ class Libetpan < Formula
     sha256 cellar: :any,                 sonoma:         "a025d5684d2edc67c1b50b04ed4fab5f8ff5534c6a3c5b4093f5cf84837b46a0"
     sha256 cellar: :any,                 ventura:        "143a977a506121a0b96acdcd4364ab55e278b2d887ab1e28f85d59c81e86e116"
     sha256 cellar: :any,                 monterey:       "0803fa89cfe96b599bc4c811707872971b94c297e353032d614797f614bc90bc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "6b77f7345d0e27f4cbc5339afc734e0a897056111c1f79fc949c9d90b8ca66ac"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0c3a249c5498bb7b6b9fcd5f735b9ca04e3225b8654a72464f457506c6aa72e"
   end
 

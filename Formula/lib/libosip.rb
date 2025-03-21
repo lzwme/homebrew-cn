@@ -22,6 +22,7 @@ class Libosip < Formula
     sha256 cellar: :any,                 monterey:       "208378ce5567b92f8d1fcf79a9e07bea8313c90da24f7e14b4d5a5c9f9a3c9ab"
     sha256 cellar: :any,                 big_sur:        "947aa52f8073bc404457457f25c121066c6bb6af9ebeb42b3c50e4168b3cbac6"
     sha256 cellar: :any,                 catalina:       "eb877b96fdc42eca7b4df03ae438982a3fc1e0abc51373bd6c559ba39d2077e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0aa814193eae6de3270a53f3bac4bcbaa76061111d5124843d2a1c43af0680f3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca0d378c03efdfb96e5e0610357fab268feb1a92de587ac55fa453e4f20b75e4"
   end
 

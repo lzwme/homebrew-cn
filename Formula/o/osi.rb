@@ -18,6 +18,7 @@ class Osi < Formula
     sha256 cellar: :any,                 sonoma:         "c24c4a4d44b819fa097e9b3f77602f8d21175a1ca94199933396ffb334575306"
     sha256 cellar: :any,                 ventura:        "d83b00f27e81af9188cc1066ec87b0375c3c8dcc32c71d2ea6a89aacae006003"
     sha256 cellar: :any,                 monterey:       "d05eb1c3f01d1687b03107578ed1054bfb34424c2b388a0b5c98cd2bcc0e442b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "215b27d8b21a6756ec8174cebb1e8e9c2f0a2769bee7fef39b95630f7b67cb47"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "093a334ad180ed10951e23866b1d6df68087fc29aee54a749899bb8b5d629780"
   end
 

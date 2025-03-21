@@ -22,6 +22,7 @@ class Libmpeg2 < Formula
     sha256 cellar: :any,                 monterey:       "fb3ad194c995a22c85768c3032a0d04b195a2e3b4684b1256f6498581d87bc5a"
     sha256 cellar: :any,                 big_sur:        "81fede3e5bf51daaed591f1eab2ecb777b092f5c99386b2a751618b059c7d2f1"
     sha256 cellar: :any,                 catalina:       "c25d746458652a4e7f87e67478b1451924da48a82d98a8eae83e36cceb336428"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2fabce057d7c15bb18b7320230edb8a748206664185c4c0a00e174615ec0094f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "04a7bbf5129d11b695a6a57eff6091f6519e3b4554dc77f84bca351a4f17acaa"
   end
 

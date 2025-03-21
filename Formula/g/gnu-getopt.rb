@@ -43,6 +43,7 @@ class GnuGetopt < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c4d0fbdb714ad12cf070d38a590066c9b0b25be32025f3d96672dd7912ab293b"
     sha256 cellar: :any_skip_relocation, sonoma:        "410a045158138d1b15ec926fd02c04132562f26b848a6950c90ee7204918de83"
     sha256 cellar: :any_skip_relocation, ventura:       "31bf079de0d0829cba00e616fc79ddb787a3fcfc559024905c47512a78871871"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b0019e2baad11e4f81fd6f94381a2bc78f404111188ef7d9c8ec4ee7dee6688"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "87f5c0068cb0fa80cf8b814cfb3ff8501e4ff1fa65eae15a20328bd782e76434"
   end
 

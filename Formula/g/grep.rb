@@ -15,6 +15,7 @@ class Grep < Formula
     sha256 cellar: :any,                 sonoma:         "ce3337c484b58a52ffc841fae13f3f530fbe8132a53f7f8a3fae8e17a994fa6c"
     sha256 cellar: :any,                 ventura:        "0499226ca301f19321f44d9e0229f5dffceea6af6509835af86c073ac3a3e329"
     sha256 cellar: :any,                 monterey:       "85f180f4b3c3563befd80d4d91389a9a7e4e69eb956c74251a3d3ed83fa26cf8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "25754fa95edae29ecb33a9e7bd01bc70337a8d3b651a3a5033f58d3309a8313b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8a180d77300df9dfad5d2e12b7f2061207fef15b63a6a4ed6d4082daa00345d"
   end
 

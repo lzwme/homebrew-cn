@@ -18,6 +18,7 @@ class Shapelib < Formula
     sha256 cellar: :any,                 sonoma:         "fcd168887712a91344618537d20c0579ff2907b9d887017b07aca2b921526306"
     sha256 cellar: :any,                 ventura:        "87e9ad2a1b66cb3c589db6f95f83ba7605363e8441a1f64b7453d99f8511fe2c"
     sha256 cellar: :any,                 monterey:       "f4ccafad07023f98b85e7477224151f098a792404c52e84d2c5150998cd1e020"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "bee18dded9f0073ab270085d33dacda57c4d0cd713e806502fe0b3e34b28c3aa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "10c1872d151e320089896c49d5234ba25355d660d0e4b440a1e1ea989f99c8f3"
   end
 

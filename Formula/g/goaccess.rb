@@ -19,6 +19,7 @@ class Goaccess < Formula
     sha256 sonoma:         "1b64c1206f019b712ed90724342e12ed9962e48e33d4f6ef0cb3dbebc184454f"
     sha256 ventura:        "d0dde1b682b280570fcfe938d46c0ab44f8d79c30fbb0b167c203ecc0e93446a"
     sha256 monterey:       "40999cea57bc1fca15720fc2d11304db6801b2ac1a89d9da74910fd049944d28"
+    sha256 arm64_linux:    "df22c3cb3ff0033cb1bcb384c2a579755a60789bf9b5dac8dd41804138655b02"
     sha256 x86_64_linux:   "a3ee515f40ffb70cf7db643c7150156a19558ec33a1426a792bad4b4434aa42a"
   end
 

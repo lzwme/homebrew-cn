@@ -16,6 +16,7 @@ class Lziprecover < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ddd6ef5287bb52ddc1b4140743e599d6cb821971f3b824e668da2dd9532dfad3"
     sha256 cellar: :any_skip_relocation, sonoma:        "1965cecf72d16347675ff1f64c278d4fb723e65a505981583d0d5efae7ac0f78"
     sha256 cellar: :any_skip_relocation, ventura:       "aaba0e8d69a176034618c16c1926e522665fbe7ebfdef634dd22a63302e0c47e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8bcf5ca43c008386255623253b393737a1be103f63c617a65eed8c77892320f5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3f14cf600fd5f4353371429ab79056f48c7f42c95868bd9332a29059b64fa4d"
   end
 

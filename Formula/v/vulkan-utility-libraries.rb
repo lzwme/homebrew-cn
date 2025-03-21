@@ -17,6 +17,7 @@ class VulkanUtilityLibraries < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2cd2ee8d23128a3d717fc153073e387d9052b293da6902903fbbf0910e0a4890"
     sha256 cellar: :any_skip_relocation, sonoma:        "8eb61f64aa8ec0aaa6b959f1fe4c94b9160304688248db49b30a7ed5475aa2f5"
     sha256 cellar: :any_skip_relocation, ventura:       "76a43a38c56e5d39366f6ccde941849f9bb1184614260fdc9a1475f7552873f3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "598616f5329217bc67270c8de22add0eb74c2d8259a57f9c7c3a0cfe74143bb3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "64595533173fb128003eda2b5f29445b1b8a47cfb687aa1ccc86d82ffaed1855"
   end
 

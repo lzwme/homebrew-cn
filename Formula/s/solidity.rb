@@ -16,6 +16,7 @@ class Solidity < Formula
     sha256 cellar: :any,                 arm64_ventura: "0aead765921ab4db364f04a1d2ad0a44e63f47df58ec025cb573462288c0273d"
     sha256 cellar: :any,                 sonoma:        "6f72f70d6f5ed6f143871f0031340c28356f08236320046db522989b1dd024a0"
     sha256 cellar: :any,                 ventura:       "a07fb17c1e38185be12b87b810cff01f7eca72af593967055c65ed8fced61538"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7d332995c4586e2cd7fe9e79335a96ae9a6608d83632cbd1e556ea3b2a98e06"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a05ea5b761308854461ea6e7848a80ecc447919f46b3c916726d11d7eb615da"
   end
 

@@ -16,6 +16,7 @@ class Blaze < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "cdb1e443ad562ea1318c56b0aa3aa0851b3a61706937dea50e5a9b93d9c97889"
     sha256 cellar: :any_skip_relocation, monterey:       "cdb1e443ad562ea1318c56b0aa3aa0851b3a61706937dea50e5a9b93d9c97889"
     sha256 cellar: :any_skip_relocation, big_sur:        "cdb1e443ad562ea1318c56b0aa3aa0851b3a61706937dea50e5a9b93d9c97889"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "bd2428d2baba5bb1a0ee1ff74c7dc1c106d3f809306d9d0de5b271e84797b4a4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0ca0507adf1a1c979a0446130bff037163e335a12cd8d0517cd83b1209ce206"
   end
 

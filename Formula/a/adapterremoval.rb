@@ -11,6 +11,7 @@ class Adapterremoval < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2efcd4380b4a9be30bcaa32552abe16aee7742860c49b4854651f3775914d118"
     sha256 cellar: :any_skip_relocation, sonoma:        "324c6792d35fed4dc9a80e8853261cdfc232f9510d4480878ec774e20d5f733b"
     sha256 cellar: :any_skip_relocation, ventura:       "04770b3b45993c485713def1d48d104c8ddd83b95fe12a02a45860b04d171423"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b32f3d296d346274a86d5f9a29e7af74afcdbcc76545536f311c8f9d4954f85"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ac45069d93dbe0781c369b55b7252bf863d7cc379c359b4e56d4bb589e35fd1"
   end
 

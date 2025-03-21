@@ -11,6 +11,7 @@ class AwsCCompression < Formula
     sha256 cellar: :any,                 arm64_ventura: "8025bc877dd2221c32bb3527e34ee5d618156f40c972a13189857c63b0da2a56"
     sha256 cellar: :any,                 sonoma:        "cca91302bdbb311dbf40825511da49c15da10943ec8ee9bf4f0d2761a7885306"
     sha256 cellar: :any,                 ventura:       "9348145f22774820af3b513272e03e0d453b677d452671d42776fc0f735d7e4a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "29653a96519fab683d1b00e0df5611e28cee7a1c1b7a4f1e4fe711ca291ece1f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a52c6fef0619145315545b21c86be299989bf437e5e8eac6bbc2ed817ac51dd"
   end
 

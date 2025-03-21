@@ -16,6 +16,7 @@ class KimApi < Formula
     sha256 cellar: :any,                 arm64_ventura: "1ffa80813a49f7990fee29ec83c4ef03182e92e3cf1ad3e174ff6c6042ed670a"
     sha256 cellar: :any,                 sonoma:        "6ab3b70a938f7a2b2c1e97f59640c4c12bf34fca9f9bab2f1002ff64f33eb0b4"
     sha256 cellar: :any,                 ventura:       "e612e98c59c0a7650513e7d775ee45099ba82d8bb563825eb3e3e82b22905cd5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "54f332ed31a02dc3c11776b8c1b555c268843b6e41cc85c25e7389df480490f4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "15501b1a05f5a4f1fd5d3bffaed6d1715d6a1b4964a2ff37add87dca7919bc76"
   end
 

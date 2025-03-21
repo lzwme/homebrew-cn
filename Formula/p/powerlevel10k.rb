@@ -14,6 +14,7 @@ class Powerlevel10k < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "df58ced2ccb576d8da9b0f3e5d6986c22414365354872cd2c9e620f2a8ce65e4"
     sha256 cellar: :any_skip_relocation, ventura:        "df58ced2ccb576d8da9b0f3e5d6986c22414365354872cd2c9e620f2a8ce65e4"
     sha256 cellar: :any_skip_relocation, monterey:       "bef10fff91d174c71544f0a1b0d0a1790131fe959cdd1bd4e9d1bcea682f1767"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "e94d2b66f4c17f3060ab6440a604401aff259c965b8100e0442419a6448041e2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "20bde83ee0e3a59d86aaca90273b6a88819264d47892cb23c66b47ab5230c22a"
   end
 

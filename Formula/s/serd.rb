@@ -16,6 +16,7 @@ class Serd < Formula
     sha256 cellar: :any,                 arm64_ventura: "42b9a161e5f2b1b4a28183d16ecd0bff483519b292aeb982792f74201c2ff41f"
     sha256 cellar: :any,                 sonoma:        "a645922619955963c2d58856a30d91cbb0a74e63afd97027127a6c1ec684d7ed"
     sha256 cellar: :any,                 ventura:       "1206b5fd96a17388d8fa194ba4a1a5c9c59b9e2cefbf9bffa674bf8f71fd874f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a9563320d822db1023d6054f54cfc18c3a4a89266d4bb5a283c75159f05b3ec"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "52f9da3eed3f941a1c97f3a35764afcc8a5974b19a6ebf0952c28c8b239c6d3e"
   end
 

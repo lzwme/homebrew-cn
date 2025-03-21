@@ -16,6 +16,7 @@ class ConsoleBridge < Formula
     sha256 cellar: :any,                 monterey:       "0e109671b38bf1d36b7e42250c2510a262452b97bc97a0a4d8ecd9c151c41182"
     sha256 cellar: :any,                 big_sur:        "8baf855a418a19417acc6ede52912bb003c5108b782fcf9bc29402b21c6b09a7"
     sha256 cellar: :any,                 catalina:       "7bedc8fd46f9d2a3404e3736e7231a5e303f9418b9a73354ee09d60ee233e644"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "497a00b597bdcb80058eb55536dede9ba832ab45d3c70c4f1554be27e54cea0a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2beccdecabf5d8427ee97904c16ff9f0aa2fc7bb508971ebbe10c5b1b9a2389"
   end
 

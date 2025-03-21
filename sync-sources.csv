@@ -754,6 +754,7 @@ Homebrew-homebrew-core/Formula/c/cargo-public-api.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-release.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-run-bin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-shuttle.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cargo-sort.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-spellcheck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-sweep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-udeps.rb, Homebrew/homebrew-core, 1
@@ -1144,6 +1145,7 @@ Homebrew-homebrew-core/Formula/c/cpm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cpmtools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cpp-gsl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cpp-httplib.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cpp-lazy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cpp-peglib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cppad.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cppcheck.rb, Homebrew/homebrew-core, 1
@@ -7296,7 +7298,7 @@ Homebrew-homebrew-core/Formula/x/xlslib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xlsxio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xmake.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xml-coreutils.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/x/xml-security-c.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/x/xml-security-c.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xml-tooling-c.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xmlcatmgr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xmlformat.rb, Homebrew/homebrew-core, 0
@@ -7406,6 +7408,7 @@ Homebrew-homebrew-core/Formula/y/ytt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yubico-piv-tool.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yubikey-agent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yuicompressor.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/y/yutu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yydecode.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yyjson.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/z/z.lua.rb, Homebrew/homebrew-core, 1
@@ -7576,6 +7579,7 @@ Homebrew-homebrew-cask/Casks/a/adobe-digital-editions.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/a/adobe-dng-converter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/adoptopenjdk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/adrive.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/advanced-renamer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/advancedrestclient.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/adze.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aegisub.rb, Homebrew/homebrew-cask, 1
@@ -7593,6 +7597,7 @@ Homebrew-homebrew-cask/Casks/a/affinity-publisher.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/affinity-publisher@1.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/after-dark-classic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/agenda.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/agent-tars.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/agi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aide-app.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aifun.rb, Homebrew/homebrew-cask, 0
@@ -8163,6 +8168,7 @@ Homebrew-homebrew-cask/Casks/c/chessx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chia.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chiaki.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chime.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/chime@alpha.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chipmunk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chirp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/choice-financial-terminal.rb, Homebrew/homebrew-cask, 0
@@ -10219,6 +10225,10 @@ Homebrew-homebrew-cask/Casks/font/font-m/font-manuale.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-cn.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-nf-cn.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-nf.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-normal-cn.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-normal-nf-cn.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-normal-nf.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-normal.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-marcellus-sc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-marcellus.rb, Homebrew/homebrew-cask, 1
@@ -13420,7 +13430,6 @@ Homebrew-homebrew-cask/Casks/q/quba.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/qudedup-extract-tool.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/querious.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quick-app-ide.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/q/quickbooks-online.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quickbooks.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quickboot.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/quicken.rb, Homebrew/homebrew-cask, 0

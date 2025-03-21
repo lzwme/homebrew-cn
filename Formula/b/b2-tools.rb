@@ -13,6 +13,7 @@ class B2Tools < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a1b0267d10834f2a32ff61375ba5c9e2bc4e9a488307120e04c0613a4d7f7bb9"
     sha256 cellar: :any_skip_relocation, sonoma:        "bc7aeabdd9f1faf8d83013f7af26a10808aa4dfe5f2f07fe6ea5ea8b6a841300"
     sha256 cellar: :any_skip_relocation, ventura:       "bc7aeabdd9f1faf8d83013f7af26a10808aa4dfe5f2f07fe6ea5ea8b6a841300"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7bff53ab33413f9cc05d86c2b618d440679b116f641adcf6034cc008d38f712"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4e9775d8a3ca1c082c252b722d3216dcc34d93abc736a8a527b2ebabec5d98e"
   end
 

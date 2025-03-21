@@ -12,6 +12,7 @@ class Flann < Formula
     sha256 cellar: :any,                 arm64_ventura: "fb161bd13f745de377d0c7da4959a538859a05f1327a4cd1dcc715f753e166e9"
     sha256 cellar: :any,                 sonoma:        "e6173b7028321f243b95cf5fff7335393820585f5563f37cf2b799ad25d19947"
     sha256 cellar: :any,                 ventura:       "f4c22835031da0fe8aec8f176e2b70c086fd34e055a0b662487a810bb282fedd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a940e8933e0cc273b1bb5d8fb6cdb289b9b15128457e0485ee1372ebacee8dd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5e0831e7f18820cbb873c5853660e272b7b5d2d4c34d753683bc1ea604707e0"
   end
 

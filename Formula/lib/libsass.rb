@@ -20,6 +20,7 @@ class Libsass < Formula
     sha256 cellar: :any,                 sonoma:         "cf3dc9646ee1c1de9fbb48df62623c02267d77ca3fda6c78a9acc7b893387ec9"
     sha256 cellar: :any,                 ventura:        "aa2acc65e1a7804b8df89f73a9c649b30487a4c0a42e08b45a184a4f727c9c86"
     sha256 cellar: :any,                 monterey:       "ed5dd1003cce5b3d47138cb192f4018482e381e6b18d4b63a980fb2400bf737c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "8b569c57c1429048b0e8d3c3f4e15bc6f9b9efc3943cdaa6a9e6f7d891f59750"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "091841d5a1c742f6574ef14d6bb952d54409c7fcbc2085222a11b18eee0e38ba"
   end
 

@@ -18,6 +18,7 @@ class Libpipeline < Formula
     sha256 cellar: :any,                 sonoma:         "e0354d5f278901871e1fc4ba62668680a1c80fe90bd9f3345206e5e5ea798b71"
     sha256 cellar: :any,                 ventura:        "a1f870458e27abf80d1664aea510dbb59cf38b330a94253050c9ef17b2d2b7bd"
     sha256 cellar: :any,                 monterey:       "ae49773c27c293203ce8e82194ee64edf81aace1b517029698f0a104cb82d878"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d40093ecab1d13a45f12170a96c80d878d3b273ca0f0f0e9d9d684f4ced5299a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9767e66d73f174a20b3ea560643f30e3bb3e2b5764c0fc5de4196247e13feee"
   end
 

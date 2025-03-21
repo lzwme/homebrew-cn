@@ -36,13 +36,13 @@ class Pygit2 < Formula
     assert_empty resources, "This formula should not have any resources!"
 
     pythons.each do |python3|
-      pyversion = Language::Python.major_minor_version(python3)
+      pyversion = Language::Python.major_minor_version(python3).to_s
 
-      (testpath"#{pyversion}hello.txt").write "Hello, pygit2."
+      (testpathpyversion"hello.txt").write "Hello, pygit2."
       mkdir pyversion do
         system python3, "-c", <<~PYTHON
           import pygit2
-          repo = pygit2.init_repository('#{testpath}#{pyversion}', False) # git init
+          repo = pygit2.init_repository('#{testpathpyversion}', False) # git init
 
           index = repo.index
           index.add('hello.txt')

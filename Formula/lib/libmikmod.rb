@@ -16,6 +16,7 @@ class Libmikmod < Formula
     sha256 cellar: :any,                 arm64_ventura: "8f0297731ec4cae97562b8d748bf007817bc25804b135c19e5f0639d917b6c17"
     sha256 cellar: :any,                 sonoma:        "09db4f2be20a851a09ea6821f6913cf799a0414f44ac9fdd1477d0f4425378cd"
     sha256 cellar: :any,                 ventura:       "6fd0a06c81b3a27e4acdd9618d0a5b01e64caf4d20abcb5af660fe85f7df06be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee00da9c6bd042ecd8d81a2604ddacb93410047c61967fb1036d0f036c9a2629"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5603dcd37819b47c6f9fc36dc60d9fb269412ae0b6bc941b89bd38092fc7fb9"
   end
 

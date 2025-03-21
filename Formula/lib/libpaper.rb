@@ -11,6 +11,7 @@ class Libpaper < Formula
     sha256 arm64_ventura: "24bdbc1cd381cd73cc6626d7d07fa57e85008a8394b3b9118b903558fd581b17"
     sha256 sonoma:        "52569069e169b133ce021d5c93d9e84df75b4fbb419e7dc25fa735dd99cf2551"
     sha256 ventura:       "1312df7e0dde77300bb752fd56522edd6ee9d187660fe84cc6f52a6940764dfe"
+    sha256 arm64_linux:   "f8c1c59cb54eb45323aa63b5c85d35972b9f093c3548c5928ea57736cfea5660"
     sha256 x86_64_linux:  "d5ac97feb19ebda571a7392c96a099e919d70b9dea6439153e9444dfe79fe252"
   end
 

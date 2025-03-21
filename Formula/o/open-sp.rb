@@ -18,6 +18,7 @@ class OpenSp < Formula
     sha256 cellar: :any,                 big_sur:        "50109cdb514313693454259ba30f90f550618d48a1cc71df55ed04343d0cf641"
     sha256 cellar: :any,                 catalina:       "1b2c18d6cdcd99d387770eaa14a773bb3edec5b22984ac75f3b07a181916f18f"
     sha256 cellar: :any,                 mojave:         "47a3595b023164a54f73009f5d0a1bd092355f7c5b357cb86e1ec781b101bcb8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "597213ee29de34da7d34d395ea5f6c8fb4681c5512934e3837f17e0d8628f012"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "11f6bb56e019bea8f5fb9e2d38e62102230278ddc8fce115755a1cf6a6cbda54"
   end
 

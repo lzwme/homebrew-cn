@@ -26,6 +26,7 @@ class Figlet < Formula
     sha256 high_sierra:    "3047847adef9cb5bd5588cf65f64bfcc0549ed44d4370a862071aba2f9d98ba6"
     sha256 sierra:         "c53966c742bf88b8481f6ed0bde1a951ea11185af2c631fb02b84fa7120f2e17"
     sha256 el_capitan:     "943067dae95de58518b20334aec401cf5fd24866ff77315c0d7bd8b5d4ab0011"
+    sha256 arm64_linux:    "becd8069f2e1a5c9db27cb7b30236450b4490d0f8ce082174cb59282344d7200"
     sha256 x86_64_linux:   "94ef53c9339ca8a3da5a92168fde47b97bdb992c8dfe6b6603f79bbe07a8acff"
   end
 

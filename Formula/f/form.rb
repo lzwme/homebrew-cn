@@ -20,6 +20,7 @@ class Form < Formula
     sha256 cellar: :any,                 ventura:        "fc08ffd719328fbd615fc269e7a0a70ed51b1d365abdbd336361ab3645a90d63"
     sha256 cellar: :any,                 monterey:       "4e4183cd34e538a43a6cfcb99ef054ab75786e40088806aed7d61a54950869e5"
     sha256 cellar: :any,                 big_sur:        "62ddb0717b667323815d8a35c6377bb479be7ebe6ceb5e331d341191d6cb0e5e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "97d17131f6de2b0dff19e8777cf5e26148e0b713c6e6ea2ad66bb740ed8ca5a0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1bdafe12587a3d4a8f64c28024b01ba0137e81ae5ceab40c865614544c66eb89"
   end
 

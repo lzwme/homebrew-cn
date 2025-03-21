@@ -23,6 +23,7 @@ class Gtkx < Formula
     sha256 sonoma:         "2f73f9eafd45eef1e37f3e795d1cb086988fcba1cc374be9c4bc124744bc561a"
     sha256 ventura:        "e1724dfbff3e12dfc41c91d4ea850c52fbc716d30cae80308f55afaeaa887e42"
     sha256 monterey:       "29944de5a2598f393c086c1b9284dee31f94309826780204065d91de38c0a14d"
+    sha256 arm64_linux:    "2738367a37a58ce253544f191877c5b653c3f6db7cbe3fd5ed3b3288b3bd243f"
     sha256 x86_64_linux:   "a73d8262778cf3541249d2ce04dbe9c2e545cc46401c695a77a893f812f35920"
   end
 

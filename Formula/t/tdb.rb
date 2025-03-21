@@ -16,6 +16,7 @@ class Tdb < Formula
     sha256 cellar: :any,                 arm64_ventura: "f77f95a5940ca7a4a40ef08d6611239c5885426311e4f0b3c321a6429d6891a7"
     sha256 cellar: :any,                 sonoma:        "4152b5bb64a94971afa35b8e7c17ea6d3dba0efafe2031617f53765cd158dc0f"
     sha256 cellar: :any,                 ventura:       "c9e83486f202b33c0dd32f8debba7b8562374766c2488b630d55d7da8df3dc07"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "391ffd0d0824c218c0f175f53511aedd0520d5e5031c971a5a6d096efdf482fd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "62725a4b2245ffdeb4792e1032e09f2ec24824b70363c2ca50c6f024a3f4acf0"
   end
 

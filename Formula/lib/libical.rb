@@ -17,6 +17,7 @@ class Libical < Formula
     sha256 cellar: :any,                 arm64_ventura: "989541e8c1084836db8846d7fee606fa7c62c1d4e2087af88cdcd0b76911862b"
     sha256 cellar: :any,                 sonoma:        "6c42ef3607c1a8d19f558b65bc237a9f9bf8a1a224b0f9ea92e1a25baa493b58"
     sha256 cellar: :any,                 ventura:       "15a4f6945fd75f1bef1338746aca9445c9ad57899c6ceb3a23ae63b12592a20b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "37201920b3eb04236602e79071bd3300397f251eb55751840567e4be26756d54"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e37f1ea7e90528d641fdb663673c6b29d9aac026f1ae932c4ea2c510a4152fa"
   end
 

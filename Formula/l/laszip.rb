@@ -14,6 +14,7 @@ class Laszip < Formula
     sha256 cellar: :any,                 sonoma:         "1eeb4c8027b05035f4fb2bb3b0fdbb3acd4b6c9844f879dc4395ab5ca0020860"
     sha256 cellar: :any,                 ventura:        "48dca372c53c8af440ff82b56fd5d71b5ab290bddfda5741764a8ba53eac016b"
     sha256 cellar: :any,                 monterey:       "e92cdbac9a9e25e57e27387fda8a8c97da3a7b1c23b725bb3beeaad383fc559a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "30274fa432851f4ca9c57197037455092c5cf26808f763d8ee0d256a090cab1e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3fc1dd011f2793d3971409a52eeba03e7353141112a441a60fa317c70175856"
   end
 

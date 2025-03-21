@@ -17,6 +17,7 @@ class Portmidi < Formula
     sha256 cellar: :any,                 ventura:        "505796ff7499cb66673b8774af23109d1803cd0ca79e45de041d66985cb553e6"
     sha256 cellar: :any,                 monterey:       "7e348bdf4837001ff61ebad737ee19326a92c11ea2e122874abb39246a15b99e"
     sha256 cellar: :any,                 big_sur:        "3025725eb9196f45005ee6305883d78fb98fd6412569fdb2c3685e9f6f117009"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "27c42711f68465a36ce8c41694202a58ad5ee05f1589ffcea67173f643c4576d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "af653a873aa1e1a5255269323d28c28b97c6860f52687dc4677020aa5bfbf7de"
   end
 

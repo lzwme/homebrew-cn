@@ -15,6 +15,7 @@ class Stoken < Formula
     sha256 cellar: :any,                 ventura:        "205dca5a696dfd3a9e7ccd43300325209397b32793ea336d2d80b8d93a45369b"
     sha256 cellar: :any,                 monterey:       "14c75a261aa3357a8bbc8da63403727e3dc975df604973235d35da28f58c25da"
     sha256 cellar: :any,                 big_sur:        "59e08afd001c42067ef8502638958742426da6bbdae56ac5b731a5aa4bcbbe51"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0db93a098ac78ca584ee522259e255cdbf0d9e2d567aee98173a7e546c53e18e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9bc692874b7298e95206d14dfbafa4fe4344f1b1fa07ad394ec318215f09220a"
   end
 

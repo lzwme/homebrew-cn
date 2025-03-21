@@ -11,6 +11,7 @@ class I2cTools < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "dd2a87e8ac0da6a882e8e0c117b93ea8e8932629703e372b39f6f92bf93387b5"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "d20107422ff757ff511d2a8099bb04f96cba86e4a0a81081efe7a7c49d02b118"
   end
 

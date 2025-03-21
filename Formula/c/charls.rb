@@ -16,6 +16,7 @@ class Charls < Formula
     sha256 cellar: :any,                 ventura:        "2c5587e6cc5f98c3fde8baee24ddda28bcf57fea3823ad50b8a723bccd2d92ed"
     sha256 cellar: :any,                 monterey:       "d7b1f60902af614082b112fb145a04cbe2ee474867a9ac0a5e6311e7763b406e"
     sha256 cellar: :any,                 big_sur:        "6d5ed0ccde713e3301144a103d26aadc8b5e737800536c68cb1b53ba992ffb34"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7a1ff310d136b6dcce83438562977bd6ea391e315eb9eb066bbd62fbab5cc5dd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c047efbbea396272b84c00659b8f68a03b7130c19b1835f9f83c5be28351a7e5"
   end
 

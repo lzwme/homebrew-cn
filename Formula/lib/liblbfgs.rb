@@ -16,6 +16,7 @@ class Liblbfgs < Formula
     sha256 cellar: :any,                 monterey:       "7000437bee7f617b05b7f6f6a9adef00f8f8664f37fc34cc6758d461af136b89"
     sha256 cellar: :any,                 big_sur:        "3b6468ee0f05eae6289940247c51e1012e929a8a033e2227be767d17396f88a7"
     sha256 cellar: :any,                 catalina:       "668f1c5336818e566dd0cb2e4b1deb0eacdb38fd8c956b1b2e49929f18714104"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b45e6bbae731b52f94d92784f30120bf36bf7169df1d6956b5398473438d6f95"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c462aa266b91b96ed0f85ce8a495cb29ed9c571943ffb0eb8b65f5bd7406d7cc"
   end
 

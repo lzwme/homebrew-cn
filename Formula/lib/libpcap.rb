@@ -19,6 +19,7 @@ class Libpcap < Formula
     sha256 cellar: :any,                 sonoma:         "515263fb7383b3bc74e5976472d79097a979ac0a521b94c024b3701f133dbeee"
     sha256 cellar: :any,                 ventura:        "7792689ed0fb4e70cf87216b4e81dc20361c67ba6b7aa4a1531a445c54c69686"
     sha256 cellar: :any,                 monterey:       "042224e1182717afa4663273c410c7d9758ce60301d8ecfafb5096f4a2ae7f17"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "cab27b074b192f9489e7d588d9b6b96148eb4ba60afcd62149432baaab407bbb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7bc07f0a5bb3072c9f715cdb0799eaf1bd7a897c9ccc3373542845af931b4d32"
   end
 

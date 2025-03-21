@@ -20,6 +20,7 @@ class Libdiscid < Formula
     sha256 cellar: :any,                 ventura:        "88e97449648d49fafdff023e74d9841090c8194f7d1a311eb1c16920dfa7221c"
     sha256 cellar: :any,                 monterey:       "b2d8bb666d78a7c0a3b3d32fbdc86524cee0d0f080f138de868d31979aca627b"
     sha256 cellar: :any,                 big_sur:        "c4d364091f700f65e2fd53f70b23f243cab80cf991d0e7febbd78b0dfb029e9d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "230baa95caab005a124e4a4a3031f625417b141c357acb80916ae10f08926528"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0408adf6b787c2260b62aa1235ec0b42d8ee8a8892a035fd56e1392cebe41303"
   end
 

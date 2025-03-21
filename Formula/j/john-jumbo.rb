@@ -19,6 +19,7 @@ class JohnJumbo < Formula
     sha256 arm64_ventura: "f70a5308db1137f69fa0da915a2d4898453db9339467044b224b64df1c9feb53"
     sha256 sonoma:        "9579793b2cc5a9f493d4f45e92c509981dad449817f390df62fad67163656bd1"
     sha256 ventura:       "5a03775927f3e4d2bbb843ba2fb614674f2342143d5e6b0644ceb852e7ad8da7"
+    sha256 arm64_linux:   "83af0cd09a6c71fc6b6a424a3346907678d9846c6e625c19148db1ce8dce05d2"
     sha256 x86_64_linux:  "9c218a9de0a672e13bd10012a4b7f6257bb1cb9e4e3c094b8444ade22cefb2d2"
   end
 

@@ -14,6 +14,7 @@ class Libecpint < Formula
     sha256 cellar: :any,                 sonoma:         "fac0c8b117413ae906344bef51c1c39fcfcea62ef89d17d232602e0d3e62ff90"
     sha256 cellar: :any,                 ventura:        "2ad164c6bde6c42997d6d520c1b948c6fd068eb8a014bcb37a27a794cf73e61a"
     sha256 cellar: :any,                 monterey:       "4679cb57350812962b316debc76e489ea8b19806a566aaa7c00f25d47d821a5f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2b0d3cc23fe08806db0815176dc10d20c38a68e36de59e56135f518b46c9c373"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f0c3872e62c90591879e5de99b0f67932051815627ebbdabe2653203d7337ed"
   end
 

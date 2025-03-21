@@ -11,6 +11,7 @@ class Imlib2 < Formula
     sha256 arm64_ventura: "a27764e0648e9714278accaae283735b2bcd73d702a778bbf454dfcf0752ccf2"
     sha256 sonoma:        "b57d32769422da53b28b9db418f1e5c64336491f087da7bb3fd554c9a3be266a"
     sha256 ventura:       "9d01353598155cf25747e1aa49e132a4a8f6a26db4ac702a7d6de0d95fdced0a"
+    sha256 arm64_linux:   "bb0b739e4375762954cddf649f1109a4cf5a85422e036b4176e2b2a9bb673557"
     sha256 x86_64_linux:  "fad41d330d00be8fd0f3f775670be7d4aa4c0e3042e619855396ab5a000c4430"
   end
 

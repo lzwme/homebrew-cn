@@ -32,6 +32,7 @@ class Shaderc < Formula
     sha256 cellar: :any,                 arm64_ventura: "f899564c376e443f5b61e97e22052284aa35b615d5df1ecfcb3834f79f1877c5"
     sha256 cellar: :any,                 sonoma:        "8c0a39a316f5d90216185a968e486821d44888bf31a366bde7be8e1da74ebb3f"
     sha256 cellar: :any,                 ventura:       "608fbddc83cf6c8433d832e57d14692ba3e363cc326278f18df8894d3d162ce5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bdea790f75cce457cf9ef72b881df5b7b31b6a0acd57fa77a4d2a6412b3f9d72"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b838c19717fe8f12592931432ab34f078271eccb6319fd7715d22361113eb43f"
   end
 

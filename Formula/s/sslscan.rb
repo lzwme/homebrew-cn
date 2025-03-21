@@ -12,6 +12,7 @@ class Sslscan < Formula
     sha256 cellar: :any,                 arm64_ventura: "5547ffb215b63be6fcaa65226681e0b5f97102520806a7e0707a26d951f6187d"
     sha256 cellar: :any,                 sonoma:        "70125dacd4720370f91e417a92fe9395b960d3931e8c7f105d1bc7888413cc3c"
     sha256 cellar: :any,                 ventura:       "a400d238dc421733cbec9f3105c81c845386d840df433235ead7b99298c24277"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a692bc15c933bd05d510729df7951e980204d83278b149a44a4ea11a495da4ea"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ad080bb9772d351c5afb1ad2eb145b1385db081277fb31bc7782f8f0f67742e"
   end
 

@@ -6,6 +6,7 @@ class Fcft < Formula
   license "MIT"
 
   bottle do
+    sha256 arm64_linux:  "97a0e6e9910f16cf36220973b5ff3f710024aeb0342e9f72b3946f80953c0df7"
     sha256 x86_64_linux: "25df5af63145cf3ccdda4f57c5f24ba0adae0535fa6fc2a0cb8307e28ed9451a"
   end
 

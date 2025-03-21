@@ -11,6 +11,7 @@ class Asyncplusplus < Formula
     sha256 cellar: :any,                 arm64_ventura: "2a2f1cdc93741e0db73b4359a7881225631f008a7b9e6e3d67d9d2de8d1c8765"
     sha256 cellar: :any,                 sonoma:        "251aea5c5562246a1ab1a394fa7396a4949df464c354f2007f4d671eee4a75be"
     sha256 cellar: :any,                 ventura:       "38434ba8c7542abbffd781b7f5f547f166f3143e971677d31bd1dd6a2c9da049"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3fc17239cf85202f52390b6c1297bfd75db621c0dddb37d1df24366b0013538a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "31b9d42407804a993ea90e4e2cf04c0466ea226f4a967f1ac8b732d9bf830aec"
   end
 

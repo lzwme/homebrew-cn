@@ -23,6 +23,7 @@ class IcarusVerilog < Formula
     sha256 ventura:        "f8d395f182e8788ae9720421d2c8ba5ab90fad839e0071ed871c8a8b23484d58"
     sha256 monterey:       "f6fea867f86a544671ff8d074da509d2997f545df8fa2d47cbb118aa7029fcfa"
     sha256 big_sur:        "b5c5e18bfcdadfcc54a69954b71bf4c56f6e9c223823f65c798c442c4ec61e79"
+    sha256 arm64_linux:    "36faa76b1a7d0089f202c91564fb24536d9e2cb7d446a36e51657505f1cf8e89"
     sha256 x86_64_linux:   "ee0b7b46d11a76808cebc2140d83fc615ae4bec40aa3cfbc346560532caf3cdb"
   end
 

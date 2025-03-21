@@ -11,6 +11,7 @@ class AwsCCal < Formula
     sha256 cellar: :any,                 arm64_ventura: "4be3fafff6ce4c03cb0d80cd5ed9e75744fb025c2a7345de58696e815f4af54f"
     sha256 cellar: :any,                 sonoma:        "eafcaf351e67cd6136ba73a831e07fd4524c7eaf3f9c5d3c2c6b2e0bc693d9db"
     sha256 cellar: :any,                 ventura:       "7e0e864280327cd4fe386472d3b8c297fd79debfa17cf7ff0980355b16f1011a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd26fcf06ec73c857cc7f262b24273a10011675981742ddfd6d761983cb3c880"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "01b02a517c15f14020d60a2d6b860b89aca5a60d1c1315334496683ba25ec0a0"
   end
 

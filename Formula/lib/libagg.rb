@@ -27,6 +27,7 @@ class Libagg < Formula
     sha256 cellar: :any,                 monterey:       "af427a27e940353797d88a3b3224a43ad15ad51681494902dad975d5c5270d27"
     sha256 cellar: :any,                 big_sur:        "12d797bfc9b2a1414787aa3028c1704a5b6f1f000b80ed5e4cd200029f10f160"
     sha256 cellar: :any,                 catalina:       "d6770fea6a2589b7641fbeda183ff58835ae463cbbab3178096654b36a99b232"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b3fbb4b5c878b6566d343983213d2f21df250d77193d207637942d457bb8e049"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cee5823d550698b94dc7e494af8b5f8a83acebec701264a4c20dec2d828c2240"
   end
 

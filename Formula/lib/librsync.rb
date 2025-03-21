@@ -15,6 +15,7 @@ class Librsync < Formula
     sha256 cellar: :any,                 ventura:        "56a8016cd9f57fd16a18dc4718af15fa033220894bda2dab1eeb03583982635a"
     sha256 cellar: :any,                 monterey:       "0b1430ccb90548e554ae9b56990bfe958c416dac61594185b2ac0d38af89bb2d"
     sha256 cellar: :any,                 big_sur:        "1f060456ddd3143afd9d7b4ce09fa73de0b685d16e5b5add2eec4039175879d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0ab058d81de355cad8a2e2bd385733d08a58394e95ab025165ec1bcb69dc969a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c48743c4c502118826bf142d7bb393099a994c882b55c1c11430c656382af16"
   end
 

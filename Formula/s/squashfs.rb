@@ -22,6 +22,7 @@ class Squashfs < Formula
     sha256 cellar: :any,                 ventura:        "f77526a0a06e07ffba3e86a57c09391f3e962f221543ba424276beea2de6be29"
     sha256 cellar: :any,                 monterey:       "0f4721b581fa57db435d884bc4af98ce7c58e3ba92262e2277676b1e44e4cb1f"
     sha256 cellar: :any,                 big_sur:        "821ae58379b5a2465979686d50f3f54d26b7707e5aaa8180eea6d6da5559b07d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d2f6ea709f9ab4cdc4ebd038804296a1bb0b040c0d5bfbbe5a84e744f1a02372"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "48347e06cf3d3bd099d441f38de0d32296340334bebefa048550d8b8afcb426d"
   end
 

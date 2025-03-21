@@ -18,6 +18,7 @@ class Wabt < Formula
     sha256 cellar: :any,                 arm64_ventura: "cacc4321f1793cf3de5ce0cd5c7e815bb304b9d685a5be0b42d08d8cb08d2969"
     sha256 cellar: :any,                 sonoma:        "0177a246fb21ff547aa0df436f337ab1923e3d7e87ff521e8a9e27b2df9b66b4"
     sha256 cellar: :any,                 ventura:       "a3a3ba1408a348483f6b710080ad55eb0a02d367fde5a457bb9164683472b21e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "992f64506c97e8f4b3ec6c37f8e28e24ddf9e36975db90efd466ab07ebea9afc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9db533eaf5d9e50fc16896ae6525eda7a3a0b0bbc512578b652d1ff0a79bde2e"
   end
 

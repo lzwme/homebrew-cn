@@ -14,6 +14,7 @@ class GiDocgen < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ca42b418a8fb2213a20293b9d898f1d35c2353f3a4e2639107497b2fc907aee9"
     sha256 cellar: :any_skip_relocation, sonoma:        "d5f8321066724c5ec51be489d5712b919c2475086dfae82903b53e251ddec68f"
     sha256 cellar: :any_skip_relocation, ventura:       "fdf24279284551a55f263c562b7b6be74e444916efae31682925aea82710cfc1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b20fa69a410bf970bd2c1c50be1b538ff0a091db5e8ac7a9187991484d9223a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "36f3a153cac22ae02776de17e6714abb9215f25116878a3fa12fd5be8391abf6"
   end
 

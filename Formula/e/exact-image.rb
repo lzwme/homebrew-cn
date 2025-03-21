@@ -1,8 +1,8 @@
 class ExactImage < Formula
   desc "Image processing library"
   homepage "https://exactcode.com/opensource/exactimage/"
-  url "https://dl.exactcode.de/oss/exact-image/exact-image-1.0.2.tar.bz2"
-  sha256 "0694c66be5dec41377acead475de69b3d7ffb42c702402f8b713f8b44cdc2791"
+  url "https://dl.exactcode.de/oss/exact-image/exact-image-1.2.1.tar.bz2"
+  sha256 "7843cf35db40f3a2caed3d0b11256e226ef16169244ca2dc1c89af86ac8a148a"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,20 +11,12 @@ class ExactImage < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "5547398e3385e3d81258ff62723ab69598bf9d22d09837c71e176c6dd1124d75"
-    sha256 cellar: :any,                 arm64_sonoma:   "6080a2fb1a62a57b5593cb549a93c038aa4eab44175a534e1ed4878d9ee2f804"
-    sha256 cellar: :any,                 arm64_ventura:  "20317cde1b2c2c9478ee7dd8b35a68f1d3b3360b36362af190a3323cb5429cd8"
-    sha256 cellar: :any,                 arm64_monterey: "a11e0789738c798fc3cf6785353e023e4e27b0328aa7ccb5dd63c39b988a0691"
-    sha256                               arm64_big_sur:  "47aa8c7861a759d66f553bc8960ba09c14a3b5acf86e2c0f22779379716cac5f"
-    sha256 cellar: :any,                 sonoma:         "1f640bf2ae0c16e93e12b56fbc4b0610bbaabe01305ba238921fbb90dc494c99"
-    sha256 cellar: :any,                 ventura:        "29bb418280be9364ad49399820156acbd0a17b2aa15d0aaa90ce0ecc1c76a6b1"
-    sha256 cellar: :any,                 monterey:       "39352ff44276b4d207a58999302b32fa3e6a1918a955c6c3e1d3235ee4654634"
-    sha256                               big_sur:        "9b3619df825bd01981c7a7b6fd1b6f88346d7d0fbbb7f9ed8fc30f9fef41cab0"
-    sha256                               catalina:       "78a802b0edd2c27640aa2e6be381c146a7fa05bd6dd584ace90b1dfa0e426291"
-    sha256                               mojave:         "942bfd38bf5fd52613c936077eee5d5f71530325c7337e9db84e44e0b6c643a0"
-    sha256                               high_sierra:    "b182c3fa086d336ee9e6688bb341ea3df8ace70cac451fb757e88ba15c925365"
-    sha256                               sierra:         "1a9fc0dbba69ee471deabc6759ca52f3d669a535e021ef2defa33321261010ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8938ff048627f994a89bd563e5372f3d15de40865cd2eb7ac4793599c81ecd49"
+    sha256 cellar: :any,                 arm64_sequoia: "f44f495419aa32f25be9e14a76466def5388eb6535e8f8a9b0755a87431342cc"
+    sha256 cellar: :any,                 arm64_sonoma:  "f206295b88ae90ba83c514706654efbe65fc2667e42050926a82a9570a54eeba"
+    sha256 cellar: :any,                 arm64_ventura: "0482d18c47021b7fa3f907971a2d90838d0f34af8b5d69bc1835370fc291f34f"
+    sha256 cellar: :any,                 sonoma:        "8a06515f2eab356cc7d5aeae79ad6b295f26dc4dc1dfd488e1182195a8621dd1"
+    sha256 cellar: :any,                 ventura:       "1fe4cac55b6ff73ec09fc4f326047cbd01398d6787d2a4b35aa0b5e1d3429757"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3bef9ef7ca1825d02d60715181c08c112cbf1d14eb9c891325dafd6e001ff602"
   end
 
   depends_on "pkgconf" => :build
@@ -34,6 +26,7 @@ class ExactImage < Formula
   uses_from_macos "zlib"
 
   def install
+    ENV.cxx11
     # Workaround to fix build on Linux
     inreplace "Makefile", /^CFLAGS := /, "\\0-fpermissive " if OS.linux?
 

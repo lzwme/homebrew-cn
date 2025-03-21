@@ -18,6 +18,7 @@ class Quickjs < Formula
     sha256 sonoma:         "4b4183ec2ae090f33781c4ca33446ae5597910c3bbc6ad23dab6197c1396b35c"
     sha256 ventura:        "5f0d78ed0a0ce5e317996918f860783f4744573ef601b56ae3df0346730b5ab3"
     sha256 monterey:       "6f93efa66e963ddc9f2eae93713aed75373a7b7d62ceaeba9c57da6c98969cf8"
+    sha256 arm64_linux:    "bdc7f23de1ceceb56e7d5a7dd705a4cf3e4a23830ebbc96eeddded0b67f4e662"
     sha256 x86_64_linux:   "34e76af7014843804104d0885e72d6c9adc203cb54bfabff61577230e4498c9e"
   end
 

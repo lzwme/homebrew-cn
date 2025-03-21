@@ -25,6 +25,7 @@ class Cdrtools < Formula
     sha256 big_sur:        "dd2f2609309ef54a2b9289ef79032222714f01c86ecb280d8d79ebc520488ae6"
     sha256 catalina:       "411c2dc1a6931d3c7c299d7c9d73129efbf45a39a421518158a3852de554fcaf"
     sha256 mojave:         "4669f544745a05b8ef4ffd9bc1ea446ef7cda4c98f32b26279c81af803f1ab7e"
+    sha256 arm64_linux:    "a4ccf338b3311fd3f83255a94da5bc352d00e458deb031f311c26a7b1b48206d"
     sha256 x86_64_linux:   "4933b72c86f84c6378d621ecc1e5ac26621ef8b5b8e890b0841d389edc64db12"
   end
 

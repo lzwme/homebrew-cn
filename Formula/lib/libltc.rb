@@ -16,6 +16,7 @@ class Libltc < Formula
     sha256 cellar: :any,                 monterey:       "9a4cdb442f640d04e8886b888bbc5427b448cc9d7a160672a505fda5fa1371c8"
     sha256 cellar: :any,                 big_sur:        "a8a22a13e7faa84038e3833a7ad379d5ca3afe26670476fad9f87afc5312338a"
     sha256 cellar: :any,                 catalina:       "2489b05efb1e77a52635ff5cded3850b9c1abe861b01145bccba7a2f6edaafaa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9cf04675a7dd67b37fa8b4c48ab7e6903d2caa761704bebdd1e64a5a6d79f863"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c160950aa4d33232070cb6607deec9ed4fc9b070dd5dcf0c3221404199016c46"
   end
 

@@ -14,6 +14,7 @@ class Flake8 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "bc6472bbbe85644ceb3ca79ebdad429eba7aad1f29da85c5a5a7324fe952b8c9"
     sha256 cellar: :any_skip_relocation, sonoma:        "8292895a9196bed1a95f2e23df67d054d91ab214a0ab28fc7f7ba10493e6082b"
     sha256 cellar: :any_skip_relocation, ventura:       "8292895a9196bed1a95f2e23df67d054d91ab214a0ab28fc7f7ba10493e6082b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e53312ee99ba86180c06a373785e256fd8145bbb304cf0a76d113fb5fcd3c72"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc6472bbbe85644ceb3ca79ebdad429eba7aad1f29da85c5a5a7324fe952b8c9"
   end
 

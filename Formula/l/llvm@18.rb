@@ -17,6 +17,7 @@ class LlvmAT18 < Formula
     sha256 cellar: :any,                 arm64_ventura: "b4cb7eba8d8acc3602e08c10a79ac8b584bfa7cde3f7dad3e8ecd618245de840"
     sha256 cellar: :any,                 sonoma:        "9066365b4f1e822123b399eaa4f53fea875e64f78243fa737d6a3cc28e67479b"
     sha256 cellar: :any,                 ventura:       "84b0c6e7c40e9ee5ca0935e464fcf83fdc508fa1a45834a425c6a7ffbf3d0d23"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ec0521e2b13ac478b9d16ebf35a4d43064e9f7d4e44d35f817ce304546c84e1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "79b1083ab5c1f62b6b192b680618a50d06e72594a93d859835f7a30b8fb71271"
   end
 

@@ -14,6 +14,7 @@ class Uvg266 < Formula
     sha256 cellar: :any,                 sonoma:         "1ff7b317c2ef872de0f794eb448e26cf4b1569352b2dac1e041357756d94b3da"
     sha256 cellar: :any,                 ventura:        "9219b51849b23154d86aec45505cc450e83833a14b8c5ecf32cec6fc889a4096"
     sha256 cellar: :any,                 monterey:       "5b0ac26a3a6a6162769cd3d08d7eeb2fc43ad4bfdab0905e6e0044ef8fa73c95"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b789955cf0ac4e360740908d922e1bb1f0bfab904ac642635947e71542ae1724"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2b2fc85f72c8d371bd32609a2723478c4c5f7575e3337827b5991c5b91f498d"
   end
 

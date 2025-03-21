@@ -18,6 +18,7 @@ class LpSolve < Formula
     sha256 cellar: :any,                 big_sur:        "04e8e54a2c3c58d7430337dc2b0f9ca6c2db2d144bb98a6b91312cd63faf834d"
     sha256 cellar: :any,                 catalina:       "ac4e07a9e144e2ef6ed34e340a9d9eb769ae7184723df790a8b78ef32d46e753"
     sha256 cellar: :any,                 mojave:         "4abc54efe795496f3114edcdaaf3b90e55632bbe92c5816b5372b9743366e62f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "85d77ec6b61b0d962b0ba1d4f7baa264b9ced5ab0f78a208472055c12acd1a53"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "866347d7fd1625067ac3643d61249354dbe64c38fc9028f0e0a576968437460a"
   end
 

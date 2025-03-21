@@ -18,6 +18,7 @@ class Htslib < Formula
     sha256 cellar: :any,                 sonoma:         "9242245655ac588d50e779950bd07525c5a5ffa3fd84531d837336c67dd5c85c"
     sha256 cellar: :any,                 ventura:        "5fb7968f1ee7824d0c42550ba6441559f3d2d61ded9b838fbc9e4681f8b9a0e7"
     sha256 cellar: :any,                 monterey:       "7643426f0e6a8958f63fdc0cb0fe0c259e1da50eb22d19f74f26a53f62520309"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "97b70d9fd20c7fd47e0b50c2a1cdade309327051a43b6c9b0ec306971deabb7b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f5a5a9b188b427ad39f32bd45f8420f46e7bb0d4fc03e1eb46a3b1f78d97d67d"
   end
 

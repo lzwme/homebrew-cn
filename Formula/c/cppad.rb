@@ -18,6 +18,7 @@ class Cppad < Formula
     sha256 cellar: :any,                 arm64_ventura: "4b210a927c2c5f55f16ebf358b83ad441d7931b616ee3c72525513db2aff1ba1"
     sha256 cellar: :any,                 sonoma:        "be977a43d7368711e1cdba74d19b0a9d14babf25c9cccafb98cc28c2ed83725a"
     sha256 cellar: :any,                 ventura:       "cf71330f98f3ec66673d6475e72b5521656149487d9181f4b11c54703b4e94d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e490b1de9def38d581e819d73a01f770be148c6ae6541a987a7ab92e9a2b2b1a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b72d08633d4877ffe165ccdc0569d2c5ba34607534b93d395b52ab1a4aefe882"
   end
 

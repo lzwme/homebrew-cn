@@ -12,6 +12,7 @@ class Leveldb < Formula
     sha256 cellar: :any,                 arm64_ventura: "c0970a965d039a1f3ad15c7db01b80b9e8851c59f63fe55f0eaa8633d083530c"
     sha256 cellar: :any,                 sonoma:        "5a757793bb447bf5a91ee7fc38864c7dd4d870f857324524a4bd016c767afdda"
     sha256 cellar: :any,                 ventura:       "b20dad4e906b5c65f7b52e4a61293c22b8324925b24c982c0c4baad2c77e13c0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7e65c084c1d96f275941227d504bf22bc4e8b0733d01658e7c5d6e0efc61a21"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff14a180346c9cece9aa3ddaaab5882eb6f9fa5074cde29d874ab640b351fed2"
   end
 

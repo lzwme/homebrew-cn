@@ -20,6 +20,7 @@ class Lmdb < Formula
     sha256 cellar: :any,                 sonoma:         "2b91b9e0509dfaaa6d8519023f398f294f512165e8df13e3bd61090bef0843a1"
     sha256 cellar: :any,                 ventura:        "f6669607cf9b8d2aa52c0c1bf3a98cd0246da69b249cd1d265b80275d3ab0846"
     sha256 cellar: :any,                 monterey:       "affb1315fdb4fa6bfa23af3340cbf58cdc1d66911c39e5beb0e26b68d9b34c83"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "38ec12a50b6addec5f94a800a82f29349b6674e5ba1d44c73e5ca159e771f1d2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8505f02598426843842d04507a63658185cb0ec0abb2e4f561eda10719bf564"
   end
 

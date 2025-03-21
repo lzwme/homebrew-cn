@@ -12,6 +12,7 @@ class Fcgi < Formula
     sha256 cellar: :any,                 arm64_ventura: "a3849663ab04f777cbbeac683d41a01c16d4543d4a8973fb0c421a580f949244"
     sha256 cellar: :any,                 sonoma:        "da8530a044fb1de39e36cdbd7494e7c58d1a6e8f01cacfce567c0d8a1b19ab70"
     sha256 cellar: :any,                 ventura:       "448684742a94e680dd2d9e00d255898be0a4af34355b8f873232aeb1c4b59035"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dfab6882277483d54532ebe1e4fd4392273d1cdbda08a30b06958e709b96a16b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "429fed517696fe00225fb3cdf5552de904295b82526b87c0e887b7d5cd77b668"
   end
 

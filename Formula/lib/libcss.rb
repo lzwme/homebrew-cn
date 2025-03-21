@@ -17,6 +17,7 @@ class Libcss < Formula
     sha256 cellar: :any,                 arm64_ventura: "50b100529a9304753171f567a8099c347d5f538d89b5fc0a673fa22c7a2ca347"
     sha256 cellar: :any,                 sonoma:        "69f0f19a1a2b2cd7e9493620542a5a2479035e2c2366889993091240366f21c5"
     sha256 cellar: :any,                 ventura:       "3b327a9d304d9964c5b98157661b194ba5156f4a32ca01af4e0ae835655aebbf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c725d0e2a77a61777ee7704025ff633f09efd3011f99c456a855db6122744f81"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "459691f366d4877a30ac535cf1767ed6f681a922435c3b7893d52eb6871c93a8"
   end
 

@@ -18,6 +18,7 @@ class Doxygen < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1d726ffc4e7df5f51137b312f5746e5828126ca1f71b733c80d3a6ccf1baf168"
     sha256 cellar: :any_skip_relocation, sonoma:        "09867504c3d527f0964e543466644ffe2da3ad10ffd8544ef355b4324d06d2f4"
     sha256 cellar: :any_skip_relocation, ventura:       "4dadc96efe27d3d615ae06a1196c444dd260201122a1b11612147615bd2fd07d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f7e4556f199db6e58e615dcc5a39cbd290f388d2e68746764db5c240f6468f6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b58d06f93c341a4fa403c88b5c7144a00c155f71206d7e457c537321d3e833db"
   end
 

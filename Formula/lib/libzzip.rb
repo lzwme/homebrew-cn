@@ -13,6 +13,7 @@ class Libzzip < Formula
     sha256 cellar: :any,                 sonoma:         "193c19913f3d8f32c917dc5bec67cb7d6b5faed07c9342f8d03f54d2eed23b90"
     sha256 cellar: :any,                 ventura:        "95b6daea1b5be5ca6101f342874d207aef6c8b8186970438cadb144f9c33564b"
     sha256 cellar: :any,                 monterey:       "b81fae11a942992eb933f8d9ee2391727363009ec9dbc5521b07546606031f5c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "52a5fb3d533f2e6e50d0b07886574b5496b4131ed82c21786c45710ae4bb794c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e595cd977c07fdbde35b70ab99fd3f65f1f919c436d999506eb8117f875d0d99"
   end
 

@@ -16,6 +16,7 @@ class X8664ElfBinutils < Formula
     sha256 arm64_ventura: "d25d18b7765a1757c299d2a8745b15a7a0d8e9a57e28b602802b313d5be1ca5b"
     sha256 sonoma:        "66b1a985e3174d0ee92f25c4a4d16c08d973ce5d500057c3cafbac6c9d8d0b0e"
     sha256 ventura:       "66fd8173cc8e438f22e4921bf64cd570047eb8a19cff0ae3d99e95a59e79d7d1"
+    sha256 arm64_linux:   "7eb1f372ca29b1075657e32b186f4bb0de3951e985c9b32a20ca3ed5f514c30d"
     sha256 x86_64_linux:  "a40dc5fe1fd0de0ce1877546c73423bbe4bd6cccdccf24dc8f34b695b74e5dc4"
   end
 

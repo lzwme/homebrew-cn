@@ -3,8 +3,8 @@ class Osc < Formula
 
   desc "Command-line interface to work with an Open Build Service"
   homepage "https:openbuildservice.org"
-  url "https:github.comopenSUSEoscarchiverefstags1.13.0.tar.gz"
-  sha256 "cb454b663c5625dc7dd2cb826c25c6be71bf780ae94f78261ab44df95d767d17"
+  url "https:github.comopenSUSEoscarchiverefstags1.14.0.tar.gz"
+  sha256 "0f2e7dad5d4377530cd5839a6563889302048316ae403acb1a1e05c75aaa1486"
   license "GPL-2.0-or-later"
   head "https:github.comopenSUSEosc.git", branch: "master"
 
@@ -14,12 +14,12 @@ class Osc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f5241a4fdd13046c6825b44a39cb1cc0e77f30d8df02156730086c4c627c18df"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f5241a4fdd13046c6825b44a39cb1cc0e77f30d8df02156730086c4c627c18df"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f5241a4fdd13046c6825b44a39cb1cc0e77f30d8df02156730086c4c627c18df"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eda5c056739b658f66f84574801a23ab9e78ce64f2417162c8edbf474aa88980"
-    sha256 cellar: :any_skip_relocation, ventura:       "eda5c056739b658f66f84574801a23ab9e78ce64f2417162c8edbf474aa88980"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5241a4fdd13046c6825b44a39cb1cc0e77f30d8df02156730086c4c627c18df"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2fd52b44b0118e525e96fdd0315062f70e2efb4a7bbc3adfb1d5724f4dad3077"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2fd52b44b0118e525e96fdd0315062f70e2efb4a7bbc3adfb1d5724f4dad3077"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2fd52b44b0118e525e96fdd0315062f70e2efb4a7bbc3adfb1d5724f4dad3077"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e720725830ea34a621e6bbbf2f5c64ef86b36687735b587f5cf44079609a85a9"
+    sha256 cellar: :any_skip_relocation, ventura:       "e720725830ea34a621e6bbbf2f5c64ef86b36687735b587f5cf44079609a85a9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fd52b44b0118e525e96fdd0315062f70e2efb4a7bbc3adfb1d5724f4dad3077"
   end
 
   depends_on "cryptography"

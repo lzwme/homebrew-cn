@@ -19,6 +19,7 @@ class Javacc < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "b84312451176ab1a2df3d822798ca872ad17e94463cfa36711a5e2cfc4ff906b"
     sha256 cellar: :any_skip_relocation, ventura:        "ecd5ae75666cee39459c65063a32d4c24a27be79ae2125b12fa3ad5042bcb0d3"
     sha256 cellar: :any_skip_relocation, monterey:       "d4c07d3a5e68b54df0a7de796394bb9d765d9d863249f51e81a1921a38ca89cd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "546e4c009d4fda3ed41b4a229d77059fb613c9558e158a037ddf47f7d6488c49"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8cfcf0b2f8d787fe06ac54aea4134722f7a4222f17b5402238a37177a0d73cc8"
   end
 

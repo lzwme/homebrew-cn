@@ -12,6 +12,7 @@ class Ndpi < Formula
     sha256 cellar: :any,                 arm64_ventura: "d297b296f2dfda154d6f25de7c442de06dd1184e7b5091876b5217a5cd5d033b"
     sha256 cellar: :any,                 sonoma:        "93315328adbb6bd402a3beadae655f4169f4cbbf3f3ddf4a88ba6d2f1d6a9de2"
     sha256 cellar: :any,                 ventura:       "4f7060394acb0ce6edc09f5e58ec250a93c9476555761959af6a5b8ef7af4e9d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f47166ca3478522dd97db73e25098ba12ffd3909ee4aaffc558489e855e1041"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "77dc577fa30a25ad44a5016594faf8b22cce222b528f7862f70e59146aeda3c8"
   end
 

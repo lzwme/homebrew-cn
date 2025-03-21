@@ -25,6 +25,7 @@ class Libcaca < Formula
     sha256 cellar: :any,                 monterey:       "c7f6b2b19aaaa1417feac203e5c3676b6c0e70fb72816e16e1b85343e8cf55fb"
     sha256 cellar: :any,                 big_sur:        "efe390bae78561024c804ac37bb5c0cf9f3397229bd91732cb59f9f4e32ecc8c"
     sha256 cellar: :any,                 catalina:       "f0f86157174d749eedaec913f4d8d1b6d00824b6e580498847ac9e00c9c53d9e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "c591f85155b4b4bc5efa7b98f5e43a638c2a6b9b5a771d26fe56ce31adb7285d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7dab49e0d6bf0ed46dcc831c783da0124e5329f7e0e69f7d8cf847f9b825ebe2"
   end
 

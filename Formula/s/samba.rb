@@ -20,6 +20,7 @@ class Samba < Formula
     sha256 arm64_ventura: "d4aedb5733a1533ccfbf3b225ca70d499b60e51ef3f77930b11083c353beaad8"
     sha256 sonoma:        "1f9e859a09adfc3e6323712953fa4a7cd865227471aad03a4820679284b721a7"
     sha256 ventura:       "7bcc54821d340ca1e2ea0caad4dd549dd32b0f1f4ce1f459fae4ee26d03313e0"
+    sha256 arm64_linux:   "47160eb33d4430d977d518568a8ba4141a1665e886bc0bf9a86a1703e1306f25"
     sha256 x86_64_linux:  "660cc22baa8f195ea9aae7eb517356ac3ea864896b50ca34072048aeb1c29895"
   end
 

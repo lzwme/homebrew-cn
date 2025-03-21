@@ -6,6 +6,7 @@ class Slirp4netns < Formula
   license "GPL-2.0-or-later"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "89e60e3e27c13237d8445d2751035fc45a39e61190b9a1d9ebe3616ce9e1ccb8"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "aae20af004ad6c78e0474256666c18b342668c8f7b54d8800968833fbce4861b"
   end
 

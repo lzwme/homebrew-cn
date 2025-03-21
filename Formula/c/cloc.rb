@@ -12,6 +12,7 @@ class Cloc < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ddc04e8018a88a4506d58d5e1024da139c7e228584aba582dfc14e6a1afb12ab"
     sha256 cellar: :any_skip_relocation, sonoma:        "c20ebdf0cc4416b16cfbf89cda60ea4fd9b094ef4fd0aea3f61819248f589e9d"
     sha256 cellar: :any_skip_relocation, ventura:       "cabab725242716b2f3d908c0fe861d9175870305d9c5ab1d86d1ebfe0f584ea5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "273d53ef9f8f29740f74ed543e2a1d5ccfe1248483bd7ff2454e90f07fcd9624"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "91b5211f50ed444d66a1de4f851af9d180c7add1c443c3f7b294b8eddc55a5f6"
   end
 

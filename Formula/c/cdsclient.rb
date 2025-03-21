@@ -18,6 +18,7 @@ class Cdsclient < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ce712b39898660b3b383ecbb7cea31aac7681fb14980982f99c3b59cc5d130dc"
     sha256 cellar: :any_skip_relocation, sonoma:        "c8a738375e2a386b461f29a111dbb0da50e05ab784af7e07b588553a2bf9b759"
     sha256 cellar: :any_skip_relocation, ventura:       "4fc95c54e491a0973791f1f741d6a5e4a1190147c3d404d99f9fdb90f7a35d4a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b2b835d82cb1b820e6e01b5b797c1ca9bedd08ebff78c1c85ae58951fe6ad95"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "244a0d04795c89d1e51cdd4b671bf438c0698bb1177555122403cfa4c071079d"
   end
 

@@ -15,6 +15,7 @@ class Libvisual < Formula
     sha256 cellar: :any, ventura:        "de0973df1bed9f47df99760b65c9e32fc44302b0931e5b41e47768cb3f6ea01e"
     sha256 cellar: :any, monterey:       "8cf0b4866dee89d477602b4de996f10ad8115158c7a1fc0a04bfdf6b55ab7084"
     sha256 cellar: :any, big_sur:        "6912bc1436fd9aa261090f4c0877c3b17b1aa8301defdb17c66f5f3410d060e1"
+    sha256               arm64_linux:    "c1037bb9d22337170f186be7d8ad1ccce9ef18dcf55e92cbd8424b7495204d03"
     sha256               x86_64_linux:   "ceefedcaeb4e18c06c22c2a210e35d3439783f2f457107090d91d2b777e788f2"
   end
 

@@ -15,6 +15,7 @@ class Findutils < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "6f6c220a82a470cd41bd33c330d6bb752df6da9df4aa2ead4e011fff80abad0c"
     sha256 cellar: :any_skip_relocation, ventura:        "90ec3d5bf4c1f5c58bad4e40a28f00f856e5f15f995a2e724b89a882112e4db2"
     sha256 cellar: :any_skip_relocation, monterey:       "642fe05dc9e71c9941570328bf7f8ab9d5c61e5517211ab8f62a08f9d3936ac5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "18a1a2feb194d1e22a457160a5bc7ab8aa0a82888d5117c89981193e42075640"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0e2d353feb5ebd258d6a53a4ca3c5904dec97797c56bbd13ae5ff75cdebc0492"
   end
 

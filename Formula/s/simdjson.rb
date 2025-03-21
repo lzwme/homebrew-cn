@@ -12,6 +12,7 @@ class Simdjson < Formula
     sha256 cellar: :any,                 arm64_ventura: "80d082282690e41609a45e745e6fc2db73a04b4f8e846e9029949168e412e424"
     sha256 cellar: :any,                 sonoma:        "4383fa8797c933fa4a6e272c3137ca9af0fe9fac676990f372afa671bc7346dc"
     sha256 cellar: :any,                 ventura:       "e4c703992b9c70820771c5586f8052bdc8a606324278ab893ad338e548f557e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c35f866d13054c6091a18636981a494e52472a8e03cf5ecb9183db4fa2396e4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6584c821561acf58ded85f3b7e774f5baf39c7de58e9cd68081b84c658be12a"
   end
 

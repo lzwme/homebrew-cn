@@ -17,6 +17,7 @@ class PangommAT246 < Formula
     sha256 cellar: :any, arm64_ventura: "b323db7914c80c804a6804b16cb58c8cb9a11d38ce52826b1cc469fa8dfd2510"
     sha256 cellar: :any, sonoma:        "ee486c1037b89986dec5c26f870d092f4510ba0e121dbb96525fab6a61d358f7"
     sha256 cellar: :any, ventura:       "1fc51b4f1d0ffde9fffb314a586bcf812fe84496c2a5c56f9fa362cfa91e9cf2"
+    sha256               arm64_linux:   "83a7dc15c14d9031b26bb31705692823f7579ee94d962eb0e6e48952f7c50ba9"
     sha256               x86_64_linux:  "6b6a26c7bf0e1ba43a9a87dcf9c5b669da81070f282c6b26a70204207713bde3"
   end
 

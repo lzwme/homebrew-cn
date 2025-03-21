@@ -16,6 +16,7 @@ class MkConfigure < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5e4df5fafb64a8b2b6c58d5f10f97316016731381ba859ec61fe79222e3404ac"
     sha256 cellar: :any_skip_relocation, sonoma:        "38eff0dd90436b640ff6ddc3cc0f2f208d5a1a5f0f609c873c8a093fe90cc2be"
     sha256 cellar: :any_skip_relocation, ventura:       "6981ba14741216c3651d168e0f29810904547ad38df976ca0cd6305c7f3a29a4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a75eda4ef70758b92fedce279ab4c2dbb0c83a2b050c45a419e9e12e005102c3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "434d05bf1acf22ab6f0f9f3fda53b07228fdadac453d2c6fbf7ba38e5a32d637"
   end
 

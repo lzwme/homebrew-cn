@@ -16,6 +16,7 @@ class ArmNoneEabiBinutils < Formula
     sha256 arm64_ventura: "2d2236dc183c21ce0adcfaf0abae65bc05edc5583c7c48b3fad228fd69202652"
     sha256 sonoma:        "cf3bfab0f48125c69f6c2166ac1bd69c2c045c163bda75115b1da0ca13d7750a"
     sha256 ventura:       "7862fb7e8858483cbbb8b11d5ba4e513f89e978ac595314ce2a70dfdbb15d1de"
+    sha256 arm64_linux:   "7d5f1e23b43b2d56be4ecc2901ad686bcfc1cf71fdb40c8e0c9a43df2a896219"
     sha256 x86_64_linux:  "0eec589c7c132355e1a5c1ce1a033cad808510ff880d5be743e1d762a1fc77fd"
   end
 

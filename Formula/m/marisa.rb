@@ -11,6 +11,7 @@ class Marisa < Formula
     sha256 cellar: :any,                 arm64_ventura: "96d9aac1c7bd7c4f0d927619215b2216791f83ed80693b86706e0077062dfe81"
     sha256 cellar: :any,                 sonoma:        "89899d1173f4dcacc825068599a458c818f42c9ff2c6ae9dccac56a0eec837e6"
     sha256 cellar: :any,                 ventura:       "fc0d60913ac0333a5dc9f977e77f466388b5484c8e77cf190e80c48b582f9deb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "85694a17eae4c73ae6a61c691bc6fa526a662389bc215decaf9e2d4cd97465c9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "45455df30c80232d1c7d16146b550fea52fbd71d0bc341bdbe3acae2038b4286"
   end
 

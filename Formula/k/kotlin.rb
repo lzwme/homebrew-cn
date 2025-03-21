@@ -1,8 +1,8 @@
 class Kotlin < Formula
   desc "Statically typed programming language for the JVM"
   homepage "https:kotlinlang.org"
-  url "https:github.comJetBrainskotlinreleasesdownloadv2.1.10kotlin-compiler-2.1.10.zip"
-  sha256 "c6e9e2636889828e19c8811d5ab890862538c89dc2a3101956dfee3c2a8ba6b1"
+  url "https:github.comJetBrainskotlinreleasesdownloadv2.1.20kotlin-compiler-2.1.20.zip"
+  sha256 "a118197b0de55ffab2bc8d5cd03a5e39033cfb53383d6931bc761dec0784891a"
   license "Apache-2.0"
 
   # Upstream maintains multiple majorminor versions and the "latest" release
@@ -14,7 +14,7 @@ class Kotlin < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "39a74083fed16eac4926adfac8cc0496c0feae5a02a0c0658d18bc1e74e5ff5d"
+    sha256 cellar: :any_skip_relocation, all: "a0a17cc4fea3ab754df942bc1d7630dd494b05bd538f20097c9a960b58ed8d0e"
   end
 
   depends_on "openjdk"

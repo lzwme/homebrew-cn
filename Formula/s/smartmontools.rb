@@ -15,6 +15,7 @@ class Smartmontools < Formula
     sha256 ventura:        "28d25bdbce8bee1b4a7688616918bc736b9c77ffd2527c9bfec0753e5abed804"
     sha256 monterey:       "873861115ecd80333df0d3f5971e15c7341a016b14a612feb0de789da4396aa9"
     sha256 big_sur:        "a6a467130de3c574637ecf611f9b1747578c46537cdd8ed7b73d7d7faf3146c7"
+    sha256 arm64_linux:    "9b88ba280ccecae3228f41d500b3f86f88f2d502cbb6e1436f54bd5f892670c0"
     sha256 x86_64_linux:   "0507b353613d5bb2f79dc75405840bf8b36e38551debf418680035e1aa89b775"
   end
 

@@ -22,6 +22,7 @@ class Glktermw < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "1fe4217ba733bafb231019e146f8ec74ca9aa57fe09c94614dcbd3942c4bd9e3"
     sha256 cellar: :any_skip_relocation, monterey:       "699e360251f685b222039f3847dbe00a3106db24e10fd306f6bc03d9cdb026b3"
     sha256 cellar: :any_skip_relocation, big_sur:        "52731e29ed29632ef8e5e1bc069022498be1270ac2af0b47cd906313c643ee71"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d1ba5b6b77eec49662678b249c1ab830d1b6d2b0d8b51b605d68e0d639a0201b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3391048ffb327060e3cf8e18e253ac1a44de556fbef1c453ee0186c92b3b079"
   end
 

@@ -12,6 +12,7 @@ class XercesC < Formula
     sha256 cellar: :any,                 arm64_ventura: "925ebabdd24526e5e9e91ced09983deb480189eae3e1fce43aef08204fcc21c3"
     sha256 cellar: :any,                 sonoma:        "eed44cffc9b1ab90c33025a5c3c6b30905bf1d97c290ffa18d4bdfe1233a718e"
     sha256 cellar: :any,                 ventura:       "9ed96c4d74c313eb545ea3d04c6f1973fc81cbf5001bf8707c89a48dcbfb93d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f069b3149aedf577b3e2e766d242c7167ce472390335dd8b2a2722ec527f9d13"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "992f70652b3a78f54ed931bdb482c88a2fb32422cc13aacc0e09975ca8cd6e38"
   end
 

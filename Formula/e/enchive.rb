@@ -16,6 +16,7 @@ class Enchive < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "6e1fe9e5471985e9d9caadc563297313ff0d0e15a8aa1ac3ccb15be45ec4879f"
     sha256 cellar: :any_skip_relocation, monterey:       "abca74b9d636453d9612bd0a89f2256684dc3ed42aa72bf8fdb2fcfc84788819"
     sha256 cellar: :any_skip_relocation, big_sur:        "a3844247a43c518b50f8a33847a39e5c91db46fdd177b810ac9d2776b842ed7b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9f0cbe65f702629660b17db25d09bb215a4383d569b781251cabb82acb5de040"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "116e7fa59dc5c555ef911ca1668175cb71fce934dcc3f475433e84ce6d2f4d14"
   end
 

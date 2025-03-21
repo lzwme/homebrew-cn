@@ -13,6 +13,7 @@ class Sshpass < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "aaae8efa23cf70f1149c669245ed78a75a0228a65bcc5457176ee6d232b0eac7"
     sha256 cellar: :any_skip_relocation, ventura:        "5f2c50426dc465a5dd28bc1901b3b4cf0b2c20d3e32c2c44870a891c165a23f4"
     sha256 cellar: :any_skip_relocation, monterey:       "c291394d903ecea28d08974c70f8692349f0a08295d09f06750911cf8d244d40"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "053be70fcc130a45fd5ac4d131ca5bab40ee4a3d543ffab73ed8f455defd486c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "29700081d945fb21d977430b0fabefb7e38a53da955ffb2a9b1d28e14203c877"
   end
 

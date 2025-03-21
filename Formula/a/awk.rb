@@ -12,6 +12,7 @@ class Awk < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1e7d70c9939caca5633d63b76cf7335e09acc043ead6161030d6509f17627c52"
     sha256 cellar: :any_skip_relocation, sonoma:        "8968128a1d73c936afcf91001b14acff3b61434c29da46dcc6633a0db110bafe"
     sha256 cellar: :any_skip_relocation, ventura:       "bcd5849c88f363e61d7b5a64ad66523b179bb0640c6ccb2d20bc73a5f16ff97e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eea9d168fda5dd37f829e640f2cede4388e4def78df435d7a80d9970791a2f88"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "58c95f701bae773a84aac466636229ae363c15b1943ae627d2065bcb16c2bc78"
   end
 

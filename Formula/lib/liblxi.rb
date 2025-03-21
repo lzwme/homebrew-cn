@@ -12,6 +12,7 @@ class Liblxi < Formula
     sha256 cellar: :any,                 arm64_ventura: "d78d4fbae7b6cc939fa66c4dd2076ad656da648a166f678b2eacd2e61e24588c"
     sha256 cellar: :any,                 sonoma:        "53fbcaa96206292e4bf9c2cd1a1ff58923aff7a7e2158ed7e9b61c1fd8cbc672"
     sha256 cellar: :any,                 ventura:       "7dbb5b441482ca8698090704c45aa776b2680957ae39325c93fc5ae7b81a2b80"
+    sha256                               arm64_linux:   "753ec0b4dbf9b8decd7d1902f64c98630f5d50225226d4681aec063166fd2b8d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "21dab7abe5a6f4c2c6ff59733b4e25232a5ec4bd0085adf179890a8b68b88b85"
   end
 

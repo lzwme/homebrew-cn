@@ -13,6 +13,7 @@ class Libcyaml < Formula
     sha256 cellar: :any,                 sonoma:         "1c92fa081bb054a3f92a8c37b3bf9c6504240c7a06935c3661aaf7b1afdfd2e1"
     sha256 cellar: :any,                 ventura:        "d04c058836bbd8fe0cac928c000836884c80f7ded2f3addfbb66e3b63030e644"
     sha256 cellar: :any,                 monterey:       "4b56dac4eca00856bd125610014ef2ed230bda981e910a37ee67118874b85219"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a4deac758411695b4c3a5c1b9860d3098d38ac10040bcfd920ca6022f21f6b6f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9941417c37c0d014a1ca1bf23c83275c5f36e5edbd75c320c4f0124d6964b87b"
   end
 

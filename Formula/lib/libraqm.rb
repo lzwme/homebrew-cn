@@ -11,6 +11,7 @@ class Libraqm < Formula
     sha256 cellar: :any, arm64_ventura: "2cb4fae2a63f43d2fffba40060492d6a0c577198c32dd878277953e9097341f4"
     sha256 cellar: :any, sonoma:        "5cca7d3c4e68f13d5d94fe0e775578d7e75d5baecba6914ea7c8953aa48d4cd3"
     sha256 cellar: :any, ventura:       "5a04efc31fb102abee7e294ff201304375b8fab445c0f097b5dded104a3462c3"
+    sha256               arm64_linux:   "9b761532205d53cf4a302ca211d4246a566019bc4bf9715ef51e3b32006f70e2"
     sha256               x86_64_linux:  "9676804e1ac66a629bdbc1016d76f42a7a989e42bdcad1de59e86912e9c86f54"
   end
 

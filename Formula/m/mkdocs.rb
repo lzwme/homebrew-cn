@@ -14,6 +14,7 @@ class Mkdocs < Formula
     sha256 cellar: :any,                 arm64_ventura: "da17c04e73e0303c652227c3430ff796ad56d4413ecf83dd70d56e726a32c50f"
     sha256 cellar: :any,                 sonoma:        "4ea1fe98fa94007b603783f49613bbb2a78f17e1eef3ed25d4ba8bc7df058093"
     sha256 cellar: :any,                 ventura:       "a971cd332ce793ad02a26af1c969939159312cae8e8912cade00bd3ed8ff82d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f5431f94afb48e3c3f075f972b4cbb6ce369a92025cc0c68bf8d56006f8f4aa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef7464dc0f884425c657bd71d5f29700644c6c5ca4825a8bfdfe5daf5ca74481"
   end
 

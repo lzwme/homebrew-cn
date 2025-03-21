@@ -2,8 +2,8 @@ class Vlang < Formula
   desc "V programming language"
   homepage "https:vlang.io"
   # NOTE: Keep this in sync with V compiler below when updating
-  url "https:github.comvlangvarchiverefstags0.4.9.tar.gz"
-  sha256 "0674be29f7d5f8912b27193107c70ebcf8d0db2ce6aa7da8083d5de3db210594"
+  url "https:github.comvlangvarchiverefstags0.4.10.tar.gz"
+  sha256 "72541bab3a2f674dcc51f5147fead5a38b18c47a3705335d9c13aa75a0235849"
   license "MIT"
 
   livecheck do
@@ -12,12 +12,12 @@ class Vlang < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "7a9a6ff09ce7521bd65169b4388180e94c82bd156a3ca8ad6a2011d6ebdbf23f"
-    sha256                               arm64_sonoma:  "253f96e4ff3e964fb60d140ac00c313fbcde0a6a21b2be82f0640759e2c8b33d"
-    sha256                               arm64_ventura: "48989de25cd49bd888bbdd1f43ded49c5cd3c7339462ccb4976d34bacf478c62"
-    sha256 cellar: :any,                 sonoma:        "67b706c7ca87afe8bdacfef10aca5723e314f4ff3a09534dc7a7c374e21e62e0"
-    sha256 cellar: :any,                 ventura:       "fb63af7d72e63c80c7ad754e3941a633d99ad460701d772a6d48d017cb12a180"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d30a53219dc35eb0aac099704ebac18af9d429d75ca6400e5cba4983d1901b05"
+    sha256                               arm64_sequoia: "32aec92a6ac64e9d2dc960ecafbfaa3282bd0eded6db255b9ede6bd571149527"
+    sha256                               arm64_sonoma:  "af87e546e1a6382c3a2ee7ff2cf7b65e2f3270271fc43dbefebde926300c1d4a"
+    sha256                               arm64_ventura: "9c366ca953ffb4b842dd03f76a482ad13f2947d710a310a1a21d9f4ba96a5f50"
+    sha256 cellar: :any,                 sonoma:        "24f58d9baf4cae0aca1927abd2ea628ce05ee7388f71b08073cde56cfc180f12"
+    sha256 cellar: :any,                 ventura:       "282a577155862b49a70bcee58086543e6b6e4fb2bdb1657b4fcfb8150107d89a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "caf700701f2968e5e47851da597f7261f79dcbae2b4be8ac5d126f7c62fdff86"
   end
 
   depends_on "bdw-gc"
@@ -29,7 +29,7 @@ class Vlang < Formula
     # "[v:master] {short SHA of the vlang release commit} - {vlang version number}".
     # The sources of this V compiler commit need to be used here
     url "https:github.comvlangvc.git",
-        revision: "27942c7ab5a12b9253eb69eaf3a58699bcdd5189"
+        revision: "7d11c662eaac78bd5195ee5086069b2a65354047"
 
     on_big_sur :or_older do
       patch do

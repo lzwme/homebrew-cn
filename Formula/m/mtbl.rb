@@ -11,6 +11,7 @@ class Mtbl < Formula
     sha256 cellar: :any,                 arm64_ventura: "4e8b43423cd8c82ef0f2d586b53c9e4ee38e9977e4a4b0b0bbbb5efc869b4119"
     sha256 cellar: :any,                 sonoma:        "32ecbed59f4c384f6b83fa4747e57676915aef4046dca8e71e3ed8ea45acfb20"
     sha256 cellar: :any,                 ventura:       "751ce48fd18ed2f366e62f792819fd4807f90582ba99f4f844585c1d30782710"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "964ac6e3d6a03c6a037a797a66fabea64638a2c073c412c75cf5cb2afe189cf7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e22aa2d09aa22c71d7646d7d15fd1e8bba3344967f0ebb0c53bbc8dd05c503ea"
   end
 

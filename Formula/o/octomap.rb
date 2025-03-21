@@ -13,6 +13,7 @@ class Octomap < Formula
     sha256 cellar: :any,                 sonoma:         "7d6b02432d6144a747ca089b0b5bf3c873162373b4239b550bdfaf64968f027d"
     sha256 cellar: :any,                 ventura:        "c23f61388fadeb444fa809c33f35f24546ccaede8b5f30d52f1e676d0a65341d"
     sha256 cellar: :any,                 monterey:       "65c3b7a193ce7eec45b4aa579776df10a6fe6981d542a013d177d75d51cd7f48"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "523d6db6329bdbb4d6ed11dd3334643c0cf8d4e61f20bec4e39bef09955d8f72"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c9e829f1df5f7f11c58e4477884ac1ba082590820b0cd00e361ba02effc6b50"
   end
 

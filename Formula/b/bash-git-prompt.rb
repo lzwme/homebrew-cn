@@ -7,7 +7,8 @@ class BashGitPrompt < Formula
   head "https:github.commagicmontybash-git-prompt.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "aba8fdb7276afbd19020d92a907102912674172b4ff9d4883e349fd73fd69995"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "5049efb01e5ceb83df920dfe1c5dd23595401e3c700064fee74afbf9949d4f8f"
   end
 
   def install
@@ -30,7 +31,7 @@ class BashGitPrompt < Formula
   end
 
   test do
-    output = shell_output("binsh #{share}gitstatus.sh 2>&1")
+    output = shell_output("binbash #{share}gitstatus.sh 2>&1")
     assert_match "not a git repository", output
   end
 end

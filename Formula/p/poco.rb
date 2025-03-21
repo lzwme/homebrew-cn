@@ -17,6 +17,7 @@ class Poco < Formula
     sha256 cellar: :any,                 arm64_ventura: "72df7a28c1e8bb067246452e788a8f1e05de8e748956591b91914227d0217fdb"
     sha256 cellar: :any,                 sonoma:        "814fd9e9e80d345389f66784f78537fce57f887b8710c88320ab70ec9b36e7ce"
     sha256 cellar: :any,                 ventura:       "1e6d1e5b6b0f37747880611b53bfee90133dd8efb6830ac894c141c34dd9c330"
+    sha256                               arm64_linux:   "95eb6763038beb833471ceb4c86ac9259d509b78d164ea16704c7009d17a3f72"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9d80b80347cabba99b05c81ea5cb87c2ade6e93bb6dc445bab172cd48cfc29d"
   end
 

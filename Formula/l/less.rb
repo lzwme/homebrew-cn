@@ -16,6 +16,7 @@ class Less < Formula
     sha256 cellar: :any,                 arm64_ventura: "58a76058176707e39b5065c4a105b2f7f45c868845a411d81b15ce613cbb3ecb"
     sha256 cellar: :any,                 sonoma:        "1194fae6d84f21aa62a7872af689067e67acc4f3c95baa5a75c04cf2a1946931"
     sha256 cellar: :any,                 ventura:       "704d6a4b11de0f6e2662a7363c1793499bd4855b16e5ff63039b7bdba24ac902"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a45ea206d3258be6b1d99b09aecdc72d19a5ecac6e462207feea6e3ce364d24"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e86542d7e69cbe139d7cb84746d0567fc997ace251a2e443600c5957af7eb9c"
   end
 

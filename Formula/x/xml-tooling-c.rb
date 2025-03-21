@@ -4,6 +4,7 @@ class XmlToolingC < Formula
   url "https://shibboleth.net/downloads/c++-opensaml/3.3.0/xmltooling-3.3.0.tar.bz2"
   sha256 "0a2c421be976f3a44b876d6b06ba1f6a2ffbc404f4622f8a65a66c3ba77cb047"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https://shibboleth.net/downloads/c++-opensaml/latest/"
@@ -11,12 +12,13 @@ class XmlToolingC < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e0ef902c27cf8bfa73f4c0f6bee15ec69d9f8a63bfd8b34006b495b9802d7340"
-    sha256 cellar: :any,                 arm64_sonoma:  "ceef02c1031a06a879a79db01b058b32933da2ba8fa64d956844f9bd2fc35cec"
-    sha256 cellar: :any,                 arm64_ventura: "fa0690dbfc52ee1b79aed3b3d3d768470c6a40da769165959d581b644959b540"
-    sha256 cellar: :any,                 sonoma:        "6893f239e822a225d47b76d1fdddb881e1eb9b3ffd5f230fd4c7779f2befd848"
-    sha256 cellar: :any,                 ventura:       "7c31c534202e7ee09a6b43c0a68f75b17bcddc27d6e25df419383419d60a79e0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2342976e7b86e5826af7d8634ae96c3abc75b1fae9a80436d7e513278887e0e9"
+    sha256 cellar: :any,                 arm64_sequoia: "1b36b66bb9b46fd88ee081350f982c80b786f7badafdf75a741c900be3e1b911"
+    sha256 cellar: :any,                 arm64_sonoma:  "64daef61885d864d71a90bdfaee06917c8c804f16047e57cd7f61e7ea010f2d0"
+    sha256 cellar: :any,                 arm64_ventura: "0e898674f0dff6301c67b43a6f6d2777e8b1f6699db05030c53ad941386e5c88"
+    sha256 cellar: :any,                 sonoma:        "bbb79415f2f27bbecb0695af2c7547f3c08f3caa681564c4f5a10c1732d41f25"
+    sha256 cellar: :any,                 ventura:       "c8d74d8e11b29f17443ceafce0ab9764a22e5cd8dd049929fbc93b11abcfbd7a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "482017f1ea455f4ecdbac8be24a55edb91ba4c852d288e1be5ae0c7034aa47a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed7b54bffbe67ec82fa423f304ee36a5877efd2bcc3d163d5bb71f23dc9a7dcd"
   end
 
   depends_on "pkgconf" => :build

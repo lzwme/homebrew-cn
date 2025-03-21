@@ -16,6 +16,7 @@ class Libtomcrypt < Formula
     sha256 cellar: :any,                 ventura:        "5fd60ad0923f5288a69d6dfd21b240bf8de82b261567992a1ff064484130a25e"
     sha256 cellar: :any,                 monterey:       "90264e0441e4796b20e7c13dca05149e582f77187cea53c333f8839417992bd0"
     sha256 cellar: :any,                 big_sur:        "53181a23459d9a55cdcf9f0283310d3b6ceb9049239c0a223e74202481de7300"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7118ecc3f9a3986ee0fa6fd49e54d844092c5ead298e59dd6b9adb6a21b37653"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "27294aefd23c971546ba62354ee81327a45f84ae4bf5e953c0397def99dfce51"
   end
 

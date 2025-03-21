@@ -14,6 +14,7 @@ class Fdupes < Formula
     sha256 cellar: :any,                 sonoma:         "43a2ae20a78911bff4710314601bb5369bc6f615f46efb2d6013b518937eb926"
     sha256 cellar: :any,                 ventura:        "933ac3a985ebbfcfc34402d6579cf8f1694b93395192e953a618173027f4fa58"
     sha256 cellar: :any,                 monterey:       "13c75942d279704a1556dbc9f3bbe8052594a7c3cdd09fd6deae4e68f0342f3b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "45b001b59fcda4baccf7b5e26089bbef2f0368b40899152d6e9829c4e79d0ebb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "52b7e8485e9933e6d3154d07908b0f433d8dd3b611f6b078d7fdf077b18a6350"
   end
 

@@ -1,18 +1,18 @@
 class CargoAbout < Formula
   desc "Cargo plugin to generate list of all licenses for a crate"
   homepage "https:github.comEmbarkStudioscargo-about"
-  url "https:github.comEmbarkStudioscargo-aboutarchiverefstags0.7.0.tar.gz"
-  sha256 "baad943a78f25676e4ebfd089b49d3e275f3e015d5633f2c1c274c5ca607eeb9"
+  url "https:github.comEmbarkStudioscargo-aboutarchiverefstags0.7.1.tar.gz"
+  sha256 "5b090871bda2c2cf645de826c219b41486c36ffe0b474ad9f6ecba7e21d279a0"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comEmbarkStudioscargo-about.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e1527ff661626a2c64e98b0aab9699d1975f03df28e421e52025463d5db0c4b2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "da02639aebe152b195db07706005d34f25f3c673aa9ae52d71004f8f3e6092a1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5d35f9f59f6b7bbf0861efeb74765316c7f5688efa739346752613eaa78d8a54"
-    sha256 cellar: :any_skip_relocation, sonoma:        "62676d2f53e09af08f0352690b88df57bf37bf2227f949eec558ac403ffae0d1"
-    sha256 cellar: :any_skip_relocation, ventura:       "b1639cb3913464ecf224aea35f1577a239af3c4b2ad391b6258e6ddaff5be46b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "581e4c626e1d74774ea63f4cf1a433270892d1008cf196f14057e43c7efd5719"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8755083c1b4ab12dd0334783541f0e9b7fff6e2b9edb2017a49dd4c6af18d7d0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ee06157afe725b88b4795b809cb08abb926b8adc6bddee438d1514b771fc4c2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d64e4117ec95d2a2ddd8d511c63241b3950265229bdb991cc5e642f12497540c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ba17839b1dfea081458b2d89cd291f18cfaf2294b6500eab076158682fb82906"
+    sha256 cellar: :any_skip_relocation, ventura:       "3adc4e0a65a778755958727f8f1240d97be68bf9ffb64abcbba43aaa7ed9a49d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb409aaea449ed566e5c8bb9c0d6868375bb95761621dee4cea426a86cd3a394"
   end
 
   depends_on "rust" => :build

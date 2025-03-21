@@ -18,6 +18,7 @@ class Asio < Formula
     sha256 cellar: :any,                 sonoma:         "bf8e8eb31835f402abf69def9a391124c99f344117a0c6412d355e8a92681bb9"
     sha256 cellar: :any,                 ventura:        "45e09606350054371499f004e2c103222ad54c0d5e424cdcc066944817d62c26"
     sha256 cellar: :any,                 monterey:       "8e5c462f8c024efc16d037f57693465de5dd30523ef63f00309410d1dfe13d54"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "06596a7ca41ee44c5bb421b4758b9890a0e848a2e101e7e4cdeaf50b4bf27458"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "327a7b1dadeaf5971516e58b9d7009e9004ffe198cd6621749d6836e604ff257"
   end
 

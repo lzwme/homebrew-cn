@@ -14,6 +14,7 @@ class Guile < Formula
     sha256 sonoma:         "4b8013bda989e3215cbe659f8e0786408f8e71a56777c1533a882246e986cdf8"
     sha256 ventura:        "48cf5388ba5c114888987ae31a6620d640ed94c72e22076df491c33a88a35deb"
     sha256 monterey:       "2716185a062154262f1b160358fa955bf31bbdae5d0b08f4d0c38e3bf6ff066c"
+    sha256 arm64_linux:    "d2c305fc8941ee39d4b7a4ea7ea5f3f6257d5ed67fd4fbae31bf5ad44a2f6411"
     sha256 x86_64_linux:   "fd3f68416f1b61d67641e43ce42a3a4b88ad5a010533b572b42e69fa8e4ef434"
   end
 

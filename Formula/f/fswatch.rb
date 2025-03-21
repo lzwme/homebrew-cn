@@ -16,6 +16,7 @@ class Fswatch < Formula
     sha256 cellar: :any, arm64_ventura: "986e62e77df8976fb7fbfc3191884e8bb9099be083f3f9f24068d8fe71c841f9"
     sha256 cellar: :any, sonoma:        "91e198310bdd2d8b35707ff94cf6994b7d903a1eb3bc59b4bfaa5a95f59dbf97"
     sha256 cellar: :any, ventura:       "2ee6553a2a11050422b056793a83ab3eb0e0e52bd7d3a0218352dbd6277f22ec"
+    sha256               arm64_linux:   "28847e0988e7273c44f2fd0d973f72bb54f1b31eb28cc29e99bc7570f8522e8a"
     sha256               x86_64_linux:  "5551e2ed7bd36248bbf92916bbb1dc193e15963aab05cce5819ed270309ff3af"
   end
 

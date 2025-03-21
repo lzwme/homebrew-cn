@@ -22,6 +22,7 @@ class VorbisTools < Formula
     sha256 cellar: :any,                 arm64_ventura: "fec9739002fb209a076dee4dadd61d3d33821dada8b0fd3bd626dea4b6c97434"
     sha256 cellar: :any,                 sonoma:        "5d78e28782150b8c4cc7513b247f5a3581b9e43e7d44bd96506653c9d4836e4a"
     sha256 cellar: :any,                 ventura:       "1c2ba768164d520ec340d8e64123def553d68ae9a1e5a563de0189002de51fb9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "47b64b5fe010a3a16f8b59e84f8e484ea58655ae6ad675cda687a253cecc7dc0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "adbea8feac0228f61088ab0fbe5c5280794f00dcc5cb28daf7e7b80ec8f7176a"
   end
 

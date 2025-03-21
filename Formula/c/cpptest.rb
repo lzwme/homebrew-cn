@@ -19,6 +19,7 @@ class Cpptest < Formula
     sha256 cellar: :any,                 catalina:       "531646bba9e8aedff87216058a90e2fdc245b11ef55ad3f5c3aaaf717fd998cb"
     sha256 cellar: :any,                 mojave:         "5a109d0b6cb796d0de9e6b32a6373e1e78fd4da316be33a26ba9c84fbf799eb8"
     sha256 cellar: :any,                 high_sierra:    "cac49d059592f8d9f030855041727a61c7358404e16fc63d106ade58253ba0f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f3e97b7775d83ef913b5d0e0c7ba785f2d12b16de00747f7aa5a6734a032ff1a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ebb0d38cb3fb4038067867b4b10ff93cdc330528dc0f163d4af0a87a427a7375"
   end
 

@@ -21,6 +21,7 @@ class Cppcheck < Formula
     sha256 arm64_ventura: "ef6c31e2c6048790a3ebba74b79a624267d53371b4701e96d164fd991f27abb5"
     sha256 sonoma:        "042af3302c0cf0ce060f8d52ceaa8217915ba96738bcfd2bc0eff817e263f60d"
     sha256 ventura:       "ecba5998fbfe4e801e7fb2b6c7378cdd35048eecba61cc51b3fae620bf0b2b01"
+    sha256 arm64_linux:   "1083912202feccf3777bc1e293be496b81e0d5444b91e0cd5ac31e53c47d8f02"
     sha256 x86_64_linux:  "1c5b977ee79e17bee1f8eed177c7c6dc93d1c20bfe9fa0806e4354e50f77de90"
   end
 

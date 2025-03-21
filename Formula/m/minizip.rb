@@ -17,6 +17,7 @@ class Minizip < Formula
     sha256 cellar: :any,                 sonoma:         "927f46afb50e1cef0f6c7024cea807025835379984c786d8a17ceef071a2367f"
     sha256 cellar: :any,                 ventura:        "17ea4d0486f352f08d526f54149cc61351456325a2f49cd2a5e85f43a5c8180a"
     sha256 cellar: :any,                 monterey:       "fda3b687c8bf4b06f369ec2c43e2fba4fa08d0a8d80ca46b605cf79e18ea0c50"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7c65b8c1da154f8f300b063166a03dbef658a3f118536476240447c28cc81e18"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "031048178895f72541584dabaa7b5606b9fbbbdeaf4dfcc7aeccfe0a05fcf4ee"
   end
 

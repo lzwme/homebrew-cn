@@ -17,6 +17,7 @@ class Rcs < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "816051fa12300cd95e60babba5d4613e47f4c0c6fb426d520edf1f04914b91c6"
     sha256 cellar: :any_skip_relocation, big_sur:        "cf4c810451ae3f5d2fe9ee983bce3c3d21573125bf55375a27e0dd7a7ff461f6"
     sha256 cellar: :any_skip_relocation, catalina:       "46b57c5880786bbebf8e776acf35f6b95adb29cdda2198bf2abf6258a4367c97"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ef51614aa19bd0fb8b3cd13203c4281f15ded280b2072023dbb7d2e003f6ef4e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5bd4d79803732fe588d5cacf620d6e9216002d5d93acf6f0798a225174e2db28"
   end
 

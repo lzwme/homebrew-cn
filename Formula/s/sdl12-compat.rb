@@ -19,6 +19,7 @@ class Sdl12Compat < Formula
     sha256 cellar: :any,                 sonoma:         "e5a972e8c3bd9012f6dca3512f1953c4f7f9b1f1580b7066b930fa9fabc54150"
     sha256 cellar: :any,                 ventura:        "f355c15e6d99d002a44af8689e835ab14765f0abea078b40c1301283cbd28535"
     sha256 cellar: :any,                 monterey:       "30cbfb49ab9560fcce09b372ad986a74caa3007704012454f76cc4416dfa0e93"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "80c3aba4d8108403066285fc7841895247ae5bfbf9e75c188cb5667cd14cee7b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac00966975256217cace0e9acf45e8659d5d668e16972a072eb6c298ff630fa2"
   end
 

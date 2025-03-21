@@ -19,6 +19,7 @@ class ArpScan < Formula
     sha256 sonoma:         "f5b3e8d47b51e2c3e822b19727ba50a05016a90f1a8e4d446bc5c5a33bed2ba9"
     sha256 ventura:        "be308c8baf776004a152beedf6b75edccdd661090a6dfc09e6ac6580c156c784"
     sha256 monterey:       "7f00b162c2af2f64d8697ca0e7e7f11137b361ee59f8f2be04fcf674ff4ef54f"
+    sha256 arm64_linux:    "6d668fdbe4f8a7a72ea57f3a0cdaa5791de6f46b30275e355bc294d0420bad02"
     sha256 x86_64_linux:   "18935cd6c4a1d707abca5e0d3b0119d696bf6f834714393b018650f973287656"
   end
 

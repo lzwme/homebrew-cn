@@ -13,6 +13,7 @@ class Nnn < Formula
     sha256 cellar: :any,                 arm64_ventura: "5f34f95c87192ede70063f4e5d6ea3ed89284e5af05e1bfe6eedc2a4d2a93173"
     sha256 cellar: :any,                 sonoma:        "ecdfa7050c0d271f5310f33640f449c42de687dbbc1a4327299d261a60944f09"
     sha256 cellar: :any,                 ventura:       "8038dc7a4cdf73e5283f4bfa466b0f5dcbc0dcf67df28bed6866426ca2084ce9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6612c5f575467defd2b67b6442822c4626c1a1c0dfa5698223dff0dfee9eb25"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d0686c85db1f495303f9998a382a5d88911c12f0e663eab48b20a1ccecbbb11"
   end
 

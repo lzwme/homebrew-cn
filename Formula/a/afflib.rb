@@ -16,6 +16,7 @@ class Afflib < Formula
     sha256 cellar: :any,                 arm64_ventura: "b311a78fdc13c779b83bf5fa6acdab8c1c8393d66ff6d161530a634502533144"
     sha256 cellar: :any,                 sonoma:        "e8b9a5c531f2bcbff5a706b6c592a764e58cb3d81143dcc22309166f97734277"
     sha256 cellar: :any,                 ventura:       "a039726658443649798f2058fc46b37250f9dd7d86ce29f453f149be2b464ac0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a9d43ca1e5b0080c2fdaa815f305cee0862825d069f1aa9a211d78ad5248fcd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6c3fd05bc590c7920e9c78895e931dea3e61ead38101fe87e483dc268f951e3"
   end
 

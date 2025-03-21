@@ -13,6 +13,7 @@ class Arpack < Formula
     sha256 cellar: :any,                 arm64_ventura: "99cf4eb648f19ac5355d2572ec5536624ca39d7480fd42bf00fcc478728ac9b4"
     sha256 cellar: :any,                 sonoma:        "f2b3e99ace1d79b1b69b986f2bbe88b43ccef0c2662b2158b70586b3c4a40e90"
     sha256 cellar: :any,                 ventura:       "153bbc3358e289d2ee528f481a86dcb41de9fe2947713b5e3a7241bfe45cb6de"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "08a91a56289af355e7139466cff2c2d882e4361bddc76d4b509bee94524154cd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "37cccca9e03aeb558521d7f5e3022e24c99ba52aaecddfb99fd38ce08287c5bf"
   end
 

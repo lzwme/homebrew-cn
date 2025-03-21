@@ -24,6 +24,7 @@ class Md5sha1sum < Formula
     sha256 cellar: :any,                 monterey:       "db59823c590542e30656a7cc7f2379826352efd07a75e3919f359d33ffed2dd8"
     sha256 cellar: :any,                 big_sur:        "924a214bdfed9ed8f7d9d581bb5717ec6cfe523e0a7f145b3e63075eba244bd6"
     sha256 cellar: :any,                 catalina:       "61cea3dd8aa7dc270e3f5265316dcc73ccafa4ab7caf59b48b8fa5e9208d0d9a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "12341c831b007a3869b399f63e29861fcd1b6929ef852b16944b60614c90c601"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0055fc19d2c8072e2e576b7df8de777126f2b5ab2c1269ff224476f8aaf9d65b"
   end
 

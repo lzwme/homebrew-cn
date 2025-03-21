@@ -16,6 +16,7 @@ class MupdfTools < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "34686dbd12778e3804347dab0bffed5d882351e09d67a3297200abad5250bccc"
     sha256 cellar: :any_skip_relocation, sonoma:        "aa34bc74fa3c14b991713e9c678cc11a07ae4c0afaf664975782e84898aa4c9c"
     sha256 cellar: :any_skip_relocation, ventura:       "bd4ea1988b6a98e68b42c4f0182b94a77ca00701f13ba1ddace6b79a156861e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4975a6fa0195e538b6abfdcc1a2ab346470f21fa628285ec3e9988539f572b58"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "54968cb1053409f7c5e54a53053932d0fcc6f1c880085b55d5a342d74d067da7"
   end
 

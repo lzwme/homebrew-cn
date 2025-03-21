@@ -17,6 +17,7 @@ class Netcdf < Formula
     sha256 cellar: :any,                 arm64_ventura: "db5219d0b13f8c474852b9786e1c604ec6776a488cfa78446b6cbff87a917827"
     sha256 cellar: :any,                 sonoma:        "8dc2871bf05e90c183d942121bdbeb217b52e84d3c2d76945a747b47664b5206"
     sha256 cellar: :any,                 ventura:       "1521a5bcfc4a455a2b7848c85c4351c7809e31a11d11df4d7739236fe8d80588"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5eca5939b9a6a5b5bd36f1c661e5e7bd950d88fcd5b9b1854d972d4eed1d4983"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c90a09f5e615e4c0bd1140e7e33341eb0dc0bc61934bea412cbb2d54066a191"
   end
 

@@ -1,8 +1,8 @@
 class Packmol < Formula
   desc "Packing optimization for molecular dynamics simulations"
   homepage "https:www.ime.unicamp.br~martinezpackmol"
-  url "https:github.comm3gpackmolarchiverefstagsv20.16.0.tar.gz"
-  sha256 "c6e28a31adba17273eaafca7134b126dbcbbc6927b24a52e886a2a0794cda24b"
+  url "https:github.comm3gpackmolarchiverefstagsv20.16.1.tar.gz"
+  sha256 "2984c57f3729ac9c2659a3ce88a4420f2fb5f422fec2b49a081bf0ac5474245c"
   license "MIT"
   head "https:github.comm3gpackmol.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Packmol < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e9092146f495c98489c749d32bbb02aef6157c31bb45a8a3cfd1b80350c11b3b"
-    sha256 cellar: :any,                 arm64_sonoma:  "1a8ccc2c91b4a6897b1189c6265adb7131be3bf78b57e1707e69cbbd20b929f2"
-    sha256 cellar: :any,                 arm64_ventura: "15b47f6996ecc36f93bb16467a57f5c6f3a336e1260a0e2d4862a62c15cefb72"
-    sha256                               sonoma:        "2385a7df9292607e7a346b26576cf03f742b3e63914ce0d64504462fecb89308"
-    sha256                               ventura:       "ff8fe40ab5cc1980358d3c231d8fc07a292b088216869821700afdaf862406f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94b1a58b91a2b8ff35d095a816a01324cfa47281423098dd29becd3d4ffb8682"
+    sha256 cellar: :any,                 arm64_sequoia: "6eb3c35cd1a8d58b488850c7338e0aff09abfd931c31d8a271200b72cc32f5dd"
+    sha256 cellar: :any,                 arm64_sonoma:  "02eeeda6b6fb3893af6e67e4ef7eb36bc0a9da0bab889762c2682a6a3b3857ab"
+    sha256 cellar: :any,                 arm64_ventura: "e5cee14accfb1add0bf05e6029cef4dd31e6fbb7bbc8446eb76942e4bd5b1337"
+    sha256 cellar: :any,                 sonoma:        "2cc6974a4d92632a5d6b8361389c0df9acc349621295315a13220658d09dd7e0"
+    sha256 cellar: :any,                 ventura:       "04bbb576e2bda906234d4d52945f0537c91c39f170ef01c739b2050fac1aeaf6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d04056434173fec7d1ca461ec4dc312a0322116b84a21280cdc5fc080c25f3fd"
   end
 
   depends_on "gcc" # for gfortran

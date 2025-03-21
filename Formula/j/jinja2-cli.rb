@@ -14,6 +14,7 @@ class Jinja2Cli < Formula
     sha256 cellar: :any,                 arm64_ventura: "81a8d22c74237ad6b2117cd41b7d21ee621d6c6cfad796408300b09c298f6e0f"
     sha256 cellar: :any,                 sonoma:        "fab5b3eb00bbcd5be43140b924899df658422035a7480014310701456637fa67"
     sha256 cellar: :any,                 ventura:       "8d5a194592d04897522819d11b4983d8ed5580726ab8133318c73c4c47eea334"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0c9dfceb1281a4939a5ce38733836fdc431e8ed9cfcee1141b02cffa59a245f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3614f38dc9f33988fbdb1e3a5bce147e5e315f6a1aafa54bbf8252723e7d79a0"
   end
 

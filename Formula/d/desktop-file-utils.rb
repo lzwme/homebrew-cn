@@ -11,6 +11,7 @@ class DesktopFileUtils < Formula
     sha256 arm64_ventura: "742e551aae92506d4b627e8f34ef64ab38620c07fe776a8d8a9fe2a7fb564cbc"
     sha256 sonoma:        "0cc6bbad9d64a2b2edc4c55c06a5417e55c2566b15f3401828d1d64a7ad0953f"
     sha256 ventura:       "4d17379ae5028f3dfebc90aa1f4747edebb77f38ed58d53712e688bd05a0d864"
+    sha256 arm64_linux:   "afe8ceef438b1ce5f1199ed7aab6c5ed1e0fe9478bba9b4c230246d11e21f2f7"
     sha256 x86_64_linux:  "ea37203ffdaf572e7da0e0991f31dad7effa361f41ed2eb9b549b1745996f308"
   end
 

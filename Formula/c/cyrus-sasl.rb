@@ -16,6 +16,7 @@ class CyrusSasl < Formula
     sha256 ventura:        "b0ad0b2d1e4394623692dd7c32014677dcc364c32bae2a9a27913485ca07f91d"
     sha256 monterey:       "1e9df5f50cc72d9561b8f8985d3a7520db0de782c45a8d32530c1cd5bf9e9db5"
     sha256 big_sur:        "abf53f0d9551994232096d88a1e312c50ec2f9465730e734c3af75db46016103"
+    sha256 arm64_linux:    "66658e5a01892c2952754447404b14f73a888c1cd5b97dbed3c6244dc4d62a2a"
     sha256 x86_64_linux:   "f1bc6d528c1c0e53c2eecb599e5127070654a7bdfb9acb0232cfd08bfaf38efd"
   end
 

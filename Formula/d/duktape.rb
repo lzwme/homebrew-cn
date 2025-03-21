@@ -21,6 +21,7 @@ class Duktape < Formula
     sha256 cellar: :any,                 monterey:       "1da51e2ceb61766abe0074b869c482feb2b61cffbd9419ceb70157191528f703"
     sha256 cellar: :any,                 big_sur:        "89c9cbfd84d99f2cc97f1cd8a4e57f18c3aa3803be295328a8b67239ae51ed27"
     sha256 cellar: :any,                 catalina:       "b4dbf4083450e750f2ddfa26d4f4bca18a342703ef950360528e4c390d171636"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "6bf806c110978a59312df80334012c02e8a285b364effe90c1aea33370549d83"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "158b015f9c3b091605deed158af5f37c816c48d00b1163402282459298fd921e"
   end
 

@@ -16,6 +16,7 @@ class Pystring < Formula
     sha256 cellar: :any,                 ventura:        "02c48d989fc55ecf9e197d512c4f256a5338327427492bac35e84d5f89a2de8f"
     sha256 cellar: :any,                 monterey:       "99038ecff46d9ea2ba35f6a3e976d92a2206082c7299447f331914da9477b75a"
     sha256 cellar: :any,                 big_sur:        "e9e60b007a95bba54ef74fdae69c817b3888a8ae05bca19e4f01371a12fc90bc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1b11eaa5062fdc58a7f3226687b3801cefbc222cbc8eede81d54bfea7dae1847"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "07f1dc79610a20ac5cc9376dbb992f7a568554b484f318e24dd621b5c7bae6f0"
   end
 

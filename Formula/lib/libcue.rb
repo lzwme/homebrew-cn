@@ -13,6 +13,7 @@ class Libcue < Formula
     sha256 cellar: :any,                 sonoma:         "0f391c7328b30c5e10263e59f1f313f9d5898a47fec936530b233734bdda5e24"
     sha256 cellar: :any,                 ventura:        "924e97f8e5171a7bfa973ad1032983ed58f99c610c691a4bfddbaaeab8b2b358"
     sha256 cellar: :any,                 monterey:       "799c04b2053d44ef0be1bea0b458612e8bde94f2dd6bd1165acb558b09a46267"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "3474394b89c9462d00db5ce4d0c0bf90de7fe657256288a4600cf90f21c78b2e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "981c06a396357ab4014a50e803216c936cd5d6f3da3befa199a5e6926ad3b42a"
   end
 

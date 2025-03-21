@@ -17,6 +17,7 @@ class Highlight < Formula
     sha256 arm64_ventura: "3555236122462cedf6214f1f16f29d8867351fd3769fb3bcbfc7bed2af8f4476"
     sha256 sonoma:        "171ae8debcdaeb6f04cd6a591c18b5edf12481334baa35fd5e6d88a25e85ba5e"
     sha256 ventura:       "3b72f161f5978f8c565fad920a41252ac17106e79ce342984a80ffe0caaefe00"
+    sha256 arm64_linux:   "a1de5fb88c5ff05d3977173bc2901ad2dcbdf8311859a9d4f21f681262a07586"
     sha256 x86_64_linux:  "52594457b5a8a77269f061bd6fae2a973afcba2b71a91a285d57de2dbaf135a1"
   end
 

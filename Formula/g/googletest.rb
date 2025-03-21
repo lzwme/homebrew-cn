@@ -12,6 +12,7 @@ class Googletest < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7ef1cc29975aac943340518a6057af030da284f73cc6122fa6bc1127bfc8d5e0"
     sha256 cellar: :any_skip_relocation, sonoma:        "71bf77319c7b3c51b22f28cb3a91f833ea89dec750fbb76a45827d6f834ac56e"
     sha256 cellar: :any_skip_relocation, ventura:       "146609ea00020a57519b405cfa3e0247aad824fd83779190af4bd6d1f9fd7067"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "320717b24155c70f960a6a9eddef87e92b0a4a65edbaee339361f662c589ad1d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b1e5b95cd807d28a81a8380cc1c05823e211daa8a0bada47215d3275f2b0385"
   end
 

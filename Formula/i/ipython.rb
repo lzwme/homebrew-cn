@@ -14,6 +14,7 @@ class Ipython < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "623d6b3cc99c59835bf8a46f46406ac12351b4686fd8bee6d69d4508c19c5e0c"
     sha256 cellar: :any_skip_relocation, sonoma:        "444454a9b10c7788ef4103bdb222b74c4754ed3cacdb548c5fb785a1fd195149"
     sha256 cellar: :any_skip_relocation, ventura:       "444454a9b10c7788ef4103bdb222b74c4754ed3cacdb548c5fb785a1fd195149"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "867e0153d1c00ae3e7b0f872c5cb0856f54e8653b8f551532d8c50f57c6d550f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "623d6b3cc99c59835bf8a46f46406ac12351b4686fd8bee6d69d4508c19c5e0c"
   end
 

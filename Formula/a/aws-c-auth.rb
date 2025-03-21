@@ -11,6 +11,7 @@ class AwsCAuth < Formula
     sha256 cellar: :any,                 arm64_ventura: "805c1501e46c0bad8e097d8d139dbd4878a105bb7b3c38d916659f29d1ed8148"
     sha256 cellar: :any,                 sonoma:        "db96b4b72ec2a8231dbcc1c15d7a0743af59697cfbd30b10aea3597a541e3c23"
     sha256 cellar: :any,                 ventura:       "c5a25985534522bfc58c08a90560a608e730c83459124524e25f2f22a9af6c1b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "82b3aae4d4dcef2a496130e7b85030f073273f7f7987baf7c7a56fccb345379d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "091246d9137af3d583f9c45e1c22f6e16bf68ac15d2d71d8567977b5b0d2c7cb"
   end
 

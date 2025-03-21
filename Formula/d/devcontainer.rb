@@ -11,6 +11,7 @@ class Devcontainer < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "dd4e2abfeec277d5a50d7a33b7055678d87a166528ffbe5c6f005425581caa9b"
     sha256 cellar: :any_skip_relocation, sonoma:        "3d20ab359f66edb38a09c27535e00aa2f70bd2a70e1a7150125b556839dbd4e9"
     sha256 cellar: :any_skip_relocation, ventura:       "3d20ab359f66edb38a09c27535e00aa2f70bd2a70e1a7150125b556839dbd4e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd4e2abfeec277d5a50d7a33b7055678d87a166528ffbe5c6f005425581caa9b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd4e2abfeec277d5a50d7a33b7055678d87a166528ffbe5c6f005425581caa9b"
   end
 

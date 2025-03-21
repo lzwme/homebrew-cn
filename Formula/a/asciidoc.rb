@@ -15,6 +15,7 @@ class Asciidoc < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ec67acbcd8040ec963e8d3c2cab2427254d2b8b411b65db720347518ab341559"
     sha256 cellar: :any_skip_relocation, sonoma:        "ec67acbcd8040ec963e8d3c2cab2427254d2b8b411b65db720347518ab341559"
     sha256 cellar: :any_skip_relocation, ventura:       "ec67acbcd8040ec963e8d3c2cab2427254d2b8b411b65db720347518ab341559"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5a96f1dae62e892080b2da1d5d284af5978ba48edda0e76e04b30e309e8e4aaf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "51190b8ffe36e536f0208a5d0f420ed9be8c119051241188801d181a12bfd83a"
   end
 

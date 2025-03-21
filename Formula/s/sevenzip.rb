@@ -18,6 +18,7 @@ class Sevenzip < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f2a07519bf07398a2b7a2837561bc672240b7718df55cf94c4d788039942add6"
     sha256 cellar: :any_skip_relocation, sonoma:        "eae8b36ca70c587255c68afcdb34ebebd616c7be3efd7b40facea0bff43ff826"
     sha256 cellar: :any_skip_relocation, ventura:       "604cd24f7bd8da0e64d6c35cf4b747544af1e720f30946967da1697b3599c915"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0edea6848b6dc589e06bb0397389e202c36c83665c624b1b21169ce3271273da"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0cdef8851bfaa08e67e779e854b4c063cbc619e2b4c844baf04e12594545957"
   end
 

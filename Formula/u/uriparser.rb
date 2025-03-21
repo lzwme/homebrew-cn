@@ -14,6 +14,7 @@ class Uriparser < Formula
     sha256 cellar: :any,                 sonoma:         "9f1884bfa5687f65eca6be5aec1e0c5618f5faa404290d0827bb3c390828fcee"
     sha256 cellar: :any,                 ventura:        "8df3c1c481bb8dca64b708dd35cc514e3743827b4d6b544aa5418d4ed90e868e"
     sha256 cellar: :any,                 monterey:       "942834f010ac0ac2d508277f6f4c8d00d229654bf02de7528df7d53d5ca72771"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "93dc11e4bc86e1a410469220e448cbef25afb05dddc71ab5aed53ebcf818fcb4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "690d05924e1dcfe664e3e0891326fa6c19aa61c178d1cff63a361013cad4b001"
   end
 

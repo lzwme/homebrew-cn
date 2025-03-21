@@ -17,6 +17,7 @@ class Libzen < Formula
     sha256 cellar: :any,                 ventura:        "7e02045ed71e1768d7264b7a99ece14002dcf1964de433db80d503fd23ea59ff"
     sha256 cellar: :any,                 monterey:       "2ed8ddad29956aa083abc3ed7033b45bbc24e978a1eb0bb0ce62cb8befa26e40"
     sha256 cellar: :any,                 big_sur:        "5bc397c5c89a3fd8138e4c52e55815ecf2fb9f7da107aaf5d2c79fa9518304b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "e319284f784aa2603799c5500e0a688eb210f11755ec4b8b0114649d82a7ff4a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5fec7fc988c8b996f28e173e2ca09f561aa9883f9630c60066cb3bdc2d77f60"
   end
 

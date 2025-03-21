@@ -17,6 +17,7 @@ class Lynx < Formula
     sha256 arm64_ventura: "20953b360eb23fd1ef4b7a7ee5f3b846e01d7d6c1190280aabf202d68245a46e"
     sha256 sonoma:        "37094ec003457ab4fed45872f08bd9452331c57421c46c7fe2e59c494ef7f936"
     sha256 ventura:       "f54a50e56b2b754653afdffde634524b10bc607fc5f6f24d8b4c1cd417fbd48d"
+    sha256 arm64_linux:   "f31950d24b91885f8887fe341be40af6f9fd33ec2ffab1f3c41def4ec48cbab9"
     sha256 x86_64_linux:  "2d30e3d55c3916b4a3c488034680170553d4ef090e717cf74d6782348115cdd6"
   end
 

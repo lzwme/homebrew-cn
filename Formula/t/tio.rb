@@ -12,6 +12,7 @@ class Tio < Formula
     sha256 cellar: :any, arm64_ventura: "85f54e24ddc2ffa80e50318e185468ec0149719b1fb9abf804e1c972c4dd5cb1"
     sha256 cellar: :any, sonoma:        "4abf71b12f17dbe57c4ec145228c54bf0478a5bc599579e0885def3a583dca29"
     sha256 cellar: :any, ventura:       "b41d2c80312869927a8b692cf88e280d953d0d63b0d3bdb9890040a3daebd66b"
+    sha256               arm64_linux:   "e3e95d23f25f0b206621f578022e0888f11a1b27be99111f03f00b56b2ba979e"
     sha256               x86_64_linux:  "73f6272f22e12b44d89f7966cfdbca29110131cebc9e9d76e826d9a05fcdf930"
   end
 

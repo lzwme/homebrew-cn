@@ -17,6 +17,7 @@ class Libmediainfo < Formula
     sha256 cellar: :any,                 arm64_ventura: "58a271684fbda61328944639e977f072de6bf6fe580a47d025cce9fda0492ab3"
     sha256 cellar: :any,                 sonoma:        "5dd49ef5b9c995051b74ea94523c35397d072f03925c835b5919bcb0f38c9002"
     sha256 cellar: :any,                 ventura:       "ff0bbc1b762514dcfcff2af8cf7f40e48646a90f841f65cfaae75a9b82ba0682"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d69fdc1cecb07d3ade8f88ca278ad1981bdc520628b40bf08dc9c548e41a1e1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6150128290729582f7f4fece0c111a99639fa08375e4004fbb16d87221d1df5b"
   end
 

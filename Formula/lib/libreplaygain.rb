@@ -27,6 +27,7 @@ class Libreplaygain < Formula
     sha256 cellar: :any,                 high_sierra:    "c2d3becfcd2f629fb875b6d6c907505489381e5ea3893b0a882510ebbee9951a"
     sha256 cellar: :any,                 sierra:         "d8f7cfc1bfad75b97271300a16f5c927849b03ff488141423ecf48b25c6ed8c3"
     sha256 cellar: :any,                 el_capitan:     "58b52d360c2f37f3ab3a50c4a2fe72b9a370bd951d52939f8853a5ef49fcc322"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d8f6ee7956817e86f157467092d3040167e1c1cc09fcb0503fca830c7bb08540"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e25a808e70aa00573bcb1f195bb76b774e8060031e8a188d47eda1fb30fc6a4f"
   end
 

@@ -16,6 +16,7 @@ class ArmLinuxGnueabihfBinutils < Formula
     sha256 arm64_ventura: "85c571a268fffa11b63163d14d3531e226c30a012e9dfeaf05cd0f0702528617"
     sha256 sonoma:        "a5122cdafdf344088a2a34974e209a9c87a54c99f17bee9ae84119b0a6e31a82"
     sha256 ventura:       "b5d1a4cacf725353dd20a829c3f79a41803b1d680d58b7db77c3ae526a0ed7e0"
+    sha256 arm64_linux:   "4ae1d9653da02773fb59e33fea7fefc3071fcc35bae702b4c906ef8031d49362"
     sha256 x86_64_linux:  "3af94c9946af90084949b00786c4273721977bc466bc69a24c515b4b18d15d50"
   end
 

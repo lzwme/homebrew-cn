@@ -16,6 +16,7 @@ class AzureCoreCpp < Formula
     sha256 cellar: :any,                 arm64_ventura: "06c8fa36794a1efb84c6f1ac3c095b544f0af4ad0124785f804d4d7e6d3eed7d"
     sha256 cellar: :any,                 sonoma:        "a10a1c92d8dd81f47708e322b87e3d6d280bec8e6acd2b1e70db8170772c6b2c"
     sha256 cellar: :any,                 ventura:       "3105f2e4c4ce2a5c186b3afe51aec44aa53e134d01a3fa5fbb91e82f7fdd5ce9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7cee82d15aa5ecdcae5f66152ad32496e481f032d6a225fc0940bb386ae71eb7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1dfb2f1d8c34f60ef00962b733c50b583e2c9114f0c913b9ed082dd2a1dd513"
   end
 

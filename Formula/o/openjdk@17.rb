@@ -17,6 +17,7 @@ class OpenjdkAT17 < Formula
     sha256 cellar: :any, arm64_ventura: "81ecd64940487e9a62da12825a496f6fc75f924a037372605745f02de6bd5adb"
     sha256 cellar: :any, sonoma:        "9b2695244289840056a1748ca958156a6b69c00af135acac472c1cbf75bd5934"
     sha256 cellar: :any, ventura:       "2d06a3f21c4f16f13b49abb820b6585e599e85e6708f98be7579bfd6aa396d0a"
+    sha256               arm64_linux:   "5850a197905a4648e7e581aa9a90876b4fef3fa636cfed57422f23062260c46c"
     sha256               x86_64_linux:  "fa34be6d45cdec8a0220df90fac18105ebd40cd5e42180aa4338112134314029"
   end
 

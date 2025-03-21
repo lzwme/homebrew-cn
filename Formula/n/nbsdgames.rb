@@ -17,6 +17,7 @@ class Nbsdgames < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "31c7b5a1fa5cb7650d7de984547049f8429476ba23b1965db44497ac2eb7ac72"
     sha256 cellar: :any_skip_relocation, big_sur:        "040fd2883d5c1ddd45b3bd27ed4ec12de532a1330bcc3e2cfeffdbb705d990da"
     sha256 cellar: :any_skip_relocation, catalina:       "0c0672afd7f3de647311b6ae155c73aca2e1803f8cb22c4e6240aa77b116d4f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "973ede434c4c08704345cc53e1a09e1bf9b6d98958e89caf9d56f613445e1520"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b311d8c8354dc0688b51024c40b2d632ff7d22587c89deeed8d559af092cce4a"
   end
 

@@ -18,6 +18,7 @@ class Node < Formula
     sha256 arm64_ventura: "67657af6984a81015ddcb538012097b1b52ff617f283ff21dd0c7d15b5a2caa6"
     sha256 sonoma:        "6abb406a70df7da11f945c6467fb9013ef4ca787a8d449b5153f858a9ed1c41d"
     sha256 ventura:       "4c89fdc0c9e5bc72dbe8edeca9135d4d915307f0480711bf0683ad471cb3adba"
+    sha256 arm64_linux:   "49f39043611b44c09b35b11ad6f8a2dff9333448aaea335d79b134c7bda2b0bb"
     sha256 x86_64_linux:  "4cdd55c14faa8ae39e34a313dda01f0d11b1437a8efded89720ccebecf876472"
   end
 

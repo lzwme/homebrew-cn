@@ -16,6 +16,7 @@ class Gifsicle < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "bddb0e3c75d143311b6d718302aa0aaa73c2ffa7dec3506087c3302d1397c09e"
     sha256 cellar: :any_skip_relocation, sonoma:        "fddb207d04bf9452a711aa8fdfad464e8a11ced975329263f41025abf1dfaa5c"
     sha256 cellar: :any_skip_relocation, ventura:       "19fe7f8c9fc05b0998a762d8b57d4736d858e56a24e97b4f23078ab17bbd1e9e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b41540353a764c3307806e38aa2f3e8d0a7e1af16dd3366e277d6361f0919d4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1e4342a1be7ae45ff3d7edacfdaee5f4f57753835353ad86e0dc5b3c528e302"
   end
 

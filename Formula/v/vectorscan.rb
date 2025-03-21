@@ -15,6 +15,7 @@ class Vectorscan < Formula
     sha256 cellar: :any,                 sonoma:         "19b569e181cf684a889a6be49f77794825e7605d811b4290be9877141133395f"
     sha256 cellar: :any,                 ventura:        "68e0a9783052f829c597b7c45ed425b2e0b5a609cad7eb63a63847e66f9627ea"
     sha256 cellar: :any,                 monterey:       "8e12bb9304fb04e3d8044835916b6d9ab5b5ce15f0183db96d8886a40961caad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "e0e99647d8cab29c89b342838b7105590f9439f1933bed206930d4ae31c0a207"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "731eccf9091173f46c7578649f8779e9b70ec340572128f69fb1799c9907897a"
   end
 

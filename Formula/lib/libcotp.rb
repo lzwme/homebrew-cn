@@ -12,6 +12,7 @@ class Libcotp < Formula
     sha256 cellar: :any,                 arm64_ventura: "626c19565338f9e6ebf991ffdb7c7acb0beea6fb5ce65317ea12a08cdaea63d8"
     sha256 cellar: :any,                 sonoma:        "6a56e1465c12f7f4a88da73e4feb96255e03b2739a4a9e2d7fe176c9a9290960"
     sha256 cellar: :any,                 ventura:       "540f3a6ecfea711699139ec94e16bf0e194094a0508e7e111777632c637388b9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7b568b96cf41f1440fb120c229765e4d092f1425a286fe067b907a367a7f9c0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc3ff644b09e647890b68df9d726edcc2a8d18e293cc4773d921141147a6ffc4"
   end
 

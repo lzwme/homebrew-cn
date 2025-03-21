@@ -17,6 +17,7 @@ class R < Formula
     sha256 arm64_ventura: "fbcc2d7f8151c50f43124504b2e5e51f741311f785581184eeccb28f9e4cfe45"
     sha256 sonoma:        "85a90fa83e598a0a061401e7ddbe1a78d2a141fd14543c5e6bf85650f979ef02"
     sha256 ventura:       "80b5bc276df4be9daedb8b9723dceb8c182bfdbfc8f963f88f5f984ca9605ba2"
+    sha256 arm64_linux:   "2ff1c59eadad6fda2b182a5e8ae68058e8cdbf49c41efa91a5a3b2f18e33112f"
     sha256 x86_64_linux:  "c4a1fdfccdd2aa0a3b0e888326f8a0e7bc60930632ef98b7973808321d7b4fc8"
   end
 

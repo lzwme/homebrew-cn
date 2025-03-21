@@ -12,6 +12,7 @@ class MinizipNg < Formula
     sha256 cellar: :any,                 arm64_ventura: "fc08746ae2c5c4350d9d62e69b4c9c9f6ac8fa988448417ecd76e3a7287ec1dd"
     sha256 cellar: :any,                 sonoma:        "d26b0e89901e4046ae3492a9366992598a24c1f4ad40cef0afbcf36fc34d8440"
     sha256 cellar: :any,                 ventura:       "10475ef77199558419a4e026fba1df63e4c025dd22f940766f5f549fe494baf9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6fad07188c0b7c4c879428f57c82b585130413510ed539824320c2a561dc9eac"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9baaa7081cab2ebd2c05cd6fdbfe3007eda6530543cd4310c73cd932eb55b71d"
   end
 

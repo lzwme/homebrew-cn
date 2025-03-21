@@ -16,6 +16,7 @@ class Xorgrgb < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "8a5606f9cdba7608ebc27042ced7920658ed39593a0338a0d02ccdd067290fe4"
     sha256 cellar: :any_skip_relocation, big_sur:        "db4fb9cf83a6fcc75036c4c3b3fdac6ac0fe47108311a1f83a35ebbe97e7f1e7"
     sha256 cellar: :any_skip_relocation, catalina:       "4f39373ce62247b2a47ff8f0a02fbdcb9af7e280aa7b1fa7443865024a0f561c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "99fca7eae8c246f93d1f36f833c7031caf3d10a1f6273a556054396847f23679"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6c3eca82aa9624b8b521d9d0e5cec68b9391538717c36c4d438edc75bb0085f"
   end
 

@@ -13,6 +13,7 @@ class Libxpm < Formula
     sha256 cellar: :any,                 sonoma:         "f46993627dccbd01bf4efbef9bd6bcaa6201dd3ed95845f36d761ac3a6005ad2"
     sha256 cellar: :any,                 ventura:        "b77cec2defe44c7188d60411cb02ff6c04294c01040d28ff52e449196e4bfd72"
     sha256 cellar: :any,                 monterey:       "8876141eb41e3bef55d16ec8a792c328c942fa65556ace6f61fe04eb3a998305"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "e44e847b442ad8deda39fe1ce156886a012efec2905091c3cd058fedf43c905b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "42c491e24ddc28e4663b4f630486564c913238fe77b8ca81bb6cfc6758bf715c"
   end
 

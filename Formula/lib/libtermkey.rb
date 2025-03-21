@@ -22,6 +22,7 @@ class Libtermkey < Formula
     sha256 cellar: :any,                 monterey:       "4acf8f693e3ca76abb35a77f32edd5f54dbe47419fa690a9c32c396536a30b00"
     sha256 cellar: :any,                 big_sur:        "4a463c5f31b1748ce885716a2f709f3ff1791725bb67e71bd9b44080148d6ff2"
     sha256 cellar: :any,                 catalina:       "d011f1ac8c14c605e8614cac5328a8b41f0a8f5775d8919104d1495acdc9e135"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "34ca685938466b3866c5a986b40dfb762c19fbd0a050f1c5c61b4884f7446a28"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "359504c1b88e079ed34f73484c6196c5e5a2f6ca402088cbb7a537177cc22f93"
   end
 

@@ -17,6 +17,7 @@ class Jsoncpp < Formula
     sha256 cellar: :any,                 arm64_ventura: "15a94fe13490a723ab78a54a39129e7cc39ad3e3d5e9ea67e17d6b3c3a67e021"
     sha256 cellar: :any,                 sonoma:        "8917f4a14ef0bd4f4d59f8d1a4689c653dd69180fe6ae7c3915bcd904db1d056"
     sha256 cellar: :any,                 ventura:       "22fff7a8f16806ace94150ddf11d88ccc58a86326404cd018ad3b87852df7bf3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9447d9e39e2d2af144df7436aad79a6f7c3bb9cf75bb21e2409dfcae273fa4e2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "460d3286f4bdf820e9426b66e3773551420c1a1dd1b3bf62d7f20bf2e7e955c1"
   end
 

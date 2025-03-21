@@ -13,6 +13,7 @@ class EspeakNg < Formula
     sha256                               arm64_ventura: "99c2519104e4462e0e6a6727494c64b5892e60d75ac4c69e49a65c7aa02428de"
     sha256                               sonoma:        "aa796417d69f834ad2373129c6e30e06e97e6857c45ea8a483eda49815aee65e"
     sha256                               ventura:       "f125b94acc7e862d31c649810ecaea2636c5bbd67b0fe52f37a05ddb799f62c5"
+    sha256                               arm64_linux:   "b99673a1da4dbd730d237bf31ffbceccbe700792e7d8b5d0b7ddcbcf5ab6254d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b038b1ea4b677dec8ddb98c16a84ae3985cab968dc60aff22a1c4a02beba6236"
   end
 

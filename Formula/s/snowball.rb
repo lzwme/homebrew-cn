@@ -16,6 +16,7 @@ class Snowball < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "421db9b9e06d84eb71c1bd249892c39f69726a645b08317618747534dab7a5ce"
     sha256 cellar: :any_skip_relocation, big_sur:        "54ddcd5be49b2ff80a37bfacfc8987b51415cc697e7f44c1ed503a2651c0ffe3"
     sha256 cellar: :any_skip_relocation, catalina:       "2d0eb0914d79c2977dbaf48d7c7103de5f09c8bf12dba872f1687522890681e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "51b9fa9044856c1399c80575f5984b13ac207cec645d8c0e054c34e85d27677a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d85b1d508f2b88dbeaaa20e26861c18694f92a8d307830dbf73db60421de57aa"
   end
 

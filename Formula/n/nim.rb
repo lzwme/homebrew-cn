@@ -17,6 +17,7 @@ class Nim < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "078694d8c799818a058d74fa382c11768aea9aef66f37d42d64ff5a580bcaf8c"
     sha256 cellar: :any_skip_relocation, sonoma:        "aa7e2efb3883390c2a2b61c492b7585205b5bd093553fc37bb4b52d6dfde6a13"
     sha256 cellar: :any_skip_relocation, ventura:       "4ab3f16b347e8c8429dc9da97eda9840eb52b61013ead7e5357e5b55e102d98c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c74f2cb8701b6c9953ea5b35fb93a11055c853be635f7d5bebfe29ac1589a192"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5dae8e50a1e04461da0c654945051de206839b47510810c327b024284ae14cc7"
   end
 

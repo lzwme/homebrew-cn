@@ -15,6 +15,7 @@ class Mle < Formula
     sha256 cellar: :any,                 ventura:        "50f5723f83057f3e3ff647cfa5a7de27757dc30bf7f95be6cfe8b4be663648a5"
     sha256 cellar: :any,                 monterey:       "e12c72f828b8b070527cafc5a54fdd1dfc4bd9b2200f235fba457785de2b62c3"
     sha256 cellar: :any,                 big_sur:        "493774af04dcfd335301a1845db88772a9b100fa8f4478f891ca5c9ad4e09c05"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "e7b03071021e45985a48a467283493de9d598dc94ec0b758db4bcc7bac413b5a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b163c0cdfde98734db406062d8f829d2c64d178c31ef3b7dad8ca75619e58cc5"
   end
 

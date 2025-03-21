@@ -16,6 +16,7 @@ class Mimalloc < Formula
     sha256 cellar: :any,                 arm64_ventura: "a04b923fc266ca31776d4688c311741cbc2781e791c1cebae5fbf9fb7c99ebb2"
     sha256 cellar: :any,                 sonoma:        "de49a7a337b9c70b83a4868456579ad04b91ea7999ed290e8019615f877ef496"
     sha256 cellar: :any,                 ventura:       "f0363fcc3261c526dafd2ec80ba2a0e4629f3029a51ca2c977ad333b5cadcae7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e33bf4b4ea9cb57163d129be2686681ed05f9ed30b2709ed007fd717561850a8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d24f6413b70fadc239b156e15bf5a7cde0b587d46d63c1feb6ce5369fe832785"
   end
 

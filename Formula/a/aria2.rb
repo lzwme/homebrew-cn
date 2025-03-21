@@ -13,6 +13,7 @@ class Aria2 < Formula
     sha256 sonoma:         "7ad8b56e2edf9df28458b88cc88faec5e7ada3bd9b5652420aa6168325a10260"
     sha256 ventura:        "2821ec44b09994465d3bb8f8e4da6af8d2dd70cbdbf92f3b75d18ba65064e681"
     sha256 monterey:       "41ce19b788f94a35025e306afa0f90a85164243d18f7350340cf75b9edf18b6c"
+    sha256 arm64_linux:    "ac394dd527b6cfcfa479e57854c9495dd12490f62074bc368795867688398036"
     sha256 x86_64_linux:   "e459fd063b80457e1d8ead88e3168effb13a80974e4d5e2fcd1bd2a11aa1cb00"
   end
 

@@ -11,6 +11,7 @@ class GsettingsDesktopSchemas < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "28388575b4cdde9dbca9351e2589c4445e531fb7e4fa43905d96d3d89dd78d29"
     sha256 cellar: :any_skip_relocation, sonoma:        "28388575b4cdde9dbca9351e2589c4445e531fb7e4fa43905d96d3d89dd78d29"
     sha256 cellar: :any_skip_relocation, ventura:       "28388575b4cdde9dbca9351e2589c4445e531fb7e4fa43905d96d3d89dd78d29"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "961057773b8eaa48b7a348fc0ac5ce5d14f8caa7785dc64bfb162b35e93e3bf3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "961057773b8eaa48b7a348fc0ac5ce5d14f8caa7785dc64bfb162b35e93e3bf3"
   end
 

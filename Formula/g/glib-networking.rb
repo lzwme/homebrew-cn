@@ -11,6 +11,7 @@ class GlibNetworking < Formula
     sha256               arm64_ventura: "f9907f3da38a5bee59b1a5b8dd794c2fa761595befc27c7f9c1abcda599c6275"
     sha256 cellar: :any, sonoma:        "42ed98bed547bbeae647d95e0b5f0da4a85e7416cb722efbc4a6e9f975c1bdf0"
     sha256 cellar: :any, ventura:       "051b59d9c1a7d2403a8d34628d6c0acad7c25f50e9d25d4756095c998975e128"
+    sha256               arm64_linux:   "151f752cd064606506e02b137a07b5a40aadb3a1df99ac5849b65e0eb83f3063"
     sha256               x86_64_linux:  "c20490896cab94dc36f83a54bb58ccefea822fb311c03de4a5624e34b09c68ed"
   end
 

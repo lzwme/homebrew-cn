@@ -18,6 +18,7 @@ class Links < Formula
     sha256 cellar: :any,                 sonoma:         "5a3d86b0541eb8d09cb5b704967a44a8b78f691185b678096ff1cb82c019a2dd"
     sha256 cellar: :any,                 ventura:        "9ccae93d12e61c3c65069c915d5fef38e61f8f40d3e984de2b4a3867d55b3106"
     sha256 cellar: :any,                 monterey:       "4f077dd57e8eab5969cf9382c5a262eaba325b48fa68e8ad8f9221bebedeab43"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1f2ee4a9703ed6de5122fac5f7b4ad3bf81853366f500e3487dffde0025c03e6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4e5d1f0bddfee851800eedbefc4a4e97d7563cc00910ecf74ddcdce4b56a415"
   end
 

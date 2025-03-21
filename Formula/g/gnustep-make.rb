@@ -19,6 +19,7 @@ class GnustepMake < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9c5609ff238b2cd81172d4127d84283ac2c46c2f4e1134ab0e46110744e91d86"
     sha256 cellar: :any_skip_relocation, sonoma:        "1deda0f98bdf01ca889ebb9c17b7232dd19b2548f456c71396db1423a4f1f25e"
     sha256 cellar: :any_skip_relocation, ventura:       "acca702d1efc0af0f7bcff2eb13272b165bc72d566fede6bc0271247588c8c49"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "485142f894eec86581275e476081b45c972bf52c5c8102173f1b8543802f8a02"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7828040571e064d2b983a3324119f5232af9fa54da624eb1f52ae2c517aab7d5"
   end
 

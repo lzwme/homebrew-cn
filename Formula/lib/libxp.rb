@@ -21,6 +21,7 @@ class Libxp < Formula
     sha256 cellar: :any,                 monterey:       "afa942a7ef9f5244bcfd7ce8e61b8235e3085f41bdc521bb3c930eb9402ff8bb"
     sha256 cellar: :any,                 big_sur:        "ebf2ccca3126f773869610f9ca07888226e6caf7ab90a3b493aeadbf81354022"
     sha256 cellar: :any,                 catalina:       "0687d2c037f00590ebf445e0b7f5531a703ddd8390dc903eaacbd451fdd10a6c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "02bd6784a427333504ac05c8dc0d54e57219cce3d0efbdaed91b1029594b7045"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ff2541a82e9806bac37aedb6fcaa83846e4f4d8710d4ea632a09fe826746da99"
   end
 

@@ -20,6 +20,7 @@ class GambitScheme < Formula
     sha256 ventura:        "7f26f3c29562f4dc3c8033a18e53d47bf55c093dcafd622e8fd78cf4d8d61f28"
     sha256 monterey:       "3ead39c88a5246f0f8ecbb1afa4e4dc218375c35aea624afea101c7b803321dc"
     sha256 big_sur:        "1e335b312ef44ae5d0b3475ab771da5390943a33435883570cb124d11c9c02e7"
+    sha256 arm64_linux:    "f1c8fb97b8b51e7ed7610afedb5e0bde3d690b15a17ea147605f924797825b39"
     sha256 x86_64_linux:   "5c4bb1bcc575d1079679114fec7776b3ac881ce67324a1a5b0bab2b6843f7ef6"
   end
 

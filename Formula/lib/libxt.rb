@@ -11,6 +11,7 @@ class Libxt < Formula
     sha256 cellar: :any,                 arm64_ventura: "7caed6452f24e561e9214d648660a1b9b37db71a7198cf86bac3811f83ec266c"
     sha256 cellar: :any,                 sonoma:        "b4e600308fd42fd1ea790f719e2038f1029fdfbdca9a2010a03e04d3c4c6bbb2"
     sha256 cellar: :any,                 ventura:       "4d2943f42410c3033e727fbcfc38abac5d7a58e3c1c614b9117e9415f448073e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e41953b45ae3b9003f04b13697835dae0b60b93f1b66dba27ef030c6993453e4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b0de9305b6428a6ffca0a8bdb1a777ed01bf9a31cfb91035099a9003cac5598"
   end
 

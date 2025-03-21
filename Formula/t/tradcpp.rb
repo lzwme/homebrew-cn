@@ -21,6 +21,7 @@ class Tradcpp < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "4655462eea375707576c583c4107442cf648ed1deeebfbd64517b7058717ea66"
     sha256 cellar: :any_skip_relocation, monterey:       "4efcf13b3cf15f4c8013ba1000f424d0a240ba16b8436a086d82a1a29edc7d2c"
     sha256 cellar: :any_skip_relocation, big_sur:        "8818618fd35264ceb99df10c17a3af736fd91c886a1db778ad752095631523c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9699d8ebc30977e2f8caa90b4fcd8b3b7df9c015d0d561387c8f4a4e56735166"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "825a5e3d755cd11ad9e6e7cdb2f5d499cf273b294da1c78a7488535eccad598b"
   end
 

@@ -16,6 +16,7 @@ class Bmake < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "79919fd51552c9f6ca2f10309b568c83ce39c78e2730350e957ec2dab9278867"
     sha256                               sonoma:        "7dae06e231f9a68129cb8d7738472088ab225a88d9e00a51de0170fd67a95350"
     sha256                               ventura:       "bb788f4ed929c149f3877f44333951d5568a75b97872122db701e2612ad399bc"
+    sha256                               arm64_linux:   "359aa8833e7b378a7a5577852bd95ef611d2eb9a3bd3ebde1130ec05193bd4dd"
     sha256                               x86_64_linux:  "c1d7848c1744288e1f511f8c905d400d9669e0f8fc40c79b48c269af3eff2798"
   end
 

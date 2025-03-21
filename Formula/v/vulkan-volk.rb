@@ -17,6 +17,7 @@ class VulkanVolk < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "009926026c7e06cf9d0a72a73bdc9732c4a6b3e98a54ab92d9c0e4f668d7e58d"
     sha256 cellar: :any_skip_relocation, sonoma:        "582fee33c65fb62e199d3ed80cb7b7f2c91c6381a1b0d1ac442958a0463614fe"
     sha256 cellar: :any_skip_relocation, ventura:       "1f0e8dc6a39f8d4c1a4090e27ab2daca59ec9f30640ab1215c8d4b744ed9f2a8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9940faf3769ddc8e8bf39c4381afdf2554f0b27ffd21699ae15e976d8f870c73"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b347974237c864c94513527a530041b7bbc70f175559b65f2512a0721647e89e"
   end
 

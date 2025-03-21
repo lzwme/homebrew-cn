@@ -18,6 +18,7 @@ class X8664ElfGcc < Formula
     sha256 sonoma:         "6dfd845604de9054e5e417ee899c411866b500ab1383a202d7eb7c591117860d"
     sha256 ventura:        "1e9401598b9342ea92ba43d206baecb963b7b351771be382f9e661df84aec586"
     sha256 monterey:       "fa9fb09fe1d3671f5d953321e4795458295d6d29274ce6fb82506a2ef59ae2f1"
+    sha256 arm64_linux:    "50dfb027b1298c8d2e13fbc6d7297761c92889d3aedd2c3a835dc5e6aafdbdb7"
     sha256 x86_64_linux:   "5fb43e6c2f02594b826ae95c121159a73fed2e1eee2dfc721af98a694e59d2c4"
   end
 

@@ -18,6 +18,7 @@ class Libnsbmp < Formula
     sha256 cellar: :any,                 sonoma:         "11b45814407dd3a3d4ba8976717cf1a64b425fe776e13d93caa96bb489ff8a6e"
     sha256 cellar: :any,                 ventura:        "e6ae9d7f2d428e878b319086665048a1a58d4b1f6eb96a9c88106f13cbe81968"
     sha256 cellar: :any,                 monterey:       "e67ef1fb84121dcea357001d14e1b2fc6614f0dcb36bda9ce06cb291acf24bf5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b5f8e356d95975d6cd0756b0a426cd43abfa1803755b224b6361bf7df5094230"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "86f827dd9ea13403f33582394b79f80f88117747da6bbbae89d70cde8cef8615"
   end
 

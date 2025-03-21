@@ -19,6 +19,7 @@ class Openconnect < Formula
     sha256 sonoma:         "330f76952b9e047eaab8fbc0e55378e600367504cded0c4c2879630559a0f6eb"
     sha256 ventura:        "c6b26f039f0ad3f5ce853111ebb62556885c48fba36cd63f48353f8dd8a12287"
     sha256 monterey:       "236d104feadaa7f99b8c10fef77adf469fa7499ffd55de499db04da7fd47a710"
+    sha256 arm64_linux:    "a02ae24c78dd35967c78c1212f92e47867615fca7275aa37c9f0aad836014bf3"
     sha256 x86_64_linux:   "35d66b532fb2760b5265d32eca18f98fb8a938edcef09498fe6126e81c9fd085"
   end
 

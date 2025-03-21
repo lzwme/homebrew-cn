@@ -11,6 +11,7 @@ class Diamond < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e078aee98faa14ee3ce496ac97e5f84dc39e82948ad90e946ec4c14b1ce501ab"
     sha256 cellar: :any_skip_relocation, sonoma:        "435817155d56ee6e7f502da9e9ac1fa04d81d6c7269d318eca6cf77f6dfed4b3"
     sha256 cellar: :any_skip_relocation, ventura:       "811f9c67db74a23b6032064103e1fa317a55fdcece0f0a07cefffe2a66469db4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a48ded9253e8c3c290481f0bb817c15b4fa11afd18b7f037fd6ed86d2133798"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c1682af17f554bf337e8717692460577cbc9ee688a196133c46f9eda4ede24e"
   end
 

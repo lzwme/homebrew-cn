@@ -12,6 +12,7 @@ class Davix < Formula
     sha256 cellar: :any,                 arm64_ventura: "32f192b3827668aff416b3ab09450becae5e481f2fb40594b91b863b2da567d6"
     sha256 cellar: :any,                 sonoma:        "f83caf6a8ef4a3b2a82e5d45eeedbc3ff89a8e2c9d7abfed2995424974d386ab"
     sha256 cellar: :any,                 ventura:       "5e2607d54a8b793c3d657acd19018c224cca7fc327e25b2ea938019694d41c40"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57869e453d9e1b81e021f7fc6f1d0584edafd15ebe40721857b86c1fad964eaa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e988353573b61da496468299b761a23199d418796f39d1a19e0c37b870be6883"
   end
 

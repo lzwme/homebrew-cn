@@ -14,6 +14,7 @@ class Gsasl < Formula
     sha256 sonoma:         "f6d6007e35934b3f04c5cad57ff43d0ebe402c4de6fcb11be613607b6daf2c10"
     sha256 ventura:        "5889ccd75161e8bd226dfc1fa2cd9c3fcd0db7a70e1ca517037494246fc948a5"
     sha256 monterey:       "dc572d0c68f75916659bdc4fb41857dc956cacd060b78392a3e6ed83a84df623"
+    sha256 arm64_linux:    "981af28f2f20dd33786506616a01f230a13615e0730c46fb92df51eeea049b0f"
     sha256 x86_64_linux:   "d240c5d2c14596f6ea5db8bfbc926e5e970a7c123698b6522a2be5740bef5c1d"
   end
 

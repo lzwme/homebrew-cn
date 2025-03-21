@@ -20,6 +20,7 @@ class Tarsnap < Formula
     sha256 cellar: :any,                 sonoma:         "587aa5a6354166253aac40af29637dfcf15a453e02a8c51d7099f7303db59167"
     sha256 cellar: :any,                 ventura:        "77b98ad1864065a20bb42234dc3d48a0fd1e1f4d3e03e945d2b6afacdcde459a"
     sha256 cellar: :any,                 monterey:       "9a557a13fa81c228758cef671dccd14d5d37e84672a4c83e38c2deeb4b28df6b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "eaded389da59612eaec20e5b348ed08be65708718b9d439742f816ef209e3b80"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7587b23f9faee15f4d9c7e4a89b4d38913dbc80d297b490f3738ad52ec60798a"
   end
 

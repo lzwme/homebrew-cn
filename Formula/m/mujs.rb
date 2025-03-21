@@ -17,6 +17,7 @@ class Mujs < Formula
     sha256 cellar: :any,                 arm64_ventura: "0765c40d6deb118da5f0f8edd014bd4de89d889bee4fed10a7b7c64c23affcee"
     sha256 cellar: :any,                 sonoma:        "8a354ea3d674b092ead9ed37be5d584c2ef8470ebbbad298c00af7fb7fbc0f8e"
     sha256 cellar: :any,                 ventura:       "20a7ee4f3d183a7fcae93ecedfd9562485b3462a6cc013e74e0cc66a5ad34ace"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e7bab595f2280b58d8c3193370ed5d9f12e864b60ec18aec64c70e0122ad6c5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "16f8f85b13a69a0962fab110a0215ebd002220ab84878bd164cd3dd7171cf9db"
   end
 

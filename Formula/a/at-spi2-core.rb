@@ -11,6 +11,7 @@ class AtSpi2Core < Formula
     sha256 arm64_ventura: "0ab3fda7658c635cef173d6f57cda5bac6954c9c19de4b50f61f98501d11d17c"
     sha256 sonoma:        "8983df3d1e123b6b8bda47fca68fc8fb92465bb16cfc52201ae8a11c4849b984"
     sha256 ventura:       "ab8485e2944599f408731c4b818bf4a5e12c18a407cbb4a4d9ca8bac5075fdf6"
+    sha256 arm64_linux:   "53aff781336b769c79b115ddd95a15d9c9ff67d8a5b668eea864881b0de42ce5"
     sha256 x86_64_linux:  "0054d8838fddd4ea562187c3ea27956829310a3d27205539ddfe2adaed604439"
   end
 

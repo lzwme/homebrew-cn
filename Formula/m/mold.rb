@@ -67,6 +67,9 @@ class Mold < Formula
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
+    # remove non-native artifact
+    rm "testouttestx86_64reproexe" if OS.linux? && Hardware::CPU.arm?
+
     pkgshare.install "test"
   end
 

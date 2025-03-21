@@ -18,6 +18,7 @@ class Build2 < Formula
     sha256 sonoma:         "b7ac1377358cb2440b33094f30e696cdbf4b7e77f90f126a220f223299fcaf6c"
     sha256 ventura:        "e7e1b9212dd13e228cba7aa96cff10688da90517bad8806fa65e55170ef67e1d"
     sha256 monterey:       "2e9e1e8bf14f7daea54d814e7919353b52fd257d82394c6dccbc258f18b59c8c"
+    sha256 arm64_linux:    "8aff877f3d60ee2c1260951e873f9aa3790073643aaae93a87004e45e349d2b0"
     sha256 x86_64_linux:   "b0bf7ddb8cc3cb9a9d196d86bc76bba253460c31b55e7914acb8d1d72d2a297a"
   end
 

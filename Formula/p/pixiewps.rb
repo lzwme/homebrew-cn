@@ -17,6 +17,7 @@ class Pixiewps < Formula
     sha256 cellar: :any,                 monterey:       "55bf66c8040b07df2441c3fcf7c13eb27686e4b9c9ca62daf74d57f144fa90f7"
     sha256 cellar: :any,                 big_sur:        "d714557686dab4f733d680e7d127452599a5bf9707941e275088848f2674070d"
     sha256 cellar: :any,                 catalina:       "30700b0eb892878e10b1a8bbc47188e8d9487c6f7afc7495050b4f0f5051dfd0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ed23311b1d5fba1e327d4897c4373df6b992c8d4eeca4cb9e531d04b6ddde7ed"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b5a93abb2c126230b4c9254243b6fc99b778fb0d4aa220d0296a02940a46865e"
   end
 

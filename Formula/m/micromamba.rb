@@ -19,6 +19,7 @@ class Micromamba < Formula
     sha256 cellar: :any,                 arm64_ventura: "42afb6eb0eb92c16fa0b7774753e23fd582ff7a7d263b5b1b07246fd7c6bb9ed"
     sha256 cellar: :any,                 sonoma:        "d7782403ffef7b6e9b838aebb17b4364358a21bc9104f366089e7834c10515b8"
     sha256 cellar: :any,                 ventura:       "b76c4ddfa633c91b174253b46ba55b5c7d1871832a3bf49f5ad1ecd77da7469d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4759afd5a653a9c1081639bf386dd49df8d79ff6d114682ceeeac02f3be95759"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e20aac8fa5746fdb321c20ebf7b3135e9928ed4cb023f5fd80e49faa18a02c9e"
   end
 

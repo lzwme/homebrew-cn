@@ -18,6 +18,7 @@ class Pod2man < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "c18bed6c302dfaa0c4373d546f99d0b1dbee75bc618fa2f914b54379e9a57bbd"
     sha256 cellar: :any_skip_relocation, ventura:        "c8b7d64bb1ed99ec0d43c980a0b559e40a0c23dec4651fd2098b8728f33e3c71"
     sha256 cellar: :any_skip_relocation, monterey:       "c8b7d64bb1ed99ec0d43c980a0b559e40a0c23dec4651fd2098b8728f33e3c71"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "36c74b6c69d5f917a362b69be53f2e269951278607071c65f700c39462ee422b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "269cdc0db938df147bab44127e86b05cf46074741bd9d8644b08f88a00e62f97"
   end
 

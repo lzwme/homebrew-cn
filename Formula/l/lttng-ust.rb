@@ -11,6 +11,7 @@ class LttngUst < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "1ca8a5a724c2359a2f3d6fb703987af88a1fdc581323524f99e8f9917da65c82"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "efe5ffe7089dbecb5a5202820c0a3776543c8981cdd558dd6f13b9beb0ba6247"
   end
 

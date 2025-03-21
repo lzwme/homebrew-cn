@@ -27,6 +27,7 @@ class Bind < Formula
     sha256 arm64_ventura: "cb80d80f5611f36f33133d685ec183a48157243a81ff5b753f5c95316605e9b2"
     sha256 sonoma:        "58d1065019d4c9fa3aa6f1cdaa8dc9d0de38a584849319dc765dd2bb057db0f5"
     sha256 ventura:       "9a4908c982aba2d52f16de4110a1d88fe00cc122694b655dfa02de3983b1d99d"
+    sha256 arm64_linux:   "0e003c29242ddc0b9fdb7180cb6266fb09ce4af72aac1aca0429a560e4c9d1f4"
     sha256 x86_64_linux:  "eeab5b333e38bf01971fc4597bb4580cd131a78780d77e835a3f92f75abf2859"
   end
 

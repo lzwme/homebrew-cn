@@ -1,18 +1,17 @@
 class Sile < Formula
   desc "Modern typesetting system inspired by TeX"
   homepage "https:sile-typesetter.org"
-  url "https:github.comsile-typesettersilereleasesdownloadv0.15.9sile-0.15.9.tar.zst"
-  sha256 "fbda59503b333d82661601db647d1a2ad67aa8b7098e1ef78c6d8216844ac567"
+  url "https:github.comsile-typesettersilereleasesdownloadv0.15.10sile-0.15.10.tar.zst"
+  sha256 "b0f001b4a7c8a5a98635610b9c29e455a8077ae1eaff52a84f7eb8fda2c70eed"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "86e99ccc07b6ea49eb6a61e6bc5bba9975899ffd81e8ee3c649d73c85be2d457"
-    sha256 cellar: :any,                 arm64_sonoma:  "cdab701dfa371989e59a06b59664702506064f4a268fbef0bdfa0569b5d2fa89"
-    sha256 cellar: :any,                 arm64_ventura: "59556dc29d5cd7ef908968c605bf5f65a779f375c8ca1747a9fdc7a5a241003d"
-    sha256 cellar: :any,                 sonoma:        "717bd3c35f1663b7732df553489e8789085f645ab80b85791668ba4ec4c94e9f"
-    sha256 cellar: :any,                 ventura:       "138be23e31a9a6a09bde2c2e1eb596b3fbc51fe01a16cb218e9cc5a1940b9f71"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "385222574158101866e47748ef6242c1a9b373c9eadfb2a8d59365f8da464723"
+    sha256 cellar: :any,                 arm64_sequoia: "2a6968fb6144b39d040bdefadacac75796742235af61fc58791d07bfbda77f3a"
+    sha256 cellar: :any,                 arm64_sonoma:  "0511fe34bcf5e1b6f95fac61d3386fd73ce33bdef415886b4eb547210db91654"
+    sha256 cellar: :any,                 arm64_ventura: "003d6c2b5d0c9b93da9efc9a8155995be48c67eae0149a5f68647cde984f1b3c"
+    sha256 cellar: :any,                 sonoma:        "43bdcfbac5b7a4a47c779756362e787513bb656ee02cc13e1e20c23b38acb252"
+    sha256 cellar: :any,                 ventura:       "943c213b26ab249f62484ecfca9697d1b24f3a274f65e3d36d2efb831c56843b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf7992e72264de7b6154e6db7968fbddb9e106bcce15a7b1dc6c404b7859db03"
   end
 
   head do

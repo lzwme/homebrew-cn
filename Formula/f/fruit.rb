@@ -15,6 +15,7 @@ class Fruit < Formula
     sha256 cellar: :any,                 ventura:        "90a9e9ed4c7b5009627bd46e107f3697b310e022e2e1ba0efe05dd0bcb049fd1"
     sha256 cellar: :any,                 monterey:       "8cf43ab558179955f4f110e54ab27083a062070a3e684badfdf0b567eb524548"
     sha256 cellar: :any,                 big_sur:        "7b46f22a641fcec38ca7784157fd876639618d541cf0b1c4ac783d0b9db48627"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "6cbe793d133f5e840dc23feeac8ad00715283b2cbc2645580175ca4c2be8a2cd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e67f3fbe98944d1758385a4f188435b4b81b7fc5a192fe2c9c1a6e37e6b8d7cb"
   end
 

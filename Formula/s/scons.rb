@@ -13,6 +13,7 @@ class Scons < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "151c811ed2fb8f49ded747f540963eeb0c9e0709791e4f19de0fe3fef97dc88a"
     sha256 cellar: :any_skip_relocation, sonoma:        "c4e4aac6930d155026974edde3bf8a1d4784794d55afc7d6715efdad9fb8a407"
     sha256 cellar: :any_skip_relocation, ventura:       "c4e4aac6930d155026974edde3bf8a1d4784794d55afc7d6715efdad9fb8a407"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "469d4d9ed388432e0fa083001925d30aa16975e9a1f138234deb556418cb7b57"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "151c811ed2fb8f49ded747f540963eeb0c9e0709791e4f19de0fe3fef97dc88a"
   end
 

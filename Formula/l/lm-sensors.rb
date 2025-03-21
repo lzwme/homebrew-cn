@@ -8,6 +8,7 @@ class LmSensors < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_linux:  "43d3fcb049210f0b67b6341f5e65645c69ddbfa3ecc8bf5926d612990f3fac35"
     sha256 x86_64_linux: "9edce5d98c2e1541cba56961443f4bdb01ea6ab8b7bfd8aa4515c7eec9d17541"
   end
 

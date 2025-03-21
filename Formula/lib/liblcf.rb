@@ -28,6 +28,7 @@ class Liblcf < Formula
     sha256 cellar: :any,                 arm64_ventura: "88b64f5e02c66eba7184bfbecdda6dfb6f331c3ad113b89f7400e51cad4a90da"
     sha256 cellar: :any,                 sonoma:        "ab362e5a999bd3210a26c2c2e431135a51ae43cc7a6dd6371a3ab07a93438795"
     sha256 cellar: :any,                 ventura:       "dc447f1a04732969f18f1d32f1fd6ecce02c4115f9b1031f71f0008843618bfb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8bd73160031b08cf9fdd3b0ef32f3b47a211744bdebd0c3f8a1c0c42b884d524"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5415f715fd1e60c8e1cb80a633588d4afd743b309d760c12f483e0881746e646"
   end
 

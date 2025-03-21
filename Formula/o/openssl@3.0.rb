@@ -16,6 +16,7 @@ class OpensslAT30 < Formula
     sha256 arm64_ventura: "68703232022ea59ffbaa9df18af2729deafd8156d429eeee776d8ef3bdb71d42"
     sha256 sonoma:        "78f7c4e520022d939f044b633e445285464d750335673415580e4276edd4832d"
     sha256 ventura:       "99481795ad61ca2c0c5d4b2b04289e34d60af0e4a134cb45cb51c959b97f70fb"
+    sha256 arm64_linux:   "27ff49771ec269c196f1186c71379dc14efa2dc36d128480a72f3c0e1980e073"
     sha256 x86_64_linux:  "8bb05cb857db7d6c328960cf1bfc9ba72b566cc0a4efaddab5879b91b44d369f"
   end
 

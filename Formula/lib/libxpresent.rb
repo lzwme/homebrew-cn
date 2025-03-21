@@ -13,6 +13,7 @@ class Libxpresent < Formula
     sha256 cellar: :any,                 sonoma:         "eb83e0d03a31d7ea8cd48cd3d43bdeb5d0048af0d06646c446e568ec7a3013ca"
     sha256 cellar: :any,                 ventura:        "3e03a11b61ba1ffe208a8d81a0758bf7035a121d8628ee1060bda1806acc74fe"
     sha256 cellar: :any,                 monterey:       "55bad28f062443796869c41b7c9c5937786fe92cbb9b68794818d7c077d1dbc5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "15d2a13ac97e3109624e052570ae65cb4262f3702bd2bfcaf929b552cccd51b1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0cb8e78a41a28a3614a7db1df840c1b1c30c96edf2dc6bd6dc49824709b47305"
   end
 

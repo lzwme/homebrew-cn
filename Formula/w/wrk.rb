@@ -25,6 +25,7 @@ class Wrk < Formula
     sha256 cellar: :any,                 ventura:        "cd319593d2f5ad2d1335cac14ebbf192af7502a63e83d4b8d1cb6e80fede99e4"
     sha256 cellar: :any,                 monterey:       "86b756396151c118e4a2e419b692923a6c8d71a02f355f5c1390fe11659125ab"
     sha256 cellar: :any,                 big_sur:        "fcb1b19c7ec424642d0dc7cf0a9a1dde8872a64a4e91fdf07a16f0b64ba10e4b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "09305386a05c3e9f9370c7add8c05415c21593b46366db083464acdaf98a9779"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4295514a73470421b9cadc29d0f2873de383cc7b9d31523028d2310ef6e437b"
   end
 

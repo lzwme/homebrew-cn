@@ -17,6 +17,7 @@ class Gperftools < Formula
     sha256 cellar: :any,                 arm64_ventura: "d428485901b9144e3b3d95ce3f0c4b344e1760dedb9672251ede5c6fac05b3a7"
     sha256 cellar: :any,                 sonoma:        "b0f53d444765abb98c3c6756b4453898c59ff9664801f3f8f753b391e9481a1d"
     sha256 cellar: :any,                 ventura:       "11454d149fe95769f52b1a679b7543a377896b136ed8756934b2309b5e79ed4f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "391faba3dacc74cd391006073abdc790c94121413482b602588a75218b67f51c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "04f8ba407cd4997e7c0f62e25568c3216a36b1dbc50335b5a8c53351b4a73614"
   end
 

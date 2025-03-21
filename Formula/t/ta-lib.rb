@@ -11,6 +11,7 @@ class TaLib < Formula
     sha256 cellar: :any,                 arm64_ventura: "12709c4df99f1dce0315b653a1bdb962f3cc6c429bda41a13d17f4dd43079644"
     sha256 cellar: :any,                 sonoma:        "c34c5da2df4abefcb86d3f130a7e8fe0b85fad2c83e2343d9e65e4a615c6b235"
     sha256 cellar: :any,                 ventura:       "151e74186d18550800b5e7e714c50e99e25b1e4f536fc83521e45e4ce389fc0e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e6bc65c4e2fb0d567fb739d473d9ee2b696741bb5d05f0f10c8594e096c875c3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "868d1163296be1e3d5f10bcdf4047f0e218eb91617da562eac14fd04cd05433d"
   end
 

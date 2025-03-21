@@ -1,9 +1,9 @@
 class Druid < Formula
   desc "High-performance, column-oriented, distributed data store"
   homepage "https:druid.apache.org"
-  url "https:dlcdn.apache.orgdruid32.0.0apache-druid-32.0.0-bin.tar.gz"
-  mirror "https:archive.apache.orgdistdruid32.0.0apache-druid-32.0.0-bin.tar.gz"
-  sha256 "25e1e6ada58e40d8da558ca16107ac06bc0b1c0aa7aac106ea2b7aaae8f72b72"
+  url "https:dlcdn.apache.orgdruid32.0.1apache-druid-32.0.1-bin.tar.gz"
+  mirror "https:archive.apache.orgdistdruid32.0.1apache-druid-32.0.1-bin.tar.gz"
+  sha256 "4dfbb604401bc255678e917716d4bbc349177c7d0b56dc952d255334ba38372e"
   license "Apache-2.0"
 
   livecheck do
@@ -12,13 +12,14 @@ class Druid < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "22fe28b4fdeaf2a7cf63231974487412c0db31c302860c90d904450491fe6ae9"
+    sha256 cellar: :any_skip_relocation, all: "614d1a0ace3358af25cf0b81819b5f24803c9b6d1b48df09361112fd313174cc"
   end
 
   depends_on "zookeeper" => :test
   depends_on "openjdk@17" # JDK 21 issue: https:github.comapachedruidissues17429
 
+  # check https:github.comapachedruidblobmasterdocsdevelopmentextensions-coremysql.md#install-mysql-connectorj
+  # for mysql-connector-java version compatibility
   resource "mysql-connector-java" do
     url "https:search.maven.orgremotecontent?filepath=commysqlmysql-connector-j8.2.0mysql-connector-j-8.2.0.jar"
     sha256 "06f14fbd664d0e382347489e66495ca27ab7e6c2e1d9969a496931736197465f"

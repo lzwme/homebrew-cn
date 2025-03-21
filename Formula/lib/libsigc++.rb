@@ -13,6 +13,7 @@ class Libsigcxx < Formula
     sha256 cellar: :any,                 sonoma:         "2b8440fee6119c2db8798127a2ba79a0661d704cce7ad9981f8379ac425390dd"
     sha256 cellar: :any,                 ventura:        "14caa93cc34a8fc23b59970bd16fcb6750d06455a1077dbdc4b019484cc1f25a"
     sha256 cellar: :any,                 monterey:       "00a4b40549db35b1c86c7c4dbec7ce12fac4984a6978dd23f3a64f99dd55e789"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0ec3e71db039808ea08a34d73e13d2bceb915dcdb0069f4da98478afe501e0b6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "125217bab99e1e8e4752ddcbe720f68745ffaadc94930cbd432d554a87c7924f"
   end
 

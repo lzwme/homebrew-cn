@@ -16,6 +16,7 @@ class Sdl2 < Formula
     sha256 cellar: :any,                 arm64_ventura: "ea075701025a47cfffff4dadfc4d9ff856f9482139033ff402ffd2625ac84acc"
     sha256 cellar: :any,                 sonoma:        "dcb4346b86807ca1bc1e712f8f056962a32b4ed1841701d47c19618ed6c80d15"
     sha256 cellar: :any,                 ventura:       "0e743d7ffced7b00ef76580e9e1bcfcbbe364a547d48e673e039ecd7c1a34bd5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "99ea3a3f30f53218a0d2c125037bf59aca877f0c3e0d9645b875bdb832b51e99"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c647481dc8fa2326636a4cf2fcc36b0c100166414802d6d0b592dc8e62eadfc0"
   end
 

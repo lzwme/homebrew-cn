@@ -15,6 +15,7 @@ class PythonTkAT310 < Formula
     sha256 cellar: :any,                 arm64_ventura: "f535d3a5b6750eb99547e9009f867beb1382b6c0c8b34c2f15154f8caef50ca4"
     sha256 cellar: :any,                 sonoma:        "ff419e01411af9b9704180232c998269c6ab33756705301ccd341cd4c5ce5d28"
     sha256 cellar: :any,                 ventura:       "0cb43e607c7335bffb65a04c72ac2fe7cf371bd7cd240f1c75b4a534088a2baf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ba02569ab9a8573ae15a8627954a652a6ce31d2754beaa64613fa1fab527431"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "133d60721b40d030951ae481e497ae9fadf515911a18311a245d643239d82212"
   end
 

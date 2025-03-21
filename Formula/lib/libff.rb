@@ -18,6 +18,7 @@ class Libff < Formula
     sha256 cellar: :any,                 ventura:        "b42e23e8c807c75ff7825ba73a348a3c94e6d4d31682da30377b237ad99c5e8d"
     sha256 cellar: :any,                 monterey:       "7e92d770effa52f27d690e55981eb4bbe164ab9266573b1554ae7efbf1870167"
     sha256 cellar: :any,                 big_sur:        "5c89ae786b7d9f035e65ca4a47a0f0008511a0ba701a2659c1194c2f55157507"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9339a1479a02fdbdd670479385040323050ada9e6022e4d4be3b167b8a477cac"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0c274f4e83f703347f24d6c6c487224b19c72eb4f199daecfbb6c794380cd17"
   end
 

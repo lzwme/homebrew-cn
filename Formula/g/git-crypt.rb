@@ -19,6 +19,7 @@ class GitCrypt < Formula
     sha256 cellar: :any,                 sonoma:         "311fdbce0d28379fccb498a2dbd28fd0970e28435093fec017b764085d2cb6f4"
     sha256 cellar: :any,                 ventura:        "58ce66439704ae0c12b982716ab3621e1f8aa4db9626038390e94b415eaa0e98"
     sha256 cellar: :any,                 monterey:       "ca996f9c7ca04bdae361bcf51f7c88a1ba872442e7734b3d06681e209e2af960"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "c983cea52d673f9c724abd853c2f354df480866282b2a8aa00c38c4e119f72a8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a4b02697b5b69721c024e072e8a9a2bf0227051bae968305dfdf34a88ff2bf8"
   end
 

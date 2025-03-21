@@ -11,6 +11,7 @@ class Glibmm < Formula
     sha256 cellar: :any, arm64_ventura: "26030e6c8cd469219d07ee2f19bf5274e9d316bcda74c6d67855d4fdd1ed0be8"
     sha256 cellar: :any, sonoma:        "fa675395706ee513072096bea13f53bc5d709a2040795d02557d0e8c7c2097c2"
     sha256 cellar: :any, ventura:       "0ec2eaaa0e492ac7bad58a8933ddf4e7a45d0cf8f390e11857bf13c5c5428db8"
+    sha256               arm64_linux:   "f8fa77e5cb936ef421893f3b85d516ac448bc7d50e7ef8a9b98e087fb9bf79b1"
     sha256               x86_64_linux:  "202ff3d3acdad3252ea3ce5f8b078a7494c91bce22e1d980fd518fc9a521c6bf"
   end
 

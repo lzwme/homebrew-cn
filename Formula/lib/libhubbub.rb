@@ -17,6 +17,7 @@ class Libhubbub < Formula
     sha256 cellar: :any,                 arm64_ventura: "81e8aa3aae89f339efbf14d216270d1c57729e525b20c7d977dfa539f71012b0"
     sha256 cellar: :any,                 sonoma:        "015c9012d635556347bf3a0e1f5d003b81a5834f2a91c717ebe9929e5fd8a232"
     sha256 cellar: :any,                 ventura:       "0544ada9a05f3db96da5338b41f0251e265fb784b1109ec0e688ffeb942f568b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e72a8faff6cd381e00d0104392fea04a18cdea7254e62620b0738b8cdd4c569b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1156a785370dd503db4817f034028986f1c6eea21d79c0c59a2a66f6ca07391c"
   end
 

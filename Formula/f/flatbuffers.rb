@@ -17,6 +17,7 @@ class Flatbuffers < Formula
     sha256 cellar: :any,                 arm64_ventura: "6968b4b2efa0d5139761970ff456a1ed5d6d5ad7b41e80f4cc9b80fa1c519b7f"
     sha256 cellar: :any,                 sonoma:        "a58461c37e9674fe74fb1f6fad9f0f18b17fdf75dc26735e37bd11f61efaf73c"
     sha256 cellar: :any,                 ventura:       "5d7f236f0fc79666d04189c4ac050584475d7eb6e8ac4dfef1aa7f416c9928d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "591bd372c1950a418d9003b7a155b753aef7b894034f708ab4f32d685f19a56f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c93870db88b63506938944f084714de60f7a9889d2182c3a0088587b3f91536"
   end
 

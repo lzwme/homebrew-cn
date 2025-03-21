@@ -21,6 +21,7 @@ class Gputils < Formula
     sha256 monterey:       "0033e9463df7f37295cf89c23335763769a2df27bcfd61121121467028922054"
     sha256 big_sur:        "7c3aefbcf78392080e05773e9e9ef9c289f15bd9e02b9e7f33ecae7cc2ccf3df"
     sha256 catalina:       "80ca3e7c4b44a63ef25b476ec5fbaf25381d82d48e2ba33eda91b0b70fb4fcd3"
+    sha256 arm64_linux:    "0178958e579afb1c56b89d025d007eea69af1b68fc6bd7e7e4d8cb550e344212"
     sha256 x86_64_linux:   "980a09d45f616f560b368078822553d130d7630b813d92696fd15f894593bf4b"
   end
 

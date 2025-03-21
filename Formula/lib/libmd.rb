@@ -20,6 +20,7 @@ class Libmd < Formula
     sha256 cellar: :any,                 ventura:        "e81790c66cb480c6b411fca1e2adfded0e5c20ab12ec02e57e450bdb589539c3"
     sha256 cellar: :any,                 monterey:       "36a5e1ef679b99d090814f2fde15e9fb45d73afa26fc5ef75618c4ff85bf48dd"
     sha256 cellar: :any,                 big_sur:        "603212a43a289d57d2b541a3775d9a2c036b3813f2ca68640651b659f8dda490"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "fcba0ca8cba980bd479183e6bb65765ea70990f7dc8c4258b0e1256de1070731"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c07679b6d5141498eaaab977d8501cf12219feb13a7ae040044561d5abece9af"
   end
 

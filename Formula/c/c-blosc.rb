@@ -13,6 +13,7 @@ class CBlosc < Formula
     sha256 cellar: :any,                 sonoma:         "f6837382559667940cba3903168bfaeff2bafbca5d39c41ca7586507f6e2623c"
     sha256 cellar: :any,                 ventura:        "ac3f9f476b9f5f72123b945f1f67aadad959762f55fb1179eaa3471208da5c27"
     sha256 cellar: :any,                 monterey:       "39017af35970c5dcbdc33dacdd2673bff743593aaa26a68a2328c8bb3e623dbf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "866cec70c5ebbb92e7115481a9aa3de619f6425c6539b1c446b83ec0b3326c41"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "945cb54d12083813c6ef5c7a4dcaf747fbfd8db3dd37e8c4d3f69150354d69ae"
   end
 

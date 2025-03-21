@@ -17,6 +17,7 @@ class Libfaketime < Formula
     sha256 monterey:       "0ec1aa518fba8d2e20ff358fdeac7ab640488eeb47dcbdf7900601d53c79b7ce"
     sha256 big_sur:        "d852f9c059965fb8750e5202c6b59ed6806dbc19d0aac339dfec71cca3856dbc"
     sha256 catalina:       "c826fdd7a0b8b1be7a8957665ddf3403bbc9e12f9da052a616e714c80c429602"
+    sha256 arm64_linux:    "12776ac58f5b2a9c124452dda8c7eb796dace45efff485921461264f2b5d62c0"
     sha256 x86_64_linux:   "a30d8e38cbe2d90d06ceb803a766750c07c5b2034931db350b6eca7879343eae"
   end
 

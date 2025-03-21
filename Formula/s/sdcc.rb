@@ -17,6 +17,7 @@ class Sdcc < Formula
     sha256 arm64_ventura: "3c7396176a31c4ed07f70ee1bf32b7cff2e27de40f382cd5208dbb2dd6a5134f"
     sha256 sonoma:        "1f1004c896b885aa65e33c71530906f085f81241a5ca3f42737a252dcff22200"
     sha256 ventura:       "babe449f182d8d1a8ee922b2ca74d7a7bcfe55d2c85133d356ed80c03c4ae49a"
+    sha256 arm64_linux:   "c8462d05395dfcd9c0b18ba670cbf28a19bd771af37352b55fa49e56ee297832"
     sha256 x86_64_linux:  "93079cad266875209f9c852f8f06da7b4c5e1975b4cf0719f33925af508d9f0e"
   end
 

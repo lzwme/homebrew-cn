@@ -12,6 +12,7 @@ class Verilator < Formula
     sha256 arm64_ventura: "ebe5c705e55516e505b073c7b8c88c3d22990c85efc8fd894373812d1afb09ff"
     sha256 sonoma:        "224d809e313b145c1b67ccd16bda1e4cd2f1cdd6a906eef087a080a6447634c0"
     sha256 ventura:       "e6c7b946da8d9c392ecfe3a12e60603a311c6c1e1909de900762524d5a81bc76"
+    sha256 arm64_linux:   "e73948593c34d2af78bce9c77643023d1b8691b2cc205fe2533a0be92c5ca569"
     sha256 x86_64_linux:  "5e3f6b0694a46e5d3f76450b2d66878cd2a14b09af40b920cc3976df9710efa2"
   end
 

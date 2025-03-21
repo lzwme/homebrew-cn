@@ -16,6 +16,7 @@ class Lmfit < Formula
     sha256 cellar: :any,                 monterey:       "4da2bb131ad773aa9b58d27a850619efd8e5fbcb13549c2b02fd2644af59fe63"
     sha256 cellar: :any,                 big_sur:        "08be04ba47f0947f21704736cc71f61fee920de95ebfcedba5ef8091cce34f49"
     sha256 cellar: :any,                 catalina:       "b523a336000b11de635407d0f824068219b298043bf39a520e6777bcfbf18fa2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "dc5543aacaf3285a695422558a58c624d789a7b91da09b8442095682e4cb5dde"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4d3fd83e276cd33f98bd50f5ff20b8ba67e4b1782a808bd057684fe72996db4d"
   end
 

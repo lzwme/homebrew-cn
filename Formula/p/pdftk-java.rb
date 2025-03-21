@@ -18,6 +18,7 @@ class PdftkJava < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "086851972845bf87aec1535dc4d9a1f6addd1311f468c926cbe7c6ab79e3f015"
     sha256 cellar: :any_skip_relocation, sonoma:        "0a8f707c529d2f6a036448b5c5c864f5208b68403afb5aca2ae94052cb96b82b"
     sha256 cellar: :any_skip_relocation, ventura:       "a98dbbff8f1aa546bdffaee0f07b3cabb67ee74052cdbd5c03c1b720f047abbf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc976b8e0b2bea3916feab4a2d5d5c88133cacd10e71350ba5804d0536c193c6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "87b00258f2f947e48b44b821179d569babbe5d0ad5ffa2728f7e56085cfccc4f"
   end
 

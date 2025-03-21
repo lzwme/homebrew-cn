@@ -16,6 +16,7 @@ class Soplex < Formula
     sha256 cellar: :any,                 arm64_ventura: "d1c0c5e16bfecc09bead6026aad5648c850fed5f3dfc3eaf3ccb03c35bcd0000"
     sha256 cellar: :any,                 sonoma:        "45656883aa0ab07c9932cff8a5d4a65ce192a6a3ae02f12be674d3a3a4793440"
     sha256 cellar: :any,                 ventura:       "c5752929287cf727a49356153e18768f6d25ad4c3c4b644e45724f2bbc109fb6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6cc6d6c136bd090a60c216c1960e3dcb76b2c5b002723c3f5ac1b18ace12dee0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "69aca653ddeac78bb7191bae12a3d0114e8138e026e6b96d17f94269249fb19a"
   end
 

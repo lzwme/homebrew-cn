@@ -15,6 +15,7 @@ class CpuFeatures < Formula
     sha256 cellar: :any,                 sonoma:         "4c6fdef575b3acac228f0b880dd7d1154dffbafac08df0bafd82d1630ab8b722"
     sha256 cellar: :any,                 ventura:        "3598175140e64a33064ae94b81e3ef252051313acc4344a7e7ff42fc891a3c79"
     sha256 cellar: :any,                 monterey:       "750715774bcd3306efac26b9b5173c9126b8a25613e7fc54100cf5814ef7cdcd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7dc0212abd26381578fe8ebd0b5143eec8afb727070ab1463a993c807d885f17"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d728f5f093b6666edcba57a77aa36e9f9dc6949634fd9a1e76f55ec5abadd4a8"
   end
 

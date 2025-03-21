@@ -12,6 +12,7 @@ class GitlabCiLocal < Formula
     sha256                               arm64_ventura: "8184c017a04e94a0dcc5a88698c8b5483525fbbf352dfedf21aeb4b37aff70c7"
     sha256                               sonoma:        "b633e3249419bcff292b6d7e62bba044ef10dead3465b00201f33ba8ae994fc6"
     sha256                               ventura:       "6298de2ebc161af2e6297451ab7beaf7f06436d2dbaed664708c7b7c0f0f2ae7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5305680f8165adcbe0d566518c4090d2cffeec65a6ae2ded8fe28ec34a060257"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f42bb808b7fc933e73d2de971a833d1e441a93b82dbe3570b769fd8edea141c5"
   end
 

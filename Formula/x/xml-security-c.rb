@@ -1,39 +1,41 @@
 class XmlSecurityC < Formula
   desc "Implementation of primary security standards for XML"
-  homepage "https:santuario.apache.org"
-  url "https:www.apache.orgdyncloser.lua?path=santuarioc-libraryxml-security-c-2.0.4.tar.bz2"
-  mirror "https:archive.apache.orgdistsantuarioc-libraryxml-security-c-2.0.4.tar.bz2"
-  sha256 "c83ed1b7c0189cce27a49caa81986938e76807bf35597e6056259af30726beca"
+  homepage "https://santuario.apache.org/"
+  url "https://shibboleth.net/downloads/xml-security-c/3.0.0/xml-security-c-3.0.0.tar.bz2"
+  sha256 "a4c9e1ae3ed3e8dab5d82f4dbdb8414bcbd0199a562ad66cd7c0cd750804ff32"
   license "Apache-2.0"
-  revision 2
+
+  livecheck do
+    url "https://shibboleth.net/downloads/xml-security-c/"
+    regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
+  end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0ef901d1dd62aede4b0a35b64342b969c1895b519dbe5c41dd2b1a5f82d8c7dc"
-    sha256 cellar: :any,                 arm64_sonoma:  "eb8d5c236aae4140590391f48ac857513958496d3e3d6e593201ef72cc321e40"
-    sha256 cellar: :any,                 arm64_ventura: "ce3ae37e20ef8933d995af0447d498c1fa0f244298694e589b998467323851c2"
-    sha256 cellar: :any,                 sonoma:        "9e8f17a36572dcf16e4da2ecc143a77b58647a5c15e4d7a67bd23bb1261907ed"
-    sha256 cellar: :any,                 ventura:       "516a9bcaa920f654420dd343fab87694cf5902a15d17ec5cfa949c007e01b416"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "027db5710abf606d13b530d94cbfd9c9b0f6b619080dd2aff53fcec7a965ed9d"
+    sha256 cellar: :any,                 arm64_sequoia: "7f42a4e63dc531c44888737938b0e97780bb25053f42f5cd35671294251a9f6d"
+    sha256 cellar: :any,                 arm64_sonoma:  "82490b87ef4a44db821acf34f13bffcf99fd52a3ff372886ee1f001f6d22433a"
+    sha256 cellar: :any,                 arm64_ventura: "b4431f1f09c66f1dc9c73eb72cc78c724e0b0a072f93e26917a114b4eae88ccc"
+    sha256 cellar: :any,                 sonoma:        "58c0752a0c3a1aa6b51dd7c48058661c0d5c56e7d336412a47db907b851d6451"
+    sha256 cellar: :any,                 ventura:       "abc08033a4513a659e7938e3708dabc82fd26451d46ea6f400292e4bef28ff98"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "649bcd04da8d6bf105dab88cc9de4c1b6efb55e4b20a75371e7f4a4b96b47761"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2cce7dc9da8984c26b39b9e203162782902841d2ca55b40299c846522ba17407"
   end
 
   depends_on "pkgconf" => :build
   depends_on "openssl@3"
   depends_on "xerces-c"
 
-  # Fix -flat_namespace being used on Big Sur and later.
+  # Apply Debian patch to avoid segfault in test
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
-    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
+    url "https://sources.debian.org/data/main/x/xml-security-c/3.0.0-2/debian/patches/Provide-the-Xerces-URI-Resolver-for-the-tests.patch"
+    sha256 "585938480165026990e874fecfae42601dde368f345f1e6ee54b189dbcd01734"
   end
 
   def install
-    ENV.cxx11
-
-    system ".configure", "--with-openssl=#{Formula["openssl@3"].opt_prefix}", *std_configure_args
+    system "./configure", "--with-openssl=#{Formula["openssl@3"].opt_prefix}", *std_configure_args
     system "make", "install"
   end
 
   test do
-    assert_match "All tests passed", pipe_output("#{bin}xsec-xtest 2>&1")
+    assert_match "All tests passed", pipe_output("#{bin}/xsec-xtest 2>&1")
   end
 end

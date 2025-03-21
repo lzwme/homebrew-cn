@@ -18,6 +18,7 @@ class SourceHighlight < Formula
     sha256 arm64_ventura: "7dcd24af23b31fc601b91e87309186ec0bbfdd6de9df721f25c6d3bf1589ba99"
     sha256 sonoma:        "72290398f59884c5ccfb7960219c3e15199bbacecad195f464c8750f7e448863"
     sha256 ventura:       "b004e32044ef67916ca8ef70324df7dcc5c01e777d76d17fcdb86e11a57595ee"
+    sha256 arm64_linux:   "05ca474d2414b0531fc722d5ee5977c5f0d61f32785f47761d0a8056cbc712bc"
     sha256 x86_64_linux:  "09c0f664ede1dd50549c8cae4dd1a57b587c81da49a3f03b5d0b78e33f15a935"
   end
 

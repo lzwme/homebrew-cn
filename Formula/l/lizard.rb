@@ -17,6 +17,7 @@ class Lizard < Formula
     sha256 cellar: :any,                 arm64_ventura: "6e41f950c3122da4196d7f1f9501e9c32f095465587090615bba4be931543f07"
     sha256 cellar: :any,                 sonoma:        "9bd2c13adb64d92944260e290b9416218f4eeb424487ea49ae83bb015ffd9f81"
     sha256 cellar: :any,                 ventura:       "39b3961d0fc7b870dcc7d375782ccd5c51ac716e4a3ef8bb6ffa16431409ae37"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6212d114544ae8160922823d29a649f51b2bb89fe30a114e93b6b063e9ebac0f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "baf6aa7976a0ebf3f70dca4b20b19dac4cebcf104d40806af223fa0be2b0607f"
   end
 

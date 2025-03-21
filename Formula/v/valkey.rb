@@ -18,6 +18,7 @@ class Valkey < Formula
     sha256 cellar: :any,                 arm64_ventura: "293240ad010c39a8f520f52529cf44ea61c592eeaf24544562446f564767924e"
     sha256 cellar: :any,                 sonoma:        "92dd53977a83863da80ecf5ec78d0dbc23d41b81b7f1b0983e1eb5385239b927"
     sha256 cellar: :any,                 ventura:       "4bf831c8ca2eebcb20ec7249ceb14e09d6e7fcf76a85e55471994757fc4a9879"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1878663734ec152159194edfdfb1ddd22290e56c1562380de3e026af3fc0e495"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c41c184e0d84bfb12af38cca00cf5310b2ec5bd334a5a9588b01f4c07dd53d37"
   end
 

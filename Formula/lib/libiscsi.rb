@@ -14,6 +14,7 @@ class Libiscsi < Formula
     sha256 cellar: :any,                 sonoma:         "740b7f606b002d81ac103bdc370dcd3e8c2fe8d40c4076f82da099cec369cf84"
     sha256 cellar: :any,                 ventura:        "b2ef691dddbb78054d97f690f66d232c5342ab532d675202218ae75c4974acf5"
     sha256 cellar: :any,                 monterey:       "e37fd9ee5cb599780d8b879d39b13c6b8fa123e7d2d259fc958cebadc3600c92"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1ab407e7c602f475c9a9149103cde804b8164853c07884e7cc1cc1af7aa1950c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f038bc77875a74dcbc70d2db6f0f653ee58b744278833151b0c9a6aea8816dfe"
   end
 

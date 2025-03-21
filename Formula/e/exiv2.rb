@@ -17,6 +17,7 @@ class Exiv2 < Formula
     sha256 cellar: :any,                 arm64_ventura: "324a396d02a60943e980cf9b50426eae98c192ca22ca095a48f905e96fa8126d"
     sha256 cellar: :any,                 sonoma:        "dcb1e5a8e88a3e73d6a7fe7bcfc29287f5bfd316707b11885243123a72513098"
     sha256 cellar: :any,                 ventura:       "478a00d6b64bc104d295c5ba17dd1ee2ee4d0abb402156637197bfbd9d89458a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d34a3a27828011996fe3e1eb69930b95e82780d37f0d7228bbbcb75ffb95ff2d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cabdc713bdbfcedd5f85a543e9a573b4976cb074ad9ee7556ca0323a23184c6b"
   end
 

@@ -15,6 +15,7 @@ class Screen < Formula
     sha256 sonoma:         "adc56240e8ecaf23de62dfe67017b64eeda8538554c29ba5b4411f5fd8ec0e64"
     sha256 ventura:        "5caa5be6136e3844d66ac11b609caef27f59553e4f596998bc5bf4817b830337"
     sha256 monterey:       "8c8d9322b5d5230f3a245668c1ff8117b0128077ae79adfe8a657cd70cc2434d"
+    sha256 arm64_linux:    "2b28261f29fdc1901d612342952719f70ce868a5b77cdcfd3a8eafaab7f37487"
     sha256 x86_64_linux:   "cf41a2d3353e0653d07a095b56d554a55fc72ac6c74fc4a34bc056f3d95463f5"
   end
 

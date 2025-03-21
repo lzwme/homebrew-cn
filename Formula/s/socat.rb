@@ -16,6 +16,7 @@ class Socat < Formula
     sha256 cellar: :any,                 arm64_ventura: "ed40e4fd40e2cf47cc732fbe1b188922e7b41d13df5917509fab2335f24f7398"
     sha256 cellar: :any,                 sonoma:        "c418f4b948cc59f250fa1467eed47b1cf088d6a17ea8c94f6525348693af2339"
     sha256 cellar: :any,                 ventura:       "5986bf1538a59cb4ee5d285f54d17f3ee893d993d174ee9ce2cedb2a2c567779"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "56e85c0167c53a685bb332c47a18e40fa0f6133783c70acc3db6a43189c8f98b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "90337fcfe325651b99280dcb87e3e9bdfc4ad25dfaf7a9fbb7227fac4ff68cad"
   end
 

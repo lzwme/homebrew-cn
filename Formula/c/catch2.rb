@@ -12,6 +12,7 @@ class Catch2 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d02f3e55951c66fbd0326dddfee7abcec3de50c659de20adc33319784a0e713e"
     sha256 cellar: :any_skip_relocation, sonoma:        "3768de93034cb1c80114c107a828e0664affe03c0d6062104e8f9876c9c48154"
     sha256 cellar: :any_skip_relocation, ventura:       "1635617308a7b44e6a6c0f9abfda0a5c0ef6d16259333d6b87ceb9092b5c1381"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dfab4e3929fb212957bc054d5a4219da77bd45e4a5cb0b613ea7ef3aac1a4cb4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fddf61b46104e66518b774a67afc1ec16167ffe9cb52d514e2e37fe72d58b3a1"
   end
 

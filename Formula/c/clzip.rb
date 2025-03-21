@@ -17,6 +17,7 @@ class Clzip < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "27ab76d3e0409fbbd117d0b4c5d71ee222c065c2b6b909e1d68b15d88ce69a5d"
     sha256 cellar: :any_skip_relocation, sonoma:        "6a87893c127e69f726be285c873af960f1ac01f252b91e64ab6d3c2fa8b01240"
     sha256 cellar: :any_skip_relocation, ventura:       "e953203c1637aca538d76ebf6ceb376df49300d304a08bb911ee73735e34d50e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "418e07ff6dd8397ddc3ccbea8cffc1a28b6d99f9905c4044b950c95695d208b5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9efa76a36107aacb246f72c688c5154bf86b4898ea6e8e3a9c97dc7d93ac157a"
   end
 

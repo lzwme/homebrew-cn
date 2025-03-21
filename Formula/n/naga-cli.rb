@@ -1,23 +1,18 @@
 class NagaCli < Formula
   desc "Shader translation command-line tool"
   homepage "https:wgpu.rs"
-  url "https:github.comgfx-rswgpuarchiverefstagsnaga-cli-v23.0.0.tar.gz"
-  sha256 "bf1ff22de43699835524862a2f1908fcf1888ab8d252af19b32c0f545b9a18b7"
+  url "https:static.crates.iocratesnaga-clinaga-cli-24.0.0.crate"
+  sha256 "ec4c933ea97858af5e100edbdc64d53ed5f63e5ce29ddba0b91e895c52ebf049"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comgfx-rswgpu.git", branch: "trunk"
 
-  livecheck do
-    url :stable
-    regex(^naga-cli[._-]v?(\d+(?:\.\d+)+)$i)
-  end
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eea8149092b5b62a0144f70033752baff0451b81530f4228ac663fcc72bcdc61"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a70ec46f548a8e98178603e3300c4664734b9673f5472e6fe12a8bdb4c17b3d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "994e6c56d0a98b58a07631d85fac5101931a73aeab9203ccade4400734f1bf4d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c81d4e4eb4149d92ba563394c79f3751548bf7466a9dcec0215155e5fe83f483"
-    sha256 cellar: :any_skip_relocation, ventura:       "b52acb929c4f4b1230d2ab7f50994fe136a67827e47d8a05ff90b1c23301c676"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0654bee87304366895f042c20e6928abebb3ee02a60568eeaa778ad211a6d9e8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c645077a6a47e576a4f0a5153f306e4c7cf7161ad72e8e1d051516efad8b0b3e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4727ba440c2b576c8c9f1ea269b2a271b087057f3c833129d051e4e58d76a796"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "41030b9721a9e558efe6904d2454e9165df706291d3b64c590ef3b52ee4699e6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "483988b6a90211e77b73e620175066f0781a505a7958317509cecf2764bd28a5"
+    sha256 cellar: :any_skip_relocation, ventura:       "c54819fafe621e27634132e58adbdf58d63afede2863bb4deca440a6c902db06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84f5a6ee4dadb7873e0623169f13259626f3c475504de5d7367f11c3fad31234"
   end
 
   depends_on "rust" => :build
@@ -25,7 +20,7 @@ class NagaCli < Formula
   conflicts_with "naga", because: "both install `naga` binary"
 
   def install
-    system "cargo", "install", *std_cargo_args(path: "naga-cli")
+    system "cargo", "install", *std_cargo_args
   end
 
   test do

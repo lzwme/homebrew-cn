@@ -11,6 +11,7 @@ class Libxcursor < Formula
     sha256 cellar: :any,                 arm64_ventura: "68a9ded5d9e51bb9d9f1f9aaf8b67402c83c8fd11f28fdc557a0aa37ed28a129"
     sha256 cellar: :any,                 sonoma:        "9a063644b479ef0269bb01a8faa79eaab44cf159ffb4cd30d399beea2d5bf459"
     sha256 cellar: :any,                 ventura:       "c3dccfd8fffba3cb2dbee1135fb1ebaa601ae8d25fcdf1add36c13052cd62d6e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2556c55f893b654072a287ea7ad7c5261beaf6cf3cd6b2c5feabc4c7b4a70d6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "02e5f01e4940638fbcce577f05ac3bc57f87bf272959e286a323f6fe3c2fc86d"
   end
 

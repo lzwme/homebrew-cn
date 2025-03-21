@@ -16,6 +16,7 @@ class Largetifftools < Formula
     sha256 cellar: :any,                 arm64_ventura: "d6aa8ea83b7d6ed7f73c35dcbb531f3088d4a07e419a9b6945848249874cb6fb"
     sha256 cellar: :any,                 sonoma:        "1d4d9cce695d92295f325ca875c16b7a4c2cf57223ce8e28f05beca25de519ee"
     sha256 cellar: :any,                 ventura:       "58bde27fe7d7cf8a22ae7feac74afb4c88d54af82b1d254f5b8ffcf6a563193d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fba139ab0c3a04448191f5596e5d233824f672fb3e3bacb166c4b7e5e9363fb1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd6458d660821a0038f8ce37977442e31e638dd8a0e0f408f2cc3512eb1ea404"
   end
 

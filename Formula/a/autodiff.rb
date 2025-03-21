@@ -13,6 +13,7 @@ class Autodiff < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "11282c10e5cee0cf915621a24c511a87a5721ceef2f659e2adbdd458c787bf74"
     sha256 cellar: :any_skip_relocation, sonoma:        "2534cac50c7135f77ee140e68802bb0751cd40e5e6f6950ba11115b18eb2b755"
     sha256 cellar: :any_skip_relocation, ventura:       "70ba0bf70fe3212bcdf215f1210b44b3e093da1eb06140a397335d3cfd37ae14"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8200c3f1ef1a2bfe0f357b02ba8d63de6d89094623729b5e33ef7affd2f1d342"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "123363de8b59cbc789b655d7ed2fca5acb59dc9d39b5690df5d874a7e8bba85c"
   end
 

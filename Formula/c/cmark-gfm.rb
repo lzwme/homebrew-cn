@@ -16,6 +16,7 @@ class CmarkGfm < Formula
     sha256 cellar: :any,                 ventura:        "e69573db28aff177eec22651c2ccb5b7be8863b8d4f1edd816ab67eb9da9c05b"
     sha256 cellar: :any,                 monterey:       "4cca4929db9ff31ee827b74d4683662af0a48e4577f95507216073ffff37a22b"
     sha256 cellar: :any,                 big_sur:        "f0ae4dd8836af5cb5e7de552916c9c8dc9fe2b839c79be70f504cf5777ec14e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "473b7bbb4354fa15345f5c648c9d6c3f2a619966f30014fd2ea1e12be75514ed"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9cc57585e59c81673c7cb0c374c59f900778886de3329127706534eb8851a0b5"
   end
 

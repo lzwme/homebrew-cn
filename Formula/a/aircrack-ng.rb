@@ -27,6 +27,7 @@ class AircrackNg < Formula
     sha256                               monterey:       "32bab474db5a9602788ffd7d32f4bd25199732705cc4856b7335c96d6675a961"
     sha256                               big_sur:        "c7b4666859d336a5219c53d5b9310547495438e460d38c7f1b3175c274245b55"
     sha256                               catalina:       "09115822ebac9a6d9903635faa0a393dc1bcaaaf2fcbb344a5dee123fe1f02f1"
+    sha256                               arm64_linux:    "8a789a3419bcd0c237abc1f7e10743d97eac240bdd6d49ec1ed9656e0b42f64a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "72556b434c07c994c66ac4f37b9946884357af00a7543d6e961808ca78a6818c"
   end
 

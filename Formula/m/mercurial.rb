@@ -18,6 +18,7 @@ class Mercurial < Formula
     sha256 arm64_ventura: "628ff7cd30016c1fe20713afd5ce28e1ad70fbe360123ecab48e62aedfa3602c"
     sha256 sonoma:        "f72e3240e2ef157b7b4d9a2c3d9c464549be375665cd425d1188195e63033dbb"
     sha256 ventura:       "b842205cb08c0292963078b15920a9bf65ca201f5bd9ebae7a5c102f6bf201e6"
+    sha256 arm64_linux:   "06452188e2cd3f5b962887bff0556fab7763625cf1874534041b1edf2fe9ce88"
     sha256 x86_64_linux:  "3deedc8e094402c4f2994fea967d0c27dcc1ef95ccc4d0fc707c73bc9091da77"
   end
 

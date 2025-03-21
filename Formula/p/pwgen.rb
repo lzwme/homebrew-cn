@@ -20,6 +20,7 @@ class Pwgen < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "185f2f56eb03da60277520734452204ec2e0059cbc1f0af5d0fec1e7fa837658"
     sha256 cellar: :any_skip_relocation, sierra:         "01a0709f74923e7b86d680f03d3ec056d3175cb7e54be176a26d5bfae890fd21"
     sha256 cellar: :any_skip_relocation, el_capitan:     "7dade70b172cb91635afffe8bb1eadb251f9dbd3368ab9e4a37f98a7c0a14b01"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "6115d9586e530f771801c25cde3ba6c33b287db18d84b73911d68721b5cd7eb0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d869f0f3b08bf09648754a037fedc9a729b1b5e718bc366e2cf9a7cca2861813"
   end
 

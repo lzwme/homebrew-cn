@@ -19,6 +19,7 @@ class Unison < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3cdc258a6195ed8bf7d6cf8b133514b9095d78ac2959e6046d799f21c5b0e060"
     sha256 cellar: :any_skip_relocation, sonoma:        "31775a533d0d7564451e30b2e733b1cafacba867c350a39419299831b7c56bb8"
     sha256 cellar: :any_skip_relocation, ventura:       "44fde2dbd196dafa390ced91ad35cea7c22e65ea2a32462bd626459b80bd1af3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b57e871a883112dd1ebb85cf7862e1be1224ce27856e2de283906df7bc068b6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "791845dc0fad058e50afecf62cd4ce75c65bde67cf3c2d3b28743d46ba86c8b2"
   end
 

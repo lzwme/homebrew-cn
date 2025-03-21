@@ -15,6 +15,7 @@ class Cassandra < Formula
     sha256 cellar: :any,                 arm64_ventura: "b7035537b67a4007bee47a4f63d7fd3dd629da61334ecaac6e6262dc547a53cd"
     sha256 cellar: :any,                 sonoma:        "3e9f6d90decfa9eecc8b439289e0c8a78ea039a3a59407ea7d52e2d76da969f6"
     sha256 cellar: :any,                 ventura:       "66c1e713dcd291ef19d000123ac2eb1e30719434961b4cfc60864e18ac2f938a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc54200fe827602f5ea797a7c4e689b7cbbafeb0994c72d104918c7d243e30e8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "16b105d1c8ce23ce4001923f010c7e29b6746f9a1ae86b842a6774ea3bbc7c6e"
   end
 

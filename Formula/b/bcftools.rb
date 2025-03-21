@@ -20,6 +20,7 @@ class Bcftools < Formula
     sha256 sonoma:         "ed2ea3659a829947e39e6a9fc8c295f483052a7e54f7b369682a1dc4574d52cf"
     sha256 ventura:        "a0dea566d19deacb5b1d6886c2f7b21a49a01cfb554efbe2d4462e1a0edbfc81"
     sha256 monterey:       "49ed253ef4ddfeaa96b1a96c4b51c60992cf1248f087ab8bd534c82facdb6a44"
+    sha256 arm64_linux:    "4582498f2464536ab620d6356fc64a5057b611da880c4a86a064dea155597dc0"
     sha256 x86_64_linux:   "d0b13624d5d87f0b28715e7ce74b3c78daf2f6a3db7f025a6b9fd434f0aff2f8"
   end
 

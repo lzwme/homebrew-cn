@@ -19,6 +19,7 @@ class Yaz < Formula
     sha256 cellar: :any,                 arm64_ventura: "dad29db81f758274b742df91a4dcf55e84216c7f85e5e3228506c52dbd60f073"
     sha256 cellar: :any,                 sonoma:        "faf4630be5ec0d91dc5425b7f945de23015520b27230d4edeff9929773bac7c4"
     sha256 cellar: :any,                 ventura:       "4220cfb4b7ef156e7eae996530d795e9f31f8488ae1ef1b6128f5c77b4e1cc35"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c2905f69ea781cf103ea183b994e636c2b4db844f7d4445037141269ac49526"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa98f9b19fe40242fdb36768f4f2af63813a539d73c1b82aecebc9bda5a80282"
   end
 

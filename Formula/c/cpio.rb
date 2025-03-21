@@ -14,6 +14,7 @@ class Cpio < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "e260092a61bec8fc1530706591dca1fc31b01588d87edc3d1f0114f0960039e6"
     sha256 cellar: :any_skip_relocation, ventura:        "7ae883284d803554f4f3076ab924591d1238a2e73847d852decf8c4e78757494"
     sha256 cellar: :any_skip_relocation, monterey:       "a1c05981aecaf5198d77c3d1b306e4923494c1d22d0f6bbfd1b1f344b35732b9"
+    sha256                               arm64_linux:    "dd5fa00e86db6b05086c040acbecdb7b0867c3eded3b4a49cf5033afbcba5bb2"
     sha256                               x86_64_linux:   "33defec9f9f862c3db63da0e7ca4020a8fe6552fb51f3adfdf6d01837ce7fdda"
   end
 

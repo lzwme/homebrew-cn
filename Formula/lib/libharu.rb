@@ -12,6 +12,7 @@ class Libharu < Formula
     sha256 cellar: :any,                 arm64_ventura: "370df233f9ade42e8febcc4563eb80e6e112c553474d86ae9707519d2875f20a"
     sha256 cellar: :any,                 sonoma:        "c0f5f184237e5b4351a2d79b3c301a4d70483bc678665524298048941938d166"
     sha256 cellar: :any,                 ventura:       "599507ae5f1714845532e3499bd1206e3bb0736d218494ba897a723db02e9d1b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0148393272b8a77a9a0cd78e685b99c1949c153ecc965789e34f3be4ad6bf1c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "111c4ee131b6aa6e5126b9c223ea209f12de631932c1db0e02f70a1002fdde58"
   end
 

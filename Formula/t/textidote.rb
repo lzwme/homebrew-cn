@@ -18,6 +18,7 @@ class Textidote < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e9a83218eb82f98e70fba9d90886ddedc8402f9a664c5578ccb768f013efcee2"
     sha256 cellar: :any_skip_relocation, sonoma:        "936cca1b103e05e9301cb9442078d417f13169f9726d85e46ba0fe984ece5bd6"
     sha256 cellar: :any_skip_relocation, ventura:       "2ca10fe4b0d6c75985e19fdfe409db7aa3780bc027f1686d65dbcf295d107862"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bfb87740c268eb579c4c30a72c79e0ecc9b3b977358f98e2c0f7536edb638f12"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "53bc512af1d05084aef085e8185b29444e3a9a92f515859e06cf7d9860490b31"
   end
 

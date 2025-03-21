@@ -11,6 +11,7 @@ class XcbUtilCursor < Formula
     sha256 cellar: :any,                 arm64_ventura: "b3f9ad96caebf02b0d9f66776513a37146893b9b7bddf1c738b760fac9cf2390"
     sha256 cellar: :any,                 sonoma:        "5fdd9e55026cd483efb869e4f0a7deac3cd5d3ea667325a89263d427327039b5"
     sha256 cellar: :any,                 ventura:       "a2a5cc32e692dec55f60a89c3e30367ff239094814816a039110451b77e2ec3a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e8ea56d5b51359e143c7738a6b7849813012eb26b15acc256d7d82f4b9fd649d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "537558ddd8dacf1bed15c92d867d26dc82f6e047294d6cc7b70daac909e7b0b4"
   end
 

@@ -17,6 +17,7 @@ class Libcutl < Formula
     sha256 cellar: :any,                 arm64_ventura: "bb7b24cba44acb490f955c4961d91bca0f8d32cef0fbd789288d267965f87df7"
     sha256 cellar: :any,                 sonoma:        "a392b127303ec453757aa05d8cae2dbac76dba151c4b443a292fbbf87f49ee53"
     sha256 cellar: :any,                 ventura:       "f3aabe420e6e8761a2b0ba98be18baed7d109ab1322a607372c774127ac7bc74"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "581f7b0d2ce59b1b8c006e97a0dd4724542b9842add5c14fbc09546d7b53239f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f2f825e2f1b6e5e519c80bc8de1fcd0f65def78498b5c9c07e7f6acf436081ac"
   end
 

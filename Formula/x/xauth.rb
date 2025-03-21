@@ -11,6 +11,7 @@ class Xauth < Formula
     sha256 cellar: :any,                 arm64_ventura: "1c8d12d20eec9be0585b8c6bd44b36929c4cd2b6f1598148e490d3a388d36edc"
     sha256 cellar: :any,                 sonoma:        "9dde39c14d1fad1e94571a181c8fa62f1a944c9ff332873a8e149a179a93f6dc"
     sha256 cellar: :any,                 ventura:       "69af4439e0d66e4f233a1eb679754c388e3bc0ab79912e15760bddb6648fde31"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e192fd49a6a232b2002d8835654499c2a01a34332f157e127c6b5269fb3b05f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a562860d2d2ed8bec6fd14a4929e3be833423fb707ae79fdab37c190ed97e5ff"
   end
 

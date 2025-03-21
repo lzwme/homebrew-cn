@@ -14,6 +14,7 @@ class Libspiro < Formula
     sha256 cellar: :any,                 sonoma:         "993047020b74cfc6c22f4b7f6ccc71d177b76b0804729cdcc03af63ac5d9ffd0"
     sha256 cellar: :any,                 ventura:        "92806cce5c7b5384bdbf277025d4b2b92bf9934b0c689f480bd4af25312fbf34"
     sha256 cellar: :any,                 monterey:       "559b51f880b7392ceef800f586bdb5a0bca48dd2c1da24cde626f7a2b7d647e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b086a99529c5a1725d4b5381f1f3f8ea34167db13247dfe0612f97deeef8f4df"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "27ecaaf681b49db47d118fe90a1fe0b9600dceb7b95f770233d8a218a67fe438"
   end
 

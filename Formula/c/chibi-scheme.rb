@@ -15,6 +15,7 @@ class ChibiScheme < Formula
     sha256 sonoma:         "a406562fbc9f63a108759d19021614d67153b3d2821a4141e8a3d789e9d1b349"
     sha256 ventura:        "a25bba1715b6a6c6005aed9b6e36ee15f61440fe46bd26a2e765060dc764cc13"
     sha256 monterey:       "f82edaec5b649ae9c309a3f26c54444d55a25bf24fdbfb026774c9241a978d78"
+    sha256 arm64_linux:    "51315bc7f7e0820bae24c13d724c4a67d5240f7fa0ff60041aa9f8bf742f0760"
     sha256 x86_64_linux:   "395662059e73c41bc156117acff16a06d156e785d8ddd352788fd0b13df9540c"
   end
 

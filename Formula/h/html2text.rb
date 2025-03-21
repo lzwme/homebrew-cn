@@ -16,6 +16,7 @@ class Html2text < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "d5aaf31694d77a7b58638596ed3d0aa9bac50b148b60e416dd9cd41306fb2b86"
     sha256 cellar: :any_skip_relocation, monterey:       "f8a93138c8595992de8d0e9421147b1995d1f4344cf7f94b47f004c76ffe46e9"
     sha256 cellar: :any_skip_relocation, big_sur:        "b4d67a9b09786e6f9e1141dd88a614493b94c65d47e87e6cecb9a65bcf8b353b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ce82baf3b669ad59fb52c489c9aedae804b8463233a3c123a82b2b3ab3bb2ea6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8fa522f9b7031aff66bb0bdabef05c4def2d153a7c6ff5f4136341b06822c5f"
   end
 

@@ -14,6 +14,7 @@ class Cctz < Formula
     sha256 cellar: :any,                 sonoma:         "0ab1b384f0a647a473f481323cfa13164494affa91cbffc5dfa6b41ebc97da72"
     sha256 cellar: :any,                 ventura:        "160d4ac726f11db6d03d917e0a1acb9d61bb5a45a24b120b8f094a5000d7d127"
     sha256 cellar: :any,                 monterey:       "a8256df066d659ca817adab5b1054633547514c650248f479ec6e31a3c12732e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "00dfb51dc8e380ed0679b4ca65ce010f5cbc33ac0f7bb4acb3910eb8fed1fea4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "897ed11efc1b5804873b9c64315d78f99cb4e242f3ceb554dfc8d760ac65b03e"
   end
 

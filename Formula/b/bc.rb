@@ -12,6 +12,7 @@ class Bc < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "82e07f26adbb9832430fd707a1dcf1ae7901bcef2928e84720b3c55c7a3ffd34"
     sha256 cellar: :any_skip_relocation, sonoma:        "25027ce1482683837e17972623a1baa472d55ec68e665f303dba8bb3d7275668"
     sha256 cellar: :any_skip_relocation, ventura:       "2ca58c90ac248548f14591b4c43e8925cef592b43839f4c46847cdcf1ed2cc13"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "315d2ef3d29f405e68d4090309f21fc00d1480ec3b29ddf48afb4b27f9b4c179"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d605e214ec69bd5b1c7331fdade1048f6f580eccc67ffff9f4f7ee30a4163eb5"
   end
 

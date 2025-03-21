@@ -19,6 +19,7 @@ class Dos2unix < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "599b519868373bb9ee6258f31375f016b3f44242771bf5553ab52d3a2f9177c9"
     sha256 cellar: :any_skip_relocation, ventura:        "8e7421cfd610a505a2f653dfb064f6fd51a910e4a31b8ec615cc549f579796bf"
     sha256 cellar: :any_skip_relocation, monterey:       "6b0355a4247caca8cbf8cfd8fe7b6aee2db4e749184ab656b407f6c8b7c637eb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "17dd39d7d718f3ed4a2024f9502c9c82d4ac57b4f5482b3f421527a78745192b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "228436301f23d4b7b80cf0bfcf1f75d7cff50fd3134baf1c2f2d2b25538fa178"
   end
 

@@ -16,6 +16,7 @@ class Atomicparsley < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "7ef3fb9321dfd7ac580239b39e67a580553083f4538823b1ad498e1a20521551"
     sha256 cellar: :any_skip_relocation, ventura:        "e09ac5b05a2227b03567097e8ff3e39f4f12a929b86207a4ac0873eb6578e43d"
     sha256 cellar: :any_skip_relocation, monterey:       "9d119a39c122e416e2e089fbcc2dd9714fc1a9c182c258b0b5a512b793dbae79"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "3ddacba6d9783f732895ac6ffa41167aacbecaea081f7efa36702a0a1a72debc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "71ecbada94798344e79eb385528e9b598767297a70beb6246d4bb1b29aaf77bd"
   end
 

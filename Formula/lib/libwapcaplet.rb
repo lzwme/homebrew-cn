@@ -14,6 +14,7 @@ class Libwapcaplet < Formula
     sha256 cellar: :any,                 sonoma:         "15ce272c1fdafa38065a3a567fde1c81430a414ee10646ab2b2da2ec91948575"
     sha256 cellar: :any,                 ventura:        "9ce24413c4c058e26f16e19cd7a4eb0e737f630959a093d388ca5596c4a7ccf0"
     sha256 cellar: :any,                 monterey:       "f5df809a0a5fab07b2722764d74d56540e045ce80b4ecba874318a17a395f534"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "805adde0d7a8af3bf673f484c91f30eec2625aa4164e9b7e1b84708623ac8041"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d6d7288b404e81e20a7107f424e195d7faa5a8b8a68f5518bd8a8a0cdbdbd80"
   end
 

@@ -4,25 +4,24 @@ class MinioMc < Formula
   url "https:github.comminiomc.git",
       tag:      "RELEASE.2025-03-12T17-29-24Z",
       revision: "c1d5d4cbb4caf05afef3ea06a91a56bd778336de"
-  version "20250312172924"
+  version "2025-03-12T17-29-24Z"
   license "AGPL-3.0-or-later"
+  version_scheme 1
   head "https:github.comminiomc.git", branch: "master"
 
   livecheck do
     url :stable
     regex(^(?:RELEASE[._-]?)?([\dTZ-]+)$i)
-    strategy :github_latest do |json, regex|
-      json["tag_name"]&.scan(regex)&.map { |match| match[0].tr("TZ-", "") }
-    end
+    strategy :github_latest
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6664bb82d01bcfbd5d05324c19a98c8f200b01f9391baea0ec1274e3f0ff6d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ba914981ff99303de89027ddac4b3f4ba8b19b01c4f3f2ff6d250ca0c212942"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "49beafdca6f021c62cfb5de7ce485939e5ca896c1b16ded447d39347c678f086"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a3bdd239ec5b14723e6ed399be6adfff6a0f636ffffa12e22b95dfe30f4b6c1d"
-    sha256 cellar: :any_skip_relocation, ventura:       "ec06c6ec4ba770badc942180366bf026b5315e30ce541f69bda0ad5e64f959fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3111657b76dd04056c942b718aab8750a0c143235292aeebae97efbcfce5c7a4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0cef88cd24ef1e038c3baba4c255dea2e3155db389965ef5da5ff310604eee8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d865d22a208966ebd510e233faba29325cd9a7e210a7ba36be5856a76363c4c6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "54291fc6fed65a558ef8b54e0cc4c31b36ff73f9e061c1755033231280a937e8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "51db5c1e042363d812f874ecfb318364ef9c9c8fad97b0082a3d1b6fd3508a20"
+    sha256 cellar: :any_skip_relocation, ventura:       "2a791ec089b9a66410828317240eb84c99a4f80577cc64cce40faf33ba1e5f68"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29a463971735a35dabfaff3f4a917bf8aeec47a3998c909ed6aa21ddba7b7a9c"
   end
 
   depends_on "go" => :build
@@ -34,7 +33,7 @@ class MinioMc < Formula
       system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"mc")
     else
       minio_release = stable.specs[:tag]
-      minio_version = minio_release.gsub("RELEASE.", "").chomp.gsub(T(\d+)-(\d+)-(\d+)Z, 'T\1:\2:\3Z')
+      minio_version = version.to_s.gsub(T(\d+)-(\d+)-(\d+)Z, 'T\1:\2:\3Z')
       proj = "github.comminiomc"
 
       ldflags = %W[
@@ -42,18 +41,15 @@ class MinioMc < Formula
         -X #{proj}cmd.Version=#{minio_version}
         -X #{proj}cmd.ReleaseTag=#{minio_release}
         -X #{proj}cmd.CommitID=#{Utils.git_head}
+        -X #{proj}cmd.CopyrightYear=#{version.major}
       ]
       system "go", "build", *std_go_args(ldflags:, output: bin"mc")
     end
   end
 
   test do
-    assert_equal version.to_s,
-                 shell_output("#{bin}mc --version 2>&1")
-                   .match((?:RELEASE[._-]?)?([\dTZ-]+))
-                   .to_s
-                   .gsub([^\d], ""),
-                 "`version` is incorrect"
+    output = shell_output("#{bin}mc --version 2>&1")
+    assert_equal version.to_s, output[(?:RELEASE[._-]?)?([\dTZ-]+), 1], "`version` is incorrect"
 
     system bin"mc", "mb", testpath"test"
     assert_path_exists testpath"test"

@@ -20,6 +20,7 @@ class Pulseaudio < Formula
     sha256 sonoma:         "57c4f8e47c04145f0851d231d0c92bd43f57e59bf3416689e25b8e619a7913a3"
     sha256 ventura:        "fd0835395b77a321e3b5a4542496c02dd0dbdd8134e700bacbfb80c46d6e14cc"
     sha256 monterey:       "e28e0f3a10c94b089acb2a6f82fd31d19c3cd8cbd7ad180d50a794f473b9adaa"
+    sha256 arm64_linux:    "366a4e3c371e6b5ba54d7f1f8ede79db83865e6e2767b3960b5c78a0ce581a9f"
     sha256 x86_64_linux:   "504035dfda3bffabae42f352d0e7c0a90c6b8c1f6b925fe7e17502124d5d6529"
   end
 

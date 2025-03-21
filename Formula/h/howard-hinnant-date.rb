@@ -11,6 +11,7 @@ class HowardHinnantDate < Formula
     sha256 cellar: :any,                 arm64_ventura: "5c383e2d85dfb776bb86e0aa19cd34ae62510d87b725c6fde8dc18b199a9462d"
     sha256 cellar: :any,                 sonoma:        "a15f73654fcc9dc73f6628b06b13184127271c6090a340b160ecec12170d9c4b"
     sha256 cellar: :any,                 ventura:       "af3320951ccf968555f534e710b4ff9fa5ddb4a2b28d9422aa37424d45b1d0c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "da2daf5cb277e9f7b56e7e0e14ca74d9932b042784821db38263ef59511cd806"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cd260df2059437676d4ffd985f8be01745964447e00c227bb8f3ea78355f650"
   end
 

@@ -12,6 +12,7 @@ class Cmark < Formula
     sha256 cellar: :any,                 arm64_ventura: "4381cbbe681dbf83352e58b8b0fdfafed4610e8017f8fb62c1e1769d90916431"
     sha256 cellar: :any,                 sonoma:        "42a5bb96e297ac635bea30d77ee9a80f7b7c5ae4c810ba3a1c34aca53e87d4aa"
     sha256 cellar: :any,                 ventura:       "b00c642cf2f806489f91071dfcf1bc20fcf342154a8bf21a60563639694232c1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e16d3511204042385b697dfd4df300f5dd6114dbe86316ca93b03d1260375d2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "59a6fd552de7099141ad135382c032bed8efa0714e91ec20490c1e05342ec5fa"
   end
 

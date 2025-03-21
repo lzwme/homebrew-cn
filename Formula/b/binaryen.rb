@@ -17,6 +17,7 @@ class Binaryen < Formula
     sha256 cellar: :any,                 arm64_ventura: "086f9437d5869a026429fb3533143d1420ea8496c087f3ecba3e7678046698f7"
     sha256 cellar: :any,                 sonoma:        "8cca689837f2354ca9272445a6933cff645cf307ae038100169f03e433e782b6"
     sha256 cellar: :any,                 ventura:       "460d84094956a7415dbdedddc14f54b2254bc2eaead45dab4fd156fd79dedb24"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "41f87267fedd7c0725431afc292b14b37cd288ba6a1fa1d48ad97b17e57b0557"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3b0999c614350ec60910e0e0acf5486ec1fc61326f4d9b8967cde45fc96c723"
   end
 

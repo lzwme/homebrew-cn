@@ -14,6 +14,7 @@ class Black < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5c78a437c2d5cb0cc4c2452be34a125b05e7d1bafc6d931f7fe337451cce67f6"
     sha256 cellar: :any_skip_relocation, sonoma:        "d647d07c26cb7d24012d24054f40be1e4e9cb93a4918b12090a7cd81b44c7b42"
     sha256 cellar: :any_skip_relocation, ventura:       "57156446b37bee3a2f9c804793842a60b340dc97000d55e5ccf717dcaf5e4add"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5f1df22ab3d5b31ef5880f270873a9ed89d5ef8c397b174935a9d997b839f5e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fdf2182bd82d22039120cff8bd9eb9546e89231b241fd2f15701f36ed7009315"
   end
 

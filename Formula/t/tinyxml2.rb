@@ -12,6 +12,7 @@ class Tinyxml2 < Formula
     sha256 cellar: :any,                 arm64_ventura: "b89d53386ce4376da928ac82e2a74f9fb3bd4312afd177de7e9422c59561765f"
     sha256 cellar: :any,                 sonoma:        "1e22b22ee274991d50a5a72e3cb903fcc166c73f95fb4668f835b5b92668011d"
     sha256 cellar: :any,                 ventura:       "3b83afa4c9927e534eabc9e31803510ef86a06a87c2311ab6c6d26f31ec2fa53"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0ca7bb327d5610d27894b0504b78602965a775ed8c66ed2f9ea1fb6314794de"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "062be8551513e2b2eca3ac2e3ed1241de9d2b0b92282f9c605ddb45a47f56e20"
   end
 

@@ -11,6 +11,7 @@ class AwsCMqtt < Formula
     sha256 cellar: :any,                 arm64_ventura: "f036f8277eb5f5577df89294db4f0de994f2eaa74e95fcbdb2537f4acec9aab9"
     sha256 cellar: :any,                 sonoma:        "d1622fe95e0acfe83645f115d3831707bf28a1894b5605e171fe317cda225a86"
     sha256 cellar: :any,                 ventura:       "75b8f029ddfa9f2ace08719aa7e341b00a26deed61fec470c0a71b4b3929b5f0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "92e1e8bb6f820c1a5183daa72315ad901435a73e59f65c2ce300ee4f3ad7aca7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d956b20c6471723393c8e442abd1b74f3a5e5418fc2647ed8b35249b585a625"
   end
 

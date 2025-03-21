@@ -12,6 +12,7 @@ class Libpsl < Formula
     sha256 cellar: :any,                 arm64_ventura: "0514d77bc120f490bf90cf7bbab7513ebab16b34a3ffa1a1c8339d79b295ad38"
     sha256 cellar: :any,                 sonoma:        "3aa78d021942e4012a59e090a6313445b30026b3b6b227e4e72e889454dd5de8"
     sha256 cellar: :any,                 ventura:       "c20a154aec0480c5376d926350c1e546e7c35784b2458e8c357134e96ebd72eb"
+    sha256                               arm64_linux:   "2f0ed93187bf7b2611dcc0952220847f0967943bf136b6e839ed28b9e8e2cd23"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8dc10f9acd16c27df7a1ac79ccbd4b16dae4582ab2715266bac49c59fb08923a"
   end
 

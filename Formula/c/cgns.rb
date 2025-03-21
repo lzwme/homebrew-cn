@@ -17,6 +17,7 @@ class Cgns < Formula
     sha256                               arm64_ventura: "46b2bb044517369bba1c9dad5b820a3d4f9afeff452e662210d5dba46d1376f9"
     sha256                               sonoma:        "b0c10740cb9177010cf815816c1f31882d8ac61213022d68729dc2f3b65c43f2"
     sha256                               ventura:       "73cdae1cc580e91901eb1716e3c63fe55ed314a7f7855b9359f668b32151630b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5febb80e3e67c84e95a514afb3f9c084b5efa0f74290b74a49c48a69cedacec6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc3307b328259a4c034e3a8a14c4bae802f8a3d054858f2abb2f942a0e8927ed"
   end
 

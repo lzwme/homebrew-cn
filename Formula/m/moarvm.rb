@@ -16,6 +16,7 @@ class Moarvm < Formula
     sha256 arm64_ventura: "8d65d32f6c675c01a9c97892805082ded09c31c15e11f9a9b6fa9705b2a9f7d6"
     sha256 sonoma:        "8fbc004da24cdd88c427864683f28f553539147bbe95f51de867137861d59b67"
     sha256 ventura:       "c2b55ea0d08d8650d7afec05e38acb09c31b769c348a29e9838870e6f4711362"
+    sha256 arm64_linux:   "9c8fbf6c9e595f431f14d2d8884cf3077e6bb8eee4651ef8d2f55fd5639e9f46"
     sha256 x86_64_linux:  "9a8f30a352a1a1b472c9caa611f9b7a262fc3f4c1c5d307fe7a738d37d1c25d6"
   end
 

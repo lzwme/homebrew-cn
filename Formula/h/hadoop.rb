@@ -17,6 +17,7 @@ class Hadoop < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f85402488931c97be6c4c8eb13b1c802a417aa79cef03b59a6b294a51c34f261"
     sha256 cellar: :any_skip_relocation, sonoma:        "a778cfa6e5a611c84fc5ff42e00ad5d568ef7328c41c74a69455b008efcd5221"
     sha256 cellar: :any_skip_relocation, ventura:       "a778cfa6e5a611c84fc5ff42e00ad5d568ef7328c41c74a69455b008efcd5221"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "95771d9e7f4affc79481feac8b3122762db71f7f508902c18f6751e33ce09838"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f85402488931c97be6c4c8eb13b1c802a417aa79cef03b59a6b294a51c34f261"
   end
 

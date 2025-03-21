@@ -12,6 +12,7 @@ class Jbig2enc < Formula
     sha256 cellar: :any,                 arm64_ventura: "3e12cce5a16f9427104fa24c1b8665d8d0cc58b22b77d2d1b7d74ef4dbba5d46"
     sha256 cellar: :any,                 sonoma:        "73b88ab1c2f8c17beda9109e62935813bce19ce84970b935ef810715c48d21f6"
     sha256 cellar: :any,                 ventura:       "988b1d72ea105c139b59ba60e4cd00beac878f647f1594d2657340878acb135b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8f1cda60e433c0a9e450ebac66c1cd12646f57a5fe691969870a45f96c21352"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "11281bffe9b33acf9e62c446ae9af7332b4154a87d9d58f3ba15b9d550198d93"
   end
 

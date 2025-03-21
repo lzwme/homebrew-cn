@@ -16,6 +16,7 @@ class Pari < Formula
     sha256               arm64_ventura: "0739c7e681b5776a48634fea706d860b950f28b3020ae9f7ce830121f6208e7f"
     sha256 cellar: :any, sonoma:        "ddddbc46872cd877dc6d2bb383ec2c796a726c84b952a0a648220d98cfb00165"
     sha256 cellar: :any, ventura:       "325077871981fd84776c2cb9119b402bf5fd4ba865615e99cfeb8814b10eec08"
+    sha256               arm64_linux:   "2bb804bf036de998864490817c533f1b5f1da685365c28a1bd66c4d92a17eb7a"
     sha256               x86_64_linux:  "045451f669359b20630a47b6b9fb2da2d2ad7ee2442965ddefb8efc7e67f776d"
   end
 

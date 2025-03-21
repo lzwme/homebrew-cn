@@ -4,6 +4,7 @@ class Opensaml < Formula
   url "https://shibboleth.net/downloads/c++-opensaml/3.3.1/opensaml-3.3.1.tar.bz2"
   sha256 "d8e24e070fc6bb80682632ca32c8569a9f3ef170ba57e3b82818322e75b6a37e"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url "https://shibboleth.net/downloads/c++-opensaml/latest/"
@@ -11,12 +12,12 @@ class Opensaml < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "424750ca3b4b621fc165bd65c1fa43bf8380b1e2edc02e54a69c8c0d0a362848"
-    sha256 cellar: :any,                 arm64_sonoma:  "598d3f098f2019a58c6eb7e0209166386ba5b95aa2c65fbe295efefd1667004b"
-    sha256 cellar: :any,                 arm64_ventura: "8cb5d53e9ce9c54089927ec316df7ffe533fef191704f7f32af88ae09010689e"
-    sha256 cellar: :any,                 sonoma:        "5d4e1be03c528a97e4e4ac17af63b712a61022c8fd26d2abd83f65732dc66b41"
-    sha256 cellar: :any,                 ventura:       "024e4168fb0530e8b68440549a53534c99b0943d5ef1278012c816ec8a766660"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "21dc02829bae8f62f56be0d9c0456fd804ba004bf41c13ad16ca0f534a759e80"
+    sha256 cellar: :any,                 arm64_sequoia: "07a24e559fba8ef6206aa142b47c40d15dd68ec6ecebfcf6ef4e249461a1ebfc"
+    sha256 cellar: :any,                 arm64_sonoma:  "2433e81f6f75b41ace4f4b39a8bc336aad0d07324efe4f5758966ba8db3270be"
+    sha256 cellar: :any,                 arm64_ventura: "30a5d4e496a4053fc99686974cca11d4b8be3d331fe55c0cec552d8171060730"
+    sha256 cellar: :any,                 sonoma:        "11823d44fd8032eb8e3f61827de120b93656107a2e31fbeedc95a78c52e34017"
+    sha256 cellar: :any,                 ventura:       "8045e1d48ada4b5fa6c2a524cda2dd2b31e33014e49d2894b9fdd134597703cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7113cf3ec71403d5a0c60bb4f6e9c358c60f57cf80e203d9cd34cb19f5d1898e"
   end
 
   depends_on "pkgconf" => :build

@@ -14,6 +14,7 @@ class Whois < Formula
     sha256 cellar: :any,                 sonoma:         "a600dfa4f23f1dca739a6db788bc8e3195919aa6c579c91543e987ce08a56da1"
     sha256 cellar: :any,                 ventura:        "cc3648f1c7a32ce79016a47160f023b31784d2d5f69960cd21c062c5eebd98aa"
     sha256 cellar: :any,                 monterey:       "8a9bbfded4c82b0cc9fcca6baade71b6302407fa364b5330e45c6d4cc6a1e179"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "da90bd56e8bb05567161080a1787efa3a3052b4ce4b0d93fbf837fcb1978c312"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd142b3ede0a61f81a5170d74999237bb663cce79de305d607d4d88a28216571"
   end
 

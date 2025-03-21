@@ -17,6 +17,7 @@ class Capnp < Formula
     sha256 arm64_ventura: "481f16c787189d3babc0d320c9dfd07f60b381ef35487e1b0df0ecda5cd9c8a4"
     sha256 sonoma:        "8b29c4389427cf527999a97b16f508d4723c31a50686198d45603ba145f62f0d"
     sha256 ventura:       "f28667f07053f9af41d35fb79628022a94fa579a4293b9cbbb80b47eede69152"
+    sha256 arm64_linux:   "79a54b697a15d3f887705d1e9ca175ceaa2d55db7e1fa7c9f6170db27fd2dc7a"
     sha256 x86_64_linux:  "3c52c40705e01854de18acfafcc13fa70d3744cc43fbd10bb8da981b88966144"
   end
 

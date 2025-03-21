@@ -12,6 +12,7 @@ class Maeparser < Formula
     sha256 cellar: :any,                 arm64_ventura: "11364b3ab0837b8e2b1639cf983efce227cee7c03736dd5b0686a47e92a22374"
     sha256 cellar: :any,                 sonoma:        "3f4b0aff09fd2fc3024bccd8032bde18ba11aaa87fb3bb6ccd1bf7427a6239ad"
     sha256 cellar: :any,                 ventura:       "b3e8cd570f15d6378649b8995549de4bd75287c7f7ffefeffcfa431aaa08bac2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "99f4ee16fb2a57ff0c1e435508e815c7bcfff760bc1d677ac5ff17ab294243df"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "12d7caa35b65a79899391609904857c9910a120c35c520dfcac562a22c9cf88f"
   end
 

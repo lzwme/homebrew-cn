@@ -20,6 +20,7 @@ class Moreutils < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "52bc03dcf5828555287e4f2ddd22da821a332a07f73118449dfd7fb9b86bf2dc"
     sha256 cellar: :any_skip_relocation, sonoma:        "e26e5d2933b3012c95929c26c6d7298a1820370f9b15e2c05fa10ca4e8b020f5"
     sha256 cellar: :any_skip_relocation, ventura:       "42dc76da4d89f2bea57718ad8ccba438651099ee27881b5a8e34c9052777947f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f3ea30db435d1e85633c12f11dc1d4545530c21f0415999b651be6b7d02306f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "06d1c740d7401fec23a230bcd5f113e8d10c00c0d80f8b12861acc5d64b79b3a"
   end
 

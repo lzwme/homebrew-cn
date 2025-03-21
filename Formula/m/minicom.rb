@@ -16,6 +16,7 @@ class Minicom < Formula
     sha256 arm64_ventura: "f004fb2db42fbdd149fc40eae5bc653b15860f06506f2d91f3be7b7e3b62f4e1"
     sha256 sonoma:        "ae861c3e3530b8dd98ddd8256aa243a3205a6dac85e04f9351f5fc157d3948bf"
     sha256 ventura:       "7e524e53bc69ffd181757cff6564264674e1bc2c46255792c58b3265f9fe61dc"
+    sha256 arm64_linux:   "4b8d28ea107b2c8577fa25a16f3607f4b85bcc230d67657b2c4e90db42466159"
     sha256 x86_64_linux:  "5de5bb5448b6444e3ddcdcbb615bd96fb138df6d216c565e661e101ebd507208"
   end
 
