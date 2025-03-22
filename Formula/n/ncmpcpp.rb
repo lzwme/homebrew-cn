@@ -14,6 +14,7 @@ class Ncmpcpp < Formula
     sha256 cellar: :any,                 arm64_ventura: "d838e95e3232cb04000e9b6008a7c37ff4b6cc4b4eb256cc8f81d6e1b68b123e"
     sha256 cellar: :any,                 sonoma:        "d8456d9b61e01f683c22e1ff17ee2f1faa876ef5c4481292bc13f9b7b7da4cd2"
     sha256 cellar: :any,                 ventura:       "c89a3bac72e436f4418dcaba5aa1c1a98f927c0492de322c23899c81b05ba846"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "920744f73ce58f8823b6dbca950d1092df19ee795fb34f3842a32ae4581bd3dc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a78173a6f36df653878347947f0a93b9a3da9969ba385be92186e62c300cbce3"
   end
 

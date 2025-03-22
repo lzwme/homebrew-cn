@@ -13,6 +13,7 @@ class Nftables < Formula
   end
 
   bottle do
+    sha256 arm64_linux:  "5a2b96e3db75e7e68dd8b5da4173f8aaf8a0a7f911488883f0d27b4e1fbbdcab"
     sha256 x86_64_linux: "49760ce306d0ed33f13a26b25b00ee965fc8f4f64f902c8ef8ef4a639a210527"
   end
 

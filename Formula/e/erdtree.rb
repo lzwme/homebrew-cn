@@ -15,6 +15,7 @@ class Erdtree < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "caf7752a6c664489c58deeaa96926ed7ee4bc5135c32ffba75e5304c91b51671"
     sha256 cellar: :any_skip_relocation, monterey:       "d07e467d4b254f9c8e58467763eb847c66de701b086e844005b381581db8ed2e"
     sha256 cellar: :any_skip_relocation, big_sur:        "b380aca9a56aa3b8e44023b11cddfeecab417f8c60002e9c548541a1a4229010"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b74022c5e3a1709f26fa518ba2ce3d92206e625baf12376138a085e843697851"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7650242160244dc721565f09826b988c0397b73b4371c9216039c460c032d7a2"
   end
 

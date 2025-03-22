@@ -21,6 +21,7 @@ class YazeAg < Formula
     sha256 monterey:       "0b4e934e85cea0db946cf6df95393be56e2e330665786fde9437e091197379d9"
     sha256 big_sur:        "32ef5add9479aef13177444a6a148e1fb2ae9719f2b043b1c235804b461f3e84"
     sha256 catalina:       "4954f1099ce8a6ed84a8f074221f4bd75a7abcc8e6303c733ff02221651f36bd"
+    sha256 arm64_linux:    "fe1573637f8de598f6aa135717d263ddbb580d7a5ab5e8295e7bef85ce5b8109"
     sha256 x86_64_linux:   "7a3cfeda8e67249ed33bdc5c6d37c037895967530f1f416cb8dbe908cfb922fe"
   end
 

@@ -18,6 +18,7 @@ class Mpc < Formula
     sha256 cellar: :any,                 sonoma:         "1dd3c6edc2ac8b09944f66a93a0cd3bad09afda8c0ae03cd6880a4aa62996789"
     sha256 cellar: :any,                 ventura:        "ff84bbc1db8188aa75c9af29d4c0fb3c46f501c806db958493d84bcf2ee6a9d3"
     sha256 cellar: :any,                 monterey:       "d3ca1dc058c82ba52016809f097666105535f5346a91b0c3b1092300e6831214"
+    sha256                               arm64_linux:    "0acf954601f5908c4fb4f2488b46f84abbed2759b8189eb237823a80c79adcea"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9195f0deda2f2ec4a6a9863275299136388eccfab23b6d46d682eca7e773591"
   end
 

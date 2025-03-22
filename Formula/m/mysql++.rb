@@ -17,6 +17,7 @@ class Mysqlxx < Formula
     sha256 cellar: :any,                 arm64_ventura: "40a3f055ec5b42ab64ed3996133d2250b4d01e35aadf3d4c156ed5c011708aaa"
     sha256 cellar: :any,                 sonoma:        "57348bc88e3ed7dfccd4c0b51a7c5416473a0e81d23eb6f9c863d21da02fa236"
     sha256 cellar: :any,                 ventura:       "5c9da073209c874fa0fd85f0d98783444e1af93e527871d7dc47366f22f9ab28"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6fe9c4d8235e6b18d24d4c957347282d9c8a6476de38ac598568866d1b568fa9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "05a8a2b24a6e5b63f6ed9b997686059ea081726bce22555a0665c4b19826effa"
   end
 

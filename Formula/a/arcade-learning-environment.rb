@@ -14,6 +14,7 @@ class ArcadeLearningEnvironment < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9b00e5f0b6686381e93f86545abeb34008be3b083ddd51e7125eb0f4e9af4c15"
     sha256 cellar: :any_skip_relocation, sonoma:        "99df6e80824a3a2ae33a2dc70dcf934ff6e316a83c0d8a54812b07c76ad72f5f"
     sha256 cellar: :any_skip_relocation, ventura:       "dfac6d27455017d764d3dd4762511a4647289403c9f6fdb94b7d7921b92598ea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "80c8aa063e60eddbc7cc8ace8a5536483d88d008d75b758850e5bbf82b6580fd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "79f9e05386444744b3c2304eec9df1f4c874448c79f3a258ee88831f0cdb33b5"
   end
 

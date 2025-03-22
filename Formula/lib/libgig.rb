@@ -18,6 +18,7 @@ class Libgig < Formula
     sha256 cellar: :any,                 sonoma:         "ca1486d8efa94ae049f2bfb3d8c204551042e44bb866df455689a974152eee2e"
     sha256 cellar: :any,                 ventura:        "01f2602c4c663695f4d7dd5cf6fbe3a9ee6b8485efd11879e0d186fc0def1b61"
     sha256 cellar: :any,                 monterey:       "85490eaa518755542f760200f141b5f65fd71e7796df188f45f16ef4ffabecae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "eb411330078f95316259af6509eea6c755bc66fd364ab17d8212f4f3801addfe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "55b3244b6baa9d30aa0d625a9c27455437b8bb85a1feb61571dec1d4dd765e81"
   end
 

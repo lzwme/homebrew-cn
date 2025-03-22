@@ -12,6 +12,7 @@ class Nfdump < Formula
     sha256 cellar: :any,                 arm64_ventura: "3f58eeb1890c44433bc6d9f5d2ae6149d61e7c096b314a5db085e1f016fe0fd8"
     sha256 cellar: :any,                 sonoma:        "d2b137c45686e51add29a118e911cba1ccce6f5130bc3931bd1f18107388c573"
     sha256 cellar: :any,                 ventura:       "16fae0c19979d8231228f7a89e522e6d3b26d85ad2b4b04bf7f8d87d795a0eb8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e1ed99af783a1852c3c92e111bfc0520a30210b1f01008179f9c641d049f824"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c02cc68a0eaba6773c36aa54c53ee077ee2f2279e628671a4dacb15c529e2a02"
   end
 

@@ -12,6 +12,7 @@ class CargoSpellcheck < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7be9cb9bf49c88cd65a94b13c136ec844ab8f7d00b57b7404d944199f12cde65"
     sha256 cellar: :any_skip_relocation, sonoma:        "7476f53530cadc1d65a76aab700faa7c547fae7b4230c7df8e4d6b90e99183ad"
     sha256 cellar: :any_skip_relocation, ventura:       "43e0cd41ac0873292789d23e3b913ff9b0dab96db3fd25d2df8c1ed8ea335735"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8bc18490d34f7837b8498c833e5fa539fab2e0fec341eeb8e14d3d11fe15b8f0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5bf9c80c76e0eadf342f2dd4dde6e6c6f07c1a713fe2feb7e9c096a3877310d7"
   end
 

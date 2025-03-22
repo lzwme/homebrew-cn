@@ -22,6 +22,7 @@ class Aspectj < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8742821d35e1751c011f1101ee71e92fb651d1a757469e6e0bed65eb4aaba93e"
     sha256 cellar: :any_skip_relocation, sonoma:        "fbf6c1c609aa1c15f3e9b81011d2eecc880ff0142efc1203ee321edfea150a2b"
     sha256 cellar: :any_skip_relocation, ventura:       "197198fd436e667e64609b24f2f24eb5ac69fc2a73e78a905c18ff316d2e6ba9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "314a35397e3a764ca39a6a59d248d208fa5cdf704157934fc1332d735ceb2a12"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "124f217589a14c449f55ba92cec515d7e0dc8bac0bfce87e9bf541a9ba56ee02"
   end
 

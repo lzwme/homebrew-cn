@@ -21,6 +21,7 @@ class Heimdal < Formula
     sha256 sonoma:         "fa1f05f6585b701568b83b2b8fd17dcae9202cad5d1bafde3ead076c9a9b0544"
     sha256 ventura:        "aef11fca0e5edd30a40482958ad3ef0ed6cba88cb450403d6c7ec7a20b88593f"
     sha256 monterey:       "225d96d3d691885770a75f327457b0a6480cdbebba506e96deb669bbbbf26bf6"
+    sha256 arm64_linux:    "8339834c3ba9f2d87764050b7ad5b5f0acc75a994f4a2cf3fe2762324f6970fb"
     sha256 x86_64_linux:   "50b84d04c9adf4ea658519cdc158a68aa264300bdaf290675010529d6d72e6ac"
   end
 

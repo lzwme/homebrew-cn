@@ -23,6 +23,7 @@ class Leetup < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "1934aa6e87b0d6b10a688cab48469b40387536d8cb57cfd4f6e4fdd976f4f437"
     sha256 cellar: :any_skip_relocation, ventura:        "9cf0c87808ed0962e2fdb6b1ccb1c4527c1007883912a2b9d1df26d2dedf6569"
     sha256 cellar: :any_skip_relocation, monterey:       "6d28bd176e651bce4d0eda8cc74f78b8dcc74453e1c165000e6f28b8984d7ca1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "4ea3eaa914822acc5f7759fee87fef3ecce87cb7c2105a797c640a09032c20a4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3f06e66d4529f7489b4ca0b9bcf9976c376015d6ea635c0c00a09adcd4439dca"
   end
 

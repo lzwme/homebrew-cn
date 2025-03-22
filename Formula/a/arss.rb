@@ -20,6 +20,7 @@ class Arss < Formula
     sha256 cellar: :any,                 high_sierra:    "b848efa3abde7c5fffd18289c1ab51a842cd93e0e97d6af32329acf869909d38"
     sha256 cellar: :any,                 sierra:         "2311c31ae2e80905dfc41c8adb9639314664103352540b198f24c54e0c102550"
     sha256 cellar: :any,                 el_capitan:     "5da45934b19d0cab02c809932fb8c5da3fd76d2f781bc9e2e7a98fa1825989eb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "3e094f664eda5e0dabb7269b9a6129d97028bf76e10a6f0d3966479fee9cc79f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c5c0a1ade41f7ff063620d37b071556cd71382e9728f160c24393809f89c0f80"
   end
 

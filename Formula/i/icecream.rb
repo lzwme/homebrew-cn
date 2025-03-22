@@ -16,6 +16,7 @@ class Icecream < Formula
     sha256 monterey:       "781ad1cb41ba91d5bd7b2f6763807b3fd89a0ff30b572b8ec77273d713867c1e"
     sha256 big_sur:        "076868e850f3b6b5ae814e19b03528143ea5bb3f903edcdca14cac7ce3fbf4e8"
     sha256 catalina:       "a85e725c50fc4fad0d28621cd9c241326c516b3bfb32e01a4710615b0bcec4f5"
+    sha256 arm64_linux:    "de2b7ebbe426439abbbeb9a93d329d802b7ac1c58cabe4fa47e9954ec0332ecd"
     sha256 x86_64_linux:   "9eef6bec6b3f10bb768c84872285e4ffe45e45ffcd4e05c4e7727c702875d044"
   end
 

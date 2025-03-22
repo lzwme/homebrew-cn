@@ -16,6 +16,7 @@ class Dutree < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "aaa311e0c04f6110ba51dd74d8f8315a7d720f1be65a77d7148a37d3248fdfa4"
     sha256 cellar: :any_skip_relocation, monterey:       "f36cc2121241cb577bbe53de7a0187e089ebc1e4c0bdce0cb0fbb2112f3e5eba"
     sha256 cellar: :any_skip_relocation, big_sur:        "4bdb0ab41ee8863edc1f6bd4830065369e1b228114b27cd1d8aef35c10d46718"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "79d48c21002b537d1ab15cf2d22327221135301388802741e015ec14bb84a8c7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ea01a9b842b4fe3709ad4a95e8e1ef9d8ac9118eab5bff07df7970f844c6417"
   end
 

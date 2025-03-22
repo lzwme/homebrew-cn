@@ -16,6 +16,7 @@ class Ncdc < Formula
     sha256 cellar: :any,                 arm64_ventura: "94810e9e763b6f15b2cabd1579ab2995582493f9f9ebac57e56f40e8f8d59cae"
     sha256 cellar: :any,                 sonoma:        "cf910ac39cc769044fdc4302f266f68f11b9eb03f73d4cd013c3c396753ba1f3"
     sha256 cellar: :any,                 ventura:       "a468507ac3e9724260be8ba7b32dfbf96d0a4daba19b21aef44040bbd1a3970f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "055e73d95ac9e947e3b9937a2d209b669bc014d06810243b5a74b5d7bcc11ee8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5dadf6576e959b0891b26599f60d6d3de70b5a05d1298ca534688e16cd4427e"
   end
 

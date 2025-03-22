@@ -18,6 +18,7 @@ class Fossil < Formula
     sha256 cellar: :any,                 arm64_ventura: "445d83ebc19a1c94688312fa0644c214bd9dad8d229d8137942ccf1c8a2b6ff7"
     sha256 cellar: :any,                 sonoma:        "da30f15f9e8bbbb71bb266227f7751184716a83a47758fcd161128104ca1fa6d"
     sha256 cellar: :any,                 ventura:       "66e7fbc96d8345dfca174a13c82074637ff3a48c28263d2b647d63252d498633"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "461eaf72c2cee279329e34a79b62988dcf728dbff2bfe59074f33301a2e210f0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0d70b16f182fe16b689136b61fd541030baaa1b633f996cb1e63a0f4b08eda8"
   end
 

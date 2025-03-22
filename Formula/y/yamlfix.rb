@@ -13,6 +13,7 @@ class Yamlfix < Formula
     sha256 cellar: :any,                 arm64_ventura: "d1e35c718ba628e672c8ae7b4d6970f4d6baa180425764b839c1e98be5d28166"
     sha256 cellar: :any,                 sonoma:        "a4fdb343c7e93340801caf53a1b4c7ef98f657d149d93985d7f480dade902c82"
     sha256 cellar: :any,                 ventura:       "54c2f7af91fa5db4af9520a588bfe788ff2aa5235adbd48e7940c07e89297091"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "37cd912b1a80fb673bc4bbb83a370e840e392bcad4c29fec5dba54bec555f575"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e2329c6594e7413ce24f09fd3ad8d601204d5c985667ce8a6aa12f86566cfe2"
   end
 

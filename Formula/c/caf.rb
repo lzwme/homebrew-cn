@@ -13,6 +13,7 @@ class Caf < Formula
     sha256 cellar: :any,                 arm64_ventura: "acbf088b4337573a0710635d25ae8bb4828a8913b552443206b1c92ed0a555cc"
     sha256 cellar: :any,                 sonoma:        "418ac2c0d3b64145b22f801ba4868490d9306babce62ce2e315da9ccf4b8228d"
     sha256 cellar: :any,                 ventura:       "0d94e1fd5b0d827b48ae36871873a7f574635ca36256616912bfc1a3f02b390a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "678ca206b7bbb125aaf83dd4cacc878c720379a8a38a6372cb6a3b5834e2cf34"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "891cd444eefd7ff0c2ca32273b9d7734a43a33f6758b343a126dfb99a8006b3d"
   end
 

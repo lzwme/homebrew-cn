@@ -16,6 +16,7 @@ class Megatools < Formula
     sha256 cellar: :any, arm64_ventura: "79b1ae40a19e36f9a8963ab64a7579d9a9130b43c4ab27b4245e0ffcc6c9b73e"
     sha256 cellar: :any, sonoma:        "36adde8bade90a2f874e2587fccb82bfcf1b4f28eaa26b3b245e38d4a88da716"
     sha256 cellar: :any, ventura:       "76fa318ed36ebecc48805149e8f5d6b6c98c47b3694245e57f669757589415a1"
+    sha256               arm64_linux:   "142f42ab6621ec6212a5151eca7136c7310f2a6d979083635530b1bfd6af7389"
     sha256               x86_64_linux:  "a725e2de8dfc60a6155618a361c6b0587b5672910f481ab0b973e2100247b2c2"
   end
 

@@ -14,6 +14,7 @@ class Aws2Wrap < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c98df6972dc8b0cd6fa2faf431f3f39316b5dd86e40b6406600c9bf9369aba08"
     sha256 cellar: :any_skip_relocation, sonoma:        "42988b57040c6a9174d83c312d76336a7f293bf92fe1e727ad5bd7c661d9524f"
     sha256 cellar: :any_skip_relocation, ventura:       "433bad07f827a41b9e9712c7c71cc90fc98c980d4cea9a75feeb1ca7b538a90e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7dc1013b4756e0a79e525367725c0218edde1e9c2ce7850c120728afca5e8bee"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "18b0b56d7d195178f4c4e53c5171e0ec0fcecbea18537a4c2692854d38559098"
   end
 

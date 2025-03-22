@@ -15,6 +15,7 @@ class Tern < Formula
     sha256 cellar: :any,                 arm64_ventura: "1c7069dee7010a442e0758aee5b3753dba899c08a0c6c39208a777698545a9d6"
     sha256 cellar: :any,                 sonoma:        "01949eeb68831139ad1010fb02478532973687a33b0517d6cd4250117a261e55"
     sha256 cellar: :any,                 ventura:       "d6c69c21614592472c67581b01a3d62b4ab16e56180c561918cb17c261371031"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f28d712e68036e7665dfeb4b01f8dc8cdab88195af399e995c0a418b79f05e45"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "540089053f102287f5b3484efecc2170365b28d992a0dcf24ca2b77058c8c9ad"
   end
 

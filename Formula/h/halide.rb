@@ -17,6 +17,7 @@ class Halide < Formula
     sha256 cellar: :any,                 arm64_ventura: "57bae5cff5b521cc42a80f786411acf9cadc049ab5f7100d71e429c8986be6f4"
     sha256 cellar: :any,                 sonoma:        "51ffd96b6e358f9e53ad81f0d3e9987c72d2ba2c19f85563fcd334baf0f25cf0"
     sha256 cellar: :any,                 ventura:       "53888029c3c797b57577bb390dbcc34a4fe909b6aac219c81be9f55555764d3d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e15e08f3a1ef3e6a42625dc96f4b4d5410f69d0b6f1fc5d4bd7002f41dd63ca8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a0bf8651e7a1c027c38776e0df09d4117156145efbacbc0fbbf00e0806cea21"
   end
 

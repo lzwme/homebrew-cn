@@ -12,6 +12,7 @@ class AstGrep < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e2b61a3201265028c9328a21a1fb82374bac345ff0318e072d2a2abee6dfea03"
     sha256 cellar: :any_skip_relocation, sonoma:        "c94ea109e810159aa8c93d82b1fae6cd2ca012a51e854295b97fa379de906c96"
     sha256 cellar: :any_skip_relocation, ventura:       "e05bdbfaa444034a016897d7169bd77dd8516b5eb8c04d582f20106fb8e1991a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "af8cbb1d45530a8f59eb0435c676f6ec84e8339d7d05464ea8e9dad991158814"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "64bcfd05025f2e0b732d049929600b17d04db671eff951e8121c5b021eb88a5d"
   end
 

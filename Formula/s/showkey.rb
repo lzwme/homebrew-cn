@@ -19,6 +19,7 @@ class Showkey < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "4af765defe4fb3b6c3dd2a5ef15d3f1a4d5b3521ccd5dbaa35fd0b04e29a7e55"
     sha256 cellar: :any_skip_relocation, ventura:        "5e49308c5c35d9d773e7a523faec8d355f05f313f0df6daed0175166dca58d3c"
     sha256 cellar: :any_skip_relocation, monterey:       "1347c7b79e61d9b55735600a10f9bed5ea95a258723c11859f5125fe0ed41dd0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "05a4d7762f25e11ac1138e807470b910b4c7b370c7cb965f207f8f3ace251189"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7921d9e1728c1576d6659fb218eabc169ae70c9fbe9396609b6e862145b0ad47"
   end
 

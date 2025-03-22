@@ -12,6 +12,7 @@ class Seal < Formula
     sha256 cellar: :any,                 arm64_ventura: "86478b9f5e642a9c5a151053a4f1eb6b85a760e7e9e627cc4bbc2fb9f4b25e58"
     sha256 cellar: :any,                 sonoma:        "e38a08c1096eb328fbc578e337330e437f73284fe02b46eb794bcbbd14f5e6d9"
     sha256 cellar: :any,                 ventura:       "f7bb995a9e3436465ae5147f8348bc72781829765f37c6eeba3666f2b37b6181"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "906f743d9dc3cdb936bffcbcc29a34cd758d9ebf419a3d261f3af0f1141bc324"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d36a437367854b03cfa9802ee07ca8c22377be28ea20de45b8e23f70d6906ea7"
   end
 

@@ -17,6 +17,7 @@ class Solid < Formula
     sha256 cellar: :any,                 monterey:       "5f6332325f0e43bd790343ac713ffde38b6933284f56ccf2300ed1f6a0d846c1"
     sha256 cellar: :any,                 big_sur:        "53fa124eaf6eec06348f0fd19db0cf189066560f44ed22f6fffb9bdbc58beae7"
     sha256 cellar: :any,                 catalina:       "9d1231c8c37bb4a40ae017d0f8a546bf8f58a2c8f4898d9c226a8aec1708d633"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "4834bad27ab6bcb57d0fdd0bec5983e526a8cb1d340b2f9cb6ba6df8bd163764"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf61db5178e9b3286d47dee7ec43fbb18da035dd2bfad28d269e74aa01ff7d1e"
   end
 

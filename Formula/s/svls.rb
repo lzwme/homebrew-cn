@@ -14,6 +14,7 @@ class Svls < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "b9d8f8ca0dc2994b77cd0de932de40bf08dabd92d24d6a41b434324c3062b6c1"
     sha256 cellar: :any_skip_relocation, ventura:        "cb38783001b57658f16661f741fb920877e8918840ab839b50d89e3445028ca2"
     sha256 cellar: :any_skip_relocation, monterey:       "1e5033c5b0abd2964ab4aab08a6203a9011fb3b66d45961ac2a05c337718bb5f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1f2b504bccc3357cc1e234eb114c5941dd6c7c63850087d041726c534f7129b0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "dbc706c7513b400b717bed634717f4fafd47a2d94bafde4574c59dabce57c10a"
   end
 

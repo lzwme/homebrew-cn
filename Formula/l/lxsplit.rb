@@ -20,6 +20,7 @@ class Lxsplit < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "da1b73f5843b77ce947ce546fb77a47f2c1b989efbf70fdd61b9d05f81a386b5"
     sha256 cellar: :any_skip_relocation, sierra:         "f4d271c94546ca73b9e5262ff53bf7b51dcde2a83998d5a2e4b663109f2f69d8"
     sha256 cellar: :any_skip_relocation, el_capitan:     "25699d54183a01f446015fb02521a50b3967ef2d250e56bb1fe3fd0a5aaec2e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "25abf3d459e971588c1d58365ca4afdb710abd0a26a1dcdbb8470205e2d5bf9e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5be1da254e8200601318c6258e63e4052dea5d43446d10872f8aab55e83abd4b"
   end
 

@@ -21,6 +21,7 @@ class Npush < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "c3d40f8709487c01053f5ea09e35c047ae6bfede34d21e97703d38c9985d67b0"
     sha256 cellar: :any_skip_relocation, sierra:         "ce2f958ef8d766791137266e74b7c2cd0843755d080ecbbd6a7074bc7d035c19"
     sha256 cellar: :any_skip_relocation, el_capitan:     "c37e743784c68e9c1bb1527d4c6161a5653831de44b3203be8c1cb07d9eeb7c2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a2c260b48759fbd27ca1ea3c6bbfe102de40fb4755cd3fc88f03e6a27e2aa236"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0f8e3339f262c42ed5d697817a274e292bdd647d5a6410f71d9a9752f044047"
   end
 

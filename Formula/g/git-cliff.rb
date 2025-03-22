@@ -11,6 +11,7 @@ class GitCliff < Formula
     sha256 cellar: :any,                 arm64_ventura: "f3c9e1c3c2024c8e82a9ade43eefe1acbf12a0844e1f1fa24b736e1d5101fc1d"
     sha256 cellar: :any,                 sonoma:        "79c25a7b60a18962e2aec34dff6d0da114cd3a791184eef803adf975187fc5c5"
     sha256 cellar: :any,                 ventura:       "86a3df0a100c044988c2c15bea9ee36718c1ead2dbd38fa75a001110565f1db4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e92e3975360c506e30a55e3f56c7bfd7cd1e39472acf8469b844859eb02c8fbc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "03773392efbf6465f066411f1cabed3f74523b755c4195b2ff90b9ff97003bcd"
   end
 

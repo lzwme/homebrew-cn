@@ -14,6 +14,7 @@ class Kubevious < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "824d2b7a07241392f336672c7d3f514b4345ac1a78189fd422372ec611e4c691"
     sha256 cellar: :any_skip_relocation, ventura:        "824d2b7a07241392f336672c7d3f514b4345ac1a78189fd422372ec611e4c691"
     sha256 cellar: :any_skip_relocation, monterey:       "824d2b7a07241392f336672c7d3f514b4345ac1a78189fd422372ec611e4c691"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7c170586cd5a22e4abf25c9a4dd4cec6af9c51b477101a338507c433b1b65d78"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "51a9d36844726c3ffc2749818ffe30b8d9b45e5a4806e7b947b61d0d0270da96"
   end
 

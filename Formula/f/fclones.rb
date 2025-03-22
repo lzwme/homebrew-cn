@@ -11,6 +11,7 @@ class Fclones < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7d4155d6cd85ca0abcfd36e2f9c010d8f598e731eb05b2d3c80a03c4aede7182"
     sha256 cellar: :any_skip_relocation, sonoma:        "92a41e489d01e0e26fd142e765e1c0e25369e5039b5e3947d638da3ed54c4408"
     sha256 cellar: :any_skip_relocation, ventura:       "9952ed3909b1d2c9b840ce2fba135c4dc067094291ff4cfa9f1e9b555c35d0ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "61ca95e6eda9e7f1e4805ff143b929bd7e049ca904a18320007020674b66dac8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "eea61b6f1d552320357ffda10b5b9b8d6ebafc9f22bbf4572df706d3d3d742b3"
   end
 

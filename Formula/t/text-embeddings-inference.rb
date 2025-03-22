@@ -11,6 +11,7 @@ class TextEmbeddingsInference < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c976cc410db127ef601b3397c5826d0acc8e53c7bf3e237c06180fd0597daaaf"
     sha256 cellar: :any_skip_relocation, sonoma:        "b445097577a9d20a873a82d77a81d4c77b6f813fc0c104d2f9f05fcaec4ac32c"
     sha256 cellar: :any_skip_relocation, ventura:       "9c43e0ed2d9bfdb81964e5774c80e35945ac44ab7b0226cfa0ce00f8b15b98be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "774e11dfef5db7d16af3ad53f98974c71a1797047b5ddc91b56c9bfec385fa09"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "31c5f2c92887c5b924de74dc1aaab1c23471edc102cd724a0ef116719396993f"
   end
 

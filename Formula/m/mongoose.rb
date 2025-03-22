@@ -11,6 +11,7 @@ class Mongoose < Formula
     sha256 cellar: :any,                 arm64_ventura: "c46ce284b116d0724884adaeffed83f45977a77ffa0fc95c29b0dedb9af2f69f"
     sha256 cellar: :any,                 sonoma:        "f660079a2c16a85cee9f5eae7ba8a471aae39c2d8e06bf12e15e73043f8333b4"
     sha256 cellar: :any,                 ventura:       "3cedda3660d3c3402437c936a5786d2d80f3fdcb5ad1654581a47c000e975499"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2cecfabb0f8ec0a12573cb00814dc99b83e6f3cbac2c84310fb343cbd3534026"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "497858a95dcd1814149278dd48f62d2d9e58a58137562b52a3c29bab1a33b6c2"
   end
 

@@ -16,6 +16,7 @@ class PythonFreethreading < Formula
     sha256 sequoia:       "d31e32f02f43498d3df1f85c7dd77ee46474704393a01b02d0c3454cb44ac219"
     sha256 sonoma:        "25bcc82bb255e281418879acd6157916286003ffd953989ca28772f60b1a06ba"
     sha256 ventura:       "e37af22cdb717ec351aecd2f8c0be6945e3f9fd55015b5e1da8c47814a519cdd"
+    sha256 arm64_linux:   "9fb29c1c3bbcec25fb814dff43dc932725aed4e675e4185e7ba139e57c40c18b"
     sha256 x86_64_linux:  "9191c3a4cd7b5589b2c73af3f1e102fbb9e01d9bf5a3ef5568c02a07cd5a4c1d"
   end
 

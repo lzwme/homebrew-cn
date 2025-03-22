@@ -17,6 +17,7 @@ class Fnm < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "69b22dacd824d71438a318fe052ea47e0e1b21fa1ce018e582f0466025fceac2"
     sha256 cellar: :any_skip_relocation, sonoma:        "356ec74426ac56b9f1072243bbee635fa9b799c815cf1d613e37ad40161d3f4e"
     sha256 cellar: :any_skip_relocation, ventura:       "a64ba998422c590b865e0a4f22f1b907b5696e6c1d7559f07b0329252a83d6c0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "079d84bfb759a70fe095a69f8b0eed08f6c2c45921f075e37e3eeefee7b19139"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e75d81775dc5b7bd16cbb6fdc414db5a9693dc8eaa5cffc0802c086d33c6fe3"
   end
 

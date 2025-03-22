@@ -13,6 +13,7 @@ class Fastgron < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "3ff4b53ee3e5687edd4a35f270a3b13b4d822cdb50cab09ef22b51f608493659"
     sha256 cellar: :any_skip_relocation, ventura:        "3f5469196d51e258b7baf7cb7ee982d4ecf9506eedd9fa8cf475d5c89d9947bb"
     sha256 cellar: :any_skip_relocation, monterey:       "54a91239a017ae40c51bbbe08d1d6b444858cfbd4e54d555f1490f9d33c5e179"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "3b7a7799cd2c68dc38b4d4837c1e4c841b5956c5455929a1ad70995d3a5fb3f1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "149b9bd41abdc81948522c8b37dc2580eaa2242a1045798eb22ac6da45201b08"
   end
 

@@ -18,6 +18,7 @@ class Clamav < Formula
     sha256 arm64_ventura: "0d04eec631abc4cefba76b84d0ff19370e9cd9784f5d02e9eeceb06f92aae4c5"
     sha256 sonoma:        "555d9306b8715927159cd870985253cd1ca04b6c1e4ecea7bf189edafbe21ec4"
     sha256 ventura:       "538e09f3f9d312667e9f8fc75092f7a66e4776cdd329941787d1101b15761b38"
+    sha256 arm64_linux:   "67030a88aa5aba70d7aa0d5026a18e6d8f7c8696178fbdd15c35a92190bf828d"
     sha256 x86_64_linux:  "94b058838c51f394fbe71a74bb68a77b6e5f50909f7d34c7419b48a233dea6eb"
   end
 

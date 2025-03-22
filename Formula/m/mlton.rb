@@ -19,6 +19,7 @@ class Mlton < Formula
     sha256 cellar: :any,                 arm64_ventura: "bed247cd0a0a8e1d219a0aa227bc0c1521546c982d6e39252471ca9788037702"
     sha256 cellar: :any,                 sonoma:        "6d43cf4850c6254329c6a4c1ee06f6e860bf133fca2772eac31c9d8f9e1645dd"
     sha256 cellar: :any,                 ventura:       "de3736436eba0b0a13c9f5c04dc472912366b1ab4aafce7c88d0b0b7687d1fbf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d7c7205060e030f40a39f4eb83ca2a24a177bba7fddfa929222ec287251eddd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed7629b2e4edf19250fc7c6311fbf582b2f8b63658b3e8dd37083ceb98c8a801"
   end
 
@@ -47,8 +48,14 @@ class Mlton < Formula
     end
 
     on_linux do
-      url "https:github.comMLtonmltonreleasesdownloadon-20241230-releasemlton-20241230-1.amd64-linux.ubuntu-24.04_glibc2.39.tgz"
-      sha256 "95d5e78c77161aeefb2cff562fabd30ba1678338713c50147e5000f9ba481593"
+      on_arm do
+        url "https:github.comMLtonmltonreleasesdownloadon-20241230-releasemlton-20241230-1.arm64-linux.ubuntu-24.04-arm_glibc2.39.tgz"
+        sha256 "ae7eb9b76e7749f51284033791788b4091d3ec94bb10eddf00f076dcb588c1f7"
+      end
+      on_intel do
+        url "https:github.comMLtonmltonreleasesdownloadon-20241230-releasemlton-20241230-1.amd64-linux.ubuntu-24.04_glibc2.39.tgz"
+        sha256 "95d5e78c77161aeefb2cff562fabd30ba1678338713c50147e5000f9ba481593"
+      end
     end
   end
 

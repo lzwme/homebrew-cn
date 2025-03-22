@@ -27,6 +27,7 @@ class Pce < Formula
     sha256 cellar: :any,                 monterey:       "a393cdc7dadc636acfe2f16510d4422ffd2a9fa565c094e8b82c26a7c4574456"
     sha256 cellar: :any,                 big_sur:        "84d3de8d69880534cd5a1daa04370df793e7cd81ea4c97d7146c567e904a9c28"
     sha256 cellar: :any,                 catalina:       "2d003611fb1b523196faccd42360b38a5ef955ba9a5accf213270381499c00d7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "397646dba64dee1d8feb62274c7b1e5a3ec7d6e25e7fb1c13f9c3ac5b53b2c58"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8085c1b4a0418582fd72b74f50d33b8cc04d3b791ed023e1ef31b96e6a631c8f"
   end
 

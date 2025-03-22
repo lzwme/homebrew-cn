@@ -20,6 +20,7 @@ class Pacvim < Formula
     sha256 cellar: :any_skip_relocation, catalina:       "85bd0087ecc54716772881e46ce00553ee037eb2ea200d34d5db28709092369f"
     sha256 cellar: :any_skip_relocation, mojave:         "e2ecd6cc1337adb4c9e760c50a83ae04a8cb86495d3c1ea167bfa5930d7a16a0"
     sha256 cellar: :any_skip_relocation, high_sierra:    "b8ef8cdba34802db97fba770e013393973e908e11486b87a4f5189f139e468dc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b3e0cb7a0e81b078f2513a8b9c8affd74be3c509e16cc112bed36a8dabe199cd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3abc4ac74d298cd3feb45f1a48f7b5f34d099805ae541f1c4bd57ff8e7a485a8"
   end
 

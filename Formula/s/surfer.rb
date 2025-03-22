@@ -13,6 +13,7 @@ class Surfer < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "03096cd206a1e35ce940edbfc933dec9223af66b13020995f74bc31e5de6e0b3"
     sha256 cellar: :any_skip_relocation, sonoma:        "e8deccf748154f2694fb130a855db4489f1ead1a2a373c1f5fa4fb7440718c64"
     sha256 cellar: :any_skip_relocation, ventura:       "c4153c7564eb8c1f70c138b984d50497d335b6f545b2bc1812b7020b558e575c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "03ebf3b987048837c04e1308da290bed70d14b3102bd8ff910e20dd71965f1bb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "85f894ea7612f3fbf2c10be6b238e4cfa42fcc694c4d0dbc4b847f6fe4010fcc"
   end
 

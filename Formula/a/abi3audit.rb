@@ -13,6 +13,7 @@ class Abi3audit < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1e36f27017e8e199df79a1601d4139d5278c3329347233a853e4c8922c7cecc7"
     sha256 cellar: :any_skip_relocation, sonoma:        "6d59ab072d0a24b00430eaadf44bcf606989b2ac6c46a9311180c1e90b5f6878"
     sha256 cellar: :any_skip_relocation, ventura:       "6d59ab072d0a24b00430eaadf44bcf606989b2ac6c46a9311180c1e90b5f6878"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "663c72ba6c49dbb8d7e36f59f03bc2b9d89d70c08bb41e800106fb68a90ac0ed"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2422391df386ced3511227fa44a6057b608610c9198ac35f05cf99f687705afb"
   end
 

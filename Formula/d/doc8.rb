@@ -15,6 +15,7 @@ class Doc8 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c3b10a7def5a70553f390474664fa3dbdfe53bcb207536fa28459dbf0482e222"
     sha256 cellar: :any_skip_relocation, sonoma:        "fc866ff039478a505cb59eb61e6150a4b0aa50c12a6aa9c9c31c6a9ed7b4e5b6"
     sha256 cellar: :any_skip_relocation, ventura:       "fc866ff039478a505cb59eb61e6150a4b0aa50c12a6aa9c9c31c6a9ed7b4e5b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "91dca4d2cf20ac5bfcd98748cff5c0bf1df44253affc1cba3b5cd4aee1f3a334"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3b10a7def5a70553f390474664fa3dbdfe53bcb207536fa28459dbf0482e222"
   end
 

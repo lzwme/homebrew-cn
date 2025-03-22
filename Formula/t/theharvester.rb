@@ -14,6 +14,7 @@ class Theharvester < Formula
     sha256 cellar: :any,                 arm64_ventura: "f4c9d0c0d4e1e4247ae5c0394dc0d34cb7a4b261e2b3f8a403efd22151b2b79b"
     sha256 cellar: :any,                 sonoma:        "3be0fcd461e8214e8d38655b6afaa558f3139d5b4daa0de03468c0ebf3b143a1"
     sha256 cellar: :any,                 ventura:       "8ae3d63d3a6ef8cd59430258bcd7435bb3d4da4a0cbe0fd8ff02d70bce89361c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d87912e90f360e57d760ce7af131efd4475c7be130f6fa4f2d453d58b205003a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "332a0bd68ab3add7cc879564b97460fd929bab87f5291174cdcdfc16d1357f25"
   end
 

@@ -13,6 +13,7 @@ class Ouch < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "55fa180fa50d60cae20499315c094e4e27ef9569c7bc153e194da5981e4dae53"
     sha256 cellar: :any_skip_relocation, sonoma:        "e577a0daba8281df2106f823428d147e2b5feb5bd94c8a7bab428dda4cd5c269"
     sha256 cellar: :any_skip_relocation, ventura:       "ecd0d5ec186fddd2fc7f770c587428e9ca9f7606e8998af8353ad7bbe81a216b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bae292deb8304df0464d6cbac4434ec1fb71b024562e522846927896b3ed4c64"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "75ebb0483051766284f4eb6cd08c3a117b63a6f6eeec6f369213c9340b5accfb"
   end
 

@@ -32,6 +32,7 @@ class FuzzyFind < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "b3f47d3bfd49f76960e5979fd4ef898c848e73f7f8da758b71c7eefe3f585fe0"
     sha256 cellar: :any_skip_relocation, sierra:         "feefa3913b9b1df2d8b283fdd55abd1de9ee924633d8e157142cce4980572ffb"
     sha256 cellar: :any_skip_relocation, el_capitan:     "7db1b187adfcb7ce37842891ffca5eec3ca25bed5441944cbeb1e08bc6d52a66"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f6fe925b5df6e70425cb5d7239bd48847ac2f4209f0c27bb0dacac578844fc26"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "593e66d2856edda48ca5deeede9473fcd2d0443436238659239a3ddbda483514"
   end
 

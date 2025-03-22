@@ -22,6 +22,7 @@ class Fizmo < Formula
     sha256 monterey:       "d34d8d73e7d009ec869a41d39e058a2cdd5b53584f4d6e91de6007808c17e420"
     sha256 big_sur:        "2b316eea30d6bc1c9b1d031a33d267320ff05ec61da20d5b3698c760d3acd1be"
     sha256 catalina:       "40d46b98fd262acb6bfbe87d2716a51a715367be1f38d8a7a027b071649bf5cd"
+    sha256 arm64_linux:    "6c553882a7549dab6864ee7b1519091bb94a0f483c7ccdaabb66b0f510bf5261"
     sha256 x86_64_linux:   "9fe334a5cf5e393d868f48d5be496001315fd76a84058458c7244b4970ffda4d"
   end
 

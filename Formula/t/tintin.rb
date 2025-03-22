@@ -16,6 +16,7 @@ class Tintin < Formula
     sha256 cellar: :any,                 arm64_ventura: "dcd49d734e84046e1517ff268c77660bbcd8ba8f7793a010f8f80b08c4ba19ba"
     sha256 cellar: :any,                 sonoma:        "698c40d0d6db51cdbe86646169120805cf53482072eede0ba54bdbd81780c700"
     sha256 cellar: :any,                 ventura:       "9c59d0ef2e18563f0d9e6b0d132a03b452ce67613c147d16753ac3f977f3fff3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8121a277dec9b7881db528e6752d1a2d23748fdcba1485a598a563ca1acd365"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "73211f73ffa77b2e9f5795784ea9440754c3e4a130a164d44b8e1bd059435505"
   end
 

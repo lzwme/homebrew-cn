@@ -11,6 +11,7 @@ class Pangomm < Formula
     sha256 cellar: :any, arm64_ventura: "51147a02ebc43f6a0123d07c680512e7135750f0bfe1175217556f578f17ad3b"
     sha256 cellar: :any, sonoma:        "1bc3b3ef3f4502d595eec7787bc1464723abfdae305ed2b4118c5d1bce59a61d"
     sha256 cellar: :any, ventura:       "c57567987e6f32bbf3a1cd9860c52df97753f34eaab7dcb5b72539f0a57c0fdc"
+    sha256               arm64_linux:   "2ba333c4cb46d9e32440117b87ca21123dda59066c5edf1120ab77e98c9e1289"
     sha256               x86_64_linux:  "4defbd47ef262aaf9aa021ab3da046d717848c61679f0f412278d74c1877d6f7"
   end
 

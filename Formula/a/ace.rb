@@ -19,6 +19,7 @@ class Ace < Formula
     sha256 cellar: :any,                 arm64_ventura: "061ee45140a58788634768a0a739b6894f65d02b24931a26a98bc7bd1299b67e"
     sha256 cellar: :any,                 sonoma:        "491988bd9822fbfbfe5f2c146e5d63500d6873c2bd2bd497fd71664b3294b8e2"
     sha256 cellar: :any,                 ventura:       "f4558dd66ed0d9f543b7b50981718240f5bf2f1d9cd81d7b60793460aa8db7b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b6fa77273dd2f1801b228cca9bebfa052277c7c49c36cc51937d050938629ead"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9eed58bb778245048efeb746d1b3739c237c4b1e38cde199ab7a9fd0d71dedc7"
   end
 

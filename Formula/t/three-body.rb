@@ -12,6 +12,7 @@ class ThreeBody < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "393d8bf1e63c5818b19ffc7fddc4ed4d19fc6f727852e14a7f3406c6a2b995b5"
     sha256 cellar: :any_skip_relocation, sonoma:        "0ea9365c8fb00a4cc63a309c4316bfb1b5978ea35505e0e3dcc7e8f4e3b62e7b"
     sha256 cellar: :any_skip_relocation, ventura:       "3a011425102efc7f388625413dcb9456fdb494ce9f9e19c3da548ef6637977fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c251fd07b1525f4cfa75465cc9dacad96dd2c5f0343ec9b4ccca6167c9f28d00"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8ed8e8bf645ee93eef6d9ea9566286f8ecd54d46ebae8f2b854574edda7721e"
   end
 

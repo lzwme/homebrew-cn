@@ -14,6 +14,7 @@ class Crabz < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "577d2a7fbd81e94e01cea85c3b3da2c759a88146189c66d5a61f9b32f6d9ad10"
     sha256 cellar: :any_skip_relocation, ventura:        "bf7734ca7c9ba5fbf35a9ee9689d24545e069ddcc7cea47305d3db9be1bfbfbc"
     sha256 cellar: :any_skip_relocation, monterey:       "b6af3a466b9ed8b122cc9ec0b8e80bf0c8e60c0ff0ec32d5976bc6bbacb04fdb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "36844bc642d323b46061d065ce3f0ef54fb344950a711ace63ce737ab8c91272"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5843ff105bb50beb4e6712e6479edb8e3be80d5f1508e10fb7743d19ca9a6277"
   end
 

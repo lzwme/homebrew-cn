@@ -12,6 +12,7 @@ class Noseyparker < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e29c106856a44d68686292217771f114fb9975f0cd13c0aa6f22003dc63baf29"
     sha256 cellar: :any_skip_relocation, sonoma:        "dd07b2fbb4a8652eb3209a98e69860166bf0966e1eb279c993472b272dfdc596"
     sha256 cellar: :any_skip_relocation, ventura:       "9a9f02b384542990d19d29d9f4ab0a86dabdd02da032caaa100c0b099f554dc6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "96c637d35682a70aeb0d4b4bdb6c0b79b738b3240a0857688cd5e061e1ec9d7d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "43d9f57dbf2601ff3c088caf989bc9338a2dc6ef1aac096582cc4d98919c4438"
   end
 

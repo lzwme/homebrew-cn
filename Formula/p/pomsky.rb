@@ -13,6 +13,7 @@ class Pomsky < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "41595db77e38123a28d0976497c6ac257214fed22254755e54b89cb5dee7d127"
     sha256 cellar: :any_skip_relocation, sonoma:        "b7072d58cef2e775feb2cfd3c2f9da2e8b8f5ae656ff530b8bc3c8aaffd048fc"
     sha256 cellar: :any_skip_relocation, ventura:       "6079d8a1dfc89585ad17b5adeb197c38f995fb0db087fd341d0aa1320f090eaf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3c3d80cdc65fccbf6c579f35576d07add4a9cb9ecfdc96e94704507a4393f4d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b045ede5c8563463d1afc5058db6721ea82017350d4faa86394502fb756d286"
   end
 

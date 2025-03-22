@@ -17,6 +17,7 @@ class Watchexec < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5efea623009bffb384ccd5ddae59dc026d37abdc50b7cad1e5bb98c1b3196abe"
     sha256 cellar: :any_skip_relocation, sonoma:        "1c605b28916e0f5407ec4783bfc1daee9a2385bb0fae5152198662066757313f"
     sha256 cellar: :any_skip_relocation, ventura:       "09e10b76ffb038632dd20849a5cfc281e8b2dba743da7c652d2ca0d2f8a94f1c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "384647f2841f3697e90aa1372af3f72c4c91e28838db0162c23005cb0f92b6bb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc8bdfdc0f5469876a233b5b139e0b3490e4f91d05eca047dd7e759c5b201b4c"
   end
 

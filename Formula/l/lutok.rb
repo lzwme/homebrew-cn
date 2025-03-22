@@ -19,6 +19,7 @@ class Lutok < Formula
     sha256 cellar: :any,                 arm64_ventura: "3cd059e623da2f9da14ad52b11cbc004a025c6376532f7891c476d99ec53c1a9"
     sha256 cellar: :any,                 sonoma:        "49b517e8925e63c427c0923f1e13a6ab053fe01e2602f2ff153d9c54b381879e"
     sha256 cellar: :any,                 ventura:       "4429d677c31a56ab9624aa3def949d8a9debf8a84ce6ba1489a20fa49e553fa5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9335de75e9a33b35921685f7b58a1a10c6de83b6368d1b121a84467becfaf020"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "408dd0c0d1895bfac6ea6bd3bb23e1cd9cc26f66fb043b90dbffb9211f8a5ca5"
   end
 

@@ -17,6 +17,7 @@ class Hypre < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ad27f8eecedf4fb1147eb571f2937e04be18a51cdd121e04428b0d9b61ffa8cd"
     sha256 cellar: :any_skip_relocation, sonoma:        "74ce43873f22dcf17713fdbfa2fde36623b78c58000a1cee1d25026576a4320c"
     sha256 cellar: :any_skip_relocation, ventura:       "ca7593f855ad9e3a934352eb3531d14402dcd48493bbc780c2cff79f2fc14617"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "50f9ffc0c2d089a134f311ad2c5c142310567f87890650352c2be8b1381d225b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3acee0b6a075972c6b1350fe5a935b904ed4c1fa8906f81a767b1bcb4f3cf0b"
   end
 

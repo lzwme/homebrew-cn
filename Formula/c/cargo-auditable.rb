@@ -12,6 +12,7 @@ class CargoAuditable < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8cb6e8c4c0f4e56e49d1fdff4d84a9b5a756e7baf5715576fc04ede78499b4e0"
     sha256 cellar: :any_skip_relocation, sonoma:        "f78f652b37f307d3df5d902a8627f390502fcb6b658d25def21323cff7bc37e0"
     sha256 cellar: :any_skip_relocation, ventura:       "85b0450e262c72b68fced5f3bae43f1ae16dcd6b9008460773dbb42b0f34ce24"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "433dd5dd3cfea37a4b42f1e6ab16a75d9209aa7fc7edb815ce9b741cc643f59c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "36add51b1b9f2187c2959c6a7ec969e1e101e565833b3407f4447d7020b2215e"
   end
 

@@ -21,6 +21,7 @@ class Slurm < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "4db77bcd6316bb4e9d8b2070cad506e18dc46c0fbfc326252efb09d86bae8ec7"
     sha256 cellar: :any_skip_relocation, big_sur:        "f887511a3fc673569f504330987bae7100213e4c2ed12bee70db0f94c5465ef9"
     sha256 cellar: :any_skip_relocation, catalina:       "deb0b5005b323d47913ee26328ae1bc17321fb3f09a76f90f74c108b5f23c6fb"
+    sha256                               arm64_linux:    "01552c3c4c6ab5bbcce1eb3716ff2ba49e2bb66a683f0d17b7d8c75da30980f0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c06bff9e858ad8f9c8583f4149a8a297b099c3d77754a7497978897c89427362"
   end
 

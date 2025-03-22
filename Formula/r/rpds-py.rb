@@ -13,6 +13,7 @@ class RpdsPy < Formula
     sha256 cellar: :any,                 arm64_ventura: "d2d6de90d070bba87aafed5468b9ad06f9160710a1b80ad4cc0a74e003351fcc"
     sha256 cellar: :any,                 sonoma:        "189b36e2d6d884b1d53a92aff6961cd888be19c40aad2eb11f2c935c997a35e3"
     sha256 cellar: :any,                 ventura:       "7d08d1705551d2a9a38a1822511f2b6cb0f7028714410f46d83de66daa12ba83"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "16f4a509e5b4b3109d92d587b3e86376099a82e5d490e2a03a32b602e347d36d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "12d865aeb961599cdcbf006e9c28154dc170883fee176b88b7d712d8f71a7313"
   end
 

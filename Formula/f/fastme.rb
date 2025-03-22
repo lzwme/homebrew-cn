@@ -20,6 +20,7 @@ class Fastme < Formula
     sha256 cellar: :any,                 sonoma:         "c39feda27c7e0280a7ad83c8426d6417ef33d9c3cc2a322a5a2c234f754ae5b8"
     sha256 cellar: :any,                 ventura:        "819551b354f63fbf7ed7c93e427352457f966a67abdf67d78bba11ac6a6e8991"
     sha256 cellar: :any,                 monterey:       "561643936ba17bc31cf1a62f250edc50b4d438c1628a90c3938fe36ed428dd6e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "15f3314eba3e5a65418012389a8ccafdff816eebb6434fdd51cb5669955d4b31"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "dca5ecc7fec2a963b3ee5239a65e4efc836500378eaad4d65fe48f07168095e1"
   end
 

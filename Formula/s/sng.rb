@@ -13,6 +13,7 @@ class Sng < Formula
     sha256 cellar: :any,                 sonoma:         "168b65eff4e5fbca14f90676b704bbd0d114ca78fe82cf23ab5f03328af62fa4"
     sha256 cellar: :any,                 ventura:        "c3851e3ff4ae5a5dfe206f10604cb9406731d612fb55a7940b7e1e1b92492115"
     sha256 cellar: :any,                 monterey:       "596299bbce0f5c721dda34ec3e542291009850dfbc9b765ca8d33e4483926265"
+    sha256                               arm64_linux:    "d3698cd1399af9fe64ce9f4cc8f68350b12383166dd7c528da05a1570e081324"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d22fe6d563b5cbc5b8addbe26239cae3ba3fda6c0f1799fac4587af971a8a41b"
   end
 

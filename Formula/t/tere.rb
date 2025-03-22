@@ -12,6 +12,7 @@ class Tere < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f59761f29b1ceeb7f633056dfac46d6293ef9ff320dcf3260a2e7ce5fb7d988a"
     sha256 cellar: :any_skip_relocation, sonoma:        "65ae7c433f4610971aa049108551e70bd6b89adb5dbd0966699ed4ae7ae23aab"
     sha256 cellar: :any_skip_relocation, ventura:       "1330af75bc33de620228e27758d6bdef23e1956c7a249d3f7d6f644e4d40fa00"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "175b2dacf2c4dad2c0a6f871d0225970305f240fed95724145cae5c244c59787"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9665ab7e423ec09d10dd3e85bec42d8a1e222ef3bfcfb7b229fcdafa5210d69c"
   end
 

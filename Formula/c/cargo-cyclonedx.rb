@@ -17,6 +17,7 @@ class CargoCyclonedx < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "16cf33f5551919b50f72a9e1908a8acc903340ffa0807d07129bf8dda445d64b"
     sha256 cellar: :any_skip_relocation, sonoma:        "994e07617590f95137b4263cbe94e447f206a29e8407990f3aa61dadc001bde5"
     sha256 cellar: :any_skip_relocation, ventura:       "7eeb9c86c8531c6d8db94687704e5ddba41fb66b925ddff16242d6a79f92cc1c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb031e5cd29ab00b10ed9979a9483256da08b39350505fc935221814ce743bdf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f69b0e972207579b8a06176252815648a3b6b33c43a468f66c919118bd72462a"
   end
 

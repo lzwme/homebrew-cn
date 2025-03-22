@@ -17,6 +17,7 @@ class Proto < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0fb01afe7cc4fdb98373788dacd810be76848de99508b96c1d4f9e15a2caf0f8"
     sha256 cellar: :any_skip_relocation, sonoma:        "e2f11e25ebde48291225188d468068ee11e267d92c4c6b02a812201c1cb79a18"
     sha256 cellar: :any_skip_relocation, ventura:       "665797ecd319dde970f5292626da7c6eb0257465b87dc5f8fe3f10ecbb383ae5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b02dd461dcf6635d437818b93938298240ce371ea022928216c9e303696d08b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cccf4e9071c846b26e8651b43eb80339bdb09e654f568398d77ce7a7d8df2ae"
   end
 

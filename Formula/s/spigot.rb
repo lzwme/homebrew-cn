@@ -19,6 +19,7 @@ class Spigot < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "65911180b9cca1a6b1febd6e2f35bf68563ef2dfa6095c5b079cec693a82d5b5"
     sha256 cellar: :any_skip_relocation, ventura:        "7e70ba708f6667e2733026ec5b277f6c585e1ed325632aa3bd0ab091910c142b"
     sha256 cellar: :any_skip_relocation, monterey:       "2c82b6ea337b197745e2416acb4b2e8e0b236972c1a1ae5f7eaa0f78e67493f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "3bfd33b820e4011431439c66813914c647cbbea77c0e17e185c990775345aa24"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "29e623ea321b9038b416675b0646e872c34c230ced67a62a527cd0e08470a8b4"
   end
 

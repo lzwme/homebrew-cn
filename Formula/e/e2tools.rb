@@ -11,6 +11,7 @@ class E2tools < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7e9ee3814830d3eac0c97e348da1f334929bbbaea3c8b5a2623cf320c470ce8e"
     sha256 cellar: :any_skip_relocation, sonoma:        "7b4a366c607a8bca05a57a5ae4b086a86370e33f7ee3d51d198b04fdfeffaa20"
     sha256 cellar: :any_skip_relocation, ventura:       "972f0d6881b1fbbccf01f8c65991e7ea7ae277d0d437162c4ff613f9aee73412"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b96b8a916a9ac6332b720e7b2fa1863a4f7939b2d7de3e31ac71da74c7bfb2c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "181c2ef88431d8c4795507d7df121a32eae776ea8e89d1fb0029e00aaa017963"
   end
 

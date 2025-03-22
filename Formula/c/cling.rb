@@ -22,6 +22,7 @@ class Cling < Formula
     sha256 arm64_ventura: "63a6979bd28f2e05a9a4639f7d5eeec99268be12af84074bf5afe731c63537a5"
     sha256 sonoma:        "616917ec942914038178ab9c18baf11f09adb518fd09a1bc453d8c570d87303e"
     sha256 ventura:       "2e72a1bb7d132bfd0d3630d7d556b04ad7440bab3c6ce4ba6b9a1feb823bc81e"
+    sha256 arm64_linux:   "a8e84114fbe1eb79d64b4eb40107f97bdaf8820bde24dce48adb47c47d95e18d"
     sha256 x86_64_linux:  "0babe63deefb1727a2da1fcb90c9c95a296a04317cb87ccd923f652f8b034121"
   end
 

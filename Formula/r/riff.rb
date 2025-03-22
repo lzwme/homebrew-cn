@@ -11,6 +11,7 @@ class Riff < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "155825cea7216bf225732f783e4dc047a55d481698e9f6fbd959612aa7a8666e"
     sha256 cellar: :any_skip_relocation, sonoma:        "73cfe3f1b037e9d4db0779256d018556259224ccd537cc700dff6be45ac34c58"
     sha256 cellar: :any_skip_relocation, ventura:       "bbed39e157bee858b45967b06eb226275bd59f1c509af177ccc3486851afc9c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e0036e3df18173a0f6b372faab8e9926075445db7d09970711a17cf777d4b8b1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1b71c316d0fdd100c98771cbad44d5b625f13282466e2aed7731fd8bb225c32"
   end
 

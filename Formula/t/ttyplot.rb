@@ -16,6 +16,7 @@ class Ttyplot < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "39a3bd658a12d3eb8be9baa5ab23b4bc85c2cfacb96fd05aac64b8dfae705702"
     sha256 cellar: :any_skip_relocation, sonoma:        "a15fda21cf564d3fc84ec3930879758b07d6d462c08c086fab150957d56593e8"
     sha256 cellar: :any_skip_relocation, ventura:       "e2aad133932bcf084b6cfae316e8ff6bd1cdc51b449cbb0a918365bfd9ae1788"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9477520982405b4c6dcc165fefbf076da0774c10cf32e0423b4be6f88cb45742"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b1a52187d8e41064b9d3e9d6a6c452fdb03e989591ee0d05a2d4829280579e3"
   end
 

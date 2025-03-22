@@ -11,6 +11,7 @@ class Cot < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "44f9a45e468f918b34e7f6e5208b932156f15f5d264839988880352b4fac855a"
     sha256 cellar: :any_skip_relocation, sonoma:        "bde6597ac6cc5c57ac0bf7dd27bef8c6af387e2fada8caa364c4b3bc6c966ea3"
     sha256 cellar: :any_skip_relocation, ventura:       "34cb44ff4f6d074dd97504f7b983535398f42d6e50e539dcf896d7f54e3e5492"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "76443125e0689e3e7f679da8020681c15ce867b1f1f8b6e3dfef77e1b8b0201f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7de8aff79ca421554cc9c09681da0ef559dd404abf0aa8326721324241d73d0b"
   end
 

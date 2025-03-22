@@ -20,6 +20,7 @@ class Gibbslda < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "a92cdb534bb1061948417a9840addb3bda01fcbdca63ca290b34e818bd4e695c"
     sha256 cellar: :any_skip_relocation, sierra:         "9244041821944e45946fcf6a491ee1579293b4c154c7b9921b38fd6159567552"
     sha256 cellar: :any_skip_relocation, el_capitan:     "c8a95c74f3c9e967506fb386a1343459ecae8362cbf91362a7955ba017bea5fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "17faba95a1fb48b7e0a8989b01fae56959a8cbeabbb64ccdae297e3e8888df1a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7a30b74269c34fa81e23d50d036a12d3788a8de0dbbe985e1c1efbb66ea54b8a"
   end
 

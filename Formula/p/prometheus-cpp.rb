@@ -13,6 +13,7 @@ class PrometheusCpp < Formula
     sha256 cellar: :any,                 arm64_ventura: "a57c78acfdc6c2da03a6a86bfc67a198d171d0c6769cb4435efd51c07e36d8aa"
     sha256 cellar: :any,                 sonoma:        "e8ee4564c89feef24f7abf08bd218dc6b69de9f40ebc69fc178f67661bc40c99"
     sha256 cellar: :any,                 ventura:       "8d82c34b65dbc59e5b0817bc4cbe22745e2ba39eef9b2579b39cb31f55b51f9b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4093c9bee3ed15272957c3254c042fe99bbb85e8d8dfe0614a072c46d36f7525"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ed60a657d6508498016fb99c917682d5c5cf7c3931eb042d6cb3a248ed6d51b"
   end
 

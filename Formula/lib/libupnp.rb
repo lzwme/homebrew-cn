@@ -16,6 +16,7 @@ class Libupnp < Formula
     sha256 cellar: :any,                 arm64_ventura: "b6203d369767093f428fa82b59f87b34b3689b77e38cd0054690703585d13f18"
     sha256 cellar: :any,                 sonoma:        "916337db6468d0d513d72ec4b0400ba2c52aec5d8b695b557d4be9a9f4bd4a74"
     sha256 cellar: :any,                 ventura:       "1fa4a3c05cc76204ba8054574e66c5fe2b111d8c78b454ef12eb43e69f4024fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6cd6a610c48cb262cea7510c9ea45d222f23cad77fd8213320094ef39794e40c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "24255556551c29174438ffd4102facea726932fb7d38219d1745615f60e30ff9"
   end
 

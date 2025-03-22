@@ -13,6 +13,7 @@ class Menhir < Formula
     sha256 cellar: :any,                 sonoma:         "5c51478563460c4bf57f48a599f4f6d3cec0374734e163f1b05dcaf1a2d14acd"
     sha256 cellar: :any,                 ventura:        "ff8d04832ebadaec926d1ceffb2188a32e5ed8dfa500175af6afdd338b0be10d"
     sha256 cellar: :any,                 monterey:       "8548accbcc37dbf510d010b5a664c6645b9407af5995be09a8ef24c1653bf5f2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7009e018d3ce59a82b4ef105f7dd27dd2dade641f081352544273bbfd35209dc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b59171d340c6db652b67aaa74357024684510313d81be23b6298b0d6cd5c61e3"
   end
 

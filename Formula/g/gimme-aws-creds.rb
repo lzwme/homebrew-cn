@@ -14,6 +14,7 @@ class GimmeAwsCreds < Formula
     sha256 cellar: :any,                 arm64_ventura: "d3ceebd745b8f3c1c4ba44f5af52f8c5f2be8ff8f0d3bb2c8429de24587a4739"
     sha256 cellar: :any,                 sonoma:        "94673f9d0b867e620b8f2cc779f024ef3937ae3489c202be0176e177fed64002"
     sha256 cellar: :any,                 ventura:       "b1f0c23dcd64a120eab38ec0d06877b9e983e6b410b396fee0bb662f01846421"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "40f89c7ae1e14cca4aa63d76dc8946f1d98ddbb549cfd743580756fe1c20f744"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "74ca9854fb52c13705a468b16c0b0aee5eb0ce76ebfd2e3f13ebd917fb73c100"
   end
 

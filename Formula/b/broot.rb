@@ -12,6 +12,7 @@ class Broot < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e689af8c0c8c9fe96ca2fcafbe12c0e0ebf2705dd78a6b5fc7bbb20e7fa931c0"
     sha256 cellar: :any_skip_relocation, sonoma:        "9153557eb81be698e665ae7b0504e213056138dafd2194f3d73ff605d0d453d1"
     sha256 cellar: :any_skip_relocation, ventura:       "d9c297a63a0edae435c25f45a8c19616e5e0d6dac6f69d8071219b1031295fd9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c0aa8ffbfb17fdcd7f3e756d328d602bc082fa0e6af120d65242cbbd00cc016"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d52e2aea147a732cb5c8be4079200cb021e66281f2e5f6b077ed1c94c7cfc06"
   end
 

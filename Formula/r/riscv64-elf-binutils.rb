@@ -16,6 +16,7 @@ class Riscv64ElfBinutils < Formula
     sha256 arm64_ventura: "cd10f00638540334c0a1c6f2f8af13360c1052075fe86489dbcbbf8407eb2eae"
     sha256 sonoma:        "13e059cd58a16e9b125a221b4cbe20821a52adbce5de9bb7b446de84030fb4bc"
     sha256 ventura:       "22a588a8a73828bdcd18a02acb9cb957264ffd69c23e1385d49ced61f5ef20ab"
+    sha256 arm64_linux:   "4b776625620fb882bcfe1abd418e8e7af15a8bf61f3126c735fd8f0aa37b40b4"
     sha256 x86_64_linux:  "fbe2bc02087b1a79587039dccd73b023b597232412d3b6855c845f3f69d872ae"
   end
 

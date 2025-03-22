@@ -27,6 +27,7 @@ class IkeScan < Formula
     sha256 monterey:       "a75856c7333e0bdfd2668348ed6abfbee95361f1e3645998c7730f84eecf45a1"
     sha256 big_sur:        "43fb51d3ef205224920eee1e85861d8957159684d86d3de76c925b3e14b22c87"
     sha256 catalina:       "a158c41e25fa99aaca6bf29573b4b6e77775be3402973bd016ee3ef4f9d6c8cc"
+    sha256 arm64_linux:    "f64aff3a995ef7e1742735b56834e1558567f4bc6605fd1740cc1a3c23445462"
     sha256 x86_64_linux:   "2b7b0f9ab06373c381c2133befa3d9524bcdb27c6ccd0f44acdc52d5497cee24"
   end
 

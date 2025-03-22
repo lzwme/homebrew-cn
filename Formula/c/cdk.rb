@@ -16,6 +16,7 @@ class Cdk < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "628ee30b6aecd244ca816a1dd314b7dcf2b3e483a2a03395464b4c4b1aa19793"
     sha256 cellar: :any_skip_relocation, sonoma:        "c6a330d5624273363729084fb7cfe703f85c26c0f38d6fb882497f43cf59614f"
     sha256 cellar: :any_skip_relocation, ventura:       "e60ad33c06a155538e2f1713150c303893b3f77d5b930c1e126a390fc77f73fb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a020afff86107c179aeb9d6fb0d4eccc5e909243a53995c4ffb0a5fe037e9d4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "317ee8c5ae7ba4069672d9b89b2c22ad07432b5e071133118405444d48b6f003"
   end
 

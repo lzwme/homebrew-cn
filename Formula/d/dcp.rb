@@ -14,6 +14,7 @@ class Dcp < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "5609d9e502179089eb3822add208ff8e14643d3cb7f47ef2691f9760dff81647"
     sha256 cellar: :any_skip_relocation, ventura:        "c81ed8916ea09601f859c03baa6adb8356aa5377f461144beefb8aa6eb9f76c2"
     sha256 cellar: :any_skip_relocation, monterey:       "e35a830f17b84a9a76f9d559bb4b8fefd775be1386e2448863f362c8b55862ce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "3b17162fddf2af0a22a18023eb38288ed084201a241572cb7a3bb66cbbe615b7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8559472fddad82054a7b8d277036a6b45d75ea986e9df3196da8514678e6993b"
   end
 

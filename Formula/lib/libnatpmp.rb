@@ -21,6 +21,7 @@ class Libnatpmp < Formula
     sha256 cellar: :any,                 ventura:        "2997902f048650bd589d999bb508836f9275432f702041922d63577f526ae427"
     sha256 cellar: :any,                 monterey:       "8d9857a3229541160545cd65308faede6b0a4a49b22491fa2726b9b391797dd1"
     sha256 cellar: :any,                 big_sur:        "b3e8cff2d63434c2f2db23be4caf16799c420f9ef7308dca1173b5cf3ff6b9b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "e0a46bd1dc2998015ddd30fea697d2a633f689af5be97b2b5a8f491eae9558a2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5c61e68ce733b200615ecb9dbabe36a9336cf7d6404a4d869573a365acaebc08"
   end
 

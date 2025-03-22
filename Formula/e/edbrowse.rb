@@ -14,6 +14,7 @@ class Edbrowse < Formula
     sha256 cellar: :any,                 sonoma:         "1676e0f9d76fa15be36fdccb36642339a687dc0934a5264c16de342c012489ae"
     sha256 cellar: :any,                 ventura:        "b636c25683db853afd169a8e7f71df6cd469746bddd8b5724bf89167528ea353"
     sha256 cellar: :any,                 monterey:       "97bafb01fc2aea63b9dba3a79ffd5aed0206402751e6133ce3713c1c6ccb85f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "db3748f9d01a17f547f46713a225572b1c58046d3042f0f712601343aac50227"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9e500898284f9a555e06cae23b9329e734825dcb1c1fc743327ee51584a226f9"
   end
 

@@ -21,6 +21,7 @@ class Stm32flash < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "eb2bcf9748b22a6d1809d675ad765345f0f539d0dbf49449d0977618e4e7f019"
     sha256 cellar: :any_skip_relocation, big_sur:        "b3a9d072fce40d5fd3af1f86019966abf4d4a711b26ad8539ec382aa6dfc5848"
     sha256 cellar: :any_skip_relocation, catalina:       "8e76969a80aef9a483e6ad09064f1b7d08e2d5e02829c12d2dc0e9a31256f9a3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2c3d8911cbf5af6047635b5c494c369f587fe8b8a904a88e3b8fd9e0a2e897d0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b63e10544099db4a148fefe54fe036746f96ab2e1d637e73702ae458cb442f93"
   end
 

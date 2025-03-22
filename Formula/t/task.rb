@@ -17,6 +17,7 @@ class Task < Formula
     sha256                               arm64_ventura: "a6c60113d44922bdba309d58bb265ad1cec5109d1b5ab3b4f43e69f952464397"
     sha256                               sonoma:        "2f4aafa45935096b86b0e83ca5734fd0014583db767868dae81c436ddec82b0c"
     sha256                               ventura:       "7a9f8b67f6ed92259cd1ba03dc22c1954bf96ec684bebbc76d2fd060392621bc"
+    sha256                               arm64_linux:   "960048db5e01d5af8b047ec4172614a7bbf410b02bca9f96874d540b88fbae90"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "03fbb2a6f7dc6876e237cd114f2fc6cbd854fdd238d194e932a6cc8f50e1c9e3"
   end
 

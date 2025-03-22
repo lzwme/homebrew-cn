@@ -17,6 +17,7 @@ class Ocamlbuild < Formula
     sha256 arm64_ventura: "c882d5db337ec2c28a818c1060945ec5a0944e0c4c4596504ad229ff59a17f2f"
     sha256 sonoma:        "7caad9fb8e6256e894222ad3ebf15d9e0a5fb540e461032d5cdf74abafa09dcb"
     sha256 ventura:       "6000d51b9774218b3e11998c0230a140e12b1eb373f124e6c12bf875d80741a8"
+    sha256 arm64_linux:   "747624e670b7b2cc2e83a3915c5d9f38d628620c1c98218b8c1da40ae0a44b4f"
     sha256 x86_64_linux:  "664739d1911bb25c0a5375231fe48dd950acfd5e85e1f59154b5de9c01368e08"
   end
 

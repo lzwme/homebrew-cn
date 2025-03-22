@@ -15,6 +15,7 @@ class Subliminal < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c9e1b2f241f29a65635801c65d6e1cdd47e0cbb278b4ac0accce0b77c2e7728a"
     sha256 cellar: :any_skip_relocation, sonoma:        "b0fec59f14211b0908653606b83556d2748004e24ef8d26e6805548e2ba7f890"
     sha256 cellar: :any_skip_relocation, ventura:       "b0fec59f14211b0908653606b83556d2748004e24ef8d26e6805548e2ba7f890"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0557391bbba2b9099f2d96aae520aabe2e2bff3749822efd1809e16d564c7d40"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8043bb5ef6755529fe1ab7f3a387d13f4b39017e6d8f6b3f28783d68f20058b"
   end
 

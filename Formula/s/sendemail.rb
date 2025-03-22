@@ -16,6 +16,7 @@ class Sendemail < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "113001c5e97ed667b4f8401c335b3a337a7354b1562ca8b40b6499e6cdb68278"
     sha256 cellar: :any_skip_relocation, sonoma:        "73385dfdd56d55f9236a3f3b438ca09ad283ef1f1e81b24e191b12bba3840ceb"
     sha256 cellar: :any_skip_relocation, ventura:       "73385dfdd56d55f9236a3f3b438ca09ad283ef1f1e81b24e191b12bba3840ceb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "113001c5e97ed667b4f8401c335b3a337a7354b1562ca8b40b6499e6cdb68278"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "113001c5e97ed667b4f8401c335b3a337a7354b1562ca8b40b6499e6cdb68278"
   end
 

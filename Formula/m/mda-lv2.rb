@@ -19,6 +19,7 @@ class MdaLv2 < Formula
     sha256 cellar: :any,                 sonoma:         "c46a62ff1bb9377ab6a6f3f919472792e9a4b133502dcfe6f5212f7258b34ad4"
     sha256 cellar: :any,                 ventura:        "3e02aa678e179e136c89ff36a35e562d7034d5e2dbb6812f15ee024bf8deb73e"
     sha256 cellar: :any,                 monterey:       "070fccf201ecb813049b8e852808d7f05feb5f673f11ea16f6b885d10c36ef30"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "dc0748c3fc037fec4e7620fcc70b40b9eb1da6e4c93ffbf617fe71555bd4110e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "688227bd6b707a8fba9ae71751c92d1267b1a6c1a3298ffc4bf57d4d04fe596f"
   end
 

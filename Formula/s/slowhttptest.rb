@@ -18,6 +18,7 @@ class Slowhttptest < Formula
     sha256 cellar: :any,                 monterey:       "85676dfbf81eddac78cb31816f86f8667e6726398ef68be3d2b490f3e78028bc"
     sha256 cellar: :any,                 big_sur:        "1818300aa4c7c76e0eb05f100009faf97a07fe43133a7f66e09abefb61a5c229"
     sha256 cellar: :any,                 catalina:       "bce898dc331e6dbbd7af3c39c8b385eb6deb67eedb1e0ca7344d2a45f7f98442"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "46166ade359384ffdf6af2bc9e5dba58cfa680ad8ee9e8bfe3c380e71c1ec853"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3c40357c9bd384b991dc20163d7a1575f2ab2df0f53dfde971a044fd2304e50"
   end
 

@@ -12,6 +12,7 @@ class CratesTui < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3bb365cdc581270ec3b678e116906be8804b8456f9177a9da96c82596c5c4d8a"
     sha256 cellar: :any_skip_relocation, sonoma:        "8a9d22f1366b378bcc6815bcfaaf8757f7411e2ebcbadd8d25fdcaaee58e2162"
     sha256 cellar: :any_skip_relocation, ventura:       "b2a38ed0df2652636b17333925225751941160871dd6a2f33a41e3d178a92271"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7d2f55e2a85701ef682ebd95b1e545419d31ce1342eb665b044441309e0f1d8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d61432d14ad58729837802eb342892a52a6fda9c600efdea3e25f6f3f4f570d7"
   end
 

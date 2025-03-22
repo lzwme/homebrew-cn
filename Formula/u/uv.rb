@@ -12,6 +12,7 @@ class Uv < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a934fe3dde69fb92ff64c603f0e574580ef42bcd48a8dbda7d4e85ad9af6c2d2"
     sha256 cellar: :any_skip_relocation, sonoma:        "665c97cc5867e4164bed4b6d59edfc25304952d50f62742727642d2901bd32d9"
     sha256 cellar: :any_skip_relocation, ventura:       "3c649929ef40c88fe58f891602f867b2705f96e786bd22d2a3c56a56d80ac75d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "72257781e3659fae08493c6c25a535ed55ddc7ddcb320b0f784c65d1387f7f61"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d12d38c38816b47c7173cb84fbd1683b0abeec4da818241ad38b8c1593cb500"
   end
 

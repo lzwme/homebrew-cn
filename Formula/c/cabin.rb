@@ -12,6 +12,7 @@ class Cabin < Formula
     sha256 cellar: :any,                 arm64_ventura: "faed095c05cd1332b7cc9457a043349184796a8a2be912f53f645c7756c5106b"
     sha256 cellar: :any,                 sonoma:        "80b6c8f156f7e1e2439a7c67bc645c97e162215a447035244795df6bba5cb43a"
     sha256 cellar: :any,                 ventura:       "b36772a8e55457d84da02116e8cd33afd1a845496784998d9f8a830a2cad9b70"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7324557007b8078bd0fe5e0733ece75338ad4e63806c426b3f9d423ac477cdec"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d53bf646f306baf6e06a3b84e4f560d1b6e7da5694eb39ad2ebb827a0d79b312"
   end
 

@@ -12,6 +12,7 @@ class NagaCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "41030b9721a9e558efe6904d2454e9165df706291d3b64c590ef3b52ee4699e6"
     sha256 cellar: :any_skip_relocation, sonoma:        "483988b6a90211e77b73e620175066f0781a505a7958317509cecf2764bd28a5"
     sha256 cellar: :any_skip_relocation, ventura:       "c54819fafe621e27634132e58adbdf58d63afede2863bb4deca440a6c902db06"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9cbf9532e04d364f2322bd4e55d6669c8343bc7679dd4cb3efea90380672ec91"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "84f5a6ee4dadb7873e0623169f13259626f3c475504de5d7367f11c3fad31234"
   end
 

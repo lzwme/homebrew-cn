@@ -16,6 +16,7 @@ class Systemc < Formula
     sha256 cellar: :any,                 arm64_ventura: "0318c7fe56225d68c28f70aced8caf7e29481bd54b143abd2e8c1979e6046a9c"
     sha256 cellar: :any,                 sonoma:        "cce974365677a77f35b9e9210c458fc3983c24bd2f71607cac18acd43d718491"
     sha256 cellar: :any,                 ventura:       "dba48d318338030082a310813e68f3708029a7fb9a69a323bc18355db12b5cbf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d204f75195a30aad451d44efc64b1ff98e5d9713876cff4458865be3acd073bb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6db51dd6f15d86564a1d9a5758497d514b1328222c0635fa9b20ccc86b0a9716"
   end
 

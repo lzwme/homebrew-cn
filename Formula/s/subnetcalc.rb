@@ -12,6 +12,7 @@ class Subnetcalc < Formula
     sha256 cellar: :any,                 arm64_ventura: "58d33d69ea03aa071f886e17844195c353e5fa0097f0dc151b065585beb2a2b6"
     sha256 cellar: :any,                 sonoma:        "aa856ed114bf797b86b9969b98b16ab1f80d127b2ee346cd923f66b40c2c9dcd"
     sha256 cellar: :any,                 ventura:       "20b90b6a8187f41c8b0e32983fabea0cefe05ee8434e1453efacc152280468df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "12b2b90c91bdcf2f889ca1b3d8bc26c61a84ce6ecd2cec47b430dfbed03ef268"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5754d5860222151455f2b01d10005d2d38635c83c8fb9f093655e00e8f493cc3"
   end
 

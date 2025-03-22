@@ -16,6 +16,7 @@ class OrocosKdl < Formula
     sha256 cellar: :any,                 ventura:        "b06f4e556b6818d26b38fa070cc9aa704459ce3fe4525f3d530ace039d0338a1"
     sha256 cellar: :any,                 monterey:       "0f49e657e15966fbd854e659a570141eb3f86028074eba50f90a3d0f66cf5d5e"
     sha256 cellar: :any,                 big_sur:        "e7a5a2769dcbf1645d7f2daaf2d3814d4ee80497683ff18fd12196732f0135f3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "866593697a60ffc5e5150e69f0048ddd5829a23d799c662eecc53d378fb3fa99"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4992170c0dd7c7076a2bcbcc760518d2c815b2f918e7b1abcabf21c712f1c544"
   end
 

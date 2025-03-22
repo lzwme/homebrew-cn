@@ -12,6 +12,7 @@ class Codevis < Formula
     sha256 cellar: :any,                 arm64_ventura: "ea1a0d87b40ef80b9703fd13aea536c990a22486e29ffd3da58fe69d358d67ff"
     sha256 cellar: :any,                 sonoma:        "fb7c8b97b77b706314852bd71838810c67e783903409ce94edf69b00ad1a36a4"
     sha256 cellar: :any,                 ventura:       "acc82b560737c762384696f71560573a66d2327f827265819ebf99c52851bdb2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "85a8bfe022daaca844396a7daae091b2e374f5d83b7d15149d6a47bd414f3269"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "de3939e0b77b99e6d62c786955215be6273d5cedae6ccc7e63c3b9a775f7c2cd"
   end
 

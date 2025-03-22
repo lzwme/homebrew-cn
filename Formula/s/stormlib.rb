@@ -12,6 +12,7 @@ class Stormlib < Formula
     sha256 cellar: :any,                 arm64_ventura: "b7f557770e52c0f9174dcc39378f37e271039449a9c0440ca1e1ad29bcbdef0f"
     sha256 cellar: :any,                 sonoma:        "18bae47580410061160fd52e508b6fc253ef4a07b8ec47049d29a3ec03706615"
     sha256 cellar: :any,                 ventura:       "7aa4237edb1220fb6bd6176e6d7783b003089d991adb5e321c231871db752088"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f3893cc39b6b522946b66c160f243d917c951a26f6f65f2b8a883c1648d653b7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "61ecc0f8d4f072d3009874a20c7cc3419e8e7857a3be60865908880a9f949825"
   end
 

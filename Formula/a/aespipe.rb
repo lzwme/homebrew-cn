@@ -19,6 +19,7 @@ class Aespipe < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "5b19f156c0042ebe13e25ab302c4a6e49a57b7806317661a87348b4b071f6c58"
     sha256 cellar: :any_skip_relocation, ventura:        "151c9bd206f7b2c720436867f75b543ebb037e3844124ae5e86a726945cf51e3"
     sha256 cellar: :any_skip_relocation, monterey:       "dff5d59e8ee2b457642e710e267a26157f41a1ed567cf3cc5c012aa62e1e72b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2bfc71445cacf09db629aaa56e8d3fbce8e057a7b0ee20997321195737d028d5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b16cb6c0e9177020073efa7fc9e94df35df98e00a9724b52f69af90cdd66374"
   end
 

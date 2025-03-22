@@ -14,6 +14,7 @@ class Nodenv < Formula
     sha256 cellar: :any,                 sonoma:         "0cd1dc555dc16d7120944a6e5998c037573d9aa2fed040d2d53eb9ccfb35f330"
     sha256 cellar: :any,                 ventura:        "7d77938b7d856eeca7535de6171805392a59338e3a22f31fcfa478ab37fcbc29"
     sha256 cellar: :any,                 monterey:       "2f344ef55716f73ee7ad9ebe9b6b09581010dea4955559eb1f7d5519c14a9c89"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "33a5bcabce0ae707a9b863ff16f16cab19c064fdfbe13d5f0a1af5c78a58f248"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "506fa918399e018d9492f86a2caa5bfe58ec4fe42561cfcd46c3a4c34e3bc81c"
   end
 

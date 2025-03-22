@@ -14,6 +14,7 @@ class TranslateToolkit < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "138e675c021c3e3724dda2344d8da33c535d3bbd57664c339358caa282d29434"
     sha256 cellar: :any_skip_relocation, sonoma:        "b5cb0577213d0c4b8c128f79f2e4bcfeaaec20f25b1d68dbcca5b9a277cfc601"
     sha256 cellar: :any_skip_relocation, ventura:       "89d12d37efe6796a66280c76020d4218f80a076bc32b8ede2c01c14aacbd4183"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "818915968e3b3bf1b493ed8d271924681b03dc0fac155ffed80efd804b8c92bc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c23b09e3c6e7c0933fab4964460866742ceb44dbac597d2f54c4f2d0874e5b9c"
   end
 

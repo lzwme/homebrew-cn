@@ -17,6 +17,7 @@ class Sqlancer < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "132c2d5e369de21ea6e7e7860ca95f44d2a36c5f50325896cf170bb3e49a8d8d"
     sha256 cellar: :any_skip_relocation, big_sur:        "c355a181b18f9c30e07f98dc66b3075a56baeb775646a7b7a0417231110f49a6"
     sha256 cellar: :any_skip_relocation, catalina:       "0bd64f69b4f7f052c5c6b43ef8f5835e41aca4a2e8cd991cdcc21bd27da91e4b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f0eaaca38cb007dc15618d07372f00fcbfe4f794b6f8fcc6114d92c03a3053a3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "afe59e6d912d3a7b055f7cc05ad72ae6f7af06b0cd208241cf0aa4a0e0506d5d"
   end
 

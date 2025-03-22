@@ -13,6 +13,7 @@ class PerlBuild < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "29f8fbb44085bb547f8a743c7c901f7ab1cd0bb571bb37a80241c874630182ef"
     sha256 cellar: :any_skip_relocation, sonoma:        "c3c90eb8a0abf4173cc6109f072a647a096e4c038db4384def5e91ed771abfbd"
     sha256 cellar: :any_skip_relocation, ventura:       "74110bb18dd37b2a407cdcbd7772900d0751740a087bd2b86ee8354b92d9a71b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5671351addb7d9c47ae0e7f7cc5a11eabb9532e0d07021dab6cd18548bc385e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fa96b05a3ea3bfa998356d31fd7719d938aa9554aae4a72b925b6a68f11db11"
   end
 

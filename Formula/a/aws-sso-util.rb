@@ -16,6 +16,7 @@ class AwsSsoUtil < Formula
     sha256 cellar: :any,                 arm64_ventura: "efb299f6b966cb9e1a499c3bd713e90dbddd4b807cd3c9879c457d1c7926c47a"
     sha256 cellar: :any,                 sonoma:        "7805d4f7f3d2ea04b5f1cfef139aa3f031c4072386b2023942b29120c92c8204"
     sha256 cellar: :any,                 ventura:       "801c69f860d2be4906b323f4799b894bb7946d96dc279bdf0f5099b0ee5b6b6e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1aa8bc4fbcfbef80e0ea2fd10bed7dc83a3ca1334be0a4eb40fbd7b538a9b46"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3273d21f75eb5bd2de2a7d52e46260752499e052ec13b18e7cb83c1597fa5b5d"
   end
 

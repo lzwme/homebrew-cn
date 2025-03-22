@@ -13,6 +13,7 @@ class GitGerrit < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ae518d315b919c27305591d1cc24773926b1a947da589b0e50146c98ff138997"
     sha256 cellar: :any_skip_relocation, sonoma:        "843601d279865025574a23dc00ae8e8bdd222a2d705f04ec8939af16aa2c19f5"
     sha256 cellar: :any_skip_relocation, ventura:       "843601d279865025574a23dc00ae8e8bdd222a2d705f04ec8939af16aa2c19f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae518d315b919c27305591d1cc24773926b1a947da589b0e50146c98ff138997"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae518d315b919c27305591d1cc24773926b1a947da589b0e50146c98ff138997"
   end
 

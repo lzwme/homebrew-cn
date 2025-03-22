@@ -16,6 +16,7 @@ class Byacc < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8ea708b5af936039ee437745f89d0db999464ab1dd68d7369e114b09315724c8"
     sha256 cellar: :any_skip_relocation, sonoma:        "652bcab4132cf85526b03cdbfa52294d455500e566febe2891e118ca43351146"
     sha256 cellar: :any_skip_relocation, ventura:       "50253d20fdb4a50ffd1066fa33baddcbd912128cfc7474622bfea06114c1a5d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f4b9d40c105ff1ecc790ff99cc922270696f004172343b37112b81dfc5524a7f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bb26e744e5e9602d7c1ff3766f2578fb34c1a8a497d3cd02932650d2b6c2023"
   end
 

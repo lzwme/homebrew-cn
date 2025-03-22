@@ -22,6 +22,7 @@ class Httpry < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "349ba4f39066cb02c151ab0f274f6bb9f4ee2cf558abdb2c5a3ecf0e563874fc"
     sha256 cellar: :any_skip_relocation, sierra:         "71014794d2a136fea229dd19d6fe7dc136037c074a817d70bd7b13713653f19f"
     sha256 cellar: :any_skip_relocation, el_capitan:     "56d6a77e429bf9dde3d5e5edb9959fc7ed913430236cf628e0aec6445c07c85a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a4bf3a6354608e592030d226229360572cd999dc311d46a2a11908736fec6cf3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "362c2d3249eec72e7baebdde1a8c0a2e6a2b005e70b516733b96fa01e2aaf55e"
   end
 

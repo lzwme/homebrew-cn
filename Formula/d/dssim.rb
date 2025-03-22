@@ -11,6 +11,7 @@ class Dssim < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9efc6c88f8238f85dc0ffa726d7088eb5be0f4a7e0410aa3ba3c39a6d5258f60"
     sha256 cellar: :any_skip_relocation, sonoma:        "a3585108c4c20d7e0af5c07ebb6f3455e4ef29638077a712ddff4cf8f7017e39"
     sha256 cellar: :any_skip_relocation, ventura:       "c7a2d47f9818c50be6379f92773d0677bc4cec873be83b56060f04f159069e19"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a729aa84f38425e25c9e5640c1c18d2980f132d9a52becfede48f9c3003b2359"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cf26940ab54503cb8be6c091610aa90b2e12cd46b05c9a5b8a7a15298ecb190"
   end
 

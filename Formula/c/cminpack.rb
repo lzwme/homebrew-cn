@@ -12,6 +12,7 @@ class Cminpack < Formula
     sha256 cellar: :any,                 arm64_ventura: "ba4c53b942a58d25cca56a66bc8b66383042b4fc675bacd71e07a88257035818"
     sha256 cellar: :any,                 sonoma:        "fb0d98cea9e085b73c79cd908d32e853f2eed59ec62bed48fa75ea2c5695fa7e"
     sha256 cellar: :any,                 ventura:       "86f126b5834472ae2a8db9c866c2e3233b9b29551d50a6df956015b0b8f16745"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "84ceb2a64c3d2be1e1fdec4a80fb793d1ee1cca486edaca6d0070d8865f7e244"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "90f55468bdd04566bbf3e98f914a13aab28e016a20f3f80c63804159611f9997"
   end
 

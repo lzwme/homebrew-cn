@@ -24,6 +24,7 @@ class Hevea < Formula
     sha256 monterey:       "db2c216ff60400ea161cd163af81b5c62cb2749d3ba0109e4ec76d13f0f57d3a"
     sha256 big_sur:        "a583d051c2a5257acb2b60d9fdcacbafb63a6012c4d3f4aa293a5372020fb942"
     sha256 catalina:       "22faadcb4cf36deb5864e240ef5e7e718dbfd10308adb3582acbf53d653d082f"
+    sha256 arm64_linux:    "1ea230b32d26c06671f04ef6860d3fae36a6287a0f308758dea55606bbaf3927"
     sha256 x86_64_linux:   "06f64e05150caebad2f34b80f2861b3c69fc4fa1a483d0863e269007d77de28b"
   end
 

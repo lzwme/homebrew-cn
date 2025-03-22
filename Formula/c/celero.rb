@@ -15,6 +15,7 @@ class Celero < Formula
     sha256 cellar: :any,                 ventura:        "42ef19078dce4acd6d50aa076308fff7910e06355c0a8eea600e1832fd86a87d"
     sha256 cellar: :any,                 monterey:       "6011c0b09373fb45f77460bb8b3019f4124748f53007dae89421e0c801d9b6b1"
     sha256 cellar: :any,                 big_sur:        "5092b4825085f08851008b0f776942ad17629900a485e825778a97599b5793c1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "4ae2832039586621fe1078a485472891b063590d0dab431c85f1eb3ec4b37b85"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5d360871cfd166555c2d16b0841b4669c0755532da2970bab216f7f9524596a5"
   end
 

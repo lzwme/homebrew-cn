@@ -16,6 +16,7 @@ class Libp11 < Formula
     sha256 cellar: :any,                 arm64_ventura: "621c22fec9d9f4a3f17b370bd92e97ca1ece49e7a813e863d64db4ed845105cc"
     sha256 cellar: :any,                 sonoma:        "e010e9fbaf03cc911d790fdbcd555f59f96babeb9cb6726e3df72f4f5cf08f2e"
     sha256 cellar: :any,                 ventura:       "f2fdf3fe55448304d0699d293f5ae42670d3a66d78007d2178d147455a95a1df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1ff1243ca21e160c7e34a254deef46a741561b45d9cbf356ec110cd535b97fe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b5c9f823614a8048d5d01badef22552f87348814f0286a76119481f72acf940"
   end
 

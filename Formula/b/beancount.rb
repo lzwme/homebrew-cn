@@ -14,6 +14,7 @@ class Beancount < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ea4e49c721b56ee17b5c3cb7adbf37427f73beb5feb9dba8b96319f2c15e6a00"
     sha256 cellar: :any_skip_relocation, sonoma:        "c87741dafbf02e62986b0fa4b485542bb2f1e8cbc2d8f967475e94d46058c6a9"
     sha256 cellar: :any_skip_relocation, ventura:       "0417cdbffbbb58e14ed1f6496f390da38ffddf7f43483206ae61ceb97dff809b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b9d0b7dd0cbb81adba41b95cf6f87bd7810d5236d087c884c2398fdfffefba3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f61124a05787d02519432086cbbbafef2b979e40747d7e9801559d81b0b1003f"
   end
 

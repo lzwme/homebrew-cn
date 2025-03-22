@@ -14,6 +14,7 @@ class Halp < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "ded7efbdeb80254547423d1538af040d268252a597d326663caf9aa469ea48b6"
     sha256 cellar: :any_skip_relocation, ventura:        "7387bc748aaba59be28c6c0e220034e115097b7b7ea453c75c128bebb0982286"
     sha256 cellar: :any_skip_relocation, monterey:       "a604ca28c91bcc23f3ca2d30c185cca378440a5ddbc5c548285e898f0b1d863e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "bf016a89b83b085ec2dfbec7654727141a413552afee4bd0cfecee15d0895217"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "525dfbe3581d9fce47ecb99abf03269c9b36282498bb6d971844846c66e01bf3"
   end
 

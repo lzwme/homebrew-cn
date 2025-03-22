@@ -25,6 +25,7 @@ class Nrg2iso < Formula
     sha256 cellar: :any_skip_relocation, big_sur:        "fad5cff7cbfe394a08dbe9f52f0f0d7872be02fde704cd610bb2cafba844fae6"
     sha256 cellar: :any_skip_relocation, catalina:       "4928245286399a545930ec079d6299a844e334e5cbe90eab8d8e55f0fc690f66"
     sha256 cellar: :any_skip_relocation, mojave:         "3d965e8881897c8c2b42acc476b066398eeb074acce577f011c850c0ee7b5eec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "516d3243088cdfed8f020ec6aa7a5684b18006c9bbf34d70bc52ac2a8fbbb025"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "740b102a8a4df8a8523a8b7812e3eed07f9ce6e0e1c8557867360fe4c1a18136"
   end
 

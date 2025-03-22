@@ -12,6 +12,7 @@ class Box2d < Formula
     sha256 cellar: :any,                 arm64_ventura: "9da5361dedc96d60cea7e7f8b7fb1cba3dd9b4151a4cafbf6142ecaa8483cf66"
     sha256 cellar: :any,                 sonoma:        "856209a34ff38af5618ec21f2b2680f564eeb85ef313bc498c4063c6965ce691"
     sha256 cellar: :any,                 ventura:       "b88e24b021259061e7c0037d233be09bff0a9c32209abf2684f662fd64f7d3c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "37630c21196e071f2c18e7da721a092f7a6baa2c0cc81dba6385efb237aa781c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d264edcb343f0271dbcc1d5b17f81f29af2650a42555fefe04a8208b4f010693"
   end
 

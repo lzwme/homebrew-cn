@@ -14,6 +14,7 @@ class Pocsuite3 < Formula
     sha256 cellar: :any,                 arm64_ventura: "1024b8dd052d7fe620044a0b586b68d30b9a47458befc5505fabc3763ef0b781"
     sha256 cellar: :any,                 sonoma:        "8ff6c043f358751b8ec87f4e31e809e2d327c8106d1af9902300467ebb1b23ee"
     sha256 cellar: :any,                 ventura:       "d28d2d073a6750baab12d7c6634ab49414285ff0514431fbdd03be91b92c1ada"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce20d9a3bde0fcfe61f007f09c4bbbfa53264182dc810ca4d9759ab1c0e82cd4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac20fffbe19b7f2cc52fe4f16c89dd193023686dc2857957720816bb8d81486c"
   end
 

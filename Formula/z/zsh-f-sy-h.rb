@@ -12,6 +12,7 @@ class ZshFSyH < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "219d0141922740e742d765b4e55a3b6331cd0deaab671c07a19a085b04e2f7ef"
     sha256 cellar: :any_skip_relocation, sonoma:        "cd302983d8a9fc3a2764b8e1b1936c8b2d261193650ba5d3efa1bac506291a3b"
     sha256 cellar: :any_skip_relocation, ventura:       "cd302983d8a9fc3a2764b8e1b1936c8b2d261193650ba5d3efa1bac506291a3b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "219d0141922740e742d765b4e55a3b6331cd0deaab671c07a19a085b04e2f7ef"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "219d0141922740e742d765b4e55a3b6331cd0deaab671c07a19a085b04e2f7ef"
   end
 

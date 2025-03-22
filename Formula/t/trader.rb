@@ -18,6 +18,7 @@ class Trader < Formula
     sha256 sonoma:         "cf2f81124457ed2d2e149befd2a4ae5565b4bbbeee4489065f5728a7258e9c1d"
     sha256 ventura:        "eb2510848f86e058d2e71cece3b1c8907266da2b9a92b1e76161c45e180af9e8"
     sha256 monterey:       "89dec91679b5a775aa0d89ea0c9af16569b69dec9903b99998b9d7421564863c"
+    sha256 arm64_linux:    "9c2b9f22360ef13d813e3b024cc74855e4e0cc4ef5933eda96f19f1961e793a7"
     sha256 x86_64_linux:   "39db68dcc4e59eb947e208f403ae5f1f3a8abbefe5b530339b2bd860768288b8"
   end
 

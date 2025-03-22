@@ -3,12 +3,12 @@ class Dunamai < Formula
 
   desc "Dynamic version generation"
   homepage "https:github.commtkennerlydunamai"
-  url "https:files.pythonhosted.orgpackages064ea5c8c337a1d9ac0384298ade02d322741fb5998041a5ea74d1cd2a4a1d47dunamai-1.23.0.tar.gz"
-  sha256 "a163746de7ea5acb6dacdab3a6ad621ebc612ed1e528aaa8beedb8887fccd2c4"
+  url "https:files.pythonhosted.orgpackages08144932a8aee6df2f266c748f88d27a455719d04ca5cf723d5630b7fb215d61dunamai-1.23.1.tar.gz"
+  sha256 "0b5712fc63bfb235263d912bfc5eb84590ba2201bb737268d25a5dbad7085489"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "84afaf9bd4ca944d43b5b34cecf3da8ef839553d54faaf30693ba0d5fcac77a7"
+    sha256 cellar: :any_skip_relocation, all: "07b34f53d10977d68acd14c04017be4df1e554f22e4050929c58ed95ceb1937f"
   end
 
   depends_on "python@3.13"

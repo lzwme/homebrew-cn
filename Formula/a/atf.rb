@@ -12,6 +12,7 @@ class Atf < Formula
     sha256 arm64_ventura: "0775afaaa894c7189eb81f51b361790032a0b66eb80bf24e721ceae3219bc540"
     sha256 sonoma:        "49d27cf63a14a4eeff0c85cfbb0e651cb6fc1ef05a50636bc2d33ba5011ffd1e"
     sha256 ventura:       "489e7b6bc5af5cfde192dd22a4815ef5eea8dcba5517c9e2f082cb3dba361fec"
+    sha256 arm64_linux:   "811726bf4369334022b01758d77fc784c4689f0e24b9bbd6c170fc25f552a068"
     sha256 x86_64_linux:  "4fe4da6d61f2e1a62cb85161526f7030a594af492d2de5965b593638ae13fe07"
   end
 

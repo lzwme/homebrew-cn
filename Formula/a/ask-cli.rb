@@ -13,6 +13,7 @@ class AskCli < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "50dcfa2070028a255e11a25a05a264a9fc5daa156cb9517914fd3a560e116ace"
     sha256 cellar: :any_skip_relocation, ventura:        "eed5bf23802e3c9e24250a75088dfd170936908b1630c4ca6528ec08de93bcde"
     sha256 cellar: :any_skip_relocation, monterey:       "08fefe63b075593ac0cb4c75d42f6c2ab48bb62d9c630b4b59eefbe69de6d955"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5075ee29be0cae332a709af27e7ac67c1040dba2bdd1e9b99af77ab595155ba1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a076d74bb089649513e80702d85a273a67c3f453ad1ef4ca962f55f175d83c81"
   end
 

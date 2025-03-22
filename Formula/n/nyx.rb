@@ -15,6 +15,7 @@ class Nyx < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5d7b2a2b86698a16d079eaa5f30e5f21fa0dcef3f356f2532fc3eae3bc8353ef"
     sha256 cellar: :any_skip_relocation, sonoma:        "c01145218094ee9fe66681f2fef001e7f5f12f15f83506626da97b03de4b7d96"
     sha256 cellar: :any_skip_relocation, ventura:       "c01145218094ee9fe66681f2fef001e7f5f12f15f83506626da97b03de4b7d96"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e66bd75e96eb2c49a0a6ff381205b7d9639dabda79d2aaa512a4baa7028b224"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d7b2a2b86698a16d079eaa5f30e5f21fa0dcef3f356f2532fc3eae3bc8353ef"
   end
 

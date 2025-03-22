@@ -16,6 +16,7 @@ class Sord < Formula
     sha256 cellar: :any, arm64_ventura: "41fcd2ff39ea5a50392a5a3b31c523ca5c7e087e1d0124c1b8101da518e40bf8"
     sha256 cellar: :any, sonoma:        "d1230019e29331722881ff6ecaa0533dd452b350792394a7c8f701f8ffde46dc"
     sha256 cellar: :any, ventura:       "70e0cf3dced39cd9b5b0a069a0261fed4e758412f625e4803449d27e6fa07f72"
+    sha256               arm64_linux:   "cb55e96bc9ead5b118ced1ace42f11a2641e7475c6db29e24facfe9bbb743146"
     sha256               x86_64_linux:  "eee6fa6352554b778e2a51f04791a165d4bf3ca78379ff205481ae157bb2dc35"
   end
 

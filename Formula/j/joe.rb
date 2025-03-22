@@ -22,6 +22,7 @@ class Joe < Formula
     sha256 monterey:       "4eca39a7205e80d0be7c9eacad34c1af5c2b2f7ac062b803a7245762efec9498"
     sha256 big_sur:        "f108312e44e035b6475a7dc91096eb65cea4567cf00a9ad9b21f69da06af65ec"
     sha256 catalina:       "ec0e97a7a7ce9b63775dcc978f23efe2780a7319f1746246b092378f04e2caf6"
+    sha256 arm64_linux:    "4b9a2c586152f8f8b238b0ea531b5dc7982eeb2b5cc7e3bb76d7ce32c87cc96d"
     sha256 x86_64_linux:   "ca9c9790b7d1c6b64cec4974c90d6855bd2e977b80399a7240d2a3392551a874"
   end
 

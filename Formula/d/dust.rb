@@ -17,6 +17,7 @@ class Dust < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9da5e05e0e6501858e20f592b05b311b490522d1614c3c96ab6a24de7c4156d5"
     sha256 cellar: :any_skip_relocation, sonoma:        "be3492cf0abbfec5e6c55fe6a014d6c94dc0d586dad709a74b300ec7b251d489"
     sha256 cellar: :any_skip_relocation, ventura:       "239dfd5587cda64044f8c7e42665111e868856ae3451e32826befc1e57da561c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2863f676bd927b26075497e3adb25b053e7b1f34d526b136fbdae60ad41801c0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9077948ddeefd028ed4db202363c5c00b8151a3ab8ff62974b2717114f6b5ff6"
   end
 

@@ -16,6 +16,7 @@ class Asm6809 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "90fe61540aa6bf9dc8b1cf5653144c62c750e142c4b5287973eb36001e70da29"
     sha256 cellar: :any_skip_relocation, sonoma:        "709c34e4b22eeaafcbadf3afa236692e1164051a15ca367a4da18b7d86a3f663"
     sha256 cellar: :any_skip_relocation, ventura:       "4693ee67232d5cbc10622dc754b76faceb8db80de259c435d1e1aadc823d5070"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "682921f0db37c2f8023c0bdf4b426508d9bd4cf9bae7c91519d1786a883aaa03"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d9ef991772bb7e72626b8abbf584a04cc9e75d858a2565627e13837a4e57562"
   end
 

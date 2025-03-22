@@ -16,6 +16,7 @@ class Dnsrobocert < Formula
     sha256 cellar: :any,                 arm64_ventura: "beda3c9d50507e5e90e7a2a8110de1349ccab80f551b89d711fd694d91d62dba"
     sha256 cellar: :any,                 sonoma:        "936333f768e7835d51c62504b1161b969424dc6c3b39ca166413c1eb1cf0cb10"
     sha256 cellar: :any,                 ventura:       "02b7ab82bbddaab9707519ad0463ca6f2d283701c62bbafcfdc6acb9fe6577fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d8bf8e09861da46503e7ab3f9e456eed5c7a877ca073d9808d954e207dec4a2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c85f60dc1e09fc0996da1d123fff4ba864d77dac422d7b57c9b5a61c09be87d"
   end
 

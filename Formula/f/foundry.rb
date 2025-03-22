@@ -17,6 +17,7 @@ class Foundry < Formula
     sha256 cellar: :any,                 arm64_ventura: "cbcf0183338dd2c1fe828751be9beff628b463dc9823de6663d862f880b9d3b3"
     sha256 cellar: :any,                 sonoma:        "63ffceae04fa1e06412b6f3ac9d0d31add503b6640024d0c36884dbb6b7968da"
     sha256 cellar: :any,                 ventura:       "d4b44ff2c60a65e49040aa6f8d1caac6ffab4a762420fdb1fe85afd1221487bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9cc23104260e5ccc7ae875eae176fbcba7505970217a200c2ceaee3e97ececbb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c3e2a9cb0a69adb19eb0deb11f5ae79b24830ae17e0eb12120622fa60de017e"
   end
 

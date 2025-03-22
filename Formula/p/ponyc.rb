@@ -12,6 +12,7 @@ class Ponyc < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "42effa3a3be2b6514c1a464359f0b34573e3063e510635d7fbc15e26c425e7e3"
     sha256 cellar: :any_skip_relocation, sonoma:        "8db4eb7a97ffe5010a0116a75fcb6e8700d5dc7d47874b8a62757bba8942bd0c"
     sha256 cellar: :any_skip_relocation, ventura:       "c27dd9b385726c4f9a917cf8377b2c4539188c0eacbec1144cf97bcd6d2fd86f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dfa6233a76b2d763cf313cc94894eb1c65d630095951d740e4b18379c4aa414d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b893acb2605a07e6a2f85f2a8a9f40766ab6ff760b41fc71ee4bad4995ae6c68"
   end
 

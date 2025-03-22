@@ -11,6 +11,7 @@ class CargoChef < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2ad84d474218a8bef3060b73a016e3dd7167616f496bcc9c3b9072311c4d84bc"
     sha256 cellar: :any_skip_relocation, sonoma:        "dfdbb72bf46604cd5f0f35bd8e6b7d5dcd67c14c6233eb186a62a18c1e35cbf4"
     sha256 cellar: :any_skip_relocation, ventura:       "10c7510f672ed91552e10e702ab9f67014470e3375076552804c2666fd827fe0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e57a158b14024ae12126747d3ccf13b000b1269a15c69d52e42d8280f00baba4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a3b2ee0048b5f03c09967054afd7be85182404094bea559326b4ea44aa8d5d0"
   end
 

@@ -21,6 +21,7 @@ class Libabw < Formula
     sha256 cellar: :any,                 monterey:       "79862a34d53145dcd6c2435578500f6fa01f8697e294d20001430d07ee4fcde6"
     sha256 cellar: :any,                 big_sur:        "cb183a618afaa39fca1c827c37d3e93c163b160af94290a65f87ca226a129415"
     sha256 cellar: :any,                 catalina:       "01cfa53a2e623a95444477cc924aaa67f362dcf18b5c0780ed271284fa66174b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "974b1ad55085f776105bd4bd54436690dc75fe3552769d18da5babf6288e5ad0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3080aed8222be7eb35addd5e04c18ed6c0b322832059a07d029ab1c814c2190e"
   end
 

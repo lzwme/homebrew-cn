@@ -21,6 +21,7 @@ class Traildb < Formula
     sha256 ventura:        "0534a5fd56705faf95c68bd3a4e0ab4b401baaef55d4e8fc37f88126643e5f16"
     sha256 monterey:       "f973d38d9cfe84c422bf98fc4c91265b2d3865efde148fe9b32a2a3af75d44e9"
     sha256 big_sur:        "c86da6038d5ffb50fac4db5af5e0e4cb91c93814fcd712fc4e2697747db2a0a8"
+    sha256 arm64_linux:    "3f4b1ec53424608bb138857437b16b36f9ec0ca5272e2833665d1c2280b25a20"
     sha256 x86_64_linux:   "eacba47e211b4e29a1a44507087e2fc1cb501f00c853ee406a0c954c8ba4c47e"
   end
 

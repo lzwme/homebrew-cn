@@ -12,6 +12,7 @@ class RubyLsp < Formula
     sha256 cellar: :any,                 arm64_ventura: "00ec0d97779d8cf3e3573258ecf981c6ab732a8acd6bb640f95b8392fa21c261"
     sha256 cellar: :any,                 sonoma:        "ab1046204bcf3caeba13668a82e4f860e19f94b7a8384e456f51b1bf67607f77"
     sha256 cellar: :any,                 ventura:       "48aeba22f1130e70a774a6028a2ee4aeca4559ee1e851728dbcd3d383165a2ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "018638677175054cda80e51f72cbca17badf29f9c8e82ef978c325737e7316be"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8c3a46977d022c8f86effe5271b3cad99910506ac44730e781551e9f385f675"
   end
 

@@ -11,6 +11,7 @@ class Nmrpflash < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e9e06317b3956276ab636c5c847a90554d61ce680ae0728116ea745afad94f99"
     sha256 cellar: :any_skip_relocation, sonoma:        "c840206c76bb926c5987fa4c201ec74ade3cd5a632bcccdc4b19a3a99d7cea0e"
     sha256 cellar: :any_skip_relocation, ventura:       "155a0a593129729d74995cfdfec9d7b10e42effed644c86e13ca7ab984f5d11b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b03e266a2c556928d36c0d0e98bcf68eba0348224f3bd0ff44c9fd06f2637a7c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c766ffefb78975b2c25d35726782e2b776888c7565b84c06f76db7f602c83db"
   end
 

@@ -14,6 +14,7 @@ class Wtfis < Formula
     sha256 cellar: :any,                 arm64_ventura: "5b930e5e323634a47a4c4fea6c4fa4c500cd736c15ac466cb4d93433f2d726ec"
     sha256 cellar: :any,                 sonoma:        "2807190eb306dc7526c4c0e17e92b27c7c517de8492484b063d4d1408b2d8f2e"
     sha256 cellar: :any,                 ventura:       "7783ddc318b4fc537e11e331e5dcf72075f83b5faa74012365839125d712bf03"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0d7db4fcad6c8f69a8e7e5244f8b2fb3bb1179244b0738155684e4f75e8af7a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "322c471df108be3ef1f3bf8deb0fe90f075c186c6a5ff292b9ea41a204004946"
   end
 

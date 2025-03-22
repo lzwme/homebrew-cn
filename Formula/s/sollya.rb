@@ -17,6 +17,7 @@ class Sollya < Formula
     sha256 cellar: :any,                 arm64_ventura: "7fe203ca548328e6cffb2e6d963d00cba80e9842b4c1b71f43ae9b1fcb4b27e6"
     sha256 cellar: :any,                 sonoma:        "2c83c3d2bb45f3b7e16c96530a6a72b114db18a81c7b4c71db50e47c385e6815"
     sha256 cellar: :any,                 ventura:       "ba802f6fe9e582b5fb012aba5c14b69e8ab8586ac5c2d3e02d8f290ebedc64fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "34dce0bd22536f4136ca5a874480f1ffe4228f86ba584b292af23c64cbc80ce4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "57e1b7f081dcf28664b497a41800a3eb455cb3ce7a4676ff651e06d67cbe6142"
   end
 

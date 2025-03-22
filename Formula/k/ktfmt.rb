@@ -11,6 +11,7 @@ class Ktfmt < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "520a806c81cf73b9114cde115eed478a12fe16408ce479025e59145ed9fb7b3e"
     sha256 cellar: :any_skip_relocation, sonoma:        "70c27859a5649fbdb01d3c6ba3353458a4fc2cfd586a26bd41d95d3871586650"
     sha256 cellar: :any_skip_relocation, ventura:       "96f291159d94270a217eafb0ae97e47c78ab52d333db38b3abdf5698b68ce92f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "af8fd3794aba5fceb429d7d23aefb92c594ebcec2f5529cee7ad3fc69a568b04"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "24e562f6d2d1c82a7cbd980cbd70506a60f7d873b23e03e120ac861aa8fac226"
   end
 

@@ -12,6 +12,7 @@ class Pkgx < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "935ee645027dcf5412c089949f3a5c3a341f4d273ee01b0a1d7ab132aabd231e"
     sha256 cellar: :any_skip_relocation, sonoma:        "76107a95b48e28b983f00664fd7d70f88a06c92cd148059e0c2e5033193a4a01"
     sha256 cellar: :any_skip_relocation, ventura:       "9de9e043762362bebfde0bc89fabeccf35db021e361bd24ab6ccb9dec349d9a3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "63a3b1cdd35e8d0423049b1883beaf939634cbebb38335f007dec2ffe6519211"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3c4ba9a40187b17191f255cc91444e55391336b8011bfc5d0b1e2cea04c3bb9"
   end
 

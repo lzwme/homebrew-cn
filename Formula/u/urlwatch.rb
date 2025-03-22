@@ -13,6 +13,7 @@ class Urlwatch < Formula
     sha256 cellar: :any,                 arm64_ventura: "e347ee6bec4a7acc257dc0a33e44eb0d6b7157788de95d952d2bc92f86740a9f"
     sha256 cellar: :any,                 sonoma:        "a65ad820cba9da748602dd03ba112ccf49242972d5361ee90f9ffbb9d9f06ae4"
     sha256 cellar: :any,                 ventura:       "0fd7db4f82a22ee9a0b4a9a58dfe46c63a09c41d06cce7e0be940b60c682b788"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb939b185391a35771255a41b0f3c855de8e2ad72ea4a26ad2140f0dfbb11765"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8d869ce99654e22a28d552abdf8dec3e5ed07ea0327ae787a97e7bf3c5f6471"
   end
 

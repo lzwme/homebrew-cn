@@ -18,6 +18,7 @@ class Cf < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "8adfb68d96bb5baf3559102add0b8242e1c2d2eb4f4ec577624adf49b326b034"
     sha256 cellar: :any_skip_relocation, ventura:        "dbc2e7870bf045b37011c48612b393f9416a3f4e9cb2a8e49b1908eef5bd6adf"
     sha256 cellar: :any_skip_relocation, monterey:       "43b2f71f97887ebeb6cff4a87be8599161afe5d081db33cf01b1a1bbace464c0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "465bafd8f283eff64e7b301eb57b3ddf87d783be1bc965e7efcec56636a2b49d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "78ac7581dae658e0e16a2413c5c9fda7725460394f707c3f78c65b99f9557692"
   end
 

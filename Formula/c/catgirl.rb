@@ -16,6 +16,7 @@ class Catgirl < Formula
     sha256 arm64_ventura: "e6bb55c082d4b2ceb8328bb4a7723aa3d56168258cad31f0fbc9afad664cb2cb"
     sha256 sonoma:        "13112c4d7607f8ca1f991a1980b1a72636d5359b5a8e6e09826ce5a6167abbff"
     sha256 ventura:       "86720e048ec46eba3a7ede53e34b6b944d802b451758ed5f1cc20a0f87d44f55"
+    sha256 arm64_linux:   "ad047d854587f1e4456b6fc7c82afb23dffe5ca589de4affb3fa35da7c594bd6"
     sha256 x86_64_linux:  "b6849416058a2849403173bf34aba0a45d8c27f3a3ff2e43973f0480f6552c00"
   end
 

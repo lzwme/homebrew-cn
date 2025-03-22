@@ -11,6 +11,7 @@ class SqlLanguageServer < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c0178437b507dcbd66fcee1dcd2d74ee18978674c727dd0b6df3aa20d700fda7"
     sha256 cellar: :any_skip_relocation, sonoma:        "6940e85bf990b6acdea29bf09b494353029c21b4d61643ec8c38020ffac079b2"
     sha256 cellar: :any_skip_relocation, ventura:       "f04f8e8ff0fd5e33596507b7ff9a6d0c27e66c35252c98fd5ec7df0fea6c798d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "076f6542dcfd9cffe3a41f7d5a104e93b1e7740cfc43c494ec812d777a15e875"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "87f49e5d71d234798903200f21b2801ca3eb962b86ac3cf193fed8a444cb3beb"
   end
 

@@ -14,6 +14,7 @@ class Canfigger < Formula
     sha256 cellar: :any,                 sonoma:         "ae03386506e951da6525a8c437c62aee6e232ab8a52ab14bcb7c63de103d4903"
     sha256 cellar: :any,                 ventura:        "163c84d05419a4c6f58fbfaa5923ef2bea68a5c7fb8e89bb7080323840ffe6a5"
     sha256 cellar: :any,                 monterey:       "2481309bc1cc7485ae7fca15bcb396498b19a5ef370cb3a71c9e608b8bc16fd7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "c8f836846182fc7b48b5375c1a69bb771b3ab32f38e4e7dece9c687960cd4739"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b3630e0553221aa87402808455550585ca65a0549a6ca12f1c6d1fa85366596"
   end
 

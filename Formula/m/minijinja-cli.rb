@@ -12,6 +12,7 @@ class MinijinjaCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7e5bb73998a700359a80cbad2f719fa3d2c970165d8a300beeefce4a05329b47"
     sha256 cellar: :any_skip_relocation, sonoma:        "dcf3a5c2e27c48d587f019e96c444c800ae7feaeb386be83a0fb368061a774e6"
     sha256 cellar: :any_skip_relocation, ventura:       "035a3197b355913e593f8c090ec0aaa697567329c0ba07464b711148ed036a27"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8030eca391b847be67a8926b8822d63a5bdc5ab9ebba9d8226ed6ff0374aa860"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f11e6ea1268b5fb01c00034d190c2ccbac413f0fdc69977a200efa2f8c922f0d"
   end
 

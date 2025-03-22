@@ -16,6 +16,7 @@ class Ratfor < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f96ec748ab19e92ad157a25a6b8a45683d236a090ba19932ca7d653a80c39747"
     sha256 cellar: :any_skip_relocation, sonoma:        "5b700039e4301b9b7e6ae3c9d4e377f0486673c450e63badb8d7c8fd953e5257"
     sha256 cellar: :any_skip_relocation, ventura:       "1bb410b5c28cb156882880dd1fd0c561c303017220a47d5e22183d608419ba19"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1015c4ffcb3dc28fb45c5fc2700334b15fa67e1c6dbe133d172401b5d806ea42"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8f68d0f668b609b9f5aaca3b14983db4f4c3b149eb6d3506a09cabf038b0446"
   end
 

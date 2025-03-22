@@ -17,6 +17,7 @@ class Binwalk < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f0ff3203c523ad5b7551b711b4ac5cacd6fe1d1d934c9e8c8a54a6745f5b7826"
     sha256 cellar: :any_skip_relocation, sonoma:        "3666d1ed2f81484d360d03bba8eb74a5175dd5a0461175c20bf1aa559e6add6f"
     sha256 cellar: :any_skip_relocation, ventura:       "048ab0f16801129c741006603da6545c267ec98ea3c349537f22ce8d03ceb038"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c28f00bf24601ddcb037e1822dbea082dceda5f26ac9a152e11d78532a488b5b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9bad450fef7ba5832e71804dc11fcb87d817fabbbf735c2b1dc9fa6c508a1090"
   end
 

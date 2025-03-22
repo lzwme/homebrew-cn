@@ -13,6 +13,7 @@ class Fblog < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "159918297156f46b6f13fe16032a0f3b2e69836fdf00a063dddcf5835f522c90"
     sha256 cellar: :any_skip_relocation, sonoma:        "9648a49e189ceb4a800f5ced71d164cc92b177116d10b507c68454af9206f586"
     sha256 cellar: :any_skip_relocation, ventura:       "6311327a97de4601901eeeb25a511a2a4fbf9a9b86618e155972df34fc78399b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ad7f48d3aecc6a1b2d82c2cf719fc1b138338319598f5461973e90c3c21ee8a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "37f02dbfb49c62b0d0dbda280d6262f503cb3a45fcdb327e6323858fd75f53cf"
   end
 

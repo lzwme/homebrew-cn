@@ -15,6 +15,7 @@ class Alass < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "1b6e4cc531bc410f1c4792f5e8709230fa1312425499c7179712714ecbfbc593"
     sha256 cellar: :any_skip_relocation, monterey:       "3b60c7670145e819679d32671912305e150b55164de74e39b4ea788586651696"
     sha256 cellar: :any_skip_relocation, big_sur:        "8aa09d2f899a21272a4703e587a036e475b4ce060bdb9ef0d214b449157126fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "dc47c934ca68489561b3f325fb9627fe7cd98d2cbffb0bca6bb1d4bbb0c9e0b6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "499c4ee6c9cefa90b135dbfb668879f8a56fd5da4ab20dfd077ae1047b34f0f1"
   end
 

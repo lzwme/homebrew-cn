@@ -17,6 +17,7 @@ class CargoWatch < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d4f823712d892ad4cea59e3a9efb158f2aa03966df7f0ac970b9c5656476e9f3"
     sha256 cellar: :any_skip_relocation, sonoma:        "17bf2377ccc8158f7eee24184f71b4d655fd6257085aad7ee18a0afcec3354c4"
     sha256 cellar: :any_skip_relocation, ventura:       "28a8bfc9784300c03deddccfde05dd22bb83d018c735275e2f2ea4df77a20faa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e1f3420f8e56134c4c42400399b67ea3e3389490ed5fd6d5fbce8b3b93289f4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9bc56bac3a510bfeb102997b3bdba25b01f83dddf771b116c46ef101dc8df988"
   end
 

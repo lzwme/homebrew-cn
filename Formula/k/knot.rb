@@ -16,6 +16,7 @@ class Knot < Formula
     sha256 arm64_ventura: "781ee000ccc02d1b49270855c65d622c24a44fbf7379e8bffc908155ef09e20a"
     sha256 sonoma:        "d35aeb28f9d0f3793e0d77c91e8a015584f252981cdfb33aa6f5c0b76820169c"
     sha256 ventura:       "a46e505e12ba13083f5211cbd0ddec4a1c92d434c4572c33dcc8274a746619f7"
+    sha256 arm64_linux:   "9e36f319c1c0b26372ade4e49936fcf0e7db00aabae7ec187a789e6c382f6dc7"
     sha256 x86_64_linux:  "c58465073d06cb6ad06de3830b35f12650d5e1741e3026b18fad27277cbfbcb3"
   end
 

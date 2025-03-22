@@ -14,6 +14,7 @@ class Datasette < Formula
     sha256 cellar: :any,                 arm64_ventura: "2d7657e90cfc079138110b6aeea100ddc27fa424f32141efcf965f52b148e61c"
     sha256 cellar: :any,                 sonoma:        "7d17a192b993a290fc4e83f91be96f60541b91a6f836ee1e6f94ea3efe87520d"
     sha256 cellar: :any,                 ventura:       "5171c2098fa6b8aa80898fa19f6d8e0223ad6fa6e9f17b7979751f24ad85bb5c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea3266d9ebca235ec010c71fd1aea7615073b8f14e04a1f2f38d7603a6146014"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "30b3e1bd9d559333bdba21004aedfdbfa350609fac9e777f95728d6e42cf4d6c"
   end
 

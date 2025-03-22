@@ -12,6 +12,7 @@ class BeancountLanguageServer < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "556f325fb38bf9bffdc52b3b9e7fd88daac37560b78ceeb28efe389b2df9fd9e"
     sha256 cellar: :any_skip_relocation, sonoma:        "d97d0cc203492c1a4a1f23b5b511ce7201866c9ac85a33c1801903549a7ef358"
     sha256 cellar: :any_skip_relocation, ventura:       "a30e3c99c240779b2f31ddce88ef5e7ab090998b27d33b565802266f0e7db114"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de3ffe95aa88c9d22d101033c5c890c960e3c758bce8f19850f1a7180018e0bd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b1e6d556a63559ec5d98de3cc85ce144fbd5f9d4509fc8020bee4d69a995a4f"
   end
 

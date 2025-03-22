@@ -14,6 +14,7 @@ class AdbEnhanced < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "fdcc36321c5778c81bb587694d04608f9c1e1617c781b0818339c23f9cf78cf9"
     sha256 cellar: :any_skip_relocation, sonoma:        "4ef1a0c31c3dd44a7bd2c72abd676c7b1c2af29f5a16bcd9b3827d0854e304e2"
     sha256 cellar: :any_skip_relocation, ventura:       "22a91ffb280d4b143607d9d4d3040b926e9761ef43772f329f2f8d1fb55b9cb6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1edfaedf9c999a4b316cd95896b499351bca6741e152ea47bda70294af008d1f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d0d9eb3a03003615e28a362234771ee2c200d732c82a8a155cf99d800ae27af"
   end
 

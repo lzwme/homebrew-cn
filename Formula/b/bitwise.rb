@@ -15,6 +15,7 @@ class Bitwise < Formula
     sha256 cellar: :any,                 ventura:        "7b67229824c3f0e7b1ff3f3e1cfbf11f8f0b8f6dec64a75e010e81f1e8e32fce"
     sha256 cellar: :any,                 monterey:       "5f880e578cbd7558572c25c9f5c66a674e0e0547f1bc7e8cee33e4869bb39228"
     sha256 cellar: :any,                 big_sur:        "560ee93626732de20fa8d5ca16058c92f26383a497e8218029ecbe377cda5602"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "576e3966940ee9afff289f542a29073600a1b131c234e6ef49c0b59eb2cde5c1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "843a3614b4b1ce32529429588fbc60289bfdf91086658666c850be7f88c1baca"
   end
 

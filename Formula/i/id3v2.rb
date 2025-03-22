@@ -20,6 +20,7 @@ class Id3v2 < Formula
     sha256 cellar: :any,                 high_sierra:    "ca2c1296318425931c5eec52c70adf98665edeb19d5b681271c3b6353ddf171a"
     sha256 cellar: :any,                 sierra:         "3b1d75af49217a58f5ecb6f0e9e34564b299903898c76145218a6496de3a7778"
     sha256 cellar: :any,                 el_capitan:     "941e267b5a214013c8085c7918c0d8c1805c906cacf162191b764d2ae1df265f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ad8dba5a20ec860000a9f5768fd6f14031e910d7581841b972014c132ea802c8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4b36bc47648e0f0c1f54755ba7320310a5bd321baa33aab440de475644a7c85"
   end
 

@@ -13,6 +13,7 @@ class Vc < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "de1f4a4224f4cb2a9b8cccbcc8bff55f6b54cc060df433f265cb6268e13beece"
     sha256 cellar: :any_skip_relocation, ventura:        "b718e2c8384e24be4668186f14e6a05e025e9244888c91a88ff2c30d0dc6658e"
     sha256 cellar: :any_skip_relocation, monterey:       "6710920fa0199be3b39e5bb10c0ac93f57b322637eadd606d7e307b149c93b08"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7cebe6014bee0f108e6ca0d508c87907d81167b67c6561a9eab3a1ecf3254355"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "885b412d8d27d60b3db7c1a9ee1c6b2a41034e08bafd030f5e363a6e1301e7eb"
   end
 

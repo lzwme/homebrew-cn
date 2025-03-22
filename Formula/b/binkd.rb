@@ -21,6 +21,7 @@ class Binkd < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "18ee6019972abd32129415ce9545fbb80abf690bfe4aaa6dcd599d3ab9ab17d9"
     sha256 cellar: :any_skip_relocation, sonoma:        "7df6b2f5bb3437e91f6c293b63cf7dc28de37b458654d9b925cb0354dd296394"
     sha256 cellar: :any_skip_relocation, ventura:       "1d0c2d8e07da1e49cafed0aa027ea488105b3b8088b69e76d3027d3fdfe70c40"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f18098e2db860abd425689e3f7f45260039ec1b5b4c161f01182fc115fec8b5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d99d97e67e7079053da1c408b6064abff7ff447a116e2044e4a39d82ed654bc2"
   end
 

@@ -15,6 +15,7 @@ class Libnetworkit < Formula
     sha256 cellar: :any,                 arm64_ventura: "98b8837808c1cc14fd94b86840a9f68ef5ee4859949de8fa4e4b2ce2cb4f5609"
     sha256 cellar: :any,                 sonoma:        "1b26f3f2939058fff6be5f098275d150ff192ea5d8dd667677979a542df76883"
     sha256 cellar: :any,                 ventura:       "92e49a66eaa9eba680dd1f1bc37b94ae9af79b273a1dae4ddedae6a883745301"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd31d28f3fcb0bba6ad090cfd9c6a6cb2a24ec55b1c05f4a1eb3ad2feb02dc50"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "32564d543c7c121b193cb9c2d2c769e7f7770165e131037e49cdfc33449a8ace"
   end
 

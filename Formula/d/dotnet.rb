@@ -30,6 +30,7 @@ class Dotnet < Formula
     sha256 cellar: :any,                 arm64_sonoma:  "4db6cc2cb56fbeb0c42d9d0270b3eafa1cee2da98c3856c190a7aad40a4572e4"
     sha256 cellar: :any,                 arm64_ventura: "c5f600f9d4c715582e6478bdfd754e30b14f82ff996ae78c0e104a2f80111098"
     sha256 cellar: :any,                 ventura:       "a7f3e9843b38ecd3a6ff242e7cb0b43a92c8782fad398db4b773a77d5960cb18"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a224c8bcce33a9639d9ddc7b8a916bb6c28ddcf547ffeea8eec1a645b1bd60b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1c32e5ead2aa52e36fa6af06b3de28265bdff707800113025253fb644c56479"
   end
 

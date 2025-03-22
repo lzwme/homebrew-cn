@@ -24,6 +24,7 @@ class Rinetd < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "a3ab75f17f3d2d80dc139d9ed8a380cef57fe6c759520ec31056d0d60a84054d"
     sha256 cellar: :any_skip_relocation, monterey:       "28ee184db1c28e98eecca90ae1e2df0bf8af20c1810675a4298d31d803f6053c"
     sha256 cellar: :any_skip_relocation, big_sur:        "90b5e423280f7ed15989bcea13980ec6bbc5ba2071958236f2b5a52ee55d24c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "3836623c7c45410071cda84c136d8455fe6c0d3efc171baedd20eebf18606b29"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c938efa3c89e08edc1063d301e41ec8fb026e28da8b956f7e9fde90efa4ff835"
   end
 

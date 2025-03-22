@@ -3,19 +3,19 @@ class Snakefmt < Formula
 
   desc "Snakemake code formatter"
   homepage "https:github.comsnakemakesnakefmt"
-  url "https:files.pythonhosted.orgpackagesb4610228586a10b76064431e1d0c965f030b4c7dfbea6d1cfcb4d3f0cb0e6726snakefmt-0.10.2.tar.gz"
-  sha256 "4286a5903b66da7e52763c5e8184da4edc95113b758f4448528804fb54f9b75a"
+  url "https:files.pythonhosted.orgpackages66da0411e11ff46a9706539b1215ecf4afa3e5bc2da60e4caa8cc23177044e6asnakefmt-0.11.0.tar.gz"
+  sha256 "afc3b92e103cfda80fff7e77f357f6cc1dab742272ee76342ba342f30e721f30"
   license "MIT"
   head "https:github.comsnakemakesnakefmt.git", branch: "master"
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b26bcc28c7e1ea655e96b0fc28ece25b56aa50c3010c6c45251e316d36d5cac"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b26bcc28c7e1ea655e96b0fc28ece25b56aa50c3010c6c45251e316d36d5cac"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6b26bcc28c7e1ea655e96b0fc28ece25b56aa50c3010c6c45251e316d36d5cac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "617081ca430c5571eb91f71a3c0938b4aa7e7fc8557dc2c2a0d8f63dd4722bb3"
-    sha256 cellar: :any_skip_relocation, ventura:       "617081ca430c5571eb91f71a3c0938b4aa7e7fc8557dc2c2a0d8f63dd4722bb3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "134a3acf2ecfbc67102471f3eb3a167e0b3251e458bc9e15c151e87412fa69ef"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6f3b238883159ea5e23d01cb0892963b4bd953d24c1698012b53bc5f26a9c4c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c6f3b238883159ea5e23d01cb0892963b4bd953d24c1698012b53bc5f26a9c4c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c6f3b238883159ea5e23d01cb0892963b4bd953d24c1698012b53bc5f26a9c4c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7b5c55a0907942d9ce338e1a2edab23febf8e9fd3d6411c6310ace4c1e2784bb"
+    sha256 cellar: :any_skip_relocation, ventura:       "7b5c55a0907942d9ce338e1a2edab23febf8e9fd3d6411c6310ace4c1e2784bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1630f33ef1dea71add311265206881e08a08e00ce2f9fb866a5c97d1eb1fd09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1630f33ef1dea71add311265206881e08a08e00ce2f9fb866a5c97d1eb1fd09"
   end
 
   depends_on "python@3.13"
@@ -26,8 +26,8 @@ class Snakefmt < Formula
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
+    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
   end
 
   resource "mypy-extensions" do
@@ -36,8 +36,8 @@ class Snakefmt < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
-    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
+    url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
+    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
   end
 
   resource "pathspec" do
@@ -46,8 +46,8 @@ class Snakefmt < Formula
   end
 
   resource "platformdirs" do
-    url "https:files.pythonhosted.orgpackages13fc128cc9cb8f03208bdbf93d3aa862e16d376844a14f9a0ce5cf4507372de4platformdirs-4.3.6.tar.gz"
-    sha256 "357fb2acbc885b0419afd3ce3ed34564c13c9b95c89360cd9563f73aa5e2b907"
+    url "https:files.pythonhosted.orgpackagesb62d7d512a3913d60623e7eb945c6d1b4f0bddf1d0b7ada5225274c87e5b53d1platformdirs-4.3.7.tar.gz"
+    sha256 "eb437d586b6a0986388f0d6f74aa0cde27b48d0e3d66843640bfb6bdcdb6e351"
   end
 
   resource "toml" do
@@ -56,6 +56,9 @@ class Snakefmt < Formula
   end
 
   def install
+    # The source doesn't have a valid SOURCE_DATE_EPOCH, so here we set default.
+    ENV["SOURCE_DATE_EPOCH"] = "1451574000"
+
     virtualenv_install_with_resources
 
     generate_completions_from_executable(bin"snakefmt", shells: [:fish, :zsh], shell_parameter_format: :click)

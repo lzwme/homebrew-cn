@@ -20,6 +20,7 @@ class Rust < Formula
     sha256 cellar: :any,                 arm64_ventura: "5a23b1e5859096c6b19ce56dfae869563a6a8f3cf0336cfb9c4baaac4fa3f674"
     sha256 cellar: :any,                 sonoma:        "c37414b743c3114eeaa163922a1bfcba0b83c1ab12c66b63cba8050e75977968"
     sha256 cellar: :any,                 ventura:       "fe0ac879556f203342252595d7a338c89d7b5946fe7e3583c1da4fa636846e3b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4c6cd8484f327a9b87ec739a916351df5438782e356dbe419ab44fd12abd65f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "220ee3938f62168f0e6edf5d2d95bb07759ad7891f98622a0483505e33e213f8"
   end
 

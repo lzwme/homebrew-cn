@@ -13,6 +13,7 @@ class Openvdb < Formula
     sha256 cellar: :any,                 arm64_ventura: "1b7930e40aba387978cdd8770dc7fc49815d56d14a8fd2c0483ca6bde96eb7c9"
     sha256 cellar: :any,                 sonoma:        "1b5e73284825dc8bb6b91b4e77de1dcec925857db4563c5c3bd34b4f84742d14"
     sha256 cellar: :any,                 ventura:       "b2d1739171e2860d0495f01b00ccc43dbd657bb034472ec5d670996a9aa0b820"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9e32623fa0b2e543eabf195605ccc0478362aa969bda44a79f1a20814226bd5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d859e0d01f913f27b444100afb2d0500a5648f58ab57d49e17b275de56d688a7"
   end
 

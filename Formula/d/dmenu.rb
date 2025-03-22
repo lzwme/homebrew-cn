@@ -19,6 +19,7 @@ class Dmenu < Formula
     sha256 cellar: :any,                 sonoma:         "c39dc953009890c423d335046ef11928bb30265dc6dfda78acff84d715e79e18"
     sha256 cellar: :any,                 ventura:        "d6b512a8f65209bcec6f5880536229a6759df63320f5c58c38d129e133008e2e"
     sha256 cellar: :any,                 monterey:       "02ea9509edf2450330ab9d3351fa9671ae3198f09981e1288b806ae7952da028"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "00ef849437676f26e9a00ee2a88addd3b9360d10bd9edeb8552463a5c0c9bc7f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "61976695e10967a0baa33883aef22eebc3c5b92dd54e2c873732bc4760f16a39"
   end
 

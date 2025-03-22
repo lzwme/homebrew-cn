@@ -22,6 +22,7 @@ class Bashdb < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8f2ec4abf07b97ccf17dd28f503864ff00ea05049a9b844de637612b85478aa7"
     sha256 cellar: :any_skip_relocation, sonoma:        "a66264c4831ecc61cf6ea6fbebfa335cf2152742017132ca9309068a0870b8ac"
     sha256 cellar: :any_skip_relocation, ventura:       "a66264c4831ecc61cf6ea6fbebfa335cf2152742017132ca9309068a0870b8ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c3880ed9494d5dbe3a1dbebf971e66fbdf4edabdad128cc44ece337d906c28c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f2ec4abf07b97ccf17dd28f503864ff00ea05049a9b844de637612b85478aa7"
   end
 

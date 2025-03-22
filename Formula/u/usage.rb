@@ -12,6 +12,7 @@ class Usage < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "be5eb3cb4f68498612e207c9780ce9f09fd6f484be811d8163c52071c20934a5"
     sha256 cellar: :any_skip_relocation, sonoma:        "a5b7a424c172a70b4ec7784b4d45919def2edef13413deb8dce3cda92910334f"
     sha256 cellar: :any_skip_relocation, ventura:       "183ddab917716a499c6debd23da109ac2950913a8ad16d0f21b48efbb945d559"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e81e71e88088017ed32092a783a6252e88d5a4e53fa7689a91f760460ef5dc37"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fefa3e819af1789107e4d08690b12feff6be0129727f7d814129b77a2e33a7d"
   end
 

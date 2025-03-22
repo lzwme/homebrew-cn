@@ -13,6 +13,7 @@ class SoundTouch < Formula
     sha256 cellar: :any,                 sonoma:         "8c25300640bb261c7b370b5f285d3f296f57c76a71bc04bc4d055f0eae982124"
     sha256 cellar: :any,                 ventura:        "7c5bdb94f9c5321743ac2db0f520ba0c8c97389729ae96ffbf428cd4fc1f69ad"
     sha256 cellar: :any,                 monterey:       "c2f6ca0d546e6c96f0eb39cda31822667930c26f06df1eac5ad03119a188ed1e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "dc9bfa95c4bb58f9fee4ef815c18b794e5d110d8c407e0b1ddcd57ee8d0fa8a2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3162dd6ee8f3c0f99ec51c370328e92c4920b3ed4f1d4502d4c79d7733593ed8"
   end
 

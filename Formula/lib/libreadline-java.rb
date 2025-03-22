@@ -16,6 +16,7 @@ class LibreadlineJava < Formula
     sha256 cellar: :any,                 monterey:       "907febf2b1e8fd3455b7a01c04793fe3e65c07b7c35b4fe6031ad1a41535eaa3"
     sha256 cellar: :any,                 big_sur:        "3c0dcc11857d99e993ca70ec7cad6f35560988e14bb94012dedae51cfb4e936a"
     sha256 cellar: :any,                 catalina:       "7c7f86b3f0d9ba98b7e6162adb26777dd903a88ccf331428114428d3454f56d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f922f7893f5c4d14a77b945c532eb990259dad42d1f8b54ac873a6cb82764605"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c5263653854ee8fe953985f740cf1f357ced552dac8fdd109906ba78d3190972"
   end
 

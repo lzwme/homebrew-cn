@@ -11,6 +11,7 @@ class Rollup < Formula
     sha256 cellar: :any,                 arm64_ventura: "6fbebf72ce13ebe4656bf28806d705fc017b3f0c5b0d51a9454bbabe76e5f163"
     sha256 cellar: :any,                 sonoma:        "76cfe41af0f1cdf1f59b6b3b0d48a77aaf2416744085d72a996d3a01cb838aab"
     sha256 cellar: :any,                 ventura:       "76cfe41af0f1cdf1f59b6b3b0d48a77aaf2416744085d72a996d3a01cb838aab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b4aaeea27ad97964ecf9a08c71d1814ca1c85a9ba60bc7aa1ad358c61979fb9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "af8448c4df1c08eab43cd11c952a42e2c80ab782603e721606f962096ebd9cf0"
   end
 

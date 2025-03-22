@@ -27,6 +27,7 @@ class Pipebench < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "9ece6aaf7dcf0e1dbdbba28979ffbb6384f1d69aee8d194db2e009994c655cf2"
     sha256 cellar: :any_skip_relocation, sierra:         "213e31962005a876277c6f8edd3c9cd8964c253496f7945d48aef7338c76277e"
     sha256 cellar: :any_skip_relocation, el_capitan:     "353cabdaf04a41e2169c1e489cd038f9fbe7f33cfd24a5a0b3068449ccc3446d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "8f0404896dc102bec6f5934ed5f5cff1a9458b1afc182ebd0feab239bb0caa1c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2230dc11d838a89ac74db6c346dee27398a0d4fb7377c93ca9f27876f51a6591"
   end
 

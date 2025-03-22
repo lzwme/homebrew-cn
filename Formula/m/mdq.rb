@@ -12,6 +12,7 @@ class Mdq < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2f7106be528ed1ea29886936c698d507ec51f98ce846bd2cc23934c809e45a84"
     sha256 cellar: :any_skip_relocation, sonoma:        "fa4613f8889327a29caf91fa96b82430dfeb20d321f2a1a7ea7e3a262d6f7aef"
     sha256 cellar: :any_skip_relocation, ventura:       "e203fca1c2fb4de712eed84f81860ed88ab46a853230b007b699612f1a7a236d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1142d0a1c28be0c80e21dbb6be985f40137a8329a2d8c3888e3e9d36d2fb7994"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "087ced9427eb7359c190fb4ad507a7db5ab364d6a9fe2a188b91c188bc0cd6b2"
   end
 

@@ -12,6 +12,7 @@ class CargoPublicApi < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "237fcb5ad9726595a5660c6c41e71ddc215f6e38e014e5fd9eeaf45f38add78c"
     sha256 cellar: :any_skip_relocation, sonoma:        "2eab8239a667f4dffcb17ad66d42c86a7678791026eeb55e6ec4b4355fcb94f9"
     sha256 cellar: :any_skip_relocation, ventura:       "2547271ed0da8a1a9cb46ed3251c4e58143535f25a141560fa0636ff6e688684"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "002d74a9309696b702da19677307e8ad600a80d9c9c9cd3d4b4c3767c3a2b600"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7debe5eac122bfc58b86559de1a8d783389631495513b3523f6837f82bc3a11"
   end
 

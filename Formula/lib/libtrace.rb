@@ -20,6 +20,7 @@ class Libtrace < Formula
     sha256 cellar: :any,                 arm64_ventura: "f924814b1274c1d3d21471eb9c49ab2efb61f75e22a61557b7dbbb14d0f7d088"
     sha256 cellar: :any,                 sonoma:        "21c92f7c30fdf1fa0ed6aabd48b1777c0fe252dbc73106cb7be465de8ef840e6"
     sha256 cellar: :any,                 ventura:       "a5980413f55fefc4f1754526e060520257aae1f70f322d5da291d4ab0501526f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce2d4b9fa25d3ef6a8e627ee21653eff269cb204dc42b7665b9c70c922e1bb13"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb7b948eb96dd83e18188176de55f4964f1d2e27e8f8a3bfab6a6275f99a9cdc"
   end
 

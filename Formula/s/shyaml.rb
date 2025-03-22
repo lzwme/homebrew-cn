@@ -16,6 +16,7 @@ class Shyaml < Formula
     sha256 cellar: :any,                 arm64_ventura: "4f7b53eccdb86bdc42971decbb322d3a969b2528f2e298953310d2f8ca230252"
     sha256 cellar: :any,                 sonoma:        "e3fe6328da696bafa084bba416ad7ca30b5f311ec4730a55d5a1fd22c65bad2d"
     sha256 cellar: :any,                 ventura:       "f2877c8235ebc0aeec10fc8b0ccd10d8578688b2b04737f8266a403c9985da46"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee58b3aa018ac1608838d0622c45f4c19440b1eadbc7c037c292f995efc272ab"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a82e1b77d8ad4f34f75ee3f1876aeff1e1dfc6d90bb4602627f5d6c6b0d7107"
   end
 

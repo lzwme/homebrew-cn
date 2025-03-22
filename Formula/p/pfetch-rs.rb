@@ -12,6 +12,7 @@ class PfetchRs < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d037daa279b52f6199cbb6a9fcefa156b4d95f110de49c52d4cba009d261bfe3"
     sha256 cellar: :any_skip_relocation, sonoma:        "270e81997e47b2d7307ce0e8ee95a4f553e0277019ac1a361abdd9ab1336833a"
     sha256 cellar: :any_skip_relocation, ventura:       "bc0edf9427e2be7eeff636925b06c2170b9565e7bcdede47e0b1454932c67462"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f575a553467d25369d3416cb58de53e812b91ffc3f7c3c851dff3190e6ee297"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "502209e4ed7e51463bee5bfb8f746c6913a9f01cef928da2a4f7df9aed7797fa"
   end
 

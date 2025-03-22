@@ -35,6 +35,7 @@ class Nethack < Formula
     sha256 ventura:        "a2ca955b4f528e11d3d5baceeb8bb9783914f595a1a010e12ce23cc5206e85ef"
     sha256 monterey:       "0fad9d74cfab3770167a0de3de5228f2ec5c079e94d6956c140f820b3b8e2097"
     sha256 big_sur:        "9478349296901830cee4abfeecbca729453a87732753603216e6a7ca8b31695a"
+    sha256 arm64_linux:    "d4278220da343d3dcd08254e40c10167c03e6fc83af8634433f241ab9c3e9b0c"
     sha256 x86_64_linux:   "e8904c482b7915880b90dd409d7a66d74b46524d07071f3eb720aa870cf78a83"
   end
 

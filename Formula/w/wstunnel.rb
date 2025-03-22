@@ -20,6 +20,7 @@ class Wstunnel < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "71bff9791b3ee5836a1560cdd2fb51b705304090487ea43a7d01a71182f69437"
     sha256 cellar: :any_skip_relocation, sonoma:        "1e570fda1230df033ccc806cfe85f79e777df70632c26d8bf7a8d1899bf3a45f"
     sha256 cellar: :any_skip_relocation, ventura:       "8115aaa1afe4e839467ff98852edbd116d0349a5fb9ff7ddd9bebb19b597b921"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "53e0ccf0cdc0f20cc196b6b09c281360977e43fb8003bf2de4589e2b81e19db8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "83a428e4e123b08549d2712635350b46eea892cedc2686f1dd044cda44fe0afd"
   end
 

@@ -12,6 +12,7 @@ class CouchbaseShell < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "99354510fd9b1979a7da10ef2c67b282b0b029aca9450e3bbb8e1f2fca08801f"
     sha256 cellar: :any_skip_relocation, sonoma:        "cf75c7a65c8cddad02ca437e145f899dfae38e471df20f709f1119109a74b3c5"
     sha256 cellar: :any_skip_relocation, ventura:       "a379e347f9b4325c6521cb7e30b24f122b3738324e013ea77d224eaf3df56dcc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1789ab9a9d879369b2f7942f59ff171b8fa197f9c1f95029ff5914895cfc4ddc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfbddc03319d40472bdae18473f650e51a29c68b9e2574a58b36f363f43faca0"
   end
 

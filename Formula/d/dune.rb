@@ -12,6 +12,7 @@ class Dune < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "852e18589c50188f0ddd0bec832c17c74b9400d3c94b6c3ecb10da9babe9d61c"
     sha256 cellar: :any_skip_relocation, sonoma:        "02068221cfe11994b6eb57844702958102400a2c8bcb2df2bef0f39c6c9b542c"
     sha256 cellar: :any_skip_relocation, ventura:       "f695643b50ac1d1695cc854cfe2f34ebef17ab04022dfec2a88f8b4ac34438c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "30373cd3701944b29024fcd58cc51629acddd28a246aa28d5678178a6d7db66c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad6260942a57fac0a9ed9a6517858de4e88e29e56b0ffc6ae21ca4f86d07e9cd"
   end
 

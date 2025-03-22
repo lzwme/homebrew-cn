@@ -22,6 +22,7 @@ class Icecast < Formula
     sha256 cellar: :any,                 ventura:        "670f11797d9920650b98eef03ce127985f07ff919f2780ba83c37c12865b93bd"
     sha256 cellar: :any,                 monterey:       "70dcce0432592b1fd218c86a3594b7d38fd664f6bfd0ddfa6ad11ca914cd216c"
     sha256 cellar: :any,                 big_sur:        "1eace833c381d2fc1989670bf8fdfa38d444177c1c855477ffc3c47b659b1340"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1c63fee692d5550f89e7c5f33a602c4d8fcdd9fb24fb35cf701bc69e6254cede"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0a5ea433670e7f6a02c9ff502c6d65c56d6ea5c5e65c3eac418d3da2cf05cac2"
   end
 

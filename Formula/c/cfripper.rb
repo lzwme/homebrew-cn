@@ -13,6 +13,7 @@ class Cfripper < Formula
     sha256 cellar: :any,                 arm64_ventura: "8b00fbe7d33cb30d022cb689315832f724d9792b7c4a4d59868fe3096137f2f6"
     sha256 cellar: :any,                 sonoma:        "c6d807e3db8e2c05d9c0629244cfd3d4294f5cd7e9b38a19a9c6d3e4c8b3f1a6"
     sha256 cellar: :any,                 ventura:       "6068f26085d7281d2960ee2ece98b3280fc225efd4243e3e3e939834cb16ab18"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4340c362fb1fb0e46a2828299fcd3e0aef875b1435aa37d20cc734584ef1935b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c1701b52666ee8e0552babf0db957dc989d2a0ef1008b67e385dee957cbfeea"
   end
 

@@ -17,6 +17,7 @@ class Ott < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "da33fd1e6bfc151dbc8f8f1ed08e086715900c038b29537624944a36e1fb3b52"
     sha256 cellar: :any_skip_relocation, sonoma:        "8271dd4f6d13603b7353203cbbe021f2fb6359356a6fed14747d9c6761eaa477"
     sha256 cellar: :any_skip_relocation, ventura:       "606c6ecd10fad0b508c32072a518e8ff135d9a12dc7dce01e95dba94b21154d7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cdcc901f3f3198e2fdedd4d897ba24e554f88a208efdbbe47b87eaaa06041931"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "73f293a7ca9b84a8c105e9e5106176695c3207f4e92b98890ba72652dbec2e81"
   end
 

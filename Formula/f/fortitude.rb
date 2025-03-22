@@ -12,6 +12,7 @@ class Fortitude < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "24bc82897fcc7502ab8bb94110e432aa0679ad93a7d1ce9aff65943623d18f28"
     sha256 cellar: :any_skip_relocation, sonoma:        "e7f993e19cad482db59d623acbcb03d116fd349c73a31fe79c7be1a44307756e"
     sha256 cellar: :any_skip_relocation, ventura:       "d61d81286e39d17e08e7bc883278d5088249525d4f83c1d4058bcf85b50bd892"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "193df42faf6e0037e71f9c1a5cac44634e60dce6fd30ea1b8ce9b7eed5851d5f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "16d5221875fb2a39c49ecda33c5aeefea6cd543ea7ff40bd38d606c31dc24e5c"
   end
 

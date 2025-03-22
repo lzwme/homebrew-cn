@@ -21,6 +21,7 @@ class Discount < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "aa3f9a506863629ddcb54c8f52193e4bcf55563d2ad0a6e610bb84b262dad679"
     sha256 cellar: :any_skip_relocation, monterey:       "698db890a09df9b32fdaa93ac1f178cfbaf497a5b93ede5380c00ea539bcbcc1"
     sha256 cellar: :any_skip_relocation, big_sur:        "a1cfca46da847dcd5346cecf299b699b6f72826f3f5ab7a25ede643de3c26945"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "469b554f06ee0e4ef331c971b2a7641615209062c3bb1be004b22b5ecb4107a1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ec0cbcf4b9024c8f51ff944c335c2469b85082f8599b34b5b74046c9512afd2"
   end
 

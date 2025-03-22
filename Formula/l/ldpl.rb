@@ -18,6 +18,7 @@ class Ldpl < Formula
     sha256 cellar: :any_skip_relocation, catalina:       "7e5cd92ebf4f0babb34d7af78189e7915731fad5fac39e66d63ecbbce86a72d0"
     sha256 cellar: :any_skip_relocation, mojave:         "b9a0fdeb6134828ef4f60d81339185c5ac5a86123d6301035cbfb3b45c1a91ed"
     sha256 cellar: :any_skip_relocation, high_sierra:    "01f2a987ba4b74d1b50374c7a9a616703a2a8ad479aaad8b80ed8e936af91d80"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b190c24dcb32397a94cf2e8b715ab0501730f2b09a8a82dfadc818271306eb45"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "efdc08bf31ea1c1540603ef30480dd816dd9d62f62f1d352b67936d1d7e005fc"
   end
 

@@ -18,6 +18,7 @@ class Exif < Formula
     sha256 cellar: :any,                 catalina:       "3d4f3d7c86e7c112f9164970cb5e283a96d82235c1633f15de6683b04ec7df87"
     sha256 cellar: :any,                 mojave:         "a600fdec30f561aaf97184c57ef77697cb617dd19795cb89201f9851646e9fad"
     sha256 cellar: :any,                 high_sierra:    "f8978e60a9eedc21fe0da30fa0a6bf900635635a5b1fa827473881b25c12d542"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "df114ade71a7d16168b5416d7b649c109477e4815f73933d814cdcd3b884f76d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a41aa53dd457e0318526a6ec043f18ff97a8a23a9009e0a556c271d0eae14d09"
   end
 

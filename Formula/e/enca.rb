@@ -26,6 +26,7 @@ class Enca < Formula
     sha256 high_sierra:    "5cfee364a5cc91d945d331d980448745d8498703d6b30378bd11be541c5be51d"
     sha256 sierra:         "0920a4dd92de3f4d7725e6753a37d1cb5f2468063f4020def9167648ff21e046"
     sha256 el_capitan:     "889b9d13ff462aee05bb0afdbe012f6a388a2b5e30e13b55954f94a18db69a13"
+    sha256 arm64_linux:    "40416a7bc0c169fc9148dafe33b935c75f18b1bf6d41980a03d1d12d7df18007"
     sha256 x86_64_linux:   "c434ad486d2bc894f2562f7a02257bfa726a8623287e5f665cc4d20f7ea42c25"
   end
 

@@ -11,6 +11,7 @@ class Libkeccak < Formula
     sha256 cellar: :any,                 arm64_ventura: "f36edf66bb02643f97a5aa6bd18330839ee173537a10961e38eaf5c99ea9f2a0"
     sha256 cellar: :any,                 sonoma:        "b86b8c1a529602eec5de64c6d78f820baf7c611b22ddcbc32b187eb73cdfd700"
     sha256 cellar: :any,                 ventura:       "40d03f81b05b53dbc8ca7e6e5c3de4890a2dbf5665d376f5f2a55d57f232bed9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e520ee48c95376e0f23d47dfbf70c36589ea5c50612cdddc7c4cec2546f1f1b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ffb9b214f2a9ac56836f8459caa910d8077dc26cc93e85989a72fcddeee3df5"
   end
 

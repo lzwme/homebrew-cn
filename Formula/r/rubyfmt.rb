@@ -23,6 +23,7 @@ class Rubyfmt < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "72a7b6f0425b6ff0ad1bd324db39cf6dfca154dbfa71eae087088fd22254e84a"
     sha256 cellar: :any_skip_relocation, ventura:        "733d2fe74b0a32666b708b5b265302268dcc088c897798380f2c6f677e06c707"
     sha256 cellar: :any_skip_relocation, monterey:       "00f60ebdde76b0ac30df678b597e2b184b65146021099f8fecde4a36fb7cf4f2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9e5b607b1f35afa1c99674d9da4f15cbd5aa0300fba3969543f58b3b4d358ead"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3d10a98c28284d130b05f63649d4e89bbdd73b57d1522b0b2fc1ca3f4ddce973"
   end
 

@@ -24,6 +24,7 @@ class Etsh < Formula
     sha256                               catalina:       "1bb2f2a1cdb069e4963cba22c6014894a61853644e840341e8fd01f1ca522ea2"
     sha256                               mojave:         "61739a70a6927e119b9f27fe51e24a5bd14f3c5f8cfed1888d1f00682e68c9c8"
     sha256                               high_sierra:    "dbe3c9f5881aa417660aec6e9469123dde475b33551f7207cb3cb7aaade8c16d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7aa92ba50cb31d82079bc087cef138c9d3a230741948f8a4995fbfbc558c8be5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b63d3ead94501c6b8a1f2fd2e6cf5465e7d0f36dc1d2e1303b0ed23254141d2"
   end
 

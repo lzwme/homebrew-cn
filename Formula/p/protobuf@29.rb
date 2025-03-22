@@ -1,8 +1,8 @@
 class ProtobufAT29 < Formula
   desc "Protocol buffers (Google's data interchange format)"
   homepage "https:protobuf.dev"
-  url "https:github.comprotocolbuffersprotobufreleasesdownloadv29.3protobuf-29.3.tar.gz"
-  sha256 "008a11cc56f9b96679b4c285fd05f46d317d685be3ab524b2a310be0fbad987e"
+  url "https:github.comprotocolbuffersprotobufreleasesdownloadv29.4protobuf-29.4.tar.gz"
+  sha256 "6bd9dcc91b17ef25c26adf86db71c67ec02431dc92e9589eaf82e22889230496"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,13 +11,12 @@ class ProtobufAT29 < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "05dfe51811e39fa32877265aeb7b4cf9a094e8c5943efc3e4183757b35ac4618"
-    sha256                               arm64_sonoma:  "551d213f9eeb8dca4e54f6903a16bf07d8da1f3282bc95f0ea7768cc3401dc2d"
-    sha256                               arm64_ventura: "7706c46083a87311e463ed1fe1276097b46ba9415eef497c6dcc2eab37323065"
-    sha256 cellar: :any,                 sonoma:        "350f3ae6f097dc0225487872131b4903de6312ac91e8ac6041736ca5cbfb81a3"
-    sha256 cellar: :any,                 ventura:       "74278a0c469b2a17ff8288bab8af9270c4c91c82f224bceddc61b2a55f48163c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ad74bf96dddbad730854927d14bdc146da1f6321dae30b9ce90b7858210cfc2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b183bb6c8787a6719371f93a0af4c400ba138d88c13b2f68f44476012af62bc"
+    sha256                               arm64_sequoia: "201dfed6c12d9a7eb607c3f42c880633f92ef4c0ac74f09d87c8698104b0d6fe"
+    sha256                               arm64_sonoma:  "44a4fec5d0f3979f8ed747fcbf4d957f0b71ce5cfb95dc0dfa45f29ecc289ee8"
+    sha256                               arm64_ventura: "2a4d3e77575a4867e8374dea35c266096cac7178bdea9f3a097d47d308b0fa31"
+    sha256 cellar: :any,                 sonoma:        "eb0a700c134c204d4c933894671fc3d77933997d75403455b0b15ff4273932f3"
+    sha256 cellar: :any,                 ventura:       "e6d5d1bb932672dab79550da9bd7794054d6c071771afec9b983959703e5559e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c4e211562fcd5b1ed97bee9dff771e5b03b667d15f7c8ce066d6659c28a854d"
   end
 
   keg_only :versioned_formula

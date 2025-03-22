@@ -13,6 +13,7 @@ class HasteClient < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e6968438749dec734a5a5ab8c4dac48fd5eee5b2c8adfe6ec8908d17c72788c1"
     sha256 cellar: :any_skip_relocation, sonoma:        "e6968438749dec734a5a5ab8c4dac48fd5eee5b2c8adfe6ec8908d17c72788c1"
     sha256 cellar: :any_skip_relocation, ventura:       "e6968438749dec734a5a5ab8c4dac48fd5eee5b2c8adfe6ec8908d17c72788c1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d3a5464d1d5022277c0c64052cc9bc98d2664901f78ad655e153fea1fcb08c44"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dee9ebcf14e0273c14d8e28ceb77984f9fcd521e11cbc65f74762897d0e73cba"
   end
 

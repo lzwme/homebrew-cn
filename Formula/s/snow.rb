@@ -20,6 +20,7 @@ class Snow < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "ccadf2612c1c8b435711525c30c9d38442f88b4311fa37208d418ff7b10d2fc5"
     sha256 cellar: :any_skip_relocation, ventura:        "281a2edf75fccb88629a899903bfed0a22262d730edbfe96b9a5dc43a6c7acf5"
     sha256 cellar: :any_skip_relocation, monterey:       "ea7e0358dfeecbd209924fc07a7e28493282771f7a6f93b994942d5c911465dd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "633bc51f68c437938555787c7c8303298a1faa6811c166bfeda7c7046ccfb614"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a378fd9d38675c5924d6fa4a91283e8bb0fcc4e92695c3b222dd55d186ba8ba9"
   end
 

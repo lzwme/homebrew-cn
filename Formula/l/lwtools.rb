@@ -18,6 +18,7 @@ class Lwtools < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "f0285e0f21559766bc595222d32c1e5a49495d0eb0bc13596152fd16e2112d2e"
     sha256 cellar: :any_skip_relocation, ventura:        "e3a03360ee1f0c8a452f8b070724401adeadd46730174ba53786b4d645f1bea9"
     sha256 cellar: :any_skip_relocation, monterey:       "cee52e52672b605b4a38d6596cc2fa7a0613bea352a47f86ec27e2123bb73a3d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "e2c8033e4bc751555d4f503180c5cc0ef3e69e20a494edf0dad88b4a6764209d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7fdd3cffd56bce4bb757bcfc522d20df58e10abf0148960f5db0d3c3f8ae6adc"
   end
 

@@ -13,6 +13,7 @@ class Eigenpy < Formula
     sha256 cellar: :any,                 arm64_ventura: "6a95ce53e270f94576dc95ed61e5fe8531ccf24b6baaf5d31377bcb2e6653f23"
     sha256 cellar: :any,                 sonoma:        "126e7a7b9a76b036717ce3f446dcf01e1af56ebc3e736c2976d0ac19e9674c6e"
     sha256 cellar: :any,                 ventura:       "f5f0714168a5a98d65b9e945fa7a954082e1286d6bf0454c2ae59e7f0ce0be83"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "707c3c98c576cba0636ed9324d2d4b7597873c4d0f916ba8208b03396f08e023"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8da8406a32c0300e587be9f725b87fa8fae7d6ec66665a77d00b6653ebc9261a"
   end
 

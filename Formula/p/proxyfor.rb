@@ -11,6 +11,7 @@ class Proxyfor < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a39e9bfc86def60ea447ea2e19b335aa72865762cc7eaa2b99275036664d7ff3"
     sha256 cellar: :any_skip_relocation, sonoma:        "60d4e3ed50f2cd2813b494a02be5386e9b41aade19c5ade38cfd9ecfeea0a6eb"
     sha256 cellar: :any_skip_relocation, ventura:       "30898aa6abea5af4799fefe20be28ab97cdb1a7492015ad68ee478b28b75af47"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4b6723eea32a8a33afe29de95462553e9abbf58dcc0b7e944a6504f84b74031"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "88ea7fa84ae3d56bc167a24efa5aecd74e238bc22ba4fb618e0f68339c92a737"
   end
 

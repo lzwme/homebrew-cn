@@ -16,6 +16,7 @@ class Nqp < Formula
     sha256 arm64_ventura: "5c1d35217418d6801fb48460acd08913ad07fa84e122cda0fc93c5e69c019bcc"
     sha256 sonoma:        "f2b83e8a115def1ceefceb55857cae05cc363b3b28b5d56a725b34ab81937f2e"
     sha256 ventura:       "fa28723b9bbaa5e50923c91f6faa93c971533bbbb296c8321b7c0ff44feb9c4c"
+    sha256 arm64_linux:   "b3007c31485668994cef00ea08e3caa04fc28d924dabecc6d7e32418a92daefd"
     sha256 x86_64_linux:  "446bfa450da4954dd195c1e80b66016dd8fff0b3081aff1c16444b4b1fd63138"
   end
 

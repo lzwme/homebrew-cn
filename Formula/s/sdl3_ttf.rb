@@ -12,6 +12,7 @@ class Sdl3Ttf < Formula
     sha256 cellar: :any,                 arm64_ventura: "6b3fbbd588070465a0c7f7e4c6e9912a2fc205eae35a35110c33b95e9b4ff4fb"
     sha256 cellar: :any,                 sonoma:        "84e823f88b1f5065b9257c65957cf09c12767ceb76069463b0290c2e754b4b82"
     sha256 cellar: :any,                 ventura:       "aa23f7ed84eb8e6612b43e147eb3dd49ccaa7839637ace30b5ec587a5ee1a143"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9bcfd11ed3c7df9612ce4d4fee38e07c3b529826ce03dba8b4da199e0e84bb73"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "88e14391b5465568ff8b81a6600ea53734bea2899f3922b626fe05704b4b8dcc"
   end
 

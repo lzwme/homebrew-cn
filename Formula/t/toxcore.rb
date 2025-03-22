@@ -14,6 +14,7 @@ class Toxcore < Formula
     sha256 cellar: :any,                 arm64_ventura: "1d9a839019b2ca24cea932c60127b4418cdf1dc7d0a94755799fff1d0c62db9f"
     sha256 cellar: :any,                 sonoma:        "6466f7b075609f7980cba36ecc5bc35a96ae5558f88ae9f698613600809e591c"
     sha256 cellar: :any,                 ventura:       "ae3dfbf4c1f8ffaa59cfe4391535180386be2fa811b91234870c7abfabd0272d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "334a5ed9a953aced9c07523917470db25c70dbe3e7ca2d1746eaa1ae4ae39eea"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2443ece50296533188f88dc789916e6266a02253915cc56227d627ce41adc42"
   end
 

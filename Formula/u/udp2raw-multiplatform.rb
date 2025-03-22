@@ -15,6 +15,7 @@ class Udp2rawMultiplatform < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "34a11617d24ae83e56d50032a8a8367a5a92618863c5c4e4f3bdb8ad0b91398f"
     sha256 cellar: :any_skip_relocation, monterey:       "bae88e034ddd85ff02e74744b474be4f01b0f263cdb59ca72dee587e47bd7eb1"
     sha256 cellar: :any_skip_relocation, big_sur:        "bcc9b02e7167c8096e98deafbbf4262c675d96faf02ec6a214d1650e8ea75cdf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "eac995325cedfd5b1029ac3c2e0cebc14b912cfc945e7ff8eecfa160655f77d7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "23603c4582835dcb9428c1c3e553802937568f9e7ea1bd283bf329541562ffdc"
   end
 

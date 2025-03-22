@@ -12,6 +12,7 @@ class CargoShuttle < Formula
     sha256 cellar: :any,                 arm64_ventura: "625f92819f038c176402410ad52c9fdf79c30bd61d0714b3566b48aca29d4657"
     sha256 cellar: :any,                 sonoma:        "877622e78dc41e19ffa984e2d3e8746daf0a97bb70279746ae631b29952220ef"
     sha256 cellar: :any,                 ventura:       "89fffe2c86bda927cd009a5112535199d52257cac326c653147a58d2931d8b2b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c12c2044f4cf607be4a8766f6adf9926bafa6ebb4b4d92cda346a3ff94e500c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e09df817e9c223875e94b0ead41e10519e4dd66c2d496d303277b16cec96595c"
   end
 

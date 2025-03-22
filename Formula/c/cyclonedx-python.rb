@@ -14,6 +14,7 @@ class CyclonedxPython < Formula
     sha256 cellar: :any,                 arm64_ventura: "9e412ca86b855f9300f6a7c44525cfbbd1675956836b23f21f8a3a282a5e0523"
     sha256 cellar: :any,                 sonoma:        "8904d579184887eda6666827748acacf6fa9eed7113e0d5aad9d7b1ee9023992"
     sha256 cellar: :any,                 ventura:       "6327aed3f582db8c45a3aa99fc8775edebb07e42154798fa90e40613e18422b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a77f72a8d86850405e2bf83c70fa81f9efdb7b71209453887d123e2c8f84e4c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9702f072d048d1ef6c06797c3600d888dcf189d530d00095720684123d695fba"
   end
 

@@ -16,6 +16,7 @@ class LibvirtPython < Formula
     sha256 cellar: :any,                 arm64_ventura: "cfaf7ebf4556bc5ba98f824a396577e5ac3237b0debbd36f56d4f0b1f9a57772"
     sha256 cellar: :any,                 sonoma:        "5ba66905d74d72bb27d16b344843e37b28f72e392783dc1cbff2327e0ea06254"
     sha256 cellar: :any,                 ventura:       "740c0ed273658db6c643c810765e2dd11232da68c3947a52706c619c52555ea1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "37daa197614ba83b4392eb61f5b079dc1f38779e08cef2421edfaa05177a7545"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb11f5e8890bb0f3bf6c23c6c7195ed93ace389e06e1f70083816f0a9b9f56c3"
   end
 

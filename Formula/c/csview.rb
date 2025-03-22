@@ -13,6 +13,7 @@ class Csview < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "726c20bdf56990f680feea91504782ff3ed966ff27a4d63ac2fd7d8e9244e70c"
     sha256 cellar: :any_skip_relocation, sonoma:        "b0cfc60d188ba14a0d17909bcf78e21673ee65aee2d0bfadd28ffaa741ce2816"
     sha256 cellar: :any_skip_relocation, ventura:       "46a886931cb6f7876fa7dca415a2d25f61063e69a4d47dd1fa7eb2726f2bc41e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cff3b9c1289a699084743bfaf49933d7c30903cd8096fb63f1f1d7039accb762"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1dcad326ae8950b1557bdf2dc4e6477ae867a0f4f05211373bde145c87154e7c"
   end
 

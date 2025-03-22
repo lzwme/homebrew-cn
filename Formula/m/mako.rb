@@ -11,6 +11,7 @@ class Mako < Formula
     sha256 cellar: :any,                 arm64_ventura: "21e4b0755a910ea4183812d42d359efc6beb49f136a2d18df4041229fe1013ab"
     sha256 cellar: :any,                 sonoma:        "24e4f150e261161cea6645fe95a1413c0ae1e2fd56b4b937d9ceabf40a7461da"
     sha256 cellar: :any,                 ventura:       "24e4f150e261161cea6645fe95a1413c0ae1e2fd56b4b937d9ceabf40a7461da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9d10005c6b4734d629d2af941863bf864881ac46ab5f8670f07414853397863"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c711e6cb0b7018b2a937bc39787a089068124820a4432695bc9da66192454647"
   end
 

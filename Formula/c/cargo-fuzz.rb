@@ -13,6 +13,7 @@ class CargoFuzz < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "b6b6e017d751dd370d4f98e16fd3a9fea647ce99e16e71a560bf368271fd10cf"
     sha256 cellar: :any_skip_relocation, ventura:        "098b4b3525481f35a10fdc625f57f08177773a14df00330570f8b97480f41b23"
     sha256 cellar: :any_skip_relocation, monterey:       "291ec71452d89adefcb52625dcf0ba73e1cc041ebb29e0751fd10f585eba9296"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "44ea2bed2e3c5df7e1e9246ea1a741a074d19d6c3e5f02fc5d3cefe9d44100ff"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "043555cc3d67be54754e137f497d35560a354ccfa357837484ce18a155b976f5"
   end
 

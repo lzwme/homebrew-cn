@@ -16,6 +16,7 @@ class Xmltoman < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "89d762e0509fc153a86b20d8071f20b86514f079eed038ae78c44bf47d33c53b"
     sha256 cellar: :any_skip_relocation, sonoma:        "50221d09be7e7840727a931f8d771b2ee35c587870a070ac0b71115ac8636eb7"
     sha256 cellar: :any_skip_relocation, ventura:       "50221d09be7e7840727a931f8d771b2ee35c587870a070ac0b71115ac8636eb7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "60ce2ada67d84c2b37d2e48ef5ca6ef0c51116194f4d10cea80d4210dba84d05"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "44f936fff8828e2d4766a273f91521c76e87e3895d43d0a8cc823a18b214f910"
   end
 

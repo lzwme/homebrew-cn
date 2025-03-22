@@ -12,6 +12,7 @@ class Autorest < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e83b47baa0ca32e782bee30fb9370448ffc422da79bc9e908456cf1703e1e80e"
     sha256 cellar: :any_skip_relocation, sonoma:        "a723686fd868adf61661dc45f12e286dac112866af987abb041ad828aad82988"
     sha256 cellar: :any_skip_relocation, ventura:       "a723686fd868adf61661dc45f12e286dac112866af987abb041ad828aad82988"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "64ffb4481a753a24a50ec78c9ce070b516f7ebdce473b829be961c172b763370"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e83b47baa0ca32e782bee30fb9370448ffc422da79bc9e908456cf1703e1e80e"
   end
 

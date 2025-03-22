@@ -16,6 +16,7 @@ class I2p < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7354dc5211c8a5a3f89eb165648b3c62d891f3b6ba0ac0184a6234b30d467b98"
     sha256 cellar: :any_skip_relocation, sonoma:        "4570ad4e3e3cab9c57a2118e2b4f96904af8304d1df4ac4ba19d0a32d3b5e50d"
     sha256 cellar: :any_skip_relocation, ventura:       "dc4ee1a92a6e3c10657f0a170f6ca9430bc9ab0481e077195d3cd6ef23dbf5a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "404750c6155cbaa0ac12d85e839831c46c784ac3c5bf8924efb082817aa68de1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "84964e56cd7ada0f7721a9f14175d6ac85559a5701a176e092eda67d2bee521e"
   end
 

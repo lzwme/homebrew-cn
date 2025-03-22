@@ -16,6 +16,7 @@ class PassImport < Formula
     sha256 cellar: :any,                 arm64_ventura: "590406753c0fe6cb030055867702051112366e5f7d199f9341f860222b544513"
     sha256 cellar: :any,                 sonoma:        "175a6f288828c380052249095a738b05c5e81741ab3061ba975494433827aee1"
     sha256 cellar: :any,                 ventura:       "475bc32225a5f5b3edc4339b83e0a69b68a4156ea3e3bf7f2c994249a40fd817"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7bf7123a1879198f333664b612cb03ea9c7620ca00f41961b2fe6bb42b59127a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "27a3f4f49b185cb3996cf80ee3026d58dec59e21da067caddf3832189d31c39f"
   end
 

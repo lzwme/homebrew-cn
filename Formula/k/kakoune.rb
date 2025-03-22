@@ -19,6 +19,7 @@ class Kakoune < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "301f7dba32850275799750dedaef50a525d004cca2d6439d9aa609a4d00689e1"
     sha256 cellar: :any_skip_relocation, ventura:        "f4a32d5ed1213ddc0ed831e9974c154023fc623d0fddc2af4aae718115f79482"
     sha256 cellar: :any_skip_relocation, monterey:       "331edc367fa3a3905e1456d9dea0b3699bc0358281a7ae88f7adf1466ee90c11"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "44986966430f14e95529bc4403f326e39f14863bbdb3f20bd30cb8b43d134874"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "bdf7a8135634ef2b09dd76b622d9d852b51c156c09b6e1e0fa11b801cf376310"
   end
 

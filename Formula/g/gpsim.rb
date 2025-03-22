@@ -20,6 +20,7 @@ class Gpsim < Formula
     sha256 cellar: :any,                 sonoma:         "e04f087424cabf6638050b7a4a477184ab1814a8d08116f6fe4bd997fb98e174"
     sha256 cellar: :any,                 ventura:        "21b9949b633afe932ca30e23cc291a8a6d760cb38413f1728b4f8e7b1349f10c"
     sha256 cellar: :any,                 monterey:       "cd3488cd018dfaefdd5b4e253b6e6879c9a75ef1e6c377dc7928daf20825c882"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5d4298f5d3c0594f96b60229ffaa2c6fb118749928a7bf04f985bea81a6d5c78"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "062b82cfd0c548f5935b7f09f455d56a0fcc9693f044c553dc161233d89add2a"
   end
 

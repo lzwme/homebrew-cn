@@ -19,6 +19,7 @@ class Dsvpn < Formula
     sha256 cellar: :any_skip_relocation, catalina:       "a08464eca0167991c580594ecd9f1893a7be6d1cb522ceb385ff1883dca507c3"
     sha256 cellar: :any_skip_relocation, mojave:         "31a8359d756b673788aad04e1b776c0e1d5b6331f7e64494d3c6680280ea11ec"
     sha256 cellar: :any_skip_relocation, high_sierra:    "d34ff5d83b0b259c5051de2e2e8cf4599679d1d7e61dd282065afb0516fe62b1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "245403f9b3b33e4b63fc2281f1ffc16cedc3d48e825691369d755a22b61a24ac"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b6cc8aa7ec1d462fb028d5858de3863d2d131175ddfa102cfd44c9c0614d003f"
   end
 

@@ -12,6 +12,7 @@ class Goku < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "83e19267ed4940b2f1b5831d712e193ea56105d1d5d5277bb2300f4cf8df45fa"
     sha256 cellar: :any_skip_relocation, sonoma:        "41fc9a7fbc8b4314e4732287613fbcb653afa01960786781f66af564c4828c5a"
     sha256 cellar: :any_skip_relocation, ventura:       "041d9131b78280d3e2b11a4a1c01bed36b6ed74c637c5229b43635752225b36c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d67ffd7afb7f73d2b6cbb7e6dac11baf060f95569e4453ae3f9bd2c33e522d85"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "08a058051f645a93d9f5c9eb5f18adad0eea699259b173873d077d6464211d0b"
   end
 

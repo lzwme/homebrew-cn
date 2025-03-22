@@ -18,6 +18,7 @@ class Dcm2niix < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2f848dbc3fcc8eb421c5a32fa0c159afe1601cf7111f95bb6cda721bd9e12d25"
     sha256 cellar: :any_skip_relocation, sonoma:        "0c716538917b7ab79080a7b64647e2e7fb1312b6a622e3882c8ff084c944d70d"
     sha256 cellar: :any_skip_relocation, ventura:       "f30ff1f7cdba4bbee0e9dbc71cd8097c5f758a1d037de1e518281c4b8183223c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a10cbb413a652bd211a3bbc66ba8bbc002c4527b75a62537bd10d1797443563"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "13baad586219be6dd44afd6992c7cf33bacd2b51abdb819a713ed3a0658b7df3"
   end
 

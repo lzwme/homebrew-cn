@@ -12,6 +12,7 @@ class Aichat < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1197a6f56d8524fb9feb264500f774b4a8b7626bb59a3af8d58aa87720561057"
     sha256 cellar: :any_skip_relocation, sonoma:        "971b428cc5d99dd027ecffc35656e6e245f1421af8464a0c8c65b2686c64fb3e"
     sha256 cellar: :any_skip_relocation, ventura:       "f4039f859b1d2fa696454e8290b55975dced883c2ae89b6fbaf6ca9d49ff3356"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8fe1c48cff01628a32728d53e477890bec6b7e6fdcfb5219491ed2d5125c8822"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "531fe5d499465153991028824f05e56fdb91e9106e71546983cae38b220a4901"
   end
 

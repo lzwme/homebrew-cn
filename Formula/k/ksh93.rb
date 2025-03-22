@@ -14,6 +14,7 @@ class Ksh93 < Formula
     sha256                               sonoma:         "b15cd1a4a1052c29217a92cdcc890755a1af17031b0375d2c48218e37de17ed3"
     sha256                               ventura:        "fd2c2ab5ef6b79db5b99b18775c36806ab45f06dbfde1a19dbba879c88ff02a3"
     sha256                               monterey:       "4a18d30f5bd6874f925b389150c77864955c33d546025ab87ba95dc36e6287be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a533071501bda03b7663eaf76acaee427fd6ad410521db8f3d42b349a4a8938c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e1e57baceef185a21b476c489ec150cbf00729c4b0b31243dd13d5f560376b1"
   end
 

@@ -22,6 +22,7 @@ class Sic < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "996dcadfff9c9eb20d7a45ef0a796ab28420d2d90aecb81a69566de271798967"
     sha256 cellar: :any_skip_relocation, big_sur:        "d2b8f0304692bb2bc7442affab89105413028b7ebcb0a2b7e6504518ef0bc5ed"
     sha256 cellar: :any_skip_relocation, catalina:       "f61b9190993e7ba1f4d4e5b98f751db0965a7bb72db8023e5f8ebf272568540a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7d7904a3996132de7d25f87b6872a0d572d92612e551697b52d68b9940120b32"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fa93fbe3a3e4ed400bfdad52b0ba893161505e7579e5c1731a9f28a7e993f59a"
   end
 

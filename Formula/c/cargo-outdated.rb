@@ -12,6 +12,7 @@ class CargoOutdated < Formula
     sha256 cellar: :any,                 arm64_ventura: "b0b0f15665c9067c04f268639baef2476eef8f699cb47aa39e63d543186cf072"
     sha256 cellar: :any,                 sonoma:        "30888f6e8ae69512bf0486d81336aded2f20af9593cc52311fc1ef7f41788e2f"
     sha256 cellar: :any,                 ventura:       "1d6290123b277fcf587e45778af8bdc5a5fc3c8426c416a67c633c9f3fb931d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a20abb07d2ff9f3e38e12f6b27bb14a4e0de856d7330c1519a97193ea7f85761"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3987240911e43c2dc506aa9d1ca75e41867554e89e40536da5825aa060495059"
   end
 

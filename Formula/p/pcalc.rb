@@ -15,6 +15,7 @@ class Pcalc < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "7929c84fa052dc93f47b5dfe37d4332ff916e2c300739b08f721e72bea265a86"
     sha256 cellar: :any_skip_relocation, monterey:       "2259c04f3360d9bb7c26693fe47651972408c21d2b18a7760ecc218d2e2a33ab"
     sha256 cellar: :any_skip_relocation, big_sur:        "bfef357df427a5d36419bee76ac2a65ce36e191c354d9d773f53b3ed6fd7058f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "8d33ee09634262b3a6328d6c1bea82836652fbae7b797f2d507026491d25fd47"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3bfe8638f58d9b4a6b71c50f08d37b6bf10e773ff1d43946879269cf00df69d4"
   end
 

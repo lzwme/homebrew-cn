@@ -12,6 +12,7 @@ class BaconLs < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "cf60074b4b9b41f2d55f610fa89b087df5658ff13333a8413995111242f5475b"
     sha256 cellar: :any_skip_relocation, sonoma:        "178cd51623840e2877ce990953a03e379d01be1442d1b0c8591f207b70ef4e55"
     sha256 cellar: :any_skip_relocation, ventura:       "f606acfe698dc6d78790c4be6dce75f32bc75549cf7c9d8b8203e0f7dbba912e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0cc3ddce0807e354e6731296cd9f96a7379d31c8cda55d513a92b367146b0f7a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f30465a7b4c3657adb157bd8b72124886dec0809b0dd58ec1382035f934ffafc"
   end
 

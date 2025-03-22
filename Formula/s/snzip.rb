@@ -16,6 +16,7 @@ class Snzip < Formula
     sha256 cellar: :any,                 monterey:       "fc6766844ef54540722dac85eb882b946db05d9db9d69fec810d77333c502224"
     sha256 cellar: :any,                 big_sur:        "60e584c91dcbc5f21a74cdeddd239a432911f99785350499873e04a7a91fcb7e"
     sha256 cellar: :any,                 catalina:       "41e8c6ce6c722fb30c57c820e2fee38d080b19332884284866b22b5584945c09"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1547af744396837b876bf93b86e470d1f66d8d2a2212dbc5ecc3273541e12db5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba8de3ad67c0529384b55511515d68e132f76b8b7a6da0772c62c2fde0a5a8f5"
   end
 

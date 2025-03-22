@@ -14,6 +14,7 @@ class Ssdeep < Formula
     sha256 cellar: :any,                 sonoma:         "0b284332d1db2589577a0714f875ff8149146ada15d3cb443190977024145e46"
     sha256 cellar: :any,                 ventura:        "1fd2896aaeb79fde178e73b814ff02d91f92f0c6a80331adf4c7970c7fce40ac"
     sha256 cellar: :any,                 monterey:       "2addd0f558292956dd191891a0187dffdb979e8cbe387280fd2920dc1429be06"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0efcfc1a319de30ee921f93ee4296d34d801a59381b47169accce5630181b93d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d62ce2005fd901e4a363b3f6592dee0388e9114d323a058499d16e8dba9c4d38"
   end
 

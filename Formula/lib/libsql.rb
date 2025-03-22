@@ -17,6 +17,7 @@ class Libsql < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "4e6e55398c20c81a0cb5072bf356588ee58f45cb543ada643b3750852451c1c3"
     sha256 cellar: :any_skip_relocation, sonoma:        "c16ab098a60b2e0a66ff82e8c92597e20570cf503f247e638b8b06bc26411052"
     sha256 cellar: :any_skip_relocation, ventura:       "5e2df5e5e206bcfe1e71f1df32bef095dddf1c721f1905749b966c6cfc295568"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9a96d1dee81947a700075f5194f2eae3fab4ff392b04e7ca610ef2cece553f2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f08c9c294fffcfb7ea6ab60f148db2bd59386dc1b748f5b394d045639d8fd44"
   end
 

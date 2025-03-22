@@ -12,6 +12,7 @@ class Rp < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "74c3b3a0eb50b7a6b6c9df3e23568220a98a66becfa38e799e322b3daeb164ec"
     sha256 cellar: :any_skip_relocation, sonoma:        "f8b1b3226e4adf09046fe02a7378147600ac45dcae81864900f27b17c17b39f1"
     sha256 cellar: :any_skip_relocation, ventura:       "c58342298a6cadb2e7589487fdac98b3af13176be08c4bd390c084759569e29a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "452819270a64c7f92bba7b1ca9fdf8b970171ff11f1424d4e9d177e1f0377e53"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cbf2ef84363fd1baf5ac98c0484106526da8a14a687580c56c1961d8d277b35"
   end
 

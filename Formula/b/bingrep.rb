@@ -15,6 +15,7 @@ class Bingrep < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "8b2e9baa7b521954bea1cecc6c5259808fdff948fa776902a328f18945414b22"
     sha256 cellar: :any_skip_relocation, monterey:       "d7c1fa10458fe1fedd754d8b5aa4bc1160abd305cf70078bc1d7e1c9caf385a8"
     sha256 cellar: :any_skip_relocation, big_sur:        "cdc9b107c8cecaec93dc476ff09a6649c4bf4a9604ee98ce9748d53c71fd9f7b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "846cf810013ef2647155242db628236d9dc7a4647152bbc84aa941c41916d01f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0cc509264acdf417f6ae40d102132fddd7ec95c4130c05bfb5d7c4c468f5b3dd"
   end
 

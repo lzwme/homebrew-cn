@@ -12,6 +12,7 @@ class Dtools < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "dab53f360a3dfa2047bb2f186ed9f41a35dbfa4efe6f871d1619676fdb765c9f"
     sha256 cellar: :any_skip_relocation, sonoma:        "c695c100c2274bd1303bb1e1fd8664689a16a62bce54c9deed538de8263df05d"
     sha256 cellar: :any_skip_relocation, ventura:       "d32eed31d7f7e167a636ba88473a66d8121e128a2024d2e2c009e58ba3ce94cd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6834b4dfd0879647dd07df03720393befd73aac4c617025415362d25cea600d7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7313add8db2da9fc4d1d08fef4bc9039a79ac54cb6f0fe83c7191a0787d56aeb"
   end
 

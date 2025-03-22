@@ -15,6 +15,7 @@ class Pngquant < Formula
     sha256 cellar: :any,                 sonoma:         "6810c2738ecc54130198b31380b8fdd8629aab89a497e7bc456ac72417d90936"
     sha256 cellar: :any,                 ventura:        "e9a2a6f6276529634cf601eb2c15b257db31d0d7b5fab624ef6f4001af4faac9"
     sha256 cellar: :any,                 monterey:       "190bce955acdfcf9999a2dec7902d3bc1864b29eb2a2e636b3820fedd9ad81be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "14ee8acb1241bb83143c700d424872923c8c5b158a1c4f797db43472c658263b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "088abd195e0063a9ff6f8b3e041f50c9cc08807c475ac573349cf47607519e51"
   end
 

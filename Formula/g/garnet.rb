@@ -13,7 +13,7 @@ class Garnet < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "99420a3aeb83129340b5bab671176be4a7068f9fbde657f3730a0fd8320e7ff2"
   end
 
-  depends_on "redis" => :test
+  depends_on "valkey" => :test
   depends_on "dotnet"
 
   on_linux do
@@ -57,7 +57,7 @@ class Garnet < Formula
     end
     sleep 3
 
-    output = shell_output("#{Formula["redis"].opt_bin}redis-cli -h 127.0.0.1 -p #{port} ping")
+    output = shell_output("#{Formula["valkey"].opt_bin}valkey-cli -h 127.0.0.1 -p #{port} ping")
     assert_equal "PONG", output.strip
   end
 end

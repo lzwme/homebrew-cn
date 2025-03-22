@@ -12,6 +12,7 @@ class GtkGnutella < Formula
     sha256 sonoma:         "ce5c4299b77ed4a296744c99138baee934ca0811b00a21731489945575639a8f"
     sha256 ventura:        "b4eef4214608d4cab4598555c39b3c9ef7c497724a5c2c06be09be9e62c0df00"
     sha256 monterey:       "1ddfae5d7de803aed743b7fc75bdafebb1fb2c0823784834142c0f7b579ea804"
+    sha256 arm64_linux:    "26f18be0623e97f5f964f3b444ebe037c288bcf41dfd10f94e4dfcd4a44db08b"
     sha256 x86_64_linux:   "70a5946bf77166b5076fe6fa1d45b69c6f512260451c96758c4cde02fbb983df"
   end
 

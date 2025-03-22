@@ -17,6 +17,7 @@ class Pict < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "2acd315ec72d1d92cca685e2e6953539d2d9d37d18ea0889ad5e67c06f83b4ee"
     sha256 cellar: :any_skip_relocation, big_sur:        "96d58480ac15db41e7bd9831c9287afaefd1bce20d275e1a2642c070cd3fdb8b"
     sha256 cellar: :any_skip_relocation, catalina:       "1320678e6b2a2f174d88162541e72fff108adb4b4ff4c34eedbc435b4022fa74"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "cdc336a65ed22afd3c31ef236658d19e6b829e4b5ce09799e0689b09265b74e7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7bc79051760ece4228b1b8effde4c16289f250aa9f6feb14f05e6065e3aba070"
   end
 

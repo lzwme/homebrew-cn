@@ -20,6 +20,7 @@ class Feluda < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "561f6a0aa0ab59e8a491bc3a164690bdb5b6dc83dc74c5dd4bfb5bc83a472712"
     sha256 cellar: :any_skip_relocation, sonoma:        "6a5a07d307f232d29941f8e15082759ca590dd138a1de3a5fb17fe94d1ddac86"
     sha256 cellar: :any_skip_relocation, ventura:       "98388541b0dacd5a380dbd22a7988526de0ae5f4af5618d1d08980b595eae691"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf7910a10eb9971f1c88ccb6ab5b26a6f0ec7af08c93cc5b38e9f64f17a7ebed"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f312b11585d3df8518fb4de513efcf3d8d49b1875bc9436b230f03653835bb28"
   end
 

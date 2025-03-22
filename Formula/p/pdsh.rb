@@ -14,6 +14,7 @@ class Pdsh < Formula
     sha256 sonoma:         "9cfecd506b0bf86abf5fc01306ae1e17f669e536bc8c07fd09398ca88e4ac12a"
     sha256 ventura:        "942f58f439d6a63a936970bc1e04f02bdb70b11d987a818ea5a286ff13d8bec5"
     sha256 monterey:       "b6cabdcc2b823e830a774349cb1fdf26d5e3a85977c6e21b27e5447b86e83b8c"
+    sha256 arm64_linux:    "138fbccd92abf37c7abdaf86ef9b6e1a3317857c275c19b4fc3dd8e38a7c1e19"
     sha256 x86_64_linux:   "497c73313e668ccff797d0c3ac567ee964e0970d31488185b8788f0812626e36"
   end
 

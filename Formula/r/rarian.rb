@@ -16,6 +16,7 @@ class Rarian < Formula
     sha256 arm64_ventura: "ec32e06c27f85d273f6ca90b78031f4b0ce6e190b9f160fed55f0cf1797f35a4"
     sha256 sonoma:        "82ff77a27b3ed671542d4c066f945a45c5fce1777df9d77bdc8cfabc38bc219d"
     sha256 ventura:       "1c10f34f9b76eba56f95ef5b1af592e6f51aaadd88e42cecb93864bbab8f41f6"
+    sha256 arm64_linux:   "702b5afe5343df30111af93021f112b58c543bd04f8ac0c6290a9dad24856a74"
     sha256 x86_64_linux:  "1db54c3f633551261b40b7dc69e6b7a6e18649c681f7eb4f01703f35e565abec"
   end
 

@@ -12,6 +12,7 @@ class Cotp < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c6994ab3df041f72ccce5ae31740db50ec413e09971dd8dabbf944dae035f4cb"
     sha256 cellar: :any_skip_relocation, sonoma:        "703c435af047d0df001a82f6b2abdd923ea05d397d66959a4d468f7137fa4ea1"
     sha256 cellar: :any_skip_relocation, ventura:       "d4e6137b141d511884ee415d3f716df086df24317f6f66ca5d63e1fe0ce0a629"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "47ed8e4c3367e7ce63e7d462513fc12745b2b2daf307d1c75fd000501a9592ff"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "703f91f3bf72b3987cef92fa1a613b051a7246d9fd55b1eff5d3b8f1b937867d"
   end
 

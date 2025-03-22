@@ -40,6 +40,7 @@ class Singular < Formula
     sha256 arm64_ventura: "89a18b75b03f523ebda9e2e0df5f566aed4ee94e8feb8d79fead7aa60a7f311f"
     sha256 sonoma:        "d6aa383f1e6c98f1226c70d5ce193d43f7ae41537ed368604d9b8210e44d974b"
     sha256 ventura:       "9fd6df9be35e01b7e4e1d003d6845c917b980db7d7223ec05e18df5efe6b3660"
+    sha256 arm64_linux:   "ab0f3dad935025696cdc3207449769b84d9e0523c9ed79c7e00c9ff9fee771fa"
     sha256 x86_64_linux:  "cb5c5d972e67df545b6d6fb5703dc910b20c28474202df0b1ddcb28e604f351d"
   end
 

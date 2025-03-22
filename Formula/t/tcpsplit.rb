@@ -17,6 +17,7 @@ class Tcpsplit < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "415a55da3fec588f476a348a4d5424ab7fa2a4bfdbdfb30e8e5d7a225f1bee56"
     sha256 cellar: :any_skip_relocation, sonoma:        "098840d4bbc97133040b4697034b972fc24acaeb6175bee7da477c495df5c5c7"
     sha256 cellar: :any_skip_relocation, ventura:       "9cf285c0719876d2dbd4df148886919cdec7d0b51bc8e59bc0feeffe733cab87"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b4ad04b2a151de072a19e191e56b996008f105147feda5b7bc449430f7327c1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "be8f207776a5ace12166e89d26b391cb43a7bf4c289d620b49ea4c948d1d91e9"
   end
 

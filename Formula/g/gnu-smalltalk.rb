@@ -24,6 +24,7 @@ class GnuSmalltalk < Formula
     sha256 arm64_ventura: "e737012cfb9f7029528a4f733125cc9dcf710b7f70fa2d2c19e5bbd16e7a6141"
     sha256 sonoma:        "0ee808a189abc91152255eb4b7401e56dafa3cad5a226b898e84aaf7a37fbdcf"
     sha256 ventura:       "a4df3db5ceb9a6d123906ee112131e3a33a25bc484124e3eaaf63858930492b7"
+    sha256 arm64_linux:   "cbecc28a3dc88c1ccd58ecf2facfd8d9f0edd686e31334b1c93dd82d4a8bc8f6"
     sha256 x86_64_linux:  "f3cc37783b2695b0a1fa9e8fd21e7b4b2a77f10a4aa0c9a97d4e86fbb2e6a524"
   end
 

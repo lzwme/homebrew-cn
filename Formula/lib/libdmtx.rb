@@ -16,6 +16,7 @@ class Libdmtx < Formula
     sha256 cellar: :any,                 monterey:       "3728775d7a7d51ca7d837e9dc031e3e0fea98c46afac79955a49e631c82661f8"
     sha256 cellar: :any,                 big_sur:        "139365f0bea5191d4cd5d7d66ad82dccb5298f7d96601e7c67ba26b6d12fe42b"
     sha256 cellar: :any,                 catalina:       "eabd4735b2e09deeb7746eec9205c47c6600d95fb196118f497d55461342c1f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "c22954cac72a2d2d321704af3b24189b795bb18563d37d1a2451a35063995596"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "09b0cd47edf7d77d1ab0ba619ee03e0b41c6896ef37ec6d0841e0bedf286f988"
   end
 

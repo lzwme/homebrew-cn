@@ -12,6 +12,7 @@ class CloudformationGuard < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5e3a03945d1830b0118ce9a305347d0287b06e0d664552f6cc16ffb9a289d609"
     sha256 cellar: :any_skip_relocation, sonoma:        "418c4452b9314131ffb0c60433b5f1451207a7875fefdbc8054421661425106b"
     sha256 cellar: :any_skip_relocation, ventura:       "8903293b6db67437a424372618aae457b596c26fb5e09c8499b32457287b349e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c178ce6736fa7670859ff07a5483c92c0f2d5e492514f108ccb759f96cc30fc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "97922a5fb353ad0da865d66940eceae6268e5648f82411bb8377a4a56ea78a23"
   end
 

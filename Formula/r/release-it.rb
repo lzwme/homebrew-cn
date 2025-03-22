@@ -11,6 +11,7 @@ class ReleaseIt < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d134f703a9f2370491711555ec5a6e5fd56191cbf146dafac8fc4b6cce589794"
     sha256 cellar: :any_skip_relocation, sonoma:        "a9e29f79b5bb405179134e0c540301da0ff5f2870990ff89b53e7579e3cfaebb"
     sha256 cellar: :any_skip_relocation, ventura:       "a9e29f79b5bb405179134e0c540301da0ff5f2870990ff89b53e7579e3cfaebb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e25057ab9adb9f425648790faacc5aaa68c1679ef43571da31ca41ac9b1cf1f9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d134f703a9f2370491711555ec5a6e5fd56191cbf146dafac8fc4b6cce589794"
   end
 

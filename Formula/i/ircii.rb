@@ -23,6 +23,7 @@ class Ircii < Formula
     sha256 arm64_ventura: "9bba80a660397068c42e2f12d7940ced34bdb253451435ee8f51b6993230bda5"
     sha256 sonoma:        "e9db1fd59f8b31c281a121f1821628780a85e990042cfb8c4ac674ee1b50433b"
     sha256 ventura:       "b3cfde024333fbc46af44fcf09500d7a27369a12eac24f604ba404aca862ca18"
+    sha256 arm64_linux:   "c2c74e2ba79a6f4ef96605a4868673c34afb722f71118f6a489bf4c6041df158"
     sha256 x86_64_linux:  "7680b15d1879970be38ec1c55f3e2c99a0381c0cddddf43fd4c66e567340427a"
   end
 

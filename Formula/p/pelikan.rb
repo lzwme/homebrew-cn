@@ -21,6 +21,7 @@ class Pelikan < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "a80ae1b508d4eae75d03fc5ad07477039a50a37419681b2472af4f9dc5f240ea"
     sha256 cellar: :any_skip_relocation, sierra:         "37a675674b7ef33f07099029042f56c054f09b5d22400010d583fbfa41c0ce50"
     sha256 cellar: :any_skip_relocation, el_capitan:     "e314ce6288bf76e271bf69ce844e2e846b16cad68ce635faf1e5130c3c6911d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f6fd25c2f404b5f43c23612cd1c87f1d5f87828da5110c903af3b3c58a66c7b4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "313be126d5718e0053ce871bbc09446325c24d3bce02117d940dcb45a922c99a"
   end
 

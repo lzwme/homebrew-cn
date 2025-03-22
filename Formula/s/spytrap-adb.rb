@@ -11,6 +11,7 @@ class SpytrapAdb < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "608c7bfa4cfb114233756f3e22752012de20440a87497135e1a47fdfb7524205"
     sha256 cellar: :any_skip_relocation, sonoma:        "26072c153a6aa612ea399f0d047edf7221c7074e2bfb4d398f0b6311d01cd47f"
     sha256 cellar: :any_skip_relocation, ventura:       "e3e6bf1cb665f4ede66a844472452a8301daf939039a969deb3fad2c5d4feb4a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ec460a61e435a13444af946629525bf1df71431da02c37ee3b18dac5fd07ed8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "669e16b037b182eab249fcd9f60678995c16ce97cabb25b8b8daf820eeb6c384"
   end
 

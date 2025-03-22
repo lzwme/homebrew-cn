@@ -16,6 +16,7 @@ class Fabric < Formula
     sha256 cellar: :any,                 arm64_ventura: "462f81ce1dad72d97411bc6dd9413b009dd661f9ea562a2f388343363f072ed8"
     sha256 cellar: :any,                 sonoma:        "887b91b1a6d0a1ab97b9a4d114575f9da05e0bc54568ce249f0b8f02d897f6b7"
     sha256 cellar: :any,                 ventura:       "421882203efbb325031a85f98942f5f0a46ac043595c855b77037e7a6fbcc4ce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa678291a94d4bcaca4e18a4f0e0067dabc7a7fa64c1fc89ee37504ad7d55e3a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "250317267233bf7f607ad268ddd2089c29f8722840ba8a3f37a1a33603f84911"
   end
 

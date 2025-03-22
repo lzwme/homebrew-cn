@@ -15,6 +15,7 @@ class Buku < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "54de12a32e4ea424bc008f27eab490643467760d2647bb21e2b541fa651ef01a"
     sha256 cellar: :any_skip_relocation, sonoma:        "a6204f9d6e6877bc9aaba326aa03b00375c01162062777d4e465a11916688986"
     sha256 cellar: :any_skip_relocation, ventura:       "0ef74ba32389f16e7735f633b93146fd3e4edbbfd6e193c9cd488f91dc452428"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b64fe8cf31d0e2e4e149308f0faa9e17e3a22bc8f2571a39cd34b49347231ba6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3050ed929c5c6c9bbdf01b22ce7eb5c12f366736a4af95a91e818e8300685f6"
   end
 

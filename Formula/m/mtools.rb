@@ -12,6 +12,7 @@ class Mtools < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ac530692ed65ed59fee5bb71bc60343581860cdac2c9b6c7da35b57fae0cff60"
     sha256 cellar: :any_skip_relocation, sonoma:        "2d459e925ce754b2ad4bd21743843159bed88fc84700c8d72ac8b36a8a713261"
     sha256 cellar: :any_skip_relocation, ventura:       "f1d8831b6a65b99b20e1ff6864dff373d8bf921e782f44b0acfe2f787a206f93"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2d5a2e8c4c343781210aefe1bcac205a4dbb490bf99400d4ccaaf8a7eb49073"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8163f99ee69a63637c3f2a70927e7f16a8f6a75d2cece8f19aa6f2bf059beb64"
   end
 

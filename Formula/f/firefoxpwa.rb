@@ -12,6 +12,7 @@ class Firefoxpwa < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c66e4a62437eccfb98990123b1197d3fee078edcb537d14647f3e66d493b8ace"
     sha256 cellar: :any_skip_relocation, sonoma:        "e9a6835423008504698149c5966221f23cdb85dfdce35e5330e02ded341abbc8"
     sha256 cellar: :any_skip_relocation, ventura:       "a02fdcabaff02eb0cb2f2a6d9c5f8686d30783a9a316f6c3dff89ef38e08396d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bafeac075f600e09f91539b6b4a4aa8609863cf48cc184b4f9bd665150c84968"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cb80205befaa0b30dccea8760159222340d783d7a785056e8b4ec5caca0d0ce"
   end
 

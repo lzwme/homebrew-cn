@@ -16,6 +16,7 @@ class BashCompletionAT2 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7696534939d76665695a0bc12c1bab0a9cd0729264b16585bc5bc44a0bae5cfe"
     sha256 cellar: :any_skip_relocation, sonoma:        "eae0306c63a1d8dec18b5762d0d33689ec876f85c7e3fc30602103e2a03de498"
     sha256 cellar: :any_skip_relocation, ventura:       "eae0306c63a1d8dec18b5762d0d33689ec876f85c7e3fc30602103e2a03de498"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7696534939d76665695a0bc12c1bab0a9cd0729264b16585bc5bc44a0bae5cfe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7696534939d76665695a0bc12c1bab0a9cd0729264b16585bc5bc44a0bae5cfe"
   end
 

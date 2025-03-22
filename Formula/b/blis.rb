@@ -12,6 +12,7 @@ class Blis < Formula
     sha256 cellar: :any,                 arm64_ventura: "9630f05d848259bc7ffc9df96102b9655a0cd3284057dd77a5e59256b81a32ec"
     sha256 cellar: :any,                 sonoma:        "eb365f3d3d6fc8eb1df33f83f72b88ee33984438392b78bdc58e4657f7cec66b"
     sha256 cellar: :any,                 ventura:       "996841f0627e6a5f43d4f272bb0698e7fecb9f958fe05915c85b0814a6be34ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9a2bf0a115a4af35026be884519a3b23e97535f5ffcedff0ae7a7a8582914b4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "db5d4aed1ccf53d93eb65d37dd22cda09f5049e7c5fe4bd2f7db556ccaa57ad3"
   end
 

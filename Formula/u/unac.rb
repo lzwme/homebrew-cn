@@ -25,6 +25,7 @@ class Unac < Formula
     sha256 cellar: :any,                 high_sierra:    "eade4a2fba6e5828dccd3779b5e6681ca2558dbde421639624f089be835c55e8"
     sha256 cellar: :any,                 sierra:         "b97f2799eafd917f8fe1cc47c39634bc91a19ca452ce11ec8fd5edf37ea1dba3"
     sha256 cellar: :any,                 el_capitan:     "6c9d63dde182a55e237e63cfa4ab625164ce275e343fd88003483227bd7439bc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7bcb9bedf0de026241c6f1de1bcffe69c67c1cfdfd5c8e590ffb7a5d09ce8c40"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee6f3909a8a3f44657dc39813bee9cd551475eb835973cb34be6cbd23fe7eb0f"
   end
 

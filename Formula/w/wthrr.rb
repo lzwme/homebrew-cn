@@ -12,6 +12,7 @@ class Wthrr < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a5c71252f0517231d9b7ea64314591586df9419d5529029c4ef1d7b6ca73b315"
     sha256 cellar: :any_skip_relocation, sonoma:        "c0a81d0cd757022468358c46c11db2ed9e34baefce396c4403ded61b65088f6e"
     sha256 cellar: :any_skip_relocation, ventura:       "6b4fdbcd8131123e488055b26f86a6ef912445e4a200b915a9ae4f561a45a753"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2a3a3a1958b67645f20100308854792cc55ddf067a31f403bb251ccb5c2e28f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0d8bda45cf33d2ec34c043302a42b9551d9d7c33dbdc0421c80ccb599db8219"
   end
 

@@ -25,6 +25,7 @@ class LdidProcursus < Formula
     sha256 cellar: :any,                 arm64_ventura: "bca4374f9d61c9b1185cfce5d40350672f17c6e2239f9a475ab84688a356df72"
     sha256 cellar: :any,                 sonoma:        "d588f650e0f38f7837ee7d4cda733442b0ef723e5d7664a5cd6d9b8e808d6cb4"
     sha256 cellar: :any,                 ventura:       "ab39755f672f5634c6555ae6822dae83813a50c1205a37774beb2e35d0552122"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a581a508009e4854e8790a0f246baaac0ec570945e331fc6aac65ab4a1a9a81"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8277afbe297f7153901815514ad120e29b9ca67b891287c4ee133868d43b84f7"
   end
 

@@ -12,6 +12,7 @@ class Pagmo < Formula
     sha256 cellar: :any,                 arm64_ventura: "ad960b3a69b6283e74399cbe09fe941a13183815c7f26d0f0fd111883c166e8e"
     sha256 cellar: :any,                 sonoma:        "feec9497fbae6ea91e8a2a55dc4a03b5b784731eeb540620233c9f01b0d78828"
     sha256 cellar: :any,                 ventura:       "0f83b648ec1a642473ba6b71c29cfc1c8f37fcfe8fcb87112624839cecef4424"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "91420f1fbcb0890a1808493d3a47b965af26f7f6824905093f1aff100c651d9f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ccb61eb3620d314de4a02ac9450b6be46326faf7180f8c19d98ca5046cf918fe"
   end
 

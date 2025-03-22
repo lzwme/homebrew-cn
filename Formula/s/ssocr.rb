@@ -12,6 +12,7 @@ class Ssocr < Formula
     sha256 cellar: :any,                 arm64_ventura: "29b908f4c7eba25b62c1db223308e94220189fc4b4f1f8f15b89a1d81045dd61"
     sha256 cellar: :any,                 sonoma:        "035a63886c348ffa8db1375f256dede76cac864b375ab82f8fffca2710e5a3fa"
     sha256 cellar: :any,                 ventura:       "977c33305dc392f8c75e46b3933542c90dcdb31b75fc56cbf1d9661097cc7b93"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4580d56b523fdbafbc7bd379604eea6377b4bc3ac69c1cf60f4cabc9f3df698"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ba0b6c92964518ff2df9082e0295a0f3e69c8171f988ed7e8345a47bf25e1ee"
   end
 

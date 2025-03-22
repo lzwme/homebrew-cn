@@ -21,6 +21,7 @@ class Babeld < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "fa42c87c9b05ce203d457c7d6e288165ddb658bf830cd297b4fbe8c542ba40a8"
     sha256 cellar: :any_skip_relocation, monterey:       "69f0e27d20bf8a9febc3922bbcfe6d9ac84685751814d7f8747fcb3a2153d543"
     sha256 cellar: :any_skip_relocation, big_sur:        "3248b6ab94fada912bfdcb3521dc6c629a6e1a7bb09f9c1d33c232abcfc27a66"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "8ee2de3eeddb40b1c2bc7f4eee384c0e14bc00e4b403cb5f8f46e2e0ba202dd2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "73e9228c77443e9d1c349091f0fecb2b5f61daaf340b99a6b2120def482a8f9a"
   end
 

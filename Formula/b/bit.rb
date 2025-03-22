@@ -16,6 +16,7 @@ class Bit < Formula
     sha256                               sonoma:         "a5b469dc4bfc6937d12296c2c768b9dc3a210c8a9e1fe796213823b7ecd68c19"
     sha256                               ventura:        "cbfe314c2c994b80648167a54ecca3cc3fb09c8824ef88f274d935d98ba8aafd"
     sha256                               monterey:       "57c91e19fbc60897fa432f7028898f75d47395239fce208cb9222f83f78a1ac5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "e0b88da3686ca8ece21a232981d3d40196d0f4b1f8c9aabb55d2f4be142e33e7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d998d44c9e7d076515e9363153c1aeaa4c8ddee77f9554152f6af2fab077764"
   end
 

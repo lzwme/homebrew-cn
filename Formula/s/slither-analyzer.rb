@@ -14,6 +14,7 @@ class SlitherAnalyzer < Formula
     sha256 cellar: :any,                 arm64_ventura: "c41cabbe0d4eedc5bdca64fe08ceb70cfe8145f1a40427213c0bf3e366cffa1a"
     sha256 cellar: :any,                 sonoma:        "48b97c3f1831a46913f389efcc8447bb6c8f8a3da0c7b3be0adba9ef5f161c81"
     sha256 cellar: :any,                 ventura:       "0ad88d84502bd238b98b5c8a0931cfffc75fcf610cf9a63aa69003cf046b0020"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d93d2b0af79eac8bd6bea22350d5ca7410cb286782f715d0ba859f37d68832c7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "03dd6809a59b0cdbda6bcabf1b311980aa2a9007863e94fc9afaabc5e4de132a"
   end
 

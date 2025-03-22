@@ -21,6 +21,7 @@ class Gping < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ecea45940ab8f0659edb8f61e5e9bb239bc9ce71b8275baecaf18c8b27ae2a29"
     sha256 cellar: :any_skip_relocation, sonoma:        "94b2db03885d870c498358c65469c840a66884a479107a33b900b38f828764e7"
     sha256 cellar: :any_skip_relocation, ventura:       "1137be7cc36b8384767d923bcc4a2977c7fb77ecf96a777ff036aa35a8482c17"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8eaa12da9c1ece23237b879bfaf09a927e8d8788024e425a333f0a0485c4db15"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d5c6309c3ccd67422b6a4611db1b4d3319c366db24047adc4f3a6ebdaee5081"
   end
 

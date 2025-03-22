@@ -13,6 +13,7 @@ class Liblo < Formula
     sha256 cellar: :any,                 sonoma:         "79de8fe2295a65736c7a7de5a2a24e6b62bc8745dd692a330c208e4b717b65e6"
     sha256 cellar: :any,                 ventura:        "98ec4c770688b3f59d46c99eda7c052eee63ff6c8ab4b874bc56db2942dad96f"
     sha256 cellar: :any,                 monterey:       "8f4e3f2fd6ce732d7d170f1db5193f9b53b233fcb08b876cc66114b252f465cd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9a3ae0a7f62dc172def171ed8c833e44fa72b4ab6a798f9b3c897b5e402e8b59"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "62fbd9950f4178a2ec7eeb280aac525b10d483953417f750aca24b420089b157"
   end
 

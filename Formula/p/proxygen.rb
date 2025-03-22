@@ -12,6 +12,7 @@ class Proxygen < Formula
     sha256                               arm64_ventura: "a567674fd8ec01290ee7eeff7476421f6d001f42c01bb6de9c4bcb320164e2f7"
     sha256 cellar: :any,                 sonoma:        "c28f521b0248d827fae680bd54cf162c71a749f7f8bc68cb4c871e66136d7476"
     sha256 cellar: :any,                 ventura:       "8194693bb2e3fc36925a1817caecfb77b46aa336982ee0f4a5d57c17794ebb82"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6634df1d072a4232e1f9cac2c31455ae28e76fe9e6e59ede1e7b2d6cc4cc0ef5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "50d54dce624c0a4e861911f49757cefc1efec0446a3806975de78afc2a15c318"
   end
 

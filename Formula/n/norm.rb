@@ -17,6 +17,7 @@ class Norm < Formula
     sha256 cellar: :any,                 monterey:       "4461cfa3ac911780e417455ccd5ea1d040dfee539529a54b1d3a3e1a001fc73e"
     sha256 cellar: :any,                 big_sur:        "a4fe786c06af5a57a962e1e12aea4ed1c5b747d1f98b060c11df8377c2cdb63b"
     sha256 cellar: :any,                 catalina:       "d70d20d746ace62b26cb70f7d940a2cfb6705af64501e1b7f948c4ca3a8b5afb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "cc5db1902343405319417d14dd804b7c2662dbe6c6d488f643dd8ae45561a418"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0749ed0f0382f434ebec2f77953464af8d80db63e8a36760013a32dffea3c501"
   end
 

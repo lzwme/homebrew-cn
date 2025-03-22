@@ -13,6 +13,7 @@ class SnowflakeCli < Formula
     sha256 cellar: :any,                 arm64_ventura: "1ba454fb4f3ff61579b5bdbc94368c4a998e29c09f282ef70ad155837da813c2"
     sha256 cellar: :any,                 sonoma:        "17838c99f7ba77aca6171f8b6087d8641ec79a85597ada82d9e9e20c8d889a79"
     sha256 cellar: :any,                 ventura:       "bb8cfb54b74947ba9bd8b62d2bf278493ca77a449975b0cce677a982aa1cb2c3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9ffe5d19f6bc6bf7a89420c2955abff8403e69272b1594d2f2a9a5f398fbda9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e711b1a2827830155ea84db3a205cf349bc63513d65c40c361935ad2a296283e"
   end
 

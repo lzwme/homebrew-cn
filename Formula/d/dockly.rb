@@ -11,6 +11,7 @@ class Dockly < Formula
     sha256                               arm64_ventura: "fb791102c78862dd28bf8646716703f98abb968c5419e82056e694ed0faf57d7"
     sha256                               sonoma:        "a82b61a79a6e0205fb8989b0d2529362789a0ace991bed5cd2a623833a9f94a6"
     sha256                               ventura:       "a5ff5795dc453df58faf55b982b83eb10a198bc4f6c51135f02e8e986d13c371"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "85332059cc8a9b0ffd33ce01ffdb3279bfb426a3e2cf9dd1e0745083d8494a53"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7ec35972880d31439b413e3f08b97f03a24a8d1cda8aa502c47fd4cabbab06c"
   end
 

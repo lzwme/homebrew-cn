@@ -15,6 +15,7 @@ class RdiffBackup < Formula
     sha256 cellar: :any,                 arm64_ventura: "20fa233aaa55c026ad35248b7a3a2071b8033e6d5ddecce0e63d0fbe91d87e00"
     sha256 cellar: :any,                 sonoma:        "5691e0d4ef52851e4fa7c4cb79f88d67d36452dd47d5a1ed431c4ea3af28bedf"
     sha256 cellar: :any,                 ventura:       "695783fe127849af52c616ca92258b2a68a9c9b44d8e0a16b01018188ed09422"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "82210fa53c0777d4f3ca024f1205b34ba559f5b484a0b8c07cfd2aa8fd7901ad"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5337ec00dc8e1870c11e94a94aa00868fc261fe1450d269ed856e7fe610d31c"
   end
 

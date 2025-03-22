@@ -16,6 +16,7 @@ class S6 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f5e99a82c198d22b1a571fb5c422dffd29627bce45b0a9f964a0fcb0cf3ee047"
     sha256 cellar: :any_skip_relocation, sonoma:        "4da05222f6137ef409e26fe0dbf908772c13a68f030fad6d53c273ef0a009534"
     sha256 cellar: :any_skip_relocation, ventura:       "1d903904acbeb5fa6440b6dec1df1d37069ebfda43a52fdc936d47348d7e46f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4531cb9773707e43896925748e312e80c74f33902df3ed8afb45239d6bb92a73"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1a900e9450e59adf25accb3c767706b80e124a941043124e88cccd552af1ba2"
   end
 

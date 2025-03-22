@@ -17,6 +17,7 @@ class Nickle < Formula
     sha256 arm64_ventura: "43b3243b4a9484fda1eea6f44ce4e0f2e205d4f1a1a089f4d8bfce6c0f8cea52"
     sha256 sonoma:        "a545c7cf04ec60df69b247257d58305914b4e799604afa959cae74e616debf89"
     sha256 ventura:       "0c7c8b844b443aed8417bc9e0061cd6d242d6f8fb89d7f7e2efdb6efe70c7080"
+    sha256 arm64_linux:   "ebaef6f179fb144f460b519fe49903498fd4e41e8e1fde1d5ecc708a76db5870"
     sha256 x86_64_linux:  "714be532767cf1fadc8094350bec6e70459a8dd8e891a8eeba3de01099638dde"
   end
 

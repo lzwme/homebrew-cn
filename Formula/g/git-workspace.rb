@@ -12,6 +12,7 @@ class GitWorkspace < Formula
     sha256 cellar: :any,                 arm64_ventura: "499f183b650efc68eb9b6cd71535995996d3cbf0a4e6e514fc3e1ce435b1a5d9"
     sha256 cellar: :any,                 sonoma:        "21ed41579cc1a10a68ede6d9c826f547b0907bfb9b412b6ba9ae936cc1aa541f"
     sha256 cellar: :any,                 ventura:       "83521f5a7cb8977584dc9b4d666070fc53034a532fa4b5cfb3e21a0f2315a225"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d6a7a925ec91fbd9403fe9a54a1de5c1991215739e9735f4135414780a57a1f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff145909e4bca229a0f1e7eb91f3225f0a113f1c3db32c0f7a96c5455098f8f6"
   end
 

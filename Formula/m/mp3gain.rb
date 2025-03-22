@@ -21,6 +21,7 @@ class Mp3gain < Formula
     sha256 cellar: :any,                 high_sierra:    "5aa37ac4ab2013f5365da14969494111500337cae3c6d7614b72dfb9e94352f2"
     sha256 cellar: :any,                 sierra:         "66684a469ee1de432a00f1264c89b3921d3558854fa736b24a3942e351617c47"
     sha256 cellar: :any,                 el_capitan:     "4c97894216600ba8ac03094a45fe68a7d107f69adbcd638d40c967ad10e95480"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "98696b13ab4fde544d5baa9d81c1ce457f52520c9927f77dc89e72eb31e2a6ae"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a38486ace3008b4e9c5de0fa3d94c66c66108b5340e887ec0f322a3f9525d536"
   end
 

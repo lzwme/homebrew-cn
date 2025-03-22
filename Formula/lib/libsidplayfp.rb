@@ -11,6 +11,7 @@ class Libsidplayfp < Formula
     sha256 cellar: :any,                 arm64_ventura: "6045375b29f669fddb8c36f5ab296a30b3aec238f3d45314f512d304564371f0"
     sha256 cellar: :any,                 sonoma:        "85e9084be1da3e80a63220bb6333fb067c910816a19db40ccf85a88642a5ee24"
     sha256 cellar: :any,                 ventura:       "52c66fe4af852e57a6144207bbe5929f79837114b86e4506bc0a19f5e3f4bd30"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a318fa60ef0c749ced5ae8090eeabd566f735838a0567a1842c326e1f4424fd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "34d0b7ca32d92c58eca1bf863b232b0937691481b178b4d6e62c11dabe634b17"
   end
 

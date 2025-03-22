@@ -20,6 +20,7 @@ class Waon < Formula
     sha256 cellar: :any,                 high_sierra:    "5c3c49f0740bfcf9d34fd9468af3d9caa8f19c53ee1d25f8d69442d63859c9ab"
     sha256 cellar: :any,                 sierra:         "d7fd9859544bf3ccb739942f0db00928469356f4d82ab7848cdba2ae5c5e99e9"
     sha256 cellar: :any,                 el_capitan:     "6f09559eaf287022f280991b44b5f4e86435fafda167c97a78239602183a3758"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "da0153186a47b6bbf4df39692da5552c67d68f455c1fe36fb2c13dd811106571"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f91b56d77254441ef842600da7b63b3ec7f84046cad6d89c64314aafa82af1e2"
   end
 

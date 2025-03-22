@@ -15,6 +15,7 @@ class Notifiers < Formula
     sha256 cellar: :any,                 arm64_ventura: "457f3a729ded33ed9beb948a57adee6fbd7602fa969d415bbf526455ea1bf043"
     sha256 cellar: :any,                 sonoma:        "c96537d4fb246ed71c41bfe6c61fd5f9a29eae517fb368b11a2c9313c2fbcf36"
     sha256 cellar: :any,                 ventura:       "2024eaac6704991a447f683b6df66129055273e49d9edcfeb4c80a3aeef2bc96"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5af85ebe0bad3d18355ae10cabab6648750552c422f58f6d385cda62a7804dfc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "87b54598ebff943a76750851764c55942cc308c3fc1f0f7d6a672d97465ddd08"
   end
 

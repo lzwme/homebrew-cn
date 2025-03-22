@@ -13,6 +13,7 @@ class Dotter < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "1859dcd0ac4a801579b813c0c6ba11333091b5f6e5fc8f6265fd8d248582c646"
     sha256 cellar: :any_skip_relocation, ventura:        "0d0e6ebda0277dbd55583f984d9e67e22e3c59244e25e6983772c83f36cbf326"
     sha256 cellar: :any_skip_relocation, monterey:       "5579f894280cf996c8081487fc932cce497bf5bc9d232e6b2a5d9cff66c92e25"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "98ade366e0417b7f133a1e28b517ff69e6221b479d0aef896d69d8016c0724f6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "35de8ef94e14f8a3f204755c943dfac83aba854bfe6c48d5300fed387673c0b7"
   end
 

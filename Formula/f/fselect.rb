@@ -1,17 +1,18 @@
 class Fselect < Formula
   desc "Find files with SQL-like queries"
   homepage "https:github.comjhspeterssonfselect"
-  url "https:github.comjhspeterssonfselectarchiverefstags0.8.9.tar.gz"
-  sha256 "08a903e2bd7d68dff004a6552dc5823989c74ce20a96416601ce7002f6b51a7b"
+  url "https:github.comjhspeterssonfselectarchiverefstags0.8.10.tar.gz"
+  sha256 "8dc69266a7dc2b9029b111053ec761388fecb1473f68d0f2241a33cfc2bb296c"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c1785ec66f4e55b795503170aaf43b4ab897b2da4852acc072f8eedd0c3cc7f3"
-    sha256 cellar: :any,                 arm64_sonoma:  "726d35a261fe7fbe30c4c4f2ddd145d23ff33075fa646e322b1f9d41daaf731f"
-    sha256 cellar: :any,                 arm64_ventura: "43bba5700b6a79fbef7f60189e63357cc3baa01e52d0ae56d4a5d4c531a11fdc"
-    sha256 cellar: :any,                 sonoma:        "d5e29d73d836e83477d197bb6154435c058c50c672ba46b0b113620609109063"
-    sha256 cellar: :any,                 ventura:       "b087b27e909dc500699ac7e775d3d0b8971ab27670024bcb443a2358b8525c68"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "121d50a814277f56cb8b684746e81ac02f79cbd14efdc8259dbf85749ec9728b"
+    sha256 cellar: :any,                 arm64_sequoia: "6662c72f2b2733202dc4c9011ee5d7eaa5e4146237e8fc7cab5532186009ea09"
+    sha256 cellar: :any,                 arm64_sonoma:  "24c188bd49927478caa688e4ea073982cd293a4a8d59a6f0f4905a393968562e"
+    sha256 cellar: :any,                 arm64_ventura: "2682b67ecc4b1e8e4538d8b0bd31f2366b8bae94f0437ec490b7a19c98ecae40"
+    sha256 cellar: :any,                 sonoma:        "231220fc27238b4907c2a10f6b54ed88e17ea90fbef02155afb63df4db65ab2d"
+    sha256 cellar: :any,                 ventura:       "c0f9db29c0a746141e6d277177ca34ef4fe76356f1f90f901161d64632be0ae6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c23eede3272e9b289fd34eb55fa3f644202738b7d08713906df4f39bf7bbfc8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50b366606b5f2fa65586fb2d6c29c38c91d894fd50d910c75c84135fcc3d891c"
   end
 
   depends_on "cmake" => :build # for libz-ng-sys

@@ -20,6 +20,7 @@ class Rig < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "770e85dcfaeec7cf4e4799572b102bf436afc9f3d28eb828ef838b5a1e1a8152"
     sha256 cellar: :any_skip_relocation, sierra:         "fcc18ba335af01c00a5a7e7e41f6431192393d13eb374513ebe9b0b2a75ab0a0"
     sha256 cellar: :any_skip_relocation, el_capitan:     "d82301a0557554e57252ea0d020f32e1d13485077c54f4d68cce01ee9d1b34a3"
+    sha256                               arm64_linux:    "59facd287d0415f45ad5b63fcd7fceb389fa27f955ae79570bc03af560c0bccf"
     sha256                               x86_64_linux:   "ea660b88d2d27477728bd628b496e6a6588c7dff8d4a46051e2b9fd0504e726b"
   end
 

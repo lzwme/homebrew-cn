@@ -17,6 +17,7 @@ class Sslmate < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "565aa3ae6e99d734fa430a664c3d08b6ff2301127da6b4f408009fd96a6fa384"
     sha256 cellar: :any_skip_relocation, sonoma:        "351e49ea1faf2c054b781097608e26a6e13e7af5259be2471993fa69d91102a2"
     sha256 cellar: :any_skip_relocation, ventura:       "351e49ea1faf2c054b781097608e26a6e13e7af5259be2471993fa69d91102a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "766551303f82f9d0d67eb302c7e9d3f40cc72d5b3a3d6ab242c61e0f60688277"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb4a80e5c90b0d869a6c6734e7c768ae81ec3112890c72034cd74071cc08b20a"
   end
 

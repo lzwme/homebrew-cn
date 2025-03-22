@@ -6,6 +6,7 @@ class Keyutils < Formula
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later"]
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "569fc190618bdad81896e66145fe832b1d858644d19c87a59ce417158e0cea7e"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "d5b06c4e38d2c4b7decb5b7bc0431b3416993231e5fa688950e4df83686a298d"
   end
 

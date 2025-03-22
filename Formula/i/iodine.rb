@@ -16,6 +16,7 @@ class Iodine < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "e1162e6eb9ee5c0579216e80af32079d36adde37fe4653fb6da34a58d54e7c3c"
     sha256 cellar: :any_skip_relocation, monterey:       "297d884daa963973050eb436c9727c850ffce5627a33310bd159e7e13c6c8483"
     sha256 cellar: :any_skip_relocation, big_sur:        "fe1f5e48bcc20c66d29ce945f72d7879ba59eec5af18b3fd46ac3c21c40c6319"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7878240547b0427b4bb82fdb7062c995362a540e48c87fb97c5b5b81022514b4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "eef2dd9635b68cd36d2d7e3d1225d0644205250b5600874ad381d8b94a7a5b06"
   end
 

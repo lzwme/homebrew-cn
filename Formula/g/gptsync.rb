@@ -20,6 +20,7 @@ class Gptsync < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "8d21fa7f491b5cfe7a2c809a99d753ff4511c5354c4761751ab9c5abebd585c6"
     sha256 cellar: :any_skip_relocation, sierra:         "e822ef6c99aeaf6eee5812cd83ede2bc9a045dd556105150293bcf486898a59d"
     sha256 cellar: :any_skip_relocation, el_capitan:     "d355de7bea36e310d22ed1109a34574ab93859bfe9e44b9493ebe75cfe429c33"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7ba72e662e2aa7db8b0a35fe335c685095cc48a1b04a8270fcde4cd8348d2e29"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6cf8612d628a08c143b24697ee37265edea17cfcfaa2bed8fa60be6a2e21356d"
   end
 

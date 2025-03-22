@@ -16,6 +16,7 @@ class AptDater < Formula
     sha256 sonoma:         "34b892275adfc73fe17bd925f2cf7a29b9f02d29c84dca818b46a1d9e5faf6ac"
     sha256 ventura:        "bdd43755453bb7b579382091ce430bc9d16bb8fbf128ece766b92034ff547963"
     sha256 monterey:       "3bcfbb9b3f6648f528de329d439840049cabfcb55d81757eebb74f3da88e7ad3"
+    sha256 arm64_linux:    "b80fdf17b885b19e6c905fd64524968669f4cd80aed8119526377ad774c3c62b"
     sha256 x86_64_linux:   "0aa11ef9c978a52cc0b1941bd4484df092e4dd1c0682f616692b30bc894feb85"
   end
 

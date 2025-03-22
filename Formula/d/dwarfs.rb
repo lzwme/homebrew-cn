@@ -17,6 +17,7 @@ class Dwarfs < Formula
     sha256                               arm64_ventura: "3ab243d01529de529c23bb3df23ed088b72e618f6e51aa72051f85a2525b01c8"
     sha256 cellar: :any,                 sonoma:        "25891735f7980db93c095ef787fea98910a1982de7c830f278ff09002967b7c2"
     sha256 cellar: :any,                 ventura:       "07505394b1dc3da2726fe175963081759307367902f85f64771d593f11b14660"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "71285d99c355e85c51fedc6b43f84a81205e241d0251cea4fb78163f8436f283"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2416b6bb134cc81a0c588931fe8a01d3a7f7a5fc459eb59854dcbe22f911cbd3"
   end
 

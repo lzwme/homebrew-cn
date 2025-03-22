@@ -21,6 +21,7 @@ class Snort < Formula
     sha256 cellar: :any,                 arm64_ventura: "2b7b5e26dd4eb77456c4c35fdd7c7275096a3c56e5f1b982f7758d5ccbed9e04"
     sha256 cellar: :any,                 sonoma:        "ef9d997a60c53c81e1bdb047ee31bc520d874bb8dccd81b87323f7ca4cb41283"
     sha256 cellar: :any,                 ventura:       "9029b231681ea831d1d715092f66197b61486dbe193ee64f1722bc71e346390a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b83789ca77266b8cf0941699104131d7db78e73889bc0fe292953566ccafd93"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cfe8e38d0509eb07a9a1d9ae525bf20d71cdeff137fe856a0da995ad3a3c05d"
   end
 

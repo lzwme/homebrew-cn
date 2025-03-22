@@ -12,6 +12,7 @@ class Wfa2Lib < Formula
     sha256 cellar: :any,                 arm64_ventura: "c2b2cd3b72cad2bc5f8444f748310bd3ea87c2b8f5fc7d61892e9afb82991bc3"
     sha256 cellar: :any,                 sonoma:        "19a6a9bcef73e9d4ab9499360046695c51e256e45f34aa20509aa67672ebd38d"
     sha256 cellar: :any,                 ventura:       "22063cfd7b43825c734ed23deecc19193774a819ea75e29d3b27b84e8b67f905"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "353ef4fd445ba3aa0fc83ead45dcdf670e8d864fbbe594bdd15794f638b2c53e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f2df560ffb8551153a89a0c9ee9be215798c7adbac8f075ca8650538f7b20a7"
   end
 

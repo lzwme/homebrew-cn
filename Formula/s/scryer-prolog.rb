@@ -12,6 +12,7 @@ class ScryerProlog < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a0384d324b743441527508b58a077149303dd2dd96a5503c369408f9719cc5cd"
     sha256 cellar: :any_skip_relocation, sonoma:        "d3e024f19ee8e58837198cd389c3b7c480ba7c5e387d0857f4922661a79e7c18"
     sha256 cellar: :any_skip_relocation, ventura:       "ca1a6421cda477896165eb0565e298dee3d6a8cbda834b96319d8ecfae1d3b93"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f3568e4dbd9505bd8bb67952b815e18631d464d1608295e9d699b91669533fd6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "440649067671da13802d98cdcd24d605c6eec246d55b3be4b8cb90c612ee7854"
   end
 

@@ -19,6 +19,7 @@ class Osc < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2fd52b44b0118e525e96fdd0315062f70e2efb4a7bbc3adfb1d5724f4dad3077"
     sha256 cellar: :any_skip_relocation, sonoma:        "e720725830ea34a621e6bbbf2f5c64ef86b36687735b587f5cf44079609a85a9"
     sha256 cellar: :any_skip_relocation, ventura:       "e720725830ea34a621e6bbbf2f5c64ef86b36687735b587f5cf44079609a85a9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fd52b44b0118e525e96fdd0315062f70e2efb4a7bbc3adfb1d5724f4dad3077"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fd52b44b0118e525e96fdd0315062f70e2efb4a7bbc3adfb1d5724f4dad3077"
   end
 

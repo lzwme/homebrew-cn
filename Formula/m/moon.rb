@@ -17,6 +17,7 @@ class Moon < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8d30cbebbbd068d9178833384f9bac0886b511578cef17bca42f8bfcb0edf333"
     sha256 cellar: :any_skip_relocation, sonoma:        "f41a60536d88830e5c7f35c20d3737bed43b8a1d6416a1d6397ae5d217ae088f"
     sha256 cellar: :any_skip_relocation, ventura:       "24be6fe0ad6da0b946703b5d7c52543ea14732d579ccb821d8269474bf2c0057"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "95683b3d4205cc02dce13d2c4349c1c477cba037e3d5779a6cca65f33f0b21ae"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "28c765a74d288f507dfcd767b1c1aabf49236df0a5c735cffc2ac10d79dcb062"
   end
 

@@ -15,6 +15,7 @@ class Fred < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "dda7a9bb2e5061f6166ccee21467b94ded8b850aca54196ab1405c2d773042db"
     sha256 cellar: :any_skip_relocation, sonoma:        "eedf8e333e8eddde050d16bda766093370475729b1219e6de44fa0795ad5e182"
     sha256 cellar: :any_skip_relocation, ventura:       "eedf8e333e8eddde050d16bda766093370475729b1219e6de44fa0795ad5e182"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec3b6eeb520ce824351dfe086565d59c0cec9976ec82a6faf0aa69c500fa2482"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dda7a9bb2e5061f6166ccee21467b94ded8b850aca54196ab1405c2d773042db"
   end
 

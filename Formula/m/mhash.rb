@@ -25,6 +25,7 @@ class Mhash < Formula
     sha256 cellar: :any,                 high_sierra:    "82f39af8037f070fafcad0280b151dc58e1b5b8c3ea1fb75f4ee372256d3ad2b"
     sha256 cellar: :any,                 sierra:         "f630165dd7f7a0f8e5b710e0e0af5ebca6ca0edc98cd46a01b617a3e16bff7ea"
     sha256 cellar: :any,                 el_capitan:     "8817cea2b724d7ea00fd1efb348aa8bdb5d93ca155cb9ccf8eb316f76b42941b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "55c3040b1081fba7cad5ff2ccd248b37b8face8513a609bdeff9a47c31241713"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "32a5e81c29e8407754448e5aa7f1f8ea2328bc5ce266ab5f3b350e3174373900"
   end
 

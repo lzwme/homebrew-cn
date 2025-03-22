@@ -20,6 +20,7 @@ class Tinymist < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7fd45c8d2b490ce6751bef741fb07aef21a600f0c02db032708dd6009769b7d8"
     sha256 cellar: :any_skip_relocation, sonoma:        "f852ab28075cc57291417741561672aeca879ff25aac2bd79c7cb804567809d5"
     sha256 cellar: :any_skip_relocation, ventura:       "70c97785b11d57610b5c30ef74c626ddd67a2bb9ba2a7d7a1b3b0d6e1c75b061"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c141a882130f931a29acf51e90bc7f223ca962c137d1ad53b2a14fc8ceb901e7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec9ddb3edac83df0ea4b5911a97a56bef95f6f052438a4973506ee31c628af8e"
   end
 

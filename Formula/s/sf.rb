@@ -18,6 +18,7 @@ class Sf < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "495e6344a27a230cb0efd8f49ac4a76dd1a8aaf18fa4c14c83434e3de1dafee2"
     sha256 cellar: :any_skip_relocation, sonoma:        "59cca1814e4783f3e074e85eccd6250ecb0ae733fe4d6e4c78f5c84a8ef73dfb"
     sha256 cellar: :any_skip_relocation, ventura:       "59cca1814e4783f3e074e85eccd6250ecb0ae733fe4d6e4c78f5c84a8ef73dfb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f475ca60a30c9848985af4563d39c739f7c85bf83032a2585f4c11de4ea7fc79"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "495e6344a27a230cb0efd8f49ac4a76dd1a8aaf18fa4c14c83434e3de1dafee2"
   end
 

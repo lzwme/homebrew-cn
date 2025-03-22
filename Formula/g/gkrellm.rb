@@ -15,6 +15,7 @@ class Gkrellm < Formula
     sha256 arm64_ventura: "f7de52218b179c4604afe3453fd8d23e2f43cb974b73db9ac8ddd638317fc185"
     sha256 sonoma:        "40c0010f6bb061498f99a49574e95f69e48d3208a4a45d4958ebbf8b40e55100"
     sha256 ventura:       "b8ccfe42efe43ed8059fb2cb003af40f5c1cfe707022a01034a775240334eb7a"
+    sha256 arm64_linux:   "617d0cafc444ce08abee09d52a9ee733250deb08ff16b80ea4dfe2c00e6b6e01"
     sha256 x86_64_linux:  "866d5ec29d28c584d77357100e4f8909cf2524cefb6859670578695c4dcb6cfb"
   end
 

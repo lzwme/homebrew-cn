@@ -15,6 +15,7 @@ class GccAT10 < Formula
     sha256                               ventura:      "1155f38da440c96a9df1442152c3149755dfd369815cf8b967e9bbf2a4874489"
     sha256                               monterey:     "be699cd4f9c26c0023a28eb56e534058cac1ab1b2d06e57b531905cfde49b48e"
     sha256                               big_sur:      "5f40c454e3e3b96578411e28d6ba27679c6d3c182a978c60c3ea8f57f8235033"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "dc5bb71b10070e7b39378f8daa8192ddac000bbe731000898f8c250570a7e267"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "517a097236a0de677b0718462a752068ce32f5b6b86e044bdfc2fd7c2097207e"
   end
 
@@ -36,6 +37,10 @@ class GccAT10 < Formula
 
   on_linux do
     depends_on "binutils"
+
+    on_arm do
+      depends_on "zstd"
+    end
   end
 
   # GCC bootstraps itself, so it is OK to have an incompatible C++ stdlib

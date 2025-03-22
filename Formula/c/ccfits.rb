@@ -16,6 +16,7 @@ class Ccfits < Formula
     sha256 cellar: :any,                 arm64_ventura: "b0490e303998fd2eab1ecffd498b1fa052581b27d92b7cdde9265a52a4e713c6"
     sha256 cellar: :any,                 sonoma:        "a7d684bbb48a13f09a4b8e6d70228d2d06cfcfb975a52070e4e9adcc250f3a88"
     sha256 cellar: :any,                 ventura:       "512d95b2fae5a3be154661f93801a8ff9232c87e14a6284492fa74e053793f9c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "555829bdb3662a54aca6af2aaf711c1c1ca388066e279f6bf725b2013bd23954"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fe8e6f44ecc655e7951eab676f718f070e76e4d00bbfca35c8e42478ae1b0a6"
   end
 

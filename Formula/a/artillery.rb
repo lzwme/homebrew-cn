@@ -16,6 +16,7 @@ class Artillery < Formula
     sha256                               arm64_ventura: "da5a85b601ebbd27bf1689902ff0d0122393881294510265059fc1012cdf607f"
     sha256                               sonoma:        "0475d0998555c0b01a3b1c7817fcd046617702f977cbac92bad7f3e847ac7d1c"
     sha256                               ventura:       "208f1c86bc65e2f56b9052a277b2bd04b547315201ae650d9dfaa0c4800b32cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee9eb04cf795a5881712446b67f2d563bea10f2ac2b751b57ca596e01117edaa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0579e9a607b7a09eddcf8001c3449b134cbf1cd904053600272fb793ded88de"
   end
 

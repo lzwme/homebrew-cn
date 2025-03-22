@@ -16,6 +16,7 @@ class Ncmpc < Formula
     sha256 arm64_ventura: "f7c1bf501994b1028ab1fbd9ac4dd4d83c96bb3ab83b25b4ce8cf8f0e8f692fe"
     sha256 sonoma:        "9d2b5eb8ff59ba6b5cf65df8c0106197cdfb69a7970198950e433407087c005b"
     sha256 ventura:       "709d7f29cb41e2e081f09941a33fc2e49f9cb7bd47e9231acf8baf4869106cb0"
+    sha256 arm64_linux:   "035d0b5dcd1e9f4847560b81d629c2cb35597521a00fe75ed56cf9ffb171879b"
     sha256 x86_64_linux:  "f47ead26271a682a4c3bff3720dce9a2ef700a80d92123477d7254056c2d1fb3"
   end
 

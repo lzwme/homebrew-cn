@@ -17,6 +17,7 @@ class Mono < Formula
     sha256 arm64_ventura: "7bfdf436e04babe67322882e1b1d46b9a09a5cadcf5a112dd2aa48ed033e5405"
     sha256 sonoma:        "e77d236bbebc33d8f87eada3fc1262fc371a3bfa0095941dd58189ffae156bf1"
     sha256 ventura:       "c4f2bdfaefd9082b2d259cf1bc69d88bbc1a47533fee125db9ebd1ae858add27"
+    sha256 arm64_linux:   "dca4990020cc66aaf5c079e681b38d695b2bd48a7f1014fe369af4336b536e6f"
     sha256 x86_64_linux:  "12bf3847064f958e41be8d6c2ee6b7853bbb9fc7d2c0526bc4dfcb494389eb77"
   end
 

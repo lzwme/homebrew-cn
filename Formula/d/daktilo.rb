@@ -13,6 +13,7 @@ class Daktilo < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "7e60d9deb2d00237f924690c9ad83c21fa0e9a39a2d5e21815b53d0a97e7a4aa"
     sha256 cellar: :any_skip_relocation, ventura:        "076a61558f93da37b2a31f97496fd4f687e578be0929488e931fbe3b806575fd"
     sha256 cellar: :any_skip_relocation, monterey:       "58cde688813e9da476cab1935487bbbaa337a781808602c6c34d3612e752a684"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "551661528d988f6e25e8723edb9b1d515d143178d237843da60fd52f946a5993"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d862c33b912fb26fb8564fdc3bef5f666265f8945c9cd17c2b7fc030ee3e3ce7"
   end
 

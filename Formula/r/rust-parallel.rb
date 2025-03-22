@@ -13,6 +13,7 @@ class RustParallel < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "9cb678905f2c6a026e1b7512e196d1478334c4b1129c949e4fb98762f1d1a87f"
     sha256 cellar: :any_skip_relocation, ventura:        "850de5319efc8a954315d5125c5c2682bd13f41a5f8cfa36b9f6d05a52c14d39"
     sha256 cellar: :any_skip_relocation, monterey:       "0134ac63beb54873d3c01da1b58e408e994145718fdb0f7cdb1e52f4241ef60a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "24abc351a65f9b658a7a81496bb134e75a2237b1d7d45a95424ec6d6a569d93c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9f64a6b6b8620e2cdb18b0d5db059748d21df1af61989f0a1ac226170cda753"
   end
 

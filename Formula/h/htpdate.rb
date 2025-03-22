@@ -18,6 +18,7 @@ class Htpdate < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "c4893b5b8412f014565d366bdb4d95feae8572a9328aa341e41e27056d26cb75"
     sha256 cellar: :any_skip_relocation, ventura:        "687a2c378cb61476b28d932c3b4de170337bdaf22003b55d82c7a50b58ef762a"
     sha256 cellar: :any_skip_relocation, monterey:       "c09f96724bae5ae13b7b84c7e76b1f0a2c8f362e6e007fd4187ad18c0afb9364"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "be4c2fa2c9b1e31a45e406d8a888a1f77200fa2355e1fbf09b27ae77ebdae007"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c769ab62c46610dd1986c757bb70a42cd446e9e0292e0fca80cd60a33e752b1e"
   end
 

@@ -16,6 +16,7 @@ class Zet < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1b42203cb1f07a7f436b7c6ba9a98667ca1e55dd65157fe8fb445a3de4b3c9e0"
     sha256 cellar: :any_skip_relocation, sonoma:        "4f7359f71bb633a4dca674758356c976b74cb8c9b0a78d705c07d33cbd157414"
     sha256 cellar: :any_skip_relocation, ventura:       "7155960676e9ea9a1e323e80cf7dd1191a63951c097d1339d179873218519677"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "72716b50cfa1d1d51899f91f61ddf848b6f164e93082f2300a9088ef463921db"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "85c0892b0c2723950c55e1df613854ef10c21b708392084176ab0917c8a0ba7c"
   end
 

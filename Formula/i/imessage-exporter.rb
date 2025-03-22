@@ -11,6 +11,7 @@ class ImessageExporter < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f96e6082c878c07f3addadfab8062017751de48b71e0820049a7b522a1d624d3"
     sha256 cellar: :any_skip_relocation, sonoma:        "b549e5e8485abd5979f64c6806e50f2fc810b0839b6c0d0b24e78521b0ec9b8f"
     sha256 cellar: :any_skip_relocation, ventura:       "34aa52774258b041abc402601559ff1b5fa7639d5143fc394e5118efd0bd6c5a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d64eada6a2da712bd26d9ca80972063aab229bdb3f13b5b0b460e2f1d5a3581c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0eee2db3e11f80892b574e66bebbb46b5c57b9b1a20a33c21bbe8075f48b27ca"
   end
 

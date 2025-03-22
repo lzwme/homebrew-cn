@@ -14,6 +14,7 @@ class Mvt < Formula
     sha256 cellar: :any,                 arm64_ventura: "4f92a4a195e51bed398ccac5e6e4d1f23cab5f3eda6f9ad11b1367222d5ea222"
     sha256 cellar: :any,                 sonoma:        "32c6f03c6f0e9e465d579edaac5a38e672f9d209d908d98ee252c9107358d131"
     sha256 cellar: :any,                 ventura:       "054c3c39ddc0b13ce7df8eeea14be0cfb44124633a3c9151dd3c00b402d5ece4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "73502e7220a1bbc886445cd31e9c61b6c77cec576783035df4fc5d02cfe69ffd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "29e681c4766dec54f9f00b79211fdfc150fd8111f77f614b873d4ef6ab90d679"
   end
 

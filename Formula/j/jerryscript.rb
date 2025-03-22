@@ -12,6 +12,7 @@ class Jerryscript < Formula
     sha256 cellar: :any,                 arm64_ventura: "54b1c8bc94bc0c5f125e8f7ebab191540df56987dfc2e1a58c61ac6a5e25d2a9"
     sha256 cellar: :any,                 sonoma:        "28aa15489cdb4c63a3ca8dcabeb18bbf0937d16d7e627a19a3376936e2f1adbb"
     sha256 cellar: :any,                 ventura:       "2426c72ce0d91dd244fc0a4eb59a4912d6c753f090707a71367f9dd36f503751"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e969a7aa188293a61c458794e5673f6bc1012c48badcaeddfccb379bcc84e80"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "700fa052538ab63fbaa0c9f8fda9ec3491777d6a65c4698e7ad488297bbbadcf"
   end
 

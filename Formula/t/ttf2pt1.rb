@@ -27,6 +27,7 @@ class Ttf2pt1 < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "180c25530da15c48af99ea59e20f40e18e7339e812a375c9d3760ad23429a085"
     sha256 cellar: :any_skip_relocation, sierra:         "e70efa3a1b28b212ea2366ac50b33fbf48e9b7922d03f1a6b86965af87244bee"
     sha256 cellar: :any_skip_relocation, el_capitan:     "0ef606dfb439ad46c5442b35458f009e864ee3270145c7be940581a5d272bc54"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "e4c6c32597ec38d178f8c2fd2bd7fc0e38b8b916a15250b73bbcd42fa07eb734"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "aa39b65205b22d6c02893d9b5c503d0309edeb8884e0e9336c9d725dc049a666"
   end
 

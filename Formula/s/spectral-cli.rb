@@ -11,6 +11,7 @@ class SpectralCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "01e31faa4731b14f0763311261d3618be487397f552c702419e83a04ca42aea8"
     sha256 cellar: :any_skip_relocation, sonoma:        "c326ca57e88ae276c8d2248e46ea4cea5150514384c656431cbd4d2930a2aed2"
     sha256 cellar: :any_skip_relocation, ventura:       "c326ca57e88ae276c8d2248e46ea4cea5150514384c656431cbd4d2930a2aed2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1bcdcbb1fb3d677f318a2ca9c52b3fdc37b9cdf68bcf62dda238317900d96b05"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "01e31faa4731b14f0763311261d3618be487397f552c702419e83a04ca42aea8"
   end
 

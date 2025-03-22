@@ -19,6 +19,7 @@ class Oclgrind < Formula
     sha256 cellar: :any,                 sonoma:         "8c0333807ba86699af7cbe5daaf1fe1545f1ef0ebd4c93e081ba5b0722a97fba"
     sha256 cellar: :any,                 ventura:        "ddaa39e73997893783482ef2744877704d393e069ddb999aa34ebedd9435d8b9"
     sha256 cellar: :any,                 monterey:       "a04a89b7bde89c7bfa2d83ab13521f8ed5ea8b6b3ce7470ecf3c995408527986"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "6a473d7f99466f9479d86534e11c73b7ba417bd7f02d5e5736490991645c3cdc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "867889a512d1c460d03496a763adf0d8c0d18b3ceea4d6ade2907d9513241b9a"
   end
 
@@ -37,7 +38,10 @@ class Oclgrind < Formula
   end
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{rpath}"
+    llvm = deps.find { |dep| dep.name.match?(^llvm(@\d+)?$) }
+               .to_formula
+    rpaths = [rpath, rpath(target: llvm.opt_lib)]
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpaths.join(";")}", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     # Install the optional ICD into #{prefix}etc rather than #{etc} as it contains realpath

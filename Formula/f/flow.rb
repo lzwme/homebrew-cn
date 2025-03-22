@@ -12,6 +12,7 @@ class Flow < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "86ff40acbbdfadd600e1f856d1af90e2c3647d041ed154dba8b5cca770f916fe"
     sha256 cellar: :any_skip_relocation, sonoma:        "973de9402bab78479910cdcf86c0f44ed30dbff15e8d6f8995be3f1d1b2e3834"
     sha256 cellar: :any_skip_relocation, ventura:       "0bdeaf7b2771c23c71cb319ebc6bb0b6d5c832db81bc320a92388852c0d2f6c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8bb6aa1a69e13bae5fd226863cba81a6cf4c07d88d90b4f625e02b8ab6560304"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "90e21af432a8f78c4f35e2403c9009af222494302ede4471f529f8728fee1f6c"
   end
 

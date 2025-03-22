@@ -16,6 +16,7 @@ class LibtorrentRakshasa < Formula
     sha256 cellar: :any,                 arm64_ventura: "00dbff95e94aa2d00f733b6051ef1dbd2c3e7391af33abaf75c241420a7cd36f"
     sha256 cellar: :any,                 sonoma:        "83a80337d431781ad43754bd27ebbe0ed522fa212aba1741b7376d1b46468583"
     sha256 cellar: :any,                 ventura:       "eb7c7b3dd11ef2bf8c802748bf6c82df3e574425976a84e94348ea221432feb9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "84cb3da7ab48f338e2437279621c13793763293f1b8c83f4aa2733cfc6bf6d97"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d56fcfa410907d7cae43cd9dd5c127d10643845d935bcbc4a687f8851f8c704"
   end
 

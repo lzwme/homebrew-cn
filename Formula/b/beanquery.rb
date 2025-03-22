@@ -13,6 +13,7 @@ class Beanquery < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "63ddd18ec335a19f6b3f0e5fed1efdbd4c31f72d96ef328aa5c2aba910d0b8d1"
     sha256 cellar: :any_skip_relocation, sonoma:        "be0d6cbc30bb9ac669951dcfd6186fb8a3541fcb47aae5950588bd9946ec3490"
     sha256 cellar: :any_skip_relocation, ventura:       "b92693ad9f3c86dd1f1ef62bea2f170bba9fe1b81f1dcc11fc4a905b88ce630a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2b73f16bc5b5679f3143ab43d3934f946cec6942e90e344dba917bea396308e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f9b366199597258009dfbab13417889537343c76c7d8db6ec0d35129012844f"
   end
 

@@ -22,6 +22,7 @@ class Mkvalidator < Formula
     sha256 cellar: :any_skip_relocation, big_sur:        "cef2881fd23f1e0b7c465080379f8564b00da6db94cf28f5da272ec19f565014"
     sha256 cellar: :any_skip_relocation, catalina:       "98fa360ee6e7ebc233784d62c599bc07bd92131159bdbc64d233ad99f883a99e"
     sha256 cellar: :any_skip_relocation, mojave:         "4e2d50be71341f0a47591587ce3cc428da8493af87ea2bcdcca64c86cacd44f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7460fa4aa8b4de099df311c8058767d8c538e9950045134c3267f6fc47ec3790"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "83b78fb761e9d2bccbc88b9893d6760f445eef59c2d122dace22541ef1e04791"
   end
 

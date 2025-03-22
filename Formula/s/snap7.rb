@@ -21,6 +21,7 @@ class Snap7 < Formula
     sha256 cellar: :any,                 mojave:         "71aff7cbb3e78369d6b9a93887820dd7def1afe382ed82211be313942e1bb81d"
     sha256 cellar: :any,                 high_sierra:    "b0d670ce6a2d780d13cfaa3346c6aa701f280a85be010dc42c802d6ebd028694"
     sha256 cellar: :any,                 sierra:         "e04dea88411f3b444dcab340d3f11bd739fb853de65701e727546a9481981924"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "55a95fc3a66a84a3cd2a26e57635613ef236d855cf21f42991b7bfc36cd7c58c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9fbbcef4c1de91267df9cfad2d3be40570c3be564c5793d874c11452780dc315"
   end
 

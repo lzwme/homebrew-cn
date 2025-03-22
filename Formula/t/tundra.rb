@@ -22,6 +22,7 @@ class Tundra < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "4de7c173c546e24d82c32c49cdd38a6c5b171f31e265b60c31754688a6597fde"
     sha256 cellar: :any_skip_relocation, sonoma:        "8f50ea8f6274c56342341da47ba040fbbca36e7f3985c85754f22c22cf46ed5c"
     sha256 cellar: :any_skip_relocation, ventura:       "b7d16f6a49ea3f46004c2bd81f06db5b1bd3e61a623c7f74d32ccf0956e0bd7e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "498d5c53b38c42f02714f86ad03052b2a901189cb92e0731c5ba7074488e1cca"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fad1cea39ec00029ac59d256942a16e6e1d7fca077ad817e312257335bf32858"
   end
 

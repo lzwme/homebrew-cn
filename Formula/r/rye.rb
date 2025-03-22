@@ -19,6 +19,7 @@ class Rye < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "bc5259ed968232a6ee88fa9afeba7dd6429dc7eea4a3fafa3dc1eeda259c6a27"
     sha256 cellar: :any_skip_relocation, sonoma:        "b3a8e7efb4d1cb5070a3182778474e5e196f9f2e94edf30a8584de32bbe1f050"
     sha256 cellar: :any_skip_relocation, ventura:       "e15f3bbaa74bc6ef7b7fe65e79af32a812567394c27f5074f675726e3f0da24a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae95a33be1b6eab2d8e8e17e95bdb14e6b23043bfb775094f76ce61964afc2a8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c57f18a9a1dd66aca420ceb0bdd53d91915bfd9b93298b5cfa12411af9558a7"
   end
 

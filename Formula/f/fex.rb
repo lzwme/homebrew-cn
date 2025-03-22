@@ -20,6 +20,7 @@ class Fex < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "1b293789f75a67d36037f9d80641814119c8f4534a78dbf321744276a41f2c15"
     sha256 cellar: :any_skip_relocation, sierra:         "e42328824017f1432ace562fdd70061e504c5524d2702f3d4b470c40b1bf105e"
     sha256 cellar: :any_skip_relocation, el_capitan:     "952c166ae7efc5c7955bba3c54fefc1e5c18fe2296804b15554a8703285034e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "106493be88cc6c2467a1bf144a6bb3bf49779831d4c7577046a864d09adc6db7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8ec5c054bfa085ae8e70f521aa235ddae7a2a481f4b9512751490c8a5166c09"
   end
 

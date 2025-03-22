@@ -12,6 +12,7 @@ class LanguagetoolRust < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "353bb7ad7e99b30e66312284a0ee1b8058479f3892da5a3ee336b80a9d58cf10"
     sha256 cellar: :any_skip_relocation, sonoma:        "b2dcfbb19328a045c4a6bebea59fa674bfcb6d4827938cd4d5ff2b0f6a63c095"
     sha256 cellar: :any_skip_relocation, ventura:       "53961fe44f3a0564943b62dd179df6e2760bc33b7ecef8927cc6d6c20f44b8fb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "020bb11bed660cc4710f5eeeda2c37becfd66ef9a69b3d8e8fb25d7750bd463f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c575d0c3dbfe53942702f762527241952714188e2952e05c3a7f08e0273da048"
   end
 

@@ -12,6 +12,7 @@ class Tiny < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "56f21368dff225e7fae151b96ded515ab2c858c6a4cbd8bb5f124c6964937d98"
     sha256 cellar: :any_skip_relocation, sonoma:        "d9c036c42cf375368d2668c63e52da17ffd3432f96729c41b685bcc0cfaeee87"
     sha256 cellar: :any_skip_relocation, ventura:       "7028b5c3c765572cf316d00e7fe552a37794e518e8cb0acaeb63c95eb8e90cf5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d245db5944104a25d7623ca20f447ae4a0960ad0ad085351efadb8f7cc4a51a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "82dba4c308ec8fd1b7185f7a92427f69dae4ca52a2c503088e8d284dd3746e1a"
   end
 

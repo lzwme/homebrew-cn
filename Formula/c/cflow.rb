@@ -17,6 +17,7 @@ class Cflow < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "3631370161b2fe088572eb63e1653c9d591184870cbf5e6ec31187f919082cd8"
     sha256 cellar: :any_skip_relocation, big_sur:        "ca4cbcfa33c53ff166dced09c73683076a112b6053ae4667abf3f97fd0aaf1be"
     sha256 cellar: :any_skip_relocation, catalina:       "aa461817268ac09391a88903ab13a8a13852c943a4d38dfe5342c202f1daf5d6"
+    sha256                               arm64_linux:    "41446ba1bebd0eeb2af0c59c4d65b81622049296e6b43bfcab0ee02ed26eb06f"
     sha256                               x86_64_linux:   "62e41fe118da0de3ee5bbf3a85273d53aec1ada3b389f2e4b7876f4aa9f9ee0a"
   end
 

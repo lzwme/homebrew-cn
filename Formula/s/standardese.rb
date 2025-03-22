@@ -26,6 +26,7 @@ class Standardese < Formula
     sha256                               arm64_ventura: "b3e88e943e501323bbf9a717a2e63757283685c5c061ef7c21ba0baff483b3c9"
     sha256                               sonoma:        "b9a998194e7bfb6b44cfe0f46d7a19640894efe44c122e097c3978a6e1cd3825"
     sha256                               ventura:       "737f19c5312d5a62a7224ec89440e8f82e5f348510798ed296c79ffd2f5e9a9c"
+    sha256                               arm64_linux:   "8ac26e48c60acfbf05910f1828738ac857b248d5d849a0f75b6ddada03d964fb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5890b84174fe4da58ab252abe20070a09378430b1f7f6d1c6dc138e3aa127df2"
   end
 

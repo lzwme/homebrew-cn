@@ -20,6 +20,7 @@ class Ipmitool < Formula
     sha256 arm64_ventura: "d5f56eab1fc400e5160b2e08df8161d8d8c0bfeb9935ed220ae28e60ab6f460c"
     sha256 sonoma:        "6486e5cfbef27dc3affea78d2ce0d06b50b44030e27606095f25ad9f42dafce7"
     sha256 ventura:       "b232ea31418c3291675268781731b137e2d5737e3e588c46508bc5c7c9bcc3ce"
+    sha256 arm64_linux:   "9a89dea49852f23f465ae0c9d72c718cb06f593e097dc8e1370f22061800ba7c"
     sha256 x86_64_linux:  "610caf753fee4dcb908b7213554bb2397a9e303c00c95b52a7168da42ba804f7"
   end
 

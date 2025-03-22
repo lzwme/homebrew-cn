@@ -17,6 +17,7 @@ class Libphonenumber < Formula
     sha256 cellar: :any,                 arm64_ventura: "4eb0cfe2197dda2104a6f52c17233d0a1331bd30bf0c45db89ace3c7c45c669b"
     sha256 cellar: :any,                 sonoma:        "136d70d15b6395e826f5dbf7ebb227ffb9204ec09395750b4e71c63767f7809a"
     sha256 cellar: :any,                 ventura:       "af2cc2c37e3579551ca4cc2d6f92c2807e6ebb160bf8b3832d48ed37036f573a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5dd006e4320bcae3a057e20bf958075ab35fa08ec0dc647dc45e4d92e1278971"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "23d5e67dba454d441d28a4ac8fa7b2e673356f560f393f5d2fa7fb1c562ca255"
   end
 

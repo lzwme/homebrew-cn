@@ -14,6 +14,7 @@ class Kondo < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "b0410e25e8402df9f2eb72277ac60caa2c9ae253b78f24cfb2a4e95ef977c259"
     sha256 cellar: :any_skip_relocation, ventura:        "805778bce56c10cd81b39677875a74313f518f88afe139a809113ec63f761f58"
     sha256 cellar: :any_skip_relocation, monterey:       "d62701b1f0dc9b3fcf5c7b54fedf7d2a42fab755c26370ebc3be1426e7abb616"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "84b9186af58150de46e72013a47b54df1d190a2ffcaa3e37be7bce9bc038ec2a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4127563df7eadb5c588ca4a1d32795acf107ebc693fe225cd5d7f201caba636"
   end
 

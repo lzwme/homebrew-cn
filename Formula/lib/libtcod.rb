@@ -14,6 +14,7 @@ class Libtcod < Formula
     sha256 cellar: :any,                 sonoma:         "d51c4c628b8c80ee955e53cd1dde6ff964c9cfa0fb55f801ac80358d0f639d7b"
     sha256 cellar: :any,                 ventura:        "2a423b3fcac0d162f054ee6af550fcb2932c1d2af63e25e6ed0fec8b1e2b57e4"
     sha256 cellar: :any,                 monterey:       "bcf7a4ac12484cd92da1d898e23c82a83b64d3f39d59d1b7114639cfd91e7146"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1efbd3d963d267084526f83ec7650de264fe22f86e3f8186f205f33cc81b3e8c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "12e3ee471cffb22ddb86f69bd08aa5f7d39b2acd29709788af1b38a727486780"
   end
 

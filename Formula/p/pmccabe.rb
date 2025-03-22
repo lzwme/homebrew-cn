@@ -24,6 +24,7 @@ class Pmccabe < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "c2c173eb072bf9df7e1a17ab8293ca29739df8fc4432aa6d3441b600d693159e"
     sha256 cellar: :any_skip_relocation, big_sur:        "dde2bd06ac574cfa68f4f4f095fa09b3e9ed6a2656748d333aaa19fb09d81820"
     sha256 cellar: :any_skip_relocation, catalina:       "61595681c5b5a9a8b22b83728e2ee89d5280b5e970c3f6e93aee438fe763f93f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "cdd2686801fae30006c4e4b28c937caa03fd01773b05c60c1c3900a90d4242fb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "90f8e8df8eab3561f9a8a91438cb4903395dda9d18d3f61daece3cd5f58445da"
   end
 

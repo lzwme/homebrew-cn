@@ -24,6 +24,7 @@ class Gsoap < Formula
     sha256 arm64_ventura: "1038dfb1538c1399173a1715580d953e93dddc63754d8f81c1a79aab7f92c0cd"
     sha256 sonoma:        "eae787dcec83783763dd5cc6c633f1d9d56be6d2a325d8fbdc97e64d9a09d2c9"
     sha256 ventura:       "855ef14eb96ed5ec7c79db316bd770754e7859c17e7b337fd58d5f432d5e2dc1"
+    sha256 arm64_linux:   "2cd0b451884476fe55bcf35f494daebffafbbcb4724d0ef9ef04d8476b718c1e"
     sha256 x86_64_linux:  "d11ba7ecab226c3e909d1dcc936fcac801065afc87a3d9f98c75bac3feb88f3d"
   end
 

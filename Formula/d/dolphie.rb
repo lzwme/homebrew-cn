@@ -13,6 +13,7 @@ class Dolphie < Formula
     sha256 cellar: :any,                 arm64_ventura: "4748f7d90e498ff75c3d9b486598ca3b683e66e023e2a29bcddc51e301f9b2e7"
     sha256 cellar: :any,                 sonoma:        "036f61ca7a171ce4e907eb7a7d7839a8e2ee8683a0b15b8ffa3c13b184deab4d"
     sha256 cellar: :any,                 ventura:       "e899e2f88f844fcca98c9e13708c9bee52245c868e06abe72ffe21737e7b88f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1f0c37f93f7860314ac748abd26221990d87a1c19080ae1500fa32b53af001b9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "35b3f9ba833bb9f9f727d9e9e4196feac659fd158ccaa6eea11ad9f9e1957f98"
   end
 

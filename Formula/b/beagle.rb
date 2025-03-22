@@ -17,6 +17,7 @@ class Beagle < Formula
     sha256 cellar: :any,                 arm64_ventura: "630068ff93debb8af7e06748abb07dc1637467795b01bbd04aca01212a23c683"
     sha256 cellar: :any,                 sonoma:        "1a82a444e21aaf6ed87d13d100fe09bf5dada1f97794a349cb66e429d35ed7dd"
     sha256 cellar: :any,                 ventura:       "a249e59ce098ccab24c15b794bcd148dca578ce4cb5aad253732c8e9466c7f89"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a23bc6a7ade9eaeda9911a39a644a45f081f215b080de725a322dabf2b803063"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc0660f81935172863061b141e4576bedc36db62b6b0c0b7f5bececc5ed40689"
   end
 

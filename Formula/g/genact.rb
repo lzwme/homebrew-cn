@@ -13,6 +13,7 @@ class Genact < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "2be5433dec7eb3fff8181616f7e56545ef8b39e2e103ce92d89b8555db514f56"
     sha256 cellar: :any_skip_relocation, ventura:        "083442858a2c592b845c0a2ad7b54d2ebd576def0bd47b8ba3e761d5efbe428d"
     sha256 cellar: :any_skip_relocation, monterey:       "f552366e174168da76eb245cee3c48b691b342867eddc142404f476bf2777fea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "8ed0416d2bf5805a5563a19e176512265e6a56df9e09566cc7274fc88ef2bd97"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7be03a27ce9da39007c389b06729a30860a95cf5559b3a29a27089de55dce02"
   end
 

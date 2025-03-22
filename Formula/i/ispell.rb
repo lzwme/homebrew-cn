@@ -19,6 +19,7 @@ class Ispell < Formula
     sha256 sonoma:         "b694e02bc0e7ed4f22e3cb6acbc65e102ce247f7e51b56c5993f0d9e257a923f"
     sha256 ventura:        "09c4567d275b8bc4aaf705c61b55415efc4ca531d1aac0affc77accf25f37cbb"
     sha256 monterey:       "2823acb91a77394cb0cc476ad86713e5a40de442e3f6a3e8b50837db31ad0468"
+    sha256 arm64_linux:    "9b9d077e2087198423033e13a10e3b918d078dd7e5bd39a798ebeb92899d5249"
     sha256 x86_64_linux:   "869cb27e3534e6aa9503dd0598a7115207ddf665f8183fd14f99dd931f61fe6c"
   end
 

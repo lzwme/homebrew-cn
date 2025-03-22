@@ -22,6 +22,7 @@ class OpenkimModels < Formula
     sha256 cellar: :any,                 monterey:       "be743d4bb17d99cabec6bd66e5ca8b486ba4c98722a4a6d8ff5e473e5ee0c6fb"
     sha256 cellar: :any,                 big_sur:        "0000ba2923c829367dc9e2b39c88935785aa18e5b536ab5237d61e9057bf5729"
     sha256 cellar: :any,                 catalina:       "f07f32fc9be97e8a285fc350d18feb98bbf58a8b0a4be8ee7fde853053216cf2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2d35e7b5241239dc19a17ba45ee5ed24d6f06689796d612abfec2ba28d0b393c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b10942f7fcbe44a43a4390fceef8b8b508c80c020ce5dec6101b3b30bc3977e7"
   end
 

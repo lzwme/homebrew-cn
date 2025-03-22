@@ -16,6 +16,7 @@ class ZlibNgCompat < Formula
     sha256 cellar: :any,                 arm64_ventura: "b83317e0a1ca1730f74a02edf766237627d3799fad25e17274b1bd3b944ab7be"
     sha256 cellar: :any,                 sonoma:        "e290f3ee57dfd952c5a901b12a1939d4acf3f49778ab975fbf884390be21ef81"
     sha256 cellar: :any,                 ventura:       "1951f082859a44e33e0ae0d86d60ff9e3800654945e3c75aec0ce67da58277d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28f720023d21a91e58098f474093e58aeb81cf8c7c643bd28f2eb2510c3427b6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3f0416dc6d54348eddc7a621f3ec918069915ff9ec503a8ab88c3b9c677695b"
   end
 

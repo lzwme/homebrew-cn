@@ -18,6 +18,7 @@ class CargoDepgraph < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "b1f53651402919895849ba1d0a98940b941a1b35acbb75c1f8371ebdff55e8c7"
     sha256 cellar: :any_skip_relocation, ventura:        "2e44d01ca28d59eb203a1cc88f7f5037d755438880164a4c918062e453ed9898"
     sha256 cellar: :any_skip_relocation, monterey:       "8e01617fefdb9893ecf0ab91f8568ca65657e49aee84f48afd47957c8d7bd223"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9b47a142d6c74f5cc74ae9e6614cb91d9b31d6a00f3167407293af2d386efff5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "df3185c78ab12934b6ebf2d15a4bbf0eb110774fbae01d4e10a2133ac8ba0039"
   end
 

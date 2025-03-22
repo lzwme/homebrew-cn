@@ -11,6 +11,7 @@ class Mago < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d56d692f0e44d811698a375f15f6ec33e7faeab9d47ad055ab01587cb9ab2d0d"
     sha256 cellar: :any_skip_relocation, sonoma:        "a5728395a87f90da51affae73a0acbca14ecf5fa36b5fdb9fdec12fb049c4a21"
     sha256 cellar: :any_skip_relocation, ventura:       "4b32f14cd17c322d0d21d6470c52c12fdf708265b1641cb1857861658b5d6859"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c560950fa79b9a5cf6a15f7dad8803797d49e6696fbacdf215aa7a7849ee10b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3ee4f57effcb86f9494ea66f5b682ef10e36a9b3b0da1175ff3d5ad530f2a8d"
   end
 

@@ -14,6 +14,7 @@ class Bagels < Formula
     sha256 cellar: :any,                 arm64_ventura: "d3db4513910e10d3e861533ec5342a3c6770c0cc504eb63fc251ef33a55a1176"
     sha256 cellar: :any,                 sonoma:        "c758156e9dbada38ac2c6df955244b7ee17a72267e52e44dbc909687e867f360"
     sha256 cellar: :any,                 ventura:       "c0f48fceb0a818eb2a7896ade45037ebf1587b47a3d4081c718fe3a6ded406c0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1198808bab36552df34974abd475ad14d0167be0ad55f6d73572f5648ddee094"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "01071fb499bd79999b742520da8ad7ac67090bce37b5d7891c15506f57d07299"
   end
 

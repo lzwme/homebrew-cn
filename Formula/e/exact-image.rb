@@ -16,6 +16,7 @@ class ExactImage < Formula
     sha256 cellar: :any,                 arm64_ventura: "0482d18c47021b7fa3f907971a2d90838d0f34af8b5d69bc1835370fc291f34f"
     sha256 cellar: :any,                 sonoma:        "8a06515f2eab356cc7d5aeae79ad6b295f26dc4dc1dfd488e1182195a8621dd1"
     sha256 cellar: :any,                 ventura:       "1fe4cac55b6ff73ec09fc4f326047cbd01398d6787d2a4b35aa0b5e1d3429757"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3412d6da12249b60dac2138039b7a4adb36a81f91dda797cffa77789e6244a82"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3bef9ef7ca1825d02d60715181c08c112cbf1d14eb9c891325dafd6e001ff602"
   end
 

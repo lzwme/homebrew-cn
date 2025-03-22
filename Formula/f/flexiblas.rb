@@ -21,6 +21,7 @@ class Flexiblas < Formula
     sha256 arm64_ventura: "0bb756b92366da37fb73d75a4d1b12ab88c5f093cd586f714a2ae03dcfda7a04"
     sha256 sonoma:        "ea77b40631ddeef92fb906dc36a03bdbf5a2d0f814c88b7cb86be444f346fcb1"
     sha256 ventura:       "acc87e21dc68cd426558496c53782a3c29da31620e6a74a61009679c5aa3b2a9"
+    sha256 arm64_linux:   "004f69a6c177117f133ff5c1d51253a702b593b8a954def07fcc2415b3038cc6"
     sha256 x86_64_linux:  "7ef88457713b30a28faf7491cf78686d301c680bf520e47ec570a8116260b923"
   end
 

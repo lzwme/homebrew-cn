@@ -15,6 +15,7 @@ class Twm < Formula
     sha256 ventura:        "eb1f904ccccb31aa8f600820fe1bd0baa32f09db0b9a375a3c11ed56ed27058c"
     sha256 monterey:       "b1b8b441d6903b19543287fefba2abdc9f4cf0e0a7afabb47d5773183047a659"
     sha256 big_sur:        "2cd7f81e03b5177321253168fd7364b640b93e32397ac0f32c6ddd8418740970"
+    sha256 arm64_linux:    "3ab9ec66db761a3330976e51908f1cb2790d8908ff7c1d23edb114fbc0576da4"
     sha256 x86_64_linux:   "11f8a44432789065dda5ccfabf83be674ca7cf37232a47005e75033fdb54a130"
   end
 

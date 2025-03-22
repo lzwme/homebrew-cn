@@ -12,6 +12,7 @@ class Ord < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "15f7c11fc20a7211c838e2bb303bd45f176dd5eb8d2aa433e3cef22dc3172446"
     sha256 cellar: :any_skip_relocation, sonoma:        "03accef84d1c8ae8878c8097c22e00eadaf3f24df3c9e92608cd10414eb1f31a"
     sha256 cellar: :any_skip_relocation, ventura:       "8493150704ff4a1d784e1d71a8a35d5fdf0d8448ea9c7bbd74c39ec9e8ba5fbd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98115b0d531f7fb492d350f4ca3f72a7840b09d28c6b21a49cfb3f1bbc32ddb1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a42836674782f3a94b51ca38ecb3eac52bae72b0eb7e665737a00ae845552df6"
   end
 

@@ -19,6 +19,7 @@ class Ntp < Formula
     sha256 cellar: :any,                 sonoma:         "9128d709ea91a5cea9a64a6c804d2d2c96a5231166ae6479e43343cb6bd781ac"
     sha256 cellar: :any,                 ventura:        "92ddc0b1b103b862bf61a27841c4d1ff4ffcdc415f0f64f8425dd829bc62ee6b"
     sha256 cellar: :any,                 monterey:       "6f8e1ae4e1b385d6be6a447b34cca98566cc24d7ba5bdf9960de5abc2b66b13f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "40bf8bb2e6bd82b46d60e28e3f2c0d65e5a68778560d89a17b6296410358dc40"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7e45f68bdcd6758f869f30271115cbe845d5b9e0d1b72b9429e63624109bc09"
   end
 

@@ -20,6 +20,7 @@ class Takt < Formula
     sha256 mojave:         "c45509b2d6828c514a0397f9c57284f7c4efcca766deddc762ef69cac715d3df"
     sha256 high_sierra:    "d90177e40185259de89cc259c5cfde419f65161c52571dfeccb18fe52ffeab8f"
     sha256 sierra:         "d0fd3808c9d7266cd16de123c0f8cc434d594b63b6e2d7d67425f155f1c9d582"
+    sha256 arm64_linux:    "d770c92134e4a2e483ff3d4f9371647ed5b688ab8f019d073917689927412a05"
     sha256 x86_64_linux:   "f448f82ff76bc5ea174cab0648cadca7d547688a783c424ab5e7a68a41fe8839"
   end
 

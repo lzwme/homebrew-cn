@@ -18,6 +18,7 @@ class LibvirtGlib < Formula
     sha256 sonoma:         "e2ac09fd3c7acd060404ef1ff2448762f37b10953bd7f0bf253c928ca3beecdc"
     sha256 ventura:        "f2bde563d71a665861a881e003ecb1f81160c638dfc4879182416f4ad8c5ec21"
     sha256 monterey:       "cc95cc480984e459d64e98ac4a34a28f098f01fdbe3a48eb4596ea0f04e18522"
+    sha256 arm64_linux:    "a6c61211019d44b321c24c5d21a61b2bd6c466c0c5f6a34f1246aed518784c81"
     sha256 x86_64_linux:   "5929261ba67ca634fd615cb4f8c159017963a9b1a46bba55993b0b728593df70"
   end
 

@@ -18,6 +18,7 @@ class Goenv < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "620a44446ea429170d0a727d62a27e9fa5c5497562cd1c09bc7ffcbef4cb68cb"
     sha256 cellar: :any_skip_relocation, sonoma:        "bc873f09b23dec8329c771af38ca34de91f5bf79d145cae82fe8d78c5fb572fe"
     sha256 cellar: :any_skip_relocation, ventura:       "bc873f09b23dec8329c771af38ca34de91f5bf79d145cae82fe8d78c5fb572fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "620a44446ea429170d0a727d62a27e9fa5c5497562cd1c09bc7ffcbef4cb68cb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "620a44446ea429170d0a727d62a27e9fa5c5497562cd1c09bc7ffcbef4cb68cb"
   end
 

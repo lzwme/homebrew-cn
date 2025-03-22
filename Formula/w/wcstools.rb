@@ -16,6 +16,7 @@ class Wcstools < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "36f13821bae6872cf2a0efb838b16848747e7a08b9f862696c545c62c571d3e3"
     sha256 cellar: :any_skip_relocation, sonoma:        "1455e3bd5761a326b1d3e9bdce635dbfc10ade55f9e271ac59df798c89bf44be"
     sha256 cellar: :any_skip_relocation, ventura:       "5e8230a3193b604603bdbb35d323ee3161fe96fda6912d4c00d9d67ac7052384"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "788c9065153fc7d13d24d8154a61cf067f2fceba1c5333f9d0946f3d52e74cf2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8cbcde8f555ee9b4399110632e784cadb293066619453e7519b8cd27aa547181"
   end
 

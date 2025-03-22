@@ -17,6 +17,7 @@ class Wasm3 < Formula
     sha256 cellar: :any_skip_relocation, big_sur:        "e282401723657985765d781b1fc6b23ff47ca669fe12d7aba5efe4d5a5f75bab"
     sha256 cellar: :any_skip_relocation, catalina:       "bd63b2e2268796e20ef1a3b12fa8460bea3e37c954fc7ca1abd8d756d39361ed"
     sha256 cellar: :any_skip_relocation, mojave:         "43e49af5bf99efa53964ccfddffd2e8061ce3b1aac3707ea389ee1f19dd80fd7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0534057fc60e61e909228ec2fac40229ddae5269e33d88d56154eff9645b473a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a1e99649702a2d0db3cf07442af0b960d04a194c62e4062e6a72012f41b5f81d"
   end
 

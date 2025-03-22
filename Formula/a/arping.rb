@@ -13,6 +13,7 @@ class Arping < Formula
     sha256 cellar: :any,                 sonoma:         "9188b61bf686f9d25a1fe4739546e390295a0661b0e73c0814a3f12c0f87d757"
     sha256 cellar: :any,                 ventura:        "6922379c216cdadc1f19d9943b0beda7700eb84c19adafd56da4beb81638feb4"
     sha256 cellar: :any,                 monterey:       "496990ab37463fcdfe46e5c357778e0f0a2e1372e2f535a490184bb98a225bdc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d7f801c3f13f8601ebc226f2e13162c0341cbb49cf1de0c80f2705254a6f0e2e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b42edfbfddb3f8595b4ac04addda06675ed0390350e6f70dc990cd59aa847d1"
   end
 

@@ -7,6 +7,7 @@ class Sshfs < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_linux:  "bd70a34c078fcb7601b4c509ac54d36ac53e46118dc958c3cb75e909afcaefa8"
     sha256 x86_64_linux: "0eb28ad70ce9c608b66eed7f32169f6e5201fd68e3a4fd8a48a6194499cc82af"
   end
 

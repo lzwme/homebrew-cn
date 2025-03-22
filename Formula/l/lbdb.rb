@@ -16,6 +16,7 @@ class Lbdb < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b613432087627ec2139888a3a2c7e024fd88fefee630e61e54a6048b8434ca22"
     sha256 cellar: :any_skip_relocation, sonoma:        "799de569aa9a50d882d5bb452351bc7fba0eb60f874024166a9696da6bd6ae40"
     sha256 cellar: :any_skip_relocation, ventura:       "e0f4a17ce22453b7aa2187bc18563bdc00aa05b65648523d5e9e944ce9c28f60"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ec1911ba656b63107d2c2784b460c56781f35371e0b8895c86f9e645593d4bc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f780ddee05060ddb5b7c9263c2a89d9ce686995f021df5b9eb610445c2709975"
   end
 

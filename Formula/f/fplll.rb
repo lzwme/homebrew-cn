@@ -11,6 +11,7 @@ class Fplll < Formula
     sha256                               arm64_ventura: "1d79f55394b4e2d055ca691e5618b63b84b6d0db58195222acecd5390c27eb93"
     sha256                               sonoma:        "2333676f4b1a145a78f8143882a81a9b2b9c309ae7ab2f54f4736b4c88db2cb7"
     sha256                               ventura:       "592795ee10822fe22704b9e4907af58022ac78bbdc2942a3d25c22801f265f04"
+    sha256                               arm64_linux:   "5c523f0fe723a7109241c868e8970ab3a3f72aa04c8cf5a71b287153355150c0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c9679fb7aa760cc54e7fb45622595f1c2364bacbd340275682292fe18fa89db"
   end
 

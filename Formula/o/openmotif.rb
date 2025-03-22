@@ -14,6 +14,7 @@ class Openmotif < Formula
     sha256 sonoma:         "7a3a027c94087fbae8276b1b1ea1d5005aedf1e9a5c50f5bb5045f58678ebee9"
     sha256 ventura:        "f812e91446ca3ac40eb384466f591a41548b8a8c48b566f68cb32180a10246b7"
     sha256 monterey:       "14ef0a26ccc456c032334f4013d8938098f8dabcd4297f31b64c787794ed8be9"
+    sha256 arm64_linux:    "6853dee96064d53c771ee48fc99c0a93dcd8f503f9cdec71e0a6e715a8cbf899"
     sha256 x86_64_linux:   "48f58afdf62747a75241a1be50fde497d04d74fe09e4385c47e01bcc4a572e4f"
   end
 

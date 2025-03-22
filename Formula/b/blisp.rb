@@ -12,6 +12,7 @@ class Blisp < Formula
     sha256 cellar: :any,                 arm64_ventura: "5fcae89834fc473691f68efb1d465286ebf9286367709eff247e28ecc0898e18"
     sha256 cellar: :any,                 sonoma:        "1b58e07e26693499bf1364127f5bc68c735a38953087319d4f5daf236071c778"
     sha256 cellar: :any,                 ventura:       "7e442f53b23b4c1c216fc5a91e4ef6f9a09dffddd00601f9664bd5cca83bdee8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b361198695ac6822882d99ae26212b3e9ca7cf5c19c13e311ab79b3073d3a79"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a4ed852cd606d9477c96a101081eee8e928a14ca30c24dab41e293b90512278"
   end
 

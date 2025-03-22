@@ -18,6 +18,7 @@ class Antlr4CppRuntime < Formula
     sha256 cellar: :any,                 sonoma:         "5a36907fcc647e852ae13c9cd51bcc4ccb8ec91d89b0c618c838006ca60d1be0"
     sha256 cellar: :any,                 ventura:        "252ce01a63a080f19c9366be691a41faec552205d4497591b6c128c6d36a69d6"
     sha256 cellar: :any,                 monterey:       "d35b13d3122b481810c4a1edebf2add904647c0c96d431584a633cafa8aa4897"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "47c1f68ced83aed06e56f01a7630253bbf11d7a9ad275d81645e420d150e1ddb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "04da1cc9e4e3b28751460f84ebe762a1ac566db6d620568813ba8bf1a039acec"
   end
 

@@ -16,6 +16,7 @@ class BareosClient < Formula
     sha256 arm64_ventura: "ad9a62670f5816ad63e075788808aeef8de07bbadd08f45e18a585300189516f"
     sha256 sonoma:        "2acbbfaff90e57e6efb5dd4d7014995959784674477f2ba86d376b3bf7e24609"
     sha256 ventura:       "669991fa52951fcb757226d23df6d78834dd34bae10863d2f494023bf1065356"
+    sha256 arm64_linux:   "ffcb126c000e1176f62302af353bf84b1534d3902d093b6f896b922540677c28"
     sha256 x86_64_linux:  "d8de68039c06cd98fabbd0eba0bfd779ca013682ff1bcfc8ede1997609acf7f7"
   end
 

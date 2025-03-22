@@ -11,6 +11,7 @@ class RpgCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b3aa7bb85909465f6294355b202e8fdea963e623597df22577379e5188a79fff"
     sha256 cellar: :any_skip_relocation, sonoma:        "9b8763db1563256899273d21fb28c19886c4d0f65ec4d65cfe2ad3399d538c48"
     sha256 cellar: :any_skip_relocation, ventura:       "9b44a22701315fd658b98b3709c98ce4217076c1b4e37b717d4e687a15500d94"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c17280c6a4287274a9ea54c9986a47fc3ddb053bc21748ce0ca91d68a5c20d4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "558c7cd2a9865a8f476b81da9c4f75dddad70a0f07ea4aab349ba9260ae822c6"
   end
 

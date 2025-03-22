@@ -11,6 +11,7 @@ class Kickstart < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "471f9a6ff9f0fe541dd13da8727d4cddca404cdea11698ebff5ca34abe6ddb1b"
     sha256 cellar: :any_skip_relocation, sonoma:        "a33b98800a5c86dd562706faaa5c4f1b9b4d4be00f1b073d2f79f88c70c683a1"
     sha256 cellar: :any_skip_relocation, ventura:       "2192bb7a80449ad9c47bab27f5347b3a07a634b2e0a06c342bf5d83e9411c805"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b17daab4bf60200fa04cc9af345b9f9c3788911a925137a69e63fa4f1bf40c4a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0e8ed4eb9366108b3e1da2a2792bae23572462b90ab47756e0b0e4e3c93a9eb"
   end
 

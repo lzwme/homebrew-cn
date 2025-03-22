@@ -12,6 +12,7 @@ class Trippy < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "28a6e084ea6d69b4c20b3406fd409ac498cb3c7c05d6c0a3e3ace4e642c52ec2"
     sha256 cellar: :any_skip_relocation, sonoma:        "18e43f600bbff05025c5202fbb94b856934eadc803227345a344d9bce08a91dc"
     sha256 cellar: :any_skip_relocation, ventura:       "d997d0a7e7d125c93db5d221d7bcdd3fbdebee268e80a688146132a4fef7d10b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "219bf1c923323fb1d819c61049f00c32e0ec3232a9e7f7616619f050bd966018"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "772768bf07161004287a339a0a9b346534dd6c76c58ade1d6f69a8d0502abd49"
   end
 

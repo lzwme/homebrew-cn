@@ -20,6 +20,7 @@ class Reuse < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "4a8559c7cde92a42085453e1709d560edb273cbba7727d0a4510e319aa5c4063"
     sha256 cellar: :any_skip_relocation, sonoma:        "fc3f9f7652314304f811bbfa6417e2167ebaa7c08efca445042db46fc202b7d4"
     sha256 cellar: :any_skip_relocation, ventura:       "75b6702ee1a9bb535a10b425370d71f36d1a32668f06c56fb030c6431c54d1f0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b822cf1d2915d1e29304008123e5a97049101f2604f0711c5cd92e7f86cb50a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "38c32a28aaa81ffefd92812911a5ed2bcc41004e2166537aea798303804149c7"
   end
 

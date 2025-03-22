@@ -12,6 +12,7 @@ class Kuzu < Formula
     sha256 cellar: :any,                 arm64_ventura: "d6cc5e8c40385bd0337d772ab5280b8dcb79b981122644670a45afb2643d4736"
     sha256 cellar: :any,                 sonoma:        "80bd178664fa223908b9df2c9c52fc54f1f65c2e5086adecb8d3eb89ff6ab04a"
     sha256 cellar: :any,                 ventura:       "e33cf3d0648cda5ea7d04d33c5bae524b8d631764cf7385d83c9a5b68bcd3d1b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bdf8c891eee21313582baa026ed188e1c60c6aa8e2c6176e97722fae71d8444e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4bb1a201fcbb64a450da340c951d39e248e1a51ecddc1b615f74453e3408f732"
   end
 

@@ -13,6 +13,7 @@ class Cycode < Formula
     sha256 cellar: :any,                 arm64_ventura: "4d60cbefb1a0deafeb3807dce848e14930818aba4f18ae0e538219c44c107758"
     sha256 cellar: :any,                 sonoma:        "952b361563d3c4e61b1d234c017a20add5ab547e3f8be441a716f56d1a490960"
     sha256 cellar: :any,                 ventura:       "c75da601a180a1aa448988d90fd3640f01271e18761c7f3038cca2b524d8750d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "96cada3004e2058472ebd002f05443615be8b931e5a79ccbbf224cc4d79d1c50"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "919273b62de92b56a80ee38150df45500820b7b657e173e325bacaaa06e8b086"
   end
 

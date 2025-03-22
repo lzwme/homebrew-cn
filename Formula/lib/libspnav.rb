@@ -15,6 +15,7 @@ class Libspnav < Formula
     sha256 cellar: :any,                 ventura:        "7c01d1c7d88b845a23670b14576ce1d8d407e691187af83048ad4d1c8b9c9e3d"
     sha256 cellar: :any,                 monterey:       "be943c5f3129713ec763a4616f39dbd9b42ce1840c97f48dbd569d14334fb87e"
     sha256 cellar: :any,                 big_sur:        "426b551c6ca93b494ddebd517baca82cb911625bf9b6b7d6f97d405be140833c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0bd721bbc24fae731537d740182d7c358f1ba6552ffe330baf0fe2f15dbd0611"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0288eba7fc2a946a58922400ce7810acf79c7076e151f2d51e91258bc3e19061"
   end
 

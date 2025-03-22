@@ -16,6 +16,7 @@ class Cadical < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "4ad047a3437ab8c0c944c44c7cfa977704781bf69b176658a21324d4abf0a19e"
     sha256 cellar: :any_skip_relocation, sonoma:        "c7d6caa39c55c9c21a1e4224d2bb754bbc31a617ae795f63a68986db92f83d2b"
     sha256 cellar: :any_skip_relocation, ventura:       "f8b6bc085363d6e92db05d37cd4794a646ab858e8feb8f53d52845a3c1cee21c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3bd60910c6fe37fbbfe153494ef5d20d139c4afdcd242f356d7999243434c328"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ccda8639207be39bbcf10f84c36c520c433379be429100d86e6dca26a21ac09"
   end
 

@@ -19,6 +19,7 @@ class Tgif < Formula
     sha256 catalina:       "ce5a689942aed9986f74150bddebb09a129aba97810658fc67a6060519eacd86"
     sha256 mojave:         "3ab28b39b5a4b0c5cea21b096c0e8b2317725f8b6da6455ab365e8d13ac644a4"
     sha256 high_sierra:    "9c35ee5713a7efcdedb42d4602213dd94e84385bb8c5b0f9331706d6e897d08c"
+    sha256 arm64_linux:    "071bd8c29e292d980e4bc1cc1898406b6fb7b4133ac91d8b892bfac23c905d65"
     sha256 x86_64_linux:   "e399c02348529aca39dfe252f2ee3e31fecb290d79599609abf4097c0b06afb8"
   end
 

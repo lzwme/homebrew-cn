@@ -13,6 +13,7 @@ class GitGrab < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "8d1c34da7030fb7a552beb88a465dcf38064a98c26f217532da0eebf2d8712e5"
     sha256 cellar: :any_skip_relocation, ventura:        "37cbe2aa5d795e7c1befb8ab9fc6a08c7e5e380eb7c304d5d863d4a7e266f1a6"
     sha256 cellar: :any_skip_relocation, monterey:       "eef55e0bd816e04bdd784f4084cf9805e970d4d2d96885e7407a439c750a9a8e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9e28a8cc0308a32e07dc37020610380576ad377e8ced36a59197bd7d4bf7145a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "344cd4633b6aaaf7fb4757f6fdd6e51ac88ef2229cc34404a7833a8c3f4568a3"
   end
 

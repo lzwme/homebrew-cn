@@ -1,8 +1,8 @@
 class GradleProfiler < Formula
   desc "Profiling and benchmarking tool for Gradle builds"
   homepage "https:github.comgradlegradle-profiler"
-  url "https:search.maven.orgremotecontent?filepath=orggradleprofilergradle-profiler0.21.0gradle-profiler-0.21.0.zip"
-  sha256 "0631e3fdcaa64eef345a55c32a2dbd4cb252b791b1e9457dd7b98790f7e8d0b6"
+  url "https:search.maven.orgremotecontent?filepath=orggradleprofilergradle-profiler0.22.0gradle-profiler-0.22.0.zip"
+  sha256 "a269f05861d2682c3b98d050330764200bc322024762295713fab167d133283c"
   license "Apache-2.0"
 
   livecheck do
@@ -11,8 +11,7 @@ class GradleProfiler < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "ee98c908d6a53450edcc507a6492b2ab8ea024ac455ab49c5baca51cc8c327d1"
+    sha256 cellar: :any_skip_relocation, all: "768c3986e2042d8f35fe954ea0951d91a5aa7c53cca1013361f91f78321c0aec"
   end
 
   depends_on "openjdk"

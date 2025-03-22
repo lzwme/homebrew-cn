@@ -11,6 +11,7 @@ class BrunoCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "807cf3fcd63832850c5a6622b95329be4301e94b1cf34c6221f4edbf87260194"
     sha256 cellar: :any_skip_relocation, sonoma:        "3dd8b9f0f90b719146617e9c397451bcc07d39a4dfe51fdd60bbfb8d9fddf839"
     sha256 cellar: :any_skip_relocation, ventura:       "3dd8b9f0f90b719146617e9c397451bcc07d39a4dfe51fdd60bbfb8d9fddf839"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e180a4b73e1f87a88ef4aadad20a1113714945f4b67aa404fc93438d9510e999"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "807cf3fcd63832850c5a6622b95329be4301e94b1cf34c6221f4edbf87260194"
   end
 

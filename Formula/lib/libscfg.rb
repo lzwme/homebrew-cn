@@ -14,6 +14,7 @@ class Libscfg < Formula
     sha256 cellar: :any,                 sonoma:         "f46bf808c8969460ddbe01818be5a33f0572fe1804be3725e2907499fa820470"
     sha256 cellar: :any,                 ventura:        "bee4bac2d9a37bb294bb16acbc35f857ff2e6990c793391802bcebcfabfaff25"
     sha256 cellar: :any,                 monterey:       "d30ecbf9f5ad0e9c5864a8a5c3412311b983a74bf8dd439f0d5948aa9fb39c03"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a817080442cc4da90056b4b04736b09b4c7a5a149b53e1929d409d7e646ef4ce"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fdab5431a3a4c023c5f31b1728107a988eee126552f1860ffbd2ef588edb1243"
   end
 

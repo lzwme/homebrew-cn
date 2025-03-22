@@ -16,6 +16,7 @@ class Privoxy < Formula
     sha256 cellar: :any,                 arm64_ventura: "320b704c330b960bff73567056912529c9840b7be022b2fa36d336755fab634e"
     sha256 cellar: :any,                 sonoma:        "890bbcfe55da09152be6367010e6a102ea9163b0e95c76a93051f41fc069a84d"
     sha256 cellar: :any,                 ventura:       "87f744512b9c327b249c529495b8604cb6e4b0dbcd4bccbe8380e300dc1dfde8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44e368da9249571e6f5cc634b511d39adf5dc28c8cf667a893740a9201807e5c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "deeadf7f6f8e636fecafd58b7b3c201f1303f7b971af0667d43c54ccf3977bc7"
   end
 

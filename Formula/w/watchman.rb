@@ -1,4 +1,6 @@
 class Watchman < Formula
+  include Language::Python::Shebang
+
   desc "Watch files and take action when they change"
   homepage "https:github.comfacebookwatchman"
   url "https:github.comfacebookwatchmanarchiverefstagsv2025.03.10.00.tar.gz"
@@ -7,12 +9,14 @@ class Watchman < Formula
   head "https:github.comfacebookwatchman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "539cd8e9a98cc2a0ad9302782d9df5d6481701b09555667d0581f2b91f3e0df8"
-    sha256 cellar: :any,                 arm64_sonoma:  "3a509de4f527b2335645ee195d2b09d7ab64d0630db41d4f651903134e2072b5"
-    sha256 cellar: :any,                 arm64_ventura: "db4f41d9e265aa57cf432ce574d7d17f02c42705d1e71d761d25de6eca5bed84"
-    sha256 cellar: :any,                 sonoma:        "98308a1dbcd0f9a41fdd468f96b10c3429116ceca2aba2e5ecb8636844974584"
-    sha256 cellar: :any,                 ventura:       "03cef545398ae45b8759a7a11065ce018fbac1b5fe7b28dc2df3bf57cd556420"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b7c4c2f9e57a4fdd362d227a72dac2d109310b7911a99d1da2ac6e65ad6d9cf"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "61239e63680208b7a952281b984c08e677d3f70f0526d30f246e595942ffb4dc"
+    sha256 cellar: :any,                 arm64_sonoma:  "cdb23c72c2593d1f80ef7158385aae864459ca0a6952503c8bbd245e9138e8bf"
+    sha256 cellar: :any,                 arm64_ventura: "868adf2a19cdc0e1a476d023b07dfc10b4b2096e6add203c5c2c9f46bb595144"
+    sha256 cellar: :any,                 sonoma:        "4fd2c60301ef4bd91ceb45e6cb810459c50c3e8cec09a22ced77be6cc2c75d03"
+    sha256 cellar: :any,                 ventura:       "e05fc68b79a2047a23c10f03f78aac336080dbaa1987f05c2bbcfea5f0af1e93"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5161c58ef758afca45d880194909b9cb132233f91ffb1f4eabb876ab38b1aab4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e63931d6798c5144cb4124f7bb3735eea69dfc5f188ec993cebf00282e9c529"
   end
 
   depends_on "cmake" => :build
@@ -65,6 +69,8 @@ class Watchman < Formula
     bin.install (path"bin").children
     lib.install (path"lib").children
     rm_r(path)
+
+    rewrite_shebang detected_python_shebang, *bin.children
   end
 
   test do

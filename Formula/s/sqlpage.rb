@@ -12,6 +12,7 @@ class Sqlpage < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f1a36d0fe75c46a5ed8333067be544dd0013e1b2fca07be69dc0eccc13221407"
     sha256 cellar: :any_skip_relocation, sonoma:        "432b1aed1bf0ec9c553e3df05a31e5306465fae89656fe9e6a0c0753107df613"
     sha256 cellar: :any_skip_relocation, ventura:       "e82e68b7b7a84a8ab38e62460114730e0a850b51445200287c68fc9c78418ece"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a06a8ac838c71c51d811858c2d807a5ae586037493c55cb1cae9156d34051f31"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "32fb9b725a76631fd85f2b341a7abc170d626798ed3522dcbf00c65be62fa220"
   end
 

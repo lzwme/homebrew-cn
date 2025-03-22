@@ -20,6 +20,7 @@ class Rats < Formula
     sha256 high_sierra:    "6ae19bc72cfea62b56b83931f95a70f27ce9a13617026292861a272e22269135"
     sha256 sierra:         "5f2a74a60c30a825ad036f390e3830346be4fe3299a28a81e25630d54defd119"
     sha256 el_capitan:     "224ae02df998c8fc296bf3905fbc369a787fc55f5ef295d63f1b3c44bfee7a5d"
+    sha256 arm64_linux:    "9b7cfe5e23808f04987f9f412cfa58d3b86a9223de5801ad9f47415f0c8c783f"
     sha256 x86_64_linux:   "225ac8dd692f21f8f13e072dba7bc2904cb11e08273d9917bde0ef1f42133b03"
   end
 

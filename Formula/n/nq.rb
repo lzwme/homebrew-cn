@@ -14,6 +14,7 @@ class Nq < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "a2cc1df79c5e57c03e1356d2c574477d43c0a2b4e3b43931d11137716e14065b"
     sha256 cellar: :any_skip_relocation, ventura:        "1ec6ec8c64eb5462a319fc640f4c8be7fbf7df78fef3633d28244a1030f80adb"
     sha256 cellar: :any_skip_relocation, monterey:       "f4b2a60136050855c0446ce1e7d9baa890541f11e9bd7991b54f8fe8dce36054"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "39d11e9a09a0007d3a1b94485f6cb005b6ee3f08201a43187d8b85b0a1b2df74"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1af85098406f38474034563e06b631e0fb9671331bbb057a9c3f0311f086f51f"
   end
 

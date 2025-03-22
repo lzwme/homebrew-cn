@@ -16,6 +16,7 @@ class Diary < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0b4f3a31788c1181823adcb3236ac4353eb442e293f39e320d9af8706cc6a098"
     sha256 cellar: :any_skip_relocation, sonoma:        "48d82219a584be1acb7add11dce24b2258c38baf4b5e39f7b3afcbdb4a7c3976"
     sha256 cellar: :any_skip_relocation, ventura:       "609b1792141d8537dfef086956db2cd0c81815ef038aae86bbb31343c10bbfe6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9b9443c49ef95c8a613df3d244a14db2285fce87537931f53c05d5c527c3159"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9916f762d45e4d351e2d678b938d05a5d4ce2ac7a366488706d2c3de3627a9ca"
   end
 

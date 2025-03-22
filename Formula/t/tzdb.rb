@@ -16,6 +16,7 @@ class Tzdb < Formula
     sha256 arm64_ventura: "c84286138779756e744b65e1e07a99fac1af43d8f6dc4fb4527e9d7b9de67309"
     sha256 sonoma:        "008371e4fdb2913b2de5113135bb8263b510e5fa4d14bc9aa00530697f621b0c"
     sha256 ventura:       "b64ce644a2ffd2569644cfcb8e5c580c0ddebd8c572bb282f40d4e007bb10129"
+    sha256 arm64_linux:   "1f30e0c758741238d7873c6045a5b8c3bc5576c13abbbd04f40b6a28d2045ad3"
     sha256 x86_64_linux:  "95dbda0bc9df9eb64f66e913a91d049a11ea9cc2513102e24654dca5119b9377"
   end
 

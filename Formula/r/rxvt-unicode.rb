@@ -17,6 +17,7 @@ class RxvtUnicode < Formula
     sha256 arm64_ventura: "1365ab0e69449f484abd3d5e36015b9c0fd0ea56719b6c31c8aaee2b9224bc3f"
     sha256 sonoma:        "f31d79c1ebbec748afd99a199a574d290db3ec2a41786b541bb84c9379c2855c"
     sha256 ventura:       "cb951ccd032eeda8764b273d19fbf39910b396196ec529f2bd878e5cb1e5100e"
+    sha256 arm64_linux:   "6b14c45ce4f277c329389b0f719c5337dfeb5ed6d72e6771d104cbc37481c4de"
     sha256 x86_64_linux:  "f353a397eeca72af4958ccea670c84c4daf6c426c8f9e415c4b32bc4e2c1a545"
   end
 

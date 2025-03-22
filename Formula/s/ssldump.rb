@@ -11,6 +11,7 @@ class Ssldump < Formula
     sha256 cellar: :any,                 arm64_ventura: "b0c5a32df2ef8e072f50f5302ef2b1813de8d0b4fcd13660847b193ba1449260"
     sha256 cellar: :any,                 sonoma:        "d0e771ebfc5cac4998d58d7b84a188fb94e26ccdae77ecb8625fc0a9b5bfdf09"
     sha256 cellar: :any,                 ventura:       "9b11e1e942fddc5ff4d2189a69e9acc4bef77fa5ea0a7e6bce789804f9512c6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c413c7e9e7272a34bc3086c37c98b1ac30b291486cdf025cf0b5ed288d9c749e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a258e929e9b40617be052eb2026e693d39ec47ad006c231e2e542668ffe322d"
   end
 

@@ -16,6 +16,7 @@ class BoostMpi < Formula
     sha256                               arm64_ventura: "f7d78fe074a21546a30dec3688b5c5dabde5a07b830d82ffcbe5f31aa96b7124"
     sha256                               sonoma:        "a3d8b33c333cd20e91133573cad92a5a8300587d1eb91afdbee34c94d5ee4e21"
     sha256                               ventura:       "06a0c896e162a8fc19ae5ecdd850c3491fe3d010f5817a373cf52bb3f18d88e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c32fd48727982934b0a1f8a7cac07901eecb34c84471b59c150643ee03216e1c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c066f845dbd122c9b597fd598facfb099118f4f46d084804833324a7938bcee"
   end
 

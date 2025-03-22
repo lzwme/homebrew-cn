@@ -13,6 +13,7 @@ class SvtplayDl < Formula
     sha256 cellar: :any,                 arm64_ventura: "b1ea35d29f9a29abb292eb8bddc30ec6d3abf5f84b52f3913306d298ee8a571d"
     sha256 cellar: :any,                 sonoma:        "d60e213b65b80e7fa0024080b05b9993267cad18df623789a9212bd353ceaaef"
     sha256 cellar: :any,                 ventura:       "0154aecfa3a98ab2c413e04a43171ba91dd3b076318042c98a47aa3b601837f0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0483af6188f5e7f67576d1db8e728adad556792c871d88b6b326f3d2d7f96ac6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "55b4ccbdfee43524455e53d10b2cb4886555c44d8fe086ef2ce5cb4b56f2aa4a"
   end
 

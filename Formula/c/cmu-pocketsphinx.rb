@@ -17,6 +17,7 @@ class CmuPocketsphinx < Formula
     sha256 arm64_ventura: "152c0f76cb442ab833dcdcbd9f17398fc47b5dbbd650694c89be3b92acf53c9c"
     sha256 sonoma:        "2baa0d2ffe3d6d3608a51c20831cb299d4c85cf19cb048a5f04148e2abf9f163"
     sha256 ventura:       "9a9bfbfacda1094ff4bc6b6d213111e1ce9bcaec0ef0e8c5d17439988a30fa68"
+    sha256 arm64_linux:   "9780ac9cbd3ab1a9defa7729ed9c647e9fd6f9a72195225a786615c6ecbf6692"
     sha256 x86_64_linux:  "5b035c6fbe339151707b82694ad2f9d793c2b6bb2f62bad2990d088bcbf2422b"
   end
 

@@ -16,6 +16,7 @@ class Hss < Formula
     sha256 cellar: :any,                 monterey:       "148418af9ede974ce97929a4d2203427b67d8cefd49001e8f70eaae68742b8dd"
     sha256 cellar: :any,                 big_sur:        "3b2888677612b095f03226c3a9cd1dbb788233dc909519021f38a4fcbed09a49"
     sha256 cellar: :any,                 catalina:       "64bb0e7f8de22316b5cabf7c805e4ce2948a7e44d4490e51bc3012c40acd59e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9a5cfe145c4a72af92124dbb88438dfadba9a451fe5c5adf56804ccab9aa274c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "afddb5bd47b5545caddb3f178c318eae3074c07a417c194163316981067924a4"
   end
 

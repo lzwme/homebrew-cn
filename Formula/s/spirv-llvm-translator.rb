@@ -11,6 +11,7 @@ class SpirvLlvmTranslator < Formula
     sha256 cellar: :any,                 arm64_ventura: "cab295465cf0e1449325ee52bf913f5e5a43abb2843c9adb6431c92e9a01999d"
     sha256 cellar: :any,                 sonoma:        "d868a34f9ade1b66f93ed4f26ddfe5a589849b57b3f2524ff90f3cd2f228545b"
     sha256 cellar: :any,                 ventura:       "c4c902b3f5f7f3288112296feb0f344752081c9909d5675d947de1009e4cadf2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "76b6b01ebd8e673a56bdd9a2148dbaca896720cb83ce14049697394152075818"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b620ca2dd90050f572d1c20764a41f021975f4cb7bd74c3f749667333054aa1e"
   end
 

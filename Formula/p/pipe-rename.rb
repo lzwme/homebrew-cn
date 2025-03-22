@@ -17,6 +17,7 @@ class PipeRename < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "ea7df5f5f537f9b59746a41b5c54f9a84fb0fa41a7e1f120b110cdd591e65db0"
     sha256 cellar: :any_skip_relocation, monterey:       "d8c2ce2e9e90728f5e2901d0062ec2613b5f9e88b3c1d2dc3c42ebf45a2f4b55"
     sha256 cellar: :any_skip_relocation, big_sur:        "1147a22a59b737ff14028deb0c524307ff036a9953ad5f57a5568c277ce27ceb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f6cdca957d667f07c4a51217258857ef20342a8fe6857447972db65b82b58c68"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "dd5c54a0bdf37c614971f1dc2b5326b5b391ca0c03a86d58b50970401ea7e444"
   end
 

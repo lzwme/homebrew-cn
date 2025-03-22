@@ -15,6 +15,7 @@ class Hstr < Formula
     sha256 cellar: :any,                 ventura:        "dab8c56dc9d4a3c14b97a16e4b7640e911fc263cdf8c0d051ef7b2f5914c5d68"
     sha256 cellar: :any,                 monterey:       "4d612879fc6066185b3b1cf9f334f55dfafbab73295bc041d3edc8fd1a2d0be7"
     sha256 cellar: :any,                 big_sur:        "196bd9dcd789830ca5ea6f3ee94ba43bf3ec0574cbc21196c0461a20b1b34757"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7e90597a53137de8a61011df6b8e453657a4e679e42f1f98da5e9e29259c948f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9f3e5c6ea14b17a5e83263bc1df77201cf44eee579f2663656c9912893de7df0"
   end
 

@@ -18,6 +18,7 @@ class Jailkit < Formula
     sha256 arm64_ventura: "0d93bf91fbfa2c9b28872305a2fffdedb7ea4a92c9e0322804f4ec876e77f65c"
     sha256 sonoma:        "a06284e555f1de8ca3efe295422941c5707a6584ee0290db9c81bf65b73f16ed"
     sha256 ventura:       "7f29c2242dee1509abeef79da62ae9a5f34b74185042157895ef13184aa9c7c4"
+    sha256 arm64_linux:   "7608787263a84503149fc6dffa46ba57ddd1a2b72856d40035b3eab5611aa507"
     sha256 x86_64_linux:  "d8f26d192338a7f45ef9a376c983cc97d873249106c78807cacd7964c7007b8e"
   end
 

@@ -11,6 +11,7 @@ class Spglib < Formula
     sha256 cellar: :any,                 arm64_ventura: "ab9d0638a60bc897b4d3ce4f2f37e451df8470f15af4eb7e638253673b636622"
     sha256 cellar: :any,                 sonoma:        "0c8d96842c11f26dcde4627aaec4d0a89739e65e7315f8b933162e88483ac2e6"
     sha256 cellar: :any,                 ventura:       "d1cef9ba99ecafd8b47b46a1f1e00f4203f371a08943cd986e2469a07534e737"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "23b327e09f38b1b1a3b1e66a78502dd0f48019876b43f657bf5303f7d3db046f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0e14500cec9a4a450740bd534d71ac558d58faf86b3ae893aa4b3ba33c09d44"
   end
 

@@ -19,6 +19,7 @@ class Highs < Formula
     sha256 cellar: :any,                 arm64_ventura: "8c8e22fc0e5d246880e232ca0360e1aafde2d3f6d53a893195fc8eeeb2a9b4b6"
     sha256 cellar: :any,                 sonoma:        "477a2610423ff1509ee37a45879861e7cd92d067a582b5e65f9216a29e0ea09b"
     sha256 cellar: :any,                 ventura:       "2d47d187c483c4e3c3a60f4fad733a55b7fe3b8b3e62aa2999144fd4d2808156"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c60abb5e3d3a231de96c15abc55cf7f21d7cf22d17189ff03809ac2d5409908"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef7a0c25e31afe2edf9707ddec00c82b66389631377ed30baf43a11e475dcc67"
   end
 

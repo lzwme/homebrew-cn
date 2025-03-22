@@ -13,6 +13,7 @@ class Posting < Formula
     sha256 cellar: :any,                 arm64_ventura: "7df3b969e322e94c452251f240626e9149104ed6d7cd6fc8c942c86010a66877"
     sha256 cellar: :any,                 sonoma:        "e6bbd72834b9b41b76c70156d61e663af9e63fe0eca082efaf88459c0c1b35b6"
     sha256 cellar: :any,                 ventura:       "bb73b8da211684ebf2e4ca25c958e373aca840552be9c5e7d3dc68099d08a1b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1aac61e8255d20a46dd01f9df478e8881d6aa025a5c145986bddd73659aad675"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "651b1ff573b378703f8dea3739f3acffcf3a6badb181fd4f0ccc535a0d47fd1e"
   end
 

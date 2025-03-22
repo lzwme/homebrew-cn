@@ -12,6 +12,7 @@ class SentryCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "af995079009413cb4e1263515883bbe63d6168be3405cd324e07883b130d40bc"
     sha256 cellar: :any_skip_relocation, sonoma:        "fc6072aaf65af9137302112b121b61cceb9ea3727d1d5a0822a48a9cbd8ed1df"
     sha256 cellar: :any_skip_relocation, ventura:       "8a4157263351ceb0446b1856909a72a24aff23e83ad7a3994ee75f632b33f3f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "af753d0cd1832ba382ad9a5512eed672b63fe8893783715e695b5c926cd24ed0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "59121de3c282cd0e4597a4e1bd0aadd019f1b1c46321625cd6c102dc7e827f3e"
   end
 

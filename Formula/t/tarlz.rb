@@ -17,6 +17,7 @@ class Tarlz < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "af36ca5f1dbfa2b8b625cb584ff30a8094735383c604b32c9afb3d4b074b75e3"
     sha256 cellar: :any_skip_relocation, sonoma:        "f707b108966d4e44a95c02fc0cf57627961bb6effa9e0f5c71c157cfdf96cc0c"
     sha256 cellar: :any_skip_relocation, ventura:       "c0facb62b58f1da43b275032ab7ead7e2ac2c6210590ea46185a00f14c977331"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "adb3e6380916c128b56719a3edefa725ab0bca627b7df0db6312ce2ab2f4146e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bda3fb03bac16c1a239cf2c2dc9328d7b05035d494641305fb49ef8e8a31dd5a"
   end
 

@@ -15,6 +15,7 @@ class Mp4v2 < Formula
     sha256 cellar: :any,                 ventura:        "5f584150ea02e3b5d3049a117b60dbe88d412c380442fef8246267bf6f66ed36"
     sha256 cellar: :any,                 monterey:       "62619da0d20b36b5854c08f531687dfe55d9fbd87dabaaf985ced7fe1b24b3aa"
     sha256 cellar: :any,                 big_sur:        "c7c93618a03cfb59e95a6d39e9e6e9d1f355b72ea199b9c6e3d881f606323c88"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "01e24f92ce3d4edfeb7bd53fcb063d6bae8152ccc74f50a8be0ea98f8bb2bee9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "529cebb9ec595d2834e29ff7be7a29150453be53b55a1269284992cd8c35de06"
   end
 

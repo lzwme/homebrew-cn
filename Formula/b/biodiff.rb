@@ -15,6 +15,7 @@ class Biodiff < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "5072d40346a831e078adcd0cf7b0706f24963216a4e29487d734409b214ddecc"
     sha256 cellar: :any_skip_relocation, ventura:        "036e815818cfc7a42cf07835cc78dcd3915e84f0056dc4f7dd35ad4625d2d687"
     sha256 cellar: :any_skip_relocation, monterey:       "69f3a2a771625fdeca1da0718990b71876fe62acfe527ceee508db0e8dc82484"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "8217e0944fd572a40bfb517c730e6927c8aea6750f7afe8d71d18eba1bc0ee71"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "457e5aac74347eb07659a465a925c7720dbfbaf017b7563151bfe5acac10ad99"
   end
 

@@ -13,6 +13,7 @@ class Dateutils < Formula
     sha256 sonoma:         "9942401d4ccb1dfccbefab2d8f07d1bb6c087eef8fe499fa2878e736f4783f51"
     sha256 ventura:        "4a175bd0dd49c33c55b6b70f90e5f52541a3af70f6e289247f919e882f191b66"
     sha256 monterey:       "96425fd7ec4be82236ab3dc31532b1a15dcde6fea5ba84b23a1ddb8e98f2c659"
+    sha256 arm64_linux:    "f3e8c09d527d268d8b5155c4c7f2fcb918b85370a3c0fc5a6b4cba84dfb614b1"
     sha256 x86_64_linux:   "9660d3c687240196d8b0f0bd9b33a085f5af1e09dc1452fbc25e712a3735637a"
   end
 

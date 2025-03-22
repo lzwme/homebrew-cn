@@ -11,6 +11,7 @@ class Rnr < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d7170e9081556544c8b27af2d92e01ad44cbf4efb5e3cf03f9577a50a7e96a92"
     sha256 cellar: :any_skip_relocation, sonoma:        "353575eefa7409b139607ee46d2d10149759a221687295c6fde7cd13e3c29c91"
     sha256 cellar: :any_skip_relocation, ventura:       "aeea1bdde84bb59dffaedfc516b70ed439cb66b8ee280c3fe4f269bdc4505577"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1da83c3ac01b10ffd1b878c65157b6a7aa34f4a63c5a08d945d695c98a9eac27"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c855c741dbb39266333bb2ceac02eaf1cfab99be891bfa88cebe0bbed52c6df"
   end
 

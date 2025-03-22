@@ -14,6 +14,7 @@ class Bogofilter < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "f74ffa505ef0bddb0dd6ee98b6a555fb4db02c0634789c3a29113a0ca01e50c2"
     sha256 cellar: :any_skip_relocation, ventura:        "5177e2c0e637368f36783396144f66a4e4fbd7f4620e4a5a870ee5208feeba5a"
     sha256 cellar: :any_skip_relocation, monterey:       "7ba6d67f7e248ea1d7b89ce21480ba2145c2906f22e6db749f4fe68fe16f0406"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a5402defe7709d89be4e8186a4babc6c90562f7ee88ae84dcaf4fd9f0d3caadd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "99ebd115fee3156d79ae0958b1326c7689e9af5092d5ef3e9adc915cbdff96f3"
   end
 

@@ -11,6 +11,7 @@ class Beakerlib < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b6fa04c4d94639a37919652667280c6eb8e85ce78defc76e2af94450fc7ec255"
     sha256 cellar: :any_skip_relocation, sonoma:        "7d3475bfc5406195fc15d3cf9a88f3324ad027efb50f4381799d9c36a86d872f"
     sha256 cellar: :any_skip_relocation, ventura:       "8ed2d0956f6ac062e613ccb3914feff88f125b3dbd8e84caa5955dec414a965f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "35add5b650f5e9beee810810748f3721a2bbdeb5bb7b167b227b8dbbffd74a48"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e485dc5c3d91552a8fabf34c64dbde80caf20090009b789ded07851dfd6adc2"
   end
 

@@ -12,6 +12,7 @@ class Staq < Formula
     sha256 cellar: :any,                 arm64_ventura: "64702f48420ef83e1d3d6286b332a785db0cc0860ae9d1ba553171155df563bf"
     sha256 cellar: :any,                 sonoma:        "0e2d26ec6e834188613c7c9005c871922ecc6b5e9c92c9da7195b3121f663df3"
     sha256 cellar: :any,                 ventura:       "ba4e7fab6b78e93d8fe4bec9dac21bff7cb88f33101d6d69cf17f8671677a42f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e08f0668b5db8f44564286e09223ec36f40dce62d3182e09833a0237ed865885"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "78b7917bca6fd1e92003d7fd4fd308eae7d764f65eecb6cd8a8c41e0a1bfe9f7"
   end
 

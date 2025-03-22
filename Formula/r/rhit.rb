@@ -12,6 +12,7 @@ class Rhit < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c4764df4672c1d9f7f329beed7ab7891c150a8a93e003df43c2f3275ebcbc7d3"
     sha256 cellar: :any_skip_relocation, sonoma:        "7f1a862f4e55cff0d2b4ca8c77e53e0f064d2fcf78a9e1f07296a0cd3b1374ca"
     sha256 cellar: :any_skip_relocation, ventura:       "77022fe12a1bb7e2a6c035218f55d4bd6930871fb60e72d94d4f109d460643c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfd5b75ef16987d7ce67a99e59375b55024d739871ca5b4dd900fd0e966d1cf4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "39a1dd27646aebe1267cee8eb08ff5fdae2038912685c0bf670005335a24b054"
   end
 

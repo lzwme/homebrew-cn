@@ -17,6 +17,7 @@ class Skktools < Formula
     sha256 cellar: :any,                 monterey:       "e1183e406c1029e930284dd352e92429e12dc695af9e1f01d80d35871328c4bc"
     sha256 cellar: :any,                 big_sur:        "8fbd977dbce7602bff5b095508963570d20555cb607e8526d0fa0f7941aedc42"
     sha256 cellar: :any,                 catalina:       "3a24b4de5dd2f12b857d47a9776a979c0dc41f47525e0cf0d4e639e73fcd0df3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0fb78300abadf0685a2be3a0e51eed5581127a51c3aa56d85da8ce6e4192d419"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac8ed96d1342ecee708da56e9da672b9603b75c542bd835a83435d136e54100e"
   end
 

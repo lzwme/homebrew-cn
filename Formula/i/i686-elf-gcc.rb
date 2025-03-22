@@ -18,6 +18,7 @@ class I686ElfGcc < Formula
     sha256 sonoma:         "f36ee7f782db7f66e6f11206ef5373f3703523fbf26cab16cce574bbc8c241e9"
     sha256 ventura:        "5119fac4b4c065b990c8dd8319202f7265c3896f0deeeb47c2adc1fb86290295"
     sha256 monterey:       "36ecef923608bbd2c7bee2956da81eb2b7dc22e96b6966c23d85458b7e77a510"
+    sha256 arm64_linux:    "c81f98a8f35ed4e6d0ca34aaa93924e848ecea03ae57e9da568798bd778cfad5"
     sha256 x86_64_linux:   "a03e1a866a1d4dc0204011be8ad2466bf34ec96e8e0113201173d57fc4c5b016"
   end
 

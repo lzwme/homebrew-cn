@@ -11,6 +11,7 @@ class Cnats < Formula
     sha256 cellar: :any,                 arm64_ventura: "a53d7f08299d8fd16c00e7920413c994332af53cceba4fbc7bdb16f82f69646d"
     sha256 cellar: :any,                 sonoma:        "2cced9c96fa88e2775c71596927403ac5022830e83bce66706ee928257876b0c"
     sha256 cellar: :any,                 ventura:       "e3f29e14fd84d143e79a2614600aef8b3adf194fda8aa4024fc337337eaa81d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "240af50bcf075ead0506a2a120c431ea2b2c6c3c3a923b60c8d3003d611092bf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "98abfc0b03a47a9c8d9884c4f68a236af40a2be2e42ac8e414f6b9211646e887"
   end
 

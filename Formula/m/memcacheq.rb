@@ -17,6 +17,7 @@ class Memcacheq < Formula
     sha256 cellar: :any,                 monterey:       "83abbc744c310b7afed5a767db77e20b3be0a1289cc5474d018a8cfb0dc368de"
     sha256 cellar: :any,                 big_sur:        "0fcdae22ade43e314bd26fe48a6a43a97592ccce1445336d83f90d9204a4daad"
     sha256 cellar: :any,                 catalina:       "10cc27ffb5112ca2570fcfc372993048a10b2a22a69f499424f7739219e45d8c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2c2620ce9e5212fa2cf38b5397a8f7438d5fab43135925dead98f7a850d543ec"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "00507c2726969f342d96813393cc9fafe2073edd4075eb473ea8a86fa47129bf"
   end
 

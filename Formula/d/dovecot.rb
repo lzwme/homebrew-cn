@@ -17,6 +17,7 @@ class Dovecot < Formula
     sha256 arm64_ventura: "7c02197a94945e427d5edfec3f1647a981a96d707cd2f59f122de8eb0e777476"
     sha256 sonoma:        "e007ae6fa96aec1e7b6f89b4c4ed1455dd3f0397b59b5aae6f7c3cbd2a4ff64f"
     sha256 ventura:       "d062efc159a5752d977a820107b8c4f11dc766489e06bff2860f91832f877a0b"
+    sha256 arm64_linux:   "9cfb86bef709c2e6a6f1e4dac4feac680d902718e20f5ee8fff2f9b28aa838bd"
     sha256 x86_64_linux:  "d352c07b0869e303d279ef574e9b5d595f714b50cbb08d9f10eefe4dc3f07f37"
   end
 

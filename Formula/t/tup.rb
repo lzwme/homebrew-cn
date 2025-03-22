@@ -7,6 +7,7 @@ class Tup < Formula
   head "https:github.comgittuptup.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "19126469087cf5ed5fb9dd6845173917b54171fbeba55633d390bdeb0c171e95"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "677b1e4dbb495cf13c2b30dd7267cff734c22226cb3720f154c6c7e552036033"
   end
 

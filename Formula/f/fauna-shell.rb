@@ -12,6 +12,7 @@ class FaunaShell < Formula
     sha256                               arm64_ventura: "374ccb0c275550317f8b579c6e663eaa8ae22a498c83f94cb33f5ca06d3b7640"
     sha256                               sonoma:        "ff54487e87007c2255d2821735ef79a48e2110eabcced192b53efc067339eb63"
     sha256                               ventura:       "1c13fb4091005e6408f8db2b02e2a56d69a1833d4b1dc3d4e9d9b50ea8676c5c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "efe0fab8f5576b66ad2b6ced19f7c5e545a8d5c1a8d34c36e917facbf18ef240"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a682cf65cd7e19afb1a0c8af45d3d76325376311433592478c2412e091ba7cfd"
   end
 

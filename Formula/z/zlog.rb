@@ -13,6 +13,7 @@ class Zlog < Formula
     sha256 cellar: :any,                 sonoma:         "fd76e9b11c931478c0106c32c4f67feb6f5c1ddfd10cdf985278ececff977aa6"
     sha256 cellar: :any,                 ventura:        "3a641c10f7447de85a8b04d1c283aa0b9804efd9feb73115b68afd2cd06f13cf"
     sha256 cellar: :any,                 monterey:       "84cded237749c8ffb59d04d0426765cf86f42beefe415e54fb6ad99508c7f247"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2262180dca42195cb202e911f78dff3225ca41768ab9ea44c99854f8c34baa8c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "868ff2416cf589e55963163d173f2b30515350a114b0dc70183f6b0183c62191"
   end
 

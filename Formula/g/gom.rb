@@ -13,6 +13,7 @@ class Gom < Formula
     sha256 cellar: :any, arm64_ventura: "f7e330f1f70e94eb254c6c258e916186cf42306b2db1428d681bed8737bb5a94"
     sha256 cellar: :any, sonoma:        "db7c3819f0a834aa8aa355d81cc3a11e58dd29ea0ffc3608c014b46dc6143fb8"
     sha256 cellar: :any, ventura:       "f04b019a8c7a4e71787cafea302e2f67442932518f3f708178d24ee7cc7ce544"
+    sha256               arm64_linux:   "2eb254c3ed260a2f4e4044d9d52eaa936b523669ccbcd560b75b274bc15e2bc2"
     sha256               x86_64_linux:  "75865eb8f914d3d3b10059f06790f57273780a109f83949879808aacb9b7fadd"
   end
 

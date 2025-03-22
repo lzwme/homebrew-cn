@@ -12,6 +12,7 @@ class Atac < Formula
     sha256 cellar: :any,                 arm64_ventura: "393952e028e44fa8edeeef41b4251057143586b3d190a0ad40b5f1a63cc301a8"
     sha256 cellar: :any,                 sonoma:        "856c0ddf288e36d11ecabe69df2dc916a70348ed32374477bf923cec6595c91b"
     sha256 cellar: :any,                 ventura:       "ea2c327647fc9d16286f9c13d236c29563b07a34e0cc6f06569600fb391a442d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "46f6dde3051cf5f19fca18591cf6d09385f6fb4d69082cc39b66272b64147e11"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b95b0a0e37560cf2ad834b306ebdf25cfd59d1c4fc0b3937122675375661e0a"
   end
 

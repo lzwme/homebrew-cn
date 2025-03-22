@@ -12,6 +12,7 @@ class NetcdfCxx < Formula
     sha256 cellar: :any,                 arm64_ventura: "f6c50e7a23adf951aae09e8a600f560a4679fb9ce19eabfd692f92442a5a5314"
     sha256 cellar: :any,                 sonoma:        "34da3acc3752fc50b9315b33f90624e2e51eb450af0974d88a3f3895da320d92"
     sha256 cellar: :any,                 ventura:       "7c452e7a0b055cd09f127c86be95fdc41b5f2fdf75f0c00b480a19f79f362ef8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa7a0a059a0a2951e4d07f41a085babd677b0295dd49a02b693e5015ce2a4a29"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ab172c8268b7d323e568565c3eddaba2596c6990f9465bdeed7823cbfc81354"
   end
 

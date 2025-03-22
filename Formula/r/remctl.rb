@@ -21,6 +21,7 @@ class Remctl < Formula
     sha256 cellar: :any,                 ventura:        "4474c52f63e68fa6cd369b00d41ee5963ab84f4f3156b94b09e3e3328c4c3037"
     sha256 cellar: :any,                 monterey:       "c071e9621162fd5e00e2735f1eb10e3eba302f2f5430740b4122c0ab2800e7d2"
     sha256 cellar: :any,                 big_sur:        "c98f0e9729545d32cf87de9eeb6cb5d9d889b26978903823cb78fadd10b03713"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "325fd3e1bfce192eb6ea17639265b1f619ef95db046fbbf87efa92e8b1e0baa6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "def6439b11bef8a6ee81d387991e0995b9fe76928e9dbd69bd65ea09b6931d1b"
   end
 

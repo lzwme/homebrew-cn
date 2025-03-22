@@ -13,6 +13,7 @@ class Muon < Formula
     sha256 cellar: :any, arm64_ventura: "328b33b0c04a614dbc4b5ec87b842530dc75b92ab729d4e0bd79b4922ea4e04f"
     sha256 cellar: :any, sonoma:        "9f5a94990f9ba7dad39a19b227ab8a43c1e1957a82cd49eff60a33d9015b3d0d"
     sha256 cellar: :any, ventura:       "1093a8dc08368070464f5c182b80df1196b6e4a04f70978072ae9f66f5297c99"
+    sha256               arm64_linux:   "59e9b0a588a9beb8c1f5f5b953c368f0a5073e5a61884af80325b9b22a566f05"
     sha256               x86_64_linux:  "e9f55dec1f94791d47db778e7ae1288523f02ec2b3bf676976e678e8915d4aa1"
   end
 

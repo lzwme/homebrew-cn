@@ -15,6 +15,7 @@ class Osqp < Formula
     sha256 cellar: :any,                 ventura:        "0a8cb981e6a52e00c2db369efd692e41b9bf11aa8644c3337d77bfba91d98761"
     sha256 cellar: :any,                 monterey:       "19a616f01dd68f4f13f128301f3a3d38362482f97be1d10256fdd52f69e10e9f"
     sha256 cellar: :any,                 big_sur:        "7bb862c89dda12256460a5ae9710053a99c413275093aaa2d18d71b676bc9ca7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "69a25e694a716e89f3a110a13a415fbf846cc49d181b610840a11e8e017bf236"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1fd25cee27a7fb3d5f6ee8e9675f1b069bb4a22e5782f2753f5cd070cc6ba5a0"
   end
 

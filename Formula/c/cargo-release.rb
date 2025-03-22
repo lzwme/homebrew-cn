@@ -12,6 +12,7 @@ class CargoRelease < Formula
     sha256 cellar: :any,                 arm64_ventura: "ad6b291135f0d31f327f60266a165cc3dde080ee71dd990fa71e1ea7c8f23a1e"
     sha256 cellar: :any,                 sonoma:        "3bf37526c8a3456465d0ce810bb8224ba50adc869bdacf3a3d92a8f65d4d7832"
     sha256 cellar: :any,                 ventura:       "2b1f9a3cb7f0e3b44678ac6cb3f121baa2a35441a969ccc6043ad9ab8f2a030c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6153a5182d2e8ed9f698da8082ba5def709d7dfe58abddad4b854a5120a12e33"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "75ed8eaaf7a3d85f41178c69294b654b095eec9071c966b99c75099058707796"
   end
 

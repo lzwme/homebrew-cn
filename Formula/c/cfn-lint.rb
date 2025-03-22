@@ -13,6 +13,7 @@ class CfnLint < Formula
     sha256 cellar: :any,                 arm64_ventura: "0961a049aaa5bb7c9696246fd794e61e2bca1400068fe9304f9829f651557968"
     sha256 cellar: :any,                 sonoma:        "efea7f6e743691b28c3cddb068ee906daf80222435b85607d7a54cfb7ed6c0aa"
     sha256 cellar: :any,                 ventura:       "dd91148677beed37317bb1ba35afb6bc29b24d0643109092228b4fbee18c68cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe24ef43975f520a54f693dbf2c3d750735139ca5ec13bea1eb49d5ef0d9e784"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d9ea42654af26c20d520ee9f7ebc0b3a35771c7e04c10d827edb6fd23e642b5"
   end
 

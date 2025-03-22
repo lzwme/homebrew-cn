@@ -16,6 +16,7 @@ class Percol < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f21f389ba2e22503900f31d63739513f239347fa1a798a24a1d57812c0b0bcd9"
     sha256 cellar: :any_skip_relocation, sonoma:        "bb22665ca96a92b9319f8fdb694b809feaf104a1cfa6ea71369e13685af6fe01"
     sha256 cellar: :any_skip_relocation, ventura:       "bb22665ca96a92b9319f8fdb694b809feaf104a1cfa6ea71369e13685af6fe01"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bbbfae25a44da386c2c12756a0a6300adebdebf7b3e56793d32a916a0d856428"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f21f389ba2e22503900f31d63739513f239347fa1a798a24a1d57812c0b0bcd9"
   end
 

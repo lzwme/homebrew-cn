@@ -22,6 +22,7 @@ class Grace < Formula
     sha256 monterey:       "4f30899270663be69c5a6ee832c0ef7b19baf3a422f7fc6d06ef6fd5d69e0892"
     sha256 big_sur:        "8c5c9770e21706084537da65b5a4c0ab95f0dee9036b716ed3987496aabd1b4f"
     sha256 catalina:       "f7e7b6cd2ec94d293b711dfb8c20cba1e000d89a791c7e3596b4806c73250432"
+    sha256 arm64_linux:    "6490f0fba875ea85cd6ee5006dd7bc75ac2dacf08bb16d7aca56fbf5e46a291f"
     sha256 x86_64_linux:   "1d60f284e17b5b7b40e51c41070ca4eeacf9bda3c9e75065e53c40921de9472d"
   end
 

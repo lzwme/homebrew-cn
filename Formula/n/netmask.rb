@@ -16,6 +16,7 @@ class Netmask < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "278a82473770a98ef3704737f2c2f4902ad818af931ff3bb872798f3c9169424"
     sha256 cellar: :any_skip_relocation, big_sur:        "6e304176fcc71ee0657520960c4e6b12304ef9bce2a73135b5ff69d0fe68e2ac"
     sha256 cellar: :any_skip_relocation, catalina:       "1561dc4ab182e2a3ac7f66553f9a7695683467201355969a041199464333c029"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a282249ce6794465154293b1548ee88268476ba2447836f50356253fbd6577c9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1cb4bad8bac486dc82f994b64c823e9830afc267992fbe48dfda89eb7687729a"
   end
 

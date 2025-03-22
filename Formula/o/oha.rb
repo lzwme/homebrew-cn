@@ -12,6 +12,7 @@ class Oha < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "fd38248ad25b39a3c0230aa6ea6cdf25387461d1f5f12f7f5352dde59790a44e"
     sha256 cellar: :any_skip_relocation, sonoma:        "e1bfbf08156b676f74baae9defdef6986bc2b8c8d3cf3b914140619292688d52"
     sha256 cellar: :any_skip_relocation, ventura:       "ab9eae1e4a28088cfd64254288d77007c043ab90122401b81a01dd754f9debe7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7319f4969f55f0a581e0d233b5593fd54b32403decea445f58510456e21b588a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd3866d6dcf4784ce901f91d15abc57a7fb6ab940917137236d4a8fd3750ce50"
   end
 

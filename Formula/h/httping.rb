@@ -19,6 +19,7 @@ class Httping < Formula
     sha256 arm64_ventura: "cd0bd242c917ce8ce4699733fb6bd36cfccefd36bd8b0b7fba4822842601a351"
     sha256 sonoma:        "5c887df378bbfbe24b8049e579a6325bbd7d8cba076eebe392ae3dab8dd6f832"
     sha256 ventura:       "12e2cbfeb500c53bd2cde0ec98d9426a9736d4a40cce70035869b5220108ff6f"
+    sha256 arm64_linux:   "21a1a7426bddeb581154982e0752a0a745069893d7fb04872e2700bccb8a26db"
     sha256 x86_64_linux:  "d216d2e231fe96782beab3f205156d657da0c91f6c6c98e2a2ab1218a1db0f33"
   end
 

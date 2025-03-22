@@ -20,6 +20,7 @@ class Poster < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "74db7055649cd3f68316b99db48139641f916b4434008300f2bfcd1146f92c77"
     sha256 cellar: :any_skip_relocation, sierra:         "caa5474e5d7baf13ae6495c01a7530146d55531e41c88a469b0e44ee892c4be4"
     sha256 cellar: :any_skip_relocation, el_capitan:     "07702fc6f1d43a3875637f8ff9d3509d6eb913abda301c24c23d824a76a858b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "23bc2f446f1525bd074e89f5165a233c8e0080d454d00bd4a4dbbab884334ea1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "623f96d36fc59df594dd8ed5e0073b1d2892e083176346e93821436664351909"
   end
 

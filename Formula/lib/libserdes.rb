@@ -18,6 +18,7 @@ class Libserdes < Formula
     sha256 cellar: :any,                 monterey:       "a31419be0041dd57cef418fdce0a51c9c9af4aa00e0ca0faa40622b359c94a7d"
     sha256 cellar: :any,                 big_sur:        "86eb44c16b5a2f33da010ec7e13df64521270c7a43b8395646effe886254066a"
     sha256 cellar: :any,                 catalina:       "6530d6f15114bb1670201170b6e564415eb610072944609d6b2fa029329fd722"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0add5c36720048c77106dcab1dee9554a1d1993bf9416378364edba0272bdd08"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc8f04a8a7f87996e1dc8f16ca51c16d07986352fdc1f46cb2c87e5fd73afdc5"
   end
 

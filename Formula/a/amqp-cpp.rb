@@ -17,6 +17,7 @@ class AmqpCpp < Formula
     sha256 cellar: :any,                 arm64_ventura: "052fb79e01072ebee63a343fca762f19fb3d3586502e6049c0e8666db559663e"
     sha256 cellar: :any,                 sonoma:        "58aa9b3ed88fa9452bab84e4265c04ff686abb23cfefd9ce1b40066fa50cdacd"
     sha256 cellar: :any,                 ventura:       "a0549cf3274f68d0dd55199876406836104d0df3af6dbc4ffa56031a2b8859ce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8951f9439fa4acf6c6616b1130c7a2cbffe3ef79e9443865592448baca178ea9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "61ccf7cf9045f334afa3df40778602bdf1382d681c0ae5811ac34e6863906fcb"
   end
 

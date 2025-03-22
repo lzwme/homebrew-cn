@@ -12,6 +12,7 @@ class Taskopen < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2655a0cca3da272aafa320a8ba8e194db08bb9b43fa8beb8c8c5fde23cafca73"
     sha256 cellar: :any_skip_relocation, sonoma:        "9fdaabc629647d5636b4546ef9f9ba9eb0c2a7302757b35fbc17ab515e8a508a"
     sha256 cellar: :any_skip_relocation, ventura:       "1d74f583708153e1e0ba9887a202c9213c8c67920ada59ac846aa32ed284544f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1fd23bf1717a925c9a112ca24740edecc4087709e05c577837cced58948994a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae7f9a63cc6b29145c0539b67631464262aaf2088de11d9fe071060bdd500da2"
   end
 

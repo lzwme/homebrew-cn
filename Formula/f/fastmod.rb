@@ -13,6 +13,7 @@ class Fastmod < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "f880861191ce5e9d4ae1f72c71842c49f268075e6c5d17e102c40fe076e13979"
     sha256 cellar: :any_skip_relocation, ventura:        "c2cd11d0b8f5bc395749013078c1667bf50b9f57d51768ec5bf47e6dbd85c79a"
     sha256 cellar: :any_skip_relocation, monterey:       "13ed79ccecfb9373661a3ae969f438bb9bf1753cc6142a99d050ec0fc6383f07"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d22271d1009dfb50d3bb758934c506d01c068ee6eed7dee3409d682f93f80b34"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e9911efefe8693ee31af9c8b251ab3f524b67765b4f4920451c426b90bf05dc5"
   end
 

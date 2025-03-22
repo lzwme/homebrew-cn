@@ -18,6 +18,7 @@ class C7n < Formula
     sha256 cellar: :any,                 arm64_ventura: "52bc952a153f52674059c7d7442a50b74a8dc45c81ca94a42d4a467e6db1a977"
     sha256 cellar: :any,                 sonoma:        "ffca1dd001d7134475ffb8ec4b9fdd375630d5f9fe50f89048e1c1093218de92"
     sha256 cellar: :any,                 ventura:       "2dc0bc5dae30b1cd240586712f1865c3c1bb7c19ea3ab8b9f19729162d297fc8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "857f290c94f75d7ec1a226c96b3beb8556f8efa421c14c678c45f6c67414d13a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4d64cc4e7b5af8c85ef35ef3bdb50a4e4eec316f71db1dea2f1d58c86dbd57c"
   end
 

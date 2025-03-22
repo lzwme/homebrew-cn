@@ -14,6 +14,7 @@ class Progress < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "69d736301d682b39561e659e6a7a37f886cf842dcced3dd7856c32947eee6995"
     sha256 cellar: :any_skip_relocation, ventura:        "c838dd67490a7aaf419ca5e538b699c895b42911d4c8998876258648b8eb06f2"
     sha256 cellar: :any_skip_relocation, monterey:       "b91471bcf961169742cca485c90b52dd6be8cfb0f9ef8b5169124309d2143f7b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ca13d94aa5c8ad7eb020650e96c0d120a72d1e9e8ef4c656febd2e6595b188bd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "86cdd8365a105b82a4ab6a8f041bdc8c1dc277ce12eb06626f32e484636b5a78"
   end
 

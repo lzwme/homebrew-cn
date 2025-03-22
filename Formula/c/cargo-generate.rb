@@ -12,6 +12,7 @@ class CargoGenerate < Formula
     sha256 cellar: :any,                 arm64_ventura: "4ea3b9cc702ae6012647d2d172659c3758c8f887c127154dc58f0053e8b6bcdb"
     sha256 cellar: :any,                 sonoma:        "759edb91aca8300ce9662a44db1839b7f58b7b4c4bb9bb86b5d2e50faff27609"
     sha256 cellar: :any,                 ventura:       "e1eae7692e3eef6940cee03d746e9c41d9cc44099224f4423a104eb5ba99f597"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "93a16d4b3ec6742832d7ab9384cb06b5876b61cee9e8e8ee3e479f224499c07e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "36c0deb64b259652f5fed534a5c597e103c928294ec95eef1af309919043719a"
   end
 

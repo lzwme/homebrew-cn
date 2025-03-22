@@ -23,6 +23,7 @@ class Castget < Formula
     sha256 cellar: :any,                 catalina:       "83d589037e4418829134060be140fce4b4b9883b9b68376f20257df68d9fff9a"
     sha256 cellar: :any,                 mojave:         "fedc8c680b948b9f87cfd3f63f90bd6cb02143120a9c74d5b1bc5a04e84290d9"
     sha256 cellar: :any,                 high_sierra:    "4d1f21bb31abc39d28110a76608493423f96a1f19c4b67c1cb651887f3848675"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "830e5a5c2cc130c2134ccfa526f99794cb737726f810c23d773cfe060d84faeb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "590a6ec3e2fe983ff5c82e3b5b96b43c87f3a51fd7848216da86dc48ba01b8ca"
   end
 

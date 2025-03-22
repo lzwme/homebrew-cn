@@ -13,6 +13,7 @@ class Cmix < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "161b8e7138face7fa88bb94541da7444183ea3b02c819e8a406120349cc3d12b"
     sha256 cellar: :any_skip_relocation, ventura:        "257458d58bd2f6e17013d22904190dde42b96f5c6e28dff73b5874832db82439"
     sha256 cellar: :any_skip_relocation, monterey:       "a9241607506b03b1e9c0a77a09be19a3ae069f8e98d2507de654410774839a13"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "87e851c4cc26bcfe1fab20b165cd369351d5cfd27586dec415e373bf1c1d1674"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0092c27accca6642f12d8c0d79423e5722dd17cbd20a93c194f231999d0e8655"
   end
 

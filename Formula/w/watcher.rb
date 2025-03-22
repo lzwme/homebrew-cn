@@ -12,6 +12,7 @@ class Watcher < Formula
     sha256 cellar: :any,                 arm64_ventura: "53157a0f1edf216242266fd6a9f7d0c8932d0ce54effc46f545bf54658c9e792"
     sha256 cellar: :any,                 sonoma:        "c7f39e92be6da2d9f7146e06c379eea38819886c6a39da7df10e4dd766550725"
     sha256 cellar: :any,                 ventura:       "18a9f158c5b2bdb1bdfb8ca6e1222a0990826234590fd4badca6c7a424b02585"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f56147c3c007a937ba7b42ad907f7492df64edd3ce054d064bfb96a98afb7f8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b48edcac1609f95123e313cd24069ffcc0f5de6aa10d594892d4492ffd3e54e"
   end
 

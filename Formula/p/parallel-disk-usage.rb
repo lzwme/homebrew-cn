@@ -12,6 +12,7 @@ class ParallelDiskUsage < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "813b20404ed758b4e2fceecc75ef706871696c98930ad185f182fd14c96bc20b"
     sha256 cellar: :any_skip_relocation, sonoma:        "ab569a47c73fcfa96edf0bcb3015caee836d7630ed0b064533c9e258382fc0ec"
     sha256 cellar: :any_skip_relocation, ventura:       "27d6b6a2502e8c45bb315b12864ce6fe7a8d9c07ef2bccffc7dd1f4547fc72a3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbbbe4c829a923733c3c721b7699b0b61be65954fbca5454df55a7c683a11e4a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f233a9ade03a7211653eca2b211b91538a9c54a5f4ebfab3b0865c9b4eb168d4"
   end
 

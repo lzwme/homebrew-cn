@@ -15,6 +15,7 @@ class Cmusfm < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "f1346608b765ed2219f6b963d80b8b72a90b430a10894fe924d64d2d67c535a4"
     sha256 cellar: :any_skip_relocation, monterey:       "b2e90bb7f3dbb25e7149d8e6c47a54725095b5dca2ecbdd2ad91d0d383824a28"
     sha256 cellar: :any_skip_relocation, big_sur:        "6ef7f13482b03d75ce2eb9c4ce72123f997f68c246477445b9aeb1d4e0d49e61"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "e5e8154717f9cbf0a3824cc58471ba1e88308beaec32533e2d51fcb91032ccbf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "85080d3911b11f136d5baf6e3304d50c7bc8918aee103308068cd817162e993f"
   end
 

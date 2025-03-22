@@ -21,6 +21,7 @@ class Ares < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "2ef2937082a01200c25fc1d61f1fdc91029bd443dbc8ee44f0b1b843f8c3adee"
     sha256 cellar: :any_skip_relocation, monterey:       "38bdef4ea6190bb5107cc2f42924b9b5aafcfbf0a7d8b1af0f68088076c58c66"
     sha256 cellar: :any_skip_relocation, big_sur:        "148415168b096df8c5c39e14f6f68727331a3793073a122992e020568d5d87a3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d44d38b5f09547f5ef9891e76a883ed8a9dc1ab1a55b688a7ce34993c4550fac"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d8628ee2e4ccb9ff40faedc01fff88f8ab4e7154d3a8573ba4d8b7dc7bb106e"
   end
 

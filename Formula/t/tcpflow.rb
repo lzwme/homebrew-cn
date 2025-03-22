@@ -22,6 +22,7 @@ class Tcpflow < Formula
     sha256 cellar: :any,                 monterey:       "73e14653361b7c3276f5f5acd7e79c09982cc0f0d5f9c3f0102c1845bc5e5e95"
     sha256 cellar: :any,                 big_sur:        "b4bd69530d81550d1a428dff981fc71f5a45fd4cc406e9f10dee030e1b350b90"
     sha256 cellar: :any,                 catalina:       "96d3ce376bae12013a22db5a49e71bc45a8478a07ba7ef1bfb1dc1daa33e3bac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5bc8ea9e3684dbed7beefecc3b35e829b75486eaf71ebce04727ffe5898e7080"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0fb8e4d90327529dca426de617f298ec135fac0fca31e547551774832541aac"
   end
 

@@ -19,6 +19,7 @@ class Cfonts < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "270fc6508128e7972125b2342f1b0da0d7d9af02dced036b4033b734aea0711a"
     sha256 cellar: :any_skip_relocation, ventura:        "3ac4832acea4e04ab4cf44fe47c07cbbadc961caef1320bbf5783e98b3be14da"
     sha256 cellar: :any_skip_relocation, monterey:       "a64c35cd812bb2118c8cb47a6f5c47b3fd0ccaf1cd26e7603feb7f050da0b260"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9d35bfc15fdc33a29ba0f4f1c095addba0cb466bc28e0c494260409d23e8622c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4324fb2da4a6d701d32cf3ed3c2bda2e9e9508f17443edfd5252f55516e48325"
   end
 

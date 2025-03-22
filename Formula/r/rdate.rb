@@ -26,6 +26,7 @@ class Rdate < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "02e41a79e9aca3bad86802e1bc32c7148e8a2ea2f410c57765f9e9d8b2686fd1"
     sha256 cellar: :any_skip_relocation, sierra:         "9f4a6300d6d3ebc9034abeb5388fd40face1f286a7b97610b6a40a1dcdf166b5"
     sha256 cellar: :any_skip_relocation, el_capitan:     "acb2ae5951a0f32cbdce39e02d86c63cdb85b41fd02aff74aac6ea4939d71d8d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "92c6174db1497fb979606efb3ef9ce126eb725d6b9266ba25d7414fee49f5b46"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ec0afe4b9ddec866160a04e76ce20f253c90a716c6a90c66c8185db9a32f5070"
   end
 

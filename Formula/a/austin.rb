@@ -12,6 +12,7 @@ class Austin < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "cafa89876000e876f272da9f9fbcffd00a163a698163e63d68a47974198f0c3b"
     sha256 cellar: :any_skip_relocation, sonoma:        "a9605282d9c525276e6fce34fd10b2aef37b4b8acffffdaf79d1862e3bac22ab"
     sha256 cellar: :any_skip_relocation, ventura:       "cf403c1e23f28ca7ac25153fefe8ea3459b50828a036bea52bd89783648177fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "55ad016d651f53868112221d8bc3945322c218e8e1138f00e94ce0115ee1cdf3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "23f61750c13e6ad73505a47841f627c537eb23ce2259fcc7efb723e6aeb4396f"
   end
 

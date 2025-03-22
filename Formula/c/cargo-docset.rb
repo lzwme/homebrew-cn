@@ -16,6 +16,7 @@ class CargoDocset < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "86dafa007c5203f459d7b4d95db972d2820b94f97f8d4c7ae2578ad4d0651056"
     sha256 cellar: :any_skip_relocation, monterey:       "f8d40c7c3a89df7dff6b6a752a83896e621a6b81ccd3361568da5feba36a8c72"
     sha256 cellar: :any_skip_relocation, big_sur:        "ce6ee7c8b2ee612c55eb082cc14e34a109c99e517948ed6be22066e0d066b9f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0c7778c8af189d1cbc622fe6b781799540665394faef8894ed1f7d971f56db36"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d451753648a8173e81f0238eb79b57da1d774c2c444b3de0618277c38d9889f3"
   end
 

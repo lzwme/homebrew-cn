@@ -20,6 +20,7 @@ class Nyancat < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "2272aa5028ca779224f68fd25a3c07ff41c71bb7d14511186808a6b59bfe32c3"
     sha256 cellar: :any_skip_relocation, sierra:         "413a6ff99b622e60b0878ca74c3051d0feac094a7eb1fa9e90db715735cdd2bf"
     sha256 cellar: :any_skip_relocation, el_capitan:     "2484fb6eabaaa65a988191b9c2f920d7290bc20f73dbf41e4a996e0306827364"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f8ec43d463c0a65e4c50c3e3d2675fb3f89fba1503fc036b1b717eecda6a1511"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "69b8c44133a399fddd0b6b6db41d2dcd9ba2420a5c5b53e62409d14cfacadc85"
   end
 

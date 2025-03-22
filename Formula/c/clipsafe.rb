@@ -17,6 +17,7 @@ class Clipsafe < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "289ae273376bacbbf897381fef5c151aad366d4e1ccc1bcbf6699301b01674bf"
     sha256 cellar: :any_skip_relocation, sonoma:        "8281bce81f78a416ee70c5fb1df8c86aea559c868576110c08734923e903187e"
     sha256 cellar: :any_skip_relocation, ventura:       "6625778c29a89af7ba98e2eec0e67aba28c2cb47e485580eca23ab1fdbe3f7db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "438b90a56328efe95721d4b24ba38bca5dc4c1f285926248bf36fffa82ff4b66"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4bd51459f433734d20a9d13266afbbf23ddd6603b95f35818387d507de902205"
   end
 

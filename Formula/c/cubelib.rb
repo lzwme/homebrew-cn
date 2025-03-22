@@ -16,6 +16,7 @@ class Cubelib < Formula
     sha256 arm64_ventura: "6db4378728b7fef0376f751dff698b109b1690cbbd8847ca2ed9d4dc5708c2c2"
     sha256 sonoma:        "3b34171b089bddc118864151d5f16a6f9fd7ecf2061530b43a5f3d2f92ac9bd5"
     sha256 ventura:       "6e8cee9a4b318d0bf9846d6ee66d82550f33188ea584415fc74f548a4ff0dee3"
+    sha256 arm64_linux:   "680d72e8b1a84ed6e454e16a859fcc5be4438e265ed62637b8ad0e6c57117999"
     sha256 x86_64_linux:  "f23523ee48a74275d61f881645e96f3a1f37f18a8ca70570e2a915a62930f2dc"
   end
 

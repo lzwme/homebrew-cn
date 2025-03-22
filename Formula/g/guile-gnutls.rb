@@ -20,6 +20,7 @@ class GuileGnutls < Formula
     sha256 arm64_ventura: "54ab78a024a433b7617ce26f88fac53debc42320651d7d6729a6c52c044d2071"
     sha256 sonoma:        "5809a5ecdd6bacd5cb63f20aa5fd4d8af796e3d63c1554851090699d496f96a6"
     sha256 ventura:       "2cf7fdb17f501d3585ec6025132bc4b598349043e4d12ee82fec511fd7864b0d"
+    sha256 arm64_linux:   "88ed2db04fcd5075579b4aa0176f0d89b8e39d9aff7e6ea8770f4aeb7ccd78bd"
     sha256 x86_64_linux:  "6d35dcf9c11c5b00943128d0a9a4ad7e2fc97b470a34879729f77412ac6af431"
   end
 

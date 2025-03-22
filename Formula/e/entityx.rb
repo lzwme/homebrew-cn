@@ -19,6 +19,7 @@ class Entityx < Formula
     sha256 cellar: :any_skip_relocation, mojave:         "5d2b3d80d9be39b08b61003fe0f8c30bf8aec792636b78e475fbbbb55d3e01a7"
     sha256 cellar: :any_skip_relocation, high_sierra:    "b015609cd7e4ad7154e846a34e91627a605983ab3e3f1767df5ccf7e46cc9d10"
     sha256 cellar: :any_skip_relocation, sierra:         "d0ecde656ac88f1f312d69894a32330827cd52ac64a7e20d1357a0a9bbe8d596"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d74139c6a3a5340831984319a46e10d0276b604a675d38c1cace40cd0329966a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ad5714ba0a1eb7c6929c02e05359f7b2f81a0389c867a1c1a98b07d1a0a14af"
   end
 

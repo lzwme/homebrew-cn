@@ -12,6 +12,7 @@ class WasmComponentLd < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8befdc711e368b049668f0e32ec0659eeafdcb7269a293f25ba2e23f08b54d30"
     sha256 cellar: :any_skip_relocation, sonoma:        "e2c969e982f7cad560d81656669e2502b90c6d3f8771258a8eecbf4740b937bf"
     sha256 cellar: :any_skip_relocation, ventura:       "03e9f52e34e00c905e4aaec764ada5c40469ac8ca0e559f8c9f5c54c429b8446"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "20b1211964aede0763dccba59402be7232a98d6cb189131a5ae79b2c08d967b4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8d35e5944b185a5e504555324552fc5f2af90e9d81ac50c05866a536ed38261"
   end
 

@@ -20,6 +20,7 @@ class Dmagnetic < Formula
     sha256 ventura:        "53b7f3052773759db150a337a05f47d400a1815d4091a03fe4c356099fe9ed8b"
     sha256 monterey:       "3be7370bdd40ef1996d44c90ebea5e0a79e00f698a15567e138b52222a5d14d9"
     sha256 big_sur:        "03cf51b58df1758d4091ef85325843ccf4dd8ea122f5eae0f7dbbdda20652ca6"
+    sha256 arm64_linux:    "d2f8462efd3fae04c958d7af9918a011f98343627968b1ffdc9ad24619a24c59"
     sha256 x86_64_linux:   "f2ccdaa11d29351b10335eb79f20f4ffeb23029d542a867fe0e6bc2274618a1b"
   end
 

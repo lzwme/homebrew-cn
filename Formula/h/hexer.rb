@@ -20,6 +20,7 @@ class Hexer < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "019c5a1806bd439ff70d9efee99d3202385da58529bb5970c24f8e435c9b660f"
     sha256 cellar: :any_skip_relocation, monterey:       "88fc357578acfb6e88b9b1e5c1a07bae269a7d3811269fcd6d14ec86c5efc04d"
     sha256 cellar: :any_skip_relocation, big_sur:        "c9f70c4af623ee7ffbc9da870f2b07b527b27ccab166243febbd206f4a78eb2c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f74c6862bfe432093fa0a9db2c6cd3dca5812a5c86bae57777410e41956c2f7a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0d2555b996ecdfe5178d26c9b7279c882fbdbff1551b8f71b6d232338ccf2c74"
   end
 

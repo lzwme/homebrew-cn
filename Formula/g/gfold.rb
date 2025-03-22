@@ -17,6 +17,7 @@ class Gfold < Formula
     sha256 cellar: :any,                 arm64_ventura: "06169b9151d2bde14a0c1782a1357dafd8d0a0fb51f8673c86c8307e3131df35"
     sha256 cellar: :any,                 sonoma:        "4f809c3dc6027ecf9a95fce8773c9722a249d450c8201ff8d46e6869c7840a21"
     sha256 cellar: :any,                 ventura:       "6aac2335765c4330e3977f8cb185773f99fb065cc4c4f75a28701ec25a1d9b48"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b56852105659ce48445bb2fd6a251040bb545b4f84d8a3f1dafbc4adbcf0e62a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "512c8665866e3918dc0d2ed50dceea71ec220498e9be5eb33cb249faeda251dc"
   end
 

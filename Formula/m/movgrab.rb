@@ -12,6 +12,7 @@ class Movgrab < Formula
     sha256 cellar: :any,                 arm64_ventura: "36ee0f40c03cc093c495d70f1665766974a307c8f021b716c30f7bc1570e7550"
     sha256 cellar: :any,                 sonoma:        "3fd10d07f84f4b0adb19636b805b9db9ad2486fe3d13bc35a2f080bb588f3a2d"
     sha256 cellar: :any,                 ventura:       "ab2995d794afc29b4195997223f875d6b36e301cbe3243d8c86d9d4c753b51c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f84fa8483e3d055c0ff13bae514115bdc1b8e61858a6b1acddbd88569019f0b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ddd8b8dffed7bf9c48adf8df108c5de1c8671ee55a7b87c61f862a39264edef"
   end
 

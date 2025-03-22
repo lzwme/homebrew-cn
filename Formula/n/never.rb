@@ -21,6 +21,7 @@ class Never < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "9fbcc22654686fcfebff4d485b2e763bf2555672854796a9338b821bf2a998fc"
     sha256 cellar: :any_skip_relocation, monterey:       "704cf0ced4f7c9526b337dc2dfdcab520956603fbc5edb3859f042d93460b2dc"
     sha256 cellar: :any_skip_relocation, big_sur:        "df908438891a84cc6833cf1f7d4a5e8515a9c24a787cf15a39175202c01b86f0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "06ace732c395dcd140b9098c6842004a527d62dde2e6ea49974827f803847a30"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3732a0e925be723674dea91079efea95b0df1863dade024d110b32214707d651"
   end
 

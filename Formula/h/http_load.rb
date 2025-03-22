@@ -31,6 +31,7 @@ class HttpLoad < Formula
     sha256 cellar: :any,                 monterey:       "03949d76fa9a565a4e52e3219a097eef0453bb082a77674a16a66e407f6bba24"
     sha256 cellar: :any,                 big_sur:        "04650d6cbf5dce7109ed1ce45a1bad45ae6d2706d3b5dd2baf411b198a3c5e27"
     sha256 cellar: :any,                 catalina:       "6989c80f8d5213ed9e9586707e8ce2ab503b5d7bf6d10fadddd8bc310575f452"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "21d002bd2aa7f0c6f9bb57c13777d961e01a3e149769017c6ed91cb4a1ea0f1c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5172c491fea4e76a68983d8fe6563a97e2ed2bef73b6bb0c95f5290282343116"
   end
 

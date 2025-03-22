@@ -24,6 +24,7 @@ class Libwpd < Formula
     sha256 cellar: :any,                 mojave:         "b9cdcbf1e0c875c8666f16a9547386754c40607652b0255d6eda8b2afb2da229"
     sha256 cellar: :any,                 high_sierra:    "baba04ac2fc8bcd2bbf890f8d7e3e27f7eae3044d960f027634e3d0310447dc8"
     sha256 cellar: :any,                 sierra:         "f4ef8b16411ea32e77e35bf0a8109b5f7651931e885ffd4ad7a8933a12d4f749"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "81464149ac1791ff235b62e286bff669440c36793e92b039b648b96c42d9e73f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "589effab1c398690ba5ee3b616d3ab9667260d013ac3ebb93aef4a69dc1ebe9b"
   end
 

@@ -16,6 +16,7 @@ class Libhttpserver < Formula
     sha256 cellar: :any,                 ventura:        "4bfcce305d2fb4ae798d9b5a0ce54bf7bfc3a6a3636f7a500dee69ecd3161e32"
     sha256 cellar: :any,                 monterey:       "2eb240316761233c156364b47f7e5a1d0a280baaad49530f5e27ae7f19969db5"
     sha256 cellar: :any,                 big_sur:        "f79987ebd2cc129a3ff7a6ee5f3e4ba62cd3926a5fa66554b6b6c32a70661e20"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f4983970f413cd3b10229548e9ead19177cd534aa1aefac1903d4e9a4b7b4d1e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9d0e06fdd786113649df4bb86729c6fd53c94b77cb6985a0aa43831cdbbb43bc"
   end
 

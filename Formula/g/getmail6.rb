@@ -21,6 +21,7 @@ class Getmail6 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2843d92bd2232d2eb6724039244e47b721cb294624236ff58ac044a866f52c4d"
     sha256 cellar: :any_skip_relocation, sonoma:        "75b2ea3d0465fcdedf0ac2748f1987772f1f3e09b243e0630a6616bda036654f"
     sha256 cellar: :any_skip_relocation, ventura:       "75b2ea3d0465fcdedf0ac2748f1987772f1f3e09b243e0630a6616bda036654f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2843d92bd2232d2eb6724039244e47b721cb294624236ff58ac044a866f52c4d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2843d92bd2232d2eb6724039244e47b721cb294624236ff58ac044a866f52c4d"
   end
 

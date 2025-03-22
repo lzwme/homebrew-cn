@@ -12,6 +12,7 @@ class RonnNg < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8d39afaff29b90a17336c9033eb12d405f5b8c29c7e804872a87281c889d84d9"
     sha256 cellar: :any_skip_relocation, sonoma:        "f0d1bcdca16b8ce2b8641e8224a374ebe25cb744721c84047cd101e505e07f72"
     sha256 cellar: :any_skip_relocation, ventura:       "f0d1bcdca16b8ce2b8641e8224a374ebe25cb744721c84047cd101e505e07f72"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d588a927ed953cb8901d41ab8af46b413fefc011d12e1e9c8aeabc23d582e35f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b303b18ed67bc5b328597d421c4a2c0449a5e65372706b04ed58f0f9319d10e"
   end
 

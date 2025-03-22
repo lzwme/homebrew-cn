@@ -11,6 +11,7 @@ class Scrypt < Formula
     sha256 cellar: :any,                 arm64_ventura: "ca2d00727c2c9341fc476d525d5317cc04fdf8972ca73500b2b39d0e388306f7"
     sha256 cellar: :any,                 sonoma:        "a229f4170e58803a154fc60d7354497f0cb8ccb21f65b00cc1945ed81a9e7e6e"
     sha256 cellar: :any,                 ventura:       "cdd6ae43fbebe770617c06ad1a1ecdde3672f7d206503b169b073da5fd646987"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "94cc29fdc84753347d35adcc2f4a58618979fcb4c6132caf3a9a0600738223d5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7ea3f7f130c909269e84c6a6d70697f38589de63f248e6ffbb8d118dfac00d1"
   end
 

@@ -23,6 +23,9 @@ class Yamdi < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b4a7cf29beb52e599c9d245d550d00848b935a8d8e5c0b9f3d46fd362e28a32b"
   end
 
+  # adobe flash player EOL 12/31/2020, https://www.adobe.com/products/flashplayer/end-of-life-alternative.html
+  deprecate! date: "2025-03-21", because: :unmaintained
+
   def install
     system ENV.cc, "yamdi.c", "-o", "yamdi", *ENV.cflags.to_s.split
     bin.install "yamdi"

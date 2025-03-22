@@ -11,6 +11,7 @@ class Ripmime < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3cdf7a81580930011a430850659749515bf9f58eff2fa0c3589a47178c6f69e2"
     sha256 cellar: :any_skip_relocation, sonoma:        "a3342a8eae88a0e8f24d5e87cda7d85b8dd4520161df950ada402e6ef7cc37b7"
     sha256 cellar: :any_skip_relocation, ventura:       "fb4d73a8f03ad7dcbc8cc4b72f41f8f81d918490e4bc94a712b47497adef35aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b083ab553fbe5c9106133acdd28ee36820df2352481e4188f1069e77d492d6ca"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f64dee6f786e2e7a99a7fa792cce03ea36ba3b6604493f7e90e02a80670e5749"
   end
 

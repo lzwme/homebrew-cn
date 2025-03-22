@@ -12,6 +12,7 @@ class Typeshare < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "90457cbc2f02a61fea512d6e96668a7c8a877703f0ebc28db6d5a214fa6502cc"
     sha256 cellar: :any_skip_relocation, sonoma:        "20df350c85f38fc2831d1a281abeefc30c776558382ea7c988b818083cf5d320"
     sha256 cellar: :any_skip_relocation, ventura:       "e7e101d9845a1d5c1f1d2f0c7f0cf077e595d4842c6732c3b1d2b2d3407da682"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "422313eeb267b2d53a60a403209086284de28ecb0dd1d9a248a7ea1f3f8fec42"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fefade27a0676ef950b1fb79c5a4b13929b637656a7c95c5b3eb70baa94bc080"
   end
 

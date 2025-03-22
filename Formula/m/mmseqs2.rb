@@ -13,6 +13,7 @@ class Mmseqs2 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e677b94b349b48bfd2d2840db79407fc00055c4780690cd8434b94bf1f288f41"
     sha256 cellar: :any_skip_relocation, sonoma:        "a4fa462c8bb251cdd7076cc6afe8a25484f676fde45d45e4ce8637e742063e97"
     sha256 cellar: :any_skip_relocation, ventura:       "137d46f6776eeff0b856cf2eca03c972b49a50238ce083d0f7c7782e2f1eb6d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3030c88f137230537f7bd3c4a58646147e1319753786b81250d49320eae4ae1b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f75c259b582cc4cf86ee97be763e59f9590e58d4f67a43b5e213bcc8a283401"
   end
 

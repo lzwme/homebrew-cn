@@ -14,6 +14,7 @@ class Mruby < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "afc8957270619d043b8cc9a1cad20c2a44f87c7d46243a1837445ff2126b8dc2"
     sha256 cellar: :any_skip_relocation, ventura:        "f0bca252cf800449d7fbcf51b77c531a20555b23a559a8f71c35fe3e8e6ecc19"
     sha256 cellar: :any_skip_relocation, monterey:       "c2492155224f16b0777a2e726755806ffff1d810bdcf9a3b858c604a68d6e423"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "187e72da3de5a5b58f530af667b6d6f79c981889ce84b6a2ebe54ab07f322cf7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f9e941627463809125660387bdb9ecf7836236765014146f22bb5a291dbd48eb"
   end
 

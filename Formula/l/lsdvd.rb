@@ -18,6 +18,7 @@ class Lsdvd < Formula
     sha256 cellar: :any,                 big_sur:        "0d5d1a272ba88ff70ce68ddc35fca9811e2ca5222696373aaf3d2ffc0126a471"
     sha256 cellar: :any,                 catalina:       "986e89fe0980a78d7d7ef18fd646d3176edbaa7fd6531c38f698d3bdf2aed5dd"
     sha256 cellar: :any,                 mojave:         "66cbfc0e273fc63813c4948638ab849357ef9d3f72ce5b6322a27f5f614507f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1c5ab420a6644e37a5fa5788e79b0a707f5f3407a0986fa288b74c0f2d4b33d0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd9145daad69de5b544d8e9824b42829c74b048322044a35b76bd9b2b355f1eb"
   end
 

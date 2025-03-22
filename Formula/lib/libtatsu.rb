@@ -12,6 +12,7 @@ class Libtatsu < Formula
     sha256 cellar: :any,                 arm64_ventura: "4a33d3d2692d953e3bd1c0a8561011152ab9dcb5d029f0bbc33315233337fe52"
     sha256 cellar: :any,                 sonoma:        "fafd0d67b5ccd44ee5c33fd4ba38f063029a89582a21e5a88104f00638bc620f"
     sha256 cellar: :any,                 ventura:       "70223395b5fb5525f701e78c40b9b5b4c9f897fec98bee2dff4af63612440da4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "84fd9c2fef6f7311c1b68ab8f1c481ea0e80cfc6ceffc1bef0dd23ff38e4c5cd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd96d83e2a85b4c479893f9493d0ffb9d7f66d357216d08adb6a4a158f72a582"
   end
 

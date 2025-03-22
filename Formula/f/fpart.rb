@@ -11,6 +11,7 @@ class Fpart < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a1911af8d359c21a98d9c7337f2a1ecedfcb26f58c1b52087b12c4cf0a0980fb"
     sha256 cellar: :any_skip_relocation, sonoma:        "2c40ec263a1dd6321e2878cc65d6f22c372a7b7846ca2a42c29068dbf41e7ccb"
     sha256 cellar: :any_skip_relocation, ventura:       "bbb63a308a1a001f6accf2c86294a5c04a3ae5ab2517cf45549108530a0c6b05"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98050183e715d54e94a44254546c227475622fa4a7dc6e73eb96fbbb88486bbb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "52fa28e8ae55c6595258e13f8ee9f093225f1cbed462cbaaa4171571f884cd5d"
   end
 

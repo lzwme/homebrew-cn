@@ -17,6 +17,7 @@ class EasyrpgPlayer < Formula
     sha256 cellar: :any,                 arm64_ventura: "07a6d81fc75427bb8844e9bd79b6b457def126c37ad2db8e386cf4eb979f5b37"
     sha256 cellar: :any,                 sonoma:        "96816388fdb23de41c554995d0d4b52aa348c50430495d1e6248e425934f3c9f"
     sha256 cellar: :any,                 ventura:       "7d669fe4965e4a7739897bd749ed5f184778d9493eb6e9938135ba23a9058f12"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "21364ac72fe87a73c520a849792e3ba9b06687a2bb47e28f3cee1d5852fc7895"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "900ef138e0241d3b323307182d08e38ae55d1e7f99ca82ec7cbf9e3bbc1c4124"
   end
 

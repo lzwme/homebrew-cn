@@ -12,6 +12,7 @@ class Librcsc < Formula
     sha256 cellar: :any,                 arm64_ventura: "2ef3bfaa135d7dcdfa214b56ec141bdac11882fb307a6aaa4415fda4a982aad8"
     sha256 cellar: :any,                 sonoma:        "d4887f6f0256c8c55347ef86c671a712b3b8b07e52ff691899197a4ecb40ac90"
     sha256 cellar: :any,                 ventura:       "d91b3e133981705b317d6a74a48f821a13c3e83d1ea53f27a8b087c6087cfe2b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "30a6bd68f775c4ca1091551b26fed7f25c9a00538ca9b29eec04282835d3c425"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "77dd0bd9e1b3c8971a4eca3430b49648f944824d1a6fc0337696c846372ca9b2"
   end
 

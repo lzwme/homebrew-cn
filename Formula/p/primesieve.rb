@@ -11,6 +11,7 @@ class Primesieve < Formula
     sha256 cellar: :any,                 arm64_ventura: "807a1a9cef1a7e95879308de7bcbdae314e646492d8cfe22f3bb3b5eb49c4546"
     sha256 cellar: :any,                 sonoma:        "77c992d7f04fbdca931b261b3ad57450de07122c850c3d65109cc92f333b22f8"
     sha256 cellar: :any,                 ventura:       "bdf91c3935b7a4073985b3136b3353d7b5ad47ae4acf5d250bfba0b68d3187d7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d688e10b42667ba1acec8149a80239f0a90b55f9112f112d07b0b112585810c5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc89516ef01b1057ae25b5d987ae5c4fafe800702de3fb323e6069536c656131"
   end
 

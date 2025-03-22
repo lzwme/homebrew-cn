@@ -12,6 +12,7 @@ class Comtrya < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c1dc0339997dc21f6dcbe1432ecfd7452eb7b0fa6e99cb03dbf1e606ecd42778"
     sha256 cellar: :any_skip_relocation, sonoma:        "826d318835757025df4eec7bb3857f70cce8af7dd19a7a31d747697f2dc19abe"
     sha256 cellar: :any_skip_relocation, ventura:       "0df65065cec8fad7f2897ebba6371fb3d9662678fd1591a1786b6767e505f174"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "17648a6c3105c914b1344a06361609defd077af908e92b59a7069377ea5bfab6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8862c76fc1d14754c66edb7e3d7b886d45c5e05f2721d02c94ef270178edd38"
   end
 

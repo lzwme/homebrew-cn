@@ -20,6 +20,7 @@ class Pktanon < Formula
     sha256 cellar: :any,                 arm64_ventura: "0016600c5e396a07b502fe6060b8e83ad0659479a433e4baf7b0d1a3afba27eb"
     sha256 cellar: :any,                 sonoma:        "202a34eac518440e7d191d05e083a66a424ba49e1df4bca38f83175ca6eafab8"
     sha256 cellar: :any,                 ventura:       "af27c678d49a0928c17ee03cb2af56e3997ffa71c53efbb5edb9c2db3bab1491"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4977778371998ed8200618874c1897db9733812e2a7aeeafcae134353fd8e88b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a169dd1f2a8226cb31c4039f5a34e62c2077d9667da21f4f6c9a23a7198ca852"
   end
 

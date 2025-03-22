@@ -23,6 +23,7 @@ class GnuChess < Formula
     sha256 big_sur:        "11997b7b97ab58380f07e491fc9b75649f52ab6d7edfdfbdbf025a3a12d81d3a"
     sha256 catalina:       "d3dcc4bec287a4b09dbb0dba0f7fc51943812fed43eeda21a5f3d314ae77dbf6"
     sha256 mojave:         "03d9103b7fbbfeaf487d3b6dbac291eaacd51299052b62ddd3564eaedc513f08"
+    sha256 arm64_linux:    "3fae629ef6e8a25ade5b26ad9786722b70ba6ce8597445dfaa691aa6898f1398"
     sha256 x86_64_linux:   "ef91217fa368cd712df9a7c4c6def92eeb5a26b37d5c0e9ee51e13a3ab7cca26"
   end
 

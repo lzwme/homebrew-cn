@@ -20,6 +20,7 @@ class Tracebox < Formula
     sha256 cellar: :any,                 sonoma:         "6abeaa63adac2a5329f9e40368963e975ba14f5cc86ce98fb28371c1299c7e37"
     sha256 cellar: :any,                 ventura:        "64fbec3f29837959980185a6df8c454f1fbfcc9eeff0f337acb80076b740482a"
     sha256 cellar: :any,                 monterey:       "8de9a06925cc930fd05d09f08924e323080d0cf375e5153781ffb4ba0071cce7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "22b4b1b26e23a933ca5145017f4c0ebc42846780d15063770cddb8626c5ad5cf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "534c62a00f80541550000853b7656fba20be0e72dc879df166f7172b93460321"
   end
 

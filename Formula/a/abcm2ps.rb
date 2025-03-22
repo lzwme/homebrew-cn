@@ -16,6 +16,7 @@ class Abcm2ps < Formula
     sha256 arm64_ventura: "b1904fe9f5fb66c73cba6bf1988afdc0a86ba846972738e649a2c9b1c1e6268d"
     sha256 sonoma:        "e89ffe353ec57c1e6203ea927ad2234bac3cd90b49daba91bec849cc29acbb24"
     sha256 ventura:       "c7d963e4b54d64a7277ea51e0f9c52b6d522b24affbdd70b4820a7e2dba88eda"
+    sha256 arm64_linux:   "1d02bfb62f29fc77d202476f9848e39520045d0b495b215859c3bfe294388fc8"
     sha256 x86_64_linux:  "f68c9955212b1f0ece80488663bb67ba04dfca697c6c417f339caa2a625c2413"
   end
 

@@ -15,6 +15,7 @@ class Seqtk < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "a22a8a2d9b1568d03efe732ccd3a4fa461f0b8adab78587a8b6fdbfbb8db292a"
     sha256 cellar: :any_skip_relocation, monterey:       "fed18e5929988555d1623c2a023821de35cd3f200adb40bbb56ecd56b48b5646"
     sha256 cellar: :any_skip_relocation, big_sur:        "ac4bce32281d7b1c988285d0341691bacfaeba03a6d9d82113ff0ead8125accb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "8076cb2126be0503a7610d3d66a473be435350275fb40fb62d5d67bd84182f57"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "afd0ca56a9c7ed70b7958688d5d38c85b48c18eba76a52f303abad25f7b41eb0"
   end
 

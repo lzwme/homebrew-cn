@@ -11,6 +11,7 @@ class Corrosion < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0a8b7c8d6ab549cf312c74d9e8fe3433dbd830bace4630a64831600dc295c16e"
     sha256 cellar: :any_skip_relocation, sonoma:        "5cd0014c092f56b48094b870e83bf0179cadb5b9a1ca21b2e7d2ae7cad8b43df"
     sha256 cellar: :any_skip_relocation, ventura:       "65d4780e454a17d7e3d855ad2c3cb555ecb18a542a7bbe2e91a59190258c79f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fbeaec4499d6e68535612017b5a01026450440d512aca785c4db3df7a0ae550d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3056f8cce628c70aa0193c328fe8f7c52d3bd4c9519fd3c383cb494338c4e981"
   end
 

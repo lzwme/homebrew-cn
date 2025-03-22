@@ -13,6 +13,7 @@ class Torsocks < Formula
     sha256 arm64_ventura: "af12596e6a8e4f4c4ff3fe6e78bdd10208a2f0dc6d7febb4e07045849b197b6a"
     sha256 sonoma:        "895ce81c30fff7067666ab08c5e57fbc5f1d15fea84d5afb5439842a487a0675"
     sha256 ventura:       "b028a43bbf38e062a4fae15d77d681a3b5a09ee9bc80076d28113276d74fc9dc"
+    sha256 arm64_linux:   "6ef52a78edb6a251c63923dbdaab88c8b77a569821e6ac750c331ce7715371e9"
     sha256 x86_64_linux:  "162199d0f4d1f3419971ccac67db06cb27a50358d39b304f6098e683f4b2b935"
   end
 

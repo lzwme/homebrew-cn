@@ -15,6 +15,7 @@ class Geoip2fast < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b0d93a6fa3fcfd371c0c30898ae03dff0c17a78860b8eab97ff7cd463f737478"
     sha256 cellar: :any_skip_relocation, sonoma:        "0852cbcf23ea45b65d8f25f50baa8b233a1323388d4b344a2ed02b604db596d0"
     sha256 cellar: :any_skip_relocation, ventura:       "0852cbcf23ea45b65d8f25f50baa8b233a1323388d4b344a2ed02b604db596d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5cac968bc1355949b10d0e9f2f3f23e410c5cb8af6f86bd107f286cf3fba405b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0d93a6fa3fcfd371c0c30898ae03dff0c17a78860b8eab97ff7cd463f737478"
   end
 

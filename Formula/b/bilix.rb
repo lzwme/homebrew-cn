@@ -15,6 +15,7 @@ class Bilix < Formula
     sha256 cellar: :any,                 arm64_ventura: "02ba642ca6e4d17595fc694585cce296bb01174371e440df74b489bc45a9e621"
     sha256 cellar: :any,                 sonoma:        "87617e45dcd5c871a273de454830da1d686e3fd208c907bc3682d70eb1d8e594"
     sha256 cellar: :any,                 ventura:       "09daeae43c5fee948d99e2e185d0cc8e75e0d9be032460d713d38e3ce6e6cb2a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e1e767be3fe99267d5d287aa3ed0d52c29a90199a1de220bcb16ac86fe91895"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d5adb32a945cc04f70fc982d589d9fc3785bb406c6e5b6e7aa32a04d30676c0"
   end
 

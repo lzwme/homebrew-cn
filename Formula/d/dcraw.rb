@@ -22,6 +22,7 @@ class Dcraw < Formula
     sha256 cellar: :any,                 ventura:        "2ece1b23d5c77ada535e6e4ae803b9d8060296838cfe92818c191b1e49dceba8"
     sha256 cellar: :any,                 monterey:       "82b85b19458214ddae5f12e22a13e160b5a771d1111020d559a3b19bfed3798f"
     sha256 cellar: :any,                 big_sur:        "baf800fb4217afc09f8fc06f3512780898018e72e8862be65f016ea1b89fb91d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2783cb8eca424cae5dece8fd11a9aa41c533d14861791aaf66cd60391e75619a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e450712cc23c8501e21e7ff438480b0debcb27703a6ba4dcea9e6b00a2ec6fac"
   end
 

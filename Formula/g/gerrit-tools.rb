@@ -13,6 +13,7 @@ class GerritTools < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "352ba04205d7ed543a550c973dbc68d07df3cac43760c11d8ca9c702525703c1"
     sha256 cellar: :any_skip_relocation, sonoma:        "057c07eb30c39242fe39be9b0b251432a6407ac7866b4410b458e638eab6324f"
     sha256 cellar: :any_skip_relocation, ventura:       "057c07eb30c39242fe39be9b0b251432a6407ac7866b4410b458e638eab6324f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "352ba04205d7ed543a550c973dbc68d07df3cac43760c11d8ca9c702525703c1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "352ba04205d7ed543a550c973dbc68d07df3cac43760c11d8ca9c702525703c1"
   end
 

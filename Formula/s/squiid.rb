@@ -11,6 +11,7 @@ class Squiid < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1d439fec1f96a0b4ca61a92fc31d73a0588a735bef8fb035d24907dc05b17727"
     sha256 cellar: :any_skip_relocation, sonoma:        "99fbaf75468bd39f33fac158ba621e21cd057a4fcf8b0aa7da5a88858f69128c"
     sha256 cellar: :any_skip_relocation, ventura:       "3bccfe7343fa9c5b740f1c3bd29f5364313a8643ac4d2d5ec57dbec64fb09352"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9271c4fe7fce39db2b4500368e46dc1443d82583c456204d4c9c8838d03a307"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "42a8e97c67a0436e66467376c4c913e0025fec990b1ba314b03ecdc0f4f67e06"
   end
 

@@ -14,6 +14,7 @@ class Luacheck < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "5c001a53a3e07a42f1feb1e8357d10413acabfb687b3b91aebd5f04e576c1332"
     sha256 cellar: :any_skip_relocation, ventura:        "2a8e782aac328d196dab06ac9da394d11d8c613c9057ef7392abdb44e3839e3a"
     sha256 cellar: :any_skip_relocation, monterey:       "94a98b05bfa94bb3ec210d38328b18028f764bd1024efe56c738dd8b9c481e72"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f911cc67b563f4f04f2cb3239c05dda795bc53542a2dfa2d4667d35b39aeda8d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "eaba85e939f4055b051482af96f2009a1a86fc113f69b12abc4d6a10ec887e64"
   end
 

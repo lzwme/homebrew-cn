@@ -13,6 +13,7 @@ class FontsEncodings < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "59c87e4e30083b75e3018ad22f97910fad4e0a836078f4004dd317e5fe15a0bd"
     sha256 cellar: :any_skip_relocation, ventura:        "59c87e4e30083b75e3018ad22f97910fad4e0a836078f4004dd317e5fe15a0bd"
     sha256 cellar: :any_skip_relocation, monterey:       "59c87e4e30083b75e3018ad22f97910fad4e0a836078f4004dd317e5fe15a0bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1f857df9e20b609e0039a4ca026aeb47950281cefefbe63f9fe051fcf79529ae"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1db746be5c88ea8ceebfc07dd720c2f004b4e82e1c86fb311314ad0698ff8a20"
   end
 

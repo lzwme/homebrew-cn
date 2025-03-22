@@ -11,6 +11,7 @@ class Cppinsights < Formula
     sha256 cellar: :any,                 arm64_ventura: "181c1ef524e834aa0b2974363173c86c186c9f18b7ab67d593e4d640398b3281"
     sha256 cellar: :any,                 sonoma:        "506c9a94441c12056bcf5edeb77d1308076a9ac8cb28ed01ee9a7d9025cff28d"
     sha256 cellar: :any,                 ventura:       "7009e97127fee0124103b9a4966beb85bb6cb5801d708270dffba7702ea4b8eb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a6a94326d2c9c631acdb209f70e0c7a42227c9f7c1eaa28a696470b84575529"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc1962e932cdd04e649b28111d04e53ba7f5a26441ba702b54d85de7f2ce0a14"
   end
 

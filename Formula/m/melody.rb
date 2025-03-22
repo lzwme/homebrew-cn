@@ -12,6 +12,7 @@ class Melody < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f6f38b37a164b96b64c1dfbf510ce9c3bfdf714aa78ed019f21ec1f1fae8e6a8"
     sha256 cellar: :any_skip_relocation, sonoma:        "4ff223f27cb843cbfb6742debd3f37a903ef15e837c58ba6983b7028b151cfb6"
     sha256 cellar: :any_skip_relocation, ventura:       "fc4c23ef29bb5907b1f9888ce9e5d676f30c95d2d5b85392c8ed65317d38a6d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aee430215f65ed5d664571ecdbed0e733a1eabb9316d1d94b5c168333c008ffa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "486bf0de59a35bd2fcad51c0f00156f8eeeba5db3e27b246a5d79105f195a20f"
   end
 

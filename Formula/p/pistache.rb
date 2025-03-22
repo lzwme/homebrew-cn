@@ -12,6 +12,7 @@ class Pistache < Formula
     sha256 cellar: :any, arm64_ventura: "d7a4d961bd52ea6e84601692baf0aa290738c73f31b2522627e766e386fe470f"
     sha256 cellar: :any, sonoma:        "8eaf723d1a39743fee0bbcd114aba4bb58cc28a1a5dd2b6ee6a398c1e6164e98"
     sha256 cellar: :any, ventura:       "c15f1071afc06d9f6f60e54921af214d6c8e6787db6e9ca0fc249c9d208b5aef"
+    sha256               arm64_linux:   "f2f94bda2565558e53b6ce5359d82dddf46c486f19744622795da71f2dcb28dc"
     sha256               x86_64_linux:  "e864df73e63ce4399b8c6324f3b86e36c83128f0034aceea2b6dd3941f8a5385"
   end
 

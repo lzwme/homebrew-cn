@@ -12,6 +12,7 @@ class Ittapi < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "77730e201944e4ad0d74edc0ce6d074a9f8cb66398c4cbddedc27ecf087c0bda"
     sha256 cellar: :any_skip_relocation, sonoma:        "929cc096155ade33af92e3e59d2a8fe142630db805a9b455413380fdcc236674"
     sha256 cellar: :any_skip_relocation, ventura:       "6d289436aa1ddaf4e73c133ee11ee6ebdcaa8b041d58255f60d2276aa5b72406"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4896546019f70102efca37b44eb966c5cbabaa77c72ed4b5694d650a21862fe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f362d43b190473d8fe34bb58be9c6204df811bb2963cc816e6966755b8bc3d4d"
   end
 

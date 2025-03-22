@@ -13,6 +13,7 @@ class Libfs < Formula
     sha256 cellar: :any,                 sonoma:         "1ea2f6712729fd699ea40714c86ef74c3126404df219122c38ea18b1ce03a6e0"
     sha256 cellar: :any,                 ventura:        "015e40efae665280299a9fef6e282e18cf16c47896bc7c0829d9fe3dd578d246"
     sha256 cellar: :any,                 monterey:       "2a035cdd2ef46765aece7a6f30e82d19d92e135841d74bca444c9b1d8d0a98e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a0bc3bc73b7eeffd71ca62f12e9ff99684362f82ade1606e7646da3926013e4d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c17d8ae2548594b5aae02734f0c2804858754e00f2e1b2dcc38d5bc86086aa5e"
   end
 

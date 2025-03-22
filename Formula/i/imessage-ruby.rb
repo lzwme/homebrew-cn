@@ -17,6 +17,7 @@ class ImessageRuby < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "a05553e529ee3f7d2a212033b5353e1bae2534a7651e0b4ac4ac66c2301c6f96"
     sha256 cellar: :any_skip_relocation, big_sur:        "97031cd42ff2a4338b973493629d314f1ad1e7a79ca7e912503f68585f5bfc61"
     sha256 cellar: :any_skip_relocation, catalina:       "97031cd42ff2a4338b973493629d314f1ad1e7a79ca7e912503f68585f5bfc61"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "98197a6b45c3c46674268c2033a0648ce4afe2c89904a56f959d1c37a2f2a902"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "584a4e42785d258568915c287d02ea037c685bd577812c66844350425fea5df3"
   end
 

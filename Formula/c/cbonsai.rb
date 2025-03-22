@@ -15,6 +15,7 @@ class Cbonsai < Formula
     sha256 cellar: :any,                 ventura:        "7d51969cb0c181d86ddb3fccb770efdfcf2f438e1a2cefc758fcc2dc166219c0"
     sha256 cellar: :any,                 monterey:       "559b47b52fd88c4755a176832ad90b86499807aa91fb23919b0b529734dd8a39"
     sha256 cellar: :any,                 big_sur:        "f09aa06b6ea26cd7053de48b25c11a2a517d05fc7f40b61a024164868f42bedd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f88dc991a65cfc6b31775e38ad0e4043443e4bce345ac6691e3fa116d9bc5dc6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "adab516beb445c4f2f03666bef052c660e3484c1f9e252d27c0741f91b2f40fb"
   end
 

@@ -13,6 +13,7 @@ class Ata < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "4b2e8e207ef02ff40ecafaed7d1009785ef20473b7b7d89adfac06b0c97b86a8"
     sha256 cellar: :any_skip_relocation, ventura:        "0308bfe2e109b9b02c7a7c4216c741b69a5d485f96fe723da1265eec10651e0c"
     sha256 cellar: :any_skip_relocation, monterey:       "1c08731f02edf7f158c4d8865e331ebea4f91d8699f8fa4c714118af377deb2f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ea43319e201b4677ae3e9646b0cd8e7b5ccf1f09a5b5db4f5f92f467301e7d11"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c73e91e7b7fc1ef0ca0db0c57df4e099c105c1a3f63b95a41a526043bd814ff9"
   end
 

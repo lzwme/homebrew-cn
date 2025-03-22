@@ -16,6 +16,7 @@ class Mikmod < Formula
     sha256 arm64_ventura: "ef5825cf3c2f07a1b58c596d56e9f965f743788232720529e82acaf10838da28"
     sha256 sonoma:        "5f51f1fc55de88f9083ab08d701523d68ca1675c0c27f8fab6dd1012afc1551c"
     sha256 ventura:       "305dbbedcc5ff0bb6f3853f930375503aa9acf4234889de233070c2f566e3eae"
+    sha256 arm64_linux:   "f3c8a4dc7f13aa55e8e613cb91f440ecf23316a250e4e6a1773a4c409fb1b00b"
     sha256 x86_64_linux:  "0ac9b85e2c8c107a3d9d59f8ba8a3e6b316de1b1b28b30f4f2883377d10917e4"
   end
 

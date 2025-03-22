@@ -25,6 +25,7 @@ class Sipcalc < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "9cff165f5e2b98d0c7d4729d4d6309b679cae7d161996242c666053d37134640"
     sha256 cellar: :any_skip_relocation, sierra:         "1ccdaec0a816dde9f7caa0f7a77cd984ece78a61a5886032c4c8821915753482"
     sha256 cellar: :any_skip_relocation, el_capitan:     "56aa686252ac703ed3dbe91f5737ec4d4b95d52516f4ab52947df15b77d1c58f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a08824e18de04aa9673ef0fe31bd7ea568eb4029210c58b57002f4f3110ba732"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "32b27f7515668c3962b6f3e629928524026bf005b6ed247449779064bb65e1d7"
   end
 

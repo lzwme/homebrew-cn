@@ -17,6 +17,7 @@ class Zabbix < Formula
     sha256 arm64_ventura: "012793745e56215ee45eef8a43d53fcf2f92d2604741bfb044f110ad5bec47ec"
     sha256 sonoma:        "21035732b32163212a6eb1c44b52fe96b1e8e000fb2dc2384ced292962334abd"
     sha256 ventura:       "6b0ade3b9dd4c90c8434de6dacc8cb5078a322bca2b5eb629aa375a097eaf459"
+    sha256 arm64_linux:   "aee84d1b030ae5f388514f594be46141fef4455f7fc0009d22c66c72847bbaa7"
     sha256 x86_64_linux:  "f1669f46a669dee7b405b9a12f6a41f169996e53965efc39e3aa84ae441269a7"
   end
 

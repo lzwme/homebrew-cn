@@ -15,6 +15,7 @@ class Tass64 < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "b07344cbe03d5b5915e20ac2cde5c9b616f798e5b3589af1bbbad1cb41a6c414"
     sha256 cellar: :any_skip_relocation, monterey:       "ec7db292d9285cced213210e4f158879caaf401589ecdf8c5f194f936ae2578c"
     sha256 cellar: :any_skip_relocation, big_sur:        "fa71a39e484f20215d6e016a3a1347d88680e342d808b25acc66fd940ff1b0e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "05feb338b83843857b1dbd68a9c53f2481d5b466eabe1035b03bf54a73fdd7ed"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "68e1053e5cf4f9509b8de27497354e8640573e12a31fa265c048272e9aa539a0"
   end
 

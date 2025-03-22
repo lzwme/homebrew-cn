@@ -17,6 +17,7 @@ class Zmap < Formula
     sha256 arm64_ventura: "6f6b3a6a443ed8e5e0599b80635df6457d691fd519b7cfb20efe10d5475d84c4"
     sha256 sonoma:        "4071a54bda62907d58be4a07eac8db28c134be4952f7b3bad0257151785c2298"
     sha256 ventura:       "20fc280d37b9e11f2d24510ebd0ba8edc3f6e710383973b3e46bc8082bca6036"
+    sha256 arm64_linux:   "f374b19ffb87cba04072a7e2a76d5a72c8fd13d33e05b3d5c2e98910d1a8442d"
     sha256 x86_64_linux:  "4d0ae017c4e6bcb5d3cb6c076307a989489ab76bfb7cc5f038b8ba55f11f5e12"
   end
 

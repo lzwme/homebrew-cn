@@ -16,6 +16,7 @@ class Tmpreaper < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "aa1b0ab8c36bf2ba8f9bbb2d9be36eaaf5395c9d6f2a9a904ad25ebfbcbaa783"
     sha256 cellar: :any_skip_relocation, sonoma:        "a0e097e2544698d880b83f4a8284105917b8f09628484ead21888bd31b5051cb"
     sha256 cellar: :any_skip_relocation, ventura:       "f2810c2ef580d6317db1e5089a75f6fad8542e7d9f6798d7a3cfd75ab4eb1024"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d4eb5e686f3ec01a8fec3b07930dc37c0353d816bf9ce845f3131bd9ef87ff5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c0688fa5f46502a1b12339adaf4d7af1a746046dea9f400729968265944f1fe"
   end
 

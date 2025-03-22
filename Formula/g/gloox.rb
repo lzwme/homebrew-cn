@@ -18,6 +18,7 @@ class Gloox < Formula
     sha256 cellar: :any,                 sonoma:         "514e1e0c40baa8b06c66e0501fc51b11d5e4cf5960ad13e0ebb76e84151ed461"
     sha256 cellar: :any,                 ventura:        "4f6f5f81d90b12287ab78c7cda2f2d01342e925e9cd0224c9187d681c7023df7"
     sha256 cellar: :any,                 monterey:       "ec49c912e85c4b02f351d6c171d0b93df8387f1883c380e77e187adf98119a46"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9e5af4334ef24ff8fd701bfda9a221b82388982e1d8fe166d7ee2c30df2954cc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "95bec00a34c6fa57dd21c50ebeff2a52af273b3a2a413436f40eaeda30b9511d"
   end
 

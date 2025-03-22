@@ -16,6 +16,7 @@ class Debianutils < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0a501f8de9b1a2654efa102a049dd181cfab7fd3a91cdbb86d4ed33219cfcd6e"
     sha256 cellar: :any_skip_relocation, sonoma:        "cb0c2f9e9219767f62d6bf7743e4dccf930fe062c59a4ea13e40031ddd4c239e"
     sha256 cellar: :any_skip_relocation, ventura:       "26a45771021e5520b95eaff418ae8217ea26a052e90ae0c66b2a53af75653b35"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c17ef8a4479158fb2b7b0965f5f6a702154b3cbbd19526eae6fcea4b37084bf6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "eedf40ac046afc99b2c62f565dbdc97e85e6ec68378ea12fdbb1edcf547b9900"
   end
 

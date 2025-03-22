@@ -19,6 +19,7 @@ class Multitail < Formula
     sha256 cellar: :any,                 sonoma:         "ca9fb55f8bf98257308ea67179d882788d74bb7c1e3cbb1b584eb679f81ee44d"
     sha256 cellar: :any,                 ventura:        "88b234118c438295f556f25b1c651714a7e0fd597f9f124c7025d4066a43c5b4"
     sha256 cellar: :any,                 monterey:       "9c26932eba926fbeda0f8cf27e11b47fcc09a992f31aa581560dd00ca47d6c30"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ff18f53cd0985d90857495d4444ef2e6490f08e73cefd4c5aaaeb95800cc7a31"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e5209ad76b3f876606ca6a7a7fa6720ec2f976affd51aaab992c0dde63540b4"
   end
 

@@ -14,6 +14,7 @@ class Polyml < Formula
     sha256 sonoma:         "09a1a0630dadbaca774010a8bf8a017025aeea595f3bf2f1cafbe4a9bdc55431"
     sha256 ventura:        "08a8aea9356cf8fbc35a863668dd554ba4f7196176969f9a95e8217279747e7b"
     sha256 monterey:       "9a8ef34cc09cbbd5871f0de8167a63aa80e7ac476f3169e6c2726b28ef5b9db2"
+    sha256 arm64_linux:    "c17c19d56fb21ebd5df29726c787d7a53deeee0206a79d2dc20a297dd6f77458"
     sha256 x86_64_linux:   "2c629afd3ff1ad92cdbc78d7b3f638747e4851f8011e1393498aada95c3f452b"
   end
 

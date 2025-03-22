@@ -17,6 +17,7 @@ class UutilsCoreutils < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5455d414d3adc4fb4dc54571fe451487adab71d71ace76e6476c1f8f235a3210"
     sha256 cellar: :any_skip_relocation, sonoma:        "367bf4cac0c0c9042eef29604d1a19178b1a8ecddcb2d8a2f58069f06da99f03"
     sha256 cellar: :any_skip_relocation, ventura:       "0db44149c4963e57a301d574a0027c76b0668a935ed7a93003ee0c06b8212d67"
+    sha256                               arm64_linux:   "ceeb9ca9c70ab137505a4c6dc8e0ab69b5360cb76f4fba859d993de2298b46d1"
     sha256                               x86_64_linux:  "e18edcc1973ef26762cbeefe8d494b01190d886fe8e31ae0cb5fd2b6adcee0a0"
   end
 

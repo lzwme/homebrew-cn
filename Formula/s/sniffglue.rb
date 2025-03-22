@@ -12,6 +12,7 @@ class Sniffglue < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "56da20d0f884e5d65f47710f07b161811f899e914a02444f25013de4318280dc"
     sha256 cellar: :any_skip_relocation, sonoma:        "3e384b4c3f1cec37f8bfc05895374176b0653d23da223e32fe8911c896509736"
     sha256 cellar: :any_skip_relocation, ventura:       "c02d4c036be412e02824d1fd6dececfab12e47b70e0030aca18a26ebac05d31d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c2c11e8addb595af6b63ed633911aaeaddf6f373bb4ad43870fc0c1739858d34"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "975e2e1aa4e743d501b15ab83d7af6360d5d0ec2335051d2719ad817c56c6ac6"
   end
 

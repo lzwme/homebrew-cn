@@ -17,6 +17,7 @@ class Sfk < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e3046f0abe948e34f45d68881da6eeb5847aca127ccb5811af2cb746d65a0987"
     sha256 cellar: :any_skip_relocation, sonoma:        "c482414e9117080567a7256cdf3de10162badc5858f23e7aee4036ab03f2911e"
     sha256 cellar: :any_skip_relocation, ventura:       "deea0ecf5b9e43e2d4a65c81d2a4875326428a2807ebf65dcbddc24bd5c2e15f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0d9e6dcfc0c4b7bf9f56c1e90105097b50d66cffef9817924f3d6ff8a30954df"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd3eda49d5a973827a028be4d1fda1437906d5e2efa1db16f362ca7347e64b56"
   end
 

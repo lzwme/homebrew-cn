@@ -13,6 +13,7 @@ class GitCinnabar < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "51ba0623200a95ef946f80961b3019c1a7bfda3418decb3d6ef1a6b33ec6f131"
     sha256 cellar: :any_skip_relocation, sonoma:        "5e7394a0a10d4f1c3f9a632fc94e2725c49834dd67984b6f2ad4ff6545dd9daf"
     sha256 cellar: :any_skip_relocation, ventura:       "7300928447559286b22ecc7a7ccfa337f56be2df371ba0e0cc034af6ba879be1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "319f84058d67e249e5aaeec5a4e12dc57dbe5484ce926a57604fe441a8045ece"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c91ae191c4f9e28b7dc95c015ab88a7a6fabb9b292a5a062da57b4d30f39d6f1"
   end
 

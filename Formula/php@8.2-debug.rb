@@ -5,14 +5,15 @@ class PhpAT82Debug < Formula
   mirror "https:fossies.orglinuxwwwphp-8.2.28.tar.xz"
   sha256 "af8c9153153a7f489153b7a74f2f29a5ee36f5cb2c6c6929c98411a577e89c91"
   license "PHP-3.01"
+  revision 1
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    sha256 arm64_sequoia: "69a12fc05ef8707263613463e16558c6ea3c4b7d56cb9192d9a862baefa67e4d"
-    sha256 arm64_sonoma:  "9621911403f475cccb76b0cb3131d02907527f5b9a3de83f6bc852d48fb8b036"
-    sha256 arm64_ventura: "fa687f4e5ef68a38b0f2e7ef6e0975a6d60b6de9b0df0113d670de01b25399f6"
-    sha256 ventura:       "6f9e24db62691700d3e86bb9be98b36a972124810f8c64807286eef402f6003b"
-    sha256 x86_64_linux:  "27cd64a6f649f94474bf8322d7959e5adf778911571e9c086c25caf9a2d0e357"
+    sha256 arm64_sequoia: "8173f29344d161c383e608a7f66708c60b3cbbd9c98ae75c5c8a3fedec93107b"
+    sha256 arm64_sonoma:  "73e221a8066cb8e28bb5cb8bf4a22911423fc918c0dc276fbb2fb7c20ec9661a"
+    sha256 arm64_ventura: "b354fd8fd95773eebc788b3e8c2a3b3fe2404a66094d7211c7ac04c8fd10d8b7"
+    sha256 ventura:       "948e50d405959b24d7b5e94733fc375114f84d4245622117f1540554cb72759a"
+    sha256 x86_64_linux:  "d4601604210de034b6f9d8a7bcc021a5978efef474d518b51d1183c937a1e73d"
   end
 
   keg_only :versioned_formula
@@ -35,7 +36,7 @@ class PhpAT82Debug < Formula
   depends_on "gd"
   depends_on "gettext"
   depends_on "gmp"
-  depends_on "icu4c@76"
+  depends_on "icu4c@77"
   depends_on "krb5"
   depends_on "libpq"
   depends_on "libsodium"

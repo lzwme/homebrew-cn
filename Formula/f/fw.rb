@@ -20,6 +20,7 @@ class Fw < Formula
     sha256 cellar: :any,                 arm64_ventura: "44e8ec3e5844f12c3ee137ab19a3e8062bff39957dc7e837a9665a04a54df54c"
     sha256 cellar: :any,                 sonoma:        "1dfb39b2365411508a694fa9832e315674fb00a19b8aead534c13ef20ea998a2"
     sha256 cellar: :any,                 ventura:       "7a1d6b4ad35e3a7631b67bc1c78637a8c8292ee904cdfbc7a45f04cd39e9b032"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1cca454737de3f42364aa83b5bb61322c384620f3ae78556c1df38777599265"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbf2ad75164a1529751022a7a25f8b7e0e1c543ff4227032cf73bcec07ab32e9"
   end
 

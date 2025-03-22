@@ -12,6 +12,7 @@ class Numbat < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0415e2b39effbd9843b5454705d157f76a842fa8c6c4399a78af8edf45e56bbb"
     sha256 cellar: :any_skip_relocation, sonoma:        "f45d7ee45e0db01d8ff53ff4d6eb96157d4d5a1cc707d5f7b56de73659fe2cb6"
     sha256 cellar: :any_skip_relocation, ventura:       "ac553d4a9495b73b7a6bb60d24e997c77efc41c61d25f338cff93b4ab5f747f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "510a56a4eac2d79df0ff557d3c38695f9a8434a88ee2f4ebb587647a1e686cf5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "45335ba3caf2597ba12c9ee5f1a942f488c015bcd6b4b204ba0151ec056e5d07"
   end
 

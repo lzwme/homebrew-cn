@@ -12,6 +12,7 @@ class ZlibRs < Formula
     sha256 cellar: :any,                 arm64_ventura: "de491b402c9dd40f96b4eefbcf08ab9b46b852b26ec9f9fd26d16c38a860236f"
     sha256 cellar: :any,                 sonoma:        "560187385d4e908f454b6f323820707e4874c49a95d82666fb8c5a00c1b9279f"
     sha256 cellar: :any,                 ventura:       "299dfcf47452723f5bde1dda76340552fff351112a79a97eb785f1b9f7bf8601"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d989c3505015858b9dd3f2e8bfdfe62d6e3c2779a84c6e1d97d75873b4bf2e2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d67e3cfb2f3381cdcf1ba2c3f0c62a2bc90f0929175ea3ea8750ed77849af9a"
   end
 

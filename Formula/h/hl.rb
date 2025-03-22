@@ -12,6 +12,7 @@ class Hl < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "abb9ebc3a9c7dcaa07f84644f75e71f9d07f624925d721a97afebcee7231b8f0"
     sha256 cellar: :any_skip_relocation, sonoma:        "2f3c402a8dbe81c7046d8c6a6df031abdcb5780ee23b8ada1b4b2fc53a2f8e47"
     sha256 cellar: :any_skip_relocation, ventura:       "96a7f95cafd8fd3bef142a8e1a458dbfc41e829a0474b1e999a129f5e5b51b81"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c096c7e717a26877b820d1a5efe79b2825a69e849ff32788e056c07f5da55ca"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fee1ae71a1f2b45035734bb20abd1e9aa5cf774467d9dcb42f159de33764dce"
   end
 

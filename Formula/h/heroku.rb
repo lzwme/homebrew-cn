@@ -11,6 +11,7 @@ class Heroku < Formula
     sha256                               arm64_ventura: "558e1b57ebabf4751e618d9448693c3fa546290d0f1e29e4240638e0a4551609"
     sha256                               sonoma:        "2fe26d6655fa4017278817a577e2bff13e1e3d87ce7b4550bbf70e6eb1798f17"
     sha256                               ventura:       "4bacec0ff9f06d4ab62be169ae6a74cdfa69c216e125e93cc146e78233abb28e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd055c3defdc2253ab437d8486f3c87117eac264e0ed8f233a352c0e1f419d87"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "16edadacb414c621e709f72289b139e85e42ab368268af6a05f92ec1425257ee"
   end
 

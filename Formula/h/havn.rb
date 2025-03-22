@@ -11,6 +11,7 @@ class Havn < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "dc4173df433d270867847c18f2646314df969222a8be87ac120804fed41370df"
     sha256 cellar: :any_skip_relocation, sonoma:        "031e08eae31c5c9bfe147a2e03affd1baaca11efe46d91345703676d085e64eb"
     sha256 cellar: :any_skip_relocation, ventura:       "e70082949c1a15b512a2027ab3b9435ed00a2b961107fac9d59e63202eea8fcf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "52f62787e7857f78386c1713bb1d9be69862ce0d6bd988d984c9ce6a28ffed1f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1723df8d6e09716b7f84d1316ab5c00edf87e1f11346956afc7569788a910629"
   end
 

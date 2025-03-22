@@ -12,6 +12,7 @@ class RustlsFfi < Formula
     sha256 cellar: :any,                 arm64_ventura: "707bfa4e9bd625917be6e35dd5ce92bb067d008eb9e8ff3ae97035563977b802"
     sha256 cellar: :any,                 sonoma:        "b7260d7c806ab52955d4e5b2ed79e4b5c924fbf4bf2c9be81d6ad8ad5c73259f"
     sha256 cellar: :any,                 ventura:       "8aa5a2fb20ee177bd085c509135dcf2662586ec168978a126db438258bff4e5c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "64602e04a2a0860801c7b20880ed85044641c18f4089b7fce4035cfba6c8272d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0221208b4eaece7cb8862f89382177bb7875ab05aaefba4d99259723b5e378a6"
   end
 

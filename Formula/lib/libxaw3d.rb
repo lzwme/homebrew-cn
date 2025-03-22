@@ -14,6 +14,7 @@ class Libxaw3d < Formula
     sha256 cellar: :any,                 sonoma:         "7c63814a4ba44cd9b855922ae73e393fe8d1c75e74451b26de218cf790fffe2d"
     sha256 cellar: :any,                 ventura:        "813b0a28985d4942c631d31e26c6135bca92a88652aa6c634cd92b957dcbce61"
     sha256 cellar: :any,                 monterey:       "57849f92c0f2cdd938b95d8c0f7aec3f8b1c5c8d06211a290c3112b67b212b78"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "06d7e75d366e78189c6669037314423a41ef33afb196d4f503017739f6ec5704"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce52f2da8dd74a3df5d277ffeb678f86a9572b0c52a29e513aa688d37e704210"
   end
 

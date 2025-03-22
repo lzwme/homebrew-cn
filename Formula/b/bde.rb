@@ -16,6 +16,7 @@ class Bde < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "11c72d8ae4484b3dd6afc872c5efc96c8674aa4650e2946847f351ba1e0da563"
     sha256 cellar: :any_skip_relocation, sonoma:        "36c215557f23a0502ac98a4144718f27a59477de60e9539964003388adf8fd03"
     sha256 cellar: :any_skip_relocation, ventura:       "bfce401b93ad5dbd14c38e695c4577a829acb7c7d50e5acd0da57eb2461b38d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "46d99006ea1de76715a8791228029215e2996f41e6bb42596e05ddd6232512b6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1caf379e74c4e79db636965d13b60e2a7d29dce9ea1e99d10b794588aad39011"
   end
 

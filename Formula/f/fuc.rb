@@ -12,6 +12,7 @@ class Fuc < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ba60785ceb2ffff3cf7c98e866e8f92a06a326806feba585480b9bf949406a3c"
     sha256 cellar: :any_skip_relocation, sonoma:        "8d47b1787da96027b648a26aa2294766bb57534f53d055ad2f58e5791cc57b6c"
     sha256 cellar: :any_skip_relocation, ventura:       "0acf25893189799daee85b04cb93cd4d3a0e8979ffed2ade3b8d3589a721b35a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "176df6c08209d57df9420ebc47c55f76ca43bd6ce8e16bdfc675dd84b7b9d40f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "45c14c83d99d7057a36cf2b03ddba70424c63ed6590a56ed0fbcfc603c0374d1"
   end
 

@@ -17,6 +17,7 @@ class Flix < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b6d91e77ac66df3e2c41a63edc4f2400fe40e9666c93bf3c76afa2aeed0fcad4"
     sha256 cellar: :any_skip_relocation, sonoma:        "428a655549581a7622c376bd8bd3492ef0398f8fde85bce75d15c768cf93caba"
     sha256 cellar: :any_skip_relocation, ventura:       "21677299ea1cf20fbc45028620802166d874dd6f7f232941a9e079b9dcb14a19"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0073adeb23f97f31095d590ae5f4c8ae0a65a9b9290197f8632084bcce007425"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f22198dde8ff1d40f54409f4f5973e71aa2f4a3c1aafca77def9c1ba4e8970f"
   end
 

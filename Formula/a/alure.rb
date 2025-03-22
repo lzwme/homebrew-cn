@@ -25,6 +25,7 @@ class Alure < Formula
     sha256 cellar: :any,                 catalina:       "3701d2ac280fd8ef5476343c348fec853397241cb2bdcaeb25e8a53b203d292c"
     sha256 cellar: :any,                 mojave:         "f2ae4fbf2822241975e66574e41070b298523e6321280bc83aff70d559db149c"
     sha256 cellar: :any,                 high_sierra:    "031b2eb61f6206879b76a7276298f1db9875fa996467327b519ccc6d1622a158"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "86327e343698981d268e5efa342f39abe1fa3e213ad423a9df9ae8054c7f65b4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "27631da30742e75d039fc709f8e437b22371bfc0859466a4bb4856f155d8f4f5"
   end
 

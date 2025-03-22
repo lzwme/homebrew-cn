@@ -15,6 +15,7 @@ class Rmlint < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "6f0ce088122c58e5a26e0d8f11781c08cb8e08eee08562b3a2010b345975a724"
     sha256 cellar: :any_skip_relocation, monterey:       "d261d543a78134d20476c58bf77c7f8d11523205c238ec128a4bba212ef141bb"
     sha256 cellar: :any_skip_relocation, big_sur:        "380c6d02cfafea119241c0bd887e147b049179ac16f3b08cc4dc419c882105db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "69bd13ed738fddcd4017751c9093746ed968fa5891ebd592a440cedbed48cf37"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f056030634c596f3880dcc9b97e71fea6ebf1a556daad25c1907f2e6ab41eeb"
   end
 

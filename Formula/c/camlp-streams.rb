@@ -12,6 +12,7 @@ class CamlpStreams < Formula
     sha256 cellar: :any,                 arm64_ventura: "6e875ba06b206710fb758931b43acb200e772281009d97c04958a146da7279ec"
     sha256 cellar: :any,                 sonoma:        "84d5d716b9e0f96a7089aa19016f73ed7bbac5d57c5d1021ab60651bd59f565c"
     sha256 cellar: :any,                 ventura:       "9d289d1670bedb77b8584e5c4415aee97d234d3ae68be690e716919c4205bd28"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "73528fbe83c95610b483969a7e22cd21591a66d65db021c9029e0a1d60adc615"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad5e7c5397bb03af1cc538b43fda7e20169c35e1ff987489253aeb012ad8497b"
   end
 

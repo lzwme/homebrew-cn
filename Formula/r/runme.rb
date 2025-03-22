@@ -1,19 +1,18 @@
 class Runme < Formula
   desc "Execute commands inside your runbooks, docs, and READMEs"
   homepage "https:runme.dev"
-  url "https:github.comrunmedevrunmearchiverefstagsv3.12.7.tar.gz"
-  sha256 "26fa831b2848d75de42f9f48cfbe3c15ee6624336dc747cd3c52763bb76d3f35"
+  url "https:github.comrunmedevrunmearchiverefstagsv3.12.8.tar.gz"
+  sha256 "9f5bf889dcbbe05d113e005cf91fcc2f6a716c44136737ed1edfec5484f1b31f"
   license "Apache-2.0"
   head "https:github.comrunmedevrunme.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "87b33b519cd52117f0d32ce19bb0cbc6cd978df4c0c641ba08b56afa504772db"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87b33b519cd52117f0d32ce19bb0cbc6cd978df4c0c641ba08b56afa504772db"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "87b33b519cd52117f0d32ce19bb0cbc6cd978df4c0c641ba08b56afa504772db"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cedba62de9f9bf7570ea77c27a12d626f1dcaef689fbe96929efbdc3a2a5c3da"
-    sha256 cellar: :any_skip_relocation, ventura:       "cedba62de9f9bf7570ea77c27a12d626f1dcaef689fbe96929efbdc3a2a5c3da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0859c8177de3d4c97ec11e87ac0be649dbf74cd64c8079c1b70c8555e7c9b610"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a72ef0a56d3392f2f90e0483430edb1a9d7eb04d1fa4dd470a53f6ce4472f69"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a72ef0a56d3392f2f90e0483430edb1a9d7eb04d1fa4dd470a53f6ce4472f69"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7a72ef0a56d3392f2f90e0483430edb1a9d7eb04d1fa4dd470a53f6ce4472f69"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f979eaa87aafe34bf823f0a604d53337326c81464ca80ffc63023b94768d3e7d"
+    sha256 cellar: :any_skip_relocation, ventura:       "f979eaa87aafe34bf823f0a604d53337326c81464ca80ffc63023b94768d3e7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "24bec3f86eee8297fdb4b2f2817f03f2547d244df253dd544f629108d69d77c3"
   end
 
   depends_on "go" => :build

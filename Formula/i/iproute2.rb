@@ -12,6 +12,7 @@ class Iproute2 < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "8f2e92f4a51462d82ae0f2e72553e322a24a6c71ed615ac638f5bc0c46a35086"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "aee2ad46a6ddfd467ee41ef18dd387b2e4a77801f79445c322e3be83ec4385d0"
   end
 

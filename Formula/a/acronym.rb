@@ -13,6 +13,7 @@ class Acronym < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a9922d0d98b7d6c4cbf7ff733ef09ccdc1595d5ab090a3aa5e7d9b9efd55d619"
     sha256 cellar: :any_skip_relocation, sonoma:        "5c4b6fa56893b22d19f3189c316b6e736bb5aed554d4e7472fd16577535fc4db"
     sha256 cellar: :any_skip_relocation, ventura:       "fd5b9c42b331781383f581337714397641a7460d0feb9551f43140270cbc4131"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "df388cebc69a5ca13936bb25528ce1616a88bdf68bdc16bb9656173fe8c5c3c4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c82f232fd2694e72f0deccba03d1dcd152115df7f306f5e2043f8c104c0b37f"
   end
 

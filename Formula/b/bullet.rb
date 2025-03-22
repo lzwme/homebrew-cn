@@ -13,6 +13,7 @@ class Bullet < Formula
     sha256 cellar: :any,                 arm64_ventura: "c69182f86bc7b5a3407cbee2b2fae2ed2a4959b766d1fb22408d3acf30e1400c"
     sha256 cellar: :any,                 sonoma:        "6e4a848bf66030dac19ff6dd0677df1ed6f9d46e55d3a6ed3ce14ba63a97404f"
     sha256 cellar: :any,                 ventura:       "c039c3d01c76f8871b82a55ecc4ab41598e14fae12819f74f9544d2b80a1a904"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "81e0edf216d5e0d24934cbb44c7becb7a3c1b7bef8d220496b7e4d5f0b754148"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a755ae748428c5dfff82e6a4d57b81fbb4759fd494837d07b4535c0e88f3a16"
   end
 

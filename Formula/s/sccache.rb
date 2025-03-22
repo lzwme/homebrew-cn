@@ -17,6 +17,7 @@ class Sccache < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1095ee95cd648fe084d020f7924ecff7939aef844fd27386130d6136cef69049"
     sha256 cellar: :any_skip_relocation, sonoma:        "21582a47c1d845b38d1b86062dde48a1dd422eec2d4021a37e5c943f0ef587e7"
     sha256 cellar: :any_skip_relocation, ventura:       "859ecb045382d2b2078ad25b63d975bfa949b10bf476cdd81586435a3d3e5d92"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "43569e48d75f62d92dc6d3500ac738390da87f0e03d9bacd8b2e44a6bc2d373f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b53ed3e9f8745cbfa1e5a6b018225f7e30326af3fecd6701887acc580f1254c6"
   end
 

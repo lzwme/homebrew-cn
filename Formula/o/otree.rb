@@ -12,6 +12,7 @@ class Otree < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "37b9ac9b4424e26e8fe8db420414e500ffa33fa502d3ae165e87f1fdc1a7932e"
     sha256 cellar: :any_skip_relocation, sonoma:        "9a7210daf8444f20268668377bda516894f0ab79ddb438ead2db55424184c39a"
     sha256 cellar: :any_skip_relocation, ventura:       "68cea001f2492706961a6bb879d065dc6faf7aeb6a39a9d7154a8a54d8eae8d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "82c61c491ca8735ec6de037d0bafc1c885efc56c7b4cc2b03fa81b8c74fb6e08"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "28f8344d536731ccea43e576687313f44c7891b0ac612c5560d0b662a99875ff"
   end
 

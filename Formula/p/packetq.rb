@@ -18,6 +18,7 @@ class Packetq < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "ba48fbdbb805d7cd4d98a01729cf039c0d712055119a67f2b9718f01bab6c24d"
     sha256 cellar: :any_skip_relocation, ventura:        "38abae3b37b0e57c4f6cadc99d35d21d1e5ea1dc1712420812a65391bf943ab9"
     sha256 cellar: :any_skip_relocation, monterey:       "379eeee8cd1a9b095adc60ff2147aa950cf81c98afeaffcb860e200a4500113b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "6b6008c10a371a2a456ad6a8430b911941e6e385ecf6c5c3ebdeaecfe490fca4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "95b224f56ea3ceec3c1e6a13030405cb285de6861cee6987bfb0c472c68f7b5d"
   end
 

@@ -8,6 +8,7 @@ class Auditwheel < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "516000f5c56e30d727203afd6bfae0b1a4816a8c47ab80fe17106ce40c081661"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "7255376045ab11d4661892684a730b0074bc2e9f562b80c8d42830123a69c3aa"
   end
 
@@ -31,14 +32,25 @@ class Auditwheel < Formula
   test do
     assert_match version.to_s, shell_output("#{bin}auditwheel -V")
 
-    resource "homebrew-test-wheel" do
-      url "https:files.pythonhosted.orgpackages4c00e17e2a8df0ff5aca2edd9eeebd93e095dd2515f2dd8d591d84a3233518f6cffi-1.16.0-cp312-cp312-musllinux_1_1_x86_64.whl"
-      sha256 "2d92b25dbf6cae33f65005baf472d2c245c050b1ce709cc4588cdcdd5495b520"
+    if Hardware::CPU.intel?
+      resource "homebrew-test-wheel" do
+        url "https:files.pythonhosted.orgpackagesf147d7145bf2dc04684935d57d67dff9d6d795b2ba2796806bb109864be3a151cffi-1.17.1-cp313-cp313-musllinux_1_1_x86_64.whl"
+        sha256 "72e72408cad3d5419375fc87d289076ee319835bdfa2caad331e377589aebba9"
+      end
+      platform_tag = "linux_x86_64"
+      wheel_file = "cffi-1.17.1-cp313-cp313-musllinux_1_1_x86_64.whl"
+    else
+      resource "homebrew-test-wheel" do
+        url "https:files.pythonhosted.orgpackages5fe4fb8b3dd8dc0e98edf1135ff067ae070bb32ef9d509d6cb0f538cd6f7483fcffi-1.17.1-cp313-cp313-musllinux_1_1_aarch64.whl"
+        sha256 "3edc8d958eb099c634dace3c7e16560ae474aa3803a5df240542b305d14e14ed"
+      end
+      platform_tag = "linux_aarch64"
+      wheel_file = "cffi-1.17.1-cp313-cp313-musllinux_1_1_aarch64.whl"
     end
 
     resource("homebrew-test-wheel").stage testpath
 
-    output = shell_output("#{bin}auditwheel show cffi-1.16.0-cp312-cp312-musllinux_1_1_x86_64.whl")
-    assert_match "is consistent with\nthe following platform tag: \"linux_x86_64\"", output
+    output = shell_output("#{bin}auditwheel show #{wheel_file}")
+    assert_match "is consistent with\nthe following platform tag: \"#{platform_tag}\"", output
   end
 end

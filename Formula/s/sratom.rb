@@ -16,6 +16,7 @@ class Sratom < Formula
     sha256 cellar: :any, arm64_ventura: "a16df9f144f66a5f40bcfa25e3b4474b55bbe5d076f00e9a4da01d49588af268"
     sha256 cellar: :any, sonoma:        "d534631148d36ab131d17128cbbf3cbf54b0d101f97eaf377ce5d92332f58cf2"
     sha256 cellar: :any, ventura:       "2628c0564c30338296d91bb61b737fc3c7c8d38ccc25f7bad06d4b94d51a3021"
+    sha256               arm64_linux:   "9408b999aa14b1be28373764701877a1936724d00999725f83dbe629f00e2ca0"
     sha256               x86_64_linux:  "cb03a03254d0fe571376523b49d7363ed984ee238240c67f3e4c627b47f75c43"
   end
 

@@ -11,6 +11,7 @@ class Monolith < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a19396e38ff6e34154216c315248c0e994f24dcd609c5250c3a29cdec943491a"
     sha256 cellar: :any_skip_relocation, sonoma:        "248fb18abf3f9d06bc9512d25a46f2feb21c9e98a904b1e196bfa29ba8475254"
     sha256 cellar: :any_skip_relocation, ventura:       "ff63b53277eb79f24154500f1da05c8fb282bd0634c6668df3d950de70409844"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c32c977ebb18ffcbb545668bc0543f63f3db8891ca704c4655f380ecff569d9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "99296d1923a60c554940dd73274257fd00041d0d6f17772b5e908228c65fcad4"
   end
 

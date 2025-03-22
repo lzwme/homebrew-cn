@@ -28,6 +28,7 @@ class Tivodecode < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "0016f711d79454b154708804c574633c48e472b9a81c257730e5cf4aa00dd220"
     sha256 cellar: :any_skip_relocation, sierra:         "5682668b2e721933054656cebc49ccb46c382428b77409d94251c6f1dfd3092d"
     sha256 cellar: :any_skip_relocation, el_capitan:     "d50450e62c6fcf71643ceaf5f33dcf4e904e389c89597ccbe148de3053839ccd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "69e56e2279ac41857a466d4eac31b69c6dfc3ad70899e26adb1908e39bdcf387"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "28e4184504b5139d3532d972cad416bcd9188669c075681e36834f4e93d2b60d"
   end
 

@@ -15,6 +15,7 @@ class Gffread < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "f6e69ada91d38745bcd11fa7156ee50154ddca975b5b60e914c007d299708837"
     sha256 cellar: :any_skip_relocation, monterey:       "6c91305b71b24859d2dc2974fd4ccc0b8deca23457d652cbc7feaf96bfee6275"
     sha256 cellar: :any_skip_relocation, big_sur:        "8fe67ffbdac10132a2177190fea3d275b780e35baa58d44bdcc64b9f632c0484"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9910ca8dee44eb2dfecc42829678239da26ef39c301af53a0110572ad13f0f53"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0786b5ced3ce7d42b8f02a3898c6e22b7c7e56ebcb779d987909a62ac0200563"
   end
 

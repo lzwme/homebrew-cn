@@ -26,6 +26,7 @@ class Libresample < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "42b971ed75ad6ba1bd6879c2b7cb5fb416706ed184291d12983e46ab6c90a20c"
     sha256 cellar: :any_skip_relocation, sierra:         "b94dc206fa507bcdceb49534740c5c0dff0868a9d9333e4acd8922f22b10c912"
     sha256 cellar: :any_skip_relocation, el_capitan:     "ba2446005f2417fa81e5a5963d2273494396f8821ee95fd84ed9825342564598"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "07dabf0e5ac418d11d1cb1e20326ac69e20a199c620e6768c4411a7db878a2e6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c42f2a35518f75cc11ee79cdfd8985def6d079a7afd8b2b02f74ac82a165122"
   end
 

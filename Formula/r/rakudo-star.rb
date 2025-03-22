@@ -16,6 +16,7 @@ class RakudoStar < Formula
     sha256 arm64_ventura: "2fabde26f231fb18201de1434740c963f98a92992258ef298e9ab9139a8a865b"
     sha256 sonoma:        "30c30b7699c61cfb766aa5988dde20402a066ddb183ec4aee7a3192a8a5f8c0f"
     sha256 ventura:       "aae61dc9c282f88e07d52fa9b16870f8fb355fa68b748686c3ddce65b842d412"
+    sha256 arm64_linux:   "ea3da76ab5ba57c092a76cd680b571f5e0205fe345ccb38c9d10dda54872e280"
     sha256 x86_64_linux:  "5e881545f56a3e0a09f552a86f0cb9983beb76593a507e9aa18321aa3a83cfcb"
   end
 

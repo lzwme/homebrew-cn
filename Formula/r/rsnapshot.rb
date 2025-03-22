@@ -12,6 +12,7 @@ class Rsnapshot < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8a674cc867fa495164b1d4d9c09b3f88f0e02d918c593f3a5a63969612bdd0a0"
     sha256 cellar: :any_skip_relocation, sonoma:        "e46b5d9473dd7afd78d62ce1113a3b7b165e3e15ee43ee2993b06bd1dd89956c"
     sha256 cellar: :any_skip_relocation, ventura:       "681fd3a9e4c2276dcbecc2a22e721cf31efadd6ed786beae3efc127f8b488ec0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c3384d109f947065a499e2980c0d982a38a94bae93072bdd04540133ea774b4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a02d7163670d6f9a5086e0c50c3ba6b5442639d961a630773a9f1d001a211cbc"
   end
 

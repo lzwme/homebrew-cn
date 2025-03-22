@@ -16,6 +16,7 @@ class Onioncat < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "03dbf70b4079c360e0fe10e7909068bf277be34b9780402faf525697b7b7cfb0"
     sha256 cellar: :any_skip_relocation, monterey:       "3bf2a843df22a579b0965685c779df4165d0db2be9ffeeef32e2769136fd0cb7"
     sha256 cellar: :any_skip_relocation, big_sur:        "d3be4e31eed45930e85c8043abf03fc34ebc668bc5f9e2d8b09c4dfec8ae6090"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "33f731f9fc0cb8ede749dd65d70b62581f80f59305a9bef7613ff69e8a2807c4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7909dd65c46856bf1ba00a9253d6b51cd4c1b23b2595a57d0018607ca02bd94"
   end
 

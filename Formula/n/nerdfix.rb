@@ -12,6 +12,7 @@ class Nerdfix < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "746859b3faa37328b50b548711830edec81ecf0d1a874a7902cc2161bc961438"
     sha256 cellar: :any_skip_relocation, sonoma:        "0e2875debaaa6b165db6d0a3fbb92a9593ac4eca542dea253da61f99c1581051"
     sha256 cellar: :any_skip_relocation, ventura:       "cc197b42aa7b59787c5a1cda9471bcc7ed1ec01557bc36500acb46ee3170fca8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fbd2787883392023478e8725c0fc6a0181e359c390698090eafcd2a038a3358d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c92886e7e4886f45c9d8f21a31389aff08e62bdf5b5bfda780b4e174c64f3656"
   end
 

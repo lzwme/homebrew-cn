@@ -21,6 +21,7 @@ class Cppp < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "f815f392d7b8ec92a327c2d543bf962a70cae5f1f6991e1e4d695ee25c1fecb8"
     sha256 cellar: :any_skip_relocation, big_sur:        "549a5a56c7173307a1fe50415ac029d31ffa80d4aba09bca2c387dff8b6fd71e"
     sha256 cellar: :any_skip_relocation, catalina:       "539d3f0e5376e354018c7d91eb458194fc2654785af7075bb646584618493f9d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "37b5825a280e3bdc38d0c6269d58195cc091002b0404427fd8c7c45f59a8542a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "afb41f54440bb5ee1dc17adb0729f4577dbe156e2c63548becd5d0cc5abd2691"
   end
 

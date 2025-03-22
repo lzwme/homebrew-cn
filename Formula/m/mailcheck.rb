@@ -20,6 +20,7 @@ class Mailcheck < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "c630704fee3dea86402e7486295a13601077bd991e45f23d3ac841c95a9c4474"
     sha256 cellar: :any_skip_relocation, sierra:         "8d33e3b08eef4dfaa7fa3d2c4e5f4a697cd2e5eb950c963f1f0845c0651da5ea"
     sha256 cellar: :any_skip_relocation, el_capitan:     "b7c134dc23431dfaa3f402b859b7154cab5e176711363bd884dc82ce896d7c7a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f1c3ac175abf729a56d77e55d0039cafe7f478c9e069961a8383f1b2c6f1e963"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "84fa4f1d288f0f8824334bb68621b8589b65e0d9e21a4ca0961a33aae5d0ef63"
   end
 

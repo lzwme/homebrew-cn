@@ -22,6 +22,7 @@ class Helidon < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "27cce977bf0cb83027055f100992353b129041bfe38e50c796a7f485bb579311"
     sha256 cellar: :any_skip_relocation, ventura:        "67f45ccc046d27bcbc02ce5c817156aa3762e8bebf19becefc49e2afd56e2311"
     sha256 cellar: :any_skip_relocation, monterey:       "3f2434d267c5098e823d76ea786c6568f76f2519952166d203a2e283268d1fb1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "41d184bf37f0efdace3ffe845a427439daf9a1993422d88d4a5bfcbf31edce67"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "155ba1f8e4903a933f1e28b19bce7efa6cbf2a0514e1391627410aad8ffe8d18"
   end
 

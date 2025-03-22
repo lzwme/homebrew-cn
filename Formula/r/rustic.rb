@@ -12,6 +12,7 @@ class Rustic < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "51334b62cb18ee4a9dadfbce90575732d0b3537aadc63fa12e83cffa95808df4"
     sha256 cellar: :any_skip_relocation, sonoma:        "16894672e81b26c149d26c84d226e9bd544a39c68d27bfe831f2e6353722b2e8"
     sha256 cellar: :any_skip_relocation, ventura:       "5f1b10b808848a9c702b2c2fd12ec10a28227e46f3824957e4e59b7bf0b9bbe3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3aa289175364ed60c1f3e6c37a8d363208698e158c5a9f0740cbbdeb5cb1569f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7369c9e3bf775382e418080ed6395f31c02bcdeb2a7ba0a086beca02fa4d23b"
   end
 

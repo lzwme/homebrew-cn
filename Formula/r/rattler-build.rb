@@ -20,6 +20,7 @@ class RattlerBuild < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "17399a0441779c1a77aa964550364cb8111679e52acfc4580b1a8b15d635045d"
     sha256 cellar: :any_skip_relocation, sonoma:        "8b32d7196b523ea4eedc1fb7a96d07828c176a59e033cbc25c090c86b2631e70"
     sha256 cellar: :any_skip_relocation, ventura:       "19759efb47db5fbf211c09c80a72051e7a30f567fe6075110e3ac14cb0a2ceb1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d47f7d521104cefcbe62a868e03ec0ce8eef5d7efe6decf2c61c1f2fb33dd0e2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "699adf86efaaa24f2c21cea9cf9fec055e49da3747c9abff7daf9e45b82a8e5b"
   end
 

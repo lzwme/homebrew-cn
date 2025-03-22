@@ -12,6 +12,7 @@ class Ncmdump < Formula
     sha256 cellar: :any,                 arm64_ventura: "50fe70048df8144284e69b364daa834e073dddae300321bfec326d076d7f4733"
     sha256 cellar: :any,                 sonoma:        "6ce7bd73a815fe8a87ea4edf1df074ab29f5b57793888f7f45b8f08d5146617c"
     sha256 cellar: :any,                 ventura:       "08a148b759c425f00c14dd9a47e488e81654e6cd8a3473488ca1d91529e07b6b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "73fb1e271e16219093c407dabfafedf583fe4d1665ae2aa0d0886e883ac703ed"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "77421b520db321edb6b48416603b3c3ffc1319d4c3937ca0bd067e344662caa5"
   end
 

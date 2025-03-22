@@ -14,6 +14,7 @@ class Pythran < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7c5edb0e5ce4922aa85e330bc47602b8b452983804ae81ada51d7a73a9a40efd"
     sha256 cellar: :any_skip_relocation, sonoma:        "32a4cb2d097c7576508c61e7e1b031748da9da5de8f2562cb31c6326ca50b05e"
     sha256 cellar: :any_skip_relocation, ventura:       "32a4cb2d097c7576508c61e7e1b031748da9da5de8f2562cb31c6326ca50b05e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc9a9b4a3ef9fb1af4e59ee8a63aa4bf9ac2c153efa479899f6ddbb78d00fb19"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ccebee6a9c4e0bfb70a5120c7e0becc2a2bdde2313f064552ff75fd1ff0ea23"
   end
 

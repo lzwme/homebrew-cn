@@ -12,6 +12,7 @@ class Tealdeer < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c60761d865a1475a4b04d2881eaec1737c43caaa5498ce0769098071ddc44cd0"
     sha256 cellar: :any_skip_relocation, sonoma:        "0af151c2275b86b52ae1c2a38c5705e27524222f7bd23ae79b5092fe348d1100"
     sha256 cellar: :any_skip_relocation, ventura:       "858b2bb36dee9c444b211d2c74cb1b2c85d36362683c568d4e93591095ffaccc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "735bbc2c297439c49cd7331a4729cc93803fc62f20007d6365e73cba2e63e296"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0a019576229e3bf8767b4f8fe4aeb32aa7e6f05f5d2ed303be22263e78481fc"
   end
 

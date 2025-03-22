@@ -16,6 +16,7 @@ class Drill < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "1d9b9f7b85d1962bb691648e99a4096fecc8c10f59844bc73db1bd93a77f7c99"
     sha256 cellar: :any_skip_relocation, monterey:       "051d29acc8b70771b3f1510942cca546668921ddf12b66ed25ec7c95790bf5f1"
     sha256 cellar: :any_skip_relocation, big_sur:        "61eadba6d4008eeb229a2ef431a6977fbaa19cb489e54f55d125edfaab016fe5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "17b7a2370d35c2fcd3056cc02deb5f5016bfb5282ed9cc86c99e05343f548b5f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "701f7a9ab685f50091ce4c85d09cffde2a6b46ecda5052cdce5a41b06dafffd6"
   end
 

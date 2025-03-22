@@ -12,6 +12,7 @@ class Gosu < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "4d0bf0c60b1b332d9a160b9f68718b30013982481a3160757b431aba48978db4"
     sha256 cellar: :any_skip_relocation, sonoma:        "d50854e07f4379b9f2a0e9dedadfc01cbf0ac84dbcfefb5cc313b36f1a808222"
     sha256 cellar: :any_skip_relocation, ventura:       "a70ac41afd91682bca1ddaab2d55ec2d9d407b726551b893e00b594e049a0bd8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "21c5246147854f5800e95a1dad87867bec7a92a6292595da9728f8ffed43f737"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d0f54839f60744a43b1d4942583ad9f6797644dd596e87cc07e1ec43e5b665b"
   end
 

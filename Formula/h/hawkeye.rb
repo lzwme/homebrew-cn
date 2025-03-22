@@ -11,6 +11,7 @@ class Hawkeye < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b2d52bcdb06b224c6337382a84f9e754e1a0de1054841302f0591137d031e48c"
     sha256 cellar: :any_skip_relocation, sonoma:        "9ff85d3bdb94ab9b03ee00051ae35bd23c4536204d07dc145bfbf77d209e5a28"
     sha256 cellar: :any_skip_relocation, ventura:       "fcadd91c492561888846fef4f48302e6b8073b9504897fce2ab37a9c6c11a35d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "480c684fa2cbd99c1d89341c1f0cea5eba229c67a53828f7e546eb40557c2d15"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec3e86c0f928966cf8cf0aee37fb1bcac3c84ea2af942e95fbe3580cbcb66772"
   end
 

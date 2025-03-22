@@ -25,6 +25,7 @@ class Cwb3 < Formula
     sha256 cellar: :any,                 monterey:       "9271d4472d3ce7e71c65755e33ba8d303edcc603ce7e493c12d6c870a7f84f0f"
     sha256 cellar: :any,                 big_sur:        "af3c7316e0a0678d7cf11d151c109cbbd0f36b9df36c9b1d2c210ce6654e6030"
     sha256 cellar: :any,                 catalina:       "a15fdf57dceb390674290d8a1aaabdf93385b60a675de29a0af5219d85116d95"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "721f450a9de637e6d42681135441d0d7228867ac58b1087d186c67d82321857f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "36c736d9eee76fc6c3db520901f42677e8dfc1ea390b319264c4e0d75b612ccc"
   end
 

@@ -12,6 +12,7 @@ class Svgbob < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "dff76ac4bbd579cca1d3a11e37e55f8b68285e3f45dba68d23fc289f193d129e"
     sha256 cellar: :any_skip_relocation, sonoma:        "e6870e719346a6f048b08186f6832c6fa96e532f2198e42bc45d2c6039785492"
     sha256 cellar: :any_skip_relocation, ventura:       "36dcdfa05c440af6513da77701762c7d97aee573eac47dec79cb9e72605bba10"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca0200d4df7df55439d0ec87ab584b580ffa86caa3604ce55776ac17488d059a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "39ef6cc1b6c2841686f831901ce97230633658fe2f76b16958af86e49f6d7e82"
   end
 

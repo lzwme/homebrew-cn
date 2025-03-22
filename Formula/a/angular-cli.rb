@@ -11,6 +11,7 @@ class AngularCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b8b18c4eaece6edb85332fbead25844e2df201f9b81bf0dc8aeb612fd753b2fa"
     sha256 cellar: :any_skip_relocation, sonoma:        "1431752075066b39e92c2ce85b04acd2a5143f68bcff5d78bb9f4bb6502371a5"
     sha256 cellar: :any_skip_relocation, ventura:       "1431752075066b39e92c2ce85b04acd2a5143f68bcff5d78bb9f4bb6502371a5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8b18c4eaece6edb85332fbead25844e2df201f9b81bf0dc8aeb612fd753b2fa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8b18c4eaece6edb85332fbead25844e2df201f9b81bf0dc8aeb612fd753b2fa"
   end
 

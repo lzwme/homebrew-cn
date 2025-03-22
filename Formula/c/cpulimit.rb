@@ -21,6 +21,7 @@ class Cpulimit < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "077ab8835a3b44ce77e3b8bf867633115b1d056046b232e49aeac96ac30e731c"
     sha256 cellar: :any_skip_relocation, sierra:         "fa5bc8d713837693c6bbd6139bec5e48b8a1d46ef669b2e042715dd1318b1655"
     sha256 cellar: :any_skip_relocation, el_capitan:     "9d7320465152a12ba75ce924beada5a3ce365b14becaa75e08ee8334c2cb2f6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b4ffc1c3a63a8b4ae82354e6fed41658b2f094cbbe602a37659df8c9f10efc55"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e7b26fdf597d68a1f482095c11f606dc5fc6f88a27e88bf14a3e976cec0998a"
   end
 

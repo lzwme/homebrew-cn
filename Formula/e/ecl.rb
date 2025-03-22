@@ -19,6 +19,7 @@ class Ecl < Formula
     sha256 sonoma:         "2a29cff3a5684dc0171d182ca98308ffd5f16336500b03e3352c40f699bd999e"
     sha256 ventura:        "538afbf26399d650b672ddd2013103ac4faacea950ec92531afc00bb8a6fd583"
     sha256 monterey:       "95e261506d9cbb74e121eb52f281c516012d971d0b88887b9116b74a82144e8e"
+    sha256 arm64_linux:    "5693dbc0e01cdaf463ca0ab804fb0454b9739d7c53b64fb421f2c4422e41fec2"
     sha256 x86_64_linux:   "fcc4ecc3ffdf65a6d96712a835d80711d804f643139208fe49ea029296a0a1dc"
   end
 

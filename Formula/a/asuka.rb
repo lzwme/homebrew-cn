@@ -22,6 +22,7 @@ class Asuka < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "3f55b85765e46142ec4916bf0979283853e4442a116e2afc52282aa011d542be"
     sha256 cellar: :any_skip_relocation, big_sur:        "d943994991d51bfa95ce90f41e1cc7ad83be02e3b1117b76ed684310a22fb0ae"
     sha256 cellar: :any_skip_relocation, catalina:       "343c7a00b703c35a8e3600481d9dc54eb96bbb3f715cceb13e113f3dc1c7eeea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "bceb17ceec9b3e391c70eeb2798b3da9a1e2544c23203039032f0e8e38d0fda2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "600e1d1324197049502dddfbce2df349657fb4108154a042c6503bdb69f24400"
   end
 

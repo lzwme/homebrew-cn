@@ -6,6 +6,7 @@ class Libobjc2 < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "da763aa6b18675491c47b76136bab512f98cfbfa570e416f56ca803af99bad53"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "7b71a49e26e6f376aea15f25c584ba70da3ea0c4cfbb7eaa0e66a52eb300ccb9"
   end
 

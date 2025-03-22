@@ -16,6 +16,7 @@ class Mg < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "908aaa04c673ffa9db16ac98987b01b6d822a1285f3ab62a0e4d4f0c2d38b919"
     sha256 cellar: :any_skip_relocation, monterey:       "e3190e17138e2c21d7429ff591be1c3d574a7e13a0e1a10457f2e479cc5bf9e7"
     sha256 cellar: :any_skip_relocation, big_sur:        "12e3599c5fe68404690bae22a653cc00915cdf797041be2d67845e4760d41df7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9cc7f3ad4ae912fabafe2f0aaf6cb1624a2d786769a7632ea956bd03c72b8c09"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "df7547e37e627c0504896e045d8c8df6adc3ea3dbdade674b1b964fcf333397f"
   end
 

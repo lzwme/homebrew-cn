@@ -20,6 +20,7 @@ class Backupninja < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "36e98005281874b8a396b799357be9631e3a698e433fbe26ff4812711ae487a5"
     sha256 cellar: :any_skip_relocation, monterey:       "36e98005281874b8a396b799357be9631e3a698e433fbe26ff4812711ae487a5"
     sha256 cellar: :any_skip_relocation, big_sur:        "36e98005281874b8a396b799357be9631e3a698e433fbe26ff4812711ae487a5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "3c9a28b99674fac9469b9e253ad405aa02f0a7e3b5a2a6a3060ef9bc03fda6ea"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "00f801dcd347b92d24d6f2dca281b464e6c627d62003dacf6d74a9595c2c4a0d"
   end
 

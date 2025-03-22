@@ -12,6 +12,7 @@ class StaticWebServer < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "62bd35f3a31cba5682609f6f4057c91720a37709f6304a23103a4287392c5439"
     sha256 cellar: :any_skip_relocation, sonoma:        "047279f00b897a5303869fad16babe6d7dfc9bd4a591b1135a58d57074078af5"
     sha256 cellar: :any_skip_relocation, ventura:       "4d7616c11305adb3afe499598bf318c0cbb96d8606be9aab1db4be581a45efa7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f747ca12df0670a75f4c38c24635d8dbe14b4f4c042031917f883e8013b6a18"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ddd7cb7ac27d3ce88d242563fe310378fe6696f032644c394e6e88bd4f48153"
   end
 

@@ -16,6 +16,7 @@ class MidnightCommander < Formula
     sha256 arm64_ventura: "471749bae6d5735af1b5a8922700e74ef4f4f256b2e8b60ce5786a7148f51a7d"
     sha256 sonoma:        "d6e4cf2c8b3f9f9bef3a7a0f3a066a378c1f4c1b4bd05c3b455f20b0bfc09792"
     sha256 ventura:       "bd3a2cca7f5e7a5a19ce29ef376fdb01a6802a76d07daae05bf9bf7527edf08a"
+    sha256 arm64_linux:   "a5073a3422e3f6503eaaa200b14f719fe6ca10cf191f2c635d623ddca06cbd3f"
     sha256 x86_64_linux:  "512a595e57bbdea41c7b80ef305023874b21d7d77a8f63ce6218af3afa0863c4"
   end
 

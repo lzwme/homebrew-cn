@@ -12,6 +12,7 @@ class LeetcodeCli < Formula
     sha256 cellar: :any,                 arm64_ventura: "56de48e4618446f7e796e118826eab3da85760eddbd170c360ec85cf0d12b85c"
     sha256 cellar: :any,                 sonoma:        "54a05fea76f766c5f43250de16f9e54ed10f1866f00e9108d356e81a2aa3d42e"
     sha256 cellar: :any,                 ventura:       "c945df73ce1df6261bd90a466813d1c70403e073ced3122d8c7c06e1b4c6b281"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "35d29d17bc0a58d8de02b0e86d492c9d298c66060b44ecfda2b65d5d65c6b984"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "24708a20685911223a7b8b32575473081a36fe6bc0135f415d27b5343cdb96a6"
   end
 

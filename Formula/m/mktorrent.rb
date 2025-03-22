@@ -16,6 +16,7 @@ class Mktorrent < Formula
     sha256 cellar: :any,                 ventura:        "4fd92b8b522faa30fc1433bb6dca8550e81c7936344c09cd490a714b11654cc7"
     sha256 cellar: :any,                 monterey:       "b582261a10aebf9b44820f6e30a38bf8941833a9ffc3eba2a5869853c5514ef8"
     sha256 cellar: :any,                 big_sur:        "64810768318138d7d88d4915a619644fec95fb789d028508bde97b82e0e31ad0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "6e292323aabc0ae62a74a890caab3d43e94c26692f9a6fe171329a2add01a7a2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2d977a90d91e84d0064b6d2134a85454c500d2093afece3e1b1e6d393c091cac"
   end
 

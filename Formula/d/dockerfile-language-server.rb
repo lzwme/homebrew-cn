@@ -15,6 +15,7 @@ class DockerfileLanguageServer < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "59e9066fafdb05c780c640814cd2aeec5180f8ff184e61e60dda6c732164b8fd"
     sha256 cellar: :any_skip_relocation, ventura:        "59e9066fafdb05c780c640814cd2aeec5180f8ff184e61e60dda6c732164b8fd"
     sha256 cellar: :any_skip_relocation, monterey:       "59e9066fafdb05c780c640814cd2aeec5180f8ff184e61e60dda6c732164b8fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "63ccd8db89ab1a2a0d3e3b68d12314fade692c96395869ee144028803ce40bdf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "dee4c193b8f1eabb362140936b430f8e8138329a9e164cad55ffeed21ddd827f"
   end
 

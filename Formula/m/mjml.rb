@@ -14,6 +14,7 @@ class Mjml < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "464b8c2813c2c1a80ac3f4b91fbb5fc3e2a9e189191ee6858c210d0674e00868"
     sha256 cellar: :any_skip_relocation, ventura:        "464b8c2813c2c1a80ac3f4b91fbb5fc3e2a9e189191ee6858c210d0674e00868"
     sha256 cellar: :any_skip_relocation, monterey:       "464b8c2813c2c1a80ac3f4b91fbb5fc3e2a9e189191ee6858c210d0674e00868"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "dc3910a4837159ccb50f1492a97f8333658ed83af7c6d28c44f22eb69ec23222"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b7056b342d8ea37e7da098cc2b2cc3764d3a418e5d36d3d2f07058f634fe12b2"
   end
 

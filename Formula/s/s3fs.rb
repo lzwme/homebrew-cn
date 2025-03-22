@@ -7,6 +7,7 @@ class S3fs < Formula
   head "https:github.coms3fs-fuses3fs-fuse.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "37a6b872d83d9be7de04fd738888573c9b7e44caf5b1744c37597283efe37ef6"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "b48ab8ae069a3d0fd449d9f69167064635ef5c6945f299dc7385a06812309473"
   end
 

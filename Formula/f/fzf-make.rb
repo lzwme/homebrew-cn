@@ -12,6 +12,7 @@ class FzfMake < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2f40bc205a87839b5f70567c4e304eab489b6b616cef5d658951cca6ee74c735"
     sha256 cellar: :any_skip_relocation, sonoma:        "71d91df66f9a99dfc5d99cfd144bc3b212e394976a8211108623e239217cba39"
     sha256 cellar: :any_skip_relocation, ventura:       "92f53ffc30bcb62763e44a989e8bc33e28e9b621853e8e0b2fb21be01406f863"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d8257f2e9174176738bd73b0c6f3c3b9e80477a0ccd280017df2363360eafad"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd1e1edddd90f0a94226712f8e551998b4306548e7f9e2cde29e119f416f16e8"
   end
 

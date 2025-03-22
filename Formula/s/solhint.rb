@@ -11,6 +11,7 @@ class Solhint < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5495db9fed240f30a1f879f597c6e4303ba3e69faa87da786bd88b3802bf74e1"
     sha256 cellar: :any_skip_relocation, sonoma:        "f4f9024768d2cc9eaf52adf7a42d602f4cc4405a40814ca1c6c35b2cca5f6bd5"
     sha256 cellar: :any_skip_relocation, ventura:       "f4f9024768d2cc9eaf52adf7a42d602f4cc4405a40814ca1c6c35b2cca5f6bd5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d1b43945432e5a7dc1ba0bb460b29b3eee3c45f1043dd76935f35f145dc27bc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5495db9fed240f30a1f879f597c6e4303ba3e69faa87da786bd88b3802bf74e1"
   end
 

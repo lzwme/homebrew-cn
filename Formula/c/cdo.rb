@@ -16,6 +16,7 @@ class Cdo < Formula
     sha256 cellar: :any,                 arm64_ventura: "4b0080c57a505533e5563817b1fffa4786dc3583bf21176a411173a864e0888e"
     sha256 cellar: :any,                 sonoma:        "4ad6cb5b6a951f679f64b5013969e9f136b7566ca7f0d8e266dc2f2e86be6846"
     sha256 cellar: :any,                 ventura:       "9bf4288a75ee0b7162592c8d0ec79b33217076480734e1de2753fc9d34f35c0f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5483f4f41ad3427a1f4111517912b39a8f7b29e4da5d1542bdf8937a763d777"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b62558687a81c8b989d7885d6128f3b1c3f40fdaf12d6ee966021ef80dbf685"
   end
 

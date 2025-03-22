@@ -12,6 +12,7 @@ class Oxker < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "631070f45336793a4a66791f4052357f727c48fb2a9be7fe34604d484890674e"
     sha256 cellar: :any_skip_relocation, sonoma:        "6183c0363b05838b46c4e25efd6b6cf823d1a24fb3dd12a78acb107868d6e41b"
     sha256 cellar: :any_skip_relocation, ventura:       "e01501b42bddf03c906b984b58eb9083135dcb1b8f2e97c03cc9f6c43ec7a67b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fbdbc43a88ac5e4f47f4dbd9182716a3a0f732bdde43c0fbd1737f9624c28319"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "60743558ac1b9c514092fd8c79a1ec3603d4720d0e5551dceb9bf506d62a35e2"
   end
 

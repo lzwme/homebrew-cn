@@ -46,6 +46,7 @@ class Rtags < Formula
     sha256 cellar: :any, arm64_ventura: "2179553e6e583a3f45e0473cab00aa2475a663b6a766b3e57eca70b74bcbd174"
     sha256 cellar: :any, sonoma:        "8dba70a31d59037e8291637367451f6d51c32176e0f49165a921a43dee6737dd"
     sha256 cellar: :any, ventura:       "7443ddcafb2ec4841d5b86893a0b7935f47615fc6e8eb173705e94564a08b097"
+    sha256               arm64_linux:   "c3ba30f3d73089d09b6dc7aead7db71c6adb589595e699707333e647f9705a71"
     sha256               x86_64_linux:  "16ce83f28f301d27a3d8a127c5eed780b0e974014c075123147a2e14727b793a"
   end
 

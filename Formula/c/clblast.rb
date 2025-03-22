@@ -13,6 +13,7 @@ class Clblast < Formula
     sha256 cellar: :any,                 sonoma:         "7af136b15b5d8fc47a2c392052a7b35ec447c4530c3f57fab3675e45e55d1e96"
     sha256 cellar: :any,                 ventura:        "05968756c5c41c794e4134f1dc93756efe8beca0f76cd6959a7ba839f75ae791"
     sha256 cellar: :any,                 monterey:       "3fbca33d20a9d99bc166e1af71058bfb56ed064ea5fbfdc733e1373afc553587"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "07ccdb7ac4ae569a10b3373edeb168b25505896269b7921f7f624094acf9b27a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7fc7ca301aa5cfd50033c67343f4fddcedffc6536274423081e71a2f86282e8e"
   end
 

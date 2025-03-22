@@ -17,6 +17,7 @@ class WasmTools < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9f5c6a451f8edd2d22742fb6f77ebe26d9309fbc0bca25ceddd80aaa0b0d57c9"
     sha256 cellar: :any_skip_relocation, sonoma:        "007c2bc4a75b1c806e71e5a18a941c7f157dd2886af8424e8eb4b733ca76d3e1"
     sha256 cellar: :any_skip_relocation, ventura:       "9e5aec22b88c233642643082d225885a71f0d1230ad4d51c2ee74ab6f2250fe1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa1db451ccdeb88e146bd639c6fd5bf5ca9f69d5ab6577d8dcf0154db1acf2fa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b3810cb0b12a72fd62c7b767e3665408efc7678a434633eec4744f26885c64af"
   end
 

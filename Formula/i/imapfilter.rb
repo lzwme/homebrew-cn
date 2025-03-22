@@ -13,6 +13,7 @@ class Imapfilter < Formula
     sha256 sonoma:         "42bbf189c63df02748ecc5011819ad974825676f7e8d3af406b465bf39a531c0"
     sha256 ventura:        "50076c18ae2c45315735253753ff8c60f230166ee43ca9303d134eb714633735"
     sha256 monterey:       "f043fe9f082b19bb066517346af9c09d46bbfbebffc6432be93c7a9773cb3c6c"
+    sha256 arm64_linux:    "ebde92d07c8d46f08a7e81a7ef0d5e6bf2db4c157eed45d99aa63b575484668f"
     sha256 x86_64_linux:   "63bc0a6f3f7ef561296bcf1d148c4d56341eca968419f528aa1889a78f984725"
   end
 

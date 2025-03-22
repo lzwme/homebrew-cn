@@ -15,6 +15,7 @@ class Dfmt < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "44171bb99b1902f7992a8a2f0bfd3a420f78c4d432cf63e022bdddd0c8f44909"
     sha256 cellar: :any_skip_relocation, ventura:        "a6395124d210dcf1ee14f282d0a1a9a94f46e620e4fbc8fc909197a2c8d49d90"
     sha256 cellar: :any_skip_relocation, monterey:       "67a53f11863df3acfad33a1aa83f7537222e24dfe4b3bd7b64734dffe66ad612"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ac545940bdfc91af6fc839d51f00e8e27f874a712fc1a464c1e68866349eca70"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c388fa11efd8c658e529ec9279a87930751226248893b198de70abd6fbcfdc07"
   end
 

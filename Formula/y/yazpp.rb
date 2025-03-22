@@ -20,6 +20,7 @@ class Yazpp < Formula
     sha256 cellar: :any,                 ventura:        "5968798b57294be416bb06594f46b73720d0f3406cff786c3eb2255ac175c367"
     sha256 cellar: :any,                 monterey:       "fa049b03743d65e259b3fa771bf3228432b1d0edac7313f33843cbfa64683e0f"
     sha256 cellar: :any,                 big_sur:        "8ace99b6b578b30de4fba470ec066283240faef60528a847d617c8c33bd1c405"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "023606024330c09fce8784454d5555b7601226e7fcaeb263a51103a97dba82e2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "674c51fc6edefe40af90e0fd8b2c7ad2546f5c9edee89b973967b713d9a0eee8"
   end
 

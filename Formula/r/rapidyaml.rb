@@ -11,6 +11,7 @@ class Rapidyaml < Formula
     sha256 cellar: :any,                 arm64_ventura: "1ef7740556d1d6b632b1c59a70e2a8c71814352fc2a7e3e1de7691fd7d055226"
     sha256 cellar: :any,                 sonoma:        "a1c64249db6aa07b91a3b31e77033de50cbd87159ec05e225e52f3af190cab0c"
     sha256 cellar: :any,                 ventura:       "444dedad7f09dbf4883d646644b5e1693d056a605083c881702c681a4a2eed28"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3bc96dbce42fdb2c1925a1716db8e99d6e001644906f9071e6210b811dd836a4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "59ada91df478aa2e07c2b50cbf4f339115c207a38815d0c0f13ee43539dbde78"
   end
 

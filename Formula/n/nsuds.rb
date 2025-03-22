@@ -38,6 +38,10 @@ class Nsuds < Formula
   uses_from_macos "ncurses"
 
   def install
+    # Work around failure from GCC 10+ using default of `-fno-common`
+    # multiple definition of `showmarks'; nsuds-grid.o:(.bss+0x60): first defined here
+    ENV.append_to_cflags "-fcommon" if OS.linux?
+
     # Temporary Homebrew-specific work around for linker flag ordering problem in Ubuntu 16.04.
     # Remove after migration to 18.04.
     ENV["LDADD"] = "-lncurses -lm" unless OS.mac?

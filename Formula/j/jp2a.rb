@@ -12,6 +12,7 @@ class Jp2a < Formula
     sha256 cellar: :any,                 arm64_ventura: "1b7dbe456e302277e7ff10a79e3999b35672855ca3a04425cf89572df87bf5b4"
     sha256 cellar: :any,                 sonoma:        "1c5b176bba2e8ae0d825761da452a334d11411637342a159fecc6c9add83c5bf"
     sha256 cellar: :any,                 ventura:       "e9b1cca5d32321539eec19f0e0c037a8e137cee43448a04b135f620df806478d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e7349e6c5c24351b4b2881ff6f3b14fa25e8eb7c0301f640a9a5664c8257da8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "00f6f42f5d2ef84ddc1a42004e9c44789be388385a454215e02dfa9b07c1bf43"
   end
 

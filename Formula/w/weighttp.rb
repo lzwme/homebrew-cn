@@ -21,6 +21,7 @@ class Weighttp < Formula
     sha256 cellar: :any,                 high_sierra:    "4225f653fe64067e3330c33202a15ad65a6b194ce23619ae045cbe50528a9b02"
     sha256 cellar: :any,                 sierra:         "242f14d7a7fb477e4722a3818a98ad25ffedd5d2c80e7c97d67c80fe2a20366c"
     sha256 cellar: :any,                 el_capitan:     "e96be0135f552ddde0547ca914c2bc6635dcc59ce4bdeb803ab9412100d8d15b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "bb0635cbcb87b8e145d88c1992eda333d22f4369bfaf14589dcb74239763b5b4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c7ef5cfd2cdadf8036c30295d3c51a56399d8acee7e2dc96aa1d75d471e2c1a0"
   end
 

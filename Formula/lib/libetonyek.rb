@@ -16,6 +16,7 @@ class Libetonyek < Formula
     sha256               arm64_ventura: "18b9e602c028f0c0c77b366ac2509f74bc2243f557b20c510952b389b512ca95"
     sha256 cellar: :any, sonoma:        "5976299ba865549520b864036093f709d7fa18fd06fb46de1a8773ee0da058b5"
     sha256 cellar: :any, ventura:       "b40d8148bec5f1360852a4e4a943e7d2e28b1ec95c747cc0d4516a438e8a1218"
+    sha256               arm64_linux:   "4a1dd9920ae1ce725bbca2fd65d867f5461e137173d33846616f1151c4e95fd5"
     sha256               x86_64_linux:  "88cd3008e344d4ebf311a8035ef6b0108e9811046c43c4480831df4c169b66dc"
   end
 

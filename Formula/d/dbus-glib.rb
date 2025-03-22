@@ -19,6 +19,7 @@ class DbusGlib < Formula
     sha256 cellar: :any,                 arm64_ventura: "d257be9b74a17d6e35a8b8c5e89491ff2fb9f83a828f442e787110c27a9c5cd2"
     sha256 cellar: :any,                 sonoma:        "4c988a24f589781b5bb28327a21c4747b63f791f322373697a5ce5638b618cc2"
     sha256 cellar: :any,                 ventura:       "92ba5dadd11f3b7371bdc9d508ca8223f565649e61eb22e678d1de9faaa272de"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8249f4716373f900407265373ce487766766565b614a81875194881fc6a01117"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc8cacd16db1b5c793b1d76dc356a774f6bdac23866e441276e9d28faaf2125a"
   end
 

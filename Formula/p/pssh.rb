@@ -15,6 +15,7 @@ class Pssh < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d5930def7b287c71f933a5f8cf985135891a2a9e3ca750be4a0960aa5768bdaf"
     sha256 cellar: :any_skip_relocation, sonoma:        "639890de52266e0f738b67ad06579d7783b161c4e68c4b0caba5d8bd10edfd55"
     sha256 cellar: :any_skip_relocation, ventura:       "639890de52266e0f738b67ad06579d7783b161c4e68c4b0caba5d8bd10edfd55"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "60f1da5f3faf6c95f6892a087b50fc1bc97f229ce25c68604a6a5dc7a294441b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5930def7b287c71f933a5f8cf985135891a2a9e3ca750be4a0960aa5768bdaf"
   end
 

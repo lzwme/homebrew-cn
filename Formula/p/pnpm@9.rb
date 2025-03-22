@@ -16,6 +16,7 @@ class PnpmAT9 < Formula
     sha256 cellar: :any,                 arm64_ventura: "ae74b37d814b99dd613cb07f94b593dab2bb1dca09ff9ade108ff180aba53db5"
     sha256 cellar: :any,                 sonoma:        "4ecc62fb50f7704d9afa60dc3e161ec772c59f85d0df91808813f26bd7fe3ace"
     sha256 cellar: :any,                 ventura:       "4ecc62fb50f7704d9afa60dc3e161ec772c59f85d0df91808813f26bd7fe3ace"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b604d8e5694ed2c72031680e1ad2a3b56a88dc9a808c6714f47969ecd7ccd02d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b604d8e5694ed2c72031680e1ad2a3b56a88dc9a808c6714f47969ecd7ccd02d"
   end
 

@@ -12,6 +12,7 @@ class Agg < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "75543a62f058deb8b394320b1230ed751b6b5fefa8460ff9ad3dd66a6cfe9b6a"
     sha256 cellar: :any_skip_relocation, sonoma:        "275a937214296eac98fe68e0201b94fae1a84c98cbc6cbd341abd16ad90a14ab"
     sha256 cellar: :any_skip_relocation, ventura:       "ba9d2505d3c305eba7b863b70d45439fd93371bb1175077a364e23f1f480cd5c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc08101777ee80ab9b360d5beeb84a6f4c2f1f11b5b94e272288854cb8bc3546"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0286d23d264406256b83e4cc63414ec5eb84e648354fedb9bc36922bc008b1e1"
   end
 

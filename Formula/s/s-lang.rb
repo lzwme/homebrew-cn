@@ -22,6 +22,7 @@ class SLang < Formula
     sha256 monterey:       "66e107f60db823f566bf6d2101fca2b2aff3b572312cd34a9a86b0cdba47adcd"
     sha256 big_sur:        "71450b5ff5941e3b2f6a8ca4864affbf8fa5c50b4753860ca86e596834618638"
     sha256 catalina:       "658b0b6498b5c7f7c65c8d5ca99ee601dcfd4c9978bb7961613a1a9513f78609"
+    sha256 arm64_linux:    "8543716549f8be356cdcd9e25c7348ab8e6deac9770dadb301717bc3d169b896"
     sha256 x86_64_linux:   "6e07e31addec7d56674c850019014a1b529cf4f869f47f3c247a9d490982a13c"
   end
 

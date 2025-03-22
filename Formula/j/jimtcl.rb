@@ -13,6 +13,7 @@ class Jimtcl < Formula
     sha256 sonoma:         "802498062a817cb2055c3d30c5a5945f369ca08b08bc8945d36aec2942b711b9"
     sha256 ventura:        "37aeca2006f2608fd5d788839b4c51505df48b4bbe94bbb44f3122404993adfc"
     sha256 monterey:       "4b9b6ed2f15335aebba924e148b4907c9b199634b718ad9460270ebc8f434d8d"
+    sha256 arm64_linux:    "d48ad33e08260ec0ae9acbe19e9f473fc04d2381196b5b603ee7743716892af4"
     sha256 x86_64_linux:   "66fc34a8124311fd4888cfbadf04c6bb1a1f4804ed20f19fb08a39417322ca62"
   end
 

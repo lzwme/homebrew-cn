@@ -12,6 +12,7 @@ class CargoMsrv < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "daf377e846a33a704032ffa2884671eeaf14b4c424f8647278643a8cfb578878"
     sha256 cellar: :any_skip_relocation, sonoma:        "a4c2df9052995c392d2593f76dec47f4e59b391f27b32c834f14416dd178d50f"
     sha256 cellar: :any_skip_relocation, ventura:       "44d546a93282b93cdc519eb82c43e6a7ff0a317959ce08558ce0486605338fb2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ec7eb2b2adde497a73003925addec0f94f4120e709b8e05e79cb921f4506bfa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3071bf253f249aa4e37d5a52a5b52b0d03427d7c99f7adeaa69c4f2f655e4111"
   end
 

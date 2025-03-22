@@ -12,6 +12,7 @@ class Lychee < Formula
     sha256 cellar: :any,                 arm64_ventura: "94c85e54bdd71f1764c33c11a6ee4b9b19bba527bf59492e932aae02868a285d"
     sha256 cellar: :any,                 sonoma:        "fb140a3ad491c505eefb9ce6b077d86b489cf6f1bc9d409aaf1a589a88d743b7"
     sha256 cellar: :any,                 ventura:       "7a13344d2c35163a49407c26ba58e3c740b4c0951711c11e375d15407fc26a23"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b21cc1f26204144b8b40601878203f137b906eb561db96d52067862c2558935f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0e41b80889f77ca79c1865b7cd8f9d588d4f9d2954fd3da559f6a982dc87e60"
   end
 

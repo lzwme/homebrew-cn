@@ -14,6 +14,7 @@ class Bootterm < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "10d45c378a0d8437c2fa3f9697c0cd9514f41bcb41c41dbb36bd3d41fa566301"
     sha256 cellar: :any_skip_relocation, ventura:        "e296d70e6c19862f037889c3f5070a8821bef0c7ea894d3a1fe78b7c5383b8ab"
     sha256 cellar: :any_skip_relocation, monterey:       "a46c3e6762cc88d3794937a95d00ab9182674980081db1702b1ea8ab994da7d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1cd346e782d0dfab70dbc82d9677d4c834088439530ac4e91bbfa30e6d28ec1f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ffec9a2836da5cdeecccc33cd9ce2a78fb2048121c48b07bf28b0f6317a60c23"
   end
 

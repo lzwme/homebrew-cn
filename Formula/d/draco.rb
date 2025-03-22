@@ -13,6 +13,7 @@ class Draco < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "814aaa444d53214093d915e256f8a7ccc6677c59503e1ce706774ce567614976"
     sha256 cellar: :any_skip_relocation, ventura:        "e2b2177c30a62da96b47b4e0f433f279af482477561508e6637fa800e8b90add"
     sha256 cellar: :any_skip_relocation, monterey:       "e16ac56c7b5906c79b9c501ce9b17169a621156911613ccbb5f257809764b11d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "48d72a987891a5e9606a4103f3d5b32676e72054736db1a066b45773b19703fd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f36b1685009883d27bf08cd3d554ecb16c05fe25b127cedc9980f20d6897f654"
   end
 

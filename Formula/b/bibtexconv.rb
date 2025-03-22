@@ -12,6 +12,7 @@ class Bibtexconv < Formula
     sha256 cellar: :any,                 arm64_ventura: "4e41ede4b8a0adbfb06b78e726b7b8d09bc1b54601279881f904560a138a2a83"
     sha256 cellar: :any,                 sonoma:        "6a1b98a527523e8d18d473905bccb12de347e26467c9820ca33636e9cb50ec0b"
     sha256 cellar: :any,                 ventura:       "57c4dc89d14f0e97884ab80db98c5a10dcf467e47d406a29bee2ccc79e753e8f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "87d4c74b7df9136aac2821f99c2ad5e62d84ee3d203b4061336c6a3fb9bf6083"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b313fd54d98f2cb37bc77651c8c4d68ac8ed799a0f45bbfd3b99dab016352d52"
   end
 

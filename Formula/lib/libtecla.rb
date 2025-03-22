@@ -25,6 +25,7 @@ class Libtecla < Formula
     sha256 cellar: :any,                 high_sierra:    "dffae78362e21bf324ed651a2b80ff924b1bbec60916159863e66c7171072a9c"
     sha256 cellar: :any,                 sierra:         "21cd696f6e79ae6401dd19f832ac24263f016a62c2d15ec31e25d515bbea5983"
     sha256 cellar: :any,                 el_capitan:     "3ceb3942ea4ae1434dcc0aea00fa58b6f16787bc1a0067e9497ad4cb050f771a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "3a0a9b8648b8766487a1d4c13c394f2560d4b24af9df0e10109fa89dd87b0415"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8bcf6021a1cff18af685065c3778f709fdcc17e22767818c6e5fef4e309adc3e"
   end
 

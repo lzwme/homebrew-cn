@@ -15,6 +15,7 @@ class LibgrapeLite < Formula
     sha256 cellar: :any,                 ventura:        "56fc6ce45234cdeebabf4e0e533cdf410fcb67f118635b030a774b5c1d80435f"
     sha256 cellar: :any,                 monterey:       "5df9681434c5b8db7a4f10bc80d34154362a6e14eb8659166b857c04b11f188c"
     sha256 cellar: :any,                 big_sur:        "dca697a6f0ffe5241d9e87cc361e3155351524e8087b105ceb383002a3abf364"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ea7a2e7ebc3fd7739d360b0024e10a04dece25cac57b36905570a40b4ee90ddf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4daa1bec1b6d6e493964783687cc05609cfa2e6e97279450134de32672eae244"
   end
 

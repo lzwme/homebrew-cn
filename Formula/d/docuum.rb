@@ -13,6 +13,7 @@ class Docuum < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "8774fc1059a912cc7f102617177f0c756b98b4e9f1d4781c630d8ce425b24042"
     sha256 cellar: :any_skip_relocation, ventura:        "18b42e43794e140650178212b3a20df43897e9766ee1b94f7faaa2ab6e4795f1"
     sha256 cellar: :any_skip_relocation, monterey:       "ec9aa82548bc0fee393165d179eb607f91e558d569bee74f1181b843c37d3f96"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "225f7a822dd9e4ad607ed9f23f384f2920fa10ef13bf2d586f56b484ba54693e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3bc6a5414cae362c54b12ee5cdff8212bce7f84a6f7bc670271796fb44d1a7ff"
   end
 

@@ -16,6 +16,7 @@ class Bossa < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "d2c70106f28ae84a178b62a6f028eac65adf61baf48c6de1d2992796403eb6a6"
     sha256 cellar: :any_skip_relocation, monterey:       "0cc5c9f5080c2066dde8ee2c4c9fe8d7d6fc251a89bc975e2fde2fc99399e10a"
     sha256 cellar: :any_skip_relocation, big_sur:        "aa5fe3c981a324abb67a667253e2cfae1479b832e8a2d53ba615d99d3e0f0002"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b59423572bf2c379b9d72c7d10a21c5e7f3bc24c09fdb1b797f57e58ab4f87e8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0621b561b15f00b336c30d0d91ab52ab59b8b6fab7c1a9fccb4faa287f65b52"
   end
 

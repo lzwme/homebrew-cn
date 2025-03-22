@@ -8,6 +8,7 @@ class Avahi < Formula
 
   bottle do
     rebuild 1
+    sha256 arm64_linux:  "4167489c0fe787b170d0646faab665700577fcc05ab10e3a0a556112df77d6fc"
     sha256 x86_64_linux: "c2a968c40c0683c2a1cb9e45bbe693434581f0b209e0215f9c610b17069001e8"
   end
 

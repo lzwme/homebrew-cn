@@ -12,6 +12,7 @@ class EvilHelix < Formula
     sha256 cellar: :any,                 arm64_ventura: "84890f45493d8c9477111ac3435f64858990d372ec0de53896810eed8955e32e"
     sha256 cellar: :any,                 sonoma:        "ca3d946010aa2de2dc7b4a5888701217812bf63c4a8615f476b7ff87138f0090"
     sha256 cellar: :any,                 ventura:       "f74b75ba30308f77b8d5ba83b78d8f601ce9cc0056bb3c408ce37c35783bc2df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "91c55c8de31ebd6d53335994a2f10c0ea7eb38c5fc45091c70c6ae3497a9d6b0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "94ab70aa754ed371252ca56342dfc44a8ee188d1f167143fbece4f7fc436b56f"
   end
 

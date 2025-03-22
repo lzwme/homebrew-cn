@@ -12,6 +12,7 @@ class Rhai < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "007a9c01d4d28fb5f1890cbd50db8da29774dfb2166924f3bc46002eca043aff"
     sha256 cellar: :any_skip_relocation, sonoma:        "0e9e3530ec4b005d6b144c0869754d38f02fbe9f0e0c306684a4a5aac0389a1c"
     sha256 cellar: :any_skip_relocation, ventura:       "fd7252baec59a484b66ff70db31eec2c15ad6ec57230b014b3dfcf8d4aa45cb9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1882578806acf50e157c2727d61e92a53c9b6d92ab7245e1639f72f412627fd6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "625323d49d84a3cf9e0ea41a65b1d6d5b7bba882a55117da31e9b94bf0036a7b"
   end
 

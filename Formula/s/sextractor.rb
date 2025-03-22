@@ -11,6 +11,7 @@ class Sextractor < Formula
     sha256 arm64_ventura: "ca726287370efe2c960b98a02c8bcbe3b9a8491a584864d6333fd89a020a477d"
     sha256 sonoma:        "3a7f9a4b0880e0de0dca905679bea7e8747f3a299755f10a8437bd5432f65a30"
     sha256 ventura:       "9d53959e43245ab7d3ebac8bf8696d42c56a512bcc89672670c9f358fbbb6586"
+    sha256 arm64_linux:   "eabbbb4573111bd7b50bf6fb15b0fa73a03146276d22d752c6a338f506a2f412"
     sha256 x86_64_linux:  "6b0fd897f186d16e044a010354109fbf0fd4b7ba4afddc4b7715cca6e741186e"
   end
 

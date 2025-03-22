@@ -17,6 +17,7 @@ class Minimap2 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8393b64e8433871aa7f0f69ba4774bab7504f07833a436042872fcfc01a1f5f0"
     sha256 cellar: :any_skip_relocation, sonoma:        "5502e3cf0b1ec825425b20fb1197f2507a08662f2c13151556eee608c4999609"
     sha256 cellar: :any_skip_relocation, ventura:       "9ae2dfa074f8f987c30d18a4e6634c5ba7eb2cb3634514bf15662b32f30b5b4d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f50b9821c693522bf79fbf89df9253a519976ee26ce722ac3c83b3b5242ec65"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fd42a0a8241e19a154f8caae8f18ab682edd88274a0e68df0d3a805cc825d3e"
   end
 

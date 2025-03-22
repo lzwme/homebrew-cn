@@ -21,6 +21,7 @@ class Blazeblogger < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "7cb9d122a9c892a89d36a886c2be63536ca339def18d2766fde8f96e87c0d0cd"
     sha256 cellar: :any_skip_relocation, sierra:         "8e6e405d5b586a95006ab1f47d2f5cef961a2dbdaa9759fb4427663edcd12adf"
     sha256 cellar: :any_skip_relocation, el_capitan:     "0d6bf439fa6f880cb9457581da66082f49f514f8b0fd4b57ac81180948aaa5e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "c8dc5296ef25d1c5289d74505f6db5c963263054ae78624b237321844e7b3aa5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "534e43639b7ee566bbc9f675f94043e4579b0e01ba1b8b5651dcd308f640a182"
   end
 

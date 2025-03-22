@@ -20,6 +20,7 @@ class Bsdsfv < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "28bee35fbc8c0be9e1182287c58340898d29d9ba0f910109974af6efcb5cd61f"
     sha256 cellar: :any_skip_relocation, sierra:         "38b9d278b430e250b384c5ba2baf3e74dfe0771c5ceea45686022ecb01616ee2"
     sha256 cellar: :any_skip_relocation, el_capitan:     "404ec03e044a019a487adfab90012a29a6655fe67b907d9b4e9a46d4f6c57a9b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "19ee5c984fc2bfc91735e2e53532b59f8acd4e8831bab55c215844b99f17beee"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ffa21308fb20dc93bbe80e8735590e035e0810e858a088f50c8d1ce1cfee041d"
   end
 

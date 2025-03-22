@@ -17,6 +17,7 @@ class Tractorgen < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8d231cca23211331c6edbdd485855ff0ca9cbf8f302cd3717b501b5057f710c8"
     sha256 cellar: :any_skip_relocation, sonoma:        "2276a12b428001802e9b1c2fa9921260adf74219eb55e1595c249f3c2e1c288b"
     sha256 cellar: :any_skip_relocation, ventura:       "ba42862bdd4dd45376fa17c8ba2121a30d4161f700780a53bfd9f6fc8077c40c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "69199dd0c7cdbb707559f20a2cd85e9532ccceac3640496bc7807e38cfc099f6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f332d2d3f6b3f7f4ce26f3bce0b598b44fec0e173fef2bec1bad5843b6b9744f"
   end
 

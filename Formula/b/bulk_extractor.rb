@@ -19,6 +19,7 @@ class BulkExtractor < Formula
     sha256 cellar: :any,                 sonoma:         "fa9d38135e6b10cdfeec2a55a259a936ba7fb8468ec91ab952edef37d46fdec2"
     sha256 cellar: :any,                 ventura:        "e0d758881ed2de967484c0ab5ddf5bf815af8beed5c7cb52b5d434b1e762ee18"
     sha256 cellar: :any,                 monterey:       "c68a03087991b70830a1d0fe79fdb7886767841335aebbee7060d8faf6e7f7ce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "94609cf0c6e13e921c0a8237a992ba1ed6ea556a0e3a5db7ce6c306da807f092"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce9af040a2bc16c10f0752d4d78261753b076986d4b5a7ee420a8cca72b46cd1"
   end
 

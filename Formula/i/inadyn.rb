@@ -15,6 +15,7 @@ class Inadyn < Formula
     sha256 ventura:        "37916b230975cb4d718b41108b1e6a98b475f27e9c731285fd286e572af414ec"
     sha256 monterey:       "b50296e99a5e8841ffa158c7d29a0ad6532cd5cbcc430dd1dabee8a8c792d22f"
     sha256 big_sur:        "e026b42611ff126596674a9aee10b6c33321bb471d8ed3f27836014dec1b4eeb"
+    sha256 arm64_linux:    "cd720c777e2e52e8a7f1030af7bc90164358f5f5c566b09d696f9b55f00c7afd"
     sha256 x86_64_linux:   "056482287ad8f58d2ffd63ab62d28f9e0d136ddfce39eb884265e9e9c7ffafe9"
   end
 

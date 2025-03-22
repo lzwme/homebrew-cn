@@ -26,6 +26,7 @@ class Ptunnel < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "67bd833b70dc704ab565d526fd99044e122a4e2fcd583b083db0a5f642d46041"
     sha256 cellar: :any_skip_relocation, sierra:         "048404c7b3fe3365abfc24fb623bf9548ed7e61458a00148348bbdc2f5f12f33"
     sha256 cellar: :any_skip_relocation, el_capitan:     "516181dbd16539c1f8817d65637bd42cc951d551e1a3b61a4d83dc6c71dc6397"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "8b8e66df9c54317634708382da6d32f7d5f0e8fa5b2e6a226dae499338e335ec"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "635b36ee0d56fa5b28aebb302aad7d8d3e922c4a143854b17cc8087e7f2c0683"
   end
 

@@ -14,6 +14,7 @@ class Bwa < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "55d0c3fa4de82095c0421c6962a0720c5830fa9402c257342837a0e473c395ac"
     sha256 cellar: :any_skip_relocation, ventura:        "2c4ee46e300f7fb8b39728c4569697319641f90cfd87391cafc14a65c7dcbeb6"
     sha256 cellar: :any_skip_relocation, monterey:       "b035ce4068ab880f243402289cb17cf5b165b7d3eb209385bf32c31d6e1d815d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7178637e9b72fcaa609b89d2555d515460f3ab495a7172eb2e0c5c59926e5037"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9307f2d732feb2083c8a8347a972d4c335b6815fd4c4b7813e1e913f9724049c"
   end
 

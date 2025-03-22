@@ -18,6 +18,7 @@ class Btpd < Formula
     sha256 cellar: :any,                 monterey:       "423f7dc95d5fbb92a4e8cefdca992b20eb20e3a4548248281ed5d135a6a675c8"
     sha256 cellar: :any,                 big_sur:        "0a69fd078eb310b051cc151295ec20619a5aa8309adde05fc281a66bf7652df5"
     sha256 cellar: :any,                 catalina:       "e3aaa9dc2e6cafa9e9a2672fe9bad6da2871e1f496029ad2f12004c6c24f0895"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d051486a6fae13f53a4478ae31ad45cf05bf067727ef83f5c77836ac5526b18d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "483442aed198f237fd3d92bde41c2b12db3e150e44bab84bd2fab6d96a25d8c5"
   end
 

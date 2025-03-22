@@ -21,6 +21,7 @@ class Clip < Formula
     sha256 cellar: :any,                 sonoma:         "704a966e9cde6a3d7ec3fb7f89001951ec21c6c17ea19c949d40525b5ee99993"
     sha256 cellar: :any,                 ventura:        "b9d9581c495fd0de481bdd29e90c83a2d754728bae91cbce79d33b203f49f234"
     sha256 cellar: :any,                 monterey:       "1727420363dd11f068d983246bc72c1984989a317d7469a559aca8362aa2b546"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "56e3709cdc2847f1fe4596de4a6f22d5ece7685eb0556016c84d33e978af7bc4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ec83f22a9c5a10603172933fb1de5ae5f261e30891e0ecf4b800094eab60ce8"
   end
 

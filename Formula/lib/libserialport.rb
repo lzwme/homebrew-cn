@@ -16,6 +16,7 @@ class Libserialport < Formula
     sha256 cellar: :any,                 arm64_ventura: "d8e517c94d88c00c49c0e7243450f55ca8003cdb3e9b944f972d6673624701de"
     sha256 cellar: :any,                 sonoma:        "e1f99856052b3f5329e02b481347bc28b0a8bdae9de5c99acc6993bcd6d4686d"
     sha256 cellar: :any,                 ventura:       "bd710fe43d3a02c4c7a99663e1c6e5254810cbbdf7f71185d2a49398870503dd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9e6ddd7268f8000d0a4fc564fb61025b200ba0a9f66e444c3b06353804ae304"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b61c51d632d2f98386a1eac5eff490bd6cda366f8e5d2edcdde021660ad2006"
   end
 

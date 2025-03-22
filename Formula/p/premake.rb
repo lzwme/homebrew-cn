@@ -18,6 +18,7 @@ class Premake < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "107601c18db6358eb5c08f9af54580f403963ad9e0e3b31bce8f8fd533be3920"
     sha256 cellar: :any_skip_relocation, sonoma:        "87d7e9f7355b28c92227d586cad85050a246981f8a2adef4072cc671808ace02"
     sha256 cellar: :any_skip_relocation, ventura:       "4aa55636996c684aa6b2bc1407021bc4f7338c96cc0c2aa781e5456d934b0966"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2db7770035d4f94103e9a41bb3b65c2aa757e28dd3a961475b21f26053ae4857"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a94c1341ba63675c5f3289f5607fddb8da45da5125296ec7e6b0de9b28bc064"
   end
 

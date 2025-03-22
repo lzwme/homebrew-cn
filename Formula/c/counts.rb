@@ -14,6 +14,7 @@ class Counts < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "8f35bb0445dc8cb22aeb6b08739d76ef4ecf72803d8224b5d1268a4912142a37"
     sha256 cellar: :any_skip_relocation, ventura:        "51668f2ff93d15c246b5a7d57e2aebc235cae290cbde763965fdabc1d1d6c2a0"
     sha256 cellar: :any_skip_relocation, monterey:       "a4ea94d074f19ef53137496307d5887f6590d9542d314b157022c0ca9f68427e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "19aeb112e08fb7e4bac47349d3ad1d5d22338857e929fd8bd9ce122112c7a76d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "263fa00c97a3aa55d4857bd1e1ae79d2b1b94f9aafcd7d6f50040cd9bbd7098a"
   end
 

@@ -11,6 +11,7 @@ class LuckyCommit < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e16c7e01ed3ee28ba540cac685fa5841431c3baebbf966a14e4c9ce01c9a04ed"
     sha256 cellar: :any_skip_relocation, sonoma:        "eadab6dbb7ff27594d7e7f91477d00362807694120914b1f795143c25805d317"
     sha256 cellar: :any_skip_relocation, ventura:       "4b801b069b937283e115c280e9fba092a45aaaa4412bbb278925900756813b81"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "815cf77c9bad189cbbc7db3c20c8004bf34295cfcea87eaf639c44f2e1f73cc1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "45322d43c334601cd776812b1b3269f6e3ff7cf28f43ca354f199d9e607f9ebc"
   end
 

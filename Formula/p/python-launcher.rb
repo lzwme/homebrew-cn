@@ -14,6 +14,7 @@ class PythonLauncher < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "04dae312adf70a9df94f79210ccf241013f58ce4aadf6cc29951c03cc16957b5"
     sha256 cellar: :any_skip_relocation, ventura:        "6b82f0178b46f14118b120598178b823812db7caecdf91b4e8822a4b8f143227"
     sha256 cellar: :any_skip_relocation, monterey:       "a3b9e42353ee19f5354a4e8f6b19c941926977398f021261b5cc3c11aa28d8d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1a6564958fb0d3fa22689e1806b8dfdb86b25f0d243b6eb6e3a3b513c4a7eb87"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "252b4ae87c81431c5f8929f9c41922224856ac40aaf928e2c7874ff5400acf3b"
   end
 

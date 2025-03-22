@@ -12,6 +12,7 @@ class Sad < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "49df2026de6f61f870fc3c23d286214842af83b0bb92ea8e7f9a2e005e8b0d88"
     sha256 cellar: :any_skip_relocation, sonoma:        "ac5f622402e313226339eb22f389fe826994ee8771b23cc28c2188ff81096f80"
     sha256 cellar: :any_skip_relocation, ventura:       "5afe1a5fac8625f958c34c4b7b030c4d4d6d3c3b7c7212988f19a8e7f6928f39"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "db2a7e7543515e39ad52ebe32ebd9821e3eec5e0cd1a3b0096342682de0a1536"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5eb56b7ce0c1cd515a1e2492614a4cbe2b3ea8e3652f0a9ad2a2ed43d9eec43b"
   end
 

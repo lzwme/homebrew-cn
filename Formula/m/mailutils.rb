@@ -12,6 +12,7 @@ class Mailutils < Formula
     sha256 arm64_ventura: "1480c514c7284b1229318368ab1e4a6e0075f3e4f320038b48c72faa11fc1b69"
     sha256 sonoma:        "63a50102b0c5ebbf5f9610f9040b33b432dabcdd23f6f2a207e591d00e036459"
     sha256 ventura:       "ecbfbc7b323e9e815f409f319edbd394b48caa9c2e79d6754e7489fd5dec3076"
+    sha256 arm64_linux:   "8ba988f6be2acf7ce57d47a48716cb4f7e526577001753920063758ac4949d9a"
     sha256 x86_64_linux:  "76e8d8e74906ee588371c9425cd5ba34d5a7d75e69bf6be04d9081f23dae7c14"
   end
 

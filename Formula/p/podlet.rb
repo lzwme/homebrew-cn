@@ -14,6 +14,7 @@ class Podlet < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "7d4e1f96832eb6a64c3fb5a368aba8c11cbc863b0e273cd6bd12d0e3380f8389"
     sha256 cellar: :any_skip_relocation, ventura:        "fad99f8be93c835b25dab8cb0a206434bb07b94a5ef1fccb79123d2f9575506f"
     sha256 cellar: :any_skip_relocation, monterey:       "9ae49fd7b7dea4e064f75138fb5e816d1678897c36f869a4f31153999d63e968"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9968475ef2db45ac48ebe49bb425fe20b47f28895353b4de2f97634192355d73"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd73b27b073b7fc17d8e204cb4b62813e6bdfff78f9e6108dfec4a533232042f"
   end
 

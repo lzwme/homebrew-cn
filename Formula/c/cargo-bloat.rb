@@ -14,6 +14,7 @@ class CargoBloat < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "f643448f04a72a456a13efb160fe1470144128d55c7e3d7f44fe8c6a1027ec2b"
     sha256 cellar: :any_skip_relocation, ventura:        "d0de5a94dec7e213075d86b9bb4ac9c206c7308fcf34b75388477ca58825e189"
     sha256 cellar: :any_skip_relocation, monterey:       "a374eabb4b4da3740c97abcf9e2f4a030a21d3ac6c3ff503269d4a153086a00a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ad9f82b783d911c4dd1396d2c81e785afa04fe18b5ceb48d6eb5dae823ea0fd7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c271533c6e4ff7415d51ccb2fcbee8e514e0ec2142a48543a5c8dd705ac9e4a"
   end
 

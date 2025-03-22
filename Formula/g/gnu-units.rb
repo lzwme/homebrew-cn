@@ -12,6 +12,7 @@ class GnuUnits < Formula
     sha256 arm64_ventura: "1d94bdf2d4593f992e8ed62654ded6c99152af1200163e1268b4b815f91bc461"
     sha256 sonoma:        "bf0978be52268beff456873207f32b0f813214297bb54d1f2630b64b35456fe9"
     sha256 ventura:       "5356e61f7cf6dce7314c20185d1fa01e7a02ec77212ec344ddb2bca1058302a3"
+    sha256 arm64_linux:   "7601d6c04c890e81d49201be1f9ded4eb56f97999be560dd364cfe49422bfc5d"
     sha256 x86_64_linux:  "c19b8b57e51bd23f71f929ad375b6d0defdc4347ff4993ddf5c26ed2088a0b39"
   end
 

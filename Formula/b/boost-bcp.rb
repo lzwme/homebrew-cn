@@ -16,6 +16,7 @@ class BoostBcp < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b5c7ae2f79c8ebc6f9e6132cddb866a03c97e04b5f0b671550d113d4602799db"
     sha256 cellar: :any_skip_relocation, sonoma:        "1171bb8e3d580f0338e57a3d352a9bcb088937550f3d0d9f7a0bc11211d33860"
     sha256 cellar: :any_skip_relocation, ventura:       "da4bd6cc7653a68f3568e673b5b6470d48e224b817d5b700f4ba480b6042ff02"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c71c3f08406c560af9723a12a88af8ea7293418c5aa2b66b7cc9e3b7c54ab64"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e4050db4c0364d62a8476fb8f4294eaf577cfbd5445061cfdbc69eb1aed449e"
   end
 

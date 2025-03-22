@@ -1,6 +1,8 @@
 class Yasm < Formula
   desc "Modular BSD reimplementation of NASM"
-  homepage "https:yasm.tortall.net"
+  # Actual homepage shown below, but currently unreachable:
+  # homepage "https:yasm.tortall.net"
+  homepage "https:www.tortall.netprojectsyasmmanualhtml"
   url "https:www.tortall.netprojectsyasmreleasesyasm-1.3.0.tar.gz"
   mirror "https:ftp.openbsd.orgpubOpenBSDdistfilesyasm-1.3.0.tar.gz"
   sha256 "3dce6601b495f5b3d45b59f7d2492a340ee7e84b5beca17e48f862502bd5603f"
@@ -31,6 +33,7 @@ class Yasm < Formula
     sha256 cellar: :any_skip_relocation, catalina:       "9aa61930f25fe305dc5364e72f539b0a225702b5f1dc222a9dde1216e901f7ab"
     sha256 cellar: :any_skip_relocation, mojave:         "0dc797b72ee3bad9c6a52276c871ac745207b5626722e805fa642d7a872847fc"
     sha256 cellar: :any_skip_relocation, high_sierra:    "7f31deeff91c5929f2cd52eca6b636669f9c8966f6d4777e89fa4b04e541ad85"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "915dcddbe7d3b6c170b8055d3f1fbea22fb80fa1a6ca1f0c2876d52cabb2b4d5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d6d46adb6213bba936b7d62ef9564f752cc5b4268e19e91f0b67e136408ab30e"
   end
 
@@ -108,7 +111,7 @@ class Yasm < Formula
         .len:   equ     $ - msg
       ASM
       system bin"yasm", "-f", "elf64", "test.asm"
-      system "usrbinld", "-static", "-o", "test", "test.o"
+      system "usrbinld", "-static", "-o", "test", "test.o" if Hardware::CPU.intel?
     end
     assert_equal "Hello, world!\n", shell_output(".test") if Hardware::CPU.intel?
   end

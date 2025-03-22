@@ -14,6 +14,7 @@ class Drogon < Formula
     sha256                               arm64_ventura: "452c23f0d15e9fae038387c4b7e9d151c80b9ce0f182a823b426e761bbb1dce6"
     sha256                               sonoma:        "1f7d3528eafbd4fd89b546f930293184c08a1b96d3cafc849ed7b0d93d497c27"
     sha256                               ventura:       "34690a0d3adc7ef0d65366be9f7c73baa7b3d2ca77368c1a71ded22f6584cdd5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbbff4e21d26ba23715324ed47a6d66be5bf6a935160ef30684f7ada91839ebc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4d380c27cc5a5230b12e1889fca7fd3e6fad564e13a56021a8c3d26cc88d49e"
   end
 

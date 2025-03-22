@@ -11,6 +11,7 @@ class Dpic < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "62e275983e3ad6f36101e0a524a29c9e24d973a72443dd750d44e7dbc6353adf"
     sha256 cellar: :any_skip_relocation, sonoma:        "306191125c20b05c28dae91d0da90c012769e4ecd0aa491e2d78d89594da640a"
     sha256 cellar: :any_skip_relocation, ventura:       "2be8b31cce643e70b5120d3e8db82c2e6e6733138f62c8d960b0544a05682ae6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3440b146c2ee69950d80a96aee0be6aa37e2d418e1176ea5a63cd2032efc836"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "99bb23d148d753c67dc621b7b5d8b9f3ca8759b7dba0cc45d9fc3b51a7e0611c"
   end
 

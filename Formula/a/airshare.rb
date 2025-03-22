@@ -15,6 +15,7 @@ class Airshare < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c288eec063472c2d29405feada5730445b2a53ddaed3e99d38a539bde78ec242"
     sha256 cellar: :any_skip_relocation, sonoma:        "6bf6cc80923dfeb6076056bdefde98cdedd59f02ccaf733b9c8af04369f9280b"
     sha256 cellar: :any_skip_relocation, ventura:       "c78c8e76814a75b1d0804179773455dc97094e762315ef8a830094c3c584aa18"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0db9e226d715c89d276a8ba05284219008504ad30e01d6ef51672eec8fe455a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9a6df81c0528040a14037b6b41f1430cac158b3c4972d629fd67ae234019f6c"
   end
 

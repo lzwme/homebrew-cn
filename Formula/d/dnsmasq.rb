@@ -16,6 +16,7 @@ class Dnsmasq < Formula
     sha256 arm64_ventura: "cdab8f9171fdfdb0d3992f985bfa47f1e37a21ea8852b858dc99d3530fcdd90f"
     sha256 sonoma:        "4aa45af1edb9037c600a7dfac19d606adf9ff99751868a21c69dfc3fbbd2aa3d"
     sha256 ventura:       "00b9f8f1fa62a1e802697213e4f4a8efde894984a686246eca65d94184e7bfe4"
+    sha256 arm64_linux:   "d8dc8fbdd6b69cd8ecf6718792c5121065b4bf7cb06edc107a0de8683c92fc74"
     sha256 x86_64_linux:  "c7ccd503b66d1e2096490ff52a0fb277fbc91ff7aa57c313fb1b3fdf531560ee"
   end
 

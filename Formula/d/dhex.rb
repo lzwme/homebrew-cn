@@ -24,6 +24,7 @@ class Dhex < Formula
     sha256 cellar: :any_skip_relocation, mojave:         "2d6043ce881b7b407fa40691639c25c72d73a427fcdd39a56e0683f48b16b328"
     sha256 cellar: :any_skip_relocation, high_sierra:    "bfc2aa6c73ffff61a471b4dd8e183e493781a5c34baeddffc56fa89b0542a9bd"
     sha256 cellar: :any_skip_relocation, sierra:         "b83e63ad0f1e2910e1f2495903ac4077aa5caaabe8cb2702094f42c3921c7a9c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7bd4943c431bc7677d86bbc452a5582fa5a9d96486e089811738d52445e5b572"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2080abdc26e68d518e2b989349107cbe479f9d10fe95f628851a0a638f43a5d4"
   end
 

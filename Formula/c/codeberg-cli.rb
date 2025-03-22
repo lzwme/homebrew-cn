@@ -12,6 +12,7 @@ class CodebergCli < Formula
     sha256 cellar: :any,                 arm64_ventura: "f8e8824143098d71ddeba4c33e58d091a4b899b2c785fc6ff990a714a325c69b"
     sha256 cellar: :any,                 sonoma:        "745cc127a2cd69da11b14a18db4aca864533d237de3d31f1dad63c6cd3b01db2"
     sha256 cellar: :any,                 ventura:       "01f84efd74f4eb2581d569d008905bd555367bf074089d907c8987569fb0d9b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b49a88dfa1abef266a0adf6efbd8deb667c342ad02583d7c6329900198a7f592"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ff0610fc76fa040d713d925372cce80286a2b8f1f399400f94127fc2277cabb"
   end
 

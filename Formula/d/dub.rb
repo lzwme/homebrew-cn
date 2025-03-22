@@ -23,6 +23,7 @@ class Dub < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5f5a661ddced42a30f8c4665f984ab1b3e754921007dbdfee769c3d520e25d86"
     sha256 cellar: :any_skip_relocation, sonoma:        "0e48bbe19cfac01102c4f6b5a1c29ac8cc961cc2551d3a7e809fff964ed4261e"
     sha256 cellar: :any_skip_relocation, ventura:       "d27e8cb27b68587060d1c63a4e124a39ca5a3e4704ac40118d481646244d3440"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce3058a27278915ecc2742de867ea4f6ce0444dbeaba30fe03acc443299d5ad4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0bd12f64c42e34983e753649feb1168ddaba5418e6a8b487fefa48bb68c0404"
   end
 

@@ -16,6 +16,7 @@ class Hsd < Formula
     sha256                               arm64_ventura: "23eb2c7aa7efe1c0719de0cd083cbff53c2fc09ade911da47e66d5d75b5427fb"
     sha256                               sonoma:        "01cd2eeaf3eb101e8d2f19cf7385168654053a875ca3ef071293918af1c52962"
     sha256                               ventura:       "7df4707762756df9e7f918c4fd4003f1fb45d492f11ae75a3d619e9984a14e45"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "671cdaf56b2fc2d5f9431b5a9b9bc80ffb9eeedd503e6257da2c5efde884b70a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "168fe038545e6dd92c6efaefc90aa7c8ffd6aa072e3be6c7a990f898a38c5b99"
   end
 

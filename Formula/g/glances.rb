@@ -14,6 +14,7 @@ class Glances < Formula
     sha256 cellar: :any,                 arm64_ventura: "61a0f0bbe2063c2cafe928c58e12bc30cff32695967b90c9b5ed48b3c8be0c1b"
     sha256 cellar: :any,                 sonoma:        "05f1fc06da3492786e413ae103018a1588783d795dc25d383029bb212e935d20"
     sha256 cellar: :any,                 ventura:       "e936ed1bc700886e8b288d884300f9ec69aed2771efc26a48d3fcf666e6b11b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a922616d3bd2330742bb988c8fbce54aed771b7b0292eb1c63bfc9aa09d029e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d02dc4d7b90cec87d386a91b98e8dd9141a05bcf36a495211243b1aa43fc85ee"
   end
 

@@ -12,6 +12,7 @@ class Libpostal < Formula
     sha256 arm64_ventura: "e6412f74a7d126a91f3c29337f73e3284329c95b1fba7924a653f3115918802c"
     sha256 sonoma:        "077f8b1500c01ca5f5c6586b6570d33c0af2285b4d6e2811af431918b4b382c0"
     sha256 ventura:       "4e553905102caddeb88a154bd251748381ca94ee63ce1b2f56cf80e65aabe327"
+    sha256 arm64_linux:   "aed0795c4d0a2894d8297bca8dd6b758aa4aecac1af139cb5491c9e9b75a98ea"
     sha256 x86_64_linux:  "6f935c41597746bddc0c0e0fcc132f7e9ed9de317f8a49702f25cc01ce4fe844"
   end
 

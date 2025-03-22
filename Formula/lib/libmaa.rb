@@ -19,6 +19,7 @@ class Libmaa < Formula
     sha256 cellar: :any,                 sonoma:         "92b9875c3fcae14b3bfa42df2d5cc47c87170f214f8e70eb5dd111e1fe1791ac"
     sha256 cellar: :any,                 ventura:        "05c6bb7f0a72131eb382e77c084dd3b26c34e58301fed77648c068b02c15da5d"
     sha256 cellar: :any,                 monterey:       "57325e2231ecbfd40349ab24d4841b433d41dd32d503aa9bbc484ee6954fc9c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a34cd9122ac279b62ac94ccc64d5525566dc526c49581f29f4ef4161f8247a5c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "beb95d2918f10ee42290fb44faa0259e0e9f9e8a4f353822bcfee4268d3f5ef2"
   end
 

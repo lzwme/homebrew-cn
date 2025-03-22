@@ -13,6 +13,7 @@ class Latexdiff < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "a25ecc5e1e606ed064a253fe450afef53dd94d9a43a8c5113f8ee2e226af1a47"
     sha256 cellar: :any_skip_relocation, ventura:        "a25ecc5e1e606ed064a253fe450afef53dd94d9a43a8c5113f8ee2e226af1a47"
     sha256 cellar: :any_skip_relocation, monterey:       "a25ecc5e1e606ed064a253fe450afef53dd94d9a43a8c5113f8ee2e226af1a47"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1a230eb09bffbf99ebf1b39acc145a728223d5c97a4ade526295743f02fa1a97"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e878eba7d85094fc7b5622f3d7eef4e9ff0d9dc1c97e4babc0f474ac26520485"
   end
 

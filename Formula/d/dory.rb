@@ -16,6 +16,7 @@ class Dory < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "dc275970eb94ef3bba02bd5bf12241e26e4a35f415fa9de16710d9fe80b978bc"
     sha256 cellar: :any_skip_relocation, monterey:       "dc275970eb94ef3bba02bd5bf12241e26e4a35f415fa9de16710d9fe80b978bc"
     sha256 cellar: :any_skip_relocation, big_sur:        "dc275970eb94ef3bba02bd5bf12241e26e4a35f415fa9de16710d9fe80b978bc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "8238cb7a9ec990b6460404d79e97d9de59914803d0b9c6498f786194acf9eb17"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "af4be9da0d1d895883e8527052f05d6c6d2da3c4c24bf123c62bc8dc4a0973d4"
   end
 

@@ -17,6 +17,7 @@ class Coal < Formula
     sha256 cellar: :any,                 arm64_ventura: "4ddc8df90f72a39d67821b7c37e1d44c086b154c582ea11fdaac2571c6e37fc3"
     sha256 cellar: :any,                 sonoma:        "366f4884e4de18a9efe693880513c00b36be1346dfd4f08561035c31d6c46ef6"
     sha256 cellar: :any,                 ventura:       "847cece9b925893a6d142ee8c4f463475c3d967df46a2744066d536e86f21082"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "14f1d055a67a32420a3b87f31ff364f0e7926440d8bedf4979c31aecf6ae303d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "14a7ed5e9395d617dc0503196509ab33ac7748d77f53764749c14a283c4ae463"
   end
 

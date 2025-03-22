@@ -20,6 +20,7 @@ class Wput < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "e01d35805cd00e8f4d9ba1ab989104d66dc4150648a2288f5f49eea5c17b5025"
     sha256 cellar: :any_skip_relocation, sierra:         "0a8c4296a3e14d8b420f65464293b000dd1bd2e33a802c92e1812f0c267d3f0f"
     sha256 cellar: :any_skip_relocation, el_capitan:     "8e4eeb941d98dc0313b87682b7ae659bbceac59426cf0483c2ae2676cf5b924b"
+    sha256                               arm64_linux:    "ec9a4b8e069c941c18e07b232a30c5e5daf926003d9ff6120b0ac1e21d1f0e5b"
     sha256                               x86_64_linux:   "0fb27e180b9a6f8ef2b3508530874b467449fdac55a347c63f2e86ca360db073"
   end
 

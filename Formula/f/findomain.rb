@@ -13,6 +13,7 @@ class Findomain < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "ddd807330c175ac1b6040315a9c0a14edca29de2a88043aa51d1ed8a020ef39e"
     sha256 cellar: :any_skip_relocation, ventura:        "d17e25ff822169a4592c5e3662b23c949d76c101809c5b39e25354a9bb924ea9"
     sha256 cellar: :any_skip_relocation, monterey:       "18b73d207b2c502c71ae66d382c4ff63bdd337702ffb4d09b63fba640d627181"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "63c3d33502c912d2267f0e4624ade35c0e59a35fc20a677604712bb45c4d4894"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e6c56c142e8b88f2141eb8082fa974ac8b642fcdee05fd6f65b39237ae22e9aa"
   end
 

@@ -12,6 +12,7 @@ class Gql < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d136ead59c7e6a5ff5e87e9a2aa0df9badbab9a6cb3e43be843a11d01da52d2d"
     sha256 cellar: :any_skip_relocation, sonoma:        "71068d471ed38f63c0038accf17734c02c737c70de501aad3edbc1034a1a9338"
     sha256 cellar: :any_skip_relocation, ventura:       "b0130e6d00ae6db3aa7032b1b841fc9a7beae6d3ad1709c7f54caeb9f17bc58b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "39480d7964da01f500cdb47fe75f13380e1e787fd42289d20391828d8c049d81"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "88307577f7da841ef7432ba83def7d627d423d6fb909bb20630c17c00636b1b4"
   end
 

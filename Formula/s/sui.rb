@@ -1,8 +1,8 @@
 class Sui < Formula
   desc "Next-generation smart contract platform powered by the Move programming language"
   homepage "https:sui.io"
-  url "https:github.comMystenLabssuiarchiverefstagstestnet-v1.45.0.tar.gz"
-  sha256 "f26e0ce125e867988002cec8377b6bc0a6be7e480d98b3bcfae225562e0694e7"
+  url "https:github.comMystenLabssuiarchiverefstagstestnet-v1.45.2.tar.gz"
+  sha256 "32d39b2bef38c54f9ec03fce33938a510dc42555fe6b302a05e92497a20f591f"
   license "Apache-2.0"
 
   livecheck do
@@ -11,12 +11,12 @@ class Sui < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b61ced46f16dac9351e6f3b0f38f09489c50a018db63dfe09c45afae5a3188ec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d32e55dd188dc90f4a9c6269f64bc465c2abe7748fb48bec68118f7f90fe38b4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d298c3c05dedb07549ab23a06eb9bff255de8688f644b8366e7b0066b267c679"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c65af4c10b3a251d6bcd109c9a603abec4d92d5d04b5fafbd18a4768827e1417"
-    sha256 cellar: :any_skip_relocation, ventura:       "ee09044cf6b0e5dd5679860c9bf7e8953fd1089d155590c3acb9589e84961b9f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca614580dcac4a3ec28b3f84005f9607692d5fcde76d96c47bcbb69a6fc53aa7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4e984c7f2a93af9c464afc0bc587a6b2b678d09600c63fed9548bb0991536f1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "74e5d626ae462b88517efd083a95fa873c544a7d5340239559a9507bd36b8557"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "17e91671c070f8e7a6754345679b678cadaa8e40e932ee118aa4e1ba4142988e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "75a9bdbc07fdfdeac086f7e21172770d8c49e4852ed3f8ec68d9b3a68ac8c307"
+    sha256 cellar: :any_skip_relocation, ventura:       "dbded4cb798598c020ee420b9057cbdfb693785d4a50aa5f811ddf0909b09118"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f47891cb35ce08082cfb627f351c3e7c2df19b918c967ca73848dc62aa1b2ee7"
   end
 
   depends_on "cmake" => :build

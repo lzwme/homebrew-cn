@@ -11,6 +11,7 @@ class Isync < Formula
     sha256 cellar: :any,                 arm64_ventura: "130456630d195bea122ac91aded7cfa8b4375bb954325f4b0806b73322125978"
     sha256 cellar: :any,                 sonoma:        "51ee82083ce5aae9883f444fe52aaa26c43d0856e587ee7755b2a4d132dfabe9"
     sha256 cellar: :any,                 ventura:       "cc88915ef3a70a61e83952548559a3d6879561063b0826566851e0c1b3ae0a5d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a485ffab93aec68e2643810d101ededa1de3ce47f1fba32b69a525f72ba52691"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b7f6e94602fe5a7812e8c8731ddb620827c950199116ecd10b22f24040cf6d0"
   end
 

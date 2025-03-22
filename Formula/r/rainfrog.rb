@@ -12,6 +12,7 @@ class Rainfrog < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "36c136603dfbf94c9e8e5d7635db6ee8c89878237339489d18c40b678bef3877"
     sha256 cellar: :any_skip_relocation, sonoma:        "fab04cd9a2ff5ae3013f75877b54a245acc82e38c5d305d9ccd8b2c4d0dc4f4d"
     sha256 cellar: :any_skip_relocation, ventura:       "8a6d8b2c2e00f0610689a36cc32242a6b6c4989b4cd9448b48715279bb087ed0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b996271848c69935357c4166c06e444426498e4e6e0a163388003c0f7a692f1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "16818de9020d398326761c37b54aa2cf060d72d361c9bfeb666b8dc0bc1ada74"
   end
 

@@ -1,8 +1,8 @@
 class Kubergrunt < Formula
   desc "Collection of commands to fill in the gaps between Terraform, Helm, and Kubectl"
   homepage "https:github.comgruntwork-iokubergrunt"
-  url "https:github.comgruntwork-iokubergruntarchiverefstagsv0.17.1.tar.gz"
-  sha256 "f5a555629f8ac409c3e26b33e02d065441c6432cbc10ff258ce43136499a8506"
+  url "https:github.comgruntwork-iokubergruntarchiverefstagsv0.17.2.tar.gz"
+  sha256 "6f8c2130687eb0d54bc5fdf33bb6f639fa888f73a03bafa54e67d1f7f3af6d68"
   license "Apache-2.0"
 
   # Upstream appears to use GitHub releases to indicate that a version is
@@ -14,12 +14,12 @@ class Kubergrunt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48e854c4da10fe4467baf9fe96aabab5be2ac264d7fe6598699525e6db456669"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "48e854c4da10fe4467baf9fe96aabab5be2ac264d7fe6598699525e6db456669"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "48e854c4da10fe4467baf9fe96aabab5be2ac264d7fe6598699525e6db456669"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1fd464ac36a7aba96cf3d23b91bc7d2278c6942d1d8ca18459f4db17341b79b6"
-    sha256 cellar: :any_skip_relocation, ventura:       "1fd464ac36a7aba96cf3d23b91bc7d2278c6942d1d8ca18459f4db17341b79b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b99d406cb8db940112df661f189df81bfa13e94415220323fbd1b38abb5d48a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3b68cb058c9194b0a68f660488e279ab3fe49de3b40a2de0eb3a3d36a9f5e3f8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b68cb058c9194b0a68f660488e279ab3fe49de3b40a2de0eb3a3d36a9f5e3f8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3b68cb058c9194b0a68f660488e279ab3fe49de3b40a2de0eb3a3d36a9f5e3f8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6019901c4d70272f2bf5434321d205f26392197e6d903a638f3fa597352f742a"
+    sha256 cellar: :any_skip_relocation, ventura:       "6019901c4d70272f2bf5434321d205f26392197e6d903a638f3fa597352f742a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b5791805883370a0ac1015f2a277d318f479ebf32050222a16e718a18dd352a"
   end
 
   depends_on "go" => :build

@@ -17,6 +17,7 @@ class Omake < Formula
     sha256 arm64_ventura: "e1fd58352aac92f14588d5867a39240934affcb79040b869c6fb7beb1c0a5f6f"
     sha256 sonoma:        "f7b331439ec53664c6475b856a53f33c51f09c6065d029101315b2e3c8f37ca4"
     sha256 ventura:       "630d8d9aab4e7ff5bcc4eb2619b68c314e355d8353e9780a4b429827e4d1642b"
+    sha256 arm64_linux:   "e147fab15c1388ed0a7ba8c067663417a2e779dba1c4747a130ecd3989a4bf7b"
     sha256 x86_64_linux:  "8663b8c6c736ad807b39f45681cd3295ed9cdf1ff8ed58a3301da2e16eefd68b"
   end
 

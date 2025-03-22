@@ -14,6 +14,7 @@ class Demumble < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "82fd0c99b4a2fc69cfb3992bbd6d79d18db9426050f9a78d3fdda12e81ae0982"
     sha256 cellar: :any_skip_relocation, ventura:        "3ba5801427e3a2ac99c397cb763935a7634eb7570e160d6b2f6024df4242a5d0"
     sha256 cellar: :any_skip_relocation, monterey:       "681cdce237bff42a2aa28ba656a68a7d3be054238f835851d065527226b44d06"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "12aa9a00e75ae42f67f02ecc5be3492d5bf8e232052e8a69f16f870d8210a5b3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e10f9d48f1ae69c4f432c8d1af2a69617a607d8f305cdf277062c1f764bafea3"
   end
 

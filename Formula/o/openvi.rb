@@ -12,6 +12,7 @@ class Openvi < Formula
     sha256 cellar: :any,                 arm64_ventura: "92a0cdacbf81700bab889708621afe2a1c1b3ff4612f824c158082e7870fe49d"
     sha256 cellar: :any,                 sonoma:        "de6b931ab2119f6079236b062065a183b403512bc38cf3962b374251fd8d528a"
     sha256 cellar: :any,                 ventura:       "24c93899248d3649b6662660bcb6b0fcd5e61c837a9d1b5f4f2265f7bf2b0101"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7648967f4bf7c13806434e72f519cc41d7a36470e7d9fcfaff2712557ca1698c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b7b1c4a7d6ca50ec388ed1355d4d83fbd175c73bb1947cb2d97c036db007ba53"
   end
 

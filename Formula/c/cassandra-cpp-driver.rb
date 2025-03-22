@@ -19,6 +19,7 @@ class CassandraCppDriver < Formula
     sha256 cellar: :any,                 sonoma:         "b02aef7c39651dd641588be99ffbd45d1febf4bd79acf506c26934a1582fe387"
     sha256 cellar: :any,                 ventura:        "4febd908b491a13787addbec6dad2dc98182f0d45cead041f8a493f0938f565c"
     sha256 cellar: :any,                 monterey:       "dc2ad2c4d0153746a2ca9f50525d95e1b45c25a4c3a4b19c0525b6522f261f98"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "46a41b8a44c7b3ee0d5b84992a3ee52fc8c01edafbe1e875fcfcf9cce64b98ed"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "566d29b795409300c8444c185f335a91df5f05bfde6dd303d12154bd83b6ec6b"
   end
 

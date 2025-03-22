@@ -29,6 +29,7 @@ class Grok < Formula
     sha256 cellar: :any,                 sonoma:         "ecf20a15227d672dbe7cb9756c95e24294715b80361bcda919c47f60edccc524"
     sha256 cellar: :any,                 ventura:        "bc44900cc8642a13759e53187cbdb03495dbb951ece0ab2932127b3f7a08a02d"
     sha256 cellar: :any,                 monterey:       "0e804b8990bd781e846ae402050cbe3119b45f224b43639db710c178eb6d24d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "279f0ea66a716d0781273e5c3f89198c7a652f548eb074a99768a11597241bc9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b35c01acc0d3b0640c42c3b003e03bbedccc91bdd0d69294dbbe4ae71e29841"
   end
 

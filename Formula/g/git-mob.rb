@@ -11,6 +11,7 @@ class GitMob < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "01a58f261435d930f61c7445d7913c56dda3681608edbb59043b4a0f47ab1e94"
     sha256 cellar: :any_skip_relocation, sonoma:        "65c238da45f6d94c3352c1cc37bdcb924330a56dfc451c115c66c558d9979baa"
     sha256 cellar: :any_skip_relocation, ventura:       "65c238da45f6d94c3352c1cc37bdcb924330a56dfc451c115c66c558d9979baa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0df457ddeb052da0e55dcd3afcb544f11186cfd383c4addf7985292a87ce051c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "01a58f261435d930f61c7445d7913c56dda3681608edbb59043b4a0f47ab1e94"
   end
 

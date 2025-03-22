@@ -11,6 +11,7 @@ class Silicon < Formula
     sha256 cellar: :any,                 arm64_ventura: "8e64e4602354dff22bd4b5a7ca430842491c3b18ada1c63fc7f5cbb2ed9da945"
     sha256 cellar: :any,                 sonoma:        "6dddd3c3a90fcbf06dfade35bc46e276bbe6027d74326b8315fe9307a0d98146"
     sha256 cellar: :any,                 ventura:       "7fb5ed4ce9e2e6ed6ed44ad1e115090161852f129cb444a352547aca3c7b4002"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ace34668e40622982946b0611cb2abceae9f9c2bcf5168c1a33bb338793d2176"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "afe03c08e0975b4d4b1a90fdbfdf9c82767bd7b85becc71e72b4e63ed59b3074"
   end
 

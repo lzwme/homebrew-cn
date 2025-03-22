@@ -11,6 +11,7 @@ class Dipc < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "de128a4b41bfbed37c27968b07a8561d280a0f389d5a6a3326df09d7bb1e120c"
     sha256 cellar: :any_skip_relocation, sonoma:        "a9a718e1a4ba5745ad5c43d5122c0b73c11c34b02f395f7a0126cd5d591a260d"
     sha256 cellar: :any_skip_relocation, ventura:       "307edf5ce6bbe7000e6e17d26e771558b9a7b6d330f0111cd2ce9b1ea2d09f81"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9d4c00739e898767683f201b27d5b753bbb374daf96909b02dddf7027e5a0f8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "13a6a7cd17b79209983f4c8a09bfd44218117d35f86e159c5f847fefae4eb0be"
   end
 

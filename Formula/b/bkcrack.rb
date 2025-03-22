@@ -12,6 +12,7 @@ class Bkcrack < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "555519835883a84e9db5ee8b3df8129a14c350fadc9e702aa7b5d468e2858747"
     sha256 cellar: :any_skip_relocation, sonoma:        "6e34eec5c871650ccc49dbd2ef379247110072a02792480c177c1960a1de8250"
     sha256 cellar: :any_skip_relocation, ventura:       "83907162b233475143ce2438896568a3ea217ffe51144657665324806eabcbe2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "30be411154c4b6f3768156272c3c9df5873d95fe83fce31467a6ef5b3a3dd24e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbbc5a49024a5f69aacff16c41914e828999ab73cda787682dde3443a504dbba"
   end
 

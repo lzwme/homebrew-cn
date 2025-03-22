@@ -13,6 +13,7 @@ class Llm < Formula
     sha256 cellar: :any,                 arm64_ventura: "564725bac1368ea8e330f0ce1b7de4c8308303a1a2dc6c62aa60909ae84afbe8"
     sha256 cellar: :any,                 sonoma:        "fcdcdb9f57daf54703dacf92bb7fe826ae9936b0899995e25eaf37984986fceb"
     sha256 cellar: :any,                 ventura:       "5d202b91eef2c6eb8b959f85ebf294245c6949130f700ad6c8d5ebdf3e329fbe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "27175473d661bfaf95676aff898b49bb70f13b2c98d985c078a13dc9ee940d71"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "92fa512e4b66d4dce6a04c48d157dbe07459cf7cca6b811fd9433ea162448deb"
   end
 

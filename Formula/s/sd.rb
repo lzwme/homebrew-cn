@@ -13,6 +13,7 @@ class Sd < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "f83ebe2505106e8c94c4b92d15c0ac3390dc637039043dbafad3e382fa8c61b0"
     sha256 cellar: :any_skip_relocation, ventura:        "0200b81c386198d39ed7b03e85c771e141d9604075d82aa4caed5d5a775486c8"
     sha256 cellar: :any_skip_relocation, monterey:       "a8fee9e7b0202a27d8dcc599ebd391637107134f139dbe88d6b22c880e63d8a1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d554d755178dcf4c8c77dc3ce4fe14e3467379df1a45881457124c5a248a9852"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c098bdfaff013f7a6b6b96a65b9cfef86926e1cd901b363e1bdb84734ee6e3f"
   end
 

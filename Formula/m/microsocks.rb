@@ -12,6 +12,7 @@ class Microsocks < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9db6e466fd62a65dec737bb317de8a2651abff75e6e15c3df07eb3380df5e6c8"
     sha256 cellar: :any_skip_relocation, sonoma:        "fd1e474defa7ff10d8effbaae96178ab7698e53c8ab365895b46f19e9aa450d1"
     sha256 cellar: :any_skip_relocation, ventura:       "c2daa6286809fc95087de6650afd34d977c0f717fc5b2fca4abce58ecebf9e80"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9d5c4ce96b7e33f52a23d435741c367c056a83ceb84efa8d38059dd6a4e252a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "da9b7567d172d896cbf1b8040de3801a26c25608259428a3d7b1a12b0bae6a4e"
   end
 

@@ -22,6 +22,7 @@ class Subversion < Formula
     sha256 arm64_ventura: "ea1a61b0c5c25d1053a1a41061a82d2611f28475f7278610a82699bb1919c190"
     sha256 sonoma:        "f1b2ec64059aacc68c3b618d4c871b92973e28a95e04a11792118a1eddb6a5a8"
     sha256 ventura:       "ab34501e3c630acbecd6499590dc28485df7be01fb0cdf6db638b7a78ba875b6"
+    sha256 arm64_linux:   "81afd3ff0e756f6959ce8dd5c5347f56a2becd2d6ff5e32cc5feb9355947beb3"
     sha256 x86_64_linux:  "c2f8294bce32e5125d71edb0d2b532334603eed92a6d9538685e4e3bd0b85662"
   end
 
@@ -243,7 +244,8 @@ class Subversion < Formula
     platform = if OS.mac?
       "darwin-thread-multi-2level"
     else
-      "#{Hardware::CPU.arch}-#{OS.kernel_name.downcase}-thread-multi"
+      arch = Hardware::CPU.arm? ? :aarch64 : Hardware::CPU.arch
+      "#{arch}-#{OS.kernel_name.downcase}-thread-multi"
     end
 
     perl = DevelopmentTools.locate("perl")

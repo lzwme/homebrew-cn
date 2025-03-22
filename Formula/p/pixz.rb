@@ -17,6 +17,7 @@ class Pixz < Formula
     sha256 cellar: :any,                 ventura:        "b76e0ef617047c5db1d634e87630904018c01d89468576c50fced29b08887f85"
     sha256 cellar: :any,                 monterey:       "e106250f6eee640ca6061f55ff2339539c2047325d878478bd7e5c5acf354d08"
     sha256 cellar: :any,                 big_sur:        "088fd95bfc5540586369b0adb35f6f37009b1f30d4b29de58342828202b8317e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "87cb676de2f355d9918910e4649f45f4a1b1b474cb91479bc21ad19c0bddf2c8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4a110294724b79c7a130b3705c91d25fa52e01f7cf6655d486a0901ada6d6b24"
   end
 

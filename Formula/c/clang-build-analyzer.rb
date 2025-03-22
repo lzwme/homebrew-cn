@@ -13,6 +13,7 @@ class ClangBuildAnalyzer < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1fd243d037fbb89eaf7fdb5283d6154c7b8f0140b4507c5384c8c2b318d3c710"
     sha256 cellar: :any_skip_relocation, sonoma:        "d4af487341370185ae6ebb035629646ffcfc5590961e8250eba3b93e82618ef6"
     sha256 cellar: :any_skip_relocation, ventura:       "408f71d00639f0865e7d41c01b54406c490e5ac27bbece37352ae90b1d443512"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "72c0d64de559f8b07488a1d052faf7790fa89194449e5a349a4acb6fa120c919"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dcdefa484105d4b981757deb4ce19d98c2c5fb8eda65ba1ccbb332958188e064"
   end
 

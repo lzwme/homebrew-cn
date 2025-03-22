@@ -1,17 +1,17 @@
 class Xclogparser < Formula
   desc "Tool to parse the SLF serialization format used by Xcode"
   homepage "https:github.comMobileNativeFoundationXCLogParser"
-  url "https:github.comMobileNativeFoundationXCLogParserarchiverefstagsv0.2.40.tar.gz"
-  sha256 "b8bd40342ab3918c00ccc174e929a05de2a3cd196dff9ae3ef3dc8a21e0413b7"
+  url "https:github.comMobileNativeFoundationXCLogParserarchiverefstagsv0.2.41.tar.gz"
+  sha256 "03e0c257f202b50620b340f460504dfe3d5f6dfc725723618bf6ff98b167d9da"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "edfc8bee21f0a9b8d5128b1c63cf6947f2b6dd94f5028d7055487685f616a130"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "05b37c69dd5b69fdc9e7af5257c3f75a633ef474c023f76452914b96544a858c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4f17d868764764e163c07ff3603cc172aa805cfb2484da9313544ee46d050fed"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8583a877ef3ba6056c3d9010578c32a4c403887ee46f2dddc245d939b4d0e7ea"
-    sha256 cellar: :any_skip_relocation, ventura:       "619ab4c7ceeeb6260ffc8c89cb336f8e4f45066724506f76cd72a4ecba2eb4f5"
-    sha256                               x86_64_linux:  "c724f328b743f2d466efb32a3ceae6d5d99d497b86b218028b2f751d679e3ae1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0506dd7d0fd34cf648007ebaa19c22ee4a7950d621d0a81ecc0de1c4ab72e36f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f12a935ef504acb540d3e894cb29f4178b78e78cab47992801cc934edb22f82a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "325dca4b969addb194bc8be42bdfdda4b61cc6549d186f1372cd7e781e03db96"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3ecb9ea804d75559570439b988c2f75310052ac31362d5c39e0e58f66ed0b177"
+    sha256 cellar: :any_skip_relocation, ventura:       "ce099c27e0ee07214729ee9578472919bafc72056c80e5560293715fb45701ef"
+    sha256                               x86_64_linux:  "3a456db1fd20985ed03089f28e6256f7c0b4441cf70ad4d4c87f12cf021cc7db"
   end
 
   depends_on xcode: "13.0"
@@ -26,8 +26,8 @@ class Xclogparser < Formula
 
   # version patch, upstream pr ref, https:github.comMobileNativeFoundationXCLogParserpull223
   patch do
-    url "https:github.comMobileNativeFoundationXCLogParsercommit430107e1e6ec9d54ddaa301d64596c7311f7c966.patch?full_index=1"
-    sha256 "5a4613af2ead387887e508032673d4fbb9afbf66fd919e9b16cf42b5b453218d"
+    url "https:github.comMobileNativeFoundationXCLogParsercommit78b330a67b4e3c916f5ad0c68e61ba4bb163cc2a.patch?full_index=1"
+    sha256 "61269c6a851c7880d88dbdd76dd41dc02505521015c415ea35b99ceea2791837"
   end
 
   def install

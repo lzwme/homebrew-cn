@@ -22,6 +22,7 @@ class Bat < Formula
     sha256 cellar: :any,                 arm64_ventura: "a058d53d4156ae1ea72b9d153533f253b57fcbd273d704e7f9f867c0e6b05562"
     sha256 cellar: :any,                 sonoma:        "c9dc4cc4d679e32223eec006c4b52c46fcee17e67fdb762dd494f839ba8a199e"
     sha256 cellar: :any,                 ventura:       "0ed6d0e85d9af4020f4eb0f41efc2e8f1e7ca5d8deb2bfe82cb8d4a24591cdca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0a32aac15c2338597b6faf190ea1ffa7e3f77a85470e9612c3da9cb9b85b7d0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "68f6c503b8895e4390935142c771030aca2d70b7fb3fc72449df664e05af1680"
   end
 

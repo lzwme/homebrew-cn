@@ -11,6 +11,7 @@ class TmuxSessionizer < Formula
     sha256 cellar: :any,                 arm64_ventura: "09d3a2e2a754b32137f1dbf0a329b3d49491806a31b8b031217a48444e7b9773"
     sha256 cellar: :any,                 sonoma:        "b3050eda58cd73739f53d11af0f6111fa1f5957757c7c5fe0cfa328788e9f1f5"
     sha256 cellar: :any,                 ventura:       "a5f2144f6d7464b5f8283dc94eef025a79a9c8eeb195efc12712a18ce80c3ce1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4f1c67d572a5c83597dacf9f0a67e2ab8bd6c24298c024739c8a13041ed0412f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a588098f0d380b6fd1ca53a697760e9d4d56a9d828bcd1e7a21041d488c18ff3"
   end
 

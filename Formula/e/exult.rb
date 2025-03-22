@@ -17,6 +17,7 @@ class Exult < Formula
     sha256                               arm64_ventura: "49fae5e5ddd4f403e1b14f828c27d9de5c8843a14e80da07fbac726092d6871e"
     sha256                               sonoma:        "f028e367037f153473ebb5c7745a8e67370b462dda94f58b73fcfd4056d02f79"
     sha256                               ventura:       "ab2a9bc56740b16999d06d7e033badff5d590fff177ef39d89192ccb1f48502d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d3980038af7e3685759a3b66816117cc35dc2fe58439ebd0d34698d1f6914fd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c54f945e4a0822fb82dac2bb910fe8c878ccdb25c111bf6dbb2b040388938b3"
   end
 

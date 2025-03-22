@@ -18,6 +18,7 @@ class SdlGfx < Formula
     sha256 cellar: :any,                 sonoma:         "a474c0441ce725279640921c2fe1f7fce7dbdba78798b83b5e6d1088f257a0b8"
     sha256 cellar: :any,                 ventura:        "3a33a66abb0aab1556d4ad0aaea1dd87e51f5370a3c160cf571f960035139a89"
     sha256 cellar: :any,                 monterey:       "248ed5e56d43d6d8a72bb814f5cab225df686331af62b471f048dd43116a43b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1fbeee1c1d7079897509eca368e50b98e1069231605033f775fed43199a99da7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e0d9c2a0a9a19755c096b6e3718be733b85336f11aee29d6d7ce6ee04305cf42"
   end
 

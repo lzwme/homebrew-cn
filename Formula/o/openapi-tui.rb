@@ -12,6 +12,7 @@ class OpenapiTui < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "63b3e891441decfa79e4b67e540c621bd5612ffba84afa88f39331a51288a571"
     sha256 cellar: :any_skip_relocation, sonoma:        "d97601e0e2591e9f91575a45b4aafd1df30bb1a8e70c45c33a0bba5dfc991c66"
     sha256 cellar: :any_skip_relocation, ventura:       "4b3b7fbf36c415d947e3036563cf82f868a041599cb4b9a1f527df18f21a6fee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef65bdde2ae8c1e3d8ff7732650b2e7191e3521976ceec10438a1e5151f7601c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1dcf51adfd672b44a54ee82e3e9ba21a8f0021252e50ac40eba70a7ce4e8d5c"
   end
 

@@ -11,6 +11,7 @@ class EslintD < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f71f81814a0fc35b5b9dc63e435dadc521a5d7fe3c387a9a40327c3d90985a05"
     sha256 cellar: :any_skip_relocation, sonoma:        "bf7a935543ad7d69ad4e8c3e01130765c8c7e4319e749dcbc1fbab0a2d9d8d09"
     sha256 cellar: :any_skip_relocation, ventura:       "bf7a935543ad7d69ad4e8c3e01130765c8c7e4319e749dcbc1fbab0a2d9d8d09"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "edaa4beba7055a0f3404692beea62ea4eceb5b1d325470a824eed32f40420187"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f71f81814a0fc35b5b9dc63e435dadc521a5d7fe3c387a9a40327c3d90985a05"
   end
 

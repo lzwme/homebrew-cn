@@ -18,6 +18,7 @@ class Ndenv < Formula
     sha256 cellar: :any_skip_relocation, big_sur:        "11134806587add67781fb03d7be2fd2322029e77e4b744d927fba9afbe6e1b82"
     sha256 cellar: :any_skip_relocation, catalina:       "11134806587add67781fb03d7be2fd2322029e77e4b744d927fba9afbe6e1b82"
     sha256 cellar: :any_skip_relocation, mojave:         "11134806587add67781fb03d7be2fd2322029e77e4b744d927fba9afbe6e1b82"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "c5c259e192f7344bd7e565e602495bbdbba873162f5cd149109148730f189e85"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "50382fe45272fa7f72497bb0f40a02fd4bf9e293eca303777b9e154021f7c501"
   end
 

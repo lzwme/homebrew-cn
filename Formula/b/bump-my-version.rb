@@ -14,6 +14,7 @@ class BumpMyVersion < Formula
     sha256 cellar: :any,                 arm64_ventura: "6687a9a7645fa5f12a54509ed19b9ab9f3c39300718963f05cd3b755a9d3904b"
     sha256 cellar: :any,                 sonoma:        "4ea22746cc80bcf0949c06003ee3ae74b35d2e9f6b05edec641fd0ce61d31185"
     sha256 cellar: :any,                 ventura:       "da3f02168ad8746786ab53e31cee48e73c9661966fb085a0629a45c817e365aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3625705c121163a6d1d58564c16b9bfd71ad1cad204726250fc569a76a31e16"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c6323c312d0e3b79bc0cc5fd94d02985215c5380b29e561fc38d3416cdddcc5"
   end
 

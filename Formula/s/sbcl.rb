@@ -16,6 +16,7 @@ class Sbcl < Formula
     sha256 cellar: :any,                 arm64_ventura: "be6f8aa520614c8a869446ce5cebb9637c0a755ac77eb1b565865c7f90442d5c"
     sha256 cellar: :any,                 sonoma:        "b2a1aa90ff0b97154f680bbec6fc3e473f27aa80487a2d62c9c529668fffda8a"
     sha256 cellar: :any,                 ventura:       "8124e989e0f02f477f801fd0b1b7831769f574e304149de7acc5c760287b8c19"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a921ebcdfa877d412fe47aedaad326f3456ef74422ee0c06d9932dae579a374"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "56a082bcdeb11622190a0d13bbf1c5f7beac09ace5b78908bfe2f14f56efdacf"
   end
 

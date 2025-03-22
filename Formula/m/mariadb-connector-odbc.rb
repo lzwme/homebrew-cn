@@ -23,6 +23,7 @@ class MariadbConnectorOdbc < Formula
     sha256 cellar: :any,                 arm64_ventura: "afef9afb946a690d32cdccee6c780f36e24b539c7be0c7a38033f84440f58fa8"
     sha256 cellar: :any,                 sonoma:        "30c5cbc64f95f1329de018a9b631260e9dc8b3947d6a6e6c3cc0ad7bcc040b9a"
     sha256 cellar: :any,                 ventura:       "2b851dac6b57ca7d360abf3acd14562b46c9b8659fe8b361a0fef71d206d79b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b1a31a76c901d52ed43fc7a1be602a63bdd904fd0740d90de24a5d5d525d55a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb7ceb001faf0bb863b136fac7da261cd92b28b135d1d880252a58859be587cc"
   end
 

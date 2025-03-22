@@ -15,6 +15,7 @@ class Dooit < Formula
     sha256 cellar: :any,                 arm64_ventura: "0e8872e9a7b67579b3693d9a5874084801991ab019c17b1b2683315c7052bd2e"
     sha256 cellar: :any,                 sonoma:        "3417fc5d17fa21ad45adaacd71eaf9c370352d41a81f9cc2bc77023524629421"
     sha256 cellar: :any,                 ventura:       "5aab34101df08674d9b15a59fe0896f8f43d0c895ffb1a41980c62368ec57e9d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "13ec57f38d60cea7e37c327ded456256856a3ab4987d6a4cba68f4af78dd4bae"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d74e67a6601a1be24dae34f987a97d076c551d9f64827451f23beef5d42401e2"
   end
 

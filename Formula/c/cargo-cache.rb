@@ -12,6 +12,7 @@ class CargoCache < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "00a91483c1c50bb2e583c1e5ab9a41898b6b8b435b2d3ac61bfc736c49797871"
     sha256 cellar: :any_skip_relocation, sonoma:        "54dcccbf025bbd1cf5b018742d3b14c919e47c3777a16934b32e49b02c7dac0b"
     sha256 cellar: :any_skip_relocation, ventura:       "859498190a594da4d6f10908b807b524638bf398f9b029da99500da6efe6429f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ac3792893742e3bceaeaaa7aa28e36ff5de0e33a8a7e7abaa58d9fcf26230b9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "13787d990ce59471ceafc5846c2e2262453a91f5c2c121bad2a903af3d523796"
   end
 

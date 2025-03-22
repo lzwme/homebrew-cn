@@ -12,6 +12,7 @@ class Kubetui < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "400f90ff7dca1f3fc721dfa59420ec7fd83a9a1432b337c8e679ac50a9c0a1ef"
     sha256 cellar: :any_skip_relocation, sonoma:        "5ea9248be3033a296a8506a99c8cbb4dcedc02df9febe402e81136cca9f25667"
     sha256 cellar: :any_skip_relocation, ventura:       "522173b09d0a1c172918b86ef8bb79d9b83450cf08e0deee6d192964c62fc6cf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4a69cf8571d686b924977c7c73fbda3c3f2e8c53aa7305ceab274cc711431a4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "80bd750d17f16df9b658db9e6a5e9c28aa2813d7dab9d409233e53cbca12f4b3"
   end
 

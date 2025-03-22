@@ -11,6 +11,7 @@ class Atuin < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b1e4f797216accdd26c692f7a98bf47cfec97c368bb03ade47b8235a223162ae"
     sha256 cellar: :any_skip_relocation, sonoma:        "9850fd5d210d698b3ced0c3fd51ef05ba9b196a738e0c07f02e738bcc193e39d"
     sha256 cellar: :any_skip_relocation, ventura:       "a6c6aff63af672c1a09f1bfd05870a11064d2f920d369fce61b94e2b1bfd38bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dea16ce8938bc34f41f5c8a61344211db067474b503fbfea6263f17cbf710538"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "58b5d8e9f750dec386e4ceaf09e58e7e071d4e68312f82b0be74b1ae3894e710"
   end
 

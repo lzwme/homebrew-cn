@@ -18,6 +18,7 @@ class Exempi < Formula
     sha256 cellar: :any,                 sonoma:         "d4a92c827d8e702c9de91c44749c4448b611fea06b2a0cb444b505366e80f3f7"
     sha256 cellar: :any,                 ventura:        "ca6ef07fd6862b9148a8cabe608c0937f9da287638eec78d7402b29ba76c7fe2"
     sha256 cellar: :any,                 monterey:       "9595f29483fb85b894f482fd86221d791a02878bf5395638b63d90313abbf890"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f1f27c24cf771b5c4ff708f2db8b6171dc61ce52f5057f93133f684b76fded1a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "30ae54f527539c8f605086923bb33cb44560cb84bca42c06ec052d74a894f14c"
   end
 

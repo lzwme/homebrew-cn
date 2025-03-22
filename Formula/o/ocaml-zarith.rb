@@ -12,6 +12,7 @@ class OcamlZarith < Formula
     sha256 cellar: :any,                 arm64_ventura: "c19075b8f0aa1e49811a07157d742fb7efd44cacc40bcf4f6a333b41c90b3414"
     sha256 cellar: :any,                 sonoma:        "3786c671d7fffb86a26e445c1da3f7144f612baf1830e53bbb45941df0b693c4"
     sha256 cellar: :any,                 ventura:       "1ca4591569e5651a8f6dcee7e567eefa1801bda9a30e1494ef1c059aa1da7f17"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4757ac0829b2b289ca4400f4cf7a881a80d2e7a1d8f8bd8aef0eddab7d54b543"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3ab7fd9e6eb25af8bf079f8b35985320694dbba6f44c4764ba123f129d9749b"
   end
 

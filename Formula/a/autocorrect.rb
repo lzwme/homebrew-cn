@@ -12,6 +12,7 @@ class Autocorrect < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b0426632d0442fe3aa6fbc775289ee8f92d68a44d1f6c9a16f595753ffa3e278"
     sha256 cellar: :any_skip_relocation, sonoma:        "74a7bd37368e5ea39b548529129d514adac1a2b9170085408bcdaa3d92cff15d"
     sha256 cellar: :any_skip_relocation, ventura:       "b4a96e184fa36bc2a913fda28fe72b5dd8d0969dccf84996887e9660137495f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98d1fcc9792f14f57d578abc19fb8290d072cee2fb05c5fd6d14cd0da4399bc2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e15d33199ae4a07cdf2abcb02179849f91418ed1503118837ecd0974b3e26100"
   end
 

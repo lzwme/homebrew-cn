@@ -16,6 +16,7 @@ class Diffstat < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ae91655c0d795f880f9c9c49dcfbedb5ee1fee98b5f90373875eb4e9b3768fda"
     sha256 cellar: :any_skip_relocation, sonoma:        "cfde6a270ac292e75e80e2d699b14218afe2a3badd8e81d0ec69fd049372843f"
     sha256 cellar: :any_skip_relocation, ventura:       "8350b4b38eac630b7013450248e2e86da255cd4f81bd4952066aaec9097a18b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d909a5e36f0daa1e2062fa9e612d1d2e99359362f79f0bb800e2513efd6869e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4cb9055a8446d72ceafba4ae145efcba5bffd11d5c17f36cad97a76a1782d65"
   end
 

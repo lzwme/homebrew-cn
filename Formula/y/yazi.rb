@@ -20,6 +20,7 @@ class Yazi < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "33b435ac5399ceaea9b037b5f34defec8994a65aaac74fbe1df606878f24410a"
     sha256 cellar: :any_skip_relocation, sonoma:        "bf86143b7021f7f767572beb7f3a94923fdad4caab9aa9b0e7e6d96c89992666"
     sha256 cellar: :any_skip_relocation, ventura:       "6cc3ed964ad7c6f5fb0bf28c5082d5f917ef42c565b5611070a21e9a4a605c7f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "46e2ced30051fe17dad93234c1fdb8f9a87d5feee53c4f5efc2a8fbd76aae163"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f1c53b2c95d2fbfb1d78ed707d7664c377e3a8ac6418a0d7db4d7924e98d01e"
   end
 

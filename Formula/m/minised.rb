@@ -21,6 +21,7 @@ class Minised < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "7e2091cafe98c90c2a10b7b009b8928845fff475f5fc085be54160b029fd3cb4"
     sha256 cellar: :any_skip_relocation, big_sur:        "c303cd44d317dbdb8e32fb3ace5200d60f707176fc11bf32b57015bd1ac99a57"
     sha256 cellar: :any_skip_relocation, catalina:       "0e5a711b146eceb3feea676e6816998eb82442f1632831bb95b97fa09566bf75"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ab2195d826ed450db77cd8e44601dc47bbb4027d0e9777b7ab075b6b9d1513c0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1c46de1901db191b4cff269feb8d236fdc53ae72a83609699e4ed1a2afc6f789"
   end
 

@@ -17,6 +17,7 @@ class Fastlane < Formula
     sha256 cellar: :any,                 arm64_ventura: "022f6f852ae145d43dd395c1030346e377bb0ea91e299b33b8211fc883a3a2d3"
     sha256 cellar: :any,                 sonoma:        "5d3b2fefdee050924289b54cb31d1e59afb9223661facf0f364acf2376deed54"
     sha256 cellar: :any,                 ventura:       "af2cd6c04cdd2672d236a5468951bf5082777b18e62a663dd88d7558934c2049"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9efd8453d8020ec06acd625b391c1139e4e00adb8546e1e2bbf066cd832ce1f3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "af4d08fd8e0666c73ef3ee1958bf2715cbe91af3a7042974f7137987c32418b5"
   end
 

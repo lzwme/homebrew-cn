@@ -11,6 +11,7 @@ class SentryNative < Formula
     sha256 cellar: :any,                 arm64_ventura: "c6897bb16e462bc1c5d0770ec4875005da06754f6572817d49e80c11346a6109"
     sha256 cellar: :any,                 sonoma:        "8182ade24b56eea64719f6ab9de9cb8b91bdd17a7fb364de55989b3a7a10036b"
     sha256 cellar: :any,                 ventura:       "30ed938fffae3a190db6edbef2684ceafe5b63f359f5160494c16d05bee8f7af"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5625d9bf081acafc00c7193c17be523e77d6bea9fd9bee08adf23440a184586"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddebd3b39ba098d60e532eff10611186a220653ac17b89a007241225d653c5ba"
   end
 

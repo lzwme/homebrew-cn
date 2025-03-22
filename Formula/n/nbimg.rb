@@ -20,6 +20,7 @@ class Nbimg < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "20d4ae1588773f9ccd4ff2181def08297ea1119ca70f39392ef11648cb72270f"
     sha256 cellar: :any_skip_relocation, sierra:         "75fd1505a68d1c499ddcf73e912947910659d9bd127c208cafeb3e8899664fbd"
     sha256 cellar: :any_skip_relocation, el_capitan:     "402904e3588fe5a8ae00d7131fe29821880f31a8ec19fb89e70a79f76e067452"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "c337e9b4f70cc61fda6ad272b9760f456e3a32c36d7d9842e2c3bc44b06134eb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4c91a552e56c4f2e78422c8a4721d7ffbb54bb0bdb326e983f9989c5c9500ce"
   end
 

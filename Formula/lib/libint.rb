@@ -13,6 +13,7 @@ class Libint < Formula
     sha256 cellar: :any,                 sonoma:         "3e2d4930bd84325000adab1448506c1f563f76b871dec92799b131bbd57a8b1e"
     sha256 cellar: :any,                 ventura:        "c534506c058ec810432b988c53503c794e4d3deebcb6e5f08fb1569ccdb92bdf"
     sha256 cellar: :any,                 monterey:       "90bc5d348cfd819e75af619d002d353399f9389a65f06955c2085fa7874766ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "caa259d5f93863c2e11e6cc3a0890de3f94065fdbd9852cd68a4d67f3a4d188c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2f489f45da4c7b33eb0fb5f0827045ae9d14f2ede7011678d70bf8128d75bcd"
   end
 

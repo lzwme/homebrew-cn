@@ -12,6 +12,7 @@ class Iniparser < Formula
     sha256 cellar: :any,                 arm64_ventura: "317b964fca741f0cc3a16e607c4d992ea0a4dfd60a68868a05aba5ed84bc17fe"
     sha256 cellar: :any,                 sonoma:        "754b6ca8d166e289fa6a6510a576c6dbea76f0136c3fe82a3423002892be8aa0"
     sha256 cellar: :any,                 ventura:       "220c994a2c80e0b4ad4cfb281537500c5acb6172f1ab28db090341c9a2ad3dd7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "89ed8749f1748dd06b6e4025b5b5c4c7b811b53e580e218d4089a61bba4d2082"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd4194648453a37551214cebaac99d63a204422271f2a298ed47f8e69a0d50a2"
   end
 

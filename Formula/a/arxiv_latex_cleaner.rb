@@ -15,6 +15,7 @@ class ArxivLatexCleaner < Formula
     sha256 cellar: :any,                 arm64_ventura: "48cbd0caca0dc51f270ba3a24c4b210af0b4f357f4c3e55a4d94d0cf1938ff1d"
     sha256 cellar: :any,                 sonoma:        "68c37e6f15ae97a4d6f6b73b0909f5125e8e9008ecf232b64ed361f3cecc57fd"
     sha256 cellar: :any,                 ventura:       "cf9077ef07516d834c831390842e96d99557782f2b325882ef49f47047588668"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "19f637752ba528e9997985db1838ea731916f459f907ee6b55ca031dbde41a5a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4640b0c29323b9ae3aa92fc30eb65137ca20d51ccc578f51d51b1f52cf7da29"
   end
 

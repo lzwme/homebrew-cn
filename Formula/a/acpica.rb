@@ -17,6 +17,7 @@ class Acpica < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b74ad3dfc593213cd4d0bd4e354878ce0a2ce96f0676c70f7b53cd5becc6e503"
     sha256 cellar: :any_skip_relocation, sonoma:        "61fc69ca8a10856f5bf4f8e0313183087b877e9ef61bbea4b29852ac0cf3c6ad"
     sha256 cellar: :any_skip_relocation, ventura:       "f22d9bc0d7f378aaea1e21d25e9a4e19a2930c0a19fbbb0cc3ef9adafdca5f17"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4cec28fd01bafdc745c5e0800998ef61908e5059dc3e8e08470208ccfe8bd35b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "58ad276be00d30ee4a90f4cb5cd76c1bb28b03d58023fdb7cbf1a10919685731"
   end
 

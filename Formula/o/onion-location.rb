@@ -15,6 +15,7 @@ class OnionLocation < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1ea093e13440726264ce4bd5efdf417960122feaa76a42b4609fdd2c3304d809"
     sha256 cellar: :any_skip_relocation, sonoma:        "f2afd83f62b2d82a043c85d6414616e302f98d47066d9bef7a5a02cd318e2254"
     sha256 cellar: :any_skip_relocation, ventura:       "0a15e033f4f7a39d15922df96da2dbbc45827f5aebdf2989f402819311b011f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7598772dd5bf3dc703622b0000e20d0f79e937e4f2865fc16e003c184057fde"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c3e568ec6369393e43bf7123fa7ef1e8fad4cfdd7a98b42f854f17fd8f07bca"
   end
 

@@ -20,6 +20,7 @@ class Clean < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "d2f22ecaf65e902d6e0f878ec9585dd915f05d58121e95cfb5cff53d7905fad8"
     sha256 cellar: :any_skip_relocation, sierra:         "925b26f91800733aeda229bdaee74ecf4a70e1c94cb4e1b33ac3fc4f3948186d"
     sha256 cellar: :any_skip_relocation, el_capitan:     "7a433c07eb3c8a3846d352ddf27a6ac32fdc6528b6b2e6212f78318ff0f04a6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "266d2fa27082248fc098a2be833381912903c104ee4e95f2461b8d75736dfc63"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "68f82459bafc17933f5010fe2f35355f8d967809ae62d1ac91e13409f7baec88"
   end
 

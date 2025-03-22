@@ -17,6 +17,7 @@ class WhisperCpp < Formula
     sha256 cellar: :any,                 arm64_ventura: "e5b4770c656277746cc7e3278b0d9434a34ae1413796646121c62624407d626b"
     sha256 cellar: :any,                 sonoma:        "6878e4918ccdd1c48b68d471692ea18e5f2e33c0cafe81d5a72c2fd4d2491757"
     sha256 cellar: :any,                 ventura:       "ef9b087cc14b4667f382a00d964723c651a6b75fc54b6811a28bacf6c349ae12"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "862b6e90c356d7f8ca370e0d0de6a8cd3db8d79ce04ed13d467aa2c06f56c2d5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9eaf4be64f4147088aaf7ad53908dac2f8585dc7676b93c8914717896b416fc"
   end
 

@@ -18,6 +18,7 @@ class Yaf < Formula
     sha256 cellar: :any,                 arm64_ventura: "0bc3213396cc078555b6d6059effef5946d06eb87406a70961f47150a8cd0de7"
     sha256 cellar: :any,                 sonoma:        "1399ebb7bf5d482c87f119c588fa350c378d626c378ea1afa803aed0d51fd2ea"
     sha256 cellar: :any,                 ventura:       "47690d5e3d016b95501e23eb80b8bc18b79bbcf1ffd513fa367546d2b4a3a9ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a5540245bfd5678317f1b53f76530ec3c4830f149be6a8b0a47b05e95bd019a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0b09048f7e10ddaa4c419542f5ec672437103d257712a6ea6b43444670db950"
   end
 

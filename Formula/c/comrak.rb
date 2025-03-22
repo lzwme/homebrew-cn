@@ -12,6 +12,7 @@ class Comrak < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3de0e5fbae08f90e2fa0f2b2292ce181616ebfefe77648c51a5db1da7142d434"
     sha256 cellar: :any_skip_relocation, sonoma:        "48cbd4221b625462ca6958b788a5624996db9af8153b52cbc359b611a26020e8"
     sha256 cellar: :any_skip_relocation, ventura:       "8b054cb812585d2271d28c437dc98ddbe7d00e934ca6f2bfb3ef01ea2ff1eb7c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d6bd5757cb90cca03f42ed8391e7eb3a147c43cfc49d73eeab33f23a5cea053a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f8f9fffb3c14d60f6a87416bb1e199c2b98eb37f9c8be9cc6e7430625bdf77e"
   end
 

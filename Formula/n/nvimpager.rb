@@ -14,6 +14,7 @@ class Nvimpager < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "1e5fabfc49fc98011785dfcc6f26a87eaac964f2b4817efc8f1075ca2d8f9e26"
     sha256 cellar: :any_skip_relocation, ventura:        "a1e02ea48f0923ae29d88f732759b2d9b8d848db0edbbb3db779ea630aae6688"
     sha256 cellar: :any_skip_relocation, monterey:       "bdd6f62a23532d21a0350765d7074a9fadf91c94f91941fb4a953bd11165041d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "4814f2fa4abc9b5b3388de2a29d97ef491f487573c45295500fece9831fc12d4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e843773be2cca6cb16f7bcd029b6f83a8fcfb0b9578ca6f8bf009b43255c9f74"
   end
 

@@ -12,6 +12,7 @@ class Blades < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "862697809bf4f3d34508e1e825583959cefeba8ae081a41e877659087786dba6"
     sha256 cellar: :any_skip_relocation, sonoma:        "d18112bcddc915b81b66db803ffe3d0c221d618f0f1c27e7bdab6beb04b776a9"
     sha256 cellar: :any_skip_relocation, ventura:       "bd2f938978247d08a419276e60f361805b9bf24ffc64091bc21830887f184297"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5d77d91ea173c7fc7a50c2c6f8dafe1f5b93710f2d085e8f90579d0718c63530"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cdae37930e4d9629f7744b9e3fc74b64ddf5eb17d109165419b8f6a3089c00c"
   end
 

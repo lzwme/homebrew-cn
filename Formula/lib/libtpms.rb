@@ -11,6 +11,7 @@ class Libtpms < Formula
     sha256 cellar: :any,                 arm64_ventura: "2b7d2684a14c0303fc1b83a6222671cc71c7b1e3122128ee0e2f7ecb78f5192b"
     sha256 cellar: :any,                 sonoma:        "aa207e4c785c6c68b1d9262b5c1093c42fc291b65013ad863beb346a302d9a67"
     sha256 cellar: :any,                 ventura:       "38fb8b2db3308dc8d9ab4d63d49a00ce7516104a1f08d6ff7fff0c6d1f04ea24"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7777b9db275770b7a458765e3a3b28c1b82204e6a44831e519d1ddf2712ca3ad"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb295d9cfe3986180f5c5c4e320b2dc5fb368fa2f5ca68fa13696755ddac37dd"
   end
 

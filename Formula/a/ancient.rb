@@ -13,6 +13,7 @@ class Ancient < Formula
     sha256 cellar: :any,                 sonoma:         "63a480cf9de0421b71aa903cb413749468b3fb6d6d7298566512fae532218d17"
     sha256 cellar: :any,                 ventura:        "a449ffd0b1f136e18e93f8c9f7e12a41c06f8e3fc29096f8b17a356cff43fe64"
     sha256 cellar: :any,                 monterey:       "c4f2396ffc6013ba685be7a0193afac0a7fa5563471829bf97c5241ca9146cdd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7e45905a5086151609dbd4a69d503f98c5abbc11578f29bd83be8e53d6e4eef5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd132df16f6c1a05eb3eda0807ba65ec02deb30aa03d5b7ca39ee4172b725321"
   end
 

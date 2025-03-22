@@ -4,16 +4,16 @@ class Brpc < Formula
   url "https:dlcdn.apache.orgbrpc1.12.1apache-brpc-1.12.1-src.tar.gz"
   sha256 "6b315b33ae264e17e4f84bebbd4c3b7c313f5a64de7b398764c68a1dbb4a9e8e"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https:github.comapachebrpc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "01b7b624e32ab5abbe8dd7aca55c22a5033732b5379eac5c04087b600de372f5"
-    sha256 cellar: :any,                 arm64_sonoma:  "a8410a6437e519c6ff5f25522375603a18569d3438909478dc8a3c525c5935ba"
-    sha256 cellar: :any,                 arm64_ventura: "f9b1b76688f679da1eed4b5fe3ac4e5e86a62f8427391153d0914c4b495b1c1d"
-    sha256 cellar: :any,                 sonoma:        "e8f6647979e2f24fbb48f544e0860689a9c0fc0820f5babcf089db7e8685e3bb"
-    sha256 cellar: :any,                 ventura:       "2b8430f800339fdb0fad0f3da628241332a7d8046edc4e9062f4a32f7d6a5a3e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7c9317000db1d52c4c36a0e1bc91bac602bca630af7988f3a0931127ed667d8"
+    sha256 cellar: :any,                 arm64_sequoia: "c86f26c1c38a819ae9875ae8e9c985cc898461826bc6adca275b0cd2074cdaa2"
+    sha256 cellar: :any,                 arm64_sonoma:  "a6913c404c189bd9907f5cf38dfe0599bca55fcf3bf27f7493d383b13e28e166"
+    sha256 cellar: :any,                 arm64_ventura: "10938cab9c5c7dbc3b4ba444546ac0afc70ec2ddd0bf764c6a544a9cc8a51501"
+    sha256 cellar: :any,                 sonoma:        "933b746de19593b12e478e0b22de6fc99dc4ebb44b93720af8d2e033676b600b"
+    sha256 cellar: :any,                 ventura:       "8b4af33b95c69d36cdb59c377ee5fd9642133efc74b5bbe1c5a290f7c4593258"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1520d89eae11d459791a62b4e2ea0864523e3cc08bc349666bda81faf31cc025"
   end
 
   depends_on "cmake" => :build

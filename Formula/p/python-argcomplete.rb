@@ -13,6 +13,7 @@ class PythonArgcomplete < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f07fc88e9036cb1b5f5d1367b2d6e444a88205acccb0c04aef0191d9863c1cbf"
     sha256 cellar: :any_skip_relocation, sonoma:        "18bf1a1bc7c045fdd6daca3a143be3daf956f5c084c9681f6593a89b30f47165"
     sha256 cellar: :any_skip_relocation, ventura:       "18bf1a1bc7c045fdd6daca3a143be3daf956f5c084c9681f6593a89b30f47165"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9dc00776a43d63dceb2c600c5c6ffae949dec009a453d339e0f5ed1a294605d0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9dc00776a43d63dceb2c600c5c6ffae949dec009a453d339e0f5ed1a294605d0"
   end
 

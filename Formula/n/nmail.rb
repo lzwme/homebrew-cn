@@ -12,6 +12,7 @@ class Nmail < Formula
     sha256 cellar: :any,                 arm64_ventura: "a4274f3ffdae5d1f8aff7a4b542cac00efa2fe1479cb67009cd91870f62502d6"
     sha256 cellar: :any,                 sonoma:        "535dbd727f545294b59218ea0c66e16980051396abb0849efbc9230f0c5f3e06"
     sha256 cellar: :any,                 ventura:       "3a8402c8993958891d5545cdcbd76fa912e15594e314cfc0b1a9905c7afcfc86"
+    sha256                               arm64_linux:   "f8e95a4c8c0d05c6388abe2f5b840d2d7e5dd090423bd85d5658694694a14d78"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3906de4d0a70c7963ab071ab1632b688aaa83173796ad207816a9be20ac4b764"
   end
 

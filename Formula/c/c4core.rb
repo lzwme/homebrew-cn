@@ -11,6 +11,7 @@ class C4core < Formula
     sha256 cellar: :any,                 arm64_ventura: "da3f3b490903b89c121305fd112b372e2cff4cf32eae6d1e44c9fb64f10bbe8d"
     sha256 cellar: :any,                 sonoma:        "cfe600abd4d4d911e2416c8b07d51693db2432238e79d3efcd278b1b02c22028"
     sha256 cellar: :any,                 ventura:       "8c5b12b46d37916e0b5e5f11bc4b00260467a905ac490858c2d172410d0ac6a3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "31f8652eb1bedbb0df0d6b67eff80a93d42ebb88a1249f127c8b23828e226995"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "069cce0a054094573cdd0338332b80640a38fa412d4d4c0cf3b653297a24ebb9"
   end
 

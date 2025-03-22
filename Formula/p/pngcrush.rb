@@ -21,6 +21,7 @@ class Pngcrush < Formula
     sha256 cellar: :any,                 sonoma:         "1b0c5196ebfe0b7a78313a4ab95345d0309fcf0904322e7a4efa57f85ebe8270"
     sha256 cellar: :any,                 ventura:        "5db90e14f1775d85c6dbb33ab0d0c6d96232f4da05489b845f0f6d3c4ffa579c"
     sha256 cellar: :any,                 monterey:       "6d59cef2837c1e448fd0501291b94c363229b6af303f2bf2534e17d5e46cfa21"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b85fdd4432e188ce43213bcb8f023303cb8b3e196424c793af66f15ffe1457d6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a27f56827740191ffc0b61fc71746628d09270bf82d42bbbe009ebeae299f8a2"
   end
 

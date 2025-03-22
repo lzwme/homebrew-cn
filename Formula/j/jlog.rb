@@ -14,6 +14,7 @@ class Jlog < Formula
     sha256 cellar: :any,                 sonoma:         "61f8f9bd4bc83160c4680f9df02462d64c06a2125488b3f421e80753218bc786"
     sha256 cellar: :any,                 ventura:        "ed19d61911e281161bfd89926aa405a3b50b0519c5d0c9b9016685c862cc3255"
     sha256 cellar: :any,                 monterey:       "c856df10689f774ee8a7ee58c80edf754573b509c8769e477bbfc05735332def"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "3bad683d45631a54ba97c2191786efcd88bb8e7ad1bbf0e8e97b417607f5c61c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b59c62ae218826677a96203de736d341929e2f7490957eeb125d9b720e698ec"
   end
 

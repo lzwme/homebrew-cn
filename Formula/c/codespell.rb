@@ -13,6 +13,7 @@ class Codespell < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0b25d8acdbc85fd54a446dbc8c8b77d008bdb7e19d2fcc034c2bb6bb566cdd80"
     sha256 cellar: :any_skip_relocation, sonoma:        "8b4c26a1d31143074144646051489279e38203caa49c2f726e90489913ab9b15"
     sha256 cellar: :any_skip_relocation, ventura:       "8b4c26a1d31143074144646051489279e38203caa49c2f726e90489913ab9b15"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "67af66b8da78c901be3d2be7b8f29f8e082d5bec51194da12ddbeead6eff7f32"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b25d8acdbc85fd54a446dbc8c8b77d008bdb7e19d2fcc034c2bb6bb566cdd80"
   end
 

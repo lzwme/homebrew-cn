@@ -16,6 +16,7 @@ class Spiped < Formula
     sha256 cellar: :any,                 arm64_ventura: "7f546c81a7e7c012ad855cbc1a7055e3acf46fcd2aaf973b017201d163974295"
     sha256 cellar: :any,                 sonoma:        "aed8dbc299b2a6502228e4d63e75fc593a5c750a43461f0c12ee982ddd372ff5"
     sha256 cellar: :any,                 ventura:       "00e199c37e2d219b7972f2a11b2c8db2880e1a964bfa6e01b6dcd07c6aca1e97"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ddcc69a7fb7364a57af8c58452ccb1dacad53bbcd612b4279a3f77dda98bcb9d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "de32ad6acb5f5220209bfa0a42d34e32af122eb5b07c02833ca04d35b637dfb2"
   end
 

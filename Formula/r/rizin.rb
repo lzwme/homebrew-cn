@@ -13,6 +13,7 @@ class Rizin < Formula
     sha256 arm64_ventura: "d0b7c57ace5a8845a7a9cb1cea2bd722f96772376bba6a2ed9932ac6234a269b"
     sha256 sonoma:        "9b0e91753ad69d002f079108bad3fc7182041d5cc540c88ee79595e2809b724a"
     sha256 ventura:       "022364accc372f60791c70e778d7a93f4ce065dc44a17767f0789b98a5680e3b"
+    sha256 arm64_linux:   "c93c59a13793f75540fd4de561e9c1240a41ff11f7128b4aaf6169bc391adbe9"
     sha256 x86_64_linux:  "4f10fb6b1caced9fc229536a711097b10c143f9ff3b946cb82681d419bcdc5c5"
   end
 

@@ -20,6 +20,7 @@ class Cppcms < Formula
     sha256 cellar: :any,                 arm64_ventura: "fd4431e3606205326aec8f484f3244201795ac5d23343489bcbebcee30dab312"
     sha256 cellar: :any,                 sonoma:        "fa701ccf8fdb79cdef8b0a690ef5f77f167d63568349aefaca9ede863a3b16f1"
     sha256 cellar: :any,                 ventura:       "adc2a352809a202ca39cfa42ca5674512311d7e58a13bb1a4db8e844bfb7b310"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e32e87d6fd92a34b980782479476ec19d5c7e153cc81f5c002d0ce578f9ac35"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1882da73e8db41b00a7fa01095d3d59314814cbaeb351e8cb7ca6611d44c02c2"
   end
 

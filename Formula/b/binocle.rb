@@ -12,6 +12,7 @@ class Binocle < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "6890ababd81453d26246f912140a9018174c7819a9c2b597a9663c9cdfb6d255"
     sha256 cellar: :any_skip_relocation, sonoma:        "d55ffda75e2ed88f3230d2769438cc207fdb099a96abb635d9748415fa275396"
     sha256 cellar: :any_skip_relocation, ventura:       "a9ee501f778c26b5f3f27c9aefbc63d2d82e019dd3d81f0339f63060a9947d4c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a19bfb4cba506bee5c78b864bb52473611d58d1356e51371573c2235180c839"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b316af1ebdf59111913cbb1bbe8836075316c7ebff977ebe12467815dfcf1ac"
   end
 

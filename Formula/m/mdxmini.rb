@@ -16,6 +16,7 @@ class Mdxmini < Formula
     sha256 cellar: :any,                 monterey:       "5e384c41501dd14903efefe829b14beb5db30d76bea9f0265aa957ed602fd400"
     sha256 cellar: :any,                 big_sur:        "4516c7fdc7b008d5d1c1447c8dd18c3562edb70619d40c8798933022da471794"
     sha256 cellar: :any,                 catalina:       "b3c9c8caa3da6169fedd4893e27d4156b016715fcbf91c47209c34ec4b536a79"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b3ff3214766af3bc7c54164bec8a57cde4788169be18c7174d44db61c908a4d8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "152c18564d3252af6530331c08788108b99fbac328066ace0c58f94428fe7b4e"
   end
 

@@ -20,6 +20,7 @@ class Hurl < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "408048abf2059482fc1da3bd33c221fa070d6f56c2d2531b6eb41f287286272f"
     sha256 cellar: :any_skip_relocation, sonoma:        "1efea483c8eed8f01e054f9b328c5223a167245ca2540ed309d7e959f3d53034"
     sha256 cellar: :any_skip_relocation, ventura:       "b8412c24ff6dd2c065c26bae004f6b6ea1e4dc7cad5510c2622233ababf20ec8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "717bbc3d0a48eedb4b04d9feb49b48dd494af8f8649a0db523c60de12f0a6972"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3742791db0c358f3fee5844972eb3809e03c0f8ed85816b56f2298d7ebf7f9ff"
   end
 

@@ -14,6 +14,7 @@ class CheckJsonschema < Formula
     sha256 cellar: :any,                 arm64_ventura: "6ce3f66422d6d430c1724eb1681ab4388e6151123d983007c704327e0b339dd1"
     sha256 cellar: :any,                 sonoma:        "c440d4052185f0bcb8a9a82d9027af64506ae8a87c115c90397431272f47a7dd"
     sha256 cellar: :any,                 ventura:       "4a1ab031b88c84de5d45aa3434dfa3923b7a706cdf636a7217a267bed498d3a7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "275dbf929f7516701b9cb118a9b9ae4485e742283dddbc5109f6b8d475114b9d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "32bd21ba28312a3633b16930d3c8412e3f2698def710ebf7ba9032437e59e2c1"
   end
 

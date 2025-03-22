@@ -12,6 +12,7 @@ class Cjdns < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "87f5189b5d62e3cd6ab280ac7b4a36c9010fbe609b430de711f4b3bdc91ff0ab"
     sha256 cellar: :any_skip_relocation, sonoma:        "2e182079b505d888dd89e0b828adea13b426b51cfdfc54364ef01341671efe43"
     sha256 cellar: :any_skip_relocation, ventura:       "939b5ef351d3ec8cb836663699f5dcdd572dcde5d9714478d3fc56fdc31b56c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d2ad655726d1aa6d7e12b602cbb2f9f8103a8bd15dc284565ffe5f1ee1cbd1d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d720c9e5a2d4070720a817659ee69b25c14afbd725d772a9018bebb084a4ac75"
   end
 

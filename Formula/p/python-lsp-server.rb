@@ -14,6 +14,7 @@ class PythonLspServer < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d8223f1b63a319f769af3457b8a8e1adcf1217c4c81ea0fc753874558fadaeee"
     sha256 cellar: :any_skip_relocation, sonoma:        "09958cfb289fbad98f382d57307d690e834168c1938ca6b63e64974178c5baab"
     sha256 cellar: :any_skip_relocation, ventura:       "4a0fb462a375ea36f7c0286d01f77af6435172beb877c51e467f680092eb1a9c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e2cd4e57a8bc41770a17c68e5a9ddc6b689b3e5ac9d4c4854b2f30d96e7acfe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "57f4b38c13ab091a898b105768ff448fac040603c1c3492c65261893959f6ceb"
   end
 

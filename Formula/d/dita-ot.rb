@@ -16,6 +16,7 @@ class DitaOt < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "fb48d13f245d604f3da8f75f93dbdfae4eab73988512aab0918e85f37b961d79"
     sha256 cellar: :any_skip_relocation, sonoma:        "a42917030c3e210e05aac9ef4274668985f0361d95157bf7be3f823bbb6d1908"
     sha256 cellar: :any_skip_relocation, ventura:       "a42917030c3e210e05aac9ef4274668985f0361d95157bf7be3f823bbb6d1908"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "374e9aed2d2630a227825168d1b10a7110b5cf048795d4a233a5acd3227e3223"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "76107adc6d0aa00fbb887a4c3de9862498e4cb84a1fb7f70686d5b9ff3c07ee0"
   end
 

@@ -26,6 +26,7 @@ class Libstatgrab < Formula
     sha256 cellar: :any,                 big_sur:        "08aba9012402bf7611ddc2fb0f6e0dfcb31c97ce067dd83d6ae73830b5d30aeb"
     sha256 cellar: :any,                 catalina:       "802d07a3f0948bf0f3a60bb174b1ee56e028b4b24f9eb121e9f90e5926e689c0"
     sha256 cellar: :any,                 mojave:         "8ce7e1320ee7e3d10764ace6801eecb28cac49dadef648de79258e1d254da06c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "20fa34ce8b897ffc1d9ef30d7c1636fb86d2b1299dad7d730a000f47ff4691cd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8984abcb585701a695fedbebd0c13cd61b08b95240c22485c75e2aac1575c57a"
   end
 

@@ -12,6 +12,7 @@ class Hcxtools < Formula
     sha256 cellar: :any,                 arm64_ventura: "a5c6154b7c474f89e552279acb816eb2f16fe580cf2b551476c48bed97d52a27"
     sha256 cellar: :any,                 sonoma:        "2814039645270a0de28354efc71e9e640e79113c4893edac270a3596e82cb74a"
     sha256 cellar: :any,                 ventura:       "53ca3c7313e167c4f82b00e9fc0f35bae6ebb80b15e3762f59668e4a34c44aaf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fbec0db0c78b0ce779195131d1e70118b6642dc6a66469f3bea2be7e0fdb35f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfa435ef982fe30b6e3ea26c1d736882a4799c0ee035bccb5cf20bdca00740dd"
   end
 

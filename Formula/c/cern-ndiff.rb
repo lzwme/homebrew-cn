@@ -21,6 +21,7 @@ class CernNdiff < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "807d3f5b977b2d2012901b5c9ed066ecd3ff4561a7758a03e503021a2e0594b2"
     sha256 cellar: :any_skip_relocation, ventura:        "141fb295ae4157e0b8f53d4ec91a465baa6380d8611652da5915f40298a50060"
     sha256 cellar: :any_skip_relocation, monterey:       "9ae23c61ad53062f561cc9a70e52a54d90add55b98962c06ea76e129359acc4d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "bcf2ffd38ba56b8c9c6c12a5da6be040a8fc0e73c338a46ddc47fa4d78e9df87"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b79c1e4f9d23f8dd06659de060aa2fe4bf0b863a2f9d1e1da8cab2c3347c108b"
   end
 

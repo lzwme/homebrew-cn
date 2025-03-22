@@ -16,6 +16,7 @@ class Mpop < Formula
     sha256 arm64_ventura: "2d583441a27b2a280df6638d0f84f3b13a36c3636a8dd688ec85ba452fccb0f4"
     sha256 sonoma:        "1f53b046ff585b6881305ed39356cf3f17183634e0c36d2efe9368e4cf00c9a2"
     sha256 ventura:       "1d439effaaa6da0bbc6ec4a4ecc99bda8ee74e7424f368f06de36a16a597da5f"
+    sha256 arm64_linux:   "b74c1df7321d6efde1abe975639b29caaf4bcb45e9e6b5198c407f689636792b"
     sha256 x86_64_linux:  "2e1ee9de528062ddb2bbe3e5338e6b8856bfa295c5afd755d77574e3adc3e69d"
   end
 

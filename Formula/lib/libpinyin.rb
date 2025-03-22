@@ -18,6 +18,7 @@ class Libpinyin < Formula
     sha256 cellar: :any,                 arm64_ventura: "66cef63e3182ab1cc950f068660ccb82907670e4bf02973f68f9c0abbc637804"
     sha256 cellar: :any,                 sonoma:        "42ac21b0b3d68421af64b543a327303a6055a84d5954b3f5caba3454ad8f840d"
     sha256 cellar: :any,                 ventura:       "9950ba2086c77bad3f506e3bd18a1d98366de65bb676d80815963446a0620bce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1fbbd8e1c8506fa173616da2c2f6d97d74477f9225a86915ec6300f47b42342"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "74ba1959f1051f9d85c55e2eaed3c713e361cc881baa2aefa6c20279e4c08353"
   end
 

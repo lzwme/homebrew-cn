@@ -17,6 +17,7 @@ class Remind < Formula
     sha256 arm64_ventura: "ec6fe533bd3946608f26bc20deea6f94dbc19f64163c0ccd3b23e140290316cb"
     sha256 sonoma:        "8befcf3aae83d65211cc5bba1878bfa110ae6bfbdc0fdab0eaf67d15d97075ce"
     sha256 ventura:       "e09c71bd15a0add123fdd0471ea3ab2c938f4db98f354677ae16024aaa435b5c"
+    sha256 arm64_linux:   "a437d7244c3aa9e6cdefd444e66990b52da16d773841dca0865e3b0d35e40038"
     sha256 x86_64_linux:  "07044ddeb712cab031f1d1c738139bfada0be99083294850df6a87f833042efa"
   end
 

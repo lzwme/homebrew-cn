@@ -11,6 +11,7 @@ class Diskus < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "591fad4f9045788a5980abc136b8b04b689468789406e19c2339a1934526fc6b"
     sha256 cellar: :any_skip_relocation, sonoma:        "1f53f2f55b9c2afb08399342293ac242f89dcec9a7a3225bfb1d46a8e85eb799"
     sha256 cellar: :any_skip_relocation, ventura:       "f7635f25cb2e68fb7ffa652c3d4bd87343e9190ff0aba65ff92eee63fd427e09"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "924d72a0c120a1eec0849fbfc5344ec71d0cbe6c167e0c5299269762e26f2df9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e19dac5a9475d48331eedf63009da2d88c04a66a1bfd6118f60eb1cb149fc97"
   end
 

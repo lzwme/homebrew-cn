@@ -11,6 +11,7 @@ class Libnftnl < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "51ae224ec4b0b12550a827a8c0b11b8d69f600ebdcbf3f147904cd2727cd7d04"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "a967378e066186315b30a3e6a5eff8bd47c098aa13e418d47489f0e1c7884e72"
   end
 

@@ -20,6 +20,7 @@ class Pms < Formula
     sha256 cellar: :any,                 mojave:         "0c43ee20313b6616c6ececb9c906da12720b035862a894a3f9dd11984c640b30"
     sha256 cellar: :any,                 high_sierra:    "f01d2f4db91f6b6bcf35f86c7a0d2b0fbed17941d9556fe0ba71e855c7667638"
     sha256 cellar: :any,                 sierra:         "fa90afc92fc9d1e57a9a0a74dc63d3ec5ba92f1430caf5cad8fa54362b0da298"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "49c08001404ac52846502ef4173d8df4907aa2f3ce45bd55c48faf3c672100da"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6c3d1cf4ac839cd2c6ae549d4c303dfeed70951bf0473b4919bcbe62a2530961"
   end
 

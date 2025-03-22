@@ -13,6 +13,7 @@ class Peru < Formula
     sha256 cellar: :any,                 arm64_ventura: "ad488293d43ee05ac8eccf9e5278e7613b26a8ac960b1385d128fa78e1465f15"
     sha256 cellar: :any,                 sonoma:        "e575c707cc3431e180e541d516812c8f4303adfd3e786198da14f4af7c27ddc5"
     sha256 cellar: :any,                 ventura:       "45a48b49b8eef723df7537615fb968eb984c1c6e6a4a44634177c3ce35b367d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e5028dc6124874490ec40f9f0ff0a588e6dce432432ebf5d8832b2c178dd00b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "73ab93c07fc0d53f07452e107fa9352fc3a269a608f0284a4baa41369c9e6257"
   end
 

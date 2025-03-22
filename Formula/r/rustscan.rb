@@ -16,6 +16,7 @@ class Rustscan < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ad0ca15324e8701793117ae68b6846a0b9551acacece068a1525c4ff997112ea"
     sha256 cellar: :any_skip_relocation, sonoma:        "86a8d2a183f5bec85dc8c40acb58fc9931bb4fcf9e63d3f7fc271d490e5a7f34"
     sha256 cellar: :any_skip_relocation, ventura:       "e2e7f59265f5f1acfbdd4dceea11a4b13cd01fec43ede709efe986640674436a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e51bf6ded5a5d7091c433bc5e6532ed8bc08a1792e7fbc3cf2f9cf7b23ede3e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "045f1455224bee1648c5024d83de72ca209ef19e4784adb2bd5d479bef875bf0"
   end
 

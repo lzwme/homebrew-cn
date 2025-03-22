@@ -20,6 +20,7 @@ class Scale2x < Formula
     sha256 cellar: :any,                 high_sierra:    "2a3519bdbba8ff6caa1ca9b48d461866b8121dfd224a2c25da106087bb3cfd61"
     sha256 cellar: :any,                 sierra:         "771e1b1ea660234e8bea89e774d0d802f7f1cb12c08e100cbb5b83d0a02a61ea"
     sha256 cellar: :any,                 el_capitan:     "033e1adf0430ced99eef1b746842e9ca876b542f6fbd8f050e8f7c7e1b59f692"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f8b10c78d54037bfcf02fbfd70f5c32767c22005efdd14b6f19d9d08cd817ed1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8c30b93ecb6bf66a18c8004a6b56ca9ab4fc074fe4e433439f3bd49ba944005"
   end
 

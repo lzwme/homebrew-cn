@@ -11,6 +11,7 @@ class Iptables < Formula
   end
 
   bottle do
+    sha256 arm64_linux:  "38c583268c51dbe06d76e48b6146b4caf75bc34726745574e96006e0ec715a64"
     sha256 x86_64_linux: "4de49c1ece1a24f6f72d8290a3d1b4f875a94b9a277640f65faf3258e578a6da"
   end
 

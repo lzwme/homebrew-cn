@@ -17,6 +17,7 @@ class Nest < Formula
     sha256                               arm64_ventura: "e4997e4c854f79114bf6126b93073cedd165b443f14d1086f7a246690b77b547"
     sha256                               sonoma:        "c6628a5bb1198d80c5c1e56a2bdea010d585c067bac0603a744bf1f009191b8a"
     sha256                               ventura:       "a77c3c6db49b56fe36710c8a05bfc36dc4604bc8bd5448ceb7744fdf216ce86c"
+    sha256                               arm64_linux:   "74f9abe8a628e7dd0737b8e16389309f48b3784f275b366ca83463acdc22a368"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e29d5b0a924beffaed5eef267c5c08b78529d3894a8099578d68e0853fb0d65"
   end
 

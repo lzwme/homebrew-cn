@@ -13,6 +13,7 @@ class RpcsvcProto < Formula
     sha256 cellar: :any,                 sonoma:         "f140baf7a5cf933905991ed2e683dd0ec0aac61538e58c03e614300d5d399f9a"
     sha256 cellar: :any,                 ventura:        "07342449582194d02bf19968decfba8f15443bd9d104d681ed1fb00c218619d7"
     sha256 cellar: :any,                 monterey:       "4553fc6e7525cb0d22c9ee9959eac99d6f00ae22529097d8800c31f30e6c6475"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "466aa9b9b6c1df9be8a1dd57f8c71aeee487d6a2d0eb8d54d593d1074e35fcb5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0f595f1a5c182488fe70c250ae8b6c37064231380b521498390bf6964ad0c0d0"
   end
 

@@ -13,6 +13,7 @@ class Copier < Formula
     sha256 cellar: :any,                 arm64_ventura: "2a2684ade12925237b02dcf4285ffed5c4fa41b5f04078e6bf0cc5d6c4de71bc"
     sha256 cellar: :any,                 sonoma:        "a735c114de80d9be684ab01bcde80deb20232fc54860e2457112b96729e9f844"
     sha256 cellar: :any,                 ventura:       "9886f01dad72ceb21ae7c3d4169022eb1cf3befbe11136d3970322cce19ac104"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "33a6cbe4aa19c6b3cd710c3be4a44f3d576b6d686b34a086341da7c6f64bd2a7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6da3c005386a2811c74a06fca8a2a879aac0bcf2ec41f3a6a6136340dc7db6e7"
   end
 

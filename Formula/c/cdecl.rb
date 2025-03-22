@@ -24,6 +24,7 @@ class Cdecl < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "a2469d514723e35850b252b97d3bf90f9311c276455b218383d276ccb0c88ee4"
     sha256 cellar: :any_skip_relocation, sierra:         "1d424613881cf9109d824664fc77fc947f2968b9850d448db4b02c6f0a562b5c"
     sha256 cellar: :any_skip_relocation, el_capitan:     "4f0e990d88823aa9f3d1dcea71ffa442c13640ce82cc9da41f90a1be5ef457dc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "76dcaf8ba94fa0014a2f9e13546f00d0a17a3e2960ee3a7e1c6026583ce9d038"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1ce7e2b34d87649b10f5cd29b4df13c565f518936b42f029b7d1b592984d237e"
   end
 

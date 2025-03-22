@@ -11,6 +11,7 @@ class Libjuice < Formula
     sha256 cellar: :any,                 arm64_ventura: "b95c9ed61269bd48ebb7ed28b1cd9c4a0a92d52f2e9272d22f55f7b04fbdff51"
     sha256 cellar: :any,                 sonoma:        "fd0d5f8183ef6793008759d51fc7213c7318a372635f7588d0e893904ff72064"
     sha256 cellar: :any,                 ventura:       "4352bd91de5dd4450da0e2f3edacecd0ade28479ed54d37a7bdea9366d4939ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fcbf56174cbcd1f28ddf08b6f79633bff3574343222426b50c98ad36075adb71"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd63688db47b13c70f4de6e006c86df8e856cb78b8cc5a55042d3e7d237a62f3"
   end
 

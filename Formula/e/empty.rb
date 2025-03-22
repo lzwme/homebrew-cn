@@ -20,6 +20,7 @@ class Empty < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "3fb2717f273099d9011d8382c033afe8d6b7836dc2223b1ac3a301b683a0aea3"
     sha256 cellar: :any_skip_relocation, monterey:       "6ba9bd7cdb7d47260f1c5dc600e93514c2222f7b3e5aab9a2ff5dbcadbf81d13"
     sha256 cellar: :any_skip_relocation, big_sur:        "b8de713e95fe5ac8ffdb15ea679106b41ed858d70d7a96250b9694cfee4fb855"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a2bf64f60c8f3deb34c30f5c0e940dc11cf1d43b6f2fb380ac59a7d6d44954b3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6e3eeb73345dc8be3472ece5c28260e9592b6acf8cc6bb50abba43376cb10404"
   end
 

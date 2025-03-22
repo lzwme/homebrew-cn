@@ -18,6 +18,7 @@ class Otf2 < Formula
     sha256 arm64_ventura: "c8a95435b0dd75f2eb1c3b9a4b55cd635304faf7aeca446de076e6ca3135b2c8"
     sha256 sonoma:        "b1e76426024a317b51be2752cdbc580e9c9d1d5d10a5a0a8e3e3ccd0929f1aac"
     sha256 ventura:       "004ed0f51b9ad93c4e1435dbe9424528d00ac935c4e5b6d69ae8c65348526cf5"
+    sha256 arm64_linux:   "6044ae68460166dbed17ffa8f8acdb2441088104f0ec9c5a6270c620725fe0a5"
     sha256 x86_64_linux:  "ea14ea82474ebc29426a280e43409ebce2a688ba2e4de3ef11aa82564841327a"
   end
 

@@ -18,6 +18,7 @@ class MonitoringPlugins < Formula
     sha256 cellar: :any, sonoma:         "8e139e077e10f664e33c4dafa4bc404d6bf47bcf1e82bfa5c1a8daa481a85af3"
     sha256 cellar: :any, ventura:        "3407ba5eda8acc2806ab7eec27af3f339852b857cf935954fca1c7ab38c75bf0"
     sha256 cellar: :any, monterey:       "6879fa228c284f01e3688078e66b7a0374012e37147183cfa08c5d9ff1b0e47e"
+    sha256               arm64_linux:    "2caa7d52925b286737f83a15a800de15edbbc4d280756b9ab268cd4e810b42ba"
     sha256               x86_64_linux:   "27b58371aa6e210a9510c9fd0b64ed2f0923425b336eeda2b5c9eb0fd08509ac"
   end
 

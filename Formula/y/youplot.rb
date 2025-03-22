@@ -12,6 +12,7 @@ class Youplot < Formula
     sha256                               arm64_ventura: "4bb2dff5ad2c3ed7d664ef15b09ce44f03b2ec9cb01fa538b6420b9aba56d5c1"
     sha256                               sonoma:        "3373ffb2e43529719160f9be85457e89a87eb20648ca158c4b369b38d762b39c"
     sha256                               ventura:       "b642704f1c8f283ef82b61ece8ee89f5bc758949d36c0f66b3bacd192843b223"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "563fd220cab701dd4db2819903e74fea7059cd91963169fafe06518fa4e50535"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c6afa1c010330d42e76bd3430040c5f289cea496fa805d0fb27a8494a33fd43"
   end
 

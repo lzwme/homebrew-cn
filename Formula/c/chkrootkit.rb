@@ -17,6 +17,7 @@ class Chkrootkit < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5533e32cc63a4c5de2e644afa929f5d55dc87999f6dfdab84bc5cc943a85c527"
     sha256 cellar: :any_skip_relocation, sonoma:        "27f7982730e34a76130cbc1d775845f17480053cd8fb46a76bf8317d36f57771"
     sha256 cellar: :any_skip_relocation, ventura:       "3845af7aac3b4114fbf0eac4fb38c79afc0fd2a6a3eb8063f2598cc697e79221"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1939dc0c9796b737d27bfdc51196fbbb0c8239e184472387bc17aa5f1fe10af5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "93aec292d7e8a289ffccd9cd35591ee1ea2dd6ad8e11b3b9320171afc9710e6b"
   end
 

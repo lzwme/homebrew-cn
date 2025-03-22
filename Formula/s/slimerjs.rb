@@ -15,6 +15,7 @@ class Slimerjs < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "67d28bb3031d3480c7d871cc10299334f80046ddb665db2445faedd82c43f26a"
     sha256 cellar: :any_skip_relocation, ventura:        "67d28bb3031d3480c7d871cc10299334f80046ddb665db2445faedd82c43f26a"
     sha256 cellar: :any_skip_relocation, monterey:       "67d28bb3031d3480c7d871cc10299334f80046ddb665db2445faedd82c43f26a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "bc310525c420056205fcf75a9398dbc1a67016af07bb8a032767da518d6e185f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d942f6e440cc015898a1d2c114714fe133ec4aff583043f2e35c9c404a9e621c"
   end
 

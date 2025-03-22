@@ -25,6 +25,7 @@ class Softhsm < Formula
     sha256 monterey:       "320f44fb1c860b9953b29260ca75fa947c728db78fea1a72c6796d5ea537624d"
     sha256 big_sur:        "ceaa2a468dd99798cb775406dbeaf169565b35517d36b06fdd2abba6ed9d754a"
     sha256 catalina:       "f18b5f1c33b98f07f14233e90e412900a22d79f4b04946bdd1fdd28a04dbda01"
+    sha256 arm64_linux:    "9fc20743d5a7ce1147876d8811fb186a22d37f7c8e55c1dbb8c07a64c08c0a0a"
     sha256 x86_64_linux:   "87b3b85891df32b03e9b362ed76ed435095c6c72d40d460df18986869d701ee5"
   end
 

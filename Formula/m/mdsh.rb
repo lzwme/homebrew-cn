@@ -12,6 +12,7 @@ class Mdsh < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "81cab330375c40ecaf7abaff7ae15efbba85c6ae563e1dd2760ebfa466f6c9fa"
     sha256 cellar: :any_skip_relocation, sonoma:        "ec2f62aa6af34be5b9700133a68912ea47f2d27d206ee07a59ced37db8464f0b"
     sha256 cellar: :any_skip_relocation, ventura:       "03d9660c35d3b1e51ac8b58456dac4e894364ad07b20862a8d450faca3c3355a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f84ae39b6d5c82c57ca0cdc23caf9391f2d4fe538b8de38f02276c74bc8d88b8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "67786ce6761adc9f44d8ba3bd3af4a56e820ba527691f8855f859d7931f7f399"
   end
 

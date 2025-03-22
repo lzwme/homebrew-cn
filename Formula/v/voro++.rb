@@ -17,6 +17,7 @@ class Voroxx < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2d9115a80aa1515ed06f302a722c50a2f2a986c348ebc4934b45368c4ab4afde"
     sha256 cellar: :any_skip_relocation, sonoma:        "e585c0c80a4987580d186106c18bc7885d7b2556b8e3483642fbf588ace5bf3b"
     sha256 cellar: :any_skip_relocation, ventura:       "ae3b15478092b468424cd6958a85abe801ad22442fdb97fd21684c033aaae799"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8679748ddd61c78e57c10ef4c8855d933287303f931b595abe67c6339e44bac"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b8a79d25b9feaedc06ed05f9affbe8e78443e20344b561b85daec8cbed9a089"
   end
 

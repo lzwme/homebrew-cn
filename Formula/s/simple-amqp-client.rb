@@ -13,6 +13,7 @@ class SimpleAmqpClient < Formula
     sha256 cellar: :any,                 arm64_ventura: "701415d086b41bc3d4d81f2b9f2455b62e4d4ced88429aedefac7c366133347d"
     sha256 cellar: :any,                 sonoma:        "dac31186f89a2cb1aa4b20c0c3e5b2f7d61cca70b8469a0501e976a8f6bc4783"
     sha256 cellar: :any,                 ventura:       "c037064915eac9fbe507101aba085e58c7b5cd86e3dffa2b4f0f374bb232ab50"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e94e327a311ced69e2a8a7cc937868d5efc914731c107e5a5859ee5652636da"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2abfcf884b581f32544e4873d8285e27080f95814eb9513e54ed54b44fc17c24"
   end
 

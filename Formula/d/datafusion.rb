@@ -12,6 +12,7 @@ class Datafusion < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "918830f7e1021dbbb7c51be6ae822ec4461bb6214bd759adbb90f2063bdce95e"
     sha256 cellar: :any_skip_relocation, sonoma:        "3e55dc6c9bb9d2fa337863ac5f949c75946df314322b48f29620eac8827938f7"
     sha256 cellar: :any_skip_relocation, ventura:       "a2760dbd946c8bc49b4cdaf57fc4171e66cc3aa1f460056bc6e5d8ec2a9cfde4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "34111f178b04fdd4d98f372146c7d19a7d282f8ad868b76a7b8b30cf279684e7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "31ae968ca941241d98668b1f6b425c509c007d329cd5267629b74f7d69844e49"
   end
 

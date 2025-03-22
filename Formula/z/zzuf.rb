@@ -20,6 +20,7 @@ class Zzuf < Formula
     sha256                               high_sierra:    "f13b52915de3bf08ed663b02df0f8b4d8f78d3a623c523a4d5f3c085ae6bafcf"
     sha256                               sierra:         "9f1b2bfb909739bc5dec2e56b520313e30df3384e8a249b575d3664ac6a636be"
     sha256                               el_capitan:     "5f0c55658fba6bbf225b6001b5be75c38f7a375322bd4b23944f3c7239dae0c7"
+    sha256                               arm64_linux:    "c7c8ec8267f9b314e98b81cd5bb9a9765b51d1bce2f4dfd00798ac823affd99e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7164c38ad977edfad3d137b9071e22f185effde9165996e847facd20f4df0e65"
   end
 

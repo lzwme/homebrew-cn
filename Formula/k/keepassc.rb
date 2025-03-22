@@ -15,6 +15,7 @@ class Keepassc < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "86f49118750ea97315199c2d5b3822e27886649707d35705f51fca775654916c"
     sha256 cellar: :any_skip_relocation, sonoma:        "57a9a7e5649c8cf0a95930e8ecc11db4f7348bf3de3c532e4c224d9347e67cf8"
     sha256 cellar: :any_skip_relocation, ventura:       "653a4503ecbbc3d060c0ec6154e5fd564f5ee7496959578796416c057c1228c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a1a753f9db30ef23098f6e140910789845ffbab1e93af025cc5e98a0ca354166"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "46c34fbb29c6d70d3966fb5a4b0e8afa57fe9a58aa68f1a41f2c534dd94c7932"
   end
 

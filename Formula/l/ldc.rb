@@ -17,6 +17,7 @@ class Ldc < Formula
     sha256                               arm64_ventura: "109a5a8abc99967277d3b843328bb226614fa512e933215319014c9ba58c3541"
     sha256                               sonoma:        "a1ed0483de3d6acd31100020c3cf2ba3826f09f2e3182c5151ee15b9651beaf4"
     sha256                               ventura:       "d2b16171d9e8985cff0253cba8c2023bdc8c67a81d9ec7cd48c489e729e58a70"
+    sha256                               arm64_linux:   "1241ce5b60b17a80b64a93c0a5d06a367ab6d2f6556e5e27d9b60f770f7bccb6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "56996dab133b4cfc6997306069b043b4c60ca28554ab4a2e356fd81bd323b7a0"
   end
 

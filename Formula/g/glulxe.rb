@@ -20,6 +20,7 @@ class Glulxe < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "84c5aab0650e51fbc4fafcce2f61b6cb680b2e037ab3426ef4f1d3a4cf662f9e"
     sha256 cellar: :any_skip_relocation, ventura:        "bb4cd4317c7867a4ac3e41ad77a0d4aa84350aa7f356564e38fa8c1e3575c519"
     sha256 cellar: :any_skip_relocation, monterey:       "05f624354fa770cf82d75abf4f69e5f7d9a88962fa0e4e0416f55b65b2c46792"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "8b77e80438457c50ca178ada89470fa378d266b3e18d2508e3a7a33268b01347"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8af6c5daa098d3cd5b2878393f4b76efd773bf0d1be30ab2a8ed4fdfb84d38a7"
   end
 

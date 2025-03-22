@@ -24,6 +24,7 @@ class Akku < Formula
     sha256 ventura:        "f77236380b87ec9fac32323c1aa339e8d2aa90c5613ba90bf5b33b449a6ba601"
     sha256 monterey:       "a1de5fe0cd475fcdd4b5c91762dfbeb0d681fa59bcba9472972dbec356b517d6"
     sha256 big_sur:        "85a186c3e7502ceafc16741ade1c34601e713538f2dc080c6c0a01cfc0e109f2"
+    sha256 arm64_linux:    "e01b75b5ae763d756faf1c9e6ac2c308a99d0d639c324726b92b46cbc2bbc7e5"
     sha256 x86_64_linux:   "23a1841305dd2e17051dc12c0e0c10e17420c432a0fca409ece365558a5cce4f"
   end
 

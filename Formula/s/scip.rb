@@ -16,6 +16,7 @@ class Scip < Formula
     sha256 cellar: :any,                 arm64_ventura: "19449b5d25991180cc22a1e992d4e38493f89688e9836e6e31371d431e52f528"
     sha256 cellar: :any,                 sonoma:        "9fa220c37a33b5ab726d8333ba06c01510a1695386ffe24903970aba1b38d83d"
     sha256 cellar: :any,                 ventura:       "f624295be5c42e68fef393687527a6c93b8eddc2e7f492f56a3572ede91d5985"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "33d6120fc2b0439c3eba4289c018e8a7c3437f617e2b412b629dfd4ab12f7d9d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fad05841ea03fcc75dc58a56c6411aab92165bf5e2e2c80b702fa7cb4093695d"
   end
 

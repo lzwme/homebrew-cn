@@ -12,6 +12,7 @@ class Neocmakelsp < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "12bd7ae885d91f14a34d9dbe3be7da37f8c956c05978d069c45478b79cc2049b"
     sha256 cellar: :any_skip_relocation, sonoma:        "5ae623a04f44e50780dd0739f7090e786819d1cf8a34a4950901349fe377bc23"
     sha256 cellar: :any_skip_relocation, ventura:       "70814582214eafb1e9c3e806b09e5736329abaf2b2389bb2a89f5b1860d4c997"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "546f021dc8809aa55a95d47edf9234cb95f162f4611aa9cb13cc2432cbce8599"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "402c5ab649474e728fa6cfbe0916e1ecd5ef89474ff2f2545dbad103128dd708"
   end
 

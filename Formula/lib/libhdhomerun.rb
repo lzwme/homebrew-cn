@@ -19,6 +19,7 @@ class Libhdhomerun < Formula
     sha256 cellar: :any,                 sonoma:         "d6d58fbfd63851b100df4e12d5ccfa76790e30447756cf3f8087eb5a0080052d"
     sha256 cellar: :any,                 ventura:        "0a3f2301921fee8192595b75f20e758b2dc3842552f1b85dbca92c6cc2210621"
     sha256 cellar: :any,                 monterey:       "0387bd044b115f24f875150a4b21861c4485fec79d01e87e97ebe683a8a87383"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "4bb19a7a4a90f3c45211725ca74864a11607f4ef5ac1516c8e7d4beb917c4ede"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "01610b0e16fa4b1796beb67c8278a72e9aed98666fd1d78590985616f9cd6a1f"
   end
 

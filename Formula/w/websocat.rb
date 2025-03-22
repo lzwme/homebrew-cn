@@ -16,6 +16,7 @@ class Websocat < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "eeecfce3377a6c4093b50d964f083b4b03dc39f13b933e2b57a38eed3d957066"
     sha256 cellar: :any_skip_relocation, sonoma:        "54a9d377c6bfa1776e72631b6a2599a1b45f409d2307b2c3dd36db86dfb8a778"
     sha256 cellar: :any_skip_relocation, ventura:       "60b160dbc0fcb8ac2ffd81f9b27cc912ce15ba52b091897fe5d7ff0ff2e2cdd0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8bed9942cd5ce9dc488d0e14ff99e38874568aba619f37a6f6c70b6aed1b34b9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "47743949aee1665357d781c961840c97f3d781650995f7b0c9cb541f898c756f"
   end
 

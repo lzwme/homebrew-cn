@@ -19,6 +19,7 @@ class Zpaqfranz < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "bd8fdec0dea75b38cdaad97b8d0f77193574e2763efaa80b230bc50e6ae6cb6a"
     sha256 cellar: :any_skip_relocation, sonoma:        "28aa5c37eaaffb755088afb996036dc523794500a69d44d0374c5f1a3bfab25e"
     sha256 cellar: :any_skip_relocation, ventura:       "08217457107ae0ed613410c693852eedcf8caa0cd194abbba78d6f66b11cfe86"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "81677426d985042a7fd97006fd5de29ebe2f013855dc8127f9969e68d380297a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c47e5617c63b158eefb400168e1308de69ae8f61947ef8f5308bda16a7251cd7"
   end
 

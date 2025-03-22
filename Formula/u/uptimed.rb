@@ -11,6 +11,7 @@ class Uptimed < Formula
     sha256 cellar: :any,                 arm64_ventura: "c026d07897983b4e7f7f07ceb14d77aeea163b8c3d26bfbdc2e7e3f5a5b2ed56"
     sha256 cellar: :any,                 sonoma:        "cfdfb6af9480fc37d99d5bdf24f213de9d42fa5ed907019bd020119a26149b8a"
     sha256 cellar: :any,                 ventura:       "c7cf1dd6683a839238be3ff06ae5289bde6e97e0a5594d3d3c1f14c8decf0dd9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "08296a599456611026d0242ac0946327fb2c004de2e3f5217af4fa14eabc5348"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "63fe05bdf7bb27772273516a7d3886a2a196c5fd78487805ff1b57db150ef784"
   end
 

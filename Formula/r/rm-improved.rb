@@ -23,6 +23,7 @@ class RmImproved < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "a7f0bf8bd18d8408cf671da609422a5a8fa683f876ab641082b07933f7770756"
     sha256 cellar: :any_skip_relocation, big_sur:        "3a80043be18665c37508e3f028ceeb0ec68cfba556ce5461d4f6575ec6b50076"
     sha256 cellar: :any_skip_relocation, catalina:       "91894b6d16374218d42457f7aa30a9a95572206e71328b52eaed159a51df0d15"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "e56ee338ef4aa487f6faccb3d08025df5ed64f60e25fc0137aeb2eb1d4b852cf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "944efe35afd78abf0184654d4fbcc84b081d38c704021b5e964292016c917593"
   end
 

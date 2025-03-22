@@ -14,6 +14,7 @@ class Sipp < Formula
     sha256 cellar: :any,                 sonoma:         "1ee37d5b7a3da4e71b78de85a7600272e786b867c93414f491e1164e364563e1"
     sha256 cellar: :any,                 ventura:        "8f2b4813adbacb46dab909c6fc047d158eac9769985c6926901de402d7f6ed12"
     sha256 cellar: :any,                 monterey:       "58075c4d4cb033ac64e42ff81ab27d930c8d6f2df58ce8b8aa739754480d2e63"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9cd4c23adec1ccc19420fe994db704d7e1135759e35c72150aa2409006731098"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fd398497f2002b1872b3dbe1ccb347797b37cb737a3b14e399f52b16d6a47f61"
   end
 

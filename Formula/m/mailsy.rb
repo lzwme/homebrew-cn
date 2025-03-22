@@ -14,6 +14,7 @@ class Mailsy < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "0ffc5714684754005b04200b5f379adb9fe3fd861d92b6cb64300065543f7205"
     sha256 cellar: :any_skip_relocation, ventura:        "0ffc5714684754005b04200b5f379adb9fe3fd861d92b6cb64300065543f7205"
     sha256 cellar: :any_skip_relocation, monterey:       "0ffc5714684754005b04200b5f379adb9fe3fd861d92b6cb64300065543f7205"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7f7edbd95c0eeb40083f65f01a87f3cef1a2aa2500258712a3c342353ff8e180"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "70af352d946453cfea208005eb47d49d7f9284dc9fb899169b520d9dd8586a98"
   end
 

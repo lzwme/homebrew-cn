@@ -14,6 +14,7 @@ class Openstackclient < Formula
     sha256 cellar: :any,                 arm64_ventura: "62c0608841762a0c11e4eb66d0d05142fec8dd57ade0e0712105ddbf87bf01b7"
     sha256 cellar: :any,                 sonoma:        "e35fce80adbb4e456336192200036858432a0413bb7f22ab9520fd7959e0da4d"
     sha256 cellar: :any,                 ventura:       "3b75e4270ef3bc69d00711764744da537eeb442cbe73d39fb8fc78979f514df4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fec2dadb99dc58b35b8bc7363941be52d5a46eaf6f9359ea9d4b8b4f5fd241ea"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "718b2dad7167c3a00fe5d9e86dd695f92442f8f7fbb05821eb7b6aafaba633f1"
   end
 

@@ -18,6 +18,7 @@ class Hivex < Formula
     sha256 cellar: :any, sonoma:         "b02c58d064c1463fbb8375839a8a43d4511f9e7869f934e26dfd4471a3493b76"
     sha256 cellar: :any, ventura:        "be3ab0e828697756aef7048c02c6c9be7f2e05b7eb1445822931371f11309093"
     sha256 cellar: :any, monterey:       "bc1a776d2a57db7b102fb788d7b7c2a7fd3b6d753df57b4881c911c99a0c0928"
+    sha256               arm64_linux:    "ae8bb40fdea46651ab1105f9c50c1bb1001809398414452f4ca597b0db5f8654"
     sha256               x86_64_linux:   "521ab163122aa40680fe0473ca6ea2f77fdb877ac4ef417dfff93eef66608a0b"
   end
 

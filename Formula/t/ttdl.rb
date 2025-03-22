@@ -11,6 +11,7 @@ class Ttdl < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "163229b254068baadf2013a7fa954b03e97b3b3cb15ebbe79fe3cf3b25306930"
     sha256 cellar: :any_skip_relocation, sonoma:        "41ccb16653f6631c42524f27fd645bc8209434046452b76d640fea39b85b1f00"
     sha256 cellar: :any_skip_relocation, ventura:       "58eed2a7e8076d83c864ecc11cd88558e3b7340e2ae2f13f862fbceb1553a411"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eaa7301861a3c586b094c1e6942cdaa3a8ca37acc427031c4c508724428fd6a8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "345d41d3234e07bd8b9f13499eeb0b8489354c440e8618acf340ebbc01f657ab"
   end
 

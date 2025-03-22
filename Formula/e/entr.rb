@@ -1,8 +1,8 @@
 class Entr < Formula
   desc "Run arbitrary commands when files change"
   homepage "https:eradman.comentrproject"
-  url "https:eradman.comentrprojectcodeentr-5.6.tar.gz"
-  sha256 "0222b8df928d3b5a3b5194d63e7de098533e04190d9d9a154b926c6c1f9dd14e"
+  url "https:eradman.comentrprojectcodeentr-5.7.tar.gz"
+  sha256 "90c5d943820c70cef37eb41a382a6ea4f5dd7fd95efef13b2b5520d320f5d067"
   license "ISC"
   head "https:github.comeradmanentr.git", branch: "master"
 
@@ -12,15 +12,13 @@ class Entr < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d802f80cb83d3fe1cd1acb2b8e0083afa683cbe2f584a82394eb962e11608440"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d878b113e680a4cbab1f35939b63ec51fb8fedf06ae7dc8662610077184cf622"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c6e970b963f6409076ea40fd51487b354edaf83febd21ad4849989abd4399eaa"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "eb0d171f6dbe8fe018b51605dd51e32f63ae9da0cbabba079fbaf3a011bc6207"
-    sha256 cellar: :any_skip_relocation, sonoma:         "061556e2b532a2c5d142faf24886377d216bb05757639d4356dab486180891d5"
-    sha256 cellar: :any_skip_relocation, ventura:        "7c640c28c176df49179ac2ab3c1de08c1d194bc49dee50b0b4b905231fb956ed"
-    sha256 cellar: :any_skip_relocation, monterey:       "79e1e4af44349c50e37777a6ba3c3ef9bce47e5488fab2f103d0108cc662b045"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "3cc4fdc99f7972252d5b00e928ded460bae9156bc99676c3403a01a1ff4190cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "26cba6bdd62572059e3f2b4422b9960fe412d7012491fcbad13803c7a8dfbe89"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa513900e241782d8d90998fc2c5e7a817f04e33120aeb1ca2db659120f3b4b1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "802982cec1f0f4ca2123e5afe40aaf2709ef11de882a54516a0c435dbda233f1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "badd684160fe6618cae3938877a687d10951cea937fb4ed9dffb2c121a20317e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bf673e248b9ecff9457c892d56142fe10bd6dc4136929105e65a5fc081b11b2f"
+    sha256 cellar: :any_skip_relocation, ventura:       "79f31d0171888953a7dca0685b335eec0983ef12a473458f81be0a07d10a2108"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6a4062b80d77c0c7ea22591b2bea9496842c92b989b435554225a3c16f7d827"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e44cb7f98f576a76445eaaf449da0b730302b127e072f7ddfd6e01c85a3fef7"
   end
 
   def install
@@ -34,7 +32,7 @@ class Entr < Formula
   test do
     touch testpath"test.1"
     fork do
-      sleep 0.5
+      sleep 2
       touch testpath"test.2"
     end
 

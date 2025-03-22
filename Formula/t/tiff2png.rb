@@ -16,6 +16,7 @@ class Tiff2png < Formula
     sha256 cellar: :any,                 ventura:        "77ab7ae23d1ee2add50645d344474f641c21abd8da1df66eb84b0e312a41cca6"
     sha256 cellar: :any,                 monterey:       "80039b863040ebc5f7868d5331c358ee3ef0f210520eeb45a11cb746a406ebd0"
     sha256 cellar: :any,                 big_sur:        "bd5b088f08568c294627c010ca998e811a6ff11251299fec4df84caa35db8c74"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "69ce08a03121ac9f4854a7b20a9728a24d2abe573045d5664daeaf0962ee27e0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3c16e66fef90676d5b183e53657435b8f97e2f80832391edddae38ee523c02a"
   end
 

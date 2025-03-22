@@ -20,6 +20,7 @@ class Daemon < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "fbe58edeb92d71e3ba4e5e7f3f6e9bfd5cb9710357bbd6098c92065f38d27b62"
     sha256 cellar: :any_skip_relocation, monterey:       "708784508effbf7aa7c2d5680fd52c7c1ae572ffdbd08d672d8ec7eab33534f9"
     sha256 cellar: :any_skip_relocation, big_sur:        "ab2a22bdc41a9a0a551bf77c6ea2ad5f3a75b6ad75def292d6ebd4f59979ce93"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "87c4ae0cde212781fe52c0ac599a2b867063595596d7b3260497969b9d610f6f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "861a0eb58cced7a2c88edb3309eef07521084b317725b9fe4f67acf71b83f331"
   end
 

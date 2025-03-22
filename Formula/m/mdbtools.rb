@@ -11,6 +11,7 @@ class Mdbtools < Formula
     sha256 cellar: :any,                 arm64_ventura: "ece916c2bc386781de20c67cc5e314430a369dc886d362f22039ea56d37771ee"
     sha256 cellar: :any,                 sonoma:        "49722390bf0230475a1261a0c10d90540b6ff056a07c54b74680eab7276c3a04"
     sha256 cellar: :any,                 ventura:       "2c2db546223c1b1ddfba20d70303761358fb5bba39362924976ff35d9710ae1e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d367189a2aadd23bfe3dcc0aa062cb780d2ac8a6fa4d51a8b30b7f6d9486fa3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e2ca3b97c784e7ce3e9d42e0bf58e15816b94944f2686c41d6ec698fc50ca0f"
   end
 

@@ -12,6 +12,7 @@ class CargoFlamegraph < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "64a11d47c7eec1f0763a07f464e6fbf0f69585f4292a17fe76bbdda2170f7eab"
     sha256 cellar: :any_skip_relocation, sonoma:        "36249021702766ea6d42e784c76167a45286238a3252220128e6cd6c2ddc2bce"
     sha256 cellar: :any_skip_relocation, ventura:       "3d318a74ddf55a95efd0e7c266269db79bb3ca206d8175422d1f64b17fdc2844"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f202dd91f412b3b9a839757309d613a81e126905cec1834a364cd141eb21c3cc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc5ec07e6bec4c930cffa793537cab6f01569e5a7a44915201505003c7badcd7"
   end
 

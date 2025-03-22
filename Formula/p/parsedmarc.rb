@@ -14,6 +14,7 @@ class Parsedmarc < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ef1b2bcb360e2b1350fd7566e1dcae9de796b3bf5456b90c512ecb71f3d10f84"
     sha256 cellar: :any_skip_relocation, sonoma:        "b50af3e70df6f37be1cd2c1ab981e784c9842bd07a6550f133748eda396dbc1b"
     sha256 cellar: :any_skip_relocation, ventura:       "eacde4669f7b0ab431952a7b498c5a9211dfb473b64d432f85a76a7daf4d0bff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8ef556723d35e1a4e0acf09ae04e3a52895d01b0021bc775ca696ca5682162f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f0d302883a5a0da36b64ded785e08dd4b173df574c07ab413f2d39b9019e9b4"
   end
 

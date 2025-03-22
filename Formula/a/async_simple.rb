@@ -12,6 +12,7 @@ class AsyncSimple < Formula
     sha256 cellar: :any,                 arm64_ventura: "9563803b43de1611be1f4f38083535f9ea944907a4b07808e67400448096a52e"
     sha256 cellar: :any,                 sonoma:        "3e19085474250b8f93b361127483b8fa68e509d0c1e4132976090279bf746429"
     sha256 cellar: :any,                 ventura:       "4b9d30e6cc11876a60fe9180ae43ef4de77b21c3d49c789b2f5a6d73be8048be"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0892f76a0d09c6b8651a4ad677516adbb942bf9b376a867f63b3a5d7c23d0d12"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "31cccc38ea016889db7f4a52700115a22d5eb7432e403c6939ef8bafb12bdd8e"
   end
 

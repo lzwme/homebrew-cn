@@ -11,6 +11,7 @@ class Sn0int < Formula
     sha256 cellar: :any,                 arm64_ventura: "367b3eb6203589309734ce6419f41f318287dcbf395fd8410e5e61b5b722557f"
     sha256 cellar: :any,                 sonoma:        "b00f3aa80e595baeb07464d03118671e43731845dd141209566869e44bce384a"
     sha256 cellar: :any,                 ventura:       "dafedcdf4f30705f40d806d7725994bdf8fe012caa80591c197049e254e657c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3add946dfd2e12c6ee97bc9c766c82f2b18b7468eb4e72620c380c7441518efd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "799345e368ecb3b46e5ce18b62976a75707f78a3e717d33b5524d6af3b3a9819"
   end
 

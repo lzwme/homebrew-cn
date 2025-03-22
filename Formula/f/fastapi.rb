@@ -14,6 +14,7 @@ class Fastapi < Formula
     sha256 cellar: :any,                 arm64_ventura: "0224ece4892fba7bf0484e63dd9fe91199220b7bc0a27b7014488308cdda202f"
     sha256 cellar: :any,                 sonoma:        "ae16136c5b4e9ba22052df140f9aaba11458eee3d136fc06c0659416c3527ba2"
     sha256 cellar: :any,                 ventura:       "ff628b1cac991d124ddd2a659a1c724d3fe3ff3a1679967cc65694a1b472f9ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "343d259c2e645728e3a0305adc51f7d5e367145754590a08723130ad4f2b2085"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f31923d033ca2225847c30389b38417c5c6e9aa8cd0e510a19ea24379a840b4b"
   end
 

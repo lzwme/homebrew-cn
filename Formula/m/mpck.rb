@@ -24,6 +24,7 @@ class Mpck < Formula
     sha256 cellar: :any_skip_relocation, mojave:         "e819ac8ce7eab3b4f83bcdf83cfbb129a9e3cebb36e314dabca646f808ed6257"
     sha256 cellar: :any_skip_relocation, high_sierra:    "3ecd47f83f5645cfaf2bfef23b5b9a1b14bb36f2ec146409ca44d9d5f25c3401"
     sha256 cellar: :any_skip_relocation, sierra:         "cd283270b83cf83c3e3a3c393404c1eca16e1620ced195821b97fe5ad6b39236"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "22ac6376ab61a0f98ba1cec33f9fbe3af88ada272ebdcf90bc1ff2c345174496"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0fcc623716e6209ba20e0e6211f90f96e2052b180282694d608677df4bdc72ed"
   end
 

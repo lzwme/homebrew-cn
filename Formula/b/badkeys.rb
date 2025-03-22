@@ -14,6 +14,7 @@ class Badkeys < Formula
     sha256 cellar: :any,                 arm64_ventura: "b3e77db1e77edb273e6022bea8440e651fa300263c47b2f8d4045114ad658bfd"
     sha256 cellar: :any,                 sonoma:        "4b23d32e958d853a341359f6c2627387e1628cbf72abf3f8edfe749976db58e8"
     sha256 cellar: :any,                 ventura:       "71564d54d9739f33b60db86b68761a7f0414a2837df84f2ec8b62f1258701cf4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4bc3a6bf8c1a8cedf53f5725d98e84de9987494b1503f69f2fe18174458b2a1a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "336a1ff4d2f198153a7c2ebaea51bc0dc33cb651fff3cf60a36b235477990645"
   end
 

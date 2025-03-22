@@ -19,6 +19,7 @@ class Elfx86exts < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "73d0f2b0c4c4ecc122dac0995af34846a1b140a8c604a417f8cbab2a77363a38"
     sha256 cellar: :any_skip_relocation, ventura:        "afb4dc9409919287108a2124cbda2c51b5e7577f965262a50e581afdd9dee9f9"
     sha256 cellar: :any_skip_relocation, monterey:       "6f85234f2d361532a283d8a075325a010facd04013aedb3516cb840c3fcb29b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1b90574812e7f452dde24120169e1b1616ccfa5120ec206ed336c942e8619bcf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f2bd41878fda292054b7c900726aa690f55791e7d541aea2c9cb2cf85b8a0e0"
   end
 

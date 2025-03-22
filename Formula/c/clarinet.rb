@@ -17,6 +17,7 @@ class Clarinet < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "80411c4cc490d2140d517282d84fa82dfb9213f058e0c117603f4feea3956344"
     sha256 cellar: :any_skip_relocation, sonoma:        "7f8f8d2bddd07f236673ba1005d8e208a81a81c2a38c503267d2def95fc93c1a"
     sha256 cellar: :any_skip_relocation, ventura:       "0af7c7bdaa38064c46dcbb161818abd77642a834a8e1dc5ad351362f1037fd04"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d826876698e75fc2ad7b3771ef31dab8f8119ede23f8eb24d5b14c43865798d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ebd518cb62430598655ec32adb836505c98a6f97f4122550eb039b3f2c74fa3"
   end
 

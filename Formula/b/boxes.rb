@@ -12,6 +12,7 @@ class Boxes < Formula
     sha256 arm64_ventura: "d83c635c1a99655fcda01132851aaa92d9ed54e7d331c9a3e2f32c072a7aa122"
     sha256 sonoma:        "00df90a0d846b02d58d16302daba7d9949d3c8cf4db7fe9bdd10f8c32b1e5679"
     sha256 ventura:       "a8c14372ddb54552b296380f436b49ba676ff7ef6d275513c36aadd197435aa9"
+    sha256 arm64_linux:   "3934bb6ecfb413871a8311f1884191f0524fe2c1aed1992242ba31dae70a3dd2"
     sha256 x86_64_linux:  "dddb84f6366ff935cf5f1324d3b93d3a7f0e8fc6349d71aa4149a7241e9986c7"
   end
 

@@ -12,6 +12,7 @@ class Bandwhich < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1b3d6ba9e64f04836694b7fdc561898f574acdc7a9a16748c9cc7e3a55837779"
     sha256 cellar: :any_skip_relocation, sonoma:        "20cc25bd2086b5641e01ddab375f3c1011f53ca385cb19f8cfb4b46a46e5b878"
     sha256 cellar: :any_skip_relocation, ventura:       "960376206b857195c7d7c4640719b3e242fe1c06728eeb46ec441d517706fa7f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8b780c7481b3b9c4e70cab919adb4d3e8784d03f1c8e0e9ba38d08d764012f6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f381d378861391d73194970be1237864d4ef6acb6d508db75502da5981647d7"
   end
 

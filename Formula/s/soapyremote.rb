@@ -13,6 +13,7 @@ class Soapyremote < Formula
     sha256 cellar: :any,                 sonoma:         "2a9951c5c2f6b01200efc94ffd6f19dc8001b3051759c3a793a4e606c4f7c9d8"
     sha256 cellar: :any,                 ventura:        "812dc85d3f0eab0fbdd201c4f7520250ee8997827b0cfa721306b1170e31ff27"
     sha256 cellar: :any,                 monterey:       "668170d64a27d4de6aae24d8a9965b788e2b956eb8db5c3d3adf6807c31478ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "83938e8783f67851865ee4aaad50da21c0e6d7b33ed3cd9db8da0b786185e5be"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "afb465a0deb07570685ee8ce05b960f6b4159310db9403f49ef4d37d0eae0f09"
   end
 

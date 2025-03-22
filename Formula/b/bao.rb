@@ -12,6 +12,7 @@ class Bao < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "55fcf74c342f34f5f18696f788335b2c0d14a575a892c38b89762e1ac3222bcc"
     sha256 cellar: :any_skip_relocation, sonoma:        "c858c8d4530769611f9e1af9ebbba5a435033887371943ae564f12f84353eb74"
     sha256 cellar: :any_skip_relocation, ventura:       "ac13765ab2cd2f636be2a21e8e5b258ad18357900a58fa5d1da9f8b8dcc19f45"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "11ce6005470b8119b70841eb7201e30ccd1f37f76f78676e986702303ece1186"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9aef308095d30ea08a9bc174fc4620c032d85aaf4d2037cc0ea8fc37db96795a"
   end
 

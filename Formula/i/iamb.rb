@@ -13,6 +13,7 @@ class Iamb < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "9333e920a2091887b025e048a61544c69c263610f261796b3844001d00084bca"
     sha256 cellar: :any_skip_relocation, ventura:        "94f17c6cffebdd18ed8963bfd933925b9b182cf2879b84c80245f4be9cd1dd57"
     sha256 cellar: :any,                 monterey:       "c0d27624f82d9978f2466e90e7e89629704d890c0d8461e9ec01113d6f1ae105"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5b6775634be6db7388d651436166e5663bad228494564b9d6ea16704b47ce035"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f77262d3d6396f267d57ae41fa0d76d023dc5960ebb0eea743ebff4b9ea7f245"
   end
 

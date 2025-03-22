@@ -13,6 +13,7 @@ class Flawz < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0d41b1a2483d47ffff21a20a37b678d2b37ea25363010a592e5efe57ac9a5033"
     sha256 cellar: :any_skip_relocation, sonoma:        "0120b7ac67721ca6d74ec1fdf08e082fba851447998f54d698afb0a18f9f1d24"
     sha256 cellar: :any_skip_relocation, ventura:       "63ea238fa5329800901bba640c22d65b23d7971d6b15a4096121baeb7848c496"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d9de54dbf400fb51a6b4a749309ee41df0e2a0dd0048c0ff73f349af5eafc41"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "76314b097693e33dfaffe268be3fd2dea5519df259c39958e6b6cffa334bfec2"
   end
 

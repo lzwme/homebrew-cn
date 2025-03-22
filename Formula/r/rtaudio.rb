@@ -19,6 +19,7 @@ class Rtaudio < Formula
     sha256 cellar: :any,                 sonoma:         "0a25a53c7f0cf7dc23dc4e4e9ecaa7df13051b16b3c8513ece3609064a74bab1"
     sha256 cellar: :any,                 ventura:        "a3feed53dc08f1210bd32431b16fc0bf0264dc66144ea64716b95b9a34e80902"
     sha256 cellar: :any,                 monterey:       "fb3184319287e1a9d056b35033806116fd44390f406cc3a19f2d9fc107148318"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5fd5758c63b71ddcc39884b1eabc5408bb4e25c812bf94a7021df35aba3f9881"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5115ee3bbfff48c47089c8051a0826ce35277e2d75397cb8e1b0fe39e8933588"
   end
 

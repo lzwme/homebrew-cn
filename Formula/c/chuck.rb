@@ -18,6 +18,7 @@ class Chuck < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b8e37a648a05e866e47cb5bbe4b1f1a4dfcd33e8ea10ee48d76418a8da479444"
     sha256 cellar: :any_skip_relocation, sonoma:        "2a90e85d99574ef5a786832aae043f15eb01246c5ce9bd3b4a4dd7718b394b9e"
     sha256 cellar: :any_skip_relocation, ventura:       "d601b642482546d029f603fdf96732429130c1de8b8551db68fb2c2b69a9289f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "70e71224d00fe5adc9d80ef4452d3871341ecb4b9115c538548e2aab8203b4d4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7598ed9db4c8a52610575233f746dce77087ae8b32714cf7f6320ff3d4ddb686"
   end
 

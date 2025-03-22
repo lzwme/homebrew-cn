@@ -12,6 +12,7 @@ class HickoryDns < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "82bbaa6d138064a9c65c06b4bdc5ad3ed402120eaaa25d0058d2a11d9d6d4ce5"
     sha256 cellar: :any_skip_relocation, sonoma:        "5c7e58efaf46ddc675103dcf4cc0fdf48b79effd865932be537ecfa0ba901b5e"
     sha256 cellar: :any_skip_relocation, ventura:       "b639f804ea3585b82dd21c6c4c0b8811d30abc13da7889936759c2f62f5a6bbc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3bfec86cd4a461c2e61390b40cc050d5a2fdb2ec622f70e30f13e23bc35c429c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a809089a35c45c529fd83f475be42f67ebd9f267fbf091527b50df92df3cc288"
   end
 

@@ -12,6 +12,7 @@ class Stanc3 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "16ccaddc885752a02296d260bbff43e1a618183c5feb29f54dc966d282f58a7b"
     sha256 cellar: :any_skip_relocation, sonoma:        "d95e9716a7f9bfbed4a9161030ec37001051de2ddb7b18f4386b599b11692ca6"
     sha256 cellar: :any_skip_relocation, ventura:       "d000fd196bc37829af7985f3cfd15a95cae50676acef2250d54cbe088cd207ba"
+    sha256                               arm64_linux:   "0c35526796f504d5ea421e2bd2ea9bbb1e5d5889d150563fab318f5fa6a1ff82"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "92fe8afc06fb2059c4ffd178c2a67eba0b305a60a566ebb80f4fbbce090504ca"
   end
 

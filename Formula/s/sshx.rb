@@ -11,6 +11,7 @@ class Sshx < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9b6e4d71103322becc0361d2940862a5f7289d8677076aa230ceb77c12c9fd3e"
     sha256 cellar: :any_skip_relocation, sonoma:        "acb77c27444b26c774e81104783ae34f10773a454f43116ae97d368ddf26fc5a"
     sha256 cellar: :any_skip_relocation, ventura:       "a42df234bc853d19f5c67d6b980fa9c6947063fa37e64471d5be0f194444ab21"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9055d91e23321fa85ab586a83204ad383caaeec4b1af12bf13bd5b901fc03461"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "71d9f3653dbfd7c5b4699821fa328d4681686bea5a21a6dea4f832f4efa45333"
   end
 

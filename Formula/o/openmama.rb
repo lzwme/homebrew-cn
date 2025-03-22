@@ -15,6 +15,7 @@ class Openmama < Formula
     sha256 cellar: :any,                 ventura:        "31d87546029420927fd22a57abb347c9e90886cdc3d1b53d835658100fd3f302"
     sha256 cellar: :any,                 monterey:       "411572b9bbc3d14e3ed1fa4037fd1a8cce714111b8557a2771f810408e263170"
     sha256 cellar: :any,                 big_sur:        "b0484f0ae2366f8c6170164c8067f42dd0f94a9e0afaefe3dc68924c4a57cbe0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a4ecfe08949d2b93113900c434389b2e662998c0dad4a23e76150dac15a53f97"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "62da575388fea1bf4abd1799475004e328344c01351504d33c61aac0de464e46"
   end
 

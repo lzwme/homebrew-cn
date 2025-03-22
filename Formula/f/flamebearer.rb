@@ -14,6 +14,7 @@ class Flamebearer < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "461a3c6c6f5a9980766696e8bb718be59f6f758f07ca302a6be7ad97fba362da"
     sha256 cellar: :any_skip_relocation, ventura:        "461a3c6c6f5a9980766696e8bb718be59f6f758f07ca302a6be7ad97fba362da"
     sha256 cellar: :any_skip_relocation, monterey:       "461a3c6c6f5a9980766696e8bb718be59f6f758f07ca302a6be7ad97fba362da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "feb35be827c1d6d23c12da4fee3bf912529be4ab7b549b9253a40b12ab155a9f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "703f25da914a0c179baf31870d97d396d5b3e8378ce7cefdf16e0c1809f072cd"
   end
 

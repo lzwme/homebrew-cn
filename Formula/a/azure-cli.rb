@@ -20,6 +20,7 @@ class AzureCli < Formula
     sha256 cellar: :any,                 arm64_ventura: "1ebce4543612c70bdc7a39439daba6682e312a55c583b7ac298a8c46a8d0e0f7"
     sha256 cellar: :any,                 sonoma:        "b040287854f80ae33c6f32a8c314c2ba8b9228b3388c93cee515307aae8be81c"
     sha256 cellar: :any,                 ventura:       "942f6b108f23af4f91c5721cbbc98d4d99148671da62280a05ec3bd1f35e8e46"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b08b1731b963f690f8215efde19d2879f5caac658d13ad4c8e815b2f099ae0d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "62a0a82ad8dfc618c5439d0666adcd328ceb0d833adffed2bda8f0ea3944a379"
   end
 

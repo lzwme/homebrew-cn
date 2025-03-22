@@ -11,6 +11,7 @@ class DuaCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "fa3b62f2e9141eb656bc8359d59223c9b317d681759d15f7348523c733900ef9"
     sha256 cellar: :any_skip_relocation, sonoma:        "a4dadef8ebfb0cefe0b24968ed83b472738f481c5f4ff80eb9ed7600d9b3f7d6"
     sha256 cellar: :any_skip_relocation, ventura:       "f67e8a8625f1400c26d60ff0b98b895d2054960c1fe4e5d8ec21d5cd0057cc4d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "29d03a6054e45da5e5e48b6e76faf2597990cfd19e8e51be57b30e808d3a50f9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "572a6d480fa4c74ebdaf6e22138573d94f2169e49717b4441e9384e3a0e14c45"
   end
 

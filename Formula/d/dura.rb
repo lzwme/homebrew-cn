@@ -17,6 +17,7 @@ class Dura < Formula
     sha256 cellar: :any,                 monterey:       "189cbc09ab1621aa501666194c27b9616a9b0674ace36ac981896a02816bbc25"
     sha256 cellar: :any,                 big_sur:        "c01130844f54014c8ad174037da08ac04ec826811c89e917c388662d61f92bd2"
     sha256 cellar: :any,                 catalina:       "b0279f3f31e75da9843e5a0ad3bbcae62a29277153c8e8992d4de490397aca70"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1863734bc30dd7f8ea317fe0b498279bc71a9b2e6d41b9931fb8f81a6b604e51"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b01d4685f6aa2d5fe11722b7c7379695600d6827fa48bd72addebc9cfbd16968"
   end
 

@@ -13,6 +13,7 @@ class Detox < Formula
     sha256 sonoma:         "cb3ba28c5bd713d4b8cbc3bd908270ff645481fa62b0d7d8c83e55c4e9ee984e"
     sha256 ventura:        "4e6159694a04362b11cec132dcacb70b1d84567c688614f7f887e8b7a1f43293"
     sha256 monterey:       "e39e5f5112ebedf0e3b44aab8d8af72c966698e9f4230797df96fffe24c82686"
+    sha256 arm64_linux:    "b699688a6b8ba32c1b024d43a922014a10bef9fc957b833f9cdf17471211f7a0"
     sha256 x86_64_linux:   "cb4ab816445009b488e415ec13b576903e89a89e367bcf31313896b589163448"
   end
 

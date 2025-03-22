@@ -19,6 +19,7 @@ class Embree < Formula
     sha256 cellar: :any,                 sonoma:         "ad297f96354b4f7b33a061495b43637f266ad025305a9cccc64b3fbdbd062c56"
     sha256 cellar: :any,                 ventura:        "61379810c6582eff76eb3b5d6c62008b1315326f8ab0c4b7a9bd893b55c006b5"
     sha256 cellar: :any,                 monterey:       "2df23844ea00a109fa15abd46077164d6ff93c6d1fdfebe6632c16703085423d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7c407c70f0834cf2ae7e7eb6a0ef825daff88d0443ee85a1042e60f1ccf64041"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "85eb36f2191fc119f3cb5c0811fdb50d59e045b148f67d5e6c6fc849a1519eaf"
   end
 

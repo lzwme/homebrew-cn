@@ -19,6 +19,7 @@ class Fail2ban < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5f59d34135a5df4be2af65f51437d5443262ab7aca9e4fe6f321c75522f23c9a"
     sha256 cellar: :any_skip_relocation, sonoma:        "506fcbd09269cb3a6c9b3b19b4e24aaf969e86568f113fd3ed925fe87032cc6d"
     sha256 cellar: :any_skip_relocation, ventura:       "506fcbd09269cb3a6c9b3b19b4e24aaf969e86568f113fd3ed925fe87032cc6d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a546fb44894f82465d26ddfe88a3759b69a761891cdc922208674a948e9887f3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "51ddc960fd617aa7e844a7fb5f9e58d4af857e9934a82d2dca93257ee6a0c9f9"
   end
 

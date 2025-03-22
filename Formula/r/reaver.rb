@@ -16,6 +16,7 @@ class Reaver < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "69e3fcd6c69e7e71bfdbf84a780f466097163cc8a34f8928350d02b4fb57a1ce"
     sha256 cellar: :any_skip_relocation, big_sur:        "ec036d6b49bce14bfdee5ff3f7f03468148d60b48c06ee75bfd156a9c387baf1"
     sha256 cellar: :any_skip_relocation, catalina:       "e4f10cca5698e3ae3d03841e67d84d277d8e05a06c181567a2a1de5ad74f40a3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "372d02db04ebd4e99b333c155eeddedb257fa4eb0340feaed66507713c0553fc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5301d082e3bd0a833d6b352e994d3b39edced488a46ef597b17aaa1e25669989"
   end
 

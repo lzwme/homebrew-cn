@@ -17,6 +17,7 @@ class Clinfo < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3f291734139a5f97270e79760822919be0824e9f273c732f796590c343e18e54"
     sha256 cellar: :any_skip_relocation, sonoma:        "b844184911efd1eea8fc994b07e2e02c1ffbbc63c3fcb771ebd1ea588d02e337"
     sha256 cellar: :any_skip_relocation, ventura:       "e13ffb6563cda2a028befe3a148ddb8bbe6c38f6fbf3cf4d9a82fd2a3ba7a8c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbdeca056b99bf6960da8a6ab7c8533da3aba2efbf6afea09d5fa7be08bbba5a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "90e95ee551467da22ea1a32580ad4e42ff3ea26a1cdb66e3a63dd9b53e01f5f1"
   end
 

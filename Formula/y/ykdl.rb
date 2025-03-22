@@ -14,6 +14,7 @@ class Ykdl < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "97ab80854fd7a7802859506993abdacf466114339a6717a7b0a1010542c3f407"
     sha256 cellar: :any_skip_relocation, sonoma:        "724042f1d05d799c130ad4715877f1b30919f7c0b3e8571f3b9158ad12e1dac0"
     sha256 cellar: :any_skip_relocation, ventura:       "2b8f5f155f13edb4eafb86168bf7e4b3d68ad5a5a68538892458e92233f226fc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a69f74467e2cf7ce089700c74580f702be503620dab68542b2df565c42b3f247"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "eb541b86eded5d4bcc6262795c769d284a9e3c37f42f70121d43864f4066dc1d"
   end
 

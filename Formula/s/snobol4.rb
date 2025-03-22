@@ -18,6 +18,7 @@ class Snobol4 < Formula
     sha256 sonoma:         "c4576d539a10c904408404d64fde008b7939d8fbcddf2e739738b38c9fe613bd"
     sha256 ventura:        "c8c5b13e46532544bdc4fa93d3670fa5b648d5a9aa9593758a9e83bd9d72f897"
     sha256 monterey:       "e4d3d40f4b8bd51e49b1c99de9590e79f00876fadb28c13cf98070525106a5ea"
+    sha256 arm64_linux:    "81955f54464190c8e608a813fde680eddb620d40785884971e33f50845ec486a"
     sha256 x86_64_linux:   "c555c7e31212c27a251d42ebf6b166ee1ac59c6d306c60327a8e1e429d1a7f7a"
   end
 

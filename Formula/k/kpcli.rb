@@ -16,6 +16,7 @@ class Kpcli < Formula
     sha256 cellar: :any,                 arm64_ventura: "e749db8f89b0c44e1f4bdf8939f17d17588d0ad085b80eec57133550180974d9"
     sha256 cellar: :any,                 sonoma:        "7e4fbc43db9b559627b88caeaac89eb1c0a7b3bf94830cc47fb52498a9121c71"
     sha256 cellar: :any,                 ventura:       "5b6f7ccdcd16433c960df66d0219223f9b16879052f3762b632ded2f51ea104d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fdd8b44c6fd748f5c76213ec6913259e1fbbd1c04a3d565672a06d503757fca1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "194893adad47f2845c789a032750b49f46ce0900a6d72858305f9f820de97a04"
   end
 

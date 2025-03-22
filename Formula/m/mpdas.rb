@@ -24,6 +24,7 @@ class Mpdas < Formula
     sha256 big_sur:        "1f41b8a297270de980e814104f1a74d9437777caa9443686fb251cac6625494b"
     sha256 catalina:       "ae3eaddea864370fbcb2ad3f815165ba4f79f57470cbf0b3d81c781f0aaccc37"
     sha256 mojave:         "4b6a70ab4c6599598c88dc0da91b3646a5d36bc7db9c174ed1cad387861f4370"
+    sha256 arm64_linux:    "c0b4ba425325dd627b3b62d9c90d7d10a6b5edf54414b4a56bcd1fe5b752d215"
     sha256 x86_64_linux:   "863be659b7b2e9ee5e61c73d284d0a753430f438fbf1225efcee4120850883d2"
   end
 

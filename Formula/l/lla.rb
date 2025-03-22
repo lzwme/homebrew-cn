@@ -11,6 +11,7 @@ class Lla < Formula
     sha256 cellar: :any,                 arm64_ventura: "4d6ec746e79cee085f4a0db2f8869b98b2a5fd7ba6f00d13c6a70d9982a6cdbf"
     sha256 cellar: :any,                 sonoma:        "e51f718b2d35a02a4aacfb17648c5390f698289bb48a670079ca132211651876"
     sha256 cellar: :any,                 ventura:       "5b4e1cda12a4b11aa8c6cf6566e7284b2eb3817310f39c79e47d18c3831505e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a43b4762fa494d7f23b651a2bc751727c93c6e1de409ce292aebb107b6e3a249"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d626d89a765760afd59e2e0a280f202e4b8e425064c13170db89a78f4b168a34"
   end
 

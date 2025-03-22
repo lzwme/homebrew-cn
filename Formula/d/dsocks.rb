@@ -21,6 +21,7 @@ class Dsocks < Formula
     sha256 cellar: :any,                 high_sierra:    "c6f4212b4e925dc0d29b21f96ab244a8a6842ea44b72f3e48036e69d86ac4c93"
     sha256 cellar: :any,                 sierra:         "896675fab1d6bf50e5ab9512041ab49fcf9af65198d93ec85c0f2c0d801df49d"
     sha256 cellar: :any,                 el_capitan:     "9b764e48bfe348433382d030a4aa00eefe1afa63b6bcfaab2450101bb429020e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "142addcc7f101ad923269f0b046f358c50e856423d0ba9adeab86f1f657af6e9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f2e5fda6bf8552306949f8571bd51a080870219a6f43f73464a1e92326e6e7ff"
   end
 

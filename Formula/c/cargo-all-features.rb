@@ -16,6 +16,7 @@ class CargoAllFeatures < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "39177b01645bfdf19d6d9757c863e96bdd711170d8e87a1f5b2c7d9720f0a33a"
     sha256 cellar: :any_skip_relocation, monterey:       "912aeeaf3ae966f434cacda0b8e5c5c904f8ad83d33ff3334724c3022e151185"
     sha256 cellar: :any_skip_relocation, big_sur:        "680c7a563c12800a68c8e24afbad0b5c8ca8380c7e16e5e2a4f045af3bae7406"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "25a0b7ead12f5cabf7889eb7aa847fe12aa3ee7c0c6110e93e7e35b9d1633035"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b948efbbe607b8dd394c6051416e698544960ece99c29c67909228214e3f1c17"
   end
 

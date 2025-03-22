@@ -11,6 +11,7 @@ class Monocle < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3e631476b096bdd088521de3c2ae615874cc20c82a890216a79a82896951e078"
     sha256 cellar: :any_skip_relocation, sonoma:        "a7d4adb1ef908b164dac34ec908485d2af8c2928eb49b6fede7ccedc1b357471"
     sha256 cellar: :any_skip_relocation, ventura:       "b3675f8eb3b4217d5289474d6d420d1fd78598a00d339a3813e826d27d416d5a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "429f56dfb8e38b70ddeeded089aa85d2b1cde684c350d369493526d672d7305c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "75afdf472f8f6e0978c755ee28f683f52f2025645fe14165ca189b43caacd0f5"
   end
 

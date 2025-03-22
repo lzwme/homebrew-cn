@@ -13,6 +13,7 @@ class Kaskade < Formula
     sha256 cellar: :any,                 arm64_ventura: "7961d1ec714ff6701add2d021bde45c19f7122df9cb0bebc130bbfe451102d84"
     sha256 cellar: :any,                 sonoma:        "680697b0206f5c9087f790ae72e13abb506ab0f3ead3bf260931ecb91e00ef79"
     sha256 cellar: :any,                 ventura:       "3411c96bcf036008171256100f6e6146b2a8c5277bed8ff908e67bd8a449828e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3e660ccf854f8e0291cfa74dbdaef5b1d09a82f59cce4a9eafc80b42e2eecff"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff1efe1f6dd94db277786dcf3bcf645f9c6b9960b026920996ef5817dcb07013"
   end
 

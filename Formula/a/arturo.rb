@@ -14,6 +14,7 @@ class Arturo < Formula
     sha256 cellar: :any,                 sonoma:         "080ae8f329e1f5434ff565a2731066510251e94be46b3dbc88ce81d7fa131395"
     sha256 cellar: :any,                 ventura:        "bfd55cd5a7c527f3ee97be03d31019f19bcc42e8827eff660a3e0225fc010601"
     sha256 cellar: :any,                 monterey:       "a131b4cca2eb06a0077955ad754e0cf2e028b6edcb8d59f671d3863f4d0c9e09"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0fda47994e673c1315f52cde8615be23dd6cdf870982562aa2cc7a09ae44c8a6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "58f4a8c2fa4c22f00887c45852b4fe5326d1df941f484f5884bf5cab6df1c81a"
   end
 

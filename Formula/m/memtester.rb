@@ -18,6 +18,7 @@ class Memtester < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "db421b0bd918efef4c65a5fda3c6f87e979d0a3d0af630c09ad1369f835e1729"
     sha256 cellar: :any_skip_relocation, sonoma:        "dafebaa8af7e2774e55142b2b6c8ea9e741c6c69c2c757f6deecdfc5574d0379"
     sha256 cellar: :any_skip_relocation, ventura:       "5429e15d860dc1dc4339ed93beb76756f4b123108c20334a1bc4820043c63d34"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8c1b9a3a3a300d787761fbb46a118efdf1d70a8d1ab686832207e76c5e2a2f3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "09e87a3a5d5b2b187c4e48b815f6e3bd5b70a2e1024add16f0c3ef12952c91e3"
   end
 

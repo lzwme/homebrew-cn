@@ -21,6 +21,7 @@ class Prips < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "97c8079a862f2f3957c23762eb50034de5b6317c67696a18c5a6792da2b9cfb2"
     sha256 cellar: :any_skip_relocation, big_sur:        "32e889ecb796175e17ad03eb59ae8e7fea9ca015e228ef2369cbc21db55a7d0e"
     sha256 cellar: :any_skip_relocation, catalina:       "76f6e8fcbc1f60861023f6e035b04bec61d57fefb3bbfb87fbdeeafb47b68456"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "16e579e6b18a9732d17f35a8e630701933d845c90c20d5424abba8c40852854d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2453199b92afe7e105fd95f698b5c9c7d6897f1d95d624b07c32bbfc65d44d0a"
   end
 

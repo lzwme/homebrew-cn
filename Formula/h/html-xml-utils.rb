@@ -16,6 +16,7 @@ class HtmlXmlUtils < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "72ded5b4323716b813c46b80f31f4604fe7bc7611c5795c865bfc68f4a9ad9bf"
     sha256 cellar: :any_skip_relocation, sonoma:        "ef5904e06e9a4f2381485ae3ff342d68a6dced43269a9c9098bdfc19503ca08e"
     sha256 cellar: :any_skip_relocation, ventura:       "af7e2d3010b2a13594f27ad96dc45c8a59ada49610aabf24761cb72a210a52ed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "63363ff100b473875d5af798b0085b7467363f147bc3d793807f1cb37a6b2192"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f555fdca29f038169dc2499fc0e680e40c30b18b4224b43b3cc7ac5967bef21c"
   end
 

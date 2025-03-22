@@ -14,6 +14,7 @@ class CryticCompile < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "de1c70a68e51a86b97959b63089f7853ccf8f6ca55630241af891919d556d55d"
     sha256 cellar: :any_skip_relocation, sonoma:        "8dad1e8401b47e4129542bdcb407086a4184cdf77845acb50be85b2767a9387d"
     sha256 cellar: :any_skip_relocation, ventura:       "31f5a9231ab385be2527f803c4d5c82cafffb9f944be33419d248c124da971ee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "18ab49e38d170a2c6bf2bcbc5864c211dccf6697f8c94b15e5ee21d7ecd41564"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2cf608d327b581dc8ffd158e6877fbbc9ce2be31b1e206861011408ba04953a4"
   end
 

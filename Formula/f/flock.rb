@@ -16,6 +16,7 @@ class Flock < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "ec7c9523be673e50dec3b6aa3d17ef4905076e0f804e9ebccbca128bbf8855c5"
     sha256 cellar: :any_skip_relocation, big_sur:        "1f9fc94a66a10a05c005b8043b477fe5f8ec4c995efbc853a9d56c541370ac97"
     sha256 cellar: :any_skip_relocation, catalina:       "b781487b76eed046d9e7c5d2db71a7c81001dc6b80926b9215bc7cb4e7a3c162"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "52565fd522beb6cf07defd4a4a790e20f52975261f940658442d1354c9dab7da"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ca5c17cfc66b0b2589e07c696cfbe385addb1ed8905c5d851d64b2dbbee00940"
   end
 

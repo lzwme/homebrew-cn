@@ -17,6 +17,7 @@ class NoMoreSecrets < Formula
     sha256 cellar: :any_skip_relocation, big_sur:        "40bfaa531207bce7140398180d44632f1f8574f720295061fb97bfdd14533a3a"
     sha256 cellar: :any_skip_relocation, catalina:       "badc69153ed6a345eff5282d2ce746395d0d04003ba29c096204c39633c7da06"
     sha256 cellar: :any_skip_relocation, mojave:         "05abb8f3a139e05d602efa4e14b5dc108f4be477330955523f3a3b2673d8ca13"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0f0b0fb1c8cfaf9e204626853b77254ccb9b7fc46182c971e59daf9a2ca41b74"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6957194726eb655233552a996c4bb2dc8bae487ee8d4921de039def07118a94a"
   end
 

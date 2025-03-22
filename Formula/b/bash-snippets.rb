@@ -12,6 +12,7 @@ class BashSnippets < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3d9c146c0d2b5d4e6ec135939558a9a61f40f416c9087be9bcc968f09a156998"
     sha256 cellar: :any_skip_relocation, sonoma:        "dd3fba704985cfdaef3cb86ca549b505e4ea7eecd3635c9acc3061f78acfa293"
     sha256 cellar: :any_skip_relocation, ventura:       "dd3fba704985cfdaef3cb86ca549b505e4ea7eecd3635c9acc3061f78acfa293"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3d9c146c0d2b5d4e6ec135939558a9a61f40f416c9087be9bcc968f09a156998"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d9c146c0d2b5d4e6ec135939558a9a61f40f416c9087be9bcc968f09a156998"
   end
 

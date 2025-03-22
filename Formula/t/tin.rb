@@ -16,6 +16,7 @@ class Tin < Formula
     sha256                               arm64_ventura: "0bab093b5385450e3f87471243afe4b341443a141b971f5a02f7ad82a161f13b"
     sha256                               sonoma:        "b426577ee9e85591383eb389a0b2077228699af99fe7f7fdf5cc942f8b486264"
     sha256                               ventura:       "e9ee890eefb1b3cdde1c3c4420fab41c632163b30ce7429d74a67bf03b092fd6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "59fbbd067f08e1c809d0eac35d969b80b53dddddd7b0e447a06b3a33ad785727"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7da69315726b0f03dd42918f5e545befd3afc660d08f2b6ec70f1a651c421abb"
   end
 

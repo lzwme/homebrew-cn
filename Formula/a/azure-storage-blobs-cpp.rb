@@ -17,6 +17,7 @@ class AzureStorageBlobsCpp < Formula
     sha256 cellar: :any,                 arm64_ventura: "c10115c7de9b2c9965de045ed149cfdfcc7927eb9445c5195b11335c92813637"
     sha256 cellar: :any,                 sonoma:        "f8464e90a2e115ca726ed759df416a96575ea11aee471c4c9d4aa8efe11e7b99"
     sha256 cellar: :any,                 ventura:       "9c34e948570ad58b1838f052c34239e9ca75acd0ade38c4ea1a742ad05f9400c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ebcaa4eec2d79199bc6cfaeb000828472b7ad0e7c9bf0e3b8ca9c7e146a1eb43"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d63a09a4848a221ad75c3fe84ae5db7c7ef2b4f0e07617189b562eef175a242"
   end
 

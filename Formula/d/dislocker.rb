@@ -7,6 +7,7 @@ class Dislocker < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "081caa8698ffdfe2c8f65d043786dc0abbee0afc72d0ebbb51c3a5abcb2da736"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "34239da3f2f7776cb63825dbb9aef1f29fa0702926fb34f164ec60b79ba8e8ff"
   end
 

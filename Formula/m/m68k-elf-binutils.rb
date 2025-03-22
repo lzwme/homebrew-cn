@@ -16,6 +16,7 @@ class M68kElfBinutils < Formula
     sha256 arm64_ventura: "a5ed324082026d635a02de4cc13bd7a4295be5d35206473dedbd7a551bff7254"
     sha256 sonoma:        "02e128023ae78f6353cf68d79e00e92e7bda8ca424f0f6e7dbf0d01e781979b9"
     sha256 ventura:       "b138ddd64a69bb9a42a5c5e76c3223365f3b23b3e282fba0df09feaa6b5fc5a4"
+    sha256 arm64_linux:   "2ebde00a78fe1ae79422738253647d1142850bc58467376a99a971842460b4b5"
     sha256 x86_64_linux:  "8f2c362af5db10ad9e8aa38efbe0cb2440231d73747f54a2c3f48f49cff52277"
   end
 

@@ -17,6 +17,7 @@ class Loc < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "8d372339b2ef67c179fcf00d33e167715dd41c729b7a50fd6026e32a5529338b"
     sha256 cellar: :any_skip_relocation, big_sur:        "b3fa9372c95f88ca42e456d2f9c451cca28c4e894afd9257fc4069215b74d8a4"
     sha256 cellar: :any_skip_relocation, catalina:       "d87bc0b8b2122f5c9a03b98ab759283882d2fb898009668d0e6f79d22cc3c4c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d254ba1cf64886376923d5ec23edbd92a70a3bc1d6ec5c9fad3c8f08be255a91"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f463ece47552bb4e58ffe4c4ff6e62dae3b57fb3b9a1e3fad3ea728b07bc660f"
   end
 

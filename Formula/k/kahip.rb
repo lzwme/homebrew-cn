@@ -12,6 +12,7 @@ class Kahip < Formula
     sha256 cellar: :any,                 arm64_ventura: "e0525044a406b7a0e53ce2aa395fa7ecf21dfc2b28ea7b4c7ce162291da087b6"
     sha256 cellar: :any,                 sonoma:        "320d2635c2ec32ccd3de2127a8736e7e0e34278bb08863656dea52027f0904af"
     sha256 cellar: :any,                 ventura:       "c1173ffd2a8bec573cc70073fe764fc0fbeed8c9659a31eb3f12917f80a7a03b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0511449c8a47e48911efb5b8bde068854e0865a42aa56f67f70b51a3418feec"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8aefc291785e6952f1b6e2f0d51e90266934d00e8abfb66c5328a7820c1bf2b"
   end
 

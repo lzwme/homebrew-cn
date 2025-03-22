@@ -11,6 +11,7 @@ class Proteinortho < Formula
     sha256 cellar: :any,                 arm64_ventura: "f14f92ee384b488e968e5cded89ec08387285b96e1d925ca2fe2d5d2cff57aa1"
     sha256 cellar: :any,                 sonoma:        "d19e5fa55ae03aaf19c9299dc4d575ade198b4ea50ba58a48206f1f7f738782b"
     sha256 cellar: :any,                 ventura:       "1c282b335913eb836cc6854b3f0a3cdb971e381e80a63d8978ddf16c89684bb2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5c144cc8298e774bf04fc81c79da88a37ed15733886313710c12abce7cafb1b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f32a54de7c62301afa12bab82924266855662010de36ea55a7190cd1aaf6a6c"
   end
 

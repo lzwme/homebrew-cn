@@ -17,6 +17,7 @@ class DotenvLinter < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "a5ee9c2f5b214a98f6f132647cca658fbfe71e6fac928323cbc75da3d28d92ce"
     sha256 cellar: :any_skip_relocation, monterey:       "5d16c28fec308fcc777002e6a6c58ae798ac141898c3b8c68242dbab9b9160b5"
     sha256 cellar: :any_skip_relocation, big_sur:        "a575348fa033223614c4dac49591ad81129238c3d8675d3e7a26fed6989e446e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "c1d24d5ee409f3bdca9f8b112f29be3bd7c6212ffbac08f516b5c2f0d2ec5461"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "374ba41dd72196bdcdf510f52e42a74d0ee35eb96c4ba47bbb88cad7e298d023"
   end
 

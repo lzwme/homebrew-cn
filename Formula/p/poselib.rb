@@ -11,6 +11,7 @@ class Poselib < Formula
     sha256 cellar: :any,                 arm64_ventura: "7b6e8c4abb3b2e00c8dfa0aa600599c9d930724e09d1dcf45339c903121fa8f1"
     sha256 cellar: :any,                 sonoma:        "e520e1731c729e1ee2dc91a3d6e3d5773bc6f5414098b6b0d61aa7984a3d7467"
     sha256 cellar: :any,                 ventura:       "3e3d39c0763a6efacdc2f9154851ee80174ac64ad3aa0518fa9e35871e42cb53"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "39566056afc9dc3a3f6aa15adbe8fa603b1f2650a3903c76f94c053e8ec8f0bd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "598ee718057f572aebb473a515f4201391808f59563811eaa8809a5dcc7bbacf"
   end
 

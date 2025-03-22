@@ -11,6 +11,7 @@ class Facad < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d601aa8296bba837e4c734ca59b4babe599438a7a31476f71ce1a0de1b57dcf0"
     sha256 cellar: :any_skip_relocation, sonoma:        "ebbe6cf1e39dda7fb25f5eef9f29e80b675f96dcf62102507a06ce9d10d4bbf4"
     sha256 cellar: :any_skip_relocation, ventura:       "0de0e430aa3c0345fae2591c7892a2b6c8924ee2ebda42f5b33f66b6ebddeccc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a20140fc6550154247ecacf7fc17201a7863673324a3ffe14a1a18a431d5053"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f5acf8fc3823610c1d6c293b38004f5934eee765174942f59f23e86e9becf3f"
   end
 

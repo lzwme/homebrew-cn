@@ -11,6 +11,7 @@ class Minisign < Formula
     sha256 cellar: :any,                 arm64_ventura: "d22ac68c3ffa78e14b36cc734c948dbf380689481536069e08a6b2c8321a152d"
     sha256 cellar: :any,                 sonoma:        "db969ba861eb8b3f5ffae7e2b4109005bdd423a3c91451b4676963bde403be13"
     sha256 cellar: :any,                 ventura:       "67eded8a3ba22bd10f8a5daeb46efa9b6a25bee8de81d50e93b8d02f9f7011f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4d8961c5711101c3176712e1719b5ecb0df1c12533ab9afff6fe32d880ed390"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8855baa30f090e94dce8a04af5f1e8e507e64a545ceb244c178934718b78cd36"
   end
 

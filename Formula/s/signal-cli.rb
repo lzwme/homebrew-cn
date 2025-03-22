@@ -11,6 +11,7 @@ class SignalCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "128848653f79a13448142ccf4e5866fc4674d3b38797b66c04ca306231a1f923"
     sha256 cellar: :any_skip_relocation, sonoma:        "44816f11765f4effde498b4b54313b561a806027610460191faea8effad4df50"
     sha256 cellar: :any_skip_relocation, ventura:       "0d583713fd44790bafbc92acc675753bd7a2ac7d6cff4e404123c9153369774b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea773757c6e71802b3d30c573f26a8f4b50e3aa2eba6d1973f750d7d15d1866f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d6b1fa2f45ba7d86df54f80d4e0121ef0cbb370337967d9a07ddcaad3fa88fc"
   end
 

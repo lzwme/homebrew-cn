@@ -16,6 +16,7 @@ class Pgbouncer < Formula
     sha256 cellar: :any,                 arm64_ventura: "1f405a92d760c6af0756ba2b32966d73ce9d4cffce462ac332b3d98f1b3b5f48"
     sha256 cellar: :any,                 sonoma:        "262b7ed2c5749f2921add6f3065d367be16fc721f65c5bd48d04b3a08045a494"
     sha256 cellar: :any,                 ventura:       "bcede5ab58af987fa0e16e4dd44ba4bb0356671459859783c2112d67856efbe1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2430cf966d79fdebe1c13ace7d81d60fcc31cbcf43b4cb4cb29b156b492aa6e9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "81d527e71fdf0028f6c281340e00462adfa848939d20abe32a6c94ecb65a9be3"
   end
 

@@ -11,6 +11,7 @@ class Mpi4py < Formula
     sha256 cellar: :any, arm64_ventura: "c6eed01d56ba9ea0428fb4e1642841f0a1c5dfb557ef35ed6b4cd1ed8b4d31b4"
     sha256 cellar: :any, sonoma:        "744208f4b105609b87741f35086ea216e1398b4c6c09d9fb787bd4d22325f549"
     sha256 cellar: :any, ventura:       "299052d6163ebd6bec99ed7f6bf45335ac789b8997ebf6ddaf17d230f6cce39e"
+    sha256               arm64_linux:   "7946ccf43c5b2b2c847aacd671197ab0cc490c809cd430650f464b9c2f16fe7f"
     sha256               x86_64_linux:  "3f62e99678a4742ac5f2fa8abcce5cead52a9c1bc884993e6547e063aea672a3"
   end
 

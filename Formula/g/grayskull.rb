@@ -13,6 +13,7 @@ class Grayskull < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "dad2c122fb2fc63910f09be9934265cb6557d8d8faf546f1c8db99626fa4d23e"
     sha256 cellar: :any_skip_relocation, sonoma:        "92ab06ed39c08e25183f63fe32f2cbd4f50d980815fff1a07efb73bb77b703fe"
     sha256 cellar: :any_skip_relocation, ventura:       "b823de0648672a564db5a70ece9eab9bfbd65727ef2e5150cb1baed803f70ff9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7d914d5aff550abc0d55b8984e81dd7e54b51a38b694d4dbdcaef6608b2df33"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc3741b430c9d69d7432fa2377a538a7524e1fd5b5dba0c2cf82e1d9a1663cbb"
   end
 

@@ -12,6 +12,7 @@ class Gitu < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b324b0578a7767123b6dc583dfc5c2f0acd92eff163a995e56a55c3dc6f3c080"
     sha256 cellar: :any_skip_relocation, sonoma:        "ba9b0717f0cc0cab86a87fb8586688f254d1397221331c3d4bbdf4421cfe3546"
     sha256 cellar: :any_skip_relocation, ventura:       "666802de4cfe1467f2c7824716be5f6ddc76f698a95861093e701a2bf03457b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "42f9a56ee3f331de972bce4060f6986b075674292da4a35340019acd4cb6ae9a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "daf49de50f2a9222931f9f584aa4238a877ae67466644a368344ba44f9613cf8"
   end
 

@@ -8,6 +8,7 @@ class Ratarmount < Formula
   license "MIT"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "f9e6cc9dacbba3ef90ca0f09e9c652d68333e2bdd1d08f08bef54fc7e897eceb"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "11268d8d0bd4a24d02de87d4834083d228f6d4a1de4ee88a5686039fb6679ac4"
   end
 

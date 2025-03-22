@@ -11,6 +11,7 @@ class Seam < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "4cf7355dabc33a7060c8fd32929e6be4067f2925f1808a9affe9d8a59402c56a"
     sha256 cellar: :any_skip_relocation, sonoma:        "e4b91883ce4c7fc181c743f76a719cedb7d2ecaa111007e98b8ea30d0e8ae16f"
     sha256 cellar: :any_skip_relocation, ventura:       "e4b91883ce4c7fc181c743f76a719cedb7d2ecaa111007e98b8ea30d0e8ae16f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2ae827f3b1c8531b3c84874292e877970ed0111c2ff0b6ca861673180879a32d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cf7355dabc33a7060c8fd32929e6be4067f2925f1808a9affe9d8a59402c56a"
   end
 

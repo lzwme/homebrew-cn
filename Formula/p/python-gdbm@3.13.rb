@@ -15,6 +15,7 @@ class PythonGdbmAT313 < Formula
     sha256 cellar: :any, arm64_ventura: "2e733b75eca25aed79745fdbeb559be7103b450dd86c83d7bd303e29242ad241"
     sha256 cellar: :any, sonoma:        "7807e191cef5a479e2efec1796358b78b4771760286112ba717cd7146dbc086f"
     sha256 cellar: :any, ventura:       "a5a9f0666caaaab2aee72cf110c2cf7b34b61e0c8073e7dfaf219c0ac5b81a73"
+    sha256               arm64_linux:   "64fa562166c39de690de2804119f8152b0a93d545dd67cea0f04237e1d1d2a34"
     sha256               x86_64_linux:  "6c3b3d989e12709e6fea2692c5e6cf14179bbbc8790df47058f5aa1a72b56eba"
   end
 

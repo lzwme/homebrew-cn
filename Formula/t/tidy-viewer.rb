@@ -22,6 +22,7 @@ class TidyViewer < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "d3ba5ca8471a577a7c54ce300de86d77887e3ee366022588a58f5f89ef9d98c5"
     sha256 cellar: :any_skip_relocation, monterey:       "9e7ce7d415590691f06bad36b0d5270fb1bbad9ddfc046fc1f4f8c0473b0a593"
     sha256 cellar: :any_skip_relocation, big_sur:        "99d8e002b427e3a2a160faeda4e526115538431244faf52dd4bf041118347630"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "3e44fa91c0257cd46a249043bdf0594b447c8905d76e2d0646a538352f770e58"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3058a55881b1a5874f31e848f613cee6f97f3891ff4091539323b4c189115fa"
   end
 

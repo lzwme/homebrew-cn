@@ -12,6 +12,7 @@ class Prqlc < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f24dd39877c07926ac0fe9d08aa4d243d4440cac2ec0ddd61c1cde7ab89842db"
     sha256 cellar: :any_skip_relocation, sonoma:        "b1fdd340538cbc8bc12b8742c0c1ab3d12ceae1c6c397503d42b31b2a00ac520"
     sha256 cellar: :any_skip_relocation, ventura:       "fabdcd16ff792aac004bd45025385cead0fc73cb3210299b850b734b05e76335"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1202116f5974e9b2f49ee68fc7443c9a0d47664970ed6a0f1cf851207f4aa19b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "160d2f6e949c8e8de1e0e2f897b4fe5cd33515b1fbb7346bd1a55f312164ac7d"
   end
 

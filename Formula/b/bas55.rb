@@ -20,6 +20,7 @@ class Bas55 < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "44d2a192051128129fefc7940affd20c3328a7a0585c7af897e1046acccb6fea"
     sha256 cellar: :any_skip_relocation, monterey:       "088b046993c5070926efaca3e3768c724571e788192532fe0647e23d5807c83a"
     sha256 cellar: :any_skip_relocation, big_sur:        "3ad23d069a17c47de857d1247335e5372b702da82a9d888c2f4cd46d4d0e96ab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "38457e7ed5857d21ccdc44361a8befba24764b9e345f8cbc5aacc46bf7bd2629"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "687aa791b5bece0576dbe003bc84a50fd8aa65a4ec639b0ee8a16fa8b6702f39"
   end
 

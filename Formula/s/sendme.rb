@@ -12,6 +12,7 @@ class Sendme < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a8d1390110f8326011e78646117cbf07ef5df02abb0cb672e5b19fa5c0e65b37"
     sha256 cellar: :any_skip_relocation, sonoma:        "902ae570d8182e3dab7c0e190e41349bbe240fee4fa4ee60c63510e9d285fd84"
     sha256 cellar: :any_skip_relocation, ventura:       "7f9e7975131baf76c40bf5c6f8af2b421d9058473f7a96201703ba702e5cb949"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6829d388877534078f0be9e43c47de69f52d67c79af2ec4213a0e038babd3e93"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cbf6e22046177118629a060d27565012c52c5b3e98c955a9ba9b9853051693be"
   end
 

@@ -13,6 +13,7 @@ class Libmobi < Formula
     sha256 cellar: :any,                 sonoma:         "d510c86ba6f58c1835f3b4721986058711d2db5d94c9d6c9afc1d08f6f7a5316"
     sha256 cellar: :any,                 ventura:        "5182d5625306772b104ee2fa38105e399c82bc33b25c01934f5722bfefddd177"
     sha256 cellar: :any,                 monterey:       "ac43b774943fed966a0698c82cf05ec9bd8f020380ac12810cb60613d7d8923b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "633df7f3e0d7c1287ea87f79b6ae22f088a9f87fafb9ad825f56e619ba72b8ac"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "380132da0b9faf43d841d6eeaeafa37cfbf1381d2a66549a105c44808022fcc8"
   end
 

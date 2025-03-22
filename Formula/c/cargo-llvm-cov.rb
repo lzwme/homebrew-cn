@@ -13,6 +13,7 @@ class CargoLlvmCov < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0046a18ff5aae5d7d9ec91991dfeb17072299c46d57b0f367101f6a624243a6d"
     sha256 cellar: :any_skip_relocation, sonoma:        "c50bed8fc9bb29e7f3689089da9b5cb567f924b4e4a815d06eebd7894dba8869"
     sha256 cellar: :any_skip_relocation, ventura:       "c0bce3c5bd2ead0aa124ae024895518f57e2ced449268a8a7ac17a1c578fcc30"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9926751cadacb34fb6bfdcb5cd3cf23570ae579255df7b7a3a0fa5b638dc8708"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a111d607f6169e0411b85f6646b6259b1f7e3d32448c1b9753e5d26308b1d3e3"
   end
 

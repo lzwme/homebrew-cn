@@ -12,6 +12,7 @@ class Csvlens < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3596c058574d6df0ecae12a7376d6481c864de4123b148ac1e97f75ee1496163"
     sha256 cellar: :any_skip_relocation, sonoma:        "c147bab09ebdf31d9bc3e85bb19c55ef6640377363aeb1e0969d7b376c6b57e7"
     sha256 cellar: :any_skip_relocation, ventura:       "eee96abff43d55cc9c846799712d2aee6ac132dda2a3bbb47f91dfd8e9de5a33"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b8d1df6d3ab2678c5d574764c3f774025a3a2e3771dc99b0af8241e148e6a57"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f779201e350f658491b2326eeb7ff7b72155cb72b57310d707dc7ec3bc48bb5"
   end
 

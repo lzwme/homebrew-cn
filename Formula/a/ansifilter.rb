@@ -18,6 +18,7 @@ class Ansifilter < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "f652f4bc0010ac275be8642c627e481f133e46745398033789226295dbe76905"
     sha256 cellar: :any_skip_relocation, ventura:        "4ae4488407625a92d4970bc8660cba23d99b551794fb03337d9531017c4da887"
     sha256 cellar: :any_skip_relocation, monterey:       "5e655b5ebd6f12c66b9f7ced9187d99f352d08496e1c9f0f5c211ac99396173d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "24194a4db72f85bf77086d3c4c975547f5e9c7a0455def0d3e20e40f2aa73187"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ce8f6d387558594379f46240e0536e36cb2df2f1562e981901c4b65af73eb090"
   end
 

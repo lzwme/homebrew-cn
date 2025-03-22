@@ -17,6 +17,7 @@ class LandoCli < Formula
     sha256                               arm64_ventura: "2d502d2a6bbfaa6cc4787b785f7e47ed8ed605adf2ba3b2689ee1534d4212b8c"
     sha256                               sonoma:        "be6706bf278ca168af56b87b0b0b5ff4a69db08a24e76c259511371c8ec13492"
     sha256                               ventura:       "ce37c28cd41a18acbeffeff89a08a0fdd366d44bd3cb5994386fa0455745e635"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b2692e2ed4dabc9851dfa9e3f366c4d31b0ae4d02110c0826ce1390b1ffafc7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2cf507cea01303782c5b1568f9d246bb9a0284ccc9229817bd4f7bc5c49f5a0"
   end
 

@@ -13,6 +13,7 @@ class AnsibleBuilder < Formula
     sha256 cellar: :any,                 arm64_ventura: "c6db94ad4366fdd83e81ea63d924905b1e2e3c3cccdd6fb00d1eebe69fe70480"
     sha256 cellar: :any,                 sonoma:        "5f40359c7bf70ef62925b8632fa7272a48f9943ff1766ac853a05002a8c137ee"
     sha256 cellar: :any,                 ventura:       "ccff1f1d43e692707c0c447f0b7ec919e219d4e00a1717831bdbf0f79f7d92fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e8d6873f39fbf5ed2a27bb80b9ed107909793a1f975f56346ef1f55338b92c5a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "512ffc543e0e70b2aa4312be8d2704f36ec2cf436c025a3d56b3e5d830d89345"
   end
 

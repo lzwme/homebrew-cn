@@ -12,6 +12,7 @@ class FirebaseCli < Formula
     sha256                               arm64_ventura: "232a3ce90f0a5a013f902885c824c475369a60a4e482cb95ac2b662c5a2acbc8"
     sha256                               sonoma:        "4a5a11742a1ed73e43e7dac7e0267903e0f2d2818f389040553538aefad89147"
     sha256                               ventura:       "2ff38bd51e06e82d22f9585f85300189861b969689a09a0119e8166a08093d7d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b8118a817aa7a5b508d51339d8756c597a5964baae67c07196d2b481edd0170"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bee6697cac3694f980d3898a401f562ac3f9d7d47f71b0522d1d5e722c721151"
   end
 

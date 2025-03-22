@@ -15,6 +15,7 @@ class Libiodbc < Formula
     sha256 cellar: :any,                 ventura:        "6f63d37fe5d6269eff73a52643932f5cc3c31e10ad9d6fefc90e51244f4ab689"
     sha256 cellar: :any,                 monterey:       "34627b18050d2acbef4503c41e52ac8c3f70443c46fbf18aa9d2947e0f43664f"
     sha256 cellar: :any,                 big_sur:        "90d98eb9831742490c631612df419d83d7c0e2495dab9bc5ddec36ba4e67d8c0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2fed59ad000ff8d08665d2ea43a4b4d997fca1fadccc470c58290d72bdc9259d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a55f7da0eb9e5afb600e861bb089d7f7a74d393b4c29c9d7d9383c75a717883"
   end
 

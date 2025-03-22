@@ -19,6 +19,7 @@ class Conserver < Formula
     sha256 cellar: :any,                 sonoma:         "ae11c71a862224b9c9543f9f7260ce46a4e99e217394686df0349ebe9535fd03"
     sha256 cellar: :any,                 ventura:        "6a0660b32b3125db2e2606e0bcbe3c1bb20b736d992965d23a833e51c584eca9"
     sha256 cellar: :any,                 monterey:       "17d0fb890c0930ee9754f6e9689b3b7f311172a163b43aa4d2722a25627257d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "621d9c50cfade726658698f2deb892540cc0cd5c4d3cc5d1733c7f5fd13cfb43"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2df28d58e8e82327adc6b6a0b60bd10f6d92d17eb918668a72ceea68ae8f952b"
   end
 

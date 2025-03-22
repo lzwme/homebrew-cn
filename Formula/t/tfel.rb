@@ -21,6 +21,7 @@ class Tfel < Formula
     sha256 arm64_ventura: "d2e37e3eecf517353ad9df9a47a92921aab78066867f7c897800fd4efd7f7676"
     sha256 sonoma:        "a64912de5088e357f13b2ace49fb391c707acaba8baf84682303ca4b3393df28"
     sha256 ventura:       "9d519e1e1fac5faa8b55d7ace4da8b0b7c289666bca34eeecb700d403d7d9a6b"
+    sha256 arm64_linux:   "b4d8d0f32a885ef7b5777b0488a10ae576c9e4bd0c3b4f2eae054d82b4e6c3e5"
     sha256 x86_64_linux:  "399bd5e6c80879eb68cd9e92b717cd5ae745bb4432c2cdc177c0d1904c682591"
   end
 

@@ -17,6 +17,7 @@ class Par2 < Formula
     sha256 cellar: :any,                 arm64_ventura: "f21d77bd344c16d64f1d44f8b309036fb79ef49e1c99cbf9e2247f24047ccb4b"
     sha256 cellar: :any,                 sonoma:        "cfc8a814c3b8ba36172906eaa4154a4c005147fc4ae0f8b337a15c13ac76798e"
     sha256 cellar: :any,                 ventura:       "d15d4e51a0fe805edb56606cca24c5080540e67f310aa768d367f4827f43ddd2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c646e28b86146698db67de4f9792554f984257c03f95eae86e868f9bf7b5af9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f150c779b555d4dae48eb29f99551489979909c9db4871ca62c022ec1eb2b6b"
   end
 

@@ -23,6 +23,7 @@ class Frum < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "9da3203818c248c1921c49923406b6f96b65ff9ea0ee5cb610fa5d3f18bf0cc8"
     sha256 cellar: :any_skip_relocation, big_sur:        "f0e50ca3dd2d7e5db5f553d960ef3360a8aaca91c1668a3214e83c7573e28020"
     sha256 cellar: :any_skip_relocation, catalina:       "edddcc88716948addb74667dd7c9d2b0918b582a1f631ea26eaf56049feb0e11"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "668341dc0a1262b64428f0ef9fbd9ab83c57c48dd5358742ecb3356147465e57"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3519654e6f824c3528b8d574d59a08b316821122a043727f633a70432dc02d6a"
   end
 

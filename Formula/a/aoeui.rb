@@ -20,6 +20,7 @@ class Aoeui < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "946acae5b1b88cb67bf805e6b8a8d591e3267d799c9d1a924e60217218166e78"
     sha256 cellar: :any_skip_relocation, sierra:         "1b04b93c490895121fed315f685d60cb96551b971ca1433a5240425cfa31dfcd"
     sha256 cellar: :any_skip_relocation, el_capitan:     "62a04ac0fd27e76f4f77da95e7d5aaf75488765f98b02574ae7dff0508cd9f13"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "bc5fc0e63ce3c46a6384f860fb44a6ebb0761f9fa4ffdcbe18eb27c27d72180a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b130912a9d91e2462433ad80f02827461c3c6aa8fef646b84cfa0249b9929815"
   end
 

@@ -12,6 +12,7 @@ class Radamsa < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "568e7f3b24edb8d8aca56b0835eea5fcd32dff97d2c2a2985362329bf8555169"
     sha256 cellar: :any_skip_relocation, sonoma:        "2535c22f7a6faf37a7b7ffb7eab908de0a0d265e4f887718a65ef7b7d9d015f0"
     sha256 cellar: :any_skip_relocation, ventura:       "1463cedbf5969dc913d6878fab2a860d9aefd4d9a80f960ee8383086c6d17806"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9e5bd4345a4a6858c4dc6ecabbadb8d920bcc8941241e1300fc11ec9931b335"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c32fe0dcf5a76ce7251b8caebf2ecdd09427990a52c88adfd993efeae138fe41"
   end
 

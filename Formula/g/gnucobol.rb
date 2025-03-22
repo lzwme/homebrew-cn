@@ -19,6 +19,7 @@ class Gnucobol < Formula
     sha256 sonoma:         "4ed0c37599d25d885b605f78c35d3b17dd0ed698ac63ed7b0cb430d67ff2ab79"
     sha256 ventura:        "1d308479bccc3242c6db39f8e68048a21550b0d911c689de7fe7f6ac648f3cbe"
     sha256 monterey:       "02976793288f851d75f1abd5c802908b68abf7f097722ee1460f2b6b451aa021"
+    sha256 arm64_linux:    "070672657bd9105b4dcf9d30e91ea9cf2ccbd3023cac9a83367f4c491171ac6f"
     sha256 x86_64_linux:   "3d5a97f7c0349499a790b2f312f0b018e30fc1bffa8268fe6d652ccfb3a8f7c8"
   end
 

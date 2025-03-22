@@ -11,6 +11,7 @@ class RustScript < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2efbde3d56b2021d74f6c0772bf2a00dd8247daf238fe4b7007ecf460dd1f63c"
     sha256 cellar: :any_skip_relocation, sonoma:        "77723dfc277650d524677611bc1914271411690dc31b833cc787b2d78a867e7f"
     sha256 cellar: :any_skip_relocation, ventura:       "ebf09f25a4d8584d832ded2b7a63ecfc6c23fc2e70d440c40ee32e7bc33883d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c0f9c4fde1d78f136f71bdd2bb4a733bda3142863e48bdd6e765ff30ed74cbf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c4765b6c1f979d3cdae339ed53036f782f3701f5caaaf2dee6e2c2a38bcede3"
   end
 

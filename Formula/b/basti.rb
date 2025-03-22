@@ -11,6 +11,7 @@ class Basti < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9ff427644cc71dbef154812ea218d9ea3c52058f50eb835a7d5b0442afc80e46"
     sha256 cellar: :any_skip_relocation, sonoma:        "41122c17de5e710ae0bd301de1358fd35e3995893434a750838c42c4e5004303"
     sha256 cellar: :any_skip_relocation, ventura:       "41122c17de5e710ae0bd301de1358fd35e3995893434a750838c42c4e5004303"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4cbbb6d8bd99595e8720c8661e540f9a33054373e74c82853703890e6b1745f9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ffdeb9e292a573a356abdc46fd03447c88a45c844bdf1c135ac61f22b8244c7"
   end
 

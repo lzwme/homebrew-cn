@@ -12,6 +12,7 @@ class Blahtexml < Formula
     sha256 cellar: :any,                 arm64_ventura: "3a9444e47913a2712d6ebb56557368a847a25f597c6814ff8665ff6acdb3157b"
     sha256 cellar: :any,                 sonoma:        "98a072e29a975511bf7ccd60a9f701b15c6fe1d14a9756dfd36db003fc79d3b6"
     sha256 cellar: :any,                 ventura:       "33b2552f46a52197ba7964e9ad863ac7aa021843c3aa35af47e2d2dcdcfe9ed7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "647ed1ee2095b2c6c37fdbdcda7e448ed8df07f34779a03e79dd0763f5acca8b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3931e63cdf1ec35393bc437441f1edc43413ba92760a1497de59a59fcc70e5bf"
   end
 

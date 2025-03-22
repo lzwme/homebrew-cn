@@ -12,6 +12,7 @@ class Toast < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8d5dffeed5b421ec1253333fe7e621cc590cf8606d2880400d6500a577e03b2c"
     sha256 cellar: :any_skip_relocation, sonoma:        "b2a20c9c83d5f0bbef1ae0b0157f7a2adfcdce1251e649c53c78295123352604"
     sha256 cellar: :any_skip_relocation, ventura:       "2361a75dc4e6f9bbc4ee54b983b5575f5ad60b50dc941702274d8f163afbd0e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "35a83e8715ac42e645ef9edfefb127d454eb2bbee2c2f791d466a68da876dcb3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ed0686a150d2936eb37bb83197d2e55088533f73af946df1261a58ced8cddc6"
   end
 

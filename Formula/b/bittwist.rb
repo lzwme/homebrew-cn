@@ -11,6 +11,7 @@ class Bittwist < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5f5fe1bc269cc3195450240348b9b808f60b19c88b1362a533ef7f615d6b7c40"
     sha256 cellar: :any_skip_relocation, sonoma:        "523fc5af61f3f3815d23cfbc1089548d86b072a301c5424923cdac4028a61d95"
     sha256 cellar: :any_skip_relocation, ventura:       "3df91f28e930a032ea31108f1ceb250b14d0a02b5026060924027457426183b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e718fe79ba09665d846a8479a6ff2cb593540e48aa477114322af1bab5ccdc4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f85b61e9d72e5d329a7b3a01813b01f2c72e81dc451bf144e8860b0cd868472d"
   end
 

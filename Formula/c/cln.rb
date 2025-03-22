@@ -18,6 +18,7 @@ class Cln < Formula
     sha256 cellar: :any,                 sonoma:         "5c8b028628b234da5d4f97a734728ff9f73f381a3bae4ed565c8e21040190fc3"
     sha256 cellar: :any,                 ventura:        "815ff9c38056bcaa56fb7a445ebb32efa14323f26d42da224014e9ff9a57a236"
     sha256 cellar: :any,                 monterey:       "16fc46bc77d40dc5ad8060ac9375fe869c136fd1ea9f1da3df466e2a4bdb3960"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "c34b349259faf1c3c86953d6ce41a6b6136ef5a20b775e7907f9476b9d8eaa57"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1303657d924cdb1730d63a5b49b652cb84d07ff7694c528e997e37d796b68ec"
   end
 

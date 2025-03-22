@@ -11,6 +11,7 @@ class MarkdownOxide < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3cd3d13fd7aab27c124a6aeb1ea3cfce9bb01b787143687480f450ae699c66e7"
     sha256 cellar: :any_skip_relocation, sonoma:        "756a5a988edc724638d826f909acaccf2595244d7c9b68a3750e58bcdc96f85d"
     sha256 cellar: :any_skip_relocation, ventura:       "9f59ed0bfa0121cec2ca7cd9184cdc88ba3d1e7c011621be4bfed65aa99f0476"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dba7466889612e1c2876bd03ae2533e4ab9a178b72f46494a5f59fe438b87d61"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "77247a34ce563268c068275123ef43abd3e32f9bb9ac034c962cf351c8f4f61b"
   end
 

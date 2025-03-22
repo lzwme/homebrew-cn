@@ -14,6 +14,7 @@ class Fades < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ec005bf0dac48b9c97017dbfbaff8f71bea5881b82a4125b6832f42b295ab388"
     sha256 cellar: :any_skip_relocation, sonoma:        "d5ca7bbe287a104d636ae776d190dd945731becd56ae3b16db7b43f56b6bac50"
     sha256 cellar: :any_skip_relocation, ventura:       "d5ca7bbe287a104d636ae776d190dd945731becd56ae3b16db7b43f56b6bac50"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "286e34dae97f60412d06e4d022a52156a0a17f70449e8240297772904a3dc193"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6dbae2733a6c7db55b8d0c89009067727f8a8a4081739e815e8d874973ca9645"
   end
 

@@ -11,6 +11,7 @@ class Zola < Formula
     sha256 cellar: :any,                 arm64_ventura: "df9ccd75dc1889c7aed9f7ba990ab73478764d7b8e848762ceb109e212738f45"
     sha256 cellar: :any,                 sonoma:        "4026f1af866280ebdc03a0ff0d58875b66ceaa6c0983d01e9826b94af5b54586"
     sha256 cellar: :any,                 ventura:       "0e82e5262375333fd60e053a3765d89a2af8f2ff714b02aadd07e6121077fad3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1b22c7054e144b538a896eb7a93ee75c3b795741b8dff69e8162baac1c317bd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "29df2af104972ca53f558d0a48405057165fced8fb4ad167a5b73378c439d271"
   end
 

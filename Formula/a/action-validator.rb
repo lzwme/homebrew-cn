@@ -27,6 +27,7 @@ class ActionValidator < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b19fed4dbbcd2f0b0e6b702a10a26a3dbd1ca84040008e26a733076adba004a0"
     sha256 cellar: :any_skip_relocation, sonoma:        "f065ef1e7dda660200a3f90f8c369dc60e36c5c4e9d2d2823373807440e62eb9"
     sha256 cellar: :any_skip_relocation, ventura:       "f162d3f6739bf01635bf4ca4287cae32c5b73da5a039bcf27a73e6a006ad81ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "36f73c23f728058252e3f23614d34da1488470a4af9261d4718f7edb4b6fad18"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "07824bb882abb54d58d5ad90fa6987a363cfe474b2a5f5647153284244e232a1"
   end
 

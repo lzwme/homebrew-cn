@@ -13,6 +13,7 @@ class Grex < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "fd8802c295d2ee244d77c7c35142d51ead796828fb53c10fcf7b251b96ceb6c0"
     sha256 cellar: :any_skip_relocation, ventura:        "0528090df6c47ec9fd13cf0ad1933192355eebd3417448d2196a132b79217ed7"
     sha256 cellar: :any_skip_relocation, monterey:       "f923d61f66b321320d28e8aa836af2509336a970b28dd445290b2b1987772f9b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9dc7de7e5e8840b07332c4e35e156a0a55d8c2c5462f30c28d10d57e974e02a4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "48acaaa4f1f139f5d932f7a76dcab8c1bdbf96dbe0db59175c2e453c04ca8e34"
   end
 

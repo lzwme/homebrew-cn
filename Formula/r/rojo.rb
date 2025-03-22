@@ -16,6 +16,7 @@ class Rojo < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "dd37712e2fec0ea5912b0203916ab176806daf02a798f3355427965551317b38"
     sha256 cellar: :any_skip_relocation, ventura:        "06e415405c965afa0f0845a86e664c92f083f39c4c3e072ac22aaa27d6d3f7e4"
     sha256 cellar: :any_skip_relocation, monterey:       "2091fae5e8336a3e06bc0d676c6d005565ec1b75ec53475e7ee686fb092b2854"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7ef1c582e8875688de40ce3896ab6af330a9bb7f9db1f677aec65f1341de81fa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d455bb69759f1d0030ef0d1a7ee8a182f682eb169169c3c5084e0dca263ecc68"
   end
 

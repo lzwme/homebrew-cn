@@ -19,6 +19,7 @@ class Clhep < Formula
     sha256 cellar: :any,                 sonoma:         "cbcacb7078f9300077e8f44c0dc740e9fd61e3b4605459f46c5fba0839896375"
     sha256 cellar: :any,                 ventura:        "970da332b593e58aa660a15ace387d67cc281dcf9acaf06282902bb3086e13fc"
     sha256 cellar: :any,                 monterey:       "d2fffe1750260f11c55af6d2c5d8aac74721ef309f0d8d475e38f48200489619"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "122fc5a8546dd1f571eb0f687962c74adf74c8f4593e388a19293a6b7e19f496"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb0cb80110d08ad05f90f16b7186651d15288c3ab770121ae1edfa45ce9b88c9"
   end
 

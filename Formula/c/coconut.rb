@@ -14,6 +14,7 @@ class Coconut < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "19088d74ca2b35b02d63aec0edd71d0e38c6ec3054879b542f029f65f25a22e2"
     sha256 cellar: :any_skip_relocation, sonoma:        "edeff6b15686362384e4fa5334bca7d95393e27e47f9ca5a1401d4f6d1e596b8"
     sha256 cellar: :any_skip_relocation, ventura:       "5ea59853688e12fa9585572ecbfed6d46633eb9ac63aae0b4a22f7cef6babe0c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0143d784e8e81c960cb5cf4b7aa2ecc52ae8e0fe539c1fabeb6224df88d43112"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "54bd43552fdf9f556039fdba27670f50e5fd699df7b967ff9648c05b3bd26059"
   end
 

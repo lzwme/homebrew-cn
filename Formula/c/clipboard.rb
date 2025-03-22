@@ -17,6 +17,7 @@ class Clipboard < Formula
     sha256 cellar: :any,                 arm64_ventura: "d0415d6ed62ac9d27c7d360ca0d97ba7114c430c4c54fcca252cb3bbae73e39c"
     sha256 cellar: :any,                 sonoma:        "c551b2ece1d81249476f06ee13336c52a948fdf469b02b02b892a16bab58862d"
     sha256 cellar: :any,                 ventura:       "da3319d484d5bff0daff721c5236718d7dc65dd31e2b4352beee5aa4f70e2c91"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "222d40b953ed0218c7d3f4b51708294764afd22cb6f9fbdffa5c6cd9465a6c34"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d390684f0efa26d3fe4a5a5b93f98daaf10c678cf1b0a638ae52aeca7ec1ebb"
   end
 

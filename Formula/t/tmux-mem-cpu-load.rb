@@ -14,6 +14,7 @@ class TmuxMemCpuLoad < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "c57514a7fea2d7f83c5e237b015f312cfa601e516e13acbd4794e8f7a5f6dc0d"
     sha256 cellar: :any_skip_relocation, ventura:        "1b0b301683d793030f7a12f17238e14d40a2ed05cfedb9722af6ad3d2e07e660"
     sha256 cellar: :any_skip_relocation, monterey:       "134c4b3ded75c406a60add39d8674483bd5863dbeaff86af22ee4404744e067d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "554686eff8beee968ed1cb7da22b109418a97b7f41fd1fb2c0fd0ae551c8a8cc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b9a4547c45737940eaec35865376d01fd67d7087475926593f71637333b1d0a5"
   end
 

@@ -11,6 +11,7 @@ class Fwup < Formula
     sha256 cellar: :any,                 arm64_ventura: "d3e2a527a61fa63fb980dbf222a0f3b77e53a1a63d1b7e7c9e040f825918af5a"
     sha256 cellar: :any,                 sonoma:        "cb5000cb6745a5a7bd9de40cef64bf331190e500a2b9be212932e30a78c8cd45"
     sha256 cellar: :any,                 ventura:       "50c158ddc59870d967aa7a2964b37c57483427728c5d8d73ae2fa8f1e18a9354"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec429ce368f3207b95dde1280115cc8443091782986445a60d3b972eacc6fbc8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "56e168989bccb02fee0ec1084e3518013687c07f4c839778f108d4783c6c4a61"
   end
 

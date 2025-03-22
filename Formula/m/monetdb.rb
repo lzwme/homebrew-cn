@@ -17,6 +17,7 @@ class Monetdb < Formula
     sha256 arm64_ventura: "8dff397a6cd6919941bc677d5565358ad2140234949cc8ab17249d9d8ad6f71c"
     sha256 sonoma:        "d1865385c7eee772a7c81eaf3dac6c9c37f5513a8e098dcde414dc5c1195c266"
     sha256 ventura:       "f5e1327e061fe9246a0d9cbaeeae8eaa31cfd057021e1061df354d20fdfb44df"
+    sha256 arm64_linux:   "cacba9fa3e9d40f029e18bbbfdf151adf00365a20f75a363ae78f16c4cc9d46a"
     sha256 x86_64_linux:  "79e53c9d3b5860df89ba17b444f4169c4daa4b4e9579e8888691b722dfc55971"
   end
 

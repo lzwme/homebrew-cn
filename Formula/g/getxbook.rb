@@ -23,6 +23,7 @@ class Getxbook < Formula
     sha256 cellar: :any,                 monterey:       "95ba1369c672fc85ee368dfeed1854d0c60ead37fb2ee61d970b62e4c0ae5668"
     sha256 cellar: :any,                 big_sur:        "2af17bd072313e56ca6c199dcf9aadbdfbed69288fb21345a7395777b5d88a45"
     sha256 cellar: :any,                 catalina:       "431582f1011ac367afc22623e6a5fdf3dfa8839999c69212ce32e986948c3c90"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9a7a42e68f0b88ac65a703f2d06486ec72ca8283c587cceecfc072f7e844361c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9c87c43136c6d85bd87766fff817a618abedc7392a1a4be393acd0546a02cdc6"
   end
 

@@ -18,6 +18,7 @@ class Hq < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "96168009af37277c094136a7fdfab3de012ffcfe9758becb2ab885279c3cbdfb"
     sha256 cellar: :any_skip_relocation, ventura:        "1fc6b120bfea15968b556c36a75428a9c5f7df760b73c94e5eff5fc77cc3e714"
     sha256 cellar: :any_skip_relocation, monterey:       "39119277ab30f7b0f5b5c60905cbe36764eb5aec06ec7b9d6ad1c780afa0cb9f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "85a77b0126bc74d1645877c96fda56a2132373d0ec5d32488c8206d2e0367e26"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "98e9c85bd5a5304f6be3adb3ea8b0b69659f1622fc873dfae7b7fdfbaaee8ed2"
   end
 

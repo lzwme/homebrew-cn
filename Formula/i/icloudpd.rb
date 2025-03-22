@@ -16,6 +16,7 @@ class Icloudpd < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "43851e457063fcc81ec2497a88d9556ef72b3ed4615dcf30a803ce2b1fd9af43"
     sha256 cellar: :any_skip_relocation, sonoma:        "e577871b4b6244bf58eab7bcdce8ba0c80ae2f30829cbaeba2fd86d32e2250bc"
     sha256 cellar: :any_skip_relocation, ventura:       "8450c0eb070860a1b01c72342a70bfd0104d136b0e6b9e841320f5e7bc283d27"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2e9be11cee2b3807390db07b787d25ae338f20851536191d04aba726cb176ba"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9337ccb41469a23872ee03d789d68e02126177b90a49c499645b9296d6e7b2f5"
   end
 

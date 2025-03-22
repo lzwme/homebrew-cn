@@ -11,6 +11,7 @@ class Monika < Formula
     sha256                               arm64_ventura: "432a1fa231644bc3afab36e6b57c1103a7763bbb4c32e308edb9f83adffa7541"
     sha256                               sonoma:        "6d1e3680020b3fb8fabd44383bd2ef3d802742142781bac50f3602ab527932c7"
     sha256                               ventura:       "36ff8854590a71d7ada5d70fbcbe314c1d8259a830fac7f86a06bff3427798a6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "678bacbee424d600e2dfb41f6d45bb8ead8086cebd1fe94ab578614030943f7a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a1daac5d355750602a48ef01fcc34867c21ce4a725659e431f94f277ac818ff"
   end
 

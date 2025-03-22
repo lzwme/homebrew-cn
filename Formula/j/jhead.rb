@@ -15,6 +15,7 @@ class Jhead < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "1507b2155ce500002fc776d8c336cc687cb515d0186bd1a1f2215ca4361e17c8"
     sha256 cellar: :any_skip_relocation, monterey:       "8c2f978dcaaad8d009b1b700dece3f9f06f74bb1139f0223883e7e4683a3de10"
     sha256 cellar: :any_skip_relocation, big_sur:        "c05e7a3d19073edea0839214f4b35cc892b8b9fcaf74d589e16dcf3fd31dabe3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1c46927009697d53acc508449ef4b8127be41cb030a7e0fddb15561fff516b88"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d662d7006eb88363b9c973252bc744915503dafa662ef2dc75d1892918101cc2"
   end
 

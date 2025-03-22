@@ -14,6 +14,7 @@ class Gtop < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "c553e5fc33023ca5721afcfa8a427ee24728fe83c4b3b959f7c2f297d9d7765b"
     sha256 cellar: :any_skip_relocation, ventura:        "c553e5fc33023ca5721afcfa8a427ee24728fe83c4b3b959f7c2f297d9d7765b"
     sha256 cellar: :any_skip_relocation, monterey:       "c553e5fc33023ca5721afcfa8a427ee24728fe83c4b3b959f7c2f297d9d7765b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "dbd2e93ffe00474fa327abc717c860e3d4254e09449c83cc01b1e860f3d6ea2a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "51f39616a98ddb6a0f1bf391b3c2155e1b0ba0c192ddb8c735dfb6ae5a24fed7"
   end
 

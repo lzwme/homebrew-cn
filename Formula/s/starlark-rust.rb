@@ -12,6 +12,7 @@ class StarlarkRust < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "18151d79509ac6e9c1d7741945ebae060bd7ab048cc28eaf2f3b31de2259e430"
     sha256 cellar: :any_skip_relocation, sonoma:        "9bf96fdd0735366f05e37edc5abbc585196aeebb1b697c37a9c3518981564dfb"
     sha256 cellar: :any_skip_relocation, ventura:       "ccf2d7a29bbc2a0566a42ada228674c763355bf3cfa7da07641bdbeab8090f3a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb6c2c092d1cda4e6535a19d73f00d925a0ad2aaf07741ec66fd85b099617e17"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "da66eb0fccc9b12bd61613f0027e869baeeb98d771ab5537ec61c30a488aa72e"
   end
 

@@ -12,6 +12,7 @@ class Roswell < Formula
     sha256 arm64_ventura: "2d4fea24b4c5de40377044a3291b4e9c52726471429ccfa7e1d5cb947c469e9a"
     sha256 sonoma:        "3a5d20abf0c25e826d79e3b8aa6590e7a3bc4357b382d60bd989cdfa2ec32768"
     sha256 ventura:       "ed5e9df8bb6046e88d6a2dd3cfa3d21cdbbdda109a36b6f29c8cf08f56a5d0c6"
+    sha256 arm64_linux:   "53775b6576486eb4ed0a7fa0145f85795791ceeb2ebe7182006068d8039f4039"
     sha256 x86_64_linux:  "86f21b721166645b445f0419c8a8c5b91ee22202e6ec3b9cf620266a93d588d7"
   end
 

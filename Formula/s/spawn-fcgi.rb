@@ -17,6 +17,7 @@ class SpawnFcgi < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0049c20c4199fa06b3a1c4e6afcdf2a304dca80ecaf1cfbaed01a0c44caaf607"
     sha256 cellar: :any_skip_relocation, sonoma:        "d17dc03209b37cf23672a7da324f71b08834bd6c3fe93cc208f6479493c3da0a"
     sha256 cellar: :any_skip_relocation, ventura:       "90b6d07b1720306dcbc1239fcdf9f6f1c84728ae5f6378fd4bf9ca8bb8d00c34"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e628bf7b388f27fe1cf51a0417c5bbf53f2ea29e1d9bb164eeecb649bbfe6fe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "24d25240823bc460d243bb2c92c1773f9cc650d65361ad4ceaf189390a644227"
   end
 

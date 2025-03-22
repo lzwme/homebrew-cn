@@ -12,6 +12,7 @@ class Tlrc < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f3255ad2f53cc0f90b11ea19d9296d0e001ac6f4f6d3f6a9b1f8e6de40977b90"
     sha256 cellar: :any_skip_relocation, sonoma:        "23ec564226684e20c088034319485a8c17872da8d5f2bae7fa7a9c6b528b2f80"
     sha256 cellar: :any_skip_relocation, ventura:       "1c43af1c49a9b3be850d75f8698ffa54e0f9b71be0d08e90ad66d881f3b39aa9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3dd7f86a867bc19d3f1234b013a2b96b26d3c422872933cb94077e936e5cafc6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "feff4684f0afcd04cde1fabab3cbd25c56df45d109e45e448782da4e15c67d55"
   end
 

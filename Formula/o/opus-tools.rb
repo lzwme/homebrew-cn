@@ -18,6 +18,7 @@ class OpusTools < Formula
     sha256 cellar: :any,                 arm64_ventura: "7f67fcf51d7b7b4e72db4e7445e4d5a6465051fe2a3d1d6655375a783d5c1372"
     sha256 cellar: :any,                 sonoma:        "be32020f65c0ac4614a81c6aee8adb3d5a2918625c7e33bafa80c7162d561784"
     sha256 cellar: :any,                 ventura:       "3916eb7536e8928698b77b9c7b40fa103e1f05848b3babca581f7f50709b9536"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ceba1cc3046ad55c60b3883c3d9cd1272c9f308c2bb9edb011d7ec070a6feebf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dde385e2c30d9478123ea358ab5b4786c7337cbb2728202eab4806926f02bf7d"
   end
 

@@ -16,6 +16,7 @@ class OilsForUnix < Formula
     sha256 cellar: :any,                 arm64_ventura: "0e47cd2f6dd8cabc8410e8576422508d6a85ce6bc99df61cbc7408ec0fd7d2f7"
     sha256 cellar: :any,                 sonoma:        "37f150e38d46cde4a7c484ef51e063cc6217b8b92ccf679690a6c3282fc1356e"
     sha256 cellar: :any,                 ventura:       "4e2e73fde180077d979483698d8ee46b46403e24f72ea31cfef3f12b611b14b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98ac5a1660e8c4be26eeef9d111c54e27b755d462411ad9224050735c8b913aa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b20d2964a8ac756395f447decc0df3275dfae56ac3fd1dd8f08dc3fc7872f2f"
   end
 

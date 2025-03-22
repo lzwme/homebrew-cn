@@ -20,6 +20,7 @@ class Gnuski < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "6f15bd497951ea784e84b2ec888be83343ad1ad96eb6bab9ba343bff31246700"
     sha256 cellar: :any_skip_relocation, sierra:         "3874907a4ad715492c026d969ec3265dcd5f71424dde07a83aa1c21a1e36fa38"
     sha256 cellar: :any_skip_relocation, el_capitan:     "ce14d8ee8b8d58c710b93adb2f4cedfb9d78fb64746f38daee4ea38aa977ae43"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "29dd19f42af62052c1b1e543beac12ef5a3f04a6266dbddc0ca6ae5432835ef8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "19ecc1577888f0186d9880b9048a0fa9e4bdf931d3f2710adf807419f7a64310"
   end
 

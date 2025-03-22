@@ -12,6 +12,7 @@ class Binsider < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "761e347994471b3ce157f8b2ab46a4e3e143b529d6578b4585e1c3b593adf1f2"
     sha256 cellar: :any_skip_relocation, sonoma:        "b2902341e9a85d24a8a33a19f1da3d9f2512e20400b3b68eabba48fe2cce994e"
     sha256 cellar: :any_skip_relocation, ventura:       "a0be7f487c12b713227182a95cfd71fa74c8861c845f51af597402fdb2c85aad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "510fed2e6a9eeac3beaeb9ddd8e8446b5fe7188993bbd907746c864be9c33721"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "805569e73c84fb8455ce5125dcc9e188404c48ca88538917c82b5e4994c1258d"
   end
 

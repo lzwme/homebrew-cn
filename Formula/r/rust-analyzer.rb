@@ -12,6 +12,7 @@ class RustAnalyzer < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b99d3898df6764892d9f81748cf490b144dddcffd42741b707d9b8680cf4e1a3"
     sha256 cellar: :any_skip_relocation, sonoma:        "68286fc369018e85b33f641c24e4806a4b384052fe9888a4443f65dfa4ffa10d"
     sha256 cellar: :any_skip_relocation, ventura:       "ac958c91c098a1fe2e003d3adb44abc2bf6d4b9dd4e1994fb899f59f13c8ca08"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a477921bb179e081147aee116af274d6bae82a8db5190c4aa71565dceeaa5478"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0dd4706fcaabce2b0403b084113fb73e4729b6ab125367211c997f969b8cb26a"
   end
 

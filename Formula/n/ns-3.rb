@@ -13,6 +13,7 @@ class Ns3 < Formula
     sha256                               arm64_ventura: "5213e90d6642839fd03c0dd859be2e840a36463b08a2d8f2c1557d27c38df356"
     sha256                               sonoma:        "c795c64d2bdd26376c506c21511198689d7fb47f853b5320928a26b8c08a43fc"
     sha256                               ventura:       "17c2a8f7c608157f7b227a67c6502f85f13c13aa1c2afb874bdc61ee522b66d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "516bebae3e854dc0359693bfe5dad2f2561cd32dd222a67322ed7cc78484e1b4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7826cdd902f244fd4352db46004e28c895616af90bc0e25d78671e7a4e46eb92"
   end
 

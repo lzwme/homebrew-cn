@@ -14,6 +14,7 @@ class Pachi < Formula
     sha256 sonoma:         "08420848a56934b074a7044ceb0acc38c49c169a0d784b4b5bdf0af3431ba73c"
     sha256 ventura:        "4f2ff8e1819b0982ae09db3be0935c36e38c809795d4b45776076e9a15e0c1d2"
     sha256 monterey:       "8d0c1b96f212172117f2f44d2880d906d043c0601d8a7b1dd4dc796cf8ddc57d"
+    sha256 arm64_linux:    "4b29e4d8ee8bf2f28f3aefbcd40f7c3042c14cb9398df6781006ada3e2e7ed51"
     sha256 x86_64_linux:   "eb13f42af4891d563b870f8840182c9b6f99f76dfd7afcfeaf9c1cbf8bff4790"
   end
 

@@ -17,6 +17,7 @@ class Datamash < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "efb5a8e92a90b49d4784875aff3d2bbeaddf708633a1f7533730979d81354bf8"
     sha256 cellar: :any_skip_relocation, big_sur:        "6bf80adfcba648b010674056c1abd3cca17a71bd717f81aed0c0d15fbf11abea"
     sha256 cellar: :any_skip_relocation, catalina:       "ffadf24c7def1e77a197952a3e31edbfbb4fc246d373b78c3c0671839d86b422"
+    sha256                               arm64_linux:    "fb6047d8c06cac307381db79ac97463209b50059d5068ff033fceb77c8a2507a"
     sha256                               x86_64_linux:   "d6937a2c3ab4e5d40b9994e93c8449d2b7231d58b4a7bce60a4866acf946a212"
   end
 

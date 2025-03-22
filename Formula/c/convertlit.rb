@@ -20,6 +20,7 @@ class Convertlit < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "723db1f95f54e5f9003305056b3e67c5d2e6eb424fb18cc4e366a2dbe53756d4"
     sha256 cellar: :any_skip_relocation, sonoma:        "061b39d2c0b09a6bd68c6f1219b396e558cd4cbe8dcbaf64968079bb2c2a9253"
     sha256 cellar: :any_skip_relocation, ventura:       "47c22a8704d183095db27702edb6dbe248f4cbf88b3aeb788ea2686656ddf05a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "28b8504282e33b2b346b2bc88313fcaac3d9525327d576341adb40b7da58b0af"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9e0dbeb09435b5d6c8a8f0e728d345185e14bb1bd4a799c05a1cefde6938046"
   end
 

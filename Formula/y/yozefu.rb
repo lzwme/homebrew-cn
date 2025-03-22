@@ -12,6 +12,7 @@ class Yozefu < Formula
     sha256 cellar: :any,                 arm64_ventura: "a5ddc196c6949bbe563bfe896eae521f21ad350562c0436fc0d406e2767e2279"
     sha256 cellar: :any,                 sonoma:        "6e0679a11f0e7ed93b6b1ac4836134f887eb1af6b2fb3e4fc629dca1a9a2f37c"
     sha256 cellar: :any,                 ventura:       "92a4cab4d5806b84181f277ab66dcf79c44f3967a04aa551676ddc0475a84567"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd216108a92634bd5e64a6f0820bbbbc98416da2f1a906de4f06364487073771"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "afc8e34d5ac7994d82228ba43437f90911fb6e4155c4a5d5d1aa574889b64373"
   end
 

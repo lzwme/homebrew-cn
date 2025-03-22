@@ -19,6 +19,7 @@ class Nwchem < Formula
     sha256                               arm64_ventura: "7fce8b94f1233bcf022bfaa7456abf9587baeb3319ffc47b725dd83eb1d83b6c"
     sha256 cellar: :any,                 sonoma:        "2e2473703a5f2d268135f72189557e4c150059774540e9c89c74b66774a6931f"
     sha256 cellar: :any,                 ventura:       "dd0b5829832ca473260b2da63478f93cee2e4bdf388898f0fc546e1f2e2a52f9"
+    sha256                               arm64_linux:   "9f72b9c318ebea8a8f992aa16617e1c928d9402a487a5baf48887c6d65c68251"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0aa305807bdecc60ae25c0b3798ea4cc9fa9251be63dda2e7c460351106b393"
   end
 

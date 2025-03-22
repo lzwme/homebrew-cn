@@ -21,6 +21,7 @@ class Cpl < Formula
     sha256 cellar: :any,                 ventura:        "fc6cfb837a591afec3369fa882e5abbd9d806f9d67ed83bd9f345ce3d89a4415"
     sha256 cellar: :any,                 monterey:       "a74afb54620905b6ae184bf64d73f67713e1016e27f97a6db6b793c72b4ba646"
     sha256 cellar: :any,                 big_sur:        "2fff6fb7574c82deb23328136b2666cd181d864fe09eb42780bea78cf63327a1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "fcd05867d38798a06a3afcac0afff080e67484785148b6d412031f44a9e44d4b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "90683dbc3fc0a9636c4fe77573a82895cd369ff2449d140a6ba5e84db6d571dc"
   end
 

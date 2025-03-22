@@ -12,6 +12,7 @@ class CargoAbout < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d64e4117ec95d2a2ddd8d511c63241b3950265229bdb991cc5e642f12497540c"
     sha256 cellar: :any_skip_relocation, sonoma:        "ba17839b1dfea081458b2d89cd291f18cfaf2294b6500eab076158682fb82906"
     sha256 cellar: :any_skip_relocation, ventura:       "3adc4e0a65a778755958727f8f1240d97be68bf9ffb64abcbba43aaa7ed9a49d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4f8960efed03ccbbb12f52eb3cd13b57f47ee41507b7f5871899651c722c75a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb409aaea449ed566e5c8bb9c0d6868375bb95761621dee4cea426a86cd3a394"
   end
 

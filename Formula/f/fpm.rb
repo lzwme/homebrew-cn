@@ -11,6 +11,7 @@ class Fpm < Formula
     sha256 cellar: :any,                 arm64_ventura: "41324372541beac98661f13ac43ebe6b04e022d77b911896a4a968acd25f31b6"
     sha256 cellar: :any,                 sonoma:        "4f07fdd691265418345caf32995c53ace46f85580433a3430b17415cd8a77bcf"
     sha256 cellar: :any,                 ventura:       "13c413c368aa578e3f01029eb0e6f32145ae27dbf3039521fa3a4a28ccf26e92"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "05c912b9ed0c04c99ab08fb272e8d8ff8b76e3bfd6256eb82e30e289982de1c9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "484e5f0966895beaa67c50b37422f287e35787da9a4aa3e2940b07a479c236c0"
   end
 

@@ -11,6 +11,7 @@ class CargoUdeps < Formula
     sha256 cellar: :any,                 arm64_ventura: "8c7aaf65ba61a034e24ae83e8e69dcb6d9abc5bae632a9c01045a74f237b01b0"
     sha256 cellar: :any,                 sonoma:        "8ec7010ac3faee5ac94316a16a770b39ea9f2038d10f9b29f726fa6373c7818c"
     sha256 cellar: :any,                 ventura:       "663032427fc3280d388c78ad1e7ddede092fab440f1c14fbdce105f185a08374"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "143ce3d1e11c284ca3f202f72c86ae4ad9d127f343bbc23f72afde0babde4bd8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a5c175ef1dbc2df1ec423b863c47a453e4efafacc402bd50943fdafc1352cbe"
   end
 

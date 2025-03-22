@@ -17,6 +17,7 @@ class Sipsak < Formula
     sha256 cellar: :any,                 monterey:       "4346791be5ee36c5436de257f75ccf2ef31ac8f99883566c8679bf8e4d13d361"
     sha256 cellar: :any,                 big_sur:        "f2f76d68fa6c9c88abcd0132201a395a54f2ad31c73ee49dcbfcb69dbfb20ede"
     sha256 cellar: :any,                 catalina:       "3a756aed37b8bd2a3ff62c517847c82732fd2f9a7b5bf85dfac83704d18d6539"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5613441ee9f747ab3c144eae245696f163b027884dd3fec4d7cf00b00a1168fc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "73f5a4948c437e0d89e33ff28f04842ef4c954fcfd9ed432da36620c20b6ca24"
   end
 

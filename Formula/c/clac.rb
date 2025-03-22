@@ -11,6 +11,7 @@ class Clac < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "18c5e0e27145bcbf03d697cad009393e0cc358a5c68d02a18d10f0d97934b9c5"
     sha256 cellar: :any_skip_relocation, sonoma:        "99f0efd095f5a0ae1da2ed0251a1753cce042069a49a299c29b17c8edfc5c558"
     sha256 cellar: :any_skip_relocation, ventura:       "f4b1d600a712d9d93e03393fc16bc762f6aeb33edd9840fb0df0d9d79aca8e47"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "72f2128ed4ab7836c72efdb33e23fc6376a383e9f0bdc057490c2f7cf9b67339"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "388b23eacd1cd72f8101ce8f2858d9ad232de844cdcf7f3a9948f98e5d56cea2"
   end
 

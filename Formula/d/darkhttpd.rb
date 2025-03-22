@@ -13,6 +13,7 @@ class Darkhttpd < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "cda44bc98470b2f53b0485af56ee360630c05ad1a8a1a05bca5c9ca0ea982e47"
     sha256 cellar: :any_skip_relocation, ventura:        "9f424d6282015f95909fef901b9519f6c4d6ac8b42af1cd08cdd8b889b2b7ef5"
     sha256 cellar: :any_skip_relocation, monterey:       "cd10faefba5c4988de8011263451f734e6e05a222839b6cb3218764643da4835"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b600432ced2e8b7addb47da3eb1846b175997d92836672303579e7b44416e46d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "eb8cd915b3d815dbae18a6a91f7f6027569d5d020101c19fde5d035d5d433a74"
   end
 

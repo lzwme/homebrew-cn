@@ -13,6 +13,7 @@ class Killport < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "b2451687c821568ddb1c706eefa036ebb0551932a5d73ccbc10f88611d5250ce"
     sha256 cellar: :any_skip_relocation, ventura:        "728f9068e54e92a9fbba90fe0f4e82762ad550c6f0538c8a9cddaa8791533207"
     sha256 cellar: :any_skip_relocation, monterey:       "93c2b4529c5fe54fac39f4edae90efd19d92a238e7f0ebd5cced1ca56b298425"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ab337ebd0cf408b03c3a765581986c92baf8fe0f230d8e90f3ee158c81997dc6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "788d987c23de2c4d5ba55833462bc7cf60a5f6844e5682e827a242fa5837e3ef"
   end
 

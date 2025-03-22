@@ -14,6 +14,7 @@ class Cekit < Formula
     sha256 cellar: :any,                 arm64_ventura: "5098418cc8c2be7af41bce2d92bc76e567b64c80e0a1b8e30f054a264e76c97e"
     sha256 cellar: :any,                 sonoma:        "ec3643fb30c0ca346a766f69f36088cdfd593107b47f7eaa1c8869ca254e7925"
     sha256 cellar: :any,                 ventura:       "ec047824bb4408fef35ba39b4d45f68f2a740e3f7c35f3f42155f68d6911274b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a674b30a1129830c24efa7b555f6b4076e914fc66ff44341533869579b51e7b1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "67284c9fa4386de681b41502d3d5257d3b370f8ec5beb84cba9aff62e79764a5"
   end
 

@@ -13,6 +13,7 @@ class ZshFastSyntaxHighlighting < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2b63cd29b30d65b5f15e12a53ecf2b8f78b8eae1e0a32ac5761d88933cb00ad8"
     sha256 cellar: :any_skip_relocation, sonoma:        "5b0435113e89b05900636a678cb33a9e0d44382a005da60cc072ec944a613d2e"
     sha256 cellar: :any_skip_relocation, ventura:       "5b0435113e89b05900636a678cb33a9e0d44382a005da60cc072ec944a613d2e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b63cd29b30d65b5f15e12a53ecf2b8f78b8eae1e0a32ac5761d88933cb00ad8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b63cd29b30d65b5f15e12a53ecf2b8f78b8eae1e0a32ac5761d88933cb00ad8"
   end
 

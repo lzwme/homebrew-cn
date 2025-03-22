@@ -12,6 +12,7 @@ class Bindgen < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a704b4131af2a7b3b89584a7999816a9d39e7fc0efc062085bca77993e9fe3a0"
     sha256 cellar: :any_skip_relocation, sonoma:        "be5a61b23b1deaeb288a04b23e2f950bb8a52ab3c2278e5c2b9a74102ff71d2f"
     sha256 cellar: :any_skip_relocation, ventura:       "4d0759fa388a37917a70afa38c2020e6c9d3bfde4a24d446d84284efe308e7b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cea4dc5af2f263bbb02726b1111fc0275058c2e888dd2f9bc7a889daa7c8c04b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "41b1a9322bcec771b42a3ebf07ee63d91fdaf66751f06deecf1e921b4f8da23f"
   end
 

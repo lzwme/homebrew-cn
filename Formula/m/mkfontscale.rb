@@ -13,6 +13,7 @@ class Mkfontscale < Formula
     sha256 cellar: :any,                 sonoma:         "0fde03defbc5ab14a784923257a034eeb58d55e9ddd2094ce5157f84cb255b0a"
     sha256 cellar: :any,                 ventura:        "369bd2a993bc78b059ec76adc510eb212c9b3c7f0604a99d9374403d6b930202"
     sha256 cellar: :any,                 monterey:       "bf2d558740739a6f00635279dde933488d381bea05457e8fbfa92495c7820a15"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "98654a0fdb0becc676a739a84e9416bb3119c6e12b8479c8c28ca15778bd8d4e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2ea938e8ad6c373bad7f07d10cce369fa35345c4ae07629d46e8173357404708"
   end
 

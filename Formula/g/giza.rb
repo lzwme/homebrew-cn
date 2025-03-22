@@ -12,6 +12,7 @@ class Giza < Formula
     sha256 cellar: :any,                 arm64_ventura: "4a3c0833ec4b3e8a6431418eb094d105cd2e2df86af4dbf7c0528895b16b1aae"
     sha256 cellar: :any,                 sonoma:        "c4ed0b1ac1908380e160dd5a16ec08e8a9e9043bad61c027aa58cbe4674307ce"
     sha256 cellar: :any,                 ventura:       "1ccfaacf89c4afeabb14a61e4fea79c6912d7b0d0f50e7aa0f006aedf867d490"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5b8c6b1c0102fb9937510a31a056f7efc90253c5ee721fe35e1ced3ba836343"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a531fc97b0597105115166b51577526bd9f4d23a7166985daafa29914dd409c"
   end
 

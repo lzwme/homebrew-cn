@@ -13,6 +13,7 @@ class TerraformIamPolicyValidator < Formula
     sha256 cellar: :any,                 arm64_ventura: "b89e2714f23a60a4ddf0fe2719c93a31264a8ecb528549418a978b44a658c8ff"
     sha256 cellar: :any,                 sonoma:        "4d1256d5c37bf22b127cefc065b33a6a5fbfd46da050044f04ce17b9e23d8b4d"
     sha256 cellar: :any,                 ventura:       "a3653d4fd8972af3496ebecf50946dca9a12e5e09b208254a4968e4b612565c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e3eee71e3cd93033925ca8532fd942cb1f3da394e08013d6feb1618319a4b7c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f630df08d4441513159d5853e5a8eda4d964b436cd5cc3a636ebd64baae400b"
   end
 

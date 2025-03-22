@@ -21,6 +21,7 @@ class Libisofs < Formula
     sha256 cellar: :any,                 ventura:        "c04b4a231f71dccffcca4e4fade48e05c898e22860dc73630c8326dcc5688d23"
     sha256 cellar: :any,                 monterey:       "fee8ce45cc44667d25010c2fcb268e4c9e3c3a0200330618513ca3eaad19cb58"
     sha256 cellar: :any,                 big_sur:        "30b05cc10a096c6c8ba9a04b4884a83690abe966cb9604b85fb2cd139e572b46"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "30460b05ad9372e8086785db2582b2d9103e52cfc1b3294bd4bbb208d4a852c1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3d23202a09bdce26182a94e00cc3c412373f30a7396dbe73d6abf2dcd21d5ec"
   end
 

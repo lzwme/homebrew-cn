@@ -20,6 +20,7 @@ class Clens < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "e9dfe6e9228a928f9cb1a4048d92ec576be5f89f48408401b7f3020c1482a7c6"
     sha256 cellar: :any_skip_relocation, sierra:         "f034c79bf5a16265db249c673b2d2a3e6850676dba739adeb6e90394d8f77475"
     sha256 cellar: :any_skip_relocation, el_capitan:     "f6c68d7dce9d824274e16e3867926528cc79d161418fac0a0052e37dc6604668"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "30170cc04b93089a889764fdb8ffffe69b24b762fcfdf51dc2419e6ff51f5d27"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b5d5f5cba941676c726e09e2b14c9069dfebf9db9d6cb2b75fc321a2481aedf"
   end
 

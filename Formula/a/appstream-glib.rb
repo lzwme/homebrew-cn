@@ -13,6 +13,7 @@ class AppstreamGlib < Formula
     sha256 cellar: :any, sonoma:         "9ee04a0e10295134da81fe789ff2acac90c3d64ffb2d33a5e6700a4bdd5f6a6c"
     sha256 cellar: :any, ventura:        "ea40ca29ab320034cc36833efd33aa20c8ebe128fb013bfa3e2a3cef4e3eecc6"
     sha256 cellar: :any, monterey:       "648ab1fde37e8da156d657d26c5f9d5e2b2d18acf36896c7cf9508f11819ab25"
+    sha256               arm64_linux:    "a8eb70a5bc4dcbbe274a1ad1ce81f8aa99738e8db59996f6e6c10c6c3294eb0f"
     sha256               x86_64_linux:   "e3817d099c3f3d7bcdb0aec2920ff5b92e76454398d4efda5acb72c6d2ac4a1f"
   end
 

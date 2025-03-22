@@ -24,6 +24,7 @@ class Synscan < Formula
     sha256 cellar: :any,                 catalina:       "0e99e8f964f270377bd7dc6c0ecfae64682f3b2831776d7723f200c159623ac6"
     sha256 cellar: :any,                 mojave:         "aba139d4f46b1248a796f26dccb6399fd6f6eadd94b7777f5218d3a0599f0bad"
     sha256 cellar: :any,                 high_sierra:    "4364e517dd2b231cd711be4ccebdfe802e1ef6f7cacfaff46e987790c90c21f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a54e6111c8971ea407b04134141a081f98f69666757a961f211b6ebcedfce707"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5f3f43c87b2ace513582f4ac1b91374ca102a2ab8d0cbcad314d71cafb3f0c62"
   end
 

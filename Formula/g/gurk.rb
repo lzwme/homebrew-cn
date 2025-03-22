@@ -11,6 +11,7 @@ class Gurk < Formula
     sha256 cellar: :any,                 arm64_ventura: "efb878f8b9ae2e7c3d5a46b8b4859762a2ba7393ac80a5302dd16553c0df6fe6"
     sha256 cellar: :any,                 sonoma:        "e2480251a4ff3678b6192daac409a07446ed881e243e76b89722f9bc37ba9a43"
     sha256 cellar: :any,                 ventura:       "649d980b5309cefa205d569ee8495423f3ab3131c931cfcc4f85b9d4e61aa344"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "345cf3b5657678297d8aecf60bfeb67ee4ba1fdac10c49309526dda5a84dc9af"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "46253e8c881a99548b384fef25a64591bcb61d06fb65c0a2601e2e43dbe86467"
   end
 

@@ -17,6 +17,7 @@ class Ktoblzcheck < Formula
     sha256 arm64_ventura: "8abf58282c84ee2934cb1e3606814ee447dafb475e4206afdeddb05f0d410bcf"
     sha256 sonoma:        "dd3466c3a53c28c91005e0f610bfe634f7209577810cbc2d077ac3ba9aa39751"
     sha256 ventura:       "a99501a6e0001ab7e134a3687565454286231e435dc88b96eb2012e61e78debc"
+    sha256 arm64_linux:   "e15de18b01a09811a3b5c99d095023c2a3a969365fe33ba0978dfd0ccdddb112"
     sha256 x86_64_linux:  "5b60fa4082c972f35e50f36319ee833f278ceb1e39b04ab008d796b2ddaee501"
   end
 

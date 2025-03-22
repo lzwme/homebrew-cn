@@ -13,6 +13,7 @@ class Gdtoolkit < Formula
     sha256 cellar: :any,                 arm64_ventura: "ed386e1d59fe6471f1e192e7a82a1c4274ae628b4d35274ab1d8451d06d06099"
     sha256 cellar: :any,                 sonoma:        "97cd6163cfe41d41fe0748c65bc7c838e83749f6d5635286019d6b4dd32dcfc6"
     sha256 cellar: :any,                 ventura:       "951eeeeed7dbe1ef467685b65721c54f01323f2836225a737697bf822f854bd5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd6ec3ac1a27aae5c0be8590c9b8ec7cbebdaddcd8b041c5e9a20730828324d2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "377d555ae1057c4a0e61c54f0d0a44c44f6eaa19ef6bd0bfd41c854bcabd78f1"
   end
 

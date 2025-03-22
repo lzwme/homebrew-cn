@@ -12,6 +12,7 @@ class Tuisky < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3f5790a02cfde8e721b118708d057234399f87f04d878328091ac85937d23657"
     sha256 cellar: :any_skip_relocation, sonoma:        "bbad1992312186bb58bd8e409a4272fcc6024c4f7f9331915ddd72e32cea6d3d"
     sha256 cellar: :any_skip_relocation, ventura:       "b76b6484e2b5d50e470d92db22c19cd6586ba87505a55312546777338c5c8dad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "74419dc6a171b66f4719ac35f4a5b771c2dc62f56b30df3c3d70911f8bc79329"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "913b599a66307525601ec61513440037544cf246df75a68d28208e871274fd67"
   end
 

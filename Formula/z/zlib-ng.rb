@@ -19,6 +19,7 @@ class ZlibNg < Formula
     sha256 cellar: :any,                 arm64_ventura: "209912594fd67b36271207675293682db9dec087434b3a1bd0856cec80718eea"
     sha256 cellar: :any,                 sonoma:        "fe0c7f653c0643174b97538d312383681a16c73ba02c01d20067277988b0015b"
     sha256 cellar: :any,                 ventura:       "ca3d91daa5ab604935fea3632a76db372128ebeebd93939a95af3982e066c29b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3fce3abce4b3344c6d1c3d7385d64c0199b0b78a0e977972fcf7daea99d3405e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "067fda36b99d5dac97f99524fc362b5980ec06022037f1945377709b43f3c1b8"
   end
 

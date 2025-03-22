@@ -22,6 +22,7 @@ class Udis86 < Formula
     sha256 cellar: :any,                 monterey:       "d3b5ae26039dad3f35b3ead709fb8ee9be23ccaeb619d0b009830e7d94e151db"
     sha256 cellar: :any,                 big_sur:        "d34571cf019e170edc18b80d678db9d27d1cbbeab7e4c1ba9e667868a1d3dd43"
     sha256 cellar: :any,                 catalina:       "6e9b87a5a4d1de46246e92bc536113a6a56ec0c4565c2c0c0d122eb34ff4025b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d1cd6298235b1d5564a160a769f28944c1325e34fb836546c1c0362c271baf7f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a8a15d4f3b8bad23184fdace5ddc482e4d1b5d7f98030791ecf91983ec909d5a"
   end
 

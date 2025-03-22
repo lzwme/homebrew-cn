@@ -17,6 +17,7 @@ class Modules < Formula
     sha256 cellar: :any,                 arm64_ventura: "9de919dfb835f533aed25bf0c0b0136c910e7d630b932b38254c27570315b578"
     sha256 cellar: :any,                 sonoma:        "aebb442a0032596c907ffc37e7a18c277ca3573d1cca286672082fb6854e49f5"
     sha256 cellar: :any,                 ventura:       "384d55d505817dec102466f81f646fdb554d9736a0259f806a29743b88f0c332"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "939d940fd4a1d0ae531dc363ba8f7c08812728ef86248cd1b0b482c9e06a75ef"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "da598032599f2d8333a49d29652dadad9aaa674ea502eeeccfd33bb822414cc8"
   end
 

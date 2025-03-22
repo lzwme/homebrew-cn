@@ -19,6 +19,7 @@ class Mafft < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "c2bb12ef558ba26f6f8a4a7c99d9242249cd90131049fb142f33dd3498a48dff"
     sha256 cellar: :any_skip_relocation, ventura:        "6a8c4efa40ecb9439d1ea9dbcfdccca5ebbfb956d628804e8ec72247c1eec97d"
     sha256 cellar: :any_skip_relocation, monterey:       "ef1474d6acd018dbabf4d0ba62fbed486c678fe3dcf75df62d8b8a25580895d7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "90835e351fa993cae4c7be392839d812ec10c8186ab29833e600322b9ef2cd51"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee6f5f787b6cb179ae7c08d31b8b3f8be1f0ace537c2c9747bb2645f99df37a5"
   end
 

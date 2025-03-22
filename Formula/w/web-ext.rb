@@ -11,6 +11,7 @@ class WebExt < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "43a6b39a46f322f75b720c3d2ab0a1da299604bee775379840e7ec3bb10aba62"
     sha256 cellar: :any_skip_relocation, sonoma:        "eb3d8899488651fc64b77cd9dac47bd00bbcb3b0d3d1f59f18c01146875be65d"
     sha256 cellar: :any_skip_relocation, ventura:       "eb3d8899488651fc64b77cd9dac47bd00bbcb3b0d3d1f59f18c01146875be65d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "388e499ff579e25f4860d20760e406b0cddc2cf3b54fe420b132fcb1d39f6d2c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b26e601d12086bc4af6ae46df03b66b532f729238576ed3140e415042925fdaf"
   end
 

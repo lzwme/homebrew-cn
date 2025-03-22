@@ -11,6 +11,7 @@ class Mask < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a57f97c20bee8a3b8b2ad860777cc9aa320b44542bb902ece6f2ab1454ee53ff"
     sha256 cellar: :any_skip_relocation, sonoma:        "86c1ce171772495aea38cb4cf6d9f68e1bffd448a758bfe85cb3f923434a50ce"
     sha256 cellar: :any_skip_relocation, ventura:       "f277b06ae9eacae3d0ed37abeb2ba5d5772583abe67cadebc18bed0cedb93efc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "089ebe9bcd0d1d5b4a53673e4bafc38964e83bca4a9dd0f3192b9684b126f900"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "293cfb240fcd5da53a9f141ddd6dbdd1f4055c8941c47b60e1753cd418be776a"
   end
 

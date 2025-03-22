@@ -14,6 +14,7 @@ class EvernoteBackup < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "cbfbfc4853d141dd6e4769453b6abfcbfe34f2b184fabc8f68cab747db60f06b"
     sha256 cellar: :any_skip_relocation, sonoma:        "6458836cdbf16f7f9b62a57ea73b5826a9064c1a93e7ab59853162f0f8eb5f56"
     sha256 cellar: :any_skip_relocation, ventura:       "6458836cdbf16f7f9b62a57ea73b5826a9064c1a93e7ab59853162f0f8eb5f56"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ee69d8ec4d36262cca92a6fbe26bc2bb8b0e7e08b4e68ff5b67857163100352"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bcb18553fcb60393e31b3bf6987214dd106af6fb72e6b080fc6050b5b2f4f69"
   end
 

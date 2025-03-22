@@ -12,6 +12,7 @@ class Chainsaw < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "61310609af62c08441e2afcfdb3650cfb1cf354d4ac1c8c5fdbfdadbdd9adfaa"
     sha256 cellar: :any_skip_relocation, sonoma:        "b8ed32ee23dbf0478f2c592d01bce6217248a316f38ac9661b449525cc57128d"
     sha256 cellar: :any_skip_relocation, ventura:       "aa3f408a060ef71fe4fbe5756b7b25cc09557d06fc5abab52b09b3c67fe0d5cc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c8322f7ab580df1865da9ace9537d4d1bd19d680cdec4e43c08b9970aafd6fa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f192090857775783e2a9c9a1b492685fbf17b0f5ddc140196ffaa5b17d1969e0"
   end
 

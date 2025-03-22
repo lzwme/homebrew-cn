@@ -42,6 +42,7 @@ class Devil < Formula
     sha256 cellar: :any,                 ventura:        "41c4a55d025dbe6bb13fe38575289bca95014da52ecebb5d06091521eba82598"
     sha256 cellar: :any,                 monterey:       "e981eb27631eb67d08126eee9daef0de6f30223bf69f4cc497e6d258d84d4714"
     sha256 cellar: :any,                 big_sur:        "1bf545866859e8ed264015e2e0c9f88e8379f7ec175ef40ade2e1039ce933262"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "35dca23ab5cbd470f6dfe8744a7ed0f7a414366215d0350c89819ca0b03d083e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "39cfc26d4075c7e2be8b1fcc8ae762bd8897dca6460c632e1b63f3df69888a56"
   end
 

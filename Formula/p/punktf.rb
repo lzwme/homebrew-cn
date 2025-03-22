@@ -12,6 +12,7 @@ class Punktf < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "67350704bf6c38504627f458d3f6246efe92368ce4b5ee3991c974b70302267e"
     sha256 cellar: :any_skip_relocation, sonoma:        "a4d96933235b92eedbfc083698c362ec32222191d87d7971f5f84ecc785c437d"
     sha256 cellar: :any_skip_relocation, ventura:       "608bd63000e880a3d2722f6379ce8103c1a01e05d651b8285ebb4cc3936d259a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3f7359d14c59e8948dab52df36093bbc121645c692bc8e7e8cbda8c3ce21842"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1656a42b900b124a41f8d6d155714dcf8879eea6823489b29fee3cc895b9c14d"
   end
 

@@ -15,6 +15,7 @@ class Snappystream < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "6e0352aaa68c6373355d22f3aa92fb056077439b26869bd317076176aea7bcab"
     sha256 cellar: :any_skip_relocation, ventura:        "87329a4191cefc04c19ae16543101a5d94336812ede1047c34e52db7ff2a4006"
     sha256 cellar: :any_skip_relocation, monterey:       "0d58d7dd0573099e572969f5d38c821317171db8de851d0c5d7eb56d46ac54ad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0c192dcba364b122bbf8428185f24a1ee4e47f7a0dbdac8b3b4cf0edd467823f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5689e64e2ccf991d92a2adff2eef8b2ac32490467ce64bc09e93cee407b60d8a"
   end
 

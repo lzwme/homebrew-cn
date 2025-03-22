@@ -18,6 +18,7 @@ class Htmlq < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "c2dc9b6cb1914175ee46979f7edcf7d6883b9234da5f85711fd7f58ebef11e44"
     sha256 cellar: :any_skip_relocation, big_sur:        "f14e7cff6db455661e178db9d57b3b5cbc172c4bc3903d959ee1b5f38bf816a2"
     sha256 cellar: :any_skip_relocation, catalina:       "4a790da130fb9f4db4d43051df1fbcf409b6dbd49293d757411cd5118c9e18e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "feb04cd2b99368ec5b5ad4119906d9766235c8d88ab842f26ec35126c9c535a5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b93418d06723d65a8da8cb3c34819f24f825a057efc7788bf45f0db3484abf13"
   end
 

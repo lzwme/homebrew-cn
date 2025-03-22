@@ -11,6 +11,7 @@ class Odpi < Formula
     sha256 cellar: :any,                 arm64_ventura: "04eb6b6c23351da490655c6978a4b966e567016e5c58228b92da7392cbf7a7c0"
     sha256 cellar: :any,                 sonoma:        "305575b63b5f0eb78f083f62e678a5c1519544a53e43a71251646ef165bbae93"
     sha256 cellar: :any,                 ventura:       "4d22a8140a6eb018972ce42d5496a6216c0c30b07f57239c88dde4fd740a4092"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e551b2d3020d9ded9c4e58d7498c82b435cf4ab6865762abed757d70fe1c5c24"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab4874e0519e7b7382a63acdb19334f6a3148345330ded22b5851a4ef5b8a7d0"
   end
 

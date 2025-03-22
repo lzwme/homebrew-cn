@@ -1,20 +1,20 @@
 class Blink < Formula
   desc "Tiniest x86-64-linux emulator"
   homepage "https:github.comjartblink"
-  url "https:github.comjartblinkreleasesdownload1.1.0blink-1.1.0.tar.gz"
-  sha256 "9ac213c7d34a672d2077e79a2aaa85737eb1692d6e533ab2483c07369c60d834"
+  url "https:github.comjartblinkarchiverefstags1.1.0.tar.gz"
+  sha256 "2649793e1ebf12027f5e240a773f452434cefd9494744a858cd8bff8792dba68"
   license "ISC"
   head "https:github.comjartblink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "94d6d0c9e64d540ada078f6a89d0e9d35936ae9a05f5f98c70d91e2022150de2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2de61fd64e8fbe185bf583189710c8dc8793c13fe5535489638dc4e1116b7901"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "ed08f66b03fb447aac0c38f232f6d0ddf3d193f11e1ccfda27141e1de452d5b5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "22ddedacbb9166f752850e36aa9b787c66671f0338a452ea465c6bd8e37885d4"
-    sha256 cellar: :any_skip_relocation, sonoma:         "dfc61d7528246380f32c4926b1345e19064fd62d56e635fce1a49aa7ff8ecdcf"
-    sha256 cellar: :any_skip_relocation, ventura:        "5d816c1d15c0eafb78919ce3cf3fe2615835fa35b048ad0925debf212d8e1d82"
-    sha256 cellar: :any_skip_relocation, monterey:       "ca2a5adb954404890dfbf93e0bae8934a5568a87e2425068d90e94922eb60bd7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b037ea0f7e1afbba04ffcca29bfdc542fa466be4ffacb9015743b720e227750d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bcc500f8fe348d17be88e78813f689ad5f27a065db6112f5fa7e867e7c7f0139"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3682378ea5beb74906a12760147ddcae882095aa4a183f4fb328994ef9f8bb64"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cd18d0ceff9589f1ad6ea1dc5183c5c61f0234705d7789f6b26df8a47d830d94"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bcca9fdf32d372f26ef410994a397e00d2c0ad337b32bfc397dffb5d8e9c831d"
+    sha256 cellar: :any_skip_relocation, ventura:       "c6bf3d3adff77c984c9966cee9df01f2962fa1781d591dbe0de0a81666762812"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ceddcd34e8f3929aacd7c139f86ca385e3a758417989d865b34a61437fbfc2ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae5240313e012eedfe56836839f4becd32fa8e3d22b690d1728aae141bb40025"
   end
 
   depends_on "make" => :build # Needs Make 4.0+

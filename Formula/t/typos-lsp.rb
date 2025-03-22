@@ -11,6 +11,7 @@ class TyposLsp < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "94a4b0bb303c21a972093b50ad0c9d48afc2316fa8f8a1d005882c933bed1ec5"
     sha256 cellar: :any_skip_relocation, sonoma:        "c0de5961ef972d56a0f92ed68f6e8a90d37a2aa02da6885b7a3defb7aca3a2ad"
     sha256 cellar: :any_skip_relocation, ventura:       "acf23a44b146518d3df4c062c9997f47561dc56abf03907f566a9792d2e6002d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e41e8d26eb5941bbd524830698990ef5354ce92cd2af8434a0ae754760e5218"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcf84cd3a9b618dcf9a77c0ab0788c8cf687cec18f2df858ba275712165419ac"
   end
 

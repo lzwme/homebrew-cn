@@ -11,6 +11,7 @@ class Nping < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d788ebf7d9e3efb94d23b6f9b3f10d90c611dc31597e30d93065a31135fa0737"
     sha256 cellar: :any_skip_relocation, sonoma:        "72043c6c4d34707cdd0018b8f17a84b7ec0caf116e175a48a4ba5ec1a61071d0"
     sha256 cellar: :any_skip_relocation, ventura:       "152e01c63936a65b841d904169ebe665a0f9b2cec7b82dfd296d7dcf4a76005c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0d38e12290fb9ce58413203564345087714c5fa9f0ce5c3eb762184ba1af96a7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fe4781035df88fe41a4399fffdf716c3e5b3868170c1ebd901c9620ca1d672d"
   end
 

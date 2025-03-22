@@ -12,6 +12,7 @@ class Kwctl < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "58bcad45346e107784d5169bd00154d80f0d251487c071181900cb1453cdb131"
     sha256 cellar: :any_skip_relocation, sonoma:        "fda8a8dbaee14367fd8c513ab8471a3a4d5ed7bd03f65a08959e54b83bf5d51b"
     sha256 cellar: :any_skip_relocation, ventura:       "9c95c58afb172a685155591a6e8effc7d5a6b88189758c70c56e818470f15f0d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b00d57f12fcddcfd250eb3ed2bbd54e25228bab39acc8e173f35b4c8feb7c365"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "984093af29eba1bb7eebb21e32f280c5d7af3862f7308ea45638cf135b2a5579"
   end
 

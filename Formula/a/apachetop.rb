@@ -15,6 +15,7 @@ class Apachetop < Formula
     sha256 cellar: :any,                 ventura:        "4c6d945946d47eed147f9ff9550bb06d00c5c12662d32375a0ad2e1c2a2429d5"
     sha256 cellar: :any,                 monterey:       "d2e4cc231ecfa99b31fa9d7348755322ee8d3370fb7c9bcbf4516397ebf858b3"
     sha256 cellar: :any,                 big_sur:        "14e727f81b2b5960f03a93e15a5fb345c17749deff826170417bc8aa54687dc8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ee4946ec586338260b8540ae8954f40001f2cd482663f55a9e19f94572756f67"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b12e4f730309bb91ee34bb2972ef2004a979c2a608abb93500b859973994abf8"
   end
 

@@ -11,6 +11,7 @@ class Dict < Formula
     sha256 arm64_ventura: "5e07587d607e55a3ed72f4537dccb417b16e2cd463a6690f8ca8d508d520c919"
     sha256 sonoma:        "b6b358141e0bd18ba760ad85aee702004152e6d68d3cda9da560e519e4361c25"
     sha256 ventura:       "826e7bbdd50a8db3a8fd53b53b2183eb53f5cf107edb9adb3590ace085b16112"
+    sha256 arm64_linux:   "a09aee6926baa5a91ec8f9e258d2d0b9fada22818a9be03e721df7dd853f1012"
     sha256 x86_64_linux:  "ae7ef43f713a5e828d33cfb43d4344ea6efb28809e95fdcdb47c06532fcb0705"
   end
 

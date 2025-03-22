@@ -18,6 +18,7 @@ class Cddlib < Formula
     sha256 cellar: :any,                 big_sur:        "2d9ded9039be48632f55065ccc0cac90ee53bb41e9a900bd955997ae113eabd8"
     sha256 cellar: :any,                 catalina:       "3e3369de96b6c33641ec2c5a3e490afb72ad94b6fb913385f574089ec4b2b0be"
     sha256 cellar: :any,                 mojave:         "362934e5d50dc994ce268a690706d6950f17e1b191f315617adc0eeacc0b51b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "33da5b21d2756dd83ac0dcb5d83c8334f98d0376ffdec597cc2edaf7657e63bc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0cbfdb16a069a1c098e379da5b3f12c461f639f09f36addc65e5f07f27e1f1e9"
   end
 

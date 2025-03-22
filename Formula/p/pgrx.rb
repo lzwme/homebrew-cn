@@ -11,6 +11,7 @@ class Pgrx < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "371bc19c907b50402cf6100f191c597c7130afdd539f206150e87c55799887d2"
     sha256 cellar: :any_skip_relocation, sonoma:        "01040beae0a8e57c3680c1368f1927a1b4c0a3a42b4734da79235d1a098ef17b"
     sha256 cellar: :any_skip_relocation, ventura:       "54b5e97dbcfc280f1d884d6de16fd660d5b2df7c93070033d41e66c46067b782"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1350aa7d1b15817f57d43c84577e26e6911896357f2c57a68ab8116941ff738f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f9cad5d2f19aabb5fdccc23b76c05c90df5366d80a8c7f89c6544522f2c93da"
   end
 

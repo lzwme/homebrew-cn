@@ -15,6 +15,7 @@ class Utftex < Formula
     sha256 cellar: :any,                 ventura:        "48ad8ca0fca773183943258a5000b80ac87a92fbcf643b5d5ae6308549f4679f"
     sha256 cellar: :any,                 monterey:       "4612a84d1625b774f4eea4e64c764dad77ca3b85e3fb80eadba71cb7febcc31e"
     sha256 cellar: :any,                 big_sur:        "972ff7102230d15986fd1cfe3b0275d47ca7c8fe99483e1009250cebcc96295a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2fcba65838ab58ed111d25293809ba66ff3640d6086d42d1fcdca08dd8e6f235"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "765d49e6c14eb18ed03f6898866b5f1ef95cf3e7e3355e1881e2a5c966b33719"
   end
 

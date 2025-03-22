@@ -12,6 +12,7 @@ class Opencolorio < Formula
     sha256 cellar: :any,                 arm64_ventura: "7df6dc5b16c82aaecc3c6d5366b471f908e479e5583152948d5829b2a9fc024f"
     sha256 cellar: :any,                 sonoma:        "4be7e329a8f5b155d8fa8209d01d2fcb8bb1953bdbd9ffc64282f3fe28eade8f"
     sha256 cellar: :any,                 ventura:       "4c67b15aaaaba4b75bcd3d0dba1193edeb25ab3d9ca77365a35fb11970efe86d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c0f0c49ea791180f3d12d806882b2b60c36b0e27b0022d69223a1b06a2e6b69"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e366c2cf6a6dab2e5abac729a3b08af8bb16c1711e2c6642e05e23802df2a1f2"
   end
 

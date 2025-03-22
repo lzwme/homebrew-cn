@@ -17,6 +17,7 @@ class Mjpegtools < Formula
     sha256 cellar: :any,                 monterey:       "9afd34745954ea736c8e894c42b4552aa414df0d44942a09d7c47a6113c3ed2b"
     sha256 cellar: :any,                 big_sur:        "49857ba4da574bcbdf2795f9bed39ab9b9ca4c4b3d6ff39196b707f0981e8523"
     sha256 cellar: :any,                 catalina:       "c2beea84698794fc12896fa9e7b2c1655a3f4be189b90b6963799419ee3b34bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "eb5ddfcb456ade203f5d6a0d7bd721dab23b7a6ddb365125b358183323b75078"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7efdf0c986f0afd7094a355256ee6743f2ce7720d23f680005e53a8ae5213244"
   end
 

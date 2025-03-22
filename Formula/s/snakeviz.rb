@@ -14,6 +14,7 @@ class Snakeviz < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b4fc7432f7e622374f7aedc59312d820952cd8cd14d9f265b88ae206c58c83d2"
     sha256 cellar: :any_skip_relocation, sonoma:        "cc5b7cd5bd74907bac04e6a0316954e197274e18215fd0b66cddc34093818b4c"
     sha256 cellar: :any_skip_relocation, ventura:       "01cc2b2bae5b4b5f362626d37756efdccf87089f705a55a98841856f7845f485"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4c653f9541943f6a11e86db50444b7cf42dc74577332c5a2ab17a9a8f903db9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2db01dca11b6887cf9428b9d29de8f1637bf380446ec19b1603bcb60773cbb06"
   end
 

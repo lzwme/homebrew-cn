@@ -16,6 +16,7 @@ class Lemmeknow < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "8b5b5766ec6bb2c0392759b960b21613a46cbecdd4a06b696197fd2b18b63e69"
     sha256 cellar: :any_skip_relocation, monterey:       "d1999def59b9c186a9310cd18f6a55fd6ac565f4330b8c1800bdc6a1dc035aea"
     sha256 cellar: :any_skip_relocation, big_sur:        "9233947a40343e7512dbc090981151ef1e9fd009ca09fc60b9b510036b4e133a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0b3e0ddcfc0903619d6b4ae27306d8c047df8fb325882eda53c2e70674140c9a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c8d597d9d5a7512e3c5ccb9bca3efc519f1e9d1445cbac41ea4a9faea38caf7e"
   end
 

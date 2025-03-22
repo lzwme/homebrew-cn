@@ -13,6 +13,7 @@ class Idris2 < Formula
     sha256 cellar: :any, arm64_ventura: "1600ff494b3297aabd33f4601dd460cf370be259931e09e71a125163191d278b"
     sha256 cellar: :any, sonoma:        "78a12b89785b8d634fb112311a26c5a37a383fe09819416a0955326e54082a00"
     sha256 cellar: :any, ventura:       "e5f091bcbd8281136c7c7a0c8474efe76eb1f65e1c192ffb68efc7d5a186122e"
+    sha256               arm64_linux:   "83cc1d98356b8c9da6c4519dda723565416f511af78c2fda8521ed5dbb6e34e6"
     sha256               x86_64_linux:  "1c641c4b960ae02d8ffada1508b1bd4b6cfaf9e8fa917ccddfb15e427dac9e73"
   end
 

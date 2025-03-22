@@ -20,6 +20,7 @@ class Libfixbuf < Formula
     sha256 cellar: :any,                 sonoma:         "9579de64f32cfee3768108e137e39a5e024eede7e72aadad97236e8acbc07eb3"
     sha256 cellar: :any,                 ventura:        "448c2587bfa6fe93bc09fd27002a4efa8eaa7f402bfce7aba40ec70c0c16c02b"
     sha256 cellar: :any,                 monterey:       "34c5b4ec70085244ffd8273af2ba5f08f94856fb7eb7c17e672ad2a0e4c27734"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "6f762d72f73fb168fddc9b0eff2478ccc94479d5a90a14c002de6ac79a9b9393"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2c6294855ef75ae5b347c818c9caf938640f7dc128a52fca9db6ed7b079c71b"
   end
 

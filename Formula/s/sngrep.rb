@@ -13,6 +13,7 @@ class Sngrep < Formula
     sha256                               sonoma:         "57d93a31a23337e083f75ff3df8c40731fbd68d857678599184027f9240947c0"
     sha256                               ventura:        "9fdeee12cf3751750380301d66b61d0862e568b3f789e9bc21bd676b0495168f"
     sha256                               monterey:       "230ba56b3c53cd525f4dbed3495ec75c63cba1306c5d4cc5356573e22a2cf464"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "638308e2f58d25eecb2023dfb5e4c44bf344b664f428cd6af59b5a117b5a2827"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a6c9d43d767e6ae8f902fc0e74c4dff3ca255e94178cc0aa108e1241b797ea67"
   end
 

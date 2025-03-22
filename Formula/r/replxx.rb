@@ -11,6 +11,7 @@ class Replxx < Formula
     sha256 cellar: :any,                 arm64_ventura: "3ce57d5f033cec54cce82b5db47a5a4f8e17b28cd3ad4533c5b7686ccfb6c4b0"
     sha256 cellar: :any,                 sonoma:        "0fdd6b76bc801980b0ffe7f0d6d2054d9c29ce0a65fe6765cab150414b0ae7d4"
     sha256 cellar: :any,                 ventura:       "23f9392ae9330ecedd2ce2c816c40a56a4a159b751a679772a16ee8259f455f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44f5f6e6baf5168f5a86c4a2966114935de9e4c71b1d5a13676d1157b5fea3d3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3dda3e653e8248fcef21065c08ee18ca0e693544d48e733502ca8f594c2bfe0"
   end
 

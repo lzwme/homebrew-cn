@@ -11,6 +11,7 @@ class ReFlex < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "248e291a3badc7070493a00372bd8ed8cf6973d6473ff58d3075dcf63d537684"
     sha256 cellar: :any_skip_relocation, sonoma:        "f04d2d625190e877e0785a6c572ae4aeff07361d4f8204036bae9c8d782bc329"
     sha256 cellar: :any_skip_relocation, ventura:       "d58041bf4c7aa4e07051611c01e18b52f6ea7df88344cc386d5cc833ba117bd8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4e27d77c7566c6e8ad7ebb837d382c79b81744186cfcf8f0fc08c7ef8e55656"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fefed57bc699e795663b2e51c9c7abe31dd1c66e239cf4c06dc53843b0d10e81"
   end
 

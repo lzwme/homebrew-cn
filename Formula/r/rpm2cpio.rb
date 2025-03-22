@@ -20,6 +20,7 @@ class Rpm2cpio < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "fc05b2691766343ce66af5f1b1ab8e439c0370d4b8bb7d00ad7111a102f89659"
     sha256 cellar: :any_skip_relocation, ventura:        "0b59b750cefaa5e3e10b411be76ce61e6842ac5a33ae8fe2f9d5882748350db9"
     sha256 cellar: :any_skip_relocation, monterey:       "01c30bbc719f13559f1d351beeeca74b6e74a874ec79fdc2e461feec12bd199d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "122ec324ec52bf16746aa0aeb44cf01e0598ca3d7568e0abd54b8ba4cf33807f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8a6ed93e8d9f082a0fda4538dcb4d94a75423e73d21ec86d5f1e0040a3e1b3c7"
   end
 

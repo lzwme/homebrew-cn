@@ -17,6 +17,7 @@ class Tuntox < Formula
     sha256 cellar: :any,                 monterey:       "5a94edbe46870d5ba3103cd52264f4e814e7ea366aac1daa4b6a8f3c6e1a6429"
     sha256 cellar: :any,                 big_sur:        "610ffc38571ec6550991c9c055205253b61b74c130da1a1a193d4ad12789b611"
     sha256 cellar: :any,                 catalina:       "028fe7d07cced8a912fe1b8407d03ded470e4883726edcc7a0d4a0fbb14c50c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "3c2155cd3b704f8ff29fb52307f2283e88866d35558970169017fafed93ac096"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b3cac8ddc89ca91fed03ad0907d5ad9ac15c02309a97949b6449d93a7d5449c8"
   end
 

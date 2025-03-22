@@ -20,6 +20,7 @@ class Xdelta < Formula
     sha256 cellar: :any,                 high_sierra:    "a65a726ce73eeebb9abfdf8069b08658dc4fad13527d4d162d1119cc32702b11"
     sha256 cellar: :any,                 sierra:         "7f51b76d06a6ac8aae36c10b41776a374d5fafa6b55c4908a885be7a88194676"
     sha256 cellar: :any,                 el_capitan:     "e07f928aadf6a9d8beb8a19fb72cb673cf0ae13c339ccd75c5df134cb3bc5c09"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "07505153f0433a184f123e5f0d9468511854f2fc10b811bc45cf9628b9da14d4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4015bbc1061c1ac1ba9b56e9465b2b18bd22f1557e79651f1cf9feaf5e37c486"
   end
 

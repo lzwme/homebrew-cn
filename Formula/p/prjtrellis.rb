@@ -12,6 +12,7 @@ class Prjtrellis < Formula
     sha256 cellar: :any,                 arm64_ventura: "c146035dc653ecbe88c38f3ed237ded5feaac5c614c8f86ce623f94e950fe01b"
     sha256 cellar: :any,                 sonoma:        "50514ae38b2cccdd1dd9d2249c807c631a28f00dfe8dc54df01562162a0b38c7"
     sha256 cellar: :any,                 ventura:       "b66e7fa03d996662fa0737a573c7a35b2f90ac43fd0268836aaccd33847fbcf8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "97f76a88d200996b5aeb70a6944c500ad31c8e31cf7801ae804999f64fb11fdd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d96199f848fc43cf9160e1c0c66eb699985fee7069cb41a5de90f970764bd15b"
   end
 

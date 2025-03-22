@@ -19,6 +19,7 @@ class Openiked < Formula
     sha256                               sonoma:         "78e7655a4f26f4e74e5fc81a22a8b32d8d4ec19d32645529bbc42a51fd801f16"
     sha256                               ventura:        "9d22679a1192e1aabd262ea41dedb4236ea62ff133faab3602bfa3de4b5b5c9e"
     sha256                               monterey:       "dbba1126cc4b34ed420abac2fe3f2a0602c37fd856572456c208562e07d49df2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d4c823dc7cef5996ecf6a76559ccc820107dfe88634325392aea71416712f79c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "dec0feb61a323ed45258f074cfd68cb7f0f4a0746bfbb59b754c9d5b21675e60"
   end
 

@@ -15,6 +15,7 @@ class Fava < Formula
     sha256 cellar: :any,                 arm64_ventura: "a7b743d3fc86c54650248694067d0198523eaa71119035e4edcca0abff6c1d20"
     sha256 cellar: :any,                 sonoma:        "250b3e3755b046ac688b8dcc35e56a7d6179d26ea30c716bc34acbdd7e107bec"
     sha256 cellar: :any,                 ventura:       "d522789b27b90118c85a5de8943c0ebd4c7e2beed17f598eb6a0ea9a3d467faa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "83c9c596f061041ccbd4eadf72763ddcee7a754417b5d618b195e8168c2539ab"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "313c09784dda3c14df2ca71fcea1ed38d4dd22a4701b53d7dfbb187aa49b8742"
   end
 

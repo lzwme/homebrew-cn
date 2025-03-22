@@ -38,6 +38,7 @@ class CdDiscid < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "26b88be0312f960484625161d94adf9a44aa88ef5817ba28b61af520a6e17e03"
     sha256 cellar: :any_skip_relocation, sierra:         "6b0d9c55a1adfce8a2c6e9eabd00c37118a05b60678564e7a9695d876bca117b"
     sha256 cellar: :any_skip_relocation, el_capitan:     "f0c17cfc3c345c661104a6f29562b766cac2a80747feea0c26cda04ece3c8326"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "92144152a7fa53e3cbe4c6eced912ab7a569079a1d40fb9a72c73635f70027c3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c6e37cc61545d58bebb66ffffada804ca5e39e47e503684c7ed84cfa856dbb14"
   end
 

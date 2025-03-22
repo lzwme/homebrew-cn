@@ -20,6 +20,7 @@ class Lzfse < Formula
     sha256 cellar: :any,                 high_sierra:    "e2a28bc48a8d90dd26cf2fe92d9186cbe0f19c8a58a5d15c8591826cd047b43b"
     sha256 cellar: :any,                 sierra:         "2da23959f27fe8a141b2967a591052c6ec081224b7b3c9c65c4a854faba77456"
     sha256 cellar: :any,                 el_capitan:     "4fcadd0779483cf14e95f7566002af22e9b488585c37fba1b5e75f715b930c01"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5ed34f88c34b8be3427102200be747817b78462cc251f02bd29b5cc3df6180d0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "13f5733f570ee2f8d436c66beed32cbece59522b57653fba497c9dda82bd0aed"
   end
 

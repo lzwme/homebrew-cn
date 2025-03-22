@@ -11,6 +11,7 @@ class Legba < Formula
     sha256 cellar: :any,                 arm64_ventura: "2667efc81b47fa5e6d8c157207f6c6a9f192066766b0aab1f6a4aed02b18e02a"
     sha256 cellar: :any,                 sonoma:        "6fae915b3b92936d1b9eb6a6ed584f7c0b64a86e032e33f0ffe4aa7ac9dce696"
     sha256 cellar: :any,                 ventura:       "5039e6dc3df7510c9a1fdbd3fa5d4badfcbf32da1a285e7d0bdf9650e8d03124"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "406ceb16704065ba75035184bb193ed451550edc9fac885d345f652ec3b51184"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca0f43ae1e6737997497dedf44a3de25a00de76f1a90a159f90acfaa2e890035"
   end
 

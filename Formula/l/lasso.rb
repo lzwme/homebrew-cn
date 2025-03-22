@@ -21,6 +21,7 @@ class Lasso < Formula
     sha256 cellar: :any,                 sonoma:         "1ae094adf28b557f503e6902eba7782fc3f06851f99af55bb719cd1ef5421acc"
     sha256 cellar: :any,                 ventura:        "c70b29501fec372898d179cc2b90a8778135b1b90679cedbc9d04967c23be6ca"
     sha256 cellar: :any,                 monterey:       "c502d05c3014a4bc43418345944c10ad4f5aa7e65743a83b374b51f8f44d2eff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "06aec249f21d3077204ca46f10391df23570448ff47650cbeefd69455dad5a78"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9adf24a05cbf953ad5f3d3bca3f388eadb08480aaf9f100663504c2ea83ff025"
   end
 

@@ -12,6 +12,7 @@ class Starship < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "df88c2c2b3976851cacfab457cc693887b63f09fb3c270d992f7fd75290f9429"
     sha256 cellar: :any_skip_relocation, sonoma:        "480793d14d7014c6f3de40dac80fe11f64f225a82bddef5f92d0510d87d85417"
     sha256 cellar: :any_skip_relocation, ventura:       "5bf4c974cdcccf64dfe197a531a047290e7f3f849ddc4dcfa5fb24cbf51508e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d50d10db6b745044318c40db0895c948a05fcffdcce5e38ab9823aa1de1bb786"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8815fb22c318600592fa236cf612e5892adbab219ae26b007d2df2838a1e711d"
   end
 

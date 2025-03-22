@@ -12,6 +12,7 @@ class CargoDist < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "968f7daeffb1d13273e3c787ee8168f288e336b4e76e7ac400e9c9ee4b7e3cf2"
     sha256 cellar: :any_skip_relocation, sonoma:        "6e73ea41b52d557c939429b8ce4a46cc485857ea79c3365ed25452d0efc61246"
     sha256 cellar: :any_skip_relocation, ventura:       "2a539f976a6e3c321a4270276641e4dbba0897322f12a0cad104480e5a4697e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "511eebd1ea06491adf087514050e59eeb315465b5740df25ca0f1b24b3b73e5c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec7152a262e3edfce50cd61d60fc7d3d2b7105b4ef82c9aab41970738c08114e"
   end
 

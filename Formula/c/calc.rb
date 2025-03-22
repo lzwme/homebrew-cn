@@ -13,6 +13,7 @@ class Calc < Formula
     sha256 sonoma:         "8eb4e34f1a3b55392b9cee759415595863a790dc391814b574f8515fb968f14d"
     sha256 ventura:        "ac313396a34754426514eb0fe001e4fba32653dd14e532613abe5ee1374b74f8"
     sha256 monterey:       "dc68f56dc6b3a7d6891e6cef15bebfa9c681d431408c1e93f05a05b40dc87417"
+    sha256 arm64_linux:    "c50258503a103ccbbafbd98a77fc1d4fa439f0ad6461bd21c5e836b73bec74c8"
     sha256 x86_64_linux:   "deaffb8e67645aa29842b78bd50596bc7cd460f0b826d88babe74af2ca1f7be7"
   end
 

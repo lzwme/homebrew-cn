@@ -11,6 +11,7 @@ class Haiti < Formula
     sha256 cellar: :any,                 arm64_ventura: "ac675715ee3d7c718cb64b32dccfbf4c6c59f5903e0d6a6f7a002c826ac786dc"
     sha256 cellar: :any,                 sonoma:        "fbabec938c677d8c8ccf32ae492ada6db536f2c59ddcda7de55c3673c7ec2471"
     sha256 cellar: :any,                 ventura:       "dd1d952cd49a64a32e4cc2f825f700aee62cb2e88fcee96cb0cfa047cffe4930"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fc264c904ea442c908783b8d8f0630abe8718581f99eaf2e9ae34697559db61"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8ef3c1a86e06b06935f2cfba4b037d681d37ad589bc2196f4b882d76e933f02"
   end
 

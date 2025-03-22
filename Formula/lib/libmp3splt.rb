@@ -20,6 +20,7 @@ class Libmp3splt < Formula
     sha256 arm64_ventura: "2d729d944e28d5d3c651b5be9e7b4aed770fdd51894175b82318414d12fd1850"
     sha256 sonoma:        "b5f348f71b30146bc33730f43b14e5129cb27aa4c9a1bfb6a39c92ac2bbf5ca5"
     sha256 ventura:       "dbacb2e3b18de32c6398f7123f0eb826ad56f1969ac45b027cfd3030544fe8a8"
+    sha256 arm64_linux:   "958fa980c431ae3b8c2dc65956c24bf0c0baef98ac9a7cc4b2cd771a8336c5dd"
     sha256 x86_64_linux:  "b92f917113de228d2bac95e4672b4741c8a5256f55834b6b498bc0697e5e4a3c"
   end
 

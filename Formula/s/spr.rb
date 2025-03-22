@@ -1,6 +1,6 @@
 class Spr < Formula
   desc "Submit pull requests for individual, amendable, rebaseable commits to GitHub"
-  homepage "https:github.comspacedentistspr"
+  homepage "https:spacedentist.github.iospr"
   url "https:github.comspacedentistsprarchiverefstagsv1.3.5.tar.gz"
   sha256 "d1f53f4222fd9916c9edc0457bfe04bac66d9ff60a7c0e7a0c4519317c3f3fb8"
   license "MIT"
@@ -15,6 +15,7 @@ class Spr < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "817a28b41cdab633e17b0ab7ba58be93f1866c15b47a64dc7bd9bff36d1c33b7"
     sha256 cellar: :any_skip_relocation, ventura:        "a68d4e83af3fa0a54f23a27edf699d27b7b2514e6a4b2a631b772728fe8fb4c1"
     sha256 cellar: :any_skip_relocation, monterey:       "6f56e9ebcef926ce71fe573640660366d923d1ff407c26c52dab11891786dd40"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1d0871d5181edf3c27cc333e6fc4036ce9d61e7dc923f408d2c09d59f1abd270"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "86d1aa332e5b30c08f8d1eaa2aa49a5371ead75d9e5061c6fd822d5a0c70f972"
   end
 

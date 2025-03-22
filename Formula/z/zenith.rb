@@ -20,6 +20,7 @@ class Zenith < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "d4172d5c72a51ab8aebba7d4c47070b0a8cefdb40a8b73b928ddd02475dbef81"
     sha256 cellar: :any_skip_relocation, ventura:        "f177e534fc869dea3f2dc14f4ac29689c646991afd43b7e918b57b55d4a50395"
     sha256 cellar: :any_skip_relocation, monterey:       "9027e600ac7437f36f97ac6712c0d0183448b11929dc2cde6fb14153a029408c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a63fd0f8939e226783ff561e979b63f40e4c0d6b77cba2fdd4cafc0eb2662abb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d4c7423ab047dead7279b56bd10dea35d14b07a58f26f97fef4dd065a8c0b8e5"
   end
 

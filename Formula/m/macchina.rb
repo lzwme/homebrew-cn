@@ -11,6 +11,7 @@ class Macchina < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0edf9f8eb64c603d3d2a173a0d933902ace99b500e16c8a3cd7daec854703232"
     sha256 cellar: :any_skip_relocation, sonoma:        "922e43abc17df8b48ffa744fd346f50f60754ea4abb2a5b82703b94686f91620"
     sha256 cellar: :any_skip_relocation, ventura:       "d544f58c1d3f84ab87fded15c43ee4deb67e18c3f2a3d81e40919875a795942a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5597f411de344cdc7261ae72f1262dd5c9f0aa02201d76fc2e0d95adc75106ec"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c2dee8bb6fa398bbe5e7ed7dc13dbf811d9511a131a9ec678aa487b323e2528b"
   end
 

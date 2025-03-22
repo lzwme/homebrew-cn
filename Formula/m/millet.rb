@@ -12,6 +12,7 @@ class Millet < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0d6cc53a1c690a8aca2ec156245e57eab2ff0ac033c6f9902f3f0c19b568912c"
     sha256 cellar: :any_skip_relocation, sonoma:        "5c1473be0100ce02de27fb0ab410d04c7318053f969d215a2d5e8569925ce935"
     sha256 cellar: :any_skip_relocation, ventura:       "0cd78d743593adb18fd831df1d7dd3fb48bab36b9b37f97bee4ecc52996a1fb9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9026943a06ceae4faf4de5dd51d7817b8c32fe161920448b03fae147d27e9bc8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad26eaf3f79857774cf8b33f0d09ef507245473871b0df9c8c6fbed9521b1365"
   end
 

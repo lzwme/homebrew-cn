@@ -15,6 +15,7 @@ class GccAT9 < Formula
     sha256                               monterey:     "9aa22339b3002ae9b3bde3ed9034238d80b07cff4a5c3c60f3f3653f52c55ce3"
     sha256                               big_sur:      "ea000947da4131b653f137e3e275c061b34d7faa6b961896ecabc3717009df32"
     sha256                               catalina:     "464e3f7571feace6ab25eb79e10c5a882656f26cb83b07b4052020da152e0d96"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "1f64298822307229b75f242408db959d2013ca23f9da2579519234e95380e97c"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "b42b21daea2631464b36bdb47c6fe99ed6f14e0fab563c89857d13b1466f4b40"
   end
 

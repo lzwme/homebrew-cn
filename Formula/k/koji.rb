@@ -12,6 +12,7 @@ class Koji < Formula
     sha256 cellar: :any,                 arm64_ventura: "9fd26b1e044fb57e2d8ef0d7bbe1ea57aa7ab8b124277bd89adbfc67f7cdd467"
     sha256 cellar: :any,                 sonoma:        "b4b2066c3785fb96b1fc5f280a586a553ba3af079b6536020b4b7ba61073adaa"
     sha256 cellar: :any,                 ventura:       "cdbc54030a73304779b4f7456a7d51bbcfa257cf818043eb63c09171f98f238b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e129ea2ee03bde87de5c0b3f167dd223feacd4815c20bcff21e5e240283b926"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3439dfc748254b2ca5f525304e3d329899829bd11a1cfe7593d2a45e38ac4ccd"
   end
 

@@ -12,6 +12,7 @@ class PhylumCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "269b4c5f0bdb27eca5877aeca63917c6f4fc89db1b6c37eb2b3662d6b0958413"
     sha256 cellar: :any_skip_relocation, sonoma:        "266555f6e8906d4a6f73fe3c0e9e9afd2603c237488e25604fb8144481fec0ce"
     sha256 cellar: :any_skip_relocation, ventura:       "c924ab7775ac2d61f06727c098a87d2735ddab21f2168117a77d1b06cff892d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c71277d28a9107f069205c05c6e15c939d927461ed61ffffde8fa8dd62f9fab"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7cb586a588376613c693efd48b35a795aecbea235f2f781271b0129aacf6298"
   end
 

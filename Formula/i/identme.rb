@@ -11,6 +11,7 @@ class Identme < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "477637b5d904ee0681549d058fcfb5a02bc6b567acc4b46e56116aa4e8b1116a"
     sha256 cellar: :any_skip_relocation, sonoma:        "9c44759d0efa524f4fb1dd080df603c5e76f07979e20cbd046d67a79f663ad4f"
     sha256 cellar: :any_skip_relocation, ventura:       "4767ff40b495e2121372fa1b63eec1ec3af427349550df21620422071120f023"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7374807cd07652348ba7d65f83719f748cca06c79f98a3384ba581ac57e6ed66"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab6f811abc28c9e9eb8402f34187210d1ee43ad0e915891c57f6a3962b43f22d"
   end
 

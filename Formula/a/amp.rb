@@ -12,6 +12,7 @@ class Amp < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d0f0821829385e973dae0f4112bb3378d5e358b69f6e51064874e1355ab37151"
     sha256 cellar: :any_skip_relocation, sonoma:        "552866e5376aa068d399a05e7aa92f0a8e39d8e1fe6418cd1614352902dc4959"
     sha256 cellar: :any_skip_relocation, ventura:       "b6a91b42ec2904a23ce679264886e2cbfdba31f97a5dc0b4dd66164a6d4178a6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc1b33c3caff52184f6760a2adcd2f49048ded51708d4416988d5e26a2328d99"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7df552cbc8bfb5ae1f956eaaf1f32af1daf7e32000d4012897459f5885bb2bf"
   end
 

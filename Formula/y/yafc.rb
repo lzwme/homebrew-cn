@@ -16,6 +16,7 @@ class Yafc < Formula
     sha256 cellar: :any,                 ventura:        "6ad15e0287643c6e1157b51762e21443e2c15e8b88610903676316b6b1bd10d9"
     sha256 cellar: :any,                 monterey:       "428ecc7f65e46aaf484032777245e9aee40b1c4290efb5f1c5ac0abd4511a698"
     sha256 cellar: :any,                 big_sur:        "d7212a2284b1cdd5bbebf59e8e1dcefe6073d8e29eb1574d7ed6e80249723160"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "691a0d3182e75189070359564be4883374cb49366dee2b2baf3de8e1eab8bf6f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6dc9c9ee718893b94e236db36df97740b59378591bd881a95fec98c9da8bdf88"
   end
 

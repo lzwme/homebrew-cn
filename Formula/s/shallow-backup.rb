@@ -15,6 +15,7 @@ class ShallowBackup < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "22c6b568aadef08c73903fa4e63af2f185767d01cc49d934357e1e948370440e"
     sha256 cellar: :any_skip_relocation, sonoma:        "faeb8b9d1a0e93fea36e1e93aa473374e598abe938716db7329c80a6be0f2a34"
     sha256 cellar: :any_skip_relocation, ventura:       "faeb8b9d1a0e93fea36e1e93aa473374e598abe938716db7329c80a6be0f2a34"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef099a4f31fbc2d802d7d076c9d809d4368b86bcfc8052a6e277b14c1ff71a6f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "22c6b568aadef08c73903fa4e63af2f185767d01cc49d934357e1e948370440e"
   end
 

@@ -19,6 +19,7 @@ class Madplay < Formula
     sha256 sonoma:         "719d4a1feb495f2c6f4f4e9e9e00689bdf4c4b21ad54add5d91ba97238fbd687"
     sha256 ventura:        "3ad559cb2e38b5b0719a29bade20758642ecfd89c1afb724557b65442ca31e65"
     sha256 monterey:       "0042b125f11f24d15a45f1b231f3ac2e3cda228c67a9ba0ddb1a3f8ceef336bd"
+    sha256 arm64_linux:    "cc83e5325da519f92d3ea70ea21391bb1019435cc38b30fd6b13792e5db35abd"
     sha256 x86_64_linux:   "dcf38528c7c57f08ecc8e8ec764d8d7a4be39fb7cec6a37320bb5999cc495e17"
   end
 

@@ -19,6 +19,7 @@ class Click < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "14315013a9e3ecd0882de00d7d5d25588e0d3ed6d098d23f61a1714e93effa39"
     sha256 cellar: :any_skip_relocation, ventura:        "b3e56cb51e4c684096a2f9c2fbc736423e2d0b38a96f6f423d0d269a149fb66b"
     sha256 cellar: :any_skip_relocation, monterey:       "db3b2aed30f0a4b6cf38f1834d3710ba051a8cce3d3e6bb2ee895b2493e4b30c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "4b49f975c698d3f29c6055c055b11661315b87e270fe773604fe24902cee603d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b30c2c15da3c503a541a5f751928abf68496261df9374a23c6d5dce58b9d2b8"
   end
 

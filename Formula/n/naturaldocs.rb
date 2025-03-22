@@ -17,6 +17,7 @@ class Naturaldocs < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "cd5b8ae5f4eb425cfedd08ac4d23b5a5515851257576a0faf77592ba129c4d5c"
     sha256 cellar: :any_skip_relocation, sonoma:        "cd5b8ae5f4eb425cfedd08ac4d23b5a5515851257576a0faf77592ba129c4d5c"
     sha256 cellar: :any_skip_relocation, ventura:       "cd5b8ae5f4eb425cfedd08ac4d23b5a5515851257576a0faf77592ba129c4d5c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "42c3c57a234e360a982c706672b29094dcd6cf848e4854e91c57f852f9d90ba3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "42c3c57a234e360a982c706672b29094dcd6cf848e4854e91c57f852f9d90ba3"
   end
 

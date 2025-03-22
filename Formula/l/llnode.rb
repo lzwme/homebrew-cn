@@ -16,6 +16,7 @@ class Llnode < Formula
     sha256 cellar: :any,                 monterey:       "0737158c515f49e2cb56c68df835f789daa8d13f5b85a9a300532078318a86e5"
     sha256 cellar: :any,                 big_sur:        "fb32b0d19ff9f0c760a79bafdc830f0574a85165601ab493a9b8c7737e5dfef7"
     sha256 cellar: :any,                 catalina:       "d8d1926e4447e8a07e56744001bccd5661fce6186fbb33e75218d11bf57c4908"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "6259affcb6b5e18c934eae0510775580d184ca9e1e9a3c4a19c19400bdcb10b1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "343c83b8b3a42ad4496c3866dda8da056a4cea95a09bebdec3280cbe3c301484"
   end
 

@@ -22,6 +22,7 @@ class Cvsync < Formula
     sha256 cellar: :any,                 monterey:       "8f9856b5b0be6da7e213fb287be69259d8aaf8425fa057702242109f393aeae9"
     sha256 cellar: :any,                 big_sur:        "c53b78803c36ffe5b389b7891a51c8197b05e9d660c5100417fa5fd9f743cfd8"
     sha256 cellar: :any,                 catalina:       "358f4234cde20c14d3af19a226c294154361a8159802755029f43a7f6d81fd27"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5e81c7a636af467de3b7818076920c840934e74b7e4bd8d0d69d3529967cf003"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "450f89a4983c03d8b007667d044047796ed721e7a6ce3fac437260c25d33219d"
   end
 

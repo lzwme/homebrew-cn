@@ -15,6 +15,7 @@ class PipTools < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "aa9da34f416d318a7c3a9526cfe69b1683cbc52c61a768c7935c29b7da7492ac"
     sha256 cellar: :any_skip_relocation, sonoma:        "f52c7c1b06c27e8ca825371dc8ac46aa9ef4586e5196a2c876dc9c7170006cb0"
     sha256 cellar: :any_skip_relocation, ventura:       "f52c7c1b06c27e8ca825371dc8ac46aa9ef4586e5196a2c876dc9c7170006cb0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "875deedf0324f719831864e1ccf1044da7752c1db9509777a99d2e2c1a6bef99"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f038065823c2098303d0c13de5bedc7de731721ed2588762def4ea1da0c4bd37"
   end
 

@@ -15,6 +15,7 @@ class Gdrive < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "2389051617cde44c9144ddf5c0696dea4a7cd16f8c940c6b50366bc762d10ae6"
     sha256 cellar: :any_skip_relocation, ventura:        "1e67b9d2936b20f5460fe4a2117b56d34fc49fa0c5b25edb8b2db2159deb7036"
     sha256 cellar: :any_skip_relocation, monterey:       "36ff90fdf725f1615e6546897b9c4c3d78d47d4ceffc98f4d5e13af00b6ba303"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2301145fc193009fb8137c3382b798a2085b1de22efbbd4c19686d01e99b712f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "048b5454b4d9390a1258ca0c9c731aa8a8e5ba871ccb20e7691b1f9486862bab"
   end
 

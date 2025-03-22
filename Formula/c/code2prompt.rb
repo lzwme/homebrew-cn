@@ -12,6 +12,7 @@ class Code2prompt < Formula
     sha256 cellar: :any,                 arm64_ventura: "db469773a77d1e02a4ddb2a95a451eb8615aca0ef682e40bd6101b789887f999"
     sha256 cellar: :any,                 sonoma:        "20723e1b0317cc845d3a485f4bc117e2555d302f897e91711bf15f463da9af09"
     sha256 cellar: :any,                 ventura:       "2dd202385ad7dd7ae77789cd49776a2ca7156f99040d26fcb5fc926bde3bb57b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "602d1c3a1a724b30a16c84e774aaf3f13f948d63a093ff4578391d3e6c475c7a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9344860f7461bba1dae2a42a0d29c35279a5fde630d1dc1589137de249cdcdfa"
   end
 

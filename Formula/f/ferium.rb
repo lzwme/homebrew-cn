@@ -12,6 +12,7 @@ class Ferium < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7d6f4734fa8edd8de7f1583b4a35e2460e8d73830a734ea0f53bd1a720f3e71a"
     sha256 cellar: :any_skip_relocation, sonoma:        "17bf54da7812220cc21c465ffa24dc296b6c7d96815712651a30ccf9fe10c540"
     sha256 cellar: :any_skip_relocation, ventura:       "4c14295cc97f603fb82fed856fb6695ec9f32e4b6473fb95cca6c0c2a10b80a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ffac93ceda25507df1070fd4adf9b52157285992d6224838eef9139c680b200"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "139b6568724b1ff83342d0e33539425f3d0c74a34319e8bfbe17eecdb37f03f6"
   end
 

@@ -20,6 +20,7 @@ class Tailwindcss < Formula
     sha256                               arm64_ventura: "090b8213e9fe89f3ade8d8ffce952e7f62ca1f07bbe6c07d600040a46d782461"
     sha256                               sonoma:        "aa25501ba9c1e7a6890be38e1d2ebb2535542c0ff9d6427d88032a0c1aad3269"
     sha256                               ventura:       "b6afac39b38f0b18671ad136786c3c1cff358cf0782bdbcb9e0a23e067636bce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "414e5661d0f4bb2a7c54682b29364219784ad7399b4bfdfd5f18369b750ce81e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "397095bfff1eb9020e0c5fd6923c921a0690d720c094a905181bd3ade38f6592"
   end
 

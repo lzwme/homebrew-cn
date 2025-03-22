@@ -15,6 +15,7 @@ class Doitlive < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a63ff879a0a23897fe227f6e12187d37cdba0158b5c167d91ae3c91a8d0ab103"
     sha256 cellar: :any_skip_relocation, sonoma:        "4a497a679df8b0080ae7dc946d151ff691d37c14e9ae1fe85d9ce960a77779c5"
     sha256 cellar: :any_skip_relocation, ventura:       "96bbbdc6cdfe5644e7668220fe22b1e08fbdc9ac7b6869b2937e436b148596e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f837192ceb65241ded4a6e05974605ab6ff1d91f1854c062a716d1f096bfb763"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e136dccbf09aa94920066d2d30942057f0818f6bf7a20ca9150cffd5dfd2f7c7"
   end
 

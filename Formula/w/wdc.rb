@@ -13,6 +13,7 @@ class Wdc < Formula
     sha256 cellar: :any,                 arm64_ventura: "144bf99589283a042b25507aecc6b2865341a806fb9f35436b9ba4aa272476f7"
     sha256 cellar: :any,                 sonoma:        "a5a1823e37f7aced3a355008f7b85768d1c37600c2da80cf385d2efdf5c2543d"
     sha256 cellar: :any,                 ventura:       "253521687c9eb9ef2a8367d1bcbb193617cbce57005ba4fb75558474f2272d20"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6027f317ac27ca1e4769b2c7337215d1e81354d627d55ade164b359b1092f524"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "68eb8337eee2c79f2892966a4311e56a5af9c24e32c07795f7dd8c5089474c8b"
   end
 

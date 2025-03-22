@@ -12,6 +12,7 @@ class Rustup < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e00fc2d3c0df30a522f31b471c12c02ee817232f7f0989a6fe415cd70287820b"
     sha256 cellar: :any_skip_relocation, sonoma:        "5fae9c9f2a9ec5ff0a2ba14e74f749fac8a00ddf1f95f8dedcf1943c17cccf57"
     sha256 cellar: :any_skip_relocation, ventura:       "03da72a2b82c5ae620eb15cf1f430e7c966efb12b4c998be5abdfbbeab15930a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ecc530a7d461ab83d6144ee7a458cf17f8466679d486936b7c0b7447faf7f3b9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf42b2a4095128a2b95f86fbec48f94fe76b1feff89ea57c2b7414a93d57eee5"
   end
 

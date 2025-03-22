@@ -18,6 +18,7 @@ class Termrec < Formula
     sha256 cellar: :any,                 arm64_ventura: "b5e160a090054b7e36883023816a7123f6305131c9248cb2543d939d209a7c7b"
     sha256 cellar: :any,                 sonoma:        "8225f9ddc5ff3c7e8110435fdfd09d5e0310a4370dcded0e1b4a4ef06424f9c7"
     sha256 cellar: :any,                 ventura:       "d58a44779c299757776b50043dd4a039fdccc99d96d77a4ada9096499adbfe01"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3958a773f4a5f6981ed0d7bd45594a982d7db69b77badac66615edee697f84ee"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5d5fbe66e009d9a482ea968920e75bf9789fcbc1b08fa7d865ab90528709a11"
   end
 

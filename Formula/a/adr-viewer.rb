@@ -14,6 +14,7 @@ class AdrViewer < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c8b5d19a206d65635a9da6eacd09b232a7ef73c560049cc63a28e03f1f8b0b41"
     sha256 cellar: :any_skip_relocation, sonoma:        "58674e3fb84c3e62f1aba6a501abd1c856b6807c8bcaf7df74eb4d04ef81f1e4"
     sha256 cellar: :any_skip_relocation, ventura:       "880572d016d57566ee09ba653c09b78b0a668d423eba6661c788e09b65436c66"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f97231985140d38128b767f86821bfb9a825def6170ed0cb901cd15b49a9361a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3f3e22f63e93ae52d53b8a07b3ccef467d8b213b5a55fb66118fa1681681525"
   end
 

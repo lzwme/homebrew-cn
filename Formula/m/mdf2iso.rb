@@ -25,6 +25,7 @@ class Mdf2iso < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "b41429cb8a4191a705b656b627a375cc32aaf8992cb241e30fe6c66c4ab56c9c"
     sha256 cellar: :any_skip_relocation, sierra:         "bc1358412281b1e486d9d1b6d25ae5665b02ac14f93f03603a966bd44ffda1d7"
     sha256 cellar: :any_skip_relocation, el_capitan:     "fbe092bfc501d4abf8b0df052e26307219ea4bb9fb4eddb20df8b7734ff7fdf5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d4e0fcb1b65f5e0680c63e7d4dd2c481315d5879876ba4a6cd0ea1ea5d8bea4f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5a24e6b2c8771e9f5119bc4baa9bb8da4570df954d44782ba43e6b5c6f7e6a3a"
   end
 

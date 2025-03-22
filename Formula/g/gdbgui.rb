@@ -12,6 +12,7 @@ class Gdbgui < Formula
     sha256 cellar: :any_skip_relocation, sonoma:       "98297f04a9bfa7028485e946f78e8fd3b3626f86976457c6d2115cd343a67288"
     sha256 cellar: :any_skip_relocation, ventura:      "9050299328bdf5d618bf88f6035dbf87ba9a78eeb30e7d6aaac7f89fd22d4593"
     sha256 cellar: :any_skip_relocation, monterey:     "522f9c070c12a7fb7d3b3d1355dc4b425dc1f8f6a4a22ad898f11eb2cc62b3bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "56169464e300f575bfe6d7a0da57f20fa823ce2f77be8b51af99b692e0524de4"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "3e21d4de715f9491188306dd090bbc23f6fabe60eadf6b1e65238d19e30abee5"
   end
 

@@ -12,6 +12,7 @@ class Cbmc < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "05670fc3a4c5c1caefa6ecb4be19906892af3ca991fca6a1fac802440499fc7f"
     sha256 cellar: :any_skip_relocation, sonoma:        "ee54b24f56dca3a3bbca4b358948ac8df910a170b5cd40c076ca9bc34f7e5b27"
     sha256 cellar: :any_skip_relocation, ventura:       "812ce22c462a6aa53241dc798ddfe456cb8d4586db4be63959cd7d451b3e0968"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "548d27755c45f823798a7fac8cd089bd245040f88377edafc3e0a6954dcd0b35"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a71e79f13a3cea1c404b29d27e5ac7715ab7480e141b3d58ee96e32bd70a01f6"
   end
 

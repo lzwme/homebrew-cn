@@ -19,6 +19,7 @@ class Bgpq4 < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "054b4627828599a8f3518c4cd47914f895b7c652b537cef8c9115940fc6dc3f6"
     sha256 cellar: :any_skip_relocation, ventura:        "6b1e57ac908e87d8b348fe0d2dc70fd0bd5c178caf8dc5a041bad4cd48088ab9"
     sha256 cellar: :any_skip_relocation, monterey:       "0d4dfeaa2caa2c39c6daa71d8f679fc18102c1c13caa14faa984e956eeb6820f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "eacb29c2e404c6c58efffd6bbcaa51a229a2ef55ddb83938737e2245c4c6fdd4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1170e29b65fbd8f5eacb9ae2fa7ed9a1cf7408ef35095c17c95e38635cebb4c2"
   end
 

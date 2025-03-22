@@ -13,6 +13,7 @@ class Tinyproxy < Formula
     sha256 sonoma:         "e7f5a728df755d3fcb83b2639e924354c7bc479152bf766b819660b3caf1c302"
     sha256 ventura:        "11689d10c680a3c1e7b5fe372fe7ed44507e3e6415ab4dbf2b093a04f433bc2b"
     sha256 monterey:       "c581f25dbd95d8248cd632a11993c35ea42798ede63e2f27a59aa2bb875ff778"
+    sha256 arm64_linux:    "7ed36d11605e92c9fae9fa3b6d0869e2e18744c47664a6b3d8b6c6669ad91ee5"
     sha256 x86_64_linux:   "f63df2e51f811d5d80b7a2ce3f3e4bd0f170186061e937a39f1d06b787db793d"
   end
 

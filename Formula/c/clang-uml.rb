@@ -12,6 +12,7 @@ class ClangUml < Formula
     sha256 cellar: :any,                 arm64_ventura: "2bb66e775151529dc30f96fde62afda7c936386d75d29ecba8b07123d311674e"
     sha256 cellar: :any,                 sonoma:        "9295ba057159bc80373717119e58ba181bd020267c849b56559b0245871711b3"
     sha256 cellar: :any,                 ventura:       "d22a834e0e6b3fac00fd05b76ad2c46cd0f694d9de6531a6b5ff31fa32b8f444"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5db63ddccaeb6ce9683a3109d222c50dbc1aa13392afb5faf5928dd0e6346c9c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "81908d08a72c9c46a26e1c7f408c85cf408d0938e23bc14cf47a8446998073ef"
   end
 

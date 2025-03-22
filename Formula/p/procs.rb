@@ -11,6 +11,7 @@ class Procs < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "6d7e955d8bfe004817735b9af2bf35c79e2e81952e7875b29b9968c4315fb5ea"
     sha256 cellar: :any_skip_relocation, sonoma:        "a80af64f33840a9aed859b762c72a9518c7e2ce73811caf89e9cf95f44cdddd4"
     sha256 cellar: :any_skip_relocation, ventura:       "7a9813b6372a9db96e3e836fcbb2335e7ea9880727806f4de04ebe0af35148fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "572c126d98e23c29bb91abc67140f45474d5e2d37eecfae5d34ae089fbc77058"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c55a1fcb9c1f0c7dfc0c67a7c21147bba3fd448f7c63b970b4674da059adc63"
   end
 

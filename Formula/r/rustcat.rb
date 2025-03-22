@@ -14,6 +14,7 @@ class Rustcat < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "dc1e37c738ec53c2dcaff6280fd34f7232e75223a04663b6ca6bca9517c1b86d"
     sha256 cellar: :any_skip_relocation, ventura:        "7df0fa8da7aba156aabbeccaba819e066d2a8f9a24ae7f542c0de428f659bf51"
     sha256 cellar: :any_skip_relocation, monterey:       "4bcba001f9e2c61676c29ee11fc1d5c10cb47210ea9434f26ab7781dc5334af8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0cc1463d3f149a41f142729ccb167e002fd31f95d07ed6df6a4bd9963a14cf7f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4acfb8c1ed49a339a21f694b8763f939d8e84968573bb3a397efd6d8975b4fb3"
   end
 

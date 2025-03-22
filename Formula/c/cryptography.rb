@@ -12,6 +12,7 @@ class Cryptography < Formula
     sha256 cellar: :any,                 arm64_ventura: "4a91d6a22cfa163b579f32b5634fc2d4e7be496d336b2605152ed530468c4d5e"
     sha256 cellar: :any,                 sonoma:        "c1ca32d97f8b64dbce22e5a4a027d07b08258a764f68e59c545a335190a3bd9c"
     sha256 cellar: :any,                 ventura:       "91c7c7dd9ef494358dd5876d0cee55b111e163b330cc1331b0f409b2a1c125a4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "83903237b899b3476ec119742643567d961442c810c882bec8554266e88db8f5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "26862dfd723ff5bb47a6b46e21c0acfc394cb431782e03d7751246e85143d56b"
   end
 

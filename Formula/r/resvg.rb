@@ -12,6 +12,7 @@ class Resvg < Formula
     sha256 cellar: :any,                 arm64_ventura: "34ca2202af5af900d1c571c6ee2386201f9ae7d52ced1c8b12c4c678dd690101"
     sha256 cellar: :any,                 sonoma:        "5e0c32ce71b85fab8be04e2ded1b9a79d557dde2869982b59d653ce2c33c0cfe"
     sha256 cellar: :any,                 ventura:       "2c1d0f6f5556afe3dbc9436974dff0530781368aa5d4aa0c43b0fcde4d63e945"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3901ddc65327e922e4320b7dbe4057f9034d63f083076fb218b75bacb5dd1802"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8b26ecacd503c5bf26523931514a338cab017f8ca23171b5ad1baaaae5ee9d2"
   end
 

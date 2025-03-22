@@ -13,6 +13,7 @@ class Ki < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "34f86ba275df07618724236322138b5b53027a6c4b772e178660460be2362cf1"
     sha256 cellar: :any_skip_relocation, sonoma:        "39be21332141ebf86fd1b73ba0d6bfe8f8dec07caf5ddc8e8d9734f513681c5d"
     sha256 cellar: :any_skip_relocation, ventura:       "f44890a5523df5d74707bdedead4d8c617cbddea01322d541371235b878c402d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6cc92adaeb7461ca30e6ae9a0fc64724d8ea9ed6a31717d2a7f7919c3dc9981f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6c23ecade167e9a2e175a6b34693c45fbbd2b7b4b9565554aa34ddcf1988d74"
   end
 

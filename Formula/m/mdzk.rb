@@ -23,6 +23,7 @@ class Mdzk < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "5a880de7f75b7b16d40b997e0a50aa4097d24598a46294ba097f5f7a8c3f9595"
     sha256 cellar: :any_skip_relocation, big_sur:        "b15fade4973c35b431443b0982396b4c1e03399f2c2b85413158a976fbc501a4"
     sha256 cellar: :any_skip_relocation, catalina:       "c168154d8cf9b1aafdf5f089922d8eb8e74655b97b389435534a9efbc668440d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5b4d38f1cf842f3887a3560a484fcfae60a36d9dc812b5feea88672ee5a4a0fb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "95bc548f5fb2c84e0e3b62e895e3c6812e8df51b74eaf6bad4167ab1861f66d5"
   end
 

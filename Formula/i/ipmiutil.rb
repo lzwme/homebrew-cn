@@ -11,6 +11,7 @@ class Ipmiutil < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3352de5466ef543f219504b8ea5cb36ae4b86394230792b3e58a608fb44a5b09"
     sha256 cellar: :any_skip_relocation, sonoma:        "c0a5db5e377eefc09019ff44dc4acead6bc7d39a5fbc905c69d2ec09f67b34a7"
     sha256 cellar: :any_skip_relocation, ventura:       "81ce2a5170ab9e89315a1120048f357ae8b7658fce50b53caab7856b30615e11"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e4cdaa053ef9087f6876ec170bee57b33179a2f3878f16fd2ea2ad9d7218492"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e8cb1651c4cb5ff74bbf0de01df94c49af156e8dd92df446a6cc105bf50be73c"
   end
 

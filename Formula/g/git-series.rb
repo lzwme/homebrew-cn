@@ -12,6 +12,7 @@ class GitSeries < Formula
     sha256 cellar: :any,                 arm64_ventura: "66d9169576bcc5e0e50d8cbc4209c7576988a9ad55a38d3b2b9c0bfd66dfc545"
     sha256 cellar: :any,                 sonoma:        "2a6340eeb3800421ce3f529d17ae243c3705c1e0842f0539f8cbcd4d9076bfc4"
     sha256 cellar: :any,                 ventura:       "6dbec136b4be60ee749b0d9cb51c514d978840ad75c8fddf475cba6747c0b9d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0341058296235ea31a1953b1d8795023c0c973f4ae5b55afe7700e49566ed1e1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd832576f196e9dea9d888881f89d08f9d849b7971fa5b66f1bed7ae942673e1"
   end
 

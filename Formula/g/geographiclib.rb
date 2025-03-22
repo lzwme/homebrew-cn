@@ -17,6 +17,7 @@ class Geographiclib < Formula
     sha256 cellar: :any,                 arm64_ventura: "2c1f50b78d5d698fc21829a450d03a1ff88e574f20390708430d2450f2f0b344"
     sha256 cellar: :any,                 sonoma:        "bf8f89352e0aa0f3fb5ab24a92aed7c82e3a81eca7d08b84526dded1429d6e6d"
     sha256 cellar: :any,                 ventura:       "80d6b616f1202598f559245ccd0e0e534bd3474c794f5e1c74d667b05812f2fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "effb6484f07cd4b213a9773b14c02dcf806ed5511608d0e2861f766b3a37ff69"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1d2871a31e2f92dbdbfdcce3adbf7029af7abc97c397b054fc9974bc8f698c2"
   end
 

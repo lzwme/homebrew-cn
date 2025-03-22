@@ -16,6 +16,7 @@ class Tofrodos < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ef7cc693cfb4c53110c3771bfd4c3843a314ad610417c4e47cf3af5ec4ef6d09"
     sha256 cellar: :any_skip_relocation, sonoma:        "fbbecca042307e05f058ab8f8d95a97340cc7111114041581059f6815129f15b"
     sha256 cellar: :any_skip_relocation, ventura:       "e4ea589dde1039b1732d7ada4b8f817b30d90aea37a3ece09c520316505688c3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "97e7b249efc5aea737734daf57e21300701accc3f70419030be49ff039ceb50a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6883c12d2a042937a3e93beacc2350d65dcdc5c99230b8325ef022488552a14b"
   end
 

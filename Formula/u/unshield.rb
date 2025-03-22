@@ -19,6 +19,7 @@ class Unshield < Formula
     sha256 cellar: :any,                 monterey:       "cd329f3c7c6a0eb689adc539072a66228042b126b89e41fd7fc2e2017c302b4b"
     sha256 cellar: :any,                 big_sur:        "bcfab080b4f19f79161072f22eb8dbc16ca0907c65ed497784e156f83c102959"
     sha256 cellar: :any,                 catalina:       "459cca0a961fff42ce428014c5ae250925835a722f2553fc015ae0a52d178c25"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "169897b145142e707017329e9a535cd2789fb84daa745f93f35c3fae1c63eee9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c30ebbc1b331b3eff9f80d5ef689f8934ee3c684f7b1cba914b9c1e45795128d"
   end
 

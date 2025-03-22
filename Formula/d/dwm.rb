@@ -18,6 +18,7 @@ class Dwm < Formula
     sha256 cellar: :any,                 arm64_ventura: "b7971ddb4bf6f52bfc8a844ff6ea0681a0c9d6645cea923b0851e94771068785"
     sha256 cellar: :any,                 sonoma:        "ddc7a7f3fbae58d7c4e8924ef3f53cff4906ac384f91a039bca5bdf097eb60d8"
     sha256 cellar: :any,                 ventura:       "bb5ad3a4079c76769e85ebda55ad12a1260e946be09c5b611bdbfdff3146fdf1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a957940e9c5bbaf9b6ff415122794094c5384d24265b13772d1886dc46be1144"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "107dc6ce40aaa02fca9690bd3a7ac7804664cbfc49776b76354beccc8ba6da10"
   end
 

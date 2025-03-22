@@ -11,6 +11,7 @@ class IcannRdap < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "fb5fd0c882692fbc37f38f26ff38a4e365eee66a9da130a1c21b9c3d0a1af2b4"
     sha256 cellar: :any_skip_relocation, sonoma:        "0dddb2b0fbb213392014322889534b08e38d4ca24ffb0996d15bdec21abcb1d3"
     sha256 cellar: :any_skip_relocation, ventura:       "d132e511cc94753fbf2c719f9b81f8944bd7470c52088dd0b45725245083dfe3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a29e25e0efb464487e14f4912339517b9a1c6681dc9463071e1396e429a6b436"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "62401230680ed85dfccb10042c702f1711865443efe6e4bfde6c52898203b643"
   end
 

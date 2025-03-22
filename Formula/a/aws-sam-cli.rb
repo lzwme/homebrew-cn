@@ -13,6 +13,7 @@ class AwsSamCli < Formula
     sha256 cellar: :any,                 arm64_ventura: "65949a7473a2a8110de43f52862248824df681922b1eee601ee08a9fa60fc499"
     sha256 cellar: :any,                 sonoma:        "886d0776b4dc07c4c490279a17030f0bca96a49e36d9acdbe8d48cdee730c09e"
     sha256 cellar: :any,                 ventura:       "dccaaceebe43765de642d90abc7821a87952851e37e6b1c9548573cd28177057"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbc21c6cdcc812148f5e12ed7ac60141d0388f3004b2b148541c8a997bb6528e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "821ef2103f0593fdfbeb382da75c1c59313909450d913895f5f3889f7983c0ef"
   end
 

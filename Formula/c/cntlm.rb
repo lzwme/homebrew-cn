@@ -24,6 +24,7 @@ class Cntlm < Formula
     sha256 catalina:       "7239fa52155edd2040ed7bff62b954351bb5e96fd226b4f0e1f7e956c64223d7"
     sha256 mojave:         "79b1221fa60196d7670bb3cbcd6bab63490ba780222e7faf84404a57ac52d6ba"
     sha256 high_sierra:    "9a1bafd1930ba3ade9b8df892d9fd28a0c414750ee728a791886dd9c999d0173"
+    sha256 arm64_linux:    "7d3ee84edf54985c366adab8d382412f0bae76dbcd117fd740cc36b009fead4f"
     sha256 x86_64_linux:   "523184cb07c5b9c17d65a2a36f767ed37726570ec5ac3239ae49be84e12c5f6b"
   end
 

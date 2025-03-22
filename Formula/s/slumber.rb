@@ -12,6 +12,7 @@ class Slumber < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f2e95b453afca1800a3f911cf339adef3b321bfa21d2982e4d84f61a72811743"
     sha256 cellar: :any_skip_relocation, sonoma:        "8362ad595f031cb3e2cb3d142349922fb7fed8e5df177fcd1b3a043f07f2d595"
     sha256 cellar: :any_skip_relocation, ventura:       "f0fd4c42c49decbab2b779efd389132afa789efc5cda61aa09de99075778d443"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9833f40c53f18457e6f7d87722e2f1fcbf510efd440307b20dbb303fd12a40b2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8abd9dc7a9582324d40859d38ae0745dd233d634c2382076bddaafbf1f3796a"
   end
 

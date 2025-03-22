@@ -14,6 +14,7 @@ class River < Formula
     sha256 cellar: :any,                 sonoma:         "32bf41e3c0baccfccc9aa73af1e00178cda928638dab11a67651342a54a9ce67"
     sha256 cellar: :any,                 ventura:        "92a0e801a55f3d122801ce1394b665e4d9ffeff6a6fc3f3aebb14e27ea1335ce"
     sha256 cellar: :any,                 monterey:       "c99da45b6218bbc2254e0f9deefd84aeedb74f44cc7049babfe93e1d9dbbbd35"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "73562d84d8fb211d03d3c07c22145034298bb5bf601b3ff811b07c49569190de"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0ffd4142bf28d324a32169a8e5cd31640c89af81ae66e3f7f4b2fc548322dec0"
   end
 

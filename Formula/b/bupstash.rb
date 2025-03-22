@@ -14,6 +14,7 @@ class Bupstash < Formula
     sha256 cellar: :any,                 sonoma:         "5e4323b39fdc2751adfb15eeb1fb6224f7f5631fbb44995dfaaf9b8bd5bca6e3"
     sha256 cellar: :any,                 ventura:        "553dcd5d10275673f1106914e7af449ac1ebe52ec80f99150206370426a7d558"
     sha256 cellar: :any,                 monterey:       "a78d691c6274743184a5ec48d717f1835d016c615bdb1e6bb3e1e9a5d6b3c3f0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "6f00098d6b1cd79ddf82999ef4371f46ecd2935ccf0c6c23be33f2d4aab36933"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b61eb9cbb571a97f1064e6b0e0766e2fc19e1b7691ab8cc988ea4db67f8d5182"
   end
 

@@ -32,6 +32,7 @@ class Picoc < Formula
     sha256 cellar: :any_skip_relocation, catalina:       "168aebca830b719b3645b682c9c3f1208663b6853b62d68ddeb2957ee6c8bc07"
     sha256 cellar: :any_skip_relocation, mojave:         "0251ecfb5772bffbb92457af974af44856d25215d1d9bd692530b6b53517f71a"
     sha256 cellar: :any_skip_relocation, high_sierra:    "5b2c6a5c8c3404cbd75b4b0e1c6f6cbf1be0246ca0b3d1df70d78a6785e51711"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1054643132b3c1196e1630e283c7295c73e57d7e616f08eedba7ea03c5820cf4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "dbc930c96079c197b124afefbcf14153ad4435e9ff95d42753348778f6efb85e"
   end
 

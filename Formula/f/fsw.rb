@@ -21,6 +21,7 @@ class Fsw < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "d16086899f7ae88e0fd4eeaac5ede4e5749d688e9bb2385686f824f0a0e24677"
     sha256 cellar: :any_skip_relocation, sierra:         "71b5da385bf9d59d33e6c331f23cab5676284d627129ee4f0352976b8ce13fe8"
     sha256 cellar: :any_skip_relocation, el_capitan:     "3d02fa0e6e8a6f9518341fc3934e7b53e13ac42304b07b7088ce54384ed64371"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "8a48b6b49e24af2105a97f5dd0b8ce189c136ac33cecf354619e7380d89afd48"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8eda4b9b2f8597f3fab6330e173bcfdfbd77e41fc406f22be2235055d4d555af"
   end
 

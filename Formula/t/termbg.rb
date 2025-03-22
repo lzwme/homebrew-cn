@@ -12,6 +12,7 @@ class Termbg < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "375b6b6bf7872f951fa94361662929b418326b2680a1c5d03bb54b9319b72fd7"
     sha256 cellar: :any_skip_relocation, sonoma:        "185c02be7e39375a0b96aaa18443010547bfab80b7afa1856b6c85db29bcb39e"
     sha256 cellar: :any_skip_relocation, ventura:       "0977f7809818025cd59757e9a4bea7cbd80b81cccf9d3644667e441271f5e786"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb326e7812e6470aeb2da3737d385f02106bd8cf5b36f4d4abfd41c3d0a4f692"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "98b27a88db545fce6ca91fa68de4370a715636f9313a000dc99a6e9188f8cb84"
   end
 

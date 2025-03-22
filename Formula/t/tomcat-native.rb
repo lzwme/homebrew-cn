@@ -14,6 +14,7 @@ class TomcatNative < Formula
     sha256 cellar: :any,                 sonoma:         "6266f592dccf65035414e175135551b9a9eeb5dbe8051533ff53e09550f78f1c"
     sha256 cellar: :any,                 ventura:        "cf77f977158497e7924c40f37448e4c3f9ca09e5dac9adf702db4a1c660e59c8"
     sha256 cellar: :any,                 monterey:       "0032aae5e5ac4a08e503dc7ba1e95ccf6e88db975a50c898307fad8e7b86fb58"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "aaae8c9cf5b7d5b87b305a98773c73bc4ed6070d589ab1b79c04a1d50e4fe2aa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b6871bc6de4e15f504981b8930ccd64e3b955ae2b73ec5642376f9dbf3d5efc"
   end
 

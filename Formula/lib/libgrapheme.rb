@@ -21,6 +21,7 @@ class Libgrapheme < Formula
     sha256 cellar: :any,                 monterey:       "14ae921b0f9c017dd446d9b05ef6d7f5ef7b1f3b30d9c3151ff64bbc9864624f"
     sha256 cellar: :any,                 big_sur:        "3a840b6287ec37255d069209beb8f49cd9634e7640ed1b4bb1b63a7f5e79fe79"
     sha256 cellar: :any,                 catalina:       "32cdbccf13da47774ca9aadd3826710c97c8bc5b9ff5cfdc8b809dd0f90ef9f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5ea309461d84ca854a54880efc24a348a2bf76769c9512ef8167574f8a280b3b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "60a6a771715b993b79da30c2f17553198b49ba71cb5ee5d9a07ea51c0199280b"
   end
 

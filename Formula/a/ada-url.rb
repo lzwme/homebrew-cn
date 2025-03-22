@@ -12,6 +12,7 @@ class AdaUrl < Formula
     sha256 cellar: :any,                 arm64_ventura: "000a02ababbf9600dbed404aff076b42e56d0216ecff4ba035429b7ba9fcb4a7"
     sha256 cellar: :any,                 sonoma:        "f12e8ff0bbdab253673d8c45de0c82c2f302bd5a28a71dfda2bb93f65efd6fe4"
     sha256 cellar: :any,                 ventura:       "8a9796fc37dbd632bba993b9d061539d476be6099eb4605e8e970532c640f86d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a0847da125e06e295234e102105e639e9c9520eec1acdc172b13d286b9dc453"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2c76766f69e6db6a282804f33359245ac185b0a5f95a76ad4d4984f3ae8457f"
   end
 

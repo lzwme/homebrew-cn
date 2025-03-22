@@ -13,6 +13,7 @@ class Lv < Formula
     sha256                               arm64_ventura: "aa3867a4900aedf77e796f681676e22fc595dcaa8fb6fb9d20cdecd25f688c0c"
     sha256                               sonoma:        "1d572a28261e7bb59a07d707ce3f28299d297442c09c90735196a08525db2c01"
     sha256                               ventura:       "f737ea5ead2f1e11e7e2830e5acb65c2e2228775298dc855d30c4072cdafe83c"
+    sha256                               arm64_linux:   "192fa6eb2d9d0076d20e695110731f03e55633592e090db713ec81a81f2296e0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "46f6669252eb821a07cd2648d0356449e22906673c9abbbbd8c604c98a827b27"
   end
 

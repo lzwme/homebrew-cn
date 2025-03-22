@@ -20,6 +20,7 @@ class Mpage < Formula
     sha256 ventura:        "fe00986658cf5c208b1335724d6856090f9b957c1bc937c016270cbc132d506a"
     sha256 monterey:       "a030ebbb33d31ab4620835a6d6fbdd335f5d9570198ed652c8cab55831a5b29b"
     sha256 big_sur:        "77f4a54443d7d8f6ee681d061c1e30aabc9021ceb6a5ff6a26bc85d992824f11"
+    sha256 arm64_linux:    "066fff24a4048340ee0cc2028a3bfb93432af6fd546aecf61106c7f33a70032e"
     sha256 x86_64_linux:   "6a4e4a8c70d9b83690c2e0c3bd94574f8e3e6a0cadcf12cc80ba197d79186c56"
   end
 

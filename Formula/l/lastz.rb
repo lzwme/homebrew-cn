@@ -12,6 +12,7 @@ class Lastz < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a8ba0e448acf38b7da9a386ddfbef6ee8b3bde7a7e0aa8c5232ea0f6e58c7e74"
     sha256 cellar: :any_skip_relocation, sonoma:        "ac376ea25d1996a6d8120d11aa011f640090c783726178e4f69c82f7aadffba1"
     sha256 cellar: :any_skip_relocation, ventura:       "324119d3aab25c48c04efc5243964098ffd65164363590d146f375107f73bdac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "637aaa2b65bd47142c86e17825e9812349d557b193fb97f4a500ebdca69180f2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "83d679ed18fb5c5e9cefd794abb3654dbd7bcf76f89420e9ff98b1716679d5c3"
   end
 

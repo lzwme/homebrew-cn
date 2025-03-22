@@ -11,6 +11,7 @@ class CargoRunBin < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "18b37befe574ec3716f12943da256fb7b0c066dedacc9f45ec985a7c42bb3678"
     sha256 cellar: :any_skip_relocation, sonoma:        "52873150520a420f132bc02acf2a488597eb4957107a55da37633a26a7142d59"
     sha256 cellar: :any_skip_relocation, ventura:       "eae3e5a1faff8be5f6606211dc3fb2f38d6d0930f0dff73559667448d3decd36"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d06798a0e079e6d97a0f56bac16c87271a2c42aaa5185febb28edf71376e6218"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "df0cd8b3c3dac21a4430ac243db6f937aa3765efa7855dce3918cbd4f2421c13"
   end
 

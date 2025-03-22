@@ -12,6 +12,7 @@ class Maturin < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a7cbda3bb40994236d20ce05872cb4c54af14db99c37a3b59d7706930a23a640"
     sha256 cellar: :any_skip_relocation, sonoma:        "2be3842707e09924541dbd996040da07ff8a5a0ebf631e87033700feb1169ff3"
     sha256 cellar: :any_skip_relocation, ventura:       "b71f626046ca930fba0ac672cda769480f12212ea07d1d0029cb9c7960007818"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7bda662d2cf548520ff1994a228c2e30c7056d1556b60fa1db90bf3ef26504bc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "43af90ed1f50b58b604c0fbf8d537805b51435a25d2354f8d885fe8b25562347"
   end
 

@@ -13,6 +13,7 @@ class Fd < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "50185800d3972a716a0a93233ebaf046711d92668432748bba229a96f7654782"
     sha256 cellar: :any_skip_relocation, sonoma:        "50a26e49e139bce09e9d13e031e417a102078ab9de58dbdfab8967ea80c339c2"
     sha256 cellar: :any_skip_relocation, ventura:       "e65ede7ae3e502e8e38cabca8ab95984b7bbec73a610efb8aaaa8ca8af7cf97d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8dd21a229b2dc4119edc6591bce51ab96b2a09e8237e8e9f48254e7f9e8dfdeb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b69ad2a2e6805de8c26e192eae0da32807978cd9551b7863cee279208bc5cae0"
   end
 

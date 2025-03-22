@@ -12,6 +12,7 @@ class Hgrep < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9df4b9b5224a7972f504d5c34ba609ee631abb70a2ae1749753a4dd50216b3a7"
     sha256 cellar: :any_skip_relocation, sonoma:        "a874051334cff79a342cfae5c56daebfd5d0f4c78e8d32ab0290e456b980eebb"
     sha256 cellar: :any_skip_relocation, ventura:       "1f2b68a3c41557c21771eb8d59946310a58f2df48aa505c0e9e8f2b0e9e4f07e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "016725006c81ba59a24815bdc72a82bea7b912ad346d0770658bb8bc3399188e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "471b142b6b7286f5f3a0240fe951dc555cd29be2a5233a95af1fd08983673c18"
   end
 

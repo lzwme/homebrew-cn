@@ -17,6 +17,7 @@ class Opensaml < Formula
     sha256 cellar: :any,                 arm64_ventura: "30a5d4e496a4053fc99686974cca11d4b8be3d331fe55c0cec552d8171060730"
     sha256 cellar: :any,                 sonoma:        "11823d44fd8032eb8e3f61827de120b93656107a2e31fbeedc95a78c52e34017"
     sha256 cellar: :any,                 ventura:       "8045e1d48ada4b5fa6c2a524cda2dd2b31e33014e49d2894b9fdd134597703cc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ccf298955ba2cf7cc5c54feaab9baedd5faa1b351ea02525ceeda3d35d76e805"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7113cf3ec71403d5a0c60bb4f6e9c358c60f57cf80e203d9cd34cb19f5d1898e"
   end
 

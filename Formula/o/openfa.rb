@@ -13,6 +13,7 @@ class Openfa < Formula
     sha256 cellar: :any,                 sonoma:         "bfb27bf06051d8696fc549715df202bca591628a127b317184f81cca64082cd9"
     sha256 cellar: :any,                 ventura:        "fb63e4e4c4340190d0354f95da2ddb9e7bfbc1a968a373a8946976290ddb0a5d"
     sha256 cellar: :any,                 monterey:       "90af0108825d0187e45ffa9703e803747c015d2a70617b3fc367f4342dd9f5d7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "40d42069bba5856f56b9f3ac7eaeab0e0137012139bb3281d2659314d3de59bd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "eab4f9ca29a3d57234580cdc61c2fbe34c4493702db0517f3f3f0a6938bb6f03"
   end
 

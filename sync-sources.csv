@@ -1286,6 +1286,7 @@ Homebrew-homebrew-core/Formula/d/darcs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dark-mode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/darkhttpd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/darkice.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/darklua.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/darksky-weather.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/darkstat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dart-sdk.rb, Homebrew/homebrew-core, 1
@@ -1777,6 +1778,7 @@ Homebrew-homebrew-core/Formula/f/faac.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/faad2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/faas-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fabio.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fabric-ai.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fabric-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fabric-installer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fabric.rb, Homebrew/homebrew-core, 1
@@ -4378,7 +4380,7 @@ Homebrew-homebrew-core/Formula/m/monika.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/monit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/monitoring-plugins.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/monkeysphere.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/mono-libgdiplus.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mono-libgdiplus.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mono.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/monocle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/monolith.rb, Homebrew/homebrew-core, 1
@@ -14377,8 +14379,8 @@ Homebrew-homebrew-cask/Casks/t/treesheets.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/treeviewer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tresorit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/trex.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/t/trezor-bridge.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/t/trezor-suite.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/t/trezor-bridge.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/trezor-suite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tribler.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/trilium-notes.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/trim-enabler.rb, Homebrew/homebrew-cask, 0

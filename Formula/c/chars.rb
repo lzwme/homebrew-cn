@@ -16,6 +16,7 @@ class Chars < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "68c80f7eecac24a7730af591f936abe6e7d5c4189710c9da22afe81e967f4b98"
     sha256 cellar: :any_skip_relocation, monterey:       "65532ff891fc1197305aee0b466e0bd7fdeec5f5aec9c6559449e7255949c12a"
     sha256 cellar: :any_skip_relocation, big_sur:        "eedb2d02f6e1f3889cb6db4d5769b99b7be2bd7441872b7c6e9861c2582a482e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1f63205aa2f88bd033b5cf88619caf0d457c4dff156eae6ee5ac433775dbc1bf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef3b72700c113acb7f3fbf7b977d2e2b16906384325d0f606ada0929c2eab9a9"
   end
 

@@ -11,6 +11,7 @@ class LibnetfilterConntrack < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "e1c3d0f17c63a78eae6ba07fdf7cff0414dc883c3dc78495d5c1dddc3ca66c92"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ae07370b1802d6089195cb605b4010635126ca6f6f37d20023c5f19ff9b833e6"
   end
 

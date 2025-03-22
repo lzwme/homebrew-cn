@@ -19,6 +19,7 @@ class Chicken < Formula
     sha256 sonoma:         "4fb9fc2a51936c8219769352d50a5dc71a1a70437709a489e94125adb86c643c"
     sha256 ventura:        "c61f762a256633c5f9940a33d53c43204fe25e7e08283d30ed07f80b29753ea6"
     sha256 monterey:       "2772973cddc536ee5432553792f1bbc58812943ce2c51a0313db2dddaccae735"
+    sha256 arm64_linux:    "1f5eb88a7eee5c47a26bd91ce9c9fd9c34a5dfcf8973f78e7294fb7897cfe07d"
     sha256 x86_64_linux:   "1091828584dfe4b0eaf42f4dac05b789f9933f2888cdccd56536363e3e107868"
   end
 

@@ -12,6 +12,7 @@ class Curlpp < Formula
     sha256 cellar: :any,                 arm64_ventura: "c9053e831abf0b1097eddc879ca50933409a7a1bd5cbcff29a2f7db8a2e4b327"
     sha256 cellar: :any,                 sonoma:        "5a84433043f3cd206ad6d9e772b8434cb8b297cbfc880640e374f9740cec45e4"
     sha256 cellar: :any,                 ventura:       "4f3de6c2c0b73744aa28d4a1744f7dc79a7155b32e39c7fce99f49e9dc9131ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "373f4b8a4898d60713521a626ebe7133cfeb40680ad167ddf8b4624f4483b925"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9983e70bd0a3e56372fd7f83bd535e33840b5169bfd104f44f0b29f0f97d92d1"
   end
 

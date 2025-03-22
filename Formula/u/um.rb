@@ -18,6 +18,7 @@ class Um < Formula
     sha256 cellar: :any_skip_relocation, catalina:       "266b397cd3e24060e7926f438279325aed89643070618add3db64175e348c04b"
     sha256 cellar: :any_skip_relocation, mojave:         "a4d8c9ddc2b46076eaccf3e3d4eaa43918f3d156e8abd16ad1415ea85f2da8f5"
     sha256 cellar: :any_skip_relocation, high_sierra:    "a479ed6f535f228d1bfa15a7292e58d06a4f07d1238c4fa83f1b99c80564a24e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "85c354a3514a26d514680306f030dfaa2a247f71ef772d1b3e1d5920b9c7fec6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c71496a39f88373f2f233b19384bb1ef43e631b280ca0ba51ffcd2838012904f"
   end
 

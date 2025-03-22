@@ -25,6 +25,7 @@ class Libopennet < Formula
     sha256 cellar: :any,                 high_sierra:    "82232ab7a71481570e3119e119bc93ef29a9d553c11e16fb93f157c66a7dfe8a"
     sha256 cellar: :any,                 sierra:         "c3447365aeb1a478b14b5a71b6ffd29a1f95754fb460ed6f618b55e2f958c227"
     sha256 cellar: :any,                 el_capitan:     "de1cb9622ec3b6501236af7e66367bc5bbaa20dfb8e3ae328a339bea6d708bab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "dd3619a3083c2078621061fde39ac45d20825f6312cd177828289861d70b63d6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d12f92e4c1e648507685be0a40102bbf253da35bc2bf2bc25b412e8900165a6d"
   end
 

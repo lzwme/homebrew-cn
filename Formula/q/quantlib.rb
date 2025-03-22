@@ -11,6 +11,7 @@ class Quantlib < Formula
     sha256 cellar: :any,                 arm64_ventura: "930b58c0d30608c8a0d9477e1b3c767046460a58697995d8315eba57e1fa15e5"
     sha256 cellar: :any,                 sonoma:        "8ca81c3ce45c996b7ff9f72cb620c61843581019bcf68d3a25cf8ae52ed77ec3"
     sha256 cellar: :any,                 ventura:       "f06734001cb1c4ae23aa159af0d1ab9495c7e038dc0250345290a77d1917c091"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "11793b7e8f944657e44b5f6f7fa7fa2f641c98ae6e133503a999ddf132784da0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "04c22fea4ff52f74fe932242915d7122cb4eaf66fc31faae5461df650ebda564"
   end
 

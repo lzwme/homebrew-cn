@@ -17,6 +17,7 @@ class Picat < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "da90a0ec7a0b2d745e06880c27e9851004140559b83e2e62adccee92b5b1eb62"
     sha256 cellar: :any_skip_relocation, sonoma:        "4e7142a99b62517ab3ec4ef69bc87b0f2a2495679bb96071e8bde0f4032b26f7"
     sha256 cellar: :any_skip_relocation, ventura:       "f32341afb685b5a5a1c34bea930101e949c03a414ffaa3fb8dfc197228c0b262"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "db5c79f8eb48c3e0e107f5b9f7b40786d5827b030432db5c0635af347956caac"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a1a72ffb232b2ac33a9eb001751a63ddee735c248cdf55c43cb0482be26391d"
   end
 

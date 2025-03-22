@@ -13,6 +13,7 @@ class GitDelta < Formula
     sha256 cellar: :any,                 arm64_ventura: "ff3d53184c7906ef335c901fec639c8355f802644d025703b0b39c6b18b0727f"
     sha256 cellar: :any,                 sonoma:        "e17a98613a20338c989370e9d6f456d526b5cfb3d9ba92ad9b6a48b409948ca0"
     sha256 cellar: :any,                 ventura:       "c84810ecf79b524ce48078f5c7356385fd9dd00d79aeb6ce5f907d4e08264061"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "06c529b61898673d7b0537378247b4865402459abf6fb0967a5454f895796ba1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbff34c88d3f5db15c4cb31935f6727e7fc2f682ae3a4e0ccd572685cd5c2fb5"
   end
 

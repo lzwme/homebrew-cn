@@ -12,6 +12,7 @@ class Bender < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "76d2fd9220dff775ecbbffc29e3c850b5177ef17d40d6ba1a743c94ddd206432"
     sha256 cellar: :any_skip_relocation, sonoma:        "bd6dee9c5314b725b98d41016d9536d1bda796568509e8b796db95b8d3793bfb"
     sha256 cellar: :any_skip_relocation, ventura:       "4fedd2bdec31a7a97afb20caf6fbfeaccc54a0fca696800b50cfce36e8ad7cf7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c3d7515b13ba15c343bc737f5bf4fc685faa66e242e3fca7715b34a45a74ffb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7123ba3f46b315c38409ad40b3fe5a1f0f7a26ffec2017a77186b6cc053f7c80"
   end
 

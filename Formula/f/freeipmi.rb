@@ -12,6 +12,7 @@ class Freeipmi < Formula
     sha256 arm64_ventura: "9f74bd59960c7352c0d63ac4fd4ecddddec57bca1d8ac33518bcebde80a0a5a9"
     sha256 sonoma:        "78711420153a4559ce6a61e5084349b056add23ee61edff9c6d5ed5a77f09df7"
     sha256 ventura:       "2f72ea86838d3b58e9669f04b87e20f494425d863403aecae7cb30d76bf55d00"
+    sha256 arm64_linux:   "e9a0013abc5d123bf9cc52a1993b000a28deb2149ca35f198f2618c1506c7be9"
     sha256 x86_64_linux:  "d49402b292786a8ba64707b8985249bbb64c8c5845005dd5efdc2d6c49c4e9e1"
   end
 

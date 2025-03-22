@@ -13,6 +13,7 @@ class Bear < Formula
     sha256 arm64_ventura: "594c73d95643940c4eb0c26a0e249e07f535b39b62dc64706aab4572c4e85aff"
     sha256 sonoma:        "fa02c74ce394e74e703955dc82f9dadaa0dbe4cd890362af50e69cd899751655"
     sha256 ventura:       "86a1bbd39269086bac36c6a71f726cb38a86aae2e3bd731cebb7d2143fc4591b"
+    sha256 arm64_linux:   "339c131b7d43d8660c4a0d0d20f9ae8a29d61d0e8e5c154a31cb3500c0bc5880"
     sha256 x86_64_linux:  "f5044dbbc333e4cc00907610dcb67c6e3df3ca078591b437932393da7edbd9df"
   end
 

@@ -14,6 +14,7 @@ class Bork < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "e015811e97fecd12d69160b30f0feaf725770162d333f4364f2e62bd0f5a55d1"
     sha256 cellar: :any_skip_relocation, ventura:        "e015811e97fecd12d69160b30f0feaf725770162d333f4364f2e62bd0f5a55d1"
     sha256 cellar: :any_skip_relocation, monterey:       "e015811e97fecd12d69160b30f0feaf725770162d333f4364f2e62bd0f5a55d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "3e94ffed31a6f82901865acc743d741b2bfabd153f6f8717acc3a323249ac753"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5706b3111e2ee682f2386893cf26773bd71e49cc636ef3e84b137b6108dac5db"
   end
 

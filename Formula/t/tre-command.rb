@@ -13,6 +13,7 @@ class TreCommand < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "da85ee4f6a66a56b10372a9e6702ff9cb63574543780b65ff71abaa25efdf223"
     sha256 cellar: :any_skip_relocation, sonoma:        "88227f6cdf34f1809d7bd0a8fc413c03c2256c6d3eded62e835ae4280cac3cbc"
     sha256 cellar: :any_skip_relocation, ventura:       "5a5d538e52db0c9136ce286ff233e845a3aeea9746796d3e0c449c6d19f71e57"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "66386309ee18528d98fee3a568613dcc7d37b9992fc29d0fe10868b3d679a9c9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb6a971b2a393fbca9ae0823891e7da696e1436f2261619f3fee3c1b7d455c4a"
   end
 

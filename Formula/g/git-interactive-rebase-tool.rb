@@ -17,6 +17,7 @@ class GitInteractiveRebaseTool < Formula
     sha256 cellar: :any,                 arm64_ventura: "a8d4f2130634d33aff7b2a4ae0dbce99d783cbb07659ec5b40ce4e51f9661852"
     sha256 cellar: :any,                 sonoma:        "1057b8baf1e744c13106e99148d3157483d33d7052d6c5cf31e07a8ced6941a4"
     sha256 cellar: :any,                 ventura:       "14d3693aeb6937371f12b737ea2d168843b6c3bd5d08ff4a439603afe4f53a7e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "03172eaa8df62e5a3d3e30b250cf5008c9416738541198ac25380bca13cb8054"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a88b6633a37b3db5fceb6ff1dd10dfb3c8c8131d0f0f940fa166d92bddaf7520"
   end
 

@@ -13,6 +13,7 @@ class Keydb < Formula
     sha256 cellar: :any,                 sonoma:         "9c96a66a65ad45e31aded15e6a4306d1fc4c97d707a060a3c31bba357310449c"
     sha256 cellar: :any,                 ventura:        "0b94cbbcf2ba980719309b3545c5b63fa7328f3067d66dc8686e6db64a13a745"
     sha256 cellar: :any,                 monterey:       "ca35b258a5ae50f171e31795616d4fb569a40ae72c12566b511b4442ff91de8a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a30afa2a2f443a1ca41ce65f95f7b5e0db62d12c8048f200dbfbe58324a554f3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "66f4992328aeaa000bb75107076cb9d05eb8b3ce229e94a51262d33d853af1b7"
   end
 

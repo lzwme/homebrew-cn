@@ -15,6 +15,7 @@ class Retdec < Formula
     sha256 cellar: :any,                 arm64_ventura: "666d104c2c81ebf92f83b239aa716bf7e798362558b3855f83de08df4120b260"
     sha256 cellar: :any,                 sonoma:        "12f78f71818e8477a1966f273a737e879246f72856e6a3d5cb3ddf134bbfe0fe"
     sha256 cellar: :any,                 ventura:       "a6b2b8f1befd6b68df9dd0dc1786ac4204c4106c9fe2d8d2d2bf2973ed6bb6e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d18898575fd9cfdcdbef7fae747b2dccd25ef42383c30a52f7616e95552d282"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e46385c01a262b114048e4af0eea56b6ea7cffab2a39569faa28fd6e76f4fe4"
   end
 

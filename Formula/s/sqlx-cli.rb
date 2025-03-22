@@ -11,6 +11,7 @@ class SqlxCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e666d726788aad08b2f4bc2239facd2fbb8a3e50ab4ba7e7159ba3535655f1fa"
     sha256 cellar: :any_skip_relocation, sonoma:        "09c26b1c79b13a2490dd4d879ecbf991caecc6b8c664a9ea58a879b1bb7c8791"
     sha256 cellar: :any_skip_relocation, ventura:       "53d1e78bb72ffcd53aadb31f29cf16e8498dd33eb1f3e070b62122578cc2f302"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "737c1876539505faf6ebcb8fe4163a3223470b37608b60f6da31edb3b47dd94d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe41a753bd41e992ae110e22f50855eb3e5bcdc3f796308bee36fa2efac12a3f"
   end
 

@@ -12,6 +12,7 @@ class Overtls < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "caabb69876cc47e122d2b8f7d9672314cc875baf1868a056a7e1baca0fd7b93a"
     sha256 cellar: :any_skip_relocation, sonoma:        "f89011c8d92fb90d070452012a7d1e03d183a4e6959ddb98cfc5e23502bcabda"
     sha256 cellar: :any_skip_relocation, ventura:       "2f39a6b872cd7d2a7838d676be90a17209f912ae4b1177845ee184bde72236e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7026b4acb6b0f90c2d3bce30f0773dbedfeca580601ca5b181c5bd08122c0dd6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c07fc0f01d81c7adef78795539391869af6f711dc3d37c9e585c96b8801c436d"
   end
 

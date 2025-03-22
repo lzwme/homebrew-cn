@@ -13,6 +13,7 @@ class AnsibleLanguageServer < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "b926dc5d1e4e44a5718cf6d462c3902d8001208d4e3f28f94ed71adbfc44748a"
     sha256 cellar: :any_skip_relocation, ventura:        "5ac3f6ccdfc8b366ae1b0097b1c031e45371e8898b6f8ce988a065f8ee8e33e4"
     sha256 cellar: :any_skip_relocation, monterey:       "f0a90c681ae308eedcd2f57d363519b9d3eacb123e8772fc6f105b3ac7948f80"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "69f366a23f834e990444cec8ccb7f0b7a17aa539cf8d54ba78523ba2dc13e400"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f51eb058ef24cd16f4f06e1a62b37aa801fa305a9be5ab816553250c07a9a07"
   end
 

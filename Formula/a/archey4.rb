@@ -14,6 +14,7 @@ class Archey4 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2744766739856ebe780fc7388965edc612d51923c3c765033cf87ace0b0b12e4"
     sha256 cellar: :any_skip_relocation, sonoma:        "4154cfde5e161ec534f03d72f49537da940a41ef4009fce5172f07acc3ee88b5"
     sha256 cellar: :any_skip_relocation, ventura:       "cd489ed03f68abd8a88be37ea82d00cc426d3d5feabaf0b68eeda977b7da3d88"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9477e1961d10803b128e9685f28fb196d08d2bcebff10b558d6ebda403e25d25"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "970c7db826029c191477ba09e3a7b3288e80aee797ababba472b22d9b3a483ac"
   end
 

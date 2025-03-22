@@ -16,6 +16,7 @@ class Runit < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a02febc253e32ca872f45183b70298c703b86a69d756850170b10454f921efcb"
     sha256 cellar: :any_skip_relocation, sonoma:        "f820d9806a8247bd514c135b926100b205fa13aaded0f77ef73c22156ebd8309"
     sha256 cellar: :any_skip_relocation, ventura:       "2fb88364202380b041df206331f369cd8b90cb7b38407e83195ab5c5cecb4d6f"
+    sha256                               arm64_linux:   "86e7afab38bcc1a78ed0652367ca988d2c3fa33fc3a2b9456d689ece9cd067da"
     sha256                               x86_64_linux:  "84004a0ce4e354a57c901166bfd58276a281c22f56fccae2690b3c7c158f055d"
   end
 

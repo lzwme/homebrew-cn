@@ -17,6 +17,7 @@ class Rgbds < Formula
     sha256 cellar: :any,                 arm64_ventura: "d6bd1962a88e93ad490b427122beee788bdb65ed4bb565204f4ee285f2aaf866"
     sha256 cellar: :any,                 sonoma:        "5594f569e540143221c14d03b4ec75c36d5aef960c89cb974a7cacc6da2f215a"
     sha256 cellar: :any,                 ventura:       "21109da49cfc5bbdc1acde4f96baa080525f52587617a22d25398f072549c119"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "145cb26f2674603651fdb53065f2ae1ee071ef0e9b395d22b0a68f66648d6bfc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a242a2417d5852213ad72c3e873d6b7d3d24a38b9fb1e522ffadcb9ef7d9a785"
   end
 

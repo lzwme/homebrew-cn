@@ -15,6 +15,7 @@ class CfnFlip < Formula
     sha256 cellar: :any,                 arm64_ventura: "21a22fd0985168ca5c0ac5836ca4a85928d159833fdd4e75553e9295b8e74514"
     sha256 cellar: :any,                 sonoma:        "c1497cca44686eab9b0031d34deab63258a1d891c7f8854e39558c7c60f01f96"
     sha256 cellar: :any,                 ventura:       "92e08c7a0fb66b3c691bf141fac782213907d85989945519e1dc1aa55bb686a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b828fc938febf9080fe045b0d8d185c3286172b5ee8b664604f2a7e992ad2e48"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a009e9b1951f2f55ff9891c6e3366a2a66a2599f211f75ee420274f7b1ed811"
   end
 

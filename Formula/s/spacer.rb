@@ -11,6 +11,7 @@ class Spacer < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "47cfb84321dbf61d82f44bd6a184861380297d3f692950f7224d9689386d103e"
     sha256 cellar: :any_skip_relocation, sonoma:        "bf34987b91b26af106233a25fbaaebf94a872e62794f686d227a1e6979659307"
     sha256 cellar: :any_skip_relocation, ventura:       "5c9f8b395088c5c2635f9f39d2efa4b517365e1469e823c9e75c23d77ada6802"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f3d35829b4c3ce86cb06c462b193d5c153d27408151578435abcc53b7c5d0ed"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce5f27c262e2a2d6dd9c9bb69d59244b02088303de9080d275db287741c24182"
   end
 

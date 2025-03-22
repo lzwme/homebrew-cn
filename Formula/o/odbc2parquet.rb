@@ -12,6 +12,7 @@ class Odbc2parquet < Formula
     sha256 cellar: :any,                 arm64_ventura: "b3d05235cacf80a4355f5558d07097f75d564009b2034936ac411db5bae1d07e"
     sha256 cellar: :any,                 sonoma:        "de1a978c07e39f24f95b0bda53f8ef17c87d7c2fc1c8df1faa5f003b372c5bea"
     sha256 cellar: :any,                 ventura:       "865fb3bf59c9d4e7a4629cbbec2d9ca15d15f3e03c463020e36a68ef7a3e77e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e5348b0fa5cf2daa31fe951775ee1c33594d528cb1d1346c1cebc57e8d10e3f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "89cffd741702c56091c689b9ef1002028096dd4df02e11e2b8773c80cc6f9e33"
   end
 

@@ -27,6 +27,7 @@ class GitBranchless < Formula
     sha256 cellar: :any,                 arm64_ventura: "916640be323bdacc4fd0ad5ed2803cb1a4584d52ada450ae97b26b400c9abde6"
     sha256 cellar: :any,                 sonoma:        "17d8fa92649b7b75f85551251c4bdea543489247b14292b31f02696aea408222"
     sha256 cellar: :any,                 ventura:       "ae5923a733959106c2f4de98cf3c069d736af1f644991abb4355ab2bb72d12df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1910e0339bf1ef3e04848b49becde5b03556c1e2c6c511f47c998f8ba7efa9b5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "246ff33a6a9007356ee52818e9ac3697cec0d8b8a173987870a9a0b7577b1b4a"
   end
 

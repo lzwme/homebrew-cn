@@ -13,6 +13,7 @@ class Dum < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d893cad55e091b873833d75218ac6e5ff2ebdb0a65b6af0f819f784ea5e487da"
     sha256 cellar: :any_skip_relocation, sonoma:        "9a2a36f535842db5effd2ebe482db07b634c8f801d75fe91eea29f273aa624e1"
     sha256 cellar: :any_skip_relocation, ventura:       "04fa40d559dd0816671b58404c9e829f8ac6c94bb4f51a8403dfd80419815292"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b601f2b4fa4dd366ab91f84aefd8ce246987edc79721118b4b2fdd40d749708"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9db9dd61b5327e9bde5c5ebffd66076e3a72911012aecd8a8b3fda81057ea26"
   end
 

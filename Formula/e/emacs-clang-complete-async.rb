@@ -24,6 +24,7 @@ class EmacsClangCompleteAsync < Formula
     sha256 cellar: :any,                 monterey:       "c0369e9c9f3478cc55864811ddfd144cbdfedb5468c35dd7ed638792f7a22c98"
     sha256 cellar: :any,                 big_sur:        "0cc47180b3732f46e0d5fd3e551cf22f4d5a73a089b841a213b3df29e5999e07"
     sha256 cellar: :any,                 catalina:       "fab75b269e2d7d3a1f8560579f3e845b0fcbca3202a3d384510a9c8bb22705b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "510f4f45af90d8130fcb70645b6a308605cbfcea0bd6895f81d595b074776b8c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "40581606a267a0ae64dc7f85c994f7d6eb80a2c50c1ffd9dfa92a2d985ce80d1"
   end
 

@@ -14,6 +14,7 @@ class Certsync < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e294b4d99fd96c068963d13c0d66891f408c7e10df4a80a2027423338ce14e7f"
     sha256 cellar: :any_skip_relocation, sonoma:        "a2224c46485fc6adec9af07d0170d04185ad3d9cc26a721b3fab445659041007"
     sha256 cellar: :any_skip_relocation, ventura:       "9d797e826af6d62ae8218f879def10660e59c7edf7083829badcf730694225c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa4cd398386f2229ff3b14e4ed8c6a81d2b242dfa7acb450f2ddabb4b3cf9a08"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "45804c56f0f9901374f4b4a545706524aa0d0966c003526eba836c4e3f26a169"
   end
 

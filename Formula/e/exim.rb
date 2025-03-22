@@ -34,6 +34,7 @@ class Exim < Formula
     sha256 arm64_ventura: "33bc04239cc203aed45a950e136e9192aadb9f7914efc8c271ad95beb1a476da"
     sha256 sonoma:        "241dd32b34055a89e2a4ae235bc2a6ba54b21b08908eceab24638c7e5872f6bd"
     sha256 ventura:       "518686488b202a2a68adc31377a5d52dbfadd9b78763235247ced67b66ee243b"
+    sha256 arm64_linux:   "e261f3f59ea16e93e4ffd73c8542c9b316d3286514d56b38b6c094531dafd39b"
     sha256 x86_64_linux:  "2799f9f2a077d53acc2e5b12fb029b676a59726da15c00257a96e9c4e7439b68"
   end
 

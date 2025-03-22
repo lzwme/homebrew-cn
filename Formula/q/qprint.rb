@@ -25,6 +25,7 @@ class Qprint < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "57950dba66674d62c84076374427f6c3de6d8cda81448c50b579c11b1b1959e4"
     sha256 cellar: :any_skip_relocation, sierra:         "f26387daf3d025dd45843784dd90fb3bf77609bdf0eb870f1b66782c89571950"
     sha256 cellar: :any_skip_relocation, el_capitan:     "9660443356a1f9571b39ea496349482e17f7c0d06829dd06945ca7680291c0bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0e776f58e2f735c499f4fdb99568f2c0fd3854d5d86c482bb086cc674e43082d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "adea30e44e1c128bf4f466fbca2a3eaad7f71bd90a9868492b8365611bb76489"
   end
 

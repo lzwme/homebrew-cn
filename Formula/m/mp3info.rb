@@ -26,6 +26,7 @@ class Mp3info < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "9b966553a2ed76afb888577cad6ae8f359cde30e445bb0742a87ff2c5d5dfa85"
     sha256 cellar: :any_skip_relocation, sierra:         "dd9e2ab142307a9587ca28f8ca574cf3115f380f2692f1eb1e38e24d4e5a1008"
     sha256 cellar: :any_skip_relocation, el_capitan:     "30c85d8b2afd6e6ad03e473de3bd83ef9c6c607b979570798cfc778ad887b902"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9d8c26e4f4fec89140d5ec6261d115ce6d7ab076c7ce1f42fc16c6cb60f645fe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3cfece9c5d6614f0c1139161f6ca6ced317514cc45a7b13d06ecf0316b53656f"
   end
 

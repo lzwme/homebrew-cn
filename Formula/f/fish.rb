@@ -18,6 +18,7 @@ class Fish < Formula
     sha256                               arm64_ventura: "d537e8a0d317a2790010808136d44925c6fbfff6851f28ace82e989a78f9721e"
     sha256                               sonoma:        "6b4cd39a87dc54c2ebedf23174c60a5165fc0c1f1768dfa736374402d7bd4a2a"
     sha256                               ventura:       "cf916fcfcb0821cd85e190bf7f974bfe155cc269e2476a757fef2307930acb1c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee95c8712a8cece96025402a0c25e239c700287f0e3a5b3e58abe217cf2b0811"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "580f786d6a20d4cd7f604588b205d3b2e4affd93104d03e1c7ab8c6b7efe945b"
   end
 

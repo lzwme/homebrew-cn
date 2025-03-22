@@ -17,6 +17,7 @@ class Mediaconch < Formula
     sha256 cellar: :any,                 arm64_ventura: "6bf6ef2c0295778a884a55842ab43ec96de05ff3974788cb9bde1a2f74cc4682"
     sha256 cellar: :any,                 sonoma:        "ff7b48bac8502ded512fffc37eaf892652b1a96be65930d8f890adcc243f1a0c"
     sha256 cellar: :any,                 ventura:       "c7fb0337d0eba78b2bb9068d56e9d92b4e024905e0c2f32c693c9197b2cb4f2c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "37925ce5195e378165f43e2e3a4ba96dcae24380600479df8f5c75a38ac5341a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cf59eccd7e3183e0a02788a5e0a1dcc6d109221bdafa604c8c1be4338c002d7"
   end
 

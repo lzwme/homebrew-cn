@@ -11,6 +11,7 @@ class Cglm < Formula
     sha256 cellar: :any,                 arm64_ventura: "82d198d51c5aadf126647acd3854e2182291c1b693faba90cdbafd2d66e26d55"
     sha256 cellar: :any,                 sonoma:        "7d9694362e4b318417b226674b69b217246e14325d404190197c3f993473cdb2"
     sha256 cellar: :any,                 ventura:       "2decb2f877d789d9982abca215c65c2a641f13dcd0f4b30439b1d2bdbed27318"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a339de32e874c67b2b66f5e2a8b300ba03edfe549ff0afbb01566ac90893a18"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e6d1b5f157811a284f493a0b8847b5e011c96557579ae56aafaabf2ef6fb77b"
   end
 

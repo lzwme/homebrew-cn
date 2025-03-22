@@ -16,6 +16,7 @@ class CargoBinutils < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "06566f6a3668b2ee04e4caada6d092c2be827d17c94d4e3d9dc78b860ae66f24"
     sha256 cellar: :any_skip_relocation, monterey:       "f723cc7c2965cf903f9bb3e0eb825b4d07fcb343f1c4ab13fd8b9042708dd82d"
     sha256 cellar: :any_skip_relocation, big_sur:        "bbffb949c95924792a8467de511a274b2f0243087ebc3caed26f8fce8ae536d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "624b219c67114ced98abffdaa7d13c8e27722bfce6d8255a220a1ee3f59cbcaa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "573501160232330f4511aa8928446522801ade98223b640b3202c8ec0871217c"
   end
 

@@ -1,8 +1,8 @@
 class Deark < Formula
   desc "File conversion utility for older formats"
   homepage "https://entropymine.com/deark/"
-  url "https://entropymine.com/deark/releases/deark-1.6.8.tar.gz"
-  sha256 "ad4846a0eb4a8247e9893f42a8ab2b89750a0fea060d60626684746bf511f6a4"
+  url "https://entropymine.com/deark/releases/deark-1.7.0.tar.gz"
+  sha256 "7c3752c2c783cd6c4e22e527f1d72dbee9166883a156d25fbf98f73a8c44c8be"
   license "MIT"
 
   livecheck do
@@ -11,14 +11,13 @@ class Deark < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e31284aa5a98b58e16e21a16a32910389309f8f175839b68abc2e8980065daa0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1b1830e6d9bf7cb92867dc1c8abd048ba562b52cd61a19bbd4c83092366b4aba"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "738e10caadb7b08a52202b86353cc13bbc04b81df5413e5146a85afb9c88546a"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "11f1d8417345ff5b60f9eae4098b894246cb29ac7199f397f86db7a3c235dfd9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "7baa0958b2bf84ba3725381f05741aaa4f6c1c620ee3c6887451d0e3aa8be0fc"
-    sha256 cellar: :any_skip_relocation, ventura:        "78180c749974f3df237f9436b8d2f87f5e31b834ecd564d6b83ce54cc860774a"
-    sha256 cellar: :any_skip_relocation, monterey:       "c88568646b14a09092425cf09120b09f0996af5bede89c448ea3fb9949c08ac7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "63ae702046e2330da0ecebbd379c191bf3edf69a3e1e374b281ffffea42b44aa"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3f187e7332d8e5a0aa5e37bcd92428e3a67540169a447787e07105d91bded171"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e0614b471960c3050b12098c9815a29da5238b8406bc72ddad21274f7bccd55"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "868b2f7a23d545977e5b68c3b7acb4e33ac1c9fe9a391d470c592799b5a5c6eb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9a568c638ba0e2e84a40a82b9cdcd0fee3442b3da5e05f5b20677a785e515e55"
+    sha256 cellar: :any_skip_relocation, ventura:       "b2914225b7ad22c0ccb2022c3a49431d8eee99c73882effe2200bbbfbbe2a3ad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e993400488b4e8f3c36e0c84dcfc8affcf27edf212790004d66e3bf36ee7df9d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b00c25bc3f03a626a34e87c61993656345229bac72768bbe7503d5ec8ab7b5a7"
   end
 
   def install

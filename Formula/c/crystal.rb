@@ -46,6 +46,11 @@ class Crystal < Formula
 
   uses_from_macos "libffi" # for the interpreter
 
+  on_linux do
+    # There is no bootstrap compiler for arm64 Linux
+    depends_on arch: :x86_64
+  end
+
   # It used to be the case that every new crystal release was built from a
   # previous release, except patches. Crystal is updating its policy to
   # allow 4 minor releases of compatibility unless otherwise specified.

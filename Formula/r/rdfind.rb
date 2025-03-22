@@ -16,6 +16,7 @@ class Rdfind < Formula
     sha256 cellar: :any,                 arm64_ventura: "cc9fb51dc12b296700a3d4b2f91d0f913c16e9b187184458c2eb6847134f71eb"
     sha256 cellar: :any,                 sonoma:        "f53c9d56247f3c928409c3356c6028a30da6dc3438daa2b87664d748f28e2347"
     sha256 cellar: :any,                 ventura:       "4beb231157b8cd5f653402304d0060cc169587333d65afd1a7a8c164aa69c1a8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c925d7eaab171bbc4c5e0e84df68bcfa9be1ffb00a6d1e2144340ab588a8896a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ba451fc698fa746924d67f4966af5c02c6f354f8641d2ef1a24320d3f6a40b4"
   end
 

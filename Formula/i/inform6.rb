@@ -18,6 +18,7 @@ class Inform6 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5dbe557b3090c8cef2d83e6a5397fb10e341dbb897a57ae546c243342340f23c"
     sha256 cellar: :any_skip_relocation, sonoma:        "d0e8f33dae9540199a38198a65484e6949d36da6dc976001e88f0bf23aaadd84"
     sha256 cellar: :any_skip_relocation, ventura:       "7a1288c1469e66ebcf1fc251683d9319f43f021d1ee13a22dacc929625340696"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c389f1f2e3a3d587fa5ad37e84699c3b873b42758f2540d4da4acb81fa8e1d2b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cb35901e4cda912ae55b5dacc1c0790c5649114fa43bdc91416ffcbc3fd8629"
   end
 

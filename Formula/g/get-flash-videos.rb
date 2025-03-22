@@ -15,6 +15,9 @@ class GetFlashVideos < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc6d8ca49c01ff7cf2af1d97ff3e287ee30617b40bda0db332f794768cdbdca3"
   end
 
+  # adobe flash player EOL 12312020, https:www.adobe.comproductsflashplayerend-of-life-alternative.html
+  deprecate! date: "2025-03-21", because: :unmaintained
+
   depends_on "rtmpdump"
 
   uses_from_macos "openssl"

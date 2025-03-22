@@ -18,6 +18,7 @@ class Samurai < Formula
     sha256 cellar: :any_skip_relocation, big_sur:        "5e3819fa6eb240e781c236528297422575c6c2ae9aa4e38e6ddc7dbac0e25339"
     sha256 cellar: :any_skip_relocation, catalina:       "35e183246e80cfe5a6f9b11b12cd2e0c3a754da15b8fb7550b5716de9e219e8d"
     sha256 cellar: :any_skip_relocation, mojave:         "ef652224d51e64d4e83f921a3870cd9cb4d7dbc315156cb68dd01d30d2d34414"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2a544e5af4acbc661a25ff6f15fd2e0fce9164055734a033e0347c55daa760d2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e89f00f8f16b67e01a287801b7c442e5dafe0923304fa649612610e26f4c4540"
   end
 

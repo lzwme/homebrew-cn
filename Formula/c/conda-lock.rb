@@ -14,6 +14,7 @@ class CondaLock < Formula
     sha256 cellar: :any,                 arm64_ventura: "370853729d2554614e574c8518b58925740837b80a2193f2d8fe100285f627d5"
     sha256 cellar: :any,                 sonoma:        "b13149979527df08381587bae48e3b0349c87e2d77606837d3c3f3ef2600f479"
     sha256 cellar: :any,                 ventura:       "84107b3afeba055817ef068cdd6c8bff24f4a214223c20e1f1ca2f0aeedc0836"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57d83654ec2fe756f29fe243322efd14ce59d6efef36f42297b691c14e2adffe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "341bca9975e2ba052f43d696d626cdb445abc36f74d4cfd61ec0df8b7114a0d3"
   end
 

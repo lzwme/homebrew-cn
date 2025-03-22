@@ -11,6 +11,7 @@ class BehaviortreeCpp < Formula
     sha256 cellar: :any,                 arm64_ventura: "d66a7461ae47f2c5bf0e8fec136178870098cb66ea06a4f2ce271da3317fbb6b"
     sha256 cellar: :any,                 sonoma:        "2305e0df7acf9f12494b0f8df56f993cb571256c039217dff05fca9d1f672225"
     sha256 cellar: :any,                 ventura:       "a43a30fc1138ca2e6553c1d29ebf7936bd1f61569595b4dd1a58f1e21499c0fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c3ad98b48b860f14138e39d456c273723eb8b8c070c0c67942f87f4ea9d91e6f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ca79c98d692d391afd368f2da3fb03e561686afe91312f664aa94ebdabb2e1a"
   end
 

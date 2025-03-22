@@ -15,6 +15,7 @@ class Bcoin < Formula
     sha256                               sonoma:         "48ca919ef8d01a8332ed7ce0b86d8ec413a507eecc59b7ca57d28b90202bdc1e"
     sha256                               ventura:        "4ad6a6a70e1ae53934f27d45aecabf79139a8cc9b007613e15d87301c80bb3b0"
     sha256                               monterey:       "8f094aa7df3a4ee4fba05e5da0fc690b8f15e01515d5c31135d3d0f2267fd150"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ece62525442c20293c56edcffd663feb78c8a5cba539a970e06604af2ac1385d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cf6e4646d6f73fd463fe22799476324f382b7f86fe1bfcb1991ea930bcff5d56"
   end
 

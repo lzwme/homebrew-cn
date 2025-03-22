@@ -12,6 +12,7 @@ class TheWay < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "68b6cf14740cad218421c8ed87ddf071d04f139e2e746ad8e241a1af23af9cf8"
     sha256 cellar: :any_skip_relocation, sonoma:        "3ace9e79b695db8059908af5b68196e9da01251dfa8802c6ac592bb0fb4e4b0c"
     sha256 cellar: :any_skip_relocation, ventura:       "b4f03407e705be5dd0d40f7e5ae7388f172d1ee955dd667cc0d840e8e5d8240f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "845ef37713caf44d84308259c0e6c84be204d8dbab39ac2eeca81dc4061be11a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e13db7053f848a032d23750e6facfbf5cb9738bfdb0025786f4308f407455994"
   end
 

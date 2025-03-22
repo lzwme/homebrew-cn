@@ -11,6 +11,7 @@ class Bzip3 < Formula
     sha256 cellar: :any,                 arm64_ventura: "6ce0294023fc283a7efe5c4c28b5a1271afd3223b77f15aff990a81ead7c0304"
     sha256 cellar: :any,                 sonoma:        "8fbe537f230758a97cb16e8e2dd00405cf71e53cd9ec3d355a9ebbc560670e17"
     sha256 cellar: :any,                 ventura:       "52ac34b6da028c93f8ab6e07c9c569a86b994d2cc7f5de47bc6a88bb9a52dfe5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9d4037cc97c3544dee1dd9374f2fed96ad552d03c531ae009e7b1557a7a14a8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "31ad18fe3a2701f1bd04fca48ad8690b6049eb33f4cd7b948c06708805828a6b"
   end
 

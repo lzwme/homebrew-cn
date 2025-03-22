@@ -16,6 +16,7 @@ class TyposCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a9c4356c9f8bebe0f154c4579294043c6a2316d1d33a8d1a7dfcbff24f60ff77"
     sha256 cellar: :any_skip_relocation, sonoma:        "d73124d5783df46dbfddb43567c61b29ccab16dbbea9888f937d1118d691e605"
     sha256 cellar: :any_skip_relocation, ventura:       "11ac3e4a38503cdbb4eeee4d91567c19c5c77cdc0b0cb2c34ae4ed4fcb92ccfb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f11b63784a6aae6ceff078c69a22f2367a9a6cf19b6618f3d28eabefdbbdda8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fadda063cb8cafa4cb894e81ce8f9baaf6e09303df45c0b8189d20709f69b752"
   end
 

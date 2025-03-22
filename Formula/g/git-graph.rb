@@ -12,6 +12,7 @@ class GitGraph < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1b9735f939236f6bf61169a00235a2916f1c81bc73315af4d06955223581a047"
     sha256 cellar: :any_skip_relocation, sonoma:        "6647e901de849639018e2db27aee4ef60872ca480304fc000af89a59bc8faa5d"
     sha256 cellar: :any_skip_relocation, ventura:       "e2faa7413ad945ebd3f746608ac78472aeba1660f287b7ea1fb43d048899a22c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c224d2af4388112bbe4e3ca5969a865e233faf9b8190ad470c1061ebc2b76b0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b5588907cdfe85d8e69d6fdd33c0ccc3e0f1688cb2f920d2ef4f1ca8f1e7eef"
   end
 

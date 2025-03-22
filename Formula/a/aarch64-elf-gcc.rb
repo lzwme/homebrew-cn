@@ -18,6 +18,7 @@ class Aarch64ElfGcc < Formula
     sha256 sonoma:         "35a213484c8c13848265038047c6dce9c75e0f43f3f81a51c4992ecd39e86a16"
     sha256 ventura:        "8be78df605ae82c4d9d45ebb1b880be86ee454abbc3f253dd5e84ae285c8eabf"
     sha256 monterey:       "4b557fe0dafb9b107bb1674e53339f1ec0548dea349aae46f218eca9b75890b5"
+    sha256 arm64_linux:    "8f5d4854b758f15f48dc986416956d27cc3fbbd8c087a528a3bf48cbc0c0c0b9"
     sha256 x86_64_linux:   "b20b3f72772560c778e8737601d13fa1062a3de125fbb7603fbe114c2c87eb73"
   end
 

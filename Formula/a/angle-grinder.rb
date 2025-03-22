@@ -13,6 +13,7 @@ class AngleGrinder < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "50f0ba886e21fe5768e728f589354d1f578dbab556fd3a1d7a591258f24b09a9"
     sha256 cellar: :any_skip_relocation, ventura:        "22a6b97d5f193e1fe41ae978f0b4c51726b5e1cdd8359d1cc42808c1590a25af"
     sha256 cellar: :any_skip_relocation, monterey:       "16cd61cadfe4ee8355888a61b6fed3f773f3a178cf08a2f563d4e8b460cfdf6f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "15c2920c3cb2a37a75eee068bd8a5d720026349b33b6196a1e8305d1129171e1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "90432e2f65c6230ccf74f297c3bbdae7790796431d753228e9a064d2d62ffc91"
   end
 

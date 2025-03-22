@@ -17,6 +17,7 @@ class Zint < Formula
     sha256 cellar: :any,                 arm64_ventura: "ae1fe857c6cb02ccdc61ac948f55a0bc4e1cd40a0185b6fdb4df2eac5a79e741"
     sha256 cellar: :any,                 sonoma:        "6758e30095b4f04942810c3cbfc9d70ea8d80091d9cb7292fcbc4dfa9821ab12"
     sha256 cellar: :any,                 ventura:       "8c644792c866b56195e2d3ffcf2014c0543e6deb06018fdf17288f91d356ab75"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "18ac58ed7f5da5a5e3ae10b6d33a9c9e2437506d46067a9c4452dfa6c68c841e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa3c1b905b3ec72b674dbe41efe695a000f9db414d05f9bf0def635f3a9b0105"
   end
 

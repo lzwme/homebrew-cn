@@ -16,6 +16,7 @@ class Dropbear < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "35ef5691418b6927d65e7158ae999b21ee8ee6cbf01d5a6d3a92c44e5fd0836d"
     sha256 cellar: :any_skip_relocation, sonoma:        "8c1b9b713aed39530cc9ff87b499998293e601d10055bb037498cd9ae29f6dfd"
     sha256 cellar: :any_skip_relocation, ventura:       "150f8a1e98c529ed24a7e544772de85dcec36d853007938bf0e55a4802758585"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "930552145f7a020c1c9c78afce2f1dba87ebcb50de3477a42a5e187e6bf390d0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ea8c7093f3d411aea877bfc1d26c9538dcf3c6a973aa21696a34b2902e72b5c"
   end
 

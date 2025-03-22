@@ -18,6 +18,7 @@ class Quasi88 < Formula
     sha256 cellar: :any,                 sonoma:         "42b152e68b2c5b4773be2fa8e54380f3059d3864fa82e6591e6ef7c72e0fa920"
     sha256 cellar: :any,                 ventura:        "b5ccd2b099ca8067fdf747d4a97380f58a11d069ddd725e7c7174c0dceb2a88a"
     sha256 cellar: :any,                 monterey:       "58db5d7edd11c2a23a92a679d954bd1e4b0be0db0fd52d0ef2adb0425f1d5668"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1eb324460bb466483fdd6bcf7d2c9b3f7c3f1b3458f14b14c85c9ae0ebc05468"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5bece28e3cc116e801cbcb9da47c2e3768d0a0e15b24d05bdb2ff0f51e06496b"
   end
 

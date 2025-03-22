@@ -17,6 +17,7 @@ class RbenvGemset < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "7db514b2352ec2cd623ebf7efe1feebb8125960531fbeda72e7a4e37cfe576f6"
     sha256 cellar: :any_skip_relocation, big_sur:        "7db514b2352ec2cd623ebf7efe1feebb8125960531fbeda72e7a4e37cfe576f6"
     sha256 cellar: :any_skip_relocation, catalina:       "7db514b2352ec2cd623ebf7efe1feebb8125960531fbeda72e7a4e37cfe576f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "8a35b02c901c91d1e7c94b6aaecce7f143d1164f35f5fec234e55e69b4aef0ff"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cd878825e721949e665c84452d74ec2c36c1b04a2da825ffb7dec3301d663fea"
   end
 

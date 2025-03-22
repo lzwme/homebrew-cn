@@ -11,6 +11,7 @@ class Sleek < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5cfcc553c15db6aa1eee7fb3c1c9f57d36728f2325aa3f679910ed79f8ca6396"
     sha256 cellar: :any_skip_relocation, sonoma:        "7fbd67bbb52e8072bffe8b656161e894f35156daafa3a53496aae7e8b3e50deb"
     sha256 cellar: :any_skip_relocation, ventura:       "0c26c3a372199175fe36833996cac1f619b5415442414cf3652af72eeb01f3c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de48a122749e442e4d2fe472b7b1c5b7f3cb17b7fde3a82efe99313954c5b244"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3f2f948129d7eb704889e0ca9f8132b2632e525ca1f239089c4aeb22f3810d3"
   end
 

@@ -18,6 +18,7 @@ class GitTracker < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "c25f12523b2b8de0affa72363cd84c3cc3c8947bfea4765fa47382a1b5185b39"
     sha256 cellar: :any_skip_relocation, big_sur:        "c25f12523b2b8de0affa72363cd84c3cc3c8947bfea4765fa47382a1b5185b39"
     sha256 cellar: :any_skip_relocation, catalina:       "c25f12523b2b8de0affa72363cd84c3cc3c8947bfea4765fa47382a1b5185b39"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2308338d6721682146bf5d0d960f8606a0061c7e42cf2f1132d33da8ff01201b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "eaaca7ee99419aa06d95fdbb70c28f435b4f2e596c28124bf80b105c89ffbe9b"
   end
 

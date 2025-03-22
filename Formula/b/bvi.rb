@@ -15,6 +15,7 @@ class Bvi < Formula
     sha256 ventura:        "e364c299057027e146cf7cd1679636ad001baf22f0eef95af5522508015ffb7e"
     sha256 monterey:       "36075283de952bc4eed2c3a24e8836352356c89d2d9ca4626c05b7ad8b4e8c1a"
     sha256 big_sur:        "e3862607efcfcf5a04da6b8bccfe6ad539866ceed49bb186e6d345c3e77d353f"
+    sha256 arm64_linux:    "86cf2dff41dbd3be743b94df63db9cb7488bb6f7bb03e8104ab238e8c7e3c44e"
     sha256 x86_64_linux:   "77dc1f016b3d7d4ac604688521fe4f49938af1a7c0fd783181e6199deb2af0d7"
   end
 

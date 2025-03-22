@@ -17,6 +17,7 @@ class ShairportSync < Formula
     sha256 arm64_ventura: "8cf7de53d4ddb584a9c867487d12b63398c12a70828854856b356b89744bc5f5"
     sha256 sonoma:        "c354b7d9cbb4d7ae6f6c0eb45e90673033ed3a9f00fcc365aadb0126c03485e9"
     sha256 ventura:       "b926bdadaad35052db8c2b52c0d3c2f3a70b5029084e1f0f390525588e2a17bf"
+    sha256 arm64_linux:   "371e002a675cc3343cbf7e9632b4d6b36cfe6c32465c3970fb22fecaa2f3dc2b"
     sha256 x86_64_linux:  "a11b5f33ab1cdf35b511fc944c61c192e9c070d58b09bcfb0b108388108208eb"
   end
 

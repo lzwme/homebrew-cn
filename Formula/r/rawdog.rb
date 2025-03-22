@@ -14,6 +14,7 @@ class Rawdog < Formula
     sha256 cellar: :any,                 arm64_ventura: "eaee333c15dfce1059e41f558d809183e3b41d62d353d27a60baa4c7a0d7dec3"
     sha256 cellar: :any,                 sonoma:        "70eaa7fb1a8ecd722d73bb88a8d8bd8ef546bececd05e66496c8e9eb919cc76d"
     sha256 cellar: :any,                 ventura:       "d24615a6be9d563a66b69022424ab8bf802dfb48cd09d97b960fb13d9d25ac97"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fda94ca7ca74afe68f9106192009b13dba1854a1317a8bbcf748abd1469348b9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e5ab7707e950fc875fb39d56445e926841849be84ce3b12cb85ce4e8926b937"
   end
 

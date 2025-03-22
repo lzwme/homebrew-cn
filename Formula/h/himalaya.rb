@@ -11,6 +11,7 @@ class Himalaya < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0ef6045f2bf47e807661cf800ff036e9df0c2e99fcea5e7d00ba0bed15a0160e"
     sha256 cellar: :any_skip_relocation, sonoma:        "a2782ddbd515580d4ce47d939155d31b3bf744500ef566c771d839bc32b05f5f"
     sha256 cellar: :any_skip_relocation, ventura:       "159ef73b0f7b1fbca6cd8a509a993b7d18df156eddce6b04ad5e22360343d35f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "84fa7f497a0ad4b0538f9891058ed21051e906a48fcd2dbef55aa49cad570f28"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b564756c788cadcae7e27532be8008896bf3cf742c7b5f9c861f966576364df4"
   end
 

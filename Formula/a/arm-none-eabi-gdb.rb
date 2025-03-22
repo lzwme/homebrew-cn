@@ -17,6 +17,7 @@ class ArmNoneEabiGdb < Formula
     sha256 arm64_ventura: "84f06764a8ab3d08cdc3c2c5f142a0cf0972719729030bfc6fb701fc21d3a960"
     sha256 sonoma:        "1d248fb0625a51c366cb6d12973126c4dbdb8ccb694a7c2c6397555240597173"
     sha256 ventura:       "7a7e708092fa51ec9cd61e60d864df12d2ae757a1a38537bfedf47116d94cd7d"
+    sha256 arm64_linux:   "d086010ab18d1e1200527e52fdd0c76723ce7bf15b699ae41b375f6854d03bec"
     sha256 x86_64_linux:  "049ce2849b35c04bf081c83a74a602386295c3c6afb749254500ca956a8f45ec"
   end
 

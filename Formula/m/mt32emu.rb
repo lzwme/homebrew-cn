@@ -18,6 +18,7 @@ class Mt32emu < Formula
     sha256 cellar: :any,                 sonoma:         "4ee0954e5580c900cf59984855dfb0acbf44dcd616d40b2afe09b21ebb917f99"
     sha256 cellar: :any,                 ventura:        "b694aa920f746e41fa031a57d0f96190e04afd0bce6ded9581fab5de3c137cce"
     sha256 cellar: :any,                 monterey:       "cbb7f0acda41903fa4328bd108752219626562992a6ceab34029539ee59b2f44"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b80b555da53021aa52f6b880f1db7cd8861deb365ffff0df39b25ec27c910c4d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "50d34695d4690f75da5d78ae5ee3575b2808b6d0dc3451464d25fb2cfd0d7257"
   end
 

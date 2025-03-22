@@ -16,6 +16,7 @@ class IrcdHybrid < Formula
     sha256 arm64_ventura: "1d31e662ad08d3399c13de2de890351b7450e448bb7dd5f9dcc2e4c040c6d77f"
     sha256 sonoma:        "613595b0cafc86ee1cd5d2622b4370a9b8718dd052ee6dd363e7698bdd5f0670"
     sha256 ventura:       "2148dfdd86ba6c791a0fc1e49fbe918c2a1e4874fe4bd58774fd6a8b2e56dc52"
+    sha256 arm64_linux:   "b5414d44042e02d001e2b698a4cea2a0958d7c9abff74d879d75e85ba232dc37"
     sha256 x86_64_linux:  "031299ee9f3e08184069491b048f1005e5c73b098247a0d33765c95fbae7a438"
   end
 

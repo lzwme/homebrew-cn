@@ -13,6 +13,7 @@ class Muparser < Formula
     sha256 cellar: :any,                 arm64_ventura: "0e8b448240be0fc032dee25dae2d40a7d4c143b7acbabd7abfce2f066e09da24"
     sha256 cellar: :any,                 sonoma:        "bb235a4e1df126fe983925b4debd0b971abab5d2d588d1184fa55cef232b7eef"
     sha256 cellar: :any,                 ventura:       "a17fbefec1301c80a8ff8f5d1fece66401a4e959c6f9aded0290f51cf31edede"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d3d3f6acf9815f9e2c3bb3210ea66d744f88d72a75a70e9a3214bafb8306f14"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "531bcd3892d0938e5fd2b8e174be8a0ddb75183601bea0a31199bfdeabbf822a"
   end
 

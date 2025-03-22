@@ -14,6 +14,7 @@ class Stepci < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "c59c4b4fa04b0d69872f8bbe4a27a0b1313afcc689b4ac00104963f540fcfad7"
     sha256 cellar: :any_skip_relocation, ventura:        "c59c4b4fa04b0d69872f8bbe4a27a0b1313afcc689b4ac00104963f540fcfad7"
     sha256 cellar: :any_skip_relocation, monterey:       "c59c4b4fa04b0d69872f8bbe4a27a0b1313afcc689b4ac00104963f540fcfad7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "85b84fadcf625233e1794dcc32f0affbcd515bf224efee8287b24f42a341d313"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f06503b493bdddd590715fc784086f1c9a4241c67450af3f07cd4077099d581a"
   end
 

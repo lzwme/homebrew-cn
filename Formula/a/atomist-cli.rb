@@ -15,6 +15,7 @@ class AtomistCli < Formula
     sha256                               sonoma:         "9f084e5811bda72cbdafaa9d6ef94475d4e62f8a02a9701482d48c77c2135cf3"
     sha256                               ventura:        "059bfc06ae2d8cd4ff0c588d543b6d79637c6e199b30544e832ca5fb472701ab"
     sha256                               monterey:       "35c62db45f98397cf306aad8b2f9e4a0b0f0b61f686da6b7b91c34d41bcf18d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f506f68f1e09b7ace94a007c93bab7edccbdf5f6d11461756bd2921ee0d481fd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a8a420e052281702ab92e1b510422b86556e366f8c6b149fbae2ef3864466708"
   end
 

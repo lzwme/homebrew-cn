@@ -12,6 +12,7 @@ class Ddrescue < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c800371fd465a91660b1c10912d7492ad3137f17c8f2eb4f93c3bf9284b1fe23"
     sha256 cellar: :any_skip_relocation, sonoma:        "3fd2c4a80a97627d8c3d03402786a3bba0a3006c05de07094ecc1274b726b961"
     sha256 cellar: :any_skip_relocation, ventura:       "20dc0c65999e389090bb3631b781bf7f36a17dae90fc3683ee46af451c790acf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7269198a4c447bf31ce66cf0bdebdbe575e32431e681173b18f07c1d109e90a0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a299a8590b6d15de46b13b906a5e96c86f4caa697b342fafec1e6786a3c4deb3"
   end
 

@@ -12,6 +12,7 @@ class Pygit2 < Formula
     sha256 cellar: :any,                 arm64_ventura: "94d38f06b415396e2d573971f7f735d6442c1090c6b1b06579fc560e2efd58a1"
     sha256 cellar: :any,                 sonoma:        "46f23033146c07667df84d155d1f172a678ab655d2693ab60c4d90cbbd455684"
     sha256 cellar: :any,                 ventura:       "60fcff9d3db9cdf27ba41e6888e8b38629e5ab945f0a695496bcfbc60582fb1c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1af4343239fc656e409e37d8599d6dd950620d46744a3b9524c1803848e5402b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4b26f1a576237e542c38f4bddad2980da31ad4aa1debfdfe26636a1f2946d3f"
   end
 

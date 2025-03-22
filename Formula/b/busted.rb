@@ -14,6 +14,7 @@ class Busted < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "1d46925551fc50862907fe770dde0aaf06cad8d476ed7f313988afb3eb23b5a2"
     sha256 cellar: :any_skip_relocation, ventura:        "bec97bc61b1ffe4f39f035d2710c626b6f31c91c1fa16c778fcc0bc3704681b2"
     sha256 cellar: :any_skip_relocation, monterey:       "8510ad64b34d08addb54433deca168f8f7f2c1db6df90c7ab41f32ae352d23a3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9296bbdb2e2a16feae4033c598626a68edfbbd3523cb9d71631d640d4da59895"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed3b9a4fea656d23198b327ed55879761fd1ab0f5332adf34db382f86622d8d1"
   end
 

@@ -26,6 +26,7 @@ class Ttyrec < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "8121debd07c4ecdd24d86fc7dadb00a7807e028f512418b5ba0d85768619628d"
     sha256 cellar: :any_skip_relocation, sierra:         "0323b20a0905ad1c3a2f997714572d779bcf6db63d8798840c14f6a75fd70cd5"
     sha256 cellar: :any_skip_relocation, el_capitan:     "ec05f403a1aa20da2e1fbd6f4d912b3d31fa1fd100c9adba68c928146a50bbc0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ea3a96ddfe71319d95009cd84257f98d42a335e692aea071b9d9a718e2d58a89"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2dd1acdb4519d34c1b28fced057623dcd6457c60def91150fd042ed6be04e481"
   end
 

@@ -16,6 +16,7 @@ class Avfs < Formula
   end
 
   bottle do
+    sha256 arm64_linux:  "81825d0ffa76826644f47b69036175d85182751c891a0fcb06e27a8dd1a09a50"
     sha256 x86_64_linux: "44c9d1451dd67af972b90f625e38f9a48b089dbfbbf2b76b4d2e6ac668e61eb5"
   end
 

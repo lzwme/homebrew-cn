@@ -18,6 +18,7 @@ class Cgl < Formula
     sha256 cellar: :any,                 sonoma:         "1fda61fd0c019c89b0fe7bcd9accd0bcb9bd197ecbd076b6992d976c1386d97c"
     sha256 cellar: :any,                 ventura:        "f7bf34059c2124bd1de50fbe0278cfb0ca25eb47d76be096ce65dc58da4b074d"
     sha256 cellar: :any,                 monterey:       "38248f24ef74fe3200d8df1fd272def97d964612e2a65d079a9eef3f4ec961cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2fe70eaaab988117b3ef31682155ac14f031617fb0b0c2693655ccbfbdfab509"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "59464aa62dd9a8016b3b46d99246b734bc9eaee228eaca8aac5c757e709158ad"
   end
 

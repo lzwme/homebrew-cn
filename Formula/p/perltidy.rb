@@ -16,6 +16,7 @@ class Perltidy < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "21b06e9daad00a6bebddda0650227633c82aa5e3bcb7b0f7111915b8d0733bde"
     sha256 cellar: :any_skip_relocation, sonoma:        "8f327e270db665ac52f0227cc4d71f6af5dda2964725956ee22e7f0e5cc37838"
     sha256 cellar: :any_skip_relocation, ventura:       "088a45ef5f7a47039f72b1dfeb94ad23f446807bbaa593c31e4eacf6baad4cb6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b7b2bd46e00f58ab89441f3848db04ff3bdf2363d7ad7d32625bd2f4720a872"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "68a48bbaa91035f33ccb1cdc50935d79f812e598c456c472ff0ff7b9365a0e41"
   end
 

@@ -19,6 +19,7 @@ class Libpano < Formula
     sha256 cellar: :any,                 sonoma:         "0af56e6b3b09c834eeb1e761601077adf59aa8182c2bb3e7bb6b0af281d7b786"
     sha256 cellar: :any,                 ventura:        "7ed03995775f0db50976850f24874ea177cfb4dce9110ac0efbac4b9952f3bf3"
     sha256 cellar: :any,                 monterey:       "8c972fc65b94671e0d619e86fbcdd48b04fd4223c3b3cdd9888ae4e944447919"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5a4729da262a95f93470e8ceb3646a42d86f1375fcf624c462f867411743b044"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "30623a39cfd32fb1230f6ac0326235ef16c71e907fdfa0757c689e5d495b0980"
   end
 

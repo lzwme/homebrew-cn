@@ -22,6 +22,7 @@ class Lrzip < Formula
     sha256 cellar: :any,                 big_sur:        "33d561fad2bba643625d358fc65cfa2d8f37ae51d3329887da76e884d43b1515"
     sha256 cellar: :any,                 catalina:       "701705808812d442dbd211235510a039a53cd4de9a4b28c014da5ad8a000014d"
     sha256 cellar: :any,                 mojave:         "a3230ecfa68e08deb5f1414cb67736cffcde179ba34748df8e0fcdcb0d2c1ef7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "3f8dfe3dd08b7231d134922f66dca8c88575590259bc3646d6582f2b4c6fb011"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5515b974789a0665b67ceb99c09d7c2b4edae560c5d7e4d7aee765fe95a563e0"
   end
 

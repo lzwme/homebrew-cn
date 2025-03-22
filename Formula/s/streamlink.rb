@@ -14,6 +14,7 @@ class Streamlink < Formula
     sha256 cellar: :any,                 arm64_ventura: "0f4f19dda0c6ba9f09b53fe75df00b90bb803f68defaae2d101dbdb9ebc1117c"
     sha256 cellar: :any,                 sonoma:        "b596477f736f1a1adef465e633a28cea62a99696e22a508d0fc8c86a592478b2"
     sha256 cellar: :any,                 ventura:       "e48a6ab955b2e1df11c5bf6ebdac5d17bcad411315df8c1870ba126f30603a03"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eeea029972f566bb03dd2c81c793b2cd86c9c9ffd164ba2d1b144e2d64e0d35f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5279ba000847f13334694f79888eae902cc96ce00ef4aae74745982b20a31a0"
   end
 

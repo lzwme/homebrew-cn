@@ -13,6 +13,7 @@ class Hatch < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b9b609237966606e82b0ba42094bbe47fdb67461e42965ecca81556021e2a518"
     sha256 cellar: :any_skip_relocation, sonoma:        "0b06f7b5f2358d45dbbdc963617971fd1880f411ed7e6dc30897f134ee00514f"
     sha256 cellar: :any_skip_relocation, ventura:       "2b225e9da205ee87c100b90410d9baa456d283fa9c1dbc18c7a9fe0af5f6c7b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "85762a3d90ae36c36646b798ad15d21e7440533c43ad92002b5edce61aa4d7f7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1f23232afec653d50def2f51f35e41d830b5808f1d19fcf172608b9dea5dc7d"
   end
 

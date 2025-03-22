@@ -13,6 +13,7 @@ class Modsurfer < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "b917744c1619ac05cdf12c8236ed2d8f6e25078bd7369c701ff9a0a0ef041303"
     sha256 cellar: :any_skip_relocation, ventura:        "9f033931b5c7fbf412ec53091fb423d5c376f509abe0a472fc2a6e52c320968e"
     sha256 cellar: :any_skip_relocation, monterey:       "0e987ef1c06a80190898850d0aaa1e26d9c3515492f8ddbcef4a6c1a7af6dde2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "12a645180f3f4fa5735a85750d323b060dd085e408d0f0d5aee652ea07dcc845"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0ae0a282777800dcabb713ce0f994bf1cb0d4154edd5bcf2cdaec083d05b2dd"
   end
 

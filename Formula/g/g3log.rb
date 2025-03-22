@@ -13,6 +13,7 @@ class G3log < Formula
     sha256 cellar: :any,                 sonoma:         "6701a7bdd417bcbc97447829c27a36c25cf3ab88ee85788843dd6faad3a4cf3c"
     sha256 cellar: :any,                 ventura:        "919b1a44a27f6279ffa7fb0608c95635f2389b5a97f580dd986d081540662eab"
     sha256 cellar: :any,                 monterey:       "949427dd34f74189bab5b3a0625ea5512900a49d8246c1b128b8ba6fe6d0de82"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "c7deff00d5b514cae7fda5df0669170c8ee34accfc404c2afc932d2ceb815054"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cc9801161cf10b1499b9f7ce1f7dc76a0b91455a7a104eb2ef3479e593fbc8a4"
   end
 

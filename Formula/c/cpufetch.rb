@@ -14,6 +14,7 @@ class Cpufetch < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "0faccde150115bfff166681b0f0fc22afeace6893f9f41972bfe7eb6026880bc"
     sha256 cellar: :any_skip_relocation, ventura:        "7f7c1ee72012d279f55cc50be333ad179c419e2d58b86035da5b24fb6a9070a3"
     sha256 cellar: :any_skip_relocation, monterey:       "f3a3ec4943787e4407d8b3c0d096739d71e0e15e90090121d74c3e0b590493ce"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "cc4e91b1eb64ecebcc988f28b958dc3ca9801e0f6b4458233cb4ff12865747eb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f0c449650a3358d7038e5b73831cc000ce0af1610c84abac26e506e5ff33e802"
   end
 

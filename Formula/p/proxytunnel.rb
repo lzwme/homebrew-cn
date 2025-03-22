@@ -11,6 +11,7 @@ class Proxytunnel < Formula
     sha256 cellar: :any,                 arm64_ventura: "b304a1e197fc8840549b2b4f240a6eec34dbdd45eb035bed45fb591201dd0ed3"
     sha256 cellar: :any,                 sonoma:        "20b05437c58f9ac5e129dbfd9da88d6c57338deb994ad88af6ee2a558a430304"
     sha256 cellar: :any,                 ventura:       "a7877a40edfc840c91921d0bfb161e1f87d4eef6b8f3bc06789d9a6b89b06dbe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1054f31d72acfeb8d3e4b925620f5d8140349158552c6288db753af40097b72c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "68f0a86ab22a1406b3215b1f48abd7bb1cd686a2eab4cd707f989a9bee830a4c"
   end
 

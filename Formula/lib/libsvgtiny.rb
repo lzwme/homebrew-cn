@@ -16,6 +16,7 @@ class Libsvgtiny < Formula
     sha256 cellar: :any,                 arm64_ventura: "acbb8ceb269100f33510ebc0f635431370f4529472757e3b49a4c9db84759908"
     sha256 cellar: :any,                 sonoma:        "79f23d2be078a3142ae7222d1b6da7ed1f9e734e6703dfe86fbaa6c3916b6f72"
     sha256 cellar: :any,                 ventura:       "22fa6d603af1fc38b26760ac2e6ea8c22f8f0a629a01514bb8bd04ecdb80d0b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "730eb12414b8d0d93e3c8d2e52084669d9870d15dc60a127e24ec5b6e9062b8e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b5dda2d25e1756ffbbc6e8e28ee6d1259b4f1337b0cb1958dc29d6275bc70b22"
   end
 

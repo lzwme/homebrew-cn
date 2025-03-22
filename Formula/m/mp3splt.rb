@@ -17,6 +17,7 @@ class Mp3splt < Formula
     sha256 monterey:       "6095cb447c23f8b7c736f858e3420c50b2b21134afea5c319873738c895debc6"
     sha256 big_sur:        "2bf269ede24f7a0b067a510f355d503a1424b1fa5599a019093cc75efb10c7da"
     sha256 catalina:       "8d020baec2beb1f7f24223ade4f40b758b2dee3329c71aa69929b7dde620bfac"
+    sha256 arm64_linux:    "7c54aa0ebc5caa53ab0f8a09d55c9e9f7ff7226a688a31fb74aa38f4fe8c0e25"
     sha256 x86_64_linux:   "5827fe65a9230261acc5309197b66205d2c72492d58ac2ed2b6a4d38632fea66"
   end
 

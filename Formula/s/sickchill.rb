@@ -14,6 +14,7 @@ class Sickchill < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a61a55aabc508e7f92b6630078aea3a7591d788059284021de11f159af38800a"
     sha256 cellar: :any_skip_relocation, sonoma:        "38266689c4df94bf786c7f877e4b373864ac8a8ec3c1cfcb4e40765ed5c251f4"
     sha256 cellar: :any_skip_relocation, ventura:       "4ea543a600a09a8de84d1c9639026432a5a7d6af09228eead70e18fee2337d00"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fad7fb5d4b006ef8faefff1947c28aada5aa634a6ae16a4bb120e25dcc100ed4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9eeff62df6480a7f4e7e495b3fe623bdae3d6d409d20c25f0098c8a77446b653"
   end
 

@@ -14,6 +14,7 @@ class Flintrock < Formula
     sha256 cellar: :any,                 arm64_ventura: "8e34466bfce9510389d673167e2b86430f034ff8f51c7a830af341f76fb7d54f"
     sha256 cellar: :any,                 sonoma:        "53dd4e7e69bd54ca81bb968017244dbaa6b7179b065461c475050aeab2d8f3f9"
     sha256 cellar: :any,                 ventura:       "97151962e88f570735fd2a02769f7d3bc6c1ef13ea5bd54643fb4ddeb71b00cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1bdfc10132b27137d907e52dda03f03591389a8b9bea778cd54acef3b1adb874"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "48fe7af4aefa589974da8e5eab93f9a9c159aa16d701699930ddaad0a943a20a"
   end
 

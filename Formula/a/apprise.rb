@@ -13,6 +13,7 @@ class Apprise < Formula
     sha256 cellar: :any,                 arm64_ventura: "ee3a667e4505dbf002e06d3627951b595be8e3c8b31167985df4185b295f8ba4"
     sha256 cellar: :any,                 sonoma:        "3b9f36ac03c417ecac66d5acf3e9b5b9a57a62857192a9eb0d47de2c0a79bde9"
     sha256 cellar: :any,                 ventura:       "ae9b6033eb32522a73adf6fdccad30923e7674955eace905552c7ca42bb3e067"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd572ef3b514b6445ace3b85ad9c777abf39185ab1c310d5e343f3dc2e878b92"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "358b77565f5e76a42ef739aa4f4addf519fe72ab1c6cae9ca36d7e3c57ce53b3"
   end
 

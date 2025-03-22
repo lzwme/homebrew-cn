@@ -14,6 +14,7 @@ class Raven < Formula
     sha256 cellar: :any,                 arm64_ventura: "e87feeaf89d0ec69e5bcd8e74192d96044ce04de4709eff119f6d78c8a73fae4"
     sha256 cellar: :any,                 sonoma:        "42c2241ddee62dbf8aa4560bb76ef906fbdb9d5f1452bef9bf97bc72329206a9"
     sha256 cellar: :any,                 ventura:       "b540f6776eead96815c3284d76817239a9220c4a1b3c8aa4f446b311b6dbb1e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1cb023324db871cb45ca2ca25d744b9d32a2fdf4206ea875e00a00ed16b36147"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "73b55d7ea7f06c758090bf97b18ee033450550dda37255753f83a31ebb8df288"
   end
 

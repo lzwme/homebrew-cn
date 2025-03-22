@@ -11,6 +11,7 @@ class Nvc < Formula
     sha256 arm64_ventura: "a5c06f732ecb301e15599cc9f65e825de897f16281eab045ab962014c907765b"
     sha256 sonoma:        "03ab0790efcfddd402060e14711710b8e59f57b9f27877cbbcf5e7ac375b670d"
     sha256 ventura:       "2460f90690933a675b46fd1e4561c8c0fc503ef063ce10312e01b5217fbf6d12"
+    sha256 arm64_linux:   "24978c7a00943bef0e1be31a6e87081e43eabf93a5a4ffeb83a4dffbfc2a73e9"
     sha256 x86_64_linux:  "b6bd3c7be7d6a61e581af464f4db39b4800de127cb6186e5d3eeec0472609fa5"
   end
 

@@ -17,6 +17,7 @@ class ErofsUtils < Formula
     sha256 cellar: :any,                 arm64_ventura: "a38cd23885c906fbc1bdf875b6ac227ef9e637da96d57bb65b87a7cae4221ba9"
     sha256 cellar: :any,                 sonoma:        "21f4b75c09d245f3e2a060b0f7b2588085046ee739f26407e102ef146315669c"
     sha256 cellar: :any,                 ventura:       "fbfb91b675618dfbf828b6ded7fa7a7d695c1420fcceb6ef5a24bfe250be8339"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ecb6ec0863b3a1f3d90db08c699a04a2fcf67c736fb176eae91d6c6d6ae45d1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3379c9f03b066f57bc8c115fd7eeb5639a0811340a91227ced350e403a19c5a"
   end
 

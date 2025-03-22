@@ -13,6 +13,7 @@ class ReginaRexx < Formula
     sha256 sonoma:         "96b18ac7771715b1655532e50a80d53652270297ba98f543818392a9f55fe850"
     sha256 ventura:        "dbace070503339b00048f858b5e84dda450c15954d1e58b7141a8ea47eec0f39"
     sha256 monterey:       "2a03b38f8aadc69740e1fcf98425fa4e978f9549f65b7cbab31c64bca431be9b"
+    sha256 arm64_linux:    "4d5d6bb35d491404ddf15d08c3924c48f22cae84e7825f99910d3a19e230763e"
     sha256 x86_64_linux:   "3b18e755fb8d0f75a5782a91ca4f36dd6be9cba68e24575af20dc7c271d99381"
   end
 

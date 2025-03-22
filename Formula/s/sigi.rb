@@ -14,6 +14,7 @@ class Sigi < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "b2d5f45cc3906d4191ce72b5e374846e0c5c57da3b8b61388d1b2b161691d7eb"
     sha256 cellar: :any_skip_relocation, ventura:        "3e61dd1fae21e604c077e1d83b6dab9add32ab5b77929bd80f7b10ba47232ce2"
     sha256 cellar: :any_skip_relocation, monterey:       "3473b320d33aea1cade3ba6927d4cf8cfe835a9086caba42898ff34177305397"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "72e91818ac3c30e6f28617217c3b5eb3752fc013a7c94d42fa36686d07366846"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9956ee5542d2289d376febb6d44e752e588ddcae44a71d4d89cd2da14983f259"
   end
 

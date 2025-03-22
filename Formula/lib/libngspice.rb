@@ -15,6 +15,7 @@ class Libngspice < Formula
     sha256 cellar: :any,                 arm64_ventura: "63fbc552611b183799b6a0837db9c9f06c0d4f215ccfbfb0f6bc699343931804"
     sha256 cellar: :any,                 sonoma:        "27eb9642d676e757187eff463ea80dcd2c1bbecb0da4558f4d7c98792e8199b5"
     sha256 cellar: :any,                 ventura:       "9c9b8a825a59abf6e61518cedf952a3bb62929fa175ac23898603a3a7618c063"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "22e30c641b1925c47f728f45f2fedeb7eede9447fb06f6449acb2cf25c24e6c9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "151d4740e5f524966fa99db6635c338e5a70428b45b098c61ca23d38567fdfef"
   end
 

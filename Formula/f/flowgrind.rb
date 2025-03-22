@@ -18,6 +18,7 @@ class Flowgrind < Formula
     sha256 cellar: :any,                 arm64_ventura: "4cd194dededa538922c8776c32890c9c85241feca07ff12a4d6ef1c8ae74dbfc"
     sha256 cellar: :any,                 sonoma:        "3ec8f4b1038691864cf8fa30497efd7ede5191215f6b4812d11cce25e656a99e"
     sha256 cellar: :any,                 ventura:       "6e14c72f5e1674c8425b1fc2bbaaa31fe4a9abce2c57340c49610d19cc52f5dd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c58295f14b80cb817de10f1693733ebb91126b2d030040c753d48eda23a5ba8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f3aa5e0fa120f60cb88c95cf2a710fa57e9481efe0b4067a694f96497b004f6"
   end
 

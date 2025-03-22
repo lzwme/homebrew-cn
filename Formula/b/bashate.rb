@@ -15,6 +15,7 @@ class Bashate < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "007ce884bf1ba757929d119f792b3b414b4ce3d46b842c43e270941cf1fb7b3c"
     sha256 cellar: :any_skip_relocation, sonoma:        "1903d84db5712fa94b88bd6adafe8efd3686665cb0dc17db3d5ed63a41bdd0f6"
     sha256 cellar: :any_skip_relocation, ventura:       "1903d84db5712fa94b88bd6adafe8efd3686665cb0dc17db3d5ed63a41bdd0f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa99b757bdae56d1db08f94e6b9fe4056dda2d9800aa0354191bb1edfd79c58b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "007ce884bf1ba757929d119f792b3b414b4ce3d46b842c43e270941cf1fb7b3c"
   end
 

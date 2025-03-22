@@ -23,6 +23,7 @@ class CfrDecompiler < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "2974cd0863aa3f0b78ebe4d6a5be26e162e13ff464918996cb99ea144a41e0ba"
     sha256 cellar: :any_skip_relocation, monterey:       "129adb6ff234dcd57cf9c1de12827bd3ab7ccf551c0986a7f2e6e435c9d36d8b"
     sha256 cellar: :any_skip_relocation, big_sur:        "20388572ac11cf3d8d0ad14ab428c8d5178e17e44eb32d20094fd3d384c72a81"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "03afb187594d2a088f3a6a111f7a34645860e0d51fb55afd82d6faa3404304ee"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b236e8effb84d1da66a9eec9c6b4d857d3471da8de57543ac7d029adb09b9eed"
   end
 

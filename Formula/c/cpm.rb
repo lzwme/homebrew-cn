@@ -12,6 +12,7 @@ class Cpm < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c626b58962737efa3c191653928e6f7272c91b39841d395ec8634c6dc01e1db7"
     sha256 cellar: :any_skip_relocation, sonoma:        "448537aac2a3bb870c60fc62ecae3cc1b476a861d8d594fc7046c23985c8dd94"
     sha256 cellar: :any_skip_relocation, ventura:       "448537aac2a3bb870c60fc62ecae3cc1b476a861d8d594fc7046c23985c8dd94"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "52f12ecfe4d64e25be039db1bb942c261f0d553a7ce5f355ea92fa94527e269e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "671409d44d98eb00aa1f5fb95108608b4dbbc1ad1d09bb8608d90807d9da6f81"
   end
 

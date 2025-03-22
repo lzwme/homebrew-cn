@@ -17,6 +17,7 @@ class Mp3blaster < Formula
     sha256 monterey:       "0d343b563ad1378a233e2bb1d13207635b92aac493f8e39d9dc0800920d7699a"
     sha256 big_sur:        "6c1f0d720d7451421e8b86dd8f2d910613f7201da6ba56ea1b449b2d2e94aa90"
     sha256 catalina:       "8e52da9fa1ad2780c9fd408222a25eec77a7745a77faee1530edd959173392ad"
+    sha256 arm64_linux:    "d360c18d25fd220b0bb7f887ef96014bee0a8766d95076e2e107e0f9a7a97efc"
     sha256 x86_64_linux:   "2ecc188df98ee829da61e43203f0f1d9601eb7a362b4821638ab08bba6f8c2b5"
   end
 

@@ -16,6 +16,7 @@ class Regldg < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "61e9dbff3e2066040078bec8de5d0d5ea9204fe51f77c37b584fc6b514930051"
     sha256 cellar: :any_skip_relocation, big_sur:        "1380e8c5743f9f4e4b42ea800a51081bb9c64046c045ea13d024f5cb57285561"
     sha256 cellar: :any_skip_relocation, catalina:       "da76db370a17393f11d51e58c6a859fbfa9cc1d4a79bd225757c2f130ed016c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2a72e3237dba2e31958acdee06ea43b1b6cf91e8cbca1e17de0a3ae3f1ce9d32"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "10b3273bf707f57edf849eb44f1eb7d86e61082cc899cdffe80aa04c550177fb"
   end
 

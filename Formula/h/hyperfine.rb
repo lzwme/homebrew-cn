@@ -13,6 +13,7 @@ class Hyperfine < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1113b8769a5054fd790e5de5cd95089ef500bcce78694f6263be6f25d521f0c7"
     sha256 cellar: :any_skip_relocation, sonoma:        "4b79040d510fe182211e539164cfa633858ec983b9ae33d62a8f028a18d01a0e"
     sha256 cellar: :any_skip_relocation, ventura:       "f738c61291419374ec425df822cef3486cc86504d42d7a995301b13485303b60"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44571f44266cd6388c86a22fceb6b947d39fe4abebaad9094cc10c163ddea8c2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c758dccd2d2f5fbd7f6a2ae6971534ac1cb0c6f0f6e83ff21741798326c98b52"
   end
 

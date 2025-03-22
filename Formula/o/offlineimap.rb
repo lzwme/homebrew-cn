@@ -16,6 +16,7 @@ class Offlineimap < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8ed6b9597ffe2c607b0098e3bf9b228412dbf51e06ca9046722874d178400131"
     sha256 cellar: :any_skip_relocation, sonoma:        "923fa39061bc987f7b370d44df0bc9af79e2c7fa1682b2cddbe8d102d1b122f4"
     sha256 cellar: :any_skip_relocation, ventura:       "19482c631666b82f1d13bdb2e73dbcc9fd6b97b00c5f0449077ef7b6b24fc1e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb60efdcd9b609890d2aaf97808112b99d4d4f233070f0832cf1c72741d36dd3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5be2017abd6712c16b557a9f64631f9ee673c707bc80d48a79fe74181902bd54"
   end
 

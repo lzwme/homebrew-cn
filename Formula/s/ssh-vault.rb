@@ -12,6 +12,7 @@ class SshVault < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "77942f2f03a4abbd4ebf8c37a1b49052ce08189d35a11598bdaf68205ffb9916"
     sha256 cellar: :any_skip_relocation, sonoma:        "84b37f454c937c319be9c17a7864a965c536a82bcd3bf4f54f718f5a71f4d2e9"
     sha256 cellar: :any_skip_relocation, ventura:       "48d96be53c0be444e4f7c542597095966f57d6c85056e4abe8d575cb5e65af1a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "119c275a1cdf6353f1f4956d58e1a29176e8948a4423f3be72dd1517b35b11e9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "39a78207e70b5c7d52b43e70ef9437b84633eafcd179b0ca73a47254e3d62053"
   end
 

@@ -26,6 +26,7 @@ class R3 < Formula
     sha256 cellar: :any,                 high_sierra:    "5239e5302b1952367f6cdc066e43483de6b0d30fa70f1dcf2e9f03b10983890f"
     sha256 cellar: :any,                 sierra:         "d39c22ae9e69454cc7c205ff0cecc3dd6084a38a1e1742091f55df389e5a8f4a"
     sha256 cellar: :any,                 el_capitan:     "6122bbc3566581f130e54cd563ed69f169598f5ce62d6319e7b5a95b10b802ef"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0d5a55e6af91f035641e99ced2f417050df5bb6d782922cb7270866659fe105d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "36037bda00ae1253fb158f5cdf2619c2194a33a6ddb6598f9fb7901f37928348"
   end
 

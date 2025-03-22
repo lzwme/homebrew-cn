@@ -21,6 +21,7 @@ class Beecrypt < Formula
     sha256 cellar: :any,                 high_sierra:    "75381fee700b8a6659dad5de0ea92df8d2e0bed0e1cd34755c8b3bfc39f99b89"
     sha256 cellar: :any,                 sierra:         "9bb192a3b891680eedbacb38cd9a2daa694cbef4d1db7b844d1809fb5504d660"
     sha256 cellar: :any,                 el_capitan:     "aafed63c6eb816d71151cf20830d76375ef872d2502babfe20f94683b3fcbf33"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "63bbd01ef2d5b95098af62252230803004d064aea3a4ab23bc9dd37a3915b7af"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5940b480e169cfe86dc568bd7a6a527c569797fc7a99155931b0d75798118c7"
   end
 

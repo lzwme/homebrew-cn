@@ -12,6 +12,7 @@ class Simg2img < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7991544d5ea48f9b2ac646a907165e7196d33198213360276bed43f1fd9cd21c"
     sha256 cellar: :any_skip_relocation, sonoma:        "5cb6ebc371ac048e15cf499fc82b8620727669732a0cf9ae522b9a46888e2ac7"
     sha256 cellar: :any_skip_relocation, ventura:       "ef6aec762912ae04441813a968c07bc6463da4df22e479a6745242e811268fa2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f76f92bfcc1a1c8a0aed24f14b1ec062deead3839fa236883435aebb8d54cb83"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7ee989bd69ca55912a71b8317711a5ed08d5341c7ba5d24156abcb53a9a6135"
   end
 

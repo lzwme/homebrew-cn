@@ -11,6 +11,7 @@ class Libkeyfinder < Formula
     sha256 cellar: :any,                 arm64_ventura: "400c2779b10b2a10e3d3e06372aec2c37b348ffb352dd214448b07dc488c7cfb"
     sha256 cellar: :any,                 sonoma:        "0d16cad59170872627fa1b08e4cf237e0758205f9ea62499e89a358d5bc012e3"
     sha256 cellar: :any,                 ventura:       "35794d840b7cae4b2dda6e5f9b26854a0572cdf99c08ef2d5d331c8c5928d818"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c2ce01391bb60dbbadde01920c9ee4d34d9b8e86a894713aba206404c74843c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b50fcc57a84c874798b361edbf9e5ddbb899108ab57144ad31b1cff6582a736"
   end
 

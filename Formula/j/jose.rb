@@ -13,6 +13,7 @@ class Jose < Formula
     sha256 cellar: :any, sonoma:         "8bf8223dfd601b5631333198719e64e9c7b529e4a5d9e86192d181d6c8926f99"
     sha256 cellar: :any, ventura:        "1a670df4a652c8ffd615947a16be8a8867135d4b34e2081744a075c898d6cd79"
     sha256 cellar: :any, monterey:       "4301c9a1347a66f4b8065e0e78725bab058a264f1031c35cf4c92881af350492"
+    sha256               arm64_linux:    "8a7e9b9bcc8ad20d55fb7fd4e393d83ecd51962cadcebd467d357ceade17ddf6"
     sha256               x86_64_linux:   "ebb309c88f0a9cf0d4a2ab3c13015ebecf876991941b9ed6a2de2dbc9f6a7adb"
   end
 

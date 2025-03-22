@@ -18,6 +18,7 @@ class Agedu < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "40c91107a019a0032e48dab8c7a03e9b9e30fb1b566940f09b59ed51055455b2"
     sha256 cellar: :any_skip_relocation, sonoma:        "17e793caa2392c484df501763ba40a368adbd1a093c37558690bb747eb95dd5c"
     sha256 cellar: :any_skip_relocation, ventura:       "5fa2adc1d4d7d12ab15c411da797706c7d7e9179b18408fd4a69ffc00d314ab0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e65d93a8c50262817c010ea8f441dd820485bec296d7fb559a89f1765a88edc3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "00ac7a445b632cb005add4e4d8a5aefeca4a537930de4c2638607ef3a1ed203b"
   end
 

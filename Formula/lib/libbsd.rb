@@ -17,6 +17,7 @@ class Libbsd < Formula
     sha256 cellar: :any,                 arm64_ventura: "3f8b9f7545d170c69e15ba9e24edb7cf7cb98ccda39dd3c8a4ed0d28c75b7bb5"
     sha256 cellar: :any,                 sonoma:        "4fc8e8c21ed393023cae19ff35ec7b5faf7df85c9bc843dafcb7f96b5b1f8537"
     sha256 cellar: :any,                 ventura:       "110fd177f3769fc485f1deff7a88c1f268d588fffcc9c58c0919ce4a3a30b6d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6c6c7d6349ce9b9aab5c6a6db366e4538d0911e4619e14ce51838a683ad3d92"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "31fb2290fe313559d9de741089809ea8d5bc8cffdaf8237f350c6d2f836bba95"
   end
 

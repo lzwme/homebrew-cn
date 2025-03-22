@@ -17,6 +17,7 @@ class Faiss < Formula
     sha256 cellar: :any,                 arm64_ventura: "6ba791214c0285485725e09a62007e049e53797f3987afb356855e1ddcdf664e"
     sha256 cellar: :any,                 sonoma:        "713c401369b088c8030df5205237b19c58e1fa2540ffe3f3f8a1e096379e2a7e"
     sha256 cellar: :any,                 ventura:       "93b405f414c4020646204b7ec71f73192e61ac1e2f9b48631765e8b848232f86"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8113470463e906951448f418eac827c6f128c586d86730442b4e9ef9a82df9e6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c3e64ff3daaf77a1e80de4bb96fbb9d5d9a4eeb04686dffcd087ba175363a57"
   end
 

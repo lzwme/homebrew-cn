@@ -12,6 +12,7 @@ class FishLsp < Formula
     sha256                               arm64_ventura: "31e6c98852b8adeb4ea2ba717edf1d8fe04afc772413abd68b78e4aa142e429f"
     sha256                               sonoma:        "79eee676c4795956f596e2f2ca2799efa538ecd27e88bfd2775c5dca569e9fb9"
     sha256                               ventura:       "e8d973d7d5dbd6662a91c30041f17d4e637cc037dee2d29c7b77654856bf3ae1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "22ab8ec99fe8a6e45a2ffa865798d135a850c793d5c0c251ad92932c494d70b7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "009be9dbb5e8067f447680e1dba278fc7b73d84b222925253e207446487ebe97"
   end
 

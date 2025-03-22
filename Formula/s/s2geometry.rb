@@ -16,6 +16,7 @@ class S2geometry < Formula
     sha256 cellar: :any,                 arm64_ventura: "13d05f9f88513c578e73b063b23f9f6a9df5174531f0217f7ae991677179ad38"
     sha256 cellar: :any,                 sonoma:        "c88b904bd6591a0f13524e1e591eb5f8983f852c753636e7d84a516b9a1549eb"
     sha256 cellar: :any,                 ventura:       "df84f8602037761b8285f3124a9e46648ba0d71bfa24b794ac3a6d740db0454d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "10b96872a76fef5f47caf8bf94d8f92536927ce44256d9c7d216a4593b1903d3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "669ca453ee0a13bf1d08e201a35633dd38bf95844069f46bf61d116640b3f25f"
   end
 

@@ -13,6 +13,7 @@ class Prr < Formula
     sha256 cellar: :any,                 arm64_ventura: "1ae08fc4c7d6625baf22b16df0cf1178efee1f699bfc25c6bb961f3f7560f75e"
     sha256 cellar: :any,                 sonoma:        "ff40fe06171b1047bfadd9391918a99f47090ba502584677085052764ff8f71b"
     sha256 cellar: :any,                 ventura:       "a3bad778d1010031a272e32535c8ed6c9e487aa0587de878350429f5683cb5ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c096eed0ee69a0b6e4e5d7ebd12357edd22d0c2b61d93e3d5b2c2625f216ac9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f78629fe312045ec89e5377a86cf1c165eca5c5ff60114100a111c0ccfe60eef"
   end
 

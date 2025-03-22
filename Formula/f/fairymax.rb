@@ -17,6 +17,7 @@ class Fairymax < Formula
     sha256 sonoma:         "3ee1f7a3b2c6f44bdabd314a88e6c7a4b1556a743700d9c35fb593a928e5c3aa"
     sha256 ventura:        "bbf8bfbf45b9a08f721360217552ed277cb612f0878231b6dfc3b50dd84d6b43"
     sha256 monterey:       "ee474cd1bc1cdbfe55d9a4d2495bf43e8ea91675d23f6d86b583198b6ddfc026"
+    sha256 arm64_linux:    "261a27e8f75585b61e141c52493a26fcc719ff67bf374550a3fe2e3c085e221b"
     sha256 x86_64_linux:   "7c129786c14d2eb245f90af3300ed059040a8057f5318302f024863516b05b43"
   end
 

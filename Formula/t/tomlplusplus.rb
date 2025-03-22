@@ -13,6 +13,7 @@ class Tomlplusplus < Formula
     sha256 cellar: :any,                 sonoma:         "6771afc5d63e1df3d2fd8858c305ef28e97df6cd43808692431f6a84881665c9"
     sha256 cellar: :any,                 ventura:        "a7496d680b31e37abfbb26e8117132a1b9833058d3bda72335ace6dcffcf6277"
     sha256 cellar: :any,                 monterey:       "1f3418dd05029a34c9cf2a64d798c35f7553094aae8c9c702f82b736317d6dc4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "aee73aaa4f42f852a53342e4575e66309e76197eb2fefcaf0385a298562d0e8a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f59dade0a31cf96a7708117ae8b8cb743bfacab47972dcdeb30ee1a8ba84bd5f"
   end
 

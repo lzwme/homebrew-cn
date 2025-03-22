@@ -11,6 +11,7 @@ class Martin < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7944e7a446b7400d4e9b22c2b2fb3a44442b15b8355e7ae5dd7b715cd68abc20"
     sha256 cellar: :any_skip_relocation, sonoma:        "4bc131c8c10971a4b96a7ccab010755887e76c1de2ce70e4b4f76867efa4117f"
     sha256 cellar: :any_skip_relocation, ventura:       "f1f8a0f1024a24c0fc41c625da2cfb12848ab1bb0edb758e88abf1c3a55b8366"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "661fde197ce79e995d0e6c785573079bbd74d166a4bc4b01e6e065e1c03f27b9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ca011be64c545a210d401aef700a3181f06fe34ce280d0cd5aa70f895f8703d"
   end
 

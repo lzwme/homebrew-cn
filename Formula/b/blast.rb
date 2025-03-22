@@ -19,6 +19,7 @@ class Blast < Formula
     sha256 sonoma:         "c11dfa24a469e44b56cd270a532f8a5e341f02b9a41aa07b112d48054d76d901"
     sha256 ventura:        "3aa4433e3e7235441f8418f97c9bac09cbb98f569c008922a0d732344fd95017"
     sha256 monterey:       "946e1a0a2892aea9e93441a147355baa9d3e87626c052f847c7cf37c397e2fb4"
+    sha256 arm64_linux:    "c07e41c4822efda75a3ec410aacc1aac239ed58cf1aec77fb8c410cc46ff3867"
     sha256 x86_64_linux:   "a9fb9b0ec8fdfe89cf32b175ff180d160134d99e542f0329466cf9f7a545139b"
   end
 

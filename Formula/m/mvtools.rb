@@ -14,6 +14,7 @@ class Mvtools < Formula
     sha256 cellar: :any,                 sonoma:         "a6e2de4fb621cceec1a74362de32d27f2353ef18152d6401c170cf7f718470a0"
     sha256 cellar: :any,                 ventura:        "bcd432707884f5ceea9ff50e5280da4c9c6c4dfc1c3c6981ad70d921427dc2dd"
     sha256 cellar: :any,                 monterey:       "d38fc8a9a06f508949d8643396024d630aac374d8ed3e792a23cdea10bb21c48"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ae5a71a3625699b8ea9751865c61a537dba02dd5cd729bbac006761054112746"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b1e2a5e84ec6842466bca0a44a572a45c491e7fd3c30ea5e4125f02d664f04fa"
   end
 

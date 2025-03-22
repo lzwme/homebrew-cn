@@ -12,6 +12,7 @@ class Trurl < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "03f8e7f616a696ad50626c1ac19fca6c621a938949ddc015f9e5f30a7c3a940e"
     sha256 cellar: :any_skip_relocation, sonoma:        "f3ea260353a4fedd1c00eed276c199209113fdd4cb45e7765ae86c91072ebd8c"
     sha256 cellar: :any_skip_relocation, ventura:       "95e22717c9655e8c099e7c71bea14e012ee92374e4cdea6f91790801abe39e3d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "77c225dfb01348c5cd528fe01f6fe93c081a91b24225dad218c8372a2a8944c1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3dee373d99cf5010d37ca908c283018c8ea0265a809c368ccaf8bcd7aae12302"
   end
 

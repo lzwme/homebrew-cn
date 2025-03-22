@@ -19,6 +19,7 @@ class Libmpdclient < Formula
     sha256 cellar: :any,                 sonoma:         "f659f9cc27081184571adaec90ab1ec3e58c6e2f3007ef2df205f4a0d58603c5"
     sha256 cellar: :any,                 ventura:        "a6888a6f14f59dcfbcd73cf9c9ee915d68480fa03bc8c296896ea03e3214bb53"
     sha256 cellar: :any,                 monterey:       "d634d83c7d8e29e6d68ee52000160d86bbd83dec4b59084844dd838e77ae9139"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "701d45480ae1fd5bcbe909509ec75f7ee642ec514c4f5ed3498b5def651f615b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3e56f369d58e7d23eafe3d6d8dcfa0f5eca8daa9c732582f4938ff99abad183"
   end
 

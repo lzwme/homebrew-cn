@@ -11,6 +11,7 @@ class Rtorrent < Formula
     sha256 cellar: :any,                 arm64_ventura: "acc2ee7afe587f3ed97e379cd2ad238af586483d3783571d2a6fea90a2eaaf3d"
     sha256 cellar: :any,                 sonoma:        "48e01478a36cdcdff32d78a2effa418e00b3ce838cdb02b092bdd26729c873ef"
     sha256 cellar: :any,                 ventura:       "5f269d47486ddc79fe24ece2dff35cbe16abd3a3210dc899abd64c682b352fe3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7bca3471c8f52c5ec86eaa6827e7120c87bcbe4a521d3116a8d787cb6aa25bc1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2107b8aeefe50f463128299c7a26549f060c85e788dfdbd4b55020cb8f45f24a"
   end
 

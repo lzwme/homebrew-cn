@@ -20,6 +20,7 @@ class MinimalRacket < Formula
     sha256 arm64_ventura: "1913e3527eeeb09b2a601a406a64500c3d0d31d3d66c1733f542e6f6d2f33a9f"
     sha256 sonoma:        "a318548748b2c74fe576f00623b8c63eb999faf4cbc36aadaea23485ea9e09a7"
     sha256 ventura:       "55e3661eb9f4c4544a4595ba98dc4f6ecb39ac725c04562ee8126855ef5e09ff"
+    sha256 arm64_linux:   "be6ee4a1db72e1a0a33e4aa6562f907f30740f0d529b42f9d15e1be187ce7e54"
     sha256 x86_64_linux:  "907ef000531b5bac63feadcae9ca4e6518709384e088c6f33139bb43b1867575"
   end
 

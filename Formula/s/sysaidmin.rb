@@ -14,6 +14,7 @@ class Sysaidmin < Formula
     sha256 cellar: :any,                 arm64_ventura: "063e6c813e6f8ddd82e88aad47a806b357d1d4b6ed826197ac9d72c738a8b486"
     sha256 cellar: :any,                 sonoma:        "086c36439a4211cd88bd7d4bf8c697896a1f8021027680024d9ed7209a52a42a"
     sha256 cellar: :any,                 ventura:       "b8e4cfd27566802009ea1075accabc9897cd87aedabc733e0927cf91bc02e217"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "93f61c783c1aa305921e22e9da9a4f349d234ea9000b54756eda9c5ff3fef46d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "929b71dfe7a662893ff1ff029b3c5db939318a886db2f7c7ba9c1b3ebc7d42e2"
   end
 

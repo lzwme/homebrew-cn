@@ -11,6 +11,7 @@ class CargoEdit < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "33f4619f40d80eccddbefa65d3c18e5ff3ba014a16e61069bed47b1f489bbe03"
     sha256 cellar: :any_skip_relocation, sonoma:        "5982e547b66d413935c4f4f1b4653ffac3f9c0be7d241a65cf77e155dd285ddb"
     sha256 cellar: :any_skip_relocation, ventura:       "31c7d7b4794cb9d4b156bcf20a1521b611fe721e76705ed52322851aea096470"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f55d7c8d26d94e286720f6e4db4cd0912e07e5e6f65957f284e9b513a163fdf8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cdf2bed1dbf1d0bd008abd5515698cf1e9cf4f4acda2fc9fda912ddca2ba63e9"
   end
 

@@ -19,6 +19,7 @@ class Coccinelle < Formula
     sha256 arm64_ventura: "cd9aeeaa7d72f22a8d9e4e7a211e0c634e045abc7be0ca46dfa5b69b8ae29769"
     sha256 sonoma:        "cd5a22c0db4ce7dbea0ba1b2c3306527f96b5830cdda41099d559faab14b8ef4"
     sha256 ventura:       "032e447251705797000b9e3e86afe2a5da3f96ec1d6d26d4492f9cd6336e8e32"
+    sha256 arm64_linux:   "47bd69526b59084f30deed93c35ee9b4fa81494524489580f1a60cff5028d3a0"
     sha256 x86_64_linux:  "5a7edb3aa8cd3da9381de308c27b703a4026584f259eeed0257c2cacd560df6d"
   end
 

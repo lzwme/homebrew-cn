@@ -14,6 +14,7 @@ class Sceptre < Formula
     sha256 cellar: :any,                 arm64_ventura: "fba571afd5d75ad2931818dc3f10af7388c38adb6d558f0c8f8ed1b68ca656d7"
     sha256 cellar: :any,                 sonoma:        "e39784d5475fbc3e5da31d1b051f32d03f3528b6926f3c25adea66041194794b"
     sha256 cellar: :any,                 ventura:       "a466ca444cac533dd801809af1d94ca15281df39f5ccd74778c3fad4c1e83073"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1125671dba9a1eb7275958f592121d27f0d92e56ebd03e1658bfbf06d0ef6ef"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf625f788f80179ccf39468cba15d2ea7848bf8badc9becc9bf59df94693a82c"
   end
 

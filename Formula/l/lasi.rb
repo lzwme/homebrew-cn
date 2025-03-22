@@ -20,6 +20,7 @@ class Lasi < Formula
     sha256 cellar: :any,                 big_sur:        "d4d9a1f05e4acef822930f62b4dd5b5f87f815e01523eb41b91df079af35b69b"
     sha256 cellar: :any,                 catalina:       "9c9b3d4df3fef9c27ccc60f51583976cfb7093c5ea345c0dced428e0539b7ede"
     sha256 cellar: :any,                 mojave:         "95eed6a78b95300f4b496bdba60b0542c9b66e5ce96ca7c8fcd081e76eebc675"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "70ef82ea6ebb0ad9deea3e12e5a88db9f24653599a256d0577422b2481f8d498"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a81717d41a1ac50a3f35199b82877d62fce7abb1da670c98cd2abb762e2a1b8b"
   end
 

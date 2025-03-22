@@ -25,6 +25,7 @@ class Taplo < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "9c17cc64bb627ac1c19defc9ccc611c4827b69722bd9a906373384ef66bf60ef"
     sha256 cellar: :any_skip_relocation, ventura:        "ccda266bc89ec48f95c5b13f03d93cd1ebd46ad9f19fbbb6a7aa997b6d217e84"
     sha256 cellar: :any_skip_relocation, monterey:       "ce4fb0fa18cc75c449de18061f8f1a43b89628e317e0a8df0474721b37805d0c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "c69561fc93613afbb76a177f8341b90cdcee125f837f4930e71e1c8f9261d3a8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0be45406d8eace4a2e68edecbdc12343573bb1cc68da7caafe71c2218b38448e"
   end
 

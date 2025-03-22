@@ -16,6 +16,7 @@ class Enkits < Formula
     sha256 cellar: :any,                 monterey:       "cfd9a6e5f1c88e091ae948867231254e177bbce5c04acc48a05117dd16ff9ea8"
     sha256 cellar: :any,                 big_sur:        "d8a9e68c02f80beb48beb2f8b39bf12bebb5077682cc623fa25244ce9ca0364f"
     sha256 cellar: :any,                 catalina:       "675a3d006f1afd2efdcb396b178160fbfa64a40799e12d5a58364d6fa468cff7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "3f9abb94fc7c75d3f78c398a59dd19b5a5ed3552d296ccafb7f9e00d04784435"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "fb5764d88d00d8df8970a0253f177b70a4d11535dfcf87a8f98a984cc81d0b1a"
   end
 

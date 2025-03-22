@@ -20,6 +20,7 @@ class Gitslave < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "53cbfbd7d9f86fa6ee98b46356d76db4c952adbf9e3cf913f0a3136da56bcb69"
     sha256 cellar: :any_skip_relocation, sierra:         "3ccd021a4393d137eed5c0dfdfe94b325b6142258a7090ad04f9166039efa52d"
     sha256 cellar: :any_skip_relocation, el_capitan:     "e556bf6f7ddfa3e9f6a9b726d80a35404270c96e36ada122fd16d8946394aaa6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "bc837e2e6f74e31b6eff215a23896fed573675966f0ed4c325da058d86484dd6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d0241293740ef38cd9f22206e021d3a7ef2be7cdb505320ca904b728c321ee80"
   end
 

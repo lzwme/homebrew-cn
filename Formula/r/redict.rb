@@ -12,6 +12,7 @@ class Redict < Formula
     sha256 cellar: :any,                 arm64_ventura: "4cce348e146a06b8d0c37acaca2145c757fb9d06e82d9c4d6e795535b6cd8612"
     sha256 cellar: :any,                 sonoma:        "2b7de6bb7792f2a638a7f4eb451b2c707edd24f86c64cb7a684ce0c417728bbc"
     sha256 cellar: :any,                 ventura:       "3b40b26736ebb37ede153bae2781814dfc3483ab1d87453faf6ee54d0780e4b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "778a1bc577db6aa48e02cfb3101921e87927827597aa030c37736726aa60c1e3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f263225a18773c4485583261e0d06cb6b7eac9b776713b11c6d58eba584ee2dd"
   end
 

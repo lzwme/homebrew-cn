@@ -12,6 +12,7 @@ class Igraph < Formula
     sha256 cellar: :any,                 arm64_ventura: "405a45f59e91eb93a06222d9b3bb4d6dbddea521acb0c302362fb8507d91055c"
     sha256 cellar: :any,                 sonoma:        "aed39268ccb1453bfb2bdc91bd6324cb84cb97a5d8510f63f1a8969579594d0f"
     sha256 cellar: :any,                 ventura:       "a5d07f29fc614f21980859db3f9b3557972033c7f2a64284253f7213abf5d4f0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3156331b8e0752a21a710c5c64b8e0894dadc6d80083e56409f39195879a05a7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc2fe384bb82430e1a4671ba9ff56d2a2579250e3b2ab3748b49eb6a2b654635"
   end
 

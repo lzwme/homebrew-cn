@@ -11,6 +11,7 @@ class ChooseRust < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8bf5781d97c33bfbff80f26fe6816e931b3e3e95517f827f67946fcc02325321"
     sha256 cellar: :any_skip_relocation, sonoma:        "a95a7d6cd3898ea70ce60d04af20ede743fd8a77cb200ae68616dd5fbe82b300"
     sha256 cellar: :any_skip_relocation, ventura:       "1843f24e22d57a1eb64fb96ce845cdad40e9c84d5199cee8002c3aa2ca0fe11a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a64165c7881c9583a85b19fc3074d2209fd0a1db3e27cb1a2a84971760aeeccc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e95d29a0116297a407d108626121d3be663f3c856345a279f3e5a0f17887834d"
   end
 

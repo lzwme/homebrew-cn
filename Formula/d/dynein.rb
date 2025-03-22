@@ -14,6 +14,7 @@ class Dynein < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "d1782320d190d2fb194376ef10d4a6e9a96cbabf9050deb4e6c106aff8abfde8"
     sha256 cellar: :any_skip_relocation, ventura:        "0ef1635233b03ee3787239236a24581bd084e6939c15989053abd01e58d45ef1"
     sha256 cellar: :any_skip_relocation, monterey:       "8624ef8a79a41026c00810bb8b36ed4bafb22217ab201a3239b41584f7846e13"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "548a00844b2c9da5358bd2d719d58fd045d9cc0d3fbb3b2306185f8449e4cbb7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c5842684aeeca93f1a9869327cb4f41a75c708ab354c47a2e124063cd8108ea8"
   end
 

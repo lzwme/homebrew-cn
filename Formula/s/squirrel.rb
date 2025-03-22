@@ -25,6 +25,7 @@ class Squirrel < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "c8822588938ec4e83897e6f883ccfad6f39ae6fff7279ea35e988a39c2da4c10"
     sha256 cellar: :any_skip_relocation, big_sur:        "bb230ed7a9aa535e40bbe4f127cd6d4325fed6be46b4a4dae58c39d01b169666"
     sha256 cellar: :any_skip_relocation, catalina:       "749bb90e798990994fa79d8846661f95fa7e150d3606b889c0351697c82add62"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "6b1ea68a161e998f86c3b3e8a4111eea54037fed0a62a08afe6b413de78ebf79"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "747575d9f05e9496d0eecf8ea4d6db59711396eac5feca1ae2f61794a53a6a64"
   end
 

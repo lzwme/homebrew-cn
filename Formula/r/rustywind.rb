@@ -12,6 +12,7 @@ class Rustywind < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "440358b83270c570a29ac7ec98b95ea0f6a8635c0612644661d6d6c90efe4ae0"
     sha256 cellar: :any_skip_relocation, sonoma:        "f6875be6f7d2da731a802a1cab0080ec1f4fbdc0d9c647830363702ca43769fc"
     sha256 cellar: :any_skip_relocation, ventura:       "98ff021f7a53e32a4bf2eb01f6deface7b30d3bbbfc18848253a3e7e8039643d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b9daabcd8287bc970c38b2300894a05844ea64b5a403991e7472eb3c9002a25"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "aaa846b03600f391088b6bcaeebb11b9e9bde7ce2eae48b84ce73a34295c5fa5"
   end
 

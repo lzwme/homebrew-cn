@@ -11,6 +11,7 @@ class Liblc3 < Formula
     sha256 cellar: :any,                 arm64_ventura: "00fa4c793aaa4ccea249c31fab37842e72d5564d581a2b022bde1727ef2c4830"
     sha256 cellar: :any,                 sonoma:        "e0e1764a4d3c5d39c850c2289748cb18789a0f06e4264d88b119f5aebb83bba2"
     sha256 cellar: :any,                 ventura:       "b8c8cb040fcc528c0224dff4e3e8e6a9e016639187ee365d66679afed1dd3458"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6377a03378ccbac1bc3dfebd170453ef1e1a1cc6a00d403e226bca898a0d29b7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f6f3cff68a823732f72eca5847e4774b34c9d545b1eae5838f4b5cb0b73fc53"
   end
 

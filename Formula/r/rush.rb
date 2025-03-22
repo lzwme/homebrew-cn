@@ -14,6 +14,7 @@ class Rush < Formula
     sha256 sonoma:         "47ccedc93f002ed994d2652677684e49c0ff84c6d416f70aa8e044a90cfb85e5"
     sha256 ventura:        "26c5ec15c485d6354de3eb4c340fe696ee30acd720049df938eeda46485bfd3b"
     sha256 monterey:       "daae369d6a80b9c625ba8decada43cfa076ca95db9dedc8d2ffb97694cc76b14"
+    sha256 arm64_linux:    "b72e4b69ed5653be379a5a3d06f14b504c3d256835381a080805187facd76e61"
     sha256 x86_64_linux:   "2baf1eb74c5f83444259df516ed8983cc827e15a1c70827690ff0349bb5f7cbd"
   end
 

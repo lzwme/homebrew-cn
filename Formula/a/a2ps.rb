@@ -14,6 +14,7 @@ class A2ps < Formula
     sha256 sonoma:         "010728f54b885a9c8697a81b3602427ccabb10da153d0d74a25526a8144a0e1c"
     sha256 ventura:        "4b2439ff98f5db6e8c4e3894ba0ab09a4e38e7404a7db950b42de46afeddc62a"
     sha256 monterey:       "361d7e19f0811037af034bb5a7e582c0cea350cc5a9754f0d05e0094faadf5bb"
+    sha256 arm64_linux:    "67d56e9aed857b4f5d4110820aa4ba50d0d5c6378157ee3a791a5a3a1781947c"
     sha256 x86_64_linux:   "6df41a07d6bd52713e700a83a2994c5955b305ee068b73c50e4786cbb8213dae"
   end
 

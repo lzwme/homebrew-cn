@@ -17,6 +17,7 @@ class Plzip < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "bedd1525dd0a949b298fc354e05ce35f3c08bc9b8edb9778ccc9186e838d0624"
     sha256 cellar: :any_skip_relocation, sonoma:        "3a6fa3ffd911737b50041ffbede6cf6d39cf54608be10093c755b28dae1d7121"
     sha256 cellar: :any_skip_relocation, ventura:       "21bed828b80d4dd6b40a0e75b236996f334ab8b76f92155192b3ea984410df6e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d600a14782d931755a8998785a5b284296bbee80a13f76ebfadbbf69c0cf9ddb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a35aab3bc41f9112cd01216df0902af5b126cdbe340c91396acdbf006506fe3d"
   end
 

@@ -27,6 +27,7 @@ class Png2ico < Formula
     sha256 cellar: :any,                 high_sierra:    "986b5a9efe66ddeec63f2f523a36214f0bbf3ce43a9697c83adb3c237912f38b"
     sha256 cellar: :any,                 sierra:         "63d789e767bf5fdfd3b26102441a7331531d83215c73fa61ae2b548ecf08ea74"
     sha256 cellar: :any,                 el_capitan:     "6b3b8e132ff06ed21308e73e1a30a3b74a593092e56dc94693c27ae4d03add09"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7a6b840c65addf3f2e5d113ac2b15abcf50adace8b5baf740f4066deeea4f5ec"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "52b7eb707f96b3b8526ca15ce86c442247f0e4c34112ccef3ed22fe6cafb5a3b"
   end
 

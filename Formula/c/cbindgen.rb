@@ -19,6 +19,7 @@ class Cbindgen < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8dab680300f1ee305201074750750b01c9d52c5f433d060f95bdb370bdd4f872"
     sha256 cellar: :any_skip_relocation, sonoma:        "7be18e30d681d36db517850dbaf464fa075d2241d70b0440c537a2e5ad9eed35"
     sha256 cellar: :any_skip_relocation, ventura:       "7ea8cc561d6dc567fde59dda56db68960fa6c53c4834101771be6126b41cfc3b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c2be9e6d1272833620392ca72228d40e47fb07e6fe18ea282be05d3e68edb194"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdc85b8b19a708a8ab78b4650398ad16c6b4e3faf949a8e2164e9d3eeba70f93"
   end
 

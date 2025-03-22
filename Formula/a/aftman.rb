@@ -19,6 +19,7 @@ class Aftman < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "fdf56dee4a49f7c3e0038b48b7dc2520dc94882bc7a2e5ce554bc4cc89ce2c7e"
     sha256 cellar: :any_skip_relocation, ventura:        "707ab252c150e4208055d2398d6d7bf29ca1309d329128a2f3303ba45011717c"
     sha256 cellar: :any_skip_relocation, monterey:       "9afea6436f083ac4beca2dd9e1321490a7768a5f0f784a0fcacd6f7a813c32a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d9457a79cb80b1423563f8d54ffcf84e2b765189b526f029437841c2f2abe335"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1e8943e04ce29ca295996d3acacb141d87504a59374aa2da2e7e15a453bbe5a9"
   end
 

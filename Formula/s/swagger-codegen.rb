@@ -13,6 +13,7 @@ class SwaggerCodegen < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "59b7ec0c1577ebfebe2592c68e3cc171e5fd22ece000dff9ef13361a6497a30c"
     sha256 cellar: :any_skip_relocation, sonoma:        "4b067becfaa888349fa23ebe558c5da2069a5f0a55f2700c28f7705b2c8a722f"
     sha256 cellar: :any_skip_relocation, ventura:       "3f6c17cc526619ad01b8aee9e62c450c78976a7209da69a52a02fab00bd51b84"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e01b9efe675d920ba0cc1adbc59aa0356efbd26cb1f6fde3c12ae3d5147fa0bc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "73da380fb2738d1209a443ba96b4d81d5a2c90f7a93940907c2e06d91b11e907"
   end
 

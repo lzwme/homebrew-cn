@@ -21,6 +21,7 @@ class GhcAT910 < Formula
     sha256 cellar: :any,                 arm64_ventura: "7873d62ffe85f56f79253dd01207e5d2ff9d517327908d24df0cddf0507a894d"
     sha256 cellar: :any,                 sonoma:        "468cb6b1d315ee7666776732ff81810ef758fafab73cb9e4625f2eae4eec6b53"
     sha256 cellar: :any,                 ventura:       "bdb6eb7758ff9cbe21ddd04b686adde591cccf4cc783f61f6dbd748d1d717d51"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "594c60e3a2ad54c4b992c26e122f13b6ebe454583bb9cda468fc3896263feb51"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7094724850adb80577444deb76d26cd865c71f45d6afaae2f92cb9809cf7fd76"
   end
 

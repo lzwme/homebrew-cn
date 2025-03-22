@@ -36,6 +36,7 @@ class Tectonic < Formula
     sha256 cellar: :any,                 arm64_ventura: "f32891c5831052e3bb42bc8fb0e16b03bd9c4d7589c352f5aaf44d75f025b23c"
     sha256 cellar: :any,                 sonoma:        "fa701da13aceb845275ab33d2be416e8e920de049200aa24f3b59f0ece64e7df"
     sha256 cellar: :any,                 ventura:       "56ce8b708073b61d53ad803ac2b7977023b3361db901051e314387d15f1ed766"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9503c0b5a4f9746927ca7d4773284b0880289a9197d4512034bd0b7516d313b5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "729380f2cf1ff68094a032dc5c4dc21fcbfc70dba58bbf2c597b1b2d675fcbc3"
   end
 

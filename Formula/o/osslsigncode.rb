@@ -13,6 +13,7 @@ class Osslsigncode < Formula
     sha256 cellar: :any,                 sonoma:         "6278aff15a055a409edbc6aa4a69176befc7777325b3980afc58cd71737cf11a"
     sha256 cellar: :any,                 ventura:        "c09dfe8cb41d3af6327fb73695a7a5691c799b36f09331454b21a23e0e04ffbb"
     sha256 cellar: :any,                 monterey:       "a329dc07e46683d428cd6f8d9fe9b2bd6c02fc03b3f5c86dfbed1e5fdb244913"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "16aed1f489966abf85c8f7390840d8c2d487d1ee95026da0ca95085809b0f87a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e35630485849326c73bc6135118ccc391fdef8afd579371432207dd0aaec5f05"
   end
 

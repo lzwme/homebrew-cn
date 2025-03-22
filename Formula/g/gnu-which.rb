@@ -13,6 +13,7 @@ class GnuWhich < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "17a52b327ea1d2a30313c98f73105943f22c6307aa29ced85558440c679fbcc6"
     sha256 cellar: :any_skip_relocation, sonoma:        "1a0d51cf354ef62e06eaeaf5a6fe4a76f655ba084025382dbf6405a35feacc42"
     sha256 cellar: :any_skip_relocation, ventura:       "c6ec0fe0903e5d08057045a2d4e99a1a6b934ae0df8c530fb06571cdb98084ed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "665706e5c4562d4a250889303098d4773153ade7d14609fdcf317966cc50080c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "81baea2942f92fa1c2cfa15adc71aa2d9e845c48f4339586cc78985327b53666"
   end
 

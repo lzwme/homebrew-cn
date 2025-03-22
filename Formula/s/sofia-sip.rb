@@ -13,6 +13,7 @@ class SofiaSip < Formula
     sha256 cellar: :any,                 sonoma:         "7ffb64cc2545893647c8ad56787b54ab291d062905531d3464c1c6b44178ca42"
     sha256 cellar: :any,                 ventura:        "2bcd26ac1b5a44ac629ae500e8663293ab5f83057c8962c5658c5dd9e844e9b0"
     sha256 cellar: :any,                 monterey:       "97692b921a654bc7844dbd80703b57cc93635b386514f73540cc03404381692e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "e89732c82a0b6672d3e7a6be83c42ccfc3544f6011b13265ff4f25ceb8fa0670"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a5efd568019ef76ba684ed725b29f16e0a70f1fd08396b8dfd8660c7fd0367f8"
   end
 

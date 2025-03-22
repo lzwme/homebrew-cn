@@ -17,6 +17,7 @@ class Nopoll < Formula
     sha256 cellar: :any,                 arm64_ventura: "3e06f4dfc41ee91d605dbf475fc05e21949926bee077814db7a112675064bc90"
     sha256 cellar: :any,                 sonoma:        "e975ca89eb4c551a44f51e0a18a32f284f37378a0c4b12241aa0453b2379d712"
     sha256 cellar: :any,                 ventura:       "6bb22066512d52292136ca4639e83d7b8598d0b076fb8b722ee80c3b0e7ce3a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b5d3b4783e75e686b85236223815cfce6d9afce02319002ecd56fae81c4146b1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "233ad48b7c725a46695aa3b60261610281ffd81cb010f58fd089b2bd0c4fbbd1"
   end
 

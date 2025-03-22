@@ -13,6 +13,7 @@ class Bedtools < Formula
     sha256 cellar: :any,                 sonoma:         "99cb51ae62edfdd1f194fc1baf75c1133e061db3ca260f0699967ab421d5b015"
     sha256 cellar: :any,                 ventura:        "651f6403baaf21f1a9d3ee1735820d034896e6bbe74fa8c8e0ce0723ecbe3535"
     sha256 cellar: :any,                 monterey:       "4637c3326795fef57d614b6107fa563a767ecd779d32da27103a6f92e7e1f286"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "6f3ba51c86b51817350e0d7cb983c769d4d4a3e739cd7e502635d090e9681739"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "16348989a791c74aa29f518072b2e696bca7c5818806dfae80ec2bec341d0af1"
   end
 

@@ -21,6 +21,7 @@ class IncludeWhatYouUse < Formula
     sha256                               arm64_ventura: "b472dba9655f4c7507e030920a6685f43df1fb83ef579963566ed68eb631d2f1"
     sha256                               sonoma:        "18e5e4c104cf60277ed64ef2684a405cb01e8819238d2e7562da22708ac7cdce"
     sha256                               ventura:       "17769bac14163c7ad46d30dafa09fbbd20b5f5f38ccf0c384b0dc2ebc29d1de9"
+    sha256                               arm64_linux:   "277106ad842cd17bf56d17bab47a5de7edc17ab602cf257aa4dc1af226eaf5b0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfdcef7a0aa4aeeefeb10637aba7bcb3ab5c620671bbefd4f0eb35cc1a0057c6"
   end
 

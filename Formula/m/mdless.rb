@@ -11,6 +11,7 @@ class Mdless < Formula
     sha256 cellar: :any,                 arm64_ventura: "8aebcf8444a2e122088dd17ad8dd04f21cb2602ea293e2cfe912bfbf0e607058"
     sha256 cellar: :any,                 sonoma:        "0f6af97b160b52af2d7fb56c21cf03c293b4647dfbc6aead5108169dbd5738cd"
     sha256 cellar: :any,                 ventura:       "43e2df37cbce0b19746c9dce38b9f511ea97f072f55a334d108371ad6b41886c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "93995b8cb54a6b30e38a434dd6c252d6d6b27d3463738db5a719091cc95a37db"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f025b184eef27d126b196a0821b15f966c0e089b210ea45e1b03e034049b9a11"
   end
 

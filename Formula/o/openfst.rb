@@ -16,6 +16,7 @@ class Openfst < Formula
     sha256 cellar: :any,                 arm64_ventura: "b6111a87dbce7299b5bb7616c4886df0df105ff5f5dbad107312953017092fcc"
     sha256 cellar: :any,                 sonoma:        "053608b3f203e6d338d124bd7efbb4abaccaef09541710ada922e714e924ed45"
     sha256 cellar: :any,                 ventura:       "ee4d24be7b6490cbe241d86a4df0e3c9274e175ee9bac9ae5df410de8f0dff00"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0fba19fbd00295bf3f4c8980c5f1cc7c7848eae6d22d7bc02432836f299f17db"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e99e7fd868352d8f1956c5e2721ec89dbe064c39018c680d19e2ddaab3bb787"
   end
 

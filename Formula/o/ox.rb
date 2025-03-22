@@ -12,6 +12,7 @@ class Ox < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "dc6871adc3a09c2ba19334b0fdcaae54ea1eae9d6631763577a613d025385379"
     sha256 cellar: :any_skip_relocation, sonoma:        "c468c1a3b8020dcc6a5eed5e715c64ed474501016fa48d205a1aa0e8fadadb32"
     sha256 cellar: :any_skip_relocation, ventura:       "9fd801439a60c7ce8bbcaa72b7c2f69c5fc7d25f58fe392677f07aab9a7ab6c0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "31fb3bc58c5857cc0aadcef6a5601cc0b4b7bb7ea2fd47b5ca12d3739d044859"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f56fa97255719ee87aebf29c4ba0b7afdc917e399dd6dcc3788e088699136de9"
   end
 

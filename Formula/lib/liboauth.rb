@@ -18,6 +18,7 @@ class Liboauth < Formula
     sha256 cellar: :any,                 ventura:        "c428f77d8ce2e3ee3517782cfffcc442d6f136a98feaf969b9f0bc589a752ec0"
     sha256 cellar: :any,                 monterey:       "1ca737e530881673e82ccc350dfc769d1e30d6db94f5b77d2d2261216003f539"
     sha256 cellar: :any,                 big_sur:        "2a00f8fb82450e4acfec03f1e91dc74196ecf0150047b64a4357d6ac716d279c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d590a572f38268fe5b4a9ec90877b436030fe6ef35564681bd8af45f15a66186"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0177a7a4378d03aa25b46b4bc37bc12b777438fa177ef15b0dd16406cfad40ef"
   end
 

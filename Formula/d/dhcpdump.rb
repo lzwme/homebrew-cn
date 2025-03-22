@@ -18,6 +18,7 @@ class Dhcpdump < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "b28f0b506d481178f9cd43f93b6ef13457b00d75a110424e1f1745c3de14c57d"
     sha256 cellar: :any_skip_relocation, ventura:        "72f552b14bfaec81d3210ae49740a90bac27dbb2fdc1e262113e5a39588bb475"
     sha256 cellar: :any_skip_relocation, monterey:       "e43375872f07ce0af9ac1eb2e8a32e2adc40167ca60a7f1f0ebcc627d6e06d1c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "e2135302ac321b225f8804429896d25dda7ed4458fec6c879aca9c1465dc877b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7f3b1f52c2fff495c9471cd218859780da46406aaea23d148b34220d8833e5bd"
   end
 

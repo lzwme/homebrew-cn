@@ -20,6 +20,7 @@ class Ddd < Formula
     sha256 sonoma:         "19e15c98f1732a8c5032734ecdab5f4aec373ef3991bc65c7ce4e5f81b526861"
     sha256 ventura:        "47ff49d7888461a987aee0ae62749dc96d6c44c6825f09a61d637f13cd736198"
     sha256 monterey:       "33047c998d6856a9425df4fa92fd9f3fdfe7717921def4bb814ae82ceb928927"
+    sha256 arm64_linux:    "dc505cec52e34353405b1d359a97aa65f7b06a89cbba7be62ce119bd17c6d24d"
     sha256 x86_64_linux:   "52266be4e6e825db9c2941e2ab44002d1d3707b379e0339d3ddf12af18f81ad6"
   end
 

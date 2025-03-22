@@ -26,6 +26,7 @@ class Dnstop < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "4d6b9a2f15e3165ccf63b67752cd4f0d21b128f64b5f22beb2c2b0657e082709"
     sha256 cellar: :any_skip_relocation, sierra:         "dc995c2857fdd5093ae753844ce5c45ed00bae59184528a184e0313b25882802"
     sha256 cellar: :any_skip_relocation, el_capitan:     "1d5b1ad056475ce9a27f40b48cbbf58421e4eb66fd134ac318413de2d025db66"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "67a05c4b6fd3fd1f3008513be83d42d8d1c93d8b9cea2e747a909a5a9d2bb938"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6d8b4de6f9441442ff6c59476101ebf5fbcf6073882c971556fa566afda211bd"
   end
 

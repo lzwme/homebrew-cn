@@ -13,6 +13,7 @@ class CucumberCpp < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "83b0a4ebd24369723ca462379eec507069b69745b0162aaf8e52fbd191912f8b"
     sha256 cellar: :any_skip_relocation, sonoma:        "552c285dcbfdfeeeee4918504197d55608bcdd7a6f545c7b128b9a3ec4de66bd"
     sha256 cellar: :any_skip_relocation, ventura:       "f174b4c1f7188ec9cbfa63d42a7858b5b6055d46b4e8ef9e01603aa6a8f504a9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b10926942356d39fb0ec167e488e3d170a265824e3afee947643ab71b8be4bd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fdfd1f3eb9ae326c0490d8f17f4b68adebd5c48382bae283de89b9bb835b994"
   end
 

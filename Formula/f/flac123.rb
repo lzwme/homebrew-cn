@@ -12,6 +12,7 @@ class Flac123 < Formula
     sha256 cellar: :any,                 arm64_ventura: "81c798f14de5a0de0d9337f9c01416060d2a3cd8252a8a804dfdd15f0783ff69"
     sha256 cellar: :any,                 sonoma:        "6a11b91f03fd6601ce00e41b8835d2635a428ce78bdf1dce23db3b4b79da9365"
     sha256 cellar: :any,                 ventura:       "ed0839c5d9d6ba86b97c1d1482f5a3371c32a41c88f62cd42fe7526ba6ea56f7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "782a7b74ca5a89826daf8870300d177f0c982f519a7c8f577ec331c4604b3c13"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3afd087ed1f308b93681775fc2f35572d49156534cfba450cc3aaef4b0d10885"
   end
 

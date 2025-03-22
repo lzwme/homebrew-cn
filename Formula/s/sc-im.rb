@@ -13,6 +13,7 @@ class ScIm < Formula
     sha256 arm64_ventura: "7419a6248701f564300ad22cf8e9d87ac7c7f75d1939d4e183138520195626d9"
     sha256 sonoma:        "b19b60c2f87b2336cea127ba29db2cb5f70d3a8e92668fb644ac8dff9498f823"
     sha256 ventura:       "6ee7a1f9f6c476e75d0a9fb92cd43bf9cc38597f564d11e661a58d60c3d8caf8"
+    sha256 arm64_linux:   "c86d7a9f7c918f57c94a66c02fea78080806fadcdcc82af2e53a980b77261a63"
     sha256 x86_64_linux:  "07d4fcffb74ed6dcbfdc2717431de50fdd5873de8d0edbb0514e52a0454e4674"
   end
 

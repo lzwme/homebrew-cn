@@ -12,6 +12,7 @@ class Mprocs < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c41ca551b20bfe19729407fab771d7271e0ae382ece946d248fbdf364f931411"
     sha256 cellar: :any_skip_relocation, sonoma:        "9c3e50b429cef4068997ce7c9b18711ca4e6df1be6bf0e59ee97af3ccb202661"
     sha256 cellar: :any_skip_relocation, ventura:       "f82c17acb72bc3ffc783ee1488084ddee1ce98f7920e8333609f3be868d1c8b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "13e4cd9a9f153a7a8cc3bbd92e7d6c9d8cccd391c2b6b1364c19058915108cf8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfa1c70b7654a7950eb5bc057cdb700ace216b46ad0f903d771ab2535f1cd2c4"
   end
 

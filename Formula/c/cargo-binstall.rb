@@ -20,6 +20,7 @@ class CargoBinstall < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "39c3d0f1e384d5f7ada53baa88024ddca401dee48131831190144bece0cec381"
     sha256 cellar: :any_skip_relocation, sonoma:        "5e841566128ac9a149b2881df4d2f8e2dbfc962544438be8cf4fa95670502c5c"
     sha256 cellar: :any_skip_relocation, ventura:       "45a995f8707fe91ee5e81b557919d9ad9c26b69fb351b842fb83ac66c821ff4f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "803c78da774d2f0a4beb37728c221e09ad023f3fa02f3112e20daacdb2f049ff"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "892c7fd2b3bfd410655e65e4474f63e3dd83a20584eaa2fd56cc7d3e24584400"
   end
 

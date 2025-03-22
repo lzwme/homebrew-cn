@@ -14,6 +14,7 @@ class Teller < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "1e8cec0e0438ed0d2fd78f55732c0e25817a5f5b29abec395feab13ed7064ce4"
     sha256 cellar: :any_skip_relocation, ventura:        "ef538ec71a01c3d9c720834548d1d1ef69c188e3b35af336aa929cdbcc410dcf"
     sha256 cellar: :any_skip_relocation, monterey:       "6a2c68920ddfa793d15b9929c3776bdf57dae94c1bba39a3ecc98b469971fdf2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "732e1ec643cafa019abff281687553156cb58b234b896f4294617137b37c21bc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5a575efbb6d5fc01d43cd7ba2f6df6c0fc121e696b7b176a8b309c55b955503"
   end
 

@@ -16,6 +16,7 @@ class Liboqs < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "6164c5d38336d5c42b6aaa13f684e9e1f038711e664dbf97cfef836486d77884"
     sha256 cellar: :any_skip_relocation, sonoma:        "096ad57418c538b5e9f07d3ce1345ce710d53fcb189d7b21e103f1787048f984"
     sha256 cellar: :any_skip_relocation, ventura:       "d85399bccbdd4e7bcb10a4cee742151912c02fc4f02f6a34a5e040eb843c5498"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "895e821d5b8f1a1d1cd5a4281afbe8fdecd238be2bb47b1c4dad6d2fa99779fa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f8a5388084f775a73d08949df3800d9d16b07b12702c084586b079cc1664b23"
   end
 

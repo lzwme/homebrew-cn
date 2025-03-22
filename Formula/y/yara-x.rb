@@ -17,6 +17,7 @@ class YaraX < Formula
     sha256 cellar: :any,                 arm64_ventura: "d6ef649b8374ede038e59cfba663423554aece8b93c6c52385b95bf6dfe55516"
     sha256 cellar: :any,                 sonoma:        "5e21edf6c3b75091b1da231946432ea864955298b6428b3042444b9cd445486e"
     sha256 cellar: :any,                 ventura:       "62c27f520179bcd673b76e89853eccee3b71db4bf118d82a22a01e0156c25a7a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f74bdfae7d10e72b0a63ac041fbcd03cea83cdfea6cb67709d4da54c383842e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "64889d8e0020ce4dfa9417dabb1006c97c6010e821f686d5f29bc7a62482b66c"
   end
 

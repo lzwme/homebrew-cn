@@ -14,6 +14,7 @@ class Hatari < Formula
     sha256 cellar: :any,                 sonoma:         "107fc887028fe359dc50681b60dca25b27bb498d333167874e021e4f8dc0f0b1"
     sha256 cellar: :any,                 ventura:        "0fc52a934a1d10afabf313998aadb3257cf1043d5232057c9b42714f9417b59a"
     sha256 cellar: :any,                 monterey:       "b3691b1718cea74b9fd1c859aaa7bae64732fb9d47ccc55ba8851628ee66e3c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "de32a18236e652b50c7653df4f9accaf247f24c36577c96bec0af61ce2c4a8ca"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c3a872e656f3ca0cf1d3db8447e745c81b8ad652580f0481e571deded52351f3"
   end
 

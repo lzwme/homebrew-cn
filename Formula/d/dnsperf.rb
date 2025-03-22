@@ -18,6 +18,7 @@ class Dnsperf < Formula
     sha256 cellar: :any,                 sonoma:         "4b575d306d9cb921ac4f1dd85fcb0d565e4544ea9a2e9215dac68725f6a0e630"
     sha256 cellar: :any,                 ventura:        "b9f8c954172caadcfe59c81730f835290a6a8327c5f4e4785c353f839cf5cef1"
     sha256 cellar: :any,                 monterey:       "fb4ebe4a3f3149b67cfd098d51b04db2fe8bd3bf88e827bb9c97d266ee150300"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d10da227a6151f14a8d411e714a5d3ff8fabc3ed720c067f6a569ae215e8a2d2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "20a13780c6a708fea6bc212705ba13d38756d63a487f908637bb159651f5c070"
   end
 

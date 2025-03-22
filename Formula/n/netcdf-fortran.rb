@@ -12,6 +12,7 @@ class NetcdfFortran < Formula
     sha256 cellar: :any,                 arm64_ventura: "ae2c7a62ac4c6c236ae8f5b641346c9f4472018c1c775370da955b94fe28ca0a"
     sha256 cellar: :any,                 sonoma:        "0cb1829fd3a86a2a018b517bb42360a1390e34d1112e65168a6317b249c0bcad"
     sha256 cellar: :any,                 ventura:       "ac11a65a396284b3b834bfe7e76ef7d55dd3c673e8aa53ddcc161872d13626d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2ad7c39d6eb602d059b3b16d1b5f6595fe0eee626eb31cbe6c182fa4f7993b7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "65cb973811a732c8ebe5f1d8bebe7210495534c4e5ebec18003718c6347dddd5"
   end
 

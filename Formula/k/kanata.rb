@@ -12,6 +12,7 @@ class Kanata < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "592dee4c83f875cb32c43f201e5e02995b495e28d28994eaa9548aea775fe89b"
     sha256 cellar: :any_skip_relocation, sonoma:        "d938a6ac03b75093645f7bbe5caa347133bf916ddc9ff66514caa31601560e72"
     sha256 cellar: :any_skip_relocation, ventura:       "e325b26295ce7c069579b44bc6e429bdaaa14c38345b9e1f6401d3743f4d2747"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2ce466141d3f455c8ea2f09b38cd6bec2e4ce720ff4ca03cd1a78126c50c80c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7ec4ff4482e231762fbdb25f2f9beb751e00a3ccd09f24f6de701200c8cc2e0"
   end
 

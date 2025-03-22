@@ -9,6 +9,7 @@ class Openslp < Formula
     rebuild 1
     sha256 sonoma:       "9f8b91c18c4a8e0738618531ad35f6068daa27cb6069362510622592113aada5"
     sha256 ventura:      "517653bc27072c320f9159e57040c51d5ba0b4ea8b234bb5af9af55a9aea9f42"
+    sha256 arm64_linux:  "7f3de41c36959025ce20d867cfa90c065fba46d872b055d0b7c2a2e6a631b44d"
     sha256 x86_64_linux: "aa1988503f1e9688dfd80e0331392ab29a053e62197b60653e933ee1bc681efb"
   end
 

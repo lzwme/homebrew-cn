@@ -19,6 +19,7 @@ class Chainhook < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "2e99210c74407049e8ea75816c0fb3b1ca111ca056c2f95ee923c8202dedb7cc"
     sha256 cellar: :any_skip_relocation, ventura:        "2d5f0d818bd4abb96efa88b7200ea9f3532169eca622e07f61d50a9fc7e4f92a"
     sha256 cellar: :any_skip_relocation, monterey:       "213dea4d00349141619d2682bee6191d18aaeeb5aa99340599f54dab75abb521"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "10d4381a6b4bc83b5f1ef41fd88c6c1d9da90e820e95d9f86c2a25b87c1a9666"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1baa3948cbd9735f9249af29ff40e21d005185c70dd0f2a023cc733e298505f3"
   end
 

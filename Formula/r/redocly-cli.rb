@@ -12,6 +12,7 @@ class RedoclyCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d3cc99dc249a47986396eb5c648e4e6d4fc6a6671ed9e9f7d1b98185bb6fbae6"
     sha256 cellar: :any_skip_relocation, sonoma:        "daedfeec2f7d3a2caf47ef6f73133d789c416003d0ef3c64bd46668325203ccd"
     sha256 cellar: :any_skip_relocation, ventura:       "daedfeec2f7d3a2caf47ef6f73133d789c416003d0ef3c64bd46668325203ccd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c84dacf975208a011aa343d542e0aaa6f3bbc00643f6e86b570c0b4f9c494799"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3cc99dc249a47986396eb5c648e4e6d4fc6a6671ed9e9f7d1b98185bb6fbae6"
   end
 

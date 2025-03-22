@@ -14,6 +14,7 @@ class Sail < Formula
     sha256 cellar: :any,                 arm64_ventura: "c1bb8bf3cf10182d318d4fc986da4430fef370bee7e857ad1fd4716103f8b2bf"
     sha256 cellar: :any,                 sonoma:        "88510b600c23437d54ee747f9a92a1492c7f2372c7e3350f95d488c415e43c98"
     sha256 cellar: :any,                 ventura:       "32acc34eb90ddb5277fa4740588825c9ef0d01925a6398556870229494caf7aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "99c9b5dda4a0dd6e921babdb0ddcd35cbb163ee9d2fe9ded023a96bb0c88cc93"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9905f463b19c8c4f7885e8871fbb808785279e0c14e32b881f90723cb09b46f5"
   end
 

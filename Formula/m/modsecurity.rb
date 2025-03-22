@@ -11,6 +11,7 @@ class Modsecurity < Formula
     sha256 cellar: :any,                 arm64_ventura: "fd6422cba66fea2a371e066e34a43ae75c2539ae7dc8d78c6e9198681a97e7cb"
     sha256 cellar: :any,                 sonoma:        "84fc44c8c036e373762e66acf75e21caf5e97cdfa24c4b03f50082694078414d"
     sha256 cellar: :any,                 ventura:       "f97fbde36e55908673885cae90d1bee0a5394f93fb97b10a8f3ad07acd061aee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a5ceccfc1aba5a91872111ed16bb5dc8d562b248135dff55dda9447f417bfc9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7c83f85fb33704ab113e7f38f1cbc94d8105ed4ca0e5228ef524c73b04fd3e8"
   end
 

@@ -12,6 +12,7 @@ class Ad < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1b292412f05f615a3d450d6a45359307330b4b492f822b19c888bab607a191d3"
     sha256 cellar: :any_skip_relocation, sonoma:        "811782a9dfec54873725b526d03d7820f0c07b7ea4c3559cc298a63b7b68ea41"
     sha256 cellar: :any_skip_relocation, ventura:       "42174e0d98492a910e6109919c4217b8653f2e3b43917dc18e79fcf379ba1ee8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2439ba1faa2c4bf0b81716297b78e50dc87e9dfaad2bf35166c9fec01324a5c3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "69c603b8ed8f547bbf1bbefe0001e8c828de418ee9f1e0e74e19161581b7767f"
   end
 

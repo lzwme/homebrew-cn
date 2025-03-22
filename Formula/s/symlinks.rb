@@ -15,6 +15,7 @@ class Symlinks < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "0efd028e16901e24ae61617b66099a2da58b5b1b0c7f24300b2d12b7e37c922b"
     sha256 cellar: :any_skip_relocation, monterey:       "bbf388e44afd53159ccc8918b7cf97605d2fd002cf80ce525bc76ea37cb13aeb"
     sha256 cellar: :any_skip_relocation, big_sur:        "1f63fc62ca034e2d55e31d089c54dc65c4cd51a3caa0d58afe2da171482d66fb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9775f41fa313f392bd41d105655066f62d1e76865fd0979654248ec94237b802"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ba93ffe41e5f1aa71ca91847cb66bbe80906efc78b8c1cf008ce312681aecb64"
   end
 

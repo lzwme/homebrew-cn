@@ -14,6 +14,7 @@ class Ldeep < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "375dd7343696f91299fffc23f59427a397144ce2e891d4d1ac88f232566b8990"
     sha256 cellar: :any_skip_relocation, sonoma:        "fa793d9c6098a52d67a87b3105da861fd0af5b0867d236b6f70a450548194eaa"
     sha256 cellar: :any_skip_relocation, ventura:       "fb9d4ad6677f70c42884cdc45da5f2399f74600459c31be3b37330783fb07c69"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "17f85fa5bf4cc5ea77d1284471b330928ba933cebba32edd2eba217babb26204"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3438f69c8db8b60df934daf6866a09966f24bc47b6f33da58762b4097d3e00da"
   end
 

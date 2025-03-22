@@ -11,6 +11,7 @@ class Cbfmt < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "cd536fee66c066b0027da4659d5b7e6ec316a98545fbc84b00a6833d919d2e78"
     sha256 cellar: :any_skip_relocation, sonoma:        "f40cb83e59d37c6826a8f99871de12db752fcc8f9830bc4857347ed733cd0b02"
     sha256 cellar: :any_skip_relocation, ventura:       "d08bb1b815be4f880c84e38c49cf1bf7c14ba83670350fc7c77305bebc97faa5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e8b95c554dbf6e4179ba91f4eb93afc13949376af400131b280f0a792ba8bd03"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bef8994fb32668715f46c8efcd584938cb5cdce740e65f98f9047698ee4e284f"
   end
 

@@ -17,6 +17,7 @@ class LibtorrentRasterbar < Formula
     sha256 cellar: :any,                 arm64_ventura: "cb85afdd1a230218541e8e1af0c15b5f61bfc02fe2b054ee652c1ba89d1c8c7f"
     sha256 cellar: :any,                 sonoma:        "16a6476a734fb3f71b49141ccd5293e4d0eea29e09854494ab353068ffe6f451"
     sha256 cellar: :any,                 ventura:       "d94683a3727d9d274ad6ce5d99f9deada39915fe3ed83855669fba2e878dc6a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7a3faab2197fb4297592dcfcc0bb348f2684f41296ef945cd8878bdf147cf36"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6dc82f436276e95e784056c247d8926fa93d8144152359d2d4940c461602b0e"
   end
 

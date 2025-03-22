@@ -17,6 +17,7 @@ class DoviTool < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2e35381caf2775371ce2a35f7a9aa71d2f69dd272a1777158cf499fa667e8f54"
     sha256 cellar: :any_skip_relocation, sonoma:        "f22ff979e01886de1db7d0fa4f293839c367eb15ddee1aaaccf7de1f00bad9d2"
     sha256 cellar: :any_skip_relocation, ventura:       "e20491c0a0cd8351119f2c933bbd2c965b3a17ec77b6a499d64779ce49734a89"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "102f3161283dca3a3b8811ceda88ddf2a1d17abec112d22acae986574e88f8c3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8254aec7392a826c86b3bbbdcd12c7399ca78f863ff6b9909ee899e948f02072"
   end
 

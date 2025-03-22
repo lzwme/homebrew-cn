@@ -16,6 +16,7 @@ class Scamper < Formula
     sha256 cellar: :any,                 arm64_ventura: "e847aa0e842b62d7ba984a186956265b197fb7eebd25b03eb2efa748629766f4"
     sha256 cellar: :any,                 sonoma:        "6d498083236791e80920d693b20907f87142544a3478c48c11e95e5c0184e8e1"
     sha256 cellar: :any,                 ventura:       "2dfb0d4b6718be14bfa5e4252c738da82bef7dd6c4c3ae74711eee7c0f309e6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7340fb968e2f5818874573f987c20a60971f6150ba7d0941d2e66e0d0267c779"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f7d45802ce7e0630009942e041dd1ccec98480054e2e1b195fc5b840f04af4e"
   end
 

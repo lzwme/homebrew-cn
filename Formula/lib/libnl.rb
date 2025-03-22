@@ -6,6 +6,7 @@ class Libnl < Formula
   license "LGPL-2.1-or-later"
 
   bottle do
+    sha256 arm64_linux:  "cf02f2e5551dbb36e507e97a53c96710e6e7042232de601fe8f23bd92f0d3e65"
     sha256 x86_64_linux: "4f38d449757989f549668b55ff19e6d5a19d574c720bb15e3543b15564db966b"
   end
 

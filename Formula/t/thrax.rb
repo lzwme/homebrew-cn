@@ -19,6 +19,7 @@ class Thrax < Formula
     sha256 cellar: :any,                 arm64_ventura: "87aea2fcc77a37ff7eb3118757a6e224c8e4704a26cae719a8a123bac9b8a3bb"
     sha256 cellar: :any,                 sonoma:        "63a97b5dfbe107ab19a9780f7fd346e421af9ecadc30a0faca9110707cafacec"
     sha256 cellar: :any,                 ventura:       "ea2651cc17ba7837e2e6f362124c9f6c9d06034521dfd86468d4e13220fc9893"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd4e4db424d763840cb2bb05a46a5be7d817ce37e173b99dd3c9e9fe0b234826"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "da7eb89d693322a62b6409eaf8d21a502d307401726f5f8563695944350ab92d"
   end
 

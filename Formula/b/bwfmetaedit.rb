@@ -16,6 +16,7 @@ class Bwfmetaedit < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ea1bda591966ce23cfad2827f52190b74cd3f1c3beb9e5430848d3bfa1a14eee"
     sha256 cellar: :any_skip_relocation, sonoma:        "a92e5daf4cd9bb128c343c120397eff72ddbe10636a610b3ced1bf91a1af2eb7"
     sha256 cellar: :any_skip_relocation, ventura:       "52028cdff6de53c1a891d9125423696eb0c65de65d8c0627224ae6671a6431f8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb4c95064de0633b9c894447dce1f8ae030d058daaeeff21e9fb9ce8443bbd3f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "28dea660744b206b0bb01ceeb9ad5778d1fb25b0684b83bd6f34d9c2c4624646"
   end
 

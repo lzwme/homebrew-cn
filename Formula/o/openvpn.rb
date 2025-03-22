@@ -17,6 +17,7 @@ class Openvpn < Formula
     sha256 arm64_ventura: "7dda50d9eac89e49d6ddc98b7fd3f77032d039ee6597d02eb0ef3a189fd4603e"
     sha256 sonoma:        "5921a94223d5cf06907d2d28d650baa55ef863dd744f375c08cf8a3933819be4"
     sha256 ventura:       "5237e55bee12bfc56943f94fda2cd80d24771195ebf804a4cef5b96f68abf883"
+    sha256 arm64_linux:   "dee225c957a5d276e86c029934a26c14e5153b47770cc9a46fd0c6918d668ad0"
     sha256 x86_64_linux:  "06e1f9c2963607e1b108926b296a4a3e8bfa6becc903c2e2a67558d07c7e2c08"
   end
 

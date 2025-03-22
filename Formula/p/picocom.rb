@@ -17,6 +17,7 @@ class Picocom < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "0b964f92ff9ba91ad3107dc9c435de2198bf8f37f72414ec71d6f269293144a3"
     sha256 cellar: :any_skip_relocation, big_sur:        "bcf999f8a55184741845fe1dbab36597c3be6723f4fa4f603ee453558bfd6170"
     sha256 cellar: :any_skip_relocation, catalina:       "dbbf7829cd18b6fc0b4cf2296de575e7399702fcad52a6da94280e30e3abc341"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "98708de364229e523e74c4d15f335fe1bf758bd26c12f78fc145fc464ff3130b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c765edf56732a7dd0631c12068fd17ba7800c98ceb24f98fa65990e7fa13dadc"
   end
 

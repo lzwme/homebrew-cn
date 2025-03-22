@@ -14,6 +14,7 @@ class Pyspelling < Formula
     sha256 cellar: :any,                 arm64_ventura: "48009640d75f18f1846423c97fbd40f3380efea76eb8a62769e588ea222fe978"
     sha256 cellar: :any,                 sonoma:        "8ba1a7461c8dcb5b99bcc94b1ab9a3475ec188db46b6a96963c277175728413f"
     sha256 cellar: :any,                 ventura:       "de5ae39942a758e650b22e596f9e0a81107f7dc964cbfe0281428fca71537cc5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "26c14629d1fd22e1d6b83af9b72891b1160f08d3fdcc28c9c4aa529e4910168a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd3f06b840816904dffb43f08a37efdf852255d22b6f4a393abe28319b5ea116"
   end
 

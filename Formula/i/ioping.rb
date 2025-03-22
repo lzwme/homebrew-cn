@@ -17,6 +17,7 @@ class Ioping < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "b13267eb009500e2ecd3655390e1b39c0083ef38b4cc4945be7a0dfb7fe12746"
     sha256 cellar: :any_skip_relocation, big_sur:        "ca6704be7e6eb5d2e774cebd8afbf125e86f4bf08c9c0ab1140ae283b3bd9cdf"
     sha256 cellar: :any_skip_relocation, catalina:       "6a7926f6e4b0e04d4ba5382f63c3a2434b5744901c26ad865544d887fc888145"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d215c9fae718ae0a3114e38361728c177e3d842db90b61f596d7b835041f3cd7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "19e6f04bd51ce45365b256877f1b894023415a07f8966bab528c9eeba9feacb9"
   end
 

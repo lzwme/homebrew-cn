@@ -12,6 +12,7 @@ class Fileql < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "26b7e5b7d36985905e3c637de9e1a3fec9162cdd948894b99f16e1c8d295c615"
     sha256 cellar: :any_skip_relocation, sonoma:        "d86657e76e6854b5a4924936988f6f7ab2d46346a8409d6c44341acb37f27c1e"
     sha256 cellar: :any_skip_relocation, ventura:       "7608a695e3020c871be877d0e5084605a8f2afa3b405232b11fd8a386c063270"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "82e6b09d1c4aae5fd9342910eb5551830a8cfd4b00998cc78f775d22c147c82e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cea79c715f434f14436ebe2cebb5d7ede2f5c2576a6956c18df1c5a0c25426b5"
   end
 

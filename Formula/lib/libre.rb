@@ -11,6 +11,7 @@ class Libre < Formula
     sha256 cellar: :any,                 arm64_ventura: "7a2f0be826886f8cd9f57e813d94c1c7d4aaf9c6828fa50d1c7941e7a26fb70e"
     sha256 cellar: :any,                 sonoma:        "5b94c71ef6706707aac1477f95cb79592e4fb3acc40e768b0c4e3af1c94c39a4"
     sha256 cellar: :any,                 ventura:       "4cccb18c0f61e8899d269081c54e4e450175a2fa107fac58c69ed0933b5e455b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8855ce516e0f8e8e5538d01513659fcfa16cfea88bc4692f4cd8d96e2ac56c80"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "98cdded0ac11317f97be3703b2e55a67ae9fbf907dcd617db07819cde33c7005"
   end
 

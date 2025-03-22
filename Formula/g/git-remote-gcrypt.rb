@@ -21,6 +21,7 @@ class GitRemoteGcrypt < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "5394123d4778bf473b07c584a3d2d1a7348f466c73130829e592760237a54667"
     sha256 cellar: :any_skip_relocation, big_sur:        "484b02151ca66f3100841caf4717670ae3c080164daacb1db151a8c40f52ae3e"
     sha256 cellar: :any_skip_relocation, catalina:       "458f095f06a37bbea5d7487b5b819f774d883684c99bfca6636bc03e3c64def1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "aab3674f42bd12e3a700bbd7b15ba442e480341e0c84fd7987c78f186d34cd16"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "57c8b96cc637d89a829bde8952c93946deee5c641c6cf07f1bcc484a5e4d5ece"
   end
 

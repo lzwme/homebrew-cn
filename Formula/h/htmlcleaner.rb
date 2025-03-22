@@ -13,6 +13,7 @@ class Htmlcleaner < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b8823d1ba1ef2e847fe95da75054ec681d3aafcafef2c1bf084b7f917c02884c"
     sha256 cellar: :any_skip_relocation, sonoma:        "5e7f1b1c468d1a5ead2ed450fed70e621ee5b429486da31ac05474d9871473ed"
     sha256 cellar: :any_skip_relocation, ventura:       "8dc19a84c07fee65cef8e0889cae31a1e9f1a437f78911808340bbaf5a7a9a2b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0cdd1dd6b3a16f874d8980cc78f599dddc97713c322b5e8f962a7cf88810efd9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "49d3b92068ee5e037f6efe9232227d6b49069c0f6e0a09a1abd34467290755b1"
   end
 

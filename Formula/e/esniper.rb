@@ -21,6 +21,7 @@ class Esniper < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "24cb48a074e7e13cdaa2f0c990ea184352cd06f572134640fa99a42d699939ff"
     sha256 cellar: :any_skip_relocation, sierra:         "da1e8988910e0ab959e3750a31796d406b63e4c91ea05cd3f19415adc082f59f"
     sha256 cellar: :any_skip_relocation, el_capitan:     "d269d258369cfb214baa129ade61616121341c0129d820e9c77dec6b841ce0e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d51c39d3d114d8ed2a5dfa939ed50bcdf0df86ee908691a9113c92447ecb598f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "676227a142bc96ca566a352c446328a78c7ad02bb80b56e3f3f131e755994a31"
   end
 

@@ -25,6 +25,7 @@ class Alpine < Formula
     sha256 monterey:       "5f289262fe8971acbe473b036316f73d7a17c8f9bbbcb7a966c2a2d5e7c06ee6"
     sha256 big_sur:        "8a5830644c5e7738ba52ad6687eebf493020c8e6d14a4d247b3372138cac37a3"
     sha256 catalina:       "0a9ccb4fa8aac9476933d439ee57c30c234a20c0b189cdab09dfceba2e19b00d"
+    sha256 arm64_linux:    "26792044eea71951e4a6236711a8f29cb7e52e68ee289cac3c809815bbd484be"
     sha256 x86_64_linux:   "3a326ae9048a1ea6fe4403478254a7bb403c1a565486b96d7224138f1b2e3072"
   end
 

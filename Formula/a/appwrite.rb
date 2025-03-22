@@ -11,6 +11,7 @@ class Appwrite < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a6dd00f948817b90ae38865595c888b4a1be8bdab87976915bdf8996576cd763"
     sha256 cellar: :any_skip_relocation, sonoma:        "c3682567b0b43769b071368e0bf112662ea0aadfa67296a06f1dc216cac8ec82"
     sha256 cellar: :any_skip_relocation, ventura:       "c3682567b0b43769b071368e0bf112662ea0aadfa67296a06f1dc216cac8ec82"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "822973269ecf33c05e7c82200159e440f0f356d987f391bb0155e4a81be5c9f7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6dd00f948817b90ae38865595c888b4a1be8bdab87976915bdf8996576cd763"
   end
 

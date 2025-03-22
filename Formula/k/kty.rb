@@ -12,6 +12,7 @@ class Kty < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "773957f43cf0e1a552700e177d52a0c4dc9a16738e6d33fad6fc1b3981f33e0f"
     sha256 cellar: :any_skip_relocation, sonoma:        "d5dbd72cf1840b254b2ac815e8dad173883c8cb83140634976e29a14fcf8b65d"
     sha256 cellar: :any_skip_relocation, ventura:       "844450842762cb450a2885857744a5ea3a095d781db143312f3ff4607ec7b890"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "12eaaeecb6106661c66894aca09a5f73eb77d9be2ba51419f1d78eed9872aed0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdd2bbe08fcd0a77a2402d91f009d13d4c9ddd5b51d533d4810e26aee40fccb9"
   end
 

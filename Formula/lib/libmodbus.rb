@@ -12,6 +12,7 @@ class Libmodbus < Formula
     sha256 cellar: :any,                 arm64_ventura: "37c9a7ede2185ce78de56d89fb0f18ff44cd3f7c3d172081045d7df5b3ba5de3"
     sha256 cellar: :any,                 sonoma:        "465170cd461f3cc3b33f1840a3a0d95a0897557d2b266c706f899853adca4be0"
     sha256 cellar: :any,                 ventura:       "8a3de10bb6cd6380eed6477580643b957f9a75bd9e6dd8da40380eebd80f94e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc6f0b3c9bf53b24831a826ba42869840425900a01c5f62fff0fb3be2246a0ca"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d420d004141628626487faaf267f93d2cfb99b1971dbaa20b9848db23ce798e"
   end
 

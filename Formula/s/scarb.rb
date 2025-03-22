@@ -17,6 +17,7 @@ class Scarb < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "55f8f800149fee468a9d729fb39e12344a1107ae7ae95ae79f064767f02bc756"
     sha256 cellar: :any_skip_relocation, sonoma:        "4a9c862289b03f99a2a4e0af2f6c09a5788e2febe3543bed0c3e8f4c37cfcbe3"
     sha256 cellar: :any_skip_relocation, ventura:       "f1637ac3de7be19fe07b99f2e634239560d61ba7f0778372a3d45ceb4770b549"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fb168bdda21478d1ec70be6a5db8a6d6c61557e95e06a09fe47c1b942f14e2e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8cd58e7a7dc6ee69e6d80a39e51cf357de3913a3ca3c7afbe22cb827dd294b95"
   end
 

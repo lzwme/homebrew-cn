@@ -20,6 +20,7 @@ class Dynamips < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "df2f66c85bba8ebe55a40adca313d3007fd78a11e31101cbf56095c261ba419a"
     sha256 cellar: :any_skip_relocation, monterey:       "34cd5717a4449d9d69c7741ccf492a010c8b6fcaae137b3e84869ed0426b0be3"
     sha256 cellar: :any_skip_relocation, big_sur:        "537b49bfac716211677ac7da74d5c78d111da724c80b3811976f281eb57237f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0a799bf4755db29172a339280a49b3e560c0762090c4b53e06b68fb24e169800"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "43b17aecf4adaa4164f12a3ce012cb288a812d75e2f28cf55b48d87c8b000dc2"
   end
 

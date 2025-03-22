@@ -12,6 +12,7 @@ class Libmsquic < Formula
     sha256 cellar: :any,                 arm64_ventura: "e38914d568131bcc9a5f439f55171a26a2063c8a5c3460023a09e9391bc8437e"
     sha256 cellar: :any,                 sonoma:        "254476756f0489eb7c0de3d9c874b78cd91eb1883efe9bc6af957ad608164e20"
     sha256 cellar: :any,                 ventura:       "5f8c13c6d5471a61efb5e11b79d5009524f69d9a90b118ffb6bb6a8f5da134aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a8b005ebe32bda583e2753501a16940256212775fb2bc5aa34e95ed46cd4134e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d55d6603b20c9ed8f76087c171b07ba721364bfa7ec3bcfb24dd992f205e046e"
   end
 

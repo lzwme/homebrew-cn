@@ -13,6 +13,7 @@ class H26forge < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "00dc5feba7341d70ec4bd024f63de066cf1574b97832e87e2496ee268dcf5e5d"
     sha256 cellar: :any_skip_relocation, ventura:        "ffe426e9eae46e983558bc76e27422d94837af5fb7260efaac0dedf0381fb6d7"
     sha256 cellar: :any_skip_relocation, monterey:       "25cbb1705a0bdf656e6cde346f458fe9e89975d0846f1411532b07cd089212b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "c37e9c31fbd4ef981277a591d851fcf9a1e10f21689917d698709a7b086ab0fc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "800da50e33cdc4bbce4222275b0337685a7aa3cea4bac0029c99b963d997a4f4"
   end
 

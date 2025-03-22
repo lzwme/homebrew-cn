@@ -13,6 +13,7 @@ class Opendetex < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "5e458e9b340a5784f5b9c776b059a5b2310836918b414ed050d94deefa550612"
     sha256 cellar: :any_skip_relocation, ventura:        "3717e4f330e0abda53e3b27e83f9d46bdf701787433f8d7356cc246ffafc903d"
     sha256 cellar: :any_skip_relocation, monterey:       "ed14c822975353fa8962fdb4c0a3527669cec5df674924145938682f76b38f13"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ccdfb99daa215fe2cb319e3820b00f49edee665f2219f2a60d520f65316c7f4b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f76bf60e19353d112fdd02b250ea0d87f28688582d0c26f30f580e3cc86434d1"
   end
 

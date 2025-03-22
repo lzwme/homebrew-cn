@@ -22,6 +22,7 @@ class Ii < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "5e5d3163eedc2edc9c94fe7bb0d0131748b73d48696c742b34f2f1cf8492377d"
     sha256 cellar: :any_skip_relocation, big_sur:        "de3668d67aaaf8cd68d4a65afb5c0814e47e81516053c98ce1acac8cf0cdccda"
     sha256 cellar: :any_skip_relocation, catalina:       "1a3272d46510c5313a2133b4024f35dedf0f566c3b52592a29a2aaa4fa9e9e9a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "c438a93192fd567fe1da3dc018445ca4e5f269c8c8920cf429eca3484e354a75"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2dbf5ccf220ff7c74c9c409f2ed36465f28fe20ab14d42e62b8df2499b5c320"
   end
 

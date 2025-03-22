@@ -11,6 +11,7 @@ class Msktutil < Formula
     sha256 cellar: :any,                 arm64_ventura: "dafafc71f2995c54f1b3ec393dda0fd0b68961d7bfd943ef795a26a8a5e18172"
     sha256 cellar: :any,                 sonoma:        "3fcc25c8edbcb71d193079ba3108263410cc9b9057b51f9d995ba499982795cc"
     sha256 cellar: :any,                 ventura:       "02776a3d462787e70fc5fc13dcda29929faa694c073db369119d6c34e16f7e40"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "69a7a6390216722bbba0e2b1c6b3dcf7aef66cfd3625c2ff4a93c9647d14f157"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "667123d6e8cd021378d8fd1bc556d0756dd9e694972b29c0fbc282716c8626a7"
   end
 

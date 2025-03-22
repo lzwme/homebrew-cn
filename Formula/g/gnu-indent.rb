@@ -15,6 +15,7 @@ class GnuIndent < Formula
     sha256 sonoma:         "08ff0b0519d556b0a9bcb55c6511704c9a0190bb831733c9d0b0342e6cfe42bb"
     sha256 ventura:        "ca896ee13248337aa3cb203b13bfb64a327f7c479aee79977839ab5128183c4a"
     sha256 monterey:       "ecb07ef5d33d1a39f21bf5b8c10fefc41021eaf134979a35173928cc13b6c82f"
+    sha256 arm64_linux:    "75f78490b2047df1500e85d9c33ac481815fea272ab7ea3c91358b1d4a3fe48a"
     sha256 x86_64_linux:   "ca7c98aad69c128e21dc47666737ffc57d55118fe1e5e73b4e63874dfb1f6721"
   end
 

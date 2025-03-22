@@ -17,6 +17,7 @@ class Authoscope < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "cd8c5b3960c3474bc2ba1b404116d2e682ae733d699b87c41cc38cd95b5074b7"
     sha256 cellar: :any_skip_relocation, big_sur:        "4e866a906027911bc7f543db28c38cb1ae952f30e51beab743e0b3243f1070ab"
     sha256 cellar: :any_skip_relocation, catalina:       "977e84fb35259cfc01b4ba789bdf86270675c031bbc9b289034bd9974ca9d9b4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ca1513fa96596e1ee02e4577e921369b8d689ee3e0a18fad5776d80ce68988f4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3cf7f5e3bc8dbe57cc22cd6bbdd5b62a7c69c54e1da1cc6ea7e1e19b0166c413"
   end
 

@@ -36,6 +36,7 @@ class Ncrack < Formula
     sha256 monterey:       "b85c147ff11ee53640428f7b56114b63344b48867740739e116884c52dcb8798"
     sha256 big_sur:        "1ae6d72f2d5ef01ea183185d6a2ddf7b838649927496eee3481ad8688dba0c1c"
     sha256 catalina:       "ab9acac2396d540a15d92485f59a0bef60434e111fb7045cb8beabfc3facb7e6"
+    sha256 arm64_linux:    "1e8fad1cf83a7e0a208d6b078bcb1cc7b3f40101b6aebae28c43a740dc992cb1"
     sha256 x86_64_linux:   "8c7b7248266f093ccb7798273d6b789b4632b7703567e6c534a4322339c0eef5"
   end
 

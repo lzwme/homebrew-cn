@@ -12,6 +12,7 @@ class Toml2json < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c41859623992135a393b49977c66b3defdcaf597c025ebcbb2e5ce2a1a59b220"
     sha256 cellar: :any_skip_relocation, sonoma:        "0b63f1c3d4f53869cd7178d1150d47e24af6c4f2075e0a128a2ee180e2696d38"
     sha256 cellar: :any_skip_relocation, ventura:       "263ada74ecbaadf923978f9018950a6d361fe16d16f08033dcdea6b86bd6718c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1bad30571325d81e794e04241c1536a4cfc9f645e5b32a65752e379df35c5cf3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ef85b1667b92098289aa2bc8a6c2747188350d052a699b780909aeeae6455db"
   end
 

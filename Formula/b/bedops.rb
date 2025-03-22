@@ -14,6 +14,7 @@ class Bedops < Formula
     sha256 cellar: :any,                 sonoma:         "971e7b2619817f1ee848298cb8520e8c5f04bf5cb312cf822bf398a9f533353f"
     sha256 cellar: :any,                 ventura:        "1b6e6b69ae7a9893e81ff2f90f2b9e395f4d49cf9480b919597597054438c9b7"
     sha256 cellar: :any,                 monterey:       "dc2dfc7bfc8d29e1591a73b7c9697de4b8161a312acc1c1fcc0c9a311c1bc055"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0a929b6dda707a961601eb95a14fce9fd6c629ba4bf1161aeec5ace4cdd5373e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7df0184574d41dcc2f66a7ec2c762c7e142475f5557631de50883e4f0556d421"
   end
 

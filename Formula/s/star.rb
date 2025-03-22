@@ -13,6 +13,7 @@ class Star < Formula
     sha256 sonoma:         "e30e6506794c00b9eb288edf39bd4910e8e0a9742793319b96c48dea5f24d81d"
     sha256 ventura:        "697228bef43eb329599da53d6156a374c008fa508473ebcd79d0dccaec003b82"
     sha256 monterey:       "3898a6a463bdad06cbbce3792f8ef73909e98ef9f9db4483317e43a846d4175a"
+    sha256 arm64_linux:    "e5bab1fe56ec1b2294719de3bf9e6576f439478e076a7df062693d9efc22ace8"
     sha256 x86_64_linux:   "a132ee6b490220cb5c060736aa796fb70b04227d53f115e605d30bf5d2784f9c"
   end
 

@@ -11,6 +11,7 @@ class AwsAmplify < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8b815adbcf5005fc8fdc9451f989aa5bb3878a72da7a10c4025e385151a2b689"
     sha256 cellar: :any_skip_relocation, sonoma:        "616a497f1617a80fda7ffc8a390cacba1978550c13a3de8844f1bf3a700817a9"
     sha256 cellar: :any_skip_relocation, ventura:       "616a497f1617a80fda7ffc8a390cacba1978550c13a3de8844f1bf3a700817a9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e54fb41e864697872c8b5ad8411d98a1a08f2530cdfad7e05498634da84a254"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e966a4361bc51f0103544510c6f79ced53d457731d11b6b0cafe353cb9b30a7"
   end
 

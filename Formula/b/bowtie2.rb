@@ -13,6 +13,7 @@ class Bowtie2 < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "0851d07d8a4a57897ea4b2262d88073d35060638e297fd8ce3ca9b26eb510ceb"
     sha256 cellar: :any_skip_relocation, ventura:        "65d7c4f3afd8c3437222126d750ea55f6bb4214907072f97ff1bae4c26788465"
     sha256 cellar: :any_skip_relocation, monterey:       "76a63cb64ac6060cdeb35bf4e64e2dca18525ec103a8956e38fe6a9487aba434"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "3e4616762d3c198fa8b078654a6b98dd45d128a25731004a84666baae6ae92cb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "574eeb3b13bb869e57844bea2fac0eaf789b708096e7b94d5f14b604655b78a9"
   end
 

@@ -19,6 +19,7 @@ class Tnftpd < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "8985fce13cecf1bc9e202f30ea4a5c9cd19c417ff4eb7afe6cd8d08dfd02a819"
     sha256 cellar: :any_skip_relocation, ventura:        "80301322ab495d2380c7be37f703293f89b6a0956b27fe6f796ce493ca862da2"
     sha256 cellar: :any_skip_relocation, monterey:       "1c0f3a77356aa9ea4a691f0388cf4e9ad42002c7d67a09fa18b500d0172abe0c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "59f715a746e1ae9772414c45c5739d3c10061c9a2fac68e0a2efdc0280d08a0f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ef05fc95a88ae0c7ca0fba016115eb2d840d4a218935f39d137f61a5e63144ef"
   end
 

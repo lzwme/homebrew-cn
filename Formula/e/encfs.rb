@@ -10,6 +10,7 @@ class Encfs < Formula
   head "https:github.comvgoughencfs.git", branch: "master"
 
   bottle do
+    sha256 arm64_linux:  "6d38dcf06c974347dc61dac331933df2e4a1f1a2bc4f6b5458f3b685c7efd094"
     sha256 x86_64_linux: "1952d5ef71cdd862776574b47add8ae4649b907c6ed734fac41b7357d13250f7"
   end
 

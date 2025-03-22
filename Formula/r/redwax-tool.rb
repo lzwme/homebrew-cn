@@ -17,6 +17,7 @@ class RedwaxTool < Formula
     sha256 arm64_ventura: "6c1582c3ddf1c69440b407e9108080dedd6f290ed7ed7e1a0ad00c4b20e04262"
     sha256 sonoma:        "a6ee226d0dd5d1344a5406c2d47f3a818586d1d30ead84b86648403b2a3acf81"
     sha256 ventura:       "07b54891be06b8e8347481b0ac8c6667f895f8fde8a64ad042af1b75c89aede8"
+    sha256 arm64_linux:   "6830278ea2393b0c1459ee6f6ee2fba6d5e99d5f37582276a11346f6b39e1b1c"
     sha256 x86_64_linux:  "04dfeac846d6e6714d15df10879fd6f76950a54cc52a69e952c556bd4f3230b3"
   end
 

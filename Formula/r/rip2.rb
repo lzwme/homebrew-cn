@@ -12,6 +12,7 @@ class Rip2 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "49bcad0e10c35b8401e9d080c7712e43277a2abcad0aa493c3a9543e0ba6d541"
     sha256 cellar: :any_skip_relocation, sonoma:        "d0a292edee55b86824e46e4b5bb9456d2e933816cfa0555c9041dc605cb81831"
     sha256 cellar: :any_skip_relocation, ventura:       "e697e03669bd5cdcf5f6a5387d30e14f29c1582d92d5ccca0e4bca3469270a43"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b4481e6e13e2317deb2937d56776a98c6616edd084f076110d401cbbcfbbd426"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b36dad8b5a13e3ffc0147de907ae435ce6ee3dc6cad6009947174682602f0df"
   end
 

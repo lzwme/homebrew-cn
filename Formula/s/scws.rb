@@ -19,6 +19,7 @@ class Scws < Formula
     sha256 cellar: :any,                 mojave:         "feb648d3c6c98b2e693086371dae419f88b56b6d58e5ede76ffa882a6f9be4b6"
     sha256 cellar: :any,                 high_sierra:    "94977ce56fa0c3c9d2fb21fe52067b49be65247b41d723893ac8c91f0e2dbbf3"
     sha256 cellar: :any,                 sierra:         "81e6665fd65aae5e35c3e0b3f9f80bdaaf8ac787dfe6fe9e8454a8cb5cbcba02"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "760697469c3bd5b9d57792dafe9b130f751f56a727f743700070b0cc95fac108"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "146dd8b73ef91bcb9118130d13e30803b4213eddeda7d80b5f2a5d75e83f7c64"
   end
 

@@ -11,6 +11,7 @@ class ApifyCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "89b16e4443929bcafb2c9479d10a6de26d9c0e823b963f348fa336fd45e1d303"
     sha256 cellar: :any_skip_relocation, sonoma:        "f1bdd007a01d2a2d2d19e58e287b2378bd855a76a5c17bf36374bf8b0c3329bf"
     sha256 cellar: :any_skip_relocation, ventura:       "f1bdd007a01d2a2d2d19e58e287b2378bd855a76a5c17bf36374bf8b0c3329bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ecd1d22553f0921e7b270ef3e018a555163d4fba8937a9267199867668155fa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "21d2a680762fbb4c90fac1ee02e07fdccb09c046a3b141b81daec93bd0d8bf1a"
   end
 

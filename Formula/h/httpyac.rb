@@ -11,6 +11,7 @@ class Httpyac < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1e784773caf60bc93fa8c020e7c56bf7032370abeab1ead343c2c8478bda635e"
     sha256 cellar: :any_skip_relocation, sonoma:        "a626cb4bf360098efe5318825dd5395afd267b74e16310f03174961178624319"
     sha256 cellar: :any_skip_relocation, ventura:       "a626cb4bf360098efe5318825dd5395afd267b74e16310f03174961178624319"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb4e046a6adfc23d9b7fab9d91e9cf1956b75d194412b96a87012551816203d9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "819eff9ea12fc1d3e72f5b3956f66104071648b3de2a084fb2eb15db698e01f0"
   end
 

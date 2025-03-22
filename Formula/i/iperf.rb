@@ -16,6 +16,7 @@ class Iperf < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7175c66a9b8d7b696e90924d5143cd7c4c6f70d3882a2786f3074cc76acd1771"
     sha256 cellar: :any_skip_relocation, sonoma:        "aed94aa9afebab06799f8029472589ceec497c794a787cff72b266485d747e07"
     sha256 cellar: :any_skip_relocation, ventura:       "64ed221535508fd70d50c162cf827e21e3753a831cd806d7a81949f9251503af"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b82dd7aea8a7176b9de78654e8fb38b5ea3fac1a68ecf538d5fc8c00cd1ddbfc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "30cab186caf9720f6d1758b086d8df5978ea56022a32ad4367f232ab82c1750e"
   end
 

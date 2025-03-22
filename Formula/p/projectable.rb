@@ -12,6 +12,7 @@ class Projectable < Formula
     sha256 cellar: :any,                 arm64_ventura: "a288dcbf708ffeb16c512655d9426e801553471fee1c095a6d2d329f41ccb6ec"
     sha256 cellar: :any,                 sonoma:        "69ff855f70534030139cdda5c4097aa271b15d3d1a0fb0f12455fa6c1e35e94a"
     sha256 cellar: :any,                 ventura:       "9e4c0a031c0e5a51107f68cceaa6840ef7a39fbcd434d1ec04b80a8b891a2cc9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "94f11e18c380dbb5abb93f6d4869b17e28703cec992939d30e86f9c2583f7683"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "136b8c39fe40e6103870b2b193562107b86302613337bce7892b24dcb2007515"
   end
 

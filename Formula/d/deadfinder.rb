@@ -12,6 +12,7 @@ class Deadfinder < Formula
     sha256 cellar: :any,                 arm64_ventura: "fdd069f39c89ddedb5f4171852c3572e7afcd2df697d53406b79e915a47979a0"
     sha256 cellar: :any,                 sonoma:        "2fa21d9440b959062d56c84129c2c79a1ae4480707c65ba021ec1574d7423547"
     sha256 cellar: :any,                 ventura:       "f4b93d6e0266b8336349e9d98eb35fe6e57d9c9f83e542922fad7cc2d2b638ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aba0f1aac6e739f6be018d214783b6fa28c3f905f8330693a58d131142787d87"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "92657c8342bb2a52ee4a33e5d56a884d07fc4e9e8cfd7d34418f6110db977578"
   end
 

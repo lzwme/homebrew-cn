@@ -12,6 +12,7 @@ class Openjph < Formula
     sha256 cellar: :any,                 arm64_ventura: "d79bb7861bd20f92c7047d10358b04be37f4b2c59b6fe5fa1c02344a2ce3d8b3"
     sha256 cellar: :any,                 sonoma:        "6fc7ba2486fef01ef88051d57debef07ece8497c65c192e440cb9109f318a159"
     sha256 cellar: :any,                 ventura:       "92b8a6f1bae509c87aff49ab8c3b847ffa94b121b2a02d744b06612423b19dfa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b18370cd84f883815cc92e1832552dbc7bb3ae6c9861dccd3d9594a9818e58da"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1bed2eba22b7dd9c77079c62bf6d6d928a2b7056a631cff958aa181adfef71e"
   end
 

@@ -45,6 +45,7 @@ class Llvm < Formula
     sha256 cellar: :any,                 arm64_ventura: "4c471348ebb70d36a8840f36aeadf5fe5f229ed23ef49e99778054b6bdc6ea56"
     sha256 cellar: :any,                 sonoma:        "eab56bb7092bb23a667808915dc4aad048140395194b955bbc743cb65ef65697"
     sha256 cellar: :any,                 ventura:       "f33aecd068fcdc3c8c646ddef416942cf29f66277372cd32e22565d90356113b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf008643cf539c960aa62896d4ac780b7c4bbb89b644349063221b05a62b63de"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4eb62edbba509c7cf907647f91f50367a5cdfff48c50a13d2109ea773cfceed"
   end
 
@@ -801,7 +802,7 @@ class Llvm < Formula
         }
       C
 
-      rpath_flag = "-Wl,-rpath,#{lib}#{Hardware::CPU.arch}-unknown-linux-gnu" if OS.linux?
+      rpath_flag = "-Wl,-rpath,#{libUtils.safe_popen_read(bin"clang", "--print-target-triple").chomp}" if OS.linux?
       system bin"clang", "-L#{lib}", "-fopenmp", "-nobuiltininc",
                           "-I#{lib}clang#{llvm_version_major}include",
                           rpath_flag.to_s, "omptest.c", "-o", "omptest"

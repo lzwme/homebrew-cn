@@ -14,6 +14,7 @@ class UutilsDiffutils < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "f6c35358ce672179dfcca353ac742008c4a674f40a6ac414f87250279ccbed1b"
     sha256 cellar: :any_skip_relocation, ventura:        "164477ab12dacdd32526a9fab350043799be6d63a0341995e86d1f170d112389"
     sha256 cellar: :any_skip_relocation, monterey:       "fc5c26ab72d931c1a0c4f6f6c40ccf9986d4ce96b43b5e9471444d2e4351b1d7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "cbffc8e98550a7bfbacb94a2294de960775adae4472b69e3c0f57c942098cf67"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8e18f180be6675b73db0198972f114cb11af7b36a5f8b99c005b5447d42c7415"
   end
 

@@ -17,6 +17,7 @@ class Libjwt < Formula
     sha256 cellar: :any,                 arm64_ventura: "96f02b4299ca14c11385c2cf9700f6938d415c4ac304e087199c2a7608003280"
     sha256 cellar: :any,                 sonoma:        "f2099c80842a0edd9655d3e2f4cb255f3d94d963a957c5f830f0ddf1c80b0082"
     sha256 cellar: :any,                 ventura:       "317b411b882679040c72d2d62d42fb86c706111650386689df2e9a75495f5f20"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "00666188d1844cb30a4452cf56019360a425d6aace69199d1a5bca0cdc5572a7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1defb719e07be7e05546b3512320ba7b01cd015ac71063d89e3c609747911b31"
   end
 

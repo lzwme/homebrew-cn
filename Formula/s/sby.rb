@@ -14,6 +14,7 @@ class Sby < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d19349780750bb29ff7e12546fa835372575e0fb08414dd801909a42dd2a6b54"
     sha256 cellar: :any_skip_relocation, sonoma:        "d19349780750bb29ff7e12546fa835372575e0fb08414dd801909a42dd2a6b54"
     sha256 cellar: :any_skip_relocation, ventura:       "d19349780750bb29ff7e12546fa835372575e0fb08414dd801909a42dd2a6b54"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1626456c18c14e6ecc2c7c49c53c7e6bacaf9dfcb6de95ea0f206c10738a8c4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1626456c18c14e6ecc2c7c49c53c7e6bacaf9dfcb6de95ea0f206c10738a8c4"
   end
 

@@ -12,6 +12,7 @@ class Gnunet < Formula
     sha256 cellar: :any, arm64_ventura: "9828a2b6b09942caedb625bec1412d91bba4cb05e6306a2766fab88684163323"
     sha256 cellar: :any, sonoma:        "3c213406363c2c285913937096d2b12402cc35814e8a3fdbf95114f1b0468d07"
     sha256 cellar: :any, ventura:       "b3a02e5ea306d9e16fe9a66f4ba93ff5a67d4252115dc0901b9d0c2c7f534adf"
+    sha256               arm64_linux:   "59d63b6b84902ce2323fe23b35a1a672612302c36cc3d7d173cabb67694f4706"
     sha256               x86_64_linux:  "037fc98ad37b78f34dc88e39dd5ab9cd9ceed9a64446ea8d0968e0702ee120ed"
   end
 

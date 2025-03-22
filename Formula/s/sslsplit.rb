@@ -26,6 +26,7 @@ class Sslsplit < Formula
     sha256 cellar: :any,                 ventura:        "6b5c5082caa1b33a2ec68d438965ef1c405404b8808ca1fd9cda7397ac366165"
     sha256 cellar: :any,                 monterey:       "5f23f06acb83de8e1730a267b0e543e5a2b46af6ca0021922fa2e427c8eb3cdb"
     sha256 cellar: :any,                 big_sur:        "5609fe01116b26aeae02e483354ab84a4b9cb223095618640c32af5bd7341cca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "69b100b3bc4a6279bbef5d49cbf4f44a2085ef1ec03a5872f85a7606f5e667d8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e62ef71e9d154f54fac451123377ad0c59d103b544386b4100ecb34da2ad2cc"
   end
 

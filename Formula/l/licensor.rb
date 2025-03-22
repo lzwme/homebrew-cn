@@ -18,6 +18,7 @@ class Licensor < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "3603cf3a10496131f6cdff4987b18c336b9c7b34afec1e31d722d34a58aa9187"
     sha256 cellar: :any_skip_relocation, big_sur:        "167b3b40cc8af7b009ef8e9e61d886dd3bc356e3197c6672cf4d59edc0bbe6db"
     sha256 cellar: :any_skip_relocation, catalina:       "4c7e0923605a57a9e9855f0d3f30d695af99f87baf1eb5e216797ba7f9760845"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "e1056cd569d727dd376987b9dba21aa0d108a4db550d7a88b2db93a87b72d2bc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7cd9933ef3863a349b7e364bcd9e135606d0b7468d2fe7402c3c688a8b3afd4c"
   end
 

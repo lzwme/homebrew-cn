@@ -12,6 +12,7 @@ class SequoiaSqv < Formula
     sha256 cellar: :any,                 arm64_ventura: "fb6f4007a7cc381ee7fc39150cc08000b3c4b0d6c61ab5f771840d15522f5abb"
     sha256 cellar: :any,                 sonoma:        "cac0ede5fd6bd2543a994cf67d8a48dfb76de9c1a0ae922655decdd47db2b924"
     sha256 cellar: :any,                 ventura:       "bca9e265980a5e1d492157f174a32c7c0264799ccc7dd121456924eebc6850b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "436baddd5f72daf501ea4c966dac93f4ef811a0af1c6a933fcbab808afd34711"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6929e0826397eb7eb9ac89cbb5c431a7b0fb561d968ac9402fe4385831be52b0"
   end
 

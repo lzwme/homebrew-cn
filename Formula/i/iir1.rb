@@ -13,6 +13,7 @@ class Iir1 < Formula
     sha256 cellar: :any,                 sonoma:         "d911a4ef85de7d0ada39a6326a16c8bf7d4194edb35d2822701876cc6b364e73"
     sha256 cellar: :any,                 ventura:        "15e5d5a25bd144ab9e0a1f2081a5a1ffd916576c0618f0a71f414d84a780720b"
     sha256 cellar: :any,                 monterey:       "513efd0674e3ebc67f2ddd17f1911a3596fa2778948ad862cf71ef10da16545b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "71a81a0cac1d08293121e403655c424d7c72afb87cb40218bcef42f4bb631525"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b623801ecd47f5dc48c230b15d7abc0fd05fc97404ad1ba1d8e3da9e536bb5aa"
   end
 

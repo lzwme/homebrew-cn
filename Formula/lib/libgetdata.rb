@@ -17,6 +17,7 @@ class Libgetdata < Formula
     sha256 cellar: :any,                 monterey:       "3050afede9476adb4b8af36a097218742decd02873eb20a9dc8e3876a1c6b085"
     sha256 cellar: :any,                 big_sur:        "8d192c117f205049f5547300b397c792d35d8d5f95854043563d02ca144b1a11"
     sha256 cellar: :any,                 catalina:       "8d05ffb11f957a9dc351f4b969c4d63d5878b5099c18efd6a4c454cb2b3a7069"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "420a69c6ae561c0d05f31e800114b4f4fa88a5804f7491532786396825cac910"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c9ea4ca51936e1f4a68e32eba62aca9e3edc2b8c1eb078c5045d34637dcc2f97"
   end
 

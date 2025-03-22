@@ -15,6 +15,7 @@ class Bpytop < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "224c99a490aef1e9b24842a83cf954885018e291b323a13de2ce184190df9e51"
     sha256 cellar: :any_skip_relocation, sonoma:        "1a548dc894e54ba4df4b522e769c1e5f2ca169045a3ac9005e5a4495262ae787"
     sha256 cellar: :any_skip_relocation, ventura:       "01228ad504d5e1e41895ec90fb6aea5dc89bee6eb4097623e797f599dc918907"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c74cab2fc6db04c3439c06e4938e669fea04203c67956b4fcabd046f7b231a0f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "77c98ef152d8a32a13e5dded91db1efd998925ffffbab5456062d67f358d7394"
   end
 

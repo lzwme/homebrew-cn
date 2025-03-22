@@ -25,6 +25,7 @@ class Avce00 < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "40b26638adfaf290bc07ae792da49106b493ea3109a97c1fac775723a0463ac4"
     sha256 cellar: :any_skip_relocation, sierra:         "576b5ea62376b42733d56e7bd862522588c16160ac1abb5f382c1c12055248e1"
     sha256 cellar: :any_skip_relocation, el_capitan:     "45f18e289431af4de0d1e96c1fadd6a056e80907a1650654f8ee0dd1dafab401"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "716bd0aa9bdbc244c1ae81d687a5d2b1755e4e94b7dc131bf08490c18147bf4b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac93d6ed79eb10699125a47c23e8ece19290f75bd186a670dc25396ef32b1f86"
   end
 

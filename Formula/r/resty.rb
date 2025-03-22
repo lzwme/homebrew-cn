@@ -20,6 +20,7 @@ class Resty < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "71ee80ce7ac984d228659e5411b95f8e28331b623421a78aa7e5cd70548189ad"
     sha256 cellar: :any_skip_relocation, monterey:       "71ee80ce7ac984d228659e5411b95f8e28331b623421a78aa7e5cd70548189ad"
     sha256 cellar: :any_skip_relocation, big_sur:        "0bd9a42083f75c4766e0f880fae27b5a62bdc54c5ce017793f731da663571449"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "6adf9e604e373a8dcb502b444e938daa08a8eee573a1e9b757eb3af4fb2848f2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "664f2cbfde2529e7749b5f9b078cf1382fd0cf8f00a984b646d0b6c710a4a3b5"
   end
 

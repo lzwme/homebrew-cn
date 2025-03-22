@@ -22,6 +22,7 @@ class Ats2Postiats < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "ea6fbabe5daedb333244e591027f092c335a08ca202863df9ea045f36d983661"
     sha256 cellar: :any_skip_relocation, big_sur:        "747125c30964abb7ad33c827104ca58fdacbba8010f19e3cbf9c0590d3b95734"
     sha256 cellar: :any_skip_relocation, catalina:       "c6906922f37376e8edc668995c8cbbf965f0da4faa63940388f26bd3d0a455af"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "03245b8efbf85b96591b28ec06ca32b8c7da1b5dcdb8bf32c62dda500b98e5f7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a8f6e305de82f8adcdd01b2533de14fe9d9209d3cf9f0253ec64e5088dcc155"
   end
 
