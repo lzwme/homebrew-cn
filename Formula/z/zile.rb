@@ -16,6 +16,7 @@ class Zile < Formula
     sha256 arm64_ventura: "93a981404b8329b697eaa73bc973bfcac3b941e22ce378c267d8dc4d8b413e7f"
     sha256 sonoma:        "e2026f3432e32618c9627439100db48f8a36654cf90dbf22c2baa25edc2bb1f5"
     sha256 ventura:       "c029f82ef50328547756ce4932f995994f42a6c262fd286e596862df8fa22a64"
+    sha256 arm64_linux:   "da6586cbaebf99b3e2656fcd87abaf64f021bf14c9f9f9208acbc8819bc0ec26"
     sha256 x86_64_linux:  "b580ca192a5f2714cb7cb91ac4d101794c4ae98b1c799c87f73c9970be2bcb93"
   end
 

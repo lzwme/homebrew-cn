@@ -1,18 +1,18 @@
 class DepTree < Formula
   desc "Tool for visualizing dependencies between files and enforcing dependency rules"
   homepage "https:github.comgabotechsdep-tree"
-  url "https:github.comgabotechsdep-treearchiverefstagsv0.23.3.tar.gz"
-  sha256 "c6257189f94d3ff5bd37a178168c8274bdcb3f3b4fc874061c0cbd7f53ed65d2"
+  url "https:github.comgabotechsdep-treearchiverefstagsv0.23.4.tar.gz"
+  sha256 "84f303594bce854527fe85208867a5060314ff3b24990d7c0f2846d364d81d4a"
   license "MIT"
   head "https:github.comgabotechsdep-tree.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6ae8e97ced7faf8f6c1afdf91cc2e8ede125dec3fbf07f0c2579a4223b42434b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ae8e97ced7faf8f6c1afdf91cc2e8ede125dec3fbf07f0c2579a4223b42434b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6ae8e97ced7faf8f6c1afdf91cc2e8ede125dec3fbf07f0c2579a4223b42434b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8d3154d8f8051e30fa147cffa844920960a88c38fd57f0f6130923cca5b3a981"
-    sha256 cellar: :any_skip_relocation, ventura:       "8d3154d8f8051e30fa147cffa844920960a88c38fd57f0f6130923cca5b3a981"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b5cfb0f6b9c8780c1280372825ea6ba1517b65a83ca21610baba8ca346672a4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "277fe984bf29633301f181b12e8d447023ed0424dea708b6e32f48b32debce3b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "277fe984bf29633301f181b12e8d447023ed0424dea708b6e32f48b32debce3b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "277fe984bf29633301f181b12e8d447023ed0424dea708b6e32f48b32debce3b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d53ad18af48f54b65b6ef9660a05f770517521c78864484a9c5578c596bd3fa3"
+    sha256 cellar: :any_skip_relocation, ventura:       "d53ad18af48f54b65b6ef9660a05f770517521c78864484a9c5578c596bd3fa3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79b4c548fcefaef96ec701766efffd0d20fa2a412d52d8d26a2f51a4e39fcf73"
   end
 
   depends_on "go" => :build

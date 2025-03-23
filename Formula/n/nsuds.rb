@@ -25,6 +25,7 @@ class Nsuds < Formula
     sha256 high_sierra:    "26e82eae22288d51eda3742c0ae4f3e1b0b17a003461f1baec38ccaa52495d9f"
     sha256 sierra:         "89ae2f310d8b21d98ababce7110f20d3d41da06b7a751447c56aa6dbd13a1950"
     sha256 el_capitan:     "596fc55d7e2cc63e8fdc4f3648a23d2c3c9c9eee9775a6579410c28708c0a358"
+    sha256 arm64_linux:    "e38b08c1f769caeeca6deaca0f3a1c0d22364ad89f38973edd6dd3edc6bfc5b0"
     sha256 x86_64_linux:   "bebff61d5efe0ebc66d905824e0316e2c2f46b0c48128855478271de5abb9bb0"
   end
 

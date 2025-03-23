@@ -17,6 +17,7 @@ class Ronn < Formula
     sha256                               arm64_ventura: "4a5a015611099aa8618e53d517cbb481528383ca8a7bcaa9a9684d403378308a"
     sha256                               sonoma:        "2bdef28fa1cc074a01fe71f08be92eb459e5c6ff481af10cba987a69857cf89c"
     sha256                               ventura:       "ae254f18931f756ddbbdbff72edeafe83c69be33b59b8dd809e8ccd5dabf4a96"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc1d853f9d17df76b12ef43bc6e54afb4804170372ee3ca5375b1070757e6a72"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7039deef414574510a014b1ee4f0b676b0535b1af20fad6c46af736425608795"
   end
 

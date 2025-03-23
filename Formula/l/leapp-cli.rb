@@ -14,6 +14,7 @@ class LeappCli < Formula
     sha256                               sonoma:         "ee8f75982419c3a730061d07335b51a2911c3c22dc21a398c8d68f3bcfe8f0ba"
     sha256                               ventura:        "fe8abfb2954f71fb7c34d7611235983d0878086a378e1945d62f8686963616fb"
     sha256                               monterey:       "d53b9cb4420f95a20647b6d0ca02da15c005941889272b7aa00e4a2d1e5206cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a3b894178f3e5aacfefb391d2ad86beaee359c2ef6d5263338ec6e69eaaa9af6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9b5a0a0f4dfdef5663463397ef4b2d68d917de753f7bc0ccafeda392a1356d7"
   end
 

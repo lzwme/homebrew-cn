@@ -12,6 +12,7 @@ class Corral < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1fa374827a91062063dd2671364f343f8a9600ec097b016696947e1f1f223db1"
     sha256 cellar: :any_skip_relocation, sonoma:        "d3c9f703f83af5aae58955158e41a06ec7f278c88835788c5284dc83ea128375"
     sha256 cellar: :any_skip_relocation, ventura:       "22d42569b1948244d62de3e221aa049b32b158bb13caa8f89668b832cce137e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ca8261be3429b294cc647a29ad984237eb955d01578608272c9c80166c1afee"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cd3c31d9a1fd5c3f13c667eb4ebcfe21ff5a5f60ab51fcf692b0d69ec340823"
   end
 

@@ -19,6 +19,7 @@ class Libsigrokdecode < Formula
     sha256 arm64_ventura: "eb410224d2af9d9e6b3a40704afd84cd7a3f6df7598c79b470002a9f6ecdd3d1"
     sha256 sonoma:        "f5e9ec9a38a4e83df28d62965b917dc0809f8c943111920af264847cd2513c28"
     sha256 ventura:       "24e70691499a8ac340debfaead0053f63fd2e708b6e231929ee0644eecd17810"
+    sha256 arm64_linux:   "ea90517cecd0032963f9d6faca72b8665fc648c0b4df7e3c523cb3b3553c0479"
     sha256 x86_64_linux:  "355ac16e0c4e7e8d896a78e556e079ee9269753e1ecb996dee863593d7f32db1"
   end
 

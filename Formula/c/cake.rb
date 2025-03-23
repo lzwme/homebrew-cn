@@ -10,6 +10,7 @@ class Cake < Formula
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39611171d03f29228d6c0f1402647d20a7ada16eff8a8c9fcd25c57d8ce5b7b1"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "37df34c69614dea7ac08ea390a065de5765df3117ab8b7bf4d76135d9ec3ab3e"
     sha256 cellar: :any_skip_relocation, ventura:       "9d076394489c1d9004fb0749b3723dde1fd951a1cb4f7f81672e83c82680fd02"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3c28f268ba6ef8a1f944a6f722b47cf0b210b7c46dba41ecff0e85b83ce55f5d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9790da9b120af327c140e99edb3d8bd88fe07016045863938915193f376494b2"
   end
 

@@ -18,6 +18,7 @@ class Msitools < Formula
     sha256 arm64_ventura: "b44ed9f4798de3add43ba4b2d4eab8d19de501e6550f33bb14a70cd929ae4e7b"
     sha256 sonoma:        "828f74c79ab546bff9163b165e186f9a071593ac7ef94b8980ae1295a64ec2eb"
     sha256 ventura:       "9643bfd74e73e44cb051d236b2ad71ec2ffe7f45a7466ecb44758b6909c91cbd"
+    sha256 arm64_linux:   "dbe166925d6bcfe474984d3514b2145e151ea0e3953beb76410f76a052f29d62"
     sha256 x86_64_linux:  "6361381386fa074d2bed5ced54c6ffac0902bd01add061c47b7a35b603c0757d"
   end
 

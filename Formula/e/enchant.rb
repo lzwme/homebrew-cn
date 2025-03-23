@@ -13,6 +13,7 @@ class Enchant < Formula
     sha256 sonoma:         "7c53b37a59b7be9b065d5a45e75a4b605fd671c6e4495abd96b3e689b8624aba"
     sha256 ventura:        "f6ea7979e2ef7d12132449e590ef560b6c1d2a068da3bbe42206051d00f08eca"
     sha256 monterey:       "10cdfb36ac05c8f07d43cf0687425f3677a03cddcd0ab39c42065aad1e7d0f22"
+    sha256 arm64_linux:    "b1f775e646bce03f676c2628c0219b9984ab2f4eb95ed1c95e053f500b81d779"
     sha256 x86_64_linux:   "d0aab4334f7a0feb7d168863bb81a4800982aacd709bee3b96146328b0a9f097"
   end
 

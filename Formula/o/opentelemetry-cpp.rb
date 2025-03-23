@@ -13,6 +13,7 @@ class OpentelemetryCpp < Formula
     sha256                               arm64_ventura: "70e37dd3afe14008a1aa45af4680693cf62110e229104af2a5479d90907cba81"
     sha256 cellar: :any,                 sonoma:        "e8df11415f61cb4bd9a992c10408aeee7234bc6d7fdc826961f07e0e3cc69f05"
     sha256 cellar: :any,                 ventura:       "a6deb2c20413aab929e648039d6d9147e1abb33c863acd768fe971ab3da4a6db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be971908b2ed0ac0b64aa3b8d4afc2b9a6821308e268366b4cd86c970d6afa85"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b8721856cef340e4830b0f3852460abda1fc3f13b13c245114881f3177e84e8"
   end
 

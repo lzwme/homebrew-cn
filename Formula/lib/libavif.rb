@@ -11,6 +11,7 @@ class Libavif < Formula
     sha256 cellar: :any,                 arm64_ventura: "ac77cb3a2d3454bdb65849f62eb012d462c36e2c99e9ce4cb5943ac995ece7f7"
     sha256 cellar: :any,                 sonoma:        "017c5e8e2fd2c29e85a549292d4df072b7e25bb22553538d9fde27f9f458ca7f"
     sha256 cellar: :any,                 ventura:       "29c4fe070f05b1fd6f67fb9987001a570c736fa39ceefe7dfa7fa92c7136612e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f475b33e6a5e14decaccea79d41fbd0b8c827c7d8478f162e9ec7060caf1a0fe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8513ff0924eec754250e1ea79370950fbb6be068a7a155583b58b5ad1ac34f60"
   end
 

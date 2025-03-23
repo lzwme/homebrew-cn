@@ -12,6 +12,7 @@ class Xplr < Formula
     sha256 cellar: :any,                 arm64_ventura: "7629449d18d25d39455dcff74f2746c8531292f709116dad4701673627039a65"
     sha256 cellar: :any,                 sonoma:        "11b427f5313b5a86ae5007553903eb1702f3f73cecfd33f044a79c64a79a2fbc"
     sha256 cellar: :any,                 ventura:       "255db6ba076943720b3500a46d51e9985c1abe09095edb74d13e8a90c746fbe7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8b97ff3140ef328d4dc330c7082c1d0bffdb61555d04aaef779fac7552da2f3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5fb6dcaa884f339e2b63da4a7b1284f8619e778f32eb459c09f6bb56a761da57"
   end
 

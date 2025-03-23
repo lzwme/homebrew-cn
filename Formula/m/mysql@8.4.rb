@@ -17,6 +17,7 @@ class MysqlAT84 < Formula
     sha256 arm64_ventura: "18fc80c95436a9df2a9f91e7192ce68de6664ade3e4caedfdd920aab43ced4d1"
     sha256 sonoma:        "c6c9facaf45c6c4b8ab5ff4c8c11cde50b1427c877dcaff3f253ab33aff45f6b"
     sha256 ventura:       "032fccac1973172acc1d45d8245823b9c7c1bd972051bc2f515b97fd2d136984"
+    sha256 arm64_linux:   "82a2432800b1343e718333415a000784c5e55e574bdd01413850314ac07ed1fb"
     sha256 x86_64_linux:  "5c1b88d0b1d4d3a3c6282c16e366e1b31eb9cd776b0e2780ead7688a82a0f480"
   end
 

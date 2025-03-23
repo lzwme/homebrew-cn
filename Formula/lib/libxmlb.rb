@@ -14,6 +14,7 @@ class Libxmlb < Formula
     sha256 cellar: :any, arm64_ventura: "01a9cef7ad93b5395cc7101a67891d0bd51795408c989b3e84656dc417523930"
     sha256 cellar: :any, sonoma:        "547b825d6d1e54d370c029e9e7b01426ae3837236a860aa73f8720f716c2d312"
     sha256 cellar: :any, ventura:       "5a41d81df13b1f3e95b9c5b0be39638601585891df073c1bf81e76dbe671a8ca"
+    sha256               arm64_linux:   "a65b335e5ae108e31a1b65bdf4ef969785f948e46bb1a5c54da501c6608d3574"
     sha256               x86_64_linux:  "b3442cfda49f9ed9d25055f6839fd50fd5c7eb1a8785d20ea70266894548cb05"
   end
 

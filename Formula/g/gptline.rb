@@ -15,6 +15,7 @@ class Gptline < Formula
     sha256 cellar: :any,                 arm64_ventura: "18703eff958131ad4f93590c9d92b41849ac40d4352535e1093711827f9f08ea"
     sha256 cellar: :any,                 sonoma:        "72993ffdc79a9d62a3e3f1f3b597eabfa6d8fd6621ae89d659f724586a00760a"
     sha256 cellar: :any,                 ventura:       "7d5b94c7a3d101980a1176975e7d1e907755aadeacb6004cd0f0f02cf1ad3762"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fbb971be6915cf1774ade1b200a2ace030459db88cf5a656b551ebf752fa0e71"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "51b645176411e2a998ee08e303c00524bceae0688402752e920ec08a55c5b78b"
   end
 

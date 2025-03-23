@@ -11,6 +11,7 @@ class VideoCompare < Formula
     sha256 cellar: :any,                 arm64_ventura: "01c93c9b857f4313a29a448594e3f0e4977a4f579656e47429e8a4784e2879c1"
     sha256 cellar: :any,                 sonoma:        "05183a1333a90285b4399f3a82ed641ea68b2764da7849b39212b1acae97f115"
     sha256 cellar: :any,                 ventura:       "923701c5a0f0caccfb9fc68d2853ec191dc6c5bdfca9b78daf70c570491675c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "800a5ba6a51b4f351143f2a647507c94c74acd5efc123e3149f64ffdd33aa011"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "86de9b148b58a9fc0e065e13120d7e7077ebaba2e5f8eb3c9414a5c8f9ad7542"
   end
 

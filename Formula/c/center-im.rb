@@ -17,6 +17,7 @@ class CenterIm < Formula
     sha256 sonoma:         "02f27aa633b15c66529bd3d7c9d11f382b4998816fad2f048b1efd11be44cc2b"
     sha256 ventura:        "c39b856a9f8a148f92c600bafb203b135e95ccb34e6a28fa891602c3b6d81858"
     sha256 monterey:       "a8442a0d0e8ba9888577ddfd2d8c76699cb0eb20a1e96c0b0b143186ad27e63c"
+    sha256 arm64_linux:    "2a1f98a1195968b86f0fd44b1c115daeb2a54d38161b85339641223ab121fd37"
     sha256 x86_64_linux:   "7148aa25f016c25825f9ed5fb6526d14737ba38208779727937801f2c7dbc42f"
   end
 

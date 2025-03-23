@@ -16,6 +16,7 @@ class GitCredentialLibsecret < Formula
     sha256 cellar: :any,                 arm64_ventura: "678e488118ce50b0508050942f62278db699df722623ac0e878fd2d04d52d6bb"
     sha256 cellar: :any,                 sonoma:        "0ea8d08fa5f2c6232f2e02e662103368212447c4c8f2befe3e4a93ec51aac83e"
     sha256 cellar: :any,                 ventura:       "b49735c2fbb0c3dfb5866560ca1045fdd914494d2f733432db0073450f3042f3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "473f1d57ba1b87591fe7432bef86eee8b0d59c81565ec26b87cc316b3767f9bb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0224bb1302993382a34c111dac7415d3a32940ba18ca02e8b2329eed1a9b292a"
   end
 

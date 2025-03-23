@@ -20,12 +20,17 @@ class Ninvaders < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "75247d901255b6fba826ca60d909b5bb1c349c969b98f65275c898ca45b32b7c"
     sha256 cellar: :any_skip_relocation, sierra:         "3de94522f9f6f5560e1e6f354470aef0c46de68792fd93bd2b044d45db8328c6"
     sha256 cellar: :any_skip_relocation, el_capitan:     "b2d4f23349e2214d5a0c8b51218974b0f8b2704d333f1bca19ca4b4539e2b9f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "d829100cdd7f35e3d8276de284bdd884145728a975ed2ddb6f3985bf6a8d966f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c4d884e93ed10e3c362cd6a7b948aba5099efe9921dfa45a5163f0e0a2136da2"
   end
 
   uses_from_macos "ncurses"
 
   def install
+    # Work around failure from GCC 10+ using default of `-fno-common`
+    # multiple definition of `skill_level'; aliens.o:(.bss+0x67c): first defined here
+    inreplace "Makefile", "-Wall", "-Wall -fcommon" if OS.linux?
+
     ENV.deparallelize # this formula's build system can't parallelize
     inreplace "Makefile" do |s|
       s.change_make_var! "CC", ENV.cc

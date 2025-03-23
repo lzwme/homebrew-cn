@@ -13,6 +13,7 @@ class ArgusClients < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "e8971b72a53c213e0e42c494c6541414596aa11c86abd0032d0cd375775d093c"
     sha256 cellar: :any_skip_relocation, ventura:        "e9e2edf0a1a0b4e8f6eb0a68b8a4bb3bc9eb091d79fe45b8de822eb5a13bbe18"
     sha256 cellar: :any_skip_relocation, monterey:       "6fc266f5374526ff225dd0fca2645ffe1f445665c3877b6f3a1879db503a00d6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "41f00d0bc7f3472d5bf84ebd9756e75f38d7671732ecfef5ee573b27f3cb0fba"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6ab05f0d7461e89b9f7ac1b18c6abb4d191a9c045eaf151d1126eb35f91157c6"
   end
 

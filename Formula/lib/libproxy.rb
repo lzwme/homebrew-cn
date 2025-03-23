@@ -12,6 +12,7 @@ class Libproxy < Formula
     sha256 cellar: :any, arm64_ventura: "3b1fadfe0d664fba4cb8490bf6b60d6c60fba021ecbdf2392baa3883c7802be8"
     sha256 cellar: :any, sonoma:        "33bcfa11bc19106a39baec8b02ea502d5dc8b33d3337e2d59f8b10027f1d6ad5"
     sha256 cellar: :any, ventura:       "e1c5deed45524a740381a8cfb7298b8e2cce31574addda6143546b07517a2535"
+    sha256               arm64_linux:   "739f6c10726d3f147797cea43ca60c2306ec02b9064927ac8313a84f96ea87b8"
     sha256               x86_64_linux:  "c49f1a448cfc3917e90a0d189b88bfaee1573c717d119f944d13abd8047c7e3a"
   end
 

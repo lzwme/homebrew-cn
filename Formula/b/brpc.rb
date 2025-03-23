@@ -13,6 +13,7 @@ class Brpc < Formula
     sha256 cellar: :any,                 arm64_ventura: "10938cab9c5c7dbc3b4ba444546ac0afc70ec2ddd0bf764c6a544a9cc8a51501"
     sha256 cellar: :any,                 sonoma:        "933b746de19593b12e478e0b22de6fc99dc4ebb44b93720af8d2e033676b600b"
     sha256 cellar: :any,                 ventura:       "8b4af33b95c69d36cdb59c377ee5fd9642133efc74b5bbe1c5a290f7c4593258"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "49563320f5d47eb394dd41fada916724e072402727186632a79a759913d7a52e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1520d89eae11d459791a62b4e2ea0864523e3cc08bc349666bda81faf31cc025"
   end
 

@@ -16,6 +16,7 @@ class Ginac < Formula
     sha256 cellar: :any,                 arm64_ventura: "3d1b94dc22aae599565dfe9fea6ac54ca696f11cf5a3f50528c594d1ae39f95f"
     sha256 cellar: :any,                 sonoma:        "68229ef05f5b82e8750ce12bfb7c84997f85b2c067d49273c21e3c819aeff10a"
     sha256 cellar: :any,                 ventura:       "eddcfc320d3691fdebfd71a6f642ddeac843a4a319cca1c3a24fc5f9d045ca80"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "21027f247652621d6524998550631fc9eea5d77efa7914f10e3ef0562ee7965e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a010a1afcb6ed3b42ebb387ee863eebaef45c995bea1bbba87c0b7663f8c107b"
   end
 

@@ -12,6 +12,7 @@ class Astroterm < Formula
     sha256 cellar: :any,                 arm64_ventura: "ff0eae541a834f232688fd1a64be1d4959da0a683648fc2406813ab77c07bd9a"
     sha256 cellar: :any,                 sonoma:        "dcff897a85fb13ab2b7341577849de53bd4158c2384f60ce09ac39f3a0c764e1"
     sha256 cellar: :any,                 ventura:       "c48bcaf9ef3af7dd55969efe833400bd5711f4c5b2882929ccd6d65ae71195fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "97560d671623bd96285f2eae104209c7d95b5718eefddf6cfc61d247fb60ca8a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f841a9d3d79cf04ed5f6b03c83ae86c3a859f87930e2652d9b1e895353c51d04"
   end
 

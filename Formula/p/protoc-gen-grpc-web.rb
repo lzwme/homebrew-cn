@@ -17,6 +17,7 @@ class ProtocGenGrpcWeb < Formula
     sha256 cellar: :any,                 arm64_ventura: "e75fe6e52a34704e491c74ba4ec5b7b666ce5981395525608b600777172d0714"
     sha256 cellar: :any,                 sonoma:        "e4ffa319ad9007d9a03c708c7cb66db24e7a8f377763544db0c30ae0894c06c6"
     sha256 cellar: :any,                 ventura:       "6ea7c8bc3e7ef2e5920f352f956f22f0c877b2e167969e0218a7611a88fedcf5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "777cde709def0014575f71ae1d8b7393b4174040239e55f90a3d15709fb4ed65"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffc6a7234cf346ecf50d21f4835314df63946f01d3a5df6960db7ef5281783e3"
   end
 

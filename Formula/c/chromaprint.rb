@@ -14,6 +14,7 @@ class Chromaprint < Formula
     sha256 cellar: :any,                 sonoma:         "fa5ea59aa76dde0b837ae13d1bf433a54e45d109e07a61131f8da7cdcc658e33"
     sha256 cellar: :any,                 ventura:        "55a6af3551894017729941b114a1011b30c14bc524a4cd6323c42fe6fa5c8968"
     sha256 cellar: :any,                 monterey:       "d6d20851c92be78865b588a89579a87ca1dfa178c6bc845b4a741670c8acb503"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "6749d2ec540c676697f0052743987d5ee8a0e226bd2823abaf236894b5f6aab6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "66ae2d2c38e63316a2a33ffbbdf601fd3145c2a13f5ac708180ca859613d8481"
   end
 

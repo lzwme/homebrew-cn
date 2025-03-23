@@ -11,6 +11,7 @@ class TRec < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3697e02ec5dfa92fc7168ffac442b767fc4d3a2a6ec994e8ca90f22720e52e96"
     sha256 cellar: :any_skip_relocation, sonoma:        "7ee2792601edc77380d0749e1e7605cd8f2607311b1225ecae60a7314b3bc68b"
     sha256 cellar: :any_skip_relocation, ventura:       "20f8a41fa02ef8d34c2525dd831f67be5e13a87df27ef3ff9289ca69272e44cd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7f070666a185ffc61a81f8e9d5c9bd128b3fcb12e53d01c6906df0d91d92c10"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "62fa013bdcdb71ede6a588656dad31e8af3e6184d6ced54c6218959ab79899fe"
   end
 

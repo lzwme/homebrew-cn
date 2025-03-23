@@ -14,6 +14,7 @@ class Libjcat < Formula
     sha256 cellar: :any, arm64_ventura: "40b6538beb4dcfc8a8eacffe717dccd84595284b564c43c4da4828f7683d1dc4"
     sha256 cellar: :any, sonoma:        "e531fcf0517371bd203e66ac885f2a89b5f0f1e184d02e2c4949a3a2d92a644f"
     sha256 cellar: :any, ventura:       "927a664154de77bcedf12dbb4f9232851ef9cc811b3b80308f9ccaca88d1d5b4"
+    sha256               arm64_linux:   "88a16575b027306459c033e2d982e34f1c0d22fb2f368482ede91f36a930dd01"
     sha256               x86_64_linux:  "1d5b42e6de499edbb2107b66428da6be5d1695e7dd61b4cb5bc937f597e9ada9"
   end
 

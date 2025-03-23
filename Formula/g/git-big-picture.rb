@@ -14,6 +14,7 @@ class GitBigPicture < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "0427911937b4a1b43a56835c6a4d80f1c3513d32cfe571739f56f12979620851"
     sha256 cellar: :any_skip_relocation, sonoma:        "0427911937b4a1b43a56835c6a4d80f1c3513d32cfe571739f56f12979620851"
     sha256 cellar: :any_skip_relocation, ventura:       "0427911937b4a1b43a56835c6a4d80f1c3513d32cfe571739f56f12979620851"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e09e1171d0a5c340d69e47b4942a14d5a2c6f797c5b33875ad3c69806b7310f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "12e262c0aa73b5a7be00a9b803134175ad2856493590e0f80f2385fcaa3f3c6d"
   end
 

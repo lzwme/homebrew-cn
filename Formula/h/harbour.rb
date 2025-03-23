@@ -29,6 +29,7 @@ class Harbour < Formula
     sha256 cellar: :any,                 sonoma:         "cc37a07184ba91033dc4b4e824a302f9ef54abbee7026fbd0cda30f2d2cbeb57"
     sha256 cellar: :any,                 ventura:        "3f888b135d92845905b0926aef1623e5c4bcc72b4c71cc4d6f45554c5200f78b"
     sha256 cellar: :any,                 monterey:       "407f06fad0eac6ca57c858185ebe6e77bb4dcd7740c5b91a6c0e7524d72642c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "798cc4aee29d60fb9fe930c7b22f691de6e5f0b90ac997f42d41d1c1d589baf5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2087353cafad551175524915a162da8520c6401686c1d4d70414553fbc2d1f1b"
   end
 

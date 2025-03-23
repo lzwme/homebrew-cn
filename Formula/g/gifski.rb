@@ -11,6 +11,7 @@ class Gifski < Formula
     sha256 cellar: :any,                 arm64_ventura: "bb9a7f723b6f2176c5805be229000a05c0e573bea4cb247a4b49beb436c80c24"
     sha256 cellar: :any,                 sonoma:        "f3d27ef1e3845269bddac0e76632e81bcb5aa7ea9d16c5b52d5d3810e2c9cf63"
     sha256 cellar: :any,                 ventura:       "ef8e5b73042edf2167670dca1eaf1d77646ba00e32a636da7ec243f94050e57b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d62ef5b1f5f9b608d2605fed56f86d5654124c880fc0eb791683578da50d976d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c38a2e6784b77bcdd086fb70dfad916bd47f0e97d55f7162bdb9529ffb8ded9"
   end
 

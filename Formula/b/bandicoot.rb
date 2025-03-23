@@ -11,6 +11,7 @@ class Bandicoot < Formula
     sha256 cellar: :any,                 arm64_ventura: "e5ea4cbde255f6c9f0bc3d01a7b11c853dcb441bf927dca58961f50f15f11984"
     sha256 cellar: :any,                 sonoma:        "1db2036d7f853673161c668b5a0889b74e17dcbf1ccc5384a919a63a93ebb3dc"
     sha256 cellar: :any,                 ventura:       "f1a97297c4ba2488925a8039bea63092693f9223a4020a08b0782a6507a2b797"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "59d673384fb931ce83416ebf576b7687267098dc491e0c6e005dd231c7d881e7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "98d8e185d883a12c7e442ea3df21c1c34f433534a50aa69b81218d5f437f83fa"
   end
 

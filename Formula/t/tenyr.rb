@@ -17,6 +17,7 @@ class Tenyr < Formula
     sha256 cellar: :any,                 ventura:        "7174b9cc9538058923d3e8cb74867679cddb2f8d932c644b31af6a1948a3d701"
     sha256 cellar: :any,                 monterey:       "6fd5d63030858e3d238e668643502a954424d6cebc82a15a6a0e19eb13505ac6"
     sha256 cellar: :any,                 big_sur:        "1d65d8a309019393a6db1f4d16d09f6fea293fc23dbb572ffab044cdabd952ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "21cc8e97d6069437c1117ead2fce89372a5251458e8878f58ff8127ce5e52f7f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f5c12c61e48eeb39a813598a9d1723095d0d0aaa5d6b30118457df84ac4f57de"
   end
 

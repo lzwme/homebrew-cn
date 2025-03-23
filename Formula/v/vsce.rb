@@ -17,6 +17,7 @@ class Vsce < Formula
     sha256                               arm64_ventura: "28083d90ccc596385b60b38c6b8430e69af847232a294f8bfd5dc8870002f9f7"
     sha256                               sonoma:        "5b8838497a1ba2bdf7506493648bb72da4568dda62b1b33347a80d7f0637725f"
     sha256                               ventura:       "66f34bda0af6336d57c0286c820c1c7c1cc8efd0becd340ebf8666cec2a4fe66"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bea08838dc023a2f937482c38c45188b1e19eda2bc8a0fa386a3983896351b91"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "75d8ce19d34f6380c08188a1c4858e29953b0fd3831b3044861c73cbb78c9698"
   end
 

@@ -14,6 +14,7 @@ class Gptme < Formula
     sha256 cellar: :any,                 arm64_ventura: "83adf054c81e235d85b10b71a84d7ce8b0c4d2f73e2cbd838a4165ce2b1d0702"
     sha256 cellar: :any,                 sonoma:        "d86e89cddf36ef52fddb808939cbcd934ae53f94afd99cae4a080a99bce94c20"
     sha256 cellar: :any,                 ventura:       "54d0047a673cc74c162678bb11b8ffba61410cbd6ac1aeda48e2793b54e4d02e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a2e3deb69770e0c1a3fb2ce435cae74b3f55074ce8b103829e1d32e9294eb44"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f77aa77701a578d5e2a51e074ab83144319d27c4831eba1e904148c182cb606"
   end
 

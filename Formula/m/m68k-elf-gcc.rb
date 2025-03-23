@@ -16,6 +16,7 @@ class M68kElfGcc < Formula
     sha256 arm64_ventura: "5650b3c62fbb098712a8a2615346b5ed924e24b651cc178fec307184cc32db14"
     sha256 sonoma:        "79c3926b40815efe59470e1571bcbc5b474991cf9f37261e1ff92254c950dcd5"
     sha256 ventura:       "6b8e8dc98de69e7c15500ebad0e00af992a206246f7d7f1ea45ebe68d3021b1c"
+    sha256 arm64_linux:   "fd757ce99432b7ec5ce9b52d9abb7f535a9a58dce22a9fe4eb716609f8c47ee3"
     sha256 x86_64_linux:  "aacfe3fc4c1bf0ffe6d71ed638677b27ba7a34986e54e60b00fe63c5e6c3dd7b"
   end
 

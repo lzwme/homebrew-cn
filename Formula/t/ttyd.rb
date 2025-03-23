@@ -13,6 +13,7 @@ class Ttyd < Formula
     sha256 arm64_ventura: "36a2735751c4de95d01299f4378f7cf000e560e80b0fc9101e35ff006bfb92e4"
     sha256 sonoma:        "6905f5957460561162dfd04a039cfa1d7792acc7de68154a432acf93e88d9358"
     sha256 ventura:       "6cbcd6bdda77c96268ac6e25c194037af3f054fd6a0b8a1b2614e6f6dd3675fa"
+    sha256 arm64_linux:   "50912f458f5dd30ee4c08a9215285e84a736d0a4439cbbfcb590d17fc62561e2"
     sha256 x86_64_linux:  "7bddc259bdafc9182b5f33d160aca7d9b010782e0c9a69421ac873f1f0a6542c"
   end
 

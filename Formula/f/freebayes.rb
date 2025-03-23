@@ -24,6 +24,7 @@ class Freebayes < Formula
     sha256 cellar: :any, arm64_ventura: "c29719f1990607011ef77722f0059255652d721641ba57ffa1fc1d7effed0bdc"
     sha256 cellar: :any, sonoma:        "7d68eca383a04fae9434a48205c7548bb02a6ec9e1f511645e69c33959e35a4e"
     sha256 cellar: :any, ventura:       "2b5efeb60159a49524d33c803581815a4005afe972a4c3cb102d04ce91b7120e"
+    sha256               arm64_linux:   "21666bea0fedab514f5f8af83515d9389e475fe5dc6bf7d0dd73a99ce51e768e"
     sha256               x86_64_linux:  "8b76cc3e3db9575510c456b74286a1f5732e5495b3c1232311a2c0c220fc7e0f"
   end
 

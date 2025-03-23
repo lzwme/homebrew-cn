@@ -21,6 +21,7 @@ class GtkDoc < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "62aab6d8c1b15f0aa75052aa3b928304aecdb39241e1c6c4e165b6436dcfc12d"
     sha256 cellar: :any_skip_relocation, sonoma:        "c48ba412d560fa2dab1af3f8ac98013d64e77d4ad1c47f46c9aae84fdc30cdc7"
     sha256 cellar: :any_skip_relocation, ventura:       "167239cb8ead5dcc2911212f63302b7af68d88ba38dc1996e24a9c1da8150bd8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ae17097732d29e71de50c9e7d8113e76447bebd0d23d3cb2e475ef543d29313"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f1cee5eacdfd90a89dad5a1b9303442d97fdb170bf1014efbc323d49e292f59"
   end
 

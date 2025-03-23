@@ -13,6 +13,7 @@ class Dnstwist < Formula
     sha256 cellar: :any,                 arm64_ventura: "1fe7055f364955332df41950d1dc83e507d73f0e6ab185bdfbae25deb5374021"
     sha256 cellar: :any,                 sonoma:        "6bff9f746169de05da2bbcd1cbc44030e3122c5e48d1fc7e21746e4893293173"
     sha256 cellar: :any,                 ventura:       "e1cfb7957433647148b2831338d2b4b729b356f027377b857b29e713f2e5fa14"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbcbe3aa4502529cb739bbc7f68de1adf48e5c3cf3ae4191fbac8e4b00078b07"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "da7a5f81a7476529d05c5d55677a715454934914c5686cc7ff19c2eb0d57cea7"
   end
 

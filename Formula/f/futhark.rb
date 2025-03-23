@@ -1,18 +1,18 @@
 class Futhark < Formula
   desc "Data-parallel functional programming language"
   homepage "https:futhark-lang.org"
-  url "https:github.comdiku-dkfutharkarchiverefstagsv0.25.28.tar.gz"
-  sha256 "fb2cdde6d1534155c79d1a614ee7e6ce001270b2fd4226bf27cb217a602d198a"
+  url "https:github.comdiku-dkfutharkarchiverefstagsv0.25.29.tar.gz"
+  sha256 "9a7baeb70dde083a3e1431da920a820d1afdb0363b21a6402f7adb3732b1dbd8"
   license "ISC"
   head "https:github.comdiku-dkfuthark.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba2f7fcae38dc58bd8e561ff1201afd5f26ce89fd77b11aefb057f1d6826129f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3d46b12b94b335417e23dfe84dfdcd1f71b949086d4d4b76d3baa66c2f904d61"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6e7ec66ad76aa5e7a47b9acdc22ea351a210d5d8242e880d4011393e2e629661"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6fa8bd3125b10f81de6bd47cb96d5763f8aadda521f40057607b5f5d3f00652f"
-    sha256 cellar: :any_skip_relocation, ventura:       "51b8124e07cd84f9da6d823e29142a93ce2e8c515d089553e33fbe72daa43bbf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2433afcc46ed7d82673d89ad36d99a64d947ee7e56bd95aabaa3f00b5be0594"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e067a4669708a3684c6e3f4d1e0092796b2bfe3f583cc678154c9ad0005ed208"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1822ddfbe05fd135e933ef6286a7f79627cf73e2b1332c9e9c67c31922dffa2f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "acaaa46da22d3b3706133b43afa9d4d3f4849a4493fa2c3bb9dafcd7fda6b164"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aa1316c2fdde22761cc79e018f10acada7f76e000e16b599de9c50282a45d7b0"
+    sha256 cellar: :any_skip_relocation, ventura:       "7f3f8383c0b16688cf8a7a801491024267f235d7dbc689ba123ef8598a5fedd3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc1b84b83dc2aab93a013baa6d01275765f9673748a87cc5380752311dc25ce1"
   end
 
   depends_on "cabal-install" => :build

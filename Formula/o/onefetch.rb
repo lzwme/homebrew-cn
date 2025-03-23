@@ -12,6 +12,7 @@ class Onefetch < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8197b79c3f38ee59ab1566c8207a18cacaf29b62f0e18e4b3bcc0290042e2271"
     sha256 cellar: :any_skip_relocation, sonoma:        "75d5a293661170fc68a59e9eec180cd862993a112b890df6baa314ef52c49a88"
     sha256 cellar: :any_skip_relocation, ventura:       "cb64912fa0eee5b4c21b478b674e7a60f3db7c0c798e64634c4472f74eba92c1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a8e4cdacde3ec14bdc77ae1851ed85765e8602d345ca94c9dcbb3861bd865ae"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8eaaca384c0c07d80f8e8364fb651dbb2e95e4b7094634e45c2b951f6b0b2c12"
   end
 

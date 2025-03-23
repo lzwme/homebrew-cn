@@ -14,6 +14,7 @@ class Graphviz2drawio < Formula
     sha256 cellar: :any,                 arm64_ventura: "fbe3fdff2d2aa5347c017f76fdbabedd6e186193a6ecfb1d89c3096282f0eb28"
     sha256 cellar: :any,                 sonoma:        "2ef4e26ca63cd22697f16a72f10b049f6a3a4af8a9476bca63aec0b343208982"
     sha256 cellar: :any,                 ventura:       "e95abf496b968b6720ac814b150f9f43ebcd2ce510f3415b6e304e375aa1c488"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b3e5d4d939d4ec4ef712211f3c4fa83fc3829f2dd199aa79ca638978e2cc746"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c3027d0a7344e41bab4006f7c3f422fa68dcafa519735e53a7165378f0c3e76"
   end
 

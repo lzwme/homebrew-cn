@@ -16,6 +16,7 @@ class VapoursynthSub < Formula
     sha256 cellar: :any,                 sonoma:         "395c38b3e3b818d6a80c0ea68b9045a13c9eddef5506176cb3586ce5d4859ffd"
     sha256 cellar: :any,                 ventura:        "ce5253289d282a21485141cf0e0fdf807121e83f340265e02e9e3631f18f679c"
     sha256 cellar: :any,                 monterey:       "a7445fbbfc200cc578a4d00ab7333989353fe0f2ccea4ed91f963ce97764828a"
+    sha256                               arm64_linux:    "5bf6134027bc5e0e8d33a20e39c3145b761fae00bdd2829217bedd63e8c7388e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ebc9c1460d973e9f99019e07866d5422349101796a7a4267c83bc945bffceec"
   end
 

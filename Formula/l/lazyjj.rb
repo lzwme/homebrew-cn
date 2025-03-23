@@ -12,6 +12,7 @@ class Lazyjj < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "fa4a9daca65ca854f3ca9cbc5505b076a16a61f53ba7145d99036316bbac6de6"
     sha256 cellar: :any_skip_relocation, sonoma:        "78a96d3afef172a336db8e721539341a500d8e373134f1c67ff5afded93a66e1"
     sha256 cellar: :any_skip_relocation, ventura:       "fa1c36a2ae1e1ffb1e341fd27fac8de8aa28898a00d4ed7e8d304803eddf911d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c0a6d3272ad035c14e7c141c8a56b304a4039b63e9294cf5a78f94dd33693fe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c3dddf8d87fbefae71b6c798e8848a16ba81fd04c3eeb349b889d200ae65105"
   end
 

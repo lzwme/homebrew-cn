@@ -16,6 +16,7 @@ class Latex2html < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "167d02851e14c9c60d894dc40c32bc263dd2eac9356023d67123eea9f5197b31"
     sha256 cellar: :any_skip_relocation, sonoma:        "07acb63ae7523f8a1d3f389a155966303ed115ef9b3601a41adba50599cc5a8f"
     sha256 cellar: :any_skip_relocation, ventura:       "e0d9a77d2410693bb2fe2d55e8dbfba133f8ee636a35948f71eb789b2c5168d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c68c62432cff6fb7f8b197127af925705e61fbec1873d31e281e930855a1b39b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a492ae0e47fef2bb2331f68488a82d22cab36afb649c82af28a34b5532b8e0e"
   end
 

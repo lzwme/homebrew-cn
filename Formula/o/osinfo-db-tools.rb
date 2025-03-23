@@ -16,6 +16,7 @@ class OsinfoDbTools < Formula
     sha256 arm64_ventura: "0290289cbf19411222251e9ddd30034f5eb3ef07d1522433604553ad37ed6084"
     sha256 sonoma:        "6e8998ee30a50e1f554a2b60ba07fa41b060ca5e0bbd2127141c7ab3dfe14c21"
     sha256 ventura:       "77dc1ed0d15dec8a1e439b0d90e536e341b44ff30a0cdce795040d1dbf176537"
+    sha256 arm64_linux:   "cf6f82c290c7b56fb518c3267cef7f49a838f41196536bc4001190ad0152bfe2"
     sha256 x86_64_linux:  "0b59eccfaf5d2d701369a0feebbfeed127dbdf4cbf20acc31a71e22400a1a692"
   end
 

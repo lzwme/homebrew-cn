@@ -17,6 +17,7 @@ class Dug < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e7caf9fe29373fefb13ca554c3e58d0ac96cc4fb5f4a210d2ff28162a0a2d96d"
     sha256 cellar: :any_skip_relocation, sonoma:        "6fcc35f470be76307cf14e8ced656a65749c49f65e63df5e267494596199eeb4"
     sha256 cellar: :any_skip_relocation, ventura:       "4fd87cddb2e79d2fa8f92f0534b386767e8670c481091ada9574e5944813bfcc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8dcf74573e47126fe1226d4a2bcff3d5b2240f756cc7756ca064cb35268b6110"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ce1254977a436fccb15cd219228dbb012ec7722d91e883b4a47bbd277e19803"
   end
 

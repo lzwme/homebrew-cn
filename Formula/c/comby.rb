@@ -14,6 +14,7 @@ class Comby < Formula
     sha256 cellar: :any, sonoma:         "1d1399b5fb4f1c0c1fc167a8a758392a8e7fd261ee351f40460079d110dbc27b"
     sha256 cellar: :any, ventura:        "615cb295eabe9a99891de27aff6950ce729664949a92c705b5e5ce1d61f20687"
     sha256 cellar: :any, monterey:       "660da52140d4812766f9f942966068c6076d8122b41dfc2a2a2c21e0de2066cb"
+    sha256               arm64_linux:    "09a23c45c18a469df962efd914eb19de9b967f1dd63dd21f9124733f31434e54"
     sha256               x86_64_linux:   "6a87649180d98f7555771ceb9d6062a1ce98f2aaaff996f52f9f8249bf300a8c"
   end
 

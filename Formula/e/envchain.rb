@@ -14,6 +14,7 @@ class Envchain < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "b9ac4877ddba27b20d986e8ade239c4fc12e9b85968d2f07106cbd3f1504a8ec"
     sha256 cellar: :any_skip_relocation, ventura:        "a3f83b8b0b6ea0236e3474a1e1a2a7d5c931be0bcd95d8f29f5d3b15ffd4e387"
     sha256 cellar: :any_skip_relocation, monterey:       "1e9696dfc24f702c88cdb3f02fa4d462524d8b3e95cf4eaafd8c315122da9179"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "46dccfdddf8a917b6475930bd658b64103b7577f4fe5adff5f6c15dbb6aca052"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9a8253f12f7d1ec624b755a99a0906b501b6dfb4d299ddb552c8a35a397293cc"
   end
 

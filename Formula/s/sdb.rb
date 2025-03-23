@@ -12,6 +12,7 @@ class Sdb < Formula
     sha256 cellar: :any,                 arm64_ventura: "a32fdde7aebe6d674e9427d2de15766a28f30c741b96e14dd2c3b0cc241ce8cb"
     sha256 cellar: :any,                 sonoma:        "6c66504eaf55a72603ed5b724b06927f1aac64a9a5b3bd1e80205c8ae8a20c38"
     sha256 cellar: :any,                 ventura:       "85295727af6d4942c6a2c1f9611d5c22437da0d9a72155b4803a68e3d49433ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "733389a09b477680c399818f04dace96ab23fdfeade9296e3f4f8a96eabf4d48"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "224892c60361f6e6bfecca83ae56e73648bd7f3a439880e9403e2b3dbbc3750d"
   end
 

@@ -13,6 +13,7 @@ class Libpulsar < Formula
     sha256 cellar: :any,                 arm64_ventura: "1e28e6732875416affdcc4afc3763e798882dd589424e168bb67bd7517411c6d"
     sha256 cellar: :any,                 sonoma:        "f87f6563fb986d754764ec158a2deddded5cbfef795bd67c52f83ae0a72e8e8b"
     sha256 cellar: :any,                 ventura:       "3061a6de50f7659f859917ad16f20f0e9b312efa90d7123533534ad3a60111e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5054b692852656ba4580739f5ec8ba057f330c1e15ca36196277c4688b8cac17"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2438a72ed70e421eae87a6e3fa2c4db58d3f4e7ec8b1bce6893421546c533d95"
   end
 

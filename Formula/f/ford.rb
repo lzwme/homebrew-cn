@@ -15,6 +15,7 @@ class Ford < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "690a29a1c06d2631170d4cc42d3cb8de60115afdf38500c74e7d37ca48e461c5"
     sha256 cellar: :any_skip_relocation, sonoma:        "3c8ec1b98469f13e70e1a61d8fd19b398117386f37051749e183a63299bcd96d"
     sha256 cellar: :any_skip_relocation, ventura:       "83cb9e6edb78355189cc384d823ba8ecad5ac27f97a50b0fe0f91dfeba1b955d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4dfed2eea9893742f594abe1cfa03bda317bcd1ba7026ef11c5d37c1b2a23a42"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "082b1fd740fa16b21b998b1924bb900773dce341daddb561c32ecf8e6acd6543"
   end
 

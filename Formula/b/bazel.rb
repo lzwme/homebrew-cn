@@ -17,6 +17,7 @@ class Bazel < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e062c7074decf3b25486a473d2e026cfa009f7badd6dbe5ec311d46993894395"
     sha256 cellar: :any_skip_relocation, sonoma:        "86fc00161a0497eef631b551eaebaa2d91a6c58befbb3d003774a45d83efc3f7"
     sha256 cellar: :any_skip_relocation, ventura:       "38f134f4872a99842202d0cea9c77d6ac46bfdd637f2dcba0ecd1b95673fac6f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "72fabb4b5ae1fa0735356193e88fe083cefd5fd923c9a7aae1dcc9a3d30b9bea"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "83900856ca38e817743b9e92a2e4db87928473a2fa74bf11941ed3adc5887900"
   end
 

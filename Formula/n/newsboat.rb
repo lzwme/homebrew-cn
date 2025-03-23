@@ -12,6 +12,7 @@ class Newsboat < Formula
     sha256 arm64_ventura: "65ff1d67ce979e06ffe26f1cc1bec5678a72cc72c1d901ff4b1de89110bcc5af"
     sha256 sonoma:        "1943df946a712d69e2302f16bf0504fa0d8d6fd13b73b69e0720ab0fc1ecbdc0"
     sha256 ventura:       "e4134c046f1eca9d2966d29bfd40435648d74afc05015f5c2185145de8f2bf77"
+    sha256 arm64_linux:   "3bee70f7d4af0428b87ae2874625e77bc9f9f7a786c4adf78f4a5fcd87542ce7"
     sha256 x86_64_linux:  "2e8c24e389a1de485b2fefd72eddcd76a5c8abe9e8197cc05705fb3737bda619"
   end
 

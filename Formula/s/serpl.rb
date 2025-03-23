@@ -13,6 +13,7 @@ class Serpl < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "c7ea2af806cddf5889508721f42c245c732dde861279a397ac54f71d91787b3f"
     sha256 cellar: :any_skip_relocation, ventura:        "10272c254cdb40831f439534d5e98eaf572735b595b9845121d51f3ec0134eef"
     sha256 cellar: :any_skip_relocation, monterey:       "da2ec5b9d85afaa959b92983f417b084a6ffcf0150c98a9acf07420e0ce79aad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f9b2a1b87e84792376dced0646e5ea696b75c095abc122276a84933b13562473"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5b3254ac904f83e9ec62f1bd9ae09a01133b0e2089e5cf872480fac35833971f"
   end
 

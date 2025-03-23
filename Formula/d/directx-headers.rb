@@ -11,6 +11,7 @@ class DirectxHeaders < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2fc37a89a3f7d4bf06a790889419a85f6c3f8779bdb808c02d5b43580df8f0aa"
     sha256 cellar: :any_skip_relocation, sonoma:        "eb29c4055384634a995682654a7baeb1fa06765e05302fc6f0379edf7dcac747"
     sha256 cellar: :any_skip_relocation, ventura:       "0774047098f7cf7b6ecb92bdd8276aef0e5c992b9985e6e29cac3109832c8e29"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6de4f60ee0cd679353d3089b80fd89a62fdd1df0f51b9b5c3cf32526dc95e246"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5e786b1e03793996fac1da7d9a4b8c0a55090212b67c6b054ba508892a22b02"
   end
 

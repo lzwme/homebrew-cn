@@ -19,6 +19,7 @@ class Plowshare < Formula
     sha256 cellar: :any_skip_relocation, big_sur:        "3d995918e629820f93c9a6d9e2661c4182ba181d2959306adbbfea1b24af5498"
     sha256 cellar: :any_skip_relocation, catalina:       "71fc52474893fbb6b7d0a9644ea1a368a59f91fb59c946052a060a10e493157b"
     sha256 cellar: :any_skip_relocation, mojave:         "fb3eb1ea28870d541ff8ab28efc057f5cb653ba851a4b794319ff3b0bbf48446"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5afc0b7489b2da73229e12e21b35824f4eaa61e648f7eabc564872c95faedb1c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d5b299d87fbdd4deb61521da33c68f81bed370130a2ecaa3565d059055f315d8"
   end
 

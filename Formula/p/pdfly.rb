@@ -13,6 +13,7 @@ class Pdfly < Formula
     sha256 cellar: :any,                 arm64_ventura: "09f6c3a13a4e014c9c588cab0cae45322d271214b6aec592a2321b31c45074ef"
     sha256 cellar: :any,                 sonoma:        "f6facb62383357c88042f90b1dbe8a8fe82b48b00568dc851d16708c26928f1f"
     sha256 cellar: :any,                 ventura:       "e58d87bc2e341ca79f8b965d3610ee8e8b895517e91b4ca16397d65ad0d0a814"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5f900e8fdd5dfdd164461a48597936485983ef42fedd0c8ae33634f4f77a480"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a38bab6d6d1cdec358d0ec1caa52fab83d4bbae465e0d5b133636f4636ebd64"
   end
 

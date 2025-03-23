@@ -21,28 +21,22 @@ class Libbs2b < Formula
     sha256 cellar: :any,                 high_sierra:    "0d2faffb7452ddd66d306746065dc7264d66c3e8f60a3525ee4eb911cd546bcd"
     sha256 cellar: :any,                 sierra:         "0431cb3f7cac90d18d854abe956ad296ba399832b733293e55ea58f0f11ba1b1"
     sha256 cellar: :any,                 el_capitan:     "7949aa7768466a789d992d079a63d5933d19e76ebfb330b38d3b4822929a71ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2595f81bf293833f6aea6611164a1ca362517cf89e3ed64862c9171cb9390ea2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1d6af3a009939d61fdec9ddd863c4c6e8b51d4f3bd5bc73f55dfc76ac2f48231"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "pkgconf" => :build
   depends_on "libsndfile"
 
-  on_macos do
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
-
   def install
-    if OS.mac?
-      # fix 'error: support for lzma-compressed distribution archives has been removed'
-      inreplace "configure.ac", "dist-lzma", ""
-      system "autoreconf", "--force", "--verbose", "--install"
-    end
+    # fix 'error: support for lzma-compressed distribution archives has been removed'
+    inreplace "configure.ac", "dist-lzma", ""
+    system "autoreconf", "--force", "--verbose", "--install"
 
-    system "./configure", "--prefix=#{prefix}",
-                          "--disable-static",
-                          "--enable-shared"
+    system "./configure", "--disable-static", "--enable-shared", *std_configure_args
     system "make", "install"
   end
 

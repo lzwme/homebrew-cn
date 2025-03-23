@@ -12,6 +12,7 @@ class RaMultiplex < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b4c694cbe6cbcd8eed58c68e0bacc0711b4ee407b9b27f188d555774997768b8"
     sha256 cellar: :any_skip_relocation, sonoma:        "1d1b275cbd97cb722b65047ac00e0ef68272e6334127b3e76e8239416dc0cb5d"
     sha256 cellar: :any_skip_relocation, ventura:       "6e7171999fb2b27b47ca7b1ff5672dc716f79b87a1d0e8c5fea79e627ffad620"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e4bb0024328d5472dd733aa22f06e37d583413e6a62f736160b002c06dc7443"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fa3b594fcdab0a99ba159c74def4f4a14d2e7f79f4909a0e9c4f907da45d198"
   end
 

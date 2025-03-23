@@ -13,6 +13,7 @@ class Tmt < Formula
     sha256 cellar: :any,                 arm64_ventura: "33885964540ecc5b8815ab6eedb0530c29b8acd3cccab20a50149f263d10d02a"
     sha256 cellar: :any,                 sonoma:        "1a1581f7940e69411dc04b378f76e36e6774cc0b2fd41bcb0e92d160c334db2a"
     sha256 cellar: :any,                 ventura:       "e5cf27d1350d58d2e5f0419cfe6fe4828345000997f2294e0acf71f19bc81934"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf46849ff110d7163ce30e4bb6c4d974397483f10d0c940a2ebc5c6968fc51ea"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "749cbe2b99eceae87fee799a07c96af978f888f4c29df3bf94e28c9315897530"
   end
 

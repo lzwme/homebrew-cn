@@ -11,6 +11,7 @@ class Primecount < Formula
     sha256 cellar: :any,                 arm64_ventura: "ed3dfd79edc41fa41be840a98237fe94495dda976ccb90d7a53207e2b8f590a1"
     sha256 cellar: :any,                 sonoma:        "91faa21de46dd2acc82b8eb74c294fe9110b9483ea2856165a27a387851baada"
     sha256 cellar: :any,                 ventura:       "7e3debfc6fedb1d420dd7058796d069ea30aa1cadf925f6d17b2d657683cfbc6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b970dbda21ebdb145cee32d8b21da94598dec53590b7198a135443bd97707f17"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7ae0746641bc8daa469371549a5c7ef3e4013e9f539a25728d32e9209712471"
   end
 

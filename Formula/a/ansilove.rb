@@ -15,6 +15,7 @@ class Ansilove < Formula
     sha256 cellar: :any,                 ventura:        "81f39b432fe40a1d896f2cc6a29f750da131abe4abfef5ec6769acde3af70abf"
     sha256 cellar: :any,                 monterey:       "839d25308ee9997beeb39be80f64a9e77ccc47c843e0a6ee8092bee276867688"
     sha256 cellar: :any,                 big_sur:        "53f7d9c9562a7c19d15f8ac589039f4c9e37821379bb2fca739a9b9fe6ed5ab9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a6b80b3dc657e735e0d63c7de9ec0d927532fbdba2fd8004379edff68b50e920"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "159529146b9437684bec9aa05856f7a571950d41cc75729f75c4f760efa5c0cc"
   end
 

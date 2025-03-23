@@ -17,6 +17,7 @@ class Varnish < Formula
     sha256 arm64_ventura: "63ce70bd5ed1b4c5c6fb069732f9619cdacc43d664fe20e6ff036e8a2ada733a"
     sha256 sonoma:        "bc34ed9be333dbdc5459f969058a42808385e76e3b2ae62bb2cee111b970ebe4"
     sha256 ventura:       "f67e4e5eb341516ad0229efe39a4012a55e840fe4f38befc9e153baabfae757e"
+    sha256 arm64_linux:   "223fe086adcc8058bb06ea141b750201fb1460c235adca0969cf84f8f68e51c0"
     sha256 x86_64_linux:  "edb61c2b757d063387fcb8de36074a1dbfcec2cbe7e0637d0e9cf0966c988109"
   end
 

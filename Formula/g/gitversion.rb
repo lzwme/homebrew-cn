@@ -10,6 +10,7 @@ class Gitversion < Formula
     sha256 cellar: :any,                 arm64_sonoma:  "8451d1106918b8edbc6ae9d442afe9cca0b406830650c27ff010b677a8c42c28"
     sha256 cellar: :any,                 arm64_ventura: "2e8fdd8e17785052d544cf1f165d8409da23499238c4e6bf6fcf83f7665d5c19"
     sha256 cellar: :any,                 ventura:       "9e3ea5738e15a2a985f6251e8e6f9936d7d0aa8825caa4b1ac81eb03551eabd9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c8ca004941682e07f9cd5a908ac6866c5c3125dbc05a391da67dc801d3b3e45"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0eb1171fd507667b3452053bb02c44c647991f2557f0fcf440441892bd63d298"
   end
 

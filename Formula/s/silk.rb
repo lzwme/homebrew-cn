@@ -16,6 +16,7 @@ class Silk < Formula
     sha256 arm64_ventura: "676fbf5554b1e229f629728f296ea6fa5f99080bf27745ce7af7f95c24f0a441"
     sha256 sonoma:        "37d538756d940202a4319f73ce6d67011091bebd12aabeeecd3900edf854d9ba"
     sha256 ventura:       "e3200fa12fbbe0cad5b28db61d65e73269abb80ab21396e1607783d0caf432e1"
+    sha256 arm64_linux:   "b6a6597aa9f16a3ad32be3005a2326af66ab07bbaab69063ca11a2140688bf9f"
     sha256 x86_64_linux:  "41438d609da5625f2a222397a1e8e5e85c82d2fe5aed69192e5b82394f52ebc0"
   end
 

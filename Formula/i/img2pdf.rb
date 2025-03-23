@@ -14,6 +14,7 @@ class Img2pdf < Formula
     sha256 cellar: :any,                 arm64_ventura: "8c4928259d71cd47b7a1ad76f4cfcd433efcd40fc78a74004bd9de958b3c1601"
     sha256 cellar: :any,                 sonoma:        "73a809ba81e45f22251450ae5f7b9d1a998ca95c5906154e21e33706265447ae"
     sha256 cellar: :any,                 ventura:       "79f3d0152ffb4d461166ae20ddacf08b84f7630eb36ad1cf0875fbb8bab91cab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8257aca4a22a7abc29ebbef06a186902624e0f61f674c36d3dc2743c182f25f9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f0d501f933a9c6d8c02c415e0c3c7931f6c301ff3d30ff4bda7f1910100e153"
   end
 

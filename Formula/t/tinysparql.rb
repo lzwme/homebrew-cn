@@ -15,6 +15,7 @@ class Tinysparql < Formula
   end
 
   bottle do
+    sha256 arm64_linux:  "5c284fccef5b0b7af359a9fc4cffce37aed9ec4205d909b2c25da39609a1c9e1"
     sha256 x86_64_linux: "2289bb008fc9bad101d446e7ac5b03d22bd568eacbad0f9ea6bc38149a7c04da"
   end
 

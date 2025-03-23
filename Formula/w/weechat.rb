@@ -12,6 +12,7 @@ class Weechat < Formula
     sha256 arm64_ventura: "3fcd8af2fd73e2eb06261897fb46a58b2bdf92bdf6a5c4d8fe47bf6faa362e29"
     sha256 sonoma:        "a7806666c3317823c07fe0524f1f5c74ab40abb3119b6f07f353ab3013e2ea07"
     sha256 ventura:       "22915d3e4913a3c522b1c46515a923acf232b5744769dc6761a8f7c6b4900cf0"
+    sha256 arm64_linux:   "e2dee2cf6486b63d60a7ceb93c0c42df0277b9b8964b5ab462167cf64d1bf23c"
     sha256 x86_64_linux:  "5d5ceec518682cc720d346f2a5d0f06cd5c7fe240c286cf075aa9e196c59d01f"
   end
 

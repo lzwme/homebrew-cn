@@ -18,6 +18,7 @@ class Librest < Formula
     sha256 cellar: :any, arm64_ventura: "c23e539c42b6212b8f58e04631f6b0603baa2974d6de31a2f39bec3e436c5d7b"
     sha256 cellar: :any, sonoma:        "0634c21e72f7232145f23bf36578835e0669d0d17db351491d57b8e15867aff3"
     sha256 cellar: :any, ventura:       "2b1dc70cd6eb900751e74bfbec6c61fb7ab603f75499717fa010403a591dd822"
+    sha256               arm64_linux:   "7f0f5096f4313e89c82e2951eda636a0a3124427650f9b2c0cb6fdc9b1dc47b6"
     sha256               x86_64_linux:  "cc33d81a4b567bb31a1289239b806b9b312e66c47c83f1e3c8f0a7c6590d70ed"
   end
 

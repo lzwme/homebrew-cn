@@ -14,6 +14,7 @@ class Mapproxy < Formula
     sha256 cellar: :any,                 arm64_ventura: "d6e6a70f137f926f0c1e8aa7296a3573524bd080ac964508c10caba933e114d9"
     sha256 cellar: :any,                 sonoma:        "7eb7cade0b9394e2ec6ab68f2afe0f61c89045754a88e9cb6317c76bcdd6394f"
     sha256 cellar: :any,                 ventura:       "7d0f6d02d668b203af5410fc20d7399558b07fefba9dcffcaef4d223c318a6a8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "06384d69d925737abd38889b2a887beb3641df9eedd05cf4f2cb6606b8efea0c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5576bdcb69270c7445003a1805da535051c29d82c8a3e84da7ce64f6e471be0f"
   end
 

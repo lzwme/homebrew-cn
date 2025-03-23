@@ -11,6 +11,7 @@ class LibsoupAT2 < Formula
     sha256 arm64_ventura: "2a309b1eccf23b179e5812c98df8d8fcb377cf5af35dd1e3cd4c88e23d1fa852"
     sha256 sonoma:        "10bcbb15d4a0c105a32894d3211d54a57a69e16296ccd59e6374002c33be6bb2"
     sha256 ventura:       "848cd63411742567dad48774cd56f9f3d2091a115e2a9cc803021af250e91c6f"
+    sha256 arm64_linux:   "f894a1f3fae10a780ec0a489cc4c84636f792c6013337c3d07f50e6af02303a2"
     sha256 x86_64_linux:  "128d3fa437db9352c8c33b6937083fbb708ddd23566b957b243e9cee2debab16"
   end
 

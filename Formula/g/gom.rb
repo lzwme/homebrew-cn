@@ -1,20 +1,25 @@
 class Gom < Formula
   desc "GObject wrapper around SQLite"
   homepage "https://wiki.gnome.org/Projects/Gom"
-  url "https://download.gnome.org/sources/gom/0.4/gom-0.4.tar.xz"
-  sha256 "68d08006aaa3b58169ce7cf1839498f45686fba8115f09acecb89d77e1018a9d"
+  url "https://download.gnome.org/sources/gom/0.5/gom-0.5.3.tar.xz"
+  sha256 "069d0909fbdc6b4d27edf7a879366194e3ab508b03548bf5b89ff63546d20177"
   license "LGPL-2.1-or-later"
-  revision 3
+
+  # We use a common regex because gom doesn't use GNOME's "even-numbered
+  # minor is stable" version scheme.
+  livecheck do
+    url :stable
+    regex(/gom[._-]v?(\d+(?:\.\d+)+)\.t/i)
+  end
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any, arm64_sequoia: "26645233d1bbd2e1205ffc9e20f4e4a1bc5e1b06cf48713f2a49ab9f9528abf4"
-    sha256 cellar: :any, arm64_sonoma:  "815ac85e0eacef51123299d5812c4119335552cd9202704fcf4a76767db72be3"
-    sha256 cellar: :any, arm64_ventura: "f7e330f1f70e94eb254c6c258e916186cf42306b2db1428d681bed8737bb5a94"
-    sha256 cellar: :any, sonoma:        "db7c3819f0a834aa8aa355d81cc3a11e58dd29ea0ffc3608c014b46dc6143fb8"
-    sha256 cellar: :any, ventura:       "f04b019a8c7a4e71787cafea302e2f67442932518f3f708178d24ee7cc7ce544"
-    sha256               arm64_linux:   "2eb254c3ed260a2f4e4044d9d52eaa936b523669ccbcd560b75b274bc15e2bc2"
-    sha256               x86_64_linux:  "75865eb8f914d3d3b10059f06790f57273780a109f83949879808aacb9b7fadd"
+    sha256 cellar: :any, arm64_sequoia: "653c39bbf08707dc8fc4204ce7b2317ff5304cf9050910df166292b34b68abdc"
+    sha256 cellar: :any, arm64_sonoma:  "5a91a0b28b4eb4621c687882d85be9d61fb9055affb380a9975ea884bbc56956"
+    sha256 cellar: :any, arm64_ventura: "ce76f0563174a6410e3352dab6eaaa91be8a88cce5daf7e6595397631d5da76d"
+    sha256 cellar: :any, sonoma:        "1018395f8e1ec4725a0bc5484871d0648f543bcf1c5c3bfd2587b0c00e9c9bc2"
+    sha256 cellar: :any, ventura:       "d6e41c8ef3f8f84204e1f368e7af8734b1243b75d069c6e7b3266f656d03fc15"
+    sha256               arm64_linux:   "7f79d6810958568ec1e2c7ad7d93b404c148ce0d4a41cf83647c263b1c5750f2"
+    sha256               x86_64_linux:  "0121f2c07b7e91f5b2fc56bc19d034e604540c927efe6e3fa2a28acfc707c66c"
   end
 
   depends_on "gobject-introspection" => :build

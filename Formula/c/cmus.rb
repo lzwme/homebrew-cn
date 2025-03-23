@@ -13,6 +13,7 @@ class Cmus < Formula
     sha256 arm64_ventura: "abe20a3b224fbd98f698e7131208fd298a6aced10336f5f55a1156ecf1654e2e"
     sha256 sonoma:        "d9601411a0b749a5e379620985ac1f24d8ce566e744a7f24302964b1987b765e"
     sha256 ventura:       "9aac948ad9fab4826655c220590ac1f37fc0afb0d38c77bff081a6b0c104038e"
+    sha256 arm64_linux:   "692eb54461a2b22de154ddbdd3507ca32ac2e4d249424cf246444bc66797d763"
     sha256 x86_64_linux:  "5ae15aefbec0e9633280d83a5d9eacbf5fb9682f18df4cf63a45584a75870f28"
   end
 

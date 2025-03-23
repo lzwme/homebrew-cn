@@ -12,6 +12,7 @@ class Ffmpegthumbnailer < Formula
     sha256 cellar: :any,                 arm64_ventura: "5c07ad4ce678518a79c0eb0a73931dce18e98a8783f02318e36852ce6eb16026"
     sha256 cellar: :any,                 sonoma:        "5ed8492099d976f753d53fb621a0750e7cc79f178ee5b51fff24dae04a857647"
     sha256 cellar: :any,                 ventura:       "6047a8a051cde041bb98bc126501c49cc4a59f3babfd43b669252996284982cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "913307a17e34537e06ca04844611558d0cfefd974aca35167b7a8168129db7db"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "764e0cd873315b8893a45a0043c5dc7c42f0d1f94ce35a076d5e60c4adc1a687"
   end
 

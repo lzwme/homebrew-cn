@@ -26,21 +26,29 @@ class Libxdiff < Formula
     sha256 cellar: :any,                 high_sierra:    "46a8499130fcdafc69e79436a77338398139b7ac54b3ae5f0ca9ba75b9f7efc9"
     sha256 cellar: :any,                 sierra:         "4a29b90dc48e4ce505bb50e575cc91107df8d93a90fe49ab4ec02df6118158ec"
     sha256 cellar: :any,                 el_capitan:     "55d89877bd5457b7a5b77cf68187f544ff413228ec17a701e7879644ae528f35"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "145ff279df6f6dc46924f9a8182d89c1e568156f29f711efef540649e653d90d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f7b3220efc3c97fefbe4ec212663fe86de66179d36fb974377790d72ebd5ed41"
   end
 
-  on_macos do
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
 
   def install
-    system "autoreconf", "--force", "--verbose", "--install" if OS.mac?
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
+    system "autoreconf", "--force", "--verbose", "--install"
+    system "./configure", "--mandir=#{man}", *std_configure_args
     system "make", "install"
+  end
+
+  test do
+    (testpath/"test.c").write <<~C
+      #include <xdiff.h>
+      int main(void) {
+        return 0;
+      }
+    C
+
+    system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lxdiff", "-o", "test"
+    system "./test"
   end
 end

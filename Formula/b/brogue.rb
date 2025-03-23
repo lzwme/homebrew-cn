@@ -14,6 +14,7 @@ class Brogue < Formula
     sha256 sonoma:         "0dc69856645329fa45cd9011a59c84260b00f05ad5fbe2a2e22f0f6ce2544f9b"
     sha256 ventura:        "9c7ee6f9de30fa3507aad6c3fbe863d0c5beea2e06ffdf34774974a83b4903b1"
     sha256 monterey:       "b84fd290fb2f6e5ed03f24df0cf85e0ec4b3c094e9af51271dc8ae2ad23ae0b2"
+    sha256 arm64_linux:    "e32ab428d1e157b79b5f8837c820bff2573694ace1cbe4b258ba595171884dc6"
     sha256 x86_64_linux:   "024fae31f907fa7176729178e4b7e442d9f5ea9a978be5bffaa8bf20c5c50006"
   end
 

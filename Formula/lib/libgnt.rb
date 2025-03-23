@@ -16,6 +16,7 @@ class Libgnt < Formula
     sha256 cellar: :any, arm64_ventura: "c564614df4b284c52854d467589dd9603a3502f38c9a07f11a8c35e778617c8b"
     sha256 cellar: :any, sonoma:        "4f3826fd8c722f84e3c568a74c27d48bc3f6a3a15db15721da56447c3f9d9d15"
     sha256 cellar: :any, ventura:       "567c90442a84e13142d104bd45b65df01359f65aa38b67f52f644d4cd1f5c90f"
+    sha256               arm64_linux:   "b0f97890b91d6ca699459d1eca4c92793ea59dbf1e5cb7127f7ed051f9cfdfeb"
     sha256               x86_64_linux:  "23fe502bda696d00cfd7dd0f0f4022c46268337ae7bea8b0470b497d89540240"
   end
 

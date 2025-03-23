@@ -3354,6 +3354,7 @@ Homebrew-homebrew-core/Formula/l/ledger.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/ledit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/leela-zero.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/leetcode-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/leetgo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/leetup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lefthook.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/legba.rb, Homebrew/homebrew-core, 1
@@ -3834,7 +3835,7 @@ Homebrew-homebrew-core/Formula/lib/libosinfo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libosip.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libosmium.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libotr.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libowfat.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libowfat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libp11.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libpagemaker.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libpaho-mqtt.rb, Homebrew/homebrew-core, 1
@@ -5086,7 +5087,7 @@ Homebrew-homebrew-core/Formula/p/peg-markdown.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/peg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pegtl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pelikan.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/p/perceptualdiff.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/p/perceptualdiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/percol.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/percona-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/percona-server@8.0.rb, Homebrew/homebrew-core, 1
@@ -6969,6 +6970,7 @@ Homebrew-homebrew-core/Formula/v/vcs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/v/vcsh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vde.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vdirsyncer.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/v/veccore.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/veclibfort.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vectorscan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/v/vedic.rb, Homebrew/homebrew-core, 1
@@ -10781,6 +10783,7 @@ Homebrew-homebrew-cask/Casks/font/font-p/font-playfair-display.rb, Homebrew/home
 Homebrew-homebrew-cask/Casks/font/font-p/font-playfair.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playpen-sans-arabic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playpen-sans-hebrew.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-p/font-playpen-sans-thai.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playpen-sans.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-ar-guides.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-playwrite-ar.rb, Homebrew/homebrew-cask, 1
@@ -10914,6 +10917,7 @@ Homebrew-homebrew-cask/Casks/font/font-p/font-praise.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/font/font-p/font-prata.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-preahvihear.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-press-start-2p.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-p/font-pretendard-gov.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-pretendard-jp.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-pretendard-std.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-p/font-pretendard.rb, Homebrew/homebrew-cask, 1
@@ -11196,6 +11200,7 @@ Homebrew-homebrew-cask/Casks/font/font-s/font-space-mono.rb, Homebrew/homebrew-c
 Homebrew-homebrew-cask/Casks/font/font-s/font-special-elite.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-special-gothic-condensed-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-special-gothic-expanded-one.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-s/font-special-gothic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-spectral-sc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-spectral.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-spicy-rice.rb, Homebrew/homebrew-cask, 1

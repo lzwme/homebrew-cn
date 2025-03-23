@@ -13,6 +13,7 @@ class Surelog < Formula
     sha256 cellar: :any,                 arm64_ventura: "3e75f97f1b262e924733ef2a7a26a416e90f3b0cedb67341e0a0eadfcbdbd992"
     sha256 cellar: :any,                 sonoma:        "e7bec2531c7d241da26665a6baa89d6e7731a4e64066def102328cdd6ff6a75a"
     sha256 cellar: :any,                 ventura:       "284118733c63ad3344c973917b2b52ee91468f3d442851729995e27c5622736c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d3e2bb045f895d6572ff5a3b23d28c304d4501587510cbb373b3200abd909a5a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "72570d5f28cac62d5bb5c5e72674a1e95b25cbb43b47fe57bbeb16d353cfe95b"
   end
 

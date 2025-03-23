@@ -11,6 +11,7 @@ class Libnotify < Formula
     sha256 cellar: :any, arm64_ventura: "515213c0803eef0e37a15413731641ee56175692eef55f12c3c67171ed00368a"
     sha256 cellar: :any, sonoma:        "6b10b6d544ba69ffd42f261b153f43f675eceb857ac1288c7bbc5c9f7a241d28"
     sha256 cellar: :any, ventura:       "d8decd9d63237513537284f5faaec68bdf474c4899d438cf76b022dc3afa3151"
+    sha256               arm64_linux:   "02f1dd22971f47fbd7c896bf969c239b5f04c9627f641d4c0671b9e3e0b7a96c"
     sha256               x86_64_linux:  "e79d9d7b5f18b7236dc21e60ea6de33751a0a5bcf9b53d9ab6581346cc1684fc"
   end
 

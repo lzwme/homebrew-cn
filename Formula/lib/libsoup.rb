@@ -11,6 +11,7 @@ class Libsoup < Formula
     sha256 arm64_ventura: "7af02d6ee61baf7463f21b0261430cccb10bc72102a3bad27be16c5f74173c57"
     sha256 sonoma:        "3be670d505dedb3a71e0b9617e4c0b8096cafcf70486a3657c38f02f0502f28e"
     sha256 ventura:       "430c7a028fbcc2239b1213faec338814bf055c037a4cfc22828a0ab3e3edc245"
+    sha256 arm64_linux:   "dc576162b656fc666022b3a276dda763823e13fed31e7da72b5189602460f2da"
     sha256 x86_64_linux:  "426c2decb12e1fc035d9f50477a173fa04625cd1e3895dbf04cecce15aefe3a3"
   end
 

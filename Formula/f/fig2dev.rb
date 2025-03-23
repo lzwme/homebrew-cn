@@ -16,6 +16,7 @@ class Fig2dev < Formula
     sha256 arm64_ventura: "a97284bb9afc2196c9cc4299be7d98950ea6a22b6c59fe0917ce03ebc8cf4a8e"
     sha256 sonoma:        "040e8f13d396fb52f5a15ffd237e37639fd4429e2b0ba0bf3cf5c965ce31e7c6"
     sha256 ventura:       "1f6e1e07ed4b86d59035e074c821d37ebf54348434a5fb222ef722d2cb4543e9"
+    sha256 arm64_linux:   "8d5c0689d6650d821e33e7a360a1235c8382cc2517bab0fcc96ad016b5b44c09"
     sha256 x86_64_linux:  "ada9a36cc0cd0cb0f6ee15522a4d579f6a32bc5cc035866e2449759019cacb57"
   end
 

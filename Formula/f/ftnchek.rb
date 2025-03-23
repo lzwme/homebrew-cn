@@ -18,6 +18,7 @@ class Ftnchek < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "f8079667f5a436173c2d7c7bb80551edad62853f0a2ee50d09cb6c3144072ade"
     sha256 cellar: :any_skip_relocation, ventura:        "87decd2c40db4d011c535284a764010635d20a9d788f11864539e2de3d4a39f4"
     sha256 cellar: :any_skip_relocation, monterey:       "7441b8a93f776b65a216b1f897527d002c070cddbdda7b28cdd3fe57c931cd76"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "cef69e1ad1770f524bc1b9ad957c69c5c2384a488f5d12f239b604ab50bb4cbf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b2183ef638b6941d2ae9916e3f7047f5a3599d4c54df8576e722874b7b8240fc"
   end
 

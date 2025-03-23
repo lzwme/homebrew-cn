@@ -19,6 +19,7 @@ class Hashcash < Formula
     sha256 cellar: :any,                 sonoma:         "79b371fdc35215fc8e1c9eb83bca3d2ce1fdcfd5d4b998e186f6f4bf6d01a7eb"
     sha256 cellar: :any,                 ventura:        "351c383a5882cfd727f386588e4003968476a94eb39fd5e41729d9e4aa4e0455"
     sha256 cellar: :any,                 monterey:       "b4fce5f6c16446ee31dca21eac35d6c38a9d61068cb8f59cb37b6eee3196f012"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "635ea819bef9b8f88bfb4b027258804db1e092f4ea235cd34e09261af318cf31"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2b099580ee6cd7ac69d1c63064049ce5ebb922272245be3f3aeac34943d59274"
   end
 
@@ -26,7 +27,8 @@ class Hashcash < Formula
 
   def install
     ENV.append_to_cflags "-Dunix"
-    system "make", "x86-openssl",
+    platform = Hardware::CPU.intel? ? "x86" : "generic"
+    system "make", "#{platform}-openssl",
                    "LIBCRYPTO=#{Formula["openssl@3"].opt_lib}/#{shared_library("libcrypto")}"
     system "make", "install",
                    "PACKAGER=HOMEBREW",

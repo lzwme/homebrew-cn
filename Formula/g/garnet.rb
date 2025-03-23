@@ -10,6 +10,7 @@ class Garnet < Formula
     sha256 cellar: :any,                 arm64_sonoma:  "afb58a797870ffe10fa64ab02f433fcdee5bee5e884b25428b64d829b1660f1f"
     sha256 cellar: :any,                 arm64_ventura: "218c20ae98f5513925497ae20208c3dc7db109ee1135d88c768f6c0b2e8f2286"
     sha256 cellar: :any,                 ventura:       "2671840549efec1b96e2c2925a00d9f6cd4326be8d1f157ee882d41092e39a87"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d3aa4f5926a1203f2a60118a7d1271f18214ed663a64862a614d3fd4beea2b9a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "99420a3aeb83129340b5bab671176be4a7068f9fbde657f3730a0fd8320e7ff2"
   end
 

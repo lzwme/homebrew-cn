@@ -13,6 +13,7 @@ class Rsgain < Formula
     sha256 arm64_ventura: "7018f1dd0098583ec97d869024699a7f7e12d19515478d4f0b637be240f5adf8"
     sha256 sonoma:        "ba2789f8f8af6b801229e779dbc43a767ea4f0fad539586285c9e19f2f68f844"
     sha256 ventura:       "767220b19b5d1d987823284407efd91b84bf9de46c8c7e612bcc0f6272f4055c"
+    sha256 arm64_linux:   "22cdbdadb44fabf91163b2893aa5332c32cf924399081592ccdaf581c9aefdd0"
     sha256 x86_64_linux:  "e471f4eedcc01d0af23e393ddd50f1795a3e220bf386465fe0398c9c537a18a2"
   end
 

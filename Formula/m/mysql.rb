@@ -19,6 +19,7 @@ class Mysql < Formula
     sha256 arm64_ventura: "2203d5f4d456a954842b7de96b32802f587ed4c4c8dc0ba4ab4f5063b8822809"
     sha256 sonoma:        "774354f586c49cdfcab91a18925b241b14152809290ef0bf4aae4fd00027b3ae"
     sha256 ventura:       "5eb8c1b68d480e0f545a5217ed5f18bea33a28d1c4a6e5a79eace6b0fe29f5e0"
+    sha256 arm64_linux:   "097dca4d0c77a3cc70d88d0216949b6d45ee990bc7ee803ae74113f6e251a29e"
     sha256 x86_64_linux:  "36fb5e843bfa6add36de2c68d88af0cdd83f9451c575d48f4499dd347b8bfa11"
   end
 

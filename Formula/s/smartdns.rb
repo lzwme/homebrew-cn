@@ -12,6 +12,7 @@ class Smartdns < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "15b234a11c28e36903bc3243eba29615c21b1adbc00cbbb016cfc270a347afb4"
     sha256 cellar: :any_skip_relocation, sonoma:        "a142498d587b0691a48a4b8e7b884b9d71dfce67077e79304d56dcba6d22f857"
     sha256 cellar: :any_skip_relocation, ventura:       "d61d2640c4a06106386b45981b7a50e605f2cd033633a6149c8a4fbbe85a538a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "68041e96b161dff8b6321afbe2d5d0d6cb732fb680f2feeb9d87b087d1f7979a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "61db013d4f6fedaae7c0473af966eccb9f7be9e7c4610bd75ace8acf20bdaeeb"
   end
 

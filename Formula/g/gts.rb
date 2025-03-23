@@ -16,6 +16,7 @@ class Gts < Formula
     sha256 cellar: :any,                 ventura:        "946d3f08c41e94c2861e555358fd152df7c069ad8a2a7f621b64b55cfb8ceffb"
     sha256 cellar: :any,                 monterey:       "3800de79b45b9a5736b9ecd9d48b2ab2935d74cbe57e308eeed2ddb2e07a08e1"
     sha256 cellar: :any,                 big_sur:        "486a4d3b428e12daf5573a21d60371b4cd1f9e1c7e3b14c7d2d1c0a3bea58524"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b822bc2eb7de37c9497056021cca4397053d11bfafc980820766bcdced8daff5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4c6bb3e3859bee6f8b113a08d7d158a19ef46ec307073fac12c90c4a0113f69e"
   end
 

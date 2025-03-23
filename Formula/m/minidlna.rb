@@ -12,6 +12,7 @@ class Minidlna < Formula
     sha256 cellar: :any,                 arm64_ventura: "a0e8d265dd82a964d6e912a74e35b174eba83329466180ccc7b6fcce918c3f3b"
     sha256 cellar: :any,                 sonoma:        "359ca672fd75a717663eac68d270f1d855002404cc82dc7fe22ab72eedc70601"
     sha256 cellar: :any,                 ventura:       "c6e43a0397d8e87ddba11a2d75f8e656d6340af549c9e72132a327ca459dbef1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1fdde2237ecdca8be2b2d35b0ad861b17a7767b12b674530e56020f768af0ce9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4b4e7f1931b7df49351bc9a5b982346ef79188ce57e7b3f977846664d1b942b"
   end
 

@@ -14,6 +14,7 @@ class ScikitImage < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5aabdc0e3471dda66884980b61a1c2f6f762a26016e724bcbde3f7659c2d1412"
     sha256 cellar: :any_skip_relocation, sonoma:        "dad009c5f2e033d67da433674f7e4900f84a47ae676050d58adf14808fc2c565"
     sha256 cellar: :any_skip_relocation, ventura:       "06de5f36d41949dd79b01e05bd6e10f27f8a1d808b7cb096b607484eb6af6632"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f3e3dc643fb1f17f0632ee7db9208753ced229c1fb14bf1412508f06813fde4f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0426a7009a7096077fc58841681b3606ce906feb7abb54d15dcea8fa6cdaeb1c"
   end
 

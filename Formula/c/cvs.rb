@@ -27,6 +27,7 @@ class Cvs < Formula
     sha256 cellar: :any,                 monterey:       "90e39df5b90cb3ae770fb19ec618350b02e7c16ca1bf5748cddbb2302c7f764f"
     sha256 cellar: :any,                 big_sur:        "f82f03a64e86b956f63f2a9b420bb6db7f792bcc65e829278def0939fca4b947"
     sha256 cellar: :any,                 catalina:       "0d792dc4be608c3abdadc97ba8fabca3d72a94e8903c9516ca529d51eb6fe2e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "8a0ae39e62086e0c6ee0bbb9843d6fbdaf09164b07a288c6dcccf2995acb9dee"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d9ec7ba1c5450d7df8c3c5f623579a78ba970b29eb1dcbb991cfcfc5ae2630d2"
   end
 

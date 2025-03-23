@@ -14,6 +14,7 @@ class Timewarrior < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "65e2024a1bdd9e939272ae7ce8801811a1b29cff9c9e9f8d27755fe14f01641d"
     sha256 cellar: :any_skip_relocation, ventura:        "d96a671bf4dcdec6fd9da826ec95e013e520bc326a9130fff9f36979f7bff58a"
     sha256 cellar: :any_skip_relocation, monterey:       "a6cca6e51a04ed7106919357514290007475c794f23e756da10d9bbb5a3d1bb1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "226ffe655b01abae4bab6903eb0cc682f2702b572cd9165fd1e9a581a81c1d21"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9073e350620c7067b35e6eea867ed7d02b45210cf8163673e7ee009ffcb1d1e4"
   end
 

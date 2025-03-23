@@ -24,6 +24,7 @@ class OcamlAT4 < Formula
     sha256 sonoma:         "cee37cd961b6f813bcb86b5f20c8640abf3fd691bde2f26da46a026d1fbee93b"
     sha256 ventura:        "54411358c0d919ff17a96d81a93020dcde72b2138c3cb382a67deb1df18a308a"
     sha256 monterey:       "cc525d1058ce4ef19405a80cb0dcf3af11c3a6e772fb754431c1ac1053f898bf"
+    sha256 arm64_linux:    "18c59ccd659d804753cd938bc8c8b49d288f8a6c1099dcce9b7daaf06e7fef12"
     sha256 x86_64_linux:   "b9773be3973366e8d5b4d933b7cdadfd212ad9ab76dca04b709a41504b795924"
   end
 

@@ -13,6 +13,7 @@ class Esphome < Formula
     sha256 cellar: :any,                 arm64_ventura: "337babc8ec0c88e21482a0ca3fd77d69b2615d7afc71d7f1a607b124ea64267b"
     sha256 cellar: :any,                 sonoma:        "85657cd39f66e30d8aa8694368b39626ddaa3b90fe583d8e684d51f0874118b2"
     sha256 cellar: :any,                 ventura:       "31ba03759356a10b0cbb72f9dbb8bc8b924d5988f10dfd89e6d98e7514b25a51"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "88250343c2c041dcbf1a11f142d86f5077776f1c6bfcc5522623a1610f9f2f0b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e48a5f863c93f80a7f5df25e10a0764f6c7255d4979302b74f0c12824f6f9ed"
   end
 

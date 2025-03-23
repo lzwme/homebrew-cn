@@ -16,6 +16,7 @@ class OclIcd < Formula
     sha256 cellar: :any,                 ventura:        "a94ce49fa8125e0280560433f7e6dd73fbed00275f63d7ee1128de8c90b02397"
     sha256 cellar: :any,                 monterey:       "d7f1221c1e6e98a8f83f6e9a73a52156a10d41335ed4cfab2452c4af9fb8442b"
     sha256 cellar: :any,                 big_sur:        "c2bcc480d4d10eb4b38ebec517ae32b936e272f9c559e6f8e17a2c7efc916dfb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0d87def830cdd62436c456633b6bf08d2e31237d63a63ef20455fb5d5568cc22"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "75434ef5697505daea48897d562dc77f1daf9c6d2ff938684d75bf3c5f2fbcc9"
   end
 

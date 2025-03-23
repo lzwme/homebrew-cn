@@ -11,6 +11,7 @@ class Rink < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "31c09a811a1d779c6e9f1edbe8d03cbabc5ebdd2b2f8a0117429eb93f3bafd55"
     sha256 cellar: :any_skip_relocation, sonoma:        "f28777dd190d29ef41985875425eeff527e18b6a7db4976b103323784d36f678"
     sha256 cellar: :any_skip_relocation, ventura:       "78257335a434a84394810b5f47526553c58d1e57a906f1fc1619526e978c1d1e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ca578f08ba68e204d37c59d253d50715e7ce4d450d73af1604c66867423eeeea"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a541a87a97cb62583bceced14bbac8c03d8f0119e6702c1d773c3fc08a3e8e3e"
   end
 

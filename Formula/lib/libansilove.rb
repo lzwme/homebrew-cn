@@ -15,6 +15,7 @@ class Libansilove < Formula
     sha256 cellar: :any,                 ventura:        "5e6272f3834cabff4fc7bc6e852ac5577cbe7ee7902fb17b86fde334edb51d47"
     sha256 cellar: :any,                 monterey:       "413f7125c3d514de63cf889a761ef8f572e0c2eea2992aaf8fcd9d40bf3dc816"
     sha256 cellar: :any,                 big_sur:        "c48c991d4e2f7c3962a81305c96d68651d315815acb50d2f714e7bde6dc24942"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "e428854e59cf41e708254e96b81cf58c0d820bf8a972a3c4052c1c744010260a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7c04a7521aa0bb995f39e69fa720149b8307e176ab5580b6df6c7a45ce5f35ef"
   end
 

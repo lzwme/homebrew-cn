@@ -16,6 +16,7 @@ class Gromacs < Formula
     sha256 arm64_ventura: "542b7cc88c9bee42687dbe6a9e07e9ab3c89222402f2101cc3d31464a6d4b560"
     sha256 sonoma:        "67b0c64976ae384d3043565a7137f086c9d7997cce11f0ec79ba18d8787c7b5e"
     sha256 ventura:       "b48883b24262326dba96ad2392bd1bb9a2b221eea6a671bb1e4e067ead3a5a06"
+    sha256 arm64_linux:   "c8a2701c95dd18c8e208961a8490dac0faa57d77ee3d605b5bb1be93b3ecea53"
     sha256 x86_64_linux:  "c6614ae480f0635f9ec6f1cfaa8baf37e813aaa737e95ad585ce2e6a08d0c136"
   end
 

@@ -11,6 +11,7 @@ class Libgee < Formula
     sha256 cellar: :any,                 arm64_ventura: "9f59442b282ad4bc6857568f22fc866f04111dfa83f52a36fdff920b72404efd"
     sha256 cellar: :any,                 sonoma:        "54b304a5bb1c6cd0b4cf4ad92e33497616250375a1d199b056f712059484c8f8"
     sha256 cellar: :any,                 ventura:       "18ef7dfdbad016c9f6027374cb705a7e2195204d524cc42439d98855e24837f0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3a4b234964285662e7ae86aba11035910b5b435c74d1d86755b53d803e2ef15"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "695ca3b94a6452ef5d365da12bcf3b9b12a3e80c298f5c6d032bd873926a9ef4"
   end
 

@@ -16,6 +16,7 @@ class Xfig < Formula
     sha256 arm64_ventura: "e851f86fd326aed56aa0fbef6f266764bc6670ec2fdaa1ba24634babe165898f"
     sha256 sonoma:        "5465a1183061357a7a8a3a7455488fd8df9182efab574fe6812f256ad881087e"
     sha256 ventura:       "b8f02cb2ff2cc65c1c64ce3400e7e1ad5fa7e48b4ab09fece650ec6013bc11b8"
+    sha256 arm64_linux:   "be0b497e85f794800724bc4158ea53eff2795d4784fb5e50f135b1ea73459f07"
     sha256 x86_64_linux:  "421fbe1c1fffddf7545aa6e360430958758b4b2b211f80653ec8854660b864ca"
   end
 

@@ -22,6 +22,7 @@ class Myman < Formula
     sha256 high_sierra:    "b5f0af51ce1098ea35e48bc50f4097cbb9e647989decd6d7791476b062ef7582"
     sha256 sierra:         "376c71ad2f5abcc0233b3873d70cc963e54ac0ca00a552eceb025ac09b931ff6"
     sha256 el_capitan:     "d3b66de7eae03edecb2573524d94239bd013ffd57eeb1980411da12f6d2b2b98"
+    sha256 arm64_linux:    "f33b146715c2765ab0994572a9692ee5cd84cf216926262810483f688ff8ce81"
     sha256 x86_64_linux:   "28f96eb2fba35b8c50f166eecd9b48dc8336229e97425f290209d15e9526eeeb"
   end
 

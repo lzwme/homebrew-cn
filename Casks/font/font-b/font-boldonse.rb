@@ -2,9 +2,10 @@ cask "font-boldonse" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflboldonseBoldonse-Regular.ttf"
+  url "https:github.comgooglefontsrawmainoflboldonseBoldonse-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Boldonse"
-  homepage "https:github.comgooglefontsboldonse"
+  homepage "https:fonts.google.comspecimenBoldonse"
 
   font "Boldonse-Regular.ttf"
 

@@ -15,6 +15,7 @@ class Sdlpop < Formula
     sha256 cellar: :any,                 ventura:        "21793456afcbac882492103a1f0f3b5d2a4b88c26df8df93be46c7ace3d96251"
     sha256 cellar: :any,                 monterey:       "30ac230fb6c1f6fdd28d539c779428b5249e98f3984f4a8aba4ea4eba1038b61"
     sha256 cellar: :any,                 big_sur:        "82fc8922689771f58c21f1fd08f1fc2b39c4cd32aee875c21152178ce5ef448a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9daa7ef72865e7a540bdf684c5e58c59aa510ba5719c361abceac75f401006e1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8ef6448ced32c9d812689e9103bce4cf3df4eba04d34325898b205438fd73bc8"
   end
 

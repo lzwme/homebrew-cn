@@ -23,14 +23,18 @@ class Texi2html < Formula
     sha256 cellar: :any_skip_relocation, catalina:       "10f6d76de400799fb21dc900a2344ef444d43658dd502f0c040ad7c0a4bf0fbb"
     sha256 cellar: :any_skip_relocation, mojave:         "10f6d76de400799fb21dc900a2344ef444d43658dd502f0c040ad7c0a4bf0fbb"
     sha256 cellar: :any_skip_relocation, high_sierra:    "10f6d76de400799fb21dc900a2344ef444d43658dd502f0c040ad7c0a4bf0fbb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "fc03b703a8cb858fbaf0fcba903ce5b59399cc83fad97e953eb15e4392ac11df"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "13d9124964d4e6a9c99ca57e763e34e40397871bf94b4064cddb5262bf501f47"
   end
 
   depends_on "gettext"
 
   def install
-    system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}",
-                          "--mandir=#{man}", "--infodir=#{info}"
+    args = []
+    # Help old config scripts identify arm64 linux
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
+    system "./configure", "--mandir=#{man}", "--infodir=#{info}", *args, *std_configure_args
     chmod 0755, "./install-sh"
     system "make", "install"
   end

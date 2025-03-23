@@ -14,6 +14,7 @@ class Yewtube < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9477d632857de9e13621ad1c9b2f369874c7bb74caca08d45e53f51abe29d4ac"
     sha256 cellar: :any_skip_relocation, sonoma:        "9477d632857de9e13621ad1c9b2f369874c7bb74caca08d45e53f51abe29d4ac"
     sha256 cellar: :any_skip_relocation, ventura:       "9477d632857de9e13621ad1c9b2f369874c7bb74caca08d45e53f51abe29d4ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "922ffd859452373bf9520d2ed9b26cf20dbd7c0896b4ee31a918c86888680171"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fec46483845301e4dd34ac349e3af02ffe535f25332d64de7c52ffda3b378837"
   end
 

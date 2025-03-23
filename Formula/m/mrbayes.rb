@@ -23,6 +23,7 @@ class Mrbayes < Formula
     sha256 cellar: :any,                 monterey:       "868362e98f0a1ebe8bf2a71f45fa96d6fd4d474e581f52e88e27192cc0086815"
     sha256 cellar: :any,                 big_sur:        "f00054f1f4fd5c3c7835ece867a6ce6d1a5156517a0a08233fe4548717b6a41e"
     sha256 cellar: :any,                 catalina:       "4239d03c3d4cf4e2b82b7b91dec3486836695da2770397238b7c8c4182930d20"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2a4ec915301ae658e00a5fc302f84124e69ae54af8c0bfbc6167701fbe60d69f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "102eb61f76273eb1345ca920c8e0e4dc4cec0ccba93c56a9a2634376b727e3e6"
   end
 

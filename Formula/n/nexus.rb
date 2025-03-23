@@ -20,6 +20,7 @@ class Nexus < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "824cffac4a9810625e41bc140f5656bfaa255851c0b6a475374daf1b5503b906"
     sha256 cellar: :any_skip_relocation, sonoma:        "03908a16b05b89f03316b1d2113f7f9b0d23e35c8b362fca047af78b0577e806"
     sha256 cellar: :any_skip_relocation, ventura:       "17e647b341d6e2d8e8d5b55695403320eb099f7d7708b56a349e8ab4d76f5a9e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff262a2eee5e87d1b4286ef97d01bc4a3de318004b4cf4130510717498bc44ce"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8d153097684ef3d932e1c2ed8c77113a12a1102c9c60f862acbb7ada2b8ef33"
   end
 

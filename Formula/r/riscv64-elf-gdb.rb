@@ -17,6 +17,7 @@ class Riscv64ElfGdb < Formula
     sha256 arm64_ventura: "fccea4d5843a8e3d9f85355f50aa13abeef2396172710a9ff9c5670cdad1d03d"
     sha256 sonoma:        "ac495dcb93f738f074ac61abbdc5c66ea3f43646eed971cd9cb0efb758d059cd"
     sha256 ventura:       "dd8565db43dd825209c342591779a47bc117b26e19c1904a1f7f71079813e7b0"
+    sha256 arm64_linux:   "700ca13b7901ba06c0a424f781e307f1e3d2733dd5aa29f7ad4230f74378a43c"
     sha256 x86_64_linux:  "30ec6c9bd936d13e75de1c5c4f6bbb210c75b5b1dd3fd0327dd0f90a40dbba52"
   end
 

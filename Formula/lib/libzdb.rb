@@ -1,10 +1,9 @@
 class Libzdb < Formula
   desc "Database connection pool library"
   homepage "https://tildeslash.com/libzdb/"
-  url "https://tildeslash.com/libzdb/dist/libzdb-3.2.3.tar.gz"
-  sha256 "a1957826fab7725484fc5b74780a6a7d0d8b7f5e2e54d26e106b399e0a86beb0"
+  url "https://tildeslash.com/libzdb/dist/libzdb-3.4.0.tar.gz"
+  sha256 "abd675719bcbdde430aa4ee13975b980d55d2abcb5cc228082a30320a6bb9f0f"
   license "GPL-3.0-only"
-  revision 6
 
   livecheck do
     url :homepage
@@ -12,12 +11,12 @@ class Libzdb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bd97a7dd6aefe7e58b341a5358edfb32b66bba0f1cb8630b399f2b02700d09bb"
-    sha256 cellar: :any,                 arm64_sonoma:  "559a24c293383d393cf10674d80dc3dc2c11ba7e8ddc49fd946a5ef22956284d"
-    sha256 cellar: :any,                 arm64_ventura: "a6dd1911a57055a2166194a5d6d96511c66a9b33d471ea5de332521a6fd45fb3"
-    sha256 cellar: :any,                 sonoma:        "1bdf664002cbd63f8fce912432760eee51ca3b3836462ab7698fa9b1066a2e13"
-    sha256 cellar: :any,                 ventura:       "4ec2d9cad1a1461b597fb6dcd0ebf9087ca0afcb9e1532a666f4278bcc767df8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed4c23875500da4ada769975cf4857752db3e0a45f5c99553d008ae14282a72d"
+    sha256 cellar: :any,                 arm64_sequoia: "c2cdc0ace2bf1ef0a9d2526c7ae60e9274b89554b0c102fbec55e3de814644fe"
+    sha256 cellar: :any,                 arm64_sonoma:  "64f246320a51ae3c3c964b5d43727117c86496dd00d3fa1502ffc5bd3b1dee2d"
+    sha256 cellar: :any,                 arm64_ventura: "726e589d4f8923d5637a0e2e783646b72c27fc67be1b9964751a84756eff31f0"
+    sha256 cellar: :any,                 sonoma:        "7edcecb1ca7c17d03534e6af574756ec864b4def522cb7e08eafe6b6644a726c"
+    sha256 cellar: :any,                 ventura:       "241ebf0e383ea2e76a0f50a7631732196b766c2db21a7a9777dbfb698b099661"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3c1a98b88d064a8046b123cd741283a5135edc37bac2567a650fdf561c9ed22"
   end
 
   depends_on "libpq"
@@ -26,7 +25,7 @@ class Libzdb < Formula
   depends_on "sqlite"
 
   def install
-    system "./configure", "--disable-silent-rules", "--enable-sqliteunlock", *std_configure_args
+    system "./configure", "--disable-silent-rules", "--enable-protected", "--enable-sqliteunlock", *std_configure_args
     system "make", "install"
     (pkgshare/"test").install Dir["test/*.{c,cpp}"]
   end

@@ -1,10 +1,9 @@
 class Openmsx < Formula
   desc "MSX emulator"
   homepage "https:openmsx.org"
-  url "https:github.comopenMSXopenMSXreleasesdownloadRELEASE_19_1openmsx-19.1.tar.gz"
-  sha256 "979b1322215095d82d5ea4a455c5e089fcbc4916c0725d6362a15b7022c0e249"
+  url "https:github.comopenMSXopenMSXreleasesdownloadRELEASE_20_0openmsx-20.0.tar.gz"
+  sha256 "4c645e5a063e00919fa04720d39f62fb8dcb6321276637b16b5788dea5cd1ebf"
   license "GPL-2.0-or-later"
-  revision 1
   head "https:github.comopenMSXopenMSX.git", branch: "master"
 
   livecheck do
@@ -19,12 +18,12 @@ class Openmsx < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "79b26f0bc081f8b8974e162246116bffdcbd0b6221fdab1e2e1dec4e4a845ebe"
-    sha256 cellar: :any,                 arm64_sonoma:  "b591ec9b4206114bc22294ec7efcab63064fda6232b49aea074bf151907581b4"
-    sha256 cellar: :any,                 arm64_ventura: "2244a38af42b9cbf7cdf6f5a2a52b54bf37bc9557de622d461dccc7b9920ddb5"
-    sha256 cellar: :any,                 sonoma:        "67024fa6b9d9568053cb3c712d89f1bf336e5e39e1d21335e7ea36652524a598"
-    sha256 cellar: :any,                 ventura:       "b25732b1cd38a2354146f923b7737fa47f9a217fcf3bcb254bab35e1b065282a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9760971e0edbb18c0aa386bd5a3fcacb2b99bad467aaf66b52184c809e5c77dd"
+    sha256 cellar: :any, arm64_sequoia: "ee0a9be62e2b1c04669a5fdbadbf59ece48fb64cfc5c6287cc3c404ce39f884f"
+    sha256 cellar: :any, arm64_sonoma:  "ed81ae7655dd0ca38610c9c5fd48ede0676f2244e29cbdaef8e8dfd62f153abf"
+    sha256 cellar: :any, arm64_ventura: "89b5d4a1cb8f3c248549e45542e47d15030eac7246d2f59162da2c9f4e162fcd"
+    sha256 cellar: :any, sonoma:        "9362583e5d32849d94162a48cfc68d4294d01dd20d2fe968e54a2684590584cb"
+    sha256 cellar: :any, ventura:       "66143d111af9938f34491c5e892c5884ddd501b5d10ca73fcd6665548f0fa7d5"
+    sha256               x86_64_linux:  "ab58976a39c13c22ef52e773f9faf6ea1f489e61164b4ff41d71e28376d4f30a"
   end
 
   depends_on "freetype"
@@ -39,8 +38,12 @@ class Openmsx < Formula
   uses_from_macos "python" => :build
   uses_from_macos "zlib"
 
-  on_macos do
-    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1300
+  on_ventura :or_older do
+    depends_on "llvm" => :build
+
+    fails_with :clang do
+      cause "Requires C++20"
+    end
   end
 
   on_linux do
@@ -49,25 +52,13 @@ class Openmsx < Formula
     depends_on "tcl-tk@8"
   end
 
-  fails_with :clang do
-    build 1300
-    cause "Requires C++20"
-  end
-
   fails_with :gcc do
     version "7"
     cause "Requires C++20"
   end
 
-  # https:github.comopenMSXopenMSXpull1542
-  # remove in version > 19.1
-  patch do
-    url "https:github.comopenMSXopenMSXcommit78939807459c8647174d86f0bcd77ed4310e187d.patch?full_index=1"
-    sha256 "cf752e2d85a8907cc55e12f7fa9350ffad61325c2614e011face593e57a58299"
-  end
-
   def install
-    ENV.llvm_clang if OS.mac? && DevelopmentTools.clang_build_version <= 1300
+    ENV.llvm_clang if OS.mac? && MacOS.version <= :ventura
 
     # Hardcode prefix
     inreplace "buildcustom.mk", "optopenMSX", prefix

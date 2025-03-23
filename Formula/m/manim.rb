@@ -15,6 +15,7 @@ class Manim < Formula
     sha256 cellar: :any,                 arm64_ventura: "1a75f199f3ab86fdb7bf6c566c6da67ceb33035f5e028638b08bc7f02c6c0be3"
     sha256 cellar: :any,                 sonoma:        "cf4b5d144679779e524b99299b51bf112da008ccb700ded181a9b192b7b4831f"
     sha256 cellar: :any,                 ventura:       "e3c1047b923d039b971f1bcde3c75f9c74e4efb828446ee5b187cf9916a95c82"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf7672f05239bb0b4a5f2b673376f391c4a6454a8efb2e8b4e80b9c68b4650ee"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae49172db57af504a7455c843c67ca1cfac5e78759388f73107c42173567780e"
   end
 

@@ -12,6 +12,7 @@ class Lanraragi < Formula
     sha256 cellar: :any,                 arm64_ventura: "8ab0ce5030db23398a998f5e35e9a831799c3887659301fab36d2d35c42c6f18"
     sha256 cellar: :any,                 sonoma:        "30589b6799023584f70e4e9657e44ba1d5a2849e00179f0e1990e7147599b0ab"
     sha256 cellar: :any,                 ventura:       "1d111e3daa8782677e1281fe4eea7d60c41abff332e42901b1b56702c0ab77c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e6b72a3f914d6827d9e1525f5a9a68f445002427c3a96d8de2d8c49584349b20"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc0106b15f6ff7d2fa785a5bd749679900079800399732b846709ca4a7fce8a6"
   end
 

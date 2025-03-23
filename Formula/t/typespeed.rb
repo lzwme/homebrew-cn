@@ -20,17 +20,28 @@ class Typespeed < Formula
     sha256 high_sierra:    "70fe987eeaabcf8e94996d56a478c1aac14781f2475337476ff2dc87543bb602"
     sha256 sierra:         "8c4af1a3e4e8c32eab5da01fc3b30604eaad86bf84f4a96af7878599c92a4a36"
     sha256 el_capitan:     "82223614505b9fac677ba4ac4ad9f3b646597cddde604f8c981cc000b8ed7bf6"
+    sha256 arm64_linux:    "b77850229d406c13937f40c43c0cbb4888dff463edab2a4ef0f528ae0312ad78"
     sha256 x86_64_linux:   "4fcef57ff481d6947275a5b93e1489379a2ba7d1938d9de031fddd4bc4199f1d"
   end
 
   uses_from_macos "ncurses"
 
   def install
+    # Work around failure from GCC 10+ using default of `-fno-common`
+    # multiple definition of `rules'; typespeed-file.o:(.bss+0x2050): first defined here
+    # multiple definition of `words'; typespeed-file.o:(.bss+0x30): first defined here
+    # multiple definition of `opt'; typespeed-file.o:(.bss+0x0): first defined here
+    # multiple definition of `now'; typespeed-file.o:(.bss+0x30b0): first defined here
+    ENV.append_to_cflags "-fcommon" if OS.linux?
+
+    args = []
+    # Help old config scripts identify arm64 linux
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
     # Fix the hardcoded gcc.
     inreplace "src/Makefile.in", "gcc", ENV.cc
     inreplace "testsuite/Makefile.in", "gcc", ENV.cc
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 end

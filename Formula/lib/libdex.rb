@@ -20,6 +20,7 @@ class Libdex < Formula
     sha256 cellar: :any, arm64_ventura: "d028731c282bd751c94e87bec4f93a3657b6b48b3f318f9cfa28f7eb3cd29bf5"
     sha256 cellar: :any, sonoma:        "b1442c9ce97b8d63af832cb2b9a0b6e0c340433e8b212131a7abf2e52034f6c4"
     sha256 cellar: :any, ventura:       "7a6ac6f6fe4b4225cec26e320f583eaba048f5091ebeda8ce983d4529c5a33cd"
+    sha256               arm64_linux:   "4a02e4429ff5407511b8ed686677109a083179c634528c6079434195dc082d62"
     sha256               x86_64_linux:  "6015425230e2435737f5a901fea985eec735f26e60c0d788a0a989378a73dd50"
   end
 

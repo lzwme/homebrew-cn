@@ -1,10 +1,9 @@
 class Vice < Formula
   desc "Versatile Commodore Emulator"
   homepage "https://sourceforge.net/projects/vice-emu/"
-  url "https://downloads.sourceforge.net/project/vice-emu/releases/vice-3.8.tar.gz"
-  sha256 "1d7dc4d0f2bbcc2a871bb954ff4a5df63048dea9c16f5f1e9bc8260fa41a1004"
+  url "https://downloads.sourceforge.net/project/vice-emu/releases/vice-3.9.tar.gz"
+  sha256 "40202b63455e26b87ecc63eb5a52322c6fa3f57cab12acf0c227cf9f4daec370"
   license "GPL-2.0-or-later"
-  revision 1
   head "https://svn.code.sf.net/p/vice-emu/code/trunk/vice"
 
   livecheck do
@@ -13,12 +12,12 @@ class Vice < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "5b90dae6e48945d2a2e9bcb171d3e738f84eaa4509b271464f077306cac2170c"
-    sha256 arm64_sonoma:  "df507a393d84b5b9a26ba24dd7b25cf5970d9e863c3434192b8acf17b0e6c87d"
-    sha256 arm64_ventura: "d1acd6e4620e02665f26fadb7a17a3d61de4d17a5f0b0a32bfbc2f85ac4199d2"
-    sha256 sonoma:        "d2ce9b6154fb38eeba565303cd320235184c8bb45d17479f4a8d067efe284d8e"
-    sha256 ventura:       "4748297e9155eae2c4afd61c48e6385b0dbc5ec342850f34b4624d13421818d1"
-    sha256 x86_64_linux:  "8cd08ba6580c9d429534acdc4bb5a8edad01f1a1c30000c78258b9366bd2a4b3"
+    sha256 arm64_sequoia: "8b78df5935aab1f83e0207ea2f728b96a74e66d69f5299e8507f990f11920822"
+    sha256 arm64_sonoma:  "729bb747eeb23ff89b1cb604520e7204880394934d91f316c9dc7aeef2f7f73f"
+    sha256 arm64_ventura: "076944a3a5d61b727aaa53724661d96a975f22092da741c06db0ab0a4d2a8adc"
+    sha256 sonoma:        "214a47453e12ef15db2adc4cece96aca944ae2dc4b785166bf5e6dc96323d621"
+    sha256 ventura:       "550d23369b47768525c093b7b7e7f7d737488060bef4e69919685a1dfdaf5c56"
+    sha256 x86_64_linux:  "752515da593a5bbddd5ab728ecba2bab8a5ae79ec449cd5471de3c2854ce893e"
   end
 
   depends_on "autoconf" => :build
@@ -77,12 +76,13 @@ class Vice < Formula
                           "--with-vorbis",
                           "--with-gif",
                           "--with-png",
+                          "--without-evdev", # TODO: needs libevdev
                           *std_configure_args
     system "make", "install"
   end
 
   test do
-    output = shell_output("#{bin}/x64sc -console -limitcycles 1000000 -logfile -", 1)
+    output = shell_output("#{bin}/x64sc -console -limitcycles 1000000", 1)
     assert_match "Initializing chip model", output
   end
 end

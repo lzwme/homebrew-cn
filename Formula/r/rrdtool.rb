@@ -28,6 +28,7 @@ class Rrdtool < Formula
     sha256 sonoma:         "e135bffca7c601ab3f539fa6c0a7d9756a20a20654b6e70acc01ac1238414f52"
     sha256 ventura:        "8b2a72bdffacc374a613ed17c3fa9966521b09f968e18799fca9c28ce350cc59"
     sha256 monterey:       "979b3fd513e67da16268a66997d3442a58c8716979fd8fa43996f51a05ab5de0"
+    sha256 arm64_linux:    "d066d8d5baf620f46cca98fe2b422227af8432ea2b4574051a72146103b981ad"
     sha256 x86_64_linux:   "a7e81bcff828d14ddf9ca6759a9784a6d23c26ba667d52c967482848f563f4dc"
   end
 

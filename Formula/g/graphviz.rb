@@ -26,6 +26,7 @@ class Graphviz < Formula
     sha256 arm64_ventura: "ce8eaf49349dfd40a47ce364f7b33c94b812e05527ae92be9a58dd9202145734"
     sha256 sonoma:        "82f8b94e10a0faeffb28cb097ac071707188ea26ab2fc66da607c49c37743d30"
     sha256 ventura:       "6f35eabfb6acfebcd48ea4d2663307148f7bd8f54fe748dfa33eb173d794aba7"
+    sha256 arm64_linux:   "3121f09ca5ea69be612073ae70261f6303ab78f0337e490f41876ed0b63bfbfc"
     sha256 x86_64_linux:  "67fab62f20a6882fff2a4863382566cd3e462226f121b6b415a22176e81c518c"
   end
 

@@ -17,6 +17,7 @@ class Mpich < Formula
     sha256 cellar: :any,                 arm64_ventura: "ae8445c78a080da251f7feacf10c5af2536253957e2017e631019c2906222238"
     sha256 cellar: :any,                 sonoma:        "adb7e8ba25ae9220c61c39d894175a2552471989cb7847dea8b1af38b6349f24"
     sha256 cellar: :any,                 ventura:       "225a762f2f84644bd79521f473310223b18bfc6c55f4df26827006c6551292fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f048aa161a96151f3ee7cd8cd9ee7b1f3a827369ffdbd905c532097854103d3c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f77974a6ff8587c775b90de3c499eb30328c2abc029515a76e094c490f2eb96"
   end
 

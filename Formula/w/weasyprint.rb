@@ -13,6 +13,7 @@ class Weasyprint < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2049c84ed6795c62d6c26a0450b63077fcecfd3bd4a250f1b81866f62d6b4cf0"
     sha256 cellar: :any_skip_relocation, sonoma:        "27557f500576bfc3f7ed67ec5e024a1631044b054eccb9b88fdee0e6edd789e9"
     sha256 cellar: :any_skip_relocation, ventura:       "6e613821c9a3c1df2ab61308a243924bc63806771846faaa5e240978d3686406"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1dddc8cd46ddd8febbbea3e13dc43ad277000bf0fd5ac9a94b48b41a62056cd"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd8713b93d51c784ee9d7290641c416f6050616862f5409ffae5374db6786ef9"
   end
 

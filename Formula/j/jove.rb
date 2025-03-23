@@ -16,6 +16,7 @@ class Jove < Formula
     sha256 ventura:        "9422961e8614d8aec5478e85d35182ee89349d3c36f6f2532408840b7e7a26ff"
     sha256 monterey:       "7c883664ebb4fe5f42eef3a0df73ff285a3cb3e0e5f65f5a1c00b339b6523e7d"
     sha256 big_sur:        "7683237862192a39be911ad6fe74a44f39f84c0396b4c0d7c8d852c4e77745ae"
+    sha256 arm64_linux:    "125a6a64781b69250f67e0569caa439193ffae01aa9a3ce5c4dfb2e0730cfd4e"
     sha256 x86_64_linux:   "5fa082ebb4156da6e11e7618f2aa658c30e6d80215093c913fc00a02489fb027"
   end
 

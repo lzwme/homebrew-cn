@@ -2,9 +2,10 @@ cask "font-bytesized" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflbytesizedBytesized-Regular.ttf"
+  url "https:github.comgooglefontsrawmainoflbytesizedBytesized-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Bytesized"
-  homepage "https:github.combalt-devbytesized-gf"
+  homepage "https:fonts.google.comspecimenBytesized"
 
   font "Bytesized-Regular.ttf"
 

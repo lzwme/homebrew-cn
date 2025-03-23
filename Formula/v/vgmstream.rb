@@ -21,6 +21,7 @@ class Vgmstream < Formula
     sha256 cellar: :any,                 arm64_ventura: "d5fe68c483cc091a6a8dccda1350b4d085696a97394797f6bbac34833d3824ee"
     sha256 cellar: :any,                 sonoma:        "8aa64f2d3917a9371236ae65b9e84caebebe78516df124c61c02432a5a04775e"
     sha256 cellar: :any,                 ventura:       "9aca5ff0cec94404742b05a712e0614780319229191146d2fce6289e029dbe2b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4262e7f6fb622ac25d46326b5b8068b3a8df5ac6b5a8df70e447b94c4ff8e8b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b84d06605af52ad324986ef9ff63631ba6f2f56fc85984d695ef7e99348de66"
   end
 

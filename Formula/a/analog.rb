@@ -12,6 +12,7 @@ class Analog < Formula
     sha256 arm64_ventura: "6165d65fc23d23b5abf3ee30b59ede9b9626de03259e6ce24779adb72870925e"
     sha256 sonoma:        "67ef4efa366ab045c74c946acfee46f118d1053b90f477493476e814a4247c30"
     sha256 ventura:       "7b02e3af7264089c6f6c9fbf9e7f5568be220104ca01bc17a640d4e4979b2dc2"
+    sha256 arm64_linux:   "d24b9f6178f2c5b1f903e5c5416a8ae63c40906c5e4761eeaa144cbf21d26072"
     sha256 x86_64_linux:  "f81a6b3348847b5dbbcfad4242a43d9a98266c7cbc037a22656a610a3ffa2104"
   end
 

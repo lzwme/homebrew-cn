@@ -27,6 +27,7 @@ class T1lib < Formula
     sha256                               high_sierra:    "a36bc3913f6b51cb7772609a52049f90fc6241ffca3bf18c4295455ef5f4df4c"
     sha256                               sierra:         "94789287c849a04f05a40c79940aee6efe3e03318c95db9c2be69ee4e6806d82"
     sha256                               el_capitan:     "fa356a5405f5b0cf57c15ebd5b680c215e1e498189914e9b9663eb132655a8c1"
+    sha256                               arm64_linux:    "53645a5cb98164213a964a7f5f38412e4ce9290e83d6147cb5d2cdf676354869"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "51b691773063f4f7c0e6cbfa5be259516c77ad7b1c52bb189d045b8056216bf9"
   end
 
@@ -34,7 +35,11 @@ class T1lib < Formula
     # Workaround for newer Clang
     ENV.append_to_cflags "-Wno-implicit-int" if DevelopmentTools.clang_build_version >= 1403
 
-    system ".configure", "--prefix=#{prefix}"
+    args = []
+    # Help old config scripts identify arm64 linux
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
+    system ".configure", *args, *std_configure_args
     system "make", "without_doc"
     system "make", "install"
     share.install "Fonts" => "fonts"

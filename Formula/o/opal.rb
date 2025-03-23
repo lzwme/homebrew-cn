@@ -15,6 +15,7 @@ class Opal < Formula
     sha256                               sonoma:         "0221fb61f196b9cf8d920dab63202bbd88a1cca1c39faeddc90eeb98809a7825"
     sha256                               ventura:        "c6d8ff163ca78c9704f439eb6028c9bfe886a8da9c33c954b4ecc6fb8ce63691"
     sha256                               monterey:       "5509432b1bde3b1c78431961c976f1a791c547620365e73b0be9368b7376b61a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5d5d252a73da8ef3044f0378d88d5dfb4d18a500fda114392cc3f6481fff46a3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f250a308dd4b1ecfc9bab719bad3a47b2db363af2ca9642a3a81c1b6d9df815d"
   end
 

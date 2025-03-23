@@ -16,6 +16,7 @@ class Xsd < Formula
     sha256 cellar: :any,                 arm64_ventura: "515effcddd5163ba8ac3fc30f2daf51d5c9380209b376cd4fbbffc54eb823b9e"
     sha256 cellar: :any,                 sonoma:        "dcd70b1bada26e56ead16eaceeced482d7e8c4b84a8894d34073d46ad0c2f57e"
     sha256 cellar: :any,                 ventura:       "d6d34d7402ae33a991c7817a34d6f8bdec2f55bc68ec922b5e112d639f308dd0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b203c546a627a452e99687209c707b56a69334aa9dd509bcf80f2e9e2e0c055"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2ce6cba3e04b1e0239789b2c57ab98fbf8b465dc8477fb43c184da992002322"
   end
 

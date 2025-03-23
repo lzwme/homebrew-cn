@@ -20,14 +20,22 @@ class Cdpr < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "ce836a4189c94a1441cb417f36699fca01e3cf30b69bcc5a3ec8307c51d0f66e"
     sha256 cellar: :any_skip_relocation, sierra:         "c6603372329fd2dc0c60266b3f3eb6c9f7cc5c0ce7f351b05977ab39a18cde7c"
     sha256 cellar: :any_skip_relocation, el_capitan:     "0bdc868c9b11510e2d9e6551dee970c20406215153906d8bc42790d8510ac429"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ea696f5689ebc5dd7ca3dfc9621e40da5ceb24b4016607c713a7f05d5de2a130"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "6a2162fee06fc9c03e01a2a6787a18f1d8a0c241a0c315d76878b09ea787c7b6"
   end
 
   uses_from_macos "libpcap"
 
   def install
+    # Work around failure from GCC 10+ using default of `-fno-common`
+    # multiple definition of `timeout'; /tmp/ccw1Bjcf.o:(.bss+0x0): first defined here
+    # multiple definition of `cdprs'; /tmp/ccw1Bjcf.o:(.bss+0x4): first defined here
+    # multiple definition of `handle'; /tmp/ccw1Bjcf.o:(.bss+0x8): first defined here
+    cflags = []
+    cflags << "-fcommon" if OS.linux?
+
     # Makefile hardcodes gcc and other atrocities
-    system ENV.cc, "cdpr.c", "cdprs.c", "conffile.c", "-lpcap", "-o", "cdpr"
+    system ENV.cc, *cflags, "cdpr.c", "cdprs.c", "conffile.c", "-lpcap", "-o", "cdpr"
     bin.install "cdpr"
   end
 

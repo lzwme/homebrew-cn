@@ -14,6 +14,7 @@ class Dnsviz < Formula
     sha256 cellar: :any,                 arm64_ventura: "658087f1a301001e35345cc79528fe8c990f0abc0d8b25fe11ee9bad935dc59f"
     sha256 cellar: :any,                 sonoma:        "95ab3f0f1a91635998ad85cbcd8f2324fea9c29559a201d7b00ed9ed7a0af5ae"
     sha256 cellar: :any,                 ventura:       "146eea3d7c4dfc1c96cdc0eed1011df849ab3ebfbb6833e0a6a76d43ea7dbbc2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a07fbf9b184504d8086c7ca59cdb0d3645f6858888b1478e0bd71f8a43b4e782"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f1ed73bf2095d6d7527ed2be53ee8675011a45c96d34f01a4ece50a702604bd"
   end
 

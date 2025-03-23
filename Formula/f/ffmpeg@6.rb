@@ -19,6 +19,7 @@ class FfmpegAT6 < Formula
     sha256 arm64_ventura: "788d919d008a2f5cdc7f08548719b8d353f6a481c1a459bede4f227170cfcfe0"
     sha256 sonoma:        "aac2d3850e15837e4b35b19773b6e4bf73c990f44cf27323e450d0847f835736"
     sha256 ventura:       "e132df7e98410324f769ac04f8e449f9ae9eb001abf059bdda8d17a5c46a51ea"
+    sha256 arm64_linux:   "a227121154507fde1860ac922f7f3d942c113c068ae777a8ace84f9bfd5b5ec8"
     sha256 x86_64_linux:  "e17f0ba0767dd3b6428cd82b772b2ed9317d6f027c03a23d3d13820a39bad8c2"
   end
 

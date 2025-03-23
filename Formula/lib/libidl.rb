@@ -20,18 +20,40 @@ class Libidl < Formula
     sha256 cellar: :any,                 mojave:         "6221a3b0ea37b55c26bc1f83c84ce3e027a8925b92d63055a51fe3a7d6bdff19"
     sha256 cellar: :any,                 high_sierra:    "9b07bec68567266f1bc065b05afdb9b034c0c70548145d7cdd963b5958c8da30"
     sha256 cellar: :any,                 sierra:         "ecabcc1a9cd229a135557f0f8bc32a38d03d399ff6816b0fc897cc4bcf72cd1c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "57eeee9bf85e175fcdbd07db76bafa970051cf061836efd715957e5cfcb7319a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9ede5070565f89d3e7f24f01d9da73d50b6c008fbf12f7247d3cd04b8076d842"
   end
 
-  depends_on "pkgconf" => :build
-  depends_on "gettext"
+  depends_on "gettext" => :build
+  depends_on "pkgconf" => [:build, :test]
   depends_on "glib"
 
   uses_from_macos "bison" => :build
   uses_from_macos "flex" => :build
 
+  on_macos do
+    depends_on "gettext"
+  end
+
   def install
-    system "./configure", *std_configure_args
+    args = []
+    # Help old config scripts identify arm64 linux
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
+    system "./configure", *args, *std_configure_args
     system "make", "install"
+  end
+
+  test do
+    (testpath/"test.c").write <<~C
+      #include <libIDL/IDL.h>
+      int main(void) {
+        return 0;
+      }
+    C
+
+    pkg_config_flags = shell_output("pkg-config --cflags --libs libIDL-2.0").chomp.split
+    system ENV.cc, "test.c", *pkg_config_flags, "-o", "test"
+    system "./test"
   end
 end

@@ -12,6 +12,7 @@ class AbAv1 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a37bd68b59b2c45360a4c0f98cb7576724721b5da8e5edb741580af9162a2c2b"
     sha256 cellar: :any_skip_relocation, sonoma:        "b218932b4ac28bb9d37643bd9d9e178268e5ffe1ae3bbd35d3db8bc569c6cdef"
     sha256 cellar: :any_skip_relocation, ventura:       "5cc90e3553454c11c1538c2a19248feca6edae9047268863c2f27331cd7d3998"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c63a0659214937348c490038c52a08174cfa5844967081e5250c1d7cbc5fe76"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "697001bcb02b52018af6b8e45eca402d141136cacfc8a4cfbbab5d6f69dd1f64"
   end
 

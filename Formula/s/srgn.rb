@@ -1,20 +1,19 @@
 class Srgn < Formula
   desc "Code surgeon for precise text and code transplantation"
   homepage "https:github.comalexpovelsrgn"
-  url "https:github.comalexpovelsrgnarchiverefstagssrgn-v0.13.4.tar.gz"
-  sha256 "778766769b9c7845b6f24cb25c940f675c8634b3ba58bf1c552c717a12fe0ead"
+  url "https:github.comalexpovelsrgnarchiverefstagssrgn-v0.13.5.tar.gz"
+  sha256 "ecbe5b9a23e005aa30d5ad4fe3a6d19fdca0417a986646885edabbff628f3a7f"
   license "MIT"
   head "https:github.comalexpovelsrgn.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a076d8eb261a0e155f3831f12e3fa9c20d2fb55f21956511bd8709e76069c217"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "486b86d4e32bfe9bc328228770cebbeff554e13f4c47c51507611abca172ecb3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3024bb99bc151548d81b9209827098f69ac8ac4443df3cb8826c964ad6e1ccb9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "48c2a28bf3f26aff4691d7ff96174ff0d2d61c31e657789fb0ebe7c98d56b1ad"
-    sha256 cellar: :any_skip_relocation, ventura:       "7da2e134ada2cc0b4b0d0bcc3169553c29969b3c7de82e2ae020383271489c05"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "356d0ce16ed0f5e5254228bfc7b5c7072d63f26ad9a80c2cc90dd98100d826a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4b732ae9590d4d030261cb94737cb2e7db15dc6fce6bf7eee9a41ea0cd5c960"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "93fa0fa33a1622abc17a0f3cfbd9b4ea31b31f307017dcc32b14e1c4c9ddced9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8fd6757303a1d2b4c143d14d5649cd1c16dc2692480a1ad0bce181734238c8e9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2cb04f9721acfc5eed48dd7766d9081d8301f7f9ac08ce503d2a69cfd6aed728"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eb0720f6ba7bc635f52aa5f9b56b04306032844a3a64e49221739ecafc409fef"
+    sha256 cellar: :any_skip_relocation, ventura:       "baa5773503de179dd6591a2d004c66ba0194d838109edc6bbd9fc21b9009da28"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d3f325b506a885e4b71ad5673ecef5a488396fa21f261f51d5717a445d0c98a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9e9e15c51b834c483e90a6f8ff845832e4d2de67c76143399f7f1b9cf24c84c"
   end
 
   depends_on "rust" => :build

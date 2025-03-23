@@ -12,6 +12,7 @@ class GitAbsorb < Formula
     sha256 cellar: :any,                 arm64_ventura: "2460eca14e40946b5d739f9b89b9de70acbd87b7f0849e464a60e58b6de7daed"
     sha256 cellar: :any,                 sonoma:        "ad181f87d1bb47476db2e533b3b03d4c6f9e8c9a2aa9db914aa7df416259d5a4"
     sha256 cellar: :any,                 ventura:       "6a8785c9939b7fb75b2595ea5f3d1dffcb2b6dde34ceb58572f68ca25fb73974"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe48890abe6494521b53581355c3a5ae1fce29de4982133250ae43aaaf376c4a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1955fcb9602e4dab7e6ac246f16337c6b4565cc5d0a5f8abca1d0542d6f10248"
   end
 

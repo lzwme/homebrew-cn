@@ -11,6 +11,7 @@ class CodeServer < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "15068e8a56365250c29b46cb3ab064a5e361a8462f524d26d06944c0cb10768a"
     sha256 cellar: :any_skip_relocation, sonoma:        "76e56814f0fc42ea9405396b59d20b961080d7b828f6781dea0d9700502db826"
     sha256 cellar: :any_skip_relocation, ventura:       "fd9a56c45b5facc138fe4b25f2e7808cb9680c409c4d5cc59e5aac701ed9e872"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3721940504ae9acd6b823e3ff8cd54ff312ae08a821dfe76705847235c672672"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "253451531978cb2487ab1d7d971d716a1f42714f7d62bb611826a4f408f38abf"
   end
 

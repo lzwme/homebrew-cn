@@ -28,6 +28,7 @@ class Beast < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "dc1635820e1fc7927203e32b9889e9a40046347d41da139a5242732b69113003"
     sha256 cellar: :any_skip_relocation, sonoma:        "bb2c0e36ea56bc4da5acd32fc8b94d3790b4941ae0a96c329edc09bdcda964f5"
     sha256 cellar: :any_skip_relocation, ventura:       "addf828a1d4ee838921507d1c937a9ca17ea2b4666193461237fc218a1b1bddc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5cb0610f7b28b36cb020c8d6075523e4e73aee036b928823361059e4e86ce29"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8974bcba1ac12db8bad1ccdd47976f468ea9f7739eb0d43fe120bb93e1cef388"
   end
 

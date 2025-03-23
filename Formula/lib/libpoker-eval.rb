@@ -22,13 +22,16 @@ class LibpokerEval < Formula
     sha256 cellar: :any,                 high_sierra:    "415934c921d4ccced5426f9aa807b0cf11da031cb2c973e17d506a9f740ac645"
     sha256 cellar: :any,                 sierra:         "5216cd33d433fd9212ed14d6fffec593c7106226547c1555344604186e7aafc6"
     sha256 cellar: :any,                 el_capitan:     "67b105600a8e29ed2d38421bc27340ff6e9092806f6458f0ddd6a27de0bcfb9c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "6d17810f1cdeacb43e5ec95d567c84f39eb99582058d5d3ac2f110cca04d01b2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "723cc1e71146dbe997acaacd71fd71f46266de3977b0ee24f3cf54fae280d208"
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}",
-                          "--disable-debug",
-                          "--disable-dependency-tracking"
+    args = []
+    # Help old config scripts identify arm64 linux
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 end

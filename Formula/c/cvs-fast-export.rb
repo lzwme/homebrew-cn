@@ -18,6 +18,7 @@ class CvsFastExport < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "f6aca690bf14add0b2daa03afc21b4efdfe093770c8547eb17ee271aea9a32bc"
     sha256 cellar: :any_skip_relocation, ventura:        "b70d7f541af12e97ee607b9d7fa1665af6bbfd6051e31bb6b93b71c220fa115d"
     sha256 cellar: :any_skip_relocation, monterey:       "3dde4030da24cab974a110ff6954b9d5b01091f33f16d936cad581e8db55067b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "feebbd85a5fe77606bb7abfd693844c374b11bf3b9e7af2201e31a9010854a52"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a9a04b0289478952e4f7991b95d9f0ced10fedc353c263e28924195dc60a1727"
   end
 

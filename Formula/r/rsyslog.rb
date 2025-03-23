@@ -16,6 +16,7 @@ class Rsyslog < Formula
     sha256 arm64_ventura: "7ea98249ad0dc1e7a4597e7057f5c6876242a249309b9cc49324be1e7e3e4e59"
     sha256 sonoma:        "634fdc7ce73d23b03242f48159487efb0b5c4fc260969ecc714efde9420ba2b1"
     sha256 ventura:       "d062e44b88e5d1b02ffab7237dac1a70fef11e1a204137ffb4a4284123ceddd1"
+    sha256 arm64_linux:   "8bf6e7b74eb77f2caabf141e907132cd9dd3ea91a77c0a91ef10adda9e2baab7"
     sha256 x86_64_linux:  "b0f6a768aa0755c58ca09703551430588f40df0273679bc4131bdda4bc508c73"
   end
 

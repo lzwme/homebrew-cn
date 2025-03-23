@@ -1,42 +1,31 @@
 class Primer3 < Formula
   desc "Program for designing PCR primers"
-  homepage "https:primer3.sourceforge.net"
-  url "https:downloads.sourceforge.netprojectprimer3primer32.4.0primer3-2.4.0.tar.gz"
-  sha256 "6d537640c86e2b4656ae77f75b6ad4478fd0ca43985a56cce531fb9fc0431c47"
-  license "GPL-2.0-or-later"
+  homepage "https:primer3.org"
+  url "https:github.comprimer3-orgprimer3archiverefstagsv2.6.1.tar.gz"
+  sha256 "805cef7ef39607cd40f0f5bb8b32e35e20007153a0a55131dd430ce644c8fb9e"
+  license all_of: [
+    "GPL-2.0-or-later",
+    "GPL-3.0-or-later", # Amplicon3
+  ]
 
   livecheck do
     url :stable
-    regex(%r{url=.*?primer3[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2728876dc573d38b7296d673b6b20276ed1f90bb45c720ab52bcaabfc64b6ecb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "39ad3540677540e405f8e3d326440293ce1c739b48db1b5cc2fca236dc48241b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "c19c2ed79dfef6f4b0f70b620180c46c017e462f44c3a3ded6abc42244071e01"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3651f78cf06ef84f0eaf2d4e9b136cdbf8775439021eab152b7c436e88f2ef65"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fff8629911a86916818473abdca4480363217ee8c371808bf22d87449c02df6c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "df0495ae871aee4d5026c34a39617106f0e7840b8b5e12fd65f44193a1fc8836"
-    sha256 cellar: :any_skip_relocation, ventura:        "51b592f2ea33fc4f91abd346e6b4122cf928fd8586321d5ab73f433d05f0040f"
-    sha256 cellar: :any_skip_relocation, monterey:       "c188cd7edb1bdaa613ec3307dc3292ccb9aa6deaafe1da6afa1540203a135cc3"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ad1892c4c516bd5865fbf63eb5ee843c6c090c2977d762bf029b907bed2c4730"
-    sha256 cellar: :any_skip_relocation, catalina:       "34845e20a0946fd5bc34d281766abddf173a836b492048e20488af58647904d7"
-    sha256 cellar: :any_skip_relocation, mojave:         "42d8c134f8dde43bc127a0f5f66eda246de195604b952ed9b8ac6b3fa8aba373"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "f72fac01bb380b5ea55b41249b2d6bc2f799e9cb7cef55fae0a1f92e1de7ba64"
-    sha256 cellar: :any_skip_relocation, sierra:         "0337aa96c5d5f25caa15177236c5f5d269adaaad01cb63a77c933eb01f7a6ed0"
-    sha256 cellar: :any_skip_relocation, el_capitan:     "45ca3618888becc12b4d6be0ab9957ba5c8fdf2e818f74dc5312900c641b06c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2e1869f3223dcec1add22b56adf91c9c6e2db4ff1920c73f8d056eeef5ef661b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c7272f6819aa6154307869334e14b9c6bf7f7e2946cb29e6ce27e0e32b591772"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe6b4f0f13b4c390a9b0760ec731e50fe176456d404ef253d0b2836fb0924aa9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8f669fca578e49237e85cfa9ebb37eef493657afdbf7152349d69addb91d4a6d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3b4742c4eb4d8eb8194804c426e4bfcc99816751a67d0a8ed3a9f9a762aa7f8f"
+    sha256 cellar: :any_skip_relocation, ventura:       "0451ce226e2aab9d03dbac0cf45b7790650dda666246a0c8f7789c407cdd34d8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "858d715a269e3ecad988c9bbbf7e04df1570e85f601a43bcde16fb8ee94255c2"
   end
 
   def install
-    cd "src" do
-      system "make"
-
-      # Lack of make install target reported to upstream
-      # https:github.comprimer3-orgprimer3issues1
-      bin.install %w[primer3_core ntdpal ntthal oligotm long_seq_tm_test]
-      pkgshare.install "primer3_config"
-    end
+    system "make", "-C", "src", "install", "PREFIX=#{prefix}"
+    pkgshare.install "srcprimer3_config"
+    prefix.install "srcLICENSE_GPL3_for_Amplicon3"
   end
 
   test do

@@ -22,6 +22,7 @@ class Libwmf < Formula
     sha256 monterey:       "f83417389f14343ca059d9c13c91b01cef4b5fa8ecccee254bbbcf830a6c0c2f"
     sha256 big_sur:        "5886a1a89f5a13f4b1d6e3b9bf5d6d9bbc237833e9ff0347679cf17a6b5d40f8"
     sha256 catalina:       "5a79438b49930e82ab4761644daa03d4843041ed4e245b47a208301a4a88d35e"
+    sha256 arm64_linux:    "a22a4a32c11fd0f92d5488328c59a4243b56c49524157eed7190ad8a60ab4e40"
     sha256 x86_64_linux:   "a18467741b4b8a3b995017473f8481d46023e36f5af44b28be538aa306007962"
   end
 
@@ -36,12 +37,20 @@ class Libwmf < Formula
   uses_from_macos "zlib"
 
   def install
+    args = []
+    # Help old config scripts identify arm64 linux
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
     system "./configure", "--with-png=#{Formula["libpng"].opt_prefix}",
                           "--with-freetype=#{Formula["freetype"].opt_prefix}",
                           "--with-jpeg=#{Formula["jpeg-turbo"].opt_prefix}",
-                          *std_configure_args
+                          *args, *std_configure_args
     system "make"
     ENV.deparallelize # yet another rubbish Makefile
     system "make", "install"
+  end
+
+  test do
+    assert_match version.major_minor_patch.to_s, shell_output("#{bin}/wmf2svg --version 2>&1", 2)
   end
 end

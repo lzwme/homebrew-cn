@@ -11,6 +11,7 @@ class GupnpAv < Formula
     sha256 arm64_ventura: "4ac0ba69dc914ac64f6dfb684499e3da9d4b0ca15745b362cc20dfb7b5832075"
     sha256 sonoma:        "bed183c138c06172f184183d91dc750a20c53e35ddfdc5edef3e3562f5643cd7"
     sha256 ventura:       "10dfe0149fcc7e18fb487e427ccb69d8dbc7cd88c96c8ad1045eef7690ea2a77"
+    sha256 arm64_linux:   "09905f96300d4ebc606466615ceca173a6fe4807e916d600df67692f9b3a0cd7"
     sha256 x86_64_linux:  "e130c48d351f4491f7c9a5ed5ca73510edf4fdfdadb33186e966e0650d73bac6"
   end
 

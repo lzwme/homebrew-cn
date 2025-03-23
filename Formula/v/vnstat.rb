@@ -12,6 +12,7 @@ class Vnstat < Formula
     sha256 arm64_ventura: "224ef1e8f2893b154ecd52d8999fb9f3f4ce57f4b565ac7881ac9250d5287505"
     sha256 sonoma:        "d0bb412ae03b8ddd2b071926ca8cd5b92420c9fa435546a2fa7f0570a2d7c6aa"
     sha256 ventura:       "d719d32162aa76bdfa057cb4ef089a864bafb31855d4355ba1e8e5e1cf3a9db9"
+    sha256 arm64_linux:   "a2f1ff3f507091717d9c0b8b2d407a806d7435aa28e9b163203a72616b6a0c84"
     sha256 x86_64_linux:  "cb0052ce9d13c668838ca8dcd339f852ab9508fc41b1359ac712baf7322b29b0"
   end
 

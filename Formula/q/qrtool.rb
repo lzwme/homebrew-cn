@@ -15,6 +15,7 @@ class Qrtool < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "30b7926abc4cf5140a3a7555b7451b3da7de2a432e4fc489538d36c505cb8ac5"
     sha256 cellar: :any_skip_relocation, sonoma:        "79b6996e14bd8c2418a2e0cb4931a73a8e45a4f5014d6fdbbb965d2572d4c767"
     sha256 cellar: :any_skip_relocation, ventura:       "d831501b61ec19b8f135e608498cbfe62b29620c0d530d1abb5291c6a55dc7ad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ee11f366a113e208e97a73ea4944ae920ce425f036d97ee4700f95d9c86425a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fdd6b06407cca35698891e2b27d72124fd8c4190480355865b7798bf23bbe8c"
   end
 

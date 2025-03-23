@@ -16,6 +16,7 @@ class Nng < Formula
     sha256 cellar: :any,                 arm64_ventura: "cc1d18cfce4ade76e5ad37f8c1f01762be60458447460b4580240e74d19c2196"
     sha256 cellar: :any,                 sonoma:        "df7377f8a991aa85c06cef8cca79f2c3d6b2a5d788731ae7e383c9b49d763d62"
     sha256 cellar: :any,                 ventura:       "1c9e50f925a44ed332d98420c2e3c12538336d175896e2fca83f04d809cbf6da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "627182101a9a3e1288114a3156f64dc01ce0b010d6e26ed144208ff9c59b1f8e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c69fc95eeee497679a4e5914bb9cdf0f43aa5cd30418f89cb562c896420b919b"
   end
 

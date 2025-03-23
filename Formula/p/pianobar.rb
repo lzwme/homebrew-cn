@@ -17,6 +17,7 @@ class Pianobar < Formula
     sha256 cellar: :any,                 arm64_ventura: "b10ac8d07a77bb918559f52fd2b940e1fbb67114821bcc0787f00998343ef32a"
     sha256 cellar: :any,                 sonoma:        "54ece37889c899e13f6a450eaed826b55a02212677e6335f30733bb11dc3ba84"
     sha256 cellar: :any,                 ventura:       "075e6a4aa76b0c0652c66017f8fddb9642b6d4ed5e04686594ff02ea0e2f2426"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d61b74b4790759e60e56c38a0524059925c73c3659c4c9290133d6569add8b2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "adcd810b2c11957d38dd073181a1742e0d579a60b61c78228ac21fb2fc9f101b"
   end
 

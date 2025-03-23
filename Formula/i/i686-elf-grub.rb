@@ -12,6 +12,7 @@ class I686ElfGrub < Formula
     sha256 arm64_ventura: "acfedbdc6b331ec2a1257cb55303befd965280978678c2f6e34f9dd45d6bd7e6"
     sha256 sonoma:        "f72297ff2a716b0347a300c27b8ea3e0f40090b243b5500f0fe2c824de003ac3"
     sha256 ventura:       "154a14a89653bdf2f8a521ae150c8e998e2bd51f2d9bf78560509b4a2d9791e8"
+    sha256 arm64_linux:   "d210e360f1529d9d5019a07c703d312155a3d485413df86ab13599240bdbdd39"
     sha256 x86_64_linux:  "f6f03a027b9c884fedcc5c9c3fb85599a4d279ea38263afbb64824fb7148db84"
   end
 

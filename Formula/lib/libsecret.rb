@@ -19,6 +19,7 @@ class Libsecret < Formula
     sha256 cellar: :any, arm64_ventura: "27509297a2f39d82ec33dbd654c24927bcbcf05e117cc1f3fcd32b31038188a8"
     sha256 cellar: :any, sonoma:        "dde2b7e3ab77bca9a397532ff32e89a715ae2fca9121c76296fdd6d88310b5f0"
     sha256 cellar: :any, ventura:       "bad849e6cac866d1140597af61bbd3770fca70af8900b4fb86ad82d1ac9725bd"
+    sha256               arm64_linux:   "d7a6d2ab018cc1b477f6b188069ee30fff3a18611f8135888b01e8654dad7f91"
     sha256               x86_64_linux:  "223ea87975e39fd3bb9ef2d04ea31c1c13b7f797199db96d2d2796b7e7856bf5"
   end
 

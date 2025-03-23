@@ -18,6 +18,7 @@ class Openimageio < Formula
     sha256 cellar: :any,                 arm64_ventura: "62afb78dcccaedb0d0c47ebd8bb040bc3e3542c6deb3a6507e8b750bfa4ac534"
     sha256 cellar: :any,                 sonoma:        "9846a1521b2fffbf9236993ed57887ce648df52d41cec348e7ef2cc7b0b1b3f2"
     sha256 cellar: :any,                 ventura:       "34883f8bf7495f8ea40fca3d71e369f3df8a75cec938bcd7f476b266f8100c81"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3409039beffcbf97455e2876503b014e803ee3d5974ce240db59cd038bc9cd7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e0e791e125f44eb6f6bee02f4f070ce818e52391f78008cdc8c1561f2d833c1"
   end
 

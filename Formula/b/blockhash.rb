@@ -13,6 +13,7 @@ class Blockhash < Formula
     sha256 cellar: :any,                 arm64_ventura: "702e383c365b207cb2100d72858ce30f40535e68122958bbb983d5f40052ebcd"
     sha256 cellar: :any,                 sonoma:        "549ec4cab23c30f91e09ac9bb552be96444915ded6cf8b038e215cb7a0396b16"
     sha256 cellar: :any,                 ventura:       "45c797c6b7554516ad75039b09aea8531253ab81c1a958bf55a1710fc0de5be2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "04e18532865185d071a00a063393586fe2af100b84f8e2124b230a5185504bf8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5281622fbde0603ec516b153e1a02e85d58e18c0074e4a6bc2b7df5670784aee"
   end
 

@@ -14,6 +14,7 @@ class YleDl < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ee8721b778801bccd90e87272c0156c16b4790474488b89c8179c06c63afa9b3"
     sha256 cellar: :any_skip_relocation, sonoma:        "5fe6b29a8f8a909f1e20c562d10d12cadab9000abe85f7804ea7155e1136ef59"
     sha256 cellar: :any_skip_relocation, ventura:       "ea8d60211f01ada6ff57053ef31e0cd6c9a5be8e44b345345dd939a515bd74e9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "26f4e4ec543f127537dacd22d002ba0e3bbeb8da1e1b344c02ff584c6002b94e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "091cc5cf7736496e1335cf1ca8d8c4822c88c3c25e891c9d166083b5ea9ae751"
   end
 

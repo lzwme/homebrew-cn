@@ -13,6 +13,7 @@ class PythonMatplotlib < Formula
     sha256 cellar: :any,                 arm64_ventura: "4ff6be1170f9cf8b98b00fd5c6cfafc3568fecc7653654325c59ff7d75b9d4cd"
     sha256 cellar: :any,                 sonoma:        "ee30d38099c69d5af1a4497d7c7f2c1083f0b1bc82210cee083876b528073610"
     sha256 cellar: :any,                 ventura:       "20621f8a097a2fc0494247dbfd95d73fa62de6913248789840003a6a72b342cf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a67a9d0810890fe0a9aaa751bf4206bf93c780228c1ad88f48a10200fe30f455"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "27df9c06741398d7839af0f32907e9031744e48affee21cc5d875d3adb4c79ec"
   end
 

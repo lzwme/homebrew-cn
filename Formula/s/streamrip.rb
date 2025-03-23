@@ -13,6 +13,7 @@ class Streamrip < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "65cdb9c66cf1cba0f43d803c6528b23820c5a6f84579f84bbf0d63677dca7729"
     sha256 cellar: :any_skip_relocation, sonoma:        "c21cb2ddf71eeeb687a0654b95a84c39408115364acf288f087ba4a5dcff6545"
     sha256 cellar: :any_skip_relocation, ventura:       "6b8eec41a964e5205609053b4beac6b0b97e49d98fc849a3e279e7b6d1ef4d98"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e67abb035e652d4c37a2069bef79d607a71ee18d3b1abd344762500ec80f16ca"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "249bcfb1dafa43ba6f3c753c43a2209653583c997b48e48ee8214f60692f80f0"
   end
 

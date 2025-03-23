@@ -22,6 +22,7 @@ class Gocr < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "43d025be56c56b56f15621742a716f1c6ad7d645a4c2f4ceceb0b85f63ec2787"
     sha256 cellar: :any_skip_relocation, big_sur:        "4d0cd5d85d36fd7e34ade41d36f49628323f81f2274fc3de1654d8b3b837c90d"
     sha256 cellar: :any_skip_relocation, catalina:       "474d44b25c0a812587529d2a2c75f49d8e45760c2c2f35d6c73a495cd0f4e055"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "4012b5d2e3c64d8bffa02852c25348f57cee8475aa726d7e14384e248a08e349"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "614341527ffeeb9e65ea13c95c230569bd68316f11b6e4c3d5bbc4c46757faa8"
   end
 

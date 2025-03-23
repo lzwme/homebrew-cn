@@ -14,6 +14,7 @@ class Dpp < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "a342da9f8b506999916e8ab83b6a0b7ca1574852e5daa106d4eb5308b1f4e588"
     sha256 cellar: :any_skip_relocation, ventura:        "cff6526644d8ebdf667ad74b1ef8c420bf76014f0dd57b05bf9706f45efba495"
     sha256 cellar: :any_skip_relocation, monterey:       "0dea447606ae46a62481252ea7cd16c2a6545be69918abea6949c787b55c39b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b5d7706120bcdd68aa87702e23cd5b1057af2ffb1f1c55a2a978f26ff79df070"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ac1f792f0814d1b5b07b10b751308dd7efc34f7105f93fc27946d3a649857db4"
   end
 

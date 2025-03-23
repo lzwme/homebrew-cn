@@ -14,6 +14,7 @@ class Gexiv2 < Formula
     sha256 cellar: :any, arm64_ventura: "a4ebe3eef9a3a532bbf91b1a13a22ce8ad9f879937e64531744ec81cc284fdbe"
     sha256 cellar: :any, sonoma:        "1d018abfa68800c473dfd4256ef98a5432258192728bb21fa8c763e6eef2cd9a"
     sha256 cellar: :any, ventura:       "026636430ab1d62ff0b97fc642c7e7986cfb0a82cbc6a56a4efef5c3ec6e3217"
+    sha256               arm64_linux:   "96d115b0ff0f7caf635689b009a7850107fca77ef6c3a27122688db0b6e88f61"
     sha256               x86_64_linux:  "b3ddc92c83707fc4ef16912a47bf8cdf01dbf76dd39b91155d1f7c334718c50a"
   end
 

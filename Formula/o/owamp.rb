@@ -26,6 +26,7 @@ class Owamp < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "0ce1d8385c1cb2036acbccbcd92ed5778c8ec0aa8e4db5c06a9ea018621f58dc"
     sha256 cellar: :any_skip_relocation, sierra:         "afdeaab138caa02c535fd9d2b847c5b5b24273beef19271fc60415de16d0681f"
     sha256 cellar: :any_skip_relocation, el_capitan:     "6f86a33c176ba1394560b7707466c088930f13db102b7adc159e80e889fdc5cf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "77ffadd4a4b4124cc3321d7a2a86d04beba9dc525f56f0883d9d358d70c97adf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7861b9b519cb1dd21940335fa2e904a72105938981e66637a4887db79988067b"
   end
 
@@ -47,10 +48,11 @@ class Owamp < Formula
     # reported upstream by email
     inreplace "owampcapi.c", "#include <assert.h>", "#include <assert.h>\n#include <ctype.h>"
 
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
+    args = []
+    # Help old config scripts identify arm64 linux
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
+    system ".configure", "--mandir=#{man}", *args, *std_configure_args
     system "make", "install"
   end
 

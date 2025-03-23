@@ -20,6 +20,7 @@ class DezoomifyRs < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "4e1400a24bb9c455275a4d7fe2dd522bb6f54bc5e9a1f631fd0290ed657e0e96"
     sha256 cellar: :any_skip_relocation, sonoma:        "8d89fe6376c15244f784963fd9ea1bc5226088978f95c8a47c8eb41da9ac6ef3"
     sha256 cellar: :any_skip_relocation, ventura:       "5088562b5587179e0f31b706a5028a786b1e251dcc33bdce1aa4a1889392ae62"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e61cfcc1bc5a27a91b2e77b9c093f772289120c64ddc4f136b69987392efadc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3db821d32bdad848d8d4241afec374f212cf335fce3320831313faf90de84b4"
   end
 

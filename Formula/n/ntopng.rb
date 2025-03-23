@@ -23,6 +23,7 @@ class Ntopng < Formula
     sha256 arm64_ventura: "74af363c5bf72edc84af1b411e8379ed7b6ad34b2b6159397a38a7bcc82163d8"
     sha256 sonoma:        "9fdf1fec3559511322cbafd7325ace357281bd76a9a0c51f1d46bbfd8864603d"
     sha256 ventura:       "146234370eef0a7a771049db2b67f81a67548458edc82fb9f8a13babadb6ecfd"
+    sha256 arm64_linux:   "83fbc4d4a11fa497f268a1fea573b28d6796442b4765e8a9bc845bafc9c6f7c6"
     sha256 x86_64_linux:  "26aa0a5a53f7bcb8bd70f26afa3b2aba2cfcad0d12c9887ded2cfc65038dfb02"
   end
 
