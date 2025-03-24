@@ -26,6 +26,7 @@ class Libbladerf < Formula
     sha256 cellar: :any,                 ventura:        "447589cd895d154bf6ce5b1cf0ed762b03cec1fb237d75b6c16e012257589ba9"
     sha256 cellar: :any,                 monterey:       "a6eb04e265dbc9f484faed50f3d7c779311d23010343e23b3b266d5150092985"
     sha256 cellar: :any,                 big_sur:        "acc0fcce7eceb0ae5fcf57777d4eed7c73bca6583841967cf82593d2c51e3ceb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b1d15c52df67382a53ec8d17a7a717710d2e5aedfa50b93b7f7701ecac71ac0e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "841a063c843f054272069b435c58f3c665c1c1190e489f7e7c34729d3a0662b1"
   end
 

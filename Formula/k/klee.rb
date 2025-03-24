@@ -7,16 +7,16 @@ class Klee < Formula
   url "https:github.comkleekleearchiverefstagsv3.1.tar.gz"
   sha256 "ae3d97209fa480ce6498ffaa7eaa7ecbbe22748c739cb7b2389391d0d9c940f7"
   license "NCSA"
-  revision 2
+  revision 3
   head "https:github.comkleeklee.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia: "2830cb1b5393750a2e2b38aa04194eacb09b012ad529b471b2eb4b72140d2374"
-    sha256 arm64_sonoma:  "ac0ff11bcf26f1dbc40be2fb84ac14af3611d6b2d1f6b3700f75db0a8ba362e2"
-    sha256 arm64_ventura: "ec850f16f70f837b0c2a6943bf4935ff6468c70ea4f77e80e4463beeefd1c285"
-    sha256 sonoma:        "1606e5b0fda3540e1de9a3e34ed46c1d2bf31390a75413608f19fa4e0ead0b0f"
-    sha256 ventura:       "93afae7b015ef392c2d00b3db7f45a8fc39cb6b3e042a42d772ecf3cb4d28a02"
-    sha256 x86_64_linux:  "9d8ea979cbf247bf6884b044f49f603f84a668640ddfd580334b6dc87169f86b"
+    sha256 arm64_sequoia: "e2a3d0d091e212042fe67002619e8492943ded1a7a537f50aca3b3891fd04772"
+    sha256 arm64_sonoma:  "3dbb9323a1bb4b8a2e93a5e8481411b12146f478a510d38222422181114ea378"
+    sha256 arm64_ventura: "c9b259d8f13ea1f2bd9acfee2f297a061ab212f5bfba8f7baa21c017d2effd64"
+    sha256 sonoma:        "6d9597661c242a32b5234b83a7921e28cf76102ea4e4b3ed7750fe6cd5425301"
+    sha256 ventura:       "69469e30c7e470d11febd8e9f7041730c996e2f862a24df96833ebac250fa7fa"
+    sha256 x86_64_linux:  "8d98dfcd2d9ba563bf567d2af92b298367e09838affd7ccd04ed301ec863777d"
   end
 
   depends_on "cmake" => :build

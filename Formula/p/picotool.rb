@@ -23,6 +23,7 @@ class Picotool < Formula
     sha256 arm64_ventura: "d4f3ee5104586f5333b44791ddab8cb73335674e9c34bba6087ac2b5173977bb"
     sha256 sonoma:        "5a30e1353a4d3ab7d2dfc5ceb9e129e24d5909fd2a78e49a15f440c47d99b832"
     sha256 ventura:       "968e9358bedbeb778f48ceea8aac90f86be7166073f560273a4a1175a17a1f74"
+    sha256 arm64_linux:   "238fcbc4f902a9f507d68e3f8a4988ae59b04e7cff40ab729d6eddc57d6f9643"
     sha256 x86_64_linux:  "e1eedbfbeb6bbd81d3e6bdf3e3c086ef33689ea341967e00b1cdeef528f77ce8"
   end
 

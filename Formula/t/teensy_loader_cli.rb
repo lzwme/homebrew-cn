@@ -14,6 +14,7 @@ class TeensyLoaderCli < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "0beb513ca87f99ee2a03e3700570bb2e82f7f6905b2921a5a14a31df6e0f12bf"
     sha256 cellar: :any_skip_relocation, ventura:        "1800778350862ed8662bf3183296fb5ba2efc08a5d9dd4531f684639176d02ee"
     sha256 cellar: :any_skip_relocation, monterey:       "1ac5153cfe35bc276fc73c0bb14823f34bd8ae34b408ab81d3140df1db128d03"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "e48cb8f9df797606fcae3289ae2c308f39760ddc4e8c1a2c098e23af48ac5d1e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "578d01b193225d1af0f017f21000dc19fa544e15c090af656869c1de14eb7f44"
   end
 

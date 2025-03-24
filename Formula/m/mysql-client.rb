@@ -18,6 +18,7 @@ class MysqlClient < Formula
     sha256 arm64_ventura: "c4372cac59de87ed6fefc83219c733e572bf07eeaba5b715ef0a103ea0427e70"
     sha256 sonoma:        "1f226108adb194a8ab72e5aa869942b0d522de4d1e604c46ad749c9639a4bfdb"
     sha256 ventura:       "7e92947dd3cee27ff2b6c31b09ba72fe4293ec706b60794fca616de76a93a30c"
+    sha256 arm64_linux:   "ec083fc3fc9311259a0f481ea98127dac915985b506e9cea31c5678d376364a4"
     sha256 x86_64_linux:  "c0c20206bcff3871a7c039a7435c22f255a1f29c2582dcfe0a9198e1b6a30fc9"
   end
 

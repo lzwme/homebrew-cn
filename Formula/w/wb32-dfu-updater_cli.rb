@@ -17,6 +17,7 @@ class Wb32DfuUpdaterCli < Formula
     sha256 cellar: :any,                 monterey:       "5500f504311ae7403129ecef45590f500bdf35a5a0e89a037aaf5f661c9b1bc9"
     sha256 cellar: :any,                 big_sur:        "ec1cb55399fe6198944db099424b96f8c6138cd309d3a9ff52d0206c5b295221"
     sha256 cellar: :any,                 catalina:       "a9a3f5950019c27a9a022c07af2859240987d1c93acd751e741c6a320535c6e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a2d90c6c2b6c8c7ad35af63a0fd3ad9706eaa9eacb58263b431b859ad5ad03d7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8bd5b556320a3df8117e4215c78b24686e0d4751b80d3ebb4ed280950bf6d2e8"
   end
 

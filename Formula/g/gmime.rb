@@ -13,6 +13,7 @@ class Gmime < Formula
     sha256                               sonoma:         "103a9dada388b0c0d1e00f5d43e89a69be9c811c5db9053410aab1349897288a"
     sha256                               ventura:        "4e6bcbb52d75e42ecd622a6aa76f376c148421aa073b1a808e82392cdb3f3b75"
     sha256                               monterey:       "2acb6d3050ee79911c9f1407c90b1f0870becf0f4540ad441dc4f5cab69e5fc6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7c75bc8dc1096a6e9d433bd65ef5e5781202ab0f62b8bb3d886e7cf398545d23"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d427feebdf23d147fb3b4bf6d0df1b35d08c20d71d5d2100ab3572c2edb982d6"
   end
 

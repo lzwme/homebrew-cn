@@ -12,6 +12,7 @@ class Rtl433 < Formula
     sha256 cellar: :any,                 arm64_ventura: "ed54be9e72784603e4e6b1b7b1ae679f15ab03cf1ee92efa7c36151b40b81274"
     sha256 cellar: :any,                 sonoma:        "9ba535a042f8ea9bb058ae0b78ed860f4a3157ff228b68c2b5dbe7bd9eea8d2e"
     sha256 cellar: :any,                 ventura:       "e5165eebfca6801f1c588fac131f5b054d37974adc912fc6aead1286e60629f1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9381d5020fae59f1a79333b3e52429ed1486b105fa8f7fea786c464724006bea"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bb83d5f1303cc5aa8dd4d79d7609f0fc9c2ec1d530584a7c7e6648fdd4d0a42"
   end
 

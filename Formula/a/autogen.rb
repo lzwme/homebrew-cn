@@ -23,6 +23,7 @@ class Autogen < Formula
     sha256 monterey:       "ed4a28138185633424aa705f44e1449e5706c40f055b0e86fc58008f7400f0d7"
     sha256 big_sur:        "a26ab2c3665e3fabb1a3b3ca20f52b0e1ee0c4a0ccd12beea3af97b73d347690"
     sha256 catalina:       "45b3f716163b29ab1aab05aa9fbcf9e53bcee5c815b505165c52e80d9fa9234c"
+    sha256 arm64_linux:    "1aa11356e7c39b6c92fac2a616a062030c3d729b7a333eadd37cad14922c1e59"
     sha256 x86_64_linux:   "1f564be58133732a4c9a380c85da6cc27dfe1b465c0a29c136c1a7ccb470a105"
   end
 

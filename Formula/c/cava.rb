@@ -12,6 +12,7 @@ class Cava < Formula
     sha256 cellar: :any, arm64_ventura: "9a28fd6da1772968860f7e90e7f4de6d3f733e9f8131d4cc35ea0d089207b681"
     sha256 cellar: :any, sonoma:        "4195486bcc4c14f0c9dfa0f229ef4a2f17a577132b50e402af480df0263ed5bd"
     sha256 cellar: :any, ventura:       "fc4e24b6e06d3c7b6839fe7c9ddf089cb874e2cf3b2b69ae98fa21ca21c9cf2e"
+    sha256               arm64_linux:   "a47b2f16fb7660eea601173a303838c4b7d56f317f152afef4369fa9b5d96c84"
     sha256               x86_64_linux:  "e85e6e26804aff07eb2d748904dd810a1427d2cbd3e328e912356fcace9102e1"
   end
 

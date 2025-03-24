@@ -16,6 +16,7 @@ class Libuvc < Formula
     sha256 cellar: :any,                 ventura:        "3463a43797458c0e8d63446c9b54c2e8df213ca290f5a8bc08e3a071e7dad884"
     sha256 cellar: :any,                 monterey:       "e4dd5f0473e5f0f3a4d2b78f6b2b6fa556436055ef8a3d68d176a5b3afd3ca11"
     sha256 cellar: :any,                 big_sur:        "d974f8a7c94e5c106fa9c8bff6f85c0237ee1396d3dc672969d2279840cc0fac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "def3a9096bee642658354acfd0d061a84a5d7f5560334c4564a7f0fb608cb35c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5adfe4cf8c0151495c6d82c4a1efba89a92a8d43e3d32803d6c88d015e894cf"
   end
 

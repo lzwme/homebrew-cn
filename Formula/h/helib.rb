@@ -15,6 +15,7 @@ class Helib < Formula
     sha256 cellar: :any,                 ventura:        "b3daa3e53fdce0c3961eddfac1476cba433db1eebe96047a89be9164adb788cf"
     sha256 cellar: :any,                 monterey:       "2678f6fedfb79ed9b30a086ce2d05a6f551ab9ddced48582d50fad2340d92c6d"
     sha256 cellar: :any,                 big_sur:        "dec80000dc1431cef027b67fab14c516248994758c9a2b8a45ea411dcea27584"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b5f16e098ebf51299e8553b528190c7f8f2ffd3ca3add170bdd277b54800b704"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5e209862dd2093cd1d27e94f10a7403b4fa2d3b258c197d4aeaf3d3af7ecbd3a"
   end
 

@@ -20,12 +20,18 @@ class Nettoe < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "0349c1335e428d5f0b620043259908b5af60feed84d9dea911033e0d65704488"
     sha256 cellar: :any_skip_relocation, sierra:         "49ad705043bdd9f1ab860d877d3ffba584bef5ddbd4c03f6fe43adc49b9c1e5d"
     sha256 cellar: :any_skip_relocation, el_capitan:     "c8208683e4730233147e6c7153a469cdc1f477aacde0559937f0da93c8ad0345"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2f2fb05b5054fa36e1dc3164dd500e4a3a9616ad6d2fd515791493859b9a27d4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f72b5ebf9338c0c725ee8df4e6843ec8f9a13fbb9935e3bd121ce8302c3ecbbc"
   end
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    # Work around failure from GCC 10+ using default of `-fno-common`
+    # multiple definition of `addrfamily'; nettoe.o:(.bss+0x68): first defined here
+    # multiple definition of `NO_COLORS'; nettoe.o:(.bss+0x64): first defined here
+    # multiple definition of `NO_BEEP'; nettoe.o:(.bss+0x60): first defined here
+    ENV.append_to_cflags "-fcommon" if OS.linux?
+
+    system "./configure", *std_configure_args
     system "make", "install"
   end
 

@@ -12,6 +12,7 @@ class Openfpgaloader < Formula
     sha256 arm64_ventura: "f5bf61cadaa7161e3c3620406c446e0b4fe3774738b8ee85e96e36c3f754fd4e"
     sha256 sonoma:        "c6c284837966c0bbf5bffee515c6f1f9d82f9c3833e9bee7897fa9f54d80ce25"
     sha256 ventura:       "b999c7d101214bbcf8948d2692f00d0d0c53f654f870ea321e7105fb317dd4db"
+    sha256 arm64_linux:   "892a2eb10a5eb21dc823147313fffd50937fe4436a8ab441fa61465a8a7c0822"
     sha256 x86_64_linux:  "16261ec88867b7acb11f2f4d9fcd0bdd008c5152d2aee7a81282a4e8d1a1a6bf"
   end
 

@@ -17,6 +17,7 @@ class Orbuculum < Formula
     sha256 cellar: :any, arm64_ventura: "1844273329b7624bef902a7578db500bade46d0d4e6f055bd85c47cbb49a829e"
     sha256 cellar: :any, sonoma:        "6fb59089dc3bccd5478c38f162eb76908f50ab352b0980a0ae8e621b305b882c"
     sha256 cellar: :any, ventura:       "c464ab9e54fd94ad671079698b68813746c50af3bfe97e1a9aa7169abb35e27e"
+    sha256               arm64_linux:   "4e0735b40e690002488e00b62e92b142bbc36f729ba686e6405f6b8b53537f59"
     sha256               x86_64_linux:  "7c9eb6c5596b7d5a8673f89b7359c325aaeda5937b209d500d5db29392efb06a"
   end
 

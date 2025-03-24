@@ -17,6 +17,7 @@ class Monkeysphere < Formula
     sha256 cellar: :any,                 arm64_ventura: "e04ebbbfc60f349cebc2a8574367934080b0c52c61e6ed1d988b5965b4a2650e"
     sha256 cellar: :any,                 sonoma:        "855d71f1d6e31d991fa30df070c136fcaa99457573f16ac6e05defae3e3ac7d3"
     sha256 cellar: :any,                 ventura:       "ac5c54b17c62e126b1f10c18918fd2a66e8bff38a0a51379e7ddac0890fa9997"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e7683b31a0dafac66f8ccb8947c440af2225b6340a9934b0fb7e1d897001ea9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "21398c0664f91eddb4e26a9b1f00cdc17e3462647651c04ada0eaa76a93d0b19"
   end
 

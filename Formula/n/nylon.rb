@@ -24,17 +24,18 @@ class Nylon < Formula
     sha256 cellar: :any,                 mojave:         "cb2cbfbd8df94b8581a116807075daf9fadbe9b9c5cfa537ea30dfa76537dd5c"
     sha256 cellar: :any,                 high_sierra:    "3df9b3197c8dc9a227221027047c8de77ddb6ad9ce2edd14544c2d6e4923b660"
     sha256 cellar: :any,                 sierra:         "b7eeab5896aaaca9c73166e519d092a71f15a36e800a28742729f8cbc270e6d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "230eb92e635d14a73da14fb444d5ebf116484e95ec8c0b8d3d80e893afa0b56d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "20d711c147849e3de3f352052357765c5d55f82c005bde767c2ff3b95774c0d0"
   end
 
   depends_on "libevent"
 
   def install
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}",
-                          "--with-libevent=#{HOMEBREW_PREFIX}"
+    args = []
+    # Help old config scripts identify arm64 linux
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
+    system ".configure", "--mandir=#{man}", "--with-libevent=#{HOMEBREW_PREFIX}", *args, *std_configure_args
     system "make", "install"
   end
 

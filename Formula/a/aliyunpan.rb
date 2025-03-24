@@ -1,18 +1,18 @@
 class Aliyunpan < Formula
   desc "Command-line client tool for Alibaba aDrive disk"
   homepage "https:github.comtickstepaliyunpan"
-  url "https:github.comtickstepaliyunpanarchiverefstagsv0.3.6.tar.gz"
-  sha256 "8ed4222479ef72f7b63e64a851804a6a9ddb917c20026cdc1255ff0450c1a251"
+  url "https:github.comtickstepaliyunpanarchiverefstagsv0.3.7.tar.gz"
+  sha256 "65003e0925e5f64b20f47ea030aa01cb40972dc4cce67cc93a69282d88f254b0"
   license "Apache-2.0"
   head "https:github.comtickstepaliyunpan.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7952f16aef1b0732fe945a15673e60d6e661a73646a2d80e2daa77b5042c895d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7952f16aef1b0732fe945a15673e60d6e661a73646a2d80e2daa77b5042c895d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7952f16aef1b0732fe945a15673e60d6e661a73646a2d80e2daa77b5042c895d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b4e12ca6857751295764e6a1d009b97d67093c7a8b1c88e95ea481928326eca5"
-    sha256 cellar: :any_skip_relocation, ventura:       "b4e12ca6857751295764e6a1d009b97d67093c7a8b1c88e95ea481928326eca5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60d85d5ad6f367d5e06dbb2128d157a1a3db9f3af1974e3c89b80b1c92a169e9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f43f03044ff8db6b97fee26628dbe66343935e13e53aee6d973adfddf0924b97"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f43f03044ff8db6b97fee26628dbe66343935e13e53aee6d973adfddf0924b97"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f43f03044ff8db6b97fee26628dbe66343935e13e53aee6d973adfddf0924b97"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d8a3e1de0f284f8c1bd1c0f8a96db80f885464e3f5e5a47c750bf3a0ff921fe5"
+    sha256 cellar: :any_skip_relocation, ventura:       "d8a3e1de0f284f8c1bd1c0f8a96db80f885464e3f5e5a47c750bf3a0ff921fe5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb7f77f47dc25c016a62ac1ce13546514e281d0f57bef014a32215a4b68bc0dc"
   end
 
   depends_on "go" => :build

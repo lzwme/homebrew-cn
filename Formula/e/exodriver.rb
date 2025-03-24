@@ -16,6 +16,7 @@ class Exodriver < Formula
     sha256 cellar: :any,                 ventura:        "32715a1a59209051175d941d67522ac295d1676a86588029a88b1450a15e2688"
     sha256 cellar: :any,                 monterey:       "22a821cbd31ec096872832ed6d0cb11aa0c5790f2db69d4bc2782cf3b619c454"
     sha256 cellar: :any,                 big_sur:        "507baa6e157dfa2b3b5f824aa6a73fd58f19daac9b1e73fd735048323fb241cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "6e93c4b3daba5af22be68619dbdc877fe90d092abc29b5789d1afd2394e163bb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b69e819a81bb5dea9e4281eb7edd24d70409c8db75c2d6eeba1a9f90c24ebf3b"
   end
 

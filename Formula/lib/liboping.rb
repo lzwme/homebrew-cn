@@ -25,6 +25,7 @@ class Liboping < Formula
     sha256                               high_sierra:    "accffc91ab24ccba1214727abadb59c497f403e3bcad1dfe8ff0377d32e05ebc"
     sha256                               sierra:         "42b80e23afe4fb4f296d039b0bdd4ccd0da21937514fdd04a90bc01d39da7aec"
     sha256                               el_capitan:     "de0bb72a0752469b262db3a24a41c84746930858462cd08993c057caadd46264"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "71cfbc992467da7e4933d64ac61454004ddac15ab93c28b33e502299e2789a88"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8f3979a8a214b2384b5c18cb7ad0d1ed49d27896b7972a2ce93dce2e0d76ad82"
   end
 
@@ -38,10 +39,18 @@ class Liboping < Formula
   end
 
   def install
-    system ".configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    system ".configure", "--mandir=#{man}", *std_configure_args
     system "make", "install"
+
+    # move `Net::Oping.3` manpage to man3 dir
+
+    if OS.linux?
+      mv prefix"manman3Net::Oping.3", man3
+      rm_r prefix"man"
+    else
+      mv prefix"localsharemanman3Net::Oping.3pm", man3
+      rm_r prefix"local"
+    end
   end
 
   def caveats

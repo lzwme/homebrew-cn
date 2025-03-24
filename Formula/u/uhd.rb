@@ -19,6 +19,7 @@ class Uhd < Formula
     sha256                               arm64_ventura: "f0edc58fa1e8483310cddcd4654d5195d5c09b44e658afaefda82ea4ef9f5732"
     sha256                               sonoma:        "b1d55671dfd15d6e46f6f5e1d570818c7d1ac3a32d33c462f849b77bd69a5392"
     sha256                               ventura:       "ec4910b5b59e7e15dbd6828fa6fcabfa283208b278988c1e894091c6c7ad9c17"
+    sha256                               arm64_linux:   "c464cc045e9f131bec1248f9f5ddf62099ca9951bc75079b683d71d254bbd36d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6af77cb2f0c1a85487ad3ccd6a5a5f29849da2e7c05e25df346448a4bd02851d"
   end
 

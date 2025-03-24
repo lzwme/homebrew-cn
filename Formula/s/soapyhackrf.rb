@@ -13,6 +13,7 @@ class Soapyhackrf < Formula
     sha256 cellar: :any,                 sonoma:         "0e13b5a64f3a5038879c929a4108ac9d5d9c2804b7e949816a4645d9edfbcdef"
     sha256 cellar: :any,                 ventura:        "04e3a1b7d8dd0b7c27dd2c4f20846c88783922e8cdbdcd4da12768ade7af6373"
     sha256 cellar: :any,                 monterey:       "8d1e0b4696c0af821c08789a1dc354628c8a9afdf4752842fb99fd364c6778e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "aac2cfd5a931da22b6fa5bff2e99982da69875261ff6f2b5106f45b233294dbf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f8112b3fa519d4f5c319c0dfc36fff70131a54e39616bdf9378ed4625f142374"
   end
 

@@ -3,13 +3,13 @@ class Compiledb < Formula
 
   desc "Generate a Clang compilation database for Make-based build systems"
   homepage "https:github.comnickdiegocompiledb"
-  url "https:files.pythonhosted.orgpackages766230fb04404b1d4a454f414f792553d142e8acc5da27fddcce911fff0fe570compiledb-0.10.1.tar.gz"
-  sha256 "06bb47dd1fa04de3a12720379ff382d40441074476db7c16a27e2ad79b7e966e"
+  url "https:files.pythonhosted.orgpackages0e62d0fc807871757841c32e6fbe433ebad422528a468336a0cf82fea226f41dcompiledb-0.10.7.tar.gz"
+  sha256 "97752d8810b6977654a11a22cdc41bf6b71473bcdb5da312bc135f36d6af8271"
   license "GPL-3.0-or-later"
+  head "https:github.comnickdiegocompiledb.git", branch: "main"
 
   bottle do
-    rebuild 4
-    sha256 cellar: :any_skip_relocation, all: "ef5eaedacb5fa01a610f2232066c7809743d3952eee15db2f459a664663a6a48"
+    sha256 cellar: :any_skip_relocation, all: "e1ba5487728c29b4d7c4c01a7d359a6d7b6879986bb58d9d1798b98a233fbde7"
   end
 
   depends_on "python@3.13"
@@ -20,13 +20,8 @@ class Compiledb < Formula
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
-  end
-
-  resource "shutilwhich" do
-    url "https:files.pythonhosted.orgpackages66be783f181594bb8bcfde174d6cd1e41956b986d0d8d337d535eb2555b92f8dshutilwhich-1.1.0.tar.gz"
-    sha256 "db1f39c6461e42f630fa617bb8c79090f7711c9ca493e615e43d0610ecb64dc6"
+    url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
+    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
   end
 
   def install

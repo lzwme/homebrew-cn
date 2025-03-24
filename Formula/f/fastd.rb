@@ -21,6 +21,7 @@ class Fastd < Formula
     sha256 cellar: :any, arm64_ventura: "39736a2f0b8cbf6e57cb89b7f16ad59195007b8299c1b308815b5f053824df47"
     sha256 cellar: :any, sonoma:        "4b2b7cbd3c7cd14efeb200d2e2a75ce9b1fb15633fe323d486ef7da2739ae129"
     sha256 cellar: :any, ventura:       "d67909e9fba4d7f3accffe974b6142a0fe9e9c6bd8a661e4e20fc4b1ad0c01ec"
+    sha256               arm64_linux:   "20cf70054b026b5303e4f4e20992fd1888750cd5261ab396083a830375d70d20"
     sha256               x86_64_linux:  "7578a78bec1555ad86e17cd3e88423093def42af998403fd316bbcf03d975789"
   end
 

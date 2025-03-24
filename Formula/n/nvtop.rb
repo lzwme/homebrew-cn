@@ -13,6 +13,7 @@ class Nvtop < Formula
     sha256 cellar: :any,                 sonoma:         "d6e99a21cc27e369de559bc2e3d77c580da551f93391b88d84f5ac97295cedd7"
     sha256 cellar: :any,                 ventura:        "e6f0713ea894a57940bce5a46ce67be0e2b847fdee7755e93df24b8d3ac01630"
     sha256 cellar: :any,                 monterey:       "c6b580790047c8d8c318c19875adb460f9f69578037e759d10aeefae74330f85"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "c5c458d2dd31c60e8b48e46f71ecbf4d9c9741772357e7e59227426a2c39f3ef"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "cb25616af225e2b98a84b068fe1ac38b9a7ae630caa0490259c9726338a4b28c"
   end
 

@@ -12,6 +12,7 @@ class Libfido2 < Formula
     sha256 cellar: :any,                 arm64_ventura: "275606b563b5b5da93406363be140811b4b935e8a9de78757a73667d96d78011"
     sha256 cellar: :any,                 sonoma:        "722486b1889bcbd088be7e361ebc8f770a902f770b181fce53a19e851dcb2b69"
     sha256 cellar: :any,                 ventura:       "73955c899e3ef7463e3033045adcfa5a18731f58aa5dbc53f108fd96dabdd0f2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c87591439f22000414d33cc9a182b0efb1e48e4096ba6b2b398b07f54675ac24"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d8cbd9a644cc9317ee7742693b6a1066a8afeba5adb45e0c5b29d8bae0bb706"
   end
 

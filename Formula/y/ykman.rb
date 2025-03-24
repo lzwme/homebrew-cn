@@ -14,6 +14,7 @@ class Ykman < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3180632b196054ea207962870bfd7c4b9f0c22a24dbaa2b8b03ddd076605b69c"
     sha256 cellar: :any_skip_relocation, sonoma:        "e7292e772d7f16911bf8816ff4d8f3e24820a41dc0a13a77c38a12507e382d25"
     sha256 cellar: :any_skip_relocation, ventura:       "d87451e3d6083ba95278b2218bc470bc62f96432806d7fbae2e3bd964842efb1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7453398ff01dedfeee92585cb71387aace6352f759e40ed5b8901448eff5b442"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "30fb8e931492d232d3e3e6307e7c1d549e9cb893eb99486d1aa42d1606a8368f"
   end
 

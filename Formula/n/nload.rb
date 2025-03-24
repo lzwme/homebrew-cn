@@ -24,6 +24,7 @@ class Nload < Formula
     sha256 cellar: :any_skip_relocation, catalina:       "2e566035d80abd97c43955ac5fa05ba347b67dbbd10d0543faef3cf5cc7b0bfb"
     sha256 cellar: :any_skip_relocation, mojave:         "1dbf614f22611f66ee49efa6b1f5a1af29066be04e461d56e9766b84aeb68077"
     sha256 cellar: :any_skip_relocation, high_sierra:    "3bcdee6e4f2e404d0ec728620b025524de265f94fccc290b29fc81f04f85be36"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a2366f0c72199e2ae1729e247e5c6fc0bfdb5c02cae34cc4f6859832fd0649ae"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b1d3e77437ea1f37ab063237a2b71318370b23248b8be6d6d10d07f786bed89"
   end
 
@@ -44,9 +45,11 @@ class Nload < Formula
 
   def install
     system "./run_autotools"
-    system "./configure", "--disable-debug",
-                          "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    args = []
+    # Help old config scripts identify arm64 linux
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
+    system "./configure", *args, *std_configure_args
     # Unset LDFLAGS, "-s" causes the linker to crash
     system "make", "install", "LDFLAGS="
   end

@@ -25,6 +25,7 @@ class Dcled < Formula
     sha256 cellar: :any,                 high_sierra:    "91cf7fa30d905efaf7499f0667c65e25ddb69d82be3f52b93d1df6a400fd7141"
     sha256 cellar: :any,                 sierra:         "bfc1532d76b4d37c706d065bc98feb5a3aeff20751a713d7b7efb08c0976fe9e"
     sha256 cellar: :any,                 el_capitan:     "53d07c9548eaeba12645e944ce92c27a02667758176815220dc4ee2a8945c661"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "6e3b1302c4e78c0539f141a055e2df647c9c4ed4e8f4010c808e7e42163fe741"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c0c7a6b33e48eb8e369235f0bd1e84d10c161a41eaec0ab93854bec94df8aee0"
   end
 

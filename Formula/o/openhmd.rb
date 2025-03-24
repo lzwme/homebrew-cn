@@ -20,6 +20,7 @@ class Openhmd < Formula
     sha256 cellar: :any,                 mojave:         "796c1a6f06715aa8a3304cca0083378d5fe2a1006b55da8727938922b5408c8d"
     sha256 cellar: :any,                 high_sierra:    "1c54727de5836916bca42065d0ed53f0a796d07ec6866408a69213c94b151092"
     sha256 cellar: :any,                 sierra:         "97f5dff1e77b6b615544ed6611aa6d8c3395e3c6dc759c4576084d87a4e976ad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "73a9068341d342a933ae584e67ce2820ab612e05bd3ba35f9c2127102d9f2794"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c07dcb0b3e3848fe49493fef2323a7f143fb70a695e67738355f3c1f30008d44"
   end
 

@@ -14,6 +14,7 @@ class Ubertooth < Formula
     sha256 cellar: :any,                 arm64_ventura: "dbf1e2cf18fba265c0119a87fd659ee8331d2bd54dcdd3bf07eabda6de17cb41"
     sha256 cellar: :any,                 sonoma:        "50f74c97eecde210eeb23a86df867e4824034605544048ae9e39f0e9bfd2d532"
     sha256 cellar: :any,                 ventura:       "c6acf9ec2c33e2fdf289a33f52e1ca4e9c2e10c81225a06d6c41ffd9cd730fba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "452dcee2cfe766cd5b230dd29fa5c8e2691c15f0d9850e64afe45cdda1cf43d9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2cd546fd818a705d9da6c089bf001471ca9d46b03fd6241a2528f0da22c71b9c"
   end
 

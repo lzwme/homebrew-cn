@@ -27,6 +27,7 @@ class Musikcube < Formula
     sha256 cellar: :any,                 arm64_ventura: "4ec1abcb7d9a85fc28ceae28af1a1014d7de50e3aef60411d09922f6021762ee"
     sha256 cellar: :any,                 sonoma:        "7df9f38a3362c63f77a79bd668021e4fde8351d389768808a23599ea37c12662"
     sha256 cellar: :any,                 ventura:       "089a80a914b6798ddc2280b64f0a4db3bb9df588538b53b22b2e760080452ceb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b968756c76097c32a5a47f8573bd330d16c2e8c792aa9c07cfc7d26f784339f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b9242501e64de113097a77d7b3e5353ec15192e4261e25637f046a3aa392331"
   end
 

@@ -22,6 +22,7 @@ class Truecrack < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "fd148aa52883969c30029e25889c560443347575cb064fe9e93d48e9940afcb6"
     sha256 cellar: :any_skip_relocation, sierra:         "96ecdedf66599ec83da60c5a64de37dce4aa3411bf3a575bb5d5e1b6646fd5b3"
     sha256 cellar: :any_skip_relocation, el_capitan:     "2905997955799043b8f07c7cb28854d0a0acd3a84131b92b6c49780570dd198f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "fd2c903e910b747ac43ee9604851ea08131dbda84ed405b43f51110b3c29037a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "13ed8fdfc8e7a6289dd469d0dbc4bac91f00d8917d3609e5b2ac44d1d641fb86"
   end
 
@@ -35,18 +36,22 @@ class Truecrack < Formula
   def install
     if OS.linux?
       # Issue ref: https:github.comlvaccarotruecrackissues56
-      inreplace "srcMakefile.in", ^CFLAGS = , "\\0-fcommon "
+      inreplace "srcMakefile.in", ^CFLAGS = , "\\0-fcommon -Wno-implicit-function-declaration "
     elsif DevelopmentTools.clang_build_version >= 1403
       # Fix compile with newer Clang
       inreplace "srcMakefile.in", ^CFLAGS = , "\\0-Wno-implicit-function-declaration "
     end
+
+    args = []
+    # Help old config scripts identify arm64 linux
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
 
     # Re datarootdir override: Dumps two files in top-level share
     # (autogen.sh and cudalt.py) which could cause conflict elsewhere.
     system ".configure", "--enable-cpu",
                           "--datarootdir=#{pkgshare}",
                           "--mandir=#{man}",
-                          *std_configure_args
+                          *args, *std_configure_args
     system "make", "install"
   end
 

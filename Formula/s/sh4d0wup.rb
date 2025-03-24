@@ -11,6 +11,7 @@ class Sh4d0wup < Formula
     sha256 cellar: :any,                 arm64_ventura: "c19a90aee8ec95180f4383d4e4199ef106dbe0140ce50506319cf85acaace739"
     sha256 cellar: :any,                 sonoma:        "be07c857f0b5a7ed98808891806c05d9c2363519207e3180f7bb61ed619f4963"
     sha256 cellar: :any,                 ventura:       "bf9730529911ca723d3422e19653c3458f18566c8484531cf695fd16a7c0b88c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e76ae38df57874be9258064f709557b0a1e9deb100724e971817ac49454b144"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f5737e1328718e96a6f737b7f994099d552d27a74dd3424698d5426fde8a06e"
   end
 

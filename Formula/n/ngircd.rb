@@ -19,6 +19,7 @@ class Ngircd < Formula
     sha256 sonoma:         "343f25208cdce2cfc06e9be0d7dacc6eefddaa0327cbcb99916ee78005f23c32"
     sha256 ventura:        "404aec8f8636c91f81fc63bcad319ae781948ef7d01b0b92747fc4d844d47dd4"
     sha256 monterey:       "8ef6f2e67ad12fe5bc9ce16c04ea822680f4480c357f612440d5307d94c7d3cd"
+    sha256 arm64_linux:    "dc1aa95593ad0256ced4ac280d8076f9d5cf5522a6306e282032eb93aa31ef57"
     sha256 x86_64_linux:   "a060e572d41cbb75911a78eafb384d30aea9813c5ce1229b74f4941401c53e43"
   end
 

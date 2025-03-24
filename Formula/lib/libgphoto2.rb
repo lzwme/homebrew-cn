@@ -20,6 +20,7 @@ class Libgphoto2 < Formula
     sha256 ventura:        "481cd4585e8278757a229d2f75f43d9ee51962b3608870c392a37e0d761e8989"
     sha256 monterey:       "39889cb109e62d49a237282be1e978a5c064cc9f8f393446d9b8faf5a39b6bb8"
     sha256 big_sur:        "24327cb6e498cba40d9ae4b1a35161cc7ee112e33d0da33486c4ee4b19585a23"
+    sha256 arm64_linux:    "7a0563ea6f1a714b223e0ab839eb0cee2d500c6454e70d2d47837c781280fcfc"
     sha256 x86_64_linux:   "02f41488d9958e0be78a30c5d32d8f2b0e0073f954219deffc6f5f53f11120ca"
   end
 

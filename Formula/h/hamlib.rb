@@ -12,6 +12,7 @@ class Hamlib < Formula
     sha256 cellar: :any,                 arm64_ventura: "29ca12dd53120b6219a72cf06003ac4f9f7b0136d3a906f2f7c7e283a677ad27"
     sha256 cellar: :any,                 sonoma:        "6e018327f7f25dc3826e923f7e1aff7c45f20a90a5682b9359f78d548b33e610"
     sha256 cellar: :any,                 ventura:       "49b659bd45a24723430fc33d608f8bbd247678183a9f67e7cf2ff95d6344fc96"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd26f0e428ccfdf1090ce0a9ad4ea786949d88b3399e384084f5722dac54b877"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "39cd33fc06e7145cca060ed370d7c6b099dcd87eba63947403f947d9eac2d1a0"
   end
 

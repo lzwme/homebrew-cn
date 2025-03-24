@@ -25,11 +25,16 @@ class Treecc < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "c05c019775b00f92fe2ea47a02c999356105789b9aa5536c4356090ccbb9ba99"
     sha256 cellar: :any_skip_relocation, sierra:         "0b3e61d5a910222d170fcee80d094be0dcd2707b7bebc6d40667a8f25b4b2e5c"
     sha256 cellar: :any_skip_relocation, el_capitan:     "e74d23594113e594ad8021fe55b0f0f863fcd4b01140c3fd8b1a5f2bb6c8ad74"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0ce0d7869668cc4f7b2f5334f7823cbdfe4685ee548dcfad1132c36a2cca5437"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4dbfb97ace2365eaa60578f1d0c7ae29b9d30d1a445040df285b9b9ca4fce263"
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}"
+    args = []
+    # Help old config scripts identify arm64 linux
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
+    system "./configure", *args, *std_configure_args
     system "make"
     bin.install "treecc"
   end

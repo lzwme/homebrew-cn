@@ -14,6 +14,7 @@ class Librtlsdr < Formula
     sha256 cellar: :any,                 sonoma:         "d4060f4b17661ba3b0687dca15ec474989a997c7f45fe4d7e351b62168a04468"
     sha256 cellar: :any,                 ventura:        "e1596383703404db916ace4b3ef729ba1ff6799bd54e5173dc10969c4185f377"
     sha256 cellar: :any,                 monterey:       "1c0aa79a1afcd12f4fabb0384d5378ddd81016a2720ab5907d9405d13d1156e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "859c88b6c98327a37922f7e1ffea16ad431121bb814c7c50fb5898df7aeefb0a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a862647f13e22312396e83c4122e7bd985fdff0982910734ad7e9334809917ba"
   end
 

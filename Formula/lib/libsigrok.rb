@@ -53,6 +53,7 @@ class Libsigrok < Formula
     sha256                               arm64_ventura: "7f3024bf6ef54007c043d9be38515c29522cd9952280142d330009da93fd9fcc"
     sha256                               sonoma:        "d0606b7df886ae65ba3fbf01968682ed5928ad17bbf293e6b905ed2fa097adc2"
     sha256                               ventura:       "772490f83137bbd47c046691c5dd9af3ac245cc9e49d4e86d9c5db7355ed87f0"
+    sha256                               arm64_linux:   "748684586a8ca71f8957e8929a8ed28220ca62ff56e7c1c0aec30209728fd588"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d91357303c1b4ff68746181b66eba6944140ff6bf365c1e88cfafd29f9c64076"
   end
 

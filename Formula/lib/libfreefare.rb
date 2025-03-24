@@ -16,6 +16,7 @@ class Libfreefare < Formula
     sha256 cellar: :any,                 ventura:        "9bdc20fc20c01740f5e5c9f038e475f5ca940bf53f106884c5efa2a8b9bf78f5"
     sha256 cellar: :any,                 monterey:       "e88a2a0561e9bd91bcdda69fdec347abfa715876a540da3f5e12d71488ad4921"
     sha256 cellar: :any,                 big_sur:        "caf07c0af324770ece19c45f53697c88cedc651cad24c66e257fbb7b87391fc7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7d7bc10990f7f8f1e0a2d2ff7888f98176bfcc2ef4f19aee6c9465a46947dfb9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d3837eb7894980557e16a097e05bc2fa8d42429177f30359166820cca640cc52"
   end
 

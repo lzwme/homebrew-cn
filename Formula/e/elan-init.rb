@@ -17,6 +17,7 @@ class ElanInit < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f7e83cc46ec88becb47ed816223d8f33844207baa06ee06ec2edb55d62469d8b"
     sha256 cellar: :any_skip_relocation, sonoma:        "aea9617dc272dacc99fe46890ccbd692ad1dbe099a4eca45eb498352836898df"
     sha256 cellar: :any_skip_relocation, ventura:       "6df9763566d60e2cd8c1f536a1fbaa4c943aa196c6b38770ffbd541efdd9faee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f5b450ce50e1b43847497daf78c66442c4efb5f65ad2dd460846c98f5cd5cce3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e74a7723c370df806b28db12b15b2ec97e80adc936039156516ffb642e67238"
   end
 

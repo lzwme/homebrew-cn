@@ -16,6 +16,7 @@ class Dpcmd < Formula
     sha256 cellar: :any,                 arm64_ventura: "1999933a7cfd48060c8add8b68b1381f4ef3eb81bc60effd9e5693aed2e9fe00"
     sha256 cellar: :any,                 sonoma:        "dc2fb2e33afad5b3aefec987d0f8e39de09fea5f8b2ea4face4e043c0f3e624d"
     sha256 cellar: :any,                 ventura:       "56e693f599c54b059039fd369cf77eee88fd39a9b2e9490e74021e5fdcd1081f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3808a79c440d4d319da04ad1623e85901363c5cfe7a07d5a48c245547e4aa2a7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd4bb5c62758c86baf6c6a8211260e41c9311d3660d46d7f94f4b89bf2dd7b41"
   end
 

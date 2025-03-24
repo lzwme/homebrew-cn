@@ -20,6 +20,7 @@ class SomagicTools < Formula
     sha256 cellar: :any,                 high_sierra:    "121e3b6667ee8dcd81cf2331342d27b6221b1ebf955f83e00311176fa5fe11ca"
     sha256 cellar: :any,                 sierra:         "b0fa394d0211f43fe5c9da6e7f36b8e3b6ed5086b8a447b06df42e21bf0e30cd"
     sha256 cellar: :any,                 el_capitan:     "b73262d08d3ec9e10645290555b5fb0c5fd95492c9d5db2ab451285ccb69eac6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "aa90bfa3a829c6d5073ffd2f7552173c4b33174aec52a32a75702a7bb55e61d0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b6a63036040014c766c494998f69b3be27f0ff5dccee6deba1a0f8ac7c6a05e3"
   end
 

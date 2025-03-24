@@ -7,12 +7,14 @@ class Coreutils < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sequoia: "637db884c3812f07eeebcb05ab48ef4a248d646abd8279aa29f1e78669fd99b4"
-    sha256 arm64_sonoma:  "99ce6ca149108ad1200010db99705cf85ae18943f6f5b56f4f232a017b94fcf2"
-    sha256 arm64_ventura: "814584f9614444db24b0ea77601ea247423e2bb818ba98e3870b9205fd207734"
-    sha256 sonoma:        "39047ec7fd266612c34dfae46b3692551c760eaa6c04890235586b6bb32bb373"
-    sha256 ventura:       "bee341a327e6d240c6559f31f7d2f4939b4f6a773de1e9d26892157154a16bdb"
-    sha256 x86_64_linux:  "7ecc01bb0a85a7e890857390b773e74448c0ce7e69fb55806b85d7d3285555e9"
+    rebuild 1
+    sha256 arm64_sequoia: "7bf380e4ce9771ce6f030f3719385c06e88f84370181d93f9648570b11387179"
+    sha256 arm64_sonoma:  "8c7f7842f107875e1e34a86b111a8a555d4c4c7a462384efb2ca2fc8dc4b1e65"
+    sha256 arm64_ventura: "660a337982d5823866a3fa1a96176a02be60ed36e60b11f3d2daddda36070edc"
+    sha256 sonoma:        "39905d59ea233abe321d959141ae14a8abd28d94fa06e8b92c64c886b630febd"
+    sha256 ventura:       "f3a168a88b2e1c90be1e8281927f9b6fcf74c19ab391477af859d7a01d8696ae"
+    sha256 arm64_linux:   "7c00b70363d68afd160edab9acc5b09abee3588b329c0c8f76d6333cb26ed13f"
+    sha256 x86_64_linux:  "3735c0172cd6a0679f3dc2b37f5b1b4f55fd290fa48ab07231f55e898be6fe69"
   end
 
   head do
@@ -53,6 +55,7 @@ class Coreutils < Formula
   end
 
   def install
+    ENV.runtime_cpu_detection
     system ".bootstrap" if build.head?
 
     args = %W[

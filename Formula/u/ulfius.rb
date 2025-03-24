@@ -13,6 +13,7 @@ class Ulfius < Formula
     sha256 cellar: :any,                 sonoma:         "4b5da848abed1816659dd597ccc41309b3c1203b2995cad5cf2db0300f9dd2b2"
     sha256 cellar: :any,                 ventura:        "4441a18184afaf2dd7455d10c927106aff533171586db43327aebe25ae58b6e9"
     sha256 cellar: :any,                 monterey:       "668f26af0904892c71317dee876e011e9caa179dda3b1f242db74d1387de74e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "c35e214b85f1734b4d5fe4fcaf6ff18d6ab1f0b9253ec7801c9518a2c44f48d3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "aaf71e924637028cb1e0510ac9e58eeff98e0958fd0662bc593e60855dba652d"
   end
 

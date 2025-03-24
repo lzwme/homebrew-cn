@@ -21,6 +21,7 @@ class Usbutils < Formula
     sha256 cellar: :any, arm64_ventura: "620a18e00aedf3f6216972e411044b3b212186daf06de35aaba4c01b0da88b75"
     sha256 cellar: :any, sonoma:        "5a46602f76dd8cc39b901f1ec384593ca95183ecb8c013dd5db6be6692129ef9"
     sha256 cellar: :any, ventura:       "4e352bf259ad82c3c2f794c009cb7adcc3fe29829373720529180c28a03902b5"
+    sha256               arm64_linux:   "6e9597423b73e6ccdfb60f53e7af93d8e5d9eafd576b6477fc58bf23ad7d3e88"
     sha256               x86_64_linux:  "b6f4d16b0e4a42673c5725cbc31c25a8bfbe702ca82ecc1b58493248285f57c4"
   end
 

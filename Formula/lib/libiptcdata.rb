@@ -20,17 +20,28 @@ class Libiptcdata < Formula
     sha256 mojave:         "78dc7bb6b1e5bcccc1c0c9ef158b8d423f782aa455b1b10c3eebb29de6e7fa58"
     sha256 high_sierra:    "62f4a032075fbf0b9a43ef474b784bae7c47d503483bdc2e09e851c5568345e3"
     sha256 sierra:         "0a9cd6e750e496cd4eb9797ac34d3659c8dc2bb6977020def1edb2ee60711a39"
+    sha256 arm64_linux:    "c9c24c8b0b36c40568552242ede97e1efd500063008dc546b84ac6d2451bc455"
     sha256 x86_64_linux:   "4e929a2391eb2733d481f84b82cc925a1d0cf943bed4f99af876f4240b62c9c0"
   end
 
-  depends_on "gettext"
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     # Fix flat namespace usage
     inreplace "configure", "${wl}-flat_namespace ${wl}-undefined ${wl}suppress", "${wl}-undefined ${wl}dynamic_lookup"
 
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    args = []
+    # Help old config scripts identify arm64 linux
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
+    system "./configure", *args, *std_configure_args
     system "make", "install"
+  end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}/iptc --version")
+    assert_match "ModelVersion", shell_output("#{bin}/iptc --list")
   end
 end

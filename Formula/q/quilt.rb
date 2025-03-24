@@ -18,6 +18,7 @@ class Quilt < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "beda4b671dafc8440a3d73d8512d6ebfdb079ec999080db08085f76858d5be3b"
     sha256 cellar: :any_skip_relocation, sonoma:        "d2b6755e89daa3a57fa60ad323cf75e0600cbd35b2149148546d023be74b24a5"
     sha256 cellar: :any_skip_relocation, ventura:       "beda4b671dafc8440a3d73d8512d6ebfdb079ec999080db08085f76858d5be3b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c058d9d379174e2bfeae60710a80ad733892828a2b8d5438739d58672c6ad2f2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "10a962d1f5d639afac31216ef075e670aedf9b302e3f2fd5d79c9c9e51865384"
   end
 

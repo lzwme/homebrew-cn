@@ -19,6 +19,7 @@ class Nfcutils < Formula
     sha256 cellar: :any,                 catalina:       "963e5bf77bc285e81b9f7480f8b0362c73e5138bced77608043742df6e0992cd"
     sha256 cellar: :any,                 mojave:         "972af2e69529bde17b450d36ccfbb4b9d124c59beb7bb4d69a9c63b76f7cff58"
     sha256 cellar: :any,                 high_sierra:    "44dc64d49e9edc0c7b8f22c7f259262d5706f83bb452099b968b9f3576047367"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "fb215212d949d51cb4ce91f1640ae5ad575ffa0167db19726eddf9c0a7fe4d67"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2f32645957380142c3180b1c67f9afb4170caa582aae8e0500731700d170dbc6"
   end
 

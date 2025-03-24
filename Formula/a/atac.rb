@@ -1,19 +1,19 @@
 class Atac < Formula
   desc "Simple API client (Postman-like) in your terminal"
   homepage "https:atac.julien-cpsn.com"
-  url "https:github.comJulien-cpsnATACarchiverefstagsv0.18.2.tar.gz"
-  sha256 "1674d189fad115b60aa2c1925aa1731cb389e52b98fb15b1c55f4e850198b556"
+  url "https:github.comJulien-cpsnATACarchiverefstagsv0.19.0.tar.gz"
+  sha256 "7c9a9c74817404e2a37ca07079acfbd0a903a46e1bc6ed16d7016f3aef912033"
   license "MIT"
   head "https:github.comJulien-cpsnATAC.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2b7b4a41884bbef798cfe2833b2588f078b726579b7c8b29ddcb38e3bc19f6af"
-    sha256 cellar: :any,                 arm64_sonoma:  "ae6546e8b3a8591708719a4c4bf49e9d2ec7250f7b7a82e741c9f3a0b073d137"
-    sha256 cellar: :any,                 arm64_ventura: "393952e028e44fa8edeeef41b4251057143586b3d190a0ad40b5f1a63cc301a8"
-    sha256 cellar: :any,                 sonoma:        "856c0ddf288e36d11ecabe69df2dc916a70348ed32374477bf923cec6595c91b"
-    sha256 cellar: :any,                 ventura:       "ea2c327647fc9d16286f9c13d236c29563b07a34e0cc6f06569600fb391a442d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "46f6dde3051cf5f19fca18591cf6d09385f6fb4d69082cc39b66272b64147e11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b95b0a0e37560cf2ad834b306ebdf25cfd59d1c4fc0b3937122675375661e0a"
+    sha256 cellar: :any,                 arm64_sequoia: "bceb5c9d669139ef77459f67b13e37f8b9fa9868edf7a09874a736afbfe86eec"
+    sha256 cellar: :any,                 arm64_sonoma:  "dfc1696d895cb42925a3192df3a8db275e74d5876fa994f1f4d56e17e09e157c"
+    sha256 cellar: :any,                 arm64_ventura: "6f758d0ac90ad9239717ffe5ab82ca200d8f5881bde93b6f723833bc83af9813"
+    sha256 cellar: :any,                 sonoma:        "d1c2a48e2aba41b13a2208d13efb9e636ce242093d658444827165691062c93d"
+    sha256 cellar: :any,                 ventura:       "4db31e02a125103b5ec81c70e4c8c5c04857f47c0d263921887777834edf581f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cba126f27443f50fb231cb586a28c00b272921c611522b657d438c92b3a4c5ae"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "22eb7018a4ca2a2aa92895f877f813ffb6210a530bf0961de2719c2c9762fb64"
   end
 
   depends_on "pkgconf" => :build

@@ -16,6 +16,7 @@ class Opensc < Formula
     sha256 arm64_ventura: "b6920b3fcde75811501cea04279e70647e5abd1a437783a3cfce8fb56082e6c7"
     sha256 sonoma:        "f6bdfbbcd8b3653f27d220af9f28794857e750ce919efded28f635869abc379c"
     sha256 ventura:       "3b59686f5df7f25f6b7b03ca4945921f4fca3831c8ae433563ee80647b545ff9"
+    sha256 arm64_linux:   "d8a00ba58da4990a87c84d051092c088db6f904571f6b4e1db962ac9f5bb4e83"
     sha256 x86_64_linux:  "d4c613660abb6981348a4b68e8108ec48dbd081b3651c5b847a32cfd03ad073e"
   end
 

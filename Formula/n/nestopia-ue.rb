@@ -1,27 +1,18 @@
 class NestopiaUe < Formula
   desc "NES emulator"
   homepage "http:0ldsk00l.canestopia"
+  url "https:github.com0ldsk00lnestopiaarchiverefstags1.53.1.tar.gz"
+  sha256 "21aa45f6c608fe290d73fdec0e6f362538a975455b16a4cc54bcdd10962fff3e"
   license "GPL-2.0-or-later"
   head "https:github.com0ldsk00lnestopia.git", branch: "master"
 
-  stable do
-    url "https:github.com0ldsk00lnestopiaarchiverefstags1.53.0.tar.gz"
-    sha256 "27a26a6fd92e6acc2093bbd6c1e3ab7f2fff419d9ed6de13bc43349b52e1f705"
-
-    # add back `--version` command, see discussions in https:github.com0ldsk00lnestopiaissues430
-    patch do
-      url "https:github.com0ldsk00lnestopiacommit76c5d0cdb75444c54258a184eb7a488b8f1dd4ec.patch?full_index=1"
-      sha256 "4f1ad461502fe837261860690ab936a642925299054b0e8fe4b0b3e1a243e9e7"
-    end
-  end
-
   bottle do
-    sha256 arm64_sequoia: "a0bdb08096a005edbb35f9807d2b834e9a8f79811c75b473d5584e0bf4efdcdc"
-    sha256 arm64_sonoma:  "68e0b4795fc64dbf8158146a5f7fd96a99bb057ce06444c72dd8d1b275f25dc5"
-    sha256 arm64_ventura: "8f2025bd929b74f756227cd72beef6fd04c12f0f17aa2f9987b475cc55ee161f"
-    sha256 sonoma:        "e92205869fe6d03479e708ecdd00a05ab9799552195ce9aff49e25668c328418"
-    sha256 ventura:       "f885dc6e40568171755c0b7b12b808b1fe051ecc12682dbd5fa8d9e7c7ab9aa2"
-    sha256 x86_64_linux:  "cdede8ff541df4b2f4d553e7d99043ac1a35e4e403e9286cc6bb80cb22dd1fb8"
+    sha256 arm64_sequoia: "9a00ff8b6b1eff8d5774ed427afbdb669cb512905268409ca102f15d32e7757b"
+    sha256 arm64_sonoma:  "536e84f8e7dddec0baa5f84701f03022bc71019b4249475ea69d452f998c8468"
+    sha256 arm64_ventura: "4e9a0b4a72e6e41b6ce1064504e0784f56282f8e923baf7be176c98a3cc262d5"
+    sha256 sonoma:        "ae9bddfba1d0fcb99e3b6fcb0a1c8f5671db3c76431ce9e3654fb7387da0a8ee"
+    sha256 ventura:       "107be843559d0aa3bb8b331cd75a3e1361eac8c2ce73463c73e944d0ff9fd66f"
+    sha256 x86_64_linux:  "a04a201661a975527c42693e5b84b11f2f3eff999a78c7ee966483165959d7ed"
   end
 
   depends_on "autoconf" => :build

@@ -18,6 +18,7 @@ class OpenjdkAT8 < Formula
   bottle do
     sha256 cellar: :any,                 sonoma:       "7db99e9fe66993bc4589aefc28ac5ce09347e624f787592e1243a7e1fc03ee35"
     sha256 cellar: :any,                 ventura:      "93b69835d88e596019e744c5572e10e1358e79cb0d50c92b4d08dba17110ff0a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "8e7c574d7c1f31fd2c5868791d7c975316440bce1aec257d8aa4a82face776f2"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "a4ae41b594c7fdcf0cb9542b00c00153baecf842ff1927777d3e6d131a7304dc"
   end
 
@@ -172,7 +173,8 @@ class OpenjdkAT8 < Formula
         --with-fontconfig=#{HOMEBREW_PREFIX}
         --with-stdc++lib=dynamic
       ]
-      extra_rpath = rpath(source: libexec"libamd64", target: libexec"jrelibamd64")
+      arch = Hardware::CPU.arm? ? "aarch64" : "amd64"
+      extra_rpath = rpath(source: libexec"lib"arch, target: libexec"jrelib"arch)
       ldflags << "-Wl,-rpath,#{extra_rpath.gsub("$", "\\$$$$")}"
     end
     args << "--with-extra-ldflags=#{ldflags.join(" ")}"

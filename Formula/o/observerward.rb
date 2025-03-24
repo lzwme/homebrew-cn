@@ -1,27 +1,22 @@
 class Observerward < Formula
   desc "Web application and service fingerprint identification tool"
   homepage "https:emo-crab.github.ioobserver_ward"
-  url "https:github.comemo-crabobserver_wardarchiverefstagsv2025.3.3.tar.gz"
-  sha256 "382fade85c16464f9135ccc1bb1daccee8a16cd69818a21a3e6b5474964cdd82"
+  url "https:github.comemo-crabobserver_wardarchiverefstagsv2025.3.23.tar.gz"
+  sha256 "569a7a7c7d1adce237bf151981dcb5dd98009bb4dd4fc7a3e96d7b58fade56d6"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c401dec7dca5407da20c122458cbcea8a8b92862ee1310783d8503601aa1d224"
-    sha256 cellar: :any,                 arm64_sonoma:  "c3989e1b4991cb1c8a99121bb89a9c8f20db13cee82b8e7db65f11d10779feca"
-    sha256 cellar: :any,                 arm64_ventura: "4b738cc306be1ca64405932b5aeb4a80105db5464f9f3fb396936d6e1dcd298c"
-    sha256 cellar: :any,                 sonoma:        "640f640385535222de1215ade4372817c43aea4de52d97034433950497a804e3"
-    sha256 cellar: :any,                 ventura:       "08d80c52700f6c03f98aab4e1b8680aa76ce56cddb08c6cef2f9e24265fc135f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "801c0e8486d7deacb402507848cf17ba8573d2730efea0dbbf44cdea70f5cbed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e1b860d72b57de88d74d10b06db1ccfcbbe2b4f9ddc4938e5265b13bcc4c7934"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1fcef1fcd4fe8037d843f9f4d9e86b8a7c10de8d8b8b09143df3c1ddba2e8d0b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "314ce22acb8e7294a13b79a3e27d367f8ffd641f3b62e82d600ffac1ebd98aa3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f37df0d086d902784f76fb54b261419e30c873f2cb65e3afa2780a540509c749"
+    sha256 cellar: :any_skip_relocation, ventura:       "b36705e37778f49ad1a378e9c3181a786d302a031373f36fc82452845718160b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "537cb4353e9d0636c7a68313c4cc0eefa6d56815729425aa5f8c7ee15f7f6f41"
   end
 
   depends_on "rust" => :build
-  depends_on "openssl@3"
 
   def install
-    # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
-    ENV["OPENSSL_NO_VENDOR"] = "1"
-
     system "cargo", "install", *std_cargo_args(path: "observer_ward")
   end
 
@@ -30,13 +25,5 @@ class Observerward < Formula
 
     system bin"observer_ward", "-u"
     assert_match "0example", shell_output("#{bin}observer_ward -t https:www.example.com")
-
-    [
-      Formula["openssl@3"].opt_libshared_library("libcrypto"),
-      Formula["openssl@3"].opt_libshared_library("libssl"),
-    ].each do |library|
-      assert Utils.binary_linked_to_library?(bin"observer_ward", library),
-             "No linkage with #{library.basename}! Cargo is likely using a vendored version."
-    end
   end
 end

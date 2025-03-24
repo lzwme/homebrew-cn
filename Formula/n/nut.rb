@@ -18,6 +18,7 @@ class Nut < Formula
     sha256 sonoma:         "98df930592937b8cc3c9ed6137c4e3fc6e920d4b3b0122dbb5cd4ceb0c557f0e"
     sha256 ventura:        "80b5f09bfb88e4a7ffa611a3b698385fa4c14a3474ae2f3d270a593276dcf106"
     sha256 monterey:       "17722e1bb6e5e707dc81da194caa13848b035ebf81673261e716d188ef9693c2"
+    sha256 arm64_linux:    "38bfb42d6bfb9cf0d158dcdbdf63e61f42240d391702d9d82365c7ad02b4af09"
     sha256 x86_64_linux:   "61047b843accc5c9a8b9de7fb525759445b7e30c07f0a682e06eb32724e96ce1"
   end
 

@@ -1,24 +1,24 @@
 class Scooter < Formula
   desc "Interactive find and replace in the terminal"
   homepage "https:github.comthomasschaferscooter"
-  url "https:github.comthomasschaferscooterarchiverefstagsv0.3.0.tar.gz"
-  sha256 "bdaaf67e8fecb4ea53dcd74c576261ceb8640e6fdbf8fb86d350eb38206313fb"
+  url "https:github.comthomasschaferscooterarchiverefstagsv0.4.0.tar.gz"
+  sha256 "19f38c588b11c3c69c8229182f875ac61a529604e6af73c00ed6259dca3880e9"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eea777b69bdb0e1e4d6d96a2b4d87abecfd615f1b4c3acaeae62e65c826bc60e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec934e46bc13f025c2746b1b3395e39c89597fced96abc7317b55dbe0f052d1c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "962e3dc372a19601991fa70e6ce2da34442f61b2cf3883a42e39f77efacd0810"
-    sha256 cellar: :any_skip_relocation, sonoma:        "10aa672592f7d05c2073467ce7f66ffb20f65a9d1670b4506d2f8f18cb38ea12"
-    sha256 cellar: :any_skip_relocation, ventura:       "0b15fc285930839815b7af0ec8b83091c2892c3d126af0fe602f9aee7bdf9057"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb47a9b4e1a0808405359945f82eff49dbcaf8dd2680182aa6c8418320f7b973"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04b66c8eb03a388c69e4d2a90bf5e8cf6c755a3998038ec697c60433efae1920"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51094fae3c63652eea64bb8349e233f0d0302d17f1524b1c78f1c41987bf9d11"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "82a8664e984452e7a7c2c310b82e7793096d0f349efb1f973acb569cb592bbe3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2ae471a22dbc4548051afc05d37baf509a4c6d1b163a6a858c1aed1634fc2846"
+    sha256 cellar: :any_skip_relocation, sonoma:        "092d5767abe9f5633e513ca112ab08c941fce37350802faf04936bac62b2013e"
+    sha256 cellar: :any_skip_relocation, ventura:       "9ed604580f9dce19f5aa4ca3982f54f163650a5c7b1c9700728f2f4944b83d09"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "93494c7aa1e7b2913ccb64abe25d1d180d528482746873cf692e28cfc54f749e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "176e0670fd171ecfabc19f4980ce4486d2ce685c0c2e9a3596ba18b333123eef"
   end
 
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", *std_cargo_args(path: "scooter")
   end
 
   test do

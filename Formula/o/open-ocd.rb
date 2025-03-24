@@ -21,6 +21,7 @@ class OpenOcd < Formula
     sha256 ventura:        "daa9924f73a731d961f1df6f2b7795324253cbfe73bf8e68f6d823d0753268c3"
     sha256 monterey:       "73a336499271b64f2cab04242346b9c4cd9314d3583a3992d3f6e8df2ac9573f"
     sha256 big_sur:        "1803ee897c13d4aefbdf87e845e06b5b4f0c2adeb6bfd11c24ed6ef1997af454"
+    sha256 arm64_linux:    "0dd5d6c05b98f949a9fdd11a83de25df223bf8848d3e070c68d4a2b0a8095d9d"
     sha256 x86_64_linux:   "d912d763421e62bcd0a860b392e48f0d4ceda88c3020394ed054b90ad78f4466"
   end
 

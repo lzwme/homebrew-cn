@@ -14,6 +14,7 @@ class Libfreenect < Formula
     sha256 cellar: :any,                 sonoma:         "b904426be3a9c6ed08769df3ff687a0864dcffb2175a508705783504fa62ee5c"
     sha256 cellar: :any,                 ventura:        "a925b6f78825af0effc793d6b7377e7280ff79ffc7dc3c5ebc4eb7543757bc11"
     sha256 cellar: :any,                 monterey:       "9e1a123c0203dcccea2b45d93dffaf1d53d8d4653fdef6897bcb56fa211e101a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5ae7b0d8bd7d70454f7179215f28270e75adb75b89fdd0c1ba54ee7f7ee0ac1a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1719d3272072df8495b60651dbfa15b865d4db9e0e481a1a050ba04afca4fc13"
   end
 

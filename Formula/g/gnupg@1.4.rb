@@ -27,22 +27,28 @@ class GnupgAT14 < Formula
     sha256 high_sierra:    "dbd43b52f11e65c2bb6dadf3adbf8ccf7f740af33b56e4d8c8b037611840f127"
     sha256 sierra:         "abc1e142397fbe833f2f7c5f71409d925ce690506d77296f7f3d41656a0791f2"
     sha256 el_capitan:     "397c92b88bd189ef61dfb01d5fe2e27e0477a63de64a713ffb883eb799dcbb87"
+    sha256 arm64_linux:    "a0254e4bb280c669c76df2edea0ddf9ded0681aec3c2a220816390c7e142925c"
     sha256 x86_64_linux:   "4e742c3b7160f0cdc5d4399857508ed58d3e43abb7f41bc9f173b5b83c12bccf"
   end
 
   uses_from_macos "zlib"
 
   def install
-    args = %W[
-      --disable-dependency-tracking
+    # Work around failure from GCC 10+ using default of `-fno-common`
+    # multiple definition of `mpi_debug_mode'; mpicalc.o:(.bss+0x344): first defined here
+    # multiple definition of `memory_stat_debug_mode'; mpicalc.o:(.bss+0x348): first defined here
+    # multiple definition of `memory_debug_mode'; mpicalc.o:(.bss+0x34c): first defined here
+    # multiple definition of `iobuf_debug_mode'; mpicalc.o:(.bss+0x350): first defined here
+    ENV.append_to_cflags "-fcommon" if OS.linux?
+
+    args = %w[
       --disable-silent-rules
-      --prefix=#{prefix}
       --disable-asm
       --program-suffix=1
       --with-libusb=no
     ]
 
-    system "./configure", *args
+    system "./configure", *args, *std_configure_args
     system "make"
     system "make", "check"
 

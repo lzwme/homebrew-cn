@@ -1980,6 +1980,7 @@ Homebrew-homebrew-core/Formula/f/fortio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fortitude.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fortls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fortran-language-server.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/fortran-stdlib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fortune.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fossil.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/foundry.rb, Homebrew/homebrew-core, 1
@@ -3380,7 +3381,6 @@ Homebrew-homebrew-core/Formula/l/lft.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lftp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lgeneral.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lgogdownloader.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/l/lha.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lhasa.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/license-eye.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/licensed.rb, Homebrew/homebrew-core, 1
@@ -4920,7 +4920,7 @@ Homebrew-homebrew-core/Formula/o/ord.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/org-formation.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/orgalorg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/organize-tool.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/o/orientdb.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/o/orientdb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ormolu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/orocos-kdl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/orogene.rb, Homebrew/homebrew-core, 1
@@ -5151,6 +5151,7 @@ Homebrew-homebrew-core/Formula/p/phpunit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/phrase-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/phylum-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/physfs.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/physunits.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pianobar.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pianod.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/picard-tools.rb, Homebrew/homebrew-core, 1
@@ -8177,6 +8178,7 @@ Homebrew-homebrew-cask/Casks/c/chipmunk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chirp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/choice-financial-terminal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/choosy.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/c/chordpotion.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chrome-devtools.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/chrome-remote-desktop-host.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/chromedriver.rb, Homebrew/homebrew-cask, 0
@@ -14167,6 +14169,7 @@ Homebrew-homebrew-cask/Casks/t/tageditor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tagger.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tagspaces.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tailscale.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/t/tal-drum.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tales-of-majeyal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/talon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tandem.rb, Homebrew/homebrew-cask, 0

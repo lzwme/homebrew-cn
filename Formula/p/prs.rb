@@ -11,6 +11,7 @@ class Prs < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b651bcae0d249232460b03fab22c239a319f977169996197098fb082509685f9"
     sha256 cellar: :any_skip_relocation, sonoma:        "7b4d56aa801a5b49c63aa220dd73642847cc2469c25776a1e11e91113d8be776"
     sha256 cellar: :any_skip_relocation, ventura:       "ffd6725497618bb411cb83db32edefe40e6a70260b1cde0801fbb4b45ec4f428"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b65df02f12c0b730c212b28b88e3c00f0801981e7069bbccb4ce21befee38181"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7d2a746d0612f19d99b13216ecbb08dc5fd06fe1e7ff6a9d1690becdba707ec"
   end
 

@@ -22,6 +22,7 @@ class ZeroInstall < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "f293e6e5c07b33cebf63f868e2582e3dc390c0e2305fcefb7e7b17c5eb6d57fb"
     sha256 cellar: :any_skip_relocation, big_sur:        "0f4761b5bf5adce56f3a0084b110aa51026cdbd85a152112481484a30878a13b"
     sha256 cellar: :any_skip_relocation, catalina:       "66a2d596f829de3bab7abf5558b0c4e9e922983ee146930b3755c38f4a593e02"
+    sha256                               arm64_linux:    "eaa97baccdef4813578e7a9bd8ad445a65358b1ebd48598ceddf53b0a156859e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "dcc1fe5759e42d2757f7ab28cdd33eecc9339ef83bf8aebb60cba6d8b5dd94d6"
   end
 

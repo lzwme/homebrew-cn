@@ -21,19 +21,21 @@ class Lib3ds < Formula
     sha256 cellar: :any,                 high_sierra:    "1c6d7e3a2e800cf8fc9f6050032f28eec15bcc7c617622d58ba502c9c1afa740"
     sha256 cellar: :any,                 sierra:         "4338a4f81ccc33ad78b30f051085594606b74fe5f7773e197a36f08e0b8967ba"
     sha256 cellar: :any,                 el_capitan:     "e5810afd47dd88fb769e6ef62ef558b4ee4e643d4f5ae3fddb019257642b3375"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9f4f7ee247f3625649c17b51c43edff23d98d7d3e84dc388a509ab1775ae43d3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7adf7c63871e56081abf7ecbf0327d77970aa925812d04082152d32a13d229e5"
   end
 
-  on_macos do
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
 
   def install
-    # Run autoreconf on macOS to rebuild configure script so that it doesn't try
-    # to build with a flat namespace.
-    system "autoreconf", "--force", "--install", "--verbose" if OS.mac?
+    # Run autoreconf to regenerate the configure script and update outdated macros.
+    # This ensures that the build system is properly configured on both macOS
+    # (avoiding issues like flat namespace conflicts) and Linux (where outdated
+    # config scripts may fail to detect the correct build type).
+    system "autoreconf", "--force", "--install", "--verbose"
+
     system "./configure", *std_configure_args
     system "make", "install"
   end

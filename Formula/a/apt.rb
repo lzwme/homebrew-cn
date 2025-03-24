@@ -12,6 +12,7 @@ class Apt < Formula
   end
 
   bottle do
+    sha256 arm64_linux:  "c87fa436ae7a9a7e471e41ac67b80b2787041931ff017dc2cd17c814a7f84dad"
     sha256 x86_64_linux: "23e7976f97fe2f6ff3c693b9b1e76f8e1841860120b9d564d40a1b27621615a6"
   end
 

@@ -11,6 +11,7 @@ class Ddcutil < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "6863cc924117633302ef9bf12a27b6ed79ebb51924c43c38f6da3d0c390d3ef3"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "93319d406a42b944595117a18cef379c71b19f09fe166b6af3c49b5b4bacf322"
   end
 

@@ -16,6 +16,7 @@ class GnuComplexity < Formula
     sha256 cellar: :any,                 ventura:        "4bef537bbe2199465336c8f1dcbd0c862564eb13cf2680d53671075cd6bda92e"
     sha256 cellar: :any,                 monterey:       "288719f321641b768497edfae38f1ac88499b5274ce8ada8ea1c5cd30239078c"
     sha256 cellar: :any,                 big_sur:        "82574a778a6b6ba218cd98fbd173bb7c15f4253fd871349abf8c1c322cbe99c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "412f37fba031fc1b45d13fb61d9a025af47633ffc64852bd2f450d08be3dadde"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "623e40ffaa4b67fb049c25a3cb3a781366fa19b316207b5f50d68ecccbb839dd"
   end
 

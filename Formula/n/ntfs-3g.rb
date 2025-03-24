@@ -13,6 +13,7 @@ class Ntfs3g < Formula
 
   bottle do
     rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "13c0f887f2cef53978d28dfcb8c1a3f69f8c70407bf2267ad6033eef0b5cfc2c"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "3fe3041e69391706e917d335a8d6bebd1dd502126e5d19e4b0fabded9a3e40f7"
   end
 

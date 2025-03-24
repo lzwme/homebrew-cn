@@ -18,6 +18,7 @@ class Libnfc < Formula
     sha256 catalina:       "6659f67e40774cdb8e95548c03542bbc123ccabc0f4a6160504c03e43fa43c26"
     sha256 mojave:         "9bc90c84f89408a8960289a668af7ad9b7b17d34a02996b83ec960c5cbefafeb"
     sha256 high_sierra:    "8e6abd4d61ef9aff76ef25b092806b95614c07a9e46a0e13ca6e915271454a92"
+    sha256 arm64_linux:    "65c10bb5ef9996f755126c6642fd8933c9fa2fbff028d1700dc75b2cd0458b47"
     sha256 x86_64_linux:   "db84cf74f8217a9cb32aa5c804cf20c9b74464ce21ea2a87805b0c8de5abdfe6"
   end
 

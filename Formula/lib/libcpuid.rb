@@ -9,13 +9,17 @@ class Libcpuid < Formula
   bottle do
     sha256 cellar: :any,                 sonoma:       "502f564bd91523e79b8506f8bf753efcbe86bf85b047b197c92a3a1232b17f02"
     sha256 cellar: :any,                 ventura:      "1dcb0552126da1472e9c6cd0abc3a4231c255a6e474d16fb07983efac34a3e44"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "a945ee09a8ef44071f261806e795bd704e86cd30c472092e2091e15b4e2024da"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "bd7e4e542360e3fd3e343512b328bbdb95790c08043f5bae000af293b74929ef"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
-  depends_on arch: :x86_64
+
+  on_macos do
+    depends_on arch: :x86_64
+  end
 
   def install
     system "autoreconf", "--force", "--install", "--verbose"

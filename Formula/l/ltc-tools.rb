@@ -20,6 +20,7 @@ class LtcTools < Formula
     sha256 cellar: :any,                 mojave:         "ae65212fa593ee7015eb7bfa63b4e7e7691e56a7db0fc1a82a311aef184aae55"
     sha256 cellar: :any,                 high_sierra:    "15da8efd84adb9d9eb9c7b4450c75e326679b20bed258c8e7011fc6eb2cc9b20"
     sha256 cellar: :any,                 sierra:         "51df0ba95565d43955bbdf0cfbc216696b4002f8cc95c80d8f6b387eece034d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5cf1b3ebc4b537434144fb06a19917cf47f63f368a6376ad0c78bcc1f42c6695"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "f067afb9aec069b45d0c8025574d673d701140d4262ba2530337a868c016bd81"
   end
 

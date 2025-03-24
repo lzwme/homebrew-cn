@@ -17,6 +17,7 @@ class PamU2f < Formula
     sha256 cellar: :any,                 arm64_ventura: "406d09f9b431e7ac540d312dc0b1dc9f7a7db91e7abb5f23457a2f985b19576c"
     sha256 cellar: :any,                 sonoma:        "c5aa1b4f377072a8a821f9d711afceb700b0ba786581996efa2601c1906b39ae"
     sha256 cellar: :any,                 ventura:       "be59022d553d437078dbed6dfd29e39d693caf4ac8bff9cc9bb75063573c24ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb5a5f3be7cc455516b96bdea0e222e67ef3ee66e7c95a5c7da65d83e0e832dc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "68c9f977e803714c2c9cc19dba8716aa68b20a306e358e4d06666e91d0fbb3c9"
   end
 

@@ -13,6 +13,7 @@ class Sispmctl < Formula
     sha256 sonoma:         "5654736aa9565141c0001e8899824850dd817b5e229714282e9cdd5911ac273d"
     sha256 ventura:        "7320a88ebc435a780ec01e5797b39d447831492c4b342cced542c822cdb65440"
     sha256 monterey:       "08f320dfb6ab9d02451a687eedb317ff456144188b8a5c546d38e5335b71de47"
+    sha256 arm64_linux:    "e4c1c91aa8aa9aca6a6faac24a61b615251a38dbc5c081381fea98797e80c41c"
     sha256 x86_64_linux:   "db43f15862bbace1e2af6f17b257da7d3522011d82f00fa581d78fea1faa47db"
   end
 

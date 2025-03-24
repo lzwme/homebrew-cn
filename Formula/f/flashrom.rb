@@ -17,6 +17,7 @@ class Flashrom < Formula
     sha256 cellar: :any, arm64_ventura: "d3aa6a371dccd77654c46ad73ba10dc4bfabedebb5a920eb9fde56fd21d1b96f"
     sha256 cellar: :any, sonoma:        "6dc12de3566c4f6078a22b979ce76e18100320bb004a9f463fffbe65ef72840b"
     sha256 cellar: :any, ventura:       "f853dbc8d2957263f3a6c0875a51c8f5760deb2fede2c1f02edce9b6946ad04b"
+    sha256               arm64_linux:   "99930741fa83500c75daa0a4f5578a5365e3063e0151740a304c251376b9b6d3"
     sha256               x86_64_linux:  "e7ca720f79b5b454b2ee3c4268352042d6ee6036b23f004cba7b3333565f1e14"
   end
 

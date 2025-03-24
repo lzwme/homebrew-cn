@@ -24,6 +24,7 @@ class MecabIpadic < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "12212f7bc769338a7747d2ac184bf669454486336ca32335f15f140d3a0121bf"
     sha256 cellar: :any_skip_relocation, ventura:        "d901a98d8d01869855c5e55a35f4c252749306ee5a5eb44030f8c811885b44ed"
     sha256 cellar: :any_skip_relocation, monterey:       "6285de6570c904239f3f07fe0b8bb5c707b23c0741e36170ebc28aaed3da0b6d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0c7669401d92374cb6f57a0f71be0b65bc73c0fabcd62e1d2fd0480cadf9d697"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "23ec6f722695c38dc93487d1320dc7e34c79b359647d4c8edd2cef0a045ed851"
   end
 

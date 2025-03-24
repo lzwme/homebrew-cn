@@ -18,6 +18,7 @@ class Direwolf < Formula
     sha256                               sonoma:         "5ad4a23ede0053b7c587b99514c48982378ad7f5e4ae4871e8b8eea6dccb6249"
     sha256                               ventura:        "e3064f51ee693453adc1e25a4dc7e7f1617f51d070dc209c847a7459968de0dc"
     sha256                               monterey:       "16947ff3e289c953ddb75acb44215ab7f74a5128a20464cfb7f6332b4438f25d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "2dc92264176a4397db556c4add6b01609e6a0364a39359f4b9d04adee3b1ec97"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8b20722ff017ed04a511f79061ad26959cdb92e5c7dc1080dbc22cc05c07e374"
   end
 

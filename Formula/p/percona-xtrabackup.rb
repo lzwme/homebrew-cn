@@ -26,6 +26,7 @@ class PerconaXtrabackup < Formula
     sha256 arm64_ventura: "a736c555bcfc109e19c1ffcd8f24af0b14b251e5a8895eb09098cee6b4263f30"
     sha256 sonoma:        "1a7adbbc1ab31a5729855d9f955af58afbf81785314d51fb87492d90cc4416df"
     sha256 ventura:       "e28fb7ac2afbad20555eab2b174d40b0367611421d033fd2bb7a9bbf1be2f05f"
+    sha256 arm64_linux:   "ac6bcb3444927d7acf41510cfb78abfeddd2bb12558f4bc36d6e69e15cbe30ff"
     sha256 x86_64_linux:  "b360d2f4ca281109afbc8cb699f1958344fd12aac19df355bb69207a69744610"
   end
 

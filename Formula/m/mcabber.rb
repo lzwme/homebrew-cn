@@ -19,6 +19,7 @@ class Mcabber < Formula
     sha256 sonoma:         "5d40492fc3afb54bcce4b07f51feb4139af51e968ad0b70a876fd36a33e77df3"
     sha256 ventura:        "0ba512ce535bed85a080c9117179e67e9e7f49243b02989a7b09456d0f50faa3"
     sha256 monterey:       "498e9db79846d370de50a85ce3eef354bc27b6f6a6ea7ecd43008a65a3d7eef2"
+    sha256 arm64_linux:    "c60a7ff2bca6ab6ecf15c6d362a8910042f63d1bec9221a19b3146416cc1913f"
     sha256 x86_64_linux:   "9dd90456ae959bdf7893656a4ab0177937fc9d25f618a753a54e5730095d18b8"
   end
 

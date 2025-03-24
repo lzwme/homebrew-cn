@@ -12,6 +12,7 @@ class Envio < Formula
     sha256 cellar: :any,                 arm64_ventura: "4f5305056a8165baf2b45d71b2a94f9800792923949c44a30c030d8b0072ef49"
     sha256 cellar: :any,                 sonoma:        "6812bb1eca12a3c74c542d967d2930bbeb2a0a77ab4b0d3f04eba9df5196063c"
     sha256 cellar: :any,                 ventura:       "777f696105129c6c3c49944c45854d9cc3f5f63cd2e5913d6692e2337c684f88"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c7c6e0a4e87038b3088fc5fca823ca57878ab6bb156c7367c4f046debbcb426"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "61427474955a6e35804f605178403e2ac41bda326841faf024ba873b88824c0d"
   end
 

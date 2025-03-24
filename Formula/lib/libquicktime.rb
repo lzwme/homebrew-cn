@@ -20,11 +20,17 @@ class Libquicktime < Formula
     sha256 mojave:         "56165e3b70f7e444bca93369b3fa4602eefb1aa4b9624ed1ecbaa4741eb7c245"
     sha256 high_sierra:    "df1b207f23b3edc587629a0fd700a446d4f8210e6a7de3bbfd3d5c122cef16f7"
     sha256 sierra:         "1770ac237a79cb0d9ae918e4bcd6d92bcca6a6695823f7a3fde6dde7d3077acb"
+    sha256 arm64_linux:    "dc03dfa9bc5df60e0dbafe21632ecf596a95adbba0306ed86e6c1673312adc0f"
     sha256 x86_64_linux:   "3c5ec43c6051163260865415f7a3fc0b32b7ca6b49e56ea999ac1fe4119c75d4"
   end
 
   depends_on "pkgconf" => :build
-  depends_on "gettext"
+
+  uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "gettext"
+  end
 
   # Fix CVE-2016-2399. Applied upstream on March 6th 2017.
   # Also, fixes from upstream for CVE-2017-9122 through CVE-2017-9128, applied
@@ -43,11 +49,15 @@ class Libquicktime < Formula
   end
 
   def install
+    args = []
+    # Help old config scripts identify arm64 linux
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
     system ".configure", "--enable-gpl",
                           "--without-doxygen",
                           "--without-gtk",
                           "--without-x",
-                          *std_configure_args
+                          *args, *std_configure_args
     system "make"
     system "make", "install"
   end

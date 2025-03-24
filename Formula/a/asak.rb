@@ -13,6 +13,7 @@ class Asak < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "feb576b39f6c74a6876b14a0fa28f5560e1dad477831965465f44a68d465ed5e"
     sha256 cellar: :any_skip_relocation, sonoma:        "4755f43dda07d16847f7a153ea3c6832c0b6de12c4ebf0dfa53d52bc5e48bfee"
     sha256 cellar: :any_skip_relocation, ventura:       "2d605e4e59e4c111c890547a42f9634fe4781b4b025cd2e8a61f645fafec0d4e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6dfd687258d70054b436bf2d8e8b8240ff9b897a4e7579e586a830341c1e6e06"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a7dc3b8e3729bc5d1d9cd7e35a701187334e6da2f80e02eece663b1d4ec6c9d"
   end
 

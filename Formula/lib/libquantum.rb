@@ -23,11 +23,16 @@ class Libquantum < Formula
     sha256 cellar: :any_skip_relocation, big_sur:        "e0c15e357005695499960424b1588ce47b248eb54ba7101cd47d7b0e5427a3b4"
     sha256 cellar: :any_skip_relocation, catalina:       "d4a76e92f03a3ba478985c12c7a4d5fbe815b7b67d8a2d691eadcf43ed5eb1d6"
     sha256 cellar: :any_skip_relocation, mojave:         "437375451fc36404181dd6086f662b0305543fc8765042133706755c804c1217"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "848db672f68b69d8f19e8a80c220aaa182bb762c7bbea799177935fb0208f326"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a528197ff682bb96434f58a4739f933e9010f7e76b368f43d1788fe22468deb"
   end
 
   def install
-    system "./configure", "--prefix=#{prefix}"
+    args = []
+    # Help old config scripts identify arm64 linux
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
+    system "./configure", *args, *std_configure_args
     system "make", "install"
   end
 

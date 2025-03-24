@@ -1,19 +1,19 @@
 class Kew < Formula
   desc "Command-line music player"
   homepage "https:github.comravacholkew"
-  url "https:github.comravacholkewarchiverefstagsv3.1.1.tar.gz"
-  sha256 "4fc78a678c07eed91094150cabf590f0904777b5be1790ba9f663c973be68528"
+  url "https:github.comravacholkewarchiverefstagsv3.1.2.tar.gz"
+  sha256 "9f888090e458763962b91e25e01ea36d37f71be2ec69e2870c801287cd0c42e9"
   license "GPL-2.0-only"
   head "https:github.comravacholkew.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8881e574dd132b242f12c299e5cde5087c741ea19c336aec8f29cc0753019f0a"
-    sha256 cellar: :any,                 arm64_sonoma:  "63ba39bc67ee077bcfd2301ed6021ad47191dc4a005160d7f88d81b385c16d42"
-    sha256 cellar: :any,                 arm64_ventura: "c2eb5ab968885b6d7397175aef1ed17359a65dadbb6c0f7924078c6ea42c1d51"
-    sha256 cellar: :any,                 sonoma:        "ced2c32a7bdf437f3cc5c5a864e16c71350e41630375b0462447390563b8fe0e"
-    sha256 cellar: :any,                 ventura:       "63e5e071a2ce34a6dbf8dd5c185f86620cfc81b3fd318d8d7931905ae4c21259"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7c77e5477ef2ca707045ffb6b2f99d0699ac2887b4dd16fbb3e16546ceab636"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "babe267a37fd48838da3ec4b5da871ace41bf16a6920b50c33c93f745b5d7c31"
+    sha256 cellar: :any,                 arm64_sequoia: "93cd9e807d32cd0949893fa4d41cc4806239e1a3f07e184171fad0ff66f16358"
+    sha256 cellar: :any,                 arm64_sonoma:  "cc0afad845e2e2a683e094d8b477dfdebcf3d3f719cdb1679202b0f03328e504"
+    sha256 cellar: :any,                 arm64_ventura: "8409f207003b286a1eaf8d63df70074d12d0c37c45b7aa0d73054ea2203ca8f9"
+    sha256 cellar: :any,                 sonoma:        "ace627d70569cae3b37b2df55d9459a0bc1a0dcf5b6db780e4fbe1af1adf89fc"
+    sha256 cellar: :any,                 ventura:       "3155803d178b14e49d0241bc7091726477b99a0f0aa2f0d7b4850bd826702bca"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "65fc9912217dffa2e5191d38748e55da10c749633e34c6f4a2023e1e761c1b30"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "033ea60a7dd52b3d04298e2061ac01e7969f2c7e79f0aff37a887ddda1c92782"
   end
 
   depends_on "pkgconf" => :build

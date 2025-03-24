@@ -12,6 +12,7 @@ class StellarCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c5bf0f7cb93b726cfaead6b8348f5ae7a764b196664eafef3668dc0f7633e52b"
     sha256 cellar: :any_skip_relocation, sonoma:        "902025829ccb8ca24d3e19e4b83783f26771b819b25a9126d4e3d740a70312b3"
     sha256 cellar: :any_skip_relocation, ventura:       "6a2fcba911e6cc1e7f43d9b5e9171ff4df48d1c45f25c604d3bce9791279eb63"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be3c18f94bedc609ec28a6e4c79c5392c534d05ada640cc33a1e29acff040289"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a1a35b87b2eebbef82a9e47db6c52c627bee9ef9e5b069d1f41ad754d41f555"
   end
 

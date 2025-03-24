@@ -22,19 +22,17 @@ class Nvi < Formula
     sha256 cellar: :any,                 monterey:       "4bbbf70becf3cfa52340027bb81f0b39b8071638dcb9f042cf314bee7a8feeac"
     sha256 cellar: :any,                 big_sur:        "692b129c29e7018565decb9c3ece80c020028549eb571d638851bb0e8647b0d8"
     sha256 cellar: :any,                 catalina:       "9443eb6edf1377a25a506245df2a20c0d2a7365d71eee720bb7152052b96d3e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "77dc49d28cfd69d761ae59838253f8ee295a2f966eacd89ca3e3d4b2499e890a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "d8eb6c0c8a8eef36a09bf55e35ced6d2e2afb4d75a70d93d96e88d9cbd5c4b56"
   end
 
+  depends_on "autoconf" => :build
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
   depends_on "xz" => :build # Homebrew bug. Shouldn't need declaring explicitly.
   depends_on "berkeley-db@5"
 
   uses_from_macos "ncurses"
-
-  on_macos do
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
 
   # Patches per MacPorts
   # The first corrects usage of BDB flags.
@@ -76,17 +74,16 @@ class Nvi < Formula
     cd "dist" do
       # Run autoreconf on macOS to rebuild configure script so that it doesn't try
       # to build with a flat namespace.
-      if OS.mac?
-        # These files must be present for autoreconf to work.
-        %w[AUTHORS ChangeLog NEWS README].each { |f| touch f }
-        system "autoreconf", "--force", "--install", "--verbose"
-      end
+
+      # These files must be present for autoreconf to work.
+      %w[AUTHORS ChangeLog NEWS README].each { |f| touch f }
+      system "autoreconf", "--force", "--install", "--verbose"
 
       # Xcode 12 needs the "-Wno-implicit-function-declaration" to compile successfully
       # The usual trick of setting $CFLAGS in the environment doesn't work for this
       # configure file though, but specifying an explicit CC setting does
       system ".configure", "--program-prefix=n",
-                            "CC=" + ENV.cc + " -Wno-implicit-function-declaration",
+                            "CC=" + ENV.cc + " -Wno-implicit-function-declaration -Wno-incompatible-pointer-types",
                             *std_configure_args
       system "make"
       ENV.deparallelize

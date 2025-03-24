@@ -6,6 +6,13 @@ class F2 < Formula
   license "MIT"
   head "https:github.comayoisaiahf2.git", branch: "master"
 
+  # Upstream may addremove tags before releasing a version, so we check
+  # GitHub releases instead of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8302833ac2fb9359a9219c8157f0f2b89cfc0a1c77878d333def7a43386aa33b"

@@ -17,6 +17,7 @@ class Libowfat < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b9f9d4615bb4f889dad22f8b880d2e197a7fb0caa7f48d20acb459ad868635d2"
     sha256 cellar: :any_skip_relocation, sonoma:        "a0c8d5df1d6c01a6d36098ad87a856d8a223df535e5829ada59ecde849e54bd4"
     sha256 cellar: :any_skip_relocation, ventura:       "7f442fd43af0708854473e6c97e5da531f8b1605180bc237e815beae3e40cf55"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "17c1d34c4f362a68196eef92ec8d8621a4af98d94e5120a637cca1c987f20bd7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9033e9d8c499e2a37af9a3b0110206e494306bbc855e7e9d16d3cd3adf291801"
   end
 

@@ -20,6 +20,7 @@ class Genders < Formula
     sha256 cellar: :any,                 arm64_ventura: "85ce393a73b4c8102f4337e4fdd14cbe801e003951b92452ae7cacd733c37b0f"
     sha256 cellar: :any,                 sonoma:        "dc5878427ff5e64542ee04d17fe4cafe426b0aa8de57ce6772d6caefa858eb67"
     sha256 cellar: :any,                 ventura:       "418c4f1cd65608a9b31203c3fe1351260ab9af1c5e0ed7dc7ad6df40b2f816d4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2ae24d08bac380a175921c187843271b0248c7a9e37d5d9f2e214636f27bec3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d4d80a5708b75bb42090098c791379194c9da4fc9cb41a1ff40193b69d0bea3"
   end
 
@@ -43,7 +44,11 @@ class Genders < Formula
 
     ENV.append "CXXFLAGS", "-std=c++14"
 
-    system ".configure", "--with-java-extensions=no", *std_configure_args
+    args = []
+    # Help old config scripts identify arm64 linux
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
+    system ".configure", "--with-java-extensions=no", *args, *std_configure_args
     system "make", "install"
 
     # Move man page out of top level mandir on Linux

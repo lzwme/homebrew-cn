@@ -15,6 +15,7 @@ class Soapyrtlsdr < Formula
     sha256 cellar: :any,                 sonoma:         "984fedf5e1b8712bacc86a3e2fcb225233dbd751955e17f61896cdd8cb811cb5"
     sha256 cellar: :any,                 ventura:        "24c80a7bae5a8ff939c51914fd86ec146b9f8f03f274cf5c4d428ff6273d4f18"
     sha256 cellar: :any,                 monterey:       "3ab1e0c54d417347e2439daf45f6859f2669fcfbd8fa061cc18741614fc7cb2f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "17be80002546fb45015241d6c2e4de81d93067637128c4137a2e21035236d6be"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e4169428867a8b2d9fa11b6f601c735b8c2d5ffa0f46d3289cd1d1f58dfea6dc"
   end
 

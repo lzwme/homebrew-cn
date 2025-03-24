@@ -27,6 +27,7 @@ class Libart < Formula
     sha256 cellar: :any,                 high_sierra:    "c5ae59f4955fd1b4e3c49976b06609d56c5079d2b0f6e0675b356b1eb09181cd"
     sha256 cellar: :any,                 sierra:         "e9e14623ba0284a89dd09c7be72393619582c5d0489891cd1f654b6c26b0fabc"
     sha256 cellar: :any,                 el_capitan:     "18fb7a842650151fef102efadefa52aa12dc3f597ace95b8e25efe6518a65d2e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "cd57523ef3d776e1c33ceb83f155ed36426f1f109847b004052cd748f8c20146"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "1b28ae4a3601b0bace6e40c19e616e2e321f17231a378241dae4aa9db9764d75"
   end
 
@@ -37,7 +38,25 @@ class Libart < Formula
   end
 
   def install
-    system ".configure", *std_configure_args
+    args = []
+    # Help old config scripts identify arm64 linux
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
+    system ".configure", *args, *std_configure_args
     system "make", "install"
+  end
+
+  test do
+    assert_match version.to_s, shell_output("#{bin}libart2-config --version")
+
+    (testpath"test.c").write <<~EOS
+      #include <libart_lgplart_svp.h>
+      int main(void) {
+        return 0;
+      }
+    EOS
+
+    system ENV.cc, "-o", "test", "test.c", "-I#{include}libart-2.0", "-L#{lib}", "-lart_lgpl_2"
+    system ".test"
   end
 end

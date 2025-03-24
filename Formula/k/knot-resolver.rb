@@ -17,6 +17,7 @@ class KnotResolver < Formula
     sha256 arm64_ventura: "f036e8ce8f5cf29c9996441ad4a479ac53534d6c83255c812526ac1c4831c790"
     sha256 sonoma:        "bfb3e2c794ec64de04cb3bffb98c77cd525b628e84e0333fc17b9f67bfb5daf8"
     sha256 ventura:       "acf867ac9bc8bea1f5095221acf661185c72523b288a1b3085057af455353aef"
+    sha256 arm64_linux:   "86d340d6635aeec00fd5c3253bfb540d2237ed36010a30fc0a1e92f407889c78"
     sha256 x86_64_linux:  "b357e992fd8676db35a50c6e93abed1008f7f16b79e72450093631d1e83576d1"
   end
 

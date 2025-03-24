@@ -27,12 +27,15 @@ class Libpgm < Formula
     sha256 cellar: :any,                 monterey:       "6c5d4b6c58e5afb6c32f4b8681b5065dbc6c8920b505d14dd1dc49479411e56a"
     sha256 cellar: :any,                 big_sur:        "f5679fa01ad2590b57001a261b8eeffef2daf437021d75564fea4603ce348f68"
     sha256 cellar: :any,                 catalina:       "1b9796c9a1047eb51760a3e727258469338ddaa156bf592e83c65040ac17824c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9def3024f67a4c2b91300eaeb65829f0ffa47652c47118354f96b1f82fdfe149"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "e5ceaf537037fb5918336027ab1ec0ab5484ca2230a58d6ba2b72569a416e9ed"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
+
+  uses_from_macos "python" => :build
 
   def install
     workdir = build.stable? ? "openpgmpgm" : "pgm"

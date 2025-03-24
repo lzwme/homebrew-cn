@@ -21,6 +21,7 @@ class Libcsv < Formula
     sha256 cellar: :any,                 high_sierra:    "6946a6ff37a03f75d464cdc1229eb72251ae6b5d2726a658a016e39e862f0e33"
     sha256 cellar: :any,                 sierra:         "6d89efd634be6551134f099e458225325d76d69f55ba37676a3ccf7bea6c4e59"
     sha256 cellar: :any,                 el_capitan:     "3f69bb369fafd5c207f1c8ea500dc1e725e8e7dfe005215ff14b61fc25ac28e6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "a313d8dd11bc697e7f0f45e36572a38c6a86c827b0309a564849c443ea573a78"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a66bd666958e3125f08377688cf86c94cd38e077bedea9a70cb17c721794211f"
   end
 
@@ -31,8 +32,11 @@ class Libcsv < Formula
   end
 
   def install
-    system ".configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
-    system "make"
+    args = []
+    # Help old config scripts identify arm64 linux
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
+    system ".configure", *args, *std_configure_args
     system "make", "install"
   end
 

@@ -18,6 +18,7 @@ class Opencbm < Formula
     sha256 arm64_ventura: "d278718401caa82cefb764cad68a547d8e09a2a28622ff012472a0dbaeebbb21"
     sha256 sonoma:        "c3c96a4d11cf6d06933aca2bf0ad4cdbc5d4cd7af512fdc7552bba26ec8e4bdd"
     sha256 ventura:       "90c901874fffef22c717c75d8958109f5b82849c6c1ae5ceac0d2c31bd5595a2"
+    sha256 arm64_linux:   "267913de51b9eb95fc170c08943564b0106b90baf067099b415e64c588357c74"
     sha256 x86_64_linux:  "d7258949de49e4b268d2d236217f42982663a39430d534f32fc1dc7b60d2d043"
   end
 

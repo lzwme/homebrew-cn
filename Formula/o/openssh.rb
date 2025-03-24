@@ -18,6 +18,7 @@ class Openssh < Formula
     sha256 arm64_ventura: "f5ce25d2a671debd1114ce92ba6fc9ecefafce11d8e3fed5287fe29039cb547a"
     sha256 sonoma:        "abfddd2952c084d370508dbc9f73d841b21a79086798e503f433973c0a96d8f2"
     sha256 ventura:       "4b3a0a5eedf70dd18d80c2062d2fd3ac370e774b928d21c227dd09d0b18598de"
+    sha256 arm64_linux:   "3161bee35d5c534421e678ac88d5c9c5c4b9cc3027ef84de29158c21b4753853"
     sha256 x86_64_linux:  "94e604bf4f8b0554621c22291d50063101c43bd4b99b48dbd0c7120a1f5178b5"
   end
 

@@ -48,6 +48,7 @@ class Moc < Formula
     sha256 arm64_ventura: "5494731a8b584382705cf06e159d10c42fd869150ab605cf4a096b2112e61d65"
     sha256 sonoma:        "4c15f75d82b37a05b79efddabd6e670076d94570d4e25a0e72a17cf72ed82d1c"
     sha256 ventura:       "f8def0f81c78bf06d1add5d086418a0522cd207cdb3ee177d5aad5b2f3ef0c26"
+    sha256 arm64_linux:   "9a554bdfd055b86a978fff7d54467fcf43261c4e88c149a5f3e81bb736447074"
     sha256 x86_64_linux:  "a62b0dee94dd77f8368039d0e86b76282df94055c16cca501dcdd8ae719251f6"
   end
 

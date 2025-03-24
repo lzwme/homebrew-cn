@@ -13,6 +13,7 @@ class Nemu < Formula
     sha256 sonoma:         "4eae6f67f094316ff9ae0aaea3be33254e870a74677b962735c2f78a5bfc7682"
     sha256 ventura:        "f01fb55760affcd6ff698e4b680c3ae12212493b3ed530f75ef626cdba48b82b"
     sha256 monterey:       "5feb7ba4d086208474da5fbf0c1a98ceb26d783bc2950fe3a9ae1d90519a7289"
+    sha256 arm64_linux:    "14a133841c2ab6395959d5d2a84b20ea4c585571c7bc9ea3d435efc0a4af4872"
     sha256 x86_64_linux:   "babf6558252a668a49b3fb0552415c50ebabbcee6ba4dad54a64e8f01b8dc79f"
   end
 

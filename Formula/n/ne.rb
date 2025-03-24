@@ -12,6 +12,7 @@ class Ne < Formula
     sha256 arm64_ventura: "c59bbbd54eab62c73c3f51c15022fbd5c68b35bb8f917030ed8006cb990486d3"
     sha256 sonoma:        "3045ec9a5ff38c4cabefdac8aa0696b311765d09649d47fae57951c8915b9afe"
     sha256 ventura:       "989c1e6af26b0106dce329c440299b58676f7bccd200ed218be8aa65256281f9"
+    sha256 arm64_linux:   "6646ae30987cb42c9131634e987a6a4221825df92ae474009cb0dc9c6ddca8e5"
     sha256 x86_64_linux:  "17fc5f7fc5234146da65cbb6a18ba1643bdd009ed76822c7cb2efb3837a05631"
   end
 

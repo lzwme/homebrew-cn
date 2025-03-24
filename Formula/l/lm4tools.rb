@@ -20,6 +20,7 @@ class Lm4tools < Formula
     sha256 cellar: :any,                 high_sierra:    "9c65eb6694f74b513b707c237cf13bb6a54b9e4a188582355f78e94f9ac53407"
     sha256 cellar: :any,                 sierra:         "3238455d6329e9749700b9c12c2e7459b63ea400fb0e7e6818b8c7c9b77b4e6d"
     sha256 cellar: :any,                 el_capitan:     "7c6bd7ec1a220de95089d71f79baa61ce459ffa0d00d32af727435594ac7603a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "8ecfca1688d68be5eebd7cde61d6e6fcd55a2e614e70a5c3a2a0943dc1591da9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "5afa96bcdab63596529b9202a6c985a4a1cd634235b2a3ab099805046384e405"
   end
 

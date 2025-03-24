@@ -1,19 +1,19 @@
 class Ddrescue < Formula
   desc "GNU data recovery tool"
   homepage "https://www.gnu.org/software/ddrescue/ddrescue.html"
-  url "https://ftp.gnu.org/gnu/ddrescue/ddrescue-1.29.tar.lz"
-  mirror "https://ftpmirror.gnu.org/ddrescue/ddrescue-1.29.tar.lz"
-  sha256 "01a414327853b39fba2fd0ece30f7bee2e9d8c8e8eb314318524adf5a60039a3"
+  url "https://ftp.gnu.org/gnu/ddrescue/ddrescue-1.29.1.tar.lz"
+  mirror "https://ftpmirror.gnu.org/ddrescue/ddrescue-1.29.1.tar.lz"
+  sha256 "ddd7d45df026807835a2ec6ab9c365df2ef19e8de1a50ffe6886cd391e04dd75"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "19e7cdf715cf98eab8958472f1f44422aa890de890bf9b8b4b617da619bcc047"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85d7d4446452b151420ab5fbfdc1c9eb9a78fa84d8a4314f8ed84c5c43929b55"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c800371fd465a91660b1c10912d7492ad3137f17c8f2eb4f93c3bf9284b1fe23"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3fd2c4a80a97627d8c3d03402786a3bba0a3006c05de07094ecc1274b726b961"
-    sha256 cellar: :any_skip_relocation, ventura:       "20dc0c65999e389090bb3631b781bf7f36a17dae90fc3683ee46af451c790acf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7269198a4c447bf31ce66cf0bdebdbe575e32431e681173b18f07c1d109e90a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a299a8590b6d15de46b13b906a5e96c86f4caa697b342fafec1e6786a3c4deb3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e476b59ccb2c4e24c8318a351ebb15663bfde3c084278d0adf4327e249de30b3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "341eba2a95b1cf48b8c5d07411ebfdeaa180a6b103eb7e52e0f76a6120c4ce5d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "75a1da03c8dc5b41d6d2e7157bc938c287d62a50334a369483da7d221c0755ed"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2277f04febdcaacfcaa8d3bbbe08ea89be1f9be6b6e94bbe927e035c634f6e6c"
+    sha256 cellar: :any_skip_relocation, ventura:       "f87510cf76af9fd9ceb1a54ab75c2431f165c231f58b86906ca157a4ce25cd3c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5a833745d143f8cdfefb829e0ab7eff79790390e7d02f3eb05a69d00094b9bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e07569c6bae809a4554d8054e5cf0e110cceb71954e641d1bfc3a4d1b455bed"
   end
 
   def install

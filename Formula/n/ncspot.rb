@@ -11,6 +11,7 @@ class Ncspot < Formula
     sha256 cellar: :any,                 arm64_ventura: "30da4cb1e0c494bb35a115792ae58efed2e14075f6da9aa87db399d0445e1557"
     sha256 cellar: :any,                 sonoma:        "b9cb4a5b28d90399618594b3f6cf0d7e3032f56962c42b8a1a8ddb0ec2e847fc"
     sha256 cellar: :any,                 ventura:       "2ffab85ac8029a9406c7d3604f91b1ec56c27d377d09ab46cfb98fa7a1bdf614"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "beece05f5b43cf0f7df06edfd81a0ba07904ba1be052b4a7fbfb756f823096eb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc62314bdc978974ec4f7f75a925189066309ad2ef83543efca8efc47ea5eb1f"
   end
 

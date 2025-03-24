@@ -13,6 +13,7 @@ class PassGitHelper < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8173dc09953993aae822147c4929171be223c97cda7241a00d86a3bbec556b08"
     sha256 cellar: :any_skip_relocation, sonoma:        "734b7c223f2a2c32694c7ebbbb5448c43fe87612d7fac5257c2a7a4470a9a1e4"
     sha256 cellar: :any_skip_relocation, ventura:       "734b7c223f2a2c32694c7ebbbb5448c43fe87612d7fac5257c2a7a4470a9a1e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e3ef45b751679ee4fb0e5d18ccb8f01ed166f0facb33d517456ef4528056157"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8173dc09953993aae822147c4929171be223c97cda7241a00d86a3bbec556b08"
   end
 

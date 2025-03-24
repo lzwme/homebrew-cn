@@ -20,6 +20,7 @@ class Pass < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "1132f363a63efb874ebf98f406dcc6f9346496b10b0a3b3c2063b447c8035180"
     sha256 cellar: :any_skip_relocation, ventura:        "1132f363a63efb874ebf98f406dcc6f9346496b10b0a3b3c2063b447c8035180"
     sha256 cellar: :any_skip_relocation, monterey:       "1132f363a63efb874ebf98f406dcc6f9346496b10b0a3b3c2063b447c8035180"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "22b1e65c5e116f21af96530d78f73e8b698debaec80c2b078d71c031895cc1fa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee3104f2584abf3c35e811152282541832cc3e672d8b28024ee8d77d49cca172"
   end
 

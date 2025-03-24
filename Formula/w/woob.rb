@@ -13,6 +13,7 @@ class Woob < Formula
     sha256 cellar: :any,                 arm64_ventura: "5fa75ab650ca499865656bcd684aa113672df2b59bc41c79571f4902bc790583"
     sha256 cellar: :any,                 sonoma:        "1e2193ee7da151398d2eade58cf409a2f94732abdcd35f648d57ff9e62e880e8"
     sha256 cellar: :any,                 ventura:       "e049ae78a0a5a1af6800cf1ee86e8c26d81d7eb8dca7e72f178e68e140aea155"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e988b7ee848d0c7e0bcffb4bb18ef4c95701178544003ea8ebfc186e4cc00daa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e999afa8f7ee9c7963c8ac5887494976877351bd587db3b9b6e15b3abd0f07e"
   end
 

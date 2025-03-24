@@ -16,6 +16,7 @@ class Usbredir < Formula
     sha256 cellar: :any, arm64_ventura: "e40f49cf40316f8812f7df47be812df5bf1269eb77bcf6079624499adccdc310"
     sha256 cellar: :any, sonoma:        "b30c9161cd179a576749dcf9a00ef50030fbdfe7fb6c93a05338dfc9b5bcf736"
     sha256 cellar: :any, ventura:       "f9d8eeb3c790e34bd9e457380922676ef663f3df8057c5f857d627a97fbc490e"
+    sha256               arm64_linux:   "cba9904ac1855514dd4ebefd97d38975e6ab19b5ad919a3e7be447a794b2f408"
     sha256               x86_64_linux:  "a2e5043bd22e186e35537b39c64aa4c6360535a1cde629212b6c0ccf2c9a99b8"
   end
 

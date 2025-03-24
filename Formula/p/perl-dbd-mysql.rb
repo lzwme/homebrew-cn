@@ -14,6 +14,7 @@ class PerlDbdMysql < Formula
     sha256 cellar: :any,                 arm64_ventura: "5856394a6972be37c393c398e37eb562228bd8f395242474578fe5f0163e855c"
     sha256 cellar: :any,                 sonoma:        "8b3cea6ad248e91a4f742699682795bb9bf5ae0fa5fff437b5b028cec230838a"
     sha256 cellar: :any,                 ventura:       "45ea4c402cf8daab4b4d95068563cef1a0938aad685fb17af19a64664b889fcf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3b533ae5b046ffdfa7afc597b93db4bf46fad4ad21ce0ee4aaf272e4585ff2d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7566a04934048eb35442e588b0d1e45510e3cd5495c7ae383ccc87972a97f060"
   end
 

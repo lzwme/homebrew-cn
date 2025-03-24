@@ -14,6 +14,7 @@ class Avrdude < Formula
     sha256 sonoma:         "b3da9285a6b2c4d0a490362f3536e95e7364bc8ba95112b2eab123c69c3bc393"
     sha256 ventura:        "97d2a1fb9eab66186bb32320c0a4be603e22dc79271cc92f8c858ce818651120"
     sha256 monterey:       "d7f62c95f739d8fbeb35d45db9f3b49732e68df5d5bb99ddb19a156ed1e6971f"
+    sha256 arm64_linux:    "9985c193d4ab02a2cda981313bf94228b7668a3e5c508cf7bcf5c8539def4127"
     sha256 x86_64_linux:   "6a89480ec589d1823abcb3496619bca89e257b914815b32f00b225e45beea62a"
   end
 

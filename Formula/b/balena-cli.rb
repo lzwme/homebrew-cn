@@ -16,6 +16,7 @@ class BalenaCli < Formula
     sha256                               arm64_ventura: "824059243e801dc35cc386632e683c4004526f676f0d15a33236b6fd33ab991b"
     sha256                               sonoma:        "302fa20ec6da65e5cda6e641ffca5a6fcb4d7739af2abba7f4c5ffdc28ac1f01"
     sha256                               ventura:       "a08198cd42e034f75b6b3d80501c424376ada0f0df97e59b3617c0daef826bf6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4926d9cf07eabf425e0da89d8adb6719e2468eb61625c1629940b89f6c44efbf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b1057ef5b5eadccaae4076743dfb5907c7efc91a86aa57a4cc6c633e265774f"
   end
 

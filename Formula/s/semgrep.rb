@@ -20,6 +20,7 @@ class Semgrep < Formula
     sha256 cellar: :any,                 arm64_ventura: "47ecf96696064dc94df2140d6fedae83e83b30dda7ff6472cf210d2cadd282e0"
     sha256 cellar: :any,                 sonoma:        "84ed75e2143c80ba48a54a91f2b7c3303abac9e0e75d539232e36870a549b358"
     sha256 cellar: :any,                 ventura:       "ba7bcab0248a67f137cab8e3b8944f210406fe94a7fb1766ae042bd38c2270d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5f240f7becd2269049b721a9eed776a17aac3c06f9cb57287d1952b2dddeb2c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d534ca2c4dbbee75653b35dd8ad39b3c146dbce6e82d80dd2e326ccb731e314e"
   end
 

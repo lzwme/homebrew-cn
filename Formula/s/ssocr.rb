@@ -1,19 +1,24 @@
 class Ssocr < Formula
   desc "Seven Segment Optical Character Recognition"
   homepage "https:www.unix-ag.uni-kl.de~auerswalssocr"
-  url "https:www.unix-ag.uni-kl.de~auerswalssocrssocr-2.24.1.tar.bz2"
-  sha256 "563adcd6fe807c1cf55e4ec52d58dc5af5b8ccd787af7cb9568eeb7a71ae3d5c"
+  url "https:www.unix-ag.uni-kl.de~auerswalssocrssocr-2.25.0.tar.bz2"
+  sha256 "75caf81b4ddce2ecbd5142db3bb1c26178889e37010074b8ec4fe0b5009c676a"
   license "GPL-3.0-or-later"
   head "https:github.comauerswalssocr.git", branch: "master"
 
+  livecheck do
+    url :homepage
+    regex(href=.*?ssocr[._-]v?(\d+(?:\.\d+)+)\.ti)
+  end
+
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a1b3877af316686626fc798ea243b24657fb1b0468e3e6bc10c9199fbfbd64b7"
-    sha256 cellar: :any,                 arm64_sonoma:  "0e8e16f17874e0fee5bf2c9d1d793e5713f421c90845ebdac1be6b24043e7a6e"
-    sha256 cellar: :any,                 arm64_ventura: "29b908f4c7eba25b62c1db223308e94220189fc4b4f1f8f15b89a1d81045dd61"
-    sha256 cellar: :any,                 sonoma:        "035a63886c348ffa8db1375f256dede76cac864b375ab82f8fffca2710e5a3fa"
-    sha256 cellar: :any,                 ventura:       "977c33305dc392f8c75e46b3933542c90dcdb31b75fc56cbf1d9661097cc7b93"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4580d56b523fdbafbc7bd379604eea6377b4bc3ac69c1cf60f4cabc9f3df698"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ba0b6c92964518ff2df9082e0295a0f3e69c8171f988ed7e8345a47bf25e1ee"
+    sha256 cellar: :any,                 arm64_sequoia: "fd18440ae84caaafcb2f5d788c6c23ae95c0240dfc9f6b5166f35eaca59d33b5"
+    sha256 cellar: :any,                 arm64_sonoma:  "1ec94528ade23b5dae8efcd5d564d3bace361e8f2cb2187634f48f493954d9f0"
+    sha256 cellar: :any,                 arm64_ventura: "7769d47981f3e86469509853748242c33416ea8ba2e95447f6480ba358f8e13e"
+    sha256 cellar: :any,                 sonoma:        "c23687177f248921365de29f53ce885e3bdb2a62d72c1a3be95da8927f89d612"
+    sha256 cellar: :any,                 ventura:       "6f3f9eb54854f922fbd2aa3403fa6a9af7741ecd3ae259aefe9fb341d7b0b6c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "11ef4081db6d12e9ccc3683102223b2c4415712b0b54d1d66eb3083bcb3e2c4e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72a782a7a689c2127b876983da317908aca53f0699f0eae1dd7f7d60985aeda0"
   end
 
   depends_on "pkgconf" => :build

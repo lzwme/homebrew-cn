@@ -18,6 +18,7 @@ class Libopenmpt < Formula
     sha256 cellar: :any,                 arm64_ventura: "62a4ef42a7ed523d0ae62092fec43cbd55e587b009bf030ffe04a5dee2dc0606"
     sha256 cellar: :any,                 sonoma:        "9fe4c4ccb2ca7eff6f24bbe9eaf963daf681ddb16bd9225c7385539ef6644e53"
     sha256 cellar: :any,                 ventura:       "75e06237d8e5a42527e7d2f33399feb6bcc6dafcaf2f8ac43123d6a915fda6fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2cf870131606dcee1e4dd0fff1ac1fa410921fe708d310139d81934d507c2055"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7ed3050c7743f0fed603d3a001463d2e9c039526561b128492032841a83ff8c"
   end
 

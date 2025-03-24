@@ -30,6 +30,7 @@ class Systemd < Formula
   head "https:github.comsystemdsystemd.git", branch: "main"
 
   bottle do
+    sha256 arm64_linux:  "8252a53e6867d9f0c409941c49f2e1f87913e23e4887500a479f94f93e6d375a"
     sha256 x86_64_linux: "11cbe75b25e7bd77625f0c56710059ced178576e6d1ad0e865418a2f38210cb8"
   end
 

@@ -12,6 +12,7 @@ class Libirecovery < Formula
     sha256 cellar: :any,                 arm64_ventura: "f94d490451247969eafd81875cce5b9d2e6274eaa3472c1ec70e7fbad57cb73c"
     sha256 cellar: :any,                 sonoma:        "27ea53a0973bb2a7505d76db3fbf279b12f470b4f32066af6f0162d2c00e7e6b"
     sha256 cellar: :any,                 ventura:       "04164267c7cb92582d2c210db13e68c3963d233120d173931f2b875bd0faef69"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae625c342c140f8607eee693da903c59dede5ebb061461061ded9cda7503af9c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "81f40f20b147feba73637419fb12cf88172b82675ec8bc9ca396182505040a85"
   end
 

@@ -19,6 +19,7 @@ class Rtmidi < Formula
     sha256 cellar: :any,                 sonoma:         "af76d8dc24430b39e31a093c525d398801eb8908a0c08fc7145bd767879d9422"
     sha256 cellar: :any,                 ventura:        "65861bc757b6d02b30addc5fc15751927b3e82e33d03164bb02019976c1a20d5"
     sha256 cellar: :any,                 monterey:       "e106cd4273619be027dd5b8c1bc445d0b316753e9d541c7afe07a1dbd84fcdcf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "0f090a86a72631f9c0a800dd524f2914b313b7610a82ce34148e0d62a3af266b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0fff0e784b8a8779f1b8096e51b4d812d0190f7248c1fdf9ec75c5fe13c11b29"
   end
 

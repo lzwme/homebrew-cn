@@ -23,6 +23,7 @@ class Ponysay < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d412af3a212b5e3535e7832aa0c6d64a37e1271715ca89db5e56a56d2b8717a1"
     sha256 cellar: :any_skip_relocation, sonoma:        "a399855bc086848892024a1480ac18e1b53d5a53c2b8bbb472779870bceb92cc"
     sha256 cellar: :any_skip_relocation, ventura:       "2ad3b739716124c282a0d73df44ca1423865feb2afca9c01d1ef8783b33dd57e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2504c83a81ba25e6eb424014ebb4056ad61f9e7fa5090931a14920f1542d20f7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "80f37044f82a22ebc8480e11efd3c0a17934acebcc2cbc304b2f5c43a4a15843"
   end
 

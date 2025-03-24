@@ -19,6 +19,7 @@ class Cahute < Formula
     sha256 cellar: :any,                 arm64_ventura: "7fcf7b11c26bf1cee45ea46082d741952de45c82f3532f2849468495351ee161"
     sha256 cellar: :any,                 sonoma:        "56ce31df801211ccaf95a98f2d2dd9b8c79870d6aaa5784c039bd4a2b85936a7"
     sha256 cellar: :any,                 ventura:       "1aa7caddf5a84461d3633f09d878704f395ab7e0467f0817be79cd23ceaa10de"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "82332e01cda2c06e1d9cc09981c57ab9c00edbf1eb62219ee4b0838ecb821c21"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a58adf247829574b1deab7b035c71ec60e404e889241dc8e5910458508e09dec"
   end
 

@@ -17,6 +17,7 @@ class Mfoc < Formula
     sha256 cellar: :any,                 ventura:        "fe4940b2a72f324ba2c68b9d9cd454b1aeedaae44634a24fbaf6b64fab2a737d"
     sha256 cellar: :any,                 monterey:       "105fa3c4775e833eeae572bf9390702e56111eace14cae4f9391fc9f91d6b263"
     sha256 cellar: :any,                 big_sur:        "8c753373dea6cbd38da65e10340974fbeb654d1ced7c68a75d4a414360b73a39"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b488915855d2b7999488a17cfa7c4a8025043b225d606baff0662e33a0b0124f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "a3582c2f917cc657ba2c249b26fb0b064f5f93dcbee7e5fd310dec652c123450"
   end
 
