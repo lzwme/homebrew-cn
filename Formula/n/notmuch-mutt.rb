@@ -17,6 +17,7 @@ class NotmuchMutt < Formula
     sha256 cellar: :any,                 arm64_ventura: "88995f4ddbd5790dd5f4dfdb3fb922bb4c31d1fc0b8ba69c4e80a0c052848d41"
     sha256 cellar: :any,                 sonoma:        "f63f141a9a62d1245784c09573d7ccd2d19f385c4f1675a657ba75b227e22a2b"
     sha256 cellar: :any,                 ventura:       "a95b08d75d12c468eeb8c6e256db0e654b1b348ceadfb4475dd53a127c40891f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "79e57568eec4052b6913e94870ab4512d756251cdef6b5a99430a58c082718a0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2bf3fd1b806f84210edbfd26c718506ed9c6c3af7e93bf32c1c15b61856899c"
   end
 

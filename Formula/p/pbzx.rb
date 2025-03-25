@@ -20,6 +20,7 @@ class Pbzx < Formula
   end
 
   deprecate! date: "2024-03-13", because: :repo_archived
+  disable! date: "2025-03-24", because: :repo_archived
 
   # pbzx is a format employed OSX disk images
   depends_on :macos

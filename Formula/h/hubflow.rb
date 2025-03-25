@@ -14,6 +14,7 @@ class Hubflow < Formula
   end
 
   deprecate! date: "2024-03-05", because: :repo_archived
+  disable! date: "2025-03-24", because: :repo_archived
 
   def install
     ENV["INSTALL_INTO"] = libexec

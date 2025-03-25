@@ -1,7 +1,7 @@
 class Librttopo < Formula
   desc "RT Topology Library"
   homepage "https://git.osgeo.org/gitea/rttopo/librttopo"
-  url "https://git.osgeo.org/gitea/rttopo/librttopo/archive/librttopo-1.1.0.tar.gz"
+  url "https://deb.debian.org/debian/pool/main/libr/librttopo/librttopo_1.1.0.orig.tar.gz"
   sha256 "2e2fcabb48193a712a6c76ac9a9be2a53f82e32f91a2bc834d9f1b4fa9cd879f"
   license "GPL-2.0-or-later"
   head "https://git.osgeo.org/gitea/rttopo/librttopo.git", branch: "master"
@@ -23,6 +23,7 @@ class Librttopo < Formula
     sha256 cellar: :any,                 big_sur:        "59068843a454371abc25ad9421771eb2770febfaa00d41e1527476f4cbfdb05b"
     sha256 cellar: :any,                 catalina:       "9512f32068f310fc02c082828e4ebac85a698ef69f370243aa00a5b873569319"
     sha256 cellar: :any,                 mojave:         "d6bc9674875a3eeb44cec544f6cc9ac9ce6435f7fd951f446801a8aadcb1a323"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "9665c432abd2195df0985819c583373e355ad0ca39d57fc05814e90194a4d745"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7d6d9cbbb4846b4a3147ef8be9041c2d155e2b9c8c3b7b3720b71ec78b472667"
   end
 

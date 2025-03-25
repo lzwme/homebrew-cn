@@ -12,6 +12,7 @@ class Darklua < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5bd5f668a31c24ca6fd4c317e4699531c323b64c5cd19e37eb8b3458d6d8df63"
     sha256 cellar: :any_skip_relocation, sonoma:        "96749c157b2ff99a438cddb5159ffec85660e16b00e48ffb63a80882ca6278ed"
     sha256 cellar: :any_skip_relocation, ventura:       "ac5f3cc4f6355b66cae12369ae5dd85e1ab095af27a23cdf8a047c330b0f7b39"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab9e34f90b146992bbc5b7e88f14536fdf9bebabecd9cfbb3e657a4ef0b23f99"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8354ab92f83f7c68125c741cf2857d3fd8706e16a8769b719b16103b9a8e24d0"
   end
 

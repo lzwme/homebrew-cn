@@ -13,6 +13,7 @@ class Johnnydep < Formula
     sha256 cellar: :any,                 arm64_ventura: "3699fbfcdfcbcd3ec9ec8180a18280a5d3df7ac2e74e7b910a0081fe00d53909"
     sha256 cellar: :any,                 sonoma:        "4eea94989813c8cb15b0743e1d982ebc7a1f2306cc355379df8d10be21b4d95f"
     sha256 cellar: :any,                 ventura:       "15529e60f9ee2272f6389c84576a1274ee5f5ba2d82ebd2d3a832cdea4fe0c31"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5689ece41c047130b72b91c28674eed3de29e34acd2757bd402eb3c52a74f8f3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad06847d4a80c665aeb4775ce0800cd4c8b4c633d850913d60f86eff6d7350f2"
   end
 
@@ -22,6 +23,12 @@ class Johnnydep < Formula
   resource "anytree" do
     url "https:files.pythonhosted.orgpackagesf9442dd9c5d0c3befe899738b930aa056e003b1441bfbf34aab8fce90b2b7deaanytree-2.12.1.tar.gz"
     sha256 "244def434ccf31b668ed282954e5d315b4e066c4940b94aff4a7962d85947830"
+
+    # poetry build patch, upstream pr ref, https:github.comc0fec0deanytreepull271
+    patch do
+      url "https:github.comc0fec0deanytreecommitaa20d31631403f9650f3b4090d5c8579f9abaf5b.patch?full_index=1"
+      sha256 "05b9b5ecf80986fcecb195d798e1277c9e7c69ed5fd44fea9898e20a44828587"
+    end
   end
 
   resource "cachetools" do

@@ -16,6 +16,7 @@ class Groonga < Formula
     sha256 arm64_ventura: "21edfe4e5e7d06b179f86b4f1f366d467aa42fa45c7b8bae26b02fd9e9734a6d"
     sha256 sonoma:        "f9a6fc9c76877cf7d07fa08a3ff3bea7381dd9f5a7dea690e029d796d7e3fa4f"
     sha256 ventura:       "3bfb2db2445906cbb240ee6400449c3f4f6a14a29153e14698b8ed8e2dceb70c"
+    sha256 arm64_linux:   "7fd323c6c9c63c6f6a8ef0c6e2ace5f46236bac981a39b62a9554a00e736670a"
     sha256 x86_64_linux:  "a8cd2312c572639f143ed015567a0e494a14a2134267ab8a8c5047395960ec18"
   end
 

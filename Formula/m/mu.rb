@@ -23,6 +23,7 @@ class Mu < Formula
     sha256 cellar: :any, arm64_ventura: "18abf1014ca9bc182be4d1528f29090cf8039f3cc5bf23bf84b025548607a81f"
     sha256 cellar: :any, sonoma:        "a82f66383b70d7df47be82d4caa5f366ee62feb48cdd326b1cdd402be9cc5788"
     sha256 cellar: :any, ventura:       "7a6a22ea68bcefc37dff039b33719023917ccad18a92d4820f151e604e05d02b"
+    sha256               arm64_linux:   "a364b89d005289af517912a27ea7422a071c7bf38c75d8fb55eb64d0f56cd4fe"
     sha256               x86_64_linux:  "8c490262357176df7e899c2911184079b752ebdb42f00696d70a70ce37f80f51"
   end
 

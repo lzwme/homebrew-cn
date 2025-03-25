@@ -17,6 +17,7 @@ class Libva < Formula
   depends_on "pkgconf" => [:build, :test]
   depends_on "libdrm"
   depends_on "libx11"
+  depends_on "libxcb"
   depends_on "libxext"
   depends_on "libxfixes"
   depends_on :linux

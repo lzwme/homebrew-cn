@@ -1,18 +1,18 @@
 class ClickhouseSqlParser < Formula
   desc "Writing clickhouse sql parser in pure Go"
   homepage "https:github.comAfterShipclickhouse-sql-parser"
-  url "https:github.comAfterShipclickhouse-sql-parserarchiverefstagsv0.4.4.tar.gz"
-  sha256 "97e577154a69b4675eb218e21f125f065b2382ad77a06e08bb03c7bb31a4cdc5"
+  url "https:github.comAfterShipclickhouse-sql-parserarchiverefstagsv0.4.5.tar.gz"
+  sha256 "da55449639e7e745127eea1f1568e7d5cbf3ed54d78fadeaf8b684eda188ce9e"
   license "MIT"
   head "https:github.comAfterShipclickhouse-sql-parser.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d0d4a4ac4f1904d7370ece32eebc711558eca70be0a79aaf46eab4f5b38ae64"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d0d4a4ac4f1904d7370ece32eebc711558eca70be0a79aaf46eab4f5b38ae64"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2d0d4a4ac4f1904d7370ece32eebc711558eca70be0a79aaf46eab4f5b38ae64"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0ad9e98d36a58a643bba7f37d8037b7c15f367a1b1e92e56f22c74cb1de93add"
-    sha256 cellar: :any_skip_relocation, ventura:       "0ad9e98d36a58a643bba7f37d8037b7c15f367a1b1e92e56f22c74cb1de93add"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4dd93075390d6fbaefeba1d8033d844995d18b6faf50bcc79f1f0229cb5e3fe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b8e2310f066f9105c89c44462988e4df759e4adef8eb8ad0a6be3d667c205a0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b8e2310f066f9105c89c44462988e4df759e4adef8eb8ad0a6be3d667c205a0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4b8e2310f066f9105c89c44462988e4df759e4adef8eb8ad0a6be3d667c205a0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dba203f1b092c4e873145ab439a73ff5c42b51c7861f6d0454db29af2c66c627"
+    sha256 cellar: :any_skip_relocation, ventura:       "dba203f1b092c4e873145ab439a73ff5c42b51c7861f6d0454db29af2c66c627"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5bece39493f2123cec98c243194bb829da8d10ec70804ff120bfadb6e10ce766"
   end
 
   depends_on "go" => :build

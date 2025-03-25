@@ -14,6 +14,7 @@ class Pipgrip < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8200545764bb23a787a49b0fc005dde71dcf392ea6768e4b35882928be00c753"
     sha256 cellar: :any_skip_relocation, sonoma:        "6765b9fc84ef8911ea27ca8b1d4585cda50a6c582ac32bce062e7fe5a813d2ea"
     sha256 cellar: :any_skip_relocation, ventura:       "6765b9fc84ef8911ea27ca8b1d4585cda50a6c582ac32bce062e7fe5a813d2ea"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9845a02f039857039cd822de651efab04a91e70fe02cc07699a8dacbb0cdcdf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ccdc85fb3e71bcbd61b7c62fe7f213f8cdc11461b440792c881a155ab03e582"
   end
 
@@ -22,6 +23,12 @@ class Pipgrip < Formula
   resource "anytree" do
     url "https:files.pythonhosted.orgpackagesf9442dd9c5d0c3befe899738b930aa056e003b1441bfbf34aab8fce90b2b7deaanytree-2.12.1.tar.gz"
     sha256 "244def434ccf31b668ed282954e5d315b4e066c4940b94aff4a7962d85947830"
+
+    # poetry build patch, upstream pr ref, https:github.comc0fec0deanytreepull271
+    patch do
+      url "https:github.comc0fec0deanytreecommitaa20d31631403f9650f3b4090d5c8579f9abaf5b.patch?full_index=1"
+      sha256 "05b9b5ecf80986fcecb195d798e1277c9e7c69ed5fd44fea9898e20a44828587"
+    end
   end
 
   resource "click" do

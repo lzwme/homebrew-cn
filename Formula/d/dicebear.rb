@@ -11,6 +11,7 @@ class Dicebear < Formula
     sha256 cellar: :any,                 arm64_ventura: "5046d62bd429c224479312085090e5ffff58d13afc0296e39862a45478261a12"
     sha256                               sonoma:        "51873d0358db2c72a4d0750e0d385b91f4956acf2bad9e6b5a53b46c695f5db2"
     sha256                               ventura:       "51873d0358db2c72a4d0750e0d385b91f4956acf2bad9e6b5a53b46c695f5db2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d49ce11619a7c5457a090a4b0c2a5f3c34ff7e2e36b7eac733c02b9c50f70d5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8e5304c29b9f49af28a870360fc2964e32b884a2c59ebbd66ab028bda584ff7"
   end
 

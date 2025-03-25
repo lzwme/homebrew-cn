@@ -1,10 +1,10 @@
 class Tor < Formula
   desc "Anonymizing overlay network for TCP"
   homepage "https://www.torproject.org/"
-  url "https://www.torproject.org/dist/tor-0.4.8.15.tar.gz"
-  mirror "https://www.torservers.net/mirrors/torproject.org/dist/tor-0.4.8.15.tar.gz"
-  mirror "https://fossies.org/linux/misc/tor-0.4.8.15.tar.gz"
-  sha256 "5d5d99e21992c4c71af1afcef16c70f4c5e7ee021633ac138b2a2761be75064b"
+  url "https://www.torproject.org/dist/tor-0.4.8.16.tar.gz"
+  mirror "https://www.torservers.net/mirrors/torproject.org/dist/tor-0.4.8.16.tar.gz"
+  mirror "https://fossies.org/linux/misc/tor-0.4.8.16.tar.gz"
+  sha256 "6540dd377a120fb8e7d27530aa3b7ff72a0fa5b4f670fe1d64c987c1cfd390cb"
   # Complete list of licenses:
   # https://gitweb.torproject.org/tor.git/plain/LICENSE
   license all_of: [
@@ -20,13 +20,13 @@ class Tor < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "7f93ba499b0e8b4b1d7b68ba8e6888f4bcd762fbe86391ccadd48ebb6a8b2f59"
-    sha256 arm64_sonoma:  "e1c6eed0b9c562d41170a2f46936a7a6fa790bf8b4cbca809850fe5aeddf1455"
-    sha256 arm64_ventura: "c678018b39a93e36f7b8784f7c35c90ee0b6830a16b5dbab130ae17293989a85"
-    sha256 sonoma:        "7cc71b145d8d6772f54a011d5df72a47a2ce599668aa964d1a17998762f85e22"
-    sha256 ventura:       "c79357a19f3032927d095d360eb179e0e73e97143d00deedb3abeaa0b9e4f456"
-    sha256 arm64_linux:   "2c8c9d97b80ab731926ef263b56321f2e638026ceb9ff17ec68afdba7ccf94a5"
-    sha256 x86_64_linux:  "505f6e83ce334976eb557bb7f6050b98ddfaa99927b2e281e15ce89a5954c52f"
+    sha256 arm64_sequoia: "1f3a2c7456fac3016ed33c3078243a7c6fa27d94a8122fdb25f6d3a034414a43"
+    sha256 arm64_sonoma:  "3a40fae449d8714a2834cf0bad2b2ccf7f7735807323f67d09623e892f414115"
+    sha256 arm64_ventura: "0958a6020aeb21f4f133df81c965b95a98ee87504e5d14d1c464010fcde8268e"
+    sha256 sonoma:        "2c231639cf6c3eeb57a7b608f363865c0909dd5cc91784e539bc1e9529ffaa7b"
+    sha256 ventura:       "639c1761f6c70f16a2a64b6cee766921b3227f9a210afa1e8da235fb9bd2b69a"
+    sha256 arm64_linux:   "55af83536eefe0403425adfe9562dd34cadee956553c28514b1741abf23a149f"
+    sha256 x86_64_linux:  "19a5400c30b6ba114000c1593b858cb33aad3effe743a42f2537756e0e200934"
   end
 
   depends_on "pkgconf" => :build

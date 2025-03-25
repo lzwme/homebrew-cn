@@ -1,8 +1,8 @@
 class Hurl < Formula
   desc "Run and Test HTTP Requests with plain text and curl"
   homepage "https:hurl.dev"
-  url "https:github.comOrange-OpenSourcehurlarchiverefstags6.1.0.tar.gz"
-  sha256 "7ac2cca05a3a22cd92bd10b46c39a4277fd64d10ab989e46a2e8aca112d842f0"
+  url "https:github.comOrange-OpenSourcehurlarchiverefstags6.1.1.tar.gz"
+  sha256 "26ef1ed685f4b94190914a0e03127f7b7f6a488abf65758c19092dc6b9034b2c"
   license "Apache-2.0"
   head "https:github.comOrange-OpenSourcehurl.git", branch: "master"
 
@@ -15,13 +15,13 @@ class Hurl < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a9724befbd65ab3cd69ba08f88c06c1e97551ad25acdeeb76d7e91af9f602f68"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "680324f2f2726a9c57e8136f88201c82d88ff99179acf8de2f24d2916533c0cd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "408048abf2059482fc1da3bd33c221fa070d6f56c2d2531b6eb41f287286272f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1efea483c8eed8f01e054f9b328c5223a167245ca2540ed309d7e959f3d53034"
-    sha256 cellar: :any_skip_relocation, ventura:       "b8412c24ff6dd2c065c26bae004f6b6ea1e4dc7cad5510c2622233ababf20ec8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "717bbc3d0a48eedb4b04d9feb49b48dd494af8f8649a0db523c60de12f0a6972"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3742791db0c358f3fee5844972eb3809e03c0f8ed85816b56f2298d7ebf7f9ff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0580eea478d4c02659b1a8637e4ee7c2921bf4f7922546315f9f06b11aef64e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e267e70f355ad821be193f973081f0e0abc69b2bdb08fcc6a32aa977c807754c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "80f9f55257157bcdbce39f036b9ce0c82e82a6d58b46d4fc773dcec8e296d333"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8791f49c5281f560ca43e6539cf8e20ece6284285458a151f8762c262799a841"
+    sha256 cellar: :any_skip_relocation, ventura:       "c2687dc9b8c865a50eaa19de4022a19492ede31d4a24b354f347a4f90c8f4c17"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "84c1996b20423a345f84c535e53c01b297a499d838fc6df4aa0c08ed184775a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eba4cba1f46c24cff1ffe75a3c342456564a1707b80b4a83e1eb02c62f736208"
   end
 
   depends_on "pkgconf" => :build

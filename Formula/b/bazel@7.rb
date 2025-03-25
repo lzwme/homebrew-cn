@@ -1,8 +1,8 @@
 class BazelAT7 < Formula
   desc "Google's own build tool"
   homepage "https:bazel.build"
-  url "https:github.combazelbuildbazelreleasesdownload7.5.0bazel-7.5.0-dist.zip"
-  sha256 "9d3d9b74cf3cbba0401874c3a1f70efc6531878d34146b22d4fd209276efafdd"
+  url "https:github.combazelbuildbazelreleasesdownload7.6.0bazel-7.6.0-dist.zip"
+  sha256 "79028d077f06f33883ba8af3a23e519defc36502f6da67952eb74ad33ec1d852"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class BazelAT7 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b10fc5c92751ed7c907ed621eb42e2c1d377089ed7d05b7613634a86385f34e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "63850ab1d8b6a984577ba3d87d4d3a133e6b3e1b0d6613df0176ae1b3e9bbb7d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9853c78824ec885d1d7b7306e6882c7243395de8fe055abc2877aaed1502b486"
-    sha256 cellar: :any_skip_relocation, sonoma:        "094e82dadafcea81e42fca307c1962695a8a0e5b2748335500daad183e5a56a4"
-    sha256 cellar: :any_skip_relocation, ventura:       "66e0a7448cb5374793a663252775bdfed4647461214e428aeb23c6d124d3d9d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4eff82a51f3631c8a5418590c5455ea384d9487a17d77189066aeca98a3bdc05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e098d28082d5e8f800e17d4d2477bd37fcd80ed85b7a5ab4844d596264136a93"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e453cd993e64629450a3a3e478979c05f2e4864b99daf516518b3fc92aee738"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d866fb4b90d160181f6529a2687b8f26a40aaa04bf4c1bcbcd12e23ed9d154cf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e53ccebe65c45c2b62dbdbff3bfd7c8cac8c08d0853337263f717c38f2649a31"
+    sha256 cellar: :any_skip_relocation, sonoma:        "83545e7004c529220df9dadd2e9338f40bebefc1002132db88ec00aa717edcec"
+    sha256 cellar: :any_skip_relocation, ventura:       "0d494e39573cbac4b906a037794c366014510a4b020a0c87ae98cf8a67ec04fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c6d9d99e930795f0103529875895bcf018a757b19ca83709b5841bf4a499d06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a18f41a81c58b984e587879fcd60ea6f9dd24908db341d598e2e4f5953c1b072"
   end
 
   keg_only :versioned_formula

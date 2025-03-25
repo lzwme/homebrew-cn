@@ -11,12 +11,13 @@ class Dolt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0bfe94020846a9df66e4670be4f16fc0958a089cf331cfd9a7db854cc687de3f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9079495162dfa4d5bc32dbce07c806b9997131b2c32540217f08c81903b4dae"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "10b0b42bfb9dec62fecfc00e0300afe3197db5f87dd209916406a39413186c8a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "616d575f53915772324ccf7320a6598e119c67539e2e6e7f32951d709fe94250"
-    sha256 cellar: :any_skip_relocation, ventura:       "7411a2db9ec1d4dfa56b57917b0e84609bbbf8ebc5d6abc0b11f6139dcd95a78"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9aa08275c39350841b068753b16a81c5b2541d7a0e95e0a851b069e3008b5c85"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fdfd3c6a204e4c088bfcb754b6651ba584906d5ce6648fa10ce5f175cdafc346"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b00067257e1aabe5241a6b7aabcea349f7e5d6c23cfb7642ee4a9a81fbb2eadb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d83b666eecc13cec65d83ec744adf9bb8d490f493c60fa7dd1fdb6a6bc11817d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fd410b7f0aa8a13d33a07f43e2b8ed33c0dbe12598a0f91b4e0ef5778a21bb8a"
+    sha256 cellar: :any_skip_relocation, ventura:       "5ab1ac6e1bdba878ff958b1ae724fcd6225a358e885f2f9fd4d7725619d0e16c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df6ba39498bf0b1224f82d7c77dd37c276f7d5e8cb01812c72fefe75a19a9010"
   end
 
   depends_on "go" => :build
@@ -25,6 +26,19 @@ class Dolt < Formula
     chdir "go" do
       system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmddolt"
     end
+  end
+
+  def post_install
+    (var"log").mkpath unless (var"log").exist?
+    (var"dolt").mkpath
+  end
+
+  service do
+    run [opt_bin"dolt", "sql-server"]
+    keep_alive true
+    log_path var"logdolt.log"
+    error_log_path var"logdolt.error.log"
+    working_dir var"dolt"
   end
 
   test do

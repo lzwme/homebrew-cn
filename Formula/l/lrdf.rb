@@ -20,6 +20,7 @@ class Lrdf < Formula
     sha256 cellar: :any,                 high_sierra:    "e15d0f6129cd4ba502860f0ab0367eceadf2a377be9dd25af30c52ebffd064c6"
     sha256 cellar: :any,                 sierra:         "27f0d95eed42b70eb6685ffe8608465b0f39b88b544dbee080fe3decf81512ed"
     sha256 cellar: :any,                 el_capitan:     "f615e775140216eff74cd0fe751ace5993030c00921574da635a44b41d8bba57"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "7ebc904f67f824e682d13f0ca1f0176c17b8aadcea4270c1cf476a4bcfd40835"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4cb0169c0f75331b17aedb8d9f54283c5487230015b284429f6a6ee9f72344d2"
   end
 

@@ -1,8 +1,8 @@
 class Telegraf < Formula
   desc "Plugin-driven server agent for collecting & reporting metrics"
   homepage "https:www.influxdata.comtime-series-platformtelegraf"
-  url "https:github.cominfluxdatatelegrafarchiverefstagsv1.34.0.tar.gz"
-  sha256 "0bdaf8c8e306bbf514418c7de1da00d5d1ba14617ba69eacdd13f6796e4ff4ea"
+  url "https:github.cominfluxdatatelegrafarchiverefstagsv1.34.1.tar.gz"
+  sha256 "e529bed574fa05f7e157098ccccc5b03780d72a9eeb9fa5cecbfde8b518f0ab1"
   license "MIT"
   head "https:github.cominfluxdatatelegraf.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Telegraf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f345c063c5e9cd332544cce65abbe78c783becc488495aa1821495ea8c5cf1b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "02590e5468dece11e031772c512e2b4e312fc39a5c981113d77d7160fc5e4449"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "85070e23cdc2f3a4a7a14d06e36902a38705d403f313c0c9845c1685929d4689"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dbc9c5f29a07c17eb0d0298f97f29dab296458aa074ad125deea7adaef8bd5c2"
-    sha256 cellar: :any_skip_relocation, ventura:       "40470ad2e2fa2dd6ab272ea6921aa46606949338fa6cbc63a54867c30a7bbcb5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b02f64ddf6794fae8efb96d95f3d3dcfe0643086693247c98478545a711db57"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0436b0af98fffc763f9825953fbc747ad16e687970d10c6a9ff396c3c5560c2a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ec8a89fd6d4880a2fd14d4d66ea4aaac844e137265fecc077cafecf4de2d135"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e775058b04ea766620006bb8e361ca569e737a687fc182bae4fab3824ae92256"
+    sha256 cellar: :any_skip_relocation, sonoma:        "76df635de645fc837de8aef9986f20a7b742c751d3bc41b5bee1294f416679ad"
+    sha256 cellar: :any_skip_relocation, ventura:       "805e14506df56b2664d37c157f394165988ac466ecfa06102d78e7a43d4c029a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f705e8aeff474ae755248e61f8bd0b6f8d8bd2814c88122dfb16ca461a34030"
   end
 
   depends_on "go" => :build

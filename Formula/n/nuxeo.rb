@@ -16,6 +16,7 @@ class Nuxeo < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "bfb386e5a43d6172b64ad766dac4c3e0abd1974f773137636df9a27e4d9e0d40"
     sha256 cellar: :any_skip_relocation, sonoma:        "d2b82e5f576dbc1052cb08fa1c28da569dbabf3bed0c6b8988141e0f40b021ab"
     sha256 cellar: :any_skip_relocation, ventura:       "d2b82e5f576dbc1052cb08fa1c28da569dbabf3bed0c6b8988141e0f40b021ab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bfb386e5a43d6172b64ad766dac4c3e0abd1974f773137636df9a27e4d9e0d40"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfb386e5a43d6172b64ad766dac4c3e0abd1974f773137636df9a27e4d9e0d40"
   end
 

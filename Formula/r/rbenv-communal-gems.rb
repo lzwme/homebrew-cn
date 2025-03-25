@@ -12,6 +12,7 @@ class RbenvCommunalGems < Formula
   end
 
   deprecate! date: "2024-03-14", because: :repo_archived
+  disable! date: "2025-03-24", because: :repo_archived
 
   depends_on "rbenv"
 

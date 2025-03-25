@@ -12,6 +12,7 @@ class NetlifyCli < Formula
     sha256                               arm64_ventura: "466967f08530358219e171a79a296d6155621fca96ab82409a4667d6c3795b8c"
     sha256                               sonoma:        "cd0a8609562050a0d1fcb924f73da462982e9e22d7afe7ef761f255abd3b806c"
     sha256                               ventura:       "3c3bcf39e40e42e45f68c713877155b2eab59d0bf13e2d7f6b36aeb23c91e5a8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3429042c12411fc114b1dcb748336aa79ed2ad49af204f8b2000432daf16066"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4674a56e235fe1e3138697ac60a9f817249cf46a122f3971dc889ed3f30dac11"
   end
 

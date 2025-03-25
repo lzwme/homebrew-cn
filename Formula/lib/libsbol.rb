@@ -12,6 +12,7 @@ class Libsbol < Formula
     sha256 cellar: :any,                 arm64_ventura: "82dca670a8ca74e4f974727a4b895a2664dbf74601a79e59c657fa1fbfd8f546"
     sha256 cellar: :any,                 sonoma:        "ee16f7b504002ebc4845c479d3b6abf3858deabc1ff9f0671b100f7a58c85af4"
     sha256 cellar: :any,                 ventura:       "34f6fef82f97d5be5834994ce870e42a643b3334e9b4c0539b7a922edcdc7e6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e6c5e5965c77dd8dc497af89ddbc8fea4542ccd551c57422967d19a42a8b87e0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ef4f70407b40a1c4791f08309df2075a15cac5a038f0085ecfa23ff0d460258"
   end
 

@@ -1,8 +1,8 @@
 class Libpinyin < Formula
   desc "Library to deal with pinyin"
   homepage "https:github.comlibpinyinlibpinyin"
-  url "https:github.comlibpinyinlibpinyinarchiverefstags2.10.0.tar.gz"
-  sha256 "478d98ce15a2ff887fdd183c904dba82c2724f3cb9439f8441c736f0ff293279"
+  url "https:github.comlibpinyinlibpinyinarchiverefstags2.10.1.tar.gz"
+  sha256 "f7444b0cedeb1e6011e08aa503e1e1513df11b60cddc7ed9693e630675d8fd87"
   license "GPL-3.0-or-later"
 
   # Tags with a 90+ patch are unstable (e.g., the 2.9.91 tag is marked as
@@ -13,13 +13,13 @@ class Libpinyin < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b8dac5d58d160815c73c53d8fa267cf5ec595d20c99946ab3b0520899a14ef1a"
-    sha256 cellar: :any,                 arm64_sonoma:  "7de23fd9ef7c1df08b5d7b5a4fe483d6cc716ecea6159b64959efb0c8c8ff3cb"
-    sha256 cellar: :any,                 arm64_ventura: "66cef63e3182ab1cc950f068660ccb82907670e4bf02973f68f9c0abbc637804"
-    sha256 cellar: :any,                 sonoma:        "42ac21b0b3d68421af64b543a327303a6055a84d5954b3f5caba3454ad8f840d"
-    sha256 cellar: :any,                 ventura:       "9950ba2086c77bad3f506e3bd18a1d98366de65bb676d80815963446a0620bce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1fbbd8e1c8506fa173616da2c2f6d97d74477f9225a86915ec6300f47b42342"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74ba1959f1051f9d85c55e2eaed3c713e361cc881baa2aefa6c20279e4c08353"
+    sha256 cellar: :any,                 arm64_sequoia: "b3a7f8f3c78acae8c2688018a778d8bd1f87f41e492380acc83572b727a72fc2"
+    sha256 cellar: :any,                 arm64_sonoma:  "aacf0504d2ef686d7f2be9243b2d7806e5d4e296a0d8281fb39abf052a237ccb"
+    sha256 cellar: :any,                 arm64_ventura: "538b68fef893238e2dac6bc79011a2e2b306b76369b7cc0d2fadfcd835b3852e"
+    sha256 cellar: :any,                 sonoma:        "23eb8e8f59debecba46d2d98403ba5b5bbad91ec69a2dd2a813cf22e4d970f61"
+    sha256 cellar: :any,                 ventura:       "158dc73fed2ccda3e8d04fbe4cae6e0aff470d0ee3a5aaedf4d60314f974d9f9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "230456760164843688e08ab606754c64e2bbb0c02e483fde8c7063e5088d9ff3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84a37f05541a6b55433a2ca832b45d746eaf91f7be103f1455f3fe51de9457df"
   end
 
   depends_on "autoconf" => :build

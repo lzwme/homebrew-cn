@@ -11,6 +11,7 @@ class JoplinCli < Formula
     sha256                               arm64_ventura: "8dc693cfcfd51ee835358b03a1fa11db7497689aec6a8e6373b81601c15481fb"
     sha256                               sonoma:        "e31ded0565672883780bda90b5af4e0a09ade984ec18896d648d411d234719df"
     sha256                               ventura:       "e14c0abb59664e2e479cc0b98f54706702f3cc52a9ca9854991424c7abc48a58"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8aa51f82139120230b1666ead67b3f24ccf40f9c339b6500f50b0a83216192a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d985598b03af1e5f55f80e87931e9d3b9e1d48f153c14693a20f25d7967c53b"
   end
 

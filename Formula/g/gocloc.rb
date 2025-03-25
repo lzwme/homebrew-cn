@@ -1,18 +1,18 @@
 class Gocloc < Formula
   desc "Little fast LoC counter"
   homepage "https:github.comhhattogocloc"
-  url "https:github.comhhattogoclocarchiverefstagsv0.6.0.tar.gz"
-  sha256 "f75b9b086488c03422af273fbf98507417850895ed40ffaa0e745c627c7b2f3a"
+  url "https:github.comhhattogoclocarchiverefstagsv0.7.0.tar.gz"
+  sha256 "9375f6699a7bffad42da661b4ba7988af23dd01191da4a4b21eca8f9bb676d9a"
   license "MIT"
   head "https:github.comhhattogocloc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e61208963fc60ab3653ad04d87dc8632c4b7561451277670109b8ece15371be"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0e61208963fc60ab3653ad04d87dc8632c4b7561451277670109b8ece15371be"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0e61208963fc60ab3653ad04d87dc8632c4b7561451277670109b8ece15371be"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9db335d92dd572edfb9cfa35d295670c6933d76e8075af3a17b3ad062a0f090b"
-    sha256 cellar: :any_skip_relocation, ventura:       "9db335d92dd572edfb9cfa35d295670c6933d76e8075af3a17b3ad062a0f090b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81cea40130aee4a6572e5477ffcfc374c528d1586066770d6c5337b29d1bd616"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e452e9000a544b1086039bd90fe518fdc8926255f7a274b0170d5c7b6d761e57"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e452e9000a544b1086039bd90fe518fdc8926255f7a274b0170d5c7b6d761e57"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e452e9000a544b1086039bd90fe518fdc8926255f7a274b0170d5c7b6d761e57"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b823c57b1e74b2f39fd119e41bd39582f023dd8d8afef45267c77f361a7c24c1"
+    sha256 cellar: :any_skip_relocation, ventura:       "b823c57b1e74b2f39fd119e41bd39582f023dd8d8afef45267c77f361a7c24c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1583c49ecfb4ccc1ae98e917f9c53021afbca5641bdcd70ed934064255034c71"
   end
 
   depends_on "go" => :build

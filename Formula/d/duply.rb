@@ -18,6 +18,7 @@ class Duply < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "6b438a4e468cf24e66a3607703073e05ddfe9f6b41c8db9ec438e75f08066d2d"
     sha256 cellar: :any_skip_relocation, sonoma:        "e7b6dfcf4d2d1b4da0c0c3b1ed3675ecff11be1149201931b281f15369b5a5a1"
     sha256 cellar: :any_skip_relocation, ventura:       "e7b6dfcf4d2d1b4da0c0c3b1ed3675ecff11be1149201931b281f15369b5a5a1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b438a4e468cf24e66a3607703073e05ddfe9f6b41c8db9ec438e75f08066d2d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b438a4e468cf24e66a3607703073e05ddfe9f6b41c8db9ec438e75f08066d2d"
   end
 

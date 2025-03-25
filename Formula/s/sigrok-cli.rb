@@ -21,6 +21,7 @@ class SigrokCli < Formula
     sha256 cellar: :any,                 monterey:       "c66c8195acaf4a1865d2df389b0295f9ccf6cca5f4cf6db78b3ad686c35bc3fd"
     sha256 cellar: :any,                 big_sur:        "5a02c04e5b3148c70995ca652850eb8146ab436d102c19f5c96b39a578c5b31e"
     sha256 cellar: :any,                 catalina:       "79af0118b674614921744d9f9a29c929e95ec0a5b60613ddbd31fa27f3fa18af"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "ba72045f4b14e589786904ff79dd12e08890d0379ede83f2454f75333d314e4d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9b58556d1098376a5d2f261f7e437a18bfa72b6cf8ba63deec1595422ee63c4f"
   end
 

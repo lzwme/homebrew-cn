@@ -23,6 +23,7 @@ class Fasttext < Formula
   end
 
   deprecate! date: "2024-03-19", because: :repo_archived
+  disable! date: "2025-03-24", because: :repo_archived
 
   depends_on "cmake" => :build
 

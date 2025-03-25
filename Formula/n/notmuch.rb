@@ -21,6 +21,7 @@ class Notmuch < Formula
     sha256 cellar: :any,                 arm64_ventura: "592e3240392b89a60c68eba4c9bcb7d705c60733a3a8366642336c6369811cc4"
     sha256 cellar: :any,                 sonoma:        "10fa6fbceadb544587d026f3591a1a43c3054cfce290f5d56beda33a201fc98b"
     sha256 cellar: :any,                 ventura:       "3de2605deb58d1854e07fa28ac0730ee6ea82599510297a910d03df7cabbbb4a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c80cca3bee58a9d91c20a624e643b924a5dbda61b7563c26a3d526b31f80d2f8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1572f5f82da23d1493d0651c6294c7694f473c36c77d0d08c6f8d535c3ad700b"
   end
 

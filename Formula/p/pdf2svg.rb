@@ -11,6 +11,7 @@ class Pdf2svg < Formula
     sha256 cellar: :any,                 arm64_ventura: "e5fde5427d8f50595f2ef126a344279f95b24aed9097db080b25b3afa0999f6d"
     sha256 cellar: :any,                 sonoma:        "0f825f54919369deb5adc309ff369f6679c53b04d89a240fec3d031f004d63ef"
     sha256 cellar: :any,                 ventura:       "fba60b0a305fdb79d8034016b76a2eecd88ca173e0321115ee395c03194e4852"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e6b1ca19d159da250501acac0611393208b5bd33b797014c02825eea3c7ebba3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbb6cfd9a930910cb3c8d58c1ee940b6ba0df882292f6252a7c03ce23e0bacf0"
   end
 

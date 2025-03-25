@@ -1,18 +1,18 @@
 class Pinact < Formula
   desc "Pins GitHub Actions to full hashes and versions"
   homepage "https:github.comsuzuki-shunsukepinact"
-  url "https:github.comsuzuki-shunsukepinactarchiverefstagsv2.0.4.tar.gz"
-  sha256 "1e448da8a4b2be37f6a27809717840f47e58efca44e2883a7f7a39f535b59e8c"
+  url "https:github.comsuzuki-shunsukepinactarchiverefstagsv2.1.0.tar.gz"
+  sha256 "1fcd2a45767aedb5cff4de72cbb8acacee0d841641d0dd8c2b787c3fb47b8d30"
   license "MIT"
   head "https:github.comsuzuki-shunsukepinact.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f69c09fffee64e98879a8b246e96a7c5836ada016f726e8fcabef1c73ceb401e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f69c09fffee64e98879a8b246e96a7c5836ada016f726e8fcabef1c73ceb401e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f69c09fffee64e98879a8b246e96a7c5836ada016f726e8fcabef1c73ceb401e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9b2606a2f0369e755b50d8a6a030884b8f52251db1e6f73142516f523e333d6e"
-    sha256 cellar: :any_skip_relocation, ventura:       "9b2606a2f0369e755b50d8a6a030884b8f52251db1e6f73142516f523e333d6e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5944cc9f1d0a67ba211f85de44893e1e84043d5b7a9059c59dcc3c47f15a506d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba5eb0e4e270bfc01db5b82f09b0cd1b6c9ae463e31c2e15793c9fe58e3bcd5c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba5eb0e4e270bfc01db5b82f09b0cd1b6c9ae463e31c2e15793c9fe58e3bcd5c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ba5eb0e4e270bfc01db5b82f09b0cd1b6c9ae463e31c2e15793c9fe58e3bcd5c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6f1bb20c3034d18f099a74036abe1ea791f2b746548fe28c6835e78a0fb05689"
+    sha256 cellar: :any_skip_relocation, ventura:       "6f1bb20c3034d18f099a74036abe1ea791f2b746548fe28c6835e78a0fb05689"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4bc05cbb5ce37733d6248f64e6bb1553a539f7ebb67dbe3b828019b4e561714"
   end
 
   depends_on "go" => :build

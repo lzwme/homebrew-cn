@@ -3,19 +3,19 @@ class Pwntools < Formula
 
   desc "CTF framework used by Gallopsled in every CTF"
   homepage "https:github.comGallopsledpwntools"
-  url "https:files.pythonhosted.orgpackages120952f0bf1706b844acec79ea1c8a64b3823891890fe44f36eb607710061334pwntools-4.14.0.tar.gz"
-  sha256 "83b3247de083dffafac3bf40f4d1455732f16e25ce3105fd09b55ac0f0d12e83"
+  url "https:files.pythonhosted.orgpackages21941f39d5a770226b9d240c9900c5c912788fb31f8f189aacd81153c0d59f67pwntools-4.14.1.tar.gz"
+  sha256 "60f04976d1722120d18b9d50553408a024664b5cf888f36f258afca4bf035cac"
   license "MIT"
   head "https:github.comGallopsledpwntools.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ea65edf6c8ca771da1515ff2af7617de425d6d0911fc573b9fadde17a2615581"
-    sha256 cellar: :any,                 arm64_sonoma:  "b66c55d6f40e3aeba520e565d02acd7ca121cacc31b4e247052cc76820830c32"
-    sha256 cellar: :any,                 arm64_ventura: "9dfd63060ba27f49bcb1465152d29819585d7796467651e0cba54c909a74bcb7"
-    sha256 cellar: :any,                 sonoma:        "b5b0e5a1d05ba2bb9e92f30eb88e47e3bc59a810d0fb140c5ede5f9a08eb66e3"
-    sha256 cellar: :any,                 ventura:       "d0817a712c7f1765538faae9d47887063b38c7a24cc055f8d1e5b2c2f53d9368"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc511a8cb019739497381df45956c00811c6b1c01d97488235691e26d26dbd75"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48b0fb59adf8ba997fc52df43c464e39ed9e44c882b139f0f5c774f0e96dc8da"
+    sha256 cellar: :any,                 arm64_sequoia: "8aeabb1da2e073cf98271f5aa6a77bb53f87bd9f6836e87447034d393cc7d443"
+    sha256 cellar: :any,                 arm64_sonoma:  "bc82947f0006968034657b332a60d3be80385ddd7eb6938fd521b991166ad308"
+    sha256 cellar: :any,                 arm64_ventura: "9238f6ca15b8daaad7b7dbc9c45a0edb8491a76bfba181ee972ff865b174dc21"
+    sha256 cellar: :any,                 sonoma:        "a76835ebbd1f3cfbdab68b4d817a0f6e2f46ac93cff1cb5157d1d2ba1c74acb9"
+    sha256 cellar: :any,                 ventura:       "f4964b88b6888cbc13b888e4526bfb7f70a97ce0d7461b4ff1ce5acd166e68c0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4e1fbf0fcf71e6138c8f49f16cbd4d7d9784a4d91609dd73a5d2b6c016da0aa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "932c911b364f5c269486b75ed63bb5a635de5ea626a868f89a2c480134ed3a8c"
   end
 
   depends_on "rust" => :build # for bcrypt
@@ -34,8 +34,8 @@ class Pwntools < Formula
   conflicts_with "scala", because: "both install `common` binaries"
 
   resource "bcrypt" do
-    url "https:files.pythonhosted.orgpackages568cdd696962612e4cd83c40a9e6b3db77bfe65a830f4b9af44098708584686cbcrypt-4.2.1.tar.gz"
-    sha256 "6765386e3ab87f569b276988742039baab087b2cdb01e809d74e74503c2faafe"
+    url "https:files.pythonhosted.orgpackagesbb5d6d7433e0f3cd46ce0b43cd65e1db465ea024dbb8216fb2404e919c2ad77bbcrypt-4.3.0.tar.gz"
+    sha256 "3a3fd2204178b6d2adcf09cb4f6426ffef54762577a7c9b54c159008cb288c18"
   end
 
   resource "charset-normalizer" do
@@ -59,8 +59,8 @@ class Pwntools < Formula
   end
 
   resource "mako" do
-    url "https:files.pythonhosted.orgpackages5fd98518279534ed7dace1795d5a47e49d5299dd0994eed1053996402a8902f9mako-1.3.8.tar.gz"
-    sha256 "577b97e414580d3e088d47c2dbbe9594aa7a5146ed2875d4dfa9075af2dd3cc8"
+    url "https:files.pythonhosted.orgpackages624fddb1965901bc388958db9f0c991255b2c469349a741ae8c9cd8a562d70a6mako-1.3.9.tar.gz"
+    sha256 "b5d65ff3462870feec922dbccf38f6efb44e5714d7b593a656be86663d8600ac"
   end
 
   resource "markupsafe" do
@@ -74,8 +74,8 @@ class Pwntools < Formula
   end
 
   resource "paramiko" do
-    url "https:files.pythonhosted.orgpackages1b0fc00296e36ff7485935b83d466c4f2cf5934b84b0ad14e81796e1d9d3609bparamiko-3.5.0.tar.gz"
-    sha256 "ad11e540da4f55cedda52931f1a3f812a8238a7af7f62a60de538cd80bb28124"
+    url "https:files.pythonhosted.orgpackages7d15ad6ce226e8138315f2451c2aeea985bf35ee910afb477bae7477dc3a8f3bparamiko-3.5.1.tar.gz"
+    sha256 "b2c665bc45b2b215bd7d7f039901b14b067da00f3a11e6640995fd58f2664822"
   end
 
   resource "plumbum" do
@@ -84,13 +84,13 @@ class Pwntools < Formula
   end
 
   resource "psutil" do
-    url "https:files.pythonhosted.orgpackages1f5a07871137bb752428aa4b659f910b399ba6f291156bdea939be3e96cae7cbpsutil-6.1.1.tar.gz"
-    sha256 "cf8496728c18f2d0b45198f06895be52f36611711746b7f30c464b422b50e2f5"
+    url "https:files.pythonhosted.orgpackages2a80336820c1ad9286a4ded7e845b2eccfcb27851ab8ac6abece774a6ff4d3depsutil-7.0.0.tar.gz"
+    sha256 "7be9c3eba38beccb6495ea33afd982a44074b78f28c434a1f51cc07fd315c456"
   end
 
   resource "pyelftools" do
-    url "https:files.pythonhosted.orgpackages88560f2d69ed9a0060da009f672ddec8a71c041d098a66f6b1d80264bf6bbdc0pyelftools-0.31.tar.gz"
-    sha256 "c774416b10310156879443b81187d182d8d9ee499660380e645918b50bc88f99"
+    url "https:files.pythonhosted.orgpackagesb9ab33968940b2deb3d92f5b146bc6d4009a5f95d1d06c148ea2f9ee965071afpyelftools-0.32.tar.gz"
+    sha256 "6de90ee7b8263e740c8715a925382d4099b354f29ac48ea40d840cf7aa14ace5"
   end
 
   resource "pygments" do
@@ -124,8 +124,8 @@ class Pwntools < Formula
   end
 
   resource "ropgadget" do
-    url "https:files.pythonhosted.orgpackagesba4e4065dd3c968d3979a459033405ef4cd9543f6f8840e010789a7585f3ae55ROPGadget-7.5.tar.gz"
-    sha256 "c6b0a596c4a1d17ae928206119f6d8248d1607d6e577a205e75a7d298142accb"
+    url "https:files.pythonhosted.orgpackagesb5ad7c6c9078c143d5cb7965f2d06a3aadc5f9e638276dd86e57ce8c9a30457cropgadget-7.6.tar.gz"
+    sha256 "8883c54e4627073a2ce7cd8adbaf7ef72478442c0a5da1308c3c2e37641174c3"
   end
 
   resource "rpyc" do
@@ -144,8 +144,8 @@ class Pwntools < Formula
   end
 
   resource "unicorn" do
-    url "https:files.pythonhosted.orgpackages48d51aaaa398d215f31880cb73e7a8dde30a0f8a42c7ec9ec1aad6641e2dcd7aunicorn-2.1.1.tar.gz"
-    sha256 "904f4146b09cd708fdf6b90ebb48d30eaa0ba339382964d4d08c0b9399cf4ba3"
+    url "https:files.pythonhosted.orgpackages9012a10f01a3e1dafcd21e2eb0c0d99bb51d5bda1d3fee20047cb2a4b2de6285unicorn-2.1.2.tar.gz"
+    sha256 "e4a9d671bdea71806f29a396734cfb83317f82943b52d0001d3bca1dcbaee893"
   end
 
   resource "unix-ar" do

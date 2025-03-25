@@ -1,8 +1,8 @@
 class Spot < Formula
   desc "Platform for LTL and ω-automata manipulation"
   homepage "https://spot.lre.epita.fr"
-  url "https://www.lrde.epita.fr/dload/spot/spot-2.12.2.tar.gz"
-  sha256 "f2785a47faa6732bc7baec7c39468c443d37c8adc7f42faa1258761954a96bb4"
+  url "https://www.lrde.epita.fr/dload/spot/spot-2.13.tar.gz"
+  sha256 "0d0fe673cf1bc8933727bc8e0be7ba36901445211e2945ac73fb09835c81f4eb"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,12 +11,12 @@ class Spot < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "82c09d875f4e37b130c36270f35f83fb4ec296a5f62620adcee6cf7ad9b71f4b"
-    sha256 cellar: :any,                 arm64_sonoma:  "7a6a26e2561b4420d81d9dc14e183ddeb3abc291cddae35f45dd124c17ad8c2a"
-    sha256 cellar: :any,                 arm64_ventura: "7f798e72df761b27eb9546475ceb39dfcb8c164f9e07dfad789cfc5ca804b71d"
-    sha256 cellar: :any,                 sonoma:        "48fc323e63d1e0d7efc50a44ece6301fa03983a4b6df4596e43be9d7f01b0b34"
-    sha256 cellar: :any,                 ventura:       "2957d881e871e1168b47668b2c5d066f0bf92ab762a028ce9048d0b6c9b6c1e6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f43e975ba5ef966d887256c7674e2b7b5755e54dbf5311f2b506fb80dc00fe56"
+    sha256 cellar: :any,                 arm64_sequoia: "13d7c8ac11db34a7a8b764a21ec432aee23e82f6c203993d82b5205ea3d24ad8"
+    sha256 cellar: :any,                 arm64_sonoma:  "d68082eb2748cdd6319776cbd969f22d0c706a3fe6ffe03d43c61926f6495074"
+    sha256 cellar: :any,                 arm64_ventura: "3479c7f105845b206b887e043302f428da3e0324050321461988db1a3a9a5a5e"
+    sha256 cellar: :any,                 sonoma:        "b50160f4850825a805e49fb599804c358dd9622d4c2ad65b6d25a52c8912de2b"
+    sha256 cellar: :any,                 ventura:       "2926815fb5ec93988f881c5958711fa8474947d948dc3071c3043c377da5786f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "790b0da5e46c005e3848272613832fd3d28563b09df8f4747cc93eabacfeda91"
   end
 
   depends_on "python@3.13" => :build

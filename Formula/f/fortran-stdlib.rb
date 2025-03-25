@@ -11,6 +11,7 @@ class FortranStdlib < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b1453730b11fe70788ebce7b4a007a9536d4f323bbf4b41f87d8136d6f4ac820"
     sha256 cellar: :any_skip_relocation, sonoma:        "88b04ee788cef96770fb93382cdeb2cf18c7892f2b939ae39f058b1da46a1962"
     sha256 cellar: :any_skip_relocation, ventura:       "0a92743f68b516233fd5796fd48b6070a75ecaf9d1176b7705cadee4ee3df04c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b972e6d0193d93e1278d9c73c90a3013c1a9be32d3afe6e626fceaa2febfabe6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "75455c2f164e2797e3e05ec2fe8b0528cb16c1fefbb5a84a3a29be96b17b427d"
   end
 

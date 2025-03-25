@@ -12,6 +12,7 @@ class Appium < Formula
     sha256 cellar: :any,                 arm64_ventura: "8d7a68e6017264f345bb7c2fe3f8116b03f8882dfc6663eb3298658ff8f5e33e"
     sha256                               sonoma:        "0c5e0056a384b78f540293a0008fa79eedb7918d1eac8a1ea1cef64a23900a35"
     sha256                               ventura:       "0c5e0056a384b78f540293a0008fa79eedb7918d1eac8a1ea1cef64a23900a35"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d468f98ae06a07cba4268719adde647a2b39209439a4d6f0a653bcfbc4714b9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd240452e0d4ae4cdf5fb5350466e172dcfc30f8bbbdb90e4f5ab0e757258518"
   end
 
