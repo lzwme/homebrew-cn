@@ -1,8 +1,8 @@
 class Ethereum < Formula
   desc "Official Go implementation of the Ethereum protocol"
   homepage "https:geth.ethereum.org"
-  url "https:github.comethereumgo-ethereumarchiverefstagsv1.15.5.tar.gz"
-  sha256 "28bf39f2ef52d4b8a3750307a9bc7fb92db30983a7cb50cf0db4b38c630fe790"
+  url "https:github.comethereumgo-ethereumarchiverefstagsv1.15.6.tar.gz"
+  sha256 "b5296151c8a3d07f571cb5691501d8c9c8987fa83d3f8c56396c62c83bb2e08f"
   license "LGPL-3.0-or-later"
   head "https:github.comethereumgo-ethereum.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Ethereum < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49f30788d58a99a5b041f05ade61ea072e2d2cae8a67bc5d35d5c86c9ebf64a4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73a3ab586343d0c3295d55fde5dde0f78830f0fd7bb393a3f121209fc38590fe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fe64c15ef20618a14d25fc92f9d18482dd4e36609cf296c196eacecbceae83b0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a34e74be3acac25d36397811ffa9ddd35fc14a213535b617663097a38a2d83d6"
-    sha256 cellar: :any_skip_relocation, ventura:       "10569be6f6dc78f33541eedfaab4c9da1406eca06aed92322c661ac8998a38a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a6532455e21ac68057187e21be89b30919dfb5a15b7c45dc25c64bc63f8f6ff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd4e55c690380a79831f46d18675a4058deca9bc6f260be4e2bf410a4c02e995"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "65625a43dabda6c50d42fdb6370ebf3ea63fdfaf3d7608190c8f9f1423e0de67"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b66084ece0061b01b18a2d96711f569c32634e43cb73e6a90b3b801143c22908"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1f3a38c22c1897216cc0763f17912ef9db495fe7829db6facf1692bbbba14441"
+    sha256 cellar: :any_skip_relocation, ventura:       "a437fbe8b00bc52d1e1a877737ee05fc7ded4c2bc87682fc5d27ce2b1a712f16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "849270c3c3530c5aa2b8426837753c74f6bfaf5a2aedcac4bc6fa2d11d62c381"
   end
 
   depends_on "go" => :build

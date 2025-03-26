@@ -23,6 +23,9 @@ class Primer3 < Formula
   end
 
   def install
+    # workaround for `thal.c:429:13: error: ISO C++ forbids comparison between pointer and integer`
+    ENV.append_to_cflags "-fpermissive" if OS.linux?
+
     system "make", "-C", "src", "install", "PREFIX=#{prefix}"
     pkgshare.install "srcprimer3_config"
     prefix.install "srcLICENSE_GPL3_for_Amplicon3"

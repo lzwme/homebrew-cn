@@ -2,18 +2,18 @@ class Metricbeat < Formula
   desc "Collect metrics from your systems and services"
   homepage "https:www.elastic.cobeatsmetricbeat"
   url "https:github.comelasticbeats.git",
-      tag:      "v8.17.3",
-      revision: "3747d0eb6c26247477dd62ca51535cff8d6338b7"
+      tag:      "v8.17.4",
+      revision: "5449535b768a9308714a63dc745911c924da307b"
   license "Apache-2.0"
   head "https:github.comelasticbeats.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5bda4a82890f681461be8ef247cf768f1ff6674eeee0fa877312bfbb6d2da86c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9b96902fc401a2c4be40ba9da5d6756edcd0375bec3a519b3e07ab65af3a6348"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "40ac22dc136930b36d2b2c954f9154b593cd7f76171e5512e94eab03043db06d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "36a69c5e2484d97ac40f859623efb630805c7eb0e87e71b088a1c4bfb46c01d2"
-    sha256 cellar: :any_skip_relocation, ventura:       "392864efe4edd9b35a0827680b2a5557fc01a76c472a8cfbf3061faeb9c26667"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e35a623b9fa298db04c08d7c4b4f174a62e8cf31d315bb0ad3f552b38cb6e012"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07ee09fa05696e11e055f1d3f366caf073e7e92707077a60bd31c9d2b56f389f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "418b104030cc5c53fa3c211848e50431374f971d2093ec4b6a60598220ad37f9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "27d40e5ed66fbc6433db73ce006b5900b7f43a9c70590c082a6aabe28337a3c8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "699242e57c8102f12cb29de22ee4410dc8543847efcf23905090027d62fc6d71"
+    sha256 cellar: :any_skip_relocation, ventura:       "79d1e5eb20df23bbb08186c495491ba18362380e4727d57b2e2ffe2e56a43d71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25e74b9a48f998cfa3a4b9437749cd599f7083ac5d1a34bdd26646773e977cd5"
   end
 
   depends_on "go" => :build

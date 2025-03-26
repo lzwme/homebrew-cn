@@ -1,18 +1,18 @@
 class Okteto < Formula
   desc "Build better apps by developing and testing code directly in Kubernetes"
   homepage "https:okteto.com"
-  url "https:github.comoktetooktetoarchiverefstags3.5.0.tar.gz"
-  sha256 "eb1b447f2d44bffce79e286757d4805f7fd02755de9263e86c797838f8c1e573"
+  url "https:github.comoktetooktetoarchiverefstags3.5.1.tar.gz"
+  sha256 "45f6277ab79c51a21e649ff02aa6b3321b333721efa176b9877a263776b59b47"
   license "Apache-2.0"
   head "https:github.comoktetookteto.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "90b12a72add79ac5783fcacf6e49369ecb32daa3cec6fbd430ec1edd7135e982"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "983aa4fb31f31d7f64adcc63ea8c2a7f23dcf8f53139337f15c94df7538990e5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0549666cbc13b4467ec5bfd1c1cb450b15cf91de21a0097b4f34cda6205a9636"
-    sha256 cellar: :any_skip_relocation, sonoma:        "140fc6387113faef3fd0edb165e90061399298c39d7ece7a627ad1bbea2d6958"
-    sha256 cellar: :any_skip_relocation, ventura:       "51126956bf9118fbc21032c6d531f6b9e56dfbf6e9f3c5a14754cf7124b9b08d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "023900d228ff274c3aacf2a4183ca70627bca7d205605cff954767a7f0bbee94"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9272bce2897ad66047f6ad1f6e6c3014a85c10e8f1712be21018494f90f06dd4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd268c545414ca5bfcb86248a955d936e574c9044358fa93dd8e9130b71de0f7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "153b6034fc77af4d807a97fab522c89e9cf08616d4a66ca2b4c2f007a5368f17"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2b51042ff60845a73611688396523a60a956f9736e533400d129f81fd6c9b0b8"
+    sha256 cellar: :any_skip_relocation, ventura:       "45074f7308f0a7fd2993112726732db361457e201320cc3f9839ca07031fed90"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8316107f8396bda4343f3c58e37998fe7475dc59f28327153e8a645c870f2d96"
   end
 
   depends_on "go" => :build

@@ -1,12 +1,12 @@
 class Strace < Formula
   desc "Diagnostic, instructional, and debugging tool for the Linux kernel"
   homepage "https:strace.io"
-  url "https:github.comstracestracereleasesdownloadv6.13strace-6.13.tar.xz"
-  sha256 "e209daf0ee038ca5adcc4c277e9273b4d51f46a2ff86da575d36742ac3508a17"
+  url "https:github.comstracestracereleasesdownloadv6.14strace-6.14.tar.xz"
+  sha256 "244f3b5c20a32854ca9b7ca7a3ee091dd3d4bd20933a171ecee8db486c77d3c9"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7ce2b2214ab4561587d4a0b6ef438cabc48e85f836a1b07425d353c2c073b264"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "335c9c43ed7b79bf4c441ddabeaa802224dc3f03af94cb760d172937a3e2eda9"
   end
 
   head do

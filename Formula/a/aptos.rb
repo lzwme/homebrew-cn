@@ -1,8 +1,8 @@
 class Aptos < Formula
   desc "Layer 1 blockchain built to support fair access to decentralized assets for all"
   homepage "https:aptosfoundation.org"
-  url "https:github.comaptos-labsaptos-corearchiverefstagsaptos-cli-v6.2.0.tar.gz"
-  sha256 "feb35b7a4ff80c1297bcfc680972a9adc85e82e3ea98059da7833643cd5c4c8a"
+  url "https:github.comaptos-labsaptos-corearchiverefstagsaptos-cli-v7.0.0.tar.gz"
+  sha256 "3fa6875f34e587f049719b2cd9cf3e8be25aec812efa43ba7e7042a3948cf8ac"
   license "Apache-2.0"
   head "https:github.comaptos-labsaptos-core.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Aptos < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a07395c0d806327f694248eca8da50c33721a41a9e53553a68404e2e44f1f24d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f120a076268e03160a6b274255ec53fcf8caf82ed83d7272e49a4d657a37217f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0d18a76ea74f5bd3afa89ac2647a0212cd4977e3d898802f5cdcdebc674a2d5f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c09fdae09e212ea9fd9cc387e84f63c2b6ad6cf31e669f778c675410bf7d74a6"
-    sha256 cellar: :any_skip_relocation, ventura:       "6e32791729c7d581d3e0dc347b7f267bd4f8a2563f4c06c675cba69455eb5839"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "535be30c4612aa286c2fd7573aabe8db66b44ea8ed00f6551ce62903c468c0c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85af82415db0c1b552f7583f5fd184024218202f13a3e5ba29c22d1d61035751"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d6614b83d4e428b601124c3cfeab6a1a6c7ec0c6107100a4f2316a26ebd71de7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f3c26943aaba95d282ecc80b36c40565e2caf1b6ed1a5d60f7bb99c6977d6b5b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "24d5c338c95bd4254b752bffdd7c334546e1095e8251ad9b18ae932ac3faa261"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ff5b7f318516c8232f6a4be002572d6af0f615fe8d5445e54bf32bb87349ba75"
+    sha256 cellar: :any_skip_relocation, ventura:       "f57b138504693a38f0483835ec3776555921b2e2e2414e8e9cbd098305c06faa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b13eb84488b8022251c012c96df1bed82608d8b9fdaa9b38e38afee2007fb3cc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4ea1a8ecb381c7dd9e7c49ff6dc99f3484d25d980d1b27c612947f93fd2738a"
   end
 
   depends_on "cmake" => :build

@@ -25,6 +25,7 @@ class Wwwoffle < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "090085b4a39e90929744310494ef3157dfc77f7c2910047dfbdc75c75fe7c8f7"
     sha256 cellar: :any_skip_relocation, sierra:         "9310fffe992916bf09700c8d6fd018943a14c73c27f28e3c61548f56b7f301d2"
     sha256 cellar: :any_skip_relocation, el_capitan:     "0877d44d105e2ec35e38e2d2e760f6c2973f53f98d784ccf16bed6d47e37db38"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "364d7e80791686aea7174f34a719f858612c73c1e9e7d99dccb6a70b13a7f6e4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ddd784479bb56270b0d643cb2cccbc9e48264423c4190c1a1b251988dd503b68"
   end
 

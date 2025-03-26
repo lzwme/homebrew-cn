@@ -3,18 +3,18 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https:prowler.com"
-  url "https:files.pythonhosted.orgpackages79c802c622fd767808599a977104306c3192cb4b1175dc5d9cdd5863a8f96c2eprowler-5.4.1.tar.gz"
-  sha256 "aaa55c3e2984a1769e4a955e670dce64e1b92bc7f69cb5a83fc0f76eb037699d"
+  url "https:files.pythonhosted.orgpackagesc4090cd3fa9b9a465b7a84885b1a1437ff6d44795669bcf56e3ba6ed036de46cprowler-5.4.2.tar.gz"
+  sha256 "a0d4b9cb48277e4e9b6d10887f8670bf39693f0f06c594dd9b10b78899607803"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "36c0eb9b81bd59fdb7d4bdb0a9f8329a5bd4621ef883ab08f7df049426f7a783"
-    sha256 cellar: :any,                 arm64_sonoma:  "2f6337ebbd9660e435a62d5e918598831860c4752986a10ed0344dacbf6e9c28"
-    sha256 cellar: :any,                 arm64_ventura: "a178413bed1eeefd26db4b127ddb2946899a8a486ceb7f40933a7a0b6ef99446"
-    sha256 cellar: :any,                 sonoma:        "051d3b40f7e041b6dbb1529b3163fa77fbcdf2d4a74d4be575dac3ef66b9ca4d"
-    sha256 cellar: :any,                 ventura:       "f924cf29cee9bf732b65b73273db690a758107ebb08d9bb81a05c90ed24bd8f0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6230a3b05c3c806b971a5f2ac8e1e64240d43bc17b6a46a32489b705b7b66719"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f32a6f0d4178f422d2f821ef9b6d10397e0cc37a56382c6bda173bc5363de012"
+    sha256 cellar: :any,                 arm64_sequoia: "f6a0baa2a4492b850d7ea3fb0c75e69d96350dd176782f63e3d59e531eb6d3b3"
+    sha256 cellar: :any,                 arm64_sonoma:  "af33b5a2c3a1b2caebc2bc68b383c225bc4424491de4ad9f2d16a3f8acaed3b0"
+    sha256 cellar: :any,                 arm64_ventura: "f55fb98b54b65476d95b182a76bc2e76083e85dd7d798b8f06d3f0490b8e2b17"
+    sha256 cellar: :any,                 sonoma:        "5b89dda2dda6a4fb63e1e2ee976d05872898c86cfc94a5cf83c6e3ce87ca4a6c"
+    sha256 cellar: :any,                 ventura:       "8619deb6183b1631cbffde237895c4c44e7f0552ee12aace5abcc90f11c7d563"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ffb374eb7f3da00abd74e28eb7290bb50ee4345cc3ead6724afc2e1d37a52b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6c30b33bf7bd0a708b1f61344b28ecec4988a6cf63862e0df6b4c1c37c2f987"
   end
 
   depends_on "cmake" => :build
@@ -452,8 +452,8 @@ class Prowler < Formula
   end
 
   resource "msgraph-core" do
-    url "https:files.pythonhosted.orgpackages1a6710c564fa4674c1459242c55625f5dfcba190c4d835418ba7aa3bcf66e1a6msgraph_core-1.3.2.tar.gz"
-    sha256 "d23964bfb20f636874ef875a984f5ab9e48fc4854f1530c6e4a617b84d59777d"
+    url "https:files.pythonhosted.orgpackagesd79af078f7d0ea8f55ba5c85fa53487bd6ffec2403542c117bf5b2a8b86f11a5msgraph_core-1.3.3.tar.gz"
+    sha256 "a3226b08b4cf9b6dbb16b868be21d5f82d8ee514ae8e46d9f0cad896159ef8d3"
   end
 
   resource "msgraph-sdk" do
@@ -472,8 +472,8 @@ class Prowler < Formula
   end
 
   resource "narwhals" do
-    url "https:files.pythonhosted.orgpackages36fac2b6a4d5dbc4af15aa58c86920d5275a9c65142318179b246685069f57danarwhals-1.31.0.tar.gz"
-    sha256 "333472e2562343dfdd27407ec9b5114a07c81d0416794e4ac6b703dd925c6a1a"
+    url "https:files.pythonhosted.orgpackagesc1e5aa97891440bf6bc4239e9b918d89fea58eb87dff1d8d14a69b45ef677e66narwhals-1.32.0.tar.gz"
+    sha256 "bd0aa41434737adb4b26f8593f3559abc7d938730ece010fe727b58bc363580d"
   end
 
   resource "nest-asyncio" do
@@ -487,18 +487,18 @@ class Prowler < Formula
   end
 
   resource "opentelemetry-api" do
-    url "https:files.pythonhosted.orgpackages58899d80fa1265a25306b5d9b2707ef09094a6dda9feeac2ee159d5a214f989copentelemetry_api-1.31.0.tar.gz"
-    sha256 "d8da59e83e8e3993b4726e4c1023cd46f57c4d5a73142e239247e7d814309de1"
+    url "https:files.pythonhosted.orgpackages8acfdb26ab9d748bf50d6edf524fb863aa4da616ba1ce46c57a7dff1112b73fbopentelemetry_api-1.31.1.tar.gz"
+    sha256 "137ad4b64215f02b3000a0292e077641c8611aab636414632a9b9068593b7e91"
   end
 
   resource "opentelemetry-sdk" do
-    url "https:files.pythonhosted.orgpackagesa8cc2f461097fa53e7db0e5aca8be93be94d658a551f047129a206c34cc19d8dopentelemetry_sdk-1.31.0.tar.gz"
-    sha256 "452d7d5b3c1db2e5e4cb64abede0ddd20690cb244a559c73a59652fdf6726070"
+    url "https:files.pythonhosted.orgpackages63d94fe159908a63661e9e635e66edc0d0d816ed20cebcce886132b19ae87761opentelemetry_sdk-1.31.1.tar.gz"
+    sha256 "c95f61e74b60769f8ff01ec6ffd3d29684743404603df34b20aa16a49dc8d903"
   end
 
   resource "opentelemetry-semantic-conventions" do
-    url "https:files.pythonhosted.orgpackagesb10b923171ff87ac44064b47bb798ac983917799458b7a5475d0badbf3f1e929opentelemetry_semantic_conventions-0.52b0.tar.gz"
-    sha256 "f8bc8873a69d0a2f45746c31980baad2bb10ccee16b1816497ccf99417770386"
+    url "https:files.pythonhosted.orgpackages068c599f9f27cff097ec4d76fbe9fe6d1a74577ceec52efe1a999511e3c42ef5opentelemetry_semantic_conventions-0.52b1.tar.gz"
+    sha256 "7b3d226ecf7523c27499758a58b542b48a0ac8d12be03c0488ff8ec60c5bae5d"
   end
 
   resource "packaging" do
@@ -557,8 +557,8 @@ class Prowler < Formula
   end
 
   resource "pyparsing" do
-    url "https:files.pythonhosted.orgpackages8b1a3544f4f299a47911c2ab3710f534e52fea62a633c96806995da5d25be4b2pyparsing-3.2.1.tar.gz"
-    sha256 "61980854fd66de3a90028d679a954d5f2623e83144b5afe5ee86f43d762e5f0a"
+    url "https:files.pythonhosted.orgpackages55f03a81fb395058f5fc84bccb0dc9ca09eddf69b3cc86ccab6729c680121912pyparsing-3.2.2.tar.gz"
+    sha256 "2a857aee851f113c2de9d4bfd9061baea478cb0f1c7ca6cbf594942d6d111575"
   end
 
   resource "python-dateutil" do
@@ -622,8 +622,8 @@ class Prowler < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackageseadf9f719dc48f64284be8bd99e2e0bb0dd6e9f8e2c2c3c7bf7a685bc5adf2c7setuptools-77.0.1.tar.gz"
-    sha256 "a1246a1b4178c66d7cf50c9fc6d530fac3f89bc284cf803c7fa878c41b1a03b2"
+    url "https:files.pythonhosted.orgpackages474255a8f24bd1287676b23e56a6d94e416be390ca6e0ee30fa46a782d038f80setuptools-78.0.1.tar.gz"
+    sha256 "4321d2dc2157b976dee03e1037c9f2bc5fea503c0c47d3c9458e0e8e49e659ce"
   end
 
   resource "shodan" do
@@ -667,8 +667,8 @@ class Prowler < Formula
   end
 
   resource "tzdata" do
-    url "https:files.pythonhosted.orgpackages430ffa4723f22942480be4ca9527bbde8d43f6c3f2fe8412f00e7f5f6746bc8btzdata-2025.1.tar.gz"
-    sha256 "24894909e88cdb28bd1636c6887801df64cb485bd593f2fd83ef29075a81d694"
+    url "https:files.pythonhosted.orgpackages95321a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5tzdata-2025.2.tar.gz"
+    sha256 "b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
   end
 
   resource "tzlocal" do

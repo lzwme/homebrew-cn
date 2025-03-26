@@ -1,13 +1,15 @@
 class Udunits < Formula
   desc "Unidata unit conversion library"
-  homepage "https:www.unidata.ucar.edusoftwareudunits"
-  url "https:artifacts.unidata.ucar.edurepositorydownloads-udunits2.2.28udunits-2.2.28.tar.gz"
+  homepage "https:docs.unidata.ucar.eduudunitscurrent"
+  url "https:downloads.unidata.ucar.eduudunits2.2.28udunits-2.2.28.tar.gz"
   sha256 "590baec83161a3fd62c00efa66f6113cec8a7c461e3f61a5182167e0cc5d579e"
   license "UCAR"
 
   livecheck do
-    url "https:artifacts.unidata.ucar.eduservicerestrepositorybrowsedownloads-udunitscurrent"
-    regex(href=.*?udunits[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https:downloads.unidata.ucar.eduudunitsrelease_info.json"
+    strategy :json do |json|
+      json["releases"]&.map { |item| item["version"] }
+    end
   end
 
   bottle do

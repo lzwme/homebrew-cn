@@ -19,6 +19,7 @@ class Alot < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ae3093b552e4356af46b534412c2aaeac27921b04d7b79ba80d58d712dca1be3"
     sha256 cellar: :any_skip_relocation, sonoma:        "b227c60e1cc403080fa8c14f5b97ab1634fd0e54f31f696fd61fbfa9b8ee84b7"
     sha256 cellar: :any_skip_relocation, ventura:       "435c5020ea65a79b2d3f016cd82d2c63c65302dad9f3a946e2f1b82cde02852c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dbedea413b1240a740111e09751bd30f3accfa52951214658ba71fcfb105e849"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7e1d080cafcf5344a658d854bafd8f0b44483568a9f39301b23f5179048ab8d"
   end
 

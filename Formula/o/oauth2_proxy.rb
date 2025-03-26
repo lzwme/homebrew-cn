@@ -1,18 +1,18 @@
 class Oauth2Proxy < Formula
   desc "Reverse proxy for authenticating users via OAuth 2 providers"
   homepage "https:oauth2-proxy.github.iooauth2-proxy"
-  url "https:github.comoauth2-proxyoauth2-proxyarchiverefstagsv7.8.1.tar.gz"
-  sha256 "047e054e0bf690543711cfda9b9f02ef5a52fd46586fb2ec4613711d3675d808"
+  url "https:github.comoauth2-proxyoauth2-proxyarchiverefstagsv7.8.2.tar.gz"
+  sha256 "96f23df77e6b31425579edb631492e9fe3a014bb296c5a261eeb6b9ada5c7787"
   license "MIT"
   head "https:github.comoauth2-proxyoauth2-proxy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4995279cb3ea6e2a897397fd9b110e5c2428b526ccff077cd197b7845d63085"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a4995279cb3ea6e2a897397fd9b110e5c2428b526ccff077cd197b7845d63085"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a4995279cb3ea6e2a897397fd9b110e5c2428b526ccff077cd197b7845d63085"
-    sha256 cellar: :any_skip_relocation, sonoma:        "82677377d9f3d56cabeff1569aff9797a4f8565a18cc4cfcfb4e097681a7552e"
-    sha256 cellar: :any_skip_relocation, ventura:       "82677377d9f3d56cabeff1569aff9797a4f8565a18cc4cfcfb4e097681a7552e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db1e56a64f604eca68210699ea5081107733672872b563f91b5371fcef1a1c3a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "229d5cd89ad4b6d458364ac131f23c75919bf11e57a9ec67a438b6c3f5ef39ba"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2e416079de347fda2afc806783b4730c895c3ca94e9e39d332334337f138985"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "389980ef311594c69aebd52344e85f5f4397db6428c5c496e84e3e243a2d46fd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f6cb43cf4331002a499df942ef6d4c52202ccc3c3d375f66cca7f9fed1fd5f75"
+    sha256 cellar: :any_skip_relocation, ventura:       "b58beb6f2253a9181aa84bc8cbbd3a669066d2f711419d2a91e450482c0d484e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d7d736ff70cfec44232435520a39996a971f02e15c766bc5017f5e2a8a593ae2"
   end
 
   depends_on "go" => :build

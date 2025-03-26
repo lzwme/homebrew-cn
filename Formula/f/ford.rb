@@ -3,20 +3,19 @@ class Ford < Formula
 
   desc "Automatic documentation generator for modern Fortran programs"
   homepage "https:github.comFortran-FOSS-Programmersford"
-  url "https:files.pythonhosted.orgpackagesb5ebec32133d28c57141d96081f5a23060e7cca71b423ff96505cd7ebac50aa7ford-7.0.9.tar.gz"
-  sha256 "b9b660552a753f1d5265c3355548ca2bc4e38828a0802c03da347ebdd6d594ab"
+  url "https:files.pythonhosted.orgpackages0108a2380f5a63e0dc8e428c9307ee26e4455fce4775a76964a86b7068a9edc7ford-7.0.10.tar.gz"
+  sha256 "b1271adcd8a33af89aa65cd176ed25fe252b3e0a52aa9f1fd00b0e8c51fc4086"
   license "GPL-3.0-or-later"
-  revision 2
   head "https:github.comFortran-FOSS-Programmersford.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5005ea1da7c3e6630cbdc275327a2b2c3a7fae8b9602044d944c85a2dabdb3b4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0890114dc0f27f1afaae6a22b0afa868a236a5e863c926179a6e09a556c639b4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "690a29a1c06d2631170d4cc42d3cb8de60115afdf38500c74e7d37ca48e461c5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3c8ec1b98469f13e70e1a61d8fd19b398117386f37051749e183a63299bcd96d"
-    sha256 cellar: :any_skip_relocation, ventura:       "83cb9e6edb78355189cc384d823ba8ecad5ac27f97a50b0fe0f91dfeba1b955d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4dfed2eea9893742f594abe1cfa03bda317bcd1ba7026ef11c5d37c1b2a23a42"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "082b1fd740fa16b21b998b1924bb900773dce341daddb561c32ecf8e6acd6543"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b98e82cc4f5d7da6fdf8d9cab78d992c6b3e75b0aea9fa5f27bee2beb22649d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ccd562f662e76f0318e2c8f06da7020b5ede7f035b46226ee3312b284ee4a301"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c03f16e4a5e0a9f05499dc469718bc22fb478e8f3e8e24f8088f687bd75ad46f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "56dfbf811a97ae475cbd2d65b01f2e02cb11c657308a17eec1fef7c176b13454"
+    sha256 cellar: :any_skip_relocation, ventura:       "aaafba634c38e5b9f3b555f4aa5b07b29c3235ff39101a41310d91d4514f69d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3adb827cde0f22d66a165f02437f485571393448f36f1d17e3c40badb1577f0c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "026e6dd7600d4af70e0950824668ddfae882d59dda7ef0e68e455e14bee83709"
   end
 
   depends_on "graphviz"
@@ -103,7 +102,18 @@ class Ford < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources without: "markdown-include"
+
+    resource("markdown-include").stage do
+      # Setuptools no longer supports the keys with hyphen in the `setup.cfg` file
+      # Fix patch cannot be applied and so manually change the key name
+      #   - `setup.cfg` in PyPI and github is a bit different
+      #   - `ford` uses outdated version of `markdown-include`
+      # PR Ref: https:github.comcmacmackinmarkdown-includepull51
+      inreplace "setup.cfg", "description-file", "description_file"
+      venv.pip_install Pathname.pwd
+    end
+
     doc.install "2008standard.pdf", "2003standard.pdf"
     pkgshare.install "exampleexample-project-file.md"
   end

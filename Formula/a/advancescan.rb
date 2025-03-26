@@ -26,8 +26,9 @@ class Advancescan < Formula
   uses_from_macos "zlib"
 
   def install
-    system ".configure", "--disable-silent-rules",
-                          "--prefix=#{prefix}"
+    ENV.cxx11
+
+    system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 

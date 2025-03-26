@@ -1,19 +1,19 @@
 class Mdq < Formula
   desc "Like jq but for Markdown"
   homepage "https:github.comyshavitmdq"
-  url "https:github.comyshavitmdqarchiverefstagsv0.3.1.tar.gz"
-  sha256 "b6bf39ac84363ed4e750a8342ca609105a8c0b84b50e5da6bf3be4130c367d75"
+  url "https:github.comyshavitmdqarchiverefstagsv0.4.0.tar.gz"
+  sha256 "e994d67545929f9e14bdf26e7e7f82fc190be317cdaee4de0f6125b28c8911e3"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comyshavitmdq.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b9d7c5b3ba70240989aa2f213a252c632bc0914f0c735db9fe8c58d67ac77ce"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d61242a7e6cf0a1a1fd021b46b68bb3d285dac793ca1568d16f0c3a5e3fbbba9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2f7106be528ed1ea29886936c698d507ec51f98ce846bd2cc23934c809e45a84"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fa4613f8889327a29caf91fa96b82430dfeb20d321f2a1a7ea7e3a262d6f7aef"
-    sha256 cellar: :any_skip_relocation, ventura:       "e203fca1c2fb4de712eed84f81860ed88ab46a853230b007b699612f1a7a236d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1142d0a1c28be0c80e21dbb6be985f40137a8329a2d8c3888e3e9d36d2fb7994"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "087ced9427eb7359c190fb4ad507a7db5ab364d6a9fe2a188b91c188bc0cd6b2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "502446e3fe349f5b3bd05ae175f3e283a9cc9885f74f115540972491799ac462"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "053bc88263a042a0e82b814392ffe8d5e0a588ce4c93b0df45587dddfee4c313"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d05bfbb3c2607dbba5c8da69712337cd82c2f94a3b65dfad99c4f5df22539856"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c82645bf32233b9e171f02bb7a50e7345334730fc33c6e019ae83df8a6ca52c9"
+    sha256 cellar: :any_skip_relocation, ventura:       "bb43f0e0355a2a5f4b6166b00f95a981b63135d8aac998e8170077a0608d9d9f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2c30f91b7db7c7250ca15006ecdc8017c242a4fd5a6912fd979199b9af0bc85"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efe61fe264b76c3e69c90b5d70f0082868ec7a1d9fb48c15a0c98313b3cb89b8"
   end
 
   depends_on "rust" => :build
