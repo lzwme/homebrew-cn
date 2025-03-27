@@ -1,18 +1,25 @@
 class Pinact < Formula
   desc "Pins GitHub Actions to full hashes and versions"
   homepage "https:github.comsuzuki-shunsukepinact"
-  url "https:github.comsuzuki-shunsukepinactarchiverefstagsv2.1.0.tar.gz"
-  sha256 "1fcd2a45767aedb5cff4de72cbb8acacee0d841641d0dd8c2b787c3fb47b8d30"
+  url "https:github.comsuzuki-shunsukepinactarchiverefstagsv2.2.0.tar.gz"
+  sha256 "047745c193add771fb49f16dcfa49f7f186eb74b510296faf49b33a04a760090"
   license "MIT"
   head "https:github.comsuzuki-shunsukepinact.git", branch: "main"
 
+  # Pre-release version has a suffix `-\d` for example `3.0.0-0`
+  # so we restrict the regex to only match stable versions
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba5eb0e4e270bfc01db5b82f09b0cd1b6c9ae463e31c2e15793c9fe58e3bcd5c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba5eb0e4e270bfc01db5b82f09b0cd1b6c9ae463e31c2e15793c9fe58e3bcd5c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ba5eb0e4e270bfc01db5b82f09b0cd1b6c9ae463e31c2e15793c9fe58e3bcd5c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6f1bb20c3034d18f099a74036abe1ea791f2b746548fe28c6835e78a0fb05689"
-    sha256 cellar: :any_skip_relocation, ventura:       "6f1bb20c3034d18f099a74036abe1ea791f2b746548fe28c6835e78a0fb05689"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4bc05cbb5ce37733d6248f64e6bb1553a539f7ebb67dbe3b828019b4e561714"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7cb16ea61ad1fbf076a185e948b348814235e323a2dd87bc67ecb73cb04ca764"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7cb16ea61ad1fbf076a185e948b348814235e323a2dd87bc67ecb73cb04ca764"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7cb16ea61ad1fbf076a185e948b348814235e323a2dd87bc67ecb73cb04ca764"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3077422e3d6c87cd4e132c3c3cea7833ae4d3c29baf83f41e246342fce7103e6"
+    sha256 cellar: :any_skip_relocation, ventura:       "3077422e3d6c87cd4e132c3c3cea7833ae4d3c29baf83f41e246342fce7103e6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2cb07ef1e4ce8d8c84e08fea993e075669e290eddd79e75ddfba7453cb2dbfb"
   end
 
   depends_on "go" => :build

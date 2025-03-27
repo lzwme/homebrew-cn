@@ -1,8 +1,8 @@
 class Azcopy < Formula
   desc "Azure Storage data transfer utility"
   homepage "https:github.comAzureazure-storage-azcopy"
-  url "https:github.comAzureazure-storage-azcopyarchiverefstagsv10.28.0.tar.gz"
-  sha256 "5c2ef0d11193df1ef86e8f0478d3ea1155fec5d82130c9f43a169d9ee4f55369"
+  url "https:github.comAzureazure-storage-azcopyarchiverefstagsv10.28.1.tar.gz"
+  sha256 "b7b8f45e3f74a77d7317be2e06e067beaa71c02d0a3f66b5267e24beb59b1e3d"
   license "MIT"
 
   livecheck do
@@ -11,12 +11,12 @@ class Azcopy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2a68d6d58f2ca9be17e6e893e98171629b4b281d36855982d8aa338a1608e155"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea2239227ccc47ca0ae07a4e74f4a76f7dc0081f7394498e925e7427dfc545e9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4854c11122791fdcc1c399b48fc6334b0cb7e2a661e7ca13aad3ce9f31b263e5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7a8a97c37f8c6f07823fd209eead8bcb4652146ecee9503a63fea303abd6e3fc"
-    sha256 cellar: :any_skip_relocation, ventura:       "6df93eab8d12b38c94998224ba84429245d5174605dfff88f75a9dfa92d7ebb3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44029ecaec0fdfc5b8a4bc2ad8cc33b3f1238f2e655644ef27b9e07ebea4fc47"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb0c2aa67be7924bb6bdc1ee6cdab654a2cf787b791dbb0ee1f1f822acf1aef3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3206d65dc8f388b64b8e61f850dc64cd4aeaadded29c6019ff0095644493b5a4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5207c3aeef9d22896546555acb34be7d2c4da95005c423766dc5b3daea4204d2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "25e30694e68e810c91aa05908efb25f7665eb8453a03f08777eb4d4737e66025"
+    sha256 cellar: :any_skip_relocation, ventura:       "235a52c172d11f8f0798fbda05244e00edc5eb806a4a488a781cb8b18541b211"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5845d0f34ded6aa84c937811d584c7ca156c58b7d8dc9808c96714f67fdf40cb"
   end
 
   depends_on "go" => :build

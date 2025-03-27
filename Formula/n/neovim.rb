@@ -2,18 +2,12 @@ class Neovim < Formula
   desc "Ambitious Vim-fork focused on extensibility and agility"
   homepage "https:neovim.io"
   license "Apache-2.0"
-  revision 1
+
+  head "https:github.comneovimneovim.git", branch: "master"
 
   stable do
-    url "https:github.comneovimneovimarchiverefstagsv0.10.4.tar.gz"
-    sha256 "10413265a915133f8a853dc757571334ada6e4f0aa15f4c4cc8cc48341186ca2"
-
-    # TODO: Remove when the following commit lands in a release.
-    # https:github.comneovimneovimcommitfa79a8ad6deefeea81c1959d69aa4c8b2d993f99
-    depends_on "libvterm"
-    # TODO: Remove when the following commit lands in a release.
-    # https:github.comneovimneovimcommit1247684ae14e83c5b742be390de8dee00fd4e241
-    depends_on "msgpack"
+    url "https:github.comneovimneovimarchiverefstagsv0.11.0.tar.gz"
+    sha256 "6826c4812e96995d29a98586d44fbee7c9b2045485d50d174becd6d5242b3319"
 
     # Keep resources updated according to:
     # https:github.comneovimneovimblobv#{version}cmake.depsCMakeLists.txt
@@ -23,33 +17,33 @@ class Neovim < Formula
     # NOTE: The `install` method assumes that the parser name follows the final `-`.
     #       Please name the resources accordingly.
     resource "tree-sitter-c" do
-      url "https:github.comtree-sittertree-sitter-carchiverefstagsv0.21.3.tar.gz"
-      sha256 "75a3780df6114cd37496761c4a7c9fd900c78bee3a2707f590d78c0ca3a24368"
+      url "https:github.comtree-sittertree-sitter-carchiverefstagsv0.23.4.tar.gz"
+      sha256 "b66c5043e26d84e5f17a059af71b157bcf202221069ed220aa1696d7d1d28a7a"
     end
 
     resource "tree-sitter-lua" do
-      url "https:github.comtree-sitter-grammarstree-sitter-luaarchiverefstagsv0.1.0.tar.gz"
-      sha256 "230cfcbfa74ed1f7b8149e9a1f34c2efc4c589a71fe0f5dc8560622f8020d722"
+      url "https:github.comtree-sitter-grammarstree-sitter-luaarchiverefstagsv0.3.0.tar.gz"
+      sha256 "a34cc70abfd8d2d4b0fabf01403ea05f848e1a4bc37d8a4bfea7164657b35d31"
     end
 
     resource "tree-sitter-vim" do
-      url "https:github.comtree-sitter-grammarstree-sitter-vimarchiverefstagsv0.4.0.tar.gz"
-      sha256 "9f856f8b4a10ab43348550fa2d3cb2846ae3d8e60f45887200549c051c66f9d5"
+      url "https:github.comtree-sitter-grammarstree-sitter-vimarchiverefstagsv0.5.0.tar.gz"
+      sha256 "90019d12d2da0751c027124f27f5335babf069a050457adaed53693b5e9cf10a"
     end
 
     resource "tree-sitter-vimdoc" do
-      url "https:github.comneovimtree-sitter-vimdocarchiverefstagsv3.0.0.tar.gz"
-      sha256 "a639bf92bf57bfa1cdc90ca16af27bfaf26a9779064776dd4be34c1ef1453f6c"
+      url "https:github.comneovimtree-sitter-vimdocarchiverefstagsv3.0.1.tar.gz"
+      sha256 "76b65e5bee9ff78eb21256619b1995aac4d80f252c19e1c710a4839481ded09e"
     end
 
     resource "tree-sitter-query" do
-      url "https:github.comnvim-treesittertree-sitter-queryarchiverefstagsv0.4.0.tar.gz"
-      sha256 "d3a423ab66dc62b2969625e280116678a8a22582b5ff087795222108db2f6a6e"
+      url "https:github.comnvim-treesittertree-sitter-queryarchiverefstagsv0.5.1.tar.gz"
+      sha256 "fe8c712880a529d454347cd4c58336ac2db22243bae5055bdb5844fb3ea56192"
     end
 
     resource "tree-sitter-markdown" do
-      url "https:github.comtree-sitter-grammarstree-sitter-markdownarchiverefstagsv0.2.3.tar.gz"
-      sha256 "4909d6023643f1afc3ab219585d4035b7403f3a17849782ab803c5f73c8a31d5"
+      url "https:github.comtree-sitter-grammarstree-sitter-markdownarchiverefstagsv0.4.1.tar.gz"
+      sha256 "e0fdb2dca1eb3063940122e1475c9c2b069062a638c95939e374c5427eddee9f"
     end
   end
 
@@ -59,18 +53,13 @@ class Neovim < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "5dba7a88706d1bbd6970e54497fd4b683562d7fd5a36eaf0579eef5b4b1775e7"
-    sha256 arm64_sonoma:  "9f26317af89d0cf523f869e4882541ed65c4e42253d5eea24670e7af8ca85185"
-    sha256 arm64_ventura: "a4318a9a09591d105a5ee2706f304a030b26d4164bc5cba3aedf0d0ca9572780"
-    sha256 sonoma:        "ca00e06378e7c09fa7ff5bcd5f6d92a2bb5c2e1d493677305838c773df3e5760"
-    sha256 ventura:       "67541d212919003d95be850e2633a8faa8740391559c7df41a07a6c0d203d165"
-    sha256 arm64_linux:   "78100627fa2eef3aee6b30b965d38f0ea1f4536637e881f1baebd207976ca52c"
-    sha256 x86_64_linux:  "fc5f70eb71c65ce02570ae163676ae2f268dd522fba3c4a016a82175234e14fc"
-  end
-
-  head do
-    url "https:github.comneovimneovim.git", branch: "master"
-    depends_on "utf8proc"
+    sha256 arm64_sequoia: "c809c37f7e0eb4d24459ed266596165154883fc545a6a6a8e1869f88230077a1"
+    sha256 arm64_sonoma:  "079ef13e3d05afd4c99eabb822e864a71274a62fda95d32d661c00308117ab34"
+    sha256 arm64_ventura: "3515241467363cd0eb25e3864e60bfd1172caae25cb517e123f0003e51a1c53f"
+    sha256 sonoma:        "c7cc02d78139205a309eae2024bc87085c12c52a6e2d269535b24ea3f12ccf6c"
+    sha256 ventura:       "9fd084a65edd1bf62a75235cc505bd96fe15b19be4a1a28cc030ba33574da3fe"
+    sha256 arm64_linux:   "cece7e78d0ede68f44e320ae87399802d17bd82d45c162fed4a254329a837f7a"
+    sha256 x86_64_linux:  "d96fd0646a0cb66c3d164e3017dcbea7cc6eeb6a12854d3923be624e42332532"
   end
 
   depends_on "cmake" => :build
@@ -81,6 +70,7 @@ class Neovim < Formula
   depends_on "luv"
   depends_on "tree-sitter"
   depends_on "unibilium"
+  depends_on "utf8proc"
 
   def install
     if build.head?

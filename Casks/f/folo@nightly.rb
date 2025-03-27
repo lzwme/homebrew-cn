@@ -1,13 +1,13 @@
-cask "follow@nightly" do
+cask "folo@nightly" do
   arch arm: "arm64", intel: "x64"
 
-  version "0.3.12"
-  sha256 arm:   "e4d3d9fcc431a01cff2765c45be1b8982de488e33bd4b5c32b31b51a839015b4",
-         intel: "ff47b6c8cbab8e82e74f172647adb8bcfc9bb2291401140e13b9a1911e3d922d"
+  version "0.3.13"
+  sha256 arm:   "926c446c7a4645515336551ebe61184e6462b27cdb36b39f4fd0b999e667e97b",
+         intel: "202d96a30ad0916440555219b8374bf1bdc198c75d286686fd312391176f77c1"
 
-  url "https:github.comRSSNextFollowreleasesdownloadv#{version}Follow-#{version}-macos-#{arch}.dmg",
-      verified: "github.comRSSNextFollow"
-  name "Follow Nightly"
+  url "https:github.comRSSNextFoloreleasesdownloadv#{version}Folo-#{version}-macos-#{arch}.dmg",
+      verified: "github.comRSSNextFolo"
+  name "Folo Nightly"
   desc "Information browser"
   homepage "https:follow.is"
 
@@ -17,17 +17,17 @@ cask "follow@nightly" do
   end
 
   conflicts_with cask: [
-    "follow",
     "follow@alpha",
+    "folo",
   ]
   depends_on macos: ">= :big_sur"
 
-  app "Follow.app"
+  app "Folo.app"
 
   zap trash: [
     "~LibraryApplication Supportcom.apple.sharedfilelistcom.apple.LSSharedFileList.ApplicationRecentDocumentsis.follow.sfl*",
-    "~LibraryApplication SupportFollow",
-    "~LibraryLogsFollow",
+    "~LibraryApplication SupportFolo",
+    "~LibraryLogsFolo",
     "~LibraryPreferencesis.follow.plist",
     "~LibrarySaved Application Stateis.follow.savedState",
   ]

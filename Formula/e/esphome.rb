@@ -3,18 +3,18 @@ class Esphome < Formula
 
   desc "Make creating custom firmwares for ESP32ESP8266 super easy"
   homepage "https:github.comesphomeesphome"
-  url "https:files.pythonhosted.orgpackagesce6a9d4ff736d56ac9ad47e61c2e85ca23327221a6f4d24f826f4316b9fa6c72esphome-2025.3.1.tar.gz"
-  sha256 "eb736050737b7192047e27d25a6ed077fdf08d1ba3dd932da95493abb5f2b7af"
+  url "https:files.pythonhosted.orgpackages6a99fe9ccc78710975a8b694a00e27ef642ae6f1db2b12ae9053f7fb75a7c5b4esphome-2025.3.2.tar.gz"
+  sha256 "a199d642438fd9edda72b845ff87955e99e6535d83a51a69997efc92eeb259fc"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e84bbad6dff112b04de6c35d5aba3182dc04221803b7c99490e21a6f48342251"
-    sha256 cellar: :any,                 arm64_sonoma:  "7dd783e8e9e5b565778b9dbc7a0f959b872eab028a293fc65222aec797cae9bf"
-    sha256 cellar: :any,                 arm64_ventura: "ed94528d1a450ef9f90e43d4114bb1829ba4ace5354cac9cf555032579d9372f"
-    sha256 cellar: :any,                 sonoma:        "f71fbb317d71bc7f5aa9069f722bca9bcc02339c52fc29d64ded6f8a350afa28"
-    sha256 cellar: :any,                 ventura:       "04324164f941eca4274c14fdb2ca5c715c49014479b1e2549452336c916ece28"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8772334801aa625b728043ceb0db7ba5db3796772764e4740a6fa021ebfe9448"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b57f450e36318fd459241f90b8e433c0a8e22bb7265819daa02fb2812d04aa61"
+    sha256 cellar: :any,                 arm64_sequoia: "f1e7912e43d7398ae80c06cd2ca27abb72bbc28eb8fffa0928c19874957f8e03"
+    sha256 cellar: :any,                 arm64_sonoma:  "34bdeccc453a112802c14efb241188b7e55c5ea6c26fde8e95fda1975db74a76"
+    sha256 cellar: :any,                 arm64_ventura: "a2ef7b62ab9417f8ea2e85e7f43ba6e1d190fd60db93d9a63a5739a3c73cc74e"
+    sha256 cellar: :any,                 sonoma:        "8527c7acba502404fe416bc7ccf65ff41af3cde49919bd85cdd20813e8cb57df"
+    sha256 cellar: :any,                 ventura:       "b0ccfef43d8287c3ef5e15c2b9a6ea43746e2c1734c26669452e9b9e5adfa145"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f4c015567a75684b05acf5b946317d1011ef8bfddc5635e4c92fa840c49a60c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef97d7a8df21320581469565d4aa44f5d30ae6f5d12ba9552f0ac21c355e1d25"
   end
 
   depends_on "certifi"
@@ -184,8 +184,8 @@ class Esphome < Formula
   end
 
   resource "pyparsing" do
-    url "https:files.pythonhosted.orgpackages8b1a3544f4f299a47911c2ab3710f534e52fea62a633c96806995da5d25be4b2pyparsing-3.2.1.tar.gz"
-    sha256 "61980854fd66de3a90028d679a954d5f2623e83144b5afe5ee86f43d762e5f0a"
+    url "https:files.pythonhosted.orgpackagesbb22f1129e69d94ffff626bdb5c835506b3a5b4f3d070f17ea295e12c2c6f60fpyparsing-3.2.3.tar.gz"
+    sha256 "b9c13f1ab8b3b542f72e28f634bad4de758ab3ce4546e4301970ad6fa77c38be"
   end
 
   resource "pyserial" do
@@ -244,8 +244,8 @@ class Esphome < Formula
   end
 
   resource "tzdata" do
-    url "https:files.pythonhosted.orgpackages430ffa4723f22942480be4ca9527bbde8d43f6c3f2fe8412f00e7f5f6746bc8btzdata-2025.1.tar.gz"
-    sha256 "24894909e88cdb28bd1636c6887801df64cb485bd593f2fd83ef29075a81d694"
+    url "https:files.pythonhosted.orgpackages95321a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5tzdata-2025.2.tar.gz"
+    sha256 "b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
   end
 
   resource "tzlocal" do

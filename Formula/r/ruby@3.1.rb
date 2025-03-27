@@ -1,8 +1,8 @@
 class RubyAT31 < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https:www.ruby-lang.org"
-  url "https:cache.ruby-lang.orgpubruby3.1ruby-3.1.6.tar.gz"
-  sha256 "0d0dafb859e76763432571a3109d1537d976266be3083445651dc68deed25c22"
+  url "https:cache.ruby-lang.orgpubruby3.1ruby-3.1.7.tar.gz"
+  sha256 "0556acd69f141ddace03fa5dd8d76e7ea0d8f5232edf012429579bcdaab30e7b"
   license "Ruby"
 
   livecheck do
@@ -11,14 +11,13 @@ class RubyAT31 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "7c2cfc1d13b3cf6f9d5f512c5db1671ac59a45587e801afffff865e563317591"
-    sha256 arm64_sonoma:  "f56c01cd8d7cf4054fd95503f738e83e87cda639a0f9080441a753e8ccbc88df"
-    sha256 arm64_ventura: "8ebbc78941564e92a8990b2835e142dc7c800f51968563215ebd8a896ff11292"
-    sha256 sonoma:        "55ecb9dfb93f5e3627054c0b549e1c1a1c370c9722a0048d27383233df4168a8"
-    sha256 ventura:       "04616b21752a8d3f7db1280cfb2ef995c1756fc9a604fb247b7e67637745fcde"
-    sha256 arm64_linux:   "dcf541acf3a58e9627102fed214bbae1027093b97b8d6d612912493f69a7919c"
-    sha256 x86_64_linux:  "1cbdd53137f42894eec9423fa7bd2b1d9849f7e15f2a9964c9b0e7ba7a9fd56f"
+    sha256 arm64_sequoia: "a155ca08ec421dfe9000e9d8b31faecf99b80831c388651bbee6ce29d5aed79b"
+    sha256 arm64_sonoma:  "b40fc8a249f94777e9187f7d7c1efcb21529b816c558a56c65af301b11bc2f5b"
+    sha256 arm64_ventura: "db2af3ae7a26b53d622abe245ebf07a114c584f7d0e493624d1ade8466ad3172"
+    sha256 sonoma:        "5e16300214120ccc241940aacaf79ec455cb9c7130174a11ffbbca34064ddea7"
+    sha256 ventura:       "665d3a22cb9c14d8796c7c7e2a2e6eb50fb09132b04927e7eea5d3d2a1da0977"
+    sha256 arm64_linux:   "249982ec0c5df876e66d3d42604c2941a5961612a17158bf88209e3db3c1d0fe"
+    sha256 x86_64_linux:  "c709eced0ae58761a64b32cc3bfc05cb7c833cdc436c168f6a7328eb6f9dbfb3"
   end
 
   keg_only :versioned_formula

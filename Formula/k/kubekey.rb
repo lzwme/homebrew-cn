@@ -2,8 +2,8 @@ class Kubekey < Formula
   desc "Installer for Kubernetes and  or KubeSphere, and related cloud-native add-ons"
   homepage "https:kubesphere.io"
   url "https:github.comkubespherekubekey.git",
-      tag:      "v3.1.7",
-      revision: "da475c670813fc8a4dd3b1312aaa36e96ff01a1f"
+      tag:      "v3.1.8",
+      revision: "dbb1ee4aa1ecf0586565ff3374427d8a7d9b327b"
   license "Apache-2.0"
   head "https:github.comkubespherekubekey.git", branch: "master"
 
@@ -16,12 +16,12 @@ class Kubekey < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6938a693f600662a5c4b61d33baaf3109a838e32412effc527074f667d0f105c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e9ba7ec72f6a6efa195179b1647710c4dd108c1ca08e6ec4db6bb8defc9a14d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "193d5416a7f8fe32e5d5a46b8d24aca7c483fdf65ecc137375564717baf538f0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b157156497c851d22b2c22336cfa985517c20cdb0b2b0b495c06f55e3d66c894"
-    sha256 cellar: :any_skip_relocation, ventura:       "c63ef067be391e3f56943343f416832207f81fcacd49d29ede45dd225587a599"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bd0be711c47b38c605db45c25f6e3cbfe03c1d7d53efadb706eddeb252a2d7d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a1ba83756c233e0bc6fedcc8e9f0a7c074d578199b10b87260d9e56b15350ac"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "693464f5ce4a6fa53b4b611fc0fe365363bef1bab085d3d66c7a062a585a099e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "37d0f152897521ebd82ae11f18c8f3f4fb391542b553652112d9ceb41bedd260"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ef3a31c0d6bc1ce05f1a122a57d785c0642601bb6a5b50b0b78702ba30551a99"
+    sha256 cellar: :any_skip_relocation, ventura:       "be3affc1850b088364864c7051c32bd73ac509c8da2e039d73fbb43c1e38876c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9acffe38490cd3e09d8e4a88ece233f65c1a1150e921fbcdd2751b563ef7e240"
   end
 
   depends_on "go" => :build

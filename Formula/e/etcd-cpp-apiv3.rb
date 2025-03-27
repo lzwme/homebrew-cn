@@ -4,15 +4,15 @@ class EtcdCppApiv3 < Formula
   url "https:github.cometcd-cpp-apiv3etcd-cpp-apiv3archiverefstagsv0.15.4.tar.gz"
   sha256 "4516ecfa420826088c187efd42dad249367ca94ea6cdfc24e3030c3cf47af7b4"
   license "BSD-3-Clause"
-  revision 24
+  revision 25
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "fb70880120dba7fdaa981c78fc124ac714006081213214cb2383262110c4a0b9"
-    sha256 cellar: :any,                 arm64_sonoma:  "4aad0e8502b8487eca9f486aa6b802b2abe326fe154a0e12defe6aae0d3b6654"
-    sha256 cellar: :any,                 arm64_ventura: "d5f51bd1228d709df4e063a404136eaca40cf507a1914485a48144777e37407f"
-    sha256 cellar: :any,                 sonoma:        "d6386990008636db46d6aaeb7199e97c575f96e93fb8b481f3036cf230c78a3f"
-    sha256 cellar: :any,                 ventura:       "6b249b9862118363a608df12a6b64e86d324d4c95a4b8d5d39503663bbd82998"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b3dc7e7a8c14e6119807397926a1af9651877973f6c766278b649478fda94de"
+    sha256 cellar: :any,                 arm64_sequoia: "41bea044776b9876a036125b174c010a180eda1dc5d2c8b8ef27202f107afb91"
+    sha256 cellar: :any,                 arm64_sonoma:  "017ec471a86ff1ce0206bd602f1f75dc36f2a5b0b96f7925e739d72b2c24bee5"
+    sha256 cellar: :any,                 arm64_ventura: "65ac21eebf66881b10441e8fc9cbf00ae71ae411a2554a42dcc415352b6127b1"
+    sha256 cellar: :any,                 sonoma:        "11ffc458f2406c8b5dcb36a5e1c5d235a176f1571b4c5fabca6f48c4dedbf5d9"
+    sha256 cellar: :any,                 ventura:       "ecad4f87f7f67fbc551ecf2e436c951967664c0c320a9f28140d7b6aa785d768"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e5da2baab218285b9338bf8b6939350563ffe6441496eb0572453094ae2a866"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -31,6 +31,20 @@ class EtcdCppApiv3 < Formula
   patch do
     url "https:github.cometcd-cpp-apiv3etcd-cpp-apiv3commitece56adf4d01658a5f0668a3618c97153665581c.patch?full_index=1"
     sha256 "f3686647436045a9a53b05f81fae02d5a5a2025d5ce78a66aca0ade85c1a99c6"
+  end
+
+  # Backport cluster manager api needed for newer `vineyard`
+  patch do
+    url "https:github.cometcd-cpp-apiv3etcd-cpp-apiv3commit17d7b60194e5b6d9005bb10947905a393f432624.patch?full_index=1"
+    sha256 "b0d1bce10cf2f03124af744f2a184162b6b555b09d162b8633ed8ab9b613f8f8"
+  end
+  patch do
+    url "https:github.cometcd-cpp-apiv3etcd-cpp-apiv3commit3ad17314d6e8c26beb88501f8e74e506ccaf26b8.patch?full_index=1"
+    sha256 "52dd6132b03c4c1210bb1c0b8a32ff952f84b198d612903c10a53b7a4f5ce2b9"
+  end
+  patch do
+    url "https:github.cometcd-cpp-apiv3etcd-cpp-apiv3commitea56cee80f441973a0149b57604e7a7874c61b65.patch?full_index=1"
+    sha256 "bce8ef02bc56f2ac430d580191217ff78210cc6e261d29c7031a22e65cd05693"
   end
 
   def install

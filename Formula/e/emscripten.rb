@@ -3,8 +3,8 @@ class Emscripten < Formula
   homepage "https:emscripten.org"
   # To automate fetching the required resource revisions, you can use this helper script:
   #   https:gist.github.comcarlocab2db1d7245fa0cd3e92e01fe37b164021
-  url "https:github.comemscripten-coreemscriptenarchiverefstags4.0.5.tar.gz"
-  sha256 "96db9e6cd193f5374c5fc4370848724559ec9a9e204088b6b3801ea89dd44bea"
+  url "https:github.comemscripten-coreemscriptenarchiverefstags4.0.6.tar.gz"
+  sha256 "dbb093551cb0a9ac9e873d5ba719e6a3147202cbe0073563ad33dbbf969cd764"
   license all_of: [
     "Apache-2.0", # binaryen
     "Apache-2.0" => { with: "LLVM-exception" }, # llvm
@@ -18,12 +18,12 @@ class Emscripten < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "cd032e1efad70c12c7a9be109f99f60ed02faafc0f11881d309a4f8ba6b2fb9a"
-    sha256 cellar: :any,                 arm64_sonoma:  "f7754c374cd84c1dc45792ae46fecc57cc8046c30f79e6198ce8398b8580b7db"
-    sha256 cellar: :any,                 arm64_ventura: "5a8015985597e85506c53821a56d5928b569a6b626e8727e55555a9e2d02c02d"
-    sha256 cellar: :any,                 sonoma:        "ffb78c1ec859a001f219d5b81afd85c68b3f082fe5fe154b95f8ee71a3b571d3"
-    sha256 cellar: :any,                 ventura:       "b88a138526f30e1412259898e2d9861287a3cd6fd2055ad826b582cac65c21e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cacbf82700a4bfe7e13255c94f64c41aa96cec9435c07f46e8b5689a598ecc04"
+    sha256 cellar: :any,                 arm64_sequoia: "bb8585ef66dd08b3a071923e3baee6f4f5e055b336b6e64fd72b191060bd2678"
+    sha256 cellar: :any,                 arm64_sonoma:  "0d750dca4d78e27de5aab41a5ac5f4c7ceed220dd0dd7e3d28d1e221dc875981"
+    sha256 cellar: :any,                 arm64_ventura: "0d16e993cfe4b1d6df2aabde2b3b3d6b26957cdb6421ff9cf97a1d1fe623b3d2"
+    sha256 cellar: :any,                 sonoma:        "5be5e04d0b9a8208ea4ab205fdce6f4a19fcbba040fa0eeb00895e7e0539f5ee"
+    sha256 cellar: :any,                 ventura:       "09a0f050cd231ba691fe01ce6083c09f399ee1d9789e21f73329f9693b976ab9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8bcbffe4761406c1514027396ba1a82219ae23d060919136597551380c1ab28"
   end
 
   depends_on "cmake" => :build

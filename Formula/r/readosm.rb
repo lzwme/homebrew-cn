@@ -29,27 +29,17 @@ class Readosm < Formula
   uses_from_macos "zlib"
 
   def install
-    system "./configure", "--disable-dependency-tracking",
-                          "--prefix=#{prefix}"
+    args = []
+    # Help old config scripts identify arm64 linux
+    args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
+    system "./configure", *args, *std_configure_args
     system "make", "install"
 
     # Install examples but don't include Makefiles or objects
     doc.install "examples"
     rm doc.glob("examples/Makefile*")
     rm doc.glob("examples/*.o")
-
-    if OS.linux?
-      # Remove shim references
-      shim_files = [
-        doc/"examples/test_osm1",
-        doc/"examples/test_osm2",
-        doc/"examples/test_osm3",
-      ]
-
-      shim_files.each do |f|
-        inreplace f, Superenv.shims_path, HOMEBREW_PREFIX/bin
-      end
-    end
   end
 
   test do

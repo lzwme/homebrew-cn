@@ -3235,6 +3235,7 @@ Homebrew-homebrew-core/Formula/k/ksops.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kstart.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/ksync.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kt-connect.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/ktexttemplate.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/ktfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/ktlint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/ktmpl.rb, Homebrew/homebrew-core, 1
@@ -8944,9 +8945,9 @@ Homebrew-homebrew-cask/Casks/f/folding-at-home.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/folding-at-home@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/foldingtext.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/foldit.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/f/follow.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/follow@alpha.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/f/follow@nightly.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/f/folo.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/f/folo@nightly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/folx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fontbase.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fontcreator.rb, Homebrew/homebrew-cask, 0
@@ -13097,6 +13098,7 @@ Homebrew-homebrew-cask/Casks/p/particle-dev.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pashua.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/password-gorilla.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pastebot.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/pastenow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/patchwork.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/path-finder.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pathephone.rb, Homebrew/homebrew-cask, 1

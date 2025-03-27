@@ -1,28 +1,18 @@
 class Mpd < Formula
   desc "Music Player Daemon"
   homepage "https:www.musicpd.org"
+  url "https:github.comMusicPlayerDaemonMPDarchiverefstagsv0.24.2.tar.gz"
+  sha256 "6a6e7654f394d540831925b9215c8db0e8ca4ab26b268396c2713e63cd2604b4"
   license "GPL-2.0-or-later"
-  revision 2
   head "https:github.comMusicPlayerDaemonMPD.git", branch: "master"
 
-  stable do
-    url "https:github.comMusicPlayerDaemonMPDarchiverefstagsv0.23.17.tar.gz"
-    sha256 "6fcdc5db284297150734afd9b3d1a5697a29f6297eff1b56379018e31d023838"
-
-    # support libnfs 6.0.0, upstream commit ref, https:github.comMusicPlayerDaemonMPDcommit31e583e9f8d14b9e67eab2581be8e21cd5712b47
-    patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches557ad661621fa81b5e6ff92ab169ba40eba58786mpd0.23.16-libnfs-6.patch"
-      sha256 "e0f2e6783fbb92d9850d31f245044068dc0614721788d16ecfa8aacfc5c27ff3"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "e75d7e545378317554e51e1c4f7d94cfa75380b00dde5b50a955963b1095857d"
-    sha256 cellar: :any, arm64_sonoma:  "a2d726e27a04e06885974622a1b406a7a74050a447a60bd2ede454ed3dc767a1"
-    sha256 cellar: :any, arm64_ventura: "80873f92f2c8acf97908b734fb6cd765db587f9777b47058e309e28f7b8b306b"
-    sha256 cellar: :any, sonoma:        "b03a179d88bfba90b4b2e9cffe7fd4b0618008f6bcea1c0e530f3337304ec1e7"
-    sha256 cellar: :any, ventura:       "74f7e4be6592d64afdd9f8140cf98563f1bd2fcd9ddaef48e3f6036d5ecfefc6"
-    sha256               x86_64_linux:  "83eb62450b51cd37ede830ae2cf52cc55b9acc9ef94b9b4349bfdf58fd957aa7"
+    sha256 cellar: :any, arm64_sequoia: "dedaee02d54f67a2eec0d606dd2db0d676da98453db80dcd3a3a562d6333db8f"
+    sha256 cellar: :any, arm64_sonoma:  "65e03a44de3564d397c6574c12e7914cacae196d7d4d8059200c314078936cc1"
+    sha256 cellar: :any, arm64_ventura: "c442fc3e84ea177cb95f2dc047f07af4ca6ec1628a8440a3c75713ed8381f2be"
+    sha256 cellar: :any, sonoma:        "7e6c7582db618d6f10d62c30d74da22b77956d0ecf7764361c568c476a371b15"
+    sha256 cellar: :any, ventura:       "149758fad2652eec17057b9f244e5739cde267d2c52c04361dfc97511670e1f4"
+    sha256               x86_64_linux:  "106ea069867dac93e903ccf121aeb4e4d33d3124b8e0651e1045e3c8ed265522"
   end
 
   depends_on "boost" => :build
@@ -65,6 +55,14 @@ class Mpd < Formula
   uses_from_macos "curl"
   uses_from_macos "zlib"
 
+  on_ventura :or_older do
+    depends_on "llvm"
+
+    fails_with :clang do
+      cause "Needs C++20 std::make_unique_for_overwrite"
+    end
+  end
+
   on_linux do
     depends_on "systemd" => :build
     depends_on "alsa-lib"
@@ -75,16 +73,15 @@ class Mpd < Formula
   end
 
   def install
-    # mpd specifies -std=gnu++0x, but clang appears to try to build
-    # that against libstdc++ anyway, which won't work.
-    # The build is fine with G++.
-    ENV.libcxx
-
-    # https:github.comMusicPlayerDaemonMPDpull2198
-    inreplace "srclibnfsmeson.build", "['>= 4', '< 6']", "['>= 4']"
+    if OS.mac? && MacOS.version <= :ventura
+      ENV.llvm_clang
+      ENV.append "LDFLAGS", "-L#{Formula["llvm"].opt_lib}unwind -lunwind"
+      # When using Homebrew's superenv shims, we need to use HOMEBREW_LIBRARY_PATHS
+      # rather than LDFLAGS for libc++ in order to correctly link to LLVM's libc++.
+      ENV.prepend_path "HOMEBREW_LIBRARY_PATHS", Formula["llvm"].opt_lib"c++"
+    end
 
     args = %W[
-      -Dcpp_std=c++20
       --sysconfdir=#{etc}
       -Dmad=disabled
       -Dmpcdec=disabled

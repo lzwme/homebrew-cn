@@ -1,25 +1,23 @@
 class Vineyard < Formula
-  include Language::Python::Virtualenv
-
   desc "In-memory immutable data manager. (Project under CNCF)"
   homepage "https:v6d.io"
-  url "https:github.comv6d-iov6dreleasesdownloadv0.23.2v6d-0.23.2.tar.gz"
-  sha256 "2a2788ed77b9459477b3e90767a910e77e2035a34f33c29c25b9876568683fd4"
+  url "https:github.comv6d-iov6dreleasesdownloadv0.24.2v6d-0.24.2.tar.gz"
+  sha256 "a3acf9a9332bf5cce99712f9fd00a271b4330add302a5a8bbfd388e696a795c8"
   license "Apache-2.0"
-  revision 11
 
   bottle do
-    sha256                               arm64_sequoia: "b6dc11e4e502840985f86d45b4107f81025805784e7f65694cd528c096acb737"
-    sha256                               arm64_sonoma:  "8f0240b97cb7be288e52bd6a3f0004bae5c14491062447e98d583b059e00b66c"
-    sha256                               arm64_ventura: "45e20492b2ff3ce178518b95f0d8a1c0b7e3dc1ae083bb45b0bfebdaddac566d"
-    sha256                               sonoma:        "f016f3e8d63b65b2f30a775357c3f0e4f6aba2ff8d62df4d3c523ab845a11410"
-    sha256                               ventura:       "1c22a5e1e3fe00ec81653af2bd21de6aa862e732ec3c731fa00e59ef3589775c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e427ead7197ad2b3664740369ca0ccac1264df4702cad61ac39d4489a9c7d22"
+    sha256                               arm64_sequoia: "1e523a56e12c147bf7169720737ed422f8bc6092c295557c0e3d7daaa6799b28"
+    sha256                               arm64_sonoma:  "f3d6060bf786fe16cd5f2885eee5428e45dc4655cb061a1a90873f33ba596769"
+    sha256                               arm64_ventura: "bd04f41327ff13207caa720dfc459585336e4572c843d7a28babe77ffd52b78c"
+    sha256                               sonoma:        "cb25f9308b95310edf63637abf5a5e26dc61fd4a4680b649ab12c645e6ee7d30"
+    sha256                               ventura:       "932d86751cc8df0045186b5fa15a7b9ced9313214a294a5b002629d71de5e72a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e94664da0a8f82686aaec91f5db75543bb11d9b430c47fc63040495e1b5507db"
   end
 
   depends_on "cmake" => [:build, :test]
   depends_on "llvm" => :build # for clang Python bindings
   depends_on "openssl@3" => :build # indirect (not linked) but CMakeLists.txt checks for it
+  depends_on "python-setuptools" => :build
   depends_on "python@3.13" => :build
   depends_on "apache-arrow"
   depends_on "boost@1.85"
@@ -31,15 +29,14 @@ class Vineyard < Formula
   depends_on "libgrape-lite"
   depends_on "open-mpi"
 
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
-    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
+  on_linux do
+    depends_on "autoconf" => :build
+    depends_on "automake" => :build
+    depends_on "libtool" => :build
   end
 
   def install
     python3 = "python3.13"
-    venv = virtualenv_create(buildpath"venv", python3)
-    venv.pip_install resources
     # LLVM is keg-only.
     llvm = deps.map(&:to_formula).find { |f| f.name.match?(^llvm(@\d+)?$) }
     ENV.prepend_path "PYTHONPATH", llvm.opt_prefixLanguage::Python.site_packages(python3)
@@ -52,7 +49,7 @@ class Vineyard < Formula
       "-DCMAKE_FIND_PACKAGE_PREFER_CONFIG=ON", # for newer protobuf
       "-DLIBGRAPELITE_INCLUDE_DIRS=#{Formula["libgrape-lite"].opt_include}",
       "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}",
-      "-DPYTHON_EXECUTABLE=#{venv.root}binpython",
+      "-DPYTHON_EXECUTABLE=#{which(python3)}",
       "-DUSE_EXTERNAL_ETCD_LIBS=ON",
       "-DUSE_EXTERNAL_HIREDIS_LIBS=ON",
       "-DUSE_EXTERNAL_REDIS_LIBS=ON",

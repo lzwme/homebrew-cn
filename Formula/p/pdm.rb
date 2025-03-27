@@ -2,20 +2,21 @@ class Pdm < Formula
   include Language::Python::Virtualenv
 
   desc "Modern Python package and dependency manager supporting the latest PEP standards"
-  homepage "https:pdm.fming.dev"
+  homepage "https:pdm-project.org"
   url "https:files.pythonhosted.orgpackages9cb90b150ec7aae72771ece43539163892366fff3def8da6e4a512ed7b8e39c5pdm-2.22.4.tar.gz"
   sha256 "8483f3d2285039cea7e07c5ba6ac7e1fcba358129f8831fb75065a797d27b923"
   license "MIT"
   head "https:github.compdm-projectpdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10798955629fbdca5184e034d5e7f0301af7f010dbabc4ee1b22e3d5303a4213"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d85a7cdc45095c2f161f5e09f97e910ce8646a11ad157ac1f5a0e63628eb0cd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "364e898107c3147286d093f31753f8b76d80c34f2c3f803144ab9d5e6dee81f8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fb8a1d38f1c46515ef9e0e84eba1c556dda7d104321378031f003240f04bb6bd"
-    sha256 cellar: :any_skip_relocation, ventura:       "86ab4be7093b3ac35c3b83b0b2e4c62584cb0721ee6940842115ea4a2fbd6fd9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a9a2fe5904d4c387a956b7f6172bd48f8549b2f7130a6c54cb6221446c8ce82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cc83d340b6b24d6c08fbf4e928903122d3223dfda3995e2b25fd0bc52bc3ef5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b3d8861f0d37eecbcacf3c237f8daf20ddf4843512371121e76655e92648c7f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc83d1e3c3fa66370e386c0fd84cc9f5dd086f934f9af272fc940690205f3c38"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3d60345e844f9cd60d4f420190de7ec0e0a4a672c734f7c0e338dc39366f214e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6f7926f24e3a1210d6a61663e61752f44b076d932711d663bda1504e7363aec8"
+    sha256 cellar: :any_skip_relocation, ventura:       "3185adfc1fa38401be686d113941f3f33ca380e86313ed0068bc573135ac0c6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "09cb636fb5e9a958cbb5f26c6a385da0c6b30d1341c755bed2725be0d9b37b35"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d5daf20ff5ad9c10fb9361bd5d5ad59d7370aa79ee0fecffc0854d6034f053d"
   end
 
   depends_on "certifi"

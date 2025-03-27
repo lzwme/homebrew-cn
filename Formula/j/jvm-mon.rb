@@ -1,10 +1,10 @@
 class JvmMon < Formula
   desc "Console-based JVM monitoring"
   homepage "https:github.comajermakovicsjvm-mon"
-  url "https:github.comajermakovicsjvm-monreleasesdownload0.3jvm-mon-0.3.tar.gz"
-  sha256 "9b5dd3d280cb52b6e2a9a491451da2ee41c65c770002adadb61b02aa6690c940"
+  url "https:github.comajermakovicsjvm-monarchiverefstags1.2.tar.gz"
+  sha256 "5bc23aef365b9048fd4c4974028d4d1bbd79e495c9fa2d57446fc64a515d9319"
   license "Apache-2.0"
-  revision 3
+  head "https:github.comajermakovicsjvm-mon.git", branch: "master"
 
   livecheck do
     url :stable
@@ -12,29 +12,35 @@ class JvmMon < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, sonoma:       "88c2a99416c6bd4c33480769b5e47f9f4964d28d0f04fbcb1821e2fda0e891b7"
-    sha256 cellar: :any_skip_relocation, ventura:      "c20d541a04a08a0282c90ed1968fbc03d5be5012f9a73e22b52d2ded67c9a880"
-    sha256 cellar: :any_skip_relocation, monterey:     "c20d541a04a08a0282c90ed1968fbc03d5be5012f9a73e22b52d2ded67c9a880"
-    sha256 cellar: :any_skip_relocation, big_sur:      "c20d541a04a08a0282c90ed1968fbc03d5be5012f9a73e22b52d2ded67c9a880"
-    sha256 cellar: :any_skip_relocation, catalina:     "c20d541a04a08a0282c90ed1968fbc03d5be5012f9a73e22b52d2ded67c9a880"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0c83187b28705971793ac3f89c385a07edd958d20d3d30e0c133b77bc5fc0ac0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10a26ecfa58c04851ac693f4078c151ba47bf479b960d85394cb72c899a28f9a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "09709070da8e62235d9ed766340d9d876e66bcc257f5d3c90ddde822645d278a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5e4f4e6acf9d320c547226bd60956f2eff27f191112364c335cd7275ec74c45a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6395f1d02431f71ee3b99c0ab677c3ef7abbbbfe0791b18d633d1a413f64421d"
+    sha256 cellar: :any_skip_relocation, ventura:       "d8adbf4d100d14d5f2b10d4c69e926ad9e4213a26c6f3c91eff6abb10c7bf73f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8277320c0f5297ef19291fcc094805434559387bc24308597c3670d7b6abeeec"
   end
 
-  depends_on "openjdk@8"
-
-  on_macos do
-    depends_on arch: :x86_64 # openjdk@8 is not supported on ARM
-  end
+  depends_on "go" => :build
+  depends_on "openjdk" => :build
 
   def install
-    rm(Dir["bin*.bat"])
-    libexec.install Dir["*"]
+    ENV["GOBIN"] = buildpath"bin"
+    ENV.prepend_path "PATH", buildpath"bin"
 
-    (bin"jvm-mon").write_env_script libexec"binjvm-mon", Language::Java.java_home_env("1.8")
+    cd "jvm-mon-go" do
+      system ".make-agent.sh"
+      system "go", "build", *std_go_args(ldflags: "-s -w")
+    end
   end
 
   test do
-    ENV.append "_JAVA_OPTIONS", "-Duser.home=#{testpath}"
-    system "echo q | #{bin}jvm-mon"
+    assert_match version.to_s, shell_output("#{bin}jvm-mon -v 2>&1")
+
+    require "pty"
+    ENV["TERM"] = "xterm"
+    PTY.spawn(bin"jvm-mon") do |_r, w, _pid|
+      sleep 1
+      w.write "q"
+    end
   end
 end

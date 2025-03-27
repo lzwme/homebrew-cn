@@ -3,19 +3,19 @@ class Aider < Formula
 
   desc "AI pair programming in your terminal"
   homepage "https:aider.chat"
-  url "https:files.pythonhosted.orgpackages8930de078de77c18fc7dccc60eacead49d8f795734c85fd62e71112c33096948aider_chat-0.78.0.tar.gz"
-  sha256 "64a1d8b7a3d13bd90ac450ab3dfee88cb72ae87814cee2bf9aab01a86d335a00"
+  url "https:files.pythonhosted.orgpackages72e8faf6fee256055b02400d8a9f5b0a6f4496bcc1ff5f093001094623e9f26caider_chat-0.79.1.tar.gz"
+  sha256 "85ac38ae57f275231e8cdbfa021aaf024f8704f7f2f88804e4eaa4709def1611"
   license "Apache-2.0"
   head "https:github.compaul-gauthieraider.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ffeb53badba66aac49da7be6bbb15b52d8b3ff837269852f0ef6703bd2fc0b86"
-    sha256 cellar: :any,                 arm64_sonoma:  "8a927a6ff340661e037484cceb9578918631cec66eb4eeaf7faa8973503f9060"
-    sha256 cellar: :any,                 arm64_ventura: "8fe69601cb23dc4874f2fc27d53b8e732489b52f0d7c6a0156311f1a773a9a12"
-    sha256 cellar: :any,                 sonoma:        "d35aa234df0b0c190ad74301e6257112c8daba25270c0f8cd9ff1ce2f975afa7"
-    sha256 cellar: :any,                 ventura:       "0dd88546b3808402d01880d4f0f223ff29d92ddb56fff132307e9609b5a47787"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dde407f061fd712ec6ae140d63c8a3edca55f20a13718b8d3d34a9305b34ae30"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e35a8a8feb363540763853aca3ad3f06fc12ec2086ffffd7455cd9e070be645"
+    sha256 cellar: :any,                 arm64_sequoia: "9543e959020e0b7e52b7b088781fff90dab3abffdde28b9c36183319c1c90164"
+    sha256 cellar: :any,                 arm64_sonoma:  "cb062b4672e209a10d732e94e5a537d1aa6cf8e11469ed772231fdcc950a62a1"
+    sha256 cellar: :any,                 arm64_ventura: "9da821041e836804cbfcd8f0a21637e3a4f0315568b1514ba9d26d9e69d6fb13"
+    sha256 cellar: :any,                 sonoma:        "e7ebc0bcd74e166a2a4993d00c367bdbc7530796b8372153f4fdb8033e73694c"
+    sha256 cellar: :any,                 ventura:       "ac995482ab88f7dfb52d3cf78940470258229e0d611e3cc5116cd0d9e202a6ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab4c37473c839a86d790ac69266bcdd65d8ececd8280a77b2ee7eafa33e8c0f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c274cca2406c56b8bf0249e0b15fb5301c7eb63ac4fe56ecc03a9e4332d4e167"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -26,6 +26,11 @@ class Aider < Formula
   depends_on "pillow"
   depends_on "python@3.12" # py3.13 support issue, https:github.comAider-AIaiderissues3037
   depends_on "scipy"
+
+  # One way to update python resources:
+  # 1. remove GitHub url resources
+  # 2. run `brew update-python-resources aider`
+  # 3. use GitHub urls for any incomplete tree-sitter-* sdists (missing C headers)
 
   resource "aiohappyeyeballs" do
     url "https:files.pythonhosted.orgpackages2630f84a107a9c4331c14b2b586036f40965c128aa4fee4dda5d3d51cb14ad54aiohappyeyeballs-2.6.1.tar.gz"
@@ -80,11 +85,6 @@ class Aider < Formula
   resource "configargparse" do
     url "https:files.pythonhosted.orgpackages708a73f1008adfad01cb923255b924b1528727b8270e67cb4ef41eabdc7d783eConfigArgParse-1.7.tar.gz"
     sha256 "e7067471884de5478c58a511e529f0f9bd1c66bfef1dea90935438d6c23306d1"
-  end
-
-  resource "cython" do
-    url "https:files.pythonhosted.orgpackages5a25886e197c97a4b8e254173002cdc141441e878ff29aaa7d9ba560cd6e4866cython-3.0.12.tar.gz"
-    sha256 "b988bb297ce76c671e28c97d017b95411010f7c77fa6623dd0bb47eed1aee1bc"
   end
 
   resource "diff-match-patch" do
@@ -292,11 +292,6 @@ class Aider < Formula
     sha256 "6838eae08bbce4f6accd5d5572075c63626a15ee3e6f842df996bf62f6d73521"
   end
 
-  resource "pycparser" do
-    url "https:files.pythonhosted.orgpackages1db231537cf4b1ca988837256c910a668b553fceb8f069bedc4b1c826024b52cpycparser-2.22.tar.gz"
-    sha256 "491c8be9c040f5390f5bf44a5b07752bd07f56edf992381b05c701439eec10f6"
-  end
-
   resource "pydantic" do
     url "https:files.pythonhosted.orgpackagesb7aed5220c5c52b158b1de7ca89fc5edb72f304a70a4c540c84c8844bf4008depydantic-2.10.6.tar.gz"
     sha256 "ca5daa827cce33de7a42be142548b0096bf05a7e7b365aebfa5f8eeec7128236"
@@ -372,11 +367,6 @@ class Aider < Formula
     sha256 "7f3240dcfa14d198dba24b8b9cb3b108c06b68d45b7babd9eefc1038fdf7e707"
   end
 
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages81ed7101d53811fd359333583330ff976e5177c5e871ca8b909d1d6c30553aa3setuptools-77.0.3.tar.gz"
-    sha256 "583b361c8da8de57403743e756609670de6fb2345920e36dc5c2d914c319c945"
-  end
-
   resource "six" do
     url "https:files.pythonhosted.orgpackages94e7b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2six-1.17.0.tar.gz"
     sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
@@ -428,14 +418,28 @@ class Aider < Formula
   end
 
   resource "tree-sitter" do
-    url "https:files.pythonhosted.orgpackages399eb7cb190aa08e4ea387f2b1531da03efb4b8b033426753c0b97e3698645f6tree-sitter-0.21.3.tar.gz"
-    sha256 "b5de3028921522365aa864d95b3c41926e0ba6a85ee5bd000e10dc49b0766988"
+    url "https:files.pythonhosted.orgpackagesa7a2698b9d31d08ad5558f8bfbfe3a0781bd4b1f284e89bde3ad18e05101a892tree-sitter-0.24.0.tar.gz"
+    sha256 "abd95af65ca2f4f7eca356343391ed669e764f37748b5352946f00f7fc78e734"
   end
 
-  # sdist issue report, https:github.comgrantjenkspy-tree-sitter-languagesissues63
-  resource "tree-sitter-languages" do
-    url "https:github.comgrantjenkspy-tree-sitter-languagesarchiverefstagsv1.10.2.tar.gz"
-    sha256 "cdd03196ebaf8f486db004acd07a5b39679562894b47af6b20d28e4aed1a6ab5"
+  resource "tree-sitter-c-sharp" do
+    url "https:github.comtree-sittertree-sitter-c-sharpreleasesdownloadv0.23.1tree-sitter-c-sharp.tar.xz"
+    sha256 "091b700c852ec39c9253ad22ea50198567ede167afddedbcc6a8080a7148090b"
+  end
+
+  resource "tree-sitter-embedded-template" do
+    url "https:github.comtree-sittertree-sitter-embedded-templatearchiverefstagsv0.23.2.tar.gz"
+    sha256 "eeda286631c6086b6fbe6d2a2c5cc8c1ea6129aaaf5bef4ca4b9a3f44d829569"
+  end
+
+  resource "tree-sitter-language-pack" do
+    url "https:files.pythonhosted.orgpackages1bd6d9120dd60db977534ee1dea1459fa8695bfd220d003f2b7b9b74e9df19e0tree_sitter_language_pack-0.6.1.tar.gz"
+    sha256 "a4635f5b6b9b642562d901e4eaa25fc82949d660c88b94753e6d467d963402b9"
+  end
+
+  resource "tree-sitter-yaml" do
+    url "https:github.comtree-sitter-grammarstree-sitter-yamlarchiverefstagsv0.7.0.tar.gz"
+    sha256 "8182760587f14d5131161dee3605613ccebe86062909f0879edf63b4bdd99d44"
   end
 
   resource "typing-extensions" do
@@ -473,14 +477,7 @@ class Aider < Formula
   end
 
   def install
-    venv = virtualenv_install_with_resources without: "tree-sitter-languages"
-
-    # Requires building languages outside `setup.py`: https:github.comgrantjenkspy-tree-sitter-languagespull65
-    resource("tree-sitter-languages").stage do
-      ENV.prepend_path "PYTHONPATH", Formula["cython"].opt_libexecLanguage::Python.site_packages(python3)
-      system venv.root"binpython", "build.py"
-      venv.pip_install Pathname.pwd
-    end
+    virtualenv_install_with_resources
   end
 
   test do
