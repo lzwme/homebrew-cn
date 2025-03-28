@@ -1,8 +1,8 @@
 class Libpointing < Formula
   desc "Provides direct access to HID pointing devices"
   homepage "https:github.comINRIAlibpointing"
-  url "https:github.comINRIAlibpointingreleasesdownloadv1.0.8libpointing-mac-1.0.8.tar.gz"
-  sha256 "b19a701b9181be05c3879bbfc901709055c27de7995bd59ada4e3f631dfad8f2"
+  url "https:github.comINRIAlibpointingarchiverefstagsv1.0.8.tar.gz"
+  sha256 "697581d27101c9816f1b19715e7ace85a5345857d65e4eaa82840cf2051435d6"
   license "GPL-2.0-or-later"
 
   bottle do
@@ -21,10 +21,34 @@ class Libpointing < Formula
     sha256 cellar: :any, sierra:         "1fc9b4bdab762eb8f93c4a75c57e82b14f3274186f5185fa9a17e8d0f3bc3452"
   end
 
+  uses_from_macos "python" => :build
+
+  on_linux do
+    depends_on "libx11"
+    depends_on "libxi"
+    depends_on "libxrandr"
+    depends_on "systemd"
+  end
+
   def install
+    # Fix packaging scripts to be compatible with Python 3
+    scripts = %w[building-and-packaginglinuxprepare building-and-packagingmacprepare]
+    inreplace scripts do |s|
+      s.gsub! "#!usrbinenv python", "#!usrbinenv python3"
+      s.gsub! ": print >> fd, TEST_PROG\n", ": print(TEST_PROG, file=fd)\n"
+      s.gsub!(print >> makefile, (.*)\n, "print(\\1, file=makefile)\n")
+      s.gsub! "print >> makefile\n", "print(\"\", file=makefile)\n"
+    end
+
     ENV.cxx11
-    system "make"
-    system "make", "install", "PREFIX=#{prefix}"
+    platform = OS.mac? ? "mac" : "linux"
+    cd "building-and-packaging#{platform}" do
+      ENV["LIBPOINTING_VERSION"] = version
+      system ".prepare"
+      subdir = OS.mac? ? version : "dist"
+      system "make", "-C", "libpointing-#{subdir}"
+      system "make", "-C", "libpointing-#{subdir}", "install", "PREFIX=#{prefix}"
+    end
   end
 
   test do

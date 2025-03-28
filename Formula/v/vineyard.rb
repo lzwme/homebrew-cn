@@ -4,14 +4,15 @@ class Vineyard < Formula
   url "https:github.comv6d-iov6dreleasesdownloadv0.24.2v6d-0.24.2.tar.gz"
   sha256 "a3acf9a9332bf5cce99712f9fd00a271b4330add302a5a8bbfd388e696a795c8"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256                               arm64_sequoia: "1e523a56e12c147bf7169720737ed422f8bc6092c295557c0e3d7daaa6799b28"
-    sha256                               arm64_sonoma:  "f3d6060bf786fe16cd5f2885eee5428e45dc4655cb061a1a90873f33ba596769"
-    sha256                               arm64_ventura: "bd04f41327ff13207caa720dfc459585336e4572c843d7a28babe77ffd52b78c"
-    sha256                               sonoma:        "cb25f9308b95310edf63637abf5a5e26dc61fd4a4680b649ab12c645e6ee7d30"
-    sha256                               ventura:       "932d86751cc8df0045186b5fa15a7b9ced9313214a294a5b002629d71de5e72a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e94664da0a8f82686aaec91f5db75543bb11d9b430c47fc63040495e1b5507db"
+    sha256                               arm64_sequoia: "561165ad084f00d50a006cbc129d2f680d09fc0ad125d2f3984a95bcbcc72321"
+    sha256                               arm64_sonoma:  "1a7a921549ba270da4d7d328e3473f110c67ffddd96204e3d65baedf198e8da8"
+    sha256                               arm64_ventura: "f1480e5c08cd4bbaed23bb7ac94129c39197f16b3b42fa2a2324ccd4aad2224c"
+    sha256                               sonoma:        "a8c536a70c4aa56fb7e47c3a2d730908e091f20c37ecd46fb1fb468aab9012a8"
+    sha256                               ventura:       "e4d5f00c8254923e4808411e904e5b57466cdb6959f5dee7b27d9fcea4e79245"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "033e633eb759b964d7881b6d3354e43517058fa3fff32a8a75235b931332a474"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -20,7 +21,7 @@ class Vineyard < Formula
   depends_on "python-setuptools" => :build
   depends_on "python@3.13" => :build
   depends_on "apache-arrow"
-  depends_on "boost@1.85"
+  depends_on "boost"
   depends_on "cpprestsdk"
   depends_on "etcd"
   depends_on "etcd-cpp-apiv3"
@@ -36,6 +37,18 @@ class Vineyard < Formula
   end
 
   def install
+    # Workaround to support Boost 1.87.0+ until upstream fix for https:github.comv6d-iov6dissues2041
+    boost_asio_post_files = %w[
+      srcserverasyncsocket_server.cc
+      srcserverservervineyard_server.cc
+      srcserverservicesetcd_meta_service.cc
+      srcserverserviceslocal_meta_service.cc
+      srcserverserviceslocal_meta_service.h
+      srcserverservicesmeta_service.cc
+    ]
+    inreplace boost_asio_post_files, ^(\s*)(\S+)\.post\(, "\\1boost::asio::post(\\2,"
+    inreplace "srcserverservicesetcd_meta_service.cc", "backoff_timer_->cancel(ec);", "backoff_timer_->cancel();"
+
     python3 = "python3.13"
     # LLVM is keg-only.
     llvm = deps.map(&:to_formula).find { |f| f.name.match?(^llvm(@\d+)?$) }

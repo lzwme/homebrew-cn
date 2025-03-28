@@ -1,8 +1,8 @@
 class Root < Formula
   desc "Analyzing petabytes of data, scientifically"
   homepage "https:root.cern"
-  url "https:root.cerndownloadroot_v6.34.04.source.tar.gz"
-  sha256 "e320c5373a8e87bb29b7280954ca8355ad8c4295cf49235606f0c8b200acb374"
+  url "https:root.cerndownloadroot_v6.34.06.source.tar.gz"
+  sha256 "a799d632dae5bb1ec87eae6ebc046a12268c6849f2a8837921c118fc51b6cff3"
   license "LGPL-2.1-or-later"
   head "https:github.comroot-projectroot.git", branch: "master"
 
@@ -15,12 +15,12 @@ class Root < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "c795614a01a887ebf51918e4e0f5d50dd32b29fdbb8540cdbf56b50d5d56b939"
-    sha256 arm64_sonoma:  "943fa93aa59e03e53bca7b9723d88b09e2a8ecb004de93930056348e009d55fc"
-    sha256 arm64_ventura: "92e704a197505f29cd9530ec158496cb87d8e0696e7cf88d60f475fde6a38204"
-    sha256 sonoma:        "a108f575edca912e22e468b2cf013d0def14fe0e5bfd1c718835ae17a0aed7ec"
-    sha256 ventura:       "f565e670a9aeab04be5f665119681f4093d334a94ebecbbba4de5b766bf9678a"
-    sha256 x86_64_linux:  "9254f31ab37919c5eb58fe3c0d275f98424bbf1e57c1249a0632c676c930ceb4"
+    sha256 arm64_sequoia: "6a1b595fdb111422ff798103ac29eee7ce64e7a7ab8fa9b283de4a36505de59a"
+    sha256 arm64_sonoma:  "d2232b23e4afc609d359baf2d8fcfbe17a59c3cad04b8357562434be8aa42781"
+    sha256 arm64_ventura: "d74afbb20d98fd18bec0500ff48db2b6ffe50591d40b0dfea77188670b7025ff"
+    sha256 sonoma:        "414b46fc8e771ff4a864cec72f39d460386f1464f5d597a4196bdc0d412b5f19"
+    sha256 ventura:       "b06d15a594ccc38073cf6f42023e45da583caf4067f9c6a01f6ff3b2c18c0a72"
+    sha256 x86_64_linux:  "c31d4b8fc95798660d8c6a2a695f4843765ac273efa14413645609af9b745312"
   end
 
   depends_on "cmake" => :build

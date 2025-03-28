@@ -3,9 +3,9 @@ class Pyside < Formula
 
   desc "Official Python bindings for Qt"
   homepage "https://wiki.qt.io/Qt_for_Python"
-  url "https://download.qt.io/official_releases/QtForPython/pyside6/PySide6-6.8.2.1-src/pyside-setup-everywhere-src-6.8.2.1.tar.xz"
-  mirror "https://cdimage.debian.org/mirror/qt.io/qtproject/official_releases/QtForPython/pyside6/PySide6-6.8.2.1-src/pyside-setup-everywhere-src-6.8.2.1.tar.xz"
-  sha256 "13f7a00b360a5869084fcc085c48ba236915a200bb5a13c1548ed8ab7a8b606b"
+  url "https://download.qt.io/official_releases/QtForPython/pyside6/PySide6-6.8.3-src/pyside-setup-everywhere-src-6.8.3.tar.xz"
+  mirror "https://cdimage.debian.org/mirror/qt.io/qtproject/official_releases/QtForPython/pyside6/PySide6-6.8.3-src/pyside-setup-everywhere-src-6.8.3.tar.xz"
+  sha256 "d2c896f7f1a6a7ea4c9f98cfe317272fd139703ddf612b86999f09e48aeef0e6"
   # NOTE: We omit some licenses even though they are in SPDX-License-Identifier or LICENSES/ directory:
   # 1. LicenseRef-Qt-Commercial is removed from "OR" options as non-free
   # 2. GFDL-1.3-no-invariants-only is only used by not installed docs, e.g. sources/{pyside6,shiboken6}/doc
@@ -22,11 +22,11 @@ class Pyside < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "80dfd20049eda37f59b75cbebbc9d4bef22e1d3957a099de33d1ff82a9ba50cf"
-    sha256 cellar: :any,                 arm64_ventura: "09b45c61a180282743856fe82df6c746338f0aa80928a01304f8f3edbc5a656e"
-    sha256 cellar: :any,                 sonoma:        "2823df6aaa582745c268c7068fbed507f9f87b0665b58f82cd2f22bfc34e1596"
-    sha256 cellar: :any,                 ventura:       "d1066a7ac5bd260c7c639ce1c5580aed8178b59bc7f5faa6bdcadbf14b669332"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "894e212a69c0289978958b24b64ce34639778ed22619868abf2a923cd4df1bcd"
+    sha256 cellar: :any,                 arm64_sonoma:  "c09c799804ee1a48eed780f8f802b41eb5812960c2acfe19d036a858fb8fd104"
+    sha256 cellar: :any,                 arm64_ventura: "99d364c204a64c172b62c32186af8aa2ebb3034eaa7660b7a56b1a7a05b91e54"
+    sha256 cellar: :any,                 sonoma:        "d8f852787277f1499a439ed75dc6c5f063f27fdb3dbdd08400f864036540eaa6"
+    sha256 cellar: :any,                 ventura:       "e4108105248e21b293bd6c1061b8ab23f885cbc04aca88f9704f243003246c8f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4fe8186c1d70dbba0b5e77fdbda6a0f7bae6c1c373bda5cd05c0db9b779a4f1"
   end
 
   depends_on "cmake" => :build

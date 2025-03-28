@@ -3,18 +3,18 @@ class Solargraph < Formula
   homepage "https:solargraph.org"
   # Must be git, because solargraph.gemspec uses git ls-files
   url "https:github.comcastwidesolargraph.git",
-      tag:      "v0.53.1",
-      revision: "0e82bbdcc9da7343dd028373797f2fe0373dbf6a"
+      tag:      "v0.53.2",
+      revision: "1f8a6f7575c3b34783fd18c96da7448de46fde0e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "47669d2521e737b17ebfe8f88899816e4ae083a32c8da92c0f8e7e6b845592a3"
-    sha256 cellar: :any,                 arm64_sonoma:  "2ef55b257fd25f0af57736fc89efd4679b0c308efd16dac520494658211cf50e"
-    sha256 cellar: :any,                 arm64_ventura: "d62a970fa9d61c5f8710ec379f47f530b375b0750367e51a2d47d0ab513c4702"
-    sha256 cellar: :any,                 sonoma:        "ac0305a94265eb4425c569f114ea786821648547aa8337a74adf8cd47cfff25c"
-    sha256 cellar: :any,                 ventura:       "8ba129debf8b176037dd66d8b09f0f74886564561e065c40c49c42f0e8dd0c55"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f20b1e4bfcb5f521022d34a05e539783bcd63a6f52ee39c0bb0b34d12108f3d7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54b42ca23672cd63546a59f40396dc6afe54a1252e573996336789b6f7778509"
+    sha256 cellar: :any,                 arm64_sequoia: "6e62e12d27832339e17de9f2d3e8987848483ad3f0b6ee0531cb3f7191dff4a5"
+    sha256 cellar: :any,                 arm64_sonoma:  "65fb203c0b5f15f9d002c1f0937df6cceb5eac0dd1f4bcbceeeac7efdcc322a9"
+    sha256 cellar: :any,                 arm64_ventura: "9f1a72d8513a60fc5dc6395410c7a0c5eeffab711470d41c2730deddc5f65557"
+    sha256 cellar: :any,                 sonoma:        "87bf1280fe991aa19750e9733c9c66fef81002a64312fe1f0ca348864ef44080"
+    sha256 cellar: :any,                 ventura:       "45b642983071703cb8666fd736a56cb029ac109098016d5a130ca662e66b5987"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6f740548d2e60a143f58131589c50300b8898e764f7397774d11f2b2ee36757"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39f547a62c98288e66b8a73ab99c9077ba30b8ea562346b0981d58609b2d9261"
   end
 
   depends_on "ruby" # Requires >= Ruby 2.7

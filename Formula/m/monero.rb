@@ -1,6 +1,6 @@
 class Monero < Formula
   desc "Official Monero wallet and CPU miner"
-  homepage "https:www.getmonero.org"
+  homepage "https:www.getmonero.orgdownloads#cli"
   license "BSD-3-Clause"
   revision 1
 

@@ -1,18 +1,18 @@
 class Fastly < Formula
   desc "Build, deploy and configure Fastly services"
   homepage "https:www.fastly.comdocumentationreferencecli"
-  url "https:github.comfastlycliarchiverefstagsv11.0.0.tar.gz"
-  sha256 "4a0b6543cbe5c2a25faf7fd4ad4e1bb8a960cbcc3340d55220ad627f87522f20"
+  url "https:github.comfastlycliarchiverefstagsv11.1.0.tar.gz"
+  sha256 "978433e7f660c8a3776224fe6e3ecec2789a6c8feb7eb36fa716b7c341494e17"
   license "Apache-2.0"
   head "https:github.comfastlycli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2db6cc3b60566b43710dc7212121d044e243dffe8d4215f13f175e57e04223f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2db6cc3b60566b43710dc7212121d044e243dffe8d4215f13f175e57e04223f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e2db6cc3b60566b43710dc7212121d044e243dffe8d4215f13f175e57e04223f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4179f43556e6d4a94503204a5d990812683fc516e9124eb26e2917934dabafcb"
-    sha256 cellar: :any_skip_relocation, ventura:       "4179f43556e6d4a94503204a5d990812683fc516e9124eb26e2917934dabafcb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a94d92997a57b102af919ec34ee82c0ce5946da7c406ad89b5cc016f52a27553"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "167ae0bb6b2be0a17e14cfe6c27eef5a273fc0093b7f92ca3e32d8008b58f221"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "167ae0bb6b2be0a17e14cfe6c27eef5a273fc0093b7f92ca3e32d8008b58f221"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "167ae0bb6b2be0a17e14cfe6c27eef5a273fc0093b7f92ca3e32d8008b58f221"
+    sha256 cellar: :any_skip_relocation, sonoma:        "af9e8df9f1f355a4f17063b353f38ba512c53c784add26f6024582da196b0d77"
+    sha256 cellar: :any_skip_relocation, ventura:       "af9e8df9f1f355a4f17063b353f38ba512c53c784add26f6024582da196b0d77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd8c92bb7af92d595b9cacc91261de787e200ca9e98259800e0da83d917c5d23"
   end
 
   depends_on "go" => :build

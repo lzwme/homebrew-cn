@@ -621,7 +621,7 @@ Homebrew-homebrew-core/Formula/b/bpytop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brag.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/braid.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brainfuck.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/b/breezy.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/b/breezy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brev.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brew-cask-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brew-gem.rb, Homebrew/homebrew-core, 1
@@ -2069,6 +2069,7 @@ Homebrew-homebrew-core/Formula/g/gabo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gaffitter.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/galen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gallery-dl.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gama.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gambit-scheme.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gambit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gamdl.rb, Homebrew/homebrew-core, 1
@@ -6197,8 +6198,6 @@ Homebrew-homebrew-core/Formula/s/somagic-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/somagic.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sonar-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sonar-scanner.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/sonarqube-lts.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/s/sonarqube.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sonic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sonobuoy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sophus.rb, Homebrew/homebrew-core, 1
@@ -7930,6 +7929,7 @@ Homebrew-homebrew-cask/Casks/b/bettermouse.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bettertouchtool.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/betterzip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/betwixt.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/b/beutl.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/beyond-compare.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/beyond-compare@4.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/beyond-compare@beta.rb, Homebrew/homebrew-cask, 0

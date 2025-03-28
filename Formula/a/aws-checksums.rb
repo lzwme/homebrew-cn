@@ -1,17 +1,17 @@
 class AwsChecksums < Formula
   desc "Cross-Platform HW accelerated CRC32c and CRC32 with fallback"
   homepage "https:github.comawslabsaws-checksums"
-  url "https:github.comawslabsaws-checksumsarchiverefstagsv0.2.3.tar.gz"
-  sha256 "c688f311db8a1b70bb6d22f6e8f2817b39e1419546e339cf753d61340969eeb4"
+  url "https:github.comawslabsaws-checksumsarchiverefstagsv0.2.5.tar.gz"
+  sha256 "c75f1697720d1f3bd5ac5e5a9613e0120337ef48c3c6bf1e6be3c802799ad8e4"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d974040bc28906c534de1bce1b3aa396458b74ea4d4fe3bf4e768ad8231a8f68"
-    sha256 cellar: :any,                 arm64_sonoma:  "b5d2357241d9f1afae2b6f1bbc0314e78449a7afce8efb5dbbf380df43d5da9a"
-    sha256 cellar: :any,                 arm64_ventura: "fa822ef3d73e68ceeb88f986bf8f6667bc2b7d8ef4d0587fb99591876707fb50"
-    sha256 cellar: :any,                 sonoma:        "9a76710ca0ddacecf604da8424cf6417485602df17bccf40d2d0b1205c833155"
-    sha256 cellar: :any,                 ventura:       "db22476178d1d4903ded1907850b5463efe4dfb931e33d02898976b4b2f56fd6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ae28a4d402f2a8f336f8cd55329f6b89d5b75692c31574ca8c0977f978acc4c"
+    sha256 cellar: :any,                 arm64_sequoia: "56fbe04f6cb799201cb4bb3a85bad677d430355e1968bc9344417e524765c9fe"
+    sha256 cellar: :any,                 arm64_sonoma:  "fb1b2d8ebad3c864bf4ef0801973b8e5a16b3c2b5065d8e70eebe1571d6265cd"
+    sha256 cellar: :any,                 arm64_ventura: "4725c088afcbd3ca2dda9185718dc3ae1abc284adbdd7ac4a9e872ebb6cea438"
+    sha256 cellar: :any,                 sonoma:        "7a2fe131809186166b1324057958a302f52679080f44c6d86663dbffc8b8dd02"
+    sha256 cellar: :any,                 ventura:       "e6aac87dd7612d3f9a87a6b1192593123ed8fa52f5b1bedea84d8cf195eb7894"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fceabf4bbdcd03d7e8443cc14142465bdb7546cf4b928de4319cad9a894ed9e7"
   end
 
   depends_on "cmake" => :build
