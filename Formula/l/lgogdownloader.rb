@@ -17,6 +17,7 @@ class Lgogdownloader < Formula
     sha256 cellar: :any,                 arm64_ventura: "f68201d660c0db30f57cabd1f49bf4a5fc46fd950c3e5600723bd135d0c8cd0d"
     sha256 cellar: :any,                 sonoma:        "67e8469ccbe663088861d217f93adc6c87e44223a99064b56fca4b3282bbb8bd"
     sha256 cellar: :any,                 ventura:       "bdd2fedee3e185d8b503463056c56722d4358641711e905f1367754938b8903f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a7ebdd82aeb707aa0466d6f5cef66926b524e9df9277ca7d9629db59bf1b9de"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5c8e66d5e02fb115f5e5aaea7ab068385041cd2c480934bfdf82b77d8f5ff1b"
   end
 

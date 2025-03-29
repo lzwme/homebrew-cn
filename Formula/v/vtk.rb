@@ -1,18 +1,17 @@
 class Vtk < Formula
   desc "Toolkit for 3D computer graphics, image processing, and visualization"
   homepage "https://www.vtk.org/"
-  url "https://www.vtk.org/files/release/9.4/VTK-9.4.1.tar.gz"
-  sha256 "c253b0c8d002aaf98871c6d0cb76afc4936c301b72358a08d5f3f72ef8bc4529"
+  url "https://www.vtk.org/files/release/9.4/VTK-9.4.2.tar.gz"
+  sha256 "36c98e0da96bb12a30fe53708097aa9492e7b66d5c3b366e1c8dc251e2856a02"
   license "BSD-3-Clause"
-  revision 2
   head "https://gitlab.kitware.com/vtk/vtk.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:  "9ed23f4be40eb53e2bdd9fd6b3e567416655f6e33252cfeaba5ec4479ac0d3d9"
-    sha256 cellar: :any, arm64_ventura: "132410470b595b7b6d69a21e2130be2f6d4eb32e668e1a5d8098d8510e833c9f"
-    sha256 cellar: :any, sonoma:        "361f2053f5cf0c086e287f5e689a2ab4a6c3a3cabbb60bc6618070736393bbc9"
-    sha256 cellar: :any, ventura:       "1e46c17261ed861900df2542341e408c6d1f6800b5ddd3c6e5e6181d75ee93c3"
-    sha256               x86_64_linux:  "9429fd810d7f4238c30a5bbbf94b616a4ca6fe038b09cee2349cf69800106a16"
+    sha256 cellar: :any, arm64_sonoma:  "3d98178d03bda17cfc99b98fbf4ff4e4ef69f65d149e6cf4e5bbb4a3bd571d6d"
+    sha256 cellar: :any, arm64_ventura: "b3ca6551477ca951b025053442c2192aa9375cc2872f2439a2a7edcc7af885cd"
+    sha256 cellar: :any, sonoma:        "1b55ad498c0d7191412c3805b816e996a6339fd51873c4f90d2bf23f3ad885e6"
+    sha256 cellar: :any, ventura:       "bfd8e930e9e961638b401a2618acf2045c85c2f2656ffbbba5b23cdf67c16a34"
+    sha256               x86_64_linux:  "f03f5d6b65a4aee98a52723b9ee8f3c82e632828d3cf787f04abc55863e16288"
   end
 
   depends_on "cmake" => [:build, :test]

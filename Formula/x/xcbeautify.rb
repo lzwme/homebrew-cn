@@ -12,6 +12,7 @@ class Xcbeautify < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b14e1bf19fa36b2e8736e2a4595e70437f4e70f9b48c9c971471e2fb234a493b"
     sha256 cellar: :any_skip_relocation, sonoma:        "0dd3400247db360ebac36409f6a09e6436fb93b9fbae2de747262ed66b2364aa"
     sha256 cellar: :any_skip_relocation, ventura:       "6447da126d44ba319b3e244739c592a956e022adcaf0a1301acb3feafc998a28"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fd518a4b86e2e1298e050771aa179220fc594fae29184a58451163360012e1d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bafc8ac24d2ae349cca4a26d2d05000b2ddcfccfaf38c8763993d9cb72a3745"
   end
 

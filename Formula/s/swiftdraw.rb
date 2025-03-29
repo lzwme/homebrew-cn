@@ -12,6 +12,7 @@ class Swiftdraw < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "91bd59a30aeb7fb1e6af6e390f5701b2ffda06da4bda6d8273e2a7dd35b55e31"
     sha256 cellar: :any_skip_relocation, sonoma:        "ed4241cc3f3ab431d3d30957d00c954eeded179aa0fe2c41637f529363df1326"
     sha256 cellar: :any_skip_relocation, ventura:       "f946bb5e0d70c96afce333a694ce26289854738aaf58aad44139445af51a11b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "12f53493f9ca52bdf5acd7fe1f6088935190872ef67bc4a4e533d2b4978e99bf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b3d8267a42cfaaf8672934c155384e033fdf1f6c87bdff6a5584af99b262a7e"
   end
 

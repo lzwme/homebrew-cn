@@ -1,37 +1,37 @@
 class SentryNative < Formula
   desc "Sentry SDK for C, C++ and native applications"
   homepage "https:docs.sentry.ioplatformsnative"
-  url "https:github.comgetsentrysentry-nativearchiverefstags0.8.2.tar.gz"
-  sha256 "37a7ca1f85bcad4663d1fe7e9f0e302041c7a5c64aae222408db6cf876bc2f8b"
+  url "https:github.comgetsentrysentry-nativearchiverefstags0.8.3.tar.gz"
+  sha256 "aa35384cbcac5e91249a1101ed16e32e7da5ed387595b9fc7d914ae58f0eaac5"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "cc8ac48c37c3a65fc5f8e54c99598b364091295b5deb40d8b91bedb138269aa8"
-    sha256 cellar: :any,                 arm64_sonoma:  "fadd243287c272fedf8c87460e681a9a0f288eea5d4eab2e79b25349cffaf44a"
-    sha256 cellar: :any,                 arm64_ventura: "c6897bb16e462bc1c5d0770ec4875005da06754f6572817d49e80c11346a6109"
-    sha256 cellar: :any,                 sonoma:        "8182ade24b56eea64719f6ab9de9cb8b91bdd17a7fb364de55989b3a7a10036b"
-    sha256 cellar: :any,                 ventura:       "30ed938fffae3a190db6edbef2684ceafe5b63f359f5160494c16d05bee8f7af"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5625d9bf081acafc00c7193c17be523e77d6bea9fd9bee08adf23440a184586"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddebd3b39ba098d60e532eff10611186a220653ac17b89a007241225d653c5ba"
+    sha256 cellar: :any,                 arm64_sequoia: "b868fe4c5e7f8e34472adc7f8b25b403d21a1334af7dc431846cb2707c081481"
+    sha256 cellar: :any,                 arm64_sonoma:  "e456c2f6027015f80e1ffec75953ac133631c986e1b48d580e0f0fc1e5e2ff1b"
+    sha256 cellar: :any,                 arm64_ventura: "9d73d3838dfa72ae73adfd1af5c7bf727a608d321e25065a852947b043b0c7c9"
+    sha256 cellar: :any,                 sonoma:        "6e29ba37e05a10f681549496c00cb033be9bc7f55e5d85f6278154f5e6b6d9f4"
+    sha256 cellar: :any,                 ventura:       "4e6dcdd45dd9240816a5f8cae76e87092d4b9f27d862169f11a57eff83ad00bf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f91ba04e2014681376b7910ad9d379e86b4e087cd6751e5adc247e3b2260e169"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b7f7343375e4885cfea46a9811fffd93c7c28b3de3577cf6a13a6cc06323ff4"
   end
 
   depends_on "cmake" => :build
   uses_from_macos "curl"
   uses_from_macos "zlib"
 
-  # No recent tagged releases, so we use the latest commit as of 2025-Mar-10
+  # No recent tagged releases, use the latest commit
   resource "breakpad" do
     url "https:github.comgetsentrybreakpad.git",
         revision: "ecff426597666af4231da8505a85a61169c5ab04"
   end
 
-  # No recent tagged releases, so we use the latest commit as of 2025-Mar-10
+  # No recent tagged releases, use the latest commit
   resource "crashpad" do
     url "https:github.comgetsentrycrashpad.git",
-        revision: "4cd23a2bedb49751d871da086b20b66888562924"
+        revision: "2d97a484bb628b05a46203e4a05c6c827796e5cd"
   end
 
-  # No recent tagged releases, so we use the latest commit as of 2025-Mar-10
+  # No recent tagged releases, use the latest commit
   resource "libunwindstack-ndk" do
     url "https:github.comgetsentrylibunwindstack-ndk.git",
         revision: "284202fb1e42dbeba6598e26ced2e1ec404eecd1"

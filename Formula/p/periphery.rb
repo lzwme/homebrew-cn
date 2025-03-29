@@ -10,6 +10,7 @@ class Periphery < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "46f35e9045766af2c18532e26f4a66f773bc3417ecaebd1264ec1d5712e471fc"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "edcfe044e2ae4240c65ff155b6c2f0a624d6ac1d91dcb7b9ff534636b2ca42ce"
     sha256 cellar: :any_skip_relocation, sonoma:        "6164856e03fe166e7bff671b086bdf21609edc8fe47200715583aa5123b261d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d69e33c2cf6dc8f0f61eeec3322dd4eef40eca4cbf527398e52bc507aabb260"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2cc25c77bedb7ad96a6749bd68ba66cb5f14d26b3b68183dfb46d37f5f0994e9"
   end
 

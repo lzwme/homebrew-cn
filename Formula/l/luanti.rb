@@ -48,6 +48,7 @@ class Luanti < Formula
   depends_on "mesa"
   depends_on "ncurses"
   depends_on "openal-soft"
+  depends_on "openssl@3"
   depends_on "sqlite"
   depends_on "xinput"
   depends_on "zlib"

@@ -6,19 +6,20 @@ class Odin < Formula
       revision: "951bef4ade595e5fa7e8f0d0681e4e34ab1ca9d3"
   version "2025-03"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comodin-langOdin.git", branch: "master"
 
   bottle do
-    sha256                               arm64_sequoia: "89b40c3b71830dcc8cb4ae44fba4b0f7ab2a7f760a262ec92768f946834b21f0"
-    sha256                               arm64_sonoma:  "32c2d47d4a8f0c3cdadee039feccca4a01f1bd098e561fcff4cbf3704060469c"
-    sha256                               arm64_ventura: "c37ca002090d2b6fc177870fc8c713aba96fbc1b8ed5aea6004d3ff92d26a647"
-    sha256 cellar: :any,                 sonoma:        "ed9e94ec79594275e983649728cd2f7369bd70b39f22bc4457d166d7a3dd7ec5"
-    sha256 cellar: :any,                 ventura:       "66f1867b718fa84fe25e5a216b00fbe3ab8f2096736e2a921be0e6ccddd16b59"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6c50287712e2c32204fa12bd11abaa58e0c12d614ec70e86742bab9d40a4f04"
+    sha256                               arm64_sequoia: "2a2d7ff1769de89b3459b0656f91ef2edac0c32ff2284bc65bf93ef2d4a083f5"
+    sha256                               arm64_sonoma:  "efb819ad6918b4717e6d56000cecde79295f6194425a04dd8ee0ae4b9fa7087e"
+    sha256                               arm64_ventura: "05d9dddb2358edd6e993b0db3ea56470311add688c34205fd3085cc173e19b4c"
+    sha256 cellar: :any,                 sonoma:        "4dbaf32374bf44f73a9548a1a2775d63d136e7352b74b9534d8c66a0be6183fe"
+    sha256 cellar: :any,                 ventura:       "317a185fa4c620660fcb00a10940ca2c31ea717b17b385c73d9dfb80c151f152"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56fac6a248c55d3b523220a6dedb43673a5285bd7ebf1c6bc13a38c62fe0d99d"
   end
 
   depends_on "glfw"
-  depends_on "llvm"
+  depends_on "llvm@19"
   depends_on "raylib"
 
   resource "raygui" do
@@ -29,6 +30,7 @@ class Odin < Formula
   def install
     llvm = deps.map(&:to_formula).find { |f| f.name.match?(^llvm(@\d+(\.\d+)*)?$) }
     ENV["LLVM_CONFIG"] = (llvm.opt_bin"llvm-config").to_s
+    ENV.append "LDFLAGS", "-Wl,-rpath,#{llvm.opt_lib}" if OS.linux?
 
     # Delete pre-compiled binaries which brew does not allow.
     buildpath.glob("vendor***.{lib,dll,a,dylib,so,so.*}").map(&:unlink)

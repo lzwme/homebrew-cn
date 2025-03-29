@@ -1,18 +1,19 @@
 class Vapor < Formula
   desc "Command-line tool for Vapor (Server-side Swift web framework)"
   homepage "https:vapor.codes"
-  url "https:github.comvaportoolboxarchiverefstags19.1.0.tar.gz"
-  sha256 "f84f09c6ce7cbc6c7f6dd936fb3601bf2aeaaccdf50dc60c61e2b075579d0d2d"
+  url "https:github.comvaportoolboxarchiverefstags19.1.1.tar.gz"
+  sha256 "59e51d3e1d046b85fe664da7fea28e65996e200b5bac906203788dc17d4301d6"
   license "MIT"
   head "https:github.comvaportoolbox.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd3ce2dbff951a219b81694a11800b6bf8aa0b3b7e124cebe7df37958ebbc51c"
-    sha256 cellar: :any,                 arm64_sonoma:  "e047ba24b56f3a8333e4d97ea0a73fcf40c7d5b3c35ad8ea9db4afc28336ac6f"
-    sha256 cellar: :any,                 arm64_ventura: "503f09c6e9c53d61444ef6aae85c6145acf1a99e21e3e52127121bee52d46c85"
-    sha256 cellar: :any,                 sonoma:        "2d5a94f778e7198d9c5388565463b1a617b33f338b78d28a8af9cb2158cdf219"
-    sha256 cellar: :any,                 ventura:       "cd73ad4ed509b15830c93c841a5b33e1a4324a3d2b896aef0f45822f6ec0b180"
-    sha256                               x86_64_linux:  "32ec06c66e460924a58b2725672e11c4e38d14cd17a7ff7ff6a6c9d684b950a8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "702d70ded6b2c22677204cedbfa5346421b2943753e5a28e625a1790f47cabcf"
+    sha256 cellar: :any,                 arm64_sonoma:  "2c0259ab78e9880a59db090f0be164e248992722a370492f5fd7fc361e0c7069"
+    sha256 cellar: :any,                 arm64_ventura: "7912d37527169a5b38fc117eca3d478def1c3434e1963d8b99d841d61e4aef05"
+    sha256 cellar: :any,                 sonoma:        "8fa0660d40e6a186204bb8d5075db073087043e198af164e6821c654fc6ed8a4"
+    sha256 cellar: :any,                 ventura:       "824bc70bd9ba27f645a011ed37841ce2fa307dc2b126c5115f43a840fafdfd8b"
+    sha256                               arm64_linux:   "10e1b470daefac9fbe28cf49959c2a1e41f10bc294ced177a4fe327c913c10e3"
+    sha256                               x86_64_linux:  "ee157b7f048c6a876bfc94f242b56cdf6139f16ee30fe34fd8fc548f70dd58e3"
   end
 
   uses_from_macos "swift", since: :sequoia # Swift 6.0

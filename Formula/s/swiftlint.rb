@@ -13,6 +13,7 @@ class Swiftlint < Formula
     sha256 cellar: :any,                 arm64_ventura: "29c93dcadbb55523ed14bdee545cf2cb2e51de4f6e3e40c91685f5cab7cb6c14"
     sha256 cellar: :any_skip_relocation, sonoma:        "c02c9ac0b73657587745e1950a7ac2b734bb851f6027857d967424296b9c2895"
     sha256 cellar: :any,                 ventura:       "b1d6870415a7ef30d994bf4856512ca82df3152ee716964f2fb09614845d6f12"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b09bb46a93f559bd3a70cf33a3f54ee01d0fe6080501934549fdc12cf6e85f57"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5bdcb3773b806fa9f400bd2a82e5639525ee5faadeb51adda9fd7d59892ea5b7"
   end
 

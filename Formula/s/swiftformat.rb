@@ -12,6 +12,7 @@ class Swiftformat < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "537b6e3d52c5f56766b51086ca7701536e30f05a3ee047c48b54dfc39ea63fe0"
     sha256 cellar: :any_skip_relocation, sonoma:        "e78a4f8ee446b67de146e0f3fc8fbf37bd688c21bf5c1fd3b35b5c30c36928f3"
     sha256 cellar: :any_skip_relocation, ventura:       "390624c68b005a3afa47801f7b672fc52ed7634f7357ec4d2e9a80872ae9afad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "da11308617fb91c8b5b5a277d06a2d5ff2efd86432a2bb6a57ba5ba9970d2408"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a93847570378567d7cb33d978a65a7d5cb4e3a7c25c667fdb6c71541a7c13f87"
   end
 

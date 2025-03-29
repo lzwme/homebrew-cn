@@ -1,18 +1,18 @@
 class Medusa < Formula
   desc "Solidity smart contract fuzzer powered by go-ethereum"
   homepage "https:github.comcryticmedusa"
-  url "https:github.comcryticmedusaarchiverefstagsv1.2.0.tar.gz"
-  sha256 "41f285dd3e7676c69963674087055b33f27b985e07f9d4cd7645f0570bc05f76"
+  url "https:github.comcryticmedusaarchiverefstagsv1.2.1.tar.gz"
+  sha256 "dc1d759a0037350b51adce293cc678bf441386606ccf622745e8ff2d04a86cb0"
   license "AGPL-3.0-only"
   head "https:github.comcryticmedusa.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3d29a3e4e6d710c32bb6acc3465e6489f06a899e21353aa812417011a16d7cfb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e8ac155ebf9920f16bdda4350edfe7abe4cfbee1f281c3a275e46781d218e796"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "95931ad8455fa6bef17d09b1f404af09600854b2dc26d1cc2eb5719719fd0ba3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "460ae45ac21c4356b0e6c4e4bdf9cde04fe044d29d6899be64f9d5144b4438ca"
-    sha256 cellar: :any_skip_relocation, ventura:       "8ca81689f9f5b262d4b7563520125df33b63540716ae190a13f3f75f858d407c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9dbda0f7ffd8cd4e4dc7a51771dd9e9886eb0fab0dc1dff29bfae8cec504f04e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0a87e647f278b365177ba8493606325a91557de070e7f8e1346cec0854dc7df"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "87ccb12465609526c2dcee37bbabffcb38affa4f5c9b5560d77b1dc270a996b5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f1f7b37a0f797128ba0a10bcc296fb75d2ecf3097b51d37b5aae1029da4bb4d9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a7549c4a058ea66ba043d5e66dc312f2f401b4ef3fad6ec5e06123036a93642a"
+    sha256 cellar: :any_skip_relocation, ventura:       "88830664a5ad9f7075537f5423e414cf287e93183209f1518fd153504cde2533"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d8dfb057a32ef14cef7b32b4b62970d18de576fd31a3bfbfe9ca42f3784ca93d"
   end
 
   depends_on "go" => :build

@@ -3,9 +3,9 @@ class Jdtls < Formula
 
   desc "Java language specific implementation of the Language Server Protocol"
   homepage "https:github.comeclipse-jdtlseclipse.jdt.ls"
-  url "https:www.eclipse.orgdownloadsdownload.php?file=jdtlsmilestones1.45.0jdt-language-server-1.45.0-202502271238.tar.gz"
-  version "1.45.0"
-  sha256 "c09e79e958beb5ce41fb3b5097aec0455298bc88a14c8e41462b57edb2812797"
+  url "https:www.eclipse.orgdownloadsdownload.php?file=jdtlsmilestones1.46.0jdt-language-server-1.46.0-202503271314.tar.gz"
+  version "1.46.0"
+  sha256 "437d8942451204405a01a71fe8c478a6c9e9975d920416d3fc3dfced414c5178"
   license "EPL-2.0"
   version_scheme 1
 
@@ -15,7 +15,7 @@ class Jdtls < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5081b98c6c453f1099f5aed2870e17c14c8db2273aa96a2c533fb10d1b0d9e54"
+    sha256 cellar: :any_skip_relocation, all: "72ffc28d70b798044075e63b3ed4c1afa2835b25bdc56d1a3ce4bd3581620f8f"
   end
 
   depends_on "openjdk"

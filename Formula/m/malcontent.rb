@@ -1,17 +1,17 @@
 class Malcontent < Formula
   desc "Supply Chain Attack Detection, via context differential analysis and YARA"
   homepage "https:github.comchainguard-devmalcontent"
-  url "https:github.comchainguard-devmalcontentarchiverefstagsv1.8.8.tar.gz"
-  sha256 "8237a49ff067469c1e29a5d020e8c2a2d08bb6b5122826d43fa4aa96b0407003"
+  url "https:github.comchainguard-devmalcontentarchiverefstagsv1.9.0.tar.gz"
+  sha256 "fdeb67021d6bc459a497c0bdd368ad57887e123fb53b82f7fcca1e6ae3040c15"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5f9826278ae01cdfd7a33d72059b898517b10885f74ea7600de19fe1509bc34d"
-    sha256 cellar: :any,                 arm64_sonoma:  "2fde26e76d32c802cbf6b47a6df9dc245dace3ad7f405bb1282384ab1698b539"
-    sha256 cellar: :any,                 arm64_ventura: "292c95f0f2f0fe45a35d4f2554658ed8b43d8b66536d865e91b4c284e624aa68"
-    sha256 cellar: :any,                 sonoma:        "88d21d680798ab9238095cf09fce13673fa021bd7e90cd9bd8659c3474faa8ff"
-    sha256 cellar: :any,                 ventura:       "559f16e8f755f6268b43708737cf840dc3cf41831ffbcb6aa716b7e7a16ea01e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04805311b1135528b8046327207486b02afd55856ab3ac4c94e68ccbed54870c"
+    sha256 cellar: :any,                 arm64_sequoia: "4b578de3e90f341a633c00d0fb734a927c9bd9fce379f5a469dfc242d0d1a903"
+    sha256 cellar: :any,                 arm64_sonoma:  "88e3a321ad1b5b95bebedce2cb774e68482c909934538f73aeb0559d9e583524"
+    sha256 cellar: :any,                 arm64_ventura: "6f6bc958daad98d78764f36117d705d893c124938af99b2319447e9b08c976e4"
+    sha256 cellar: :any,                 sonoma:        "640a13dc82e5fabff6efe7ae2015e5b4b7b778c624e77791da5a717f81e4b364"
+    sha256 cellar: :any,                 ventura:       "c411b381c02e58229be7e346fdae7c60cc5b20fdc6222f6fa1eef22619b6503c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1498c207bd012a369d9e811e8e83748731b45c168d98e73cdadfb766d8d9f77"
   end
 
   depends_on "go" => :build

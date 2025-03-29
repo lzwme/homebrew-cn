@@ -7,19 +7,20 @@ class Dbmate < Formula
   head "https:github.comamacneildbmate.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5488fc2329580356f56cf419b959d36fae658d8772788d4a9955d847966ea5fa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a63090865c86605f0bea9942f38ead2bf1c50e45e75031e696b3e123c60fae15"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f84e43ce1411361824235b733e1ddb6a55ea76708052d291c30193cb7532d91f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c0f7eb6df928ead6903c433d9c67745804cb3929bff41268691e25c7919b3095"
-    sha256 cellar: :any_skip_relocation, ventura:       "3f840fd772c6ec5e2a841b3e66a3305349d2dbaaed9d2210fa90156068142cee"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68c1c09e79ec70027a3f20586d8326ee7c64c029b452a7892b0761c21dbad44e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "efa9f1a111686d3154a5442ce1ccbe471c43dfc0e7dc77ecb1d9113ed45e101e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "31c090c49ea219094f92eb452eb96d5edf23bd5bcd2c9020bd903ad4495e3eb4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b631e1a546cf010561082f329b9932bd639bd02c4bb23681d0b05ddd556954b9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4c1bc85bad4eca018413b9c120361579f7da6c639256d440abfd2fea2753ae87"
+    sha256 cellar: :any_skip_relocation, ventura:       "acc841718c7adbcce328bc67490d6e2127ba5ccf63a0eb255e680a7645615c9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bf2da4805353a29298ca659dfd3d42368c6f2543bcc396fcc12370b1033011d"
   end
 
   depends_on "go" => :build
 
   def install
     tags = %w[
-      sqlite_omit_load_extension sqlite_json
+      sqlite_omit_load_extension sqlite_json sqlite_fts5
     ]
     system "go", "build", *std_go_args(ldflags: "-s -w", tags:)
   end

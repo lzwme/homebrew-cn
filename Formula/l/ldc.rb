@@ -4,6 +4,7 @@ class Ldc < Formula
   url "https:github.comldc-developersldcreleasesdownloadv1.40.1ldc-1.40.1-src.tar.gz"
   sha256 "b643bee2ee6f9819084ef7468cf739257974a99f3980364d20201bc806a4a454"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comldc-developersldc.git", branch: "master"
 
   livecheck do
@@ -12,20 +13,20 @@ class Ldc < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "679a6edb5cf0936eccf07bfb8911c26d94be9a512031ce56d1279403ff58ef1b"
-    sha256                               arm64_sonoma:  "0c413b0142d6a685bc3ce3d2e602fa186c7ccace9fc499da333fab528c55cd6c"
-    sha256                               arm64_ventura: "109a5a8abc99967277d3b843328bb226614fa512e933215319014c9ba58c3541"
-    sha256                               sonoma:        "a1ed0483de3d6acd31100020c3cf2ba3826f09f2e3182c5151ee15b9651beaf4"
-    sha256                               ventura:       "d2b16171d9e8985cff0253cba8c2023bdc8c67a81d9ec7cd48c489e729e58a70"
-    sha256                               arm64_linux:   "1241ce5b60b17a80b64a93c0a5d06a367ab6d2f6556e5e27d9b60f770f7bccb6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56996dab133b4cfc6997306069b043b4c60ca28554ab4a2e356fd81bd323b7a0"
+    sha256                               arm64_sequoia: "bf62f0e0c7a7eb72db23404decbcb150d0e45b1562db44df733fc7f325c76d44"
+    sha256                               arm64_sonoma:  "4d22f4d7c6623ceea882c608f008218b96deac008d5e2902c34ccc79fb8df50a"
+    sha256                               arm64_ventura: "ef232af8cbe6880220437658f33e946d899f880da8f726d21a23e3d0720ffff5"
+    sha256                               sonoma:        "bc74c7e7324ee29cc9eb33f8c3580ba4185640bc28c0515aa82603657f02d64f"
+    sha256                               ventura:       "aac0761e4cba1a2dbb862cd2f3b4e3899bd76e6738016cb24f33885eef355c73"
+    sha256                               arm64_linux:   "2b685946656c81c99e5a1ce6a2c4b8ef77c320cda2bb0a3f33638dd7e7a5d345"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b644f70c0fa431945753c3bd4cc59f02febdc4569a17517fca3f0e6e7e9c0ba"
   end
 
   depends_on "cmake" => :build
   depends_on "libconfig" => :build
   depends_on "pkgconf" => :build
-  depends_on "lld"
-  depends_on "llvm"
+  depends_on "lld@19" => :test
+  depends_on "llvm@19" # LLVM 20 PR: https:github.comldc-developersldcpull4843
   depends_on "zstd"
 
   uses_from_macos "libxml2" => :build
@@ -94,7 +95,8 @@ class Ldc < Formula
     D
     system bin"ldc2", "test.d"
     assert_match "Hello, world!", shell_output(".test")
-    with_env(PATH: "#{llvm.opt_bin}:#{ENV["PATH"]}") do
+    lld = deps.map(&:to_formula).find { |f| f.name.match?(^lld(@\d+(\.\d+)*)?$) }
+    with_env(PATH: "#{lld.opt_bin}:#{ENV["PATH"]}") do
       system bin"ldc2", "-flto=thin", "--linker=lld", "test.d"
       assert_match "Hello, world!", shell_output(".test")
       system bin"ldc2", "-flto=full", "--linker=lld", "test.d"

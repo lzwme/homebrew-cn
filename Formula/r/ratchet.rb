@@ -1,18 +1,18 @@
 class Ratchet < Formula
   desc "Tool for securing CICD workflows with version pinning"
   homepage "https:github.comsethvargoratchet"
-  url "https:github.comsethvargoratchetarchiverefstagsv0.11.0.tar.gz"
-  sha256 "4913dd26c03bedd67beb232ae17a348c34df204fe9a3f57325a089c4c92b12ef"
+  url "https:github.comsethvargoratchetarchiverefstagsv0.11.1.tar.gz"
+  sha256 "38451e56b4a59268d67c2cb3cfdeb14f658d5ce4655b1d74256ca6e547fbf525"
   license "Apache-2.0"
   head "https:github.comsethvargoratchet.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "edcf5ec75e624b9c1bec9d18c8b0053d3091d9d2c40939abbd9b60cfdeae48b4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "edcf5ec75e624b9c1bec9d18c8b0053d3091d9d2c40939abbd9b60cfdeae48b4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "edcf5ec75e624b9c1bec9d18c8b0053d3091d9d2c40939abbd9b60cfdeae48b4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "26cc8b980e8b1a5128528deafa59de21522885ff913b85545d11538c6df9f694"
-    sha256 cellar: :any_skip_relocation, ventura:       "26cc8b980e8b1a5128528deafa59de21522885ff913b85545d11538c6df9f694"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e39bbdd264c9fbed80d2b057b53efbd4a5a850bb9875744fa3424955fb6165e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e45d4082d0b0e628bd3b2399cf145726cecf75aed76637a3c794c3101de55205"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e45d4082d0b0e628bd3b2399cf145726cecf75aed76637a3c794c3101de55205"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e45d4082d0b0e628bd3b2399cf145726cecf75aed76637a3c794c3101de55205"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2f640387cbba1cf2f0702a5d0c2d407e5bed3acf52cfb60b1b9e5aef1f428e5c"
+    sha256 cellar: :any_skip_relocation, ventura:       "2f640387cbba1cf2f0702a5d0c2d407e5bed3acf52cfb60b1b9e5aef1f428e5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "449f97e781e34e74988859434ae1f64f68cc4c44b79748d6f4312d4c168b3e15"
   end
 
   depends_on "go" => :build

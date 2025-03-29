@@ -1,8 +1,8 @@
 class JvmMon < Formula
   desc "Console-based JVM monitoring"
   homepage "https:github.comajermakovicsjvm-mon"
-  url "https:github.comajermakovicsjvm-monarchiverefstags1.2.tar.gz"
-  sha256 "5bc23aef365b9048fd4c4974028d4d1bbd79e495c9fa2d57446fc64a515d9319"
+  url "https:github.comajermakovicsjvm-monarchiverefstags1.3.tar.gz"
+  sha256 "71f27098bc130525c837ce5821481d795be1b315464f327dbe9d828a221338dd"
   license "Apache-2.0"
   head "https:github.comajermakovicsjvm-mon.git", branch: "master"
 
@@ -12,21 +12,18 @@ class JvmMon < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10a26ecfa58c04851ac693f4078c151ba47bf479b960d85394cb72c899a28f9a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "09709070da8e62235d9ed766340d9d876e66bcc257f5d3c90ddde822645d278a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5e4f4e6acf9d320c547226bd60956f2eff27f191112364c335cd7275ec74c45a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6395f1d02431f71ee3b99c0ab677c3ef7abbbbfe0791b18d633d1a413f64421d"
-    sha256 cellar: :any_skip_relocation, ventura:       "d8adbf4d100d14d5f2b10d4c69e926ad9e4213a26c6f3c91eff6abb10c7bf73f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8277320c0f5297ef19291fcc094805434559387bc24308597c3670d7b6abeeec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61c0f2de3ba96b85b364c0c6df8a11dfca3a61790a19b105f5579ffba96f8fb5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "569d3b771bab87123faac0038aa194a79788b5f5b8a5e1b73974baf70daf30c0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "45ed63d60bbb978e2a1916675d38f7240ce6ea0d69b3510b05b9d3bc1e86e6a5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1041bf832360e6d61b4a229e64d3db2ea3e210ce52c5de8285c3a53cd3783a9c"
+    sha256 cellar: :any_skip_relocation, ventura:       "e5f8b80e136462bc508d6b3089048ecbeb0ef70ff38d9fabd20f23234a6b471a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "102d1f23f51c01a4c4959f508ad1d6c6b012ddfbaac2f142710fd04b2bfbb371"
   end
 
   depends_on "go" => :build
   depends_on "openjdk" => :build
 
   def install
-    ENV["GOBIN"] = buildpath"bin"
-    ENV.prepend_path "PATH", buildpath"bin"
-
     cd "jvm-mon-go" do
       system ".make-agent.sh"
       system "go", "build", *std_go_args(ldflags: "-s -w")
