@@ -16,6 +16,7 @@ class Petsc < Formula
     sha256 arm64_ventura: "b0fd09dcda327c4ab109eb24d82dbe675815ee1d495cdd71231a83e354202f93"
     sha256 sonoma:        "c9a2845d99e1c630343bfd7d0745a96557cb875d4076902d08d1a23eb38406f5"
     sha256 ventura:       "cffee44bdd266de771ab436664af975015eed357c704475a5d46431f0d5bff8c"
+    sha256 arm64_linux:   "16c56f5fac5d64fb67b018511362587831bdc535a1c749cf21e5d685d32d3359"
     sha256 x86_64_linux:  "4a90f6335fc460b81017b36f7b8e17df44cd7acfaf9ba640c9d6f9f56ddef46f"
   end
 

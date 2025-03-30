@@ -16,6 +16,7 @@ class ApacheArchiva < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "d50d77e7248f8d9c91d0db6952a249cd7913d9463268e99494d909defc5d3a24"
     sha256 cellar: :any_skip_relocation, monterey:       "d50d77e7248f8d9c91d0db6952a249cd7913d9463268e99494d909defc5d3a24"
     sha256 cellar: :any_skip_relocation, big_sur:        "d50d77e7248f8d9c91d0db6952a249cd7913d9463268e99494d909defc5d3a24"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "e1c07d5cd8ea4779a08546249c6599e57e1838c1613b7607f1dfbc1b9207f90e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8e45fbe48a08a1244ea72537e4eb0d550cd73f7977250a6b1b9d31bcd2a5b90"
   end
 

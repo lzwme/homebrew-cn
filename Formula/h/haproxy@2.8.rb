@@ -16,6 +16,7 @@ class HaproxyAT28 < Formula
     sha256 cellar: :any,                 arm64_ventura: "bb74a5c4400e20460e9d79dc3cc6f32b7c5b92a795cbe43edd333254ddccdf16"
     sha256 cellar: :any,                 sonoma:        "c24f21ad6e56859e9795fd5b3220ee10efa598b16472683fb014edce9976f58f"
     sha256 cellar: :any,                 ventura:       "04fb1ab506194389d0375df589a0f0b228332ec6589c4da459e1712ec2928a5c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "85428bcc7e7154455e0dc5661bd7891c00874bdee3d8b5c9ad208d4dc1c42e20"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "38d97a5cc12a5232baed42994505a10e7a6857635ba67669372709cc9862d2c0"
   end
 

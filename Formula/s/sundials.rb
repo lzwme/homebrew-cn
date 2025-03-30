@@ -16,6 +16,7 @@ class Sundials < Formula
     sha256 cellar: :any,                 arm64_ventura: "c88629bb65b804f8a36751d4d7b38ba7ef00eba7fa27853a26ca9c8f2a8b8306"
     sha256 cellar: :any,                 sonoma:        "b1842b88bb89d15e7e2f1fcf549b2a48f4e5b3f7c9275c86fd4421d5f22c611d"
     sha256 cellar: :any,                 ventura:       "734bb3a415f6647d7fe6482fa6958fe967455a8c050a356cfd3d038593d727df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9ef2ddb6f5f4f785b8c49a45756e5e36fdbee328a2939f917391b0df87c33ced"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ee65d6f4c0ca10da972dbbe5304ca7b39918776395fddb197a2e16908de1dfa"
   end
 

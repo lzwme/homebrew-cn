@@ -1,31 +1,29 @@
 class Opencsg < Formula
   desc "Constructive solid geometry rendering library"
-  homepage "https:www.opencsg.org"
-  url "https:www.opencsg.orgOpenCSG-1.8.1.tar.gz"
+  homepage "https://www.opencsg.org/"
+  url "https://www.opencsg.org/OpenCSG-1.8.1.tar.gz"
   sha256 "afcc004a89ed3bc478a9e4ba39b20f3d589b24e23e275b7383f91a590d4d57c5"
   license "GPL-2.0-or-later"
 
   livecheck do
     url :homepage
-    regex(href=.*?OpenCSG[._-]v?(\d+(?:\.\d+)+)\.ti)
+    regex(/href=.*?OpenCSG[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f92caa541b802161c2c60e745a49574ba379dcd40492dfb2cc9c4e123c89920d"
-    sha256 cellar: :any,                 arm64_sonoma:  "07b56281fbb460cadee1c2117d80a52d3967069363af998d99c7f2dc46ef1891"
-    sha256 cellar: :any,                 arm64_ventura: "e7ca2f7b0365b03aeea72adc6e87c80d8153f07bef3108fdc56eaab0682ad6c1"
-    sha256 cellar: :any,                 sonoma:        "89f9db42762d2ab1958e8bd5654c4f46644a1a831e1966f3581932925ea2212a"
-    sha256 cellar: :any,                 ventura:       "2c2c3b7ba27e8ee0190776fa0f35729e4bf0d27bb7d581e56f3cdf62d1d95fc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6dc9589d54eb362645b8563f62c66b5e29bd44c50c0c4c483db011b3aac5ee5"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "b0a69f125e5ccddc9559b3d088e44f7080a4a88903092db4a5d8cc45b2401eda"
+    sha256 cellar: :any,                 arm64_sonoma:  "baabc5f08880e3740596c333b7d6736edbce5d4c56374d8310faf71b4b25ec75"
+    sha256 cellar: :any,                 arm64_ventura: "4c6433d8600f7037d2cd0b4e59b18a6d100afdc9940673a5b404fe7ff18964c1"
+    sha256 cellar: :any,                 sonoma:        "b5568908930ffddc71dc9fd5d1689da95250873d8a7d510b52c9a725ed35a791"
+    sha256 cellar: :any,                 ventura:       "4194e7de3bd9c4a7e16310247e47730302c95d0e43383a9b72a5bbd35243a544"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cb20cacd22251a2ea4a3c4b9549a78c51f8d32e98175f41f7618e78c3435030"
   end
 
   depends_on "cmake" => :build
-  depends_on "glew"
 
-  # glew linkage patch, upstream pr ref, https:github.comfloriankirschOpenCSGpull16
-  patch do
-    url "https:github.comfloriankirschOpenCSGcommit881a41b52ebee60fb3f4511cd63813b06e8e05c1.patch?full_index=1"
-    sha256 "97e56d7a8bf01d153bce8b5685b0f06eb2befdefa07bb644a12dc79e4143f9ab"
+  on_linux do
+    depends_on "mesa"
   end
 
   def install
@@ -35,7 +33,7 @@ class Opencsg < Formula
   end
 
   test do
-    (testpath"test.cpp").write <<~CPP
+    (testpath/"test.cpp").write <<~CPP
       #include <opencsg.h>
       class Test : public OpenCSG::Primitive {
         public:
@@ -48,6 +46,6 @@ class Opencsg < Formula
     CPP
     gl_lib = OS.mac? ? ["-framework", "OpenGL"] : ["-lGL"]
     system ENV.cxx, "test.cpp", "-o", "test", "-L#{lib}", "-lopencsg", *gl_lib
-    system ".test"
+    system "./test"
   end
 end

@@ -1,17 +1,17 @@
 class AwsCrtCpp < Formula
   desc "C++ wrapper around the aws-c-* libraries"
   homepage "https:github.comawslabsaws-crt-cpp"
-  url "https:github.comawslabsaws-crt-cpparchiverefstagsv0.31.2.tar.gz"
-  sha256 "c4d5eb3fd5707e4874f922f2ffb07f78f2d2660ff02210d1f8ace8b67bb5536f"
+  url "https:github.comawslabsaws-crt-cpparchiverefstagsv0.32.2.tar.gz"
+  sha256 "0969801f13344deaf6e4dc8d458798e0692d4a67dde5ccac3eda9f261ad771bd"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "303baf1a21f3d467f5fba001e823aef3cd9c4ba1d0e4b922f1fc8e8867950de2"
-    sha256 cellar: :any,                 arm64_sonoma:  "50e67e176e6e8d5b79040a2329b76f2818601079cdfdb2ee62ab0b8a6a2a0cae"
-    sha256 cellar: :any,                 arm64_ventura: "093d2af376f015e0332d73c37a01d7f1a2c7c9acc6159b0f5495ad5c9a2ce8c7"
-    sha256 cellar: :any,                 sonoma:        "86f89ef414462d6cd16bec595685a5afc6f3cc2b3a331854d93b93e08a1b30a8"
-    sha256 cellar: :any,                 ventura:       "8c793d1fc885369d71b3cfcdef4f25dfad5b2bae09e927f9c72da915a1c3d44f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfa41772bc811d8079004274f509d4b7cffd53fa91fe26eeabab8ac36c45ed91"
+    sha256 cellar: :any,                 arm64_sequoia: "95d6903503b8784927f9f843a8ba2f247b5f67477b2a31aa0bca89814f885634"
+    sha256 cellar: :any,                 arm64_sonoma:  "88ffb0650638e986d3ccd878f7ba2cd824c6b6216b3c2e41f37fc9677287d552"
+    sha256 cellar: :any,                 arm64_ventura: "2c595d810769b7b2433d206e2525ec60a57214c43c1b9aa53b3d16daa99622a2"
+    sha256 cellar: :any,                 sonoma:        "bb56d2d2f892ed87afcb00695fe0a25b4631c893d058ec42a942881d8f931c32"
+    sha256 cellar: :any,                 ventura:       "575c12ec6bc4053d1b0211055fad641edfaacbb21cd5cdb5f85e23751e2806e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b04b2f36121024a408204259648a0692cce20c9b7187783f476352d8fb29db0c"
   end
 
   depends_on "cmake" => :build
@@ -27,10 +27,6 @@ class AwsCrtCpp < Formula
   depends_on "aws-checksums"
 
   def install
-    # Fix to 'awscrtchecksumCRC.h' file not found
-    # Issue ref: https:github.comawslabsaws-crt-cppissues725
-    cp_r "includeawscrtchecksum", "includeawscrtchecksums"
-
     args = %W[
       -DBUILD_DEPS=OFF
       -DBUILD_SHARED_LIBS=ON
@@ -49,7 +45,7 @@ class AwsCrtCpp < Formula
       #include <awscrtAllocator.h>
       #include <awscrtApi.h>
       #include <awscrtTypes.h>
-      #include <awscrtchecksumsCRC.h>
+      #include <awscrtchecksumCRC.h>
 
       int main() {
         Aws::Crt::ApiHandle apiHandle(Aws::Crt::DefaultAllocatorImplementation());

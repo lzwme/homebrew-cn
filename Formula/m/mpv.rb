@@ -61,6 +61,7 @@ class Mpv < Formula
     depends_on "mesa"
     depends_on "pulseaudio"
     depends_on "wayland"
+    depends_on "wayland-protocols" # needed by mpv.pc
   end
 
   def install

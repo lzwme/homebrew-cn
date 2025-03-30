@@ -1,18 +1,18 @@
 class AtSpi2Core < Formula
   desc "Protocol definitions and daemon for D-Bus at-spi"
   homepage "https://www.freedesktop.org/wiki/Accessibility/AT-SPI2/"
-  url "https://download.gnome.org/sources/at-spi2-core/2.56/at-spi2-core-2.56.0.tar.xz"
-  sha256 "80d7e8ea0be924e045525367f909d6668dfdd3e87cd40792c6cfd08e6b58e95c"
+  url "https://download.gnome.org/sources/at-spi2-core/2.56/at-spi2-core-2.56.1.tar.xz"
+  sha256 "fd177fecd8c95006ff0a355eafd7066fe110a2e17eb5eb5fe17ff70e49a4eace"
   license "LGPL-2.1-or-later"
 
   bottle do
-    sha256 arm64_sequoia: "7d5bc05a3e69c24d7725e15ec0b0c301ac0402c8ce696ebedaee9670f1b5266b"
-    sha256 arm64_sonoma:  "02f6bf955df6fe1a970e557d3c791510b685581b280c8f29aa29e03508a93978"
-    sha256 arm64_ventura: "0ab3fda7658c635cef173d6f57cda5bac6954c9c19de4b50f61f98501d11d17c"
-    sha256 sonoma:        "8983df3d1e123b6b8bda47fca68fc8fb92465bb16cfc52201ae8a11c4849b984"
-    sha256 ventura:       "ab8485e2944599f408731c4b818bf4a5e12c18a407cbb4a4d9ca8bac5075fdf6"
-    sha256 arm64_linux:   "53aff781336b769c79b115ddd95a15d9c9ff67d8a5b668eea864881b0de42ce5"
-    sha256 x86_64_linux:  "0054d8838fddd4ea562187c3ea27956829310a3d27205539ddfe2adaed604439"
+    sha256 arm64_sequoia: "6dc87b78e3eecf5bd86eca6f60e6b0fd110e65a2404549fb62376f4b41063b8d"
+    sha256 arm64_sonoma:  "bf9287f8ec0b1f40f4834035bd870dddf1285eb45751825321fb20c73f972a09"
+    sha256 arm64_ventura: "8ba19ae5bd9d8fc07bf8425c96a61de2bcc6af015046fd72e7de37e76ab16bb9"
+    sha256 sonoma:        "4b561833a27bfffd0585ad22dd1c1326716baf882f24c31abc30fb26790c158b"
+    sha256 ventura:       "aaf8b8a3625c0ff5680e733633d5fcdefe8da9022de39ab8bb653c5db08248d2"
+    sha256 arm64_linux:   "19b29fc59823759c458ea2a66586c134fc5c113c0f0d2f9a07911ed3aa8c94bc"
+    sha256 x86_64_linux:  "cbec6e3ff36f2c59701fec40a0acf2991ee9b5946fe4ae137b3e6923ab734fee"
   end
 
   depends_on "gettext" => :build

@@ -16,6 +16,7 @@ class Biosig < Formula
     sha256 cellar: :any,                 arm64_ventura: "738017ce88f7c9d43596aeeddc99ce04c6a6896ab02922da8c056ea24f3d0e6b"
     sha256 cellar: :any,                 sonoma:        "b410b16cdff030dfe233751c39c6523d5a841bd35bdd2e9cd153582b881d3f96"
     sha256 cellar: :any,                 ventura:       "0f235a6d5036c54a44fe76c5dd3b3cb321805ea72663b3abd1565674a3bd5856"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8bfe8bd446b18c50e95f60a1685c4ff47f1c7b3c0686799be786e2fd4b9ebb3d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "85ab1e23f4ec3552398ee860ee360c73eea317bc9e8881b90e1f9cc9d9069f02"
   end
 

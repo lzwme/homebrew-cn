@@ -23,6 +23,7 @@ class SuiteSparse < Formula
     sha256                               arm64_ventura: "67d3ff69f41235929b3d840cd61c2dbe75926e3eb677fb6d06683ef234b870a0"
     sha256                               sonoma:        "3f3983cd61fbd4a541cd3bc1f4f3e2b0a0ecaba613cdc8990fd4002465573428"
     sha256                               ventura:       "91d49e1773157869e8f9e18cc66c9ff81c1a1b04c0838df19283153866d1be01"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e2510fe12452ee816facfe7e164f142287dc0c180fa41d3e56bc20029d6d2a8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "34dd66fa93dff5055dbf84b1845fce216b8d03c8e4ce4154be3fc3dba5af608d"
   end
 
@@ -44,10 +45,8 @@ class SuiteSparse < Formula
 
   def install
     # Avoid references to Homebrew shims
-    if OS.mac?
-      inreplace "GraphBLAScmake_modulesGraphBLAS_JIT_configure.cmake",
-          "C_COMPILER_BINARY \"${CMAKE_C_COMPILER}\"", "C_COMPILER_BINARY \"#{ENV.cc}\""
-    end
+    inreplace "GraphBLAScmake_modulesGraphBLAS_JIT_configure.cmake",
+              "C_COMPILER_BINARY \"${CMAKE_C_COMPILER}\"", "C_COMPILER_BINARY \"#{ENV.cc}\""
 
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_INSTALL_RPATH=#{rpath}",
                                               *std_cmake_args

@@ -19,6 +19,7 @@ class SpidermonkeyAT115 < Formula
     sha256 cellar: :any, arm64_ventura: "9d5b44b87e378f8e4b78358914be10e691921f32a93d110ccf81d4e5dce66d92"
     sha256 cellar: :any, sonoma:        "8c027addceb53ae0757838c2ff7b558a60766055948f5f5ce18a7b994f877979"
     sha256 cellar: :any, ventura:       "8287c96b8d3461d5118dcefb0e3e9f4e2de5e7934b87aa8425ac97a3f302f530"
+    sha256               arm64_linux:   "095097c1fbe4560d03b1ede2636f2b518fac253915915ea4c2457738240e2809"
     sha256               x86_64_linux:  "5cffaa54797b887447ef64e0eb413307491060b7ca6354c38087446e6eb94757"
   end
 

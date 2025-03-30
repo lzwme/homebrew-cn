@@ -9,13 +9,14 @@ class Ford < Formula
   head "https:github.comFortran-FOSS-Programmersford.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b98e82cc4f5d7da6fdf8d9cab78d992c6b3e75b0aea9fa5f27bee2beb22649d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ccd562f662e76f0318e2c8f06da7020b5ede7f035b46226ee3312b284ee4a301"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c03f16e4a5e0a9f05499dc469718bc22fb478e8f3e8e24f8088f687bd75ad46f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "56dfbf811a97ae475cbd2d65b01f2e02cb11c657308a17eec1fef7c176b13454"
-    sha256 cellar: :any_skip_relocation, ventura:       "aaafba634c38e5b9f3b555f4aa5b07b29c3235ff39101a41310d91d4514f69d2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3adb827cde0f22d66a165f02437f485571393448f36f1d17e3c40badb1577f0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "026e6dd7600d4af70e0950824668ddfae882d59dda7ef0e68e455e14bee83709"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b064d880206f80b5c53d75f52d883e2c0f00a81067820fe3bfc2ffa3b41310b6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5886a9cc98a97e8f204e2eb813e04f7176dd4084961d38a05753b455b6ef896d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "eac3e85730ed7bc65c9c7796a5141b03bfe18010d4b130f1ffb854c976de372d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "692f7fb9a31df9ee0194ed34d282ed969710e1fa61ce5c6ced6d16db55e3d577"
+    sha256 cellar: :any_skip_relocation, ventura:       "0de0150ff4d60a7afff61a186a1c122edf27e2aa7ca8fcb1054827fac2b55fdb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ea70b70a6e3df4f7b621251ad96dc1fc9803ad41aeec2c728362fd664a0e67a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f6057a4ff856011848da2c688453f88d23a8bddd80b61a781a1717d9b97ff93"
   end
 
   depends_on "graphviz"
@@ -102,18 +103,7 @@ class Ford < Formula
   end
 
   def install
-    venv = virtualenv_install_with_resources without: "markdown-include"
-
-    resource("markdown-include").stage do
-      # Setuptools no longer supports the keys with hyphen in the `setup.cfg` file
-      # Fix patch cannot be applied and so manually change the key name
-      #   - `setup.cfg` in PyPI and github is a bit different
-      #   - `ford` uses outdated version of `markdown-include`
-      # PR Ref: https:github.comcmacmackinmarkdown-includepull51
-      inreplace "setup.cfg", "description-file", "description_file"
-      venv.pip_install Pathname.pwd
-    end
-
+    virtualenv_install_with_resources
     doc.install "2008standard.pdf", "2003standard.pdf"
     pkgshare.install "exampleexample-project-file.md"
   end

@@ -1,22 +1,23 @@
 class Globstar < Formula
   desc "Static analysis toolkit for writing and running code checkers"
   homepage "https:globstar.dev"
-  url "https:github.comDeepSourceCorpglobstararchiverefstagsv0.5.1.tar.gz"
-  sha256 "3b00cbf096e43d5973c408939fd2dbf71be0696cc58ef0694b017c38cb858145"
+  url "https:github.comDeepSourceCorpglobstararchiverefstagsv0.6.1.tar.gz"
+  sha256 "d2723d485d3a0baa4e707bfcebdd60960ae6a8928277acf5c0602aac1f050286"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45ad2c11adc4c28da3836c15f22f4318c52d2a29e1dc28ac876cda068a88cc4a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20b560b75268a0781a780c92176e46496630338906259c12225e5e6193d45ef2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c49dcaf5577a2e8ec134cecc760c7ee3a0206000c7cbc9292ade1c75b408f5f1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "116375d39499ba2150c9ec17c2615193770b6a57fec59f9031f19af84612862a"
-    sha256 cellar: :any_skip_relocation, ventura:       "0348cd49b847bbb725cb24380ff0eb75c28a87301253155b4ef0fd81a9c68254"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8bf25fdea6a172a3dbefff55a657439ea74d99ea08b8cbb307fb5dd36476bc93"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6d2490f2fc348c713c7b2b0fff5da014ead85e06b899686e87bba07fb25a085"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a60fa5371a7b96ae3a445ac38cc3bd57bc82e41062c897a12b726655cc40a122"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "351d67820e10c0414789e33901de64cad9322ecead736eed190344f34a141d0b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b149581b0925354aafd54731fbf9f621466ca8d5c295b45071f05207691f96e3"
+    sha256 cellar: :any_skip_relocation, ventura:       "8e2ee1309a02d22518a620d7873cc020a6652aaaaecc6284817f35b4eef2b6e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edbb1ec871583032673f9633e94f5c2cd1fe482f350c275fc4f0dd3e879678ec"
   end
 
   depends_on "go" => :build
 
   def install
+    system "make", "generate-registry"
     system "go", "build", *std_go_args(ldflags: "-s -w -X globstar.devpkgcli.version=#{version}"), ".cmdglobstar"
   end
 

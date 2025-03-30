@@ -53,6 +53,10 @@ class Glib < Formula
   resource "gobject-introspection" do
     url "https:download.gnome.orgsourcesgobject-introspection1.84gobject-introspection-1.84.0.tar.xz"
     sha256 "945b57da7ec262e5c266b89e091d14be800cc424277d82a02872b7d794a84779"
+
+    livecheck do
+      formula "gobject-introspection"
+    end
   end
 
   # replace several hardcoded paths with homebrew counterparts

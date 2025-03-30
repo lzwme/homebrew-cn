@@ -14,6 +14,7 @@ class ProtocGenGrpcSwift < Formula
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "19c9c068affc59d455635cf5d2749d3f36eb35ea8bb05bdea9a708df1b90497d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "79ce459845c581ebbe4658fd83218ec6aab80e43d131a496eabcd5eb7ccc5f44"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f196d46a031f46add8ca18b687de951994fc96f007099125b2acb5b64a84da2"
   end
 

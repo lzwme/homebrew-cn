@@ -12,6 +12,7 @@ class Xan < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "102c0c4cb05925b841f887fd39f21d7d8020959f3a60af0b4aabe5dae99e2221"
     sha256 cellar: :any_skip_relocation, sonoma:        "88c34d08b362ebc6fe808d9be172d9248deb0625cd94e342ff313117672f237f"
     sha256 cellar: :any_skip_relocation, ventura:       "8f7c40319fc7330631a56ce047cfb7b45c6899d31c14ec02041365633eea17aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ae5323b57b8ce18dec05a6ddac7e96ad873976e14956a086714d3f578de9223"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0330b88e645b2e872dda49ea0b5344a8a0b0089b41c471ae8edafacc4c15f33"
   end
 

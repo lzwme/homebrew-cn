@@ -12,6 +12,7 @@ class RubyAT30 < Formula
     sha256 sonoma:         "2f067da15c7461fcd89c5844f1d71923fa0fc1a9833be169e86facbe326f5b8f"
     sha256 ventura:        "6a1dfafc2795a11ec7daccc315cb4b726487b93277f7004568d192aa2da4c758"
     sha256 monterey:       "b796fe7095b946b1f446e791c5090bb1c7ab2d6d744e45e7c7a51f015a009ff3"
+    sha256 arm64_linux:    "250ecf8416fb1bdc79dcf7b7195c962daa59817502d8f8f39b8fa3b57fa3dcd2"
     sha256 x86_64_linux:   "80af587b8fc9bbaa6af798f114ce75406d460beae0d602c0ea119f3a42f372ce"
   end
 
