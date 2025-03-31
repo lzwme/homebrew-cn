@@ -12,6 +12,7 @@ class FluidSynth < Formula
     sha256 cellar: :any,                 arm64_ventura: "b4037dee927e2f4bf7e34670de593a523fffd80b6f66c374eae7bec3c232b1bd"
     sha256 cellar: :any,                 sonoma:        "c2a746d5cdab9ff258799fcb9a60033725d396b8232b71adad4121ae5d14595b"
     sha256 cellar: :any,                 ventura:       "ebe9d0fc293d2099a754f966d68578af17afc42a8d48c4c833550525fb18fad0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "429fc46f1f27851c2de9a9c3b86e02db1de00b9bc5af8a2bd3d210ca6eb5fdf4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd94acdafb047b17dd15b64f7bf893f411f7db9c37f294bfd6ee19b04374e36c"
   end
 
@@ -104,6 +105,7 @@ class FluidSynth < Formula
     assert_path_exists wavout
 
     # Check the pkg-config module
+    ENV.append_path "PKG_CONFIG_PATH", Formula["systemd"].lib"pkgconfig" if OS.linux?
     system "pkgconf", "--cflags", "--libs", "--static", lib"pkgconfigfluidsynth.pc"
   end
 end

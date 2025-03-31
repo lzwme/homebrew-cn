@@ -14,6 +14,7 @@ class Mfem < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "410e2f119420078698e8e4c52c7792e045b28771cc48e3735ab94941a10db203"
     sha256 cellar: :any_skip_relocation, ventura:        "3ec94b67bd753a1d01768c3dcd68e28b3cf87d6683c8fd5ed01115e495647386"
     sha256 cellar: :any_skip_relocation, monterey:       "f4a349a5fef6c5ad572fd3392ebc70851e65c947a9e1d81045ed45378b973233"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f4c6a148cdd95716afdc9307e77bee4d598a6cd1634639c331520f25cb5cc56a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c36512101f6aff6a51c2fdf1a5374a2ad899b22e3242316b142f8f8b892bf85"
   end
 

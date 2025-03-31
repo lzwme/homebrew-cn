@@ -4,15 +4,16 @@ class Ocicl < Formula
   url "https:github.comociclociclarchiverefstagsv2.5.22.tar.gz"
   sha256 "78e378a84f96f52a0dd8518a9d049f94d2d76ee0c3ec7db1384104e45b5c20e5"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd5e7a25b7505036891371d712c40250e97518ec5a3e8a77124f012cf4f24e67"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5b13978939bf4d0ff84f467edb7352764e4cbdae764eb1838a886aa6798585e3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3e89e56fea7c2807faa7cae5385bf47a5e78b02ebea4ed356683764bcfc7e707"
-    sha256 cellar: :any_skip_relocation, sonoma:        "861299104e352fc65399b579c1f6a916a24a90ebe88b7a5dc9391b7772cf97fa"
-    sha256 cellar: :any_skip_relocation, ventura:       "8817a432d011e8a1839773ca3207ae7fb9d723f8bc4f2ff75fe4cc7eda11e612"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "57e92f90bb7ccfefd2126480374cbc0153debe42bb3b84059146e55d4b8edb60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3884f900b9978659ddc993edf9c85abeb8579427df9c29dbcf896ed5a6c047b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a562f9517bd3d70ccd9fd3fa9054e52e7da250053df3b00b021c25f03b67a548"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "66b0bcf1facba95a62177c13bc70682df24c86fb00a4d3804c3146dfe9e633c4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7e5521365471aa80ee6f490dff478adbc5ea4fbff649aaaafb1e8619bd4176c4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0e2758c6ca95630cc3dbffea3b0143e828a7871f52bdd66d657b3bb59780df23"
+    sha256 cellar: :any_skip_relocation, ventura:       "1f087089c22627e1e3faabdd831002bb5dd30d8b18afd15af34726dac799dd32"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b0de3e5f40cd1cae29a766af7ff26da10560f22f868b093435ac8f261d0b287"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98d6e9c0eb50771571bc5e915f7909450959965c965be730dc4380b5e7b0d607"
   end
 
   depends_on "sbcl"

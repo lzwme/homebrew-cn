@@ -1,18 +1,18 @@
 class StressNg < Formula
   desc "Stress test a computer system in various selectable ways"
   homepage "https:wiki.ubuntu.comKernelReferencestress-ng"
-  url "https:github.comColinIanKingstress-ngarchiverefstagsV0.18.11.tar.gz"
-  sha256 "f4388c4d4d53172431cd77e029139ddd0dacb249ef59053dbc1f0c42188e3e35"
+  url "https:github.comColinIanKingstress-ngarchiverefstagsV0.18.12.tar.gz"
+  sha256 "20401a5a52a3b3b5d84fbdd561e4daf1076b0368a1ccbbbc8d41af2be6ea6f34"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8bf0fe7c588bd60b0f9f0f8892a39341cefdba296ac3b0ea5569e2e8f4f5fdd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "28b53eb6acaf59f8ceadc71205b23ddb82c9688b9c38f3cbd0cefd1c94e9ae76"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8d171c294d8c0077f1bba9e74014bb77dfe150b596e8e7e53125f3a111086a59"
-    sha256 cellar: :any_skip_relocation, sonoma:        "367e906d323f35bc994815639ef299c5349e5848251c714a68585f72acf5bcd3"
-    sha256 cellar: :any_skip_relocation, ventura:       "d0a379aedaf756c727904b9842541b152a4356d84e4bc2a3750da8990a842541"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ce4280eefbaf979017f103ed8bc29614d9043b60e06d7c1c3d2f73c9387db1c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ddfaa29ce4bd87d311b044efda4dc4df9f297e69ca4fa1e7d443d5aeffcbc5e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "56389382365576a45ff4da93af8636869fc3a0b473ce82d3e53355b72d3feeed"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "904a4551969351dd6d42620c9425df4e10a477cf970c50661eefe35294f1c013"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1def857df76445e7b3ba0c657fea920d7cdf3ce839f454f7c2d744121c4fcdff"
+    sha256 cellar: :any_skip_relocation, sonoma:        "251eec4ba9c8ba534c315b0cf919e2ae477c0c467faafdbbfb18bcdb2b8782ad"
+    sha256 cellar: :any_skip_relocation, ventura:       "6cfe7d4572c6b1af31997c3811b4410c684ca931ca883b7c1ad6756d4096174d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "08ce01f5d099329f763b961d4d31986f419b57bb902e28d14bd5b404d7ad596c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6154630c95e7905f6e54d6b736b967ae63b1bb0631b1239ade44717f9b219bba"
   end
 
   depends_on macos: :sierra

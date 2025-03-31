@@ -27,14 +27,12 @@ class SimpleAmqpClient < Formula
     # Else setting DCMAKE_CXX_STANDARD does not work
     inreplace "CMakeLists.txt", "set(CMAKE_CXX_STANDARD 98)", ""
 
-    mkdir "build" do
-      system "cmake",
-             "..",
-             "-DCMAKE_INSTALL_LIBDIR=lib",
-             "-DCMAKE_CXX_STANDARD=14",
-             *std_cmake_args
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build",
+           "-DCMAKE_INSTALL_LIBDIR=lib",
+           "-DCMAKE_CXX_STANDARD=14",
+           *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

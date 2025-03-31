@@ -15,6 +15,7 @@ class SlepcComplex < Formula
     sha256 arm64_ventura: "2454ec267bb175ee89e152eb83ad919099f4469e49f80ec98da6deba0da1510c"
     sha256 sonoma:        "1bf269557030623c97a6524ac992f20ccae2337c41cb0027888d042874d2e82a"
     sha256 ventura:       "74c1ece8bf8ae685f8f9b0817cea8c3b005e949ef8953999c0485af27dd30578"
+    sha256 arm64_linux:   "a777dcc11e6171a07f570e8dc038a062d79437aea8ec9641aa846ca070ae1d27"
     sha256 x86_64_linux:  "29b2f617d5cae86c0a023d2aaea35d053f73b06e40f6e705aeeedbc99e2aadb7"
   end
 

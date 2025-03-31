@@ -1,20 +1,18 @@
 class Inih < Formula
   desc "Simple .INI file parser in C"
   homepage "https:github.combenhoytinih"
-  url "https:github.combenhoytiniharchiverefstagsr58.tar.gz"
-  sha256 "e79216260d5dffe809bda840be48ab0eec7737b2bb9f02d2275c1b46344ea7b7"
+  url "https:github.combenhoytiniharchiverefstagsr59.tar.gz"
+  sha256 "062279922805f5e9a369551a08d5ddb506140fe50774183ffdbb7c22bb97e3f4"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "4c81bf7f96140b151b2341d5549e3760db9f4d60e149fd8152d60b011de298cf"
-    sha256 cellar: :any,                 arm64_sonoma:   "5e3feca2ad82149be23f8b8197dc4def4b6f875f913bc20e6a63d0fca2f950e5"
-    sha256 cellar: :any,                 arm64_ventura:  "cda39a0bf974dc4a44f1ae643e5d6f68c36625927b40284d923b3b405bdaae67"
-    sha256 cellar: :any,                 arm64_monterey: "8c4076b74b74305a3bcb8fed1e48cf12afed174fa133ac270ebea088821479ac"
-    sha256 cellar: :any,                 sonoma:         "3a840e0886567281f23a8567e9b89fa47c1bb3512ba19daac9867bc97220ee44"
-    sha256 cellar: :any,                 ventura:        "62e0def050a8c72d642df4e74c2d6e0f8eaa690992a3ce42a9d9f6a584bc23d0"
-    sha256 cellar: :any,                 monterey:       "9fbfa45ba702cd0a6a165be73bc5d69f87223683265ce4f6b0f8fe13041cbd5c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "8f08a0e5c727269ed4e5abf5e6083355c9a43e55b1a08377e7f5b6a80149a40f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3ac3bfd4c526d7ebe707ad4d3969c840a837ab01555055c6b88a5558d1933fa4"
+    sha256 cellar: :any,                 arm64_sequoia: "12a5f9231059f1e683796f68eb0b6f3df1459d710bc6dfbb4b7fac52f8f0e97a"
+    sha256 cellar: :any,                 arm64_sonoma:  "b3b94f4ff780ed221ce37ab8606c301dc9f15d9006b151edde823b4e8bb247ae"
+    sha256 cellar: :any,                 arm64_ventura: "9c0385fb6a8ac03598803d2a50a842238c050607239a30ce9fdd8b94fc9cd34d"
+    sha256 cellar: :any,                 sonoma:        "2a3772b9202962b26ef97b642af2366e253367e4cd2ac25b87bed972cb008157"
+    sha256 cellar: :any,                 ventura:       "f8c086f3e0109561f3925bdeee1405d41f0dd194e10ed5b151394afe2c0984db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8c5f62b2fa13028915bb5601c01b2d58a1c66eb10241b38b09e26046ca8ee9a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eda073c8c1003062c75c2e3b46c4b2d490bf53f92e3dfc9ae091803cfce2b192"
   end
 
   depends_on "meson" => :build

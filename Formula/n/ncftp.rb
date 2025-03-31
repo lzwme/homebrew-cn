@@ -1,9 +1,9 @@
 class Ncftp < Formula
   desc "FTP client with an advanced user interface"
   homepage "https://www.ncftp.com/"
-  url "https://www.ncftp.com/public_ftp/ncftp/ncftp-3.2.8-src.tar.gz"
-  mirror "https://fossies.org/linux/misc/ncftp-3.2.8-src.tar.gz"
-  sha256 "db7da662458a1643209d6869465c38ec811f8975a6ac54fd20c63a3349f7dbf4"
+  url "https://www.ncftp.com/public_ftp/ncftp/ncftp-3.2.9-src.tar.gz"
+  mirror "https://fossies.org/linux/misc/ncftp-3.2.9-src.tar.gz"
+  sha256 "f1108e77782376f8aec691f68297a3364a9a7c2d9bb12e326f550ff9770f47a7"
   license "ClArtistic"
 
   livecheck do
@@ -12,19 +12,16 @@ class Ncftp < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "164bdc8c174f830f6063b4ea03d4688aead49f7c3eb94ac65b8ff48081e1ac74"
-    sha256 arm64_sonoma:  "450afa5bf09451c3857979dbf70577b84984a4eb72c84f475e5a64163259abad"
-    sha256 arm64_ventura: "95020ea454e90f40b23a676b472e6c63fe1cc5b48b509f731d73562fd22e19ce"
-    sha256 sonoma:        "ee78c0477c351cca5c1b38a1032b48ac9835de45a3da1c3fa336e3623aed7750"
-    sha256 ventura:       "7e549bde13344ec0f9d9d6e7e636cee53dea762a82171d69771651db048c6951"
-    sha256 arm64_linux:   "331dbc6bd1f73d39e9afffab9993fd83572167587c736f13177151bbd3360f64"
-    sha256 x86_64_linux:  "ed8aa817bced3e29f0a3fd6017b9947817822be713bf65ad8ee5454ab6ca70c3"
+    sha256 arm64_sequoia: "6bbc37b40d42be6e959411ad72917fed344adf99ce5f4baf167f9c7815ccc10b"
+    sha256 arm64_sonoma:  "1b49b2182fb22d3f063198adb60bded9b49476e645e17eb69163e19748547a4e"
+    sha256 arm64_ventura: "b28e8aecc23cd97394c5b7a282e4c8abf544fdcc6c9f2b216c3fec4b5105dda6"
+    sha256 sonoma:        "7de0b98c69c496d986b3125990c8e0605c925c436533968fe313fafa295a5563"
+    sha256 ventura:       "39e3426de0ffde35421a3cf731d65e68e0a5cd27bd21363273524969f4bce664"
+    sha256 arm64_linux:   "41b15795fc9b435b37273c841150442468ec8e7294dc49533d7fbca18fcc24a4"
+    sha256 x86_64_linux:  "633b2189e8667112b0d8edd3cf293fcbb18602fd75e51b16257f83e891719896"
   end
 
   uses_from_macos "ncurses"
-
-  # fix conflicting types for macos build, sent the patch to support@ncftp.com
-  patch :DATA
 
   def install
     # Fix compile with newer Clang
@@ -33,8 +30,8 @@ class Ncftp < Formula
     system "./configure", "--disable-universal",
                           "--disable-precomp",
                           "--with-ncurses",
-                          "--prefix=#{prefix}",
-                          "--mandir=#{man}"
+                          "--mandir=#{man}",
+                          *std_configure_args
     system "make"
     system "make", "install"
   end
@@ -43,17 +40,3 @@ class Ncftp < Formula
     system bin/"ncftp", "-F"
   end
 end
-
-__END__
-diff --git a/sio/DNSUtil.c b/sio/DNSUtil.c
-index 0d542bb..eb7e867 100644
---- a/sio/DNSUtil.c
-+++ b/sio/DNSUtil.c
-@@ -12,7 +12,7 @@
- #	define Strncpy(a,b,s) strncpy(a, b, s); a[s - 1] = '\0'
- #endif
-
--#if (((defined(MACOSX)) && (MACOSX < 10300)) || (defined(AIX) && (AIX < 430)) || (defined(DIGITAL_UNIX)) || (defined(SOLARIS)) || (defined(SCO)) || (defined(HPUX)))
-+#if ((defined(AIX) && (AIX < 430)) || (defined(DIGITAL_UNIX)) || (defined(SOLARIS)) || (defined(SCO)) || (defined(HPUX)))
- extern int getdomainname(char *name, gethostname_size_t namelen);
- #endif

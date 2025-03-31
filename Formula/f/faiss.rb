@@ -35,11 +35,9 @@ class Faiss < Formula
       -DFAISS_ENABLE_C_API=ON
       -DBUILD_SHARED_LIBS=ON
     ]
-    system "cmake", "-B", "build", ".", *args
-    cd "build" do
-      system "make"
-      system "make", "install"
-    end
+    system "cmake", "-S", ".", "-B", "build", *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
     pkgshare.install "demos"
   end
 

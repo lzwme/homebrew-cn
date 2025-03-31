@@ -40,9 +40,9 @@ class Freeglut < Formula
       -DOPENGL_INCLUDE_DIR=#{Formula["mesa"].include}
       -DOPENGL_gl_LIBRARY=#{Formula["mesa"].libshared_library("libGL")}
     ]
-    system "cmake", *std_cmake_args, *args, "."
-    system "make", "all"
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

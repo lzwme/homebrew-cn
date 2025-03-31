@@ -24,9 +24,10 @@ class Bibtexconv < Formula
   uses_from_macos "curl"
 
   def install
-    system "cmake", *std_cmake_args,
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args,
                     "-DCRYPTO_LIBRARY=#{Formula["openssl@3"].opt_lib}#{shared_library("libcrypto")}"
-    system "make", "install"
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do

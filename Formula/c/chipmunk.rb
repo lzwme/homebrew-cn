@@ -32,8 +32,11 @@ class Chipmunk < Formula
   depends_on "cmake" => :build
 
   def install
-    system "cmake", ".", "-DBUILD_DEMOS=OFF", *std_cmake_args
-    system "make", "install"
+    inreplace "srccpHastySpace.c", "#include <syssysctl.h>", "#include <linuxsysctl.h>" if OS.linux?
+
+    system "cmake", "-S", ".", "-B", "build", "-DBUILD_DEMOS=OFF", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
     doc.install Dir["doc*"]
   end
