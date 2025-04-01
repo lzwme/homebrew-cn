@@ -119,7 +119,10 @@ class BoostMpi < Formula
     system "mpic++", "test.cpp", *args, "-o", "test"
     system "mpirun", "-np", "2", ".test"
 
-    (testpath"CMakeLists.txt").write "find_package(Boost COMPONENTS mpi REQUIRED)"
+    (testpath"CMakeLists.txt").write <<~CMAKE
+      cmake_minimum_required(VERSION 4.0)
+      find_package(Boost COMPONENTS mpi REQUIRED)
+    CMAKE
     system "cmake", ".", "-Wno-dev"
   end
 end

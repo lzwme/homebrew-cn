@@ -3,17 +3,17 @@ class Localai < Formula
 
   desc "OpenAI alternative"
   homepage "https:localai.io"
-  url "https:github.commudlerLocalAIarchiverefstagsv2.26.0.tar.gz"
-  sha256 "9cdafd1aa157dbc1fa14cbe62b9d5c0e94422172d48c9fc424131916ad10a7b2"
+  url "https:github.commudlerLocalAIarchiverefstagsv2.27.0.tar.gz"
+  sha256 "595ade8031a8f7d4fd23c4e3a5c24b37f542059f3585c9f15352da4fb79c06e0"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "beefef3660c05f418321f60e7157d2ea8ebdecce71355e37754e823ae66fb787"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3d81153835ec2683a2853e482503fd9a3dfdf8f4c365266820dec596fca46e1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ad1d15a333d5f3906d8bb8e5afb9ff9dcf2ce563024328f5c371cdbc90e5a54c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "59d02fc81cfa530869a0587449d376feaba752a58e912fb16e196643de6fac0b"
-    sha256 cellar: :any_skip_relocation, ventura:       "fc70aea23b8e998d06ea8ab06e028ee0f95f9a0d16d9f53dec5a7a0427781e87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f48ca2dff458a789804fec3c8a9068a7cd3f966352448028041f278c831011d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "916762f5f150ed512bb360288131b670e6427b526e6e480f4511d4f93514f930"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "98e12b6113ea36844382ce0595a5d14b4ff2fd9337cb4a7c4ceb9406e1a8b85d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4d90aa4ed4e526312efa24791ea0d3d674dbff652598649fac15ca946abbddde"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cfd6d4afaffd374de8c1b79f9f4116e5e7d23e0fe35efb3435c96bf8abe435c7"
+    sha256 cellar: :any_skip_relocation, ventura:       "69404bfbc7780df4439d1dd6f89df61685800699d2863b8001f8486462b4565d"
+    sha256                               x86_64_linux:  "8661a59a281d2837ee130910cf4b838c608f0d5bd1d9307e5d8bb047e2ae952b"
   end
 
   depends_on "abseil" => :build
@@ -26,8 +26,8 @@ class Localai < Formula
   depends_on "python@3.13" => :build
 
   resource "grpcio-tools" do
-    url "https:files.pythonhosted.orgpackagesc1fe3adf1035c1f9e9243516530beae67e197f2acc17562ec75f03a0ba77fc55grpcio_tools-1.70.0.tar.gz"
-    sha256 "e578fee7c1c213c8e471750d92631d00f178a15479fb2cb3b939a07fc125ccd3"
+    url "https:files.pythonhosted.orgpackages05d2c0866a48c355a6a4daa1f7e27e210c7fa561b1f3b7c0bce2671e89cfa31egrpcio_tools-1.71.0.tar.gz"
+    sha256 "38dba8e0d5e0fb23a034e09644fdc6ed862be2371887eee54901999e8f6792a8"
   end
 
   def python3

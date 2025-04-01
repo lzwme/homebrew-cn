@@ -4,7 +4,7 @@ cask "trackerzapper" do
 
   url "https:github.comrknightukTrackerZapperreleasesdownload#{version}TrackerZapper.app.zip",
       verified: "github.comrknightukTrackerZapper"
-  name "trackerzapper"
+  name "TrackerZapper"
   desc "Menubar app to remove link tracking parameters automatically"
   homepage "https:rknight.meappstracker-zapper"
 

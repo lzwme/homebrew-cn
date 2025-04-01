@@ -1,18 +1,18 @@
 class Traefik < Formula
   desc "Modern reverse proxy"
   homepage "https:traefik.io"
-  url "https:github.comtraefiktraefikreleasesdownloadv3.3.4traefik-v3.3.4.src.tar.gz"
-  sha256 "a176bd59d1b49e3e88c86fb21bf8ac7190f60d41ecefa10b46edf7687f3a4e09"
+  url "https:github.comtraefiktraefikreleasesdownloadv3.3.5traefik-v3.3.5.src.tar.gz"
+  sha256 "26f332f4c045f7e02923c0f14ae674f7f07e5b8d383d2d1d9e4342b554e387b4"
   license "MIT"
   head "https:github.comtraefiktraefik.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "270613378825e79ea303294ca5ca7393e32de12a182f18791a4b798d9389bc99"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "270613378825e79ea303294ca5ca7393e32de12a182f18791a4b798d9389bc99"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "270613378825e79ea303294ca5ca7393e32de12a182f18791a4b798d9389bc99"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4b04562364612437b87fdcebaf1520121aa9063fe44d4d6e06d1c118d53a026b"
-    sha256 cellar: :any_skip_relocation, ventura:       "4b04562364612437b87fdcebaf1520121aa9063fe44d4d6e06d1c118d53a026b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1649813c34141750584c0798070dcb1962fe687c450bd7cbc1c11b827431ded"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7508ca13356ee9a46be9f8f41de0be11f079d01bd52d40b5e384d5766f49df4c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7508ca13356ee9a46be9f8f41de0be11f079d01bd52d40b5e384d5766f49df4c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7508ca13356ee9a46be9f8f41de0be11f079d01bd52d40b5e384d5766f49df4c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b0c78e1e52ac9daa1a240fa0a9e8a7f3179e8f1b6c5f29bfb5a1071cf258cace"
+    sha256 cellar: :any_skip_relocation, ventura:       "b0c78e1e52ac9daa1a240fa0a9e8a7f3179e8f1b6c5f29bfb5a1071cf258cace"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53d98cb2ec5116e5e9c12a9b22a84cafc7f7c92bb152651023567309bb74683e"
   end
 
   depends_on "go" => :build

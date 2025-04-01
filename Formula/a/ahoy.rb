@@ -4,6 +4,7 @@ class Ahoy < Formula
   url "https:github.comahoy-cliahoyarchiverefstagsv2.4.0.tar.gz"
   sha256 "934456f62143eb6dd92507e0144abbc3e3c0aa8a23955f89704f366b5df260f9"
   license "MIT"
+  head "https:github.comahoy-cliahoy.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c30c730a0e5e1e318913a11f22d2b0f93a2ec1805f3904c52880b8ca97f91e91"
@@ -20,8 +21,6 @@ class Ahoy < Formula
     cd "v2" do
       system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}-homebrew")
     end
-    ohai "Please check the README in the repo (https:github.comahoy-cliahoy) for new features."
-    ohai "An updated documentation website is coming soon."
   end
 
   test do
@@ -31,7 +30,7 @@ class Ahoy < Formula
         hello:
           cmd: echo "Hello Homebrew!"
     YAML
-    assert_equal "Hello Homebrew!\n", `#{bin}ahoy hello`
+    assert_equal "Hello Homebrew!\n", shell_output("#{bin}ahoy hello")
 
     assert_equal "#{version}-homebrew", shell_output("#{bin}ahoy --version").strip
   end

@@ -4,7 +4,7 @@ cask "extraterm" do
 
   url "https:github.comsedwards2009extratermreleasesdownloadv#{version}ExtratermQt_#{version}.dmg",
       verified: "github.comsedwards2009extraterm"
-  name "extraterm"
+  name "Extraterm"
   desc "Swiss army chainsaw of terminal emulators"
   homepage "https:extraterm.org"
 

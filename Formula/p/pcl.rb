@@ -79,7 +79,7 @@ class Pcl < Formula
     assert_match "tiff files", shell_output("#{bin}pcl_tiff2pcd -h", 255)
     # inspired by https:pointclouds.orgdocumentationtutorialswriting_pcd.html
     (testpath"CMakeLists.txt").write <<~CMAKE
-      cmake_minimum_required(VERSION 2.8 FATAL_ERROR)
+      cmake_minimum_required(VERSION 4.0 FATAL_ERROR)
       project(pcd_write)
       find_package(PCL 1.2 REQUIRED)
       include_directories(${PCL_INCLUDE_DIRS})

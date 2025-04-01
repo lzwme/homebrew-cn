@@ -2,19 +2,19 @@ cask "coq-platform" do
   arch arm: "arm64", intel: "x86_64"
 
   on_arm do
-    version "2024.10.0,8.19.2024.10"
-    sha256 "20cee7656b1c2d5dee50c0eede2fbb860a96354dcab2d32ecba6f1186ec03cf8"
+    version "2025.01.0,8.20.2025.01"
+    sha256 "5bfced11017a61e6a0d71787e2a7a31ffbc09707792d783235caf99d0f41f0d3"
   end
   on_intel do
     version "2023.11.0,8.18.2023.11"
     sha256 "cf63fd3031e0593d76431918427591c384591bfabf8fe9dbd385f92c0f0a0065"
   end
 
-  url "https:github.comcoqplatformreleasesdownload#{version.csv.first}coq-Platform-release-#{version.csv.first}-version.#{version.csv.second}-MacOS-#{arch}.dmg",
-      verified: "github.comcoqplatform"
-  name "Coq"
+  url "https:github.comrocq-proverplatformreleasesdownload#{version.csv.first}coq-Platform-release-#{version.csv.first}-version.#{version.csv.second}-MacOS-#{arch}.dmg",
+      verified: "github.comrocq-proverplatform"
+  name "Coq Platform"
   desc "Formal proof management system"
-  homepage "https:coq.inria.fr"
+  homepage "https:rocq-prover.org"
 
   # Not every GitHub release provides a file for macOS or each arch
   # so we check multiple recent releases instead of only the "latest" release.

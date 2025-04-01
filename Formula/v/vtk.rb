@@ -128,7 +128,7 @@ class Vtk < Formula
     assert_match Formula["boost"].version.to_s, vtk_cmake_module.read, "VTK needs to be rebuilt against Boost!"
 
     (testpath/"CMakeLists.txt").write <<~CMAKE
-      cmake_minimum_required(VERSION 3.3 FATAL_ERROR)
+      cmake_minimum_required(VERSION 4.0 FATAL_ERROR)
       project(Distance2BetweenPoints LANGUAGES CXX)
       find_package(VTK REQUIRED COMPONENTS vtkCommonCore CONFIG)
       add_executable(Distance2BetweenPoints Distance2BetweenPoints.cxx)

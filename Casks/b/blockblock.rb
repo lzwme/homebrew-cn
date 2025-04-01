@@ -24,23 +24,23 @@ cask "blockblock" do
 
     url "https:github.comobjective-seeBlockBlockreleasesdownloadv#{version}BlockBlock_#{version}.zip",
         verified: "github.comobjective-seeBlockBlock"
+
+    installer script: {
+      executable: "#{staged_path}BlockBlock Installer.appContentsMacOSBlockBlock Installer",
+      args:       ["-install"],
+      sudo:       true,
+    }
+
+    uninstall script: {
+      executable: "#{staged_path}BlockBlock Installer.appContentsMacOSBlockBlock Installer",
+      args:       ["-uninstall"],
+      sudo:       true,
+    }
   end
 
   name "BlockBlock"
   desc "Monitors common persistence locations"
   homepage "https:objective-see.orgproductsblockblock.html"
-
-  installer script: {
-    executable: "#{staged_path}BlockBlock Installer.appContentsMacOSBlockBlock Installer",
-    args:       ["-install"],
-    sudo:       true,
-  }
-
-  uninstall script: {
-    executable: "#{staged_path}BlockBlock Installer.appContentsMacOSBlockBlock Installer",
-    args:       ["-uninstall"],
-    sudo:       true,
-  }
 
   zap trash: [
     "~LibraryCachescom.objective-see.blockblock.helper",

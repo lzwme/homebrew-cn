@@ -33,7 +33,10 @@ class ColladaDom < Formula
     # Remove bundled libraries to avoid fallback
     rm_r(buildpath"domexternal-libs")
 
-    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_CXX_STANDARD=11", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DCMAKE_CXX_STANDARD=11",
+                    "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+                    *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

@@ -7,7 +7,7 @@ cask "cloudash" do
 
   url "https:github.comcloudashdevcloudashreleasesdownload#{version}Cloudash-#{version}#{arch}.dmg",
       verified: "github.comcloudashdevcloudash"
-  name "cloudash"
+  name "Cloudash"
   desc "Monitoring and troubleshooting for serverless architectures"
   homepage "https:cloudash.dev"
 

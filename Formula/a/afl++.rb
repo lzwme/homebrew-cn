@@ -4,6 +4,7 @@ class Aflxx < Formula
   url "https:github.comAFLplusplusAFLplusplusarchiverefstagsv4.31c.tar.gz"
   sha256 "8c6e9bef19b3d43020972701553734d1cb435c39a28b253f0dd6668e6ecb86bb"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,13 +12,13 @@ class Aflxx < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "4094c5297ade783a623387c6b56b5a70daecb7d665c5190072430fd75b9bfefd"
-    sha256 arm64_sonoma:  "543765f5f4f010a62d3e031754118f843f90fb5075abce697f943413f878978d"
-    sha256 arm64_ventura: "5c1e2e059e2de3fdcf8385baa68397c8d0bda9e3b448d6a199b6625195361999"
-    sha256 sonoma:        "57f97948c048d4bbe73bda674351a332fa1481213d01176dc6709a2cc8af1a60"
-    sha256 ventura:       "937ee8b2f729f7009b412ea9e8feb26cf97728ab932d4c404bebb669dd0f72db"
-    sha256 arm64_linux:   "d62672112a662037e73d923873e595a4000c5f3523c8777d08d56de7c78a64a2"
-    sha256 x86_64_linux:  "35ac3831a47d4e7dc815d91d888a3bad7f84291434dc3cdcc589712802edad73"
+    sha256 arm64_sequoia: "7a378b0e8a1d60016d6ae67e686bb0e6b8f655b9b6c8d593168c5d7545b8fa83"
+    sha256 arm64_sonoma:  "f0bc5e03c502cc886e139c3d8c14e7ed6ba4e092423147738865f0b11cc4292a"
+    sha256 arm64_ventura: "97adccf108606e756e67910113f19518512ffefd2e7302618f91f2545308890a"
+    sha256 sonoma:        "daf444540b9b7e93cd6fef887b5dd6a67990a3a46529d6da9f3d135af02f0061"
+    sha256 ventura:       "faa89dc2fbfd7ceef19a86f8347abb1ab794382b57942234ae874b855f9532cb"
+    sha256 arm64_linux:   "ce2a30d50efac60aaf533b0d3b5e79bead6028591e082ce3dd428e53b355b551"
+    sha256 x86_64_linux:  "9a2bd9c0d0fb82231ed843c3c3f6a987d56612dc9f8e728f40565c1c9cbb2631"
   end
 
   depends_on "coreutils" => :build

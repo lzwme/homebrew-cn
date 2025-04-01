@@ -2,20 +2,19 @@ class Alive2 < Formula
   desc "Automatic verification of LLVM optimizations"
   homepage "https:github.comAliveToolkitalive2"
   url "https:github.comAliveToolkitalive2.git",
-      tag:      "v19.0",
-      revision: "84041960f183aec74d740ff881c95a4ce5234d3d"
+      tag:      "v20.0",
+      revision: "c0f5434f402ad91714ee0952f686cd0f524920ad"
   license "MIT"
-  revision 1
   head "https:github.comAliveToolkitalive2.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b0e3e3a540b8d9d2fee6e28caf8392b234771bdef828dd290fa7b96f455d069a"
-    sha256 cellar: :any,                 arm64_sonoma:  "5514d92df672c7073060c36b23c1eb1b3c752c82a0282a93e029a020d4e5aa8a"
-    sha256 cellar: :any,                 arm64_ventura: "3bc3b48d9232f046ec198571cad9bd4efbe8f3a2b521ef3b0cb77f4b6aee5c1b"
-    sha256 cellar: :any,                 sonoma:        "69a9e839094cf26f9a364bc9fb2b602b4008b361dd38296bad5f70c370d40323"
-    sha256 cellar: :any,                 ventura:       "e67a8a8978bb0abdc51e51378876212569de77f90357e86e9d3dc6cecdc3385b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0f5567976c8bf01b93ed03f38764f72e5ce2eefc25bd617fa4521e7ce77ccbe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a35fac67b30fbc40e37bbe6e4aaef4dbd0a19cd774095c0485b2c03c6e0c6d1e"
+    sha256 cellar: :any,                 arm64_sequoia: "b3c6d86e1de46c4d5e154458184fac5402a56c42ddb94536f889b068fcfecba2"
+    sha256 cellar: :any,                 arm64_sonoma:  "d1313cda006605d23b8f50cc20715989e438a5a181046c3393446aae027574a8"
+    sha256 cellar: :any,                 arm64_ventura: "3633942d2a7e78b265bb2c3c7d648e8072fd5086c3e917b8d9fe528ff7412b3b"
+    sha256 cellar: :any,                 sonoma:        "ffddb70cf02bf98df46e889b906833d0e6bd11ca768ecf4a19e22ce993e07abe"
+    sha256 cellar: :any,                 ventura:       "a61028a3361668a76d287cf20e3b48cda0be2a27e701f79a88a12457f370996f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9f1fbd311f2bfda369fc23d87228666fa1017ee7b61ba4a864e180b57281cc44"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d10e5f546196557d33c2a10d3b119a1357268c3447feaca49445f95787da1827"
   end
 
   depends_on "cmake" => :build
@@ -27,6 +26,10 @@ class Alive2 < Formula
   uses_from_macos "zlib"
 
   def install
+    # Work around irstate.cpp:730:40: error: reference to local binding
+    # 'src_data' declared in enclosing function 'IR::State::copyUBFromBB'
+    ENV.llvm_clang if OS.mac? && MacOS.version <= :ventura
+
     system "cmake", "-S", ".", "-B", "build", "-DBUILD_LLVM_UTILS=ON", "-DBUILD_TV=ON", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

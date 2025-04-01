@@ -1,20 +1,29 @@
 class ApacheArrow < Formula
   desc "Columnar in-memory analytics layer designed to accelerate big data"
   homepage "https:arrow.apache.org"
-  url "https:www.apache.orgdyncloser.lua?path=arrowarrow-19.0.1apache-arrow-19.0.1.tar.gz"
-  mirror "https:archive.apache.orgdistarrowarrow-19.0.1apache-arrow-19.0.1.tar.gz"
-  sha256 "acb76266e8b0c2fbb7eb15d542fbb462a73b3fd1e32b80fad6c2fafd95a51160"
   license "Apache-2.0"
-  revision 1
+  revision 2
   head "https:github.comapachearrow.git", branch: "main"
 
+  stable do
+    url "https:www.apache.orgdyncloser.lua?path=arrowarrow-19.0.1apache-arrow-19.0.1.tar.gz"
+    mirror "https:archive.apache.orgdistarrowarrow-19.0.1apache-arrow-19.0.1.tar.gz"
+    sha256 "acb76266e8b0c2fbb7eb15d542fbb462a73b3fd1e32b80fad6c2fafd95a51160"
+
+    # Backport support for LLVM 20
+    patch do
+      url "https:github.comapachearrowcommitc124bb55d993daca93742ce896869ab3101dccbb.patch?full_index=1"
+      sha256 "249ec9d7bf33136080992cda4d47790d3b00cdf24caa3b0e3f95d4a4bb9fba3e"
+    end
+  end
+
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "dd5fc4a9adf55a6b87e0b0210e1bb32955d2d73e6a6262813f3c9589fe49f13a"
-    sha256 cellar: :any,                 arm64_sonoma:  "44f76218ec58d3b616ab343a1dc0731a2f730a56db13379d64c649a80657e43f"
-    sha256 cellar: :any,                 arm64_ventura: "cb9e1037a0bac95de9ee1b137465be60ee959e88f1d2095a0682ab155563fde5"
-    sha256 cellar: :any,                 sonoma:        "6b5b4c3cb3dcbfbd8c30731fbdc8106023e7a07be5c8833b7c9a4dadd7b7bb5b"
-    sha256 cellar: :any,                 ventura:       "db81fd0ceb86a75f5b7bb406c6e432bc9738f40e622870487a494e4f5ea55957"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ae828c3e15e18c2ca32d5c625d1d24ead07b7215ed10a877fd8d42b879bea12"
+    sha256 cellar: :any,                 arm64_sequoia: "6a09d0fb5f121754485c07be7088ed1f78f4d515b4317dcac4ab8d4b5055ed4b"
+    sha256 cellar: :any,                 arm64_sonoma:  "22221ed0ac6df347b31879e430951c3aeb6c4fa3afaeabee9f9990b812ee641e"
+    sha256 cellar: :any,                 arm64_ventura: "93ae16a11eddb0fa5c68439ac7253f0409c0cb388be499afbbb9c5642c1e16fb"
+    sha256 cellar: :any,                 sonoma:        "9e8adadead6e7bf0c2d084db0c4026e104be73c448b057e16b240c5b928aa3d6"
+    sha256 cellar: :any,                 ventura:       "0c2255f1a4bf326412577b2fd5d809abc6f4f96ae2fcb757adf1fb9663a7c3b3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "249c2f58c7dd3144bc0b3f1515aa91083aae16ba214e5aaa20a3cfdd0f0e843e"
   end
 
   depends_on "boost" => :build

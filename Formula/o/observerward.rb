@@ -1,17 +1,17 @@
 class Observerward < Formula
   desc "Web application and service fingerprint identification tool"
   homepage "https:emo-crab.github.ioobserver_ward"
-  url "https:github.comemo-crabobserver_wardarchiverefstagsv2025.3.23.tar.gz"
-  sha256 "569a7a7c7d1adce237bf151981dcb5dd98009bb4dd4fc7a3e96d7b58fade56d6"
+  url "https:github.comemo-crabobserver_wardarchiverefstagsv2025.3.31.tar.gz"
+  sha256 "66012887ec1b3de4d14c4675ca26c4542fc1ca55e3e61dbc2ca9ac11a96a55c1"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e1b860d72b57de88d74d10b06db1ccfcbbe2b4f9ddc4938e5265b13bcc4c7934"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1fcef1fcd4fe8037d843f9f4d9e86b8a7c10de8d8b8b09143df3c1ddba2e8d0b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "314ce22acb8e7294a13b79a3e27d367f8ffd641f3b62e82d600ffac1ebd98aa3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f37df0d086d902784f76fb54b261419e30c873f2cb65e3afa2780a540509c749"
-    sha256 cellar: :any_skip_relocation, ventura:       "b36705e37778f49ad1a378e9c3181a786d302a031373f36fc82452845718160b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "537cb4353e9d0636c7a68313c4cc0eefa6d56815729425aa5f8c7ee15f7f6f41"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3ba015c529f99c57612e9b97652cec295132ce830bc48bbdb32c3de19f11257"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49f2f77044d04fe255e8e165c69325d7a44fd05a2e860956189eee145fc29e86"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "aba29f0000092979ef84d584a26e0f90d7deab6823715395e7c0dbecbb7c412e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "88742b22d883d4916494d3778ebb62e1f6d77e5caead1b718c19ba599b4ded68"
+    sha256 cellar: :any_skip_relocation, ventura:       "e2f90ac8d8591c75bafdfb6c018b4ff5fc11158f7b375c12e6e27919c9d211b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3db9b53da41520a3e28289f98391cf1aab5ae209b550e291263c5d242bd2858"
   end
 
   depends_on "rust" => :build

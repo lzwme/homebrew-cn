@@ -15,6 +15,7 @@ class Pyside < Formula
     { "GPL-3.0-only" => { with: "Qt-GPL-exception-1.0" } },
     { any_of: ["LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only"] },
   ]
+  revision 1
 
   livecheck do
     url "https://download.qt.io/official_releases/QtForPython/pyside6/"
@@ -22,11 +23,11 @@ class Pyside < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "c09c799804ee1a48eed780f8f802b41eb5812960c2acfe19d036a858fb8fd104"
-    sha256 cellar: :any,                 arm64_ventura: "99d364c204a64c172b62c32186af8aa2ebb3034eaa7660b7a56b1a7a05b91e54"
-    sha256 cellar: :any,                 sonoma:        "d8f852787277f1499a439ed75dc6c5f063f27fdb3dbdd08400f864036540eaa6"
-    sha256 cellar: :any,                 ventura:       "e4108105248e21b293bd6c1061b8ab23f885cbc04aca88f9704f243003246c8f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4fe8186c1d70dbba0b5e77fdbda6a0f7bae6c1c373bda5cd05c0db9b779a4f1"
+    sha256 cellar: :any,                 arm64_sonoma:  "4db97d916518c87ab031d0993e07ad647dbf61e3b0722c2d93f21f06a020fa75"
+    sha256 cellar: :any,                 arm64_ventura: "832707f3c5d54a25d4323db92f5fb62fdafe39ec081ee419c52bbc0234fe8bf2"
+    sha256 cellar: :any,                 sonoma:        "8ce1ebab959cb379d33284994182a4f1b17c0e0d4ed4176b68091faa6d73c631"
+    sha256 cellar: :any,                 ventura:       "c87fe0bffe43ac0e108af04e73b528f61918c6ca0e92f70b2d46ad979aefb2d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f31e11786f95df0edce42df7065ae2dd88d202d9cf72a4ef7feee5413917094"
   end
 
   depends_on "cmake" => :build
@@ -55,6 +56,12 @@ class Pyside < Formula
 
   def install
     ENV.append_path "PYTHONPATH", buildpath/"build/sources"
+    if OS.mac?
+      # Avoid detection of unwanted formulae. Should be handled in brew instead
+      ENV["CMAKE_PREFIX_PATH"] = ENV["CMAKE_PREFIX_PATH"].split(":")
+                                                         .reject { |p| p == HOMEBREW_PREFIX.to_s }
+                                                         .join(":")
+    end
 
     extra_include_dirs = [Formula["qt"].opt_include]
     extra_include_dirs << Formula["mesa"].opt_include if OS.linux?
