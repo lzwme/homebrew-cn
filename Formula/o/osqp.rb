@@ -30,6 +30,11 @@ class Osqp < Formula
     # Install qdldl git submodule not included in release source archive.
     (buildpath"lin_sysdirectqdldlqdldl_sources").install resource("qdldl")
 
+    # patch to support cmake 4.0
+    inreplace ["CMakeLists.txt", "lin_sysdirectqdldlqdldl_sourcesCMakeLists.txt"] do |f|
+      f.gsub! "cmake_minimum_required (VERSION 3.2)", "cmake_minimum_required (VERSION 3.5)"
+    end
+
     system "cmake", "-S", ".", "-B", "build", "-DENABLE_MKL_PARDISO=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
@@ -40,7 +45,7 @@ class Osqp < Formula
 
   test do
     (testpath"CMakeLists.txt").write <<~CMAKE
-      cmake_minimum_required(VERSION 3.2 FATAL_ERROR)
+      cmake_minimum_required(VERSION 4.0 FATAL_ERROR)
       project(osqp_demo LANGUAGES C)
       find_package(osqp CONFIG REQUIRED)
 

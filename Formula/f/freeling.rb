@@ -7,27 +7,32 @@ class Freeling < Formula
   revision 9
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a39522d63dba5e77890732894b0ebce8c76a507746857c5a500612804ee54c75"
-    sha256 cellar: :any,                 arm64_sonoma:  "c0b8134c5f6b1db66767f4aa45c1c0390c653c545c63f520630efdb9e22a0d5c"
-    sha256 cellar: :any,                 arm64_ventura: "004a2603e297798074b1e4660c16ac8e52a62b45149de4260e77099665616c19"
-    sha256 cellar: :any,                 sonoma:        "cab5afd3f15d172c250d5053bb84c8feb53532d97116d8e03e573b37bd391914"
-    sha256 cellar: :any,                 ventura:       "0e8c0d5db45751070ef1c9d0c97f01b58be075a4258724face8d8a91ae08af7b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "954cf8858d578a5265c48c21cd105aa911fad1fae1c2b1d6b5a0d0d7342ccbb4"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "7818f5931f6a47b3b1347f40740e9ed5d69497b35273d05751f50b3b7aae780c"
+    sha256 cellar: :any,                 arm64_sonoma:  "830fc63ec3e39530597595fb83f2545f4011aa2bd3db2b8348c3b914aec34a7f"
+    sha256 cellar: :any,                 arm64_ventura: "3688000fe9494bf4481c2ecaff45fbbb90de39f450fdbd35c95d9200f896c8c6"
+    sha256 cellar: :any,                 sonoma:        "02928e1c1d2de345657a5296ec2aba68903ed41b759a533c05c0f73404153a9a"
+    sha256 cellar: :any,                 ventura:       "ddca7f21d90216b356ea852e14d23e5299d0032b7109a5e19a7666b252db3143"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df83bdff0215c970ec2cbddda96458f831f527cfcbe8f165994e69d66fbaef3d"
   end
 
   depends_on "cmake" => :build
   depends_on "boost"
+  depends_on "dynet"
   depends_on "icu4c@77"
 
   uses_from_macos "zlib"
 
-  conflicts_with "dynet", because: "freeling ships its own copy of dynet"
-  conflicts_with "eigen", because: "freeling ships its own copy of eigen"
   conflicts_with "foma", because: "freeling ships its own copy of foma"
   conflicts_with "hunspell", because: "both install 'analyze' binary"
   conflicts_with "crfsuite", because: "both install `crfsuite` binaries"
 
   def install
+    # Unbundle `dynet` and its dependency `eigen`
+    rm_r(["srceigen3", "srclibdynet"])
+    (buildpath"srceigen3").mkpath
+    (buildpath"srclibdynetCMakeLists.txt").write ""
+
     # icu4c 75+ needs C++17
     inreplace "CMakeLists.txt", "set(CMAKE_CXX_STANDARD 11)", "set(CMAKE_CXX_STANDARD 17)"
 

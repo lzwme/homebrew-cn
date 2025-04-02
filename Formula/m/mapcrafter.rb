@@ -30,6 +30,8 @@ class Mapcrafter < Formula
 
   def install
     system "cmake", "-S", ".", "-B", "build",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
+                    "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
                     "-DOPT_SKIP_TESTS=ON",
                     "-DJPEG_INCLUDE_DIR=#{Formula["jpeg-turbo"].opt_include}",
                     "-DJPEG_LIBRARY=#{Formula["jpeg-turbo"].opt_libshared_library("libjpeg")}",

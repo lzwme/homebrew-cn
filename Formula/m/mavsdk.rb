@@ -5,6 +5,7 @@ class Mavsdk < Formula
       tag:      "v3.2.0",
       revision: "c4a070f974b3d91375f096095d952cb8ef416849"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,13 +13,13 @@ class Mavsdk < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "b87719d609963a7a81d187fe8286f017b9a6565fa70c2813212b458fd8493fd7"
-    sha256                               arm64_sonoma:  "6944c7fa0032ba0cf405350ade2ed14c992b117e5df984d07e0977693273869b"
-    sha256                               arm64_ventura: "2028908b3d11f8634ea7512a0888c17a40dbb65b8a5b889e2ccbbad23adbfaee"
-    sha256 cellar: :any,                 sonoma:        "4e45e8d8a78af8d2a9cb5750362e1be1ef781ca4aa7a2ade6fe266e7caa28136"
-    sha256 cellar: :any,                 ventura:       "bc038074e3aad9bf98e5753be29a2effe436c121833ea61b603e42058db66677"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2b71890c8b621924bd41bad969208723fce0cf0070cff31efb2346fa70f30fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b49aeda73cc92f95ba208b4403d02599bbf173c24e156c62760778d1a9ab687"
+    sha256                               arm64_sequoia: "e9ab3127375a7ca1c74223f271349839167cd89acdc8b5070e71d1aae218ee57"
+    sha256                               arm64_sonoma:  "9d3edba1a89b066feafa83cf231e7c58c0b997186f318441d24771b6233f73c4"
+    sha256                               arm64_ventura: "50cfd1bccdfe6929018c314a2638d70fdb57b35a4721525a57f5217651301157"
+    sha256 cellar: :any,                 sonoma:        "ccb1251bdd37b4d31c7d5bbf1e2fce3ac6a3fbf896b1a19e7f34c42fb66f9fd0"
+    sha256 cellar: :any,                 ventura:       "21292c7f1fe9c56314a07ac3a704608a205f9ea47c818a9336ab4e806db7a7fe"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fbd827747a8ff881f6b9afecd4b70662490d6ac794a151143b33ab33bb811df3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e7b1f7a6c62b8fe187042c3be66176ee9078f2975e1d4368d4faa3b6dac4e6eb"
   end
 
   depends_on "cmake" => :build

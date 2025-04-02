@@ -1,18 +1,18 @@
 class Fn < Formula
   desc "Command-line tool for the fn project"
   homepage "https:fnproject.io"
-  url "https:github.comfnprojectcliarchiverefstags0.6.39.tar.gz"
-  sha256 "9816f20274b3b7fd7fc525547cfcef98be5f5b54aea7f8c615fc3e866c69432b"
+  url "https:github.comfnprojectcliarchiverefstags0.6.40.tar.gz"
+  sha256 "2110bc0336583533e16b36bcf3641dcd2e752b8de888f0f2e291832ec070ed24"
   license "Apache-2.0"
   head "https:github.comfnprojectcli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d3ac9f539dc3b3c2337740978c67341706c2a66893a0def856f978229fff8ee"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d3ac9f539dc3b3c2337740978c67341706c2a66893a0def856f978229fff8ee"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0d3ac9f539dc3b3c2337740978c67341706c2a66893a0def856f978229fff8ee"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5b94e12a4303dcef889d24188b2eede49c7f6ed365c832fbd7a186092b538670"
-    sha256 cellar: :any_skip_relocation, ventura:       "5b94e12a4303dcef889d24188b2eede49c7f6ed365c832fbd7a186092b538670"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a468637c283d8cf347bcc5775554be96d3bd377284af058d7e27d63865e7506"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2c1350bc80346182622f7d4f7712eec7f1e686e77e5d1b6158ed4af4acee387"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f2c1350bc80346182622f7d4f7712eec7f1e686e77e5d1b6158ed4af4acee387"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f2c1350bc80346182622f7d4f7712eec7f1e686e77e5d1b6158ed4af4acee387"
+    sha256 cellar: :any_skip_relocation, sonoma:        "daea33116d7d178b549566d74f7eb7c7b90a359d6ca37a166fa936064a69d6e2"
+    sha256 cellar: :any_skip_relocation, ventura:       "daea33116d7d178b549566d74f7eb7c7b90a359d6ca37a166fa936064a69d6e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d37b19657aa79c24a388bc6f181e316d9aa7b012e71111cbb5051fc51253e38e"
   end
 
   depends_on "go" => :build

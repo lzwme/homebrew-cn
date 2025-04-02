@@ -41,6 +41,7 @@ class Mgis < Formula
       "-Denable-enable-static=OFF",
       "-Ddisable_python_library_linking=ON",
       "-DCMAKE_INSTALL_RPATH=#{rpath}",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
       "-DPython_ADDITIONAL_VERSIONS=#{Language::Python.major_minor_version python3}",
     ]
 

@@ -1,8 +1,8 @@
 class Libvirt < Formula
   desc "C virtualization API"
   homepage "https://libvirt.org/"
-  url "https://download.libvirt.org/libvirt-11.1.0.tar.xz"
-  sha256 "19aebfd98d209792d569cdcf944dafb85c00d264f3b55fa1216b18f9bc9cb226"
+  url "https://download.libvirt.org/libvirt-11.2.0.tar.xz"
+  sha256 "07b91052b4e44cf2e5c21bfe1a8095f98db47a917b38d95d2a7ec50ff6bdade9"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
   head "https://gitlab.com/libvirt/libvirt.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Libvirt < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "a2834e193627742a0792d62c550f4cc61d31705b3d136fb3a350dd472c14617b"
-    sha256 arm64_sonoma:  "435e61cafd93a5b2cc492565c38ceb074c25b4861cdc84a23addc67502bba128"
-    sha256 arm64_ventura: "11951d2a0b8921bdf07df12483a3e697498369f7b296344e756620d95b782e4b"
-    sha256 sonoma:        "351eb9b6506bb82a30b5ca998a98d487af28699309a7240a11a317508803da39"
-    sha256 ventura:       "2f2e88c83b1f27796201ad77ef9ebfa1b7e5ec862aabd46889094bdb7f62393a"
-    sha256 arm64_linux:   "0d37e3b1240930e22f6e3ef1bdc0c1166a85d17c8ae1fc74596b755af95dd774"
-    sha256 x86_64_linux:  "b50ca36bab8cb3ff635146841bd60b05fce265e8a0bf7df9f6a2780c39345e82"
+    sha256 arm64_sequoia: "1e85ba454dfb2f805457d8fbd881c349a39e0fbfd42fc8b0b8bf3ccb48a6b407"
+    sha256 arm64_sonoma:  "c57e2fe2d0472e93a29a848c6dd7c59972a42c9de42863fe808100cf4dd661ba"
+    sha256 arm64_ventura: "78decedec0009ad6df17c4426cbde9878aa3af04303235af7ae68812ef937e9f"
+    sha256 sonoma:        "8b37025b9a456045c042cfb7e3638ad7ce611e1a132c6d262b0f9795be4cb796"
+    sha256 ventura:       "f26764bb45e2c9fe17172e6e5b50f4a09fd46afac9e922df3c32fb96565a5054"
+    sha256 arm64_linux:   "66e7ff70ff879699c979395021e522e083b3e69203309670aced16735e636fc8"
+    sha256 x86_64_linux:  "e809e9c6e2c93cba6adaeb88d29b5429a75068cd0a0824ca96defedfd54ca7bb"
   end
 
   depends_on "docutils" => :build
@@ -62,6 +62,7 @@ class Libvirt < Formula
       -Ddriver_network=enabled
       -Dinit_script=none
       -Dqemu_datadir=#{Formula["qemu"].opt_pkgshare}
+      -Drunstatedir=#{var}/run
     ]
     system "meson", "setup", "build", *args, *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"

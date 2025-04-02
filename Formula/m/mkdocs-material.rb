@@ -2,18 +2,18 @@ class MkdocsMaterial < Formula
   include Language::Python::Virtualenv
   desc "Material Design theme for MkDocs"
   homepage "https://squidfunk.github.io/mkdocs-material/"
-  url "https://files.pythonhosted.org/packages/e6/fc/f42c09e3fe13d48193edf22a63484186b0be67a73fc006eab389bf47d66f/mkdocs_material-9.6.10.tar.gz"
-  sha256 "25a453c1f24f34fcf1f53680c03d2c1421b52ce5247f4468153c87a70cd5f1fc"
+  url "https://files.pythonhosted.org/packages/5b/7e/c65e330e99daa5813e7594e57a09219ad041ed631604a72588ec7c11b34b/mkdocs_material-9.6.11.tar.gz"
+  sha256 "0b7f4a0145c5074cdd692e4362d232fb25ef5b23328d0ec1ab287af77cc0deff"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0cace48e0fc12490ecad06910f48bfe1bf8b9d3f089f6cf53002ed9f5a1bbb1d"
-    sha256 cellar: :any,                 arm64_sonoma:  "eb5c82482d70b090c72af8e30d895ed287a2c82073646ffc9694e52a8ec9d09b"
-    sha256 cellar: :any,                 arm64_ventura: "c1d9b42b6a8c602072168bd0a45fcfe59d4b494e96f8db01f61f642d67b40664"
-    sha256 cellar: :any,                 sonoma:        "ca5592d3468b6b119c3ae5d2e1549dc43c1e45283a326026c6ba40cd6e412ad0"
-    sha256 cellar: :any,                 ventura:       "66a091062817546c35b864c33a8326443ca2d40f4bd337dbf3bfd9c3a235d36a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c72664e7e9ee25f9e1496dc2637a902df3f5a64606fc8d9a6bad71a26ef7da0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df5c93302b2b6d6eda299b3b0db69cbb4c34872119e91d92069cf7a12926d588"
+    sha256 cellar: :any,                 arm64_sequoia: "36f0871d10e777dd039441bb09282039f9a06e5dbe642d9d9cc625272bb490cf"
+    sha256 cellar: :any,                 arm64_sonoma:  "7b3f407308365dd2e7646938c6e830102b197b4b9b38b0c0e2617e7cda0935f7"
+    sha256 cellar: :any,                 arm64_ventura: "91056918d730ad7240dd0a5a6d3279a1eee21e334a01009793fe5bb71150ddd7"
+    sha256 cellar: :any,                 sonoma:        "4e0880a3b659607a19c13aeab7010d994e746a55ef19603ee4ad9d2a262763ea"
+    sha256 cellar: :any,                 ventura:       "b382ec9c864ba81553d6971e6cd46887cfe2825f01f0a8c1072453349683d99e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e48166dc95e9e449bb494195b65155a564c07d2c1b86427553e2addc4019da24"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e821203e4420a4d9c0fdb51ac82205f29635a9d9e13daffff97a6fbfebcb5101"
   end
 
   depends_on "libyaml"

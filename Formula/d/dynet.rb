@@ -24,8 +24,6 @@ class Dynet < Formula
   depends_on "cmake" => :build
   depends_on "eigen"
 
-  conflicts_with "freeling", because: "freeling ships its own copy of dynet"
-
   def install
     args = %W[
       -DEIGEN3_INCLUDE_DIR=#{Formula["eigen"].opt_include}eigen3

@@ -12,13 +12,14 @@ class BoostPython3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1bfc8d16e673420c90d440351214aa003dddce5dd1e5d997750ebfe3f10406af"
-    sha256 cellar: :any,                 arm64_sonoma:  "10316d5c37144f3ee869da4350a160b518570b60334e768ddbe9eacf1fcb7be8"
-    sha256 cellar: :any,                 arm64_ventura: "f5a6b1a59f5d1bd5092b6256a2fcbfd7fb4816205de5cc94f95fce3ffe708ac5"
-    sha256 cellar: :any,                 sonoma:        "c269dac8219d15e78659b3b5f48819d3695a5e9f646111bd30187d24d6e11525"
-    sha256 cellar: :any,                 ventura:       "7232f6b6da751626f3f7a9bc22ecd19e26804dde406de41b683615805bcead1a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8455e778b14c6ef29edfe08c0fe940b0bf14cb2da476d045cc915609cf93e1b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4dde9942cf842fe1a19c561da2f18880467730858f59ce0feaa6895e8517bbb"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "b64fa7312b369b13e00d7ae32fed82846399bbe39ede781aede34bc0d4c16990"
+    sha256 cellar: :any,                 arm64_sonoma:  "3a74ec0529bc29f2d2633eb2f502da634d4b5f86302638d2ae43cd54cd9f0c20"
+    sha256                               arm64_ventura: "33f12ce17a7fbd37b35326a1afaa0ae14f2383693a3c64db98c9368c2155a7fa"
+    sha256 cellar: :any,                 sonoma:        "8e7ffa0f89eeb9d14a37dff66723c9710f1f674b11d7d8ef2824b61cc6c563f8"
+    sha256 cellar: :any,                 ventura:       "b8ac3b61dfc0423fd756226794ee704a1442113660b0b33a5d2d4be1c5d5498f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "180cdbbd0494ef99b6d02e8f0c623fd90084a11f499e26c56402e1fe25724e84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef46e8603b0ac3c697e942414ce4ab03d83897042efcbc720702a45971afe661"
   end
 
   depends_on "numpy" => :build
@@ -86,6 +87,11 @@ class BoostPython3 < Formula
 
     lib.install buildpath.glob("install-python3lib*{python,numpy}*")
     (lib"cmake").install buildpath.glob("install-python3libcmake*{python,numpy}*")
+
+    # Fix the path to headers installed in `boost` formula
+    cmake_configs = lib.glob("cmakeboost_{python,numpy}*boost_{python,numpy}-config.cmake")
+    inreplace cmake_configs, '(_BOOST_INCLUDEDIR "${_BOOST_CMAKEDIR}....include" ABSOLUTE)',
+                             "(_BOOST_INCLUDEDIR \"#{Formula["boost"].opt_include}\" ABSOLUTE)"
   end
 
   test do

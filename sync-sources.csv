@@ -2116,6 +2116,7 @@ Homebrew-homebrew-core/Formula/g/gdbm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gdcm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gdk-pixbuf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gdl.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/gdown.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gdrive-downloader.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gdrive.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gdrive@2.rb, Homebrew/homebrew-core, 1
@@ -3706,7 +3707,6 @@ Homebrew-homebrew-core/Formula/lib/libghthash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgig.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgit2-glib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libgit2.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/lib/libgit2@1.5.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgit2@1.6.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgit2@1.7.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libgit2@1.8.rb, Homebrew/homebrew-core, 1

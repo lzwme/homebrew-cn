@@ -3,19 +3,19 @@ class Tach < Formula
 
   desc "Tool to enforce dependencies using modular architecture"
   homepage "https:docs.gauge.shgetting-startedintroduction"
-  url "https:files.pythonhosted.orgpackages55e7b088b681f6fe586b6480ffe0a6c03caa1f339b8758ece81b40059a85d68dtach-0.28.4.tar.gz"
-  sha256 "ea6a0cc4b620119f169d02a81b63e16a478b8ea19874e12535cce573df516f13"
+  url "https:files.pythonhosted.orgpackages55b3678f4deb5d7f3d6b269025fe290b90a09b0c2ab981784f2e3cd7c3a2ee34tach-0.28.5.tar.gz"
+  sha256 "89f734901d5330acf4fd9cc57a8239d9045b75a32854db9c5e50e3ab41f05966"
   license "MIT"
   head "https:github.comgauge-shtach.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2bbf38335384981b7a00f489e27152c62ec2b5ab1a9d34703dfa9f2af38e6fb3"
-    sha256 cellar: :any,                 arm64_sonoma:  "4aadb6e7db557c5e50c74fe4ee8339d1d8de8415e75d57bd17ec32cefc245a7f"
-    sha256 cellar: :any,                 arm64_ventura: "52390d677cb19c6a62424f934a96a14c671536a8a2e3343a9e48040e3a50113e"
-    sha256 cellar: :any,                 sonoma:        "ef35282ee28ce502baa2791f7d93dcdae99018bfbdcd81487e9e821bb5ec3789"
-    sha256 cellar: :any,                 ventura:       "0795130f609f5e165ff4f2481c0218ebf63dc291707e1321df393370a4dce759"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc49a0bfd2dae08f6fb357e7ad01eb0c413c2feb9fa623aba042c45ca1c4c805"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fa39e3313e447310022df785e8d430cdf59f9558adbca4b64dfe1e1e240f479"
+    sha256 cellar: :any,                 arm64_sequoia: "7be3083584aee39401e1270ffd80d20b07c24f90ab8608e267da336a4e52d5a1"
+    sha256 cellar: :any,                 arm64_sonoma:  "45fe1163ae77c62a58965a721dd12d8099fab5df58acba70ee41a400087fe270"
+    sha256 cellar: :any,                 arm64_ventura: "5dd05850764cc077c89fbacb028f84ddfa43a3fb1e6a3dea3e176c05577439cd"
+    sha256 cellar: :any,                 sonoma:        "7af0beb53c3631f5bafe6cedf4f6536ac66746151fde539a4deae41f5a27aa27"
+    sha256 cellar: :any,                 ventura:       "bfc0f9ff857b2b7739bc37815d06168f0277ac1d3104cfa30b21f4cfea66a697"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "72590041a66f230ba7a6172785fd95a534820fb9f15f8d85166d7ea7753d473b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "60f639dece4da665df210f97a8a82c8c85f07208700dd02308a2eb72ff90f6c7"
   end
 
   depends_on "rust" => :build
@@ -95,6 +95,12 @@ class Tach < Formula
   resource "wcwidth" do
     url "https:files.pythonhosted.orgpackages6c6353559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598wcwidth-0.2.13.tar.gz"
     sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
+  end
+
+  # version patch, upstream pr ref, https:github.comgauge-shtachpull723
+  patch do
+    url "https:github.comgauge-shtachcommit18327d468a9c7301bf6736cfc0918d71bc26610d.patch?full_index=1"
+    sha256 "860af2fe8e912e41a22deaa5d3779cf6d79f3936636fe08aa5ee068d00185bfb"
   end
 
   def install

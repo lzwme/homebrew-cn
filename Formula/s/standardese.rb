@@ -57,6 +57,7 @@ class Standardese < Formula
     # Disable building test objects because they use an outdated vendored version of catch2.
     system "cmake", "-S", ".", "-B", "build",
                     "-DBUILD_SHARED_LIBS=OFF",
+                    "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
                     "-DCMARK_LIBRARY=#{Formula["cmark-gfm"].opt_libshared_library("libcmark-gfm")}",
                     "-DCMARK_INCLUDE_DIR=#{Formula["cmark-gfm"].opt_include}",
                     "-DFETCHCONTENT_SOURCE_DIR_TYPE_SAFE=#{buildpath}type_safe",

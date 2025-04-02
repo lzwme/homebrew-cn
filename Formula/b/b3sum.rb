@@ -1,18 +1,18 @@
 class B3sum < Formula
   desc "Command-line implementation of the BLAKE3 cryptographic hash function"
   homepage "https:github.comBLAKE3-teamBLAKE3"
-  url "https:github.comBLAKE3-teamBLAKE3archiverefstags1.7.0.tar.gz"
-  sha256 "59bb6f42ecf1bd136b40eaffe40232fc76488b03954ef25cb588404b8d66a7e0"
+  url "https:github.comBLAKE3-teamBLAKE3archiverefstags1.8.0.tar.gz"
+  sha256 "b9f565adc6e2c8c813dafd6d5406a71382f7ac6aa3250b19e9d8a68c457fd769"
   license any_of: ["CC0-1.0", "Apache-2.0"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc662b47799c127022e71d604a3ac7efccc23efb98ab49b1f4d8e29a8bebd9c0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9a74d75b8d2ffb37176fb2ed223ac8e6079a005837f92e17c17d437bed173016"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d5ab6625d37db481615f66d238f7a4783a5899e9ded037657580ed4ad30054cc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d942581b73802e665d8edbeb6f9c058e3a57fa0d07a2e85b03e828302847a5ea"
-    sha256 cellar: :any_skip_relocation, ventura:       "97758b5713002a547f370893ac4cbb02fc0c9749bd229f31787be1395a048865"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "363ed4a8516f7d23ddab6de6fbe8a02efd7f1ea136a818260e838627eae250bb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f12bd1b3f6b33e1a74c494ba410e0416a5b5b9a237618747621164dc9cd5ad63"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc76e77b79f081752bf24e55bc6da5bde1939238f66f00929f8e687b947af80b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73af9c2d5c2b2f3a3d680012e437bd21803ae095e51c69e3ea81bdf73c97df1f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7c01f2e56c805914aefab281a5f19c7d5fe7c24242a54546c33a5de0cd870942"
+    sha256 cellar: :any_skip_relocation, sonoma:        "807f9ea7bf8042379997d49bc6e037fe316f5d6457991e999a9d1c7bfc82592d"
+    sha256 cellar: :any_skip_relocation, ventura:       "3322117fdfaa468ca7156fd2d470eadaa30dc61be765014c0be18c2c801e1da1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c489ea9d8f5bb37e8c17fb21f128dcc78c8be83aac7985bd25017ebc4f30f27d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc06c8ffe196a14c2441a57e22bc80d5c46450cee1221c5a6a4d849ec9b8a7ee"
   end
 
   depends_on "rust" => :build

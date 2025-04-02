@@ -1,19 +1,19 @@
 class Faudio < Formula
   desc "Accuracy-focused XAudio reimplementation for open platforms"
   homepage "https:fna-xna.github.io"
-  url "https:github.comFNA-XNAFAudioarchiverefstags25.03.tar.gz"
-  sha256 "1eeb1d2d6ed038a68e6b0a02614d4c7f859aa0a22c4a64e0bd49c26573823ae8"
+  url "https:github.comFNA-XNAFAudioarchiverefstags25.04.tar.gz"
+  sha256 "9f7a7beb1e9b7785e4de6ccefd10603f05076a3610e0764e964863cf2f09efd4"
   license "Zlib"
   head "https:github.comFNA-XNAFAudio.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "06ff8f79bbe8aec1eac0e65f12d7e1dbd9100aeb0964ce2ba8ad31a496958556"
-    sha256 cellar: :any,                 arm64_sonoma:  "a0820b7e3eb75072bd4a65a11ef9460bc0840610f6892579ab3d252f847c223c"
-    sha256 cellar: :any,                 arm64_ventura: "b0bc5992afc998bbecc54008ea630f39c1cc021f1b1341ca57c24e3c8be665c0"
-    sha256 cellar: :any,                 sonoma:        "00546912a32e5d1edb1765d45806e11c35926a6a0de8c04d760a02ef7ffc987e"
-    sha256 cellar: :any,                 ventura:       "a45049fd6468b21b7bc015029926f7bc7afaf95a6a8fb5aed0a223537e2ac110"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "92cac5ed4120629ef46b4f472e24b6c50fa915d09bde8f17348855820443e5a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29291583a772e335c12e610ba81156ce9f5132da0acfe5b4d59de571422d6f04"
+    sha256 cellar: :any,                 arm64_sequoia: "ed3203707e66ecbdfa3baf5a3ea6c73bcf092a9c2729c68284bd829e2ef03dff"
+    sha256 cellar: :any,                 arm64_sonoma:  "9278abafe9c426e2af18eb39ffcb7811b256de3056f501018117bd11d5b7493e"
+    sha256 cellar: :any,                 arm64_ventura: "bc2c824dca3cd3b6f50564c95bc3d9b9fb9c16abad92239f921d9b94df46a3e0"
+    sha256 cellar: :any,                 sonoma:        "2067ab657abe01ab80b6486aa064a6b3db368c5a777b327665d108ba1548d739"
+    sha256 cellar: :any,                 ventura:       "0acb99d005ac13d3330029582eb626666c152dc7869faa366eb3f8933cd5a5df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "609fb6629b685acaf45ac13f24a165424a85ed6e226be393d43b4eb25005e37d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "366a7e20a8e46852d416a00d33d4ee89a9b2b9e20fcbe40a04ce7e1f42d42c18"
   end
 
   depends_on "cmake" => :build

@@ -20,6 +20,12 @@ class Pokerstove < Formula
   depends_on "googletest" => :build
   depends_on "boost"
 
+  # Backport commit to build with CMake 4
+  patch do
+    url "https:github.comandrewprockpokerstovecommit8ca71960b3ee68bf7cbc419d5aee2065276054bb.patch?full_index=1"
+    sha256 "379461a6e3258ebf9803ff4a52020d027a745e1676d7aee865f5dd035c51c6e9"
+  end
+
   def install
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_CXX_STANDARD=14", *std_cmake_args
     system "cmake", "--build", "build"

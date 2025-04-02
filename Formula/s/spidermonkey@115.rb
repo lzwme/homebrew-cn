@@ -1,9 +1,9 @@
 class SpidermonkeyAT115 < Formula
   desc "JavaScript-C Engine"
   homepage "https:spidermonkey.dev"
-  url "https:archive.mozilla.orgpubfirefoxreleases115.21.1esrsourcefirefox-115.21.1esr.source.tar.xz"
-  version "115.21.1"
-  sha256 "470d5e5a6c27df2d91a69d885951a79b807b5586e4ad88c76e6c1764007e696a"
+  url "https:archive.mozilla.orgpubfirefoxreleases115.22.0esrsourcefirefox-115.22.0esr.source.tar.xz"
+  version "115.22.0"
+  sha256 "f57b6507ab1db52183df2aadb1fd81d9f0108b185226d1bac6205b7d7d3005b3"
   license "MPL-2.0"
 
   # Spidermonkey versions use the same versions as Firefox, so we simply check
@@ -14,13 +14,13 @@ class SpidermonkeyAT115 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "a42077f39379699a473adb4e79164d92c0f6c4c20db07b3a4732035fe224d0b9"
-    sha256 cellar: :any, arm64_sonoma:  "8fc473556b2f5adf5420db80ce871fdd3afc557b3ee3fbdb8cff27643ccd3e79"
-    sha256 cellar: :any, arm64_ventura: "9d5b44b87e378f8e4b78358914be10e691921f32a93d110ccf81d4e5dce66d92"
-    sha256 cellar: :any, sonoma:        "8c027addceb53ae0757838c2ff7b558a60766055948f5f5ce18a7b994f877979"
-    sha256 cellar: :any, ventura:       "8287c96b8d3461d5118dcefb0e3e9f4e2de5e7934b87aa8425ac97a3f302f530"
-    sha256               arm64_linux:   "095097c1fbe4560d03b1ede2636f2b518fac253915915ea4c2457738240e2809"
-    sha256               x86_64_linux:  "5cffaa54797b887447ef64e0eb413307491060b7ca6354c38087446e6eb94757"
+    sha256 cellar: :any, arm64_sequoia: "238c04ed2a99a38f7dde51657f76753a8a1d40758e3e5e524c42303864209cd8"
+    sha256 cellar: :any, arm64_sonoma:  "581420592aa67ce63b02579d99f81130399d086db22b2fcfbee8e6a99c3e4c3a"
+    sha256 cellar: :any, arm64_ventura: "73cb87c91e9d059a71218c36ffd194a99fb2a512990a681ffef45dfc406a3c4e"
+    sha256 cellar: :any, sonoma:        "5eb778c67f6b734bc05be0c503ad021c50ed0bead89f730a533db7d7cf9e9386"
+    sha256 cellar: :any, ventura:       "5c89548fbbb33f39c2359aacc83f828ccc0189fc3ca7b567068bf3c9a826ed75"
+    sha256               arm64_linux:   "9c13d740d2344c2bc8dfaef636d59f74012cf0dc94b48f177fcb9472bfff0fd3"
+    sha256               x86_64_linux:  "cd710f663cfcf8b8c834d5b856db4b56e799145ba9e9138d3ffebe9f7bda5332"
   end
 
   disable! date: "2025-07-01", because: :versioned_formula

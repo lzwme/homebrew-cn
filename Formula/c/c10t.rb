@@ -49,9 +49,7 @@ class C10t < Formula
   patch :DATA
 
   def install
-    ENV.cxx11
-
-    args = []
+    args = ["-DCMAKE_CXX_STANDARD=11", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"]
     unless OS.mac?
       args += %W[
         -DCMAKE_LINK_WHAT_YOU_USE=ON

@@ -43,7 +43,7 @@ class Supertux < Formula
   end
 
   def install
-    ENV.cxx11
+    ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
 
     args = [
       "-DINSTALL_SUBDIR_BIN=bin",

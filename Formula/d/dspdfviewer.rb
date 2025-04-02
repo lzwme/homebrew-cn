@@ -40,6 +40,7 @@ class Dspdfviewer < Formula
     # Allow setting CMAKE_CXX_STANDARD in args
     inreplace "cmakecompiler_clang.cmake", 'add_definitions("-std=c++11")', ""
     inreplace "cmakecompiler_gnu_gcc.cmake", "add_definitions(-std=c++11)", ""
+    inreplace "cmakecompiler_unknown.cmake", "add_definitions(-std=c++11)", ""
 
     args = %w[
       -DRunDualScreenTests=OFF
@@ -47,6 +48,7 @@ class Dspdfviewer < Formula
       -DUseQtFive=ON
       -DCMAKE_CXX_STANDARD=14
       -DCMAKE_CXX_FLAGS=-Wno-deprecated-declaration
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

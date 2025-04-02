@@ -59,6 +59,11 @@ class Dwarfs < Formula
   end
 
   def install
+    # Workaround for CMake 4 until https:github.comfacebookfollypull2398
+    # This only goes into effect if it is higher than `cmake_minimum_required`
+    # so it only impacts submodules and not the main DwarFS which uses 3.28.0
+    ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
+
     args = %W[
       -DBUILD_SHARED_LIBS=ON
       -DCMAKE_INSTALL_RPATH=#{rpath}
@@ -81,7 +86,7 @@ class Dwarfs < Formula
 
       # Needed in order to find the C++ standard library
       # See: https:github.comHomebrewhomebrew-coreissues178435
-      ENV.prepend "LDFLAGS", "-L#{Formula["llvm"].opt_lib}c++ -L#{Formula["llvm"].opt_lib} -lunwind"
+      ENV.prepend "LDFLAGS", "-L#{Formula["llvm"].opt_lib}c++ -L#{Formula["llvm"].opt_lib}unwind -lunwind"
     end
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

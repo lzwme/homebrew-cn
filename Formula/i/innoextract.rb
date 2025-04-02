@@ -1,11 +1,20 @@
 class Innoextract < Formula
   desc "Tool to unpack installers created by Inno Setup"
   homepage "https:constexpr.orginnoextract"
-  url "https:constexpr.orginnoextractfilesinnoextract-1.9.tar.gz"
-  sha256 "6344a69fc1ed847d4ed3e272e0da5998948c6b828cb7af39c6321aba6cf88126"
   license "Zlib"
   revision 10
   head "https:github.comdscharrerinnoextract.git", branch: "master"
+
+  stable do
+    url "https:constexpr.orginnoextractfilesinnoextract-1.9.tar.gz"
+    sha256 "6344a69fc1ed847d4ed3e272e0da5998948c6b828cb7af39c6321aba6cf88126"
+
+    # Backport commit to fix build with CMake 4
+    patch do
+      url "https:github.comdscharrerinnoextractcommit83d0bf4365b09ddd17dddb400ba5d262ddf16fb8.patch?full_index=1"
+      sha256 "fe5299d1fdea5c66287aef2f70fee41d86aedc460c5b165da621d699353db07d"
+    end
+  end
 
   livecheck do
     url :homepage

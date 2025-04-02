@@ -4,6 +4,7 @@ class Lgogdownloader < Formula
   url "https:github.comSude-lgogdownloaderreleasesdownloadv3.17lgogdownloader-3.17.tar.gz"
   sha256 "fefda26206ebb1e2a6d734b76f6f07977da150064141f29ed1f90450daf4e69e"
   license "WTFPL"
+  revision 1
   head "https:github.comSude-lgogdownloader.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class Lgogdownloader < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "12a1dd5d5dadbb039422c6819eba6a38f645c8324eaaf513cfdb77df3c800370"
-    sha256 cellar: :any,                 arm64_sonoma:  "035b84ac86616b86ff643d1e3513de9543b46635a5985719a02485aa3af46052"
-    sha256 cellar: :any,                 arm64_ventura: "f68201d660c0db30f57cabd1f49bf4a5fc46fd950c3e5600723bd135d0c8cd0d"
-    sha256 cellar: :any,                 sonoma:        "67e8469ccbe663088861d217f93adc6c87e44223a99064b56fca4b3282bbb8bd"
-    sha256 cellar: :any,                 ventura:       "bdd2fedee3e185d8b503463056c56722d4358641711e905f1367754938b8903f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a7ebdd82aeb707aa0466d6f5cef66926b524e9df9277ca7d9629db59bf1b9de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5c8e66d5e02fb115f5e5aaea7ab068385041cd2c480934bfdf82b77d8f5ff1b"
+    sha256 cellar: :any,                 arm64_sequoia: "2cff5b6c30ab68a83840a12b5dc50027f487c5a352dcda76cec1122f9a0141dd"
+    sha256 cellar: :any,                 arm64_sonoma:  "c5860d47a90d6a18ac82205c373dc4ac7f1331de4cb39e965dd6a84db3acb0db"
+    sha256 cellar: :any,                 arm64_ventura: "17ce03b55a735ac9a7f91dd20bc6ba7fa82c91ce0cbcfc823162f65cfedb8472"
+    sha256 cellar: :any,                 sonoma:        "50078ce1a0e7b29477bef838d636e251b8301d03ce1721735e5b075e6f8ddde5"
+    sha256 cellar: :any,                 ventura:       "17c38c324c00da98136f02c07e1e0535f72789a1e02e0bdfde359bedcc0fb1a9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "861a6267c937dc36257e7cd17fab62e08e3c99f9288cc5e96211d1d80466abf2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce6628dc60b5f8e6acba124f88d86a1689455dd7d25df8ebce99ffd100ec649a"
   end
 
   depends_on "cmake" => :build

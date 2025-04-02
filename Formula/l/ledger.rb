@@ -74,6 +74,13 @@ class Ledger < Formula
   end
 
   def install
+    # Workaround until next release as commit doesn't apply
+    # https:github.comledgerledgercommit956d8ea37247b34a5300c9d55abc7c75324fff33
+    if build.stable?
+      inreplace "CMakeLists.txt", "cmake_minimum_required(VERSION 3.0)",
+                                  "cmake_minimum_required(VERSION 3.5)"
+    end
+
     ENV.cxx11
     ENV.prepend_path "PATH", Formula["python@3.13"].opt_libexec"bin"
 
