@@ -17,6 +17,7 @@ class Fastfetch < Formula
     sha256 arm64_ventura: "c2cdbcf05c946954d5d300960f4d642979f26d77f8661cbe6f851a82ff69dbb9"
     sha256 sonoma:        "5db7eb74cc08fa57cb6a45ac88eaefee1c45590f8bbbfc306a3d341b9b7fdb8e"
     sha256 ventura:       "250116857e905a70fcb97302e7b57039e18e25e353f1d74772101a2a2e78fad5"
+    sha256 arm64_linux:   "91a94db095d2e7e4b394b29d54d46db56a5405b6447b78f00c1b0f938a08bcea"
     sha256 x86_64_linux:  "0eb4ccdd0c14880bb5499a483564f365e8cabe68a1061688a274d7eaaa06c1f8"
   end
 

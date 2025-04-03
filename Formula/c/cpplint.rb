@@ -3,13 +3,12 @@ class Cpplint < Formula
 
   desc "Static code checker for C++"
   homepage "https://pypi.org/project/cpplint/"
-  url "https://files.pythonhosted.org/packages/e7/1d/6965acf4f85495956ebdb80ab2cafd803e39ba866b8370618a120d72938b/cpplint-2.0.0.tar.gz"
-  sha256 "330daf6bf9a9006b9161af6693661df8f8373d54b2ea6527cd515a8e61d41abb"
+  url "https://files.pythonhosted.org/packages/31/2e/cf42e2d54f2472ce38d62df4067342669de9438ef145267d6d499cf49a5e/cpplint-2.0.1.tar.gz"
+  sha256 "c258baa861a636421346f3db20b3b125c76b0fa8fc91857ee637a603101426c3"
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "e54c0d69ee5326844ebd9b9c1f6278292c7c7bea77b589b3dba81a25ce8cbf0b"
+    sha256 cellar: :any_skip_relocation, all: "78db1770d5901a73e2d2c23a01349035ea48fef9dac473c3c8a6b08a08f6e071"
   end
 
   depends_on "python@3.13"

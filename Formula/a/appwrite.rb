@@ -6,19 +6,16 @@ class Appwrite < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6dd00f948817b90ae38865595c888b4a1be8bdab87976915bdf8996576cd763"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6dd00f948817b90ae38865595c888b4a1be8bdab87976915bdf8996576cd763"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a6dd00f948817b90ae38865595c888b4a1be8bdab87976915bdf8996576cd763"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c3682567b0b43769b071368e0bf112662ea0aadfa67296a06f1dc216cac8ec82"
-    sha256 cellar: :any_skip_relocation, ventura:       "c3682567b0b43769b071368e0bf112662ea0aadfa67296a06f1dc216cac8ec82"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "822973269ecf33c05e7c82200159e440f0f356d987f391bb0155e4a81be5c9f7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6dd00f948817b90ae38865595c888b4a1be8bdab87976915bdf8996576cd763"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "1279f56150cc986ab0c28410af314069965f2c6a15096c46f55ecf3098470164"
   end
 
   depends_on "node"
 
   def install
     system "npm", "install", *std_npm_args
+    inreplace libexec/"lib/node_modules/appwrite-cli/install.sh", "/usr/local", "@@HOMEBREW_PREFIX@@"
+    inreplace libexec/"lib/node_modules/appwrite-cli/ldid/Makefile", "/usr/local", "@@HOMEBREW_PREFIX@@"
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 

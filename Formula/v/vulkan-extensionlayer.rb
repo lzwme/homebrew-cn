@@ -17,6 +17,7 @@ class VulkanExtensionlayer < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "54223d904469439a4e9233c6752a8b56e4b59f47c795e0c096e475f7140bea06"
     sha256 cellar: :any_skip_relocation, sonoma:        "0d094efaba715d4e0ebe71f108a55e2d5f2a38be8b26c0d668b3f139f707094e"
     sha256 cellar: :any_skip_relocation, ventura:       "9f349f1c0e701c74548e55df1c6144fa8426cf45ac0429a12ab2b5fcb001fb17"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1415db7442607fe8db0da52f8703ea9a1024f4a35620a8d6bc980ff3cc3ee664"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a55f0bdccaea400e111ab36dc3ddec816444dc79b4da51c4b1c35e5db8ecb79b"
   end
 

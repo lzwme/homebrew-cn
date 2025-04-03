@@ -29,6 +29,7 @@ class Mesa < Formula
     sha256 arm64_ventura: "0d844fb8fc3962c21279b1b042b6334050d00a26d721cab97f04e60a86f7accb"
     sha256 sonoma:        "50e4b407b11565ceff76f37cc690cd64eb4d38c1ed5323d6cd2b9570080cb44d"
     sha256 ventura:       "32347bd5ca2349c0cf4e1d737c93f3dfe61a4f2ffc157e02b0558b76c4553220"
+    sha256 arm64_linux:   "f8ea5416aa58d58993f130b417dee0fe6da6cd2ce5859ff8e7aa4f4d6a848961"
     sha256 x86_64_linux:  "d140813aebb01fe4d9e20f5be72a4aed7dfd7d3610adc204b692bd3c8de8d86b"
   end
 
@@ -76,6 +77,10 @@ class Mesa < Formula
     depends_on "libxxf86vm"
     depends_on "lm-sensors"
     depends_on "wayland"
+
+    on_arm do
+      depends_on "pycparser" => :build
+    end
 
     on_intel do
       depends_on "cbindgen" => :build

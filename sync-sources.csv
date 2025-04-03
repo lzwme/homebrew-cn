@@ -1694,6 +1694,7 @@ Homebrew-homebrew-core/Formula/e/enpass-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/enscript.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/ensmallen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/ent.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/e/ente-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/enter-tex.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/entityx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/entr.rb, Homebrew/homebrew-core, 1
@@ -4242,7 +4243,7 @@ Homebrew-homebrew-core/Formula/m/meli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/melody.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/memcache-top.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/memcached.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/memcacheq.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/memcacheq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/memray.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/memtester.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/menhir.rb, Homebrew/homebrew-core, 0
@@ -11785,7 +11786,6 @@ Homebrew-homebrew-cask/Casks/h/hype.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hyper.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hyper@canary.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hyperbackupexplorer.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/h/hypercal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hyperconnect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hyperkey.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/i1profiler.rb, Homebrew/homebrew-cask, 0
@@ -13868,8 +13868,8 @@ Homebrew-homebrew-cask/Casks/s/singlecrystal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/singularity.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sioyek.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/sip.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/s/sipgate-clinq.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sipgate-softphone.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/sipgate.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sirimote.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sitala.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sitesucker-pro.rb, Homebrew/homebrew-cask, 0
@@ -14579,6 +14579,7 @@ Homebrew-homebrew-cask/Casks/v/vernier-spectral-analysis.rb, Homebrew/homebrew-c
 Homebrew-homebrew-cask/Casks/v/vero.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/versions.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vertcoin-core.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/v/vesktop.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vesta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/veusz.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vezer.rb, Homebrew/homebrew-cask, 0

@@ -154,13 +154,19 @@ class Visp < Formula
     # Replace SDK paths in bottle when pouring on different OS version than bottle OS.
     # This avoids error like https:github.comorgsHomebrewdiscussions5853
     # TODO: Consider handling this in brew, e.g. as part of keg cleaner or bottle relocation
-    if OS.mac? && Tab.for_formula(self).poured_from_bottle && MacOS.version != bottle&.tag&.to_macos_version
+    if OS.mac? && (tab = Tab.for_formula(self)).poured_from_bottle
+      bottle_os = bottle&.tag&.to_macos_version
+      if bottle_os.nil? && (os_version = tab.built_on.fetch("os_version", "")[\d+(?:\.\d+)*$])
+        bottle_os = MacOSVersion.new(os_version).strip_patch
+      end
+      return if bottle_os.nil? || MacOS.version == bottle_os
+
       sdk_path_files = [
         lib"cmakevispVISPConfig.cmake",
         lib"cmakevispVISPModules.cmake",
         lib"pkgconfigvisp.pc",
       ]
-      bottle_sdk_path = MacOS.sdk_for_formula(self, bottle&.tag&.to_macos_version).path
+      bottle_sdk_path = MacOS.sdk_for_formula(self, bottle_os).path
       inreplace sdk_path_files, bottle_sdk_path, MacOS.sdk_for_formula(self).path, audit_result: false
     end
   end

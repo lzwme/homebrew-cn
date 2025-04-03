@@ -1,8 +1,8 @@
 class Limbo < Formula
   desc "Interactive SQL shell for Limbo"
   homepage "https:github.comtursodatabaselimbo"
-  url "https:github.comtursodatabaselimboarchiverefstagsv0.0.17.tar.gz"
-  sha256 "ca80c71148d4124bfa3ec2a9e33a6a750e92735ba3dba57168e4a47131123cdd"
+  url "https:github.comtursodatabaselimboarchiverefstagsv0.0.18.tar.gz"
+  sha256 "669bc4cbd47c8e9044064a3fdcfc4314b2da0c26c02b804ab27ea2f2eb5a3da6"
   license "MIT"
   head "https:github.comtursodatabaselimbo.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Limbo < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d16dd128bb231a5350944f62b9bdaa698bae5ffec78ddf97cb9c80601f21c6f9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44a672b940eac21b6602e6c9517cfbaaed4a3202050603ec97d691dbd2a7fced"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ba381173b915516ae51bd1ae9d5bd192b048b2161ae9d467ff706e490e57b50e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1d50294803b9e65ce5c4bdd9917f3320b1d8d8bb4335bee263cf29bf089b8691"
-    sha256 cellar: :any_skip_relocation, ventura:       "3c96f3c23052c23837e8247793c5cb8901b3b797e4e210278d0f4f8218e9059e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce7ef5b1031a07f8126118895bff77302433c1610d55ad074968a52ada72bfa3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9278973fe1fe8e0565d48e23ae619c29aa4df7b8426840f1930cde9a16b2dc3b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c314b2a54c9dfb1932ffdd977dcece17b10e510982c0d2bce400ff55391969c0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "715e5d872b780abbaff491f29b7afdce77d82bfd43bc2560c8006ff041c03661"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5b0fd066e3d53fe20cf49ab16688b72095a7584e51506d9189f38218dc7df421"
+    sha256 cellar: :any_skip_relocation, ventura:       "12d6a0f5b9127ec8c23c1e25911e83a40d22ac863e8b1f0140fe261ff9e8ead0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a7efa8b7ce5dff9b9a3e9cc4aab101d692fa3d704ee98665b4d1d02c9bce7cb"
   end
 
   depends_on "rust" => :build

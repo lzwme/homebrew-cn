@@ -61,7 +61,7 @@ class OpenSceneGraph < Formula
     # Requires the CLT to be the active developer directory if Xcode is installed
     ENV["SDKROOT"] = MacOS.sdk_path if OS.mac? && MacOS.version <= :sierra
 
-    args = %w[
+    args = %W[
       -DBUILD_DOCUMENTATION=ON
       -DCMAKE_DISABLE_FIND_PACKAGE_FFmpeg=ON
       -DCMAKE_DISABLE_FIND_PACKAGE_GDAL=ON
@@ -70,6 +70,8 @@ class OpenSceneGraph < Formula
       -DCMAKE_DISABLE_FIND_PACKAGE_SDL=ON
       -DCMAKE_DISABLE_FIND_PACKAGE_TIFF=ON
       -DCMAKE_CXX_FLAGS=-Wno-error=narrowing
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     ]
 
     if OS.mac?

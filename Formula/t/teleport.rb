@@ -1,8 +1,8 @@
 class Teleport < Formula
   desc "Modern SSH server for teams managing distributed infrastructure"
   homepage "https:goteleport.com"
-  url "https:github.comgravitationalteleportarchiverefstagsv17.3.4.tar.gz"
-  sha256 "edc37cbf6afe385a133676da922a19478ccf358f3bdff194949ae8a243feee23"
+  url "https:github.comgravitationalteleportarchiverefstagsv17.4.2.tar.gz"
+  sha256 "b4e5c1393595c755309b0c41b036ae1a7102c6a291cc8da42f8f7df910bdc701"
   license all_of: ["AGPL-3.0-or-later", "Apache-2.0"]
   head "https:github.comgravitationalteleport.git", branch: "master"
 
@@ -18,17 +18,17 @@ class Teleport < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2f6500564dcaa1c0828eead26361634e8c2fefb68fb7f513176d5536c7dae357"
-    sha256 cellar: :any,                 arm64_sonoma:  "b2d9e0b5875f3b45d3bfcb2ed16d123d49e1f054f203a01e4b6348310db3afd4"
-    sha256 cellar: :any,                 arm64_ventura: "3af29dd7cb65883f708f60a5ae812b8e302ae37160fd52458131508299aeeefe"
-    sha256 cellar: :any,                 sonoma:        "fc33cb2220f77c779b8d8788e2f9dd39204892662e135964d0aeb20aca1a863f"
-    sha256 cellar: :any,                 ventura:       "90fd44d13cb6731f67c26e59b220bcd63ca66cbf1984779a1e8898a159efac21"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97fd2ff0bcd32ecdb3c2e564c18029e098cd79588e10101539a2878d2e98c0b5"
+    sha256 cellar: :any,                 arm64_sequoia: "8bc6a8c1edb928d41a43f4164560b8fac5030bd8ee47eccdb4e59e2e8c968cfc"
+    sha256 cellar: :any,                 arm64_sonoma:  "00685397bcf9d0066d876416e209a8d89470f1c16c71bb31182ece49afd99e81"
+    sha256 cellar: :any,                 arm64_ventura: "49176a33f5f94c800a0d15c921a5b702c68aa5f059c680466d2146cff32e3726"
+    sha256 cellar: :any,                 sonoma:        "0726f72128e8c38bb042f695625cbfe74f66a550af1153e8a15958309de05edc"
+    sha256 cellar: :any,                 ventura:       "2b2aff20874c1fc3506261339a80d0f0bc96bbaf5f7fcbe0544e4946a187c0f2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14cb1545f96daa7ceb8a4d3181de3b5371982d0fae7026f9d756b37a19fc7b00"
   end
 
   depends_on "go" => :build
   depends_on "pkgconf" => :build
-  depends_on "pnpm@9" => :build
+  depends_on "pnpm" => :build
   depends_on "rust" => :build
   # TODO: try to remove rustup dependancy, see https:github.comHomebrewhomebrew-corepull191633#discussion_r1774378671
   depends_on "rustup" => :build
@@ -49,6 +49,11 @@ class Teleport < Formula
   end
 
   def install
+    # Prevent pnpm from downloading another copy due to `packageManager` feature
+    (buildpath"pnpm-workspace.yaml").append_lines <<~YAML
+      managePackageManagerVersions: false
+    YAML
+
     ENV.prepend_path "PATH", Formula["rustup"].bin
     system "rustup", "default", "stable"
     system "rustup", "set", "profile", "minimal"

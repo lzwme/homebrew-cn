@@ -3,19 +3,19 @@ class Ggshield < Formula
 
   desc "Scanner for secrets and sensitive data in code"
   homepage "https:www.gitguardian.com"
-  url "https:files.pythonhosted.orgpackagesb7c63a0db896b381b9d51f9bd7854baa7c8e92f7a3d673428b34a8797c89d827ggshield-1.38.0.tar.gz"
-  sha256 "06fa1a9b277e981b6d942e0799b2f94da97baff992bde6bc745fb3342ba44887"
+  url "https:files.pythonhosted.orgpackagesb0c96c3ef574f321ff6deef3d124d6fa68071d7b99c774189b4145261f1fc7caggshield-1.38.1.tar.gz"
+  sha256 "7cc1b268555005f487156f4cd6b3f68e6ca54a86061aedf59d8952a00021830e"
   license "MIT"
   head "https:github.comGitGuardianggshield.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "770fe583bbad18eafc1cde8d5d1bde57f4bb29343fc5a9910f8035522b822310"
-    sha256 cellar: :any,                 arm64_sonoma:  "75868a2021499b3df1f0f8fc47156699b48b444e729f3bcfb56bfc6651a1538c"
-    sha256 cellar: :any,                 arm64_ventura: "98d78ccd749eb5e7cde122eaf6400ad85e26824a1932dbd6a76bf81ed3d8be17"
-    sha256 cellar: :any,                 sonoma:        "afdba6f6ac31a9721a04c83742afed00a784714e9724a84b173b1c81287c467f"
-    sha256 cellar: :any,                 ventura:       "e32a828359c6c07ce4910914fc8df77b65da07befb65e0a3589fab02082f8550"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e67b0fee3e2a5db86f2ec320558f8da84f7f65538ed57180781043992fa6b76"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13ec0aee6f44a4afee049345f09ff5b48ac7a3d96ec59dfb5d209bd27f376a08"
+    sha256 cellar: :any,                 arm64_sequoia: "ee2960f20dabb2c895e2049e53329653f79e02498044b819e2c68244ffe0b099"
+    sha256 cellar: :any,                 arm64_sonoma:  "21b4969004b0837da886f2bbdbc8431d0eb4f0dae066458d2d01c34a2ac27a73"
+    sha256 cellar: :any,                 arm64_ventura: "c3f641c9ff8c9a40a8b5275026c96d4e9a99f1347c9c8d434c1099ba9bc4a933"
+    sha256 cellar: :any,                 sonoma:        "061a2d46c1bd0df5acb520a5de32d9871853b082814de4ccc8572a25cd86d2dd"
+    sha256 cellar: :any,                 ventura:       "29a2a463c9e90ef665887e172c66a27ee08e9a30df014a63eca1d4b1fb73afda"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa412bfbdb0129bd3d2df28eb8e0969f7ecc683ff94a8fcc2b85cb76487bcf91"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fea6c864001306958baa0c903d924d541c9db38e75e24e8ac91eaba5061c74d9"
   end
 
   depends_on "certifi"

@@ -55,6 +55,7 @@ class Allegro < Formula
       -DWANT_DOCS=OFF
       -DWANT_DUMB=OFF
       -DCMAKE_INSTALL_RPATH=#{rpath}
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     ]
 
     system "cmake", "-S", ".", "-B", "build", *cmake_args, *std_cmake_args

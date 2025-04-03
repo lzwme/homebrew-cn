@@ -16,6 +16,7 @@ class Tgui < Formula
     sha256 cellar: :any,                 arm64_ventura: "692587abd04e2d5269df879e6d2f53b72269e7a940560318f801dbd5cdbe806c"
     sha256 cellar: :any,                 sonoma:        "3d01c3459b2750d8e0a2550930712b88889c0513b6cddd25fa3344903118f03d"
     sha256 cellar: :any,                 ventura:       "ed77565acba8b915bd61752d6dfa5c59662d357d35d7b34155f98d26a1f50ae3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8fb31a0cb2b419b56ac63403b6b2868a08e72e85e0d0d4fbfb27f8fff35f5db7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "464b4d2c59774b1aac1661da43a28d3c12e7e894eb5a8f4d6b2c8ba9b12092b0"
   end
 

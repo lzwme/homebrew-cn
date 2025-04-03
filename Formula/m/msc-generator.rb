@@ -23,6 +23,7 @@ class MscGenerator < Formula
     sha256 arm64_ventura: "d825f247ee7805fb1a8bb12019c2414ddb0ccb08bd93a775945d0283084a4aae"
     sha256 sonoma:        "f21ce8e7b8f247951fd1c3dcb46bc8e5ba8f1913da99a1254f93ad39fcf9f015"
     sha256 ventura:       "602abed907a5dae536b0c0857dfd7b08c46783c5c0eb09897025075c1f122cfe"
+    sha256 arm64_linux:   "ea6647b991286227f59ef2ea715c4f92dced7a42a8cf53e8466614a3c3965448"
     sha256 x86_64_linux:  "c60b5ba0e5437cee822f8cea5b1c6687711e87278a7ac2e09b36d02650286d95"
   end
 

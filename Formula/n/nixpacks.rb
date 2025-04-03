@@ -1,19 +1,19 @@
 class Nixpacks < Formula
   desc "App source + Nix packages + Docker = Image"
   homepage "https:nixpacks.comdocsgetting-started"
-  url "https:github.comrailwayappnixpacksarchiverefstagsv1.34.1.tar.gz"
-  sha256 "62c940db93fd282c429eb5ef66abf3a88d9d7846dac7213ebb5b183e197f7315"
+  url "https:github.comrailwayappnixpacksarchiverefstagsv1.35.0.tar.gz"
+  sha256 "be3d66b5cd0b307d5d1dcdc5c4201660111a271f5f5c45117ad5f3ad1dba3651"
   license "MIT"
   head "https:github.comrailwayappnixpacks.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "92f174d100ed146bb596503180dfa3fdd3dcd3967cae08614cbef33966da2e67"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc54faf7e553233703bc00b59220153c653c2dec4eaeaa4bef6ec3c985f5a716"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6059b725fb33cf85991dadf71aafd97429198ec19eacc380c7ff9f4510840ca7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f7155c4592aa423713a34f6242d7b349bcdb5405e067a9b8f999f01b685be4c4"
-    sha256 cellar: :any_skip_relocation, ventura:       "a0ad90ae560194a6ed3f96ad22ee0613163a9596f0edf0b078c62aa20d0d6f41"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0199ef8b757d34057e9d6e1ff4a3c9780e1f232143d7cdd01cd36a4ecd304ed3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6845520f9ea9be92688453056cb489cd55cbc7b8db35c53b1df7a2d89fd454d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "245ed47d75388c056e9e69e29dfffb2dc9e7f2dafbd0a4218644ba42277c0135"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2cb5d1b01af83ccc0916bead928edb350c7c0139c389a91bd118f5b8d662c0e2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a53ecdb1a05ffdcb886be9a30cba83ec70e6295b711300ca9188640f71cdf8c4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "71d02fd55ca9e22fb22938c9d3263a08dc3d7ef117fd1ff2cd692e3422045763"
+    sha256 cellar: :any_skip_relocation, ventura:       "4c290078f35542811364e2ec0f09b3e18d5fdd62e134a4858de868a0dc1da2dd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a07fcc4044fecec4858005160c085a94b528c819fc88f8c823a588f79a82884"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b645acc8712d35f85f74b1cdf9394d1fc9620f09d3e595d1fcdd95e88f8b8cdb"
   end
 
   depends_on "rust" => :build

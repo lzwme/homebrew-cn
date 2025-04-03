@@ -17,6 +17,7 @@ class VulkanProfiles < Formula
     sha256 cellar: :any,                 arm64_ventura: "b79abfea1e14bbe612e1e59917052037e96375b52df9c834c203eb0200cbfe0d"
     sha256 cellar: :any,                 sonoma:        "53ea12c0516acf737bb903102659130f1f9b908557115000c59bbc9f4bf67b4f"
     sha256 cellar: :any,                 ventura:       "fe68bfa0662c7442d96df7e75c98c628d531a17868c953dfeae3b51186223a73"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e246af524c6819a03eb88c167a8d6f319a169373af96bf3efa8ee63fa5237d9c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "307a75ba364beb26e3c0acac2cab495b5c235c1f3ef537ea4171cf48fe3003ac"
   end
 

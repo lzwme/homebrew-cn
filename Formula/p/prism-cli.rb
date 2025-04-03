@@ -23,7 +23,7 @@ class PrismCli < Formula
 
   test do
     port = free_port
-    pid = spawn bin"prism", "mock", "--port", port.to_s, "https:raw.githubusercontent.comOAIOpenAPI-Specificationrefsheadsmaintestsv3.0passpetstore.yaml"
+    pid = spawn bin"prism", "mock", "--port", port.to_s, "https:raw.githubusercontent.comOAIOpenAPI-Specificationrefstags3.1.1examplesv3.0petstore.yaml"
 
     sleep 5
     sleep 10 if OS.mac? && Hardware::CPU.intel?

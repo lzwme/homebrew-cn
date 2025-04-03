@@ -35,8 +35,4 @@ cask "xpra" do
         "~LibraryApplication SupportXpra",
         "~LibrarySaved Application Stateorg.xpra.xpra.savedState",
       ]
-
-  caveats do
-    requires_rosetta
-  end
 end
