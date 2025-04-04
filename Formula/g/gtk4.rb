@@ -16,6 +16,7 @@ class Gtk4 < Formula
     sha256 arm64_ventura: "08958cf7806d1592081cf6f188136545ad131650edd498e333ceb52e85b3a259"
     sha256 sonoma:        "3413f81e92aebc9717e3fcda96041cb6929094a36df695495e7763dbebb81a7a"
     sha256 ventura:       "c3ce8fe4f6bb1d766b19ef2672e50b3127ef6c23f98cc0497b286d828512f217"
+    sha256 arm64_linux:   "cbe13d9a5a47a8be382c0640e1a7cbf6d6b01d998c8951cfb133baf87d97129f"
     sha256 x86_64_linux:  "da5b033a2a14e87585b29ca46ae3cadaff3c0857ea4e976dcf0273a68c0aff17"
   end
 

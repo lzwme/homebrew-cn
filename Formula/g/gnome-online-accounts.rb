@@ -12,6 +12,7 @@ class GnomeOnlineAccounts < Formula
     sha256 arm64_ventura: "8c0eab25f879cb786417626f029737dd610d1acac7c378f4187a7eb7bce6be82"
     sha256 sonoma:        "5be9a1cc5c6555224fb6839f564c22aec7aaf56947248bb283c2e2e72074996a"
     sha256 ventura:       "c3745e13dcc325eac458f7f90c0752864f4ba0e7c43d6ed6955ea94390b48eeb"
+    sha256 arm64_linux:   "a84d1891b635db6830bf59e877095b963b7e51e3ec384d1c49895da2b75ea9e6"
     sha256 x86_64_linux:  "33ab58d1f9061c0727ef83b11699a3b354580d18e7dd44c2f60b06767e12c211"
   end
 

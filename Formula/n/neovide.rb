@@ -12,6 +12,7 @@ class Neovide < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "71903190f94bd7018ecf017d70bc02e1dabdf795391cb2921831437ca58f3876"
     sha256 cellar: :any_skip_relocation, sonoma:        "20f05f6186c0cb44b9f67c0968117cc157a081cbc8aefb24bfb6ec19c99ce63b"
     sha256 cellar: :any_skip_relocation, ventura:       "f89ba563de5b80e997b90c80e8efe1d03d4813de13ef0b70af325ac1392afc51"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "441334ea72a94f2eb7fa628194f9730e15c38778001568b9afc00eab460ed7af"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2473d65387128d4bb25a636fee7200ef68cbf875cb0ba135cb54f7fe25a2cdae"
   end
 

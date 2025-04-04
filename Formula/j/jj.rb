@@ -1,28 +1,19 @@
 class Jj < Formula
   desc "Git-compatible distributed version control system"
   homepage "https:github.comjj-vcsjj"
+  url "https:github.comjj-vcsjjarchiverefstagsv0.28.0.tar.gz"
+  sha256 "5560d7cef3bf6322aca7a9e34e61e757871da46585fcbd02661c376682d36548"
   license "Apache-2.0"
   head "https:github.comjj-vcsjj.git", branch: "main"
 
-  stable do
-    url "https:github.comjj-vcsjjarchiverefstagsv0.27.0.tar.gz"
-    sha256 "a9d2ab04698f971a215ae2510082d0bc00540188deb90d48e12e86a6d6a023af"
-
-    # libgit2 1.9 patch, upstream pr ref, https:github.comjj-vcsjjpull5938
-    patch do
-      url "https:github.comjj-vcsjjcommit596738a30389852466b6d3767e860ad111ff49e2.patch?full_index=1"
-      sha256 "894a43f7bc23b110049893331e1e21451c8a96cb43eda7520fbce4b832d434f2"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6d0634c7e5d2d58395b669e17fd6216cd1b479d053c6939758944b5773cb4379"
-    sha256 cellar: :any,                 arm64_sonoma:  "d274c267c3ee8e1e7c44118f02161f2aeb6edcaea36a2624efc68710e38bccb1"
-    sha256 cellar: :any,                 arm64_ventura: "c0f83bf316cd23337defe87ebd3af29c79eb8c946440e945ae47ee4b0bdbac3a"
-    sha256 cellar: :any,                 sonoma:        "5f68e6206a8b6ada72b5c775a28a6fa9b5537e07932cf73d2fb4c31a1c69f6ab"
-    sha256 cellar: :any,                 ventura:       "ffc4619099fdd5a445efda8e5e00afeaec487e748ee63673321829b2ed6872cb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "829cf6f24da4b7d63dd5e39257552df581acac0b89fc6fc6a1f390663ff15331"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff87d1f90bfbe3daf2a0566d661c73bb94d957019ca762fd02781160b23142db"
+    sha256 cellar: :any,                 arm64_sequoia: "de921ad4061fb43039a4bba24b21e1f2429cf2f8ddac8a99ef763f6186bcf128"
+    sha256 cellar: :any,                 arm64_sonoma:  "6005f26399d7e85860e6bfcc5e25ba76f05cfb9990a98ddd7244e21579d170b5"
+    sha256 cellar: :any,                 arm64_ventura: "b382f102a1b8c8fb7f4b387e9e792fc96bd320386887bdea049e0e3337d24481"
+    sha256 cellar: :any,                 sonoma:        "ba465edf93dd5121535d33d04cbdfe2c6ee6cd4649712b5778d89e1244463bb3"
+    sha256 cellar: :any,                 ventura:       "d939ee5882f905e0834fc373033e7b6d3dea7afb5e134b042317ee1b89b01386"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f23264911c8e3e631ce2755e3d5108117f6c9026cfe698989c0d6fd98cf76578"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a0e5a50d75a002fcb37d506100ea541671bd6bd14d9736f30e652753e65f5f5"
   end
 
   depends_on "pkgconf" => :build

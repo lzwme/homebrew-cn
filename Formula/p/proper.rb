@@ -11,6 +11,7 @@ class Proper < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1ebfd48008cf6e2414fd327b4417dcd3f178733eb0bf4c8f482820078d606ecf"
     sha256 cellar: :any_skip_relocation, sonoma:        "b871a437a48e0bd4f35687256c82caff38cc8ed91662daacf465638290dbad49"
     sha256 cellar: :any_skip_relocation, ventura:       "8121ebc9c4160073387dbdb7012f0c536783f811152220a7b09108ec6777886f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0d95538e53374c507c624b17c23e9bc1218d83ad2a8c96006bb941681d7170be"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c46ff9ea392d1503cfc49f425fd04ed35376da507fe13985306057715558924"
   end
 

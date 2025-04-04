@@ -24,6 +24,7 @@ class DosboxX < Formula
     sha256 arm64_ventura: "10d53f31e326cc287bf4a006fc5390c1b073339b2cc012a914a91eaeddc844e8"
     sha256 sonoma:        "bb9d3461045d8c5890ddf4dc8ccfd280fa3a48f9986896813c4d8af10cbb2a56"
     sha256 ventura:       "4f24307a90518152e0b8d2658ab3965d22581156db1bea3a11a014af228d46bf"
+    sha256 arm64_linux:   "a271881fd01c95482d3ea2eb6b410610acd75692228da87dce7a7631a9e40520"
     sha256 x86_64_linux:  "be98a10835a52e665f2b8cb803a7f41d34383a358bbed82d355621f56bdc6db7"
   end
 

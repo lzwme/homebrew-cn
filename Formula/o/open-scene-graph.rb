@@ -27,6 +27,7 @@ class OpenSceneGraph < Formula
     sha256 monterey:       "2f2617969f263e4aa08b51fb64d9a7023c42e2d14e2c075a7a4602ba95a726f3"
     sha256 big_sur:        "95a78e9f79bdb83a94b9d9be412e4b4520f2467a2f55ea8479b494144175b2cf"
     sha256 catalina:       "1d38f6730fda72b85bdd25600cd415e747f5ade8645a6f4270d9e87dd275103e"
+    sha256 arm64_linux:    "8dede4a58f246379ccea1fed1d9eb2392b99c3e837f216e8cda9fe25968eccfa"
     sha256 x86_64_linux:   "43c4367454e8de65443937a3509f96d4d273b50431b0a4fde16607c88183b247"
   end
 

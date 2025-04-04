@@ -1,8 +1,8 @@
 class Netatalk < Formula
   desc "File server for Macs, compliant with Apple Filing Protocol (AFP)"
   homepage "https:netatalk.io"
-  url "https:github.comNetatalknetatalkreleasesdownloadnetatalk-4-1-2netatalk-4.1.2.tar.xz"
-  sha256 "a825f6ff7efedb09bb9ca75727ab43126797000f89775db72c8d9520bf481e9c"
+  url "https:github.comNetatalknetatalkreleasesdownloadnetatalk-4-2-0netatalk-4.2.0.tar.xz"
+  sha256 "768a91014e298dc1d14ef28ebe330ddad49928e3c34f307353b8bdd317f50a52"
   license all_of: [
     "GPL-2.0-only",
     "GPL-2.0-or-later",
@@ -15,13 +15,13 @@ class Netatalk < Formula
   head "https:github.comNetatalknetatalk.git", branch: "main"
 
   bottle do
-    sha256 arm64_sequoia: "e5ca1cf2d2420016697db0193c6a5bacb41710df3161185656ab7a3d428b4c5a"
-    sha256 arm64_sonoma:  "2ba4064b6e7fcf34437fa8dc2674e3a1a447c61fb46b75d31d03580dae5162ed"
-    sha256 arm64_ventura: "f3bb55b4643e95a02e870f07752a58ad8c29692844b1fab7e2eff564e797c41d"
-    sha256 sonoma:        "394a0ab15551ff533d298540907f64c0f4450651f8ec9e5d8c3dae47ee96014c"
-    sha256 ventura:       "dd248035c5beccddd7e137c45d4fe5548d71d61b747d0b1b43c6cbc9c068e2d9"
-    sha256 arm64_linux:   "f4767d7d2191fbb9bbb4f760c997d5124ec6dde5861029bac299802a253caf14"
-    sha256 x86_64_linux:  "ac95460c6afb5b63cd342664fa4b50e46b8cd3e8808a85a998de165a55663589"
+    sha256 arm64_sequoia: "d71df3b1e4fdaddf0f232f8dd001310f60c849aa67eaa31d74d6daa738559404"
+    sha256 arm64_sonoma:  "20162c85e09de6e25b7beddd8ad26f60ec8c2be0d62eb0fe7e1b11b356252b47"
+    sha256 arm64_ventura: "4ea66500888f18634f63e24e9440f1445fcd6fa510d26aa323c378a71b597b65"
+    sha256 sonoma:        "74237b163e3c3a9b25936c7c76c6efea0ccc74f212a56e48095064093da2ba4d"
+    sha256 ventura:       "5ccee36bc2de3dc1fd4442740574e6106733e1fed8b19b3875b57269b759966d"
+    sha256 arm64_linux:   "096a860beb633015e76205a9421d81e923dabff8694f32acedd60f27f2f3c4d5"
+    sha256 x86_64_linux:  "42f6947fb5f8123458f9f5118e5e59040933325592e761877eb307c465618f78"
   end
 
   depends_on "docbook-xsl" => :build
@@ -31,6 +31,7 @@ class Netatalk < Formula
 
   depends_on "berkeley-db@5" # macOS bdb library lacks DBC type etc.
   depends_on "cracklib"
+  depends_on "iniparser"
   depends_on "libevent"
   depends_on "libgcrypt"
   depends_on "mariadb-connector-c"
@@ -56,6 +57,7 @@ class Netatalk < Formula
     inreplace "distribinitscriptsmacos.netatalk.plist.in", "@bindir@", opt_bin
     inreplace "distribinitscriptsmacos.netatalk.plist.in", "@sbindir@", opt_sbin
     inreplace "distribinitscriptssystemd.netatalk.service.in", "@sbindir@", opt_sbin
+    inreplace "configmeson.build", "cups_libdir  'cupsbackend'", "'#{libexec}cupsbackend'"
     bdb5_rpath = rpath(target: Formula["berkeley-db@5"].opt_lib)
     ENV.append "LDFLAGS", "-Wl,-rpath,#{bdb5_rpath}" if OS.linux?
     args = [

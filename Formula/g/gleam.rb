@@ -17,6 +17,7 @@ class Gleam < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2673a3dce74885d41fcb34383aa8769b956078131486352f27298a7a0287d340"
     sha256 cellar: :any_skip_relocation, sonoma:        "e44a77d4448a7918c8f0de0b1a94749499c05e70510978997a3545a2dcb4bc14"
     sha256 cellar: :any_skip_relocation, ventura:       "d1fbae3f9c47c248ee842b077a2b889066b69c9d30e4b090f78835f24a07353f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "154cd4761e911f7a690eff52792c967220f5fdcb7c7f5472e20f7213d8a055a6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0cc54b9c4959697921c9f3624d9dde3e9f8714455c40a4e6ad3a3bf587d6914"
   end
 

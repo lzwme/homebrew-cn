@@ -19,6 +19,7 @@ class Libadwaita < Formula
     sha256 arm64_ventura: "a4bfddb77bfea3f8df44c79357bda5e07ed7e6739ca1a77f2eddb24807bb674a"
     sha256 sonoma:        "9af7bfc351744084149321ce2f0a7a570bed4ed3f19b75a643e988ed9b349207"
     sha256 ventura:       "bff7ec010d04ada9aeaac78e8464507176c922078dbe51efdfe486da4bd0ff4c"
+    sha256 arm64_linux:   "942f7efab94cc28955491e797246adba00e241c4a8b16d1ff624bd8e734c66d9"
     sha256 x86_64_linux:  "965753c9de047a186668cd1fabeb18bb95a97497b04c5fb14ae0b42a9024e8ea"
   end
 

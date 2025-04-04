@@ -16,6 +16,7 @@ class Libgoa < Formula
     sha256 cellar: :any, arm64_ventura: "ec8fede480a5a8a13e77142727f82584d93443f97c1c7ce2228633b6bbd9ff64"
     sha256 cellar: :any, sonoma:        "621833c0bac8d37c39c504b5c592c647965aa5276b78c14f9b6e7459ebb008f2"
     sha256 cellar: :any, ventura:       "5854a0a1b6007e1b4fa5c6cacb185b302601db0037aec3f2fc4233b8769882c7"
+    sha256               arm64_linux:   "047b19d4bf401f854190ee82b8c0c99bfcfe9062ae4bd675da9ae43fe4475480"
     sha256               x86_64_linux:  "8d610279027fb0b6ae82be1b714bb4b38326d18bbc62558d4ae9e47b730d2f07"
   end
 

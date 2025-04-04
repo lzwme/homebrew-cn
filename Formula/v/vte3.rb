@@ -11,6 +11,7 @@ class Vte3 < Formula
     sha256 arm64_ventura: "d170211ed1164f6bb27bc7d6709ea806537a601bbcb11dc76cfb633c4a4630f0"
     sha256 sonoma:        "7052726aa28bfc89db5a9c76e3c6c7a0fe92975e8e48868cb58e505dca9bd2d7"
     sha256 ventura:       "76cda9814b676ff2e56e9805099d7eb137fb5e3ce33b7ab51c4cb4c09c494f04"
+    sha256 arm64_linux:   "9600010e93ca3c8ab9e7c9a1e34edf972f760fcf6e2609da0ab09b91364ed7a0"
     sha256 x86_64_linux:  "d103ff999020e4eb23266239d59e57786219c2e1f092dcfaf42ad6506817a0d2"
   end
 

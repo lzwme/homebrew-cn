@@ -15,6 +15,7 @@ class Odin < Formula
     sha256                               arm64_ventura: "05d9dddb2358edd6e993b0db3ea56470311add688c34205fd3085cc173e19b4c"
     sha256 cellar: :any,                 sonoma:        "4dbaf32374bf44f73a9548a1a2775d63d136e7352b74b9534d8c66a0be6183fe"
     sha256 cellar: :any,                 ventura:       "317a185fa4c620660fcb00a10940ca2c31ea717b17b385c73d9dfb80c151f152"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "471253dad0370f3f48e9054cc676003dd6bbf7ce7c42c5c75b7fc80561a46dc5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "56fac6a248c55d3b523220a6dedb43673a5285bd7ebf1c6bc13a38c62fe0d99d"
   end
 

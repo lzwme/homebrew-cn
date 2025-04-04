@@ -16,6 +16,7 @@ class Gambit < Formula
     sha256 cellar: :any,                 arm64_ventura: "dd3135d73ac6f13cb70dd512f0e814df73e5147aa9527a5dcc1ef70189a3b62e"
     sha256 cellar: :any,                 sonoma:        "222ccdc2f9b564c8c25fc3524745201634a892964ad325779661181dfbb28921"
     sha256 cellar: :any,                 ventura:       "c3a9408f35080bf0962de6843a662b8184d540a19e81f863131014d7923212d7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0150ace1cb9ddcd658773d6299182e8ad5aaa2d5273f19fa3abfd5f8de6741c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a87956816c0145f8e347b5a2b65ebb81a51146db66d8b326fd945bfddf48330a"
   end
 

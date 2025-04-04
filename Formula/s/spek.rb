@@ -14,6 +14,7 @@ class Spek < Formula
     sha256 cellar: :any,                 sonoma:         "e4d77fc4a259cf4d864eeb0059cc27e203b49ba2459fb251e237b2f8c7412f30"
     sha256 cellar: :any,                 ventura:        "0282680357860d5b083421f330ec203c9eb3d223c9d478c53a93818db2c679f7"
     sha256 cellar: :any,                 monterey:       "b94b801a93e392bc91cc055991fd7cedd92bdd77be291fded38ca9b7317d8f8d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "fa9931345865e13d1b65d202f8c351e3c3fbd1d007f95d270c8600919cc58dd2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "73d782e38ee8b6b90ed44ad6a7e91e58f2c0f37f8822793888aa1d60870b9df5"
   end
 

@@ -13,6 +13,7 @@ class Elvis < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d3098513d6bbb4cf61672d57c6949816db49d7335b5f8db683a504b4bab020b4"
     sha256 cellar: :any_skip_relocation, sonoma:        "2e8af221781d3edec43170f5291c11bd1d12e5b9b784eb9fa4ce43152f7cba06"
     sha256 cellar: :any_skip_relocation, ventura:       "4e7fe17f8a2cbe5198095ca431331f68e56e641b1192eef4f74bf953349fce21"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "754a173133d4dc9955dbdb2ba8f9860a6efe6d539ee827042a3b919f218fd303"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd362818e6ddbb536713dc715923e2fd82e26549209629bbf2bf2647dce431b7"
   end
 

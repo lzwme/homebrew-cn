@@ -13,6 +13,7 @@ class Libxkbcommon < Formula
     sha256 arm64_ventura: "32d6a4a4c35d77fcf33d9d11b056fe44bced10436d776304a89fee455460c6df"
     sha256 sonoma:        "8d90850aee4b259ff81c341de91f048da624ed6821113f4513ab9a669a0b23f3"
     sha256 ventura:       "db65eb514edb1dd5fb91987846c63b67cdeb9c151d653fa65e3f67202d82ef68"
+    sha256 arm64_linux:   "fcb10ceb2f2b110280252f72895c40c79bef04be7230c7a11fb7a0e18ef879b5"
     sha256 x86_64_linux:  "2613c577fd0374fcadc3f5d5123408f980c94e4b8e46f53dee14f80a9c2b853d"
   end
 

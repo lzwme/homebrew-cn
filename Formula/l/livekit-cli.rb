@@ -1,18 +1,18 @@
 class LivekitCli < Formula
   desc "Command-line interface to LiveKit"
   homepage "https:livekit.io"
-  url "https:github.comlivekitlivekit-cliarchiverefstagsv2.4.1.tar.gz"
-  sha256 "00b146aacee0f11f73d2a04b3f517e169dd6613f8ef08f904b7c5b742506fcc0"
+  url "https:github.comlivekitlivekit-cliarchiverefstagsv2.4.2.tar.gz"
+  sha256 "10b5acc2c48949da60831769e01836a3b0226b2b86358fad714f40b70ea09da9"
   license "Apache-2.0"
   head "https:github.comlivekitlivekit-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "967bf9b08bf49bc36e945ae08fb5809c63b7886513c2690fb3cf17de59b50560"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "967bf9b08bf49bc36e945ae08fb5809c63b7886513c2690fb3cf17de59b50560"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "967bf9b08bf49bc36e945ae08fb5809c63b7886513c2690fb3cf17de59b50560"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9f054b592c5b4fc98f6c7721d0446deae881c58899a5f8046e24a90fde3eeff9"
-    sha256 cellar: :any_skip_relocation, ventura:       "9f054b592c5b4fc98f6c7721d0446deae881c58899a5f8046e24a90fde3eeff9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "65f10ad8befae78909aa69dffe5d455610fc590df4ebe4d8528ef92d654a3385"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49fe53ebce3fcc0ebef25865166f1d7a6573b28524e6fd8df8b2f885660dd7a2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49fe53ebce3fcc0ebef25865166f1d7a6573b28524e6fd8df8b2f885660dd7a2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "49fe53ebce3fcc0ebef25865166f1d7a6573b28524e6fd8df8b2f885660dd7a2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7b050e681113ad5624d64a161ee058900121a918347a7ff38a774bce66b7ec4f"
+    sha256 cellar: :any_skip_relocation, ventura:       "7b050e681113ad5624d64a161ee058900121a918347a7ff38a774bce66b7ec4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ecf1377acb05c8cf5620450620f2fc290f66146cb42458a3c1b04e2001e34006"
   end
 
   depends_on "go" => :build

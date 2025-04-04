@@ -17,6 +17,7 @@ class Asymptote < Formula
     sha256 arm64_ventura: "679785fc2b2b9bcc8f88b954f2135b392191913cc454a8b29336bffac8f4e236"
     sha256 sonoma:        "c66197c421a4c45d521a56afce6ac4c322f6256f232267816598ae6c5aecd9df"
     sha256 ventura:       "ff73c501bc220577f13d4f4cf2c407fb0f3b3faac7b08a7a5117bf50c1090f9a"
+    sha256 arm64_linux:   "6a37f9ce6e689eac8a96c4eeea3c66d259a253fa07e850aad1532dd489da556a"
     sha256 x86_64_linux:  "2fc5cb3f09f0ed19aecbd59d308fb499bc25fff4c056783670acb184590bb3a1"
   end
 

@@ -21,6 +21,7 @@ class Simutrans < Formula
     sha256 cellar: :any,                 arm64_ventura: "30baf17577b6913f0550224427ca8ad05719c8d65280796702081de8b9676b75"
     sha256 cellar: :any,                 sonoma:        "3ba71d009c07ffe94aa6558b6a6b6a30e5935da52a41461e96aaaf3bdca48ee8"
     sha256 cellar: :any,                 ventura:       "f0c4952bda42254d80f6ebdca79f1bec31bd47f1e29d19719ad0c40e250ef41b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f734460c1322f358624baa5960fdcebea572222a779fab34e10f9e672a142116"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4080eb0e51cc520fd599a9b5846bb88f8957c377b3f6e312289628af2ed57e1b"
   end
 

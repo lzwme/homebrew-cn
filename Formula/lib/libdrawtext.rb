@@ -17,6 +17,7 @@ class Libdrawtext < Formula
     sha256 cellar: :any,                 monterey:       "6588852f6f1c6fb9585c4c0cb16d9fe2d503fd68c94d08f982a7de5d0af87adf"
     sha256 cellar: :any,                 big_sur:        "2f01264e3b9729a123e24c71078c5b7b5c2189c2a2ed2a8481763080ed213ce1"
     sha256 cellar: :any_skip_relocation, arm64_linux:    "e4c5a798ccb89fb7d2872b427347e85d6d7239bd2c3a46563dab045fa7c63b10"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1a5d0e7c72c57d294d27e5f80dfd4371c7b3d37be3645f77103b7233025d366e"
   end
 
   depends_on "pkgconf" => :build

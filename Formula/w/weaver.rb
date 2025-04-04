@@ -14,6 +14,7 @@ class Weaver < Formula
   end
 
   depends_on xcode: ["11.2", :build]
+  depends_on :macos # needs macOS CommonCrypto
 
   uses_from_macos "swift"
 

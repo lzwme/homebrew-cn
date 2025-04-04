@@ -1,19 +1,19 @@
 class Unshield < Formula
   desc "Extract files from InstallShield cabinet files"
   homepage "https:github.comtwogoodunshield"
-  url "https:github.comtwogoodunshieldarchiverefstags1.6.1.tar.gz"
-  sha256 "3f477d177e5ab805d41e5d06bb8cc42540769dd937ddc78e2e07f9f853034d66"
+  url "https:github.comtwogoodunshieldarchiverefstags1.6.2.tar.gz"
+  sha256 "a937ef596ad94d16e7ed2c8553ad7be305798dcdcfd65ae60210b1e54ab51a2f"
   license "MIT"
   head "https:github.comtwogoodunshield.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2716f4510a0bcf25949c1ff30193b044ed8edf2d7e0278c308e83e6a1d2c550a"
-    sha256 cellar: :any,                 arm64_sonoma:  "8d018ee21d434988c240a612e51e4f22e1a09b0a61a8fe919045bee74d4b77de"
-    sha256 cellar: :any,                 arm64_ventura: "84b33c02f822f1f1f4bb575ff0e43287d21a4917f674cdda2a5ed69c77790bd6"
-    sha256 cellar: :any,                 sonoma:        "efa2679c5b20f815d4abb7a5a15a9aab501667f283393cda757a0deeefa8655e"
-    sha256 cellar: :any,                 ventura:       "da3d491cf636f1fc2700153afa071c9e0ea2c7c71a39ca54983314d834f75a9b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b49f8eef9fe14dc07089157279a8d8c7d835f9e64ba248a179a705736becd1f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d6b7ca84cf02a29f111ab6ce8c3b4519dd3d81b2d296c565372c35dbdd30307"
+    sha256 cellar: :any,                 arm64_sequoia: "958b5103955b4485df69ee82cfefd26fb6f41da6852b05a10b0fa75ec04ae558"
+    sha256 cellar: :any,                 arm64_sonoma:  "397ed621a6603bd58822fe74cd47f32a74396f64daeba951c57ffa3fa699eb80"
+    sha256 cellar: :any,                 arm64_ventura: "b7cf5fafee5891f097cba5e79298640a672df925261bb8ecf033d07ccd15df2d"
+    sha256 cellar: :any,                 sonoma:        "22fe14bf3e367654c7899946475a7eaf8238e27b59a4b7f9c79b0d2705fdba4e"
+    sha256 cellar: :any,                 ventura:       "f853aee13b486fec004917ef8a3d35a5ba21171da6f0b0a1c7b0cd1904ff6cf3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9b65582b6f445ae0cd30ac4761345fb6fedfbdca7ae043818b649645d85f329f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bed5e7793bcfe46608d32e67dd616e8e3058909abb805d4f2f91fa9b8b7e3518"
   end
 
   depends_on "cmake" => :build

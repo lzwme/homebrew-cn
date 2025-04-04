@@ -12,6 +12,7 @@ class Gource < Formula
     sha256 arm64_ventura: "bb6149e22c1ca5442f9974a1079a75f6ae1def91d9439b60bfe411659b9f9ad7"
     sha256 sonoma:        "163f2bc4d805804d54538f0b0c5e50ca98c8541bc05f2fae65d845a521da8d8c"
     sha256 ventura:       "1fc962a7b5587a8ce44f71c98b4966460f2b929d050a3477a3f08b878dc40c8c"
+    sha256 arm64_linux:   "4c9c0044806c0d7fcd7ab3412fa3951c1c27980cfbe7109f3dcfcc3f4db91b32"
     sha256 x86_64_linux:  "01eaeab6eaaedd52c2ee0f7f7885e96357f560eb12b6b1029a5e322923128c44"
   end
 

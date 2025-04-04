@@ -13,6 +13,7 @@ class EnterTex < Formula
     sha256 arm64_ventura: "bd987fb077e7ab7ebc5b6b1e10f7d8399ad806db2575a1aa17d93094b9c9b5f6"
     sha256 sonoma:        "df76f90ad0e167ff78761d7357be3d6b5b8dcd9067d0d6a84efc8e0542a108b2"
     sha256 ventura:       "00b07f97796d14b20ad06d057797fe97a208b9f7aaa294d6185f38cebb69d24b"
+    sha256 arm64_linux:   "9cf8280c57a5edd6171a976aefd265d11c035b0295fa78600828bb1e6a9aeb30"
     sha256 x86_64_linux:  "c456368dfa3f26de0d82d93c817e008b7415bb32cbd9579367348979e83f8327"
   end
 

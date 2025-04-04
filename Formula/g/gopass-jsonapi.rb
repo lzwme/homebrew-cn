@@ -9,6 +9,7 @@ class GopassJsonapi < Formula
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed5097f32ddfab1e9a86dbf4f582750e0501c67556144723f652736828384872"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5b12da7b04c28660980e9631be95862028b450206fb36c2e1cd536f4422113b"
     sha256 cellar: :any_skip_relocation, sonoma:        "d56468080fde6a5da8bfd1a4a18589ce4103631eb0cc2c21de05784f8bc7662e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d79d241a1376a7a789e14c787ea6271be6bea3ab1b94c70c0ea7181935c48b17"
   end
 
   depends_on "go" => :build

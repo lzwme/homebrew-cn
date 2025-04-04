@@ -11,6 +11,7 @@ class Pymupdf < Formula
     sha256 cellar: :any,                 arm64_ventura: "8db0af7fe4004bdaea575470776ae1c5cb7af43fb80ba0dccfe6d09877371c13"
     sha256 cellar: :any,                 sonoma:        "24dc1baee24e9072f28bef46e7b1ea7b36efdcf42da098af5d1850696b978fd5"
     sha256 cellar: :any,                 ventura:       "6aa7f4c2ae45800f2db6574e13f5d3afec61590095c760525b8190647ce1534f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8a74d6dfcb1bcdf3617c2e616fa6be385204fdf3b5ded3f99429c29ee40297fc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5ca11cffff40105ea756362889762c52fe9dc018a8b53d4135e49fb57f34c09"
   end
 

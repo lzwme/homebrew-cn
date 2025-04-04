@@ -11,6 +11,7 @@ class Webkitgtk < Formula
   end
 
   bottle do
+    sha256 arm64_linux:  "97a1594f806f100f4b4ed9b360966fef3305880b257d693218905e220b974f69"
     sha256 x86_64_linux: "d72eae042c96176a1e16f7d2499e70bffb6eff2ae77372eb01e6ff854a496013"
   end
 

@@ -17,6 +17,7 @@ class Geogram < Formula
     sha256 cellar: :any,                 arm64_ventura: "c26302ea1ec636582f5cebec7c9672ac5a5add5c6ebd19d8c62141f994f5a3f4"
     sha256 cellar: :any,                 sonoma:        "5e2d3e32d05cfe4281fb00a9ca76ae409422f39782cab42be6cdb962b98db653"
     sha256 cellar: :any,                 ventura:       "7b796fe15499a5a9abfd476e54590345bd1dacc6853cc57b8a65e0665bc9f150"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9337080768c837597f10d0fa19229ca6c0da3058b342e0329945aeb0cbae8868"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "caf3c4a262b8f5c7dfc6e14b21f4b4da86a0bcbf22d401ec9ff04b5869893e5e"
   end
 
@@ -28,16 +29,21 @@ class Geogram < Formula
   end
 
   def install
-    (buildpath"CMakeOptions.txt").append_lines <<~EOS
+    (buildpath"CMakeOptions.txt").append_lines <<~CMAKE
       set(CMAKE_INSTALL_PREFIX #{prefix})
       set(GEOGRAM_USE_SYSTEM_GLFW3 ON)
-    EOS
+    CMAKE
+
+    platform = if OS.mac?
+      "Darwin-clang-dynamic"
+    elsif Hardware::CPU.intel?
+      "Linux64-gcc-dynamic"
+    else
+      "Linux64-gcc-aarch64"
+    end
 
     system ".configure.sh"
-    platform = OS.mac? ? "Darwin-clang" : "Linux64-gcc"
-    cd "build#{platform}-dynamic-Release" do
-      system "make", "install"
-    end
+    system "make", "-C", "build#{platform}-Release", "install"
 
     (share"cmakeModules").install Dir[lib"cmakemodules*"]
   end

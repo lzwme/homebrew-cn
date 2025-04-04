@@ -20,6 +20,7 @@ class Emqx < Formula
     sha256 cellar: :any,                 arm64_ventura: "58475350df25bc890b392fbf7b4f1996e37577b795ec7a5d1989928d546719d9"
     sha256 cellar: :any,                 sonoma:        "d2d97364d818a40e08f0a047c470b682647bb0859d9ddf4d0bdd1220a46ddf9f"
     sha256 cellar: :any,                 ventura:       "d95d5ea7d09407b8e129f609adb486d8cff5f3cd14f9ac2a8aa36ec6783f43ac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4d138f648c78ee92a50839a66f94c447fcb16e877d4240476dae5b2eb191fa5d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebe73f248da88a0c7be48c539cd4d56a28688ec75ecbc4e0c53bf202fa2cab90"
   end
 

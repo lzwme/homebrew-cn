@@ -20,6 +20,7 @@ class Eiffelstudio < Formula
     sha256 cellar: :any,                 arm64_ventura: "edd61003eaccc9f0f98dc887c6446520eac6e5a2201cffb1467cc360f836f0d6"
     sha256 cellar: :any,                 sonoma:        "ca47472f6ff1d99d2a6f625c8fc29056b5cfba9f01fa967582da0afe6af634a0"
     sha256 cellar: :any,                 ventura:       "962dd821c1033fccab1662fac98c08d85c784bb249ee892c98ab424ba59e11fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5fd1e711755deb0a35163544904e0bc01ac0e03c183527541419d3af39d4d3b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "08f320ba178cd2a918863d1dbb9bf44a1e9b5ae4c5e0b269c6f2377d17e9d961"
   end
 

@@ -12,6 +12,7 @@ class OpenImageDenoise < Formula
     sha256 cellar: :any,                 sonoma:        "1d59f9001a32f8b6608aa3b5692a132238167a3d9001417cc6d983a274340864"
     sha256 cellar: :any,                 ventura:       "ed02dc61b6fcaa97a0fa6d41891e93a075173b6ddc55af397b6d8097d80e3c4e"
     sha256 cellar: :any_skip_relocation, arm64_linux:   "7e04afbebf498f666ec465647e0f267225a79379b9250f0fe8707671d2965b7b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc0c66f2d3d6c624e4915f8cae696592a94155388ebff497f43150b4c6dd7361"
   end
 
   depends_on "cmake" => :build

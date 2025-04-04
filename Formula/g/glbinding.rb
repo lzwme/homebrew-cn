@@ -12,6 +12,7 @@ class Glbinding < Formula
     sha256 cellar: :any,                 arm64_ventura: "80ad1e314eae1f15e047171937706be2c8b1c24ee0c13c5783ff0de9379ef65b"
     sha256 cellar: :any,                 sonoma:        "747d1af15a6de6ede43500d8ce09e948171a76dd7510212266758113fc9db7d8"
     sha256 cellar: :any,                 ventura:       "368d764b4ef7eaa96bc7bee68676c778f0ececd3cc2b33d242293b3d31cde21b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a9f6a2969d63421f0408fc21564656a9fc9f761d127816cf45d7057e06901b7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "19ecd120e2f945bf4c912fa08ddea6ff94225c38dc31b921363e4889361410db"
   end
 

@@ -15,6 +15,7 @@ class Glfw < Formula
     sha256 cellar: :any,                 sonoma:         "f62736f5f8d62fe9e3eefc97b9629f93e6d5513fe970449d56e1379bf17e6ce0"
     sha256 cellar: :any,                 ventura:        "4c2dda8866485758ea1bf446ffd09d99aab8874e3fc3b6f6f968ca8d80ef3344"
     sha256 cellar: :any,                 monterey:       "fbeb82f1e016c9b2acbf51acedcbd3b70f98006a6793c5946466ecaa78dde94f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "56b85b05932cd3a8b4d7b8c69ee7d60b910f2c77b7b17fedb68b25202a1e70c6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "707c1b8a6dc5362e2e00ba631aad8dd85c5d44d8ef721fd7c65cb68f3b9192f1"
   end
 

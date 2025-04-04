@@ -18,6 +18,7 @@ class Supertux < Formula
     sha256 cellar: :any,                 arm64_ventura: "3ef80f4789f23dc9565ebe7175f50020e0709098abffd5368c9306a8e44312ab"
     sha256 cellar: :any,                 sonoma:        "a0d8f4dd446e4caf9462f3363f472c5ae3232c1c8df465451233eba84df4eed3"
     sha256 cellar: :any,                 ventura:       "7696d453e5273c69ca2f1703edee2edd461b0f06393900eea403614c5dee5403"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1c3a5350abcd05f939856cb528e857e6bb571e340499f3cb80d1ee15bcffb64"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ff216442006b1a0e4244d1a126d339a36b524eac1c88f35079ec0c58b6b77fa"
   end
 

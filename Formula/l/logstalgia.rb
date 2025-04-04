@@ -12,6 +12,7 @@ class Logstalgia < Formula
     sha256 arm64_ventura: "c067670175d1f468fb49ce3c8358f2a591bac1cca15bc1e9a1c9a37d3a1d94de"
     sha256 sonoma:        "fd5806743b355f6106ded586a2447df24681cbb66b259c48141492350070eb7e"
     sha256 ventura:       "3acf2aaaffda836946cb952e0cc463b92ba958a3791e3f1719ce57e09071c774"
+    sha256 arm64_linux:   "0d1e65a1e3812c13d1f1e2e2cbfdbabab510f272d472d29d5fe6b6c0ff4012c7"
     sha256 x86_64_linux:  "b95612106ad5cb74aeb54a1d355a57c7a8953a80d775e781e46274116a3c5d82"
   end
 

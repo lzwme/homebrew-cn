@@ -19,6 +19,7 @@ class Glew < Formula
     sha256 cellar: :any,                 monterey:       "9d8d8c93eec4287a9231cd0378b45ee3b9735afca387fc1f5def7e2c68533097"
     sha256 cellar: :any,                 big_sur:        "728e40242af0b9a53ae837de3d2658f205e121a04285de29f3964c2dd7512a9d"
     sha256 cellar: :any,                 catalina:       "ee50985ccbbcd0ec1980960b7fb31fce80e99450f14ae02a751a731056182d34"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "4299aaba365fcecffb07e5d87bff754833e8e9b7a26ba648691185a97a592fab"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "7bc36f86706af951931a2c4c905b8b680cf67606406d238fbfd8923f6109e626"
   end
 

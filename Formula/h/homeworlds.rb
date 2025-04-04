@@ -12,6 +12,7 @@ class Homeworlds < Formula
     sha256 cellar: :any,                 arm64_ventura: "4019f9ab84a91f717ea32f22c76ed28d7a9d09c41a1d9696dad5ea41d7ea1105"
     sha256 cellar: :any,                 sonoma:        "01083a3070b6876d2e87fad46003b66a81f2f2d369a7bfb5db09f0f686802238"
     sha256 cellar: :any,                 ventura:       "603a72bed37ea7e7b648a7ad5ae5cc0bc3ca794a413b90153842aec1deacc175"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1faaa1d5f597d51fee9dbfaad64a219b4d301cbe7740220edb258d3e0f7b41b4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "07434afe254326ce496c2d01fdae03030850cf825a7d6ba33f61f9d059799627"
   end
 

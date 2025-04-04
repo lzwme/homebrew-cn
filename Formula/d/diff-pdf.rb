@@ -13,6 +13,7 @@ class DiffPdf < Formula
     sha256 cellar: :any,                 sonoma:         "3451aa9d8016f0a6daa510cc908a0b95a336bf84d40f705fae50217810eebfec"
     sha256 cellar: :any,                 ventura:        "dafb53f35f10213fd9b6d09f96d3f3250ed0540cdbf2e64c429cfe78f98afe1f"
     sha256 cellar: :any,                 monterey:       "4685df342153b5f2653257e5e27f7c4af00c2d5e8dad798e63e34c0308e6a347"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "961079ff6f064aff4d0a97c013702da8fe58e000c3e12283b76d6d20acb3af30"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "c78b9ef3dd41acc7212514933be8b34cba6eb56ca3044444db481d87eba71eaf"
   end
 

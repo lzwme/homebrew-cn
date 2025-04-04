@@ -20,6 +20,7 @@ class Ejabberd < Formula
     sha256 cellar: :any,                 arm64_ventura: "fbdf17eb3270829f0b2f361d1ebbd92c6f0abedddf01e9bbb196927d5eb80d88"
     sha256 cellar: :any,                 sonoma:        "a02f4dd82fabcb00f16111fe491f3b20f6e25325989e7b9c1f953266af008f0b"
     sha256 cellar: :any,                 ventura:       "23d89cff686a63b6ace8445d55d37c46a2bcbeb17b6e978b79f9be60c4ae3a1c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aec8ad7e055350acaae886befc95da8c986b5c27630602b156e02056e0cbd5f6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b601a389cb5473d48b28947c12a84485d641a91a7d5d8145ef72acb6ea9686b"
   end
 

@@ -12,6 +12,7 @@ class Dartsim < Formula
     sha256                               arm64_ventura: "f76dce0bfcfceddd7b0cf4b1d73f283336935870a43d152b49b52a68602dfe8e"
     sha256                               sonoma:        "5ca7f3fce898de34e1dc012ed0aee14a0b870667f03ff190a6856ff834990dc6"
     sha256                               ventura:       "2e3acef9d48405a5ab2a3e3a1df04379774a483cfa20e9d130132da14ab0b083"
+    sha256                               arm64_linux:   "386afa41680de20b295b29113e38210427bfccec0702068caaad1e44e57b6429"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b659c3c5a28cf073ea7b3ab319f9f2e692de6da6c8aa3869dea0697d2d0ced6c"
   end
 

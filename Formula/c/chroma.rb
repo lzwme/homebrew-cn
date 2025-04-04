@@ -1,17 +1,17 @@
 class Chroma < Formula
   desc "General purpose syntax highlighter in pure Go"
   homepage "https:github.comalecthomaschroma"
-  url "https:github.comalecthomaschromaarchiverefstagsv2.15.0.tar.gz"
-  sha256 "1294c3afca183dead839fd283f08068dbbb94170cd8a217400f4bd92dbcfe053"
+  url "https:github.comalecthomaschromaarchiverefstagsv2.16.0.tar.gz"
+  sha256 "78b6a312adcbadadf221d5ffa566545b0b30e74dee79f7e2eddcd36abde24923"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79548e013256f557c678598fd861e702a43e919c4a0915c2bd7dbdd62b4c43f5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79548e013256f557c678598fd861e702a43e919c4a0915c2bd7dbdd62b4c43f5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "79548e013256f557c678598fd861e702a43e919c4a0915c2bd7dbdd62b4c43f5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "eaafb645a84063e3325ba3db745bed5520b37f37abac7206c2a185fea165a4ea"
-    sha256 cellar: :any_skip_relocation, ventura:       "eaafb645a84063e3325ba3db745bed5520b37f37abac7206c2a185fea165a4ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0b14a4ac7ed27507c31ba72cd6a0cf0fac761f7412f800e38ea71d988b67a2c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd52a28167315b28b632f59b792a19815ebc39af57d5e70a43de7f74351d52b8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd52a28167315b28b632f59b792a19815ebc39af57d5e70a43de7f74351d52b8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cd52a28167315b28b632f59b792a19815ebc39af57d5e70a43de7f74351d52b8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7012197df2ee3bfb2656435dc61b3a315c2660e608f86a1a1c4f045a34792497"
+    sha256 cellar: :any_skip_relocation, ventura:       "7012197df2ee3bfb2656435dc61b3a315c2660e608f86a1a1c4f045a34792497"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a67f853f7c93a1c8c71cb74a0b5f6430b0b65a0b6b6f21d8ebd9a5229ea9044b"
   end
 
   depends_on "go" => :build

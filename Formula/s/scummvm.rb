@@ -18,6 +18,8 @@ class Scummvm < Formula
     sha256 arm64_ventura: "fa5357d50358654f04d462eaa2458f6ef707c30f1c1ee07a8eced50dc31e058c"
     sha256 sonoma:        "fe1e116080ede23f15a5ce52a2403bbb252491c5b1745315e8ff8b09db4d6766"
     sha256 ventura:       "5278a0db160646fd32761711dcf7286dfd9998eaf5c5c451a8600431b7e7c0ac"
+    sha256 arm64_linux:   "288dfd03828695c6de1cd90c3e048017ad961f0e8152eae55c253f91192e2537"
+    sha256 x86_64_linux:  "4b6ca803fb0574e1fbef9adedacca832cd0466465e821d2639676784c6f5899f"
   end
 
   depends_on "a52dec"
@@ -35,11 +37,14 @@ class Scummvm < Formula
   depends_on "libvorbis"
   depends_on "libvpx"
   depends_on "mad"
-  depends_on "musepack"
   depends_on "sdl2"
   depends_on "theora"
 
   uses_from_macos "zlib"
+
+  on_macos do
+    depends_on "musepack"
+  end
 
   on_linux do
     depends_on "alsa-lib"

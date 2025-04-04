@@ -1,6 +1,6 @@
 cask "reminders-menubar" do
-  version "1.24.0"
-  sha256 "79fc0099410414fec3c07818f9631b6c1f8651c74b6c42cb2c4393972608a5ce"
+  version "1.24.1"
+  sha256 "ee2319d036fa1ebf0d904c9ffac3567a757f20f57d1ee4b156a196cc94aa1f63"
 
   url "https:github.comDamascenoRafaelreminders-menubarreleasesdownloadv#{version}reminders-menubar.zip"
   name "Reminders MenuBar"
@@ -15,8 +15,10 @@ cask "reminders-menubar" do
 
   zap trash: [
     "~LibraryApplication Scriptsbr.com.damascenorafael.reminders-menubar",
+    "~LibraryApplication Scriptsbr.com.damascenorafael.reminders-menubar-launcher",
     "~LibraryApplication Scriptsbr.com.damascenorafael.RemindersLauncher",
     "~LibraryContainersbr.com.damascenorafael.reminders-menubar",
+    "~LibraryContainersbr.com.damascenorafael.reminders-menubar-launcher",
     "~LibraryContainersbr.com.damascenorafael.RemindersLauncher",
   ]
 end
