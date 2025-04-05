@@ -1,8 +1,8 @@
 class Talisman < Formula
   desc "Tool to detect and prevent secrets from getting checked in"
   homepage "https:thoughtworks.github.iotalisman"
-  url "https:github.comthoughtworkstalismanarchiverefstagsv1.33.2.tar.gz"
-  sha256 "b80ca17bdfd3c3805373dc81dcfa8bc84a1c947c609439d896246a1ccb06eabc"
+  url "https:github.comthoughtworkstalismanarchiverefstagsv1.34.0.tar.gz"
+  sha256 "273c200ce3950d3064c2077545b0d2d41d1c14708f61343b30ea8ee667b83474"
   license "MIT"
   version_scheme 1
   head "https:github.comthoughtworkstalisman.git", branch: "master"
@@ -13,12 +13,12 @@ class Talisman < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "54c0bff3b1e1e3e583a428a20183f62c5f2371ed096bc3f4c70102ec38c9974b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "54c0bff3b1e1e3e583a428a20183f62c5f2371ed096bc3f4c70102ec38c9974b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "54c0bff3b1e1e3e583a428a20183f62c5f2371ed096bc3f4c70102ec38c9974b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c7e61502ed99bc9ac655b52f02f5aa035b2f104e9876303b75b7a2d27336a797"
-    sha256 cellar: :any_skip_relocation, ventura:       "c7e61502ed99bc9ac655b52f02f5aa035b2f104e9876303b75b7a2d27336a797"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19734b3d820168398d6ff9ec5e94d8dd7211a946da3585a5ec971481ee6376ed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8efdf72894ee81f99878be02786e948060d44acdc9dfa03103e68d7011b718d1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8efdf72894ee81f99878be02786e948060d44acdc9dfa03103e68d7011b718d1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8efdf72894ee81f99878be02786e948060d44acdc9dfa03103e68d7011b718d1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "749c043095ab979fefb76bf2390fd9f1df635f23a9bb370dd07f55b7b442aa16"
+    sha256 cellar: :any_skip_relocation, ventura:       "749c043095ab979fefb76bf2390fd9f1df635f23a9bb370dd07f55b7b442aa16"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4935128183e1ef6300923e9e7f903e2efd80088caaefd374e2bd730aaf37d56e"
   end
 
   depends_on "go" => :build

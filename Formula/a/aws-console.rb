@@ -1,8 +1,8 @@
 class AwsConsole < Formula
   desc "Command-line to use AWS CLI credentials to launch the AWS console in a browser"
   homepage "https:github.comaws-cloudformationrain"
-  url "https:github.comaws-cloudformationrainarchiverefstagsv1.21.0.tar.gz"
-  sha256 "1bf031347ff0e3f51b16575639c6e6fc64fd2e7979a4f7678bfeb313fb5a2c7a"
+  url "https:github.comaws-cloudformationrainarchiverefstagsv1.22.0.tar.gz"
+  sha256 "0f563154c49a6bc09164551463daee01cdbd5e2a9ff7bbc54854276d1608128e"
   license "Apache-2.0"
 
   livecheck do
@@ -10,12 +10,12 @@ class AwsConsole < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "931eb2880158f49f34a4a717eeed64bb1a43fc2838d20707f8485cd06ccf3202"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "931eb2880158f49f34a4a717eeed64bb1a43fc2838d20707f8485cd06ccf3202"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "931eb2880158f49f34a4a717eeed64bb1a43fc2838d20707f8485cd06ccf3202"
-    sha256 cellar: :any_skip_relocation, sonoma:        "686a6236592d688210ee5a6270e8f857edf78f16df9c2593b0e259862ce909c7"
-    sha256 cellar: :any_skip_relocation, ventura:       "686a6236592d688210ee5a6270e8f857edf78f16df9c2593b0e259862ce909c7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec7b41beea6c69706164965db0ecdf45e2279cb69a1d29ef0bc2a1c8e072c92a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "50ffbee824129a0ae63f19dc58772657f9b52d322a0cf84befb6907f9460937c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50ffbee824129a0ae63f19dc58772657f9b52d322a0cf84befb6907f9460937c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "50ffbee824129a0ae63f19dc58772657f9b52d322a0cf84befb6907f9460937c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f05978a240080035d3ce63fccc42b1508001405920352e00c0c7789d819e711d"
+    sha256 cellar: :any_skip_relocation, ventura:       "f05978a240080035d3ce63fccc42b1508001405920352e00c0c7789d819e711d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e19d4906f97547f93c1dde27c3bfe4b320973d095d01c7cb2d5929d617f55dc"
   end
 
   depends_on "go" => :build

@@ -3,20 +3,19 @@ class Commitizen < Formula
 
   desc "Defines a standard way of committing rules and communicating it"
   homepage "https:commitizen-tools.github.iocommitizen"
-  url "https:files.pythonhosted.orgpackagesb5fdcd449bed87a26ecb61c950410e2d94e97ac31bf1f3ec69cc718b215384cecommitizen-4.4.1.tar.gz"
-  sha256 "626d9f545fb9b2db42305e16ef35d6348a35081a80527bad863a05a7ba0bec21"
+  url "https:files.pythonhosted.orgpackages67e56e8b6af23bf6d463870f8c29fd9be853d733825b297bb699be4310810990commitizen-4.5.0.tar.gz"
+  sha256 "78753c447bf631aa6da180454e436fc6032a36d3ef93fb296534a19e27d2a696"
   license "MIT"
-  revision 1
   head "https:github.comcommitizen-toolscommitizen.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "24af960325f535c2c61a1b30cdac5944bb115424ab374a606f78b8826af54d2e"
-    sha256 cellar: :any,                 arm64_sonoma:  "93d10fb9faa22401a7579a5154544745bb4d5605f60f04152d6b73ffd24e4b07"
-    sha256 cellar: :any,                 arm64_ventura: "828cbe6beb5b2225852f0385e11bfbc29422fcf5a0103e421052030ee6230bde"
-    sha256 cellar: :any,                 sonoma:        "71b2ad65e06788d46fbe07ed499665c7d9021e6166708c92fea46ea487b24e91"
-    sha256 cellar: :any,                 ventura:       "d3de7a06897ae5f23c198e90347df30a114bd6d01b8303c3521013776af4bcab"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e20c4a7024faef11307f284ac434106ea7e8f432592faa5bafcf345e554947d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5f10f192386921f8c2a7de7ba62190ecabf26d15e94ee0dfeeeaa59eb647cf4"
+    sha256 cellar: :any,                 arm64_sequoia: "22e22274fdc83677cab37dcb20d32d28bc69496dbf0e363534b38748a8dae3f5"
+    sha256 cellar: :any,                 arm64_sonoma:  "7b79275a36a71461fdabd355ba5436c3c747e9436de13eea09f92e1598daf372"
+    sha256 cellar: :any,                 arm64_ventura: "4e020b56c28a5d7599ad7697109f3519a07cfb586b96a35bc7fd0b902976beba"
+    sha256 cellar: :any,                 sonoma:        "5cdf191877a3094139cab0711f37dd8f4fc83b291651a8ed812f742dd76345d9"
+    sha256 cellar: :any,                 ventura:       "3870fdc26f8ab5205a7614ada14eed31b09a2e92aab23080d32e120fd0573417"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "87ee6293cd3fc299d64ad48a6a5df6e689376bfa30138d4f92c685c9381a1428"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54b9024cd68568ef40defce826d0ab827f92923fd9a553a82d861fe9e0f41024"
   end
 
   depends_on "libyaml"

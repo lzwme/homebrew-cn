@@ -1,19 +1,19 @@
 class Passenger < Formula
   desc "Server for Ruby, Python, and Node.js apps via ApacheNGINX"
   homepage "https:www.phusionpassenger.com"
-  url "https:github.comphusionpassengerreleasesdownloadrelease-6.0.26passenger-6.0.26.tar.gz"
-  sha256 "c69312230d4467a30d7a8abd25ee04250df3e332432871c6bd561ef5eea3d485"
+  url "https:github.comphusionpassengerreleasesdownloadrelease-6.0.27passenger-6.0.27.tar.gz"
+  sha256 "82c830aee98feece09e84309c2d0c6bb3f7b22a3c8e33cfe93b5e0d498615d0f"
   license "MIT"
   head "https:github.comphusionpassenger.git", branch: "stable-6.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "33f50696f64c695f39c827ab92a7a5d91e57c45b5f4295e6c9a1200a8311e5b4"
-    sha256 cellar: :any,                 arm64_sonoma:  "0fd5c9aed08ab6a9aaaba4d005adbd939b59e1f5d9239cd40964f258188d9ed8"
-    sha256 cellar: :any,                 arm64_ventura: "0f61c3747b30b206fb1407c16538e0e967a8f2abc57d007e68465564f9d1290e"
-    sha256 cellar: :any,                 sonoma:        "364199aeebe300bd34117627bc8810c7ffad9757950042376e86b31b03f98d71"
-    sha256 cellar: :any,                 ventura:       "92f2c49e255621627198d45dc5338511e7989d4c3a80c7c7231856d620f411ae"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6e67aee10ea7230e4e1600cc9769e41e9bfab959a1206958aebee15235b3cc40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f54d372a5982ddb7f04bd794f2aa7fde2e982a8c1e19a3e6c45667d023aba129"
+    sha256 cellar: :any,                 arm64_sequoia: "808e5afadfe23f23ec6a6408b178b70f601f4d0bac778d0d7632c317383e5833"
+    sha256 cellar: :any,                 arm64_sonoma:  "5e56c178bc0db1c4a88cf0cb545847fcc851a3bc8b5526184594ae94cfc86629"
+    sha256 cellar: :any,                 arm64_ventura: "03d240a2be82e603695616131f5ce06b9c63d1a74280a6285df6f29ba872f758"
+    sha256 cellar: :any,                 sonoma:        "71a876081ae4f554462ebe7b87e6ed91c911a89ce201bb69559e952f671b3ead"
+    sha256 cellar: :any,                 ventura:       "b000fed898017c54fd8f06ff5982fa27a09b2bf83fe9957fbd50bc5439e5bd1f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e69ef7c0c6d60050a22cbb99acb9e51a159c5509b4afb4c040a4a78c781d3b12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "420a9d0a3c7ee442bf5c96427e576f7a351a8afc326732947a2777ecc2ac7ee5"
   end
 
   depends_on "httpd" => :build # to build the apache2 module

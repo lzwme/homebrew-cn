@@ -4,15 +4,16 @@ class Baresip < Formula
   url "https:github.combaresipbaresiparchiverefstagsv3.21.0.tar.gz"
   sha256 "cdd4ee5b37e3a21b12848f1e14b7998cdb23c040e2057909b3e6725ba1799322"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 arm64_sequoia: "62f2d129030beb7631846626c92db82b3b8e10cfc30ac7e511ab921209146389"
-    sha256 arm64_sonoma:  "cd1b4fe7a312e884d06c238bc53dd2bd879a9a482b3a9023a81a4448e8fe2f90"
-    sha256 arm64_ventura: "6b801569d8192395f114c290ea15ac4139ff887dea98433013d6afb5fefd3741"
-    sha256 sonoma:        "3fa34859aaaad0289467d9df77853d5a523e0a46f1f0953999fb0e55a9fc5c73"
-    sha256 ventura:       "9276ea976185f9c3eb89c8c2cda7b2bba7f54da029767de08c177e0a71f79357"
-    sha256 arm64_linux:   "5ee3ae30a1b17ae656f463ca25f233e8cad1cd0b65e5733a7101a41eb4d8e87d"
-    sha256 x86_64_linux:  "6ee35c976f5d861bcee2fb80d3499f11c81727e3f4e91d28eb7ca06d25e8ef0f"
+    sha256 arm64_sequoia: "d2675a50231a7a8617fa1d3681b0771872b7b4fbf1396c9d38cf4dc6733f0903"
+    sha256 arm64_sonoma:  "c499fa9f9b58f0747967fc41ed8c453b6a534f7f7edee5f06423c537d913945a"
+    sha256 arm64_ventura: "ab41f3f7e90966b0e9bc433a6f8c794f5ca435a9032af70bece13f78533fc6be"
+    sha256 sonoma:        "4c1bf351c7ba218bb5387b8d74b53bc71bde1e95c00524cd325f8b8dcfd5009a"
+    sha256 ventura:       "8083783cca9fd979d801b12ce42f36035152d2b9e3a183b93f586dc031be93f1"
+    sha256 arm64_linux:   "1f9db97c54f54c4e328fe5c4d1e4f39be6bca0eb1c66972d810470403c7d9c9c"
+    sha256 x86_64_linux:  "17288171c66e6addae0c0a26aaaae38dfd79942e5c9d132bc48d70f08367a0ae"
   end
 
   depends_on "cmake" => :build

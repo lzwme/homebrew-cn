@@ -1,18 +1,18 @@
 class Krep < Formula
   desc "High-Performance String Search Utility"
   homepage "https:davidesantangelo.github.iokrep"
-  url "https:github.comdavidesantangelokreparchiverefstagsv0.3.5.tar.gz"
-  sha256 "dd29fcd022df00d32b68003b40110720ccfcd1772ccc70fca6e47229a6633ec2"
+  url "https:github.comdavidesantangelokreparchiverefstagsv0.4.1.tar.gz"
+  sha256 "3d70b0396afe5c7246d6a9a264a997a87ad24261546c857a7939e4f9592fe1f5"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b05f1973ff890f673296379b72e6a394b7b4943158c5effa3af6d7a4709e29c5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cee616f39b264cd813b3962a930a3bdec4b551555cb7e4eb0a34e1c3745759b9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5db8da2e5cf97e08efb3e1ff03d7a94affa504ec9a1b66897690ff75c3a54bf3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e776488b057c6bf69e9755749311f7f2c5740c5fd5f496c30e248dd7d5ce9993"
-    sha256 cellar: :any_skip_relocation, ventura:       "38cbd219c2283d943b1d48a39592f44e76ccf89a0401a04a9bc5bcb778e22428"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6699fa9409d759e6c62439e4ebc97148c0833c10a23366ae79f3908a8d588919"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f291e56c66ef4692ddc8866ae9fd57aaec105138172dc8578753055af529d2a4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "549120f44c011ba1f3ebf93a29b6229e8cfaa97bb0736fbe378b312561cebc76"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2e536cf253e35b71ef1a1c7d7ac20385a5172b7aaac000191afbf3a209c1716"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e5f094c14af723fde86165a8aedea58a49331933152dfb8e73a02a5daebb5048"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a86a5c6462359fea2f095b3d9234a8d1115dc73f0665f644fdd09d7e4727be39"
+    sha256 cellar: :any_skip_relocation, ventura:       "9e6727d44fe10d4faaab88e6a52fcc881ee1715dabf9d0f76743ed93ed22ada9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "05fc4246fb5bb2f5a8b06739290370dc3116ce0d1c47badced37895290e774c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d54f296395b2fc3eb7ebb2bbc4f6c343e04d53703e3d1a6272e5ced1e1b9c5aa"
   end
 
   def install
@@ -20,7 +20,7 @@ class Krep < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}krep -v", 1)
+    assert_match version.to_s, shell_output("#{bin}krep -v")
 
     text_file = testpath"file.txt"
     text_file.write "This should result in one match"

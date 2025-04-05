@@ -4,13 +4,14 @@ class Pyqt < Formula
   url "https://files.pythonhosted.org/packages/ce/bf/ff284a136b39cb1873c18e4fca4a40a8847c84a1910c5fb38c6a77868968/pyqt6-6.8.1.tar.gz"
   sha256 "91d937d6166274fafd70f4dee11a8da6dbfdb0da53de05f5d62361ddf775e256"
   license "GPL-3.0-only"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "364815998ca1a7e33573c26be81e2e797a09b7bc7a696594fa0d8cd819460989"
-    sha256 cellar: :any,                 arm64_ventura: "45167e6a3bda13e9bf2a9d318aac66b850827270bb1d73e5773f32566710d090"
-    sha256 cellar: :any,                 sonoma:        "46d7cab9f629cd034730806efa47e2fc0e2027d83253f4b111c67d28687b92a8"
-    sha256 cellar: :any,                 ventura:       "11f15fda8de9695960cd83438599af9094b81ce65a54d47a1b751101ed0ec0a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f70ee6d285317d7d405e894f898d89609c3a2372a56a92e0b1ddd1b8c068d2ee"
+    sha256 cellar: :any,                 arm64_sonoma:  "cbe45d094564fea92c0847da804ff4ec0cd8dcb7a110a455e07c7ebb8c6727f6"
+    sha256 cellar: :any,                 arm64_ventura: "f1906c6edfe3d0524e644214388d96e66a47e7c6b2547fc71e17c09d4c58d319"
+    sha256 cellar: :any,                 sonoma:        "8110d8e9a389bd66361fa0a3b13af4777ca39c010c2112cdd65e61cb6962f4fd"
+    sha256 cellar: :any,                 ventura:       "54f3da525162caaee221593e014ee8c48d70bc7419844c5f6106c9a85cd76ee5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "456712d70a2606cd236b813ef73851f9d041b80e2bd50791637fc28153635d38"
   end
 
   depends_on "pyqt-builder" => :build
@@ -52,6 +53,12 @@ class Pyqt < Formula
       url "https://gitlab.archlinux.org/archlinux/packaging/packages/pyqt6-webengine/-/raw/85846264bbfd2628fae66786e2f48ae40fddadca/fix-build.patch"
       sha256 "14b523cf26fd6e066ed1900fd59e1e6f8d7abc5900a04fc5b9bc9f3cb831045f"
     end
+  end
+
+  # Apply Arch Linux patch to fix build with Qt 6.9
+  patch do
+    url "https://gitlab.archlinux.org/archlinux/packaging/packages/pyqt6/-/raw/5a29c7c906d26b5d952ed76e57b83519cb5aa1a0/qt-6.9.patch"
+    sha256 "f69d5c5e6b1bc1eaa3aa08f205b55ac38bc38b9326b6875c77de65b5e58d05d9"
   end
 
   def python3

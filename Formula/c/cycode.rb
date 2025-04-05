@@ -3,18 +3,18 @@ class Cycode < Formula
 
   desc "Boost security in your dev lifecycle via SAST, SCA, Secrets & IaC scanning"
   homepage "https:github.comcycodehqcycode-cli"
-  url "https:files.pythonhosted.orgpackages738e3f824f1428c629ad5ab9c1878bdc4d6c45289d14349586c76803ccda7432cycode-2.3.2.tar.gz"
-  sha256 "eeb7b9051978e36ed1b3d4d3ee11e9cff641d43fb84785fd756409c3a1a09c0a"
+  url "https:files.pythonhosted.orgpackagesb199fee37603993657f34a50a9d641faabf4525e34c7af29415dcb1877430d59cycode-2.3.3.tar.gz"
+  sha256 "ee56a8adbcb3dac09e36ca8a68240676a8f770bbc91ec8af8a62dfc87c90656c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5fbb8e34a0910e5095991e6b5cd933f8af670a43777fa3155c044c033b58e83d"
-    sha256 cellar: :any,                 arm64_sonoma:  "174c197321be6c63727830704a7f89c3d3fda1bec67c64936f0ccf1af5d73295"
-    sha256 cellar: :any,                 arm64_ventura: "cc31ebc8a4e244e785411934bc01390d86fd1d13fd0e53f1636679d904b38207"
-    sha256 cellar: :any,                 sonoma:        "4aa97eda2eed53cc6b4802ac835660a0f283dc83765f87f7a916bb391a4e1d46"
-    sha256 cellar: :any,                 ventura:       "174fd51a0a9866e50f537bc6f25877e5842a5cef8c3bd5cd4280bacacfe107a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d44281064588e3a528e16ca55df60a9123b39154dfdc1f27f75dc8f912470b0a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1dc4164e0a1e4e12a5333d8fffaf40cf2dabee9b60236e07c9222f595b56d1ca"
+    sha256 cellar: :any,                 arm64_sequoia: "ae682c31aec4116b3f606ba2524667fa0cae4d290db6149be6a2d7082b29aa20"
+    sha256 cellar: :any,                 arm64_sonoma:  "a39d38f16a103513d40d518664199b029da76be540da2b3b321e454ba46a0a6a"
+    sha256 cellar: :any,                 arm64_ventura: "3cff0002b31d66d0bcf1f849dcef64657b98629d250e6a58f0b44b47c47348d3"
+    sha256 cellar: :any,                 sonoma:        "31cd97b5e51d646ae99ae87350fe14fa418dc6e4681ba2c518040bfda7b7b727"
+    sha256 cellar: :any,                 ventura:       "0b7a38ce9c7a0f8d9cd316f340d89ba85cb5bcd6770f7b0a278966d23133ba2c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf47a1caad0a9cd9280e44af23ee6fc072b823f57dfbbb886559e0c14a3d5e86"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9da0fa6e910203c3c7ecb8544e5b7058d4dae4aa2d48114d642e9521902d8e45"
   end
 
   depends_on "certifi"
@@ -122,8 +122,8 @@ class Cycode < Formula
   end
 
   resource "sentry-sdk" do
-    url "https:files.pythonhosted.orgpackagesf1ef4847dcd63e3f3c451cf701a825d21200f1322d46ac97586d5c90a13dfea1sentry_sdk-2.24.1.tar.gz"
-    sha256 "8ba3c29990fa48865b908b3b9dc5ae7fa7e72407c7c9e91303e5206b32d7b8b1"
+    url "https:files.pythonhosted.orgpackages852fa0f732270cc7c1834f5ec45539aec87c360d5483a8bd788217a9102ccfbdsentry_sdk-2.25.1.tar.gz"
+    sha256 "f9041b7054a7cf12d41eadabe6458ce7c6d6eea7a97cfe1b760b6692e9562cf0"
   end
 
   resource "six" do

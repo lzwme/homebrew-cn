@@ -1,19 +1,19 @@
 class CargoExpand < Formula
   desc "Show what Rust code looks like with macros expanded"
   homepage "https:github.comdtolnaycargo-expand"
-  url "https:github.comdtolnaycargo-expandarchiverefstags1.0.104.tar.gz"
-  sha256 "b7ae9d9446acccdf14adb2d7d0146f17b863121101facfd68f603c29c4442180"
+  url "https:github.comdtolnaycargo-expandarchiverefstags1.0.105.tar.gz"
+  sha256 "bf30b007ebc0f55f99db305d9d2936d5629aa809d2c9cffd79834f01fe5a8aa6"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comdtolnaycargo-expand.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e39208dd173710e175ae57ff0168d61d5a5f73493ed250524e3887d6da784588"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb6aa5c973552ab93458bf4b493fe2cecafe4c025578129571d1c8d675e0f5ba"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6e07ef089f411320a42ee8df9c097ce0120fa4fffb9d4d05bba7087f58a3a94d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5a9229dc4422ff2ce6106beada047c9d58446c92182c2c3e1f258247ef0aa870"
-    sha256 cellar: :any_skip_relocation, ventura:       "c58608ae019a5f92ce2ea0bf86e58a5311eaa4bf208ec41704570df534ed49fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "93fc42d58dc75c52fdc297fa7d0369c81cd2f5749077ded62b1656fa9c0e6840"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e800f9f9df16421e259cea5148550d778f899d33131ceab313ca89cecf4efe19"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24e22eefbdd9b614159dfb7402b8896e33e427099eabeff47e4a54796211b4f3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "67538cb91bc42b9d5b1d9de2b5046caec59228be421158e1adaf56af905f0aa6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "71a080b8fca21e455e7fa21a5deb6aa5b2aec708c36b63c81352bc71d41bdc87"
+    sha256 cellar: :any_skip_relocation, sonoma:        "78e0523c6abbd634dd4ff68d3686eadccaa45b523443942d99ee572664fa1c17"
+    sha256 cellar: :any_skip_relocation, ventura:       "b85059b602b81ed322f9e9013e942a89aa778906ad837bbbe845ffba3675f89c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e5f9c57d0cfdeb3b377435c3d343eaa6208259d73825ec27b05ff3102993bbb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fa362ae8e5a46b55d19a4c82aa892375109593cbe78760835fbe0f09a91bfbc"
   end
 
   depends_on "rust" => :build

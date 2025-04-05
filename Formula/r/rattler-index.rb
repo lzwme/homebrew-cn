@@ -1,8 +1,8 @@
 class RattlerIndex < Formula
   desc "Index conda channels using rattler"
   homepage "https:github.comcondarattler"
-  url "https:github.comcondarattlerarchiverefstagsrattler_index-v0.22.2.tar.gz"
-  sha256 "6fd3f05a4b7c4e4fef6de4a3685abcee38324abd6bce1ec8e39294dc1f5e0e14"
+  url "https:github.comcondarattlerarchiverefstagsrattler_index-v0.22.3.tar.gz"
+  sha256 "7a39838944eb119cd78a27bd243127cdea6871908a4e22a3cc77dfc33f366cfe"
   license "BSD-3-Clause"
   head "https:github.comcondarattler.git", branch: "main"
 
@@ -12,13 +12,13 @@ class RattlerIndex < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "33ba524f263497f2a5f11c69547179b23270b019afc155907d6dacfcaa32c061"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d8e8acc111fc43e31a5b77fd7436756c9afb06499a24b226a3c0fec37a67973"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "92b80fbe71f0f6e744da8b97f97d353df1b607630d624c7d189ec45fa21f9e99"
-    sha256 cellar: :any_skip_relocation, sonoma:        "456c1ecc3e7bb4edcb82971d9511f9a69e3a4128f5bd5c11c0112d5f51939a35"
-    sha256 cellar: :any_skip_relocation, ventura:       "852414fae3f2810dec8d1bdd140038ba3863a54b115c378ef8503c1a6029babd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "564dee019da1d3aaa61ad518305e3c183b464ad5539407f481c1f7a549ba3537"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a8e672588de6af667e16869c8626432ea4120fd931d4498001528710160148b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f03eda3ca790655eba98a7660465618debf093150b3053b9d4b2146d829e3825"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e57fb68df0d891ae2d9a693fc0897045d4e26174975ab10e68a907d9e6e5988"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ca0032351697c402bba0bb36f0e1575151314dec6397dbf4bf170a0589041c72"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6e006fca9723d0bcdb60006c5c0afb9639134096d6d1936fcfb236ea2e0273f2"
+    sha256 cellar: :any_skip_relocation, ventura:       "4ad1451b33d7ebf8ba1a93e2050a277183f536018c3b4b1de162963cb128c8ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "42260f23fe0140a7cf0c6ff12e8dd496f7b1ae277fbb53e8c6d84414ed649805"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9c916d61c75794d2a3ceb6331fe4994a6fcd172728e4e83e0dd8088f5005b82"
   end
 
   depends_on "pkgconf" => :build

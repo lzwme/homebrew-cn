@@ -16,6 +16,7 @@ class Wxmaxima < Formula
     sha256 arm64_ventura: "217c0fcff2d9964b6ddd2e0b3aa29ba15897d2dd704b11ac37de5184600b3d03"
     sha256 sonoma:        "26633e544d4422b9c831b423719c2b3239deb12ccabf20fe50df025dcb310176"
     sha256 ventura:       "e3b13b347f5cbe6561cbfbb449b224547e3acc95fb572b8e7008906578d06e0e"
+    sha256 x86_64_linux:  "fd2565a733cf558b15d8f550a67bcbdb4f0b28a7857bb4a3f97ff99534e0830f"
   end
 
   depends_on "cmake" => :build
@@ -45,7 +46,10 @@ class Wxmaxima < Formula
     # Disable CMake fixup_bundle to prevent copying dylibs
     inreplace "srcCMakeLists.txt", "fixup_bundle(", "# \\0"
 
-    system "cmake", "-S", ".", "-B", "build-wxm", "-G", "Ninja", *std_cmake_args
+    # https:github.comwxMaxima-developerswxmaximablobmainCompiling.md#wxwidgets-isnt-found
+    args = OS.mac? ? [] : ["-DWXM_DISABLE_WEBVIEW=ON"]
+
+    system "cmake", "-S", ".", "-B", "build-wxm", "-G", "Ninja", *args, *std_cmake_args
     system "cmake", "--build", "build-wxm"
     system "cmake", "--install", "build-wxm"
     bash_completion.install "datawxmaxima"

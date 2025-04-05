@@ -4793,7 +4793,7 @@ Homebrew-homebrew-core/Formula/o/oh-my-posh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oha.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ohcount.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ohdear-cli.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/o/oil.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/o/oil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oils-for-unix.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/oj.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oksh.rb, Homebrew/homebrew-core, 1
@@ -9920,7 +9920,6 @@ Homebrew-homebrew-cask/Casks/font/font-i/font-im-fell-french-canon-sc.rb, Homebr
 Homebrew-homebrew-cask/Casks/font/font-i/font-im-fell-french-canon.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-im-fell-great-primer-sc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-im-fell-great-primer.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-i/font-im-fell-types.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-i/font-im-writing-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-imbue.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-iming.rb, Homebrew/homebrew-cask, 1
@@ -14865,6 +14864,7 @@ Homebrew-homebrew-cask/Casks/x/xstation5.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xtool-creative-space.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/xtorrent.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/y/yaak.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/y/yaak@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yacreader.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yakyak.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/y/yam-display.rb, Homebrew/homebrew-cask, 0

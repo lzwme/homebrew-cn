@@ -2,25 +2,25 @@ class Odin < Formula
   desc "Programming language with focus on simplicity, performance and modern systems"
   homepage "https:odin-lang.org"
   url "https:github.comodin-langOdin.git",
-      tag:      "dev-2025-03",
-      revision: "951bef4ade595e5fa7e8f0d0681e4e34ab1ca9d3"
-  version "2025-03"
+      tag:      "dev-2025-04",
+      revision: "d9f990d42e2a1bccf3e7be8ba02efa6504e9af9b"
+  version "2025-04"
   license "BSD-3-Clause"
-  revision 1
   head "https:github.comodin-langOdin.git", branch: "master"
 
   bottle do
-    sha256                               arm64_sequoia: "2a2d7ff1769de89b3459b0656f91ef2edac0c32ff2284bc65bf93ef2d4a083f5"
-    sha256                               arm64_sonoma:  "efb819ad6918b4717e6d56000cecde79295f6194425a04dd8ee0ae4b9fa7087e"
-    sha256                               arm64_ventura: "05d9dddb2358edd6e993b0db3ea56470311add688c34205fd3085cc173e19b4c"
-    sha256 cellar: :any,                 sonoma:        "4dbaf32374bf44f73a9548a1a2775d63d136e7352b74b9534d8c66a0be6183fe"
-    sha256 cellar: :any,                 ventura:       "317a185fa4c620660fcb00a10940ca2c31ea717b17b385c73d9dfb80c151f152"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "471253dad0370f3f48e9054cc676003dd6bbf7ce7c42c5c75b7fc80561a46dc5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56fac6a248c55d3b523220a6dedb43673a5285bd7ebf1c6bc13a38c62fe0d99d"
+    sha256                               arm64_sequoia: "7db718db30a1550b4a257bf38a8c4760444fe690e79823bec57ef72531e19453"
+    sha256                               arm64_sonoma:  "29b07670d0f84f2d3cbf5e44797246913f1408e25633c2842b18d13edc5aab2c"
+    sha256                               arm64_ventura: "a1c4e779f3e0f4eeef5c06c5190b576c451efbe7db4bf7e4048e05c4084d09eb"
+    sha256 cellar: :any,                 sonoma:        "a57b5002a4131c081be1d99ad99d319ac271406704b5e1a817c39da4bb6deb0d"
+    sha256 cellar: :any,                 ventura:       "9f92112d2995381ea558c36c2f93605c452d9cdba7d215a26ae648539c4a7c66"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "69c5405ef06d38cb1bd97a307fd108ba79b7bdb3cf2d31632726b6ad13bba14b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff99f77d215a0919e14ee0c7241979b07e8f36f372e4ea99cee3042b787251f0"
   end
 
   depends_on "glfw"
-  depends_on "llvm@19"
+  depends_on "lld"
+  depends_on "llvm"
   depends_on "raylib"
 
   resource "raygui" do

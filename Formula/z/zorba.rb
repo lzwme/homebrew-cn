@@ -16,7 +16,7 @@ class Zorba < Formula
 
   # https:github.com28mseczorbaissues232
   # no longer build due to `'boostfilesystemconvenience.hpp' file not found`
-  disable! date: "2025-05-01", because: :unmaintained
+  disable! date: "2025-05-01", because: :does_not_build
 
   depends_on "cmake" => :build
   depends_on "openjdk" => :build

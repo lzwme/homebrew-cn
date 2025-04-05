@@ -1,19 +1,19 @@
 class Hk < Formula
   desc "Git hook and pre-commit lint manager"
   homepage "https:hk.jdx.dev"
-  url "https:github.comjdxhkarchiverefstagsv0.6.5.tar.gz"
-  sha256 "6313818ca222aef08c537ba2ef4a132f1087d689fb8aa020bbeab121f5fcdf92"
+  url "https:github.comjdxhkarchiverefstagsv0.7.0.tar.gz"
+  sha256 "7e92695a18c29fd8f72bec89b33d851e5cef8ec0c3049def47025126b02713c2"
   license "MIT"
   head "https:github.comjdxhk.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0c744b7478798d02fc11a0ddbf9a28ceb93c24678aee7f8cf91f8ac320c36386"
-    sha256 cellar: :any,                 arm64_sonoma:  "a4ece7f42141927216273df52445fe5eae2a48b354d56823289b604d562a9156"
-    sha256 cellar: :any,                 arm64_ventura: "53e33fcd46117daa5a6fe3a209c39b95eedb36ee825865ef40302eb5d6795aeb"
-    sha256 cellar: :any,                 sonoma:        "05b4685720eac78e58bd0b3798e36c0a7f4180ae81013e9e6a02ce2454a0526b"
-    sha256 cellar: :any,                 ventura:       "c40634ba045a1e646bb8b21ab500cc289e40c75d3de55aaa173ec3dfb8a75b25"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3427e11e90269db1c5b17f35773c68f83ca7ed3537056581f3385f56084e79ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56760b789c9072679d563cc55c0342eb1583e254a1b46ab09555dba082bb8237"
+    sha256 cellar: :any,                 arm64_sequoia: "9d68449a7652c810e5ead3e58f2c0300c5e3895c37c2a4a61fef43a4fcafeebc"
+    sha256 cellar: :any,                 arm64_sonoma:  "10c008271aa789f7ffe811df034882d98e17a3158a158800c3c56eb8f23d384b"
+    sha256 cellar: :any,                 arm64_ventura: "9e1772794561182f56058b73f3fab4a7b9f0b5b493326804997a10440fa17a8c"
+    sha256 cellar: :any,                 sonoma:        "c3a61397fb38055dee16b5070ba59d6c159ba1b9fd22240a6058b5816e78b776"
+    sha256 cellar: :any,                 ventura:       "33bb57054865c85dbe3646ff66daaf1dd9e1f9a7f46d16455b3e57572214857b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c576ee8a8d0eb8c4f995084eeb0cec6e630ec2c8b7f164b8178ac4091cdb7e21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02d9834d3e4953edfc4931ded84ac5dc92e4225bbc373a57a3fc635522bd6aa0"
   end
 
   depends_on "rust" => [:build, :test]
@@ -38,15 +38,11 @@ class Hk < Formula
 
     (testpath"hk.pkl").write <<~PKL
       amends "package:github.comjdxhkreleasesdownloadv#{version}hk@#{version}#Config.pkl"
-      import "package:github.comjdxhkreleasesdownloadv#{version}hk@#{version}#builtinscargo_clippy.pkl"
-
-      linters {
-        ["cargo-clippy"] = new cargo_clippy.CargoClippy {}
-      }
+      import "package:github.comjdxhkreleasesdownloadv#{version}hk@#{version}#builtins.pkl"
 
       hooks {
         ["pre-commit"] {
-          ["fix"] = new Fix {}
+          steps = new { ["cargo-clippy"] = builtins.cargo_clippy }
         }
       }
     PKL
