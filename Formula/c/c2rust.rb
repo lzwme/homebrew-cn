@@ -20,8 +20,15 @@ class C2rust < Formula
   depends_on "rust" => :build
   depends_on "llvm@19"
 
+  # cmake 4.0 build patch, upstream pr ref, https:github.comimmunantc2rustpull1214
+  patch do
+    url "https:github.comimmunantc2rustcommitc96c1c0e49d8be452d97b3e13c741324befd7b77.patch?full_index=1"
+    sha256 "9670a043ffade24eb014e6fee69707ab69df81ea76f9973fd7d4a68499362013"
+  end
+
   def install
     system "cargo", "install", *std_cargo_args(path: "c2rust")
+
     pkgshare.install "examples"
   end
 

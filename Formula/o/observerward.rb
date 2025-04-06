@@ -1,17 +1,17 @@
 class Observerward < Formula
   desc "Web application and service fingerprint identification tool"
   homepage "https:emo-crab.github.ioobserver_ward"
-  url "https:github.comemo-crabobserver_wardarchiverefstagsv2025.3.31.tar.gz"
-  sha256 "66012887ec1b3de4d14c4675ca26c4542fc1ca55e3e61dbc2ca9ac11a96a55c1"
+  url "https:github.comemo-crabobserver_wardarchiverefstagsv2025.4.6.tar.gz"
+  sha256 "541cd65c3f325c2fbaa87c875174c4470d8293a6215db5e212be609796e8cb89"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3ba015c529f99c57612e9b97652cec295132ce830bc48bbdb32c3de19f11257"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49f2f77044d04fe255e8e165c69325d7a44fd05a2e860956189eee145fc29e86"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "aba29f0000092979ef84d584a26e0f90d7deab6823715395e7c0dbecbb7c412e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "88742b22d883d4916494d3778ebb62e1f6d77e5caead1b718c19ba599b4ded68"
-    sha256 cellar: :any_skip_relocation, ventura:       "e2f90ac8d8591c75bafdfb6c018b4ff5fc11158f7b375c12e6e27919c9d211b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3db9b53da41520a3e28289f98391cf1aab5ae209b550e291263c5d242bd2858"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e129ce6364d8a9eb066886b119a83983691679d31fd5293a0cee0fe92dd58ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9883fc2df42873b5ccde235a7b06fa78f9cadfcc526aca9f6f08719ab79b98e5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "99653209dce7dd93b9717314a732238e2ea86c82009a7e3898434d423937b792"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c836d277e6b7f544e6c038dd06bbafa05a75ee85d62ba50d492da58d07e9a160"
+    sha256 cellar: :any_skip_relocation, ventura:       "ad5b83baaf54b11245da36e412b657a3d615a1d0256401e455c6d4270286f031"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0433a57de44c745da0612b2023a2ab37d132c4e10a578c42285ab5fb3d60aaff"
   end
 
   depends_on "rust" => :build

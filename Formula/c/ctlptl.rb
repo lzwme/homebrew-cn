@@ -4,6 +4,7 @@ class Ctlptl < Formula
   url "https:github.comtilt-devctlptlarchiverefstagsv0.8.40.tar.gz"
   sha256 "150c80e1855530871bd815cae466d559bddebae88e74e80f64a743bf10236d4d"
   license "Apache-2.0"
+  head "https:github.comtilt-devctlptl.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "08791701e964b9592a0e70ebe6f66a60c4ef45f60da25a34487ebed9aa2ea6d0"

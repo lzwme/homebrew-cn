@@ -35,7 +35,7 @@ Homebrew-homebrew-core/Formula/a/action-validator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/actionlint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/actions-batch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/activemq-cpp.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/a/activemq.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/activemq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ad.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/ada-url.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/adamstark-audiofile.rb, Homebrew/homebrew-core, 1
@@ -3863,6 +3863,7 @@ Homebrew-homebrew-core/Formula/lib/libpciaccess.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libpcl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libpeas.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libpeas@1.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libpg_query.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libpgm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libphonenumber.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libpinyin.rb, Homebrew/homebrew-core, 1
@@ -4492,7 +4493,7 @@ Homebrew-homebrew-core/Formula/m/mupdf-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mupdf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mupen64plus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/murex.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/musepack.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/musepack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/musikcube.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mussh.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mutt.rb, Homebrew/homebrew-core, 1
@@ -4685,7 +4686,7 @@ Homebrew-homebrew-core/Formula/n/noseyparker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/notation.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/notcurses.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/noti.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/n/notifiers.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/notifiers.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/notify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/notmuch-mutt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/notmuch.rb, Homebrew/homebrew-core, 0
@@ -8367,7 +8368,7 @@ Homebrew-homebrew-cask/Casks/c/cord.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/core-data-editor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/core-tunnel.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/corelocationcli.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/c/cork.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/cork.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cornercal.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cornerstone.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/corona-tracker.rb, Homebrew/homebrew-cask, 1
@@ -9486,6 +9487,7 @@ Homebrew-homebrew-cask/Casks/font/font-c/font-convergence.rb, Homebrew/homebrew-
 Homebrew-homebrew-cask/Casks/font/font-c/font-cookie.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-cooper-hewitt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-copse.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-c/font-coral-pixels.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-corben.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-corinthia.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-cormorant-garamond.rb, Homebrew/homebrew-cask, 1
@@ -9628,6 +9630,8 @@ Homebrew-homebrew-cask/Casks/font/font-e/font-envy-code-r-nerd-font.rb, Homebrew
 Homebrew-homebrew-cask/Casks/font/font-e/font-envy-code-r.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-e/font-ephesis.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-e/font-epilogue.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-e/font-epunda-sans.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-e/font-epunda-slab.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-e/font-erica-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-e/font-escumasia.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-e/font-esteban.rb, Homebrew/homebrew-cask, 1

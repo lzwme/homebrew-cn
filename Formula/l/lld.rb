@@ -1,8 +1,8 @@
 class Lld < Formula
   desc "LLVM Project Linker"
   homepage "https:lld.llvm.org"
-  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-20.1.1llvm-project-20.1.1.src.tar.xz"
-  sha256 "4d5ebbd40ce1e984a650818a4bb5ae86fc70644dec2e6d54e78b4176db3332e0"
+  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-20.1.2llvm-project-20.1.2.src.tar.xz"
+  sha256 "f0a4a240aabc9b056142d14d5478bb6d962aeac549cbd75b809f5499240a8b38"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https:github.comllvmllvm-project.git", branch: "main"
@@ -12,13 +12,13 @@ class Lld < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "74cf6d98e4a3cb4a2dc75dc62bbc8824928e5d7ae5d7362752b1aad36f30c4d7"
-    sha256 cellar: :any,                 arm64_sonoma:  "fdfd7ed2bb4c3b7441c1267cebcd8aad501ac21f49e80806f03824907ba7578c"
-    sha256 cellar: :any,                 arm64_ventura: "36dc0f48d3da51fc6de6382aa189b0adb2a19ea7e0965bca5e5db633840e16f5"
-    sha256 cellar: :any,                 sonoma:        "822bb2e2da86007d332619a69d9d7b8de2738cdfdee5759406c8b978867e1ba1"
-    sha256 cellar: :any,                 ventura:       "091c45aa9750974817e036af9c52fab079066b619f7442c332594ad3a1e06e21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd1e8a417f657d31052cf7272f2133f602edcf47342fbd80961349f470e6ce12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aadf2d12b3382d291a52f5e4938fd2c691433d31e12886dfe27d61a0cebbd7d3"
+    sha256 cellar: :any,                 arm64_sequoia: "361ecf4b26972a6f82cac2da3ca44a1047bf3767f5cf351420aba4be0ef8fc9e"
+    sha256 cellar: :any,                 arm64_sonoma:  "e6f88c1321295fa9786d77f475eaf6f38dd3eb0879f6ffc7e34482ebf47ca88a"
+    sha256 cellar: :any,                 arm64_ventura: "f7eea418459e16e143128384b7f15fa56d3ebce3c6697d098d9df587ef819df2"
+    sha256 cellar: :any,                 sonoma:        "25bad83b79c03b2f21cd1a1cb7f69787fa01ab3ce515aa4299dc7b5be206a057"
+    sha256 cellar: :any,                 ventura:       "49425b17da457a1bb8d41052cf96d97072f3898df2571179ad24335ef5251a22"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7420d5df326951f81d1474d09eda555e4152fad666d914431bdb8eeb1f5c7a10"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c6bc41cf2ce182153b2b57a1de28d9e9ce061a07ae6b58013ba2a5e59ddffdf"
   end
 
   depends_on "cmake" => :build

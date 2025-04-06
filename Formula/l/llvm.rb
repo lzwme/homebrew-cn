@@ -2,8 +2,8 @@ class Llvm < Formula
   desc "Next-gen compiler infrastructure"
   homepage "https:llvm.org"
   # TODO: Rebase `clang-cl` patch.
-  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-20.1.1llvm-project-20.1.1.src.tar.xz"
-  sha256 "4d5ebbd40ce1e984a650818a4bb5ae86fc70644dec2e6d54e78b4176db3332e0"
+  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-20.1.2llvm-project-20.1.2.src.tar.xz"
+  sha256 "f0a4a240aabc9b056142d14d5478bb6d962aeac549cbd75b809f5499240a8b38"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https:github.comllvmllvm-project.git", branch: "main"
@@ -14,13 +14,13 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "87bb5e8c70ca257c2612ad6b790462b5d52ec1ad6d9ac41e19a84ea54d294e6d"
-    sha256 cellar: :any,                 arm64_sonoma:  "bfe6fa879f80d5c457eb0782718d890630b8a88baa776f40a2c05bc1c384e1d9"
-    sha256 cellar: :any,                 arm64_ventura: "7a7c769c31686ce1c7cfa4f15435536283a6f33897d3bbcfd30c4c161c7ef40e"
-    sha256 cellar: :any,                 sonoma:        "6b7a9c9d5e20f050ffcc8c13f5fb04524abd1dfd090a2af01200cdad9e4d3162"
-    sha256 cellar: :any,                 ventura:       "a7bc0bbb45cabe021a38f775f76e7d5126f21d5a8bfe7dc857cd927ec6d45001"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa3b78449b5df080f97bae135aee193607853f875c79fd03edd89bb48f3ed15f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e58c157cb9719b36771bbfeb4670eb15dbcc3bfc3953d8f019b21b3ad57ce20"
+    sha256 cellar: :any,                 arm64_sequoia: "87e3e9f1ed544faab868b9e78961e013974e529baab0308935296b69210aead2"
+    sha256 cellar: :any,                 arm64_sonoma:  "b2ff1c4adcc012e64d44ad50861e1e711d68d30e720efbedd2c5335e638f4dad"
+    sha256 cellar: :any,                 arm64_ventura: "0c629453ef29472d74bf29f66070823a728e74c23a3996fc941724fa6283a6ce"
+    sha256 cellar: :any,                 sonoma:        "38c85f32d2bb4fcbdd5a93a5195364143ec5028f56761056195e57f3cfbace1a"
+    sha256 cellar: :any,                 ventura:       "bbc948ee22c802ab2441dd02e583437e27e1b9088d8a60314ece2a569c023d77"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9a7df54f412e6f41ef75128c6c388cc323d8a304350a9fde3b14b7e87902079"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "593d21d08c3d1d61e0f4483bc672aac6a72c2f1234bc18fe6c0e01c0545e436b"
   end
 
   keg_only :provided_by_macos
@@ -87,6 +87,11 @@ class Llvm < Formula
                              .select { |name| name.start_with? "python@" }
                              .map { |py| py.delete_prefix("python@") }
     site_packages = Language::Python.site_packages(python3).delete_prefix("lib")
+
+    # Work around build failure (maybe from CMake 4 update) by using environment
+    # variable for https:cmake.orgcmakehelplatestvariableCMAKE_OSX_SYSROOT.html
+    # TODO: Consider if this should be handled in superenv as impacts other formulae
+    ENV["SDKROOT"] = MacOS.sdk_for_formula(self).path if OS.mac? && MacOS.sdk_root_needed?
 
     # Apple's libstdc++ is too old to build LLVM
     ENV.libcxx if ENV.compiler == :clang

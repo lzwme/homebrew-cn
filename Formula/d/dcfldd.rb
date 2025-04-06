@@ -11,6 +11,7 @@ class Dcfldd < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "209e4325ac641238a6be2c411e9d964a0f4efbb87cf5b69ffcfdd0efbf7ef523"
     sha256 cellar: :any_skip_relocation, sonoma:        "a0ab38a209df9b31c0f6a4a9212fa29f42569a47337046bef83c2e91121b3e23"
     sha256 cellar: :any_skip_relocation, ventura:       "3a087faea51f503a26ec7376b5955be58489380439b83ef554ab8c3be8669529"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c400bc4961787061faada1c125e0dc6c5e2fe8f0ba1604f4e87d591489ce5b5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "74daa691d054382c0173e9d0942a6ab7a91ce53a1f222c6297c2b9849a1d38b8"
   end
 

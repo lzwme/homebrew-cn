@@ -1,18 +1,18 @@
 class Tfprovidercheck < Formula
   desc "CLI to prevent malicious Terraform Providers from being executed"
   homepage "https:github.comsuzuki-shunsuketfprovidercheck"
-  url "https:github.comsuzuki-shunsuketfprovidercheckarchiverefstagsv1.0.3.tar.gz"
-  sha256 "f2957ec6eb9cdd8abd8165bf6c3b048e14f44f5b9575d11624144a7c3e97ffd5"
+  url "https:github.comsuzuki-shunsuketfprovidercheckarchiverefstagsv1.0.4.tar.gz"
+  sha256 "999816d11c9b30a01af4725a118e2e974f6927875fe0d1045ae6e0ab49e95284"
   license "MIT"
   head "https:github.comsuzuki-shunsuketfprovidercheck.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1831bf2caa62d1f712fcbe93425e2308c5d2ececfdd0f06ca2286b2a52614bb6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1831bf2caa62d1f712fcbe93425e2308c5d2ececfdd0f06ca2286b2a52614bb6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1831bf2caa62d1f712fcbe93425e2308c5d2ececfdd0f06ca2286b2a52614bb6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "413f9a5dbfe170c3a1dffeca89fa6e8854eaef4b02ecb163285a588f163854a8"
-    sha256 cellar: :any_skip_relocation, ventura:       "413f9a5dbfe170c3a1dffeca89fa6e8854eaef4b02ecb163285a588f163854a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a94ceabeac6a06f831676302df40e130b4a80972531e8541dc80f940551e6041"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "677d19930251eac409e75565e6325a56fc7e31014329b3719434de20212c085f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "677d19930251eac409e75565e6325a56fc7e31014329b3719434de20212c085f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "677d19930251eac409e75565e6325a56fc7e31014329b3719434de20212c085f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0f6036c235d4088cbaac59cb2165bad5d2496a0d63ae31586c4396a59f073513"
+    sha256 cellar: :any_skip_relocation, ventura:       "0f6036c235d4088cbaac59cb2165bad5d2496a0d63ae31586c4396a59f073513"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f889a0a70843517244b54a61a5de472e7d47313f7aee0fbc9b460d8994a34b5c"
   end
 
   depends_on "go" => :build

@@ -19,7 +19,6 @@ class KeeperCommander < Formula
   end
 
   depends_on "pkgconf" => :build
-  depends_on "python-setuptools" => :build
   depends_on "rust" => :build # bcrypt dependencies
 
   depends_on "certifi"

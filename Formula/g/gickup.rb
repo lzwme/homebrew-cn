@@ -1,18 +1,18 @@
 class Gickup < Formula
   desc "Backup all your repositories with Ease"
   homepage "https:cooperspencer.github.iogickup-documentation"
-  url "https:github.comcooperspencergickuparchiverefstagsv0.10.37.tar.gz"
-  sha256 "fd817cab05b5abd847ddb173a63e8895b933a197ef16dfdf5dfd329378b4ff32"
+  url "https:github.comcooperspencergickuparchiverefstagsv0.10.38.tar.gz"
+  sha256 "71df829338c8b6e7b2adb57f0734e67b9c97fb20d32c8193394aad17e64d55bf"
   license "Apache-2.0"
   head "https:github.comcooperspencergickup.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d5cab3765637333e3f90333cbf4e23da0eb6db02a3f2f724ad2a7cb412e97c1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f5a2d66e822faafd6df05ede3cd65cbfce3bc446b36cee7730cf37c36f75c75"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "14f969e55fc91e50ff8b9d43a68e1ace4b04d7f1e84031b5aaf011a3bad4b8c1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fd465e651a4955420b13fd7934b92e27b7606757254b1cbf739d7dee1f92cc6f"
-    sha256 cellar: :any_skip_relocation, ventura:       "422404513c248b72fa17e1afe559417ac740d564d6727670ad79dab2472925d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffa85cf447b48499fc25461f8c6b8f4d9b4733de13b0fb2e4777de05d035f44c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d7cb9aa03551d4e440e8baa0418a5f7842b98c6b5ec17454cf5a266f5dca3739"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f1c7e005941f41bfd3ad81c3c664f25c7caa8d18c73512b8d759021821bbea17"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b3d6dc3c79c773ad733b24264208975a3afc9170ca3f754e56efd829a6526cae"
+    sha256 cellar: :any_skip_relocation, sonoma:        "15fee35c0f4420069696061dde479220f4a256b7dfa5490d72114068f6678043"
+    sha256 cellar: :any_skip_relocation, ventura:       "ebc3d09294a5e5d4954dce5bd9e60deefbe580eacff2d275f7833fdbfb67f9ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "400048b77e2a3e715761a9b3d233d235344b188d3d577970cf6516c1570afccc"
   end
 
   depends_on "go" => :build
