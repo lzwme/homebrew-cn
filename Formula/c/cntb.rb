@@ -4,6 +4,7 @@ class Cntb < Formula
   url "https:github.comcontabocntbarchiverefstagsv1.5.4.tar.gz"
   sha256 "d5648e7c842b46414466f62fb412cceebe284afbecfddf7ba92822510831c235"
   license "GPL-3.0-only"
+  head "https:github.comcontabocntb.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "830067d19a3686b22c00ebca17b5a0d7eb0b5ab4adb176a4efd2aac726bd8a32"

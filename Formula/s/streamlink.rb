@@ -3,19 +3,19 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https:streamlink.github.io"
-  url "https:files.pythonhosted.orgpackages8ff9d4c1c969863c71af2af876e0ae580c295278a7e5d5ee5bfb50c888797a11streamlink-7.1.3.tar.gz"
-  sha256 "f64b1a499b6d42af3965a39f30aef2e9e36f3d2d32a3311b8688af342bd5ba7a"
+  url "https:files.pythonhosted.orgpackages58d6af41d9a4ed46736b8380adf593f7221b5e7948a2e82181edef93d33d76d2streamlink-7.2.0.tar.gz"
+  sha256 "daeac158657420b7d2859e8f4bb17f50499a9a14b3700d53729d3e4e4d426fef"
   license "BSD-2-Clause"
   head "https:github.comstreamlinkstreamlink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b1ad4746681f246342a6506119807d1ce88c34c398dc0c82742e3fe0e0c3fd7e"
-    sha256 cellar: :any,                 arm64_sonoma:  "45546b52f42ad8ffbf7f4f4f44dae2942850630804be7b440b9c2d162a68ec11"
-    sha256 cellar: :any,                 arm64_ventura: "0f4f19dda0c6ba9f09b53fe75df00b90bb803f68defaae2d101dbdb9ebc1117c"
-    sha256 cellar: :any,                 sonoma:        "b596477f736f1a1adef465e633a28cea62a99696e22a508d0fc8c86a592478b2"
-    sha256 cellar: :any,                 ventura:       "e48a6ab955b2e1df11c5bf6ebdac5d17bcad411315df8c1870ba126f30603a03"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eeea029972f566bb03dd2c81c793b2cd86c9c9ffd164ba2d1b144e2d64e0d35f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5279ba000847f13334694f79888eae902cc96ce00ef4aae74745982b20a31a0"
+    sha256 cellar: :any,                 arm64_sequoia: "1ba792acde6ad06cf6c59b61e75e30123f40c1055db8538b6e30411bb93955db"
+    sha256 cellar: :any,                 arm64_sonoma:  "a21ee67442532451564a63a60f72101af9732072b6eb4f838e77f2b9a686c5f7"
+    sha256 cellar: :any,                 arm64_ventura: "bfb315eea422147661836298c5444a3a15de5e10ace43c919b163b1f5aa487de"
+    sha256 cellar: :any,                 sonoma:        "e1ed1aa32d185369dc358f2abc911cc45e1d0f118e3b858392b7a56fa120c5b2"
+    sha256 cellar: :any,                 ventura:       "109b9f214f7301caf043df433562d163f06ec69cf5a8e6bcb9514d65eacd5aff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a19b60588f8288349fd9164b8028a09210f35d523afdffdbd1deaa46b743d8e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b324813321641b21e723202c05402bac0f89f6ea063098157b529a2b56c087e"
   end
 
   depends_on "certifi"
@@ -30,8 +30,8 @@ class Streamlink < Formula
   end
 
   resource "attrs" do
-    url "https:files.pythonhosted.orgpackages497cfdf464bcc51d23881d110abd74b512a42b3d5d376a55a831b44c603ae17fattrs-25.1.0.tar.gz"
-    sha256 "1c97078a80c814273a76b2a298a932eb681c87415c11dee0a6921de7f1b02c3e"
+    url "https:files.pythonhosted.orgpackages5ab01367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24attrs-25.3.0.tar.gz"
+    sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"
   end
 
   resource "charset-normalizer" do
@@ -70,8 +70,8 @@ class Streamlink < Formula
   end
 
   resource "pycryptodome" do
-    url "https:files.pythonhosted.orgpackages135213b9db4a913eee948152a079fe58d035bd3d1a519584155da8e786f767e6pycryptodome-3.21.0.tar.gz"
-    sha256 "f7787e0d469bdae763b876174cf2e6c0f7be79808af26b1da96f1a64bcf47297"
+    url "https:files.pythonhosted.orgpackages44e6099310419df5ada522ff34ffc2f1a48a11b37fc6a76f51a6854c182dbd3epycryptodome-3.22.0.tar.gz"
+    sha256 "fd7ab568b3ad7b77c908d7c3f7e167ec5a8f035c64ff74f10d47a4edd043d723"
   end
 
   resource "pysocks" do
@@ -100,8 +100,8 @@ class Streamlink < Formula
   end
 
   resource "trio-websocket" do
-    url "https:files.pythonhosted.orgpackagesdd36abad2385853077424a11b818d9fd8350d249d9e31d583cb9c11cd4c85edatrio-websocket-0.11.1.tar.gz"
-    sha256 "18c11793647703c158b1f6e62de638acada927344d534e3c7628eedcb746839f"
+    url "https:files.pythonhosted.orgpackagesd13c8b4358e81f2f2cfe71b66a267f023a91db20a817b9425dd964873796980atrio_websocket-0.12.2.tar.gz"
+    sha256 "22c72c436f3d1e264d0910a3951934798dcc5b00ae56fc4ee079d46c7cf20fae"
   end
 
   resource "urllib3" do

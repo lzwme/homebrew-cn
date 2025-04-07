@@ -5,6 +5,7 @@ class Convox < Formula
   sha256 "8959ccff21f2d8fc57a042cca09634ee84a786801d914406f1046d3bdbc014a7"
   license "Apache-2.0"
   version_scheme 1
+  head "https:github.comconvoxconvox.git", branch: "master"
 
   livecheck do
     url :stable

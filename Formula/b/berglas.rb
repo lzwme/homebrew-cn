@@ -4,6 +4,7 @@ class Berglas < Formula
   url "https:github.comGoogleCloudPlatformberglasarchiverefstagsv2.0.7.tar.gz"
   sha256 "2051c357f672ddbfafc10f4189e81f15bed849f141452737cd4d9adf72d58503"
   license "Apache-2.0"
+  head "https:github.comGoogleCloudPlatformberglas.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "beb81e6cde2715d940c8a4e45c227f4567b911dd1e9761da30898a59202c7823"

@@ -4,6 +4,7 @@ class CoreosCt < Formula
   url "https:github.comflatcarcontainer-linux-config-transpilerarchiverefstagsv0.9.4.tar.gz"
   sha256 "c173ced842a6d178000f9bf01b26e9a8c296b1256ab713834f18d3f0883c4263"
   license "Apache-2.0"
+  head "https:github.comflatcarcontainer-linux-config-transpiler.git", branch: "flatcar-master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d7d99702fcc4911d60fec259d493be5b357097f417690bf799329dc35ac5415c"

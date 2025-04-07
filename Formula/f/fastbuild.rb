@@ -14,6 +14,10 @@ class Fastbuild < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b9b481314df6fd3ea74a31f910d386ac6f569562b9996ea860e0d8d0f05a69b"
   end
 
+  on_linux do
+    depends_on arch: :x86_64 # no bootstrap for arm64 Linux
+  end
+
   resource "bootstrap-fastbuild" do
     on_macos do
       url "https:fastbuild.orgdownloadsv1.13FASTBuild-OSX-x64%2BARM-v1.13.zip"

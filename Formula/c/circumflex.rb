@@ -4,6 +4,7 @@ class Circumflex < Formula
   url "https:github.combensadehcircumflexarchiverefstags3.8.tar.gz"
   sha256 "1041d27ef87a6fb123740d6423cd3fd66ced0ccf43d834c8d421aad3c8e8c96b"
   license "AGPL-3.0-only"
+  head "https:github.combensadehcircumflex.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7703a8fe49c3a13299c37b9bd75f42674a245a866148a0d71d0b050be0e5b441"

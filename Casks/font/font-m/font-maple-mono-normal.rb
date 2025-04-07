@@ -2,9 +2,10 @@ cask "font-maple-mono-normal" do
   version "7.0"
   sha256 "bcbe9f47010fd8648e441ace1af120480f9fc63ad9c989a96cd7ae20ca55bd83"
 
-  url "https:github.comsubframe7536Maple-fontreleasesdownloadv#{version}MapleMonoNormal-TTF.zip"
+  url "https:github.comsubframe7536Maple-fontreleasesdownloadv#{version}MapleMonoNormal-TTF.zip",
+      verified: "github.comsubframe7536Maple-font"
   name "Maple Mono Normal"
-  homepage "https:github.comsubframe7536Maple-font"
+  homepage "https:font.subf.deven"
 
   livecheck do
     cask "font-maple-mono"

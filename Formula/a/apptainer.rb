@@ -4,6 +4,7 @@ class Apptainer < Formula
   url "https:github.comapptainerapptainerreleasesdownloadv1.4.0apptainer-1.4.0.tar.gz"
   sha256 "204cded54046547cb3eb4c7874bdf45892fedc58b0d104195c59d2972cba51d3"
   license "BSD-3-Clause"
+  head "https:github.comapptainerapptainer.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, x86_64_linux: "ec8f93b5d4c7f8d46594ea260334d59130a0c8bd68b2ca64950599fdc90088d8"

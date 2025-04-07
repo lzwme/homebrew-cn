@@ -17,6 +17,7 @@ class Flint < Formula
     sha256 cellar: :any,                 arm64_ventura: "8f6311ab790eb9d0de362a7fa648cef527f0f70b415cfb03874cddb4f5cc3f45"
     sha256 cellar: :any,                 sonoma:        "f78a8b4f5b0ff5fc9161239acf9d103b07dc2ab59a59cac8f0c25576892f9a42"
     sha256 cellar: :any,                 ventura:       "d25eb9965d322ab870062cc56e89fc13681ade1e36c6f611788bf8d90d32b2fa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "daa13f6bf91f9ae87934c0e2b2ceec695793919fe14201f063850b09b9446768"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d247954807d7b273e126f655b68a5c1146f2888ad7e99b7b2df214f3a5ea0534"
   end
 
@@ -26,11 +27,12 @@ class Flint < Formula
     depends_on "autoconf" => :build
     depends_on "automake" => :build
     depends_on "libtool" => :build
-    uses_from_macos "m4" => :build
   end
 
   depends_on "gmp"
   depends_on "mpfr"
+
+  uses_from_macos "m4" => :build
 
   def install
     # to build against NTL

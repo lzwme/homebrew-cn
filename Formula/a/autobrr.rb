@@ -4,6 +4,7 @@ class Autobrr < Formula
   url "https:github.comautobrrautobrrarchiverefstagsv1.60.0.tar.gz"
   sha256 "7915aa4d7fd9b4fe596cb7d284c3b13d9b8a068c7f87caa53ff2c8b47f2f7c59"
   license "GPL-2.0-or-later"
+  head "https:github.comautobrrautobrr.git", branch: "develop"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3134312adcd96d3c1fda60d0bec563d9192ea89f865c9bd4db5c88b03a50684b"

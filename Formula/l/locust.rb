@@ -3,18 +3,18 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/a2/9e/09ee87dc12b240248731080bfd460c7d384aadb3171f6d03a4e7314cd0e1/locust-2.33.2.tar.gz"
-  sha256 "e626ed0156f36cec94c3c6b030fc91046469e7e2f5c2e91a99aab0f28b84977e"
+  url "https://files.pythonhosted.org/packages/b0/c9/8e3ce7467a92376a1b16996f14d8d009f9b2c0c111c22e478bc07f1e3b24/locust-2.34.0.tar.gz"
+  sha256 "8761a60b1ee7af0606fb0d5ce4cbee7c8c1d2dcc1cb17215c8c994799c5f1ac6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a72914e8b1573fc8def768beca442466be8e09381e77eb661931a5a85ba6c4a7"
-    sha256 cellar: :any,                 arm64_sonoma:  "baa49a772acc8cf4ea54d3fa13714ff3bf09266e3600b8c553d8719cf386d1af"
-    sha256 cellar: :any,                 arm64_ventura: "fa258c8795ad4cee2a625ead2b19eab084ccbce10b7fd6dd389e628114253324"
-    sha256 cellar: :any,                 sonoma:        "6b2e92a132fcb543918f1b3df7c82062ad2b4c355de2b4058ed2699adfafc1fe"
-    sha256 cellar: :any,                 ventura:       "eff99bcc51093de16a970b28c395b006eee3461c20c67f02426184c6070cb3bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "94d5b717dc57998f6e477fbad446cf408a6644481bb97794b8669464cf97f4b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "132021348a665c027e9a9bdd6010711712b6562f1b595fbfddda5e91aa721ffb"
+    sha256 cellar: :any,                 arm64_sequoia: "9093a29ea52eb4b6857a98b67d1381567e8fb38c1ca397613d64d80ba818e920"
+    sha256 cellar: :any,                 arm64_sonoma:  "449f79193ccd4689836bac14cbc64a879633d9763bd3616a3af9fd7d14e6b2b3"
+    sha256 cellar: :any,                 arm64_ventura: "e8d6e20316415122e1aa6be51002a764c8c579c73aab207a31af43db569cdcad"
+    sha256 cellar: :any,                 sonoma:        "1ad031284a36a63a48177854ac3ca7f369bb8f6c62d2a58a09da41d881ffc776"
+    sha256 cellar: :any,                 ventura:       "bbb1660f8235f886f9ead5bceedbcbd41ac56f73278c7059b2383125b5063f26"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b761411bf16097108e8036501d8fc24728b1140fe0bc4f178e8490abd3654a8a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e980ec07c1ae012afe9ca46e0d528322782fdcbda4d2be7fdd8f9b86bf112af0"
   end
 
   depends_on "cmake" => :build # for pyzmq
@@ -109,8 +109,8 @@ class Locust < Formula
   end
 
   resource "pyzmq" do
-    url "https://files.pythonhosted.org/packages/3a/ed/c3876f3b3e8beba336214ce44e1efa1792dd537027cef24192ac2b077d7c/pyzmq-26.3.0.tar.gz"
-    sha256 "f1cd68b8236faab78138a8fc703f7ca0ad431b17a3fcac696358600d4e6243b3"
+    url "https://files.pythonhosted.org/packages/b1/11/b9213d25230ac18a71b39b3723494e57adebe36e066397b961657b3b41c1/pyzmq-26.4.0.tar.gz"
+    sha256 "4bd13f85f80962f91a651a7356fe0472791a5f7a92f227822b5acf44795c626d"
   end
 
   resource "requests" do
@@ -119,8 +119,8 @@ class Locust < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/32/d2/7b171caf085ba0d40d8391f54e1c75a1cda9255f542becf84575cfd8a732/setuptools-76.0.0.tar.gz"
-    sha256 "43b4ee60e10b0d0ee98ad11918e114c70701bc6051662a9a675a0496c1a158f4"
+    url "https://files.pythonhosted.org/packages/a9/5a/0db4da3bc908df06e5efae42b44e75c81dd52716e10192ff36d0c1c8e379/setuptools-78.1.0.tar.gz"
+    sha256 "18fd474d4a82a5f83dac888df697af65afa82dec7323d09c3e37d1f14288da54"
   end
 
   resource "urllib3" do

@@ -4,6 +4,7 @@ class ContainerDiff < Formula
   url "https:github.comGoogleContainerToolscontainer-diffarchiverefstagsv0.19.0.tar.gz"
   sha256 "ba369effbe0d9f556cbcdadd5882eeb6346a105c11e5f07ffccb7e834cadefe6"
   license "Apache-2.0"
+  head "https:github.comGoogleContainerToolscontainer-diff.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c2898b404cdcdb47d75ad4069400f5d2d3d05ae2f75a94992c85ba0cb413a050"

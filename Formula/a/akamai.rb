@@ -4,6 +4,7 @@ class Akamai < Formula
   url "https:github.comakamaicliarchiverefstagsv2.0.0.tar.gz"
   sha256 "f9657d51f971ef6f65a6dd8f2f7791d78afd7e1065989ceb552f1701f5434927"
   license "Apache-2.0"
+  head "https:github.comakamaicli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6df8514c31f1cfffea1999be868bbe8169a8c39330c50b17ad5346a2c36eb137"

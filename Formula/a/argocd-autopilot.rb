@@ -5,6 +5,7 @@ class ArgocdAutopilot < Formula
       tag:      "v0.4.19",
       revision: "5219caa2c688061b88ea5eee0aef9f97e3f62f25"
   license "Apache-2.0"
+  head "https:github.comargoproj-labsargocd-autopilot.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8f1cb49d25c8f73c078698833d5462a9162ce5233ce3795cf951b1e800976e9"

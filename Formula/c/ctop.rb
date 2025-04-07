@@ -5,6 +5,7 @@ class Ctop < Formula
       tag:      "v0.7.7",
       revision: "11a1cb10f416b4ca5e36c22c1acc2d11dbb24fb4"
   license "MIT"
+  head "https:github.combcicenctop.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "cd09dd7c11239dd436500639b817a7c935a16033630cfc78b5f6a3acbb763089"

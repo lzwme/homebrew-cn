@@ -4,6 +4,7 @@ class Flowpipe < Formula
   url "https:github.comturbotflowpipearchiverefstagsv1.1.0.tar.gz"
   sha256 "7eaf7d993b4672be9ae9db69678d4b263e80d7524ac486ebe52048b03af2a6bc"
   license "AGPL-3.0-only"
+  head "https:github.comturbotflowpipe.git", branch: "develop"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's

@@ -4,6 +4,7 @@ class Dolt < Formula
   url "https:github.comdolthubdoltarchiverefstagsv1.51.1.tar.gz"
   sha256 "3f30a601f379dab357a697e4bd78b1a31a5f127d66c452f75b2e071c40636568"
   license "Apache-2.0"
+  head "https:github.comdolthubdolt.git", branch: "main"
 
   livecheck do
     url :stable

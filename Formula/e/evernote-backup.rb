@@ -3,37 +3,30 @@ class EvernoteBackup < Formula
 
   desc "Backup & export all Evernote notes and notebooks"
   homepage "https:github.comvzhd1701evernote-backup"
-  url "https:files.pythonhosted.orgpackages81046da56e51723acf47fa7c9148b80caef1be590ce82e5c1394e3faaff9d345evernote_backup-1.9.3.tar.gz"
-  sha256 "5989ab363f8e225486cd7097545073260e52f1459a912ddd415779f0e0538c5f"
+  url "https:files.pythonhosted.orgpackagesb0cdb9bdf3f4d15f027a1095ea857517a403153c0bacfcc89356f6bd8d9eaa9fevernote_backup-1.9.4.tar.gz"
+  sha256 "e7bd75c530b4b42ffa26ec46b635253e0bb7ad588eb23cfa99b3f2503a2e1da2"
   license "MIT"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cbfbfc4853d141dd6e4769453b6abfcbfe34f2b184fabc8f68cab747db60f06b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cbfbfc4853d141dd6e4769453b6abfcbfe34f2b184fabc8f68cab747db60f06b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cbfbfc4853d141dd6e4769453b6abfcbfe34f2b184fabc8f68cab747db60f06b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6458836cdbf16f7f9b62a57ea73b5826a9064c1a93e7ab59853162f0f8eb5f56"
-    sha256 cellar: :any_skip_relocation, ventura:       "6458836cdbf16f7f9b62a57ea73b5826a9064c1a93e7ab59853162f0f8eb5f56"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ee69d8ec4d36262cca92a6fbe26bc2bb8b0e7e08b4e68ff5b67857163100352"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bcb18553fcb60393e31b3bf6987214dd106af6fb72e6b080fc6050b5b2f4f69"
+    sha256 cellar: :any_skip_relocation, all: "07f004b4c9d40bd634e6d6e3e049c0840fcddfd18fe396b2457be233a469958e"
   end
 
   depends_on "certifi"
   depends_on "python@3.13"
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
-    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
+    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
+    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
+    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
   end
 
   resource "click-option-group" do
-    url "https:files.pythonhosted.orgpackagese7b891054601a2e05fd9060cb1baf56be5b24145817b059e078669e1099529c7click-option-group-0.5.6.tar.gz"
-    sha256 "97d06703873518cc5038509443742b25069a3c7562d1ea72ff08bfadde1ce777"
+    url "https:files.pythonhosted.orgpackagesb99f1f917934da4e07ae7715a982347e3c2179556d8a58d1108c5da3e8f09c76click_option_group-0.5.7.tar.gz"
+    sha256 "8dc780be038712fc12c9fecb3db4fe49e0d0723f9c171d7cda85c20369be693c"
   end
 
   resource "evernote3" do
@@ -41,31 +34,14 @@ class EvernoteBackup < Formula
     sha256 "e7914bb7cefb30e0ea509e82e1f176670359a154e30006f5160a0bcfd936cfd0"
   end
 
-  resource "httplib2" do
-    url "https:files.pythonhosted.orgpackages3dad2371116b22d616c194aa25ec410c9c6c37f23599dcd590502b74db197584httplib2-0.22.0.tar.gz"
-    sha256 "d7a10bc5ef5ab08322488bde8c726eeee5c8618723fdb399597ec58f3d82df81"
-  end
-
   resource "idna" do
     url "https:files.pythonhosted.orgpackagesf1707703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7didna-3.10.tar.gz"
     sha256 "12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9"
   end
 
-  # oauth2 added as an extra package until next release:
-  # https:github.comvzhd1701evernote-backupissues77
-  resource "oauth2" do
-    url "https:files.pythonhosted.orgpackages64198b9066e94088e8d06d649e10319349bfca961e87768a525aba4a2627c986oauth2-1.9.0.post1.tar.gz"
-    sha256 "c006a85e7c60107c7cc6da1b184b5c719f6dd7202098196dfa6e55df669b59bf"
-  end
-
   resource "oauthlib" do
     url "https:files.pythonhosted.orgpackages6dfafbf4001037904031639e6bfbfc02badfc7e12f137a8afa254df6c4c8a670oauthlib-3.2.2.tar.gz"
     sha256 "9859c40929662bec5d64f34d01c99e093149682a3f38915dc0655d5a633dd918"
-  end
-
-  resource "pyparsing" do
-    url "https:files.pythonhosted.orgpackages830813f3bce01b2061f2bbd582c9df82723de943784cf719a35ac886c652043apyparsing-3.1.4.tar.gz"
-    sha256 "f86ec8d1a83f11977c9a6ea7598e8c27fc5cddfa5b07ea2241edbbde1d7bc032"
   end
 
   resource "requests" do
@@ -74,19 +50,13 @@ class EvernoteBackup < Formula
   end
 
   resource "requests-oauthlib" do
-    url "https:files.pythonhosted.orgpackages42f205f29bc3913aea15eb670be136045bf5c5bbf4b99ecb839da9b422bb2c85requests-oauthlib-2.0.0.tar.gz"
-    sha256 "b3dffaebd884d8cd778494369603a9e7b58d29111bf6b41bdc2dcd87203af4e9"
-  end
-
-  # setuptools needed for oauth2
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
-    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
+    url "https:files.pythonhosted.orgpackages9552531ef197b426646f26b53815a7d2a67cb7a331ef098bb276db26a68ac49frequests-oauthlib-1.3.1.tar.gz"
+    sha256 "75beac4a47881eeb94d5ea5d6ad31ef88856affe2332b9aafb52c6452ccf0d7a"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https:files.pythonhosted.orgpackagesaa63e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66urllib3-2.3.0.tar.gz"
+    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
   end
 
   resource "xmltodict" do
@@ -94,21 +64,17 @@ class EvernoteBackup < Formula
     sha256 "341595a488e3e01a85a9d8911d8912fd922ede5fecc4dce437eb4b6c8d037e56"
   end
 
-  # remove this patch in next release:
-  # https:github.comvzhd1701evernote-backupissues77
-  patch do
-    url "https:github.comHomebrewformula-patchescommitae02b930cd5abca86e964daa6327e01507e53c2f.patch?full_index=1"
-    sha256 "31d6e082902ba4ef6749b3d6d88facb57828d20a0f51324c316b338bbe83dbaf"
-  end
-
   def install
+    # The source doesn't have a valid SOURCE_DATE_EPOCH, so here we set default.
+    ENV["SOURCE_DATE_EPOCH"] = "1451574000"
+
     virtualenv_install_with_resources
 
     generate_completions_from_executable(bin"evernote-backup", shells: [:fish, :zsh], shell_parameter_format: :click)
   end
 
   test do
-    output = shell_output("#{bin}evernote-backup init-db -u test -p test --oauth 2>&1", 1)
+    output = shell_output("#{bin}evernote-backup init-db 2>&1", 1)
     assert_match "Logging in to Evernote...", output
     assert_match "OAuth requires user input!", output
 

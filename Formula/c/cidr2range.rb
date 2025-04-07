@@ -4,6 +4,7 @@ class Cidr2range < Formula
   url "https:github.comipinfocliarchiverefstagscidr2range-1.2.0.tar.gz"
   sha256 "54af7600dc8c775f28d8fdc9debd86154e9293f07eb73f7372931d9c94744c81"
   license "Apache-2.0"
+  head "https:github.comipinfocli.git", branch: "master"
 
   livecheck do
     url :stable

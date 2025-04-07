@@ -5,6 +5,7 @@ class Argo < Formula
       tag:      "v3.6.5",
       revision: "9e532061c064d1205610b1932a0fb3c4dc053421"
   license "Apache-2.0"
+  head "https:github.comargoprojargo-workflows.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "93ab4990bd29cf65b0d566f3920f38933759a04ea8007b0940c3bc53ca6ee819"

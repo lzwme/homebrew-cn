@@ -4,6 +4,7 @@ class Delve < Formula
   url "https:github.comgo-delvedelvearchiverefstagsv1.24.1.tar.gz"
   sha256 "1bc657e7e429c4917b6cae562356bf6da6cebcd4fde35f236e8174743d9e1eb8"
   license "MIT"
+  head "https:github.comgo-delvedelve.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6417c41adda25dcf9e5cc7bc5ea743f025576dda244ca3435b4893143ba8a751"

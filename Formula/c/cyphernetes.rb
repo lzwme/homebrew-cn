@@ -4,6 +4,7 @@ class Cyphernetes < Formula
   url "https:github.comAvitalTamircyphernetesarchiverefstagsv0.17.0.tar.gz"
   sha256 "07458595e60f01f764bf4a98b7fdd45d934064efac12b68f4f1d2d0c9ad43bd2"
   license "Apache-2.0"
+  head "https:github.comAvitalTamircyphernetes.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d16a46528dbd86c54386cdbc4bc235e6c6cce92c6167e02ef45972357df49a77"

@@ -4,6 +4,7 @@ class Boring < Formula
   url "https:github.comalebeckboringarchiverefstags0.11.2.tar.gz"
   sha256 "d583878608549fcefa4fbe469d37a2e839c4d69a4167bc6a1a8babb31d594c98"
   license "MIT"
+  head "https:github.comalebeckboring.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c5129cfdcd553feb66d99dea071355a2da7780b791484138fd6266941456046"

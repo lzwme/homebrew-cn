@@ -4,6 +4,7 @@ class Cointop < Formula
   url "https:github.comcointop-shcointoparchiverefstagsv1.6.10.tar.gz"
   sha256 "18da0d25288deec7156ddd1d6923960968ab4adcdc917f85726b97d555d9b1b7"
   license "Apache-2.0"
+  head "https:github.comcointop-shcointop.git", branch: "master"
 
   bottle do
     rebuild 1

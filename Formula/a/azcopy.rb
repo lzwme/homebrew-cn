@@ -4,6 +4,7 @@ class Azcopy < Formula
   url "https:github.comAzureazure-storage-azcopyarchiverefstagsv10.28.1.tar.gz"
   sha256 "b7b8f45e3f74a77d7317be2e06e067beaa71c02d0a3f66b5267e24beb59b1e3d"
   license "MIT"
+  head "https:github.comAzureazure-storage-azcopy.git", branch: "main"
 
   livecheck do
     url :stable

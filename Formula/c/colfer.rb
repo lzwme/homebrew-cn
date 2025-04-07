@@ -4,6 +4,7 @@ class Colfer < Formula
   url "https:github.compascaldekloecolferarchiverefstagsv1.8.1.tar.gz"
   sha256 "5d184c8a311543f26c957fff6cad3908b9b0a4d31e454bb7f254b300d004dca7"
   license "CC0-1.0"
+  head "https:github.compascaldekloecolfer.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "46194d5083a34ae3e54cdd690610c1dd5fa385e2311cb1bd61e852029a53ec85"

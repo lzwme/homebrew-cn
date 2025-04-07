@@ -4,6 +4,7 @@ class Dvm < Formula
   url "https:github.comhowtowhaledvmarchiverefstags1.0.3.tar.gz"
   sha256 "148c2c48a17435ebcfff17476528522ec39c3f7a5be5866e723c245e0eb21098"
   license "Apache-2.0"
+  head "https:github.comhowtowhaledvm.git", branch: "main"
 
   bottle do
     rebuild 1

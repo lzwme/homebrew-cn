@@ -5,6 +5,7 @@ class Dnscontrol < Formula
   sha256 "ab1f228cdc87351754186000bcd9966f0bc1a1ccfc790aa61e9b103c944c4b3c"
   license "MIT"
   version_scheme 1
+  head "https:github.comStackExchangednscontrol.git", branch: "main"
 
   # Upstream appears to use GitHub releases to indicate that a version is
   # released and they sometimes re-tag versions before that point, so it's

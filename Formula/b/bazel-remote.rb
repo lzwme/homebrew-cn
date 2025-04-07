@@ -4,6 +4,7 @@ class BazelRemote < Formula
   url "https:github.combuchgrbazel-remotearchiverefstagsv2.5.0.tar.gz"
   sha256 "12048b619ea0eb8a1b7586755980fb2ee63763447ccba442f258c498de32dc83"
   license "Apache-2.0"
+  head "https:github.combuchgrbazel-remote.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6992f127e2ee220cd6ce7bc75fe4ccd8db681c758c31928d3c8bece4147bb371"

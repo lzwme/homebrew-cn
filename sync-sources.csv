@@ -165,6 +165,7 @@ Homebrew-homebrew-core/Formula/a/apache-brooklyn-cli.rb, Homebrew/homebrew-core,
 Homebrew-homebrew-core/Formula/a/apache-drill.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apache-flink-cdc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apache-flink.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/apache-flink@1.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apache-geode.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apache-opennlp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apache-pulsar.rb, Homebrew/homebrew-core, 1
@@ -884,6 +885,7 @@ Homebrew-homebrew-core/Formula/c/charmcraft.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/chars.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chart-testing.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chatblade.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/chdig.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cheapglk.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cheat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/check-jsonschema.rb, Homebrew/homebrew-core, 1
@@ -2293,6 +2295,7 @@ Homebrew-homebrew-core/Formula/g/gitea.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/github-keygen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/github-markdown-toc.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/github-mcp-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/github-release.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitlab-ci-local.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gitlab-gem.rb, Homebrew/homebrew-core, 1
@@ -4138,6 +4141,7 @@ Homebrew-homebrew-core/Formula/m/man-db.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/man2html.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mandoc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mandown.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mani.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/manifest-tool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/manim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/manticoresearch.rb, Homebrew/homebrew-core, 1
@@ -4514,7 +4518,7 @@ Homebrew-homebrew-core/Formula/m/mysql-client.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mysql-client@5.7.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql-client@8.0.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql-client@8.4.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/mysql-connector-c++.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mysql-connector-c++.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mysql-search-replace.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mysql.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mysql@5.7.rb, Homebrew/homebrew-core, 1
@@ -6345,7 +6349,6 @@ Homebrew-homebrew-core/Formula/s/ssllabs-scan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sslmate.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sslscan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sslsplit.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/sslyze.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/ssocr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/ssss.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sstp-client.rb, Homebrew/homebrew-core, 0
@@ -7609,7 +7612,6 @@ Homebrew-homebrew-cask/Casks/a/aegisub.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aerial.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aerial@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aether.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/a/aethersx2.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aexol-remote-mouse.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/affine.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/affinity-designer.rb, Homebrew/homebrew-cask, 0
@@ -13590,6 +13592,7 @@ Homebrew-homebrew-cask/Casks/r/replay.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/replaywebpage.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/replicator.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/replit.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/r/repo-prompt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/repoz.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/reqable.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/requestly.rb, Homebrew/homebrew-cask, 1

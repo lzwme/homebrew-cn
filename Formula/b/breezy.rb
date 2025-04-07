@@ -4,18 +4,18 @@ class Breezy < Formula
   desc "Version control system implemented in Python with multi-format support"
   # homepage "https:www.breezy-vcs.org" # https:bugs.launchpad.netbrz+bug2102204
   homepage "https:github.combreezy-teambreezy"
-  url "https:files.pythonhosted.orgpackages15b14d7fe9b01f072bd18bf4c6c4bf546b9f18ad4c3890f3f11fbb4d20f5bdbfbreezy-3.3.10.tar.gz"
-  sha256 "8e61aeb4800048d6f8fe43f701e510b571255387e64a999624caf46227b58cf7"
+  url "https:files.pythonhosted.orgpackagesd647165a8967701fb047b46879db7d2fa50b80fd3e7da22fb54ba131b823081cbreezy-3.3.11.tar.gz"
+  sha256 "11cb9c5e2fac2038630e863088f047eade4653cbf2b995f732322f6c143bbb3b"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "953f2c4518d03c78707d4d40798f2a55c4e0d0a63dd2803d5ebcb314441a3959"
-    sha256 cellar: :any,                 arm64_sonoma:  "8f32fda16f6689a564a25e036047c418595c3a06cdcf04e0b51074571e26f147"
-    sha256 cellar: :any,                 arm64_ventura: "ad0652299906d2bc0bd95b1acae8c3ca9e2b76d3746545f21c73ad9992931b99"
-    sha256 cellar: :any,                 sonoma:        "9e54ebb52a8576b7983f42d7f3ae27bbb430bb4e5b881e8bd3ba689b6ae01777"
-    sha256 cellar: :any,                 ventura:       "67d191b07ab1963849658db4d4c3f6a757b3ddf6522b1aae449e4ba89905e9d9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "955b1346b70d2ad83c1ce2ad175d5dea82fbaa6efbb434949318c8dcc41aafe4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be768800e32cba68921581984289cbbf3d247036196caa888fb994ff6bf9f312"
+    sha256 cellar: :any,                 arm64_sequoia: "18de1e46e39cc1fffd09957e8ad4e0540888ae0dced13ed845215e48df3be1d5"
+    sha256 cellar: :any,                 arm64_sonoma:  "90af0ddd36f5145ec511a2a7f08ffd0b401ac803239b68ccda6b077971c7e328"
+    sha256 cellar: :any,                 arm64_ventura: "91a651789c915c683c12e12de61c32acb1c3e717ab3c30b76cabad8ed3736c1e"
+    sha256 cellar: :any,                 sonoma:        "afd4d74f45956b3a17cd28d50ebb2d64dbbc88d0ef7ff71ef7f1235fc9bc45e1"
+    sha256 cellar: :any,                 ventura:       "f293746961a03e4daba8041edf6a69228b029f29289ab065e4cca1761e3b170b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "62669cf5622f684b2602b79687f4cd8b87581ea2f3dbb596609f669f1a0a7457"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87623611f90764d2b2d56f9aab33335efa3987776e606bf02c81f7315ea54bdb"
   end
 
   depends_on "gettext" => :build
@@ -56,14 +56,6 @@ class Breezy < Formula
   resource "urllib3" do
     url "https:files.pythonhosted.orgpackagesaa63e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66urllib3-2.3.0.tar.gz"
     sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
-  end
-
-  # Apply Ubuntu patch for timezone bug introduced from switching tzlocal to zoneinfo
-  # Issue ref: https:bugs.launchpad.netbrz+bug2103478
-  patch do
-    url "http:archive.ubuntu.comubuntupooluniversebbreezybreezy_3.3.10-1ubuntu1.debian.tar.xz"
-    sha256 "8ef13e6117dbcc0ad4022a3456306c043223d3380f47db62c8754d904bee99d2"
-    apply "patches20_fix_timezone_retrieval"
   end
 
   def install

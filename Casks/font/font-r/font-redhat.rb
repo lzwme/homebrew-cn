@@ -16,6 +16,8 @@ cask "font-redhat" do
   font "RedHatFont-#{version}fontsMonootfRedHatMono-Regular.otf"
   font "RedHatFont-#{version}fontsMonootfRedHatMono-SemiBold.otf"
   font "RedHatFont-#{version}fontsMonootfRedHatMono-SemiBoldItalic.otf"
+  font "RedHatFont-#{version}fontsMonovariableRedHatMonoVF-Italic.ttf"
+  font "RedHatFont-#{version}fontsMonovariableRedHatMonoVF.ttf"
   font "RedHatFont-#{version}fontsProportionalRedHatDisplayotfRedHatDisplay-Black.otf"
   font "RedHatFont-#{version}fontsProportionalRedHatDisplayotfRedHatDisplay-BlackItalic.otf"
   font "RedHatFont-#{version}fontsProportionalRedHatDisplayotfRedHatDisplay-Bold.otf"

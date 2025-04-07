@@ -4,6 +4,7 @@ class Countdown < Formula
   url "https:github.comantonmedvcountdownarchiverefstagsv1.5.0.tar.gz"
   sha256 "ac83ec593674a367913413796e8708680cbb6504c8f68ce17152d800a92ccf3b"
   license "MIT"
+  head "https:github.comantonmedvcountdown.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3ebc66b0ed891535e467c0061b52f350fae80fd2a3b77de1b1eb4eeb16580e39"

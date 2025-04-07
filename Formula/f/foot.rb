@@ -6,6 +6,7 @@ class Foot < Formula
   license "MIT"
 
   bottle do
+    sha256 arm64_linux:  "c06ce1e07f6a87550843708334ad11b6a868a3f433346f7d516732a6bc6319d0"
     sha256 x86_64_linux: "6d95e6265f1ff32c77f90b680c0e00b16b1cdc230a1c09f96b1807485c7cd938"
   end
 
@@ -15,6 +16,7 @@ class Foot < Formula
   depends_on "pkgconf" => :build
   depends_on "scdoc" => :build
   depends_on "tllist" => :build
+  depends_on "wayland-protocols" => :build
 
   depends_on "fcft"
   depends_on "fontconfig"

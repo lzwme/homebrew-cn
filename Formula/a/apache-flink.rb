@@ -1,10 +1,10 @@
 class ApacheFlink < Formula
   desc "Scalable batch and stream data processing"
   homepage "https:flink.apache.org"
-  url "https:www.apache.orgdyncloser.lua?path=flinkflink-1.20.1flink-1.20.1-bin-scala_2.12.tgz"
-  mirror "https:archive.apache.orgdistflinkflink-1.20.1flink-1.20.1-bin-scala_2.12.tgz"
-  version "1.20.1"
-  sha256 "5fc4551cd11aee83a9569392339c43fb32a60847db456e1cb4fa64c8daae0186"
+  url "https:www.apache.orgdyncloser.lua?path=flinkflink-2.0.0flink-2.0.0-bin-scala_2.12.tgz"
+  mirror "https:archive.apache.orgdistflinkflink-2.0.0flink-2.0.0-bin-scala_2.12.tgz"
+  version "2.0.0"
+  sha256 "04fe5be9841a10d30e0e1cd682ec4d015a86603f710f2f857c43c75beae97aad"
   license "Apache-2.0"
   head "https:github.comapacheflink.git", branch: "master"
 
@@ -14,14 +14,16 @@ class ApacheFlink < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "fbe2fb53fc2f5ac4138833d16af72d80e6ee2f8a3ba38b5fa41cf993d5710ea0"
+    sha256 cellar: :any_skip_relocation, all: "ab20a5e33f83e6aa4d71d256529eefcc5345def0b8c8a1a7de77b177511c1afc"
   end
 
-  depends_on "openjdk@11"
+  # Java 11, 17 (Default), and 21 are supported.
+  # See: https:github.comapacheflink?tab=readme-ov-file#building-apache-flink-from-source
+  depends_on "openjdk@21"
 
   def install
     inreplace "confconfig.yaml" do |s|
-      s.sub!(^env:, "env.java.home: #{Language::Java.java_home("11")}\n\\0")
+      s.sub!(^env:, "env.java.home: #{Language::Java.java_home("21")}\n\\0")
     end
     libexec.install Dir["*"]
     bin.write_exec_script libexec"binflink"

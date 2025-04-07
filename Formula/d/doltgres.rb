@@ -4,6 +4,7 @@ class Doltgres < Formula
   url "https:github.comdolthubdoltgresqlarchiverefstagsv0.18.0.tar.gz"
   sha256 "645d1b9147d53d1670f9061ee42b0ed55bc2f3aff11f97ad8d324d6240a6d0be"
   license "Apache-2.0"
+  head "https:github.comdolthubdoltgresql.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's

@@ -4,6 +4,7 @@ class Cli53 < Formula
   url "https:github.combarnybugcli53archiverefstags0.8.23.tar.gz"
   sha256 "89fca8cdc0894a5d8392432f5012b9b3634ed2b71d07c9b4ca4ca4b6a63c1f1a"
   license "MIT"
+  head "https:github.combarnybugcli53.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4eb5b6ce734d8d797030c2d39a6b4ff90a37abe1281c4d01b4a7d1b215b3e94"

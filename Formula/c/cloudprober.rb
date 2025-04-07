@@ -4,6 +4,7 @@ class Cloudprober < Formula
   url "https:github.comcloudprobercloudproberarchiverefstagsv0.13.9.tar.gz"
   sha256 "8234531b82c6e2a8886321ac8566bc87a2ee86c48b3545d57202561afd7a03d4"
   license "Apache-2.0"
+  head "https:github.comcloudprobercloudprober.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5cf5c6f6f12db734e7cd8024e74ab9d071e8a466dbb0fa7c3d4bad9727190c54"

@@ -1,10 +1,9 @@
 class IncludeWhatYouUse < Formula
   desc "Tool to analyze #includes in C and C++ source files"
   homepage "https:include-what-you-use.org"
-  url "https:include-what-you-use.orgdownloadsinclude-what-you-use-0.23.src.tar.gz"
-  sha256 "0004d5a9169717acf2f481248a5bfc15c7d55ddc2b9cdc7f461b06e93d49c73f"
+  url "https:include-what-you-use.orgdownloadsinclude-what-you-use-0.24.src.tar.gz"
+  sha256 "a23421ceff601d3ea215e8fa9292bfa8ca39eb1ac2098dbbedfc6cfe65541c10"
   license "NCSA"
-  revision 1
   head "https:github.cominclude-what-you-useinclude-what-you-use.git", branch: "master"
 
   # This omits the 3.3, 3.4, and 3.5 versions, which come from the older
@@ -17,17 +16,17 @@ class IncludeWhatYouUse < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "992bcae1adce340839e14895f8c1d5dfb4c1ea94e56f46569cc06f948f0a94a3"
-    sha256 arm64_sonoma:  "56c21a6df0e2f9ecdc34107f113b9bb147aa0ce14b5844c530e2696ac07595fe"
-    sha256 arm64_ventura: "bdeae088acac5f5966165c9bed6b9aebcab4c842b3ea19646ca19f42481dcb55"
-    sha256 sonoma:        "6d1301241c77a08b4a094bd19c26851c297beb69459b2a558fea91c110fe670b"
-    sha256 ventura:       "7dfc91b48fe2e032365f624e76ac99355eef024cb401f50a4bf51528ed8a8cbe"
-    sha256 arm64_linux:   "eb79e0e4ff90aa51e95c0941a7c5f418af98fe07e9e2c78da7588baac8f14e46"
-    sha256 x86_64_linux:  "8b548f76a68a04fd8dc112d139217fbe02ea8cf1aed7258c992b94769887f604"
+    sha256 arm64_sequoia: "30ac8c04e8b22d83d3840790810ad8d4e8fc42f2feef42a24da884e9ad0a33e8"
+    sha256 arm64_sonoma:  "e25d02bca2115e3249049bcfe411560870fa816ffc1a07f5fe18d5c8875367f1"
+    sha256 arm64_ventura: "79ef55188a1c7328c7f717a96661403093a724e3fd5031b5799315ff7247232b"
+    sha256 sonoma:        "b84eea76382134fcb83e0de05b86c7984d1743ca128fdb9967bd09e81699bf4b"
+    sha256 ventura:       "2cff619261a5c37db862623ac06cc058d83f171ee8b1298d4812a1e1106cbdc6"
+    sha256 arm64_linux:   "c098fa5be99719ee60989eba3970d9c242ba789a1bae7b105e8ed4adac757f68"
+    sha256 x86_64_linux:  "4a76b914ec9e0b003450f409db649fe518e16bce7d5e175158de6d345abb409c"
   end
 
   depends_on "cmake" => :build
-  depends_on "llvm@19"
+  depends_on "llvm"
   uses_from_macos "ncurses"
   uses_from_macos "zlib"
 

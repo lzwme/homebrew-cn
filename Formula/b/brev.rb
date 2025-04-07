@@ -4,6 +4,7 @@ class Brev < Formula
   url "https:github.combrevdevbrev-cliarchiverefstagsv0.6.308.tar.gz"
   sha256 "129badf38e3a66e9ca0f8f7f518ff9d8d06bb88a7a6a38c2acf7a729cd421ba7"
   license "MIT"
+  head "https:github.combrevdevbrev-cli.git", branch: "main"
 
   # Upstream appears to use GitHub releases to indicate that a version is
   # released (and some tagged versions don't end up as a release), so it's

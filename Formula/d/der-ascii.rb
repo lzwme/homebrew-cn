@@ -4,6 +4,7 @@ class DerAscii < Formula
   url "https:github.comgoogleder-asciiarchiverefstagsv0.6.0.tar.gz"
   sha256 "4e5e25b2d3ade22f0dc87264945ece6138858d3c6803143cf39c66183a74c9c5"
   license "Apache-2.0"
+  head "https:github.comgoogleder-ascii.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6b91afa38381784b23ba412b76988d4ee4c88be080ff8cc83e34925a9a5b8f3"

@@ -4,6 +4,7 @@ class Astro < Formula
   url "https:github.comastronomerastro-cliarchiverefstagsv1.33.2.tar.gz"
   sha256 "e65be029fd9de7b4d0c001620e431c209dfc9b49b410131de10f94d08eeae1c8"
   license "Apache-2.0"
+  head "https:github.comastronomerastro-cli.git", branch: "main"
 
   livecheck do
     url :stable

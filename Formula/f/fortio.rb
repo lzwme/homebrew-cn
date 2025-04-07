@@ -5,6 +5,7 @@ class Fortio < Formula
       tag:      "v1.69.0",
       revision: "86508a82494764583791991604c98579ae44abdc"
   license "Apache-2.0"
+  head "https:github.comfortiofortio.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead

@@ -22,6 +22,13 @@ class Gobo < Formula
   depends_on "eiffelstudio" => :test
 
   def install
+    # Workaround to support arm64 linux as upstream is based on an older Eiffel.
+    # EiffelStduio 23.09 was first open-source version to support arm64 linux.
+    if OS.linux? && Hardware::CPU.arm?
+      inreplace "tool/gec/bootstrap/gec8.c", 'GE_ms8("linux-x86-64", 12);', 'GE_ms8("linux-arm64", 11);'
+      inreplace "library/tools/src/support/et_ise_variables.e", ':= "linux-x86-64"', ':= "linux-arm64"'
+    end
+
     ENV["GOBO"] = buildpath
     ENV.prepend_path "PATH", buildpath/"bin"
     # The value for compiler needs to be an unversioned name, but it will still use
@@ -37,7 +44,7 @@ class Gobo < Formula
   end
 
   test do
-    (testpath/"build.eant").write <<~EOS
+    (testpath/"build.eant").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <project name="hello" default="help">
         <description>
@@ -53,8 +60,8 @@ class Gobo < Formula
           <set name="system_dir" value="#{testpath}" />
         </target>
       </project>
-    EOS
-    (testpath/"system.ecf").write <<~EOS
+    XML
+    (testpath/"system.ecf").write <<~XML
       <?xml version="1.0" encoding="UTF-8"?>
       <system
           xmlns="http://www.eiffel.com/developers/xml/configuration-1-20-0"
@@ -84,7 +91,7 @@ class Gobo < Formula
           </capability>
         </target>
       </system>
-    EOS
+    XML
     mkdir "src" do
       (testpath/"hello.e").write <<~EOS
         note

@@ -16,6 +16,7 @@ class Omniorb < Formula
     sha256 cellar: :any,                 arm64_ventura: "06e5fcc950f5bd8934951855e1acbca7a18777d99ca2073218ee13e888b24cac"
     sha256 cellar: :any,                 sonoma:        "93972edcb883ea5c63561cdda88284a7bd30ef24e83409a05c89fed5505c80fd"
     sha256 cellar: :any,                 ventura:       "0cb78910e40ccc4833f93ead6794755d5883be7b1f0ae27ff7af40626d880dcb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "04357c618eb071ed217ed53de4207e1df04180a0bb25db3c0887d7b0f0ddb9f0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "26ff4fff24e440de45145c7d5db68cd860036563a2dbeb1a0606fc4af2c45bc6"
   end
 
@@ -38,13 +39,18 @@ class Omniorb < Formula
   def install
     odie "bindings resource needs to be updated" if version != resource("bindings").version
 
+    # Help old config scripts identify arm64 linux
+    build_arg = []
+    build_arg << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
     ENV["PYTHON"] = python3 = which("python3.13")
     xy = Language::Python.major_minor_version python3
     inreplace "configure",
               /am_cv_python_version=`.*`/,
               "am_cv_python_version='#{xy}'"
-    args = ["--with-openssl"]
+    args = build_arg + ["--with-openssl"]
     args << "--enable-cfnetwork" if OS.mac?
+
     system "./configure", *args, *std_configure_args
     system "make"
     system "make", "install"
@@ -53,7 +59,7 @@ class Omniorb < Formula
       inreplace "configure",
                 /am_cv_python_version=`.*`/,
                 "am_cv_python_version='#{xy}'"
-      system "./configure", *std_configure_args
+      system "./configure", *build_arg, *std_configure_args
       ENV.deparallelize # omnipy.cc:392:44: error: use of undeclared identifier 'OMNIORBPY_DIST_DATE'
       system "make", "install"
     end

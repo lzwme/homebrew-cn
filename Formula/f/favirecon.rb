@@ -4,6 +4,7 @@ class Favirecon < Formula
   url "https:github.comedoardotttfavireconarchiverefstagsv0.1.3.tar.gz"
   sha256 "ab11b19ac7f78e41cd00df5832f4ead73a33a2e8e9a3f9c9099f596d3fe11405"
   license "MIT"
+  head "https:github.comedoardotttfavirecon.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "40f67c348cd32b50b8d6f27c933ff620153503030a5cc12eb38b50fa242de30e"

@@ -5,6 +5,7 @@ class AliyunCli < Formula
       tag:      "v3.0.265",
       revision: "47e0317d938638b1235499365c188bacfb3c96d5"
   license "Apache-2.0"
+  head "https:github.comaliyunaliyun-cli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "983f514e575f87bce7a378a89db35d16c62ee5f74d999e6166f706bea95495bb"

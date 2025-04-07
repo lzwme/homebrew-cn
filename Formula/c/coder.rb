@@ -4,6 +4,7 @@ class Coder < Formula
   url "https:github.comcodercoderarchiverefstagsv2.20.2.tar.gz"
   sha256 "70d38e72778c2d5fc9dc3f02dbd7b61b2548ccaaf8cf666165bb24546aae7479"
   license "AGPL-3.0-only"
+  head "https:github.comcodercoder.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead

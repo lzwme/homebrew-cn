@@ -4,6 +4,7 @@ class CiliumCli < Formula
   url "https:github.comciliumcilium-cliarchiverefstagsv0.18.3.tar.gz"
   sha256 "f66a555a1b55af77c61d9a38621316b84d574d9a621efd04bbbde410f99b4ae0"
   license "Apache-2.0"
+  head "https:github.comciliumcilium-cli.git", branch: "main"
 
   # Upstream uses GitHub releases to indicate that a version is released
   # (there's also sometimes a notable gap between when a version is tagged and

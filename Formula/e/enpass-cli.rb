@@ -4,6 +4,7 @@ class EnpassCli < Formula
   url "https:github.comhazcodenpass-cliarchiverefstagsv1.6.3.tar.gz"
   sha256 "59f1bb98017f3e5ea13d7b82fbf7f975e9da038b97f65375e0a44164ad66be7e"
   license "MIT"
+  head "https:github.comhazcodenpass-cli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "880a2e628a2ed9f9647e85584c5d4acdf8065514989622830cced35316df2c2b"
