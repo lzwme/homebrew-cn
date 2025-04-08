@@ -4,6 +4,7 @@ class Gomodifytags < Formula
   url "https:github.comfatihgomodifytagsarchiverefstagsv1.17.0.tar.gz"
   sha256 "a490786d80c962dc946b8f9804ffec596c1087dbf91b122b9b5903c03b6da6b9"
   license "BSD-3-Clause"
+  head "https:github.comfatihgomodifytags.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b7474e31cc4b65ec1f641c57a371aa13754a0044cfd63f611f29e594e799ea7f"

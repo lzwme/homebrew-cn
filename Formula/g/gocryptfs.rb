@@ -4,6 +4,7 @@ class Gocryptfs < Formula
   url "https:github.comrfjakobgocryptfsreleasesdownloadv2.5.3gocryptfs_v2.5.3_src-deps.tar.gz"
   sha256 "4b6d874b5383be5ed33d7ef7a5a6152d2b6a5d1965215a426ec855c043138ee2"
   license "MIT"
+  head "https:github.comrfjakobgocryptfs.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, x86_64_linux: "26a541331bfa8f7ba51f14f07c97efaec13171cc88515e217d559eafdccd132d"

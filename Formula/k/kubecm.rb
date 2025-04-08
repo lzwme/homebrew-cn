@@ -4,6 +4,7 @@ class Kubecm < Formula
   url "https:github.comsunny0826kubecmarchiverefstagsv0.32.3.tar.gz"
   sha256 "2dec9f042984d5d05e8f2ffa4d2c475ed9339d05ae71c95f9674e9e6aeb9ac1c"
   license "Apache-2.0"
+  head "https:github.comsunny0826kubecm.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "62464e84fe54de407a31be4c0c855a31a7abca48ea2070666652109771869401"

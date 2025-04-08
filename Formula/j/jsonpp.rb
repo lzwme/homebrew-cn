@@ -5,6 +5,7 @@ class Jsonpp < Formula
   sha256 "dde8ea9b270a79cd2b2f40824f89abc5270bd360122d87ab04b4361c0015d941"
   license "MIT"
   revision 1
+  head "https:github.comjmhodgesjsonpp.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fee3f13de44648f26cf9c2928e2c0908117749ebed6265109b099c1259d7af2c"

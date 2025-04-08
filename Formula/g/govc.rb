@@ -4,6 +4,7 @@ class Govc < Formula
   url "https:github.comvmwaregovmomiarchiverefstagsv0.49.0.tar.gz"
   sha256 "ef926a2ca5e34712b11c287c5458e1a3e2ad66d443b3dfef2dd7ffeaa4e267ec"
   license "Apache-2.0"
+  head "https:github.comvmwaregovmomi.git", branch: "main"
 
   # Upstream appears to use GitHub releases to indicate that a version is
   # released (and some tagged versions don't end up as a release), so it's

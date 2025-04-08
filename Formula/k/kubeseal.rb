@@ -5,6 +5,7 @@ class Kubeseal < Formula
       tag:      "v0.29.0",
       revision: "0d9cfaf99f23a344df8be86cf62d4aaad0d81be8"
   license "Apache-2.0"
+  head "https:github.combitnami-labssealed-secrets.git", branch: "main"
 
   livecheck do
     url :stable

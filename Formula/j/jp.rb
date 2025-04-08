@@ -4,6 +4,7 @@ class Jp < Formula
   url "https:github.comsgrebenjparchiverefstags1.1.12.tar.gz"
   sha256 "8c9cddf8b9d9bfae72be448218ca0e18d24e755d36c915842b12398fefdc7a64"
   license "MIT"
+  head "https:github.comsgrebenjp.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "01da1efbfd32691e7a34fa8e13108bfd327d52cc9b76a349a900df7f3a6411c6"

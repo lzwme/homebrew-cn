@@ -3,19 +3,19 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https:snakemake.readthedocs.io"
-  url "https:files.pythonhosted.orgpackages08c430e2da0434fc04a6f61c2c2ebc72be6ec5ce6f5b59f76f9a50c10db2f9bfsnakemake-9.1.7.tar.gz"
-  sha256 "3d9f2f93af7f5f427090df4528b0dd38f2139ccce0ce12e3236800f061e639e4"
+  url "https:files.pythonhosted.orgpackages9a2a3832a46d66490ee3fa5f69dadbb7280fcb0b51f1b46e5224032b27da9d3asnakemake-9.1.9.tar.gz"
+  sha256 "e0a20a280ea5756e5ad147bdb35c4b95f919d657d632294738e15b20a5c85333"
   license "MIT"
   head "https:github.comsnakemakesnakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0c6c3fe3b9fc9ca3977f617965b8abef5d81662b661fe6ee3c552857a5a4b18f"
-    sha256 cellar: :any,                 arm64_sonoma:  "edfd30762130691a2a088c502e189bb0d813f53ed872ba8ff6a902b726985ce5"
-    sha256 cellar: :any,                 arm64_ventura: "943bac4e2297121bf891bc1b6965b4864196e393bff9078619c3717fe3187bfc"
-    sha256 cellar: :any,                 sonoma:        "baa0b23cb2a08afc071439939341a08c7fa4f7b7325fec22b0855f6153135ce0"
-    sha256 cellar: :any,                 ventura:       "df7a49339783f554110945332ef25719f02d501d27f92b309b3fbc957f265a94"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "59b915ea43c8aae5136ca8345198abc21c0a34fdee22144a64b020172fb1336f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e61031ada3c95fcda709075981c69d41fa8fb06d8e26d9b010c9386c40726d23"
+    sha256 cellar: :any,                 arm64_sequoia: "2e50d3ac18ab9b7f1892e755ae9fbee48b13c7bdd93fe2f3f92fa696c58191f2"
+    sha256 cellar: :any,                 arm64_sonoma:  "d961a8c68547251d59a222fb7dabb08139c8a28763820cbca3669fd630f92a4e"
+    sha256 cellar: :any,                 arm64_ventura: "223125d5531c66439f9d683cd63176e05e0a1c72fa2cd1520296d32d8609132f"
+    sha256 cellar: :any,                 sonoma:        "3a3d9e68d4ba0faa1a40c343ef862dee105d936891cec3f564d6f4f5e57beedf"
+    sha256 cellar: :any,                 ventura:       "cb636cb7f8d79d9327d4eb3ad74fb674f6ec7e30b27347ac308d83cea880a261"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc776e75f86d7f6e6e4cb0803348a23283961f6f5d4cad7a27e0f971df44edf8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d6dd5ec26acb0b37823f4089fc7a55c9010eedff653f3f62ee33436a085b2c6"
   end
 
   depends_on "rust" => :build

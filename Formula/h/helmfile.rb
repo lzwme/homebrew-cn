@@ -5,6 +5,7 @@ class Helmfile < Formula
   sha256 "593c51bc5b4e422d347706e1785f3ac2044b437369703907fb120b6ca23d333d"
   license "MIT"
   version_scheme 1
+  head "https:github.comhelmfilehelmfile.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "78c1d4d01dcfaae0cd5f9d6324922da312e14623270520959788292e192f2b2f"

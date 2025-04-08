@@ -4,6 +4,7 @@ class GitHound < Formula
   url "https:github.comezekggit-houndarchiverefstags1.0.0.tar.gz"
   sha256 "32f79f470c790db068a23fd68e9763b3bedc84309a281b4c99b941d4f33f5763"
   license "MIT"
+  head "https:github.comezekggit-hound.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "373e91c48dda4ac71e85490387430dbfdb73d27d72a0964a33933e8e6d5f1753"

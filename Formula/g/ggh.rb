@@ -4,6 +4,7 @@ class Ggh < Formula
   url "https:github.combyawitzggharchiverefstagsv0.1.4.tar.gz"
   sha256 "4692a306792444950f45472a01dcef478a5780203d7aaf1b7b959065a190fe64"
   license "Apache-2.0"
+  head "https:github.combyawitzggh.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5c76f29ddf4e03a9c39f54fb7c71314821e88a59b631f9a50a0cff0e951ab79"

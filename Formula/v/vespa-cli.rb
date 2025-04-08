@@ -1,8 +1,8 @@
 class VespaCli < Formula
   desc "Command-line tool for Vespa.ai"
   homepage "https:vespa.ai"
-  url "https:github.comvespa-enginevespaarchiverefstagsv8.504.27.tar.gz"
-  sha256 "75dac429dab2f15c0439c51cabd0dc47d91455def499597614574ec83c30b1e1"
+  url "https:github.comvespa-enginevespaarchiverefstagsv8.507.34.tar.gz"
+  sha256 "7d6e5f90333babe7d6ca5edfb5496a88eec978f4bf9c0d3c557a60e1744f4c30"
   license "Apache-2.0"
 
   livecheck do
@@ -12,12 +12,12 @@ class VespaCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d86bdd99789e8002dd6d39ec80bf0b8a8df0b494c10373a0c9120a40f3e9d628"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "095d35dac7202781f2ccc83965609807a4ffffa0313d3e2d3cc357796a8b00a8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a5617a29675e6cc741a789b9d5f65116ae12859238cda14a7b4c0c0a7f3f8d5c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5cb3e0434f1afd231d9a0044830eccacff79d68b3f53dcd5fd73e55c77fcdbdd"
-    sha256 cellar: :any_skip_relocation, ventura:       "be014fd1d4e3c42d17647cff0c9ca812785fe8d3db5adfb2c63223019ac2c4db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3fc1d66060dac83cebbbc22d339cdb8f0c0edff6ef05e61c050084c53bffcb3c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1497a43c92fb8e94b10ff3e585fb7359effee77bddd427b4aebfb2366b07d17"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "563cb7626527f25921ac0d483b97dc3a58ad892ab514d8686f623d7f67bef71e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1f6752a3fd1e0948276527c83fd55548fb7e92e284d45a09399f1b4e5618eb04"
+    sha256 cellar: :any_skip_relocation, sonoma:        "26a5832dabbb5cc01fcb969a3fecd8f4b031b493f7891161fa06766f522a4966"
+    sha256 cellar: :any_skip_relocation, ventura:       "3dc9ba4ddef97c8c16c794ae908eb4eb0f2b4d9c24e7b458bd6cb64a654e4b3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ab1ceb5d2448f42c4ae7c9ce473c748b3c5c3f167080eec901ba38d7dbfa876"
   end
 
   depends_on "go" => :build

@@ -4,6 +4,7 @@ class Gitleaks < Formula
   url "https:github.comgitleaksgitleaksarchiverefstagsv8.24.2.tar.gz"
   sha256 "b6fd2641657de6349c7c5d36c658f6ba79305cfc5c0614a5fd5232c699a0753f"
   license "MIT"
+  head "https:github.comgitleaksgitleaks.git", branch: "master"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's

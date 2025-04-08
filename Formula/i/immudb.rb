@@ -4,6 +4,7 @@ class Immudb < Formula
   url "https:github.comcodenotaryimmudbarchiverefstagsv1.9.6.tar.gz"
   sha256 "23ffc0db0f09a76b5fbeb4ac99288eb710bb76328a62eebfd5b3c496a333b06f"
   license "Apache-2.0"
+  head "https:github.comcodenotaryimmudb.git", branch: "master"
 
   livecheck do
     url :stable

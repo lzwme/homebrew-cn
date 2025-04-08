@@ -4,6 +4,7 @@ class Hermit < Formula
   url "https:github.comcashapphermitarchiverefstagsv0.44.5.tar.gz"
   sha256 "cf5def9512ba8bda98a58a530688b1c9a730ee759ed50802bdc689608543888a"
   license "Apache-2.0"
+  head "https:github.comcashapphermit.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae2fa718b9b90ab184e43ff65d656ba9c03f1948a3932f0d5957b1e6c2d87753"

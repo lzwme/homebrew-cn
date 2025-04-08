@@ -4,6 +4,7 @@ class Keploy < Formula
   url "https:github.comkeploykeployarchiverefstagsv2.4.17.tar.gz"
   sha256 "3fad08cec0ae7ea8dec1f5a2cc791b2367bcbed5d7612ce1290620c96b8c8db3"
   license "Apache-2.0"
+  head "https:github.comkeploykeploy.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a86b4823c98dac43922626a082c0281c05ba6230fed121d97f2560dbdd6b4ba2"

@@ -4,6 +4,7 @@ class Gauth < Formula
   url "https:github.compcarriergautharchiverefstagsv1.5.0.tar.gz"
   sha256 "5c98287f5c209b9f02ec62ede4abd4117aa3ca738fbcb4153a6ec1e966f492a8"
   license "ISC"
+  head "https:github.compcarriergauth.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d91ac9029a1df98f1c2a3b5318f364c4b826c3f267e8d420fa389b5fc536dd1"

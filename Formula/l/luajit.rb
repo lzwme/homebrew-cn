@@ -10,12 +10,12 @@ class Luajit < Formula
   # Get the latest commit with:
   #   `git ls-remote --heads https:github.comLuaJITLuaJIT.git v2.1`
   # This is a rolling release model so take care not to ignore CI failures that may be regressions.
-  url "https:github.comLuaJITLuaJITarchive538a82133ad6fddfd0ca64de167c4aca3bc1a2da.tar.gz"
+  url "https:github.comLuaJITLuaJITarchivee0a7ea8a924d8137e6950b97c3e36f17264f6c79.tar.gz"
   # Use the version scheme `2.1.timestamp` where `timestamp` is the Unix timestamp of the
   # latest commit at the time of updating.
   # `brew livecheck luajit` will generate the correct version for you automatically.
-  version "2.1.1741730670"
-  sha256 "7acbc36be8f21072422eb9a5e5fc468d0eaa55bec1b70260d651e845684621e2"
+  version "2.1.1744014795"
+  sha256 "7e31b2151dc66d627d232d7e07acb89b9c5f2742d7e2dd74542fa41ccaf4b413"
   license "MIT"
   head "https:luajit.orggitluajit.git", branch: "v2.1"
 
@@ -28,13 +28,13 @@ class Luajit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6ac0c13524f1c5103eed39d96d3a75a22ff59cb6b0205bb40d9b67f14cefcca4"
-    sha256 cellar: :any,                 arm64_sonoma:  "ef22dc9b5a13d134e01cf39d76dd4abf7da9fdd65f775c37c0bc020a90b61897"
-    sha256 cellar: :any,                 arm64_ventura: "a19289abc9268f5b2a6f17c34a46199e11f451077ea94ffe8703ed66fb229817"
-    sha256 cellar: :any,                 sonoma:        "dacf1decb1045fece6c00f12a67f1be61b4f558a653ea7fac7cec4c37a2614fa"
-    sha256 cellar: :any,                 ventura:       "d97c40701ed08998d0fa271b565728332dce7cdf967eeecc4a4093237b602b18"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "13b5efed154e1f1a041ffbea793ede2c5702fadf82ddd65d3552bef36f005319"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0edd5f7c04fbdbcb264f8aaa228e86139351823c7681f07d2fb4c273e57dc184"
+    sha256 cellar: :any,                 arm64_sequoia: "d444e412255f569449990cf06196f5c4f215c264bab2c8ce91d4e323320c94e2"
+    sha256 cellar: :any,                 arm64_sonoma:  "1b360ed487719f23ea6d8a7c2bfd63e0b5050137f82a2d372ae8048fc13ece23"
+    sha256 cellar: :any,                 arm64_ventura: "1c92f0f0df3eaeaa01d31c88c407db22b3691e2647c66d1b2efad33d31146845"
+    sha256 cellar: :any,                 sonoma:        "a4e30b4b6f96ee2910ce42a7abb8bb048163d91ed45c1a03bc4667304730d544"
+    sha256 cellar: :any,                 ventura:       "7fb03a057ce66ee8df34be0de100afd830a5688fac127cf5c5e65d65784a27ab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef8c90c0dce5b7bef06a10682da821706eb8cd6793659bdc87fcb9461606f035"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b4ee37701d4c1b8b918c7852bd4cdffa9aee01e4102389168324f64d297dbce"
   end
 
   def install

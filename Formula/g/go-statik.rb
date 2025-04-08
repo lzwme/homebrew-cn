@@ -4,6 +4,7 @@ class GoStatik < Formula
   url "https:github.comrakyllstatikarchiverefstagsv0.1.7.tar.gz"
   sha256 "cd05f409e63674f29cff0e496bd33eee70229985243cce486107085fab747082"
   license "Apache-2.0"
+  head "https:github.comrakyllstatik.git", branch: "master"
 
   bottle do
     rebuild 1

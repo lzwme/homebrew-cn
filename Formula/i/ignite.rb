@@ -4,6 +4,7 @@ class Ignite < Formula
   url "https:github.comignitecliarchiverefstagsv28.8.2.tar.gz"
   sha256 "8cdf632cf04b03d761b4b50fb472106302d25f84798575271c949f53facb21ba"
   license "Apache-2.0"
+  head "https:github.comignitecli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "726541567057e4ede541f47b85fb8cb1de41f218d8a24b327e17b842d5eb3065"

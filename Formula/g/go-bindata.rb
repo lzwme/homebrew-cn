@@ -4,6 +4,7 @@ class GoBindata < Formula
   url "https:github.comkevinburkego-bindataarchiverefstagsv4.0.2.tar.gz"
   sha256 "ac343c4b316b234b8ea354d86eb3c7ded2da4fe8f40d45f60391d289c66cd950"
   license "BSD-2-Clause"
+  head "https:github.comkevinburkego-bindata.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1f977a8bca6e460e124842d67240dbc2001b9fc0fd5fbb4399918609d17503dd"

@@ -1,18 +1,18 @@
 class Noir < Formula
   desc "Attack surface detector that identifies endpoints by static analysis"
   homepage "https:owasp.orgwww-project-noir"
-  url "https:github.comowasp-noirnoirarchiverefstagsv0.20.1.tar.gz"
-  sha256 "c06a5bbd80ac30b5ba279312875f0256cec5e9b9bdc7aa96023b3aa4a9baac64"
+  url "https:github.comowasp-noirnoirarchiverefstagsv0.21.0.tar.gz"
+  sha256 "6ec985a2e2ae3a37ed8f3126ec938ae74beecbaba80ab8e61d449ac65b08b8a2"
   license "MIT"
   head "https:github.comowasp-noirnoir.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "24edfa56dd6f9dba5d484fb4b578c68c4280d57af928f98f28d50599cd8ff4a2"
-    sha256 cellar: :any,                 arm64_sonoma:  "ef140edee3db2a24e182b9e5b30a7bc4e24c00fbe9a844a7230f64f43e5b2d2b"
-    sha256 cellar: :any,                 arm64_ventura: "449a3520f4d399b40665bf5e2378ba009271921b09bf2701d27641bc94ce9462"
-    sha256 cellar: :any,                 sonoma:        "776ce55d17dbfd2303166808c3b122d71e2ee414d2c1cf4702d53021f20be0b1"
-    sha256 cellar: :any,                 ventura:       "f2863664d4fad75710a8079e737f588eb4ccdf98b8940fe3cd1e59c9e2e6c461"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56e142b5a072d75a7c1eeddf3abcc25de1c140f67be32282ff72f13efc01f355"
+    sha256 cellar: :any,                 arm64_sequoia: "81663c60a678b01581fd89a6223cc7e54cd8d48133f5e8ed731ff837de1f580e"
+    sha256 cellar: :any,                 arm64_sonoma:  "f69291a56d689be070db28f9e51562bac79ec90f4474081e79a8502248cbeab9"
+    sha256 cellar: :any,                 arm64_ventura: "c06bb74abc335932be17b35a7a1ac029831311e91e1bf1e819a51e958fe96a27"
+    sha256 cellar: :any,                 sonoma:        "bdc56a249561db5dc7b757b530c8983a1a8262cebf6988c5c3fe54ed2249e181"
+    sha256 cellar: :any,                 ventura:       "3bb07f4bfcce918e0a34d4aadf5fccfcc45a1c1bbd7a1c79f3341daa579ef1e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9df939a35f28fa76a58224f3189fa645ab7372acd118118e97f64b531a5fa0b4"
   end
 
   depends_on "crystal" => :build

@@ -4,6 +4,7 @@ class GrafanaAlloy < Formula
   url "https:github.comgrafanaalloyarchiverefstagsv1.7.5.tar.gz"
   sha256 "dee15a31d40a26f1ef44fb20d296784219ad45338cc1186634014e9da6a139dd"
   license "Apache-2.0"
+  head "https:github.comgrafanaalloy.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ecdf0c03518aae1d4401d509ee2f64aecf9a231b009a7d6b573fe5caa44701d8"

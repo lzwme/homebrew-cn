@@ -4,6 +4,7 @@ class Gnmic < Formula
   url "https:github.comopenconfiggnmicarchiverefstagsv0.41.0.tar.gz"
   sha256 "79db2cdd7dfe55edefdb7dcdd1c4403fdc5cb9378385f23456d16a740cc6ec24"
   license "Apache-2.0"
+  head "https:github.comopenconfiggnmic.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f1d0cbcd8a25bb3cddc1880de6cb9851c5f5ed23e08670f39ea478f49e5077d0"

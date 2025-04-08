@@ -4,6 +4,7 @@ class GitTown < Formula
   url "https:github.comgit-towngit-townarchiverefstagsv18.3.0.tar.gz"
   sha256 "b2adafca9d0d97f711fa1fcdbcfa6e3bb64255938a80a9c8d70ecbdcf892051e"
   license "MIT"
+  head "https:github.comgit-towngit-town.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9a52d88e427f873b811be855284616b64e6a52a5c4f66d611e7d10f7a22ca1cd"

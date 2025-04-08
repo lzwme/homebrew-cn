@@ -1,8 +1,8 @@
 class VulkanLoader < Formula
   desc "Vulkan ICD Loader"
   homepage "https:github.comKhronosGroupVulkan-Loader"
-  url "https:github.comKhronosGroupVulkan-Loaderarchiverefstagsv1.4.311.tar.gz"
-  sha256 "bcebd281753384a2b019a633e6a81dca0e75414f0c8ec49f56edfcda8020ec20"
+  url "https:github.comKhronosGroupVulkan-Loaderarchiverefstagsv1.4.312.tar.gz"
+  sha256 "aff1a255bc32e6500e6a435d0c331fde268b823da3888f549af97ee226fa9530"
   license "Apache-2.0"
   head "https:github.comKhronosGroupVulkan-Loader.git", branch: "main"
 
@@ -12,13 +12,14 @@ class VulkanLoader < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "9f37c926807cbb20f411245c875b6130e5975f21ac58619529894726f911c8ef"
-    sha256 arm64_sonoma:  "c7c2f4233a9ea4723a1c4dd439105fd6c17265d25adcd0f2631a636f73da1c51"
-    sha256 arm64_ventura: "799cf2b5262b7230bee356127dd409e98d9250890a753d533f2bbd162f86bc31"
-    sha256 sonoma:        "f70ad361257e259d577cc57e1e245b0773df8d3fb8a7f31fa53433f5267e13d7"
-    sha256 ventura:       "d6931de3ac96f85c6374f9322cce35af70e4808577ccbd12f57bf046a760f2f0"
-    sha256 arm64_linux:   "b36c588ab4587a9e61fa1654fdf6f987db79735edcc753e1fd57390a6c147c16"
-    sha256 x86_64_linux:  "89c639bab5d525f935d89ffe667903a9132adebcbec9c399848cf78a0561d7b0"
+    sha256 arm64_sequoia: "64f4dc9ef0e72a0ae9291398a24216ff710dba8efca44e1736e6728b962b70ba"
+    sha256 arm64_sonoma:  "19080b88ec4476c97db7618a6b2e5ecb17263ad8a5243f13933794ecf1a59f4d"
+    sha256 arm64_ventura: "0d72465ce25eeee629466df786a504b0651d6c551429f7a74a2046e1d187c28e"
+    sha256 sequoia:       "eae3a6295c26bf754e6e25d5ed11d30436a48cc2b432c616530d584fb6121a66"
+    sha256 sonoma:        "062ec15575ae670f8269452ef7b5bf5ef615bf8a30358f1688f4c5c2968fe7ff"
+    sha256 ventura:       "fcbeee954083e9cab018a9cbe0fe6e47c1d8a7ea454ac6cfa58d7ba7f047cb0b"
+    sha256 arm64_linux:   "1d09862de20b01d521c39f21a66d1f2e7a01ef2e528b727e220f39e482764bf3"
+    sha256 x86_64_linux:  "31684c497f63be6f43a5c9f2ee9e1788e0bb69cbd3e04a9293426d8ba1aa419e"
   end
 
   depends_on "cmake" => :build

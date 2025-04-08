@@ -4,6 +4,7 @@ class Goyacc < Formula
   url "https://gitlab.com/cznic/goyacc/-/archive/v1.0.3/goyacc-v1.0.3.tar.bz2"
   sha256 "a999dd35759dfa35cc2cff70b840db0cd41443ef7aff7b090ac170731e6a6c6c"
   license "BSD-3-Clause"
+  head "https://gitlab.com/cznic/goyacc.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b225608148f3a4a021cf2c97288a15a0896f98772c89f2908c8abb359ffb0138"

@@ -4,6 +4,7 @@ class Hubble < Formula
   url "https:github.comciliumhubblearchiverefstagsv1.17.2.tar.gz"
   sha256 "3adf90df00eb93bc92a2ae086aa2ade496e1d839d5aabf85136f05845df4f508"
   license "Apache-2.0"
+  head "https:github.comciliumhubble.git", branch: "main"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead

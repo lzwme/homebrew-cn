@@ -4,6 +4,7 @@ class Gofumpt < Formula
   url "https:github.commvdangofumptarchiverefstagsv0.7.0.tar.gz"
   sha256 "d994902b3cb7eeacb23ccb949185dd036a65b9fc316a11a8842f7aa60f5ef4ba"
   license "BSD-3-Clause"
+  head "https:github.commvdangofumpt.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ce9d1a180a706c889da51616f5d0a94b84c685cb4ea69abee95d91985984d684"

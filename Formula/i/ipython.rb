@@ -3,19 +3,19 @@ class Ipython < Formula
 
   desc "Interactive computing in Python"
   homepage "https:ipython.org"
-  url "https:files.pythonhosted.orgpackages7dce012a0f40ca58a966f87a6e894d6828e2817657cbdf522b02a5d3a87d92ceipython-9.0.2.tar.gz"
-  sha256 "ec7b479e3e5656bf4f58c652c120494df1820f4f28f522fb7ca09e213c2aab52"
+  url "https:files.pythonhosted.orgpackages709a6b8984bedc990f3a4aa40ba8436dea27e23d26a64527de7c2e5e12e76841ipython-9.1.0.tar.gz"
+  sha256 "a47e13a5e05e02f3b8e1e7a0f9db372199fe8c3763532fe7a1e0379e4e135f16"
   license "BSD-3-Clause"
   head "https:github.comipythonipython.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "623d6b3cc99c59835bf8a46f46406ac12351b4686fd8bee6d69d4508c19c5e0c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "623d6b3cc99c59835bf8a46f46406ac12351b4686fd8bee6d69d4508c19c5e0c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "623d6b3cc99c59835bf8a46f46406ac12351b4686fd8bee6d69d4508c19c5e0c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "444454a9b10c7788ef4103bdb222b74c4754ed3cacdb548c5fb785a1fd195149"
-    sha256 cellar: :any_skip_relocation, ventura:       "444454a9b10c7788ef4103bdb222b74c4754ed3cacdb548c5fb785a1fd195149"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "867e0153d1c00ae3e7b0f872c5cb0856f54e8653b8f551532d8c50f57c6d550f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "623d6b3cc99c59835bf8a46f46406ac12351b4686fd8bee6d69d4508c19c5e0c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea72c26c35a4000e8620af615bf77580a8f4f22db0e0be2187c9c403f4bc22ac"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ea72c26c35a4000e8620af615bf77580a8f4f22db0e0be2187c9c403f4bc22ac"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ea72c26c35a4000e8620af615bf77580a8f4f22db0e0be2187c9c403f4bc22ac"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7f57e8cf0d881a9cc49b8f44d429461476b61c7da87fc56e8e049d03224218df"
+    sha256 cellar: :any_skip_relocation, ventura:       "7f57e8cf0d881a9cc49b8f44d429461476b61c7da87fc56e8e049d03224218df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea72c26c35a4000e8620af615bf77580a8f4f22db0e0be2187c9c403f4bc22ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea72c26c35a4000e8620af615bf77580a8f4f22db0e0be2187c9c403f4bc22ac"
   end
 
   depends_on "python@3.13"

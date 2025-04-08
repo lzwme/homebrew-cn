@@ -4,6 +4,7 @@ class GolangMigrate < Formula
   url "https:github.comgolang-migratemigratearchiverefstagsv4.18.2.tar.gz"
   sha256 "a7bd48cd45dc2546f23f01750486fbba5b70b723500a881bb56221b11533a6f0"
   license "MIT"
+  head "https:github.comgolang-migratemigrate.git", branch: "master"
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check the "latest" release instead

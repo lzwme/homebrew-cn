@@ -12,6 +12,7 @@ class LibpgQuery < Formula
     sha256 cellar: :any,                 arm64_ventura: "44a8cf078ad22fdaa7da6047c51b50c86a23a48d6684b9c6ab65acbb8644f177"
     sha256 cellar: :any,                 sonoma:        "ef50a40781c354d2e287d203f19231c4939a2383124279358654f1ee8b7db72e"
     sha256 cellar: :any,                 ventura:       "6c5f8d26151c65de69c5993c8555494099fb51cb75cb65a4d1ec44736f7df6a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "495b2d5eccb24c22efee380c66c2f095f160398fbbd29778f0bc33a759f39680"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fb0b113d95c58f12d9a4f19a997f50ad2500970f44e592a801c4d756d7d9c31"
   end
 

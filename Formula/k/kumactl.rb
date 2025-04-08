@@ -4,6 +4,7 @@ class Kumactl < Formula
   url "https:github.comkumahqkumaarchiverefstags2.10.1.tar.gz"
   sha256 "03f49ee94353fd80c997929be338ebe0abeaad60286710fffa9d996e03ef1484"
   license "Apache-2.0"
+  head "https:github.comkumahqkuma.git", branch: "master"
 
   livecheck do
     url :stable

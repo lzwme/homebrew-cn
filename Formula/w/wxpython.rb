@@ -12,6 +12,7 @@ class Wxpython < Formula
     sha256 cellar: :any, arm64_ventura: "0ed00ec4bc814a48811cf50b94f57a0403742a6e2fbce997afa8b211fc5d93bf"
     sha256 cellar: :any, sonoma:        "1a8623673d7ac7aeccbbf323960534cb1abfe7cf6de10398a55e66a2d393d3b8"
     sha256 cellar: :any, ventura:       "3ba5be7b2eccb72980659e9d1f19919a044790076070bc8b7e1c41ac017dcb4d"
+    sha256               arm64_linux:   "001e2b71072a36273840533f084759ca7d34c8b9611b32ce0fe17c746f5e1851"
     sha256               x86_64_linux:  "c84fcddbb55c6ddc2152b2bae4c8ac70a70a0c11a0e110d30ea800209f0425a9"
   end
 
@@ -27,6 +28,12 @@ class Wxpython < Formula
   on_linux do
     depends_on "pkgconf" => :build
     depends_on "gtk+3"
+  end
+
+  # Backport increase of SIP ABI to fix build
+  patch do
+    url "https:github.comwxWidgetsPhoenixcommitde9aa4be5bb49adf82991c7582ea3c42ed505bf7.patch?full_index=1"
+    sha256 "bf752fa850459d963cf8a7678dd0463934888d9867a9ac80d58ca51d19cb9f93"
   end
 
   # build patch to build with doxygen 1.11.0+, remove in next release

@@ -4,6 +4,7 @@ class Gat < Formula
   url "https:github.comkoki-developgatarchiverefstagsv0.21.2.tar.gz"
   sha256 "17536538142780aa9cc32dec491778e2fcbf783848ea30cb5aac553ed8e75812"
   license "MIT"
+  head "https:github.comkoki-developgat.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "eec2eb7915040c64071f99805b89cf8f99a9ff6e2153cd7a1b76c950bf6d0255"

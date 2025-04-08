@@ -4,6 +4,7 @@ class Goctl < Formula
   url "https:github.comzeromicrogo-zeroarchiverefstagstoolsgoctlv1.8.2.tar.gz"
   sha256 "806ba8ddec6228c3b55ad1012ea6721eeb2f22d3e0e847b2b0cf5a51d8f6b9fb"
   license "MIT"
+  head "https:github.comzeromicrogo-zero.git", branch: "master"
 
   livecheck do
     url :stable

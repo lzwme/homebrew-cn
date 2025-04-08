@@ -1,18 +1,18 @@
 class Sslh < Formula
   desc "Forward connections based on first data packet sent by client"
   homepage "https:www.rutschle.nettechsslh.shtml"
-  url "https:www.rutschle.nettechsslhsslh-v2.1.4.tar.gz"
-  sha256 "c9d76a627839b5f779e21dd49c40762918f47b46197418b3715ec0c52e3c5cb7"
+  url "https:www.rutschle.nettechsslhsslh-v2.2.1.tar.gz"
+  sha256 "ae4d1a2969a9cc205a35247b4fcdb7f84886048fbe2d8b2ea41b0cadad92e48c"
   license all_of: ["GPL-2.0-or-later", "BSD-2-Clause"]
   head "https:github.comyrutschlesslh.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9ffce8f7acbb17eccb7b998789b299562f3fa8c3f74d08478657309b514b93a4"
-    sha256 cellar: :any,                 arm64_sonoma:  "e4f05c08d30f736361c1715449895516a8a3327d4f964a7fc3cb9a89bb1cdec4"
-    sha256 cellar: :any,                 arm64_ventura: "e4afb69a6efed5c7eab76e8df5e30fc2cb8c19e27d6f1d1409d0298f8fdafd53"
-    sha256 cellar: :any,                 sonoma:        "17a668ad78929b1ea207279c0f12d2c7be04e0a0e9d6aabc9e9a44c336691dbc"
-    sha256 cellar: :any,                 ventura:       "da63de34dec87066332f8cb6520ad897242ac4cfac09b851aab81ec43d393f18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "364c9146c23390ab94bd76339a2ff5d0ded405381379eb16e4a0dfe631a8c0e0"
+    sha256 cellar: :any,                 arm64_sequoia: "0f9562442cd5d0acc55c2513b8ae1ffe28aa3d556e52ae31ed0fc21d203b66ac"
+    sha256 cellar: :any,                 arm64_sonoma:  "42ab665062f4ac9f33fbdda827168fbb5aeb2f4ce9fea774559eaacb1255791d"
+    sha256 cellar: :any,                 arm64_ventura: "1ddb03eecabef2212779909aa7037e1f5852cc1f237b7154d3dd751b95d80481"
+    sha256 cellar: :any,                 sonoma:        "a6b4f18dc5fe234e21fdc7d9b8cd77a019878aa5cfb8c4dfeec5c1146637959f"
+    sha256 cellar: :any,                 ventura:       "3f4eb8a4c365db6e8b1b562e7024cb5bfdda80814d2b36b54cb501811630265d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e63b78ada3901687aff2e8f6bcc878e777364cb5b37951e47afb0d35627a8743"
   end
 
   depends_on "libconfig"

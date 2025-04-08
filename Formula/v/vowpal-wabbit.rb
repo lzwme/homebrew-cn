@@ -43,6 +43,7 @@ class VowpalWabbit < Formula
       -DVW_EIGEN_SYS_DEP=ON
       -DVW_SSE2NEON_SYS_DEP=ON
       -DVW_INSTALL=ON
+      -DVW_CXX_STANDARD=14
     ]
 
     # The project provides a Makefile, but it is a basic wrapper around cmake

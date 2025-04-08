@@ -4,6 +4,7 @@ class Krakend < Formula
   url "https:github.comkrakendiokrakend-cearchiverefstagsv2.9.3.tar.gz"
   sha256 "ab1b6bbf603c37751da320f9391afd25cef8570176debc6c760a0852c2dcc473"
   license "Apache-2.0"
+  head "https:github.comkrakendiokrakend-ce.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f41c6ce07bdc9abcbd0c09e7eb3732fc757d67875a1d8b20df4d81d5662254d"

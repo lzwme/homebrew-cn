@@ -4,6 +4,7 @@ class GopassJsonapi < Formula
   url "https:github.comgopasspwgopass-jsonapiarchiverefstagsv1.15.15.tar.gz"
   sha256 "edd71e029d8f23e23f8b3a2fa5cf805910ca023d3607ea7bc0a59355b21b40b8"
   license "MIT"
+  head "https:github.comgopasspwgopass-jsonapi.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed5097f32ddfab1e9a86dbf4f582750e0501c67556144723f652736828384872"

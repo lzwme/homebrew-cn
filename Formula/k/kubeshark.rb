@@ -4,6 +4,7 @@ class Kubeshark < Formula
   url "https:github.comkubesharkkubesharkarchiverefstagsv52.6.0.tar.gz"
   sha256 "5268a07c37abbba881c5342ebc66302206735e688f8463599ba3ec7ae79857f4"
   license "Apache-2.0"
+  head "https:github.comkubesharkkubeshark.git", branch: "master"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
   # labeled as "pre-release" on GitHub before the version is released, so it's

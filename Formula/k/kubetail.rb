@@ -1,9 +1,10 @@
 class Kubetail < Formula
   desc "Logging tool for Kubernetes with a real-time web dashboard"
   homepage "https:www.kubetail.com"
-  url "https:github.comkubetail-orgkubetailarchiverefstagscliv0.2.2.tar.gz"
-  sha256 "c31e3eb0e4ad67c1e490c071bdaadfec6c7927e235fa6c8b420d226232a1c887"
+  url "https:github.comkubetail-orgkubetailarchiverefstagscliv0.2.3.tar.gz"
+  sha256 "37bfad4ac16f9925e10ced138db88608697af91d8a3949f8ab31b03a109d22d8"
   license "Apache-2.0"
+  head "https:github.comkubetail-orgkubetail.git", branch: "main"
 
   livecheck do
     url :stable
@@ -11,12 +12,12 @@ class Kubetail < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e4fc544d512471725bd8cc4e297c3dedc18940b00c660573714bf993f14d869"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e3cfb4a215988f37f31d0d1d118c909dc4698186012b48d781f460da0820e5a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "46c88f0df76c5e9978ef966f6416b15db6da1e6e1c10e1b6846b9a2110df7edb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c50f2267a656115618b6e4ce819900937b592d88e0af8528e9d276039d874c36"
-    sha256 cellar: :any_skip_relocation, ventura:       "971424cac9a03e91f5535e0512e6c29ae838b89dbebcebb58ee888d3b5a4e520"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13bdc515c1649e036bb7390025acb9563960a67681059e59a493b54f8c59533d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24a5dbf84b0d91ebf1fd089f4ce8a0fa635645f77f506e28753ca23b53e388ab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b1ee7cc75153510cef7c5345d23ad4d5906a186b5e06dae68a44e1ed6e987c94"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7614a306a417cf996094fc6c3f9106695de05a00e48e4d9140f134c05626967f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5fb9e60d5790a43ab43171d02c108c67bc30f0894a3b3bc78611489e82464bdb"
+    sha256 cellar: :any_skip_relocation, ventura:       "2a9b87aaa0588e2f0b40241b034cc53ef578e7ac20ecd454a9c50f19001e00e1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5cb9d09c6062e525185482c060ada981f6a51462cea3efc9affb3f252e0889b7"
   end
 
   depends_on "go" => :build

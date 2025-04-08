@@ -4,6 +4,7 @@ class Jid < Formula
   url "https:github.comsimejijidarchiverefstagsv0.7.6.tar.gz"
   sha256 "0912050b3be3760804afaf7ecd6b42bfe79e7160066587fbc0afa5324b03fb48"
   license "MIT"
+  head "https:github.comsimejijid.git", branch: "master"
 
   bottle do
     rebuild 1

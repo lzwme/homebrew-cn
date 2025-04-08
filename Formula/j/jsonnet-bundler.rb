@@ -5,6 +5,7 @@ class JsonnetBundler < Formula
       tag:      "v0.6.0",
       revision: "ddded59c7066658f3d5abc7fcfc6be2220c92cad"
   license "Apache-2.0"
+  head "https:github.comjsonnet-bundlerjsonnet-bundler.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "68bb147a2c42552de0ad48ba06125c83402858c56650e29f266443cf9974e11a"

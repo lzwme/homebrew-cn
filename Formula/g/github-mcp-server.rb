@@ -1,18 +1,18 @@
 class GithubMcpServer < Formula
   desc "GitHub Model Context Protocol server for AI tools"
   homepage "https:github.comgithubgithub-mcp-server"
-  url "https:github.comgithubgithub-mcp-serverarchiverefstagsv0.1.0.tar.gz"
-  sha256 "c390bcf344802f8ac81c65e5fcb72b9c47dba4090cec1bb08698311e334d399b"
+  url "https:github.comgithubgithub-mcp-serverarchiverefstagsv0.1.1.tar.gz"
+  sha256 "626d0112467b1bfd76335f12f65a5b065ac09e441d7de48106667956f5a62f70"
   license "MIT"
   head "https:github.comgithubgithub-mcp-server.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b12e2c4b32871e8241c09948c1d0ce05a846c5fe9cafba7c0a40f7304b34a85d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b12e2c4b32871e8241c09948c1d0ce05a846c5fe9cafba7c0a40f7304b34a85d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b12e2c4b32871e8241c09948c1d0ce05a846c5fe9cafba7c0a40f7304b34a85d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7cd2b8a16a9e8999dbf8e81336b0d5fcaac2131751b37346552dabd8f45a0a05"
-    sha256 cellar: :any_skip_relocation, ventura:       "7cd2b8a16a9e8999dbf8e81336b0d5fcaac2131751b37346552dabd8f45a0a05"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d6ad198b094bfa987704270f64036fe3795cee439f863c97fc11c885d84c90f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "70ca5751cc22753d662de18c01d4b137220f3359ef7b8793f5aec851a2f44043"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70ca5751cc22753d662de18c01d4b137220f3359ef7b8793f5aec851a2f44043"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "70ca5751cc22753d662de18c01d4b137220f3359ef7b8793f5aec851a2f44043"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c2b3faa48e2d97e79cad328ab25afab4295906bb2c3d5956f992726a38cc5065"
+    sha256 cellar: :any_skip_relocation, ventura:       "c2b3faa48e2d97e79cad328ab25afab4295906bb2c3d5956f992726a38cc5065"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c9fcfb09efcf7ef3842d07d3cb34fdd132420659a4c436618652f5f2f8a282e"
   end
 
   depends_on "go" => :build

@@ -4,6 +4,7 @@ class Kubecfg < Formula
   url "https:github.comkubecfgkubecfgarchiverefstagsv0.36.0.tar.gz"
   sha256 "0f135465c512f8d5017f30f595669bed6a1c65b39b10178ede6989e15cbc84a9"
   license "Apache-2.0"
+  head "https:github.comkubecfgkubecfg.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d7373d5b92e6d7fa40d26f346278f9946d7ddf773c8312ca49b1e13d06a85df"

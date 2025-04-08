@@ -5,6 +5,7 @@ class KeepSorted < Formula
       tag:      "v0.6.0",
       revision: "df93c2722b6126556183749880f16a9beb664bb4"
   license "Apache-2.0"
+  head "https:github.comgooglekeep-sorted.git", branch: "main"
 
   bottle do
     rebuild 1

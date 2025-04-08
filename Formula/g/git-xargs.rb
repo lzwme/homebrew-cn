@@ -4,6 +4,7 @@ class GitXargs < Formula
   url "https:github.comgruntwork-iogit-xargsarchiverefstagsv0.1.16.tar.gz"
   sha256 "baf43133e9b361860982f2c13e6edbe193f825af864ea3fe81ec54464eda1857"
   license "Apache-2.0"
+  head "https:github.comgruntwork-iogit-xargs.git", branch: "master"
 
   livecheck do
     url :stable

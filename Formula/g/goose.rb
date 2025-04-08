@@ -4,6 +4,7 @@ class Goose < Formula
   url "https:github.compresslygoosearchiverefstagsv3.24.2.tar.gz"
   sha256 "1b0832f7648b04fdd69e28f4ade98b54acb4ebd8a403bde02375ef6919298261"
   license "MIT"
+  head "https:github.compresslygoose.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "72dd8b35daa4c4203c9af437e8545be1164d3ee21f3639fa01bf599b615686b1"

@@ -4,6 +4,7 @@ class Kubecolor < Formula
   url "https:github.comkubecolorkubecolorarchiverefstagsv0.5.0.tar.gz"
   sha256 "251b3e2e84bd3574a9c628961066c8b41c403de6ecfb83b7aebd0dd5d7018290"
   license "MIT"
+  head "https:github.comkubecolorkubecolor.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f5678518ea6e881bc07ccf1e2e1b5d51b40b8e058f092c3bd46adaa95e41e524"

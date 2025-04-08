@@ -4,6 +4,7 @@ class GoParquetTools < Formula
   url "https:github.comhangxieparquet-toolsarchiverefstagsv1.28.0.tar.gz"
   sha256 "a45c98b28e378708ff794fcf497b4b93403b2212543fa22991dec255fa9cae13"
   license "BSD-3-Clause"
+  head "https:github.comhangxieparquet-tools.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "41b0140e8286b188baaa8b9cc16339a6d97a97b95cdfa043aa61f79d8648234c"

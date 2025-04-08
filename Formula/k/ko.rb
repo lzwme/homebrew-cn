@@ -4,6 +4,7 @@ class Ko < Formula
   url "https:github.comko-buildkoarchiverefstagsv0.17.1.tar.gz"
   sha256 "cc45d71db67186022e0587d81fa50d82f0da05fac2723be1f188e5caf3655107"
   license "Apache-2.0"
+  head "https:github.comko-buildko.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "88d255b3923b6b3fc6253d94367a2a398d396759a1aaea943f6834a1645519c0"

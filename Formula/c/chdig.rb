@@ -12,6 +12,7 @@ class Chdig < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3557f765cf85fefaf43aa5e105046d1c6af9d8a02e4418d71aac39af0ba48cc7"
     sha256 cellar: :any_skip_relocation, sonoma:        "b37e7f6058d736a6bdc07cc101e566b558e50362989e6fc55ac516619023af6f"
     sha256 cellar: :any_skip_relocation, ventura:       "8b45e4939a1bc047185558281ff150015ea516db42f8bcbde87640f1bf2ac8e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e86bdd74308556e719d5fd1cbec7b7ee67bb9689cbd24a8de459be632f73de8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebb0df2a001498ca8993adcb52d37bfc26057dc9313a6d557cb53c87eae67593"
   end
 

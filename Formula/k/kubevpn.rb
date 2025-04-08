@@ -4,6 +4,7 @@ class Kubevpn < Formula
   url "https:github.comkubenetworkskubevpnarchiverefstagsv2.6.0.tar.gz"
   sha256 "68687bf51785f83de0efdd71881de087f8a148442926b8af6a4b364c067cd920"
   license "MIT"
+  head "https:github.comkubenetworkskubevpn.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a71538f08785a751178c832f87016f049507b15cbda2dd1eceb9ecdf33e72184"

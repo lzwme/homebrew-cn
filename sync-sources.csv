@@ -2045,6 +2045,7 @@ Homebrew-homebrew-core/Formula/f/fsw.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fswatch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ftgl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/ftnchek.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/ftxui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fuc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fuego-firestore.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fuego.rb, Homebrew/homebrew-core, 0
@@ -3326,7 +3327,7 @@ Homebrew-homebrew-core/Formula/l/lastpass-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lastz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/laszip.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/latex2html.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/l/latex2rtf.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/l/latex2rtf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/latexdiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/latexindent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/latexml.rb, Homebrew/homebrew-core, 1
@@ -4173,6 +4174,7 @@ Homebrew-homebrew-core/Formula/m/markdownlint-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/markdownlint-cli2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/marked.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/marksman.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/marmite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/marp-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/martin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mas.rb, Homebrew/homebrew-core, 1
@@ -7170,7 +7172,7 @@ Homebrew-homebrew-core/Formula/w/webpod.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/websocat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/websocketd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/websocketpp.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/w/webtorrent-cli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/w/webtorrent-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/weechat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/weggli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wego.rb, Homebrew/homebrew-core, 1
@@ -9071,6 +9073,7 @@ Homebrew-homebrew-cask/Casks/font/font-a/font-adinatha-tamil-brahmi.rb, Homebrew
 Homebrew-homebrew-cask/Casks/font/font-a/font-adlam-display.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-adobe-blank.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-advent-pro.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-a/font-adwaita.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-afacad-flux.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-afacad.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-african-sans.rb, Homebrew/homebrew-cask, 0

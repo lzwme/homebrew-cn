@@ -4,6 +4,7 @@ class GoCamo < Formula
   url "https:github.comcactusgo-camoarchiverefstagsv2.6.3.tar.gz"
   sha256 "c0620c8c23f6e4416bac1f419ee4aafac9b4dafa395e9ae5f26a913be57649ad"
   license "MIT"
+  head "https:github.comcactusgo-camo.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f47a6c34d6da6091631c53cc2abcc73bc1051c518e6242332ef1fce057df638b"

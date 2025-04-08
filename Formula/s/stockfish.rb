@@ -17,11 +17,22 @@ class Stockfish < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "817c688cfc9d4222e1d8b7b825eaef6050deeb047023454fbc0c883d946e3be3"
     sha256 cellar: :any_skip_relocation, sonoma:        "0747984f92b6ad9f16502e626b04f9acc22f5db93b15b23361f6afe430d719c3"
     sha256 cellar: :any_skip_relocation, ventura:       "5bdbb215c398e2eff9da2a249e81765b0ed403ff6ee75be84274aaf79b8728e2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "927330b6c83490eec6fbce9767fb3a48c9f18d9f2851084c8abe0d32940931c5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a9d4a3b90c9997b46ca4d7c70fbb0511c2922a51e8f6e9648cc876d0c296a3f"
   end
 
   def install
-    arch = Hardware::CPU.arm? ? "apple-silicon" : "x86-64-modern"
+    arch = if !build.bottle?
+      "native"
+    elsif Hardware::CPU.arm? && OS.mac?
+      "apple-silicon"
+    elsif Hardware::CPU.arm?
+      "armv8"
+    elsif OS.mac? && MacOS.version.requires_sse41?
+      "x86-64-sse41-popcnt"
+    else
+      "x86-64-ssse3"
+    end
 
     system "make", "-C", "src", "build", "ARCH=#{arch}"
     bin.install "srcstockfish"

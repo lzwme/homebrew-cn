@@ -4,6 +4,7 @@ class GitWho < Formula
   url "https:github.comsinclairtargetgit-whoarchiverefstagsv0.7.tar.gz"
   sha256 "457a31f9421053cec30c26305badc9288f1645f0ca46829e00c3b3574297ee59"
   license "MIT"
+  head "https:github.comsinclairtargetgit-who.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2573864e506810bb5cdf009de69ffec294ed93b19d9ae98dc71d88a88d32de8f"

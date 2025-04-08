@@ -4,6 +4,7 @@ class Gitsign < Formula
   url "https:github.comsigstoregitsignarchiverefstagsv0.12.0.tar.gz"
   sha256 "80a36439bbb01f4282792cd75257b52689e7eee9b0c6b9a635dfbff2958c9207"
   license "Apache-2.0"
+  head "https:github.comsigstoregitsign.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "21277de84b9ee9e32baf5f5317c924ba9c93184589e841adf750780b6372c9a3"

@@ -4,6 +4,7 @@ class Ibazel < Formula
   url "https:github.combazelbuildbazel-watcherarchiverefstagsv0.25.3.tar.gz"
   sha256 "064e313f2e2fa39ebd71a8f6b5eb44e7c832b713c0fc4077811d88830aa2e68e"
   license "Apache-2.0"
+  head "https:github.combazelbuildbazel-watcher.git", branch: "master"
 
   bottle do
     rebuild 1

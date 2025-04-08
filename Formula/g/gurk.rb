@@ -1,18 +1,18 @@
 class Gurk < Formula
   desc "Signal Messenger client for terminal"
   homepage "https:github.comboxdotgurk-rs"
-  url "https:github.comboxdotgurk-rsarchiverefstagsv0.7.0.tar.gz"
-  sha256 "55cdac0b67db51f6257d2f04d5513ed5c79bb70752dc219fb38b80ff73d9d346"
+  url "https:github.comboxdotgurk-rsarchiverefstagsv0.7.1.tar.gz"
+  sha256 "e86e6e0938439ac84af5b1f08a99810f0e632c60c63ba58e566181ffd2578874"
   license "AGPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a0f22641ac4619a14b67cc3525a188c481b728206c5afe3d14fb86102fddffc6"
-    sha256 cellar: :any,                 arm64_sonoma:  "80cdcd4bb559b73ff355bfdaec377afff1e8e66c659c0df7b2237653405dcd17"
-    sha256 cellar: :any,                 arm64_ventura: "ef02f99eddf9cb680723e2be2b42998d6a6949cdd4984ba6d4bf3a701d182859"
-    sha256 cellar: :any,                 sonoma:        "840559921333329b0a19caea7b57717237c541dad382b9114ebeafa8fbcd3a2b"
-    sha256 cellar: :any,                 ventura:       "a67d1cb1178949aa92872d657e367e26af2159b24767ea1e376ba28af023a847"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "33596d49e1f9d43d51b5dcdae8d2d6ad9427203a616d3bae2bd56c2b42cafa5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b57471c3e86661e6124f1e01954456f84eb65f03c1bdfe44f3fad11249a9694"
+    sha256 cellar: :any,                 arm64_sequoia: "f0cc3cef149a12b05ca5b52ca1ea0d888b5f65dd083e4b315f4b3a5a77829a3b"
+    sha256 cellar: :any,                 arm64_sonoma:  "8e156d730b5d988e6b33a2a783067c65010c2624eba23d7b3e28d3446300413f"
+    sha256 cellar: :any,                 arm64_ventura: "fe8c8e3fbff8fa370e82484f882e8455c122d439bf2a81cd68cca44f822db364"
+    sha256 cellar: :any,                 sonoma:        "7d6d5437c710ed6103022b2f61fdf0e88ee8096e206bd5d2e4411fe28fd50c26"
+    sha256 cellar: :any,                 ventura:       "a91f26706d7f12cab12b4ca8c532cb49c5327cc63e7ba3929a10a4dc1fcfd93b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7285b0beae708e057aed8f506b9eef76657e7a8739e25c390e877dff026ea45"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "699e7f4e25955cd8a7613da7bf1f3b07d345672d3b2dac7f8d466fca61f8909c"
   end
 
   depends_on "pkgconf" => :build

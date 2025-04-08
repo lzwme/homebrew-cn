@@ -4,6 +4,7 @@ class IpinfoCli < Formula
   url "https:github.comipinfocliarchiverefstagsipinfo-3.3.1.tar.gz"
   sha256 "b3acdfdfdebe64b34c7a1aa80de25fd7178a51105e588ad0d205870ca9d15cfb"
   license "Apache-2.0"
+  head "https:github.comipinfocli.git", branch: "master"
 
   livecheck do
     url :stable

@@ -4,6 +4,7 @@ class Kubespy < Formula
   url "https:github.compulumikubespyarchiverefstagsv0.6.3.tar.gz"
   sha256 "1975bf0a0aeb03e69c42ac626c16cd404610226cc5f50fab96d611d9eb6a6d29"
   license "Apache-2.0"
+  head "https:github.compulumikubespy.git", branch: "master"
 
   bottle do
     rebuild 1

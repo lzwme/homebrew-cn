@@ -4,6 +4,7 @@ class Ghorg < Formula
   url "https:github.comgabrie30ghorgarchiverefstagsv1.11.0.tar.gz"
   sha256 "04ea9d2137e5a2cbde46b7ce6519e46cce182436b0d91d45b813411407ac2991"
   license "Apache-2.0"
+  head "https:github.comgabrie30ghorg.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "55ec6c7e3d35a14c51438eff5bf7813f1fb2420de4ac58c58d32eddac1c9ca1d"

@@ -4,6 +4,7 @@ class Godap < Formula
   url "https:github.comMacmodgodaparchiverefstagsv2.10.4.tar.gz"
   sha256 "c0b8d4a8845566c7623a1615accd150df5c3c96769241b7c232e81348114a486"
   license "MIT"
+  head "https:github.comMacmodgodap.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a1d563287d626138860e7389d704220db87d7961f8db53bc3adcfbcc871caa5"

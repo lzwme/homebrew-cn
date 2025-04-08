@@ -4,6 +4,7 @@ class Jd < Formula
   url "https:github.comjosephburnettjdarchiverefstagsv2.2.2.tar.gz"
   sha256 "85abf994c1f11aa0c2d13db03b2f02cb458e987ceaaccf4200b10193dd2895af"
   license "MIT"
+  head "https:github.comjosephburnettjd.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "849464c157d6dc35010b3fb9532f619db68ea4394c45992311bbdb7d6f592764"

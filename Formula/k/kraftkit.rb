@@ -4,6 +4,7 @@ class Kraftkit < Formula
   url "https:github.comunikraftkraftkitarchiverefstagsv0.11.6.tar.gz"
   sha256 "7a0cd9b656c34ec801c8bef6716787292f7ab8eada15f6919002e2db267b0801"
   license "BSD-3-Clause"
+  head "https:github.comunikraftkraftkit.git", branch: "staging"
 
   livecheck do
     url :stable

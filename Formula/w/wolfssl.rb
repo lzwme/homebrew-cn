@@ -21,6 +21,7 @@ class Wolfssl < Formula
     sha256 cellar: :any,                 arm64_ventura: "49d9838fff32b81f23583f7786f3fffa71b075a8eeef272fb9403919fa29ba19"
     sha256 cellar: :any,                 sonoma:        "b45eb105ad94558596f602f16c144993d2c2a387a5f5d65c4c8fb217e9a41849"
     sha256 cellar: :any,                 ventura:       "e40361b9eda5db93e0027ecc80c3c272325238c2c2cbb3c48f69311271f6dac0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8676b397a445d0f7fd207544237cf9c89671c9b6b13853edf14c2ddfeb071011"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b3563b45e35cd04f63b626fa115d4a137e8e80ec4a3b08c31ed9da39aabb3a5"
   end
 
@@ -44,6 +45,9 @@ class Wolfssl < Formula
       --enable-all
       --enable-reproducible-build
     ]
+
+    # https:github.comwolfSSLwolfsslissues8148
+    args << "--disable-armasm" if OS.linux? && Hardware::CPU.arm?
 
     # Extra flag is stated as a needed for the Mac platform.
     # https:www.wolfssl.comdocswolfssl-manualch2

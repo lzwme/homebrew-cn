@@ -4,6 +4,7 @@ class GitCodereview < Formula
   url "https:github.comgolangreviewarchiverefstagsv1.14.0.tar.gz"
   sha256 "f5f368c4a83dc965d83d41d54ed13a18e27e2323acb652f50550976e78721f5e"
   license "BSD-3-Clause"
+  head "https:github.comgolangreview.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "db37e433af1e6733b4afa526443a8815b00c6ae100d56a205eb711c810af7e66"
