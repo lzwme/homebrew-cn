@@ -1,8 +1,8 @@
 class Buf < Formula
   desc "New way of working with Protocol Buffers"
   homepage "https:github.combufbuildbuf"
-  url "https:github.combufbuildbufarchiverefstagsv1.52.0.tar.gz"
-  sha256 "1cc28f42bf89b192c48342b3762026415a0f6c530b9cc1829710a829a24701d2"
+  url "https:github.combufbuildbufarchiverefstagsv1.52.1.tar.gz"
+  sha256 "08489aa993fe36ad5965381a3ff2848c8d4f3a4f76096f0fdc19355f77826253"
   license "Apache-2.0"
   head "https:github.combufbuildbuf.git", branch: "main"
 
@@ -15,12 +15,12 @@ class Buf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "52a5bbcb4bea2f2bc7cbb398328912fde45167127e0681bcd2e34904c9182167"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "52a5bbcb4bea2f2bc7cbb398328912fde45167127e0681bcd2e34904c9182167"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "52a5bbcb4bea2f2bc7cbb398328912fde45167127e0681bcd2e34904c9182167"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bdae07ddd90efbe3fac25f296d3262d08e182ddcba331cb45316753310faf1ca"
-    sha256 cellar: :any_skip_relocation, ventura:       "bdae07ddd90efbe3fac25f296d3262d08e182ddcba331cb45316753310faf1ca"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fed707c0a3b0f44584b69944887d3c55e8999cb2e287664039c681ae82e2efc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ccd6752ea8ff393dd77db7d5e047a24a98118328f34d7e3d6619435e96a9c5cd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ccd6752ea8ff393dd77db7d5e047a24a98118328f34d7e3d6619435e96a9c5cd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ccd6752ea8ff393dd77db7d5e047a24a98118328f34d7e3d6619435e96a9c5cd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b7b19e75451dd2f2880526bfe136e9f47afb9366dd0118c5e7f9df5c08f7a77e"
+    sha256 cellar: :any_skip_relocation, ventura:       "b7b19e75451dd2f2880526bfe136e9f47afb9366dd0118c5e7f9df5c08f7a77e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4fc5dcd6faf2de40bec9f1e7209a4d9c15718eb96457044d19841d122e9989f7"
   end
 
   depends_on "go" => :build

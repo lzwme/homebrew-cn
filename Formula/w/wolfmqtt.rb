@@ -12,6 +12,7 @@ class Wolfmqtt < Formula
     sha256 cellar: :any,                 arm64_ventura: "f96376285ccab96743f46e3dbfbf4d3ecbb11b31db6d3ad9aa85f985c37651b0"
     sha256 cellar: :any,                 sonoma:        "2c1591b8c8e24a9c3faf511cffd00e1523d6fe17c6f2fc76f5b01bb518802486"
     sha256 cellar: :any,                 ventura:       "ca399afde7599d41893b8ad601bcb4b2a524c5245c2ba3957ec43b0b09e50a6e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa029d285203120378c8a33412daba1124d8e4c9350bd413411c9bbf02aea59f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "95256209db65977a6d26a8dcb915dcac4992982e41ed1a058fbabc0668708924"
   end
 

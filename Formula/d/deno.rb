@@ -12,6 +12,7 @@ class Deno < Formula
     sha256 cellar: :any,                 arm64_ventura: "040402d2f9d00027d515c5756a3995be203ee58733f9890235b718f51a7c00af"
     sha256 cellar: :any,                 sonoma:        "09f51c94eb33607dad39d8c7e48e6cd15c6e5d0be8d6babd1b826537987c595a"
     sha256 cellar: :any,                 ventura:       "747150befdf882a252e37dc70d99933007d49fd6359792595cb0099301f6ea63"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f7c0902d3eef9938bd11d6ec7cc5bfa08c53ce651e9f71b0096557ffa9d2dabe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6eeea4cd0a082d39478aa6a4bdef6d6c12f393aa697b8adcc4a4d3d8bba5394"
   end
 

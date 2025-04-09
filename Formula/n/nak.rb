@@ -1,18 +1,18 @@
 class Nak < Formula
   desc "CLI for doing all things nostr"
   homepage "https:github.comfiatjafnak"
-  url "https:github.comfiatjafnakarchiverefstagsv0.13.1.tar.gz"
-  sha256 "134f67b9440ba4b30dc29ce8d82048d86b481ecbc507576b48e2480638ccbfb6"
+  url "https:github.comfiatjafnakarchiverefstagsv0.13.2.tar.gz"
+  sha256 "7475d887f172ae0890d469dc1e584feb90e55535923ca3ecf2c45e53f8f50b3c"
   license "Unlicense"
   head "https:github.comfiatjafnak.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7bd0a95ed1ec160eb3b6e832a92fbef9590f4ea840f6291f8f347acd6e49bf7e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7bd0a95ed1ec160eb3b6e832a92fbef9590f4ea840f6291f8f347acd6e49bf7e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7bd0a95ed1ec160eb3b6e832a92fbef9590f4ea840f6291f8f347acd6e49bf7e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "aed1f526351dc62f795ecb00ec890ffc29922ecafae5b153424f30145d75218f"
-    sha256 cellar: :any_skip_relocation, ventura:       "aed1f526351dc62f795ecb00ec890ffc29922ecafae5b153424f30145d75218f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ef5c34147b20214d7d8da213e816f43b8e64202cf12f2ed3ab4db95c16697d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5cacf6f0b6f40719a2c144fe6fa654cd9c822e7ec5ccc21eebf49a3b81a4716c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5cacf6f0b6f40719a2c144fe6fa654cd9c822e7ec5ccc21eebf49a3b81a4716c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5cacf6f0b6f40719a2c144fe6fa654cd9c822e7ec5ccc21eebf49a3b81a4716c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cb1df2c9bc9ceee0ac90c31b5aaffd4cb9ec6a614475b6f0615141ae4c02a949"
+    sha256 cellar: :any_skip_relocation, ventura:       "cb1df2c9bc9ceee0ac90c31b5aaffd4cb9ec6a614475b6f0615141ae4c02a949"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08bd417d012989c03343b52af9e121e5a75dd8810f7f7f84c4cb6777923fed54"
   end
 
   depends_on "go" => :build

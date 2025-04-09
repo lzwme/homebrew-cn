@@ -1,6 +1,6 @@
 class Oranda < Formula
   desc "Generate beautiful landing pages for your developer tools"
-  homepage "https:opensource.axo.devoranda"
+  homepage "https:github.comaxodotdevoranda"
   url "https:github.comaxodotdevorandaarchiverefstagsv0.6.5.tar.gz"
   sha256 "456baf2b8e36ad6492d5d7a6d2b47b48be87c957db9068500dfd82897462d5bd"
   license any_of: ["Apache-2.0", "MIT"]
@@ -15,14 +15,20 @@ class Oranda < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "38453321aae36b4c54631ebaa74ca576f791c4fd5e608bcb5e45088c96a3219c"
   end
 
+  depends_on "node" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "oniguruma"
-  depends_on "tailwindcss"
 
   def install
     ENV["RUSTONIG_SYSTEM_LIBONIG"] = "1"
-    ENV["ORANDA_USE_TAILWIND_BINARY"] = "1"
+
+    # TODO: Switch back to `ENV["ORANDA_USE_TAILWIND_BINARY"] = "1"`
+    # Issue ref: https:github.comaxodotdevorandaissues719
+    cd "oranda-css" do
+      system "npm", "install", *std_npm_args(prefix: false)
+      system "npm", "run", "build"
+    end
 
     system "cargo", "install", *std_cargo_args
   end

@@ -12,13 +12,14 @@ class Node < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "2e5cfff96d453ce0eb17ddfea16dea2918f08cde2a08ae350fe7153a23e62d8a"
-    sha256 arm64_sonoma:  "f9306e9955f0d90d19057eee798d4676907e6d0191ebf16aa3693ce18e7dc1a5"
-    sha256 arm64_ventura: "5ebba5f5e591a9c04124b1d765f0daf3f4e269cf8e963b4569215cbe9cb23902"
-    sha256 sonoma:        "83ab6d90d6787296315f7936cdb862a93e332d12f5a730004fbbc6a74940446e"
-    sha256 ventura:       "7727f22fe47499009ddf40cfecce202f44ce685076c537b92b608f839905df94"
-    sha256 arm64_linux:   "51211821bc22fe17d71b0859baff6286452b59d4d5b8549cc698f6489d7d71a9"
-    sha256 x86_64_linux:  "652fc727436b36f860dab0be7629bcaeeb27b102b50261987659c2272e7a505c"
+    rebuild 1
+    sha256 arm64_sequoia: "5e18e143193267631cacdb1b349af222a4e0354461a844840b8f74e1096ee187"
+    sha256 arm64_sonoma:  "9bbd828006bd4a3beacca4c5c4169921c0652f71c5f329a6d41dfac23c36a0bd"
+    sha256 arm64_ventura: "9be149abb8ce827d580ea1557c6be8a71222fa38cb785af0cb879694bd0db28d"
+    sha256 sonoma:        "31eb61b74270e89351c557b688948fe90a50f9838ca1870fe304c19816e6a7af"
+    sha256 ventura:       "815de04f73bb36c3d71799b1f44601a2d7b10b56bc16fee1fac1d8c39c7c2c75"
+    sha256 arm64_linux:   "f82e24cf67c6b2d58da09272dda33d760834aabed910267847c09265b2320f71"
+    sha256 x86_64_linux:  "2cee5b721e8a6f1dd08dd9117222ddc3353d368153e5ecbeff2cb3e21eb76da7"
   end
 
   depends_on "pkgconf" => :build
@@ -120,8 +121,13 @@ class Node < Formula
     # in `cached_download` npm resource, which breaks `npm -g outdated npm`.
     # This copies back over the vanilla `package.json` to fix this issue.
     cp bootstrap/"package.json", libexec/"lib/node_modules/npm"
+
     # These symlinks are never used & they've caused issues in the past.
     rm_r libexec/"share" if (libexec/"share").exist?
+
+    # Create temporary npm and npx symlinks until post_install is done.
+    ln_s libexec/"lib/node_modules/npm/bin/npm-cli.js", bin/"npm"
+    ln_s libexec/"lib/node_modules/npm/bin/npx-cli.js", bin/"npx"
 
     bash_completion.install bootstrap/"lib/utils/completion.sh" => "npm"
   end
@@ -129,7 +135,7 @@ class Node < Formula
   def post_install
     node_modules = HOMEBREW_PREFIX/"lib/node_modules"
     node_modules.mkpath
-    # Kill npm but preserve all other modules across node updates/upgrades.
+    # Remove npm but preserve all other modules across node updates/upgrades.
     rm_r node_modules/"npm" if (node_modules/"npm").exist?
 
     cp_r libexec/"lib/node_modules/npm", node_modules

@@ -1,8 +1,8 @@
 class Goimports < Formula
   desc "Go formatter that additionally inserts import statements"
   homepage "https:pkg.go.devgolang.orgxtoolscmdgoimports"
-  url "https:github.comgolangtoolsarchiverefstagsv0.31.0.tar.gz"
-  sha256 "e5d74f1e63a1ee669e75e76668cea1b110e2b9d19c67710f60939ee38070a5a7"
+  url "https:github.comgolangtoolsarchiverefstagsv0.32.0.tar.gz"
+  sha256 "f2b22107aaea83bbcc4a34c86e4331dda035f71e72bdbc057c32ce7072a17c5b"
   license "BSD-3-Clause"
   head "https:github.comgolangtools.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Goimports < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca73b64411c476974011e8e7d215c01a777a21b4e40a796c55fe4493d700ae08"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ca73b64411c476974011e8e7d215c01a777a21b4e40a796c55fe4493d700ae08"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ca73b64411c476974011e8e7d215c01a777a21b4e40a796c55fe4493d700ae08"
-    sha256 cellar: :any_skip_relocation, sonoma:        "65e81110176181a0e58ebac7c96fab37c2d4bf31b0f11db4ea9b553a0e95574f"
-    sha256 cellar: :any_skip_relocation, ventura:       "65e81110176181a0e58ebac7c96fab37c2d4bf31b0f11db4ea9b553a0e95574f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c270a1a30c4f64666550eb981628385cd10d83c45975a8b477ac69a6c1b87c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "447aff30ac81edfdf95f5131443b635fa92d297237b0eabcff71e80d7e332bd9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "447aff30ac81edfdf95f5131443b635fa92d297237b0eabcff71e80d7e332bd9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "447aff30ac81edfdf95f5131443b635fa92d297237b0eabcff71e80d7e332bd9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ae3d608023a85cabc2ba50119d19cbef9dd5f655ab392b3ad9c300329a7c898b"
+    sha256 cellar: :any_skip_relocation, ventura:       "ae3d608023a85cabc2ba50119d19cbef9dd5f655ab392b3ad9c300329a7c898b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76c5d92127d45963cf72dec6dea6f3cca9bb9eabecd1c76656658756abb6d101"
   end
 
   depends_on "go"

@@ -3,12 +3,12 @@ class EvernoteBackup < Formula
 
   desc "Backup & export all Evernote notes and notebooks"
   homepage "https:github.comvzhd1701evernote-backup"
-  url "https:files.pythonhosted.orgpackagesb0cdb9bdf3f4d15f027a1095ea857517a403153c0bacfcc89356f6bd8d9eaa9fevernote_backup-1.9.4.tar.gz"
-  sha256 "e7bd75c530b4b42ffa26ec46b635253e0bb7ad588eb23cfa99b3f2503a2e1da2"
+  url "https:files.pythonhosted.orgpackagesbe75a2011ba209ff35d62b178a00966a291d650c1e9259f7dc2a79435cc66d90evernote_backup-1.10.0.tar.gz"
+  sha256 "4f81479865092d24346a31f2989a31a3e637760e1bbf08e29a32be16f7ea4eab"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "07f004b4c9d40bd634e6d6e3e049c0840fcddfd18fe396b2457be233a469958e"
+    sha256 cellar: :any_skip_relocation, all: "1bba1e0b577916885f7fc257a64ba73eb68cc22f81acc644ddee888e438ae048"
   end
 
   depends_on "certifi"
@@ -65,9 +65,6 @@ class EvernoteBackup < Formula
   end
 
   def install
-    # The source doesn't have a valid SOURCE_DATE_EPOCH, so here we set default.
-    ENV["SOURCE_DATE_EPOCH"] = "1451574000"
-
     virtualenv_install_with_resources
 
     generate_completions_from_executable(bin"evernote-backup", shells: [:fish, :zsh], shell_parameter_format: :click)

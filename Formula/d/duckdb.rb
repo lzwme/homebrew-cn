@@ -2,18 +2,18 @@ class Duckdb < Formula
   desc "Embeddable SQL OLAP Database Management System"
   homepage "https:www.duckdb.org"
   url "https:github.comduckdbduckdb.git",
-      tag:      "v1.2.1",
-      revision: "8e52ec43959ab363643d63cb78ee214577111da4"
+      tag:      "v1.2.2",
+      revision: "7c039464e452ddc3330e2691d3fa6d305521d09b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ec3a38cd6619f40094000b8909d750aefce1c7febe0ba36930afdb06443d40e4"
-    sha256 cellar: :any,                 arm64_sonoma:  "4e615647853552fd0a1a83fdc9ac8fc34aa23b93aca03e65e8728e8452a16e44"
-    sha256 cellar: :any,                 arm64_ventura: "fe20e4975270dcfe1b1fb74f72fea79e150ea12d6085ce6080545bad1e809d18"
-    sha256 cellar: :any,                 sonoma:        "c1d72d5dac16fc63e0d2be312ebd1fd823674bbf829da504c49a940787b58b22"
-    sha256 cellar: :any,                 ventura:       "39c4f6445e5be3aeba669f09e91f401d47f3dfc84ae58e8ad3f6a3e04de12433"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e3c6386c93bcf09ad6ea3a2189dae23fa21e21bcb6a25e05a0072394c4c4a60"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4abb6faabed1b88073c1243902a9e61349268cc4bf79326e284bc9432c443be"
+    sha256 cellar: :any,                 arm64_sequoia: "37e16cc9346d3ecb9914e19f29d74bfc6125efa1b3fc0572c8f94dda7c6b6979"
+    sha256 cellar: :any,                 arm64_sonoma:  "9f8e1d732831361bba9a986d98eafbf2d440705229eb8a7ab313b88d98f0bbe6"
+    sha256 cellar: :any,                 arm64_ventura: "6841e7a1b8edb2d821de678400b373900e02942df1e3f667ed7474ed980d3b6f"
+    sha256 cellar: :any,                 sonoma:        "2f6b583cebc3b938aafb44aa23bf405c293010650eb1d0d22a1f42a8c134755c"
+    sha256 cellar: :any,                 ventura:       "316378b7ec3d6a6763318cc66f716443ee9ecc63ff1459363d02f5bc45e30c9e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d79ef342c28786bd8f5dbf9562bc51a1ca960f4f4a8932b3bc6bfd2510c8996a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91cca7c442bf9f6bde58b3cbe14575fd3caf350dc093f4c86e6322dafd09aaad"
   end
 
   depends_on "cmake" => :build

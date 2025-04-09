@@ -23,28 +23,25 @@ class Truffle < Formula
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir[libexec/"bin/*"]
 
+    # Remove incompatible pre-built binaries
     truffle_dir = libexec/"lib/node_modules/truffle"
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
+    platforms = ["#{os}-#{arch}"]
+    platforms << "#{os}-x64+arm64" if OS.mac?
     %w[
       **/node_modules/*
       node_modules/ganache/node_modules/@trufflesuite/bigint-buffer
-      node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial
     ].each do |pattern|
-      truffle_dir.glob("#{pattern}/{prebuilds,binaries}/*").each do |dir|
-        if OS.mac? && dir.basename.to_s == "darwin-x64+arm64"
-          # Replace universal binaries with their native slices
-          deuniversalize_machos dir/"node.napi.node"
-        else
-          # Remove incompatible pre-built binaries
-          dir.glob("*.musl.node").map(&:unlink)
-          rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}"
-        end
+      truffle_dir.glob("#{pattern}/prebuilds/*").each do |dir|
+        dir.glob("*.musl.node").map(&:unlink)
+        rm_r(dir) if platforms.exclude?(dir.basename.to_s)
       end
     end
-
-    # Replace remaining universal binaries with their native slices
-    deuniversalize_machos truffle_dir/"node_modules/ganache/node_modules/fsevents/fsevents.node"
+    pattern = "node_modules/ganache/node_modules/@trufflesuite/uws-js-unofficial/{binaries,dist}/*.node"
+    truffle_dir.glob(pattern) do |f|
+      rm(f) unless f.basename.to_s.match?("_#{os}_#{arch}_")
+    end
 
     # Remove incompatible pre-built binaries that have arbitrary names
     truffle_dir.glob("node_modules/ganache/dist/node{/,/F/}*.node").each do |f|
@@ -54,6 +51,9 @@ class Truffle < Formula
 
       f.unlink
     end
+
+    # Replace universal binaries with their native slices
+    deuniversalize_machos
   end
 
   test do

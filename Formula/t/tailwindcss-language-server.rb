@@ -18,6 +18,7 @@ class TailwindcssLanguageServer < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "ecf945ea77cbe06127a3478063db4bff606df6df401b7622420f3253830a8d9e"
     sha256 cellar: :any_skip_relocation, sonoma:        "ecf945ea77cbe06127a3478063db4bff606df6df401b7622420f3253830a8d9e"
     sha256 cellar: :any_skip_relocation, ventura:       "ecf945ea77cbe06127a3478063db4bff606df6df401b7622420f3253830a8d9e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "af79065c4fa7ec6f73bd98bdfc483faf3ede2bb62b669a085ba006f855f90c2b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "af79065c4fa7ec6f73bd98bdfc483faf3ede2bb62b669a085ba006f855f90c2b"
   end
 

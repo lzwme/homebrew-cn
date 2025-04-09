@@ -12,6 +12,7 @@ class Pioneer < Formula
     sha256                               arm64_ventura: "ef19b8336cd0a91224b95f59d197483feb1f5b1aed366505b507c3b883de733b"
     sha256                               sonoma:        "7638fd5bf5629ea22a841cad157019fa6881b22887ce35c63a7210fc0118a99e"
     sha256                               ventura:       "0d454aa25ff8daf19ed076b08fe60c17a369c8d02ef6df5fbcf43cd6667e6229"
+    sha256                               arm64_linux:   "fb81bed6156535cdf0b91155ac24fe0b306657e2cd0c909f75de1345b150ea25"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a5608bea6d7026c0d36797cdf8fcb73b4679e319300dbc2feb75ffed6f641b6"
   end
 
@@ -38,7 +39,7 @@ class Pioneer < Formula
   end
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

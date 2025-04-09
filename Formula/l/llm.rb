@@ -3,18 +3,18 @@ class Llm < Formula
 
   desc "Access large language models from the command-line"
   homepage "https://llm.datasette.io/"
-  url "https://files.pythonhosted.org/packages/48/c1/5c2cc3b46b567f991cce568a7bc6a0b0d56cea2512bdc4e3f5173b6c08aa/llm-0.24.tar.gz"
-  sha256 "18015a3b1130216597c078886ae3c9e7cab9917b3b5c26e41cc6af1eaf6db958"
+  url "https://files.pythonhosted.org/packages/7b/34/39f74bdc59c020f2fb9ac16060f1e508c4eb85a68de37a36d6a25deb2bfd/llm-0.24.1.tar.gz"
+  sha256 "9ff8bc4dea464efaa5d37cd10a4a4055545f9afa35ac1ba2decf43b16b6e0993"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "688b6f4e9fcee2610dd9a7044bc61b0d6a222dde7413f7df7b26828214e26ace"
-    sha256 cellar: :any,                 arm64_sonoma:  "e61515f5afe698e811d8a928804de36d7db2ff5dbf323284ffb1fbfcea173280"
-    sha256 cellar: :any,                 arm64_ventura: "12fbb4c54c7b76eb014469aa3cbe5a4218df0dbf91e4ff5617314250c2af3a34"
-    sha256 cellar: :any,                 sonoma:        "cfbe3da4664760a39178ec49168b4be9af51ab2e74d5d2a61ebfa29d8e5b2d5f"
-    sha256 cellar: :any,                 ventura:       "6c99506c2e6ba532f6379a4f1e970d4e1c1ce8a209f16c9524f6e27eeb9e79dc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ea9aebaeedce7780cde708e3c5a573bbb14b197f8d2d40bf25144bf8720ba85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c818d9b7eb624ed573640cca9f9a8803aa77e191fcd825d9de25090fd95f1ab"
+    sha256 cellar: :any,                 arm64_sequoia: "4cf7efed2b7145dd5da72b056f1041651ebc5c947213faadeef33bc4cd8504fe"
+    sha256 cellar: :any,                 arm64_sonoma:  "2831e4271d47399ce7c6dc31269ed00fbc866c584ddfcf17dbce4144da3ae754"
+    sha256 cellar: :any,                 arm64_ventura: "963c69295003a07da9165a2df448b77e2efe9f85b56162e9429c339cf0fca1f5"
+    sha256 cellar: :any,                 sonoma:        "53530f8b05e1ffba8331de8331823d4c9a05c438e94119f102cd8c9c46980418"
+    sha256 cellar: :any,                 ventura:       "fc1ec5b56484dc004d8cf5ffe552ee608a463bd49853c4afc45ed47d97179c42"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2ff9d3236daf18d2419c87222ef136b59e0c88fe9bcc20e1d71997e8c12863b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "472e56b244601f5661f4d19dc1825decd14d89c80b5d22d7eb4f0451c5c32137"
   end
 
   depends_on "rust" => :build
@@ -78,8 +78,8 @@ class Llm < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/87/f5/ae0f3cd226c2993b4ac1cc4b5f6ca099764689f403c14922c9356accec66/openai-1.70.0.tar.gz"
-    sha256 "e52a8d54c3efeb08cf58539b5b21a5abef25368b5432965e4de88cdf4e091b2b"
+    url "https://files.pythonhosted.org/packages/41/56/41de36c0e9f787c406211552ecf2ca4fba3db900207c5c158c4dc67263fc/openai-1.72.0.tar.gz"
+    sha256 "f51de971448905cc90ed5175a5b19e92fd94e31f68cde4025762f9f5257150db"
   end
 
   resource "pluggy" do
@@ -93,8 +93,8 @@ class Llm < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/b0/41/832125a41fe098b58d1fdd04ae819b4dc6b34d6b09ed78304fd93d4bc051/pydantic-2.11.2.tar.gz"
-    sha256 "2138628e050bd7a1e70b91d4bf4a91167f4ad76fdb83209b107c8d84b854917e"
+    url "https://files.pythonhosted.org/packages/10/2e/ca897f093ee6c5f3b0bee123ee4465c50e75431c3d5b6a3b44a47134e891/pydantic-2.11.3.tar.gz"
+    sha256 "7471657138c16adad9322fe3070c0116dd6c3ad8d649300e3cbdfe91f4db4ec3"
   end
 
   resource "pydantic-core" do

@@ -29,6 +29,7 @@ cask "xpra" do
   depends_on macos: ">= :sierra"
 
   app "Xpra.app"
+  binary "#{appdir}Xpra.appContentsMacOSXpra", target: "xpra"
 
   zap delete: "LibraryApplication SupportXpra",
       trash:  [

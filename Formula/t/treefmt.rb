@@ -1,18 +1,18 @@
 class Treefmt < Formula
   desc "One CLI to format the code tree"
   homepage "https:treefmt.comlatest"
-  url "https:github.comnumtidetreefmtarchiverefstagsv2.2.0.tar.gz"
-  sha256 "9ddb3eb4a03c7d273754dc250f485be8e23b7ef94446576d7e97aaa79e0c1463"
+  url "https:github.comnumtidetreefmtarchiverefstagsv2.2.1.tar.gz"
+  sha256 "d4000dfcdbabc9caf356005b38e18a6de71f626327d02ba609beec5846931f24"
   license "MIT"
   head "https:github.comnumtidetreefmt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c5b33a12374894c8fe5539427d9755b4931905c40269662a2d43642ee44357c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c5b33a12374894c8fe5539427d9755b4931905c40269662a2d43642ee44357c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2c5b33a12374894c8fe5539427d9755b4931905c40269662a2d43642ee44357c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b416d2eb308654959d1d29946e5e3b17c42b0f4ead996647e821d1139677c67a"
-    sha256 cellar: :any_skip_relocation, ventura:       "b416d2eb308654959d1d29946e5e3b17c42b0f4ead996647e821d1139677c67a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38925e5133b3c1068feb91978225726a2f434c8f944d48fae0977fc57ca7d8e0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "902f91f69a81425e7607a13e28defc1c21bd42ced20cb8e410d203f89d69c900"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "902f91f69a81425e7607a13e28defc1c21bd42ced20cb8e410d203f89d69c900"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "902f91f69a81425e7607a13e28defc1c21bd42ced20cb8e410d203f89d69c900"
+    sha256 cellar: :any_skip_relocation, sonoma:        "468311bb66fdcb624956b1eaccc7182c4f27de53e6b68598c034ef61143bde58"
+    sha256 cellar: :any_skip_relocation, ventura:       "468311bb66fdcb624956b1eaccc7182c4f27de53e6b68598c034ef61143bde58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d47ac8b63bd2700fec7f21e022e274c092e8b8017341e22fb89b750313145428"
   end
 
   depends_on "go" => :build

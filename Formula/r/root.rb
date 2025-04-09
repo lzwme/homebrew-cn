@@ -1,29 +1,10 @@
 class Root < Formula
   desc "Analyzing petabytes of data, scientifically"
   homepage "https:root.cern"
+  url "https:root.cerndownloadroot_v6.34.08.source.tar.gz"
+  sha256 "806045b156de03fe8f5661a670eab877f2e4d2da6c234dc3e31e98e2d7d96fe8"
   license "LGPL-2.1-or-later"
   head "https:github.comroot-projectroot.git", branch: "master"
-
-  stable do
-    url "https:root.cerndownloadroot_v6.34.06.source.tar.gz"
-    sha256 "a799d632dae5bb1ec87eae6ebc046a12268c6849f2a8837921c118fc51b6cff3"
-
-    # Backport unbundling of libraries on macOS
-    patch do
-      url "https:github.comroot-projectrootcommit73054b434996a530bfd0669d4ef5c1767a93ef70.patch?full_index=1"
-      sha256 "430c1e8aeafe5db1bd4298db27e1aecf903ad7f630465551e66ba70868747293"
-    end
-
-    # Apply fix for building with macOS 15.4, https:github.comroot-projectrootpull18243
-    patch do
-      url "https:github.comroot-projectrootcommit0c3644b47f9dd59d33dffa6467275accd9824468.patch?full_index=1"
-      sha256 "5b2e8cc151e945cb46e60a1654f4ea3bc51477ae6b1485e8eda22674dd287875"
-    end
-    patch do
-      url "https:github.comroot-projectrootcommit7952c382eee83f222d724d43946ac6b9a7ffe486.patch?full_index=1"
-      sha256 "7214cf81275838cc95086c2d6828f661a85c467f2bf424dfc025585b7979a946"
-    end
-  end
 
   livecheck do
     url "https:root.cerninstallall_releases"
@@ -34,13 +15,12 @@ class Root < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "35e3f2a154030e3b5b6d3b58292ead50b140ca502dc2e9fe002e3cd73aadfc34"
-    sha256 arm64_sonoma:  "c21ad5487dc64c403d03525aca64868a4794e32aa3fbbd2c10a61adf42138005"
-    sha256 arm64_ventura: "187de4ce65fbd6abf027647935fabfe7aee007a71f1e97655b8df76619a3ef3a"
-    sha256 sonoma:        "973502e0ff6483aa5ded98a134bf8e68b006eeaf68d0890d1cdf34a761d70a85"
-    sha256 ventura:       "858e267200bdacbea023a60628ecb69341931aa8a2640861f6d25169d0e84876"
-    sha256 x86_64_linux:  "cb65cef8eab49c4c5186b4f5ad6460a370246440aa6f7ada291de40839e913ca"
+    sha256 arm64_sequoia: "872d561d4c92a0a37aa43e44222fa5779c15198a9b5e0c0af0808e92de321b12"
+    sha256 arm64_sonoma:  "c84c4008267e189f62bfaa30df8348d70c4e3e070f6269545c5cf18c11a3af3e"
+    sha256 arm64_ventura: "7812501d43bb5dfbfea9a987a544bc0cf05a8a21a4acc1dc1ffcab11b017be22"
+    sha256 sonoma:        "cf568d4813be0f7c5fc98ecefa32c957e48574a9cbe834e2508c1a974db8f9fe"
+    sha256 ventura:       "41a1a6480a5b90487f603ae365bcaac57cf7278950461f004e33a41c9a5cf0b9"
+    sha256 x86_64_linux:  "c19013bd674cc29a79ea1d0cd28a8a68a037888a0719089616c172506b46d682"
   end
 
   depends_on "cmake" => :build

@@ -3,18 +3,18 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https:prowler.com"
-  url "https:files.pythonhosted.orgpackagesc75d2dad806c887767108ae4a8aee9de96f5f0b65317222b43fd17f1b7461bc4prowler-5.4.3.tar.gz"
-  sha256 "2bd561a879d33ea55f861b577c6dd32fae320616cddf9ab10f87b840230569a9"
+  url "https:files.pythonhosted.orgpackages95a2e1c5e4ef30d777b7ee6a0258425c35841ce29cbdba3960df7c05c6310ee4prowler-5.4.4.tar.gz"
+  sha256 "a9e676f436d781c39d5fe0ab334228fb2ca7070894a17d720d3798f6bef2f740"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3ef3cd83a36808ac5cf21408d639d62638b97ecf1b03605d5bc14c513fd00458"
-    sha256 cellar: :any,                 arm64_sonoma:  "82ecb57eab9f702e4601b3bdd2d117d94e317fbfb318f8f345dfc1d0b84380d7"
-    sha256 cellar: :any,                 arm64_ventura: "f3ce800d50342f2f0b9ea1b90ab7d7b07f8c3821b57c75e258f5d82a1d1cad54"
-    sha256 cellar: :any,                 sonoma:        "1dbb9174a575adc5a895abaf1b51bdf4b863c8143c27b297e74d03703713ffb3"
-    sha256 cellar: :any,                 ventura:       "ddd334bc526692da99d2b295a1906a67e787ec334f89c16a9bb5213ebff9fbb2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a45c499225c14cd76e736fecb20f1d7cbb525ea3f7ec95c88729d9b3ebc6afd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3297fdaef1e55edfc736cd59f336ee364fc4f3ba918b815840ec1fbaa8ff9b75"
+    sha256 cellar: :any,                 arm64_sequoia: "7df56428f75e8a80612c525100368131e80328e866695bc884018abdba4165fc"
+    sha256 cellar: :any,                 arm64_sonoma:  "b24e2f668d563f6ec32199e8dc017d7eacfd430d3febf949dfc6953befd4e2af"
+    sha256 cellar: :any,                 arm64_ventura: "11cc1acb4c630d7440c46db624630584dfc7e99f2b56715c6905cfcfcf40f159"
+    sha256 cellar: :any,                 sonoma:        "8b14ea20a1c487f2d5a2d954e54dc10653df77628cb8130450445b0c626249b9"
+    sha256 cellar: :any,                 ventura:       "f510d27de80b0dfa69214a3a78d6b1cebd9bd33b549f0a93c4343b4bd5ee1b6c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "20f88d042f6fe96b3ac7f01b6d6ea6aee969694c34a76ffa7b6ac819c44e385c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cef75e84af6482aca682b32833b051aae5651c109273cf0db58dcaa6ece472ad"
   end
 
   depends_on "cmake" => :build
@@ -77,8 +77,8 @@ class Prowler < Formula
   end
 
   resource "azure-core" do
-    url "https:files.pythonhosted.orgpackagesccee668328306a9e963a5ad9f152cd98c7adad86c822729fd1d2a01613ad1e67azure_core-1.32.0.tar.gz"
-    sha256 "22b3c35d6b2dae14990f6c1be2912bf23ffe50b220e708a28ab1bb92b1c730e5"
+    url "https:files.pythonhosted.orgpackages75aa7c9db8edd626f1a7d99d09ef7926f6f4fb34d5f9fa00dc394afdfe8e2a80azure_core-1.33.0.tar.gz"
+    sha256 "f367aa07b5e3005fec2c1e184b882b0b039910733907d001c20fb08ebb8c0eb9"
   end
 
   resource "azure-identity" do
@@ -467,13 +467,13 @@ class Prowler < Formula
   end
 
   resource "multidict" do
-    url "https:files.pythonhosted.orgpackages824a7874ca44a1c9b23796c767dd94159f6c17e31c0e7d090552a1c623247d82multidict-6.2.0.tar.gz"
-    sha256 "0085b0afb2446e57050140240a8595846ed64d1cbd26cef936bfab3192c673b8"
+    url "https:files.pythonhosted.orgpackagesfa2d6e0d6771cadd5ad14d13193cc8326dc0b341cc1659c306cbfce7a5058fffmultidict-6.3.2.tar.gz"
+    sha256 "c1035eea471f759fa853dd6e76aaa1e389f93b3e1403093fa0fd3ab4db490678"
   end
 
   resource "narwhals" do
-    url "https:files.pythonhosted.orgpackages85fd484aa8bb557f97a1781f38c78b79f795a2fa320e4165c4230f679937d1e8narwhals-1.33.0.tar.gz"
-    sha256 "6233d2457debf4b5fe4a1da54530c6fe2d84326f4a8e3bca35bbbff580a347cb"
+    url "https:files.pythonhosted.orgpackagesec1da21496389436e96394a6e3fb1a644d5bc382250baff76e867f0368a94068narwhals-1.34.0.tar.gz"
+    sha256 "bdd3fa60bea1f1e8b698e483be18dd43af13290da12dba69ea16dc1f3edbb8f7"
   end
 
   resource "nest-asyncio" do
@@ -657,13 +657,13 @@ class Prowler < Formula
   end
 
   resource "tldextract" do
-    url "https:files.pythonhosted.orgpackages4a4feee4bebcbad25a798bf55601d3a4aee52003bebcf9e55fce08b91ca541a9tldextract-5.1.3.tar.gz"
-    sha256 "d43c7284c23f5dc8a42fd0fee2abede2ff74cc622674e4cb07f514ab3330c338"
+    url "https:files.pythonhosted.orgpackages207ae469c4f71231a848492da31a7be6921a6cd04ecc8eed58e924bece0fb6detldextract-5.2.0.tar.gz"
+    sha256 "c3a8c4daf2c25a57f54d6ef6762aeac7eff5ac3da04cdb607130be757b8457ab"
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackages0e3eb00a62db91a83fff600de219b6ea9908e6918664899a2d85db222f4fbf19typing_extensions-4.13.0.tar.gz"
-    sha256 "0a4ac55a5820789d87e297727d229866c9650f6521b64206413c4fbada24d95b"
+    url "https:files.pythonhosted.orgpackages76adcd3e3465232ec2416ae9b983f27b9e94dc8171d56ac99b345319a9475967typing_extensions-4.13.1.tar.gz"
+    sha256 "98795af00fb9640edec5b8e31fc647597b4691f099ad75f469a2616be1a76dff"
   end
 
   resource "tzdata" do
@@ -707,8 +707,8 @@ class Prowler < Formula
   end
 
   resource "yarl" do
-    url "https:files.pythonhosted.orgpackagesb79d4b94a8e6d2b51b599516a5cb88e5bc99b4d8d4583e468057eaa29d5f0918yarl-1.18.3.tar.gz"
-    sha256 "ac1801c45cbf77b6c99242eeff4fffb5e4e73a800b5c4ad4fc0be5def634d2e1"
+    url "https:files.pythonhosted.orgpackagesfc4d8a8f57caccce49573e567744926f88c6ab3ca0b47a257806d1cf88584c5fyarl-1.19.0.tar.gz"
+    sha256 "01e02bb80ae0dbed44273c304095295106e1d9470460e773268a27d11e594892"
   end
 
   resource "zipp" do

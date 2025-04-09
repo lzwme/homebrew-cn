@@ -21,6 +21,7 @@ class Pyoxidizer < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "46aa367ab70a1488edd31411f85942a7179c090feecd1cdfa46735668d80b457"
     sha256 cellar: :any_skip_relocation, monterey:       "ea59d68a7bcdf1237d3eb72348901ea846546598194a44758e4db2521cc38880"
     sha256 cellar: :any_skip_relocation, big_sur:        "5b9f21cdbd215dbaf5c0a41e70674244b4e192e6a64e6a4e1a3e03c933e4670a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "b3ddb85f14631d16c2ab17e117fb82e8a418bacce1c5dd54a6fe848dff4e13f8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0648492b46bc163e396b0e6e2ca99350a937476050c158dd5d8a32b9b0fc102d"
   end
 
