@@ -11,10 +11,22 @@ class Kfr < Formula
     sha256 cellar: :any,                 arm64_ventura: "16cc7a6ed047cde918b0496f1291cdc6328dcd3c667d88b8a2ef0d037a54486c"
     sha256 cellar: :any,                 sonoma:        "c2ec1d0472a1920e6e51778354826ba8c7b6af29304f806f72cc6562e093ecbe"
     sha256 cellar: :any,                 ventura:       "da39d967e80fe3337c02545da188b66ad0d6d2ed0e29bc6d49883b6d2e5e1524"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e7a18abab374376bdaaef8200d8d26e0a13c04d4445d6f4b1391eb7bb00164e0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8cbe7ca4c62fb5258d9433f7b6c690cc02bec561b057b5844e1942e7d0d8a28d"
   end
 
   depends_on "cmake" => :build
+
+  on_arm do
+    # FIXME: `uses_from_macos` is not allowed in `on_arm` block
+    on_linux do
+      depends_on "llvm"
+    end
+
+    fails_with :gcc do
+      cause "ARM builds require Clang compiler"
+    end
+  end
 
   def install
     args = []
@@ -38,6 +50,7 @@ class Kfr < Formula
       }
     CPP
 
+    ENV.clang if OS.linux? && Hardware::CPU.arm?
     system ENV.cxx, "test.cpp", "-std=c++17", "-I#{include}", "-L#{lib}", "-lkfr_io",
                     "-o", "test"
     assert_equal "Hello KFR!", shell_output(".test").chomp

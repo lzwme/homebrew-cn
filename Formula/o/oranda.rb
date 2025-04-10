@@ -12,6 +12,7 @@ class Oranda < Formula
     sha256 cellar: :any,                 arm64_ventura: "50de4218c89b00ec55016d6af55f0c1781888a7d516cf0b61d848f825a6651f8"
     sha256 cellar: :any,                 sonoma:        "c6add9bb2ff35ff1ea1b11fc3ab1b5a4bf9a0c8c0a143b034853ab6a84f3c884"
     sha256 cellar: :any,                 ventura:       "a061b0b2c9e3da6abddad58b5602d41c92170ade938567656692799448ea122e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "72c26c23c373e5c900190b32733c567a4a8b8e898c7e9f0e385c6112ecc0be56"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "38453321aae36b4c54631ebaa74ca576f791c4fd5e608bcb5e45088c96a3219c"
   end
 

@@ -1,18 +1,18 @@
 class Patat < Formula
   desc "Terminal-based presentations using Pandoc"
   homepage "https:github.comjaspervdjpatat"
-  url "https:hackage.haskell.orgpackagepatat-0.14.2.0patat-0.14.2.0.tar.gz"
-  sha256 "ee9d06575907495192569b1bea4c98c74f811f925276e214eb86bb6e0ee20e6a"
+  url "https:hackage.haskell.orgpackagepatat-0.15.0.0patat-0.15.0.0.tar.gz"
+  sha256 "7fbd8fb0acaa6a076cc80fb6ac94b8eb02ee2eac524af842ddee9802eab855ed"
   license "GPL-2.0-or-later"
   head "https:github.comjaspervdjpatat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68799b0e08262bee8fea0c677d4f3037a4a8825b82d734a572d94f4f2b56836a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "106cfd8d5ab833419847bf20612b149d75e1dde200896620e0210f8728618f8f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b9f6f7d3493853c09c02fd0adcc7b63f7ccffcb0d678a38fef839a23599351ca"
-    sha256 cellar: :any_skip_relocation, sonoma:        "036fbcb7da38ef5153076c22637e66ed7e2e827772abf336ba32a87575061dcb"
-    sha256 cellar: :any_skip_relocation, ventura:       "751fb0046d8b57af77917d339e3fc0348f8356cfe10dd0b61cba05d3165f35dc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d3eb3d8086ec918d4c3498e43b0f1792a8363c0a26804a8c697a77bf2318a5a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6922262a5456b9f2c0fb6d035f4b48ea5c31eabf54bfab3396b7832af525df75"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7752af0892c87f4e1e4b8ab6b176cda21c06c9e9fff30253a174feee9ca4b604"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1d74d8ef26abb5124378368df7fdf4d74943b2a48ef97d77858031232e5368e6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c8c5c4de61348f06d137c102c5adb6ca5c2e87c592e7d149dd8ba868c7058ee3"
+    sha256 cellar: :any_skip_relocation, ventura:       "637694b462ba2b5d2fd2bfdde614e34b9d1fde8b90496fbd2fbdbd0e081fc822"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd3d53ae252d26191e0afda4140ea3a2e1d6f671e2d7326f05ba7789119a21a8"
   end
 
   depends_on "cabal-install" => :build

@@ -1,8 +1,8 @@
 class Dolt < Formula
   desc "Git for Data"
   homepage "https:github.comdolthubdolt"
-  url "https:github.comdolthubdoltarchiverefstagsv1.51.1.tar.gz"
-  sha256 "3f30a601f379dab357a697e4bd78b1a31a5f127d66c452f75b2e071c40636568"
+  url "https:github.comdolthubdoltarchiverefstagsv1.51.2.tar.gz"
+  sha256 "c001c5be458675d49f905f7b8f23d8fb659375c05ba13b1e242bdad1da4f3570"
   license "Apache-2.0"
   head "https:github.comdolthubdolt.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Dolt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e6b99ce4a1c846cc4a193ad8abb3dfd977b7aeab8d4d14126d0f1c2c0499128"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "11330c993d2ac815db9f0c7179cd1bf59b6a80638f4643f55ab24d4dc67d2999"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "112be1fe425bbe5a99db7a79fa77b33925996ad0fc86e536eef72726e4a5075a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "867fa6ec74e3f7582f45659b412d464a156ffa3df87d7f8e4d44498ce63b2b08"
-    sha256 cellar: :any_skip_relocation, ventura:       "f85d1e3201dbbb9b35e702a7e27813a261a532169d7f7c95f1e414bd4f669ea1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06e3bbf313c95ffeb99448de7785b92ff09d5f5859e8ee7e9898b2778795777a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98e6f5f717967b05314d45259ae6745fdca779d393879dca116381f48531a32a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aaa07ac97991ddabacfc5bd20cdb43d23a6f8bb168a2ba6bcdd222b4fc04ecdc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ba626eab2b50bf0bb8aa0c8e497b2e9b44e643fecc03b42a34bee2b2ae851688"
+    sha256 cellar: :any_skip_relocation, sonoma:        "803b73aefb094a356b83f8de78356380285caf1b783e9779a30a791a99f70ed9"
+    sha256 cellar: :any_skip_relocation, ventura:       "66b1a4b822f3975f353059a964b4f675b33349d0b8ec1bca9f3d1e5bdf3763bd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "231818036c6e41ce5fa4b056e7d1ba60d2e2b047af6f307ed8c6c2d505963844"
   end
 
   depends_on "go" => :build

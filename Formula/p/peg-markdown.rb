@@ -32,6 +32,9 @@ class PegMarkdown < Formula
   end
 
   def install
+    # Workaround for arm64 linux. Upstream isn't maintained
+    ENV.append_to_cflags "-fsigned-char" if OS.linux? && Hardware::CPU.arm?
+
     system "make"
     bin.install "markdown" => "peg-markdown"
   end

@@ -1,8 +1,8 @@
 class Monit < Formula
   desc "Manage and monitor processes, files, directories, and devices"
   homepage "https://mmonit.com/monit/"
-  url "https://mmonit.com/monit/dist/monit-5.34.4.tar.gz"
-  sha256 "ef607cfaabfd3767d40b9b9e32032f748beebc4d686831f6111e0e68fbd1b469"
+  url "https://mmonit.com/monit/dist/monit-5.35.0.tar.gz"
+  sha256 "9760c3aa28611fc1438666540ace00d572a4f29742a3a546d65628744af5f474"
   license "AGPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Monit < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "45c8e33967d63464d0fc1a303a99cca51ec505d50973421ca8a25bf864d1d131"
-    sha256 cellar: :any,                 arm64_sonoma:  "43f559f52994cd676c7ad6c6db73bb6c32c71e016d6022ddfe564251c8aabb5c"
-    sha256 cellar: :any,                 arm64_ventura: "b9085185857fcba7fd28b284c57b0f8cf5c26e321fa9d8b635b380fe82444d41"
-    sha256 cellar: :any,                 sonoma:        "6bc6afa5aa1226ba246f97e48f0f6aaeccb59b212447ce324f8bc3131699d56f"
-    sha256 cellar: :any,                 ventura:       "0dde553c672aefd0e8161b94ad4967b2ddf4034bcd416693b9f341021c3e2821"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6df94dfef6617cbfb1d8dae8408356b93701c9367a31b96fe68db3da8e21ff65"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15257eac795a5b31142356b36d13e8d2bbb1dd8acba5831d2d5dde5761a62c57"
+    sha256 cellar: :any,                 arm64_sequoia: "3d2dd90fe2254f556d1bd0bbd77f3a639502e0a3d703d6daea0fc4c231f9b209"
+    sha256 cellar: :any,                 arm64_sonoma:  "3b731aedc75119f6400dd4ea3614882889c89ec366057e48df42cc9be7299894"
+    sha256 cellar: :any,                 arm64_ventura: "07f523a432a4674800daad82e1ef74dcd88bbd41b5203bf001a425aa1f37f9d8"
+    sha256 cellar: :any,                 sonoma:        "02688be7e8d9e8f9925a0e73da75776c36440dbb677ff7163a011ba0441343cb"
+    sha256 cellar: :any,                 ventura:       "bc55c8ef9541345e5c9238636647b8426e58762bea7591ff862d9932cfa94706"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "63c07eb908c94f039f25b69a3f3498cf2b5784d12b5afddebff9714f9cb8602e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d648b1eb7d9e773c71dbfd14d414be27276225c8cbc1c2f9a58db52e7cdbb457"
   end
 
   depends_on "openssl@3"

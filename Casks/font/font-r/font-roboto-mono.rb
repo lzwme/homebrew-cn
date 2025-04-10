@@ -5,7 +5,7 @@ cask "font-roboto-mono" do
   url "https:github.comgooglefonts.git",
       verified:  "github.comgooglefonts",
       branch:    "main",
-      only_path: "apacherobotomono"
+      only_path: "oflrobotomono"
   name "Roboto Mono"
   homepage "https:fonts.google.comspecimenRoboto+Mono"
 

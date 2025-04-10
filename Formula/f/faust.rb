@@ -30,6 +30,12 @@ class Faust < Formula
   depends_on "llvm"
 
   def install
+    # `brew linkage` doesn't like the pre-built Android libsndfile.so for faust2android.
+    # Not an essential feature so just remove it when building arm64 linux in CI.
+    if ENV["HOMEBREW_GITHUB_ACTIONS"].present? && OS.linux? && Hardware::CPU.arm?
+      rm("architectureandroidappliblibsndfilelibarm64-v8alibsndfile.so")
+    end
+
     system "cmake", "-S", "build", "-B", "homebrew_build",
                     "-DC_BACKEND=COMPILER DYNAMIC",
                     "-DCODEBOX_BACKEND=COMPILER DYNAMIC",

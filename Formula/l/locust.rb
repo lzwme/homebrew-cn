@@ -3,18 +3,18 @@ class Locust < Formula
 
   desc "Scalable user load testing tool written in Python"
   homepage "https://locust.io/"
-  url "https://files.pythonhosted.org/packages/b0/c9/8e3ce7467a92376a1b16996f14d8d009f9b2c0c111c22e478bc07f1e3b24/locust-2.34.0.tar.gz"
-  sha256 "8761a60b1ee7af0606fb0d5ce4cbee7c8c1d2dcc1cb17215c8c994799c5f1ac6"
+  url "https://files.pythonhosted.org/packages/56/21/c2bfe4f9482f8754e9a1ff2b1840a1abe63640576fc918a67a02fff7d961/locust-2.34.1.tar.gz"
+  sha256 "184a6ffcb0d6c543bbeae4de65cbb198c7e0739d569d48a2b8bf5db962077733"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9093a29ea52eb4b6857a98b67d1381567e8fb38c1ca397613d64d80ba818e920"
-    sha256 cellar: :any,                 arm64_sonoma:  "449f79193ccd4689836bac14cbc64a879633d9763bd3616a3af9fd7d14e6b2b3"
-    sha256 cellar: :any,                 arm64_ventura: "e8d6e20316415122e1aa6be51002a764c8c579c73aab207a31af43db569cdcad"
-    sha256 cellar: :any,                 sonoma:        "1ad031284a36a63a48177854ac3ca7f369bb8f6c62d2a58a09da41d881ffc776"
-    sha256 cellar: :any,                 ventura:       "bbb1660f8235f886f9ead5bceedbcbd41ac56f73278c7059b2383125b5063f26"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b761411bf16097108e8036501d8fc24728b1140fe0bc4f178e8490abd3654a8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e980ec07c1ae012afe9ca46e0d528322782fdcbda4d2be7fdd8f9b86bf112af0"
+    sha256 cellar: :any,                 arm64_sequoia: "0367add19ffbca288e1ad28585de3a701bf9e9e4747ba64b1e8e15f101396be1"
+    sha256 cellar: :any,                 arm64_sonoma:  "62ddc013b8e6ca35061a5478ee4eb315ab326b00a594af53a894b150214b06c4"
+    sha256 cellar: :any,                 arm64_ventura: "185692b6d1858045249bbe4e0afc238fbacc4a3c5f308132d994dd68def4ae1d"
+    sha256 cellar: :any,                 sonoma:        "e8f875569d0d6dffab9eb2fc02aff37cc3b7aa8fda52990aacbe037109a2bf54"
+    sha256 cellar: :any,                 ventura:       "a74c4c73dec560abf6ddd9a9cc9f9021a3413ff133ba4da3d9b2d534cabe0fc4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c19096bdb8e8246eb5b70b505f4023906b7423415251ab79b52ee7b0f62787cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc4f35ca0ed3894a83146e0c4a69ef6a03e57e24e80b87d944017d684488e758"
   end
 
   depends_on "cmake" => :build # for pyzmq

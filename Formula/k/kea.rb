@@ -31,6 +31,7 @@ class Kea < Formula
     sha256 arm64_ventura: "e6a283e858cc2f08b3db91c7941f2eb0cacda7be81e58b00b8520356fe35e394"
     sha256 sonoma:        "058ce5aeb4d71d54ebf0f6ff98ce7732c8e14d9d509588d48a05d23d488fe8bd"
     sha256 ventura:       "a9bb4722c39d136fcc2641e78ffacdd58cbe1f3e3fb0fe1120e3141a046242a9"
+    sha256 arm64_linux:   "ceef0b2966ea631be071f02fb710cf6c3eaf319112203dec5977c45a7d30b0f1"
     sha256 x86_64_linux:  "3db7bc8bbb9a06006c008c199d5412c1e76a771b5d96a769d8014fc65c9ebf4a"
   end
 

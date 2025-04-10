@@ -11,13 +11,14 @@ class RubyAT32 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "13f28df8235e765dab440ff0e349e76740e25d55a22bcf2c8ef78367185f425f"
-    sha256 arm64_sonoma:  "9121dda5f286414a20f7f17789f2da19645b08017162f24006eda6cff04dc693"
-    sha256 arm64_ventura: "db3344af7db9e722dc9a8896bb711a9c8510547a59d01c8e21dc2708e533d242"
-    sha256 sonoma:        "bf7a48a47b00810c5878c15450820f1e2e6ab995501ca3e8a4349991f10d83cb"
-    sha256 ventura:       "2446978debea9805439744ceb5ea40ba1530c6b9508302694ad64220533a7b6a"
-    sha256 arm64_linux:   "e85926554ac3b597b216a558a3114392bc5f1746af09dab699d2bd42ca0e8d0e"
-    sha256 x86_64_linux:  "3f8c8f4281c3dd9a1bdc2acaa836e004052cc7d1dbe1e31ff9a72b3a86b5e17f"
+    rebuild 1
+    sha256 arm64_sequoia: "d01195f2134268b27735407c3c8cde3a87aebcba999e442475ad089293e3c3cc"
+    sha256 arm64_sonoma:  "ff921fc48fb893b36e582546bc819ae32f1cd2b861f469388eaf4671171b8cbc"
+    sha256 arm64_ventura: "a8e8d74dbc45522aca326360f079b4e6408708e616871a50cbe6c6502533d86f"
+    sha256 sonoma:        "06806826dfd864187f6aee4b4de353cf7378b37758a4712ee9aad94ba2f4b17e"
+    sha256 ventura:       "1a6ab1f5e0a1c94f66ee2f3666f6b02c6f42e830ede9d50318f775da2cda92de"
+    sha256 arm64_linux:   "802e8b940abf118c51861ae6dbcbe0524203a8b5a3711dd2b6b74c33a60b0c46"
+    sha256 x86_64_linux:  "bc347d68a752c8ada0b28275624854dc910b2ff3da0be92dcb7d8275ea49bcd7"
   end
 
   keg_only :versioned_formula
@@ -138,9 +139,14 @@ class RubyAT32 < Formula
       (rg_gems_in"gems").install Dir[buildpath"vendor_gemgems*"]
       (rg_gems_in"specificationsdefault").install Dir[buildpath"vendor_gemspecificationsdefault*"]
       bin.install buildpath"vendor_gembingem" => "gem"
-      (libexec"gembin").install buildpath"vendor_gembinbundle" => "bundle"
-      (libexec"gembin").install_symlink "bundle" => "bundler"
+      bin.install buildpath"vendor_gembinbundle" => "bundle"
+      bin.install buildpath"vendor_gembinbundler" => "bundler"
     end
+
+    # Customize rubygems to lookinstall in the global gem directory
+    # instead of in the Cellar, making gems last across reinstalls
+    config_file = lib"ruby#{api_version}rubygemsdefaultsoperating_system.rb"
+    config_file.write rubygems_config
   end
 
   def post_install
@@ -152,21 +158,9 @@ class RubyAT32 < Formula
       #{rubygems_bindir}bundler
     ].select { |file| File.exist?(file) })
     rm_r(Dir[HOMEBREW_PREFIX"librubygems#{api_version}gemsbundler-*"])
-    rubygems_bindir.install_symlink Dir[libexec"gembin*"]
-
-    # Customize rubygems to lookinstall in the global gem directory
-    # instead of in the Cellar, making gems last across reinstalls
-    config_file = lib"ruby#{api_version}rubygemsdefaultsoperating_system.rb"
-    config_file.unlink if config_file.exist?
-    config_file.write rubygems_config(api_version)
-
-    # Create the sitedir and vendordir that were skipped during install
-    %w[sitearchdir vendorarchdir].each do |dir|
-      mkdir_p `#{bin}ruby -rrbconfig -e 'print RbConfig::CONFIG["#{dir}"]'`
-    end
   end
 
-  def rubygems_config(api_version)
+  def rubygems_config
     <<~RUBY
       module Gem
         class << self
@@ -183,7 +177,7 @@ class RubyAT32 < Formula
             "lib",
             "ruby",
             "gems",
-            "#{api_version}"
+            RbConfig::CONFIG['ruby_version']
           ]
 
           @homebrew_path ||= File.join(*path)

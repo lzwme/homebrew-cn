@@ -1,19 +1,19 @@
 class LtexLsPlus < Formula
   desc "LTeX+ Language Server: maintained fork of LTeX Language Server"
   homepage "https:ltex-plus.github.ioltex-plus"
-  url "https:github.comltex-plusltex-ls-plusarchiverefstags18.5.0.tar.gz"
-  sha256 "5c5c4675644eff6c665f799d07c266360959b070ecfa0a310410b03846029583"
+  url "https:github.comltex-plusltex-ls-plusarchiverefstags18.5.1.tar.gz"
+  sha256 "dbfc83d7e82f5d1f4be9d266248728e11628bd307858adfec20c5dbfda031f90"
   license "MPL-2.0"
   head "https:github.comltex-plusltex-ls-plus.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e56206be9f578c17a0020186ee9473b990b8b8b81891f59dc6358c976bb29eb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53ea13411633b9616f6e2e6ac5c5b75e0a174e474e161308a6f92696f034bfbb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0291c8194687e06e0bb1fc496b26bddf34676e9a590a0f99619a249280cb5c58"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e0ce518020bf309203fae9806d60b6872ea5e8fbe1d8a6ecfe2a86bd4e225ef7"
-    sha256 cellar: :any_skip_relocation, ventura:       "20cf4c0d97edcd066edfc3b0880463370a6c48ee7504da7ac3e229a36243e3d3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2497b148cb3c3e6e3d6254c9b6a5951c674f9a8676381dce17cd7925606551dd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c7e524212da82fb51846a8f0895bdcfd6657f267c51cb9fed7f0218bd119bf5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "506aba208fad07d55de203b9f5a8d4c587c6a24f1cec7c8ed200b60e2c8fb142"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dab59816c40ffc74f2a2f90d051924fbe27bbdcdcfd938fe00b4ce9ddcc5d600"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "af2a52c0a38ddeb1c39900a1cc97d196398adf1a66658483df86b0a296ac2771"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b43aad065cf4a263cab53ac7d8efaf5c4cca648e9e2e724729aa051fdffe7afd"
+    sha256 cellar: :any_skip_relocation, ventura:       "3a31edc7885eca0427172411de04e77c7d81609e04ab8e01f49941059ce89fa3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1e07514acee82176329bbcb45c652a2c781b3e40becf1fa3724795819b3384fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54de365156f8b7fa5138195e66affa4c46e71482fa345e6a3f33efd8646ed268"
   end
 
   depends_on "maven" => :build

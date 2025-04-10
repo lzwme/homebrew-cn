@@ -2,11 +2,10 @@ class Crystal < Formula
   desc "Fast and statically typed, compiled language with Ruby-like syntax"
   homepage "https:crystal-lang.org"
   license "Apache-2.0"
-  revision 1
 
   stable do
-    url "https:github.comcrystal-langcrystalarchiverefstags1.15.1.tar.gz"
-    sha256 "72b32f2da09059ca96331be124cf611d3c6bd6da80f52cd551df59bfe14e6ebd"
+    url "https:github.comcrystal-langcrystalarchiverefstags1.16.0.tar.gz"
+    sha256 "40d442b32d17878d7d01c05b1471347a9b3973e3f41d288be3703991cd3cd5c3"
 
     resource "shards" do
       url "https:github.comcrystal-langshardsarchiverefstagsv0.19.1.tar.gz"
@@ -20,12 +19,9 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6d1247ff0ad8af25afadbdfb5aa38db64f49aa6a90ed0fac08bda8e5e6f7c8bc"
-    sha256 cellar: :any,                 arm64_sonoma:  "1688fc56e0148c8a6996ffa768eb805b3b4be7e1b876e9f557425729f9289c35"
-    sha256 cellar: :any,                 arm64_ventura: "89ebc000727199878c0afa082ee5dfae8d294bcf03e81c76e3afdd20e35d13a6"
-    sha256 cellar: :any,                 sonoma:        "b5243b486189f93a224fd53aebe580d5b1a558a10c23d81e520b4c258b44a029"
-    sha256 cellar: :any,                 ventura:       "194d1b1a5ba564ffeec760e68e1e6d4d9a5d82b9fa706627a8257fb961d76c97"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e1d7a820bfbd6b571c06fac0be46e271ad781de6f151243f47af77534dc84d1"
+    sha256 cellar: :any,                 sonoma:       "174cdc2000de6d0b13e4920e8962ca0c2e46b5bb9c228ceead7edb1647a48480"
+    sha256 cellar: :any,                 ventura:      "4bc1020d13241948d7ee7d3df6fc8cd7e56b43ad00722e7a25f098e708a77dd3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "efb0d3ec5ac701ed7ad1e9d3877737d965d8020349273b2045bedfe7ef8368da"
   end
 
   head do

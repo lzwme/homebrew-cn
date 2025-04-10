@@ -20,6 +20,15 @@ class WasmPack < Formula
   depends_on "rustup"
 
   def install
+    # We hit a segfault in test using pre-built cargo-generate < 0.21.2 on arm64 linux.
+    # The logic to use a global copy from PATH is broken[^1] and a PR[^2] to fix stalled.
+    # There is another PR[^3] to provide an environment variable to bypass version check.
+    #
+    # [^1]: https:github.comrustwasmwasm-packissues1457
+    # [^2]: https:github.comrustwasmwasm-packpull1330
+    # [^3]: https:github.comrustwasmwasm-packpull1482
+    inreplace "srcinstallmod.rs", '"0.18.2"', '"0.21.3"' if OS.linux? && Hardware::CPU.arm?
+
     system "cargo", "install", *std_cargo_args
   end
 

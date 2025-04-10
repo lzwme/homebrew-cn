@@ -1486,6 +1486,7 @@ Homebrew-homebrew-core/Formula/d/docker-squash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/docker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dockerfile-language-server.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dockerfilegraph.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dockerfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dockerize.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dockly.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dockutil.rb, Homebrew/homebrew-core, 1
@@ -9653,6 +9654,7 @@ Homebrew-homebrew-cask/Casks/font/font-e/font-et-book.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/font/font-e/font-euphoria-script.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-e/font-everson-mono.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-e/font-ewert.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-e/font-exile.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-e/font-exo-2.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-e/font-exo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-e/font-expletus-sans.rb, Homebrew/homebrew-cask, 1
@@ -10169,6 +10171,7 @@ Homebrew-homebrew-cask/Casks/font/font-l/font-lexend.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/font/font-l/font-liberation-mono-for-powerline.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-liberation-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-liberation.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-l/font-libertinus-mono.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-libertinus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-libre-barcode-128-text.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-libre-barcode-128.rb, Homebrew/homebrew-cask, 1
@@ -13563,7 +13566,6 @@ Homebrew-homebrew-cask/Casks/r/receiptquicklook.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/receipts.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/recents.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/recipeui.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/r/recordit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/recovery-disk-assistant.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rectangle-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/rectangle.rb, Homebrew/homebrew-cask, 1
@@ -13769,7 +13771,6 @@ Homebrew-homebrew-cask/Casks/s/second-life-viewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/secretive.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/secure-pipes.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/securesafe.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/s/securid.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/security-growler.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/securityspy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/segger-embedded-studio-for-arm.rb, Homebrew/homebrew-cask, 0

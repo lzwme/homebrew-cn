@@ -19,6 +19,7 @@ class Katago < Formula
     sha256 cellar: :any,                 sonoma:         "ba24de18bcadf148cfc200afc681ab9297e640e2395de69ac43efbe5b4cbf313"
     sha256 cellar: :any,                 ventura:        "ab482d1af11de5e268ad2465ee8feb5aa7436dbc7885cfefa677ab35c39462ef"
     sha256 cellar: :any,                 monterey:       "27da9731aecb9f6f8bf0ce99d8d0719e2f833c9ba7342f784f3b6f952e45eb9b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "f5a46a44d6e32e7f21986ce70aa5ed124706a892681539c9d8c699fd07fc13bb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3033bade67d18470af58d50cf498ec6a40cb9f36cccf3a1295d60faa71f7df59"
   end
 
@@ -48,6 +49,9 @@ class Katago < Formula
   end
 
   def install
+    # Workaround for arm64 linux, issue ref: https:github.comlightvectorKataGoissues1049
+    ENV.append_to_cflags "-fsigned-char" if OS.linux? && Hardware::CPU.arm?
+
     args = ["-DNO_GIT_REVISION=1"]
     args += if OS.mac?
       ["-DUSE_BACKEND=OPENCL", "-DCMAKE_OSX_SYSROOT=#{MacOS.sdk_path}"]

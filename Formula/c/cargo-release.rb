@@ -1,32 +1,25 @@
 class CargoRelease < Formula
   desc "Cargo subcommand `release`: everything about releasing a rust crate"
   homepage "https:github.comcrate-cicargo-release"
-  url "https:github.comcrate-cicargo-releasearchiverefstagsv0.25.17.tar.gz"
-  sha256 "38dc83a5307492fb3d0d03c6c8eb3f8fd38e4a89969e86085d429c75071007dd"
+  url "https:github.comcrate-cicargo-releasearchiverefstagsv0.25.18.tar.gz"
+  sha256 "a212d974db4cf46e580cf41e1f0bcf81ff30aac1dfe9e31cd0dc89c0b5eb3586"
   license any_of: ["Apache-2.0", "MIT"]
-  revision 1
   head "https:github.comcrate-cicargo-release.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "16598e6d4d41c555924f05a4b86130bc187b98628c6d96ca4bdb24ecd3545740"
-    sha256 cellar: :any,                 arm64_sonoma:  "bab34ef26404da40da0141120d913b37b33f9305a7d6f01d26bbe98ee7619a40"
-    sha256 cellar: :any,                 arm64_ventura: "d7920a0233d80e2d6bfb5c10b24b4e35a6c10dc3b932e8bd0fe118f1844c4cf0"
-    sha256 cellar: :any,                 sonoma:        "9612ce2f3d8acd5733d9548dd808ad17b04b72ea10deb0eae900335c711827cd"
-    sha256 cellar: :any,                 ventura:       "dc919f2113db68ab23f762faf9dc51a5a8332dbb05eb19d59f71bc124af6b76b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "263aa299d0f67095770718678d14a20b9fc01ef56360ebeeadf57db4ca580347"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a64e1478de47beab391fe6b3f040e8c73cda7d9d0dce540d9b07bc1953c05282"
+    sha256 cellar: :any,                 arm64_sequoia: "1b9ef97a22b96c2855ff78669f71a2262e3d021e490f63a0846ef1822f5ab1e8"
+    sha256 cellar: :any,                 arm64_sonoma:  "3938cbec73223f3399ba771d6a2d64067a3c8783120e69bcfd51ac0f148b66c2"
+    sha256 cellar: :any,                 arm64_ventura: "6978e3f6f0830214570a66544466c79ebf9d5aa06ca9dc482713422aa7a7e43e"
+    sha256 cellar: :any,                 sonoma:        "112c6f6dd8f26537171a283851da6f236cb0cb5f9001a09deb188f40e79364f4"
+    sha256 cellar: :any,                 ventura:       "3808557d4a75b9a295c60f887c0c67163c130bf1065b21b946842bbbc29cfa80"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d02b46b6b026b5b87c6434da3c840ce18d3227d256607c9df0dd67ec8877d732"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "39931a7937cfbad8a1460122044fd01d78e2472af66d95d2a09f2b7970c673f8"
   end
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "rustup" => :test
   depends_on "libgit2"
-
-  # libgit2 1.9 build patch, upstream pr ref, https:github.comcrate-cicargo-releasepull876
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patchese43c3d5d867604166cbb95e241d3679eb8ca61b5cargo-release0.25.17-libgit2-1.9.patch"
-    sha256 "025e39c2bd6c8112e7528986b629a44d84c6d7036e2d1bd2864e650ff3156c60"
-  end
 
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
