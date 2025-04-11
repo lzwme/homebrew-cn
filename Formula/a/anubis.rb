@@ -1,18 +1,18 @@
 class Anubis < Formula
   desc "Protect resources from scraper bots"
   homepage "https:anubis.techaro.lol"
-  url "https:github.comTecharoHQanubisarchiverefstagsv1.15.2.tar.gz"
-  sha256 "d3412918872d0e3fe95091953c23be860c81b289ec4c00f94ae090037b69a885"
+  url "https:github.comTecharoHQanubisarchiverefstagsv1.16.0.tar.gz"
+  sha256 "8b2dce152312c895ddd06c370b7e7c74a5971a291e160a607716c5857bb5ff38"
   license "MIT"
   head "https:github.comTecharoHQanubis.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0fe2b3ac54d14ed56ac6e0bbc52b6fde1361975ed4edb4b84494cbbef67ee4e6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2f46fb664400f246a20f62b12f7c67b0ba924b8fa8733b3806c25f5a5e76a424"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3ea03df6d20ad735ed7c82a254e40942020d95edc0122c4790cb1f9a7f17a6b5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2160b056ea45d3713a7ab7070f465bd6c35a1139b5715286035d75bca0663e5f"
-    sha256 cellar: :any_skip_relocation, ventura:       "a6f23a3559a78bf64e16fe7895c9b7e192291fc68ef18e686dc0f9e5d4d352ae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "807fc6a3ea23b734ad90357b65832657f820fecff43c5ac973a8a219929e559b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "28d742f20bfbfc2fef27d34ad1643d974c9a0c983cc8af098021146cf5030a2d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a005f7a128680763d1ccdeaf2828808a9575d28529b8ecac01c5c8fa0c0837ca"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b253cc9857b0000eb85204d26cf926d68d9754e21f6177bc83df6129a24072c8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8c199d733874ec5d18545d2525c91d5879826e8d4f601f5f39b39ab3df709794"
+    sha256 cellar: :any_skip_relocation, ventura:       "0854c1b08ac87abc4c9fc4679836a3a4c11818ff44242b53d0080bdfa2218836"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fe211b40d601ba840a7540653074bc588f9999f6bd517eacbfd7470efab0499"
   end
 
   depends_on "go" => :build
@@ -29,7 +29,7 @@ class Anubis < Formula
 
     webify_pid = spawn Formula["webify"].opt_bin"webify", "-addr", ":#{webify_port}", "echo", "Homebrew"
     anubis_pid = spawn bin"anubis", "-bind", ":#{anubis_port}", "-target", "http:localhost:#{webify_port}",
-      "-serve-robots-txt", "-debug-x-real-ip-default", "127.0.0.1"
+      "-serve-robots-txt", "-use-remote-address", "127.0.0.1"
 
     assert_includes shell_output("curl --silent --retry 5 --retry-connrefused http:localhost:#{anubis_port}"),
       "Homebrew"

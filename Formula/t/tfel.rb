@@ -13,6 +13,16 @@ class Tfel < Formula
       url "https:github.comthelfertfelcommitc4c564ab09a7c13c87ef3628ed89d2abe1c2aa0d.patch?full_index=1"
       sha256 "34b217330ef72b12d19b820a7edd994f0107e295f96c779dfe40a990528e1c3a"
     end
+
+    # Backport fix for https:github.comthelfertfelissues740
+    patch do
+      url "https:github.comthelfertfelcommit331f889bec18329d2a8770cf72be33218c39b3f7.patch?full_index=1"
+      sha256 "901c94fe0a48890e4b17d6cefd87dde34dead3563544162b3196aacda04eebc0"
+    end
+    patch do
+      url "https:github.comthelfertfelcommit2ac23026e15c716c8b5364aa572fb651457ad786.patch?full_index=1"
+      sha256 "8becb7f82848cb36dd2fc200bed676c95692c9a451ca12c661ef1374ba87bbf1"
+    end
   end
 
   bottle do
@@ -49,6 +59,7 @@ class Tfel < Formula
       "-Denable-diana-fea=ON",
       "-Denable-ansys=ON",
       "-Denable-europlexus=ON",
+      "-Denable-testing=OFF",
       "-Dpython-static-interpreter-workaround=ON",
     ]
     # Avoid linkage to boost container and graph modules

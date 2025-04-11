@@ -13,6 +13,7 @@ class Securefs < Formula
   end
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "a0e62e429fc413fd9ea8333f98ade8696f218ea214d6bd0b58026bfd125be9bc"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "439a8dd518c1a5fbe99292fa9cb4d5e941fe41cc0a9173245982af5d28bc0d33"
   end
 

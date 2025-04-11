@@ -12,6 +12,7 @@ class Osm2pgsql < Formula
     sha256 arm64_ventura: "cc629118eaa6c3cc93f80ccbea14ee722daeba75a49721f6b295c63a2dbca092"
     sha256 sonoma:        "dae5a808a6c14f711088d87643a026eca78920052d8ac294b78cdc50a9dc9cf1"
     sha256 ventura:       "d7998913601502b997308ac58437d428a819236d6b695de2e04b3ff73df17950"
+    sha256 arm64_linux:   "f422cf9836c735380b10c849fdc52abfe2ab29fcae99fee74ff2e7e4070f59c4"
     sha256 x86_64_linux:  "678a4c0d5de7d72f626c01563c5d480fdc0656b678ff1893dbeb7b94def4162d"
   end
 

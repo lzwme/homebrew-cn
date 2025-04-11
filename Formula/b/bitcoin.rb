@@ -23,6 +23,7 @@ class Bitcoin < Formula
     sha256 cellar: :any,                 arm64_ventura: "b955f167908e20578d6c964433c395ad9daee31f248c94165cd029b5a681d990"
     sha256 cellar: :any,                 sonoma:        "e8a97cac935bf909971e2b7fce84c479ee630da0cc2d72444127a83ceac055ec"
     sha256 cellar: :any,                 ventura:       "db32711ae5d7c918368fa0dd422105f7e1c54e7d607c5885b587e2daab7ea274"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1b6c930fc44a3df0f510fc5e786371d1b7b304ea434577b913cc0fd2cc5844f7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ab7e564dcc037305947232633244012fbe4043e09ab38db130bed6087d72325"
   end
 
@@ -80,18 +81,22 @@ class Bitcoin < Formula
       with_env(CFLAGS: ENV.cflags) do
         # Fix compile with newer Clang
         ENV.append "CFLAGS", "-Wno-implicit-function-declaration" if DevelopmentTools.clang_build_version >= 1200
+        # Fix linking with static libdb
+        ENV.append "CFLAGS", "-fPIC" if OS.linux?
+
+        args = ["--disable-replication", "--disable-shared", "--enable-cxx"]
+        args << "--build=aarch64-unknown-linux-gnu" if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+
         # BerkeleyDB requires you to build everything from the build_unix subdirectory
         cd "build_unix" do
-          system "..distconfigure", "--disable-replication",
-                                      "--disable-shared",
-                                      "--enable-cxx",
-                                      *std_configure_args(prefix: buildpath"bdb")
+          system "..distconfigure", *args, *std_configure_args(prefix: buildpath"bdb")
           system "make", "libdb_cxx-4.8.a", "libdb-4.8.a"
           system "make", "install_lib", "install_include"
         end
       end
     end
 
+    ENV.runtime_cpu_detection
     system ".autogen.sh"
     system ".configure", "--disable-silent-rules",
                           "--with-boost-libdir=#{Formula["boost"].opt_lib}",

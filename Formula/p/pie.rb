@@ -11,6 +11,7 @@ class Pie < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c1e417f2d7a2dabba0e7db180743cbaa3a609ff551de1dcad70915df508d6454"
     sha256 cellar: :any_skip_relocation, sonoma:        "5d3a7d9680e8c9cfdae6e72061dd82da043c975c62dc1d0bfae36e86b77a860b"
     sha256 cellar: :any_skip_relocation, ventura:       "5d3a7d9680e8c9cfdae6e72061dd82da043c975c62dc1d0bfae36e86b77a860b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "917404edceed6aa8a3371d071666d4f308d83235d0f9afdf5f1e00229434614b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "01d4060c9f9ae22433f55d04d1ba40738f934d636b86014647e357600d4f5cc8"
   end
 

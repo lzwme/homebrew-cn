@@ -1,18 +1,18 @@
 class Krakend < Formula
   desc "Ultra-High performance API Gateway built in Go"
   homepage "https:www.krakend.io"
-  url "https:github.comkrakendiokrakend-cearchiverefstagsv2.9.3.tar.gz"
-  sha256 "ab1b6bbf603c37751da320f9391afd25cef8570176debc6c760a0852c2dcc473"
+  url "https:github.comkrakendiokrakend-cearchiverefstagsv2.9.4.tar.gz"
+  sha256 "95e0f124cbced45bf846e94fc3386f559a796c8b11f0238465620456810d2ad3"
   license "Apache-2.0"
   head "https:github.comkrakendiokrakend-ce.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9f41c6ce07bdc9abcbd0c09e7eb3732fc757d67875a1d8b20df4d81d5662254d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6ea5659032140b3d22913d22099a272840c88234d766eaac7078a4c6c320de3d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9ccd6035434e8981b5d85153df4570723a9149e03847ac846f1941cf7bd8101b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "77baad9a9395bfcbd3b7e328025c4720a0be27eaa721b1c270f0bc7e929b589f"
-    sha256 cellar: :any_skip_relocation, ventura:       "52994f4bf4fa2bd996a58d6e5f1debc20bcfa41297bf4c57d0085fccbc9db0cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "447e187083cb3be7e7a82a3e93887376749b0238db90e25a12311d7dd11aadd1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8319093cf60758bbef672aaddc75bbf69a4db8fa58e45e67fdd60939f3c810cc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e10e0a15633b333e065a0d5e5856691c1df8fcc1567fc1673d61ce9f22be04e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "799f816ec2a421dc42294d48df56c8e3c12c04800a1b7c4a9518cfa598b7c000"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ce68340beef9c78686a40e1893c44adad0670c045f62f8b23cb79f99acfc7c99"
+    sha256 cellar: :any_skip_relocation, ventura:       "a4f851447324024b948bebb1da8148fde8f688d0170c45031a3563ab5076cd81"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d68285c7fd8fdb9780ab2af44270f0c3583d99237ec22802e30c9237ef938453"
   end
 
   depends_on "go" => :build

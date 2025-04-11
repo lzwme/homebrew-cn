@@ -16,6 +16,7 @@ class Sui < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "820fcb9e165d7d2ee3421eb71f35702549b0718cd7c0646f347f8eacf455cd2d"
     sha256 cellar: :any_skip_relocation, sonoma:        "841c807bbf2955d0b3859cc5e5ac8b26cc6460906750ffe1707d23511a5bf1b2"
     sha256 cellar: :any_skip_relocation, ventura:       "56504755c006ba0e87b08100b975b1e866ea3d1c1fb4fd9100a51d83efc20043"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "85ddb3619c92c817715706404097479180b092012f81724f0ae8a12b63a36be1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "11f3811ee4cbd3da532f7118db22a175224c3764e53460b0a356e38aa01af9b0"
   end
 

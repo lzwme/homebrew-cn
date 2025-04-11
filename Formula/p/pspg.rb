@@ -12,6 +12,7 @@ class Pspg < Formula
     sha256 cellar: :any,                 arm64_ventura: "8b4c4f59ebd9aa94a002b3950f86174d128e91d8b453fdecf1f572b3861dc448"
     sha256 cellar: :any,                 sonoma:        "ca6de3abde45647473dffb940648489f6443ba3ca13f6422edbbc88b63edb5eb"
     sha256 cellar: :any,                 ventura:       "48e69d20062b472252b53695e29a34e3f2bba7246edae7c75875eee2b9b1f894"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae0ad43b352850456bc587f38b6d235bfca11ffce1f9adc2eea8a989386cb1cb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef779b44b5acd71884e8af2c6947e3083c21f88e8263298d5b45beeec3f0ba71"
   end
 

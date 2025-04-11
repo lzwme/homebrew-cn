@@ -6,9 +6,16 @@ class AnsibleCmdb < Formula
   url "https:github.comfboenderansible-cmdbarchiverefstags1.31.tar.gz"
   sha256 "8de9a02e3f0740967537850f6263756dca1bf506cd95c1f2ef7f4ee6d9ff23b8"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "39eadb125103aac400189e36112333e6e1da17fb75eae26ec1dd34d99185d798"
+    sha256 cellar: :any,                 arm64_sequoia: "1273a6462f8b5745a2b1c297020a609de08c88703908deea3d3276a9af8e5a51"
+    sha256 cellar: :any,                 arm64_sonoma:  "1fe8dcbaadd7a83a63b6d2e9e7c33baf6eebcc7e6653f9a57ba7837759858a0c"
+    sha256 cellar: :any,                 arm64_ventura: "6f14fe8987e3919f7352c24eb57c59129a453047c0e759a1e265289c52f74092"
+    sha256 cellar: :any,                 sonoma:        "ebccc3b4a0ce69d9ac06c7dd8fcb922b0513031e6531010b4e80e01b3a94d942"
+    sha256 cellar: :any,                 ventura:       "3e171c3d264163e93fe3ad96ce5113d49f560d8c596f1dd6460c8a950b626240"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "166c728e271581dadf1c2764ab910b85b44ebffe41c3822b5748311184242beb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a142934b4b440e622a1e6958818e4588103c5a4511ac97fff5cb639a75323444"
   end
 
   depends_on "libyaml"
@@ -19,17 +26,17 @@ class AnsibleCmdb < Formula
     sha256 "dc41ae07961f3f19f97241e4c7f611d84d076c420dd2876aadfd936e59c8c302"
   end
 
-  resource "Mako" do
+  resource "mako" do
     url "https:files.pythonhosted.orgpackages624fddb1965901bc388958db9f0c991255b2c469349a741ae8c9cd8a562d70a6mako-1.3.9.tar.gz"
     sha256 "b5d65ff3462870feec922dbccf38f6efb44e5714d7b593a656be86663d8600ac"
   end
 
-  resource "MarkupSafe" do
+  resource "markupsafe" do
     url "https:files.pythonhosted.orgpackagesb2975d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62markupsafe-3.0.2.tar.gz"
     sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
   end
 
-  resource "PyYAML" do
+  resource "pyyaml" do
     url "https:files.pythonhosted.orgpackages54ed79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17pyyaml-6.0.2.tar.gz"
     sha256 "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
   end

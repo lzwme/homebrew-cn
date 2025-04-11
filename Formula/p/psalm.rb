@@ -16,6 +16,7 @@ class Psalm < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c0ad9e25c0ff1d9ebad8d1de1a0a3cd5af04a915529f59685f60aeabfb82b158"
     sha256 cellar: :any_skip_relocation, sonoma:        "195c9f8c31719ddc48592db944bf219b3d2884bcb04ff04b01653453b90b916d"
     sha256 cellar: :any_skip_relocation, ventura:       "195c9f8c31719ddc48592db944bf219b3d2884bcb04ff04b01653453b90b916d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0ad9e25c0ff1d9ebad8d1de1a0a3cd5af04a915529f59685f60aeabfb82b158"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0ad9e25c0ff1d9ebad8d1de1a0a3cd5af04a915529f59685f60aeabfb82b158"
   end
 

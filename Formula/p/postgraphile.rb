@@ -15,6 +15,7 @@ class Postgraphile < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "1f781319e03509553933493a7c96234f84ac88b9c0afde001b70e13b768bec23"
     sha256 cellar: :any_skip_relocation, ventura:        "1f781319e03509553933493a7c96234f84ac88b9c0afde001b70e13b768bec23"
     sha256 cellar: :any_skip_relocation, monterey:       "1f781319e03509553933493a7c96234f84ac88b9c0afde001b70e13b768bec23"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "6364c86e42bb9b7a680af87c3fe4f2af86b434edec018b315230f5f62780e74f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "680fa557c1ebef6293aa26a8b2003bba8b009e5e82d99d0bb4805b57e6e921bd"
   end
 

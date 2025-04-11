@@ -11,6 +11,7 @@ class Pgbackrest < Formula
     sha256 cellar: :any, arm64_ventura: "06e35c096155ef777b63ab8546434553faae37ca8163fd6b4a656a25db9c1200"
     sha256 cellar: :any, sonoma:        "0c97b5bf0b4a530fa7616f8bd720b46c321ff58ec90adaeb97af33fe6455fafa"
     sha256 cellar: :any, ventura:       "38dc79cb0a755a5401dab40938e44753fd525283f1340248df51bc4aa3e653ce"
+    sha256               arm64_linux:   "19f417b6115d7de5be178e05aa2baa8a8d6b91c6b1a859086cf7dcfdaf55cec1"
     sha256               x86_64_linux:  "26b7b370dc188c4ef542705baf1774243a6bb9073f6f7a1155cdf3d403b10ba4"
   end
 

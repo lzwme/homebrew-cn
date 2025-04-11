@@ -19,9 +19,12 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 sonoma:       "174cdc2000de6d0b13e4920e8962ca0c2e46b5bb9c228ceead7edb1647a48480"
-    sha256 cellar: :any,                 ventura:      "4bc1020d13241948d7ee7d3df6fc8cd7e56b43ad00722e7a25f098e708a77dd3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "efb0d3ec5ac701ed7ad1e9d3877737d965d8020349273b2045bedfe7ef8368da"
+    sha256 cellar: :any,                 arm64_sequoia: "ffd543b04e42bd9533f49e9597f0abc78f77ad35d82991ba7a9ea2eab735a90b"
+    sha256 cellar: :any,                 arm64_sonoma:  "6526515d8417fa8c81c7159b9b0ad33e193287c8ebc5c896dbd302ec07e619c1"
+    sha256 cellar: :any,                 arm64_ventura: "7c98469a661af45f91d97e4b43ed9a0f37a9d66eebfad949bb17c4ebd089bb47"
+    sha256 cellar: :any,                 sonoma:        "174cdc2000de6d0b13e4920e8962ca0c2e46b5bb9c228ceead7edb1647a48480"
+    sha256 cellar: :any,                 ventura:       "4bc1020d13241948d7ee7d3df6fc8cd7e56b43ad00722e7a25f098e708a77dd3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efb0d3ec5ac701ed7ad1e9d3877737d965d8020349273b2045bedfe7ef8368da"
   end
 
   head do

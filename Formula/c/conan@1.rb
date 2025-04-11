@@ -133,7 +133,7 @@ class ConanAT1 < Formula
   test do
     system bin"conan", "search", "zlib", "--remote", "conancenter"
 
-    system bin"conan", "install", "zlib1.2.11@", "--build"
-    assert_path_exists testpath".conandatazlib1.2.11"
+    system bin"conan", "install", "zlib1.3.1@", "--build"
+    assert_path_exists testpath".conandatazlib1.3.1"
   end
 end

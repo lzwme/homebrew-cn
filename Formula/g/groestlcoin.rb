@@ -13,6 +13,7 @@ class Groestlcoin < Formula
     sha256 cellar: :any,                 arm64_ventura: "7a126eb52180581d3c66b1404cd6db1a1e647d4470645e16d7d569f60f415790"
     sha256 cellar: :any,                 sonoma:        "98bf3b941307bf031bbcdf1e0f6a22140872d642bce9e2db0741420504d5b0b5"
     sha256 cellar: :any,                 ventura:       "c916ed1c3f83bd7bccffd521b3688ec7c288a89f703a4424228cf0cbd19823eb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dfd80a8d2bd67a15fea6633a799eced363b66477ac5bc66b1a75d1e59047d696"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "751568f7603c64c6109ada47fd40fc2f8f32961a069f3a6c1b00307fa0355d7b"
   end
 
@@ -39,6 +40,7 @@ class Groestlcoin < Formula
   end
 
   def install
+    ENV.runtime_cpu_detection
     system ".autogen.sh"
     system ".configure", "--disable-silent-rules",
                           "--with-boost-libdir=#{Formula["boost"].opt_lib}",

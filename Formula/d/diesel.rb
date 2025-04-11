@@ -12,6 +12,7 @@ class Diesel < Formula
     sha256 cellar: :any,                 arm64_ventura: "d6c2f3ed273793d37338b985e2a7efc12c455ea3e35dc71dc81477259b5e6ede"
     sha256 cellar: :any,                 sonoma:        "c54b1de5a20edbe60bfde4f4ed5034a8a824362ede8ac520404168e2a65a7ab2"
     sha256 cellar: :any,                 ventura:       "b224b6daee039f726cbebfb389f8771c736c6cc4195b9b1bf2fd73b8e3525a4a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "06a12eef988c9c6041d2f3a0d872ccb58a036ceb0109dac3087607086cccec15"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cca7aa8c33be07c369d822f21bb7f3b02a783dd3b991f18122570d38604984a"
   end
 

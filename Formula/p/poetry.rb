@@ -9,19 +9,23 @@ class Poetry < Formula
   head "https:github.compython-poetrypoetry.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e14348a027a4af29e23dc9613b815c23460ddbffd0e520a5204adaf61442ba3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "21d07d316fc8b9e4dad852d664bcbc0cd9113261bdc672bacfb7c9e3adb4328c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3e60b317e13c093becb10f10d81dad65f695167839450f7db52995e77fbaf5fb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fdf9d5a3831ffe53cbe45368ebe22e9735bb8770890d2204e4d7632d9136a06f"
-    sha256 cellar: :any_skip_relocation, ventura:       "6025097142813beff899322bbce9d3c9b10aa7d50a47d5dc7c1f503a9a6a4c94"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "27a3583c202c9f06e170f7d1acdf90401ecda67e603b6f31425d3f305e9f7350"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "71193eca8305d4b40425beacae65483ea67a075b78b9d4e392db9e1033becd92"
+    sha256 cellar: :any,                 arm64_sonoma:  "6c3584c0be881162d800fb54d206d47ee9ce2364d1460af5115e4956f46e74ae"
+    sha256 cellar: :any,                 arm64_ventura: "933e110a12cda288e5704b7412ee81cbc014ff36663b043cfbb0fb7d6ff7a797"
+    sha256 cellar: :any,                 sonoma:        "a5187c74b206a061db21596832d5f79d0d225aa006b6ddd32b7c8ac715eead93"
+    sha256 cellar: :any,                 ventura:       "8c7d960a5a7abaa4478ca1cc3f61f3fc3c9385f8d28077c4d94911e98c83988b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dfdc590f91174e80b41029f91f10bd2a0eaee3450fff5dd3d21e6b029bfe469e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd39e1a9941e18ea336789e546922b643aef0ce9de7346385d11c7346fe2f9a0"
   end
 
   depends_on "cmake" => :build # for rapidfuzz
   depends_on "ninja" => :build # for rapidfuzz
+  depends_on "python-setuptools" => :build # for zstandard to bypass build isolation
   depends_on "certifi"
   depends_on "cffi"
   depends_on "python@3.13"
+  depends_on "zstd"
 
   uses_from_macos "libffi"
 
@@ -175,8 +179,8 @@ class Poetry < Formula
   end
 
   resource "rapidfuzz" do
-    url "https:files.pythonhosted.orgpackagesf9be8dff25a6157dfbde9867720b1282157fe7b809e085130bb89d7655c62186rapidfuzz-3.12.2.tar.gz"
-    sha256 "b0ba1ccc22fff782e7152a3d3d0caca44ec4e32dc48ba01c560b8593965b5aa3"
+    url "https:files.pythonhosted.orgpackagesedf66895abc3a3d056b9698da3199b04c0e56226d530ae44a470edabf8b664f0rapidfuzz-3.13.0.tar.gz"
+    sha256 "d2eaf3839e52cbcc0accbe9817a67b4b0fcf70aaeb229cfddc1c28061f9ce5d8"
   end
 
   resource "requests" do
@@ -220,8 +224,8 @@ class Poetry < Formula
   end
 
   resource "virtualenv" do
-    url "https:files.pythonhosted.orgpackagesc79c57d19fa093bcf5ac61a48087dd44d00655f85421d1aa9722f8befbf3f40avirtualenv-20.29.3.tar.gz"
-    sha256 "95e39403fcf3940ac45bc717597dba16110b74506131845d9b687d5e73d947ac"
+    url "https:files.pythonhosted.orgpackages38e0633e369b91bbc664df47dcb5454b6c7cf441e8f5b9d0c250ce9f0546401evirtualenv-20.30.0.tar.gz"
+    sha256 "800863162bcaa5450a6e4d721049730e7f2dae07720e0902b0e4040bd6f9ada8"
   end
 
   resource "xattr" do
@@ -238,7 +242,11 @@ class Poetry < Formula
     # The source doesn't have a valid SOURCE_DATE_EPOCH, so here we set default.
     ENV["SOURCE_DATE_EPOCH"] = "1451574000"
 
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources without: "zstandard"
+    resource("zstandard").stage do
+      system_zstd = "--config-settings=--build-option=--system-zstd"
+      system venv.root"binpython", "-m", "pip", "install", system_zstd, *std_pip_args(prefix: false), "."
+    end
 
     generate_completions_from_executable(bin"poetry", "completions")
   end

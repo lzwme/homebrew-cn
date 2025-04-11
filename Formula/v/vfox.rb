@@ -7,6 +7,11 @@ class Vfox < Formula
   license "Apache-2.0"
   head "https:github.comversion-foxvfox.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3bf4a5a5a906b1bf01a972c567d34ab32d0eb27df6b70a8a8081cd6ddd0cb97"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3bf4a5a5a906b1bf01a972c567d34ab32d0eb27df6b70a8a8081cd6ddd0cb97"

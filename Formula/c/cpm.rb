@@ -1,19 +1,19 @@
 class Cpm < Formula
   desc "Fast CPAN module installer"
   homepage "https:metacpan.orgpodcpm"
-  url "https:cpan.metacpan.orgauthorsidSSKSKAJIApp-cpm-0.997022.tar.gz"
-  sha256 "5965eb6952bb1abd88c3be863b300590e824026895e4ab6b9e81d62609c404ed"
+  url "https:cpan.metacpan.orgauthorsidSSKSKAJIApp-cpm-0.997023.tar.gz"
+  sha256 "5185cfba03bd48e9554663721172a387d66c81dc5e1a1f83b967aabd04614c95"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
   head "https:github.comskajicpm.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cf4bd348d1af5903cf87a6928ecd38dc1b21784f411616d89b19f95aecb286b5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cf4bd348d1af5903cf87a6928ecd38dc1b21784f411616d89b19f95aecb286b5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cf4bd348d1af5903cf87a6928ecd38dc1b21784f411616d89b19f95aecb286b5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "64c7e44a7e6e752b274be3938814264157273e31c4e206227a32d49e7ddfc85e"
-    sha256 cellar: :any_skip_relocation, ventura:       "64c7e44a7e6e752b274be3938814264157273e31c4e206227a32d49e7ddfc85e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "16f02a193033cfcf7fd0d70a927ff36e83d7f994187780352908e0c3605fc088"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a826c4677da9f9d082dd76d8f194ebcaa79417cc8822f857e45612aa4af9329"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f030e621df88f8368cea7a2e77756bedd0686ef8f58f8f416b3809e1ed90db23"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f030e621df88f8368cea7a2e77756bedd0686ef8f58f8f416b3809e1ed90db23"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f030e621df88f8368cea7a2e77756bedd0686ef8f58f8f416b3809e1ed90db23"
+    sha256 cellar: :any_skip_relocation, sonoma:        "77a6c6c7095fd5e4d44f318ac67a7e5f3a22560772ba4c996fcb73583a4aaeaf"
+    sha256 cellar: :any_skip_relocation, ventura:       "77a6c6c7095fd5e4d44f318ac67a7e5f3a22560772ba4c996fcb73583a4aaeaf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6382742191f0cc6f2f864036ae6b023c3123d82cb7e9498cbeea33f7a680ee32"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edcb1755af01eac0735cdcbc9cf3d791a1258cb68fe9234814e6337407701cfa"
   end
 
   depends_on "perl"
