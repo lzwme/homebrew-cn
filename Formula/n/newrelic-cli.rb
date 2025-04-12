@@ -17,6 +17,7 @@ class NewrelicCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "bd381c1835f40f640d57f8b7c50cae1bd868ec7cc9a7301a4d94c1677b9818db"
     sha256 cellar: :any_skip_relocation, sonoma:        "c8b8320b6ddd2ff4b50921ca7cb2b990564adcd95de95b1639ca9f50658fb51e"
     sha256 cellar: :any_skip_relocation, ventura:       "b1bd47adf1259e708679b4a15c07009876c135f7d82fe70c2697f73375f86b6f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d842c5e09dbf75410c73146c53c3ed3f62d8e023de1fe3942942572e0ea0a314"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "43dc8e8e9e820fce1195f82a5f30643783196e31f140c7b01786a621cd2bb4f2"
   end
 

@@ -22,6 +22,7 @@ class Mimirtool < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a14c5fe71d7de72a30b98e92c9e3d9f2a7c04b39ab27aa0e7d2156706c827021"
     sha256 cellar: :any_skip_relocation, sonoma:        "8745d740719833ce966e41ff4940acaea9f550e8f7028a1778a0f429dbb90606"
     sha256 cellar: :any_skip_relocation, ventura:       "e455e12db8479fbaf6faa1bf646a1cc4c0df8a092289c39c8a43c749804d7fb8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "acfac3537d9c5ede709c59a61674f881e7a955fb7e868a35f313d56626463ae0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5edce97f22531f53937378a98faa840bf774ae3ec048aec8928e0a34be5c3974"
   end
 

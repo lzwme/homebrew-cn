@@ -11,6 +11,7 @@ class Malcontent < Formula
     sha256 cellar: :any,                 arm64_ventura: "6f6bc958daad98d78764f36117d705d893c124938af99b2319447e9b08c976e4"
     sha256 cellar: :any,                 sonoma:        "640a13dc82e5fabff6efe7ae2015e5b4b7b778c624e77791da5a717f81e4b364"
     sha256 cellar: :any,                 ventura:       "c411b381c02e58229be7e346fdae7c60cc5b20fdc6222f6fa1eef22619b6503c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "464dda654e59de858f5ca317e788b55cbe48478d466e014c8ff7b72a02d48f58"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1498c207bd012a369d9e811e8e83748731b45c168d98e73cdadfb766d8d9f77"
   end
 

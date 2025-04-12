@@ -16,6 +16,7 @@ class Stackql < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "316fd3cc17f87270e9fbd8c3fc47bef9d026e2ba3df60c5035f0e4e477356f52"
     sha256 cellar: :any_skip_relocation, sonoma:        "f6e2bdd8d7e4c2d4b899a18482d116c9e0faa1a87513db8a2b89ff66799f65a3"
     sha256 cellar: :any_skip_relocation, ventura:       "e5ab941da843b394c2c76116812baeb04666821cc8f65047c88dee9a2c1b78a1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d6fd7fef7d1446b67f7321d60909af9e6facd1670519554610ee4cc9736d07f8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f690a010baa9030806de520a69accefaa713dec447767e4a49dddbe813427f8"
   end
 

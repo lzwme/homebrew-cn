@@ -18,6 +18,7 @@ class OpenshiftCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b2c85ad729c0854bef2432172e46d96e390cb4afd88f82978b733fa9b6284d35"
     sha256 cellar: :any_skip_relocation, sonoma:        "ab2fa1e63a2160619432d37ae54c67d14946451a60248b265f892c3bda8cf194"
     sha256 cellar: :any_skip_relocation, ventura:       "b58727dfadd5e31305988b324e2c0f5c3cbb9ec553aa0beb01133ce7f9cd3783"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4971d4c91212f88e736e42d4199bf91b08dd70084e14e93c67d115d8bdf6238d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e776138372eae68aeb0fbe6890dba4ea92150705d32fd5625d043980a50a0976"
   end
 

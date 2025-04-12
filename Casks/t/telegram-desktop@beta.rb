@@ -1,18 +1,12 @@
 cask "telegram-desktop@beta" do
-  version "5.12.6"
-  sha256 "907d2079ffb615e2d67bcb84452afb9709e9bfb0db1615edb5a09655c72de044"
+  version "5.13.1"
+  sha256 "b026d5382b3ea55d5d8d03617a7107cc61b4e1e66580263a70cdab2b6863a370"
 
-  url "https://updates.tdesktop.com/tmac/tsetup.#{version}.beta.dmg",
-      verified: "updates.tdesktop.com/tmac/"
+  url "https:github.comtelegramdesktoptdesktopreleasesdownloadv#{version}tsetup.#{version}.dmg",
+      verified: "github.comtelegramdesktoptdesktop"
   name "Telegram Desktop"
   desc "Desktop client for Telegram messenger"
-  homepage "https://desktop.telegram.org/"
-
-  livecheck do
-    url "https://telegram.org/dl/desktop/mac?beta=1"
-    regex(/tsetup[._-]v?(\d+(?:\.\d+)+)[._-]beta\.dmg/i)
-    strategy :header_match
-  end
+  homepage "https:desktop.telegram.org"
 
   auto_updates true
   conflicts_with cask: "telegram-desktop"
@@ -22,8 +16,8 @@ cask "telegram-desktop@beta" do
   app "Telegram.app", target: "Telegram Desktop.app"
 
   zap trash: [
-    "~/Library/Application Support/Telegram Desktop",
-    "~/Library/Preferences/com.tdesktop.Telegram.plist",
-    "~/Library/Saved Application State/com.tdesktop.Telegram.savedState",
+    "~LibraryApplication SupportTelegram Desktop",
+    "~LibraryPreferencescom.tdesktop.Telegram.plist",
+    "~LibrarySaved Application Statecom.tdesktop.Telegram.savedState",
   ]
 end

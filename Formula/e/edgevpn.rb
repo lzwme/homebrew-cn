@@ -12,6 +12,7 @@ class Edgevpn < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e2cf151662af07dd9e4c6a65dffdf63cdaab07ffac018084cea10f001e52e4d4"
     sha256 cellar: :any_skip_relocation, sonoma:        "d5a1ffa9b9736aae84868962214ea5cfef60a0e637427a406a4fb87c686a64e4"
     sha256 cellar: :any_skip_relocation, ventura:       "d5a1ffa9b9736aae84868962214ea5cfef60a0e637427a406a4fb87c686a64e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c4727d6cafb57c82b6895db76d26ec43cef0ca6d87b2e7e23b8ebe5c6a4737fa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6872fd5382897a2ff306488f45b2e69ff2747a0cadc4e1e74d62c44eb8084279"
   end
 

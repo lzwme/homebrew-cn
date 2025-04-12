@@ -14,6 +14,7 @@ class Gomodifytags < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "c45d10a4c19d9898dadbd7b98b07ebcd7f9cf1bcd14641db6d3d665226c4f163"
     sha256 cellar: :any_skip_relocation, ventura:        "c45d10a4c19d9898dadbd7b98b07ebcd7f9cf1bcd14641db6d3d665226c4f163"
     sha256 cellar: :any_skip_relocation, monterey:       "c45d10a4c19d9898dadbd7b98b07ebcd7f9cf1bcd14641db6d3d665226c4f163"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "59d33031dcc82467c4a778fb04b3cbae0f2ba73fccce73b0585fdff0fdb6fbaa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "0150f69a9b1e40bc73e41616c4b7cc0d4e515e8eba31756302899a5dd64203cd"
   end
 

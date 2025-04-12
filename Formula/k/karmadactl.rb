@@ -12,6 +12,7 @@ class Karmadactl < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2c2951a28901b0af624ded261a9b212fef655f1548bf16ac0a6a3a0ca298b6ad"
     sha256 cellar: :any_skip_relocation, sonoma:        "c482d80c6bb3fc21b6051fa413fd1175e59f2231df7574a5ac8da41d433fa219"
     sha256 cellar: :any_skip_relocation, ventura:       "1812f9e20c8d4e05c7adf37b791e9c8bd90a2c6756c202a76d2dcccff4a086c3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "17aa732162a5a93e055206e495d8cd8002cc2230b3ca56c4fd4ad486fc2f1b26"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6109db9bfbd3f11eb32a718cee85d62d52fc1fe26411cbaf2f33674132482f26"
   end
 

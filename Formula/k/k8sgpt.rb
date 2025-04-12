@@ -12,6 +12,7 @@ class K8sgpt < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "af4f16dc48fbd4eb27af3bcc91799dc3a5a2392fff0a925ab9b3ecd48659d864"
     sha256 cellar: :any_skip_relocation, sonoma:        "b0ffb4fe88769930f4bfe654fe12e1abb2feb4af1e7bbcc86e25fd04ede64b75"
     sha256 cellar: :any_skip_relocation, ventura:       "8b6e081effc03956c6b91b106b80e32a3b6f55d87e6ee3ff245e9e0246ecb05a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "41e95b20f2a5701a67fbfce1574b9b7bac5a65fb2631eb8875bd8e17e51b40e2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2cdf988d3c816cfa57b37407c85b947a0e8ea84ce7f6b5c20b50020777929eff"
   end
 

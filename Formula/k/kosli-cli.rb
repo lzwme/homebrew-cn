@@ -17,6 +17,7 @@ class KosliCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "72ac7041817d652d50c94ee7bdecbcea0bba205d0eb77ab61bbfe0356faced96"
     sha256 cellar: :any_skip_relocation, sonoma:        "748e0bedf1313d9bceb66224f49f07a05abaecfa97853c2760052d1456d45783"
     sha256 cellar: :any_skip_relocation, ventura:       "65f2a04472120752d8fa6f1abda224d507885d2bd6ea684678922c8f80c7c092"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bb864a8815d8e389f05d2545c87eb2a24ceb0cd4e683ae9ec38e1a8286d0563e"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "293fe4f2addefeb344fbcb7d3d8aeb9834ea8671c4d45145fda0dde1fe4b3c0b"
   end
 

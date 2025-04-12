@@ -12,6 +12,7 @@ class Okteto < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "af1a57c0daa690f94e11dbbb016897bdd2e198207010f69f7931575483494c60"
     sha256 cellar: :any_skip_relocation, sonoma:        "42aef5a76be48374a5b1e41de14ad342c3813750a090b9233bc20d9bdb4d1108"
     sha256 cellar: :any_skip_relocation, ventura:       "51ecc4c948c395c34008ce1565adef8ccb08de747b05e3033bae322a3fc4a3f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ceec829c40c390515907e68700df629b677429e7ffed3ae50d147402908e5286"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d28c10e34c3c7d22b7938315af8bff0c715676bbdc09bd91b2b9196e3dabb942"
   end
 

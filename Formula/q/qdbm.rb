@@ -26,6 +26,7 @@ class Qdbm < Formula
     sha256 cellar: :any,                 high_sierra:    "4ec4e60b16efb21fd7835c182fcf5d8f43c4af4329dd8afb07b4900bc1b17f60"
     sha256 cellar: :any,                 sierra:         "547ecf82252706d276c8359448b7f4e738264999028b06cd3738af34ba58276c"
     sha256 cellar: :any,                 el_capitan:     "6fd80b953a53cdf048bf686d2ac3620deda19a022a10a1e7cbd7aea073bf9b6a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "4ae8fe86435b3471721692361be9749e98955ad4d13b757ecf0dc777c112ae19"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "52780796d139d8e46d0bb342f4e8cce314fa587fee9932a897626b3a1b58a481"
   end
 
@@ -39,8 +40,12 @@ class Qdbm < Formula
       --enable-iconv
     ]
 
-    # Does not want to build on Linux
-    args << "--enable-bzip" if OS.mac?
+    if OS.mac?
+      # Does not want to build on Linux
+      args << "--enable-bzip"
+    else
+      ENV.append "LDFLAGS", "-L#{Formula["zlib"].opt_lib}"
+    end
 
     system "./configure", *args
     if OS.mac?

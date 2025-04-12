@@ -21,6 +21,7 @@ class Kubeone < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a4e9a67772d726b8631d58af17e0e3961a64c02c72ea3e6b8f5bb4b48beef873"
     sha256 cellar: :any_skip_relocation, sonoma:        "b373e65309bbc45ae8e5ca8c0b8232b0f2198087c255cc8cb8e074148dc21574"
     sha256 cellar: :any_skip_relocation, ventura:       "2fd592f52fbbf6904f1252b801e2b5521e47d9c06d8bd0bd7c6684796f412682"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bdef28d2a682958edd7abce7e1c9c16d1cf1b561e3c86a4235e503d0f2595c54"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0801236906327bc1991e782d9e8b3a2d851486c0204dad163350b59899205c0a"
   end
 

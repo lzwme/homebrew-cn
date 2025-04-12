@@ -1,8 +1,8 @@
 class Cdecl < Formula
   desc "Turn English phrases to C or C++ declarations"
   homepage "https:github.compaul-j-lucascdecl"
-  url "https:github.compaul-j-lucascdeclreleasesdownloadcdecl-18.4.1cdecl-18.4.1.tar.gz"
-  sha256 "5b7899fb44b30e67a0375223368a7b342c2047ffa9f268b90f7c6eaa9db2a474"
+  url "https:github.compaul-j-lucascdeclreleasesdownloadcdecl-18.4.2cdecl-18.4.2.tar.gz"
+  sha256 "7ab5a9241734153d7d81b29787914b3120d23fdfa5c3a2e2fdde26208a35435c"
   license all_of: [
     "GPL-3.0-or-later",
     "LGPL-2.1-or-later", # gnulib
@@ -10,13 +10,13 @@ class Cdecl < Formula
   ]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "363c05b8547ead28209b9d14ed12e7765359ae4e5a2d28b18ef4b488400950b0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d56b56d1c525678f844e3dd83e89dbca5e4d8db5ad57daf11ea08d1bfc9453c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "98a53d5cd3b85690103a4901e59296ee3a6f8fa94aaa2702e42e29c6267b9ffc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8a6be79e61b3bbf3ed748d8df383ae50bf4b33978484a79f876b9e176d577ef7"
-    sha256 cellar: :any_skip_relocation, ventura:       "9971729c1580ea4e25bc41e60830397586c19181ba073adb5579a264ef022072"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3393652d469f42d4bc1b998275ba05d60b88975366d30bea5a6d2ebe761da8e3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ced2523c93fde88e64b437a8db68c5f28d60353dafa872258fd290280897592a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c25c9e112ed54c6205af2b721b3c7d2b7600c4d4ab5e9f830033ff0027d2bedc"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f0a737e9c4b991c2900a4a924e3435fa7df7ce14d86c690d06a6f92c9c0d6bc4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9cead9212974aac9593bbfaec7272e7ef26a5fdb440384886a73ca798a2e898e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "300d38832467679da4a92dd30c498cbf177a7c6652ab9820ed92fbc61db05178"
+    sha256 cellar: :any_skip_relocation, ventura:       "105709a44e508390c8d875ed41d6c5347585e3a7208d69e1b6f765c9a185f2a6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "264ace3c40f8362d9dc6a2f4b91f4d046b40dac1d225c900cf39994116b14434"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7cb1131967b202a71025d739f17275b0d516be1b235e15b54489fd1c23126cd"
   end
 
   uses_from_macos "bison" => :build

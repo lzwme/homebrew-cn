@@ -13,6 +13,7 @@ class Gopass < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "69dc4091d1142d25a59e44ab4614fa38cb5314d4bd80403f7de18e5ac5c3ccc9"
     sha256 cellar: :any_skip_relocation, sonoma:        "af05bb99ecb7d158aa8883086304a995ad76d26593160b797e87167133b650b6"
     sha256 cellar: :any_skip_relocation, ventura:       "2bbbf7a40c463eb4ca6bef1a6c02a6998935fac8786461134fe56255e40e808f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "48947aa1f84a98a70358a76dd3cdc882dab3a5ebd3ee228ad4e10313632d5c07"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9523381527deaef2fb45b7405872f973aac88c097d0a91563caf4f2b3248fde"
   end
 

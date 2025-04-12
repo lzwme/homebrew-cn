@@ -12,6 +12,7 @@ class CriTools < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b68927510eade50bfadd828b034f4537b890ace8cb0e23e780ecef795108eea5"
     sha256 cellar: :any_skip_relocation, sonoma:        "aa41eef8bbde177b4d6ea9579442882f1e1442345efef797ccb79c9465d44c77"
     sha256 cellar: :any_skip_relocation, ventura:       "aa41eef8bbde177b4d6ea9579442882f1e1442345efef797ccb79c9465d44c77"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d504d73365ad545f8180fc0b51599b8524acee447ea490354b595765a51d3bfb"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ce3accc44490a4e3cbc38e6a657a90c04520a7339f9e83d69d4126230731812"
   end
 

@@ -13,6 +13,7 @@ class TomlTest < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "a7471409f4ee3f531619b2bd63fbc770749e3b506e35ccb1d81fdcd92dc7bb87"
     sha256 cellar: :any_skip_relocation, ventura:        "a7471409f4ee3f531619b2bd63fbc770749e3b506e35ccb1d81fdcd92dc7bb87"
     sha256 cellar: :any_skip_relocation, monterey:       "a7471409f4ee3f531619b2bd63fbc770749e3b506e35ccb1d81fdcd92dc7bb87"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "04597899c9eec6324223895629a07adc2163dcee45fd4390329a469aed507991"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d052b80767db257261ffbc2c39125745f20e9d155cb35441788d6e8a3046da6"
   end
 

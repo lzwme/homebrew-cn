@@ -14,6 +14,7 @@ class Jr < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "dedd73305310549a6f1856239ffc9c51da3530ca3c07467798d8a9bdc70fb190"
     sha256 cellar: :any_skip_relocation, ventura:        "7e1f341676b064107654969708cf8a99c9ee75a050b5d36b58fbfcfe10e75fb6"
     sha256 cellar: :any_skip_relocation, monterey:       "db3da339cd6feab3abdba0b0d694d989ffa2b67f751fe6430bf2bbe4ef08f883"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "466667cb9e3b5d752511e76f6d4161e95313f6248bf0870c4f0c0b2d6777129b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "556c4cbe64419b781749b6e4cd8413b35c17e9e15d7ca8d7f054d121ee6a1be5"
   end
 

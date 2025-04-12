@@ -12,6 +12,7 @@ class Dblab < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "9fa9d07b585ca8eaf2d01b9090894561d13b2d04c7dcf8f4431da91f468e567d"
     sha256 cellar: :any_skip_relocation, sonoma:        "e4de556ff71bc799425eff6e8cb5fa31d43b69846d25b306e1b5fadfbcd68e76"
     sha256 cellar: :any_skip_relocation, ventura:       "507440d4bca59b692fd97bba4c56b275fd904ef17bf834c7395ca5f966e4ee39"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "140f175c8ce2e0be529b37fd7537ea578dee6e943ee3a5a769077038fe30c353"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a206dfeb89f7082430c9f5b46fe5c921b8dc7510091f0db44f096f921188dab0"
   end
 

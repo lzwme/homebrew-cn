@@ -11,6 +11,7 @@ class Rain < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "1beb78818ac8b59c0ec2bcae5faefbc52b7a3ff098de363db5484ee025c09f62"
     sha256 cellar: :any_skip_relocation, sonoma:        "a54f5bf4495737fda0e11f2c69793e93b0c54daf2b4524808748d381d3e561a8"
     sha256 cellar: :any_skip_relocation, ventura:       "084198057c5b45c0d7c6a7b20f1b13360744a2a73bb2540a9e4cccbc4e8afbe4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e2a270409632381f218c539cf9549a28205792926748080f6f8d100021b9955"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "77192099a7029e388e3a7270dfaf47b1166cb349b533eb3bc94a85894be1a4c2"
   end
 

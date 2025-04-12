@@ -12,6 +12,7 @@ class Grype < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "529e31640619625f7bf324449d4121f9f704dd265cab51613b636b0514fed593"
     sha256 cellar: :any_skip_relocation, sonoma:        "50f4b04af98850093cf2f20b69c9e76774801cb3f3004ccbaaf34c29d0a382a4"
     sha256 cellar: :any_skip_relocation, ventura:       "e4a4152cd4bb7edaae5d3b3698e59e241acee57e4dae9ef5687eebbce3a43bcd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8f39afbda04b4298376463ef45efd59f08c473aa7a6d971c23f86feabe7993d3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "945193d5d9132ab49baf5a434b9570df45f98d4c197994ca55ebd699d33093db"
   end
 

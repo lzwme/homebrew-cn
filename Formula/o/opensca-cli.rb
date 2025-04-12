@@ -12,6 +12,7 @@ class OpenscaCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b19c63574ca16ebfb800f75104ff2a06a7238ac3aba6b60c03be5a007519d193"
     sha256 cellar: :any_skip_relocation, sonoma:        "3ba8e5e130f6803f188669e9faa74a2dd85dffbda04ac5719651bbfb9cbd59ac"
     sha256 cellar: :any_skip_relocation, ventura:       "21248219510663cff235f854091d2814f792960deb166f926cd589f372f70fd8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f354006480e757ef28169c45ffe8d594620e087ec0de50ff86d2917a328a580"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8baaebe279ae6ac1683d6a89af883fc5688b592b4d8f52cd5ff30808e9450d41"
   end
 

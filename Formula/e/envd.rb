@@ -12,6 +12,7 @@ class Envd < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "144c785bb5f5151830053d92680cf7afd966a74066c97eb1d2721e336e6bc15d"
     sha256 cellar: :any_skip_relocation, sonoma:        "eeca119dc63af86b5dcb6d1fdf4ba466c376e259fe21a2cd8ac1cb1a8c7d781c"
     sha256 cellar: :any_skip_relocation, ventura:       "53225d36398f6bbd01c65976d01f1f500ab3aa55512ad503860332d1d8c02070"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "09df74749f213336223993d14c423a608ebcdbddf35830ff9ede7cfaaa4df8dc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "18b65f9da56f56f64d933376ff02b835770259cdadecb30f348738023e5d3b3b"
   end
 

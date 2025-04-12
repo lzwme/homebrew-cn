@@ -17,6 +17,7 @@ class Roxctl < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c852f803ea0208bdf542e034b57a7db7766c537cd4e16e0166b50b797d5d17a8"
     sha256 cellar: :any_skip_relocation, sonoma:        "b94546d397b4fa6a9ddaa732db8a810c53a4fdd8946c80f042f43c4cd78950aa"
     sha256 cellar: :any_skip_relocation, ventura:       "4bdaa6fc0526b0c203c094ab464801ae04af0096a2e96701e210660b7cacca98"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9bcd712704f5839a8e4edcfdca6d2f9182226faf8e00bcf16c364efd1d55aac2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "28abe05cc7e62bb0c65c67f35218a39dfd483c2a239c265f66e2532724f92a82"
   end
 

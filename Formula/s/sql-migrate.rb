@@ -12,6 +12,7 @@ class SqlMigrate < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "29bcb1522528328b56fbb468cff59dda9d752e15c381e8008d22d59e65f3ffcc"
     sha256 cellar: :any_skip_relocation, sonoma:        "2140ae10ad7bb5075063ae42e977b6702873af2e7a1b680789cbf3b40f5d81e6"
     sha256 cellar: :any_skip_relocation, ventura:       "21a74d44776d61378afc1a74476095e170c3638f51c8d0039813323ef8dd3f0c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "593c6a8e231edfbd9dbf0f8e84d291aea5d835865c58b1ef251a4cbe790d0561"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "151ef9df720a00cb96e49de3b31ff270716aad67eb52ad39446eec325e5b6eac"
   end
 

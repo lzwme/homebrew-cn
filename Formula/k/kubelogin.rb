@@ -12,6 +12,7 @@ class Kubelogin < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "62f2b1572b2d47d3bbb53a1fc9b7d5e5f648362f83dfc7ce5f118e5efb2776bc"
     sha256 cellar: :any_skip_relocation, sonoma:        "d74f82cac1459425870dfd778ece8816e30892407af04cfb86d2f90e881990f5"
     sha256 cellar: :any_skip_relocation, ventura:       "d74f82cac1459425870dfd778ece8816e30892407af04cfb86d2f90e881990f5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1bd62707d45b8c0af101ef57778557f19d8afe2fc65bdea9fcb73ac13d2c67cf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "750b249b73c7d778fdd6fcf7fdcdae5c4e63270b4a2d78ed94177c811c659749"
   end
 

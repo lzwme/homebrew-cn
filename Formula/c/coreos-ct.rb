@@ -17,6 +17,7 @@ class CoreosCt < Formula
     sha256 cellar: :any_skip_relocation, monterey:       "d5b7543e14bd73c528cbfca81b32f56c18d17018ef4e7edf7d16870223eaaee2"
     sha256 cellar: :any_skip_relocation, big_sur:        "9517910a97a3643010e7d0ccc65dab68a6e85a7321780a0d3e095686530b6502"
     sha256 cellar: :any_skip_relocation, catalina:       "acb5592eabf664da5576e643378d903d9c30b3ed57c2ecaba8b0d48c8f561041"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "1aea93999354ff21f48cf727352ce20bb8f0b1c52abee5c33f321020bb375cdf"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "ebf7582f950db123c1c3e6281ca2947c95abe58b116af11681a24085d1eb1e82"
   end
 

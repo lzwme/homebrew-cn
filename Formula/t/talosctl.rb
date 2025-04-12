@@ -12,6 +12,7 @@ class Talosctl < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f1d0f4f75beb980995206162d1e296c9d57c6ee5d3de78ade167fa2cf5432bc5"
     sha256 cellar: :any_skip_relocation, sonoma:        "480c6c3cda8a63bc95b08a3a3843064e2d373de714fda6c7dfdd372e1684541d"
     sha256 cellar: :any_skip_relocation, ventura:       "c566e2c0270921e1b5a43736edefb9b34eb8ea3ae67530d1af5f8cb1c9fb4d1c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7480ca26d115cc259ecd85be308580ff215d95cb2ed779ab84b1044becb3baa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d12645871af8f3a1cb8e491d31a0fcbe84c1b0c732b943d593f9b3460c784be"
   end
 

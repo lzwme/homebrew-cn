@@ -7,6 +7,7 @@ class Conmon < Formula
   head "https:github.comcontainersconmon.git", branch: "main"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "9090fd08bb3338252d8e29fa36aa5d06bdc6a3f5dd75a00bdaa83c565fe8860f"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "125e9b47951f23df145b1c27f6836cde4b0930547844929479b988ec01f61138"
   end
 

@@ -17,6 +17,7 @@ class Kubescape < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "97f4f10187c6469e5dc070572bf44930c9a82f71e8ba84be658a915fd0263ac6"
     sha256 cellar: :any_skip_relocation, sonoma:        "dc1d6cc50adbbbe6d83642c1fd76a8678d5e1660e30a3c5b8516d214f7c4ee83"
     sha256 cellar: :any_skip_relocation, ventura:       "ed137c92e456eb2837ab35a8a2cfa916cb00a5cd0b5f6813b0085088948e7d14"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9706c3860f04ca34a9497bfa19bfdf73950635242f8c42496546e93b48a7cf49"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "73e1a79f01f78472ceb10029afad1e8fcc209f692d94f92a8dd5033f3a55f396"
   end
 

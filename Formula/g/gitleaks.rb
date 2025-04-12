@@ -1,8 +1,8 @@
 class Gitleaks < Formula
   desc "Audit git repos for secrets"
   homepage "https:gitleaks.io"
-  url "https:github.comgitleaksgitleaksarchiverefstagsv8.24.2.tar.gz"
-  sha256 "b6fd2641657de6349c7c5d36c658f6ba79305cfc5c0614a5fd5232c699a0753f"
+  url "https:github.comgitleaksgitleaksarchiverefstagsv8.24.3.tar.gz"
+  sha256 "1cf78443355066cb056d6fb5fc0ea695d2cd06dcd8e33a3c92999fb340c67cc7"
   license "MIT"
   head "https:github.comgitleaksgitleaks.git", branch: "master"
 
@@ -15,12 +15,12 @@ class Gitleaks < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b61ccc21bf8caa9bd2f301e88a4f848f3eaad9d397210ae31d84bb357b5807d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b61ccc21bf8caa9bd2f301e88a4f848f3eaad9d397210ae31d84bb357b5807d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0b61ccc21bf8caa9bd2f301e88a4f848f3eaad9d397210ae31d84bb357b5807d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2a03614f57f7f225fad12bafed308019e334d6efa5c407c016c5bef3da09ce89"
-    sha256 cellar: :any_skip_relocation, ventura:       "2a03614f57f7f225fad12bafed308019e334d6efa5c407c016c5bef3da09ce89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "574e9bd5b2aefb558c5ad8aeb678b9e1fae7871dc2e213f55bebcc0bef99ad5a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe18ffa5e89d131a8efcbbc086d689ce41b000f63f769df3698f6955d5284d77"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe18ffa5e89d131a8efcbbc086d689ce41b000f63f769df3698f6955d5284d77"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fe18ffa5e89d131a8efcbbc086d689ce41b000f63f769df3698f6955d5284d77"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f5bea6d59c170d9f4a41b9f41de431fd97f816fcbc25d6443272f5aff9db4c6c"
+    sha256 cellar: :any_skip_relocation, ventura:       "f5bea6d59c170d9f4a41b9f41de431fd97f816fcbc25d6443272f5aff9db4c6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b6dda47a73dc6b8117ee6d2cdcc6dfdda3d9b4909ed9cfbdd665cda43c86ffa2"
   end
 
   depends_on "go" => :build

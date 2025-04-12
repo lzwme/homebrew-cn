@@ -11,6 +11,7 @@ class LibpostalRest < Formula
     sha256 cellar: :any,                 arm64_ventura: "20db7d2a602976a14915f4f8246950a17aab06fcd2743e0d4dd0cf867df3eb99"
     sha256 cellar: :any,                 sonoma:        "5364b98a31cf0dd48e851bb94be7cccc60f52568d4952b959b9e6a067dd1fd61"
     sha256 cellar: :any,                 ventura:       "bc55976fe713ac4b6eb92c00f7452410c68c6bde7800fef401e077944d8b7453"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c6c6f1cb64e46da29ede7308c2f9efcdc140f171f23d41cb0d55586f5c8c2b4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "945be628085aa46d50c62af4014749288db83af578bdd175b648032661adad25"
   end
 

@@ -12,6 +12,7 @@ class Kubevpn < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f0a24202bed988e11ab129969ad26c104d08c18e67bbb4009ce3e38aececb63c"
     sha256 cellar: :any_skip_relocation, sonoma:        "bc1d98aeec58b5b6a8e38db1b2cf862cacf2591c3ca9532d85c2eb79a6b6dc8b"
     sha256 cellar: :any_skip_relocation, ventura:       "acd32b9e857df0c9196a11314013664ac7cb28d35e29a760e7aedeb8729e9914"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "310798a8c6ab30c43cc18959b3580295ef89f1a6337ab2bb542e25e86771ddaa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7484884e9a9b52eb2771edc6a8369f9a49fa305dd4ea18f26a1d512ef33265c5"
   end
 

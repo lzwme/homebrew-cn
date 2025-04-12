@@ -12,6 +12,7 @@ class Katana < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c439b24c21960c83458a81abc22005b250486ee7d509fac9c55e4b51ec63b4b3"
     sha256 cellar: :any_skip_relocation, sonoma:        "666940bdcee26b77aecbf423ef8c42561fdbca3ee07372869bc4ea451112cc40"
     sha256 cellar: :any_skip_relocation, ventura:       "15782ff5c3f4fa84fd9a40bd4283dac1798be4dd8d76b2db88013420fc9e7991"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4a0b106acf4cf9b56ea6a2df0a46f51a19f0b746c0046082661a06db94ad1304"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0b5144fb31754168c0f7b0f8f0714c5372242a84c7ba0f72d5fc810cf8a1848"
   end
 

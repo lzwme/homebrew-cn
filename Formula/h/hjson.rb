@@ -12,6 +12,7 @@ class Hjson < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a524276874872d3ffbfee5f62065b5a6f6e23471ca54462b1c51d4871629fdd3"
     sha256 cellar: :any_skip_relocation, sonoma:        "820698eab9d0e0387089b4ef8bae5241a467b5cadbddfc75637aab484af2029f"
     sha256 cellar: :any_skip_relocation, ventura:       "820698eab9d0e0387089b4ef8bae5241a467b5cadbddfc75637aab484af2029f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "239a4f01ec7c8f255cce7823b7ef9361edbbe1ff036b469b7f0cac6c13dcb121"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "601b7b091f0d37b1d40e798903dc3fa4fe1a4dbf80caa7de60cce49ad5831707"
   end
 

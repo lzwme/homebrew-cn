@@ -12,6 +12,7 @@ class Trivy < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "4b5275b6ed7678cb9e5e37c992d979e2fb6d99bd8be719f64f93de7cc0bcbdde"
     sha256 cellar: :any_skip_relocation, sonoma:        "05b6c438064bbb47e5b9c23f99f8e06845e8b0324607e197ecff1d1e8d021f3a"
     sha256 cellar: :any_skip_relocation, ventura:       "645abde218b00107d806f8c09d486b8ebb34e9f0a1f5f4ca469e640b481af83a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f0f88a5ab162442772c152a0423577dc94039d24599eeca2fbcb2013a6f67538"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab0ca52719c49f1bd9619834d5c398772be3d2b7a11e8e2a48c05c09c0feac11"
   end
 

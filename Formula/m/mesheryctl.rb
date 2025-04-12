@@ -2,27 +2,22 @@ class Mesheryctl < Formula
   desc "Command-line utility for Meshery, the cloud native management plane"
   homepage "https:meshery.io"
   url "https:github.commesherymeshery.git",
-      tag:      "v0.8.56",
-      revision: "e97b56a2298da35f2cd556780118e0775f205f29"
+      tag:      "v0.8.57",
+      revision: "5236429a2adccab02713b8407c37f0f5f6663408"
   license "Apache-2.0"
   head "https:github.commesherymeshery.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a3945c5dfa718ea9cc0d12afa16beb609a5b74e584ff647300efbea593e9e40"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a3945c5dfa718ea9cc0d12afa16beb609a5b74e584ff647300efbea593e9e40"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5a3945c5dfa718ea9cc0d12afa16beb609a5b74e584ff647300efbea593e9e40"
-    sha256 cellar: :any_skip_relocation, sonoma:        "224f416e40d4a8e084eb237e9ed07fe3991bd0fcb8b442bc2b264c00368cd34e"
-    sha256 cellar: :any_skip_relocation, ventura:       "224f416e40d4a8e084eb237e9ed07fe3991bd0fcb8b442bc2b264c00368cd34e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "54c788cb0c7f7a2608ca98556497bfe333751a159467ad429b46616a58d5d1fc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79e4f75b198dba89fa736aadf8dabf1af6e93ebeec54b7d17ec3164aefb05c43"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79e4f75b198dba89fa736aadf8dabf1af6e93ebeec54b7d17ec3164aefb05c43"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "79e4f75b198dba89fa736aadf8dabf1af6e93ebeec54b7d17ec3164aefb05c43"
+    sha256 cellar: :any_skip_relocation, sonoma:        "96431b4e282335ddae13dd7ce0125bd17b725eb148b45e831a3f0420f73d237b"
+    sha256 cellar: :any_skip_relocation, ventura:       "96431b4e282335ddae13dd7ce0125bd17b725eb148b45e831a3f0420f73d237b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "54f1dc95f60169169de4919c072ec1e0496c44b546127fa607da693c1779b70a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3bbcfedf30e4d0d54a2e11fe37f57a285c62e2617d56e2a8462cac276df84b2d"
   end
 
   depends_on "go" => :build
-
-  # https:github.commesherymesherypull14341
-  patch do
-    url "https:github.commesherymesherycommitfee7380005018b60912e25b404ea77314f489c5e.patch?full_index=1"
-    sha256 "2ebba06d4f1079c6216eeea1bbc0f4befa78803fc7d471184e02813196559c3e"
-  end
 
   def install
     ENV["CGO_ENABLED"] = "0"

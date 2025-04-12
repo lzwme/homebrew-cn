@@ -12,6 +12,7 @@ class Ifacemaker < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "6154bb922ed27a72a91b0d10e5ec06218ff8b9a49b247fae68a65dbc948621f0"
     sha256 cellar: :any_skip_relocation, sonoma:        "6bfa1e6a33785aedb8ccdf3cb1289a4401000966fbaeea575f5b40cfd3dca554"
     sha256 cellar: :any_skip_relocation, ventura:       "6bfa1e6a33785aedb8ccdf3cb1289a4401000966fbaeea575f5b40cfd3dca554"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3965817642d73ac92add1f56c90513f1aea6afb7aa0062554ced5e4811e0f8a7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "25971c5b2fee2f1a24f267bef1f1e9a6070a1f3f5bfa6a693012dc07b2de1d13"
   end
 

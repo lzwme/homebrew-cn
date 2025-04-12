@@ -12,6 +12,7 @@ class Frpc < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b467a439f868f181510e7f594e2f73780d29219138375fde8097ed700bacbdec"
     sha256 cellar: :any_skip_relocation, sonoma:        "b62720838c9e4903984e4ddeaa2db51b8b86e8f5772ba84ab86ebc6f47e72656"
     sha256 cellar: :any_skip_relocation, ventura:       "b62720838c9e4903984e4ddeaa2db51b8b86e8f5772ba84ab86ebc6f47e72656"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b56d8a9440e40391f25ee3edb66fbeb709c244ea300fa5a119ebb45de94fbc10"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "56006d1a2333797d28655f839a08ab17396155a67d8f9cb96b39e37fe60a9f53"
   end
 

@@ -17,6 +17,7 @@ class Kubetail < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7614a306a417cf996094fc6c3f9106695de05a00e48e4d9140f134c05626967f"
     sha256 cellar: :any_skip_relocation, sonoma:        "5fb9e60d5790a43ab43171d02c108c67bc30f0894a3b3bc78611489e82464bdb"
     sha256 cellar: :any_skip_relocation, ventura:       "2a9b87aaa0588e2f0b40241b034cc53ef578e7ac20ecd454a9c50f19001e00e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed9bbaea3d24267a59eb62b851f94a1ae61f1933f9e4fec960b2ba760e1d8ed4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5cb9d09c6062e525185482c060ada981f6a51462cea3efc9affb3f252e0889b7"
   end
 

@@ -5479,6 +5479,7 @@ Homebrew-homebrew-core/Formula/p/pymol.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pympress.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pymupdf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pyoxidizer.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pyp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pypy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pypy3.10.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pypy3.9.rb, Homebrew/homebrew-core, 1
@@ -6638,6 +6639,7 @@ Homebrew-homebrew-core/Formula/t/texttest.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tf-profile.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tf-summarize.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfautomv.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tfcmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfk8s.rb, Homebrew/homebrew-core, 1
@@ -6811,6 +6813,7 @@ Homebrew-homebrew-core/Formula/t/trzsz-ssh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/trzsz.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tsduck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tssh.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tsui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tsung.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tta.rb, Homebrew/homebrew-core, 0
@@ -7262,7 +7265,7 @@ Homebrew-homebrew-core/Formula/w/wv2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wwwoffle.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wxlua.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wxmaxima.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/w/wxpython.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/wxpython.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wxwidgets.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wy60.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wzprof.rb, Homebrew/homebrew-core, 1
@@ -14262,7 +14265,7 @@ Homebrew-homebrew-cask/Casks/t/teensy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/teeworlds.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/telegram-a.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/telegram-desktop.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/t/telegram-desktop@beta.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/telegram-desktop@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/telegram.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/teleport-connect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/teleport.rb, Homebrew/homebrew-cask, 0

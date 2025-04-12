@@ -12,6 +12,7 @@ class GolangciLintLangserver < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "03ab1753c327357e8f7325e2bd468924bf834143b1fdd2cf828f80035ad2014e"
     sha256 cellar: :any_skip_relocation, sonoma:        "17469ab438354ef58d3a530707a5a5738cfbd89536113047c7daf4b57ac8e1dd"
     sha256 cellar: :any_skip_relocation, ventura:       "17469ab438354ef58d3a530707a5a5738cfbd89536113047c7daf4b57ac8e1dd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b81356c0a55a1b52bed427e167e6e911bf3661e8986c7fd1d045ebe475b58351"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd547ec2ba0a55aa871810f06c0089f87eca216131a9ec3e00a23efedb9fdb77"
   end
 

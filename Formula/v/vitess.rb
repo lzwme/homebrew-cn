@@ -11,6 +11,7 @@ class Vitess < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5431ee952a1a37de1e337fc6a3af9a92f699b8ab584f4f63dbf54ffb77de59c7"
     sha256 cellar: :any_skip_relocation, sonoma:        "68005d72663c7e9670bbb7aa770d028e2b4ec03e9ab138b0e989dcfc7e30fe1c"
     sha256 cellar: :any_skip_relocation, ventura:       "112ac22edb61155289b059946a032a440c6f78a65e5e48f55187d97cf67d019a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e39d94baae43c33f3657e8c58e4d61c67f34310fa8579580f5ff07d984b62dfc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc1dd0d40a1d858e0be02e26da60ae7aa9fc1ef989f8cbab45503a46364f22ae"
   end
 

@@ -18,6 +18,7 @@ class KubernetesCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "720041563595259ab615c89036a3e0cc065ef3f2df0371bbfd4f9b1fb7debac8"
     sha256 cellar: :any_skip_relocation, sonoma:        "be40a927d56b9b0238a95c34f80250c3ab47c729e149bbf8085da642e8cb32e3"
     sha256 cellar: :any_skip_relocation, ventura:       "61bb47251d1b0121dda6a0fcc2aa115a3c198bfb7a17ddbe0f1835b09e18a493"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "211df1122eea354be1afa7452e5b15e2909e94362d7d19e1be5fcb660606103c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6aea7eb34fed51c8d5823f010bec328e465f377568d362bed1577f27b5c1ab37"
   end
 

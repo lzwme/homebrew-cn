@@ -13,6 +13,7 @@ class Trufflehog < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8691b6a52583ccad409b02a67f68939f55b84a47864cd70b1816d2b7b7979e29"
     sha256 cellar: :any_skip_relocation, sonoma:        "02f445678abf13d46161ff0ca0a4c65d3b42359981ca74dee331b99620fcbe89"
     sha256 cellar: :any_skip_relocation, ventura:       "fa97f5a7fb5dfc0bd0f334c3e57dd16b3d81830e4dbf87debee6e246b6b3f4e1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "26e4d5d190f79b3658c305111cb9b750b073166d07a7a948ed7112b7f39891c1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fba919c90b4f83ea06f039a042e19abfe4960aedbf8bab77ba779836dc3a3a35"
   end
 

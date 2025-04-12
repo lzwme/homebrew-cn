@@ -14,6 +14,7 @@ class Gofumpt < Formula
     sha256 cellar: :any_skip_relocation, sonoma:         "dcdd825b173315f71b186d428d7b4fcdd831ca4d6132af041f26adc63a75b97a"
     sha256 cellar: :any_skip_relocation, ventura:        "dcdd825b173315f71b186d428d7b4fcdd831ca4d6132af041f26adc63a75b97a"
     sha256 cellar: :any_skip_relocation, monterey:       "dcdd825b173315f71b186d428d7b4fcdd831ca4d6132af041f26adc63a75b97a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "cc47702c6464cb5aa9a9c1ce7f41d21409d8b3af4b6731c42b5931ad6f7a5334"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "db3d516cdc64e75aed5d8e651cca5e75ff5bc06400fafec9fd11b64379433f8e"
   end
 

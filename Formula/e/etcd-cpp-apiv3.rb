@@ -12,6 +12,7 @@ class EtcdCppApiv3 < Formula
     sha256 cellar: :any,                 arm64_ventura: "65ac21eebf66881b10441e8fc9cbf00ae71ae411a2554a42dcc415352b6127b1"
     sha256 cellar: :any,                 sonoma:        "11ffc458f2406c8b5dcb36a5e1c5d235a176f1571b4c5fabca6f48c4dedbf5d9"
     sha256 cellar: :any,                 ventura:       "ecad4f87f7f67fbc551ecf2e436c951967664c0c320a9f28140d7b6aa785d768"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "873b84596fcf4140febbd2867a794d7de7d4162625f160baf8e3b04d1b72b752"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e5da2baab218285b9338bf8b6939350563ffe6441496eb0572453094ae2a866"
   end
 
@@ -51,6 +52,7 @@ class EtcdCppApiv3 < Formula
     system "cmake", "-S", ".", "-B", "build",
                     "-DCMAKE_CXX_STANDARD=17",
                     "-DCMAKE_CXX_STANDARD_REQUIRED=TRUE",
+                    "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
                     "-DBUILD_ETCD_TESTS=OFF",
                     "-DOPENSSL_ROOT_DIR=#{Formula["openssl@3"].opt_prefix}",
                     *std_cmake_args
@@ -74,7 +76,7 @@ class EtcdCppApiv3 < Formula
     CPP
 
     (testpath"CMakeLists.txt").write <<~CMAKE
-      cmake_minimum_required(VERSION 3.5)
+      cmake_minimum_required(VERSION 4.0)
       set(CMAKE_CXX_STANDARD 17)
       project(test LANGUAGES CXX)
       find_package(protobuf CONFIG REQUIRED)
@@ -83,7 +85,6 @@ class EtcdCppApiv3 < Formula
       target_link_libraries(test_etcd_cpp_apiv3 PRIVATE etcd-cpp-api)
     CMAKE
 
-    ENV.append_path "CMAKE_PREFIX_PATH", Formula["boost@1.85"].opt_prefix
     ENV.delete "CPATH"
 
     args = %W[

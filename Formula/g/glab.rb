@@ -12,6 +12,7 @@ class Glab < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3af9f7cae3c5ee6b52bf3cebbefd581878a1db6656ef6c89cb9cba0a7fc18abe"
     sha256 cellar: :any_skip_relocation, sonoma:        "f040a094820c6987351c07170b8a3f7894901745a8b1d4f91ae29c435707037b"
     sha256 cellar: :any_skip_relocation, ventura:       "f040a094820c6987351c07170b8a3f7894901745a8b1d4f91ae29c435707037b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "817dfe7850d9bc63599cf77d674d8d7bd7250b1013e9832ec62c88f27dee442d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7f31748b2a8a5b224afa5950e2cef5ee61ee2580aa174ed7b55636c7d13b7ba"
   end
 

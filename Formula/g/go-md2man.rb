@@ -12,6 +12,7 @@ class GoMd2man < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "386385f734e6980cd796ef8c730ce0a24cda6258d62583f63adbb4770b5a246c"
     sha256 cellar: :any_skip_relocation, sonoma:        "3f403e810b84edebc51c4f8e23f6a9f944e7259df273976f8bce39c0f2bf704f"
     sha256 cellar: :any_skip_relocation, ventura:       "3f403e810b84edebc51c4f8e23f6a9f944e7259df273976f8bce39c0f2bf704f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "899178bcab4903339128975a40bd8b5342f55036fab9db92bdcce8ea52765fa3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b560a2b606a1bb4065ec10a33dad917042b3cbd182e5bd900434d9555135b5cf"
   end
 

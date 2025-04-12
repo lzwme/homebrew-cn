@@ -20,6 +20,7 @@ class Doltgres < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e36292ac37bb42c3eac73e292f7edb0c8cc724d2a8a071a487a6fdbe970524b2"
     sha256 cellar: :any_skip_relocation, sonoma:        "cb1d78bbd99cb84382ac4b5c854fef44eeb28ecb984df6377af5a9b0a3c4d148"
     sha256 cellar: :any_skip_relocation, ventura:       "1b5d7434ad53c72a3bcb698b97d53175870fffae44855e6066ad41a9f32b50a1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9adedf9b3a650e26836019a59b5ebe2441485f66a64134b5a3d2c0f3894d3ab8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a082edd2db0f10b12b0dfe038978d77770b4fd857f2d9d575947b4cc36e4f05f"
   end
 

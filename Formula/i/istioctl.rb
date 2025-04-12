@@ -17,6 +17,7 @@ class Istioctl < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "80118e01ed61e7006c471636b61588f5db404d32dcbe9791709d193060f6f8e2"
     sha256 cellar: :any_skip_relocation, sonoma:        "68470c5b1b2603e722ee3b9080dbe465b6a744e872c0e52faf9c4d5e4e71c677"
     sha256 cellar: :any_skip_relocation, ventura:       "e3074d0393396f3820c7785805baaac63385b35e3eb8dc5b888df0ea57b277b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a043c9f4dba41c48ad756918d9c0f894e524dd6f65eb54c8fb05bafd6688f0ab"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0432633556d010ec600771f2190809da789bd8179ad45e5f8bf14be656d42408"
   end
 

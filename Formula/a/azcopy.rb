@@ -17,6 +17,7 @@ class Azcopy < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5207c3aeef9d22896546555acb34be7d2c4da95005c423766dc5b3daea4204d2"
     sha256 cellar: :any_skip_relocation, sonoma:        "25e30694e68e810c91aa05908efb25f7665eb8453a03f08777eb4d4737e66025"
     sha256 cellar: :any_skip_relocation, ventura:       "235a52c172d11f8f0798fbda05244e00edc5eb806a4a488a781cb8b18541b211"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e6c6cedff923d021af69fb5c6ff92c4b1eb1de2a56193a82d0f0b4cc586798d5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5845d0f34ded6aa84c937811d584c7ca156c58b7d8dc9808c96714f67fdf40cb"
   end
 

@@ -16,6 +16,7 @@ class Gitbackup < Formula
     sha256 cellar: :any_skip_relocation, ventura:        "9c458fa964243f8611a16564f9afc526a101cc2c1167a0f1dd85def0cd35ce20"
     sha256 cellar: :any_skip_relocation, monterey:       "9c458fa964243f8611a16564f9afc526a101cc2c1167a0f1dd85def0cd35ce20"
     sha256 cellar: :any_skip_relocation, big_sur:        "9c458fa964243f8611a16564f9afc526a101cc2c1167a0f1dd85def0cd35ce20"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "5e13027ed0061e9a3186260bd32df2b98f18315033bd208442963b289d010086"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "2a062c0da560c0779e9ee952408cc4131980d0658f594933525ee795dd2e9635"
   end
 

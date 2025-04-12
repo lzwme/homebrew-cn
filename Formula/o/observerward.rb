@@ -11,12 +11,14 @@ class Observerward < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "99653209dce7dd93b9717314a732238e2ea86c82009a7e3898434d423937b792"
     sha256 cellar: :any_skip_relocation, sonoma:        "c836d277e6b7f544e6c038dd06bbafa05a75ee85d62ba50d492da58d07e9a160"
     sha256 cellar: :any_skip_relocation, ventura:       "ad5b83baaf54b11245da36e412b657a3d615a1d0256401e455c6d4270286f031"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "08159c8f4bac4f7c9cc60e1eec1e40ec40867c83a2d4ca29278c302aaa98dc4b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0433a57de44c745da0612b2023a2ab37d132c4e10a578c42285ab5fb3d60aaff"
   end
 
   depends_on "rust" => :build
 
   def install
+    rm ".cargoconfig.toml" # disable `+crc-static`
     system "cargo", "install", *std_cargo_args(path: "observer_ward")
   end
 

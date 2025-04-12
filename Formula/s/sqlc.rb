@@ -12,6 +12,7 @@ class Sqlc < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8b777e107d47a905be13b907ac37b3a8bce4ee4e3454147f58b6bf8fd7d3a066"
     sha256 cellar: :any_skip_relocation, sonoma:        "1bfe4bbbbb0aaa33911858cfe85b7eebf23f55e7768aa10fc2ad9218c711aa88"
     sha256 cellar: :any_skip_relocation, ventura:       "d3b2510595ff558f5c8433abb4728436e6e7263b0a78a703008f7c350e66351b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e728e7581667d736a70ed672a82273878f0871c4ce57f9f436cb2d7298f7ed9a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "eab99091241a87f58cbcc558e3dc820b60e916337cc7a78212e517841268f367"
   end
 

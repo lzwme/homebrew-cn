@@ -7,6 +7,7 @@ class Gocryptfs < Formula
   head "https:github.comrfjakobgocryptfs.git", branch: "master"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "ecd1d66396da4bda9894335bc57c7827e06703025654326db99e174a24101438"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "26a541331bfa8f7ba51f14f07c97efaec13171cc88515e217d559eafdccd132d"
   end
 

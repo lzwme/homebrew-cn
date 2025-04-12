@@ -19,6 +19,7 @@ class Victorialogs < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5ce1446767cd3d8f1397974a0de3159e1d11f4e4e804b3df152a94a4491b0e67"
     sha256 cellar: :any_skip_relocation, sonoma:        "5be365d9c798987cbeeb4526b3a0ff07865f199c476b9de4b282e73a83490381"
     sha256 cellar: :any_skip_relocation, ventura:       "465a405b0deb76d5fad90efabc7b76a07a8a700191ce93a1ec5aec272ddef7aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "60e5c742716754fa5bcd2b1f429ce5e700dd0201110143a00cf76af12716d9c6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d0f44812825a3c33d132d4f01f7d64c77bc93d377013cad737c6cfcb2fb0e9d"
   end
 

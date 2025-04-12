@@ -21,6 +21,7 @@ class Rke < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d11463a1a0859729ccd8bd41de60078d8b1c1e689ec8009a332205e550bc4b71"
     sha256 cellar: :any_skip_relocation, sonoma:        "afae0a2546a11edbc8c60a775122c7edd40d8f391235130c1fcd0dc7f7b8a8ba"
     sha256 cellar: :any_skip_relocation, ventura:       "5e7b9ff67103be61450cab129a0acc9b30980faa55eb7005297c204484c07bcd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "761fdda951f0c01a9e9e49b069a6a130a537613236c5eddd09a2ba35dd2cebbe"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "72c59b094cff307187d2f04bb13b0c3db1bda74ee4cdd7bb04201ef0fe969daf"
   end
 

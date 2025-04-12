@@ -21,6 +21,7 @@ class Fortio < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e47014a15bb39c63e73fd0dcb6a6b8084f2a11176e7e3c1cac0e85503a03bb4e"
     sha256 cellar: :any_skip_relocation, sonoma:        "dc4346b536efe1003f3f4f6f39c5e5267733e44c47bd162075f82b9b45b3b03f"
     sha256 cellar: :any_skip_relocation, ventura:       "44d7e8605402b11cddf2002b84cd35056985b8117c252bede62eafd00be96b18"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3bd9c6c06690f2e32f6296341c67b6709e4418f334f4186fa97f11dae6fbcbd7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "17fa129b794600ad1d12e6be7218c79f9bb6b1868b2ff99791fbea3f8d0c3125"
   end
 

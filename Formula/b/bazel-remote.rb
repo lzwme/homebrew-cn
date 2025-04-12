@@ -12,6 +12,7 @@ class BazelRemote < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "883f5650b0e22ee8511fad69ea4837ed67e4457db0d66a481ee0926edf136f03"
     sha256 cellar: :any_skip_relocation, sonoma:        "4e20ef2a28959eb449397ee99164c0b36e2189f82dccfd11ed65d93ac0ecc94c"
     sha256 cellar: :any_skip_relocation, ventura:       "8072cda8b7c29cec05be8ed7cd66b2bb7d8507541bf492f7d84fcda65d8c246b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd91bff32ade4add762a2cc81a714226d74a2b12c873c064d3bc4dfd92ad7409"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b467edaa8556aa76bd3a1e8e6962a6074bc100cdcd8a44dfeaff86fdd5340e40"
   end
 

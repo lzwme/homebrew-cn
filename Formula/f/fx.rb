@@ -13,6 +13,7 @@ class Fx < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8222f75e23b7eb70afe08accc15e5e47edb4fb2a7f292783c3e519860334ea6b"
     sha256 cellar: :any_skip_relocation, sonoma:        "9415000df5544c72bd65cc45416747ab76b065ea72619f9e8e5de6bf9e189cc3"
     sha256 cellar: :any_skip_relocation, ventura:       "9415000df5544c72bd65cc45416747ab76b065ea72619f9e8e5de6bf9e189cc3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b9cbf3db820e33f2f832e836a193d4e5af804a53fb84961e97ebfa05562623f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd3499b53ebeaf36e154444504aaa4659576c5248921fb1b3ac1e6212de1aa48"
   end
 

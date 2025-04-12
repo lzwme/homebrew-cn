@@ -17,6 +17,7 @@ class Tfsec < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7e939545e948611f9cb9af0e3c0493807dab898240b9a15123d1f8e355fc7b54"
     sha256 cellar: :any_skip_relocation, sonoma:        "4b365c01dc9f6149159d6cad32feb0c9d6cbb123b8cfca3554d43713326c6ea8"
     sha256 cellar: :any_skip_relocation, ventura:       "7982570ec2ca494dae2a1f55d764fdd7216b90ac3797f0b7068fb8861eea6887"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "71c2e7b9e7217e5b286cb3d121aebf48b7530f3df8cce1e4b383510d6564aa03"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "11d652ef5f0a858dfac179de3e323e82c10d9ce5cef3387756a3c6edfd386525"
   end
 

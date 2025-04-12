@@ -12,6 +12,7 @@ class AwsNuke < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "338b532fb7f467abe5317db056760181d439fecac44c90d81bf83edf22cee9b9"
     sha256 cellar: :any_skip_relocation, sonoma:        "17c34659bd7c64b3f126e0069f175224a00dc6d710bae749633277a8f157ee7b"
     sha256 cellar: :any_skip_relocation, ventura:       "17c34659bd7c64b3f126e0069f175224a00dc6d710bae749633277a8f157ee7b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a1f70bf973ea95473c26046937cdba587de261a9e4011ce534b0ec1153169b0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9592e5ec2356052780c256523fcd16ccaac268589990dc3968c921fd46e2eba"
   end
 

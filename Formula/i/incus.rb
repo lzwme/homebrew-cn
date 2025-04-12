@@ -17,6 +17,7 @@ class Incus < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f33baa0f106ac23d8beefe7c58bb5508e2e474be4de5f255e35ec75376f1ff18"
     sha256 cellar: :any_skip_relocation, sonoma:        "7c67b6e30e3cc8a936b12823b62c2e231fce1ddaed9952e02aa60b2b4c3d0159"
     sha256 cellar: :any_skip_relocation, ventura:       "7c67b6e30e3cc8a936b12823b62c2e231fce1ddaed9952e02aa60b2b4c3d0159"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e85aea278244e27e0c22e5f5b7ea8d75f2aed82b336e6d43aa1202c1cf47c3b6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec446b12f0dd3117900bf9ba57dfffc4f427cb4d4aa9d25c4c8a06070062d695"
   end
 

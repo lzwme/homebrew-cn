@@ -17,6 +17,7 @@ class FlowCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "70b6b03fd1ca4b0430156cd076f32a69d12db9fa0bc7808c278e7bbef97e0d78"
     sha256 cellar: :any_skip_relocation, sonoma:        "223244851d090bf788031236410045644f312b12f83fe1bbf0fc596482fcc769"
     sha256 cellar: :any_skip_relocation, ventura:       "ca65771408d5f7f9a162f736c43d7b52dff8601097eda08664dc3ccf45b5b16e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3946ee6f1f8e49edeb507f566a3a48bf85dd133869f2a147465251aff0cbc448"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "51b449f12388932b54cfb288db3cc9731fab76ed1878e097de680b437492d460"
   end
 

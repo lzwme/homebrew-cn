@@ -13,6 +13,7 @@ class Eksctl < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8e65b16309e2640e0a02fe13e38c3bc9405f389af3edc2a35193888aef32fc22"
     sha256 cellar: :any_skip_relocation, sonoma:        "d5fc9cb18b7b2a82f8a34e9b5e5e0af9c239d48da4cc17d988ea2d479d38c28e"
     sha256 cellar: :any_skip_relocation, ventura:       "b7db237992c5b65551fb02bbcda11373fd5bac895432ad2271a3df3f41fde09e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "33c7d893d1c8eecb4d5ec5ae443410433d1607aec43adcba5d7a2e36453962d0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e756a10fc54ffff4b541b9efbdc5259ec6a8c63589bb1167c5a0b5781274fd2"
   end
 

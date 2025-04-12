@@ -15,6 +15,7 @@ class Filebeat < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "279c61e84115001fd8298383bee5a983d10d6411918381d82b55943574d011b1"
     sha256 cellar: :any_skip_relocation, sonoma:        "d01402674a634bedc0872faf1787ebb5d658b2463d8b5d67c94f643276faffd3"
     sha256 cellar: :any_skip_relocation, ventura:       "8d7cc9d796133a475fabc7886ee7dd1dda11a0c30336ce190df34d72ed58103c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4b7366472ef5561ef738674cf427554f2a69bccfeb1368fa9fd56754b2ecd09"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0a6d64965e1b84ba832782357b4229187865f9a11c7476dec1227c33e22744c"
   end
 

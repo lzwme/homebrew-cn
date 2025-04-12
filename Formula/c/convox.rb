@@ -18,6 +18,7 @@ class Convox < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "170f0a71994194e04d7d3d48f28eee3c158d53dcbc6b558f00e825a26af3b818"
     sha256 cellar: :any_skip_relocation, sonoma:        "0b2ef44c6d6c05c9800e6b00b377979e5bce72d6102c6e25efc932f004315427"
     sha256 cellar: :any_skip_relocation, ventura:       "c47cee9fce21b98f68c6a5c5b8f5b1f7c3c06b296eb4265346534927c0880e51"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a4a355e6812f83445830de1179b15ec5f219492636701becd61c48538955d9d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3a7d7bb66bdf5621adc348598c1e487a2de6bd8da47c328165f2dbe618f6b9a2"
   end
 

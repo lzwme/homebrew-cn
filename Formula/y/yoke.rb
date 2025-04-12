@@ -14,6 +14,7 @@ class Yoke < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "6b96d19b78854df4e386694cd2d91818318b1eb825d812b5bd2d1cdd4bfd4ab7"
     sha256 cellar: :any_skip_relocation, sonoma:        "1356d18e412d773f10a8c3b01a3a147ad9b3a9332ee90563e1793901b4003ef7"
     sha256 cellar: :any_skip_relocation, ventura:       "e8c2abba21cfdd7003de46ca358b699d73918a313cbb8ed3f10279160a3ef373"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4b3d4b367cee6248c44b0146793f181d07e2be0ffda04b8e45fc75a5ab8b658"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6310cac6dd7ab1d0a1e1c4c186fc79a2005f04b664506087640b0d0c6e802394"
   end
 

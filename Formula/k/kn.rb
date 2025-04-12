@@ -13,6 +13,7 @@ class Kn < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "d2615bcdb1ca0e34fecff900504407876053fde0da920a95476d4167110eb94a"
     sha256 cellar: :any_skip_relocation, sonoma:        "6611c463a905ff466ebc2cb86261a45b1054073155d82971c11a8a39c37bf2e9"
     sha256 cellar: :any_skip_relocation, ventura:       "9600bdfa35658bd14da7f756c1528fe02341f3986a11b376eaa8309c8bd78174"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2042cfe7fd4175512ec33de0ab87955ecca687a01ef1b89f9d88b5fbf6f3f6d2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2bdbcb86b1d6f574e62e9876ad65de41de370c7968949872dfa050cb52bcf099"
   end
 

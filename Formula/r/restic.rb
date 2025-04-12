@@ -12,6 +12,7 @@ class Restic < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2c5e5f38a7c321b978414f6539399447307087b8f62ec240196cd8e7f486fb89"
     sha256 cellar: :any_skip_relocation, sonoma:        "d8a80b0c01d0b542100e14c75ebcc7ea6d9690c9c113c3a043ea17559d20149e"
     sha256 cellar: :any_skip_relocation, ventura:       "d8a80b0c01d0b542100e14c75ebcc7ea6d9690c9c113c3a043ea17559d20149e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "79c6bb25ad8711d2280bc48f9bccb44fc854a03335b664b696ad919c3a60cb53"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "70a15fea59111ab70cdbac9fa18b5528901a2dbdf4271f08d6438f9c0f6edc80"
   end
 

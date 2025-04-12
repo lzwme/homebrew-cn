@@ -11,6 +11,7 @@ class PodmanTui < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e5797f063a42c71149249dfa692825479024b0cdc1d2258590866a505a3d428b"
     sha256 cellar: :any_skip_relocation, sonoma:        "bd7caa45fbbf484b796118e46f372ac401edbed58099cdb78b89017659d5d804"
     sha256 cellar: :any_skip_relocation, ventura:       "20181373cdee7592badce91436a5c476ba041c5c8e1532ed3f51d965c392cd21"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "680ba3c02fc1085a06b1f60d28e494b963fe7b50407da7005f25f7569b9cc699"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "430de3be21283d8c8b4b5ac63f04271cb497dbbe09c4bebfdb37b52f8b46d3f5"
   end
 

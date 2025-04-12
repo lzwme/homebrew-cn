@@ -13,6 +13,7 @@ class Skaffold < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2a1cea4f49f3449af1deeb0076205fe690748aa514a797fdfa5408b1c0dd69b3"
     sha256 cellar: :any_skip_relocation, sonoma:        "1bc35426b7d4bb0b5229b09e3c71c270db62e8c4f59cb0807ec9fab437599d7a"
     sha256 cellar: :any_skip_relocation, ventura:       "a431f9b8b4f0ba8ec6eb6ae230e46306284f79126e794fa9409b35b1c7e9451b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "305d1ea97258a495ec99ac7b65b745a5c7917b4987520622d5f2699f7512afb4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b92b356315bd1b3e89c685673dc02a43cc8c992cec6e42e0b86c095dbe64406"
   end
 

@@ -19,6 +19,7 @@ class Chezmoi < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "085d092695abdb947ef209ad76cd9cf1d5ae9d4fbadb040008185f7978cbba99"
     sha256 cellar: :any_skip_relocation, sonoma:        "4eb35f75f542d7f73b7f80917c4654c844448a33be5642720d579982aabfabb5"
     sha256 cellar: :any_skip_relocation, ventura:       "7699ae0a5019e518857fc3415e8510b819f1b582e2b87609469dbfbc89b5e716"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5605520948af18f257c5c97c8a9022e7eec984d94cf2ea508c6df2a6f0345566"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "27e989894171d2ae8f3ec37a84f09b4450883755f9b1e7065201ff792810a47e"
   end
 

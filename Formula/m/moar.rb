@@ -11,6 +11,7 @@ class Moar < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "6c084a008cef6178613047de56baed416d84457ce4d7adea780936632d5d1315"
     sha256 cellar: :any_skip_relocation, sonoma:        "0c961b26938296350aace89a192a0e0f8fd093a0dbd4ff5e10c319b3339b99b1"
     sha256 cellar: :any_skip_relocation, ventura:       "0c961b26938296350aace89a192a0e0f8fd093a0dbd4ff5e10c319b3339b99b1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f69a66b3bede04067bcd3bcb2fa7a96c8e3f7b60948dd92f9c337498ba7a25cc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b334983c5ba2b7de6ecef83e1aa3355bd17a3858770d8d80c915667f8103633"
   end
 

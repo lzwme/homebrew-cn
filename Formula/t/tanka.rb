@@ -17,6 +17,7 @@ class Tanka < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "63a079d7bbd728a5d9a4e0a24e810259eb7902e63d9fb92819f92d42604a0e61"
     sha256 cellar: :any_skip_relocation, sonoma:        "d96e07d734bc5edcf536071bed1a7823a7b14bd8db1dbaf8d9415793863f67bb"
     sha256 cellar: :any_skip_relocation, ventura:       "d96e07d734bc5edcf536071bed1a7823a7b14bd8db1dbaf8d9415793863f67bb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc9ba708d09ce859474f500d3f6738d5dedd3924cdd0c1ae9c5f559f3bfc2808"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "66b7f5a4be1ac6269df5025cf0beae1408a000ad3b5b3e0bee0a6fd2205d14ee"
   end
 

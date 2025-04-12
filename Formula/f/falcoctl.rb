@@ -12,6 +12,7 @@ class Falcoctl < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "68b51554f30d8fbc4fc7145d9b1a227570bad8538cbe6ebd9e6c63d9313df343"
     sha256 cellar: :any_skip_relocation, sonoma:        "019db70f9d51659accdd6b89cd24bb16f6a46fba8f29efb784cf18e5eb125338"
     sha256 cellar: :any_skip_relocation, ventura:       "1c7164696e9c2d6b48287757af8e2d293fa79f714e4cd17b120f34eee441f1a3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "96bb2826210ccaf926242b57d211e7cba97e9b537e1c3e9099397a4ac8ecae31"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "52136c4c220fe98433e660a4a5a8d67369e00d2d9663682251c8a54f7ef8c0a4"
   end
 

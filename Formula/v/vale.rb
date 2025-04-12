@@ -11,6 +11,7 @@ class Vale < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f698c1ab684c91ba6a242db3b54443907112853b6d32dfab25346f412f47b280"
     sha256 cellar: :any_skip_relocation, sonoma:        "3f87db0ff1f2b0eb1e974f90fb3f0c047912be6638b980c1b353128d5aa00a7e"
     sha256 cellar: :any_skip_relocation, ventura:       "1837469512fe4b948a9c023360f72d1855013cc36ac17f4755ffd4c4ec75634b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "541ef5a35a92c6951d87b2d521a8d67b6acaa5222bfaee5c0afabba320f1e97d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa4df31797b5d35b2dce4cef399c2ba428e0d7095cdaa0737b4f948fd25280b5"
   end
 

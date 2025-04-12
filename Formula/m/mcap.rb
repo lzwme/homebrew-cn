@@ -17,6 +17,7 @@ class Mcap < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c5fbda70d150a1356a7d6d7e56d2d3fd5cce9a30ff8cb01df60f50733deef198"
     sha256 cellar: :any_skip_relocation, sonoma:        "d27b20a0976af88458f35d143917d388d7b45896e331caf3268d3923824356fe"
     sha256 cellar: :any_skip_relocation, ventura:       "75e8f9c45a0e94345fc3193e62c214df180207e7627337c77a3da3c6c22f5876"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7178a980cb38092fa21b86e638d8e98a58c347f9ca7f10435afc1cd7bd284826"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bff77b759aba4f8888cc8f9f71f68c2f9d1555d5c679e48c9afaadf9a6cf0db1"
   end
 

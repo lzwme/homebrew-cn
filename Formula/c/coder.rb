@@ -20,6 +20,7 @@ class Coder < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "6cc404c4b634385b92f4cd0cbeccbb3db64d9c1a10e26aa5d89612dbdd0f9388"
     sha256 cellar: :any_skip_relocation, sonoma:        "3814946122306f1a92031c77673c93a7852dedd78e4e95ab384b211841b15e7c"
     sha256 cellar: :any_skip_relocation, ventura:       "399e958e3de77d27755cdccc2c63220c75515c05a4f31c25454369a087c5671b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c05ae85ccab4d1b8fdced333f386637e06e645c8560cf74280ab5c6d5db52ad0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1918bf09970a545d2dce16646332c2ea639ca7b80fbd8423308065f5ae50a70d"
   end
 

@@ -4,6 +4,7 @@ class Wxmaxima < Formula
   url "https:github.comwxMaxima-developerswxmaximaarchiverefstagsVersion-25.01.0.tar.gz"
   sha256 "18cce36cc6c41ca012ec128aafe3c96659b1d670f8a8f7d98395eac1a19ade6f"
   license "GPL-2.0-or-later"
+  revision 1
   head "https:github.comwxMaxima-developerswxmaxima.git", branch: "main"
 
   livecheck do
@@ -12,11 +13,11 @@ class Wxmaxima < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:  "86647b5fa857c46c16f8e0ec0f85941f0efb650f9d1b5aef54d2d291d6d820e0"
-    sha256 arm64_ventura: "217c0fcff2d9964b6ddd2e0b3aa29ba15897d2dd704b11ac37de5184600b3d03"
-    sha256 sonoma:        "26633e544d4422b9c831b423719c2b3239deb12ccabf20fe50df025dcb310176"
-    sha256 ventura:       "e3b13b347f5cbe6561cbfbb449b224547e3acc95fb572b8e7008906578d06e0e"
-    sha256 x86_64_linux:  "fd2565a733cf558b15d8f550a67bcbdb4f0b28a7857bb4a3f97ff99534e0830f"
+    sha256 arm64_sonoma:  "2b8ee335d9432282f9a96e4f17b5827621a869d0fc0f61a209fac4a19642d397"
+    sha256 arm64_ventura: "1f1af869814afcf0e1b2aa4c2a1508cae3aeeb945248993f3f37a562e6689e5b"
+    sha256 sonoma:        "669e8564ed22b45469abcfd49b7eb3bc9d66942c69e5e56fda42b582f6138f3d"
+    sha256 ventura:       "2e6e2e79a4280ea8e2183798300630bf8fc78c006cd8598c6c8b97a68a2d0dbc"
+    sha256 x86_64_linux:  "6c926aaa5d88ae8a4f098ec79185b5daa8b75c0a6f623b79af2a85a8b0ff237d"
   end
 
   depends_on "cmake" => :build

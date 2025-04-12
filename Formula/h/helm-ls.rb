@@ -12,6 +12,7 @@ class HelmLs < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c2dead86f308cd7837c2de73f57efe2ae3ecf301bb3127a9c5f99bcc18cf8381"
     sha256 cellar: :any_skip_relocation, sonoma:        "1b83789258ebe57d6ec44b527d27da12b1b1e0e2bf53b99b89817ec136398d61"
     sha256 cellar: :any_skip_relocation, ventura:       "0595aec7f9a951c496ab97dc047d669770bbb8186816d9018f29fa9418a6aadc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9cb57528468565a6dccd93937cb6e2ae213c9481a4d213bf121d0fa65c2bacc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e9dc986a184140c80f19aa16fa54f905f84d034ed98ac235c2ec779aaf59008"
   end
 

@@ -12,6 +12,7 @@ class Syft < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "3abd4f99c81bd381f855c77215167d047b31a5875c4be7ba47dd3c71ca964bcf"
     sha256 cellar: :any_skip_relocation, sonoma:        "f313bacbade07c71094fee9593751ca7dcae570731e8200002549549bd317683"
     sha256 cellar: :any_skip_relocation, ventura:       "329a4e5e53d1be60755478bdacf313794527ee010bcf60d9c579b7beb9c9743b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c10a9d3cadd4a2814051778341a6c1feb74e516d29bfd0ab3f7b790ea0cd5bb2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "163d3d50e0d4c99207a5fc0421047874fdcb2c34b9ed9ba7ba311e4de38b5da2"
   end
 

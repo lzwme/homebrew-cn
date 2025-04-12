@@ -17,6 +17,7 @@ class Gomplate < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e5ca8e318d5c5eccf7f18b93f475b7cebc5f0e5c3ac1a06d9efeaca8c7ee1477"
     sha256 cellar: :any_skip_relocation, sonoma:        "c453de4b7ffc44e5a1446b4155d2f014f22d7aa8fb89fd39c1e934aa972b10e8"
     sha256 cellar: :any_skip_relocation, ventura:       "123ac7a72a8c09edfd31e92489630dfa927cbab602e6d8e9bdb6b9eed031faa7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "951f0534ce442ad187ab159720c61d961b236dc70bfd3e3474a54aa4e479a975"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d34acfa60f4879e1cfa79fe34b13228be9161fd6dd81c90d14b5b13cd69c016"
   end
 

@@ -18,6 +18,7 @@ class K9s < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "30869dff2a927ce13498835233fc5a03669fe8f808babc576f0a162c06050f0c"
     sha256 cellar: :any_skip_relocation, sonoma:        "26ec0c419c1abf7776e0ac33243ce0a241fa726fb8cadfc8d84d0e623819910e"
     sha256 cellar: :any_skip_relocation, ventura:       "a6e4748c66e5d6e1f998f335a05a315fd384dc3cc96d6609aa29bc1540a0a031"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ccbc4c97882e15772ef87dd411f5c27f9682dc5c7645f363ebb8256bcafb398"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "212e7ebf57cdfe0090a3fe61547e101ef612a853cd3a49b81e3f7388642606ce"
   end
 

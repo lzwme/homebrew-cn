@@ -3,18 +3,18 @@ class AnsibleCreator < Formula
 
   desc "CLI tool for scaffolding Ansible Content"
   homepage "https://ansible.readthedocs.io/projects/creator/"
-  url "https://files.pythonhosted.org/packages/40/2f/93a08a9885c12a398d86b823c1b511f77be0950e2ab3280e403abd3982fa/ansible_creator-25.3.1.tar.gz"
-  sha256 "bf4eb6443d20818a4d512bc3781428ab23b2d26fc87317c84b01b23309a7cf43"
+  url "https://files.pythonhosted.org/packages/78/1e/7d963cacf1778101cd0e309be302dea6742cdaab62ec5d4312c996502f5f/ansible_creator-25.4.0.tar.gz"
+  sha256 "8295451e9334d220ffccb1226849d750b886e5a182f5bdc7bd1f1e4a0d768d58"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "642b7e3829ecb6c2581db58bc24a4e84f469db05074df3c75383364e4a196d1b"
-    sha256 cellar: :any,                 arm64_sonoma:  "a804387adb831355bc2c4aed559582739a2f136ae0311e2a35ede78a00123150"
-    sha256 cellar: :any,                 arm64_ventura: "c031a91ab4a845f5f76437390ac49a3fb2e03e569423de9bf091dfa20b53fcc3"
-    sha256 cellar: :any,                 sonoma:        "b1f329d6bd7ce63c7f02dbc58da1c97c23e81224677fef82577b180dc8be4656"
-    sha256 cellar: :any,                 ventura:       "4b530be795955e13401edefff4fd6bc8b1144f63901412510f2724f5a31b97a9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c32e3565ef4c323bb3d418c3c95dd22a2d1a56d04cf4f27ebc540bad4c0ed418"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f62be4a119cef6fd0501ee651035fc0234200cf5ca3fe2026541754cc9d0493"
+    sha256 cellar: :any,                 arm64_sequoia: "590744d4d9997bc99832f9cf411c45cb00dbf845eb4be628678df34f0a882328"
+    sha256 cellar: :any,                 arm64_sonoma:  "5a2d4e504f9b8bd5c77a532e1fd7fa7bb6877d7385ab179b5db933e5590eb2b9"
+    sha256 cellar: :any,                 arm64_ventura: "7b5a5d02b0b25886bc6382efd67f5ebfb29e4cb155e2e8b24e12a60f5d661dfd"
+    sha256 cellar: :any,                 sonoma:        "49796c833f288095d61e5504c3b309f56b6eb99c95a266731100610e228f8887"
+    sha256 cellar: :any,                 ventura:       "fdfb1f55caa5ce95399d4377bcb836e244bb1292e053690a04c918ea04a01964"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ede134f349c6c4f961a84f299db398e82f175d0b80b7f1f893fb6e075a162671"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0502890e8bdc1e01a06fd792876b10edae543719f1453f177218e11c262ef515"
   end
 
   depends_on "libyaml"

@@ -14,6 +14,7 @@ class Truffle < Formula
     sha256                               sonoma:         "3f7dbf05369a67669711f1d7358446c46380a5caf38b599d1653156441d5e60e"
     sha256                               ventura:        "7fda9c9211a1884fe42f87dcdfe896eb35d8e5dd332e324d0fb25230417e3c1a"
     sha256                               monterey:       "ea609ec0150beda892f4bdad71aff910c78fbe91338798e8a6a65c37a0434f11"
+    sha256 cellar: :any_skip_relocation, arm64_linux:    "561cb47cb5d7ca64d71b9464c9fd356b06fccf878432c303ba6bbd5ddbf1b133"
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "9db01e2a5e1d9ab923419eafc7a0588dd02bca55f62310277838a41d4cc5c653"
   end
 

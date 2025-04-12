@@ -11,6 +11,7 @@ class TerraformDocs < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b9846110ee3a9ab3686bd96e381e651ed83816224c476540218c289a72c2f2ba"
     sha256 cellar: :any_skip_relocation, sonoma:        "b5dcc69027cbb34191b24b89b2364c79f41bfdc710a9ed97313305df0b840ea8"
     sha256 cellar: :any_skip_relocation, ventura:       "d81ad6cb5d8ecd1c47f261ccfe5e997944e5d79bbf65b4b2967a0181e3e8b1e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "195ef180318ab81e1e834597c845df5c9a71f792bb2d6037f77f766cdb6b9100"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ed822006985f68806fc9ad31c591f314252ab941d939568a40096989fcecb36"
   end
 

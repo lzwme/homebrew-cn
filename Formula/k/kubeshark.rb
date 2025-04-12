@@ -20,6 +20,7 @@ class Kubeshark < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "09c1a55b8805d2a498e7c5749ebcfc07a30e918f18e5adfc8529eb1045cefbed"
     sha256 cellar: :any_skip_relocation, sonoma:        "e2f1e532848a6a48f6a3a5776d71358f50b9c5cac59c389b35eaea9c05845cb0"
     sha256 cellar: :any_skip_relocation, ventura:       "da083374f0d641e501a53099e7ed534cc8307ce359a63297ad45c5ea271324ba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "334227606939c53834d7778fa51071a5f7cd1a729d271291de55d36711c13fe9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8cf3fa6844a66605b10db46ff9220c00b224feffb01a5ac8820afab372df4249"
   end
 

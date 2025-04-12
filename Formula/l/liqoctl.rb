@@ -11,6 +11,7 @@ class Liqoctl < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "bcad183bb34ecb46edefd59e25cf15c4552e932d7f4cb569de63378f53f07786"
     sha256 cellar: :any_skip_relocation, sonoma:        "96949d366b79720d97ce1522d92f85b8b6ab4b8ab0db7d463876a07c6d583c1d"
     sha256 cellar: :any_skip_relocation, ventura:       "96949d366b79720d97ce1522d92f85b8b6ab4b8ab0db7d463876a07c6d583c1d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a01acb84b85d5daff6c3ec55240259e19e3b9dfaa83fab447342f0d2e00a1c1"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9296a3d5c4b001e8fe66fddc076dc06f6044bea2a1d985b54c74f5d0acb0894e"
   end
 

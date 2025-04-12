@@ -20,6 +20,7 @@ class Glooctl < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "fee51697c7480deccdaff4855bb69d4e948a8c8098040c7ae94100f22155dca7"
     sha256 cellar: :any_skip_relocation, sonoma:        "7e0cabca1f8c2fe05a187f2a5e6ab7954cedcc3f7e63be2e4554a596044b6902"
     sha256 cellar: :any_skip_relocation, ventura:       "caffaeb79c22354ff4239d969550f4587e19e35692a6ff3c449c6de1606b3781"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "11edd5cf78eb15f3f1e4f472e40326dbab3bc5f35ad2c55bb800814a35d597a3"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "807a73c219f2ac86ec54f59d4e333be057a63ff84b34e617d00f03e67e90b671"
   end
 

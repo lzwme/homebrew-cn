@@ -11,6 +11,7 @@ class StripeCli < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "bf6de4f6958baf8c81b4f8ae7034f7bed41bb71044f6ceb1f736f76c9791e974"
     sha256 cellar: :any_skip_relocation, sonoma:        "d39fe4a0098119a9136f5d3cb862f8f8709f82bd0d6ae243e8cad92a7eb47a8c"
     sha256 cellar: :any_skip_relocation, ventura:       "6da0424e28ea9200bf465eb8c6e4cdf81d0a1d95099d2bff8ff26f51d58a7d1b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e321291a381dcb08a32cc505300eab8c41a374efdb95cec4c728f266f22dd56"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef22ef69e9c01cd7663352b291b63186df4b18bf9b3b92cd13fe7e0e1b2bc51d"
   end
 

@@ -12,6 +12,7 @@ class Ctlptl < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "849305be4d6845d03a45a4095182744cf52a23674ab47f975a7b77fe5e2d79e8"
     sha256 cellar: :any_skip_relocation, sonoma:        "7659d74ff23c82f25783815074811622c79b35749537f0843daf1c41556d8123"
     sha256 cellar: :any_skip_relocation, ventura:       "e5b1ace1ff8e2ffbe788d0f33f7969d2d2272b4217b38bd5137c685c74dd01ab"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0282da94f64161002eab49d6d3846d600849b36e63c36db96b4bfb4b740e0c6f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "300432a6c6c1ef111b46a4fed7af24162e918da54cdd676f7687a5390fa78b02"
   end
 

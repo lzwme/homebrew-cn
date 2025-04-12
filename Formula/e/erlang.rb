@@ -6,6 +6,7 @@ class Erlang < Formula
   url "https:github.comerlangotpreleasesdownloadOTP-27.3.2otp_src_27.3.2.tar.gz"
   sha256 "7997a0900d149c82ae3d0f523d7dfa960ac3cd58acf0b158519c108eb5c65661"
   license "Apache-2.0"
+  revision 1
 
   livecheck do
     url :stable
@@ -13,13 +14,13 @@ class Erlang < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9553f8d4c3b42c691b84088812c4927d96e0f7c739877316ae1c1e5344149db0"
-    sha256 cellar: :any,                 arm64_sonoma:  "3ff7b5c23b5e6371d154c789815c0526db97bade8f1c3fdd0f4805c7a3d68845"
-    sha256 cellar: :any,                 arm64_ventura: "f7c26de3a607aab765b535b1f83e406283e36868b0bd5910ced7c6cd5d3312c6"
-    sha256 cellar: :any,                 sonoma:        "ed7196b0e5f209a377a82b41a4145beba6f7c314ad008504ac3650c23ff1582a"
-    sha256 cellar: :any,                 ventura:       "79afcfa2dd55d70e36a6745e126eb94eb2989b98d98b6f3286d900f67ee96b95"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3561d3a96b35af2f74a4bba1f07103fbc722ab7fcf19dffb9be511346e66ac3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ef9bc9342d938002a5f458d5fc2c836834034797fc0bfeeef52213344419bf7"
+    sha256 cellar: :any,                 arm64_sequoia: "ba4c8192598a55226a7a73cb57eccddcdd46e7b6403d52a1912e83fce90ba326"
+    sha256 cellar: :any,                 arm64_sonoma:  "e0904b7b1881594245c523143026eef0911fd55d59734e77ac2d10c512136692"
+    sha256 cellar: :any,                 arm64_ventura: "4599dd8021c4934f44843a7cafab3728ae9225dc719ee648148fb957e016fbd7"
+    sha256 cellar: :any,                 sonoma:        "b3ca138ab54def902d968279c93f097e26a51df3c9dddc499b3f4eef6c396188"
+    sha256 cellar: :any,                 ventura:       "d39115fca22b016ed506195683a69c79ec4f6c0cced60e90feb7eb0e07e517d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b10741b9a8850d4fb502cfd2caa7362c2bff02632ae578ccb40eb1a2b7d56ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3d96b247cd29b97591dd7a45822ddd107c2ffe8b03db9ae2b6ad8cce594b337"
   end
 
   head do

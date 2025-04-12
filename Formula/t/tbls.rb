@@ -12,6 +12,7 @@ class Tbls < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c4658911c37d5d771f94063df69f160aaea223dae72edd85211eff922b6db12c"
     sha256 cellar: :any_skip_relocation, sonoma:        "77932e72bd4329a520eedb2714a2ff2c1465b9f719098c7f8a0f4726399d280d"
     sha256 cellar: :any_skip_relocation, ventura:       "3ab4831f7cb7ba3c00760f57734031883dceec823c5c5d7b6b0b2ee781983279"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef90824ba943c8aa4e470532cdb7daaaa809b3964dabd9200572b79397695697"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a0c71f0f8c8adb39cb2acdf52d034931983729bc0137c9dbff9b6de6224d1228"
   end
 

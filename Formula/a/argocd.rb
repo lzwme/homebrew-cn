@@ -23,6 +23,7 @@ class Argocd < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "142175ae418a2cad565c5976256bea4cdde5e76405a0b66f7e221b98141bf556"
     sha256 cellar: :any_skip_relocation, sonoma:        "e1fa72d2d93e5935c9263d5d6e93a9f4a7bfc5f151b20d19d09f738855edda3a"
     sha256 cellar: :any_skip_relocation, ventura:       "aebd058695312fd7351baf6b3b1eb76fac9871da8882545b1d2d71c6c3fd7f18"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "55530466399b874b64ccb57fb08bf0a25dd30657c7d0ce7e12712952fc40972a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d326f8fbf05ec4f3ee64a1715ba2e8bd2277bc93bde34e79cad26d8dd18eb3b3"
   end
 

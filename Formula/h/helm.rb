@@ -13,6 +13,7 @@ class Helm < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "4f3c11d35d57ce2d8611669bc4d2e619c6c8f48a836b0f3119b7cfc6c1023c7c"
     sha256 cellar: :any_skip_relocation, sonoma:        "58a5dbc2737b4b5c331047e2e6063481ca5f27e9a126c355f969cc4ad8554a5b"
     sha256 cellar: :any_skip_relocation, ventura:       "47118aa666e8f83ac3425dbb4538926701673eb42e96e3df2d6e3108cc2329d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "114b712b051b18938dabdf39c153ed3cf4ac5802fa2890a31a40d36c12b87c82"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "236a0586ad8a20b39449228e16cf287114a874f5d760e6f0df7a45d0dd1d1ad5"
   end
 

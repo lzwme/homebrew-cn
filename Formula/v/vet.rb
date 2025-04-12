@@ -11,6 +11,7 @@ class Vet < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "70c9b936803bd56839ad2448bedf1d04ec1482b057f5cf3ba6a4bfa23fa1fa0e"
     sha256 cellar: :any_skip_relocation, sonoma:        "9d12d497b0128bc2aa933927edc41d183dc448c077c250d445fef7592106fe70"
     sha256 cellar: :any_skip_relocation, ventura:       "171ddc008d44db530113d864446425620487083c5f2f830d7b22a0bdce3a7c03"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "65304ab901d30d4115b94390bcd569234a219f5da75cb91111937974e5d70e61"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9ea0d20e0619d75fd1663a27514db4b2bf9d3f624208cdddebb65a9ba1caea8"
   end
 

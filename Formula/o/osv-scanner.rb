@@ -12,6 +12,7 @@ class OsvScanner < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "b6c7881c2c1270f26a2378983a37548c57a76fe12d8be1a4760a4e08d64d8f4e"
     sha256 cellar: :any_skip_relocation, sonoma:        "4a851886acdccec4210254020246bfa2175d62141f068a788d00c1a01b41d4b5"
     sha256 cellar: :any_skip_relocation, ventura:       "4a851886acdccec4210254020246bfa2175d62141f068a788d00c1a01b41d4b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d143610c514f2348001fb3aa32ce01edd5052a9fd18335606b859376e784d21d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "18bd925f8a8b66bb6f0d451399472f3b5b8e391e7591db8b6655780cc9549614"
   end
 

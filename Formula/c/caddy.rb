@@ -12,6 +12,7 @@ class Caddy < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "36487e2468a464bd4810d86c4323d1107a6d374f573b43ea07d2b9abf4a6998a"
     sha256 cellar: :any_skip_relocation, sonoma:        "7372c7baf68a2da18554d74f44c3f386a441c115c782f89fa1107a9d44a87598"
     sha256 cellar: :any_skip_relocation, ventura:       "7372c7baf68a2da18554d74f44c3f386a441c115c782f89fa1107a9d44a87598"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a18808a3f4fdbcafc284242761c93f2816af45bd88261e50544483f67f25c8c8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dff8317e8eb4749f085266a92ca5b3d7e6a0b6df45ea257744dbcba8a4842f19"
   end
 

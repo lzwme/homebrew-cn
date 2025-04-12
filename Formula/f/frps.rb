@@ -12,6 +12,7 @@ class Frps < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "acae3f5baff0ed1d9f898f5209af2c01257be02630a21021ee414517880992b1"
     sha256 cellar: :any_skip_relocation, sonoma:        "a03f632261a17cad43381e748f011e970198babf231f321d6cb87876097448a0"
     sha256 cellar: :any_skip_relocation, ventura:       "a03f632261a17cad43381e748f011e970198babf231f321d6cb87876097448a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fef9532938ba7fb29fd3fb12a692d18c3c6086e6ef96a711e62a0000e1e5c59"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "df0a2758a2decd51087fdee5985d78bb64c96b47fe070c5b7180a8cad3847083"
   end
 

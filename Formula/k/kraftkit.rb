@@ -17,6 +17,7 @@ class Kraftkit < Formula
     sha256 cellar: :any,                 arm64_ventura: "17bae80e0c3fc125743e8169c0c0d5c86fb63d66e35d8c3e45142e39e509e4c8"
     sha256 cellar: :any,                 sonoma:        "4974ca4f7496b959ae1c88c6cd68c7cb64a18ed64a1838f195243638bf924011"
     sha256 cellar: :any,                 ventura:       "4e11acfa52b9b89b9e8897b31ed7d62391b9d183344ce29b0f97ac32289acf17"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4057001b3954f809d3293f25d80054f50ee8502f14cd3b8bbb059397c512bf24"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6abe02b5b41416d128059d71e7a2ef503d2152bd89c71a2daeb09088fdc8e3ef"
   end
 

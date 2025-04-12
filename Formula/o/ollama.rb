@@ -21,6 +21,7 @@ class Ollama < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "df693b2085e7e1b9cd28b75f2038dcda01ba40704785da73d73974364a7202b2"
     sha256 cellar: :any_skip_relocation, sonoma:        "7fcea97c02bfae64b81044ffbd86141bbb741c098cb16bae5f3354e7127987f1"
     sha256 cellar: :any_skip_relocation, ventura:       "be716802921036544dda7f7b9e35b97dade83e41796cf08b88d8ea76506a44ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0b35ad108ca3524c1f77e1e0c95e808dba6b385d06879471da1ba5197dc1895"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d6c34f919e8b138d863b12971fec2246d38a1e66b21c838ef42633d6216fe45"
   end
 

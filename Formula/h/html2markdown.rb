@@ -12,6 +12,7 @@ class Html2markdown < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "c219db5e39b7af648e6f9c12dd8021f370d589bd3d160d910ccb501b12ef0d1e"
     sha256 cellar: :any_skip_relocation, sonoma:        "ddf7d58c05a7ad768de1fd74b8d61b57af4dbeae9bc1a20075beb29b2ddde73a"
     sha256 cellar: :any_skip_relocation, ventura:       "ddf7d58c05a7ad768de1fd74b8d61b57af4dbeae9bc1a20075beb29b2ddde73a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9c6f55e344d34154d3e48890c3c01057ab52b5c3fb3f816a0cf7fc834bf3ca41"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bbdad706da16870661eff95f676d348122cdb03589efa9989bf7085764e633b3"
   end
 

@@ -18,6 +18,7 @@ class Openbao < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7398c8b531df151df936e781d31d41e8861586bf662ed0462a7d66d5ebc9514f"
     sha256 cellar: :any_skip_relocation, sonoma:        "437d9bf8ebf4246f497ef3520828fb9ea07af33d09a2c03c5badce3a687f7f21"
     sha256 cellar: :any_skip_relocation, ventura:       "5a785bb4f0d235af8d59b29a4a8204de777a99872ab85309943700834e83416d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e17cb91593cca492f442eab303f00fcce13ec48755d558d2497d47480edf82a5"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "527df7748c0f9373dcc287a2437852d267d72b0e8d2d10e491ef92a10404a996"
   end
 

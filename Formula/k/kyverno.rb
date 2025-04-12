@@ -19,6 +19,7 @@ class Kyverno < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "182194ec39eea879bdca1192ce081344e82986eab061243dd5b1d903752861e9"
     sha256 cellar: :any_skip_relocation, sonoma:        "ea3220ff8080c7868cd998496fa0a857fd2b71a65772015635810c4bc5d37e9f"
     sha256 cellar: :any_skip_relocation, ventura:       "8564e2173faecb48e7c4a99e0a6faed20208073f231891ddb28ff86100f4b52e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "364535163f47005935ed0ad9957ac6cf0587ebea7f48717a55f42b609989bc72"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b26220636cd74f3504a8533828527d07fd8c5a4cc135e7f67cd76e8a92f4966c"
   end
 

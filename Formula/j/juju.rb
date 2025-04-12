@@ -21,6 +21,7 @@ class Juju < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "93fdc3e012711a5c567507c9727168dcbc7a4c8bf1cc740e6dd6fbb79a6d942f"
     sha256 cellar: :any_skip_relocation, sonoma:        "fc66fca2f7d37de0df9e41db117481ad6a53efbbecfafd67f6179b7fafc77521"
     sha256 cellar: :any_skip_relocation, ventura:       "8baf5d3b899bab3542248b87dbbd344881805faddbe31002a02a81b16175927f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7916642ff26d8ec38b13028301b704d657df791c2519efbd2c0cdef5d8b5609b"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a0b382ca13ff9d2c9c830c3295dd841b427793b30cdaa84d50cec5af8dc0d5d"
   end
 

@@ -10,6 +10,7 @@ class Cdxgen < Formula
     sha256 cellar: :any,                 arm64_sonoma:  "a33884a4b63d119dc61a72ce8a1c202b080589ef08206ab3bcf7cc1cc0cb045f"
     sha256 cellar: :any,                 arm64_ventura: "7f50733fa47f47835c0dac98794cb6c9756cf1cfbb6e2ebd1bf3863eacd6b940"
     sha256 cellar: :any,                 ventura:       "3243a723b7c052496f54792beaa85c0023d483e42ea0064701b5803015cf46b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c4658b6974940f872b8c4d77b148bf7d295deabbfc30df63fdf4fe5162c89b17"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5595d1b46218a66e555ea9598af4c6628c0dc813e11f61311c57e5b23a3eaed3"
   end
 

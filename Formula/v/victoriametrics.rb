@@ -19,6 +19,7 @@ class Victoriametrics < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "af4ddc1d59cf171fcbe85d2f3b23e2c7c703760c850ab7dbdb4459f846c9c6c9"
     sha256 cellar: :any_skip_relocation, sonoma:        "1eabd4206d7fc3850e5cf060a320de733c167ab339af0d7351c0edab48050dd3"
     sha256 cellar: :any_skip_relocation, ventura:       "e7c6ab9573b6ae7d88d73e599eee56790526b9d083f2db0798a1ced2485db04e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "18e80ba8e33027842277c8e18b67ddf0213a92fe0d44f95d7e97195a59b669ca"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "69b9fa6323b18cddf16ffc64b9300c35d5c7c0bd7598eeb9fc7c73e4f34be7ee"
   end
 

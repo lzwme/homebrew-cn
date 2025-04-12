@@ -12,6 +12,7 @@ class Gopeed < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "6b2bbd886162fb0bfa92c820ce2e9655d6dd27f32528fd44f2707e920a1667c8"
     sha256 cellar: :any_skip_relocation, sonoma:        "09b0663cff83aa10bb35ce61b51ed1942e715e8458a3130df0b02e341da7b863"
     sha256 cellar: :any_skip_relocation, ventura:       "07e9096aa3331e0f493d04dacad834fbcca174f3bfe55c74325415977a96c2c2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3df97559f7bc80ec58370ea57eb310d67ab022b87423f30e5725597ea0b19dd7"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "04210ac095702086a532bfaa1a3d2c2f21ae52c66d28903f9ae97f0e21c53371"
   end
 

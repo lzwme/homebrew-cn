@@ -13,6 +13,7 @@ class Aztfexport < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "494fd1d33cf38dae763505225a477cfe42730434250c67aeb314d1c5283948c8"
     sha256 cellar: :any_skip_relocation, sonoma:        "ff3e1fb1e23a62f75599e01e3a5330d3a5aedd11993183b27f3c5e47def155d0"
     sha256 cellar: :any_skip_relocation, ventura:       "ff3e1fb1e23a62f75599e01e3a5330d3a5aedd11993183b27f3c5e47def155d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "acdd35577a41cf46edf936c43c431e984ded8c05860f1af490afcc4d2bdd191c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b3c53c15e3bb6b3ad58789f9d95c18f3b7f04201e963a23272655fabec4bdfb"
   end
 

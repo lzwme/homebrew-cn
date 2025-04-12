@@ -12,6 +12,7 @@ class Oj < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "447dc075e488d91ecd8dfd9cbecac67172d85a757679c51cbad0d245dcb2a620"
     sha256 cellar: :any_skip_relocation, sonoma:        "ca218d30792368d6d19fe46a9eb05846a91cffa6bf14ae1c3c887ca99d3cbf24"
     sha256 cellar: :any_skip_relocation, ventura:       "ca218d30792368d6d19fe46a9eb05846a91cffa6bf14ae1c3c887ca99d3cbf24"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e628ba588f73e2cf30275465908a2e98d5082e6c715e4ed1b3b799bd49a71dc"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7518d555ea9a5842b6c7114a0d01417ba35fd468ba5ba91f223e8cbe922f3d7"
   end
 

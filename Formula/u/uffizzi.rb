@@ -16,6 +16,7 @@ class Uffizzi < Formula
     sha256 cellar: :any,                 arm64_ventura: "286c16729f6c52967267775e4aa023f2d4629adb9b1e9c2ff2e1fdbf200db412"
     sha256 cellar: :any,                 sonoma:        "1d422ffd54445d9e404fcd73233cdee005808dbd33121a8f2ebbc0d686dec999"
     sha256 cellar: :any,                 ventura:       "9a7695c432c05597c5cdbce5cbe84573d782b5c5ee3dcbc9181048da49d88a06"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "15fe59302710ebe347b090a31cba8e5ed24b40b34db36d2b96d79d201e520910"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d976bbe6deb261da05d0e050400ff12e5fd9a8f5462925c15e8ac856756e3332"
   end
 

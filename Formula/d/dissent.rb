@@ -12,6 +12,7 @@ class Dissent < Formula
     sha256 cellar: :any,                 arm64_ventura: "68dbe15af80a99063f98f2b1c049ac57e0d82df6b8b2e9619f2c88047bdfe4d7"
     sha256 cellar: :any,                 sonoma:        "937c8ac8601dc0c849fde1a53c0f5008f69add938abe2cc45f382292639ac7df"
     sha256 cellar: :any,                 ventura:       "f65b70b8e3b300e54760f4b29e238e3629f2bacd5820816c10ad26bda2e95cc9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9172f6e79f77c104f4542d65216ca6383387a2f2c8c19e4a8b95e445af6761b0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "faebdd245e47aed01574787a3b84dd275d3974f8aa4867e1d324d78940b1ec84"
   end
 
