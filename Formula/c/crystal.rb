@@ -2,6 +2,7 @@ class Crystal < Formula
   desc "Fast and statically typed, compiled language with Ruby-like syntax"
   homepage "https:crystal-lang.org"
   license "Apache-2.0"
+  revision 1
 
   stable do
     url "https:github.comcrystal-langcrystalarchiverefstags1.16.0.tar.gz"
@@ -19,12 +20,12 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ffd543b04e42bd9533f49e9597f0abc78f77ad35d82991ba7a9ea2eab735a90b"
-    sha256 cellar: :any,                 arm64_sonoma:  "6526515d8417fa8c81c7159b9b0ad33e193287c8ebc5c896dbd302ec07e619c1"
-    sha256 cellar: :any,                 arm64_ventura: "7c98469a661af45f91d97e4b43ed9a0f37a9d66eebfad949bb17c4ebd089bb47"
-    sha256 cellar: :any,                 sonoma:        "174cdc2000de6d0b13e4920e8962ca0c2e46b5bb9c228ceead7edb1647a48480"
-    sha256 cellar: :any,                 ventura:       "4bc1020d13241948d7ee7d3df6fc8cd7e56b43ad00722e7a25f098e708a77dd3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efb0d3ec5ac701ed7ad1e9d3877737d965d8020349273b2045bedfe7ef8368da"
+    sha256 cellar: :any,                 arm64_sequoia: "1a73745d5d6f112b5da89ce866169b1f5d4e41158d2d7c0e89826661dd8708f0"
+    sha256 cellar: :any,                 arm64_sonoma:  "990f95fc213479106bdd32e04bf9d5003674a236502223002178e927ca6d9644"
+    sha256 cellar: :any,                 arm64_ventura: "9ccdaf124cd8e9a759c8686593a38e2ac6cc50e87c0cd9dddd21d8c0c0b4847b"
+    sha256 cellar: :any,                 sonoma:        "50c5e0f8a7d90603327d10c6f5289be454327913ed807d559e09b5fe60cfe8a8"
+    sha256 cellar: :any,                 ventura:       "8531168efc93d9e05ec8f18e6399c976f66fe6604eeda3476ac1c08deed10338"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2344f59a02d0d713181e7f275f75b9e5b198617035791d3adcc556fc92f681e5"
   end
 
   head do
@@ -39,7 +40,7 @@ class Crystal < Formula
   depends_on "gmp" # std uses it but it's not linked
   depends_on "libevent"
   depends_on "libyaml"
-  depends_on "llvm@19"
+  depends_on "llvm"
   depends_on "openssl@3" # std uses it but it's not linked
   depends_on "pcre2"
   depends_on "pkgconf" # @[Link] will use pkg-config if available

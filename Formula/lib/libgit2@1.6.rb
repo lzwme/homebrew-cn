@@ -21,6 +21,7 @@ class Libgit2AT16 < Formula
 
   # https:github.comlibgit2libgit2?tab=security-ov-file
   deprecate! date: "2024-04-11", because: :unmaintained
+  disable! date: "2025-04-12", because: :unmaintained
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build

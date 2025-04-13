@@ -1,19 +1,19 @@
 class Gtree < Formula
   desc "Generate directory trees and directories using Markdown or programmatically"
   homepage "https:ddddddo.github.iogtree"
-  url "https:github.comddddddOgtreearchiverefstagsv1.11.2.tar.gz"
-  sha256 "df5b3d859a5d1c7dc3a3f04fc84307be215dc1e511d9a68e0689a054083f63b7"
+  url "https:github.comddddddOgtreearchiverefstagsv1.11.3.tar.gz"
+  sha256 "8fddd9273322e2c03130cbac102c39a30625e8f2328ffe605023a8a39f204582"
   license "BSD-2-Clause"
   head "https:github.comddddddOgtree.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dc067b4c8d79634c4c2fcc74b6da4cf6bdf6e5f292864296c4f8c89e7c70ae88"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dc067b4c8d79634c4c2fcc74b6da4cf6bdf6e5f292864296c4f8c89e7c70ae88"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "dc067b4c8d79634c4c2fcc74b6da4cf6bdf6e5f292864296c4f8c89e7c70ae88"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0a2e3afdd53fe96b5d09e877093ec2d5262f606e80c591c8346b106bbbeba692"
-    sha256 cellar: :any_skip_relocation, ventura:       "0a2e3afdd53fe96b5d09e877093ec2d5262f606e80c591c8346b106bbbeba692"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb0195c2b827a4503cd93fd676a93430c2dbd060b96d1d7a36916c9e1c2716de"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "340997d6a1f0248af0f6db332dcc89564b0d050d344cc5c3d50fa7e8c9a1c333"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96b0aea6dc9b4c96b57f9d87b19e979b92a7ffc568a4611a7b37eb30a784a163"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "96b0aea6dc9b4c96b57f9d87b19e979b92a7ffc568a4611a7b37eb30a784a163"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "96b0aea6dc9b4c96b57f9d87b19e979b92a7ffc568a4611a7b37eb30a784a163"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a730ec6186cb2948ddd5bd5cdef911e03e6cd13f28a2248f9bb17aefd8b56c5c"
+    sha256 cellar: :any_skip_relocation, ventura:       "a730ec6186cb2948ddd5bd5cdef911e03e6cd13f28a2248f9bb17aefd8b56c5c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "33f753d00d56c964204acacc12c862347eaf2f25393aad9c0289982b6e4687f4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c134cf0559c13edbc5f20aea793a66b7e7c30ba41f8d60d81893e02555c9723"
   end
 
   depends_on "go" => :build

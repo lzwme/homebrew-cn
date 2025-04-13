@@ -9,18 +9,20 @@ class Awscli < Formula
   head "https:github.comawsaws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "90b78e4f10fa796bdd5b83d66b5c2a2aa069a1e599f82ca63472d3975b43163d"
-    sha256 cellar: :any,                 arm64_sonoma:  "43dec23efb26921e99b3d294bf4dc17d0e49a692b789537f5cccb3c5f218e07b"
-    sha256 cellar: :any,                 arm64_ventura: "17194ab73b1606536d4b72f8b785caebe66ac529342850ab2db3346e2213be77"
-    sha256 cellar: :any,                 sonoma:        "4691fb72ff56780e50cd94981c1893f2873d1498c6692d65032f0f20d048a02c"
-    sha256 cellar: :any,                 ventura:       "6a8182f4780f0de86f0e9d1ffd50335f0fd2a2ab212b5bbc422dfdaeae5808af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "12d346e97b8e9b91c92b40f48d51fb5b61d2749445b131ba0f223d0d28cabef0"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "5eb45c9ea37205315d0688b8ddac98150c1a57e11797f063503ec6941ea57928"
+    sha256 cellar: :any,                 arm64_sonoma:  "a5cad0cc1d0590e10bc323cd34ebfe9a27c4ed2fa7d92c11e8859a34e255d5c6"
+    sha256 cellar: :any,                 arm64_ventura: "49f07d7bddf62d8667e683ec766c062dd41e7f21944944b6ceea95ea4c2688c2"
+    sha256 cellar: :any,                 sonoma:        "07b11d03b04491b1a5b02fde196c7bf3733458d78a3a575119d5b35abed9cf3a"
+    sha256 cellar: :any,                 ventura:       "a17a3f48c4aa3ceca09ffbf69de2e59641580cfa410e54bf928f211b5ba9d299"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "99d1ff2319ecd124ac3eb7e7a8aace5755084556b855faedadd93a98d42d970b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4f564e919264c72885601d1fe433fbf7113963110dbd15437e2017f269b4becf"
   end
 
   depends_on "cmake" => :build
   depends_on "cryptography"
   depends_on "openssl@3"
-  depends_on "python@3.12" # Python 3.13 issue: https:github.comawsaws-cliissues9234
+  depends_on "python@3.13"
 
   uses_from_macos "libffi"
   uses_from_macos "mandoc"
@@ -71,8 +73,8 @@ class Awscli < Formula
   end
 
   resource "ruamel-yaml-clib" do
-    url "https:files.pythonhosted.orgpackages46abbab9eb1566cd16f060b54055dd39cf6a34bfa0240c53a7218c43e974295bruamel.yaml.clib-0.2.8.tar.gz"
-    sha256 "beb2e0404003de9a4cab9753a8805a8fe9320ee6673136ed7f04255fe60bb512"
+    url "https:files.pythonhosted.orgpackages208480203abff8ea4993a87d823a5f632e4d92831ef75d404c9fc78d0176d2b5ruamel.yaml.clib-0.2.12.tar.gz"
+    sha256 "6c8fbb13ec503f99a91901ab46e0b07ae7941cd527393187039aec586fdfd36f"
   end
 
   resource "six" do
@@ -90,13 +92,8 @@ class Awscli < Formula
     sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
   end
 
-  resource "zipp" do
-    url "https:files.pythonhosted.orgpackages54bf5c0000c44ebc80123ecbdddba1f5dcd94a5ada602a9c225d84b5aaa55e86zipp-3.20.2.tar.gz"
-    sha256 "bc9eb26f4506fda01b81bcde0ca78103b6e62f991b381fec825435c836edbc29"
-  end
-
   def python3
-    which("python3.12")
+    which("python3.13")
   end
 
   def install
@@ -107,7 +104,10 @@ class Awscli < Formula
     ENV.append_to_cflags "-Wno-incompatible-function-pointer-types" if DevelopmentTools.clang_build_version >= 1500
 
     venv = virtualenv_create(libexec, python3, system_site_packages: false)
-    venv.pip_install resources
+    venv.pip_install resources.reject { |r| r.name == "awscrt" }
+    # CPU detection is available in AWS C libraries
+    ENV.runtime_cpu_detection
+    venv.pip_install resource("awscrt")
     venv.pip_install_and_link buildpath, build_isolation: false
 
     pkgshare.install "awscliexamples"
