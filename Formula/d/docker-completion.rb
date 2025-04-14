@@ -14,6 +14,8 @@ class DockerCompletion < Formula
     sha256 cellar: :any_skip_relocation, all: "ab2d16d72a1a2b17b8149581cc8fbc7d6b4dcd65451a8d8a28ba32024248c4ce"
   end
 
+  conflicts_with cask: "docker"
+
   # These used to also be provided by the `docker` formula.
   link_overwrite "etcbash_completion.ddocker"
   link_overwrite "sharefishvendor_completions.ddocker.fish"

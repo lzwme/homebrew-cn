@@ -1,18 +1,18 @@
 class Mago < Formula
   desc "Toolchain for PHP to help developers write better code"
   homepage "https:github.comcarthage-softwaremago"
-  url "https:github.comcarthage-softwaremagoarchiverefstags0.22.2.tar.gz"
-  sha256 "5a9b56c0b4268f447b19230b6cd78aaaf684d5dd666611c087058c28f32cd355"
+  url "https:github.comcarthage-softwaremagoarchiverefstags0.23.0.tar.gz"
+  sha256 "b92206a289c9a862593be5ea6b73dcf043279fe115732fe92f25f9cbc2cad628"
   license any_of: ["Apache-2.0", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ecb29552c1a4fcab85ff90b5bab0e6c71b25f5eb7dc4c31ee68c9a74c974c19"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79a25793f1c32814db7de80fb6427dc4ffa0fd915eb90797d769e280feaa38c1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "61700c342d18769c8adcefdd5ae7fe37cc85b95bc1b7cb4d2fbc00e51eed61cf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "82714765b8593f6abc5f2a53edc865bc4cbdbbe3d6ff5e1f1ea2b98443a2b2ea"
-    sha256 cellar: :any_skip_relocation, ventura:       "52cb72bf69a7be1ceaa5016e26f69990f37fceb000f5f8d0b864abe307dae812"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fb8d294af6fd9bc8ad8a876bcc2e5706586ed6e419c98d5ae565533ecf538d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab6d4992165e7f518936173a0758370b8676f77ca35ecdbf5f33fd7715ec68d9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e26e375e9bc199c01e433def7971d56d160989f6abf9b3ef10d6066c74ed5626"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e4f668ce417da71a5bb9abb68ac1e81d2ba055661302cbc1c5ea5f14926e1c4e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d6da15d1ad47314930371de1f2793322e5a50f239598b7d1bb3d767161f99326"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d27cad282d60f2a1def1fa43fd6cb8e98d1ad02abc7ef806f414c2eb316de572"
+    sha256 cellar: :any_skip_relocation, ventura:       "a3eb15a33bd3c377fa844a9ffdd05e90c7c9ecafac73ce1f3020dd7b9a761536"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc337c41ebd864d98210933f082ce568307fd9f9bbf45244bec80a4769c8f2e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "59c66e605bf31dbca5bf9e5a9adac25ee311c4121d4d2839f8fb063260b925df"
   end
 
   depends_on "pkgconf" => :build

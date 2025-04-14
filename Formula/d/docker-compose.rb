@@ -25,6 +25,8 @@ class DockerCompose < Formula
 
   depends_on "go" => :build
 
+  conflicts_with cask: "docker"
+
   def install
     ldflags = %W[
       -s -w

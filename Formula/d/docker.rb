@@ -25,6 +25,8 @@ class Docker < Formula
   depends_on "go-md2man" => :build
   depends_on "docker-completion"
 
+  conflicts_with cask: "docker"
+
   def install
     # TODO: Drop GOPATH when mergedreleased: https:github.comdockerclipull4116
     ENV["GOPATH"] = buildpath

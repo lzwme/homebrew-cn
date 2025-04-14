@@ -4,6 +4,7 @@ class Pinocchio < Formula
   url "https:github.comstack-of-taskspinocchioreleasesdownloadv3.5.0pinocchio-3.5.0.tar.gz"
   sha256 "5a1d521c5f885768075016455d3f9eb50bfb258db540c2f2c681ad251e25736c"
   license "BSD-2-Clause"
+  revision 1
   head "https:github.comstack-of-taskspinocchio.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class Pinocchio < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "74dbefe8d3aa7ee07a6ffb1cd106ce95dce1cdf78af6ce8405d61c62a48fca82"
-    sha256                               arm64_sonoma:  "91a2fef43b6a388e42cc65d90c6b2657fcef2546888f43e306e2bcdd6ed50b5e"
-    sha256                               arm64_ventura: "e896e19422db890ed0389bfb6b74e51ebf5b1d03d8d550c0952389e431a148f1"
-    sha256 cellar: :any,                 sonoma:        "ab268f575aed90b0141412f7644e9812509c52ef8b049865fdf8c479eccd1366"
-    sha256 cellar: :any,                 ventura:       "78cdc403599fca47cab098e77e04f5aca3c9d70ee32e91f453e622ac8468a838"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b699c1f0963eadc215e56cfd60653bc49d822ca616bcab7ae0fb664e198b152d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5df171d9789d3ad7f30ee65f47ae784953102436bde6ee899c9df751c7ad6aed"
+    sha256                               arm64_sequoia: "c901b546f36d193bb1e73057932119dc8d7663409b4108049fd32abecaf70226"
+    sha256                               arm64_sonoma:  "d6f5861487a00dc43d94dcd5cb1504625d5025ee2141076e43f9f6f1dca9c3b9"
+    sha256                               arm64_ventura: "8a5bae63994e6303ecdf7b75e16663c3e1d2b035866c73b467f3bb9fdf66f036"
+    sha256 cellar: :any,                 sonoma:        "e9b6a72236cad1c56d0d7c9b78ee08c788e776e8f2cf4786f62596fd472541b1"
+    sha256 cellar: :any,                 ventura:       "dba1d77a5e030d3cf60a0fce8f709ebade8dc2ea8b9e04d5d2f49842883408f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb619d9f383062fd47f4e8ea0f4306eadad51d997d11e8786e02f143d7aa7669"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a586035d5eb4bd44e4016fa1fe07cf66055a224e09335b0ac1d2262db7fa6f1"
   end
 
   depends_on "cmake" => :build

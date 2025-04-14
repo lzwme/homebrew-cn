@@ -1,20 +1,18 @@
 class StylishHaskell < Formula
   desc "Haskell code prettifier"
   homepage "https:github.comhaskellstylish-haskell"
-  url "https:github.comhaskellstylish-haskellarchiverefstagsv0.14.6.0.tar.gz"
-  sha256 "0c0f34271670c23cc4feec7da04487a169a3cd0fde995721503bb5379755b91a"
+  url "https:github.comhaskellstylish-haskellarchiverefstagsv0.15.0.0.tar.gz"
+  sha256 "54e6cc986ab4e3c0be278af9f30b53c5fa99ed8a9bd88cae9b1e0a0be3dbfe52"
   license "BSD-3-Clause"
   head "https:github.comhaskellstylish-haskell.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "79589b4fe79b3946c7ac4650c029918b550869a01c7321842f5144f73afebf7d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b021fdde87163cb6d75aab1c0cecd36484309e51823a9aad8951f628d82adb98"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d0d2da6f59fc1a29e6a6545ae586331ca53e6418ffde85a96dc9e94e230f9ec6"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "92a69d8d9bdb376f73cfc90bec09b4d009010496d8eff8ba0ddc8c88db1014f6"
-    sha256 cellar: :any_skip_relocation, sonoma:         "4ad14d6df5d417f7ca72f754950b9653c8f84f9cfc1eaf534bd769935dc328f5"
-    sha256 cellar: :any_skip_relocation, ventura:        "d88200ce18cf61fdced6097fe0cf88df5bcff75a5bf557e19ce83a9cfba64e0c"
-    sha256 cellar: :any_skip_relocation, monterey:       "d7d36832ae99a50e67b3051d648826ee404bc4334d57e61b602ebb10d727c12b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "1742bbfd81d2f9ae39b6f52a08144b81d02f1be07c57ccbfc741f66c10c47219"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8fea17aad9b3cb52454ff389a9c88498492c12cef98daa1f6370ae474e3d76d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1520fe28b0210934dade571784efebc3e5ce69d184c77d6f53a633bf289cda4c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "63698e7f64b689498ae19c0c60ee892efb559f74e4ddb85c0fdc1f8898fdc6cf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3fef1763160ed9924aeca285c2d884f02d4470f59fc1ca4ad1ff20f0f5b1ad77"
+    sha256 cellar: :any_skip_relocation, ventura:       "7e3853a872a52197a4b5f572a222054012d199af211be2e0c4b66abbfb0403cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b07e0e6218af07c380fe2a9f2b897450fb40d373332d85fe6db3ccf411919ef4"
   end
 
   depends_on "cabal-install" => :build

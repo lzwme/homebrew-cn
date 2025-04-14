@@ -4,16 +4,17 @@ class Wangle < Formula
   url "https:github.comfacebookwanglearchiverefstagsv2025.04.07.00.tar.gz"
   sha256 "9a7f2b429a02ebabff9d00e2dbd61573f878bca29b7b8b3f100bd5d0f5b0e63f"
   license "Apache-2.0"
+  revision 1
   head "https:github.comfacebookwangle.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6d720557e78374f4bd8b462e06de2e97aab3746e1f0d2fcf835b8ad397008e2a"
-    sha256 cellar: :any,                 arm64_sonoma:  "65343d20f6f621cf71ef4624b72fd13d6cbc9425d8f5c76340c16340b1cc0ca6"
-    sha256 cellar: :any,                 arm64_ventura: "d425795d2388c6307b0a2b9bf3a06dd9224214d16c57f9cbb23d93419653dc9e"
-    sha256 cellar: :any,                 sonoma:        "1e547e627dc7076a99bfc8d0c705e2c482b57b1159ab0a845ad2e915dde1a95d"
-    sha256 cellar: :any,                 ventura:       "2bc9f360cd4f0e19183dda8219f73e355c0f7d93bf77662c666fbe2f4d970323"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "86c2b66cafe98c9cc98cac5687d9cb8dccd9cc2a290b7f5778539a07c91679cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66b7bbde3dcf30b44540506f4d34ae10bbf84a8a34158a313c34cfa728de44ca"
+    sha256 cellar: :any,                 arm64_sequoia: "8144696c6030ce987f8da42005bd475c6fc30125eb7ee43e21eb88f296d7dc59"
+    sha256 cellar: :any,                 arm64_sonoma:  "d5bed905607fa83810da8531e5070ece909fb3d5e91b9f9aad4a233ace7d5bb3"
+    sha256 cellar: :any,                 arm64_ventura: "92bff772e22efc47b9a10903160e506bb8040851e65e357fc90e900f3b1f5d6b"
+    sha256 cellar: :any,                 sonoma:        "a3fc6169ec5422ecdb358027e7797eb1ed745e67057f8cf04bd8df4869ffa813"
+    sha256 cellar: :any,                 ventura:       "8d2a6aa66f55d57110cabbe8c4ce60bbdfb081f27d584e2faf67c17393e61cbc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "17ea090a92b1afe9ae1fb4209c7bf7efd533543490a4c0dbd149a43f63512487"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffabc9d5b28a69488e53fde8ec483fd037401cb8718ef5e049c1c18f1954ecb2"
   end
 
   depends_on "cmake" => [:build, :test]

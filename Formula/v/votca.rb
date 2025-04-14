@@ -4,15 +4,16 @@ class Votca < Formula
   url "https:github.comvotcavotcaarchiverefstagsv2025.tar.gz"
   sha256 "ee2ac59c858ee41ef3ecf636b263464cac5895c0ee9c8f97b1aafca4b8b76350"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0af8d4ac732328083b4365843fd5f7d9966ea3c0b2a93a877b14e8e98854f1fc"
-    sha256 cellar: :any,                 arm64_sonoma:  "baf625629e92168a63d022d84a5294dba911fcae9d2a298928de919caa717153"
-    sha256 cellar: :any,                 arm64_ventura: "bb31bdeab630d25406c7cc9aaaa40fbf70e1f72dc27b20b019cb50906d9250cc"
-    sha256 cellar: :any,                 sonoma:        "48a5aa8396c13fbaebb120459d000b8cb818bf098633422624a4d339c0e5008d"
-    sha256 cellar: :any,                 ventura:       "2c0c319154dda7c3069b2ec130eab480e0a0b4cfb9b32cb5e494cf90fc9492b6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e78e7b95b50a037ca8a6a0967b832fb686ba0d53a6626ccad47ef58fea7bb23a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7787dfb6341cdb37688034916e679ecd798ce56fd332ae6163aa5b8528d8b75"
+    sha256 cellar: :any,                 arm64_sequoia: "bd9cec0759bbce5f2a08aff4c75c3ee5179070cb057bb67509d73131c697f1b8"
+    sha256 cellar: :any,                 arm64_sonoma:  "46d73d6adc639afbe0ccf046f0ee04565c0fa8ece4f255dbcc3fd084cebc8ab6"
+    sha256 cellar: :any,                 arm64_ventura: "b626d60138ec38944c06be71c8dc60502b629fb1d59b719ac06e86037387f9b4"
+    sha256 cellar: :any,                 sonoma:        "376f6f16fbd2f983349e7f6f0261283cf003fce002bd7c8ab784d7267e7d544f"
+    sha256 cellar: :any,                 ventura:       "8869b98889a9da5d6f8c6977f99c48bdbc4766097fc22e57a67e3b4f931bc7c2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be3143dd3a32d31d35b23f21933ceb8fe084df5516a47bea702526baf4fd5322"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac6c4ab8c106fd9ea90c590381a6c79d5fb0199569c9b442704782c534f42feb"
   end
 
   depends_on "cmake" => :build
@@ -40,6 +41,7 @@ class Votca < Formula
       "-DBUILD_XTP=ON",
       "-DCMAKE_DISABLE_FIND_PACKAGE_GROMACS=ON",
       "-DENABLE_RPATH_INJECT=ON",
+      "-DPYrdkit_FOUND=OFF",
     ]
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, *args
     system "cmake", "--build", "build"

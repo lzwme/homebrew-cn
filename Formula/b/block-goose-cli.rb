@@ -31,6 +31,8 @@ class BlockGooseCli < Formula
     depends_on "libxcb"
   end
 
+  conflicts_with "goose", because: "both install `goose` binaries"
+
   def install
     system "cargo", "install", *std_cargo_args(path: "cratesgoose-cli")
   end

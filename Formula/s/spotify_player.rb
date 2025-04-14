@@ -4,6 +4,7 @@ class SpotifyPlayer < Formula
   url "https:github.comaome510spotify-playerarchiverefstagsv0.20.4.tar.gz"
   sha256 "1d13f47ef4df3415835736f32629d57e331707d781507007ea04217a7dc735d8"
   license "MIT"
+  head "https:github.comaome510spotify-player.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d4c209c2b1b2872394ca7710af9844a076589a82539ec1af10396e7d0dd645c"

@@ -3,19 +3,19 @@ class Khal < Formula
 
   desc "CLI calendar application"
   homepage "https:lostpackets.dekhal"
-  url "https:files.pythonhosted.orgpackagesfd3ba9a2c4b5f20f66ca62d476c6218454c69a61bb2a82e8b582a1ca00615d8dkhal-0.11.4.tar.gz"
-  sha256 "3e97107846c27cdce303c054e8873cdde7190006f0a854bf8e6e4ad3974165f4"
+  url "https:files.pythonhosted.orgpackagesce174e747ffe461fbdaefed6c703a9343c560a7316d25774aca2aa9935ffd117khal-0.12.0.tar.gz"
+  sha256 "ee8a6acf1ed09265b849c1cfe51ae94b6bc693914f7e5b8e8cb5ec49b283b9bf"
   license "MIT"
   head "https:github.compimutilskhal.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "afdb13c7ee10845bcb9bb636fe413442b02cd6b0292fd29ed7d85acc13a5024f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "afdb13c7ee10845bcb9bb636fe413442b02cd6b0292fd29ed7d85acc13a5024f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "afdb13c7ee10845bcb9bb636fe413442b02cd6b0292fd29ed7d85acc13a5024f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "efb069ccaa9e08cbecae9a9f123ec8addc6dc0acdc5a2b5283bd206a8bd0766a"
-    sha256 cellar: :any_skip_relocation, ventura:       "efb069ccaa9e08cbecae9a9f123ec8addc6dc0acdc5a2b5283bd206a8bd0766a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "afdb13c7ee10845bcb9bb636fe413442b02cd6b0292fd29ed7d85acc13a5024f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afdb13c7ee10845bcb9bb636fe413442b02cd6b0292fd29ed7d85acc13a5024f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4ad937f119cffbf8f2ffb24eed2838bb50d509a78687711a86c55fdcf3ff1c5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d4ad937f119cffbf8f2ffb24eed2838bb50d509a78687711a86c55fdcf3ff1c5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d4ad937f119cffbf8f2ffb24eed2838bb50d509a78687711a86c55fdcf3ff1c5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "11b937d13e507cf211953741fb459260ab91826175b4dfba97b685e04445ad7c"
+    sha256 cellar: :any_skip_relocation, ventura:       "11b937d13e507cf211953741fb459260ab91826175b4dfba97b685e04445ad7c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d4ad937f119cffbf8f2ffb24eed2838bb50d509a78687711a86c55fdcf3ff1c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4ad937f119cffbf8f2ffb24eed2838bb50d509a78687711a86c55fdcf3ff1c5"
   end
 
   depends_on "python@3.13"

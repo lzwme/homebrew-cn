@@ -8,23 +8,22 @@ class CondaLock < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b3f8772c8dfea097c959d83458261697ed25e95e321dff2aa285af7caee0ba9e"
-    sha256 cellar: :any,                 arm64_sonoma:  "0265efc6de04e82cdd55c58b7287e12439c6de7594487d2d147d07af77844cae"
-    sha256 cellar: :any,                 arm64_ventura: "9c13e8d5706d5314d7088342546791dd2bbb673719bf7680542bb7ddecfc6fe6"
-    sha256 cellar: :any,                 sonoma:        "14f8c034e55b0d3ed9863767df798361bd3f103b4a409be154c9c5a85ccee80c"
-    sha256 cellar: :any,                 ventura:       "3a79b1119ae8a170d12b4b2edac358b7d082823e09b1e445ec2ad5b1ee513e4a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2203ff72ea2e9f23632e82011de71a87af75a2b6ef64298946f05954800ab6cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd8917d58b1823e2be488fa710ba87a70cad0d8fcf0ea581b5914d353416cce6"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "0950816077ebf7d88b07e9fdf0949fc556fa98f1a6f332997c10b5893e7ea068"
+    sha256 cellar: :any,                 arm64_sonoma:  "6c2b013da7864a155cc48c04ced70d321a0099a0e49a69f653f3ca53141c075b"
+    sha256 cellar: :any,                 arm64_ventura: "6a1c86a04ad25ce0b836cc47100da5cf8f2814cd9ce17c9f2679a2483fe3d875"
+    sha256 cellar: :any,                 sonoma:        "ad4ce4085fad7051e47879fb5901b968f6d42b03c2fa561edc5e2e16ded40800"
+    sha256 cellar: :any,                 ventura:       "1aabb6431a1d8938adf5c086418e961b83c2441aa83c29e56f660ddc355faddf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "25464d911d538567177e862856def1ed22e0b71a95c4f89d43f71f57bd074933"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a598196bdcc8037f2220e768452679b2cf9dff4de58c4168adf2bf32e330852b"
   end
 
   depends_on "rust" => :build # for pydantic
   depends_on "certifi"
+  depends_on "cffi"
+  depends_on "cryptography"
   depends_on "libyaml"
   depends_on "python@3.13"
-
-  on_linux do
-    depends_on "cryptography"
-  end
 
   resource "annotated-types" do
     url "https:files.pythonhosted.orgpackagesee67531ea369ba64dcff5ec9c3402f9f51bf748cec26dde048a2f973a4eea7f5annotated_types-0.7.0.tar.gz"

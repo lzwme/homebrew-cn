@@ -11,6 +11,7 @@ class AwsCrtCpp < Formula
     sha256 cellar: :any,                 arm64_ventura: "3b61e1687fc11ea9c7e6f8b46fb7500bf10f471db518f960a2afbbb669d54188"
     sha256 cellar: :any,                 sonoma:        "82edf6584546cc68602ecbd7fcab5249c3232c158312f4cb36c6212933a60ebe"
     sha256 cellar: :any,                 ventura:       "461e08249db0169716c38001255d89d4b3c0fb89c7413fa08044b287c114613f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bcf51c9c8ae2c05aa33adef16257a65d1ea925fd868fc4626cb83a30094c77b2"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "4da134ed3a40a927389e1bd47670c0bb0c2885064c8b9d6123c022e30536e5fa"
   end
 

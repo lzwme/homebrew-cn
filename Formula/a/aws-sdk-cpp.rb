@@ -16,6 +16,7 @@ class AwsSdkCpp < Formula
     sha256                               arm64_ventura: "30d4a1166c2a0ef83674eaa277a842baa96229d9a2beeac9facc6576d2a585be"
     sha256 cellar: :any,                 sonoma:        "3ffe71c3a41aebc111e9eb408e461abb1fb0543f4ef6f85915e7f91073832031"
     sha256 cellar: :any,                 ventura:       "1a42ad3201eb761ad00dace121158ae579801b73c9cdee93abdc5b540b89c9cf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "14a165aee92bc90666e758a1c3f4c8698b48fddc5946c579eee5b031a750b2c6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dbab0f432a2a154849a27a12e7665ed1dee17a6d987077db05a692cabf6a4ac7"
   end
 

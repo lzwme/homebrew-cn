@@ -4,16 +4,17 @@ class Papilo < Formula
   url "https:github.comscipoptpapiloarchiverefstagsv2.4.1.tar.gz"
   sha256 "42f27b6d76f4d68f2c19f0a4d19e77f9bf3d271ccef2ff9303b58f8107e28aa1"
   license all_of: ["LGPL-3.0-only", "GPL-3.0-only"]
+  revision 1
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7840fb1545a5de1b38765197efb89fb8c1cf1b15d4a2f00018727f2aa94f85cf"
-    sha256 cellar: :any,                 arm64_sonoma:  "470ba974a6ef12c50b7cddd043dd3fb37cd128c0c7a77e1f3548a855cfc59e43"
-    sha256 cellar: :any,                 arm64_ventura: "628c46dc92f1cfcca62d0337965dd183b152e7f60b3371cd5182d3bde7ecb814"
-    sha256 cellar: :any,                 sonoma:        "5a4f62f9a7348c5668ec914cb90d8fe17c0c1cc33c2b42bab1842fa0b6806662"
-    sha256 cellar: :any,                 ventura:       "63360ea1df4fdd9273f25085878c5b31a9703cd4b2fcc4938d5783b1abdb1698"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3712120f7253e5d1a46380920a83adb5961e57503ec6ac646477fd700c9b4249"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "906aea4c960e20eab6958e8604c4f376b6cfb34c2a6a0b9c46a99e80c65e2078"
+    sha256 cellar: :any,                 arm64_sequoia: "6860e6b1e457b8effe9f9720a9c1e3168eeed9105cc46fa31fcb9bd6a15973d4"
+    sha256 cellar: :any,                 arm64_sonoma:  "3121732cde480afa4d0f59f2b25df5a04ec447ee262613332224734e7fb93a08"
+    sha256 cellar: :any,                 arm64_ventura: "57185fa7ca4c61a4c8c1deed733a8bc190c26ff4cb4f141e451ea53b3d3b4d92"
+    sha256 cellar: :any,                 sonoma:        "98f60b859ba562c3ba817cd8fe124135e56de95b46c0357e7d74b849656ebc57"
+    sha256 cellar: :any,                 ventura:       "10c4e34121917d0e5b3d08d7cdef7b25249ecdb9cddc2d6c6d851a88f956c54b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9472684b1ba06d4bb6fe1de0004086adb83d5993ac4d165db8ee1e248025e5a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b63cb9dfe575deb4006a5954c6a64d0ab27faa14dcd07606ca99cb8beb8968fc"
   end
 
   depends_on "cmake" => :build

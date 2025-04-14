@@ -16,6 +16,7 @@ class Gdal < Formula
     sha256 arm64_ventura: "63f4c6d204508fc99e3b72d3ec8e2a809e8a64e3f0ce059061d09f41cd21a765"
     sha256 sonoma:        "a10bf4b044aacb747ae72cba522ab233d9e04209f64ce84b1ba06ff5a87050f5"
     sha256 ventura:       "b84a74e8baac0b1c33cb620eb738ef129d6ab3f6a1c7094beb9a3b82d68e5a6f"
+    sha256 arm64_linux:   "301963c3591c9de26d042a882da185d1061a414f518b3a41b710519ef29920c8"
     sha256 x86_64_linux:  "2aef33b159f2ef43dde255e78bd56ffcecc16ce6ea721286a0e5f3f1b561718c"
   end
 

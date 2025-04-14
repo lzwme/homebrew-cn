@@ -11,6 +11,7 @@ class AwsCS3 < Formula
     sha256 cellar: :any,                 arm64_ventura: "3ce943e5a1732999378ab4c1d3fd549b72b228d707d69507fc20bd6ec5ad70bd"
     sha256 cellar: :any,                 sonoma:        "508d3dbd5dabd426c8fc9805134e62b674fdfd8c21bf450535a6bec254e9eae5"
     sha256 cellar: :any,                 ventura:       "436b3a860a89be2f63afb8a00634ed02e14c8d13950694a7645e2c4ed5e4e827"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e014304e6994b2f21576288d17a284f9ceedfd83c08442fce825ae603280fa59"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5af2beb8263dcb2d3127852ff90725f20cef0cf6d8d8289cdbf7f14f38986f9a"
   end
 

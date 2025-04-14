@@ -2,6 +2,7 @@ class Tfel < Formula
   desc "Code generation tool dedicated to material knowledge for numerical mechanics"
   homepage "https:thelfer.github.iotfelwebindex.html"
   license "GPL-1.0-or-later"
+  revision 1
   head "https:github.comthelfertfel.git", branch: "master"
 
   stable do
@@ -26,13 +27,13 @@ class Tfel < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "5f1c6d68fbfbfe5934ad3228edfb85923725bbb15733519edae03f98569bf66d"
-    sha256 arm64_sonoma:  "1500133b1f232bf7b8436b5e6d540f0f76582c0b49b64e177b4012c7061599a5"
-    sha256 arm64_ventura: "d2e37e3eecf517353ad9df9a47a92921aab78066867f7c897800fd4efd7f7676"
-    sha256 sonoma:        "a64912de5088e357f13b2ace49fb391c707acaba8baf84682303ca4b3393df28"
-    sha256 ventura:       "9d519e1e1fac5faa8b55d7ace4da8b0b7c289666bca34eeecb700d403d7d9a6b"
-    sha256 arm64_linux:   "b4d8d0f32a885ef7b5777b0488a10ae576c9e4bd0c3b4f2eae054d82b4e6c3e5"
-    sha256 x86_64_linux:  "399bd5e6c80879eb68cd9e92b717cd5ae745bb4432c2cdc177c0d1904c682591"
+    sha256 arm64_sequoia: "50d3bd7962505ed2bc6fb2557947d7ec078167ac5d5e6525bb1ec644ab69514b"
+    sha256 arm64_sonoma:  "348823d0f7433600de4005ec4bc423d18e46c1eabf43bf743eef83b9fc802bd4"
+    sha256 arm64_ventura: "6faecb90a644d46af6d4d8d0a2e1619b4abc21f479af6c81e532e3393c6b129c"
+    sha256 sonoma:        "f21cf45477369903801db72624265e799e8fe24a1d53231f61eb6bee33ee1516"
+    sha256 ventura:       "2fc7f26b7cfc67188891020563e4b96ddc8945b924532b1512199b3029e00076"
+    sha256 arm64_linux:   "a70c7ba818b14efbe76d4a02762fed0625f78bd8906d4978dd2f1d27c2bd5c3e"
+    sha256 x86_64_linux:  "5086c2c9498895965149d37772fb2a4ef7f06cbb1071d3d31291e678b42f9f1c"
   end
 
   depends_on "cmake" => :build

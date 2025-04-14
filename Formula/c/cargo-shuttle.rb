@@ -22,6 +22,8 @@ class CargoShuttle < Formula
 
   uses_from_macos "bzip2"
 
+  conflicts_with "shuttle", because: "both install `shuttle` binaries"
+
   def install
     ENV["LIBGIT2_NO_VENDOR"] = "1"
     system "cargo", "install", *std_cargo_args(path: "cargo-shuttle")

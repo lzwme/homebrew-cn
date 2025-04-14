@@ -20,6 +20,8 @@ class Fiona < Formula
   depends_on "gdal"
   depends_on "python@3.13"
 
+  conflicts_with "fio", because: "both install `fio` binaries"
+
   resource "attrs" do
     url "https:files.pythonhosted.orgpackages5ab01367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24attrs-25.3.0.tar.gz"
     sha256 "75d7cefc7fb576747b2c81b4442d4d4a1ce0900973527c011d1030fd3bf4af1b"

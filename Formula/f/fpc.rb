@@ -36,6 +36,7 @@ class Fpc < Formula
   end
 
   conflicts_with "px", because: "both install `ptop` binaries"
+  conflicts_with cask: "fpc-laz"
 
   resource "bootstrap" do
     on_macos do

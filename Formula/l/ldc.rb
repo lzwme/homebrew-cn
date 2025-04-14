@@ -1,11 +1,26 @@
 class Ldc < Formula
   desc "Portable D programming language compiler"
   homepage "https:wiki.dlang.orgLDC"
-  url "https:github.comldc-developersldcreleasesdownloadv1.40.1ldc-1.40.1-src.tar.gz"
-  sha256 "b643bee2ee6f9819084ef7468cf739257974a99f3980364d20201bc806a4a454"
   license "BSD-3-Clause"
   revision 1
   head "https:github.comldc-developersldc.git", branch: "master"
+
+  stable do
+    url "https:github.comldc-developersldcreleasesdownloadv1.40.1ldc-1.40.1-src.tar.gz"
+    sha256 "b643bee2ee6f9819084ef7468cf739257974a99f3980364d20201bc806a4a454"
+
+    # Backport fix for CMake 4
+    patch do
+      url "https:github.comldc-developersldccommit06b2e42a1b8436faae2b7976a1d41a635df116d5.patch?full_index=1"
+      sha256 "80fd42d77217b16866e262008f283406bb597fee16cb6ade250d6d27f870ce5c"
+    end
+
+    # Backport fix for segmentation fault on macOS 15.4
+    patch do
+      url "https:github.comldc-developersldccommit60079c3b596053b1a70f9f2e0cf38a287089df56.patch?full_index=1"
+      sha256 "44d281573a42e82ecdd48a6381fec4dde7aa6196f314e9eee7b1111ae6c54844"
+    end
+  end
 
   livecheck do
     url :stable
@@ -13,13 +28,14 @@ class Ldc < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "bf62f0e0c7a7eb72db23404decbcb150d0e45b1562db44df733fc7f325c76d44"
-    sha256                               arm64_sonoma:  "4d22f4d7c6623ceea882c608f008218b96deac008d5e2902c34ccc79fb8df50a"
-    sha256                               arm64_ventura: "ef232af8cbe6880220437658f33e946d899f880da8f726d21a23e3d0720ffff5"
-    sha256                               sonoma:        "bc74c7e7324ee29cc9eb33f8c3580ba4185640bc28c0515aa82603657f02d64f"
-    sha256                               ventura:       "aac0761e4cba1a2dbb862cd2f3b4e3899bd76e6738016cb24f33885eef355c73"
-    sha256                               arm64_linux:   "2b685946656c81c99e5a1ce6a2c4b8ef77c320cda2bb0a3f33638dd7e7a5d345"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b644f70c0fa431945753c3bd4cc59f02febdc4569a17517fca3f0e6e7e9c0ba"
+    rebuild 1
+    sha256                               arm64_sequoia: "36449ae414e34231fc2e2efeb52dfd1440fb8f85661f6e1949a549f26629ed63"
+    sha256                               arm64_sonoma:  "8428db33b0d7a88ef5b528a00dd1fad1f33ca1fdb36b3149a281fbfb8cc9f2c2"
+    sha256                               arm64_ventura: "1c1cbed780079891dd07f15f77021200b58502baad0595c59721d577f81d222d"
+    sha256                               sonoma:        "fb203819c3456a88e723d0d7958e010eeca90db38406b3a2cb100ba12f2476b9"
+    sha256                               ventura:       "192c24c114b06e3d7c7dddbec28f029cf22df142e11983421d31d4d865a218dc"
+    sha256                               arm64_linux:   "979f2477a03297565bda42f05e52ae9abe85b9f4cac0d88b042b3f5e9e2c1cff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88375463fd83a64305e0cd725d6c552852bd53c2a317895bf918861e4d5325e4"
   end
 
   depends_on "cmake" => :build

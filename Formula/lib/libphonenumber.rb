@@ -1,8 +1,8 @@
 class Libphonenumber < Formula
   desc "C++ Phone Number library by Google"
   homepage "https:github.comgooglelibphonenumber"
-  url "https:github.comgooglelibphonenumberarchiverefstagsv9.0.2.tar.gz"
-  sha256 "ccc54c3ff073f6f9be3260d0e93a17ab6e98be6906a15625a614b41de0d1693b"
+  url "https:github.comgooglelibphonenumberarchiverefstagsv9.0.3.tar.gz"
+  sha256 "496c0fa9f046d3750d747e929f21e95ca153a0266c57e0d92edf523adf2a35c9"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Libphonenumber < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5499d250c99f5b2d90dc24707b1654fcc0d1ce8430a4dafcb27242fdf9a6ebe5"
-    sha256 cellar: :any,                 arm64_sonoma:  "a401dc993264402ca0482b65ca5394d943f0ff5fd3b39b4f8adc829661cd972c"
-    sha256 cellar: :any,                 arm64_ventura: "83378e2c3f64f168f169e18696b344c9e54416e278f6dbede05dceb3dc10995a"
-    sha256 cellar: :any,                 sonoma:        "cdfdb213e403283f9065f71ecddfa9146104bbf5c75315262f5c3a92e1a6773e"
-    sha256 cellar: :any,                 ventura:       "51ffc65ae944d628fe6d74ec694325671670dbfb7de18c0ab8ad247bbe0f1630"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4242403ecf45594389c1093b6433802c31e848e3d27696c3afa7fad5921ae706"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "272754c2974ba6053596da84d59abff3c894a357a3c1ef8cb750800359522c6d"
+    sha256 cellar: :any,                 arm64_sequoia: "8c1678e8b053454c95f6d8532e0d590161486ebac4aaad8a38b3eacbe1301f2b"
+    sha256 cellar: :any,                 arm64_sonoma:  "a2a8a7372463e5ae85bf0b61cacd20ae7f978df49336f2366c75ec2c054df727"
+    sha256 cellar: :any,                 arm64_ventura: "b2cc6b390b3a35a93a2240c5b4232b74ae11d12c7f881d0f4e1503386f96fc5e"
+    sha256 cellar: :any,                 sonoma:        "c685019cb203bc2d8fcd07b0265f9334a45a38fe1b80b93daadb69cc2519bd78"
+    sha256 cellar: :any,                 ventura:       "56976c30873dc98fd88d65b67bbfa82fb4e011f3f7b6db1647a5ccbb39e71679"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "10d5050c4e7a993371181a483970a33ba7154fce84d6f978ddee5b0c133ced8f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1d752c0e33de8a3e18472f635fab9da61aea9f8a968747651a2644caaee5835"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -62,6 +62,7 @@ class Libphonenumber < Formula
 
     (testpath"CMakeLists.txt").write <<~CMAKE
       cmake_minimum_required(VERSION 3.14)
+      set(CMAKE_CXX_STANDARD 17)
       project(test LANGUAGES CXX)
       find_package(Boost COMPONENTS date_time system thread)
       find_package(libphonenumber CONFIG REQUIRED)

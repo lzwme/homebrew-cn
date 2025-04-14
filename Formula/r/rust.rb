@@ -222,6 +222,16 @@ class Rust < Formula
     end
   end
 
+  def caveats
+    <<~EOS
+      Link this toolchain with `rustup` under the name `system` with:
+        rustup toolchain link system "$(brew --prefix rust)"
+
+      If you use rustup, avoid PATH conflicts by following instructions in:
+        brew info rustup
+    EOS
+  end
+
   test do
     require "utilslinkage"
 

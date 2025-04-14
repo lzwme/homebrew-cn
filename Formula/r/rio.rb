@@ -24,6 +24,9 @@ class Rio < Formula
   # window manager will be used (x11 or wayland) otherwise will not work.
   depends_on :macos
 
+  conflicts_with "rasterio", because: "both install `rio` binaries"
+  conflicts_with cask: "rio", because: "both install `rio` binaries"
+
   def install
     system "cargo", "install", *std_cargo_args(path: "frontendsrioterm")
   end

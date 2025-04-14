@@ -1,9 +1,10 @@
 class Mydumper < Formula
-  desc "How MySQL DBA & support engineer would imagine 'mysqldump' ;-)"
-  homepage "https:launchpad.netmydumper"
-  url "https:github.commydumpermydumperarchiverefstagsv0.18.1-1.tar.gz"
-  sha256 "db3d3db79880b59556275ef435bbf6ed2f3b90b1fd4ec70abd7f3907705f8b31"
+  desc "MySQL logical backup tool"
+  homepage "https:github.commydumpermydumper"
+  url "https:github.commydumpermydumperarchiverefstagsv0.19.1-1.tar.gz"
+  sha256 "5431a91befdb767f7620242da45673f699164f7590599b091f023f394802899c"
   license "GPL-3.0-or-later"
+  head "https:github.commydumpermydumper.git", branch: "master"
 
   livecheck do
     url :stable
@@ -12,29 +13,35 @@ class Mydumper < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a581ba06e8db7924ce8ff95264a3c73a371e267c755250abb7c17e70f3db5e5c"
-    sha256 cellar: :any,                 arm64_sonoma:  "a7a0657680b2c11129fc7ba1b877c30bd3e3897e6de92a8289f0b46c318d9f9c"
-    sha256 cellar: :any,                 arm64_ventura: "217bba665c89eaeefe7074b79cf9c9c6e642726c4990f59adb83c8d2c7afe1d4"
-    sha256 cellar: :any,                 sonoma:        "db49c96b87a384708114d7e6262af351f0c7174c847882672bcebff5d6272ae3"
-    sha256 cellar: :any,                 ventura:       "361fc367278b808a5affd2c77dce64455924916af94c6711b8b8910242872215"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d8d644f6becdefdb179bb52f497b213b50084065e9d127324e4e5bc66919e0b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "687ad8a370611205beaf9ae22b157fc91a755b6d45c43097a80e3bd314e8528d"
+    sha256 cellar: :any,                 arm64_sequoia: "8a1253cb85c9a73e6fda0f5c7c9788d54f681456a3b95a77fac470a46dc68792"
+    sha256 cellar: :any,                 arm64_sonoma:  "594cfa26b559d4543281ab97a46b978a1df5cee522bf8836163ffeac784b4ad9"
+    sha256 cellar: :any,                 arm64_ventura: "f633705ac570e1e42654c8879aee87656508d3311b11b783515fa8cf418ae48c"
+    sha256 cellar: :any,                 sonoma:        "b29850daf95b406df979c033caf26e75dada97f6a56fab7e2887fb77984e0f2a"
+    sha256 cellar: :any,                 ventura:       "f04bb5ddb566dfe8253c464b7045f56ca982d6869f8bb1c744535ec235ef8023"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f317ddfed59905c5ebe9f16b949283f7cea14f43cc31f646059bfc4baeac4573"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08bb7d698eca02c925c407b5f614b5a93f95bec7b86d15d9fbf71e5308e374d2"
   end
 
   depends_on "cmake" => :build
-  depends_on "pcre" => :build # still needs pcre.h
   depends_on "pkgconf" => :build
   depends_on "sphinx-doc" => :build
   depends_on "glib"
   depends_on "mariadb-connector-c"
   depends_on "pcre2"
 
+  on_macos do
+    depends_on "openssl@3"
+  end
+
   def install
     # Avoid installing config into etc
     inreplace "CMakeLists.txt", "etc", etc
 
     # Override location of mysql-client
-    args = ["-DMYSQL_CONFIG_PREFER_PATH=#{Formula["mariadb-connector-c"].opt_bin}"]
+    args = %W[
+      -DMYSQL_CONFIG_PREFER_PATH=#{Formula["mariadb-connector-c"].opt_bin}
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+    ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"

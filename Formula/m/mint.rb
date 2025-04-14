@@ -20,6 +20,8 @@ class Mint < Formula
 
   uses_from_macos "swift" => :build
 
+  conflicts_with "mintoolkit", because: "both install `mint` binaries"
+
   def install
     args = if OS.mac?
       ["--disable-sandbox"]

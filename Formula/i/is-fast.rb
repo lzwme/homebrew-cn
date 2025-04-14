@@ -1,19 +1,19 @@
 class IsFast < Formula
   desc "Check the internet as fast as possible"
   homepage "https:github.comMagic-JDis-fast"
-  url "https:github.comMagic-JDis-fastarchiverefstagsv0.15.1.tar.gz"
-  sha256 "58d8a6cca7d5c0355c13206d6028aad06dc3e6885f895edcaaa663726e7f51ba"
+  url "https:github.comMagic-JDis-fastarchiverefstagsv0.15.3.tar.gz"
+  sha256 "e1fbc131960f97cd7d69d9a2bfe6d1dbb0b48beaaa950c2a5134359df7b2a75e"
   license "MIT"
   head "https:github.comMagic-JDis-fast.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21b2ab2138232bb5d6100ec9e09179b2a4924bfc76311b0fc405cf81e98cdf24"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ec782570b6770cfb22598d937aa0d7d38d279be00052ae55926132bf6e16c5c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ce4fc48b576a3d248cd1215f3b1e3d36eae212234420d18bf51abb431a28ff03"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fb41975c4adea241c48c4601ab8e75654e6ab35c1ea142ef612f78a06b18b662"
-    sha256 cellar: :any_skip_relocation, ventura:       "c2c3aa63b2fcdb808549fa2bdbcb1d09c7b136bc1f77a361eae30323427b03ed"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9337afcc9e8add222f0fe2c1aa1ae664a0187fc3550e2b11121d9062e1b214b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "292f629419e2a70d50c3f73f639bcfd7a205aae2da49b4abf8097ebb4716a1f1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dafe45205fbc820c94453609d230c541cbebed67b2eccf3b883ff4a3227f366d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75458896799f39abcf50982c42ba9538b1ac3695b6071a984bde9bcea5c5ec4d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "90192f1ca1e35fe3135b2ba2efc3436e2b78818ae75df62ad9204700dafc955e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "678e88c0718965853be0711abf2e98f1d994920d620e480a76f7a1228366eb33"
+    sha256 cellar: :any_skip_relocation, ventura:       "a5e18798ec270b7762ba56c950885271220d637b8581a833b48839efca420f3f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f23ecee5a08c78b5857f3dd31d56d9e3cd2454a96bb8070baf5ca06af6d65701"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b64cfb52a190d090d38852f31b906edd4a3117c32b45edd993fb43cba6f0628c"
   end
 
   depends_on "rust" => :build

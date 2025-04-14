@@ -5,6 +5,7 @@ class Rdkit < Formula
   url "https:github.comrdkitrdkitarchiverefstagsRelease_2025_03_1.tar.gz"
   sha256 "947e5aa004047fbec4bf4ba93b84a50ca7f68e248a0654080d8ca0cdb06e3534"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comrdkitrdkit.git", branch: "master"
 
   livecheck do
@@ -16,13 +17,13 @@ class Rdkit < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "31da430cb2a456ebcb019cb543cee63d7a0232967b39b6c9349b4c362ff160c5"
-    sha256                               arm64_sonoma:  "1753ccd22f23a8a147e3fcbde494db9c7928b6d10265fba3ab995d4fb06630c3"
-    sha256                               arm64_ventura: "6fb21ed2d43af6d41308f256662f913398b7b531018b52e5b5e5bf83a991197a"
-    sha256                               sonoma:        "e2b96a28b8556d7049e4872bdc7c5943af61067f219186ceb6537fb9f500ae04"
-    sha256                               ventura:       "979c2e3a9e4b3dec317671290900e15b8c53db09b9eba8483f63a1d50ebd64dd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7af3e8d1bf553e469ce35fe0f9d14dcebac0817b2b51f738dcc29bf594aa767"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c31476e67fd2c0ca2b4a4f1b51c95e1b6d90bddc58a6e3b001bcaaf9c67041e"
+    sha256                               arm64_sequoia: "854798021c519f811713bb4ba3abd4c609741794ff4a84d1db1e56f2180c272d"
+    sha256                               arm64_sonoma:  "0393e5527230562e86a99353b6512e8ef988f4f07dfac2242f4eb20c45483370"
+    sha256                               arm64_ventura: "5df7c4eed7de4bf7340ef6b67ac9f28faefda38847efaba04cd6c6fa0761a72a"
+    sha256 cellar: :any,                 sonoma:        "ad4276bbb4dd4dd19dcfc736f9d7022178cf2e2694225a6cd99dbb78ba8caf83"
+    sha256 cellar: :any,                 ventura:       "450c6fabf644dd001bf2ddd97d3dafee1082ee9586d6f5a0f977cb9b09476c6b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7cef9eed7c6b13c2ccf60331245ab9968c273ad3be1aea4614e7c575f441852"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b689fe35fd8c36d7cf62d1cc0f8295a8720a1ad05ce5119602571dfc6b5776a"
   end
 
   depends_on "catch2" => :build

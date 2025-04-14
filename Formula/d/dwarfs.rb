@@ -4,6 +4,7 @@ class Dwarfs < Formula
   url "https:github.commhxdwarfsreleasesdownloadv0.12.1dwarfs-0.12.1.tar.xz"
   sha256 "5523a5c3aea244cbfbccfe64f1df6053b3901e6af8916fac1530faf0f7a5f07f"
   license "GPL-3.0-or-later"
+  revision 1
 
   livecheck do
     url :stable
@@ -12,13 +13,13 @@ class Dwarfs < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "5d8340b81ec91fd5ab8dbf946888f648f69a953121aaf253d034ede8d14b8a2a"
-    sha256                               arm64_sonoma:  "ad993054cfa3453a81a22fe0be8cd3fc7cace876492ec0ebbb758385344c2568"
-    sha256                               arm64_ventura: "dc094e6fa48d8921b1ae771094435a7be9aa036d448f88ffbe089f808c871200"
-    sha256                               sonoma:        "bd02bb768e8ff8635b0a1de9bbba74065734cf6d8a54647541909eb9953278d7"
-    sha256                               ventura:       "9305dadadfb7e066fdb590eda24fdb8df6c132582faf284a3c0047f8218aeae3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "28c3f90e1eaab15435667dc66335a67877776daacaf51c03197e59d5468bfbc4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1f01fee75da3a3c4251e21ff93a1c317422af404a17e57206073eeb0ab01eba"
+    sha256                               arm64_sequoia: "b95bbd2019e3114fb67f0536c192005603ee47eb056101e17a5d94f84399ea76"
+    sha256                               arm64_sonoma:  "48a77a064523c35426db53d84e87c4ad80f21dabd7f55ef925ff90c557fc7622"
+    sha256                               arm64_ventura: "d6fca37e54838bea9befb6fa42df95f21fc09925a01dbf0d5f7a6d05f5bed5fc"
+    sha256 cellar: :any,                 sonoma:        "7c11a116190dea7c1d8e8ac159257ece5fc373dcf28bf8e494481b20e6717533"
+    sha256 cellar: :any,                 ventura:       "626dc822ccc083fc48fa0b9f66739acce2b2e9e83e32fac6015cf6a7c4f9e0db"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "488af58ed8604bbdecc1f426a87a8f51230db2b6086c12cf25057936a946db5c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a71d23a3844150fcf83ebc46920e8531b2df946f86a36ead4704778806a2009"
   end
 
   depends_on "cmake" => :build

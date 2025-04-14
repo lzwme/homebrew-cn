@@ -50,6 +50,8 @@ class Wireshark < Formula
     depends_on "libgpg-error"
   end
 
+  conflicts_with cask: "wireshark"
+
   def install
     args = %W[
       -DLUA_INCLUDE_DIR=#{Formula["lua"].opt_include}/lua

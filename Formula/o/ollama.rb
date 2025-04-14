@@ -28,6 +28,8 @@ class Ollama < Formula
   depends_on "cmake" => :build
   depends_on "go" => :build
 
+  conflicts_with cask: "ollama"
+
   def install
     # Silence tens of thousands of SDK warnings
     ENV["SDKROOT"] = MacOS.sdk_path if OS.mac?

@@ -3,19 +3,19 @@ class Aider < Formula
 
   desc "AI pair programming in your terminal"
   homepage "https:aider.chat"
-  url "https:files.pythonhosted.orgpackagesec6cee6e59994e3bfecf5ede29da4565ed5bd3e05f33caf18725ffc773ff9d6aaider_chat-0.81.2.tar.gz"
-  sha256 "2c3d27e87298d47cb9c1b297ed94ee01589d4172770f8c18efd92cc96efa93a3"
+  url "https:files.pythonhosted.orgpackages8a3c9c1b7c0f415530b3c7b08cbe7aa3de9cc16105521056a152070b76579fd2aider_chat-0.81.3.tar.gz"
+  sha256 "73e55891f5891e44c731a704d45c3a2cd1af5c5db81d37a13f454402c0044240"
   license "Apache-2.0"
   head "https:github.compaul-gauthieraider.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2478a8d29bf71a1c392b600bf5909092dca76a48eca048aad412668b8b54e14c"
-    sha256 cellar: :any,                 arm64_sonoma:  "2f862a0a5d4dfc5bda65721063dfe92a201793838db73d63a904d8ea755af33b"
-    sha256 cellar: :any,                 arm64_ventura: "d313c79263539aa3345bf6601e55ee39632cc6a33643c4eff539f57b6b0bb4e4"
-    sha256 cellar: :any,                 sonoma:        "63a9ec3b04454ec8f837c97f8879341ae2e3552e405d704c6b1aa75c8dfd5b5c"
-    sha256 cellar: :any,                 ventura:       "4b0a8f3bdf58592cd63cc10d2fcb0436756c280e5c9631ab04ceb54dec4417a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3845e45482363105af74d93ea61042bcfa4e0484944ae36af4bf036020de7b89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6ed07cf54dd0463cfa5b1a9afae800d85ec348e5dac50c569b6378b6f58606f1"
+    sha256 cellar: :any,                 arm64_sequoia: "37a335a3b46840e9057405a1198a59c1204a0ef8a074278ec3b4b22bc0338dd8"
+    sha256 cellar: :any,                 arm64_sonoma:  "884735bf3fe3452572d76b9c3a2bb42cd15f8556a81a3c4dc71a7778a568a4de"
+    sha256 cellar: :any,                 arm64_ventura: "516b45bc0a2dfbe4c1dbcc564b18b173e90a148ec1e80ad00639e4366b303aec"
+    sha256 cellar: :any,                 sonoma:        "d007ff3dafef4710328c3c10fd1ca73a7c452e0d6327aa8d3920c23777b3400a"
+    sha256 cellar: :any,                 ventura:       "11787775c254ded618eefd7742b7ddae2eaf64fd87d0ffa9614ee67e5429a481"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a83decdbb71bf50deca24f2f5d3dfa4597c8df4e682b8738ca1b61a32cca110a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b812a1b218403ef02a569b5678abdd9856908d7de5c2efedbdefdb9fb5f63510"
   end
 
   depends_on "rust" => :build # for pydantic_core

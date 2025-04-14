@@ -21,6 +21,8 @@ class Fio < Formula
 
   uses_from_macos "zlib"
 
+  conflicts_with "fiona", because: "both install `fio` binaries"
+
   def install
     system ".configure"
     # fio's CFLAGS passes vital stuff around, and crushing it will break the build

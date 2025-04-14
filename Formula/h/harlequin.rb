@@ -13,6 +13,7 @@ class Harlequin < Formula
     sha256 cellar: :any,                 arm64_ventura: "f1a06376d6340c835dd09f1a44814906eaf8c28dfb5070c84488391b9d06a797"
     sha256 cellar: :any,                 sonoma:        "53f25120280cb9112b5acab6df612373a2d23f1da6e2a9884312dbcf64d94031"
     sha256 cellar: :any,                 ventura:       "b8d46e03df2cf9bf8c82e9aa8e0050f330bd342d43548bba5db00e320e34c254"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc5d5441783adba71d4bc58a887ed98a96028a6b05d3af5d5f9732950ec5b37d"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e3c7d8365bef4b63a2514260b6de3470a788720eee582aa02056963361512533"
   end
 

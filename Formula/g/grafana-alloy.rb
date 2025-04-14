@@ -23,6 +23,8 @@ class GrafanaAlloy < Formula
     depends_on "systemd" # for go-systemd (dlopen-ed)
   end
 
+  conflicts_with "alloy", because: "both install `alloy` binaries"
+
   def install
     ldflags = %W[
       -s -w

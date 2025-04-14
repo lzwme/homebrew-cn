@@ -4,7 +4,7 @@ class ScummvmTools < Formula
   url "https:downloads.scummvm.orgfrsscummvm-tools2.9.0scummvm-tools-2.9.0.tar.xz"
   sha256 "1b4bbd7a7ccf4584bfc2c0142b7c1b4e5db97c39d8d214757c72d50e0905b71d"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
   head "https:github.comscummvmscummvm-tools.git", branch: "master"
 
   livecheck do
@@ -13,13 +13,13 @@ class ScummvmTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "17c2e47d29d820d952abd8f7c998e6cccc0b76c2db3cedeb2fba9ee4a4d5ca8a"
-    sha256 cellar: :any,                 arm64_sonoma:  "bea57948288adcbeebc766c92aa33b55c83cbc655d6c81cd3af696052a80d2db"
-    sha256 cellar: :any,                 arm64_ventura: "814637a792eca7f40295e0c8820b05b523b10b9481942c8adc8ebe2cb3557a6d"
-    sha256 cellar: :any,                 sonoma:        "2f4e16b6f36872476a378f10dc29a8e3b96c980787a7d61a86f114c11c0ba009"
-    sha256 cellar: :any,                 ventura:       "b40f2bb4e3b0c81289ee5bfaf1ef74ffafe63272a953e2c79ad11e92b9d4ce79"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1c361d6c11cb57770ceaad18334b571b16793e3c806f6ceacb8e271825e5c55"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71839183e12d5e6c06b327a596e4190955fcefe54c2d0c5c3457988d4aa48c83"
+    sha256 cellar: :any,                 arm64_sequoia: "46759130016955bb830b13ac208690894f44c60bb2785e6565602641eb68002f"
+    sha256 cellar: :any,                 arm64_sonoma:  "491fb7be5cb1560ccb97582995a9ea1cadeb486c0b4d9696d123ad991cb0f3fe"
+    sha256 cellar: :any,                 arm64_ventura: "4bd75f5794891f0583f3f6673adfdd4bdf169448bde8dca3a94afddc11b271bc"
+    sha256 cellar: :any,                 sonoma:        "c9b8494958a9632d4a672f66ea776eea90bad594b68f4710c9848294b25f2e78"
+    sha256 cellar: :any,                 ventura:       "9c7148d9c1ce60a3ba44633d758d3c4153bf7660f79f24ebdaeed4ed1a84b902"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cecc8be45d810f918b1d299bc729d1c15ec2a35537f215068165e5a846e81671"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2f8366f66c75484d67f6d626d123945f13e89bac0c5e3087c77d89caacbaed6"
   end
 
   depends_on "boost"

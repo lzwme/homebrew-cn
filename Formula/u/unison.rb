@@ -25,6 +25,8 @@ class Unison < Formula
 
   depends_on "ocaml" => :build
 
+  conflicts_with cask: "unison"
+
   def install
     system "make", "srcunison"
     bin.install "srcunison"

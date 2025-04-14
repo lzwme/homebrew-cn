@@ -1,18 +1,18 @@
 class Pgrx < Formula
   desc "Build Postgres Extensions with Rust"
   homepage "https:github.compgcentralfoundationpgrx"
-  url "https:github.compgcentralfoundationpgrxarchiverefstagsv0.14.0.tar.gz"
-  sha256 "d45ff33c8ed1e3a589e1a80c3758ea5269fb5932af215074b0027a90d05b7b25"
+  url "https:github.compgcentralfoundationpgrxarchiverefstagsv0.14.1.tar.gz"
+  sha256 "65243eb07e2979db3f4536e353accec1037bb33d5485669afb2f652ffc4f550f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13f62cff0ae1fef317e96fa1349e5472988b4dcf0114efa85c9b443304037150"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "65399a128a77abe4f74c5ca1c336e3e1700e454733fc569b8eb1f2a9079a51d4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "73a2118ddcef674fdc61d43dca4dc84e65e170287be808f930f2e7bb8626eee9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "64c220d9c680160a1f98c6df48287077ce659e6834d6ab7edb78fa584843cc22"
-    sha256 cellar: :any_skip_relocation, ventura:       "914072831d8998bf4592e4fbda9a4244b05762011c9f653a857c4e325345ae62"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a6557f307cb41da8d3316fbbed4e67f5b761cbdddde79761c330b5caa285af1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14f7712bc60d1adc438b7c47f7240df6df91b74065020e8ba8857de46f870f1e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9dd5b2d8f08d7d6ecb120e789ab2c9dd61082bb1be08617d4c8efceaeb82e64f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cab3f075c46646063a259cef20b00c579514f60f4974bf09a8915e43348541f7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "eba6c0b8b346ce032c32e4b3be1ec6310b10cb9d70a0ebb61c4537bade5a0fa9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8d6f3f683b189fede332739d6d65e7337c49ea4469c83274331155bdb4b6ea19"
+    sha256 cellar: :any_skip_relocation, ventura:       "ece4fc9c89237b468784170068f1a3e476c9c2536c3850b0a9d471490109d526"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6eb1275c721e9d6ebad7601ed3857183009988a1d4ce11803bdd754a9d8c110"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fae180ab458941618f2afc02b206b277f4cae2830218cd6c7701addffd14b3a"
   end
 
   depends_on "pkgconf" => :build

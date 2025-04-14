@@ -4,6 +4,7 @@ class Ompl < Formula
   url "https:github.comomplomplarchiverefstags1.7.0.tar.gz"
   sha256 "e2e2700dfb0b4c2d86e216736754dd1b316bd6a46cc8818e1ffcbce4a388aca9"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comomplompl.git", branch: "main"
 
   # We check the first-party download page because the "latest" GitHub release
@@ -14,13 +15,13 @@ class Ompl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6e9a9522103a30c56a0718090e4d41a073c6523503c4dcdecf28970ff30a0dde"
-    sha256 cellar: :any,                 arm64_sonoma:  "da9eaa07331ed710455af2606156237f04ae9b27155f147b11fae6bd0c91fe2b"
-    sha256 cellar: :any,                 arm64_ventura: "0f0adff99744e7097bc6762c033409a1a5bbde0de4bcef56ab22c40fb8f21d49"
-    sha256 cellar: :any,                 sonoma:        "1030af098f5a1f751d38df58509b2a9aee0656a7866222afdf911db45df771d1"
-    sha256 cellar: :any,                 ventura:       "60bc51ca3db7cec58e67c7f119ec8703495368ec5d335cbd7f0df49b4f1015a0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7906093b02cc99ac44194289765daacb1228a578f48df64b75f3dca0d857c41b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8edd2630b5ffcd2c0c6fdf34acde8468e02209aa2043c0342e5ca582f2de3a35"
+    sha256 cellar: :any,                 arm64_sequoia: "041e10c377511ea45af40e962fa9ce470616dae2cde49c01333731dfe38f4b56"
+    sha256 cellar: :any,                 arm64_sonoma:  "b821378e7302d00b6f8aadc22dd606392bda600b236ce744ab04a90617029477"
+    sha256 cellar: :any,                 arm64_ventura: "44393bc2559ef2cb1064943fdd2858cd6086b78a04cc0f98dcf19ec53f01bcb1"
+    sha256 cellar: :any,                 sonoma:        "7cba8c475175ae9ad1824cb05b8dacf2605092883cb99a0d8fea2f73c21d939f"
+    sha256 cellar: :any,                 ventura:       "7aa7fdf5d6d5e83483ce4a3ae8c923f8c212cef486896bba4b3bbfecd125a5eb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "36d4e4c8ae8e76a01f710f8af160e47e2e995633b8e53c09e8c67509ed64e79c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0800e3f94cdbf5727e2f79e6a90fa1a80ac182519e4557d2245d63346d5cbf4"
   end
 
   depends_on "cmake" => :build

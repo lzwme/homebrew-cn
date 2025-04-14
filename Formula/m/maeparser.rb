@@ -4,16 +4,17 @@ class Maeparser < Formula
   url "https:github.comschrodingermaeparserarchiverefstagsv1.3.2.tar.gz"
   sha256 "431ae029957534324b59eb3974486f3cad97d06e9bacd88ec94dc598046dfcd3"
   license "MIT"
+  revision 1
   head "https:github.comschrodingermaeparser.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ea15917958a53a0d5b2f879974be4f56a9ecdb646754db551e069f35855728c5"
-    sha256 cellar: :any,                 arm64_sonoma:  "fba864563b917677bf0f8f337b25cb3d6811ffa9e9110360c856244aed07c3fe"
-    sha256 cellar: :any,                 arm64_ventura: "a6a354255cb39bfa96a940eaf320056460289fb3492d68a94388071a3abe5075"
-    sha256 cellar: :any,                 sonoma:        "d957171267fb9a809a0ffce8bd85465275ef0d469f829746a3bdb69882f3d10b"
-    sha256 cellar: :any,                 ventura:       "ec3fc1675b563d4ac1aa2ba2c07e4e8018772c76e1f0a9ff7311c161527c7cbc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a9ddd61917e03beb195b00b5ed0a5a222d1c1a7da25d383f1115a7302d10ce0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d494b9e7b808a3b5cdc4df687c0c72c2a7b414bec672d6b66d713f5a228cff2b"
+    sha256 cellar: :any,                 arm64_sequoia: "4c70a47373e7c2e0e640fa52dc2a8d0dc58c420f176fa47f2279d5aee38e15a8"
+    sha256 cellar: :any,                 arm64_sonoma:  "f9d519ae0b51e2f22cbfa6c133bb3dc43b1f42bba3f6996edbe218665ce7894e"
+    sha256 cellar: :any,                 arm64_ventura: "1f9189fef43fd479e43c02abd49c135a0010fb41c0301e878a3955ef0d638d4c"
+    sha256 cellar: :any,                 sonoma:        "6abfa8f7ca248db12f5048cc9739d6e4c04a957289ab1f0d1194dfc8ed3b7fe0"
+    sha256 cellar: :any,                 ventura:       "3e5456a0d0e57249fb9e48f547ebac4ba83dd7ce457837fe18c8f80c4d23bbac"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff0a8d3ddf905b3fd9f516348ae97d49fb470170fa90cd110c9ca70d0d7be464"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41c46db410204afb11ff5c5e3bc29fb3fa148003d5b21619d4576db390e981d1"
   end
 
   depends_on "cmake" => :build

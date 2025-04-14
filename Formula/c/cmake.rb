@@ -33,6 +33,8 @@ class Cmake < Formula
     depends_on "openssl@3"
   end
 
+  conflicts_with cask: "cmake"
+
   # The completions were removed because of problems with system bash
 
   # The `with-qt` GUI option was removed due to circular dependencies if

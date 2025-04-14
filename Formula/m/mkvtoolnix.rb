@@ -5,6 +5,7 @@ class Mkvtoolnix < Formula
   mirror "https://fossies.org/linux/misc/mkvtoolnix-91.0.tar.xz"
   sha256 "451320ee90a041cf85b42dbb4683316bf288d2382c54cdd8cd33b1e0258a3bb3"
   license "GPL-2.0-or-later"
+  revision 1
 
   livecheck do
     url "https://mkvtoolnix.download/sources/"
@@ -12,11 +13,11 @@ class Mkvtoolnix < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sonoma:  "5f1874c61f080afbe358da31e47638f35fbc03dbcd263e9becd6c29937be50da"
-    sha256 cellar: :any, arm64_ventura: "f4471f81b819da0d9686625b02cb60548eae92acc748d2ffb326672f3579a243"
-    sha256 cellar: :any, sonoma:        "337f08cb0d4356722e613d7140020bfcbef402633cc1457ab29f3c2934562c54"
-    sha256 cellar: :any, ventura:       "0c3b61f8dbd4a1a37c5a1f91504f5671ccbe443118755eb6f25c6d48987bcab8"
-    sha256               x86_64_linux:  "0162f07a06d2789a06fdde831dc8c2c3e409515ca2ac622ec6b5addedfb388b5"
+    sha256 cellar: :any, arm64_sonoma:  "9c1a4bc53c9e65169e659f8e9f25e1696ce85d647e01f7d56a0b27316dd6f901"
+    sha256 cellar: :any, arm64_ventura: "107146ad797a6959df1200ac453f028808cdbfddbd990ebcec7e71b9674980af"
+    sha256 cellar: :any, sonoma:        "6d991970be17ff1c33ba5c4cf7d1a341296ba42d90bc87f406add84ab502246f"
+    sha256 cellar: :any, ventura:       "ff8b015d67f6c425f4756b328999461acc210af7aa81800e851770ab05cef1f9"
+    sha256               x86_64_linux:  "1e87bce21b2216098935111f9deb63e254615b5ab3f527ad0267a9a9696f361f"
   end
 
   head do
@@ -51,6 +52,8 @@ class Mkvtoolnix < Formula
   on_macos do
     depends_on "gettext"
   end
+
+  conflicts_with cask: "mkvtoolnix"
 
   def install
     # Remove bundled libraries

@@ -36,6 +36,8 @@ class Aide < Formula
   uses_from_macos "curl"
   uses_from_macos "zlib"
 
+  conflicts_with cask: "aide-app"
+
   def install
     # use sdk's strnstr instead
     ENV.append_to_cflags "-DHAVE_STRNSTR"

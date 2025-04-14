@@ -1,18 +1,18 @@
 class Autobrr < Formula
   desc "Modern, easy to use download automation for torrents and usenet"
   homepage "https:autobrr.com"
-  url "https:github.comautobrrautobrrarchiverefstagsv1.60.0.tar.gz"
-  sha256 "7915aa4d7fd9b4fe596cb7d284c3b13d9b8a068c7f87caa53ff2c8b47f2f7c59"
+  url "https:github.comautobrrautobrrarchiverefstagsv1.61.0.tar.gz"
+  sha256 "8cfa26ac39d677b01cfd63f6379564e14e89607994fb36680803633532a8df26"
   license "GPL-2.0-or-later"
   head "https:github.comautobrrautobrr.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3134312adcd96d3c1fda60d0bec563d9192ea89f865c9bd4db5c88b03a50684b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "66458de2ee7009c95baa7ca6a8d66bd8c843ffed408f966053985df6da53c1aa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "17f5a0c3ac0316e6c3a9374ed46c18f3ef316da0081d6e91473cd63ae2959282"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e65be082acf935df8dc5ba90a79b9f6fdfd26f210ea1c83b4a9238439e12a561"
-    sha256 cellar: :any_skip_relocation, ventura:       "d502e810e2fe9e61c0fe971b95cf6aa1ca233e9baf9168bc4b48fbcf4b2386b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc2b875ab073fb5bff36235a59ad64824188877de77bcf6c1ab7dfd43fc735a5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b7d022ff3c241759c0b286f083ca94f8451f6955d498dc4a9260a55018eb229"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec9e0f801eda76a97ca8637d3f3d337b00cc62580d0889737b3e0a1608e6ba47"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c267bfd38964e0ae12e9ef8f77111f5d300254f9b05789d8fc32e1619086c50d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4a61fb112bc03a4e543d1d5927f3b0c69bc9841aa944226757b14cde55d39671"
+    sha256 cellar: :any_skip_relocation, ventura:       "93fee0e2b3d1b5aea0bba6a8ad051a823b5af13642245068bcee098abf727d6c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6b8ca41691c5ef81a7314219f69d9632c789f0601f358f3da7c9363cf25c538"
   end
 
   depends_on "go" => :build

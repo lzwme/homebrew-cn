@@ -4,6 +4,7 @@ class Monero < Formula
   url "https:downloads.getmonero.orgclimonero-source-v0.18.4.0.tar.bz2"
   sha256 "fe982ced4603aa7e54989326e3d1830ac1a1387e99722c419e2b103b8e8aa1a0"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url "https:downloads.getmonero.orgclisource"
@@ -11,13 +12,13 @@ class Monero < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "eb85f0109a2b8a75d7888fceb7d2714658540820bb5545e8625b334c8b2ade58"
-    sha256 cellar: :any,                 arm64_sonoma:  "ebabb00b0a6d69073525e0cc7691274c1be7967c34dc5d2f015ff95071688f45"
-    sha256 cellar: :any,                 arm64_ventura: "55b26baaa10d0b1fd7c9c24c156a6f2f3e878f46a82ab207210a12125a57c7c9"
-    sha256 cellar: :any,                 sonoma:        "ca2d19f91cf129a9ed3310234d74c6af39662b31b23faa0a2dc4f3fe48615549"
-    sha256 cellar: :any,                 ventura:       "362849210257c951e60afe915e46c4457d248b400fc9b2ef5663544e96eefb65"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3833fef0611d557b4d4730662482e7c7a00109d8d66f7732e55776f79af7c0d4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7639287c6dc5f1a053f8c7fd182b13a77fc155fb7aa76aa0c7f325b03a7ee025"
+    sha256 cellar: :any,                 arm64_sequoia: "4d11233f8d872a584044b48518bec606f618408a085ed695384c7460be8f7d30"
+    sha256 cellar: :any,                 arm64_sonoma:  "5700c11e92e5385aee771c6c16e91147704cc06cf170fedfad745b8b21327332"
+    sha256 cellar: :any,                 arm64_ventura: "22a14172dbc0dace455ea6b87e9827647f7ce2da3ebf878624104709421924cb"
+    sha256 cellar: :any,                 sonoma:        "2076e2cf86f7c12e81c2630135e68031a411c9fdc324cebf4967d68268e8059d"
+    sha256 cellar: :any,                 ventura:       "e35fa36f1b4b71f23dde1d057919219cdb956560b953cb2f8bc28c9596e18788"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0da015fa3f891e47604cf0d5d43e5a66f9119ffa4d13400aa092da6fb24b8145"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd3e523b3f94f80cce7aaedffeb6ab6a5465fbe6d8d2890bf7f9b1d7fb8abf42"
   end
 
   head do

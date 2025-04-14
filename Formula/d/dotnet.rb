@@ -54,6 +54,11 @@ class Dotnet < Formula
     depends_on "lttng-ust"
   end
 
+  conflicts_with cask: "dotnet"
+  conflicts_with cask: "dotnet-sdk"
+  conflicts_with cask: "dotnet-sdk@preview"
+  conflicts_with cask: "dotnet@preview"
+
   def install
     if OS.mac?
       # Need GNU grep (Perl regexp support) to use release manifest rather than git repo

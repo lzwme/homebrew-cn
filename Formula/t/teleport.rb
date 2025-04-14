@@ -42,6 +42,9 @@ class Teleport < Formula
 
   conflicts_with "etsh", because: "both install `tsh` binaries"
   conflicts_with "tctl", because: "both install `tctl` binaries"
+  conflicts_with cask: "teleport"
+  conflicts_with cask: "tsh", because: "both install `tsh` binaries"
+  conflicts_with cask: "tsh@13", because: "both install `tsh` binaries"
 
   # disable `wasm-opt` for ironrdp pkg release build, upstream pr ref, https:github.comgravitationalteleportpull50178
   patch :DATA

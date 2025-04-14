@@ -27,6 +27,8 @@ class Mintoolkit < Formula
     depends_on "btrfs-progs" => :build
   end
 
+  conflicts_with "mint", because: "both install `mint` binaries"
+
   skip_clean "binmint-sensor"
 
   def install

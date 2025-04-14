@@ -28,6 +28,9 @@ class Rasterio < Formula
     depends_on "patchelf" => :build
   end
 
+  conflicts_with "rio", because: "both install `rio` binaries"
+  conflicts_with cask: "rio", because: "both install `rio` binaries"
+
   resource "affine" do
     url "https:files.pythonhosted.orgpackages6998d2f0bb06385069e799fc7d2870d9e078cfa0fa396dc8a2b81227d0da08b9affine-2.4.0.tar.gz"
     sha256 "a24d818d6a836c131976d22f8c27b8d3ca32d0af64c1d8d29deb7bafa4da1eea"
