@@ -1,18 +1,18 @@
 class Cariddi < Formula
   desc "Scan for endpoints, secrets, API keys, file extensions, tokens and more"
   homepage "https:github.comedoardotttcariddi"
-  url "https:github.comedoardotttcariddiarchiverefstagsv1.3.6.tar.gz"
-  sha256 "9f903443bcc78c9c4133a51c154a7f2bcec3968792fe66d5e4c19803ef5b6f06"
+  url "https:github.comedoardotttcariddiarchiverefstagsv1.4.0.tar.gz"
+  sha256 "db50276b36a0b6f83abc77f59ca9470134ef6072986b440f5f352263afb4458e"
   license "GPL-3.0-or-later"
   head "https:github.comedoardotttcariddi.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "894378d05f9d4477e241766e38f750d69c6fcee0655d4ef1528bf8fa838e16ca"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "894378d05f9d4477e241766e38f750d69c6fcee0655d4ef1528bf8fa838e16ca"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "894378d05f9d4477e241766e38f750d69c6fcee0655d4ef1528bf8fa838e16ca"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4f9fbe00baf1a022dd67b426a757c8e4abbb8e3ab247728b4f28a1de13c0638a"
-    sha256 cellar: :any_skip_relocation, ventura:       "4f9fbe00baf1a022dd67b426a757c8e4abbb8e3ab247728b4f28a1de13c0638a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94101fae87842104aa9e9eabcfe8193da6b68578ce4dfe8f490b99d20986eb49"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72378cd86fb4b44f6ba32ede5f4f31bd11ad52f11f1515e3db994db9b7f66ff8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72378cd86fb4b44f6ba32ede5f4f31bd11ad52f11f1515e3db994db9b7f66ff8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "72378cd86fb4b44f6ba32ede5f4f31bd11ad52f11f1515e3db994db9b7f66ff8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4c16b0df1d4a70365a076fbcae25c2d8e7f1e278c134d9f04007dabe87fdd976"
+    sha256 cellar: :any_skip_relocation, ventura:       "4c16b0df1d4a70365a076fbcae25c2d8e7f1e278c134d9f04007dabe87fdd976"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4e6f2287e2a6b7a4a567e9d150be472128108e5180d14592fc9b358346dd7f5"
   end
 
   depends_on "go" => :build

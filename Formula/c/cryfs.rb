@@ -10,29 +10,28 @@ class Cryfs < Formula
   head "https:github.comcryfscryfs.git", branch: "develop"
 
   bottle do
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "43c5238d9673debec44d49a779e516ff86a2f9737ad574714064ead388b0f717"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "acbcf4dbcbbf93a3f22a2380c961bd353d77986c2557e2a8a36ba5592bf2c941"
   end
 
   depends_on "cmake" => :build
+  depends_on "curl" => :build
   depends_on "pkgconf" => :build
   depends_on "python@3.13" => :build
+  depends_on "range-v3" => :build
   depends_on "boost"
-  depends_on "curl"
   depends_on "fmt"
   depends_on "libfuse@2" # FUSE 3 issue: https:github.comcryfscryfsissues419
   depends_on :linux # on macOS, requires closed-source macFUSE
-  depends_on "range-v3"
   depends_on "spdlog"
 
   # Update for changes in Boost.Process 1.88.0+.
-  # TODO: Handle this upstream
+  # PR ref: https:github.comcryfscryfspull494
   patch :DATA
 
   def install
-    system "cmake", "-B", "build", "-S", ".",
-                    "-DCRYFS_UPDATE_CHECKS=OFF",
-                    "-DDEPENDENCY_CONFIG=cmake-utilsDependenciesFromLocalSystem.cmake",
-                    *std_cmake_args
+    ENV.runtime_cpu_detection # for bundled cryptopp
+    system "cmake", "-B", "build", "-S", ".", "-DCRYFS_UPDATE_CHECKS=OFF", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

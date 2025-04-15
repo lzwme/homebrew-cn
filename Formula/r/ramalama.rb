@@ -3,18 +3,18 @@ class Ramalama < Formula
 
   desc "Goal of RamaLama is to make working with AI boring"
   homepage "https:github.comcontainersramalama"
-  url "https:files.pythonhosted.orgpackagesef9ee95e82f91b3a101d6025e30ec039a204649f7a05a79561fc0bd5c8977bf9ramalama-0.7.3.tar.gz"
-  sha256 "bd3e4913023964db99087495b058505b6f2ba3ef28e48ce6cce1f7d7eddde844"
+  url "https:files.pythonhosted.orgpackages7728c7a0f39b4cd57cd445c4f2cde35334d177ee09c0fa29242adf27b64d6ec2ramalama-0.7.4.tar.gz"
+  sha256 "b002b141dc06b5c8388c49ead60dc10fbae596ce5211d9d4a08aeeb82915956d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3271d32fe39ddab7002d1b4ac5110e9fa6f1393e39afdbdeebcbf6e0991d6fc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3271d32fe39ddab7002d1b4ac5110e9fa6f1393e39afdbdeebcbf6e0991d6fc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d3271d32fe39ddab7002d1b4ac5110e9fa6f1393e39afdbdeebcbf6e0991d6fc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3779273319511f9014ff415c908ba28db78718e7719139c6d4afa7defbfc0d9d"
-    sha256 cellar: :any_skip_relocation, ventura:       "3779273319511f9014ff415c908ba28db78718e7719139c6d4afa7defbfc0d9d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfdc37ab4af8dadd6991cbabe845f320894482c9d21797650944f38209914d6d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfdc37ab4af8dadd6991cbabe845f320894482c9d21797650944f38209914d6d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "caf72bb72a592f9e0a0fc91db06ab1fa3145806fec093bf130c5b8b975d67ccb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "caf72bb72a592f9e0a0fc91db06ab1fa3145806fec093bf130c5b8b975d67ccb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "caf72bb72a592f9e0a0fc91db06ab1fa3145806fec093bf130c5b8b975d67ccb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ae1849710c9d9ce56c800947f2049c8fd32f90e36882ff35ffe3e8e3d66c71ae"
+    sha256 cellar: :any_skip_relocation, ventura:       "ae1849710c9d9ce56c800947f2049c8fd32f90e36882ff35ffe3e8e3d66c71ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "227aeaca335b819b1b356b81f1f06852a59f41732e6a3d6991d80ee40c93741a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "227aeaca335b819b1b356b81f1f06852a59f41732e6a3d6991d80ee40c93741a"
   end
 
   depends_on "python@3.13"

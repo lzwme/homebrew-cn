@@ -38,8 +38,9 @@ class Cspice < Formula
   def install
     # Use brewed csh on Linux because it is not installed in CI.
     unless OS.mac?
-      Dir["src/*/*.csh"].each do |file|
-        inreplace file, "/bin/csh", Formula["tcsh"].opt_bin/"csh"
+      inreplace Dir["src/*/*.csh"] do |s|
+        s.gsub! "/bin/csh", Formula["tcsh"].opt_bin/"csh"
+        s.gsub! '= "-m64 ', '= "' if Hardware::CPU.arm?
       end
     end
 

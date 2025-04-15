@@ -2,8 +2,8 @@ class Bazel < Formula
   desc "Google's own build tool"
   homepage "https:bazel.build"
   # TODO: Try removing `bazel@7` workaround whenever new release is available
-  url "https:github.combazelbuildbazelreleasesdownload8.1.1bazel-8.1.1-dist.zip"
-  sha256 "4c9487a16f7841150092f07d93a6727d66f2c4133a617d739dca8ec83fb0099c"
+  url "https:github.combazelbuildbazelreleasesdownload8.2.0bazel-8.2.0-dist.zip"
+  sha256 "859bcdc655c2612a092b75e412082a34e2f1e47b643806de39be3e49c3cdc3f5"
   license "Apache-2.0"
 
   livecheck do
@@ -12,13 +12,13 @@ class Bazel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e73a9a9b4ab2195bdb7c89e3f90680cf8a77936fa02e1b5f4d8c25959e914a96"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1dae78b28eb7678a07de49d2cc77a6904d7f3e9a8761b34f066d0ce76b5b0a9d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e062c7074decf3b25486a473d2e026cfa009f7badd6dbe5ec311d46993894395"
-    sha256 cellar: :any_skip_relocation, sonoma:        "86fc00161a0497eef631b551eaebaa2d91a6c58befbb3d003774a45d83efc3f7"
-    sha256 cellar: :any_skip_relocation, ventura:       "38f134f4872a99842202d0cea9c77d6ac46bfdd637f2dcba0ecd1b95673fac6f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "72fabb4b5ae1fa0735356193e88fe083cefd5fd923c9a7aae1dcc9a3d30b9bea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83900856ca38e817743b9e92a2e4db87928473a2fa74bf11941ed3adc5887900"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6bd88817b4a5ec607993570dd95a63c923991064603c8fafadcab89013128cdf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e547f741fcfc696668babe788910e4d52e474049b3c60b0b67eb570399430015"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d8cc64084044ecc0441dd90750f23cfb1922113ad7be5e0507c5d87702fbd7f8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "58500963b8ec169ca775535f23a95a688d1944b342a3e7855bd550592fc80f75"
+    sha256 cellar: :any_skip_relocation, ventura:       "d9bc01acd4a61090b25a5541b0710be1901532fd377d21f86a16b7ca294c7f7d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9ba78bcffc64486ba909994c4763baa734231c6c4524960353fd62f9d2e3c66"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf890e5d1e219b9efb0a35616139b29efe43be066a3f64cc74c53e0b46e4f32b"
   end
 
   depends_on "python@3.13" => :build
@@ -31,8 +31,8 @@ class Bazel < Formula
     depends_on "bazel@7" => :build
 
     resource "bazel-src" do
-      url "https:github.combazelbuildbazelarchiverefstags8.1.1.tar.gz"
-      sha256 "73d7e1eca0d27a52633dfa73db456e981c5d04ef8ffaa9120a664e093e500880"
+      url "https:github.combazelbuildbazelarchiverefstags8.2.0.tar.gz"
+      sha256 "93afb85c2fc3aa9cedd57926a08c88a9b44c53916c732e43531a6f9c2a27e01a"
 
       livecheck do
         formula :parent

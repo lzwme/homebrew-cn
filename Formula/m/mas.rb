@@ -2,17 +2,17 @@ class Mas < Formula
   desc "Mac App Store command-line interface"
   homepage "https:github.commas-climas"
   url "https:github.commas-climas.git",
-      tag:      "v2.0.0",
-      revision: "5c1cb403cb710b8e81a192331253eccc6fac42a0"
+      tag:      "v2.1.0",
+      revision: "a4756e8c82a2bae5d5de1b137ec16fa7c1df8c94"
   license "MIT"
   head "https:github.commas-climas.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "beeb7afa648443d843a545bf151eb4943c0c7f2a1609b8c90f3f9531451300b6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a2e43ff0b2f02d3862f459d44cfc4c70acfe408eab2329fcedc782dfe52a32cb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cf4c44c24dd6fd0f628e32302058840ea221946502ec6a37841a9f3236c1750d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6f21f1e16243690a82d11b8a9f9790860b4edc57c7aeab2b11513f85e47f8c3e"
-    sha256 cellar: :any_skip_relocation, ventura:       "4fe90b9c79334e5b7959c70e8139737e6d00ce0503f4a33490c4e02577f05040"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f42e337bf806d9c55dc020fac7769f98ab033e1ca7bd22cf7fbdfb3010d1a8db"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab3563b0598e9ba16c6641792319ec0ee65c89d0d086d323a628ca07e26c9286"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "60da702231aa9894a9f95b580130f62285fd84658611d01c93a2beea7431774f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9443ab044f86178b718f669ccb5601116829686b1cb05448cb231b63f249e809"
+    sha256 cellar: :any_skip_relocation, ventura:       "f46a11b8667581487e13b786d349545cfa2cc15e1093abf4017dc6aff4cc654e"
   end
 
   depends_on xcode: ["14.2", :build]

@@ -20,8 +20,10 @@ cask "betterdisplay" do
     sha256 "acd574d12780c60a3d2b23fcdfef0cc1ae1a1da5716be66a680e30256ff640f7"
 
     livecheck do
-      url :url
-      strategy :github_latest
+      url "https:betterdisplay.probetterdisplaysparkleappcast.xml"
+      strategy :sparkle do |items|
+        items.find { |item| item.channel.nil? }&.short_version
+      end
     end
   end
 
@@ -36,12 +38,14 @@ cask "betterdisplay" do
 
   app "BetterDisplay.app"
 
-  uninstall quit: "pro.betterdisplay.BetterDisplay"
+  uninstall quit:       "pro.betterdisplay.BetterDisplay",
+            login_item: "BetterDisplay"
 
   zap trash: [
     "~LibraryApplication SupportBetterDisplay",
     "~LibraryApplication SupportBetterDummy",
     "~LibraryCachespro.betterdisplay.BetterDisplay",
+    "~LibraryCachesSentryCrashBetterDisplay",
     "~LibraryHTTPStoragespro.betterdisplay.BetterDisplay",
     "~LibraryHTTPStoragespro.betterdisplay.BetterDisplay.binarycookies",
     "~LibraryPreferencespro.betterdisplay.BetterDisplay.plist",

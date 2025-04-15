@@ -14,6 +14,7 @@ class Genometools < Formula
     sha256 cellar: :any,                 arm64_ventura: "a6ee8e5efc50803249afd3d9eb483e48f0008840800075aa1ab3a382b3800fad"
     sha256 cellar: :any,                 sonoma:        "a04778fc4c9cb45a2b8f728527e3d865f653c1674f19c1972ef8d1144afdb955"
     sha256 cellar: :any,                 ventura:       "14a0b5028decdfcc90c0d3220cbe2b48880e346509a05507bb0dabbefa91a9f2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd73938ff6ed8d07d1d3e028ff9b198e3439b7987daf61dd92c68b4c744926e0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "c570e15eef30b96b5ae3e6e398097589d6c8f9827a0694835071026e2793b3cf"
   end
 
@@ -41,6 +42,10 @@ class Genometools < Formula
   end
 
   def install
+    # Workaround for arm64 linux from char being unsigned.
+    # Same root cause as https:github.comgenometoolsgenometoolsissues311
+    ENV.append_to_cflags "-fsigned-char" if OS.linux? && Hardware::CPU.arm?
+
     # Manually unbundle as useshared=yes requires Lua 5.1 and older SAMtools
     rm_r(Dir["srcexternal{bzip2,expat,sqlite,tre,zlib}*"])
 

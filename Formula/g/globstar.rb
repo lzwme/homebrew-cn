@@ -1,19 +1,19 @@
 class Globstar < Formula
   desc "Static analysis toolkit for writing and running code checkers"
   homepage "https:globstar.dev"
-  url "https:github.comDeepSourceCorpglobstararchiverefstagsv0.6.1.tar.gz"
-  sha256 "d2723d485d3a0baa4e707bfcebdd60960ae6a8928277acf5c0602aac1f050286"
+  url "https:github.comDeepSourceCorpglobstararchiverefstagsv0.7.0.tar.gz"
+  sha256 "a98edec5423394924288382650177549e4997647d145fafa8ade03c687cb39a0"
   license "MIT"
   head "https:github.comDeepSourceCorpglobstar.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e6d2490f2fc348c713c7b2b0fff5da014ead85e06b899686e87bba07fb25a085"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a60fa5371a7b96ae3a445ac38cc3bd57bc82e41062c897a12b726655cc40a122"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "351d67820e10c0414789e33901de64cad9322ecead736eed190344f34a141d0b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b149581b0925354aafd54731fbf9f621466ca8d5c295b45071f05207691f96e3"
-    sha256 cellar: :any_skip_relocation, ventura:       "8e2ee1309a02d22518a620d7873cc020a6652aaaaecc6284817f35b4eef2b6e8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7845ae273bfc21394139af8ed7fdebb0006cfcba9c7335af5430c75e52043f62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edbb1ec871583032673f9633e94f5c2cd1fe482f350c275fc4f0dd3e879678ec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "04bf11ea096ebbeb71a68dc7e566e7349de08e8ecc6b52371f143d2ffd770d1b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "af7b9c5ccd795ac8c0e469c7590572af67d6209e5b7abb02beeac079fb3bfd3b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fb3eb03ebabbda1c0cb05151a2826ed1251bddd180dc61ba01fd9a1b13589eef"
+    sha256 cellar: :any_skip_relocation, sonoma:        "997d61fe0a81bb3b10c7ce36499ce54e8c15b07c83ec04162f34d11899eeb551"
+    sha256 cellar: :any_skip_relocation, ventura:       "4aba6ab2960d1094c1589a50709706d91d1353beaea8e1a6dbcbc54ae6e2daee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8e25ef07cfe4dedf814d9580009b44875b715f5ea61a06410809ddeeb4c5318"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a70f87f82041dc137573423d33bd685e47cf37f18da8c969208c9eabd7ad62cd"
   end
 
   depends_on "go" => :build

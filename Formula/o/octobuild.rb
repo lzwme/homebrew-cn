@@ -12,6 +12,7 @@ class Octobuild < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "e28de2bd21191ed3cc1bf3480da02c4e9176ec4991d58fc7eb61d7c0f83ebd80"
     sha256 cellar: :any_skip_relocation, sonoma:        "33612f8a07e682ca29a89d541c17420bcaede31cccc382bef86333eaa792e82e"
     sha256 cellar: :any_skip_relocation, ventura:       "daa1e485d69f56da61fa011c64fc6c02304ce76eb620bf57346fbafc02fb9410"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e98eedd1407f8d025d8f0218b3519914e5fce1120adea89b14a3aa2ee6ba9e4"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "300255c2f90b74d17ad4abe23ad79e3729e602a7f69d1a0b2bd3d68f2e96eec2"
   end
 
@@ -22,7 +23,29 @@ class Octobuild < Formula
     depends_on "openssl@3"
   end
 
+  resource "ipc-rs" do
+    on_linux do
+      on_arm do
+        url "https:github.comoctobuildipc-rsarchivee8d76ee36146d4548d18ba8480bf5b5a2f116eac.tar.gz"
+        sha256 "aaa5418086f55df5bea924848671df365e85aa57102abd0751366e1237abcff5"
+
+        # Apply commit from open PR https:github.comoctobuildipc-rspull12
+        patch do
+          url "https:github.comoctobuildipc-rscommit1eabde12d785ceda197588490abeb15615a00dad.patch?full_index=1"
+          sha256 "521d8161be9695480f5b578034166c8e7e15b078733d3571cd5db2a00951cdd8"
+        end
+      end
+    end
+  end
+
   def install
+    if OS.linux? && Hardware::CPU.arm?
+      (buildpath"ipc-rs").install resource("ipc-rs")
+      (buildpath"Cargo.toml").append_lines <<~TOML
+        [patch."https:github.comoctobuildipc-rs"]
+        ipc = { path = ".ipc-rs" }
+      TOML
+    end
     system "cargo", "install", *std_cargo_args
   end
 

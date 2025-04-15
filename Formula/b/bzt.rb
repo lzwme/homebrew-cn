@@ -3,20 +3,19 @@ class Bzt < Formula
 
   desc "BlazeMeter Taurus"
   homepage "https:gettaurus.org"
-  url "https:files.pythonhosted.orgpackages230d2b00c42ced1b2497cbd29eca47cc457b277d119c1e93d76c8b29fec38bbfbzt-1.16.39.tar.gz"
-  sha256 "e728997aed9bec3f4f26d82a7dc546e5e4f6ca8eae681e6c499c81681a3e07ce"
+  url "https:files.pythonhosted.orgpackages8775f2362e6e16f5a43b7db36efd018ba03e4fbdad89a0899983dbf09c243599bzt-1.16.40.tar.gz"
+  sha256 "d178f4afabcc3ec3de2a7a6a46cbb0b6730b99e092a9af4e3a3b38fab661a744"
   license "Apache-2.0"
   head "https:github.comBlazemetertaurus.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "14e53da6e3f931e9e37315ce785e2c5028edcfa481bada45af7cd1ef7672009e"
-    sha256 cellar: :any,                 arm64_sonoma:  "b02c2754ee2feecbbc53c23eca28c7fff56a06191be907ad7b673616fc1f568e"
-    sha256 cellar: :any,                 arm64_ventura: "58de6bf4118f25335b035152666fff9cbed8fe2639f4631136b73f246a9f099c"
-    sha256 cellar: :any,                 sonoma:        "f74750cd3a53056e52578ccfba855f0b536258f7e31760e0b1a4d759066fc928"
-    sha256 cellar: :any,                 ventura:       "f00f7dddca38fa98e2ffd42c1331dfbcbcfb4656608b64aad14dc34f76596e35"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9317716560fb3397cd2003b18d841e72e8395ee59a9b56432a220641f1dbb95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b22449edc64552c731be9036c28066f25730bdda9d363d151786d01785a2c12a"
+    sha256 cellar: :any,                 arm64_sequoia: "f95f5d992a7852d8b1ce461e5968033df1934935b59bb68380d49460b24ca2f5"
+    sha256 cellar: :any,                 arm64_sonoma:  "b457ca17f46334e4af416985a3115674867cf6bd74514984919d15b5e408fe62"
+    sha256 cellar: :any,                 arm64_ventura: "9a7fc765687024e7250b140a6f27bc37a060dfcfb62a85b648a313ce4366e70d"
+    sha256 cellar: :any,                 sonoma:        "60d7f0e86d5d7f890b7dab8164164f114f0ab406df6f1a23efa8b303d0777186"
+    sha256 cellar: :any,                 ventura:       "64ba6805c1e5d19d98951103e7dac77ee89d19d57f7ab981a26d254d8dba3601"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b89434eff4439a5f8b54d2a0eea4427ba809d94ce7e4417f370266bc3a71db6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d013046a23e055b3815a8959c027b3a42c99637ca7b987aba6e161f3e2fbdc3"
   end
 
   depends_on "cmake" => :build
@@ -142,8 +141,8 @@ class Bzt < Formula
   end
 
   resource "multidict" do
-    url "https:files.pythonhosted.orgpackagesfa2d6e0d6771cadd5ad14d13193cc8326dc0b341cc1659c306cbfce7a5058fffmultidict-6.3.2.tar.gz"
-    sha256 "c1035eea471f759fa853dd6e76aaa1e389f93b3e1403093fa0fd3ab4db490678"
+    url "https:files.pythonhosted.orgpackagesda2ce367dfb4c6538614a0c9453e510d75d66099edf1c4e69da1b5ce691a1931multidict-6.4.3.tar.gz"
+    sha256 "3ada0b058c9f213c5f95ba301f922d402ac234f1111a7d8fd70f1b99f3c281ec"
   end
 
   resource "multiprocess" do
@@ -177,13 +176,13 @@ class Bzt < Formula
   end
 
   resource "python-engineio" do
-    url "https:files.pythonhosted.orgpackages52e0a9e0fe427ce7f1b7dbf9531fa00ffe4b557c4a7bc8e71891c115af123170python_engineio-4.11.2.tar.gz"
-    sha256 "145bb0daceb904b4bb2d3eb2d93f7dbb7bb87a6a0c4f20a94cc8654dec977129"
+    url "https:files.pythonhosted.orgpackagesf7e1eee1129544b7f78fa2afa9fa0fce153cdcb21015b9b331d1b8adf90f45cbpython_engineio-4.12.0.tar.gz"
+    sha256 "f42a36a868d7063aa10ddccf6bd6117a169b6bd00d7ca53999772093b62014f9"
   end
 
   resource "python-socketio" do
-    url "https:files.pythonhosted.orgpackagesced040ed38076e8aee94785d546d3e3a1cae393da5806a8530be877187e2875fpython_socketio-5.12.1.tar.gz"
-    sha256 "0299ff1f470b676c09c1bfab1dead25405077d227b2c13cf217a34dadc68ba9c"
+    url "https:files.pythonhosted.orgpackages211a396d50ccf06ee539fa758ce5623b59a9cb27637fc4b2dc07ed08bf495e77python_socketio-5.13.0.tar.gz"
+    sha256 "ac4e19a0302ae812e23b712ec8b6427ca0521f7c582d6abb096e36e24a263029"
   end
 
   resource "pytz" do

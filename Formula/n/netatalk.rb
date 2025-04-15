@@ -1,8 +1,8 @@
 class Netatalk < Formula
   desc "File server for Macs, compliant with Apple Filing Protocol (AFP)"
   homepage "https:netatalk.io"
-  url "https:github.comNetatalknetatalkreleasesdownloadnetatalk-4-2-0netatalk-4.2.0.tar.xz"
-  sha256 "768a91014e298dc1d14ef28ebe330ddad49928e3c34f307353b8bdd317f50a52"
+  url "https:github.comNetatalknetatalkreleasesdownloadnetatalk-4-2-1netatalk-4.2.1.tar.xz"
+  sha256 "43a51064eef0d3d786e6359888bc000d1458b509bf709bae8cbd4526388f468b"
   license all_of: [
     "GPL-2.0-only",
     "GPL-2.0-or-later",
@@ -15,13 +15,13 @@ class Netatalk < Formula
   head "https:github.comNetatalknetatalk.git", branch: "main"
 
   bottle do
-    sha256 arm64_sequoia: "d71df3b1e4fdaddf0f232f8dd001310f60c849aa67eaa31d74d6daa738559404"
-    sha256 arm64_sonoma:  "20162c85e09de6e25b7beddd8ad26f60ec8c2be0d62eb0fe7e1b11b356252b47"
-    sha256 arm64_ventura: "4ea66500888f18634f63e24e9440f1445fcd6fa510d26aa323c378a71b597b65"
-    sha256 sonoma:        "74237b163e3c3a9b25936c7c76c6efea0ccc74f212a56e48095064093da2ba4d"
-    sha256 ventura:       "5ccee36bc2de3dc1fd4442740574e6106733e1fed8b19b3875b57269b759966d"
-    sha256 arm64_linux:   "096a860beb633015e76205a9421d81e923dabff8694f32acedd60f27f2f3c4d5"
-    sha256 x86_64_linux:  "42f6947fb5f8123458f9f5118e5e59040933325592e761877eb307c465618f78"
+    sha256 arm64_sequoia: "4bb7cdd27dbdb737a6f5f7d3aed7ebe90a0c22c7178b2d410d74cb69d5423b74"
+    sha256 arm64_sonoma:  "9522f59c06c24758f7af0f97c3bd0359e0c8601c74d1369f49ef78f8b5713bc9"
+    sha256 arm64_ventura: "600d65b2247d444d5708b98781f7bd4fd68a655b9bda120f4511c8b94fe5ca21"
+    sha256 sonoma:        "48deb4f993ced54aa8a6dfe139c95d3de10dca9ac5c37cdc9c093f98d8a5b056"
+    sha256 ventura:       "7c486b25be3e0b2e5b0f5043435756221e55bf55e5e646ef3d0e06db263ea33a"
+    sha256 arm64_linux:   "2df577b12aabf1246f0284acae577b14ff8ba5c8f81d519c21a007d8721bb680"
+    sha256 x86_64_linux:  "f372de141b504d3cafdae217f3e39599ac1fdb3da384c61f6868004c1928af32"
   end
 
   depends_on "docbook-xsl" => :build

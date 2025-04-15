@@ -1,19 +1,19 @@
 class Glbinding < Formula
   desc "C++ binding for the OpenGL API"
   homepage "https:glbinding.org"
-  url "https:github.comcginternalsglbindingarchiverefstagsv3.4.0.tar.gz"
-  sha256 "0f623f9eb924d9e24124fd014c877405560f8864a4a1f9b1f92a160dfa32f816"
+  url "https:github.comcginternalsglbindingarchiverefstagsv3.5.0.tar.gz"
+  sha256 "bb39a97d5d94f70fe6e9c2152e0d8d760758bb031b352e1707fa90f00a43fc69"
   license "MIT"
   head "https:github.comcginternalsglbinding.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4109c5d9acda5a3ce82a95263df048f628f5b3e24d17c1d44976adcd7e9c107f"
-    sha256 cellar: :any,                 arm64_sonoma:  "942d58c6c3c85b40bfd76fe28f6af2f1eee8187d3fcc5793967f2a2994088c83"
-    sha256 cellar: :any,                 arm64_ventura: "80ad1e314eae1f15e047171937706be2c8b1c24ee0c13c5783ff0de9379ef65b"
-    sha256 cellar: :any,                 sonoma:        "747d1af15a6de6ede43500d8ce09e948171a76dd7510212266758113fc9db7d8"
-    sha256 cellar: :any,                 ventura:       "368d764b4ef7eaa96bc7bee68676c778f0ececd3cc2b33d242293b3d31cde21b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a9f6a2969d63421f0408fc21564656a9fc9f761d127816cf45d7057e06901b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19ecd120e2f945bf4c912fa08ddea6ff94225c38dc31b921363e4889361410db"
+    sha256 cellar: :any,                 arm64_sequoia: "6798ca9c08e9ccc59eab53d4665284e48f7f2a997bc519ec0d963c85a12f9db2"
+    sha256 cellar: :any,                 arm64_sonoma:  "4f7d37307826d7a2109acd928b492a5ce909452d34b721580f83f44861875cc7"
+    sha256 cellar: :any,                 arm64_ventura: "5b83488e93d023db298f1e2e045c6a330c1ac7324672b5766b368caeea00b7c5"
+    sha256 cellar: :any,                 sonoma:        "63bf53958290dccffdb8ab55ceaf14491f10f2d8ab8e7225e56d3fa7f79f3c36"
+    sha256 cellar: :any,                 ventura:       "1f7649a5e986c147c1d290c72e1b79d91168266bbba58be9b1005880885293ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0d4419c9275044ca9857a4208c2777c100aa6288e7b14febf2d8beab924233a1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "add170cb3bec049265b779eb0bb602dd60d83d011887efdb21c8d47406a75c78"
   end
 
   depends_on "cmake" => :build
@@ -28,11 +28,6 @@ class Glbinding < Formula
     # Force install to use system directory structure as the upstream only
     # considers usr and usrlocal to be valid for a system installation
     inreplace "CMakeLists.txt", "set(SYSTEM_DIR_INSTALL FALSE)", "set(SYSTEM_DIR_INSTALL TRUE)"
-
-    # support cmake 4 build, upstream pr ref, https:github.comcginternalsglbindingpull356
-    inreplace ["CMakeLists.txt", "sourcetestsCMakeLists.txt"] do |f|
-      f.gsub! "cmake_minimum_required(VERSION 3.0", "cmake_minimum_required(VERSION 3.5"
-    end
 
     system "cmake", "-S", ".", "-B", "build",
                     "-DOPTION_BUILD_OWN_KHR_HEADERS=#{OS.mac? ? "ON" : "OFF"}",
