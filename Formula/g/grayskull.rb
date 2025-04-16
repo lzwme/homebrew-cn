@@ -3,18 +3,18 @@ class Grayskull < Formula
 
   desc "Recipe generator for Conda"
   homepage "https:github.comcondagrayskull"
-  url "https:files.pythonhosted.orgpackagesa2a320a23e2a1615b0a958a9885b250da5213f70af4ea932611995510984799egrayskull-2.9.0.tar.gz"
-  sha256 "45ec219d5701756f40505ec79f62393670a8b496fd2408d6f907ce57ba3ca897"
+  url "https:files.pythonhosted.orgpackages34362af84868cd2ca7af815ec58e7ab2828e3a8b8eedc30c0b180b633bc6d94agrayskull-2.9.1.tar.gz"
+  sha256 "348e3b7cf994ddfec6775d18556ddd3a39df77ddb2855f861a97330a256826b9"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "777a837f583df70af6f0797610a21f50a3b91224d873def14f1ace4d8b648e50"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "630a3ae0b00c5ec53ff5aa8fcc1e14634c20e66ee41116023130a0a6579358ef"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "df765eaf7d50ed1ecc8f4464b38fa6ab832d9c525b08d5e9ed275ac28e73151e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d0a33d21e1427e607ace3e0dba385441ab62a15db7a9c25c180b63e04afd1bbc"
-    sha256 cellar: :any_skip_relocation, ventura:       "9fd393c102cc7df6d49eb36ceea124c957eeb38985f58b57618d0abd13aaaec2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd0bd442e4401da44de58fc9a6614c591e5d332ba1cc55620f9c84d47cfae5f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13a59200c55f3a7df92ed14bcf79c130e2b1da466a246849b04cdd7f9b241f98"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c6c2e8ad4c7b8fa1df065660720aad772d67bfc625585a9c5d5da60b12c555b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "407eeee9582d29faa19ee6c5b8b34a550a37b3bc6bd0501d89579a947fe25d17"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "02754dfe32f1b4d72e01ec6558667b3a11a999572d93b91986f9958b28eb3f95"
+    sha256 cellar: :any_skip_relocation, sonoma:        "73371933692c78f1fea8268a9aea366c547728f8d667f548a978e3425bb9fc41"
+    sha256 cellar: :any_skip_relocation, ventura:       "d4c8745c081260aa71e1a4db765bc1b4dd4dc5820a7040ece4df32fa1a941912"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2aed9eadfb5e4b8c7bad5829c4ee2b642fa8951e4829b6c57d4015068614255e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f3edcbb19b88612856d5dc615636b3076762e64430286dde9a2c9a7f0137a58"
   end
 
   depends_on "cmake" => :build

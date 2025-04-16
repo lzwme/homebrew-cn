@@ -7,6 +7,12 @@ cask "hostsx" do
   desc "Local hosts update tool"
   homepage "https:github.comZzzMHostsX"
 
+  livecheck do
+    url "https:zzzm.github.ioHostsXappcast.xml"
+    strategy :sparkle
+  end
+
+  auto_updates true
   depends_on macos: ">= :high_sierra"
 
   app "HostsX.app"

@@ -1,20 +1,19 @@
 class Wangle < Formula
   desc "Modular, composable clientserver abstractions framework"
   homepage "https:github.comfacebookwangle"
-  url "https:github.comfacebookwanglearchiverefstagsv2025.04.07.00.tar.gz"
-  sha256 "9a7f2b429a02ebabff9d00e2dbd61573f878bca29b7b8b3f100bd5d0f5b0e63f"
+  url "https:github.comfacebookwanglearchiverefstagsv2025.04.14.00.tar.gz"
+  sha256 "87f8086f7183f645ccb592c1542644c60750ab92603f42c3380c43a8970e1c55"
   license "Apache-2.0"
-  revision 1
   head "https:github.comfacebookwangle.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8144696c6030ce987f8da42005bd475c6fc30125eb7ee43e21eb88f296d7dc59"
-    sha256 cellar: :any,                 arm64_sonoma:  "d5bed905607fa83810da8531e5070ece909fb3d5e91b9f9aad4a233ace7d5bb3"
-    sha256 cellar: :any,                 arm64_ventura: "92bff772e22efc47b9a10903160e506bb8040851e65e357fc90e900f3b1f5d6b"
-    sha256 cellar: :any,                 sonoma:        "a3fc6169ec5422ecdb358027e7797eb1ed745e67057f8cf04bd8df4869ffa813"
-    sha256 cellar: :any,                 ventura:       "8d2a6aa66f55d57110cabbe8c4ce60bbdfb081f27d584e2faf67c17393e61cbc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "17ea090a92b1afe9ae1fb4209c7bf7efd533543490a4c0dbd149a43f63512487"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ffabc9d5b28a69488e53fde8ec483fd037401cb8718ef5e049c1c18f1954ecb2"
+    sha256 cellar: :any,                 arm64_sequoia: "dc82b9b3fda227df87950c052c681a63c18190ed30c9ea0dccba9a910d36e150"
+    sha256 cellar: :any,                 arm64_sonoma:  "30bde398fd1429d58928e2a274a64986455b1e6ab40e9f43b486c27934dd2a2f"
+    sha256 cellar: :any,                 arm64_ventura: "f1aaf88c1b01fdd62d70a7cd0a51db169f990c061773fa53bf79b77269ea129b"
+    sha256 cellar: :any,                 sonoma:        "a2081fa4982bd02b5ee7112978f1aaf76799fc4ba1dada2102b8ddebd6524119"
+    sha256 cellar: :any,                 ventura:       "783ab1ea5b91dd9fb881268c8ede8d8ddad0eed9cde60a4dfc14d5d6747d3eba"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ff7602e765c6a47e1b292b467e7989f74a4b3847a02a5d8d852ad755175dd00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "238f8cb652c2c86abe329c8018eee8a64263fb705da6b10b45e08acd344838d0"
   end
 
   depends_on "cmake" => [:build, :test]

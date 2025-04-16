@@ -1,18 +1,18 @@
 class Ov < Formula
   desc "Feature-rich terminal-based text viewer"
   homepage "https:noborus.github.ioov"
-  url "https:github.comnoborusovarchiverefstagsv0.40.0.tar.gz"
-  sha256 "8f2c8f1246d6fd1affee3d9570a7a085c8c608d3a710829d5097fca0e53290a0"
+  url "https:github.comnoborusovarchiverefstagsv0.40.1.tar.gz"
+  sha256 "fc582e832dd1b85c04ec0347454a56288d119a1eff76e2e7d63da34680b855a4"
   license "MIT"
   head "https:github.comnoborusov.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49ebfa5ffcda9f737823f13c7a6af2d3100ef9e102ef92c30875f51f2b6400ba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49ebfa5ffcda9f737823f13c7a6af2d3100ef9e102ef92c30875f51f2b6400ba"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "49ebfa5ffcda9f737823f13c7a6af2d3100ef9e102ef92c30875f51f2b6400ba"
-    sha256 cellar: :any_skip_relocation, sonoma:        "837fda3a333c59cdf99cd0e4210b927f64dc1f411e334e66843d79e00ff97e8e"
-    sha256 cellar: :any_skip_relocation, ventura:       "837fda3a333c59cdf99cd0e4210b927f64dc1f411e334e66843d79e00ff97e8e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8556ea12ceb992fe32c593ae596f7ccd522386df9d4719c9c2c61255e3bb5282"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c4e0460d4041ff75791b38c95b305132b9ff0584ed79ccc55b17902476a1de4a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c4e0460d4041ff75791b38c95b305132b9ff0584ed79ccc55b17902476a1de4a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c4e0460d4041ff75791b38c95b305132b9ff0584ed79ccc55b17902476a1de4a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8bf6bf0251b6fc0e11722f4bab2ba7177469ad9a91025080c4d7090fc7a52f20"
+    sha256 cellar: :any_skip_relocation, ventura:       "8bf6bf0251b6fc0e11722f4bab2ba7177469ad9a91025080c4d7090fc7a52f20"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2979b74576b3a37bc49b328999ae34fe7b874789cd115fea90859a671bdf972"
   end
 
   depends_on "go" => :build

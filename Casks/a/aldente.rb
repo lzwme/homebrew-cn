@@ -2,15 +2,14 @@ cask "aldente" do
   version "1.32"
   sha256 "a5415c3fb27ad252deb97f6fdea84231cb119aeadfc342e7a0271b44e367c4a3"
 
-  url "https:github.comAppHouseKitchenAlDente-Charge-Limiterreleasesdownload#{version}AlDente.dmg",
-      verified: "github.comAppHouseKitchenAlDente-Charge-Limiter"
+  url "https://apphousekitchen.com/aldente/AlDente#{version}.dmg"
   name "AlDente"
   desc "Menu bar tool to limit maximum charging percentage"
-  homepage "https:apphousekitchen.com"
+  homepage "https://apphousekitchen.com/"
 
   livecheck do
-    url :url
-    strategy :github_latest
+    url "https://apphousekitchen.com/aldente/aldenteproappcast.xml"
+    strategy :sparkle, &:short_version
   end
 
   auto_updates true
@@ -21,15 +20,15 @@ cask "aldente" do
   uninstall launchctl:  "com.apphousekitchen.aldente-pro.helper",
             quit:       "com.apphousekitchen.aldente-pro",
             login_item: "AlDente",
-            delete:     "LibraryPrivilegedHelperToolscom.apphousekitchen.aldente-pro.helper"
+            delete:     "/Library/PrivilegedHelperTools/com.apphousekitchen.aldente-pro.helper"
 
   zap trash: [
-    "~LibraryApplication SupportAlDente",
-    "~LibraryCachescom.apphousekitchen.aldente-pro",
-    "~LibraryHTTPStoragescom.apphousekitchen.aldente-pro",
-    "~LibraryHTTPStoragescom.apphousekitchen.aldente-pro.binarycookies",
-    "~LibraryPreferencescom.apphousekitchen.aldente-pro.plist",
-    "~LibraryPreferencescom.apphousekitchen.aldente-pro_backup.plist",
-    "~LibraryPreferencescom.apphousekitchen.aldente-pro_stats.sqlite3",
+    "~/Library/Application Support/AlDente",
+    "~/Library/Caches/com.apphousekitchen.aldente-pro",
+    "~/Library/HTTPStorages/com.apphousekitchen.aldente-pro",
+    "~/Library/HTTPStorages/com.apphousekitchen.aldente-pro.binarycookies",
+    "~/Library/Preferences/com.apphousekitchen.aldente-pro.plist",
+    "~/Library/Preferences/com.apphousekitchen.aldente-pro_backup.plist",
+    "~/Library/Preferences/com.apphousekitchen.aldente-pro_stats.sqlite3",
   ]
 end

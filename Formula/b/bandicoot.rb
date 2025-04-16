@@ -1,18 +1,18 @@
 class Bandicoot < Formula
   desc "C++ library for GPU accelerated linear algebra"
   homepage "https://coot.sourceforge.io/"
-  url "https://gitlab.com/bandicoot-lib/bandicoot-code/-/archive/1.16.2/bandicoot-code-1.16.2.tar.bz2"
-  sha256 "ce248b3f163919ed85cb140124b2e16a6b4df11a9e9933d533ff12da219824aa"
+  url "https://gitlab.com/bandicoot-lib/bandicoot-code/-/archive/2.0.0/bandicoot-code-2.0.0.tar.bz2"
+  sha256 "30d6a1d45d470808db231ca7f3cb0c17aa87da2439cb66517e92f48ca70967a3"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "de001a5385558fe001c2c6d506322c53b651162c9ae89d02f9319ba20a756c30"
-    sha256 cellar: :any,                 arm64_sonoma:  "dc6e8827bfeb171211c2d746b3a96b1090d834fa0e6473b9ea51bc946d47bb81"
-    sha256 cellar: :any,                 arm64_ventura: "e5ea4cbde255f6c9f0bc3d01a7b11c853dcb441bf927dca58961f50f15f11984"
-    sha256 cellar: :any,                 sonoma:        "1db2036d7f853673161c668b5a0889b74e17dcbf1ccc5384a919a63a93ebb3dc"
-    sha256 cellar: :any,                 ventura:       "f1a97297c4ba2488925a8039bea63092693f9223a4020a08b0782a6507a2b797"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "59d673384fb931ce83416ebf576b7687267098dc491e0c6e005dd231c7d881e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98d8e185d883a12c7e442ea3df21c1c34f433534a50aa69b81218d5f437f83fa"
+    sha256 cellar: :any,                 arm64_sequoia: "db31e5f666f4b6cdc012bb7fdfe0ac544b787e4fcefea84d30ffde1a49a13c3c"
+    sha256 cellar: :any,                 arm64_sonoma:  "62afce76eb43d865812f70284f409e1fe2720cd18489107a17eab5ed45f9aa15"
+    sha256 cellar: :any,                 arm64_ventura: "343c601cd3268dcc3af31aa5568c39da5167f23b7cf8f212ff037116fe26fd6a"
+    sha256 cellar: :any,                 sonoma:        "60bbf041aafc60a7c67c0bc717022e9153f4a0325093dcc1e1a15400bfe89841"
+    sha256 cellar: :any,                 ventura:       "ffc82a05e033e6563733b245938a37a55db196c8e3c499b8d6387277021a584d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5060606c7d1b5314c2abf8581fee37550172323cfbce2da9ebe2f60afc771bd2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a036a413f7ffa0e5e2187efda03dc64514d4dccb302ef1e562c47f0d10d3aabb"
   end
 
   depends_on "cmake" => :build

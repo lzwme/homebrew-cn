@@ -3,29 +3,19 @@ class Watchman < Formula
 
   desc "Watch files and take action when they change"
   homepage "https:github.comfacebookwatchman"
+  url "https:github.comfacebookwatchmanarchiverefstagsv2025.04.14.00.tar.gz"
+  sha256 "bf0c41aa60675bdc792434e8fac356f2669f96b1ec36516e281f1684cb140e85"
   license "MIT"
-  revision 1
   head "https:github.comfacebookwatchman.git", branch: "main"
 
-  stable do
-    url "https:github.comfacebookwatchmanarchiverefstagsv2025.04.07.00.tar.gz"
-    sha256 "792ded3402b74d62c45b2ae5ff91eefe0472ce1937cf5067b019f90b9e6a67d3"
-
-    # Backport commit to fix build on Linux
-    patch do
-      url "https:github.comfacebookwatchmancommit3d91e6db2f1e0cded7abdf10cf3bfc0a13c4f61f.patch?full_index=1"
-      sha256 "723a80ca790afbd942689e854abd0428438750171622f4c9a69ac65e2ac8e6e4"
-    end
-  end
-
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4d4091a9f4743d4af0e141c50d01ac06bfa9bf118f4d74b3ab525897264d6c77"
-    sha256 cellar: :any,                 arm64_sonoma:  "bd6bc898842c960d1a00407e8295d9ad336df8e18b4fa1ca2bced423337e2a21"
-    sha256 cellar: :any,                 arm64_ventura: "3d1ca60d34f93930560e4b464479a151927ff0fd42db0581b72e1b99b7b86165"
-    sha256 cellar: :any,                 sonoma:        "5e63e494aa91171324a7f1e12368d0eb45f81f655ad295cdd985f14bdc2897b3"
-    sha256 cellar: :any,                 ventura:       "0a53a8aee9aa6ea9cb3704d6323ff7f39f0cb8d428e2a443db771542da2ce97f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "666c60ab441353a45619054dd94729deec13ee676484efedfd927881736626b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8ea0f2278a5e1f9a9ba44d932969a3f8b5d47adc5944c9a9f9b978a1752a4ef"
+    sha256 cellar: :any,                 arm64_sequoia: "6303773a7b2c05ebe0cb559a6a8651bea44eb14130d3d1f0a54e96dc1a1015d2"
+    sha256 cellar: :any,                 arm64_sonoma:  "5a4d4a6fc2efb9647023ec18051c8ce1dc5cefd249633fbe7d2e5c06a91fe204"
+    sha256 cellar: :any,                 arm64_ventura: "cc0a70a317322cdf0f5342d78051d4de2765d8b44cceed693e46bc1dd14c3fdd"
+    sha256 cellar: :any,                 sonoma:        "270d0a034b1c6b8ada94d880429c4830ea7527cdb56be4ad1e577e7875bb19c1"
+    sha256 cellar: :any,                 ventura:       "8458b71beba431566c5a30bb230a2c5c6c375f1e96c270357befc78050416c8d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "00bef5ce7a9ab8351011173c1238adb2408d782ab94412a4604d65d66ba0af29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d53952154d4eef378192cd89429d3817a37a45a95e061d582e6a27b01ed16ad"
   end
 
   depends_on "cmake" => :build

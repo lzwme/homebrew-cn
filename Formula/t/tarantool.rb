@@ -1,8 +1,8 @@
 class Tarantool < Formula
   desc "In-memory database and Lua application server"
   homepage "https:tarantool.org"
-  url "https:download.tarantool.orgtarantoolsrctarantool-3.3.2.tar.gz"
-  sha256 "c518d6f7a5737ab1124227e8c9bac9669f94331181240ce9f085fcf1cfc7972a"
+  url "https:download.tarantool.orgtarantoolsrctarantool-3.4.0.tar.gz"
+  sha256 "3ff1e8de285943eedef6b2cd14caacb51e7998d9da2e4d75eb4d9a770b3173b4"
   license "BSD-2-Clause"
   version_scheme 1
   head "https:github.comtarantooltarantool.git", branch: "master"
@@ -15,13 +15,13 @@ class Tarantool < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "103dd702e7f807ddd4b77832dede095353bfe1f2a74d306d27e797d749fb1786"
-    sha256 cellar: :any,                 arm64_sonoma:  "8ea02574509bafa3e1b499c240eee26845deb176b507ddea4915864602b799e8"
-    sha256 cellar: :any,                 arm64_ventura: "5eaa6b0f175bfc88724e2bfc56bf3469da5bb750b1cd4a138110b17b9a1a24ae"
-    sha256 cellar: :any,                 sonoma:        "34449549a6a1b95867b0389a90aacc62370d2d126f06bf3cae0f663090ce4075"
-    sha256 cellar: :any,                 ventura:       "0d722ed06b548b9f92f60b2597415f64ed9a4e19354364ecdc9cfcfb786e7729"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f6c0b6b817b00ab3256f9b5797f000b3af57c63934a17e710bfdad61826a41cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d35e57ccb98cb3368d0f43bf6382e0bbb39256d73dacb13811b9b3a3a01016c3"
+    sha256 cellar: :any,                 arm64_sequoia: "73684e6d5d5a89273b6a87cf2557983a269b71e75ce60139fbb3b6a404fe88ad"
+    sha256 cellar: :any,                 arm64_sonoma:  "102b5400e01ce56e4f576b7e533550d3baf17d9e338cf59658102491a925a9be"
+    sha256 cellar: :any,                 arm64_ventura: "0b87ea083232f4b91b1ea94258bb89bbb51c9b43c412a057e16d1aa915101725"
+    sha256 cellar: :any,                 sonoma:        "8140e9c6b27304a62ebc8ef8abb3840c6cf7b95c50f58a7987a9debcf24d5b02"
+    sha256 cellar: :any,                 ventura:       "5110a32a70c67ba1a9c50ce13bd87922bfe65c780fc92197e34b9294c39b1bf3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f302f6f11b0a9ca7fee5ad2903d29e70ee806774adf0de1e4c519f9c45210bb6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b2dc785b9f64d0ca6fd04c859a1235edabc33bed12e32b6940aec6b91c317312"
   end
 
   depends_on "cmake" => :build

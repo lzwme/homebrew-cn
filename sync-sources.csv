@@ -4522,8 +4522,8 @@ Homebrew-homebrew-core/Formula/m/mypy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mysql++.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mysql-client.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mysql-client@5.7.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/mysql-client@8.0.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/mysql-client@8.4.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mysql-client@8.0.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mysql-client@8.4.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mysql-connector-c++.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mysql-search-replace.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mysql.rb, Homebrew/homebrew-core, 1
@@ -7664,7 +7664,7 @@ Homebrew-homebrew-cask/Casks/a/aladin.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alchemy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/alcom.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/alcove.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/a/aldente.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/aldente.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aleph-one.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/alex313031-thorium.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/alfaview.rb, Homebrew/homebrew-cask, 0
@@ -11730,7 +11730,7 @@ Homebrew-homebrew-cask/Casks/h/hammerspoon.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hamrs-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hancom-docs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hancom-word.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/h/handbrake.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/h/handbrake.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/handbrakebatch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/handshaker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hapigo.rb, Homebrew/homebrew-cask, 0
@@ -12538,7 +12538,6 @@ Homebrew-homebrew-cask/Casks/m/menutube.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/menuwhere.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/meridiem.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/merlin-project.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/mesasqlite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/meshlab.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/messenger-native.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/messenger.rb, Homebrew/homebrew-cask, 0
@@ -12990,6 +12989,7 @@ Homebrew-homebrew-cask/Casks/o/openboard.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openboardview.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opencat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/openchrom.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/o/opencloud.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openconnect-gui.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opencore-configurator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/opencore-patcher.rb, Homebrew/homebrew-cask, 1
@@ -15089,6 +15089,7 @@ codello-homebrew-brewery/Casks/lilypond-font-ross.rb, codello/homebrew-brewery, 
 codello-homebrew-brewery/Casks/lilypond-font-scorlatti.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/lilypond-font-sebastiano.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/ovftool.rb, codello/homebrew-brewery, 0
+codello-homebrew-brewery/Casks/renew.rb, codello/homebrew-brewery, 0
 codello-homebrew-brewery/Casks/seadrive@3.rb, codello/homebrew-brewery, 0
 codello-homebrew-brewery/Casks/ultrastar-creator.rb, codello/homebrew-brewery, 1
 codello-homebrew-brewery/Casks/ultrastar-deluxe.rb, codello/homebrew-brewery, 1

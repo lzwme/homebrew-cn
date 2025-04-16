@@ -1,9 +1,9 @@
 class Neon < Formula
   desc "HTTP and WebDAV client library with a C interface"
   homepage "https://notroj.github.io/neon/"
-  url "https://notroj.github.io/neon/neon-0.34.1.tar.gz"
-  mirror "https://fossies.org/linux/www/neon-0.34.1.tar.gz"
-  sha256 "29a9a8ee1468e7224eb4e4deb4445ef9c56940b41d50941570aac78a6021d461"
+  url "https://notroj.github.io/neon/neon-0.34.2.tar.gz"
+  mirror "https://fossies.org/linux/www/neon-0.34.2.tar.gz"
+  sha256 "f98ce3c74300be05eddf05dccbdca498b14d40c289f773195dd1a559cffa5856"
   license "LGPL-2.0-or-later"
 
   livecheck do
@@ -12,13 +12,13 @@ class Neon < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5de7501547df3cecbfb02f33c5c9def5019a535102c4e0f0ff28e7e0af120f98"
-    sha256 cellar: :any,                 arm64_sonoma:  "16eaf4da6e271a6cfe5070f38f67de0e9ee56b3f91259812515b53d343b6ae79"
-    sha256 cellar: :any,                 arm64_ventura: "cf8a86addf7031af206cd21a2c71ee82b90324b7c6666c8b43c84730e0fa2310"
-    sha256 cellar: :any,                 sonoma:        "787440fdcd863a783a269dc2aa055f09ce8b2b55e103dd85c771dfce68088f33"
-    sha256 cellar: :any,                 ventura:       "e56872eae4e9d9cba27f623f1987f63c6580a462e12d0c04f6086ac81dedcacf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8e8666b749a2af298853938a6eb674e215241e71ed994c31ca32d2d0cc49644"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95a2968ed5046c5668ccbbdb1d5a174bbf2e8f4bfbbe097217b1209d1ef90b43"
+    sha256 cellar: :any,                 arm64_sequoia: "3f496943bca776d801cc69ed3030cbc674c2fbc0389eff638f695b254bd0c7f7"
+    sha256 cellar: :any,                 arm64_sonoma:  "cdeeaa3cea7d5264e40ab92a95390e69f3a03edcb98fc16bdbb6575e0a26668f"
+    sha256 cellar: :any,                 arm64_ventura: "6f9a4360b98d572185c32090f352e4ad3d3cbe454d0b91126ee6569946a2171d"
+    sha256 cellar: :any,                 sonoma:        "32590d82f754c66457a2d9b9881cd12802b714d80eabc71f792a340be3e08a86"
+    sha256 cellar: :any,                 ventura:       "09a70e28898fc6a10d5ec3e95b3ba90e9fe25d5115c90d5c18e68e2a71e794fa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "62017abdb6ff75cc096e9e953e8e663d5b8d2d2ba16bffedc0d3b88db7397b7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3316437aca39c321785644e5cfc62a627c4cf9b90e7b271b339ef89c15488611"
   end
 
   depends_on "pkgconf" => :build

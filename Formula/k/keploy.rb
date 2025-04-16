@@ -1,18 +1,18 @@
 class Keploy < Formula
   desc "Testing Toolkit creates test-cases and data mocks from API calls, DB queries"
   homepage "https:keploy.io"
-  url "https:github.comkeploykeployarchiverefstagsv2.5.1.tar.gz"
-  sha256 "f960160510c19361f5d84771ef9372f1368c3d8edcc9714580e82fa55fa5c581"
+  url "https:github.comkeploykeployarchiverefstagsv2.5.2.tar.gz"
+  sha256 "9a6f6efb70d324b2728bf0adbe7421a5fe91f37188efd4969a5849ce361b3203"
   license "Apache-2.0"
   head "https:github.comkeploykeploy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ad45cbc18fb17001e69df35f977e35d7e32f9ca638813be570a0387b9151f9fb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad45cbc18fb17001e69df35f977e35d7e32f9ca638813be570a0387b9151f9fb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ad45cbc18fb17001e69df35f977e35d7e32f9ca638813be570a0387b9151f9fb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f04178a4b93739e4b6b08960370f326920343f185011f05d8402507197f0e054"
-    sha256 cellar: :any_skip_relocation, ventura:       "f04178a4b93739e4b6b08960370f326920343f185011f05d8402507197f0e054"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8090b0894c5d5f65e49dfbf2fa2efe1362ebb9ba302625c08e86ac27f1514e33"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e387686cae96b89b3245fc1bdad7d5f33622446744b296fbf8725953629ace2d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e387686cae96b89b3245fc1bdad7d5f33622446744b296fbf8725953629ace2d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e387686cae96b89b3245fc1bdad7d5f33622446744b296fbf8725953629ace2d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "94c820a992e6618a10dfdb0d223ff7f2872b84768e6b9218f74d3c4e1c94a3db"
+    sha256 cellar: :any_skip_relocation, ventura:       "94c820a992e6618a10dfdb0d223ff7f2872b84768e6b9218f74d3c4e1c94a3db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbfc1333454d5b9a879a6e97f48050d40e72f6299ab5d33f0c6fa2398d5caf5f"
   end
 
   depends_on "go" => :build

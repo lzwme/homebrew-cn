@@ -7,13 +7,14 @@ class Rustup < Formula
   head "https:github.comrust-langrustup.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4de3da0ff78d828d97242d4d12cd3619ccd0222203089b0bc1d8c2139a61e1c8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "37d3198bae63857f975f1ab5ca4f5afd2e19e847f443bef91138f9b174739e5f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e00fc2d3c0df30a522f31b471c12c02ee817232f7f0989a6fe415cd70287820b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5fae9c9f2a9ec5ff0a2ba14e74f749fac8a00ddf1f95f8dedcf1943c17cccf57"
-    sha256 cellar: :any_skip_relocation, ventura:       "03da72a2b82c5ae620eb15cf1f430e7c966efb12b4c998be5abdfbbeab15930a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ecc530a7d461ab83d6144ee7a458cf17f8466679d486936b7c0b7447faf7f3b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf42b2a4095128a2b95f86fbec48f94fe76b1feff89ea57c2b7414a93d57eee5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca99f48302c98be223be9979e5a4bd1ec9aa78ebbbb54392e7d61ea7eebc02a4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed181c5231c82e89acf5e23177e9f721a2a513bda1c6230e542c5fcbd019da9b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "13b9e160e7e08db280d01c1976745e608feebe4c132a91595c85a897067131b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5425bf7c4f685d3f1b907b03df1037c3df5dc214fc7ad4baa55dfbd94c463e62"
+    sha256 cellar: :any_skip_relocation, ventura:       "d46005331c7c1566d5d5c6da5e29e5677f3a7d171ba64a4895c33da86743edf2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4dcfe6b3852131919ff2ec8adb0b967c83abca11103bcf24a4874d179ee752d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6281a03a099d88476ec5ffe2069e8730078125ec0b27e928be6b37b7f247e42"
   end
 
   keg_only "it conflicts with rust"
@@ -46,6 +47,10 @@ class Rustup < Formula
     <<~EOS
       To initialize `rustup`, set a default toolchain:
         rustup default stable
+
+      If you have `rust` installed, ensure you have "$(brew --prefix rustup)bin"
+      before "$(brew --prefix)bin" in your $PATH:
+        #{Formatter.url("https:rust-lang.github.iorustupinstallationalready-installed-rust.html")}
     EOS
   end
 

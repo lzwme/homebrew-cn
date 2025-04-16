@@ -7,6 +7,11 @@ class XCmd < Formula
 
   head "https:github.comx-cmdx-cmd.git", branch: "X"
 
+  livecheck do
+    url :stable
+    strategy :github_releases
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3cb0b1efc95f9cbf5a8f9c56f3872fd99dcfb15c6f36559ffeede268db2337e2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3cb0b1efc95f9cbf5a8f9c56f3872fd99dcfb15c6f36559ffeede268db2337e2"
