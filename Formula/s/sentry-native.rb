@@ -1,18 +1,18 @@
 class SentryNative < Formula
   desc "Sentry SDK for C, C++ and native applications"
   homepage "https:docs.sentry.ioplatformsnative"
-  url "https:github.comgetsentrysentry-nativearchiverefstags0.8.3.tar.gz"
-  sha256 "aa35384cbcac5e91249a1101ed16e32e7da5ed387595b9fc7d914ae58f0eaac5"
+  url "https:github.comgetsentrysentry-nativearchiverefstags0.8.4.tar.gz"
+  sha256 "9dd82daea1c51c2316c49e9e4737ab4c32a79470f5567b93115bb3a0fde4b93f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b868fe4c5e7f8e34472adc7f8b25b403d21a1334af7dc431846cb2707c081481"
-    sha256 cellar: :any,                 arm64_sonoma:  "e456c2f6027015f80e1ffec75953ac133631c986e1b48d580e0f0fc1e5e2ff1b"
-    sha256 cellar: :any,                 arm64_ventura: "9d73d3838dfa72ae73adfd1af5c7bf727a608d321e25065a852947b043b0c7c9"
-    sha256 cellar: :any,                 sonoma:        "6e29ba37e05a10f681549496c00cb033be9bc7f55e5d85f6278154f5e6b6d9f4"
-    sha256 cellar: :any,                 ventura:       "4e6dcdd45dd9240816a5f8cae76e87092d4b9f27d862169f11a57eff83ad00bf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f91ba04e2014681376b7910ad9d379e86b4e087cd6751e5adc247e3b2260e169"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b7f7343375e4885cfea46a9811fffd93c7c28b3de3577cf6a13a6cc06323ff4"
+    sha256 cellar: :any,                 arm64_sequoia: "660abb347ab20a340bcadf24c0fa824da82e31736a6f8acf8794246b9ccdb4a3"
+    sha256 cellar: :any,                 arm64_sonoma:  "789d7be4e53003553ae97314e5aa6b089b4942c666c7887071f11de2737e87d4"
+    sha256 cellar: :any,                 arm64_ventura: "4882f061d1617784f6d79f0427134d8c24cd753b10939d7bbb8050d3c1fec0ea"
+    sha256 cellar: :any,                 sonoma:        "9f9578a0e89df2aff0e0bc464cbdc94e214c754c80698c9f6672e6ca1e5cce23"
+    sha256 cellar: :any,                 ventura:       "321779ce15d4023a5a02f6f0cfad4770ae3780eb9e81555867eb1550fbd4f990"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "43e174d2d052d20953bc29c177f60fceba3c83c9569a8ba95afe96b973e3edd4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fb98a486f1f22731d5144f1cca2c83e36b7eedd7d6ce7b4036e92369e2b877c"
   end
 
   depends_on "cmake" => :build

@@ -2,12 +2,12 @@ cask "cap" do
   arch arm: "aarch64", intel: "x86_64"
 
   on_arm do
-    version "0.3.38,01JR834Z2GSX2YG77ZSG04V126"
-    sha256 "f052b643c39b258029a5f7cc6c0d9582f31921e6c638a5f9772f3b9a077c2535"
+    version "0.3.41,01JRZ4B8S469Q8PDGSETPN4MEJ"
+    sha256 "8f566c3fccd313f147f498fc9463277440203fe1eec8e80b668e6887c2e1a442"
   end
   on_intel do
-    version "0.3.38,01JR82GTHJWGQDD5BXBSFT8H88"
-    sha256 "88fea3908bb17a92b54a8a8dc43a0df6848486253c1a235434b7f6c8488f6ca9"
+    version "0.3.41,01JRZ3ST4T695CRR10QVJMPE7Z"
+    sha256 "0edce84dd3fce4819f29d170c685cf88df442cc3d0f431aa020ba6d441af8d87"
   end
 
   url "https://cdn.crabnebula.app/asset/#{version.csv.second}",

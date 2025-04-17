@@ -1,17 +1,17 @@
 class Statesmith < Formula
   desc "State machine code generation tool suitable for bare metal, embedded and more"
   homepage "https:github.comStateSmithStateSmith"
-  url "https:github.comStateSmithStateSmitharchiverefstagscli-v0.17.5.tar.gz"
-  sha256 "185fc6c05c8c950153bb871ffdad6de47ebf2db18c4607cd4005662d5d9f79b6"
+  url "https:github.comStateSmithStateSmitharchiverefstagscli-v0.18.1.tar.gz"
+  sha256 "717f83f58f8a12c6efd1180082b99c80dbab47dc21ae3c401842d2421bccdd53"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "06a75aa770bfbe5736191b850192f3018d60de182fb55dbb3a84dba2b4a7c90c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "926fafa1d15bcca00d6372824d26c6bbd55a59b0a6cf5cf34ec338c7462321e4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0a11d4baa36bad4b9781afeda8e6767a5e6883e800cfbda179755c41f0344f13"
-    sha256 cellar: :any_skip_relocation, ventura:       "0a52242c5fc55c753a125e12de944672d59ca660c5f7852b7e8809996380b0b6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3ea33392880ca8706e3013cd7d491be55f24ac755a0f0907956d07932937cf37"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cccfa195619b84f8094ad0a86f8b6ec9b6f11d6c137bbedca6e7f10d06c3c2c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1576f1684b5f3c71da50c27a0115b10c19730eb7c692352ed3ccc01520f9439a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fae6c6d082cfdc2aed41e6da7283e8daff7cf31ee8886ae6d993f703342237a8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3515a7b0faf682bd995588b85dd7c85412246cc7b13fcb69ec3f444ebea56774"
+    sha256 cellar: :any_skip_relocation, ventura:       "9c4af9949d17eda049704c3c42ff69dc19b16e24cb16130c76c07ee8e1d64319"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f9d99ffff23a0b6c5b8fa284c0c0854d8f99cf65e1c4955c368c8bd5c595e0fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "162ea85fb02f74674f654ec929683af210d1868afee2dddd9ea271f98d112fe6"
   end
 
   depends_on "dotnet"

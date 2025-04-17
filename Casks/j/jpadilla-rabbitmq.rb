@@ -8,10 +8,16 @@ cask "jpadilla-rabbitmq" do
   desc "App wrapper for RabbitMQ"
   homepage "https:jpadilla.github.iorabbitmqapp"
 
+  deprecate! date: "2025-04-15", because: :unmaintained
+
   app "RabbitMQ.app"
 
   zap trash: [
     "~LibraryCachesio.blimp.RabbitMQ",
     "~LibraryPreferencesio.blimp.RabbitMQ.plist",
   ]
+
+  caveats do
+    requires_rosetta
+  end
 end

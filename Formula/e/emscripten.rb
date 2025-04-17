@@ -18,12 +18,14 @@ class Emscripten < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bb8585ef66dd08b3a071923e3baee6f4f5e055b336b6e64fd72b191060bd2678"
-    sha256 cellar: :any,                 arm64_sonoma:  "0d750dca4d78e27de5aab41a5ac5f4c7ceed220dd0dd7e3d28d1e221dc875981"
-    sha256 cellar: :any,                 arm64_ventura: "0d16e993cfe4b1d6df2aabde2b3b3d6b26957cdb6421ff9cf97a1d1fe623b3d2"
-    sha256 cellar: :any,                 sonoma:        "5be5e04d0b9a8208ea4ab205fdce6f4a19fcbba040fa0eeb00895e7e0539f5ee"
-    sha256 cellar: :any,                 ventura:       "09a0f050cd231ba691fe01ce6083c09f399ee1d9789e21f73329f9693b976ab9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8bcbffe4761406c1514027396ba1a82219ae23d060919136597551380c1ab28"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "8d98eabe965c37eb816fe7aa3dab1969f9e1738c995d6cc33ee1579887039fca"
+    sha256 cellar: :any,                 arm64_sonoma:  "6134fdeccf8f4d5f971234f1c796271753f4701558996ef432204f63e8b3dcb3"
+    sha256 cellar: :any,                 arm64_ventura: "14a7f66841bd9c5e922a9125341845e2eafda5f1346fd3be75ad887f6e1bb044"
+    sha256 cellar: :any,                 sonoma:        "c25b2e5cdabbe2612272579980fecbada8a7c50345bc1f5424a340737f5c2432"
+    sha256 cellar: :any,                 ventura:       "6557dd81bb0d80023cf130bde873ac8b03ed822bd3d366387d40039d04df6252"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "370f14ad8842ff7243b41c70c650792d4bb3044a10f4f32263ed13c33ae9cf1f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "404f277c087778a105d2f8037a37c276d3065a189e6057d5f7388a63fd0a755f"
   end
 
   depends_on "cmake" => :build
@@ -63,8 +65,25 @@ class Emscripten < Formula
   # https:chromium.googlesource.comemscripten-releases+<commit>DEPS
   # Then use the listed binaryen_revision for the revision below.
   resource "binaryen" do
-    url "https:github.comWebAssemblybinaryen.git",
-        revision: "8b47ebf8ad8609f7b2f511f268e6b9302979816f"
+    url "https:github.comWebAssemblybinaryenarchive0997f9b3f1648329607d9bb54e29605c9081fbba.tar.gz"
+    version "0997f9b3f1648329607d9bb54e29605c9081fbba"
+    sha256 "f45fc5f090046af463ed028b83ce24144fd32a2fae9a6686c233ddc7a3c2df9f"
+
+    livecheck do
+      url "https:raw.githubusercontent.comemscripten-coreemsdkrefstags#{LATEST_VERSION}emscripten-releases-tags.json"
+      regex(["']binaryen_revision["']:\s*["']([0-9a-f]+)["']i)
+      strategy :json do |json, regex|
+        # TODO: Find a way to replace `json.dig("aliases", "latest")` with substituted LATEST_VERSION
+        release_hash = json.dig("releases", json.dig("aliases", "latest"))
+        next if release_hash.blank?
+
+        release_url = "https:chromium.googlesource.comemscripten-releases+#{release_hash}DEPS?format=TEXT"
+        match = Base64.decode64(Homebrew::Livecheck::Strategy.page_content(release_url)[:content]).match(regex)
+        next if match.blank?
+
+        match[1]
+      end
+    end
   end
 
   # emscripten does not support using the stable version of LLVM.
@@ -72,8 +91,25 @@ class Emscripten < Formula
   # See binaryen resource above for instructions on how to update this.
   # Then use the listed llvm_project_revision for the tarball below.
   resource "llvm" do
-    url "https:github.comllvmllvm-projectarchive553da9634dc4bae215e6c850d2de3186d09f9da5.tar.gz"
-    sha256 "ce07ac6c5ef4d1d3a1577b83d5ea144d1b02f46a90a3600e79c3954b9d12b4de"
+    url "https:github.comllvmllvm-projectarchive4775e6d9099467df9363e1a3cd5950cc3d2fde05.tar.gz"
+    version "4775e6d9099467df9363e1a3cd5950cc3d2fde05"
+    sha256 "837629adc13003cb2556880e98e9b8fc9b77fb805424278a6026ed64227a9238"
+
+    livecheck do
+      url "https:raw.githubusercontent.comemscripten-coreemsdkrefstags#{LATEST_VERSION}emscripten-releases-tags.json"
+      regex(["']llvm_project_revision["']:\s*["']([0-9a-f]+)["']i)
+      strategy :json do |json, regex|
+        # TODO: Find a way to replace `json.dig("aliases", "latest")` with substituted LATEST_VERSION
+        release_hash = json.dig("releases", json.dig("aliases", "latest"))
+        next if release_hash.blank?
+
+        release_url = "https:chromium.googlesource.comemscripten-releases+#{release_hash}DEPS?format=TEXT"
+        match = Base64.decode64(Homebrew::Livecheck::Strategy.page_content(release_url)[:content]).match(regex)
+        next if match.blank?
+
+        match[1]
+      end
+    end
   end
 
   def install
@@ -161,7 +197,9 @@ class Emscripten < Formula
     end
 
     resource("binaryen").stage do
-      system "cmake", "-S", ".", "-B", "build", *std_cmake_args(install_prefix: libexec"binaryen")
+      system "cmake", "-S", ".", "-B", "build",
+                      "-DBUILD_TESTS=OFF",
+                      *std_cmake_args(install_prefix: libexec"binaryen")
       system "cmake", "--build", "build"
       system "cmake", "--install", "build"
     end
@@ -169,9 +207,9 @@ class Emscripten < Formula
     cd libexec do
       system "npm", "install", *std_npm_args(prefix: false)
       # Delete native GraalVM image in incompatible platforms.
-      if OS.linux?
+      if OS.linux? && Hardware::CPU.intel?
         rm_r("node_modulesgoogle-closure-compiler-linux")
-      elsif Hardware::CPU.arm?
+      elsif OS.mac? && Hardware::CPU.arm?
         rm_r("node_modulesgoogle-closure-compiler-osx")
       end
 

@@ -1729,6 +1729,7 @@ Homebrew-homebrew-core/Formula/e/erlang@24.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlang@25.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlang@26.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erlang_ls.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/e/erlfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/erofs-utils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/esbuild.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/eslint.rb, Homebrew/homebrew-core, 1
@@ -4163,8 +4164,8 @@ Homebrew-homebrew-core/Formula/m/mariadb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@10.10.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@10.11.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@10.4.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/mariadb@10.5.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/mariadb@10.6.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mariadb@10.5.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mariadb@10.6.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@10.9.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@11.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@11.1.rb, Homebrew/homebrew-core, 0
@@ -9005,7 +9006,7 @@ Homebrew-homebrew-cask/Casks/f/forkgram-telegram.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/forklift.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fossa.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fotokasten.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/f/foxglove-studio.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/foxglove.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/foxit-pdf-editor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/foxitreader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/foxmail.rb, Homebrew/homebrew-cask, 0
@@ -12193,7 +12194,7 @@ Homebrew-homebrew-cask/Casks/l/lab.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/label-live.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/labplot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/laconvolver.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/l/lagrange.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/l/lagrange.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lando.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lando@edge.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/landrop.rb, Homebrew/homebrew-cask, 1
@@ -12738,7 +12739,7 @@ Homebrew-homebrew-cask/Casks/m/multibit-hd.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/multifirefox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/multimc.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/multipass.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/multipatch.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/multipatch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/multitouch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/multiviewer-for-f1.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mumble.rb, Homebrew/homebrew-cask, 1
@@ -12892,6 +12893,7 @@ Homebrew-homebrew-cask/Casks/n/notesollama.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/noti.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/notion-calendar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/notion-enhanced.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/n/notion-mail.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/notion.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/noto.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/notunes.rb, Homebrew/homebrew-cask, 1

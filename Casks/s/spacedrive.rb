@@ -11,8 +11,10 @@ cask "spacedrive" do
   homepage "https:github.comspacedriveappspacedrive"
 
   livecheck do
-    url :url
-    strategy :github_latest
+    url "https:www.spacedrive.comapireleases"
+    strategy :json do |json|
+      json.map { |item| item["version"] }
+    end
   end
 
   auto_updates true

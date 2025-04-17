@@ -1,8 +1,8 @@
 class BlockGooseCli < Formula
   desc "Open source, extensible AI agent that goes beyond code suggestions"
   homepage "https:block.github.iogoose"
-  url "https:github.comblockgoosearchiverefstagsv1.0.17.tar.gz"
-  sha256 "bf643964abc31458cc5d320ee43800b50fd5d6058458a6896489ac84d4563f57"
+  url "https:github.comblockgoosearchiverefstagsv1.0.18.tar.gz"
+  sha256 "7542d1f35f5bfd1cf47cec749d429e27b9d5c390112139c1b6c3e32ebf5df6ae"
   license "Apache-2.0"
   head "https:github.comblockgoose.git", branch: "main"
 
@@ -12,13 +12,13 @@ class BlockGooseCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c7fd465d180f12bdaffd0a3a69f8382f1e339535cb588c59d5be8add4f53837"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "496ff008ee3e03ad6f89a0a99fb7bf72ded0b9453f7f0697aa1d3471a67d6420"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fa4f83e962afbbc02f57c396a72dcce61450dbd9a65be648f1b228e9731ce58d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f817ec804ad60e9b21ce934e5f15f90a542a75b1e35cdc53efbe2dd88466d744"
-    sha256 cellar: :any_skip_relocation, ventura:       "9e813d60a15a8be163bd190523f0b218cf371e8c9eb0e674b2f97267c297a1a1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b37b81f0fa447181ed8d5205aaf011f677e5798fde3132b9e4db09aed0ac9cf7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3817b8f47942135f8c32b55e4fcc7784e6fae73fda8e185f0eceab536b6784f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4dacf8aa769c41d727cb53053df4a625ae86b975521dde690703abf5d48a1640"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a9e7b311f4d66346a5bcb77afc11a3c444e9376d629a61924199d2836b96417"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0efadff8a032f8af551af019794175d770c9e33c30495a487d4be54e666333bc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ab5af4638162c5f88520fed0d05c619d2e14189ae3fac7f479362112029e1250"
+    sha256 cellar: :any_skip_relocation, ventura:       "0a5ca706f286598580d5429109679fc6481cd0bdf11d0668b12fc683a18706fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4e1ccb0487bb2955bee0019b66cfb278836862dbaa3b467903790527068782e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e8b080060cc1ca62c9ad9382141b498c1850393970324f96d0e9be6117ba85f"
   end
 
   depends_on "pkgconf" => :build
@@ -39,9 +39,6 @@ class BlockGooseCli < Formula
 
   test do
     assert_match version.to_s, shell_output("#{bin}goose --version")
-
-    output = shell_output("#{bin}goose agents")
-    assert_match "Available agent versions:", output
-    assert_match "default", output
+    assert_match "Goose Locations", shell_output("#{bin}goose info")
   end
 end

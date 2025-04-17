@@ -8,8 +8,10 @@ cask "stability-matrix" do
   homepage "https:github.comLykosAIStabilityMatrix"
 
   livecheck do
-    url :url
-    strategy :github_latest
+    url "https:cdn.lykos.aiupdate-v3.json"
+    strategy :json do |json|
+      json.dig("updates", "stable", "macos-arm64", "version")
+    end
   end
 
   auto_updates true

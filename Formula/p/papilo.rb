@@ -1,20 +1,19 @@
 class Papilo < Formula
   desc "Parallel Presolve for Integer and Linear Optimization"
   homepage "https:www.scipopt.org"
-  url "https:github.comscipoptpapiloarchiverefstagsv2.4.1.tar.gz"
-  sha256 "42f27b6d76f4d68f2c19f0a4d19e77f9bf3d271ccef2ff9303b58f8107e28aa1"
+  url "https:github.comscipoptpapiloarchiverefstagsv2.4.2.tar.gz"
+  sha256 "d2042c06b77db8dbb63d21ae238a110ffbc21d3378a0838c8091dcb9fab3ca4a"
   license all_of: ["LGPL-3.0-only", "GPL-3.0-only"]
-  revision 1
   version_scheme 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6860e6b1e457b8effe9f9720a9c1e3168eeed9105cc46fa31fcb9bd6a15973d4"
-    sha256 cellar: :any,                 arm64_sonoma:  "3121732cde480afa4d0f59f2b25df5a04ec447ee262613332224734e7fb93a08"
-    sha256 cellar: :any,                 arm64_ventura: "57185fa7ca4c61a4c8c1deed733a8bc190c26ff4cb4f141e451ea53b3d3b4d92"
-    sha256 cellar: :any,                 sonoma:        "98f60b859ba562c3ba817cd8fe124135e56de95b46c0357e7d74b849656ebc57"
-    sha256 cellar: :any,                 ventura:       "10c4e34121917d0e5b3d08d7cdef7b25249ecdb9cddc2d6c6d851a88f956c54b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9472684b1ba06d4bb6fe1de0004086adb83d5993ac4d165db8ee1e248025e5a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b63cb9dfe575deb4006a5954c6a64d0ab27faa14dcd07606ca99cb8beb8968fc"
+    sha256 cellar: :any,                 arm64_sequoia: "69303d7be4cae54e6057a1b8f427dde0e1ef88f306a439a7f0ac3ddb00f73a15"
+    sha256 cellar: :any,                 arm64_sonoma:  "9bf7eb8e4a5d124a463f0edf233de0879bb51a6b55df5dd2e4d86e5d3223dcf3"
+    sha256 cellar: :any,                 arm64_ventura: "3353842b47b32e67ab07c771fcddcc72a1d91f6946b74e47d6b2bb641b11ea8f"
+    sha256 cellar: :any,                 sonoma:        "ccdfd62b1da17bd86e69831130a8fcf6fdc78117707471e3086fd5230cbb2f6b"
+    sha256 cellar: :any,                 ventura:       "7b3e64c58cad180dc630f30058d9abe663639e7ee3dc939b8bce53261c15c979"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f48be228befa3be195b667fe421a60c7f64d7998340cfa39e8c32b35661a35ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9bf1ca4dacaa67aa46d0f48a3350dc66f18468f775a92c19942804d4ed0a8c3b"
   end
 
   depends_on "cmake" => :build

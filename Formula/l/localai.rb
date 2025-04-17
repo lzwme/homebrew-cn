@@ -3,17 +3,17 @@ class Localai < Formula
 
   desc "OpenAI alternative"
   homepage "https:localai.io"
-  url "https:github.commudlerLocalAIarchiverefstagsv2.27.0.tar.gz"
-  sha256 "595ade8031a8f7d4fd23c4e3a5c24b37f542059f3585c9f15352da4fb79c06e0"
+  url "https:github.commudlerLocalAIarchiverefstagsv2.28.0.tar.gz"
+  sha256 "b75f7cffb3b105c1f5e7cd4aa2d5c18cf461b6af0977d150d654d596f1dc8d79"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "916762f5f150ed512bb360288131b670e6427b526e6e480f4511d4f93514f930"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "98e12b6113ea36844382ce0595a5d14b4ff2fd9337cb4a7c4ceb9406e1a8b85d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4d90aa4ed4e526312efa24791ea0d3d674dbff652598649fac15ca946abbddde"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cfd6d4afaffd374de8c1b79f9f4116e5e7d23e0fe35efb3435c96bf8abe435c7"
-    sha256 cellar: :any_skip_relocation, ventura:       "69404bfbc7780df4439d1dd6f89df61685800699d2863b8001f8486462b4565d"
-    sha256                               x86_64_linux:  "8661a59a281d2837ee130910cf4b838c608f0d5bd1d9307e5d8bb047e2ae952b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b50f832facfac7f166ca59de5d3b7f241b10bcfe0dcdee6afec90b3d557e1812"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c82bb99e40beb0bb781ecf1087d0a0c3deeca7f2423d177c831e5ee639db516"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "27a1f5a845087a4604800f0eee1642747f95f68a4f9eb268f6180aba2cbd4638"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dc8a9eb26fe99a47a098f82f050302a548f6f529b86c14f1b90f5f602e204b07"
+    sha256 cellar: :any_skip_relocation, ventura:       "71df6ef43bb378c2fac806673579b47e5a717e0805a17227fd9ddea6b0070043"
+    sha256                               x86_64_linux:  "3a36fc178cc6108855d3f75d2c7751d616e9a176901ecc5dc6dca9e2ff5e134e"
   end
 
   depends_on "abseil" => :build
@@ -35,6 +35,9 @@ class Localai < Formula
   end
 
   def install
+    # Fix to CMake Error at encodec.cppggmlCMakeLists.txt:1 (cmake_minimum_required):
+    ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
+
     ENV["SDKROOT"] = MacOS.sdk_path if OS.mac?
 
     venv = virtualenv_create(buildpath"venv", python3)
@@ -50,7 +53,7 @@ class Localai < Formula
 
     spawn bin"local-ai", "run", "--address", addr
     sleep 5
-    sleep 10 if OS.mac? && Hardware::CPU.intel?
+    sleep 20 if OS.mac? && Hardware::CPU.intel?
 
     response = shell_output("curl -s -i #{addr}")
     assert_match "HTTP1.1 200 OK", response

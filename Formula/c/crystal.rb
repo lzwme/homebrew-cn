@@ -2,11 +2,10 @@ class Crystal < Formula
   desc "Fast and statically typed, compiled language with Ruby-like syntax"
   homepage "https:crystal-lang.org"
   license "Apache-2.0"
-  revision 1
 
   stable do
-    url "https:github.comcrystal-langcrystalarchiverefstags1.16.0.tar.gz"
-    sha256 "40d442b32d17878d7d01c05b1471347a9b3973e3f41d288be3703991cd3cd5c3"
+    url "https:github.comcrystal-langcrystalarchiverefstags1.16.1.tar.gz"
+    sha256 "07d2ddb619aa15b30f16f8fafd6417e5e3a0fb6d97ce4f328e683796486976cf"
 
     resource "shards" do
       url "https:github.comcrystal-langshardsarchiverefstagsv0.19.1.tar.gz"
@@ -20,12 +19,12 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1a73745d5d6f112b5da89ce866169b1f5d4e41158d2d7c0e89826661dd8708f0"
-    sha256 cellar: :any,                 arm64_sonoma:  "990f95fc213479106bdd32e04bf9d5003674a236502223002178e927ca6d9644"
-    sha256 cellar: :any,                 arm64_ventura: "9ccdaf124cd8e9a759c8686593a38e2ac6cc50e87c0cd9dddd21d8c0c0b4847b"
-    sha256 cellar: :any,                 sonoma:        "50c5e0f8a7d90603327d10c6f5289be454327913ed807d559e09b5fe60cfe8a8"
-    sha256 cellar: :any,                 ventura:       "8531168efc93d9e05ec8f18e6399c976f66fe6604eeda3476ac1c08deed10338"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2344f59a02d0d713181e7f275f75b9e5b198617035791d3adcc556fc92f681e5"
+    sha256 cellar: :any,                 arm64_sequoia: "73cde12dfb0afd114bac8793431efe3017ca8b3f3581ced7aefb623907c72617"
+    sha256 cellar: :any,                 arm64_sonoma:  "328c7a6ff09e823708a72bee17f240741bb6ff1227fb5ecbd1cd378994e4cb4d"
+    sha256 cellar: :any,                 arm64_ventura: "0b75b63e9c76d1172cd247603922dcf1b03f20df47227c76628386770ce55004"
+    sha256 cellar: :any,                 sonoma:        "79678b3c73cfd665fae6d265dc01420bd0c180d3fb791a0ccc2daee97e3e9599"
+    sha256 cellar: :any,                 ventura:       "b61596c0eb2d258beeba9776535d0bd6f5e025c5e206c6721749dc13812f8ceb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1bf7f006e482e895c38262d57065f3d4deaaa90ad07134a9f367675548955fa"
   end
 
   head do

@@ -1,17 +1,17 @@
 class Weaviate < Formula
   desc "Open-source vector database that stores both objects and vectors"
   homepage "https:weaviate.iodevelopersweaviate"
-  url "https:github.comweaviateweaviatearchiverefstagsv1.30.0.tar.gz"
-  sha256 "31310215ef9c41a74f74e32f340f38c5f5dcf4a74c60176f612895ce5fc4cda0"
+  url "https:github.comweaviateweaviatearchiverefstagsv1.30.1.tar.gz"
+  sha256 "a2584f7f5455ca6637f22000691aa41ff706b6ab7c2f6067ed7d69a7809ada2b"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a306c7c3b9afb86c6e42e938b53e0c1f4d60f4663e15c798399ac538dec2469a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a306c7c3b9afb86c6e42e938b53e0c1f4d60f4663e15c798399ac538dec2469a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a306c7c3b9afb86c6e42e938b53e0c1f4d60f4663e15c798399ac538dec2469a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a79267fa605314962e744124d163ae7a80578797cdfd8a773d8ff7cbd0922214"
-    sha256 cellar: :any_skip_relocation, ventura:       "a79267fa605314962e744124d163ae7a80578797cdfd8a773d8ff7cbd0922214"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec813db651c9c487e90e3498deb10387247154965f05f5dbb2dc7e5756fe2eeb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6993525e6c405d2d53d7ef0fe0d078de884614facd46f2360be55944790b626"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a6993525e6c405d2d53d7ef0fe0d078de884614facd46f2360be55944790b626"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a6993525e6c405d2d53d7ef0fe0d078de884614facd46f2360be55944790b626"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ea9c0c7a5750b84fdde799b1354614af3b0fd70d9df28e403877da81030bec71"
+    sha256 cellar: :any_skip_relocation, ventura:       "ea9c0c7a5750b84fdde799b1354614af3b0fd70d9df28e403877da81030bec71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a6f9da2a7ffe1087a87096a35bcd0042bbc519cd4b5d55879a2b5dc74c49a3cc"
   end
 
   depends_on "go" => :build

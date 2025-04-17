@@ -2,18 +2,18 @@ class Tile38 < Formula
   desc "In-memory geolocation data store, spatial index, and realtime geofence"
   homepage "https:tile38.com"
   url "https:github.comtidwalltile38.git",
-      tag:      "1.34.2",
-      revision: "e40a665f65a5acc09fa8eee110f244616d7894ee"
+      tag:      "1.34.3",
+      revision: "0794ad766835eff2c0f7ef3d6e549763063af475"
   license "MIT"
   head "https:github.comtidwalltile38.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc6adf3f90a703deb17b2ed31d2fe7fb92446486ffb426063bd56dddca98919d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc6adf3f90a703deb17b2ed31d2fe7fb92446486ffb426063bd56dddca98919d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cc6adf3f90a703deb17b2ed31d2fe7fb92446486ffb426063bd56dddca98919d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5869cc5a03fde9d1cc89980fa2d8094e287d59f3bd931344286c31cf7fbf5b6a"
-    sha256 cellar: :any_skip_relocation, ventura:       "5869cc5a03fde9d1cc89980fa2d8094e287d59f3bd931344286c31cf7fbf5b6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73c19f54179b1957cd3836df778312aaf9c93ed4a90a9c45fa8a0bda4b6892f0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ee63c0da1934219deb28427bf003d7f0101c4e2d7e1c5c160fb45b3e4a7492a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ee63c0da1934219deb28427bf003d7f0101c4e2d7e1c5c160fb45b3e4a7492a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9ee63c0da1934219deb28427bf003d7f0101c4e2d7e1c5c160fb45b3e4a7492a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6d80bad2dcfc1d33e11d28b98076416f5fd244b1373a712c3ae4f3f6d05cea6d"
+    sha256 cellar: :any_skip_relocation, ventura:       "6d80bad2dcfc1d33e11d28b98076416f5fd244b1373a712c3ae4f3f6d05cea6d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30e95f8162bcdede2d7bc495fc46b0805015ebd587b4300031c0a326e3207d54"
   end
 
   depends_on "go" => :build

@@ -12,8 +12,10 @@ cask "prowlarr" do
   homepage "https:prowlarr.com"
 
   livecheck do
-    url :url
-    strategy :github_latest
+    url "https:prowlarr.servarr.comv1updatemasterchanges?os=osx&arch=#{arch}"
+    strategy :json do |json|
+      json.map { |item| item["version"] }
+    end
   end
 
   auto_updates true

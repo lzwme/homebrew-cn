@@ -8,16 +8,8 @@ cask "toolreleases" do
   homepage "https:github.comDeveloperMarisToolReleases"
 
   livecheck do
-    url :url
-    regex(^ToolReleases[._-]v?(\d+(?:\.\d+)+)[._-]b(\d+)\.zip$i)
-    strategy :github_latest do |json, regex|
-      json["assets"]&.map do |asset|
-        match = asset["name"]&.match(regex)
-        next if match.blank?
-
-        "#{match[1]},#{match[2]}"
-      end
-    end
+    url "https:developermaris.github.ioToolReleasesappcast_v2.xml"
+    strategy :sparkle
   end
 
   auto_updates true

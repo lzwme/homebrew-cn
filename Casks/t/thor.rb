@@ -8,8 +8,10 @@ cask "thor" do
   homepage "https:github.comgbammcThor"
 
   livecheck do
-    url :url
-    strategy :github_latest
+    url "https:github.comgbammcThorrawmasterReleasesappcast.xml"
+    strategy :sparkle do |items|
+      items.map(&:short_version)
+    end
   end
 
   auto_updates true

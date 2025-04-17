@@ -9,8 +9,8 @@ cask "mindmac" do
   homepage "https:mindmac.app"
 
   livecheck do
-    url :url
-    strategy :github_latest
+    url "https:mindmacapp.github.ioappcast.xml"
+    strategy :sparkle, &:short_version
   end
 
   auto_updates true

@@ -8,8 +8,8 @@ cask "unshaky" do
   homepage "https:github.comaahungUnshaky"
 
   livecheck do
-    url :url
-    strategy :github_latest
+    url "https:raw.githubusercontent.comaahungUnshakymasterappcast.xml"
+    strategy :sparkle, &:short_version
   end
 
   auto_updates true

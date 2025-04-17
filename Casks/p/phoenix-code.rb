@@ -12,8 +12,10 @@ cask "phoenix-code" do
   homepage "https:phcode.io"
 
   livecheck do
-    url :url
-    strategy :github_latest
+    url "https:updates.phcode.iotauriupdate-latest-stable-prod.json"
+    strategy :json do |json|
+      json["version"]
+    end
   end
 
   auto_updates true

@@ -1,15 +1,14 @@
 class Manticoresearch < Formula
   desc "Open source text search engine"
   homepage "https:manticoresearch.com"
-  url "https:github.commanticoresoftwaremanticoresearcharchiverefstags9.2.24.tar.gz"
-  sha256 "46df013f37ac820cafd2257fc53bbcc0a6c1743e590bbf3c78e598780e0dd21b"
+  url "https:github.commanticoresoftwaremanticoresearcharchiverefstags9.2.26.tar.gz"
+  sha256 "df65e5e1d039402aa4a867e23b98bf42d3b6ce59b4dd0d7826b762f6793ae84e"
   license all_of: [
     "GPL-3.0-or-later",
     "GPL-2.0-only", # wsrep
     { "GPL-2.0-only" => { with: "x11vnc-openssl-exception" } }, # galera
     { any_of: ["Unlicense", "MIT"] }, # uni-algo (our formula is too new)
   ]
-  revision 1
   version_scheme 1
   head "https:github.commanticoresoftwaremanticoresearch.git", branch: "master"
 
@@ -20,13 +19,13 @@ class Manticoresearch < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "5fdb72f48510a5194310ec60871411a092a5a74e676f9a45d9fdb2c9704e67fa"
-    sha256 arm64_sonoma:  "eb6c1d5249ae9d29324f547084d3831b7aad9ee27a9fcc75f2b3b4fdd35c66ff"
-    sha256 arm64_ventura: "34737f150e3ab6aca7b567d87ccc2adf2cf35d2a1d42974773779b2b2e011c11"
-    sha256 sonoma:        "746e19ca6479b9e29418649faeb22a391a0a0170cc6fa02e610dbe0cb48d41b2"
-    sha256 ventura:       "644e02cff9a97b1f50323109083fe82c602252319bd685058294f5d7a503be50"
-    sha256 arm64_linux:   "d94a19b007ed35c69453a97df5949b82f2e96e78ef1ebda3ff268a19646547fc"
-    sha256 x86_64_linux:  "9be2a1c5ba2d6d2e868ca422c42d73211b1a86b5a4a9b63bcd49b2f203b5e13b"
+    sha256 arm64_sequoia: "2ce52a7a7dd4720c19825d054f28e830c8db4141475e6f20a5889bce21a27503"
+    sha256 arm64_sonoma:  "bbe4da3c686d6b987a6256297b493137a0cfce4f816507f52f47cd47b8f76300"
+    sha256 arm64_ventura: "9bbbee8452a901cac5199be4816d95bdebc1e968b8061548858aede2121dec2e"
+    sha256 sonoma:        "9556d4559f6c2f4884d1364d4d934afacca4276c3a83add8968f837ae27c68bd"
+    sha256 ventura:       "748b5cc1b127f27c10e348d94e76c1caad6808c7943275768fc2d8294d9bc21c"
+    sha256 arm64_linux:   "cfa448b22ab469491b9361831ade79da4ac1bd9ade3a1ab5c5017a50fb2e9055"
+    sha256 x86_64_linux:  "8fe559b23718cf42a0f9e15742aaa9eb99d99194bd0923adc51ed635ed2505ba"
   end
 
   depends_on "cmake" => :build

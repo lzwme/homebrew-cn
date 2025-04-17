@@ -1,10 +1,9 @@
 class Dwarfs < Formula
   desc "Fast high compression read-only file system for Linux, Windows, and macOS"
   homepage "https:github.commhxdwarfs"
-  url "https:github.commhxdwarfsreleasesdownloadv0.12.1dwarfs-0.12.1.tar.xz"
-  sha256 "5523a5c3aea244cbfbccfe64f1df6053b3901e6af8916fac1530faf0f7a5f07f"
+  url "https:github.commhxdwarfsreleasesdownloadv0.12.2dwarfs-0.12.2.tar.xz"
+  sha256 "9b256d1f2bc17917cd63a1bee3bd5f505076b4d880fcf9daa18a6ca5bca35aeb"
   license "GPL-3.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -13,13 +12,13 @@ class Dwarfs < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "b95bbd2019e3114fb67f0536c192005603ee47eb056101e17a5d94f84399ea76"
-    sha256                               arm64_sonoma:  "48a77a064523c35426db53d84e87c4ad80f21dabd7f55ef925ff90c557fc7622"
-    sha256                               arm64_ventura: "d6fca37e54838bea9befb6fa42df95f21fc09925a01dbf0d5f7a6d05f5bed5fc"
-    sha256 cellar: :any,                 sonoma:        "7c11a116190dea7c1d8e8ac159257ece5fc373dcf28bf8e494481b20e6717533"
-    sha256 cellar: :any,                 ventura:       "626dc822ccc083fc48fa0b9f66739acce2b2e9e83e32fac6015cf6a7c4f9e0db"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "488af58ed8604bbdecc1f426a87a8f51230db2b6086c12cf25057936a946db5c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a71d23a3844150fcf83ebc46920e8531b2df946f86a36ead4704778806a2009"
+    sha256                               arm64_sequoia: "dafeb88fee34b87cfbf5983fd135c663486f824cd482fcec136ea225b512d2d2"
+    sha256                               arm64_sonoma:  "4919cd0620778dc4f6bd1231964623934736f542a8b8cc821f802ae3b017e06d"
+    sha256                               arm64_ventura: "bdae56e82bb1f78fc9ba419de3f6753e207061e4d1e13d860a932b275276f354"
+    sha256 cellar: :any,                 sonoma:        "e9e2b8a85484cc6e503b9b49d5e050fbab725d259ea586fe982c16cfac49503f"
+    sha256 cellar: :any,                 ventura:       "65de4763b4dcfaa51f9143ed60d3f176ca5e025bc1c4b3ecf2ccd9d5a16915e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dae58b9785b7dad6b91bf16c44bfca573bac302b5ca8788ca80ee0e4d540aae9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b928af57c4d4dc4b0e21e451bf5e81358261c770f2b413c28364fd033d5f90d5"
   end
 
   depends_on "cmake" => :build

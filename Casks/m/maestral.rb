@@ -9,8 +9,8 @@ cask "maestral" do
   homepage "https:maestral.app"
 
   livecheck do
-    url :url
-    strategy :github_latest
+    url "https:maestral.appappcast.xml"
+    strategy :sparkle, &:short_version
   end
 
   auto_updates true
