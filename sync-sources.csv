@@ -2937,6 +2937,7 @@ Homebrew-homebrew-core/Formula/i/instead.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/intercal.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/intercept.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/interface99.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/i/intermodal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/internetarchive.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/intltool.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/i/invoice.rb, Homebrew/homebrew-core, 1
@@ -4661,6 +4662,7 @@ Homebrew-homebrew-core/Formula/n/nikto.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nim.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/ninja.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/ninvaders.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/n/nip4.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nixpacks.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nkf.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nload.rb, Homebrew/homebrew-core, 0
@@ -12975,7 +12977,7 @@ Homebrew-homebrew-cask/Casks/o/onedrive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/onekey.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/onionshare.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/only-switch.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/o/onlyoffice.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/onlyoffice.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/ontime.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/onyx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oolite.rb, Homebrew/homebrew-cask, 1

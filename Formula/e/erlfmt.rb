@@ -11,6 +11,7 @@ class Erlfmt < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f1ee4356795cfda85a71a60d1c881ddd929cd2d3407723394abd541da5c0641d"
     sha256 cellar: :any_skip_relocation, sonoma:        "b8b92b9571a99b94d4e70ac8eff531ae1237ed6ee5180ee95f79b50f606164f2"
     sha256 cellar: :any_skip_relocation, ventura:       "c0b75fa981fd2a99924ca62063759138d14c1e30016977a5a8d9900fa77eb8d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e04c2c3c2379399b583171d345a3e48abb88a0ac2b8eaa5c35037dea6da11fd9"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e128140ccd3ebf3093cb97d9e0dbdf7024ba8d8477f6a1b6996c074963fe7034"
   end
 

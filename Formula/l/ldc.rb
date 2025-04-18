@@ -28,14 +28,14 @@ class Ldc < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256                               arm64_sequoia: "36449ae414e34231fc2e2efeb52dfd1440fb8f85661f6e1949a549f26629ed63"
-    sha256                               arm64_sonoma:  "8428db33b0d7a88ef5b528a00dd1fad1f33ca1fdb36b3149a281fbfb8cc9f2c2"
-    sha256                               arm64_ventura: "1c1cbed780079891dd07f15f77021200b58502baad0595c59721d577f81d222d"
-    sha256                               sonoma:        "fb203819c3456a88e723d0d7958e010eeca90db38406b3a2cb100ba12f2476b9"
-    sha256                               ventura:       "192c24c114b06e3d7c7dddbec28f029cf22df142e11983421d31d4d865a218dc"
-    sha256                               arm64_linux:   "979f2477a03297565bda42f05e52ae9abe85b9f4cac0d88b042b3f5e9e2c1cff"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88375463fd83a64305e0cd725d6c552852bd53c2a317895bf918861e4d5325e4"
+    rebuild 2
+    sha256                               arm64_sequoia: "9384ccb16954cc0bd4cdc10cbff3b88f7c4198376adca1180d96f7f7ebd2ba43"
+    sha256                               arm64_sonoma:  "97f6afa4dab17754196e9b29885721d61ce6244cdc2c627ac2d2e4a2ab9f62bc"
+    sha256                               arm64_ventura: "284c606878e28375d5a6bd4dcba1ab090be8022d5fee5e974942c29a383a8e2b"
+    sha256                               sonoma:        "46bb2adaf6f60942728c169eb3ab1c3951133ecdd6816c5ac3ba4aa32b7c7f02"
+    sha256                               ventura:       "212beef9d9dd8f73794f2ca9a6c1786a1920d4f5c21f5800d2b17b09297e8417"
+    sha256                               arm64_linux:   "eccf24bbebc2f4960b38f37612e16316b5cc1941d97930d27418eda01ae38240"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9d640a656f11e1f2e421a1d093a7d8bb183e0052aeca6101176b7b7c14adbed"
   end
 
   depends_on "cmake" => :build
@@ -49,13 +49,15 @@ class Ldc < Formula
 
   resource "ldc-bootstrap" do
     on_macos do
+      # Do not use 1.29 - 1.40 to bootstrap as it segfaults on macOS 15.4.
+      # Ref: https:github.comdlangdmdissues21126#issuecomment-2775948553
       on_arm do
-        url "https:github.comldc-developersldcreleasesdownloadv1.40.0ldc2-1.40.0-osx-arm64.tar.xz"
-        sha256 "04ebaaddfadf5b62486914eee511a8cb9e6802a7b413e7a8799d5a7fa1ca5cb4"
+        url "https:github.comldc-developersldcreleasesdownloadv1.28.1ldc2-1.28.1-osx-arm64.tar.xz"
+        sha256 "9bddeb1b2c277019cf116b2572b5ee1819d9f99fe63602c869ebe42ffb813aed"
       end
       on_intel do
-        url "https:github.comldc-developersldcreleasesdownloadv1.40.0ldc2-1.40.0-osx-x86_64.tar.xz"
-        sha256 "90802f92801b700804b8ba48d8c12128d3724c9dbb6a88811d6c9204fce9e036"
+        url "https:github.comldc-developersldcreleasesdownloadv1.28.1ldc2-1.28.1-osx-x86_64.tar.xz"
+        sha256 "9aa43e84d94378f3865f69b08041331c688e031dd2c5f340eb1f3e30bdea626c"
       end
     end
     on_linux do

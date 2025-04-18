@@ -4,16 +4,17 @@ class Dtools < Formula
   url "https:github.comdlangtoolsarchiverefstagsv2.111.0.tar.gz"
   sha256 "4c391349e929f73b7ffe97da7b98fbbdb04effda3e6389d9d46dc9d9938ece3b"
   license "BSL-1.0"
+  revision 1
   head "https:github.comdlangtools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6778d202df0d520c381dc2673255dad0f918731e4bf342cb4ec2c6496fd434a7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f878981e244a35df18c4e96672b15cef4fed2b6078972201adbb2736891b3d8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f98206ff041de733df29b77e9dc282ac33fed0442a086c42f6d90047e7aa24cf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5ef13d4318457fd18617cc7908faf31cca88cb390bbe03b8f12ba1e2e5fba427"
-    sha256 cellar: :any_skip_relocation, ventura:       "0ee01bf2167c23fb9735c8cd59a1d4da4e9c8510929b50246dc3921932575515"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "30acf8b3f1796a504cd7e9cb7d635913c3bcc37c58f48def9799784d7c30c653"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6584c89d375ae71783b3317e953db07a4bc0a72f48c68b86eff1dc02b91c8a38"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0f6645e51b5da22628b3b64b43acafc4ac335b98afbe8cbee3d10ef88fdaec9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2e3f2aed17e75ef0632e0ec36b9dfb3db9566af400d3e2ec027aa89bf1699234"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4ffb209a7cc7a4e05c90771030c6c91941be35dd9884fe58f9dd14ef82c5fce1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6b01da4e8af6781c0a9333fc0e27fbcd2b758e0e9a99fc49a6a3123f0a1725d2"
+    sha256 cellar: :any_skip_relocation, ventura:       "7fbe7a851ed67642ac50e8a196ac216278eb7528f4c150360c9d4a219be3d30f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d8fd7789bb36d3a8577f925224336d7bc6cd2b891b9065a81d91b6e97b7b73b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6eb2ded59c5d481a4ef6d450a65ac15bdf527b9d56ab89bc293fbd68f9c6a180"
   end
 
   depends_on "dub" => :build

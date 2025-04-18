@@ -3,17 +3,18 @@ class EvernoteBackup < Formula
 
   desc "Backup & export all Evernote notes and notebooks"
   homepage "https:github.comvzhd1701evernote-backup"
-  url "https:files.pythonhosted.orgpackages03e1827251cbb6c73f895325e1f5d0a21c532995b3560e677d09e8ec1340a952evernote_backup-1.11.0.tar.gz"
-  sha256 "c3dc859cfdb52e9a933654dce32be0c7e6af342860ae256f96d6964d9da25fb6"
+  url "https:files.pythonhosted.orgpackages425041b3704d515025fbf6319e92a94db1c85cc9a6998a1a3ce67cee4bb46400evernote_backup-1.12.0.tar.gz"
+  sha256 "74eb1d84882f7f2ca73878fa3e5fec9ec4e069861d68459f94e4d165e8ced36d"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c781fec483b28f1c8a5f0cc8f89fe1862787c90bbc65b1edbe373dc1ab57ffa9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5a50d595016dd318293a690cb571ef3cf885c293d174fc37ec8a622a754392b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a9be38e667cce5069024f4758b6140a4216448ca680ef1352e38c2eff4adcc0a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2f0d7fe64b7e3a14d86473458972e30a5ab0e10fd5dd8e06bb2824c924a39853"
-    sha256 cellar: :any_skip_relocation, ventura:       "dfccb986b2125720aeec62bc77fa4a31e29b67e82f8ba5d4743d43e856cf223a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ab5a93b8ea3623206480f07c2c375310206bc7b8da3778a889b18e919459e9f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a4b78dc2f60cdf4a9653fe20024fd4648ec538568347e83115fe315766dd1491"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "29fb4a8c3ea8e1b331f0885900c5b4239d8d1c3c671bd1f031f652072086f091"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7c56e30a9752117d987c05772e5bf87e945b925b67258bc30e0c7af2b5449a02"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bb05319538bb8839473fc422d3e8556cbf57b4c9e296a2a66bbad7ca2e521738"
+    sha256 cellar: :any_skip_relocation, ventura:       "72886b93c58b54be1fc3e441a06edbee5e22d0c564d60a8105f97dd51a0aef2d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea7cbb990fe2bbfa846d2d25982eb9597114dc355c253c23db0c9184c4beb3ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb8bbf340da8b020c2a9128c6d24fa1e019f75b57686a48a1a4217c29769ac9d"
   end
 
   depends_on "certifi"

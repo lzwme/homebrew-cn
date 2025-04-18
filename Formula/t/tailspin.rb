@@ -1,28 +1,22 @@
 class Tailspin < Formula
   desc "Log file highlighter"
   homepage "https:github.combensadehtailspin"
-  url "https:github.combensadehtailspinarchiverefstags5.2.1.tar.gz"
-  sha256 "c74823ad1f63017001db6f891f8d4c37b50cbbcad8be61634a67bb9ac7d74ad7"
+  url "https:github.combensadehtailspinarchiverefstags5.3.0.tar.gz"
+  sha256 "1bd959e1fc4f095f0237170c9f88fb0b6b70b7d975a21c6f26ef3b484ad655f0"
   license "MIT"
   head "https:github.combensadehtailspin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8718e8706ef3ce73e5f41b77017456d99491552348218ceae526326c7478e046"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b0d039e5b379737920ed7b2ebee73ad36a957f36344abb82966598e4b0c776df"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "394db555cbbd6067a4c1fbb50ebcca9dc4a0fa5a7ea59985e2aa2eb8dccaad04"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fdc5e88f760f4787808e433554549a1e948cd8688a8bac9cc9144c8c408d5206"
-    sha256 cellar: :any_skip_relocation, ventura:       "2f2550234cd77c76d5e046b408245e2f38fdf9d11d38746286bef88727825dd3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "efc151614bb5a093b288bf28db8e1dfc92b0b1d2865ae0dfcf752543839123ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "040b222699a63e66c89a41f6df7ec16c2e561b4ad404729787194ddea0d0d282"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b06137776692c312d16d8dd8c540e2e48fd5531db0ec6d02ba18bf099fc3e35"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ba8d53565f25f838f333d35650c64db20ac45a3832f30b9fb6573b590dce908"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b64bf61c722c393cc8c1b76b1b217f37956d92952b6a487924efc23330b6aa32"
+    sha256 cellar: :any_skip_relocation, sonoma:        "efbf6f6908008c60a206a7b6223a512632f698690e930d838af67018897ce0a4"
+    sha256 cellar: :any_skip_relocation, ventura:       "6f5ce9ac4d9b6ad49dfd6aebf7b1d34d73d13c7a85d90e104913de23ce02031f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2013a9d5d6e5a3e245d19b94d3407fef96d285d8de3708007d5052305929f54f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3c4fe34eada80680c73a409d26bba3c988b995bc530c6439e4084e8593b7244f"
   end
 
   depends_on "rust" => :build
-
-  # Gracefully handle reading from file over stdin
-  patch do
-    url "https:github.combensadehtailspincommit36e9866c9ad9fa2e8bd4c966e1517c3c64a1282e.patch?full_index=1"
-    sha256 "cd3ef1980c1380ee1b214ab025d1fe23b38ed298aade96eaa2c83a617116265d"
-  end
 
   def install
     system "cargo", "install", *std_cargo_args

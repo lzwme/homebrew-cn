@@ -4,16 +4,16 @@ class Ortp < Formula
   license "GPL-3.0-or-later"
 
   stable do
-    url "https:gitlab.linphone.orgBCpublicortp-archive5.3.106ortp-5.3.106.tar.bz2"
-    sha256 "16692af175836d9e38ff79065b69aad0d63b7af0ea79c7fac48c3f1578af2529"
+    url "https:gitlab.linphone.orgBCpublicortp-archive5.4.9ortp-5.4.9.tar.bz2"
+    sha256 "d44c496b6a5371062de383dea5428f95f306dba6744c51bbaf7739a894fbaf58"
 
     depends_on "mbedtls"
 
     # bctoolbox appears to follow ortp's version. This can be verified at the GitHub mirror:
     # https:github.comBelledonneCommunicationsbctoolbox
     resource "bctoolbox" do
-      url "https:gitlab.linphone.orgBCpublicbctoolbox-archive5.3.106bctoolbox-5.3.106.tar.bz2"
-      sha256 "eeebad5333aaac08c522fb8dc077188901047f9fba1fb8845ac14d4fafbb48d3"
+      url "https:gitlab.linphone.orgBCpublicbctoolbox-archive5.4.9bctoolbox-5.4.9.tar.bz2"
+      sha256 "c94394f710a04d2c5879c2b87851df2e92348e3ac61b9b4d04bf6ec994f53046"
 
       livecheck do
         formula :parent
@@ -24,13 +24,13 @@ class Ortp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2f8f3f3f19a0ad3188e6d17b9ea1f05b00e2197acf20faf1c31650b2dc0e5c7e"
-    sha256 cellar: :any,                 arm64_sonoma:  "1ca2655a406bd666264258133aa2daa1ba13da7eb40e5b87456f2e4e1bbab3cb"
-    sha256 cellar: :any,                 arm64_ventura: "d01444c40490aa5c160cd4e366baaee03ccf19e70ce2d76e7cfac3c986ff0a50"
-    sha256 cellar: :any,                 sonoma:        "13473cbdc344bd58d11909bc16a96aaf9184154afd3601c3f38baef2335c1550"
-    sha256 cellar: :any,                 ventura:       "7c507970fd4811989e58f9deb7b78ddfa4bd4189d13548e093ba46b580bc918c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9548b5209e7ba21afb45c42bf34622846c0ff8a192097bc32208d759f7c4be04"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad54474538903687f1490d96b8a583274bce61120dba8cf71189c3662219fe8d"
+    sha256 cellar: :any,                 arm64_sequoia: "8c19bdcd36ef5ce4ca74bca8b32e3971dbf836af390b6c940fd9d1ff72723b5d"
+    sha256 cellar: :any,                 arm64_sonoma:  "e67b20864d63eda0304f78a14f707f66fb4aa75795c97e7041c5f4cdfedeb865"
+    sha256 cellar: :any,                 arm64_ventura: "affb5822c3fcc02179788e30bb599e41086efd5d692c411328964418647fcf9a"
+    sha256 cellar: :any,                 sonoma:        "346eec963218024681c421c12a8cf2d3ad72c2fca8399f1712041fb489a55ca5"
+    sha256 cellar: :any,                 ventura:       "d87a5a8ae1130d2e8171acadcedd34e4c6e4337db72431c7f5b8bb38cfeebe48"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4748e6991ef2abf0e200867349032d1d8b1a125776222d83b7095859c4179a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8bbd9027fd215810e044bf6c3d6fe4c97737d9c2a0a28ae90c81ac78671f0f59"
   end
 
   head do
@@ -96,23 +96,23 @@ end
 
 __END__
 diff --git asrccryptombedtls.cc bsrccryptombedtls.cc
-index 4bc16d4..278c524 100644
+index cf146fd..8886b2d 100644
 --- asrccryptombedtls.cc
 +++ bsrccryptombedtls.cc
-@@ -106,8 +106,6 @@ public:
+@@ -80,8 +80,6 @@ public:
+ 
  	std::unique_ptr<RNG> sRNG;
  	mbedtlsStaticContexts() {
- #ifdef BCTBX_USE_MBEDTLS_PSA
 -		mbedtls_threading_set_alt(threading_mutex_init_cpp, threading_mutex_free_cpp, threading_mutex_lock_cpp,
 -		                          threading_mutex_unlock_cpp);
  		if (psa_crypto_init() != PSA_SUCCESS) {
  			bctbx_error("MbedTLS PSA init fail");
  		}
-@@ -120,7 +118,6 @@ public:
+@@ -92,7 +90,6 @@ public:
+ 		 before destroying mbedtls internal context, destroy the static RNG
  		sRNG = nullptr;
- #ifdef BCTBX_USE_MBEDTLS_PSA
  		mbedtls_psa_crypto_free();
 -		mbedtls_threading_free_alt();
- #endif  BCTBX_USE_MBEDTLS_PSA
  	}
  };
+ static const auto mbedtlsStaticContextsInstance = std::make_unique<mbedtlsStaticContexts>();

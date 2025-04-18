@@ -3,18 +3,18 @@ class Mcpm < Formula
 
   desc "Open source, community-driven MCP server and client manager"
   homepage "https://mcpm.sh/"
-  url "https://files.pythonhosted.org/packages/6b/a5/60e687ae1d1d044b3513eb936e63a7cf09b4e19a71624437442e9d8fb3f4/mcpm-1.1.1.tar.gz"
-  sha256 "2c664c82b961bc48180a15ac16a94376d6659f274cbc26cd41293d1fd08bc86e"
+  url "https://files.pythonhosted.org/packages/fa/1f/862a13634ea8df13f4e87bec7d090d211439ab56cb6d3269ac7d877e6225/mcpm-1.2.0.tar.gz"
+  sha256 "7385df66bdd75f169ef67b182594ead51729ca18f2fc8644490c9530989d66f1"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4b07e83c6f60b5578875c11525b849a5398938a5967af31a3587fa17ed519578"
-    sha256 cellar: :any,                 arm64_sonoma:  "a41345c1c11721cb67a30c201940facd3e31462ba40796696fa2e7b85d45ac54"
-    sha256 cellar: :any,                 arm64_ventura: "b49aa61c6e30ff5521b4090483ef2e635fa2a48cb35dc7f8e84b24055d5fbc40"
-    sha256 cellar: :any,                 sonoma:        "898fb20e3303f65289cd3f6bd08b6700213247b17f83ff1a6282c97f6863d56b"
-    sha256 cellar: :any,                 ventura:       "15722fc0021b2b25d855a4a8aefb3e9b3ee54ace6011dd002dc156735ef47fe6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "96cc8fcc6ac76db4eeecc19ef52c3ebc5f1c713871841699eb7743b67c8dcea4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44cc0430757c5fa77659b87f81f18f90510dc42ffe1c628f946bd7cf6818824b"
+    sha256 cellar: :any,                 arm64_sequoia: "05020024c38c495f07016e72dfb10b212b691270de83597a0c5db8a8e9aae584"
+    sha256 cellar: :any,                 arm64_sonoma:  "45d07e28e565e58790c56ca2e6a6d766f0e0e11c2f05538da20c6f05dae00233"
+    sha256 cellar: :any,                 arm64_ventura: "83c6c3ec75a78c78a3567979af5db5fef8d0fb051e0335c958c36df7e88a511f"
+    sha256 cellar: :any,                 sonoma:        "4ad8b863a164dbc5b045de7b3e3b07d9946fff4f54c914a292a9c6f83227b6d8"
+    sha256 cellar: :any,                 ventura:       "4fd8cdfdf536dd0a52c8a6bf2073cc0ead40984744ce1481b9e6515622b33a99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a743445be8a925649fab389843dcd305bfee6b3041af8c3b4c06f97c3e239cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa20d91b0aa1c64436d0b6ae4d99f1c88b910717bdd590365b6d30875ec14930"
   end
 
   depends_on "rust" => :build

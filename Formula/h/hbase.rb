@@ -20,8 +20,6 @@ class Hbase < Formula
   depends_on "lzo"
   depends_on "openjdk@11"
 
-  uses_from_macos "netcat" => :test
-
   resource "hadoop-lzo" do
     url "https:github.comclouderahadoop-lzoarchiverefstags0.4.14.tar.gz"
     sha256 "aa8ddbb8b3f9e1c4b8cc3523486acdb7841cd97c002a9f2959c5b320c7bb0e6c"
@@ -91,7 +89,7 @@ class Hbase < Formula
     # https:issues.apache.orgjirabrowseHBASE-15426
     inreplace "#{libexec}confhbase-site.xml",
       <configuration>,
-      <<~EOS
+      <<~XML
         <configuration>
           <property>
             <name>hbase.rootdir<name>
@@ -117,7 +115,7 @@ class Hbase < Formula
             <name>hbase.master.dns.interface<name>
             <value>#{loopback}<value>
           <property>
-      EOS
+      XML
   end
 
   def post_install
@@ -161,9 +159,14 @@ class Hbase < Formula
     ENV["HBASE_PID_DIR"]  = testpath"pid"
 
     system bin"start-hbase.sh"
-    sleep 15
     begin
-      assert_match "Zookeeper", pipe_output("nc 127.0.0.1 #{port} 2>&1", "stats")
+      sleep 15
+      TCPSocket.open("127.0.0.1", port) do |sock|
+        sock.puts("stats")
+        assert_match "Zookeeper", sock.gets
+      ensure
+        sock.close
+      end
     ensure
       system bin"stop-hbase.sh"
     end

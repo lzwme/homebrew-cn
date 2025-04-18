@@ -1,8 +1,8 @@
 class Aqua < Formula
   desc "Declarative CLI Version manager"
   homepage "https:aquaproj.github.io"
-  url "https:github.comaquaprojaquaarchiverefstagsv2.48.1.tar.gz"
-  sha256 "c12122389e13dfb7868a7bc94424208e5010f74e20d1bf84b459bd1186372c63"
+  url "https:github.comaquaprojaquaarchiverefstagsv2.48.2.tar.gz"
+  sha256 "d90d12921b48ce444b30e1944b7078df542dcbbf04b41d505984cfe156256870"
   license "MIT"
   head "https:github.comaquaprojaqua.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Aqua < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "affaf7b3bbac3925807407d2cbb3fdd24d2e965ef1600e6eb731c26d96e0c7ee"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "affaf7b3bbac3925807407d2cbb3fdd24d2e965ef1600e6eb731c26d96e0c7ee"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "affaf7b3bbac3925807407d2cbb3fdd24d2e965ef1600e6eb731c26d96e0c7ee"
-    sha256 cellar: :any_skip_relocation, sonoma:        "872f6bb9c33b753bd81df4220c42f3e065ccbf960c33214d698449219386a09c"
-    sha256 cellar: :any_skip_relocation, ventura:       "872f6bb9c33b753bd81df4220c42f3e065ccbf960c33214d698449219386a09c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56a52e70b4be4f0586860a917b74da50101fc63a6138736475a8419792d46a9e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "357c448cc996c45bbceb5dce6a3dfd32ffbfaa132360238bca106d21bffae26e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "357c448cc996c45bbceb5dce6a3dfd32ffbfaa132360238bca106d21bffae26e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "357c448cc996c45bbceb5dce6a3dfd32ffbfaa132360238bca106d21bffae26e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c0fb80916035e799064bb67bc5716f1ba4f7d9f0937b553c41c2ec02d12a43df"
+    sha256 cellar: :any_skip_relocation, ventura:       "c0fb80916035e799064bb67bc5716f1ba4f7d9f0937b553c41c2ec02d12a43df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcb9e49ca96696827644624b3cf7eb9ec0631be80563387b1455675ec6ea4cb6"
   end
 
   depends_on "go" => :build
@@ -30,7 +30,7 @@ class Aqua < Formula
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}aqua version")
+    assert_match version.to_s, shell_output("#{bin}aqua --version")
 
     system bin"aqua", "init"
     assert_match "depName=aquaprojaqua-registry", (testpath"aqua.yaml").read

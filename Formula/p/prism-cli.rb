@@ -1,18 +1,18 @@
 class PrismCli < Formula
   desc "Set of packages for API mocking and contract testing"
   homepage "https:stoplight.ioopen-sourceprism"
-  url "https:registry.npmjs.org@stoplightprism-cli-prism-cli-5.12.0.tgz"
-  sha256 "43eef5f8b30f0da3d27f4d7dcd539fe91d0f0adfa2c8c5cef7d7e95601113cf4"
+  url "https:registry.npmjs.org@stoplightprism-cli-prism-cli-5.14.2.tgz"
+  sha256 "61a3b45fbb0325b85fbe94baf836588de676c0db91c3b1f191738070c2f7410f"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13c54a7c8d5e0ada56a59a40b42c65915f9b5df39f46e03a093a491272b06d07"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13c54a7c8d5e0ada56a59a40b42c65915f9b5df39f46e03a093a491272b06d07"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "13c54a7c8d5e0ada56a59a40b42c65915f9b5df39f46e03a093a491272b06d07"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ec079ffe4838d0eef1b31982ed56f4f63884d7ade66e7ab75d3109c6ad17e8f4"
-    sha256 cellar: :any_skip_relocation, ventura:       "ec079ffe4838d0eef1b31982ed56f4f63884d7ade66e7ab75d3109c6ad17e8f4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d4ee421867a79012f693497dae4deb657c8405bd93254bd998597271f500bbb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13c54a7c8d5e0ada56a59a40b42c65915f9b5df39f46e03a093a491272b06d07"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8333b92f1cfcab951b0ebd6506a1c3449a31e7ea128bfdb68c09a43f8f925fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8333b92f1cfcab951b0ebd6506a1c3449a31e7ea128bfdb68c09a43f8f925fe"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c8333b92f1cfcab951b0ebd6506a1c3449a31e7ea128bfdb68c09a43f8f925fe"
+    sha256 cellar: :any_skip_relocation, sonoma:        "54e69a8479659e2bb814608927794cb89b42b50e0d76f8d7694696bfa62dd390"
+    sha256 cellar: :any_skip_relocation, ventura:       "54e69a8479659e2bb814608927794cb89b42b50e0d76f8d7694696bfa62dd390"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8333b92f1cfcab951b0ebd6506a1c3449a31e7ea128bfdb68c09a43f8f925fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8333b92f1cfcab951b0ebd6506a1c3449a31e7ea128bfdb68c09a43f8f925fe"
   end
 
   depends_on "node"

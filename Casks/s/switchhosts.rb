@@ -9,7 +9,7 @@ cask "switchhosts" do
       verified: "github.comoldjSwitchHosts"
   name "SwitchHosts"
   desc "App to switch hosts"
-  homepage "https:oldj.github.ioSwitchHosts"
+  homepage "https:switchhosts.vercel.app"
 
   livecheck do
     url :url

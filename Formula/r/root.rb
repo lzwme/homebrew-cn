@@ -20,6 +20,7 @@ class Root < Formula
     sha256 arm64_ventura: "7812501d43bb5dfbfea9a987a544bc0cf05a8a21a4acc1dc1ffcab11b017be22"
     sha256 sonoma:        "cf568d4813be0f7c5fc98ecefa32c957e48574a9cbe834e2508c1a974db8f9fe"
     sha256 ventura:       "41a1a6480a5b90487f603ae365bcaac57cf7278950461f004e33a41c9a5cf0b9"
+    sha256 arm64_linux:   "612495801a1f562976acda211d3fa0f13f191a800d49ae5c8ca054fd97d5403b"
     sha256 x86_64_linux:  "c19013bd674cc29a79ea1d0cd28a8a68a037888a0719089616c172506b46d682"
   end
 

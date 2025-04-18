@@ -3,18 +3,18 @@ class Pferd < Formula
 
   desc "Programm zum Flotten Einfachen Runterladen von Dateien"
   homepage "https:github.comGarmelonPFERD"
-  url "https:files.pythonhosted.orgpackages52302eb6a1246b3964763acc1210b24810d5af30d8dde20d0ae1796d696d14c3pferd-3.8.0.tar.gz"
-  sha256 "3a17c63bd9e135bd725bc3eadb479739e3e2f8124887cc96f87e076d534bde28"
+  url "https:files.pythonhosted.orgpackages7319c67800414ff5a742256a3a9714634d62f5dff42a12c3d3dca1665a4a22fbpferd-3.8.1.tar.gz"
+  sha256 "e8acb0791eb07905f1dce2816f8483be9056f811afe588793f0b516e31d8c759"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "697024153bf75cc11a0f977cadbcbbfd99669748591c2613096664ed1cc70898"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "617c9ec272ef0b1c85d13d47404d937dd3b523806b797010a03952c8d452ba7b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "20013035dce7da0efee6fbc9bfbd115b025f254610a8d632e75e57749b4b8f5d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e58b26f22e7e0365d5fe293da26b26851d400f31e2d5e18df4cb412c30ffd3b4"
-    sha256 cellar: :any_skip_relocation, ventura:       "16186b882299ee63d6726c76c5996a5e36434df8045549c6f8ee3330c7ea2e36"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "807e641cfe73887aa0af9f827084597369bb6d084f07dd397c3fd387a0d59b19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "088d1af3b6fe081ce9a1ca7224385177e83b0a1013a680852242514b4b048be2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27ec16d9d27aac3dffc430f0dd50e84e6931f586c15f5fa39dc333481e878ac6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9646c8b0e14c6fffa40814e7ce0d5337405cd8b6d69bd3aa7dfd5ff8868d741"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "09f700b7521460a5e4fbc3ab86dda8687b141f508897f88a8e55aa1699a6f069"
+    sha256 cellar: :any_skip_relocation, sonoma:        "168d95ae41e842e6b06403bedce7552c07ac1769167655149bdcf16a6465ed8e"
+    sha256 cellar: :any_skip_relocation, ventura:       "687f9d37984ea94358a889e8d81bc3455ce2949e0972ebde7eed16f87e72b534"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "31f3a81d04b49fac2000d1aaf9856cf049d3c6951b186d2278c9ff8fa9fb0f79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4b7ef3c6a342f228926768f406b06e06aa182d337cc6c300346a0854dca4fbf"
   end
 
   depends_on "certifi"
@@ -132,8 +132,8 @@ class Pferd < Formula
   end
 
   resource "yarl" do
-    url "https:files.pythonhosted.orgpackagesfc4d8a8f57caccce49573e567744926f88c6ab3ca0b47a257806d1cf88584c5fyarl-1.19.0.tar.gz"
-    sha256 "01e02bb80ae0dbed44273c304095295106e1d9470460e773268a27d11e594892"
+    url "https:files.pythonhosted.orgpackages6251c0edba5219027f6eab262e139f73e2417b0f4efffa23bf562f6e18f76ca5yarl-1.20.0.tar.gz"
+    sha256 "686d51e51ee5dfe62dec86e4866ee0e9ed66df700d55c828a615640adc885307"
   end
 
   def install

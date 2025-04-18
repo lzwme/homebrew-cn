@@ -11,6 +11,7 @@ class Souffle < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "29f023e79b7d2fe1310378dcad026608895475880f80bc050131ea48842a93da"
     sha256 cellar: :any_skip_relocation, sonoma:        "732925d732bd977ad72315894d0f2deadb35a2ac092b4dcc615b699ed3e0e243"
     sha256 cellar: :any_skip_relocation, ventura:       "4287f9391ad73a50eb0c6e578955529a2b36d517f43e60d2e1553114d7ef56b2"
+    sha256                               arm64_linux:   "4189ff925d166433ce98ab437c26c913bd62c81e706fa3e82a2858f9ff0ce60f"
     sha256                               x86_64_linux:  "5fd9b1a03f7400bbe208d30058cf4850a03e2c768918f5918a549f277966e9ba"
   end
 
