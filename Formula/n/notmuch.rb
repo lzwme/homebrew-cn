@@ -6,7 +6,7 @@ class Notmuch < Formula
   url "https://notmuchmail.org/releases/notmuch-0.38.3.tar.xz"
   sha256 "9af46cc80da58b4301ca2baefcc25a40d112d0315507e632c0f3f0f08328d054"
   license "GPL-3.0-or-later"
-  revision 2
+  revision 3
   head "https://git.notmuchmail.org/git/notmuch", using: :git, branch: "master"
 
   livecheck do
@@ -15,14 +15,13 @@ class Notmuch < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "cd717cdea34175ce4b3ecb26f15594ed015483ce17e14204864b208afed3cf5e"
-    sha256 cellar: :any,                 arm64_sonoma:  "7844df568b86b1b6309c3aa0f6c4cf68ccb8a9b35fc90121b109d05a208b7cac"
-    sha256 cellar: :any,                 arm64_ventura: "592e3240392b89a60c68eba4c9bcb7d705c60733a3a8366642336c6369811cc4"
-    sha256 cellar: :any,                 sonoma:        "10fa6fbceadb544587d026f3591a1a43c3054cfce290f5d56beda33a201fc98b"
-    sha256 cellar: :any,                 ventura:       "3de2605deb58d1854e07fa28ac0730ee6ea82599510297a910d03df7cabbbb4a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c80cca3bee58a9d91c20a624e643b924a5dbda61b7563c26a3d526b31f80d2f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1572f5f82da23d1493d0651c6294c7694f473c36c77d0d08c6f8d535c3ad700b"
+    sha256 cellar: :any,                 arm64_sequoia: "4271b47047c03909ad7d231aba0573ab698dfeca9c52e81395e90712f9dac1b9"
+    sha256 cellar: :any,                 arm64_sonoma:  "53da7f227a6a03f3f164045f7f5f78a3fd02a584089b9182accb88c36a2ba962"
+    sha256 cellar: :any,                 arm64_ventura: "1ef2a3707f4a2483de3a319e553d889b8c2f38205c3d43d2ca57a55ddb4137c8"
+    sha256 cellar: :any,                 sonoma:        "e0ab50f443f8725915f09a4bc73bc17ee04bdc275ef9b3b685193fde80178571"
+    sha256 cellar: :any,                 ventura:       "4d22b03ed6a5dddc873f745c8d977c62b8d64216d8ac06384d79fd633840f4b5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b1cf0442ffaf82661fe712fbffd93e0ab0adc878444be53b0a7ed707ca5cab6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "feef4dd425cc85e0f885459fab733c4b51bfd4bdcf2be0e493adfcbd8c573277"
   end
 
   depends_on "doxygen" => :build

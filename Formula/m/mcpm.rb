@@ -3,18 +3,18 @@ class Mcpm < Formula
 
   desc "Open source, community-driven MCP server and client manager"
   homepage "https://mcpm.sh/"
-  url "https://files.pythonhosted.org/packages/fa/1f/862a13634ea8df13f4e87bec7d090d211439ab56cb6d3269ac7d877e6225/mcpm-1.2.0.tar.gz"
-  sha256 "7385df66bdd75f169ef67b182594ead51729ca18f2fc8644490c9530989d66f1"
+  url "https://files.pythonhosted.org/packages/48/f0/cc3e2b32e4d197280b0187ae14c60e8e848c0a4b5b257d7dfa1fcbc7bc97/mcpm-1.4.1.tar.gz"
+  sha256 "202ec3e6b8e0f0b75e4bd6a19667b8d790cdf8ec9eb7e1d81a840f606a16c798"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "05020024c38c495f07016e72dfb10b212b691270de83597a0c5db8a8e9aae584"
-    sha256 cellar: :any,                 arm64_sonoma:  "45d07e28e565e58790c56ca2e6a6d766f0e0e11c2f05538da20c6f05dae00233"
-    sha256 cellar: :any,                 arm64_ventura: "83c6c3ec75a78c78a3567979af5db5fef8d0fb051e0335c958c36df7e88a511f"
-    sha256 cellar: :any,                 sonoma:        "4ad8b863a164dbc5b045de7b3e3b07d9946fff4f54c914a292a9c6f83227b6d8"
-    sha256 cellar: :any,                 ventura:       "4fd8cdfdf536dd0a52c8a6bf2073cc0ead40984744ce1481b9e6515622b33a99"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a743445be8a925649fab389843dcd305bfee6b3041af8c3b4c06f97c3e239cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aa20d91b0aa1c64436d0b6ae4d99f1c88b910717bdd590365b6d30875ec14930"
+    sha256 cellar: :any,                 arm64_sequoia: "4a4f29ef6db2eebd645bf813110c775259ceba7196965c5b80241021e16c166b"
+    sha256 cellar: :any,                 arm64_sonoma:  "1f1b39b24839ff071fcf0c28a344971c736efeaca92f6497099730c78f678645"
+    sha256 cellar: :any,                 arm64_ventura: "526ae2dd38682dfcd0593b3f897a730b841446ed357917c6a42a1516578ea312"
+    sha256 cellar: :any,                 sonoma:        "7bc63662da94cc9437a7574f2a21b642cb1610bd5857316bb47f605c06a00663"
+    sha256 cellar: :any,                 ventura:       "99b9af94318abae3dd391448595824d3600449ab0015e6544c577f2126e589a8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb46cfd32d3a984cedb110496ed5a0bd0f206c90e5d5bea43e6d1a291dc69580"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c3866f70f9d521a517013f9db5e8b152932cd29ba12ee3ed2425301398263bd"
   end
 
   depends_on "rust" => :build
@@ -111,8 +111,8 @@ class Mcpm < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/88/82/c79424d7d8c29b994fb01d277da57b0a9b09cc03c3ff875f9bd8a86b2145/pydantic_settings-2.8.1.tar.gz"
-    sha256 "d5c663dfbe9db9d5e1c646b2e161da12f0d734d422ee56f567d0ea2cee4e8585"
+    url "https://files.pythonhosted.org/packages/04/e3/ed51b456c7f2a299af624dd6096e7c96d6f65de06ee2f7fb5884072a2c86/pydantic_settings-2.9.0.tar.gz"
+    sha256 "24fd3fe19bc2c0eddeff91860dc5e303572b39fb70b1391c64955dd4d1875098"
   end
 
   resource "pygments" do

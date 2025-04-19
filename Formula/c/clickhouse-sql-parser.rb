@@ -1,19 +1,19 @@
 class ClickhouseSqlParser < Formula
   desc "Writing clickhouse sql parser in pure Go"
   homepage "https:github.comAfterShipclickhouse-sql-parser"
-  url "https:github.comAfterShipclickhouse-sql-parserarchiverefstagsv0.4.5.tar.gz"
-  sha256 "da55449639e7e745127eea1f1568e7d5cbf3ed54d78fadeaf8b684eda188ce9e"
+  url "https:github.comAfterShipclickhouse-sql-parserarchiverefstagsv0.4.6.tar.gz"
+  sha256 "95e03a93c4367de3fb65fc457081d295e55c0ef31329f707a0417d19a80f1d9a"
   license "MIT"
   head "https:github.comAfterShipclickhouse-sql-parser.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b8e2310f066f9105c89c44462988e4df759e4adef8eb8ad0a6be3d667c205a0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b8e2310f066f9105c89c44462988e4df759e4adef8eb8ad0a6be3d667c205a0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4b8e2310f066f9105c89c44462988e4df759e4adef8eb8ad0a6be3d667c205a0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dba203f1b092c4e873145ab439a73ff5c42b51c7861f6d0454db29af2c66c627"
-    sha256 cellar: :any_skip_relocation, ventura:       "dba203f1b092c4e873145ab439a73ff5c42b51c7861f6d0454db29af2c66c627"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "30bfd56235d75ce1d50a1f65538d1f4b62ece944a487e9da0bb061f3cd0909fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5bece39493f2123cec98c243194bb829da8d10ec70804ff120bfadb6e10ce766"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ddbd2e2083fcbbd68c150754c537302b859c91918699a92b8a246b75bbc57fb4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ddbd2e2083fcbbd68c150754c537302b859c91918699a92b8a246b75bbc57fb4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ddbd2e2083fcbbd68c150754c537302b859c91918699a92b8a246b75bbc57fb4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d624c5f4ae30c2805a1e2e63b51e47dc3f0965e22a39299f099f37488df865c7"
+    sha256 cellar: :any_skip_relocation, ventura:       "d624c5f4ae30c2805a1e2e63b51e47dc3f0965e22a39299f099f37488df865c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f15cf8706af3d6a92a7aecb9a638a192ba7c08700f6a80dd06c84babc8da88a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e12932307e8a1a9225fcc8e3a08fcd4b97c04a21648129fe03d9449dc26eb9a"
   end
 
   depends_on "go" => :build

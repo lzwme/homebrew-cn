@@ -1,22 +1,22 @@
 class StylishHaskell < Formula
   desc "Haskell code prettifier"
   homepage "https:github.comhaskellstylish-haskell"
-  url "https:github.comhaskellstylish-haskellarchiverefstagsv0.15.0.0.tar.gz"
-  sha256 "54e6cc986ab4e3c0be278af9f30b53c5fa99ed8a9bd88cae9b1e0a0be3dbfe52"
+  url "https:github.comhaskellstylish-haskellarchiverefstagsv0.15.1.0.tar.gz"
+  sha256 "0187bb335205f6b5c9c78d3fc27deb59ce7122c7eb7429b88971d8cb25d7be51"
   license "BSD-3-Clause"
   head "https:github.comhaskellstylish-haskell.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8fea17aad9b3cb52454ff389a9c88498492c12cef98daa1f6370ae474e3d76d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1520fe28b0210934dade571784efebc3e5ce69d184c77d6f53a633bf289cda4c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "63698e7f64b689498ae19c0c60ee892efb559f74e4ddb85c0fdc1f8898fdc6cf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3fef1763160ed9924aeca285c2d884f02d4470f59fc1ca4ad1ff20f0f5b1ad77"
-    sha256 cellar: :any_skip_relocation, ventura:       "7e3853a872a52197a4b5f572a222054012d199af211be2e0c4b66abbfb0403cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b07e0e6218af07c380fe2a9f2b897450fb40d373332d85fe6db3ccf411919ef4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8617c445f903d5a7e91963f407d839ea01e4ed7e33d48f96696ec2a0dd4a568c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3546de3bd2ec97bd2ce3cef71c838d682991cf156b01b5d9fecb97be186ead46"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "caa3a5292125407b6489eb7f121d45b2f10a41759362d552a54edef87c176fb1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "05d8ff7fa92c64e886dd67007d151292701f7558106143dcd821d1469a2ce74a"
+    sha256 cellar: :any_skip_relocation, ventura:       "af74b98d36e9806edf65cc30fb9dacbaa76cbadabb2ecbd5aa75039e9a1d5760"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e9386aab06b8ff3f6fa0d670681e2d7176f6250f5546281f4003265d365b9224"
   end
 
   depends_on "cabal-install" => :build
-  depends_on "ghc@9.8" => :build # GHC 9.10 PR: https:github.comhaskellstylish-haskellpull480
+  depends_on "ghc@9.10" => :build
 
   def install
     system "cabal", "v2-update"

@@ -1,5 +1,3 @@
-require "languagephp"
-
 class MysqlSearchReplace < Formula
   include Language::PHP::Shebang
 
@@ -10,7 +8,8 @@ class MysqlSearchReplace < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "904da213f1aa68f0c4c8b0c3fe00b1d05d0a1f192413b317ccec0c05d1714b14"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "83006f9192e3961c1251b9c11f255afe703ae3076598b2b148e211c18b6dba41"
   end
 
   depends_on "php"

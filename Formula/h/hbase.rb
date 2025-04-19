@@ -13,12 +13,20 @@ class Hbase < Formula
     sha256 arm64_ventura: "fe7c197d0041aefe2b7c087ebc8309da66974a2395db77d763b0c056513813bf"
     sha256 sonoma:        "03d6287c185c479d6fa135e85ddf90947df47b496d793720cfc994682e7f6ddc"
     sha256 ventura:       "f37ea71e025d1d3daa046013a6c55bc4d50118efa4a93513cd92cc278a5e9d2b"
+    sha256 arm64_linux:   "e0f0e0efda771923a5e568d44213faa079d49aec80981f07a2ec53d233e42a1e"
     sha256 x86_64_linux:  "5ed28e89fd22d263715dc6579d1185ed053546ed2f76ab6de8ec34dde3c88e0c"
   end
 
   depends_on "ant" => :build
   depends_on "lzo"
   depends_on "openjdk@11"
+
+  on_linux do
+    on_arm do
+      # Added automake as a build dependency to update config files for ARM support.
+      depends_on "automake" => :build
+    end
+  end
 
   resource "hadoop-lzo" do
     url "https:github.comclouderahadoop-lzoarchiverefstags0.4.14.tar.gz"
@@ -49,6 +57,12 @@ class Hbase < Formula
     end
 
     resource("hadoop-lzo").stage do
+      if OS.linux? && Hardware::CPU.arm?
+        # Workaround for ancient config files not recognizing aarch64 macos.
+        automake_dir = Formula["automake"].share"automake-#{Formula["automake"].version.major_minor}"
+        %w[config.guess config.sub].each { |fn| cp automake_dirfn, "srcnativeconfig#{fn}" }
+      end
+
       # Help configure to find liblzo on Linux.
       unless OS.mac?
         inreplace "srcnativeconfigure",
@@ -59,9 +73,10 @@ class Hbase < Formula
       # Fixed upstream: https:github.comclouderahadoop-lzoblobHEADbuild.xml#L235
       ENV["CLASSPATH"] = Dir["#{libexec}libhadoop-common-*.jar"].first
       # Workaround for Xcode 14.3.
-      ENV["CFLAGS"] = "-m64 -Wno-implicit-function-declaration"
-      ENV["CXXFLAGS"] = "-m64"
+      ENV.append_to_cflags "-m64" if Hardware::CPU.intel?
+      ENV.append_to_cflags "-Wno-implicit-function-declaration"
       ENV["CPPFLAGS"] = "-I#{Formula["openjdk@11"].include}"
+
       system "ant", "compile-native", "tar"
       (libexec"lib").install Dir["buildhadoop-lzo-*hadoop-lzo-*.jar"]
       (libexec"libnative").install Dir["buildhadoop-lzo-*libnative*"]

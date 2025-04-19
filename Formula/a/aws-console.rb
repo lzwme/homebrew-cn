@@ -1,8 +1,8 @@
 class AwsConsole < Formula
   desc "Command-line to use AWS CLI credentials to launch the AWS console in a browser"
   homepage "https:github.comaws-cloudformationrain"
-  url "https:github.comaws-cloudformationrainarchiverefstagsv1.22.0.tar.gz"
-  sha256 "0f563154c49a6bc09164551463daee01cdbd5e2a9ff7bbc54854276d1608128e"
+  url "https:github.comaws-cloudformationrainarchiverefstagsv1.23.0.tar.gz"
+  sha256 "820724a0cde1066345982b81b42921af86906966d0e51151ed24a6e3c1f08740"
   license "Apache-2.0"
   head "https:github.comaws-cloudformationrain.git", branch: "main"
 
@@ -11,12 +11,12 @@ class AwsConsole < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "50ffbee824129a0ae63f19dc58772657f9b52d322a0cf84befb6907f9460937c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "50ffbee824129a0ae63f19dc58772657f9b52d322a0cf84befb6907f9460937c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "50ffbee824129a0ae63f19dc58772657f9b52d322a0cf84befb6907f9460937c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f05978a240080035d3ce63fccc42b1508001405920352e00c0c7789d819e711d"
-    sha256 cellar: :any_skip_relocation, ventura:       "f05978a240080035d3ce63fccc42b1508001405920352e00c0c7789d819e711d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e19d4906f97547f93c1dde27c3bfe4b320973d095d01c7cb2d5929d617f55dc"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "624c2e9a156e183546ca612af7e293d44ba60e29267e8b288c85defc3bb6a505"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "624c2e9a156e183546ca612af7e293d44ba60e29267e8b288c85defc3bb6a505"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "624c2e9a156e183546ca612af7e293d44ba60e29267e8b288c85defc3bb6a505"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0f4b7f1b4ae0bbfd1eba137db3e02f61b582f0abac18a8354f96f5bcd2c52d47"
+    sha256 cellar: :any_skip_relocation, ventura:       "0f4b7f1b4ae0bbfd1eba137db3e02f61b582f0abac18a8354f96f5bcd2c52d47"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f2fc520617b2f25edbfa951b4aa501796e845683688a8d0127e3f0be438415d"
   end
 
   depends_on "go" => :build

@@ -12,6 +12,7 @@ class Nip4 < Formula
     sha256 cellar: :any, arm64_ventura: "211088d115486b72baad02d86d0ebff6bf8dc1378add51e0cdb58ae53510576f"
     sha256 cellar: :any, sonoma:        "c26a1e073698c9e388b53aa317cd0b2b8733bc54977a26a64a23305b68ac419f"
     sha256 cellar: :any, ventura:       "d7962fdaa791a4b27bc03c5fb295aea2b70b94517c1a9a5c9249da0b16e2a571"
+    sha256               arm64_linux:   "2b29492084062295f6a7e7a9f65179a38ecf3ce126885f24859c0e3f5089a80e"
     sha256               x86_64_linux:  "8daa844dd42161258390b18d74012464b0a860b60355626b766bbf987ddbde89"
   end
 

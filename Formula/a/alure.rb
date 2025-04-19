@@ -29,6 +29,8 @@ class Alure < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "27631da30742e75d039fc709f8e437b22371bfc0859466a4bb4856f155d8f4f5"
   end
 
+  disable! date: "2025-04-18", because: :repo_removed
+
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
 

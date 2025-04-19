@@ -6,16 +6,17 @@ class KeeperCommander < Formula
   url "https:files.pythonhosted.orgpackagesafc33d596436f423d873592a4503cf4ca34da95331c328ddf93fde3ee8964d09keepercommander-17.0.14.tar.gz"
   sha256 "f14fd6723fa2554c70c0230bd34eefeabf74089cf34bdb3e29f50e2eb122b117"
   license "MIT"
+  revision 1
   head "https:github.comKeeper-SecurityCommander.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "08bf305dcbb09efdd96450b84be8cf390d2e6875e137ec6684e70423d8aae2d1"
-    sha256 cellar: :any,                 arm64_sonoma:  "1358593d560347b42233a51d4dab797390a2f350e276a106ca9bec6820ee346a"
-    sha256 cellar: :any,                 arm64_ventura: "49f97bfea7f1d0df73550c780cf42bda521332a8dbe6bb60a0bf91638c69fe65"
-    sha256 cellar: :any,                 sonoma:        "57ac7291bd4b926891465e664152e4427149a6d66af52cd9ce932f0eaa099017"
-    sha256 cellar: :any,                 ventura:       "6be9df88d08238ada5c8f524dbb6ab13e0fbfdb2b8395f3293442bb98506786c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4490294fafe8fedefa878e9f851a6a6ba6aac6ce79d64eca26398f3c7dc4b4f6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "237326d786ab1579ad66f81092ffa70de445f8bb93eab14bb27b98efb009976c"
+    sha256 cellar: :any,                 arm64_sequoia: "0a8ca70ed13cee72ffd694e80674fd5375c09732324333406f48b6d1d75fb9fd"
+    sha256 cellar: :any,                 arm64_sonoma:  "1bf44791cfee30cab7ba06194cf8180264f70f8d4bcd2ea09d88443203853ce9"
+    sha256 cellar: :any,                 arm64_ventura: "f18eecac32ece14cc431f6f866135b05f7735058a315812cad368be05be611b4"
+    sha256 cellar: :any,                 sonoma:        "10c237a3eaefc58e9d3f67fc9fc8700d2cb1b8ef7d7412db0aa14c333a730a1b"
+    sha256 cellar: :any,                 ventura:       "9e927cf2024a3dff6a182b0ff2af2c663d89da62048f85a34b6c3315cd663182"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7337e5a6a4054261926f7e8d565ea428d3dab171781ae14d271b7a784fdcfa0b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48ff7568a1a6d4b7396f95c1657bd68ea68780738029bccb6d299f84c381b3cc"
   end
 
   depends_on "pkgconf" => :build

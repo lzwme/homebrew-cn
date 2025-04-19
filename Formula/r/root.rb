@@ -4,6 +4,7 @@ class Root < Formula
   url "https:root.cerndownloadroot_v6.34.08.source.tar.gz"
   sha256 "806045b156de03fe8f5661a670eab877f2e4d2da6c234dc3e31e98e2d7d96fe8"
   license "LGPL-2.1-or-later"
+  revision 1
   head "https:github.comroot-projectroot.git", branch: "master"
 
   livecheck do
@@ -15,13 +16,13 @@ class Root < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "872d561d4c92a0a37aa43e44222fa5779c15198a9b5e0c0af0808e92de321b12"
-    sha256 arm64_sonoma:  "c84c4008267e189f62bfaa30df8348d70c4e3e070f6269545c5cf18c11a3af3e"
-    sha256 arm64_ventura: "7812501d43bb5dfbfea9a987a544bc0cf05a8a21a4acc1dc1ffcab11b017be22"
-    sha256 sonoma:        "cf568d4813be0f7c5fc98ecefa32c957e48574a9cbe834e2508c1a974db8f9fe"
-    sha256 ventura:       "41a1a6480a5b90487f603ae365bcaac57cf7278950461f004e33a41c9a5cf0b9"
-    sha256 arm64_linux:   "612495801a1f562976acda211d3fa0f13f191a800d49ae5c8ca054fd97d5403b"
-    sha256 x86_64_linux:  "c19013bd674cc29a79ea1d0cd28a8a68a037888a0719089616c172506b46d682"
+    sha256 arm64_sequoia: "f46a695e06f2e4c05ede2c921f7240ba752169da241ecbcf8f115bd9a48f160d"
+    sha256 arm64_sonoma:  "d8623c949053b3b43a86726e90905609ceaf9a2f4229a9b612e32f2f44558409"
+    sha256 arm64_ventura: "a2dba4a7ab0688cbea5a194e8c57a195a354b6e0296fb640a51cca2438d84073"
+    sha256 sonoma:        "88a286786a1ec92b7f23298d7581fba2d71548940d65d88891c0a55265224ddb"
+    sha256 ventura:       "b806bb2a566e9692c4c9316acd7dded9e5816ce15a54f87a3a47124162c7939a"
+    sha256 arm64_linux:   "a2d95824af6ba1c333eae94ff69f364892aa8b270abfee5bc5809da5e9785c44"
+    sha256 x86_64_linux:  "fadc571765a24452c4ec7ae645c26185da731ee68b89c8f9d364b199096007a2"
   end
 
   depends_on "cmake" => :build

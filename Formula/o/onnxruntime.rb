@@ -17,6 +17,7 @@ class Onnxruntime < Formula
     sha256 cellar: :any,                 arm64_ventura: "b38052bf7959968170b0397f226ca8a32912afc7ab8d919833c059620d4c4895"
     sha256 cellar: :any,                 sonoma:        "e446360155e5c58a757cb142e76ab307272bcf037cfcc8630bfde8b7bf35d06d"
     sha256 cellar: :any,                 ventura:       "87a8e6152b8f73557e2bda6ee7673c51565362b4a53e675502ac07528716ce55"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ae3e203128a575a0481a10e1246b69a1b761b0c2e8c64a26a2ec6e51d4d6645"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "450d2d06a7b3cf547d26410cec335198aaeb28530159e1fb9df58b96173e1d8e"
   end
 
@@ -51,6 +52,7 @@ class Onnxruntime < Formula
 
   def install
     python3 = which("python3.13")
+    ENV.runtime_cpu_detection
 
     resources.each do |r|
       (buildpath"build_deps#{r.name}-src").install r

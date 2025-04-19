@@ -3,8 +3,8 @@ class LlamaCpp < Formula
   homepage "https:github.comggerganovllama.cpp"
   # CMake uses Git to generate version information.
   url "https:github.comggerganovllama.cpp.git",
-      tag:      "b5140",
-      revision: "54a72720432810c89c2693f34908b60b88da1e46"
+      tag:      "b5150",
+      revision: "2db9ba1464f3de0aceb2b5289963e69fc369cb66"
   license "MIT"
   head "https:github.comggerganovllama.cpp.git", branch: "master"
 
@@ -19,13 +19,13 @@ class LlamaCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "480b32ec85d3b85cc5cd498c8d47f2ba31afc62c46ce1d4920d50df181b02114"
-    sha256 cellar: :any,                 arm64_sonoma:  "de1602aa185c91e513d49c7f402f48da474919879957320b2e3536294a30ef19"
-    sha256 cellar: :any,                 arm64_ventura: "c31e27571fab99121fad28e7db1044045d71d1cfd99e3e4a20587ee67d2b2a0c"
-    sha256 cellar: :any,                 sonoma:        "5243dafb463c2f33d0710918993ff30e78ce716120cd7c2c1c7777f95ee3c3e9"
-    sha256 cellar: :any,                 ventura:       "e1351d200d935650ae9a2eaf02b68ceab0f387863c223061569c0b17fc906fe2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "056816f844a8061e06bbc27b6e8dc4663cd0073f87795b50b8f4ac9be116a84e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7e2f0dc39adaaf10ff11957ba1f5fc02a03218d0657dd3c08559f9989e7f486"
+    sha256 cellar: :any,                 arm64_sequoia: "929bb68bf3ade2d90ee997298a149834a2e1a360606a5e2576ede3a2f9c648f3"
+    sha256 cellar: :any,                 arm64_sonoma:  "f0f78e9e8685e7ecbef126ee4425df30dba42d55ad06ce2ef2181d7fcdcb50f2"
+    sha256 cellar: :any,                 arm64_ventura: "6071bd4736157b3f9daadeaf80649327647d4308835c343538c07d29876ea296"
+    sha256 cellar: :any,                 sonoma:        "e8b28c7e6025c921a0b1fb34b9363b0406ed7792e4e1d4c21e1e4da1c50194d7"
+    sha256 cellar: :any,                 ventura:       "d2cc1f96188295e1ba0abd03ee0db1fc0c86f97b7cb2aa67b14010defa9595b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6150cf07fab8f1a4f767dfc1efbea7eace6ba0c7ec3a74e4777b3fa62fc69438"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "302cee65fd5873eb755a7b6552e2292ef1fb2fa5df365a33b0261e97ee02d8d7"
   end
 
   depends_on "cmake" => :build

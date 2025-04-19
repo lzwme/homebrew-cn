@@ -1,19 +1,19 @@
 class Deno < Formula
   desc "Secure runtime for JavaScript and TypeScript"
   homepage "https:deno.com"
-  url "https:github.comdenolanddenoreleasesdownloadv2.2.10deno_src.tar.gz"
-  sha256 "bf25316b2b094e364ba927597fcbeb1d6236ec07495bb38cdc4a6cfbea19fe34"
+  url "https:github.comdenolanddenoreleasesdownloadv2.2.11deno_src.tar.gz"
+  sha256 "65bac4dd50df0146953a314f82c6af190f2152bce81458ed22d642e7ce87a272"
   license "MIT"
   head "https:github.comdenolanddeno.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "694f9e1287d2d56460152eb65607660a99112406bce58d19f7233770ddb3e0b8"
-    sha256 cellar: :any,                 arm64_sonoma:  "971714d9a52254648acda9a4999cb64b4bc4c2d892975a72ca23ca688bb1e160"
-    sha256 cellar: :any,                 arm64_ventura: "3277bc6586170d021f195d820a5e762093216fd7876be89d980b0fb6b150aa91"
-    sha256 cellar: :any,                 sonoma:        "a1022b36b1155cafc868c4b693b3f88d3499c4c6d2af4afefd65a1d918505bdf"
-    sha256 cellar: :any,                 ventura:       "36612366ff94f164acf8ed90f327d10dff56df62e80095b1f163d62c40e00df5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6e93f226b0c8c724b6b37a09b7cc3497aa0a38204dd5aca3a1ab1b860585dc2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d298f7a69849c92e0fd7b06c2c2c53e11af88902381e1ef361d4c57e8f9c934"
+    sha256 cellar: :any,                 arm64_sequoia: "c4ab78a395e43473239edb9a697fc5358c506857dc2787a34a6e2c72b8683349"
+    sha256 cellar: :any,                 arm64_sonoma:  "10183d1e836777c0beda7599f4f0dcbf435418fa25095626f0bcea2ff3728a7a"
+    sha256 cellar: :any,                 arm64_ventura: "f8342e035d959a635375297b1cfda78d87b99de9ff40aaa30ca2ec4580e9d66b"
+    sha256 cellar: :any,                 sonoma:        "f1cceef7a2d3aac411c3fefa9d30dbee5cb3347a85640c64278b461ebabb92f3"
+    sha256 cellar: :any,                 ventura:       "9ce74700d10d6b30d979173c80183cc9745338d9f62064ca24cb94dc7f20ed7f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "384a887112ea7809828c8b410e65b951e4d850dbedb9d3d823e8da4130a92cb9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5c485b7e06711a4b3b3716a3ec8f449d0fb6af54bd6f5b8db475825468c139a"
   end
 
   depends_on "cmake" => :build

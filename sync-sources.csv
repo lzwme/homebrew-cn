@@ -173,6 +173,7 @@ Homebrew-homebrew-core/Formula/a/apache-spark.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apachetop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apcupsd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/apgdiff.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/api-linter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apibuilder-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/apidoc.rb, Homebrew/homebrew-core, 1
@@ -648,6 +649,7 @@ Homebrew-homebrew-core/Formula/b/btpd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/btrfs-progs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bubblewrap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/buf.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/buffrs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/build2.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/buildapp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/buildifier.rb, Homebrew/homebrew-core, 1
@@ -5391,6 +5393,7 @@ Homebrew-homebrew-core/Formula/p/protobuf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protobuf@21.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protobuf@29.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protobuf@3.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/protoc-gen-doc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protoc-gen-go-grpc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protoc-gen-go.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/protoc-gen-grpc-java.rb, Homebrew/homebrew-core, 1
@@ -5887,6 +5890,7 @@ Homebrew-homebrew-core/Formula/s/s3scanner.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/s4cmd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/s5cmd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/s6.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/sacad.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sad.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/saf-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/safe-rm.rb, Homebrew/homebrew-core, 0
@@ -7852,7 +7856,7 @@ Homebrew-homebrew-cask/Casks/a/auryo.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/authy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/autodesk-fusion.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/autodmg.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/a/autofirma.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/autofirma.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/autogram.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/automattic-texts.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/automounterhelper.rb, Homebrew/homebrew-cask, 0
@@ -8518,6 +8522,7 @@ Homebrew-homebrew-cask/Casks/d/decloner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/deco.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/decrediton.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/deelay.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/deepchat.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/deeper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/deepgit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/deepl.rb, Homebrew/homebrew-cask, 0

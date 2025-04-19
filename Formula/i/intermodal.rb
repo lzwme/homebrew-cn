@@ -11,6 +11,7 @@ class Intermodal < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f97365296218ba43ceae80cc225a3ede3974b0060dc6e22b0e9c7bb10fc10ce5"
     sha256 cellar: :any_skip_relocation, sonoma:        "d67ee890e7374157bff784bc6a756b0a38156c90bf45dfbeed40860a060b82bf"
     sha256 cellar: :any_skip_relocation, ventura:       "729f1a952834a171ae49923079e207ff23dca4df44975f22057cb3c7df555c7c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ebd7eddf899a9fd8880bda08f54e4b46da5fcddbc60677a07fe43bd9a407bf6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "302d5f8fcf0869b8dd99ad396a04ca70d4f4a07cdc500de72cd01dec07fccba1"
   end
 

@@ -4,16 +4,17 @@ class Nmail < Formula
   url "https:github.comd99krisnmailarchiverefstagsv5.3.5.tar.gz"
   sha256 "071abc7c9c1d5a26616410872d4f7310cd00416f8da0860e1f368ca642ccc025"
   license "MIT"
+  revision 1
   head "https:github.comd99krisnmail.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ad85fcda664abb479da1987b08db30ee771fe3849a4d6404ea01c7bc0a825f86"
-    sha256 cellar: :any,                 arm64_sonoma:  "ec679ac66014b1bdb790eef728a4c764b897108e16fa8f4d6b1cd71820db15af"
-    sha256 cellar: :any,                 arm64_ventura: "eab5136e31ea85b132d73fd1f75ed4a012c25ee4ccec988014afafe793a5433c"
-    sha256 cellar: :any,                 sonoma:        "c6366c79cec519ba80affa909fc5d5fac5625ec9021f9fad4e67d2764e1448d5"
-    sha256 cellar: :any,                 ventura:       "bca75663ccad1aa91b3e0b77a2d7d00c154b9af8830b6995b756ece98633ac9d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dff943a711ddcc3cb08b5d72084e5ad1ccb4bb42b6b9742277f812ef81989a0b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ca812e369664d021c573813a05034e7f87e0be9bf4a6ac6e2569af372f2bc26"
+    sha256 cellar: :any,                 arm64_sequoia: "520368fc89abfe81011deb72529d5f200d8c63651e53a223309fa249b5f110f1"
+    sha256 cellar: :any,                 arm64_sonoma:  "1f4a5feb746ec6a74db6b57f345ec825f3203477c73fb95c7019101ab0cb5890"
+    sha256 cellar: :any,                 arm64_ventura: "b3717d399c95e7cef987e3612e45d39cb22c6f432468ef9739bf794758651cdf"
+    sha256 cellar: :any,                 sonoma:        "0ce46c6ae5f1d53d55bf2a13f4d6ec9a419d044a260d8cbd59cab92ecabb9bc5"
+    sha256 cellar: :any,                 ventura:       "d26fa6daaa44b82ef0a9e70a19f5c9008c20c45b2b89f9c4c85147a5449e81d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "919be579ee770f9720a2b64f671c07efaebe081ee420d071aed68eaeaeb37f92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b34156b51cd959e3b671ffdcf3b933a9ee2d83d24f9dc89ae6eb8390425bfd5f"
   end
 
   depends_on "cmake" => :build

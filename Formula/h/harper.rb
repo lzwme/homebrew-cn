@@ -1,19 +1,19 @@
 class Harper < Formula
   desc "Grammar Checker for Developers"
   homepage "https:github.comelijah-potterharper"
-  url "https:github.comelijah-potterharperarchiverefstagsv0.29.0.tar.gz"
-  sha256 "67da43c7d65a73248ed4b5108fb8e7467289ab15de78850961c639253aa336e0"
+  url "https:github.comelijah-potterharperarchiverefstagsv0.29.1.tar.gz"
+  sha256 "9ac27ed81ee0b6e076adcb6b08abcc0633ba23df73d982a6f12ee6144534054a"
   license "Apache-2.0"
   head "https:github.comelijah-potterharper.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "840f7851425d74cbbb24f2836363d06ebb4537a27ddac3b6bdbe4b187cabf749"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20df33066a686d830c43f9d9143858f5333113d3b48fbb2df0d86cea1a9d235d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a89bf9f23e8ac9bbc6caeb0b447ca156e784ef884efebf66f4057b72f0734f6c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a15399b07370c4f06e430778ca53008280a0917b4a40083c1a73dd9d5cf90c4c"
-    sha256 cellar: :any_skip_relocation, ventura:       "32d8899cc4d65b779b55ef87ee80792ea09ac96cdd50dcadeac7fb038cb975ad"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "71b2455075d356163c18fb0276563921f81999b6ed663104deadc4c280bdd923"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5102ad03a6eb7629b23fe18c5e3dd66bb9bb1c5ea7a242542f6629ac50ed0910"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94957468d28f38dad9cabe951a4fcdae450c8f1c9606603df6336f8d6175fd3a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bba9bbaab7be82da0d18ed033a62ee69807155b475cdc96217831eb9e2d2a9a6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8e05d532381cda176469b0af19a3ebd31b42e62ca7ca4a3acf1b6b51f2c867d2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "53e6305b271fa8d840ddc17081b153541a2603b51bcf0c6770410c280a16b59c"
+    sha256 cellar: :any_skip_relocation, ventura:       "47c33eadbd6f7ad335f0d403ab511b1a2ebba159a3c52ddc73d23bac46c06b0b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44d86a22c91c1e5cc6beabb50a19972a84957159af76b5f530aad259a48debe9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ab30120d43384579d35bb7c925d9dc922c02f1966348e6e7ca7762d330037ece"
   end
 
   depends_on "rust" => :build

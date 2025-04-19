@@ -18,6 +18,7 @@ class Ifuse < Formula
 
   bottle do
     rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "c85baf6f86b5eef37630a3bcf2d161c9004d2ec5d06fcc77ceed2974a19e5cc0"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "b3182da5c1d4d56eb06f4edcdc6d375b21f808437f3adfbf044e69d881dc3b7f"
   end
 

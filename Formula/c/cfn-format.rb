@@ -1,8 +1,8 @@
 class CfnFormat < Formula
   desc "Command-line tool for formatting AWS CloudFormation templates"
   homepage "https:github.comaws-cloudformationrain"
-  url "https:github.comaws-cloudformationrainarchiverefstagsv1.22.0.tar.gz"
-  sha256 "0f563154c49a6bc09164551463daee01cdbd5e2a9ff7bbc54854276d1608128e"
+  url "https:github.comaws-cloudformationrainarchiverefstagsv1.23.0.tar.gz"
+  sha256 "820724a0cde1066345982b81b42921af86906966d0e51151ed24a6e3c1f08740"
   license "Apache-2.0"
   head "https:github.comaws-cloudformationrain.git", branch: "main"
 
@@ -11,12 +11,12 @@ class CfnFormat < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72e9c30daf8e805fb601f35bd69f800e6dc3ef025f5d358879fd286a4ed88feb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "72e9c30daf8e805fb601f35bd69f800e6dc3ef025f5d358879fd286a4ed88feb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "72e9c30daf8e805fb601f35bd69f800e6dc3ef025f5d358879fd286a4ed88feb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "21a37d9b9238f791b3227f011e38196bd27b5be322161d2f15dc988be430bb18"
-    sha256 cellar: :any_skip_relocation, ventura:       "21a37d9b9238f791b3227f011e38196bd27b5be322161d2f15dc988be430bb18"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e654332c504dd68be733cd9e528a15c19f79131e674cd949eff02c3b36cdf36"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb031518510da595fc6b288c746f5bdd0a596165263ec1a31fc6d6c32af06e4c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb031518510da595fc6b288c746f5bdd0a596165263ec1a31fc6d6c32af06e4c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bb031518510da595fc6b288c746f5bdd0a596165263ec1a31fc6d6c32af06e4c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4cb0a1b65f14bde6c80049d1199e42595cc7048a2d0c56952c157ece444ec2ee"
+    sha256 cellar: :any_skip_relocation, ventura:       "4cb0a1b65f14bde6c80049d1199e42595cc7048a2d0c56952c157ece444ec2ee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef702e496fa4266fa1128612eb4ba705fb92dee528462993a9fcf9d044cb603e"
   end
 
   depends_on "go" => :build
