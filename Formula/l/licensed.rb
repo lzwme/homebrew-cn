@@ -7,13 +7,14 @@ class Licensed < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9512c527fe9a169a77f603e8a42e2f97d2b20b5ecfffb6717c035498af1b0a68"
-    sha256 cellar: :any,                 arm64_sonoma:  "a307338f6f3465bf0ca55e13cd635cdbb0be759e8704a4477e75625fa688d211"
-    sha256 cellar: :any,                 arm64_ventura: "26430a39ccfaa5b32322f3b8793059edf7f78403fab2f0f6ff1499f206033ee6"
-    sha256 cellar: :any,                 sonoma:        "9082bb6da4377192b3faceb165b92dd07c93b05072f4a267e9b289b825ba912f"
-    sha256 cellar: :any,                 ventura:       "744a822354683afaba54723d9347d77344434bb6af3cce9d4a179f135e454ed5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "06e53d24346127e6479b7f826acbf5b52e41dcf0517350dccf4b2df5f7885866"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c075dd97b51a96d2e86e0e7480c368b45c8ebe55c7e4f8c2ed6fc493d4c2848"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "cb189f00717815eb7cd358d8603d4008e91cb1047dc0604d6f8f253aae1fcbcb"
+    sha256 cellar: :any,                 arm64_sonoma:  "0167c167c1ac279e9735adc4864a9ab8978702a326be96bc23f0b40d93415737"
+    sha256 cellar: :any,                 arm64_ventura: "4e6c68f31865a1ac339d1730878f7ccabf33c70c357e08ab4e9e9ff06890b388"
+    sha256 cellar: :any,                 sonoma:        "8564ba1c4dce1b01f0d7c811eac8e293ce19d9a3a8cfe9e65f42751986526bd2"
+    sha256 cellar: :any,                 ventura:       "aad512a1dae9361fb9dbae9e8b8bd8bab6e7eafe1664020987f2dab9ede03f65"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "565013cb22616f165a7eaa3740f2147af27489ceb8a6b73052d4142e28cbbed9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a715d7f6162abe6cc149eba6ee44f5230b42c53f8bebbd81c3cc370ae3ab0a3e"
   end
 
   depends_on "cmake" => :build
@@ -28,12 +29,15 @@ class Licensed < Formula
   end
 
   def install
+    ENV["BUNDLE_VERSION"] = "system" # Avoid installing Bundler into the keg
     ENV["GEM_HOME"] = libexec
+
     system "bundle", "config", "set", "without", "development", "test"
     system "bundle", "install"
-    system "gem", "build", "licensed.gemspec"
-    system "gem", "install", "licensed-#{version}.gem"
-    bin.install libexec"binlicensed"
+    system "gem", "build", "#{name}.gemspec"
+    system "gem", "install", "#{name}-#{version}.gem"
+
+    bin.install libexec"bin#{name}"
     bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
 
     # Avoid references to the Homebrew shims directory

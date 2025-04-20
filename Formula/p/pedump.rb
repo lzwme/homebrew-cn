@@ -6,15 +6,8 @@ class Pedump < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "dc02ff28da3bafa97e0b32037e3d7d0a7d99ef2ce50f05b1e03e483be7c95465"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "16f4f904a046312881217b845df472a4a45f9f0caa7b2b1405b201fd952e8add"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "16f4f904a046312881217b845df472a4a45f9f0caa7b2b1405b201fd952e8add"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "16f4f904a046312881217b845df472a4a45f9f0caa7b2b1405b201fd952e8add"
-    sha256 cellar: :any_skip_relocation, sonoma:         "185e205f37c88a84ab0e0fcd65b2415ff0a1a34980dadc27b4a104f287fd9677"
-    sha256 cellar: :any_skip_relocation, ventura:        "185e205f37c88a84ab0e0fcd65b2415ff0a1a34980dadc27b4a104f287fd9677"
-    sha256 cellar: :any_skip_relocation, monterey:       "185e205f37c88a84ab0e0fcd65b2415ff0a1a34980dadc27b4a104f287fd9677"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "0c8af7868718e799a4969fb5ca7f6787d98abaa403a96cf999d7ef33a3893861"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "eef22f866ba629a7e7c382057c48f5784da5ad7756a34b2d334d24c9c380e7f8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "46e2e44dae5cd4974173e1a271d602c131ecb1557869a6bd9dc979a672605d3f"
   end
 
   depends_on "ruby"
@@ -28,11 +21,14 @@ class Pedump < Formula
   end
 
   def install
+    ENV["BUNDLE_VERSION"] = "system" # Avoid installing Bundler into the keg
     ENV["GEM_HOME"] = libexec
-    system "bundle", "config", "set", "without", "development"
+
+    system "bundle", "config", "set", "without", "development", "test"
     system "bundle", "install"
     system "gem", "build", "#{name}.gemspec"
-    system "gem", "install", "--ignore-dependencies", "#{name}-#{version}.gem"
+    system "gem", "install", "#{name}-#{version}.gem"
+
     bin.install libexec"bin#{name}"
     bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
   end

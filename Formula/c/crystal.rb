@@ -4,6 +4,7 @@ class Crystal < Formula
   license "Apache-2.0"
 
   stable do
+    # TODO: Replace arm64 linux bootstrap with official when available
     url "https:github.comcrystal-langcrystalarchiverefstags1.16.1.tar.gz"
     sha256 "07d2ddb619aa15b30f16f8fafd6417e5e3a0fb6d97ce4f328e683796486976cf"
 
@@ -24,6 +25,7 @@ class Crystal < Formula
     sha256 cellar: :any,                 arm64_ventura: "0b75b63e9c76d1172cd247603922dcf1b03f20df47227c76628386770ce55004"
     sha256 cellar: :any,                 sonoma:        "79678b3c73cfd665fae6d265dc01420bd0c180d3fb791a0ccc2daee97e3e9599"
     sha256 cellar: :any,                 ventura:       "b61596c0eb2d258beeba9776535d0bd6f5e025c5e206c6721749dc13812f8ceb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2eebeba7ad2f1eb6d9862266229da4841654f847412061bf49dee80ab1f797e6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1bf7f006e482e895c38262d57065f3d4deaaa90ad07134a9f367675548955fa"
   end
 
@@ -46,11 +48,6 @@ class Crystal < Formula
 
   uses_from_macos "libffi" # for the interpreter
 
-  on_linux do
-    # There is no bootstrap compiler for arm64 Linux
-    depends_on arch: :x86_64
-  end
-
   # It used to be the case that every new crystal release was built from a
   # previous release, except patches. Crystal is updating its policy to
   # allow 4 minor releases of compatibility unless otherwise specified.
@@ -69,6 +66,16 @@ class Crystal < Formula
     end
 
     on_linux do
+      on_arm do
+        # NOTE: Since there are no official arm64 linux builds, we use the recommended[^1]
+        # community-maintained builds. Upstream CI also uses 84codes docker images[^2].
+        # The version used is 1.11.0 as there was an issue building with 1.10.1.
+        #
+        # [^1]: https:github.comcrystal-langcrystalissues9833#issuecomment-1766007872
+        # [^2]: https:github.comcrystal-langcrystalblobmaster.githubworkflowsaarch64.yml#L70
+        url "https:packagecloud.io84codescrystalpackagesanyanycrystal_1.11.0-124_arm64.debdownload.deb?distro_version_id=35"
+        sha256 "fc42e49f703a9b60c81a87be67ea68726125cf7fddce2d4cafceb4324dca1ec8"
+      end
       on_intel do
         url "https:github.comcrystal-langcrystalreleasesdownload#{boot_version.major_minor_patch}crystal-#{boot_version}-linux-x86_64.tar.gz"
         # version boot_version
@@ -89,7 +96,15 @@ class Crystal < Formula
     non_keg_only_runtime_deps = deps.filter_map { |dep| dep.to_formula unless dep.build? }
                                     .reject(&:keg_only?)
 
-    resource("boot").stage "boot"
+    if OS.linux? && Hardware::CPU.arm?
+      resource("boot").stage do
+        system "ar", "x", Dir["*.deb"].first
+        system "tar", "xf", "data.tar.gz"
+        (buildpath"boot").install Dir["usr*"]
+      end
+    else
+      resource("boot").stage "boot"
+    end
     ENV.append_path "PATH", "bootbin"
     ENV["LLVM_CONFIG"] = llvm.opt_bin"llvm-config"
     ENV["CRYSTAL_LIBRARY_PATH"] = ENV["HOMEBREW_LIBRARY_PATHS"]

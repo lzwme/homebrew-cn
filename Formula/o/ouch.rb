@@ -1,20 +1,27 @@
 class Ouch < Formula
   desc "Painless compression and decompression for your terminal"
   homepage "https:github.comouch-orgouch"
-  url "https:github.comouch-orgoucharchiverefstags0.5.1.tar.gz"
-  sha256 "46cc2b14f53de2f706436df59300eb90c5a58f08ac8c738fd976fcb8ec0cd335"
+  url "https:github.comouch-orgoucharchiverefstags0.6.0.tar.gz"
+  sha256 "508f627342e6bcc560e24c2700406b037effbf120510d3d80192cd9acaa588fe"
   license "MIT"
   head "https:github.comouch-orgouch.git", branch: "main"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "11795cbe9c38f30481e04282efceebe109de670689a346558585db7aa1ef0977"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "424a341aa2183e0fac3aa9180c88d0a293876bb077a6a07a9ab775dc4694abef"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "55fa180fa50d60cae20499315c094e4e27ef9569c7bc153e194da5981e4dae53"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e577a0daba8281df2106f823428d147e2b5feb5bd94c8a7bab428dda4cd5c269"
-    sha256 cellar: :any_skip_relocation, ventura:       "ecd0d5ec186fddd2fc7f770c587428e9ca9f7606e8998af8353ad7bbe81a216b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bae292deb8304df0464d6cbac4434ec1fb71b024562e522846927896b3ed4c64"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "75ebb0483051766284f4eb6cd08c3a117b63a6f6eeec6f369213c9340b5accfb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8dac8830acd7a35d705e224933ef32c5bfb951cc38574b467b9090198cb696ff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d29680299b28ff96acec040e75f71582d4f0d219fbeb3143e16e1094b8ae1b5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ea048d23715f30a3c80e48ff8eb74201f47e867598b01c8dc0ecc801498f13f1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0276b1474c09480e1bb44e743138fcccf0cbbe8f8f48bf72e82ba1e734af2a01"
+    sha256 cellar: :any_skip_relocation, ventura:       "c0e96794643f64bdace58f62c79419ee40584f7bc7df4f655007d1824c4f5951"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "06f1054814ebfb5a6a1220e85d8ba3e8df5a30cc807c68b9a602c7c63f6de830"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca3426a89731da1626147d43cebe2dca36c783c6630826122e9c7843cfe75eb1"
   end
 
   depends_on "rust" => :build
@@ -22,6 +29,10 @@ class Ouch < Formula
   uses_from_macos "bzip2"
   uses_from_macos "xz"
   uses_from_macos "zlib"
+
+  on_linux do
+    depends_on "llvm" => :build
+  end
 
   def install
     # for completion and manpage generation
@@ -42,13 +53,13 @@ class Ouch < Formula
     (testpath"file1").write "Hello"
     (testpath"file2").write "World!"
 
-    %w[tar zip tar.bz2 tar.gz tar.xz tar.zst].each do |format|
+    %w[tar zip 7z tar.bz2 tar.bz3 tar.lz4 tar.gz tar.xz tar.zst tar.sz tar.br].each do |format|
       system bin"ouch", "compress", "file1", "file2", "archive.#{format}"
       assert_path_exists testpath"archive.#{format}"
 
       system bin"ouch", "decompress", "-y", "archive.#{format}", "--dir", testpathformat
-      assert_equal "Hello", (testpathformat"archivefile1").read
-      assert_equal "World!", (testpathformat"archivefile2").read
+      assert_equal "Hello", (testpathformat"file1").read
+      assert_equal "World!", (testpathformat"file2").read
     end
   end
 end

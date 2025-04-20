@@ -7,25 +7,28 @@ class RubyLsp < Formula
   head "https:github.comShopifyruby-lsp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "45eb9a365dc2ca076dfd3b2e30cca9772cbd8cd8726858502b83bcc726ae07f4"
-    sha256 cellar: :any,                 arm64_sonoma:  "8084f212c630908edf6d7050d462ba2212377bd1b9bf254c7083814f3ca35b1a"
-    sha256 cellar: :any,                 arm64_ventura: "fa5368569a290fd2ef7ee90fdf8198bf4fb22199b047346c10036cd2ab3f7dc8"
-    sha256 cellar: :any,                 sonoma:        "2d19a5e38d110bc217ea984f5fb6d59f45fdf56cf5b60affae47ef60dbe4d892"
-    sha256 cellar: :any,                 ventura:       "98ac6b344d46ff347ade02fabf324e840c00a3e2e4cd5678725ac771fe221c86"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "705f10675161ae8ca02f720501187a43850fb0254d741f1644434c9814b0acad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2f45b33bc2d8b8ca0b81519f6fbe037e1784a529c5baf8d996ef76f523c8d99"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "05724d0ded76624312479f0b6d0bcd85ca023aefc29072cf2eaf36bb960c510d"
+    sha256 cellar: :any,                 arm64_sonoma:  "2628d368668c4a1fbcecba0d8598815e142099b1ba287909a89db5630984c1a6"
+    sha256 cellar: :any,                 arm64_ventura: "3a099967f1b48028c39eb5ab8005f517ed5d1cfbe66a5e173bec4a3ba60c2c3e"
+    sha256 cellar: :any,                 sonoma:        "4a8d77c09893b1297c8c3cf1c5ba5032b2de178a2cd9ddad074c6dfaf1bced78"
+    sha256 cellar: :any,                 ventura:       "9b4e7823632f81d1fb9cdbd155884251d02694af40da33d2328b96330c766f71"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0eb25045fb6f575f023e472e1235c3c88fb3cc0db69492f07b8825fb349c6825"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a07b5d8a001218ffb986049bac489988f7ec6ae2e4e9cc725e884941b076915"
   end
 
   depends_on "ruby"
 
   def install
+    ENV["BUNDLE_VERSION"] = "system" # Avoid installing Bundler into the keg
     ENV["GEM_HOME"] = libexec
 
-    system "bundle", "install", "--without", "development", "test"
+    system "bundle", "config", "set", "without", "development", "test"
+    system "bundle", "install"
     system "gem", "build", "#{name}.gemspec"
     system "gem", "install", "#{name}-#{version}.gem"
-    bin.install libexec"bin#{name}"
 
+    bin.install libexec"bin#{name}"
     bin.env_script_all_files libexec"bin",
       PATH:     "#{Formula["ruby"].opt_bin}:$PATH",
       GEM_HOME: ENV["GEM_HOME"]

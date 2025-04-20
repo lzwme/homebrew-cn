@@ -1,21 +1,27 @@
 cask "miaoyan" do
-  version "1.15.0"
-  sha256 "abc279f16ac3543598320d31cd693e405b78ff92dbcaa21bb2df96301c17b13c"
+  version "1.15.1"
+  sha256 "77d12cc0d57b9170c80042de089fb10de722b723cc203b9662a68cee0a6bdd73"
 
-  url "https:github.comtw93MiaoYanreleasesdownloadV#{version}MiaoYan.dmg",
-      verified: "github.comtw93MiaoYan"
+  url "https://gw.alipayobjects.com/os/k/app/MiaoYan_V#{version}.zip",
+      verified: "gw.alipayobjects.com/"
   name "MiaoYan"
   desc "Markdown editor"
-  homepage "https:miaoyan.app"
+  homepage "https://miaoyan.app/"
 
+  livecheck do
+    url "https://miaoyan.app/appcast.xml"
+    strategy :sparkle
+  end
+
+  auto_updates true
   depends_on macos: ">= :catalina"
 
   app "MiaoYan.app"
 
   zap trash: [
-    "~LibraryApplication Supportcom.tw93.MiaoYan",
-    "~LibraryCachescom.tw93.MiaoYan",
-    "~LibraryHTTPStoragescom.tw93.MiaoYan",
-    "~LibraryPreferencescom.tw93.MiaoYan.plist",
+    "~/Library/Application Support/com.tw93.MiaoYan",
+    "~/Library/Caches/com.tw93.MiaoYan",
+    "~/Library/HTTPStorages/com.tw93.MiaoYan",
+    "~/Library/Preferences/com.tw93.MiaoYan.plist",
   ]
 end

@@ -8,6 +8,12 @@ cask "catch" do
   desc "Broadcatching made easy"
   homepage "https:www.giorgiocalderolla.comcatch.html"
 
+  livecheck do
+    url "https:raw.github.commipstiancatchmasterupdateappcast.xml"
+    strategy :sparkle, &:short_version
+  end
+
+  auto_updates true
   depends_on macos: ">= :sierra"
 
   app "Catch.app"

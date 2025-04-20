@@ -12,6 +12,7 @@ class Buffrs < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "eac1b4cc09a3c34d2d01ec190bdb078c5131921b848d32705e9f9732046b51c4"
     sha256 cellar: :any_skip_relocation, sonoma:        "e0335f7c9a2f6355f7e3e641065364d41d00c8cdc0ca3be607b2d8cb6ab40388"
     sha256 cellar: :any_skip_relocation, ventura:       "876f21408b2551e6897802245642bd7d2e64f2d6481a059a38a4a37af20e663a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6ff45ce008244d621f237f1471d76def4c00d9c637e284f46128fc6b008dfe0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e43054ff1385d4a6fda830232e0d07b448bd2f2b577f6378c9f3cd7e6994558"
   end
 

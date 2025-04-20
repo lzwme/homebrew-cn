@@ -6898,6 +6898,7 @@ Homebrew-homebrew-core/Formula/u/ugit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/ugrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uhd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uhdm.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/u/uhubctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/ulfius.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/ultralist.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/um.rb, Homebrew/homebrew-core, 1
@@ -7383,6 +7384,7 @@ Homebrew-homebrew-core/Formula/x/xtensor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xterm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xtermcontrol.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xtitle.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/x/xtl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xtrans.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xurls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xvid.rb, Homebrew/homebrew-core, 0
@@ -9161,6 +9163,8 @@ Homebrew-homebrew-cask/Casks/font/font-a/font-amiri.rb, Homebrew/homebrew-cask, 
 Homebrew-homebrew-cask/Casks/font/font-a/font-amita.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-amstelvar-alpha.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-anaheim.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-a/font-ancizar-sans.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-a/font-ancizar-serif.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-andada-pro.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-andagii.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-andale-mono.rb, Homebrew/homebrew-cask, 0
@@ -9918,6 +9922,7 @@ Homebrew-homebrew-cask/Casks/font/font-h/font-host-grotesk.rb, Homebrew/homebrew
 Homebrew-homebrew-cask/Casks/font/font-h/font-hubballi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-h/font-hubot-sans.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-h/font-humor-sans.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-h/font-huninn.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-h/font-hurmit-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-h/font-hurricane.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-h/font-hyppolit.rb, Homebrew/homebrew-cask, 0
@@ -12293,6 +12298,7 @@ Homebrew-homebrew-cask/Casks/l/little-snitch@5.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/live-home-3d.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/livebook.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/livetail.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/l/liviable.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/llamachat.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/l/lm-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/l/lmms.rb, Homebrew/homebrew-cask, 1
@@ -12566,7 +12572,7 @@ Homebrew-homebrew-cask/Casks/m/mgba.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mi@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mia-for-gmail.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/m/miaoyan.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/miaoyan.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mic-drop.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/michaelvillar-timer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/micro-sniff.rb, Homebrew/homebrew-cask, 1

@@ -11,6 +11,7 @@ class Crystalline < Formula
     sha256 arm64_ventura: "20cc7ad8918d96f0e73ae70aa82393b43f4ce7e894d4825d8648db53488fa395"
     sha256 sonoma:        "2b2cffc5a22e2ea946c586d34e31458d7ab0d087dcea537abe1483d625c51f4f"
     sha256 ventura:       "357a43d72b43ada41e33fcfeeb4e1e04be8508abbb5294e88d20e15cb1606f5b"
+    sha256 arm64_linux:   "a6ffc7177b8f8efa0b587a595141ea163837cd030b567bde653adcdfd626bbed"
     sha256 x86_64_linux:  "d1c28873a745b3040cc6d5d9e9a2669890be5d3d6fbe8cb60494f2b3c5cdfc92"
   end
 

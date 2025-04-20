@@ -3,19 +3,19 @@ class Uvicorn < Formula
 
   desc "ASGI web server"
   homepage "https:www.uvicorn.org"
-  url "https:files.pythonhosted.orgpackages8637dd92f1f9cedb5eaf74d9999044306e06abe65344ff197864175dbbd91871uvicorn-0.34.1.tar.gz"
-  sha256 "af981725fc4b7ffc5cb3b0e9eda6258a90c4b52cb2a83ce567ae0a7ae1757afc"
+  url "https:files.pythonhosted.orgpackagesa6ae9bbb19b9e1c450cf9ecaef06463e40234d98d95bf572fab11b4f19ae5deduvicorn-0.34.2.tar.gz"
+  sha256 "0e929828f6186353a80b58ea719861d2629d766293b6d19baf086ba31d4f3328"
   license "BSD-3-Clause"
   head "https:github.comencodeuvicorn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8e992beaeee25af873ec965aac35ff4068390ee0edffb2cf1a90283faa0b05b0"
-    sha256 cellar: :any,                 arm64_sonoma:  "90fef846cc7952c486421b0309fb0ce3b1b54de96262b9920cb3dd0b7754aec2"
-    sha256 cellar: :any,                 arm64_ventura: "4aec947573a3c98fd008c98b03bb66e0e82031e7b40fba098e2132e4ecce822a"
-    sha256 cellar: :any,                 sonoma:        "00645e1d7712bb11f225023cd4243d66d73c5d4b5d08c1eaa008d352a156aecd"
-    sha256 cellar: :any,                 ventura:       "2c7d095fa04a77ba0eb0b137dce4a294319f5eed6402c96947083ebe9de72d85"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ca1bbfaf00a7e4179daef1df8f455b04b74565b41032b5f714612a00fff4f4c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b3309ec8401a11515c98cc8f79f7d13973456f149a189edd67ee114dcd093a5"
+    sha256 cellar: :any,                 arm64_sequoia: "39746cd79076ab16c377bdca0bbafba558d7ff23fd7c608e12f0edf1f505879c"
+    sha256 cellar: :any,                 arm64_sonoma:  "3fde1aaa595f64df92b01ccf3338683c84965637a9b31e640fd5cc7e9c47a312"
+    sha256 cellar: :any,                 arm64_ventura: "940c7851c9d6d581eb60e91d7346a0b33d42882105443f01247205334dd4a90b"
+    sha256 cellar: :any,                 sonoma:        "9b21f0797227783304b09a3871b151b4c35ef6dea2b0ffbabb207a55ca6116fb"
+    sha256 cellar: :any,                 ventura:       "b992e8fe13ac75a42d140f6e9dfd0948cb4a94d5b1a4363445e2047dad8a5cfb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c8f77c482e1064a0e903c3ae0242613abe96ff638dc78d49412df2964a8c4b95"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0f155a6d824d20be2a60f8c66c04bb6b7cba13b9ff920893508bb3e373655a9"
   end
 
   depends_on "rust" => :build

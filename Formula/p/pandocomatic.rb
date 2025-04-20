@@ -15,10 +15,12 @@ class Pandocomatic < Formula
   def install
     ENV["BUNDLE_VERSION"] = "system" # Avoid installing Bundler into the keg
     ENV["GEM_HOME"] = libexec
+
     system "bundle", "config", "set", "without", "development", "test"
     system "bundle", "install"
     system "gem", "build", "#{name}.gemspec"
     system "gem", "install", "#{name}-#{version}.gem"
+
     bin.install libexec"bin#{name}"
     bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
   end

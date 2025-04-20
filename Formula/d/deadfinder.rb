@@ -34,10 +34,10 @@ class Deadfinder < Formula
 
     system "bundle", "config", "set", "without", "development", "test"
     system "bundle", "install"
-    system "gem", "build", "deadfinder.gemspec"
-    system "gem", "install", "deadfinder-#{version}.gem"
+    system "gem", "build", "#{name}.gemspec"
+    system "gem", "install", "#{name}-#{version}.gem"
 
-    bin.install libexec"bindeadfinder"
+    bin.install libexec"bin#{name}"
     bin.env_script_all_files(libexec"bin", GEM_HOME: ENV["GEM_HOME"])
 
     # Remove mkmf.log files to avoid shims references
