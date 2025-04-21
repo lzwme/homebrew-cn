@@ -3,18 +3,18 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/51/06/ce16cb49402745e24ba8010e1f3b96e0dddbf490a879fa679cc9e3be3d5c/schemathesis-3.39.15.tar.gz"
-  sha256 "fa92dd2f7cf2fbed4232187d706b7c9c3fe8e9e57a051420a7678181a04580d1"
+  url "https://files.pythonhosted.org/packages/ae/4a/b241f9a76c66d4a1c70ef0feb51cab957792087631bfb40589c2b362c848/schemathesis-3.39.16.tar.gz"
+  sha256 "d903368786e745ad151924d4e2e883a8b158332e60af56cd623d88d08ad55076"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "382dce12df4192add92a550bb3e08f106bd56df7c78a29e975f16ffefc28e1e4"
-    sha256 cellar: :any,                 arm64_sonoma:  "84ef3427a6479ca103ef0cedcbcfff7387a24514e2609684df321814096cc471"
-    sha256 cellar: :any,                 arm64_ventura: "2696351881a3a682907c820ead480c28a4b3c0c25e4d4fd773a4eb1411032e52"
-    sha256 cellar: :any,                 sonoma:        "1d55d9d8add4731a8d0e1e0fdb54808d894f8971cdce11313bcd26ed4bd202ec"
-    sha256 cellar: :any,                 ventura:       "2f9935792cb6172ac2fd997ee764dbff93bdc8011bf8c0c303c3ec6d4c7559b5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e6996c95b718a0896908397d16fc83a01d6bce51d47dfdc08e859868bb9ffae3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4142f3a56940a7c28316865fa1179d82e2d9fd1c2ebca36e5241c6eee481f94d"
+    sha256 cellar: :any,                 arm64_sequoia: "4f29b9cc343f2596ed5dc6c5f54f2184fd5eaaaaa81389fb447b728cf7fd3245"
+    sha256 cellar: :any,                 arm64_sonoma:  "c0134e700a6430922952df11002d0b13aee7dcea7d400a89ed9548419628c0a7"
+    sha256 cellar: :any,                 arm64_ventura: "c9f6f850643fb8f3c3a8fce3b22ba5ef33c4d22e0ed88ba490ca12017aaf6ed5"
+    sha256 cellar: :any,                 sonoma:        "aa527b2793cc458c31e84d25cb14ae3c7dec77530f360b78e86f978acfff5a9c"
+    sha256 cellar: :any,                 ventura:       "be4546ed52da748c1d2e448bc748ad1fcad630e3ee77bae4cdd7ca540a888cc3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "564142e45bd506c79f8509876bba6d06ff3eff51f0e2b3aa419da677023e6df3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dba4b6b29a2d9c8bfd607ece9d3acc344ce49a34d42b498e0f7d1f8ce241343e"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -80,8 +80,8 @@ class Schemathesis < Formula
   end
 
   resource "httpcore" do
-    url "https://files.pythonhosted.org/packages/6a/41/d7d0a89eb493922c37d343b607bc1b5da7f5be7e383740b4753ad8943e90/httpcore-1.0.7.tar.gz"
-    sha256 "8551cb62a169ec7162ac7be8d4817d561f60e08eaa485234898414bb5a8a0b4c"
+    url "https://files.pythonhosted.org/packages/9f/45/ad3e1b4d448f22c0cff4f5692f5ed0666658578e358b8d58a19846048059/httpcore-1.0.8.tar.gz"
+    sha256 "86e94505ed24ea06514883fd44d2bc02d90e77e7979c8eb71b90f41d364a1bad"
   end
 
   resource "httpx" do
@@ -90,8 +90,8 @@ class Schemathesis < Formula
   end
 
   resource "hypothesis" do
-    url "https://files.pythonhosted.org/packages/5c/ae/fa9f4dff4ead766ffd280e710aa06083ee185938526535b808e366871fbc/hypothesis-6.130.8.tar.gz"
-    sha256 "1b719943011375b1d66f01f858181c3c3ae49324cd7d7b359229cbf95a7785ce"
+    url "https://files.pythonhosted.org/packages/6c/3f/cc1970629319aeaea0032e57ac64949051490ef7adf6ffeb26b6b7dbaf1d/hypothesis-6.131.6.tar.gz"
+    sha256 "3d7ceb300be5f47b4023021bcf0e6e0c7b7e8dcf304a381dd10238a1cfbd0ba2"
   end
 
   resource "hypothesis-graphql" do
@@ -145,13 +145,13 @@ class Schemathesis < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/fa/2d/6e0d6771cadd5ad14d13193cc8326dc0b341cc1659c306cbfce7a5058fff/multidict-6.3.2.tar.gz"
-    sha256 "c1035eea471f759fa853dd6e76aaa1e389f93b3e1403093fa0fd3ab4db490678"
+    url "https://files.pythonhosted.org/packages/da/2c/e367dfb4c6538614a0c9453e510d75d66099edf1c4e69da1b5ce691a1931/multidict-6.4.3.tar.gz"
+    sha256 "3ada0b058c9f213c5f95ba301f922d402ac234f1111a7d8fd70f1b99f3c281ec"
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d0/63/68dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106da/packaging-24.2.tar.gz"
-    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
+    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
+    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
   resource "pluggy" do
@@ -230,8 +230,8 @@ class Schemathesis < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/04/1b/52b27f2e13ceedc79a908e29eac426a63465a1a01248e5f24aa36a62aeb3/starlette-0.46.1.tar.gz"
-    sha256 "3c88d58ee4bd1bb807c0d1acb381838afc7752f9ddaec81bbe4383611d833230"
+    url "https://files.pythonhosted.org/packages/ce/20/08dfcd9c983f6a6f4a1000d934b9e6d626cff8d2eeb77a89a68eef20a2b7/starlette-0.46.2.tar.gz"
+    sha256 "7f7361f34eed179294600af672f565727419830b54b7b084efe44bb82d2fccd5"
   end
 
   resource "starlette-testclient" do
@@ -260,8 +260,8 @@ class Schemathesis < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/aa/63/e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66/urllib3-2.3.0.tar.gz"
-    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
+    url "https://files.pythonhosted.org/packages/8a/78/16493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0/urllib3-2.4.0.tar.gz"
+    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
   end
 
   resource "webcolors" do
@@ -275,8 +275,8 @@ class Schemathesis < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/b7/9d/4b94a8e6d2b51b599516a5cb88e5bc99b4d8d4583e468057eaa29d5f0918/yarl-1.18.3.tar.gz"
-    sha256 "ac1801c45cbf77b6c99242eeff4fffb5e4e73a800b5c4ad4fc0be5def634d2e1"
+    url "https://files.pythonhosted.org/packages/62/51/c0edba5219027f6eab262e139f73e2417b0f4efffa23bf562f6e18f76ca5/yarl-1.20.0.tar.gz"
+    sha256 "686d51e51ee5dfe62dec86e4866ee0e9ed66df700d55c828a615640adc885307"
   end
 
   def install

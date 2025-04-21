@@ -7,7 +7,7 @@ class Mu < Formula
   url "https:github.comdjcbmureleasesdownloadv1.12.9mu-1.12.9.tar.xz"
   sha256 "ed493ef4eab536815ca8f948848370cd00b4383bc006b6527ccdf21d38e16de5"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   head "https:github.comdjcbmu.git", branch: "master"
 
   # We restrict matching to versions with an even-numbered minor version number,
@@ -19,13 +19,13 @@ class Mu < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "9b8ce0acb72f18674104d9f0eebc68de9dbc9735be58791485a95d15ad809df3"
-    sha256 cellar: :any, arm64_sonoma:  "cb0270522fcd76159e931b9df5be368caa8a5221db9ecda3d787b1a6c1fe0f7c"
-    sha256 cellar: :any, arm64_ventura: "cacc518fb2f13e7359ec2b06412c0d371e9a9c90f68b7cd27471c56235eae036"
-    sha256 cellar: :any, sonoma:        "c08441642fe79b9d15e4b4c63fa6ec15f2a5be4a8fb1f84cee79b984f15f78eb"
-    sha256 cellar: :any, ventura:       "8dfc9d091b19953076b55e3a9f86f6f3bbbc4bb0dbedc2ed26e6995b589e081b"
-    sha256               arm64_linux:   "e72c9fdd813b7d78ea8a88e0e0c9868010381fb3badcdbd9186ec59f91238a7d"
-    sha256               x86_64_linux:  "7b30b118ab9142d4d5eacf510361c2c4d2843e2caa62c5c49bae875015e9070e"
+    sha256 cellar: :any, arm64_sequoia: "bc710b38c809e4a7d2ac1ff24ba36cc071b4978fee70d901fb519730f4707972"
+    sha256 cellar: :any, arm64_sonoma:  "2c211890922be67169f21ee14eb0d8c0000fb785c38a59c1826122a507bfdabc"
+    sha256 cellar: :any, arm64_ventura: "2657a59ee93adfc1f0bf01d2a38cb84efe06937873f8a4377566a90a3456cd79"
+    sha256 cellar: :any, sonoma:        "04c4cc33e94fe156af9ebf4fd89f2c82072646efdd5c129c20f0f417c9aff0fc"
+    sha256 cellar: :any, ventura:       "d01a6c112a68a996c30b2df3075192f8b0f1024208e1abe9e24492f59365d68e"
+    sha256               arm64_linux:   "f53eece668a302f2ac9a1b3b5e724e51a64d205da6bc0aa45662e5292b4d5681"
+    sha256               x86_64_linux:  "92123000b780623584d5faafebb31b00be1922ebf220725ed162b968bbdacbc9"
   end
 
   depends_on "emacs" => :build

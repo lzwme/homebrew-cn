@@ -1,18 +1,18 @@
 class Gat < Formula
   desc "Cat alternative written in Go"
   homepage "https:github.comkoki-developgat"
-  url "https:github.comkoki-developgatarchiverefstagsv0.22.0.tar.gz"
-  sha256 "bcb0d45743ff1990fab8304bb677922dce95b16a33b50d7613bfa4f5a9420a30"
+  url "https:github.comkoki-developgatarchiverefstagsv0.22.3.tar.gz"
+  sha256 "84adec2d9ebe93b20bfe4d4d533be9ad65f509de1a611c8bfca359c66ed2eb8f"
   license "MIT"
   head "https:github.comkoki-developgat.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e529dc2cbbb100e534380e0b8c842c193013d4db370a5a75c7316f5472aac4f0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e529dc2cbbb100e534380e0b8c842c193013d4db370a5a75c7316f5472aac4f0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e529dc2cbbb100e534380e0b8c842c193013d4db370a5a75c7316f5472aac4f0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ec22c1b56b7285bf6080a6c1beca27a9c8b68fd31d2d1c540c0aeed2673c533a"
-    sha256 cellar: :any_skip_relocation, ventura:       "ec22c1b56b7285bf6080a6c1beca27a9c8b68fd31d2d1c540c0aeed2673c533a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79f97ee9a42dbcf692a2dd6b53e331006c8707d0fc4d44777e86916f81f7ab9d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7bcb908eccdaf495cb4d90cb54b4ea88dd16ee47a8940051fc030d74b0fb31ab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7bcb908eccdaf495cb4d90cb54b4ea88dd16ee47a8940051fc030d74b0fb31ab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7bcb908eccdaf495cb4d90cb54b4ea88dd16ee47a8940051fc030d74b0fb31ab"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0a3b9e2de53607999b15e40531653825af35caee4cacded6094cf31ac723a75b"
+    sha256 cellar: :any_skip_relocation, ventura:       "0a3b9e2de53607999b15e40531653825af35caee4cacded6094cf31ac723a75b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "745163509ff748c88f5b39553ed0b1463e073c61ef268f7fd46a8983c7c43bd5"
   end
 
   depends_on "go" => :build

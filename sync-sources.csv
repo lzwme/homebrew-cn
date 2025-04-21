@@ -625,6 +625,7 @@ Homebrew-homebrew-core/Formula/b/brag.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/braid.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brainfuck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/breezy.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/brename.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brev.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brew-cask-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brew-gem.rb, Homebrew/homebrew-core, 1
@@ -13393,6 +13394,7 @@ Homebrew-homebrew-cask/Casks/p/product-hunt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/productive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/profilecreator.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/profind.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/profit.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/programmer-dvorak.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/progressive-downloader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/projectlibre.rb, Homebrew/homebrew-cask, 0
@@ -14631,6 +14633,7 @@ Homebrew-homebrew-cask/Casks/v/veusz.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vezer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/via.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/viable.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/v/viables.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vial.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/viber.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vidcutter.rb, Homebrew/homebrew-cask, 1
@@ -14644,6 +14647,7 @@ Homebrew-homebrew-cask/Casks/v/vienna.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vimcal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vimediamanager.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vimr.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/v/vimy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vincelwt-chatgpt.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vine-server.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vip-access.rb, Homebrew/homebrew-cask, 0

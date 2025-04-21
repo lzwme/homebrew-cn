@@ -1,18 +1,18 @@
 class Tgpt < Formula
   desc "AI Chatbots in terminal without needing API keys"
   homepage "https:github.comaandrew-metgpt"
-  url "https:github.comaandrew-metgptarchiverefstagsv2.9.5.tar.gz"
-  sha256 "d911a245e1b38b851a2572b3c12d49cc49d55c9d23cf86e7d894e68ee1a00b27"
+  url "https:github.comaandrew-metgptarchiverefstagsv2.9.6.tar.gz"
+  sha256 "6800b06059de1f5bab2aa3bbf61c3d43ec63498a9dccb7a4918e7f8790c04bd8"
   license "GPL-3.0-only"
   head "https:github.comaandrew-metgpt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "35b0174e0fa3279921cbd127752b10b7cfafbcee4616c455d706007b11cff1fb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "35b0174e0fa3279921cbd127752b10b7cfafbcee4616c455d706007b11cff1fb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "35b0174e0fa3279921cbd127752b10b7cfafbcee4616c455d706007b11cff1fb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7ee645b270191b68f1e458441790d5c7084cce097c5f420bf00095b49e1721b2"
-    sha256 cellar: :any_skip_relocation, ventura:       "7ee645b270191b68f1e458441790d5c7084cce097c5f420bf00095b49e1721b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "323edede2a1a819f30979127028d3c433eda72c738978460d08bc33c33114d3c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "163aa59bc4dd9c67e3ce54511a684e320a601918eb72d8f472d1eea2aba8b119"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "163aa59bc4dd9c67e3ce54511a684e320a601918eb72d8f472d1eea2aba8b119"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "163aa59bc4dd9c67e3ce54511a684e320a601918eb72d8f472d1eea2aba8b119"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4c38b7cb01d247c012fdb613946a14aa4b7131a6e159f9e58c198938e898e831"
+    sha256 cellar: :any_skip_relocation, ventura:       "4c38b7cb01d247c012fdb613946a14aa4b7131a6e159f9e58c198938e898e831"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2593ebb991c8ee46269554aea50ec20af8fd15c2465a08a2570e792d9afaa948"
   end
 
   depends_on "go" => :build

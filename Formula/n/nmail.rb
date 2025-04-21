@@ -4,17 +4,17 @@ class Nmail < Formula
   url "https:github.comd99krisnmailarchiverefstagsv5.3.5.tar.gz"
   sha256 "071abc7c9c1d5a26616410872d4f7310cd00416f8da0860e1f368ca642ccc025"
   license "MIT"
-  revision 1
+  revision 2
   head "https:github.comd99krisnmail.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "520368fc89abfe81011deb72529d5f200d8c63651e53a223309fa249b5f110f1"
-    sha256 cellar: :any,                 arm64_sonoma:  "1f4a5feb746ec6a74db6b57f345ec825f3203477c73fb95c7019101ab0cb5890"
-    sha256 cellar: :any,                 arm64_ventura: "b3717d399c95e7cef987e3612e45d39cb22c6f432468ef9739bf794758651cdf"
-    sha256 cellar: :any,                 sonoma:        "0ce46c6ae5f1d53d55bf2a13f4d6ec9a419d044a260d8cbd59cab92ecabb9bc5"
-    sha256 cellar: :any,                 ventura:       "d26fa6daaa44b82ef0a9e70a19f5c9008c20c45b2b89f9c4c85147a5449e81d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "919be579ee770f9720a2b64f671c07efaebe081ee420d071aed68eaeaeb37f92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b34156b51cd959e3b671ffdcf3b933a9ee2d83d24f9dc89ae6eb8390425bfd5f"
+    sha256 cellar: :any,                 arm64_sequoia: "7e72b5c52451568c90d29fbc3c6b62f9e1c5d39ca4b231ee034934c36aa78085"
+    sha256 cellar: :any,                 arm64_sonoma:  "81d11f446f22d205340d8710d8b396d868f191be9243debea62fa6889f602ae2"
+    sha256 cellar: :any,                 arm64_ventura: "99fbb7162cbd512d0ad904c331c558d03477c272e586abd93bb73acef2ec9198"
+    sha256 cellar: :any,                 sonoma:        "dfc51de93f0972a4d15c3afeda9956e5ea3d60b8c82c6d9c8b42be32a3f58cf9"
+    sha256 cellar: :any,                 ventura:       "0b3c105b12c2965b5ecd6d4de5771fe721a9dc9895c99f93b95994874891a4ee"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9a22770c3730478c2a81197ec336127b1259b8914704337a5600cb92ea86c24e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91b354d89d63c49fbc07412c4c81becb69cbe78c6bf6b97a861d2e4b957388ad"
   end
 
   depends_on "cmake" => :build

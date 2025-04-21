@@ -7,13 +7,14 @@ class Duckdb < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "37e16cc9346d3ecb9914e19f29d74bfc6125efa1b3fc0572c8f94dda7c6b6979"
-    sha256 cellar: :any,                 arm64_sonoma:  "9f8e1d732831361bba9a986d98eafbf2d440705229eb8a7ab313b88d98f0bbe6"
-    sha256 cellar: :any,                 arm64_ventura: "6841e7a1b8edb2d821de678400b373900e02942df1e3f667ed7474ed980d3b6f"
-    sha256 cellar: :any,                 sonoma:        "2f6b583cebc3b938aafb44aa23bf405c293010650eb1d0d22a1f42a8c134755c"
-    sha256 cellar: :any,                 ventura:       "316378b7ec3d6a6763318cc66f716443ee9ecc63ff1459363d02f5bc45e30c9e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d79ef342c28786bd8f5dbf9562bc51a1ca960f4f4a8932b3bc6bfd2510c8996a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "91cca7c442bf9f6bde58b3cbe14575fd3caf350dc093f4c86e6322dafd09aaad"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "08f736ac15900c9419d502cd49a561b00654ca43c1fb537477dd902386b87905"
+    sha256 cellar: :any,                 arm64_sonoma:  "b2944c5b262da44b7c220ee8e088623341845ae625140c80f381b891d5b0cdd9"
+    sha256 cellar: :any,                 arm64_ventura: "b757097a4f3e3987d271e0af6087d7ebd56ad78c3f197e08bf66f5477ed89552"
+    sha256 cellar: :any,                 sonoma:        "c6a941d6bf421faaeaea61d0575aba122b98481a64d908855819481cc445abf1"
+    sha256 cellar: :any,                 ventura:       "4ca934eb3dc7d50b575aab4905cdfe5325c7974087a6e25a800d3c95e0190e13"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7eebc76d2395b6b97c28cfe6574a9b4892fce2b55bb2bcc4aa1b21060dd8d75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cc7d56badae2ff05853832413a614da1185060fa501a74b25b35511fa404c86e"
   end
 
   depends_on "cmake" => :build
@@ -33,6 +34,8 @@ class Duckdb < Formula
     # The cli tool was renamed (0.1.8 -> 0.1.9)
     # Create a symlink to not break compatibility
     bin.install_symlink bin"duckdb" => "duckdb_cli"
+
+    rm lib.glob("*.a")
   end
 
   test do

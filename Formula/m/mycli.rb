@@ -3,18 +3,18 @@ class Mycli < Formula
 
   desc "CLI for MySQL with auto-completion and syntax highlighting"
   homepage "https://www.mycli.net/"
-  url "https://files.pythonhosted.org/packages/4d/d1/d334536a790429150b5ea996139775eec3ed406362a170f57536d88ce699/mycli-1.29.2.tar.gz"
-  sha256 "e1e390c14e3a5f3b4a5850780cd6d65c161a0cbede6f73b8b4fab55023d3e72b"
+  url "https://files.pythonhosted.org/packages/8f/2d/b91fcde276a783fbca94b54cb9b91ce3a506dfb4390fa603c0389b029ec4/mycli-1.30.0.tar.gz"
+  sha256 "e8822cd4ce721badfe485122a502e030965668e426e75db9b8a0dd2efe0bd675"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d18154a7e9392b78882464f9f897a81e8535cc9858e726e18eac1859f73866be"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d18154a7e9392b78882464f9f897a81e8535cc9858e726e18eac1859f73866be"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d18154a7e9392b78882464f9f897a81e8535cc9858e726e18eac1859f73866be"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a92f75349d90d602e097f50fc037e2c982a73dac99c89337c7df3bc883c1b32d"
-    sha256 cellar: :any_skip_relocation, ventura:       "a92f75349d90d602e097f50fc037e2c982a73dac99c89337c7df3bc883c1b32d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb80555e431923e8599590360dd68c0442ed38a12bca693b0afc79e728e95cf9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d18154a7e9392b78882464f9f897a81e8535cc9858e726e18eac1859f73866be"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cfe3f9646439a7264bf6c076a55f21b4ea4255e4ccb43aafeca15043f68376cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cfe3f9646439a7264bf6c076a55f21b4ea4255e4ccb43aafeca15043f68376cb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cfe3f9646439a7264bf6c076a55f21b4ea4255e4ccb43aafeca15043f68376cb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5b2a4e0fd5eba647e3d797ae50d492ab0613a6988d7d256c51d1fc365531c67e"
+    sha256 cellar: :any_skip_relocation, ventura:       "5b2a4e0fd5eba647e3d797ae50d492ab0613a6988d7d256c51d1fc365531c67e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfe3f9646439a7264bf6c076a55f21b4ea4255e4ccb43aafeca15043f68376cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfe3f9646439a7264bf6c076a55f21b4ea4255e4ccb43aafeca15043f68376cb"
   end
 
   depends_on "cryptography"
@@ -23,8 +23,8 @@ class Mycli < Formula
   uses_from_macos "libffi"
 
   resource "cli-helpers" do
-    url "https://files.pythonhosted.org/packages/ab/de/79529bd31c1664415d9554c0c5029f2137afe9808f35637bbcca977d9022/cli_helpers-2.3.1.tar.gz"
-    sha256 "b82a8983ceee21f180e6fd0ddb7ca8dae43c40e920951e3817f996ab204dae6a"
+    url "https://files.pythonhosted.org/packages/f9/7c/3344a9b856b9582df36c7a525f5710294f349499d16dcbf343453f70bdb8/cli_helpers-2.4.0.tar.gz"
+    sha256 "55903b705a212a473731db20fa26f58655e354078b99cb13c99ec06940287a4d"
   end
 
   resource "click" do
@@ -38,8 +38,8 @@ class Mycli < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https://files.pythonhosted.org/packages/2d/4f/feb5e137aff82f7c7f3248267b97451da3644f6cdc218edfe549fb354127/prompt_toolkit-3.0.48.tar.gz"
-    sha256 "d6623ab0477a80df74e646bdbc93621143f5caf104206aa29294d53de1a03d90"
+    url "https://files.pythonhosted.org/packages/bb/6e/9d084c929dfe9e3bfe0c6a47e31f78a25c54627d64a66e884a8bf5474f1c/prompt_toolkit-3.0.51.tar.gz"
+    sha256 "931a162e3b27fc90c86f1b48bb1fb2c528c2761475e57c9c06de13311c7b54ed"
   end
 
   resource "pyaes" do
@@ -53,8 +53,8 @@ class Mycli < Formula
   end
 
   resource "pygments" do
-    url "https://files.pythonhosted.org/packages/8e/62/8336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31/pygments-2.18.0.tar.gz"
-    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
+    url "https://files.pythonhosted.org/packages/7c/2d/c3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84/pygments-2.19.1.tar.gz"
+    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
   end
 
   resource "pymysql" do
@@ -68,8 +68,8 @@ class Mycli < Formula
   end
 
   resource "sqlglot" do
-    url "https://files.pythonhosted.org/packages/fc/9a/a815124044d598b7f6174be176f379eccd9d583e3130594c381fdfb5736f/sqlglot-26.0.0.tar.gz"
-    sha256 "eb4470e8b3aa2cff1a4ecca4cfe36658e9797ab82416e566abe12672195e1ab8"
+    url "https://files.pythonhosted.org/packages/ac/16/57112d89a61f4329047921b2df09ac3caac1e006153bcfc662157211997f/sqlglot-26.15.0.tar.gz"
+    sha256 "8349b782b8cee8b0ec6d228341a6564de562bdb7d87e7843e4849e9bf576e9a9"
   end
 
   resource "sqlparse" do
