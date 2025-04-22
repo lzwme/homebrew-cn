@@ -759,6 +759,7 @@ Homebrew-homebrew-core/Formula/c/cargo-outdated.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-public-api.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-release.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-run-bin.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cargo-shear.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-shuttle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-sort.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cargo-spellcheck.rb, Homebrew/homebrew-core, 1
@@ -4615,7 +4616,7 @@ Homebrew-homebrew-core/Formula/n/net-snmp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/net-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/netaddr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/netatalk.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/n/netcat.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/n/netcat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/netcdf-cxx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/netcdf-fortran.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/netcdf.rb, Homebrew/homebrew-core, 1
@@ -5374,6 +5375,7 @@ Homebrew-homebrew-core/Formula/p/procyon-decompiler.rb, Homebrew/homebrew-core, 
 Homebrew-homebrew-core/Formula/p/prodigal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/profanity.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proftpd.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/prog8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/progress.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/progressline.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/proguard.rb, Homebrew/homebrew-core, 1
@@ -6568,6 +6570,8 @@ Homebrew-homebrew-core/Formula/t/tdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tdlib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tea.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tealdeer.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/technitium-dns.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/technitium-library.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tectonic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/teem.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/teensy_loader_cli.rb, Homebrew/homebrew-core, 1
@@ -8538,7 +8542,6 @@ Homebrew-homebrew-cask/Casks/d/defold.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/defold@alpha.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/defold@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dehelper.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/d/dehesselle-meld.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dejalu.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/deltachat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/deltawalker.rb, Homebrew/homebrew-cask, 0
@@ -11786,6 +11789,7 @@ Homebrew-homebrew-cask/Casks/h/hiarcs-chess-explorer.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/h/hiddenbar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/hides.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hidock.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/h/highlight.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hightop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/historyhound.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hma-vpn.rb, Homebrew/homebrew-cask, 0
@@ -14734,6 +14738,7 @@ Homebrew-homebrew-cask/Casks/w/waltr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wannianli.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/warcraft-logs-uploader.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/warp.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/w/warp@preview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/warsow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/warzone-2100.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wasabi-wallet.rb, Homebrew/homebrew-cask, 1

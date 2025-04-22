@@ -1,18 +1,18 @@
 class NpmCheckUpdates < Formula
   desc "Find newer versions of dependencies than what your package.json allows"
   homepage "https:github.comraineorshinenpm-check-updates"
-  url "https:registry.npmjs.orgnpm-check-updates-npm-check-updates-17.1.18.tgz"
-  sha256 "9d3baba99d82d33ac8609743ffe2efe5e3b23e42283e9f0e410332d915050787"
+  url "https:registry.npmjs.orgnpm-check-updates-npm-check-updates-18.0.0.tgz"
+  sha256 "5fba0d2eb48dda11d8eb326c01607d29933916e81b2e9304e942d35ea2fc7e72"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7324824d8ddffc2f778cef51907e4ca24c26c0039d6d7c05241d639bf847c78e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7324824d8ddffc2f778cef51907e4ca24c26c0039d6d7c05241d639bf847c78e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7324824d8ddffc2f778cef51907e4ca24c26c0039d6d7c05241d639bf847c78e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "723cd78e5b12277ce8cd3d0d3137fd9c526a78fcfd09097cd7805298a3bbf808"
-    sha256 cellar: :any_skip_relocation, ventura:       "723cd78e5b12277ce8cd3d0d3137fd9c526a78fcfd09097cd7805298a3bbf808"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7324824d8ddffc2f778cef51907e4ca24c26c0039d6d7c05241d639bf847c78e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7324824d8ddffc2f778cef51907e4ca24c26c0039d6d7c05241d639bf847c78e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dacdd8a71e1acab1a0143ffbf38273587f48e381ff42a0e44b06b8e6fc654bd8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dacdd8a71e1acab1a0143ffbf38273587f48e381ff42a0e44b06b8e6fc654bd8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "dacdd8a71e1acab1a0143ffbf38273587f48e381ff42a0e44b06b8e6fc654bd8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e661cbfcd1f5639f8d5b6fe456477e3312d296e958a86b185ce980049ac2e09c"
+    sha256 cellar: :any_skip_relocation, ventura:       "e661cbfcd1f5639f8d5b6fe456477e3312d296e958a86b185ce980049ac2e09c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dacdd8a71e1acab1a0143ffbf38273587f48e381ff42a0e44b06b8e6fc654bd8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dacdd8a71e1acab1a0143ffbf38273587f48e381ff42a0e44b06b8e6fc654bd8"
   end
 
   depends_on "node"

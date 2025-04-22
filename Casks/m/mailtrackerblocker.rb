@@ -24,6 +24,5 @@ cask "mailtrackerblocker" do
   uninstall pkgutil: "com.onefatgiraffe.mailtrackerblocker",
             delete:  "LibraryMailBundlesMailTrackerBlocker.mailbundle"
 
-  zap trash: "~LibraryContainerscom.apple.mailDataLibraryApplication Support" \
-             "com.onefatgiraffe.mailtrackerblocker"
+  zap trash: "~LibraryContainerscom.apple.mailDataLibraryApplication Supportcom.onefatgiraffe.mailtrackerblocker"
 end

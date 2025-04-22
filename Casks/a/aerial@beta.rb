@@ -22,8 +22,6 @@ cask "aerial@beta" do
     "~LibraryApplication SupportAerial",
     "~LibraryCachesAerial",
     "~LibraryContainerscom.apple.ScreenSaver.*DataLibraryApplication SupportAerial",
-    "~LibraryContainerscom.apple.ScreenSaver.*DataLibraryApplication SupportAerial",
-    "~LibraryContainerscom.apple.ScreenSaver.*DataLibraryCachesAerial",
     "~LibraryContainerscom.apple.ScreenSaver.*DataLibraryCachesAerial",
     "~LibraryContainerscom.apple.ScreenSaver.*DataLibraryPreferencesByHostcom.JohnCoates.Aerial*.plist",
     "~LibraryPreferencesByHostcom.JohnCoates.Aerial*",

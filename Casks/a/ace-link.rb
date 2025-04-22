@@ -4,7 +4,7 @@ cask "ace-link" do
 
   url "https:github.comblaise-ioacelinkreleasesdownload#{version}Ace.Link.#{version}.dmg"
   name "Ace Link"
-  desc "Menu bar app that allows playing Ace Stream video streams in the VLC player"
+  desc "Menu bar app for playing Ace Stream video streams in an external media player"
   homepage "https:github.comblaise-ioacelink"
 
   livecheck do
@@ -13,10 +13,7 @@ cask "ace-link" do
   end
 
   depends_on macos: ">= :high_sierra"
-  depends_on cask: [
-    "vlc",
-    "docker",
-  ]
+  depends_on cask: "docker"
 
   app "Ace Link.app"
 

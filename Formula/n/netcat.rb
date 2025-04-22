@@ -1,7 +1,7 @@
 class Netcat < Formula
   desc "Utility for managing network connections"
-  homepage "https://netcat.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/netcat/netcat/0.7.1/netcat-0.7.1.tar.bz2"
+  homepage "https:netcat.sourceforge.net"
+  url "https:downloads.sourceforge.netprojectnetcatnetcat0.7.1netcat-0.7.1.tar.bz2"
   sha256 "b55af0bbdf5acc02d1eb6ab18da2acd77a400bafd074489003f3df09676332bb"
   license "GPL-2.0-or-later"
 
@@ -21,23 +21,33 @@ class Netcat < Formula
     sha256 cellar: :any_skip_relocation, high_sierra:    "879d9c32f09e9ef31cb672983707f9d95341f6639bb8a4db54d7a6ea0878b946"
     sha256 cellar: :any_skip_relocation, sierra:         "9027fd429d5407fba0b3206bd0cd198c669f4744155efcf8e0dbdd6ba69b6d34"
     sha256 cellar: :any_skip_relocation, el_capitan:     "1f346605e0236ea7880258da2abf0bde1d7d8d8735a07d6d32feaf12425ff6da"
+    sha256                               arm64_linux:    "eb080e6267d9f70f673e5069f58180210cabe7241fd1d3789415d72be31d9ada"
     sha256                               x86_64_linux:   "713b509412561ffe59ef45f828278384180ffc219547d9495409908ba421e259"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
 
+  # Fix running on Linux ARM64, using patch from Arch Linux ARM.
+  # https:sourceforge.netpnetcatbugs51
+  patch do
+    on_arm do
+      url "https:raw.githubusercontent.comarchlinuxarmPKGBUILDs05ebc1439262e7622ba4ab0c15c2a3bad1ac64c4extragnu-netcatgnu-netcat-flagcount.patch"
+      sha256 "63ffd690c586b164ec2f80723f5bcc46d009ffd5e0dd78bbe56fd1b770fd0788"
+    end
+  end
+
   def install
-    # Regenerate configure script for arm64/Apple Silicon support.
+    # Regenerate configure script for arm64Apple Silicon support.
     system "autoreconf", "--force", "--install", "--verbose"
 
-    system "./configure", "--mandir=#{man}", "--infodir=#{info}", *std_configure_args
+    system ".configure", "--mandir=#{man}", "--infodir=#{info}", *std_configure_args
     system "make", "install"
     man1.install_symlink "netcat.1" => "nc.1"
   end
 
   test do
-    output = pipe_output("#{bin}/nc google.com 80", "GET / HTTP/1.0\r\n\r\n")
-    assert_equal "HTTP/1.0 200 OK", output.lines.first.chomp
+    output = pipe_output("#{bin}nc google.com 80", "GET  HTTP1.0\r\n\r\n")
+    assert_equal "HTTP1.0 200 OK", output.lines.first.chomp
   end
 end
