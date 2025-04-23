@@ -7,6 +7,8 @@ cask "betwixt" do
   desc "Web Debugging Proxy based on Chrome DevTools Network panel"
   homepage "https:github.comkdzwinelbetwixt"
 
+  deprecate! date: "2025-04-21", because: :unmaintained
+
   app "Betwixt-darwin-x64Betwixt.app"
 
   uninstall_postflight do

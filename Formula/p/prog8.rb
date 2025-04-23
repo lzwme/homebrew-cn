@@ -11,6 +11,7 @@ class Prog8 < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "7e36385c5968f414e976a547f344996dee0c8c5b3c9c437bd8ad75b4d7d75925"
     sha256 cellar: :any_skip_relocation, sonoma:        "2f8ab326a823ff286fc0d5dd717e2730b6d55b4926d8d55d5a7acc8e28cc3c8d"
     sha256 cellar: :any_skip_relocation, ventura:       "8dd51e9bfe666751eff6ecde3b4d897df3de793ffc57681e8bd53a01401299cd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ef5e3dd49304ce46d0e838cd3c410c674cd85d309180429de1f69e30149b5333"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "161cbfda304f5f4294c4eb7cffbd9beeda468295ed12c65cfc5d0b44e8cc4674"
   end
 

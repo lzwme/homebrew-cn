@@ -11,6 +11,7 @@ class Eza < Formula
     sha256 cellar: :any,                 arm64_ventura: "ee3921f1b27d676f3738a46094f761f250d4e10a60cb2fe1e2b591818c25ec17"
     sha256 cellar: :any,                 sonoma:        "058b61261d0167416a24706618685d376c5d79fac365ca363679fbf92373a78d"
     sha256 cellar: :any,                 ventura:       "697b9e53ea58c1bf59e207b66c73e038bcc1860aee1f5aa62d9441816a356698"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c653b6ea655fdeea34421655b66ad6d98d34fcbd8a1bb4cdb2d5fa93bba92981"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "26d3c4a71a006775cb959b082af29e3847b568be3e56b397cef97d2a9d8dc7b3"
   end
 

@@ -12,6 +12,7 @@ class CargoShear < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2ef55a63a6eb49f771f8ee9b48b7076e0c178d3776635482bea3add593a9c438"
     sha256 cellar: :any_skip_relocation, sonoma:        "5bd2f417d96e67a653772ab833a303f75bef2f92a0bd8fd2b93912ea5728604e"
     sha256 cellar: :any_skip_relocation, ventura:       "d64bc681a19dfd38da4901612a456c9995d9eabecce5da192709c6dda77258ff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a97a99f5f19e6d1481e2aa04a4e2991bfae5e532f5d8b9b7a50999606af7fbf0"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2453871d1d71575e462f91dfb9033db055055bf9ab3653ca5accf171da3d3a7"
   end
 

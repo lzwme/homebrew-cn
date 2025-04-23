@@ -3,18 +3,18 @@ class Mcpm < Formula
 
   desc "Open source, community-driven MCP server and client manager"
   homepage "https://mcpm.sh/"
-  url "https://files.pythonhosted.org/packages/48/f0/cc3e2b32e4d197280b0187ae14c60e8e848c0a4b5b257d7dfa1fcbc7bc97/mcpm-1.4.1.tar.gz"
-  sha256 "202ec3e6b8e0f0b75e4bd6a19667b8d790cdf8ec9eb7e1d81a840f606a16c798"
+  url "https://files.pythonhosted.org/packages/12/50/6bf654a6b26d961c42f2f73918894ba66a204cd59751cb92f4c570eba8b5/mcpm-1.5.1.tar.gz"
+  sha256 "8bfa5b79db88de371234114af844960eef279a57da3f3929fd99929ce3da9b68"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4a4f29ef6db2eebd645bf813110c775259ceba7196965c5b80241021e16c166b"
-    sha256 cellar: :any,                 arm64_sonoma:  "1f1b39b24839ff071fcf0c28a344971c736efeaca92f6497099730c78f678645"
-    sha256 cellar: :any,                 arm64_ventura: "526ae2dd38682dfcd0593b3f897a730b841446ed357917c6a42a1516578ea312"
-    sha256 cellar: :any,                 sonoma:        "7bc63662da94cc9437a7574f2a21b642cb1610bd5857316bb47f605c06a00663"
-    sha256 cellar: :any,                 ventura:       "99b9af94318abae3dd391448595824d3600449ab0015e6544c577f2126e589a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb46cfd32d3a984cedb110496ed5a0bd0f206c90e5d5bea43e6d1a291dc69580"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c3866f70f9d521a517013f9db5e8b152932cd29ba12ee3ed2425301398263bd"
+    sha256 cellar: :any,                 arm64_sequoia: "2abdc006eb2d8381e0fda7ec13b1b4c2a274e1bc3b1d1acc4793405a2dcc1d0c"
+    sha256 cellar: :any,                 arm64_sonoma:  "47ed52d4d428f23ee37a55bdf60c7d165415b1ae8c92d40faca974251066eeef"
+    sha256 cellar: :any,                 arm64_ventura: "1199eeb48c2da43263c7d70f3e1ae418b183f42d8adb9764a230df336a4cd154"
+    sha256 cellar: :any,                 sonoma:        "31ec9399895127b691f6163869beb43ffa0ca0ca21834eb91ebfb1c93a0274a9"
+    sha256 cellar: :any,                 ventura:       "140c6ec0cfc39d5650999d0fd287315540d342de8a8f356929ede1cebba5473e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c03b4f818ceacc5c580448b5a1e0d229db7e21b6a8d0d70de1470a686ab6d044"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bb3fee69cf952bef40cfcf0e503a6161b4838924115a630f146cfbfedbde19ba"
   end
 
   depends_on "rust" => :build
@@ -111,8 +111,8 @@ class Mcpm < Formula
   end
 
   resource "pydantic-settings" do
-    url "https://files.pythonhosted.org/packages/04/e3/ed51b456c7f2a299af624dd6096e7c96d6f65de06ee2f7fb5884072a2c86/pydantic_settings-2.9.0.tar.gz"
-    sha256 "24fd3fe19bc2c0eddeff91860dc5e303572b39fb70b1391c64955dd4d1875098"
+    url "https://files.pythonhosted.org/packages/67/1d/42628a2c33e93f8e9acbde0d5d735fa0850f3e6a2f8cb1eb6c40b9a732ac/pydantic_settings-2.9.1.tar.gz"
+    sha256 "c509bf79d27563add44e8446233359004ed85066cd096d8b510f715e6ef5d268"
   end
 
   resource "pygments" do
@@ -171,8 +171,8 @@ class Mcpm < Formula
   end
 
   resource "uvicorn" do
-    url "https://files.pythonhosted.org/packages/86/37/dd92f1f9cedb5eaf74d9999044306e06abe65344ff197864175dbbd91871/uvicorn-0.34.1.tar.gz"
-    sha256 "af981725fc4b7ffc5cb3b0e9eda6258a90c4b52cb2a83ce567ae0a7ae1757afc"
+    url "https://files.pythonhosted.org/packages/a6/ae/9bbb19b9e1c450cf9ecaef06463e40234d98d95bf572fab11b4f19ae5ded/uvicorn-0.34.2.tar.gz"
+    sha256 "0e929828f6186353a80b58ea719861d2629d766293b6d19baf086ba31d4f3328"
   end
 
   resource "watchfiles" do

@@ -42,6 +42,7 @@ Homebrew-homebrew-core/Formula/a/adamstark-audiofile.rb, Homebrew/homebrew-core,
 Homebrew-homebrew-core/Formula/a/adapterremoval.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/adaptivecpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/adb-enhanced.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/add-determinism.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/adios2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/admesh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/adns.rb, Homebrew/homebrew-core, 0
@@ -4938,6 +4939,7 @@ Homebrew-homebrew-core/Formula/o/openvino.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/openvpn.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/operator-sdk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ophcrack.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/o/opkssh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/optipng.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opus-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/o/opus.rb, Homebrew/homebrew-core, 1
@@ -6657,11 +6659,13 @@ Homebrew-homebrew-core/Formula/t/tfenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfk8s.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tflint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfmigrate.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tfmv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfocus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfprovidercheck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfproviderlint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfschema.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfsec.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tfsort.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfupdate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tgenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tgif.rb, Homebrew/homebrew-core, 0
@@ -7263,6 +7267,7 @@ Homebrew-homebrew-core/Formula/w/write-good.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/writerperfect.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/w/wrk-trello.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wrk.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/w/wrkflw.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wsk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wskdeploy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/w/wslay.rb, Homebrew/homebrew-core, 1
@@ -11931,7 +11936,7 @@ Homebrew-homebrew-cask/Casks/i/intel-haxm.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/intel-psxe-ce-c++.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/intellidock.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/intellij-idea-ce.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/i/intellij-idea.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/i/intellij-idea.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/intellij-idea@eap.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/interact-scratchpad.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/internxt-drive.rb, Homebrew/homebrew-cask, 1
@@ -13591,6 +13596,7 @@ Homebrew-homebrew-cask/Casks/r/readmoreading.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/r/readwise-ibooks.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/readyapi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/realforce.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/r/realvnc-connect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/reamp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/reaper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/r/recaf.rb, Homebrew/homebrew-cask, 1
@@ -14036,7 +14042,7 @@ Homebrew-homebrew-cask/Casks/s/space-saver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spacedrive.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spaceid.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spacelauncher.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/s/spaceman.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/spaceman.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spaceradar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spamsieve.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spark-ar-studio.rb, Homebrew/homebrew-cask, 0

@@ -10,6 +10,7 @@ class TechnitiumDns < Formula
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1cc7e7cad9743fbf3261a1417f03a97d1bbfc37ad544420e4803105c7ec60eff"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "f8ae57540aa984adcf9d21a2e4a30f7be73998036fce3e5ae0d84bc742693051"
     sha256 cellar: :any_skip_relocation, ventura:       "079e61452c9d175605d9b960b49e24a5237f7da639d0765328c374fda5528da7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ae32179d807f94701937e9abe29110da7b81e7e977168c8d4e27628ea0d5465"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cda1cc0e7223d0c3b8b7e3f9a13af438e6fb4109e731b690544fd9c162182154"
   end
 

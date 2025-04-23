@@ -10,6 +10,7 @@ class TechnitiumLibrary < Formula
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e08722a6396e8a695202789ed5db5949594e8386b2b1ac5171a90696bd36a65"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "38d3dbdca7ad114282e27a3b3a7b08bd34ab9e5b1afdba0bfcb0e5d041aa8753"
     sha256 cellar: :any_skip_relocation, ventura:       "c072c54bbd09d645d0c01864681ab22434bb3b9d27d2d039a2be3fde872a02e4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "78c410d3a32eadd810ff4b2f55876388987c96bfdcfdbd9e80fd65e346dc9073"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "aff4ab8e47c10b2674a6a1af0b698f5016cd5b4cc1aeaba975a1499310266080"
   end
 

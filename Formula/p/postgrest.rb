@@ -17,6 +17,7 @@ class Postgrest < Formula
     sha256 cellar: :any,                 arm64_ventura: "7bfcde1b782b2ef4db2dde24bc81069895db5c8d7167562945b90f90f9ac660f"
     sha256 cellar: :any,                 sonoma:        "0b6146652d86361fa00b6c40841fd8606e5130cf2426a0381208631b96b71ccb"
     sha256 cellar: :any,                 ventura:       "3012f073eaf3c0d9508633a3873c7926c4f32fd8311268aa9825bb5ca51a5638"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "70f271a579aae8aff31fb0d5c5a57a904d63d808e21755cd8e297ce99dd3685a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d68529b666a0b38cfba142f0165d5f0874113f01e5fb5cc4a73d2bd26d59036e"
   end
 

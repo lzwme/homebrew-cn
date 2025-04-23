@@ -8,6 +8,8 @@ cask "tickeys" do
   desc "Utility for producing audio feedback when typing"
   homepage "https:www.yingdev.comprojectstickeys"
 
+  deprecate! date: "2025-04-21", because: :unmaintained
+
   app "Tickeys.app"
 
   zap trash: "~LibraryPreferencescom.yingDev.Tickeys.plist"
