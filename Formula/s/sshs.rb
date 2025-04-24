@@ -1,28 +1,21 @@
 class Sshs < Formula
   desc "Graphical command-line client for SSH"
   homepage "https:github.comquantumsheepsshs"
-  url "https:github.comquantumsheepsshsarchiverefstags4.7.1.tar.gz"
-  sha256 "6aabddb7ab72406ea68574d374595aae93a290018dde2d6241d6070070c3b1fe"
+  url "https:github.comquantumsheepsshsarchiverefstags4.7.2.tar.gz"
+  sha256 "cb14fd50599bfb8de3f04b00cffb8eac9207f67e0ebbdd9380c311d141882f3b"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3f020c2f4309eaeee6e4969365c19a2fb45c66e87b921bab02420826dfcbec3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "550349c0620dd2b5f366b6fdce5e9308c7a94bf27582489a41bb22e4dd9a8244"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "acb492e67b1ef5ea37d080ad25d4f46bf35a26576578a140e6d2ab48cd117af3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bc739e901aec3b0ffe77613fd725f1bf341289d2f52627da3aa486da389e5deb"
-    sha256 cellar: :any_skip_relocation, ventura:       "0f2f9b65a07c794c34a9e51583be6986c3b11664d978c9068d17084b332e1f2e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cbbbff1251ffa8088d5407312698e84bcadfb2fe7fb4510061d87ecc271eaf82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd2adda730fe12d19a93482e3b0c326936dd19b30a140e4aa29d3ae91f884812"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9c8691620baa73fad3c9d41b66bb555b49018b5a4026f78b8ebfc24b726b3a8e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "438e736bbae8e0aeeac0f5b1e9833fe59601e8f94aad84093a2bf6ad7b4f3e8d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "dee907cd51f13ea86e5ff1905ab59f896f6896a06fe8ce5da239719638bc0061"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f1fa7aba391712fb5797c09cb9f77e41662e722402754aad4acde490dc0d2429"
+    sha256 cellar: :any_skip_relocation, ventura:       "7e8fa97a5a345fecb049ee6b602009dfdd7a85102e80ab31691422d82fe83d59"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "78da6be289b347c12f3c4d25788707e582fcb499be6a9e548d54add0c0254a75"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4fdb3557d5009b2c521a74fc93c456b1bc3b2772da8002fb072cfbd445d14be"
   end
 
   depends_on "rust" => :build
-
-  # version patch, upstream pr ref, https:github.comquantumsheepsshspull129
-  patch do
-    url "https:github.comquantumsheepsshscommit0ae3970b851e165a3a375d67f36cc49335ab50f3.patch?full_index=1"
-    sha256 "6ded3bd0e7be515d2215a1da08ce193965d5a1ba5ea18a9f3c386f7d1400380f"
-  end
-
   def install
     system "cargo", "install", *std_cargo_args
   end

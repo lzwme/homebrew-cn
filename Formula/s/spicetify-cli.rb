@@ -1,18 +1,18 @@
 class SpicetifyCli < Formula
   desc "Command-line tool to customize Spotify client"
   homepage "https:spicetify.app"
-  url "https:github.comspicetifycliarchiverefstagsv2.40.1v2.40.1.tar.gz"
-  sha256 "ef8d5c45c55083eaeb0734594148c59d741c1f61646fa4198c5550a1e90ed9f9"
+  url "https:github.comspicetifycliarchiverefstagsv2.40.4v2.40.4.tar.gz"
+  sha256 "9a7216ab600a5c53b1b2351d6bb88df613d7c19570742f8deca978d900d90d5c"
   license "LGPL-2.1-only"
   head "https:github.comspicetifycli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5e4c63b7d437e7dee369d8a6d955d7e02b1e0c31a1a677d29fc2e8b81dc361c0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e4c63b7d437e7dee369d8a6d955d7e02b1e0c31a1a677d29fc2e8b81dc361c0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5e4c63b7d437e7dee369d8a6d955d7e02b1e0c31a1a677d29fc2e8b81dc361c0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3021416f70ae6fa7ed5a9a719c6ce0d3be9f3d55e98104f4ba9d364500367786"
-    sha256 cellar: :any_skip_relocation, ventura:       "3021416f70ae6fa7ed5a9a719c6ce0d3be9f3d55e98104f4ba9d364500367786"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e37ce6719aa9ce5f44a4cd3437518e7a645cacb65fb4e03aad9f19a90cedea84"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "721efc62664ddf43b27207ce2918ec2a7aaf9d8a5c645a5bee08a8048f3d9b83"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "721efc62664ddf43b27207ce2918ec2a7aaf9d8a5c645a5bee08a8048f3d9b83"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "721efc62664ddf43b27207ce2918ec2a7aaf9d8a5c645a5bee08a8048f3d9b83"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f32e7cf759c752e433a6efb242c9e41560968a8d947b86b7129e6535f9952b65"
+    sha256 cellar: :any_skip_relocation, ventura:       "f32e7cf759c752e433a6efb242c9e41560968a8d947b86b7129e6535f9952b65"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f398d05d703fcf8b9f42c0cf43e83ab9a075186e7bc15cc881684ec4b14ec0b0"
   end
 
   depends_on "go" => :build

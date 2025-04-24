@@ -18,7 +18,7 @@ class Kubeaudit < Formula
   end
 
   # https:github.comShopifykubeauditpull594
-  deprecate! date: "2025-01-10", because: :repo_archived, replacement: "kube-bench"
+  deprecate! date: "2025-01-10", because: :repo_archived, replacement_formula: "kube-bench"
 
   depends_on "go" => :build
 

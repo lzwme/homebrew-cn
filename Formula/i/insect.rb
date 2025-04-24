@@ -20,7 +20,7 @@ class Insect < Formula
 
   # deprecated in favor of `numbat` formula, https:github.comsharkdpinsectcommit6c7dea10a491b55250acede0bd740e72177d8945
   # see https:github.comsharkdpnumbatblobmasterassetsreasons-for-rewriting-in-rust.md
-  deprecate! date: "2024-12-28", because: :unmaintained, replacement: "numbat"
+  deprecate! date: "2024-12-28", because: :unmaintained, replacement_formula: "numbat"
 
   depends_on "node"
 

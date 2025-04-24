@@ -18,7 +18,7 @@ class Bumpversion < Formula
   # Original and fork are both unmaintained:
   # https:github.comperitusbumpversioncommitcc3c8cfd77380ef50eeac740efe627509a248101
   # https:github.comc4urselfbump2versioncommitc3a1995b35335da6fa7932e4bac089992c947bba
-  deprecate! date: "2024-09-08", because: :unmaintained, replacement: "bump-my-version"
+  deprecate! date: "2024-09-08", because: :unmaintained, replacement_formula: "bump-my-version"
 
   depends_on "python@3.13"
 

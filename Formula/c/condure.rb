@@ -22,7 +22,7 @@ class Condure < Formula
   # https:github.comfanoutcondurecommitd70f63b6ed4b60e85fcbf4284a0eab964c94df38
   # project has been merged into [Pushpin](https:github.comfastlypushpin)
   # The `pushpin-connmgr` program can be used as a drop-in substitute.
-  deprecate! date: "2025-01-10", because: :repo_archived, replacement: "pushpin"
+  deprecate! date: "2025-01-10", because: :repo_archived, replacement_formula: "pushpin"
 
   depends_on "pkgconf" => :build
   depends_on "rust" => :build

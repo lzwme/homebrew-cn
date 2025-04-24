@@ -1,18 +1,18 @@
 class Render < Formula
   desc "Command-line interface for Render"
   homepage "https:render.comdocscli"
-  url "https:github.comrender-osscliarchiverefstagsv2.1.1.tar.gz"
-  sha256 "3f7cd5a46ee79e0e450b88bc07794ffa535c5b0faa661f611d5ccf7bfd6e4815"
+  url "https:github.comrender-osscliarchiverefstagsv2.1.2.tar.gz"
+  sha256 "87e4ce727116d186a965994b438b11ca6c360ae8c6c8c78327a4e8437f847527"
   license "Apache-2.0"
   head "https:github.comrender-osscli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c43cec1399d5875a5dec259bc02e6b871cf3b6b6b887b5568cb4ab3b17396cef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c43cec1399d5875a5dec259bc02e6b871cf3b6b6b887b5568cb4ab3b17396cef"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c43cec1399d5875a5dec259bc02e6b871cf3b6b6b887b5568cb4ab3b17396cef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ce2dc537b890dac6707edb3827e24ef8406a3e39d17256557add9c8451720a45"
-    sha256 cellar: :any_skip_relocation, ventura:       "ce2dc537b890dac6707edb3827e24ef8406a3e39d17256557add9c8451720a45"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed16ae8e2aa21b28da260dce977afc9efa5f4a813c7c694dfb3c5363190d7571"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "123ee25dae4982ef3b3920f2a9802e93c16ef3eda4169aa2c51b3808a158b155"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "123ee25dae4982ef3b3920f2a9802e93c16ef3eda4169aa2c51b3808a158b155"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "123ee25dae4982ef3b3920f2a9802e93c16ef3eda4169aa2c51b3808a158b155"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a4b595343122b4ff6b022732e19ce0deb0e9d35820931e1a9746d5e63a86591b"
+    sha256 cellar: :any_skip_relocation, ventura:       "a4b595343122b4ff6b022732e19ce0deb0e9d35820931e1a9746d5e63a86591b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c67c143a589a71512e932ddefebae728fd1d57700a274669a073d505381eb9e"
   end
 
   depends_on "go" => :build

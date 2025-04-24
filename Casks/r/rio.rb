@@ -15,9 +15,9 @@ cask "rio" do
   conflicts_with formula: "rio"
   depends_on macos: ">= :catalina"
 
-  app "Rio.app"
-  binary "Rio.appContentsMacOSrio"
-  binary "Rio.appContentsResources72rio",
+  app "rio.app"
+  binary "rio.appContentsMacOSrio"
+  binary "rio.appContentsResources72rio",
          target: "#{ENV.fetch("TERMINFO", "~.terminfo")}72rio"
 
   zap trash: "~LibrarySaved Application Statecom.raphaelamorim.rio.savedState"

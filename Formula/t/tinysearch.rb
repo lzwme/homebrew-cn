@@ -32,8 +32,8 @@ class Tinysearch < Formula
 
   test do
     ENV.prepend_path "PATH", Formula["rustup"].bin
-    system "rustup", "default", "stable"
     system "rustup", "set", "profile", "minimal"
+    system "rustup", "default", "stable"
 
     system bin"tinysearch", pkgshare"fixturesindex.json"
     assert_path_exists testpath"wasm_outputtinysearch_engine_bg.wasm"
