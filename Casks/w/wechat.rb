@@ -1,41 +1,49 @@
 cask "wechat" do
-  version "4.0.3"
-  sha256 :no_check
+  version "4.0.3.93,29123"
+  sha256 "7481325d2a9a92482fee4a8e227838f2a3443d7ad8fa0140b3821a0e57c0e2f5"
 
-  url "https:dldir1.qq.comweixinmacWeChatMac.dmg"
+  url "https://dldir1.qq.com/weixin/Universal/Mac/xWeChatMac_universal_#{version.csv.first}_#{version.csv.second}.dmg"
   name "WeChat for Mac"
   name "微信 Mac 版"
   desc "Free messaging and calling application"
-  homepage "https:mac.weixin.qq.com"
+  homepage "https://mac.weixin.qq.com/"
 
-  # This appcast is slower to update than the submissions we get. See:
-  #   https:github.comHomebrewhomebrew-caskpull90907#issuecomment-710107547
+  # Some items in the Sparkle feed may not have a url, so it's necessary to
+  # work with all of the items in the feed (not just the newest one).
   livecheck do
-    url "https:dldir1.qq.comweixinmacmac-release.xml"
-    strategy :sparkle, &:short_version
+    url "https://dldir1.qq.com/weixin/mac/mac-release.xml"
+    regex(/xWeChatMac[._-]universal[._-]v?(\d+(?:\.\d+)+)[._-](\d+)\.dmg/i)
+    strategy :sparkle do |items, regex|
+      items.map do |item|
+        match = item.url.match(regex)
+        next if match.blank?
+
+        "#{match[1]},#{match[2]}"
+      end
+    end
   end
 
   auto_updates true
-  depends_on macos: ">= :high_sierra"
+  depends_on macos: ">= :big_sur"
 
   app "WeChat.app"
 
   uninstall quit: "com.tencent.xinWeChat"
 
   zap trash: [
-    "~LibraryApplication Scripts$(TeamIdentifierPrefix)com.tencent.xinWeChat",
-    "~LibraryApplication Scripts$(TeamIdentifierPrefix)com.tencent.xinWeChat.IPCHelper",
-    "~LibraryApplication Scriptscom.tencent.xinWeChat",
-    "~LibraryApplication Scriptscom.tencent.xinWeChat.MiniProgram",
-    "~LibraryApplication Scriptscom.tencent.xinWeChat.WeChatMacShare",
-    "~LibraryCachescom.tencent.xinWeChat",
-    "~LibraryContainers$(TeamIdentifierPrefix)com.tencent.xinWeChat.IPCHelper",
-    "~LibraryContainerscom.tencent.xinWeChat",
-    "~LibraryContainerscom.tencent.xinWeChat.MiniProgram",
-    "~LibraryContainerscom.tencent.xinWeChat.WeChatMacShare",
-    "~LibraryCookiescom.tencent.xinWeChat.binarycookies",
-    "~LibraryGroup Containers$(TeamIdentifierPrefix)com.tencent.xinWeChat",
-    "~LibraryPreferencescom.tencent.xinWeChat.plist",
-    "~LibrarySaved Application Statecom.tencent.xinWeChat.savedState",
+    "~/Library/Application Scripts/$(TeamIdentifierPrefix)com.tencent.xinWeChat",
+    "~/Library/Application Scripts/$(TeamIdentifierPrefix)com.tencent.xinWeChat.IPCHelper",
+    "~/Library/Application Scripts/com.tencent.xinWeChat",
+    "~/Library/Application Scripts/com.tencent.xinWeChat.MiniProgram",
+    "~/Library/Application Scripts/com.tencent.xinWeChat.WeChatMacShare",
+    "~/Library/Caches/com.tencent.xinWeChat",
+    "~/Library/Containers/$(TeamIdentifierPrefix)com.tencent.xinWeChat.IPCHelper",
+    "~/Library/Containers/com.tencent.xinWeChat",
+    "~/Library/Containers/com.tencent.xinWeChat.MiniProgram",
+    "~/Library/Containers/com.tencent.xinWeChat.WeChatMacShare",
+    "~/Library/Cookies/com.tencent.xinWeChat.binarycookies",
+    "~/Library/Group Containers/$(TeamIdentifierPrefix)com.tencent.xinWeChat",
+    "~/Library/Preferences/com.tencent.xinWeChat.plist",
+    "~/Library/Saved Application State/com.tencent.xinWeChat.savedState",
   ]
 end

@@ -714,7 +714,7 @@ Homebrew-homebrew-core/Formula/c/cairomm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cairomm@1.14.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cake.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/calabash.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/calc.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/calc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/calceph.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/calcurse.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/calicoctl.rb, Homebrew/homebrew-core, 1
@@ -1866,8 +1866,9 @@ Homebrew-homebrew-core/Formula/f/feluda.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fend.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fennel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/ferium.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/f/fern-api.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/fern-api.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/feroxbuster.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/ferron.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fetch-crl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fetch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fetchmail.rb, Homebrew/homebrew-core, 0
@@ -4265,6 +4266,7 @@ Homebrew-homebrew-core/Formula/m/memcached.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/memcacheq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/memray.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/memtester.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/mender-artifact.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/menhir.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mentat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mercurial.rb, Homebrew/homebrew-core, 0
@@ -4501,6 +4503,7 @@ Homebrew-homebrew-core/Formula/m/mubeng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/muffet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mujs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/multi-git-status.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/multi-gitter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/multimarkdown.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/multitail.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/multitime.rb, Homebrew/homebrew-core, 1
@@ -5352,6 +5355,7 @@ Homebrew-homebrew-core/Formula/p/pqiv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pre-commit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/precious.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/precomp.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/preevy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/prefixsuffix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/premake.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/presenterm.rb, Homebrew/homebrew-core, 1
@@ -6618,6 +6622,7 @@ Homebrew-homebrew-core/Formula/t/terraform-inventory.rb, Homebrew/homebrew-core,
 Homebrew-homebrew-core/Formula/t/terraform-local.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/terraform-ls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terraform-lsp.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/terraform-module-versions.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terraform-provider-libvirt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terraform-rover.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/terraform.rb, Homebrew/homebrew-core, 1
@@ -9109,6 +9114,7 @@ Homebrew-homebrew-cask/Casks/font/font-a/font-adinatha-tamil-brahmi.rb, Homebrew
 Homebrew-homebrew-cask/Casks/font/font-a/font-adlam-display.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-adobe-blank.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-advent-pro.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-a/font-adwaita-mono-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-adwaita.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-a/font-afacad-flux.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-afacad.rb, Homebrew/homebrew-cask, 1
@@ -9250,6 +9256,7 @@ Homebrew-homebrew-cask/Casks/font/font-a/font-athiti.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/font/font-a/font-atkinson-hyperlegible-mono.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-atkinson-hyperlegible-next.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-atkinson-hyperlegible.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-a/font-atkynson-mono-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-atma.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-atomic-age.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-aubrey.rb, Homebrew/homebrew-cask, 1
@@ -11700,7 +11707,6 @@ Homebrew-homebrew-cask/Casks/g/graalvm-jdk@21.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/grads.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/grafx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/grammarly-desktop.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/g/grammarly.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gramps.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/grandperspective.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/grandtotal.rb, Homebrew/homebrew-cask, 0
@@ -13107,6 +13113,7 @@ Homebrew-homebrew-cask/Casks/o/osu.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/osxfuse.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/otto-matic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/otx.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/outerbase-studio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/outfox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/outguess.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/outline-manager.rb, Homebrew/homebrew-cask, 0
@@ -14777,7 +14784,7 @@ Homebrew-homebrew-cask/Casks/w/webstorm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/webtorrent.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/webull.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/webviewscreensaver.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/w/wechat.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/w/wechat.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wechatwebdevtools.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wechatwork.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/weektodo.rb, Homebrew/homebrew-cask, 1

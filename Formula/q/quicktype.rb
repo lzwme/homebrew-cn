@@ -1,19 +1,19 @@
 class Quicktype < Formula
   desc "Generate types and converters from JSON, Schema, and GraphQL"
   homepage "https:github.comglideappsquicktype"
-  url "https:registry.npmjs.orgquicktype-quicktype-23.0.172.tgz"
-  sha256 "b2f8b1a691db5abf3cfd8d0cd5c2d43b0e778fab53d25423b5211afce016cc1d"
+  url "https:registry.npmjs.orgquicktype-quicktype-23.0.175.tgz"
+  sha256 "4333dfb188e06bbec8243afe78a55c256e22aabb3e4ed97d3b5c5272bff8ad17"
   license "Apache-2.0"
   head "https:github.comglideappsquicktype.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b232d21c838d33967577d819959589c75616177b2bb19d5d85e97fc388ffda7a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b232d21c838d33967577d819959589c75616177b2bb19d5d85e97fc388ffda7a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b232d21c838d33967577d819959589c75616177b2bb19d5d85e97fc388ffda7a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "37f2acb7e5c3e62ea27468e5d29cbea812be2a634d3275fb13ce8b3893f36279"
-    sha256 cellar: :any_skip_relocation, ventura:       "37f2acb7e5c3e62ea27468e5d29cbea812be2a634d3275fb13ce8b3893f36279"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b232d21c838d33967577d819959589c75616177b2bb19d5d85e97fc388ffda7a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b232d21c838d33967577d819959589c75616177b2bb19d5d85e97fc388ffda7a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9daafe9da067b31378a0cf0f3d3ab1e50f4d2ac988c0d5e7136c07427e31e84"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d9daafe9da067b31378a0cf0f3d3ab1e50f4d2ac988c0d5e7136c07427e31e84"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d9daafe9da067b31378a0cf0f3d3ab1e50f4d2ac988c0d5e7136c07427e31e84"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3caa006fdadbcae74388228ed8fff39d8f08453fff874bd3b4c8773560c048f4"
+    sha256 cellar: :any_skip_relocation, ventura:       "3caa006fdadbcae74388228ed8fff39d8f08453fff874bd3b4c8773560c048f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9daafe9da067b31378a0cf0f3d3ab1e50f4d2ac988c0d5e7136c07427e31e84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d9daafe9da067b31378a0cf0f3d3ab1e50f4d2ac988c0d5e7136c07427e31e84"
   end
 
   depends_on "node"
