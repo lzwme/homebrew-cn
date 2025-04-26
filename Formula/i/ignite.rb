@@ -1,18 +1,18 @@
 class Ignite < Formula
   desc "Build, launch, and maintain any crypto application with Ignite CLI"
   homepage "https:docs.ignite.com"
-  url "https:github.comignitecliarchiverefstagsv28.9.0.tar.gz"
-  sha256 "fe924ea64af54de9403e83918b95842bf84a4e74f366099ca51c6bfcf7ed1ffa"
+  url "https:github.comignitecliarchiverefstagsv28.10.0.tar.gz"
+  sha256 "92fb98e8af121fefffd2e333c6affa27bfb209bcfab7fd744b5852748a96e812"
   license "Apache-2.0"
   head "https:github.comignitecli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "991049057b121290f5e064167b2e2c6b23b8760e22265a63ef133ec205305215"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1caee2c6d3017b4693f46711a9f8f142baa1b19449fb3ea06ce39c11ea9f2373"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "24edb252f2d78a85e061eacd6640c3c0c118587ad8c2ddcb89b0d391b007ce05"
-    sha256 cellar: :any_skip_relocation, sonoma:        "648c601eac8718221594027424aa558f24498ede95dba1a98411a4e6d54972e2"
-    sha256 cellar: :any_skip_relocation, ventura:       "48b89611ff6dd0bd897c453c0afa7acccc7385afdab1ebf9fcb389b806caa4f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a848dd275ed061447d8a56e65b4481ebe6001d0a18fd9ae3cfff2123d6443915"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1cb8a0ecc1805f09980c52907e6f797b3dbafa1b45d22f33914d65a32149f16"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "66c6f7356f621f87d9c526a3676cbdc489dfc336b0c475fe417e7a5f22315226"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "dd2e9d9b1d8c659dc1d9f0830ee41a0efd5c4b1e5380a8eadd2c59c73db5c43e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bc9c4f987bd94796563c7ead67a7a743703d6bbdf58f42dbfc4a4fc62a03e7ba"
+    sha256 cellar: :any_skip_relocation, ventura:       "937380c6deabd83d481c55696a7bbc8cb64d31241c1b6481851e4c24d21768d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ff38a04ba6c4a08132bd9d460a159da9c431eac244f3ad6f7d08589f549c688"
   end
 
   depends_on "go"

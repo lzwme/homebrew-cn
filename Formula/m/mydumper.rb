@@ -1,8 +1,8 @@
 class Mydumper < Formula
   desc "MySQL logical backup tool"
   homepage "https:github.commydumpermydumper"
-  url "https:github.commydumpermydumperarchiverefstagsv0.19.1-2.tar.gz"
-  sha256 "16a64481d4379a4692ff2de44ebb251e5fcbceaf726d534a1f123b64f7eb6884"
+  url "https:github.commydumpermydumperarchiverefstagsv0.19.1-3.tar.gz"
+  sha256 "e7feab21b8073a5a7809cf7cc56a08ae0f93313dfe3f6f1fe5c96eec12f09f9d"
   license "GPL-3.0-or-later"
   head "https:github.commydumpermydumper.git", branch: "master"
 
@@ -13,13 +13,13 @@ class Mydumper < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "77c84d390bda2d243c8c404bbfe4b939c13f63fcced51958595235644d8be506"
-    sha256 cellar: :any,                 arm64_sonoma:  "f474433db8f8fcfccfc452a3c2834b54b42f8decb5003f1e63928e0fd4be7921"
-    sha256 cellar: :any,                 arm64_ventura: "29b81d3201a86c568848e0f8892a22cf27312573f15cadf89f4e9a17394a3242"
-    sha256 cellar: :any,                 sonoma:        "be99cddaa520aa61f3361266eaebd9618587a0ae52d2d4a826474bed8c65221c"
-    sha256 cellar: :any,                 ventura:       "0e28258abff16abe13e0b63269249f55e22274f6807dbc06f782a0c21f2b1289"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "53d72ceb4716904c817233f77b09be00d63a268a78fe16ebe623ca7e61f2303c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea53f193a1f27df36798440d24976128ffa22ed8c45482d858a416f9f195f5c6"
+    sha256 cellar: :any,                 arm64_sequoia: "17b15d765a3b9dd55a58cd299e1b82b318a77872f015bace521bd4c5f9b4007d"
+    sha256 cellar: :any,                 arm64_sonoma:  "2e103237038c2913cf0ea2b36c1e3cd0420ed633020e07598755da52c25e4885"
+    sha256 cellar: :any,                 arm64_ventura: "2a8a9307520a9fdf50fa6ccfe233fdc1d488b5d218c4472742541b2a3dff4e06"
+    sha256 cellar: :any,                 sonoma:        "450d772960aad232b7b639c7c52a254a76c68e85c2bcfacaffc3ec7d80814931"
+    sha256 cellar: :any,                 ventura:       "6614ed61e8b36f9e7f02f48d985a2b46053652f92dade60bca559c1acb63f511"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7cdb629423cc0f18ddcf7ef7a0c2eab87970c00d7c4e42f822b9f567b73a4ccf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0318d32774a013eb348768d2a18ad8c6797d5dcfdc14fb0226a6676973176931"
   end
 
   depends_on "cmake" => :build
