@@ -548,6 +548,7 @@ Homebrew-homebrew-core/Formula/b/bitwarden-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bitwise.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bkcrack.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/bkmr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bkt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/black.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/blackbox.rb, Homebrew/homebrew-core, 1
@@ -6575,6 +6576,7 @@ Homebrew-homebrew-core/Formula/t/tctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/td.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tdb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tdlib.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tdom.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tea.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tealdeer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/technitium-dns.rb, Homebrew/homebrew-core, 1
@@ -10720,6 +10722,7 @@ Homebrew-homebrew-cask/Casks/font/font-n/font-noto-serif-cjk-tc.rb, Homebrew/hom
 Homebrew-homebrew-cask/Casks/font/font-n/font-noto-serif-cjk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-n/font-noto-serif-devanagari.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-noto-serif-display.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-n/font-noto-serif-dives-akuru.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-n/font-noto-serif-dogra.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-n/font-noto-serif-ethiopic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-n/font-noto-serif-georgian.rb, Homebrew/homebrew-cask, 1
@@ -11481,6 +11484,7 @@ Homebrew-homebrew-cask/Casks/font/font-w/font-warnes.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/font/font-w/font-water-brush.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-w/font-waterfall.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-w/font-wavefont.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-w/font-wdxl-lubrifont-tc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-w/font-webdings.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-w/font-wellfleet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-w/font-wendy-one.rb, Homebrew/homebrew-cask, 1

@@ -2,9 +2,10 @@ cask "font-tagesschrift" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainofltagesschriftTagesschrift-Regular.ttf"
+  url "https:github.comgooglefontsrawmainofltagesschriftTagesschrift-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Tagesschrift"
-  homepage "https:github.comyanonetagesschrift"
+  homepage "https:fonts.google.comspecimenTagesschrift"
 
   font "Tagesschrift-Regular.ttf"
 

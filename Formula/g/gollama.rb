@@ -19,10 +19,7 @@ class Gollama < Formula
   depends_on "ollama" => :test
 
   def install
-    system "go", "mod", "tidy"
-
-    ldflags = "-s -w -X main.Version=#{version}"
-    system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.Version=#{version}")
   end
 
   test do

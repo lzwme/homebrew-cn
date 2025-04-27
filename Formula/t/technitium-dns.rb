@@ -1,17 +1,17 @@
 class TechnitiumDns < Formula
   desc "Self host a DNS server for privacy & security"
   homepage "https:technitium.comdns"
-  url "https:github.comTechnitiumSoftwareDnsServerarchiverefstagsv13.5.0.tar.gz"
-  sha256 "7a5f47af4c938c5983e415547b777f853ede5ada8837012c8b5e8e36df1a380e"
+  url "https:github.comTechnitiumSoftwareDnsServerarchiverefstagsv13.6.0.tar.gz"
+  sha256 "37ade6327dc63700b4a63db6347d3174112d8ffcb817645073f7e5e114e76400"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dda28a9edfd838d85510d9663c0a24c3f1c404c072bf30cb8f3cfb21990837e3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1cc7e7cad9743fbf3261a1417f03a97d1bbfc37ad544420e4803105c7ec60eff"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f8ae57540aa984adcf9d21a2e4a30f7be73998036fce3e5ae0d84bc742693051"
-    sha256 cellar: :any_skip_relocation, ventura:       "079e61452c9d175605d9b960b49e24a5237f7da639d0765328c374fda5528da7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1ae32179d807f94701937e9abe29110da7b81e7e977168c8d4e27628ea0d5465"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cda1cc0e7223d0c3b8b7e3f9a13af438e6fb4109e731b690544fd9c162182154"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a501489591cd182a2acd46fa546b3cd716eed5fa2009c5943a76340e2198c666"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "047ed2ef79d6f7b05619f0573e3f1a1bc60d45220ae23e40b0b5e851b291250a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "68cf6f51e7498135466e5c74d0744fb848c01bcf7ce58179f6aecbd650f08fc5"
+    sha256 cellar: :any_skip_relocation, ventura:       "6d349a289209bd35d1c01174290fcd8d83a22255edd72acd988c9b8fb29e686c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e21db5a1ac666bfc822ed4df1495afdc0fa3f843a17140e5909a346b9453e3ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e40c481b7ad55f8e17df945cef5b74b02fb887d3a9c75cb999761b79c23c0721"
   end
 
   # TODO: update dotnet version

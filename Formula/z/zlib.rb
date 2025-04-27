@@ -31,6 +31,7 @@ class Zlib < Formula
   # https:zlib.netzlib_how.html
   resource "test_artifact" do
     url "https:zlib.netzpipe.c"
+    mirror "http:zlib.netzpipe.c"
     version "20051211"
     sha256 "68140a82582ede938159630bca0fb13a93b4bf1cb2e85b08943c26242cf8f3a6"
   end

@@ -5,13 +5,20 @@ class MenderArtifact < Formula
   sha256 "d82cd2f802033d53f2e947ed8d9d6cdd7a036fadbd92a2696b72122bd2070039"
   license "Apache-2.0"
 
+  # exclude tags like `3.4.0b1` and `internal-v2020.02`
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a4924ce544d84988a4dc0de898d58398343df8a283099105991ab425ecd2a020"
-    sha256 cellar: :any,                 arm64_sonoma:  "c4fc3d5b4caebb7430d2c336012790b3a5ec6fcdd0ca3a12c0acbc33e15ca267"
-    sha256 cellar: :any,                 arm64_ventura: "3b11b89f5db309ede3ba5c5f76315e340e84b1f19eff1307c763af4192f8861f"
-    sha256 cellar: :any,                 sonoma:        "56270b60c05f2f65ec4d655a2e21a3f0602b21bef7818c28fa5e8c96ca13526c"
-    sha256 cellar: :any,                 ventura:       "a4aabaed06b8519d764028645fff455ea130cb61b4a107e418305b17f0c5cc98"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d5a2706c7aa1685a576552abc4620468f311963d63c15a4aa66d0041c805588"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "d9c42ade066c950f156d48249363f17ae1976ac3a4ff9cd511cff92bd57b02c9"
+    sha256 cellar: :any,                 arm64_sonoma:  "64a6cdafadb4b633f303a00fe2880fbd7a450a85c9586b2d246972c600917ec9"
+    sha256 cellar: :any,                 arm64_ventura: "b91a6a9767b4847fb9c954d1107b9b072f906137a767b22562e6faabe355e155"
+    sha256 cellar: :any,                 sonoma:        "515fbdff1f6d0ff7bbfed64647309df28c9021dbe2e85d80332782c2a30089bb"
+    sha256 cellar: :any,                 ventura:       "340b7365db24c4a352647eb37f50c589464585ac7d12b54ebab8037a2574a39e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48b8f124a177b145ddea1a11bcc974408c634113177f3b4341bb758016c5fc55"
   end
 
   depends_on "go" => :build

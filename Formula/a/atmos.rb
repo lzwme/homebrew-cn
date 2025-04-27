@@ -1,18 +1,18 @@
 class Atmos < Formula
   desc "Universal Tool for DevOps and Cloud Automation"
   homepage "https:github.comcloudposseatmos"
-  url "https:github.comcloudposseatmosarchiverefstagsv1.172.0.tar.gz"
-  sha256 "eca7f856712a47a33967e246e1e8060c94fc3a90657815ff8deafa9b5d92cab9"
+  url "https:github.comcloudposseatmosarchiverefstagsv1.173.0.tar.gz"
+  sha256 "08175c121423d9eafb061f19bcb964a583f40f72c09588941760cfe3d20aa8b4"
   license "Apache-2.0"
   head "https:github.comcloudposseatmos.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dfd3781c39945cda5cf8520bd4b7c3864215077ccc4f141afb548a234e6bab47"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f4d5939f58dcdb5532b397206dffafa1a372c65c6ae8e652e5a97ee560be84a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "39929c45772482f61180ed369437ecb3ea7aa27648bdba5332f77bd55a0bc126"
-    sha256 cellar: :any_skip_relocation, sonoma:        "62db018c818afa5f16c201a7443a6e4e3020e658597762debfb1219a189d86d6"
-    sha256 cellar: :any_skip_relocation, ventura:       "5b0ff58544c34761acf7508566ecd9dfb9cd20ad6727a1a3cd27620fd9b0df0f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fa14a9ea644951cbb0ed8e278fdc3c4de120725bd08cd026f65a10ac5c16befb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9fa3a70daea60ab34f81b884060e2ca2da7159f79c61a6cd680e1fc8a9211437"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7d7016c2413821f6a79dc65a67dd884d4d005ff53b2015f701e0dbc47ce01ed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "642b5703bb6c628d6c1bf66a7cea14731d4c5446c7fa4633f3ad7951cb53dc66"
+    sha256 cellar: :any_skip_relocation, sonoma:        "844bcd229aa30585db660553280eaaf9ba3b4e77495042da993fce2c6567b3fc"
+    sha256 cellar: :any_skip_relocation, ventura:       "3aad0a8edce1fbad85d979b376a36606e96f2a5b62b6d4715908cfa3cfd5e3c9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b040a9149a9dec92431715cea80c97eacd767dd7d0aec1663e71b016d70ee7c"
   end
 
   depends_on "go" => :build
