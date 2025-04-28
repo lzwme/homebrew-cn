@@ -6,16 +6,17 @@ class Pdm < Formula
   url "https:files.pythonhosted.orgpackagesf2ca29bfb48005d956c1f67385f9c6e134aea0a7ab298181fc82e201fa27ae78pdm-2.24.1.tar.gz"
   sha256 "fc8adf011caa4ee2b0f25dabf890152aa4153cc21599ea67fe0c14e533dcd6d9"
   license "MIT"
+  revision 1
   head "https:github.compdm-projectpdm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb58f2e6ed4b0c658fa41d0ddcfb24ab8c792989481e72ee2ccd05177b5de34b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5825d3254804903d099211938ccadda2a24cc435c4af7ceddd016cafd1b8f113"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f12ee36dd5c2ae8211d41b785c2fb170bd538bc33533b8704cfc95bb959a85fe"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d89cfd950c43386c273fe5a892a26f0bde1d96b1f8839291e705f97b85c28d2a"
-    sha256 cellar: :any_skip_relocation, ventura:       "607d63b28bf94e3702aa3483b3582926016b07ae20533a58fef37030376bf009"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e1dc47c93e02e3b30220ded1519811f6ea7a06612cab2e409647f87c23a81065"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83e9c3f1606f05edeb20fca4a5d398ad6ff58650415ec26b8a5977caef75ff83"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79a1a34f8d372add0a8aab703275aa4e10646e8e1e1e7174e67fc0d85c26b45e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20002b4af467a74d1cecc647ce727c0c89ccf4e7f2784a43c6b826abd8b0f593"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "55658a3cbba262a6cd35eb4c56f591f23d1d690dfac923da61059968df66c37e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "02aba6e81032c60da5eb3d2997f56825fd6d6bb7ff371f6a53f4f22a0de202a0"
+    sha256 cellar: :any_skip_relocation, ventura:       "29c4e2de509ec426dca59f22b9c0135f062f0659c266f9c968ef67072a05890d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "13414281e34ac0ebc6c4a6835e06edfd569b7f056c98ddff4b0e130ca49dc1f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "04f39f75e3fdc0ca1d1d2262f2fa5b6580b1159feeb76c7a6af17e16fc3555e2"
   end
 
   depends_on "certifi"
@@ -57,8 +58,8 @@ class Pdm < Formula
   end
 
   resource "h11" do
-    url "https:files.pythonhosted.orgpackagesf5383af3d3633a34a3316095b39c8e8fb4853a28a536e55d347bd8d8e9a14b03h11-0.14.0.tar.gz"
-    sha256 "8f19fbbe99e72420ff35c00b27a34cb9937e902a8b810e2c88300c6f0a3b699d"
+    url "https:files.pythonhosted.orgpackages01ee02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963h11-0.16.0.tar.gz"
+    sha256 "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
   end
 
   resource "hishel" do
@@ -67,8 +68,8 @@ class Pdm < Formula
   end
 
   resource "httpcore" do
-    url "https:files.pythonhosted.orgpackages9f45ad3e1b4d448f22c0cff4f5692f5ed0666658578e358b8d58a19846048059httpcore-1.0.8.tar.gz"
-    sha256 "86e94505ed24ea06514883fd44d2bc02d90e77e7979c8eb71b90f41d364a1bad"
+    url "https:files.pythonhosted.orgpackages069482699a10bca87a5556c9c59b5963f2d039dbd239f25bc2a63907a05a14cbhttpcore-1.0.9.tar.gz"
+    sha256 "6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8"
   end
 
   resource "httpx" do

@@ -1,19 +1,19 @@
 class Serie < Formula
   desc "Rich git commit graph in your terminal"
   homepage "https:github.comlusinganderserie"
-  url "https:github.comlusinganderseriearchiverefstagsv0.4.5.tar.gz"
-  sha256 "71cb537273c1dc11201406000e0375699d31a3733d849aee6921677ddeb4c425"
+  url "https:github.comlusinganderseriearchiverefstagsv0.4.6.tar.gz"
+  sha256 "a5d95b283c83f5efdf7d6a7faa66e9bfeec771924349edd7df80a1f0c631256b"
   license "MIT"
   head "https:github.comlusinganderserie.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "345a42e6b1699ad7b84f4d59e3555a86ea6b1757517b2adc96598aecf311523e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2b9d99ffe8a6cffcb8220f2486fc9cdc71153939173bbd836e05fb54e9a519a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "943b140e046c2c69483d2007c30612e8f80a69753257d13a186f3fbfc114e0e3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "718e0911c5ca0626fe5f4d852337938506c1a9ee5a75a6a040e38d5711d8ee53"
-    sha256 cellar: :any_skip_relocation, ventura:       "df389a856674bbac465a5df01b8a1a6bce0cfaff97361053882a4cb5b8d0d50e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c84b822de8c67d5c7cdca772597789ed008e6d0426952dcad94947e346057103"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9a88bd6e2225d01eb20c7db3933110c44380ebca5791c0d7fcfe8ebad5a17c7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3313fbf0747b7dd4f69f35c45159e818b6afae30f6eb0e9ab9f18dd4ecc0a8a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc7e38f3baca1f1d2b8bbda77c5324415d361064f4bda6de76745e546a8898cb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "65d8c5fc783a314a94ac9210561d6b2489a8185011b9ae71cc8d337aa0b2b1fd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "66d637beacf49d78fe68dcddcf39c015e7e96b2f4d899385a4cc994fd8a5dfec"
+    sha256 cellar: :any_skip_relocation, ventura:       "dc4470a6e21904043a64e752d11cc17fb4682dc27a1ad64b81b37411fbad4c44"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e43f9e97f1233da11a4a72582f8e06f63aa5998985fee083e1544942a99b290a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "acca19320688d5560814dc0698332409dacc70e9a4d6a8456659bee6837c6f10"
   end
 
   depends_on "rust" => :build

@@ -6,15 +6,16 @@ class Llm < Formula
   url "https://files.pythonhosted.org/packages/79/ec/fac39709b653c799c92f8f8b5ab5aba3f2e326ca6b8e118239e3f413130d/llm-0.24.2.tar.gz"
   sha256 "e14f2722183884ce09692201b54cdd961942492f0d93ca749a62d02b3b8bf43a"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f5352544a11c212516f3bf3c4bf103c399cdd4250e367708a3a776da7366e3f6"
-    sha256 cellar: :any,                 arm64_sonoma:  "77bb563dc5ef93a347fdbd4ac05206a0bf585aa9c37d9ea721a4e7e65ae4741e"
-    sha256 cellar: :any,                 arm64_ventura: "87e5335a091503652b9babaf1f744cfcbf6662a841020c1f84840f1fcc30cf70"
-    sha256 cellar: :any,                 sonoma:        "cc32ce84affe2083d724e23618108a52d8bb328936f37a22f564bd3b55112a77"
-    sha256 cellar: :any,                 ventura:       "b7a30bbae26d086970d665c4d4a8cbcf2b1901409c92c040b551c267f2aab67e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b35f359ac7b56d7ca581bd2fc69f909bfe8ad3332cb6c5e72886789c55a6a88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4dedda3e538ad523a0b2fa09e40df3883580bc2219cb27112c0860d15ff53286"
+    sha256 cellar: :any,                 arm64_sequoia: "a7192c91432f3ce3fe494df6e95013c0aaa81c147f3a08a0c570f641eeab63aa"
+    sha256 cellar: :any,                 arm64_sonoma:  "6c60f5b4ff76b22bdc44691f4fb3d7b780e9b332d3a85ccec9c4d8110095ad65"
+    sha256 cellar: :any,                 arm64_ventura: "240f06d0dcbb9b5e1b76228c793daef6691c9610f28f683f98d61c5b2211ad74"
+    sha256 cellar: :any,                 sonoma:        "d99db560c5147314dea502b3e71a0e21cb36b0bcdabeffa2aa6d5fa25a714d84"
+    sha256 cellar: :any,                 ventura:       "13d0fde5fabf80f37169e5a4a60110578241f48d394ed417a40153d7a442d627"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6cbe5c58737cd87bee5f26d425ea52feada0353d1bce547cb0ced9fbf965833"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c698f87ea864fc09a8449605f645daef7dabc63eda3dd7f16cdc7aa2b4b1595d"
   end
 
   depends_on "rust" => :build
@@ -53,13 +54,13 @@ class Llm < Formula
   end
 
   resource "h11" do
-    url "https://files.pythonhosted.org/packages/f5/38/3af3d3633a34a3316095b39c8e8fb4853a28a536e55d347bd8d8e9a14b03/h11-0.14.0.tar.gz"
-    sha256 "8f19fbbe99e72420ff35c00b27a34cb9937e902a8b810e2c88300c6f0a3b699d"
+    url "https://files.pythonhosted.org/packages/01/ee/02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963/h11-0.16.0.tar.gz"
+    sha256 "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
   end
 
   resource "httpcore" do
-    url "https://files.pythonhosted.org/packages/6a/41/d7d0a89eb493922c37d343b607bc1b5da7f5be7e383740b4753ad8943e90/httpcore-1.0.7.tar.gz"
-    sha256 "8551cb62a169ec7162ac7be8d4817d561f60e08eaa485234898414bb5a8a0b4c"
+    url "https://files.pythonhosted.org/packages/06/94/82699a10bca87a5556c9c59b5963f2d039dbd239f25bc2a63907a05a14cb/httpcore-1.0.9.tar.gz"
+    sha256 "6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8"
   end
 
   resource "httpx" do
@@ -78,8 +79,8 @@ class Llm < Formula
   end
 
   resource "openai" do
-    url "https://files.pythonhosted.org/packages/41/56/41de36c0e9f787c406211552ecf2ca4fba3db900207c5c158c4dc67263fc/openai-1.72.0.tar.gz"
-    sha256 "f51de971448905cc90ed5175a5b19e92fd94e31f68cde4025762f9f5257150db"
+    url "https://files.pythonhosted.org/packages/84/51/817969ec969b73d8ddad085670ecd8a45ef1af1811d8c3b8a177ca4d1309/openai-1.76.0.tar.gz"
+    sha256 "fd2bfaf4608f48102d6b74f9e11c5ecaa058b60dad9c36e409c12477dfd91fb2"
   end
 
   resource "pluggy" do
@@ -118,8 +119,8 @@ class Llm < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/a9/5a/0db4da3bc908df06e5efae42b44e75c81dd52716e10192ff36d0c1c8e379/setuptools-78.1.0.tar.gz"
-    sha256 "18fd474d4a82a5f83dac888df697af65afa82dec7323d09c3e37d1f14288da54"
+    url "https://files.pythonhosted.org/packages/bb/71/b6365e6325b3290e14957b2c3a804a529968c77a049b2ed40c095f749707/setuptools-79.0.1.tar.gz"
+    sha256 "128ce7b8f33c3079fd1b067ecbb4051a66e8526e7b65f6cec075dfc650ddfa88"
   end
 
   resource "six" do
@@ -158,8 +159,8 @@ class Llm < Formula
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/76/ad/cd3e3465232ec2416ae9b983f27b9e94dc8171d56ac99b345319a9475967/typing_extensions-4.13.1.tar.gz"
-    sha256 "98795af00fb9640edec5b8e31fc647597b4691f099ad75f469a2616be1a76dff"
+    url "https://files.pythonhosted.org/packages/f6/37/23083fcd6e35492953e8d2aaaa68b860eb422b34627b13f2ce3eb6106061/typing_extensions-4.13.2.tar.gz"
+    sha256 "e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef"
   end
 
   resource "typing-inspection" do

@@ -6,15 +6,16 @@ class Sysaidmin < Formula
   url "https:files.pythonhosted.orgpackages01d8f2b32cc85a544d1487bbdda7ec48d214c0e551d2d0ae6bbbb49d707fe297sysaidmin-0.2.5.tar.gz"
   sha256 "77c40710cead7bdcc6cb98b38d74dd05e1e1c24dbc450e3b983869a7c06da91f"
   license "AGPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e6f2c27d4e2ad2be4732783fcdcd0a1a61202c6a00328af8e4a29a4d9f4536ac"
-    sha256 cellar: :any,                 arm64_sonoma:  "483606c0fd09b5653797532d1992ac491c07ff68323ee649cb981cfed9a32aa4"
-    sha256 cellar: :any,                 arm64_ventura: "baf0a066b54b009dd1da0a2d7f2ccc08dfa05bb14949065e87a275d0188631a1"
-    sha256 cellar: :any,                 sonoma:        "cc2bc0deae6f3140438ceb7fb1315d90f88a1a0b8723e8504e40190743525375"
-    sha256 cellar: :any,                 ventura:       "67c6e7df79acf1d89f18d185a460c9fdbe3eda3eb1ec1754a208363ec1911ebc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f597c8125defc30a776ec9c4ebc4d1c9fc786bf708d1becf4c266f247c1540f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfb0a32000b46892ea3d3155a635bf0c5311f04e3f6a61d18ad62e11725d6db2"
+    sha256 cellar: :any,                 arm64_sequoia: "ab1447a16293a706addd85001c911b1543833b531d55feed4c45e74af35042a5"
+    sha256 cellar: :any,                 arm64_sonoma:  "243fedb5e15dc31b137ec7ee259d2a994b186c5df8f0951fcca3556959898a5d"
+    sha256 cellar: :any,                 arm64_ventura: "ccc927ca39e55adfc4915457466ce57a1f2f672efda5df4ca7aa5ddcc5afa6a9"
+    sha256 cellar: :any,                 sonoma:        "5f877f08a4c4dd09c344453f3247641a6ec70249c478b8dd0b4db599e4aadb43"
+    sha256 cellar: :any,                 ventura:       "da9a68d50f541d77d345a3fd83a7d7fcfe5cc76df46f8328b0bf7c7b539dbee9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9427ceb6af716340329bf39701baef5406c4307fd01fb95397c2510bb5678e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "271c17ea3ddb5d63096b9c1978a840c40f7f29cf2326883f158064943da36ec7"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -52,18 +53,18 @@ class Sysaidmin < Formula
   end
 
   resource "griffe" do
-    url "https:files.pythonhosted.orgpackages59087df7e90e34d08ad890bd71d7ba19451052f88dc3d2c483d228d1331a4736griffe-1.7.2.tar.gz"
-    sha256 "98d396d803fab3b680c2608f300872fd57019ed82f0672f5b5323a9ad18c540c"
+    url "https:files.pythonhosted.orgpackagesa93e5aa9a61f7c3c47b0b52a1d930302992229d191bf4bc76447b324b731510agriffe-1.7.3.tar.gz"
+    sha256 "52ee893c6a3a968b639ace8015bec9d36594961e156e23315c8e8e51401fa50b"
   end
 
   resource "h11" do
-    url "https:files.pythonhosted.orgpackagesf5383af3d3633a34a3316095b39c8e8fb4853a28a536e55d347bd8d8e9a14b03h11-0.14.0.tar.gz"
-    sha256 "8f19fbbe99e72420ff35c00b27a34cb9937e902a8b810e2c88300c6f0a3b699d"
+    url "https:files.pythonhosted.orgpackages01ee02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963h11-0.16.0.tar.gz"
+    sha256 "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
   end
 
   resource "httpcore" do
-    url "https:files.pythonhosted.orgpackages9f45ad3e1b4d448f22c0cff4f5692f5ed0666658578e358b8d58a19846048059httpcore-1.0.8.tar.gz"
-    sha256 "86e94505ed24ea06514883fd44d2bc02d90e77e7979c8eb71b90f41d364a1bad"
+    url "https:files.pythonhosted.orgpackages069482699a10bca87a5556c9c59b5963f2d039dbd239f25bc2a63907a05a14cbhttpcore-1.0.9.tar.gz"
+    sha256 "6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8"
   end
 
   resource "httpx" do
@@ -92,13 +93,13 @@ class Sysaidmin < Formula
   end
 
   resource "openai" do
-    url "https:files.pythonhosted.orgpackages99b1318f5d4c482f19c5fcbcde190801bfaaaec23413cda0b88a29f6897448ffopenai-1.75.0.tar.gz"
-    sha256 "fb3ea907efbdb1bcfd0c44507ad9c961afd7dce3147292b54505ecfd17be8fd1"
+    url "https:files.pythonhosted.orgpackages8451817969ec969b73d8ddad085670ecd8a45ef1af1811d8c3b8a177ca4d1309openai-1.76.0.tar.gz"
+    sha256 "fd2bfaf4608f48102d6b74f9e11c5ecaa058b60dad9c36e409c12477dfd91fb2"
   end
 
   resource "openai-agents" do
-    url "https:files.pythonhosted.orgpackages334947f8e9d72b33b80f619d7fc2d7c584a9e3a564d81b53382dbb39433d3680openai_agents-0.0.11.tar.gz"
-    sha256 "0a2c2bb4e0a8ad023ee7d7c6341f7800f7fe9edeb2ecac9514fff8badb2fea3d"
+    url "https:files.pythonhosted.orgpackages836e3e14abef846b9aaaa454d0c2e3353e0c5b4c72806633bf193024319806f3openai_agents-0.0.13.tar.gz"
+    sha256 "6b80315e75c06b5302c5f2adba2f9ea3845f94615daed4706bfb871740f561a5"
   end
 
   resource "pydantic" do
@@ -132,8 +133,8 @@ class Sysaidmin < Formula
   end
 
   resource "sse-starlette" do
-    url "https:files.pythonhosted.orgpackages71a480d2a11af59fe75b48230846989e93979c892d3a20016b42bb44edb9e398sse_starlette-2.2.1.tar.gz"
-    sha256 "54470d5f19274aeed6b2d473430b08b4b379ea851d953b11d7f1c4a2c118b419"
+    url "https:files.pythonhosted.orgpackages86357d8d94eb0474352d55f60f80ebc30f7e59441a29e18886a6425f0bccd0d3sse_starlette-2.3.3.tar.gz"
+    sha256 "fdd47c254aad42907cfd5c5b83e2282be15be6c51197bf1a9b70b8e990522072"
   end
 
   resource "starlette" do
@@ -167,8 +168,8 @@ class Sysaidmin < Formula
   end
 
   resource "uvicorn" do
-    url "https:files.pythonhosted.orgpackages8637dd92f1f9cedb5eaf74d9999044306e06abe65344ff197864175dbbd91871uvicorn-0.34.1.tar.gz"
-    sha256 "af981725fc4b7ffc5cb3b0e9eda6258a90c4b52cb2a83ce567ae0a7ae1757afc"
+    url "https:files.pythonhosted.orgpackagesa6ae9bbb19b9e1c450cf9ecaef06463e40234d98d95bf572fab11b4f19ae5deduvicorn-0.34.2.tar.gz"
+    sha256 "0e929828f6186353a80b58ea719861d2629d766293b6d19baf086ba31d4f3328"
   end
 
   def install

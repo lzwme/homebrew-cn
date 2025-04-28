@@ -6,16 +6,17 @@ class Safety < Formula
   url "https:files.pythonhosted.orgpackages52fcfcb27a9d0c2689d642cf0d3dcb6199c1a346d575e82eabf0307139d5f15csafety-3.4.0.tar.gz"
   sha256 "fc8763166616751c468bf401e66bdf6a87ea5f544c8b32679d6ba4c48c33c679"
   license "MIT"
+  revision 1
   head "https:github.compyupiosafety.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3ea6ed1a6b9ad7f678aff08c0ce1d366240e58bdd1ad2d2967075bbc83b97014"
-    sha256 cellar: :any,                 arm64_sonoma:  "19a2415d95deef73895c1e91b8582d5a723cac90c9cef9af890805e8cdd4b6af"
-    sha256 cellar: :any,                 arm64_ventura: "a69088cc484b35e0dd5a3c37706b2bcd3be821a56e9880d128e392e2303c9f32"
-    sha256 cellar: :any,                 sonoma:        "93fc66c2b782c6d63c99c230bd9266e804faf91ec1986578c7a061e67bc4e5ba"
-    sha256 cellar: :any,                 ventura:       "0a7cfe60925c2371c04f83ab886e36da5464a1be7e026f5fefd10d90014ce673"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "45b4525d28085280fd10edcfd12dda06e749a95d4db139b42a25322a30d34a6c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "497dd40680af353a4e76ecfb9c8a0508e59e71f89d664d674d5a0006c7f67e53"
+    sha256 cellar: :any,                 arm64_sequoia: "89a90574e96052bd73efc4af2f86a643317fce795c4d30f3ebf4df52b758849a"
+    sha256 cellar: :any,                 arm64_sonoma:  "4dd373ee260d5a0baf1f8b9ea2edfa6d33df8cd89e241c29bfbd093da8238a13"
+    sha256 cellar: :any,                 arm64_ventura: "3cf6114f33b2fd43f49864088d5e52aa911be230cfa80442757c0a7c2ea800dc"
+    sha256 cellar: :any,                 sonoma:        "6d8ae1bcda9eb8138ac3752e47f3b190c61105f607d3d57e033013446552f38b"
+    sha256 cellar: :any,                 ventura:       "521ded29ab4045466ddd79adb3e0fcf55e1c779a052fc07e183b06817817245e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "40dd2485c040bbecf4ddb3d885790289abc10f329363c80c8dbf07bf71e8422c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b61cde0b46d10531530e88f408cc5b661ac30f89965ec1219ed6d1e50cd10386"
   end
 
   depends_on "cmake" => :build
@@ -60,13 +61,13 @@ class Safety < Formula
   end
 
   resource "h11" do
-    url "https:files.pythonhosted.orgpackagesf5383af3d3633a34a3316095b39c8e8fb4853a28a536e55d347bd8d8e9a14b03h11-0.14.0.tar.gz"
-    sha256 "8f19fbbe99e72420ff35c00b27a34cb9937e902a8b810e2c88300c6f0a3b699d"
+    url "https:files.pythonhosted.orgpackages01ee02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963h11-0.16.0.tar.gz"
+    sha256 "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
   end
 
   resource "httpcore" do
-    url "https:files.pythonhosted.orgpackages9f45ad3e1b4d448f22c0cff4f5692f5ed0666658578e358b8d58a19846048059httpcore-1.0.8.tar.gz"
-    sha256 "86e94505ed24ea06514883fd44d2bc02d90e77e7979c8eb71b90f41d364a1bad"
+    url "https:files.pythonhosted.orgpackages069482699a10bca87a5556c9c59b5963f2d039dbd239f25bc2a63907a05a14cbhttpcore-1.0.9.tar.gz"
+    sha256 "6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8"
   end
 
   resource "httpx" do

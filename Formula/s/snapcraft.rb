@@ -8,6 +8,7 @@ class Snapcraft < Formula
       tag:      "8.8.1",
       revision: "f16a1aedf29e02a4a5589678c1d76a1d698d6ef2"
   license "GPL-3.0-only"
+  revision 1
   head "https:github.comcanonicalsnapcraft.git", branch: "main"
 
   livecheck do
@@ -16,12 +17,12 @@ class Snapcraft < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9fa18f86a265157c7ebc13ffc90583d8505cb407a262ecc57c7ee72ad789670f"
-    sha256 cellar: :any,                 arm64_sonoma:  "791cd5bb8a393cf63c105ce56e4bb755f56662632a66b2456feec1557725c4c5"
-    sha256 cellar: :any,                 arm64_ventura: "e57a30d846e732cb07069293283bc82546231cb560297c1d17ce058d97d8b4c8"
-    sha256 cellar: :any,                 sonoma:        "26fb82220920e75b3937bab9ca951cd2fd9a3651a3571debaaeb3bdb1d29359d"
-    sha256 cellar: :any,                 ventura:       "99fc4fc36bbb45c85757668f041e22d33cdb03f243ec8e02ac8bc273598b4b88"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25a9261a40fbedf69c711c6de8b4c71690604a44075768c5dd876ec94d6b81f4"
+    sha256 cellar: :any,                 arm64_sequoia: "9f5b53aca62e53ffceea2516be7f4bdb51fcd4f7240c6b32eb53a8ca1d06a14c"
+    sha256 cellar: :any,                 arm64_sonoma:  "e53e316829963af8b4614f6eb01df3526cb9f8f7b83f293a54c4ffb809cb8e03"
+    sha256 cellar: :any,                 arm64_ventura: "a6c8ada91d164868ef19d8424dfc5568d3e0d7864626f88e888b5b49c74f5c97"
+    sha256 cellar: :any,                 sonoma:        "d5e46fc724992e97b6713c2b1d99a52873b9bed2fff3406bbf05ff4c47f98444"
+    sha256 cellar: :any,                 ventura:       "d4e4bdfd88d2f131dd3388030a7acda899637e0768a59472c8ae60792b5d3648"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "168cc401d0ca12c64622005028eccfa872f84a0c6904a6d3aec4920139e38dc5"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -148,13 +149,13 @@ class Snapcraft < Formula
   end
 
   resource "h11" do
-    url "https:files.pythonhosted.orgpackagesf5383af3d3633a34a3316095b39c8e8fb4853a28a536e55d347bd8d8e9a14b03h11-0.14.0.tar.gz"
-    sha256 "8f19fbbe99e72420ff35c00b27a34cb9937e902a8b810e2c88300c6f0a3b699d"
+    url "https:files.pythonhosted.orgpackages01ee02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963h11-0.16.0.tar.gz"
+    sha256 "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
   end
 
   resource "httpcore" do
-    url "https:files.pythonhosted.orgpackages9f45ad3e1b4d448f22c0cff4f5692f5ed0666658578e358b8d58a19846048059httpcore-1.0.8.tar.gz"
-    sha256 "86e94505ed24ea06514883fd44d2bc02d90e77e7979c8eb71b90f41d364a1bad"
+    url "https:files.pythonhosted.orgpackages069482699a10bca87a5556c9c59b5963f2d039dbd239f25bc2a63907a05a14cbhttpcore-1.0.9.tar.gz"
+    sha256 "6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8"
   end
 
   resource "httplib2" do

@@ -3,18 +3,18 @@ class Mcpm < Formula
 
   desc "Open source, community-driven MCP server and client manager"
   homepage "https://mcpm.sh/"
-  url "https://files.pythonhosted.org/packages/71/f3/d92b94287227bd43ec043e0cf7264ef617542421ba090314eb8d075bcc46/mcpm-1.6.1.tar.gz"
-  sha256 "bf5f398c6d42f417095f1afc347b7b6a8efe38264d45965c64180ab516144f01"
+  url "https://files.pythonhosted.org/packages/92/40/946c120d1587f9f5ddf2eb50027cca48a34903eeac02743497564891d97f/mcpm-1.6.2.tar.gz"
+  sha256 "5ab3ceef5812a8348033bc73401a0886185b0fbc263704cd6e87b169cf43eb26"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "eba9bad00d61d2fa0d862dd79656670e0209044c68f11fd99810afa78b5a1e04"
-    sha256 cellar: :any,                 arm64_sonoma:  "1be811217749b3f83c9254ebdfad18858098a39c58934a01f6970a64484b3912"
-    sha256 cellar: :any,                 arm64_ventura: "b332e43597d0f7bc24aecda3fdf1cf69956ea2cfee9b105ed97c2ce266cb5584"
-    sha256 cellar: :any,                 sonoma:        "7bd2262705ec0590da021e0899336ee35f4ab71fc2602ed0a110db2d80160785"
-    sha256 cellar: :any,                 ventura:       "0783cbcdd56e8988e7afd2ab8de40d62bb8240b3dfd6a761332d33c6aeefd8d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1efd6862387bbd256d494e827e1d62f5563a882b98b6c1b46808d3e12af341f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06d04eecdf78d52d15cbabaee5ef49f984ba64dfb6807ab93bc3816dfb74df11"
+    sha256 cellar: :any,                 arm64_sequoia: "2b32e16e4ae35295f8cc6a263f807dff3a5404f43f09ceafaba78105f93dca22"
+    sha256 cellar: :any,                 arm64_sonoma:  "e0da23a11866f993a18be961e3e4f9005570630a52affb724e24953a6b5f22f9"
+    sha256 cellar: :any,                 arm64_ventura: "cfd61d8f81187e66afc74e48b8a967eb0f8d46b58be4dc55199639e82cde4223"
+    sha256 cellar: :any,                 sonoma:        "a165cceb92dbedc7bffb19073bd4f22974b84c2dbd502cb2c5c7824fcae96e5d"
+    sha256 cellar: :any,                 ventura:       "be2e8a85e525ba20e3943134a4a35a4e83e50bc5eb082137373f0d4b3cc6a840"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "340d66149fd47e5cd3dd4b4ce0c9f8daf64fd4a784739edb828262910fcd05cd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f897f53c6f016c6d196aa500e629d10b2e438e2178c2152dd9896b7b8a688a0d"
   end
 
   depends_on "rust" => :build
@@ -31,8 +31,8 @@ class Mcpm < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/1c/ab/c9f1e32b7b1bf505bf26f0ef697775960db7932abeb7b516de930ba2705f/certifi-2025.1.31.tar.gz"
-    sha256 "3d5da6925056f6f18f119200434a4780a94263f10d1c21d032a6f6b2baa20651"
+    url "https://files.pythonhosted.org/packages/e8/9e/c05b3920a3b7d20d3d3310465f50348e5b3694f4f88c6daf736eef3024c4/certifi-2025.4.26.tar.gz"
+    sha256 "0a816057ea3cdefcef70270d2c515e4506bbc954f417fa5ade2021213bb8f0c6"
   end
 
   resource "charset-normalizer" do

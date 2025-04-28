@@ -4646,6 +4646,7 @@ Homebrew-homebrew-core/Formula/n/newman.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/newrelic-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/newrelic-infra-agent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/newsboat.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/newsraft.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/newt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nextdns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nexttrace.rb, Homebrew/homebrew-core, 1
@@ -5309,6 +5310,7 @@ Homebrew-homebrew-core/Formula/p/podsync.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/poetry.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/poke.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pokerstove.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/policy-engine.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/policy_sentry.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/polkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/polyglot.rb, Homebrew/homebrew-core, 0
@@ -6735,6 +6737,7 @@ Homebrew-homebrew-core/Formula/t/tlsx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tlx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmate.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tmex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmpmail.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmpreaper.rb, Homebrew/homebrew-core, 0
@@ -6929,6 +6932,7 @@ Homebrew-homebrew-core/Formula/u/unbound.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/unciv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uncover.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uncrustify.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/u/undercutf1.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/ungit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uni-algo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/uni.rb, Homebrew/homebrew-core, 1
@@ -6945,6 +6949,7 @@ Homebrew-homebrew-core/Formula/u/universal-ctags.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/unixodbc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/unnethack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/unoconv.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/u/unoserver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/unp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/unpaper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/unrtf.rb, Homebrew/homebrew-core, 0

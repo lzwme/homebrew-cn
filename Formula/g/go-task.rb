@@ -1,18 +1,18 @@
 class GoTask < Formula
   desc "Task is a task runnerbuild tool that aims to be simpler and easier to use"
   homepage "https:taskfile.dev"
-  url "https:github.comgo-tasktaskarchiverefstagsv3.43.2.tar.gz"
-  sha256 "41ed911af61d582e2824e2ee6ac8b1a845968b09ed188e79846557226aa96bed"
+  url "https:github.comgo-tasktaskarchiverefstagsv3.43.3.tar.gz"
+  sha256 "a8ee62d92b654bec1fe22522f1a9a2d51386d9d7508bec164080083e28e99b2c"
   license "MIT"
   head "https:github.comgo-tasktask.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7a458c6fa4d2fa352082c40301a2e652c51b68172128dd6f23628b0525fd662"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f7a458c6fa4d2fa352082c40301a2e652c51b68172128dd6f23628b0525fd662"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f7a458c6fa4d2fa352082c40301a2e652c51b68172128dd6f23628b0525fd662"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f84648545cd541ce2c0defd1531e975db8c81fba5e5e40c56f52a5c0713acd25"
-    sha256 cellar: :any_skip_relocation, ventura:       "f84648545cd541ce2c0defd1531e975db8c81fba5e5e40c56f52a5c0713acd25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe31c6f7e090d745a215d049991fe277e7427f27048f19939df0689b1c100e0e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee9582329181a6547b96c64d8d59193e522bf7b6402170b125f238d7d6c93242"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ee9582329181a6547b96c64d8d59193e522bf7b6402170b125f238d7d6c93242"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ee9582329181a6547b96c64d8d59193e522bf7b6402170b125f238d7d6c93242"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3c421408b33573d6ed2c39553a1978486435033b685b16b1119e657517ad6d3a"
+    sha256 cellar: :any_skip_relocation, ventura:       "3c421408b33573d6ed2c39553a1978486435033b685b16b1119e657517ad6d3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42cc50ca184833089e45ea4f1692c49cff81e5b455aaccc086787154108b6bb1"
   end
 
   depends_on "go" => :build

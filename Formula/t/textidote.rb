@@ -12,14 +12,14 @@ class Textidote < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51461cd926b6329d791237ea255458e237710fc6c5eaa0a3067b9bfde03bf533"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0286fceacded8ff1661117098ea3e864f3e6a9f8d42ba2418eb027578865f5f3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e9a83218eb82f98e70fba9d90886ddedc8402f9a664c5578ccb768f013efcee2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "936cca1b103e05e9301cb9442078d417f13169f9726d85e46ba0fe984ece5bd6"
-    sha256 cellar: :any_skip_relocation, ventura:       "2ca10fe4b0d6c75985e19fdfe409db7aa3780bc027f1686d65dbcf295d107862"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bfb87740c268eb579c4c30a72c79e0ecc9b3b977358f98e2c0f7536edb638f12"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53bc512af1d05084aef085e8185b29444e3a9a92f515859e06cf7d9860490b31"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "233ce6f6a6e226e5f00f7fada39dd51587afdb332e4c87f1ec9424e394d80743"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14b7818a01928aeda595a8a77e91004a75e587a95c0e02110e48980ec6afea0e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d99486e4a64f499d54fc3ceb04e025c93c437ab84bccd09ea18924c0ed536265"
+    sha256 cellar: :any_skip_relocation, sonoma:        "918182a20520b96b5dd635a1d0cb4d373b5368cc1776f1645786c06554e1f50d"
+    sha256 cellar: :any_skip_relocation, ventura:       "14ef73a0bfd65f87b129c5ca365608322a019ce74f2717ed152169b692b2c5c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b8b47f1a6865eedba83b190e10721c013c31e1bedaca84b319aa4acc1c865d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "820b5da9880ca2ce2b4c9251236314ef10be053b64c27b7a927325a8daf2591b"
   end
 
   depends_on "ant" => :build
@@ -39,6 +39,12 @@ class Textidote < Formula
   end
 
   test do
+    # After openjdk 24, "jdk.xml.totalEntitySizeLimit" was modified to 100000 (and before that was 50000000),
+    # which would cause a JAXP00010004 error.
+    # See: https:docs.oracle.comenjavajavase23docsapijava.xmlmodule-summary.html#jdk.xml.totalEntitySizeLimit
+    # See: https:docs.oracle.comenjavajavase24docsapijava.xmlmodule-summary.html#jdk.xml.totalEntitySizeLimit
+    ENV["JAVA_OPTS"] = "-Djdk.xml.totalEntitySizeLimit=50000000"
+
     output = shell_output("#{bin}textidote --version")
     assert_match "TeXtidote", output
 

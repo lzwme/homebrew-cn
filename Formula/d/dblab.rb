@@ -1,19 +1,19 @@
 class Dblab < Formula
   desc "Database client every command-line junkie deserves"
   homepage "https:dblab.danvergara.com"
-  url "https:github.comdanvergaradblabarchiverefstagsv0.31.0.tar.gz"
-  sha256 "dc038ca9c302c620323057ed163aff2b63bcb46f0cff00b712932105eafb7f96"
+  url "https:github.comdanvergaradblabarchiverefstagsv0.32.0.tar.gz"
+  sha256 "58a71569c38dc6c331d30b9f9b71f99ae432e53f90f014192b45458afded5f4b"
   license "MIT"
   head "https:github.comdanvergaradblab.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4ae2a4b9246d1d21b45e9d10963910e36c8a334a7b2e8d4bf516693c63599dc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1fa6b814f72e2e54a0b9a756cf8c284524f0562cc544d032435c62d53037506a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "134e0d328ec2998d7a22935c929099b4e502d2cbf5d9941ff8ff9ba969cec18f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "bb42cd63956aaf9df5fe5ba19b4be84fba7fa6fadecb98dca036ad13b52dc67c"
-    sha256 cellar: :any_skip_relocation, ventura:       "d85cc6c1c9320778ee3ecf830ace47860afae6a05349652b3fcc840912b9579b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "30673caf6a0ee08b4bc4e0c29bc9c301d57ebcac41555ab86f73fa371f2e6392"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c71983a413812c6652978eac769de2861c6b14ff2585fc46f821bf5b5bf29f70"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "735d628a3dc975dc2f525145876b79dd4dd9e7d835d80ffccd923b24cdb8d15c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30f3149d9776e4690fb09bb3f42af66a1ab0844d85c274ea6a6be46558ef1399"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f8a73ee218e987738ec29c9deb767f7aa62a2b19b24101720c46db371a26ffb7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b1e0e062bfe7c3164d9d6f0595c8110987deb52aa2fb95b92919233e7b6045ea"
+    sha256 cellar: :any_skip_relocation, ventura:       "bd93f849d46873f36294087cb895133a07104019d32b0fa25d6d08b049d19fa8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8bda69c0a881bb4fb054602419d21fd46dc6db6882ffbb39bdd42d0976a95c61"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7981c8c364d80f302664ed406b0c1da7a2fe40aa243f18ac8d4fca432475a90b"
   end
 
   depends_on "go" => :build

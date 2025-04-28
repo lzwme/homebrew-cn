@@ -6,16 +6,17 @@ class ZabbixCli < Formula
   url "https:files.pythonhosted.orgpackagesd3caedb71c4462cc5bef8e107bcbf38f48f29eb2154ebec08ab373eb9c439d79zabbix_cli_uio-3.5.2.tar.gz"
   sha256 "1a2eecfcb2e2164911f14aebfcbf40d73dda9f220e35072a44a7fd647e4d1508"
   license "GPL-3.0-or-later"
+  revision 1
   head "https:github.comunioslozabbix-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "de779ce1961c34bf4a15341719c4ddbc7ea5a1b12ec676d235b4896f52c5a02b"
-    sha256 cellar: :any,                 arm64_sonoma:  "b5fc746f332371daf4495ca573dc52b3f69355020d5077e811a883f43dd508b7"
-    sha256 cellar: :any,                 arm64_ventura: "bce0c2f42fc9c236dcf606c14c043293aa2f019a7f33c398a1007a78ccb09c42"
-    sha256 cellar: :any,                 sonoma:        "b9f35d90141d91c8f3c2470725d0773524cd05a1a20922414c667550a172a339"
-    sha256 cellar: :any,                 ventura:       "a24cddb6397929737410bb3c32fd60484762edd3fb46d0435e6fd2685c5f8472"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1bdfddb98b01e893498750d969573a44238e92edb7c5f3469e1ca423f59f27b3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "992c336d4306f235c31daeb9b275b165cc35b7d0556a3781fab952a84b8c2c02"
+    sha256 cellar: :any,                 arm64_sequoia: "9e0fc2e2f2861e6449800f13410ea73a64f4131732c62c2565bdc7d271e964a7"
+    sha256 cellar: :any,                 arm64_sonoma:  "8d083f79ed0f9238bd6f7604f113a5d60cf215f538622a1b209d727d6a581ce5"
+    sha256 cellar: :any,                 arm64_ventura: "0608a5ade788efda2b71909e399959b6aba375603bfb9d6afbdfd87b098e247e"
+    sha256 cellar: :any,                 sonoma:        "429b323e456cb8bca0b608cbf1122a4e724155afe20151c7ec824411bf0a6bfa"
+    sha256 cellar: :any,                 ventura:       "ce3f8384c349ccc4c37f5d7f960f5063942d11151a2f2c30c74ef62a0c0292a0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2dbb131e44b811cf1c2cbfd787f7f1eba87164207103ba664d27eab7215266c3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "005db4a3bb49555f309dd9f9bf521b95adc9dd9e92b1b338901b84c33a661f43"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -38,13 +39,13 @@ class ZabbixCli < Formula
   end
 
   resource "h11" do
-    url "https:files.pythonhosted.orgpackagesf5383af3d3633a34a3316095b39c8e8fb4853a28a536e55d347bd8d8e9a14b03h11-0.14.0.tar.gz"
-    sha256 "8f19fbbe99e72420ff35c00b27a34cb9937e902a8b810e2c88300c6f0a3b699d"
+    url "https:files.pythonhosted.orgpackages01ee02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963h11-0.16.0.tar.gz"
+    sha256 "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
   end
 
   resource "httpcore" do
-    url "https:files.pythonhosted.orgpackages9f45ad3e1b4d448f22c0cff4f5692f5ed0666658578e358b8d58a19846048059httpcore-1.0.8.tar.gz"
-    sha256 "86e94505ed24ea06514883fd44d2bc02d90e77e7979c8eb71b90f41d364a1bad"
+    url "https:files.pythonhosted.orgpackages069482699a10bca87a5556c9c59b5963f2d039dbd239f25bc2a63907a05a14cbhttpcore-1.0.9.tar.gz"
+    sha256 "6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8"
   end
 
   resource "httpx" do

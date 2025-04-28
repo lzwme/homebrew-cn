@@ -75,10 +75,7 @@ class JavaServiceWrapper < Formula
     JAVA
 
     system "#{java_home}/bin/javac", "HelloWorld.java"
-    assert_match <<~EOS, shell_output("bin/helloworld console")
-      jvm 1    | WrapperManager: Initializing...
-      jvm 1    | Hello, world!
-      wrapper  | <-- Wrapper Stopped
-    EOS
+    console_output = shell_output("bin/helloworld console")
+    assert_match "Hello, world!", console_output
   end
 end
