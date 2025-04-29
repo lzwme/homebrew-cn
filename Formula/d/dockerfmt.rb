@@ -1,18 +1,18 @@
 class Dockerfmt < Formula
   desc "Dockerfile format and parser. a modern dockfmt"
   homepage "https:github.comretepsdockerfmt"
-  url "https:github.comretepsdockerfmtarchiverefstagsv0.3.6.tar.gz"
-  sha256 "ce9f67ea2513cda0d04a26d11c80300a834242eee0656797901254ccb0c89553"
+  url "https:github.comretepsdockerfmtarchiverefstagsv0.3.7.tar.gz"
+  sha256 "2cf8c1122817ac6d690d062aa41e2484c9d438ace605c64b21f5b7825d0a5c67"
   license "MIT"
   head "https:github.comretepsdockerfmt.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "74ec6747b0589a7f1bb7185e1576d847ce7c182039233b12600905ab93b122df"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "74ec6747b0589a7f1bb7185e1576d847ce7c182039233b12600905ab93b122df"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "74ec6747b0589a7f1bb7185e1576d847ce7c182039233b12600905ab93b122df"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ac2b50117b3436870b6110a7342911a422f28edccf6278e0467a094c1524893e"
-    sha256 cellar: :any_skip_relocation, ventura:       "ac2b50117b3436870b6110a7342911a422f28edccf6278e0467a094c1524893e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1aeb3ba38382f7bc0070773ebf5417bd06bdeddb40635a3b27022df5d16f7a16"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3a05b7455a8e474512e24f51d42c916f90f885f04354805d03c8b970501a44c0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a05b7455a8e474512e24f51d42c916f90f885f04354805d03c8b970501a44c0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3a05b7455a8e474512e24f51d42c916f90f885f04354805d03c8b970501a44c0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0becd9e93ae00e8821409d9763897e87cfd72c490101606bce5a8d7bcce0f1d7"
+    sha256 cellar: :any_skip_relocation, ventura:       "0becd9e93ae00e8821409d9763897e87cfd72c490101606bce5a8d7bcce0f1d7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82bb4ce0b94d51cb2e4b921ae4116a38f2c3bd5e17e20ba0a4f1b057687610bf"
   end
 
   depends_on "go" => :build

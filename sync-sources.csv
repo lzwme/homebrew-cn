@@ -2918,6 +2918,7 @@ Homebrew-homebrew-core/Formula/i/include-what-you-use.rb, Homebrew/homebrew-core
 Homebrew-homebrew-core/Formula/i/incus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/indicators.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/inetutils.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/i/infat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/infisical.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/influxdb-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/influxdb.rb, Homebrew/homebrew-core, 1
@@ -8785,6 +8786,7 @@ Homebrew-homebrew-cask/Casks/e/elektron-overbridge.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/elektron-transfer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/element.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/element@nightly.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/e/elemental.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/elephas.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/elephas@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/elephicon.rb, Homebrew/homebrew-cask, 1
@@ -9003,7 +9005,6 @@ Homebrew-homebrew-cask/Casks/f/fmail2.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fman.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fme.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/focu.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/f/focus-booster.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/focus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/focusatwill.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/focused.rb, Homebrew/homebrew-cask, 0

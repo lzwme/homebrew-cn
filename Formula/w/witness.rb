@@ -1,8 +1,8 @@
 class Witness < Formula
   desc "Automates, normalizes, and verifies software artifact provenance"
   homepage "https:witness.dev"
-  url "https:github.comin-totowitnessarchiverefstagsv0.9.0.tar.gz"
-  sha256 "382faf0e052a7f1ca3aebf03ba22ae1e70f53abbe3d23cc40071196999e900b6"
+  url "https:github.comin-totowitnessarchiverefstagsv0.9.1.tar.gz"
+  sha256 "af28bd620a90d76933f529ed72655841b04a617cf9abb61ff52fe0edc1fc23d7"
   license "Apache-2.0"
   head "https:github.comin-totowitness.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Witness < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7f73b29896a0dfc7643e8c5d54364efee8cfd3c8e9eda25f0b066a39f302735a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "65e00a91455045ba43b697dfdd4499f943a48cc8390344776c03c41adea135af"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "96c39c8742d9e77888d2a41b6a893f484739c2e4d257b35f377a3b3ce4e86cb2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "11eb05947c21fe2c1298082766c86d3ec499f94da99dfb591614b312920cd6ea"
-    sha256 cellar: :any_skip_relocation, ventura:       "33afa9378729dd308db1b09aeb65adb1d56be5f7c25b2f1dd37fe8954701832a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3088af430f4bf0d28549758d03dd967fc9e7f9680a117ee832f86d128d80213"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9b5936f021ba12991c70aa67d9e43bfcea3ceb818ef3fc54e2838ff813179710"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4808c187ca99c721b7fcfcec59b7acb998af40b6f90ef0ed11e938a304c13568"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "122725c3b78c865e6e0f0bfa7a359f6cc86cf4338ff0f8b04ad50349ac5b2497"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ce469b91e24105696a60d9a6c66312077d4d90b54bd783957ab71e1775234d9d"
+    sha256 cellar: :any_skip_relocation, ventura:       "c6e0727c4a7cea0f168017986e8cce46d778158a50dce55dcb28131396dbd6be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23f5d88458746d2566874da6db9ada7f7eefbb4927b210f160f0bbdee571d903"
   end
 
   depends_on "go" => :build

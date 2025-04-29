@@ -1,20 +1,19 @@
 class Ncnn < Formula
   desc "High-performance neural network inference framework"
   homepage "https:github.comTencentncnn"
-  url "https:github.comTencentncnnarchiverefstags20250427.tar.gz"
-  sha256 "9b5bfefd129f89d84d8e8aad0505166cbfaffdbc3721049ccafdee5fb41b464b"
+  url "https:github.comTencentncnnarchiverefstags20250428.tar.gz"
+  sha256 "1a27824ce46cd718570e27007b361639ec0cf4baad599667b17864089c4eee43"
   license "BSD-3-Clause"
-  revision 1
   head "https:github.comTencentncnn.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f58cf5927b78838dfccf0719e4a07fa008d83b8a051b945e9f886a8d311cfb13"
-    sha256 cellar: :any,                 arm64_sonoma:  "cc0b510dec956b1760c83a9f3ae396a4d7dcc5524726c9f0017505b0dd3d9537"
-    sha256 cellar: :any,                 arm64_ventura: "d919d3837e9fc3278a2b3fb1cd46127fdd067b89bc4fdb4e11c018d204f66202"
-    sha256 cellar: :any,                 sonoma:        "6e671c4926dd41ddf51c5a3612d4fd0f34f879d9619a0822f6bbf2f20845284e"
-    sha256 cellar: :any,                 ventura:       "ed829e66b66c4cda20f7e9282c428e5534171911ee9d88eb6c7436629be7c343"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "280175e2acaae15a5d57ec65c100401be28f431d6c8dc18b2c7720db055842cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "169b4b6bd3b08d7e698e34b84eed1ac2bffaca4b27f07cdda6237247431ef3ae"
+    sha256 cellar: :any,                 arm64_sequoia: "1523246712ebf46b877af4cf6fc423b4f145d56bb64e595654ae409bbe9548b1"
+    sha256 cellar: :any,                 arm64_sonoma:  "6b10f7ed96f455be67778761a84078acdf964196a8240c3ed11a8b43515c474c"
+    sha256 cellar: :any,                 arm64_ventura: "45bb6fcab70713a8579dc5d05f8fa6fe75c0e2bc33528f5103723f59f8a865ae"
+    sha256 cellar: :any,                 sonoma:        "3a7dc5e6c298e05aa8eaccea75c50c028430f8f20333cd8c4cb3d47d3d2fd0ba"
+    sha256 cellar: :any,                 ventura:       "4f6daf3283e260ea9700ea98372d522ca1014c247aa823c1cd13839a1c26f60f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8df6cc2e1399106465df75752aff1407c8069e5b6ecbe5136caa4063ecdeb92a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45c2a12f7f3f75381ce59d65c2bb08f59b9f8b06f975245e1f77b21298f2feff"
   end
 
   depends_on "cmake" => :build

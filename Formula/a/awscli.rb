@@ -3,19 +3,19 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https:aws.amazon.comcli"
-  url "https:github.comawsaws-cliarchiverefstags2.27.2.tar.gz"
-  sha256 "dbdab1c43350e0f826984c94b29aa0f5df4724676c9b1e20af08911a50dfa3c2"
+  url "https:github.comawsaws-cliarchiverefstags2.27.3.tar.gz"
+  sha256 "c08ccb9cb5d8194affd6a807437dad3154a06fe531b240d67743e75e3f53e439"
   license "Apache-2.0"
   head "https:github.comawsaws-cli.git", branch: "v2"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9ae6587ae12291e2f852b97b30832a01fbec3fc677b487d1abd47c2c2d75cbf0"
-    sha256 cellar: :any,                 arm64_sonoma:  "f07ac33929c8498678a9e6de43b1249854cbba8874460b7031eadbdf297541de"
-    sha256 cellar: :any,                 arm64_ventura: "ecd46473853872c8db3fbf1642cb0652ff45e7408848f9ed468924edffa7d9ef"
-    sha256 cellar: :any,                 sonoma:        "a27a3b505242c0e65476ccafda3cdb9782db5c8e162c1c916aac0bbc4264dfb1"
-    sha256 cellar: :any,                 ventura:       "16b1c76edfbcb0ab0e0369b9f713b322c23b32f9536c89b484134d539d9fa7f9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8b7e42ee2475a212a7baebb0af237e4d75026e87fd3492819bf66796d62751ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c8a89b02007f45792b55fef28bc00f46f3448a472ce7dbfbf8c05b08fe630021"
+    sha256 cellar: :any,                 arm64_sequoia: "fd0354d80ad89ca98b2490b062585e0678e62dd91dd0f7d3f802c330c109ec6e"
+    sha256 cellar: :any,                 arm64_sonoma:  "934c3d093c8bfb6b21ca33f4242ea7926148eca69e5a9fc1fc76ca3538e6372d"
+    sha256 cellar: :any,                 arm64_ventura: "1e456edd95ca71cea655449f0e3348f05b875e99c68b18321a89121f43a8a7c6"
+    sha256 cellar: :any,                 sonoma:        "9ebdd19fbc16bccfa7131d6a30a9644212b78efd021ee747700c89f09f05b5cb"
+    sha256 cellar: :any,                 ventura:       "081778cde905c9de5c01bcb21a063284068e1e63c046651ed5185b2107ea59a3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "75a60fa03dccb1d6d1b5f7eb1856fa49b440bf59a397db48b69ce6a44b4d7370"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d37f75ddad875edcdbded2fbf370a2e4e3a40172222f1008ffe8c6d2cc90da6f"
   end
 
   depends_on "cmake" => :build

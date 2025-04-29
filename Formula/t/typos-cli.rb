@@ -1,8 +1,8 @@
 class TyposCli < Formula
   desc "Source code spell checker"
   homepage "https:github.comcrate-citypos"
-  url "https:github.comcrate-cityposarchiverefstagsv1.31.1.tar.gz"
-  sha256 "58bb9286e877e77213c941d5f0f8c999606e27a333edb2258e5ee7e5a58b4cf8"
+  url "https:github.comcrate-cityposarchiverefstagsv1.31.2.tar.gz"
+  sha256 "41879be7e1fa39b4388df2752c20e0ffcd30f39c86ed0293ec07d48d3352de6d"
   license any_of: ["Apache-2.0", "MIT"]
 
   livecheck do
@@ -11,13 +11,13 @@ class TyposCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d8cad5fc8cb37438a4b3be42f5a2070d46a1a3965c97426b2e53801a39f4269"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8c7b1376d4b703bad96c1ce74fd85d2b016da51c71444a38c19bb817d314005"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "259d8912f98949252cb9e08c09e1581e44324638a24f0bddf6650dbbfb546def"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e4a842b26eb8f946acd675a79c6d8da9e480c52113dd61a9e57de536228dcdaf"
-    sha256 cellar: :any_skip_relocation, ventura:       "7fb132a6ca19d3a051e40271ec6fbfc0438c019922624176cdf09eb5ac9a092a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "03bfc4a9882b0552e3c10219eaebe3a6237cdc6411d949ffc028b7706f9af7c5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "57f7f8330388457d78b6ba46bf846378c99df4b17694ac675541f9887ee6bf16"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "406379b63e10bfea96534f3156e90e3aa3a75555151dae529b3f257faf6346ce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8595ff1b93a39b5c7eefbadf306fb2840830e18829117a9edc68687504d54f5b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e468b7e658ddb7a0b84b5b1fb56294d372fa3791290c6206d247c5c4cf33f713"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fd19655098a0abcfbec7d690f3a6d10a6bf41b3d71cb144b2e0ab3d89b6acf85"
+    sha256 cellar: :any_skip_relocation, ventura:       "280b2600d7e63a7e4ade63f74edad862a44d3f1b46b749db28ea2f138ac6103a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0b9fa7167998c6ffb0ea84d0477e56c0ee1c14211ce2de900701157d4c442a2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c992c89a4dc86bd0174d38379dbff6688d864186e95822ae14a6b46088a31b02"
   end
 
   depends_on "rust" => :build

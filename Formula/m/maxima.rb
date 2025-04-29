@@ -4,7 +4,7 @@ class Maxima < Formula
   url "https://downloads.sourceforge.net/project/maxima/Maxima-source/5.47.0-source/maxima-5.47.0.tar.gz"
   sha256 "9104021b24fd53e8c03a983509cb42e937a925e8c0c85c335d7709a14fd40f7a"
   license "GPL-2.0-only"
-  revision 20
+  revision 21
 
   livecheck do
     url :stable
@@ -12,11 +12,11 @@ class Maxima < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c7907d65d5846cc62c4368f9da024012f763817903839890e1bd3a16b3dff656"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f779667b79fa8a03818726304ee810ccdabe86828bd266bb5651da8073da44b8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cd4114427ce23c81a7d821aa8689313678be0b42e68312c0725a097f68ebf740"
-    sha256 cellar: :any_skip_relocation, ventura:       "41e318aa895b8a823651a103913dbbeee88866d16f0b41d3c5ecf9809c81eca3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1926acc7d2a714be8db5f47df5b386d8a01031da622abb9d298c17a7fc96df83"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c06983e9d021a124550f5615ebda6601c4f0c3a68cad65fdfd9eef19155e0b1b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0f17bae77e9e2ffc4006cfbfe373f45c5be77502ef291b9408d1b9ddbccec407"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b321b497346ba5a245b324934c85eed5e9b1836aed2349944044a27571fb94c3"
+    sha256 cellar: :any_skip_relocation, ventura:       "9be3c5c7129f9e483b44d06a1f1b1826e21e316803945670ea7556f6705e57ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "781e89cc152c5f13223bfc7442df7a277a2e3f06d5e17ee3a754262f1e3f50df"
   end
 
   depends_on "gawk" => :build

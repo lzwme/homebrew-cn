@@ -3,20 +3,19 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https:docs.keeper.ioenprivileged-access-managercommander-clioverview"
-  url "https:files.pythonhosted.orgpackagesafc33d596436f423d873592a4503cf4ca34da95331c328ddf93fde3ee8964d09keepercommander-17.0.14.tar.gz"
-  sha256 "f14fd6723fa2554c70c0230bd34eefeabf74089cf34bdb3e29f50e2eb122b117"
+  url "https:files.pythonhosted.orgpackages2a49d4bc9bf323153e9de97d763dc872377ca0e4e62d0de18875c44240f7dd74keepercommander-17.0.17.tar.gz"
+  sha256 "c1a51caa8622915ab670455c3c58b99e44ba1d445ce3a0f152559c13243ff2b4"
   license "MIT"
-  revision 1
   head "https:github.comKeeper-SecurityCommander.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0a8ca70ed13cee72ffd694e80674fd5375c09732324333406f48b6d1d75fb9fd"
-    sha256 cellar: :any,                 arm64_sonoma:  "1bf44791cfee30cab7ba06194cf8180264f70f8d4bcd2ea09d88443203853ce9"
-    sha256 cellar: :any,                 arm64_ventura: "f18eecac32ece14cc431f6f866135b05f7735058a315812cad368be05be611b4"
-    sha256 cellar: :any,                 sonoma:        "10c237a3eaefc58e9d3f67fc9fc8700d2cb1b8ef7d7412db0aa14c333a730a1b"
-    sha256 cellar: :any,                 ventura:       "9e927cf2024a3dff6a182b0ff2af2c663d89da62048f85a34b6c3315cd663182"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7337e5a6a4054261926f7e8d565ea428d3dab171781ae14d271b7a784fdcfa0b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48ff7568a1a6d4b7396f95c1657bd68ea68780738029bccb6d299f84c381b3cc"
+    sha256 cellar: :any,                 arm64_sequoia: "48006b034c75a3961d8c52a90433f933879ed9f58dba01fca5335b864e18ff8d"
+    sha256 cellar: :any,                 arm64_sonoma:  "b041210c8f0c935805af87d71d82b21ff7921cbb30482e9bd13d8f98ab126690"
+    sha256 cellar: :any,                 arm64_ventura: "b37216a475795d721e91ae9de212d4f6ff738023045f792c0cce4fe187f84c44"
+    sha256 cellar: :any,                 sonoma:        "7deebef9385ad1547bbd952a3ddaf0a57530f185f1bbc392bd15392a7730c9f1"
+    sha256 cellar: :any,                 ventura:       "7090a9b93acc3b6c4340a9c8adb183e23951a30100ad8eb38f1a6348bd9b9f4e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae2e39a0ad5024bd12dace41e8b1da9e35916c28c436eb7cf6f58bb6a6625654"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "615b44c4642013cf36c22a94d8ee7a0a1fea4cf167213468a7b24cc0ed1d3b39"
   end
 
   depends_on "pkgconf" => :build
@@ -35,8 +34,8 @@ class KeeperCommander < Formula
   end
 
   resource "aioice" do
-    url "https:files.pythonhosted.orgpackagesa88ea68b686678c6c21e9d5a247d7b2849fd55e645179ebcd081889b53115854aioice-0.10.0.tar.gz"
-    sha256 "25dfdcbacb89de0e2eac41e96a872499c37a9eb74fa22a0e92d8ac1a0a9141af"
+    url "https:files.pythonhosted.orgpackages95a245dfab1d5a7f96c48595a5770379acf406cdf02a2cd1ac1729b599322b08aioice-0.10.1.tar.gz"
+    sha256 "5c8e1422103448d171925c678fb39795e5fe13d79108bebb00aa75a899c2094a"
   end
 
   resource "aiortc" do
@@ -100,8 +99,8 @@ class KeeperCommander < Formula
   end
 
   resource "importlib-metadata" do
-    url "https:files.pythonhosted.orgpackages3308c1395a292bb23fd03bdf572a1357c5a733d3eecbab877641ceacab23db6eimportlib_metadata-8.6.1.tar.gz"
-    sha256 "310b41d755445d74569f993ccfc22838295d9fe005425094fad953d7f15c8580"
+    url "https:files.pythonhosted.orgpackages7666650a33bd90f786193e4de4b3ad86ea60b53c89b669a5c7be931fac31cdb0importlib_metadata-8.7.0.tar.gz"
+    sha256 "d13b81ad223b890aa16c5471f2ac3056cf76c5f10f82d6f9292f0b415f389000"
   end
 
   resource "keeper-secrets-manager-core" do
@@ -110,8 +109,8 @@ class KeeperCommander < Formula
   end
 
   resource "prompt-toolkit" do
-    url "https:files.pythonhosted.orgpackagesa1e1bd15cb8ffdcfeeb2bdc215de3c3cffca11408d829e4b8416dcfe71ba8854prompt_toolkit-3.0.50.tar.gz"
-    sha256 "544748f3860a2623ca5cd6d2795e7a14f3d0e1c3c9728359013f79877fc89bab"
+    url "https:files.pythonhosted.orgpackagesbb6e9d084c929dfe9e3bfe0c6a47e31f78a25c54627d64a66e884a8bf5474f1cprompt_toolkit-3.0.51.tar.gz"
+    sha256 "931a162e3b27fc90c86f1b48bb1fb2c528c2761475e57c9c06de13311c7b54ed"
   end
 
   resource "protobuf" do

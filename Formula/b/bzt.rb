@@ -3,20 +3,19 @@ class Bzt < Formula
 
   desc "BlazeMeter Taurus"
   homepage "https:gettaurus.org"
-  url "https:files.pythonhosted.orgpackages8775f2362e6e16f5a43b7db36efd018ba03e4fbdad89a0899983dbf09c243599bzt-1.16.40.tar.gz"
-  sha256 "d178f4afabcc3ec3de2a7a6a46cbb0b6730b99e092a9af4e3a3b38fab661a744"
+  url "https:files.pythonhosted.orgpackagesad6be2cd0caefa101f7a2f3fe058f9001ee455ba911b204fb946054f03c32429bzt-1.16.41.tar.gz"
+  sha256 "3bdc42fe7995581ed972fe7cd6a55a15c7e2be55bad948bb690be51788a28c9f"
   license "Apache-2.0"
-  revision 1
   head "https:github.comBlazemetertaurus.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9e101cd3da85ac38bd6f59c9fd5bacca78986d1099ef624f12121dacaa58f5e6"
-    sha256 cellar: :any,                 arm64_sonoma:  "9898aba5fb5fa2a7d6b62dd7b0d32657cf36b856c5e9bb61f40d0b04ecdcdaba"
-    sha256 cellar: :any,                 arm64_ventura: "985b6b77ace4ffe4173d5857fefb6d5bc4a23470366cb65d7530051fad24a335"
-    sha256 cellar: :any,                 sonoma:        "7584cc4ae487abdffd22004762f0b3acec82005d76d5f7a0b440826dcc1524d0"
-    sha256 cellar: :any,                 ventura:       "c0b778b1ab98bc53ea903d77d371f6e1244a0b29a3759fa93197e1d1cc4ea597"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab5274fc68ee63827254a5fed1a74ab6e025b2395cd9f313354d212c72c0e5b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bfd35894da07f426e26f255512d4e54d82c3f51b8fbed58c42f6ce7a25cd6d04"
+    sha256 cellar: :any,                 arm64_sequoia: "08b45d4cef4420de13a4d37848528b651a72f6265b36db0906a5c3da832ed397"
+    sha256 cellar: :any,                 arm64_sonoma:  "4207d1c8083aec35af8c2ab5a49da63db74d28a4b62fd15eb6ff59685071908f"
+    sha256 cellar: :any,                 arm64_ventura: "746fd9ff569241ab51ce5d4b479af832d3a8b15409c416da5ed09db8273eb14c"
+    sha256 cellar: :any,                 sonoma:        "f08c3dca28c9627c9e3462b7c576279bda7640ba8ecb8cf0d870a3ae4ff2aa32"
+    sha256 cellar: :any,                 ventura:       "44c10133a444bd519cf9e973d09190ff91163d2e901a229d8a3fe4a63953717e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6c84f020f2fd4e3a096710c6c8e698d673efbbe41144e17792f195fd6aa8dee2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "53bb5e250b419ae94f7882d098c6d9e5451b9649d4f7b513aadecb7910fddef4"
   end
 
   depends_on "cmake" => :build
@@ -231,14 +230,19 @@ class Bzt < Formula
     sha256 "ba6eca5cb5ba02bba4c9f4f985af80c54ec3dccf94cfcd190154386255e47543"
   end
 
+  resource "typing-extensions" do
+    url "https:files.pythonhosted.orgpackagesf63723083fcd6e35492953e8d2aaaa68b860eb422b34627b13f2ce3eb6106061typing_extensions-4.13.2.tar.gz"
+    sha256 "e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef"
+  end
+
   resource "urllib3" do
     url "https:files.pythonhosted.orgpackagesdd199e5c8b813a8bddbfb035fa2b0c29077836ae7c4def1a55ae4632167b3511urllib3-1.26.17.tar.gz"
     sha256 "24d6a242c28d29af46c3fae832c36db3bbebcc533dd1bb549172cd739c82df21"
   end
 
   resource "urwid" do
-    url "https:files.pythonhosted.orgpackages943fe3010f4a11c08a5690540f7ebd0b0d251cc8a456895b7e49be201f73540curwid-2.1.2.tar.gz"
-    sha256 "588bee9c1cb208d0906a9f73c613d2bd32c3ed3702012f51efe318a3f2127eae"
+    url "https:files.pythonhosted.orgpackages9821ad23c9e961b2d36d57c63686a6f86768dd945d406323fb58c84f09478530urwid-2.6.16.tar.gz"
+    sha256 "93ad239939e44c385e64aa00027878b9e5c486d59e855ec8ab5b1e1adcdb32a2"
   end
 
   resource "wcwidth" do

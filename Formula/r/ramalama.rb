@@ -3,18 +3,18 @@ class Ramalama < Formula
 
   desc "Goal of RamaLama is to make working with AI boring"
   homepage "https:github.comcontainersramalama"
-  url "https:files.pythonhosted.orgpackagesc35f101079d8fc2ff8de8ac61892672450aab225153c340fc3c3b3b9544d52c6ramalama-0.7.5.tar.gz"
-  sha256 "5c21753c181ca831276661cba25ac51d603c374943ed48aa7e2023ce58ae9df6"
+  url "https:files.pythonhosted.orgpackagesc531e65e9f59d112899415da95c74c4bc52f0b2f25d1872bc1ad08ddd9d60789ramalama-0.8.0.tar.gz"
+  sha256 "a5d0f209485a32981608601bfff877f8de6fdd1e0e3cce67c4b3a659103b2522"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91eb19afd0ca062774f76fbd3823f575db148fcb0ce7357c06e05a633fdfab31"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "91eb19afd0ca062774f76fbd3823f575db148fcb0ce7357c06e05a633fdfab31"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "91eb19afd0ca062774f76fbd3823f575db148fcb0ce7357c06e05a633fdfab31"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0786e7d81d3dd6c0ffc1b9b10ae0722d3469ae85c8ce70d9d1632b493213776a"
-    sha256 cellar: :any_skip_relocation, ventura:       "0786e7d81d3dd6c0ffc1b9b10ae0722d3469ae85c8ce70d9d1632b493213776a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1129de2b2a2c4971f536adf0efeb51021cedf6d607b7a0a82fa1b9eeb983c5ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1129de2b2a2c4971f536adf0efeb51021cedf6d607b7a0a82fa1b9eeb983c5ea"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c67fa3c5c36aea4b37c5c5e79f52e8f9c716ad5b11de417c224c195d6d3aecb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7c67fa3c5c36aea4b37c5c5e79f52e8f9c716ad5b11de417c224c195d6d3aecb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7c67fa3c5c36aea4b37c5c5e79f52e8f9c716ad5b11de417c224c195d6d3aecb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "33931ec9809d544c1c4f3c50f00e26b868600d8f455caa7603d00561f69f4380"
+    sha256 cellar: :any_skip_relocation, ventura:       "33931ec9809d544c1c4f3c50f00e26b868600d8f455caa7603d00561f69f4380"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e411e736ef0af28b8bb7296d471a7a993dd80a8ab0997b1e71bf2427a5393f32"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e411e736ef0af28b8bb7296d471a7a993dd80a8ab0997b1e71bf2427a5393f32"
   end
 
   depends_on "llama.cpp"
@@ -30,7 +30,7 @@ class Ramalama < Formula
   end
 
   test do
-    assert_match "invalidllm was not found", shell_output("#{bin}ramalama run invalidllm 2>&1", 1)
+    assert_match "invalidllm:latest was not found", shell_output("#{bin}ramalama run invalidllm 2>&1", 1)
 
     system bin"ramalama", "pull", "tinyllama"
     list_output = shell_output("#{bin}ramalama list")
