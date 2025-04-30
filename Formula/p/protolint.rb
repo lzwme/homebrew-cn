@@ -1,18 +1,18 @@
 class Protolint < Formula
   desc "Pluggable linter and fixer to enforce Protocol Buffer style and conventions"
   homepage "https:github.comyoheimutaprotolint"
-  url "https:github.comyoheimutaprotolintarchiverefstagsv0.54.0.tar.gz"
-  sha256 "bf936e1502eb4b19385885148b74fa8096668962ab098e5dd64d517f7a33d83f"
+  url "https:github.comyoheimutaprotolintarchiverefstagsv0.54.1.tar.gz"
+  sha256 "3082d88e3c17a88f3001ffc6849eacd9075a0f847ed6339f81e4f80dd0007751"
   license "MIT"
   head "https:github.comyoheimutaprotolint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4299ef878b391f2fbd05a8fa53523eeb4804d6ab509cacb8f589775ea2fe999c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4299ef878b391f2fbd05a8fa53523eeb4804d6ab509cacb8f589775ea2fe999c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4299ef878b391f2fbd05a8fa53523eeb4804d6ab509cacb8f589775ea2fe999c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "83af964dd89c694f2a58e571182acfbfb1fcaf46a2017ac9a73eafcf0177ed13"
-    sha256 cellar: :any_skip_relocation, ventura:       "83af964dd89c694f2a58e571182acfbfb1fcaf46a2017ac9a73eafcf0177ed13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bab765e1859f63f0b7a489bb71db9ac4f21b319a7ddd1a386432f6f87bda524d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1858bc0cf62941c36d1a4b2539b1b353244723784d47eee8715bc5f84311d026"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1858bc0cf62941c36d1a4b2539b1b353244723784d47eee8715bc5f84311d026"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1858bc0cf62941c36d1a4b2539b1b353244723784d47eee8715bc5f84311d026"
+    sha256 cellar: :any_skip_relocation, sonoma:        "461a8cd7dd0d5e308a7faf63f1ac4f5f36f7b86097a0248f2fd9ed424504e098"
+    sha256 cellar: :any_skip_relocation, ventura:       "461a8cd7dd0d5e308a7faf63f1ac4f5f36f7b86097a0248f2fd9ed424504e098"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09834887e8f94eba8a7a64821c166434078e8cdd31fa186b3e3200ce4518a985"
   end
 
   depends_on "go" => :build

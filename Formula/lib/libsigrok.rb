@@ -41,8 +41,11 @@ class Libsigrok < Formula
     end
   end
 
+  # The upstream website has gone down due to a server failure and the previous
+  # download page is not available, so this checks the directory listing page
+  # where the `stable` archive is found until the download page returns.
   livecheck do
-    url "https:sigrok.orgwikiDownloads"
+    url "https:sigrok.orgdownloadsourcelibsigrok"
     regex(href=.*?libsigrok[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 

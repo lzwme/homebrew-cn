@@ -3,18 +3,18 @@ class Ramalama < Formula
 
   desc "Goal of RamaLama is to make working with AI boring"
   homepage "https:github.comcontainersramalama"
-  url "https:files.pythonhosted.orgpackagesc531e65e9f59d112899415da95c74c4bc52f0b2f25d1872bc1ad08ddd9d60789ramalama-0.8.0.tar.gz"
-  sha256 "a5d0f209485a32981608601bfff877f8de6fdd1e0e3cce67c4b3a659103b2522"
+  url "https:files.pythonhosted.orgpackages6cfac251af56dfa25d45c07ebbd597a9986c804edbc026e05a7c25621d89b8ceramalama-0.8.1.tar.gz"
+  sha256 "4e1a91989c95252b1c009c6e58e7d18165b87c190f1b375870e6f4a56e70e14c"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c67fa3c5c36aea4b37c5c5e79f52e8f9c716ad5b11de417c224c195d6d3aecb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7c67fa3c5c36aea4b37c5c5e79f52e8f9c716ad5b11de417c224c195d6d3aecb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7c67fa3c5c36aea4b37c5c5e79f52e8f9c716ad5b11de417c224c195d6d3aecb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "33931ec9809d544c1c4f3c50f00e26b868600d8f455caa7603d00561f69f4380"
-    sha256 cellar: :any_skip_relocation, ventura:       "33931ec9809d544c1c4f3c50f00e26b868600d8f455caa7603d00561f69f4380"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e411e736ef0af28b8bb7296d471a7a993dd80a8ab0997b1e71bf2427a5393f32"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e411e736ef0af28b8bb7296d471a7a993dd80a8ab0997b1e71bf2427a5393f32"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d307f042288498f5bc81c1e895a298917e573c8363e07a3fb3344dda9ad91408"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d307f042288498f5bc81c1e895a298917e573c8363e07a3fb3344dda9ad91408"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d307f042288498f5bc81c1e895a298917e573c8363e07a3fb3344dda9ad91408"
+    sha256 cellar: :any_skip_relocation, sonoma:        "89b2d2b67d0333f7df695f2e820db314e7b0a2b662d05eb71ab60a0b7c0361c6"
+    sha256 cellar: :any_skip_relocation, ventura:       "89b2d2b67d0333f7df695f2e820db314e7b0a2b662d05eb71ab60a0b7c0361c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "331cfd8b27333448a8f36806def92e84504a655ef987d2ec7b459fe85c3f597c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "331cfd8b27333448a8f36806def92e84504a655ef987d2ec7b459fe85c3f597c"
   end
 
   depends_on "llama.cpp"

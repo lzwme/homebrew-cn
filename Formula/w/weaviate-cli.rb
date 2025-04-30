@@ -6,15 +6,16 @@ class WeaviateCli < Formula
   url "https://files.pythonhosted.org/packages/6d/55/51608eb9c5005b81c62dd6c37f50451d262018caa4001a9f4f9b82033823/weaviate_cli-3.2.0.tar.gz"
   sha256 "2f6476e25e04c2080eee6415dd817dd08a28887a268a5a54dbacbd2684ce60d7"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "dcc61acba3735b094231cb457c2838e15c08898c414d6d853ba24910f720c92b"
-    sha256 cellar: :any,                 arm64_sonoma:  "0023bfad2bf31d0c3ffc6ba176a54eaee2a4022d53ba7a9db53388970fbe6423"
-    sha256 cellar: :any,                 arm64_ventura: "5c4f58a0bdc8456861813489c790d891094c25bb63f6807356a5fcd838fe7d73"
-    sha256 cellar: :any,                 sonoma:        "3388050d84ddeb47164106ac1ea168463fea5fefaec27bf268bf18fadfbb61c3"
-    sha256 cellar: :any,                 ventura:       "cc3bedd6c1319bb52551bd2845aa76413f84b9d74ae0cdace44bf9e4bbdee026"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "25a3bf940304ad931d5f16c87be9d8266900c8cb83730b6000af8aa60fe8c9f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c94e41404b4dce9f50bc5bd4dc1654a59609feaee1f046e92241363d9a160bc8"
+    sha256 cellar: :any,                 arm64_sequoia: "782e5a5bca55ee7aef6eae6166b5b4876a2e55aff8e43f92191c0aff03c09d17"
+    sha256 cellar: :any,                 arm64_sonoma:  "5bc1675d563f1c3b10704fd6ff777d66b29344af92527ebd508ad89b06c6eb29"
+    sha256 cellar: :any,                 arm64_ventura: "ce1bc3d2637612166ec57d0591ca8208849800400905c5a4df6f9b0af773eac2"
+    sha256 cellar: :any,                 sonoma:        "62d62a3f94647c907baa3d2e95259222d50f37c270c3950a63bf0ac6fde1d686"
+    sha256 cellar: :any,                 ventura:       "87a12d6d319144012bbb68bb71f27fa8ce04066026c0841cada8ae0aed587f17"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f6784344aebd9817d83d84b629bbcf1dff5759a2c4567c96380a683afd4c320"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29b1bae93bad9289ce198479bd713397f8b4c769fca61cdf76b1c08444a4bb50"
   end
 
   depends_on "ninja" => :build
@@ -51,14 +52,19 @@ class WeaviateCli < Formula
     sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
   end
 
+  resource "deprecation" do
+    url "https://files.pythonhosted.org/packages/5a/d3/8ae2869247df154b64c1884d7346d412fed0c49df84db635aab2d1c40e62/deprecation-2.1.0.tar.gz"
+    sha256 "72b3bde64e5d778694b0cf68178aed03d15e15477116add3fb773e581f9518ff"
+  end
+
   resource "faker" do
     url "https://files.pythonhosted.org/packages/ba/a6/b77f42021308ec8b134502343da882c0905d725a4d661c7adeaf7acaf515/faker-37.1.0.tar.gz"
     sha256 "ad9dc66a3b84888b837ca729e85299a96b58fdaef0323ed0baace93c9614af06"
   end
 
   resource "grpcio" do
-    url "https://files.pythonhosted.org/packages/1c/95/aa11fc09a85d91fbc7dd405dcb2a1e0256989d67bf89fa65ae24b3ba105a/grpcio-1.71.0.tar.gz"
-    sha256 "2b85f7820475ad3edec209d3d89a7909ada16caab05d3f2e08a7e8ae3200a55c"
+    url "https://files.pythonhosted.org/packages/d1/33/bf7bf9188cfce1c626e4c5d55523fec7f2f1d905e003df5da025f532916e/grpcio-1.72.0rc1.tar.gz"
+    sha256 "221793dccd3332060f426975a041d319d6d57323d857d4afc25257ec4a5a67f3"
   end
 
   resource "grpcio-health-checking" do
@@ -72,13 +78,13 @@ class WeaviateCli < Formula
   end
 
   resource "h11" do
-    url "https://files.pythonhosted.org/packages/f5/38/3af3d3633a34a3316095b39c8e8fb4853a28a536e55d347bd8d8e9a14b03/h11-0.14.0.tar.gz"
-    sha256 "8f19fbbe99e72420ff35c00b27a34cb9937e902a8b810e2c88300c6f0a3b699d"
+    url "https://files.pythonhosted.org/packages/01/ee/02a2c011bdab74c6fb3c75474d40b3052059d95df7e73351460c8588d963/h11-0.16.0.tar.gz"
+    sha256 "4e35b956cf45792e4caa5885e69fba00bdbc6ffafbfa020300e549b208ee5ff1"
   end
 
   resource "httpcore" do
-    url "https://files.pythonhosted.org/packages/6a/41/d7d0a89eb493922c37d343b607bc1b5da7f5be7e383740b4753ad8943e90/httpcore-1.0.7.tar.gz"
-    sha256 "8551cb62a169ec7162ac7be8d4817d561f60e08eaa485234898414bb5a8a0b4c"
+    url "https://files.pythonhosted.org/packages/06/94/82699a10bca87a5556c9c59b5963f2d039dbd239f25bc2a63907a05a14cb/httpcore-1.0.9.tar.gz"
+    sha256 "6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8"
   end
 
   resource "httpx" do
@@ -97,8 +103,13 @@ class WeaviateCli < Formula
   end
 
   resource "numpy" do
-    url "https://files.pythonhosted.org/packages/e1/78/31103410a57bc2c2b93a3597340a8119588571f6a4539067546cb9a0bfac/numpy-2.2.4.tar.gz"
-    sha256 "9ba03692a45d3eef66559efe1d1096c4b9b75c0986b5dff5530c378fb8331d4f"
+    url "https://files.pythonhosted.org/packages/dc/b2/ce4b867d8cd9c0ee84938ae1e6a6f7926ebf928c9090d036fc3c6a04f946/numpy-2.2.5.tar.gz"
+    sha256 "a9c0d994680cd991b1cb772e8b297340085466a6fe964bc9d4e80f5e2f43c291"
+  end
+
+  resource "packaging" do
+    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
+    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
   resource "prettytable" do
@@ -127,8 +138,8 @@ class WeaviateCli < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/a9/5a/0db4da3bc908df06e5efae42b44e75c81dd52716e10192ff36d0c1c8e379/setuptools-78.1.0.tar.gz"
-    sha256 "18fd474d4a82a5f83dac888df697af65afa82dec7323d09c3e37d1f14288da54"
+    url "https://files.pythonhosted.org/packages/44/80/97e25f0f1e4067677806084b7382a6ff9979f3d15119375c475c288db9d7/setuptools-80.0.0.tar.gz"
+    sha256 "c40a5b3729d58dd749c0f08f1a07d134fb8a0a3d7f87dc33e7c5e1f762138650"
   end
 
   resource "sniffio" do
@@ -162,8 +173,8 @@ class WeaviateCli < Formula
   end
 
   resource "weaviate-client" do
-    url "https://files.pythonhosted.org/packages/e9/7c/58e666a37c3d382f6b14aabafd304d5ed3ff5224bc8cc3d7a8403cd3b67b/weaviate_client-4.13.2.tar.gz"
-    sha256 "4c493d761a6d015690662649063575207a581adc67bf9f8c31acad2ef95e2f89"
+    url "https://files.pythonhosted.org/packages/5d/a6/e0a1634efa8bf0e761a6a146d5e822d527e3bc810074d582b979284fcf80/weaviate_client-4.14.1.tar.gz"
+    sha256 "fbac4dc73cb65d811865ebb8d42c2c14207cc192f51008009cb54b571e181d1a"
   end
 
   def install

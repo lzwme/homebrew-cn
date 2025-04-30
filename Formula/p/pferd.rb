@@ -3,18 +3,18 @@ class Pferd < Formula
 
   desc "Programm zum Flotten Einfachen Runterladen von Dateien"
   homepage "https:github.comGarmelonPFERD"
-  url "https:files.pythonhosted.orgpackages7319c67800414ff5a742256a3a9714634d62f5dff42a12c3d3dca1665a4a22fbpferd-3.8.1.tar.gz"
-  sha256 "e8acb0791eb07905f1dce2816f8483be9056f811afe588793f0b516e31d8c759"
+  url "https:files.pythonhosted.orgpackages1a4d26c20017b81c5b791edd63403ae00a6ea10d01f4c420415861e4da671d12pferd-3.8.2.tar.gz"
+  sha256 "6defe3f73153f352869b5b5790f9a0e56614e17d1379f5e26d683318e0426e91"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27ec16d9d27aac3dffc430f0dd50e84e6931f586c15f5fa39dc333481e878ac6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9646c8b0e14c6fffa40814e7ce0d5337405cd8b6d69bd3aa7dfd5ff8868d741"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "09f700b7521460a5e4fbc3ab86dda8687b141f508897f88a8e55aa1699a6f069"
-    sha256 cellar: :any_skip_relocation, sonoma:        "168d95ae41e842e6b06403bedce7552c07ac1769167655149bdcf16a6465ed8e"
-    sha256 cellar: :any_skip_relocation, ventura:       "687f9d37984ea94358a889e8d81bc3455ce2949e0972ebde7eed16f87e72b534"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "31f3a81d04b49fac2000d1aaf9856cf049d3c6951b186d2278c9ff8fa9fb0f79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4b7ef3c6a342f228926768f406b06e06aa182d337cc6c300346a0854dca4fbf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e507fe202f645025301ddfd34ebad47536568b51876b1de1ca0a369764548c5b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4d3a39872ad61cb23b9054d0ad9e2ae66ace63130fe141ae26ca98ec580aec99"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "66f2d66cacd7875e0b7c4aba3dabc4c10e5d79c75913fb74681b57a1218f22f3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b1f539247d5799d290988e79a141f7bea2c65ae524931e703007e21e0f8d1eed"
+    sha256 cellar: :any_skip_relocation, ventura:       "f9eb39c4ee15b2b2303a960b72a601cfa421c6f120137182952e2c400d4633a8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "44dcdd8f47adf976640bc29bff080d3f1c0e44f281a7e8f8ce64620adc1b1606"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f78c4d8737becda6102385b6b89f92347a4872b9e2d54b827432d445e70af627"
   end
 
   depends_on "certifi"
@@ -27,8 +27,8 @@ class Pferd < Formula
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackagesf1d91c4721d143e14af753f2bf5e3b681883e1f24b592c0482df6fa6e33597faaiohttp-3.11.16.tar.gz"
-    sha256 "16f8a2c9538c14a557b4d309ed4d0a7c60f0253e8ed7b6c9a2859a7582f8b1b8"
+    url "https:files.pythonhosted.orgpackages63e7fa1a8c00e2c54b05dc8cb5d1439f627f7c267874e3f7bb047146116020f9aiohttp-3.11.18.tar.gz"
+    sha256 "ae856e1138612b7e412db63b7708735cff4d38d0399f6a5435d3dac2669f558a"
   end
 
   resource "aiosignal" do
@@ -47,8 +47,8 @@ class Pferd < Formula
   end
 
   resource "frozenlist" do
-    url "https:files.pythonhosted.orgpackages8fed0f4cec13a93c02c47ec32d81d11c0c1efbadf4a471e3f3ce7cad366cbbd3frozenlist-1.5.0.tar.gz"
-    sha256 "81d5af29e61b9c8348e876d442253723928dce6433e0e76cd925cd83f1b4b817"
+    url "https:files.pythonhosted.orgpackageseef4d744cba2da59b5c1d88823cf9e8a6c74e4659e2b27604ed973be2a0bf5abfrozenlist-1.6.0.tar.gz"
+    sha256 "b99655c32c1c8e06d111e7f41c06c29a5318cb1835df23a45518e02a47c63b68"
   end
 
   resource "idna" do
@@ -92,8 +92,8 @@ class Pferd < Formula
   end
 
   resource "more-itertools" do
-    url "https:files.pythonhosted.orgpackages883b7fa1fe835e2e93fd6d7b52b2f95ae810cf5ba133e1845f726f5a992d62c2more-itertools-10.6.0.tar.gz"
-    sha256 "2cd7fad1009c31cc9fb6a035108509e6547547a7a738374f10bd49a09eb3ee3b"
+    url "https:files.pythonhosted.orgpackagescea0834b0cebabbfc7e311f30b46c8188790a37f89fc8d756660346fe5abfd09more_itertools-10.7.0.tar.gz"
+    sha256 "9fddd5403be01a94b204faadcff459ec3568cf110265d3c54323e1e866ad29d3"
   end
 
   resource "multidict" do
@@ -122,8 +122,8 @@ class Pferd < Formula
   end
 
   resource "soupsieve" do
-    url "https:files.pythonhosted.orgpackagesd7cefbaeed4f9fb8b2daa961f90591662df6a86c1abf25c548329a86920aedfbsoupsieve-2.6.tar.gz"
-    sha256 "e2e68417777af359ec65daac1057404a3c8a5455bb8abc36f1a9866ab1a51abb"
+    url "https:files.pythonhosted.orgpackages3ff44a80cd6ef364b2e8b65b15816a843c0980f7a5a2b4dc701fc574952aa19fsoupsieve-2.7.tar.gz"
+    sha256 "ad282f9b6926286d2ead4750552c8a6142bc4c783fd66b0293547c8fe6ae126a"
   end
 
   resource "typing-extensions" do

@@ -3,12 +3,12 @@ class Internetarchive < Formula
 
   desc "Python wrapper for the various Internet Archive APIs"
   homepage "https:github.comjjjakeinternetarchive"
-  url "https:files.pythonhosted.orgpackages0a0de04a612d98a8618c1012b63f2146f2dcf559b7269b2f1faaa8929fa0ce35internetarchive-5.3.1.tar.gz"
-  sha256 "f7d66fab38dcf64a6e361b71a199b5c3631f5fb95dfef7688600ee5d90997eab"
+  url "https:files.pythonhosted.orgpackagese969b7e8aebae4be5f633491b90e620af92335723070313ea12ceaedfc0c3759internetarchive-5.4.0.tar.gz"
+  sha256 "869d6606210d333c7faca709196fad9bdcb925b614c134920ce8eb24b82ecffd"
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "a6a71a47bb4f31a3765ec82c443c9c946c8e304ece98e8d3986a10b21b2c030d"
+    sha256 cellar: :any_skip_relocation, all: "a7feafb9d101db4510db863e10a3ddd4df58ab290b18555d46e9541ab6747a98"
   end
 
   depends_on "certifi"
@@ -45,8 +45,8 @@ class Internetarchive < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesaa63e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66urllib3-2.3.0.tar.gz"
-    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
+    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
+    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
   end
 
   def install

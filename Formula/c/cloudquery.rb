@@ -1,8 +1,8 @@
 class Cloudquery < Formula
   desc "Data movement tool to sync data from any source to any destination"
   homepage "https:www.cloudquery.io"
-  url "https:github.comcloudquerycloudqueryarchiverefstagscli-v6.18.0.tar.gz"
-  sha256 "e24abe8d664d90f7e7080e8644b8a0620e1ad600a49544606d317342512e5069"
+  url "https:github.comcloudquerycloudqueryarchiverefstagscli-v6.18.1.tar.gz"
+  sha256 "f874b83b18eabe7d864d1ec7d9717ebd6e62c790c8070068afcf2a2bac8803d3"
   license "MPL-2.0"
   head "https:github.comcloudquerycloudquery.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Cloudquery < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ed55706ae8048d5e2b06241a4606477e8b332383ad98a060a3acbe4aaf3b4008"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed55706ae8048d5e2b06241a4606477e8b332383ad98a060a3acbe4aaf3b4008"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ed55706ae8048d5e2b06241a4606477e8b332383ad98a060a3acbe4aaf3b4008"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d8f3f79a1815cd520f5717e4f841599e42dab2d1dc2c02c98effadeb90916e62"
-    sha256 cellar: :any_skip_relocation, ventura:       "d8f3f79a1815cd520f5717e4f841599e42dab2d1dc2c02c98effadeb90916e62"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4da0aa4c2b4e20202af07b8fa1aa5c0adc181a910798ede3656efaf11b367bff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0ab56e9ad075ff8167402cb0e6aaf32f32308bf06480433c0b3699bf68e387e7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0ab56e9ad075ff8167402cb0e6aaf32f32308bf06480433c0b3699bf68e387e7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0ab56e9ad075ff8167402cb0e6aaf32f32308bf06480433c0b3699bf68e387e7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "51170a51b5be3b66514288baa0b6820663f4317674d01962aff0150807dde116"
+    sha256 cellar: :any_skip_relocation, ventura:       "51170a51b5be3b66514288baa0b6820663f4317674d01962aff0150807dde116"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5da229fd8df2aff1556fde7923af1ce99aade3c933d9f75674e95741c5ef0bd0"
   end
 
   depends_on "go" => :build
