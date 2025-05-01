@@ -4,6 +4,7 @@ class Oras < Formula
   url "https:github.comoras-projectorasarchiverefstagsv1.2.3.tar.gz"
   sha256 "f08ddcccaedbb336e85942b6ccb9625c2a7e4e411d5909bd6f670eb0d7ab3977"
   license "Apache-2.0"
+  head "https:github.comoras-projectoras.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc809d29e38e49c915a7df9dcfaa2071638430e5c3c4cd072473a5e98962cc81"

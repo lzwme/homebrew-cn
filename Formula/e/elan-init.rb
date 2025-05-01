@@ -1,8 +1,8 @@
 class ElanInit < Formula
   desc "Lean Theorem Prover installer and version manager"
   homepage "https:github.comleanproverelan"
-  url "https:github.comleanproverelanarchiverefstagsv4.0.1.tar.gz"
-  sha256 "a298124a295db27015eb95cf0d14508db8d65881a61fca88f311fcbc1591ab41"
+  url "https:github.comleanproverelanarchiverefstagsv4.1.1.tar.gz"
+  sha256 "a4a99e2aafca4ce316ef8f88757fafbbf50d2a5912551086c5aaa522c9d976f4"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comleanproverelan.git", branch: "master"
 
@@ -12,13 +12,13 @@ class ElanInit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b3d91f2966fea4e0efc01e4455ba15da4fca2cc0f18a7fda9d52ed7a17507edc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32a6dd1757e58c9a20598b26581631de8c9a7481bb90c87f8e848e2f9043d668"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2b6c410c775ad8f6e6de61bd1ad568d8f87dfd74375c8c75fc20e4f7af53979e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e0d46d3872dc33e518ab539e425a0631ffad862c0ffbbf789dada132ceb32d52"
-    sha256 cellar: :any_skip_relocation, ventura:       "a3f699516bedf22f21281c43962127218a8c781b95dbe0ca3ee79fa643ec5007"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "172fe284a75dc9baf4119fc60fbf1064e5005102ff1bb7720157b0f2508b4d79"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "edca8e454e1af9e1db99897de3545e371b0c1c5c129c8f61469a850d6d53087c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71de04c8408f37e34aab966a7b6d1439a81e4233d82c0ea4cd5cca8f57bb45e7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70553de5241801a2e59c10c5a0304c68d365939f881448db83686a84ee6d2622"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2c5a97ac6e90f7f41b7aecf11d1ff1cbf6fcd6f5c4174e5e39947e4a642829da"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bed5a10adf475346b7cf8be6bf8c314ce136aaacbf938c9a2da4f77b56b3d9a4"
+    sha256 cellar: :any_skip_relocation, ventura:       "53256d38860f897809c90deffc2a06f3329f0f44b9eaa0c556e5cf8de3e75af2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e00621364800d7384ee4e7a49a2ca120e62e8f30358106e374cac4ab11aa4f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1121213571c65b066dae69a6a228aa259bb0afbda3d56502464b19f4b29bde8"
   end
 
   depends_on "pkgconf" => :build

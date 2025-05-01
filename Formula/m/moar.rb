@@ -4,6 +4,7 @@ class Moar < Formula
   url "https:github.comwallesmoararchiverefstagsv1.31.5.tar.gz"
   sha256 "2c03100e24f88163d808d52b7a5763c0fe731b29c46fd44a103a089c5429eb72"
   license "BSD-2-Clause"
+  head "https:github.comwallesmoar.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c29b3cddfad460bfcb1f1a4e9d9f8f4bad261fa2ca9dbc414ae8a4e27e264cf5"

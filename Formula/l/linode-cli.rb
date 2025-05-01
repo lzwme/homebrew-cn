@@ -3,20 +3,19 @@ class LinodeCli < Formula
 
   desc "CLI for the Linode API"
   homepage "https:github.comlinodelinode-cli"
-  url "https:files.pythonhosted.orgpackages57402a4bf1bb9ab4f1a6fe3710579832b3dc9a76c43f38db7b972baf504f0370linode_cli-5.56.3.tar.gz"
-  sha256 "a8550e85571fd92e09dfc2e46689a9c575890af9cd161ead75d3aac54863efc5"
+  url "https:files.pythonhosted.orgpackagesb83648895e350da98605a6364a4b15d8ab3796399f1d203dcc40c008d4cc6e25linode_cli-5.57.0.tar.gz"
+  sha256 "f086867b54b3310ae90cd160912456d7f07e4800a3a57f58592148ced271ed33"
   license "BSD-3-Clause"
-  revision 1
   head "https:github.comlinodelinode-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0745cfff6276b9e833ab826e6634b4d36092c1c3d2e0257d34734e11c517667a"
-    sha256 cellar: :any,                 arm64_sonoma:  "9fbbc7be258f04f6409fdc595c08e8a0b71361c4ea349dbdc3a1080ec8d5d2a4"
-    sha256 cellar: :any,                 arm64_ventura: "54878b525be26ceebf87185de4f7cf9f6a7c74911f02b558480f9273ad5d6699"
-    sha256 cellar: :any,                 sonoma:        "7039d289e9126a49c66a8aae26cf492c2b8c8447780093aa5ce46b7a5784905c"
-    sha256 cellar: :any,                 ventura:       "83e3b88266b57a2bb4eafe1ffe062e73620a9dd0464352973d8998e939ff5ac8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2211656ff6dc89e16a807f23d1e4e30f6b9e19c6979ebf601c66d7c384ca7dad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63fd64e40ece4952119a42bd222e11889dbe5d6e80c50981727f07236b84ad5d"
+    sha256 cellar: :any,                 arm64_sequoia: "00f8dd9a4c6a07e8b8ecf9aacc6312e79ca84891c37bc743b68c8c96fde5334e"
+    sha256 cellar: :any,                 arm64_sonoma:  "199844168e02aed787eef941b17e3e8a0f7fd4d65bdd8e7cef75cf0eee714017"
+    sha256 cellar: :any,                 arm64_ventura: "9124fb7547641e5937ef4ae6b68e43373bfa13a96086be4a01c13d810b11c5c0"
+    sha256 cellar: :any,                 sonoma:        "31f9f80efd4028da6620e0de22caf4d28e26d531a9a3d743cad5fcc04435b970"
+    sha256 cellar: :any,                 ventura:       "456980792c5866bb8069615d54fa7be8d5c1ba3a0ba8c3f2d0e173e7d852da37"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1acd70e23139aff917832b0c58ee44d9163b1b3bf8e36e627e5e616425b0eb5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5ee42dc27be661fa9d604339ecf13acc9d22a91a2210bbf11cde2bba44b80521"
   end
 
   depends_on "certifi"

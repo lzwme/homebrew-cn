@@ -4,6 +4,7 @@ class Minica < Formula
   url "https:github.comjshaminicaarchiverefstagsv1.1.0.tar.gz"
   sha256 "4f56ea73d2a943656f8a5b533e554b435bc10f56c12d0b53836e84a96b513bf7"
   license "MIT"
+  head "https:github.comjshaminica.git", branch: "master"
 
   livecheck do
     url :stable

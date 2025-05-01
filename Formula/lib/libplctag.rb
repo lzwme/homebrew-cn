@@ -1,8 +1,8 @@
 class Libplctag < Formula
   desc "Portable and simple API for accessing AB PLC data over Ethernet"
   homepage "https:github.comlibplctaglibplctag"
-  url "https:github.comlibplctaglibplctagarchiverefstagsv2.6.4.tar.gz"
-  sha256 "be2ab427cbf34f5294ce5d831947352e54d5196401fe9c232722cc41257a91e1"
+  url "https:github.comlibplctaglibplctagarchiverefstagsv2.6.5.tar.gz"
+  sha256 "0f2983e024c9ca8dd7e956258f0b99d64cc8c37aa0cf3eb75350e1edca00841f"
   license any_of: ["LGPL-2.0-or-later", "MPL-2.0"]
 
   livecheck do
@@ -11,24 +11,18 @@ class Libplctag < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f764ed2cbd66f566fe541a5055c869b04a059d6e6a4f6c65f1b208e0ff990bea"
-    sha256 cellar: :any,                 arm64_sonoma:  "bb8d208ccc467ef2d3c3376aedd2b02ae29c5f903f93ee89bb8f58e0667c5261"
-    sha256 cellar: :any,                 arm64_ventura: "5db3e3c20011d982ec2ede30c77868ff64c798dea2e4e898eaac366b17a878b2"
-    sha256 cellar: :any,                 sonoma:        "1f24c8278b66eb8acedcc91cb793f7ba201ed36bbe3773eb6ad542fde72d5bfc"
-    sha256 cellar: :any,                 ventura:       "9413853ab4a7c1c8190d6fc4535c86c63fd8a89cdd6ada1f118094bfced29c86"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe5961688b5fb94c867081b35a5f14e5d952a74560fa2cf9919388c12430fa25"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f4da071b6a200ad009a70fb3560ea98f1885725ce465c57475f76147d1e4be7c"
+    sha256 cellar: :any,                 arm64_sequoia: "541435d2df4cf296f05adb46a6f44c5cc5cd4181107cedd641c7a98e3c137339"
+    sha256 cellar: :any,                 arm64_sonoma:  "3c97113bf7d6f7655911edd5c74793d6e555d4b26016414356f91fe6d9412792"
+    sha256 cellar: :any,                 arm64_ventura: "67cee16a6e8835ff6a153a0f0724e5d508171f9d901b394f3ba3f6689417701e"
+    sha256 cellar: :any,                 sonoma:        "b3dd6661167b714560164a61b32c1e8960fe43ec7f9cfb5e7bdcad90be61de2e"
+    sha256 cellar: :any,                 ventura:       "c90369c966d930837a140d98f7fa243b411b29e5d39218ef6d9f0c2395e562bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d9531ccb144fe7c05d348c227f23ffec80b30d755e5adc9f9f43576dfceb3d96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc1f12a2e4f5b6fa68c9925b3d0238a4b66e19405a9c72b043c87a0df9636dab"
   end
 
   depends_on "cmake" => :build
 
   def install
-    # Fix to install libraries and .pc file
-    # Issue ref: https:github.comlibplctaglibplctagissues526
-    inreplace "srclibplctagCMakeLists.txt" do |s|
-      s.gsub!("# install(", "install(")
-      s.gsub!("if(EXISTS \"${CMAKE_LIBRARY_OUTPUT_DIRECTORY}libplctag.pc\")", "if(TRUE)")
-    end
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

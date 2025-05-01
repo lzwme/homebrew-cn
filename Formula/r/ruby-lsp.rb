@@ -1,19 +1,19 @@
 class RubyLsp < Formula
   desc "Opinionated language server for Ruby"
   homepage "https:shopify.github.ioruby-lsp"
-  url "https:github.comShopifyruby-lsparchiverefstagsv0.23.15.tar.gz"
-  sha256 "0ba06ecf8c9b83c0aecfc6dadce57b8fdbcc15f14f4be60db488519eb943760b"
+  url "https:github.comShopifyruby-lsparchiverefstagsv0.23.16.tar.gz"
+  sha256 "1867e575476d8e8d9d4abd2d79cfd9bcb7029762637edb6da10150e38f5491f5"
   license "MIT"
   head "https:github.comShopifyruby-lsp.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "73459e9e2ca740b84b6c0914dfff440284c571e5b6c087337ebca92d762ce240"
-    sha256 cellar: :any,                 arm64_sonoma:  "085acddcb421f759c650c61a3cc7bd500c0d794e90ec6e2e52b548b95a075434"
-    sha256 cellar: :any,                 arm64_ventura: "8436aa5db02039b9c2522c34f83401474cbb678ccc2cbb37db89abcee531853a"
-    sha256 cellar: :any,                 sonoma:        "33c6b1b9fc2e8b6f7b926203e8d161af5c20ebeefd999b4ce07afb3592b38d7b"
-    sha256 cellar: :any,                 ventura:       "66fd720f2e2f0828a59bcd99e5172ec8c437eac4e4ae694fe5703e2af0060ca6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2cfd6a52d8282e352a9d954691c777cca291c04e0face1fc44b0798c21a7a85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5735cd96e274ebbbf09c92bb2dc01289660589c66cd0590ee748cb3bbf29746"
+    sha256 cellar: :any,                 arm64_sequoia: "c57f79c7a18200938bd8a2e39cae5f147aefa73100898e7263180e5bcd8a8d69"
+    sha256 cellar: :any,                 arm64_sonoma:  "9a2d7e83e63f48b56b51b22c115338754178877f0752b63d4ca526ed45acc4b9"
+    sha256 cellar: :any,                 arm64_ventura: "07db97fe8e10ed970147e464a8a497dc44fedc973a9393f64e8aa06a33d5fa1e"
+    sha256 cellar: :any,                 sonoma:        "7e16ad6803c2fc27c79f647a23455c8701ff2c425b14bc12858b692e2cad231c"
+    sha256 cellar: :any,                 ventura:       "b2457d2b05353426ea6824984f2c401486f7045e4b83139b01d9690a6f4b1360"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf431727319716a23595a78fd801413b9073836869f1b8974ea225d1dbb2e94f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9fed7b44b22c4a2010bfa3cdd2bfe32a77d88a4b36a4a27b7e5935ef0a131c17"
   end
 
   depends_on "ruby"

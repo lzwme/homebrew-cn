@@ -1,18 +1,18 @@
 class Notcurses < Formula
   desc "Blingful character graphicsTUI library"
   homepage "https:nick-black.comdankwikiindex.phpNotcurses"
-  url "https:github.comdankamongmennotcursesarchiverefstagsv3.0.14.tar.gz"
-  sha256 "45afdda09d64c4a8bf2fc261dbbe5fa3784df6eff23a994778b234ee1d6fb30b"
+  url "https:github.comdankamongmennotcursesarchiverefstagsv3.0.15.tar.gz"
+  sha256 "e811c24784559363d311c08caa74a0f7e7138e4ac8e8f6f51cbf6c565e363811"
   license "Apache-2.0"
 
   bottle do
-    sha256 arm64_sequoia: "bd0410ef78653cd668872a60757ae1d511a528c241fa731d6492466326577aa7"
-    sha256 arm64_sonoma:  "2ef59aebd35df988465601461932553660e02dd3b3f3757450ed14ebac0c7466"
-    sha256 arm64_ventura: "770852ab366e511def20a52488893d182eea03996abe341b1e9f359d3ef8637c"
-    sha256 sonoma:        "a2c555e07b515d6c65a51be512d5468c0763835a2eaa8d9c2000c942ab796f02"
-    sha256 ventura:       "58f4fcebb0c2dbddb967969040f2675767a1a2af1e44e4ed1a500ac4fcc8bd10"
-    sha256 arm64_linux:   "10274f5ddecf011f0a2398dee8ab033ac943538403dd3ec11bcbe71a6d228e28"
-    sha256 x86_64_linux:  "5d7057bb8ac0b5e9fb2d3fb8330665f38caab96f3c6720b71a03d74181528ee9"
+    sha256 arm64_sequoia: "0c2ea596b5f779e4c265f6a0922ab336a907e32b86cc39022ad87fd73996952b"
+    sha256 arm64_sonoma:  "d728a045ad731b37521b2bc89fc897dd29929751e7c9fcba0a67c97a52ff57e3"
+    sha256 arm64_ventura: "cebb3e0a7d25da2decdd293d9cdec174301718e7b1bb9d6b5f754017d2d9543d"
+    sha256 sonoma:        "edc6f3cd8f16436a349db2b89c930d28229d1f40bab8306112d00a5c5e028e06"
+    sha256 ventura:       "3f489e32e234ef9e91559d75a2f551761ba3ced9b00aad2a577aa4bea6380884"
+    sha256 arm64_linux:   "d6898c7d98411d82cfd39832df9f3d4025c10de012a70b22dd1f7f23d7f7937c"
+    sha256 x86_64_linux:  "79a904efd399b17504a0b703c7e3b58a9f4535b1fe5de58e317bd55b13ed9d34"
   end
 
   depends_on "cmake" => :build

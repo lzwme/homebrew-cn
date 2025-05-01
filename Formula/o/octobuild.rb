@@ -1,19 +1,19 @@
 class Octobuild < Formula
   desc "Compiler cache for Unreal Engine"
   homepage "https:github.comoctobuildoctobuild"
-  url "https:github.comoctobuildoctobuildarchiverefstags1.7.1.tar.gz"
-  sha256 "74149cdbb04f1b854064345270dd83b85dab3f3a6276d46e2d0a11d53d0651f2"
+  url "https:github.comoctobuildoctobuildarchiverefstags1.7.2.tar.gz"
+  sha256 "8917f689546d590442a0720f09b4a30485b4ca660a63427cd2851d7e977ae794"
   license "MIT"
   head "https:github.comoctobuildoctobuild.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f127d2f870e05b0ac8cd451bd85f87beaa58d275bc30ae555766fbeaa9ce6673"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e95304df2c60232abf3aed763198f5820a70f405b9fd857ead01680135b5d0f1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e28de2bd21191ed3cc1bf3480da02c4e9176ec4991d58fc7eb61d7c0f83ebd80"
-    sha256 cellar: :any_skip_relocation, sonoma:        "33612f8a07e682ca29a89d541c17420bcaede31cccc382bef86333eaa792e82e"
-    sha256 cellar: :any_skip_relocation, ventura:       "daa1e485d69f56da61fa011c64fc6c02304ce76eb620bf57346fbafc02fb9410"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e98eedd1407f8d025d8f0218b3519914e5fce1120adea89b14a3aa2ee6ba9e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "300255c2f90b74d17ad4abe23ad79e3729e602a7f69d1a0b2bd3d68f2e96eec2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dcf28ddedd6966f418a0261937675783fdc28b05b039110ad12c303c5461dcf7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb47d1bfe2700c29530168a58e6a891886e3b9c2f3a116995f9166424bae6efc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8195cf1ddc828a99454636f95333cc9fd697af4bb3403d5ebdf7ff1e79227f02"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fd15daa3735cc44f80697b2804d13c980dcade0849ba1551e518ddee28e2cacf"
+    sha256 cellar: :any_skip_relocation, ventura:       "f636e240f0593534d816805fa35d40dd1a189d234c5ca19c99be3b45ddd09c8e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7eaa98da0a1213bc41b5452d2816d5a8a98a5bdf2c474b0e22f986dc59f15e50"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3362d910f2f9b447046d75f7feb044b679c35bcb1991597b1e0320fc24f9a695"
   end
 
   depends_on "rust" => :build

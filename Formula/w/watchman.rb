@@ -3,19 +3,19 @@ class Watchman < Formula
 
   desc "Watch files and take action when they change"
   homepage "https:github.comfacebookwatchman"
-  url "https:github.comfacebookwatchmanarchiverefstagsv2025.04.14.00.tar.gz"
-  sha256 "bf0c41aa60675bdc792434e8fac356f2669f96b1ec36516e281f1684cb140e85"
+  url "https:github.comfacebookwatchmanarchiverefstagsv2025.04.28.00.tar.gz"
+  sha256 "22058559e8b68d953399a10d437cbcfc91787732e2980dd7298e1d6fb4cd2add"
   license "MIT"
   head "https:github.comfacebookwatchman.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6303773a7b2c05ebe0cb559a6a8651bea44eb14130d3d1f0a54e96dc1a1015d2"
-    sha256 cellar: :any,                 arm64_sonoma:  "5a4d4a6fc2efb9647023ec18051c8ce1dc5cefd249633fbe7d2e5c06a91fe204"
-    sha256 cellar: :any,                 arm64_ventura: "cc0a70a317322cdf0f5342d78051d4de2765d8b44cceed693e46bc1dd14c3fdd"
-    sha256 cellar: :any,                 sonoma:        "270d0a034b1c6b8ada94d880429c4830ea7527cdb56be4ad1e577e7875bb19c1"
-    sha256 cellar: :any,                 ventura:       "8458b71beba431566c5a30bb230a2c5c6c375f1e96c270357befc78050416c8d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "00bef5ce7a9ab8351011173c1238adb2408d782ab94412a4604d65d66ba0af29"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d53952154d4eef378192cd89429d3817a37a45a95e061d582e6a27b01ed16ad"
+    sha256 cellar: :any,                 arm64_sequoia: "0414669aec53dcc09e0023f10dca34591da8f1379af31b28fb527d32e9c572fc"
+    sha256 cellar: :any,                 arm64_sonoma:  "a68e3b0a210ba8045f78aabf026d46ab3f1b5ef625696a61eaa2941d96c53478"
+    sha256 cellar: :any,                 arm64_ventura: "ec0e1f689a0b9316486d30849b106cf0c7304eeb115eba30fe4cb9013ad7e410"
+    sha256 cellar: :any,                 sonoma:        "adcbfa6dbd420f2ec03b0488942269c8731e98b2787d5256b3a718f51e65c7af"
+    sha256 cellar: :any,                 ventura:       "d0df95b5446b30acef063bd8fb8156feeedb2b168becdd9bcc15a640d379b94e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "216d7bdde71408c7610f637e7ba51d26b6d56d75fa533f441a63cc8f558730ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03f3d31e87e74134452004ecc7ac0960140422123cfd832b10e73f47a783a94e"
   end
 
   depends_on "cmake" => :build

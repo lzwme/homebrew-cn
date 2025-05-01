@@ -1,19 +1,18 @@
 class GithubMcpServer < Formula
   desc "GitHub Model Context Protocol server for AI tools"
   homepage "https:github.comgithubgithub-mcp-server"
-  url "https:github.comgithubgithub-mcp-serverarchiverefstagsv0.1.1-release-validation.tar.gz"
-  version "0.1.1-release-validation"
-  sha256 "b79f546fd467ab98f327f95f25003b6fe43570314c3baa1bbe303f22188e8f9b"
+  url "https:github.comgithubgithub-mcp-serverarchiverefstagsv0.2.1.tar.gz"
+  sha256 "621fd4eca813c715cc64149c4fd6d7ccb193ca9283a761ab129b8f869296217f"
   license "MIT"
   head "https:github.comgithubgithub-mcp-server.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83d9176f4360bef31a9e67aa2fd13531b5b0953cce315f6c96d33ef9efd91407"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83d9176f4360bef31a9e67aa2fd13531b5b0953cce315f6c96d33ef9efd91407"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "83d9176f4360bef31a9e67aa2fd13531b5b0953cce315f6c96d33ef9efd91407"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a58fe7653160e3382a00a0c3815498f1d9ee88a07d853e50e127185c7f9f70cd"
-    sha256 cellar: :any_skip_relocation, ventura:       "a58fe7653160e3382a00a0c3815498f1d9ee88a07d853e50e127185c7f9f70cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1337d8546f1de494489ecb5d498c304b01e838b51c4896bf2eb0bc4d4c6ddc8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5095440a17d12556bb8a03bf4a720daa9c12e76b663f7232c7bd6559f9221ca6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5095440a17d12556bb8a03bf4a720daa9c12e76b663f7232c7bd6559f9221ca6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5095440a17d12556bb8a03bf4a720daa9c12e76b663f7232c7bd6559f9221ca6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "48ed56c4b7967f17e1e3fffa88165bfb32788a2603c8ef23c56eafd522683eb6"
+    sha256 cellar: :any_skip_relocation, ventura:       "48ed56c4b7967f17e1e3fffa88165bfb32788a2603c8ef23c56eafd522683eb6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "911fbb58aeb6c06114bc826a1d31e6658bcf86982e047ac0d43dbcb9da792c8d"
   end
 
   depends_on "go" => :build
