@@ -14,15 +14,20 @@ class Mp3unicode < Formula
     end
   end
 
+  livecheck do
+    url :stable
+    regex(^mp3unicode-v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "805642379132c96276425ef190cc0bcfde0ef174a8ec5770bac012161a8f38f7"
-    sha256 cellar: :any,                 arm64_sonoma:  "b6434c7943edf0cd5cecaba2b555f0ec952c13092e56449f01ee3abd34579633"
-    sha256 cellar: :any,                 arm64_ventura: "bebb09ce30735cc1bddb24b9470f1b07e203405c035f590a4302c6afdbbc1a0a"
-    sha256 cellar: :any,                 sonoma:        "eb03f9111f1e15d3876c862ea20356838e695baa922328f51892809dbead2443"
-    sha256 cellar: :any,                 ventura:       "515babceaa10d361c09079bc4810fedff9542ed526ee84d3feb448ee8d60175d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f652c90bd61d95a3926b6ffc9ed41169d315e94006924a34c680e79db7f092af"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b8357a98b0f7229b16cbcd8c1463ff8f5c27f12f31747c0adee5b9d4b663c47"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "b0f39474b3f41688794f00e4815e40a6aa792614610870d4ec1377d5a67ed5c7"
+    sha256 cellar: :any,                 arm64_sonoma:  "54f458d22e3d58242645a99c9c3a3b90c013fb815ddca51775469bb4c04fe2d8"
+    sha256 cellar: :any,                 arm64_ventura: "7b7678aef37dc84509ae7918c2ab3288bb8daff100402b3d820802dc778fccb0"
+    sha256 cellar: :any,                 sonoma:        "81dcda2481711046268ce10a1980298d3ea38e3c3c94bba92bf510d2e4fc62e0"
+    sha256 cellar: :any,                 ventura:       "cf53f60a18ca4821fd4c242efce17a6424aa44a4e413de27e60463d6846540b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "54bfbaee2ebfdcef4e35e69cf8b9224e477b357d449e2badd94580014e0682e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4360c1dd812097207ccf5ba329d8cf1082e152a78fba69a8f1273c29ac0bb89f"
   end
 
   head do

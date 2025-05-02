@@ -1,8 +1,8 @@
 class Anubis < Formula
   desc "Protect resources from scraper bots"
   homepage "https:anubis.techaro.lol"
-  url "https:github.comTecharoHQanubisarchiverefstagsv1.17.0.tar.gz"
-  sha256 "a0d90cf4fab373ddf8a39c10c19ee4162ce8006d23c2accb3a64335f3f613d6c"
+  url "https:github.comTecharoHQanubisarchiverefstagsv1.17.1.tar.gz"
+  sha256 "461420249c5860cc1caed87a750c2eba3a02b1102833f3588feff75c165be78e"
   license "MIT"
   head "https:github.comTecharoHQanubis.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Anubis < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "844a4735b49683b7945e8f303433aed2c30529479ee3c9f0642f1a16c11e3599"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9d0470c63cfbec43aa36ba1dad381186dc8c4ba2bb510081392e0d42ad746e0f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "82b8fbe61d951868d8d1d5c056b24ea8f1adf1a8981ee38106abc2c385e1f9aa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6c7001e2127a564a6add85aa597b60a888fcc85aebeae898ec9f9c4c9d65e5f8"
-    sha256 cellar: :any_skip_relocation, ventura:       "303aca491fc87fbc4732907fbd7d32343fb004cb0abf71823469711692cfafba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "20c74b3a4eac0b392bab0f476d9a4977c9c59ddbadf57a01e6af5b9b77bc3b1a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d16c7c54957af0e6df519e1f70623fb2c809a3239e4d6c7d12b693b80ccd4116"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a6e4f55dee590269a8db88fd19d4868912e6e476f7a19ff183e9aae5058e4d0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3a707c7a1be3cf9fb790ea6caa3b742f677a8e7ad2e6e1441095373aa215cf26"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cd503408e8d61a901cc98a00bedef219a62158b6332a5457a5148159e3d03267"
+    sha256 cellar: :any_skip_relocation, ventura:       "cb4662c1144f6b30a66534f0aaed7e93acc61997b38e9781b74e9c348e308048"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d975ae62abe5d184c1581e8c1b7aaf4fa6bd499331734ff0198a056fd25160ce"
   end
 
   depends_on "go" => :build

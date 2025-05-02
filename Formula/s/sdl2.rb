@@ -4,6 +4,7 @@ class Sdl2 < Formula
   url "https:github.comlibsdl-orgSDLreleasesdownloadrelease-2.32.4SDL2-2.32.4.tar.gz"
   sha256 "f15b478253e1ff6dac62257ded225ff4e7d0c5230204ac3450f1144ee806f934"
   license "Zlib"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,14 +12,13 @@ class Sdl2 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "7aa4224b56ceddc46eedc4cf805ac236fe2d5a5b5b33a93a69b5471dfa43d691"
-    sha256 cellar: :any,                 arm64_sonoma:  "b61af37727abc55b55dbe2baf1b8ec02c3cd85e66afa98f6db440343a21cd4b0"
-    sha256 cellar: :any,                 arm64_ventura: "aa9658eed3e2e5634d2ce24f544684d13b8059aa2c5bd99a9f02f043c96ea6c4"
-    sha256 cellar: :any,                 sonoma:        "f7e2133875018fdfa8221bc9084b3043b4149cdae850a1c731409f6cf8f3f5bb"
-    sha256 cellar: :any,                 ventura:       "8ad8dff987ec56ff7633cb1dccd8c57fecd1e2450ea01ba711f4f49f24d629ca"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bccbecc2057a6d8cddc312150a6988b980fb7579f74b4f7cc233fa2909b3b8fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68c49d05f60cafbe2c9f4a75901a5c2513c43327f0a3b8921ec44008249b66e2"
+    sha256 cellar: :any,                 arm64_sequoia: "08f89dbe9bb9cb9e002636306ae4a697ea4fe7d67a1df2fb47fd3f57e4e0dcdc"
+    sha256 cellar: :any,                 arm64_sonoma:  "f50bafd64c1ace3f23e1ff487e14521c3ba19841e27c2a36ad0d36e037e01ccd"
+    sha256 cellar: :any,                 arm64_ventura: "c6f571fd78f4cda594c91a47bf4f9610ebd93b80919d377838978be3e1f33152"
+    sha256 cellar: :any,                 sonoma:        "ec3233a09088235c3d0b6da4918cc04216538f0ef9eaf24b6305ecf9d80fdac8"
+    sha256 cellar: :any,                 ventura:       "d2ec5d4906d9d243f4003f46e572188250983aad5fb10c05377c6b12ea4882d2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a784ccbf6c77e5a4f38ff0da4b6d8e04177b5c3b8bb59d1023abb4881124173"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "de07836c3ee3391fd325674c35a2c7b9bfdfc4c01a9bb38ef32081af1dd5b77e"
   end
 
   head do
@@ -41,6 +41,14 @@ class Sdl2 < Formula
     depends_on "libxrandr"
     depends_on "libxscrnsaver"
     depends_on "pulseaudio"
+  end
+
+  # Fixes a crash when game controllers disconnect
+  # https:github.comlibsdl-orgSDLissues12807
+  # Will be fixed in the next release
+  patch do
+    url "https:github.comlibsdl-orgSDLcommit7fc5edab8e939523dba9e10b6375fcdfb0f875f4.patch?full_index=1"
+    sha256 "e6275f870e77bc91b0b171e9a4c88be480216c48886e23967af2a4655ed8b978"
   end
 
   def install

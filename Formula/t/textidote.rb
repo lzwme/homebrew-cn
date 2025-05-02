@@ -12,14 +12,14 @@ class Textidote < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "233ce6f6a6e226e5f00f7fada39dd51587afdb332e4c87f1ec9424e394d80743"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14b7818a01928aeda595a8a77e91004a75e587a95c0e02110e48980ec6afea0e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d99486e4a64f499d54fc3ceb04e025c93c437ab84bccd09ea18924c0ed536265"
-    sha256 cellar: :any_skip_relocation, sonoma:        "918182a20520b96b5dd635a1d0cb4d373b5368cc1776f1645786c06554e1f50d"
-    sha256 cellar: :any_skip_relocation, ventura:       "14ef73a0bfd65f87b129c5ca365608322a019ce74f2717ed152169b692b2c5c7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3b8b47f1a6865eedba83b190e10721c013c31e1bedaca84b319aa4acc1c865d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "820b5da9880ca2ce2b4c9251236314ef10be053b64c27b7a927325a8daf2591b"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3bc15a1fbb32e89fa3aa4f01a348336f1032974eca44c74789719e8e3ee9f391"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c7874766d3f1f514f1b32435f160c92a0622a19ca8d2b0f7a8f653bfec05445"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4bf516adb25ff61f3453f6825819e6353e2045619e46c7168ee250a782dc538d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "39c5742e46605837bfb719356ba9aeb9811afa145ef5bdaabe0982704a270a30"
+    sha256 cellar: :any_skip_relocation, ventura:       "e50f6561b290ac98eec57706a01c5a6e644a66b5d12e2c289d81c785d05f6ce4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1bf9049a7149770b7e587a8a0fd0437750306a7ab810b7f6d878aeca523a54e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73b3a785959a0992e981b78f47a4c39932c59f158a3d4c3281fb5ccc5926abc5"
   end
 
   depends_on "ant" => :build
@@ -32,19 +32,15 @@ class Textidote < Formula
 
     # Install the JAR + a wrapper script
     libexec.install "textidote.jar"
-    bin.write_jar_script libexec"textidote.jar", "textidote"
+    # Fix run with `openjdk` 24.
+    # Reported upstream at https:github.comsylvainhalletextidoteissues265.
+    bin.write_jar_script libexec"textidote.jar", "textidote", "-Djdk.xml.totalEntitySizeLimit=50000000"
 
     bash_completion.install "Completionstextidote.bash" => "textidote"
     zsh_completion.install "Completionstextidote.zsh" => "_textidote"
   end
 
   test do
-    # After openjdk 24, "jdk.xml.totalEntitySizeLimit" was modified to 100000 (and before that was 50000000),
-    # which would cause a JAXP00010004 error.
-    # See: https:docs.oracle.comenjavajavase23docsapijava.xmlmodule-summary.html#jdk.xml.totalEntitySizeLimit
-    # See: https:docs.oracle.comenjavajavase24docsapijava.xmlmodule-summary.html#jdk.xml.totalEntitySizeLimit
-    ENV["JAVA_OPTS"] = "-Djdk.xml.totalEntitySizeLimit=50000000"
-
     output = shell_output("#{bin}textidote --version")
     assert_match "TeXtidote", output
 

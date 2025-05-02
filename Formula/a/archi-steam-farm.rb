@@ -2,8 +2,8 @@ class ArchiSteamFarm < Formula
   desc "Application for idling Steam cards from multiple accounts simultaneously"
   homepage "https:github.comJustArchiNETArchiSteamFarm"
   url "https:github.comJustArchiNETArchiSteamFarm.git",
-      tag:      "6.1.4.3",
-      revision: "0b1ddd39d500c39103d7fc68d23e62b74067242b"
+      tag:      "6.1.5.2",
+      revision: "868d593c5c6115b8484771a9eb5c4ff2b5840719"
   license "Apache-2.0"
   head "https:github.comJustArchiNETArchiSteamFarm.git", branch: "main"
 
@@ -13,12 +13,12 @@ class ArchiSteamFarm < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "151e2c879bcee6f3fe52a002953f7ce2e2d858d99531bf654fd4106fe47d0306"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b520bf5b112c4fdd1f85537916e80d036b78e3f186cc1024083049577f538b2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8a2e69ceaee79824ef8f21be378638c7fba4095aae9581d1638c08a9d41249c3"
-    sha256 cellar: :any_skip_relocation, ventura:       "19c06079e248c34002ff6535717d91b7d48948e1269252c27d9e6566be8f83b8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "30b3952337eb0e188c5918f190c134ca3f7ab6b39d38051c67296708b18fd0f4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42b96a4245b5f42d8bde956b619983e6c096375dc8dd5d2d685195f723ccfd4c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5ed61828efd8fe97c2ba8061315ea8d21f5ca98008b6c8c965e5452d5057f25"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd9bb90ddac74429a62a2ec86e5387f77e1085b1e000f29dbe0392df0b6f85d1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "66634a8d7e971b0c0f156a024d934ad374761a4b87b8ca5c2b7deb8281cd14f6"
+    sha256 cellar: :any_skip_relocation, ventura:       "a4d1b79b195ba95e7d6dea52b666b8e8ce8f8c2ff952a89aac97036ee9fd8f2e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a933d5860142aad96c86565b30319191d085b79f499e1588a2dc884421a689c6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1894fe0667f2c19dece079ef2895830e4dfdee6ab7f15651d0d6d0e36a014b78"
   end
 
   depends_on "node" => :build

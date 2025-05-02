@@ -722,6 +722,7 @@ Homebrew-homebrew-core/Formula/c/calicoctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/camellia.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/camlp-streams.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/camlp5.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/camlpdf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/canfigger.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/capnp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/capstone.rb, Homebrew/homebrew-core, 1
@@ -6026,6 +6027,7 @@ Homebrew-homebrew-core/Formula/s/sentry-native.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/seqkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/seqtk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sequin.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sequoia-chameleon-gnupg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sequoia-sq.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sequoia-sqv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/ser2net.rb, Homebrew/homebrew-core, 0
@@ -6045,6 +6047,7 @@ Homebrew-homebrew-core/Formula/s/setconf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/setweblocthumb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/seven-kingdoms.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/sevenzip.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sexpect.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sextractor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sf-pwgen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sf.rb, Homebrew/homebrew-core, 0
@@ -6238,7 +6241,7 @@ Homebrew-homebrew-core/Formula/s/solid.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/solidity.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sollya.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/solo2-cli.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/s/solr.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/solr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/solr@8.11.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/somagic-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/somagic.rb, Homebrew/homebrew-core, 0

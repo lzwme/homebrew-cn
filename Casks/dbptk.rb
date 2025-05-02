@@ -1,9 +1,9 @@
 cask "dbptk" do
   arch arm: "arm64", intel: "x64"
 
-  version "3.1.0"
-  sha256 arm:   "357e8064c718155fa15a01a2b0ed549030f6654951bc9a4beb67bdd8b21f215a",
-         intel: "fa7edbdb37ffe75a0f771268203fd2723aa1afbead16e0c6c38ded1144c5a390"
+  version "3.1.1"
+  sha256 arm:   "9704093d71208e63efc4675a7eadcce13069fe77c0a7c98f0f5176abfa9b9ce2",
+         intel: "03152e5d14567b9418ee656000c8b472801b98b4ae341f888162f5473dd4ca9e"
 
   url "https:github.comkeepsdbptk-desktopreleasesdownloadv#{version}dbptk-desktop-#{version}-mac-#{arch}.dmg",
       verified: "github.comkeepsdbptk-desktop"

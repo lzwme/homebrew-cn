@@ -12,13 +12,14 @@ class Zmap < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "d73ff5e3c879a3ff5f118c233f6488abaae5f523c45f74c94c94eb01f8b341df"
-    sha256 arm64_sonoma:  "2db32cd820e5b790b779cb12c893d97efde8f42cbeb3a0a3ea1ec96107debd2d"
-    sha256 arm64_ventura: "b1f497f809e6965a254cbe16e75abc8c0f8bca43e1177d854ed6c5dd39e4cdfd"
-    sha256 sonoma:        "c9dbbd2cd9c4c87f79604749e1d7faa339a565ee210aad58f7d0356d7059545c"
-    sha256 ventura:       "958e5813ea060cda16dfa0048eb1911f6dae4b82ccf47229136c82570ec145b8"
-    sha256 arm64_linux:   "59b0ef5e3b65dc547ff688c2a307349e69d9c1752cc1aa0408be320ebbb238b2"
-    sha256 x86_64_linux:  "902f4c1fd7a45e1614e802893d4dea09fe1ecacb68c139eed26daa34731ddb02"
+    rebuild 1
+    sha256 arm64_sequoia: "6f46e4e52386e58a63a67a8882fa4bda0e4a78132e60e48c6e3996740ceb9387"
+    sha256 arm64_sonoma:  "1bd4fd2dafafc9e03263cf85b2e07140643c16bdb1aab8ee2283ceeeb716942c"
+    sha256 arm64_ventura: "7141b33f32eabd728c35914900704f7921cc8d9e37b61b8d074d7dcf7b320e8c"
+    sha256 sonoma:        "da2626616b8f96ac3725b2ebd871d815cf6237a591c23c378cf1ec0a7095b45b"
+    sha256 ventura:       "619fc270bcdedeeea2a309573b8201a64eb45fde9cd9f15fd7a9ac278b2f8db1"
+    sha256 arm64_linux:   "88cb07089110183f13032bce79cdbe1646cee5cc60cd3da6378be24abf44eac9"
+    sha256 x86_64_linux:  "f2c331f1a92fe6c1ea445d7bbc1781cde0eb89bb06ff5e7d056c8c5e20d1f5f1"
   end
 
   depends_on "byacc" => :build
@@ -36,6 +37,7 @@ class Zmap < Formula
 
   def install
     inreplace ["confzmap.conf", "srcconstants.h", "srczopt.ggo.in"], "etc", etc
+    inreplace "CMakeLists.txt", "set(ZMAP_VERSION DEVELOPMENT)", "set(ZMAP_VERSION #{version})"
     args = %w[-DENABLE_DEVELOPMENT=OFF -DRESPECT_INSTALL_PREFIX_CONFIG=ON]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
