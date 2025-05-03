@@ -11,6 +11,7 @@ class Camlpdf < Formula
     sha256 cellar: :any,                 arm64_ventura: "5b4993442c060aba6405e5518b9246e72d4c6369f31dc5632d58398fa9456c44"
     sha256 cellar: :any,                 sonoma:        "804e849272f9ed7d58a318a199bae0a46169b46366ed87c136d7a6142b83bad0"
     sha256 cellar: :any,                 ventura:       "0f9d1b46f0389a342fa7305efe0393526860c2e6704537ae5d66e4456619adbb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ce0aeb1507e9dfc7d1061644db37159269e094c72306989f01658744e8dd04a"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae56e872f83e5c2e5087e75108baa31c90171fe2de3c14495b6fb41d6dd7feb8"
   end
 

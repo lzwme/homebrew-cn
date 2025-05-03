@@ -1673,6 +1673,7 @@ Homebrew-homebrew-core/Formula/e/elan-init.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/elektra.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/eless.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/eleventy.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/e/elfio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/elfutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/elfx86exts.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/elixir-ls.rb, Homebrew/homebrew-core, 1
@@ -2850,6 +2851,7 @@ Homebrew-homebrew-core/Formula/i/ical-buddy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icann-rdap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icarus-verilog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icbirc.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/i/iccmax.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icdiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/ice.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/i/icecast.rb, Homebrew/homebrew-core, 0
@@ -5557,7 +5559,7 @@ Homebrew-homebrew-core/Formula/q/qcli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qdbm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qdmr.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/q/qemu.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/q/qemu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qhull.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qjackctl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qjson.rb, Homebrew/homebrew-core, 1
@@ -5680,6 +5682,7 @@ Homebrew-homebrew-core/Formula/r/re-flex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/re2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/re2c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/react-native-cli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/readerwriterqueue.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/readline.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/readosm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/readpe.rb, Homebrew/homebrew-core, 1
@@ -5804,6 +5807,7 @@ Homebrew-homebrew-core/Formula/r/robodoc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/robot-framework.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/robotfindskitten.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rocksdb.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rofi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rofs-filtered.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rogcat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rogue.rb, Homebrew/homebrew-core, 0
@@ -8791,6 +8795,7 @@ Homebrew-homebrew-cask/Casks/e/elektron-transfer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/element.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/element@nightly.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/elemental.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/e/elemental@6.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/e/elephas.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/elephas@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/e/elephicon.rb, Homebrew/homebrew-cask, 1
@@ -12586,6 +12591,7 @@ Homebrew-homebrew-cask/Casks/m/menutube.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/menuwhere.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/meridiem.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/merlin-project.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/meru.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/meshlab.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/messenger-native.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/messenger.rb, Homebrew/homebrew-cask, 0

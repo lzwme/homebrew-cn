@@ -11,6 +11,7 @@ class Tmex < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5e00c8b7bb9fa42a09334ce2d42d77842952f13d62a1483eec2247d82e144d18"
     sha256 cellar: :any_skip_relocation, sonoma:        "b8d600fd78cb7cb06e754aed87bdc33ad80b9c835a39528909192bb08f57b383"
     sha256 cellar: :any_skip_relocation, ventura:       "b8d600fd78cb7cb06e754aed87bdc33ad80b9c835a39528909192bb08f57b383"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b8d600fd78cb7cb06e754aed87bdc33ad80b9c835a39528909192bb08f57b383"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8d600fd78cb7cb06e754aed87bdc33ad80b9c835a39528909192bb08f57b383"
   end
 

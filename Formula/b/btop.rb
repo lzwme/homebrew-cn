@@ -1,19 +1,19 @@
 class Btop < Formula
   desc "Resource monitor. C++ version and continuation of bashtop and bpytop"
   homepage "https:github.comaristocratosbtop"
-  url "https:github.comaristocratosbtoparchiverefstagsv1.4.1.tar.gz"
-  sha256 "40f6c54d1bc952c674b677d81dd25f55b61e9c004883c27950dc30780c86f381"
+  url "https:github.comaristocratosbtoparchiverefstagsv1.4.2.tar.gz"
+  sha256 "c7c0fb625af269d47eed926784900c8e154fdf71703f4325cffdf26357338c85"
   license "Apache-2.0"
   head "https:github.comaristocratosbtop.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b82735032693f6348979ecef71fe144b0ed4924196247f73b4473155c57e74f1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cdce095624f5619d43734c0c72804aeb435ea6f33e03b07d0375d1cc98f8f2c1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d31be5aa162325d62ca71acf9bcbe9a74891c206f091a9b7efd0535b20bed3e9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a988fc1e48af05ae07ea846afd0ed6d094076db3e81e538967d8487dc8b5ed3d"
-    sha256 cellar: :any_skip_relocation, ventura:       "1eacef16372d08705291b0aa20ce6185dfc2f2c05c1042e98734ac3fadd4a9a7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c42e6890b4826de42e106930119736f23ee1d6af5e4d8ef3c27de624642a500"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb658947101f37b8f031761b3e9f27916b8e76925bd081e0c84da03f870bd4f6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f54aa49bcb59a1631a295dbf1cf90d487e14f429fac1e208aed4ad906e7cb69c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b3b1d47b80a73e509b6a045a32cf13ed94b948193a2de93483bafa7613cf78af"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "379d95087b0a3fa4665848fa1a8276e55c891ed6c2cb6ed50a7b540f124ba2c0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9dfee36207403d9197735cbd717d5476c7bb653d41a1e7e3f90b429a617ef753"
+    sha256 cellar: :any_skip_relocation, ventura:       "39146fc5dbfbfaa025e06f07acc70c048d0336ceadf50527880cf3aa9bf712c4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0710e9ec2d181e4e072155499178432d52a5c42afd26674b066e693c62a24e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "512af0dc52a737d26afe93a056f5eb3dad2b17e1be4e014178c218c15577c70e"
   end
 
   depends_on "lowdown" => :build
@@ -64,7 +64,7 @@ class Btop < Formula
         log_level=DEBUG
       EOS
 
-      r, w, pid = PTY.spawn(bin"btop")
+      r, w, pid = PTY.spawn(bin"btop", "--force-utf")
       r.winsize = [80, 130]
       sleep 5
       w.write "q"

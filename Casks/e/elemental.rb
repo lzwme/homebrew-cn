@@ -8,11 +8,16 @@ cask "elemental" do
   desc "Native XML Database with XQuery and XSLT"
   homepage "https:www.elemental.xyz"
 
+  livecheck do
+    url :url
+    regex(^elemental[._-]v?(\d+(?:\.\d+)+)$i)
+  end
+
   app "Elemental.app"
 
   zap trash: "~LibraryApplication Supportxyz.elemental"
 
   caveats do
-    depends_on_java "8"
+    depends_on_java "21"
   end
 end

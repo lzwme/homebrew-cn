@@ -2,18 +2,18 @@ class Libmsquic < Formula
   desc "Cross-platform, C implementation of the IETF QUIC protocol"
   homepage "https:github.commicrosoftmsquic"
   url "https:github.commicrosoftmsquic.git",
-      tag:      "v2.4.10",
-      revision: "0c3596a214de2b085688628509c75295be67f2d5"
+      tag:      "v2.4.11",
+      revision: "18b58030a1aee72d94d705d5738cfb87650b063a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "324ed4423db3ac88eb60ca4d1029cd73253395c214a7ea696330267e46abde5b"
-    sha256 cellar: :any,                 arm64_sonoma:  "9b63b6a9d8390d27f4cafcf6e8ebd3c73755163c31e83b3d504e13b247f7c624"
-    sha256 cellar: :any,                 arm64_ventura: "a1bfc24221f3f53625dbcde83a224d58fb09fe1a51d3cdfd005c159ef6fac56e"
-    sha256 cellar: :any,                 sonoma:        "c32dbf35e019647247cc21353402bd928bd4bd3ea85feb436776c05c4c11ce08"
-    sha256 cellar: :any,                 ventura:       "406084ad858c3a4da839fdfc919ef8a0310a431332079661f4d32b3aa7b8f535"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9fab60bf592e876e95ef8110e2e14b0ded992da60324cbb8fd154b8491a38392"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b2ba210188e21b19ee0bce5d1a409b78b8b678b2834a62e85ff3614e3138584"
+    sha256 cellar: :any,                 arm64_sequoia: "89bbdc9b1db3f643d9f223538b09cbf0b4bb1133c662630e65430db4692a94ae"
+    sha256 cellar: :any,                 arm64_sonoma:  "8325d65147aec0bda760fff3877c7a5906317d15f49f21c644e8fd994ce749ee"
+    sha256 cellar: :any,                 arm64_ventura: "1fcbd01c40f6eec8d01052e3635e61af732e8fae1f53ad4e1b1125ea119819e3"
+    sha256 cellar: :any,                 sonoma:        "3eac3ea81c90f349167dcacfdfc2f98447f700c297f8060d5f4f7f302aaf6147"
+    sha256 cellar: :any,                 ventura:       "f4a98a03a312f0cb685d111690cd7687bfc15250d22d768e642b69528b11d4c2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c01a5f417fe2d51b8f21803595b2091745d2eeb0f5ab0653ecc9c836ef17ffa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5d79cb6eaecbe706a86c2a93feb7f45841395d5a2ee2ab7101f5570e77c2482a"
   end
 
   depends_on "cmake" => :build

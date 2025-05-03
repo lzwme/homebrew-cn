@@ -11,6 +11,7 @@ class Undercutf1 < Formula
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dddf01dd9cfa5624a43ed5c65fd52c883bbda91c0e0289d767075136ff1a39a2"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "54af633538221602fd9ffa07d27e08818d21fa68ec7c782a95b2cd4bbd80c7e4"
     sha256 cellar: :any_skip_relocation, ventura:       "fca8e46b113973ead1f49ffe2b8a990202b73bdc9566d82b312f1bb2f9e212f0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "36faa4d6062cd50853f2cf9dff48eb38e5275135202b56fa58c0b163cab07afa"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd6671d2667bed5bab2da835a944cbe9f433b7868c6a054175171ed217a4558e"
   end
 

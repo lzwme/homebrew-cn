@@ -11,6 +11,7 @@ class SequoiaChameleonGnupg < Formula
     sha256 cellar: :any,                 arm64_ventura: "63e79260f1665bd08b3c837dc89484e652494dd77d91ebdecc523bc48ce6e3f1"
     sha256 cellar: :any,                 sonoma:        "0c04398a6a5a0ec0b24d8c9e17c8d32b60cd6506c3e123478372765d2c110e6e"
     sha256 cellar: :any,                 ventura:       "b040e893c7a651cf2487981dfa5ddf7efde8d5f7df18e2900757f6c761131709"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3f4855b69df13a6c051453ae00e4434063777d1f26e9d07cf1ef21d2f5e06c8"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3319626d5c818b6482bf2ba1c9cfd267447639975483dde222f430a33ba1dc82"
   end
 

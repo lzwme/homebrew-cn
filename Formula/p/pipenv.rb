@@ -3,18 +3,18 @@ class Pipenv < Formula
 
   desc "Python dependency management tool"
   homepage "https:github.compypapipenv"
-  url "https:files.pythonhosted.orgpackages3434d74db93377232bcd156132730a3e6d04ce7fbc07664e2bc558140337a378pipenv-2025.0.1.tar.gz"
-  sha256 "923bfdf4e41d160d23d91cc1a8a00ebdf25f8bad4f014c3a278512e4c4f2d1d5"
+  url "https:files.pythonhosted.orgpackagesbd59472253c58d877aa61efa5ede1f9f3f187c8bcf5fdf87c662ad3de1d5defepipenv-2025.0.2.tar.gz"
+  sha256 "85d42e13da78f27f0213c998dba9a59f3ba6a6fe9e420b75b561acc344f021ad"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "69c4454303d9abb332e7603be6fd4558e8582a8d585ea43b1c53b97f6edec169"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "69c4454303d9abb332e7603be6fd4558e8582a8d585ea43b1c53b97f6edec169"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "69c4454303d9abb332e7603be6fd4558e8582a8d585ea43b1c53b97f6edec169"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4ad0ce68da4f78be13787bfb95149a1d31ee53813455f97c56fb1e5ff60e2a25"
-    sha256 cellar: :any_skip_relocation, ventura:       "4ad0ce68da4f78be13787bfb95149a1d31ee53813455f97c56fb1e5ff60e2a25"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c40714e95ecfaf3b4eddbc95a3fafff6b47aea33ad7bce5bc64a67abaae65ca8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c40714e95ecfaf3b4eddbc95a3fafff6b47aea33ad7bce5bc64a67abaae65ca8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f2676c205403dded049b689813d7d8cf3cfd937a96aac444bf8ebbcde39714a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f2676c205403dded049b689813d7d8cf3cfd937a96aac444bf8ebbcde39714a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1f2676c205403dded049b689813d7d8cf3cfd937a96aac444bf8ebbcde39714a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "298d706e644c222812b73954e6c8939bca6b215b0e028572ead164b291d13d4e"
+    sha256 cellar: :any_skip_relocation, ventura:       "298d706e644c222812b73954e6c8939bca6b215b0e028572ead164b291d13d4e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "74beeb186ea51d9c4db4b2026c0bec0a46b98de350bc5a601f7d49b41e45ad84"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74beeb186ea51d9c4db4b2026c0bec0a46b98de350bc5a601f7d49b41e45ad84"
   end
 
   depends_on "certifi"
@@ -45,8 +45,8 @@ class Pipenv < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesbb71b6365e6325b3290e14957b2c3a804a529968c77a049b2ed40c095f749707setuptools-79.0.1.tar.gz"
-    sha256 "128ce7b8f33c3079fd1b067ecbb4051a66e8526e7b65f6cec075dfc650ddfa88"
+    url "https:files.pythonhosted.orgpackagesaab2bd26ed086b842b68c8fe9aac380ad7e5118cf84fa7abd45bb059a88368a8setuptools-80.1.0.tar.gz"
+    sha256 "2e308396e1d83de287ada2c2fd6e64286008fe6aca5008e0b6a8cb0e2c86eedd"
   end
 
   resource "virtualenv" do

@@ -4,6 +4,7 @@ class Fheroes2 < Formula
   url "https:github.comihhubfheroes2archiverefstags1.1.7.tar.gz"
   sha256 "6419ad0bd0f1f684a9256c39fb6c02a026fc76581b0bc9632a597fbc8443fc03"
   license "GPL-2.0-or-later"
+  revision 1
   head "https:github.comihhubfheroes2.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class Fheroes2 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "923052a337d4f1c2fb9fda17c0583db1838d9e69c7ee21ff952baf7728444581"
-    sha256 arm64_sonoma:  "dd0f91994a1b6a2ba399305894eeef5787c4a4815e0182243b80a38a8ee4e667"
-    sha256 arm64_ventura: "489962fc4e969c04ed374647abc303f0138280512d16671dcc3732857315b192"
-    sha256 sonoma:        "44440672a2b1da48ed6288afad3a4dea7e9d9507d1a4d340b728f78876d8cb08"
-    sha256 ventura:       "a76fa029a98145dca97759a6e66188f143ef8400da6963011858f7b293acd368"
-    sha256 arm64_linux:   "a3b80cc8e2137752d68056e0827e672b7e3eed19b740018b4b94512801fa5a23"
-    sha256 x86_64_linux:  "b0001f5a990deaeaae3f6b4bd1927a198caf29a13b95f45b64827cf383e4a6b0"
+    sha256 arm64_sequoia: "bc01ee94d9ecd36f09f149366c23f85cd0f363ff70057be2752c5d84cd1c20ec"
+    sha256 arm64_sonoma:  "9bfa43f76dbdf75d4080a2b485958dea69aa7229e54f6994d91f21c522d81d91"
+    sha256 arm64_ventura: "8f5cf53765b7c2557a4878a8584cbf3f680a1796f03198dd71a74aa4054f8ab7"
+    sha256 sonoma:        "2d3c25d9088d2bcdb9b14798fd1ba229df52397278a6808f418810da98899cc8"
+    sha256 ventura:       "f24d762fb936c938b25b94bfbf9df00f98aadad30ef1cdc5b97f76bc7459b7b4"
+    sha256 arm64_linux:   "b24eec3d0dde1f216b7d13770a45a25af180c8e9c0de76ed846bd7645ae224e3"
+    sha256 x86_64_linux:  "cad5dfc921539d0252a5b4ebf44678ca7a194aafcde720bec8259773f9497fd2"
   end
 
   depends_on "cmake" => :build
@@ -30,13 +31,34 @@ class Fheroes2 < Formula
 
   uses_from_macos "zlib"
 
+  on_macos do
+    depends_on "dylibbundler" => :build
+  end
+
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    args = std_cmake_args
+    args << "-DMACOS_APP_BUNDLE=ON" if OS.mac?
+    system "cmake", "-S", ".", "-B", "build", *args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
 
-    bin.install "scriptdemodownload_demo_version.sh" => "fheroes2-install-demo"
-    bin.install "scripthomm2extract_homm2_resources.sh" => "fheroes2-extract-resources"
+    if OS.mac?
+      prefix.install "buildfheroes2.app"
+      bin.write_exec_script "#{prefix}fheroes2.appContentsMacOSfheroes2"
+
+      libexec.install "scriptdemodownload_demo_version.sh"
+      libexec.install "scriptdemodownload_demo_version_for_app_bundle.sh"
+      libexec.install "scripthomm2extract_homm2_resources.sh"
+      libexec.install "scripthomm2extract_homm2_resources_for_app_bundle.sh"
+      chmod "+x", Dir["#{libexec}*"]
+      bin.write_exec_script libexec"download_demo_version_for_app_bundle.sh"
+      bin.write_exec_script libexec"extract_homm2_resources_for_app_bundle.sh"
+      mv bin"download_demo_version_for_app_bundle.sh", bin"fheroes2-install-demo"
+      mv bin"extract_homm2_resources_for_app_bundle.sh", bin"fheroes2-extract-resources"
+    else
+      bin.install "scriptdemodownload_demo_version.sh" => "fheroes2-install-demo"
+      bin.install "scripthomm2extract_homm2_resources.sh" => "fheroes2-extract-resources"
+    end
   end
 
   def caveats
@@ -53,9 +75,21 @@ class Fheroes2 < Formula
   end
 
   test do
-    io = IO.popen("#{bin}fheroes2 2>&1")
-    io.any? do |line|
-      line.include?("fheroes2 engine, version:")
+    assert_path_exists bin"fheroes2"
+    assert_predicate bin"fheroes2", :executable?
+    if OS.mac?
+      begin
+        pid = spawn(bin"fheroes2")
+        sleep 2
+      ensure
+        Process.kill("SIGINT", pid)
+        Process.wait(pid)
+      end
+    else
+      io = IO.popen("#{bin}fheroes2 2>&1")
+      io.any? do |line|
+        line.include?("fheroes2 engine, version:")
+      end
     end
   end
 end

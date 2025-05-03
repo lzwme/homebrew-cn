@@ -1,26 +1,23 @@
 class Groestlcoin < Formula
   desc "Decentralized, peer to peer payment network"
   homepage "https:www.groestlcoin.orggroestlcoin-core-wallet"
-  url "https:github.comGroestlcoingroestlcoinreleasesdownloadv28.0groestlcoin-28.0.tar.gz"
-  sha256 "4446c49916c6f2c45fcf609270318dc114e166d1c833bb7d0b51d12cb42acba6"
+  url "https:github.comGroestlcoingroestlcoinreleasesdownloadv29.0groestlcoin-29.0.tar.gz"
+  sha256 "48298150c83e38ca0b9b449c99fd1c18118849397e09261312a052517f504746"
   license "MIT"
-  revision 2
   head "https:github.comgroestlcoingroestlcoin.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "893ac9fa8462e9ff7f6fbd6f9857780758ae0af2201284d65b7f18f6b72c1f7f"
-    sha256 cellar: :any,                 arm64_sonoma:  "31c08d3a249f9e53d571051c5068816fe6224c00daec40b202e0d926761245f2"
-    sha256 cellar: :any,                 arm64_ventura: "7a126eb52180581d3c66b1404cd6db1a1e647d4470645e16d7d569f60f415790"
-    sha256 cellar: :any,                 sonoma:        "98bf3b941307bf031bbcdf1e0f6a22140872d642bce9e2db0741420504d5b0b5"
-    sha256 cellar: :any,                 ventura:       "c916ed1c3f83bd7bccffd521b3688ec7c288a89f703a4424228cf0cbd19823eb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dfd80a8d2bd67a15fea6633a799eced363b66477ac5bc66b1a75d1e59047d696"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "751568f7603c64c6109ada47fd40fc2f8f32961a069f3a6c1b00307fa0355d7b"
+    sha256 cellar: :any, arm64_sequoia: "d92c1efe5b438c2356e7745b77ae3ebff9744f7ed1648e02d451f2461f40b1ab"
+    sha256 cellar: :any, arm64_sonoma:  "12d1897dd611a2e0aa1bfec5eda253f83b6d30596e4043cb851b34c45d5d245e"
+    sha256 cellar: :any, arm64_ventura: "02ef7614ec36e639fd496e025406afc07f69ccb03ac6ce08405610613552c294"
+    sha256 cellar: :any, sonoma:        "6f7e45dd7b0e76124fcf9474e14f21697fc101671077cadf0bf49102a517f7c7"
+    sha256 cellar: :any, ventura:       "dd046071e97a46de8e018c131c5b25df2ed84ca5d9b4187bbfffc536614e4bc8"
+    sha256               arm64_linux:   "39ade609f64538c50e5198695a39713a3a0f959117047f311ed92c62aaa50c17"
+    sha256               x86_64_linux:  "aad63fcebed9b80267c3e5525a7ebfb0a9c4ff7529239bf51502da9396ac0a6a"
   end
 
-  depends_on "autoconf" => :build
-  depends_on "automake" => :build
   depends_on "boost" => :build
-  depends_on "libtool" => :build
+  depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "berkeley-db@5"
   depends_on "libevent"
@@ -40,12 +37,9 @@ class Groestlcoin < Formula
   end
 
   def install
-    ENV.runtime_cpu_detection
-    system ".autogen.sh"
-    system ".configure", "--disable-silent-rules",
-                          "--with-boost-libdir=#{Formula["boost"].opt_lib}",
-                          *std_configure_args
-    system "make", "install"
+    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
     pkgshare.install "sharerpcauth"
   end
 
