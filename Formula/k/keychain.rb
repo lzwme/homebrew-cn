@@ -1,8 +1,8 @@
 class Keychain < Formula
   desc "User-friendly front-end to ssh-agent(1)"
   homepage "https:www.funtoo.orgKeychain"
-  url "https:github.comfuntookeychainarchiverefstags2.9.1.tar.gz"
-  sha256 "49e7bec7495cf79300a23ad13fbdd7c2083f823c7dac2c1333bd70e8bfd83d8d"
+  url "https:github.comfuntookeychainarchiverefstags2.9.2.tar.gz"
+  sha256 "508ae2593e38d2fa6b9fed6c773114017abb81ef428b31bd28ae78d48e45e591"
   license "GPL-2.0-only"
 
   livecheck do
@@ -12,10 +12,14 @@ class Keychain < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d2c7d19cb924412c874cdf963b2d99186d257199fab4bbd3320f0c5d8d05aeec"
+    sha256 cellar: :any_skip_relocation, all: "db84c4a63443468017fffbcb174ba06dc3697c8a659722eb8ba112bb417b70fc"
   end
 
   def install
+    # BSD-compatible `Makefile` is not working on macOS, so revert changes
+    # Commit ref: https:github.comfuntookeychaincommit516df473cfcc24ba109ceb842f7908f28f854f19
+    inreplace "Makefile", ^(\w+)\s*!=\s*(.+)$, "\\1:=$(shell \\2)"
+
     system "make"
     bin.install "keychain"
     man1.install "keychain.1"

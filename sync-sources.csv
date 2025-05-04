@@ -4327,6 +4327,7 @@ Homebrew-homebrew-core/Formula/m/minica.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minicom.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/minidjvu.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/minidlna.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/miniflux.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minigraph.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minijinja-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minikube.rb, Homebrew/homebrew-core, 1
@@ -9267,6 +9268,7 @@ Homebrew-homebrew-cask/Casks/font/font-a/font-asap.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-asar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-asset.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-assistant.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-a/font-asta-sans.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-astloch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-asul.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-a/font-athiti.rb, Homebrew/homebrew-cask, 1
@@ -11499,6 +11501,8 @@ Homebrew-homebrew-cask/Casks/font/font-w/font-warnes.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/font/font-w/font-water-brush.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-w/font-waterfall.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-w/font-wavefont.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-w/font-wdxl-lubrifont-jp-n.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-w/font-wdxl-lubrifont-sc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-w/font-wdxl-lubrifont-tc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-w/font-webdings.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-w/font-wellfleet.rb, Homebrew/homebrew-cask, 1

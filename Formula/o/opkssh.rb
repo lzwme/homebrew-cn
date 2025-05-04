@@ -1,18 +1,18 @@
 class Opkssh < Formula
   desc "Enables SSH to be used with OpenID Connect"
   homepage "https:eprint.iacr.org2023296"
-  url "https:github.comopenpubkeyopkssharchiverefstagsv0.6.0.tar.gz"
-  sha256 "df86132ce42ba3ad4bb7b34584a1176a38d6243514a365d866f67a9f1536f67b"
+  url "https:github.comopenpubkeyopkssharchiverefstagsv0.6.1.tar.gz"
+  sha256 "edb4b2ef3aaf9a16d409e92b27ed1467494edebedcca8ad51060916b175e401b"
   license "Apache-2.0"
   head "https:github.comopenpubkeyopkssh.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49beea5fe70ad37de1567a2f36097923ae94bd5a26907c906fad7c89379b3c3a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49beea5fe70ad37de1567a2f36097923ae94bd5a26907c906fad7c89379b3c3a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "49beea5fe70ad37de1567a2f36097923ae94bd5a26907c906fad7c89379b3c3a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f3f63fd99d661128895e755e5335fdb2a6f5efb1685edb0f38839435eb2aa920"
-    sha256 cellar: :any_skip_relocation, ventura:       "f3f63fd99d661128895e755e5335fdb2a6f5efb1685edb0f38839435eb2aa920"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3a99fc32467379548b18d00237ae0aee713ad02638025d055c4b5bdfd1d857e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0640a6e10bcf5282b59ab11d54b3a3973aef75cda201bfef82ea154038874049"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0640a6e10bcf5282b59ab11d54b3a3973aef75cda201bfef82ea154038874049"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0640a6e10bcf5282b59ab11d54b3a3973aef75cda201bfef82ea154038874049"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8cea435db14b96a57869334e18959795cbc81374161dc21aef66a46474b01008"
+    sha256 cellar: :any_skip_relocation, ventura:       "8cea435db14b96a57869334e18959795cbc81374161dc21aef66a46474b01008"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45007bb3b43f295e163035bcb02ded4287029f227c936f42a632e6f3f4830675"
   end
 
   depends_on "go" => :build

@@ -2,8 +2,8 @@ class Llvm < Formula
   desc "Next-gen compiler infrastructure"
   homepage "https:llvm.org"
   # TODO: Rebase `clang-cl` patch.
-  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-20.1.3llvm-project-20.1.3.src.tar.xz"
-  sha256 "b6183c41281ee3f23da7fda790c6d4f5877aed103d1e759763b1008bdd0e2c50"
+  url "https:github.comllvmllvm-projectreleasesdownloadllvmorg-20.1.4llvm-project-20.1.4.src.tar.xz"
+  sha256 "a95365b02536ed4aef29b325c205dd89c268cba41503ab2fc05f81418613ab63"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
   head "https:github.comllvmllvm-project.git", branch: "main"
@@ -14,13 +14,13 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "50f7157b1fc8f75de33f0132a7a048fa02c4ff359d8157d06d4be60bec1e911e"
-    sha256 cellar: :any,                 arm64_sonoma:  "1bd3aa7533443f5c6a3dda63d597feae133264dbe930f1a4b0bd5200d51ef7c9"
-    sha256 cellar: :any,                 arm64_ventura: "0736f9f937226ab3c781825b84c05c4ce7bf922e1adad7701fe03f077b79f6df"
-    sha256 cellar: :any,                 sonoma:        "74e71c853331a9fbadbff375f2cc7d73403c93db1104ceba46dfb7a3d03da83c"
-    sha256 cellar: :any,                 ventura:       "24c43f8c335e72c374c4a2515d9db9fd93d9ac73a753aba92c8fe0e3d347758b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3652893fc411853efa5b123552ed63678c5cef905b630ed45ab641a3266d4e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "46bb0c52a82d1841c6f64c8edf2a07c8a2a377615c93e8aaf0a84b33a7fd371f"
+    sha256 cellar: :any,                 arm64_sequoia: "eeaff9d74040678eeb76850a1bb742b189f2a7a939860a9c512bf0526f49d81d"
+    sha256 cellar: :any,                 arm64_sonoma:  "6e4270a68f16ffbf75214045fbf6c83ad1d7b28fe558c5f42aada7ade9ec8ac3"
+    sha256 cellar: :any,                 arm64_ventura: "bba82ae04eda007c8971ea4bceebee3b9ef1cadc222e1d77ef0eebad218c9af5"
+    sha256 cellar: :any,                 sonoma:        "9ed2acd04961a914d8197ab999056c4a8889881051597926ee9215fc2e83e6e9"
+    sha256 cellar: :any,                 ventura:       "7808e12ba6a9fe416a969989a2a191ab1869d677fc0d3280f3e47fb348d09c6c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "31d2343b44f1baddeb4b549d782f413427ed55461aa69d8c62f777f80f06186f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f10fad6fca57ea531467227b02c7e4daea257d7b4ae0c264e3d3dad7bc8aff2a"
   end
 
   keg_only :provided_by_macos

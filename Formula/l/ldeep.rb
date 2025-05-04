@@ -3,19 +3,19 @@ class Ldeep < Formula
 
   desc "LDAP enumeration utility"
   homepage "https:github.comfranc-pentestldeep"
-  url "https:files.pythonhosted.orgpackages55f7e640a4373e7da6fac1597f3ccdd36f851de00d2a628c26aeadd3734321d1ldeep-1.0.85.tar.gz"
-  sha256 "cc3e8ed7f18a619c101d121c144ef3451c2bef8e6c8734349cfd74d20213037c"
+  url "https:files.pythonhosted.orgpackagese3922914cb11ae0a1ee1aca4c6e7c5036c3ce83d0b20613ba13e9519e00cecdbldeep-1.0.86.tar.gz"
+  sha256 "4baeea7d1bcaa29867214c47992b2108c5ad0bb7cd09f82ca1c9270d538ae1f7"
   license "MIT"
   head "https:github.comfranc-pentestldeep.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5dd30f95480ec8544a926b75b7fe8a5eeb64c6866ba1e0814f53656989225a9c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a7b022400b9d2fec67573039040579e249be4b6734db2006ac30a41471221551"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "44dde01e539097731a7a7cfcf42d2646a4c56263e4471470e1a078dc6305f0d4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7570a7a3161cc8de2d133982ba60be7072cef7687c3f85895b45679c446622a7"
-    sha256 cellar: :any_skip_relocation, ventura:       "1d26774baa275d193870a97a59f8a5b1ce7b74661d6136160dfa54c4d532e4e0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7456f4581545944695873f4b8301c7cee20f3ced371d67217546562eaacdb588"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28db049b99cf0f175dfadded209a327a715c476c7f2e3bb85236158249ab51c6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "82bf16581a7e37876280738dbc31a2e17d697d05078b65aff8b7b5d6d0c8c871"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83461409b70bf0a9152c2fb620d8c7779febb0315304ceeb0d745242adfab8ad"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1dcb56e2d8d6ebb2a983fdebfaf591a47c3f3f0647cb94ec30d87c2bd1fb0cac"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a559b26b2f5ac8fab7ebc490754ddb7d03f1760815128ac407f7a463f802d1c7"
+    sha256 cellar: :any_skip_relocation, ventura:       "bd7a6866236560c1c0fac00466ce22dd655f50087c1bca9b1fefca7c32397972"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "88cdcf3d796d293dad800ea38741a7ed0bece5a53e4ff89e81911dd6115c27cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d833e14e6074206f1aa205241c59e8b77fafa45fd675883dd832ea8ea523e6ad"
   end
 
   depends_on "cryptography"
