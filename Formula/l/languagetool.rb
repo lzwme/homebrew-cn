@@ -3,7 +3,7 @@ class Languagetool < Formula
   homepage "https:www.languagetool.org"
   url "https:github.comlanguagetool-orglanguagetool.git",
       tag:      "v6.6",
-      revision: "ac27103cd54291aad05c3fe2c69f0339bc8498e3"
+      revision: "f13e71a7fe85a122290826fd691d267d64e97c33"
   license "LGPL-2.1-or-later"
   head "https:github.comlanguagetool-orglanguagetool.git", branch: "master"
 
@@ -13,13 +13,14 @@ class Languagetool < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5fda45d3cceb453f597e4b4467ebc4fc5ce566bc7a0feeec65c1814be8150303"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e6e793ae8bf1d1299aaa17b46572b03ac51a40aac28820239ef97273d299182"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "514b18ebdf0c6b60f6be8f08eca0d2ad3d3e5d67f737f3eb55137dcd66e4073d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8953cc2fb389c688d001cabf8fd19aa09141c7ceffa3bd79a44962c48fd81d37"
-    sha256 cellar: :any_skip_relocation, ventura:       "c3024db69833143ff0766e6307781111ac2a91d037fe752e2f6e477a8599822b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "09e15a7fb4580e28969de66fcaa2b4c1ee46ca6a40e3e5d6b83a5d5e0c7a533e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e15642ff9620b14673b13d0665852af113da2be0d3cb60befbac09358bd3b478"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "227a97bd8f1d5d0758c39333e83b6592d7fd0e32ecf16c12ce672153ec61ae46"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4fab8a1497d501d34cbe092a4f654fc48f723c7987e98de03668a592f85fffaf"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7f834002277b32d58c770d84ff8b8cb79b375f7556baea3c22d429b83e453401"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7f926f87d50925e4d80b5e76f7c5949bb7fe394f94877d3256240291364d543d"
+    sha256 cellar: :any_skip_relocation, ventura:       "3ec986752ccb42e85971b148a753f7e65ee62eeb89252191837145daf6f8ce37"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a63b1434847e5fdcd826799840eac2d22bba23ea4b2aa8f5e03bb1be59a916f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90f387a97cc6c4814c309a52f251ceb576225d6fe16734ad44f56f7180761a1d"
   end
 
   depends_on "maven" => :build
@@ -47,6 +48,10 @@ class Languagetool < Formula
 
     touch buildpath"server.properties"
     pkgetc.install "server.properties"
+  end
+
+  def post_install
+    (var"loglanguagetool").mkpath
   end
 
   service do

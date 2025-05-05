@@ -21,6 +21,7 @@ class ApacheArchiva < Formula
   end
 
   deprecate! date: "2024-05-01", because: :repo_archived
+  disable! date: "2025-05-05", because: :repo_archived
 
   depends_on "ant" => :build
   depends_on "java-service-wrapper"

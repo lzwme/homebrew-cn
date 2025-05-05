@@ -8338,6 +8338,7 @@ Homebrew-homebrew-cask/Casks/c/cloudnet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cloudpouch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/cloudup.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cloudytabs.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/clover-chord-systems.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/clover-configurator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cmake.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/cmd-eikana.rb, Homebrew/homebrew-cask, 1
@@ -9928,6 +9929,10 @@ Homebrew-homebrew-cask/Casks/font/font-h/font-hanuman.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/font/font-h/font-happy-monkey.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-h/font-harano-aji.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-h/font-harmattan.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-h/font-harmonyos-sans-naskh-arabic.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-h/font-harmonyos-sans-sc.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-h/font-harmonyos-sans-tc.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-h/font-harmonyos-sans.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-h/font-hasklig.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-h/font-hasklug-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-h/font-headland-one.rb, Homebrew/homebrew-cask, 1
@@ -13798,6 +13803,7 @@ Homebrew-homebrew-cask/Casks/s/satyrn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sauce-connect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/sauerbraten.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/save-hollywood.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/sc-menu.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/scala-ide.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/scap-workbench.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/scapple.rb, Homebrew/homebrew-cask, 0

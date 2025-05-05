@@ -6,12 +6,11 @@ class Emqx < Formula
   license "Apache-2.0"
   head "https:github.comemqxemqx.git", branch: "master"
 
-  # There can be a notable gap between when a version is tagged and a
-  # corresponding release is created, so we check the "latest" release instead
-  # of the Git tags.
+  # Exclude beta and release canditate tags (`-rc` and `-beta` suffixes)
+  # and enterprise versions with BUSL license (their tag starts with `e`)
   livecheck do
     url :stable
-    strategy :github_latest
+    regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
   bottle do

@@ -3,20 +3,19 @@ class Poetry < Formula
 
   desc "Python package management tool"
   homepage "https:python-poetry.org"
-  url "https:files.pythonhosted.orgpackages7e96187b538742df11fe32beca5c146d9522b1fd9f42897f0772ff8dfc04972fpoetry-2.1.2.tar.gz"
-  sha256 "6a0694645ee24ba93cb94254db66e47971344562ddd5578e82bf35e572bc546d"
+  url "https:files.pythonhosted.orgpackagesdb121c8d8b2c6017a33a9c9c708c6d2bb883af7f447520a466dc21d2c74ecfe1poetry-2.1.3.tar.gz"
+  sha256 "f2c9bd6790b19475976d88ea4553bcc3533c0dc73f740edc4fffe9e2add50594"
   license "MIT"
-  revision 1
   head "https:github.compython-poetrypoetry.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "446a12465cbd6f1c04e74d95619ed5fa8077469e0300c22b9d70c2de988d7952"
-    sha256 cellar: :any,                 arm64_sonoma:  "529ee2146bfb3200a3fc76094a660666b268bdfa3bd46e55bc720b2a95326d56"
-    sha256 cellar: :any,                 arm64_ventura: "ce20533bedcb7380b88b0a38b40ca5da3c5c475ce57f515c0cc9d43466ccb50c"
-    sha256 cellar: :any,                 sonoma:        "1111c80bcd55bc74fc06d57e1afec29e69a5a4628b799f7bc1b5e006d42a4c72"
-    sha256 cellar: :any,                 ventura:       "001ef00884fbc9c609f81e1879e46a0882246d9bf527cd91cfb115c5c3d00b15"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3b2a728f8bfb20309a6d16ff7a0fe094889c38f5dfdfec7315a3b6cc77d0a4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96f4a4fc7502152ab027f72332f6b1281a9d4a1bcb925de741125fb45161b12c"
+    sha256 cellar: :any,                 arm64_sequoia: "4476e2b7ff814bf9cbc260e6ec940ca4aaff3cdc69de7324024cbbc7433ef715"
+    sha256 cellar: :any,                 arm64_sonoma:  "6a8750d139660fce7b84de370f8e2841f4f4d6f62e2409b7288df0abd5834e8a"
+    sha256 cellar: :any,                 arm64_ventura: "6609da248aa4a8e31c626729c164f03bad50b7635f0a0f1034bb59a46af5e31a"
+    sha256 cellar: :any,                 sonoma:        "53b28f73d32d7b9bc74d2d7558a1a9e02d6e5c5e32d538398d24001053dadbff"
+    sha256 cellar: :any,                 ventura:       "f7b4144c519f655cda720b66f533c061fba2d5dbc83570070a94742f371ad994"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "74c11f90bf3f210708ae0cb9f4c37c29e4a3ef45b61e3346283902b6dbd88cc3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9153007f80c9621afd275fe6bf06a8549f92e346cab56751044a63968f837865"
   end
 
   depends_on "cmake" => :build # for rapidfuzz
@@ -44,13 +43,13 @@ class Poetry < Formula
   end
 
   resource "cachecontrol" do
-    url "https:files.pythonhosted.orgpackagesb7a43390ac4dfa1773f661c8780368018230e8207ec4fd3800d2c0c3adee4456cachecontrol-0.14.2.tar.gz"
-    sha256 "7d47d19f866409b98ff6025b6a0fca8e4c791fb31abbd95f622093894ce903a2"
+    url "https:files.pythonhosted.orgpackages583a0cbeb04ea57d2493f3ec5a069a117ab467f85e4a10017c6d854ddcbff104cachecontrol-0.14.3.tar.gz"
+    sha256 "73e7efec4b06b20d9267b441c1f733664f989fb8688391b670ca812d70795d11"
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https:files.pythonhosted.orgpackagese43389c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12dcharset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "cleo" do
@@ -169,8 +168,8 @@ class Poetry < Formula
   end
 
   resource "poetry-core" do
-    url "https:files.pythonhosted.orgpackages842a572c141e2a15b933b4a49eb888b0ae7335604f57c0f91a7298ae56d2df7cpoetry_core-2.1.2.tar.gz"
-    sha256 "f9dbbbd0ebf9755476a1d57f04b30e9aecf71ca9dc2fcd4b17aba92c0002aa04"
+    url "https:files.pythonhosted.orgpackages44cac2d21635a4525d427ae969d4cde155fb055c3b5d0bc4199b6de35bb6a826poetry_core-2.1.3.tar.gz"
+    sha256 "0522a015477ed622c89aad56a477a57813cace0c8e7ff2a2906b7ef4a2e296a4"
   end
 
   resource "pyproject-hooks" do
@@ -214,8 +213,8 @@ class Poetry < Formula
   end
 
   resource "trove-classifiers" do
-    url "https:files.pythonhosted.orgpackages52dbcd8510702ed0ac1215e960ab3511a7f5750d63b56f2ae94d94fb4a6425aftrove_classifiers-2025.4.11.15.tar.gz"
-    sha256 "634728aa6698dc1ae3db161da94d9e4c7597a9a5da2c4410211b36f15fed60fc"
+    url "https:files.pythonhosted.orgpackagesdc81a43db75173e49b1204d2a826b2a3a0e2dee45fb0d9abfac2ce1ff928eebftrove_classifiers-2025.5.1.12.tar.gz"
+    sha256 "28d24c3d043dc6b0459813d6bf4a231e788509b55ee3d54ba08ce72638031182"
   end
 
   resource "urllib3" do

@@ -4,10 +4,11 @@ class Squashfuse < Formula
   url "https:github.comvasisquashfusereleasesdownload0.6.1squashfuse-0.6.1.tar.gz"
   sha256 "7b18a58c40a3161b5c329ae925b72336b5316941f906b446b8ed6c5a90989f8c"
   license "BSD-2-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "7ff64be9805be5acc6c776b14e02274ebc824188da0280b73031fc31ed3c3de8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "eaeb6cc85774a4eff9b61fceca85dfea48e7d36c6302959b0f7b7cf3b565039e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "2ac81c35fe8e2339d2da50ba09484eff8f69552fb3f501f33d8df133d358173a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a8f4cd10ca2e0d20f7407ba2d8fa8240d3786dd4c65b40f1e24a7878e0f828e4"
   end
 
   depends_on "autoconf" => :build

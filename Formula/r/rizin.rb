@@ -1,19 +1,19 @@
 class Rizin < Formula
   desc "UNIX-like reverse engineering framework and command-line toolset"
   homepage "https:rizin.re"
-  url "https:github.comrizinorgrizinreleasesdownloadv0.8.0rizin-src-v0.8.0.tar.xz"
-  sha256 "da9ac726109719289f908007d1802c6494a23c43cb9950ca42821d42aa5c7e37"
+  url "https:github.comrizinorgrizinreleasesdownloadv0.8.1rizin-src-v0.8.1.tar.xz"
+  sha256 "ef2b1e6525d7dc36ac43525b956749c1cca07bf17c1fed8b66402d82010a4ec2"
   license "LGPL-3.0-only"
   head "https:github.comrizinorgrizin.git", branch: "dev"
 
   bottle do
-    sha256 arm64_sequoia: "c8150052cb5c41080ea6f0c027a36fdc72ef923c65a4d056cae93262d691a742"
-    sha256 arm64_sonoma:  "a5f021f51912127affaf4ecf54f6d1b8451321a6f8588983d15c6c0f03138ae6"
-    sha256 arm64_ventura: "cc98e4e166c5183f25dd96428f7902580a705e9e9a3230e8c56233e6790c5fcb"
-    sha256 sonoma:        "a64131f4e26df6229621de49a12a67cc8a1dd38aa43a8c94b1d5ddaf60a20e77"
-    sha256 ventura:       "910341269e8ac3bc62483c79b600b257a714b5bba8d192c7f412c040173c5c21"
-    sha256 arm64_linux:   "9d97a0ca9d597a3e8abe963815acfe042926133ed24dfc25e12e7cf1456a3f6b"
-    sha256 x86_64_linux:  "abda6579445c01dc9da7018358b66ecbe7102f3841b918c125f0449acb91d1b9"
+    sha256 arm64_sequoia: "7c1365dc16e0421bca82d1b045973bbada8191297992744fa8311b9b271645fa"
+    sha256 arm64_sonoma:  "328c1528f26638dd2ea942c0c2bbc4dfa7745c56cde1252b9638712003d317c0"
+    sha256 arm64_ventura: "085d109b54887985cd8b0a6fa0871992f7019b87ba95f81d1d9fbf11d2448f0c"
+    sha256 sonoma:        "9a9270d14cd3a2aa28b06f20b7197277e3964e6c168df012ca803c1c913b8bf8"
+    sha256 ventura:       "f274b57f7f40220103f294b245487cc149030390ff1e114082de554b08b10d5b"
+    sha256 arm64_linux:   "450223987c11d8a126f9167278b987c77d113c94092857e8568b71d50e4aa268"
+    sha256 x86_64_linux:  "05ec7e5950237bb3d0640c5dae2061b878e30da76306f5272bae0466c1bb2f21"
   end
 
   depends_on "cmake" => :build
@@ -32,13 +32,6 @@ class Rizin < Formula
   depends_on "zstd"
 
   uses_from_macos "zlib"
-
-  # Fix to use `rizin-grammar-c` unconditionally, should be removed in next release
-  # PR Ref: https:github.comrizinorgrizinpull5103
-  patch do
-    url "https:github.comrizinorgrizincommite196efaefbd2aa47204185c6b280654d9d964723.patch?full_index=1"
-    sha256 "0dfa2792793a7cafe35f08bf630dbfd943c05f7778c66f5054833d92d6475caa"
-  end
 
   def install
     args = %W[

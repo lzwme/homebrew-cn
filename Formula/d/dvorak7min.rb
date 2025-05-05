@@ -28,6 +28,7 @@ class Dvorak7min < Formula
 
   # source is a copy from debian
   deprecate! date: "2024-05-04", because: :repo_removed
+  disable! date: "2025-05-05", because: :repo_removed
 
   uses_from_macos "ncurses"
 

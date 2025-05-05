@@ -1,18 +1,18 @@
 class GoBlueprint < Formula
   desc "CLI to streamline Go project setup with standardized structure"
   homepage "https:docs.go-blueprint.dev"
-  url "https:github.comMelkeydevgo-blueprintarchiverefstagsv0.10.8.tar.gz"
-  sha256 "aaff26eb0c8e3b1be44cd3a4ab3d905e51d0c0618d058ae508d69402e9bd82eb"
+  url "https:github.comMelkeydevgo-blueprintarchiverefstagsv0.10.9.tar.gz"
+  sha256 "0f7d7b0662b16c5ec931e6bfa8bb658a9484727732aa667b19ddddb48830e97a"
   license "MIT"
   head "https:github.comMelkeydevgo-blueprint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2f91622824f87f56f115699459e43b2063fc4202bc43eeb221ecdb4a650c3ec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2f91622824f87f56f115699459e43b2063fc4202bc43eeb221ecdb4a650c3ec"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e2f91622824f87f56f115699459e43b2063fc4202bc43eeb221ecdb4a650c3ec"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1a79bfa14d63db0f7dd61db54e11bbebcf32535104fb4a5084c8b61233de1fa2"
-    sha256 cellar: :any_skip_relocation, ventura:       "1a79bfa14d63db0f7dd61db54e11bbebcf32535104fb4a5084c8b61233de1fa2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d66b6c24691974d39a44608306ac2c0cf405789e631288871975fcc5e88bb167"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1019dc6d770e9e5c7d16905696708291b74643db9ae70c2cc67c12c7eb66679d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1019dc6d770e9e5c7d16905696708291b74643db9ae70c2cc67c12c7eb66679d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1019dc6d770e9e5c7d16905696708291b74643db9ae70c2cc67c12c7eb66679d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "643ca205966925bc3bef72b8f840c337d68bd8ed35174e6d53b09193f073936f"
+    sha256 cellar: :any_skip_relocation, ventura:       "643ca205966925bc3bef72b8f840c337d68bd8ed35174e6d53b09193f073936f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0625bc19d91aa19567269b23ce82e0a9155d470bd9cfd3fe6a97a06938761e9"
   end
 
   depends_on "go"

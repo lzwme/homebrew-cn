@@ -26,6 +26,7 @@ class Aggregate < Formula
   end
 
   deprecate! date: "2024-05-04", because: :repo_removed
+  disable! date: "2025-05-05", because: :repo_removed
 
   def install
     # Workaround for newer Clang

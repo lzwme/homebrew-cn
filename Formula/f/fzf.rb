@@ -1,18 +1,18 @@
 class Fzf < Formula
   desc "Command-line fuzzy finder written in Go"
   homepage "https:github.comjunegunnfzf"
-  url "https:github.comjunegunnfzfarchiverefstagsv0.61.3.tar.gz"
-  sha256 "0a5837791dd0a9861ff778738ad174b1ad60968d2e196b4333bdcfb55567f37d"
+  url "https:github.comjunegunnfzfarchiverefstagsv0.62.0.tar.gz"
+  sha256 "e5beae86a3d026b2c2cfc165715d45b831b9f337a9e96f711ba3bc3d15e50900"
   license "MIT"
   head "https:github.comjunegunnfzf.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "66d7618610319e2d1b4b9a7d4ebeb240de2357c15819d1797c6bf5b8749b46ef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "66d7618610319e2d1b4b9a7d4ebeb240de2357c15819d1797c6bf5b8749b46ef"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "66d7618610319e2d1b4b9a7d4ebeb240de2357c15819d1797c6bf5b8749b46ef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a3edeab7100be518412947ca1374bb009363f03053e27ff39c61bf475774167c"
-    sha256 cellar: :any_skip_relocation, ventura:       "a3edeab7100be518412947ca1374bb009363f03053e27ff39c61bf475774167c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1459cc64c43472d5934691f020b4a5a2dcfe6cfc58f4c8e9af8937a7fe9e1d0d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af76ab424bb56e5a9db035553cf5ebbb3f3949ace449ac5e8353dbe9776c2336"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "af76ab424bb56e5a9db035553cf5ebbb3f3949ace449ac5e8353dbe9776c2336"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "af76ab424bb56e5a9db035553cf5ebbb3f3949ace449ac5e8353dbe9776c2336"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5187308e01d4ead92385ddfb6e8290d5301fbc0eda01596304a5ba29b960eb3e"
+    sha256 cellar: :any_skip_relocation, ventura:       "5187308e01d4ead92385ddfb6e8290d5301fbc0eda01596304a5ba29b960eb3e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "826ac62a23865713b1360a8ff63e6c3cfdb3f30f6f7d1b516c91799be3d91553"
   end
 
   depends_on "go" => :build

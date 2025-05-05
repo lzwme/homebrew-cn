@@ -1,18 +1,18 @@
 class Carapace < Formula
   desc "Multi-shell multi-command argument completer"
   homepage "https:carapace.sh"
-  url "https:github.comcarapace-shcarapace-binarchiverefstagsv1.3.0.tar.gz"
-  sha256 "0ef69e42b68a421f839afbc433336ccfa761af61347cafec98414117fc363b33"
+  url "https:github.comcarapace-shcarapace-binarchiverefstagsv1.3.1.tar.gz"
+  sha256 "135e51b0cb2bab633de7c82c8e7999d0c2d95e25d5226b2b7db3b10a6ce3dc28"
   license "MIT"
   head "https:github.comcarapace-shcarapace-bin.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c67c3397b14a90d7dcd0667e816a52e54ed59f826376b8bb7981187c2b36f858"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "baf67c0cfa10d58ea7fd9e24a7c2f854d5fcf092afeab61925129c8bec4d609d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e0220e33a22c6c74cc00575db72100a5ad969a7aa63533179164c7c82a40c8e3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0b1e3e0c16bdf062ecc500c6b4c179f0723d078d239c28135421ce3ad8222164"
-    sha256 cellar: :any_skip_relocation, ventura:       "3199ebbf850f55b6557d338b89502cb1c69fcfb633d521fddcccecd9a88f9534"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f91d092ae15b4172c85ee50d981cd8648093b7ca4889f0af8f9cfa43e170a2d8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "03d7a445b8832a5aee95eb471bbbed7a8af9e166eb7f6cd674e48b2d544b05d7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f763ff7b87e7ea24dcfd50a41c092f2be03d0c274b2be21d32ff808cc3d65409"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "656bc0552265aa928535d4ca80996d01e0d66e68f202220306b37888245b31f1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "190c6238545b8b2aed0d68860f931423e1059822f7d48bebdb133953d477e623"
+    sha256 cellar: :any_skip_relocation, ventura:       "c41711df004ef8bc179e76f810df5363ef03d1df8e9c061c3e73425d2320d5ed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e55b78f161f80eee7c0a69a82a0d37c448e0a05359a75c0eb8e9bbf6eddab577"
   end
 
   depends_on "go" => :build
