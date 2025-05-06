@@ -3,19 +3,19 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https:docs.keeper.ioenprivileged-access-managercommander-clioverview"
-  url "https:files.pythonhosted.orgpackages2a49d4bc9bf323153e9de97d763dc872377ca0e4e62d0de18875c44240f7dd74keepercommander-17.0.17.tar.gz"
-  sha256 "c1a51caa8622915ab670455c3c58b99e44ba1d445ce3a0f152559c13243ff2b4"
+  url "https:files.pythonhosted.orgpackagese915800c62255244e49cdce534099480361c27dcd7ba2003cfeaa1fd6bf6a412keepercommander-17.0.18.tar.gz"
+  sha256 "7f94a46a713f25fadbe8d6becad1df142ad03d365b122855f81f3d2891ab7386"
   license "MIT"
   head "https:github.comKeeper-SecurityCommander.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "48006b034c75a3961d8c52a90433f933879ed9f58dba01fca5335b864e18ff8d"
-    sha256 cellar: :any,                 arm64_sonoma:  "b041210c8f0c935805af87d71d82b21ff7921cbb30482e9bd13d8f98ab126690"
-    sha256 cellar: :any,                 arm64_ventura: "b37216a475795d721e91ae9de212d4f6ff738023045f792c0cce4fe187f84c44"
-    sha256 cellar: :any,                 sonoma:        "7deebef9385ad1547bbd952a3ddaf0a57530f185f1bbc392bd15392a7730c9f1"
-    sha256 cellar: :any,                 ventura:       "7090a9b93acc3b6c4340a9c8adb183e23951a30100ad8eb38f1a6348bd9b9f4e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae2e39a0ad5024bd12dace41e8b1da9e35916c28c436eb7cf6f58bb6a6625654"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "615b44c4642013cf36c22a94d8ee7a0a1fea4cf167213468a7b24cc0ed1d3b39"
+    sha256 cellar: :any,                 arm64_sequoia: "8d785f1c5fbd9e803396345751f42e84ab06743bd9242ce78d5232415819114f"
+    sha256 cellar: :any,                 arm64_sonoma:  "6372e7c40a3fcfe70ccc9a1eec51eb0a6fa810a2b8ece07975474e32a287d2e4"
+    sha256 cellar: :any,                 arm64_ventura: "6f9d22ca208b9c443f3e78d40b6b43ba762de953c3cda2d3ff1c1ebf60c05041"
+    sha256 cellar: :any,                 sonoma:        "f7d29973c9850daa170e3a7987408f723c60e400e14672ceb6337b9333de36b6"
+    sha256 cellar: :any,                 ventura:       "38bbc586c05a03dff45f9cb666861ac78996d9e4935c82eea295237e21d82b74"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "918fada16bb8b251a514ab467519fb21a220a7d16081e05cbb755fd34b087cfc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "915908752e6638083e356b5e23cc68036ce9c76542867b37fbb9b010738941ab"
   end
 
   depends_on "pkgconf" => :build
@@ -64,8 +64,8 @@ class KeeperCommander < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https:files.pythonhosted.orgpackagese43389c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12dcharset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "colorama" do
@@ -124,13 +124,13 @@ class KeeperCommander < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackages102eca897f093ee6c5f3b0bee123ee4465c50e75431c3d5b6a3b44a47134e891pydantic-2.11.3.tar.gz"
-    sha256 "7471657138c16adad9322fe3070c0116dd6c3ad8d649300e3cbdfe91f4db4ec3"
+    url "https:files.pythonhosted.orgpackages77ab5250d56ad03884ab5efd07f734203943c8a8ab40d551e208af81d0257bf2pydantic-2.11.4.tar.gz"
+    sha256 "32738d19d63a226a52eed76645a98ee07c1f410ee41d93b4afbfa85ed8111c2d"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackages1719ed6a078a5287aea7922de6841ef4c06157931622c89c2a47940837b5eecdpydantic_core-2.33.1.tar.gz"
-    sha256 "bcc9c6fdb0ced789245b02b7d6603e17d1563064ddcfc36f046b61c0c05dd9df"
+    url "https:files.pythonhosted.orgpackages42fa5f682f3db14e14f7b5b7f5008ac24594b93943d1da4facbacff5876624cfpydantic_core-2.34.1.tar.gz"
+    sha256 "6bf31628ab6d0e7c7c0372419898c52ef0a447b33ab47c7f62053bd013cc5b09"
   end
 
   resource "pyee" do

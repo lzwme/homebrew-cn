@@ -7,10 +7,18 @@ class NlohmannJson < Formula
   head "https:github.comnlohmannjson.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "454afad95687b5bb26a5679ad9cece0c5c97c1b982398a0f627353f2dd13746d"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "df65065eb8504f15f8802b7c681df015a592a68336db7fe290eeeda59fa1e440"
   end
 
   depends_on "cmake" => :build
+
+  # Fix to error: unknown type name 'char8_t' for clang, remove in next release
+  # PR ref: https:github.comnlohmannjsonpull4736
+  patch do
+    url "https:github.comnlohmannjsoncommit34868f90149de02432ea758a29227a6ad74f098c.patch?full_index=1"
+    sha256 "fb4db3640ce333b145b53acc64c78eb3011f57012dc4b9c6689d5d485d2434cd"
+  end
 
   def install
     system "cmake", "-S", ".", "-B", "build",

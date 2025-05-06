@@ -2221,6 +2221,7 @@ Homebrew-homebrew-core/Formula/g/gimme-aws-creds.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gimme.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gimmecert.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/ginac.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/g/girara.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gismo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gist.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gistit.rb, Homebrew/homebrew-core, 1
@@ -2725,6 +2726,7 @@ Homebrew-homebrew-core/Formula/h/hevea.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hevi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hexcurse.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/h/hexd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hexedit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hexer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/h/hexgui.rb, Homebrew/homebrew-core, 1
@@ -6497,6 +6499,7 @@ Homebrew-homebrew-core/Formula/s/swiftdraw.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/swiftformat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/swiftgen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/swiftlint.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/swiftly.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/swiftplantuml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/swig.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/switch-lan-play.rb, Homebrew/homebrew-core, 1
@@ -7458,6 +7461,7 @@ Homebrew-homebrew-core/Formula/y/yconalyzer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/ydcv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/ydiff.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/y/yeet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yelp-tools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/y/yetris.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/y/yewtube.rb, Homebrew/homebrew-core, 1
@@ -14876,6 +14880,7 @@ Homebrew-homebrew-cask/Casks/w/wiso-steuer-2023.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wiso-steuer-2024.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wiso-steuer-2025.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/witch.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/w/witsy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wizcli.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wiznote.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wjoy.rb, Homebrew/homebrew-cask, 1

@@ -5,6 +5,11 @@ class TyposLsp < Formula
   sha256 "a09600b077872574566b267be332c620b41f009c485d50ce122094b51675ef65"
   license "MIT"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ee3915e3e9617c1924eab3c8a911ed61fa53b7206c4e4a4f026ba48584b8b5c0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f78129f30fccbae78d3ea8694bbefb4fbee51929655929a57ad3a59053f2a4e3"

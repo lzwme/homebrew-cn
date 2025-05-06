@@ -1,8 +1,8 @@
 class VulkanTools < Formula
   desc "Vulkan utilities and tools"
   homepage "https:github.comKhronosGroupVulkan-Tools"
-  url "https:github.comKhronosGroupVulkan-Toolsarchiverefstagsv1.4.313.tar.gz"
-  sha256 "2a8d5535e51f134e5e962801bf20d4869d26c34ad1d2f1bf2e30f52426662f5b"
+  url "https:github.comKhronosGroupVulkan-Toolsarchiverefstagsv1.4.314.tar.gz"
+  sha256 "720f10e8e5a8a816e869ab120a094480ba64c5a025822e88c5766c7938a435e0"
   license "Apache-2.0"
   head "https:github.comKhronosGroupVulkan-Tools.git", branch: "main"
 
@@ -12,14 +12,13 @@ class VulkanTools < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_sequoia: "d77809baff114846c59a94825fbb32841a2221687009dbe8493057d5ac7c7377"
-    sha256 cellar: :any, arm64_sonoma:  "346d6fdaf12935b7608e5d0f46790e4057f3fc0873a4172d4edcfa032c6a5984"
-    sha256 cellar: :any, arm64_ventura: "77e9006a4185ed977d4588bd678da97ee3304471c73df9af1ec9765ac70f5deb"
-    sha256 cellar: :any, sonoma:        "2d00bc3761db4630af25f18a32a090544ba3e35ccf64a36cc5324b4b015876eb"
-    sha256 cellar: :any, ventura:       "f0b2f44e87621a77881aa64d150a7cda0b8be5a5ed37ef305cc3de1873b904a2"
-    sha256               arm64_linux:   "b3b9036e53fdef032db347f1849df36c784263770a0ae7fb7e56c53d2cd04211"
-    sha256               x86_64_linux:  "fe9fe5ecca9770e717667cbb3d2d2958f9b25a7fd0d4c8d7eae5fa832cde3538"
+    sha256               arm64_sequoia: "159f11d327656b13876eb551a7c20e60bca06eb58a61f60d4eba18e6b3f96290"
+    sha256               arm64_sonoma:  "b862668fb437539141141610664949281a721b2258c6f2509c8460f15c3976b0"
+    sha256               arm64_ventura: "dd8f35202428007b8bc3bb30ef47bd8aba5e885a920fca449086c1adabec23ad"
+    sha256 cellar: :any, sonoma:        "431a576a4629ebea5065ec1ea774928f413ef4abe9e72769944701cdad25df6e"
+    sha256 cellar: :any, ventura:       "1e7b81a1e4f7f0f8adbfbc45e2e4cdc14caa1f8cd98f6e78fb0b5f5b61c010d1"
+    sha256               arm64_linux:   "3f27b401e0fda20f1d41288ef8009f64ee238c65f1a839d1918debc4b0f400bf"
+    sha256               x86_64_linux:  "85d1364ded0830331760d27e16252b7b962bded67572888e8e4884817351e8b7"
   end
 
   depends_on "cmake" => :build

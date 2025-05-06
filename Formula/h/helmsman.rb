@@ -1,18 +1,18 @@
 class Helmsman < Formula
   desc "Helm Charts as Code tool"
   homepage "https:github.comPraqmahelmsman"
-  url "https:github.comPraqmahelmsmanarchiverefstagsv3.18.0.tar.gz"
-  sha256 "d1c54df207ae876b9e2a1a77cfd703d450871a8d516c5e88baa641c2ca847bfb"
+  url "https:github.comPraqmahelmsmanarchiverefstagsv4.0.1.tar.gz"
+  sha256 "1fd57af9978681f0c148157e5ef7929b5154e6e79bc13c41711892340320254e"
   license "MIT"
   head "https:github.comPraqmahelmsman.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2de3885cb7a17b827660373aa92fbe109be6401057485089181452dbda7fafd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d2de3885cb7a17b827660373aa92fbe109be6401057485089181452dbda7fafd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d2de3885cb7a17b827660373aa92fbe109be6401057485089181452dbda7fafd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "539ad1ff618e53f3c159aa2d79e5c6f7089af120747ba55d35174a9cf497ba54"
-    sha256 cellar: :any_skip_relocation, ventura:       "539ad1ff618e53f3c159aa2d79e5c6f7089af120747ba55d35174a9cf497ba54"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3244639ab2f71fc1507f9f6d95b0bea56b33c37f3ac5821059e38a4d211f4669"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b083ce72a651f9040fcd994a3c2472ea05689e460a1837d793ddd2fae40800ed"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b083ce72a651f9040fcd994a3c2472ea05689e460a1837d793ddd2fae40800ed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b083ce72a651f9040fcd994a3c2472ea05689e460a1837d793ddd2fae40800ed"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a3446b60d03f301e50972b2a38239cc0ffe0a0052bef78ecac9cb892aeacb9f3"
+    sha256 cellar: :any_skip_relocation, ventura:       "a3446b60d03f301e50972b2a38239cc0ffe0a0052bef78ecac9cb892aeacb9f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d40bb6b1568328e315a28aa502c5cbf8b86cb95f493647ff4edd639878f7ba1d"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class Micromamba < Formula
   desc "Fast Cross-Platform Package Manager"
   homepage "https:github.commamba-orgmamba"
-  url "https:github.commamba-orgmambaarchiverefstags2.1.0.tar.gz"
-  sha256 "8e8dd36a6d974a41d3bcd498f0b4f38092b25ed372d954e1721073e49fea9466"
+  url "https:github.commamba-orgmambaarchiverefstags2.1.1.tar.gz"
+  sha256 "789d3d89fe8ca9f06344da21797e3d949ad1ff0ae4c633dc242a333e0ee37485"
   license "BSD-3-Clause"
   head "https:github.commamba-orgmamba.git", branch: "main"
 
@@ -14,13 +14,13 @@ class Micromamba < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e469a3ad98774b0eacb9916f5ae548e4ecf74d97d269ce2559f5e5f4ed5331d9"
-    sha256 cellar: :any,                 arm64_sonoma:  "dedc01f2430fe42bbf1fd340822f66e7e395dbdc6f550351e5d39f5c90a92e48"
-    sha256 cellar: :any,                 arm64_ventura: "ebb69f8955ff511698395a8fee2d0cd20ca3d0b5c55a9c4c320a6e513a9eb8c4"
-    sha256 cellar: :any,                 sonoma:        "b294de2c6b49441b873e3dcd57190f50b46486930ac6363e89d2564d91280632"
-    sha256 cellar: :any,                 ventura:       "8d57f8b6100464476136b52dfbe5e6325074c1fe98d86d3bba9fc5d8bc643f85"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4b29ee28100a8635e8ed2adafaffee96d8495eae164e8f491e109b62cc042e95"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c4fe02950bf7530b824cda25d3a4f5cc905a9bbf997f0ba446d0e5e6b3a5a49d"
+    sha256 cellar: :any,                 arm64_sequoia: "74d15240890ade0f18fc3177f478b15637cd472afa8b07394c658cf318719e51"
+    sha256 cellar: :any,                 arm64_sonoma:  "928e0f64d19adf80b818f62bd1fd62bbeecf751b7c8aaf2ed3cad596f22feb4c"
+    sha256 cellar: :any,                 arm64_ventura: "afdc521ae40b2719038bb2f823dd2aeae29f2228f3dd3cc52222dba2f44740b6"
+    sha256 cellar: :any,                 sonoma:        "a04b81ba206040796ad0bea5aa1a86271b4223e5b56d2c2e7fa7b26e9f7e81f7"
+    sha256 cellar: :any,                 ventura:       "58cb2cf31fddd3bd268c6d7a129beddf92c475d3d10e8dd11ddfbdf05c8b5c55"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3bdda7e4d68b3a7956c17afba45ede0f90c80ad5a406258a815fa216fac1150f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f22521844f3e9957a8be3a860443643ee5a38220163c20b496f083404fe020ce"
   end
 
   depends_on "cli11" => :build

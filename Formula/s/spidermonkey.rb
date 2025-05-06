@@ -1,9 +1,9 @@
 class Spidermonkey < Formula
   desc "JavaScript-C Engine"
   homepage "https:spidermonkey.dev"
-  url "https:archive.mozilla.orgpubfirefoxreleases128.9.0esrsourcefirefox-128.9.0esr.source.tar.xz"
-  version "128.9.0"
-  sha256 "4d04661c6cc0bfdd0f280b62f81d2fb79ab3cbd7f9e8a7b34042db1cf8cc6805"
+  url "https:archive.mozilla.orgpubfirefoxreleases128.10.0esrsourcefirefox-128.10.0esr.source.tar.xz"
+  version "128.10.0"
+  sha256 "2ed83e26e41a8b3e2c7c0d13448a84dbb9b7ed65ed46bc162d629b0c6b071caf"
   license "MPL-2.0"
   head "https:hg.mozilla.orgmozilla-central", using: :hg
 
@@ -15,13 +15,13 @@ class Spidermonkey < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "db275194aae55c6ad899dcd503fa9cfcbe83ab7d2036c38a89e725d6d682a9cc"
-    sha256 cellar: :any, arm64_sonoma:  "0645245b59333c3b37d43f77b4a5fb282c6e15f145876c92b914a67273c84a08"
-    sha256 cellar: :any, arm64_ventura: "a0cbc835ebcbe8b6aa867e5af048866a49b8acb7f3b2289665ff4b9cb188d5f4"
-    sha256 cellar: :any, sonoma:        "8022afa69f75ffe7ef2a78c39a1d5f23bd9ef6376adec1ffda4d94a857d9c553"
-    sha256 cellar: :any, ventura:       "dcd7da79a1f112ec6da877559ca6659428398e906c45b13ff55508c2c0436ae4"
-    sha256               arm64_linux:   "e7db79a78bb287e49640cd91dcaf8d92d8012faa42ddb020b2c9441a0ce65af8"
-    sha256               x86_64_linux:  "29fb66a289f7491ed7a1bce3622f466553a18def7a6e9efcbcdb21c46c0d5eff"
+    sha256 cellar: :any, arm64_sequoia: "569c7777027b310d823bc5896f5d532e094a86d593b3ffc09314a5d22e9248a5"
+    sha256 cellar: :any, arm64_sonoma:  "665877581d3fa3427ea32155d064953973f4a2b09ab33388fbcb1ddc39c1a560"
+    sha256 cellar: :any, arm64_ventura: "2a2327b2632c6983d31d24aa0b3c459e76ee013e592899439f404fe518f04531"
+    sha256 cellar: :any, sonoma:        "f5189cd635d68aab759c592857a2943c2ce267424a773b76c4adca4804ccfd93"
+    sha256 cellar: :any, ventura:       "a840fa0921a3982e6e841fff50e1005d258f5629aaa019e769f23ca90d5bf2b5"
+    sha256               arm64_linux:   "56b07590e3d88ed4d294611fdfb4750116786054892ede06b0707425a664085e"
+    sha256               x86_64_linux:  "12aede2307a06ac46be308115ed889af04ce6d124472e13f7ef02008cbce7c52"
   end
 
   depends_on "cbindgen" => :build
@@ -54,6 +54,10 @@ class Spidermonkey < Formula
       sha256 "0f1cd5f80b4ae46e614efa74a409133e8a69fff38220314f881383ba0adb0f87"
     end
   end
+
+  # Fix to find linker on macos-15, abusing LD_PRINT_OPTIONS is not working
+  # Issue ref: https:bugzilla.mozilla.orgshow_bug.cgi?id=1964280
+  patch :DATA
 
   def install
     # Workaround for ICU 76+
@@ -114,3 +118,27 @@ class Spidermonkey < Formula
     assert_equal "hello", shell_output("#{bin}js #{path}").strip
   end
 end
+
+__END__
+diff --git abuildmoz.configuretoolchain.configure bbuildmoz.configuretoolchain.configure
+index 264027e..2e073a3 100644
+--- abuildmoz.configuretoolchain.configure
++++ bbuildmoz.configuretoolchain.configure
+@@ -1906,7 +1906,16 @@ def select_linker_tmpl(host_or_target):
+                 kind = "ld64"
+ 
+             elif retcode != 0:
+-                return None
++                # macOS 15 fallback: try `-Wl,-v` if --version failed
++                if target.kernel == "Darwin":
++                    fallback_cmd = cmd_base + linker_flag + ["-Wl,-v"]
++                    retcode2, stdout2, stderr2 = get_cmd_output(*fallback_cmd, env=env)
++                    if retcode2 == 0 and "@(#)PROGRAM:ld" in stderr2:
++                        kind = "ld64"
++                    else:
++                        return None
++                else:
++                    return None
+ 
+             elif "mold" in stdout:
+                 kind = "mold"

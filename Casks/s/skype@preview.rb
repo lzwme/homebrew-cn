@@ -1,16 +1,13 @@
 cask "skype@preview" do
-  version "8.138.76.214"
-  sha256 "8f673137754009139ebe44ab844ef9712091af552bb8b6896ddc6c77028fde0b"
+  version "8.150.76.125"
+  sha256 "087789265cb1d2947032613358b274c73ddafd87b3e65fce033b23e301621e90"
 
   url "https://download.skype.com/s4l/download/mac/Skype-#{version}.dmg"
   name "Skype Preview"
   desc "Video chat, voice call and instant messaging application"
-  homepage "https://www.skype.com/en/insider/"
+  homepage "https://www.skype.com/"
 
-  livecheck do
-    url "https://get.skype.com/go/getskype-skypeformacinsider"
-    strategy :header_match
-  end
+  deprecate! date: "2025-05-05", because: :discontinued
 
   auto_updates true
   conflicts_with cask: "skype"

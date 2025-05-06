@@ -1,18 +1,18 @@
 class Tfupdate < Formula
   desc "Update version constraints in your Terraform configurations"
   homepage "https:github.comminamijoyotfupdate"
-  url "https:github.comminamijoyotfupdatearchiverefstagsv0.9.0.tar.gz"
-  sha256 "d53edee3a1146bf4f76dc3a184817da6099bae58572c0344bc90bba59638c119"
+  url "https:github.comminamijoyotfupdatearchiverefstagsv0.9.1.tar.gz"
+  sha256 "0d9820f93f9f80c17e01da8bd3f4256642e93c86a1356b5d4418cb93797ec95d"
   license "MIT"
   head "https:github.comminamijoyotfupdate.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "758383e3b5dc2d5986f94bfd918454622c952950d1bf80bdba7d389dbf854859"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "758383e3b5dc2d5986f94bfd918454622c952950d1bf80bdba7d389dbf854859"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "758383e3b5dc2d5986f94bfd918454622c952950d1bf80bdba7d389dbf854859"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a97263cf53d5059a724cb3825ef2ef9a7b497aab9d90828786500911aa786f6f"
-    sha256 cellar: :any_skip_relocation, ventura:       "a97263cf53d5059a724cb3825ef2ef9a7b497aab9d90828786500911aa786f6f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a9a59de4820aed2f0c7b73a3674446d027c1f1e28ca6fea036ca7670f5023713"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00d282c53811c76412b0e2b70e46ebed61000da5ad00626b685746c4c5c751bb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00d282c53811c76412b0e2b70e46ebed61000da5ad00626b685746c4c5c751bb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "00d282c53811c76412b0e2b70e46ebed61000da5ad00626b685746c4c5c751bb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e64ef15ad842060603995ea401b5c2076fecc986a847ce0561f37c786e956e09"
+    sha256 cellar: :any_skip_relocation, ventura:       "e64ef15ad842060603995ea401b5c2076fecc986a847ce0561f37c786e956e09"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "76812d8345297e0e89375753cff0dee7a3b1def82bd9b8e7c41caa9f15e2ae99"
   end
 
   depends_on "go" => :build

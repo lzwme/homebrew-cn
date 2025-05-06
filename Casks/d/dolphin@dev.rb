@@ -1,6 +1,6 @@
 cask "dolphin@dev" do
-  version "2503-253,97,82"
-  sha256 "f33668269938ccfc8d90eb73ff83b65d78f41ba1f93f731473d5320f73e59e68"
+  version "2503a-448,00,15"
+  sha256 "546dff254e90bd0ee2289410449d79eb95b1e978cfa06815bbe69ced9b7aeec4"
 
   url "https://dl.dolphin-emu.org/builds/#{version.csv.second}/#{version.csv.third}/dolphin-master-#{version.csv.first}-universal.dmg"
   name "Dolphin Dev"
@@ -9,7 +9,7 @@ cask "dolphin@dev" do
 
   livecheck do
     url "https://dolphin-emu.org/download/"
-    regex(%r{href=.*?/builds/([^/]+?)/([^/]+?)/dolphin[._-]master[._-]v?(\d+(?:[.-]\d+)+)-universal\.dmg}i)
+    regex(%r{href=.*?/builds/([^/]+?)/([^/]+?)/dolphin[._-]master[._-]v?(\d+[a-z]?-\d+)-universal\.dmg}i)
     strategy :page_match do |page, regex|
       page.scan(regex).map { |match| "#{match[2]},#{match[0]},#{match[1]}" }
     end
@@ -19,7 +19,7 @@ cask "dolphin@dev" do
     "dolphin",
     "dolphin@beta",
   ]
-  depends_on macos: ">= :catalina"
+  depends_on macos: ">= :big_sur"
 
   app "Dolphin.app"
 

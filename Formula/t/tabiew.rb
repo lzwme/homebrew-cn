@@ -1,18 +1,18 @@
 class Tabiew < Formula
   desc "TUI to view and query tabular files (CSV,TSV, Parquet, etc.)"
   homepage "https:github.comshshemitabiew"
-  url "https:github.comshshemitabiewarchiverefstagsv0.9.0.tar.gz"
-  sha256 "e08655344fa0cd45d2ca367b2a4601e9aabdb7e0d6e43c508ed4e577f109dc5c"
+  url "https:github.comshshemitabiewarchiverefstagsv0.9.4.tar.gz"
+  sha256 "4b466e72a17e9dc9d8cf59a92398eba1fde361932bc644c2c1badc937fba0e44"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "487d084a5d36fbed5a8736d35b2629f0925ec90d3c13744a97c651166d7ae895"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "993301b3d8eb8428a49d541253ecc30e8d6754b2ec12e6004bb79af5c0b42b20"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7f5bcf49932c9f900ef75a18805bb80c22f4f920bafc673178cdb7893a244f7b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fae687e3e9557f7e7ed2db4dc57e38415271813c37d89cd25486009500dd3af7"
-    sha256 cellar: :any_skip_relocation, ventura:       "956bea50207efa3b035a8b19062db79b6f34b6d60e6955f3cfba622708ff39f7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7173700335e2042784b22d4047a6b004873631a36420c248f0b4b7dd143951fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a1fa8f19e6039bdff2cf4746150849b6a24e2eaf1c30f178f134869bdcd1f950"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ef11e7b97169d0843d91ea84cb2508720d5e14ea4244a273d1c8da823bd5b316"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6086e407d6e3e6f7fb00972c1e2b03d4b5c83e5eff56ca851d45f4c213bc981b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "dbc553069a5738242f2d8d592b758d8219f7a01fe6b9680845015884930d6389"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eceae1ef2d389972a3ef414b3bc0dc8f565e7bb93aa8c91d7e953ac0718525ea"
+    sha256 cellar: :any_skip_relocation, ventura:       "afd72e67da0dcf5fd93fc5260ef97fd7d4301269c7c0d54cff82767d3bcc1b38"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "67ac5f2c7b85568c6c5ef28a79079e159c926c89908460ded52d7e007f932b29"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd5507813514018a791c355965e06f1b0f2fe79abec74158bfc3eab5d3591562"
   end
 
   depends_on "rust" => :build

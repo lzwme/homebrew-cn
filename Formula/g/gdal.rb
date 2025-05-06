@@ -4,6 +4,7 @@ class Gdal < Formula
   url "https:github.comOSGeogdalreleasesdownloadv3.10.3gdal-3.10.3.tar.gz"
   sha256 "e4bf7f104acbcb3e2d16c97fd1af2b92b28d0ba59d17d976e3ef08b794f4153b"
   license "MIT"
+  revision 1
 
   livecheck do
     url "https:download.osgeo.orggdalCURRENT"
@@ -11,13 +12,13 @@ class Gdal < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "61e44e1dc8e4fb42d6566dbd4251e7a3e28d626eac6717e5454dd233c86b4c73"
-    sha256 arm64_sonoma:  "29686ee9fb3a1ccb084a0442bad88a1eb3ba14445cf3fc10bad1b2fe02d02a02"
-    sha256 arm64_ventura: "63f4c6d204508fc99e3b72d3ec8e2a809e8a64e3f0ce059061d09f41cd21a765"
-    sha256 sonoma:        "a10bf4b044aacb747ae72cba522ab233d9e04209f64ce84b1ba06ff5a87050f5"
-    sha256 ventura:       "b84a74e8baac0b1c33cb620eb738ef129d6ab3f6a1c7094beb9a3b82d68e5a6f"
-    sha256 arm64_linux:   "301963c3591c9de26d042a882da185d1061a414f518b3a41b710519ef29920c8"
-    sha256 x86_64_linux:  "2aef33b159f2ef43dde255e78bd56ffcecc16ce6ea721286a0e5f3f1b561718c"
+    sha256 arm64_sequoia: "d8bf0145143b711d255fe24ef0ee16b4031fe941422ef51e40f06d62e66a8c04"
+    sha256 arm64_sonoma:  "84312cacf61001e653860c5d1fd0296f7b5f22ce63628bb59022e18b32350e4f"
+    sha256 arm64_ventura: "cbc3283d71933e6178dc7950f4a0f1a6acc3d11cd9375a67cc1af6642b49fad5"
+    sha256 sonoma:        "5ac2efe52ef44082ba7f28b4cb04bab423d726560840decabede12c582c90540"
+    sha256 ventura:       "9c39515965393eb412c6de20c8c15cd466d7045b98ec6831bf98138d432013df"
+    sha256 arm64_linux:   "096541320ef8452d6344521fa223415da04cb678b6fe7a2072be3df6938258e1"
+    sha256 x86_64_linux:  "d980437bd277bd249444110d89816ca7368bfaf350accd21c9620232ed1be783"
   end
 
   head do
@@ -25,7 +26,7 @@ class Gdal < Formula
     depends_on "doxygen" => :build
   end
 
-  depends_on "boost" => :build # for `libkml`
+  depends_on "boost" => :build
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "python-setuptools" => :build
@@ -87,6 +88,13 @@ class Gdal < Formula
 
   conflicts_with "avce00", because: "both install a cpl_conv.h header"
   conflicts_with "cpl", because: "both install cpl_error.h"
+
+  # Fix for Poppler 25.05.0, remove in next release
+  # ref: https:github.comOSGeogdalissues12269
+  patch do
+    url "https:github.comOSGeogdalcommita689e2189ff0a464f3150ed8b2dd5a3cc1194012.patch?full_index=1"
+    sha256 "b3eefe691d6f74c9128aed4c558b8c5d2122a56a93acbf5b424ca67e743c4fb9"
+  end
 
   def python3
     "python3.13"
