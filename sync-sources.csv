@@ -7822,6 +7822,7 @@ Homebrew-homebrew-cask/Casks/a/aptakube.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aptanastudio.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aptible.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aqua-data-studio.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/aqua-voice.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aqua.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/aquamacs.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aquaskk.rb, Homebrew/homebrew-cask, 1
@@ -9796,9 +9797,11 @@ Homebrew-homebrew-cask/Casks/font/font-f/font-funnel-sans.rb, Homebrew/homebrew-
 Homebrew-homebrew-cask/Casks/font/font-f/font-fustat.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-f/font-fuzzy-bubbles.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-f/font-fzfangsong-z02.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-f/font-fzhei-b01.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-f/font-fzkai-z03.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-f/font-fzshusong-z01.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-f/font-fzxiaobiaosong-b05.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-f/font-fzxiheii-z08.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-ga-maamli.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-gabarito.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-gabriela.rb, Homebrew/homebrew-cask, 1
@@ -14795,7 +14798,7 @@ Homebrew-homebrew-cask/Casks/w/warzone-2100.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wasabi-wallet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/watchfacestudio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/waterfox-classic.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/w/waterfox.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/w/waterfox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wave.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wavebox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/waves-central.rb, Homebrew/homebrew-cask, 0

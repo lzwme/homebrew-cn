@@ -3,19 +3,18 @@ class Cekit < Formula
 
   desc "Container Evolution Kit"
   homepage "https://cekit.io"
-  url "https://files.pythonhosted.org/packages/c6/b0/12fffe7912cf673213a7422353e167b8d6415cce82a20005e5b63d9a465a/cekit-4.14.0.tar.gz"
-  sha256 "ccfd56a3cf7140e448b8a22a1357a300fc662480854b5bd70c6f74c2530b22fa"
+  url "https://files.pythonhosted.org/packages/19/bf/e6f731ca9eae441dbf08d4af91ed3fc76eb021f1e5870dff3692936bb50b/cekit-4.15.0.tar.gz"
+  sha256 "3ced63835728e6fe43c63583ca0b1a45e65b573230ec9cb73dcd3aa9aa0a5aa9"
   license "MIT"
-  revision 2
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4a1518ee5e13fcc8ae641c9ffc7096e710a422bb30ad27fa0f65a85a252736ed"
-    sha256 cellar: :any,                 arm64_sonoma:  "34c477344da4a29dc877e6d5bb7ddcb3faf509a97482fb08f33ba855bfd3fc1e"
-    sha256 cellar: :any,                 arm64_ventura: "5098418cc8c2be7af41bce2d92bc76e567b64c80e0a1b8e30f054a264e76c97e"
-    sha256 cellar: :any,                 sonoma:        "ec3643fb30c0ca346a766f69f36088cdfd593107b47f7eaa1c8869ca254e7925"
-    sha256 cellar: :any,                 ventura:       "ec047824bb4408fef35ba39b4d45f68f2a740e3f7c35f3f42155f68d6911274b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a674b30a1129830c24efa7b555f6b4076e914fc66ff44341533869579b51e7b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "67284c9fa4386de681b41502d3d5257d3b370f8ec5beb84cba9aff62e79764a5"
+    sha256 cellar: :any,                 arm64_sequoia: "b8b3f0bbe83f0c8a5aa1074e8d0c0eb203b9984cca78a2c33d131a23d55344e5"
+    sha256 cellar: :any,                 arm64_sonoma:  "edd7964819caef1448222ace74fcd6662bfaaa86b217f6d4a2ea375d68743819"
+    sha256 cellar: :any,                 arm64_ventura: "11b5a994c414eb5da1d067ceff2d0e39e9283ac76c483aefca3e0e28a6e930e3"
+    sha256 cellar: :any,                 sonoma:        "3bbd6a4ccd41e14f74656f9955f6a1e9e35a4fe6e5149d524be0acd7f1839e03"
+    sha256 cellar: :any,                 ventura:       "7f260afdeb6c019731fad22987af4f1d58669b7d9148dccc501766a05c09c150"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ce6285077882bc971758f48c71d22202d3bcdf105cc923daea26f1ad5037d82"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "071761f34a39ecb8ce7b7a806b5cd29b47a01402bf57c29ad376d3835d294d6d"
   end
 
   depends_on "libyaml"
@@ -47,8 +46,8 @@ class Cekit < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d0/63/68dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106da/packaging-24.2.tar.gz"
-    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
+    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
+    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
   resource "pykwalify" do

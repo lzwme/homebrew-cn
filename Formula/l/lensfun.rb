@@ -22,14 +22,14 @@ class Lensfun < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 arm64_sequoia: "b11389793a1b5d34f1420828bc81943759514f949ae510f2517381a0835eade2"
-    sha256 arm64_sonoma:  "abe73b9700f9b79b47be86862fa30ab8f9bd28050a84495cea82654191dd878b"
-    sha256 arm64_ventura: "134398b4f3462fb1a3c1ba2c182ed7d1e67fba33822d41a17b0563433967d57c"
-    sha256 sonoma:        "25ea14bd0c3af9e42ee0ead1a985340953baabd0ba7c717bab21fe5b41600351"
-    sha256 ventura:       "fc6ec16c5ac0490fc08b5a7e4d3dee5d9c26b0a77129a957f6cd8b103673fb77"
-    sha256 arm64_linux:   "516322774ac5d8ad2aab3c5a95c60b0409bac8c24c4fb66bd55cf602eb335560"
-    sha256 x86_64_linux:  "acc1c2555c69186e8137edf8435a7341f2b2f3b237c2c8e561deef5cd3f83421"
+    rebuild 4
+    sha256 arm64_sequoia: "19e6455ae24f5deb3f96089c18cf11b77f4fc3d03ca77761e2985d33aeea3e63"
+    sha256 arm64_sonoma:  "06508767287b05cd51b631ea7b6c4d01b3176ba7cbe14412b79df9f3c47dd252"
+    sha256 arm64_ventura: "e54fe0c3f77d0a79a0d9b6850807db5ce3ce136790d4947bda4420e2c4f0596a"
+    sha256 sonoma:        "33b45fe0015b3aa498efbd6d83557352f1646750e6fa137e611d10c56329c14f"
+    sha256 ventura:       "79f780f2be84affa0ec87493db70a520cfd2e675c7c3ecc4f001c16f66bef454"
+    sha256 arm64_linux:   "59a7a77209ba18eb6b81d5965159eb16ff10b83ed6ac49e2afce1118a4b1f2ab"
+    sha256 x86_64_linux:  "c668142f49f3abd0b1dcbfd48d6dbe43ea7faaf69ff2462cb5bbfafba1f060c4"
   end
 
   depends_on "cmake" => :build
@@ -58,7 +58,11 @@ class Lensfun < Formula
       s.gsub!(^\s*INSTALL\(CODE "execute_process\(.*SETUP_PY, "#\\0")
     end
 
-    system "cmake", "-S", ".", "-B", "build", "-DBUILD_LENSTOOL=ON", *std_cmake_args
+    args = %W[
+      -DBUILD_LENSTOOL=ON
+      -DCMAKE_INSTALL_RPATH=#{rpath}
+    ]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
     rewrite_shebang detected_python_shebang, *bin.children

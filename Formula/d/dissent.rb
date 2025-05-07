@@ -1,19 +1,19 @@
 class Dissent < Formula
   desc "GTK4 Discord client in Go"
   homepage "https:github.comdiamondburneddissent"
-  url "https:github.comdiamondburneddissentarchiverefstagsv0.0.33.tar.gz"
-  sha256 "1ea88cd525836d2e9f206c9d00aa3451ec6074590444d0f038eebd85f360b5ff"
+  url "https:github.comdiamondburneddissentarchiverefstagsv0.0.34.tar.gz"
+  sha256 "54b437cd2ae63c32cf3fa71d4da327c32de949c68911685031c96752d89b2d1a"
   license "GPL-3.0-or-later"
   head "https:github.comdiamondburneddissent.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "af1b646f9f20853dafa84a7a6aac667aef88e152ab8f99876aef4f97b09e729d"
-    sha256 cellar: :any,                 arm64_sonoma:  "974e77c38894c01ecf57f2e3858feb165a57e98de9fff160f01f1994568321a6"
-    sha256 cellar: :any,                 arm64_ventura: "41ae0e4ac1bc67da0eb165c2a4035f23c53daa0261da76cd9397b276ff09661f"
-    sha256 cellar: :any,                 sonoma:        "e3a1010c05ca2f66312d26aa921c19d588448d5d8c4974b88dde7bc156a897d8"
-    sha256 cellar: :any,                 ventura:       "1173d5f1e1d9def3ccb8d4f6b1006324f1059a438e4ac5e0bf20e0c90277ac3a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1db665ec66c2e15621119579677df78d88c27b67f0f972458998d9432326f7c0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d44ed9208399dea38391491ee9ceb550cb273cb8e9c1f5f85ae510fbccdb723b"
+    sha256 cellar: :any,                 arm64_sequoia: "a582ef1d6ea47394a7b6df4d265e629b6e2d26386c871b0e6724f5950be562f6"
+    sha256 cellar: :any,                 arm64_sonoma:  "f79f724350eca02175363cb382661f0cb5381aee973190cdc269c11b5cff1e7c"
+    sha256 cellar: :any,                 arm64_ventura: "4e97c313bbf20d57a379d1642a9023f9a94531893fa61b2954c3f4542ea77e51"
+    sha256 cellar: :any,                 sonoma:        "f26bc3ae384baa5f76c3caeb13048b93cdd3702ed253c56c3bbad593b7b4e7fc"
+    sha256 cellar: :any,                 ventura:       "5159ff05405959dd2c6e70a1cbe5ad062c3258e9cb26143457e02680a112bf7b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a17aa8c1d8575302b2da4ba7b6457f325be94d4d6362536b6e7374f12d98f221"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00f1c7ed586d1e26fc81daf2beac7d88287a9f7abdbe496ad602acd601d31afb"
   end
 
   depends_on "go" => :build

@@ -3,22 +3,21 @@ class Jupyterlab < Formula
 
   desc "Interactive environments for writing and running code"
   homepage "https:jupyter.org"
-  url "https:files.pythonhosted.orgpackagesf6553ef7e6bfe988d7df3d453cc27912846d50590c90790848594f7228c89569jupyterlab-4.4.1.tar.gz"
-  sha256 "c75c4f33056fbd84f0b31eb44622a00c7a5f981b85adfeb198a83721f0465808"
+  url "https:files.pythonhosted.orgpackagesf43c12a8b27ff2c3b4005bbb5e11c7747246965776d2b821193e53ffd61f1332jupyterlab-4.4.2.tar.gz"
+  sha256 "afa9caf28c0cb966488be18e5e8daba9f018a1c4273a406b7d5006344cbc6d16"
   license all_of: [
     "BSD-3-Clause",
     "MIT", # semver.py
   ]
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "25bba2f9f638353497806d63a12044ac10b3eec4c3924ebb35c177c59c9f6efc"
-    sha256 cellar: :any,                 arm64_sonoma:  "ccb2412d1c3727dd88874535771fb4d4a6905e8b51907a642e2fb3ace26d1e78"
-    sha256 cellar: :any,                 arm64_ventura: "4306939505cd3748c71086c5eafa2aded139082df8d7f1cd7dce901223492154"
-    sha256 cellar: :any,                 sonoma:        "4783a3874cf1f320f0dfd54f28b4cbe590998b69c97013da8ec3340513394bfa"
-    sha256 cellar: :any,                 ventura:       "1a20748e122d856a2b37265ff15ed040d62d2808fdd8aaab7513095e82ef0b30"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "45d3759e25b484909592326b150fee867f5ebc93e346118954dc712797a22985"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37b7754ddeefbddf4bd1ddbe68b07f5bb883cb9983ff54c0a90d81c1524b4399"
+    sha256 cellar: :any,                 arm64_sequoia: "ac07cfbd54eeb2639c0879eb6bc1d5d4ab2d920795cb445695f3f0e743396485"
+    sha256 cellar: :any,                 arm64_sonoma:  "5642e10aa0bd2ca49057c7c4fde5f7b64471352deb805004ddc2470a70697184"
+    sha256 cellar: :any,                 arm64_ventura: "8e27bc172a0781d0da8c04397fb9d93cf15b05d9f1b6bcce54102817b0fc6243"
+    sha256 cellar: :any,                 sonoma:        "b1caaa2c44246e66228dde57c32f5b6081af922dc9bc23deff5c63f633546b0e"
+    sha256 cellar: :any,                 ventura:       "6be28bd343d4c18caab8af90ef6ee73254d5576be4debe00d6b2b7ad8dbe173e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2b0cf21eff4deafd6444007ab9887ef068ac1b1087b254f32e7e97aedabc5f7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7812ef354c0408112c7e8152a67561fe5d2b45e9b0c5ac02a7dba1a212ede01e"
   end
 
   depends_on "cmake" => :build # for ipykernel
@@ -96,8 +95,8 @@ class Jupyterlab < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https:files.pythonhosted.orgpackagese43389c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12dcharset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "comm" do
@@ -436,8 +435,8 @@ class Jupyterlab < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesbb71b6365e6325b3290e14957b2c3a804a529968c77a049b2ed40c095f749707setuptools-79.0.1.tar.gz"
-    sha256 "128ce7b8f33c3079fd1b067ecbb4051a66e8526e7b65f6cec075dfc650ddfa88"
+    url "https:files.pythonhosted.orgpackages70dc3976b322de9d2e87ed0007cf04cc7553969b6c7b3f48a565d0333748fbcdsetuptools-80.3.1.tar.gz"
+    sha256 "31e2c58dbb67c99c289f51c16d899afedae292b978f8051efaf6262d8212f927"
   end
 
   resource "six" do
@@ -481,8 +480,8 @@ class Jupyterlab < Formula
   end
 
   resource "trove-classifiers" do
-    url "https:files.pythonhosted.orgpackages52dbcd8510702ed0ac1215e960ab3511a7f5750d63b56f2ae94d94fb4a6425aftrove_classifiers-2025.4.11.15.tar.gz"
-    sha256 "634728aa6698dc1ae3db161da94d9e4c7597a9a5da2c4410211b36f15fed60fc"
+    url "https:files.pythonhosted.orgpackagesdc81a43db75173e49b1204d2a826b2a3a0e2dee45fb0d9abfac2ce1ff928eebftrove_classifiers-2025.5.1.12.tar.gz"
+    sha256 "28d24c3d043dc6b0459813d6bf4a231e788509b55ee3d54ba08ce72638031182"
   end
 
   resource "types-python-dateutil" do

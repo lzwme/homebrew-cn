@@ -4,15 +4,16 @@ class Garble < Formula
   url "https:github.comburrowersgarblearchiverefstagsv0.14.2.tar.gz"
   sha256 "aea6e0a172296b50e3671a9b753aeb2eb7080a3103575cdf5e4d1aeccfe14ede"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comburrowersgarble.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5715a8ccc015d8152d67195f34d15a4095b4f9468ae466553935a3d2c759a47"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5715a8ccc015d8152d67195f34d15a4095b4f9468ae466553935a3d2c759a47"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b5715a8ccc015d8152d67195f34d15a4095b4f9468ae466553935a3d2c759a47"
-    sha256 cellar: :any_skip_relocation, sonoma:        "824f09b76e9b67cf156efb2921ee6b41bb5797dad8f1b21832eedf337ed84b6a"
-    sha256 cellar: :any_skip_relocation, ventura:       "824f09b76e9b67cf156efb2921ee6b41bb5797dad8f1b21832eedf337ed84b6a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c375abc7794717bb46c545ddef748afa6fc7ce49ce28de8148219a4d855eeba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5ec2f692cb8fa1413dd70e4adb73a9379c177ad67d83c5edc6223022116420f7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5ec2f692cb8fa1413dd70e4adb73a9379c177ad67d83c5edc6223022116420f7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5ec2f692cb8fa1413dd70e4adb73a9379c177ad67d83c5edc6223022116420f7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "932cad6102367a29f5092455a7859df9f69251ddc1f82c5af7ae9f37f830835f"
+    sha256 cellar: :any_skip_relocation, ventura:       "932cad6102367a29f5092455a7859df9f69251ddc1f82c5af7ae9f37f830835f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "202e90501c53fe9f6f324a7175d2087d0113e69d012219acaed1a4dcdac26498"
   end
 
   depends_on "go" => [:build, :test]

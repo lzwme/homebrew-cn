@@ -2,19 +2,18 @@ class Licensed < Formula
   desc "Cache and verify the licenses of dependencies"
   homepage "https:github.comgithublicensed"
   url "https:github.comgithublicensed.git",
-      tag:      "v5.0.3",
-      revision: "07e05e4ab0d3a37002fa3f5481d8eea2b6773a21"
+      tag:      "v5.0.4",
+      revision: "6f7a4675fdf69647f524af3facd1d55f6f221d46"
   license "MIT"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "cb189f00717815eb7cd358d8603d4008e91cb1047dc0604d6f8f253aae1fcbcb"
-    sha256 cellar: :any,                 arm64_sonoma:  "0167c167c1ac279e9735adc4864a9ab8978702a326be96bc23f0b40d93415737"
-    sha256 cellar: :any,                 arm64_ventura: "4e6c68f31865a1ac339d1730878f7ccabf33c70c357e08ab4e9e9ff06890b388"
-    sha256 cellar: :any,                 sonoma:        "8564ba1c4dce1b01f0d7c811eac8e293ce19d9a3a8cfe9e65f42751986526bd2"
-    sha256 cellar: :any,                 ventura:       "aad512a1dae9361fb9dbae9e8b8bd8bab6e7eafe1664020987f2dab9ede03f65"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "565013cb22616f165a7eaa3740f2147af27489ceb8a6b73052d4142e28cbbed9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a715d7f6162abe6cc149eba6ee44f5230b42c53f8bebbd81c3cc370ae3ab0a3e"
+    sha256 cellar: :any,                 arm64_sequoia: "543bec232b40015977c4333399b598789a8f9ac60b7595ba6e7b807d03d81c67"
+    sha256 cellar: :any,                 arm64_sonoma:  "3467c73fc50b835d6b2b3796690358f82dc32f32cb62a1aadcf7efe457593151"
+    sha256 cellar: :any,                 arm64_ventura: "7682dce3e7873abeb6fac39d330cfbc31fa42f2624dd9f5ab61975aa593d15d1"
+    sha256 cellar: :any,                 sonoma:        "3e4f67c15d5a96ca3902b719b31fd71ffe667f73ff988a76dba79f3619ef8f78"
+    sha256 cellar: :any,                 ventura:       "0b4aa564d2e769211cd7cf49606b5742b31c518c2c4a4e70d00c683452e19dff"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "698bdaab6300aac978818d9eb3df3bf2572b6bc37d5406ff0c50a279de70e421"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c9220f30c3818fae859fc15e013631c34d0fef0ea2bec69116b5bbc9d5eeffc"
   end
 
   depends_on "cmake" => :build

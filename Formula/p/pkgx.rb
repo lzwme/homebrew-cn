@@ -1,19 +1,19 @@
 class Pkgx < Formula
   desc "Standalone binary that can run anything"
   homepage "https:pkgx.sh"
-  url "https:github.compkgxdevpkgxarchiverefstagsv2.6.tar.gz"
-  sha256 "770944fd946fef2e365d18568335483156ceefa4950ffb9d7b8f98dd2f3fe12e"
+  url "https:github.compkgxdevpkgxarchiverefstagsv2.7.tar.gz"
+  sha256 "479897abc6d51df25bda10b98ab6efef8424cb14bfd3003148d55216e6ca353b"
   license "Apache-2.0"
   head "https:github.compkgxdevpkgx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "923bc9ae340efadb04b0a3d11bfcf231769109500341b2843e9a0330a991ad65"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32b3e4e51dc56a216237e505b9b325a3e7a4e6602cde0a298b90d2c6d66c9340"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "15fd4c5304966170b25ffb6e9537c56353a6a2a0a45697a32caf42f52a39e0ef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e2ac0f44c237dcc86562ef681fac91b8e652b62a6bc746b528a050d60c050f32"
-    sha256 cellar: :any_skip_relocation, ventura:       "c7e3c780179e1fe78f0aa8ac11dcd9d411778aab8b70ffc833965c355688c774"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c40b27661351d6658c376bd9bdb8a8020181488a552c7891f54add9f22f972eb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ac20c4d3fb53c43c9a2ee8f2551cf1d219bf9acfcf5f1de9308c123a84ac2dbe"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d54923e20f0940729bec3cda7d4d597ea3b5535776e8aaaffa76927a5d83fdf4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d02236c3096e6cb1755fe79a4f35002f20afd3ec72debc05c5e23c85e287c81f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c74465ddc16dded699648b040ec1d7a7d45bd1d0ed5f3fb64c2155379f1d5372"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8b4a08f77e540968ad06d9910b56f2aeaf3e95a8e9eb62a71f6ca5047f7eea5d"
+    sha256 cellar: :any_skip_relocation, ventura:       "a8931040aed065d0d8374df553904f6da327fdc3b6b22b0516893de41447bef6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d2bf05af625f05d00d025bf90f48d195a3ad1e78f514cb000827260a18aeed11"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cdeed2e0e4c6d5943a8edacddbe544ac18eb1a6fd7024d7d476cdf5342ae1afb"
   end
 
   depends_on "rust" => :build

@@ -3,8 +3,8 @@ class Spades < Formula
 
   desc "De novo genome sequence assembly"
   homepage "https:ablab.github.iospades"
-  url "https:github.comablabspadesreleasesdownloadv4.1.0SPAdes-4.1.0.tar.gz"
-  sha256 "997b066e157efd079f8c63229df85a9c7b81c3f626059a68669283049ab175f9"
+  url "https:github.comablabspadesreleasesdownloadv4.2.0SPAdes-4.2.0.tar.gz"
+  sha256 "043322129f8536411f1172b7d1c9adfcb6d49d152c10066ccc03e86b6f615a6b"
   license "GPL-2.0-only"
   head "https:github.comablabspades.git", branch: "next"
 
@@ -14,13 +14,13 @@ class Spades < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "69a44601e2610d74f2e6ee13f6d0046a36985f3c54d9c0d137e34f9db584a512"
-    sha256 cellar: :any,                 arm64_sonoma:  "f507fb31ec2fb29fff6536c3822f534cbd54784c0328392ed01280cbf7d092f9"
-    sha256 cellar: :any,                 arm64_ventura: "72a0885601ba7ccd4d33d012a87717d7ac534cabe4038934edf78d85327fe222"
-    sha256 cellar: :any,                 sonoma:        "d7aeb7950ae594ee222349482647583010a62d4a081d444b26b0a49e7987fcee"
-    sha256 cellar: :any,                 ventura:       "d62717c7f424bb42fd57d6c435c39b14ae141fb0e410e391d25146042d64a5f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "12f639676a23ffde4853d73d6befda35a38bbc02e919dc44cd09e55159b2273e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7316228bf8b38afeaf0ea84a3010d973f4650f5e0a71d024d7e009c92f17e26a"
+    sha256 cellar: :any,                 arm64_sequoia: "b503ed91438f312640cda43473783ba4f5499ff5c88574c58dbb0e0c07a139bf"
+    sha256 cellar: :any,                 arm64_sonoma:  "fe494b9af479c627902b8e2508244b3cca845e9254ae7e2e64451c07ee606dc7"
+    sha256 cellar: :any,                 arm64_ventura: "9b267ce7d7d6819ea3b8cfc0b62035581ebfa11db19ae9746c00e701a3abce47"
+    sha256 cellar: :any,                 sonoma:        "f3964e9dc6ec67e93577a58034d5e3d6f819cf0914bc941e4dc7b6ad7df71b15"
+    sha256 cellar: :any,                 ventura:       "7ead159556e176882ea0fcb620761bff7cf44e244789089d9840bea9d09703a5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "14b6d3fa8eb079fafd05061476f678027bf6bc3729f48e94b9698bb79ba8d6f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a82de520429fc5c7db797cecfbc7f2fa5aba56026d43036d35bb0ff5bc0d2cb5"
   end
 
   depends_on "cmake" => :build
