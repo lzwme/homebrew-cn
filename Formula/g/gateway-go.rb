@@ -1,18 +1,18 @@
 class GatewayGo < Formula
   desc "GateWay Client for OpenIoTHub"
   homepage "https:github.comOpenIoTHub"
-  url "https:github.comOpenIoTHubgateway-goarchiverefstagsv0.3.20.tar.gz"
-  sha256 "c813c7054eb495451f55200a2f9e35817144d11953b1bcef0aeb2ada0185c469"
+  url "https:github.comOpenIoTHubgateway-goarchiverefstagsv0.3.21.tar.gz"
+  sha256 "2a42bd1cbc06ddad40ce7048541e046ec85ef6f16129bce077061fb4f77edb4e"
   license "MIT"
   head "https:github.comOpenIoTHubgateway-go.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cd7bb0bbfe98f11c8c808a9df2694a4e228c13111107a6ad73b7bbf2c9c3bf20"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c2c34966d71beffff420235ad7a1d99a899b927cb5cb85e3d0a1e75ad5c9e8a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cd7bb0bbfe98f11c8c808a9df2694a4e228c13111107a6ad73b7bbf2c9c3bf20"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cafc14744e603d10418fd53124d33e3e8b3d80c66e1d66a2abf8b8f202580622"
-    sha256 cellar: :any_skip_relocation, ventura:       "77977104153cd170f005bf4a5779a2458ab191008395241753f277cf19c6ec0b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51d8614b9639580e365b35d38ddaa35836ef3559efed0db3df10145af863d6e2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9bfefa307853bae03a8da16a8621bcdd466f008b6debd1fccfdb9fe8f1a5b3fe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "70808a40170e41243e7bf3eca285f46807aeb101d2f155cd9aad2ec767f17310"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e4b31f26ee084290b3077d552bbabf3836fbe357c8379b49bedb5083f3b324a7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "88dac9b78749ace8b7b4eb42702f3b82a4f7fdc8a510c52222ddd31180a11361"
+    sha256 cellar: :any_skip_relocation, ventura:       "ad3fe02b16b1ce7b9ecb38779edde651bd978a8c3df3f856753fe5e46d88e27b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a35ec30cf33b8cbb6c3dfdb5e4aa7ba6659b22e221a7cedef676b01425542f7"
   end
 
   depends_on "go" => :build

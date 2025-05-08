@@ -4,17 +4,17 @@ class Idris2 < Formula
   url "https:github.comidris-langIdris2archiverefstagsv0.7.0.tar.gz"
   sha256 "7a8612a1cd9f1f737893247260c6942bf93f193375d4b3df0148f7abf74d6e14"
   license "BSD-3-Clause"
-  revision 3
+  revision 4
   head "https:github.comidris-langIdris2.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "e2aff42043c3dd37846fa91f07bf5d402f8ca937f666b041a78f1ad21d22a355"
-    sha256 cellar: :any, arm64_sonoma:  "aec7750a75d554db5be7a85e57b7e89f7b2dc04d3874e4c97d0619faada67ac7"
-    sha256 cellar: :any, arm64_ventura: "1600ff494b3297aabd33f4601dd460cf370be259931e09e71a125163191d278b"
-    sha256 cellar: :any, sonoma:        "78a12b89785b8d634fb112311a26c5a37a383fe09819416a0955326e54082a00"
-    sha256 cellar: :any, ventura:       "e5f091bcbd8281136c7c7a0c8474efe76eb1f65e1c192ffb68efc7d5a186122e"
-    sha256               arm64_linux:   "83cc1d98356b8c9da6c4519dda723565416f511af78c2fda8521ed5dbb6e34e6"
-    sha256               x86_64_linux:  "1c641c4b960ae02d8ffada1508b1bd4b6cfaf9e8fa917ccddfb15e427dac9e73"
+    sha256 cellar: :any, arm64_sequoia: "f2e9a79eac9603493e64a21505f127cc98d64e418b5fbfd82ed02a9144b7dcb5"
+    sha256 cellar: :any, arm64_sonoma:  "5b85059f83fe007bbf8de891999e16da762694cdec97ba66ad304f65c9a6e149"
+    sha256 cellar: :any, arm64_ventura: "0a53ba9dcbb69069d2dcfa18c41a92507f950b7cba74e805f10be724e10cafcd"
+    sha256 cellar: :any, sonoma:        "dbc307d2c2f47d019a8cc3a172434e05187bc1bc62f342d0c8b598b72a07e5ee"
+    sha256 cellar: :any, ventura:       "f6eec5a8db64201ed600264c4ab6348fcbe70c9901d8c7f2337ad18530c3450e"
+    sha256               arm64_linux:   "a0b776d5066bf8834d1ce1afc5b84ec6c514b7ad7c5cbe253875f320a514d6de"
+    sha256               x86_64_linux:  "1bd3781f33f5138c4e88482b003c084ac56294258bc0115ee999d54a01290c99"
   end
 
   depends_on "gmp" => :build

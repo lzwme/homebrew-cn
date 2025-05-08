@@ -1,8 +1,8 @@
 class Dropbear < Formula
   desc "Small SSH serverclient for POSIX-based system"
   homepage "https:matt.ucc.asn.audropbeardropbear.html"
-  url "https:matt.ucc.asn.audropbearreleasesdropbear-2025.87.tar.bz2"
-  sha256 "738b7f358547f0c64c3e1a56bbc5ef98d34d9ec6adf9ccdf01dc0bf2caa2bc8d"
+  url "https:matt.ucc.asn.audropbearreleasesdropbear-2025.88.tar.bz2"
+  sha256 "783f50ea27b17c16da89578fafdb6decfa44bb8f6590e5698a4e4d3672dc53d4"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class Dropbear < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1dfc0dcddaa51ff418928bbab824cd4382635ba80ae30cdd90e666ea08a965b6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f4677b6768e3875db44518083f5ac557c17fc9fb964b12839677d0e6284d3f9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "35ef5691418b6927d65e7158ae999b21ee8ee6cbf01d5a6d3a92c44e5fd0836d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8c1b9b713aed39530cc9ff87b499998293e601d10055bb037498cd9ae29f6dfd"
-    sha256 cellar: :any_skip_relocation, ventura:       "150f8a1e98c529ed24a7e544772de85dcec36d853007938bf0e55a4802758585"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "930552145f7a020c1c9c78afce2f1dba87ebcb50de3477a42a5e187e6bf390d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ea8c7093f3d411aea877bfc1d26c9538dcf3c6a973aa21696a34b2902e72b5c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9328cf8c07250bf2320af722633579e84db7c992f11d43ebc67aa85a3bbebad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb134cc3f5603b552af4a3b83d58e6576aac58a4a589537f8a1d87d73b1cde15"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a17000ca546c8c5cb69b916d660bab2c9ab3341161d33a6a73f5d40e0dad2300"
+    sha256 cellar: :any_skip_relocation, sonoma:        "db12fa6ae371b408f2ec14107afa41ef7eea2dfeb12cd267b186188e10a19b1b"
+    sha256 cellar: :any_skip_relocation, ventura:       "f5dae867598a50af551fcd22893d6980830310fd01bac1d89c037e428b127085"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5252254322544bf05aa9cd1c0d78770b7cee10f037bd0f93d336794a81c51383"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e275ebce599f0b89bdbdd74d0ac4083f61b4ea8b1d4b97b16ba80af6dd4a41af"
   end
 
   head do

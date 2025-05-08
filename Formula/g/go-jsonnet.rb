@@ -1,8 +1,8 @@
 class GoJsonnet < Formula
   desc "Go implementation of configuration language for defining JSON data"
   homepage "https:jsonnet.org"
-  url "https:github.comgooglego-jsonnetarchiverefstagsv0.20.0.tar.gz"
-  sha256 "bf9923a848dba65fa99f6e926221ab4222c2f259ba837d279b43917962bc7d70"
+  url "https:github.comgooglego-jsonnetarchiverefstagsv0.21.0.tar.gz"
+  sha256 "ee7aa004e78fb49608bcf28142a7494dc204a07cc07d323dd2cff3d97298c696"
   license "Apache-2.0"
   head "https:github.comgooglego-jsonnet.git", branch: "master"
 
@@ -12,17 +12,13 @@ class GoJsonnet < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3bc19e31a7ea1de9376c90135df48fdd8ed498f594dd0f7916dac2f41b5a2d31"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7eed7e4575bf7d5222f5d2e40ab27c0fbc5ef5a1c06cb45bb69a84060500a8cb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d7ef4c5d8638c9eb8197bd5be4bfc1e1e52d6dcb7275fe193850b4729ca199af"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9f6ee690b5458c98426e668d40adc3d9f392b1a3d66a084eb5661dd032ba25d6"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "047317978d20c496cecfed47b54268962b041ef4599de8d46218f382b2ff60d9"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5890f2fa8484a2b9492ee5a0e95aba6231f0c62bdbc5541297b95856a3586d75"
-    sha256 cellar: :any_skip_relocation, ventura:        "0cb7c6f14e4d80552bb290c3f6f9cfe564ca46c37756b14a86adf0ddf671e146"
-    sha256 cellar: :any_skip_relocation, monterey:       "ad1d51519e7a45af2b8132258360965ca84d7b9e4a36ea30dc5b708682ef06d8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "c11c053543e2d2bae86497ceadb07ebd78949aa4822a7061757604a920ce3e1b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "fc4ef7e6386b78d8ea874f39df40f82b052a9f69ab8a94d808dfa4eb5db88352"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b6e4b46c874cc4019c247df166cf633df2dbf0dd77e8046aae0cb6594c49cf4b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1da0bff35201dd30f0992b3a4d2be4dcf4081a8ece97e8841cdc56202ce9f5f4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1da0bff35201dd30f0992b3a4d2be4dcf4081a8ece97e8841cdc56202ce9f5f4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1da0bff35201dd30f0992b3a4d2be4dcf4081a8ece97e8841cdc56202ce9f5f4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "857205b6b5af2d4cbf762b4479612ceb5cb330d89c4825a7519f216a39fd61f6"
+    sha256 cellar: :any_skip_relocation, ventura:       "857205b6b5af2d4cbf762b4479612ceb5cb330d89c4825a7519f216a39fd61f6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd6fefa551f11430c771c4f9bc581a08b0ca166eb1caa02d52cfdae71e4e0065"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f561d3294310d773a7f59d4eeb506aca0a86b510a654965096bbebe041c87032"
   end
 
   depends_on "go" => :build

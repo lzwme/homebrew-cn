@@ -1,8 +1,8 @@
 class WpCli < Formula
   desc "Command-line interface for WordPress"
   homepage "https:wp-cli.org"
-  url "https:github.comwp-cliwp-clireleasesdownloadv2.11.0wp-cli-2.11.0.phar"
-  sha256 "a39021ac809530ea607580dbf93afbc46ba02f86b6cffd03de4b126ca53079f6"
+  url "https:github.comwp-cliwp-clireleasesdownloadv2.12.0wp-cli-2.12.0.phar"
+  sha256 "ce34ddd838f7351d6759068d09793f26755463b4a4610a5a5c0a97b68220d85c"
   license "MIT"
 
   livecheck do
@@ -11,15 +11,13 @@ class WpCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "128bbeaf8252ce48f6d5f4f37eada79478f33285ef5b216255f0a0ac70a8d2b2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b60f676144decf7f7a7357f97029fe40cb946e6a9a470794f5610a14964b0c49"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "b60f676144decf7f7a7357f97029fe40cb946e6a9a470794f5610a14964b0c49"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "b60f676144decf7f7a7357f97029fe40cb946e6a9a470794f5610a14964b0c49"
-    sha256 cellar: :any_skip_relocation, sonoma:         "17ab14f199e16148b4efd4e2704650e450513ff99e724f36a485761cf722eb58"
-    sha256 cellar: :any_skip_relocation, ventura:        "17ab14f199e16148b4efd4e2704650e450513ff99e724f36a485761cf722eb58"
-    sha256 cellar: :any_skip_relocation, monterey:       "17ab14f199e16148b4efd4e2704650e450513ff99e724f36a485761cf722eb58"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "9a914a88b731a0a8912fbbe45ca081b2ccd6a1c4403e52d7ad1f549974d4e9b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ffa9280acd31b4b1b7f7d567d1dfbabda11d2bc0cc25fc34f49af131bf613c0f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "087f15d5afa17ba4483aec086b2945d0dcd477a55987775862fcabe5902ce8ab"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "087f15d5afa17ba4483aec086b2945d0dcd477a55987775862fcabe5902ce8ab"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "087f15d5afa17ba4483aec086b2945d0dcd477a55987775862fcabe5902ce8ab"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fe158bfc51b92aeac10cb0d009dd3c44a1e8c1cb0ae60ea9cf9a1b67869e7fa8"
+    sha256 cellar: :any_skip_relocation, ventura:       "fe158bfc51b92aeac10cb0d009dd3c44a1e8c1cb0ae60ea9cf9a1b67869e7fa8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0e1e3cfab199c3600caad543c0f2ea97c676536b37aa0eba544ab34434755f7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e1e3cfab199c3600caad543c0f2ea97c676536b37aa0eba544ab34434755f7d"
   end
 
   depends_on "php"

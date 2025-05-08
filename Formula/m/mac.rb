@@ -11,6 +11,8 @@ class Mac < Formula
     regex(%r{<div\s+class="release">Version\s+(.*)\s+\(.*\)</div>}i)
   end
 
+  no_autobump! because: :incompatible_version_format
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "1a28e1060c1e6d8c7bfbfd5b9ff29824999313a5eca8c64b3a59a5fe6a6eceed"
     sha256 cellar: :any,                 arm64_sonoma:  "9455b4f32c8a08bafce683674d6ad6c2f4ea03f0dc6b505654b307d97a20581d"

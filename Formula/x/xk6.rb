@@ -1,8 +1,8 @@
 class Xk6 < Formula
   desc "Build k6 with extensions"
   homepage "https:k6.io"
-  url "https:github.comgrafanaxk6archiverefstagsv0.19.1.tar.gz"
-  sha256 "623e20fc5de3b5458e32be1d8b10d4e6960ad42b8d24a79465d451927fd24e43"
+  url "https:github.comgrafanaxk6archiverefstagsv0.19.2.tar.gz"
+  sha256 "059ea134cb054fe3f8dca0af849ce7e3ed513a1cee244adb038921a3a78157df"
   license "Apache-2.0"
   head "https:github.comgrafanaxk6.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Xk6 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d74cf7ae14e338f58b0c83c07fd22277ae071975313f0b354cbb68dc8d402a94"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d74cf7ae14e338f58b0c83c07fd22277ae071975313f0b354cbb68dc8d402a94"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d74cf7ae14e338f58b0c83c07fd22277ae071975313f0b354cbb68dc8d402a94"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a3cf8afbd960cff0aff9059b1b48b9f0892b60d58e1e32b991954099c51ad948"
-    sha256 cellar: :any_skip_relocation, ventura:       "a3cf8afbd960cff0aff9059b1b48b9f0892b60d58e1e32b991954099c51ad948"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8fcecf5eb28ec11ad23b163159becd1ceabb80c2484686f0a42ea761de608ee4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b05a9d6fe9a247dbcf2cba5a0a8e2fe1eaea1197198f9e3efed7a41e935cbe1c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b05a9d6fe9a247dbcf2cba5a0a8e2fe1eaea1197198f9e3efed7a41e935cbe1c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b05a9d6fe9a247dbcf2cba5a0a8e2fe1eaea1197198f9e3efed7a41e935cbe1c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a2d5e3b42e6c29a404211e6e1691fb032ab2e14aab8628fab10fc437c5d6fd60"
+    sha256 cellar: :any_skip_relocation, ventura:       "a2d5e3b42e6c29a404211e6e1691fb032ab2e14aab8628fab10fc437c5d6fd60"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9394c2e3bd325835bcd1d0eb8cd8ee9d0413fb381c945d62a622bd1c53867e16"
   end
 
   depends_on "go"

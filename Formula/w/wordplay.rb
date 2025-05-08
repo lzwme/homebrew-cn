@@ -21,6 +21,8 @@ class Wordplay < Formula
     end
   end
 
+  no_autobump! because: :incompatible_version_format
+
   bottle do
     rebuild 1
     sha256                               arm64_sequoia:  "7117e25ad1d78a133f0ad6f3e68c7f203cf83387903e27d6346852b97b3c409a"

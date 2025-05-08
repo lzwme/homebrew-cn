@@ -1,18 +1,16 @@
 class Telnetd < Formula
   desc "TELNET server"
   homepage "https:opensource.apple.com"
-  url "https:github.comapple-oss-distributionsremote_cmdsarchiverefstagsremote_cmds-303.141.1.tar.gz"
-  sha256 "5b434a619008406a798af1d724591f6a71f691292ea20c07bfc32b783b8a08a9"
+  url "https:github.comapple-oss-distributionsremote_cmdsarchiverefstagsremote_cmds-306.tar.gz"
+  sha256 "7f014f7eebb115460ea782e6bcade6d16effa56da17ee30f00012af07bc96c36"
   license all_of: ["BSD-4-Clause-UC", "BSD-3-Clause"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0981e34d3f11237109f2a8ae1c06fcf74107dac1041db5398ca2c9960ac28410"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "90a0461f0e2548b2b64bf6c84c30654401696632b60b650b532d49e03471281b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eb4d6ccbfed1c663629001f590d5328dd4bc5235b98aad628d9e0b918ace86b7"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "9c4d31ac7909b6b79275d6f08b2e0ac8c5ff67c4af4c55472b9d5244cf63a857"
-    sha256 cellar: :any_skip_relocation, sonoma:         "e4ecd04f334f60b6944402ec2a9a761956b97e77f599aa3a7f10e0bae3e42bab"
-    sha256 cellar: :any_skip_relocation, ventura:        "fbd68a8c5507c6c9ed80a1a3fb9002904424a628d48c6a944b5c28b0eb4add1a"
-    sha256 cellar: :any_skip_relocation, monterey:       "c0f1d50c09d4631571033155a098aefc6d07d09e424e8888f945e86c71cc42b4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07bf8f40affa2499a35c1d4721d0f037e12081c299a43df1c11a0a51ebf15ac0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed85960517cbb617e9b60788b809d4909266b9a377d28d714f9a713858fd57da"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "02ad1e6f02dcf3316ecb981540fcac0ebf600ffe5f24250a830704464742185c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7fea7f6cc2ea119744bfa263e2c2a67766d169fb9ed0f73a97a6de8c00a0e06e"
+    sha256 cellar: :any_skip_relocation, ventura:       "447534356a8a29764410dcf44c188300ce42e57487f9c8145d81b19d1b0868b4"
   end
 
   depends_on xcode: :build

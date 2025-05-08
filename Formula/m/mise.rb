@@ -11,6 +11,8 @@ class Mise < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :bumped_by_upstream
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4128d4efd5bda5d17402d6f16b5568848ff01bf684510c56e67d4be705937dba"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "406ed8f937d33d29d44ebed1dff977fd1f2ffb4a53079f3a40193ba9c9b31396"

@@ -1,19 +1,19 @@
 class Draft < Formula
   desc "Day 0 tool for getting your app on Kubernetes fast"
   homepage "https:github.comAzuredraft"
-  url "https:github.comAzuredraftarchiverefstagsv0.17.10.tar.gz"
-  sha256 "87486abdf9cbd45de4146a3d80ea1e08a46ecc3e018382a52968de9ca4aedfd2"
+  url "https:github.comAzuredraftarchiverefstagsv0.17.11.tar.gz"
+  sha256 "91ab1bc877883e4bc2bd0424f748e2ba8b6c5e20acec52d3061ebd68706956dd"
   license "MIT"
   head "https:github.comAzuredraft.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d8fa2caaa95f051b5114e447b8fbdae51b54739a4c6daa7b84fce1e64d08a96e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "10c3f0e502da1e148f89389876e70dcd552f55f76ee4e941e2c465f10c111dbe"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "566351c1619f024b65a2ec36bc720121313be80b1a316f442f710ec597d3bd25"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8941b472e637d3fa1623b4a8326044a8819a8730d682e623d356abc6dbd42c83"
-    sha256 cellar: :any_skip_relocation, ventura:       "9bd6770e661e90564d36c7e2d65191a595147c7cb56ed5fd120094eed92822ad"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "43e900f5dc9888b8dc5f32f8f0663aa0b0a0778c6ae8ccbc1cb18690fd49671e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4bf653b0d28d85422fc63a577f1b6a8cec6cfa739c4332a3267baf9e6a5c33e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aaa730301a7d77c4638927be72b648b9c86555318873ba4d03cec5152e5ed710"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ac732690e8096ce8d836ff10c46867529373a8450530977f77b0751639df4c09"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6441a7329f77438daa227cc746071742bb4ae2594df338ce59ee4bb9adcf3074"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6cb28c0ccd6b48aba8e49c82a56a7e223514b321ccbc8c8ce1a597281961b85b"
+    sha256 cellar: :any_skip_relocation, ventura:       "f10aaa049dd8739890b5b26d6b0fb4f771e816e34b92e9d70553d509f2a1fe1f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1c81c7afc2efb7f0513b0f1763bbe8b068ed22e8ccb1234f42482a310e233ce3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d654a7f06ea0e4cc21e9a25930c33b883835ccf4d6211d231dea39c0e5715d13"
   end
 
   depends_on "go" => :build

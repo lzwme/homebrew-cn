@@ -6,6 +6,8 @@ class Flow < Formula
   license "MIT"
   head "https:github.comfacebookflow.git", branch: "main"
 
+  no_autobump! because: :bumped_by_upstream
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec745d574decfa38068d8a8ff1443c9d3b7b0477a0f0c91e03e77b7c885d6456"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83575915a7e58ed6bb2df0b87ac243ebe210872e12ee1435484b8adbcc94ce63"

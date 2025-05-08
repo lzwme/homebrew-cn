@@ -1,8 +1,8 @@
 class Manticoresearch < Formula
   desc "Open source text search engine"
   homepage "https:manticoresearch.com"
-  url "https:github.commanticoresoftwaremanticoresearcharchiverefstags9.3.8.tar.gz"
-  sha256 "7ba9e48a4e05a542f99e7b4ce5fe9e4cf1e0849c9e7c2b8a250a4250b93756a6"
+  url "https:github.commanticoresoftwaremanticoresearcharchiverefstags9.5.0.tar.gz"
+  sha256 "b7bba0866aec76aba7c433e922dac2b797c8419bd37acac29c251408e810a6d4"
   license all_of: [
     "GPL-3.0-or-later",
     "GPL-2.0-only", # wsrep
@@ -19,13 +19,13 @@ class Manticoresearch < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "68da25e6fcda39df344cc054a1d35a987ccfc2406d98003b9a3836eae3a89d85"
-    sha256 arm64_sonoma:  "4bd8b356cb25f5a706ad0dea2e97444dc6f64fe9e5d81d4037a12895e055afbc"
-    sha256 arm64_ventura: "896fee61ca17518e3cb6043fc542734082ab0af37e1126f6108e1cac6c16a118"
-    sha256 sonoma:        "4ffb69a612c2c76d90911e317de247db1d655142ae4e1dcea139fadef14a83c5"
-    sha256 ventura:       "5c8155bcae93df72a3751be294dc8f834a57daac4ce61949df9d1ec26f886d02"
-    sha256 arm64_linux:   "98bdc3869fc0f668f3355b0257bfbde384f1a0f55f4016cd41fcedc9d9b1d306"
-    sha256 x86_64_linux:  "971546f1772a271e3b4d7ff30d35fc55d8a1dff1fb15b1e88d9d043a17668b7a"
+    sha256 arm64_sequoia: "2a8a21da2497272b6931790d6430b9e8d6c5ade26ed8ecd1bf00fe7fe0a6e8dc"
+    sha256 arm64_sonoma:  "92c2faa3a9fcd64f1f1c5a4a3f3fe6ad662807b16916fbb3ec5a25b8c8ef02da"
+    sha256 arm64_ventura: "da7aca79b68b941e01f64cd39e545d05fee114a4c6b47ac2727cc52b1dcaa1a2"
+    sha256 sonoma:        "b647288508b5d5492d1a073408d7fa18675b5f1dbf099ce9c861143f99b7eda4"
+    sha256 ventura:       "894e073184e5a717d23f4355c5fce2f634bcc6757ad11098f7fdd1e07f7bcdce"
+    sha256 arm64_linux:   "eb9c2ca85a8ad4bab9bc2feea4f4a86251ab4947533c01af922725e09ecd0d60"
+    sha256 x86_64_linux:  "c20f1824bd7ee86485e3737fd399aaafe1165e656214ab529e247885a1b71130"
   end
 
   depends_on "cmake" => :build

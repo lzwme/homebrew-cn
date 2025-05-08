@@ -6,6 +6,8 @@ class Atmos < Formula
   license "Apache-2.0"
   head "https:github.comcloudposseatmos.git", branch: "main"
 
+  no_autobump! because: :bumped_by_upstream
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0346f6127fae41104efbb19fb3c8ee397c7923031986b0378480671dd712f152"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0845c39c91f7312ade847fc392165d67f4ed87075d0aeecd7d22a3df2f72fa8d"

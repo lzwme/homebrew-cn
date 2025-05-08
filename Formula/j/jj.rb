@@ -1,19 +1,19 @@
 class Jj < Formula
   desc "Git-compatible distributed version control system"
   homepage "https:github.comjj-vcsjj"
-  url "https:github.comjj-vcsjjarchiverefstagsv0.28.2.tar.gz"
-  sha256 "dae80d2629a9f430a9ea795c8cd378ced6ce1c870ab9ffe3b61f64cdd636a2bc"
+  url "https:github.comjj-vcsjjarchiverefstagsv0.29.0.tar.gz"
+  sha256 "57df34a06b1d2125ccd6e8383ea08f24160c48e33e9daecd883a2e59567a9fd9"
   license "Apache-2.0"
   head "https:github.comjj-vcsjj.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "94cb7b6bd94ef185ad140d6697d5475b6577f192bf8a4e8a599acc504d61bbcb"
-    sha256 cellar: :any,                 arm64_sonoma:  "ac72b0219e7cc311b02b2e8837e54cb3c6df9963a063e20e37f7a2aabdc7eacb"
-    sha256 cellar: :any,                 arm64_ventura: "0a6ee059850461f8407e2065de7505e0b7971226cd715cadb44f2be992bd3185"
-    sha256 cellar: :any,                 sonoma:        "f31c88e39a0d30ed5efabd04a27e8d9ce8a7f9f87cf43122dd8bfee3620894cb"
-    sha256 cellar: :any,                 ventura:       "adcee265c948ff6f08a8b92578665ce2cdd1ebb2eadc4e8587fbade75250e0a8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "be843c4b26b533c13138f5f3d5f455cb58ac4c7fe7a5890fe5cf84764379fb1d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "805f70f61961c73de428e3d714fec32dbd1aef834081a70a2fef8a2b3689082c"
+    sha256 cellar: :any,                 arm64_sequoia: "50c511670ee40fa1da2d8b18029bad69223ee3d8e50a3009d4607ac94390fc48"
+    sha256 cellar: :any,                 arm64_sonoma:  "5d6c168d37c55fdfcaaa4c95b3e380cc859296ef9d114ff5830ff8aa2291bbae"
+    sha256 cellar: :any,                 arm64_ventura: "48f0c95193b1714f59799528db6ae6069148fdc21963dcf76c205f9b5b377579"
+    sha256 cellar: :any,                 sonoma:        "33a01d5e4b4cd52ae2dcb1830288cbde9a9560f56c2205fb267140797ffa2d42"
+    sha256 cellar: :any,                 ventura:       "62b3be14fd3c750708c27a70c1edea19c893a67cdd45154ea259583661459970"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "439cd35809f8b0eb10150b5598be56d1afbfa9aa5a2c26aecbd1dcaad1414a46"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2140f62549e58a6938ee9d265d926223bdfca139485464958e89340279f3af47"
   end
 
   depends_on "pkgconf" => :build

@@ -3285,6 +3285,7 @@ Homebrew-homebrew-core/Formula/k/kubecfg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubecm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubecolor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubeconform.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/kubectl-ai.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubectl-cnpg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubectl-rook-ceph.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kubectx.rb, Homebrew/homebrew-core, 1
@@ -11818,6 +11819,7 @@ Homebrew-homebrew-cask/Casks/h/headlamp.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/headset.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/h/heaven.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/hedgewars.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/h/hedy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/height.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/heimdall-suite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/h/helio.rb, Homebrew/homebrew-cask, 0

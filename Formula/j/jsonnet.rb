@@ -1,8 +1,8 @@
 class Jsonnet < Formula
   desc "Domain specific configuration language for defining JSON data"
   homepage "https:jsonnet.org"
-  url "https:github.comgooglejsonnetarchiverefstagsv0.20.0.tar.gz"
-  sha256 "77bd269073807731f6b11ff8d7c03e9065aafb8e4d038935deb388325e52511b"
+  url "https:github.comgooglejsonnetarchiverefstagsv0.21.0.tar.gz"
+  sha256 "a12ebca72e43e7061ffe4ef910e572b95edd7778a543d6bf85f6355bd290300e"
   license "Apache-2.0"
   head "https:github.comgooglejsonnet.git", branch: "master"
 
@@ -12,17 +12,13 @@ class Jsonnet < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6fb8cda3b694eda4c0a8869eb3c87e06007c4ec85d6eadd0bcc5bc3d13c0db05"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ccaf3138589f7378e7fbcf5fb30a2fc9c2d5ac0a6e2caacd50f69e5918d1719b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "03ec1379d7d5378af1ac82ba694e6de7bbc4cecd2f3ef6c764319289e0543dd9"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7257a1daa4372d40f359b43243d30954367e52b162ec27893175fdb1036602ad"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d3093c17684dda91a5b4bff1096fea38eaa7d5167326e93143b32afb1ae090cc"
-    sha256 cellar: :any_skip_relocation, sonoma:         "1e5b28337c0272c443e96387ce6f339fed9aa0b2a064118df6b42840ea7f7292"
-    sha256 cellar: :any_skip_relocation, ventura:        "0e43c89b55909edbe4d9afe85c6da8e6ae31e148ec91ff494eb7e4a3115fd4bb"
-    sha256 cellar: :any_skip_relocation, monterey:       "08c2a197781b175611f446838028d3a9c23982c0d6031af98cf6408ebc24a6a8"
-    sha256 cellar: :any_skip_relocation, big_sur:        "468ec8c830e8cb239534389e54eb086a78b5b4b9261ae0a174a2ad40cfb792d2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "2a73f0fa12e38e9ce011303f8e79b90447e14d17fb0dcd0eaa052507325116e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3c93bb362a5b6c22590afb2ba44ab597ae623cddc650d8bc1a65eae169c43105"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d833d4f2134eb94e5062bf1286da9b53e8054e32710f8b6677de914b92b83e9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5b11fba2474e6e24a697467b232c5cebb6721f71892996162fa138e79a0188b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9d0d5b81bb0fe59cf6dbea23813ef6f069d25cec0138a8cb4710657dbf89b57c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d779b7d3f5968eef74405f45d0fa213246baff6167d5b30332ae58c0e40ae433"
+    sha256 cellar: :any_skip_relocation, ventura:       "938b8bfa969c79fc6112292dcd90ee25d6ea4b4fe3472aeb33718ca92ec6d9b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1dbbf7eef0126d88c484d629eb06569f318808e133120cf98478c31befdc8f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d40920e6c3486ac5d0e52355bd7ad9709439be11676e791e6b5eb31881dca4e"
   end
 
   conflicts_with "go-jsonnet", because: "both install binaries with the same name"

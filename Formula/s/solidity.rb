@@ -1,10 +1,9 @@
 class Solidity < Formula
   desc "Contract-oriented programming language"
   homepage "https:soliditylang.org"
-  url "https:github.comethereumsolidityreleasesdownloadv0.8.29solidity_0.8.29.tar.gz"
-  sha256 "fe76237f513b7d6727a93cd5b83f92747650c8dc5f8f89457a41e8f54119ed38"
+  url "https:github.comethereumsolidityreleasesdownloadv0.8.30solidity_0.8.30.tar.gz"
+  sha256 "5e8d58dff551a18205e325c22f1a3b194058efbdc128853afd75d31b0568216d"
   license all_of: ["GPL-3.0-or-later", "MIT", "BSD-3-Clause", "Apache-2.0", "CC0-1.0"]
-  revision 1
 
   livecheck do
     url :stable
@@ -12,13 +11,13 @@ class Solidity < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0c4e75dcca9d33d11eb8268070850b20b4829677fabfef247c54dd0aeecdf9d4"
-    sha256 cellar: :any,                 arm64_sonoma:  "3ac368ff5cebe1fa5128653f34c5c73703257694e2ef2e66b8874157e91edebf"
-    sha256 cellar: :any,                 arm64_ventura: "4f22dff097bb4ca769aadb4132d3fef9634ae83bc2815d9d41d6e2a10137c08c"
-    sha256 cellar: :any,                 sonoma:        "d2122a4129e2781aa5b2110e2b95655592f3052557d54e6ce0705338b348683d"
-    sha256 cellar: :any,                 ventura:       "bf6500b6c763575d30fc2c0650c12f206995e4d39f957a16e9e1132dee278ab4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5df67fea4e2ed2663b268fcc7de13fd70e750b3037987cec832c06cf64d615c8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "434f32192625362a4b50161e0972c5c930d21e50e5ff5a0eff4c151626d1a52a"
+    sha256 cellar: :any,                 arm64_sequoia: "473fa776a7d59bcddcd39fcae1decae308a7fcf76b955ad737788edb788dd1b1"
+    sha256 cellar: :any,                 arm64_sonoma:  "1fff4b5d4ee6fdfe9f580cb4a0f9102a335c01c3e9cb9b43907b2904e1d9830d"
+    sha256 cellar: :any,                 arm64_ventura: "3056f30a88cf1eb1283ca37ee98d52a3b799f49cc4da481161ff4f5bf6f717e6"
+    sha256 cellar: :any,                 sonoma:        "5c54b89ae94ff561cb13ae3f1a5614a9a0996a1101602aa68fd6d911b8cb05c6"
+    sha256 cellar: :any,                 ventura:       "754784a2bf9a57e6fe88d57c43465af5a721667250faf7767e817421438c4a13"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9d10fb6a132c5d5f5b36ef1c9296ad9f4c25a2236822e054150ac057f72154a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e88792a9be5d50f8732d8679c3fba67b84c9ecc839e9af1bcd114c4fcb543111"
   end
 
   depends_on "cmake" => :build
@@ -30,18 +29,6 @@ class Solidity < Formula
 
   conflicts_with "solc-select", because: "both install `solc` binaries"
 
-  # build patch to use system fmt, nlohmann-json, and range-v3, upstream PR ref, https:github.comethereumsoliditypull15414
-  patch do
-    url "https:github.comethereumsoliditycommitaa47181eef8fa63a6b4f52bff2c05517c66297a2.patch?full_index=1"
-    sha256 "b73e52a235087b184b8813a15a52c4b953046caa5200bf0aa60773ec4bb28300"
-  end
-
-  # Support Boost 1.88.0, pr ref: https:github.comethereumsoliditypull15976
-  patch do
-    url "https:github.comethereumsoliditycommit23587f9427bbd3d2147f32de5ede968c9c9aa133.patch?full_index=1"
-    sha256 "d66489933a5c7ff71a72cb5eaa2426d3ff10dad494304c432c4a567ac4d42db7"
-  end
-
   def install
     rm_r("deps")
 
@@ -49,6 +36,7 @@ class Solidity < Formula
                     "-DBoost_USE_STATIC_LIBS=OFF",
                     "-DSTRICT_Z3_VERSION=OFF",
                     "-DTESTS=OFF",
+                    "-DIGNORE_VENDORED_DEPENDENCIES=ON",
                     *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

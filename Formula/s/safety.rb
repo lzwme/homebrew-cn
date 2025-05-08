@@ -3,20 +3,19 @@ class Safety < Formula
 
   desc "Checks Python dependencies for known vulnerabilities and suggests remediations"
   homepage "https:safetycli.comproductsafety-cli"
-  url "https:files.pythonhosted.orgpackages52fcfcb27a9d0c2689d642cf0d3dcb6199c1a346d575e82eabf0307139d5f15csafety-3.4.0.tar.gz"
-  sha256 "fc8763166616751c468bf401e66bdf6a87ea5f544c8b32679d6ba4c48c33c679"
+  url "https:files.pythonhosted.orgpackagesc231e4875edebb8fd5885ff8e52d0522c44a4d9bc2abe26f11225b8e64b31868safety-3.5.0.tar.gz"
+  sha256 "7223af388bde5323867eca5495f9817746289be9fd5b1896f168dc7082ea8ff1"
   license "MIT"
-  revision 1
   head "https:github.compyupiosafety.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "89a90574e96052bd73efc4af2f86a643317fce795c4d30f3ebf4df52b758849a"
-    sha256 cellar: :any,                 arm64_sonoma:  "4dd373ee260d5a0baf1f8b9ea2edfa6d33df8cd89e241c29bfbd093da8238a13"
-    sha256 cellar: :any,                 arm64_ventura: "3cf6114f33b2fd43f49864088d5e52aa911be230cfa80442757c0a7c2ea800dc"
-    sha256 cellar: :any,                 sonoma:        "6d8ae1bcda9eb8138ac3752e47f3b190c61105f607d3d57e033013446552f38b"
-    sha256 cellar: :any,                 ventura:       "521ded29ab4045466ddd79adb3e0fcf55e1c779a052fc07e183b06817817245e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "40dd2485c040bbecf4ddb3d885790289abc10f329363c80c8dbf07bf71e8422c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b61cde0b46d10531530e88f408cc5b661ac30f89965ec1219ed6d1e50cd10386"
+    sha256 cellar: :any,                 arm64_sequoia: "07a5b617950c6941903023a18fb738793bc56079e0b65224b639a5b1dc5f9702"
+    sha256 cellar: :any,                 arm64_sonoma:  "a686b6e1f3fb9913a41b818021748abc11824830fab393feed31e5aafa06a70a"
+    sha256 cellar: :any,                 arm64_ventura: "21b760cc745e23b198c693ad133cb5fcf28a1ce35045de6f6f786f2fb84db82a"
+    sha256 cellar: :any,                 sonoma:        "45db61f7c1eefc43e67e352e9a8a0b1efe84d65bdced009d35ec433fc81641a0"
+    sha256 cellar: :any,                 ventura:       "f21749a743c58bf9d1dfd6efd0d398e0919afe6c5686928f0c6a29646e42ac84"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a667b7b892c52bfaadcd3a9ce238b6ede6d13bc4218f9c3edde6093bfa595b0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "702ab426ce3512162455f3b738db243828c790377bbc45e8d235d95bb9704055"
   end
 
   depends_on "cmake" => :build
@@ -41,8 +40,8 @@ class Safety < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https:files.pythonhosted.orgpackagese43389c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12dcharset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "click" do
@@ -86,8 +85,8 @@ class Safety < Formula
   end
 
   resource "joblib" do
-    url "https:files.pythonhosted.orgpackages643360135848598c076ce4b231e1b1895170f45fbcaeaa2c9d5e38b04db70c35joblib-1.4.2.tar.gz"
-    sha256 "2382c5816b2636fbd20a09e0f4e9dad4736765fdfb7dca582943b9c1366b3f0e"
+    url "https:files.pythonhosted.orgpackages30088bd4a0250247861420a040b33ccf42f43c426ac91d99405374ef117e5872joblib-1.5.0.tar.gz"
+    sha256 "d8757f955389a3dd7a23152e43bc297c2e0c2d3060056dad0feefc88a06939b5"
   end
 
   resource "markdown-it-py" do
@@ -166,8 +165,8 @@ class Safety < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesbb71b6365e6325b3290e14957b2c3a804a529968c77a049b2ed40c095f749707setuptools-79.0.1.tar.gz"
-    sha256 "128ce7b8f33c3079fd1b067ecbb4051a66e8526e7b65f6cec075dfc650ddfa88"
+    url "https:files.pythonhosted.orgpackages70dc3976b322de9d2e87ed0007cf04cc7553969b6c7b3f48a565d0333748fbcdsetuptools-80.3.1.tar.gz"
+    sha256 "31e2c58dbb67c99c289f51c16d899afedae292b978f8051efaf6262d8212f927"
   end
 
   resource "shellingham" do
@@ -196,8 +195,8 @@ class Safety < Formula
   end
 
   resource "typer" do
-    url "https:files.pythonhosted.orgpackages8b6f3991f0f1c7fcb2df31aef28e0594d8d54b05393a0e4e34c65e475c2a5d41typer-0.15.2.tar.gz"
-    sha256 "ab2fab47533a813c49fe1f16b1a370fd5819099c00b119e0633df65f22144ba5"
+    url "https:files.pythonhosted.orgpackages981a5f36851f439884bcfe8539f6a20ff7516e7b60f319bbaf69a90dc35cc2ebtyper-0.15.3.tar.gz"
+    sha256 "818873625d0569653438316567861899f7e9972f2e6e0c16dab608345ced713c"
   end
 
   resource "typing-extensions" do

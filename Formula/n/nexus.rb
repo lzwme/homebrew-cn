@@ -2,8 +2,8 @@ class Nexus < Formula
   desc "Repository manager for binary software components"
   homepage "https:www.sonatype.com"
   url "https:github.comsonatypenexus-public.git",
-      tag:      "release-3.79.1-04",
-      revision: "f87adc0e74e44bc26366a851ca96d16922f6f175"
+      tag:      "release-3.80.0-06",
+      revision: "74aa87dcd43439ef2b69d0a5e49d5522b7944261"
   license "EPL-1.0"
 
   # As of writing, upstream is publishing both v2 and v3 releases. The "latest"
@@ -15,13 +15,13 @@ class Nexus < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "49a297a1bc820fc4c584bbab2654117b3c92e2045251a7394f764fbb30247656"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1b6c25b4d6103e37a4a4cf93194483c2db11e0f31ec9b70e7ed16f9631b06815"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7c5268108751d0107d94456f689e4d7aad710143c0c735e6308a81adcdc3c303"
-    sha256 cellar: :any_skip_relocation, sonoma:        "87e17682a7e4e0ca6d6353fe0b87ea3d73f0899f3e275a1763d88c86a9086e8f"
-    sha256 cellar: :any_skip_relocation, ventura:       "e455e3cce9b4bb8c29de12cec46743f12f051afd35f80a7200f45faf7be96d62"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d9fca47c00f9032e126c9df8cb26f10352ed330e805d8dc89717116664be1ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3082ed2ea92d7ac3e6703f84636fcd9c470ce5b14d7ccf80312df0d5afbce8ff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8a3fd80c8008fd25205fb318ee06ae801a7d74d969b1d6f06bf5e7c2fb62b4c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "41d2feb6e85f4df82192cf62afdb21e93bf5ea79b8fc163f9d297d4a440f8c39"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "939834966728216f77cd05f37e7be1d40e803615792cbc94510880e22be58514"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b368f0bd961164f00b33c38de70810cf24091f457dcfaf96bcbf41ac10102df9"
+    sha256 cellar: :any_skip_relocation, ventura:       "1317def65ab1ab74b617e15c16918e3d1eed2bd974007049d942d96ced029a7c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8bd720dbef91a776d339d8a3dfd14a4f960a01a40f9388a5503c1c285da8f8be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d5dae4e536f76bf9badb1b6989d8d2a671009767a8324f16b81748471d6fdf2a"
   end
 
   depends_on "maven" => :build

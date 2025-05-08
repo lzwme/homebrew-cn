@@ -1,18 +1,18 @@
 class Chezscheme < Formula
   desc "Implementation of the Chez Scheme language"
   homepage "https:cisco.github.ioChezScheme"
-  url "https:github.comciscoChezSchemereleasesdownloadv10.1.0csv10.1.0.tar.gz"
-  sha256 "9181a6c8c4ab5e5d32d879ff159d335a50d4f8b388611ae22a263e932c35398b"
+  url "https:github.comciscoChezSchemereleasesdownloadv10.2.0csv10.2.0.tar.gz"
+  sha256 "b795916d4cfed59240c5f44b1b507a8657efd28e62e72e134d03486e9f3e374a"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "51cde006c2b97bf84caa052a6d07765e33fbdae21b66cd6c0cdb5bfda267ee9b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9c39185c83b72bba802036044c986372283a5f489a0d6119d467b25418d00ba1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "21913a213c56d08efe39b91f80a478f7b3351db7e69a73e1bfd51bf621d55b1a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3a9eeb709f6a99fd0e9e314ecf500feeccc7cf10de3dcf279ed95cce56344268"
-    sha256 cellar: :any_skip_relocation, ventura:       "bfa3d61ad2c6f134940cbd64ea1a1477caac43441f8a28d353b64a87171a9cbc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "15692ac0523606c7854c114af8d735b2bca2bfe9c434a78585bd2ae091053612"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e94bab3cb93b135cfdd00ddf2d43e9b8a0b9d15f248aa05bda1682c8dcc1a8d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fa0a0ef4b2e725411f40e15699d1cf6c98afd33553114c03290b5d448d386376"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "376de0a80c223e324d01d3fa9178e0109a51e9774eb0db7d24045e37646c2955"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c1ebe98f204674543ece35ceb221fefe2c6ea54da1a93823efc3efaa2fa9c39a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ccc44b15027ae267266b1621f54acfcba730a2ede1a69bc3432b2fcb85f4ee93"
+    sha256 cellar: :any_skip_relocation, ventura:       "3eaf4e4baf01394ebf43b74f722253ec4775bc801c3d1872a9577d1518467e70"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "62a4f91d4e71185b6ba659800c09cb543e1d88a905e30638a8c2e72ea769a4f6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0ef79b89094ed46426bcfffa39786d547523ebbe711f68eec3d6b935c4e53240"
   end
 
   depends_on "libx11" => :build

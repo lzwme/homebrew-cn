@@ -1,19 +1,19 @@
 class GoogleBenchmark < Formula
   desc "C++ microbenchmark support library"
   homepage "https:github.comgooglebenchmark"
-  url "https:github.comgooglebenchmarkarchiverefstagsv1.9.2.tar.gz"
-  sha256 "409075176168dc46bbb81b74c1b4b6900385b5d16bfc181d678afb060d928bd3"
+  url "https:github.comgooglebenchmarkarchiverefstagsv1.9.3.tar.gz"
+  sha256 "b94263b018042007eb53f79639f21ae47800808c73cf1b7df85622b6e2b1aa32"
   license "Apache-2.0"
   head "https:github.comgooglebenchmark.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f0676c30ba82c95b4c4aea312440390f63d0feaca33ae74779a37750c97df56a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3b6cdab0a525f0bedd85e42d88c24df6895d74129a0e91d404a281fde8c2e45c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "551d7ade1d078ca9d41198c11b2a4935545d82000c21bba64bfa531de196e597"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8b90185572865b582432fbf48a404f26aeb3448dbeeb765e4439e4c262fa18ca"
-    sha256 cellar: :any_skip_relocation, ventura:       "d3683500e476bb47bbb3c960552620b374af7fa606c96dc7f046b657b495aa74"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5e1013d1853765ad47f5d91def16096ad3f5b11f2b50d392845e66b4587bafb7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec39d18dae247211ee8a4d9786d5f1c76b7e92273632cbcf2d0ab0d970ca208f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff542a84b0848317c9b65b1d20130020121308bda6cd41202e86356291b820bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ffba486b66a5737a29abc608c486ae2b15561a4acba433fcaf717c989a77f59"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "59930fd740d86d7ba15a534a1035d527a41b7d0e9bd9b249b40877fb3b68566a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "93ee322a5f13476c138f6ab6e70c4df064849905cd41a2c486613841a24df102"
+    sha256 cellar: :any_skip_relocation, ventura:       "31a0c35b6da97d71ff673f1823be2fc7525c6e8da7ee776b08bfa1fa033cd7bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9413e089d5f100191be01e0044e765c0ea1be673b1fe1600e34ec7f8495fca97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e50ec9976014065b2e0472d34448349fa63580c84574edb85fd8fdceed312aa7"
   end
 
   depends_on "cmake" => :build

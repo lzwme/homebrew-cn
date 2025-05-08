@@ -6,6 +6,11 @@ class Tenv < Formula
   license "Apache-2.0"
   head "https:github.comtofuutilstenv.git", branch: "main"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "095ede69e3d74d32267576839572e168f9b9c98489bdc4ae6f69c3902afeaea0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "095ede69e3d74d32267576839572e168f9b9c98489bdc4ae6f69c3902afeaea0"
