@@ -3,13 +3,13 @@ class Kin < Formula
 
   desc "Sane PBXProj files"
   homepage "https:github.comSerchinasticoKin"
-  url "https:files.pythonhosted.orgpackagesadd44013f41b82c183d720f9083994c9f341236f790343f6bc8d879ec6d8921ckin-2.1.13.tar.gz"
-  sha256 "89f3af51edd19a7d3c30dc179974446b714895d99bef2c8d0645eb946ec35570"
+  url "https:files.pythonhosted.orgpackages718cf3916cf3cbc3785ebca47506d50e3b586516f58331832682035a4e23f18ckin-2.1.14.tar.gz"
+  sha256 "de2c22863a2a5e6eedbe88dc351b913b7666b16528020e6178a72f1e85e1b2d9"
   license "Apache-2.0"
   head "https:github.comSerchinasticoKin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d562acaad85e1c1326f82806f1785ddca89d396821bc2f5da3fb2aca3039608d"
+    sha256 cellar: :any_skip_relocation, all: "0c894495b31a506a8c1b6a3340733708be4fd0f86825b788e421156ad604984e"
   end
 
   depends_on "python@3.13"

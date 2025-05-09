@@ -7,6 +7,11 @@ class Montage < Formula
   revision 1
   head "https:github.comCaltech-IPACMontage.git", branch: "main"
 
+  livecheck do
+    url "http:montage.ipac.caltech.edudocsdownload2.html"
+    regex(href=.*?Montage[._-]v?(\d+(?:\.\d+)+)\.t.*?i)
+  end
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "b1d5f7c20f35e617f62197124a7c5c7e43bd4fc6272cf642346f6311d1da41b3"

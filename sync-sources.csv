@@ -818,7 +818,7 @@ Homebrew-homebrew-core/Formula/c/cdebug.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cdecl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cdi.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cdk.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/c/cdk8s.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cdk8s.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cdktf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cdlabelgen.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cdncheck.rb, Homebrew/homebrew-core, 1
@@ -1087,7 +1087,7 @@ Homebrew-homebrew-core/Formula/c/colortail.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/comby.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/commandbox.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/commitizen.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/c/commitlint.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/commitlint.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/compiledb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/composer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/comrak.rb, Homebrew/homebrew-core, 1
@@ -9029,6 +9029,7 @@ Homebrew-homebrew-cask/Casks/f/focusrite-control-2.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/focusrite-control.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/focusrite-saffire-mixcontrol.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fog.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/f/foks.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/folder-colorizer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/folding-at-home.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/folding-at-home@beta.rb, Homebrew/homebrew-cask, 0
@@ -15030,8 +15031,8 @@ Homebrew-homebrew-cask/Casks/z/zed.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zed@preview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zeebe-modeler.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zeitgeist.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/z/zen-browser.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/z/zen-browser@twilight.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/z/zen.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/z/zen@twilight.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zenbeats.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zenmap.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zenmate-vpn.rb, Homebrew/homebrew-cask, 0

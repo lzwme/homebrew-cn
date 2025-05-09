@@ -4,7 +4,6 @@ class ContentfulCli < Formula
   url "https:registry.npmjs.orgcontentful-cli-contentful-cli-3.8.8.tgz"
   sha256 "de28b9aaaea30c79543d867ac1f55f3638ecdf51ecef6a79d9c7ba3ed1cf6fdc"
   license "MIT"
-  head "https:github.comcontentfulcontentful-cli.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "545f40ea5afd8b629a75d67e809e0db92c0e70daa6e1e8a7b4427839dad47597"

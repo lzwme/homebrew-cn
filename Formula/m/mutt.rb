@@ -14,6 +14,15 @@ class Mutt < Formula
   sha256 "d162fb6d491e3af43d6f62f949b7e687bb0c7c2584da52c99a99354a25de14ef"
   license "GPL-2.0-or-later"
 
+  # Livecheck uses GitLab tags to determine current version.
+  # They all have `-rel` suffix which needs to be omitted.
+  #
+  # BitBucket strategy doesn't work for some reason.
+  livecheck do
+    url "https:gitlab.commuttmuamutt.git"
+    regex(^mutt[._-]v?(\d+(?:-\d+)+)-rel$i)
+  end
+
   bottle do
     sha256 arm64_sequoia: "e11bd2be69fee9b5c24190699cf2318559ca0cda04520ae1845a5512e0fcd843"
     sha256 arm64_sonoma:  "b5ef0c774e2c1926a13345f73f2f6370aa28d54bd4dfff553f945fb7f9ab7858"

@@ -1,19 +1,19 @@
 class CargoShear < Formula
   desc "Detect and remove unused dependencies from `Cargo.toml` in Rust projects"
   homepage "https:github.comBoshencargo-shear"
-  url "https:github.comBoshencargo-sheararchiverefstagsv1.2.6.tar.gz"
-  sha256 "ae097e6a9c59834d37568bbd94b0a38af6771bec8c837624411e4214458e7ab1"
+  url "https:github.comBoshencargo-sheararchiverefstagsv1.2.7.tar.gz"
+  sha256 "2abab1cba4ce8dfec5b25a2bf04d4767ab3e70a8445e0b20cf8542c400c7d566"
   license "MIT"
   head "https:github.comBoshencargo-shear.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db5c76d9069d9f616b1140dc846d2217f382a841e7ce9507877002aba99ec631"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6d5b35fb81f84bf6f2c9ef396ec271fb7eb6cd7a2c32cc04689472e0fd242814"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2e920a7a087d08eb4d6ca2cac31d76cd6fb58c80963ab57122ad8d52ada50297"
-    sha256 cellar: :any_skip_relocation, sonoma:        "14ad40cd3b56694a0d5c7e92f36845181e72b441eb74b5a9c45f9e866ce9d23b"
-    sha256 cellar: :any_skip_relocation, ventura:       "ab69afdf569117b275de57d64ca9868e0bc3936cd63c27c41a2ed5d56b1c48c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2866c338b0bb74bda24fc2cf8f2d13e08206ea7774170034f6550cbfbd78b60b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "08b04c023900e3b4c0ffe803f235ec36767df42df04e7298be959c09eb720efd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0d75f921272eacd38d46c1699ab884958beb17cfd347c78e9cc0d9549c2ba0b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7d6c282c6318f06660cd1de6182d8d3c8467777f56264bc8d97eacac986b7dd3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a75d0b029b5406f364ebe59a34a7ab64f635c6090ef9db0134ad118f20708a67"
+    sha256 cellar: :any_skip_relocation, sonoma:        "04608c7f42bd44ce0fa54da28fc4793d9fd1593ca806a7f4f02d56b740cfc988"
+    sha256 cellar: :any_skip_relocation, ventura:       "3e0e298d5d55ca409c0b36838436e18baf6b9144823845b3a3fd71a2b3e69624"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "53992fa491f6a7a582beeb66944db7057e7a338c59857b55e0f7e895fb52d44c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "390dc990b4f6fdc4c4989cfb10093c8054902f47fc9521b7b9da127ac8ac1217"
   end
 
   depends_on "rust" => :build

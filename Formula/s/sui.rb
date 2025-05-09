@@ -1,8 +1,8 @@
 class Sui < Formula
   desc "Next-generation smart contract platform powered by the Move programming language"
   homepage "https:sui.io"
-  url "https:github.comMystenLabssuiarchiverefstagstestnet-v1.48.0.tar.gz"
-  sha256 "a50f3453e177e30bc045c7491c005690f4682e839f0bd0260c0d394a428fda99"
+  url "https:github.comMystenLabssuiarchiverefstagstestnet-v1.48.1.tar.gz"
+  sha256 "d2b67fddea8205389efb8bbeae22b0aab982d372d9b3e912501bcc19b509919a"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class Sui < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7224c57f45246d1760aba26157ff07053fdf8d2d107bf278150eabd0bc97feda"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8eef83225c071f0ba266a3e0175d10e104516b099e1aeeefa0c97d9bb5f80d37"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9b4619bcc780ed6f6cb359159a001cdd00687edbebe2ae9b04a717f6e142e8df"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a5b3b56d2e16e6856b7384b6a4120a710118ab8455c3cb66acdfd13c71b154a7"
-    sha256 cellar: :any_skip_relocation, ventura:       "687aa906070da044054e4ce372b648c4902f2ed9fe39fcac9d3ff19a772f8d23"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c3a6579e62e29fbba7830fcb447bf30038aafbc76dd09faa06ac0add3571a44"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f393d8bb6995d187fc39352305868028c2dc32fa48c5e14d00c5de54c21ffe70"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5caf392a0d700c55a36dc8534dbc5b9c14e6fadb433b240963dfff4d7e5d562"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "619a9010bde5eaa02c19e2f4f529881d50e9a70fe0d25b01bea2c656594ee25d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ad37b1d600245c42953343bb7a20e9fba6d42682f409184dda90e206582f9580"
+    sha256 cellar: :any_skip_relocation, sonoma:        "68d7e2d195663ee65f048406a2f178940ff2e354f9d5a411d3dfcb5b6ae5bf71"
+    sha256 cellar: :any_skip_relocation, ventura:       "fd2652aab665b40e46250a92e49dad9eb5844dd8fce098ddfeb7962d6c46ee5e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab2d45fad24a581014274dfde1ee2a98b377f7c1cbf666df602c5eefeba4edd6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18cf24c9bcb085cce2f015f16c61615fadebabf56c29efddb1880714e760884b"
   end
 
   depends_on "cmake" => :build

@@ -10,7 +10,7 @@ cask "iina+" do
   auto_updates true
   depends_on macos: ">= :big_sur"
 
-  app "iina+.app"
+  app "IINA+.app"
 
   zap trash: [
     "~LibraryApplication Supportcom.xjbeta.iina-plus",

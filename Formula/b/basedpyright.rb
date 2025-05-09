@@ -4,7 +4,6 @@ class Basedpyright < Formula
   url "https:registry.npmjs.orgbasedpyright-basedpyright-1.29.1.tgz"
   sha256 "97859fe21af1d8601fe5f1cbd7d68f0db156524e4b3bc8306730ab22533cec81"
   license "MIT"
-  head "https:github.comdetachheadbasedpyright.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c08d5edd65107b8429513c225383d3296711b7834ac54ec7c643c6ff35c57af9"

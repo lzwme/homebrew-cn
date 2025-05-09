@@ -6,11 +6,12 @@ class Xcodes < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "26be4fc0a95c2af65e8f67daba501fb22196c76190a279a1df38edd891aa758b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a6ae2f20d6eb6667c2e382beafd24afa6bfc99784c794e88e0a6005f4e5a398"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2f52a88c7e9317257adeb33761ce725a8dee29da1fec73514e458edd445fa4e6"
-    sha256 cellar: :any_skip_relocation, sonoma:        "73e847c58f124ee2e6dadc821b7021edf0ab6cae564ef216b38c1e158faeeb7f"
-    sha256 cellar: :any_skip_relocation, ventura:       "a48eb3978e5dbff7dd4f34245bb380bf56ef297c416b817140e54b53e31d10bb"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0bfcfc461c00b753ca481a0a3e1d7997c5eb940389de08895ee673c1a0e2612"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1913afb72f753a182a4d3d66f08b61f0abf2de924b93e3ad42f20bcf95260fa5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "07d06a3446dba98e8b62bf31da5bee4b49a7f3d5215baf269ef78f4334ce222b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "86ff1161c99af9f9fad6d8d38bd2a8cea1a53a8764cc4368770e83bf136ba22d"
+    sha256 cellar: :any_skip_relocation, ventura:       "7c00b27bce8dd91695740061ec9d5d4cd54faec6d7d7e18016723e2619fabaff"
   end
 
   depends_on xcode: ["13.3", :build]
@@ -20,6 +21,7 @@ class Xcodes < Formula
   def install
     system "swift", "build", "--disable-sandbox", "--configuration", "release"
     bin.install ".buildreleasexcodes"
+    generate_completions_from_executable(bin"xcodes", "--generate-completion-script")
   end
 
   test do

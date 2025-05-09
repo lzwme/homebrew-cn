@@ -3,19 +3,19 @@ class Virtualenv < Formula
 
   desc "Tool for creating isolated virtual python environments"
   homepage "https:virtualenv.pypa.io"
-  url "https:files.pythonhosted.orgpackages5307655f4fb9592967f49197b00015bb5538d3ed1f8f96621a10bebc3bb822e2virtualenv-20.31.1.tar.gz"
-  sha256 "65442939608aeebb9284cd30baca5865fcd9f12b58bb740a24b220030df46d26"
+  url "https:files.pythonhosted.orgpackages562c444f465fb2c65f40c3a104fd0c495184c4f2336d65baf398e3c75d72ea94virtualenv-20.31.2.tar.gz"
+  sha256 "e10c0a9d02835e592521be48b332b6caee6887f332c111aa79a09b9e79efc2af"
   license "MIT"
   head "https:github.compypavirtualenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "39dc60f988c83f7b9b4defa4b7c510f10abaf87f30a2c500712bc84d6ed7ce82"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "39dc60f988c83f7b9b4defa4b7c510f10abaf87f30a2c500712bc84d6ed7ce82"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "39dc60f988c83f7b9b4defa4b7c510f10abaf87f30a2c500712bc84d6ed7ce82"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dad824493ec52e3f8596c27adc4e52f25838857a9f739e092e74babdcda66aa3"
-    sha256 cellar: :any_skip_relocation, ventura:       "dad824493ec52e3f8596c27adc4e52f25838857a9f739e092e74babdcda66aa3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e17c4e98380071898785ff50b96a130af2d6e72ad0327ae631c22adac39740b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e17c4e98380071898785ff50b96a130af2d6e72ad0327ae631c22adac39740b5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d8d2567e3809e40e530c2fcf928bcc1e7e6affa708bb6fafa7a360038dae0f2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d8d2567e3809e40e530c2fcf928bcc1e7e6affa708bb6fafa7a360038dae0f2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1d8d2567e3809e40e530c2fcf928bcc1e7e6affa708bb6fafa7a360038dae0f2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0d853a4d494f78b89bbf20ba800b47f53014c5aa66aad3b897e611ebbc2da388"
+    sha256 cellar: :any_skip_relocation, ventura:       "0d853a4d494f78b89bbf20ba800b47f53014c5aa66aad3b897e611ebbc2da388"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "062b68ff2df6b0a13e7186a81cb9d3e411d82f70d8c4ec0378d6acc0334285c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "062b68ff2df6b0a13e7186a81cb9d3e411d82f70d8c4ec0378d6acc0334285c2"
   end
 
   depends_on "python@3.13"
@@ -31,8 +31,8 @@ class Virtualenv < Formula
   end
 
   resource "platformdirs" do
-    url "https:files.pythonhosted.orgpackagesb62d7d512a3913d60623e7eb945c6d1b4f0bddf1d0b7ada5225274c87e5b53d1platformdirs-4.3.7.tar.gz"
-    sha256 "eb437d586b6a0986388f0d6f74aa0cde27b48d0e3d66843640bfb6bdcdb6e351"
+    url "https:files.pythonhosted.orgpackagesfe8b3c73abc9c759ecd3f1f7ceff6685840859e8070c4d947c93fae71f6a0bf2platformdirs-4.3.8.tar.gz"
+    sha256 "3d512d96e16bcb959a814c9f348431070822a6496326a4be0911c40b5a74c2bc"
   end
 
   def install

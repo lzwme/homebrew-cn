@@ -1,19 +1,19 @@
 class NetlifyCli < Formula
   desc "Netlify command-line tool"
   homepage "https:www.netlify.comdocscli"
-  url "https:registry.npmjs.orgnetlify-cli-netlify-cli-21.2.0.tgz"
-  sha256 "9a237e7f6fca419dfc7cc42ed34d15927d82a8a0970ceaa165ffac34c46f0608"
+  url "https:registry.npmjs.orgnetlify-cli-netlify-cli-21.2.1.tgz"
+  sha256 "b557b2fccc5005fc9775c5800e314c5975c40343556292513265c8b170c0c9a7"
   license "MIT"
   head "https:github.comnetlifycli.git", branch: "main"
 
   bottle do
-    sha256                               arm64_sequoia: "2308423d95f0a4a9e7a0104d632b8ef7c72038f7289235a1a689bbf9beb93f1a"
-    sha256                               arm64_sonoma:  "8b8ac1e591db37fdc6d9071c56492a8ceca5882808dfb75b6ab04db1cb8c583e"
-    sha256                               arm64_ventura: "42f90b1c18c524ffdb52239bdd3e8b853b63fabefb19597980866acc6e7c407c"
-    sha256                               sonoma:        "f9c2bc6e7e3b45ccf7d98d2594669f3a417dfec33310cf8c70a2fe020fd7b6c3"
-    sha256                               ventura:       "ea9fe66b51f6bae259d99b332c5a86ab59ce57a8f7bae2666688582f503fa8e2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "72f97a34bd0c6469c954245a6f2863e03a5c6fa988061968ccc4e91670c2df51"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5250f698335c03018e8643fc82d00f0d969d92b8cff740e23ae5a383d11a255b"
+    sha256                               arm64_sequoia: "6e5676e52a6fe801ad3017e0010477a48261176e93810672b5b397b037b23139"
+    sha256                               arm64_sonoma:  "dae5359f9cc59300b49a360be3a2f592024ac2759623600a3d0b29e14fe6115c"
+    sha256                               arm64_ventura: "d11a7f00fe3057c69c53007b33fd6ca4ffd63757720b901d0f29ea1929d7f98b"
+    sha256                               sonoma:        "d94b5f5f17fb7cd957fc915f1ce457ee59759acd7f3c235ac2da666e201f7b52"
+    sha256                               ventura:       "27aac5f72c52b82948fe87edb705461474a76ac9fa8d55a0ae9ff9c07af9504d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "767e969577e2b870531fa29249ee5955c996a5a92665f0f59c18f6ed9ed35245"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "41741aa6f263b25b8891642e1639441cc42ae0d7e7c40330ec9b2ffcfb29099a"
   end
 
   depends_on "node"

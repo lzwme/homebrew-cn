@@ -1,10 +1,9 @@
 class Freeciv < Formula
   desc "Free and Open Source empire-building strategy game"
   homepage "https:freeciv.org"
-  url "https:downloads.sourceforge.netprojectfreecivFreeciv%203.13.1.4freeciv-3.1.4.tar.xz"
-  sha256 "14999bb903c4507cc287d5a8dd1b89eee623bb41b4e01e0836567fb5f13296e4"
+  url "https:downloads.sourceforge.netprojectfreecivFreeciv%203.13.1.5freeciv-3.1.5.tar.xz"
+  sha256 "0d9f687ff950a77a9fa0af66108a7f67da717fd40c3a0ca4c0a4f4a3f0214b33"
   license "GPL-2.0-or-later"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,13 +11,13 @@ class Freeciv < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "bb24fc0fadc8f16b3c9518544e0bbf108dee3c75bdb2265125614f762967d8ed"
-    sha256 arm64_sonoma:  "f8ade62bfbddee03015e60be7469b934c68ac117060227b64f093de2e9005cd5"
-    sha256 arm64_ventura: "751d5859aafda7a2f22f47e5aa83f8e7740aae1fc72310d67ee2d0efa2fb8351"
-    sha256 sonoma:        "46928f3bc95629d3149e3ee1a44071ede46d2a7dc1e3c7d3d5ddbb672899f97f"
-    sha256 ventura:       "c984ccc6dfd5d44d4cc24f834ddc7409f8fb7453084d5ca1296f6aebe0c2ebdc"
-    sha256 arm64_linux:   "163e31e82cf0fbb9b2bbecf83d3965275db2aa1efcced265c0c60549f9b36e5a"
-    sha256 x86_64_linux:  "8c414f76445e8eb8bcdaf130941e9d6a39c41e6a51c29d00da4dd439a06b9eac"
+    sha256 arm64_sequoia: "41b72392d0c7bda4ef87ebb4c3cb23a75437d47589e67947bc62429e53e86faa"
+    sha256 arm64_sonoma:  "d7d140af12010c0adc38d54cfdd9750803799a99ce5411a69d1c6e355c54a4e6"
+    sha256 arm64_ventura: "2694d772632c1c690fcb8398888753b44d06156ad79dd3c7dbccc1a63a6214e9"
+    sha256 sonoma:        "14192305f9802303a698451bef2b3985888ff2929b30754d1a4b4f4a90699db7"
+    sha256 ventura:       "5ea34567361cbccb36c9421ba3b8a10ce14579e25dc059181f4316d0760619ef"
+    sha256 arm64_linux:   "2bc1f434418b08b9fe66ef1c3b3d924559e4a99b7ffb4d9e6c68b709a2153b1c"
+    sha256 x86_64_linux:  "0da80ceb53a0bd7e464cab9b9a5806a57c3cdde7c408fdc6becd8b405822f0b4"
   end
 
   head do

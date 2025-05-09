@@ -1,12 +1,12 @@
 class Cromwell < Formula
   desc "Workflow Execution Engine using Workflow Description Language"
   homepage "https:github.combroadinstitutecromwell"
-  url "https:github.combroadinstitutecromwellreleasesdownload88cromwell-88.jar"
-  sha256 "858439cb824753ff25b547acf245f13f5392d39644eddcc05994859002515da7"
+  url "https:github.combroadinstitutecromwellreleasesdownload89cromwell-89.jar"
+  sha256 "afc761fc05b31a63a1157d112c64db77222aa2397dfd2f6c974dc44db689090d"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "70925ac844d645a54e5e197bec516db6b7f0c3e80b07fb3cf9dae68b35642b76"
+    sha256 cellar: :any_skip_relocation, all: "d86293d84e263cb004ecd0240d4818ff8ca7d8a4219377d506e68cf9ba2b81d9"
   end
 
   head do
@@ -17,8 +17,8 @@ class Cromwell < Formula
   depends_on "openjdk"
 
   resource "womtool" do
-    url "https:github.combroadinstitutecromwellreleasesdownload88womtool-88.jar"
-    sha256 "c5a077b5b6106f641606caf6c6bcf78b2f8ec89159bf557ff57030aa70fb0b1f"
+    url "https:github.combroadinstitutecromwellreleasesdownload89womtool-89.jar"
+    sha256 "beece815cbc7ddb48c49ef4511e1e794d6d2f3cb933f29265708a5c61c87fb4e"
 
     livecheck do
       formula :parent

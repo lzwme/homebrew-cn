@@ -3,18 +3,18 @@ class Nuitka < Formula
 
   desc "Python compiler written in Python"
   homepage "https://nuitka.net"
-  url "https://files.pythonhosted.org/packages/2d/c8/ff5f8ccdd112101d0026006887708083db587a02b9379ea726f8f9a93c03/Nuitka-2.7.tar.gz"
-  sha256 "b0d5ad394cbfe93820116cfe94605e50bb20f5707b6fb41e09c421a7c9a2c53d"
+  url "https://files.pythonhosted.org/packages/18/f7/f1d87901ab90be0bc1dd96d9f899a07f626f5f2bebe3b09e475fdc4b7fdb/Nuitka-2.7.1.tar.gz"
+  sha256 "1e7ff9208f8d8262302a6eee05d299650f30813dbecb4501d365a712c3169209"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c6e89f1130feee23517f07c32fa2913ac72e9ac96f2a75e65182dd58534f1934"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e289f347006e30132d79b96cc0f53ed2fc812e90fb9e71878939d03a57e9d064"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "44dd100cd790769f129732d4e460f78d448fb0b23f0974c4972f13a469b3cb40"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f4883ef7569d2c214e3baa9ed8ce13030d6568a60678265ba61531a6e2c3445b"
-    sha256 cellar: :any_skip_relocation, ventura:       "93b3e6e3c2f2faa36d23fd436eaf4c6c909977fb0265cedc8419f3573aad5bce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7257546f250957855f4e56acf3b3aa34d164bcf76121665789739d36dd07271"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2fcfa47bb58c8dcc58d3b04a3e5e3c5561c2bfba69b1111acb0658489291983"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "72cb5e538d3db3c7742a6155606f13350c4605b89e1962c49e90864622f4451e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b24a4aba716029a2e0ea32cab4c9b6d1aeeba8e0a5363064e477b9862c00ed73"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7651b076627740a40ca57fc53ee6f61ec69c38b20a8f554ec86d9cae77bb0a3c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ffd348002bd119192b90c706aa459975854fdae9ce9f93d60d49645fcce0655b"
+    sha256 cellar: :any_skip_relocation, ventura:       "2932404b16d1ca103de4b8ae9b225c509804b732a7186485ade31a1a59fdaacf"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dfb03a6085a4e87d2d32dcea1da2469ee0a06b7a6397a03af2eb47c882201a37"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "eddd2eacca381fe1130c455c7fc1937c4ce7f38263c62651b8a84c2cac2ccac1"
   end
 
   depends_on "ccache"
