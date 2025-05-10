@@ -3,18 +3,18 @@ class Tmt < Formula
 
   desc "Test Management Tool"
   homepage "https://tmt.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/92/d6/003811f778e3413d89ae21f4b5ce466962351c731df2891e572c7842b798/tmt-1.47.0.tar.gz"
-  sha256 "96045c6dd418b7c209dc4881be5bac767b792763282d7ebdec7437dd975a3f8c"
+  url "https://files.pythonhosted.org/packages/e3/80/81ff2de5c0e59ecedb5341345f9e2d92f52c8b4c67ec27264bf7462edc9e/tmt-1.48.0.tar.gz"
+  sha256 "5854a5260db1417844789b8cbf2a18e428661977f18e191cdfd246d75f6b0577"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "90de4621b6125d10d86d0f573354006a7d995a439281a69de425d4ad776f3bc0"
-    sha256 cellar: :any,                 arm64_sonoma:  "c8a29c5868cb70105f74f82c6780dcdb1973492a51bcf505fb2fa5c7ef380699"
-    sha256 cellar: :any,                 arm64_ventura: "cd43ee64af56202e4a002741e1a3b82b59638d6c1af9e0af56d4f0d2a4288b5e"
-    sha256 cellar: :any,                 sonoma:        "e34301449ee8c89bfbb7b90c3d40aa47c68630b8bd7e113fd1b4aa2e44eda2c0"
-    sha256 cellar: :any,                 ventura:       "cea67c9101d5dcb863ae922c2fefe23b66d96be93977cf823d0d25e5aa1a531b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "88d8b7d1cf5838081ed40acf6a7f92a8a694b3d0b8bfff5d6ecd3200b4152339"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28e313111f8f14b76fa18fca956b7f260cff7e32a4dbbddada7e4687ba43cdc8"
+    sha256 cellar: :any,                 arm64_sequoia: "c1048a33ce45bd72050e1fabb0569758d6c93541b295d8cd6a0900309f303396"
+    sha256 cellar: :any,                 arm64_sonoma:  "503071ff86cdef1c3845631ce3f799b2d6cbfc9c502ad950c33154e2321e2332"
+    sha256 cellar: :any,                 arm64_ventura: "4287a14195fccf5c45c449db15f79c62da28368656951471117efdda176fe4c9"
+    sha256 cellar: :any,                 sonoma:        "640aa2726533a4e637473e48c8a5fda05fd8f9b43ecc015c351e153b740fedb7"
+    sha256 cellar: :any,                 ventura:       "53b0f06f114c346f9c2b9e279d536d849a7dee98397e4f98e24abcb896edf642"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a851352f3cfb1fa02a307812ca83ab3d0dfdab511d02e8afcc4c6cd2fef5caba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d507980cb846c7a3f0c531eb396c820b56348489fed26ab7a8602d2d3396859"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -33,8 +33,8 @@ class Tmt < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/16/b0/572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357/charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "click" do
@@ -103,18 +103,18 @@ class Tmt < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/b6/2d/7d512a3913d60623e7eb945c6d1b4f0bddf1d0b7ada5225274c87e5b53d1/platformdirs-4.3.7.tar.gz"
-    sha256 "eb437d586b6a0986388f0d6f74aa0cde27b48d0e3d66843640bfb6bdcdb6e351"
+    url "https://files.pythonhosted.org/packages/fe/8b/3c73abc9c759ecd3f1f7ceff6685840859e8070c4d947c93fae71f6a0bf2/platformdirs-4.3.8.tar.gz"
+    sha256 "3d512d96e16bcb959a814c9f348431070822a6496326a4be0911c40b5a74c2bc"
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/10/2e/ca897f093ee6c5f3b0bee123ee4465c50e75431c3d5b6a3b44a47134e891/pydantic-2.11.3.tar.gz"
-    sha256 "7471657138c16adad9322fe3070c0116dd6c3ad8d649300e3cbdfe91f4db4ec3"
+    url "https://files.pythonhosted.org/packages/77/ab/5250d56ad03884ab5efd07f734203943c8a8ab40d551e208af81d0257bf2/pydantic-2.11.4.tar.gz"
+    sha256 "32738d19d63a226a52eed76645a98ee07c1f410ee41d93b4afbfa85ed8111c2d"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/17/19/ed6a078a5287aea7922de6841ef4c06157931622c89c2a47940837b5eecd/pydantic_core-2.33.1.tar.gz"
-    sha256 "bcc9c6fdb0ced789245b02b7d6603e17d1563064ddcfc36f046b61c0c05dd9df"
+    url "https://files.pythonhosted.org/packages/ad/88/5f2260bdfae97aabf98f1778d43f69574390ad787afb646292a638c923d4/pydantic_core-2.33.2.tar.gz"
+    sha256 "7cb8bc3605c29176e1b105350d2e6474142d7c1bd1d9327c4a9bdb46bf827acc"
   end
 
   resource "pygments" do

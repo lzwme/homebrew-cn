@@ -3,19 +3,18 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https:prowler.com"
-  url "https:files.pythonhosted.orgpackages8e94832826cce8c69fb8d2e4134c0425b42ae9b33b777ff4eb1cb1a2e96726d8prowler-5.5.1.tar.gz"
-  sha256 "8e9c8b7551cfbcb406f2f05f31a613767200393d3f28125b7298c24a79fe6c1b"
+  url "https:files.pythonhosted.orgpackagesaccdfb77106fd83fdafe8e4f27a6de426f4ec931fc527298fcbc8c2dcc845aeeprowler-5.6.0.tar.gz"
+  sha256 "ee06323c67e0b95c9b54164a7523821913711d21d9411aad5f55ba3ef0b4dbed"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "20bb2201f0f3ca0cdbefc5a19c7ee12d6190e6f331aaf71a1bf20e515f21765d"
-    sha256 cellar: :any,                 arm64_sonoma:  "fa5d9d8b151ad3ba1512d9ace7169cccbc80e0e52abcb4a908946cdf8aec5a89"
-    sha256 cellar: :any,                 arm64_ventura: "fff62c2eae4dab8945fbf84192e6926d76ea5f04c68bf62b7435ccb60bbd2b7d"
-    sha256 cellar: :any,                 sonoma:        "cfcc63b46022032210a29608cef0514d323dd4acf8276bcfc1de40a5f74d6c3a"
-    sha256 cellar: :any,                 ventura:       "ab566ec9ad1248c327cd5580c2a83f2edff9fe2426c6fa3db096a7d452a7269e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "436745b1a22a0b2d8ad338dc9ebb6f3fe137e06cc4d1ac3db292787e3efdf49a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2568a6ebd5699ba7ff1a6d73b15f00d5bec3b5e9c770060528ce6bd6420e0391"
+    sha256 cellar: :any,                 arm64_sequoia: "1248ba67b0f33a0326041eb0733d1674029f0ebb3fcce21c77d42f241ab4c5b1"
+    sha256 cellar: :any,                 arm64_sonoma:  "c0da586baf9f61c0978d815719478fa6631df52bdc72cdcc0beef9e1d02d8b28"
+    sha256 cellar: :any,                 arm64_ventura: "8a8cb17d00ad3c159eea6c2eb97db82af8a524523f063592770e69720ae49c0f"
+    sha256 cellar: :any,                 sonoma:        "8bb8ddc9c83707977a163c5043dbbe8d1acddbec6665fe6d1443fa3c6bf7034b"
+    sha256 cellar: :any,                 ventura:       "892f76b20ab7d1bb4bc17035b2cc7a23b18b9fa982caaa0278a4db10662e6dc9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "77e87d53f6642204199754763609a448a6a9e5a38bd08fff0ad09f7519eb882a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92563a040f176664aa55fe100491521c82364c74fd233ff8e77382ff99572e25"
   end
 
   depends_on "cmake" => :build
@@ -78,8 +77,8 @@ class Prowler < Formula
   end
 
   resource "azure-core" do
-    url "https:files.pythonhosted.orgpackages75aa7c9db8edd626f1a7d99d09ef7926f6f4fb34d5f9fa00dc394afdfe8e2a80azure_core-1.33.0.tar.gz"
-    sha256 "f367aa07b5e3005fec2c1e184b882b0b039910733907d001c20fb08ebb8c0eb9"
+    url "https:files.pythonhosted.orgpackagesc929ff7a519a315e41c85bab92a7478c6acd1cf0b14353139a08caee4c691f77azure_core-1.34.0.tar.gz"
+    sha256 "bdb544989f246a0ad1c85d72eeb45f2f835afdcbc5b45e43f0dbde7461c81ece"
   end
 
   resource "azure-identity" do
@@ -208,8 +207,8 @@ class Prowler < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https:files.pythonhosted.orgpackagese43389c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12dcharset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "click" do
@@ -293,8 +292,8 @@ class Prowler < Formula
   end
 
   resource "google-api-core" do
-    url "https:files.pythonhosted.orgpackages6aa27950df7fbb8ab1b7afb286ab374df2f5b3ea107b5d18224eac4e81bd2a69google_api_core-2.25.0rc0.tar.gz"
-    sha256 "38d9d6a67673473457adbbef1ccca27d9ebb755e377c05e8a9b88f89eecab9ad"
+    url "https:files.pythonhosted.orgpackages1f5a746a50ac46d6cb716fa30bf5686663ac27fb2616d07391d1e8d919dc2accgoogle_api_core-2.25.0rc1.tar.gz"
+    sha256 "ec279085923652b0d2e4c72fd6bb926ee17e9c960f0b8a472df146a42493957e"
   end
 
   resource "google-api-python-client" do
@@ -303,8 +302,8 @@ class Prowler < Formula
   end
 
   resource "google-auth" do
-    url "https:files.pythonhosted.orgpackagescb8e8f45c9a32f73e786e954b8f9761c61422955d23c45d1e8c347f9b4b59e8egoogle_auth-2.39.0.tar.gz"
-    sha256 "73222d43cdc35a3aeacbfdcaf73142a97839f10de930550d89ebfe1d0a00cde7"
+    url "https:files.pythonhosted.orgpackages94a538c21d0e731bb716cffcf987bd9a3555cb95877ab4b616cfb96939933f20google_auth-2.40.1.tar.gz"
+    sha256 "58f0e8416a9814c1d86c9b7f6acf6816b51aba167b2c76821965271bac275540"
   end
 
   resource "google-auth-httplib2" do
@@ -458,8 +457,8 @@ class Prowler < Formula
   end
 
   resource "msgraph-sdk" do
-    url "https:files.pythonhosted.orgpackagesaa2695dd0fce22456ea26c8ab0a8f4e9b56d2ece772ab6f7fe3dc23b827a2e68msgraph_sdk-1.18.0.tar.gz"
-    sha256 "ef49166ada7b459b5a843ceb3d253c1ab99d8987ebf3112147eb6cbcaa101793"
+    url "https:files.pythonhosted.orgpackages7b3be0129b84e981004d5305418119a8c54ad7e75df27215028895716960e09bmsgraph_sdk-1.23.0.tar.gz"
+    sha256 "6dd1ba9a46f5f0ce8599fd9610133adbd9d1493941438b5d3632fce9e55ed607"
   end
 
   resource "msrest" do
@@ -473,8 +472,8 @@ class Prowler < Formula
   end
 
   resource "narwhals" do
-    url "https:files.pythonhosted.orgpackages6592503f99e2244a271aacd6c2588e0af1b59232292b217708748cdb30214dc3narwhals-1.36.0.tar.gz"
-    sha256 "7cd860e7e066609bd8a042bb5b8e4193275532114448210a91cbd5c622b6e5eb"
+    url "https:files.pythonhosted.orgpackagesddfaf4c2b2524b6b1e7475af933849ecaad280822eab5631151ccb1993d600cenarwhals-1.38.2.tar.gz"
+    sha256 "7c5fbc9f2b8e1d5d95f49dcef9c2d94bf17810de68c87ff195dc7d22f7b3eeb5"
   end
 
   resource "nest-asyncio" do
@@ -623,8 +622,8 @@ class Prowler < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesbb71b6365e6325b3290e14957b2c3a804a529968c77a049b2ed40c095f749707setuptools-79.0.1.tar.gz"
-    sha256 "128ce7b8f33c3079fd1b067ecbb4051a66e8526e7b65f6cec075dfc650ddfa88"
+    url "https:files.pythonhosted.orgpackages70dc3976b322de9d2e87ed0007cf04cc7553969b6c7b3f48a565d0333748fbcdsetuptools-80.3.1.tar.gz"
+    sha256 "31e2c58dbb67c99c289f51c16d899afedae292b978f8051efaf6262d8212f927"
   end
 
   resource "shodan" do

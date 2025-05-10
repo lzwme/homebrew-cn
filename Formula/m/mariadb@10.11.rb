@@ -1,8 +1,8 @@
 class MariadbAT1011 < Formula
   desc "Drop-in replacement for MySQL"
   homepage "https:mariadb.org"
-  url "https:archive.mariadb.orgmariadb-10.11.11sourcemariadb-10.11.11.tar.gz"
-  sha256 "6f29d4d7e40fc49af4a0fe608984509ef2d153df3cd8afe4359dce3ca0e27890"
+  url "https:archive.mariadb.orgmariadb-10.11.12sourcemariadb-10.11.12.tar.gz"
+  sha256 "d61f23090cfc14f43e8a27c2d3ce7f80247e74481bb26a2d3a6308b8d194e167"
   license "GPL-2.0-only"
 
   livecheck do
@@ -18,13 +18,13 @@ class MariadbAT1011 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "04470673c1f6cae250ca31e5882d5535b852d8b3a330db914522a301fed52d6d"
-    sha256 arm64_sonoma:  "58d4aa3ff13d2e6abe0be57014ea698e9d29bc73897e7d8f8b4627bd6ea5e375"
-    sha256 arm64_ventura: "a2e474fded76e08edfbc0722c14831f224a1bcad893b3cff74a7eb39a7b13e35"
-    sha256 sonoma:        "ac4da5f4380f31b36346cbd45fc17f188fc13ec2672552338b77c176f1206348"
-    sha256 ventura:       "6a001296b9e98e61e25e384177110927f1e8d9351fc81a143f6ce7af13830800"
-    sha256 arm64_linux:   "eb73d5c1531dec08a5b89d622bdfbfd6afa89bacdc89c30de57d885c27e58f18"
-    sha256 x86_64_linux:  "216605249b124d91406eb9b40ca31b6c5508b9a066ef9d791c087daa17c4f9ba"
+    sha256 arm64_sequoia: "cd0fbe5bf3e9035fb2e8799d0e91c897c47a31bc38401d31509b8d9411286d1a"
+    sha256 arm64_sonoma:  "af1719894b04e042421e4317d6068263927814425836991d541333fb5ada39db"
+    sha256 arm64_ventura: "f4f4a43875c097500c3da176586f19f532893e2cff43cab2cbfe91696e6e3aca"
+    sha256 sonoma:        "0787ae74054567bc9fdf7d29f5ccbdbe6e51826bf9686dcb690360f116edbc72"
+    sha256 ventura:       "d1eb3e6452d85a1b5b991be1133f149955bd0ee37bacd4c801842d9ad85a883b"
+    sha256 arm64_linux:   "929665421463109a022d8cc7506ad3eb0f6b48aa6de5e0dd46760b97e2d5e549"
+    sha256 x86_64_linux:  "0a1f70f085cc78310f369d371f92ee18334b84e27fea363ac4a89c1daff2e41d"
   end
 
   keg_only :versioned_formula
@@ -58,23 +58,6 @@ class MariadbAT1011 < Formula
   on_linux do
     depends_on "linux-pam"
     depends_on "readline" # uses libedit on macOS
-  end
-
-  # system libfmt patch, upstream pr ref, https:github.comMariaDBserverpull3786
-  patch do
-    url "https:github.comMariaDBservercommitb6a924b8478d2fab5d51245ff6719b365d7db7f4.patch?full_index=1"
-    sha256 "77b65b35cf0166b8bb576254ac289845db5a8e64e03b41f1bf4b2045ac1cd2d1"
-  end
-
-  # Backport fix for CMake 4.0
-  patch do
-    url "https:github.comMariaDBservercommit2a5a12b227845e03575f1b1eb0f6366dccc3e026.patch?full_index=1"
-    sha256 "f3a4b5871141451edf3936bcad0861e3a38418c3a8c6a69dfeddb8d073ac3253"
-  end
-  patch do
-    url "https:github.comcodershipwsrep-libcommit324b01e4315623ce026688dd9da1a5f921ce7084.patch?full_index=1"
-    sha256 "eaa0c3b648b712b3dbab3d37dfca7fef8a072908dc28f2ed383fbe8d217be421"
-    directory "wsrep-lib"
   end
 
   def install

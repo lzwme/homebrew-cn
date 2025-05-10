@@ -3,28 +3,27 @@ class Ford < Formula
 
   desc "Automatic documentation generator for modern Fortran programs"
   homepage "https:github.comFortran-FOSS-Programmersford"
-  url "https:files.pythonhosted.orgpackages0108a2380f5a63e0dc8e428c9307ee26e4455fce4775a76964a86b7068a9edc7ford-7.0.10.tar.gz"
-  sha256 "b1271adcd8a33af89aa65cd176ed25fe252b3e0a52aa9f1fd00b0e8c51fc4086"
+  url "https:files.pythonhosted.orgpackages96fee06d62822f8eb66e068066c4a342f2dc79c4e6e9c3fef97fd4f80aa73353ford-7.0.11.tar.gz"
+  sha256 "d682372592de3414e10db6baee3e8bf52867006cf0b198f42b82ea735015128b"
   license "GPL-3.0-or-later"
   head "https:github.comFortran-FOSS-Programmersford.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b064d880206f80b5c53d75f52d883e2c0f00a81067820fe3bfc2ffa3b41310b6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5886a9cc98a97e8f204e2eb813e04f7176dd4084961d38a05753b455b6ef896d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "eac3e85730ed7bc65c9c7796a5141b03bfe18010d4b130f1ffb854c976de372d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "692f7fb9a31df9ee0194ed34d282ed969710e1fa61ce5c6ced6d16db55e3d577"
-    sha256 cellar: :any_skip_relocation, ventura:       "0de0150ff4d60a7afff61a186a1c122edf27e2aa7ca8fcb1054827fac2b55fdb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0ea70b70a6e3df4f7b621251ad96dc1fc9803ad41aeec2c728362fd664a0e67a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f6057a4ff856011848da2c688453f88d23a8bddd80b61a781a1717d9b97ff93"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a4cfebfc053ff7e7d00069ea41e12a230ede786aec26d7f4ca1e8f2e2b55bb2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1a0f5377fa85c93fb7761d3cc7b86c9630c046b94ceeb454709f6a9b1340901f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "372bf0286ebea7e90f65094714b93779da6a78d8e92455028bcf01ba99cc1401"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7e52e202d1e8ab293ca0560e325ae4bc1b8a80dcd0174fa9bb9852bd8b11fff5"
+    sha256 cellar: :any_skip_relocation, ventura:       "e32b10bed5a7b43403ca51acb069dc99d805957f43efd5cb4a143a8e45dabbdb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d413e1b967c434385b994e59c90cc98ea2662e8f5e2d53200a32d1f48915f1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5fe0ba13ffe18c87373b64a42d6a8633967e84d11d9a241870b3b83e75d94ae"
   end
 
   depends_on "graphviz"
   depends_on "python@3.13"
 
   resource "beautifulsoup4" do
-    url "https:files.pythonhosted.orgpackagesf03cadaf39ce1fb4afdd21b611e3d530b183bb7759c9b673d60db0e347fd4439beautifulsoup4-4.13.3.tar.gz"
-    sha256 "1bd32405dacc920b42b83ba01644747ed77456a65760e285fbc47633ceddaf8b"
+    url "https:files.pythonhosted.orgpackagesd8e40c4c39e18fd76d6a628d4dd8da40543d136ce2d1752bd6eeeab0791f4d6bbeautifulsoup4-4.13.4.tar.gz"
+    sha256 "dbb3c4e1ceae6aefebdaf2423247260cd062430a410e38c66f2baa50a8437195"
   end
 
   resource "graphviz" do
@@ -73,18 +72,18 @@ class Ford < Formula
   end
 
   resource "python-markdown-math" do
-    url "https:files.pythonhosted.orgpackagesec17e7e3f3fce951b8adec10987834f4b2fa721ebd9bd6651ce2a4f39c4c544dpython-markdown-math-0.8.tar.gz"
-    sha256 "8564212af679fc18d53f38681f16080fcd3d186073f23825c7ce86fadd3e3635"
+    url "https:files.pythonhosted.orgpackages4c68fbea05ec6fb318bdcf56ea47596605614554f51d77bfd14f6fb481139ad8python_markdown_math-0.9.tar.gz"
+    sha256 "567395553dc4941e79b3789a1096dcabb3fda9539d150d558ef3507948b264a3"
   end
 
   resource "rich" do
-    url "https:files.pythonhosted.orgpackagesab3a0316b28d0761c6734d6bc14e770d85506c986c85ffb239e688eeaab2c2bcrich-13.9.4.tar.gz"
-    sha256 "439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"
+    url "https:files.pythonhosted.orgpackagesa153830aa4c3066a8ab0ae9a9955976fb770fe9c6102117c8ec4ab3ea62d89e8rich-14.0.0.tar.gz"
+    sha256 "82f1bc23a6a21ebca4ae0c45af9bdbc492ed20231dcb63f297d6d1021a9d5725"
   end
 
   resource "soupsieve" do
-    url "https:files.pythonhosted.orgpackagesd7cefbaeed4f9fb8b2daa961f90591662df6a86c1abf25c548329a86920aedfbsoupsieve-2.6.tar.gz"
-    sha256 "e2e68417777af359ec65daac1057404a3c8a5455bb8abc36f1a9866ab1a51abb"
+    url "https:files.pythonhosted.orgpackages3ff44a80cd6ef364b2e8b65b15816a843c0980f7a5a2b4dc701fc574952aa19fsoupsieve-2.7.tar.gz"
+    sha256 "ad282f9b6926286d2ead4750552c8a6142bc4c783fd66b0293547c8fe6ae126a"
   end
 
   resource "toposort" do
@@ -93,13 +92,13 @@ class Ford < Formula
   end
 
   resource "tqdm" do
-    url "https:files.pythonhosted.orgpackagesc1c2d8a40e5363fb01806870e444fc1d066282743292ff32a9da54af51ce36a2tqdm-4.64.1.tar.gz"
-    sha256 "5f4f682a004951c1b450bc753c710e9280c5746ce6ffedee253ddbcbf54cf1e4"
+    url "https:files.pythonhosted.orgpackagesa84b29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744dtqdm-4.67.1.tar.gz"
+    sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
-    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
+    url "https:files.pythonhosted.orgpackagesf63723083fcd6e35492953e8d2aaaa68b860eb422b34627b13f2ce3eb6106061typing_extensions-4.13.2.tar.gz"
+    sha256 "e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef"
   end
 
   def install

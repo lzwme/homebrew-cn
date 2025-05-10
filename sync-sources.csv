@@ -1070,6 +1070,7 @@ Homebrew-homebrew-core/Formula/c/coder.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/codesnap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/codespell.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/codevis.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/codex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coffeescript.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coin3d.rb, Homebrew/homebrew-core, 1
@@ -2710,6 +2711,7 @@ Homebrew-homebrew-core/Formula/h/helib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/helidon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/helix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hello.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/h/hellwal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/helm-docs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/helm-ls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/helm.rb, Homebrew/homebrew-core, 1
@@ -4186,7 +4188,7 @@ Homebrew-homebrew-core/Formula/m/mariadb@10.9.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@11.0.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@11.1.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@11.2.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/mariadb@11.4.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mariadb@11.4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/marisa.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/markdown-oxide.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/markdown-toc.rb, Homebrew/homebrew-core, 1
@@ -13964,7 +13966,6 @@ Homebrew-homebrew-cask/Casks/s/simpholders.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/simple-comic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/simple-web-server.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/simpleclock.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/s/simplefloatingclock.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/simplemind.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/simplenote.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/simplesynth.rb, Homebrew/homebrew-cask, 1
@@ -14285,7 +14286,6 @@ Homebrew-homebrew-cask/Casks/s/synology-cloud-station-backup.rb, Homebrew/homebr
 Homebrew-homebrew-cask/Casks/s/synology-drive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/synology-image-assistant.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/synology-note-station-client.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/s/synology-photo-station-uploader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/synology-surveillance-station-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/synologyassistant.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/syntax-highlight.rb, Homebrew/homebrew-cask, 1

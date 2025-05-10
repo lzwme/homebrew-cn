@@ -3,8 +3,8 @@ class Grokj2k < Formula
   homepage "https:github.comGrokImageCompressiongrok"
   # pull from git tag to get submodules
   url "https:github.comGrokImageCompressiongrok.git",
-      tag:      "v14.3.0",
-      revision: "1542410d2ee31c881ef46f491d613d7cea76e75b"
+      tag:      "v15.0.0",
+      revision: "5f1a8a754fe6a5b3265616544adccd37f4a83e52"
   license "AGPL-3.0-or-later"
   head "https:github.comGrokImageCompressiongrok.git", branch: "master"
 
@@ -14,14 +14,13 @@ class Grokj2k < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "5149d78f8c62ba15378406a5cf7069664610210b6217407a84f525b8d4f3a503"
-    sha256 cellar: :any,                 arm64_sonoma:  "77b72bff592cea45f9a58ac582c40936a40f43c5043a03f776c66ebcb243c4a8"
-    sha256 cellar: :any,                 arm64_ventura: "671bcbcd63e92dcec776dd40f283af775c20ac48b8db218df2bf434b1e2745bc"
-    sha256 cellar: :any,                 sonoma:        "9ced0cf80ece1940de03f7aa539c7ab8343cee8e180322bbd13746d715f47fb5"
-    sha256 cellar: :any,                 ventura:       "55af09dd82eabdd8ccdec7300c92598cc194f59d4f67c7f7dfd36abc99617c37"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "034279982c94fdf35fdd73e2e31f41a6a600494dbb722e070501013984970398"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61435c3633d1ba62db43e0ade8388ed6fe95e4c6601ef6446223d1e9f2527cd4"
+    sha256 cellar: :any,                 arm64_sequoia: "c449e121480cf29ababe0308798de24bf4bc6cae481b25f638ca66d7cf450799"
+    sha256 cellar: :any,                 arm64_sonoma:  "3494b6e2d894c6aa91928372e0c945b7ad48263db85c11a309aa89625810df4a"
+    sha256 cellar: :any,                 arm64_ventura: "0146edbf0ea87f7bbd8d2ef16cbae48855e65dbabadc39b397311d1ba3cea210"
+    sha256 cellar: :any,                 sonoma:        "14b7c8a41249a4b681443bdb9114357c4efda8d7af697f6fe109af98fa209a50"
+    sha256 cellar: :any,                 ventura:       "1f5a312a4fc699b7471c7a173c76f37fb8f459228a88c62a27e02117bed869c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "01752750f376fd888afabad5acfcd512503184be46049bea7cd7ea78e4643141"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed50ea40ee52f5381b72c02ee813620ccc2fbdbe26550f2d295171dad807c7ae"
   end
 
   depends_on "cmake" => :build
@@ -52,6 +51,13 @@ class Grokj2k < Formula
   fails_with :gcc do
     version "9"
     cause "GNU compiler version must be at least 10.0"
+  end
+
+  # Fix to cmake 4 compatibility
+  # PR ref: https:github.comGrokImageCompressiongrokpull376
+  patch do
+    url "https:github.comGrokImageCompressiongrokcommit40af3b5f2b9343d162a829e91868976ed2bbf563.patch?full_index=1"
+    sha256 "8e3d7b46efe3e12744383ade949e16d4a3046436c744cc728a4c1aecba26369a"
   end
 
   def install

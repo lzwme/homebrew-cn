@@ -1,18 +1,18 @@
 class Snowball < Formula
   desc "Stemming algorithms"
   homepage "https:snowballstem.org"
-  url "https:github.comsnowballstemsnowballarchiverefstagsv3.0.0.tar.gz"
-  sha256 "4100b983cec95e1e6c998ea57b220d235f082b9ef6e837afb97dee0bb0a65d14"
+  url "https:github.comsnowballstemsnowballarchiverefstagsv3.0.1.tar.gz"
+  sha256 "80ac10ce40dc4fcfbfed8d085c457b5613da0e86a73611a3d5527d044a142d60"
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f800d74cc3e5337071d2bb59a39085fa36af75fae8b2f00cffeee25fc0dc6d29"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18a4becde03a59785d32e2e4b8fed9b079ee9f6cdebb5fcd4e89a3210687c163"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a2595984accd236f401f4e0f37a2cbad5260d7afea79ac55b0182c6630cb72ec"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7d328109b67b97484f0570d86560c3086952f638da20d181cdbb5ffed10e3852"
-    sha256 cellar: :any_skip_relocation, ventura:       "73a1328a2b670adc21b014aab0261fa393d2a3de2a5acb07f28c321f2b0472a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "070310bee31cfcb3dcbf59b4fa5c9b05c3ada77f33fd096c5a1281e17741f2a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d8beb30dbbb73efbf7727da953b2a9d2c2b3bdc74814ea2eb6da54f5e3a0684"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00c79db6c8ba404a5ad086c5e50a7102d0df266ee3fb3b5deafe4ed8e7184c71"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2d7f77bad2cee9519cbe39492c5234455b01f1de41381279e8d63d6762f4c2f4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "42cd2f37f93d279ad348fb7933739db82bdbb2602d1f7e1f40b6b0113dd4dc3a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "58eadab9b1887a26cb95506a264f0e53bf9a23d9d1cf6fe589533c8f20daa7c2"
+    sha256 cellar: :any_skip_relocation, ventura:       "cd975136128f07351d331ec0c05bcc7bae659059e9f7a42c1c19d3d03d88a751"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a90617188624e914be73ec75078cebac9e2ee7458f0006225dba41da4fd2e431"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b8fd0e7fee01a520f36dfd8631171bb7fcfab8ddccb8ed9c37b069f338b6ca9"
   end
 
   def install

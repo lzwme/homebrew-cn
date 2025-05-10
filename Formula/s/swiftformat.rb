@@ -4,7 +4,7 @@ class Swiftformat < Formula
   url "https:github.comnicklockwoodSwiftFormatarchiverefstags0.55.6.tar.gz"
   sha256 "3914c84ccd1e03a7dd3a518f90b1987c4b7c5dcb7f81b86aad23a3fed53a7b0f"
   license "MIT"
-  head "https:github.comnicklockwoodSwiftFormat.git", branch: "master"
+  head "https:github.comnicklockwoodSwiftFormat.git", branch: "develop"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7617fbec05965e628176ee52fd4f329801eaa31d58ef28d719df0e88ec2a75b1"

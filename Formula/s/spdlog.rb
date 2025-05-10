@@ -1,19 +1,19 @@
 class Spdlog < Formula
   desc "Super fast C++ logging library"
   homepage "https:github.comgabimespdlog"
-  url "https:github.comgabimespdlogarchiverefstagsv1.15.2.tar.gz"
-  sha256 "7a80896357f3e8e920e85e92633b14ba0f229c506e6f978578bdc35ba09e9a5d"
+  url "https:github.comgabimespdlogarchiverefstagsv1.15.3.tar.gz"
+  sha256 "15a04e69c222eb6c01094b5c7ff8a249b36bb22788d72519646fb85feb267e67"
   license "MIT"
   head "https:github.comgabimespdlog.git", branch: "v1.x"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "fce7e7460c9221b3cac3d0217cc0308805c7c30e4a01fcd7a8e76639029e6b67"
-    sha256 cellar: :any,                 arm64_sonoma:  "fc56bc102f9b5fe33c7e30948fa92032116d0f56b2d57933da6310716f34dccf"
-    sha256 cellar: :any,                 arm64_ventura: "fc03c6140eff2abbb534c3f5031fa2449ae0495c210868c323d8ef5ed2bd88e7"
-    sha256 cellar: :any,                 sonoma:        "d504d88ce3da851f6d9ead5970f3cd6572c0333f1b86d5b7888628b202e5c806"
-    sha256 cellar: :any,                 ventura:       "82e8917975135e05b0a741fac78d24592c91fd0034f691acc15dd9998b6f33e2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c4880279f344e870b2c2bb96a4b1ca4eb489823e871e0c6b33520fa13e0fc02"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "971b2b89a5d5952e49e93de2bcb504c68265bd108b19a265617d00908b8b16e1"
+    sha256 cellar: :any,                 arm64_sequoia: "b885d77ddec4626dd6f31bc9a94fae28b4bd3ac4e5e91c36624891d262d6d3de"
+    sha256 cellar: :any,                 arm64_sonoma:  "222a1f363fe1b82e9e830c7a42f98d73c7b9673e7256502cdc66093193e2fee3"
+    sha256 cellar: :any,                 arm64_ventura: "78d3b81c70195115a7d762b9b39efaef6d45652488654a1104c237138a5f3898"
+    sha256 cellar: :any,                 sonoma:        "6407f99157debc92ed12594a56cc98b9513e6d3617c5bf0ccad7127c8e0340a1"
+    sha256 cellar: :any,                 ventura:       "f62555b2fb8dcc64a581c3f2efca87e50b49aecbc62d3492b4fb910c97442cb3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "774a3ccba115e20c6b0c594bb4c6b554de3c65f1454666d86a4aa0028d8591ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "334f9f05e98a52ecea6bbdbaebbfb597936d4169c935018eff7cd2f1789dcebd"
   end
 
   depends_on "cmake" => :build

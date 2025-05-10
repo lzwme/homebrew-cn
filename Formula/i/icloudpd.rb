@@ -5,19 +5,19 @@ class Icloudpd < Formula
   homepage "https:github.comicloud-photos-downloadericloud_photos_downloader"
   # We use a git checkout as scriptspatch_version runs git commands to update SHA
   url "https:github.comicloud-photos-downloadericloud_photos_downloader.git",
-      tag:      "v1.27.4",
-      revision: "c4a63229c4d490ee86491c660ecd7ababb415b33"
+      tag:      "v1.27.5",
+      revision: "ee21fdf518569f8836fd9a945c438e25cc9a2065"
   license "MIT"
   head "https:github.comicloud-photos-downloadericloud_photos_downloader.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7baf6cabec069e393691adf64efb119efd6573b081f373eab13dddff1d55f2d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2c491ebd0dec42ed351e9e38b7243a47022e9654d9b9f24ba3047b1f66d405dc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d4e8d936dcdbe1a9318992c49e25b9f6a2c923b4bb495a2e1f9c297f5424763b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a32ad719a10237489e9a79e6d540068301af464783ea770300a22ba820951b97"
-    sha256 cellar: :any_skip_relocation, ventura:       "a032bfa1516d90cc367949f8047ff46c35135501d4feb4f2d63aaf56e2360c2e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a55f49ef115aa3334d29005d5e33c165734cb0efec9a7ad7c235c1877ba6344d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a59bc19b2a285da19391d8ea6cd00da3497db31e5a950ab26e3b1d30d6f2c75"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f0d54cfaec8c90744723bc432e63f0ae845df3616ed284b4a586b2e0cc3e01c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a8ff0aa8ae29dc10f43a31e0d2959f8d0cb857f15ce78938cc01b03be77a0044"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "aa483406a5949be879208cf94209a8cea474dae8843aa3377c7575ab0d1b6ae9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c70347d1b14bb624a3f3d877eefaa53c77b4e8e9c042570d4e1e12b3658609c4"
+    sha256 cellar: :any_skip_relocation, ventura:       "93c78c13b30859432920ba01996d69452a6164bfc0dddc9879774d3f390e6599"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1d6c620beb5f44ce446c997ea10bf56acc0b0b3ce1330e4e5bfc5dadb35ef8fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e4885032aa8be43cfb8ee17b5470a7363a07ad19059fbe948f1d871e6c63f93b"
   end
 
   depends_on "certifi"
@@ -33,8 +33,8 @@ class Icloudpd < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https:files.pythonhosted.orgpackagese43389c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12dcharset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "click" do
@@ -93,8 +93,8 @@ class Icloudpd < Formula
   end
 
   resource "more-itertools" do
-    url "https:files.pythonhosted.orgpackages883b7fa1fe835e2e93fd6d7b52b2f95ae810cf5ba133e1845f726f5a992d62c2more-itertools-10.6.0.tar.gz"
-    sha256 "2cd7fad1009c31cc9fb6a035108509e6547547a7a738374f10bd49a09eb3ee3b"
+    url "https:files.pythonhosted.orgpackagescea0834b0cebabbfc7e311f30b46c8188790a37f89fc8d756660346fe5abfd09more_itertools-10.7.0.tar.gz"
+    sha256 "9fddd5403be01a94b204faadcff459ec3568cf110265d3c54323e1e866ad29d3"
   end
 
   resource "piexif" do

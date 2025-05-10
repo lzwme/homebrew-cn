@@ -6,6 +6,11 @@ class Kapp < Formula
   license "Apache-2.0"
   head "https:github.comcarvel-devkapp.git", branch: "develop"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7ff0deb34460ced94c830822c2afeec04d2f02be064c44cd317f9b1024a3bb7d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ff0deb34460ced94c830822c2afeec04d2f02be064c44cd317f9b1024a3bb7d"
