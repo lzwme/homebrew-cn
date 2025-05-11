@@ -1,16 +1,16 @@
 class Bold < Formula
   desc "Drop-in replacement for Apple system linker ld"
   homepage "https:github.comkubkonbold"
-  url "https:github.comkubkonboldarchiverefstagsv0.1.0.tar.gz"
-  sha256 "2496f04e47c9d5e17ef273b26519abf429b5c3e3df6d264f2941735088253ec0"
+  url "https:github.comkubkonboldarchiverefstagsv0.2.0.tar.gz"
+  sha256 "7b12aceeabe32249784347f3bb1befde6dcf621668d0352497ee8ef8c381d9ee"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a1deba05b1a4ab3d20a443e7b5a11f63b6cfc44f2996c41dce352fbdc48e78db"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "75029020d0fa32ee7573f9c730b9bbb09a6c98fb310dee951b284df022dfd3b6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5e4087ae6dc9a698588838f127ed739eaa55d899b143efd5079b40a613db6d1b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2539d42202287085cf3e89c7e06fce587166465fbb8df8ba4fa23cf8bde298d1"
-    sha256 cellar: :any_skip_relocation, ventura:       "84a0a90973ee9a14a971d3c700f64bd164167518bcb978830080d5361c13ba5c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "166e358558a1248b63764912648a742d9852058095fa8291e6ba5104f1f47145"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "153a08515b6fa639c3245055e773893ee95b9653c87bec5b822734090585afe2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5d93e1830b77efb82fa671a2b52a50403292ce2cf991bc9abf2c04a22b57e324"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c63ee99bb85ab7dc35e04f09613b7ce775e1933ef264bb10bdf9a5127f2ff7d1"
+    sha256 cellar: :any_skip_relocation, ventura:       "c9f50e5f314cfaeb955778838e303f508167ac884b48846ff1c31c786dcd5644"
   end
 
   depends_on "zig" => :build

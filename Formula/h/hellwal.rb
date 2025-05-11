@@ -11,6 +11,7 @@ class Hellwal < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "232ae8888f812cc13028e638d484ce639187362e35f257ca73b4907c8682a2cd"
     sha256 cellar: :any_skip_relocation, sonoma:        "ad61a0ce7e32d075464eaeb3eaadd263eadc50c1d03b9df920da1e8cbf81a72a"
     sha256 cellar: :any_skip_relocation, ventura:       "419049de2bda47e54b8a8ab224c5ecdab29306522541e72e6cc43eb217bb8c1e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd029a9bca7810dfca9c45300f153a735d3ce5e7c93a2e532e2cbe4cd65a61f6"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b23953290d7eb3c7c73158227ef69b2517986868324ec96ac69c0e71c75e207"
   end
 

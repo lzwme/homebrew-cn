@@ -3,18 +3,18 @@ class Memray < Formula
 
   desc "Memory profiler for Python applications"
   homepage "https:bloomberg.github.iomemray"
-  url "https:files.pythonhosted.orgpackagesb9bd2614cf6d3d68eb53fc0bcb04f85ac3a94922150c2d786b7f8b204f602ddamemray-1.17.1.tar.gz"
-  sha256 "99f6672d435878e3251a9c4600bb8f14cf205d2d6da3d6f0e6b309e535f9fc4a"
+  url "https:files.pythonhosted.orgpackagesdf4066e6ae86c0a22b8b998779fa8d6c0ab9ee63f0943198adcf714934286cbfmemray-1.17.2.tar.gz"
+  sha256 "eb75c075874a6eccddf361513d9d4a9223dd940580c6370a6ba5339bae5d0ba2"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "17272f7adecc072265492748044ce2c047b91abf8dc8b7cb2a2c9459a67292c4"
-    sha256 cellar: :any,                 arm64_sonoma:  "55beb65ee82ab38f96bf48c7839fe865fc67c2e05456f62d9d47afbaa35a54ec"
-    sha256 cellar: :any,                 arm64_ventura: "5bcb4c8963c4b2959df6bb62c41d080a1d0650fde140abe50d52fd8902951dd8"
-    sha256 cellar: :any,                 sonoma:        "472f1211109502aa37ce2d48b2373eaacebdf86564d90eb57a36cb45797fb7d6"
-    sha256 cellar: :any,                 ventura:       "0c1429e3702c1a7e6f08a9d5f0e9a629231c2d8667692f701b38753643dbf933"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd233f927a7de10aa99ec08084168cd82f32abb40a1e7fc652d80dcf7e971d9d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da998e77dd56ebccb30c64aa5fafd350474d92d72135ea4d9beee1cf6a54a9c0"
+    sha256 cellar: :any,                 arm64_sequoia: "1c4efb8fb7ecbf0afe0d4caabec09224e2b2536bd9ed879d158c889328707a6a"
+    sha256 cellar: :any,                 arm64_sonoma:  "6339196a5e610a541f4e9514ba7f39f4964e32e034a7a3c813f476a5526badc9"
+    sha256 cellar: :any,                 arm64_ventura: "0441f370654154a80c6ff3d829b604608f65e7f470e4e57995231bb4ec1c7071"
+    sha256 cellar: :any,                 sonoma:        "bf7bad5d0a61b6bb39e233627bde0270b2491667a44f65fb788afb39824df938"
+    sha256 cellar: :any,                 ventura:       "f9385c4a945339ff46b94106acb15adb96d44ff77f57908219663000618121f2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "025020899fa12f0a4dd1889e0680836d51e3c83dbd720ac6e480f38e246cfe23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25a28919d12faf4b7c84f982a791ec7b034d4606c03563973220eb0cf6315af6"
   end
 
   depends_on "lz4"
@@ -29,8 +29,8 @@ class Memray < Formula
 
     # TODO: Consider creating a formula for (lib)debuginfod
     resource "elfutils" do
-      url "https:sourceware.orgelfutilsftp0.192elfutils-0.192.tar.bz2"
-      sha256 "616099beae24aba11f9b63d86ca6cc8d566d968b802391334c91df54eab416b4"
+      url "https:sourceware.orgelfutilsftp0.193elfutils-0.193.tar.bz2"
+      sha256 "7857f44b624f4d8d421df851aaae7b1402cfe6bcdd2d8049f15fc07d3dde7635"
     end
   end
 
@@ -65,8 +65,8 @@ class Memray < Formula
   end
 
   resource "platformdirs" do
-    url "https:files.pythonhosted.orgpackagesb62d7d512a3913d60623e7eb945c6d1b4f0bddf1d0b7ada5225274c87e5b53d1platformdirs-4.3.7.tar.gz"
-    sha256 "eb437d586b6a0986388f0d6f74aa0cde27b48d0e3d66843640bfb6bdcdb6e351"
+    url "https:files.pythonhosted.orgpackagesfe8b3c73abc9c759ecd3f1f7ceff6685840859e8070c4d947c93fae71f6a0bf2platformdirs-4.3.8.tar.gz"
+    sha256 "3d512d96e16bcb959a814c9f348431070822a6496326a4be0911c40b5a74c2bc"
   end
 
   resource "pygments" do
@@ -80,8 +80,8 @@ class Memray < Formula
   end
 
   resource "textual" do
-    url "https:files.pythonhosted.orgpackagesdc1fdf371f1455524a3d0079871e49e3850c82767904e9f4e2bdea6d30a866a7textual-3.1.0.tar.gz"
-    sha256 "6bcab6581e9753d2a2043caf49f43c5818feb35f8049ed185bd38982bfb310ca"
+    url "https:files.pythonhosted.orgpackages34998408761a1a1076b2bb69d4859ec110d74be7515552407ac1cb6b68630eb6textual-3.2.0.tar.gz"
+    sha256 "d2f3b0c39e02535bb5f2aec1c45e10bd3ee7508ed1e240b7505c3cf02a6f00ed"
   end
 
   resource "typing-extensions" do

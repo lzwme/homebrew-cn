@@ -2,18 +2,18 @@ class MkdocsMaterial < Formula
   include Language::Python::Virtualenv
   desc "Material Design theme for MkDocs"
   homepage "https://squidfunk.github.io/mkdocs-material/"
-  url "https://files.pythonhosted.org/packages/2d/ef/25fc10dbbb8faeeeb10ed7734d84a347cd2ec5d7200733f11c5553c02608/mkdocs_material-9.6.12.tar.gz"
-  sha256 "add6a6337b29f9ea7912cb1efc661de2c369060b040eb5119855d794ea85b473"
+  url "https://files.pythonhosted.org/packages/2c/7d/fbf31a796feb2a796194b587153c5fa9e722720e9d3e338168402dde73ed/mkdocs_material-9.6.13.tar.gz"
+  sha256 "7bde7ebf33cfd687c1c86c08ed8f6470d9a5ba737bd89e7b3e5d9f94f8c72c16"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2e3e87d5368052333e0fc82d6c63a52d5f5bc350e64fe11b505797c9eeef5506"
-    sha256 cellar: :any,                 arm64_sonoma:  "d12c0dc527439a0a9fbc4010cdcbbeb52ae8a58d38b0b893c2d1316b7ec2afc3"
-    sha256 cellar: :any,                 arm64_ventura: "ee79aa6d72d95e233fe215d07552f318a3428a2d5b0d1a7cafbbee77d2bf6538"
-    sha256 cellar: :any,                 sonoma:        "eb43cffcee9ec4345dd48e64e3bff90e8a08fdae84a5d2188010652503d72beb"
-    sha256 cellar: :any,                 ventura:       "004b32d533a1ba9043f1d2c3b6573d636dfe5358a9327358daae97af9966df45"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "003cc82c4ab728eefe3e6573983a0a8f4daf84188e3992957b57b12e9f2256d6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25f0db9716e9bc15aa3ba89a8ce2d121393ad9d62aee332533862980d89278b6"
+    sha256 cellar: :any,                 arm64_sequoia: "f621f1152c315ec1533d7c4042983692bccb8d5bff8f63f7cb3bcc6e74d4fbea"
+    sha256 cellar: :any,                 arm64_sonoma:  "5c06e8c5d627f69dbc8bf69590eccbd8bfd3c544f538dde539ec8e656ea281a5"
+    sha256 cellar: :any,                 arm64_ventura: "01062062b3e91228cbd14857b313ff68bde352d91af3ddc55a26a47871ec053e"
+    sha256 cellar: :any,                 sonoma:        "83f4d5feab4869bab14274257c926c9b12ba00f9c2a60f0a30b30e37db0d121e"
+    sha256 cellar: :any,                 ventura:       "ccc1a7ebfc0a8623edf19b3ca50d964b14416650ef5fa9b85c6bc05cf99a0d31"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "36251dcba78b7d2155ba610effdb8c3964bc3103a25760c9f25593d4c0fb369c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52e3cbbf7b2ff89505bfd3feec42fb57ce05a5bf8358dc4942df7f50ca4d0f73"
   end
 
   depends_on "libyaml"
@@ -32,13 +32,13 @@ class MkdocsMaterial < Formula
   end
 
   resource "certifi" do
-    url "https://files.pythonhosted.org/packages/1c/ab/c9f1e32b7b1bf505bf26f0ef697775960db7932abeb7b516de930ba2705f/certifi-2025.1.31.tar.gz"
-    sha256 "3d5da6925056f6f18f119200434a4780a94263f10d1c21d032a6f6b2baa20651"
+    url "https://files.pythonhosted.org/packages/e8/9e/c05b3920a3b7d20d3d3310465f50348e5b3694f4f88c6daf736eef3024c4/certifi-2025.4.26.tar.gz"
+    sha256 "0a816057ea3cdefcef70270d2c515e4506bbc954f417fa5ade2021213bb8f0c6"
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/16/b0/572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357/charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "click" do
@@ -97,8 +97,8 @@ class MkdocsMaterial < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d0/63/68dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106da/packaging-24.2.tar.gz"
-    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
+    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
+    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
   resource "paginate" do
@@ -112,8 +112,8 @@ class MkdocsMaterial < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/b6/2d/7d512a3913d60623e7eb945c6d1b4f0bddf1d0b7ada5225274c87e5b53d1/platformdirs-4.3.7.tar.gz"
-    sha256 "eb437d586b6a0986388f0d6f74aa0cde27b48d0e3d66843640bfb6bdcdb6e351"
+    url "https://files.pythonhosted.org/packages/fe/8b/3c73abc9c759ecd3f1f7ceff6685840859e8070c4d947c93fae71f6a0bf2/platformdirs-4.3.8.tar.gz"
+    sha256 "3d512d96e16bcb959a814c9f348431070822a6496326a4be0911c40b5a74c2bc"
   end
 
   resource "pygments" do
@@ -122,8 +122,8 @@ class MkdocsMaterial < Formula
   end
 
   resource "pymdown-extensions" do
-    url "https://files.pythonhosted.org/packages/7c/44/e6de2fdc880ad0ec7547ca2e087212be815efbc9a425a8d5ba9ede602cbb/pymdown_extensions-10.14.3.tar.gz"
-    sha256 "41e576ce3f5d650be59e900e4ceff231e0aed2a88cf30acaee41e02f063a061b"
+    url "https://files.pythonhosted.org/packages/08/92/a7296491dbf5585b3a987f3f3fc87af0e632121ff3e490c14b5f2d2b4eb5/pymdown_extensions-10.15.tar.gz"
+    sha256 "0e5994e32155f4b03504f939e501b981d306daf7ec2aa1cd2eb6bd300784f8f7"
   end
 
   resource "python-dateutil" do
@@ -137,8 +137,8 @@ class MkdocsMaterial < Formula
   end
 
   resource "pyyaml-env-tag" do
-    url "https://files.pythonhosted.org/packages/fb/8e/da1c6c58f751b70f8ceb1eb25bc25d524e8f14fe16edcce3f4e3ba08629c/pyyaml_env_tag-0.1.tar.gz"
-    sha256 "70092675bda14fdec33b31ba77e7543de9ddc88f2e5b99160396572d11525bdb"
+    url "https://files.pythonhosted.org/packages/c2/95/32c8c79d784552ed687c676924381c0dc88b2a0248b50a32f4b5ac0ba03c/pyyaml_env_tag-1.0.tar.gz"
+    sha256 "bc952534a872b583f66f916e2dd83e7a7b9087847f4afca6d9c957c48b258ed2"
   end
 
   resource "requests" do

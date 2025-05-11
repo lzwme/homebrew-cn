@@ -6,24 +6,19 @@ class Lgeneral < Formula
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia:  "d9c193de410ea328ab981c20bf225559f72b56eb10c9976c115f161766ba7556"
-    sha256 arm64_sonoma:   "25fd2eb3ec6f1bf56aeedda2833e0b934b167b0532afd1b832f568018bd5249f"
-    sha256 arm64_ventura:  "6814c4921c62261436537a16b3d945863fd8afa2e3f9702e1fe2b15d98ce9cc4"
-    sha256 arm64_monterey: "66e1e176e9fe55234aac274f8aab642aefaf71c8257576ef693eff1b21867f62"
-    sha256 arm64_big_sur:  "262a595324361728d033438f3373024b1925557ed9e1d19f7a921aae9370eeb9"
-    sha256 sonoma:         "89c8dda7ff7215ceb65ae56a8c9d65734f9b005265c5ddc0ff0f4debd4d361c3"
-    sha256 ventura:        "237418ae7e4069b558b046d4b68044c3c307c28898ff00ca56a20aa97d13d542"
-    sha256 monterey:       "bc51bd29569a83218f84748d31bac40cadff60a7caacaead3e499970aba25b37"
-    sha256 big_sur:        "643779c73ca7a36a3db58993aa374f451bfb3e4c50bd699968137e77330acddf"
-    sha256 arm64_linux:    "7218dd57f33b59765539d81c7ea93b6f34fb3011f900fb04de59c603f824b967"
-    sha256 x86_64_linux:   "eefab1384276b2406cbdb286bfc730b3d434112f2d5ea8be6c3edb451d34f2e9"
+    rebuild 2
+    sha256 arm64_sequoia: "0b33e1f556a20a71c72b472bbfa2fdd9461253d584cb97e47a9eb8173c376ea5"
+    sha256 arm64_sonoma:  "0c3cbf2cd89161d1af99f75d4d33091f7732cc458861977f4a91eb96af230154"
+    sha256 arm64_ventura: "f256bf5c22611e15d3322bc501e1d877a4b2f8c1a471fe298399a255fc44490b"
+    sha256 sonoma:        "a5f8cf09603365a6a8187b3d296d7dcba9ee1fb44993f5ef81285c145ef36995"
+    sha256 ventura:       "7f2a5e68361f78343b88f04dae2b0ec5a0da7be4753f8c66bdcd54e02f8bd8ea"
+    sha256 arm64_linux:   "bb380cd4fea9e821acc6f40ea22fe206fae58caed0b0ca7c437e0a03fdc4b44e"
+    sha256 x86_64_linux:  "7839691573fb754a1c1b7e6befc77027256bcc1908b11268474e59de60de804d"
   end
 
   depends_on "gettext"
   depends_on "sdl12-compat"
   depends_on "sdl2"
-  depends_on "sdl2_mixer"
 
   def install
     # Applied in community , to remove in next release
@@ -48,6 +43,7 @@ class Lgeneral < Formula
       https://sourceforge.net/projects/lgeneral/files/lgeneral-data/pg-data.tar.gz/download
       To install use:
         lgc-pg -s <pg-data-unzipped-dir> -d #{opt_pkgshare}
+      ⚠️ Note: Sound and music are not supported in this build
     EOS
   end
 

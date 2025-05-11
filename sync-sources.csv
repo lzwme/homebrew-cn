@@ -1150,6 +1150,7 @@ Homebrew-homebrew-core/Formula/c/cowsay.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cp2k.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cpanminus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cpansearch.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cpdf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cpi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cpio.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/cpl.rb, Homebrew/homebrew-core, 0
@@ -3242,7 +3243,7 @@ Homebrew-homebrew-core/Formula/k/kmod.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/knock.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/knot-resolver.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/k/knot.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/knot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/ko.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/koji.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/koka.rb, Homebrew/homebrew-core, 1
@@ -5220,6 +5221,7 @@ Homebrew-homebrew-core/Formula/p/pidcat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pidgin.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pidof.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pie.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pieces-cli.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pig.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pigz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pike.rb, Homebrew/homebrew-core, 0
@@ -5254,6 +5256,7 @@ Homebrew-homebrew-core/Formula/p/pit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pius.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pivit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pivy.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pixd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pixi-pack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pixi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pixie.rb, Homebrew/homebrew-core, 1
@@ -6762,6 +6765,7 @@ Homebrew-homebrew-core/Formula/t/tmux-mem-cpu-load.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmux-sessionizer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmux-xpanes.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmux.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tmuxai.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmuxinator-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmuxinator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tmuxp.rb, Homebrew/homebrew-core, 0
@@ -12868,6 +12872,7 @@ Homebrew-homebrew-cask/Casks/n/nanoem.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nanosaur.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nanosaur2.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nanostudio.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/nao.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/naps2.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nasas-eyes.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/native-access.rb, Homebrew/homebrew-cask, 0

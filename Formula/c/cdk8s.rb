@@ -1,18 +1,18 @@
 class Cdk8s < Formula
   desc "Define k8s native apps and abstractions using object-oriented programming"
   homepage "https://cdk8s.io/"
-  url "https://registry.npmjs.org/cdk8s-cli/-/cdk8s-cli-2.200.65.tgz"
-  sha256 "5378b51d304240ef134a7ac7429e33d8e421c63fc32b6c59aaf146bb37819334"
+  url "https://registry.npmjs.org/cdk8s-cli/-/cdk8s-cli-2.200.66.tgz"
+  sha256 "97c21346efae05e1b7d8cd1472953ab1ad6cdca8e3ec2451787edec20913f3e6"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9778b3f564877d8ccc0d0e796e468f5e6f798e04b7fa97326e07a8460e5da171"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9778b3f564877d8ccc0d0e796e468f5e6f798e04b7fa97326e07a8460e5da171"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9778b3f564877d8ccc0d0e796e468f5e6f798e04b7fa97326e07a8460e5da171"
-    sha256 cellar: :any_skip_relocation, sonoma:        "772b6a81abc6c83098a3ab7120f27f5381dea66d1d0090228b8d6e942b4379a2"
-    sha256 cellar: :any_skip_relocation, ventura:       "772b6a81abc6c83098a3ab7120f27f5381dea66d1d0090228b8d6e942b4379a2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9778b3f564877d8ccc0d0e796e468f5e6f798e04b7fa97326e07a8460e5da171"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9778b3f564877d8ccc0d0e796e468f5e6f798e04b7fa97326e07a8460e5da171"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "147a7e20740ab649da4fa7478a4c2fae9b11eca085c9c883edea2a5a730252ac"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "147a7e20740ab649da4fa7478a4c2fae9b11eca085c9c883edea2a5a730252ac"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "147a7e20740ab649da4fa7478a4c2fae9b11eca085c9c883edea2a5a730252ac"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9ba5542fe1169e0e2cc08179ffd43917f3e5926064fee9fafa3f3c16fb44df36"
+    sha256 cellar: :any_skip_relocation, ventura:       "9ba5542fe1169e0e2cc08179ffd43917f3e5926064fee9fafa3f3c16fb44df36"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "147a7e20740ab649da4fa7478a4c2fae9b11eca085c9c883edea2a5a730252ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "147a7e20740ab649da4fa7478a4c2fae9b11eca085c9c883edea2a5a730252ac"
   end
 
   depends_on "node"

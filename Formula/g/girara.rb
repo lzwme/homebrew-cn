@@ -16,6 +16,7 @@ class Girara < Formula
     sha256 arm64_ventura: "388b59083580d34bf7de60f3ef3bdf77dfb8eb4902f9b61084ab15c7a2b599e7"
     sha256 sonoma:        "858bea2192e09d07c39586ffbcb5fad2d8fb2999ed89ef12c32fd0842d7e0c76"
     sha256 ventura:       "a5effb75f802f10a8ce1c5f48d79183119ce88f8110ff3276f29d9cd557e8e00"
+    sha256 arm64_linux:   "dee7dab31b8be5b1846d89d94362dee0c4f9f7510db1054658184ff87ef6e4ed"
     sha256 x86_64_linux:  "3c368c1cf542567633f37aabdd1d7e2ff1c745c9885d8bbe827cbc0fab1404e9"
   end
 

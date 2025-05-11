@@ -3,18 +3,18 @@ class LanggraphCli < Formula
 
   desc "Command-line interface for deploying apps to the LangGraph platform"
   homepage "https:www.github.comlangchain-ailanggraph"
-  url "https:files.pythonhosted.orgpackages85b26cbdea914fa0f9d125884aab3af4fb4405785bf65a9a378cd0869f39d9d6langgraph_cli-0.2.8.tar.gz"
-  sha256 "9091aa12bf826572446cb5564604a8a6f750c9dcaa0cd9fb1067128a53ac2282"
+  url "https:files.pythonhosted.orgpackages8d5eb12bc8140cd4f797ad7f596bf90558994fd6891df8974bc3fc4747eabdc7langgraph_cli-0.2.10.tar.gz"
+  sha256 "0c215b364daeaf10de681e4960ecaafc7c9cd2a4100b41052d78d95cababf422"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b241fddc959b0db1e894b11bda211e720f4ba42833efcec531613cfacf433043"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b241fddc959b0db1e894b11bda211e720f4ba42833efcec531613cfacf433043"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b241fddc959b0db1e894b11bda211e720f4ba42833efcec531613cfacf433043"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cfb8aa3486a2aeee634d885b06bbdadf2daf2da6c7b00071cb3bb1c9e947e4a1"
-    sha256 cellar: :any_skip_relocation, ventura:       "cfb8aa3486a2aeee634d885b06bbdadf2daf2da6c7b00071cb3bb1c9e947e4a1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b241fddc959b0db1e894b11bda211e720f4ba42833efcec531613cfacf433043"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b241fddc959b0db1e894b11bda211e720f4ba42833efcec531613cfacf433043"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "07a250dd1c29400cfef5c7da506224617b487ff1beeabc0c5832157036456a8e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "07a250dd1c29400cfef5c7da506224617b487ff1beeabc0c5832157036456a8e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "07a250dd1c29400cfef5c7da506224617b487ff1beeabc0c5832157036456a8e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "25c261b92fc1711046a983453b8af2bd1ccec43724e591ce93c226f532ec6ca8"
+    sha256 cellar: :any_skip_relocation, ventura:       "25c261b92fc1711046a983453b8af2bd1ccec43724e591ce93c226f532ec6ca8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "07a250dd1c29400cfef5c7da506224617b487ff1beeabc0c5832157036456a8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07a250dd1c29400cfef5c7da506224617b487ff1beeabc0c5832157036456a8e"
   end
 
   depends_on "python@3.13"
