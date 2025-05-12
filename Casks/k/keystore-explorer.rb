@@ -8,6 +8,11 @@ cask "keystore-explorer" do
   desc "GUI replacement for the Java command-line utilities keytool and jarsigner"
   homepage "https:keystore-explorer.org"
 
+  livecheck do
+    url "https:keystore-explorer.orgversion.txt"
+    regex((\d+(?:\.\d+)+)i)
+  end
+
   app "KeyStore Explorer.app"
 
   zap trash: "~LibrarySaved Application Stateorg.kse.keystore-explorer.savedState"

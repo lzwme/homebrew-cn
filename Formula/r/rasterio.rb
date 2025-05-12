@@ -6,15 +6,16 @@ class Rasterio < Formula
   url "https:files.pythonhosted.orgpackagesde19ab4326e419b543da623ce4191f68e3f36a4d9adc64f3df5c78f044d8d9carasterio-1.4.3.tar.gz"
   sha256 "201f05dbc7c4739dacb2c78a1cf4e09c0b7265b0a4d16ccbd1753ce4f2af350a"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "78c22b105ddfe5627305ac933da41a879b078f0678696837dc34453bd4a9aaf1"
-    sha256 cellar: :any,                 arm64_sonoma:  "c0772d77c4daf508c53825cba58a5e6619ca380b05a8033a21176f7ffc97967d"
-    sha256 cellar: :any,                 arm64_ventura: "a7f901287973fee54bbbe87c7a98f71cd790e2b941c87118469cc45d6768062d"
-    sha256 cellar: :any,                 sonoma:        "08dcd483af2d7e48cebf0bdb69c0e881d77eb8cdc00f131dd3ffb7e27fb112fa"
-    sha256 cellar: :any,                 ventura:       "b11fc4d43981cd10e892d7a023ad165697ef0205d3a8d29ce5ba4fcd8d29d604"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2fc1257c4bebaf72e821fee8717d3df235bc85ce4fa2f822e2b0c2f64a2d9987"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb48e6529ce61237e5da0d9f80b495289a53cc7e772d6ed4cc3af55a9f9f0de5"
+    sha256 cellar: :any,                 arm64_sequoia: "4410576ace32e78400ed9d09167fdb8512765eec039229237a3db59dbdf3a673"
+    sha256 cellar: :any,                 arm64_sonoma:  "f66b60551ec2f3d51a889d8738a4b0bec36b1212d05183fd0d0623dbcb9a6221"
+    sha256 cellar: :any,                 arm64_ventura: "26af3700f3b615d9eac3d871eb2e9efbae7f402294966b12108414ec57296eab"
+    sha256 cellar: :any,                 sonoma:        "50ad9d3ac08ab03e08678ca3d6551016421b7b186fe95c362b9dbd67a8304214"
+    sha256 cellar: :any,                 ventura:       "868807093a9173ae0a22dcc9426e4e7a38fce818789bbc9e51192eea11695887"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a3591bf74726a6e4663aad38970345a67c0bd75cd5eb553c8ca8b218cc6dacce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00de49b47c6a04925b1575417950a468713913e3a64279ca8e02b77fb86b9131"
   end
 
   depends_on "cmake" => :build

@@ -2,7 +2,7 @@ class Gmt < Formula
   desc "Tools for manipulating and plotting geographic and Cartesian data"
   homepage "https:www.generic-mapping-tools.org"
   license "LGPL-3.0-or-later"
-  revision 4
+  revision 5
   head "https:github.comGenericMappingToolsgmt.git", branch: "master"
 
   stable do
@@ -16,13 +16,13 @@ class Gmt < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "1b462c2bcbc6e95ce082b68729b36d2b8949045918256d7031c49908e1a7c75f"
-    sha256 arm64_sonoma:  "1d3a2dafaff73abfd68a892b3ca938682e4e4dfbdc80084d47541cdb7207f122"
-    sha256 arm64_ventura: "3c6954e97839d63256dcb0247a83a9dbe2521a7860e1a32c7bff7418a917872a"
-    sha256 sonoma:        "83fcc1c4401e4c9577a1b776fca7bec6fd22835bc5d41e4190d18872b9961bfe"
-    sha256 ventura:       "adcb429977f1fcc83e2296cd1d2aea653c718025114e99fde2108848b844fd64"
-    sha256 arm64_linux:   "d8d9ae98c3def5ba170544c7197b90c199447dabd2002f1010f9a43e1dd9b39d"
-    sha256 x86_64_linux:  "780e03a2e26081390f07a272817bc4bad9a398ad0ee982734144ac81569e9574"
+    sha256 arm64_sequoia: "5099eeaa5088b8f8d4e5b95f00f229c7c8d5829f38c0827ca9dc587be4085162"
+    sha256 arm64_sonoma:  "92c4b8906c8e4f2c7c244190eeeaccdae01f61d4b9d76c8d3b14bfe1bd1b938a"
+    sha256 arm64_ventura: "5e1dc95be0096547acc16f6342ea231b1b1d9ff64697083d4fc664c43bb24fc2"
+    sha256 sonoma:        "085c08b1ed326b9f438a6293a9b9724cf7f2482cea78c237e59208e2823002d0"
+    sha256 ventura:       "f990c4b48bf01ee82b0403477cf2c6955df4b3f53cd71812f7100a0b3569bbcb"
+    sha256 arm64_linux:   "9a0b6ab41ce707202077a3f8f7765ff69d05290910afe718ddfa0085585d4f69"
+    sha256 x86_64_linux:  "b6b304e7413353d55c129c54fccc25342a430eec8f533988270274cfebdf62e1"
   end
 
   depends_on "cmake" => :build

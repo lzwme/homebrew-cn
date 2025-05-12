@@ -6,15 +6,16 @@ class Fiona < Formula
   url "https:files.pythonhosted.orgpackages51e071b63839cc609e1d62cea2fc9774aa605ece7ea78af823ff7a8f1c560e72fiona-1.10.1.tar.gz"
   sha256 "b00ae357669460c6491caba29c2022ff0acfcbde86a95361ea8ff5cd14a86b68"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4788e6cf99582a5fcf1e4abce4daf43ff504482a19193e84804aab2a55b252f9"
-    sha256 cellar: :any,                 arm64_sonoma:  "2d4556ca589bb67a2926ab0795e7301014c40b554ac540d0f1179c20f47eb6c7"
-    sha256 cellar: :any,                 arm64_ventura: "69bf18aeb4f2097080198331df624d1c0cb3cc513aaae674bc6b9a96f5ef7eb6"
-    sha256 cellar: :any,                 sonoma:        "0503bf091d2469c634b4e9adcd1006694fd0bb8a94b4e6303f7174047e97f202"
-    sha256 cellar: :any,                 ventura:       "0eb27e2fa495234f3a09126af55384b4fb98ce50cffac8274ea398dad91f3bf0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5036103d33a7dc454778a2957b8dd9eabf880835a6986dc2a09ac617de461c6e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b9ecbc80ed54a93dc848950821fdb15a292b9589da5acc1250b33eb4bf1faa3"
+    sha256 cellar: :any,                 arm64_sequoia: "72cb09fe015aa6d5dbcc6a9dd639c641db2920f8e335a0a3acbd694ad255e83f"
+    sha256 cellar: :any,                 arm64_sonoma:  "7732fc049ef4ba6b47e790f9f14e621807fcb70f8f58f663e2d44513ca33380c"
+    sha256 cellar: :any,                 arm64_ventura: "765b472e5789020dc487ae96df3b55b111abb0ba4430e0e4e0f1f8fbc8a1c536"
+    sha256 cellar: :any,                 sonoma:        "3b0640448524a574978757a4c7c72bc7b361306f775ef946e35f8219e59154ce"
+    sha256 cellar: :any,                 ventura:       "6f4b27a8ce35aee27d824efba12de4d0114815c303e27bd9e4577c78bef725e7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb6e42631c5db0154636fde816272135bf6e50e95fe4016c6c8e7c54c0b56ee0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ccb14cd8a348d6362e922e69e72785bc775726c9929da360dcca9919cc839c5e"
   end
 
   depends_on "certifi"

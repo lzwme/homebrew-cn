@@ -4,6 +4,7 @@ class Pdal < Formula
   url "https:github.comPDALPDALreleasesdownload2.8.4PDAL-2.8.4-src.tar.bz2"
   sha256 "c27dc79af0b26f9cb3209b694703e9d576f1b0c8c05b36206fd5e310494e75b5"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comPDALPDAL.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class Pdal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "dd95047f6de4b38a442111118ce2919521f8f2a16e5ab10b852ba2393e8a7492"
-    sha256 cellar: :any,                 arm64_sonoma:  "8c728e287001a7ac379b008d61ab69a6cc386c400c76c1d4213081554a80928f"
-    sha256 cellar: :any,                 arm64_ventura: "b0c76a50476b61a65383d23a5eab04d0ef440dd13ec21897f9c4fa98a91a72e6"
-    sha256 cellar: :any,                 sonoma:        "211bab94d8693306e418561c117a4c782bd874d458d2de73b29803216f029207"
-    sha256 cellar: :any,                 ventura:       "e474576399ed86e49ec9eed7cb8e8f565fa1d18b678e75fcc38bae8992640c6b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9bb4aa5c9df6dec9ffcb65674eb1d402ed72802754c1be2f892072f5ee9ff238"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d4d4645ee0ea9b43b2694f9b6c8ea89481fa1bcaa62cc6269209fc04825bf748"
+    sha256 cellar: :any,                 arm64_sequoia: "64bb0d0e90ce547231899e349d64126c75c9a89e4564e57ede59eeca6c654e5e"
+    sha256 cellar: :any,                 arm64_sonoma:  "6b051c39b6bb6c691cc76aca04fd53191515ac9ae64971185f601f5dfadbe32c"
+    sha256 cellar: :any,                 arm64_ventura: "7b44dbcbfdfac6af9dcf1d59f2cc37182224638c5289fc16374c465aae0a415b"
+    sha256 cellar: :any,                 sonoma:        "4bc10dded0e56135067113caa32b25833dda96c80bb14673b840952b58e85f29"
+    sha256 cellar: :any,                 ventura:       "725b858faef46f66946bc1e29ae644bef8f42c71295196a070bec68ec6222de2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be97476fd1203ef225f9aa71469adac4aac70314af62aafe9abf8921e812f32c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e28a8d44c02b9f638c76824ad8a17a90cbb9f806bf4b5aba66a49a29ee91738b"
   end
 
   depends_on "cmake" => :build

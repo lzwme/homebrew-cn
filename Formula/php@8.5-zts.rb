@@ -1,20 +1,19 @@
 class PhpAT85Zts < Formula
   desc "General-purpose scripting language"
   homepage "https:www.php.net"
-  url "https:github.comphpphp-srcarchive2b0cb760d41c1a531449b5df0733e32b1fa4c82b.tar.gz?commit=2b0cb760d41c1a531449b5df0733e32b1fa4c82b"
+  url "https:github.comphpphp-srcarchivee11a702c0569a2b5a2282fcba4862731ebfb91a3.tar.gz?commit=e11a702c0569a2b5a2282fcba4862731ebfb91a3"
   version "8.5.0"
-  sha256 "4f28e57d1f863a4a8d4a77d7f96dd5cb4e55342f09cef619cfa43b15740f5cfe"
+  sha256 "d562fd57680470a05e43d2f39b3e97daa24f34f55eec0e415be3be8dbe02cadc"
   license "PHP-3.01"
-  revision 3
+  revision 4
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    rebuild 26
-    sha256 arm64_sequoia: "9530e6e891f7ff7142c1581b1dfb75730343aae41cc81254648257787a919360"
-    sha256 arm64_sonoma:  "04206cc31aebbad2fafd417b4d3c2855ef5de13613c888b261ec2d5fae9de063"
-    sha256 arm64_ventura: "cddb7f3cc9ccd94cda1c5e7b8ad0ee08249dc4fb2586f76c6968aa39ea7e14bd"
-    sha256 ventura:       "07a668a82c50806f37cb0e6c62757d2819f8f9004bb1e2b3d9ca03da54215724"
-    sha256 x86_64_linux:  "78f735d3aba628ac720ecda01f6fda89aaa0f361b83b068ab43e56f8078896a6"
+    sha256 arm64_sequoia: "dfd74371ddcccc4171a338f5b7ba605f6e00c768bf50702e1262889d3eb04d59"
+    sha256 arm64_sonoma:  "b02484b21d4946a3133f2de9756577fb5f1913d8d1b89db3cef4693f3f7e9eca"
+    sha256 arm64_ventura: "688d6095bc20527e1d09271b0c03371cd5e83446483ec5b7921c423b9eac2223"
+    sha256 ventura:       "4ed5bf4e3e95c949309b0297b8d5e333a63e6b871cdc8d44e5efece56ee5d71a"
+    sha256 x86_64_linux:  "2f55b2f582d08fb698e91faf2c434555fe8076bc5426a00376f7a0e97a902a14"
   end
 
   keg_only :versioned_formula
@@ -212,15 +211,7 @@ class PhpAT85Zts < Formula
     args << "--disable-cgi"
     args << "--disable-cli"
     args << "--disable-phpdbg"
-
-    if OS.mac?
-      args << "--disable-opcache-jit"
-      args << "--enable-embed=static"
-      args << "--enable-shared=no"
-      args << "--enable-static"
-    else
-      args << "--enable-embed"
-    end
+    args << "--enable-embed"
 
     system ".configure", *args
     system "make"

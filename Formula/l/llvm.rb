@@ -6,6 +6,7 @@ class Llvm < Formula
   sha256 "a95365b02536ed4aef29b325c205dd89c268cba41503ab2fc05f81418613ab63"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
+  revision 1
   head "https:github.comllvmllvm-project.git", branch: "main"
 
   livecheck do
@@ -14,13 +15,13 @@ class Llvm < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "eeaff9d74040678eeb76850a1bb742b189f2a7a939860a9c512bf0526f49d81d"
-    sha256 cellar: :any,                 arm64_sonoma:  "6e4270a68f16ffbf75214045fbf6c83ad1d7b28fe558c5f42aada7ade9ec8ac3"
-    sha256 cellar: :any,                 arm64_ventura: "bba82ae04eda007c8971ea4bceebee3b9ef1cadc222e1d77ef0eebad218c9af5"
-    sha256 cellar: :any,                 sonoma:        "9ed2acd04961a914d8197ab999056c4a8889881051597926ee9215fc2e83e6e9"
-    sha256 cellar: :any,                 ventura:       "7808e12ba6a9fe416a969989a2a191ab1869d677fc0d3280f3e47fb348d09c6c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "31d2343b44f1baddeb4b549d782f413427ed55461aa69d8c62f777f80f06186f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f10fad6fca57ea531467227b02c7e4daea257d7b4ae0c264e3d3dad7bc8aff2a"
+    sha256 cellar: :any,                 arm64_sequoia: "0667ffd061d205a72185d22440f30c6a9e98ac8b1b2f09b022b93c893ae40298"
+    sha256 cellar: :any,                 arm64_sonoma:  "7b1ea996ecb0cd8ef01675f8433bdea114011a1c09371f650fe0a654077e52f5"
+    sha256 cellar: :any,                 arm64_ventura: "e6265f0747fc7fe4eb1ce9ecd9ef22e424e9d48abf1557174c243d721f1640fb"
+    sha256 cellar: :any,                 sonoma:        "84f59a3579e744f9b3dd23d279b6cc766d8c493066e147fcd2f68d1b5fd84d9d"
+    sha256 cellar: :any,                 ventura:       "195d7206aad6cc25bc276dada61f0e78c3584d77fcbb7267ab596b033445ce03"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d1c4864a0f3e89e30698dc8df7321dcc893b89fafe48fe3374ea94ca80c712d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1c7ae63af9ccee6db95ef0328658bee903f966d7e99f774a554a73d2abf2d37c"
   end
 
   keg_only :provided_by_macos

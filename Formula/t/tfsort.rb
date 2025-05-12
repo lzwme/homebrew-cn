@@ -1,18 +1,18 @@
 class Tfsort < Formula
   desc "CLI to sort Terraform variables and outputs"
   homepage "https:github.comAlexNabokikhtfsort"
-  url "https:github.comAlexNabokikhtfsortarchiverefstagsv0.3.0.tar.gz"
-  sha256 "0fb2952c52d1f13fbf2a939d5bdd80b6bea3943f94f587ca73b04c6a107ab7c3"
+  url "https:github.comAlexNabokikhtfsortarchiverefstagsv0.4.0.tar.gz"
+  sha256 "b1efeee957a11314aa6dfe2cb9f6ae3e8ee8bed18351daaf7348b13bbd818d4c"
   license "Apache-2.0"
   head "https:github.comAlexNabokikhtfsort.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a9e96459085e375e9e275166fc1f74db6f2852c8fbfe51ec5111b8d05d7885de"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9e96459085e375e9e275166fc1f74db6f2852c8fbfe51ec5111b8d05d7885de"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a9e96459085e375e9e275166fc1f74db6f2852c8fbfe51ec5111b8d05d7885de"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5ab204f1c18c71186e2309b3c6af78d3ab6898e68928948191e0b405ff68c481"
-    sha256 cellar: :any_skip_relocation, ventura:       "5ab204f1c18c71186e2309b3c6af78d3ab6898e68928948191e0b405ff68c481"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9a9db22f4974fdb7edac5af591e89afbe81fa9f14a77d89dc1a59648d8e56814"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59fe21c616a425dfa59d7a05b1cea91427d43b853641492804a8aba4d7ee202d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59fe21c616a425dfa59d7a05b1cea91427d43b853641492804a8aba4d7ee202d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "59fe21c616a425dfa59d7a05b1cea91427d43b853641492804a8aba4d7ee202d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c9e422de4603bda51a952451bd408bd01c2962be21e9a514ad10c5359946bcbd"
+    sha256 cellar: :any_skip_relocation, ventura:       "c9e422de4603bda51a952451bd408bd01c2962be21e9a514ad10c5359946bcbd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f719d148a0502350a980736ff85a2ad01fd2fb9fe07c79ad8e9f6a0a7101d8d"
   end
 
   depends_on "go" => :build
@@ -22,14 +22,13 @@ class Tfsort < Formula
     system "go", "build", *std_go_args(ldflags:)
 
     # install testdata
-    pkgshare.install "tsorttestdata"
+    pkgshare.install "internalhclsorttestdata"
   end
 
   test do
     cp_r pkgshare"testdata.", testpath
 
-    output = shell_output("#{bin}tfsort invalid.tf 2>&1", 1)
-    assert_match "file invalid.tf is not a valid Terraform file", output
+    assert_empty shell_output("#{bin}tfsort invalid.tf 2>&1")
 
     system bin"tfsort", "valid.tofu"
     assert_equal (testpath"expected.tofu").read, (testpath"valid.tofu").read

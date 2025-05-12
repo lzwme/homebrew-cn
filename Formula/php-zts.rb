@@ -6,6 +6,7 @@ class PhpZts < Formula
   mirror "https:fossies.orglinuxwwwphp-8.4.7.tar.xz"
   sha256 "e29f4c23be2816ed005aa3f06bbb8eae0f22cc133863862e893515fc841e65e3"
   license "PHP-3.01"
+  revision 1
 
   livecheck do
     url "https:www.php.netdownloads"
@@ -14,11 +15,11 @@ class PhpZts < Formula
 
   bottle do
     root_url "https:ghcr.iov2shivammathurphp"
-    sha256 arm64_sequoia: "74db188b9a4a337a2a92e3a73b44a85bcf52802e5da338d120fa3442bfb718d3"
-    sha256 arm64_sonoma:  "9c8efbc4f42fb56bfc0d4836c9749fdc2e1deb8f17a56df0d17e43d90ff3f866"
-    sha256 arm64_ventura: "9c05f20d0bb418d41017d349b331f0e1e3714f7b5656838ae56cd257430bd33b"
-    sha256 ventura:       "4c98d358cfa9b851c4578e49382e020e51ec974cd5b65088f68cdb7d52c4cc65"
-    sha256 x86_64_linux:  "74be06611adbb45cf849190ddc008da3129082e4e84740df80ce4e8f6980a5b3"
+    sha256 arm64_sequoia: "1b123f3aedd3308d57804526a46a7d4e1faaa3958186fd1f521e37043123ee92"
+    sha256 arm64_sonoma:  "f3525a86deeee4d8ab5a547d29ac0145a08adf4aa0eb26566d4de9adba5bd469"
+    sha256 arm64_ventura: "8d1fa659daaf25d8eba698107dff6d7c057cb5bc10e3666904f09847d17651a6"
+    sha256 ventura:       "33b155ce6c0cb88e249e6e155d58600cf5c3d321f297666a31d7e9b1b23202f3"
+    sha256 x86_64_linux:  "2fb6c358cfc78246a04c5b75e194f6bb5bbf0c0e09b38868e6074717a3aa2d30"
   end
 
   head do
@@ -214,15 +215,7 @@ class PhpZts < Formula
     args << "--disable-cgi"
     args << "--disable-cli"
     args << "--disable-phpdbg"
-
-    if OS.mac?
-      args << "--disable-opcache-jit"
-      args << "--enable-embed=static"
-      args << "--enable-shared=no"
-      args << "--enable-static"
-    else
-      args << "--enable-embed"
-    end
+    args << "--enable-embed"
 
     system ".configure", *args
     system "make"

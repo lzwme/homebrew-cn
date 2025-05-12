@@ -1,8 +1,8 @@
 class Exult < Formula
   desc "Recreation of Ultima 7"
   homepage "https:exult.sourceforge.io"
-  url "https:github.comexultexultarchiverefstagsv1.10.1.tar.gz"
-  sha256 "f55f682a47009fdc5138571f80ac42eb1fe5c07c8d9ccacaa9de66caed039fd3"
+  url "https:github.comexultexultarchiverefstagsv1.12.0.tar.gz"
+  sha256 "1734fb8fc76696c7697f00d53e1c5c04b889ab4cabd95e4a3e0380bc35ee5392"
   license "GPL-2.0-or-later"
   head "https:github.comexultexult.git", branch: "master"
 
@@ -12,13 +12,13 @@ class Exult < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "fc3d163167021d5441dea24083a03c81b201b9d88111bd81d003c6fd10573013"
-    sha256                               arm64_sonoma:  "38b60efb5c42fd1e5d4f2399f358a737da0cbbc389f8339d9ab5c482dbf435ee"
-    sha256                               arm64_ventura: "49fae5e5ddd4f403e1b14f828c27d9de5c8843a14e80da07fbac726092d6871e"
-    sha256                               sonoma:        "f028e367037f153473ebb5c7745a8e67370b462dda94f58b73fcfd4056d02f79"
-    sha256                               ventura:       "ab2a9bc56740b16999d06d7e033badff5d590fff177ef39d89192ccb1f48502d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2d3980038af7e3685759a3b66816117cc35dc2fe58439ebd0d34698d1f6914fd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c54f945e4a0822fb82dac2bb910fe8c878ccdb25c111bf6dbb2b040388938b3"
+    sha256                               arm64_sequoia: "1ed78e83f24d86ad6d99ae555cb0c3f5f7082ba6ca58c7b6035866b340d3baf7"
+    sha256                               arm64_sonoma:  "3a6f16cd3a42e05e5d15fad08325e060b3fb8af4aaaa587ef4443c1a4fabed76"
+    sha256                               arm64_ventura: "5c59fa4711bac90f846e57cc711ee14f1b95e01c4e75c5d735820247039e760f"
+    sha256                               sonoma:        "869732b9d74e31c56d52eaf5928a3322fe5090bc59521733db83f832b1252a46"
+    sha256                               ventura:       "6f382526221cdbadcd1763951073bb7a05fb4abc2b15029c46ef7e37409e1feb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0a3dcbb5479149032bd09975ed3da88d8c8406ffdad4c538f96782c0f483b4e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c0d2ab13c126e340f28dcf5d9ae99d26f27c1fa443281cb945cd6d8a4d408a3"
   end
 
   depends_on "autoconf" => :build

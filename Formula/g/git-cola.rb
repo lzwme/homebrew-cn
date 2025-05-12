@@ -3,25 +3,25 @@ class GitCola < Formula
 
   desc "Highly caffeinated git GUI"
   homepage "https:git-cola.github.io"
-  url "https:files.pythonhosted.orgpackages8efce8f90350ac7a07fac83877963793dd372611e0c6b459ce71227847aa6594git_cola-4.12.0.tar.gz"
-  sha256 "e87ae8fedbd7b58d0929f48edb80e09bd14d554624b2d6c27caf001e08c5c0f4"
+  url "https:files.pythonhosted.orgpackages4f622a866a1570e677b55080d41056bad3234b17919c467d058a6f37489e3501git_cola-4.13.0.tar.gz"
+  sha256 "b86d864ef8e12d51e4381e848ee3835002a7559d2b8435ab70feb9be8f3b2cff"
   license "GPL-2.0-or-later"
   head "https:github.comgit-colagit-cola.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4190d6a926a2b45de30f7c45e185de3923289c1e9df4122aa132e20eddd58a1e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4190d6a926a2b45de30f7c45e185de3923289c1e9df4122aa132e20eddd58a1e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "625a74350e8052f7ba9c65ebde06318bbbe3fb906ae23e356cf8ac60b4301e9d"
-    sha256 cellar: :any_skip_relocation, ventura:       "625a74350e8052f7ba9c65ebde06318bbbe3fb906ae23e356cf8ac60b4301e9d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4190d6a926a2b45de30f7c45e185de3923289c1e9df4122aa132e20eddd58a1e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49f8f56b4d1035b4f68ca5f1513bd1b6b472439909656cb42ac4953c95bdda4b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "49f8f56b4d1035b4f68ca5f1513bd1b6b472439909656cb42ac4953c95bdda4b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "94aa95d3358e77d93b041eacb290349adbe7e06ed9415da0d770cd7f41cf8391"
+    sha256 cellar: :any_skip_relocation, ventura:       "94aa95d3358e77d93b041eacb290349adbe7e06ed9415da0d770cd7f41cf8391"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "49f8f56b4d1035b4f68ca5f1513bd1b6b472439909656cb42ac4953c95bdda4b"
   end
 
   depends_on "pyqt"
   depends_on "python@3.13"
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
-    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
+    url "https:files.pythonhosted.orgpackagesa1d41fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24dpackaging-25.0.tar.gz"
+    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
   resource "polib" do

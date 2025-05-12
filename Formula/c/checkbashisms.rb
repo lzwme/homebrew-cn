@@ -1,8 +1,8 @@
 class Checkbashisms < Formula
   desc "Checks for bashisms in shell scripts"
   homepage "https://launchpad.net/ubuntu/+source/devscripts/"
-  url "https://deb.debian.org/debian/pool/main/d/devscripts/devscripts_2.25.11.tar.xz"
-  sha256 "c6b8c2b3dc00703fa8899906bc3accc5d0f928220c74426c4306423008e20699"
+  url "https://deb.debian.org/debian/pool/main/d/devscripts/devscripts_2.25.12.tar.xz"
+  sha256 "a667faa37c625232106d6d4141d5aa9a1b78ab261a7fb787f80d02d8ccb2dd2a"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,7 +11,7 @@ class Checkbashisms < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "59641dd889c8fcd6dd3897cd65a2d0cdbc07082ffb8c783e42baf0bd6b2c6755"
+    sha256 cellar: :any_skip_relocation, all: "d4f5974e9b9df0af56e38caee495459682305020fc08be1b6fcafabb9162bc67"
   end
 
   def install

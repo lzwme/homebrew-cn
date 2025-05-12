@@ -1,8 +1,8 @@
 class TreeSitter < Formula
   desc "Parser generator tool and incremental parsing library"
   homepage "https:tree-sitter.github.io"
-  url "https:github.comtree-sittertree-sitterarchiverefstagsv0.25.3.tar.gz"
-  sha256 "862fac52653bc7bc9d2cd0630483e6bdf3d02bcd23da956ca32663c4798a93e3"
+  url "https:github.comtree-sittertree-sitterarchiverefstagsv0.25.4.tar.gz"
+  sha256 "87eadc505905c70a692917c821958a819903f808f8d244068b1d273a033dc728"
   license "MIT"
   head "https:github.comtree-sittertree-sitter.git", branch: "master"
 
@@ -12,13 +12,13 @@ class TreeSitter < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3af9b0daa0a0abc67857dfe737b1b3efea32dd2f8839e650d4ab5c7edbfa7498"
-    sha256 cellar: :any,                 arm64_sonoma:  "583a1198bf012237f4d55214f4e229c73e36c2646b039f753b23e88067de2a87"
-    sha256 cellar: :any,                 arm64_ventura: "45f1d76ef7d78f9159f9b362dfc91d22575c5e5a3d4b34cabf5db8c83bfde169"
-    sha256 cellar: :any,                 sonoma:        "077aeb52873a985c5f869cbcfbc62a7c8e135256038b797cd1ca111266b9e386"
-    sha256 cellar: :any,                 ventura:       "2b0e5434ddbaa8b5236aa132a10aa7ad93a78ec40ab14926c2ece1b7f91bf250"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f79aed3eaf3dc58b2fee7231bf5e7ad9e17b4acd5729e65b6df401bc9259f59"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "79afaf8e3fcbe5cd4bf4e1f72fea4cb77ac6da024da49cbd392db157732c59a3"
+    sha256 cellar: :any,                 arm64_sequoia: "d759e793e811053e350f19269066d86609efa06fc2e92ce7085b413dc3baab70"
+    sha256 cellar: :any,                 arm64_sonoma:  "1a0a7a12a4021659fd237f7b35abb449f179dff95b059ce874997a2d65b0a042"
+    sha256 cellar: :any,                 arm64_ventura: "7605faf1b7a973d90c481477a400b2b4da5a18adfdcaabfb9868075a84eef99f"
+    sha256 cellar: :any,                 sonoma:        "873e4f49b4c0419ff3f5ff2d7f44c63068a9de9d3100f3f811b04e6d01f05d17"
+    sha256 cellar: :any,                 ventura:       "96ef7b42541f6cdc3eb3d06137a6cc077b981549c22d397bb7a9460b20073e29"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb5af21cb73a0a56b5980663f9640c3d897c020bf3c5457d11b471f6f5cd467f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51edea22da451343dd7f18b7d92908158ed96c0f6c74e24e3a373baffaddc538"
   end
 
   depends_on "rust" => :build

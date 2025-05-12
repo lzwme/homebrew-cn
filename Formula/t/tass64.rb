@@ -1,22 +1,18 @@
 class Tass64 < Formula
   desc "Multi pass optimizing macro assembler for the 65xx series of processors"
   homepage "https://tass64.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/tass64/source/64tass-1.59.3120-src.zip"
-  sha256 "a89a7b79ad234c6ea51a1c9d6c472d0f3827d01b2501b3f30cd0af9541423eef"
+  url "https://downloads.sourceforge.net/project/tass64/source/64tass-1.60.3243-src.zip"
+  sha256 "9d83be3d23a2c55e085b7c7a7856c2f96080447ea120a6a8c21a217ed76427f0"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later", "LGPL-2.1-only", "MIT"]
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "486369e3e99fbd90b74d4db304c6a817af75affb2bb4f2dceae3fc72a0e942e5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d9ab17c0cf37a48c51e51973648c4bf753512e1eccaa58c384d1d9329466977f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "48e41ebee6b426610d59bfd3e89e2eb8204cfeabe63c7eb6375c04ac5388e6a5"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "4e91e45d0c55cd2072eb2889604bcfd11ec41fb10671f496ae156bc3c4904f67"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "ec1bcc71132e8154a294e50addb333794d81ad7eec1cab561528a03d9a9c5ae0"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f6ee486f80e6f446267b23f318762f652420854e45449a120bcf936bf737a71e"
-    sha256 cellar: :any_skip_relocation, ventura:        "b07344cbe03d5b5915e20ac2cde5c9b616f798e5b3589af1bbbad1cb41a6c414"
-    sha256 cellar: :any_skip_relocation, monterey:       "ec7db292d9285cced213210e4f158879caaf401589ecdf8c5f194f936ae2578c"
-    sha256 cellar: :any_skip_relocation, big_sur:        "fa71a39e484f20215d6e016a3a1347d88680e342d808b25acc66fd940ff1b0e5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "05feb338b83843857b1dbd68a9c53f2481d5b466eabe1035b03bf54a73fdd7ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "68e1053e5cf4f9509b8de27497354e8640573e12a31fa265c048272e9aa539a0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d23f98e527d005deb40dd737df7e79ddcaa192953a55effa2fbaa9907b0ce9cb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "26ba4c9a64c5b1d8aaba7e1c56d886471187bfb5a7bc07a96f1b07c6959a6489"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3bf1f29a383055486a8cdd26b701e4a82b05a948a9416d1547fee27ff1b42377"
+    sha256 cellar: :any_skip_relocation, sonoma:        "507d0e2c74ee13cfdb580822c62d9cd5954b817bb5900e337ea64607c5e1dab1"
+    sha256 cellar: :any_skip_relocation, ventura:       "1a174fd0558e49d58a058ba6359b261bce98721d85d0cac0e212196151cb1f31"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fc863e3da3c692f65b8aaa4e941d6b65c70192b2b7f065b2bc4df9011ae69e54"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "78bccbf88389de622f3d3aaee67eb4c065904c84aa87bc74b62a8ae17aa53012"
   end
 
   def install

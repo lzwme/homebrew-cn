@@ -4,15 +4,16 @@ class Osmcoastline < Formula
   url "https:github.comosmcodeosmcoastlinearchiverefstagsv2.4.1.tar.gz"
   sha256 "3a76ed8c8481e5499c8fedbba3b6af4f33f73bbbfc4e6154ea50fe48ae7054a9"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "dc16d9bbd13a4f77009a7bb0c87a2461dbbf0f004a57676da70803435096cb00"
-    sha256 cellar: :any,                 arm64_sonoma:  "c89acfaeebd5e4661327ab2abb42ff5407365f251a052b97b80f3a4fddd266ac"
-    sha256 cellar: :any,                 arm64_ventura: "3c08b87fc5b15d8a778ed08c9d7cb0dcfa5935413e5a85a2a3170024118b3a78"
-    sha256 cellar: :any,                 sonoma:        "9323e20db733822fbeafb7a4042009e82a57f65e94c78855e647c9b0df01bc50"
-    sha256 cellar: :any,                 ventura:       "13ca3a9c33d469ed3a7e261ac9376d732db372f4fc7a20d06533fd3374356559"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "64a1fd8484e7c3354a892775b7e9d6a71c6f4f46dcbec82fa7f6babb3e5407d1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44ab937e69ae5ff226d3528cacbf640b3f486e311d438c02f8e40cd9202a5e18"
+    sha256 cellar: :any,                 arm64_sequoia: "c35ab027223ca2ea5a8555eb16f6f28e3b08dd4b2041d4796331391a1458a5f7"
+    sha256 cellar: :any,                 arm64_sonoma:  "4792911cf6b33270e68cac5e9bb1810dff2a0869410905ae47c1978a5683e7b5"
+    sha256 cellar: :any,                 arm64_ventura: "a791ac1186a07fb44e973b7d08e2db4d73694e34d45aac133ebf399900e72486"
+    sha256 cellar: :any,                 sonoma:        "aef43094262f2b19ef4fa3c689ecfa6a51064e8ecddd9fda6d625cb690a6b0a1"
+    sha256 cellar: :any,                 ventura:       "51f97203e6f852e9ee35a14a98ba7d65f8aa1dea74a5711123e897e3e54eec8c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfd02b5ffbd8862c4c8f753c921c6db4930f64740883e9c4bd76ca0d7a89e1d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "512cdfad91e7e710a01e2f387d73661032fb267fc90c6a51131953c184956bb0"
   end
 
   depends_on "cmake" => :build

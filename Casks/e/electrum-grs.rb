@@ -8,6 +8,13 @@ cask "electrum-grs" do
   desc "Groestlcoin thin client"
   homepage "https:www.groestlcoin.orggroestlcoin-electrum-wallet"
 
+  livecheck do
+    url "https:groestlcoin.orgversion"
+    strategy :json do |json|
+      json["version"]
+    end
+  end
+
   depends_on macos: ">= :high_sierra"
 
   app "Electrum-GRS.app"
