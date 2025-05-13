@@ -1630,6 +1630,7 @@ Homebrew-homebrew-core/Formula/d/dynet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dynomite.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dysk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dzr.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/e/e2b.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/e2fsprogs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/e2tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/earthly.rb, Homebrew/homebrew-core, 1
@@ -3072,6 +3073,7 @@ Homebrew-homebrew-core/Formula/j/jinja2-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jinx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jira-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jj.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/j/jjui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jless.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jlog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jmeter.rb, Homebrew/homebrew-core, 0
@@ -4611,6 +4613,7 @@ Homebrew-homebrew-core/Formula/n/needle.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nef.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/negfix8.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/neko.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/nelm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nemu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/neo4j.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/neocmakelsp.rb, Homebrew/homebrew-core, 1
@@ -8029,6 +8032,7 @@ Homebrew-homebrew-cask/Casks/b/bili-downloader.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bilibili.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bilimini.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/billings-pro.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/billy-frontier.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/binance.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/binary-ninja-free.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bindiff.rb, Homebrew/homebrew-cask, 1
@@ -13033,7 +13037,7 @@ Homebrew-homebrew-cask/Casks/o/ok-json.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/oka-unarchiver.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/okta-advanced-server-access.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/old-school-runescape.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/o/olive.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/o/olive.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/ollama.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/ollamac.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/olympus.rb, Homebrew/homebrew-cask, 0

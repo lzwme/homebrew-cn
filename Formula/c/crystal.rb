@@ -5,8 +5,8 @@ class Crystal < Formula
 
   stable do
     # TODO: Replace arm64 linux bootstrap with official when available
-    url "https:github.comcrystal-langcrystalarchiverefstags1.16.2.tar.gz"
-    sha256 "4f032761a4018c6fbcf1649b866217d9eb2f3139599c70fcb6dac83714839c5e"
+    url "https:github.comcrystal-langcrystalarchiverefstags1.16.3.tar.gz"
+    sha256 "eb222af4d2aa269ed0f6c731661431a4fd97713de13f2f0a7c71e26140ca9d23"
 
     resource "shards" do
       url "https:github.comcrystal-langshardsarchiverefstagsv0.19.1.tar.gz"
@@ -20,13 +20,13 @@ class Crystal < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "91206f9deb2a2e62553cb4909a11ad5279f288a0ea8f8197103b2a5b2a03c781"
-    sha256 cellar: :any,                 arm64_sonoma:  "a0f73997bbb6268a36999522c421921d17a07ceac1b0fd19e8901ea4bdef6a8b"
-    sha256 cellar: :any,                 arm64_ventura: "df6879491431e773d06e9bb0ea312bc210fb9ecb522f106f5001e23fb9ff99d1"
-    sha256 cellar: :any,                 sonoma:        "755202db808772f74342de1826127b4427b637fb292b08d6f91b01cce248f4af"
-    sha256 cellar: :any,                 ventura:       "76fd47a005d14769ebd33ab083fcc73109ec56033fee7e93b0281471710bcd13"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "74cf2da2996b4d11ec7eb5db4883237696ecaf8ab576880c36d2d8da6b7ac1b4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "636b1385e439d2bcb4c40529c9832fb72a931dfa962c38f4a084e0c100686f0b"
+    sha256 cellar: :any,                 arm64_sequoia: "1528df0078262f0a8a504c5cdb44ba59901f8def69b8356f28041aab529e4373"
+    sha256 cellar: :any,                 arm64_sonoma:  "2110a2a8a989ada8ac31fff4f65b7ac7e165c2afa05e9b1f0c60e9c8d28a53ae"
+    sha256 cellar: :any,                 arm64_ventura: "636d1add07be313d2cd00293b5e3aeb008e9a84d73b4bc140b379da72dc56d2d"
+    sha256 cellar: :any,                 sonoma:        "88f50621da7850132be73cd5b8cc0d4bea7cce723d5e9cbddaab6ee2a04f55d0"
+    sha256 cellar: :any,                 ventura:       "51de4537260cbc30d99593c039163d796588c4d2bd9d836e1cf870c21ddbc36a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "37192aaf56db85c11672cd0d3d4e12531cc39dc6bb8c2435d34fba6b5fc645bb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1d4c70aa1b1a53b8182b88e8ec94cd1a2a2f4b053e4bc47bf167ffb586d4fae1"
   end
 
   head do

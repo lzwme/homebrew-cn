@@ -1,19 +1,19 @@
 class Libsais < Formula
   desc "Fast linear time suffix array, lcp array and bwt construction"
   homepage "https:github.comIlyaGrebnovlibsais"
-  url "https:github.comIlyaGrebnovlibsaisarchiverefstagsv2.10.0.tar.gz"
-  sha256 "25c80c99945d7148b61ee4108dbda77e3dda605619ebfc7b880fd074af212b50"
+  url "https:github.comIlyaGrebnovlibsaisarchiverefstagsv2.10.1.tar.gz"
+  sha256 "ecf4611c18fefd8d4377343e4dc3f257ae17a501301a13f7cb7585c836405d39"
   license "Apache-2.0"
   head "https:github.comIlyaGrebnovlibsais.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "530fc5db53ed108c1c0cd163d4bcf5293f13e1532ce1b8e84df243fc8776a2e8"
-    sha256 cellar: :any,                 arm64_sonoma:  "e12064836d57cbe31bfff4a60388f5ab516ffbbeff39bc157acfaa404b8b43c6"
-    sha256 cellar: :any,                 arm64_ventura: "829ff3a96b317b7e56a4f61e7590d776e5dde1f85f40d44d9a7fa599e81ac6d5"
-    sha256 cellar: :any,                 sonoma:        "cc56db309bd88c115c2da8c9cb3821c3aa69e2f595b6156b5379b870413af309"
-    sha256 cellar: :any,                 ventura:       "118fd79be7a9552aac05652c2d76452a79726769ad59745c7c0160fc9d7d69e5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "024ff4a47c6340289256a1634b83b8d0bc2201c53df1ad48be3c984b03c9728e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3d12688f8f741c93ce811a6207584ff439136520a3df834fd79d9cef3343965"
+    sha256 cellar: :any,                 arm64_sequoia: "54b8afff60b856c0884c71de1dd1f1e6409a55b2be1d49b8b673dad9e47b2510"
+    sha256 cellar: :any,                 arm64_sonoma:  "c5d9e7b22a085837f05ad3b29b6e20fca750f0c5fc3028c4fc5a672fb68eeb7c"
+    sha256 cellar: :any,                 arm64_ventura: "399524c4f5c23885e1115134517a85c32e91a66eb6b174323a05eb3fe4ec81af"
+    sha256 cellar: :any,                 sonoma:        "9f96dfbd1f3c5e47135ffc73fe8ad7b078fe1e288d789c85cb61253cd51c529d"
+    sha256 cellar: :any,                 ventura:       "9a8a3785b9eb046ff961db993c3b5c2e8a038ce933c0df45721f4cf689bfe80e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c94849ebbeaf7ca8e3b06c9bd5be34a8e5f1fba3c41c78014744c72527b20e96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec6cd3dd97d73a21ed12b1305f8a8ec133a583088413f62bad03c3fb3908c794"
   end
 
   depends_on "cmake" => :build
@@ -23,8 +23,7 @@ class Libsais < Formula
                     "-DLIBSAIS_BUILD_SHARED_LIB=ON",
                     *std_cmake_args
     system "cmake", "--build", "build"
-    lib.install shared_library("buildliblibsais")
-    lib.install_symlink shared_library("liblibsais") => shared_library("libsais")
+    lib.install shared_library("buildlibsais")
     include.install "includelibsais.h"
   end
 

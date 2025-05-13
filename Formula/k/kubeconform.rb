@@ -1,19 +1,18 @@
 class Kubeconform < Formula
   desc "FAST Kubernetes manifests validator, with support for Custom Resources!"
   homepage "https:github.comyannhkubeconform"
-  url "https:github.comyannhkubeconformarchiverefstagsv0.6.7.tar.gz"
-  sha256 "3d38b9f3f8c75a2ac5917ab2dda0a6a89a581a75ed755aec698e931611979223"
+  url "https:github.comyannhkubeconformarchiverefstagsv0.7.0.tar.gz"
+  sha256 "9cb00e6385346c9de21e8fe318a4ec9854a8c7165d08b10b20ed32e28faef9a8"
   license "Apache-2.0"
   head "https:github.comyannhkubeconform.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0971d5199510dea4a17e5d81b5dcb9c1cd663b22a6043f3b2ac34ebaf5e0f057"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0971d5199510dea4a17e5d81b5dcb9c1cd663b22a6043f3b2ac34ebaf5e0f057"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0971d5199510dea4a17e5d81b5dcb9c1cd663b22a6043f3b2ac34ebaf5e0f057"
-    sha256 cellar: :any_skip_relocation, sonoma:        "79a09d5e396be8bf3ac812ed61250b6a5e1354bf887099618669924aa5893355"
-    sha256 cellar: :any_skip_relocation, ventura:       "79a09d5e396be8bf3ac812ed61250b6a5e1354bf887099618669924aa5893355"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e1e7733199b192aaeb2aa7bf21b41afacbf1eed5a26532164ef3a917f7b8feeb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "daf8891c42d9a174f5b407e5a54ad7a18ec39e1413386738ad44a7f4a0e66257"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "daf8891c42d9a174f5b407e5a54ad7a18ec39e1413386738ad44a7f4a0e66257"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "daf8891c42d9a174f5b407e5a54ad7a18ec39e1413386738ad44a7f4a0e66257"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c4a2a5d5b68ca69d05ce2ead6c5e67e282c4a25bd31bee697ff0d8356ad38324"
+    sha256 cellar: :any_skip_relocation, ventura:       "c4a2a5d5b68ca69d05ce2ead6c5e67e282c4a25bd31bee697ff0d8356ad38324"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b430e93e88f9c3182f8e7a7c511c220e3e469564b4413d600815fc72d336bdb"
   end
 
   depends_on "go" => :build

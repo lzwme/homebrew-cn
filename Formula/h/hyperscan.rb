@@ -15,7 +15,8 @@ class Hyperscan < Formula
 
   # This software is no longer open-source after this version,
   # and the upstream repository is not receiving any updates.
-  deprecate! date: "2024-05-10", because: :unmaintained, replacement_formula: "vectorscan"
+  deprecate! date: "2024-05-10", because: :unmaintained
+  disable! date: "2025-05-11", because: :unmaintained, replacement_formula: "vectorscan"
 
   depends_on "boost" => :build
   depends_on "cmake" => :build

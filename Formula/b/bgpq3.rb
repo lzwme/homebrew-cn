@@ -1,8 +1,8 @@
 class Bgpq3 < Formula
   desc "BGP filtering automation for Cisco, Juniper, BIRD and OpenBGPD routers"
   homepage "http:snar.spb.ruprogbgpq3"
-  url "https:github.comsnarbgpq3archiverefstagsv0.1.36.1.tar.gz"
-  sha256 "68d602434d072115b848f6047a7a29812d53c709835a4fbd0ba34dcc31553bcd"
+  url "https:github.comsnarbgpq3archiverefstagsv0.1.38.tar.gz"
+  sha256 "c4a424825e6c9c9ec48c2583dcbbfc3016d15cc0be1dc55d07827e1b9b79888c"
   license "BSD-2-Clause"
   head "https:github.comsnarbgpq3.git", branch: "master"
 
@@ -12,18 +12,13 @@ class Bgpq3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4eca4f5cc688d7bfca7689f337cbe77112e688ade4a640718f32270d750959df"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a26e86fbe0f158032564b36c316161d6296e2f13a6f37887e860454ebf0c5fbf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "18d4d294bcd85daa37e3285a34aa7ed2d45513cd708a2eadc203d5d62ae7b5a3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "890ade49fae97d8e9967362b464b57cc172fb5305e05dee84d7c3b5ab5e869bd"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "b9edea14c24ccca9986d9dbf14cedd8e245fc49ecffb07a3079deff2b6576448"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9aebbaa768f96be65496d9fb1d5878e5e26baca8204693217045a59a2df10d95"
-    sha256 cellar: :any_skip_relocation, ventura:        "e5b38623eed774b049c26c2c6b074ffb5302c38f1545ef96458b5a6dfcbdca8b"
-    sha256 cellar: :any_skip_relocation, monterey:       "7a130fc4a82b1ab7255290dc18058a369ba604905386a32ac7f76a6bab543ee7"
-    sha256 cellar: :any_skip_relocation, big_sur:        "6d04e58f086891a0a8f1bd8c91e813afb4de0fff26f61a8bc30d3c82d2829a42"
-    sha256 cellar: :any_skip_relocation, catalina:       "4294f76491ed0fe10c6df11b695489e2765b7eb8bd4ccfe0adcabced418968a2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "7ec3ed3c15537b7e9c8012392054e91e5b1bfa6919c3dbd798fc5dc6a14b447f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ee8fc268ac1e1293ee27d9b8a82411c7dc98f2a4df8e4a88efed3635699bc4ba"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "234036f637e3d392114a9a92637f28f59820c407803d414e9efff4cde922e506"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20e940f3930fc35fdb480f156780d53cebe5c18b26e231db42f0667d77d87b50"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c59144d7fa15c862bfdeb5af564871eb28cfbc6112d6e985d9be636de0deee4e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4f29830a26cca0ebac56d0978d1265d9078c09f782c23062710262296750d916"
+    sha256 cellar: :any_skip_relocation, ventura:       "19510346a7393c8b478610831da0a8d5060932feb543fb48d37709d09cac061b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5ad42018e54795c6aa663b7cf201eee6abbec7ccd6403041d619b4ecdd2dfa8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c79dfd70b5f7abf543be803c8f3e65b1c42b5dc746a9380e923599062e360a63"
   end
 
   # Makefile: upstream has been informed of the patch through email (multiple

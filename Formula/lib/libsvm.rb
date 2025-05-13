@@ -1,8 +1,8 @@
 class Libsvm < Formula
   desc "Library for support vector machines"
   homepage "https:www.csie.ntu.edu.tw~cjlinlibsvm"
-  url "https:www.csie.ntu.edu.tw~cjlinlibsvmlibsvm-3.35.tar.gz"
-  sha256 "ea5633fc84b1c2fa58aa4c44b62e437573020297a1dfbe73bf1531ec817a8478"
+  url "https:www.csie.ntu.edu.tw~cjlinlibsvmlibsvm-3.36.tar.gz"
+  sha256 "bc92901fbb928c44bb6d0c38189624c7443bcdbf1dd8350b4914e58e57b93c11"
   license "BSD-3-Clause"
   head "https:github.comcjlin1libsvm.git", branch: "master"
 
@@ -12,16 +12,13 @@ class Libsvm < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia:  "fbd7f0cb7371ece33c5cfef9a0de2c8ce9ae60975ca902621ff7767d3f4a489e"
-    sha256 cellar: :any,                 arm64_sonoma:   "b0b42109fa5ef7614278c54c343022fc60f3946e7d1f110472e002e0a333dca8"
-    sha256 cellar: :any,                 arm64_ventura:  "dec298a98db2de896176f6c2d0dd4a9304f8da4a3e2f3af3c90f097f41d7f6f4"
-    sha256 cellar: :any,                 arm64_monterey: "9984ecea26fd1aab82612a0ac2a267dfe30ceb81ab8ae365027f2acfb6677ef5"
-    sha256 cellar: :any,                 sonoma:         "cf42abb68e45caccd897b737ce1aa00b2c5f0e79f5c5336432e56171ebf2b95e"
-    sha256 cellar: :any,                 ventura:        "7d908bc4532b8e00b9a03f91b7e67d6e279b51ec5a8ec67465ca914dd0b899f2"
-    sha256 cellar: :any,                 monterey:       "ddaef78accfa874e5d2b3638b8dcd00f73ed979d012d6cb97307b56d72ee5311"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "d98d136eb5efb5ac277db2ba33fc7ee191df107e74d6937ece0ed5f596a1a853"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "180e48479f4ce02ec77db9750d16a1eb71f29768d90f4f012e152e5f542a6cdb"
+    sha256 cellar: :any,                 arm64_sequoia: "07c47f5b7781dd3fffb83c47d6ea6568e7979e1222eb214c7a85d1323841a91a"
+    sha256 cellar: :any,                 arm64_sonoma:  "491c601bed6a963a50717df1a90b1a0c9a73f73b19f64778239a1668edb96440"
+    sha256 cellar: :any,                 arm64_ventura: "4025272abab33c159ef9ce0133a1716d3936d2b10a0f26c630a68e19547c4bb5"
+    sha256 cellar: :any,                 sonoma:        "0bb3867e246b44702d4f0504b0fd8cbc52a7995d9c083ad1be071eedac630f33"
+    sha256 cellar: :any,                 ventura:       "7756ddc93d633b6de91c42f80ea3fba436cdfd9a9eb7af9f7413ec9f15ba1af5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "dfdef8c630fd3e6fd561ae9b0fe3d3063777ddb0553e06b00477fa29bf28f1a7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d1c622afb8f5923a625dbdd52197af588febd196e1d2eabfa3e1c9b3664e4386"
   end
 
   def install

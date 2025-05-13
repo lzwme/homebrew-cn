@@ -4,6 +4,7 @@ class Zizmor < Formula
   url "https:github.comzizmorcorezizmorarchiverefstagsv1.7.0.tar.gz"
   sha256 "9564db26f6e134a8f23f6d92c48a25c7cf457fed5de5ac76643cd45abf098129"
   license "MIT"
+  head "https:github.comzizmorcorezizmor.git", branch: "main"
 
   bottle do
     rebuild 1

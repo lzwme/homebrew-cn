@@ -17,6 +17,13 @@ class Libcbor < Formula
 
   depends_on "cmake" => :build
 
+  # Fix to cmake 4 compatibility
+  # PR ref: https:github.comPJKlibcborpull355
+  patch do
+    url "https:github.comPJKlibcborcommit1183292d4695300785b272532c1e02d68840e4b8.patch?full_index=1"
+    sha256 "54c1984fa401a4bf85e9d9cfd1500bfd1f3106cf39e1f72cfdf762dd30643098"
+  end
+
   def install
     args = %w[
       -DWITH_EXAMPLES=OFF

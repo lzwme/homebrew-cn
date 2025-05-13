@@ -1,8 +1,8 @@
 class Mold < Formula
   desc "Modern Linker"
   homepage "https:github.comrui314mold"
-  url "https:github.comrui314moldarchiverefstagsv2.39.0.tar.gz"
-  sha256 "32a0917894b9bc9317ba5d6bdbcad8401513bcdfbbbcfc9de55423c46db8511c"
+  url "https:github.comrui314moldarchiverefstagsv2.39.1.tar.gz"
+  sha256 "231ea3643a14fe5b88478c97b68b31f7c975b57b247a81356ffd889d015b5cc1"
   license "MIT"
   head "https:github.comrui314mold.git", branch: "main"
 
@@ -15,13 +15,13 @@ class Mold < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "10ab852e3dc9f47589bb4e8f734ee20c382e1e8d276d7c55134844ca175d6d8a"
-    sha256 cellar: :any,                 arm64_sonoma:  "e752be3fa9634ef2c38c936cf08cfa60a5686b25cc756bccd77fe246b4063e20"
-    sha256 cellar: :any,                 arm64_ventura: "34fd16594cbcb9eb9cc1a03ae42be22faddb4c80373b347da61de9343c1c5d5e"
-    sha256 cellar: :any,                 sonoma:        "114dd89def4ce67941c74d0ba22c20198d10e50075d7d2d8fb1b170689e1cac8"
-    sha256 cellar: :any,                 ventura:       "5dfe6777c1831f2918f18c524db64dc0e2c942a4c48ee83a81c55e1692b85b74"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "73ab21dcf4e8045013755deb6dc6ddb9ef2b95a4ed1b47bb1d4aab67d6dd729f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3f6639e506ff3fca0a926fd47ce801a51bb6c5a6c12690500d83b5e9c002d0c"
+    sha256 cellar: :any,                 arm64_sequoia: "10c8ed21ca271d1ddf4733a41443a86856b3f61778a7cbc182632fdb2e0b05e4"
+    sha256 cellar: :any,                 arm64_sonoma:  "5b88ab281021a1d4e65bc4e0dffc13f521c26bdd14751e2a0558758da81757ea"
+    sha256 cellar: :any,                 arm64_ventura: "2fa9d9fc9d7f72c2836752dae3d206c7e36795ba6bc8ea572ece5a8718132d58"
+    sha256 cellar: :any,                 sonoma:        "0abea8cf2462b287ee6380d24f26c1656bf7b77c8260cd483b66b21a30c5f0df"
+    sha256 cellar: :any,                 ventura:       "bb7ddfaaf0813f53304ec0dd9e2048ca336f3811601259c05904223895907896"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe568aa6e726ed08a082f2fc79149d57aa8fcd200287e2cb2fbe83373a19e320"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "570db503c502e9da521834d7dfe10eccd97efe7472dfd46f71494b87c1c2dbd2"
   end
 
   depends_on "cmake" => :build

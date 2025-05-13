@@ -1,18 +1,18 @@
 class Codex < Formula
   desc "OpenAI's coding agent that runs in your terminal"
   homepage "https:github.comopenaicodex"
-  url "https:registry.npmjs.org@openaicodex-codex-0.1.2505021246.tgz"
-  sha256 "70d27f89af3eb9d2697de0a9ba68564d32fc6faecb6f8dfcd2cca7e6ab919ab8"
+  url "https:registry.npmjs.org@openaicodex-codex-0.1.2505111730.tgz"
+  sha256 "87fe060703384b92745904d6fb94c3763877af8173c9f0b796458cc8b8a2ca65"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "85df5edd03aa3806252b9868d83ca32cba01d252889970f77bbc020c37933d9d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "85df5edd03aa3806252b9868d83ca32cba01d252889970f77bbc020c37933d9d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "85df5edd03aa3806252b9868d83ca32cba01d252889970f77bbc020c37933d9d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9c0511f07c5d8b0ee0d5bd810f802fafe569a9b002590afa8e2452bdced54c37"
-    sha256 cellar: :any_skip_relocation, ventura:       "9c0511f07c5d8b0ee0d5bd810f802fafe569a9b002590afa8e2452bdced54c37"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85df5edd03aa3806252b9868d83ca32cba01d252889970f77bbc020c37933d9d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85df5edd03aa3806252b9868d83ca32cba01d252889970f77bbc020c37933d9d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e7b0f74c000f61ca49ee3fa2c52848e18754fe28b884bb2c0375f2ebe840887"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4e7b0f74c000f61ca49ee3fa2c52848e18754fe28b884bb2c0375f2ebe840887"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4e7b0f74c000f61ca49ee3fa2c52848e18754fe28b884bb2c0375f2ebe840887"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ccf94b7a469657b2ed31775771a66429dc05cf98538ea5e7e05326807ac46f0b"
+    sha256 cellar: :any_skip_relocation, ventura:       "ccf94b7a469657b2ed31775771a66429dc05cf98538ea5e7e05326807ac46f0b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e7b0f74c000f61ca49ee3fa2c52848e18754fe28b884bb2c0375f2ebe840887"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e7b0f74c000f61ca49ee3fa2c52848e18754fe28b884bb2c0375f2ebe840887"
   end
 
   depends_on "node"
@@ -20,6 +20,10 @@ class Codex < Formula
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}bin*"]
+
+    # Remove incompatible pre-built binaries
+    libexec.glob("libnode_modules@openaicodexbin*")
+           .each { |f| rm_r(f) if f.extname != ".js" }
 
     generate_completions_from_executable(bin"codex", "completion")
   end

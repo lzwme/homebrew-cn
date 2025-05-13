@@ -18,6 +18,13 @@ class DoubleConversion < Formula
 
   depends_on "cmake" => :build
 
+  # Fix to cmake 4 compatibility
+  # PR ref: https:github.comgoogledouble-conversionpull240
+  patch do
+    url "https:github.comgoogledouble-conversioncommit69880f0e68d6ddcb760285709195d63c5fd193c4.patch?full_index=1"
+    sha256 "9895afd264e304368d78d83d4bedf85fbd282f79fe99f70cd7384cde2baab329"
+  end
+
   def install
     system "cmake", "-S", ".", "-B", "shared", "-DBUILD_SHARED_LIBS=ON", *std_cmake_args
     system "cmake", "--build", "shared"

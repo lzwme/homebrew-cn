@@ -35,6 +35,13 @@ class Snappy < Formula
   # `folly` issue ref: https:github.comfacebookfollyissues1583
   patch :DATA
 
+  # Fix to cmake 4 compatibility
+  # PR ref: https:github.comgooglesnappypull200
+  patch do
+    url "https:github.comgooglesnappycommita688be4b77b954c403db805c8351ff62770f1044.patch?full_index=1"
+    sha256 "d7ce00be23a95bc438ec00a287de1c52a2b7d9c261a365a4a2b458e29b486fd8"
+  end
+
   def install
     ENV.llvm_clang if OS.mac? && (DevelopmentTools.clang_build_version <= 1100)
 

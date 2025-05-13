@@ -1,20 +1,19 @@
 class Nzbget < Formula
   desc "Binary newsgrabber for nzb files"
   homepage "https:nzbget.com"
-  url "https:github.comnzbgetcomnzbgetarchiverefstagsv24.8.tar.gz"
-  sha256 "8d67af6c0aab025ca3da2f701ef62ce9c14a1cedc2e55600fd7e872ef60c0fdf"
+  url "https:github.comnzbgetcomnzbgetarchiverefstagsv25.0.tar.gz"
+  sha256 "104ebd7b0abed02ae11e968073063df27b0b39d4b62170e5785103a9a10d9999"
   license "GPL-2.0-or-later"
-  revision 1
   head "https:github.comnzbgetcomnzbget.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2cf0b33adc4150258481607c90fd797f36c40a31cb63b285f620731b5daf627f"
-    sha256 cellar: :any,                 arm64_sonoma:  "99354ebc3fde8a20e8c5bb04e5a5bd3cc943d4f25eb5d8e05fc327ce89c86dd5"
-    sha256 cellar: :any,                 arm64_ventura: "0916cdd31a6cadc04cda1f35c29504c28a276b45ae212fd7790c3a1215a8d1b4"
-    sha256                               sonoma:        "f13631c62c250c4d2e4ec6ca86366bb12c0b5cb816314af6aeccdbb8fa4abeb7"
-    sha256                               ventura:       "7b31cf069283478797f2e5cc529b49345154e19988c7b5bafaf1f92ec65b0094"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b775bb24590c73da6e6a0135ef30c6567c851d7f507494af947d3be9120d5396"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2cf5881e65b97201b06574e9511572bff673971eca03c1d746955706f93d3f28"
+    sha256 cellar: :any,                 arm64_sequoia: "371d055797f59c911e6be17f10eb42112abe701114f5d8f60a4855048ff26d67"
+    sha256 cellar: :any,                 arm64_sonoma:  "8909eb1f6343e497a84b8978669471eb422449b8474ce1022fe620a68a09a9fa"
+    sha256 cellar: :any,                 arm64_ventura: "de057a02a644af8dad13c30511d71bd24c9c73be018c4119587e99a1439ca432"
+    sha256                               sonoma:        "6d6a39e4990d42f45c927d09138167d5aef5f24f60e8e541f3807bc60e02aea5"
+    sha256                               ventura:       "816f3371545857cadd216e2c3b102ec28ccc5ff63311a514025354a94723f50b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e88197900adac0cfc6bb08322ac67cac5626dd00cea49080351d8067dd1b73b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ec23d3eb13a1763e72658adb7e4a2ef20c802771491e86cc8fea7e70eb6aa366"
   end
 
   depends_on "cmake" => :build

@@ -1,19 +1,19 @@
 class Sendme < Formula
   desc "Tool to send files and directories, based on iroh"
   homepage "https:iroh.computersendme"
-  url "https:github.comn0-computersendmearchiverefstagsv0.25.0.tar.gz"
-  sha256 "d50c39cbe828947a5acf67f4c0d1db46017ff9e2fe2c8e77970dd515b1b024d7"
+  url "https:github.comn0-computersendmearchiverefstagsv0.26.0.tar.gz"
+  sha256 "d41bd166e08b611d993e4bdf01c66610406fe93338783fe9a310eaf726fc337f"
   license "MIT"
   head "https:github.comn0-computersendme.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80ab0de98e09c5b9915a44a75e441d0724b91342aabddae8839183c3fef5292c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4943b7174fcf8759dc6820853270f84da3272581f448973c0eed2f659b31f317"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a8d1390110f8326011e78646117cbf07ef5df02abb0cb672e5b19fa5c0e65b37"
-    sha256 cellar: :any_skip_relocation, sonoma:        "902ae570d8182e3dab7c0e190e41349bbe240fee4fa4ee60c63510e9d285fd84"
-    sha256 cellar: :any_skip_relocation, ventura:       "7f9e7975131baf76c40bf5c6f8af2b421d9058473f7a96201703ba702e5cb949"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6829d388877534078f0be9e43c47de69f52d67c79af2ec4213a0e038babd3e93"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cbf6e22046177118629a060d27565012c52c5b3e98c955a9ba9b9853051693be"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b8e9e14ec2f39f461b899a8d6c0dedfaee493b49674c40ef11d3a1f5f42f58de"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9670e36e17de672428e0894f4545f1974db38c17615e533c3e508d56f6f4d43c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "70fbf950de08c9d17d5499da8fafb68208523331bc988b84112f2fa3ce8309ac"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b7bd3d3efda5aae5d52b9985325dd8892611349f9258a773e058bd661b75e58f"
+    sha256 cellar: :any_skip_relocation, ventura:       "036983cc3a388d0aed8096a078b42f39f98e3199309fac245057e554dfbc1405"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fb83096740b4615fb2a41d62536a6625d342db45bf85e1df35a3ae7a8de320ff"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c26cea22df1f133fda1526b2807ba8c08df227f85de2f5597d237977b176fc7b"
   end
 
   depends_on "rust" => :build

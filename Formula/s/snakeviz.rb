@@ -42,7 +42,7 @@ class Snakeviz < Formula
       exec bin/"snakeviz", "--port", port.to_s, "--server", output_file
     end
     sleep 3
-    output = shell_output("curl -s http://localhost:#{port}/snakeviz/#{CGI.escape output_file}")
+    output = shell_output("curl -s http://localhost:#{port}/snakeviz/#{ERB::Util.url_encode output_file}")
     assert_match "cProfile", output
   ensure
     Process.kill("HUP", pid)

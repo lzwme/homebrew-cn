@@ -3,19 +3,19 @@ class Atlas < Formula
   homepage "https:atlasgo.io"
   # Upstream may not mark patch releases as latest on GitHub; it is fine to ship them.
   # See https:github.comarigaatlasissues1090#issuecomment-1225258408
-  url "https:github.comarigaatlasarchiverefstagsv0.32.1.tar.gz"
-  sha256 "35b55b79764589429328c639a0505d7e2dc45abfa1dad028d9fe0360636b3b5a"
+  url "https:github.comarigaatlasarchiverefstagsv0.33.0.tar.gz"
+  sha256 "abec6e325122e4ad3c8df75b71265de56a584f30126650b3d976cdb1976fd736"
   license "Apache-2.0"
   head "https:github.comarigaatlas.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21f2f5b36678dfd98a4164d39e0f83249976e83336c6a934260da7e056c53c54"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "265178ebc14f011da0909663c86a9cd26ab87dcf9a70acfe16aee930f9dd995f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "796dfd14af7ab4ca09df77a5e2762769d7150e04f8aecab355d806a626e83c2d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5a0194ed0cc8fb74b985e75f971412625db0b7e4b4d9cdabb4696930aa7fd665"
-    sha256 cellar: :any_skip_relocation, ventura:       "acf6138317c218ca6d2eec374210c2dc34d69093b35e652342b0dcade34172e3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "def7166578daebb8f96ecd9c9ef9b71350c6fa4693e11b8b98a3ea18710bf444"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "027e1b307871a24aa03e0478f58dcf2e52a3adc4b390adc4f3f3a3ad4bdbedad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fec845948808c427e76400861c96b081e073c22261f0276c71703cfa3df5275a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3737fc1be1e2d01e9231ede75345cf4c29c43bda88017229a95b039a7af66682"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6287e20d6a36f742a98f659ef00f09b471c9b5804c81c02cdef22a2009a575f5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6ca3ea148c2f93590fbea6873f824bb5feaafe16a8a7875d5840d6e3dc67c17b"
+    sha256 cellar: :any_skip_relocation, ventura:       "cf9b4b67fa8561ddd40eadc48b7cbeca4dfb85fa5b5ecc7d0c1b12a07fb475bd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "37f7fc55f7e070019e2b178e233d467658c373f16d4e5393d267c079fe3a2bdc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42a7fe502963f23f059c2e1c2458a118cbaea7edbf4b196d0257914185abed78"
   end
 
   depends_on "go" => :build

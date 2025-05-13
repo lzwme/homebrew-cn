@@ -20,6 +20,13 @@ class Srt < Formula
   depends_on "pkgconf" => :build
   depends_on "openssl@3"
 
+  # Fix to cmake 4 compatibility
+  # PR ref: https:github.comHaivisionsrtpull3167
+  patch do
+    url "https:github.comHaivisionsrtcommit7962936829e016295e5c570539eb2520b326da4c.patch?full_index=1"
+    sha256 "e4489630886bf8b26f63a23c8b1aec549f7280f07713ded07fce281e542725f7"
+  end
+
   def install
     openssl = Formula["openssl@3"]
 
