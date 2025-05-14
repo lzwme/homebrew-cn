@@ -1,8 +1,8 @@
 class SbomTool < Formula
   desc "Scalable and enterprise ready tool to create SBOMs for any variety of artifacts"
   homepage "https:github.commicrosoftsbom-tool"
-  url "https:github.commicrosoftsbom-toolarchiverefstagsv3.1.0.tar.gz"
-  sha256 "3e31ffe0d7bfe26ecfc59772b8e828f08ac8c39a3ddfdc0a24d7d603afa7e45b"
+  url "https:github.commicrosoftsbom-toolarchiverefstagsv4.0.2.tar.gz"
+  sha256 "d43efd0ff2444c98102cde9c584bef96db3e740c31e5c5b2b5af68a65940d6b7"
   license "MIT"
   head "https:github.commicrosoftsbom-tool.git", branch: "main"
 
@@ -15,12 +15,12 @@ class SbomTool < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff8fbdbfb4a321fc72980e047cf8326fa745ab20d22da59152c3239fd9e58e85"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0d387409a55a1965c920dc52033028049ae4bedeb759b054a4e716074763000"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5022471bef61a6cf96c9172c925baf519ac0349f3a9d1e2ea9ebab8ffed1315d"
-    sha256 cellar: :any_skip_relocation, ventura:       "f4d9fc9f31e1bdbacc85656dd6811bb3dc77e7792cf27bd306f534721df57136"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a5a92f21640ecabfe329c5b39570ae95c343eb311471bec87fb63958b7bb5b0b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c87d83bc21c734cb7cd9355da63ba7b4b592c8996a26629c391b37acdf42615"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b43e167fd92bd6766467dd211e96af259d8c219ed962e6ed456cb8125753d78"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c4d060153e9ebcad5034a6b6c1bfd4c8451701e4d932751b7106edafd1308b4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a09960d083006bb438f5b273520851574e24220ffd1d40a23389527a7b109d96"
+    sha256 cellar: :any_skip_relocation, ventura:       "9c8584d1da9e547b774c93d3e3bd11bbf910f0a719dc4766d8c35326a90249da"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3128fd9edae1d2d05749daa2bbe4ace7b1530adc31f4f80a6bf5b3414d3dff13"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ce597bc495dcb19eb349445dd17d584708e7eb198771adc65738972918408de"
   end
 
   depends_on "dotnet@8"

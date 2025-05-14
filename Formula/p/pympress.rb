@@ -3,20 +3,19 @@ class Pympress < Formula
 
   desc "Simple and powerful dual-screen PDF reader designed for presentations"
   homepage "https:github.comCimbalipympress"
-  url "https:files.pythonhosted.orgpackagesfbe291827c485aae28d69f0b40c6d366b9f6eb96d8208a98af0345e0ade3fbbdpympress-1.8.5.tar.gz"
-  sha256 "29bd39115d05f254da993abba42d54a0e9187f4e2ce7c363324b15136c530bf6"
+  url "https:files.pythonhosted.orgpackages8766fb9f8f2975740ea8880de293eb16b543965387881c71ca323a00a5d77d8apympress-1.8.6.tar.gz"
+  sha256 "243dc5dd225acd13fb6bae680e2de1816d521203b98a9cff588b66f141fffd9a"
   license "GPL-2.0-or-later"
   head "https:github.comCimbalipympress.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f316d72786b317ac5b21e31d01c8cef6127f1f7f7ce6b118daa135c92741c105"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0505c142b3daa22ce3e5ee1ddd0573e5181a86648a729922024f5fac4e1ab894"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8ce2f60ddac40de33cc031840e04394845868616a0eaa6a745cde325857c432c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f283e466751b2d7830e51cc7d443e548abf7b3d6f3052f019bf69c579af74760"
-    sha256 cellar: :any_skip_relocation, ventura:       "b64e3e0efbad5aae12e6641c4f50feaac3b59a6904f52a48aa3e88324cd094c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b1ef86cd9f32e930f359ab3ab6fc5edba54923183a019b36811076d16634da34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13ab4556e72e88102a4dbac70df1e885a231cf90a0a1ece7e60c9413ff782bec"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "64f35865fbde010d4e3de039977eec6bc1bbe6dabb19fca1f9c3f9da709e1593"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ad170caf12af4322d5b0f819cdf13616af3d389de0400f157ac7638cce10fcff"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3ec3fed16c5ce89078a32c6b63d2f1c14753463ccfc5ec2a15d2d04f133714fc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a2674da110b3e8914940e4433d6a2be31235f1ebd87e6511d5365e0fda822b8f"
+    sha256 cellar: :any_skip_relocation, ventura:       "4bddb67288e852dd28024c0f2d850f09f7c26c4becf42aa4701e0e4904579e7e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0bc4386fb18cdbfb144e8ffb7d532a55eacee02a76540260f5ccda0e7104e06"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0bc4386fb18cdbfb144e8ffb7d532a55eacee02a76540260f5ccda0e7104e06"
   end
 
   depends_on "gobject-introspection"
@@ -33,22 +32,16 @@ class Pympress < Formula
   end
 
   def install
-    # Workaround for build failure with Setuptools 78
-    # Issue ref: https:github.comCimbalipympressissues332
-    inreplace "pyproject.toml", '"setuptools>=42"', '"setuptools>=42,<78"'
-
     virtualenv_install_with_resources
   end
 
   test do
     # (pympress:48790): Gtk-WARNING **: 13:03:37.080: cannot open display
-    ENV["PYMPRESS_HEADLESS_TEST"] = "1" if OS.linux? && ENV["HOMEBREW_GITHUB_ACTIONS"]
+    ENV["PYMPRESS_HEADLESS_TEST"] = "1" if ENV["HOMEBREW_GITHUB_ACTIONS"]
 
     (testpath"LibraryPreferences").mkpath
 
     system bin"pympress", "--quit"
-    sleep 5
-    sleep 15 if OS.mac? && Hardware::CPU.intel?
 
     # Check everything ran fine at least until reporting the version string in the log file
     # which means all dependencies got loaded OK. Do not check actual version numbers as it breaks --HEAD tests.

@@ -1,19 +1,19 @@
 class Gotz < Formula
   desc "Displays timezones in your terminal"
   homepage "https:github.commerschformanngotz"
-  url "https:github.commerschformanngotzarchiverefstagsv0.1.14.tar.gz"
-  sha256 "44258a08762fda0f0f6eb5afe4eefc8256539da1a8215f77048c1c6f0f0070e5"
+  url "https:github.commerschformanngotzarchiverefstagsv0.1.15.tar.gz"
+  sha256 "8ab6167d9a98717a8548ff60b0f454c42f116e94216e3a5d83deb711c035b270"
   license "MIT"
   head "https:github.commerschformanngotz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4317835c1730257089a65d977a268a6eba6a834f123d9ef66abf9f58e7a93159"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4317835c1730257089a65d977a268a6eba6a834f123d9ef66abf9f58e7a93159"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4317835c1730257089a65d977a268a6eba6a834f123d9ef66abf9f58e7a93159"
-    sha256 cellar: :any_skip_relocation, sonoma:        "84b6e31be4184df0b1eed709ac11f277ba1364332218b51ed04cf82014cd2d69"
-    sha256 cellar: :any_skip_relocation, ventura:       "84b6e31be4184df0b1eed709ac11f277ba1364332218b51ed04cf82014cd2d69"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f61d161279f1eeba162c82dfe5f4c15d5ba6ab01ca3eb34d099673ef07e1d1a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bd56b05cc1dcc194266bd0c14e305cefbd3861c4c52c04dbddcfecf49b44312"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b75ae4c58731840fe9ba17b09378742700f717d193aeeb9e532b705b78d993be"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b75ae4c58731840fe9ba17b09378742700f717d193aeeb9e532b705b78d993be"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b75ae4c58731840fe9ba17b09378742700f717d193aeeb9e532b705b78d993be"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f35197d8f5d2ebdd0fe4c50fc98508544cf6f3abff6424e57a09faf83506bfa9"
+    sha256 cellar: :any_skip_relocation, ventura:       "f35197d8f5d2ebdd0fe4c50fc98508544cf6f3abff6424e57a09faf83506bfa9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9267b0365ca7e9ae17f11c3cdc3b7ea3c47aaf751ce458a9549c34aeab1e7f92"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a90de77faf04ceafa5b9a07dfe685ddba60dd8ec2d395e3da1b62c15230cc44e"
   end
 
   depends_on "go" => :build

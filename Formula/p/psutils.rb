@@ -3,25 +3,25 @@ class Psutils < Formula
 
   desc "Utilities for manipulating PostScript documents"
   homepage "https:github.comrrthomaspsutils"
-  url "https:files.pythonhosted.orgpackages6fc9ed4c246612b0e42afe8fad52a2dddde28f1389997c043e8cf8d414d5a0eepsutils-3.3.9.tar.gz"
-  sha256 "12bfde60145846e6aaae9eead8c5f0c4a959528cd171727b6ff7044da5d7e57c"
+  url "https:files.pythonhosted.orgpackagese100718c0fba71ed7d035013bab4083195c43ec0dfcd894492a8cfb1efd693a7psutils-3.3.10.tar.gz"
+  sha256 "698a18f291183d48d63cd43b6a2e43d133e89ab438d5aef5baa24374660729f7"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "5016215004140f43a79f9ecb8022df760f02f64be2c1ea5670753d7f6398f2ac"
+    sha256 cellar: :any_skip_relocation, all: "5ac8850f6f31270d73959032ee1f44c86890e03ef54ddb685b7048523c28f0da"
   end
 
   depends_on "libpaper"
   depends_on "python@3.13"
 
   resource "puremagic" do
-    url "https:files.pythonhosted.orgpackages092d40599f25667733e41bbc3d7e4c7c36d5e7860874aa5fe9c584e90b34954dpuremagic-1.28.tar.gz"
-    sha256 "195893fc129657f611b86b959aab337207d6df7f25372209269ed9e303c1a8c0"
+    url "https:files.pythonhosted.orgpackagesd6dec9dbb741a2e0e657147c6125699e4a2a3b9003840fed62528e17c87c0989puremagic-1.29.tar.gz"
+    sha256 "67c115db3f63d43b13433860917b11e2b767e5eaec696a491be2fb544f224f7a"
   end
 
   resource "pypdf" do
-    url "https:files.pythonhosted.orgpackages6b9a72d74f05f64895ebf1c7f6646cf7fe6dd124398c5c49240093f92d6f0fddpypdf-5.1.0.tar.gz"
-    sha256 "425a129abb1614183fd1aca6982f650b47f8026867c0ce7c4b9f281c443d2740"
+    url "https:files.pythonhosted.orgpackagese0c8543f8ae1cd9e182e9f979d9ab1df18e3445350471abadbdabc0166ae5741pypdf-5.5.0.tar.gz"
+    sha256 "8ce6a18389f7394fd09a1d4b7a34b097b11c19088a23cfd09e5008f85893e254"
   end
 
   def install

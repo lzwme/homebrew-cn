@@ -1,19 +1,19 @@
 class Yyjson < Formula
   desc "High performance JSON library written in ANSI C"
   homepage "https:github.comibiremeyyjson"
-  url "https:github.comibiremeyyjsonarchiverefstags0.11.0.tar.gz"
-  sha256 "0cc453318ff299ab61ec233b5b92dd474dee39028ad77904b19a45a79651574e"
+  url "https:github.comibiremeyyjsonarchiverefstags0.11.1.tar.gz"
+  sha256 "610a38a5e59192063f5f581ce0c3c1869971c458ea11b58dfe00d1c8269e255d"
   license "MIT"
   head "https:github.comibiremeyyjson.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "68d35b2ca7d96abf364d85272a5c72745bdfcc82e9da37b2af786c1944b0316d"
-    sha256 cellar: :any,                 arm64_sonoma:  "7491ad6b1c88e3db721c1f048ab42c8537b80c67ed938dfcd3a71b1ab24f4b7c"
-    sha256 cellar: :any,                 arm64_ventura: "100373898fcf7f9e61ca575e3b903c1cf6f9266636bb8d27f8fb696158b8a04f"
-    sha256 cellar: :any,                 sonoma:        "10829f95adddff68018a86f3aa357d7f98851c61435e56c147b742ba784032be"
-    sha256 cellar: :any,                 ventura:       "5b9f3ef229e75245654a76c3d17c2c35bf61d1fe1fd89469cd08ebb9e24edd0d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f60959122ff0b42dc3e10bd2f948fbc226c4b8da575683154eb367a4a7eb2b2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e29aa5d24a555b58224b3f416287dc121132dbfa04412af8c1c2412494ae2ef"
+    sha256 cellar: :any,                 arm64_sequoia: "be33f4c52f3a3ca9e3bec1672536ba743a3b1635d42179ab9173b945b9d4a6c4"
+    sha256 cellar: :any,                 arm64_sonoma:  "6ff845ea14ced22f1f3585c87f32dcbbfdcc43da79b047c2b7e03eb403edabb7"
+    sha256 cellar: :any,                 arm64_ventura: "a27c8654370e7639f4358137195d56e38bd8b99f32eaa9d3bbf530b449116b5c"
+    sha256 cellar: :any,                 sonoma:        "d0c7ae8b75e9aaca959798ab7e39093f7afcd76584bcc46edb8c74425af4c255"
+    sha256 cellar: :any,                 ventura:       "4f6b77f8784820f415fcc8ce870181dccae2a7c6b322d46e781d3ebdedda20e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "91527b3761383f2f462b56111bff0add9a29daa372db3a81a69ca6e2102874e3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cc670a7221472e4bc8893a82e54b0d7c7a777486db590d1b068714b7e107570"
   end
 
   depends_on "cmake" => :build

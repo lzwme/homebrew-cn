@@ -1,19 +1,19 @@
 class CpuFeatures < Formula
   desc "Cross platform C99 library to get cpu features at runtime"
   homepage "https:github.comgooglecpu_features"
-  url "https:github.comgooglecpu_featuresarchiverefstagsv0.10.0.tar.gz"
-  sha256 "dc1be36d02b178e904aa91cce5c2701fe418d728f1c0a130a4196b66b087471a"
+  url "https:github.comgooglecpu_featuresarchiverefstagsv0.10.1.tar.gz"
+  sha256 "52639b380fced11d738f8b151dbfee63fb94957731d07f1966c812e5b90cbad4"
   license "Apache-2.0"
   head "https:github.comgooglecpu_features.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c20bb96f3ed6b0a436d1e5ef4352e2362668d88c119340f19d8d5566c1f1302d"
-    sha256 cellar: :any,                 arm64_sonoma:  "0f8f698cad043f1c27984083dead6d7a4d133283873339078720becf5b2a2e89"
-    sha256 cellar: :any,                 arm64_ventura: "17d2dc220735c2cc356c1cf995e13d8dbf5011903e2e0048c5a875ea97ead59b"
-    sha256 cellar: :any,                 sonoma:        "bdd716ad8038f9dbb12d8ec5080b03330825027e023d574cf755bb8f91d300b1"
-    sha256 cellar: :any,                 ventura:       "472190b6db3f3255849897768e6b90c48d2348ad52b845dae54a040893fb2ee7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "30c446e08c12c07373c65c5c71e4c6268d72464d1763716a90ccaae1277a3078"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50756e6931f77d6095ff2cf4606373c779f0c358315ffaa8df08d37345e3b98d"
+    sha256 cellar: :any,                 arm64_sequoia: "945475dbda6e53ed6b0099e872921e81866dc0417ff7374afd0d6338d382eb0a"
+    sha256 cellar: :any,                 arm64_sonoma:  "735d42534147a399b2918ed40ee5cabcb2766a5c2eadbd02cb22208f296184c5"
+    sha256 cellar: :any,                 arm64_ventura: "e2e94da759d6d2f19a74806f3892dc53d737bdc487438c7e600863b1873230c2"
+    sha256 cellar: :any,                 sonoma:        "473045353940853796b7698a7fb015255acd4fba2721ae20440669a7cf6fed51"
+    sha256 cellar: :any,                 ventura:       "e5e805ca6fae1c04da955ebfd6eac72e60f28eee7219a51d91bda7a7340d1ed3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "71a88007b4da1b4346f18463e45ab8722c8177f62155ba53fd7cd8451145ef1e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9f4909cd169aaa589c4f32fb189f6457127355b2064689303bf96a720c120494"
   end
 
   depends_on "cmake" => :build

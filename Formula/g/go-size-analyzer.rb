@@ -1,18 +1,18 @@
 class GoSizeAnalyzer < Formula
   desc "Analyzing the dependencies in compiled Golang binaries"
   homepage "https:github.comZxillygo-size-analyzer"
-  url "https:github.comZxillygo-size-analyzerarchiverefstagsv1.8.1.tar.gz"
-  sha256 "ff14cedf8e475fd4fcebbd955dee408e91e8753827e3c49404be26bd43a8dd22"
+  url "https:github.comZxillygo-size-analyzerarchiverefstagsv1.9.0.tar.gz"
+  sha256 "0824fdb357fbb8b679c160844ddf76086315fe73fa7383707e07d4c139d8141e"
   license "AGPL-3.0-only"
   head "https:github.comZxillygo-size-analyzer.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4da41aa716cfc5d6eaed59bf2e493d34abef25cb0c03675673814d79a8f29a98"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d88340042f2896e0b615cc3c57d7fe851c1c12f5a716778860ffc11a9bfad2f4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b3dc86b1901a29153f024a77ffc4a881ae744a1bad9c0493174596975780c25d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "34a9cad8228d6fbbf79e8a6a481b18ba2ee09f705ebd9153dbfab17c5422bcc8"
-    sha256 cellar: :any_skip_relocation, ventura:       "481f1630a562c723f6d53f5eb0e4d0fec670ba8dfe2ac62dd3b08acad4b03dcb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d936214d9ff34693f3c1883dcf9047c2f05ac0f444b17976cd5334ea6b3514bf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "000dc6caa458ea104f69da4a8cf80bbb0868c0ff88384a7238a1459d67b3b512"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff7869cb5538f9e1e82dc2a762eca8affd2d9bc1987981d1ab3079a755288702"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c324edda7e56c0981f8942fc4c29befec8ad0bd7cdbd4c77f74dea013880e053"
+    sha256 cellar: :any_skip_relocation, sonoma:        "67220ff1a03a683fc2b5b15c4003f0552e6411c15b182fe26c2e471b1bd0a7ef"
+    sha256 cellar: :any_skip_relocation, ventura:       "0781699c91c5222ba2f8ab88cc444e9a504a7095395d690bc8cb704a81675be1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84ef2745381b213ede0374d1b13a61fccebd26055653a594230f8b8a60671a12"
   end
 
   depends_on "go" => [:build, :test]

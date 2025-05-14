@@ -7,6 +7,8 @@ cask "barrier" do
   desc "Open-source KVM software"
   homepage "https:github.comdebaucheebarrier"
 
+  deprecate! date: "2025-05-13", because: :unmaintained
+
   depends_on macos: ">= :sierra"
 
   app "Barrier.app"

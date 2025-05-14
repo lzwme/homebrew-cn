@@ -1,19 +1,19 @@
 class Oj < Formula
   desc "JSON parser and visualization tool"
   homepage "https:github.comohler55ojg"
-  url "https:github.comohler55ojgarchiverefstagsv1.26.4.tar.gz"
-  sha256 "1793c7a14c5c9c1909274c44bc11a231532fb91c2a8eae8c5f47c1bfc2358b3f"
+  url "https:github.comohler55ojgarchiverefstagsv1.26.5.tar.gz"
+  sha256 "dfa9ce6608ea3d94584e4a47c6568a90844dd9d8f3fd35f8e893fa7fdd5d7bd7"
   license "MIT"
   head "https:github.comohler55ojg.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b89c34f41817876dc4aafdebe8afedd5a0cc6d41aef59959391588f9fab269df"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b89c34f41817876dc4aafdebe8afedd5a0cc6d41aef59959391588f9fab269df"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b89c34f41817876dc4aafdebe8afedd5a0cc6d41aef59959391588f9fab269df"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dbe93b310a313c14605a9402a436d3c722c4f1e1b735a7fc66f8bd9d73e8365f"
-    sha256 cellar: :any_skip_relocation, ventura:       "dbe93b310a313c14605a9402a436d3c722c4f1e1b735a7fc66f8bd9d73e8365f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f3ef93d62ff8ae49dde6b2de769afd63d7306bf166b9782dc6b8e163a5bd37b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d5a269d3093de1027a8b10b857dee23319836b52cdcad76ec2877fda4703ad8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7758e7e09c133bb4754fdcac53726583c0f8d27bd11553768212e87eba62026b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7758e7e09c133bb4754fdcac53726583c0f8d27bd11553768212e87eba62026b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7758e7e09c133bb4754fdcac53726583c0f8d27bd11553768212e87eba62026b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "519c8688bf5c29924491d87f7c323dec8104d2a0b68f82d5c5df11a89345d395"
+    sha256 cellar: :any_skip_relocation, ventura:       "519c8688bf5c29924491d87f7c323dec8104d2a0b68f82d5c5df11a89345d395"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cf8e9cb061d52938211963f94baa609ed43d33ccee3e8b5f9cc70e48cfa25cee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ca280f0077e0c2e62ab224b7f3102b5faa39aa413bb5db455229debaf1f9f27"
   end
 
   depends_on "go" => :build

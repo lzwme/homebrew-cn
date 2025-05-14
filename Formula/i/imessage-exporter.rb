@@ -1,18 +1,18 @@
 class ImessageExporter < Formula
   desc "Command-line tool to export and inspect local iMessage database"
   homepage "https:github.comReagentXimessage-exporter"
-  url "https:github.comReagentXimessage-exporterarchiverefstags2.6.1.tar.gz"
-  sha256 "e2b6e4d16953ce3c44c4c10a17a0bb73fa7a12ddca80b8fbe1f21f02c7ed5f48"
+  url "https:github.comReagentXimessage-exporterarchiverefstags2.6.2.tar.gz"
+  sha256 "c5c372b6e9e416522be3cc0797557b0fdb0df546b0b48e379d18b56f54b692ea"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7bcb0b4e4a9be46ecd2c871759d954a8ff5fcceb60bb67fcc4bad9dc50b8ef25"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e6f9a90d95c4f14010ea287a353a3393e7fed2015619b382657c489df7b3c565"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "43cb02bd5e66ebc2f1cdf8fc095fa3607c68f55dbfb44d86961eb7c8d19d1283"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2ecaa8842f364f122673085d638eb114c2a11f1e014e0b0ba6f577f19a3a65cf"
-    sha256 cellar: :any_skip_relocation, ventura:       "d5403c4656e02bf243278f2fe823902027a30658fe5d61ea45315d12c9134124"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7faa3c346c945d0b48923c444e2c1b3c50d51b761a3e84c8c39137cc7818d9e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09233965a834de6df03fb5b2a22b3caa7be11cd65c252f64e47d0196fa900229"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "79751187490085c01bd66f6e00e9059e4ca9d4f3d252ead0c0af8a761db47393"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ba23b54cbb4f8c006a2f08d94bf548970c8c666a8ccdc4c4b3cb3ebc74c4f6c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f3ec942d1b835e7cc0aa17273925fdd5cd6a4e94c5aad080c7d60db7bb3bf9b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1f0d781c61084cc396e18bf53da6682438be8dc7adeaf804f15002841de0c0a9"
+    sha256 cellar: :any_skip_relocation, ventura:       "8ecf2e0efbe7f76d90c1dac41d03950b8f816c397d835c2f3a78b216c136793f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "235b89d49a0956642fc1ad28a9e013c389a05278819dc57ba971012e6e413e9c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f0d5f24d0c724f8c81528ba216139e05cf6ed1fa9176d985c72ae1ceb36649b5"
   end
 
   depends_on "rust" => :build

@@ -2,18 +2,18 @@ class MkdocsMaterial < Formula
   include Language::Python::Virtualenv
   desc "Material Design theme for MkDocs"
   homepage "https://squidfunk.github.io/mkdocs-material/"
-  url "https://files.pythonhosted.org/packages/2c/7d/fbf31a796feb2a796194b587153c5fa9e722720e9d3e338168402dde73ed/mkdocs_material-9.6.13.tar.gz"
-  sha256 "7bde7ebf33cfd687c1c86c08ed8f6470d9a5ba737bd89e7b3e5d9f94f8c72c16"
+  url "https://files.pythonhosted.org/packages/b3/fa/0101de32af88f87cf5cc23ad5f2e2030d00995f74e616306513431b8ab4b/mkdocs_material-9.6.14.tar.gz"
+  sha256 "39d795e90dce6b531387c255bd07e866e027828b7346d3eba5ac3de265053754"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f621f1152c315ec1533d7c4042983692bccb8d5bff8f63f7cb3bcc6e74d4fbea"
-    sha256 cellar: :any,                 arm64_sonoma:  "5c06e8c5d627f69dbc8bf69590eccbd8bfd3c544f538dde539ec8e656ea281a5"
-    sha256 cellar: :any,                 arm64_ventura: "01062062b3e91228cbd14857b313ff68bde352d91af3ddc55a26a47871ec053e"
-    sha256 cellar: :any,                 sonoma:        "83f4d5feab4869bab14274257c926c9b12ba00f9c2a60f0a30b30e37db0d121e"
-    sha256 cellar: :any,                 ventura:       "ccc1a7ebfc0a8623edf19b3ca50d964b14416650ef5fa9b85c6bc05cf99a0d31"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "36251dcba78b7d2155ba610effdb8c3964bc3103a25760c9f25593d4c0fb369c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "52e3cbbf7b2ff89505bfd3feec42fb57ce05a5bf8358dc4942df7f50ca4d0f73"
+    sha256 cellar: :any,                 arm64_sequoia: "0e91741378cbf7f59a15a2b44c34cde15c7a6a5c55025e432084da8c700fe026"
+    sha256 cellar: :any,                 arm64_sonoma:  "ccb033943c42c4fb467be5050f46e523b3829aedad110c556a13255416ba415d"
+    sha256 cellar: :any,                 arm64_ventura: "5b22330cd379dae30cf252f9e88aee00cd977ea3d7a4e22cc1376bf6ebac016e"
+    sha256 cellar: :any,                 sonoma:        "0b6ff46b2a1176b34b19260786159e7240ae628ee974446dc15bb39bb566141d"
+    sha256 cellar: :any,                 ventura:       "e17adccd68c47a24e7e4710c787daed969edd5f117fe2674ce57989d454871ed"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ece77c6c4ed36eb494fb265e9f4eb4f560b1a735899fe567bb84b9f7b887797f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "95b6e1e5e768ec5bcc6ef9fd193dc80792841435f3d69a798450f54bbc23819d"
   end
 
   depends_on "libyaml"
@@ -42,8 +42,8 @@ class MkdocsMaterial < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https://files.pythonhosted.org/packages/cd/0f/62ca20172d4f87d93cf89665fbaedcd560ac48b465bd1d92bfc7ea6b0a41/click-8.2.0.tar.gz"
+    sha256 "f5452aeddd9988eefa20f90f05ab66f17fce1ee2a36907fd30b05bbb5953814d"
   end
 
   resource "colorama" do

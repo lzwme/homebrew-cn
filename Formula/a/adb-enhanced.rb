@@ -33,6 +33,15 @@ class AdbEnhanced < Formula
     virtualenv_install_with_resources
   end
 
+  def caveats
+    <<~EOS
+      At runtime, adb must be accessible from your PATH.
+
+      You can install adb from Homebrew Cask:
+        brew install --cask android-platform-tools
+    EOS
+  end
+
   test do
     assert_match version.to_s, shell_output("#{bin}/adbe --version")
     # ADB is not intentionally supplied
