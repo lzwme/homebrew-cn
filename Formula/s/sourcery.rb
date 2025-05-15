@@ -1,20 +1,20 @@
 class Sourcery < Formula
   desc "Meta-programming for Swift, stop writing boilerplate code"
   homepage "https:github.comkrzysztofzablockiSourcery"
-  url "https:github.comkrzysztofzablockiSourceryarchiverefstags2.2.6.tar.gz"
-  sha256 "5e63ed976ca74df7483a6508796ea9d570766e387d3631b474c81b67d1c771f9"
+  url "https:github.comkrzysztofzablockiSourceryarchiverefstags2.2.7.tar.gz"
+  sha256 "e543ba8c3f05d9c8ce6b9dc0460d2084893f345d4f5984aabe31a40849a5c0e0"
   license "MIT"
   version_scheme 1
   head "https:github.comkrzysztofzablockiSourcery.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "af818510164d00393b484c87bbf617aa785d399da744fd157026e3325553ee18"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "29573fbcdc7c57968bb93d773ff7e6f26a16c2f9294fde7b2cdaa5379b9dbb22"
-    sha256 cellar: :any,                 arm64_ventura: "8e8c8c7e8ec176a95edfb8ce21ee280d9ff5420d03cb90d7caeb60579335a252"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9b422f632ebfbaaad72bf6322a8006d330d7cb9af346d782e030becc0f2e0228"
-    sha256 cellar: :any,                 ventura:       "8a4809736a2732ad61de0bd27a835081dd66d54fb0438f390c442b7a2902efed"
-    sha256                               arm64_linux:   "4816e8319a6bf722876aa293f279c968bf4f13b633c1d38567ced0e6520730a7"
-    sha256                               x86_64_linux:  "48f8ec1325bcae22e80053804d915b42c17368fa2a3c0cb11e755b2b6db8e55d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "492ed39e90b1fa57dfd06fe1232473e57d9b5b7f110453d04387db5a76f19192"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4cef0fe60955af53805a58f3da3d80e6b0849835a8892d7cd31e885ff98afc3f"
+    sha256 cellar: :any,                 arm64_ventura: "7bad173e863423cf66b082d6f1f9e7f34a73fe121aabb3ca29a81be10ed7e707"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8d82c40e46e20b5e60908144e8d58e440798c802a545a2b3d3fbd2db70b87b74"
+    sha256 cellar: :any,                 ventura:       "e621c3cc046ef8c5336b796ad72c36ee2d608b518b5bc746f78d04170c46d2aa"
+    sha256                               arm64_linux:   "5bafe848b77836b034a0c8f0c3c411267feac36e5ee758f184ce7c38197d446d"
+    sha256                               x86_64_linux:  "f0818110b2abe047e9055f761a77c7321f69e5e6563187213461bea738fa46fd"
   end
 
   depends_on xcode: "14.3"

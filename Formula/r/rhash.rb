@@ -1,19 +1,19 @@
 class Rhash < Formula
   desc "Utility for computing and verifying hash sums of files"
   homepage "https:sourceforge.netprojectsrhash"
-  url "https:downloads.sourceforge.netprojectrhashrhash1.4.5rhash-1.4.5-src.tar.gz"
-  sha256 "6db837e7bbaa7c72c5fd43ca5af04b1d370c5ce32367b9f6a1f7b49b2338c09a"
+  url "https:downloads.sourceforge.netprojectrhashrhash1.4.6rhash-1.4.6-src.tar.gz"
+  sha256 "9f6019cfeeae8ace7067ad22da4e4f857bb2cfa6c2deaa2258f55b2227ec937a"
   license "0BSD"
   head "https:github.comrhashRHash.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia: "53f99cd369b33f89ba49c4122d10f3e9e8c421a4b9c4530d06e7f96cc0f5fb46"
-    sha256 arm64_sonoma:  "2eeb5d8573c34348a04915488058f887b5e3d5c5067d2c8be651ce9661b99b75"
-    sha256 arm64_ventura: "6a42309ef3de45c60cc5bb2ced37507797d0bd75e0fa4fd3f0aa13477e6c16bf"
-    sha256 sonoma:        "e2c0137282fb8334dd1757707e1cecb91b443ee0d63a4d465a36b70993e23d4b"
-    sha256 ventura:       "16f11306b675cc5b0d0455d735d2752d904f5848d787331cd97d04ffb3afc48c"
-    sha256 arm64_linux:   "9d0584df215a7dc9cbe3ed43439f82e51e01c967f930e07cca995601cf728370"
-    sha256 x86_64_linux:  "c9cc7cc1aa66f97050f79712054f5689b08e5579657b4d3249f058d09b4169b1"
+    sha256 arm64_sequoia: "7cfeaa013d6bc5fc89cad3d34349ebfbc38f65da844f6eda92e55f91d42144ec"
+    sha256 arm64_sonoma:  "10388639684b13fe90f7ac889e1023a7823e01087d04d4725068aca25207387e"
+    sha256 arm64_ventura: "757848383261b7e991ba04ecd5a3310bc263c8d259ee6ee98a8c82822b1f8ae3"
+    sha256 sonoma:        "d0ebe3819cd610352c788258e8b6e9d1e04941a598cc9e4e141b24e25caf6eab"
+    sha256 ventura:       "39760c4816095b7abc836fb065c2e5d7ae0e540d6dff9720e675c476a212851e"
+    sha256 arm64_linux:   "de58dca8a85542060574b3263b18556bc90adcacfb41710083ebd342a33ff5ba"
+    sha256 x86_64_linux:  "924accaa51ffbf427905f37750a5aae05bb8fd7b22190653560b90d8e3388108"
   end
 
   def install

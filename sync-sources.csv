@@ -1118,6 +1118,7 @@ Homebrew-homebrew-core/Formula/c/convco.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/convertlit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/convmv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/convox.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/cookcli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/cookiecutter.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coordgen.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/copa.rb, Homebrew/homebrew-core, 1
@@ -6204,6 +6205,7 @@ Homebrew-homebrew-core/Formula/s/smap.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/smartdns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/smartmontools.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/smartypants.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/s/smenu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/smimesign.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/smlfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/smlpkg.rb, Homebrew/homebrew-core, 1
@@ -8058,6 +8060,7 @@ Homebrew-homebrew-cask/Casks/b/black-light.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/blackhole-16ch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/blackhole-2ch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/blackhole-64ch.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/b/blankie.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/blender-benchmark.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/blender.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/blender@lts.rb, Homebrew/homebrew-cask, 1
@@ -12959,7 +12962,6 @@ Homebrew-homebrew-cask/Casks/n/nordlocker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nordpass.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nordvpn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/northern-softworks-cache-cleaner.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/n/northernspysoftware-colorpicker.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nosleep.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nosql-workbench.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nosqlbooster-for-mongodb.rb, Homebrew/homebrew-cask, 0

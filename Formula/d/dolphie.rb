@@ -3,18 +3,20 @@ class Dolphie < Formula
 
   desc "Feature-rich top tool for monitoring MySQL"
   homepage "https:github.comcharles-001dolphie"
-  url "https:files.pythonhosted.orgpackages3aaa1a2b05994dffab3d9a0a47878779ae354c13bab3a3a3dddb17ee7540bb81dolphie-6.9.1.tar.gz"
-  sha256 "79ccef87f8971f1a76176ab1ead85773f3a43f809605254be4ae61ba66066df5"
+  url "https:files.pythonhosted.orgpackagesf91001240635d7d1c0655cc31dee04fa95ae8ded1a69378fe21bf7db8051a4a4dolphie-6.10.0.tar.gz"
+  sha256 "b733f34f0a49383f596767c02467d5ed7e343cd4adca741eed5250811ac531c0"
   license "GPL-3.0-or-later"
 
+  no_autobump! because: "some resources have to be updated manually"
+
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bb53a0115ff65b0fdb0005a4fb960bc6986b3bed07994390b0087e30c5cf6e9f"
-    sha256 cellar: :any,                 arm64_sonoma:  "89fcadbf22be4200b5023cfde22a95a54c73e1daef2b1a5f08010e27dba5a750"
-    sha256 cellar: :any,                 arm64_ventura: "8faae1b8d8741086f2e5beeae7a74b7e780d88e1f7139961f687776b930c6648"
-    sha256 cellar: :any,                 sonoma:        "7fb01e368a1d441b70c21f149073b7a40b8b0de465301ac1604055c0321d9fe1"
-    sha256 cellar: :any,                 ventura:       "6b9f9ec1a45fb473d5d9a7e835e2f3bfe6dd238f97997ba6cdbf3d138313e4c5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "927d70b59ff34bd826057c6a85311955e2d2201d8eebdf66c7994294c0d3ccdd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5104d11b5f6ea29d005e81ead2102c8983ba7cdd50d22fb0ae587a85dbb19b9a"
+    sha256 cellar: :any,                 arm64_sequoia: "91b2f3bb1f56678cea50de4cda6613ae5c68e5ceec093dbf4489c0e496d83149"
+    sha256 cellar: :any,                 arm64_sonoma:  "6e46e3a41c9f0ca11ceb0bf5bb059264b33396cb5adcf4429398200dd6904ad5"
+    sha256 cellar: :any,                 arm64_ventura: "81c37d8882a484e7482831141fa97493dee0e397083ec49ec8892ad599f016db"
+    sha256 cellar: :any,                 sonoma:        "59f270abbe7a93b3b559c80e15a1c7711d4531171fc7137f128a51f264e6d78d"
+    sha256 cellar: :any,                 ventura:       "2d1c4c756d7c96b3cb3dee692c9622b8a5a2c76680c4c476895c205d9ca2f016"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "58180dfc6359359ea12038b073af53ee813c9fdf9e8cff32ad3923e96bff8c19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00be792c4552beef0acab858c877a06c5770915f0727cb7a80aeb0ac13203c33"
   end
 
   depends_on "rust" => :build # for orjson
@@ -22,14 +24,15 @@ class Dolphie < Formula
   depends_on "cryptography"
   depends_on "python@3.13"
 
-  resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
-  end
+  # `tree-sitter-*` sdists are missing C headers and therefore we have to use GitHub sources
+  # Resources can be updated the following way:
+  # 1. remove all resources to GitHub sources
+  # 2. run `brew update-python-resources dolphie`
+  # 3. replace `tree-sitter-*` resources with their versions from GitHub
 
-  resource "cython" do
-    url "https:files.pythonhosted.orgpackages5a25886e197c97a4b8e254173002cdc141441e878ff29aaa7d9ba560cd6e4866cython-3.0.12.tar.gz"
-    sha256 "b988bb297ce76c671e28c97d017b95411010f7c77fa6623dd0bb47eed1aee1bc"
+  resource "charset-normalizer" do
+    url "https:files.pythonhosted.orgpackagese43389c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12dcharset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "idna" do
@@ -68,18 +71,18 @@ class Dolphie < Formula
   end
 
   resource "orjson" do
-    url "https:files.pythonhosted.orgpackages98c703913cc4332174071950acf5b0735463e3f63760c80585ef369270c2b372orjson-3.10.16.tar.gz"
-    sha256 "d2aaa5c495e11d17b9b93205f5fa196737ee3202f000aaebf028dc9a73750f10"
+    url "https:files.pythonhosted.orgpackages810bfea456a3ffe74e70ba30e01ec183a9b26bec4d497f61dcfce1b601059c60orjson-3.10.18.tar.gz"
+    sha256 "e8da3947d92123eda795b68228cafe2724815621fe35e8e320a9e9593a4bcd53"
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
-    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
+    url "https:files.pythonhosted.orgpackagesa1d41fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24dpackaging-25.0.tar.gz"
+    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
   resource "platformdirs" do
-    url "https:files.pythonhosted.orgpackagesb62d7d512a3913d60623e7eb945c6d1b4f0bddf1d0b7ada5225274c87e5b53d1platformdirs-4.3.7.tar.gz"
-    sha256 "eb437d586b6a0986388f0d6f74aa0cde27b48d0e3d66843640bfb6bdcdb6e351"
+    url "https:files.pythonhosted.orgpackagesfe8b3c73abc9c759ecd3f1f7ceff6685840859e8070c4d947c93fae71f6a0bf2platformdirs-4.3.8.tar.gz"
+    sha256 "3d512d96e16bcb959a814c9f348431070822a6496326a4be0911c40b5a74c2bc"
   end
 
   resource "plotext" do
@@ -108,13 +111,8 @@ class Dolphie < Formula
   end
 
   resource "rich" do
-    url "https:files.pythonhosted.orgpackagesab3a0316b28d0761c6734d6bc14e770d85506c986c85ffb239e688eeaab2c2bcrich-13.9.4.tar.gz"
-    sha256 "439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"
-  end
-
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackageseadf9f719dc48f64284be8bd99e2e0bb0dd6e9f8e2c2c3c7bf7a685bc5adf2c7setuptools-77.0.1.tar.gz"
-    sha256 "a1246a1b4178c66d7cf50c9fc6d530fac3f89bc284cf803c7fa878c41b1a03b2"
+    url "https:files.pythonhosted.orgpackagesa153830aa4c3066a8ab0ae9a9955976fb770fe9c6102117c8ec4ab3ea62d89e8rich-14.0.0.tar.gz"
+    sha256 "82f1bc23a6a21ebca4ae0c45af9bdbc492ed20231dcb63f297d6d1021a9d5725"
   end
 
   resource "sqlparse" do
@@ -123,24 +121,78 @@ class Dolphie < Formula
   end
 
   resource "textual" do
-    url "https:files.pythonhosted.orgpackagesdc1fdf371f1455524a3d0079871e49e3850c82767904e9f4e2bdea6d30a866a7textual-3.1.0.tar.gz"
-    sha256 "6bcab6581e9753d2a2043caf49f43c5818feb35f8049ed185bd38982bfb310ca"
-  end
-
-  resource "textual-autocomplete" do
-    url "https:files.pythonhosted.orgpackages7acf9cf23ac193c70e7b0a6999dc9409650e9ab9960b1be167e7dda54f1028a8textual_autocomplete-4.0.4.tar.gz"
-    sha256 "0969987b90a53c1f75753dfe3ad2c7ea0d974b5839dc2a00a2d332c000057871"
+    url "https:files.pythonhosted.orgpackages34998408761a1a1076b2bb69d4859ec110d74be7515552407ac1cb6b68630eb6textual-3.2.0.tar.gz"
+    sha256 "d2f3b0c39e02535bb5f2aec1c45e10bd3ee7508ed1e240b7505c3cf02a6f00ed"
   end
 
   resource "tree-sitter" do
-    url "https:files.pythonhosted.orgpackages0f50fd5fafa42b884f741b28d9e6fd366c3f34e15d2ed3aa9633b34e388379e2tree-sitter-0.23.2.tar.gz"
-    sha256 "66bae8dd47f1fed7bdef816115146d3a41c39b5c482d7bad36d9ba1def088450"
+    url "https:files.pythonhosted.orgpackagesa7a2698b9d31d08ad5558f8bfbfe3a0781bd4b1f284e89bde3ad18e05101a892tree-sitter-0.24.0.tar.gz"
+    sha256 "abd95af65ca2f4f7eca356343391ed669e764f37748b5352946f00f7fc78e734"
   end
 
-  # sdist issue report, https:github.comgrantjenkspy-tree-sitter-languagesissues63
-  resource "tree-sitter-languages" do
-    url "https:github.comgrantjenkspy-tree-sitter-languagesarchiverefstagsv1.10.2.tar.gz"
-    sha256 "cdd03196ebaf8f486db004acd07a5b39679562894b47af6b20d28e4aed1a6ab5"
+  resource "tree-sitter-bash" do
+    url "https:github.comtree-sittertree-sitter-basharchiverefstagsv0.23.3.tar.gz"
+    sha256 "c682b81d0fe953d19f6632db3ba6e4f2db1efe1784f7a28bc5fcf6355d67335b"
+  end
+
+  resource "tree-sitter-css" do
+    url "https:github.comtree-sittertree-sitter-cssarchiverefstagsv0.23.2.tar.gz"
+    sha256 "5d442e8b04d8c743603172fb02664ae2b404f38f7a871d97cf2c89c1eedf8251"
+  end
+
+  resource "tree-sitter-go" do
+    url "https:github.comtree-sittertree-sitter-goarchiverefstagsv0.23.4.tar.gz"
+    sha256 "967870d7d120e9b760e538aeb8331a72f70ffcca4f1eaf1e1dea5375886d25d2"
+  end
+
+  resource "tree-sitter-html" do
+    url "https:github.comtree-sittertree-sitter-htmlarchiverefstagsv0.23.2.tar.gz"
+    sha256 "21fa4f2d4dcb890ef12d09f4979a0007814f67f1c7294a9b17b0108a09e45ef7"
+  end
+
+  resource "tree-sitter-java" do
+    url "https:github.comtree-sittertree-sitter-javaarchiverefstagsv0.23.5.tar.gz"
+    sha256 "cb199e0faae4b2c08425f88cbb51c1a9319612e7b96315a174a624db9bf3d9f0"
+  end
+
+  resource "tree-sitter-javascript" do
+    url "https:github.comtree-sittertree-sitter-javascriptarchiverefstagsv0.23.1.tar.gz"
+    sha256 "fc5b8f5a491a6db33ca4854b044b89363ff7615f4291977467f52c1b92a0c032"
+  end
+
+  resource "tree-sitter-json" do
+    url "https:github.comtree-sittertree-sitter-jsonarchiverefstagsv0.24.8.tar.gz"
+    sha256 "acf6e8362457e819ed8b613f2ad9a0e1b621a77556c296f3abea58f7880a9213"
+  end
+
+  resource "tree-sitter-markdown" do
+    url "https:github.comtree-sitter-grammarstree-sitter-markdownarchiverefstagsv0.3.2.tar.gz"
+    sha256 "5dac48a6d971eb545aab665d59a18180d21963afc781bbf40f9077c06cb82ae5"
+  end
+
+  resource "tree-sitter-python" do
+    url "https:github.comtree-sittertree-sitter-pythonarchiverefstagsv0.23.6.tar.gz"
+    sha256 "630a0f45eccd9b69a66a07bf47d1568e96a9c855a2f30e0921c8af7121e8af96"
+  end
+
+  resource "tree-sitter-regex" do
+    url "https:github.comtree-sittertree-sitter-regexarchiverefstagsv0.24.3.tar.gz"
+    sha256 "92f24bb779a92debe259cc1c204aab78f425f0fc1e8b4f2c03b6896d2da8f0a3"
+  end
+
+  resource "tree-sitter-rust" do
+    url "https:github.comtree-sittertree-sitter-rustarchiverefstagsv0.24.0.tar.gz"
+    sha256 "79c9eb05af4ebcce8c40760fc65405e0255e2d562702314b813a5dec1273b9a2"
+  end
+
+  resource "tree-sitter-toml" do
+    url "https:github.comtree-sitter-grammarstree-sitter-tomlarchiverefstagsv0.7.0.tar.gz"
+    sha256 "7d52a7d4884f307aabc872867c69084d94456d8afcdc63b0a73031a8b29036dc"
+  end
+
+  resource "tree-sitter-yaml" do
+    url "https:github.comtree-sitter-grammarstree-sitter-yamlarchiverefstagsv0.7.0.tar.gz"
+    sha256 "8182760587f14d5131161dee3605613ccebe86062909f0879edf63b4bdd99d44"
   end
 
   resource "typing-extensions" do

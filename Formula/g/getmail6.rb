@@ -3,8 +3,8 @@ class Getmail6 < Formula
 
   desc "Extensible mail retrieval system with POP3, IMAP4, SSL support"
   homepage "https:getmail6.org"
-  url "https:github.comgetmail6getmail6archiverefstagsv6.19.07.tar.gz"
-  sha256 "afc7c7dd061fccab2968b4b0a30ea025c7123a4722ea0a73fb6e3f9e6d8250cd"
+  url "https:github.comgetmail6getmail6archiverefstagsv6.19.08.tar.gz"
+  sha256 "f0e00a679b21d274179418f8f931defa92352d92fa3a8ad651d0de6b5e93ae77"
   license "GPL-2.0-only"
 
   # Upstream uses GitHub releases to indicate that a version is released
@@ -16,13 +16,13 @@ class Getmail6 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2843d92bd2232d2eb6724039244e47b721cb294624236ff58ac044a866f52c4d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2843d92bd2232d2eb6724039244e47b721cb294624236ff58ac044a866f52c4d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2843d92bd2232d2eb6724039244e47b721cb294624236ff58ac044a866f52c4d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "75b2ea3d0465fcdedf0ac2748f1987772f1f3e09b243e0630a6616bda036654f"
-    sha256 cellar: :any_skip_relocation, ventura:       "75b2ea3d0465fcdedf0ac2748f1987772f1f3e09b243e0630a6616bda036654f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2843d92bd2232d2eb6724039244e47b721cb294624236ff58ac044a866f52c4d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2843d92bd2232d2eb6724039244e47b721cb294624236ff58ac044a866f52c4d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aeba8c126c3373e1e43aac701ea953b1ab0fdd487693bec81b0aaf069cb408a2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aeba8c126c3373e1e43aac701ea953b1ab0fdd487693bec81b0aaf069cb408a2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "aeba8c126c3373e1e43aac701ea953b1ab0fdd487693bec81b0aaf069cb408a2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8193735e7a29f0906ea8bfa88062a69dd29397fab794c7a0aba470028a3be6a2"
+    sha256 cellar: :any_skip_relocation, ventura:       "8193735e7a29f0906ea8bfa88062a69dd29397fab794c7a0aba470028a3be6a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aeba8c126c3373e1e43aac701ea953b1ab0fdd487693bec81b0aaf069cb408a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aeba8c126c3373e1e43aac701ea953b1ab0fdd487693bec81b0aaf069cb408a2"
   end
 
   uses_from_macos "python", since: :catalina

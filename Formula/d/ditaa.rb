@@ -15,10 +15,7 @@ class Ditaa < Formula
 
   def install
     libexec.install "ditaa-#{version}-standalone.jar"
-    (bin"ditaa").write <<~BASH
-      #!binbash
-      exec "#{Formula["openjdk"].opt_bin}java" -jar "#{libexec}ditaa-#{version}-standalone.jar" "$@"
-    BASH
+    bin.write_jar_script libexec"ditaa-#{version}-standalone.jar", "ditaa"
   end
 
   test do

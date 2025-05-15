@@ -1,19 +1,18 @@
 class Cppinsights < Formula
   desc "See your source code with the eyes of a compiler"
   homepage "https:cppinsights.io"
-  url "https:github.comandreasfertigcppinsightsarchiverefstagsv_19.1.tar.gz"
-  sha256 "88853a67b9eaf6917c531071436a275c62f1dcfe6f2e02e521c39ce81b05e6a7"
+  url "https:github.comandreasfertigcppinsightsarchiverefstagsv_20.1.tar.gz"
+  sha256 "672ecc237bc0231510025c9662c0f4880feebb076af46d16840adfb16e8fc4e8"
   license "MIT"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d18cd5ec355ee5837de270d8d9e344fa1b51c6f05d3564e0d83feda98eabbf4a"
-    sha256 cellar: :any,                 arm64_sonoma:  "c341a589e89f5d8f6b6709ac1707aa8c964b6bc02fe70310f341916a4ff62286"
-    sha256 cellar: :any,                 arm64_ventura: "bad909888167aa7f7604a28857051bbcbfdc1d0aae3c9df2be799f312b0609b1"
-    sha256 cellar: :any,                 sonoma:        "9b0e9c60ce28117102ffeafcb367ebe44c378d11d8b2a6818c59d09295156159"
-    sha256 cellar: :any,                 ventura:       "ab1c19c457f35f607c4afe660d31c8458a500c7faf04cd7b5560f5bdf97690d3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a9f09af7a75a146f5bbb5ab2b518e7d421680cb1be41f1c2da0ad8b388ad2aa5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72b45f335bbd304b2d97110b337586a98aa87d750786942f8d1bd2505df144de"
+    sha256 cellar: :any,                 arm64_sequoia: "a633e7409562a57dcb44c9d1dbc216b3aa44ad3cb2a9424ddd3c00380ed06570"
+    sha256 cellar: :any,                 arm64_sonoma:  "4fa5e74d7a8ded4618e8c6ddae47c77404891162e7b1fa38faad2cb9da5e1247"
+    sha256 cellar: :any,                 arm64_ventura: "c79eb403f5dcf43df867b2c2816c44527ee0bdea3c309161555a9f17a8d69762"
+    sha256 cellar: :any,                 sonoma:        "949ca974b680ae7f24ea630bf94c668f69a846047e965aee01a8cb76950e6ca9"
+    sha256 cellar: :any,                 ventura:       "1a8d128dffa08e8846e4d40c6272c094cbca13cf74b097690c3e2ad75762f76b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f2fb8f4a46069faa95fd11d1572e5885b085a030db0d81441d674e5443b2ecba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "68e8bd9b586a8a317b8eefbc6f6024a54f05ca22c47e7d016fa6100d18649abf"
   end
 
   depends_on "cmake" => :build

@@ -1,8 +1,8 @@
 class Gnupg < Formula
   desc "GNU Pretty Good Privacy (PGP) package"
   homepage "https://gnupg.org/"
-  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.4.7.tar.bz2"
-  sha256 "7b24706e4da7e0e3b06ca068231027401f238102c41c909631349dcc3b85eb46"
+  url "https://gnupg.org/ftp/gcrypt/gnupg/gnupg-2.4.8.tar.bz2"
+  sha256 "b58c80d79b04d3243ff49c1c3fc6b5f83138eb3784689563bcdd060595318616"
   license "GPL-3.0-or-later"
 
   # GnuPG appears to indicate stable releases with an even-numbered minor
@@ -13,13 +13,13 @@ class Gnupg < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "47b40c87309680baa445bb8b9bb71c94f7c9020789a6ae5f45980febeb6d1e42"
-    sha256 arm64_sonoma:  "f2778e812043b14964316eaaa17bc8fde02331fea2746af82bd5694d93456710"
-    sha256 arm64_ventura: "7f2f1d42257dc87ee46240ae4ea8eff46455245fdf832b905d52d8364e08da2c"
-    sha256 sonoma:        "989a2348d01b160110ab4ba3bedda4e194bf02122d31e6029fc536baba261a37"
-    sha256 ventura:       "1b8bfec784f857856a2471ed8702259987fab15b101f9d948c81467b0fd5bc91"
-    sha256 arm64_linux:   "034b0c4e1ae9be164ee043455e873e37be5ff47d0d36b5289de8962095df9039"
-    sha256 x86_64_linux:  "a091d36b710f7fdd8db5cb20dc4af2f20254b04f3d17fd2df2155701e0da9d27"
+    sha256 arm64_sequoia: "7203b8a0af43aa4593cfc22e4152bd9331c35ba68450240353c2365e41d29895"
+    sha256 arm64_sonoma:  "f659c9e637d2c2932ec0402c2a334df0b019d2150b0e78810a9bab06adf82dc8"
+    sha256 arm64_ventura: "96233a9abeb43d4c4b14fcdd6e49e573f7799fc73ea6d4d91f1cd0ddfdbf46ae"
+    sha256 sonoma:        "bccb362c8eeb1f56f7b3fee1982ef890d1f0ff92018b7feb8c4182191cbe0113"
+    sha256 ventura:       "d18a1dc39de9890030ece85ae3df0497defdfbb8422385a3ef75455e8c82680a"
+    sha256 arm64_linux:   "4095b433173396ad34343f81f749ac26313f42287952da334283eb8b25c83116"
+    sha256 x86_64_linux:  "18c50e87640a9bed50bdc7a8fe579697965e5fd939ba5f180da9e4bc2e808977"
   end
 
   depends_on "pkgconf" => :build

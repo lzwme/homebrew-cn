@@ -1,18 +1,18 @@
 class KamalProxy < Formula
   desc "Lightweight proxy server for Kamal"
   homepage "https:kamal-deploy.org"
-  url "https:github.combasecampkamal-proxyarchiverefstagsv0.9.0.tar.gz"
-  sha256 "406c27bf296c2ae4b9e03e7b7bb9f97203dd190142d4464f4111520501184abb"
+  url "https:github.combasecampkamal-proxyarchiverefstagsv0.9.1.tar.gz"
+  sha256 "12d8a7ac96c71cbcb46b51b7d004f268a86cb45a44da010a1e524fb6ccd924a7"
   license "MIT"
   head "https:github.combasecampkamal-proxy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cdc64931bf0700930970aa81cd56a06b45213f2e63888dd5447437763b2fb337"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8b4e7e7f5db3a14badafb6a43fdf8b65310ab04669983ffbda09ae47e5c265bc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "90ed86128458b4a86b1f352a8f176f23c7f6b92d5f9d85417432cfffe33292a2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7ea3c829160d2e9b9887fb76e696191fe7146e10c112fe4b32ebce5dd80217a8"
-    sha256 cellar: :any_skip_relocation, ventura:       "d4605cab2c794f5bc22a073346e50160942234ec558f1b36271e12847105c595"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f9486cadac4b4f41c7a22491771fa0e5339547ff9bc7631df9570f52a3d94337"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4ef131344c9f0f105992aec587df576bbf7c2413f0ac17993785b3efe1a0e8c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e17166f0d9e23a46713cb7282fc3fb7b8b9ba77abf563760666bf89b8a30e10f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "060e0f6992d77247bb4daf6dcbaaeb0bc53768469c0d1fc1e67dc46b57f01cda"
+    sha256 cellar: :any_skip_relocation, sonoma:        "14815fff3c55b5a86faf522f9f3d060ea30d059908f1ed0fb8c448866fa451ec"
+    sha256 cellar: :any_skip_relocation, ventura:       "7dbb7ea2b7ed3dc7a06fedb1a563ecdb89d18f992d691a14a013398f343f4b83"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf8e6876771e9d510a93a42ce58dfed4f1b017ca0895c0ae11016a34168a9feb"
   end
 
   depends_on "go" => :build

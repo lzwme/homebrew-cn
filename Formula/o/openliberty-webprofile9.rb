@@ -7,7 +7,7 @@ class OpenlibertyWebprofile9 < Formula
 
   livecheck do
     url "https://openliberty.io/api/builds/data"
-    regex(/openliberty[._-]v?(\d+(?:\.\d+)+)\.zip/i)
+    regex(/openliberty[._-]webProfile9[._-]v?(\d+(?:\.\d+)+)\.zip/i)
   end
 
   bottle do

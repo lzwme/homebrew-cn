@@ -18,10 +18,7 @@ class PicardTools < Formula
 
   def install
     libexec.install "picard.jar"
-    (bin"picard").write <<~EOS
-      #!binbash
-      exec "#{Formula["openjdk"].opt_bin}java" $JAVA_OPTS -jar "#{libexec}picard.jar" "$@"
-    EOS
+    bin.write_jar_script libexec"picard.jar", "picard", "$JAVA_OPTS"
   end
 
   test do

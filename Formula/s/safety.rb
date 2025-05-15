@@ -3,19 +3,19 @@ class Safety < Formula
 
   desc "Checks Python dependencies for known vulnerabilities and suggests remediations"
   homepage "https:safetycli.comproductsafety-cli"
-  url "https:files.pythonhosted.orgpackagesc231e4875edebb8fd5885ff8e52d0522c44a4d9bc2abe26f11225b8e64b31868safety-3.5.0.tar.gz"
-  sha256 "7223af388bde5323867eca5495f9817746289be9fd5b1896f168dc7082ea8ff1"
+  url "https:files.pythonhosted.orgpackages2d9cdf6ab5f077e22bb4a10aa9208691c6be5c0ad15193439435216ed536f7f3safety-3.5.1.tar.gz"
+  sha256 "7fde2dbb497f2a167fe2dd864c8ab3296bbcd6e8a4f0490b047d5c84a60a653f"
   license "MIT"
   head "https:github.compyupiosafety.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "07a5b617950c6941903023a18fb738793bc56079e0b65224b639a5b1dc5f9702"
-    sha256 cellar: :any,                 arm64_sonoma:  "a686b6e1f3fb9913a41b818021748abc11824830fab393feed31e5aafa06a70a"
-    sha256 cellar: :any,                 arm64_ventura: "21b760cc745e23b198c693ad133cb5fcf28a1ce35045de6f6f786f2fb84db82a"
-    sha256 cellar: :any,                 sonoma:        "45db61f7c1eefc43e67e352e9a8a0b1efe84d65bdced009d35ec433fc81641a0"
-    sha256 cellar: :any,                 ventura:       "f21749a743c58bf9d1dfd6efd0d398e0919afe6c5686928f0c6a29646e42ac84"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a667b7b892c52bfaadcd3a9ce238b6ede6d13bc4218f9c3edde6093bfa595b0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "702ab426ce3512162455f3b738db243828c790377bbc45e8d235d95bb9704055"
+    sha256 cellar: :any,                 arm64_sequoia: "edac706c31f93a579208f86ab327fc0090cb5699af86f5e3a92a3664944ce0ed"
+    sha256 cellar: :any,                 arm64_sonoma:  "4847fb07d411d4d404cd7dfae6a1872e4bc9a4a2cbab3dc49b6a5b311ed511a7"
+    sha256 cellar: :any,                 arm64_ventura: "67c6d5156fc4be4bcd514b8d5d963b950aaff52336361057d002f642f025d919"
+    sha256 cellar: :any,                 sonoma:        "f895e0dc48273e95e8356bbdf36e2973d85eb4e4977037418542fe5eab089be6"
+    sha256 cellar: :any,                 ventura:       "136fcbc770dfc0f1e6763c063cc61bb0b624a92a7a1fffcc986e1d8d129be990"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "33d7d9e11710de28422e9cb741af333165dd0c6b0eef98307e853ac86add23b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bed57859863321e621124a7e022a48007f1daa1400224b40e700a479e8cc519"
   end
 
   depends_on "cmake" => :build
@@ -165,8 +165,8 @@ class Safety < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages70dc3976b322de9d2e87ed0007cf04cc7553969b6c7b3f48a565d0333748fbcdsetuptools-80.3.1.tar.gz"
-    sha256 "31e2c58dbb67c99c289f51c16d899afedae292b978f8051efaf6262d8212f927"
+    url "https:files.pythonhosted.orgpackages95320cc40fe41fd2adb80a2f388987f4f8db3c866c69e33e0b4c8b093fdf700esetuptools-80.4.0.tar.gz"
+    sha256 "5a78f61820bc088c8e4add52932ae6b8cf423da2aff268c23f813cfbb13b4006"
   end
 
   resource "shellingham" do

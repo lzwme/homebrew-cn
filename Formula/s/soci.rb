@@ -1,8 +1,8 @@
 class Soci < Formula
   desc "Database access library for C++"
   homepage "https://soci.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/soci/soci/soci-4.0.3/soci-4.0.3.zip"
-  sha256 "598abf573252caf71790af5ff15beca20af548440b610e70468edfd3c12d47b0"
+  url "https://downloads.sourceforge.net/project/soci/soci/soci-4.1.1/soci-4.1.1.zip"
+  sha256 "b59bc01ec20fd9776cdb071f600acbe66b5a3f3350561abb97f5707649921d9c"
   license "BSL-1.0"
 
   livecheck do
@@ -11,33 +11,29 @@ class Soci < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "6153858f4806accd079ba652dc3a1817a9ea95ba66b477ab15f548ec35e628f8"
-    sha256 arm64_sonoma:   "b446260ca150f3d1451b8a44725d8532e4fe5157ac3e8040c008c07cff01b5e4"
-    sha256 arm64_ventura:  "389f70f8884a86e67b2d9dde6d50796765d9360c2c3b31cc259ce32b8a87cd4e"
-    sha256 arm64_monterey: "3071048f1067589c98521c479ad6ceeb317b70231072b227d67a7fc41bd81f27"
-    sha256 arm64_big_sur:  "652d8306f60195b5689d236e5f4b876e0595480c97657c20f6ade9a49919f48b"
-    sha256 sonoma:         "8e204b4cc8711785713a0b285c68b03894f602491c0beff38b45319f54a77982"
-    sha256 ventura:        "d09c55a20635a29819cfda84d528f9616cf05d184efdc01949c36fb0327d9624"
-    sha256 monterey:       "09ea83bf0e12deff7e63da0f41f1c16573f6eb017336c907648bec515430e0f1"
-    sha256 big_sur:        "6e2001b1bf50eb5c6d913f61abcfb9074ac4a8dba810cc7f80546ca1157b5311"
-    sha256 catalina:       "0ce9776bb40a4b6d3dc6d1ea62885a952e32c868fff1305b8e7f33a1e09689f2"
-    sha256 arm64_linux:    "649b829aa0b5c30e5f6588ed7cd1a865f51ca70fe10bfd4a56917b9bc6b6520f"
-    sha256 x86_64_linux:   "9a6461d6ec0bc9a1306f59a8a80c5c750f46b6bf13691f0e89b94c69399c0853"
+    sha256 arm64_sequoia: "52ef9b3f00b41eb6ce74b96700fa573ba5b7e310be4c35138484efb322669556"
+    sha256 arm64_sonoma:  "7b09d3822744eb4ab4360a6ec309fe8faaf7258f6f15ee6dbad0de4b9354d76d"
+    sha256 arm64_ventura: "db67c0d06a017cfdce97066f2d6fb69e2d59c7daa2c7677f68900a8e95390649"
+    sha256 sonoma:        "4d7b3fdf3c82a65f37fcb50cd3937c180abc7980c68adc6f2216519a4926c099"
+    sha256 ventura:       "84d2bb89ce70ba3a26f302a69b06b4a72057dfc99412595f8a56106d565f53d6"
+    sha256 arm64_linux:   "29a9b223156659e2533f0164962f043c80c10ee1537dea870341057059ac9311"
+    sha256 x86_64_linux:  "a4df53be23c078dc937baa5e1aef8c86c4cc432e9cd39e63d59a8d18a039778c"
   end
 
   depends_on "cmake" => :build
   depends_on "sqlite"
 
   def install
-    args = %w[
-      -DCMAKE_CXX_STANDARD=11
-      -DSOCI_TESTS:BOOL=OFF
-      -DWITH_SQLITE3:BOOL=ON
-      -DWITH_BOOST:BOOL=OFF
-      -DWITH_MYSQL:BOOL=OFF
-      -DWITH_ODBC:BOOL=OFF
-      -DWITH_ORACLE:BOOL=OFF
-      -DWITH_POSTGRESQL:BOOL=OFF
+    args = %W[
+      -DCMAKE_CXX_STANDARD=14
+      -DSOCI_TESTS=OFF
+      -DWITH_SQLITE3=ON
+      -DWITH_BOOST=OFF
+      -DWITH_MYSQL=OFF
+      -DWITH_ODBC=OFF
+      -DWITH_ORACLE=OFF
+      -DWITH_POSTGRESQL=OFF
+      -DCMAKE_INSTALL_RPATH=#{rpath}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
@@ -60,7 +56,7 @@ class Soci < Formula
         soci::session sql(backEnd, connectString);
       }
     CPP
-    system ENV.cxx, "-o", "test", "test.cxx", "-std=c++11", "-L#{lib}", "-lsoci_core", "-lsoci_empty"
+    system ENV.cxx, "-o", "test", "test.cxx", "-std=c++14", "-L#{lib}", "-lsoci_core", "-lsoci_empty"
     system "./test"
   end
 end

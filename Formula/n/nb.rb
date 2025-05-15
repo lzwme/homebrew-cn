@@ -1,19 +1,19 @@
 class Nb < Formula
   desc "Command-line and local web note-taking, bookmarking, and archiving"
   homepage "https:xwmx.github.ionb"
-  url "https:github.comxwmxnbarchiverefstags7.18.2.tar.gz"
-  sha256 "ea7353e57e83b3211a98b5e865997ccbc3b185641f98be57c789835245b505d0"
+  url "https:github.comxwmxnbarchiverefstags7.19.0.tar.gz"
+  sha256 "a1f7c6d8832a10161d5e05e91410564371f6bac9f4c9a10a02b1ecd23b6bc623"
   license "AGPL-3.0-or-later"
   head "https:github.comxwmxnb.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9a26190af79c77a3b72abb535679bcf90886bed3fd6ce01bd4bfcf6c14e71db"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9a26190af79c77a3b72abb535679bcf90886bed3fd6ce01bd4bfcf6c14e71db"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c9a26190af79c77a3b72abb535679bcf90886bed3fd6ce01bd4bfcf6c14e71db"
-    sha256 cellar: :any_skip_relocation, sonoma:        "58e063ee568394ca01a0cb8537f48e2b85a56b0668123938e943ec229b9bccc4"
-    sha256 cellar: :any_skip_relocation, ventura:       "58e063ee568394ca01a0cb8537f48e2b85a56b0668123938e943ec229b9bccc4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c9a26190af79c77a3b72abb535679bcf90886bed3fd6ce01bd4bfcf6c14e71db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9a26190af79c77a3b72abb535679bcf90886bed3fd6ce01bd4bfcf6c14e71db"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "30c82fbe5089614a1bcc9bd876ed3dd5b544359a33fa9b1fdbb4588ce38f991c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "30c82fbe5089614a1bcc9bd876ed3dd5b544359a33fa9b1fdbb4588ce38f991c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "30c82fbe5089614a1bcc9bd876ed3dd5b544359a33fa9b1fdbb4588ce38f991c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cce374d8304d0945ae6aa2925e27e56d0a334ab018d5bef3fefd6f68d2bd8c91"
+    sha256 cellar: :any_skip_relocation, ventura:       "cce374d8304d0945ae6aa2925e27e56d0a334ab018d5bef3fefd6f68d2bd8c91"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "30c82fbe5089614a1bcc9bd876ed3dd5b544359a33fa9b1fdbb4588ce38f991c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30c82fbe5089614a1bcc9bd876ed3dd5b544359a33fa9b1fdbb4588ce38f991c"
   end
 
   depends_on "bat"

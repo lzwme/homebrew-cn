@@ -6,16 +6,17 @@ class Buku < Formula
   url "https:github.comjarunbukuarchiverefstagsv5.0.tar.gz"
   sha256 "87e226b0062a17cb10bf02a6cefea08e859d74985e373b76496150ecda92d73e"
   license "GPL-3.0-or-later"
+  revision 1
   head "https:github.comjarunbuku.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "67a9efc8bd9146c070de0df73a403253739c38c6aafcedcbe727258071d9dc03"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba02ea77ed769704ff1a235c93fbb1b6bb813302e3b1a6f9b6cfff3da53020b8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "57caf2d3ffc68bb83c8c55a7919fd76b99c0b4904f3f7fcc89c9e87a305e966c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "971a52b9651ace5ce3c9f67be33b8862eee03663e0fe6182e91caab7ec7490d4"
-    sha256 cellar: :any_skip_relocation, ventura:       "0af9da744de39f784c8e05241f5c66d1636436d38004d7845880df506c90ffd7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b24da77400dfe97e1813e917d1622fc79a931112a694ffe7aef0ea24573d8bd0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc63d7d45eff707fbcda4d753176a8fce382bb60ec4ccb624358765afe03277e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9596441b80dedb61bc7cd57743e861cf781966c4530e15731def2e8d223f0e65"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "032d6166f20300d2e6e3e9cf28080b76c3ee563ba93eeeabdf95380df4bbd3a6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d69cb7fb9ff02fba5712ba14a70a60713ea36a3ca9879754bf424b8bb11f7a4d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "6449b6131564ab87bba0e55613b8a8522ddce74558c6d8145365998004a3daf5"
+    sha256 cellar: :any_skip_relocation, ventura:       "725dacb1ff25d9d8035b19907b816d79407354f5d8269e463214fe81411f393f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c8acec3e9ff92fb5fbc6e5202494ac09b0626880d043a83986c7c170bac9664"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e803486c3a74df43a88a09df4d631a2b853dc3bfc4a8ac6ce78fa34fb5935f2"
   end
 
   depends_on "certifi"
@@ -40,13 +41,13 @@ class Buku < Formula
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https:files.pythonhosted.orgpackagescd0f62ca20172d4f87d93cf89665fbaedcd560ac48b465bd1d92bfc7ea6b0a41click-8.2.0.tar.gz"
+    sha256 "f5452aeddd9988eefa20f90f05ab66f17fce1ee2a36907fd30b05bbb5953814d"
   end
 
   resource "flask" do
-    url "https:files.pythonhosted.orgpackages8950dff6380f1c7f84135484e176e0cac8690af72fa90e932ad2a0a60e28c69bflask-3.1.0.tar.gz"
-    sha256 "5f873c5184c897c8d9d1b05df1e3d01b14910ce69607a117bd3277098a5836ac"
+    url "https:files.pythonhosted.orgpackagesc0dee47735752347f4128bcf354e0da07ef311a78244eba9e3dc1d4a5ab21a98flask-3.1.1.tar.gz"
+    sha256 "284c7b8f2f58cb737f0cf1c30fd7eaf0ccfcde196099d24ecede3fc2005aa59e"
   end
 
   resource "flask-admin" do

@@ -1,12 +1,12 @@
 class PythonSetuptools < Formula
   desc "Easily download, build, install, upgrade, and uninstall Python packages"
   homepage "https://setuptools.pypa.io/"
-  url "https://files.pythonhosted.org/packages/95/32/0cc40fe41fd2adb80a2f388987f4f8db3c866c69e33e0b4c8b093fdf700e/setuptools-80.4.0.tar.gz"
-  sha256 "5a78f61820bc088c8e4add52932ae6b8cf423da2aff268c23f813cfbb13b4006"
+  url "https://files.pythonhosted.org/packages/2b/22/2e66d286bf92bc5f0d0822346e53fc856b5e6ad38b2a53bcde7ea5eb1299/setuptools-80.7.0.tar.gz"
+  sha256 "d3b6ba519cc2b1e0b14195ef1a9560f675b1f873dc0d42969e139b2b58e763d6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "de6898d8f686d1a127cf9e9b6afc127a4ac90c3a5b0410ba896857c13de129cc"
+    sha256 cellar: :any_skip_relocation, all: "cefcf342dfc86dce721535b5639e94d33888bb935bd670f7d3f03ec46f292c19"
   end
 
   depends_on "python@3.12" => [:build, :test]

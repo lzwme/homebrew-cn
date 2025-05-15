@@ -3,19 +3,19 @@ class Dooit < Formula
 
   desc "TUI todo manager"
   homepage "https:github.comkraanzudooit"
-  url "https:files.pythonhosted.orgpackages179e8718c30df1b4e2e71fe1617722dedc70bf981b834547ca40595ae8e4ad23dooit-3.2.1.tar.gz"
-  sha256 "b1c0634006b009e983a5eb4c4d003363faac0ea437bec333f76ae31479be7594"
+  url "https:files.pythonhosted.orgpackages0f889ba9d1c289f215a16afe9135ecbcbe4473b0619da2c34bc05a4502eb9823dooit-3.2.2.tar.gz"
+  sha256 "5a9bd501c6291c0c4bd8ed5035a9168f0e38b7245d3b3d1cd927e61f887ef953"
   license "MIT"
   head "https:github.comkraanzudooit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e37a7afc8d90f7cb82e1200d52f42c13a607aa8f077cd53341ef91f5de3dc8e0"
-    sha256 cellar: :any,                 arm64_sonoma:  "e7e154bc5d9de0cf5cae567412594f24fa498ea07b0cf55e09711113a5987996"
-    sha256 cellar: :any,                 arm64_ventura: "dc55258420802ffb5a9548c3a8738c7154cb097b8067ddff730abb3106595555"
-    sha256 cellar: :any,                 sonoma:        "f54aff321b215c00750af3915b0521fc4a87a88605dd6a03dfc1367ba01fe80b"
-    sha256 cellar: :any,                 ventura:       "a6ab47d4155d7975c4dff1df2fd9ec5bc915eed49c18b337172c0524dfe3f6d4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a447372867bc9b9edb2c6883a5d0dfd64902b59f728476b0107906fb27cf48a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "873d55e47cd6db68e435e9cf57e59ce2ce06ea04e8a5d881447a9a1df43bc47d"
+    sha256 cellar: :any,                 arm64_sequoia: "31d3daf7728e9a2d00606bbfb0226408a3833fa03b7e6d7a7c3c4ffa5af62317"
+    sha256 cellar: :any,                 arm64_sonoma:  "5a4ff1ac059b30c4570ef1ba771c063a5f1d80e942918fcb8bd6d05667c67591"
+    sha256 cellar: :any,                 arm64_ventura: "5182797225f133ce3c7f758e89f2599f3cb9e7bfc05b008a324b79811ff42344"
+    sha256 cellar: :any,                 sonoma:        "27be32f80235fc4b29bcd5d5fe0e5a8cc11f0cd6628d46d283c09e356d37db83"
+    sha256 cellar: :any,                 ventura:       "f7e53e1d767b4c43f85b7ff7a9dd971bee6d5abcbcbd6b65e271008355a911d1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1553693744a2be536c2e57f7105cf3cbeaf10cf3f3037fa8741c3af187a0f5a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9024438caae6b9b611cbbc8e83701ad4a14767dbd056c1133b1f6c2b0d8c29b2"
   end
 
   depends_on "cmake" => :build

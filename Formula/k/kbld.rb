@@ -1,18 +1,18 @@
 class Kbld < Formula
   desc "Tool for building and pushing container images in development workflows"
   homepage "https:carvel.devkbld"
-  url "https:github.comcarvel-devkbldarchiverefstagsv0.45.2.tar.gz"
-  sha256 "dc83a2e91e05ec00ad4add22fb493bc1470868c5db6ecb9505010058cc68e3cc"
+  url "https:github.comcarvel-devkbldarchiverefstagsv0.46.0.tar.gz"
+  sha256 "e3cdfe735e1711c321b86bf93176125fa262765f1e2df91368615e0fcb9cd41c"
   license "Apache-2.0"
   head "https:github.comcarvel-devkbld.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb8d0c45851cc4654b7ac18399f87313e6ef78265e07c83fd7ee0ca35ac5cafc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb8d0c45851cc4654b7ac18399f87313e6ef78265e07c83fd7ee0ca35ac5cafc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "eb8d0c45851cc4654b7ac18399f87313e6ef78265e07c83fd7ee0ca35ac5cafc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e88ad7b2e59f54c94ce5fc547a6d5c0f1d7aba483e67991583c40b85cbd3a083"
-    sha256 cellar: :any_skip_relocation, ventura:       "e88ad7b2e59f54c94ce5fc547a6d5c0f1d7aba483e67991583c40b85cbd3a083"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ec9fee45d86daec5370121a792319019cd2ea21ce1f5784def6e4f79bff6ad8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5914c94a7d11a87cb50da141d7913119bc5fbddce61e675f7cfe1f089f6b763"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e5914c94a7d11a87cb50da141d7913119bc5fbddce61e675f7cfe1f089f6b763"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e5914c94a7d11a87cb50da141d7913119bc5fbddce61e675f7cfe1f089f6b763"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e16f16bb84b8253db8d6880a2f7fd0b17453304854f5616eebc79b3309cee1a5"
+    sha256 cellar: :any_skip_relocation, ventura:       "e16f16bb84b8253db8d6880a2f7fd0b17453304854f5616eebc79b3309cee1a5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0563374feb038a4750aabfa4bad29dd930832fec19cbfae4f9d0d8b12eb963f"
   end
 
   depends_on "go" => :build
