@@ -3,19 +3,19 @@ class Wtfis < Formula
 
   desc "Passive hostname, domain, and IP lookup tool"
   homepage "https:github.compirxthepilotwtfis"
-  url "https:files.pythonhosted.orgpackages14d0df7d7f59efa3cc872b5ed917f2108485e2ddf77b23bedc5e3eee666f8231wtfis-0.10.2.tar.gz"
-  sha256 "e3df5b8151b87e23e3f803be22739d6b7204e2c1f9460f773b85e38b81250efc"
+  url "https:files.pythonhosted.orgpackages1655748b21d2d2e765e319cff417447006fc5d714b56317918da0d70ed8d7ee5wtfis-0.11.0.tar.gz"
+  sha256 "3a687d99d91c9bba15e45707acef68c3ebc9ffd571fb311c2d83423a62ee0e6f"
   license "MIT"
   head "https:github.compirxthepilotwtfis.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9f67e5cb3e4597ec2846f277b93941bd1539efb7acd1382f8aa08be5f28d2cc4"
-    sha256 cellar: :any,                 arm64_sonoma:  "ad126b3fb7e3675d4642559e4778d9850af638b3ac373cda16e20870d2bd0fea"
-    sha256 cellar: :any,                 arm64_ventura: "b3cea14bc70ce4be51f0261cce5cff533476ed6e9ab87740a8d0a6f826905ae6"
-    sha256 cellar: :any,                 sonoma:        "159585efcf2720da648bb530252fbe10230693ad9cdc33673d18e9f169367663"
-    sha256 cellar: :any,                 ventura:       "beb2d717e08193cd8b861574b9eca3535af18aefc7fc7b430808f07ee037d032"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3519b6326df353a1a35b3486d169836cac37d04e8bb2205adb8aa7e9a5093309"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7d1bf45dbc5d42947f184e34e7f5e9d7d7008e9c59b44eb108d845db96664221"
+    sha256 cellar: :any,                 arm64_sequoia: "eaafe902a56a5a912c14a7644901bac6bc4e4c93dff8b3c87dad223a684099fd"
+    sha256 cellar: :any,                 arm64_sonoma:  "19f0b9519fddfd0bc314161592839c0f5f2863dc169e34a054e11beef682273b"
+    sha256 cellar: :any,                 arm64_ventura: "c25e15272c1afbf6070efc936885961ec88dd31875b0e8529eb4e7f0b98460d0"
+    sha256 cellar: :any,                 sonoma:        "b3f38c1166827cd8718f27062cd2ea4737bd92e74a98b6c42ae9584dd7c5aec9"
+    sha256 cellar: :any,                 ventura:       "f64f4260d6d4433e6feaceea6c161332b91424ab37102e4454f22e7fd424ee3c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "52b7f972b0cef387855e206aa604474a21907b79e5adb285731b20be2286be7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bdd053e9e05fe28356e8d5fe5d4887eab877c41212c3f90a87ec6bb1e83a341f"
   end
 
   depends_on "rust" => :build
@@ -28,13 +28,13 @@ class Wtfis < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https:files.pythonhosted.orgpackagese43389c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12dcharset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https:files.pythonhosted.orgpackagescd0f62ca20172d4f87d93cf89665fbaedcd560ac48b465bd1d92bfc7ea6b0a41click-8.2.0.tar.gz"
+    sha256 "f5452aeddd9988eefa20f90f05ab66f17fce1ee2a36907fd30b05bbb5953814d"
   end
 
   resource "click-plugins" do
@@ -68,13 +68,13 @@ class Wtfis < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackages102eca897f093ee6c5f3b0bee123ee4465c50e75431c3d5b6a3b44a47134e891pydantic-2.11.3.tar.gz"
-    sha256 "7471657138c16adad9322fe3070c0116dd6c3ad8d649300e3cbdfe91f4db4ec3"
+    url "https:files.pythonhosted.orgpackages77ab5250d56ad03884ab5efd07f734203943c8a8ab40d551e208af81d0257bf2pydantic-2.11.4.tar.gz"
+    sha256 "32738d19d63a226a52eed76645a98ee07c1f410ee41d93b4afbfa85ed8111c2d"
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackages1719ed6a078a5287aea7922de6841ef4c06157931622c89c2a47940837b5eecdpydantic_core-2.33.1.tar.gz"
-    sha256 "bcc9c6fdb0ced789245b02b7d6603e17d1563064ddcfc36f046b61c0c05dd9df"
+    url "https:files.pythonhosted.orgpackagesad885f2260bdfae97aabf98f1778d43f69574390ad787afb646292a638c923d4pydantic_core-2.33.2.tar.gz"
+    sha256 "7cb8bc3605c29176e1b105350d2e6474142d7c1bd1d9327c4a9bdb46bf827acc"
   end
 
   resource "pygments" do
@@ -108,8 +108,8 @@ class Wtfis < Formula
   end
 
   resource "tldextract" do
-    url "https:files.pythonhosted.orgpackages207ae469c4f71231a848492da31a7be6921a6cd04ecc8eed58e924bece0fb6detldextract-5.2.0.tar.gz"
-    sha256 "c3a8c4daf2c25a57f54d6ef6762aeac7eff5ac3da04cdb607130be757b8457ab"
+    url "https:files.pythonhosted.orgpackages9778182641ea38e3cfd56e9c7b3c0d48a53d432eea755003aa544af96403d4actldextract-5.3.0.tar.gz"
+    sha256 "b3d2b70a1594a0ecfa6967d57251527d58e00bb5a91a74387baa0d87a0678609"
   end
 
   resource "typing-extensions" do
@@ -128,8 +128,8 @@ class Wtfis < Formula
   end
 
   resource "xlsxwriter" do
-    url "https:files.pythonhosted.orgpackagesa10826f69d1e9264e8107253018de9fc6b96f9219817d01c5f021e927384a8d1xlsxwriter-3.2.2.tar.gz"
-    sha256 "befc7f92578a85fed261639fb6cde1fd51b79c5e854040847dde59d4317077dc"
+    url "https:files.pythonhosted.orgpackagesa7d1e026d33dd5d552e5bf3a873dee54dad66b550230df8290d79394f09b2315xlsxwriter-3.2.3.tar.gz"
+    sha256 "ad6fd41bdcf1b885876b1f6b7087560aecc9ae5a9cc2ba97dcac7ab2e210d3d5"
   end
 
   def install

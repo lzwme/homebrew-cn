@@ -1,6 +1,6 @@
 cask "dolphin@dev" do
-  version "2503a-525,ee,95"
-  sha256 "7c97c341a3afd019af8006bc1f07580510b49cd38714c5b169d61fb64d97a498"
+  version "2503a-532,ed,ec"
+  sha256 "bf53d16633bff75fdf6e4041ffd15ce17ad5871b0cdd1d97393d367e6e2eeb69"
 
   url "https://dl.dolphin-emu.org/builds/#{version.csv.second}/#{version.csv.third}/dolphin-master-#{version.csv.first}-universal.dmg"
   name "Dolphin Dev"
@@ -8,17 +8,20 @@ cask "dolphin@dev" do
   homepage "https://dolphin-emu.org/"
 
   livecheck do
-    url "https://dolphin-emu.org/download/"
-    regex(%r{href=.*?/builds/([^/]+?)/([^/]+?)/dolphin[._-]master[._-]v?(\d+[a-z]?-\d+)-universal\.dmg}i)
-    strategy :page_match do |page, regex|
-      page.scan(regex).map { |match| "#{match[2]},#{match[0]},#{match[1]}" }
+    url "https://dolphin-emu.org/update/latest/dev/"
+    regex(%r{/builds/([^/]+?)/([^/]+?)/dolphin.*?\.dmg}i)
+    strategy :json do |json, regex|
+      json["artifacts"]&.map do |artifact|
+        match = artifact["url"]&.match(regex)
+        next if match.blank?
+
+        "#{json["shortrev"]},#{match[1]},#{match[2]}"
+      end
     end
   end
 
-  conflicts_with cask: [
-    "dolphin",
-    "dolphin@beta",
-  ]
+  auto_updates true
+  conflicts_with cask: "dolphin"
   depends_on macos: ">= :big_sur"
 
   app "Dolphin.app"
@@ -26,5 +29,6 @@ cask "dolphin@dev" do
   zap trash: [
     "~/Library/Application Support/Dolphin",
     "~/Library/Preferences/org.dolphin-emu.dolphin.plist",
+    "~/Library/Saved Application State/org.dolphin-emu.dolphin.savedState",
   ]
 end

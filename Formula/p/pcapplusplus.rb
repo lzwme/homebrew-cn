@@ -1,26 +1,28 @@
 class Pcapplusplus < Formula
   desc "C++ network sniffing, packet parsing and crafting framework"
   homepage "https:pcapplusplus.github.io"
-  url "https:github.comseladbPcapPlusPlusarchiverefstagsv24.09.tar.gz"
-  sha256 "def261fd9c64455d5f793e1e859108f706d5a6917e7aeb31dc8828543e00bc63"
+  url "https:github.comseladbPcapPlusPlusarchiverefstagsv25.05.tar.gz"
+  sha256 "66c11d61f3c8019eaf74171ad10229dfaeab27eb86859c897fb0ba1298f80c94"
   license "Unlicense"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "737cecfd0d6c09d777d6ba9a9684658fa74e7318f768acf08dc6384a8f21ceb1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "400feb07199fe447469d4129993ebe342c19ca9204a3a783af624ec1be6cb725"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "be35fe2be342af20dfcad3a9d887b94bc502482edd44474247c2445cd344e8fb"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bf2bdd1ece9124c2384e3595cecbaf7566a8ba91f818d1dac409574ee2f452c8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "5d1199a09588adbb3cc31b539d48461894a56078973f1e692a0572a2a248bdbf"
-    sha256 cellar: :any_skip_relocation, ventura:        "2b3e97132ae4c96184fe444942b91d584279b807d59b042c90f911deef9a3e10"
-    sha256 cellar: :any_skip_relocation, monterey:       "e77bd094090a43874b50ea7feb955e68302e764643b95cd3a040d7b9732253a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e8043eeff246207284aab2a45ee6743324bfaf03780c035e5ae49842a3ab3307"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b0fa7a89759395ca21657a2f4ad0cd1ce38956a9bdef1000feffa86dfd4f3a2b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e0d980ded05983801b97aa6f7737f7c4bf91252fb2e146ed552514d5b5b8547"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "eb59ce27fdc30a559228ff984d4a2f51a2ea86c693a575736537296175ec2244"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9019452d1e6616946480223d5725df1f1ea43c3bdb5652c0c387b10a8239d2c4"
+    sha256 cellar: :any_skip_relocation, ventura:       "f6a57b0410bd1a733ee3b342addf244cda48557be7f226b46c3dfb4d1ed2df7e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42c2a06a698bfd44bef147d045900a270af1418a3d2828d0ff406f1eeb0c02af"
   end
 
   depends_on "cmake" => [:build, :test]
   uses_from_macos "libpcap"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    cmake_args = %w[
+      -DPCAPPP_BUILD_EXAMPLES=OFF
+    ]
+
+    system "cmake", "-S", ".", "-B", "build", *cmake_args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

@@ -1,8 +1,8 @@
 class CargoNextest < Formula
   desc "Next-generation test runner for Rust"
   homepage "https:nexte.st"
-  url "https:github.comnextest-rsnextestarchiverefstagscargo-nextest-0.9.95.tar.gz"
-  sha256 "cfe167f9d71e54cd6eb3e9bb20791b8c28831dfeaf741ac3a08afdfbe3e09b08"
+  url "https:github.comnextest-rsnextestarchiverefstagscargo-nextest-0.9.96.tar.gz"
+  sha256 "791e42ea5a5fe6c42713f68e7dab8a9bb769c7e38336262b9ae8d226631d95fe"
   license "Apache-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class CargoNextest < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bd0db3353ba9abb7942181f70c2ccd8cbb5fdaf6570cab563d727183e0b5d19b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e77794bb84549a156e90293936bb2f76fbfbd1c546814f99b95630fb070e53c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8a8f3c8e0e28358ca8b939cd9fd59dcfaeabd6bc564d3d38d2b4af964ac6b361"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6dfee8b7e8ce5e1fc4ada8881be149ba3c017513015d3d6e0d1850c2dd159a31"
-    sha256 cellar: :any_skip_relocation, ventura:       "027c471d36aba17e62d99bfe703ab8af2ba08c2ca5d66544d48bc4c73d345097"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "20513c28017f4ce346d4ca1d3ff9bd7a7534a442da14b7ee2672ad8ae6b55f28"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ae466953041dff36c362b60c500cb3dc930bbb20379461e1fbe42641e588593d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1df24128be0538c2c92a37c49659221b5e5e6a8e00c0435b9cbe9cc130802038"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc3577773a71290304c818acf2336edfdce9d795adb7c2f87df15f2183246543"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "58b329265f415c35f41491a160e14c20bcf1573009d8217d93570f61ac70413c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e9525c10ccb3f00e11c8a89d8c7d0f0c4cfe48c734a6196ab4ec2a87a76474f5"
+    sha256 cellar: :any_skip_relocation, ventura:       "30f1ad4d3a71b68ae6e555ded63f2a1904bbfc693e077c6f31b6142721837bc2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d7380109a6afd95e56a6dd84556cc339f08f69dcb4c298eebcf7874276baf60"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da88a7d5d7c14fca9424ca38651dedc85f3dec4005ce331f9c64ded9daa17ba2"
   end
 
   depends_on "rust" => :build

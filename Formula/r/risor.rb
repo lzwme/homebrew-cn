@@ -1,8 +1,8 @@
 class Risor < Formula
   desc "Fast and flexible scripting for Go developers and DevOps"
   homepage "https:risor.io"
-  url "https:github.comrisor-iorisorarchiverefstagsv1.7.0.tar.gz"
-  sha256 "cb74fffafee3491ddde6c9265ec3198131417fa9c990c2647e1f86dc281ea4fa"
+  url "https:github.comrisor-iorisorarchiverefstagsv1.8.1.tar.gz"
+  sha256 "3253a3e6e6f2916f0fe5f415e170c84e7bfede59e66d45d036d1018c259cba91"
   license "Apache-2.0"
   head "https:github.comrisor-iorisor.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Risor < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e8e1292de24b4e902fa8180857c2171177f820ac40388a5e6f5fc2f1a1f3bf1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c45bfc6da12cad84f948fe980d92b12d44cc2b0e1fbd7f8132a179d586ab846e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1bd4dfad3c4c080d9d3c62df315115adb15ea6953285efb2bce2ec7c03344691"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7888be33dc5ade02305f3857fd0a176ba3f96ca69a1e06b69055afa6a5b9ae82"
-    sha256 cellar: :any_skip_relocation, ventura:       "967d7fa03a9aa306efde26606200aef642624d29c5c7456f6f432be9ec30ec7f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5b7800c2334da4b0f85d34780993289615bf1f69ce1f731eb32f2712ae0f11b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "19fbd777f72cc1b135297b1b59b7ce0aa180c1cb2042b86b4a7a7039e5c1ef04"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5cd9613e60e81ef3a223de3f23973e81ec64497138622707242a75ffce3a252c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bd3e27a942ab5fe9bc9dfbe75003d44490bd33691278ba5f55658efe021215f7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "019a5b1e925b0c126057e4a519afcfe7ca7dd0964aa915244afd6a32c2631e7d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d83df8d83687d2361145b2608a074a55d369bfddae62bbf05552795f405ba5a7"
+    sha256 cellar: :any_skip_relocation, ventura:       "09810c4db8f5ebf475b26af73e69532771b3971574e41a7ed141ba548bfdd069"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3e62a036bd5fa35ac431d7db4e6be14b36eeae142a9fafdb7c822f2bf5727400"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5310ed4dda566a15d859667fe317f44c9242d2d7f12abbd2edde2178d4fbe3ba"
   end
 
   depends_on "go" => :build

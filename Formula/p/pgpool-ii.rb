@@ -1,8 +1,8 @@
 class PgpoolIi < Formula
   desc "PostgreSQL connection pool server"
   homepage "https:www.pgpool.netmediawikiindex.phpMain_Page"
-  url "https:www.pgpool.netmediawikiimagespgpool-II-4.6.0.tar.gz"
-  sha256 "f68a6571442d7ea53b69f39d749ad457790b00180e19b019fc82e235bab07321"
+  url "https:www.pgpool.netmediawikiimagespgpool-II-4.6.1.tar.gz"
+  sha256 "0f8805d93bc40002c8019dc40ae03a71a3d144bd39f3dffe6fa01f7fc19bb8e8"
   license all_of: ["HPND", "ISC"] # ISC is only for srcutilsstrlcpy.c
 
   livecheck do
@@ -11,13 +11,13 @@ class PgpoolIi < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "396147e553be666e5a9b226783bed6973e5999b5612005d42b0857e08d241e45"
-    sha256 arm64_sonoma:  "ae6e3224bf147703048a4627b23dddc909d1056745caeb09de4b0e5fc240cbcf"
-    sha256 arm64_ventura: "b47f99e2db215776015b534ffd81e7f26cba5f0c1f3b38733ddf9cca27268577"
-    sha256 sonoma:        "921c4c4ec0b784b821869eb335cc79fe258749209b8e2834a03433f6d965a344"
-    sha256 ventura:       "c09d9871883f08c7221371ca809e0fe34253a1bd47bb490bdc812c4276118ff9"
-    sha256 arm64_linux:   "c69bae12f5e7ae2b8ad7a68c3e4f342dd2183965d67a75887c155fa5d3cc941c"
-    sha256 x86_64_linux:  "b538d5fe57290bf9bd84e418a44d46dff2d0543703e17a0acd32e2903fbbaab6"
+    sha256 arm64_sequoia: "0d774d83f673c97c10c8dda0010d2601c30c0503ba1703b04402228fa72f6106"
+    sha256 arm64_sonoma:  "ddb5ea019862cda6838e1f7a1f43523bd93b6c124dfc0a3ef9639e25413e5af3"
+    sha256 arm64_ventura: "e6b55691e0012dc832cb7da2401535d26a9f3cc95f41dc0998472520c2350394"
+    sha256 sonoma:        "e5fbe3277a008d083b74c1c70c91d095ec1b5e2199ef38593025816d88b16fc7"
+    sha256 ventura:       "059fc165f6b150ebe0c1d56f00d0f8398830695523656830babe2ff695155ce6"
+    sha256 arm64_linux:   "883ec20e6862835cc6927698a579750596dfea4f3dc70d13bed3d477b58d4a59"
+    sha256 x86_64_linux:  "7e4b2f7427759194ccaa25ea2c91eb38f10893694a9d7a932765e98bad1079ea"
   end
 
   depends_on "libmemcached"
@@ -27,14 +27,14 @@ class PgpoolIi < Formula
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
-    sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
+    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
+    sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
   end
 
   def install
-    system ".configure", *std_configure_args,
-                          "--sysconfdir=#{etc}",
-                          "--with-memcached=#{Formula["libmemcached"].opt_include}"
+    system ".configure", "--sysconfdir=#{etc}",
+                          "--with-memcached=#{Formula["libmemcached"].opt_include}",
+                          *std_configure_args
     system "make", "install"
 
     # Install conf file with low enough memory limits for default `memqcache_method = 'shmem'`

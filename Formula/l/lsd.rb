@@ -7,14 +7,14 @@ class Lsd < Formula
   head "https:github.comlsd-rslsd.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "620e65bedbd524277a073f2469d5467c7e93e88a95c227da58b5f270966392a2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "171fdc624eada5c1f48837e56e5f0a44139fc897de8b0c75a6637b64cfb41b87"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0ab10dba6606d09d98086b000a07ea2c6d0573e3b6e4ffc4eba3c30260810c9d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e5a078994599902b8b972d7bf4ce14ad755a0b559f7794e08ad9e40110c8365e"
-    sha256 cellar: :any_skip_relocation, ventura:       "2cee4fdf553f67937d3df1bdbecf420ea9453de347a3b6f99aa0a03f28020063"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e1d07af95ef7f56c3ed463b32df4470de95e42eb274af7678ab6903f81108e7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da5e2e98f824400895e34655adfbc250a3140e304a0247d11a4e64a9e2c133b2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c24da4584b7d539fe43d4a9bc0b685ca163098415ffcddd6498222d4f94878b8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f163dc5b5f3d5d4f6aad560a96d3a8997c98083e062eac8136aa27d844fec65b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1f7ad3497b4db2afca045c3434cfc3e35acf17f70f668d4fd507de802b8dee04"
+    sha256 cellar: :any_skip_relocation, sonoma:        "79225362c0448dd2843651be28b9e57060f37087a77db5fffc8db3f3f84c26d4"
+    sha256 cellar: :any_skip_relocation, ventura:       "c045403b8d14a78e2f5305832c33ff4d88d0f85e2752776640857a301b0f1912"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "15edeee954289721ebb15f60c1346e7b89a579527e4fed32f9caf66b1e7b7379"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "30ecd9a9aee174a461e3b57e6e0ebcb4098fedf788a95eae69bdb03f00f6529d"
   end
 
   depends_on "pandoc" => :build
@@ -28,6 +28,7 @@ class Lsd < Formula
     bash_completion.install "lsd.bash" => "lsd"
     fish_completion.install "lsd.fish"
     zsh_completion.install "_lsd"
+    pwsh_completion.install "_lsd.ps1"
 
     system "pandoc", "doclsd.md", "--standalone", "--to=man", "-o", "doclsd.1"
     man1.install "doclsd.1"

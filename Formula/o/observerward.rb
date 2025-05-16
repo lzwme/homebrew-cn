@@ -1,18 +1,18 @@
 class Observerward < Formula
   desc "Web application and service fingerprint identification tool"
   homepage "https:emo-crab.github.ioobserver_ward"
-  url "https:github.comemo-crabobserver_wardarchiverefstagsv2025.5.14.tar.gz"
-  sha256 "976d715127a38e80d81acf692ab0baea6195f0c248d55357aed9d1ec9c5aca64"
+  url "https:github.comemo-crabobserver_wardarchiverefstagsv2025.5.15.tar.gz"
+  sha256 "c7c6b546f411c7fc05c72f81e1a78a42337b628ea6ad555f93f882c6f5256708"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b69629eed25190ffbba8a35981551bf2fe66b6e6f03d96e6482bf71f770cd84d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cbd3d60aa6a7b7f7c844b22a18f5029bbf41c04fe490e3d520def205d3189ebd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "fa33d5e0838a822f4a53190678a6b8c757def4fc435aa3c588fe29da4f583cbb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "65c55f11e6b9169060d33df83e3b3bcbb8af416b9f4852f6a697592ea5247cae"
-    sha256 cellar: :any_skip_relocation, ventura:       "5177e3ca1e3e7a2e2c8c329ff3328b55f737788ddabf9b606a452553a28ffd21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ae219e11d36afa0c3115954b9b771164e6176667329d61e41e8ab8ec49da0845"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfcd99001da2f238f4079c31dd74a4e64aff9a7407d0487cf7ce5709cf4ed31e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a91d718b3fed1b3e8eafacd6ed00d7f785ee44df5afd77617f711275d127cd2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1225c14ac4d89b0f6d98e32b99bc8a49198f402ea52fe530615b39e3666f8b3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "09122df4ec6181ea8327efdf7828423082617cec80d82b874857fa26e5cd0ad9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "47e0c202ce6d9035a2628bebec2ad98c1ea9eeb51a075967ba16e028e8ef4e5a"
+    sha256 cellar: :any_skip_relocation, ventura:       "c18b353c57bc5d4d088d3ef0c6bf168a942036e0ae0896436acfe4d9c41fa2df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d1730c67652acef23a72664f496516bdc199f47008a75d5c373edfae25914619"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16254e5e8789333392aefd58d3fcd2d6391d14d94aaf73ceeba71aaed67a6523"
   end
 
   depends_on "rust" => :build

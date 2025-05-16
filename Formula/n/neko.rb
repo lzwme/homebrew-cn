@@ -53,14 +53,12 @@ class Neko < Formula
   end
 
   def caveats
-    s = ""
     if HOMEBREW_PREFIX.to_s != "usrlocal"
-      s << <<~EOS
+      <<~EOS
         You must add the following line to your .bashrc or equivalent:
           export NEKOPATH="#{HOMEBREW_PREFIX}libneko"
       EOS
     end
-    s
   end
 
   test do

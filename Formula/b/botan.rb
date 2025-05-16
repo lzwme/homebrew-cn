@@ -12,13 +12,14 @@ class Botan < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "0d1f589f900dc679b34940bf606a016e015ed922a5f759b9daadbd9b8969c1ae"
-    sha256 arm64_sonoma:  "751910a74fe11ed9d3b8b3abf79aae11036b92f9875fd0475d13294d92dcf49c"
-    sha256 arm64_ventura: "466dbfcd5eaff897ea903b82d6ecf680f1159c28087e6621760f0f29c96805cf"
-    sha256 sonoma:        "1d91396c3dd3462bd6c770c75e65add1b924f97c21d66d8448abbe24906588a9"
-    sha256 ventura:       "38149c11397d68a6e7671dd3efd73922357105e29f8a68ef7d6652e293293d80"
-    sha256 arm64_linux:   "0a7614e14b1aaa075695bc05185c789f48b8deec3d431288fd547f10f53f4fa1"
-    sha256 x86_64_linux:  "2b8a84de394ad2ecc64249091c0f4ccc23521a4b33ff70b693480a5731271454"
+    rebuild 1
+    sha256 arm64_sequoia: "a967bbee75aacedb40abbea69a039efeb6d3747f60f78d7df3c990389f4bb4ee"
+    sha256 arm64_sonoma:  "363aac39d5a069ded0ffad86a0d924fdeba5da34b541c47de8a91a2b8ff37a55"
+    sha256 arm64_ventura: "d8bcc4c1e2fe8db29e38d6fc6420b03b9addba885332dcf37ecbde13dd1dad00"
+    sha256 sonoma:        "fb26ebacd465ecc8efe8978a8b0a7a7b2b1fa9b19f5838c71e1c0b02488610f8"
+    sha256 ventura:       "54669a30e929a073ae91d196a9a0929b9a4b77a05da4e026fb97f58da9ece15b"
+    sha256 arm64_linux:   "13c3d6c959ea7e723868b616eddbbafe0d9d705d015e975e7e53f2dca18bc50b"
+    sha256 x86_64_linux:  "3fb558f2f23a738424a0b1593e1541bf02ff454be11a1ceafadc05f30215a772"
   end
 
   depends_on "pkgconf" => :build
@@ -58,7 +59,7 @@ class Botan < Formula
     if OS.mac? && DevelopmentTools.clang_build_version <= 1400
       ENV.llvm_clang
 
-      ldflags = %W[-L#{Formula["llvm"].opt_lib}c++ -L#{Formula["llvm"].opt_lib} -lunwind]
+      ldflags = %W[-L#{Formula["llvm"].opt_lib}c++ -L#{Formula["llvm"].opt_lib}unwind -lunwind]
       args << "--ldflags=#{ldflags.join(" ")}"
     end
 

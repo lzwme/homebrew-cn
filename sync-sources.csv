@@ -7374,7 +7374,7 @@ Homebrew-homebrew-core/Formula/x/xe.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xeol.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xerces-c.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xeyes.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/x/xfig.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/x/xfig.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xgboost.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xidel.rb, Homebrew/homebrew-core, 1
@@ -8683,7 +8683,6 @@ Homebrew-homebrew-cask/Casks/d/dockx.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dogecoin.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/doll.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dolphin.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/d/dolphin@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dolphin@dev.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/domzilla-caffeine.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/doomsday-engine.rb, Homebrew/homebrew-cask, 0
@@ -8940,6 +8939,7 @@ Homebrew-homebrew-cask/Casks/f/fauxpas.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/favro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/faxbot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fbreader.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/feather.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fedistar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fedora-media-writer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/feed-the-beast.rb, Homebrew/homebrew-cask, 0
@@ -14187,6 +14187,7 @@ Homebrew-homebrew-cask/Casks/s/stash.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/stashpad.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stationtv-link.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/stats.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/status.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/statusfy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stay.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/steam-plus-plus.rb, Homebrew/homebrew-cask, 1
@@ -14770,6 +14771,7 @@ Homebrew-homebrew-cask/Casks/v/vnc-viewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vnote.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/voiceink.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/voicepeak.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/v/void.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/voikkospellservice.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/volanta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/volt.rb, Homebrew/homebrew-cask, 1

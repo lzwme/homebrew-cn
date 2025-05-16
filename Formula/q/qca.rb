@@ -13,11 +13,12 @@ class Qca < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "7d36a3c7300b55b416b3ecc78c83652e607e08f5cf9e16237dd958c3986f4940"
-    sha256 cellar: :any,                 arm64_ventura: "ae332ff406dea6f7ec23a4bc6f3c00533b753a8a07de5bfaf8486a0da379b9c3"
-    sha256 cellar: :any,                 sonoma:        "8f7cc19fb5287ca7840c1723d8bdee5270841dd375913ae3c70c415725f1b8c4"
-    sha256 cellar: :any,                 ventura:       "e93c6f830c94b94dc72bacc2a1a6664aaa0ce313b624b6d9151a47182d89a867"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ce993e1748bf8e89e8963a8c745daa2ce149ca37f0158a2e7ebc4fac7c1e731d"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sonoma:  "5d1185d69deda47364a7d2e279f27d68ece2a39fcf519e431fd356467a6b3b82"
+    sha256 cellar: :any,                 arm64_ventura: "ba134c852c174798c1e3591150a1b8c2b13eab89c164ad64784f46ee7fed1d6b"
+    sha256 cellar: :any,                 sonoma:        "413848dff121c2d4b2e48decf5e79e06d448be120d62e82f55a2dc8d7a6f45ff"
+    sha256 cellar: :any,                 ventura:       "0f7e5193b934d41a0d581f613f76317c0a600263859f11da094216fca2c8b39e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2eea9797f98480d589b8f4561ed35a0d306254692490c626ee2aeadb6546877d"
   end
 
   depends_on "cmake" => :build
@@ -46,7 +47,7 @@ class Qca < Formula
   def install
     if OS.mac? && DevelopmentTools.clang_build_version <= 1400
       ENV.llvm_clang
-      ENV.append "LDFLAGS", "-L#{Formula["llvm"].opt_lib}/c++ -L#{Formula["llvm"].opt_lib} -lunwind"
+      ENV.append "LDFLAGS", "-L#{Formula["llvm"].opt_lib}/c++ -L#{Formula["llvm"].opt_lib}/unwind -lunwind"
     end
 
     ENV["QC_CERTSTORE_PATH"] = Formula["ca-certificates"].pkgetc/"cert.pem"

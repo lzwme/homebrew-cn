@@ -9,8 +9,9 @@ cask "mullvadvpn" do
   homepage "https:mullvad.net"
 
   livecheck do
-    url "https:mullvad.netdownloadvpnmacos"
-    regex(href=.*?MullvadVPN[._-]v?(\d+(?:\.\d+)+)\.pkgi)
+    url "https:mullvad.netendownloadapppkglatest"
+    regex(MullvadVPN[._-]v?(\d+(?:\.\d+)+)\.pkgi)
+    strategy :header_match
   end
 
   conflicts_with cask: "mullvadvpn@beta"

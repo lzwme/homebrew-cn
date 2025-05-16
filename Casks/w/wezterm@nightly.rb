@@ -2,11 +2,11 @@ cask "wezterm@nightly" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comwezweztermreleasesdownloadnightlyWezTerm-macos-nightly.zip",
-      verified: "github.comwezwezterm"
+  url "https:github.comweztermweztermreleasesdownloadnightlyWezTerm-macos-nightly.zip",
+      verified: "github.comweztermwezterm"
   name "WezTerm"
   desc "GPU-accelerated cross-platform terminal emulator and multiplexer"
-  homepage "https:wezfurlong.orgwezterm"
+  homepage "https:wezterm.org"
 
   conflicts_with cask: "wezterm"
 

@@ -1,10 +1,19 @@
 class Podman < Formula
   desc "Tool for managing OCI containers and pods"
   homepage "https:podman.io"
-  url "https:github.comcontainerspodmanarchiverefstagsv5.4.2.tar.gz"
-  sha256 "8da62c25956441b14d781099e803e38410a5753e5c7349bcd34615b9ca5ed4f2"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
   head "https:github.comcontainerspodman.git", branch: "main"
+
+  stable do
+    url "https:github.comcontainerspodmanarchiverefstagsv5.5.0.tar.gz"
+    sha256 "a4abfc72ef9a59ba80d081ea604ad2976ff967ae526e50e234edc1d2481bd9d1"
+
+    # build patch for go1.24.3, upstream pr ref, https:github.comcontainerspodmanpull26137
+    patch do
+      url "https:github.comcontainerspodmancommitdb65baaa215b68d73996ca17dd8c596901ab8bdb.patch?full_index=1"
+      sha256 "b9e8ca69b6c9d4bf99307f0afca96c4c9c6d39674628d88358e5df56b1cac839"
+    end
+  end
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created and upstream uses GitHub releases to
@@ -17,12 +26,12 @@ class Podman < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ca637f208cb8fb208c8552063d0e50218090d7b234a0522cd8210b9a46eedef9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "499c84d580533fa6790683c52ae17ebf60a3cefc006aec303cff82c25702f8f2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5c466d1ac3be1e78a007ad1e5b8f59a833509465445cc096eea8a5c4d11df480"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9347db2c41dfd9104a9f7f24406719f4ea8d5a069bf5bfcf2d8fbef5ea601636"
-    sha256 cellar: :any_skip_relocation, ventura:       "3cfeec84f758b78e3acc523cc68c62f3afe755dee449a95742554904339966f7"
-    sha256                               x86_64_linux:  "8c7f6b58f4376b7b62228c0372ecf516083b31480e9378ca5363aa43194fd1c5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8326e41b43e41f71fa6cf9c32197bd6326249edb1abe5d56f182c5a4ae5491ea"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe77f82f04ef18c3a3ad6457340e8bbc1451467c0babc7a27ebed477ab3a7efd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "184ef91d1d9262339e77cbf68af5230b2d4e3fa2c02919eea92ece9e69429fc2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "56c83d6ce5ee4811cb81388fb1d98b561a7384a72d4fef58180d1ba5ba0101ec"
+    sha256 cellar: :any_skip_relocation, ventura:       "c03c4bda67fda6af378728aa48cfc5b54627a8462b79c6a0ec917f0f708a3702"
+    sha256                               x86_64_linux:  "41451408fa6ba525f18d8389aef3a4f174a6cddd9c1891ed3e20a065374d0db7"
   end
 
   depends_on "go" => :build
@@ -57,15 +66,15 @@ class Podman < Formula
   # More context: https:github.comHomebrewhomebrew-corepull205303
   resource "gvproxy" do
     on_macos do
-      url "https:github.comcontainersgvisor-tap-vsockarchiverefstagsv0.8.4.tar.gz"
-      sha256 "6a2645a3627bdf1d8bfe4a41ecf97956df987464aade18e1574f67e21950e0d1"
+      url "https:github.comcontainersgvisor-tap-vsockarchiverefstagsv0.8.6.tar.gz"
+      sha256 "eb08309d452823ca7e309da2f58c031bb42bb1b1f2f0bf09ca98b299e326b215"
     end
   end
 
   resource "vfkit" do
     on_macos do
-      url "https:github.comcrc-orgvfkitarchiverefstagsv0.6.0.tar.gz"
-      sha256 "4efaf318729101076d3bf821baf88e5f5bf89374684b35b2674c824a76feafdf"
+      url "https:github.comcrc-orgvfkitarchiverefstagsv0.6.1.tar.gz"
+      sha256 "e35b44338e43d465f76dddbd3def25cbb31e56d822db365df9a79b13fc22698c"
     end
   end
 
@@ -78,15 +87,15 @@ class Podman < Formula
 
   resource "netavark" do
     on_linux do
-      url "https:github.comcontainersnetavarkarchiverefstagsv1.13.1.tar.gz"
-      sha256 "b3698021677fb3b0fd1dc5f669fd62b49a7f4cf26bb70f977663f6d1a5046a31"
+      url "https:github.comcontainersnetavarkarchiverefstagsv1.15.0.tar.gz"
+      sha256 "efda776e538ce33050b1f6ce58c5070efeb45653d48fe4d17a47524c8fc17cf1"
     end
   end
 
   resource "aardvark-dns" do
     on_linux do
-      url "https:github.comcontainersaardvark-dnsarchiverefstagsv1.13.1.tar.gz"
-      sha256 "8c21dbdb6831d61d52dde6ebc61c851cfc96ea674cf468530b44de6ee9e6f49e"
+      url "https:github.comcontainersaardvark-dnsarchiverefstagsv1.15.0.tar.gz"
+      sha256 "4ecc3996eeb8c579fbfe50901a2d73662441730ca4101e88983751a96b9fc010"
     end
   end
 

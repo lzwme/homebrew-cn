@@ -1,20 +1,19 @@
 class Fblog < Formula
   desc "Small command-line JSON log viewer"
   homepage "https:github.combrocodefblog"
-  url "https:github.combrocodefblogarchiverefstagsv4.13.1.tar.gz"
-  sha256 "0212dd590cdcb4794a44ea79535ba298c1e971bb344a248fb84528777b0998f1"
+  url "https:github.combrocodefblogarchiverefstagsv4.14.0.tar.gz"
+  sha256 "1474b5fc511e52635d0e95ebd3e139f702794c1570286fd01f6b93ce82282c85"
   license "WTFPL"
   head "https:github.combrocodefblog.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "73867f81b00c8e28c9671b83098bae1aa46d794cd55d4f30ee65d58c1165edd3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a46b49a09c73bf9c6bb4a24854a2ed5396dbcbbbe26f606b20bac77399376425"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "159918297156f46b6f13fe16032a0f3b2e69836fdf00a063dddcf5835f522c90"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9648a49e189ceb4a800f5ced71d164cc92b177116d10b507c68454af9206f586"
-    sha256 cellar: :any_skip_relocation, ventura:       "6311327a97de4601901eeeb25a511a2a4fbf9a9b86618e155972df34fc78399b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ad7f48d3aecc6a1b2d82c2cf719fc1b138338319598f5461973e90c3c21ee8a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37f02dbfb49c62b0d0dbda280d6262f503cb3a45fcdb327e6323858fd75f53cf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77af4a66983d5cc61175df28e30945db3f70bbaa44cd9afe1c8227e7fa566773"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7e93f20ea9990b0411fe95e8a59d1fa0ae9bfcb4a7833fdc3b13e34e9c475231"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c65bde5830c0d0fe471fabe59831f4d1dfea3a8222869cd2e0178e4e0e0e4059"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f27eb1b6ecf7e917e934577cc85c6f1f146fddbe8dd20a791b6e86c25d9fe535"
+    sha256 cellar: :any_skip_relocation, ventura:       "289a02cb2cf5e1780f22a63bcbf6204e97dbf49af04114f440238b02f36a1124"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9a69946c769b0909467778c508dc11f7c5b707aacc7ec30e8ae0b2503e7735d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3452d14b068a9a4df39b2f5cc4f45b19b986b3f3e0879b71cb28e2fdcf93f80a"
   end
 
   depends_on "rust" => :build

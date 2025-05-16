@@ -1,11 +1,9 @@
 class Ledit < Formula
   desc "Line editor for interactive commands"
   homepage "https:pauillac.inria.fr~ddrledit"
-  url "https:github.comchetmurthyleditarchiverefstagsledit-2-06.tar.gz"
-  version "2.06"
-  sha256 "9fb4fe256ca9e878a0b47dfd43b4c64c6a3f089c9e76193b2db347f0d90855be"
+  url "https:github.comchetmurthyleditarchiverefstagsledit-2-07.tar.gz"
+  sha256 "0252dc8d3eb40ba20b6792f9d23b3a736b1b982b674a90efb913795f02225877"
   license "BSD-3-Clause"
-  revision 1
 
   livecheck do
     url :stable
@@ -16,27 +14,19 @@ class Ledit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "61f6cf0c9da96da6a98fc8898d48afb33c27c001359be6ad1fe30a3aef9f164a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5cd73d8f31cd78874d997a6d4fd9f641e48feca0f7fe8563bb76bc1cb3e54fbd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "e3a9793e08a678bf56e0d52ec6d1882a7e9f315b3aa3408444ed140f15bf2b32"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e8fa06836756c84e6f20a13214680bbb0b360025ef193211d7e3ac0b88856202"
-    sha256 cellar: :any_skip_relocation, sonoma:         "ba5e850a2325c803b48366814ccd65ccf4acf57112f9cb16b4bc5ef43add3a8a"
-    sha256 cellar: :any_skip_relocation, ventura:        "61b71950ed308177659d6d98f88e83d9f26b2ce8c9f41cffab9e92eef9988144"
-    sha256 cellar: :any_skip_relocation, monterey:       "482dd44cabb6afec89846ad02430f0b48e2aee3e32885c58eedd38619fdc4886"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "f97323d9419ce17f3a5f3cf7586966484c7e073186588f7a9b86a7219749915d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "280c140f1337f33186cc2d9a1946cd27732435292e98fff8c1a431d408ebb237"
+    sha256                               arm64_sequoia: "a1c09fdb10ac873836f1f3370f77f8d87f9db7adb3ff0118ac0ba97b96cdb15e"
+    sha256                               arm64_sonoma:  "6659da41bcf927019dbd40f4e9c201e964ad63fae3dd19a1425313f3b51672ad"
+    sha256                               arm64_ventura: "62f4ceec2f8e79b0be37a14ffa16ae6741722cb0bb0868d5aac2d12988b5c6bb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "59699dfa06f09eb79a2fd6b500757c7384b27d73cc44f2e5d05c30bc122cb9d5"
+    sha256 cellar: :any_skip_relocation, ventura:       "6db3815932944204f44ab9e31bd34a678c8fc81d92c3b86e5518fc1bc8cffbcd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd2c6e9eb1c5672a81399729bdaa9700876b024c24fd74bc982424790d9d2c01"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd2c6e9eb1c5672a81399729bdaa9700876b024c24fd74bc982424790d9d2c01"
   end
 
   depends_on "ocaml-findlib" => :build
   depends_on "camlp-streams"
   depends_on "camlp5"
   depends_on "ocaml"
-
-  # Backport Makefile fixes. Remove in the next release.
-  patch do
-    url "https:github.comchetmurthyleditcommit3dbd668d9c69aab5ccd61f6b906c14122ae3271d.patch?full_index=1"
-    sha256 "f5aafe054a5daa97d311155931bc997f1065b20acfdf23211fbcbf1172fd7e97"
-  end
 
   def install
     # Work around for https:github.comHomebrewhomebrew-test-botissues805

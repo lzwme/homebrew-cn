@@ -1,15 +1,13 @@
 class ClearlooksPhenix < Formula
   desc "GTK+3 port of the Clearlooks Theme"
   homepage "https:github.comjpfleuryclearlooks-phenix"
-  url "https:github.comjpfleuryclearlooks-phenixarchiverefstags7.0.1.tar.gz"
-  sha256 "2a9b21400f9960422e31dc4dabb4f320a16b76776a9574f0986bb00e97d357f4"
+  url "https:github.comjpfleuryclearlooks-phenixarchiverefstags7.1.tar.gz"
+  sha256 "8219c025341b2eaa992cba01e7ff6da3397e5a005fc4ae1038fdb371efcfb0ce"
   license "GPL-3.0-or-later"
-  revision 1
   head "https:github.comjpfleuryclearlooks-phenix.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "b78942e05a0bc1e821d1d2177a877ec93672ea0d7d2e300053388ab486f0bfe0"
+    sha256 cellar: :any_skip_relocation, all: "37f83957b60d7f567870434c313d3d02340d40ff4cc32a7deb81134fe2570b96"
   end
 
   depends_on "gtk+3"

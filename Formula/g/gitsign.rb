@@ -7,12 +7,13 @@ class Gitsign < Formula
   head "https:github.comsigstoregitsign.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5538f1363f5de98c39e0852466e60760a1ac41897898a53ea8a1e6be8c51073"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a5538f1363f5de98c39e0852466e60760a1ac41897898a53ea8a1e6be8c51073"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a5538f1363f5de98c39e0852466e60760a1ac41897898a53ea8a1e6be8c51073"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e5ccc30736a770121a38b5fb244366772e0896444327a77f2fd9e8603a45512e"
-    sha256 cellar: :any_skip_relocation, ventura:       "b6fcf5ab28be0d59f6c3b190cfffccfb03e051f85134651e44e05346fa7724ac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38e5d529b00b480c2a3563eb3b71c1f1e1bfaaa5494d179dbb10aca5f750600b"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bb69be6710bca5b749df22b3e2667ccf6c956bb3bcbb3514233fc1c6b25d5ebd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bb69be6710bca5b749df22b3e2667ccf6c956bb3bcbb3514233fc1c6b25d5ebd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "bb69be6710bca5b749df22b3e2667ccf6c956bb3bcbb3514233fc1c6b25d5ebd"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e3eef280e52665777633f316053e44d2592a085352b96336fbe40e53aed80602"
+    sha256 cellar: :any_skip_relocation, ventura:       "6167f0a2d13d9bf172de4677fe293375f0aa39190681f5b5c15f76f5429dec35"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc2ec9b3d99c682cf9e036d6eb7b596116df6b38e469264c0f3cb909e4bc37b1"
   end
 
   depends_on "go" => :build
@@ -23,6 +24,8 @@ class Gitsign < Formula
       -X github.comsigstoregitsignpkgversion.gitVersion=#{version}
     ]
     system "go", "build", *std_go_args(ldflags:)
+    system "go", "build", *std_go_args(ldflags:, output: bin"gitsign-credential-cache"),
+      ".cmdgitsign-credential-cache"
 
     generate_completions_from_executable(bin"gitsign", "completion")
   end
