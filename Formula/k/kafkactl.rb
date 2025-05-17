@@ -1,18 +1,18 @@
 class Kafkactl < Formula
   desc "CLI for managing Apache Kafka"
   homepage "https:deviceinsight.github.iokafkactl"
-  url "https:github.comdeviceinsightkafkactlarchiverefstagsv5.7.0.tar.gz"
-  sha256 "fa3b55d4179ab0c100a9d3d539b1e262ee619d1f99344c89468215bb41474c6d"
+  url "https:github.comdeviceinsightkafkactlarchiverefstagsv5.8.0.tar.gz"
+  sha256 "fe76c997cdc10aa52d984b6abcc14fe4c832182a1e03e1dd6225f38a4f5b5615"
   license "Apache-2.0"
   head "https:github.comdeviceinsightkafkactl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4685763409834c52c3fbcb962b14d1deb3f0b9df7a5de1c9c1a0675c0aff2e0c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4685763409834c52c3fbcb962b14d1deb3f0b9df7a5de1c9c1a0675c0aff2e0c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4685763409834c52c3fbcb962b14d1deb3f0b9df7a5de1c9c1a0675c0aff2e0c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "5691e36f0f70866d0df11cd1b1fc69e421b9ff327842683f63566d1b66f8c1ab"
-    sha256 cellar: :any_skip_relocation, ventura:       "5691e36f0f70866d0df11cd1b1fc69e421b9ff327842683f63566d1b66f8c1ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1fce6d1066b6b908d8ef983a2b9bf63001c898176d07a2a1b03ffa266985c2c4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f5deecb945ab1c7f60dd9231cbc7ad9e921260a6c3c09ae950e65754b68716d7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f5deecb945ab1c7f60dd9231cbc7ad9e921260a6c3c09ae950e65754b68716d7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f5deecb945ab1c7f60dd9231cbc7ad9e921260a6c3c09ae950e65754b68716d7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d6b7d4466e3d793e4dda82a96539f79851b7424219f7724aedcdb4b2fdd36f43"
+    sha256 cellar: :any_skip_relocation, ventura:       "d6b7d4466e3d793e4dda82a96539f79851b7424219f7724aedcdb4b2fdd36f43"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "467ce6793c7872edebdd2f4b417249af775103b404e25d0ca4033fdfea2ed161"
   end
 
   depends_on "go" => :build

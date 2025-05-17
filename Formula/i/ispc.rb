@@ -1,10 +1,9 @@
 class Ispc < Formula
   desc "Compiler for SIMD programming on the CPU"
   homepage "https:ispc.github.io"
-  url "https:github.comispcispcarchiverefstagsv1.26.0.tar.gz"
-  sha256 "f75b26894af1429a3dc6929ae03e2c9e99bb8c5930eda14add5d2f6674db7afb"
+  url "https:github.comispcispcarchiverefstagsv1.27.0.tar.gz"
+  sha256 "c41ae29e4f6b1d37154610e68e9b7a0eb225cd7c080242ab56fa0119e49dbd7a"
   license "BSD-3-Clause"
-  revision 1
 
   # Upstream sometimes creates releases that use a stable tag (e.g., `v1.2.3`)
   # but are labeled as "pre-release" on GitHub, so it's necessary to use the
@@ -15,13 +14,13 @@ class Ispc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8ca65ff11543bb326b81d959a0edb4223098d6f9d735733ee004816574aea051"
-    sha256 cellar: :any,                 arm64_sonoma:  "8e37e253863a335c144afaa6f7b159a9dff376fa874db90e9a9fca54ed9408f8"
-    sha256 cellar: :any,                 arm64_ventura: "fee375a66b0d659a61a8b8682dd46f938e997a78d0b228f6ebea5ef17a81175f"
-    sha256 cellar: :any,                 sonoma:        "1741872fdafe79dfbd305382c122a2a7a7cd849d06fdc0d8ca8c1d9860075d19"
-    sha256 cellar: :any,                 ventura:       "f3232ae325e47ed4a131e06f7a33c7c45428d9fd59b9da0b56bbcea6a626a766"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f8b5e673cf3ffccdabf4730cb099907f9ff73375e867dae4fe13446bb96394e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "701d608135443f6fd38f019c5a7a993214bc395e3c14005d074a8261a8dd795e"
+    sha256 cellar: :any,                 arm64_sequoia: "be75e6c28f90c2d54f288e0268803e52421c130764bf72df3dde613b7e7c81fc"
+    sha256 cellar: :any,                 arm64_sonoma:  "9b71c4bd3699d3f5d095ba599530ef86581be0c8abf543dca123a3201fdf8849"
+    sha256 cellar: :any,                 arm64_ventura: "12f513bde46acf3e834f611ba80a32693ab39c443cb6826a7a844dc4133f0d95"
+    sha256 cellar: :any,                 sonoma:        "ff78c5988bbaa1d87c3e117dfdcef16c68aea0f430ea113a44b6491345d0eb75"
+    sha256 cellar: :any,                 ventura:       "3bd271b4ea0f43414226cf6fb3a2951b944da88fcc7416c0065e74424271f5c6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f11552068773867fad6194a4b352088c21da18f4c607a79b40878640c1780c9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff95b06a16ccb8e759c1957ee2f6abf630b468e63acccf204b78eaae7ccf7ae8"
   end
 
   depends_on "bison" => :build
@@ -33,20 +32,6 @@ class Ispc < Formula
 
   on_linux do
     depends_on "tbb"
-  end
-
-  # Backport commits for LLVM 20, https:github.comispcispcpull3286
-  patch do
-    url "https:github.comispcispccommitd8082c8e73a7998d2d527c1ac87d5acf1d35aba4.patch?full_index=1"
-    sha256 "f21388d50719bf282b161a59a3dba4b6cb8b4f4b3be5fb88c501a63086566112"
-  end
-  patch do
-    url "https:github.comispcispccommit26e0c53ee7e3639fe37f796ebc402776fd5ac771.patch?full_index=1"
-    sha256 "66a5148a1baf02a64c52faba61094ae186001b7a2595ef42b7b88a05d423301d"
-  end
-  patch do
-    url "https:github.comispcispccommit2e7b817e1a4dbb623d922eb5eec94749002e5585.patch?full_index=1"
-    sha256 "44d4ee4c256180abc9590d640c5fe3d1175102fd9365ab1976a45c64d1ef81ba"
   end
 
   def llvm

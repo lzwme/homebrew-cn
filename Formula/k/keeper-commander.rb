@@ -3,19 +3,19 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https:docs.keeper.ioenprivileged-access-managercommander-clioverview"
-  url "https:files.pythonhosted.orgpackagese915800c62255244e49cdce534099480361c27dcd7ba2003cfeaa1fd6bf6a412keepercommander-17.0.18.tar.gz"
-  sha256 "7f94a46a713f25fadbe8d6becad1df142ad03d365b122855f81f3d2891ab7386"
+  url "https:files.pythonhosted.orgpackages625b5f0976956f5093486391438be158178f15c8dd574d45a0cf2d0565e09572keepercommander-17.0.19.tar.gz"
+  sha256 "eb4c6da19ba3b3f3b399c23dc0910e5634847883fe73a9465ea156369a8da122"
   license "MIT"
   head "https:github.comKeeper-SecurityCommander.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8d785f1c5fbd9e803396345751f42e84ab06743bd9242ce78d5232415819114f"
-    sha256 cellar: :any,                 arm64_sonoma:  "6372e7c40a3fcfe70ccc9a1eec51eb0a6fa810a2b8ece07975474e32a287d2e4"
-    sha256 cellar: :any,                 arm64_ventura: "6f9d22ca208b9c443f3e78d40b6b43ba762de953c3cda2d3ff1c1ebf60c05041"
-    sha256 cellar: :any,                 sonoma:        "f7d29973c9850daa170e3a7987408f723c60e400e14672ceb6337b9333de36b6"
-    sha256 cellar: :any,                 ventura:       "38bbc586c05a03dff45f9cb666861ac78996d9e4935c82eea295237e21d82b74"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "918fada16bb8b251a514ab467519fb21a220a7d16081e05cbb755fd34b087cfc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "915908752e6638083e356b5e23cc68036ce9c76542867b37fbb9b010738941ab"
+    sha256 cellar: :any,                 arm64_sequoia: "a3135211e875e6b956fb0f75e45ca24069b721e9f6d192ce4a33a93e57e155c3"
+    sha256 cellar: :any,                 arm64_sonoma:  "324b74c1ceca937f2dc43c63e4996b33f69933b5f6a7d07ff5f9d2896de9f466"
+    sha256 cellar: :any,                 arm64_ventura: "6914589becdff584ca8441f7e327a0a8f5e53bfa1d52a4aa1adf54668f297326"
+    sha256 cellar: :any,                 sonoma:        "69be274bdb770ded831f2e5b2a914c032b4feadeea1e611b9e619e660df2333a"
+    sha256 cellar: :any,                 ventura:       "203fbcbdc984395ae7cb3dbc7a5a5bcd140dc8655b028174e39b93568ace8882"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4eaf1ab21ad9c94506af083e186e0ff73d571953cbda79a2023135d19f332d7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ad0fd7f54265464573830fdc12b4961c0395cc3149617e8f0ba4a6a0acc5f910"
   end
 
   depends_on "pkgconf" => :build
@@ -39,8 +39,8 @@ class KeeperCommander < Formula
   end
 
   resource "aiortc" do
-    url "https:files.pythonhosted.orgpackages91607bb59c28c6e65e5d74258d392f531f555f12ab519b0f467ffd6b76650c20aiortc-1.11.0.tar.gz"
-    sha256 "50b9d86f6cba87d95ce7c6b051949208b48f8062b231837aed8f049045f11a28"
+    url "https:files.pythonhosted.orgpackages0da8cebfc59aaa13fd48466db152f9fbb81c476bda387ecddfc340cd62411aecaiortc-1.12.0.tar.gz"
+    sha256 "c99d89a60a473074532020329de7ee23253bac17606d85ba4aab4c6148e94b39"
   end
 
   resource "annotated-types" do
@@ -54,8 +54,8 @@ class KeeperCommander < Formula
   end
 
   resource "av" do
-    url "https:files.pythonhosted.orgpackagesf8b683129e0337376214b0304893cbf0ad0a54718bb47845517fa5870439ca0bav-14.2.0.tar.gz"
-    sha256 "132b5d52ca262b97b0356e8f48cbbe54d0ac232107a722ab8cc8c0c19eafa17b"
+    url "https:files.pythonhosted.orgpackages86f60b473dab52dfdea05f28f3578b1c56b6c796ce85e76951bab7c4e38d5a74av-14.4.0.tar.gz"
+    sha256 "3ecbf803a7fdf67229c0edada0830d6bfaea4d10bfb24f0c3f4e607cd1064b42"
   end
 
   resource "bcrypt" do
@@ -114,8 +114,8 @@ class KeeperCommander < Formula
   end
 
   resource "protobuf" do
-    url "https:files.pythonhosted.orgpackagesc88ccf2ac658216eebe49eaedf1e06bc06cbf6a143469236294a1171a51357c3protobuf-6.30.2.tar.gz"
-    sha256 "35c859ae076d8c56054c25b59e5e59638d86545ed6e2b6efac6be0b6ea3ba048"
+    url "https:files.pythonhosted.orgpackages1348718c1e104a2e89970a8ff3b06d87e152834b576c570a6908f8c17ba88d65protobuf-6.31.0.tar.gz"
+    sha256 "314fab1a6a316469dc2dd46f993cbbe95c861ea6807da910becfe7475bc26ffe"
   end
 
   resource "pycryptodomex" do
@@ -129,8 +129,8 @@ class KeeperCommander < Formula
   end
 
   resource "pydantic-core" do
-    url "https:files.pythonhosted.orgpackages42fa5f682f3db14e14f7b5b7f5008ac24594b93943d1da4facbacff5876624cfpydantic_core-2.34.1.tar.gz"
-    sha256 "6bf31628ab6d0e7c7c0372419898c52ef0a447b33ab47c7f62053bd013cc5b09"
+    url "https:files.pythonhosted.orgpackagesad885f2260bdfae97aabf98f1778d43f69574390ad787afb646292a638c923d4pydantic_core-2.33.2.tar.gz"
+    sha256 "7cb8bc3605c29176e1b105350d2e6474142d7c1bd1d9327c4a9bdb46bf827acc"
   end
 
   resource "pyee" do

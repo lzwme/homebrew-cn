@@ -1,18 +1,18 @@
 class Tfsort < Formula
   desc "CLI to sort Terraform variables and outputs"
   homepage "https:github.comAlexNabokikhtfsort"
-  url "https:github.comAlexNabokikhtfsortarchiverefstagsv0.4.0.tar.gz"
-  sha256 "b1efeee957a11314aa6dfe2cb9f6ae3e8ee8bed18351daaf7348b13bbd818d4c"
+  url "https:github.comAlexNabokikhtfsortarchiverefstagsv0.5.0.tar.gz"
+  sha256 "318b025f4e0f4807df30b6f26271ae583bf7942b9829214927de7a1a4ec8ecc8"
   license "Apache-2.0"
   head "https:github.comAlexNabokikhtfsort.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "59fe21c616a425dfa59d7a05b1cea91427d43b853641492804a8aba4d7ee202d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "59fe21c616a425dfa59d7a05b1cea91427d43b853641492804a8aba4d7ee202d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "59fe21c616a425dfa59d7a05b1cea91427d43b853641492804a8aba4d7ee202d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c9e422de4603bda51a952451bd408bd01c2962be21e9a514ad10c5359946bcbd"
-    sha256 cellar: :any_skip_relocation, ventura:       "c9e422de4603bda51a952451bd408bd01c2962be21e9a514ad10c5359946bcbd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3f719d148a0502350a980736ff85a2ad01fd2fb9fe07c79ad8e9f6a0a7101d8d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dacad22dfae681a7814b738eb03b43d0d7dcab397aec089b593f7e31285e213f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dacad22dfae681a7814b738eb03b43d0d7dcab397aec089b593f7e31285e213f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "dacad22dfae681a7814b738eb03b43d0d7dcab397aec089b593f7e31285e213f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c8f12f4272fbfb70f455365eba3d949a87cf18101815b83f12ffdd8ccd54e505"
+    sha256 cellar: :any_skip_relocation, ventura:       "c8f12f4272fbfb70f455365eba3d949a87cf18101815b83f12ffdd8ccd54e505"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70224339c36fd9e74e0dd174231f8738a35a746d3cdf8553e25d61bc6f5ee645"
   end
 
   depends_on "go" => :build

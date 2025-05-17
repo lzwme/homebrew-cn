@@ -1,8 +1,8 @@
 class WildflyAs < Formula
   desc "Managed application runtime for building applications"
   homepage "https:www.wildfly.org"
-  url "https:github.comwildflywildflyreleasesdownload36.0.0.Finalwildfly-36.0.0.Final.tar.gz"
-  sha256 "348d17ead028b09a28b11aa271b99f27105e051db89b6fd2ecdaf2b2c736e009"
+  url "https:github.comwildflywildflyreleasesdownload36.0.1.Finalwildfly-36.0.1.Final.tar.gz"
+  sha256 "1a0f71680cac962cef03173e81f5ff8886175f18292db158b75c8077cf4ac38d"
   license "Apache-2.0"
 
   livecheck do
@@ -11,11 +11,11 @@ class WildflyAs < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "6b0de09bed75c4cfb42363458a668fa9da62261ebea864ff9cca35ddee3cbb31"
-    sha256 cellar: :any, arm64_sonoma:  "6b0de09bed75c4cfb42363458a668fa9da62261ebea864ff9cca35ddee3cbb31"
-    sha256 cellar: :any, arm64_ventura: "6b0de09bed75c4cfb42363458a668fa9da62261ebea864ff9cca35ddee3cbb31"
-    sha256 cellar: :any, sonoma:        "ed17d4260fca48a1952267675ece1c6508e2f6547c29a24e243e000fb3e89d2f"
-    sha256 cellar: :any, ventura:       "ed17d4260fca48a1952267675ece1c6508e2f6547c29a24e243e000fb3e89d2f"
+    sha256 cellar: :any, arm64_sequoia: "3227b34a4c0c8a1f4e9fdc304cda6a6858a0e2dc8d00313dc12b66f783888eee"
+    sha256 cellar: :any, arm64_sonoma:  "3227b34a4c0c8a1f4e9fdc304cda6a6858a0e2dc8d00313dc12b66f783888eee"
+    sha256 cellar: :any, arm64_ventura: "3227b34a4c0c8a1f4e9fdc304cda6a6858a0e2dc8d00313dc12b66f783888eee"
+    sha256 cellar: :any, sonoma:        "4cf412f1900615e8dfdfc370fde2022397abcf9cdf517ef13089f3369de4ef45"
+    sha256 cellar: :any, ventura:       "4cf412f1900615e8dfdfc370fde2022397abcf9cdf517ef13089f3369de4ef45"
   end
 
   # Installs a pre-built `libartemis-native-64.so` file with linkage to libaio.so.1
@@ -24,15 +24,15 @@ class WildflyAs < Formula
 
   def install
     buildpath.glob("bin*.{bat,ps1}").map(&:unlink)
-    buildpath.glob("**win-x86_64").map(&:rmtree)
-    buildpath.glob("**linux-i686").map(&:rmtree)
-    buildpath.glob("**linux-s390x").map(&:rmtree)
-    buildpath.glob("**linux-x86_64").map(&:rmtree)
-    buildpath.glob("**netty-transport-native-epoll**native").map(&:rmtree)
+    rm_r buildpath.glob("**win-x86_64")
+    rm_r buildpath.glob("**linux-i686")
+    rm_r buildpath.glob("**linux-s390x")
+    rm_r buildpath.glob("**linux-x86_64")
+    rm_r buildpath.glob("**netty-transport-native-epoll**native")
     if Hardware::CPU.intel?
       buildpath.glob("***_aarch_64.jnilib").map(&:unlink)
     else
-      buildpath.glob("**macosx-x86_64").map(&:rmtree)
+      rm_r buildpath.glob("**macosx-x86_64")
       buildpath.glob("***_x86_64.jnilib").map(&:unlink)
     end
 

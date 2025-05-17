@@ -1,8 +1,8 @@
 class Llgo < Formula
   desc "Go compiler based on LLVM integrate with the C ecosystem and Python"
   homepage "https:github.comgoplusllgo"
-  url "https:github.comgoplusllgoarchiverefstagsv0.11.3.tar.gz"
-  sha256 "6e51c300d49b33ce66f562b721fcf4f27d7ed6502382682d02b83786ba49e313"
+  url "https:github.comgoplusllgoarchiverefstagsv0.11.5.tar.gz"
+  sha256 "e025993d12c1f5e49e5b8dcb31c0e8b349efe56970d1a23d6c089ebd10928c6b"
   license "Apache-2.0"
   head "https:github.comgoplusllgo.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Llgo < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "301657dfac614b209cd41e7aedd01cf62825c8e116646ee93d0e527425be39ef"
-    sha256 cellar: :any, arm64_sonoma:  "58f7518f88c21c764fbe885a02327514603d452675a457da96932d8036bd7d44"
-    sha256 cellar: :any, arm64_ventura: "a658c43e1e63d797813cb58bde26a6f650adfd967614501b4899b67909ed5e35"
-    sha256 cellar: :any, sonoma:        "adc0711a8f6bd9a31d4d17e8e50e72d29748428006b5816bccea197bb0c64bf6"
-    sha256 cellar: :any, ventura:       "019af6713d1f25c979971a7759d5b50fdd2f25b4d41eac2bf93087a98863fb64"
-    sha256               x86_64_linux:  "84a8c66af302faace3159e60537e9f1b7e40cbd1215deb3c5c4ef46d0d5d535a"
+    sha256 cellar: :any, arm64_sequoia: "b10ff1d39f288838a7b5a13a63a3e16804d8ea628cdfd6696f0af887433971fc"
+    sha256 cellar: :any, arm64_sonoma:  "d0754d188737c058658ed2a70dc35766fcda1749dfe5e95f546179d33c4fd8ea"
+    sha256 cellar: :any, arm64_ventura: "915d149d72ed455e7a710084ce4b2b7717354c11080a7d908b1ae55b010f14cf"
+    sha256 cellar: :any, sonoma:        "bf3b8f7feffaaaeb6db5553b06276f0d16e659395f5190ff2e41833c5f237c17"
+    sha256 cellar: :any, ventura:       "5a52937041fcdcdc649157cd0f8493737d6988d1213ad1d664a63fca8153c2ff"
+    sha256               x86_64_linux:  "90b74a9797489b39973dbc58bf1abfaf1a88018be88665517fdd309f91b38e14"
   end
 
   depends_on "bdw-gc"

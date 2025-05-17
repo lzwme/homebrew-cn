@@ -1,19 +1,19 @@
 class Grype < Formula
   desc "Vulnerability scanner for container images and filesystems"
   homepage "https:github.comanchoregrype"
-  url "https:github.comanchoregrypearchiverefstagsv0.92.0.tar.gz"
-  sha256 "f336e844721f78b928399e1b7b0bc11d1e8f7b9a20daf22b4ff6959b8197be14"
+  url "https:github.comanchoregrypearchiverefstagsv0.92.1.tar.gz"
+  sha256 "c6ac75f6ab6774fbc52934c5ecf39db24c8cd3c3fecb546db4f2bf0f2def27ef"
   license "Apache-2.0"
   head "https:github.comanchoregrype.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0e74e1f2e5aa5d26cd7b6ed307f615cae6582808fc0f93d0ac830843f9861032"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "583d5c0bc185b6deae2b523c5276a0e227bb646ba1ee4659d937374e4468bc33"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7dd68f51b91e125dcc609b497db0c1bffb7c688fa4501288250264ff6cc55254"
-    sha256 cellar: :any_skip_relocation, sonoma:        "24537105269f8fd964bbff9690f2a1f2dd0616081c3259e35b8d2b9f0a9fd4fc"
-    sha256 cellar: :any_skip_relocation, ventura:       "7110d2834d7bedfa1bba16a4a2731c81829d63b332a116b0e3ff9c286ca3c5df"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c851832f9731eb851726eab281a27cb7c9889c3b52173e29290c1782ca205346"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "613b7b4064281666ce5128ec9f5780b1fa14fc1845e2d02d5d73af55e01770d5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6cd8d9601eaffed820f553990e09e90d2c2f86775f9d586a3f6a173edd3a650a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6a48394ad3f39c22762b5cdd5456b023c1124e834bdff2b95a156fabcea314b5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d2dc6c4b21a854bad40b8dbd9a21dd7aca00330de492f95a00b1390c34d8183c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1d86c74c5901d92409c54174cc05e1bc38e66ebd3c41e5fd577c804f24820e7f"
+    sha256 cellar: :any_skip_relocation, ventura:       "d24641c39df87cb35078149bab4e58f767d8015ee92bf8a3dfefdad8561f88e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "17d5e7cd00f678d4474e08cf9db6c002507d324cfd21aad16dc14a2aa0ade2b6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37ee05713cd237f6ed6df858b73541f9a040f333c83f592ef539722b10b9f021"
   end
 
   depends_on "go" => :build

@@ -1,18 +1,18 @@
 class SnykCli < Formula
   desc "Scans and monitors projects for security vulnerabilities"
   homepage "https://snyk.io"
-  url "https://registry.npmjs.org/snyk/-/snyk-1.1297.0.tgz"
-  sha256 "37fea0a588399299c837c5da374771e87196cf54f909cae748aacc0623ad754d"
+  url "https://registry.npmjs.org/snyk/-/snyk-1.1297.1.tgz"
+  sha256 "c522a66b7efd5819679718df5208d1c8d03027aec9672103556a072438ad4ac2"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "44eb6c987660c1c15e54b565b9fc0e67d9f1883bf52ef00419457419c93a0156"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "44eb6c987660c1c15e54b565b9fc0e67d9f1883bf52ef00419457419c93a0156"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "44eb6c987660c1c15e54b565b9fc0e67d9f1883bf52ef00419457419c93a0156"
-    sha256 cellar: :any_skip_relocation, sonoma:        "02acc799ce455f3cf9b2c5a4818204c0349d62c1aa33e0b380b271b6b956b824"
-    sha256 cellar: :any_skip_relocation, ventura:       "02acc799ce455f3cf9b2c5a4818204c0349d62c1aa33e0b380b271b6b956b824"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "edbc440ab245588118c5d9c090811f92a3b31edaea95bfd0d94ed5ab5d2b7731"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "00a81ba4f815c1265d44cb83e33faeb25417f1c19fdee43af41e82f4bfa7808a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "880af6a59c80099ddd69ce6c256a46c66a676a3da2b54f5f30983fdeae486c32"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "880af6a59c80099ddd69ce6c256a46c66a676a3da2b54f5f30983fdeae486c32"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "880af6a59c80099ddd69ce6c256a46c66a676a3da2b54f5f30983fdeae486c32"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7ed2332c274689a03c908c6fe5883ed81977d4066a1b25da0144c55c6d358f09"
+    sha256 cellar: :any_skip_relocation, ventura:       "7ed2332c274689a03c908c6fe5883ed81977d4066a1b25da0144c55c6d358f09"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bde11460cfbface8f236405058a148c4fa73c1d3c10b5c684ec076075db20ed7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f46595927044631a68bc16fab4fe406b4723e994eb54ca1408979518e651712b"
   end
 
   depends_on "node"

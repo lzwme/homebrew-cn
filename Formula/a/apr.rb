@@ -1,21 +1,19 @@
 class Apr < Formula
   desc "Apache Portable Runtime library"
   homepage "https://apr.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=apr/apr-1.7.5.tar.bz2"
-  mirror "https://archive.apache.org/dist/apr/apr-1.7.5.tar.bz2"
-  sha256 "cd0f5d52b9ab1704c72160c5ee3ed5d3d4ca2df4a7f8ab564e3cb352b67232f2"
+  url "https://www.apache.org/dyn/closer.lua?path=apr/apr-1.7.6.tar.bz2"
+  mirror "https://archive.apache.org/dist/apr/apr-1.7.6.tar.bz2"
+  sha256 "49030d92d2575da735791b496dc322f3ce5cff9494779ba8cc28c7f46c5deb32"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "aa4997bb5769c8a7438cc204cc7b6a366ca96e32649855e1cc3a81fbe2b1f6c3"
-    sha256 cellar: :any,                 arm64_sonoma:   "d4ddf068fd1c071ac911af823e5b7b6de2a4506a1812e95bc9505c844b5524fe"
-    sha256 cellar: :any,                 arm64_ventura:  "bed002cafeb67dbf1cfe8a20691cdc8ca251ae3e7404caa9e839b92cf9cfe7b2"
-    sha256 cellar: :any,                 arm64_monterey: "1272fcd1a362d19f3d57340ff356e9d3f6f332d8c28ca3f95dc184736d2b2d94"
-    sha256 cellar: :any,                 sonoma:         "427b76fa372c2a89e40aeadbe559aabc39eabee537e785ac824309de2d53074d"
-    sha256 cellar: :any,                 ventura:        "49cd82349f0bd06675d4eca2ccfa12c61f990e58063582faaca94ae93b4dc598"
-    sha256 cellar: :any,                 monterey:       "ee20045b0546f5e70efa396f21e49c3354e2bbe5a6c7397f8cbe7638537aae2b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "8bf82c4ca4ab3fdf3f6ac7c0579de6b330633231dc649b5797ecc376ebd47ebc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "dffbdbc595b875e62f84d705af046b4c95d4287fc61f2f0cc71e5480b6633a98"
+    sha256 cellar: :any,                 arm64_sequoia: "58a68eee9f289319c41100b42bddbaa265366c093e0c0f83e4295c7a535d7395"
+    sha256 cellar: :any,                 arm64_sonoma:  "d89324cbc51a250e109e00dc2e90ce77611058027060c39c83bb771118502332"
+    sha256 cellar: :any,                 arm64_ventura: "c9c536ea3504e24b30b5cf6187100f746eba704e237d3839d0c04feb98df623e"
+    sha256 cellar: :any,                 sonoma:        "fdf0f628598225db7ea43128abaf944011df61e2469811709c250607745b8570"
+    sha256 cellar: :any,                 ventura:       "327273dae10ae18781b2f347531253d968e0c06533c913a80d775a5972e65477"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee70c4b7041ea9743a1f87c8c0c9dc14e7a3372ab5d5e073912913b83cf2bcc3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a52537b5ff653a7c477dd67be99faeb1684d3002cd9afe6c24501118083a6154"
   end
 
   keg_only :provided_by_macos, "Apple's CLT provides apr"

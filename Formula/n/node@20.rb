@@ -1,10 +1,9 @@
 class NodeAT20 < Formula
   desc "Platform built on V8 to build network applications"
   homepage "https://nodejs.org/"
-  url "https://registry.npmmirror.com/-/binary/node/v20.19.0/node-v20.19.0.tar.xz"
-  sha256 "5ac2516fc905b6a0bc1a33e7302937eac664a820b887cc86bd48c035fba392d7"
+  url "https://registry.npmmirror.com/-/binary/node/v20.19.2/node-v20.19.2.tar.xz"
+  sha256 "4a7ff611d5180f4e420204fa6f22f9f9deb2ac5e98619dd9a4de87edf5b03b6e"
   license "MIT"
-  revision 1
 
   livecheck do
     url "https://registry.npmmirror.com/-/binary/node/"
@@ -12,13 +11,13 @@ class NodeAT20 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "6dbede32ed7d323ceeed43a83789824ab7cdfaf9df92041a2486eb522ca6769e"
-    sha256 arm64_sonoma:  "055407d0f413c52142e700b193a4fac6b309e4e6bc90a14e6f7ee59d848d18d2"
-    sha256 arm64_ventura: "cd12c0e1b8d6bf21f683165fbaf5cf59826d9e9b153edd279e2903275bd7547c"
-    sha256 sonoma:        "a5d4e6820e57c3ffc0e18ca743d8b691e9c4767a8446fede3033bf0fe9c712f4"
-    sha256 ventura:       "27208e60a4e8c5efeb422ae6511e4a7e8136ab68e7c1d8b7122d41f386fac6b2"
-    sha256 arm64_linux:   "204ccf94c351e5d9b53cc06e3954f60afb4d1abfe623c5182cafd652bff9acef"
-    sha256 x86_64_linux:  "839975a075d3f16bf8d6cc47e229b8a3a0bbd43146356bba927de449135dcbb8"
+    sha256 arm64_sequoia: "be55f8d8c39ef95fc8679c5134e220170a1018b8260d4e0ef094bc1a2b4a9f75"
+    sha256 arm64_sonoma:  "6da90926c6e9c66a8a7cf036fac648b725885e9df5c4555138db694035fecb8f"
+    sha256 arm64_ventura: "a8868e101395048bb17d35f6c70d61876e79de376b09bd6c3008c89caebe9619"
+    sha256 sonoma:        "4f0d2148422fa01d70d1128f956625b75f2b6fb6e7e5e3fb51e32c982f5410cf"
+    sha256 ventura:       "d850934c12a4c34c7219346a875d8038f55484ad0630a81d59fd1142b4032235"
+    sha256 arm64_linux:   "7c0fddc0126df790140b7851ca49982e843c4fb94b35642b10cd08b1b16bdc17"
+    sha256 x86_64_linux:  "d70ddaccae20469adb9fbbd4f02f96f8d6e1fa8230f0199672c2e3204146c490"
   end
 
   keg_only :versioned_formula
@@ -48,6 +47,20 @@ class NodeAT20 < Formula
     cause <<~EOS
       error: calling a private constructor of class 'v8::internal::(anonymous namespace)::RegExpParserImpl<uint8_t>'
     EOS
+  end
+
+  # Fix build with Xcode 16.3.
+  patch do
+    url "https://github.com/Bo98/node/commit/3b5eb14cad3a493e99f84ca45871bd37570cae3d.patch?full_index=1"
+    sha256 "3a110c30ec63c4e5afbb48f27922a69c40d3939db5a5b6b20d40660f996ae27d"
+  end
+  patch do
+    url "https://github.com/Bo98/node/commit/e2ab76c1aeceaf866b8c5053cf71f199706d621d.patch?full_index=1"
+    sha256 "b306c7cfa910e025b1a23fda1da8f8613310a2d7b5c575d3718529db8d9e7fdd"
+  end
+  patch do
+    url "https://github.com/Bo98/node/commit/a56d782971c30164545e76a97b07ade373a3a565.patch?full_index=1"
+    sha256 "86af038fca81170d41e7c324864cc74fb098dbea6b8d28273b6b50ca53415979"
   end
 
   def install

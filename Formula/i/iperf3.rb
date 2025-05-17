@@ -1,8 +1,8 @@
 class Iperf3 < Formula
   desc "Update of iperf: measures TCP, UDP, and SCTP bandwidth"
   homepage "https:github.comesnetiperf"
-  url "https:downloads.es.netpubiperfiperf-3.18.tar.gz"
-  sha256 "c0618175514331e766522500e20c94bfb293b4424eb27d7207fb427b88d20bab"
+  url "https:downloads.es.netpubiperfiperf-3.19.tar.gz"
+  sha256 "040161da1555ec7411a9d81191049830ef37717d429a94ee6cf0842618e0e29c"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,13 +11,13 @@ class Iperf3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "afa3ad80146f97f3881e7b11001b86607a2fd3f91d7b7321d1dd23e407165ff5"
-    sha256 cellar: :any,                 arm64_sonoma:  "18879823e7b5da6f272ccfee521d5e472991446ac9abf02c83f4bca98815c503"
-    sha256 cellar: :any,                 arm64_ventura: "fddee79c5fb5d0507590f1750140936cef0123c5880422e62cf091f28426d219"
-    sha256 cellar: :any,                 sonoma:        "14cac44b69e7d492cc3057c11deca0cde4a0c7685fec6fc8d76f0c36480e92ee"
-    sha256 cellar: :any,                 ventura:       "95973254270c226cba64aeb3394534de4a6c4e3c6ac5d93a221da58128bae2d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e85d170629520862e53cfafde65f4779266bb7afd32b727eac04ba5bdeb1ba5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e882398a3b0d2b0a2e068f0c92e76b3e4c7698c7e1e592d310b568fece389866"
+    sha256 cellar: :any,                 arm64_sequoia: "67c8b3abe55fe23d1e7ac6e8eb300f57e2338a1f963f1f05e750dbe1639394a1"
+    sha256 cellar: :any,                 arm64_sonoma:  "6ff5765168f49508d74b9af9ba058a936271bd458f8adb9b4e4f82c799a4ed0f"
+    sha256 cellar: :any,                 arm64_ventura: "e2ca4956b1216a01c629a34ceeb0b04abf8f23436570cb92e4e15b8b5bd770b6"
+    sha256 cellar: :any,                 sonoma:        "70d619e4baa2ce45a00053bdc0c1b78602567c4f306b03a21a2543b546831e73"
+    sha256 cellar: :any,                 ventura:       "73a51854a8945d6eea4e9f6e92961aadce4c924debafb9feaad6c34482092941"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f49105b887dd27f568736932509678e809300645a8bd2f411d91aee177f34333"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bccb97178d72534912f3bff8205d1464bbfd2a3cd5f83e454cba212b59fb124"
   end
 
   head do

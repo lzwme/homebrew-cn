@@ -1,22 +1,20 @@
 class Screen < Formula
   desc "Terminal multiplexer with VT100/ANSI terminal emulation"
   homepage "https://www.gnu.org/software/screen/"
-  url "https://ftp.gnu.org/gnu/screen/screen-5.0.0.tar.gz"
-  mirror "https://ftpmirror.gnu.org/screen/screen-5.0.0.tar.gz"
-  sha256 "f04a39d00a0e5c7c86a55338808903082ad5df4d73df1a2fd3425976aed94971"
+  url "https://ftp.gnu.org/gnu/screen/screen-5.0.1.tar.gz"
+  mirror "https://ftpmirror.gnu.org/screen/screen-5.0.1.tar.gz"
+  sha256 "2dae36f4db379ffcd14b691596ba6ec18ac3a9e22bc47ac239789ab58409869d"
   license "GPL-3.0-or-later"
   head "https://git.savannah.gnu.org/git/screen.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia:  "a3bc5d7cdcceeccd9b72dbe6a91be12d2fa1198afbd8c412c1b64248468924f6"
-    sha256 arm64_sonoma:   "799fb23e0d4fa3080d3c0d1fa7313232e187a08339ebc120dbe774e4d7283fb8"
-    sha256 arm64_ventura:  "ae03adaaab11ea47b40168ca31316b9910027864836d9c11780f910b8d003152"
-    sha256 arm64_monterey: "bb3591af4348104c63bfb58afab5b22f2b6df98e36963c9c08be6ca1e01b8a27"
-    sha256 sonoma:         "adc56240e8ecaf23de62dfe67017b64eeda8538554c29ba5b4411f5fd8ec0e64"
-    sha256 ventura:        "5caa5be6136e3844d66ac11b609caef27f59553e4f596998bc5bf4817b830337"
-    sha256 monterey:       "8c8d9322b5d5230f3a245668c1ff8117b0128077ae79adfe8a657cd70cc2434d"
-    sha256 arm64_linux:    "2b28261f29fdc1901d612342952719f70ce868a5b77cdcfd3a8eafaab7f37487"
-    sha256 x86_64_linux:   "cf41a2d3353e0653d07a095b56d554a55fc72ac6c74fc4a34bc056f3d95463f5"
+    sha256 arm64_sequoia: "9430cdd222c4561bdfeee141fa6e334dc0a10d5fe7c4489ec287c9d44cfc6b6e"
+    sha256 arm64_sonoma:  "2e75496e4bed33bafec7fbc33ac0b9ecfedd5afb0c283dbca100dfc5efc57f43"
+    sha256 arm64_ventura: "cfe661d88372ca2f8df595ed7c46a859bf4871c435c3a499b4e2cd4754732dfa"
+    sha256 sonoma:        "5306e70837deb34094054f1264e76455b7484718ee4536b0343351a852a895d1"
+    sha256 ventura:       "d5c01fece1e58f947c7839f9ae8a0d6482925c3e36202ef66fb90d5d039287c1"
+    sha256 arm64_linux:   "a2eaa7bce2a69592916bb6a278142910411a81ed2f091a38fcb6425b6b7ff765"
+    sha256 x86_64_linux:  "a2319a7727c30f53ed3ef157ad24ee761fc542e65ef1ed8c985ed6abcbf4a29c"
   end
 
   depends_on "autoconf" => :build

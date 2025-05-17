@@ -2,19 +2,19 @@ class Etcd < Formula
   desc "Key value store for shared configuration and service discovery"
   homepage "https:github.cometcd-ioetcd"
   url "https:github.cometcd-ioetcd.git",
-      tag:      "v3.5.21",
-      revision: "a17edfd59754d1aed29c2db33520ab9d401326a5"
+      tag:      "v3.6.0",
+      revision: "f5d605a93abe2fdfa13880aab0f1f3a4203628dd"
   license "Apache-2.0"
   head "https:github.cometcd-ioetcd.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f7df9c92b0178937ca77e6902881e3ee68674b5a08801da80798f469cda3d18"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f7df9c92b0178937ca77e6902881e3ee68674b5a08801da80798f469cda3d18"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1f7df9c92b0178937ca77e6902881e3ee68674b5a08801da80798f469cda3d18"
-    sha256 cellar: :any_skip_relocation, sonoma:        "be8125212266c3e3c07819e542d6025060778991c973ac7c8e0adf8a47028994"
-    sha256 cellar: :any_skip_relocation, ventura:       "be8125212266c3e3c07819e542d6025060778991c973ac7c8e0adf8a47028994"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "975b889dce6a6f9f45e99375e08c441c5f37b6cceab13699e76cd921a1fa8135"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09f2a324b713c3e1dbbfde336753899e8553bf3587b8e5dc9abf79a7ef60be03"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5822986b8b37a8bbceb63036e641d42b5175b87b01089194a85877f488310318"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5822986b8b37a8bbceb63036e641d42b5175b87b01089194a85877f488310318"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5822986b8b37a8bbceb63036e641d42b5175b87b01089194a85877f488310318"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aa393ee9597f642ac5cc08e19f0b2c203fef8e2ac4fad8c77803c4322aac889e"
+    sha256 cellar: :any_skip_relocation, ventura:       "aa393ee9597f642ac5cc08e19f0b2c203fef8e2ac4fad8c77803c4322aac889e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de410cd80c4ad81664ec078f17fe0a9e5c8247a7a716933450a1c4f703665aa2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "37c4e1d721ce6952be9d64a35feb382c0e09d7c4e1c8d50e899fa8d5611db9cf"
   end
 
   depends_on "go" => :build
@@ -35,32 +35,35 @@ class Etcd < Formula
   test do
     test_string = "Hello from brew test!"
     etcd_pid = fork do
-      if OS.mac? && Hardware::CPU.arm?
-        # etcd isn't officially supported on arm64
-        # https:github.cometcd-ioetcdissues10318
-        # https:github.cometcd-ioetcdissues10677
-        ENV["ETCD_UNSUPPORTED_ARCH"]="arm64"
-      end
-
       exec bin"etcd",
-        "--enable-v2", # enable etcd v2 client support
-        "--force-new-cluster",
-        "--logger=zap", # default logger (`capnslog`) to be deprecated in v3.5
-        "--data-dir=#{testpath}"
+           "--force-new-cluster",
+           "--logger=zap",
+           "--data-dir=#{testpath}"
     end
-    # sleep to let etcd get its wits about it
+
+    # Wait a bit for etcd to initialize
     sleep 10
 
-    etcd_uri = "http:127.0.0.1:2379v2keysbrew_test"
-    system "curl", "--silent", "-L", etcd_uri, "-XPUT", "-d", "value=#{test_string}"
-    curl_output = shell_output("curl --silent -L #{etcd_uri}")
+    key_base64 = Base64.strict_encode64("brew_test")
+    value_base64 = Base64.strict_encode64(test_string)
+
+    # PUT the key using the v3 API
+    put_payload = { key: key_base64, value: value_base64 }.to_json
+    system "curl", "-L", "http:127.0.0.1:2379v3kvput", "-X", "POST", "-d", put_payload
+
+    # GET the key back
+    get_payload = { key: key_base64 }.to_json
+    curl_output = shell_output("curl -L http:127.0.0.1:2379v3kvrange -X POST -d '#{get_payload}'")
     response_hash = JSON.parse(curl_output)
-    assert_match(test_string, response_hash.fetch("node").fetch("value"))
+
+    retrieved_value_base64 = response_hash.dig("kvs", 0, "value")
+    retrieved_value = Base64.decode64(retrieved_value_base64)
+
+    assert_equal test_string, retrieved_value
 
     assert_equal "OK\n", shell_output("#{bin}etcdctl put foo bar")
     assert_equal "foo\nbar\n", shell_output("#{bin}etcdctl get foo 2>&1")
   ensure
-    # clean up the etcd process before we leave
     Process.kill("HUP", etcd_pid)
   end
 end

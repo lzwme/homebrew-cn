@@ -1,23 +1,23 @@
 class KubectlAi < Formula
   desc "AI powered Kubernetes Assistant"
   homepage "https:github.comGoogleCloudPlatformkubectl-ai"
-  url "https:github.comGoogleCloudPlatformkubectl-aiarchiverefstagsv0.0.8.tar.gz"
-  sha256 "d4547d69a2b1014ed23989349eb210829373d43b94514896d2d4fecb6bb3488a"
+  url "https:github.comGoogleCloudPlatformkubectl-aiarchiverefstagsv0.0.9.tar.gz"
+  sha256 "9cdcc413143572b90bdbf371369ad6a6d531a0f3579e5683f10eb69b38429424"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ecddd7b1d507131d8eee3d2d0d96a752328c8e8b36eca148d3e9358a97f1699c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ecddd7b1d507131d8eee3d2d0d96a752328c8e8b36eca148d3e9358a97f1699c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ecddd7b1d507131d8eee3d2d0d96a752328c8e8b36eca148d3e9358a97f1699c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "22491d946f000e2cc97310fba5748fcdb955f49635ba4556b7927dad682fd69d"
-    sha256 cellar: :any_skip_relocation, ventura:       "22491d946f000e2cc97310fba5748fcdb955f49635ba4556b7927dad682fd69d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e894616c1423a4a1a75ddcee5782445bf4d6ddfd5e93b7efa1239baf9ee4b7c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0fa9f2850ff8828762fa6b7b512a3db7a260a9b784bdcf5330006669bd468bf7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0fa9f2850ff8828762fa6b7b512a3db7a260a9b784bdcf5330006669bd468bf7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0fa9f2850ff8828762fa6b7b512a3db7a260a9b784bdcf5330006669bd468bf7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b1012527d33f13ab7545e55268e253deae30b0410019af53db7444fcf3bdfe85"
+    sha256 cellar: :any_skip_relocation, ventura:       "b1012527d33f13ab7545e55268e253deae30b0410019af53db7444fcf3bdfe85"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a29a9f1c9edeac89a5db2c02fb82792bbb7e2544e34bb560642512f17eee7838"
   end
 
   depends_on "go" => :build
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmd"
   end
 
   test do

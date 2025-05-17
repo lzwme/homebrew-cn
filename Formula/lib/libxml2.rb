@@ -4,8 +4,8 @@ class Libxml2 < Formula
   license "MIT"
 
   stable do
-    url "https:download.gnome.orgsourceslibxml22.13libxml2-2.13.7.tar.xz"
-    sha256 "14796d24402108e99d8de4e974d539bed62e23af8c4233317274ce073ceff93b"
+    url "https:download.gnome.orgsourceslibxml22.13libxml2-2.13.8.tar.xz"
+    sha256 "277294cb33119ab71b2bc81f2f445e9bc9435b893ad15bb2cd2b0e859a0ee84a"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -27,13 +27,13 @@ class Libxml2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "488e3664e1bf5af46742a9815878bcee9c24d2b87d7fb8cf09d23f73bcbde397"
-    sha256 cellar: :any,                 arm64_sonoma:  "a9f5aea2d5c3c19a9e5acadd4087b886ddee661064cb05e7d0587c4091babdcd"
-    sha256 cellar: :any,                 arm64_ventura: "52421394f133c3d4cfa7d10c21620e0d54129e2375acee19166ae844a6e41913"
-    sha256 cellar: :any,                 sonoma:        "0ab73fb6f31842de8d1efedf5aceb1879700cf01299bc60261fc926dabf71d92"
-    sha256 cellar: :any,                 ventura:       "c80d5ff97e7101b94a068ad9730c0946a428a5782973493d845279795c6c8ea4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "57335af766ff3d9b2eeaf33b31305301662b2f1fe23e95aeb6d51fe3c6c62ac1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7382946d0327ddf4f76756475423920797d6c5fd5c57a42d6e7dc6da38abe576"
+    sha256 cellar: :any,                 arm64_sequoia: "12bbcf2668d6a0dd1493d167428acf67f262fb13b1982511eec7afadfe3d12fd"
+    sha256 cellar: :any,                 arm64_sonoma:  "d9eee4e34d98f846d6dae120a51272e32a3fd8306bfd5b0bfa8d2af5fb0fb06b"
+    sha256 cellar: :any,                 arm64_ventura: "3981cb3adaf892fe72ede95d825535dde86727697198bf6967999a5690eac877"
+    sha256 cellar: :any,                 sonoma:        "07d9dbde746514cdabdd7b3b3ab15d26f46bff4772926f3b8f7545a7c6c5e456"
+    sha256 cellar: :any,                 ventura:       "c4eb4a4ead8d6a1a214d3a3b5c01f50b492927b6c9f5f3eedd6988708bdfa2f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c82daf83bbbcf9aba0ec01e4105446845a525cf87d6ef0716769a1909ed24d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03831d3b679e963d9be90a748746b447cc52a2398dc516dfd0ed7c26f9b431cf"
   end
 
   head do
