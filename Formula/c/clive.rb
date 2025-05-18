@@ -1,20 +1,18 @@
 class Clive < Formula
   desc "Automates terminal operations"
   homepage "https:github.comkoki-developclive"
-  url "https:github.comkoki-developclivearchiverefstagsv0.12.9.tar.gz"
-  sha256 "39f7c33a05ea1e608c4fa4918bb615b1f75eabbbb848c129436c43484967b74d"
+  url "https:github.comkoki-developclivearchiverefstagsv0.12.10.tar.gz"
+  sha256 "68b124c27a14c10c072fbd8acc478e4ec7ba933e1fa2e1e080725dc7814ccbec"
   license "MIT"
   head "https:github.comkoki-developclive.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d1018d56e8435e55660cddbd5d663eb1842334c7fa1a57f621ef1c12c3290a0e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2cb3ffc2a6c8cbff5315e13924888eccc9698666454cdc5a231709b699a67a21"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "fc7de9e0c5ef2285ca5f5eaee9d73a9275421d9c4504ecadffda72248cdbfb65"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "bb85d61873f4e0f3fae6fd901dbac6cb75af53f6d78b6ed885fe394ea41518e7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "cefacc34490a7858b4bf11b5eed811b9af1e793f9cbe7dfc6126b4e7402a3ffa"
-    sha256 cellar: :any_skip_relocation, ventura:        "541994648e535ea2a1de637cfa6c4ccae5116306c3aeae814f476bb24e9a6cbc"
-    sha256 cellar: :any_skip_relocation, monterey:       "a5708e73b0d5a14278f9ce4a872067f21227ea7a35979b9fc6457fa7616ff6b6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "ed55adca064e41f0d8c3f9794d9d4b208812f5b3d810a1e98f02b495196c0a3a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c60af2d39a20569870d29574d64cb0288fc8969230413bcd96deaec731000f5f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c60af2d39a20569870d29574d64cb0288fc8969230413bcd96deaec731000f5f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c60af2d39a20569870d29574d64cb0288fc8969230413bcd96deaec731000f5f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3ea5a88d1046099603f7f06babc3664f2a5c9f203064285c5c080740b2d109b8"
+    sha256 cellar: :any_skip_relocation, ventura:       "3ea5a88d1046099603f7f06babc3664f2a5c9f203064285c5c080740b2d109b8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "370d2026bc46831ac440ce42ea6f080601e2dc2fba8619fc8ec71ccb44d00061"
   end
 
   depends_on "go" => :build

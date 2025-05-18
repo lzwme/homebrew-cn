@@ -7,13 +7,14 @@ class Caddy < Formula
   head "https:github.comcaddyservercaddy.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9ec2d892dd02a4b25ce7a0fb81a7d212938de43cdbb48135586e9aefb7dfbe40"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9ec2d892dd02a4b25ce7a0fb81a7d212938de43cdbb48135586e9aefb7dfbe40"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9ec2d892dd02a4b25ce7a0fb81a7d212938de43cdbb48135586e9aefb7dfbe40"
-    sha256 cellar: :any_skip_relocation, sonoma:        "591abcce17e69cdc1977ce6a40b088e4d26ce39056eef3b02f47582b0fdb1a86"
-    sha256 cellar: :any_skip_relocation, ventura:       "591abcce17e69cdc1977ce6a40b088e4d26ce39056eef3b02f47582b0fdb1a86"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0a9f327848ce83808e0ce71b49481b7310c4fea5f500f6cd1266dbc2728e51a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d751c862bc8581712b570bfffd0cd21197a0071e5318abd4028fa6af4f90d412"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0a0def155db07e2c3212e3c290b9a675e38935fdfae37e2dbe71f0e0238f5ab4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a0def155db07e2c3212e3c290b9a675e38935fdfae37e2dbe71f0e0238f5ab4"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0a0def155db07e2c3212e3c290b9a675e38935fdfae37e2dbe71f0e0238f5ab4"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7e2e30ad4694c7cb0f9d4066a45cef177c0a36293526b8e61d58d72fbb1284d5"
+    sha256 cellar: :any_skip_relocation, ventura:       "7e2e30ad4694c7cb0f9d4066a45cef177c0a36293526b8e61d58d72fbb1284d5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "edfead41ad5b1c16440cfd7a9bb0a600a58d80ca7bffa23466d2510aba4d20cb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4055b37a0e00a1209288f8e49b72632ee97fd2d80ca8aa195731cff4111c90c3"
   end
 
   depends_on "go" => :build
@@ -50,7 +51,10 @@ class Caddy < Formula
     keep_alive true
     error_log_path var"logcaddy.log"
     log_path var"logcaddy.log"
-    environment_variables XDG_DATA_HOME: "#{HOMEBREW_PREFIX}varlib"
+    environment_variables(
+      XDG_DATA_HOME: "#{HOMEBREW_PREFIX}varlib",
+      HOME:          "#{HOMEBREW_PREFIX}varlib",
+    )
   end
 
   test do

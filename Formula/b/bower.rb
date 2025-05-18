@@ -20,6 +20,8 @@ class Bower < Formula
 
   depends_on "node"
 
+  conflicts_with "bower-mail", because: "both install `bower` binaries"
+
   def install
     system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]

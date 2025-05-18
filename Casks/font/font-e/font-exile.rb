@@ -2,9 +2,10 @@ cask "font-exile" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflexileExile-Regular.ttf"
+  url "https:github.comgooglefontsrawmainoflexileExile-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Exile"
-  homepage "https:github.comrozgatypeExile"
+  homepage "https:fonts.google.comspecimenExile"
 
   font "Exile-Regular.ttf"
 

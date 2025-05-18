@@ -1,18 +1,18 @@
 class Marisa < Formula
   desc "Matching Algorithm with Recursively Implemented StorAge"
   homepage "https:github.coms-yatamarisa-trie"
-  url "https:github.coms-yatamarisa-triearchiverefstagsv0.2.6.tar.gz"
-  sha256 "1063a27c789e75afa2ee6f1716cc6a5486631dcfcb7f4d56d6485d2462e566de"
+  url "https:github.coms-yatamarisa-triearchiverefstagsv0.2.7.tar.gz"
+  sha256 "d4e0097d3a78e2799dfc55c73420d1a43797a2986a4105facfe9a33f4b0ba3c2"
   license all_of: ["BSD-2-Clause", "LGPL-2.1-or-later"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3e875c402f816ea59607b35dfaba1ca3556934b77f3adf9522a662b474a531de"
-    sha256 cellar: :any,                 arm64_sonoma:  "71fa0487725231a5d3c5d53f7564279b4f40d684939392d90f2d446502304666"
-    sha256 cellar: :any,                 arm64_ventura: "96d9aac1c7bd7c4f0d927619215b2216791f83ed80693b86706e0077062dfe81"
-    sha256 cellar: :any,                 sonoma:        "89899d1173f4dcacc825068599a458c818f42c9ff2c6ae9dccac56a0eec837e6"
-    sha256 cellar: :any,                 ventura:       "fc0d60913ac0333a5dc9f977e77f466388b5484c8e77cf190e80c48b582f9deb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "85694a17eae4c73ae6a61c691bc6fa526a662389bc215decaf9e2d4cd97465c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45455df30c80232d1c7d16146b550fea52fbd71d0bc341bdbe3acae2038b4286"
+    sha256 cellar: :any,                 arm64_sequoia: "0bedacd84d336fe4bb03ba64d12c4b9558342bdc885ed1a730cc6c085cdac419"
+    sha256 cellar: :any,                 arm64_sonoma:  "795ef8dde700a58b25068458ee84b339203647fdf847f65d9ec315f319569099"
+    sha256 cellar: :any,                 arm64_ventura: "a2411485b60b2f253d201eb1499a94561a79d027742063e90e610d9ad0aa24b9"
+    sha256 cellar: :any,                 sonoma:        "7b2008113fb52501f543358aa694c0050fba22e722d4fe2283d8515f39046025"
+    sha256 cellar: :any,                 ventura:       "ae6b75381f71824e572676ee4a85f8164b306a08d8280ce729d21f36a2711f89"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d7ead9e59cdf466bf7908110f309200ae4e4f47fd4fd7bc6fd933924b072fa79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e15098e332fd27b0948bbdbb2fa592205f01521413605557085bcef124e124f9"
   end
 
   depends_on "autoconf" => :build

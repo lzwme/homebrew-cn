@@ -26,10 +26,14 @@ class LunchyGo < Formula
 
   conflicts_with "lunchy", because: "both install a `lunchy` binary"
 
+  # Add go.mod
+  patch do
+    url "https:github.comsosedofflunchy-gocommit756ad7892ca91763c9c1e70ff9c6570607843725.patch?full_index=1"
+    sha256 "e929312d6bb2441343e488988981e27fedab365fd963020089553608a9f93d5b"
+  end
+
   def install
-    ENV["GO111MODULE"] = "auto"
-    system "go", "build", *std_go_args
-    bin.install bin"lunchy-go" => "lunchy"
+    system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"lunchy")
   end
 
   test do

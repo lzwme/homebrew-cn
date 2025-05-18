@@ -2,8 +2,8 @@ class Ghcup < Formula
   desc "Installer for the general purpose language Haskell"
   homepage "https:www.haskell.orgghcup"
   # There is a tarball at Hackage, but that doesn't include the shell completions.
-  url "https:github.comhaskellghcup-hsarchiverefstagsv0.1.50.1.tar.gz"
-  sha256 "1719a8845454c3d1dc4dc83f5d7cc1f8df80b89c00c543860bc46acf15218301"
+  url "https:github.comhaskellghcup-hsarchiverefstagsv0.1.50.2.tar.gz"
+  sha256 "ba2a2ef799fa7810970e09b19a7fdd7b2360ddd64d8e9b0624ab640cca627b89"
   license "LGPL-3.0-only"
   head "https:github.comhaskellghcup-hs.git", branch: "master"
 
@@ -14,13 +14,13 @@ class Ghcup < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "26e36207afda790bbf550d3d2085427034299eb9f45114e642fcde5ad36f6234"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "16c13aad0c7e221b75d20cffb029bc5c8be7b6cf317900f5ca7014ca1e7f7487"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cd2e01620a880f49cc79d81103aec79e8cf983aa5c6340a43ec8e87cee26c30b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fb7d758f909de3b49429bda3784be2907943acbc44d65c5463c1c31a2eb6590b"
-    sha256 cellar: :any_skip_relocation, ventura:       "8bab4e483b4676231880375bb519eb87cf0a88b803c4e7f7df3a810428964104"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bd852a02f121e84823a02bdb77fbad3d0f37ba81c1a414cccc660788f6d8c589"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a82ddd7e62f4d72c2ac0934cfc30d8987a159d801624541d766ed6541a55379c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e247f6decbd4256535c586a0d6146ac65e53efacce5dc330e115be4c98dd513"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed53b589d43d4651f51d4c8cbf59910dc9dd1babeef7101ad54daf8f9e728ba5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b9b74e79970c00cd845b676d54299df10b4cca34e44fab44d3d8d1e16b9ab263"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c5b4cd2f5dfa18fb80c96a0dfeb4c20c519e4a1cc4d25d35844c46dbdc323c59"
+    sha256 cellar: :any_skip_relocation, ventura:       "d7acf0c16461d16b43e2d3ac389d1a59e07c9342b21997c77d357397324f3de3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8e3d38dd1fdefb2c67ed6ca6da1dad745b94cb9895cfa76bcf97a5e5fca459d0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "864261ae983d405424f6177e75614dca8fd661be23aef0da4fda28b08767c20d"
   end
 
   depends_on "cabal-install" => :build

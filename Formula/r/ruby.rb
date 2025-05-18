@@ -30,13 +30,14 @@ class Ruby < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "84a0a1e7ed8d8fec2c7da3297306a1cf1f1e8e4c8c082d4df1e5ccf68a424074"
-    sha256 arm64_sonoma:  "4200c5daba28ad77c9e683c41baa6ecce346c26d3a419c9e9fccc2d7a0a6baab"
-    sha256 arm64_ventura: "80359f2f29c9f5e6498d6ab1f56a20f5e13333230a8f57cb66a6b4c0d0739134"
-    sha256 sonoma:        "6d159d562e248778b8431a4ccbbe279aab57e0b38a0f91d1cdeb6c7402ae8120"
-    sha256 ventura:       "0f136fac7ee5dc2b3af8ceeaa5bcffa5961a13b247e8cb8fda73b3b7607ade4c"
-    sha256 arm64_linux:   "d17eb1fb6325732801c135a3018ad6d192f7cbc1914a2858ff7466146606b4dc"
-    sha256 x86_64_linux:  "cf369e9e03879a190bf9162ebdd80684e777fae4c0e11870be91922ad2f8ce27"
+    rebuild 1
+    sha256 arm64_sequoia: "f91b9870507ed4690914424ea6693cad133a75d062654425fd99b803e37a4d93"
+    sha256 arm64_sonoma:  "c3adf737845d90aa0677eeb0aa0e47d32df406960b75833db68891f73ef849a2"
+    sha256 arm64_ventura: "f65125606d3279b2262a25acb629dc429de665ae7b0a29042be2c20d3b2005e4"
+    sha256 sonoma:        "8086f57d95bbfd253a10310b9da36898cee6955b25d431321acac817cbb2a298"
+    sha256 ventura:       "6dff743916412b2227ee851825737eae59db2696b875120573dfb11b401715d7"
+    sha256 arm64_linux:   "da3abe8bcda1a43b342663d0c668b57ded83b522cd03d01c38a99110ca722d78"
+    sha256 x86_64_linux:  "7d0295b03469cb59ca833318acb453d641406e1a7c07f5761fcd4fe3b6ddbcd3"
   end
 
   keg_only :provided_by_macos
@@ -99,6 +100,10 @@ class Ruby < Formula
 
     # Correct MJIT_CC to not use superenv shim
     args << "MJIT_CC=usrbin#{DevelopmentTools.default_compiler}"
+
+    # Avoid stdckdint.h on macOS 15 as it's not available in Xcode 16.0-16.2,
+    # and if the build system picks it up it'll use it for runtime builds too.
+    args << "ac_cv_header_stdckdint_h=no" if OS.mac? && MacOS.version == :sequoia
 
     system ".configure", *args
 

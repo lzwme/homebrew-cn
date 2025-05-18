@@ -3,10 +3,11 @@ cask "font-ancizar-serif" do
   sha256 :no_check
 
   url "https:github.comgooglefonts.git",
+      verified:  "github.comgooglefonts",
       branch:    "main",
       only_path: "oflancizarserif"
   name "Ancizar Serif"
-  homepage "https:github.comUNAL-OMDUNAL-Ancizar"
+  homepage "https:fonts.google.comspecimenAncizar+Serif"
 
   font "AncizarSerif-Italic[wght].ttf"
   font "AncizarSerif[wght].ttf"

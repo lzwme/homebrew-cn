@@ -6,23 +6,23 @@ class Snakeviz < Formula
   url "https://files.pythonhosted.org/packages/04/06/82f56563b16d33c2586ac2615a3034a83a4ff1969b84c8d79339e5d07d73/snakeviz-2.2.2.tar.gz"
   sha256 "08028c6f8e34a032ff14757a38424770abb8662fb2818985aeea0d9bc13a7d83"
   license "BSD-3-Clause"
-  revision 1
+  revision 2
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "75ce7210b6e64830a317d2dce83ad07010f11970c4d6bccf63cba9c53796113f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6cacabdb1e48108acd4738b7b030d1b240e433783a0a1b6d0e8fc20735e58b8d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b4fc7432f7e622374f7aedc59312d820952cd8cd14d9f265b88ae206c58c83d2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "cc5b7cd5bd74907bac04e6a0316954e197274e18215fd0b66cddc34093818b4c"
-    sha256 cellar: :any_skip_relocation, ventura:       "01cc2b2bae5b4b5f362626d37756efdccf87089f705a55a98841856f7845f485"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4c653f9541943f6a11e86db50444b7cf42dc74577332c5a2ab17a9a8f903db9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2db01dca11b6887cf9428b9d29de8f1637bf380446ec19b1603bcb60773cbb06"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b4d4520c17ede830a4b318dc3e58676447f2cb0e5810ad8ebc4cf28cc01d090d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fac8bd6ed2a0deb2b93c66d3f7a1e7d45cd97ed3401644100ca5ed5bb6b99c45"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1e0e2b75a9317bdf6f00b62efd40979d04ef3cb7d9d09fb4fc5141425e113bda"
+    sha256 cellar: :any_skip_relocation, sonoma:        "93f50659ccb85e4fd236fbbf11c789b14d06e79ea0e01ff9b99bdbf8f503a9ab"
+    sha256 cellar: :any_skip_relocation, ventura:       "fe459ebc55f218ca933081e52990141c0ed1c83f8dd92d1b170fbd6e188b1a1b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "69f916e637ecc77844e6ca4de1bc87abf662e112f13418e2dc561d44e649ceed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "704638b72520fd6f9a35b271b1a428a0fe2afd82958e06297ccd7ed609af03ff"
   end
 
   depends_on "python@3.13"
 
   resource "tornado" do
-    url "https://files.pythonhosted.org/packages/59/45/a0daf161f7d6f36c3ea5fc0c2de619746cc3dd4c76402e9db545bd920f63/tornado-6.4.2.tar.gz"
-    sha256 "92bad5b4746e9879fd7bf1eb21dce4e3fc5128d71601f80005afa39237ad620b"
+    url "https://files.pythonhosted.org/packages/63/c4/bb3bd68b1b3cd30abc6411469875e6d32004397ccc4a3230479f86f86a73/tornado-6.5.tar.gz"
+    sha256 "c70c0a26d5b2d85440e4debd14a8d0b463a0cf35d92d3af05f5f1ffa8675c826"
   end
 
   def install

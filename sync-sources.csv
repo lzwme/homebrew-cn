@@ -891,6 +891,7 @@ Homebrew-homebrew-core/Formula/c/charm-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/charm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/charmcraft.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/chars.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/chart-releaser.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chart-testing.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chatblade.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/chdig.rb, Homebrew/homebrew-core, 1
@@ -4282,6 +4283,7 @@ Homebrew-homebrew-core/Formula/m/memcacheq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/memray.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/memtester.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mender-artifact.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mender-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/menhir.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mentat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mercurial.rb, Homebrew/homebrew-core, 0
@@ -6735,6 +6737,7 @@ Homebrew-homebrew-core/Formula/t/timelimit.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/timewarrior.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/timg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/timidity.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/timoni.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tin.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tinc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tintin.rb, Homebrew/homebrew-core, 1
@@ -8170,7 +8173,9 @@ Homebrew-homebrew-cask/Casks/b/bunch.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bunqcommunity-bunq.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/burn.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/burp-suite-professional.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/burp-suite-professional@early-adopter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/burp-suite.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/burp-suite@early-adopter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/busycal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/busycontacts.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/butler.rb, Homebrew/homebrew-cask, 0
@@ -11231,6 +11236,7 @@ Homebrew-homebrew-cask/Casks/font/font-s/font-sassy-frass.rb, Homebrew/homebrew-
 Homebrew-homebrew-cask/Casks/font/font-s/font-satisfy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-satoshi.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-s/font-sauce-code-pro-nerd-font.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-s/font-savate.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-sawarabi-gothic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-sawarabi-mincho.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-s/font-scada.rb, Homebrew/homebrew-cask, 1

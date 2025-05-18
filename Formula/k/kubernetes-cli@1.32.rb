@@ -2,8 +2,8 @@ class KubernetesCliAT132 < Formula
   desc "Kubernetes command-line interface"
   homepage "https:kubernetes.iodocsreferencekubectl"
   url "https:github.comkuberneteskubernetes.git",
-      tag:      "v1.32.4",
-      revision: "59526cd4867447956156ae3a602fcbac10a2c335"
+      tag:      "v1.32.5",
+      revision: "9894294ef13a5b32803e3ca2c0d620a088cc84d1"
   license "Apache-2.0"
 
   livecheck do
@@ -12,13 +12,13 @@ class KubernetesCliAT132 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b622184d551539afc287c7191f7f1e8213da397fd9724bd3d300371a30579b4f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e07c9dc801ddf59f9123bb779e6602b994f56c8856435e7e831d9b7d29300156"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3e2260b43334e1bba161f67eb37ec7913b2ef464f05fab19199b52a968f53236"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fed174d3474938938cf32ab1bb69191855dc57d549da9b90569008e4a82dbcad"
-    sha256 cellar: :any_skip_relocation, ventura:       "c032723a41d2e7682eb7a8bc0fcf89953efc69f2dcdc8819dbd55eeebb9f6ce5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "56affb9b50d5a9711213eba78cfaacfa405d1268efebb30064c0c02dd7c214c1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "84168419122fef29efc6f801aaf6900fef6391a21fc232a3e73ce157a652b581"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a952e20d204828e6f09303a4d6a081fc33021083f0b5a1867b8d110af9708152"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "62f255eaa5a050170c462aaa7adb619cc94e54e493758fc347bece8ce89c3508"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d4ef73ae8dadee8cb918c6447c84a0c49648ac7fc9c50aa39c52d244014486c3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "83d4eb3ca7a917062434aae971ba36fffc754eb0e34581f48f3b0a32c7556548"
+    sha256 cellar: :any_skip_relocation, ventura:       "a7db4319d771635a022a127dc16e1e25a7b97d8468cb4b2333c8e19d07aa34df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "861e5214b8d2a481a4cc09702665fd155b20d25e1dee1feb0c58f8062db3aa76"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b05c0170776c709fbdcad65588e4bedb20e3a0091b11e970b3d99dba97ad112"
   end
 
   keg_only :versioned_formula

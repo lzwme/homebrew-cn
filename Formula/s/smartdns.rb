@@ -1,19 +1,19 @@
 class Smartdns < Formula
   desc "Rule-based DNS server for fast IP resolution, DoTDoQDoHDoH3 supported"
   homepage "https:github.commokeyishsmartdns-rs"
-  url "https:github.commokeyishsmartdns-rsarchiverefstagsv0.10.0.tar.gz"
-  sha256 "1c358f8794ade8df976a259128372c665be81cfe04fe3256d42306da30d4b60a"
+  url "https:github.commokeyishsmartdns-rsarchiverefstagsv0.11.1.tar.gz"
+  sha256 "369dc4e6ff15fac7065d7c427b8a29d1d45be9487706da1b293b400cffb7be5f"
   license "GPL-3.0-only"
   head "https:github.commokeyishsmartdns-rs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9392399a1d6d1fb453185577bd1abfe493b6f975494846f4caab139e8600b11b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5c6fe42ee9905ad65a38a41e5a9825ecbe4a386bb5263c96410b30a5a5fc16d9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "15b234a11c28e36903bc3243eba29615c21b1adbc00cbbb016cfc270a347afb4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a142498d587b0691a48a4b8e7b884b9d71dfce67077e79304d56dcba6d22f857"
-    sha256 cellar: :any_skip_relocation, ventura:       "d61d2640c4a06106386b45981b7a50e605f2cd033633a6149c8a4fbbe85a538a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "68041e96b161dff8b6321afbe2d5d0d6cb732fb680f2feeb9d87b087d1f7979a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61db013d4f6fedaae7c0473af966eccb9f7be9e7c4610bd75ace8acf20bdaeeb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "48eae676ab4828a2d2f8128c5f1bf697704c32bc452fc1207116579395d96850"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a75dce6caa8b414cc8be290b1ca68af4b96877c78fc857b35fb9497320b0cf47"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ccf74da62958e3ba61d576972e684a932f40a76dfc280612f91c0ac390a46b77"
+    sha256 cellar: :any_skip_relocation, sonoma:        "88ae8bc9241510d1fd4caa7cd31f02f68fdc780d2bc36c6f4d681ddd00db1dfc"
+    sha256 cellar: :any_skip_relocation, ventura:       "5bdd22f6a86e7b6a51dd40c9a024bc0e079eb67654ebf0096c7057d707be7e92"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2e59dab119230913b20b69cd7bd9f5693a7e601cead3f71a3319adc98df1778"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "308c0b51d6d4778814b5f6cefd0f5bbe204317ea0c6b90d4c9af622eede614e9"
   end
 
   depends_on "just" => :build

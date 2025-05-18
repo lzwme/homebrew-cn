@@ -12,6 +12,7 @@ class BowerMail < Formula
     sha256 cellar: :any,                 arm64_ventura: "f5e51666cfa6098af4aadbeab01ec85237771a30aad6b8f2760cdabd862f93fd"
     sha256 cellar: :any,                 sonoma:        "ba197e4a9cf81240974e8d87f5e8a0f7be362c938acb6fd1b5e6bd4aa517558a"
     sha256 cellar: :any,                 ventura:       "23ff1bcc55c0e73f559a369162b07f78ffae940ad93a71200957bd7c8613e9c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a7bf579db0cca3c52fbf2552b3fc06520ca64d8da5f3b322edc40ddd3cec7c93"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "ecabaca1eccc9762c9a7fb2762120e567830e9362e304392add42c171dc9ae50"
   end
 
@@ -20,6 +21,8 @@ class BowerMail < Formula
   depends_on "gpgme"
   depends_on "ncurses"
   depends_on "notmuch"
+
+  conflicts_with "bower", because: "both install `bower` binaries"
 
   def install
     system "make"
