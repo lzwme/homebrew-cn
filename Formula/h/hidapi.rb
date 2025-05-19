@@ -1,23 +1,19 @@
 class Hidapi < Formula
   desc "Library for communicating with USB and Bluetooth HID devices"
   homepage "https:github.comlibusbhidapi"
-  url "https:github.comlibusbhidapiarchiverefstagshidapi-0.14.0.tar.gz"
-  sha256 "a5714234abe6e1f53647dd8cba7d69f65f71c558b7896ed218864ffcf405bcbd"
+  url "https:github.comlibusbhidapiarchiverefstagshidapi-0.15.0.tar.gz"
+  sha256 "5d84dec684c27b97b921d2f3b73218cb773cf4ea915caee317ac8fc73cef8136"
   license any_of: ["GPL-3.0-only", "BSD-3-Clause", "HIDAPI"]
   head "https:github.comlibusbhidapi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "ed4edcb94c18b6f2dfe35b9642a92bfb9198258e7c195d5100b1f84d7e9c0f41"
-    sha256 cellar: :any,                 arm64_sonoma:   "8f665c92f1b3012852243abfc40b427cba3d4e581070cd4f2d8fa5dd185dd4d5"
-    sha256 cellar: :any,                 arm64_ventura:  "a51ee174536f9f73d398c2b6a998df28c812a5baac14e4f07e8bb17c846d53cf"
-    sha256 cellar: :any,                 arm64_monterey: "4330e0a273dcb943f27e2be002fad07c385737bd308478b73bf24be2898c9bf5"
-    sha256 cellar: :any,                 arm64_big_sur:  "18184e80f9d6ce6e702068b67d4e887dbb28d3fb753c379b6e97c6fbed3cdf97"
-    sha256 cellar: :any,                 sonoma:         "3250f61ca23b7654de19d272869f70b15b9227dcdf449610b44af13286d32dc6"
-    sha256 cellar: :any,                 ventura:        "7198e6d7a9946aa995eee2dcb7595dddb362aa5ed3ed5bcc7b3eeb08fb5cb9e4"
-    sha256 cellar: :any,                 monterey:       "94a5ead30ea58235a8e1cfe884f55c10756efdd580954e1b0565f2298f9f0376"
-    sha256 cellar: :any,                 big_sur:        "7c131edf18d63b5cc8844cda43f8347808a5fd4668739b577c2d1a72f779df4f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "41a1f24c942d2481bb0ffa64c68ba664be5eb45108a21019925e8688b0bbc6df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b8c0fe481208e93135393bb11e970917dd10438ccfdbc180bc5efb97aec7ce52"
+    sha256 cellar: :any,                 arm64_sequoia: "7124104d00b05a26d69388fe5d451b8a9f684b01ed9a6ccea1c8265ba6586bfe"
+    sha256 cellar: :any,                 arm64_sonoma:  "19e9592cabf7d3f5bd080c8ff3904afeceacbb0509b281ea4912e754854eaa26"
+    sha256 cellar: :any,                 arm64_ventura: "95960cc384758cb3e3afb414718bb8ad02ace684bc5b103e7a5875071c36f062"
+    sha256 cellar: :any,                 sonoma:        "a8e65cb302c9ddc9c44a2bcb2348ffb26be23e8d946261775acecc5a38b9ce7a"
+    sha256 cellar: :any,                 ventura:       "7c3be7a7e5e21e5d84da1ed2f1fe86d0f47342f794583e12590f980b5a2004cb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a42600180cd8daace07f984a2463a5d017b3548a911e0f659c8d036aa5e08e74"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c532bf111617b2ccaf54649208d01aea0eaf4b53ba6b3270dee5455b4c9679bb"
   end
 
   depends_on "cmake" => :build

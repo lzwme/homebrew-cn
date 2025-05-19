@@ -1,18 +1,18 @@
 class Clive < Formula
   desc "Automates terminal operations"
   homepage "https:github.comkoki-developclive"
-  url "https:github.comkoki-developclivearchiverefstagsv0.12.10.tar.gz"
-  sha256 "68b124c27a14c10c072fbd8acc478e4ec7ba933e1fa2e1e080725dc7814ccbec"
+  url "https:github.comkoki-developclivearchiverefstagsv0.12.11.tar.gz"
+  sha256 "c406ff8c8a959f5de0730ecfd393c432587f824b86cc91979ee54e4e96b44ac0"
   license "MIT"
   head "https:github.comkoki-developclive.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c60af2d39a20569870d29574d64cb0288fc8969230413bcd96deaec731000f5f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c60af2d39a20569870d29574d64cb0288fc8969230413bcd96deaec731000f5f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c60af2d39a20569870d29574d64cb0288fc8969230413bcd96deaec731000f5f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3ea5a88d1046099603f7f06babc3664f2a5c9f203064285c5c080740b2d109b8"
-    sha256 cellar: :any_skip_relocation, ventura:       "3ea5a88d1046099603f7f06babc3664f2a5c9f203064285c5c080740b2d109b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "370d2026bc46831ac440ce42ea6f080601e2dc2fba8619fc8ec71ccb44d00061"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5daeabe93c5968be4e4be53e2d1b87b7cacc87c7ac25b9a8be3643a665b85272"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5daeabe93c5968be4e4be53e2d1b87b7cacc87c7ac25b9a8be3643a665b85272"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5daeabe93c5968be4e4be53e2d1b87b7cacc87c7ac25b9a8be3643a665b85272"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cd4f7a5f56aee0212ed974c4ad9441b8f800f57ef73864729dcd2641744f9de7"
+    sha256 cellar: :any_skip_relocation, ventura:       "cd4f7a5f56aee0212ed974c4ad9441b8f800f57ef73864729dcd2641744f9de7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88dfd175a7bb323ef3e1df32ab69035480bc0ffc1a34790b662141b17d9a0a34"
   end
 
   depends_on "go" => :build

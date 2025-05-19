@@ -23,6 +23,8 @@ class BrewCaskCompletion < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "3225d50a5098677d66fd4179c7fb07460129e158fc7f3ba4f1a35adb6bd8901e"
   end
 
+  deprecate! date: "2025-05-17", because: "is now natively supported by `brew`"
+
   def install
     fish_completion.install "brew-cask.fish"
   end

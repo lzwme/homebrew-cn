@@ -3,24 +3,19 @@ class Urlscan < Formula
 
   desc "Viewselect the URLs in an email message or file"
   homepage "https:github.comfirecat53urlscan"
-  url "https:files.pythonhosted.orgpackagesf09ddbb1b7b3bb226a8a796b870cf9325cae53edc36acdf619cf4c5eefe94880urlscan-1.0.6.tar.gz"
-  sha256 "3bbf8900de23913c29aed27702eaba92a871b2fe95920e72c56a19fff7cb4581"
+  url "https:files.pythonhosted.orgpackagesaf954c28f3cfdb866f9a6e301fbafedb0e537dd40c8cf9d33872e67ed38ec1d2urlscan-1.0.7.tar.gz"
+  sha256 "041b932f94cb1e2e8dbb20f43322da85cb483be328fa10477c6e5e96a89891c3"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "be64bb1ca7c78bd13312b59f17f761051b64857476413d41952af71d0d5de7cd"
+    sha256 cellar: :any_skip_relocation, all: "f06e24ee723a5d356f9b82a54abf7c29f3104c509865c4a014d948f306b73bed"
   end
 
   depends_on "python@3.13"
 
-  resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
-    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
-  end
-
   resource "urwid" do
-    url "https:files.pythonhosted.orgpackages9821ad23c9e961b2d36d57c63686a6f86768dd945d406323fb58c84f09478530urwid-2.6.16.tar.gz"
-    sha256 "93ad239939e44c385e64aa00027878b9e5c486d59e855ec8ab5b1e1adcdb32a2"
+    url "https:files.pythonhosted.orgpackages462d71550379ed6b34968e14f73b0cf8574dee160acb6b820a066ab238ef2d4furwid-3.0.2.tar.gz"
+    sha256 "e7cb70ba1e7ff45779a5a57e43c57581ee7de6ceefb56c432491a4a6ce81eb78"
   end
 
   resource "wcwidth" do

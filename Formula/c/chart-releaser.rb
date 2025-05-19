@@ -12,6 +12,7 @@ class ChartReleaser < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "5d1c4cb8b0678c91261d8ef50caa05bbc99fc063dfbeeb26e8b25a7e0573719a"
     sha256 cellar: :any_skip_relocation, sonoma:        "8589497b906501194855f60a2cbb4c576b666627e805525c77f94eb941cd0cfb"
     sha256 cellar: :any_skip_relocation, ventura:       "18663efa332fd116acd16530d4ae73faa0eba3b21b2f8ce7697098203eee040d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c239222a325cd05f50a7ebc59249d45e61bcc63227580d5f7314c821e0b8832c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9ebf5848614eb2953aa6f3a6d234a5f2d86957ffdb430aaac56cb919f1ceb95e"
   end
 

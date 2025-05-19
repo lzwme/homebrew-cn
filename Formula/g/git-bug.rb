@@ -1,18 +1,18 @@
 class GitBug < Formula
   desc "Distributed, offline-first bug tracker embedded in git, with bridges"
   homepage "https:github.comgit-buggit-bug"
-  url "https:github.comgit-buggit-bugarchiverefstagsv0.9.0.tar.gz"
-  sha256 "4f9a8d77b0c0e10579d9f28a1355e2d349b0ee83da282daacb17263d40fe8c77"
+  url "https:github.comgit-buggit-bugarchiverefstagsv0.10.0.tar.gz"
+  sha256 "84391695b94bd628236cf263e86996c249e390d1a97acc41af21bc7d44346aca"
   license "GPL-3.0-or-later"
   head "https:github.comgit-buggit-bug.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6e286e1832a989871e804177185e0bb01f78e89ef90ed641e0d02a385034561"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1857c592fa829ce895e10c93a8b6185aa5e842b1881e94c3ed27782b7637e9bf"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e23568875bdeeffbb7670351188452456a842f5d68dc262ba3b882b0568bd75e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fb78a0c77cc633d5f12112e727018a09c7d03f628034394ddcbc54dd018f34a9"
-    sha256 cellar: :any_skip_relocation, ventura:       "ae66e5b09de6a4f2255274ccfd47372a9d59980185e37181707ba14648fb89ab"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cbc94d27a35a9b46d8368421d80cfeb18f26fcea6655fc41d6fd9b6c49035a6c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80487cab259387a38f0f4ed236d958a9156f98f1e6f061575bfc698ff6e39962"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4973b24889ec240b81e1984fdbfbe650060669db1e2936985b588624af0ebd9a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7bda350b12c69f7f6424c2f0f334dce0864d920d709568aa884348ae04816dc5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "43dd81ce740c787bc7f113a2929ef7cf160965345fbb9021fd7b3911d1b1b382"
+    sha256 cellar: :any_skip_relocation, ventura:       "acdf976be32c223fe55ccd5a2cbee3debf4d832bea8b3338b0e17a632f54c7a2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e3e3b25a45703e0d8891466c8eeb43c3920d17fc17b2ef156c6321dc7b7476c"
   end
 
   depends_on "go" => :build

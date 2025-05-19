@@ -5,6 +5,11 @@ class Vipsdisp < Formula
   sha256 "5c40e71c9c60232dcbf2e1c389295a4a102a27603bce994dbb2e35ff4f1844db"
   license "MIT"
 
+  livecheck do
+    url :stable
+    strategy :github_releases
+  end
+
   bottle do
     sha256 cellar: :any, arm64_sequoia: "c730d171fb0ff997048081609c182e91de7c462764255972070153d3f3957fcd"
     sha256 cellar: :any, arm64_sonoma:  "77e6eabacad3268d0fbbf4642b5a9860b7811d79b76223b4ea4a64b671d04191"

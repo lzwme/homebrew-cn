@@ -7397,6 +7397,7 @@ Homebrew-homebrew-core/Formula/x/xmake.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xml-coreutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xml-security-c.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xml-tooling-c.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/x/xml2rfc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xmlcatmgr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xmlformat.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xmlrpc-c.rb, Homebrew/homebrew-core, 0
@@ -8048,6 +8049,7 @@ Homebrew-homebrew-cask/Casks/b/bino.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/binocs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/birdfont.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/biscuit.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/b/bison-wallet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bisq.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/bit-fiddle.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/bit-slicer.rb, Homebrew/homebrew-cask, 1
@@ -12936,6 +12938,7 @@ Homebrew-homebrew-cask/Casks/n/network-radar.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/netxms-console.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nexonplug.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/next.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/n/nextcloud-talk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/n/nextcloud-vfs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nextcloud.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/n/nfov.rb, Homebrew/homebrew-cask, 1
@@ -13122,6 +13125,7 @@ Homebrew-homebrew-cask/Casks/o/openshot-video-editor@daily.rb, Homebrew/homebrew
 Homebrew-homebrew-cask/Casks/o/opensim.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opensong.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/opensoundmeter.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/o/opensuperwhisper.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openthesaurus-deutsch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/opentoonz.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/openttd.rb, Homebrew/homebrew-cask, 0
@@ -14942,6 +14946,7 @@ Homebrew-homebrew-cask/Casks/w/writefull.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/writemapper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/writer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/writerside.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/w/wrkspace.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/w/wwdc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/w/wxmacmolplt.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/x/x-mirage.rb, Homebrew/homebrew-cask, 0

@@ -4,15 +4,16 @@ class PandocCrossref < Formula
   url "https:github.comlierdakilpandoc-crossrefarchiverefstagsv0.3.18.2.tar.gz"
   sha256 "a7b95fcf6807c3092684cf622da87afa34df3c2e6655a20dd5c243390f5e5ffd"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c31c2e8d6cbf71a6471a59ff0af50309109f69600f0ca6f9fcb0faa0b8c973d7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5d3f7c2debc407d04db35dc18f24f9dd1bb7c61b846d8d50755e664d42e182a5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b767c8f3a07c9a70ef21be148c4691908039322b7e4528b211c6a03c53bc9528"
-    sha256 cellar: :any_skip_relocation, sonoma:        "912f9f13386e61b1ce6102dea06e376cdf09d2bbfddefe5c6316cb3bba864f57"
-    sha256 cellar: :any_skip_relocation, ventura:       "ec217ff88096135b8f1dd5fb087a9467ed54941fb0b72b758cea1fe66c61adfd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "51f9f4fa3294746fb739276dbcfa0eab29ef9ccbb3e1ecde907199d1df45e751"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9ff2b5d1c5379da0b17cad7ab5a0b241c38c76042497148fecc6b8bba76c095"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "89d79506f79302e402227f23ec4d9f23f220a38bf53f77bdaf694080a72ab818"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c180355a580214c02cf5133002b43c417615db1f60a69c26557ff7e9c5ffdc45"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7144ac324ad3fe3e8bb12ca67b99bbc6919699a9c6f37f6f669889e966676085"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a327bb7a8b571f07be80636ffb091ca099be13a66f3014d5e7b8ca3815f043e9"
+    sha256 cellar: :any_skip_relocation, ventura:       "a35668f495a419c08af3d1d51cccb3225d9717d3aa60885986015e04f6384074"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4820c7769fe2e28b5764cfcc97584ec1bae4f7486b322006adf471c8252c1d2f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4198b10e68f50420844a83b7688f4c4c57d5d06b065bd37bffefb5651fecf7e2"
   end
 
   depends_on "cabal-install" => :build
@@ -21,6 +22,12 @@ class PandocCrossref < Formula
 
   uses_from_macos "unzip" => :build
   uses_from_macos "zlib"
+
+  # support pandoc 3.7, upstream pr ref, https:github.comlierdakilpandoc-crossrefpull473
+  patch do
+    url "https:github.comlierdakilpandoc-crossrefcommitec8170da048712ecf354cb3a234e15c627d83568.patch?full_index=1"
+    sha256 "af7159ce95aa90d7ff1723c64b4e0074d0734756dd44592406f8e0f94e7eab5b"
+  end
 
   def install
     rm("cabal.project.freeze")

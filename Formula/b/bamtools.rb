@@ -1,20 +1,19 @@
 class Bamtools < Formula
   desc "C++ API and command-line toolkit for BAM data"
   homepage "https:github.compezmaster31bamtools"
-  url "https:github.compezmaster31bamtoolsarchiverefstagsv2.5.2.tar.gz"
-  sha256 "4d8b84bd07b673d0ed41031348f10ca98dd6fa6a4460f9b9668d6f1d4084dfc8"
+  url "https:github.compezmaster31bamtoolsarchiverefstagsv2.5.3.tar.gz"
+  sha256 "7d4e59bac7c03bde488fe43e533692f78b5325a097328785ec31373ffac08344"
   license "MIT"
-  revision 2
   head "https:github.compezmaster31bamtools.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "195840857da6e5e0c020ce41c66ad701845977133164ad6717fcde1bc7484ef6"
-    sha256 cellar: :any,                 arm64_sonoma:  "27089259ae4ea2993a81c7e635b5fbdd37a9e21623ace3dba86a75d967bf3ab3"
-    sha256 cellar: :any,                 arm64_ventura: "0104d42510158aced69f6108ab3de5c363e32ca9fc4b6eec8acb7f3858d3f5d7"
-    sha256 cellar: :any,                 sonoma:        "aa7b96819c55b2e59c375501932eee2e32d091bc64b9a5be8cdad68c18a071b3"
-    sha256 cellar: :any,                 ventura:       "90df0038551d0a60a82e5f9b43438d5e7731bbeb2a73f0054fe79fb9c97c594c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc024aec0c01995edd1a1a0450cc4dd94d05498b22dd5a1ec7b600c3e118b32a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "696b432ed15581f9ddc4dd262c03e0b7cdee1ba19b387a86f10e88650740fbf0"
+    sha256 cellar: :any,                 arm64_sequoia: "3373086bf64dc373555ebe29e0d83b7717e9753c2568f6e28aa1bda00f03c8cc"
+    sha256 cellar: :any,                 arm64_sonoma:  "1bb2f639770d64612d2a90faf8409396a4ca9c8d07ac57c49ea34605110cb8e9"
+    sha256 cellar: :any,                 arm64_ventura: "f3ba5ba2ba5277012456cfbcfb26c4dbd7a1a5c7d5eb59034ff0ec3d10b08409"
+    sha256 cellar: :any,                 sonoma:        "d47d47a532624911149aeed6ce5f3774d040bc589c188f8699f43025920ac3d6"
+    sha256 cellar: :any,                 ventura:       "1b1ed182544cc5cb37a5706c1246f4bf0df3f14bf199ebc2c46c60e55e40f7a6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc7464d2e563ff3573d4d1754e543ce554efc1af87cd361301e65b7ca0d3b0ce"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1338babe6eccee20e6d23f405db8267025fe19f221e0ddd9d7cb2cd02654c48"
   end
 
   depends_on "cmake" => :build
