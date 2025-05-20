@@ -3,15 +3,13 @@ class GitReview < Formula
 
   desc "Submit git branches to gerrit for review"
   homepage "https:opendev.orgopendevgit-review"
-  url "https:files.pythonhosted.orgpackages79ae1c161f8914731ca5a5b3ce0784f5bc47d9a68f4ce33123d431bf30fc90b6git-review-2.4.0.tar.gz"
-  sha256 "a350eaa9c269a1fe3177a5ffd4ae76f2b604e1af122eb0de08ab07252001722a"
+  url "https:files.pythonhosted.orgpackagesda92ddc922d34061791a4d0fd483ee4ffc5e026e93783b70fe5a29a129d0cf63git_review-2.5.0.tar.gz"
+  sha256 "1bcffaef02848a5a3b066e8268c7d700a77cbd8b2e56b128d30f60cd431cf0a8"
   license "Apache-2.0"
-  revision 3
   head "https:opendev.orgopendevgit-review.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "d83087d56ed2d62d2014203c388f43857c3913815b5d003331f6792df2c7ab57"
+    sha256 cellar: :any_skip_relocation, all: "da26337e70cdd57dd7c0de2d2fdf9f3d2ab8cd16101418e73826da5cb3167271"
   end
 
   depends_on "certifi"
@@ -20,8 +18,8 @@ class GitReview < Formula
   conflicts_with "gerrit-tools", because: "both install `git-review` binaries"
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
-    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
+    url "https:files.pythonhosted.orgpackagese43389c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12dcharset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "idna" do
@@ -35,8 +33,8 @@ class GitReview < Formula
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
+    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
   end
 
   def install

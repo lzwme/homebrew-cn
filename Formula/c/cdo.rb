@@ -1,8 +1,8 @@
 class Cdo < Formula
   desc "Climate Data Operators"
   homepage "https://code.mpimet.mpg.de/projects/cdo"
-  url "https://code.mpimet.mpg.de/attachments/download/29864/cdo-2.5.1.tar.gz"
-  sha256 "418bf91e864cbfe547c3c8e150d31419cfa715e7d345508c5591b1abda5457d1"
+  url "https://code.mpimet.mpg.de/attachments/download/29938/cdo-2.5.2.tar.gz"
+  sha256 "3b28da72d75547663b1b9b08332bfe3f884d27742d0eeeb7f3c8b2c70f521fa9"
   license "GPL-2.0-only"
 
   livecheck do
@@ -10,14 +10,16 @@ class Cdo < Formula
     regex(/Version (\d+(?:\.\d+)+) released/i)
   end
 
+  no_autobump! because: :incompatible_version_format
+
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "dd1d32211a82e1cf891757e379a638b80e7eb672fd2a8d2f611372af12c743ff"
-    sha256 cellar: :any,                 arm64_sonoma:  "1ff8f37ffcba186f20ec2d6227a929754b11595a77213e141c5f634bf13b5925"
-    sha256 cellar: :any,                 arm64_ventura: "4b0080c57a505533e5563817b1fffa4786dc3583bf21176a411173a864e0888e"
-    sha256 cellar: :any,                 sonoma:        "4ad6cb5b6a951f679f64b5013969e9f136b7566ca7f0d8e266dc2f2e86be6846"
-    sha256 cellar: :any,                 ventura:       "9bf4288a75ee0b7162592c8d0ec79b33217076480734e1de2753fc9d34f35c0f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5483f4f41ad3427a1f4111517912b39a8f7b29e4da5d1542bdf8937a763d777"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b62558687a81c8b989d7885d6128f3b1c3f40fdaf12d6ee966021ef80dbf685"
+    sha256 cellar: :any,                 arm64_sequoia: "72b20bad237dc2bbd3d932817afc2be1e68f30faf0226b7eb3d56899b5b85bcf"
+    sha256 cellar: :any,                 arm64_sonoma:  "a68f498131b4df243f6e31a90ce7a34359fbf278f95ae0edc5213bc9f7d5ee93"
+    sha256 cellar: :any,                 arm64_ventura: "2cef53daf49c4bbd6109397143cce2eee07052dfe125c3fdd452e6051f73403d"
+    sha256 cellar: :any,                 sonoma:        "2622bf6731390da67a9af8d926f6f24d559d12ea73f87590a8bde19f1dc8420b"
+    sha256 cellar: :any,                 ventura:       "184828138292f7baf4e1033188098023d5b0e04c4e4673fe71423256c6c2e47f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c0df99aa7aa8b09ed31172adab69dbec3ba900ea139bdbeb62abbb83cab6a58e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6463f2e45d2dbb4e2fb51d197394a164cfea9e0769eadb167b585a04ed8d7f5"
   end
 
   depends_on "eccodes"
@@ -25,6 +27,7 @@ class Cdo < Formula
   depends_on "libaec"
   depends_on "netcdf"
   depends_on "proj"
+
   uses_from_macos "python" => :build
 
   on_macos do

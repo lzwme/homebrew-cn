@@ -7,22 +7,33 @@ class Cloudflared < Formula
   head "https:github.comcloudflarecloudflared.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "974bf7430857d1dd6daaa5400c373cae875f464a9c2a9fb3e0608913fb0bbeec"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d4f60667540f577b82784c6a674ea8cbadb3a1629627fc019a7f075ba1042e0a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cdf16454ecc2fcc285ec76f683c10e9fa0d62b45afee18d470b8771b4889e03b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "85b16789b560619f53fd2cffc5e20fea285ebd95f96b829b9aba7edba40e6ad6"
-    sha256 cellar: :any_skip_relocation, ventura:       "a35bf2b0750e6278855a2b929959df8e1f5c09d007c1f1aff7e33955686a1feb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a67987f86336cdc31764f3b30fa46a54914e1db4c26acc022da5ca0c3c58f57"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f986e1933b0bfedcda124d3804e82d7cdbbb9aa86f1af5638a0dca5ccd8a6674"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f986e1933b0bfedcda124d3804e82d7cdbbb9aa86f1af5638a0dca5ccd8a6674"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f986e1933b0bfedcda124d3804e82d7cdbbb9aa86f1af5638a0dca5ccd8a6674"
+    sha256 cellar: :any_skip_relocation, sonoma:        "517dd3c23052b803267f932b7a87bc95be77253fb8475b19951887a7cc3efcdc"
+    sha256 cellar: :any_skip_relocation, ventura:       "517dd3c23052b803267f932b7a87bc95be77253fb8475b19951887a7cc3efcdc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f68d56eccd8dd389f378ce4b71b323fa046240d0fa450c354ba2fe2bf10710dc"
   end
 
   depends_on "go" => :build
 
   def install
-    system "make", "install",
-      "VERSION=#{version}",
-      "DATE=#{time.iso8601}",
-      "PACKAGE_MANAGER=#{tap.user}",
-      "PREFIX=#{prefix}"
+    # We avoid using the `Makefile` to ensure usage of our own `go` toolchain.
+    # Set `gobuildid` to create an LC_UUID load command.
+    # This is needed to grant user permissions for local network access.
+    ldflags = %W[
+      -B gobuildid
+      -X main.Version=#{version}
+      -X main.BuildTime=#{time.iso8601}
+      -X github.comcloudflarecloudflaredcmdcloudflaredupdater.BuiltForPackageManager=#{tap.user}
+    ]
+    system "go", "build", *std_go_args(ldflags:), ".cmdcloudflared"
+    inreplace "cloudflared_man_template" do |s|
+      s.gsub! "${DATE}", time.iso8601
+      s.gsub! "${VERSION}", version.to_s
+    end
+    man1.install "cloudflared_man_template" => "cloudflared.1"
   end
 
   service do
@@ -40,5 +51,9 @@ class Cloudflared < Formula
     assert_match "Error locating origin cert", shell_output("#{bin}cloudflared tunnel run abcd 2>&1", 1)
     assert_match "cloudflared was installed by #{tap.user}. Please update using the same method.",
       shell_output("#{bin}cloudflared update 2>&1")
+
+    return unless OS.mac?
+
+    refute_empty shell_output("dwarfdump --uuid #{bin}cloudflared").chomp
   end
 end

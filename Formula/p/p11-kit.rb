@@ -6,16 +6,14 @@ class P11Kit < Formula
   license "BSD-3-Clause"
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia:  "a411c523067edccdf5288ff53f725d590c60d0a182f1e69238fcfc86018f3395"
-    sha256 arm64_sonoma:   "844c2f2f63155c6da1a6af44030866700c57981c974f71f4159a6d794e05fcfc"
-    sha256 arm64_ventura:  "97ccac96157529edec341b35d57e6ca9579fb25f42d62bb573a1013572101eed"
-    sha256 arm64_monterey: "aab401574960e088578df801ab10d600bfe6277f6d174bfc1bf90ea8348529e8"
-    sha256 sonoma:         "38423db237bdda5e2485a28e5f30c106f324c440d64a4e10bffb5fc997d91aa6"
-    sha256 ventura:        "ab67e4c145d61683447ef09ec9315bd22cc95efa699bbac9e2fc476104a579c0"
-    sha256 monterey:       "25fc56254568c72ad22c39c2768ca249992df53a9da2cbeee55ac221f67e1ae3"
-    sha256 arm64_linux:    "630a4eaece70b3e7d8d0330018e955ea2ffa3fb84263a48aec0056cef5c2e1cf"
-    sha256 x86_64_linux:   "65efc1a95ab97b86e0eb36f2e8782d3f6140d795f3bc33cb6e20267d5fee45f0"
+    rebuild 2
+    sha256 arm64_sequoia: "396f31b164e77e386922d5a8ceeeb2860d2a8e27b5ffc43e2444e49842d47055"
+    sha256 arm64_sonoma:  "71c1869311d18d9ecca257c474c6b33eaee4a8980f10eb6987486234112f9f46"
+    sha256 arm64_ventura: "e3bc89565cdd9876efd50024e24b5ba4c3ef5aa62b99f69b65d92fd47d24c0d9"
+    sha256 sonoma:        "25ad80618527fcce7e347062f9670c3b47df5682b9b9c0b29fb16a67566a68bc"
+    sha256 ventura:       "5b2ac57b324eca4c1d700ecdc079f5add6f8d0175590e9f45fe8e222fade0689"
+    sha256 arm64_linux:   "2b1c5ab7f1203d42bf9f9fda701cd49b709cd4fddbfe4cee4b87bcac0f6ad336"
+    sha256 x86_64_linux:  "2edb52c3990c1552a5fe19d8e25e6e89300b1f07d5e6164d3ff2a2591e83894d"
   end
 
   head do
@@ -42,7 +40,7 @@ class P11Kit < Formula
     args = %W[
       -Dsystem_config=#{etc}
       -Dmodule_config=#{etc}pkcs11modules
-      -Dtrust_paths=#{etc}ca-certificatescert.pem"
+      -Dtrust_paths=#{etc}ca-certificatescert.pem
       -Dsystemd=disabled
     ]
 

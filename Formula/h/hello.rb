@@ -1,24 +1,19 @@
 class Hello < Formula
   desc "Program providing model for GNU coding standards and practices"
   homepage "https://www.gnu.org/software/hello/"
-  url "https://ftp.gnu.org/gnu/hello/hello-2.12.1.tar.gz"
-  sha256 "8d99142afd92576f30b0cd7cb42a8dc6809998bc5d607d88761f512e26c7db20"
+  url "https://ftp.gnu.org/gnu/hello/hello-2.12.2.tar.gz"
+  sha256 "5a9a996dc292cc24dcf411cee87e92f6aae5b8d13bd9c6819b4c7a9dce0818ab"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d933581c28ace3bc418f910aeb86aacc4465f727127b50e00b95dba985606009"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c1770a992b197e450da7cf2282fdeaae855765f66609063bfb963ffb2ccf69a5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "cb3569886bfa1c197ea1db0b0eee32f5eff574454517ca64520c34adeff90404"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "a0103553329c8a010ed68a1143bf9126b0f1977fec308953e9068a9722790d9d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "e8c7459b0310a5c99d441e1a5814f9eb1723b11e84b58efad01c0db4aeaf8d36"
-    sha256 cellar: :any_skip_relocation, sequoia:        "e256e8f273e3dac56c4806757e7fb4e6bfedf17e483e03bebe6627772ae3c7b7"
-    sha256 cellar: :any_skip_relocation, sonoma:         "fba57a7f384eeab7d36b575b80054ddf2169249962139fc0c818553c1a1bdc6e"
-    sha256 cellar: :any_skip_relocation, ventura:        "b430480afc7bb4107bc1a42930bf69baa7f1da42c2080cdf837e57f7a509147a"
-    sha256 cellar: :any_skip_relocation, monterey:       "62534bceb8f7074827fa2146dd13603018aaf07c82e22cfef96571c8133ce8a1"
-    sha256 cellar: :any_skip_relocation, big_sur:        "480a77f0f4e0ea6aa4175b3853feba7bdeda9f0b3dd808ad02eeb358b8a48f4a"
-    sha256 cellar: :any_skip_relocation, catalina:       "c30c2be3191bd643f36e96b45b1282b5a750219bc8cab2e31d3c23d4cad5d70c"
-    sha256                               arm64_linux:    "97d3ee7869f6b785392190092cde2939d3e0414839d5638d0001d60481727fd8"
-    sha256                               x86_64_linux:   "7935d0efdae69742f5140d514ef2e3e50d1d7cb82104cf6033ad51b900c12749"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e81841d7339d3d83c7fbc3ba2f0ba20d9719b2b6e4db7acd47b5ed3c1ca9448c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80309bb8f4140c2d596adaa5de91672aa95456cc659d6682d3e53821f5270879"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4d0af0d9c4764328e335fa17167ea8a021c04e9e5709163ac6c7c6b9c60218bc"
+    sha256 cellar: :any_skip_relocation, sequoia:       "1bd2d1b2929b7288ed104189e41dbf1499cb7af5a7f789efc99ab49f04e28257"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2cfd594bc398a53903002973504298115f713422d74b6ff688e5c4bff86d2449"
+    sha256 cellar: :any_skip_relocation, ventura:       "3683c04b8c21b76c563ef34cfb18bb3f021866d723cbcbd0d4f6b7b229a9ffe6"
+    sha256                               arm64_linux:   "b40508b42deb96206c71f987d3eab3da6e558f4217f92421c0f02da70f7a6881"
+    sha256                               x86_64_linux:  "bc74355f9ea73a40f629dd7e5adcaaad7c0ac7ffda2f3acc860bd7e52baabb94"
   end
 
   def install

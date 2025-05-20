@@ -1,8 +1,8 @@
 class Pinact < Formula
   desc "Pins GitHub Actions to full hashes and versions"
   homepage "https:github.comsuzuki-shunsukepinact"
-  url "https:github.comsuzuki-shunsukepinactarchiverefstagsv3.1.1.tar.gz"
-  sha256 "9988045463cb1769253fe04ed40754c7cee9b267dfd7e381c6c887752d002d45"
+  url "https:github.comsuzuki-shunsukepinactarchiverefstagsv3.1.2.tar.gz"
+  sha256 "a58de86006fef4bb92d2a5a7d46e9de2a671815cdd5cfdad12161435ceb9163c"
   license "MIT"
   head "https:github.comsuzuki-shunsukepinact.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Pinact < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e24e1f6607d0f1538bc582137a6fbb612979fcb85a25ae38d24196aa27f4a63d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e24e1f6607d0f1538bc582137a6fbb612979fcb85a25ae38d24196aa27f4a63d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e24e1f6607d0f1538bc582137a6fbb612979fcb85a25ae38d24196aa27f4a63d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "af684ef906aa6a734b4cff70db78d5a62f83b5ca3bb6886c8dc4e25f75749558"
-    sha256 cellar: :any_skip_relocation, ventura:       "af684ef906aa6a734b4cff70db78d5a62f83b5ca3bb6886c8dc4e25f75749558"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c26163a3855ce551b0728ab4b5033e111264cee912dd0a16bc172084c5dedfb2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dbd3e7f6363481f223a8744eac40777d7a04db60b56f90935b70132bb3a192a5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dbd3e7f6363481f223a8744eac40777d7a04db60b56f90935b70132bb3a192a5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "dbd3e7f6363481f223a8744eac40777d7a04db60b56f90935b70132bb3a192a5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c737184fca23f4b4b724025019a47201bb8a9a27cbfb2f739b7ea97465415fb7"
+    sha256 cellar: :any_skip_relocation, ventura:       "c737184fca23f4b4b724025019a47201bb8a9a27cbfb2f739b7ea97465415fb7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4a3d176cb8cb7d635529695f69f9c480550b13fbf3a4a9ae1ffafaf501284ae"
   end
 
   depends_on "go" => :build

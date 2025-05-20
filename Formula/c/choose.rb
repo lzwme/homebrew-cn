@@ -21,6 +21,7 @@ class Choose < Formula
   end
 
   deprecate! date: "2024-05-19", because: :unmaintained
+  disable! date: "2025-05-19", because: :unmaintained
 
   depends_on "python@3.13"
 

@@ -5,6 +5,14 @@ class Shadowenv < Formula
   sha256 "ad04e1d5ae88e358f0ee6ec987bd88b7f8c489409fafc6286690aeacb074ddea"
   license "MIT"
 
+  # There can be a notable gap between when a version is tagged and a
+  # corresponding release is created, so we check the "latest" release instead
+  # of the Git tags.
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "93a3aa92e6d4f3d71f2096def300b3d503b06af579212990958fb29a5cf53dac"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "926abc552d85283e6507cd2668bdf5af33ce5d2b0a3515fc14ab3a9250d8c6d3"

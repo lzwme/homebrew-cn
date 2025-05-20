@@ -2634,6 +2634,7 @@ Homebrew-homebrew-core/Formula/g/gtree.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gts.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/gucharmap.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/guetzli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/guichan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/guile-fibers.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/guile-gnutls.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/guile.rb, Homebrew/homebrew-core, 0
@@ -10043,7 +10044,6 @@ Homebrew-homebrew-cask/Casks/font/font-i/font-inconsolata-dz-for-powerline.rb, H
 Homebrew-homebrew-cask/Casks/font/font-i/font-inconsolata-for-powerline-bold.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-inconsolata-for-powerline.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-inconsolata-g-for-powerline.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-i/font-inconsolata-g.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-i/font-inconsolata-go-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-inconsolata-lgc-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-i/font-inconsolata-lgc.rb, Homebrew/homebrew-cask, 1

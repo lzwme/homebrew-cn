@@ -3,18 +3,18 @@ class Mcpm < Formula
 
   desc "Open source, community-driven MCP server and client manager"
   homepage "https://mcpm.sh/"
-  url "https://files.pythonhosted.org/packages/35/07/cc64bc0a475a1124ac24f2d47ef7b768649d257ed5019a6b4eaa1ec9448f/mcpm-1.11.0.tar.gz"
-  sha256 "36602aa78318b74ef2aabcee9846497c2955cd8cbea7792ff43970aa6d80c5ce"
+  url "https://files.pythonhosted.org/packages/8b/02/f32c6cd5412adcb028de835f1af9a3560980458e21092e16baf56ae6d060/mcpm-1.12.0.tar.gz"
+  sha256 "e9d2b852b90d7fd62dede584f035dd6b2b3d068d233e96b82aead835f81a911a"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4a925f01fc026294beababec36d62d5cbb0da5a64c97cbb0c51786ce74d33c96"
-    sha256 cellar: :any,                 arm64_sonoma:  "da0194e27d277cbe7a4ca8b592162158cfb28775854e20f86c669e79eeb7ed07"
-    sha256 cellar: :any,                 arm64_ventura: "ff1dfb5921bb386f159afc9c705b4ecde56318e8efa006526bffb42ba44e006b"
-    sha256 cellar: :any,                 sonoma:        "6e25651828a07c4f0769fd6bca633afd147757eac59a94dacf14b790be5b8254"
-    sha256 cellar: :any,                 ventura:       "eec9ad64c1f9ba56e27005409983f304b950249e6793fa07981f3d0f4c3c994a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "20241c8a7119195cce817ef5ed3fda56cf6b9b13ab275bff6dfeabd9d62a8de6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0bd46cd8940d0d230beced58f34289b5fd13bf84db542202846a6d0f5a854172"
+    sha256 cellar: :any,                 arm64_sequoia: "ae761808d18c686e332d07c75d7e0c3c334ad6baed3e64df00847c3686e6420c"
+    sha256 cellar: :any,                 arm64_sonoma:  "f48a963580c488ec0741a5e533b28289a9501ec89f37e182817b8bc7b7d4a7a9"
+    sha256 cellar: :any,                 arm64_ventura: "40348a8ca9d201597a66b4d21360d83a021b9b6c0209602ed7d3d19d8b81d4dc"
+    sha256 cellar: :any,                 sonoma:        "34c6985becfd722649d7e8e0dd3b94204dbb2367d5f2123298d3d21eef5f81ad"
+    sha256 cellar: :any,                 ventura:       "9bb6b6a8bcc55baf30552139c344cbc4903bd44ba9a60e984d5a5d81f74cf470"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa28bef272a6590f87c38c0b8d57e76931f9aeece9906e31c56dc40bf20092b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c50930c19edd0c0d400c4ff1d978e82c815b38b27f8657826e74308232c940d"
   end
 
   depends_on "rust" => :build
@@ -81,8 +81,8 @@ class Mcpm < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/95/d2/f587cb965a56e992634bebc8611c5b579af912b74e04eb9164bd49527d21/mcp-1.6.0.tar.gz"
-    sha256 "d9324876de2c5637369f43161cd71eebfd803df5a95e46225cab8d280e366723"
+    url "https://files.pythonhosted.org/packages/bc/8d/0f4468582e9e97b0a24604b585c651dfd2144300ecffd1c06a680f5c8861/mcp-1.9.0.tar.gz"
+    sha256 "905d8d208baf7e3e71d70c82803b89112e321581bcd2530f9de0fe4103d28749"
   end
 
   resource "mdurl" do
@@ -123,6 +123,11 @@ class Mcpm < Formula
   resource "python-dotenv" do
     url "https://files.pythonhosted.org/packages/88/2c/7bb1416c5620485aa793f2de31d3df393d3686aa8a8506d11e10e13c5baf/python_dotenv-1.1.0.tar.gz"
     sha256 "41f90bc6f5f177fb41f53e87666db362025010eb28f60a01c9143bfa33a2b2d5"
+  end
+
+  resource "python-multipart" do
+    url "https://files.pythonhosted.org/packages/f3/87/f44d7c9f274c7ee665a29b885ec97089ec5dc034c7f3fafa03da9e39a09e/python_multipart-0.0.20.tar.gz"
+    sha256 "8dd0cab45b8e23064ae09147625994d090fa46f5b0d1e13af944c331a7fa9d13"
   end
 
   resource "requests" do

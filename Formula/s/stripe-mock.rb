@@ -1,17 +1,17 @@
 class StripeMock < Formula
   desc "Mock HTTP server that responds like the real Stripe API"
   homepage "https:github.comstripestripe-mock"
-  url "https:github.comstripestripe-mockarchiverefstagsv0.194.0.tar.gz"
-  sha256 "8e6357d75ef58badc91995c3a4f6bad6825384461ec3ccdf2c780e3798951733"
+  url "https:github.comstripestripe-mockarchiverefstagsv0.195.0.tar.gz"
+  sha256 "830a70cdbefc14b77f1c397ed29b401ea79a8f2bfdc2bbf9708a901e17208559"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "83a4f61d0c6e07b281dbeb8ef2dfba7d6bdddc5586b21cfc504f94e0aa0a58c5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "83a4f61d0c6e07b281dbeb8ef2dfba7d6bdddc5586b21cfc504f94e0aa0a58c5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "83a4f61d0c6e07b281dbeb8ef2dfba7d6bdddc5586b21cfc504f94e0aa0a58c5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "779a14948e1bd5c4504b56fb2b615251e68676419285b1f360bf579681cc3d06"
-    sha256 cellar: :any_skip_relocation, ventura:       "779a14948e1bd5c4504b56fb2b615251e68676419285b1f360bf579681cc3d06"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "766d65a5aec06f7df1da89b06ec455321d4b78194cf47b3c6a5692ebb2b0c778"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb00df69c89beb8cb7465d9aea84b30e20e669a320dfa1d1f2fde9f1a3f20734"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb00df69c89beb8cb7465d9aea84b30e20e669a320dfa1d1f2fde9f1a3f20734"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "eb00df69c89beb8cb7465d9aea84b30e20e669a320dfa1d1f2fde9f1a3f20734"
+    sha256 cellar: :any_skip_relocation, sonoma:        "db97b4f234bf4e99abe4fcf7f94e23aa6c66613536875987d90cbb149b257bf3"
+    sha256 cellar: :any_skip_relocation, ventura:       "db97b4f234bf4e99abe4fcf7f94e23aa6c66613536875987d90cbb149b257bf3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cfb32a534ce1b0ab692a753f11cc4c00b28d05b0a161e472798c504f7d5f683a"
   end
 
   depends_on "go" => :build

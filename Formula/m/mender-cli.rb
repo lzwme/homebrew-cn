@@ -5,6 +5,11 @@ class MenderCli < Formula
   sha256 "7b68fdeef96a99ee4560cb9dccd673658b27e2f3a9be2e3451d204c50395caa0"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "0f6684645028a62edf8e62d7dfb7845b7aedc474830345cea55e635abf7efe75"
     sha256 cellar: :any,                 arm64_sonoma:  "fe129f50a5e78d44d178a5e802e853f5de0e164a0dd7cb8642cd1bc08423e0c9"

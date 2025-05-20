@@ -1,18 +1,18 @@
 class GitBug < Formula
   desc "Distributed, offline-first bug tracker embedded in git, with bridges"
   homepage "https:github.comgit-buggit-bug"
-  url "https:github.comgit-buggit-bugarchiverefstagsv0.10.0.tar.gz"
-  sha256 "84391695b94bd628236cf263e86996c249e390d1a97acc41af21bc7d44346aca"
+  url "https:github.comgit-buggit-bugarchiverefstagsv0.10.1.tar.gz"
+  sha256 "1b5cafa3d9918ce18c4674c93b83359e211def83e716d5841fa93c77b457e6c2"
   license "GPL-3.0-or-later"
   head "https:github.comgit-buggit-bug.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "80487cab259387a38f0f4ed236d958a9156f98f1e6f061575bfc698ff6e39962"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4973b24889ec240b81e1984fdbfbe650060669db1e2936985b588624af0ebd9a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7bda350b12c69f7f6424c2f0f334dce0864d920d709568aa884348ae04816dc5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "43dd81ce740c787bc7f113a2929ef7cf160965345fbb9021fd7b3911d1b1b382"
-    sha256 cellar: :any_skip_relocation, ventura:       "acdf976be32c223fe55ccd5a2cbee3debf4d832bea8b3338b0e17a632f54c7a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e3e3b25a45703e0d8891466c8eeb43c3920d17fc17b2ef156c6321dc7b7476c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46a716e687114907ed936a8c22b5fa1ca9658eecb26a0537ec894f97ae2c4ca9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5744168a1453fba21ab2782333d4015f9cd9c1b9497ebc909d350af435da737c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "a271df2167a6a767e15beb87eea6eed4245f09db052f3f61b1cd5136349709de"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d5bb614c77aca72bf32c5d2809befa82500f59fc5b603366d261cd83ac7f5762"
+    sha256 cellar: :any_skip_relocation, ventura:       "8721018faf434cc44ecad8440923d69c41886c780e8e10ac73942d8532696de1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c614beca0af4af926599abdd8959820da8cb6621c7c4451ffaaef8cc00a9c268"
   end
 
   depends_on "go" => :build

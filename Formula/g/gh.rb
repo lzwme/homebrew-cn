@@ -1,8 +1,8 @@
 class Gh < Formula
   desc "GitHub command-line tool"
   homepage "https:cli.github.com"
-  url "https:github.comclicliarchiverefstagsv2.72.0.tar.gz"
-  sha256 "5a2cd4f2601d254d11a55dab463849ccccb5fa4bdcaa72b792ea9c3bf8c67d23"
+  url "https:github.comclicliarchiverefstagsv2.73.0.tar.gz"
+  sha256 "e432fd7e8944f94624fbd287b3bdd46f6bbed23609178c940bdb7b5d55a6d1c4"
   license "MIT"
   head "https:github.comclicli.git", branch: "trunk"
 
@@ -12,12 +12,12 @@ class Gh < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d410ae1b49862ac691753deccfcd7167da4e9a88466c01e17e1e8fddd1bff6ef"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d410ae1b49862ac691753deccfcd7167da4e9a88466c01e17e1e8fddd1bff6ef"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d410ae1b49862ac691753deccfcd7167da4e9a88466c01e17e1e8fddd1bff6ef"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7e54cf664dcc6e4493a9bf50e12946adfa8242734792620a9b9c1c7df7275c36"
-    sha256 cellar: :any_skip_relocation, ventura:       "46d113ea2cfb36f3980e98f21acf8f97fbf0c4ded57946e3ae4bb7247088975b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "df94de12df3c9d99fd0608fad282f5efae282323b8b19eda0bbcea2eff8e5ff7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "95b2af35af9cc940a210782b81b3018d8d5fde2b33942d495843344b3b55604b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "95b2af35af9cc940a210782b81b3018d8d5fde2b33942d495843344b3b55604b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "95b2af35af9cc940a210782b81b3018d8d5fde2b33942d495843344b3b55604b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ba053d8cb0fc4949b9fbc902aa88fa6f03ee1893eb046789af4674a47d117d6e"
+    sha256 cellar: :any_skip_relocation, ventura:       "b5e81a42cc9c221d3fd398418d21fb42041b506429ff48cd33a6f25ba4a95e77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d55b43a221219dec027692240422f40adca297252297dea69d26cc3e2e817c20"
   end
 
   depends_on "go" => :build

@@ -6,6 +6,11 @@ class Typeshare < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.com1Passwordtypeshare.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d04400d66c5bcbcd1babe6a500563294a0f6e5b79100be34d0b0465db7e43bae"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8a6691da6e2e6761fb371fda9b4a50e68c8e362673c7fd5d2664f23d40ec88cd"

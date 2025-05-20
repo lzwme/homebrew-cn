@@ -1,8 +1,8 @@
 class Snobol4 < Formula
   desc "String oriented and symbolic programming language"
   homepage "https://www.regressive.org/snobol4/"
-  url "https://ftp.regressive.org/snobol/snobol4-2.3.2.tar.gz"
-  sha256 "41e301e9dd180d70117d64f3694f9dd54f9ed909a36a32587c8bed85ab68ac15"
+  url "https://ftp.regressive.org/snobol/snobol4-2.3.3.tar.gz"
+  sha256 "bfd53071d69283776f5b2764f7865d354b89d372569854a18878e59f57388ed2"
   license "BSD-2-Clause"
 
   livecheck do
@@ -11,15 +11,13 @@ class Snobol4 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "a3ff59d306972bd935fdb85d54681c8ab597f3179b83b1b8ee216ef40582d732"
-    sha256 arm64_sonoma:   "7baa9cfb9bdbb89ec8f1817fccc3f4a3531e56822617a3bab083459029a6457a"
-    sha256 arm64_ventura:  "bab2633cd719743f5648b6a5fa32dae630ad6b7bc4400417747f834226c860e6"
-    sha256 arm64_monterey: "90e3d3102cb1b10ad1578aad8f4fcaec31c2960a4ad54e54983f4778b5646a97"
-    sha256 sonoma:         "c4576d539a10c904408404d64fde008b7939d8fbcddf2e739738b38c9fe613bd"
-    sha256 ventura:        "c8c5b13e46532544bdc4fa93d3670fa5b648d5a9aa9593758a9e83bd9d72f897"
-    sha256 monterey:       "e4d3d40f4b8bd51e49b1c99de9590e79f00876fadb28c13cf98070525106a5ea"
-    sha256 arm64_linux:    "81955f54464190c8e608a813fde680eddb620d40785884971e33f50845ec486a"
-    sha256 x86_64_linux:   "c555c7e31212c27a251d42ebf6b166ee1ac59c6d306c60327a8e1e429d1a7f7a"
+    sha256 arm64_sequoia: "d628d4ea0897d407f1b244dc75fb8168b93d77b1de0c862200acfba011096009"
+    sha256 arm64_sonoma:  "b3f7a50e01ebddadfe570f4e13a630898a86e388e65ac4e2cad8e88b268b3d1e"
+    sha256 arm64_ventura: "a382d391551c2bf3462b47c2214c0d4bd7f79fbc90b46494a6bfa13fc60ea825"
+    sha256 sonoma:        "b6eb99a66c91dee6b0de92822663111e954207148a3ff26f7e5c7460d17ddc09"
+    sha256 ventura:       "677075a50ad434850c41aa511e5382a8306acc3ad8a65a386e5105463f96fff7"
+    sha256 arm64_linux:   "94b2fcd9d8c0e566448129cd582b82bbe03bab0f1c2e3e15fa60e6c6540739a9"
+    sha256 x86_64_linux:  "0cf89fdce929dfabbed1e366a5d85e7206adc6b520bbecec8950259b505b1c04"
   end
 
   depends_on "openssl@3"

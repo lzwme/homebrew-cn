@@ -1,20 +1,19 @@
 class Hebcal < Formula
   desc "Perpetual Jewish calendar for the command-line"
   homepage "https:github.comhebcalhebcal"
-  url "https:github.comhebcalhebcalarchiverefstagsv5.9.0.tar.gz"
-  sha256 "236617ad37c7621e61eb4aa10e407cf95950563bf5e0c663e4720e5a9fb5e3dd"
+  url "https:github.comhebcalhebcalarchiverefstagsv5.9.1.tar.gz"
+  sha256 "9e8be053508020300387ec820cf53ea83a3110a2adc26085a3f2577f83fd801e"
   license "GPL-2.0-or-later"
   head "https:github.comhebcalhebcal.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "29b4c545ce82fdd87512f859b1377b3cae30a6cd092ba1a5be4c6cec6fb7a868"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "29b4c545ce82fdd87512f859b1377b3cae30a6cd092ba1a5be4c6cec6fb7a868"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "29b4c545ce82fdd87512f859b1377b3cae30a6cd092ba1a5be4c6cec6fb7a868"
-    sha256 cellar: :any_skip_relocation, sonoma:        "641185644af7b9ccf87fe96cb9be7261a67a51b07e45712c27be7f881a43f917"
-    sha256 cellar: :any_skip_relocation, ventura:       "641185644af7b9ccf87fe96cb9be7261a67a51b07e45712c27be7f881a43f917"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5d7f436d8dc946674c8c4dc35eae6148b094976c481762d50112b65cae9d46d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "72ce8d3960251c1e1813b16b5f559d08bed22e5749a205c850d0d281033eee72"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c74fc0ef1119ec3a1a5dd217a143a4db3c7059bfeaed0e641dba45b36f3899f0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c74fc0ef1119ec3a1a5dd217a143a4db3c7059bfeaed0e641dba45b36f3899f0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c74fc0ef1119ec3a1a5dd217a143a4db3c7059bfeaed0e641dba45b36f3899f0"
+    sha256 cellar: :any_skip_relocation, sonoma:        "055635a9095aba81c7791c2bdf61dd8f2a11c282ac97063ac9efbf8cd45fca4e"
+    sha256 cellar: :any_skip_relocation, ventura:       "055635a9095aba81c7791c2bdf61dd8f2a11c282ac97063ac9efbf8cd45fca4e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c5ce685f3b7dc7077439752d70e410243c14753c0dd3557c9ff6cb8f9556b1a0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d43bb291820a811552e1378ea59e766946619a41471aa4d178d99048599d1710"
   end
 
   depends_on "go" => :build
