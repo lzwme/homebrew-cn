@@ -1,19 +1,17 @@
 class Alda < Formula
   desc "Music programming language for musicians"
   homepage "https:alda.io"
-  url "https:github.comalda-langaldaarchiverefstagsrelease-2.3.1.tar.gz"
-  sha256 "8136f4fe1c74344ad8b27d23329e23620fdea76fe8892565ff308bda3ceac8cd"
+  url "https:github.comalda-langaldaarchiverefstagsrelease-2.3.2.tar.gz"
+  sha256 "1dc4ad595a14a6c5a2f93dc30f2c340f68a9353bf2f8eaa5ec285b622a33260d"
   license "EPL-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "09d4341cecac9531dd44b96b2f52a32775469737eb6df9ec7861db1f8253942d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f8569e28905afb0cbce78c191bed4a4f82919a5a4c33dbf90d1d1501f9c039b2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "0ce57b03fecb0b4155c55b19281fabb971f3132b90e7a4bdb9323465d27b09a3"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "e870439ad6cdb59433ea8b3983a38b56aae62c83c4897b9d00f32098eb09bf3b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "449cecf972dca30dee2e236c608b70f32c99071d792597e703bf21247f580b3b"
-    sha256 cellar: :any_skip_relocation, ventura:        "60bd98f1ca49d93de8feb9a7034951e5c8351011fe2ff78d76fd33bb0eb20eb4"
-    sha256 cellar: :any_skip_relocation, monterey:       "77bff4c2e20242de41cdb57f9b794f013d2f3a797bd474f36a5da289dfefbc3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "666e3c967b722e5433d5c9a24f0efa73289af18ea5700042f2e275b09eb8f741"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e9ad08ff6305f79d36937d90a192a61f9843ee941b94b81983036ea885185cb7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d7b43e3fcf177044bbf79bf1232e6e6b68515576ee984c4b387225f48ec92c6f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c5243492f9b3514302f73a0280191529a5c95b2c3b66b7da2ff032d2a23d9ce7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aed4c88c3860eaabe07b13438f8c94728900b3aaf7eb05707b03abc5ef6edc56"
+    sha256 cellar: :any_skip_relocation, ventura:       "2a8f6d59392a7cb4fe7909d70409937090e58071bc6e84273db45a6e082fe658"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ea20a8d43ff853c8851db04a6f0c5a083210ef57e2bf792e9c646665f14bc7ee"
   end
 
   depends_on "go" => :build

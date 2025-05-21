@@ -7626,6 +7626,7 @@ Homebrew-homebrew-cask/Casks/4/4k-video-downloader.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/4/4k-video-to-mp3.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/4/4k-youtube-to-mp3.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/4/4peaks.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/5/5ire.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/5/5kplayer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/7/7777.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/8/86box.rb, Homebrew/homebrew-cask, 1
@@ -14153,7 +14154,7 @@ Homebrew-homebrew-cask/Casks/s/spotify.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spotify4bigsur.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spotmenu.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spotspot.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/s/springtoolsuite.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/springtoolsforeclipse.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spundle.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spybuster.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spyder.rb, Homebrew/homebrew-cask, 1
@@ -14477,6 +14478,7 @@ Homebrew-homebrew-cask/Casks/t/timemachineeditor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/timemachinestatus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/timemator.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/timer.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/timescribe.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/timestamp.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/timeular.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/timing.rb, Homebrew/homebrew-cask, 0
@@ -14776,13 +14778,13 @@ Homebrew-homebrew-cask/Casks/v/vlc@nightly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/vlcstreamer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vmpk.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vmware-fusion.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/v/vmware-fusion@preview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vnc-server.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vnc-viewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/vnote.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/voiceink.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/voicepeak.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/void.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/v/voiden.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/voikkospellservice.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/v/volanta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/v/volt.rb, Homebrew/homebrew-cask, 1
@@ -15057,6 +15059,7 @@ Homebrew-homebrew-cask/Casks/z/zed.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zed@preview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zeebe-modeler.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zeitgeist.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/z/zen-privacy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zen.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zen@twilight.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zenbeats.rb, Homebrew/homebrew-cask, 0

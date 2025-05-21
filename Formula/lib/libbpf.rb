@@ -1,13 +1,13 @@
 class Libbpf < Formula
   desc "Berkeley Packet Filter library"
   homepage "https:github.comlibbpflibbpf"
-  url "https:github.comlibbpflibbpfarchiverefstagsv1.5.0.tar.gz"
-  sha256 "53492aff6dd47e4da04ef5e672d753b9743848bdb38e9d90eafbe190b7983c44"
+  url "https:github.comlibbpflibbpfarchiverefstagsv1.5.1.tar.gz"
+  sha256 "e5ff89750e48ab5ecdfc02a759aa0dacd1e7980e98e16bdb4bfa8ff0b3b4b98f"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "96c808c8f6a5b908a3a1702404a7461f8ce9981173f937a45ee0ef1adef9dd5a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "ff0139bb799097722a2a15a5593ebb0c6e13ba2e8f61f8add855bef223329c33"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "8c72de89080be7e7cdf36aa77682708562ad73dedb234f34ceebf1c4e068bd7b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "0c04b2d4c14b62ae7a30ae5cbbec288c3b2961de0a684f96f2c9c2ec41d240cf"
   end
 
   depends_on "pkgconf" => :build

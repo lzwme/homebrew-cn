@@ -6,16 +6,17 @@ class Liquidctl < Formula
   url "https:files.pythonhosted.orgpackages1d878b80a72696a906fde5ead01398291c4ae67353d8d445b3828af4217b7d2cliquidctl-1.15.0.tar.gz"
   sha256 "82243acf320c2686b274c13e804e8dd56ec97eaa0a9347d4107974428fb548d1"
   license "GPL-3.0-or-later"
+  revision 1
   head "https:github.comliquidctlliquidctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d510764a83983ce82305ca97ae0d5b7937829925bd64bb994be24bf7f0f0136c"
-    sha256 cellar: :any,                 arm64_sonoma:  "c80266cf95b59a392b3ba9d6eaefd1c54c7e26781e9f644080bf488ca334dfb4"
-    sha256 cellar: :any,                 arm64_ventura: "2df40c607570625a1e9df040d40d9591508367f43bd0d505059a79b47b6faf81"
-    sha256 cellar: :any,                 sonoma:        "f3aea3bc6615019e4e161c517ec821d8172a16306acc388b4bcf8e1e07ab893d"
-    sha256 cellar: :any,                 ventura:       "e548f1e3d0a29346377db2ce72f320ae08905ba1fe14d339d0ccf2dcdc9e346a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "07653b2aedc53c8f7d76a79ab2fb11f13dcd80205e58e76fb510fddc45893670"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e6bfb0f85eabaada1792f71d1a2852a777ffb9ba95da8f6cafaa1178e6ca0852"
+    sha256 cellar: :any,                 arm64_sequoia: "031c352493e155ec0be429608e741d4b2c50c73b9ba15fb7d93eaeda7432b829"
+    sha256 cellar: :any,                 arm64_sonoma:  "31d6591b0ba39715a5a3afef0e58ae6a60e3212d515943a35fac490e1128230e"
+    sha256 cellar: :any,                 arm64_ventura: "4aa2c4495ada92c158da4daaae46588e14b645fef7ae4e1b658745eda578cb98"
+    sha256 cellar: :any,                 sonoma:        "31864579d80e9dcdedbe0fcbdfefc54f347c6a3473e1d3a51033b633e258791e"
+    sha256 cellar: :any,                 ventura:       "f38b71b9c2df29a00a33a2dfb564f8cf4cc6ca3bcdc602f0a9012f98020afc6f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2475bdf117aabe04f0302310e18f6272aeb3e88fad4286f0c0545625cf1e70c8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4af41e0d1c855dfedc050a8f5f36632b8b56dbd03286ce783206c1768ddec9db"
   end
 
   depends_on "pkgconf" => :build
@@ -54,8 +55,8 @@ class Liquidctl < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesa95a0db4da3bc908df06e5efae42b44e75c81dd52716e10192ff36d0c1c8e379setuptools-78.1.0.tar.gz"
-    sha256 "18fd474d4a82a5f83dac888df697af65afa82dec7323d09c3e37d1f14288da54"
+    url "https:files.pythonhosted.orgpackages9e8bdc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15setuptools-80.7.1.tar.gz"
+    sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
   end
 
   resource "smbus" do

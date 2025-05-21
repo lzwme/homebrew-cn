@@ -1,18 +1,18 @@
 class Sqlboiler < Formula
   desc "Generate a Go ORM tailored to your database schema"
   homepage "https:github.comvolatiletechsqlboiler"
-  url "https:github.comvolatiletechsqlboilerarchiverefstagsv4.19.0.tar.gz"
-  sha256 "39f106e8846f818a71f81e7863e38ff154f351e758c15e25312882fcfdad2ca8"
+  url "https:github.comvolatiletechsqlboilerarchiverefstagsv4.19.1.tar.gz"
+  sha256 "ba6fb59dcf9fc6ab14223a001c5d53156165563cb357521eff0e599eb61cef2a"
   license "BSD-3-Clause"
   head "https:github.comvolatiletechsqlboiler.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "91baa67ed1eb0f569395fd5731006bc1401516a13f5261fca90037df3cc01b48"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "91baa67ed1eb0f569395fd5731006bc1401516a13f5261fca90037df3cc01b48"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "91baa67ed1eb0f569395fd5731006bc1401516a13f5261fca90037df3cc01b48"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2074aa55cde9dbc8c0387148750788a968da5266009eb141fbfc428555285ecb"
-    sha256 cellar: :any_skip_relocation, ventura:       "2074aa55cde9dbc8c0387148750788a968da5266009eb141fbfc428555285ecb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "be93948ff6fabbc25d0545c21bf276d0b1189838be7ecf7d750839af9f71dfaf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "08857ef511f690f8933d95b76105661e7649530a646684d723735191f57435c6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08857ef511f690f8933d95b76105661e7649530a646684d723735191f57435c6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "08857ef511f690f8933d95b76105661e7649530a646684d723735191f57435c6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9c69916334c39d17e4021dcb5d934d83fea64991a77819bb58576296e2d3ebc0"
+    sha256 cellar: :any_skip_relocation, ventura:       "9c69916334c39d17e4021dcb5d934d83fea64991a77819bb58576296e2d3ebc0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "864792653086ae9530164a4e60696fde39cafbdd1111e048a51e6ca5ad119f08"
   end
 
   depends_on "go" => :build

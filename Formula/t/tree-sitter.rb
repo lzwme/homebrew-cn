@@ -12,13 +12,14 @@ class TreeSitter < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d759e793e811053e350f19269066d86609efa06fc2e92ce7085b413dc3baab70"
-    sha256 cellar: :any,                 arm64_sonoma:  "1a0a7a12a4021659fd237f7b35abb449f179dff95b059ce874997a2d65b0a042"
-    sha256 cellar: :any,                 arm64_ventura: "7605faf1b7a973d90c481477a400b2b4da5a18adfdcaabfb9868075a84eef99f"
-    sha256 cellar: :any,                 sonoma:        "873e4f49b4c0419ff3f5ff2d7f44c63068a9de9d3100f3f811b04e6d01f05d17"
-    sha256 cellar: :any,                 ventura:       "96ef7b42541f6cdc3eb3d06137a6cc077b981549c22d397bb7a9460b20073e29"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb5af21cb73a0a56b5980663f9640c3d897c020bf3c5457d11b471f6f5cd467f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51edea22da451343dd7f18b7d92908158ed96c0f6c74e24e3a373baffaddc538"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "04bc18658f2d1e9b4592c6b4aaad8b0f44e0a00fa800a1e553a7c9fa6eebaf04"
+    sha256 cellar: :any,                 arm64_sonoma:  "98c9b5fd1cf1f2ae8c8c1708f72a121bffc263b804fc9ec60e2dd837f1637cf2"
+    sha256 cellar: :any,                 arm64_ventura: "35880d964bd1cb4a2689c4adb50bdb274a5572274f5e45823405e37738c49083"
+    sha256 cellar: :any,                 sonoma:        "8bf916cd0dd611f16c22a02dd9854d981930ce19d9c68b5ecef3faa12222cdbf"
+    sha256 cellar: :any,                 ventura:       "29593b1fa35eaf34ac01b315945ba7fbd9bbfff3e2f8dc342b84242340b80777"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3f55ffdcbd243053eab62d2c8b6bb88d9c9785fcfa86a47c828ed5613a356651"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2f1680c318ec34e97ad20729c9f501794621dc7e7d3c90823f0199a5e811d8e7"
   end
 
   depends_on "rust" => :build
@@ -27,6 +28,7 @@ class TreeSitter < Formula
   def install
     system "make", "install", "AMALGAMATED=1", "PREFIX=#{prefix}"
     system "cargo", "install", *std_cargo_args(path: "cli")
+    generate_completions_from_executable(bin"tree-sitter", "complete", shell_parameter_format: :arg)
   end
 
   test do

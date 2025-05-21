@@ -6,17 +6,16 @@ class Instalooter < Formula
   url "https:files.pythonhosted.orgpackages3013907e6aaba6280e1001080ab47e750068ffc5fb7174203985b3c9d678e3f2instalooter-2.4.4.tar.gz"
   sha256 "fb9b4a948702361a161cc42e58857e3a6c9dafd9e22568b07bc0d0b09c3c34a9"
   license "GPL-3.0-or-later"
-  revision 10
+  revision 11
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f8640398cc08d94ac041b9dc19b31dc5fb20130e8babe71398804d7a389ac298"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f8640398cc08d94ac041b9dc19b31dc5fb20130e8babe71398804d7a389ac298"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f8640398cc08d94ac041b9dc19b31dc5fb20130e8babe71398804d7a389ac298"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9b3fed127005dd557fff1cb3e124c0cd297dcae0b48cdad41688562bcf32d09e"
-    sha256 cellar: :any_skip_relocation, ventura:       "9b3fed127005dd557fff1cb3e124c0cd297dcae0b48cdad41688562bcf32d09e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "358b6c0c0b86ac7af5091ad66cbd6f7e175255540f8d17bf0a4f0d0d8f116b3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "669e99fd34fb0b33c74e2558dd977406d62c9acd3c7254b63e7c853a3e2faafd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94426ba0b3b5a40609a0f9473fe0b0382cb4dfe97acccdd637563ec3e993134f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "94426ba0b3b5a40609a0f9473fe0b0382cb4dfe97acccdd637563ec3e993134f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "94426ba0b3b5a40609a0f9473fe0b0382cb4dfe97acccdd637563ec3e993134f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4d00ae9f509773e37ccd8d5c2b5d721bcd63dc8cd6ed824e875be45e7d86b5c9"
+    sha256 cellar: :any_skip_relocation, ventura:       "4d00ae9f509773e37ccd8d5c2b5d721bcd63dc8cd6ed824e875be45e7d86b5c9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6279654d6f601a86decff3bf38565a14e52d2a94457139466634ec0aa20d0ede"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6279654d6f601a86decff3bf38565a14e52d2a94457139466634ec0aa20d0ede"
   end
 
   depends_on "certifi"
@@ -28,8 +27,8 @@ class Instalooter < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
-    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
+    url "https:files.pythonhosted.orgpackagese43389c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12dcharset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "coloredlogs" do
@@ -68,13 +67,13 @@ class Instalooter < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
-    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
+    url "https:files.pythonhosted.orgpackages9e8bdc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15setuptools-80.7.1.tar.gz"
+    sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
   end
 
   resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+    url "https:files.pythonhosted.orgpackages94e7b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   resource "tenacity" do
@@ -83,13 +82,13 @@ class Instalooter < Formula
   end
 
   resource "tqdm" do
-    url "https:files.pythonhosted.orgpackages58836ba9844a41128c62e810fddddd72473201f3eacde02046066142a2d96cc5tqdm-4.66.5.tar.gz"
-    sha256 "e1020aef2e5096702d8a025ac7d16b1577279c9d63f8375b63083e9a5f0fcbad"
+    url "https:files.pythonhosted.orgpackagesa84b29b4ef32e036bb34e4ab51796dd745cdba7ed47ad142a9f4a1eb8e0c744dtqdm-4.67.1.tar.gz"
+    sha256 "f8aef9c52c08c13a65f30ea34f4e5aac3fd1a34959879d7e59e63027286627f2"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
+    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
   end
 
   resource "verboselogs" do

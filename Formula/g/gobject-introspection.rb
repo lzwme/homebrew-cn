@@ -7,15 +7,16 @@ class GobjectIntrospection < Formula
   url "https:download.gnome.orgsourcesgobject-introspection1.84gobject-introspection-1.84.0.tar.xz"
   sha256 "945b57da7ec262e5c266b89e091d14be800cc424277d82a02872b7d794a84779"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.0-or-later", "MIT"]
+  revision 1
 
   bottle do
-    sha256 arm64_sequoia: "1940c1701f91ae5e7ef183e793b97be639d16e0f280d3732cecefb77bfd548f9"
-    sha256 arm64_sonoma:  "c770a7353969b329ec522b6bae607e2c0568c846ec88788c2da9c60b3aa381b7"
-    sha256 arm64_ventura: "349e78cab0c1766fe7ae4af91bf410108a8b3ded48b985be0daab0cd3d92a0df"
-    sha256 sonoma:        "625c2a1131e3ed0a03aee948584760f5958d7fed46ef9a54cadeb29478b0b6da"
-    sha256 ventura:       "e6058df37dbcc91b27a6dcd1dc776bb3b4638419d8619f0e3ca102b650dd98c4"
-    sha256 arm64_linux:   "cc2a4f86e227bac0d4f3eeb3d7c0c9cf19ffbd26f4bc9d8c78b73504c5750670"
-    sha256 x86_64_linux:  "425a0209cd907de97d5d0251d76a297d5837bac7ae79625daab9eafd036e6554"
+    sha256 arm64_sequoia: "280f6dd881d72f75e3ca7748d4b352af4018e53b51e8e2f84950de1d55ab5895"
+    sha256 arm64_sonoma:  "bce44ddc571cddb32fb04775bcf97f405e8631b27eb87ffb4eb3c95494340d21"
+    sha256 arm64_ventura: "01197151515f3b361144ef07dbafa2feb0287b2cfd49f2c55d73576da15cedab"
+    sha256 sonoma:        "47ef78ac2d9c8c1fe96971d9170a136db44464ea1c59221ad1734a03e97f42b7"
+    sha256 ventura:       "3a845579c9e1eeb8d9b278f7077c46cfa3b03d25b746231fffb27d3d39df293c"
+    sha256 arm64_linux:   "8845a26bfb3119867b8aa7c40115c555dc0c80d5e88114d8d9c1e947118f7b65"
+    sha256 x86_64_linux:  "030059cda8e7ffc3f90dfecef428999df1dce8d2d34b193063795dc807e5a6a5"
   end
 
   depends_on "bison" => :build
@@ -31,13 +32,13 @@ class GobjectIntrospection < Formula
   uses_from_macos "libffi", since: :catalina
 
   resource "mako" do
-    url "https:files.pythonhosted.orgpackages624fddb1965901bc388958db9f0c991255b2c469349a741ae8c9cd8a562d70a6mako-1.3.9.tar.gz"
-    sha256 "b5d65ff3462870feec922dbccf38f6efb44e5714d7b593a656be86663d8600ac"
+    url "https:files.pythonhosted.orgpackages9e38bd5b78a920a64d708fe6bc8e0a2c075e1389d53bef8413725c63ba041535mako-1.3.10.tar.gz"
+    sha256 "99579a6f39583fa7e5630a28c3c1f440e4e97a414b80372649c0ce338da2ea28"
   end
 
   resource "markdown" do
-    url "https:files.pythonhosted.orgpackages54283af612670f82f4c056911fbbbb42760255801b3068c48de792d354ff4472markdown-3.7.tar.gz"
-    sha256 "2ae2471477cfd02dbbf038d5d9bc226d40def84b4fe2986e49b59b6b472bbed2"
+    url "https:files.pythonhosted.orgpackages2f15222b423b0b88689c266d9eac4e61396fe2cc53464459d6a37618ac863b24markdown-3.8.tar.gz"
+    sha256 "7df81e63f0df5c4b24b7d156eb81e4690595239b7d70937d0409f1b0de319c6f"
   end
 
   resource "markupsafe" do
@@ -46,8 +47,8 @@ class GobjectIntrospection < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages32d27b171caf085ba0d40d8391f54e1c75a1cda9255f542becf84575cfd8a732setuptools-76.0.0.tar.gz"
-    sha256 "43b4ee60e10b0d0ee98ad11918e114c70701bc6051662a9a675a0496c1a158f4"
+    url "https:files.pythonhosted.orgpackages9e8bdc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15setuptools-80.7.1.tar.gz"
+    sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
   end
 
   # Fix library search path on non-usrlocal installs (e.g. Apple Silicon)

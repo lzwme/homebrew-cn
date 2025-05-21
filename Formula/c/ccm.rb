@@ -6,18 +6,17 @@ class Ccm < Formula
   url "https:files.pythonhosted.orgpackagesf112091e82033d53b3802e1ead6b16045c5ecfb03374f8586a4ae4673a914c1accm-3.1.5.tar.gz"
   sha256 "f07cc0a37116d2ce1b96c0d467f792668aa25835c73beb61639fa50a1954326c"
   license "Apache-2.0"
-  revision 4
+  revision 5
   head "https:github.comapachecassandra-ccm.git", branch: "trunk"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "e036ab0817d4b65085d1c2cb6c2edf0a9e55b6340b9bbe99d6f90abc16e36e1f"
-    sha256 cellar: :any,                 arm64_sonoma:  "33a2184cc7764d6ee186071d78e743b0c152cb0ac37ec5dcfe77ee3eae97ab01"
-    sha256 cellar: :any,                 arm64_ventura: "a8231ecd1b2f906259979cc35186be52000c4b7786dbb55c8c3cd13c52b5402a"
-    sha256 cellar: :any,                 sonoma:        "528a3299799df8daf15b07e0a0670df132ae046f0f52466defe58e968bc54a11"
-    sha256 cellar: :any,                 ventura:       "9912048114592dbd5fd7be13ab693bd12c6dabe896f2b953802c383c3483e7c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2a04076ec09207028fa744de13afaa744462f24fde634d9308147952e1855d07"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7cf8010b7799a42307a71b081fdb9afa505ecc13b7ad8fa4fb826f257eafc364"
+    sha256 cellar: :any,                 arm64_sequoia: "eb6c2ab38ac79ff2b3718e344517f07ebb2c9391227676a507d721337981b5cc"
+    sha256 cellar: :any,                 arm64_sonoma:  "ef958862ebdc0d3203850a3055913742f0a784e339cbdede518f5582f9806185"
+    sha256 cellar: :any,                 arm64_ventura: "622faec5bb8d2c454beafd31cd567a9243cb45cf096213a50701dde2ba150c43"
+    sha256 cellar: :any,                 sonoma:        "ad8ca422f7aef4dbed4984eebea2f52aeac21d72a53a3491bc23911962efd642"
+    sha256 cellar: :any,                 ventura:       "fd3bd745bc0600e892c0372529149976a27d35ac624862764c8a5d9680107a67"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5f31636caef911a604264f28bc73ab30f721778dfcc296300ddf3f191a5b252e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe165a475bb32e289f0042ddc39bb6253670c10a988430c00f313c0027ebfeab"
   end
 
   depends_on "libyaml"
@@ -29,8 +28,8 @@ class Ccm < Formula
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https:files.pythonhosted.orgpackagescd0f62ca20172d4f87d93cf89665fbaedcd560ac48b465bd1d92bfc7ea6b0a41click-8.2.0.tar.gz"
+    sha256 "f5452aeddd9988eefa20f90f05ab66f17fce1ee2a36907fd30b05bbb5953814d"
   end
 
   resource "geomet" do
@@ -44,13 +43,13 @@ class Ccm < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
-    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
+    url "https:files.pythonhosted.orgpackages9e8bdc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15setuptools-80.7.1.tar.gz"
+    sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
   end
 
   resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+    url "https:files.pythonhosted.orgpackages94e7b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   def install

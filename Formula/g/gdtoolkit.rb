@@ -6,15 +6,16 @@ class Gdtoolkit < Formula
   url "https:files.pythonhosted.orgpackages5e710563b7f812c4db67ead1d47cf6710c3e9c6e1a7d505321240efc7638c08bgdtoolkit-4.3.3.tar.gz"
   sha256 "f17089c3e33d0053ab229a637a9faabc0fb8ebb07412fe719ed00b2e66adc343"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "18c9d3e8faaf0038a293dc1ee6d5b8a57f0d46c50f43e1b164b8dea6a4a6e7e9"
-    sha256 cellar: :any,                 arm64_sonoma:  "34d4cf5f883f6b13dc87d513171f15b2d9bcb639e394bdefbcd92b272337b949"
-    sha256 cellar: :any,                 arm64_ventura: "ed386e1d59fe6471f1e192e7a82a1c4274ae628b4d35274ab1d8451d06d06099"
-    sha256 cellar: :any,                 sonoma:        "97cd6163cfe41d41fe0748c65bc7c838e83749f6d5635286019d6b4dd32dcfc6"
-    sha256 cellar: :any,                 ventura:       "951eeeeed7dbe1ef467685b65721c54f01323f2836225a737697bf822f854bd5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dd6ec3ac1a27aae5c0be8590c9b8ec7cbebdaddcd8b041c5e9a20730828324d2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "377d555ae1057c4a0e61c54f0d0a44c44f6eaa19ef6bd0bfd41c854bcabd78f1"
+    sha256 cellar: :any,                 arm64_sequoia: "bf4f396f05200cb9b9acc892694f4bf4e5969420d21c1efa6d0509c5707854d2"
+    sha256 cellar: :any,                 arm64_sonoma:  "3d1ca6707157c01f628e1f335750a29ddb1638d15b7b1b846b9e32ae02a6916b"
+    sha256 cellar: :any,                 arm64_ventura: "795711b2b6e7820c18ae710f4b15a20cc34593eb9ef04b0c2570c266bd8a2bf1"
+    sha256 cellar: :any,                 sonoma:        "a484303d9f447dd76f825d29b8056b3b58aa2794b054766940f885aa89e31335"
+    sha256 cellar: :any,                 ventura:       "02d84ca798c5039e5df3fe1fbe727eedd818b03d43f071c24fbdf1a2d0180b45"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e3417a05bc2349a9bbc260903e166c0be0c4c813a876808fa2e97bf31bec09a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1864a31849824628ae0898d5fba730754bab84b4de707d33b11a8bec6a72ab10"
   end
 
   depends_on "libyaml"
@@ -56,8 +57,8 @@ class Gdtoolkit < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesac57e6f0bde5a2c333a32fbcce201f906c1fd0b3a7144138712a5e9d9598c5ecsetuptools-75.7.0.tar.gz"
-    sha256 "886ff7b16cd342f1d1defc16fc98c9ce3fde69e087a4e1983d7ab634e5f41f4f"
+    url "https:files.pythonhosted.orgpackages9e8bdc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15setuptools-80.7.1.tar.gz"
+    sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
   end
 
   resource "six" do

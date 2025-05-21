@@ -1,8 +1,8 @@
 class RakudoStar < Formula
   desc "Rakudo compiler and commonly used packages"
   homepage "https:rakudo.org"
-  url "https:github.comrakudostarreleasesdownload2025.04rakudo-star-2025.04.tar.gz"
-  sha256 "9c9fcb04b6fae5b56acbe9e580b688334fd0213d1c0d92118b16a8b9da3e54c8"
+  url "https:github.comrakudostarreleasesdownload2025.05rakudo-star-2025.05.tar.gz"
+  sha256 "b5f6b5135599db0a18baf1ec660e78dddc8d8ca46d80576407bd5dcf70a4d574"
   license "Artistic-2.0"
 
   livecheck do
@@ -11,13 +11,13 @@ class RakudoStar < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "7ad5078b0eda6ed1b75e1490552f10f3062bcaccf9a47ff43850d782db6e3cb1"
-    sha256 arm64_sonoma:  "4003960795806760c80e1bb49d280001b5cd0e78f08b5ab98f40d39deee51546"
-    sha256 arm64_ventura: "a32d2826b6478b74b4d881e325a7840a21f9f295837c874b650097ee55375dfe"
-    sha256 sonoma:        "924d3c51706e3f5f5511b1309a2c7b620bf032946e8b4b1c046dd0924bd63a87"
-    sha256 ventura:       "08bc3921336989f0448023d67d88902525451e9c9ad07628c27fcc80860c7832"
-    sha256 arm64_linux:   "a73d20233fbe6ef7804dfe3177fa344e28ebb3a39f889b53800d51ac46d8e907"
-    sha256 x86_64_linux:  "156596cad01fd776d037ea9439d9533b37b4f61ce98b1866aafab07c4577bd84"
+    sha256 arm64_sequoia: "7a895bdf00ddf27ce11aa6efb3ab0bb6d75fca0a5434741504f663f647b1a906"
+    sha256 arm64_sonoma:  "45729625f5031385c361cf6c4f90fc9666605428da1b04e1268bdaff3af20143"
+    sha256 arm64_ventura: "55e28472b5488f597e09a23ea81f990d56f4e796879b261d4460be8374158907"
+    sha256 sonoma:        "2cdeb1c478e4da7097659e9c5ddf405e0499638343b6d2392d798404c6b7f0fb"
+    sha256 ventura:       "d48e786a4ee839ec4b3ac52169816f41bccb525ab0a70a9ea9ef3fa755c647ba"
+    sha256 arm64_linux:   "dd91e8d891e1b584f9ee9954a0d7d8956d21da8052144a13c876c095b63ddb91"
+    sha256 x86_64_linux:  "d29b7a6848a5fb3295166adc2b1fdbbc77c85bc5480048f644c79241431b51d9"
   end
 
   depends_on "bash" => :build

@@ -4,6 +4,7 @@ class PythonAT311 < Formula
   url "https:www.python.orgftppython3.11.12Python-3.11.12.tgz"
   sha256 "379c9929a989a9d65a1f5d854e011f4872b142259f4fc0a8c4062d2815ed7fba"
   license "Python-2.0"
+  revision 1
 
   livecheck do
     url "https:www.python.orgftppython"
@@ -11,13 +12,13 @@ class PythonAT311 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "ef44fa3fc4d611b9d18af77e61fec677986cafc96a92ff733ad971178b1afbc2"
-    sha256 arm64_sonoma:  "550e45bd4e9165d1c64fc4a5a22535531a2eee5ed3f7e97f5067ccf6e54d65a7"
-    sha256 arm64_ventura: "2f9cea9a1ca7f8ff71b8b9523e1e549d14a76f3b3ab98d09ffd72f30b64f30db"
-    sha256 sonoma:        "217057320ac5e61a97785f2a95bbad88b03ecd6657c0b5508f6ecb940b4562aa"
-    sha256 ventura:       "dc632d4dce345d6a8f99802b9868053750767d2208a7efa2f4d53523551b7788"
-    sha256 arm64_linux:   "0fdd8f0e8ba35f2ebb8a5bda280ca35efbec46d1b5019f2b581361f080986c65"
-    sha256 x86_64_linux:  "7f691672863098565c7b044237a870c7f536b7e0f009839b525195889927ff0d"
+    sha256 arm64_sequoia: "9073513918086d2d7264ea10c5096c17374921cc729f43820b9d45832d74f5d8"
+    sha256 arm64_sonoma:  "e0d8adeb873da451d9ea9ac9978ef14e8068f8ceaa221edd6d3456b41cdceb67"
+    sha256 arm64_ventura: "d882e62bbaf83136613f7e4718cc685eee6ac62a9eae1c36591f3777f4d17e41"
+    sha256 sonoma:        "9671b5e234746b4c6250fd8f5fef4d8e70012f8b2a212ac379f2ac5707eb130f"
+    sha256 ventura:       "8f915363f0d59a1a9182d47f647d179916282ff47abcd61a041218a3fd41bf04"
+    sha256 arm64_linux:   "c223bd6149e241f464ac692597b62c0724e3bef1d4a1f08f090457c9a293101e"
+    sha256 x86_64_linux:  "51441f0c000c5975d43511d5680b1aa1aa37ba7caf54e33c759b44136c797516"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -51,13 +52,13 @@ class PythonAT311 < Formula
   end
 
   resource "pip" do
-    url "https:files.pythonhosted.orgpackages7053b309b4a497b09655cb7e07088966881a57d082f48ac3cb54ea729fd2c6cfpip-25.0.1.tar.gz"
-    sha256 "88f96547ea48b940a3a385494e181e29fb8637898f88d88737c5049780f196ea"
+    url "https:files.pythonhosted.orgpackages59de241caa0ca606f2ec5fe0c1f4261b0465df78d786a38da693864a116c37f4pip-25.1.1.tar.gz"
+    sha256 "3de45d411d308d5054c2168185d8da7f9a2cd753dbac8acbfa88a8909ecd9077"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesa95a0db4da3bc908df06e5efae42b44e75c81dd52716e10192ff36d0c1c8e379setuptools-78.1.0.tar.gz"
-    sha256 "18fd474d4a82a5f83dac888df697af65afa82dec7323d09c3e37d1f14288da54"
+    url "https:files.pythonhosted.orgpackages9e8bdc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15setuptools-80.7.1.tar.gz"
+    sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
   end
 
   resource "wheel" do

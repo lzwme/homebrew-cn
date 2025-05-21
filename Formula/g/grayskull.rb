@@ -6,15 +6,16 @@ class Grayskull < Formula
   url "https:files.pythonhosted.orgpackages34362af84868cd2ca7af815ec58e7ab2828e3a8b8eedc30c0b180b633bc6d94agrayskull-2.9.1.tar.gz"
   sha256 "348e3b7cf994ddfec6775d18556ddd3a39df77ddb2855f861a97330a256826b9"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c6c2e8ad4c7b8fa1df065660720aad772d67bfc625585a9c5d5da60b12c555b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "407eeee9582d29faa19ee6c5b8b34a550a37b3bc6bd0501d89579a947fe25d17"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "02754dfe32f1b4d72e01ec6558667b3a11a999572d93b91986f9958b28eb3f95"
-    sha256 cellar: :any_skip_relocation, sonoma:        "73371933692c78f1fea8268a9aea366c547728f8d667f548a978e3425bb9fc41"
-    sha256 cellar: :any_skip_relocation, ventura:       "d4c8745c081260aa71e1a4db765bc1b4dd4dc5820a7040ece4df32fa1a941912"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2aed9eadfb5e4b8c7bad5829c4ee2b642fa8951e4829b6c57d4015068614255e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f3edcbb19b88612856d5dc615636b3076762e64430286dde9a2c9a7f0137a58"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a81d9aaa8239d8dd13a296868ddc484e467efd591975c431dab6767fb6fc4d21"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "189b5b32794fbb17a5ba37d0e39a6db2f9da4c739d5e02cb82f958d429eee9a0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "979b22ddfb475ff31dcb527bf8844859a983d105cfd8c0b814ba18a6634f8ed2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3b6190d22e1852c817a212469f94c4edc23781ef5dfbed3f836d6d81ffbb8d7c"
+    sha256 cellar: :any_skip_relocation, ventura:       "a0b54c3b5af2de92d7acb8c8f394cf15de91db0b4b70b0e18760f38d5bd66472"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e063dfe6e6ff23ee7543638ea811bfe1683d99ec669cd4f5f6647ce76356c002"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e95a6963197c73ff4f22c5fdc27a6a851219941ca9cb323c2b03947366131603"
   end
 
   depends_on "cmake" => :build
@@ -23,13 +24,13 @@ class Grayskull < Formula
   depends_on "python@3.13"
 
   resource "beautifulsoup4" do
-    url "https:files.pythonhosted.orgpackagesf03cadaf39ce1fb4afdd21b611e3d530b183bb7759c9b673d60db0e347fd4439beautifulsoup4-4.13.3.tar.gz"
-    sha256 "1bd32405dacc920b42b83ba01644747ed77456a65760e285fbc47633ceddaf8b"
+    url "https:files.pythonhosted.orgpackagesd8e40c4c39e18fd76d6a628d4dd8da40543d136ce2d1752bd6eeeab0791f4d6bbeautifulsoup4-4.13.4.tar.gz"
+    sha256 "dbb3c4e1ceae6aefebdaf2423247260cd062430a410e38c66f2baa50a8437195"
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https:files.pythonhosted.orgpackagese43389c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12dcharset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "colorama" do
@@ -48,8 +49,8 @@ class Grayskull < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
-    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
+    url "https:files.pythonhosted.orgpackagesa1d41fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24dpackaging-25.0.tar.gz"
+    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
   resource "pkginfo" do
@@ -88,13 +89,13 @@ class Grayskull < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesa95a0db4da3bc908df06e5efae42b44e75c81dd52716e10192ff36d0c1c8e379setuptools-78.1.0.tar.gz"
-    sha256 "18fd474d4a82a5f83dac888df697af65afa82dec7323d09c3e37d1f14288da54"
+    url "https:files.pythonhosted.orgpackages9e8bdc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15setuptools-80.7.1.tar.gz"
+    sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
   end
 
   resource "soupsieve" do
-    url "https:files.pythonhosted.orgpackagesd7cefbaeed4f9fb8b2daa961f90591662df6a86c1abf25c548329a86920aedfbsoupsieve-2.6.tar.gz"
-    sha256 "e2e68417777af359ec65daac1057404a3c8a5455bb8abc36f1a9866ab1a51abb"
+    url "https:files.pythonhosted.orgpackages3ff44a80cd6ef364b2e8b65b15816a843c0980f7a5a2b4dc701fc574952aa19fsoupsieve-2.7.tar.gz"
+    sha256 "ad282f9b6926286d2ead4750552c8a6142bc4c783fd66b0293547c8fe6ae126a"
   end
 
   resource "stdlib-list" do

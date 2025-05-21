@@ -1,8 +1,8 @@
 class Cfengine < Formula
   desc "Help manage and understand IT infrastructure"
   homepage "https://cfengine.com/"
-  url "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-community-3.25.0.tar.gz"
-  sha256 "5d43f7e75f6197b6cee305bee27b9a41af80a2a17416dbd3b04c538898b88b83"
+  url "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-community-3.26.0.tar.gz"
+  sha256 "d3c3884b314dae48a6884e919d0a12acac5aea95d970544e4632a1773857d19b"
   license all_of: ["BSD-3-Clause", "GPL-2.0-or-later", "GPL-3.0-only", "LGPL-2.0-or-later"]
 
   livecheck do
@@ -17,13 +17,13 @@ class Cfengine < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "93ebb9d05d50ee73b9a596c732d93810734155ea7f5889ed6bec14a6cf9bd158"
-    sha256 arm64_sonoma:  "9f6fab1d37d4dcc579c085b85a62aae9fa6f0ace3492ad3457213db9aaa2c326"
-    sha256 arm64_ventura: "515f6ff9b8088c289c9884b222fed773e859c001da5b246848156abd80955682"
-    sha256 sonoma:        "3a5f4caf4491c5d7bd9b52a741a668159bac45b2e305a3bce1715f093c2b1848"
-    sha256 ventura:       "3a50ed243032041f7104fb32a151e9e2a1111df187bb6f3f2c9c07ef5e718a7f"
-    sha256 arm64_linux:   "05bc03b878665ed9b7438ff23945518a1e4521ffe05509de5f04e29e274b8c9f"
-    sha256 x86_64_linux:  "51c514abe7c902c1acfb373e3dd028d1786c8877f2b20d77b13618571c117de8"
+    sha256 arm64_sequoia: "51f499240230fc071b43493aa72cdac33aa55b7aa49222fa93dab9962a4e7259"
+    sha256 arm64_sonoma:  "096ddf9dd1540b96e9d6b6e66ea17775ac8a592fb00a69039778600dc14e0424"
+    sha256 arm64_ventura: "71439dc718bd1f1d9ebbdc5a06273c923ef4681292a8a930278226d46850d535"
+    sha256 sonoma:        "9ac7d8f3466920e0fde4efcea9b193f154938d97ea54d2d1e8800a06d7de5779"
+    sha256 ventura:       "055717afdc6d0b9a07be143b0231de307e70cbf96296838abb55006e336de6d1"
+    sha256 arm64_linux:   "dfb03291570f5ace211e4a2eff2d51803bd3e58575cac4fff641496c7ca334f1"
+    sha256 x86_64_linux:  "319184eb2a6a3dd75f182ce3a655b8cbe3e006fedd7c592702cbb7c265d14cde"
   end
 
   depends_on "librsync"
@@ -39,8 +39,8 @@ class Cfengine < Formula
   end
 
   resource "masterfiles" do
-    url "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-masterfiles-3.25.0.tar.gz"
-    sha256 "bbc69bb2d9924feaaeac19ccc1b280a92f010a011b5925ade0357b96ce0074d9"
+    url "https://cfengine-package-repos.s3.amazonaws.com/tarballs/cfengine-masterfiles-3.26.0.tar.gz"
+    sha256 "fc8b0ad20e803e0d1e9dcda7afb2f3f5110357ac0e553ed95cf2cbea9652451d"
 
     livecheck do
       formula :parent

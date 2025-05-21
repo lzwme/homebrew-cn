@@ -6,17 +6,16 @@ class KeepkeyAgent < Formula
   url "https:files.pythonhosted.orgpackages65724bf47a7bc8dc93d2ac21672a0db4bc58a78ec5cee3c4bcebd0b4092a9110keepkey_agent-0.9.0.tar.gz"
   sha256 "47c85de0c2ffb53c5d7bd2f4d2230146a416e82511259fad05119c4ef74be70c"
   license "LGPL-3.0-only"
-  revision 9
+  revision 10
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any,                 arm64_sequoia: "7e90d14fa8b17a73432c81dd5263c8938d838a9c2ca07a6efe92d395ec0afd18"
-    sha256 cellar: :any,                 arm64_sonoma:  "25a71155c8223d39c8771688dca8688cd393dbdd7576d2bf5c5fc422b395e0ce"
-    sha256 cellar: :any,                 arm64_ventura: "bacd017684971a7c487abacccd142604b9e95dbb87feaa33f4df4708b90dcb02"
-    sha256 cellar: :any,                 sonoma:        "3cb946e6ed2147b95a96498286e46cc78789e84e563d8f7b2d28746835e47da8"
-    sha256 cellar: :any,                 ventura:       "1d37cf891ee502ab5651ef1dd2a9abd198424ac0968cc81637101ef17f1f17f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e400a52a8cc55f8dbbc6b782829df1ccbdde1c1a825c496d61572684d679ab7f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d977a585788997b34e907e44f9857618969c795401963147cd53bc9430b09c5"
+    sha256 cellar: :any,                 arm64_sequoia: "fe5abb6df497d25c25cf54b6cf0c05fdeb0b2e817c61369f9346a6b933ea21a6"
+    sha256 cellar: :any,                 arm64_sonoma:  "c94113694b5d5a191955f05d762bd0732725dc22dfaae7f068ed38ffbd537511"
+    sha256 cellar: :any,                 arm64_ventura: "8738cb6ce778923090a459caa936ab7f012540d0092b0b5b6e5f169bd5747cd5"
+    sha256 cellar: :any,                 sonoma:        "434950972d0df313af660009690495417b31d716265315c8066298a4cbd642b7"
+    sha256 cellar: :any,                 ventura:       "0660b8f20b7913e819bd76384dbd916d1085d410e8deca21c9dd5afedb529992"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e625e5ada8aff887dc167996135b08292e6924c4275345d3798ae748222bf7e7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2da29e6aa62b6209aa42aff8a56319a7e8916772a19f7dcfefa129d00308f91a"
   end
 
   depends_on "pkgconf" => :build # for hidapi resource
@@ -49,13 +48,13 @@ class KeepkeyAgent < Formula
   end
 
   resource "ecdsa" do
-    url "https:files.pythonhosted.orgpackages5ed0ec8ac1de7accdcf18cfe468653ef00afd2f609faf67c423efbd02491051becdsa-0.19.0.tar.gz"
-    sha256 "60eaad1199659900dd0af521ed462b793bbdf867432b3948e87416ae4caf6bf8"
+    url "https:files.pythonhosted.orgpackagesc01f924e3caae75f471eae4b26bd13b698f6af2c44279f67af317439c2f4c46aecdsa-0.19.1.tar.gz"
+    sha256 "478cba7b62555866fcb3bb3fe985e06decbdb68ef55713c4e5ab98c57d508e61"
   end
 
   resource "hidapi" do
-    url "https:files.pythonhosted.orgpackagesbf6f90c536b020a8e860f047a2839830a1ade3e1490e67336ecf489b4856eb7bhidapi-0.14.0.post2.tar.gz"
-    sha256 "6c0e97ba6b059a309d51b495a8f0d5efbcea8756b640d98b6f6bb9fdef2458ac"
+    url "https:files.pythonhosted.orgpackages477221ccaaca6ffb06f544afd16191425025d831c2a6d318635e9c8854070f2dhidapi-0.14.0.post4.tar.gz"
+    sha256 "48fce253e526d17b663fbf9989c71c7ef7653ced5f4be65f1437c313fb3dbdf6"
   end
 
   resource "keepkey" do
@@ -66,17 +65,11 @@ class KeepkeyAgent < Formula
   resource "libagent" do
     url "https:files.pythonhosted.orgpackages339fd80eb0568f617d4041fd83b8b301fdb817290503ee4c1546024df916454elibagent-0.15.0.tar.gz"
     sha256 "c87caebdb932ed42bcd8a8cbe40ce3589587c71c3513ca79cadf7a040e24b4eb"
-
-    # Backport replacement of pkg_resources to fix issue seen on arm64 linux
-    patch do
-      url "https:github.comromanztrezor-agentcommit68e39c14216f466c8710bf65ef133c744f8f92da.patch?full_index=1"
-      sha256 "a2b2279ba0eaf7a11d2a2e1f79155829bc8939942848b01602062f6c269b68b0"
-    end
   end
 
   resource "libusb1" do
-    url "https:files.pythonhosted.orgpackagesaf1953ecbfb96d6832f2272d13b84658c360802fcfff7c0c497ab8f6bf15ac40libusb1-3.1.0.tar.gz"
-    sha256 "4ee9b0a55f8bd0b3ea7017ae919a6c1f439af742c4a4b04543c5fd7af89b828c"
+    url "https:files.pythonhosted.orgpackagesa27fc59ad56d1bca8fa4321d1bb77ba4687775751a4deceec14943a44da18ca0libusb1-3.3.1.tar.gz"
+    sha256 "3951d360f2daf0e0eacf839e15d2d1d2f4f5e7830231eb3188eeffef2dd17bad"
   end
 
   resource "lockfile" do
@@ -105,33 +98,33 @@ class KeepkeyAgent < Formula
   end
 
   resource "python-daemon" do
-    url "https:files.pythonhosted.orgpackages54cdd62884732e5d6ff6906234169d06338d53e37243c60cf73679c8942f9e42python_daemon-3.1.0.tar.gz"
-    sha256 "fdb621d7e5f46e74b4de1ad6b0fff6e69cd91b4f219de1476190ebdd0f4781df"
+    url "https:files.pythonhosted.orgpackages3d374f10e37bdabc058a32989da2daf29e57dc59dbc5395497f3d36d5f5e2694python_daemon-3.1.2.tar.gz"
+    sha256 "f7b04335adc473de877f5117e26d5f1142f4c9f7cd765408f0877757be5afbf4"
   end
 
   resource "semver" do
-    url "https:files.pythonhosted.orgpackages416ca536cc008f38fd83b3c1b98ce19ead13b746b5588c9a0cb9dd9f6ea434bcsemver-3.0.2.tar.gz"
-    sha256 "6253adb39c70f6e51afed2fa7152bcd414c411286088fb4b9effb133885ab4cc"
+    url "https:files.pythonhosted.orgpackages72d1d3159231aec234a59dd7d601e9dd9fe96f3afff15efd33c1070019b26132semver-3.0.4.tar.gz"
+    sha256 "afc7d8c584a5ed0a11033af086e8af226a9c0b206f313e0301f8dd7b6b589602"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages0737b31be7e4b9f13b59cde9dcaeff112d401d49e0dc5b37ed4a9fc8fb12f409setuptools-75.2.0.tar.gz"
-    sha256 "753bb6ebf1f465a1912e19ed1d41f403a79173a9acf66a42e7e6aec45c3c16ec"
+    url "https:files.pythonhosted.orgpackages9e8bdc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15setuptools-80.7.1.tar.gz"
+    sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
   end
 
   resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+    url "https:files.pythonhosted.orgpackages94e7b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   resource "unidecode" do
-    url "https:files.pythonhosted.orgpackagesf78919151076a006b9ac0dd37b1354e031f5297891ee507eb624755e58e10d3eUnidecode-1.3.8.tar.gz"
-    sha256 "cfdb349d46ed3873ece4586b96aa75258726e2fa8ec21d6f00a591d98806c2f4"
+    url "https:files.pythonhosted.orgpackages947da8a765761bbc0c836e397a2e48d498305a865b70a8600fd7a942e85dcf63Unidecode-1.4.0.tar.gz"
+    sha256 "ce35985008338b676573023acc382d62c264f307c8f7963733405add37ea2b23"
   end
 
   resource "wheel" do
-    url "https:files.pythonhosted.orgpackagesb7a095e9e962c5fd9da11c1e28aa4c0d8210ab277b1ada951d2aee336b505813wheel-0.44.0.tar.gz"
-    sha256 "a29c3f2817e95ab89aa4660681ad547c0e9547f20e75b0562fe7723c9a2a9d49"
+    url "https:files.pythonhosted.orgpackages8a982d9906746cdc6a6ef809ae6338005b3f21bb568bea3165cfc6a243fdc25cwheel-0.45.1.tar.gz"
+    sha256 "661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729"
   end
 
   def install

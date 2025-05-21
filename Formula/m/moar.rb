@@ -6,6 +6,8 @@ class Moar < Formula
   license "BSD-2-Clause"
   head "https:github.comwallesmoar.git", branch: "master"
 
+  no_autobump! because: :bumped_by_upstream
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "65dc6cf60208f5cd6bfae37327db2ab632a4d15ffc1b79b90474f8cf8ed6d1c0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "65dc6cf60208f5cd6bfae37327db2ab632a4d15ffc1b79b90474f8cf8ed6d1c0"

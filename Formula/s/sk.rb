@@ -1,19 +1,19 @@
 class Sk < Formula
   desc "Fuzzy Finder in rust!"
   homepage "https:github.comlotaboutskim"
-  url "https:github.comlotaboutskimarchiverefstagsv0.17.2.tar.gz"
-  sha256 "afdef2f53dcc0f51cc5a4b28c3a21b02cf82436970535a01d3fffaa6499b23a2"
+  url "https:github.comlotaboutskimarchiverefstagsv0.17.3.tar.gz"
+  sha256 "eaba823a9cd488785d5b901eb2d4bd1307fe8614ca80b83022e4ecbfcbb70cfd"
   license "MIT"
   head "https:github.comlotaboutskim.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e3e1617c509f40f3555699dd883c286ee6ffc3e2dbec510df003416f9bb39a56"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5e449f611bb43553b080e5418765318f5606e22170b23a8d9ba7834d0e46f432"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "571967a7e1e2e782d6cb659ac71bdb2fce766ed105b5c730f3cc9a0ed98f8ce4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "de06dc1cc1f0cfd55b6ebe9010cb57ca6ce3098e22db527bf9ce3454ca6de838"
-    sha256 cellar: :any_skip_relocation, ventura:       "e1d6fa718d27894a32f0aa9fe72deb8d276656bfdc3c39ad4f30d5b3c9c9dc54"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ed3cbd1fe21d64ba203aa40c48c461bed4b6a6571105aaa20fe2a68a0c7544a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25972a1c9da970967b3a8f30aae24bd584ed3af8a2db2f23b8ab9ee5b27af521"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fffbbe97b4d83d9173e82a0b1b3b414f7d922565ea6309ff7e58ac49abb6a1f0"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "32158df48dd17b79f8be619ffc118ae1105f7e7cbb4422d94338d0682ad4ce76"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "feae07971de01745ee0da716c89bfd533de1fb59ac9a6c15cf1036e6763345b8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "14220009e263f291775fa6ae470a3c83f8c421af7f34e2920a6edc2b7c472696"
+    sha256 cellar: :any_skip_relocation, ventura:       "071f8989a0688b9805d685bd6102ee6fdbad1a5a744daa2d7f5a674fc2eb4404"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ba0c7bf6de44f68b82f16e79ceea209ba96ff8756d90d91b0801d80c8bdec0d1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96cc9fdcd221d2ddb98e90b332c3162839cc08bc59ebe923b433b19eb36047de"
   end
 
   depends_on "rust" => :build

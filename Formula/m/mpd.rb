@@ -1,19 +1,19 @@
 class Mpd < Formula
   desc "Music Player Daemon"
   homepage "https:www.musicpd.org"
-  url "https:github.comMusicPlayerDaemonMPDarchiverefstagsv0.24.3.tar.gz"
-  sha256 "80bb03c32cc2c85cb2e91711f96c6e25cba5546908b003d0254946397f42acf7"
+  url "https:github.comMusicPlayerDaemonMPDarchiverefstagsv0.24.4.tar.gz"
+  sha256 "36e7a6ed3e70c4e516d194b49600bb0036b37b52bb6488ebf9eda2696a40c6fa"
   license "GPL-2.0-or-later"
   head "https:github.comMusicPlayerDaemonMPD.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "a7d9949ec3f0f88c797180ee7019a1c44df2681978547e0bde2dcf8e68036201"
-    sha256 cellar: :any, arm64_sonoma:  "734d5549a13cc23d026f5e5d753a6620ab08e0d6096c8fc948d8ded1d3b455cd"
-    sha256 cellar: :any, arm64_ventura: "4438d702c743f05bba8be6e061defc3256b7c3fbbfa69c2f844c0c6cdc21d244"
-    sha256 cellar: :any, sonoma:        "94293b58505c532dd6e622125de61c0b64b591b7ce8acabf1ffb3647a1315652"
-    sha256 cellar: :any, ventura:       "bc99d04f570580fb5f47036deff8c7bbdd4fcebb86fa3b5d9e41d5713b95be70"
-    sha256               arm64_linux:   "2230b7523e4621a0e521c7c601dac2aa4d5a339471481b18a9a6ce450a847d66"
-    sha256               x86_64_linux:  "8606c8825eabbc1ff262131f95d715c87608f10d8eddcc3486512203db62230e"
+    sha256 cellar: :any, arm64_sequoia: "954d40a6489290137351aed28f63d54e286543002af9b6189f5be1ec60b5eb21"
+    sha256 cellar: :any, arm64_sonoma:  "ffe57f582e6182b411b16435a184cd732495ec7518da14688c6a8d1be41f5d70"
+    sha256 cellar: :any, arm64_ventura: "174778c6ca7b72827626eb8a786244ddd6bedbbaf768f2671d5b1361367d5323"
+    sha256 cellar: :any, sonoma:        "55ea7ef7054e35eb7b4f2f0835e8b4657e311470b53ef432f383cfd12a718b78"
+    sha256 cellar: :any, ventura:       "46319965451a12f7c44337a6f5f2019f8355ab89f000b2fd01f5521898901ef6"
+    sha256               arm64_linux:   "138b60ab7048f5a58ec6824b8decf6818461b210a0c781920a8ead6c7f445de4"
+    sha256               x86_64_linux:  "caabe295a9d38bc182444f8294c53bb89e4caeb07b66544095cf773b1c640cd8"
   end
 
   depends_on "boost" => :build

@@ -4,18 +4,17 @@ class Fades < Formula
   url "https:files.pythonhosted.orgpackages8be887a44f1c33c41d1ad6ee6c0b87e957bf47150eb12e9f62cc90fdb6bf8669fades-9.0.2.tar.gz"
   sha256 "4a2212f48c4c377bbe4da376c4459fe2d79aea2e813f0cb60d9b9fdf43d205cc"
   license "GPL-3.0-only"
-  revision 1
+  revision 2
   head "https:github.comPyArfades.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec005bf0dac48b9c97017dbfbaff8f71bea5881b82a4125b6832f42b295ab388"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec005bf0dac48b9c97017dbfbaff8f71bea5881b82a4125b6832f42b295ab388"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ec005bf0dac48b9c97017dbfbaff8f71bea5881b82a4125b6832f42b295ab388"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d5ca7bbe287a104d636ae776d190dd945731becd56ae3b16db7b43f56b6bac50"
-    sha256 cellar: :any_skip_relocation, ventura:       "d5ca7bbe287a104d636ae776d190dd945731becd56ae3b16db7b43f56b6bac50"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "286e34dae97f60412d06e4d022a52156a0a17f70449e8240297772904a3dc193"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6dbae2733a6c7db55b8d0c89009067727f8a8a4081739e815e8d874973ca9645"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8ae23ce3e986aa461efc9dfbb017e62daf3d47bab6650455c64efa609c9a6561"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8ae23ce3e986aa461efc9dfbb017e62daf3d47bab6650455c64efa609c9a6561"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8ae23ce3e986aa461efc9dfbb017e62daf3d47bab6650455c64efa609c9a6561"
+    sha256 cellar: :any_skip_relocation, sonoma:        "21e8405e8b50121bf4d6d0a464265411208e394d764d3982e50a74caddb32176"
+    sha256 cellar: :any_skip_relocation, ventura:       "21e8405e8b50121bf4d6d0a464265411208e394d764d3982e50a74caddb32176"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7c86e1370b14aac85b9df22c4d8ec002ebb01c24ee432d9a38efe625c6ae0c96"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c86e1370b14aac85b9df22c4d8ec002ebb01c24ee432d9a38efe625c6ae0c96"
   end
 
   depends_on "python@3.13"
@@ -25,8 +24,8 @@ class Fades < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
-    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
+    url "https:files.pythonhosted.orgpackages9e8bdc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15setuptools-80.7.1.tar.gz"
+    sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
   end
 
   def install

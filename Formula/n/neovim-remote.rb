@@ -6,26 +6,25 @@ class NeovimRemote < Formula
   url "https:files.pythonhosted.orgpackages69504fe9ef6fd794929ceae73e476ac8a4ddbf3b0913fa248d834c9bb72978b7neovim-remote-2.5.1.tar.gz"
   sha256 "4b3cc35463544c5747c895c52a0343cfdbba15d307647d7f57f1cce0c6a27d02"
   license "MIT"
-  revision 2
+  revision 3
   head "https:github.commhinzneovim-remote.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "969080e39441d8db18d446ebae92c9a95d1d4738d64ac3528d7be2787fcef349"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4a92d145e3bfd46ebca31454bef1d0089cc2eb3f34991e73ccdfe7e83eb38165"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2c90e4d80be180455c9922bcca4c7d9da06c52fa5a229c84c287f1bd3e93b0d3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "005a3b436ae67a59fb9c41e20117e9fb8236ab8c255db39e511a51c31d918958"
-    sha256 cellar: :any_skip_relocation, ventura:       "4867e1eb46ec92e136a1500a70b5675bd26a37b374cf89a47adba12c64045bcb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6657c430639a92f1d6d4a73f0a85d58bfb080e2cdfa437a92f17ff2cee10a7bc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b914c93bc339131a9eafe74dd7b8ec2123a954934b29433aff5d6694644339e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9edaf9f4d2feb2e6e4f18dc167944ff8823c9c4068c6e07017d8921ca160b28a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9b76e1afa8be0eec8c8fd7197460b4477faaf325cd2fc18c0339ee725b06a8a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "949b8dd9dc1b6fcaa86472561cec958b13a0c204be09e5634341601db3fe5f98"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f1d9cff133d630041fe8d16efd19643523f4dfbb248840c9b4f932ca01902d07"
+    sha256 cellar: :any_skip_relocation, ventura:       "95452863449dda54f90ae2dd8a3c01732634b8a974ced293149747b7551813d0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a8c3e1a56addbd31b292339933393e6e354b7e02f7cd9c3a4c05a3f58e7a014"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a7e179568b81994be74447f225712ad2efeef31045af99657a6671f6a98a963"
   end
 
   depends_on "neovim"
   depends_on "python@3.13"
 
   resource "greenlet" do
-    url "https:files.pythonhosted.orgpackages2fffdf5fede753cc10f6a5be0931204ea30c35fa2f2ea7a35b25bdaf4fe40e46greenlet-3.1.1.tar.gz"
-    sha256 "4ce3ac6cdb6adf7946475d7ef31777c26d94bccc377e070a7986bd2d5c515467"
+    url "https:files.pythonhosted.orgpackages34c1a82edae11d46c0d83481aacaa1e578fea21d94a1ef400afd734d47ad95adgreenlet-3.2.2.tar.gz"
+    sha256 "ad053d34421a2debba45aa3cc39acf454acbcd025b3fc1a9f8a0dee237abd485"
   end
 
   resource "msgpack" do
@@ -34,18 +33,18 @@ class NeovimRemote < Formula
   end
 
   resource "psutil" do
-    url "https:files.pythonhosted.orgpackages18c78c6872f7372eb6a6b2e4708b88419fb46b857f7a2e1892966b851cc79fc9psutil-6.0.0.tar.gz"
-    sha256 "8faae4f310b6d969fa26ca0545338b21f73c6b15db7c4a8d934a5482faa818f2"
+    url "https:files.pythonhosted.orgpackages2a80336820c1ad9286a4ded7e845b2eccfcb27851ab8ac6abece774a6ff4d3depsutil-7.0.0.tar.gz"
+    sha256 "7be9c3eba38beccb6495ea33afd982a44074b78f28c434a1f51cc07fd315c456"
   end
 
   resource "pynvim" do
-    url "https:files.pythonhosted.orgpackagesce17259ab6acfb3fc85e209a649b0de1800c50f875bb946ac9df050827da8970pynvim-0.5.0.tar.gz"
-    sha256 "e80a11f6f5d194c6a47bea4135b90b55faca24da3544da7cf4a5f7ba8fb09215"
+    url "https:files.pythonhosted.orgpackages0984c77ec45e084907e128710e08f5d7926723d7a67ccbebf27089309118807dpynvim-0.5.2.tar.gz"
+    sha256 "734a2432db8683519f58572617528ecb4a2f321bc7b27f034b3f9b2322c15615"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
-    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
+    url "https:files.pythonhosted.orgpackages9e8bdc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15setuptools-80.7.1.tar.gz"
+    sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
   end
 
   def install

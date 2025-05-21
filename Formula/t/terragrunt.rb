@@ -1,8 +1,8 @@
 class Terragrunt < Formula
   desc "Thin wrapper for Terraform e.g. for locking state"
   homepage "https:terragrunt.gruntwork.io"
-  url "https:github.comgruntwork-ioterragruntarchiverefstagsv0.78.4.tar.gz"
-  sha256 "e86148898fe22326bc55a96b0d9c546e7278139afa6bda99cfad4a316bb52866"
+  url "https:github.comgruntwork-ioterragruntarchiverefstagsv0.79.0.tar.gz"
+  sha256 "56db84c4627d134a12d53d69401414a6179985e56c0ee31db5cdc239b9437687"
   license "MIT"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,12 +14,12 @@ class Terragrunt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2495a6ade32bf8bf3f7a27ec1acde3456c51c6410072009eeaf30344f0e789c4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2495a6ade32bf8bf3f7a27ec1acde3456c51c6410072009eeaf30344f0e789c4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2495a6ade32bf8bf3f7a27ec1acde3456c51c6410072009eeaf30344f0e789c4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e5492a59dff9ca9c35f0d8384a460f5286df789434d2ef05ee5e5a840b5a7d81"
-    sha256 cellar: :any_skip_relocation, ventura:       "e5492a59dff9ca9c35f0d8384a460f5286df789434d2ef05ee5e5a840b5a7d81"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5abbe48647b41b8626ce62da33bcad33ab568e128ac2999c4b8cffb790f729ac"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b991eaae881186b7478e40c35a2e75a3254ff2b44bd87e2802687319423a2d1e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b991eaae881186b7478e40c35a2e75a3254ff2b44bd87e2802687319423a2d1e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b991eaae881186b7478e40c35a2e75a3254ff2b44bd87e2802687319423a2d1e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "f25b053ab7f58fb168a43d5dbc8b5b4728eba64c5b0469f1f907b8be91abfa4f"
+    sha256 cellar: :any_skip_relocation, ventura:       "f25b053ab7f58fb168a43d5dbc8b5b4728eba64c5b0469f1f907b8be91abfa4f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "625c05acc9afbb664cb451289dd63c56602df05e916ab54b660764593adf3742"
   end
 
   depends_on "go" => :build

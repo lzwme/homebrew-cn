@@ -1,8 +1,8 @@
 class Fio < Formula
   desc "IO benchmark and stress test"
   homepage "https:github.comaxboefio"
-  url "https:github.comaxboefioarchiverefstagsfio-3.39.tar.gz"
-  sha256 "e2f4ff137061b44ceb83a55eb9ca8856fe188db6d9b00cb59f8629c9162afe0a"
+  url "https:github.comaxboefioarchiverefstagsfio-3.40.tar.gz"
+  sha256 "9fc81e3a490a53fe821d76dd759d64f229d0ac6b4d2c711837bcad158242e3b2"
   license "GPL-2.0-only"
 
   livecheck do
@@ -11,13 +11,13 @@ class Fio < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6d18e22916e18eaf7cb1422de669df9a988949303cb1acf981e9f2ba177a9489"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "223012be7afd1fbab0bfa118ce1b2568dd2e3ecc10c40864527c3158012fcd5c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "89a8142a97e2c12770689292796870b88cea1a2e7b3905acc9a12367c2824066"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0bbf859ba02c06a4635c1593eaa02079717f084efa5c2c2a6f70e9ccc5d37f09"
-    sha256 cellar: :any_skip_relocation, ventura:       "87de1303a14d5cef747d4a1e088a9c25229071d2c7bddeba24131d0e7716dc74"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "70d0586d9c191f688bb3250e83946395816d4fb6bb84f0e024fbe6e335ed1bba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c9575eda2dcf3407132b222e95d4410bdf7451271c91b327e5cb31c5ba512ada"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1c8b504d3c62bbce8a96efc01c00ec5b15f88bd9437f70c591337bf00f0626bf"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ba52e1f825848a101aeb18e688c55475860e8b5a9da0eb477bc43937260aa4d0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3f3091669df862a3f00777bb99dadd95dc53134cb7fa680312bed8d95003b141"
+    sha256 cellar: :any_skip_relocation, sonoma:        "be7e0fd80ca53413a6088a2ff4893fa070d228d619129a1cf603255a1af37037"
+    sha256 cellar: :any_skip_relocation, ventura:       "d02aec7122860d588cd7c7876dd14361a1f14f95b950b708ec6cb6ad907f1136"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4fa34b174d429c002102c6ae454922caf983339a2cb7ded9bbbf0dc29e2e226"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c41753bb19a895a1d21cb9d89e367846c171aefc177aa869c1bc3a54605437e6"
   end
 
   uses_from_macos "zlib"

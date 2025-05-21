@@ -6,23 +6,27 @@ class SymfonyCli < Formula
   license "AGPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b6fa2019639aee82e0f242d54e9d3985c69c027a931018f7ee294d9fe5d758da"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e5af6706031cf92b8caaf523ab1e76de0ea2889134046b97cf5595fca7a6286"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6a11438c2930e139d16705ddaed7a9987e737a62b3ba4dfc1bc8403e23d6c4fa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1ee4ab7ee1692dcfd6f5c173820ab31d57a23af4d60bcebe83aa1481c6338835"
-    sha256 cellar: :any_skip_relocation, ventura:       "546f4c2e45674008eb121eb7b42b041015f0914788bf9e3002185a31edaf55e4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e18d41965637af7bc93b1ba06b7de11cca3a3e122d2579cbb672eef0d76f5807"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d47dc98f5d38c5284110ae1efa4ed7c1288d07f01606e858b500cf347f82601b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8d912e1b871a1c1dda5ad88ff4d99d7dfaf4e8f49a14e90b570b4673edd1253b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "72ef3cbff4d00dddbef4cf615224d325cdd1e4e7e704ff348233bcfbfd1b0c9b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7d26574687c410530d91d9d9fae06e8a0330bb2ed4b37ba3e1f3473d8c547374"
+    sha256 cellar: :any_skip_relocation, ventura:       "a87a33ae5beaaf2113b0b4f94ec66328d0d562fe88c6f9ca40c7ad249e0dd87c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c3b7f8262d00c957e3d5d1493bcdb244843f17fcffc55bcaa1e6e528a8cc222"
   end
 
   depends_on "go" => :build
   depends_on "composer" => :test
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version}", output: bin"symfony")
+    system "go", "build", *std_go_args(ldflags: "-s -w -X main.version=#{version} -X main.channel=stable", output: bin"symfony")
   end
 
   test do
     system bin"symfony", "new", "--no-git", testpath"my_project"
     assert_path_exists testpath"my_projectsymfony.lock"
+    output = shell_output("#{bin}symfony -V")
+    assert_match version.to_s, output
+    assert_match "stable", output
   end
 end

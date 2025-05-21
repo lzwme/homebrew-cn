@@ -6,16 +6,16 @@ class JenkinsJobBuilder < Formula
   url "https://files.pythonhosted.org/packages/0d/a9/0ae4ef563aae6bfe21f316f4915b05e4b2c0edbb63b17eac9ed9398630df/jenkins-job-builder-6.4.2.tar.gz"
   sha256 "1be0d545dea8dc6c13745367264a2d22276bc5ec496527600865d30382a72490"
   license "Apache-2.0"
-  revision 2
+  revision 3
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "466d288ce985277fabc03dc07dcf8a14bdfd1e938caab7a85bd9c3753103bd25"
-    sha256 cellar: :any,                 arm64_sonoma:  "e5a926b49ab3229738c88e48238ac4bc8044a38661d77c9d7e35eaf379c88e19"
-    sha256 cellar: :any,                 arm64_ventura: "bb40c3437843345877eaa8855552e404d01de9b79864cfdc31eea072e0bc1d7d"
-    sha256 cellar: :any,                 sonoma:        "7fd8695bedd1e037d7a4a15c51ff31fba6415830471dfc69c4035073b5847816"
-    sha256 cellar: :any,                 ventura:       "00617cf898606deaa7e7859c3b6b015b6fadbeb8b096f37f962cf79f6422420e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "34b0e66ad76aedc5b9c813ebb7ce8840611eb9a011afb3ae75cb71b750a36216"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13ff9e3be7f4ff98f0ca825084a4737fb4b5ad8c07caaa5a9f42f38c7e72ad96"
+    sha256 cellar: :any,                 arm64_sequoia: "07389edb02f025d4ba1e0846d8bb552731a179452f51a1dad74a1b5069fc5171"
+    sha256 cellar: :any,                 arm64_sonoma:  "6e621244e73b2bc2fa85664d42ca96d776c1430338b564ec95e499a292b49f2b"
+    sha256 cellar: :any,                 arm64_ventura: "862eda0e71bfef0bb932e68a7b523f487838a019fd50aec44c62903b427ce2f0"
+    sha256 cellar: :any,                 sonoma:        "df7bfd298990a4a5a204dd085922b476f99b69d1bce082118db41f163772d51e"
+    sha256 cellar: :any,                 ventura:       "544009d0311e416ac16aa2e1250d3c5e10a2a1cd3278e46045434964bd2928a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b9b6bb4808a2e81bfabdb907681869634bccd63f466b9885479378fb5028608b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "841b7e2b14f81c6583f295bb87041517386a10ae448c44019f240baee346eafb"
   end
 
   depends_on "certifi"
@@ -23,8 +23,8 @@ class JenkinsJobBuilder < Formula
   depends_on "python@3.13"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/16/b0/572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357/charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "fasteners" do
@@ -53,8 +53,8 @@ class JenkinsJobBuilder < Formula
   end
 
   resource "packaging" do
-    url "https://files.pythonhosted.org/packages/d0/63/68dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106da/packaging-24.2.tar.gz"
-    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
+    url "https://files.pythonhosted.org/packages/a1/d4/1fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24d/packaging-25.0.tar.gz"
+    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
   resource "pbr" do
@@ -78,8 +78,8 @@ class JenkinsJobBuilder < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/d1/53/43d99d7687e8cdef5ab5f9ec5eaf2c0423c2b35133a2b7e7bc276fc32b21/setuptools-75.8.2.tar.gz"
-    sha256 "4880473a969e5f23f2a2be3646b2dfd84af9028716d398e46192f84bc36900d2"
+    url "https://files.pythonhosted.org/packages/9e/8b/dc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15/setuptools-80.7.1.tar.gz"
+    sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
   end
 
   resource "six" do
@@ -93,8 +93,8 @@ class JenkinsJobBuilder < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/aa/63/e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66/urllib3-2.3.0.tar.gz"
-    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
+    url "https://files.pythonhosted.org/packages/8a/78/16493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0/urllib3-2.4.0.tar.gz"
+    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
   end
 
   def install

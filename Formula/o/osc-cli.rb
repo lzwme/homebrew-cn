@@ -6,25 +6,24 @@ class OscCli < Formula
   url "https:files.pythonhosted.orgpackages02cdf1b796f5e7a301f6a3c0b910be07188cbfd329d2758e036d24ef26b4ee96osc-sdk-1.11.0.tar.gz"
   sha256 "d3b71b326b0698da1b9a503cd511a992fe578375fd01b30bdec0d63d8328af66"
   license "BSD-3-Clause"
-  revision 6
+  revision 7
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "46acc0336a9fa29be5457cea8338f0fc7296fa50103b169c6669fb1ff79cfa0c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46acc0336a9fa29be5457cea8338f0fc7296fa50103b169c6669fb1ff79cfa0c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "46acc0336a9fa29be5457cea8338f0fc7296fa50103b169c6669fb1ff79cfa0c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1e55dd48fb5238a36312d356789c4ab2419231b258c638486065675be404b312"
-    sha256 cellar: :any_skip_relocation, ventura:       "1e55dd48fb5238a36312d356789c4ab2419231b258c638486065675be404b312"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "23824445e25290b333b09b2cf357d0816afd9656c1827c080bde09fda212f344"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "06688a38b6c308a92561d6d157e48b31eabc43fcca3d4c5f100a2676d32a1b87"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5480ac70e1c6e5fc2704d8fbcfe1d58ccb068e67ac464b2181701b12314386d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b5480ac70e1c6e5fc2704d8fbcfe1d58ccb068e67ac464b2181701b12314386d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b5480ac70e1c6e5fc2704d8fbcfe1d58ccb068e67ac464b2181701b12314386d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "668ded3aba21a8525fc876113e89ed7c0091d2bf83a94564f1710d49d25ef593"
+    sha256 cellar: :any_skip_relocation, ventura:       "668ded3aba21a8525fc876113e89ed7c0091d2bf83a94564f1710d49d25ef593"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3866b920f7dd7f489bfa721df763810338597bbd0eb747796f65fa9ffaca744b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3866b920f7dd7f489bfa721df763810338597bbd0eb747796f65fa9ffaca744b"
   end
 
   depends_on "certifi"
   depends_on "python@3.13"
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
-    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
+    url "https:files.pythonhosted.orgpackagese43389c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12dcharset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "defusedxml" do
@@ -48,28 +47,28 @@ class OscCli < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
-    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
+    url "https:files.pythonhosted.orgpackages9e8bdc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15setuptools-80.7.1.tar.gz"
+    sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
   end
 
   resource "termcolor" do
-    url "https:files.pythonhosted.orgpackages377288311445fd44c455c7d553e61f95412cf89054308a1aa2434ab835075fc5termcolor-2.5.0.tar.gz"
-    sha256 "998d8d27da6d48442e8e1f016119076b690d962507531df4890fcd2db2ef8a6f"
+    url "https:files.pythonhosted.orgpackagesca6c3d75c196ac07ac8749600b60b03f4f6094d54e132c4d94ebac6ee0e0add0termcolor-3.1.0.tar.gz"
+    sha256 "6a6dd7fbee581909eeec6a756cff1d7f7c376063b14e4a298dc4980309e55970"
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
-    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
+    url "https:files.pythonhosted.orgpackagesf63723083fcd6e35492953e8d2aaaa68b860eb422b34627b13f2ce3eb6106061typing_extensions-4.13.2.tar.gz"
+    sha256 "e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
+    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
   end
 
   resource "xmltodict" do
-    url "https:files.pythonhosted.orgpackages98f7d29b8cdc9d8d075673be0f800013c1161e2fd4234546a140855a1bcc9eb4xmltodict-0.14.1.tar.gz"
-    sha256 "338c8431e4fc554517651972d62f06958718f6262b04316917008e8fd677a6b0"
+    url "https:files.pythonhosted.orgpackages500551dcca9a9bf5e1bce52582683ce50980bcadbc4fa5143b9f2b19ab99958fxmltodict-0.14.2.tar.gz"
+    sha256 "201e7c28bb210e374999d1dde6382923ab0ed1a8a5faeece48ab525b7810a553"
   end
 
   def install

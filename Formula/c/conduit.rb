@@ -1,8 +1,8 @@
 class Conduit < Formula
   desc "Streams data between data stores. Kafka Connect replacement. No JVM required"
   homepage "https:conduit.io"
-  url "https:github.comConduitIOconduitarchiverefstagsv0.13.4.tar.gz"
-  sha256 "96dc9b58369025ef60d877ad776347c09b80dbb54800253936655489bb2273e8"
+  url "https:github.comConduitIOconduitarchiverefstagsv0.13.5.tar.gz"
+  sha256 "299848b7ff39015d4cf8f9e185ff2e89e48ecd6fe9d3f645129833f47bcbfcc5"
   license "Apache-2.0"
   head "https:github.comConduitIOconduit.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Conduit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1d7442b88e26aab3468f3f967cdd1247a18be6d0dabbfc4ec1cbdbc9b781a598"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d1d293e397e3869b6935453839173714658107b75c6996326c28bc66d31c6262"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6fbe86a1172ecd47dba7a7820959d492d67df7a5203202aae83c842b64031cee"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8c2f24df3998e0b26beca132b9da9465af1044b020e68c98c10d046501e07d24"
-    sha256 cellar: :any_skip_relocation, ventura:       "b6d70e9f5d3994cd95c8698518e22747073867dca197c9c4fe4866d30b958498"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f13b176d8a74de86b8f81c670017178b2a96fec5a911572e3b6c35261dc81a52"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7298f0f10e042fdc70a08407d9341d5797a673217129ea456a46231fa702f09"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e69c93a1527fddc375009caab96e16b8ddc8f89bad1910d74151b1ed53a4beea"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "eb170c93ae24b7b17e2b6d241a5d64971988d0c68e948792c6a7f72a0d87d8bf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1c415dec56e651d0a2a2f0c07ec32bc7bbb978941ded677e6373c8eff4d56781"
+    sha256 cellar: :any_skip_relocation, ventura:       "17022cfd31d1bc7e8a25c7ef43b82d7487d17384ee619807ed4b93788e2b1842"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4641affcff469da4ff258d1ebe26dfe8e699f864d1e05befa7c07a62cb43ed80"
   end
 
   depends_on "go" => :build

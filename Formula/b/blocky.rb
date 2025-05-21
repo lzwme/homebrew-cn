@@ -1,18 +1,18 @@
 class Blocky < Formula
   desc "Fast and lightweight DNS proxy as ad-blocker for local network"
   homepage "https:0xerr0r.github.ioblocky"
-  url "https:github.com0xerr0rblockyarchiverefstagsv0.25.tar.gz"
-  sha256 "856f09cd5df5dc20a44067113dd200a3e74465c3ded2b5dcd473188b3c764b11"
+  url "https:github.com0xerr0rblockyarchiverefstagsv0.26.tar.gz"
+  sha256 "3a5c4552a248399684ca5ec1ee40aae80b6b16a3c39c6123d9a8b1e9c7d5bce5"
   license "Apache-2.0"
   head "https:github.com0xerr0rblocky.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3f13867d7f062db877b46e6bdba815ef8c44a813142c5f4f30adadf1e2968da8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3f13867d7f062db877b46e6bdba815ef8c44a813142c5f4f30adadf1e2968da8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "3f13867d7f062db877b46e6bdba815ef8c44a813142c5f4f30adadf1e2968da8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3d909115c5c25eee7f855d5642a55dceda1812202cec3ba97fbb422b9f29af02"
-    sha256 cellar: :any_skip_relocation, ventura:       "3d909115c5c25eee7f855d5642a55dceda1812202cec3ba97fbb422b9f29af02"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d0f9546d8772ae5b23c4e3f6eb1ff39a31436c7a0995fffed893e2387312e4a5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21784f7e8744ad2c3cdcb78502c98df54f0c803de305820e11f7a319b4b9805d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e0bfb2ac47191d6102da9953af8faa259b7b71325633322c2cd8fb6382b48d1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e8ebffe3c41241583f0429ed98eab9f20cdd9c1d44ecf0ba33aa063f3c08f562"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0d3083ab297bbe2e02f7ae73f024cbe9db59d6c29bcff6a2205d030213a38c73"
+    sha256 cellar: :any_skip_relocation, ventura:       "1174161bf0c8be26b8c22ca0dddbb47f57097dd375c83a45a218c78f771497f3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cbc458bca0abb7c696bf1dfa4a53d9ef193526e98b93f1af5bb470460431de53"
   end
 
   depends_on "go" => :build

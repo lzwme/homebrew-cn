@@ -6,16 +6,17 @@ class West < Formula
   url "https:files.pythonhosted.orgpackagesd1aa288fc09dee13631538ad040d1b8e09f78594cdf3b53ff869c283d245bf20west-1.3.0.tar.gz"
   sha256 "89320034be87099d16e75f4760ac0d1ed67e8978928e468ab993e3fba0cfe92f"
   license "Apache-2.0"
+  revision 1
   head "https:github.comzephyrproject-rtoswest.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a7e90cf09480586a0c371b073e2b38891366736eecaeebe9f3e91759a7fb3fb8"
-    sha256 cellar: :any,                 arm64_sonoma:  "7aadc8d72a06988cd62a46a31451342a85d6742f25a6cc67dc4a6206b39c85f9"
-    sha256 cellar: :any,                 arm64_ventura: "1b1959d3f049e5066f2d4684e2809737f6ab6fb3024721dfc119677ab77b5c13"
-    sha256 cellar: :any,                 sonoma:        "34fb4e2475d78f26ff2e85963ed28f684ef08506c25ff9e9e77862b274f8aa22"
-    sha256 cellar: :any,                 ventura:       "67d947b4729195aa8c691a0f95e98ac5c460a8e0f3e5784d45942431c56bcb3f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd813f30adf6ddca04a74b5d944c133558da0204df7e552b74e1faa37d11ddf9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "927b092bb4e31b4acf172eec7e236d4b99179575683d604eca51229fc92ed9af"
+    sha256 cellar: :any,                 arm64_sequoia: "97bf98cb70cd8be9ca4d901b9249a8f367dd0e59fd0e668dcc26ea2278132cc2"
+    sha256 cellar: :any,                 arm64_sonoma:  "1734f07dc4733422aca5324c07b234595fb0a53c5e97b96d286e494e87cd0ce7"
+    sha256 cellar: :any,                 arm64_ventura: "43b240bd56f80e5ee9225c4de04dc9530000a1ac57bb409622b1cd05baff5c65"
+    sha256 cellar: :any,                 sonoma:        "a20b55ddc1f78a162f2e74b7189dc129167ad347663b2339b838c86a3141b825"
+    sha256 cellar: :any,                 ventura:       "523c12554f615e44ec471c5c92620bc4c0ded42266b16c871480f1bd57875491"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c8dcc364cc4381b8f7b6db703c166f413a19a6f931d8d48eddaed97c1603360"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cafa7c4ca412312cbe93dad350921ab416304de2eaf48467ed0d1329f4d9e6d"
   end
 
   depends_on "libyaml"
@@ -32,8 +33,8 @@ class West < Formula
   end
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackages516550db4dda066951078f0a96cf12f4b9ada6e4b811516bf0262c0f4f7064d4packaging-24.1.tar.gz"
-    sha256 "026ed72c8ed3fcce5bf8950572258698927fd1dbda10a5e981cdf0ac37f4f002"
+    url "https:files.pythonhosted.orgpackagesa1d41fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24dpackaging-25.0.tar.gz"
+    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
   resource "pykwalify" do
@@ -52,18 +53,18 @@ class West < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https:files.pythonhosted.orgpackages29814dfc17eb6ebb1aac314a3eb863c1325b907863a1b8b1382cdffcb6ac0ed9ruamel.yaml-0.18.6.tar.gz"
-    sha256 "8b27e6a217e786c6fbe5634d8f3f11bc63e0f80f6a5890f28863d9c45aac311b"
+    url "https:files.pythonhosted.orgpackagesea46f44d8be06b85bc7c4d8c95d658be2b68f27711f279bf9dd0612a5e4794f5ruamel.yaml-0.18.10.tar.gz"
+    sha256 "20c86ab29ac2153f80a428e1254a8adf686d3383df04490514ca3b79a362db58"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesed22a438e0caa4576f8c383fa4d35f1cc01655a46c75be358960d815bfbb12bdsetuptools-75.3.0.tar.gz"
-    sha256 "fba5dd4d766e97be1b1681d98712680ae8f2f26d7881245f2ce9e40714f1a686"
+    url "https:files.pythonhosted.orgpackages9e8bdc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15setuptools-80.7.1.tar.gz"
+    sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
   end
 
   resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+    url "https:files.pythonhosted.orgpackages94e7b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   def install

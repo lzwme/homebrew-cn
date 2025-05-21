@@ -6,18 +6,17 @@ class HttpPrompt < Formula
   url "https:files.pythonhosted.orgpackagesbfe2bc5b0df107afcac65fde7015df48cbe9b4d877d1d0818203544ed1a41d4chttp-prompt-2.1.0.tar.gz"
   sha256 "eee71a00fed0b8a2a35bb338b269be7a20e8a1a6f6465a65561d76a21521e7f3"
   license "MIT"
-  revision 10
+  revision 11
   head "https:github.comhttpiehttp-prompt.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "b011c69d4afbef3f74f82823d1b6e097385967a71228e18b3dc9a4e756b12079"
-    sha256 cellar: :any,                 arm64_sonoma:  "53659c6f09f90fb0f3d71f22f6757f7d7bc9fc05709f7eeb6af46bdf2528829a"
-    sha256 cellar: :any,                 arm64_ventura: "e569ae1a14a4e5a911d32c8ae67811f38f1b0cdf34f745dc98e50e4ee8005a2b"
-    sha256 cellar: :any,                 sonoma:        "d9c8f46296414e0d9d1b33f93bb52b82a713cf288296ff6ad9ed67c46b4248fe"
-    sha256 cellar: :any,                 ventura:       "33c3a14f21a42a7ecf2baaa509b8e9138f7304843391a8a30afb6b922666fceb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd8727c82b5fc415a6e1f2fd600d3c23ec8b6813110da4d32c84a63858d0b0cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "797fda91cbe2f3fa31dd291dd6eb10821eabdd0f58f4dba6b8ed081009c99c11"
+    sha256 cellar: :any,                 arm64_sequoia: "fd295f3f14ca5b3d24e898df9a74df05c1af6a0de036ff3fdf980bedbef23b97"
+    sha256 cellar: :any,                 arm64_sonoma:  "89411f03cdec958f4a7a236e46e3b3053a478d5b5cbeddc9c10984ff14fa534f"
+    sha256 cellar: :any,                 arm64_ventura: "aee5fbb79424b195520ed856fb47d7bbc17dd0c325b78a606a94e848300b81a6"
+    sha256 cellar: :any,                 sonoma:        "cd3306efda78d3dced41c5588729a5c58ddcb9566a93cde6e076fa1b47eb339f"
+    sha256 cellar: :any,                 ventura:       "8688f75cb0fcaaa93757888726dd8292555bca09bd4fdd8475cf9c71b8143185"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "eb1877919f314c291146702e149dcb1a24fa9353f6dde77f0d5e172c122dac71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "09dd6eaef91d26e1e22121a84d930854cca79626f22505fb13714058e90ed76a"
   end
 
   depends_on "certifi"
@@ -25,13 +24,13 @@ class HttpPrompt < Formula
   depends_on "python@3.13"
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackagesf24fe1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1echarset_normalizer-3.4.0.tar.gz"
-    sha256 "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
+    url "https:files.pythonhosted.orgpackagese43389c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12dcharset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackages96d3f04c7bfcf5c1862a2a5b845c6b2b360488cf47af55dfa79c98f6a6bf98b5click-8.1.7.tar.gz"
-    sha256 "ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"
+    url "https:files.pythonhosted.orgpackagescd0f62ca20172d4f87d93cf89665fbaedcd560ac48b465bd1d92bfc7ea6b0a41click-8.2.0.tar.gz"
+    sha256 "f5452aeddd9988eefa20f90f05ab66f17fce1ee2a36907fd30b05bbb5953814d"
   end
 
   resource "defusedxml" do
@@ -60,8 +59,8 @@ class HttpPrompt < Formula
   end
 
   resource "multidict" do
-    url "https:files.pythonhosted.orgpackagesd6be504b89a5e9ca731cd47487e91c469064f8ae5af93b7259758dcfc2b9c848multidict-6.1.0.tar.gz"
-    sha256 "22ae2ebf9b0c69d206c003e2f6a914ea33f0a932d4aa16f236afc049d9958f4a"
+    url "https:files.pythonhosted.orgpackages912fa3470242707058fe856fe59241eee5635d79087100b7042a867368863a27multidict-6.4.4.tar.gz"
+    sha256 "69ee9e6ba214b5245031b76233dd95408a0fd57fdb019ddcc1ead4790932a8e8"
   end
 
   resource "parsimonious" do
@@ -75,8 +74,8 @@ class HttpPrompt < Formula
   end
 
   resource "pygments" do
-    url "https:files.pythonhosted.orgpackages8e628336eff65bcbc8e4cb5d05b55faf041285951b6e80f33e2bff2024788f31pygments-2.18.0.tar.gz"
-    sha256 "786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199"
+    url "https:files.pythonhosted.orgpackages7c2dc3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84pygments-2.19.1.tar.gz"
+    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
   end
 
   resource "pysocks" do
@@ -90,8 +89,8 @@ class HttpPrompt < Formula
   end
 
   resource "regex" do
-    url "https:files.pythonhosted.orgpackagesf938148df33b4dbca3bd069b963acab5e0fa1a9dbd6820f8c322d0dd6faeff96regex-2024.9.11.tar.gz"
-    sha256 "6c188c307e8433bcb63dc1915022deb553b4203a70722fc542c363bf120a01fd"
+    url "https:files.pythonhosted.orgpackages8e5fbd69653fbfb76cf8604468d3b4ec4c403197144c7bfe0e6a5fc9e02a07cbregex-2024.11.6.tar.gz"
+    sha256 "7ab159b063c52a0333c884e4679f8d7a85112ee3078fe3d9004b2dd875585519"
   end
 
   resource "requests" do
@@ -105,23 +104,23 @@ class HttpPrompt < Formula
   end
 
   resource "rich" do
-    url "https:files.pythonhosted.orgpackagesab3a0316b28d0761c6734d6bc14e770d85506c986c85ffb239e688eeaab2c2bcrich-13.9.4.tar.gz"
-    sha256 "439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"
+    url "https:files.pythonhosted.orgpackagesa153830aa4c3066a8ab0ae9a9955976fb770fe9c6102117c8ec4ab3ea62d89e8rich-14.0.0.tar.gz"
+    sha256 "82f1bc23a6a21ebca4ae0c45af9bdbc492ed20231dcb63f297d6d1021a9d5725"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesed22a438e0caa4576f8c383fa4d35f1cc01655a46c75be358960d815bfbb12bdsetuptools-75.3.0.tar.gz"
-    sha256 "fba5dd4d766e97be1b1681d98712680ae8f2f26d7881245f2ce9e40714f1a686"
+    url "https:files.pythonhosted.orgpackages9e8bdc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15setuptools-80.7.1.tar.gz"
+    sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
   end
 
   resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+    url "https:files.pythonhosted.orgpackages94e7b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesed6322ba4ebfe7430b76388e7cd448d5478814d3032121827c12a2cc287e2260urllib3-2.2.3.tar.gz"
-    sha256 "e7d814a81dad81e6caf2ec9fdedb284ecc9c73076b62654547cc64ccdcae26e9"
+    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
+    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
   end
 
   resource "wcwidth" do

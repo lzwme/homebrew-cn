@@ -8,6 +8,8 @@ class Px < Formula
       revision: "daffe8dfaa85d24a367a89a2fdb458fd58658e56"
   license "MIT"
 
+  no_autobump! because: :bumped_by_upstream
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3351b4d67de55e95415ddcae5f24725aab80e347933a33e3acc7677a2540594"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d3351b4d67de55e95415ddcae5f24725aab80e347933a33e3acc7677a2540594"

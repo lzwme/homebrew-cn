@@ -1,18 +1,18 @@
 class LivekitCli < Formula
   desc "Command-line interface to LiveKit"
   homepage "https:livekit.io"
-  url "https:github.comlivekitlivekit-cliarchiverefstagsv2.4.9.tar.gz"
-  sha256 "92d017478f4b95e2756ed6292932a2668ac027c0bef7a0748d72192cbd48a9cf"
+  url "https:github.comlivekitlivekit-cliarchiverefstagsv2.4.10.tar.gz"
+  sha256 "bdf281ceac61ad60908929f3c53f040312dccad594b22f4a4613fb0300f56db4"
   license "Apache-2.0"
   head "https:github.comlivekitlivekit-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b571a9f3b3e7c4d4eac1eeaf9486ba6b3ff558d717b01bcc722deec829e75cd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2b571a9f3b3e7c4d4eac1eeaf9486ba6b3ff558d717b01bcc722deec829e75cd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2b571a9f3b3e7c4d4eac1eeaf9486ba6b3ff558d717b01bcc722deec829e75cd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "84040615d95c96e1cae68405db375adbd2601131312d0c6e5b5cfbad82e099f8"
-    sha256 cellar: :any_skip_relocation, ventura:       "84040615d95c96e1cae68405db375adbd2601131312d0c6e5b5cfbad82e099f8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e3b830b1ec80a6e37c241810cfbb1c0d4e10201952ed43e372c2871c6a644eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "948940571c1baa54d498c7452298f9d159910014dcc0a4265211baf47178deee"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "948940571c1baa54d498c7452298f9d159910014dcc0a4265211baf47178deee"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "948940571c1baa54d498c7452298f9d159910014dcc0a4265211baf47178deee"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bdf6dd1e3a19a3f9e336eb9927c364095329c71fe0447080ba920f8ea2d8c62f"
+    sha256 cellar: :any_skip_relocation, ventura:       "bdf6dd1e3a19a3f9e336eb9927c364095329c71fe0447080ba920f8ea2d8c62f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e29fc66f0af3a6dd14801816c92512fbf7d99aa474013bf2531c166bc674e4a7"
   end
 
   depends_on "go" => :build

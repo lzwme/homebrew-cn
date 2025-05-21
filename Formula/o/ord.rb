@@ -1,19 +1,19 @@
 class Ord < Formula
   desc "Index, block explorer, and command-line wallet"
   homepage "https:ordinals.com"
-  url "https:github.comordinalsordarchiverefstags0.23.1.tar.gz"
-  sha256 "bacd90dbd470883035edcaba1ff85ea34360d35b93c0b7539dfe94399fdca184"
+  url "https:github.comordinalsordarchiverefstags0.23.2.tar.gz"
+  sha256 "616eae2491fc825c5936186b986089d862fe11dfba0ff76dbe3aad051e369dbe"
   license "CC0-1.0"
   head "https:github.comordinalsord.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d4ee2eaba425e6410dfdc382fd2f3defef29ae493efc8a5b91966a99a8b17cee"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2abed74bff0ae175a7c224b4feee92f0ab63ec9eb8341304fd5117e1413b98fd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d738ef2c19ce1c82d782c09b76c720a3ccf02fa57d252e84683cf0e1d2a99f9d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b8a4057e0162e8ab8e81a3da38fc71ba9898b54b80e5452adbc7c18dc2f0165d"
-    sha256 cellar: :any_skip_relocation, ventura:       "bd82a40dcc24ffe1551d783cf18cc1f3a7e424148efd0860e2448b61876442b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d91b7ec987202d1855e304795d345732698e0d4e3ea61d984fd1b8209af106f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3011ef48bbc7057fa537d216751b77379cce59439f6d544f494af01b2931aa0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e966fc5cb5fd47bdd1b729d23fda7974f6f00961d15fbb9dabb71b637ededaff"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "76a4c55e1fc38a409d4bfdfaff97cdd5d4d3562601ca994ec7749581293dd0e8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b92a683d7d5ccf9815574d1d4dfb25564eb8bef950d54b5bf4ad8b00af6a1770"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d845314858deaab37ddee605d7a74b7775baa30d6de62c5304a02d54254d2bc6"
+    sha256 cellar: :any_skip_relocation, ventura:       "aa4efd6c738287f86569764f0fa12737c664ef5647f736b37278ec090c60b56a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aa0c3208e1c123532495f76c8b496114e78534f42d2df78a5a2b1db8c8abffad"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db866e238f99a9627586af9fe21eb3732cb0c842775fc5fb4cc0bb8d9ec77b5c"
   end
 
   depends_on "pkgconf" => :build
