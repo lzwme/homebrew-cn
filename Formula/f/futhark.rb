@@ -1,19 +1,19 @@
 class Futhark < Formula
   desc "Data-parallel functional programming language"
   homepage "https:futhark-lang.org"
-  url "https:github.comdiku-dkfutharkarchiverefstagsv0.25.30.tar.gz"
-  sha256 "6b164d08f173b5b670f99cac9e7eef5c551652ba0ef86e07dd4d0936add19ad3"
+  url "https:github.comdiku-dkfutharkarchiverefstagsv0.25.31.tar.gz"
+  sha256 "676a0e720f1e102353a99cca111b3502fd0c594d82e81063b84ad9f8b52de718"
   license "ISC"
   head "https:github.comdiku-dkfuthark.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "210c278e518d21f391ad6493f16b478a35b3f2f7b56a6472c15aadb4f3da1bfe"
-    sha256 cellar: :any,                 arm64_sonoma:  "257e3e4dfdb9f20731ad4443e6dbe735c793218482be5cb1a55e0f9f31271887"
-    sha256 cellar: :any,                 arm64_ventura: "49deb6fe0c2e12b5e4942b4e69356a5ba6ed077e052a904cec0add6f2e7798dd"
-    sha256 cellar: :any,                 sonoma:        "1fd9c79620d83a7e068b9e4c9b2133b69c7e92e35a80cdd99d9f4450f8b6f480"
-    sha256 cellar: :any,                 ventura:       "0becf6aec8966cea8a3ac227026ccc114963cd64f985a3c9156cda2913c01323"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "293f1e741057ff2ed75ee52c151410223a3795c0b59ebf354d8279b1454ddba8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a322fe81e8a3500612323a5b6c56c3634d8367eedfe35fd0d9b99d80a50c058"
+    sha256 cellar: :any,                 arm64_sequoia: "3ccfd1e707cb8620757768ebec43f468189054e5ce67a262ec422e9923e58658"
+    sha256 cellar: :any,                 arm64_sonoma:  "4073ca8eb145c04f4e3a542710580e31c30bfca53a53fba41be336906a91cb37"
+    sha256 cellar: :any,                 arm64_ventura: "07316dbde0b53430ead0cbf0be40270f1cf3a346258f8b2ecf85dce4d6894367"
+    sha256 cellar: :any,                 sonoma:        "fa0acdf21bd637f2067fff8fb338c9e92a08bf0f7a7a0ccc22402b787fc38a2b"
+    sha256 cellar: :any,                 ventura:       "1d921859887712a305cc8377cd14b5db05c8b7e1a03b0e0048f68dfbaf0fd434"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d5e06d73fbddba92c8035439a35233c24fdb93bbbac344b76e4f7ce6a1cb65e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "86d7f02f4138116b450a6242829ff894014586447ff5a78db27a22fd2a83fe52"
   end
 
   depends_on "cabal-install" => :build

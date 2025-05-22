@@ -6,25 +6,24 @@ class Supervisor < Formula
   url "https:files.pythonhosted.orgpackagesce37517989b05849dd6eaa76c148f24517544704895830a50289cbbf53c7efb9supervisor-4.2.5.tar.gz"
   sha256 "34761bae1a23c58192281a5115fb07fbf22c9b0133c08166beffc70fed3ebc12"
   license "BSD-3-Clause-Modification"
-  revision 1
+  revision 2
   head "https:github.comSupervisorsupervisor.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "45cc3b60f2777d22cdac9c5c3d02c6d81ab4ad54e469e404889e685cb3ee6782"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "45cc3b60f2777d22cdac9c5c3d02c6d81ab4ad54e469e404889e685cb3ee6782"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "45cc3b60f2777d22cdac9c5c3d02c6d81ab4ad54e469e404889e685cb3ee6782"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dd5d653ec9ae1a0db2ddca2a58d549ea9c48d4c15be4a11eb71b3aa9e555e872"
-    sha256 cellar: :any_skip_relocation, ventura:       "dd5d653ec9ae1a0db2ddca2a58d549ea9c48d4c15be4a11eb71b3aa9e555e872"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d75da1e237c2fd2c1bf889e8556e482b4f79f4cfa724a42f86467e2278805300"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5f432821d07fd084494beb62d4f237950f1c9b640dabb6cb85a0d2fd8f6e0598"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9dcc3c481ca0d17cd2aab91c2e158b4963d61e2927187a808233ce3bd7b314b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9dcc3c481ca0d17cd2aab91c2e158b4963d61e2927187a808233ce3bd7b314b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c9dcc3c481ca0d17cd2aab91c2e158b4963d61e2927187a808233ce3bd7b314b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "31421ef12c8a51e19c55f95207f952c493cfe0b4004fff4ab4cf1141e03adb79"
+    sha256 cellar: :any_skip_relocation, ventura:       "31421ef12c8a51e19c55f95207f952c493cfe0b4004fff4ab4cf1141e03adb79"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1edc0c343cff8df9ba55439d5404cccb3a8d7d0696e0e3eaad130c137e3c43ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1edc0c343cff8df9ba55439d5404cccb3a8d7d0696e0e3eaad130c137e3c43ec"
   end
 
   depends_on "python@3.13"
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages27b8f21073fde99492b33ca357876430822e4800cdf522011f18041351dfa74bsetuptools-75.1.0.tar.gz"
-    sha256 "d59a21b17a275fb872a9c3dae73963160ae079f1049ed956880cd7c09b120538"
+    url "https:files.pythonhosted.orgpackages8dd2ec1acaaff45caed5c2dedb33b67055ba9d4e96b091094df90762e60135fesetuptools-80.8.0.tar.gz"
+    sha256 "49f7af965996f26d43c8ae34539c8d99c5042fbff34302ea151eaa9c207cd257"
   end
 
   def install
@@ -74,8 +73,9 @@ class Supervisor < Formula
     INI
 
     begin
-      pid = fork { exec bin"supervisord", "--nodaemon", "-c", "sd.ini" }
-      sleep 1
+      pid = spawn bin"supervisord", "--nodaemon", "-c", "sd.ini"
+      sleep 3
+      sleep 9 if OS.mac? && Hardware::CPU.intel?
       output = shell_output("#{bin}supervisorctl -c sd.ini version")
       assert_match version.to_s, output
     ensure

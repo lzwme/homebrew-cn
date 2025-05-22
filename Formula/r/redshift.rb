@@ -1,6 +1,6 @@
 class Redshift < Formula
   desc "Adjust color temperature of your screen according to your surroundings"
-  homepage "http:jonls.dkredshift"
+  homepage "https:github.comjonlsredshift"
   url "https:github.comjonlsredshiftreleasesdownloadv1.12redshift-1.12.tar.xz"
   sha256 "d2f8c5300e3ce2a84fe6584d2f1483aa9eadc668ab1951b2c2b8a03ece3a22ba"
   license "GPL-3.0-or-later"

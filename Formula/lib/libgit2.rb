@@ -1,6 +1,6 @@
 class Libgit2 < Formula
   desc "C library of Git core methods that is re-entrant and linkable"
-  homepage "https:libgit2.github.com"
+  homepage "https:libgit2.org"
   url "https:github.comlibgit2libgit2archiverefstagsv1.9.0.tar.gz"
   sha256 "75b27d4d6df44bd34e2f70663cfd998f5ec41e680e1e593238bbe517a84c7ed2"
   license "GPL-2.0-only" => { with: "GCC-exception-2.0" }

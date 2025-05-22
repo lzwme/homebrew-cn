@@ -3,20 +3,19 @@ class Fava < Formula
 
   desc "Web interface for the double-entry bookkeeping software Beancount"
   homepage "https:beancount.github.iofava"
-  url "https:files.pythonhosted.orgpackages3e12776037b8eda9122e861055ac64af15b38ca0bbb46c242bf6792f90820a0ffava-1.30.2.tar.gz"
-  sha256 "aecd71ffbb2e5ec2b17bcde27abfbebe507b34b89f1aaab55c2a5ea57b800a84"
+  url "https:files.pythonhosted.orgpackages08b5e81c3255851e9425198c5038d71604a3a32fa78e768f45a7506932b740f5fava-1.30.3.tar.gz"
+  sha256 "ab0827ad2ffe628459614d260d5aea1374c4b830bbdd1e398afb3db799e5f88c"
   license "MIT"
-  revision 1
   head "https:github.combeancountfava.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6c7e837d6e41c75ae12087b7d0f913f0358140e9d292df207395b89b8710e539"
-    sha256 cellar: :any,                 arm64_sonoma:  "279c8692b5fa9bec68ecc7c9b2f2bd0ea1a966d0f5175b22d56f149302a40c04"
-    sha256 cellar: :any,                 arm64_ventura: "0f853c96872ecdc7bc7b2bba9c92c39c48134b96dde5a7186d007dd2559dc8ae"
-    sha256 cellar: :any,                 sonoma:        "a94113cb20c3d9440a58edcba45c7d47ab40919a9df5fe074ac5674b41d2d2a6"
-    sha256 cellar: :any,                 ventura:       "7cb6afbc5786f7d2c8523c5d8f12f0633dac8fa3e16a69a069ad32268e72d3e7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2509ca10d7a0ebb50a03969d1bb12f22a501de10395c49fe081989c50560b400"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3545fcc2e4fb499e59aaf3100c6e765a52455ca1d1c29fd71ac8141b237c6754"
+    sha256 cellar: :any,                 arm64_sequoia: "6cb62b1ea354ffebbde7eed3fdee4003d81e82559f24e71f29b75cf91f607dba"
+    sha256 cellar: :any,                 arm64_sonoma:  "71feae7976e052220f1812581623420d7ae2eef8bac3dea5d22772bcaaac03f8"
+    sha256 cellar: :any,                 arm64_ventura: "9b7af170f25136353f8363d7c0dca743cab644343dfe79d648bc6a7d28bfb522"
+    sha256 cellar: :any,                 sonoma:        "2e214bd3b911575170683df7f09188613294c3ec128130056cb80801b1b843c5"
+    sha256 cellar: :any,                 ventura:       "45b39ddc1f728e14ca1c5c0822863bdfa3fdb51e650680cb6f412eb977454301"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b7de3c624f3cb70c19d5bcca8e4c0984ef807d0f372ad1c04b3208f4c10dcf18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ede87930151305e6185eee0306ba5f265ef4e480ca3264fc18bf21e8bf348ab0"
   end
 
   depends_on "bison" => :build # for beancount
@@ -80,8 +79,8 @@ class Fava < Formula
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackagescd0f62ca20172d4f87d93cf89665fbaedcd560ac48b465bd1d92bfc7ea6b0a41click-8.2.0.tar.gz"
-    sha256 "f5452aeddd9988eefa20f90f05ab66f17fce1ee2a36907fd30b05bbb5953814d"
+    url "https:files.pythonhosted.orgpackages606c8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbcclick-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
   end
 
   resource "flask" do

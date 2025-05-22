@@ -1,18 +1,18 @@
 class Sqlitecpp < Formula
   desc "Smart and easy to use C++ SQLite3 wrapper"
   homepage "https:srombauts.github.ioSQLiteCpp"
-  url "https:github.comSRombautsSQLiteCpparchiverefstags3.3.2.tar.gz"
-  sha256 "5aa8eda130d0689bd5ed9b2074714c2dbc610f710483c61ba6cf944cebfe03af"
+  url "https:github.comSRombautsSQLiteCpparchiverefstags3.3.3.tar.gz"
+  sha256 "33bd4372d83bc43117928ee842be64d05e7807f511b5195f85d30015cad9cac6"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "70f5947567993c6f843def81f53c30dd6c97938351f46b4c6945829121f2a000"
-    sha256 cellar: :any,                 arm64_sonoma:  "e7629104d854a8022d3c63211d816df17fb8f304f2abe7aada7b9a32d5c5faae"
-    sha256 cellar: :any,                 arm64_ventura: "4f8f06f0ba6e6b70b51d86efc287439368bf2d7b4a7ba237dd5f1a5ff1cc814d"
-    sha256 cellar: :any,                 sonoma:        "27240818ce5455b810ab145dc21d99b7d0b5e0cf6f69d019dc6e9849df3271b0"
-    sha256 cellar: :any,                 ventura:       "e62d913c9d07e34f2567329f3ced74edd8390cc10e55e27d905cdc3cf581f1f3"
-    sha256                               arm64_linux:   "6475b9433747a98e6453958795885c04d614c4f863b4f873992f24ed2b05c58c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "45157c0c0356c374f4ea81150008d9070fe570abeed9c20e0742ebaea08c08a9"
+    sha256 cellar: :any, arm64_sequoia: "616fb66c49424941f10f030687dee31c3e8b695a9189ac305815fcaac6c0d4b3"
+    sha256 cellar: :any, arm64_sonoma:  "076151d30d6963eddd94d888291aa48dcd85014fe88617589a14327a047b25d0"
+    sha256 cellar: :any, arm64_ventura: "7057a2bc42ad8e9589b026321820b80b74484e81a132fc0a5735a3a859d2e279"
+    sha256 cellar: :any, sonoma:        "5dd5d668c1c3db5110762193fffb6dfdce72347fc36a04f59ef69e7cd62307b7"
+    sha256 cellar: :any, ventura:       "c61fef2285650f0f382d594e23fc5c325cdcc7a49cdcab6f562be643454f905b"
+    sha256               arm64_linux:   "e317fdf972b53582cc2596eefe496652b1477cca94b16c83fa9baa51c5ae4bb6"
+    sha256               x86_64_linux:  "9f74866fb8f4c43679d0bc7992e2f4276a10afcf294ae72a13f2f5d6d97e8db6"
   end
 
   depends_on "cmake" => :build

@@ -5,8 +5,8 @@ class Snapcraft < Formula
   homepage "https:snapcraft.io"
   # Use git checkout so setuptools-scm and update-python-resources works
   url "https:github.comcanonicalsnapcraft.git",
-      tag:      "8.9.1",
-      revision: "a434a624a5f905b5a2b7c03f352d5b6230d48a53"
+      tag:      "8.9.2",
+      revision: "abd5db829c7c60226e2f7d5e0aa99952c19ac7de"
   license "GPL-3.0-only"
   head "https:github.comcanonicalsnapcraft.git", branch: "main"
 
@@ -16,12 +16,12 @@ class Snapcraft < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d4af1b551f044d338799c5a3c00c74e57e28bcf8c27667f957afe9dc577e426d"
-    sha256 cellar: :any,                 arm64_sonoma:  "030a3a605f2a4811a3498bb0f316579d6e1b00ca03f8b34bce76625d8b5d97af"
-    sha256 cellar: :any,                 arm64_ventura: "121cc78cac09991f79a84bd7db68da674751a37e4e17f9eb5bc8ee89d152cedb"
-    sha256 cellar: :any,                 sonoma:        "dda2737f0b583b0385491073fee7fe249ed549c5710b97033506e348e58acfb4"
-    sha256 cellar: :any,                 ventura:       "e828c346984b224b9bec260fe3704e95a3ad8006636070cfd108e980d0b1efa5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a544ba8e4fb9a5a31be7102df3185dac8e96803d54e442c35326a51e2dc258d4"
+    sha256 cellar: :any,                 arm64_sequoia: "2f47e8b84e30c82977d50dc53cfa44e202921c1b887df33b98741f8cf60e7214"
+    sha256 cellar: :any,                 arm64_sonoma:  "ba2be96ef3b41af485c7baabe78c8c73f5f4c0e450f4cc44f3ea5ca479185a6e"
+    sha256 cellar: :any,                 arm64_ventura: "842604b74c82876e6faddceacdd3e83bdd60ac5eb7af77e06e3273fe6a7746ff"
+    sha256 cellar: :any,                 sonoma:        "45c4636367a6a83636dd4b2df228cbee164acaae5552caeb838fa516c46db39d"
+    sha256 cellar: :any,                 ventura:       "54810620f90592dc671a429f01d84d54ffb386895eba6264a54177cc201cb1b7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9becfac9343071918beede670eae290bd97ce73000709c71db7b3286f100db8e"
   end
 
   depends_on "rust" => :build # for pydantic_core

@@ -3,18 +3,18 @@ class Tmt < Formula
 
   desc "Test Management Tool"
   homepage "https://tmt.readthedocs.io"
-  url "https://files.pythonhosted.org/packages/e3/80/81ff2de5c0e59ecedb5341345f9e2d92f52c8b4c67ec27264bf7462edc9e/tmt-1.48.0.tar.gz"
-  sha256 "5854a5260db1417844789b8cbf2a18e428661977f18e191cdfd246d75f6b0577"
+  url "https://files.pythonhosted.org/packages/6b/3b/0fbd8a03c8a4b5b5e1126cd2dce5746e9d845dfcf03cf7f113fb50c4b13b/tmt-1.49.0.tar.gz"
+  sha256 "0f1f9f9466b5a0fac30bb65b4bb1e1ac87a7ac7a6527781b182504824e7077c5"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c1048a33ce45bd72050e1fabb0569758d6c93541b295d8cd6a0900309f303396"
-    sha256 cellar: :any,                 arm64_sonoma:  "503071ff86cdef1c3845631ce3f799b2d6cbfc9c502ad950c33154e2321e2332"
-    sha256 cellar: :any,                 arm64_ventura: "4287a14195fccf5c45c449db15f79c62da28368656951471117efdda176fe4c9"
-    sha256 cellar: :any,                 sonoma:        "640aa2726533a4e637473e48c8a5fda05fd8f9b43ecc015c351e153b740fedb7"
-    sha256 cellar: :any,                 ventura:       "53b0f06f114c346f9c2b9e279d536d849a7dee98397e4f98e24abcb896edf642"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a851352f3cfb1fa02a307812ca83ab3d0dfdab511d02e8afcc4c6cd2fef5caba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d507980cb846c7a3f0c531eb396c820b56348489fed26ab7a8602d2d3396859"
+    sha256 cellar: :any,                 arm64_sequoia: "05bd7e6fefda658e023071052da9a7482a9ddbac8ea13812a02f650389e103c9"
+    sha256 cellar: :any,                 arm64_sonoma:  "4487f379ab86aa7f3c7839c49e1015675d7dc4b9d18893b42281dc820df9668d"
+    sha256 cellar: :any,                 arm64_ventura: "f4a14b80c6b27227cbd012de254fc48188210b165541c3f686b3359646ea5ed4"
+    sha256 cellar: :any,                 sonoma:        "ec372bda2cdf5c0be34c6ed27cc53a464be12aa9f883258d97efda6085b71c2f"
+    sha256 cellar: :any,                 ventura:       "69ff090e958c95d7bed003d2f5e746ea5192df68657d96865515ad4ed3b413d8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7d555f219dbc405cadc525c8cf75674f2d965a5713b9699b833cb181b83a82a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f4e111a707ab6f224310353cf61d189cb84030ecb69568dfff70037ba13b352"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -38,8 +38,8 @@ class Tmt < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
   end
 
   resource "docutils" do
@@ -133,8 +133,8 @@ class Tmt < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/0b/b3/52b213298a0ba7097c7ea96bee95e1947aa84cc816d48cebb539770cdf41/rpds_py-0.24.0.tar.gz"
-    sha256 "772cc1b2cd963e7e17e6cc55fe0371fb9c704d63e44cacec7b9b7f523b78919e"
+    url "https://files.pythonhosted.org/packages/8c/a6/60184b7fc00dd3ca80ac635dd5b8577d444c57e8e8742cecabfacb829921/rpds_py-0.25.1.tar.gz"
+    sha256 "8960b6dac09b62dac26e75d7e2c4a22efb835d827a7278c34f72b2b84fa160e3"
   end
 
   resource "ruamel-yaml" do
@@ -148,8 +148,8 @@ class Tmt < Formula
   end
 
   resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/82/5c/e6082df02e215b846b4b8c0b887a64d7d08ffaba30605502639d44c06b82/typing_inspection-0.4.0.tar.gz"
-    sha256 "9765c87de36671694a67904bf2c96e395be9c6439bb6c87b5142569dcdd65122"
+    url "https://files.pythonhosted.org/packages/f8/b1/0c11f5058406b3af7609f121aaa6b609744687f1d158b3c3a5bf4cc94238/typing_inspection-0.4.1.tar.gz"
+    sha256 "6ae134cc0203c33377d43188d4064e9b357dba58cff3185f22924610e70a9d28"
   end
 
   resource "urllib3" do

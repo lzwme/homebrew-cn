@@ -8,20 +8,11 @@ class Bind < Formula
   # "version_scheme" because someone upgraded to 9.15.0, and required a
   # downgrade.
 
-  # TODO: Uncomment below when patch is no longer needed.
-  # url "https://downloads.isc.org/isc/bind9/9.20.8/bind-9.20.8.tar.xz"
-  # sha256 "3004d99c476beab49a986c2d49f902e2cd7766c9ab18b261e8b353cabf3a04b5"
+  url "https://downloads.isc.org/isc/bind9/9.20.9/bind-9.20.9.tar.xz"
+  sha256 "3d26900ed9c9a859073ffea9b97e292c1248dad18279b17b05fcb23c3091f86d"
   license "MPL-2.0"
   version_scheme 1
   head "https://gitlab.isc.org/isc-projects/bind9.git", branch: "main"
-
-  # TODO: Remove `stable` block when patch is no longer needed.
-  stable do
-    url "https://downloads.isc.org/isc/bind9/9.20.8/bind-9.20.8.tar.xz"
-    sha256 "3004d99c476beab49a986c2d49f902e2cd7766c9ab18b261e8b353cabf3a04b5"
-
-    patch :DATA
-  end
 
   # BIND indicates stable releases with an even-numbered minor (e.g., x.2.x)
   # and the regex below only matches these versions.
@@ -31,13 +22,13 @@ class Bind < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "d3f84ac0a1a2a1e7f3face1b1c1ec3d529d33b5e4477216a8d7bfe7d21dea66e"
-    sha256 arm64_sonoma:  "02169088713697145cf3f3a04a250bb2f2e90a88da201aa7b3d9131cc618309a"
-    sha256 arm64_ventura: "622abc3a20a9e7760d745d5b39737aba57c835434c6acb56e521c68f63857016"
-    sha256 sonoma:        "5726d8c7f91d12494ee9cd4ee6595fca956586afc6cb6902fbb27b15b5ab8c89"
-    sha256 ventura:       "675797d13ab4fb8c98d06aa88876307fa83242d03f61c815e811a8c6436dcadd"
-    sha256 arm64_linux:   "10be3b0abd42b95f82cf5f428bfdbd66068dadff4dd8bf8150a589261fd2e9c0"
-    sha256 x86_64_linux:  "dc15ca3128f17a61609b0464bae2f092204c0483116c19a3f6de3bd22d256aff"
+    sha256 arm64_sequoia: "4d7c66beb88c5e5d8e3c20291db418aad51300de900ed72418c394dd81840c41"
+    sha256 arm64_sonoma:  "2f3436e23ea82be7b6b3dd91775f939fde74a491b0e5c368df54c8444c6fe591"
+    sha256 arm64_ventura: "5245da53dc075ae58a340a551473413c2096a539f26f1e6429a63ba71e27114e"
+    sha256 sonoma:        "bbaf7eab0093885d78c95e5f6e722dd24012fe212a082a7485463ee13604840d"
+    sha256 ventura:       "87f3fab901cbb084953774a760f253899b05293d5b40b5cb423d5f12957a1268"
+    sha256 arm64_linux:   "a706d84cd5c331a552807cf3ae1cfb6a84692a18fd77af2bbd25bd1eefdca61d"
+    sha256 x86_64_linux:  "6e09280279e1450251a7da589d28a605560fb93096ab2e05beac7d5bc4699a10"
   end
 
   depends_on "pkgconf" => :build
@@ -113,55 +104,3 @@ class Bind < Formula
     system bin/"dig", "ü.cl"
   end
 end
-
-__END__
-diff --git i/lib/isc/xml.c w/lib/isc/xml.c
-index 7dd9424..af08a50 100644
---- i/lib/isc/xml.c
-+++ w/lib/isc/xml.c
-@@ -19,6 +19,7 @@
- #include <libxml/parser.h>
- #include <libxml/xmlversion.h>
- 
-+#ifndef __APPLE__
- static isc_mem_t *isc__xml_mctx = NULL;
- 
- static void *
-@@ -44,17 +45,20 @@ isc__xml_free(void *ptr) {
- 	isc_mem_free(isc__xml_mctx, ptr);
- }
- 
-+#endif /* !__APPLE__ */
- #endif /* HAVE_LIBXML2 */
- 
- void
- isc__xml_initialize(void) {
- #ifdef HAVE_LIBXML2
-+#ifndef __APPLE__
- 	isc_mem_create(&isc__xml_mctx);
- 	isc_mem_setname(isc__xml_mctx, "libxml2");
- 	isc_mem_setdestroycheck(isc__xml_mctx, false);
- 
- 	RUNTIME_CHECK(xmlMemSetup(isc__xml_free, isc__xml_malloc,
- 				  isc__xml_realloc, isc__xml_strdup) == 0);
-+#endif /* !__APPLE__ */
- 
- 	xmlInitParser();
- #endif /* HAVE_LIBXML2 */
-@@ -64,13 +68,15 @@ void
- isc__xml_shutdown(void) {
- #ifdef HAVE_LIBXML2
- 	xmlCleanupParser();
-+#ifndef __APPLE__
- 	isc_mem_destroy(&isc__xml_mctx);
-+#endif /* !__APPLE__ */
- #endif /* HAVE_LIBXML2 */
- }
- 
- void
- isc__xml_setdestroycheck(bool check) {
--#if HAVE_LIBXML2
-+#if defined(HAVE_LIBXML2) && !defined(__APPLE__)
- 	isc_mem_setdestroycheck(isc__xml_mctx, check);
- #else
- 	UNUSED(check);

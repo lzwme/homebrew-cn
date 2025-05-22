@@ -7,40 +7,38 @@ class Libplacebo < Formula
   head "https:code.videolan.orgvideolanlibplacebo.git", branch: "master"
 
   stable do
-    url "https:code.videolan.orgvideolanlibplacebo-archivev7.349.0libplacebo-v7.349.0.tar.bz2"
-    sha256 "38c9c75d9c1bb412baf34845d1ca58c41a9804d1d0798091d7a8602a0d7c9aa6"
+    url "https:code.videolan.orgvideolanlibplacebo-archivev7.351.0libplacebo-v7.351.0.tar.bz2"
+    sha256 "d68159280842a7f0482dcea44a440f4c9a8e9403b82eccf185e46394dfc77e6a"
 
     resource "fast_float" do
-      url "https:github.comfastfloatfast_floatarchiverefstagsv6.1.1.tar.gz"
-      sha256 "10159a4a58ba95fe9389c3c97fe7de9a543622aa0dcc12dd9356d755e9a94cb4"
+      url "https:github.comfastfloatfast_floatarchiverefstagsv8.0.1.tar.gz"
+      sha256 "18f868f0117b359351f2886be669ce9cda9ea281e6bf0bcc020226c981cc3280"
     end
 
     resource "glad2" do
-      url "https:files.pythonhosted.orgpackages15fc9235e54b879487f7479f333feddf16ac8c1f198a45ab2e96179b16f17679glad2-2.0.6.tar.gz"
-      sha256 "08615aed3219ea1c77584bd5961d823bab226f8ac3831d09adf65c6fa877f8ec"
+      url "https:files.pythonhosted.orgpackages6e5ad62b24fe1c7c2f34e15c2aa4418a5327a8550fdc272999a59e0dddebc3eeglad2-2.0.8.tar.gz"
+      sha256 "b84079b9fa404f37171b961bdd1d8da21370e6c818defb8481c5b3fe3d6436da"
     end
 
     resource "jinja2" do
-      url "https:files.pythonhosted.orgpackagesed5539036716d19cab0747a5020fc7e907f362fbf48c984b14e62127f7e68e5djinja2-3.1.4.tar.gz"
-      sha256 "4a3aee7acbbe7303aede8e9648d13b8bf88a429282aa6122a993f0ac800cb369"
+      url "https:files.pythonhosted.orgpackagesdfbff7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226bjinja2-3.1.6.tar.gz"
+      sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
     end
 
     resource "markupsafe" do
-      url "https:files.pythonhosted.orgpackages875baae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02dMarkupSafe-2.1.5.tar.gz"
-      sha256 "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
+      url "https:files.pythonhosted.orgpackagesb2975d42485e71dfc078108a86d6de8fa46db44a1a9295e89c5d6d4a06e23a62markupsafe-3.0.2.tar.gz"
+      sha256 "ee55d3edf80167e48ea11a923c7386f4669df67d7994554387f84e7d8b0a2bf0"
     end
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia:  "3d549716eb833fbc554605706f4e4740f0c1c4e6cf23732326444627ea14a8d5"
-    sha256 cellar: :any, arm64_sonoma:   "72afc163cc9dfc5525ed856094449685f034dfbbd8528f04e448b0447dd44f06"
-    sha256 cellar: :any, arm64_ventura:  "8860b6fd41fdd672a503b4951cb539d8ae11eaf953b64aef8188090f862138ab"
-    sha256 cellar: :any, arm64_monterey: "bfba0779b291723de7012b77cfc04e2d2909764012580e002808658697768ef2"
-    sha256 cellar: :any, sonoma:         "a5f15e9286de87a34619dbd377fd26a83fddb667ff45036fa7aa09ad3ca2a3d3"
-    sha256 cellar: :any, ventura:        "7ee7837caa82be9fa7294eb11f9a34545aad429a2202aaef5b19ba50dc02ea08"
-    sha256 cellar: :any, monterey:       "be243d1baa8e092186e1f6a7d8be0964e243bcb77fe2372dbc3736c3a3f8d910"
-    sha256               arm64_linux:    "2cae1d9fd160729c2a5885e83d65b63c4326a984eb456b2b7f63fc6f86e1cb8b"
-    sha256               x86_64_linux:   "db810576ae7bfb3bc20cf244271d00ab7e24701fe77d2540cf10407b22d6392d"
+    sha256 cellar: :any, arm64_sequoia: "cc68b84e986ff3921494c0920a263504caba9179d16cc360e2bf85b67f0da03a"
+    sha256 cellar: :any, arm64_sonoma:  "1d95abadbb00238446545c61ae7f78f130b45573d583da76bd12605765ae1320"
+    sha256 cellar: :any, arm64_ventura: "e79f218b3c019489133386f735faa8b2993ca08804b71e0c42cb95805f921d0b"
+    sha256 cellar: :any, sonoma:        "a06adea720f3c7c7b03f1f0e6e56c0ee137c68c89b9579e7e0c6ad786a3bc49b"
+    sha256 cellar: :any, ventura:       "dfe66fa848bafa93492c8613690a84efe7d95a3c246d2e33fb99d6b1d46bf0f4"
+    sha256               arm64_linux:   "cc56f2a984e9b6403b6c4ed6f6a6f0b96d6c1582e6e4c4886e4b8cc9235b78b2"
+    sha256               x86_64_linux:  "0b416df707aa5920f94b8a9e8b016b545dbdb157d2ad066103190bdf9821d6a9"
   end
 
   depends_on "meson" => :build

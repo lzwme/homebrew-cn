@@ -1,18 +1,18 @@
 class Gittuf < Formula
   desc "Security layer for Git repositories"
   homepage "https:gittuf.dev"
-  url "https:github.comgittufgittufarchiverefstagsv0.10.0.tar.gz"
-  sha256 "0346b622ab1d4790e8adbe21256518e185fcc2bd379d5448b03662d7301e988c"
+  url "https:github.comgittufgittufarchiverefstagsv0.10.2.tar.gz"
+  sha256 "8e315090e158d6d836cca343cab9e1129e5197a50551abd0d6bec3db0f8167a1"
   license "Apache-2.0"
   head "https:github.comgittufgittuf.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1131ad7d204dc211f4327a846ffd8ec9f9129cef7a5824b22d3c519d98506a9d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1131ad7d204dc211f4327a846ffd8ec9f9129cef7a5824b22d3c519d98506a9d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1131ad7d204dc211f4327a846ffd8ec9f9129cef7a5824b22d3c519d98506a9d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d6226a8745ed006d838c437f244e6ce96490f365e227af7b7f782e617ed666c6"
-    sha256 cellar: :any_skip_relocation, ventura:       "ef1e87bffee157892fcdf68bfab537bb3effaa21896ca08e998e9089f35bb9bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4415568133b0eebd11f73a426afc95f0a423d7b0a4dc3a974ec6dd9324caa139"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "936d89089c6b77daad570cfa503ecd27a092ae4c273b9cb1303adb87c97b44da"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "936d89089c6b77daad570cfa503ecd27a092ae4c273b9cb1303adb87c97b44da"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "936d89089c6b77daad570cfa503ecd27a092ae4c273b9cb1303adb87c97b44da"
+    sha256 cellar: :any_skip_relocation, sonoma:        "25396d056efe5113d58bf2d3b51380ef9e7e5876dde603a296f65c97ab4adc77"
+    sha256 cellar: :any_skip_relocation, ventura:       "abd8af8478fe0b4437a875883ac1e6679cfef730a66082edcfac70221bc805b1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "efea968d07360f9545533a080de9da45ec4a46d9fa5d83c23f41c0baa855b277"
   end
 
   depends_on "go" => :build

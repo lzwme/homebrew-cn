@@ -3,19 +3,19 @@ class BumpMyVersion < Formula
 
   desc "Version bump your Python project"
   homepage "https:callowayproject.github.iobump-my-version"
-  url "https:files.pythonhosted.orgpackages5d95dd1e0e081f3cb9dbe725828461e13c669ad9a381ff53878c202abfb3cdfebump_my_version-1.1.3.tar.gz"
-  sha256 "fc1dd5bbc71171b1fa05d2d7dc26f11ffc6302d69d5e9aefee2d084f15c5521b"
+  url "https:files.pythonhosted.orgpackages640eaead863992499caece72c0cd81ed0b25c2c8bc328f9794038afcc235d95dbump_my_version-1.1.4.tar.gz"
+  sha256 "5e6928a24a73bae11aa28184936d0f2a8071bb2f033f36d310ff194f7f8d6be8"
   license "MIT"
   head "https:github.comcallowayprojectbump-my-version.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8c84993b2dab93d3b627313bc85d519215352e5bae9ccbb4bd2a697093965a63"
-    sha256 cellar: :any,                 arm64_sonoma:  "d572629785283e885b2335380860cd86f0fe97a5123c93b8b2c38fd3cfec33cc"
-    sha256 cellar: :any,                 arm64_ventura: "d2231a3270ff417cac2670a9f8bde1df5e5113c18de6964cf0bf574cb63cf46c"
-    sha256 cellar: :any,                 sonoma:        "8392f5a6a25a1070657225f174e315e7a8a2953a23a8eb24d4bd961a91a922ea"
-    sha256 cellar: :any,                 ventura:       "4988b374ca93c25ce21ce4d03a14cbeeb6e16d775b24c4e09a4e7ea0bd92921a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4b11751adc83859451afb8164d03af37754901cf9563e70ac3efb4eee4b4e50"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9127669177e4a2fae7b227f75d54a934687d04c69d7415c91403f7e57ac42676"
+    sha256 cellar: :any,                 arm64_sequoia: "f10cb46de70e7ce75b399326c4fa92d101f6656da0ea35bfddbb9b6c56eea3d9"
+    sha256 cellar: :any,                 arm64_sonoma:  "a39b0ccc187eb026f6064f3d811a1fdde859360e8dd6f03ce09c1269c83d70d9"
+    sha256 cellar: :any,                 arm64_ventura: "b6451998d04591316c6e39a4af1b469a0ac14383783208e548d0cc595657ffde"
+    sha256 cellar: :any,                 sonoma:        "200bb5100c3f811dcfacaace5102e59d11c82ede68223de35e8ea96b579efa4e"
+    sha256 cellar: :any,                 ventura:       "c956d0d3aa906086bfc1d7c918e9f61b0353047b7fb1042dc7791f77984a6e9d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ff9d48a4f887376a7a8bd7c9fb5107860336a23291f87147ea5fab0cf437755"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc28995a060646edbb2bace1e08c1f9f8a584ec1a82815725ad7c518f7654ac0"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -42,8 +42,8 @@ class BumpMyVersion < Formula
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackagescd0f62ca20172d4f87d93cf89665fbaedcd560ac48b465bd1d92bfc7ea6b0a41click-8.2.0.tar.gz"
-    sha256 "f5452aeddd9988eefa20f90f05ab66f17fce1ee2a36907fd30b05bbb5953814d"
+    url "https:files.pythonhosted.orgpackages606c8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbcclick-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
   end
 
   resource "h11" do
@@ -117,8 +117,8 @@ class BumpMyVersion < Formula
   end
 
   resource "rich-click" do
-    url "https:files.pythonhosted.orgpackagesa67a4b78c5997f2a799a8c5c07f3b2145bbcda40115c4d35c76fbadd418a3c89rich_click-1.8.8.tar.gz"
-    sha256 "547c618dea916620af05d4a6456da797fbde904c97901f44d2f32f89d85d6c84"
+    url "https:files.pythonhosted.orgpackagesb7a8dcc0a8ec9e91d76ecad9413a84b6d3a3310c6111cfe012d75ed385c78d96rich_click-1.8.9.tar.gz"
+    sha256 "fd98c0ab9ddc1cf9c0b7463f68daf28b4d0033a74214ceb02f761b3ff2af3136"
   end
 
   resource "sniffio" do

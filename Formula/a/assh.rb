@@ -1,6 +1,6 @@
 class Assh < Formula
   desc "Advanced SSH config - Regex, aliases, gateways, includes and dynamic hosts"
-  homepage "https:manfred.lifeassh"
+  homepage "https:v1.manfred.lifeassh"
   url "https:github.commoulassharchiverefstagsv2.16.0.tar.gz"
   sha256 "9635d4123d344779728299627be57ee7ca26aa3ca65ed2fd4510a4fdd508b3cf"
   license "MIT"

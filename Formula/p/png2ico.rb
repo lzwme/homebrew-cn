@@ -1,7 +1,7 @@
 class Png2ico < Formula
   desc "PNG to icon converter"
-  homepage "https://www.winterdrache.de/freeware/png2ico/"
-  url "https://www.winterdrache.de/freeware/png2ico/data/png2ico-src-2002-12-08.tar.gz"
+  homepage "https://www.freshports.org/graphics/png2ico/"
+  url "https://pkg.freebsd.org/ports-distfiles/png2ico-src-2002-12-08.tar.gz"
   sha256 "d6bc2b8f9dacfb8010e5f5654aaba56476df18d88e344ea1a32523bb5843b68e"
   license "GPL-2.0-only"
   revision 1

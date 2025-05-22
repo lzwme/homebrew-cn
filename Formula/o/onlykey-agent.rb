@@ -6,17 +6,16 @@ class OnlykeyAgent < Formula
   url "https://files.pythonhosted.org/packages/68/80/e89b6c3680bedb1e14e99f0539ac805bddc7d8dd87c58805c64484966b7c/onlykey-agent-1.1.15.tar.gz"
   sha256 "49b19bec28dc0fb7053ef01266d8a9e7a078bb146214a641bdbb1feac6fc7ddb"
   license "LGPL-3.0-only"
-  revision 4
+  revision 5
 
   bottle do
-    rebuild 5
-    sha256 cellar: :any,                 arm64_sequoia: "b815e4288102059716896bc6bfb08cd00ef2f126f2c3769da0bf7672d80c873e"
-    sha256 cellar: :any,                 arm64_sonoma:  "1514e42110537c744a075238c45fca5d832f7057f517787d35b1dc864a418577"
-    sha256 cellar: :any,                 arm64_ventura: "dc66fe96ea14c51b5e890e0aebc6ab7d14cd6ed113545a12d907f3a38c642958"
-    sha256 cellar: :any,                 sonoma:        "d2c8c844451378fbfcb691acab825950ea5f74ec2e8324d2a3c9ebcb3d201d2e"
-    sha256 cellar: :any,                 ventura:       "20b57aec00914cb13cf6b455be4f34e4b415e9ee69c983640cf0740b44f25ef0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fdeb03a92ecefbea76749a8986ee5524f357edb163b36d4cdf08602de21002a6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "936e4decb9ea4681973c1572b7ee8e7e204c920abd35d2e1bcff1b6935a1aa4e"
+    sha256 cellar: :any,                 arm64_sequoia: "1fd5cda3116c1be1b089204ffc6cc5e0a3b51d407f300449499c0b6a5054d24f"
+    sha256 cellar: :any,                 arm64_sonoma:  "d373f7b075ca5c08c796c93d8db07f04b50c77d3a1ed07c7312565175c7db351"
+    sha256 cellar: :any,                 arm64_ventura: "6a0c1ccdc2e25dddfdc479def452668e15c11ebd683553ef96915a90d365f518"
+    sha256 cellar: :any,                 sonoma:        "e5a219ca7395fbe4705ec88c9ad3cea3f36ad31c4754dd6e58e0a2810bd77847"
+    sha256 cellar: :any,                 ventura:       "783136c6cd5f5e28cae7a63822ed57a7b1ef0d5f9eb9e6e4b3eefb84e7743cb1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc68591a1a7b0f542ccb0ad7694e4daee1574bc81b7d85f3c74457f8cb6516e5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0fe1781d31723a2e8e57e720ae38b3f8f93afc18e0f34124a539169912c16815"
   end
 
   depends_on "pkgconf" => :build
@@ -29,8 +28,8 @@ class OnlykeyAgent < Formula
   depends_on "python@3.13"
 
   resource "aenum" do
-    url "https://files.pythonhosted.org/packages/d0/f8/33e75863394f42e429bb553e05fda7c59763f0fd6848de847a25b3fbccf6/aenum-3.1.15.tar.gz"
-    sha256 "8cbd76cd18c4f870ff39b24284d3ea028fbe8731a58df3aa581e434c575b9559"
+    url "https://files.pythonhosted.org/packages/e3/52/6ad8f63ec8da1bf40f96996d25d5b650fdd38f5975f8c813732c47388f18/aenum-3.1.16-py3-none-any.whl"
+    sha256 "9035092855a98e41b66e3d0998bd7b96280e85ceb3a04cc035636138a1943eaf"
   end
 
   resource "backports-shutil-which" do
@@ -44,13 +43,13 @@ class OnlykeyAgent < Formula
   end
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/16/b0/572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357/charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
   end
 
   resource "configargparse" do
@@ -59,8 +58,8 @@ class OnlykeyAgent < Formula
   end
 
   resource "cython" do
-    url "https://files.pythonhosted.org/packages/5a/25/886e197c97a4b8e254173002cdc141441e878ff29aaa7d9ba560cd6e4866/cython-3.0.12.tar.gz"
-    sha256 "b988bb297ce76c671e28c97d017b95411010f7c77fa6623dd0bb47eed1aee1bc"
+    url "https://files.pythonhosted.org/packages/5b/d3/bb000603e46144db2e5055219bbddcf7ab3b10012fcb342695694fb88141/cython-3.1.1.tar.gz"
+    sha256 "505ccd413669d5132a53834d792c707974248088c4f60c497deb1b416e366397"
   end
 
   resource "docutils" do
@@ -124,8 +123,8 @@ class OnlykeyAgent < Formula
   end
 
   resource "pycryptodome" do
-    url "https://files.pythonhosted.org/packages/44/e6/099310419df5ada522ff34ffc2f1a48a11b37fc6a76f51a6854c182dbd3e/pycryptodome-3.22.0.tar.gz"
-    sha256 "fd7ab568b3ad7b77c908d7c3f7e167ec5a8f035c64ff74f10d47a4edd043d723"
+    url "https://files.pythonhosted.org/packages/8e/a6/8452177684d5e906854776276ddd34eca30d1b1e15aa1ee9cefc289a33f5/pycryptodome-3.23.0.tar.gz"
+    sha256 "447700a657182d60338bab09fdb27518f8856aecd80ae4c6bdddb67ff5da44ef"
   end
 
   resource "pymsgbox" do
@@ -164,8 +163,8 @@ class OnlykeyAgent < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/a9/5a/0db4da3bc908df06e5efae42b44e75c81dd52716e10192ff36d0c1c8e379/setuptools-78.1.0.tar.gz"
-    sha256 "18fd474d4a82a5f83dac888df697af65afa82dec7323d09c3e37d1f14288da54"
+    url "https://files.pythonhosted.org/packages/8d/d2/ec1acaaff45caed5c2dedb33b67055ba9d4e96b091094df90762e60135fe/setuptools-80.8.0.tar.gz"
+    sha256 "49f7af965996f26d43c8ae34539c8d99c5042fbff34302ea151eaa9c207cd257"
   end
 
   resource "six" do
@@ -174,8 +173,8 @@ class OnlykeyAgent < Formula
   end
 
   resource "unidecode" do
-    url "https://files.pythonhosted.org/packages/f7/89/19151076a006b9ac0dd37b1354e031f5297891ee507eb624755e58e10d3e/Unidecode-1.3.8.tar.gz"
-    sha256 "cfdb349d46ed3873ece4586b96aa75258726e2fa8ec21d6f00a591d98806c2f4"
+    url "https://files.pythonhosted.org/packages/94/7d/a8a765761bbc0c836e397a2e48d498305a865b70a8600fd7a942e85dcf63/Unidecode-1.4.0.tar.gz"
+    sha256 "ce35985008338b676573023acc382d62c264f307c8f7963733405add37ea2b23"
   end
 
   resource "urllib3" do

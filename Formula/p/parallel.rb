@@ -1,9 +1,9 @@
 class Parallel < Formula
   desc "Shell command parallelization utility"
   homepage "https://savannah.gnu.org/projects/parallel/"
-  url "https://ftp.gnu.org/gnu/parallel/parallel-20250322.tar.bz2"
-  mirror "https://ftpmirror.gnu.org/parallel/parallel-20250322.tar.bz2"
-  sha256 "c82896e779b18c2a157527f32f35de9a6d984f8b8ebad2b41dbc78c33adbaabe"
+  url "https://ftp.gnu.org/gnu/parallel/parallel-20250422.tar.bz2"
+  mirror "https://ftpmirror.gnu.org/parallel/parallel-20250422.tar.bz2"
+  sha256 "10f0a7b7fbed87edcbd63a403fdc0ee1a1f86c241a3605f33162b4b9aff248dd"
   license "GPL-3.0-or-later"
   version_scheme 1
   head "https://git.savannah.gnu.org/git/parallel.git", branch: "master"
@@ -14,7 +14,7 @@ class Parallel < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "4485af6cbea6ea6fe9bdc37bb5a92046e59d5571d5d69ff41fe88e518976996b"
+    sha256 cellar: :any_skip_relocation, all: "e0d37be0906539631080d6d854ef86f33cf477dddaf358875898fb7de6608914"
   end
 
   conflicts_with "moreutils", because: "both install a `parallel` executable"
@@ -37,7 +37,7 @@ class Parallel < Formula
     ]
 
     # Ignore `inreplace` failures when building from HEAD or not building a bottle.
-    inreplace inreplace_files, "/usr/local", HOMEBREW_PREFIX, build.stable? && build.bottle?
+    inreplace inreplace_files, "/usr/local", HOMEBREW_PREFIX, audit_result: build.stable? && build.bottle?
   end
 
   def caveats

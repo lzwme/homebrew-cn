@@ -3,18 +3,18 @@ class CfnLint < Formula
 
   desc "Validate CloudFormation templates against the CloudFormation spec"
   homepage "https:github.comaws-cloudformationcfn-lint"
-  url "https:files.pythonhosted.orgpackagese511d52bf891ec937b75a640996d84ba34abf55a59c80857968ccc5b51491957cfn_lint-1.35.1.tar.gz"
-  sha256 "0a564819088c95ba88c5dca23ba1fb3c6cdb86b2f6a40219f1abf2134c5b47d7"
+  url "https:files.pythonhosted.orgpackages1fd0cfed86b3debec2f4fcecb794f02e927786dbf0898b78c5b8c16d64460f96cfn_lint-1.35.3.tar.gz"
+  sha256 "dd52405f026eaa3f36003af186c4eebd9965f8956d88dbcf7e77223b5b02adc8"
   license "MIT-0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9b7e1fe164de4647b1bcac6785a8fb460a19376f4134fd759c11e3173672eb30"
-    sha256 cellar: :any,                 arm64_sonoma:  "3438786655e8c0a651ae865e9534f0f81b3fdcbaf973dc0ba45931038976398e"
-    sha256 cellar: :any,                 arm64_ventura: "ea32a3ee21feeb4c5a4d1ad4736f1eb33fa9f7f1242f6775a3181b9b93f6b05e"
-    sha256 cellar: :any,                 sonoma:        "db5a9d505b5d9fe358dba805ec621e87ae6db0b59df029a9d2137aef2b00ad9d"
-    sha256 cellar: :any,                 ventura:       "9195bb7d4b53908e82cd2b4aaa2fa5debcd338ffa7049b3f6e160fd360579f4b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e89a35b9eb20b3c9bfcb28767697614703d8450c084fcd3a17eeb9e7bcb02615"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3ddc9e3ccd167f28194fc8f54f98affd7bd8dc8041e058b4192d973b2515972f"
+    sha256 cellar: :any,                 arm64_sequoia: "8eade5fbdefdb16660bd59562106b500157145a94a730a86ba4dcdf4c7effba8"
+    sha256 cellar: :any,                 arm64_sonoma:  "fbf5a2d6d1510b5ec9ee34da6515236971a8bf4eb2c5b976d8012d271224f595"
+    sha256 cellar: :any,                 arm64_ventura: "815d95179d0b444382afc1d3577bc29d54edbcd4f2e3c68ebca9a337e35acff2"
+    sha256 cellar: :any,                 sonoma:        "8085c180eb10d8b4557be6d45952c1b06beaa771956d0d04ac828e22660204b3"
+    sha256 cellar: :any,                 ventura:       "af0a7543763a4f5bcd0a774020950edce59ec8d44127082182c4a8fd38531f08"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e2de872018e4fb0cf5baf652fd642c63caa54f10bfbec61cbd3d234c06a5d5fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "83d819511af0444166ea4a79a812798882fbef210e2cfcbcc419770b592b0649"
   end
 
   depends_on "rust" => :build
@@ -37,13 +37,13 @@ class CfnLint < Formula
   end
 
   resource "boto3" do
-    url "https:files.pythonhosted.orgpackagesc87314f9b57b764d9a8d998a4127bdc1f35adfb9d625f0cbe8814eb0d6bd6ff2boto3-1.38.12.tar.gz"
-    sha256 "ca06315fdb20821fc1084a7b08557556eed97cb917a30ff19d8524b495383889"
+    url "https:files.pythonhosted.orgpackagesc502b8e52defe7322998a79cb8e09d8f8a00b9d7452a0a516072f67df89f57f1boto3-1.38.21.tar.gz"
+    sha256 "417d0328fd3394ffb1c1f400d4277d45b0b86f48d2f088a02306474969344a47"
   end
 
   resource "botocore" do
-    url "https:files.pythonhosted.orgpackages415a37274d8510d4ad86bc8349e716d62c6b95c20e48403de3b34bc53cd7708cbotocore-1.38.12.tar.gz"
-    sha256 "86c459de3e39b418f4eb81e88c23fba02995496141db73816e7f65cb8b04408b"
+    url "https:files.pythonhosted.orgpackages054a89f2beab6757c900b15aa301227c9447feff7d327ff0595a2b74406a388cbotocore-1.38.21.tar.gz"
+    sha256 "08d5e9c00e5cc9e0ae0e60570846011789dc7f1d4ea094b3f3e3f3ae1ff2063a"
   end
 
   resource "jmespath" do
@@ -112,8 +112,8 @@ class CfnLint < Formula
   end
 
   resource "rpds-py" do
-    url "https:files.pythonhosted.orgpackages0bb352b213298a0ba7097c7ea96bee95e1947aa84cc816d48cebb539770cdf41rpds_py-0.24.0.tar.gz"
-    sha256 "772cc1b2cd963e7e17e6cc55fe0371fb9c704d63e44cacec7b9b7f523b78919e"
+    url "https:files.pythonhosted.orgpackages8ca660184b7fc00dd3ca80ac635dd5b8577d444c57e8e8742cecabfacb829921rpds_py-0.25.1.tar.gz"
+    sha256 "8960b6dac09b62dac26e75d7e2c4a22efb835d827a7278c34f72b2b84fa160e3"
   end
 
   resource "s3transfer" do
@@ -137,8 +137,8 @@ class CfnLint < Formula
   end
 
   resource "typing-inspection" do
-    url "https:files.pythonhosted.orgpackages825ce6082df02e215b846b4b8c0b887a64d7d08ffaba30605502639d44c06b82typing_inspection-0.4.0.tar.gz"
-    sha256 "9765c87de36671694a67904bf2c96e395be9c6439bb6c87b5142569dcdd65122"
+    url "https:files.pythonhosted.orgpackagesf8b10c11f5058406b3af7609f121aaa6b609744687f1d158b3c3a5bf4cc94238typing_inspection-0.4.1.tar.gz"
+    sha256 "6ae134cc0203c33377d43188d4064e9b357dba58cff3185f22924610e70a9d28"
   end
 
   resource "urllib3" do

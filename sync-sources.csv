@@ -494,6 +494,7 @@ Homebrew-homebrew-core/Formula/b/bench.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bender.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/benerator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/benthos.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/bento.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bento4.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/berglas.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/berkeley-db.rb, Homebrew/homebrew-core, 1
@@ -3593,7 +3594,7 @@ Homebrew-homebrew-core/Formula/lib/libansilove.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libantlr3c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libao.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libapplewm.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/lib/libarchive.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/lib/libarchive.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libaribcaption.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libart.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libass.rb, Homebrew/homebrew-core, 1
@@ -5581,7 +5582,7 @@ Homebrew-homebrew-core/Formula/q/qemu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qhull.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qjackctl.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qjson.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/q/qmmp.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/q/qmmp.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qodem.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/q/qp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/q/qpdf.rb, Homebrew/homebrew-core, 1
@@ -7944,6 +7945,7 @@ Homebrew-homebrew-cask/Casks/a/aws-vault.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/aws-vpn-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/axure-rp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/ayugram.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/a/azookey.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/azure-data-studio.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/azure-data-studio@insiders.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/ba-connected.rb, Homebrew/homebrew-cask, 0
@@ -10254,6 +10256,7 @@ Homebrew-homebrew-cask/Casks/font/font-l/font-leckerli-one.rb, Homebrew/homebrew
 Homebrew-homebrew-cask/Casks/font/font-l/font-ledger.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-lekton-nerd-font.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-lekton.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-l/font-leland.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-lemon.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-lemonada-vf-beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-lemonada.rb, Homebrew/homebrew-cask, 1
@@ -12120,6 +12123,7 @@ Homebrew-homebrew-cask/Casks/j/jet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jetbrains-gateway.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jetbrains-space.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jetbrains-toolbox.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/j/jetdrive-toolbox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jettison.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/j/jewelrybox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/j/jgrasp.rb, Homebrew/homebrew-cask, 0
@@ -14374,6 +14378,7 @@ Homebrew-homebrew-cask/Casks/t/telegram-desktop@beta.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/t/telegram.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/teleport-connect.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/teleport.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/teleport@16.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tella.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tempbox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/temurin.rb, Homebrew/homebrew-cask, 1

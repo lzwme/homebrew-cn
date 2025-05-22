@@ -1,8 +1,8 @@
 class ProbeRsTools < Formula
   desc "Collection of on chip debugging tools to communicate with microchips"
   homepage "https:probe.rs"
-  url "https:github.comprobe-rsprobe-rsarchiverefstagsv0.28.0.tar.gz"
-  sha256 "34587f8ee19d53da37d6f9b4290ea97a787883773f2182605b049a0ede3d4dfb"
+  url "https:github.comprobe-rsprobe-rsarchiverefstagsv0.29.0.tar.gz"
+  sha256 "bf90e22c2bf9a843f47e71e0701b3d95975cf6c1eaa525981d25b07e40276f24"
   license "Apache-2.0"
   head "https:github.comprobe-rsprobe-rs.git", branch: "master"
 
@@ -12,13 +12,13 @@ class ProbeRsTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "03e1b1281897b805e973b3e750fdfc0a72005820116c1a651d27c0e992cf0368"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "00cc6a3a8c0b5c1578527deeeb0c5cf3de7bba59b49ac6160d98241ff50e5bc4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "98037082bc41d37a505c88adbfdd80f4964d896a6b3c03de79624007ab312205"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a83e0ba8fca0a65fef56ce8cc39f54706244ccb9aab6ba01de717df0377157a0"
-    sha256 cellar: :any_skip_relocation, ventura:       "86ca3a0f81e7fbb40a1bab87f68f28ad292155b8d62e1c3fdab52438063c3c2d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "67e057ea57e598669a8abda9b6e645289194729184f0616d534360add0fa5522"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1afdb729a45fe0b55a10de41c2480952c14eee42b14e5e2e6bcfdcd8777273f4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9acc3f6e7fe7ff3989385dc78281474fce0cd3133ff2253205a3ef46fa34b60a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5caa4f823e60a9214ad1f07ad1da313a33deb4bfa345ba8a3d5b2391fa69ad6f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0496d931400d84b418f786a074a351c827ae4a07d3ba517758b61c3d51594463"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0791a7fbe77d43bc7963b75f2d9a7da24b1cf070f950bb73d6cb63a3fc5b3760"
+    sha256 cellar: :any_skip_relocation, ventura:       "a2cef2bca4a5b56cc782152cc42020e6a95ae9f6f5a740d30b4be9990bd4f2fb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "89b956de17bc87f74c2f21947852d6fabfae7a5c06a5267061f45eedc8a4cdfb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "85650b16bc9d268e3b54f633447f0508700a81e605bcd32b2a60279bb4aee199"
   end
 
   depends_on "cmake" => :build
