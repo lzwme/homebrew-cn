@@ -3,19 +3,18 @@ class Terminator < Formula
 
   desc "Multiple GNOME terminals in one window"
   homepage "https:gnome-terminator.org"
-  url "https:github.comgnome-terminatorterminatorarchiverefstagsv2.1.4.tar.gz"
-  sha256 "b6a544426a19829f9e9bb41441a2f4789edc04f1867c84a436822d1af6a36d06"
+  url "https:github.comgnome-terminatorterminatorarchiverefstagsv2.1.5.tar.gz"
+  sha256 "df46cb8fbf4bc80289cabbf59e22a03948a65278c637573db3bc5e7acfd1966b"
   license "GPL-2.0-only"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d823e29f9a03f186e2ff84443aca3348821632cab7a085068146bd0403383fe3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "241380e6ab7728c4cb1b46bf8a569a0a8527a4b4e97fbfab7fcd78a658c5bbe5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5440ad3063e68abe0e0bf3796021dfbbd4bae5f07c1c013f0265c47e0dcdcace"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a18e427816b26610cec97cd87bf1915ee7aec6a86c2af90295a3bf0a5130ddd7"
-    sha256 cellar: :any_skip_relocation, ventura:       "60f289ff7f318d749a0523fbcb094c694ec1db2700ad6ee6899774d61dfe3fd4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f308e8367d3813ca6b6ec3d46852877fb293163656b8b5b725ee042602b1480f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73119f14b2225e8557fb354ac8d53d1f58579893bbb69e1e74ddbfca62eede9e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a88c0ac27c2d76bbee8e2fa332e77c53169767e6612a1a10183ffde3ca8d3a5c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "723e802e3f3f79400d8d5564719425af34680a00fd5746778755ba4614ee4bc5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e8ef4ddcb4294e55a9c0e28434ea5da8ff2ec3871d4ff9a01010425c1f28aa26"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cbf4b1433eaadee83312ad705ed311db2ab626b71f4751efa6a6c17383b39712"
+    sha256 cellar: :any_skip_relocation, ventura:       "23c152d460198f9fa45f5f2c3e25a7ceb03eb6126c7527cba78a0f6632153de1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e7181f5ee199d5ab726987d98198938b4af7f960fa77fcd850a62967389b132"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7453996d0c7658caae13ae6dbe0ec99c8d7944f7b5c7b154f21359c4c9a8fc7e"
   end
 
   depends_on "pygobject3"
@@ -27,23 +26,23 @@ class Terminator < Formula
   end
 
   resource "configobj" do
-    url "https:files.pythonhosted.orgpackagescb8717d4c6d634c044ab08b11c0cd2a8a136d103713d438f8792d7be2c5148fbconfigobj-5.0.8.tar.gz"
-    sha256 "6f704434a07dc4f4dc7c9a745172c1cad449feb548febd9f7fe362629c627a97"
+    url "https:files.pythonhosted.orgpackagesf5c4c7f9e41bc2e5f8eeae4a08a01c91b2aea3dfab40a3e14b25e87e7db8d501configobj-5.0.9.tar.gz"
+    sha256 "03c881bbf23aa07bccf1b837005975993c4ab4427ba57f959afdd9d1a2386848"
   end
 
   resource "psutil" do
-    url "https:files.pythonhosted.orgpackages90c76dc0a455d111f68ee43f27793971cf03fe29b6ef972042549db29eec39a2psutil-5.9.8.tar.gz"
-    sha256 "6be126e3225486dff286a8fb9a06246a5253f4c7c53b475ea5f5ac934e64194c"
+    url "https:files.pythonhosted.orgpackages2a80336820c1ad9286a4ded7e845b2eccfcb27851ab8ac6abece774a6ff4d3depsutil-7.0.0.tar.gz"
+    sha256 "7be9c3eba38beccb6495ea33afd982a44074b78f28c434a1f51cc07fd315c456"
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesc81fe026746e5885a83e1af99002ae63650b7c577af5c424d4c27edcf729ab44setuptools-69.1.1.tar.gz"
-    sha256 "5c0806c7d9af348e6dd3777b4f4dbb42c7ad85b190104837488eab9a7c945cf8"
+    url "https:files.pythonhosted.orgpackages8dd2ec1acaaff45caed5c2dedb33b67055ba9d4e96b091094df90762e60135fesetuptools-80.8.0.tar.gz"
+    sha256 "49f7af965996f26d43c8ae34539c8d99c5042fbff34302ea151eaa9c207cd257"
   end
 
   resource "six" do
-    url "https:files.pythonhosted.orgpackages7139171f1c67cd00715f190ba0b100d606d440a28c93c7714febeca8b79af85esix-1.16.0.tar.gz"
-    sha256 "1e61c37477a1626458e36f7b1d82aa5c9b094fa4802892072e49de9c60c4c926"
+    url "https:files.pythonhosted.orgpackages94e7b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2six-1.17.0.tar.gz"
+    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
   end
 
   def install

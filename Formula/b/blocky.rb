@@ -1,18 +1,18 @@
 class Blocky < Formula
   desc "Fast and lightweight DNS proxy as ad-blocker for local network"
   homepage "https:0xerr0r.github.ioblocky"
-  url "https:github.com0xerr0rblockyarchiverefstagsv0.26.tar.gz"
-  sha256 "3a5c4552a248399684ca5ec1ee40aae80b6b16a3c39c6123d9a8b1e9c7d5bce5"
+  url "https:github.com0xerr0rblockyarchiverefstagsv0.26.2.tar.gz"
+  sha256 "b6aadd53253fe51d1bd41a1c19911091b944657fd034cd3dfad8c139ac5870b3"
   license "Apache-2.0"
   head "https:github.com0xerr0rblocky.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "21784f7e8744ad2c3cdcb78502c98df54f0c803de305820e11f7a319b4b9805d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8e0bfb2ac47191d6102da9953af8faa259b7b71325633322c2cd8fb6382b48d1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e8ebffe3c41241583f0429ed98eab9f20cdd9c1d44ecf0ba33aa063f3c08f562"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0d3083ab297bbe2e02f7ae73f024cbe9db59d6c29bcff6a2205d030213a38c73"
-    sha256 cellar: :any_skip_relocation, ventura:       "1174161bf0c8be26b8c22ca0dddbb47f57097dd375c83a45a218c78f771497f3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cbc458bca0abb7c696bf1dfa4a53d9ef193526e98b93f1af5bb470460431de53"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "98de841022b35ce277c2b1193bb5989061cc65a4aee83ea5f87f5bd067640c03"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "883392b4a72e8036338af0ba00278c38dc81447f26c50b72039773e1993845f2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "31fd03e5e27134526e51d1a46e5a8c49b876a05b55fd5465cd692c26946a588f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "442b143495141b70f31ac4371fd6b14490417aeb6c216bc9ccc971a557e42ef6"
+    sha256 cellar: :any_skip_relocation, ventura:       "5460f7ce1fdb2f0c2a6b38df5d99078c725548ff2c6ca54bd39bb8da7bc5cf18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a2f4857199ef4cdbc53feee624a863b306c50b2fbf4f9d5b4d87f3f943943a1"
   end
 
   depends_on "go" => :build

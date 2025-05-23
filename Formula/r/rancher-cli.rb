@@ -1,8 +1,8 @@
 class RancherCli < Formula
   desc "Unified tool to manage your Rancher server"
   homepage "https:github.comranchercli"
-  url "https:github.comranchercliarchiverefstagsv2.11.1.tar.gz"
-  sha256 "fc41afbfb432c71c731a6def381f28c2c56be91c888a33bde359b6842feff4e5"
+  url "https:github.comranchercliarchiverefstagsv2.11.2.tar.gz"
+  sha256 "6e8fea75ba3f6584e10edeab4db53e15453677ee80489b2d550c96eda5c2ef85"
   license "Apache-2.0"
   head "https:github.comranchercli.git", branch: "master"
 
@@ -15,12 +15,12 @@ class RancherCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c33ea7a5b435e9686e08424fba51d70da6cbbd627382c579256a8bd5fb5b029f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c33ea7a5b435e9686e08424fba51d70da6cbbd627382c579256a8bd5fb5b029f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c33ea7a5b435e9686e08424fba51d70da6cbbd627382c579256a8bd5fb5b029f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fae467f616e7b2e8d6274ef78959cdd7d35106375e71cadabf54b8637b150ab7"
-    sha256 cellar: :any_skip_relocation, ventura:       "fae467f616e7b2e8d6274ef78959cdd7d35106375e71cadabf54b8637b150ab7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c28675649a3395b3e53569757f5c2be7605d3d338da58ea96f93cfac9e21cd2c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61aaae188185092c639ba51dd36895b18d934ee57f29ba9a48891ab701dcbd67"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "61aaae188185092c639ba51dd36895b18d934ee57f29ba9a48891ab701dcbd67"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "61aaae188185092c639ba51dd36895b18d934ee57f29ba9a48891ab701dcbd67"
+    sha256 cellar: :any_skip_relocation, sonoma:        "828a5d55e445a0c5be63da9821e3f241b6b8c08e3a813fab87400ed60cf845ec"
+    sha256 cellar: :any_skip_relocation, ventura:       "828a5d55e445a0c5be63da9821e3f241b6b8c08e3a813fab87400ed60cf845ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc692c054797e3dd5b796904f2d8e884ddb6680a94f989bc2ad60379371d7de0"
   end
 
   depends_on "go" => :build

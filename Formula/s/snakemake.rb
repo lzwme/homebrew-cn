@@ -3,19 +3,19 @@ class Snakemake < Formula
 
   desc "Pythonic workflow system"
   homepage "https:snakemake.readthedocs.io"
-  url "https:files.pythonhosted.orgpackagesc0d7a5a8e88a5fa7f420ccd79819159c06db90208305e6c0df58088542ddf0a4snakemake-9.4.1.tar.gz"
-  sha256 "5f31a7ff4334fc6547534f1aae2a08cd450b0b7c410db979439b748f3d5d6b08"
+  url "https:files.pythonhosted.orgpackagesc53ff0a99f837d942945530b0df32163b4111545382f2fb1a8c33afd7ff5b9a5snakemake-9.5.0.tar.gz"
+  sha256 "56fa26510087290172bb6780dac0cf860875a215d2707890b7e8aba679514d09"
   license "MIT"
   head "https:github.comsnakemakesnakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d1c38af20f3d22f956c72da899db5b04595099dc58b09e47a29a9cccc5f9c3bc"
-    sha256 cellar: :any,                 arm64_sonoma:  "399d7a7b291b09a1182adb00f5d89dfb75f0d0cd310be433c69aa45feeb6f426"
-    sha256 cellar: :any,                 arm64_ventura: "d1d158d0108ee5fc73b0ce4bba8a12213d747493589b56cc09e0e7a25c6bc2ab"
-    sha256 cellar: :any,                 sonoma:        "9908abb3ed7eda53a6048245cd8eb32c9ba5bb4027bc0836975b59b1748bf05d"
-    sha256 cellar: :any,                 ventura:       "6273a3370d2ac6b5df76ee36153ba9ce406650a5e96c27165017daef09cc38ad"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "60beac6507a5a59724b01bef49aaecdbd91efc69bc1e2fd1828034d8bde402df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f21f7f8dfa7f154d9a98f2b65dfd3217d655d8c59e12b55a511c39bbd22ec990"
+    sha256 cellar: :any,                 arm64_sequoia: "1661d5fc2d8dd27527310537bbc49fe0003a5f177e57fd8ec4a919cb6f4f04da"
+    sha256 cellar: :any,                 arm64_sonoma:  "79e7024a162ed220e6063f3eed32636d0d8bc0ce0c5b3a0e8e353a82a24f9729"
+    sha256 cellar: :any,                 arm64_ventura: "6b3c70c067e6deb0b660c67febb64cd7bf29b4b2c76433ee6f0e02c30665e363"
+    sha256 cellar: :any,                 sonoma:        "1ac839e6706b291e2c535b337956c1f97366a72ee8a36739c4458d6f45f6c7a1"
+    sha256 cellar: :any,                 ventura:       "b237f2de6fea2882a2238ab264760b67a5bf3397d443bb7a10d05227a63d1de4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c6c774550dad24b09e503a321299b8acd0109fac960f2c2f389895eef1371eb6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4a31f77977d7a1ecd3f7fdc7b7c6e29217798cd78bc22ff0c116a03544a61ea3"
   end
 
   depends_on "rust" => :build
@@ -175,8 +175,8 @@ class Snakemake < Formula
   end
 
   resource "rpds-py" do
-    url "https:files.pythonhosted.orgpackages96d27bed8453e53f6c9dea7ff4c19ee980fd87be607b2caf023d62c6579e6c30rpds_py-0.25.0.tar.gz"
-    sha256 "4d97661bf5848dd9e5eb7ded480deccf9d32ce2cd500b88a26acbf7bd2864985"
+    url "https:files.pythonhosted.orgpackages8ca660184b7fc00dd3ca80ac635dd5b8577d444c57e8e8742cecabfacb829921rpds_py-0.25.1.tar.gz"
+    sha256 "8960b6dac09b62dac26e75d7e2c4a22efb835d827a7278c34f72b2b84fa160e3"
   end
 
   resource "smart-open" do

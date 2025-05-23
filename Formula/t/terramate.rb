@@ -17,6 +17,8 @@ class Terramate < Formula
 
   depends_on "go" => :build
 
+  conflicts_with "tenv", because: "both install terramate binary"
+
   def install
     system "go", "build", *std_go_args(output: bin"terramate", ldflags: "-s -w"), ".cmdterramate"
     system "go", "build", *std_go_args(output: bin"terramate-ls", ldflags: "-s -w"), ".cmdterramate-ls"

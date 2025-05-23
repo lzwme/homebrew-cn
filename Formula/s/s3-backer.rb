@@ -2,19 +2,19 @@ class S3Backer < Formula
   desc "FUSE-based single file backing store via Amazon S3"
   homepage "https:github.comarchiecobbss3backer"
   # Release distributions listed at https:github.comarchiecobbss3backerwikiDownloads
-  url "https:s3.amazonaws.comarchie-publics3backers3backer-2.1.4.tar.gz"
-  sha256 "0451471209cc872708e91b2784a4a1b9f3ca44c89a7bffb8f6145aed28c941e7"
+  url "https:s3.amazonaws.comarchie-publics3backers3backer-2.1.5.tar.gz"
+  sha256 "d834eef512fa99cedd7920586cae03729693613f67d380c1ac980564eed76c8e"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "54509b12da98f4375896e2914a44162745f0d629163de99578080af5976bbf34"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "0e0cff205bf0b253dc8dfc5127acf9db4375fc92d1d076750261c547d6eefc2f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "4942c96cea612ed2c911e7d4183be5e5c7eaca27c447990684583e72af48e657"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "a04394d1162069466ed16e4a07f3e45d3777074c9bf2a1985fcf1635c076655c"
   end
 
   depends_on "pkgconf" => :build
   depends_on "curl"
   depends_on "expat"
-  depends_on "libfuse@2"
+  depends_on "libfuse"
   depends_on :linux # on macOS, requires closed-source macFUSE
   depends_on "openssl@3"
   depends_on "zlib"

@@ -12,16 +12,18 @@ class Asdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0b4c0eec0a8be0893c7c2b2a85bcbefe34c2c704d80ea6a48f9169bdf8ebbb0e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b4c0eec0a8be0893c7c2b2a85bcbefe34c2c704d80ea6a48f9169bdf8ebbb0e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0b4c0eec0a8be0893c7c2b2a85bcbefe34c2c704d80ea6a48f9169bdf8ebbb0e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e1b390d15fb975f467d2bfda6dcb6fcf94889ff7d3d7c331427de145aedbb0f8"
-    sha256 cellar: :any_skip_relocation, ventura:       "e1b390d15fb975f467d2bfda6dcb6fcf94889ff7d3d7c331427de145aedbb0f8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2454e692672cb020223dfd8319403a8e7a4be44560ed18399150eef92aec682b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b47178c6ef8fa25491ef83de6ba7d6bda76343d714b6b5ba321c98c8bda7a91e"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1fd57ba8ec2e1b39ed8d34efb08c794c7f0ea05e6e352e2ab7a8b974ee82b644"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1fd57ba8ec2e1b39ed8d34efb08c794c7f0ea05e6e352e2ab7a8b974ee82b644"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1fd57ba8ec2e1b39ed8d34efb08c794c7f0ea05e6e352e2ab7a8b974ee82b644"
+    sha256 cellar: :any_skip_relocation, sonoma:        "59d0ac671690b617c0711a827af5e8b09ca0a102ee1aac5452b80e865e8c679e"
+    sha256 cellar: :any_skip_relocation, ventura:       "59d0ac671690b617c0711a827af5e8b09ca0a102ee1aac5452b80e865e8c679e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cb61474dd1cdf6aa17db4b0c28ecf5e5e969634f26b8a9f91a3cb8fddc1ad1b9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9661381baaa99124e46746a0181b5b808db58b66bb9d6c25be76f934f104b38b"
   end
 
   depends_on "go" => :build
+  depends_on "git"
 
   def install
     # fix https:github.comasdf-vmasdfissues1992

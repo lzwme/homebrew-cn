@@ -1,18 +1,18 @@
 class Cyctl < Formula
   desc "Customizable UI for Kubernetes workloads"
   homepage "https:cyclops-ui.com"
-  url "https:github.comcyclops-uicyclopsarchiverefstagsv0.20.2.tar.gz"
-  sha256 "a412f9f26962893ab3bb662295d94471ff9b9261f3d6cf51e516c360b222e5ab"
+  url "https:github.comcyclops-uicyclopsarchiverefstagsv0.20.3.tar.gz"
+  sha256 "03b0f968e813ed8da6a214fda9f1534f27a65f868afcf892d7691354e59447d2"
   license "Apache-2.0"
   head "https:github.comcyclops-uicyclops.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5eab09b85a74c8abb5c3073541131aee95f4bab332a167f670b01d0a90c18a2e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5eab09b85a74c8abb5c3073541131aee95f4bab332a167f670b01d0a90c18a2e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5eab09b85a74c8abb5c3073541131aee95f4bab332a167f670b01d0a90c18a2e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0da2dff93f4baea7c843ba082d7aebc11ca3c5ca5f79b2584e20512469cd6b29"
-    sha256 cellar: :any_skip_relocation, ventura:       "0da2dff93f4baea7c843ba082d7aebc11ca3c5ca5f79b2584e20512469cd6b29"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d218b2d51e02dbff2e2500d84c26a192b682f03906977d02ce2dc177fdafe349"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c2ab7bc5dc32177099d8d06d92a2d34f984452db61d8ddc662a0417e2116c4b8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2ab7bc5dc32177099d8d06d92a2d34f984452db61d8ddc662a0417e2116c4b8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c2ab7bc5dc32177099d8d06d92a2d34f984452db61d8ddc662a0417e2116c4b8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "31d436335786a87c78d148ed9baf8f0f2370b29cf616e3e51c8382d5658edc53"
+    sha256 cellar: :any_skip_relocation, ventura:       "31d436335786a87c78d148ed9baf8f0f2370b29cf616e3e51c8382d5658edc53"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "01d5eaff345b273e61149b9eece8cb682e4d63ff4c7ff7474edfafae7b80c860"
   end
 
   depends_on "go" => :build

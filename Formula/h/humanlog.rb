@@ -1,18 +1,18 @@
 class Humanlog < Formula
   desc "Logs for humans to read"
   homepage "https:github.comhumanlogiohumanlog"
-  url "https:github.comhumanlogiohumanlogarchiverefstagsv0.8.4.tar.gz"
-  sha256 "ee74057578be0f3e4809310628ece7b3dd724ed289faeccbede7516ae9c0cccd"
+  url "https:github.comhumanlogiohumanlogarchiverefstagsv0.8.5.tar.gz"
+  sha256 "f57cc04582a84cc786ea1a9198ea2866fd269c2ab5a2df4ea6f9998394786186"
   license "Apache-2.0"
   head "https:github.comhumanlogiohumanlog.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e607ffb517b99483aff013387c964df57c8146e11ecc661bf216149aa28e99f2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a5af5c936e226edd0e6ee87837c084f495ea60a5bc1dded1de2d60aadc12ef3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "10adf72350923e7485caae7f36965120345115aaca4daf8988d6915bf3676a7b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7a5e445aa0ba11de61a37a66cff000a844dad842cf3a7ceb752555c41817a702"
-    sha256 cellar: :any_skip_relocation, ventura:       "96974ab256db635fefbdbac3568b86432e92bace15f4c0df1ebacb4ebaa8d110"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0d6c3ae2ac9f62c305f004c33732859b7868ad23251c4518924af4c104f848e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "acc12c7ec58b20fdfbcb5e198946b3b875469ac8e2ad91a08c7fa293af82a3a2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dda18317c1e70789fefe613a982d5bd96f11df299d92486c428c4db5e52857a5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "56fa20267a85d9d8c380f4d86d41bd0b339ec315cc78147db5eaac65718a976e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1a2d7565c23aa338dc8bbecf44133f512547b6257f27eec861576a3b6c6ee989"
+    sha256 cellar: :any_skip_relocation, ventura:       "d2a93d2ecfebac388d30f98604b21c51288ac249eff2d8419ad2eb688ea7caf9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "effaeb40a46d830b4a16ec8d240dee54bd114709898b63529e416abff33a30d3"
   end
 
   depends_on "go" => :build

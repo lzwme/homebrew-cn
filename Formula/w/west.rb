@@ -3,20 +3,19 @@ class West < Formula
 
   desc "Zephyr meta-tool"
   homepage "https:github.comzephyrproject-rtoswest"
-  url "https:files.pythonhosted.orgpackagesd1aa288fc09dee13631538ad040d1b8e09f78594cdf3b53ff869c283d245bf20west-1.3.0.tar.gz"
-  sha256 "89320034be87099d16e75f4760ac0d1ed67e8978928e468ab993e3fba0cfe92f"
+  url "https:files.pythonhosted.orgpackagesacd04fc4d6ded3cca8736a982a33a39d2fad7a6170624323e8f7afdabd27e329west-1.4.0.tar.gz"
+  sha256 "908a07ae7cc334a88cb2f069b430484dfdfdda0c3422d14b9e23a43030cf9cc6"
   license "Apache-2.0"
-  revision 1
   head "https:github.comzephyrproject-rtoswest.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "97bf98cb70cd8be9ca4d901b9249a8f367dd0e59fd0e668dcc26ea2278132cc2"
-    sha256 cellar: :any,                 arm64_sonoma:  "1734f07dc4733422aca5324c07b234595fb0a53c5e97b96d286e494e87cd0ce7"
-    sha256 cellar: :any,                 arm64_ventura: "43b240bd56f80e5ee9225c4de04dc9530000a1ac57bb409622b1cd05baff5c65"
-    sha256 cellar: :any,                 sonoma:        "a20b55ddc1f78a162f2e74b7189dc129167ad347663b2339b838c86a3141b825"
-    sha256 cellar: :any,                 ventura:       "523c12554f615e44ec471c5c92620bc4c0ded42266b16c871480f1bd57875491"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c8dcc364cc4381b8f7b6db703c166f413a19a6f931d8d48eddaed97c1603360"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cafa7c4ca412312cbe93dad350921ab416304de2eaf48467ed0d1329f4d9e6d"
+    sha256 cellar: :any,                 arm64_sequoia: "4eca7a6dd5aba30489c779ce193b625af5589963aefac6ae2f70eb5d68b14f5d"
+    sha256 cellar: :any,                 arm64_sonoma:  "78f9966dae45009e25a768dd6ccc50d3b13b7d73e5a020d2bc089b45951d00b0"
+    sha256 cellar: :any,                 arm64_ventura: "52319ab39f339b853cafe20dcb2c113cc43eb7db9fe2c037ae155da63df2cb85"
+    sha256 cellar: :any,                 sonoma:        "bde26447dfd9f5b7eab37c1ff049ff0308b3c7660e5a833801a1567d626f751a"
+    sha256 cellar: :any,                 ventura:       "a9528485221186f80f5b426dfdfc8d08d59cc2919aa06513d23b7fe25ca9e217"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "621834b79cdbde505e5ae0297a3b81e6e8e26b00ac7a9654767906973e56105e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2c6b0472c35c5245c3b91814008fa38c545b6b7ce20ebce1bc0ce57b4128c11"
   end
 
   depends_on "libyaml"
@@ -55,11 +54,6 @@ class West < Formula
   resource "ruamel-yaml" do
     url "https:files.pythonhosted.orgpackagesea46f44d8be06b85bc7c4d8c95d658be2b68f27711f279bf9dd0612a5e4794f5ruamel.yaml-0.18.10.tar.gz"
     sha256 "20c86ab29ac2153f80a428e1254a8adf686d3383df04490514ca3b79a362db58"
-  end
-
-  resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages9e8bdc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15setuptools-80.7.1.tar.gz"
-    sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
   end
 
   resource "six" do

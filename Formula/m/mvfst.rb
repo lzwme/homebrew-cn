@@ -1,19 +1,19 @@
 class Mvfst < Formula
   desc "QUIC transport protocol implementation"
   homepage "https:github.comfacebookmvfst"
-  url "https:github.comfacebookmvfstarchiverefstagsv2025.04.28.00.tar.gz"
-  sha256 "10f47a23f96dfbe14587666821b5a8f06eb38972c5ef403a1bfb2135fae8976a"
+  url "https:github.comfacebookmvfstarchiverefstagsv2025.05.19.00.tar.gz"
+  sha256 "01a636b7f5ad7c9cd57f07a7d8c1f74875be74720e1df1bd8029833ee0874e49"
   license "MIT"
   head "https:github.comfacebookmvfst.git", branch: "main"
 
   bottle do
-    sha256                               arm64_sequoia: "22cc2215303e5d288e42863bcc3782734c272e9a05ab90c4c3e81ce2f5d29e66"
-    sha256                               arm64_sonoma:  "0c93f591f4ae8857bbff2fad3c4431212309af9da17fd765e34b328040aa8c46"
-    sha256                               arm64_ventura: "08182583110c78be07422ed698191dc0fcb8acacf41574d928bd1543f499798b"
-    sha256 cellar: :any,                 sonoma:        "334f8480e9d7a87c47b51dcbf5c78919c45df0f9e41d64690611b8c32a896f21"
-    sha256 cellar: :any,                 ventura:       "605cf3db630d713f95092a496e1e3fa4458a1ebc34cb3d08322e88b78970c5f2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c12e0faf3049caa08d867721cd01d89cca48cec4f36431a37d3ff7278fc75f20"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "69a986ceaa672cc32f11f8b8a19f177db4f264db0239dcc3ed747e6ee3b9af48"
+    sha256                               arm64_sequoia: "e8e9c758e46e0f5a9404c29b6b4127c1807b097360a5ccce350b5f58a71dce63"
+    sha256                               arm64_sonoma:  "565851f373c161fe206d11e3fa4dd9206945cc31274571fb8a362db22a7487ba"
+    sha256                               arm64_ventura: "62024d9ff5a44da38ecab611ef116531538e83cc22aee2fbd58c2ee570559a28"
+    sha256 cellar: :any,                 sonoma:        "4ef21cf2bbb6981cfb300a0bcd8a973173bc2e1511d45307da914b39f073c879"
+    sha256 cellar: :any,                 ventura:       "67ef596d593eb9d81585c61138b38204ffb179a000ded29c44d454c0bca3e292"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfa90bc044179caf511dbf4e4d4cf3af7a8d3c72dbd199e960fee5f554c2ace2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8ebf658b14d5704b56e62cbac2432618bc7242da8d2f94fdfc1a7a8254a6623"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -74,7 +74,7 @@ class Mvfst < Formula
     Open3.popen3(
       ".buildecho", "--mode", "client",
                 "--host", "127.0.0.1", "--port", server_port.to_s
-    ) do |stdin, _, stderr|
+    ) do |stdin, _, stderr, w|
       stdin.write "Hello world!\n"
       Timeout.timeout(60) do
         stderr.each do |line|
@@ -82,6 +82,8 @@ class Mvfst < Formula
         end
       end
       stdin.close
+    ensure
+      Process.kill "TERM", w.pid
     end
   ensure
     Process.kill "TERM", server_pid

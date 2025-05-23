@@ -1,8 +1,8 @@
 class Feluda < Formula
   desc "Detect license usage restrictions in your project"
   homepage "https:github.comanistarkfeluda"
-  url "https:github.comanistarkfeludaarchiverefstags1.6.2.tar.gz"
-  sha256 "218bdd9d23d7b72f86372c8e496d0df8447d971db828291c64a8a33d381eea3f"
+  url "https:github.comanistarkfeludaarchiverefstags1.7.0.tar.gz"
+  sha256 "6f0fadf5133ddd0d7090d5cca85fbee742335942798a5d836e47f81cb41aa34a"
   license "MIT"
   head "https:github.comanistarkfeluda.git", branch: "main"
 
@@ -15,13 +15,13 @@ class Feluda < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b7436f9a42408488bd0b5333c517ac53a6927a5ba399c89f0bc2ce02d83c745"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b99c8c8e2519cfe19ddb8f5d81ec0f7189f0e004c649a83a42c559c36dfe1ce1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "08692920d0962c8f429fb34746579fdcfe8ba1a9139c46ed15b1dbdfec36d412"
-    sha256 cellar: :any_skip_relocation, sonoma:        "405b392bcfde5e8d1b2392f55e8c29ac65f6b5451159005bc91561d52b595f85"
-    sha256 cellar: :any_skip_relocation, ventura:       "e8c696430b696ae2797b8062b52135c1331b0a926e70ab8794258e5962897005"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "441ec8cf1b6584d51a503c1136c806e8948638330c09968e66bb28a534eac559"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f81c78ad222644c15e629418dc04ea2e9179da733eaee6cb9c57f4fda7ba3ff2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "993b270638508c78a6ba5ec743c412d54732a6d138f02702aa9c389aad846c03"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "06b82c986266201e1e4e1b9523cc48e9614ffc4c94b926788ba5f3ad56d7f28e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ec4b90283a9ab6f42d981d58313b7349a64a0d1747da6db711f88942423f1d9a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5f16a7a9eafc9cab27629c67a52006019fe2f5889ab067ef94bf057145b73b02"
+    sha256 cellar: :any_skip_relocation, ventura:       "4ad15cfb4d122c11d7702c092cbbd73cd3529505880001060f899f690d2069f4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4dd79e99b0e2be326a6f473cae8cf9f507b5dbf37d91d575d12062c0accf52fe"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26d6c8c23cf54febb03d27e7e32613c91d39e2dcc87abfb2b5c9a9f5d4042c76"
   end
 
   depends_on "pkgconf" => :build

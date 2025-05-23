@@ -1,8 +1,8 @@
 class Dwarfutils < Formula
   desc "Dump and produce DWARF debug information in ELF objects"
   homepage "https:www.prevanders.netdwarf.html"
-  url "https:www.prevanders.netlibdwarf-0.12.0.tar.xz"
-  sha256 "444dc1c5176f04d3ebc50341552a8b2ea6c334f8f1868a023a740ace0e6eae9f"
+  url "https:www.prevanders.netlibdwarf-2.0.0.tar.xz"
+  sha256 "c3d1db72a979e14ee60b93010f0698d30fc1bca4eb1341006783d4e9c9ec7e72"
   license all_of: ["BSD-2-Clause", "LGPL-2.1-or-later", "GPL-2.0-or-later"]
   version_scheme 1
 
@@ -12,13 +12,13 @@ class Dwarfutils < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "ec32537c7a568c917f5272456848661e30ce00ac9cf5fd4b68dc70d7316813c5"
-    sha256 arm64_sonoma:  "c6be302ac2ebf8ef550362c794b703564f4ce039830f7c644f83429f03bb9229"
-    sha256 arm64_ventura: "e96358f887b938d3f7253721e876c8ffa8941b1e32a31a8380d4df9cb4898e77"
-    sha256 sonoma:        "c42720cbd7837861122a08219b26c3c8cce385f694f8e2282d7a438c549c8b83"
-    sha256 ventura:       "467ea3e56e9a9f808469ec730d8894d59ec23f4b42e3a79cd48111c222fba34a"
-    sha256 arm64_linux:   "0b7aaef94c972dab147ee440a9655daca11d2f7b8c6c684e40827769800f0312"
-    sha256 x86_64_linux:  "5f9220def8c174b3b3635804e5694b525386f39f92acc189e4a45bc7316f761e"
+    sha256 arm64_sequoia: "8a93bf3ca4c73958208238cc173242a6bc99025cd5adadecd697b4f971ba3620"
+    sha256 arm64_sonoma:  "151e51424ec0a8bb569eae5f73ca095e3e48f1f35ba47ef854f92cd2cf98215c"
+    sha256 arm64_ventura: "569083ceb799841e0bc113b880c3fa97cda3811f1655058964c858c1ea539ac5"
+    sha256 sonoma:        "38f42780706c79196f5748da644307d4efa3045c2cd74a6520ab4d0165e07356"
+    sha256 ventura:       "bf872ada49472754106bf71c5d1ee67060c0916fdb9d94b7e3fd0dc3ca0dbf36"
+    sha256 arm64_linux:   "2c5ba2d4472cf762f60649926cff39012870e879af487b081135813e9b175c97"
+    sha256 x86_64_linux:  "c1d6c7ee546346820e48a929387c395756b10473eed84ca4d8ead8d53242d483"
   end
 
   head do
@@ -65,7 +65,7 @@ class Dwarfutils < Formula
         return 0;
       }
     C
-    system ENV.cc, "-I#{include}libdwarf-0", "test.c", "-L#{lib}", "-ldwarf", "-o", "test"
+    system ENV.cc, "-I#{include}libdwarf-#{version.major}", "test.c", "-L#{lib}", "-ldwarf", "-o", "test"
     system ".test"
   end
 end

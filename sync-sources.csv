@@ -1953,6 +1953,7 @@ Homebrew-homebrew-core/Formula/f/flif.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flint-checker.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flintrock.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/flip-link.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flix.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flock.rb, Homebrew/homebrew-core, 1
@@ -3443,6 +3444,7 @@ Homebrew-homebrew-core/Formula/l/lightning.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lighttpd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lilv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lilypond.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/l/lima-additional-guestagents.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/lima.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/limbo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/l/limesuite.rb, Homebrew/homebrew-core, 1
@@ -8139,7 +8141,7 @@ Homebrew-homebrew-cask/Casks/b/boxcryptor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/boxy-suite.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/brackets.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/brain-workshop.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/b/brainfm.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/b/brainfm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/brave-browser.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/brave-browser@beta.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/brave-browser@dev.rb, Homebrew/homebrew-cask, 0
@@ -15106,6 +15108,7 @@ nicerloop-homebrew-nicerloop/Formula/acloudguru-sandbox.rb, nicerloop/homebrew-n
 nicerloop-homebrew-nicerloop/Formula/arx.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/download-windows-esd.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/f2c.rb, nicerloop/homebrew-nicerloop, 0
+nicerloop-homebrew-nicerloop/Formula/fnm.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/ftnchek.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Formula/gcli.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Formula/git-credential-keepassxc.rb, nicerloop/homebrew-nicerloop, 1
@@ -15148,6 +15151,7 @@ nicerloop-homebrew-nicerloop/Casks/archi.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/archivewebpage.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/audiobookbinder.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/cmis-workbench.rb, nicerloop/homebrew-nicerloop, 1
+nicerloop-homebrew-nicerloop/Casks/cocoapods.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/dbptk.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/deskflow@1.17.2.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/double-trouble.rb, nicerloop/homebrew-nicerloop, 1
@@ -15170,6 +15174,7 @@ nicerloop-homebrew-nicerloop/Casks/synology-ds-manager.rb, nicerloop/homebrew-ni
 nicerloop-homebrew-nicerloop/Casks/tccplus-gui.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/virtualbox-menulet.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/virtualbox@7.0.rb, nicerloop/homebrew-nicerloop, 1
+nicerloop-homebrew-nicerloop/Casks/vmware-fusion@macos12.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Casks/webarchiveextractor.rb, nicerloop/homebrew-nicerloop, 1
 nicerloop-homebrew-nicerloop/Casks/xntfs-pro.rb, nicerloop/homebrew-nicerloop, 0
 nicerloop-homebrew-nicerloop/Casks/zulufx8.rb, nicerloop/homebrew-nicerloop, 0

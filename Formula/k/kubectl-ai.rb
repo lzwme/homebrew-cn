@@ -1,17 +1,17 @@
 class KubectlAi < Formula
   desc "AI powered Kubernetes Assistant"
   homepage "https:github.comGoogleCloudPlatformkubectl-ai"
-  url "https:github.comGoogleCloudPlatformkubectl-aiarchiverefstagsv0.0.9.tar.gz"
-  sha256 "9cdcc413143572b90bdbf371369ad6a6d531a0f3579e5683f10eb69b38429424"
+  url "https:github.comGoogleCloudPlatformkubectl-aiarchiverefstagsv0.0.10.tar.gz"
+  sha256 "a65aacf0b9590d52757b6c7824d2194ed582e8b9bc07aef85199ab9b3dc4acfa"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0fa9f2850ff8828762fa6b7b512a3db7a260a9b784bdcf5330006669bd468bf7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0fa9f2850ff8828762fa6b7b512a3db7a260a9b784bdcf5330006669bd468bf7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0fa9f2850ff8828762fa6b7b512a3db7a260a9b784bdcf5330006669bd468bf7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b1012527d33f13ab7545e55268e253deae30b0410019af53db7444fcf3bdfe85"
-    sha256 cellar: :any_skip_relocation, ventura:       "b1012527d33f13ab7545e55268e253deae30b0410019af53db7444fcf3bdfe85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a29a9f1c9edeac89a5db2c02fb82792bbb7e2544e34bb560642512f17eee7838"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7a557b4fa3ea59f480ab99eb0e8ebfb18949941659306c21958bcb1771aa235b"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7a557b4fa3ea59f480ab99eb0e8ebfb18949941659306c21958bcb1771aa235b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "7a557b4fa3ea59f480ab99eb0e8ebfb18949941659306c21958bcb1771aa235b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8da27f4014c17b367e8b5e3238dc1534d494cead2ef1d7d7fd834673fa3b2fdb"
+    sha256 cellar: :any_skip_relocation, ventura:       "8da27f4014c17b367e8b5e3238dc1534d494cead2ef1d7d7fd834673fa3b2fdb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8de8cce18608b061b8a1e6ac9408086db4598144a534ff3aaf683f2cd2d1d86c"
   end
 
   depends_on "go" => :build

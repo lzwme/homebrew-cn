@@ -1,8 +1,8 @@
 class OktaAwsCli < Formula
   desc "Okta federated identity for AWS CLI"
   homepage "https:github.comoktaokta-aws-cli"
-  url "https:github.comoktaokta-aws-cliarchiverefstagsv2.4.1.tar.gz"
-  sha256 "dff4578c0572ce76d4c567ab114ad8f346c570e82fbad319f4a5784b9231c4f8"
+  url "https:github.comoktaokta-aws-cliarchiverefstagsv2.5.0.tar.gz"
+  sha256 "e47f39fd2021cbcc3c86e0bfb96ee46aad506b8de4f35935a5cb86d8fd33e939"
   license "Apache-2.0"
   head "https:github.comoktaokta-aws-cli.git", branch: "master"
 
@@ -12,12 +12,12 @@ class OktaAwsCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "107cbec811d65d4095f9d84716183f08c5eeb6c0c8cf7857a7fc1cda5d6f37d5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "107cbec811d65d4095f9d84716183f08c5eeb6c0c8cf7857a7fc1cda5d6f37d5"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "107cbec811d65d4095f9d84716183f08c5eeb6c0c8cf7857a7fc1cda5d6f37d5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "b62f8cf74290855aa37a79d13958e9ec90edec3b9fb3a472fa20ac73c4c84ed8"
-    sha256 cellar: :any_skip_relocation, ventura:       "b62f8cf74290855aa37a79d13958e9ec90edec3b9fb3a472fa20ac73c4c84ed8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "33d3c4bad569a197addaf2839c094624097f51ac4fc40a5e5dfd8b923aa33927"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "391a7c50e9b1c816c5b65122d29d6aacaadd19d01520e2c134774ad0ae592648"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "391a7c50e9b1c816c5b65122d29d6aacaadd19d01520e2c134774ad0ae592648"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "391a7c50e9b1c816c5b65122d29d6aacaadd19d01520e2c134774ad0ae592648"
+    sha256 cellar: :any_skip_relocation, sonoma:        "89981ade5d232179f4f30d9842286cbcec53b012db792edce069837d8496eaf0"
+    sha256 cellar: :any_skip_relocation, ventura:       "89981ade5d232179f4f30d9842286cbcec53b012db792edce069837d8496eaf0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0722e0df4cd81b34ebe80025de7393276c27ad51961f0691c31838ae810651e4"
   end
 
   depends_on "go" => :build

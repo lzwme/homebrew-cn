@@ -4,6 +4,7 @@ class Kcov < Formula
   url "https:github.comSimonKagstromkcovarchiverefstagsv43.tar.gz"
   sha256 "4cbba86af11f72de0c7514e09d59c7927ed25df7cebdad087f6d3623213b95bf"
   license "GPL-2.0-or-later"
+  revision 1
   head "https:github.comSimonKagstromkcov.git", branch: "master"
 
   # We check the Git tags because, as of writing, the "latest" release on GitHub
@@ -14,15 +15,13 @@ class Kcov < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia:  "8687e60acb3aa483967eefded7ad447f69f322af6ce818d183adf1d51eacdf02"
-    sha256 arm64_sonoma:   "94d6789bde6e8890e31d5b572b72fac76ade148172c0899c502349678c5835bf"
-    sha256 arm64_ventura:  "9b67dcb9cc579b68aff46237a149dce6e17f7be5b584b5a9f2b162858b80e29a"
-    sha256 arm64_monterey: "791011db4ed3b46ab785f7553249de53f848841aeecba334a5a35766e7e80bca"
-    sha256 sonoma:         "2c1319f3032eed31ecd3c41452383a525a44b1a2aa4e7a0a2c0a9094d0e58f91"
-    sha256 ventura:        "62dfd4348ff4fe56aeb5960c04c5e52f25dd3605964c6d9f4a7e460e3b34ff90"
-    sha256 monterey:       "b7205b776c7509a7fa80a4788308604ec44b8bb37496716e547ee7fc0dad1ab4"
-    sha256 arm64_linux:    "d774a02f750227979778f9370a7d24fac97cba505d94fc314d7e73b2bee66042"
-    sha256 x86_64_linux:   "e2854f13f8bf4b6ff6db16c274f95e558eaa9bd61e80f0074556c543b6a4ac5f"
+    sha256 arm64_sequoia: "27ca5bd266a2abb7d98cc23a1a15eac0484e46efe80d39227089b8b1ff013e48"
+    sha256 arm64_sonoma:  "8155c77528de98a10e48bf62182e200fa95a00c740bdba34d16cdc0867c183c2"
+    sha256 arm64_ventura: "9411f9d590330287c00cd1ddb6d73611d788b602d777456f66b830e16af20ecf"
+    sha256 sonoma:        "836ef66f3ef803b9e1739ca8c763481f94cfff677fe6d8df5757c2c641000d4e"
+    sha256 ventura:       "59a2e4f33e2ceaadb3ab0f3493ba9d5ac2963548db22925947a87df7b666b69a"
+    sha256 arm64_linux:   "d1f587bb30ed242db9d735b8c704661649f8a33c7eed1b83f899288333ecf9a2"
+    sha256 x86_64_linux:  "ae7dce32c566b2a2f5af67764737d4513973c2facb9070794aa6d58b423b6918"
   end
 
   depends_on "cmake" => :build
@@ -40,6 +39,10 @@ class Kcov < Formula
   end
 
   def install
+    # Fix to find libdwarf header files
+    # Issue ref: https:github.comSimonKagstromkcovissues475
+    inreplace "cmakeFindDwarfutils.cmake", "libdwarf-0", "libdwarf-#{Formula["dwarfutils"].version.major}"
+
     system "cmake", "-S", ".", "-B", "build", "-DSPECIFY_RPATH=ON", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

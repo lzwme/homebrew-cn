@@ -3,25 +3,25 @@ class TerraformLocal < Formula
 
   desc "CLI wrapper to deploy your Terraform applications directly to LocalStack"
   homepage "https://localstack.cloud/"
-  url "https://files.pythonhosted.org/packages/52/7c/ab31630035e2617420a76c2df8a92628798221e6d68d3116d0f0a3121933/terraform_local-0.22.0.tar.gz"
-  sha256 "9724ab31837ef930d27cc57b09ebce4612f43338ccf2c10ba9518dde4070319f"
+  url "https://files.pythonhosted.org/packages/7a/98/31df54375ec4fcb25b14e3c79d6d40dfedc5cfc97b0ec2dff2045bf69c12/terraform_local-0.23.0.tar.gz"
+  sha256 "dc6957476176f23a5e5e116c2401fbcab2a9f2fad5842a334bc130ea88b7f4fe"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0dd79bcf14897f294199a12bfeea2abae996498421d7abdb16b3c02c8531912e"
+    sha256 cellar: :any_skip_relocation, all: "0e3db4ef8732b70ae48565e869d371ab224ebdd87750ee30d61a3f2a6333b881"
   end
 
   depends_on "localstack"
   depends_on "python@3.13"
 
   resource "boto3" do
-    url "https://files.pythonhosted.org/packages/a5/dd/68ea8ab6dfbed46b75fcfe0bbd5ae19e4d3ef094b749ff8d944398e90f2d/boto3-1.38.17.tar.gz"
-    sha256 "6058feef976ece2878ad3555f39933e63d20d02e2bbd40610ab2926d4555710a"
+    url "https://files.pythonhosted.org/packages/c5/02/b8e52defe7322998a79cb8e09d8f8a00b9d7452a0a516072f67df89f57f1/boto3-1.38.21.tar.gz"
+    sha256 "417d0328fd3394ffb1c1f400d4277d45b0b86f48d2f088a02306474969344a47"
   end
 
   resource "botocore" do
-    url "https://files.pythonhosted.org/packages/33/73/8b831403be00dbea152d4827929a5772f58e0413dd3e6b6d4b3592d88d39/botocore-1.38.17.tar.gz"
-    sha256 "f2db4c4bdcfbc41d78bfe73b9affe7d217c7840f8ce120cff815536969418b18"
+    url "https://files.pythonhosted.org/packages/05/4a/89f2beab6757c900b15aa301227c9447feff7d327ff0595a2b74406a388c/botocore-1.38.21.tar.gz"
+    sha256 "08d5e9c00e5cc9e0ae0e60570846011789dc7f1d4ea094b3f3e3f3ae1ff2063a"
   end
 
   resource "jmespath" do

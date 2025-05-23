@@ -1,8 +1,8 @@
 class Dps8m < Formula
   desc "Simulator of the 36-bit GE/Honeywell/Bull 600/6000-series mainframe computers"
   homepage "https://dps8m.gitlab.io/"
-  url "https://dps8m.gitlab.io/dps8m-r3.0.1-archive/R3.0.1/dps8m-r3.0.1-src.tar.gz"
-  sha256 "4c7daf668021204b83dde43504396d80ddc36259fd80f3b9f810d6db83b29b28"
+  url "https://dps8m.gitlab.io/dps8m-r3.1.0-archive/R3.1.0/dps8m-r3.1.0-src.tar.gz"
+  sha256 "4f09cb3e0106f39864617f17f3858e15cca1e9588fd50dde9bc736808f89e26b"
   license "ICU"
   head "https://gitlab.com/dps8m/dps8m.git", branch: "master"
 
@@ -12,24 +12,35 @@ class Dps8m < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "662b0842c1799d9a5321c24202d9769a4684ecf49fccb399c22f5602b278f401"
-    sha256 cellar: :any,                 arm64_sonoma:   "8512a997de2d7157aa181b8230286d68336640af6056ec945d5f81033711e893"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "34bcbbb25c2dfd78c480cabc2fe15524079bbe3cb2a928166bebac1ef7599b34"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "23ce64ca8ce99c74b5b50e47ad924980659a4971e569718b88f384146d7ed06d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "abe9ac4fb9b51cfbacd7047980ae30712abf795017bab0d50a2ca9a6eb562ee4"
-    sha256 cellar: :any,                 sonoma:         "e1e5958347a26b9023e560695fb581b22355d89f7bdc811984fcb4a3fb3ccb74"
-    sha256 cellar: :any_skip_relocation, ventura:        "81654fc8c297d212c51325ff99a85a4118b30448f1142a8996f3091159b8df0c"
-    sha256 cellar: :any_skip_relocation, monterey:       "9a59be99e76eb327e76dbf8e29bd94b43037689a4287c53ef4d882fbfd0e626d"
-    sha256 cellar: :any_skip_relocation, big_sur:        "ec9347f931db9539b6a17a5e3dd9559fd8d4eb0fd56aa7c26c8535c40d3a9c52"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "d6e3b67195b4a692bda0e617989bbe2a2864a0d0ad47381b3cee12344a38f34f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "2607bb961e0b28e82e64392f258f472ccc84335785c703bad7de6b5ebeb1b236"
+    sha256 cellar: :any, arm64_sequoia: "2299a62a4694d96a06590dda48aec1b5bc7d4223a16027fc8d7e2815b89ef96b"
+    sha256 cellar: :any, arm64_sonoma:  "0c1ab00fc50dc0faab0615c50f338d6f65539861eccc49efce8a2e672d91de13"
+    sha256 cellar: :any, arm64_ventura: "807a98a81f8d7abb726a736adbe55e65b4ca015b7019fc96f76032cd1c38431e"
+    sha256 cellar: :any, sonoma:        "0690eb787b730de5eea8250c1e1b649f8662e531650be0fe7b37e83eb6e68c4c"
+    sha256 cellar: :any, ventura:       "b2e4de813094ec39ec4cebeb41fba5e8a4cd7980a1827725103da70aa016dad0"
+    sha256               arm64_linux:   "a36ea1366280f8b91a7d40a189eeda1dcfafcbf4911e36ed5e4157f35dbe5e08"
+    sha256               x86_64_linux:  "dffb4ef88aa0f51558f805fc3ad1bb8cba22c48155a6d816fa194552df2cfd49"
   end
 
+  depends_on "lld" => :build
+  depends_on "llvm" => :build
   depends_on "libuv"
 
+  uses_from_macos "bash"
+
   def install
+    if OS.mac? && MacOS.version < :sonoma
+      system "make"
+    else
+      # Upstream issue: https://gitlab.com/dps8m/dps8m/-/issues/293
+      inreplace "src/pgo/Build.PGO.Homebrew.Clang.sh", "exit 1", ""
+      inreplace "src/pgo/Build.PGO.Homebrew.Clang.sh", "$(brew --prefix llvm)", "$BREW_LLVM_PATH"
+      ENV["BREW_LLVM_PATH"] = Formula["llvm"].opt_prefix
+      ENV["NO_PGO_LIBUV"] = "1"
+      ENV.append "LDFLAGS", "-Wl,-rpath,\"#{Formula["libuv"].opt_lib}\" -L\"#{Formula["libuv"].opt_lib}\" -luv"
+      ENV.append "CFLAGS", "-I\"#{Formula["libuv"].opt_include}\""
+      system "./src/pgo/Build.PGO.Homebrew.Clang.sh", "LIBUV="
+    end
     system "make", "install", "PREFIX=#{prefix}"
-    bin.install %w[src/punutil/punutil src/prt2pdf/prt2pdf]
   end
 
   test do

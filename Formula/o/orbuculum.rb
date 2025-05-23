@@ -4,6 +4,7 @@ class Orbuculum < Formula
   url "https:github.comorbcodeorbuculumarchiverefstagsV2.2.0.tar.gz"
   sha256 "6614fba7044aa62e486b29ff4a81d0408d6e88499249bf2b839ccadfc54eec83"
   license "BSD-3-Clause"
+  revision 1
 
   livecheck do
     url :stable
@@ -11,14 +12,13 @@ class Orbuculum < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_sequoia: "ebd5fc98ad26b52efc86a68e8bd5da5f8891c1212dca4382bd1dc55c61697e0f"
-    sha256 cellar: :any, arm64_sonoma:  "ea72ca06cea3b25c72ced4adbe45457176ff5ce9a2a3850c9ce15f77c9d56315"
-    sha256 cellar: :any, arm64_ventura: "1844273329b7624bef902a7578db500bade46d0d4e6f055bd85c47cbb49a829e"
-    sha256 cellar: :any, sonoma:        "6fb59089dc3bccd5478c38f162eb76908f50ab352b0980a0ae8e621b305b882c"
-    sha256 cellar: :any, ventura:       "c464ab9e54fd94ad671079698b68813746c50af3bfe97e1a9aa7169abb35e27e"
-    sha256               arm64_linux:   "4e0735b40e690002488e00b62e92b142bbc36f729ba686e6405f6b8b53537f59"
-    sha256               x86_64_linux:  "7c9eb6c5596b7d5a8673f89b7359c325aaeda5937b209d500d5db29392efb06a"
+    sha256 cellar: :any, arm64_sequoia: "637ba000bafcaf9a19397b9039d64ec637079054b768f9494e54b27e36de95cc"
+    sha256 cellar: :any, arm64_sonoma:  "4ec20a9f9f3682853155e53ed4abaeff98c952f59e83ff648b0c5a8fd3c52e7a"
+    sha256 cellar: :any, arm64_ventura: "c66bb8358fc5fd4e83f23da5748cfad5b57446783c4adce427e1c1d2c51b864e"
+    sha256 cellar: :any, sonoma:        "188b4f0e858841b75414119a8c799da7c5fba2c3f83d584c4b94c1d6e0286d13"
+    sha256 cellar: :any, ventura:       "cb18bac79798cffe77da5e4d05a14fcb1bc4f09fdda488d3f24eb482e740b33d"
+    sha256               arm64_linux:   "f08fbd65255af3b5ab905a393e2dbd29407f39caabd94c07ca2d07df556af439"
+    sha256               x86_64_linux:  "83fd1219323905730efd83508f2c67500ce83392b478b7b2a1f376a98addf3d5"
   end
 
   depends_on "meson" => :build
