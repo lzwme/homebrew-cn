@@ -23,10 +23,11 @@ cask "ghdl" do
     sha256 "176f58857caca8039215f9ead3c92b5ce0558a0434152957ca2b219d5b966443"
   end
 
-  url "https:github.comghdlghdlreleasesdownloadv#{version}ghdl-llvm-#{version}-macos#{macos_version}-#{arch}.tar.gz"
+  url "https:github.comghdlghdlreleasesdownloadv#{version}ghdl-llvm-#{version}-macos#{macos_version}-#{arch}.tar.gz",
+      verified: "github.comghdlghdl"
   name "ghdl"
   desc "VHDL 20089387 simulator"
-  homepage "https:github.comghdlghdl"
+  homepage "https:ghdl.github.ioghdl"
 
   livecheck do
     url :url

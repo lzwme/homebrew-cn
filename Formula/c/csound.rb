@@ -3,7 +3,7 @@ class Csound < Formula
   homepage "https:csound.com"
   license "LGPL-2.1-or-later"
   revision 11
-  head "https:github.comcsoundcsound.git", branch: "master"
+  head "https:github.comcsoundcsound.git", branch: "develop"
 
   # Remove `stable` block when patches are no longer needed
   stable do
@@ -20,6 +20,12 @@ class Csound < Formula
     patch do
       url "https:github.comcsoundcsoundcommit2a071ae8ca89bc21b5c80037f8c95a01bb670ac9.patch?full_index=1"
       sha256 "c7026330b5c89ab399e74aff17019067705011b7e35b9c75f9ed1a5878f53b4b"
+    end
+
+    # Fix build failure due to incorrect member name on macOS 15+
+    patch do
+      url "https:github.comcsoundcsoundcommitbb9bafcfa17a87d3733eda1e25a812fd0be08ac6.patch?full_index=1"
+      sha256 "b1492e344a7cc067989ef600a08319d388bebb344fee616d83dce969f3afe8cb"
     end
   end
 
@@ -76,8 +82,8 @@ class Csound < Formula
   conflicts_with "libextractor", because: "both install `extract` binaries"
 
   resource "ableton-link" do
-    url "https:github.comAbletonlinkarchiverefstagsLink-3.1.2.tar.gz"
-    sha256 "2673dfad75b1484e8388deb8393673c3304b3ab5662dd5828e08e029ca8797aa"
+    url "https:github.comAbletonlinkarchiverefstagsLink-3.1.3.tar.gz"
+    sha256 "b0eba86d40a46b01ab821cdfb53041bfc693f0266538ea8163f1cea7ac42f476"
   end
 
   resource "csound-plugins" do
@@ -242,6 +248,7 @@ class Csound < Formula
     assert_path_exists testpath"test.mp3"
 
     (testpath"opcode-existence.orc").write <<~ORC
+      gi_programHandle faustcompile "process = _;", "--vectorize --loop-variant 1"
       JackoInfo
       instr 1
           i_ websocket 8888, 0

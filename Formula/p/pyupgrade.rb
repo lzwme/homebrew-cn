@@ -3,13 +3,13 @@ class Pyupgrade < Formula
 
   desc "Upgrade syntax for newer versions of Python"
   homepage "https:github.comasottilepyupgrade"
-  url "https:files.pythonhosted.orgpackages353aefa8e75cf84d53f1b3f0113387ab120ef460396a4068e41b6cf18a3d216dpyupgrade-3.19.1.tar.gz"
-  sha256 "d10e8c5f54b8327211828769e98d95d95e4715de632a3414f1eef3f51357b9e2"
+  url "https:files.pythonhosted.orgpackagesc0753df66861bca41394f05c5b818943fd0535bc02d5c5c512f9d859dec921f3pyupgrade-3.20.0.tar.gz"
+  sha256 "dd6a16c13fc1a7db45796008689a9a35420bd364d681430f640c5e54a3d351ea"
   license "MIT"
   head "https:github.comasottilepyupgrade.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "7a603075222ee69b22abf8d0cca0d665197f3bc0e330e4cf0990c7e18b41c0de"
+    sha256 cellar: :any_skip_relocation, all: "ac89a57ce2088190a42be7240a41060d18fcf8d4b63e9c06ce9758c1ce496668"
   end
 
   depends_on "python@3.13"

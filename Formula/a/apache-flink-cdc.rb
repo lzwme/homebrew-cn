@@ -5,10 +5,11 @@ class ApacheFlinkCdc < Formula
   mirror "https:archive.apache.orgdistflinkflink-cdc-3.4.0flink-cdc-3.4.0-bin.tar.gz"
   sha256 "d85090e41d077cb8ccbe6fdaf33807c234f1b4de685751e0fee3ba3be5a737e4"
   license "Apache-2.0"
+  revision 1
   head "https:github.comapacheflink-cdc.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "52a84db042b76bf5eadec61fd6e6296eabcc68a46fa9edef37c165500fc3ee2f"
+    sha256 cellar: :any_skip_relocation, all: "89a4c157f350f28c507ad091a44d06d018107a9b41dcadc35821e8b47ea81930"
   end
 
   depends_on "apache-flink@1" => :test
@@ -49,6 +50,10 @@ class ApacheFlinkCdc < Formula
   resource "values-connector" do
     url "https:search.maven.orgremotecontent?filepath=orgapacheflinkflink-cdc-pipeline-connector-values3.4.0flink-cdc-pipeline-connector-values-3.4.0.jar"
     sha256 "abfe81db11388aebb26419e875ccf813b6e5307f7cc2fbb4ef81a9a2ff72574f"
+  end
+  resource "iceberg-connector" do
+    url "https:search.maven.orgremotecontent?filepath=orgapacheflinkflink-cdc-pipeline-connector-iceberg3.4.0flink-cdc-pipeline-connector-iceberg-3.4.0.jar"
+    sha256 "b3be61da77c87c7dcd03b1837d3ae90fa58a9ce2fd497b6f0066477e59895ec5"
   end
 
   def install

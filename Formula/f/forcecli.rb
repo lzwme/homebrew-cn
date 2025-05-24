@@ -1,18 +1,18 @@
 class Forcecli < Formula
   desc "Command-line interface to Force.com"
   homepage "https:force-cli.herokuapp.com"
-  url "https:github.comForceCLIforcearchiverefstagsv1.0.9.tar.gz"
-  sha256 "dc046226a786f0158779c8f19fe09049d322683d3120a1abf0df6886a58ed21e"
+  url "https:github.comForceCLIforcearchiverefstagsv1.0.10.tar.gz"
+  sha256 "801628efffed39f678a9d2e4023303209c4b3f22c7f1b3049573270aa7ce6980"
   license "MIT"
   head "https:github.comForceCLIforce.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db6f02bea458d873fca4d97be0436e04a702718f3f09df423b44959363319395"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "db6f02bea458d873fca4d97be0436e04a702718f3f09df423b44959363319395"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "db6f02bea458d873fca4d97be0436e04a702718f3f09df423b44959363319395"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8f44901019df1beb58eccbce720922929adc6c093b66117ac74f26cab4dc9038"
-    sha256 cellar: :any_skip_relocation, ventura:       "8f44901019df1beb58eccbce720922929adc6c093b66117ac74f26cab4dc9038"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e04a095a9ff320119252ba7a50b8a6a0e14de191ae3737288eb168867f6aabcd"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f6fe12934df5e20c4bac8af947954b4df1e9576a4dff35e6f775351865a08950"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f6fe12934df5e20c4bac8af947954b4df1e9576a4dff35e6f775351865a08950"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f6fe12934df5e20c4bac8af947954b4df1e9576a4dff35e6f775351865a08950"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4810b10e457a78fea9a912d0243dc3745a1cad0c02c4ca7f1bce06fdede89d22"
+    sha256 cellar: :any_skip_relocation, ventura:       "4810b10e457a78fea9a912d0243dc3745a1cad0c02c4ca7f1bce06fdede89d22"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96aed7f9594e762579ad43d6580f9241564005cd19e15143cfb3f50b5c154364"
   end
 
   depends_on "go" => :build

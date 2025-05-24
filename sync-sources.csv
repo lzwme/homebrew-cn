@@ -91,6 +91,7 @@ Homebrew-homebrew-core/Formula/a/alac.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/alass.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/alda.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aldo.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/alejandra.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/alembic.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/alexjs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/algernon.rb, Homebrew/homebrew-core, 1
@@ -367,6 +368,7 @@ Homebrew-homebrew-core/Formula/a/aws-es-proxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aws-google-auth.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aws-iam-authenticator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aws-keychain.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/a/aws-lc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aws-nuke.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aws-rotate-key.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/aws-sam-cli.rb, Homebrew/homebrew-core, 0
@@ -1099,6 +1101,7 @@ Homebrew-homebrew-core/Formula/c/comtrya.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/conan.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/conan@1.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/concurrencykit.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/concurrentqueue.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/conda-lock.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/conda-zsh-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/conduit.rb, Homebrew/homebrew-core, 1
@@ -1133,6 +1136,7 @@ Homebrew-homebrew-core/Formula/c/coredns.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coreos-ct.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/coreutils.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/corkscrew.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/c/cornelis.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/corral.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/corrosion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/corsixth.rb, Homebrew/homebrew-core, 1
@@ -5818,6 +5822,7 @@ Homebrew-homebrew-core/Formula/r/rmcast.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/rmlint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rmtrash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rmw.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/rna-star.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rnr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rnv.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/r/roadrunner.rb, Homebrew/homebrew-core, 1
@@ -14069,7 +14074,6 @@ Homebrew-homebrew-cask/Casks/s/snapndrag.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/snes9x.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/snip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/snipaste.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/s/snipy.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/snowflake-snowsql.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/snwe.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/soapui.rb, Homebrew/homebrew-cask, 0

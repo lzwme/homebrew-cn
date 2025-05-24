@@ -11,6 +11,7 @@ class FlipLink < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2bef1a06d7567d3cac57a6ec36a0b07cb365b2ebcc0f82392a5e460edea593b0"
     sha256 cellar: :any_skip_relocation, sonoma:        "32d588c6efc346c55e8c5d8540697026a48f58a1a11a8200216bbc65ed61af91"
     sha256 cellar: :any_skip_relocation, ventura:       "5707b9019b30ec7adeb93eb9b1ddd7991a93e3a0e3b3c64d3de8ca02ea4b28df"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6239eeb59da161b234a30cdf6f9f9a8245f49711e7eb6f4a11b05d3d6e49c923"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb4e1c35ce40be6f2bd872953ebc6b807fe1698807011afaeab2025c021d76e3"
   end
 

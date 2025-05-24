@@ -1,20 +1,18 @@
 class GpgTui < Formula
   desc "Manage your GnuPG keys with ease!"
   homepage "https:github.comorhungpg-tui"
-  url "https:github.comorhungpg-tuiarchiverefstagsv0.11.0.tar.gz"
-  sha256 "741def01fe84ee20c3eac1cbbe2533e1a9c387832cab31b5d233062338254ce1"
+  url "https:github.comorhungpg-tuiarchiverefstagsv0.11.1.tar.gz"
+  sha256 "ecc232b42ff07888eb12a43daf5a956791a21efc85f6e71fbed9b9769ec50b50"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "83318b5d6c2572642cd4cdabadf1f4411c3b59d4b8d1d36efdb5440a84ecc726"
-    sha256 cellar: :any,                 arm64_sonoma:   "8a5f8cfea861d52c8e83459bab25140df30632087ccb626f3b37b6342a94900f"
-    sha256 cellar: :any,                 arm64_ventura:  "b2b9e2574869dd0a954d772e3baa52833e6353e8ddaf500d69e8bb12502e8987"
-    sha256 cellar: :any,                 arm64_monterey: "839bd1b54c25768ee1a8a7c86dd96c38ca313eb2cbe3c9029e9780d43423ac67"
-    sha256 cellar: :any,                 sonoma:         "003cfc65824809391ce325ba7e70041149a1c31a8ff093071d891ebdb5fe05e8"
-    sha256 cellar: :any,                 ventura:        "8420ac55ac0ce5f3d020660a6a8033dff374b48599f3ef1f7e96dc6e5135398e"
-    sha256 cellar: :any,                 monterey:       "62d158f8de0104dbda18ff48f8b17bad1d5d97514067e5f87537e25f2fe333c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "aef645afbefec305d0bd25f3abc7764be4294be31cb8b85edf8b5ba247329975"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b326e5cb490b82f26db74f3c98efbcaf2b361f43ad6041129c6fd33645185f8"
+    sha256 cellar: :any,                 arm64_sequoia: "b8b285a56c068c4613ddf7febc02f54f3f93e5b981e767d9e780e46c222da68f"
+    sha256 cellar: :any,                 arm64_sonoma:  "3ad65ce292ab237367a5e9c1243fc8e1c661ceca8866dcc1097e7fb343391483"
+    sha256 cellar: :any,                 arm64_ventura: "27e2c82100509242bbae369f1e07446a39d4601b16bdfa81d64bf84f65fc4ccb"
+    sha256 cellar: :any,                 sonoma:        "d7cd4bf0315b5286844fa5a79de6c1e6b03ff8d678c107dab39bc13d7917ddd0"
+    sha256 cellar: :any,                 ventura:       "ce5156604deb713f9ef54ec0a1bd517a32b7adcfe38b9128ce9ba20a9ef746ae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "859083fd3369401fd250a7219b0dcd2aeae9d73737e25f540d9b3a79e93bc31f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3674a2853d140537e9f8859d4efc566f55a4f1c0d3a67caf1fee55c807fa2ea"
   end
 
   depends_on "pkgconf" => :build

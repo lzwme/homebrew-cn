@@ -3,19 +3,19 @@ class Pythran < Formula
 
   desc "Ahead of Time compiler for numeric kernels"
   homepage "https:pythran.readthedocs.io"
-  url "https:files.pythonhosted.orgpackages342d4ac363a2eecd68c372b058d1b95a5f262c70776e107619cdcb5a4b68e1a3pythran-0.17.0.tar.gz"
-  sha256 "3b77d6d970a6cf5b448facc7d4f6229c3e73909ac27ea2480c843afdadbad0fb"
+  url "https:files.pythonhosted.orgpackages940a95a72f09f25dae48f41e367959075ed4c7a0ff02dd3f54eec111501d648apythran-0.18.0.tar.gz"
+  sha256 "5c003e8cbedf6dbb68c2869c49fc110ce8b5e8982993078a4a819f1dadc4fc6a"
   license "BSD-3-Clause"
   head "https:github.comserge-sans-paillepythran.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7c5edb0e5ce4922aa85e330bc47602b8b452983804ae81ada51d7a73a9a40efd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7c5edb0e5ce4922aa85e330bc47602b8b452983804ae81ada51d7a73a9a40efd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "7c5edb0e5ce4922aa85e330bc47602b8b452983804ae81ada51d7a73a9a40efd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "32a4cb2d097c7576508c61e7e1b031748da9da5de8f2562cb31c6326ca50b05e"
-    sha256 cellar: :any_skip_relocation, ventura:       "32a4cb2d097c7576508c61e7e1b031748da9da5de8f2562cb31c6326ca50b05e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "cc9a9b4a3ef9fb1af4e59ee8a63aa4bf9ac2c153efa479899f6ddbb78d00fb19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ccebee6a9c4e0bfb70a5120c7e0becc2a2bdde2313f064552ff75fd1ff0ea23"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6588b16c72ef7f632bcf1a434202135f0f0cb58cb873258cb26271c9d685f217"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6588b16c72ef7f632bcf1a434202135f0f0cb58cb873258cb26271c9d685f217"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6588b16c72ef7f632bcf1a434202135f0f0cb58cb873258cb26271c9d685f217"
+    sha256 cellar: :any_skip_relocation, sonoma:        "11bd3bd4e66b3537fc2266c4b6ec241726ef50f332e5ffae4a4d0ab00e80fc99"
+    sha256 cellar: :any_skip_relocation, ventura:       "11bd3bd4e66b3537fc2266c4b6ec241726ef50f332e5ffae4a4d0ab00e80fc99"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6793de3b09e58d761ba1f7d7bebc062d35f69738535ba59cdca3c653a7fa123d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6793de3b09e58d761ba1f7d7bebc062d35f69738535ba59cdca3c653a7fa123d"
   end
 
   depends_on "gcc" # for OpenMP
@@ -39,8 +39,8 @@ class Pythran < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackagesaa605db2249526c9b453c5bb8b9f6965fcab0ddb7f40ad734420b3b421f7da44setuptools-70.0.0.tar.gz"
-    sha256 "f211a66637b8fa059bb28183da127d4e86396c991a942b028c6650d4319c3fd0"
+    url "https:files.pythonhosted.orgpackages8dd2ec1acaaff45caed5c2dedb33b67055ba9d4e96b091094df90762e60135fesetuptools-80.8.0.tar.gz"
+    sha256 "49f7af965996f26d43c8ae34539c8d99c5042fbff34302ea151eaa9c207cd257"
   end
 
   def install

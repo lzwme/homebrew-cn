@@ -1,10 +1,9 @@
 class Zig < Formula
   desc "Programming language designed for robustness, optimality, and clarity"
   homepage "https:ziglang.org"
-  url "https:ziglang.orgdownload0.14.0zig-0.14.0.tar.xz"
-  sha256 "c76638c03eb204c4432ae092f6fa07c208567e110fbd4d862d131a7332584046"
+  url "https:ziglang.orgdownload0.14.1zig-0.14.1.tar.xz"
+  sha256 "237f8abcc8c3fd68c70c66cdbf63dce4fb5ad4a2e6225ac925e3d5b4c388f203"
   license "MIT"
-  revision 2
 
   livecheck do
     url "https:ziglang.orgdownload"
@@ -12,13 +11,13 @@ class Zig < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1d93ca443ee4c104e52050f662d67cce83ef90359d3af0002aacfa5c6147cb6b"
-    sha256 cellar: :any,                 arm64_sonoma:  "6c478a26658e289eb7bd6a8c258f8594c505c4fd4252d4e5ab714d3d784d23b7"
-    sha256 cellar: :any,                 arm64_ventura: "ddc4ff42466317700fe5f8dfef706360c74af312be9fdfa33d3f5f177aad3aa9"
-    sha256 cellar: :any,                 sonoma:        "1098717b274fb85082e1321f27b2577695e4c1a244bea6adb7725dfe3d21729a"
-    sha256 cellar: :any,                 ventura:       "b80b9097427d531a0e926bdb885beafff09a4a71132e5f0cda160660b2bd3e73"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d0527803175f3ffe9f5cf9eeba79e6e339f972c13704b4db6ebae12b01bdd7fc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73e30b0d64e6df8d6584b78d6e41110e06f05108988d5f2db49469dcb55614e3"
+    sha256 cellar: :any,                 arm64_sequoia: "3fffc57a94634f42df4156f3d1c4c2377e3c84772c5b49b95c0fecdc54dea092"
+    sha256 cellar: :any,                 arm64_sonoma:  "4ef618c7685f323025c86403c58e3bae87c7ad47871f709eb935de8798581c6f"
+    sha256 cellar: :any,                 arm64_ventura: "8edc35ba83083e73684c765e06e996a13ee59233c49e091c6495c9c604e29ef6"
+    sha256 cellar: :any,                 sonoma:        "d72ea1ebdae41308ce7145ebe3319736509d25b600683309ec890ac0edfff6ef"
+    sha256 cellar: :any,                 ventura:       "324fbfd949a1648b6abda1ac560d53dc707aedb613570260281581e804564a69"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ff8fc4310dff376fb6c02827f01dce82e0468223ea56996c026795aeba85ec1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "422b4295434e2c8b052379581e8fbcad8b650591e58cdf17fa3df4f7721b1663"
   end
 
   depends_on "cmake" => :build

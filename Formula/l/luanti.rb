@@ -4,8 +4,8 @@ class Luanti < Formula
   license "LGPL-2.1-or-later"
 
   stable do
-    url "https:github.comluanti-orgluantiarchiverefstags5.11.0.tar.gz"
-    sha256 "70e531d0776988ce6e579ea5490fdf6be3e349a4ade5281f5111aa4fdd8ee510"
+    url "https:github.comluanti-orgluantiarchiverefstags5.12.0.tar.gz"
+    sha256 "876867ac874492f20968f2c2eb4e403231e8e9f29e0e06efa512200bd5152355"
 
     resource "minetest_game" do
       url "https:github.comluanti-orgminetest_gamearchiverefstags5.8.0.tar.gz"
@@ -19,8 +19,8 @@ class Luanti < Formula
   end
 
   bottle do
-    sha256 arm64_linux:  "b99c0038fa9684ceebf2e258fd0dc7f46cf2e84338afde2890d906654903b7ab"
-    sha256 x86_64_linux: "a569fcf42e7b1541322d1e6164eb8e15331efc65d8accb33418629b62fbb525a"
+    sha256 arm64_linux:  "1fd142a559c013099e3cf03f96e1707409f1afde051fdf3dd691a29666f88264"
+    sha256 x86_64_linux: "40e5c2756d0188f68d28f0418203c0b4b855b612303cd9a9e3b676bc067ebff6"
   end
 
   head do
@@ -50,6 +50,7 @@ class Luanti < Formula
   depends_on "ncurses"
   depends_on "openal-soft"
   depends_on "openssl@3"
+  depends_on "sdl2"
   depends_on "sqlite"
   depends_on "xinput"
   depends_on "zlib"

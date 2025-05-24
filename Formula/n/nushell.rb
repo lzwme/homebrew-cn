@@ -1,8 +1,8 @@
 class Nushell < Formula
   desc "Modern shell for the GitHub era"
   homepage "https:www.nushell.sh"
-  url "https:github.comnushellnushellarchiverefstags0.104.0.tar.gz"
-  sha256 "2964ef7148d0f67fa4860fa3eab1c7d15c51ec5292be0cd0865996816f46fe84"
+  url "https:github.comnushellnushellarchiverefstags0.104.1.tar.gz"
+  sha256 "3dafca8bf892f5a2afaac1122a88a7eb7f22a0b62ef901f550173a11d5cbdf6e"
   license "MIT"
   head "https:github.comnushellnushell.git", branch: "main"
 
@@ -13,13 +13,13 @@ class Nushell < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "1262513559b84e8f818f3389e8c36dee5d0ceaab8db24926ec9527383f412dc5"
-    sha256 cellar: :any,                 arm64_sonoma:  "86c404706c73487df9f2cbb8db52485696915d17425c1a55c71b6f16ca27f5d1"
-    sha256 cellar: :any,                 arm64_ventura: "090650105b09f896f1dad6866b1572874b40c2b69b7d4509bfe32f50a230e6fc"
-    sha256 cellar: :any,                 sonoma:        "88b286ab8c4ab3608d952b507c74e0e7212ed3be9ce32c34c1ca804a8e37bc43"
-    sha256 cellar: :any,                 ventura:       "ce3f3dc6f3c22dc2c94bc8cafd6f66c8685db02fd9f1ba6c0d3c333d8e1b9843"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "94e3a3a5e15e2acf70cfc156479b15af9c2c4698a1b217ec6f147f64969d6044"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74df9f405ca0e22317fa1efe0ddfffb7a62ab2603b375a9f35a46aabd3c10e61"
+    sha256 cellar: :any,                 arm64_sequoia: "9191e5e3539b7799579f9e1fa7f163345cbf52703b9ca8ee4fd189085b179708"
+    sha256 cellar: :any,                 arm64_sonoma:  "add921e6f8a870f6c8c6dc01f38a2f327628ef24788dfd0a73bfb45207eac1ed"
+    sha256 cellar: :any,                 arm64_ventura: "d8300f09403ad05baba83f8ca575fbfee3c388408d1c0d3d7aa86be515b9ddb4"
+    sha256 cellar: :any,                 sonoma:        "11d69ebbd1f21e5f616c56328632c2ed00b99c1d7520838a105fccfcd675bcb5"
+    sha256 cellar: :any,                 ventura:       "69a0d37792883f4178104518fb71c18fc3aa6d5131440373485fa41f2446472a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3cfcf307e7c7b556051c2fca9773d5ca75287b5e6d04745a9848a2fb119054d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc0c51dbd89369c39ee85864c6733e19bd604eabf77a171fa211d131d1e4e1ce"
   end
 
   depends_on "rust" => :build
