@@ -1,19 +1,19 @@
 class Hl < Formula
   desc "Fast and powerful log viewer and processor"
   homepage "https:github.compamburushl"
-  url "https:github.compamburushlarchiverefstagsv0.31.1.tar.gz"
-  sha256 "98bba8014ad46a6c1be97a18064adc67a68d09cf55a13c4b8c1f65c516490d0b"
+  url "https:github.compamburushlarchiverefstagsv0.31.2.tar.gz"
+  sha256 "a154627dde61531c0eb76cc427e253ed6da7cc3410ed4863c6413160e545b45b"
   license "MIT"
   head "https:github.compamburushl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5821234bc5173cdc2730a11649d5b452d30479fc4c6f7432dc5a2a4b0c8adc06"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "675996094b38b68904a661343b205d84aad93630753847d4a2c0998f956f0874"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e350ab70e49aaf3c57173a969c70afc3d768d1bc8dd483d6ee49bfd85e9a3db1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e5fad8da88d8ee938ee5abc01bee9575e79170708aa00ef40848ac7803e08db0"
-    sha256 cellar: :any_skip_relocation, ventura:       "b3d9d7d255cceb974790d468ec01fcf746974927a81f951cf9c6c625b2408489"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "539421f6d4cabd513cc98ecdeeeb6c2fe196ffc5381b9afda8981705560a91ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c1509a33864a41b18d451ee729e40fff332fb45075840dad1e8e69ba5c3aab66"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4c96e94dcb0827dc670d37e453d6647a6675c988a651b7be268bb80a631d1637"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "17e560cbc74b1ca1f546468c77c0b984259e0a9c96c0a90ea2b2089c713aba2b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ae6342232169888b1878fa9e28b8b905e8ca5897149e4d400ceedee963a2a5ad"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a5a05db8634de57035484ed78159634e2bbd2af8493527d375dcfc3d88c30e97"
+    sha256 cellar: :any_skip_relocation, ventura:       "85c6df4b6184f9a398b178970b5480b5a0b9fc42490fb4f0faa0714695eac15e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d63e7ed8ad71325f5e2834f6118861df495aa57bcf5fcc21530d5806e4194568"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fd394b957774173dc6746f30aec2783d69428b3f3adb073044b7bf2ffa162fa1"
   end
 
   depends_on "rust" => :build

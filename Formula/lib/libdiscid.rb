@@ -1,8 +1,8 @@
 class Libdiscid < Formula
   desc "C library for creating MusicBrainz and freedb disc IDs"
   homepage "https://musicbrainz.org/doc/libdiscid"
-  url "https://ftp.musicbrainz.org/pub/musicbrainz/libdiscid/libdiscid-0.6.4.tar.gz"
-  sha256 "dd5e8f1c9aead442e23b749a9cc9336372e62e88ad7079a2b62895b0390cb282"
+  url "https://ftp.musicbrainz.org/pub/musicbrainz/libdiscid/libdiscid-0.6.5.tar.gz"
+  sha256 "72dbb493e07336418fe2056f0ebc7ce544eedb500bb896cc1cc04bd078c2d530"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,17 +11,13 @@ class Libdiscid < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "d75c302e47eb78bf4d56bc4e0cde309a944890f1d046b7078a2be9ea6c4f7f10"
-    sha256 cellar: :any,                 arm64_sonoma:   "906bf782b5afdaa39be07081bfcf814c58987cd261b18689bb945dcd0bcc30b8"
-    sha256 cellar: :any,                 arm64_ventura:  "ab8bab81ac4ed46d45902acfea78260d20e2ce0616d6073ebc8025ff6fa7979b"
-    sha256 cellar: :any,                 arm64_monterey: "896b72d31f4c99fa8e1064807501c1588002c2d1d651cf3179ee5052504dea7f"
-    sha256 cellar: :any,                 arm64_big_sur:  "65809091e9b8c9e8fdbc3e68995a7d93e4d367d798e19bd48a6f8a87c87fce0b"
-    sha256 cellar: :any,                 sonoma:         "48c1bfeb601d5d5a85af2ebea67e247d0a92db023268de10ee8b1e4622a2629a"
-    sha256 cellar: :any,                 ventura:        "88e97449648d49fafdff023e74d9841090c8194f7d1a311eb1c16920dfa7221c"
-    sha256 cellar: :any,                 monterey:       "b2d8bb666d78a7c0a3b3d32fbdc86524cee0d0f080f138de868d31979aca627b"
-    sha256 cellar: :any,                 big_sur:        "c4d364091f700f65e2fd53f70b23f243cab80cf991d0e7febbd78b0dfb029e9d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "230baa95caab005a124e4a4a3031f625417b141c357acb80916ae10f08926528"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "0408adf6b787c2260b62aa1235ec0b42d8ee8a8892a035fd56e1392cebe41303"
+    sha256 cellar: :any,                 arm64_sequoia: "32dee47998c52dc9777f3d89e546cc788166acee77691c9ed809454c014b5d5a"
+    sha256 cellar: :any,                 arm64_sonoma:  "9a8ba9144a0f2236dd623b190612be1a68c8a04353b85a71d9399b12d3477aea"
+    sha256 cellar: :any,                 arm64_ventura: "0d872c138f40e4794d692c6c35cfc586305dcb71ec8a3d01c53c2600b86bda75"
+    sha256 cellar: :any,                 sonoma:        "61962aaee44d489688a5f9e4e2d795aac681ce68257f9fc77a82372aae6bb557"
+    sha256 cellar: :any,                 ventura:       "064aa65a001e73c25743a6637e8aefa6e22aae07fb17ab859cfb5d520559f08a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "51d620c20901c02211bce728a9ae4eb94d978bd01178edc206dd38fd9ae80048"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b1ee7a44ee8456f4a91d70158132952b84730f3b8b0851b3a6ae8e382e34c8a"
   end
 
   def install

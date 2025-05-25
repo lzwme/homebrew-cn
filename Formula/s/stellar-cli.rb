@@ -1,19 +1,19 @@
 class StellarCli < Formula
   desc "Stellar command-line tool for interacting with the Stellar network"
   homepage "https:developers.stellar.org"
-  url "https:github.comstellarstellar-cliarchiverefstagsv22.8.0.tar.gz"
-  sha256 "08b634e25e4c7870936a83c2bf8fed451a4a4bcbdd06b5dc0b7b87818c0ce41b"
+  url "https:github.comstellarstellar-cliarchiverefstagsv22.8.1.tar.gz"
+  sha256 "0c92d8afcf3f888b09610b744cf1b28c4578aecdc1c32d2a397286d9a72bc2d5"
   license "Apache-2.0"
   head "https:github.comstellarstellar-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53d792d9bf9b480a746afa78a8f6a8a339855204583361303607a3e941acc37a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e9aeb570b1afc8cb6fc053883da2fb7645e7c8f7959af65d7d1cf8116e168951"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f62fa20e0ea352c56359c76ff1614567dbedd24e953401efb751860d4c149b3f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7082f6f130da5443172a1df8e59641fd92e7e7f007f0fed19aa22f39e23425eb"
-    sha256 cellar: :any_skip_relocation, ventura:       "2d31abb1759b2fee92a0f1c036bcc8efb6dfbf4ffa8f4112d7c267a953fdafd7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bf90b960bde76e8a59b8acef5f3a074eba7d717ee23d992155934a14b7bf99fb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e863c8a28c6a812ee3632a273c1bf6fe8bf8adcc82e2d8cb8e91c26e602f0f0d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "501610d1a9b3eecde77e439ff1d5445182b5a7167b688ab2d35ec98c1f79081e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "050a2e478db547437238318742d6dda25265c08e03be8a3acb8b9b4a0dbfa2bc"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e5b2439f176e56123c335ecf6419593adb1ec0e7d42e801af579595bfb3d9103"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3db6c61043d74f24fd6bfc092fe9dc3897a31532230e8c9a67a38dec673700ab"
+    sha256 cellar: :any_skip_relocation, ventura:       "070680b7cdac82e3644907f00fd8a91a0fbefa99f7ac57278ad3c279e3baf896"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2c2edc0de9592016af29f6b1d09ed6e535c6d1922ee19dd53004000ef9c34558"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "495ff1bc15baa7f050775ae0f97d0c3993aac08ad3cc2ae98ec7660bd52a520e"
   end
 
   depends_on "pkgconf" => :build

@@ -1,8 +1,8 @@
 class Ktoblzcheck < Formula
   desc "Library for German banks"
   homepage "https://ktoblzcheck.sourceforge.net/"
-  url "https://downloads.sourceforge.net/project/ktoblzcheck/ktoblzcheck-1.58.tar.gz"
-  sha256 "f598678afa22bf06d8952d31bc7f66faed253e3fa3cf87f4a948ade0bcdb91cd"
+  url "https://downloads.sourceforge.net/project/ktoblzcheck/ktoblzcheck-1.59.tar.gz"
+  sha256 "3cd33880d2425e8fa3be9918c85485514f53e04b0b986bcf7bd003fc53071fa7"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Ktoblzcheck < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "1adf317d22159def7835fc740182d7764822c13461fe9d0975034c6f74cf9034"
-    sha256 arm64_sonoma:  "be5101feb8419e3e745433284c8e6c954b29780acd7c984a60b48aedb12d9c0c"
-    sha256 arm64_ventura: "0781aa09d4b9d8bed14577d2c001d93bb40359828f0f56ffa0e88da9abbc2136"
-    sha256 sonoma:        "cb1e09fa11aa4948d5286666f7eaf81fa320dd18d2d42acea0e6aaf089f2b9ef"
-    sha256 ventura:       "a8f697bf6ff7baa266c19b67cb96ea1a72e019a56b68f9130737519d4f7528d7"
-    sha256 arm64_linux:   "21fb1fd39b7045eede6d698615f0e528c249fb61605f365e161980e9e1dd1b9a"
-    sha256 x86_64_linux:  "5ff9f34b3a9dd547c98ca7779337357978b54988b2af7b7a40a219881b3d084e"
+    sha256 arm64_sequoia: "5a8d33b186a024af57d092e2a1a735990c777c7f9397dc1ab7cc1ea14778cd71"
+    sha256 arm64_sonoma:  "6f9b62cc433f2e6d18852a8407283b79f7aefe00d184a52f047cf0906d2c9dec"
+    sha256 arm64_ventura: "e392cf050e70dc54fd602ae4d0426d8c133f9574b3495232221e8a2240cf1a56"
+    sha256 sonoma:        "b9d92a56ddc7869feeb3bc4848042151fc3a5934f34afe36738a5028a66da72f"
+    sha256 ventura:       "e8c9e32b1935cf61723d5a201c299296fdfa93b80d5a13253f1fb6b8f36f0cb0"
+    sha256 arm64_linux:   "b2d9e0aa942f499fd60057cbd18ab766f6e45719a60430ab3e6d64e8a58d36b4"
+    sha256 x86_64_linux:  "4a5d95498e32bdcc940bdcea30d17521e9e7f84cc6fefef3e993d0548eb6f846"
   end
 
   depends_on "cmake" => :build
@@ -36,6 +36,12 @@ class Ktoblzcheck < Formula
     sha256 "cf0e3cf56142039133628b5acffe8ef0c12bc902d2aadd3e0fe5878dc08d1050"
   end
 
+  # Bankdata resource
+  resource "ktoblzcheck-data" do
+    url "https://downloads.sourceforge.net/project/ktoblzcheck/ktoblzcheck-data-20250515.tar.gz"
+    sha256 "307479cd3c487ba6d6c4f5966634a6023c1f29d4386b93a5e96cea7541bebe4c"
+  end
+
   def python3
     "python3.13"
   end
@@ -43,18 +49,26 @@ class Ktoblzcheck < Formula
   def install
     ENV.append_path "PYTHONPATH", buildpath/Language::Python.site_packages(python3)
     resources.each do |r|
+      next if r.name == "ktoblzcheck-data"
+
       r.stage do
         system python3, "-m", "pip", "install", *std_pip_args(prefix: buildpath, build_isolation: true), "."
       end
+    end
+
+    resource("ktoblzcheck-data").stage do
+      system "cmake", "-S", ".", "-B", "data", *std_cmake_args
+      system "cmake", "--build", "data"
+      system "cmake", "--install", "data"
+
+      # Move built bankdata to the path of bankdata for `ktoblzcheck`
+      (buildpath/"src/bankdata").install "data"
     end
 
     # Work around to help Python bindings find shared library on macOS.
     # OSError: dlopen(ktoblzcheck, 0x0006): tried: 'ktoblzcheck' (no such file), ...
     # OSError: dlopen(libktoblzcheck.so.1, 0x0006): tried: 'libktoblzcheck.so.1' (no such file), ...
     inreplace "src/python/ktoblzcheck.py", /'libktoblzcheck\.so\.(\d+)'/, "'libktoblzcheck.\\1.dylib'" if OS.mac?
-
-    # Fix to changed filename for `NL_BANK_WEBSITE_URL`
-    inreplace "CMakeLists.txt", "BIC-lijst-NL.xlsx", "BIC-lijst-NL-2.xlsx"
 
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args, "-DCMAKE_INSTALL_RPATH=#{opt_lib}"
     system "cmake", "--build", "build"

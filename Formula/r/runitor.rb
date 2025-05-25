@@ -1,8 +1,8 @@
 class Runitor < Formula
   desc "Command runner with healthchecks.io integration"
   homepage "https:github.combddrunitor"
-  url "https:github.combddrunitorarchiverefstagsv1.3.0.tar.gz"
-  sha256 "d654d4fb55b2adee445d2160ec937529f9a052220554a46874a8a5c64c52be06"
+  url "https:github.combddrunitorarchiverefstagsv1.4.0.tar.gz"
+  sha256 "7c245db0bbd211a62e8adab1d78ce59ab8cb02147c95d3713508a75cc0f09099"
   license "0BSD"
   head "https:github.combddrunitor.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Runitor < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "862b3af6b1b84bd87aad4f08290a459ab3bd59d59a2f9fd4730da8b1e3d63060"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "862b3af6b1b84bd87aad4f08290a459ab3bd59d59a2f9fd4730da8b1e3d63060"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "862b3af6b1b84bd87aad4f08290a459ab3bd59d59a2f9fd4730da8b1e3d63060"
-    sha256 cellar: :any_skip_relocation, sonoma:        "98bfedbbce4c27d2fe8166696b4d077b0f2419f23aa34218252db328d874e84b"
-    sha256 cellar: :any_skip_relocation, ventura:       "98bfedbbce4c27d2fe8166696b4d077b0f2419f23aa34218252db328d874e84b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2b21a8bf5896b78e2347f111c7922b092685ee4f18c1d91d189059863cf9fe49"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ae097b06f663c5c098e966e5737cdda3a938960d6bb91362cec21f1ccce2e661"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ae097b06f663c5c098e966e5737cdda3a938960d6bb91362cec21f1ccce2e661"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ae097b06f663c5c098e966e5737cdda3a938960d6bb91362cec21f1ccce2e661"
+    sha256 cellar: :any_skip_relocation, sonoma:        "51ea31e203f0f305ea29997a2549ea4f45ee5f212e2ec54c299fadbbc0643420"
+    sha256 cellar: :any_skip_relocation, ventura:       "51ea31e203f0f305ea29997a2549ea4f45ee5f212e2ec54c299fadbbc0643420"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e0b3720e73ce9e0ead9c92612d8fe7c7437b19996046b5975ac96c545db338e"
   end
 
   depends_on "go" => :build

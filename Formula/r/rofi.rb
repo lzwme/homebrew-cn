@@ -6,6 +6,11 @@ class Rofi < Formula
   license "MIT"
   head "https:github.comdavatoriumrofi.git", branch: "next"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 arm64_sequoia: "12f2adcbff734077b295a28576edb770f00778986de09c6ca1036393270f2dcf"
     sha256 arm64_sonoma:  "31b072b30a9a55cc505de3cbd7323dd21b826b061516685b473e51986cab3d57"

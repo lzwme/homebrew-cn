@@ -1,17 +1,27 @@
 class Zigup < Formula
   desc "Download and manage zig compilers"
   homepage "https:github.commarler8997zigup"
-  url "https:github.commarler8997ziguparchiverefstagsv2025_04_20.tar.gz"
-  sha256 "3fabc75f05c7a80a9a19f7d79f3529c208db6303ffd1b3b0328e070fc6703654"
+  url "https:github.commarler8997ziguparchiverefstagsv2025_05_24.tar.gz"
+  sha256 "d88e6d9c9629c88aba78c3bae2fb89ae4bea11f2818911f6d5559e7e79bcae69"
   license "MIT-0"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:[._]\d+)+)$i)
+    strategy :git do |tags, regex|
+      tags.filter_map { |tag| tag[regex, 1]&.tr("_", ".") }
+    end
+  end
+
+  no_autobump! because: :incompatible_version_format
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8fbbb4b50999dc78dca0c38195270ccb205272e8d24a47aa342faadf4caa758a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fa86de4771e1e9b782f74c005c404d1b41eb423b894f52fb0317e67b05bf30e7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b8f8dd7eefb7342b1def1656f3c6380abb91b8b4e1f469118a58a43a1b837aee"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8edbdf7b144575c359e1ba382cd17aa67427d370be0a62a56b6f993cec99dada"
-    sha256 cellar: :any_skip_relocation, ventura:       "ce938b80961b25a3fd6833330bccebdf013ccd82986caae1542e13c6c2d3c79f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "96cd73a58e60d4f12db26151a139a00c81fd10166905c0bf2f5e065211b8ae0b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "16c4178d9b12aa6c296b91ad53873f04fb3ff1268ddde646680d0a73138c1e44"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a07d469fe63e935bff6bbe5502525da60bb68c5e868384a0e85faa44dd006781"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "cc1d0f528842803f809f7a0e839c9dfcd5147deb7e4e6def2e4fc1b95fdd8fad"
+    sha256 cellar: :any_skip_relocation, sonoma:        "fce4755ad806a00dfc9b9a209459ce9536546c5ec22ad4ebce90716d9c010321"
+    sha256 cellar: :any_skip_relocation, ventura:       "e4f3ca166c66192939bc9c6b59ecf1d9c10a19662d8d5e532e96b5b479e3aa78"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "439dd70b4af2e1dca1d755c3a724b400c717cd12b5cd20569abfea58e9d732a4"
   end
 
   depends_on "zig" => :build

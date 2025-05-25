@@ -1,9 +1,9 @@
 class Opencascade < Formula
   desc "3D modeling and numerical simulation software for CADCAMCAE"
   homepage "https:dev.opencascade.org"
-  url "https:git.dev.opencascade.orggitweb?p=occt.git;a=snapshot;h=refstagsV7_9_0;sf=tgz"
-  version "7.9.0"
-  sha256 "ff118a524ec451867e8f0ac3b631522c98f2b4353c7dbf2786bf239589909ec6"
+  url "https:git.dev.opencascade.orggitweb?p=occt.git;a=snapshot;h=refstagsV7_9_1;sf=tgz"
+  version "7.9.1"
+  sha256 "e70b8c08c74f9693cbc91baa48610f1f5448ad167425fb8b957cf5a8f2cafed5"
   license "LGPL-2.1-only"
 
   # The first-party download page (https:dev.opencascade.orgrelease)
@@ -19,13 +19,15 @@ class Opencascade < Formula
     end
   end
 
+  no_autobump! because: :incompatible_version_format
+
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4859dfeb89c2e8f650f80ba42e3c0ab573d8e6aeb42a0bf1cc08b5ec51614444"
-    sha256 cellar: :any,                 arm64_sonoma:  "288f7cc7ce278d5c1e8cd354bf2c516dbf9e82e7d00ee9e0c78511b32f965f5e"
-    sha256 cellar: :any,                 arm64_ventura: "c4b464fe8f78edcf70d5a8f9662fce4a470746c3d0010e1a7f7a39a4a319e8f8"
-    sha256 cellar: :any,                 sonoma:        "ec0c1ef905475a63e3970aaf523b4d7282756d158dba923d026f8b293077e604"
-    sha256 cellar: :any,                 ventura:       "9a0a430bd6c19e8eb09552e7ca9d243e62edf8354c8e11cd354a094437b7d7a0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1081e3305009581bef27218ae339299e175f79d6c614e2a6528ac551259bc98b"
+    sha256 cellar: :any,                 arm64_sequoia: "f9d87b8dde916c0a051b88b7766f8a0d69d5dd0383fc6dce29a08989f91268bf"
+    sha256 cellar: :any,                 arm64_sonoma:  "778cd31a4361eb9ab61e88d5a34138fbc6d4925d6f4193dc0c8749480e903ffd"
+    sha256 cellar: :any,                 arm64_ventura: "75ce5693d58108d89c9f033ce907429c046af9589c10298821e5179c54d6bec0"
+    sha256 cellar: :any,                 sonoma:        "d1ddb8f31e96a5ef9de9bb4e8a29bbe2d8961b3ea5bf2a312a755f8642621e3b"
+    sha256 cellar: :any,                 ventura:       "bc7eca82a63b2094211ade87f493062d5fb3e9dc84905504a73f66d713aafc4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "961d89f14088c689138fa3ba6b53ce5b7416576de3628e669dac533c971c5d2a"
   end
 
   depends_on "cmake" => [:build, :test]

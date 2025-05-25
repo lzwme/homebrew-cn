@@ -4,9 +4,9 @@ class Thrift < Formula
   license "Apache-2.0"
 
   stable do
-    url "https:www.apache.orgdyncloser.lua?path=thrift0.21.0thrift-0.21.0.tar.gz"
-    mirror "https:archive.apache.orgdistthrift0.21.0thrift-0.21.0.tar.gz"
-    sha256 "9a24f3eba9a4ca493602226c16d8c228037db3b9291c6fc4019bfe3bd39fc67c"
+    url "https:www.apache.orgdyncloser.lua?path=thrift0.22.0thrift-0.22.0.tar.gz"
+    mirror "https:archive.apache.orgdistthrift0.22.0thrift-0.22.0.tar.gz"
+    sha256 "794a0e455787960d9f27ab92c38e34da27e8deeda7a5db0e59dc64a00df8a1e5"
 
     # Fix -flat_namespace being used on Big Sur and later.
     patch do
@@ -16,13 +16,13 @@ class Thrift < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "eeb71b60993855c21f047fea4ce798bc758e5e7131e2e0c5c34657ac0bcc4848"
-    sha256 cellar: :any,                 arm64_sonoma:  "04d15c0e6be86946302dfd384f904a0849819a47f4940ef3e00f85a73e6d0b93"
-    sha256 cellar: :any,                 arm64_ventura: "93b2fe6a55f5ae205627808ffcdabb30bf33f6853af28fd13d83a218f26cac67"
-    sha256 cellar: :any,                 sonoma:        "74376f8d45a9663628a53a5460b6c900a2e2c01b06a20203e0b3d008b74abac5"
-    sha256 cellar: :any,                 ventura:       "cb800f4e59d0ebd83f4feda5b39400d651539707b7be074c939eb64282c044db"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b2811ce2e7531e40bdab091b972eefbd5c98198f3ccc63cdda280c11e1f08db8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "591acbcb3495f691cc81fdd51a6b4196c2a8a40dddbe654045209e157c667632"
+    sha256 cellar: :any,                 arm64_sequoia: "70c48b3b34e4aa0908129c427ee8c0da57a052180692f01c6afb468cc1e1392b"
+    sha256 cellar: :any,                 arm64_sonoma:  "a8bd60c98ef9c6a987391251b619506453bc60fa81f8a8d419e8732c01c540df"
+    sha256 cellar: :any,                 arm64_ventura: "54a0bf02668741b09c8e3859d25cf4f3228bb3259a93aa1e82ce39c447de8946"
+    sha256 cellar: :any,                 sonoma:        "f4173a0bc4fe8a05a14c8d33bdcf5e2364965f4138ee0c58b9627dad43b3ba2a"
+    sha256 cellar: :any,                 ventura:       "d6d6745b54e308233d5e85e98887ffa7029785535c7861cd48cd22ccf2a6adf6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2346bc45c0a02792c5dc16144571f15842fac8f95840e6c9a0d7a9de7da3859c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "32a0c481912313d3b116a70687b97318473645131958ce443ddba3668cd394c9"
   end
 
   head do

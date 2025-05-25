@@ -2,9 +2,10 @@ cask "font-noto-serif-dives-akuru" do
   version :latest
   sha256 :no_check
 
-  url "https:github.comgooglefontsrawmainoflnotoserifdivesakuruNotoSerifDivesAkuru-Regular.ttf"
+  url "https:github.comgooglefontsrawmainoflnotoserifdivesakuruNotoSerifDivesAkuru-Regular.ttf",
+      verified: "github.comgooglefonts"
   name "Noto Serif Dives Akuru"
-  homepage "https:github.comnotofontsdives-akuru"
+  homepage "https:fonts.google.comspecimenNoto+Serif+Dives+Akuru"
 
   font "NotoSerifDivesAkuru-Regular.ttf"
 

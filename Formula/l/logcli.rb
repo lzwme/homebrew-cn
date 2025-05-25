@@ -1,8 +1,8 @@
 class Logcli < Formula
   desc "Run LogQL queries against a Loki server"
   homepage "https:grafana.comloki"
-  url "https:github.comgrafanalokiarchiverefstagsv3.5.0.tar.gz"
-  sha256 "584d7f45cc85f884e8eb7e8ed8c35eacd2157c6edd0f2a2d0161ba39d22b86ae"
+  url "https:github.comgrafanalokiarchiverefstagsv3.5.1.tar.gz"
+  sha256 "d360561de7ac97d05a6fc1dc0ca73d93c11a86234783dfd9ae92033300caabd7"
   license "AGPL-3.0-only"
   head "https:github.comgrafanaloki.git", branch: "main"
 
@@ -11,16 +11,23 @@ class Logcli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "125a104cd08d4e7aa2a4af5126c43b2d22c914fbc8de5a0768358f47c641835c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d5bd5893bc08627c396a0761c98a3a9171db34bf14b6f50a15954bdb7d77649"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "488967a06f5dcb951c86a91c281e64f23edf059c4409f6e0aa9f050cca30fc62"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4b65cce5ef283bb64b058c0ee61c86f6ac2426bf1501cd0aae96f28a3e3684ae"
-    sha256 cellar: :any_skip_relocation, ventura:       "a3d1a04e565e67a2eb866bb12e074d328fa3e8a7c9dc3f16207640e3df38cdcd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6b12e70b100056f7c668660a1024fedf32a52cde9cae531963b5a19e1a6d2294"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "66911c32a9a82accb8d9bf52e6fca4e99ee7c0164b90ed09c328a8d9b3b2273c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c44039300363659390974308db020887206ccaa79546dcb8b2d4508fd3364a68"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "d05fc604c1ce2042d898984469edaf7158b578c8f6b6d9927b6897508b966f89"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1ce99faf30fa3422892be0c1ef9964e1bb8fb33918660ee080ccf33175297b75"
+    sha256 cellar: :any_skip_relocation, ventura:       "77618aca2ece816736f2e4f90aeb4f3accdf22061fbb7fa38341b4cde535e841"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1ad607af2b4cf0db2599e5e6d59e4fcec79c9fd51629976e766fb527f23d430"
   end
 
   depends_on "go" => :build
   depends_on "loki" => :test
+
+  # Fix to link: duplicated definition of symbol dlopen
+  # PR ref: https:github.comgrafanalokipull17807
+  patch do
+    url "https:raw.githubusercontent.comHomebrewformula-patchesf49c120b0918dd76de81af961a1041a29d080ff0lokiloki-3.5.1-purego.patch"
+    sha256 "fbbbaea8e2069ef0a8fc721f592c48bb50f1224d7eff94afe87dfb184692a9b4"
+  end
 
   def install
     ldflags = %W[

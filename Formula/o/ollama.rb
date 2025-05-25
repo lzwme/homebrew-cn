@@ -16,13 +16,14 @@ class Ollama < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7cd38a476707d2e15fc4c968b6a535a470ee3206c09035fca2dfa6d17686917"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1c3c6c2dbe3304c7303f49d553129cc60907f55886ee007c07ab31bdc72f67f3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d503f8eb16047969abc66f42337db147c1f654921f83099fdd3be3fb895b1b43"
-    sha256 cellar: :any_skip_relocation, sonoma:        "82e3ebab42ce903e93ecec3b7aab8baff852cdad77f119a54473c616568f4a6f"
-    sha256 cellar: :any_skip_relocation, ventura:       "0df1e3f01d30303debd061819859643b5b0c2b72131d09c879a12b673e182618"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "474a9eddb4ed393988b4040e76e56e0503486e37e4a9dc8788bb66f1c1cf84f9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f95d1e39c9817fc94c21bdcc0728708d83b78a8e602a4166278cb3f3fde67d8"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "82398671c6550d59c91ed0360d229e88eb97069abe0bebcdabd04c3956238373"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f9717f7fa3f4e08753e97afe2ee644e2288c32ec590e7a0bf3c59ea90aa1944"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ab5176391b71f83019b0567634e882cea275f581256fbec69a261d69ed7d5253"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1622fdd112fa8a0298db636075b606692c540089cf3d12004147bb7a98f475eb"
+    sha256 cellar: :any_skip_relocation, ventura:       "884a6c630534762385b9c05aaa95270f8bcba37523ae64ef6b5da724e8982421"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f1c885c84031b741252012b30ebdf793f657a42e5624a0cb76751c2a44162c2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5755d2eede14c53257ee043eedfc1a3aa58c921b8e5d71d8a64ad5bd0969a8d"
   end
 
   depends_on "cmake" => :build
@@ -50,6 +51,8 @@ class Ollama < Formula
     working_dir var
     log_path var"logollama.log"
     error_log_path var"logollama.log"
+    environment_variables OLLAMA_FLASH_ATTENTION: "1",
+                          OLLAMA_KV_CACHE_TYPE:   "q8_0"
   end
 
   test do

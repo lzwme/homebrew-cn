@@ -2,7 +2,7 @@ class ApacheArrow < Formula
   desc "Columnar in-memory analytics layer designed to accelerate big data"
   homepage "https:arrow.apache.org"
   license "Apache-2.0"
-  revision 4
+  revision 5
   head "https:github.comapachearrow.git", branch: "main"
 
   stable do
@@ -18,13 +18,13 @@ class ApacheArrow < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0bb2de8f6fa8682c3f3eb0be78f5c3a81f2b59303d2b23068cef97fd038efc95"
-    sha256 cellar: :any,                 arm64_sonoma:  "6eb32046a7e8b7fe28a1b49ee28029e6fdfeca3261f15078dad69019eb6af253"
-    sha256 cellar: :any,                 arm64_ventura: "64a818e21d7f9d4cff3e6acda1cf6f8562c08523a8a04a21d4579c480f194f01"
-    sha256 cellar: :any,                 sonoma:        "fb20d95aef830402f36dacf5e44cf0d1bc350527d96171c06032a89a4495e803"
-    sha256 cellar: :any,                 ventura:       "1618799329bcd8dc5020bafd8815725479e2d67db35202a9c5f8af1d19c745d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "602e4f1a0b19af559b54c4d991dc12e8c058281b3fcc26c988a6f572d428fccd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2fe1adb7d7f785d5a6a973defe86f12ec2a1ebc25d18d86be3befe46b20c5e6"
+    sha256 cellar: :any,                 arm64_sequoia: "3c300534d955de9a4d53685ead1de1d11c3c18af599af2689db573da7beae9ef"
+    sha256 cellar: :any,                 arm64_sonoma:  "74e9a9f8d06fb0bc83b7f70fed56ec013270f567f65acd92cd2c118bb023367b"
+    sha256 cellar: :any,                 arm64_ventura: "8fe250396662127f122995f6760069282f9fc6dcb76896d1ce612ddf23b067b0"
+    sha256 cellar: :any,                 sonoma:        "471f66ceb270314f0805e10f9f05f6e49063e8bc04e1ba998b6f7e7454a7a8b7"
+    sha256 cellar: :any,                 ventura:       "9422e6ccdae4781b73732cfa33d55c96f6c1f69334f74699913763f907d8697f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "26b0b35573fac9bc075c42f70e7659b7cb82c6f2064ac6254bf321da2c490659"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a4c2cfa8b86691dfa7a83780fa9ea475255c5113d87c685760383fe6cb028ce"
   end
 
   depends_on "boost" => :build
