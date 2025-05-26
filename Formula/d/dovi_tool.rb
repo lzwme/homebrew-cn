@@ -21,10 +21,10 @@ class DoviTool < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8254aec7392a826c86b3bbbdcd12c7399ca78f863ff6b9909ee899e948f02072"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "fontconfig"
     depends_on "freetype"
   end

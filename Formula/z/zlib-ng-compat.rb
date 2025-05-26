@@ -26,13 +26,6 @@ class ZlibNgCompat < Formula
     keg_only "it conflicts with zlib"
   end
 
-  # https:zlib.netzlib_how.html
-  resource "homebrew-test_artifact" do
-    url "https:zlib.netzpipe.c"
-    version "20051211"
-    sha256 "68140a82582ede938159630bca0fb13a93b4bf1cb2e85b08943c26242cf8f3a6"
-  end
-
   def install
     ENV.runtime_cpu_detection
     # Disabling new strategies based on Fedora comment on keeping compatibility with zlib
@@ -42,6 +35,13 @@ class ZlibNgCompat < Formula
   end
 
   test do
+    # https:zlib.netzlib_how.html
+    resource "homebrew-test_artifact" do
+      url "https:zlib.netzpipe.c"
+      version "20051211"
+      sha256 "68140a82582ede938159630bca0fb13a93b4bf1cb2e85b08943c26242cf8f3a6"
+    end
+
     testpath.install resource("homebrew-test_artifact")
     system ENV.cc, "zpipe.c", "-I#{include}", libshared_library("libz"), "-o", "zpipe"
 

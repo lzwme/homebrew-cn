@@ -28,11 +28,6 @@ class Crfsuite < Formula
 
   conflicts_with "freeling", because: "both install `crfsuite` binaries"
 
-  resource "homebrew-conll2000-training-data" do
-    url "https:www.cnts.ua.ac.beconll2000chunkingtrain.txt.gz"
-    sha256 "bcbbe17c487d0939d48c2d694622303edb3637ca9c4944776628cd1815c5cb34"
-  end
-
   # Fix autoconf failure.
   patch do
     url "https:github.comchokkancrfsuitecommita6a4a38ccc4738deb0e90fc9ff2c11868922aa11.patch?full_index=1"
@@ -51,6 +46,11 @@ class Crfsuite < Formula
   end
 
   test do
+    resource "homebrew-conll2000-training-data" do
+      url "https:www.cnts.ua.ac.beconll2000chunkingtrain.txt.gz"
+      sha256 "bcbbe17c487d0939d48c2d694622303edb3637ca9c4944776628cd1815c5cb34"
+    end
+
     resource("homebrew-conll2000-training-data").stage testpath
 
     # Use spawn instead of {shell,pipe}_output to directly read and write

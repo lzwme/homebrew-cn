@@ -15,6 +15,7 @@ class Espflash < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "50eff44ba9819e9af58b258224a56270d72773c2f445b070ec1b1ecd69310092"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_macos do
@@ -22,7 +23,6 @@ class Espflash < Formula
   end
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "systemd" # for libudev
   end
 

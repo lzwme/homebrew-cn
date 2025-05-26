@@ -21,10 +21,10 @@ class Yder < Formula
 
   depends_on "cmake" => :build
   depends_on "doxygen" => :build
+  depends_on "pkgconf" => :build
   depends_on "orcania"
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "systemd"
   end
 

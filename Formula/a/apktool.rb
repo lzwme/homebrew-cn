@@ -11,17 +11,17 @@ class Apktool < Formula
 
   depends_on "openjdk"
 
-  resource "homebrew-test.apk" do
-    url "https:raw.githubusercontent.comfacebookredexfa32d542d4074dbd485584413d69ea0c9c3cbc98testinstrredex-test.apk"
-    sha256 "7851cf2a15230ea6ff076639c2273bc4ca4c3d81917d2e13c05edcc4d537cc04"
-  end
-
   def install
     libexec.install "apktool_#{version}.jar"
     bin.write_jar_script libexec"apktool_#{version}.jar", "apktool"
   end
 
   test do
+    resource "homebrew-test.apk" do
+      url "https:raw.githubusercontent.comfacebookredexfa32d542d4074dbd485584413d69ea0c9c3cbc98testinstrredex-test.apk"
+      sha256 "7851cf2a15230ea6ff076639c2273bc4ca4c3d81917d2e13c05edcc4d537cc04"
+    end
+
     resource("homebrew-test.apk").stage do
       system bin"apktool", "d", "redex-test.apk"
       system bin"apktool", "b", "redex-test"

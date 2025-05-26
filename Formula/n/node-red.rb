@@ -4,7 +4,6 @@ class NodeRed < Formula
   url "https://registry.npmjs.org/node-red/-/node-red-4.0.9.tgz"
   sha256 "d8548204752c8ed7c1c5648e6fe2843342797ff5f0214647bdd1078366811cba"
   license "Apache-2.0"
-  head "https://github.com/node-red/node-red.git", branch: "master"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "ef1c67c28407a8a57ed82cbc8c1da9a0535dc4432be1db15b815fb4bd6920fc5"

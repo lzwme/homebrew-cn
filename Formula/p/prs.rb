@@ -15,11 +15,11 @@ class Prs < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7d2a746d0612f19d99b13216ecbb08dc5fd06fe1e7ff6a9d1690becdba707ec"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "gpgme"
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "libxcb"
     depends_on "openssl@3"
   end

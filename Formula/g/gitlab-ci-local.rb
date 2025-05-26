@@ -4,7 +4,6 @@ class GitlabCiLocal < Formula
   url "https:registry.npmjs.orggitlab-ci-local-gitlab-ci-local-4.60.0.tgz"
   sha256 "15daec3b5fd57353c3d6e2a334d13f8fe2624d2da118928e0bc96a1060d7ba32"
   license "MIT"
-  head "https:github.comfirecowgitlab-ci-local.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "117c1a898f2ea93631a1efd156572d0cf0c0c818b888db4086a08246fb0b4b00"

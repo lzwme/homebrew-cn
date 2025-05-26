@@ -16,10 +16,10 @@ class Intermodal < Formula
   end
 
   depends_on "help2man" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "openssl@3"
   end
 

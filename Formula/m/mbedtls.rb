@@ -1,8 +1,8 @@
 class Mbedtls < Formula
   desc "Cryptographic & SSLTLS library"
   homepage "https:tls.mbed.org"
-  url "https:github.comMbed-TLSmbedtlsreleasesdownloadmbedtls-3.6.3mbedtls-3.6.3.tar.bz2"
-  sha256 "64cd73842cdc05e101172f7b437c65e7312e476206e1dbfd644433d11bc56327"
+  url "https:github.comMbed-TLSmbedtlsreleasesdownloadv3.6.3.1mbedtls-3.6.3.1.tar.bz2"
+  sha256 "243ed496d5f88a5b3791021be2800aac821b9a4cc16e7134aa413c58b4c20e0c"
   license "Apache-2.0"
   head "https:github.comMbed-TLSmbedtls.git", branch: "development"
 
@@ -13,13 +13,13 @@ class Mbedtls < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d595b50d6404bb6b941f8f3ddc61cee7fe17a669518b5b756b801aae462af4ec"
-    sha256 cellar: :any,                 arm64_sonoma:  "d77d2d06fb3bac8feb447ae1d7d011c37a330a3045eb8c9e07db4bc91c8a79d3"
-    sha256 cellar: :any,                 arm64_ventura: "bcd4e4824bcf9ba6e43e9c9e87898f9f39025a735758363a1c03066949857915"
-    sha256 cellar: :any,                 sonoma:        "f491400c71a84da4b071bab8aab100be7758c720275f2a6d998e9fa79d5ee4c5"
-    sha256 cellar: :any,                 ventura:       "2b167d31cac564ab7d677ed7ba56516a1e6978b39b0a866011afd64a80b80f13"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "49a136b77e4044c460b3479189cabc01d911be9c76e24ec0862ece0131c234d3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0ccfd6ef827e572504fa60630a3644215357415ab86dbd21075a4ac95b9b288"
+    sha256 cellar: :any,                 arm64_sequoia: "955569c801c16788823d7ec5bdf0b714f102a441fdcebb8ce1ff298be9e9db03"
+    sha256 cellar: :any,                 arm64_sonoma:  "dc2afa1e238c1d4b6fe7d6ad4a3a6d1f3a0a482c14db98ccca1f3a7678885e6c"
+    sha256 cellar: :any,                 arm64_ventura: "f38f21dd538c3cb363069bb5d43e6d44ace47001d454779d39d57020a8502d82"
+    sha256 cellar: :any,                 sonoma:        "89609c7efd08458940996172f6ea99fefbfad4f58d077154f88e8f435a3af04d"
+    sha256 cellar: :any,                 ventura:       "4bded975092a689f6d9d140ac667479f21b43be609456b19b99e466ab8c36df0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be6abfb1e54fb3560e84a331d060ae48652381d081d6773735080183d4974a49"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cacb8597a11ff32804b981c95ac43147d0e141cb50080784628cd5760dfcc57"
   end
 
   depends_on "cmake" => :build

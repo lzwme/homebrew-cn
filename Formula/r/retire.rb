@@ -4,7 +4,6 @@ class Retire < Formula
   url "https:registry.npmjs.orgretire-retire-5.2.6.tgz"
   sha256 "d0403aeff13610ea499326813a043b789c72c680f8825c08cab961e7103f0008"
   license "Apache-2.0"
-  head "https:github.comRetireJSretire.js.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, all: "4dc92e4f27cc38384252c412f32efff290168defe2dc8ed29d5764284ae764aa"

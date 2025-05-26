@@ -20,11 +20,8 @@ class Cubelib < Formula
     sha256 x86_64_linux:  "f23523ee48a74275d61f881645e96f3a1f37f18a8ca70570e2a915a62930f2dc"
   end
 
+  depends_on "pkgconf" => :build
   uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "pkgconf" => :build
-  end
 
   # Fix -flat_namespace being used on Big Sur and later.
   patch do

@@ -22,11 +22,8 @@ class Flux < Formula
   end
 
   depends_on "go" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
-
-  on_linux do
-    depends_on "pkgconf" => :build
-  end
 
   conflicts_with "fantom", because: "both install `flux` binaries"
 

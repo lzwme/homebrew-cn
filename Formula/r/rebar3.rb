@@ -11,16 +11,17 @@ class Rebar3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6fb10e3dc8527f69fa06a3371f2713bbe1a27d8b027c9ecc123bfa24c8a54bd8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "605c064817a368734c2a18816e15c6af86617dbf631873b67a4f6821aab3548e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "9e19920469a8499603597ec87714c1daea780c744e74efa9450581167ae5ca3d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "48158178c52845418abd55e85d9abe35a8282386ed28cc9ad0966e0585b1e647"
-    sha256 cellar: :any_skip_relocation, ventura:       "50c8bde20fd08c26419ebd10a5ae35e0a4d755508fc57129188269bbc124885d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d30f14ff8806f63eee212e0070fb1c58840a07359f9bed6e2903933a5afa0f11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "63cb94c5f40ed0279f7410d9d3445e0ce6a9bd0012d6910a76ee1a8928746e39"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "09b1fa318461e2eab3bcf689bf7222e9b436e175707b9a9f152a99d4aa1ea573"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "42b1aa6edf2a61ae222c7e64b220eb0c79a24ffaeb637656353919cb0f7f9760"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2377eeb1b0230347cf90ff83fc5a83a49e9ebacd377a944f0b0edf24b1fab5a7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3b763a7205be3c57fdaa09982fc6a7d00e68407180d7fe02ffe6b054fccd4b2e"
+    sha256 cellar: :any_skip_relocation, ventura:       "f78c95b32b5e3828a92229657414cc1e59625f9f1d2f36043a42ecebee3dfb4e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3da41e7f6162e36a9e24ca222ccaf5c871559ae11117ec29d47989e3bbf8efee"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b64596bc40a4a7d94d73b61a0a659f33d3f907abe85594bb310b4ad3769b1a0"
   end
 
-  depends_on "erlang@25" => [:build, :test]
+  depends_on "erlang@26" => [:build, :test]
   depends_on "erlang"
 
   def install

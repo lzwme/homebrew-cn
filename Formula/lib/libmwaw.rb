@@ -24,17 +24,17 @@ class Libmwaw < Formula
 
   uses_from_macos "zlib"
 
-  resource "homebrew-test_document" do
-    url "https:github.comopenpreserveformat-corpusraw825c8a5af012a93cf7aac408b0396e03a4575850office-examplesOld%20Word%20fileNEWSSLID.DOC"
-    sha256 "df0af8f2ae441f93eb6552ed2c6da0b1971a0d82995e224b7663b4e64e163d2b"
-  end
-
   def install
     system ".configure", "--disable-silent-rules", *std_configure_args
     system "make", "install"
   end
 
   test do
+    resource "homebrew-test_document" do
+      url "https:github.comopenpreserveformat-corpusraw825c8a5af012a93cf7aac408b0396e03a4575850office-examplesOld%20Word%20fileNEWSSLID.DOC"
+      sha256 "df0af8f2ae441f93eb6552ed2c6da0b1971a0d82995e224b7663b4e64e163d2b"
+    end
+
     testpath.install resource("homebrew-test_document")
     # Test ID on an actual office document
     assert_equal "#{testpath}NEWSSLID.DOC:Microsoft Word 2.0[pc]",

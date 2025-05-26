@@ -1,8 +1,8 @@
 class Libzip < Formula
   desc "C library for reading, creating, and modifying zip archives"
   homepage "https://libzip.org/"
-  url "https://libzip.org/download/libzip-1.11.3.tar.xz"
-  sha256 "9509d878ba788271c8b5abca9cfde1720f075335686237b7e9a9e7210fe67c1b"
+  url "https://libzip.org/download/libzip-1.11.4.tar.xz"
+  sha256 "8a247f57d1e3e6f6d11413b12a6f28a9d388de110adc0ec608d893180ed7097b"
   license "BSD-3-Clause"
 
   livecheck do
@@ -10,14 +10,16 @@ class Libzip < Formula
     regex(/href=.*?libzip[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: "unable to get versions"
+
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d047ed69c28d812b43092cdc11a95ebfb10c260294088b10c9e5c4013f8f7729"
-    sha256 cellar: :any,                 arm64_sonoma:  "0eef871bcff5568c941e603285f699b520fb0918876ab15129047b1eae8919c1"
-    sha256 cellar: :any,                 arm64_ventura: "a5f5cad9a74903117c3168e95aed359880001176cec4012caf3347768e4653b4"
-    sha256 cellar: :any,                 sonoma:        "e3a656692093ac165b0c07c830cc053dffc85f916168b584538d02c4c0205692"
-    sha256 cellar: :any,                 ventura:       "6b4c562f07821355fd8c641a42da8fde595ade1c1a26ab76c218e3394e6f318f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "03718195387870f33ceb6951a3caa487d2325823b23034811f49b4ba0fe71521"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ce5e38e6c13fcce7176c9acd84abdd28d495a1377b1e9b1d622ebdefebe11f7"
+    sha256 cellar: :any,                 arm64_sequoia: "01dbf417152e6679f7816936846b57170635558954c001964b594caee1c0dc33"
+    sha256 cellar: :any,                 arm64_sonoma:  "9c9a3a40e3b80edf45e7e7b8e315d45e70262653d5f272c215f7e0a34357b32b"
+    sha256 cellar: :any,                 arm64_ventura: "65696504b9278cc61b0b9dbdd20c4de31792b1a429316ce956d5a3473e3ac01e"
+    sha256 cellar: :any,                 sonoma:        "99bf4ceaa405fcfa00f81e9afe430fcb9b6cb9485b35e807664629ed14ea8eff"
+    sha256 cellar: :any,                 ventura:       "8feb1d8792de37063c569e8653d7ee1a0ddb4a030759ba99951a47b8eec9ca2a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e4e4593f93a74e7fc0ed1252c83b7ca85dd3d862d6cc0a883947cb4152e76b43"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7bef3ccff46322f8b7af9b89c1849b54d5bb2b18f7a849988d113ed3cef52397"
   end
 
   depends_on "cmake" => :build

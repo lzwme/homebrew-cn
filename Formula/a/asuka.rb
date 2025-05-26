@@ -26,12 +26,12 @@ class Asuka < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "600e1d1324197049502dddfbce2df349657fb4108154a042c6503bdb69f24400"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   uses_from_macos "ncurses"
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "openssl@3"
   end
 

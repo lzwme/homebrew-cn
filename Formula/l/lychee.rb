@@ -16,12 +16,9 @@ class Lychee < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0e41b80889f77ca79c1865b7cd8f9d588d4f9d2954fd3da559f6a982dc87e60"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "openssl@3"
-
-  on_linux do
-    depends_on "pkgconf" => :build
-  end
 
   def install
     system "cargo", "install", *std_cargo_args(path: "lychee-bin")

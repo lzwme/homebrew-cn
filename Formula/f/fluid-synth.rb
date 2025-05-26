@@ -33,11 +33,6 @@ class FluidSynth < Formula
     depends_on "systemd"
   end
 
-  resource "homebrew-test" do
-    url "https:upload.wikimedia.orgwikipediacommons661Drum_sample.mid"
-    sha256 "a1259360c48adc81f2c5b822f221044595632bd1a76302db1f9d983c44f45a30"
-  end
-
   def install
     args = %W[
       -Denable-alsa=#{OS.linux?}
@@ -98,6 +93,11 @@ class FluidSynth < Formula
   end
 
   test do
+    resource "homebrew-test" do
+      url "https:upload.wikimedia.orgwikipediacommons661Drum_sample.mid"
+      sha256 "a1259360c48adc81f2c5b822f221044595632bd1a76302db1f9d983c44f45a30"
+    end
+
     # Synthesize wav file from example midi
     resource("homebrew-test").stage testpath
     wavout = testpath"Drum_sample.wav"

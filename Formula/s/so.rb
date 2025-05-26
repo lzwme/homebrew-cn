@@ -17,10 +17,10 @@ class So < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "dff017b24e8061f4c5ea8b37e9f675d636449f6206735d130dcde4db047729b5"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "openssl@3"
   end
 

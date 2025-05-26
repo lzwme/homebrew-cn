@@ -18,11 +18,6 @@ class Vvdec < Formula
 
   depends_on "cmake" => :build
 
-  resource("homebrew-test-video") do
-    url "https:archive.orgdownloadtestvideo_20230410_202304test.vvc"
-    sha256 "753261009b6472758cde0dee2c004ff712823b43e62ec3734f0f46380bec8e46"
-  end
-
   def install
     system "cmake", "-S", ".", "-B", "build",
            "-DBUILD_SHARED_LIBS=1",
@@ -33,6 +28,11 @@ class Vvdec < Formula
   end
 
   test do
+    resource "homebrew-test-video" do
+      url "https:archive.orgdownloadtestvideo_20230410_202304test.vvc"
+      sha256 "753261009b6472758cde0dee2c004ff712823b43e62ec3734f0f46380bec8e46"
+    end
+
     resource("homebrew-test-video").stage testpath
     system bin"vvdecapp", "-b", testpath"test.vvc", "-o", testpath"test.yuv"
     assert_path_exists testpath"test.yuv"

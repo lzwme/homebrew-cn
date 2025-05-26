@@ -23,9 +23,9 @@ class Antlr4CppRuntime < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "pkgconf" => :build
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "util-linux"
   end
 

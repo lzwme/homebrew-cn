@@ -16,10 +16,10 @@ class SpotifyPlayer < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "d892b242d6d3ee55e3cccbc5026492f7876d14969c2556b7ef44d3e1decd5e40"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "alsa-lib"
     depends_on "dbus"
     depends_on "openssl@3"

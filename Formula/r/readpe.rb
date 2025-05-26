@@ -20,11 +20,6 @@ class Readpe < Formula
 
   depends_on "openssl@3"
 
-  resource "homebrew-testfile" do
-    url "https:the.earth.li~sgtathamputty0.78w64putty.exe"
-    sha256 "fc6f9dbdf4b9f8dd1f5f3a74cb6e55119d3fe2c9db52436e10ba07842e6c3d7c"
-  end
-
   def install
     ENV.deparallelize
     inreplace "liblibpeMakefile", "-flat_namespace", ""
@@ -33,6 +28,11 @@ class Readpe < Formula
   end
 
   test do
+    resource "homebrew-testfile" do
+      url "https:the.earth.li~sgtathamputty0.78w64putty.exe"
+      sha256 "fc6f9dbdf4b9f8dd1f5f3a74cb6e55119d3fe2c9db52436e10ba07842e6c3d7c"
+    end
+
     resource("homebrew-testfile").stage do
       assert_match(Bytes in last page:\s+120, shell_output("#{bin}readpe .putty.exe"))
     end

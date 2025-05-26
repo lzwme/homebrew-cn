@@ -1,10 +1,9 @@
 class Postgraphile < Formula
   desc "GraphQL schema created by reflection over a PostgreSQL schema"
-  homepage "https:www.graphile.orgpostgraphile"
-  url "https:registry.npmjs.orgpostgraphile-postgraphile-4.14.1.tgz"
+  homepage "https://www.graphile.org/postgraphile/"
+  url "https://registry.npmjs.org/postgraphile/-/postgraphile-4.14.1.tgz"
   sha256 "131cb5c572c68a42a6c612b65041a4fa656a5364a75f7384f1446f62a684c9fc"
   license "MIT"
-  head "https:github.comgraphilepostgraphile.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b4305806f3dfd7348eae61c3dcd47b8d33e353becbeb00c917ec745e4851b1f"
@@ -21,21 +20,21 @@ class Postgraphile < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}bin*"]
+    bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 
   test do
     ENV["LC_ALL"] = "C"
-    assert_match "postgraphile", shell_output("#{bin}postgraphile --help")
+    assert_match "postgraphile", shell_output("#{bin}/postgraphile --help")
 
     pg_bin = Formula["postgresql@17"].opt_bin
-    system pg_bin"initdb", "-D", testpath"test"
-    pid = spawn("#{pg_bin}postgres", "-D", testpath"test")
+    system pg_bin/"initdb", "-D", testpath/"test"
+    pid = spawn("#{pg_bin}/postgres", "-D", testpath/"test")
 
     begin
       sleep 2
-      system pg_bin"createdb", "test"
-      system bin"postgraphile", "-c", "postgres:test", "-X"
+      system pg_bin/"createdb", "test"
+      system bin/"postgraphile", "-c", "postgres:///test", "-X"
     ensure
       Process.kill 9, pid
       Process.wait pid

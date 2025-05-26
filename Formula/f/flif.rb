@@ -26,11 +26,6 @@ class Flif < Formula
   depends_on "libpng"
   depends_on "sdl2"
 
-  resource "homebrew-test_c" do
-    url "https:raw.githubusercontent.comFLIF-hubFLIFdcc2011toolstest.c"
-    sha256 "a20b625ba0efdb09ad21a8c1c9844f686f636656f0e9bd6c24ad441375223afe"
-  end
-
   def install
     system "cmake", "-S", "src", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
@@ -39,6 +34,11 @@ class Flif < Formula
   end
 
   test do
+    resource "homebrew-test_c" do
+      url "https:raw.githubusercontent.comFLIF-hubFLIFdcc2011toolstest.c"
+      sha256 "a20b625ba0efdb09ad21a8c1c9844f686f636656f0e9bd6c24ad441375223afe"
+    end
+
     testpath.install resource("homebrew-test_c")
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lflif", "-o", "test"
     system ".test", "dummy.flif"

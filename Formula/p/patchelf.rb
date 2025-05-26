@@ -31,11 +31,6 @@ class Patchelf < Formula
     depends_on "automake" => :build
   end
 
-  resource "homebrew-helloworld" do
-    url "http:timelessname.comelfbinhelloworld.tar.gz"
-    sha256 "d8c1e93f13e0b7d8fc13ce75d5b089f4d4cec15dad91d08d94a166822d749459"
-  end
-
   def install
     if OS.linux?
       # Fix ld.so path and rpath
@@ -52,6 +47,11 @@ class Patchelf < Formula
   end
 
   test do
+    resource "homebrew-helloworld" do
+      url "http:timelessname.comelfbinhelloworld.tar.gz"
+      sha256 "d8c1e93f13e0b7d8fc13ce75d5b089f4d4cec15dad91d08d94a166822d749459"
+    end
+
     resource("homebrew-helloworld").stage do
       assert_equal "libld-linux.so.2\n", shell_output("#{bin}patchelf --print-interpreter chello")
       assert_equal "libc.so.6\n", shell_output("#{bin}patchelf --print-needed chello")

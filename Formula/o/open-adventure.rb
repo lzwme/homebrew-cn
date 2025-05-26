@@ -26,14 +26,11 @@ class OpenAdventure < Formula
 
   depends_on "asciidoc" => :build
   depends_on "libyaml" => :build
+  depends_on "pkgconf" => :build
   depends_on "python@3.13" => :build
 
   uses_from_macos "libxml2" => :build
   uses_from_macos "libedit"
-
-  on_linux do
-    depends_on "pkgconf" => :build
-  end
 
   resource "pyyaml" do
     url "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz"

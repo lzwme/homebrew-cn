@@ -21,11 +21,11 @@ class YubikeyAgent < Formula
   end
 
   depends_on "go" => :build
+  depends_on "pkgconf" => :build
 
   uses_from_macos "pcsc-lite"
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "pinentry"
   end
 

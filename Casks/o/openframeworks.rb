@@ -1,8 +1,8 @@
 cask "openframeworks" do
-  version "0.12.0"
-  sha256 "c676540bb6051c4f15cd2a32d0b770ff274873df93e00fe7d40c10f218077a4a"
+  version "0.12.1"
+  sha256 "170d24422e53bef30297f8154604f10343fae58f7a84d42b37d7d00350ac2192"
 
-  url "https:github.comopenframeworksopenFrameworksreleasesdownload#{version}of_v#{version}_osx_release.zip",
+  url "https:github.comopenframeworksopenFrameworksreleasesdownload#{version}of_v#{version}_osx_release.tar.gz",
       verified: "github.comopenframeworksopenFrameworks"
   name "Openframeworks"
   desc "C++ toolkit for creative coding"
@@ -14,7 +14,7 @@ cask "openframeworks" do
   # than using the `GithubReleases` strategy to check multiple recent releases.
   livecheck do
     url "https:openframeworks.ccdownload"
-    regex(href=.*?of[._-]v?(\d+(?:\.\d+)+)[._-]osx[._-]release\.zipi)
+    regex(href=.*?of[._-]v?(\d+(?:\.\d+)+)[._-]osx[._-]release\.(?:t|zip)i)
   end
 
   suite "of_v#{version}_osx_release"

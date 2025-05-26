@@ -16,6 +16,7 @@ class Deadfinder < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0f03ee2a1dd8fc7872d43948f024a6096fa5957e02d4f29655f9e3a0adc3289"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "ruby"
 
   uses_from_macos "libffi"
@@ -23,10 +24,6 @@ class Deadfinder < Formula
   uses_from_macos "libxslt"
   uses_from_macos "xz"
   uses_from_macos "zlib"
-
-  on_linux do
-    depends_on "pkgconf" => :build
-  end
 
   def install
     ENV["GEM_HOME"] = libexec

@@ -22,14 +22,11 @@ class Gitless < Formula
   # https:github.comgitless-vcsgitlessissues248
   deprecate! date: "2024-07-17", because: :unmaintained
 
+  depends_on "pkgconf" => :build
   depends_on "libgit2@1.7"
   depends_on "python@3.13"
 
   uses_from_macos "libffi"
-
-  on_linux do
-    depends_on "pkgconf" => :build
-  end
 
   resource "args" do
     url "https:files.pythonhosted.orgpackagese51cb701b3f4bd8d3667df8342f311b3efaeab86078a840fb826bd204118cc6bargs-0.1.0.tar.gz"

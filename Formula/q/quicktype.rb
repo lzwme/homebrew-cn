@@ -4,7 +4,6 @@ class Quicktype < Formula
   url "https:registry.npmjs.orgquicktype-quicktype-23.2.5.tgz"
   sha256 "ec650d3904d4c16e3aee13b0611db6ff9d4a4ce68cb3d2294981eda75107b2dd"
   license "Apache-2.0"
-  head "https:github.comglideappsquicktype.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d68008fee1d99baac3702fae5970afdfe3c0fa057ee9d19dcac3a69da706b42c"

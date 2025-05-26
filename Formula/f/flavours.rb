@@ -22,16 +22,16 @@ class Flavours < Formula
 
   depends_on "rust" => :build
 
-  resource("homebrew-testdata") do
-    url "https:assets2.razerzone.comimagespnx.assets618c0b65424070a1017a7168ea1b6337razer-wallpapers-page-hero-mobile.jpg"
-    sha256 "890f0d8fb6ec49ae3b35530a507e54281dd60e5ade5546d7f1d1817934759670"
-  end
-
   def install
     system "cargo", "install", *std_cargo_args
   end
 
   test do
+    resource "homebrew-testdata" do
+      url "https:assets2.razerzone.comimagespnx.assets618c0b65424070a1017a7168ea1b6337razer-wallpapers-page-hero-mobile.jpg"
+      sha256 "890f0d8fb6ec49ae3b35530a507e54281dd60e5ade5546d7f1d1817934759670"
+    end
+
     resource("homebrew-testdata").stage do
       cmd = "#{bin}flavours generate --stdout dark razer-wallpapers-page-hero-mobile.jpg"
       expected = ---\n

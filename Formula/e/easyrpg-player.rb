@@ -22,6 +22,8 @@ class EasyrpgPlayer < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "pkgconf" => :build
+
   depends_on "fmt"
   depends_on "freetype"
   depends_on "harfbuzz"
@@ -45,7 +47,6 @@ class EasyrpgPlayer < Formula
   end
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "alsa-lib"
   end
 

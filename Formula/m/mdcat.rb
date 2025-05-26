@@ -19,12 +19,12 @@ class Mdcat < Formula
   deprecate! date: "2025-01-10", because: :repo_archived
 
   depends_on "asciidoctor" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   uses_from_macos "curl"
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "openssl@3"
   end
 

@@ -28,11 +28,6 @@ class Kvazaar < Formula
   depends_on "libtool" => :build
   depends_on "yasm" => :build
 
-  resource "homebrew-videosample" do
-    url "https:samples.mplayerhq.huV-codecslm20.avi"
-    sha256 "a0ab512c66d276fd3932aacdd6073f9734c7e246c8747c48bf5d9dd34ac8b392"
-  end
-
   def install
     system ".autogen.sh"
     system ".configure", "--prefix=#{prefix}"
@@ -40,6 +35,11 @@ class Kvazaar < Formula
   end
 
   test do
+    resource "homebrew-videosample" do
+      url "https:samples.mplayerhq.huV-codecslm20.avi"
+      sha256 "a0ab512c66d276fd3932aacdd6073f9734c7e246c8747c48bf5d9dd34ac8b392"
+    end
+
     # download small sample and try to encode it
     resource("homebrew-videosample").stage do
       system bin"kvazaar", "-i", "lm20.avi", "--input-res", "16x16", "-o", "lm20.hevc"

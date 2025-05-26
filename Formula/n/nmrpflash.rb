@@ -15,10 +15,10 @@ class Nmrpflash < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "02204c8781d87e4c00790807d5367f6826f8420984af35eccaa606f8c1217d90"
   end
 
+  depends_on "pkgconf" => :build
   uses_from_macos "libpcap"
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "libnl"
   end
 

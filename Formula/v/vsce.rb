@@ -23,12 +23,12 @@ class Vsce < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf936e711330acf51518ef9fe322b5aeade391b3790d8ee269f48e8b9243981a"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "node"
 
   uses_from_macos "zlib"
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "glib"
     depends_on "libsecret"
   end

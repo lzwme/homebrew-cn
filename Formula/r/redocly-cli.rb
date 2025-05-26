@@ -1,10 +1,9 @@
 class RedoclyCli < Formula
   desc "Your all-in-one OpenAPI utility"
-  homepage "https:redocly.comdocscli"
-  url "https:registry.npmjs.org@redoclycli-cli-1.34.3.tgz"
+  homepage "https://redocly.com/docs/cli"
+  url "https://registry.npmjs.org/@redocly/cli/-/cli-1.34.3.tgz"
   sha256 "36e2e9f66eaeebbc69c0528ce7498c3c00854458265e2ce1d64271e788996927"
   license "MIT"
-  head "https:github.comredoclyredocly-cli.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2db136099fa6e416ab4a89bac19d34f732b7365262aad71a9ff93c58856d48db"
@@ -20,13 +19,13 @@ class RedoclyCli < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin*")
+    bin.install_symlink libexec.glob("bin/*")
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}redocly --version")
+    assert_match version.to_s, shell_output("#{bin}/redocly --version")
 
-    test_file = testpath"openapi.yaml"
+    test_file = testpath/"openapi.yaml"
     test_file.write <<~YML
       openapi: '3.0.0'
       info:
@@ -35,9 +34,9 @@ class RedoclyCli < Formula
         description: test
         license:
           name: MIT
-          url: https:opensource.orglicensesMIT
+          url: https://opensource.org/licenses/MIT
       servers: #ServerList
-        - url: http:petstore.swagger.io:{Port}v1
+        - url: http://petstore.swagger.io:{Port}/v1
           variables:
             Port:
               enum:
@@ -51,7 +50,7 @@ class RedoclyCli < Formula
         - name: store
           description: Access to Petstore orders
       paths:
-        pets:
+        /pets:
           get:
             summary: List all pets
             operationId: list_pets
@@ -75,10 +74,10 @@ class RedoclyCli < Formula
                     schema:
                       type: string
                 content:
-                  applicationjson:
+                  application/json:
                     encoding:
                       historyMetadata:
-                        contentType: applicationjson; charset=utf-8
+                        contentType: application/json; charset=utf-8
                 links:
                   address:
                     operationId: getUserAddress
@@ -87,6 +86,6 @@ class RedoclyCli < Formula
     YML
 
     assert_match "Woohoo! Your API description is valid. 🎉",
-      shell_output("#{bin}redocly lint --extends=minimal #{test_file} 2>&1")
+      shell_output("#{bin}/redocly lint --extends=minimal #{test_file} 2>&1")
   end
 end

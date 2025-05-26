@@ -16,10 +16,10 @@ class Firefoxpwa < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "9cb80205befaa0b30dccea8760159222340d783d7a785056e8b4ec5caca0d0ce"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "bzip2" # not used on macOS
     depends_on "openssl@3"
   end

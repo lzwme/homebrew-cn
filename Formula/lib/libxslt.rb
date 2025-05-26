@@ -32,15 +32,12 @@ class Libxslt < Formula
 
   keg_only :provided_by_macos
 
+  depends_on "pkgconf" => :build
   depends_on "libgcrypt"
   depends_on "libxml2"
 
   on_macos do
     depends_on "libgpg-error"
-  end
-
-  on_linux do
-    depends_on "pkgconf" => :build
   end
 
   def install

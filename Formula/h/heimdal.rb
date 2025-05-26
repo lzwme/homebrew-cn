@@ -28,6 +28,8 @@ class Heimdal < Formula
   keg_only "conflicts with Kerberos"
 
   depends_on "bison" => :build
+  depends_on "pkgconf" => :build
+
   depends_on "berkeley-db@5" # keep berkeley-db < 6 to avoid AGPL incompatibility
   depends_on "flex"
   depends_on "lmdb"
@@ -37,10 +39,6 @@ class Heimdal < Formula
   uses_from_macos "perl" => :build
   uses_from_macos "python" => :build
   uses_from_macos "libxcrypt"
-
-  on_linux do
-    depends_on "pkgconf" => :build
-  end
 
   resource "JSON" do
     url "https:cpan.metacpan.orgauthorsidIISISHIGAKIJSON-4.10.tar.gz"

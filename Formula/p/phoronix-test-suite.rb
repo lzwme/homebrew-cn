@@ -4,6 +4,7 @@ class PhoronixTestSuite < Formula
   url "https:github.comphoronix-test-suitephoronix-test-suitearchiverefstagsv10.8.4.tar.gz"
   sha256 "7b5da7193c0190c648fc0c7ad6cdfbde5d935e88c7bfa5e99cd3a720cd5e2c5a"
   license "GPL-3.0-or-later"
+  revision 1
   head "https:github.comphoronix-test-suitephoronix-test-suite.git", branch: "master"
 
   livecheck do
@@ -12,21 +13,21 @@ class PhoronixTestSuite < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8d8beb2d827d15178d10e085be46ed6a5c752dfc26a7a471379700dcac98f152"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8d864f4ef6757c34a9633f69b1096ade2927797be0493d5e9d5969cba375f512"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "8d864f4ef6757c34a9633f69b1096ade2927797be0493d5e9d5969cba375f512"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "8d864f4ef6757c34a9633f69b1096ade2927797be0493d5e9d5969cba375f512"
-    sha256 cellar: :any_skip_relocation, sonoma:         "f97dee399c72ee996f9deb479a9bcdb016a4cc4329b7f96c99ebe617daa3333b"
-    sha256 cellar: :any_skip_relocation, ventura:        "f97dee399c72ee996f9deb479a9bcdb016a4cc4329b7f96c99ebe617daa3333b"
-    sha256 cellar: :any_skip_relocation, monterey:       "f97dee399c72ee996f9deb479a9bcdb016a4cc4329b7f96c99ebe617daa3333b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "eb1ad060dea2cecad6a238116fb42bc49596d85221ac7219e02a2be5799b6100"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d864f4ef6757c34a9633f69b1096ade2927797be0493d5e9d5969cba375f512"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "71a7a32f236bc22d0990168e1fceb1d8811748295c064741177f9bdba6f905fb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "71a7a32f236bc22d0990168e1fceb1d8811748295c064741177f9bdba6f905fb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "71a7a32f236bc22d0990168e1fceb1d8811748295c064741177f9bdba6f905fb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "130079ac169569c6e2c45a6a31d25ce285606cbfc4ed03ccd7b2e2488d8a162d"
+    sha256 cellar: :any_skip_relocation, ventura:       "130079ac169569c6e2c45a6a31d25ce285606cbfc4ed03ccd7b2e2488d8a162d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "71a7a32f236bc22d0990168e1fceb1d8811748295c064741177f9bdba6f905fb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "71a7a32f236bc22d0990168e1fceb1d8811748295c064741177f9bdba6f905fb"
   end
 
   depends_on "php"
 
   def install
+    # Use homebrew's share directory
+    inreplace "phoronix-test-suite", "usrsharephoronix-test-suite", "#{pkgshare}"
+
     ENV["DESTDIR"] = buildpath"dest"
     system ".install-sh", prefix
     prefix.install (buildpath"dest#{prefix}").children

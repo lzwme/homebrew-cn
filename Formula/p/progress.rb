@@ -18,11 +18,8 @@ class Progress < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "86cdd8365a105b82a4ab6a8f041bdc8c1dc277ce12eb06626f32e484636b5a78"
   end
 
+  depends_on "pkgconf" => :build
   uses_from_macos "ncurses"
-
-  on_linux do
-    depends_on "pkgconf" => :build
-  end
 
   def install
     system "make", "PREFIX=#{prefix}", "install"

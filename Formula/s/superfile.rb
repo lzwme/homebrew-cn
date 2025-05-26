@@ -1,8 +1,8 @@
 class Superfile < Formula
   desc "Modern and pretty fancy file manager for the terminal"
   homepage "https:superfile.netlify.app"
-  url "https:github.comyorukotsuperfilearchiverefstagsv1.3.0.tar.gz"
-  sha256 "77fc02ce0ef406fd2e9b42e0746f2282a85b4a148316d274bef3dc6c933127a5"
+  url "https:github.comyorukotsuperfilearchiverefstagsv1.3.1.tar.gz"
+  sha256 "9903ba151abee629e6da4126cb4f6c73b693112632be366b8fab5ff17d15f14d"
   license "MIT"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -14,22 +14,15 @@ class Superfile < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fe9bf941855f2d74f09fcaa6af276a709ccb9c39cfab7bdb16ce179ba7c12530"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc2caa033e3e0e1f34ea998026d3d8afcb79c7095324cb5bad0e643b1d3cc311"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a077b359e55c9289d666ea3d542cfcd75b3727e105cf37aa87dd7b4bb69a74f2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "faa38a51b70307bb8a3aaf177c883fecf99906233e4ccdeca55f2e596e83f532"
-    sha256 cellar: :any_skip_relocation, ventura:       "c1467bc9173693ed0730245fcf3918cef4477220cd6387fd4f24e4d626d79ce9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bab94c621e8c6ed3ed3397f0799d314ee4d769a29ae5e2ad3061f991df7b431a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5689f22087e482b856c109aacf8cd6a1f51211d859dd823c82bd59ceaad21d47"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "710ac426a1439694849b20871b5c58b28eabd2c6f05988ae47684751245cadd9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5342aeafd08ef3008bc0b7c68c8ee33684bd0b2742738dfabef8115b4d969b23"
+    sha256 cellar: :any_skip_relocation, sonoma:        "dd1666051061f274e7db33614561f001c486f2fc3eb087304d303e1fd06f7188"
+    sha256 cellar: :any_skip_relocation, ventura:       "4935c60a8e658eadbc4ce0bbd485ee29b4f416808ac456279c8b948ee1644cba"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c2dd35dde21859d5274d373dfc5f8f2b69d5115580d44ff8bb5e756304a6bae"
   end
 
   depends_on "go" => :build
-
-  # Fix to link: duplicated definition of symbol dlopen
-  # PR ref: https:github.comyorukotsuperfilepull837
-  patch do
-    url "https:github.comyorukotsuperfilecommit50a4f662f3cea8ca1cad685a89f5dc2282da5d92.patch?full_index=1"
-    sha256 "959fb00c6b3491ac68ca21214139da9415f63f9a47ae44cc70ed9e3e3ce1adea"
-  end
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w", output: bin"spf")

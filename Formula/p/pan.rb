@@ -1,18 +1,18 @@
 class Pan < Formula
   desc "Usenet newsreader that's good at both text and binaries"
   homepage "https://gitlab.gnome.org/GNOME/pan"
-  url "https://gitlab.gnome.org/GNOME/pan/-/archive/v0.162/pan-v0.162.tar.bz2"
-  sha256 "f33b136621f7c0e7feac9ed6d0ff3fe15013335a100cb48b4151f4528be10059"
+  url "https://gitlab.gnome.org/GNOME/pan/-/archive/v0.163/pan-v0.163.tar.bz2"
+  sha256 "f15b5ad48729424fc5c31d1c3b609563374f1993e4b37ed17cf36f5e4e65589c"
   license "GPL-2.0-only"
 
   bottle do
-    sha256 arm64_sequoia: "5b8acb1334a483317caf49231f22b3e7c88a774fc6d7ae20fe8f121d6ab63219"
-    sha256 arm64_sonoma:  "445b8bcc58239fc28ac1ca22356bf46be9af2f63f4ba9cfe7cb46f389b37b05c"
-    sha256 arm64_ventura: "874072ee564ccd310d01af2f7975fa9d4bd3de07070f201e82e4c6c75b365b48"
-    sha256 sonoma:        "8bf0fdba14f34573e28ea4c186071827dd7e48e682eb1414ccf13ab0fc0cb21f"
-    sha256 ventura:       "9e262aca5d840b964d81ea871a56bf80096e7af7c25feef09e5cbd644ec35878"
-    sha256 arm64_linux:   "9ac64caa1826df8797d08c20e3a7c88fe7b8fadc70872c2c610501aab0a9d040"
-    sha256 x86_64_linux:  "7b6334b42d03f519f8bbbc6e97c4ce20de77a18fde5ae5dc1df3d0cadcfc1019"
+    sha256 arm64_sequoia: "fe6f4ce88b08fc33e3bbc24966ebaccd7a097d0c0f7f7e74f0393b87c0ddd246"
+    sha256 arm64_sonoma:  "8f8c65db6328a70fde77845c576a3e4d7a56ce81f51d49f3826cb3b12e6aab3c"
+    sha256 arm64_ventura: "92f3339ce3499cd6f4991ea03a011553c4c3304e86cddbedc159b928d6aee08e"
+    sha256 sonoma:        "57237340a6f1a9e19357ca236115a08d4a6a9cf91d2557259d883bb07c449de3"
+    sha256 ventura:       "9349b86b4e76eb15423480985c961d222c70627858ed19cc3bf1e5d2a85a75cb"
+    sha256 arm64_linux:   "eb919df1a737833206151621a14bc24f8666695d46ef5e11cbdae64806076ebb"
+    sha256 x86_64_linux:  "b57e6f564d8e793ea6372443e5be72251d1619e9fa3af7c231ac8b1378312b7b"
   end
 
   depends_on "cmake" => :build

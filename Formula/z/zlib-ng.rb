@@ -23,18 +23,18 @@ class ZlibNg < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "067fda36b99d5dac97f99524fc362b5980ec06022037f1945377709b43f3c1b8"
   end
 
-  # https:zlib.netzlib_how.html
-  resource "homebrew-test_artifact" do
-    url "https:zlib.netzpipe.c"
-    sha256 "68140a82582ede938159630bca0fb13a93b4bf1cb2e85b08943c26242cf8f3a6"
-  end
-
   def install
     system ".configure", "--prefix=#{prefix}"
     system "make", "install"
   end
 
   test do
+    # https:zlib.netzlib_how.html
+    resource "homebrew-test_artifact" do
+      url "https:zlib.netzpipe.c"
+      sha256 "68140a82582ede938159630bca0fb13a93b4bf1cb2e85b08943c26242cf8f3a6"
+    end
+
     # Test uses an example of code for zlib and overwrites its API with zlib-ng API
     testpath.install resource("homebrew-test_artifact")
     inreplace "zpipe.c", "#include \"zlib.h\"", <<~C

@@ -17,6 +17,7 @@ class Gdb < Formula
     sha256 x86_64_linux:  "5dce623e116162d2edb8668a5f5b5085dea0b0dbce8b245985de933ed0079097"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "gmp"
   depends_on "mpfr"
   depends_on "python@3.13"
@@ -38,7 +39,6 @@ class Gdb < Formula
   end
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "guile"
   end
 

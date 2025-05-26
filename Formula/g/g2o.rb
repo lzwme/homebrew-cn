@@ -24,11 +24,6 @@ class G2o < Formula
   depends_on "cmake" => :build
   depends_on "eigen"
 
-  resource "homebrew-testdata" do
-    url "https:raw.githubusercontent.comOpenSLAM-orgopenslam_g2o2362b9e1e9dab318625cd0af9ba314c47ba8de48data2dintelintel.g2o"
-    sha256 "4d87aaf96e1e04e47c723c371386b15358c71e98c05dad16b786d585f9fd70ff"
-  end
-
   def install
     cmake_args = std_cmake_args + %w[-DG2O_BUILD_EXAMPLES=OFF]
     # For Intel: manually set desired SSE features to enable support for older machines.
@@ -57,6 +52,11 @@ class G2o < Formula
   end
 
   test do
+    resource "homebrew-testdata" do
+      url "https:raw.githubusercontent.comOpenSLAM-orgopenslam_g2o2362b9e1e9dab318625cd0af9ba314c47ba8de48data2dintelintel.g2o"
+      sha256 "4d87aaf96e1e04e47c723c371386b15358c71e98c05dad16b786d585f9fd70ff"
+    end
+
     cp_r pkgshare"examplessimple_optimize", testpath"src"
     libs = %w[-lg2o_core -lg2o_solver_eigen -lg2o_stuff -lg2o_types_slam2d -lg2o_types_slam3d]
     cd "src" do

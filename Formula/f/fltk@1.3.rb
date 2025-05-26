@@ -22,11 +22,11 @@ class FltkAT13 < Formula
 
   keg_only :versioned_formula
 
+  depends_on "pkgconf" => :build
   depends_on "jpeg-turbo"
   depends_on "libpng"
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "fontconfig"
     depends_on "libx11"
     depends_on "libxext"

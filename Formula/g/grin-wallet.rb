@@ -15,11 +15,11 @@ class GrinWallet < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fb8c9ea2d9d49a06a26ca2fd622921b83ae9144e496829f0c52d451a4fbe7286"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   uses_from_macos "llvm" => :build
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "openssl@3" # Uses Secure Transport on macOS
   end
 

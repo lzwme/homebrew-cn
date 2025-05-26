@@ -36,11 +36,6 @@ class Libtrace < Formula
   uses_from_macos "libpcap"
   uses_from_macos "ncurses"
 
-  resource "homebrew-8021x.pcap" do
-    url "https:github.comLibtraceTeamlibtraceraw9e82eabc39bc491c74cc4215d7eda5f07b85a8f5testtraces8021x.pcap"
-    sha256 "aa036e997d7bec2fa3d387e3ad669eba461036b9a89b79dcf63017a2c4dac725"
-  end
-
   def install
     system ".bootstrap.sh"
     system ".configure", *std_configure_args
@@ -49,6 +44,11 @@ class Libtrace < Formula
   end
 
   test do
+    resource "homebrew-8021x.pcap" do
+      url "https:github.comLibtraceTeamlibtraceraw9e82eabc39bc491c74cc4215d7eda5f07b85a8f5testtraces8021x.pcap"
+      sha256 "aa036e997d7bec2fa3d387e3ad669eba461036b9a89b79dcf63017a2c4dac725"
+    end
+
     (testpath"test.c").write <<~C
       #include <libtrace.h>
       #include <inttypes.h>

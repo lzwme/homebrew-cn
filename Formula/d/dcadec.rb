@@ -31,17 +31,17 @@ class Dcadec < Formula
 
   conflicts_with "libdca", because: "both install `dcadec` binaries"
 
-  resource "homebrew-testdata" do
-    url "https:github.comfoo86dcadec-samplesrawfa7dcf8c98c6dxll_71_24_96_768.dtshd"
-    sha256 "d2911b34183f7379359cf914ee93228796894e0b0f0055e6ee5baefa4fd6a923"
-  end
-
   def install
     system "make", "all"
     system "make", "PREFIX=#{prefix}", "install"
   end
 
   test do
+    resource "homebrew-testdata" do
+      url "https:github.comfoo86dcadec-samplesrawfa7dcf8c98c6dxll_71_24_96_768.dtshd"
+      sha256 "d2911b34183f7379359cf914ee93228796894e0b0f0055e6ee5baefa4fd6a923"
+    end
+
     resource("homebrew-testdata").stage do
       system bin"dcadec", resource("homebrew-testdata").cached_download
     end

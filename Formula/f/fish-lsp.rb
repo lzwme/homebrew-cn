@@ -1,10 +1,9 @@
 class FishLsp < Formula
   desc "LSP implementation for the fish shell language"
-  homepage "https:www.fish-lsp.dev"
-  url "https:registry.npmjs.orgfish-lsp-fish-lsp-1.0.9-1.tgz"
+  homepage "https://www.fish-lsp.dev"
+  url "https://registry.npmjs.org/fish-lsp/-/fish-lsp-1.0.9-1.tgz"
   sha256 "c28799ee8b7e3a17b7892aa3f9d80ebe638313b9bce772ac364faee3ced5d43a"
   license "MIT"
-  head "https:github.comndonfrisfish-lsp.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd0aa44217f04dce7a0016c07e1f232552092de2958a862b3dbba59ff98e5d4e"
@@ -25,15 +24,15 @@ class FishLsp < Formula
     # tree-sitter<0.22 fails with clang>=18 but is actually unused
     system "npm", "uninstall", "tree-sitter", "--package-lock-only"
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin*")
+    bin.install_symlink libexec.glob("bin/*")
 
-    man1.install "docsmanfish-lsp.1"
-    generate_completions_from_executable(bin"fish-lsp", "complete", shells: [:fish])
+    man1.install "docs/man/fish-lsp.1"
+    generate_completions_from_executable(bin/"fish-lsp", "complete", shells: [:fish])
 
     # Remove incompatible pre-built binaries
     os = OS.kernel_name.downcase
     arch = Hardware::CPU.intel? ? "x64" : Hardware::CPU.arch.to_s
-    libexec.glob("libnode_modulesfish-lspnode_modulestree-sitterprebuilds*")
+    libexec.glob("lib/node_modules/fish-lsp/node_modules/tree-sitter/prebuilds/*")
            .each { |dir| rm_r(dir) if dir.basename.to_s != "#{os}-#{arch}" }
   end
 
@@ -50,7 +49,7 @@ class FishLsp < Formula
       }
     JSON
     input = "Content-Length: #{json.size}\r\n\r\n#{json}"
-    output = pipe_output("#{bin}fish-lsp start", input)
-    assert_match(^Content-Length: \d+i, output)
+    output = pipe_output("#{bin}/fish-lsp start", input)
+    assert_match(/^Content-Length: \d+/i, output)
   end
 end

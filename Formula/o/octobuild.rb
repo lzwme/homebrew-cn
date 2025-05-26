@@ -16,10 +16,10 @@ class Octobuild < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "3362d910f2f9b447046d75f7feb044b679c35bcb1991597b1e0320fc24f9a695"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "openssl@3"
   end
 

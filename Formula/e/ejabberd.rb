@@ -15,18 +15,19 @@ class Ejabberd < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "7f8ce6f8fc4ad9a9431bc4a198f7baff60eb59cfc4bfa2f2ee2a879dba73b4c0"
-    sha256 cellar: :any,                 arm64_sonoma:  "e786ed069ccafd35dfe1a21efe81f8c8a2b97d512b060bbd9d72373cdd5e9f9e"
-    sha256 cellar: :any,                 arm64_ventura: "139bb7211f06a39509e9e5759357a31af3108d3d36b268ecb15f56b2489221ff"
-    sha256 cellar: :any,                 sonoma:        "223e4a75a87232241f464c28e48861e165c7e5f55dd9756c5a0b1926eb2130e4"
-    sha256 cellar: :any,                 ventura:       "97e0f7f141f0f3919d0545e0615be75309af3b48cdaf8963c804c3c896e715be"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e986568af2e69ca634a7feca4308a3fd9320ebd8e0e619d15d7b2239af63f271"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3149e4654d9a9013f4d13ae3e89f542ad2f82e105390e799c7ec0f0699fc0a3a"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "67076a615179ef3c1dd45faef296c14cbc9f4dee06e410c7b6211d3b54085d52"
+    sha256 cellar: :any,                 arm64_sonoma:  "7570204be8347f68e4af4d0ff2f90fd5647176afffb736c72889dfd78aa20721"
+    sha256 cellar: :any,                 arm64_ventura: "22fbe091ca7bd864c5dd6675f7502eb980d15673c2070092ad534a9a42657a15"
+    sha256 cellar: :any,                 sonoma:        "93f654bbfa377040b85833fc42c0dd78f0900e659a830badae2a13b5e920cc17"
+    sha256 cellar: :any,                 ventura:       "795e5517d4db61c6f1a3587390a86abfd170517e783e2c31fcf6f886fd681cf4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5cdfb5ee00a14b740d6123f99b57e791e1f09915790a0bc6d248d94656f9c8df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf2a76d61c04d535e3183a9db385199f852a8437eda93e8c8d5e0a0dddf200fa"
   end
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "erlang"
+  depends_on "erlang@27" # https:github.comprocessoneejabberdissues4354
   depends_on "gd"
   depends_on "libyaml"
   depends_on "openssl@3"

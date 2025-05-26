@@ -4,7 +4,6 @@ class DockerfileLanguageServer < Formula
   url "https:registry.npmjs.orgdockerfile-language-server-nodejs-dockerfile-language-server-nodejs-0.14.0.tgz"
   sha256 "2c2aa3fb4b1bea75701537a5e981f6001331308b930376e41305113edc4fe81a"
   license "MIT"
-  head "https:github.comrcjsuendockerfile-language-server.git", branch: "master"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9d6b490c6ccf09d9cf8136e67b95a9f12f350bc7ecd5f98b4d777c7b38baa631"

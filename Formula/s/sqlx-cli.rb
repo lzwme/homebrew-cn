@@ -15,10 +15,10 @@ class SqlxCli < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "92a8ccbb9b00c9e1fc1e2fb632ab628a46cbf84011d82e78c0564c7f88b20290"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "openssl@3"
   end
 

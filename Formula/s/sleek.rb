@@ -1,18 +1,18 @@
 class Sleek < Formula
   desc "CLI tool for formatting SQL"
   homepage "https:github.comnrempelsleek"
-  url "https:github.comnrempelsleekarchiverefstagsv0.4.0.tar.gz"
-  sha256 "d4ebd91cfa8478cc5da1e3b5a4ebe0acc4a854970e1fc3638f6dd15b21eccf7b"
+  url "https:github.comnrempelsleekarchiverefstagsv0.5.0.tar.gz"
+  sha256 "fcb589fdc5ece8c050883ff0b56aec6bd25e2e4d6e77a1d52e870535d66fdf67"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "167928a0a7c9453e442272dfa66d34870a8e666844081b36dba1ad1574874b8b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a3dc714bbab32a087e4a69fc0c713c4b62ee6e38296738103fca4f0de7622a4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f11aa3bcb1022a3185ba0751543de27949376416c27851efde099d47c05d461d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c526143ee5fa00f9121b60f68cb1a337911d6121cabdfff0643a8e7319f56be5"
-    sha256 cellar: :any_skip_relocation, ventura:       "0107b738533fb0cdba5a62be1620ee746d30970caa0d3e0bd469831d1f45a984"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "35334f901a1696514f0d7add96609e8ed1ebc7bc0254e516180aecb24edc22b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9e6143fa3c94550a7bcbfc1e4b33f6ffb1076057858811317239ed0a37a007ed"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d7da065a9d2a8bc8f87ea6d2eb19cee0c60a358349761d9ea559ffb4c566f984"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "777c706a4f2d429718d04629533688315ff6156d1689984d1e10702eb36bdaae"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "92fd6bdce1efc958d4df0bfb47b7d3b31fabb6cfe175bbb5b11f7e20e62d368a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e4e2ac88f2fdb8c1418d82f19ba13ad142f7c111fa5e9e143212167a9c80b99f"
+    sha256 cellar: :any_skip_relocation, ventura:       "38411eb332d28f569c81c6907a0df972efbd0e9abea5d1a86bb6c1bb3ab76834"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a0787c89db269a455792647f92c31b3dd0a8222ae400ce37ac22a8c11c694742"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0a9e38b97cbd5cdcd3b1f8a2d77472dc4911e65ed205932606d1f56b752c21c8"
   end
 
   depends_on "rust" => :build

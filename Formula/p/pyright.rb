@@ -4,7 +4,6 @@ class Pyright < Formula
   url "https:registry.npmjs.orgpyright-pyright-1.1.401.tgz"
   sha256 "314aee741763f9c120da6f4c08352ba15fe161142193a68b9e04108a139a3d0f"
   license "MIT"
-  head "https:github.commicrosoftpyright.git", branch: "main"
 
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7108522532491ded273b23a95c4c20c4aac0f6dbf3d0e4e59c7d49c73b7d512"

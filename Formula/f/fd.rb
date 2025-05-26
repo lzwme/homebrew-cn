@@ -7,14 +7,14 @@ class Fd < Formula
   head "https:github.comsharkdpfd.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "df54657784547cbc9fd37c071356179868df99eae86cc60c480ccee2df793865"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "22c913a776446f606f98b806990ca84eda587d33ec1776998450d32650a8fc19"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "50185800d3972a716a0a93233ebaf046711d92668432748bba229a96f7654782"
-    sha256 cellar: :any_skip_relocation, sonoma:        "50a26e49e139bce09e9d13e031e417a102078ab9de58dbdfab8967ea80c339c2"
-    sha256 cellar: :any_skip_relocation, ventura:       "e65ede7ae3e502e8e38cabca8ab95984b7bbec73a610efb8aaaa8ca8af7cf97d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8dd21a229b2dc4119edc6591bce51ab96b2a09e8237e8e9f48254e7f9e8dfdeb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b69ad2a2e6805de8c26e192eae0da32807978cd9551b7863cee279208bc5cae0"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "288860909de7a2e91ce05b6bd85f7e460ab8826817a1656fafd990d607e3d459"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "103924cd3cd77fe919b4cc277ca6bf939dd2db284b0b5503c609046142c106f9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "642e0e04cca95682808230f796e883c56483c3cc1667236139273461cc2ec99a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "83e317dce0070b68cf66c7794a9da7fe1f9d00d9f2bc2d94f5e49bc311dbab3f"
+    sha256 cellar: :any_skip_relocation, ventura:       "0621b915f7f793aa769fc6708a2e1c2a38864998492af57feae774e986e7bf2e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bba21d80a06ee8e17144cb5c3a231cb73179daef815fa050390b74228b966d7d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5f6efbd469e33cc32ab15dbebc0e78415ff662d827ce4a200f2ded78ff5143b"
   end
 
   depends_on "rust" => :build
@@ -24,7 +24,7 @@ class Fd < Formula
   def install
     system "cargo", "install", *std_cargo_args
 
-    generate_completions_from_executable(bin"fd", "--gen-completions", shells: [:bash, :fish])
+    generate_completions_from_executable(bin"fd", "--gen-completions", shells: [:bash, :fish, :pwsh])
     zsh_completion.install "contribcompletion_fd"
     man1.install "docfd.1"
   end

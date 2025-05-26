@@ -1,10 +1,9 @@
 class Scummvm < Formula
   desc "Graphic adventure game interpreter"
   homepage "https:www.scummvm.org"
-  url "https:downloads.scummvm.orgfrsscummvm2.9.0scummvm-2.9.0.tar.xz"
-  sha256 "d5b33532bd70d247f09127719c670b4b935810f53ebb6b7b6eafacaa5da99452"
+  url "https:downloads.scummvm.orgfrsscummvm2.9.1scummvm-2.9.1.tar.xz"
+  sha256 "6a82f36afa9de758ab1dd377101a26a53f12417cbfd350bb8e5d7fd5b8c257e3"
   license "GPL-3.0-or-later"
-  revision 2
   head "https:github.comscummvmscummvm.git", branch: "master"
 
   livecheck do
@@ -13,13 +12,13 @@ class Scummvm < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "54f576a9480d41e61bbd263c37fd85bc17b5f825ae791b348aa56d1bccbf969a"
-    sha256 arm64_sonoma:  "05b1d1b9f7ba3af7b6449d5048087bbf8bc06ef1ffa57c1c04c3bced3470fe2c"
-    sha256 arm64_ventura: "bf8c4d0ca4e73be6ce65a23c0d7681f4215ad4c4893fd14eb34a36546928cf0f"
-    sha256 sonoma:        "84b4384af63a7d9e3b8cd0e3744d761ddad5b992a5aa47328c9e89474a41f6c6"
-    sha256 ventura:       "3ed0ded5307ab17e2c3c80ba2033212b714dbe90133d8d17d7229d650507841b"
-    sha256 arm64_linux:   "5cdbdf040836910a46c4a4ef8291ac2b7acc32e8c0c9a8c3cc5d57cf40bd0d8a"
-    sha256 x86_64_linux:  "da251351daf387dc719882bd00afe956ebf475590f6cbc198df1a4a03d0c079d"
+    sha256 arm64_sequoia: "ab8474a65c3527d55e6ce9fe648b3b882c4a21e07e212a56e31458d6c52f5e3b"
+    sha256 arm64_sonoma:  "ccc56d8a5e804484beda52790e6caf022326c08fc7bbc8213ba123f7adacae40"
+    sha256 arm64_ventura: "aa89c7c11339ef53dba8adcba16397234b251f56572312bc8134b8a8128d83b0"
+    sha256 sonoma:        "53a02155697992a98142a5a47fcb14a77b65f08266b2fbe76636237d558fa8c0"
+    sha256 ventura:       "e5b2a610f0684c5f2fb72f33f848674a0c5182b225061f030625467d485a9926"
+    sha256 arm64_linux:   "fea57115c7c0b57b4d2265c1ff5648ad7f5d5db56530f48aa19413e2153579d7"
+    sha256 x86_64_linux:  "2d2a98f4ee32de3e3537ee2515372bcb8de7e1d9f9f24af3d8443922da92fd1b"
   end
 
   depends_on "a52dec"

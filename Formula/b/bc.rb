@@ -1,19 +1,19 @@
 class Bc < Formula
   desc "Arbitrary precision numeric processing language"
   homepage "https://www.gnu.org/software/bc/"
-  url "https://ftp.gnu.org/gnu/bc/bc-1.08.1.tar.gz"
-  mirror "https://ftpmirror.gnu.org/bc/bc-1.08.1.tar.gz"
-  sha256 "b71457ffeb210d7ea61825ff72b3e49dc8f2c1a04102bbe23591d783d1bfe996"
+  url "https://ftp.gnu.org/gnu/bc/bc-1.08.2.tar.gz"
+  mirror "https://ftpmirror.gnu.org/bc/bc-1.08.2.tar.gz"
+  sha256 "ae470fec429775653e042015edc928d07c8c3b2fc59765172a330d3d87785f86"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2c49cd3539bc92c81ae5ce1dffe677845e88a4607060bfb929e17615f94922c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3dad88ebb19c3b2f3ff45b61ce9e0136de0d311a7ccecbb7095cfc247e4cfe51"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "82e07f26adbb9832430fd707a1dcf1ae7901bcef2928e84720b3c55c7a3ffd34"
-    sha256 cellar: :any_skip_relocation, sonoma:        "25027ce1482683837e17972623a1baa472d55ec68e665f303dba8bb3d7275668"
-    sha256 cellar: :any_skip_relocation, ventura:       "2ca58c90ac248548f14591b4c43e8925cef592b43839f4c46847cdcf1ed2cc13"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "315d2ef3d29f405e68d4090309f21fc00d1480ec3b29ddf48afb4b27f9b4c179"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d605e214ec69bd5b1c7331fdade1048f6f580eccc67ffff9f4f7ee30a4163eb5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1817f18a3e007d00b9128d225cc1aa8c18ea8673d954bea60e5a4d95fc8b4ff9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "08dc983bea3e325521a62c8f3eae7e9e414512c740cb99f7f0ea44e11fb1d213"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "205744876113e5f7ecd60bba584731c339386d3defc852d74a82cd01a64dea97"
+    sha256 cellar: :any_skip_relocation, sonoma:        "eee028e2110a7e11ed6e7031617377654d2e3260a8b753d9965d165488b39afb"
+    sha256 cellar: :any_skip_relocation, ventura:       "e2417d6a027f54331bbf1d5290dfaed83c3811c7e88ebb163e8bbbcf46e98f11"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "aaa02a5b2ea9e4fa53a6266398cf51f3deabc3d0ce6a655b9abedcacc300d786"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e08ff27c11d109f803062119b73e680335a27a2229b7c1283c123559aa073f49"
   end
 
   keg_only :provided_by_macos # before Ventura

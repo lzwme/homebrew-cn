@@ -28,11 +28,6 @@ class RaxmlNg < Formula
     depends_on "open-mpi"
   end
 
-  resource "homebrew-example" do
-    url "https:cme.h-its.orgexelixisresourcedownloadhands-ondna.phy"
-    sha256 "c2adc42823313831b97af76b3b1503b84573f10d9d0d563be5815cde0effe0c2"
-  end
-
   def install
     args = std_cmake_args + ["-DUSE_GMP=ON"]
     system "cmake", "-S", ".", "-B", "build", *args
@@ -50,6 +45,11 @@ class RaxmlNg < Formula
   end
 
   test do
+    resource "homebrew-example" do
+      url "https:cme.h-its.orgexelixisresourcedownloadhands-ondna.phy"
+      sha256 "c2adc42823313831b97af76b3b1503b84573f10d9d0d563be5815cde0effe0c2"
+    end
+
     testpath.install resource("homebrew-example")
     system bin"raxml-ng", "--msa", "dna.phy", "--start", "--model", "GTR"
   end

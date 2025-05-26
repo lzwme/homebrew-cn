@@ -1,19 +1,19 @@
 class Tailspin < Formula
   desc "Log file highlighter"
   homepage "https:github.combensadehtailspin"
-  url "https:github.combensadehtailspinarchiverefstags5.4.2.tar.gz"
-  sha256 "2226229e6c85859a094bbe4e672a467976d7563fb7ba0454e75135c2a6537ee7"
+  url "https:github.combensadehtailspinarchiverefstags5.4.3.tar.gz"
+  sha256 "f024fc4cbfd9217014912ed9a3d8636be6bd587f473b97ff2bd729eb2227729c"
   license "MIT"
   head "https:github.combensadehtailspin.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e4856acada71f24fd48aff031e21ea3bd5888288326839a8d29d3aed474b0d6c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f0ba0d34dc90e489fbd05de60b6544ef635999c80edae36ce95c259cf491a1bc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b72a972afdc4e9e8ceb5b2722f9f478ff91d7c92bb86b5d5c643fe69e1ba095d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9569242f88d6318b8936c33f93bda3640318153a8e5d2661c1034e51d7cb4ef9"
-    sha256 cellar: :any_skip_relocation, ventura:       "c111499b2b53ac56478bab4b45b721d7a77e4debba044510e915a3cac25ff86c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e5fb2a7e972879ff7044d0c7bca1023be012e6eac59ad60e5b965cffd7e05ec4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6bd37dda4d3e11e6490b1567053711275ff7bd053fed8eaf24c270e013268ec4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2bbec07f6dc147940203c1c46378cc16ef6eb903f40efb10aea152fcfdc6e1bd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8bd0f610dc3b7caaa3752cb2301a24ea4a7ec2cb0bdd6bed2b7be9c389fac5c3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "03154f2ec27debc92ea2b2dd1fb4d4d11d9aa09fbc872240b2a483675ab21cc8"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5502df8b1d5ec79aa1f7865cc67373a2d06f4a3cb46e7567a0a0c5cde447581f"
+    sha256 cellar: :any_skip_relocation, ventura:       "3fe0dadec03e7d8bbecb3306baf55673e469aa12df7687e0df509b5b16db4c4a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "633f7dc5864cf7f38215b06e81f7763ddd56291f7323485550b6162da4ef1ec7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "34eb4902f36850fe4ddba31c86086cae9336b35a664f47c178945116a2c72c73"
   end
 
   depends_on "rust" => :build

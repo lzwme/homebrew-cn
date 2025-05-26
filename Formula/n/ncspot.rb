@@ -15,6 +15,7 @@ class Ncspot < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc62314bdc978974ec4f7f75a925189066309ad2ef83543efca8efc47ea5eb1f"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "portaudio"
 
@@ -22,7 +23,6 @@ class Ncspot < Formula
   uses_from_macos "ncurses"
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "alsa-lib"
     depends_on "dbus"
     depends_on "libxcb"

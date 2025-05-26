@@ -18,14 +18,11 @@ class LiterateGit < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "98a17d82f86fca6482e0d1ef72023b9f8ba90837247c7116661a2c8b8cc9e001"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "pygit2"
   depends_on "python@3.13"
 
   uses_from_macos "libffi"
-
-  on_linux do
-    depends_on "pkgconf" => :build
-  end
 
   resource "click" do
     url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"

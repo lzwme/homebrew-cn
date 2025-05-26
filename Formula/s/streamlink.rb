@@ -18,16 +18,13 @@ class Streamlink < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2fcb9c5b7d2a2d636748dbe5d043f38103c844e9d5ab2e1320b33d7f26e851d"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "certifi"
   depends_on "libxml2" # https:github.comHomebrewhomebrew-coreissues98468
   depends_on "python@3.13"
 
   uses_from_macos "libffi"
   uses_from_macos "libxslt"
-
-  on_linux do
-    depends_on "pkgconf" => :build
-  end
 
   resource "attrs" do
     url "https:files.pythonhosted.orgpackages5ab01367933a8532ee6ff8d63537de4f1177af4bff9f3e829baf7331f595bb24attrs-25.3.0.tar.gz"

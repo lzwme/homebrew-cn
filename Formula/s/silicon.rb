@@ -15,13 +15,13 @@ class Silicon < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "afe03c08e0975b4d4b1a90fdbfdf9c82767bd7b85becc71e72b4e63ed59b3074"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "fontconfig"
   depends_on "freetype"
   depends_on "harfbuzz"
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "libxcb"
     depends_on "xclip"
   end

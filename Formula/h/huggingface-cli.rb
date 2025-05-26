@@ -17,13 +17,14 @@ class HuggingfaceCli < Formula
   end
 
   depends_on "maturin" => :build # for `hf-xet`
+  depends_on "pkgconf" => :build
+
   depends_on "certifi"
   depends_on "git-lfs"
   depends_on "libyaml"
   depends_on "python@3.13"
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "openssl@3"
   end
 

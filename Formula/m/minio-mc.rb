@@ -2,9 +2,9 @@ class MinioMc < Formula
   desc "Replacement for ls, cp and other commands for object storage"
   homepage "https:github.comminiomc"
   url "https:github.comminiomc.git",
-      tag:      "RELEASE.2025-04-16T18-13-26Z",
-      revision: "b00526b153a31b36767991a4f5ce2cced435ee8e"
-  version "2025-04-16T18-13-26Z"
+      tag:      "RELEASE.2025-05-21T01-59-54Z",
+      revision: "f71ad84bcf0fd4369691952af5d925347837dcec"
+  version "2025-05-21T01-59-54Z"
   license "AGPL-3.0-or-later"
   version_scheme 1
   head "https:github.comminiomc.git", branch: "master"
@@ -16,12 +16,12 @@ class MinioMc < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db913373f18141dec15e6a5cbd3057c1388a9f3ddfe9dbd31a99c352bc57ea53"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6f92466432bb6100f807dedc3cf4a6900fcbc0128d97884e8fa80348adae028a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e81ca22774f09f03f0a7cedc97527fa0b64183a7b19d1ed41667a08d3c3fec07"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a0c9ffe52177ca726b66a160633b6ec98bcc3890accdf825842b6db181b3ebc4"
-    sha256 cellar: :any_skip_relocation, ventura:       "2cba7fc036ecf5b7a7d7ef0c8bdc2343c3bcb70d7192f24a3782b5ecb69730bd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e2099365ee59980cb2bdc4cf738248ef7f75b5ae11316a0709991c485a5df966"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "630f19beffbfa994ca31f2eef0498955a7e6cc35ea214ff081e93e1746bf154e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ea0851368cdef34b9cedcefa9b454e2d562e2227c56c903c023f6602b187660"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "432dead830fa5b3a236282807afebdf17441aabe9dcaa62b36e8ecfd69518d86"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c07d52a6b3f2166c70ea7810aae5a200eedf24ad38a53d05f608c9c800a5a4d9"
+    sha256 cellar: :any_skip_relocation, ventura:       "110853898578739890643493d445b9abca7578ed4c23624ed7c5f11a1bba872e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb12416b10fac99a384caa6593cae15d691257f532f0ccc478b4f66fb5e99659"
   end
 
   depends_on "go" => :build

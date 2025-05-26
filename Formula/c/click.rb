@@ -23,10 +23,10 @@ class Click < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "4b30c2c15da3c503a541a5f751928abf68496261df9374a23c6d5dce58b9d2b8"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "openssl@3"
   end
 

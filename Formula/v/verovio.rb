@@ -18,11 +18,6 @@ class Verovio < Formula
 
   depends_on "cmake" => :build
 
-  resource "homebrew-testdata" do
-    url "https:www.verovio.orgexamplesdownloadsAhle_Jesu_meines_Herzens_Freud.mei"
-    sha256 "79e6e062f7f0300e8f0f4364c4661835a0baffc3c1468504a555a5b3f9777cc9"
-  end
-
   def install
     system "cmake", "-S", ".cmake", "-B", "tools", *std_cmake_args
     system "cmake", "--build", "tools"
@@ -30,6 +25,11 @@ class Verovio < Formula
   end
 
   test do
+    resource "homebrew-testdata" do
+      url "https:www.verovio.orgexamplesdownloadsAhle_Jesu_meines_Herzens_Freud.mei"
+      sha256 "79e6e062f7f0300e8f0f4364c4661835a0baffc3c1468504a555a5b3f9777cc9"
+    end
+
     system bin"verovio", "--version"
     resource("homebrew-testdata").stage do
       shell_output("#{bin}verovio Ahle_Jesu_meines_Herzens_Freud.mei -o #{testpath}output.svg")

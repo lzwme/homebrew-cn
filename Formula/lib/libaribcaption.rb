@@ -19,10 +19,9 @@ class Libaribcaption < Formula
   end
 
   depends_on "cmake" => :build
-  depends_on "pkgconf" => :test
+  depends_on "pkgconf" => [:build, :test]
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "fontconfig"
     depends_on "freetype"
   end

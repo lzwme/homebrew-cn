@@ -18,13 +18,10 @@ class AgePluginYubikey < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:   "82643b04b611338208b3bed82b767ade73d25bf088ee7bac22d678f4ce0b7651"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
 
   uses_from_macos "pcsc-lite"
-
-  on_linux do
-    depends_on "pkgconf" => :build
-  end
 
   def install
     system "cargo", "install", *std_cargo_args

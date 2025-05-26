@@ -24,16 +24,16 @@ class Ssocr < Formula
   depends_on "pkgconf" => :build
   depends_on "imlib2"
 
-  resource "homebrew-test-image" do
-    url "https:www.unix-ag.uni-kl.de~auerswalssocrsix_digits.png"
-    sha256 "72b416cca7e98f97be56221e7d1a1129fc08d8ab15ec95884a5db6f00b2184f5"
-  end
-
   def install
     system "make", "install", "PREFIX=#{prefix}"
   end
 
   test do
+    resource "homebrew-test-image" do
+      url "https:www.unix-ag.uni-kl.de~auerswalssocrsix_digits.png"
+      sha256 "72b416cca7e98f97be56221e7d1a1129fc08d8ab15ec95884a5db6f00b2184f5"
+    end
+
     resource("homebrew-test-image").stage testpath
     assert_equal "431432", shell_output("#{bin}ssocr -T #{testpath}six_digits.png").chomp
   end

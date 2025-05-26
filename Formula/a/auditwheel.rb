@@ -3,21 +3,20 @@ class Auditwheel < Formula
 
   desc "Auditing and relabeling cross-distribution Linux wheels"
   homepage "https:github.compypaauditwheel"
-  url "https:files.pythonhosted.orgpackagese46a9582a6a14bdde843f57ef34a4a92197e80fd3a1dab64f8d3c10f96fa9fb4auditwheel-6.3.0.tar.gz"
-  sha256 "05c70a234fa14c140aa6d9076135d9550962d95849911b8d5d0419a3add09f00"
+  url "https:files.pythonhosted.orgpackagesfbf3b61e3b5ccceee2c25baff6c16146d031f6f5c75b1c09d598bfbfe498adecauditwheel-6.4.0.tar.gz"
+  sha256 "20990ccb2416fdb81983ef654d10df72f9f25b388e30105bc3d97b06d6aecafb"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "516000f5c56e30d727203afd6bfae0b1a4816a8c47ab80fe17106ce40c081661"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "7255376045ab11d4661892684a730b0074bc2e9f562b80c8d42830123a69c3aa"
+    sha256 cellar: :any_skip_relocation, all: "e46bbb1c73158a8ad508e7197f7d07c8625906d776efe6f86796c81463c3ed80"
   end
 
   depends_on :linux
   depends_on "python@3.13"
 
   resource "packaging" do
-    url "https:files.pythonhosted.orgpackagesd06368dbb6eb2de9cb10ee4c9c14a0148804425e13c4fb20d61cce69f53106dapackaging-24.2.tar.gz"
-    sha256 "c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f"
+    url "https:files.pythonhosted.orgpackagesa1d41fc4078c65507b51b96ca8f8c3ba19e6a61c8253c72794544580a7b6c24dpackaging-25.0.tar.gz"
+    sha256 "d443872c98d677bf60f6a1f2f8c1cb748e8fe762d2bf9d3148b5599295b0fc4f"
   end
 
   resource "pyelftools" do
@@ -37,14 +36,14 @@ class Auditwheel < Formula
         url "https:files.pythonhosted.orgpackagesf147d7145bf2dc04684935d57d67dff9d6d795b2ba2796806bb109864be3a151cffi-1.17.1-cp313-cp313-musllinux_1_1_x86_64.whl"
         sha256 "72e72408cad3d5419375fc87d289076ee319835bdfa2caad331e377589aebba9"
       end
-      platform_tag = "linux_x86_64"
+      platform_tag = "musllinux_1_2_x86_64"
       wheel_file = "cffi-1.17.1-cp313-cp313-musllinux_1_1_x86_64.whl"
     else
       resource "homebrew-test-wheel" do
         url "https:files.pythonhosted.orgpackages5fe4fb8b3dd8dc0e98edf1135ff067ae070bb32ef9d509d6cb0f538cd6f7483fcffi-1.17.1-cp313-cp313-musllinux_1_1_aarch64.whl"
         sha256 "3edc8d958eb099c634dace3c7e16560ae474aa3803a5df240542b305d14e14ed"
       end
-      platform_tag = "linux_aarch64"
+      platform_tag = "musllinux_1_2_aarch64"
       wheel_file = "cffi-1.17.1-cp313-cp313-musllinux_1_1_aarch64.whl"
     end
 

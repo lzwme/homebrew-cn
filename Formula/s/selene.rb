@@ -16,11 +16,8 @@ class Selene < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "bc9d1abd031c82dcc47fdd530daaf4ca6555da8b7faf4e8bedfe3f45473ec05c"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
-
-  on_linux do
-    depends_on "pkgconf" => :build
-  end
 
   def install
     cd "selene" do

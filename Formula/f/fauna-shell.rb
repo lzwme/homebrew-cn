@@ -1,10 +1,9 @@
 class FaunaShell < Formula
   desc "Interactive shell for FaunaDB"
-  homepage "https:fauna.com"
-  url "https:registry.npmjs.orgfauna-shell-fauna-shell-4.0.0.tgz"
+  homepage "https://fauna.com/"
+  url "https://registry.npmjs.org/fauna-shell/-/fauna-shell-4.0.0.tgz"
   sha256 "6dd5c853c1a62e72d6101741a498b3b9fe4db21e68ec2e024541b488b858c77f"
   license "MPL-2.0"
-  head "https:github.comfaunafauna-shell.git", branch: "main"
 
   bottle do
     sha256                               arm64_sequoia: "3a775fa6fad091d1c382d58c49d484e416261ce2073c36ed6271364a34fc4821"
@@ -20,20 +19,20 @@ class FaunaShell < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink libexec.glob("bin*")
+    bin.install_symlink libexec.glob("bin/*")
 
     # Remove incompatible pre-built binaries
-    libexec.glob("libnode_modulesfauna-shelldist{*.node,fauna}")
+    libexec.glob("lib/node_modules/fauna-shell/dist/{*.node,fauna}")
            .each { |f| rm(f) }
   end
 
   test do
-    assert_match version.to_s, shell_output("#{bin}fauna --version")
+    assert_match version.to_s, shell_output("#{bin}/fauna --version")
 
-    output = shell_output("#{bin}fauna database list 2>&1", 1)
+    output = shell_output("#{bin}/fauna database list 2>&1", 1)
     assert_match "The requested user 'default' is not signed in or has expired.", output
 
-    output = shell_output("#{bin}fauna local --name local-fauna 2>&1", 1)
+    output = shell_output("#{bin}/fauna local --name local-fauna 2>&1", 1)
     assert_match "[StartContainer] Docker service is not available", output
   end
 end

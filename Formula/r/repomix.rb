@@ -1,18 +1,18 @@
 class Repomix < Formula
   desc "Pack repository contents into a single AI-friendly file"
   homepage "https:github.comyamadashyrepomix"
-  url "https:registry.npmjs.orgrepomix-repomix-0.3.6.tgz"
-  sha256 "a631989af4463a4a274b9df9a1732fa9a62ac005f7e3018f538f26d0892ae3d6"
+  url "https:registry.npmjs.orgrepomix-repomix-0.3.7.tgz"
+  sha256 "8399b5ad3b2afd26d32031e32d51b458cd74ab7515a8b38c4831f896c4d76c5e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9763b3a5c95f0b13eb61846e5cc79e6c5a2e6d31734121f0d62dd7f44a8749ac"
-    sha256 cellar: :any,                 arm64_sonoma:  "9763b3a5c95f0b13eb61846e5cc79e6c5a2e6d31734121f0d62dd7f44a8749ac"
-    sha256 cellar: :any,                 arm64_ventura: "9763b3a5c95f0b13eb61846e5cc79e6c5a2e6d31734121f0d62dd7f44a8749ac"
-    sha256 cellar: :any,                 sonoma:        "48ebfd63bacb163bc41207ab6dc0a568f4b7de9e6e8c6f4070e5cf47112ec8f5"
-    sha256 cellar: :any,                 ventura:       "48ebfd63bacb163bc41207ab6dc0a568f4b7de9e6e8c6f4070e5cf47112ec8f5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3554fd97587de9024651970a91ae4cee860058bd84d79ee7e3174ec3dba8ede8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "81a08a5ef725c3cafdc585e8ffc64b6e248e3c66d5b832a04198bf54e8f20aac"
+    sha256 cellar: :any,                 arm64_sequoia: "e8fe5a068c4117c1d49f544983c58a7788359cfd697419d9327777cd1724dfda"
+    sha256 cellar: :any,                 arm64_sonoma:  "e8fe5a068c4117c1d49f544983c58a7788359cfd697419d9327777cd1724dfda"
+    sha256 cellar: :any,                 arm64_ventura: "e8fe5a068c4117c1d49f544983c58a7788359cfd697419d9327777cd1724dfda"
+    sha256 cellar: :any,                 sonoma:        "ed7c4e0e1b55f3a23da9a9e02ef2dcbbe876537749b6d86384cc96a76149d928"
+    sha256 cellar: :any,                 ventura:       "ed7c4e0e1b55f3a23da9a9e02ef2dcbbe876537749b6d86384cc96a76149d928"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6324241865e4f2833fcefc2ff887d309db5a0498eaeb004a7ad5e9cf1fef970"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "101b965e3e6e3dffdc471e19b82155738138504e394986b80d0191cd81b72218"
   end
 
   depends_on "node"

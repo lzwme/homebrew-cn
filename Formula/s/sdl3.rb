@@ -23,9 +23,9 @@ class Sdl3 < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "pkgconf" => :build
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "libice"
     depends_on "libxcursor"
     depends_on "libxscrnsaver"

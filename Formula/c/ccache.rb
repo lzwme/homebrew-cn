@@ -4,16 +4,17 @@ class Ccache < Formula
   url "https:github.comccacheccachereleasesdownloadv4.11.3ccache-4.11.3.tar.xz"
   sha256 "d5a340e199977b7b1e89c0add794132c977fdc2ecc7ca5451e03d43627a1b1be"
   license "GPL-3.0-or-later"
+  revision 1
   head "https:github.comccacheccache.git", branch: "master"
 
   bottle do
-    sha256               arm64_sequoia: "b0150ab64610ce9048d6a1e546890969ca5275eace8ab165cedb554566cd2086"
-    sha256 cellar: :any, arm64_sonoma:  "7ff1f6c9d9f827479c2fd28e132d81a92fec384264b5b912033dba8163b3832e"
-    sha256               arm64_ventura: "254e15d0b3c459251a14fbed5d131afb5bd7713156834776d99a08478eb6f78c"
-    sha256 cellar: :any, sonoma:        "e87ac5aeba2bb3eac30df9f11e3db06df741be895ac9e88c62b148752dc18718"
-    sha256 cellar: :any, ventura:       "e1618c259a9dc5f954d73cc8ab936a32dc5c5c27b3e22a021c6a9aa9e219ce39"
-    sha256               arm64_linux:   "2854130bf7727dbe7f1b68b5fb7acd5e1d31886de381733174dd78f83c3c40d9"
-    sha256               x86_64_linux:  "1371745bdec3e4799b66d2c11c7bd212cdda3175843b682ab52062191aea4004"
+    sha256               arm64_sequoia: "e99e59f16c682d93fe0b9b5c7681cdce749f0b90291108fa74edcad569286d96"
+    sha256 cellar: :any, arm64_sonoma:  "aa9c9558b72ef410e13c8718080ee0d98f67b2c3c04d11bf3ade424965bdd098"
+    sha256               arm64_ventura: "35fed775f7dc5b4822e3b0ca5e59950b289a7840e776e7501133feb5c7830391"
+    sha256 cellar: :any, sonoma:        "4bac698f691b21bb8209121c23e5330397e5eb139646e94dc05f78372f450e85"
+    sha256 cellar: :any, ventura:       "ab684bfb9e86f230652977ef4a3d4fb7ea25856ad094ca029fba3ea8b56ad001"
+    sha256               arm64_linux:   "3bda7b43285d7c6151c7703a56ce4f6ff0047cac34e36d2ed48541dcaebd8a55"
+    sha256               x86_64_linux:  "a504ce0e91c2ad0a929a7fd15a23579f6bbb725e32e952b0ef549f003c69d344"
   end
 
   depends_on "asciidoctor" => :build
@@ -58,12 +59,15 @@ class Ccache < Formula
       gcc gcc2 gcc3 gcc-3.3 gcc-4.0
       gcc-4.2 gcc-4.3 gcc-4.4 gcc-4.5 gcc-4.6 gcc-4.7 gcc-4.8 gcc-4.9
       gcc-5 gcc-6 gcc-7 gcc-8 gcc-9 gcc-10 gcc-11 gcc-12 gcc-13 gcc-14
+      gcc-15
       c++ c++3 c++-3.3 c++-4.0
       c++-4.2 c++-4.3 c++-4.4 c++-4.5 c++-4.6 c++-4.7 c++-4.8 c++-4.9
       c++-5 c++-6 c++-7 c++-8 c++-9 c++-10 c++-11 c++-12 c++-13 c++-14
+      c++-15
       g++ g++2 g++3 g++-3.3 g++-4.0
       g++-4.2 g++-4.3 g++-4.4 g++-4.5 g++-4.6 g++-4.7 g++-4.8 g++-4.9
       g++-5 g++-6 g++-7 g++-8 g++-9 g++-10 g++-11 g++-12 g++-13 g++-14
+      g++-15
       i686-w64-mingw32-gcc i686-w64-mingw32-g++
       x86_64-w64-mingw32-gcc x86_64-w64-mingw32-g++
     ].each do |prog|

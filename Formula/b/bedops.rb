@@ -1,21 +1,18 @@
 class Bedops < Formula
   desc "Set and statistical operations on genomic data of arbitrary scale"
   homepage "https:github.combedopsbedops"
-  url "https:github.combedopsbedopsarchiverefstagsv2.4.41.tar.gz"
-  sha256 "3b868c820d59dd38372417efc31e9be3fbdca8cf0a6b39f13fb2b822607d6194"
+  url "https:github.combedopsbedopsarchiverefstagsv2.4.42.tar.gz"
+  sha256 "9daa0c098e37490a07f84664d2c61ff8909689995cf7e1673d259ccd4f1c453c"
   license "GPL-2.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "f662fcab9ba091a7ffcf39bd47ea5e41f870905a14e789a77d5024a6430281a3"
-    sha256 cellar: :any,                 arm64_sonoma:   "dd564d3cdff0027c493485c2ff35c9e5d5bda6456877dcbbba375eaac4d51d5f"
-    sha256 cellar: :any,                 arm64_ventura:  "dc32a609274e337d4372a480187edbef851a031ab654f7ed96d4063bc2b568dd"
-    sha256 cellar: :any,                 arm64_monterey: "3db503b39d5c54fe63767b5904538ffe0e656706bf0d575d5b4aa3fbf710d491"
-    sha256 cellar: :any,                 sonoma:         "971e7b2619817f1ee848298cb8520e8c5f04bf5cb312cf822bf398a9f533353f"
-    sha256 cellar: :any,                 ventura:        "1b6e6b69ae7a9893e81ff2f90f2b9e395f4d49cf9480b919597597054438c9b7"
-    sha256 cellar: :any,                 monterey:       "dc2dfc7bfc8d29e1591a73b7c9697de4b8161a312acc1c1fcc0c9a311c1bc055"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "0a929b6dda707a961601eb95a14fce9fd6c629ba4bf1161aeec5ace4cdd5373e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "7df0184574d41dcc2f66a7ec2c762c7e142475f5557631de50883e4f0556d421"
+    sha256 cellar: :any,                 arm64_sequoia: "a4233322968c5020044fae4eebb8454b89f21f0a5d8e148a354d6e6ce34c29a1"
+    sha256 cellar: :any,                 arm64_sonoma:  "20bb111818a6579c66d41e8f1197db5e2bfec0a552683c613a502f6c948bb545"
+    sha256 cellar: :any,                 arm64_ventura: "d76e57a5614cc8aa3ca1f80c578a3f1927afdd38b0c6781f661decbed04d9b9b"
+    sha256 cellar: :any,                 sonoma:        "8f697e9debc25f693bc1ae11b4cda7ca24c9daa5473337185d498b25de092232"
+    sha256 cellar: :any,                 ventura:       "28016580353e6377af02c3238032cad2eb0053a09ee84fcc98ed3f6a161def52"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "75447ca25f0cc6f2c06a93085e0ca3724ed9fa26ebe46a3191f0a3af91c3d1bc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "afc3de7b8daff4e67a1dcf796e5ae9ddb12954d88eaeaac332ac30c0c22159ba"
   end
 
   depends_on "jansson"
@@ -25,8 +22,8 @@ class Bedops < Formula
 
   # Apply Debian patch to allow using systembrew libraries
   patch do
-    url "https:sources.debian.orgdatamainbbedops2.4.41%2Bdfsg-1debianpatchesuse_debian_libs"
-    sha256 "e9ec0c4603a6978af2eb2fc998091de855e397a456da240169140ad4dcbeae64"
+    url "https:raw.githubusercontent.comHomebrewformula-patches1d12e712a16527def49be17286f95fd501d00285bedops2.4.42-debian.patch"
+    sha256 "7d88db7624500521988d5260ec290578db74e85ad4b0cf0e1552e548691c3a21"
   end
 
   def install

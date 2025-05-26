@@ -1,10 +1,9 @@
 class Tesseract < Formula
   desc "OCR (Optical Character Recognition) engine"
   homepage "https:tesseract-ocr.github.io"
-  url "https:github.comtesseract-ocrtesseractarchiverefstags5.5.0.tar.gz"
-  sha256 "f2fb34ca035b6d087a42875a35a7a5c4155fa9979c6132365b1e5a28ebc3fc11"
+  url "https:github.comtesseract-ocrtesseractarchiverefstags5.5.1.tar.gz"
+  sha256 "a7a3f2a7420cb6a6a94d80c24163e183cf1d2f1bed2df3bbc397c81808a57237"
   license "Apache-2.0"
-  revision 1
   head "https:github.comtesseract-ocrtesseract.git", branch: "main"
 
   livecheck do
@@ -13,13 +12,13 @@ class Tesseract < Formula
   end
 
   bottle do
-    sha256               arm64_sequoia: "a38cf90d587ff998ce2df8fa9f5092700603f3a11828b964948911b93af532a1"
-    sha256               arm64_sonoma:  "a8a2450fbbbce956f492f02aba1bf2d3a7866263d428a823df6fa122cf3c1139"
-    sha256               arm64_ventura: "45c101cb9aa70fd7276bce49946043f14cb63210428cbdfc3bc6080f8c467f6f"
-    sha256 cellar: :any, sonoma:        "95b9ae7365584cdf4baaec48419138c8d35ccf207693b9eb1c3e026abc399d8e"
-    sha256 cellar: :any, ventura:       "ed5ba31f7c1f7b4f6645cf37cb7a18a37a543eb60c3c0199cb50a69d85507fe2"
-    sha256               arm64_linux:   "b5edabda5572cce8b05cebb28ec4f3b33d5f4aa3e712156fa8e5f4ac74396bc6"
-    sha256               x86_64_linux:  "3b17fc1d99ecf8ba3d829c90561c9198b36c78f9d8277cb0e95e41351cf90e40"
+    sha256               arm64_sequoia: "868efa52231ba29227c3f394bbb6ed684743222cf15622661f253a9f0d6164ed"
+    sha256               arm64_sonoma:  "7b80671e010cd121964ed5962159fc8b42950796c33304de155c850378eaa49d"
+    sha256               arm64_ventura: "894270307a4fe98f7b0caa386c24efc7d995b60e468f5e4536b48b4b5275126d"
+    sha256 cellar: :any, sonoma:        "1a804044fac31660e5d4bdffec1de80c60b6d99b21312cdaa7f69fc6c4c42304"
+    sha256 cellar: :any, ventura:       "3f17c42eb79554bf6544344380fd67e22ecc54aed07e719b4f7f03c4fb6f83c7"
+    sha256               arm64_linux:   "a1f93cc60eca99a4c5bac11c40b02620df5628ea55b95bf6dd7813f533947724"
+    sha256               x86_64_linux:  "1874dfec6cedc7cd1bd7fd117623933eab4bbf7193128f81b6dffc7d8791eed3"
   end
 
   depends_on "autoconf" => :build

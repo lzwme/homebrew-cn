@@ -18,11 +18,11 @@ class Wasmer < Formula
   end
 
   depends_on "cmake" => :build
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "wabt" => :build
 
   on_linux do
-    depends_on "pkgconf" => :build
     depends_on "libxkbcommon"
   end
 

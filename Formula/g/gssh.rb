@@ -1,28 +1,24 @@
 class Gssh < Formula
   desc "SSH automation tool based on Groovy DSL"
   homepage "https:gradle-ssh-plugin.github.io"
-  url "https:github.comint128groovy-ssharchiverefstags2.11.2.tar.gz"
-  sha256 "0e078b37fe1ba1a9ca7191e706818e3b423588cac55484dda82dbbd1cdfe0b24"
+  url "https:github.comint128groovy-ssharchiverefstags2.12.0.tar.gz"
+  sha256 "b2ce4ddc0d208e90ab4e986a1b1d759955783bdf3fe046f770eba98e6e6a13a9"
   license "Apache-2.0"
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "908725192316eb3e9c9d54688d6233261998fc248c0196d5c518fc504ee5ec79"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fee6aa3a10a6bc1427d48fcd271b055a8c7f4f7fedc7164519e2be8b7aa81b98"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "701b4eb639074e1e7b39d3358531836bf142f3751123145e701aaa71fd17cb03"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3f5ed2374501abd977eb5c67490489ebe7354094c48f878d01543bd3d69a8782"
-    sha256 cellar: :any_skip_relocation, sonoma:         "966fffd78fe61b7292a4141678a84e3a700a9388ecb2ab04ef2daba8220ccc5f"
-    sha256 cellar: :any_skip_relocation, ventura:        "2b1130e6167fd512b87c843e1ebe20830b95bb21e98469cd681a944897300c61"
-    sha256 cellar: :any_skip_relocation, monterey:       "1b51f981f8523077dbc4ac4269267ef57fc4c38d3c015bac0e14e1f612044f16"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "80e5fade9eca898a2d7d3179b753757926e102a9cc08ba3c9868132b816b72e9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "db58030c9483c22ecde1258a00dd0bd3f1da7649e1114178e0495e0195296ef6"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6811a36ed6d1d50a0128cfcbe2d49d1e58e42f5f8f19a77f7e01dc559f6da7a8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e78ac9c48bc0993ba4f7f668a3843bfc68156857267809e14b6536ddcb389fde"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "827e8749626bd62fe6bbaefd247dffe3ccdc6562898a921af2f5839d4b842477"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c2837254b95e0d2ee0eeda3f0baaca1afff32499a5a49fcfae5be9b4903068cd"
+    sha256 cellar: :any_skip_relocation, ventura:       "5dd2bfab32371162fe7f5c1af5ffa917c0d3d33188b53656df6be5e404751994"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ff58b3274940f9598bf67f133d1a3e7e0d8370ff958a3b6989755918e47da34e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4756849c57e1ad9a7cc292f65c4ea7d10ee2a2b6ba3cca7c411d07e85bb5eed5"
   end
+
+  deprecate! date: "2025-05-25", because: :repo_archived
 
   depends_on "gradle" => :build
   depends_on "openjdk@21"
-
-  # gradle 8 build patch, remove in next release
-  patch :DATA
 
   def install
     ENV["CIRCLE_TAG"] = version
@@ -36,20 +32,3 @@ class Gssh < Formula
     assert_match "groovy-ssh-#{version}", shell_output("#{bin}gssh --version")
   end
 end
-
-__END__
-diff --git aclibuild.gradle bclibuild.gradle
-index 8044c6e..e6c2815 100644
---- aclibuild.gradle
-+++ bclibuild.gradle
-@@ -32,7 +32,7 @@ jar {
- }
-
- shadowJar {
--    baseName = 'gssh'
--    classifier = ''
--    version = ''
-+    archiveBaseName = 'gssh'
-+    archiveVersion = ''
-+    archiveClassifier = ''
- }

@@ -1,39 +1,10 @@
 class OsrmBackend < Formula
   desc "High performance routing engine"
   homepage "https:project-osrm.org"
+  url "https:github.comProject-OSRMosrm-backendarchiverefstagsv6.0.0.tar.gz"
+  sha256 "369192672c0041600740c623ce961ef856e618878b7d28ae5e80c9f6c2643031"
   license "BSD-2-Clause"
-  revision 8
   head "https:github.comProject-OSRMosrm-backend.git", branch: "master"
-
-  # TODO: Remove `conflicts_with "mapnik"` in release that has following commit:
-  # https:github.comProject-OSRMosrm-backendcommitc1ed73126dd467171dc7adb4ad07864909bcb90f
-  stable do
-    url "https:github.comProject-OSRMosrm-backendarchiverefstagsv5.27.1.tar.gz"
-    sha256 "52391580e0f92663dd7b21cbcc7b9064d6704470e2601bf3ec5c5170b471629a"
-
-    # Backport commit to build with CMake 4. Remove in the next release
-    patch do
-      url "https:github.comProject-OSRMosrm-backendcommitd691af4860350287041676178ceb511b240c336c.patch?full_index=1"
-      sha256 "216a143e58ee96abf4585b0f1d046469f7b42966e175b3b7b30350c232b48fff"
-    end
-
-    # Backport fix for Boost 1.85.0. Remove in the next release.
-    # PR ref: https:github.comProject-OSRMosrm-backendpull6856
-    patch do
-      url "https:github.comProject-OSRMosrm-backendcommit10ec6fc33547e4b96a5929c18db57fb701152c68.patch?full_index=1"
-      sha256 "4f475ed8a08aa95a2b626ba23c9d8ac3dc55d54c3f163e3d505d4a45c2d4e504"
-    end
-
-    # Backport fix for missing include. Remove in the next release.
-    # Ref: https:github.comProject-OSRMosrm-backendcommit565959b3896945a0eb437cc799b697be023121ef
-    #
-    # Also backport sol2.hpp workaround to avoid a Clang bug. Remove in the next release
-    # Ref: https:github.comProject-OSRMosrm-backendcommit523ee762f077908d03b66d0976c877b52adf22fa
-    #
-    # Also add diff from open PR to support Boost 1.87.0
-    # Ref: https:github.comProject-OSRMosrm-backendpull7073
-    patch :DATA
-  end
 
   livecheck do
     url :stable
@@ -41,16 +12,17 @@ class OsrmBackend < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "81bccb3ebd19507e9fd25afecce4ebef9226f4a2fdc7438c8cfd1f4e39d03932"
-    sha256 cellar: :any,                 arm64_sonoma:  "3d055a3ce881d4d191620dc35ea7d7fcc4c30578eb0ba9de126a6c53daeeed19"
-    sha256 cellar: :any,                 arm64_ventura: "22e157f68d7694ee9f4e3be99e571dbb782a4322df6b5126bafacc8c68c25bd7"
-    sha256 cellar: :any,                 sonoma:        "1bbde2078ad5bf2dc875f06e5ce07725962e3e47263ed5e35b649beb3d25b7f7"
-    sha256 cellar: :any,                 ventura:       "4e3d544640bbfefb638be3bf2e098463db14f12ede06285d1a284a8446335e92"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "448c8a5d909afa8bd305ee80e5cbdeda34f1bebdc4df34b869ec8a85ab12fffd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b010082cf4787ceec009ed78886362aded2f95eb0605a543328e92a3d38e758"
+    sha256 cellar: :any,                 arm64_sequoia: "d99d43985b7eb9874b9a854559a8dd7ba095653a0bc7991f540a9f691098f381"
+    sha256 cellar: :any,                 arm64_sonoma:  "1238dc214ee091861d48367a2c78b5458ccdfdd6737404fd8184f4dd815e6d34"
+    sha256 cellar: :any,                 arm64_ventura: "af0a8f5ceb7d82b9aece2b378d98d9d2aefbd830a9cfbaba79d5433160540528"
+    sha256 cellar: :any,                 sonoma:        "fb84337d531fe6c48eee4a7dd0abf33cc4ad0af6742abf9466880847e1470ba1"
+    sha256 cellar: :any,                 ventura:       "2eeecffa84cf777cb0e381b6e6e61ce41fc32ca7aa7b5a8c0244410d585c7c8d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9aa04dc44e906b36396551a0acc0482eaad60ebb811243bafa85f2c39d2903c1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc54945839a76c5d681129b99814b936674ef7caf365a7d9d45919d79710f160"
   end
 
   depends_on "cmake" => :build
+  depends_on "pkgconf" => :build
 
   depends_on "boost"
   depends_on "libstxxl"
@@ -63,16 +35,22 @@ class OsrmBackend < Formula
   uses_from_macos "expat"
   uses_from_macos "zlib"
 
+  on_linux do
+    depends_on "gcc@12" if DevelopmentTools.gcc_version("gcc") < 12
+
+    fails_with :gcc do
+      version "11"
+      cause <<~CAUSE
+        usrincludec++11type_traits:987:52: error: static assertion failed: template argument must be a complete class or an unbounded array
+          static_assert(std::__is_complete_or_unbounded(__type_identity<_Tp>{}),
+      CAUSE
+    end
+  end
+
   conflicts_with "flatbuffers", because: "both install flatbuffers headers"
   conflicts_with "mapnik", because: "both install Mapbox Variant headers"
 
   def install
-    # Workaround to build with CMake 4. Remove in the next release
-    if build.stable?
-      odie "Remove CMake 4 workaround!" if version >= 6
-      ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
-    end
-
     # Work around build failure: duplicate symbol 'boost::phoenix::placeholders::uarg9'
     # Issue ref: https:github.comboostorgphoenixissues111
     ENV.append_to_cflags "-DBOOST_PHOENIX_STL_TUPLE_H_"
@@ -129,67 +107,3 @@ class OsrmBackend < Formula
     assert_path_exists testpath"test.osrm.names", "osrm-extract generated no output!"
   end
 end
-
-__END__
-diff --git aincludeextractorsuffix_table.hpp bincludeextractorsuffix_table.hpp
-index 5d16fe6..2c378bf 100644
---- aincludeextractorsuffix_table.hpp
-+++ bincludeextractorsuffix_table.hpp
-@@ -3,6 +3,7 @@
-
- #include <string>
- #include <unordered_set>
-+#include <vector>
-
- #include "utilstring_view.hpp"
-
-diff --git athird_partysol2-3.3.0includesolsol.hpp bthird_partysol2-3.3.0includesolsol.hpp
-index 8b0b7d36ea4ef2a36133ce28476ae1620fcd72b5..d7da763f735434bf4a40b204ff735f4e464c1b13 100644
---- athird_partysol2-3.3.0includesolsol.hpp
-+++ bthird_partysol2-3.3.0includesolsol.hpp
-@@ -19416,7 +19416,14 @@ namespace sol { namespace function_detail {
- 		}
-
- 		template <bool is_yielding, bool no_trampoline>
--		static int call(lua_State* L) noexcept(std::is_nothrow_copy_assignable_v<T>) {
-+		static int call(lua_State* L)
-+ see https:github.comThePhDsol2issues1581#issuecomment-2103463524
-+#if SOL_IS_ON(SOL_COMPILER_CLANG)
-+		 apparent regression in clang 18 - llvmllvm-project#91362
-+#else
-+			noexcept(std::is_nothrow_copy_assignable_v<T>)
-+#endif
-+		{
- 			int nr;
- 			if constexpr (no_trampoline) {
- 				nr = real_call(L);
-@@ -19456,7 +19463,14 @@ namespace sol { namespace function_detail {
- 		}
-
- 		template <bool is_yielding, bool no_trampoline>
--		static int call(lua_State* L) noexcept(std::is_nothrow_copy_assignable_v<T>) {
-+		static int call(lua_State* L)
-+ see https:github.comThePhDsol2issues1581#issuecomment-2103463524
-+#if SOL_IS_ON(SOL_COMPILER_CLANG)
-+		 apparent regression in clang 18 - llvmllvm-project#91362
-+#else
-+			noexcept(std::is_nothrow_copy_assignable_v<T>)
-+#endif
-+		{
- 			int nr;
- 			if constexpr (no_trampoline) {
- 				nr = real_call(L);
-diff --git aincludeserverserver.hpp bincludeserverserver.hpp
-index 34b8982e67..02b0dda050 100644
---- aincludeserverserver.hpp
-+++ bincludeserverserver.hpp
-@@ -53,8 +53,7 @@ class Server
-         const auto port_string = std::to_string(port);
- 
-         boost::asio::ip::tcp::resolver resolver(io_context);
--        boost::asio::ip::tcp::resolver::query query(address, port_string);
--        boost::asio::ip::tcp::endpoint endpoint = *resolver.resolve(query);
-+        boost::asio::ip::tcp::endpoint endpoint = *resolver.resolve(address, port_string).begin();
- 
-         acceptor.open(endpoint.protocol());
- #ifdef SO_REUSEPORT
