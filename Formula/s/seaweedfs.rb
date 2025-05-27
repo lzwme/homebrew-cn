@@ -2,8 +2,8 @@ class Seaweedfs < Formula
   desc "Fast distributed storage system"
   homepage "https:github.comseaweedfsseaweedfs"
   url "https:github.comseaweedfsseaweedfs.git",
-      tag:      "3.87",
-      revision: "e4e85052082e31c94cd133270afc9e8365641c8c"
+      tag:      "3.88",
+      revision: "6677f1f5639b8994f0fbe11a1bf991e9f88fa1da"
   license "Apache-2.0"
   head "https:github.comseaweedfsseaweedfs.git", branch: "master"
 
@@ -13,12 +13,12 @@ class Seaweedfs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a625ca1ba63fbe03c7ef49a55b25247c7cc6c68aed68e00e579a0995ce06e69"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c0771c73268e21108a17d87321c95f9507c8fc0d23026e788d266d270034cb1f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "46d492c11b85255145656e7dbbb566bdaa941750e79bfdec3f481657ff5e1eee"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1ef2670f09ed733f3aca7af05fc928d09ae520febda7aa7cb69e0f4566f57c4c"
-    sha256 cellar: :any_skip_relocation, ventura:       "585625f581b7c7e478b28f76156f36d446677264d18cf6070e284b325b965015"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6720978820100991f4b2e630287a2014dffe462c737120f5df4305086c6b389a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f8f6ff930aaf2246c9e0110a7626004ac702992bd48e6890497aaebd7c10425"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9202755f9fdd2e28b915f164adc6a9d12972076c52b8defff83107246b5a0dd1"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "dda2c85d934ec3ff296922a428d3f42392fd0ef9496d8d8eb5467bff1e9f1dde"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8e37604784a02de1fc141e753f425f539c1f58e9cf2a6e18d6d4e42395342470"
+    sha256 cellar: :any_skip_relocation, ventura:       "84b7be0f856a2bf2508729d532716d4ab6d1e2ef0231a838eb7b9aec61c96b5a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0d157eb8368daf33b5176d49ae9a593d5a1710946cab4537b6c54d64caf24a8"
   end
 
   depends_on "go" => :build

@@ -21,6 +21,7 @@ class ErlangAT24 < Formula
 
   # EOL with OTP-27 release (2024-05-20)
   deprecate! date: "2024-07-24", because: :unsupported
+  disable! date: "2025-07-24", because: :unsupported
 
   depends_on "openssl@3"
   depends_on "unixodbc"

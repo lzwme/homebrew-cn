@@ -1,8 +1,8 @@
 class DnscryptProxy < Formula
   desc "Secure communications between a client and a DNS resolver"
   homepage "https:dnscrypt.info"
-  url "https:github.comDNSCryptdnscrypt-proxyarchiverefstags2.1.11.tar.gz"
-  sha256 "3f17d952843f48d80f91198e2bde7a12bb98f857031ca92085451d33f6c149fa"
+  url "https:github.comDNSCryptdnscrypt-proxyarchiverefstags2.1.12.tar.gz"
+  sha256 "95fe29ed03dad0cdd34d47316ecb15c25f7ef5fab21d9ec52cbfc4743bcf5198"
   license "ISC"
   head "https:github.comDNSCryptdnscrypt-proxy.git", branch: "master"
 
@@ -12,12 +12,12 @@ class DnscryptProxy < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d58b77530ee3efdcd5e2eed71fb10a19db3d953080f008d7206cf126eede9d3d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d58b77530ee3efdcd5e2eed71fb10a19db3d953080f008d7206cf126eede9d3d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "d58b77530ee3efdcd5e2eed71fb10a19db3d953080f008d7206cf126eede9d3d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f3a10d2ceed37149132a681e179585dea613c2f328ca00ace39830aec8f61463"
-    sha256 cellar: :any_skip_relocation, ventura:       "f3a10d2ceed37149132a681e179585dea613c2f328ca00ace39830aec8f61463"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88c17169e3ed2b6917a1f2a63ee23df9bfdb6167cffdc495cb00028f7b9d1c1a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "38a991fd79def4d2ee222219c359c4fc1c17d40a285a770acffabf3699421e22"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "38a991fd79def4d2ee222219c359c4fc1c17d40a285a770acffabf3699421e22"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "38a991fd79def4d2ee222219c359c4fc1c17d40a285a770acffabf3699421e22"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3964f11eafa485a11c0d7b7643977a2e9f301ef23cea1f16d09e04f251332223"
+    sha256 cellar: :any_skip_relocation, ventura:       "3964f11eafa485a11c0d7b7643977a2e9f301ef23cea1f16d09e04f251332223"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bacbce7fc6809f62c43f35e400c771803a10ad1cbe95369939b8c0ce4cc097d3"
   end
 
   depends_on "go" => :build

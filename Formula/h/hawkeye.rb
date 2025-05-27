@@ -1,18 +1,18 @@
 class Hawkeye < Formula
   desc "Simple license header checker and formatter, in multiple distribution forms"
   homepage "https:github.comkorandoruhawkeye"
-  url "https:github.comkorandoruhawkeyearchiverefstagsv6.0.3.tar.gz"
-  sha256 "339a5d9b9461637b90b518158568607ba50bda4f27799af40d6cef28436255bc"
+  url "https:github.comkorandoruhawkeyearchiverefstagsv6.0.4.tar.gz"
+  sha256 "0f0f2ac6d18ddbf7eaa04fcd39e293eb836354f0ba5de985f349bbf009fb8cf0"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ea5793271a325cee369ad2297073eec9d999887339fbb0df05faaf9cc62d95c5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2ee33048b4858dcc734d160fe1bb86f2d66dc78f56052751a3c5432540642b14"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "af72ecfda55801481b2c1b66fd7d82aa61f42547a0954bff20ce301d6c610956"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9db1a87051b178dcaa1ed321fb2a2bf79aad0e27bec75002728e3f738ee34d64"
-    sha256 cellar: :any_skip_relocation, ventura:       "6ecd32e655b3321a0e0090e34d31810be8853eab976bd3317a877eb5c174e5d7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "08aca455279a8e6bac6b9cd02c12f47ae7293cff514264f902435f81d79131ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a5487fcf1de1b759ccb3eef7688d2dcdd12f1803b542edd9f32fa229ef7fd37c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "348936758fb3cbccca49666bedbb8aa85c196bf01437d3d56cf481261176d089"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3fe8f107f2087e1ec15f75bb1aaefa6cdcc52f661ef0b64d0404475044327fc9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3bc876b7db337c91b8c3bc109da340e2be45c8084e187112fccad8b3bf9d729e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "52d725e571f6e82058e340cb5a8a7b9427f74d927d4d10ac5d34f28abfd5e981"
+    sha256 cellar: :any_skip_relocation, ventura:       "54cbeb7a8e56034b3b22852c60bbb029abef5ee54292d836e8f8ba4ae4c1598b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b43df7f132a3a932a56a61108a1aecadbd846e971fa65aa4566b938ff3f6534d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b389df55ac7de112e8c31c55457676c17b4fd85d31871f04eb0e966055a1ecb2"
   end
 
   depends_on "rust" => :build

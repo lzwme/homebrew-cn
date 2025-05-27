@@ -5,13 +5,13 @@ cask "mps" do
   sha256 arm:   "cb2aaa6311252a655ef55f813d3dff78890c2a10cf0aeff885018c316390486b",
          intel: "1ddae8569c8a96beeb5e85d20f1eed9115ace532a1154b5624f526cb49ddeaa8"
 
-  url "https://download.jetbrains.com/mps/#{version.major_minor}/MPS-#{version.csv.first}-#{arch}.dmg"
+  url "https:download.jetbrains.commps#{version.major_minor}MPS-#{version.csv.first}-#{arch}.dmg"
   name "JetBrains MPS"
   desc "Create your own domain-specific language"
-  homepage "https://www.jetbrains.com/mps/"
+  homepage "https:www.jetbrains.commps"
 
   livecheck do
-    url "https://data.services.jetbrains.com/products/releases?code=MPS&latest=true&type=release"
+    url "https:data.services.jetbrains.comproductsreleases?code=MPS&latest=true&type=release"
     strategy :json do |json|
       json["MPS"]&.map do |release|
         version = release["version"]
@@ -27,13 +27,22 @@ cask "mps" do
   depends_on macos: ">= :high_sierra"
 
   app "MPS.app"
-  binary "#{appdir}/MPS.app/Contents/MacOS/mps"
+  # shim script (https:github.comHomebrewhomebrew-caskissues18809)
+  shimscript = "#{staged_path}mps.wrapper.sh"
+  binary shimscript, target: "mps"
+
+  preflight do
+    File.write shimscript, <<~EOS
+      #!binsh
+      exec '#{appdir}MPS.appContentsMacOSmps' "$@"
+    EOS
+  end
 
   zap trash: [
-    "~/Library/Application Support/MPS#{version.csv.first.major_minor}",
-    "~/Library/Caches/MPS#{version.csv.first.major_minor}",
-    "~/Library/Logs/MPS#{version.csv.first.major_minor}",
-    "~/Library/Preferences/MPS#{version.csv.first.major_minor}",
-    "~/MPSSamples.#{version.csv.first.major_minor}",
+    "~LibraryApplication SupportMPS#{version.csv.first.major_minor}",
+    "~LibraryCachesMPS#{version.csv.first.major_minor}",
+    "~LibraryLogsMPS#{version.csv.first.major_minor}",
+    "~LibraryPreferencesMPS#{version.csv.first.major_minor}",
+    "~MPSSamples.#{version.csv.first.major_minor}",
   ]
 end

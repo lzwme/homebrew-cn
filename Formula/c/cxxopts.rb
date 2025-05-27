@@ -1,13 +1,19 @@
 class Cxxopts < Formula
   desc "Lightweight C++ command-line option parser"
   homepage "https:github.comjarro2783cxxopts"
-  url "https:github.comjarro2783cxxoptsarchiverefstagsv3.2.1.tar.gz"
-  sha256 "841f49f2e045b9c6365997c2a8fbf76e6f215042dda4511a5bb04bc5ebc7f88a"
+  url "https:github.comjarro2783cxxoptsarchiverefstagsv3.3.1.tar.gz"
+  sha256 "3bfc70542c521d4b55a46429d808178916a579b28d048bd8c727ee76c39e2072"
   license "MIT"
   head "https:github.comjarro2783cxxopts.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "883a901ef150f303dfba9430fc0fd7f29a9f132406b35ebd9dcf481f23029957"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "24dcb23b8d9c163a1db1ebdb1876bb1158e2116bd1f8e10bb779f5c3644cc222"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "24dcb23b8d9c163a1db1ebdb1876bb1158e2116bd1f8e10bb779f5c3644cc222"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "24dcb23b8d9c163a1db1ebdb1876bb1158e2116bd1f8e10bb779f5c3644cc222"
+    sha256 cellar: :any_skip_relocation, sonoma:        "24dcb23b8d9c163a1db1ebdb1876bb1158e2116bd1f8e10bb779f5c3644cc222"
+    sha256 cellar: :any_skip_relocation, ventura:       "24dcb23b8d9c163a1db1ebdb1876bb1158e2116bd1f8e10bb779f5c3644cc222"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "26270aee8d41222b9753788ac2f05fff7b82f5cade93bc8c5001fb5aa790d602"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "26270aee8d41222b9753788ac2f05fff7b82f5cade93bc8c5001fb5aa790d602"
   end
 
   depends_on "cmake" => :build

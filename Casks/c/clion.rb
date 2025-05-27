@@ -5,13 +5,13 @@ cask "clion" do
   sha256 arm:   "475280e277cc94d18de228bf5f81ebd6ff14084c2e1d2b0db5b4612007dc46fe",
          intel: "e7558d0196390c18e2c11143aa59f2ad56c020d43ebd05057f997fa117abb484"
 
-  url "https://download.jetbrains.com/cpp/CLion-#{version.csv.first}#{arch}.dmg"
+  url "https:download.jetbrains.comcppCLion-#{version.csv.first}#{arch}.dmg"
   name "CLion"
   desc "C and C++ IDE"
-  homepage "https://www.jetbrains.com/clion/"
+  homepage "https:www.jetbrains.comclion"
 
   livecheck do
-    url "https://data.services.jetbrains.com/products/releases?code=CL&latest=true&type=release"
+    url "https:data.services.jetbrains.comproductsreleases?code=CL&latest=true&type=release"
     strategy :json do |json|
       json["CL"]&.map do |release|
         version = release["version"]
@@ -27,13 +27,22 @@ cask "clion" do
   depends_on macos: ">= :catalina"
 
   app "CLion.app"
-  binary "#{appdir}/CLion.app/Contents/MacOS/clion"
+  # shim script (https:github.comHomebrewhomebrew-caskissues18809)
+  shimscript = "#{staged_path}clion.wrapper.sh"
+  binary shimscript, target: "clion"
+
+  preflight do
+    File.write shimscript, <<~EOS
+      #!binsh
+      exec '#{appdir}CLion.appContentsMacOSclion' "$@"
+    EOS
+  end
 
   zap trash: [
-    "~/Library/Application Support/JetBrains/CLion#{version.major_minor}",
-    "~/Library/Caches/JetBrains/CLion#{version.major_minor}",
-    "~/Library/Logs/JetBrains/CLion#{version.major_minor}",
-    "~/Library/Preferences/com.jetbrains.CLion.plist",
-    "~/Library/Saved Application State/com.jetbrains.CLion.savedState",
+    "~LibraryApplication SupportJetBrainsCLion#{version.major_minor}",
+    "~LibraryCachesJetBrainsCLion#{version.major_minor}",
+    "~LibraryLogsJetBrainsCLion#{version.major_minor}",
+    "~LibraryPreferencescom.jetbrains.CLion.plist",
+    "~LibrarySaved Application Statecom.jetbrains.CLion.savedState",
   ]
 end

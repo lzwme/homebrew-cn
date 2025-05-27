@@ -2,19 +2,19 @@ class Libnghttp3 < Formula
   desc "HTTP3 library written in C"
   homepage "https:nghttp2.orgnghttp3"
   url "https:github.comngtcp2nghttp3.git",
-      tag:      "v1.9.0",
-      revision: "9ee0c9248f97c502cce01e6c8edcccd3723c61e6"
+      tag:      "v1.10.0",
+      revision: "481af9b0575b41954f421d1cbf3bc5ba5d35b611"
   license "MIT"
   head "https:github.comngtcp2nghttp3.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "07df76d04a3b7879cc6669a4da943f26190d90f997a032d299bc5e63dab18f65"
-    sha256 cellar: :any,                 arm64_sonoma:  "ad6f7c387f7f244a2032d6a3dfb61029b9faeeb4c6d90f892ca98e4ccfaa098f"
-    sha256 cellar: :any,                 arm64_ventura: "616f5c0613555d9a5f04744c6c73c43cecaeb98679542c5d65d9d1eaaa9edc94"
-    sha256 cellar: :any,                 sonoma:        "07812e22007268bdde352348ba8e53dd309f76a7f48543866ea3c2eada1afb17"
-    sha256 cellar: :any,                 ventura:       "42ea9a7b21c4860e5eceb6012a4d3d84f4be6d1df76c4189ea6ac73426e5da0d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8de8c24f2bc68715f84d65f7e57a3227422b21e40d36167efee2d602706fbc0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ca820a826f6bfd1895dc78a7b371f13928929000415316360253747e349a77af"
+    sha256 cellar: :any,                 arm64_sequoia: "c10e5300e26772d061d31e7b3afc006787a53229d7300b872e722e9fc977b312"
+    sha256 cellar: :any,                 arm64_sonoma:  "ef968af785950de6dc888abdc5774d6b45c18eb4741721a8ac8609f2693b460c"
+    sha256 cellar: :any,                 arm64_ventura: "a72fa85eafa74c918b8fcf01ec272c97cc8bf7aabe6079a9443bc7371a9dfd3b"
+    sha256 cellar: :any,                 sonoma:        "4b90e2e9d05e78dbd65646955246de3990401b3670b28a2cf3142e1c426d267d"
+    sha256 cellar: :any,                 ventura:       "8e473e4e860d0ded41c6eeb8489d7ba35473962543ea0e5e7cc09f5abc1c3a2c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "03a7bcc38b7beb71ef7c2d07ba618d58777ff31329bf55bfd217f6e2a99f5a25"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "def1333b041f7cd7905d06ac4c7bb64a865f82458a5acfa3196485f9bbab41aa"
   end
 
   depends_on "cmake" => :build

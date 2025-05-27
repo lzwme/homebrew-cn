@@ -5,13 +5,13 @@ cask "rustrover" do
   sha256 arm:   "3f12ad41285d6b67dcc577526976b5c394b44caa3f243147143968a505144a79",
          intel: "1419d2aac23965838e16c2bedc31851045f8b9d99ccf93594838a4e329059d92"
 
-  url "https://download.jetbrains.com/rustrover/RustRover-#{version.csv.first}#{arch}.dmg"
+  url "https:download.jetbrains.comrustroverRustRover-#{version.csv.first}#{arch}.dmg"
   name "RustRover"
   desc "Rust IDE"
-  homepage "https://www.jetbrains.com/rust/"
+  homepage "https:www.jetbrains.comrust"
 
   livecheck do
-    url "https://data.services.jetbrains.com/products/releases?code=RR&latest=true&type=release"
+    url "https:data.services.jetbrains.comproductsreleases?code=RR&latest=true&type=release"
     strategy :json do |json|
       json["RR"]&.map do |release|
         version = release["version"]
@@ -27,13 +27,22 @@ cask "rustrover" do
   depends_on macos: ">= :high_sierra"
 
   app "RustRover.app"
-  binary "#{appdir}/RustRover.app/Contents/MacOS/rustrover"
+  # shim script (https:github.comHomebrewhomebrew-caskissues18809)
+  shimscript = "#{staged_path}rustrover.wrapper.sh"
+  binary shimscript, target: "rustrover"
+
+  preflight do
+    File.write shimscript, <<~EOS
+      #!binsh
+      exec '#{appdir}RustRover.appContentsMacOSrustrover' "$@"
+    EOS
+  end
 
   zap trash: [
-    "~/Library/Application Support/JetBrains/RustRover#{version.major_minor}",
-    "~/Library/Caches/JetBrains/RustRover#{version.major_minor}",
-    "~/Library/Logs/JetBrains/RustRover#{version.major_minor}",
-    "~/Library/Preferences/com.jetbrains.rustrover.plist",
-    "~/Library/Saved Application State/com.jetbrains.rustrover.savedState",
+    "~LibraryApplication SupportJetBrainsRustRover#{version.major_minor}",
+    "~LibraryCachesJetBrainsRustRover#{version.major_minor}",
+    "~LibraryLogsJetBrainsRustRover#{version.major_minor}",
+    "~LibraryPreferencescom.jetbrains.rustrover.plist",
+    "~LibrarySaved Application Statecom.jetbrains.rustrover.savedState",
   ]
 end

@@ -1,22 +1,18 @@
 class LibgrapeLite < Formula
   desc "C++ library for parallel graph processing"
   homepage "https:github.comalibabalibgrape-lite"
-  url "https:github.comalibabalibgrape-litearchiverefstagsv0.3.4.tar.gz"
-  sha256 "4d7c08560d56fde4a407566fea5ea348cf8ea7df5dbcc3285dcbfe6d9e5d6ff7"
+  url "https:github.comalibabalibgrape-litearchiverefstagsv0.3.5.tar.gz"
+  sha256 "77b7f08ad10b26ec7e6f60bf90ab8281208758702a9e8d9dd00b1cd6f5560f39"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "a9b43421f7640ae0bf58c960c15c1f6ef7ea8dbffd6114085f51cf1ec786da4b"
-    sha256 cellar: :any,                 arm64_sonoma:   "169a84d962028247357fb70d3fd9a00eef09d04043bfc599c547b29545204dc6"
-    sha256 cellar: :any,                 arm64_ventura:  "fb65f947aab53a0b99aecdfe1eb27d7b3ebd3bf2deaae44983106d79be23324a"
-    sha256 cellar: :any,                 arm64_monterey: "669d5c4c46c62ca376f7d88d6ccd8ca1af65e4c5c496c22d59239dcc64aa7bb7"
-    sha256 cellar: :any,                 arm64_big_sur:  "e39c3c95ebf47c8a91ad1f4ec55e150f0fb983a0749b1c918fabb67cb7782b59"
-    sha256 cellar: :any,                 sonoma:         "2d3b960d3911a6a179bee03366ac528a70409ebda55a15fafbc2fd39e173030a"
-    sha256 cellar: :any,                 ventura:        "56fc6ce45234cdeebabf4e0e533cdf410fcb67f118635b030a774b5c1d80435f"
-    sha256 cellar: :any,                 monterey:       "5df9681434c5b8db7a4f10bc80d34154362a6e14eb8659166b857c04b11f188c"
-    sha256 cellar: :any,                 big_sur:        "dca697a6f0ffe5241d9e87cc361e3155351524e8087b105ceb383002a3abf364"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "ea7a2e7ebc3fd7739d360b0024e10a04dece25cac57b36905570a40b4ee90ddf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "4daa1bec1b6d6e493964783687cc05609cfa2e6e97279450134de32672eae244"
+    sha256 cellar: :any,                 arm64_sequoia: "a0f27854c66b84ff7b9457c056464ed04cd44f6bbcbbe2c194589a10906a9ff5"
+    sha256 cellar: :any,                 arm64_sonoma:  "4ed7d1abaeff94d789b82eb98be06f932fe14fd2a226c1b9b9070fb9e859bf3a"
+    sha256 cellar: :any,                 arm64_ventura: "3cb22292371844f5c1be714382a0fdb9b6053933864dafc60302dddfc6dd0c12"
+    sha256 cellar: :any,                 sonoma:        "04f1753ca0ee70b8b79015d789b0d926587ebffb00f24d0e3778339975ebcf1d"
+    sha256 cellar: :any,                 ventura:       "8f069e6f8225035353609b883fe9094b257976fdc7f50f89a10655ac63f2231f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e6204269477e655d73a80f39817e5532f96784bd803db190f9c1c346cee67b19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cba36dc3c38c447be22ad24fbcca0b1da56cfa6c409d14247244f95e30c6684"
   end
 
   depends_on "cmake" => :build
@@ -25,7 +21,7 @@ class LibgrapeLite < Formula
   depends_on "open-mpi"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "cmake", "-S", ".", "-B", "build", "-DCMAKE_POLICY_VERSION_MINIMUM=3.5", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end

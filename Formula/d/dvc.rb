@@ -6,15 +6,16 @@ class Dvc < Formula
   url "https:files.pythonhosted.orgpackagesf39dc7c143684a87119213dcbe1a7da36d5e5d701467a2da3a9d0ae1d428e3b9dvc-3.59.2.tar.gz"
   sha256 "3eecc058b5d43e4e3ff7dfa72970a5c7d26e7b19f48395946ab314ce479bc1ce"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c01237910bd753e3907b8a46e98e5469a2e0f09881904581678606cf1dfbf8d0"
-    sha256 cellar: :any,                 arm64_sonoma:  "2cbf501a191637cf2d808634e1fffd969f5af2f51327f0893419ef91c701382e"
-    sha256 cellar: :any,                 arm64_ventura: "fc8e7cc8b3617e0c7081c3b018b63b6dd9a5aaf695175c44041cbe92e3559c92"
-    sha256 cellar: :any,                 sonoma:        "e26eb7148d04d1903872e08d70a11174c66513146ddbacb377948699201a7195"
-    sha256 cellar: :any,                 ventura:       "72d11017a107ad1898bfee3e711dda45e35d1ac71288952fa77e7df8b8f963b1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ab56d99dd8fd9fc9e267a48fee69a6efa87cf6bcd8929c561cc986745f1cc531"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "94694d476ef7dfe9030abfbd0f2d692a3fa68f2d8b28db219992c175eaf8c788"
+    sha256 cellar: :any,                 arm64_sequoia: "304eca8e8204af87f78e3577821290e21ede737431d9ef95dc2fa10d2fa83e32"
+    sha256 cellar: :any,                 arm64_sonoma:  "f67a05abf10896ccefb643f476f3cd99b49ba1dca411a69b1d38d69b842207f8"
+    sha256 cellar: :any,                 arm64_ventura: "0f9e36e84002c30fbaacdd2fd32d370458f80a1718217accde826640d57686a5"
+    sha256 cellar: :any,                 sonoma:        "8c3adac734e5d7a9b4591ba63934803b63f68e159216bfcd9c6da0c303fa8dde"
+    sha256 cellar: :any,                 ventura:       "b5f1d58d86b9f3a089628c133cc5a9241b7913827e37a98d84ab32da3ae74d27"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "55d3f54c91fd59ad98ee2f44dc9eae57ff34e51b5853964660439ee7f92efede"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4da9f4e00729d50dfb8ef6ad54cfa14c8d1d7d49c22a461545e641ccdfed773f"
   end
 
   depends_on "cmake" => :build # for pyarrow
@@ -589,8 +590,8 @@ class Dvc < Formula
   end
 
   resource "pyarrow" do
-    url "https:files.pythonhosted.orgpackages7f09a9046344212690f0632b9c709f9bf18506522feb333c894d0de81d62341apyarrow-19.0.1.tar.gz"
-    sha256 "3bf266b485df66a400f282ac0b6d1b500b9d2ae73314a153dbe97d6d5cc8a99e"
+    url "https:files.pythonhosted.orgpackagesa2eea7810cb9f3d6e9238e61d312076a9859bf3668fd21c69744de9532383912pyarrow-20.0.0.tar.gz"
+    sha256 "febc4a913592573c8d5805091a6c2b5064c8bd6e002131f01061797d91c783c1"
   end
 
   resource "pyasn1" do

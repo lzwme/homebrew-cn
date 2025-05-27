@@ -5,13 +5,13 @@ cask "webstorm" do
   sha256 arm:   "7acfa46536b598b576775892ac46bb570dd06bc9461cc58c51b9efd4afd09139",
          intel: "44363b71b4ad461c07c2c0ae8424f6efabe356b347a2974765f88549a8ee183c"
 
-  url "https://download.jetbrains.com/webstorm/WebStorm-#{version.csv.first}#{arch}.dmg"
+  url "https:download.jetbrains.comwebstormWebStorm-#{version.csv.first}#{arch}.dmg"
   name "WebStorm"
   desc "JavaScript IDE"
-  homepage "https://www.jetbrains.com/webstorm/"
+  homepage "https:www.jetbrains.comwebstorm"
 
   livecheck do
-    url "https://data.services.jetbrains.com/products/releases?code=WS&latest=true&type=release"
+    url "https:data.services.jetbrains.comproductsreleases?code=WS&latest=true&type=release"
     strategy :json do |json|
       json["WS"]&.map do |release|
         version = release["version"]
@@ -27,17 +27,26 @@ cask "webstorm" do
   depends_on macos: ">= :high_sierra"
 
   app "WebStorm.app"
-  binary "#{appdir}/WebStorm.app/Contents/MacOS/webstorm"
+  # shim script (https:github.comHomebrewhomebrew-caskissues18809)
+  shimscript = "#{staged_path}webstorm.wrapper.sh"
+  binary shimscript, target: "webstorm"
+
+  preflight do
+    File.write shimscript, <<~EOS
+      #!binsh
+      exec '#{appdir}WebStorm.appContentsMacOSwebstorm' "$@"
+    EOS
+  end
 
   zap trash: [
-    "~/Library/Application Support/JetBrains/WebStorm#{version.major_minor}",
-    "~/Library/Caches/com.apple.nsurlsessiond/Downloads/com.jetbrains.WebStorm",
-    "~/Library/Caches/JetBrains/WebStorm#{version.major_minor}",
-    "~/Library/Logs/JetBrains/WebStorm#{version.major_minor}",
-    "~/Library/Preferences/com.jetbrains.WebStorm.plist",
-    "~/Library/Preferences/jetbrains.webstorm.*.plist",
-    "~/Library/Preferences/WebStorm#{version.major_minor}",
-    "~/Library/Preferences/webstorm.plist",
-    "~/Library/Saved Application State/com.jetbrains.WebStorm.savedState",
+    "~LibraryApplication SupportJetBrainsWebStorm#{version.major_minor}",
+    "~LibraryCachescom.apple.nsurlsessiondDownloadscom.jetbrains.WebStorm",
+    "~LibraryCachesJetBrainsWebStorm#{version.major_minor}",
+    "~LibraryLogsJetBrainsWebStorm#{version.major_minor}",
+    "~LibraryPreferencescom.jetbrains.WebStorm.plist",
+    "~LibraryPreferencesjetbrains.webstorm.*.plist",
+    "~LibraryPreferencesWebStorm#{version.major_minor}",
+    "~LibraryPreferenceswebstorm.plist",
+    "~LibrarySaved Application Statecom.jetbrains.WebStorm.savedState",
   ]
 end

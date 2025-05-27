@@ -12,6 +12,7 @@ class RnaStar < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "eef8d5c492f1e608a796350bd6a1fd0acfd46487c18ce901aeaf7aae8d570607"
     sha256 cellar: :any_skip_relocation, sonoma:        "b53c13aeff5e16110831413444b3bea8e6bdecbf068950a7431d8e8744f8583b"
     sha256 cellar: :any_skip_relocation, ventura:       "bf2216ad5cce311a52543ea4e1921a203ca6c1f03ed99057f977d804ed8326c5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "13e7fc7429c847374ed68269193f64d78c78359d1fd97bab32ab47d1f3f0719c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8766e41ed4f092c6fc9715603a34309012200a8db2cb2cd0bdea1c40534f64d6"
   end
 

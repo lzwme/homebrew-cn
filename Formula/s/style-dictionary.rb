@@ -11,6 +11,7 @@ class StyleDictionary < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "8c57727da1d5247d0df445e3a713f4f4b05c079de39097f7305e7294a0ed889f"
     sha256 cellar: :any_skip_relocation, sonoma:        "0ea502e55352ddc783a2fe366c25fca345b98097f825c71434d0071c102cdfc0"
     sha256 cellar: :any_skip_relocation, ventura:       "0ea502e55352ddc783a2fe366c25fca345b98097f825c71434d0071c102cdfc0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8c57727da1d5247d0df445e3a713f4f4b05c079de39097f7305e7294a0ed889f"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "8c57727da1d5247d0df445e3a713f4f4b05c079de39097f7305e7294a0ed889f"
   end
 

@@ -1,19 +1,19 @@
 class Precious < Formula
   desc "One code quality tool to rule them all"
   homepage "https:github.comhouseabsoluteprecious"
-  url "https:github.comhouseabsolutepreciousarchiverefstagsv0.8.0.tar.gz"
-  sha256 "163b284fff7b723f9645312d1a45fe7149885fa40269c6ee92866d46a1da177b"
+  url "https:github.comhouseabsolutepreciousarchiverefstagsv0.9.0.tar.gz"
+  sha256 "473c1f32227fb63c30d7f9cfb516158c3157c5b0f497ac4d3a57834756c1c0f6"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comhouseabsoluteprecious.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b457ca7da867684a3c0f3604cdb058d4817f2371ab90804a45bf8b1511d80de3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e8ebd1903d575ace899f49c82c6a986aae358b53442e688beb84d27caca8e7b2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0a07763a1d8571b9d212a65decd5d027e70d1f69ae53f8ad22bdb618f054a6ca"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f59b2871ebbdf1243e0fe21cc311717d9519bfd87cd971ba89d1c7450cf2c866"
-    sha256 cellar: :any_skip_relocation, ventura:       "bc0492d280551835ef5e9d2fe17dd11c0c89f03a95d0b40c24477b40862e3a09"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "97803d50efa42e499787e243a4d415fa628eabd04850920fd5cb5cb5f84e66a4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f065796d18580e7962b43e1dbf6f58ce2e1e948ebd27c8bc8493d1546c271642"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5895cd2fad0927f9ae3dbb4c3d50e5d690419713807580f5fae7be0bbe52517c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7dfbe41882d3de26278c5b4c2ad0dcbc3a6121aa97e805167e4c89611938f0a0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5b082d2cff38ef0ee70728d05c8afdcb3a6d9a4e8a69a845b03fffd6fb3a3429"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7840007f9159a7c778454a67c18e1e2dc52780ad2d2faed51774292027a35222"
+    sha256 cellar: :any_skip_relocation, ventura:       "89fb96e2e3fd576a496b1bf3ad0b4fdea3d80fd2f34c871af6def4d9b7ff6455"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "955dda90856a4cb1b3d91a15a1dc1878aa2fa10b52cc65151de96a914b613995"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a4c5433904dd0840d6034eac5391ef88cac3c17c0890e8eee85bf4705dd58f65"
   end
 
   depends_on "rust" => :build

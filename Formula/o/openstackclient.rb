@@ -3,19 +3,18 @@ class Openstackclient < Formula
 
   desc "Command-line client for OpenStack"
   homepage "https://openstack.org"
-  url "https://files.pythonhosted.org/packages/81/81/afb257489a665cfc330129cc8bb74c4131a085c310eeb74cc86391c3dd06/python_openstackclient-8.0.0.tar.gz"
-  sha256 "5b7a5e06893f833b5d296d019c50d42c7368e37748ee6be8e9b15655b999424e"
+  url "https://files.pythonhosted.org/packages/5d/30/a214551b710258ee6c878d9b77bcc43d300a6dacecb6e6662220c623e147/python_openstackclient-8.1.0.tar.gz"
+  sha256 "9b9c42b3f6bc4b4b480a6254fc560acb019787831e094396dbf9ac9ae571ae4b"
   license "Apache-2.0"
-  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2fad60f00c9185c1f946648cd40967e2fdd014a1d42971dc29d5983efd3aae4a"
-    sha256 cellar: :any,                 arm64_sonoma:  "1d42335c543f0f725aa2be1b2559c3298ef33a38342b074ae050ba5e018d0bf5"
-    sha256 cellar: :any,                 arm64_ventura: "442e29c5f6decd6c4e482c33f7481ea6067a717c26594da5971ac4ac35b87081"
-    sha256 cellar: :any,                 sonoma:        "d2d6090c3538019ac17be1481953a9ae08eedf570af0acdba02b1aeec4384caf"
-    sha256 cellar: :any,                 ventura:       "d772a3a5c22faa6908d8dbcf3f8ba595e5b55d119f55be5a59cdfd02c086a201"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "feb559e9db03421bbedc479b26b34dc96061fc1a539d7b1e2ea154d13ee9748b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e385f48aec01175984522a33f5573f243be34fa8ab9aa6461f38143aa71d2901"
+    sha256 cellar: :any,                 arm64_sequoia: "77ca980936cfd1bd790348e691691b2db95e7e5a03172895f6e3c79f2613bfca"
+    sha256 cellar: :any,                 arm64_sonoma:  "70eaba865529e667546feb9335a37a28c9d726dea0d423fd9594fb09d0225087"
+    sha256 cellar: :any,                 arm64_ventura: "2d968e996776df02fd4d8931b9b204a8025ce29b9501d6950cf35195b1da03ed"
+    sha256 cellar: :any,                 sonoma:        "f5129caced79082c49d287821c1ce025c42bddc5877e65a6aae0f8aeb8302c53"
+    sha256 cellar: :any,                 ventura:       "9c8310bc8c3f75e21ab78b354b6149b1f4261c8a0607a7e8f06e6e519f1c8800"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fadc2d7216a2af18b8ae575befd90b940802022aadc139b6930d8fc539b3453a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2a70cd83c3fcd47c02cd78d466b31e462c53c358ea7547f11eb5830956f84935"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -157,8 +156,8 @@ class Openstackclient < Formula
   end
 
   resource "osc-lib" do
-    url "https://files.pythonhosted.org/packages/47/84/ecd798d1aee59b5501de21e8e69f98f5ba275464053be62309a4d4a4b85b/osc_lib-4.0.0.tar.gz"
-    sha256 "1dd15dd64c2b62101487a0f774821839df6b2baa5abc1a572c8e6c53314ee3e7"
+    url "https://files.pythonhosted.org/packages/a4/b1/ea4cb7eb0ab0702e08606f6072efafa8b6a35ecea520570bee9e44b54b31/osc_lib-4.0.2.tar.gz"
+    sha256 "403f9d4cc1b13d934a3483b43afaf50886447a224fec74ada2b6c7087ad3d77d"
   end
 
   resource "osc-placement" do
@@ -312,8 +311,8 @@ class Openstackclient < Formula
   end
 
   resource "python-swiftclient" do
-    url "https://files.pythonhosted.org/packages/6b/75/80d296c0ee9d48acde631adae21877b8199c3d8facaedfad998d87bbea56/python_swiftclient-4.7.0.tar.gz"
-    sha256 "afd7575753d8e49617adcb11550187fd0b120fcd819f1e782c0b538f2d093773"
+    url "https://files.pythonhosted.org/packages/57/a7/a30bf9fd517d7cc75fb111540c9962c166b9e9539d2ba2afab14a6aa1aa3/python_swiftclient-4.8.0.tar.gz"
+    sha256 "44162cab469368cafdc25e0c8c4e95a2b9db1a44456a48ce080fe2ca9a4b3863"
   end
 
   resource "pyyaml" do
@@ -342,8 +341,8 @@ class Openstackclient < Formula
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/96/d2/7bed8453e53f6c9dea7ff4c19ee980fd87be607b2caf023d62c6579e6c30/rpds_py-0.25.0.tar.gz"
-    sha256 "4d97661bf5848dd9e5eb7ded480deccf9d32ce2cd500b88a26acbf7bd2864985"
+    url "https://files.pythonhosted.org/packages/8c/a6/60184b7fc00dd3ca80ac635dd5b8577d444c57e8e8742cecabfacb829921/rpds_py-0.25.1.tar.gz"
+    sha256 "8960b6dac09b62dac26e75d7e2c4a22efb835d827a7278c34f72b2b84fa160e3"
   end
 
   resource "setuptools" do

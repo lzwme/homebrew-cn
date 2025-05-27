@@ -23,6 +23,10 @@ class ErlangAT25 < Formula
 
   keg_only :versioned_formula
 
+  # EOL with OTP-28 release (2025-05-17)
+  deprecate! date: "2025-05-26", because: :unsupported
+  disable! date: "2025-08-26", because: :unsupported
+
   depends_on "openssl@3"
   depends_on "unixodbc"
   depends_on "wxwidgets" # for GUI apps like observer

@@ -1,12 +1,17 @@
 class ElixirLs < Formula
   desc "Language Server and Debugger for Elixir"
   homepage "https:elixir-lsp.github.ioelixir-ls"
-  url "https:github.comelixir-lspelixir-lsarchiverefstagsv0.27.2.tar.gz"
-  sha256 "ab21661e0996e0f31d7126970d58bc3747b60913db342fdd6d491ffd3826ca0b"
+  url "https:github.comelixir-lspelixir-lsarchiverefstagsv0.28.0.tar.gz"
+  sha256 "9b4f496c58ebc7409405f2593f38cbc589e482a53c1c8ac817dbcbee454fabbf"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "0606eb6e979af645e15ed593871f2d33bff3e0589c5f8f1781c94f9a719dc2f2"
+    sha256 cellar: :any_skip_relocation, all: "89b82b88315a6a1edbd92f5207fafb4abd026b895a60905c9b5c34124554c018"
   end
 
   depends_on "elixir"

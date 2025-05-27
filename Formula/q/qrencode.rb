@@ -1,57 +1,31 @@
 class Qrencode < Formula
   desc "QR Code generation"
   homepage "https:fukuchi.orgworksqrencodeindex.html.en"
+  url "https:github.comfukuchilibqrencodearchiverefstagsv4.1.1.tar.gz"
+  sha256 "5385bc1b8c2f20f3b91d258bf8ccc8cf62023935df2d2676b5b67049f31a049c"
   license "LGPL-2.1-or-later"
-
-  stable do
-    url "https:fukuchi.orgworksqrencodeqrencode-4.1.1.tar.gz"
-    sha256 "da448ed4f52aba6bcb0cd48cac0dd51b8692bccc4cd127431402fca6f8171e8e"
-
-    # Fix -flat_namespace being used on Big Sur and later.
-    patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-big_sur.diff"
-      sha256 "35acd6aebc19843f1a2b3a63e880baceb0f5278ab1ace661e57a502d9d78c93c"
-    end
-  end
-
-  livecheck do
-    url "https:fukuchi.orgworksqrencode"
-    regex(href=.*?qrencode[._-]v?(\d+(?:\.\d+)+)\.ti)
-  end
+  head "https:github.comfukuchilibqrencode.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "cecf1e7ce43e8748061ac53002415715527fa1f3edb8ae27d0cb406c988a2185"
-    sha256 cellar: :any,                 arm64_sonoma:   "3226384aaa7dfe12685ac35c627a0bf3878c98e119e7057d8f86a6b8360fc65b"
-    sha256 cellar: :any,                 arm64_ventura:  "c3065a87ad978bc0c2b3ff5a60371ad8f0d6f1f29d0584ac070e6cd998469561"
-    sha256 cellar: :any,                 arm64_monterey: "6fa3a670e9708cf84470f82fd966e5610d0ad9d8c96c1f5987645b4db3fa65cb"
-    sha256 cellar: :any,                 arm64_big_sur:  "aba117089d1c60fd2fa1d36fbfa06a0929b23d5bb6a7417d6f2dafb5dcc32c5b"
-    sha256 cellar: :any,                 sonoma:         "3d7be7074b40470b1b4a883642d6a9d6b4d87794c1914c5d4134154b745b5084"
-    sha256 cellar: :any,                 ventura:        "882d866b0ce145f3eef1b497ad8ffeae5d415984b28bcf77dd684d6dab789bb7"
-    sha256 cellar: :any,                 monterey:       "ebc1b405866a1c2736d1fc49d268e35d08faf6a676f3151b160e1414b0edadc2"
-    sha256 cellar: :any,                 big_sur:        "1b3d2022412f9d5486550fb68250aee25bb358a04e2cccc7bb85c7d65b1885b0"
-    sha256 cellar: :any,                 catalina:       "326d2f182c7c8d9188be7adda5bd0ecb5922269f60f72ac265e404fa17fb310f"
-    sha256 cellar: :any,                 mojave:         "a8ec712f32c4d8b09d4c098c37264ea41f0f382525c5b67e657248fdd9f1f53d"
-    sha256 cellar: :any,                 high_sierra:    "a6d123b7f88941fe9959970d8b6ccfbc426c2ec405cfc731bc259f2b0f536171"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "4f31dee099618d8ba49fd5219663bee1adcc8efbc4a42e0bd9bd9a81bcc76b31"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "97aa13d3b6314c8a5d03edffa65c43f2f63b894a91a350de52a45367fe8f862f"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "3fec9ad635eb185c133cca4e3ab3e8ab7c2094453c462c457b1e5624960bca35"
+    sha256 cellar: :any,                 arm64_sonoma:  "74e41b86ddec16b100ac17a756235f377b0e7b8990af8e37a66571b204db40c8"
+    sha256 cellar: :any,                 arm64_ventura: "01e05ae6c40b460ebc0dbba2fe76a4310ee538a692e7712dda77c07e18789ed8"
+    sha256 cellar: :any,                 sonoma:        "b9af340917ff148b24e48c24e5313423e16df56a99a7a612d0b23af59e2394b9"
+    sha256 cellar: :any,                 ventura:       "6995e471fbd7e8f9c3c507e7576ba53a5636fb329a049f61f54494b7b5d9fe2c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a598b96cd3fa15c9c028d7c6d86f884ece57ac86feca9939e862b17a14143bf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "181bcd364cef78e8be564a42859f3b431febc429fc3db940d5c06bb572493999"
   end
 
-  head do
-    url "https:github.comfukuchilibqrencode.git", branch: "master"
-
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-  end
-
+  depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "libpng"
 
   def install
-    system ".autogen.sh" if build.head?
-    system ".configure", *std_configure_args
-    system "make"
-    system "make", "install"
+    args = %w[-DCMAKE_POLICY_VERSION_MINIMUM=3.5]
+    system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
   end
 
   test do
