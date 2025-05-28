@@ -1,8 +1,8 @@
 class Yara < Formula
   desc "Malware identification and classification tool"
   homepage "https:github.comVirusTotalyara"
-  url "https:github.comVirusTotalyaraarchiverefstagsv4.5.3.tar.gz"
-  sha256 "59323f69b55615fda3ee863062370b90a09016616da660ae00c7f84adf12238e"
+  url "https:github.comVirusTotalyaraarchiverefstagsv4.5.4.tar.gz"
+  sha256 "586c9c21878f8b4d1b9423b89ac937f21f8057b03e3e9706f310549d453966fa"
   license "BSD-3-Clause"
   head "https:github.comVirusTotalyara.git", branch: "master"
 
@@ -15,13 +15,13 @@ class Yara < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b62064cf00cdd17ce560d6e30fe63ed1f579ca1c36086d4570efe5d0f883ce03"
-    sha256 cellar: :any,                 arm64_sonoma:  "c6b8958c39be86d2725762e90351c201cd8871ddd82ce644a6c710c12ea4bfee"
-    sha256 cellar: :any,                 arm64_ventura: "539320e0184228b30f87327688d15177c02cba3b9d1716258b20a2280d79346a"
-    sha256 cellar: :any,                 sonoma:        "29a008eff0db0a821afdec5aa42dd87bdede577716a67710882fb98334ff15c1"
-    sha256 cellar: :any,                 ventura:       "3adb6f8b228b1b847e95d3ce5ccfc35774640b7acb6e30e7290041f43f701af0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e8eb9ad293a10c61ddac7d995e94536d20ae6ba19a07312ed608d160d338211e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2d90c1eb58395126594a0ab2f7970562ab7dae1c3b03352d45e9b3bf836c852a"
+    sha256 cellar: :any,                 arm64_sequoia: "05e38fe530217dd618458e1e864b88c9e5376a1a620e25b52c45327a2ba5bee0"
+    sha256 cellar: :any,                 arm64_sonoma:  "3eb68c783f2be47824839b7a24d2950945f5c6a6365e856543fa89a22e00ffbc"
+    sha256 cellar: :any,                 arm64_ventura: "2d9d3ab818d55b5ac62615ed701072920575eb76b4705e627987298ed7c73a6a"
+    sha256 cellar: :any,                 sonoma:        "f959e7e5f4ef46b3f184a22e48df80915d2174a9118c7824ee217039cab7eaef"
+    sha256 cellar: :any,                 ventura:       "e60f16545e8349a9267d01b6d0a9218041108fc7f34477670106b9dc49160c28"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d44b7e4a3f0bd5fca8274f440ee09b28b25e0b410f0f2d9a83ce02c2ecf5cb1"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9eb5a6a26ded5e51d4c574bcd60a0a800cdd16749c7789bd625526449ade9332"
   end
 
   depends_on "autoconf" => :build

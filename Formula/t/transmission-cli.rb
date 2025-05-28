@@ -4,7 +4,7 @@ class TransmissionCli < Formula
   url "https:github.comtransmissiontransmissionreleasesdownload4.0.6transmission-4.0.6.tar.xz"
   sha256 "2a38fe6d8a23991680b691c277a335f8875bdeca2b97c6b26b598bc9c7b0c45f"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
-  revision 3
+  revision 4
 
   livecheck do
     url :stable
@@ -12,13 +12,13 @@ class TransmissionCli < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "b9e4113a3030e91fd27c5bbced1e21c7c67261050ff8f11c1a4e173a4f747a04"
-    sha256 arm64_sonoma:  "ca4dbdf34346c6bc37192dc9ee53971b265cf9c3fbba6e38339f5766c11fbb15"
-    sha256 arm64_ventura: "8176400e94d9c4f5a33034b353021ccc35f55663f8d31f11bbf23ce78123527c"
-    sha256 sonoma:        "0237d99f85751e50e87c31577c7903680c5f16051c1541a0b84865bb22e237ec"
-    sha256 ventura:       "3268040e7f67f734934bdaa0e7c439bc120c4ba12ac06f345e74b2b633298ae1"
-    sha256 arm64_linux:   "6c0d31567892d665e133f24ce529e7dde3fceeaeadcadb776c7d7a18cf77b971"
-    sha256 x86_64_linux:  "ef83d1cad5d89e26eea96e4ed7fe42769c94947735ca013fe7b8a8bdc0e007e2"
+    sha256 arm64_sequoia: "542c4fe40c57c427680eb5a982e0a6437bbaa9adac9b174fcb5f9fc5cf98dffe"
+    sha256 arm64_sonoma:  "2e13ac5fce4a74345d5e02ae860fea0b05c7d6fbe7f94a448d14a121d9586fea"
+    sha256 arm64_ventura: "61e957019a73bb95a8805af721ce6b7f9f9acdc30c6bc8a65ab0b47b273f869b"
+    sha256 sonoma:        "498982b372e53a61addf98d76169e5c01851d89bce7b70bc3915894f184ca558"
+    sha256 ventura:       "f25b459d033bdf9842d66e09ec65989a0336caca52b195206b6dfaf39cd9ee6d"
+    sha256 arm64_linux:   "a34e16ce8d16148d11ff1eedca2ba0bbfa45a5942a272d281d88d9936be05290"
+    sha256 x86_64_linux:  "d05e4a68c07c6fa2b73df241d91d566d6af0e5ea0008cdc360ad6e65d7379624"
   end
 
   depends_on "cmake" => :build
@@ -39,6 +39,9 @@ class TransmissionCli < Formula
   patch :DATA
 
   def install
+    # CMake 4 compatibility for third-parties of miniupnpc
+    ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
+
     args = %w[
       -DENABLE_CLI=ON
       -DENABLE_DAEMON=ON

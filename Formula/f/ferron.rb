@@ -1,19 +1,19 @@
 class Ferron < Formula
   desc "Fast, memory-safe web server written in Rust"
   homepage "https:www.ferronweb.org"
-  url "https:github.comferronwebferronarchiverefstags1.3.0.tar.gz"
-  sha256 "9803aabf52f76793f48b019b88ab69fe2faa677dfed0545731cc25bb19611426"
+  url "https:github.comferronwebferronarchiverefstags1.3.1.tar.gz"
+  sha256 "bee7a5989e557d366aec1e2dc005e269026a2f46a097e321a721a99e70570412"
   license "MIT"
   head "https:github.comferronwebferron.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ac56061128821170b1f5eaa1db04ff807f4872e11c78d4eddc8d5b7b712992a4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b553f6526f1292884a01a537923c15bbfb82e2ef34a072b71dca10992e119c79"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "58f88d6bbe7601fb8f9ea35cc96f72d36909a4496450139334b63adca7821774"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a9f698bdfd63fa2fe1cafffc7d9ae358613d7e4d6b304e641d815fe172b0d840"
-    sha256 cellar: :any_skip_relocation, ventura:       "52e2255ae885627275f04bf12b3802e4444ec3bde1f386f6e16522f2cc495b6a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "60d440829df0079a82ee36f107c19a73244309523c7e55d48c4bd40c522d8ab4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7b002a690bf2f1776248c53311c13af852bfde5cbd12909a27778483593ecb00"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b98b68a0735f52c6425ef1e005c537980c74c7444d0fbb58d8239c2fc88c3c23"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "92734901edf8f4af39d57b6216dacf95fe7c37928fa91cc45ee529d66b460145"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8657f0c6555b343769c7ff422daf8ec84e748fb0409d764778b763cb274367cf"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2467335cfe7aa1d10e8649225e63f20a96f1d1d21949f356ca39755dd5a9d261"
+    sha256 cellar: :any_skip_relocation, ventura:       "21783fa27909b3445f8cf5e52fa77e51ccbdf18734138bbd4dd1e46fbbdd789f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6ea696a97bc86e90a64519b9add26715f551cb9b60fa1da821954b2575cbbb8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74a2b18ef89d83e7fbbec0c1ec49920b22559563b1c40260990fda44e6a7d3c3"
   end
 
   depends_on "rust" => :build

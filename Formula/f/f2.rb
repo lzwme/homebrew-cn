@@ -1,8 +1,8 @@
 class F2 < Formula
   desc "Command-line batch renaming tool"
   homepage "https:github.comayoisaiahf2"
-  url "https:github.comayoisaiahf2archiverefstagsv2.1.1.tar.gz"
-  sha256 "0722082db8e4dddde350104041b1454592dcf0b0eec884f792b3d370ae535b42"
+  url "https:github.comayoisaiahf2archiverefstagsv2.1.2.tar.gz"
+  sha256 "bd7c6779f456e1ee7b4be4d4b7b24cca90dbbc2fa52efa8eb7ca012480e27830"
   license "MIT"
   head "https:github.comayoisaiahf2.git", branch: "master"
 
@@ -14,12 +14,12 @@ class F2 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bc703caa1863c914db2c8772bbe0c088b7af13a2445aac46f24ac94276a863cd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc703caa1863c914db2c8772bbe0c088b7af13a2445aac46f24ac94276a863cd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "bc703caa1863c914db2c8772bbe0c088b7af13a2445aac46f24ac94276a863cd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9102d2012718cf03d4db3104f51a371f5d266237a36c981aaa10fb816e0a55d5"
-    sha256 cellar: :any_skip_relocation, ventura:       "9102d2012718cf03d4db3104f51a371f5d266237a36c981aaa10fb816e0a55d5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b0ceffea79c3edf42ed8a11e57f46a11c10d0f9df2d15f511ed58ac701f85435"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b0c7f878c7e6c857c90354ff2a5f4d963869c8f06cf7fe484d73ad0ee5061ad"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b0c7f878c7e6c857c90354ff2a5f4d963869c8f06cf7fe484d73ad0ee5061ad"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6b0c7f878c7e6c857c90354ff2a5f4d963869c8f06cf7fe484d73ad0ee5061ad"
+    sha256 cellar: :any_skip_relocation, sonoma:        "241c34916fffe05df32bdee8c89a4229c0451f3de06a79b6d6481d216f442fa8"
+    sha256 cellar: :any_skip_relocation, ventura:       "241c34916fffe05df32bdee8c89a4229c0451f3de06a79b6d6481d216f442fa8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ee3b068caa6c3c0c9682d3d8fc60ea34deb10413cd6836bdb129c3a56d25d2e"
   end
 
   depends_on "go" => :build

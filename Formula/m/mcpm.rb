@@ -3,18 +3,18 @@ class Mcpm < Formula
 
   desc "Open source, community-driven MCP server and client manager"
   homepage "https://mcpm.sh/"
-  url "https://files.pythonhosted.org/packages/8b/02/f32c6cd5412adcb028de835f1af9a3560980458e21092e16baf56ae6d060/mcpm-1.12.0.tar.gz"
-  sha256 "e9d2b852b90d7fd62dede584f035dd6b2b3d068d233e96b82aead835f81a911a"
+  url "https://files.pythonhosted.org/packages/10/ad/8b538c782b9fc6b1ca653215fb1cb870d54e158bbcbbf92075628599d6fa/mcpm-1.13.0.tar.gz"
+  sha256 "781fc11ad27bd538669ce5289745ffb4b442039361d7c5f482de2148e3ba495e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ae761808d18c686e332d07c75d7e0c3c334ad6baed3e64df00847c3686e6420c"
-    sha256 cellar: :any,                 arm64_sonoma:  "f48a963580c488ec0741a5e533b28289a9501ec89f37e182817b8bc7b7d4a7a9"
-    sha256 cellar: :any,                 arm64_ventura: "40348a8ca9d201597a66b4d21360d83a021b9b6c0209602ed7d3d19d8b81d4dc"
-    sha256 cellar: :any,                 sonoma:        "34c6985becfd722649d7e8e0dd3b94204dbb2367d5f2123298d3d21eef5f81ad"
-    sha256 cellar: :any,                 ventura:       "9bb6b6a8bcc55baf30552139c344cbc4903bd44ba9a60e984d5a5d81f74cf470"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa28bef272a6590f87c38c0b8d57e76931f9aeece9906e31c56dc40bf20092b7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c50930c19edd0c0d400c4ff1d978e82c815b38b27f8657826e74308232c940d"
+    sha256 cellar: :any,                 arm64_sequoia: "f09b7a01dc82c9c9719186626e71f6d5eb47ca9edaa071c7efc2f47d7750b765"
+    sha256 cellar: :any,                 arm64_sonoma:  "257f089df6cd269328216026c9e8b7561ec5196266f0ed32c656c7871021c14f"
+    sha256 cellar: :any,                 arm64_ventura: "7decc7495db9edc698a1fe1720ee7f8e5baa669abe4c9e20583e4cb5a078f333"
+    sha256 cellar: :any,                 sonoma:        "2ce108a03cbeb4a97cb9a5353474a13303ae00aeb1907028a167f668ea46d500"
+    sha256 cellar: :any,                 ventura:       "8993965de3ee99c6821e7a965287382d9cf7739b85b8ebd610fd5f96653145b3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7877c60ea0227eeaf6b17d5676ef6cf6f929924752262b37eb4a892f24a12013"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7fc59f9e60ea4fd5752dd526525e02d2d582c442f5e9e1f515b84cc3b080fd5"
   end
 
   depends_on "rust" => :build
@@ -41,13 +41,18 @@ class Mcpm < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/cd/0f/62ca20172d4f87d93cf89665fbaedcd560ac48b465bd1d92bfc7ea6b0a41/click-8.2.0.tar.gz"
-    sha256 "f5452aeddd9988eefa20f90f05ab66f17fce1ee2a36907fd30b05bbb5953814d"
+    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
+  end
+
+  resource "deprecated" do
+    url "https://files.pythonhosted.org/packages/98/97/06afe62762c9a8a86af0cfb7bfdab22a43ad17138b07af5b1a58442690a2/deprecated-1.2.18.tar.gz"
+    sha256 "422b6f6d859da6f2ef57857761bfb392480502a64c3028ca9bbe86085d72115d"
   end
 
   resource "duckdb" do
-    url "https://files.pythonhosted.org/packages/28/b8/0f86278684fb7a1fac7c0c869fc6d68ed005cdc91c963eb4373e0551bc0a/duckdb-1.2.2.tar.gz"
-    sha256 "1e53555dece49201df08645dbfa4510c86440339889667702f936b7d28d39e43"
+    url "https://files.pythonhosted.org/packages/3e/82/680b108da1870e48d98464ddcf03820f983421b5bbd8dd8beff98d583db7/duckdb-1.3.0.tar.gz"
+    sha256 "09aaa4b1dca24f4d1f231e7ae66b6413e317b7e04e2753541d42df6c8113fac7"
   end
 
   resource "h11" do
@@ -81,8 +86,8 @@ class Mcpm < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/bc/8d/0f4468582e9e97b0a24604b585c651dfd2144300ecffd1c06a680f5c8861/mcp-1.9.0.tar.gz"
-    sha256 "905d8d208baf7e3e71d70c82803b89112e321581bcd2530f9de0fe4103d28749"
+    url "https://files.pythonhosted.org/packages/e7/bc/54aec2c334698cc575ca3b3481eed627125fb66544152fa1af927b1a495c/mcp-1.9.1.tar.gz"
+    sha256 "19879cd6dde3d763297617242888c2f695a95dfa854386a6a68676a646ce75e4"
   end
 
   resource "mdurl" do
@@ -101,8 +106,8 @@ class Mcpm < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/77/ab/5250d56ad03884ab5efd07f734203943c8a8ab40d551e208af81d0257bf2/pydantic-2.11.4.tar.gz"
-    sha256 "32738d19d63a226a52eed76645a98ee07c1f410ee41d93b4afbfa85ed8111c2d"
+    url "https://files.pythonhosted.org/packages/f0/86/8ce9040065e8f924d642c58e4a344e33163a07f6b57f836d0d734e0ad3fb/pydantic-2.11.5.tar.gz"
+    sha256 "7f853db3d0ce78ce8bbb148c401c2cdd6431b3473c0cdff2755c7690952a7b7a"
   end
 
   resource "pydantic-core" do
@@ -141,8 +146,13 @@ class Mcpm < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/ea/46/f44d8be06b85bc7c4d8c95d658be2b68f27711f279bf9dd0612a5e4794f5/ruamel.yaml-0.18.10.tar.gz"
-    sha256 "20c86ab29ac2153f80a428e1254a8adf686d3383df04490514ca3b79a362db58"
+    url "https://files.pythonhosted.org/packages/9d/8f/dfbab2d5ec83da0605ab935fb43ffa8ab5828455e2c910b7314fdd18e0b8/ruamel.yaml-0.18.11.tar.gz"
+    sha256 "b586a3416676566ed45bf679a0909719f7ea7b58c03a9b6e03f905a1e2cd5076"
+  end
+
+  resource "ruamel-yaml-clib" do
+    url "https://files.pythonhosted.org/packages/20/84/80203abff8ea4993a87d823a5f632e4d92831ef75d404c9fc78d0176d2b5/ruamel.yaml.clib-0.2.12.tar.gz"
+    sha256 "6c8fbb13ec503f99a91901ab46e0b07ae7941cd527393187039aec586fdfd36f"
   end
 
   resource "sniffio" do
@@ -166,8 +176,8 @@ class Mcpm < Formula
   end
 
   resource "typing-inspection" do
-    url "https://files.pythonhosted.org/packages/82/5c/e6082df02e215b846b4b8c0b887a64d7d08ffaba30605502639d44c06b82/typing_inspection-0.4.0.tar.gz"
-    sha256 "9765c87de36671694a67904bf2c96e395be9c6439bb6c87b5142569dcdd65122"
+    url "https://files.pythonhosted.org/packages/f8/b1/0c11f5058406b3af7609f121aaa6b609744687f1d158b3c3a5bf4cc94238/typing_inspection-0.4.1.tar.gz"
+    sha256 "6ae134cc0203c33377d43188d4064e9b357dba58cff3185f22924610e70a9d28"
   end
 
   resource "urllib3" do
@@ -188,6 +198,11 @@ class Mcpm < Formula
   resource "wcwidth" do
     url "https://files.pythonhosted.org/packages/6c/63/53559446a878410fc5a5974feb13d31d78d752eb18aeba59c7fef1af7598/wcwidth-0.2.13.tar.gz"
     sha256 "72ea0c06399eb286d978fdedb6923a9eb47e1c486ce63e9b4e64fc18303972b5"
+  end
+
+  resource "wrapt" do
+    url "https://files.pythonhosted.org/packages/c3/fc/e91cc220803d7bc4db93fb02facd8461c37364151b8494762cc88b0fbcef/wrapt-1.17.2.tar.gz"
+    sha256 "41388e9d4d1522446fe79d3213196bd9e3b301a336965b9e27ca2788ebd122f3"
   end
 
   def install

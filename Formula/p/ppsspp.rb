@@ -2,7 +2,7 @@ class Ppsspp < Formula
   desc "PlayStation Portable emulator"
   homepage "https:ppsspp.org"
   license all_of: ["GPL-2.0-or-later", "BSD-3-Clause"]
-  revision 3
+  revision 4
   head "https:github.comhrydgardppsspp.git", branch: "master"
 
   # TODO: Can remove CMAKE_POLICY_VERSION_MINIMUM when bumping version to 1.18+
@@ -16,13 +16,13 @@ class Ppsspp < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "11a86d48ffacea0abad6d65685f44e569be22641d643450ca1f4bfb78d711033"
-    sha256 cellar: :any, arm64_sonoma:  "3b1a983666fa0dd5c9aac25279414f33adeb30782d4a62f35e13f6494dc65b50"
-    sha256 cellar: :any, arm64_ventura: "32cdd20ec459258c4164f679fe9c2e4565d91ac3e38b52a261070e345f2611f1"
-    sha256 cellar: :any, sonoma:        "7a107b64aa9e2360810677ddc833e1651cdaed20c1083612110074fc44463283"
-    sha256 cellar: :any, ventura:       "83f5f34097a2800f0b52f2b754b90c3624fdcd61acaf8a4372963d8de955d64e"
-    sha256               arm64_linux:   "e60baf589f6ffdc362c9ce45666c2ad54979d4b3f862d45af88c55992e14feb2"
-    sha256               x86_64_linux:  "3b2eb05c61f97055537b379b39ccf2154e15f5b099d8f337d78f5a01f02c67ac"
+    sha256 cellar: :any, arm64_sequoia: "8f5212b45e4cc85e00696a97c7b2f19faf46eaff672261ffe4a9a1600f88918b"
+    sha256 cellar: :any, arm64_sonoma:  "15ea4f6454395652c4bc38f9162265f037c73f6adedc72ee24e1d6d8152da938"
+    sha256 cellar: :any, arm64_ventura: "cb233294259787c8052cbb7bf288ae9f96cfb2409349471c62345a77daf05e2b"
+    sha256 cellar: :any, sonoma:        "0251f2c42361a1a554ad9525992f22009291e6a540a0f5a656d59fd837884817"
+    sha256 cellar: :any, ventura:       "1343d50d74938e6f46ff7b8a478af9437f1195952877c9d964af6b6c71d5fd56"
+    sha256               arm64_linux:   "713d5f95e87d12e957e1c1fe542bc7db12d962164d1c736c711c3eec85319ec3"
+    sha256               x86_64_linux:  "db4ce3ac375ce1f4e6bf06a3453c8cf5b118a2080e7614b244db39da56a0f367"
   end
 
   depends_on "cmake" => :build

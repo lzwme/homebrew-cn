@@ -1,18 +1,18 @@
 class ProtocGenGrpcJava < Formula
   desc "Protoc plugin for gRPC Java"
   homepage "https:grpc.iodocslanguagesjava"
-  url "https:github.comgrpcgrpc-javaarchiverefstagsv1.72.0.tar.gz"
-  sha256 "524a3d687f06ffd1c6ab66dbbb5de5b9f6adaa662570aa56e553d86c2065eb31"
+  url "https:github.comgrpcgrpc-javaarchiverefstagsv1.73.0.tar.gz"
+  sha256 "eca44a9f3eb341daf7a01482b96016dfa7d91baee495a697746c4724868a06db"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a280f76a988ef5687ffa6eb223727986ab2cf513cc051a608978c6df0270ef76"
-    sha256 cellar: :any,                 arm64_sonoma:  "fca9edd4960cf6b741e710392c0150231a5c4dd57d044838b55baf6a885e6c2f"
-    sha256 cellar: :any,                 arm64_ventura: "472759f812aa8ce1cc1ddbb6c5f6fe0a1bffb7bda96c59e1580d07ce615fa711"
-    sha256 cellar: :any,                 sonoma:        "3ea86eefaf5d7940610044a2b3f2e459c2c1d0d0a3859e317120eaefaa67f190"
-    sha256 cellar: :any,                 ventura:       "03a5350317cc75ebf19ba4cbef9333351bf6016bff7482ae02a652361c9d269d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c28a8f3f8b7ba9af498ec433e6305639cb5a040cead45e2dad89ec47c591059f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7de2038322100e5f877a675a79d24d00d669b4347fdde6f5724325da2669eac0"
+    sha256 cellar: :any,                 arm64_sequoia: "7dceeffe15dc656a5435fbe90d14a4bcf88f2c862b5e275542535b0bff9e9545"
+    sha256 cellar: :any,                 arm64_sonoma:  "a8e2aab74094c8c4efc19b814fd01c10590437a13aba81f78321eafe14fac241"
+    sha256 cellar: :any,                 arm64_ventura: "3f39c01a0b50a8e91d03c8a12a30f94b5c58076bce2a56354eeeae01d7330c8d"
+    sha256 cellar: :any,                 sonoma:        "1a076b7c28ceb75364310043c0719d079212f3c8605996fee85944655719517d"
+    sha256 cellar: :any,                 ventura:       "a1db559ddae8aee30e6ab66eb68efd8ecd44baa9e046f0aca336d77cb73a3f29"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a801355ffe855146dd366358f6426fece82e485dba2c6d9c91d06ba69598318a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d2dacaa34a5f811c69a9b768a21f7234b3163698127afd78793870ffbd8b20ce"
   end
 
   depends_on "gradle" => :build

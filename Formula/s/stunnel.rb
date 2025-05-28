@@ -1,8 +1,8 @@
 class Stunnel < Formula
   desc "SSL tunneling program"
   homepage "https://www.stunnel.org/"
-  url "https://www.stunnel.org/downloads/stunnel-5.74.tar.gz"
-  sha256 "9bef235ab5d24a2a8dff6485dfd782ed235f4407e9bc8716deb383fc80cd6230"
+  url "https://www.stunnel.org/downloads/stunnel-5.75.tar.gz"
+  sha256 "0c1ef0ed85240974dccb94fe74fb92d6383474c7c0d10e8796d1f781a3ba5683"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Stunnel < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3397dd9c588929b1c27eab79dfc68ac549154cc5723743860f3132a9eaa9b3e7"
-    sha256 cellar: :any,                 arm64_sonoma:  "ed81eddd6dba1c5b0c530be48d7acc46e3a0a8312f9d5ae3d9118c0cd797533e"
-    sha256 cellar: :any,                 arm64_ventura: "ac7f0bbfd5e4e7c5810d181b2ad929d5081d9d40714bb1638dc36149cb0574f4"
-    sha256 cellar: :any,                 sonoma:        "82aa69de9ed3e96f6cf2b40a82ea5d725dc515f47a891649f9d49cb1371d0df4"
-    sha256 cellar: :any,                 ventura:       "448441d68babf46d4b6c5f3feade07c6b24bacd6e6d3923c1b056fd1e6b118a4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "75643aec1f5929b9db2bb9a36b6a31ddd4fb205b67a97537c2bfe8eae4398806"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c5735f96b3a3d61de2648205e462d3eded527d8480dc0dd026829aa3a9bbb03"
+    sha256 cellar: :any,                 arm64_sequoia: "2a17023a0390c52c62815c836798580f22c21165dedad0399f1523a03fd4f211"
+    sha256 cellar: :any,                 arm64_sonoma:  "b52fe8808e516c6bc8fd521949770a79f98fea641d378384ca4658c35a0c3ff6"
+    sha256 cellar: :any,                 arm64_ventura: "9d56d29e77ff1815a00aeed94563c0ad74083444bfc12509a7e1bb577e54c011"
+    sha256 cellar: :any,                 sonoma:        "e5be8df8fbacccc56d65dd5b7fe6737208f80403f5fe497672393097e369e7b8"
+    sha256 cellar: :any,                 ventura:       "5d1c9cceac9515413bbfb32ce8e99b7375915c17af020f850969be0c9cf2f0c7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "af223c620740de6c81733ce26bcb3d025b58a23a3b52b0d19cc1c810e1cf7700"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a66a3d40d99cf4bc99eb9c070446687da88f41fb2f8569212a180030ab58c47e"
   end
 
   depends_on "openssl@3"

@@ -4,6 +4,7 @@ class Simutrans < Formula
   url "svn:servers.simutrans.orgsimutranstrunk", revision: "11671"
   version "124.3.1"
   license "Artistic-1.0"
+  revision 1
   head "https:github.comsimutranssimutrans.git", branch: "master"
 
   livecheck do
@@ -15,13 +16,13 @@ class Simutrans < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3b9fd4e6ba4309127af63b8b2235cc85692074421bd8439f58504c0da54bb6fa"
-    sha256 cellar: :any,                 arm64_sonoma:  "fd96b3fea3664838f1904736407321b836c391f510fa0eec90799922466d66da"
-    sha256 cellar: :any,                 arm64_ventura: "3c284b3aee6632a0a09ad8589a8e25c96739f54c75b6c009ef59f6a105a8d2da"
-    sha256 cellar: :any,                 sonoma:        "c685e4ac7e5896302331543c0d68d239d83f100be0d26e3ff5fffbb620d1a464"
-    sha256 cellar: :any,                 ventura:       "0caad2fbd63d5f858309a3c33e422ab3b820a19de07abfad3582fddef20e2854"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe34f7c07cd37deb98e04284d86c493b6c4960ec34dccde334647113fbb2f86b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e46e0b9b4cfd60ddf8ba9f07ac9f80050712f7ecc416b607d63f8517cf248a94"
+    sha256 cellar: :any,                 arm64_sequoia: "7882263a911cbabe05edc77dd7184ea1b7f85c38097d7b932f1899b97bbb5966"
+    sha256 cellar: :any,                 arm64_sonoma:  "58f3f1132d0dc17ddeb8528b300995b1ea2d350773d7e7b29e066f6f3a13e6be"
+    sha256 cellar: :any,                 arm64_ventura: "f40a7b52c289c9f503d2dddf1661e8283715199387345ce250262fb272f7083d"
+    sha256 cellar: :any,                 sonoma:        "38a48ab9d571ff46144a5c027029d075844501836ba13630ed6fa4da8b586ca2"
+    sha256 cellar: :any,                 ventura:       "d10461a9ad6bf0ecdaee60455a7aeae1caf103769bc4c4cf57a994a4055d1671"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0f026f6d07f49d4b7c6e2a35b2390f9c3563d7c49f485b37a1632e356606aae2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "732b3387dd1c5962f52d12044421c4139ae6d654bd003670ec541fa6e762b484"
   end
 
   depends_on "cmake" => :build

@@ -9,9 +9,13 @@ cask "mullvadvpn" do
   homepage "https:mullvad.net"
 
   livecheck do
-    url "https:mullvad.netendownloadapppkglatest"
-    regex(MullvadVPN[._-]v?(\d+(?:\.\d+)+)\.pkgi)
-    strategy :header_match
+    url "https:api.mullvad.netappreleasesmacos.json"
+    regex(^v?(\d+(?:\.\d+)+)$i)
+    strategy :json do |json, regex|
+      json.dig("signed", "releases")&.filter_map do |release|
+        release["version"] if release["version"]&.match(regex)
+      end
+    end
   end
 
   conflicts_with cask: "mullvadvpn@beta"

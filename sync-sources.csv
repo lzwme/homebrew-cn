@@ -5359,6 +5359,7 @@ Homebrew-homebrew-core/Formula/p/polkit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/polyglot.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/polyml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/polynote.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/polypolish.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pomsky.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/ponyc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/ponysay.rb, Homebrew/homebrew-core, 1
@@ -12868,7 +12869,7 @@ Homebrew-homebrew-cask/Casks/m/mucommander.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/mudlet.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mullvad-browser.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mullvadvpn.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/m/mullvadvpn@beta.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/m/mullvadvpn@beta.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/multi.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/multiapp.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/multibit-hd.rb, Homebrew/homebrew-cask, 1
