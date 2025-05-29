@@ -1,19 +1,19 @@
 class Dra < Formula
   desc "Command-line tool to download release assets from GitHub"
   homepage "https:github.comdevmatteinidra"
-  url "https:github.comdevmatteinidraarchiverefstags0.8.1.tar.gz"
-  sha256 "93b05fd57b893873af622e0324efc63f8da4688bb8115e4b104ca45d05b0ab47"
+  url "https:github.comdevmatteinidraarchiverefstags0.8.2.tar.gz"
+  sha256 "5766c57a0e105d9f86aece2b561d59c81fe22d22eb0c9d7cf1c9992b87b2338b"
   license "MIT"
   head "https:github.comdevmatteinidra.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "537ded100520b5b459f4f899da12624fd07bca6b6384975a2e2ad88312dbab83"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1de59fcc091a9d8a4f41ac8f785d4ea367ff298df55fe1a5f1702c7da2ba265b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "30192f05fcb6db6d2819474b79a741472a32c8f4e5e5b8ffc6e0a4408f158eac"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1169ee247095063ecfa4a9ccf0a0875daef510972912cf5d9fff0a180bfc66b1"
-    sha256 cellar: :any_skip_relocation, ventura:       "ee84bd924fb7a7c573190693dc4b06a95a1b3a17288642b5dd2782c4aaf62e28"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "04725a075217369ec9912611521ed0eea5a4f2e0c231ba5df1364227cb135948"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cb1ce502c6c2e6a8de47cc1c7c9f180a97f36ca95c98a00988708dcb519ae2c1"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "db4e0a18693fb1805da7d9568dbfd43f446b5568a9af969d38480349a883de24"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e43f85a62dfadf61847482bb653570f03653ec576f2c8edc4517235d619a7504"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "11243acff417ea800cc9ef567fb81c79f9193e912523b7afb6d2047b920ae75c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ed9dd4a0bad66bc96b697a4ebeb3df27d4a5275134968c12873001813b238f0b"
+    sha256 cellar: :any_skip_relocation, ventura:       "b683ccde18838772976f1f7fd4751bb138adc45fd939e0ac5f488db5aedcb13b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f94fdae107783b368d609efef6dec025eae5836a864cf97af7cd5c416275fbb6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "107c784b4b81441bc850994825e806b104a50a8262c61ecd3bdd2d915d1e16bc"
   end
 
   depends_on "rust" => :build

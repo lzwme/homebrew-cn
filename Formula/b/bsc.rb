@@ -32,6 +32,8 @@ class Bsc < Formula
   uses_from_macos "libffi"
   uses_from_macos "perl"
 
+  conflicts_with "libbsc", because: "both install `bsc` binaries"
+
   def install
     system "cabal", "v2-update"
     system "cabal", "v2-install", "--lib",

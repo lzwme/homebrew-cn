@@ -7,19 +7,20 @@ class Gdbm < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "ce13d6f53ca09fb01e34f336ed2ba2660d8fd107bc1d374ea12cbd94e3bd2c10"
-    sha256 cellar: :any, arm64_sonoma:  "d2304cf89d5b8c541c022853331778277ea4de0d022e3abfa6aecca5a6bd78ed"
-    sha256 cellar: :any, arm64_ventura: "f9f48845d498e891b96b837c37eb4c8fb92c92e8f022f2d6ff6a612dafcb8e1b"
-    sha256 cellar: :any, sonoma:        "5bc39e26b0b9ea73860e069a7520ad0515e274d72633ec8af1e88761433a1544"
-    sha256 cellar: :any, ventura:       "17ab62fd1807c70aea51fae0dd267b8691022165fd5a472364e12292f320e7ee"
-    sha256               arm64_linux:   "75703cd648a7bd05140336811cac1ad4034adf64b98c0e509bae8e60badff1cb"
-    sha256               x86_64_linux:  "7bb95130a0f0f4a3c938f798edb331abae374db148ed14fa080568c5db95cfef"
+    rebuild 1
+    sha256 cellar: :any, arm64_sequoia: "5050faa58577426f4bb8b0fb940f8c8d62d0f25484d563bc0bb0e01d96cfa1a0"
+    sha256 cellar: :any, arm64_sonoma:  "65868b2118aa71aa381c8739a9ad5dd985e2c4abff095228bb43b40884b62129"
+    sha256 cellar: :any, arm64_ventura: "ca9a4a46ef61e5507489136ddea13be718d95ed7a25797c88b8e6d53022683a2"
+    sha256 cellar: :any, sonoma:        "00c0754eaf6d73774c0bd48a173c83fb9fdf27f737b9730928442eb77c29fa0c"
+    sha256 cellar: :any, ventura:       "10080cd256c860ccef00b7abac526615cc45b1baa24df81ea4733de939db7fd1"
+    sha256               arm64_linux:   "347fe6091f508ee3e0b92a54e3e8c1b2f05e40db5c66a183b130de9306e3e33f"
+    sha256               x86_64_linux:  "f95b2737b4b0513b3b04e850c44d3f365f2872baa6325e9c3bc8adc3497fc236"
   end
 
   # Backport fix for macOS
   patch do
-    url "https:git.savannah.gnu.orgcgitgdbm.gitpatch?id=ed0a865345681982ea02c6159c0f3d7702c928a1"
-    sha256 "d2ba39d1948f5b1f048997716beaaa96d07fba594e81854cb01574378f645e07"
+    url "https:git.savannah.gnu.orgcgitgdbm.gitrawdiff?id=ed0a865345681982ea02c6159c0f3d7702c928a1"
+    sha256 "cdba23a8da0bbdf91921247d226f9ca13e2a1c9541434f7a9132ba39346762ad"
   end
 
   def install

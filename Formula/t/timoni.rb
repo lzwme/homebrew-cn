@@ -1,19 +1,19 @@
 class Timoni < Formula
   desc "Package manager for Kubernetes, powered by CUE and inspired by Helm"
   homepage "https:timoni.sh"
-  url "https:github.comstefanprodantimoniarchiverefstagsv0.24.0.tar.gz"
-  sha256 "8622b7bbecaacc62f1ba44c796188e583fada1537d44e18b52ecdb0c61454e3c"
+  url "https:github.comstefanprodantimoniarchiverefstagsv0.25.0.tar.gz"
+  sha256 "1348744688edf0ff5b74781df0b2a280f46810a13ddc458bd2ede5e2f9f72a05"
   license "Apache-2.0"
   head "https:github.comstefanprodantimoni.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9eb8a12c3189a6f1fc1d8f30d5dbbad8cdc33f7379f57550794b64b590a0c371"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0a7908c8fb62bf682f84c1552ceddaedad9d22b8f08d1571c1d6ab56d80111b8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "6d542d48ab9c827dd159ba362f874e99d9fc9752e0ab41241531e84249fa9da5"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9e23b99bd61bfa5f21561e7ad60981252249cc7494e8403fe966f70f749b39dd"
-    sha256 cellar: :any_skip_relocation, ventura:       "8e9d22c3e0dd294d88ac00859370fffe95678d8153224439365e1d13b8c0b83d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e9e958819032eef43066ccdf602c58a25b17bcd5240a507f340eca9b395482d8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b862eaf34380ef2d39125bb3c1f4598d64ff3920677f3d8e44f59a844e3f0502"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f7ed4773ada96eee11b939418751187e1ca47e5235e59534f08a20e6498d120c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "11ada071d0ca7c0c439b30688c7a461de9dc68d0dc539b78196e4d9a0430f51c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "683a8f39929f637f48ab4313603b2379f2031fba53e4cbb94ccf3166f48069aa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "20ab010a336e67dbbae88fca0f8f4cd30d08072728b6cb70f30b0943da70d18f"
+    sha256 cellar: :any_skip_relocation, ventura:       "0c53d05d331ec52364b39e61ba79bbacd5c842c41f7d0d1b08984d53c7430980"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cd87b2828b5879989cd64ffbdee9b6e0893087c8a032694cc3a1c922966e1058"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c6eaa213231e9c5dcb9a7022e196eec2b1ba11e65a24b6a031cff89e1c5c073d"
   end
 
   depends_on "go" => :build

@@ -19,6 +19,7 @@ class PhpZts < Formula
     sha256 arm64_sonoma:  "f3525a86deeee4d8ab5a547d29ac0145a08adf4aa0eb26566d4de9adba5bd469"
     sha256 arm64_ventura: "8d1fa659daaf25d8eba698107dff6d7c057cb5bc10e3666904f09847d17651a6"
     sha256 ventura:       "33b155ce6c0cb88e249e6e155d58600cf5c3d321f297666a31d7e9b1b23202f3"
+    sha256 arm64_linux:   "871def537204dbab08223b2b5d01007e87ee58172e06c79ae212e05f371e5ef6"
     sha256 x86_64_linux:  "2fb6c358cfc78246a04c5b75e194f6bb5bbf0c0e09b38868e6074717a3aa2d30"
   end
 
@@ -424,7 +425,12 @@ class PhpZts < Formula
       assert_match expected_output, shell_output("curl -s 127.0.0.1:#{port}")
 
       Process.kill("TERM", pid)
-      Process.wait(pid)
+      begin
+        Timeout.timeout(5) { Process.wait(pid) }
+      rescue Timeout::Error
+        Process.kill("KILL", pid)
+        Process.wait(pid)
+      end
 
       fpm_pid = fork do
         exec sbin"php-fpm", "-y", "fpm.conf"

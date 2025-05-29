@@ -1,18 +1,18 @@
 class HowardHinnantDate < Formula
   desc "C++ library for date and time operations based on <chrono>"
   homepage "https:github.comHowardHinnantdate"
-  url "https:github.comHowardHinnantdatearchiverefstagsv3.0.3.tar.gz"
-  sha256 "30de45a34a2605cca33a993a9ea54e8f140f23b1caf1acf3c2fd436c42c7d942"
+  url "https:github.comHowardHinnantdatearchiverefstagsv3.0.4.tar.gz"
+  sha256 "56e05531ee8994124eeb498d0e6a5e1c3b9d4fccbecdf555fe266631368fb55f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f5caa8a7a4f7072d005a62f565705607e1d5ff21ef112d5a911bacb3c8a1695b"
-    sha256 cellar: :any,                 arm64_sonoma:  "fb88892a2b820b2e43c6b47af05740b6a5bd44e20335ec9ca23a5e247c0782ac"
-    sha256 cellar: :any,                 arm64_ventura: "5c383e2d85dfb776bb86e0aa19cd34ae62510d87b725c6fde8dc18b199a9462d"
-    sha256 cellar: :any,                 sonoma:        "a15f73654fcc9dc73f6628b06b13184127271c6090a340b160ecec12170d9c4b"
-    sha256 cellar: :any,                 ventura:       "af3320951ccf968555f534e710b4ff9fa5ddb4a2b28d9422aa37424d45b1d0c6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "da2daf5cb277e9f7b56e7e0e14ca74d9932b042784821db38263ef59511cd806"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1cd260df2059437676d4ffd985f8be01745964447e00c227bb8f3ea78355f650"
+    sha256 cellar: :any,                 arm64_sequoia: "fa799d065c7607f2e6997dfcb9d381de6b988b491a11b2d8ec78cafbc48e6914"
+    sha256 cellar: :any,                 arm64_sonoma:  "28b75e11d6e62d271cc828016689daf84f05dcc804abd5652e3de61c8a3ea4f4"
+    sha256 cellar: :any,                 arm64_ventura: "4c9f4bd167d09b5c525e7fca5ffff153a4d61496c22f75fa0455bb6d2e79d929"
+    sha256 cellar: :any,                 sonoma:        "87f1f12799f3987a0f5fbb8d192124596a5e367a403160d39e24cfc2775be2e3"
+    sha256 cellar: :any,                 ventura:       "17e09adc1f5575bd819e4cc6c42e4113b149da4531fd826923cca2b1626fe2e0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "cfdca01d3aa4278c4c1a99428cdc1de38a7c3f15a172a2e157facc5e9b4b9930"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f8fa6eff9c09d59e6e764b436f1354ef2821be373f44adb97ac158d6562b69fa"
   end
 
   depends_on "cmake" => :build

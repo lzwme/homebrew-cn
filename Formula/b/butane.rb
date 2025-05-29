@@ -1,8 +1,8 @@
 class Butane < Formula
   desc "Translates human-readable Butane Configs into machine-readable Ignition Configs"
   homepage "https:github.comcoreosbutane"
-  url "https:github.comcoreosbutanearchiverefstagsv0.23.0.tar.gz"
-  sha256 "f47c15f605736aaeee20fab290a4f727c8296e4c514ca2d18c0d938ad6c1960d"
+  url "https:github.comcoreosbutanearchiverefstagsv0.24.0.tar.gz"
+  sha256 "57724f027b76074801ca988b6859738085643c50bec44c2672e64a7047f6fb95"
   license "Apache-2.0"
   head "https:github.comcoreosbutane.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Butane < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b67439526a0cb6bf11b8229ba2f897823e5743d2608ce2aa180279cb806b636f"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b67439526a0cb6bf11b8229ba2f897823e5743d2608ce2aa180279cb806b636f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b67439526a0cb6bf11b8229ba2f897823e5743d2608ce2aa180279cb806b636f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2629f827357fa868400dd45037a9ef92aeca40c8b2f160916e2aa44175cb9c53"
-    sha256 cellar: :any_skip_relocation, ventura:       "2629f827357fa868400dd45037a9ef92aeca40c8b2f160916e2aa44175cb9c53"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38a63ec4b5ece62c1a27435f06232ebf6e6c118dec2e6ea96fbbaf5d7625e877"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1cce41cb8d792fca5cb8fbb287ca3db628ecbed2656a432daf61bda6b7aa4b26"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1cce41cb8d792fca5cb8fbb287ca3db628ecbed2656a432daf61bda6b7aa4b26"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1cce41cb8d792fca5cb8fbb287ca3db628ecbed2656a432daf61bda6b7aa4b26"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7e4edb2877ff7ce99f709ac4451fc4d756d421bb37d31c3e2df9460d5028e418"
+    sha256 cellar: :any_skip_relocation, ventura:       "7e4edb2877ff7ce99f709ac4451fc4d756d421bb37d31c3e2df9460d5028e418"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "933138ba8a1713f572e1e11c90f8d0f0a209f8d2b5aebe6408fca11df204371d"
   end
 
   depends_on "go" => :build

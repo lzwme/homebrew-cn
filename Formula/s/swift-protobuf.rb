@@ -1,22 +1,20 @@
 class SwiftProtobuf < Formula
   desc "Plugin and runtime library for using protobuf with Swift"
   homepage "https:github.comappleswift-protobuf"
-  url "https:github.comappleswift-protobufarchiverefstags1.29.0.tar.gz"
-  sha256 "0a37b1f0aab5aca1e47d0729b878004a4e3c1d5a79ad9aedc51b62d19d36f67d"
+  url "https:github.comappleswift-protobufarchiverefstags1.30.0.tar.gz"
+  sha256 "fbcdcca3aae7ca11756d4d183cb7b886c0e95bea4f516352f3a6aad77270b091"
   license "Apache-2.0"
   head "https:github.comappleswift-protobuf.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d11f47bfbbbdf427ae5af21ccc1165e77d2cfc851db714b01ab2dbac764c1520"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d013a8dca6f3acace6deb1a55bc9e170429cdbb6bc1765e7bd8abe6051d14498"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2600bb6e8d77d8ad51b7d00bbb05c2648f1cde0a67076ec1735fbbf6b13b90dc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "876fb05e81951bc16d828cd4b6fc6eec24132ca96900b35f4310f617180a4275"
-    sha256 cellar: :any_skip_relocation, ventura:       "2a684814cc304f25e1ea59d3079dd6835b6701d84946919db538f76caf1d87c4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4150b8bbb82cb4ea9f4cc3a346ae22a5cf11fdc144003931dce837dba50e4a35"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d6dc45f84a76c05d6fc9060801d94394a46b8e3bb541161d6aeef4f160f29b2b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6a479553914a58e9b3d2b314f2ce472b8e894a3eb601846aa14d58746915b6fd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0b32261300103bdd00e8a246c93d80b73438012b6f6be56eb4227fd9cdd98c36"
+    sha256 cellar: :any_skip_relocation, sonoma:        "816685a49020e4ba9791d74b0e1b750919ac81d2a211aa1d5a876cb979ad8c96"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6a74d95bf93b9cb5d1b27181ee129420640337811335a01bc89b70c4c95ea87d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b8a216b4df9f94da882786690aa57c1a4e745526dc27bf2adf3d0e007d935af"
   end
 
-  depends_on xcode: ["14.3", :build]
+  depends_on xcode: ["15.3", :build]
   depends_on "protobuf"
 
   uses_from_macos "swift" => :build

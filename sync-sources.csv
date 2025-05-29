@@ -1689,6 +1689,7 @@ Homebrew-homebrew-core/Formula/e/elan-init.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/elektra.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/eless.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/eleventy.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/e/elf2uf2-rs.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/elfio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/e/elfutils.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/e/elfx86exts.rb, Homebrew/homebrew-core, 1
@@ -3641,6 +3642,7 @@ Homebrew-homebrew-core/Formula/lib/libbluray.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libbpf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libbpg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libbs2b.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/lib/libbsc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libbsd.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libbtbb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/libcaca.rb, Homebrew/homebrew-core, 1
@@ -5864,6 +5866,7 @@ Homebrew-homebrew-core/Formula/r/rome.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ronn-ng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/ronn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/root.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/r/ropebwt3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rosa-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rospo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/roswell.rb, Homebrew/homebrew-core, 1
@@ -6887,6 +6890,7 @@ Homebrew-homebrew-core/Formula/t/tremor-runtime.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/trezor-agent.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/trezor-bridge.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/triangle.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/trimal.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/trino.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/trippy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/triton.rb, Homebrew/homebrew-core, 0
@@ -8190,6 +8194,7 @@ Homebrew-homebrew-cask/Casks/b/bridge.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/brightintosh.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/brightness-sync.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/brightvpn.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/b/brilliant.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/b/brisk.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/brisync.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/b/brl-cad-mged.rb, Homebrew/homebrew-cask, 0
@@ -13665,7 +13670,6 @@ Homebrew-homebrew-cask/Casks/q/quiet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/quik.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quip.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quit-all.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/q/quiterss.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quitter.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/q/quodlibet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/q/qutebrowser.rb, Homebrew/homebrew-cask, 1
@@ -15116,6 +15120,7 @@ Homebrew-homebrew-cask/Casks/z/zight.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zipic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/znote.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/z/zoc.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/z/zoho-cliq.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zoho-mail.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zoho-workdrive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/z/zoo-design-studio.rb, Homebrew/homebrew-cask, 0

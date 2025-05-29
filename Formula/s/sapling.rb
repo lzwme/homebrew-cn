@@ -1,9 +1,9 @@
 class Sapling < Formula
   desc "Source control client"
   homepage "https:sapling-scm.com"
-  url "https:github.comfacebooksaplingarchiverefstags0.2.20241203-120811+a2174689.tar.gz"
-  version "0.2.20241203-120811-a2174689"
-  sha256 "f05c5b08b914d2b2ab4788a55d2fd42f395b50d05fb284f4d120042122d77802"
+  url "https:github.comfacebooksaplingarchiverefstags0.2.20250521-115337+25ed6ac4.tar.gz"
+  version "0.2.20250521-115337-25ed6ac4"
+  sha256 "53c48bb807a7c65965a9f9f154f955ec4ccbce6696f721db73d0873e4bf03244"
   license "GPL-2.0-or-later"
   head "https:github.comfacebooksapling.git", branch: "main"
 
@@ -14,12 +14,12 @@ class Sapling < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c85beb75f8c584a907f8564ec4cc651d67e1fe8f859348118e23c6f952cab840"
-    sha256 cellar: :any,                 arm64_sonoma:  "67074d5d1dbff2de963e0fdd8b02863431558f8aaeba7f0ff7ada0cd2e414560"
-    sha256 cellar: :any,                 arm64_ventura: "06c392c74241dc27a9878b42e43604c701a1c18d0573551e68a0f3a493a9ddbd"
-    sha256 cellar: :any,                 sonoma:        "360d7f1088745bcbe01ae8c5a6b8034eff0bc2c52666b7b522b69573a80591e9"
-    sha256 cellar: :any,                 ventura:       "10cc240abb0c6873e0e0c82b82d74e810e9fdf1d98d1992f55f0087225b20cfe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f5baf29ada18855e2d722435f404f7bfe98b4549cbb492b38867bcfbfd499566"
+    sha256 cellar: :any,                 arm64_sequoia: "68b681bdf583a8244cc12d20040bbc2bf72b483003e5f72718a02bf1eb1a4b6b"
+    sha256 cellar: :any,                 arm64_sonoma:  "ba622027c69cacce85eceb38fb55ec67a3567cc443e2cf171856be99140c8659"
+    sha256 cellar: :any,                 arm64_ventura: "d627d3b0eac2220c1babc65f6edd21e22f8d52c49da837be04adbad790af7294"
+    sha256 cellar: :any,                 sonoma:        "7ddc287232eac9b2999e0f1a6e4cbf85492c229afee18aa563e8625414b09149"
+    sha256 cellar: :any,                 ventura:       "53b00042db69f2fda7927ec5f4bcaf81b80b91d364f63539c1b5da4268bf0e8e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3b90ffdd93cb0040aac0e050c9004bdcc9d7e9e2c23bb654166786eaf14efd1d"
   end
 
   depends_on "cmake" => :build
@@ -33,6 +33,7 @@ class Sapling < Formula
   depends_on "openssl@3"
   depends_on "python@3.12" # Python 3.13 issue: https:github.comfacebooksaplingissues980
 
+  uses_from_macos "llvm" => :build # for libclang
   uses_from_macos "bzip2"
   # curl-config on ventura builds do not report http2 feature,
   # this is a workaround to allow to build against system curl

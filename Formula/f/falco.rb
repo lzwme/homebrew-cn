@@ -1,18 +1,18 @@
 class Falco < Formula
   desc "VCL parser and linter optimized for Fastly"
   homepage "https:github.comysugimotofalco"
-  url "https:github.comysugimotofalcoarchiverefstagsv1.18.0.tar.gz"
-  sha256 "3743e5fb0cd8d7ec76c728c74434633ad46c7e65c27d1cebfb8afb96b7443b96"
+  url "https:github.comysugimotofalcoarchiverefstagsv1.18.1.tar.gz"
+  sha256 "4729d525ed08e8539fbaaafa4f0782f806b42a1b140e5fcfdd0832fec8868630"
   license "MIT"
   head "https:github.comysugimotofalco.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "10c1dea08f52c19dfa5fd3ad26505b781c0dfd979dd139a916aa33964829d59e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "10c1dea08f52c19dfa5fd3ad26505b781c0dfd979dd139a916aa33964829d59e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "10c1dea08f52c19dfa5fd3ad26505b781c0dfd979dd139a916aa33964829d59e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "95a4952f6b451fcb02d6c113414e4f05b3475fc32961f53429a5b45db7414397"
-    sha256 cellar: :any_skip_relocation, ventura:       "95a4952f6b451fcb02d6c113414e4f05b3475fc32961f53429a5b45db7414397"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "23b547864442a59c706136e3b99f196c933cf24c60d23a4697b542c00f2dde85"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4165905ac9f92356eb177f9b0af8d9b51a240e28a79d9603eecd657874bf45c9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4165905ac9f92356eb177f9b0af8d9b51a240e28a79d9603eecd657874bf45c9"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4165905ac9f92356eb177f9b0af8d9b51a240e28a79d9603eecd657874bf45c9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "523ff76a1c6572b550b77798350e2dab79514c2968dcb93ab5fa02268d0bd47d"
+    sha256 cellar: :any_skip_relocation, ventura:       "523ff76a1c6572b550b77798350e2dab79514c2968dcb93ab5fa02268d0bd47d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "595bef1baabe4fa7a6df372b0af80e2bccfd7e97e51314d116f500688b7796db"
   end
 
   depends_on "go" => :build

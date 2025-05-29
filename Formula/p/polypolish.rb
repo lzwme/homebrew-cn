@@ -12,6 +12,7 @@ class Polypolish < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "a8b92132e290d9acc0dfda7f77733d753a047a9300b48addb519d7da6bad1859"
     sha256 cellar: :any_skip_relocation, sonoma:        "33cb907b077ec76328435441f43a1bf57fcca5cbe2f9959ab6a30c4b21524b63"
     sha256 cellar: :any_skip_relocation, ventura:       "921305cc787de3679dada5645917f3e183e96aac6f4dccc8930adcb395eda850"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c143a0a43418cb58e4e2d09ada0938ca835b81d3257e9308bab83fb14261f26c"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "fe3e0cff58d47896e53f46ad77f65e9ab63c6f6a1242fbd88de05584d7dad59d"
   end
 

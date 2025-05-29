@@ -2,8 +2,8 @@ class Argocd < Formula
   desc "GitOps Continuous Delivery for Kubernetes"
   homepage "https:argoproj.github.iocd"
   url "https:github.comargoprojargo-cd.git",
-      tag:      "v3.0.3",
-      revision: "a14b0125fe02ff953caffc59e55016e5872d45bf"
+      tag:      "v3.0.4",
+      revision: "5328bd58e6255e31c858cc1b628552d32bd105e0"
   license "Apache-2.0"
 
   # There can be a notable gap between when a version is tagged and a
@@ -18,13 +18,13 @@ class Argocd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3472d6c9049fd6c1b8cf04528185052dd7d958fbd9938392e2f6da88242adfc8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b29abf27fbb29ae6bbe749e1d5bb5a824df6bdcaf0cdb25076969cca7d1c3ee2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ac3418cef819656440b0c8e9a2b6aa621a7fdc27dcb54595312f27e84e4d69d8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "11667e532dd5fcb0282fb26ea6036035bda5847bff18f86cd19a8f881246884b"
-    sha256 cellar: :any_skip_relocation, ventura:       "89bbec6808ee2a27daebc4cdf1980c02c0eb05b70f92fc1b32c1ee40811e8def"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6d12fd476a44b1e36c02bb902275f91c633bdd604e1585cd3052f161d307d927"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "287e957e4addebf5394aa54d4c3a38828e77a03478b75a3107a56649bfb337d3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b06e854e2d34eaf8524873fb69bea4ac96b8a00db107d7c76b30465b380e3e22"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "421945ff5b19959c295dc30cf9c2475f00e5a9fc39fa8eb625b9b12e5999669e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "867808239b555b703bfc722048d5fb15c31c92666f977f6f1d7df841184e1707"
+    sha256 cellar: :any_skip_relocation, sonoma:        "aa8239e049d18b150d971b0049117d020534355b593f59392639115569e8491d"
+    sha256 cellar: :any_skip_relocation, ventura:       "7b033611e5e87b593133b5a652446b57b60af82b0818027a707b92cbd29fb1ad"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "48b83692e9fb659f924d031c2f2b0647a244c45c4d2ab91e8330e31a410db12d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e43ebee0797c83d4616a8601833aaa1ef119a01edacc2522c929f358e619d86c"
   end
 
   depends_on "go" => :build

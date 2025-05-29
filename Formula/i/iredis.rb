@@ -6,17 +6,18 @@ class Iredis < Formula
   url "https:files.pythonhosted.orgpackagesda878b70adbbc97b71bf96d859fcc81344033a718b4df636c738091b42eb23aeiredis-1.15.1.tar.gz"
   sha256 "b702e64ea665aa8472bcda0a388c1c555584014db00ad2cea318090d9a5ff818"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comlaixintaoiredis.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8d794b2cd077052710ce7e016c3d75b8a16b2b8b03be5b7a9ce2e003c6693ab9"
+    sha256 cellar: :any_skip_relocation, all: "66c959d579adce97b5933c6972665a554d57016979fbd00aa35624c211470c94"
   end
 
   depends_on "python@3.13"
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https:files.pythonhosted.orgpackages606c8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbcclick-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
   end
 
   resource "configobj" do
@@ -44,14 +45,19 @@ class Iredis < Formula
     sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
   end
 
+  resource "pyjwt" do
+    url "https:files.pythonhosted.orgpackagesfb68ce067f09fca4abeca8771fe667d89cc347d1e99da3e093112ac329c6020epyjwt-2.9.0.tar.gz"
+    sha256 "7e1e5b56cc735432a7369cbfa0efe50fa113ebecdc04ae6922deba8b84582d0c"
+  end
+
   resource "python-dateutil" do
     url "https:files.pythonhosted.orgpackages66c00c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6dbpython-dateutil-2.9.0.post0.tar.gz"
     sha256 "37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3"
   end
 
   resource "redis" do
-    url "https:files.pythonhosted.orgpackages47dad283a37303a995cd36f8b92db85135153dc4f7a8e4441aa827721b442cfbredis-5.2.1.tar.gz"
-    sha256 "16f2e22dff21d5125e8481515e386711a34cbec50f0e44413dd7d9c060a54e0f"
+    url "https:files.pythonhosted.orgpackages71dd2b37032f4119dff2a2f9bbcaade03221b100ba26051bb96e275de3e5db7aredis-5.3.0.tar.gz"
+    sha256 "8d69d2dde11a12dc85d0dbf5c45577a5af048e2456f7077d87ad35c1c81c310e"
   end
 
   resource "six" do

@@ -12,12 +12,13 @@ class Gh < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "95b2af35af9cc940a210782b81b3018d8d5fde2b33942d495843344b3b55604b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "95b2af35af9cc940a210782b81b3018d8d5fde2b33942d495843344b3b55604b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "95b2af35af9cc940a210782b81b3018d8d5fde2b33942d495843344b3b55604b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ba053d8cb0fc4949b9fbc902aa88fa6f03ee1893eb046789af4674a47d117d6e"
-    sha256 cellar: :any_skip_relocation, ventura:       "b5e81a42cc9c221d3fd398418d21fb42041b506429ff48cd33a6f25ba4a95e77"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d55b43a221219dec027692240422f40adca297252297dea69d26cc3e2e817c20"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "046beaade0306d23d0ee28e7e701ef159d44b26aa324d7b8fc80a1b1df6f8feb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "046beaade0306d23d0ee28e7e701ef159d44b26aa324d7b8fc80a1b1df6f8feb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "046beaade0306d23d0ee28e7e701ef159d44b26aa324d7b8fc80a1b1df6f8feb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9946753c758f993c9b0fb9801fb786bdac09bafda1f75636d92a20235491710c"
+    sha256 cellar: :any_skip_relocation, ventura:       "fe5234f1da080ed707089ac8612560a53ac1aba3a6c86011f9df245e87d93b03"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "626c7ba266656072f14a5e64972af3958d07e08b7184c6963f0efaf6409a219c"
   end
 
   depends_on "go" => :build
@@ -32,8 +33,9 @@ class Gh < Formula
     end
 
     with_env(
-      "GH_VERSION" => gh_version,
-      "GO_LDFLAGS" => "-s -w -X main.updaterEnabled=clicli",
+      "GH_VERSION"   => gh_version,
+      "GO_LDFLAGS"   => "-s -w",
+      "GO_BUILDTAGS" => "updateable",
     ) do
       system "make", "bingh", "manpages"
     end

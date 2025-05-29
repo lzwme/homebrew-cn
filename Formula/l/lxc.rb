@@ -1,19 +1,19 @@
 class Lxc < Formula
   desc "CLI client for interacting with LXD"
   homepage "https:ubuntu.comlxd"
-  url "https:github.comcanonicallxdreleasesdownloadlxd-6.3lxd-6.3.tar.gz"
-  sha256 "68b379e94884f859fbfe078e4c0a46322ffd6f23209fa0b28d936676e7eada4d"
+  url "https:github.comcanonicallxdreleasesdownloadlxd-6.4lxd-6.4.tar.gz"
+  sha256 "69fb7aead2325c7a5eede6dcb1a943a0f6544892929e6ae394729582abdd9aa7"
   license "AGPL-3.0-only"
   head "https:github.comcanonicallxd.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e959fd595d3b3a797f4eeb8bf8f4407bd2df3fb268fb638cc8db154c9c9a6127"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e959fd595d3b3a797f4eeb8bf8f4407bd2df3fb268fb638cc8db154c9c9a6127"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e959fd595d3b3a797f4eeb8bf8f4407bd2df3fb268fb638cc8db154c9c9a6127"
-    sha256 cellar: :any_skip_relocation, sonoma:        "53c3fb571b80c2fb5b093bc32ed2502631f65cd0cab1ba1bf2b1917ae6163e3d"
-    sha256 cellar: :any_skip_relocation, ventura:       "53c3fb571b80c2fb5b093bc32ed2502631f65cd0cab1ba1bf2b1917ae6163e3d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "68b507578c65c458e8fd003351ed5027c867ae978067f41ec0a2b34b3f2451c9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da7dc438ebb5bb7d3941f69c550f92a689f64ec460db812871d619fd11a05e4c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "680831e50844065f167f9bda1224a8779bea2e5ea5f3c36ac8950ff241cc3a56"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "680831e50844065f167f9bda1224a8779bea2e5ea5f3c36ac8950ff241cc3a56"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "680831e50844065f167f9bda1224a8779bea2e5ea5f3c36ac8950ff241cc3a56"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0de8398833d6d560eb0d6583120e20ffac199a993631ff50298d51b328408a86"
+    sha256 cellar: :any_skip_relocation, ventura:       "0de8398833d6d560eb0d6583120e20ffac199a993631ff50298d51b328408a86"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be1c55d9fc6b5bf7d841240c5e2d795499297642c014b5b5389ed1d66e2ec129"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f882a67a1241a812fd53d5ab2cb43135628b27fd42974e3e2f0ebd08a8fd480d"
   end
 
   depends_on "go" => :build

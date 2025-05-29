@@ -1,18 +1,18 @@
 class Versitygw < Formula
   desc "Versity S3 Gateway"
   homepage "https:www.versity.comproductsversitygw"
-  url "https:github.comversityversitygwarchiverefstagsv1.0.13.tar.gz"
-  sha256 "a050b3293860f92b5c21fe9350b3bb662882347b304289a8dd6150395d7488a1"
+  url "https:github.comversityversitygwarchiverefstagsv1.0.14.tar.gz"
+  sha256 "315e45dbd1f5864860e96fd7548290bf505159602331048cc4ae0238f6e47c19"
   license "Apache-2.0"
   head "https:github.comversityversitygw.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "53ef750e7080a361ce0aa3d5c8ccdae5409a6b27af73d4bc46c5353ebc821d41"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "53ef750e7080a361ce0aa3d5c8ccdae5409a6b27af73d4bc46c5353ebc821d41"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "53ef750e7080a361ce0aa3d5c8ccdae5409a6b27af73d4bc46c5353ebc821d41"
-    sha256 cellar: :any_skip_relocation, sonoma:        "aa4e5453ac4238acf2af7326816350d08d4d406fd0e1f756c62debe69f5c829d"
-    sha256 cellar: :any_skip_relocation, ventura:       "aa4e5453ac4238acf2af7326816350d08d4d406fd0e1f756c62debe69f5c829d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2da806afca3116e4381f8b2bc092c8fc07b4c1eeae250c4c644f82c48430d59a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a359af9f580c659a82458ebbdde5e3dfeb91d2e3684921f43f6e8f83de9f3ba6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e7b764c77fdfeda4e1c26b4d0e17f469265a4a6f70f711017a10623c7218f15f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6cccf493348843afc73af31701e474bb8bcb162553974117e0586fd92db6974b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7dc49cc09142219b68970f2bffea7e101d68a940e06786020d5208a17d2f7615"
+    sha256 cellar: :any_skip_relocation, ventura:       "c290a975ae0596f7fcece1524032bdd8b94ce95a51c019f7cb959710b2a68903"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "88b2dccc651441e7c16e512422d76d1d943c0fe76ccf897cadae90f2827a86bb"
   end
 
   depends_on "go" => :build
