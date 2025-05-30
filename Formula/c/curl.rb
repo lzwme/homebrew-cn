@@ -3,12 +3,23 @@ class Curl < Formula
   homepage "https:curl.se"
   # Don't forget to update both instances of the version in the GitHub mirror URL.
   # `url` goes below this comment when the `stable` block is removed.
-  url "https:curl.sedownloadcurl-8.13.0.tar.bz2"
-  mirror "https:github.comcurlcurlreleasesdownloadcurl-8_13_0curl-8.13.0.tar.bz2"
-  mirror "http:fresh-center.netlinuxwwwcurl-8.13.0.tar.bz2"
-  mirror "http:fresh-center.netlinuxwwwlegacycurl-8.13.0.tar.bz2"
-  sha256 "e0d20499260760f9865cb6308928223f4e5128910310c025112f592a168e1473"
+
   license "curl"
+
+  stable do
+    url "https:curl.sedownloadcurl-8.14.0.tar.bz2"
+    mirror "https:github.comcurlcurlreleasesdownloadcurl-8_14_0curl-8.14.0.tar.bz2"
+    mirror "http:fresh-center.netlinuxwwwcurl-8.14.0.tar.bz2"
+    mirror "http:fresh-center.netlinuxwwwlegacycurl-8.14.0.tar.bz2"
+    sha256 "efa1403c5ac4490c8d50fc0cabe97710abb1bf2a456e375a56d960b20a1cba80"
+
+    # fix https:github.comcurlcurlissues17473
+    # curl_multi_add_handle() returning OOM when using more than 400 handles
+    patch do
+      url "https:github.comcurlcurlcommitd16ccbd55de80c271fe822f4ba8b6271fd9166ff.patch?full_index=1"
+      sha256 "d30d4336e2422bedba66600b4c05a3bed7f9c51c1163b75d9ee8a27424104745"
+    end
+  end
 
   livecheck do
     url "https:curl.sedownload"
@@ -16,14 +27,13 @@ class Curl < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "71f23540167a8ab38a56ae1ec35b12f726765d6706602e93efdaad31a99bf01d"
-    sha256 cellar: :any,                 arm64_sonoma:  "e0d632af6097f17ca1d10d2cbe63f43fdf2dd58aa1a36a6e8cad11e7f72159a5"
-    sha256 cellar: :any,                 arm64_ventura: "416ee6d14ce87952b11e325f9e320c068b657e3b5099ba50a34e7f5bbc68d634"
-    sha256 cellar: :any,                 sonoma:        "49161bfb410f5a2f585256b452f9252319064f633789109f7f53941b28816b7b"
-    sha256 cellar: :any,                 ventura:       "d6a522ebfb6b2b64f03911465d16ba15d4ce6b1e68d5cb5820c245c4f6ef8f1f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "420cec3c2e6f55105664b0074c49119f736621646ca522fae976cbe759667a8b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9c420f63845b2ed7c29f089cdb84981134173dab3b89b8e6c7b06f22630dcbec"
+    sha256 cellar: :any,                 arm64_sequoia: "4e1a9fa77c2e2c80589750f54fafcd2f014a3251aef28cd7159ae21f63407ce6"
+    sha256 cellar: :any,                 arm64_sonoma:  "1cee86f0eaf6551365e196be37dd6b8c5ba4ceba762dfb562acc31cb37f453ae"
+    sha256 cellar: :any,                 arm64_ventura: "2dd30282842f21a92915c671e0c7ef48cd100f3c8a9ec0dba92e042de1d561c0"
+    sha256 cellar: :any,                 sonoma:        "3d8219f0c288493ac8c49ff3038dbdfd14bad581c6e384939693fcdaeaa91a6f"
+    sha256 cellar: :any,                 ventura:       "02364a79a7e5efb5ec6711ae3dc67c06f60a876477c9a8c04df328de01248e28"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e4acfcc5932b7e7a6a52f487cf41560bda3fb02c69f34bf37f55499b70eb803"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b902e408c4295747033a0a608d9593ff11d247283d1aa939b666af9ceb28e27"
   end
 
   head do
@@ -52,17 +62,7 @@ class Curl < Formula
     depends_on "libidn2"
   end
 
-  # Fixes failure to download certdata.txt due to a redirect
-  patch do
-    url "https:github.comcurlcurlcommiteeed87f0563d3ca73ff53813418d1f9f03c81fe5.patch?full_index=1"
-    sha256 "f7461a8042ca8ef86492338458ccd79ee286d17773487513928d7ed6ae25818c"
-  end
-
-  # Fixes build on macOS 10.12 and earlier
-  patch do
-    url "https:github.comcurlcurlcommitd7914f75aa8ecdd68cdbb130c1351a7432597fe4.patch?full_index=1"
-    sha256 "2ba45be5c9238abc914c2a47cd604cbd08972583b310c9079b7b7909b352001b"
-  end
+  conflicts_with "wcurl", because: "both install `wcurl` binary"
 
   def install
     tag_name = "curl-#{version.to_s.tr(".", "_")}"

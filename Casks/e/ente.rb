@@ -1,6 +1,6 @@
 cask "ente" do
-  version "1.7.12"
-  sha256 "1674c7c155549a9198b85e2791671a66a89f038abe601524bb82c0687548ec0c"
+  version "1.7.13"
+  sha256 "2e4329d22f3234b78e782948cb41c2eb73b9f6e4379f296ae23f4911a72d0c96"
 
   url "https:github.comente-iophotos-desktopreleasesdownloadv#{version}ente-#{version}-universal.dmg",
       verified: "github.comente-iophotos-desktop"

@@ -4,16 +4,17 @@ class Sslh < Formula
   url "https:www.rutschle.nettechsslhsslh-v2.2.4.tar.gz"
   sha256 "696edac467111d0c1353a4ff32ed8dfa33bc914036644c69a7b9506b7ee49115"
   license all_of: ["GPL-2.0-or-later", "BSD-2-Clause"]
+  revision 1
   head "https:github.comyrutschlesslh.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b4bea43abc8cb06c794eab8b50340c0362c2662f296511080d25845f69293faf"
-    sha256 cellar: :any,                 arm64_sonoma:  "a79324fbee9626d381e5dab7d4ead836ced20298905976d724025d1a8d0415a0"
-    sha256 cellar: :any,                 arm64_ventura: "4faad8f00274c1ed32cb9c51c739b0b3818dba0473f7a01a7ede79e0a1e30c92"
-    sha256 cellar: :any,                 sonoma:        "034d8cc078f920c1d17309cfa139a56907566b036c8e822c3cecaa5c26662024"
-    sha256 cellar: :any,                 ventura:       "497c715950f617bba777b9583679384d3dae2b7df9c2d54dfa32a6f60b541fce"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b20ee56e1713cc9ab280630ea76598c90ce1ded6b2339b0b575012bc6b51478a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bcbc728fae44f99545d0d0ed046cf5a4d79dab9f3551524bfdbfb0030118a573"
+    sha256 cellar: :any,                 arm64_sequoia: "e33d422b1f3f1d783ee9eeec9cd64c42cd6e0d06c362637f1bfc7f537d5f2814"
+    sha256 cellar: :any,                 arm64_sonoma:  "091f2de2472186c442ae24c9ff763df2b2d434a1fa0ca7500d268e58ff791f2a"
+    sha256 cellar: :any,                 arm64_ventura: "a2209306dc2d303d47cc270a19a871c5f2c4f5ca7a717a8d4dc329702413de1e"
+    sha256 cellar: :any,                 sonoma:        "c8eee00ba3f59650f9a59e1e1a6a8424daad7450c5d08d6d1808a4d44a179a0d"
+    sha256 cellar: :any,                 ventura:       "4c54b471800cb1bf08765a1a8110bc8e2ea6c9620789b4adf5f669a6d087d16a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "56772fbb85b860f1a6813151f01adee469d0dd31d77d66e84e4362df8ce877d2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dee17158a3b5586ec93fbbd1934dfb06d20314a6b8b73409530aa7de3350bff7"
   end
 
   depends_on "libconfig"

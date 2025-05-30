@@ -3,19 +3,19 @@ class CodecovCli < Formula
 
   desc "Codecov's command-line interface"
   homepage "https:cli.codecov.io"
-  url "https:files.pythonhosted.orgpackages07d71e35265fb197cfebc95b481d5d3d7502b0ff4e2bdc33096dbe06f7429ecbcodecov_cli-11.0.0.tar.gz"
-  sha256 "567b4b8c1608d3365f99aa13c6a95320c72f60a75bea7fc1fc9b1bc58a0214a6"
+  url "https:files.pythonhosted.orgpackagesa2756dfaf3d51c106b417483b5e917075a9621e9a39c8da7e13d81af7218b6e5codecov_cli-11.0.2.tar.gz"
+  sha256 "fcd7e0aec98445aa4951114fa65a54485d463f5d56ccc4d9ab23aeabd7736107"
   license "Apache-2.0"
   head "https:github.comcodecovcodecov-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4e8700b6294a78bfdd5b672c8918c22884233371d5669fdd65cbbb2fe1c2e215"
-    sha256 cellar: :any,                 arm64_sonoma:  "92e260e344d605a9099b12d15fb3038f1008773e5a2deaa042a6621b7b73b067"
-    sha256 cellar: :any,                 arm64_ventura: "3e69185f615d42da45340bd4f22c5fba69ed40c50ff27f083dfbf0e2b71642de"
-    sha256 cellar: :any,                 sonoma:        "b9049f08ce0b34be9097132c53f9cb1e5c257f99ddc05745e274ac58ca9817e8"
-    sha256 cellar: :any,                 ventura:       "81ac401e3f53967fbf917ca82f15f3a7a7c218353de805734cf42ce6bf6b0dbf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "69fd759c477c6f51258e0c1db469864e663132b9d9b85b4ccaa0adc081802f19"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8005b97f7348989ce2069f825f6a0f9ad4e817f83da7a52a5cae4951506f87bd"
+    sha256 cellar: :any,                 arm64_sequoia: "66e9455c02ebc17e807adb41d304899098d6412f391fd485e9be0a1f0723602e"
+    sha256 cellar: :any,                 arm64_sonoma:  "034892e028334ce43a3bd7cdf17e1afbdc7998fa65751d0cafcb9fec2d6f1603"
+    sha256 cellar: :any,                 arm64_ventura: "34713f636ba75f8b7bd7acdf81424a485f48edf680faba08e90f0fda60b25861"
+    sha256 cellar: :any,                 sonoma:        "d64ac91e90232cda54aff7d67d1de8eebedbc4078401d5199d5b429cb5c627c4"
+    sha256 cellar: :any,                 ventura:       "e888f0bcf19b6a4f7216aa21f7e9f2b5440a29a633e080f97309c98d2dbe961b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d62bdaec2f34a906a38deca2649f5463071eef2a8c82a6540566f1cea9e17a1c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4ad318b1448ca7defdc187d62f8317fa74795139d7130776dff4e737c4b2d04f"
   end
 
   depends_on "rust" => :build

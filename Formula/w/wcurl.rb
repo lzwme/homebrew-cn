@@ -12,6 +12,8 @@ class Wcurl < Formula
 
   depends_on "curl"
 
+  conflicts_with "curl", because: "both install `wcurl` binary"
+
   def install
     inreplace "wcurl", "CMD=\"curl \"", "CMD=\"#{Formula["curl"].opt_bin}curl\""
     bin.install "wcurl"

@@ -4,15 +4,16 @@ class Monika < Formula
   url "https://registry.npmjs.org/@hyperjumptech/monika/-/monika-1.22.0.tgz"
   sha256 "2b2ed6ac3186d72a9f060efb62d183c4b156494b2c37de9808c108f54655b84c"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256                               arm64_sequoia: "b454a3a9c3ab9b5ae518e59e49ffa26ef65cf251158612f1bf035de1d8a94e73"
-    sha256                               arm64_sonoma:  "dbb6ee7aad6c0737edfcdb194fb4c198b9314ad759a3c09136cd5a934da61fe4"
-    sha256                               arm64_ventura: "432a1fa231644bc3afab36e6b57c1103a7763bbb4c32e308edb9f83adffa7541"
-    sha256                               sonoma:        "6d1e3680020b3fb8fabd44383bd2ef3d802742142781bac50f3602ab527932c7"
-    sha256                               ventura:       "36ff8854590a71d7ada5d70fbcbe314c1d8259a830fac7f86a06bff3427798a6"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "678bacbee424d600e2dfb41f6d45bb8ead8086cebd1fe94ab578614030943f7a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a1daac5d355750602a48ef01fcc34867c21ce4a725659e431f94f277ac818ff"
+    sha256                               arm64_sequoia: "f3e91a0c2e44a73268d2ad097f66b186d557e7c29bd6cc9bfbf5cdf6f83a51a4"
+    sha256                               arm64_sonoma:  "f2ae79c53a534008b89160ae1c8ae3fdda47aee6fc61218267468b19836a2369"
+    sha256                               arm64_ventura: "1a4b455c1dff23c63b60585ddfe58e19f9028fca8b7ebf5f48b63d2a83fca64b"
+    sha256                               sonoma:        "4ebb6355f4ed47cd9c1e85566eed9c2836b710bb5f79a6160ed7449d6217902b"
+    sha256                               ventura:       "ed6f5ea7a08fc1201b8e41b4172caf6bfaba98c1ddc7fce30c288516fe3e9f26"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ddaf84cdd4938c7a6884cad00e978282ba40458b44714405566a90bd9b412e41"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e525f7478ff11969327f3a1a65e22bb296716c68a3ef064196029f816e19e4c"
   end
 
   depends_on "node"
@@ -25,7 +26,7 @@ class Monika < Formula
 
   def install
     system "npm", "install", *std_npm_args
-    bin.install_symlink Dir["#{libexec}/bin/*"]
+    bin.install_symlink libexec.glob("bin/*")
 
     # Remove incompatible pre-built binaries
     os = OS.kernel_name.downcase

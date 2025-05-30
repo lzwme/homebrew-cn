@@ -3,20 +3,19 @@ class MagicWormhole < Formula
 
   desc "Securely transfers data between computers"
   homepage "https:github.commagic-wormholemagic-wormhole"
-  url "https:files.pythonhosted.orgpackages18a5aa48cfccc9c823678506b27892dbc6f4646ec5474c43676e4f1990efa106magic-wormhole-0.18.0.tar.gz"
-  sha256 "66fdee0861ec63ab494560aa1c68ebe3b21e955d0cabd84eadf93013e332852c"
+  url "https:files.pythonhosted.orgpackages043028c28af5c0d52e67ea417882b548a619450e9bf62555749e38f071fe6c01magic_wormhole-0.19.1.tar.gz"
+  sha256 "b1e51d9ab913b3ce1133b678cea84b6e6e38e3d37bd0128786be98370e4ca769"
   license "MIT"
-  revision 1
   head "https:github.commagic-wormholemagic-wormhole.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ab353027008259e734b8a209310d496fe548421d62775406834953ad50745885"
-    sha256 cellar: :any,                 arm64_sonoma:  "3939f3c947c8c240d58398095496aca2e61cb9a02a0b673c3baf8006f7b2f10e"
-    sha256 cellar: :any,                 arm64_ventura: "73f0c2aa25dfe215e5940289f7e27f1b1b95e855e615433512e85f0913ff7fd1"
-    sha256 cellar: :any,                 sonoma:        "d0d074fe5a940a3e7b3060a49fba8edefbaeec6b68cbf829d2b48c64a9b06913"
-    sha256 cellar: :any,                 ventura:       "a3e62f9f30cdbe8a81b0d8f80aa4418a40ea08d52481060003b4af791b1f046a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "77a7e6e805d243169b08b59282ff69fa1411d3597063f2a7afaafd08ee6e7606"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03ed98e8dc098b6a9492690a67b729cdb6f07202625929443a51e5f0f82cad65"
+    sha256 cellar: :any,                 arm64_sequoia: "6857e8e88be320a074f2762dbb9306dc0536a8e0ecaafced24ccfb71f1538cdb"
+    sha256 cellar: :any,                 arm64_sonoma:  "bf397cf27d78bfb918cf89918c5facacf3373cbaac1f320458f5c8d3858a03f5"
+    sha256 cellar: :any,                 arm64_ventura: "8d0099fc2e32a8db757d577b32da2556bac7ebfd2d1f1ff18f6be5c30e42aa67"
+    sha256 cellar: :any,                 sonoma:        "7166cc7fbfc04b77744b65c7c2dd0335973feb28b03af512e09b274c8f5125f7"
+    sha256 cellar: :any,                 ventura:       "65af56711c742640df0a96a0755aa628a1596f7ceda1bd68c45f7fa11f97aae6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7951b90644aea62e5ecd6b6b0c1ae9e66f5ea602e60477139552b1e5ec865823"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff672af46c711003a5e03ef6c716fa92fb0fc5b80db7a9aa298a223df07f2c1f"
   end
 
   depends_on "cryptography"
@@ -41,8 +40,8 @@ class MagicWormhole < Formula
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackagescd0f62ca20172d4f87d93cf89665fbaedcd560ac48b465bd1d92bfc7ea6b0a41click-8.2.0.tar.gz"
-    sha256 "f5452aeddd9988eefa20f90f05ab66f17fce1ee2a36907fd30b05bbb5953814d"
+    url "https:files.pythonhosted.orgpackages606c8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbcclick-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
   end
 
   resource "constantly" do
@@ -106,8 +105,8 @@ class MagicWormhole < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages9e8bdc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15setuptools-80.7.1.tar.gz"
-    sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
+    url "https:files.pythonhosted.orgpackages185d3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fcasetuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   resource "spake2" do

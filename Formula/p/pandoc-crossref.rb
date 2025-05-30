@@ -4,15 +4,16 @@ class PandocCrossref < Formula
   url "https:github.comlierdakilpandoc-crossrefarchiverefstagsv0.3.19.tar.gz"
   sha256 "8a30bf9a1d5d716ddfb5fb05bb17e96c121e63a31f95d82d7f369380147e5a06"
   license "GPL-2.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4efb5dff57473f27b655851490202f3a90c292e91aeb0403b2971005987f1a73"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b81878c8e32706dc3718f899442c26ccd845446266d5ea60fc049b298cd6a41"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "db12618b2a2409631165554ed34b2eb8b6c2168ba52cfe1eb7189cb29fa43058"
-    sha256 cellar: :any_skip_relocation, sonoma:        "90cb8bf5ce834a2beb0ba1823f5a8d1ee23f3d0d2f3dac3e044c9f89f5be2946"
-    sha256 cellar: :any_skip_relocation, ventura:       "5ee9a7aad93e998535509baa1da1da6b922587fea51b7851d41f466354ac7987"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ac3d707de4b39f470a5bd4b50a7ebbb5ce48c36ded06d59355fd1dc3e88ba82"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "907a754a89f7431430e5cc91c814b2ee9a455fda7181b34aba21990ec8bfbe84"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "570c34609bfb879e26ab1b88cb63d7bddba8bad9c782da15fc0c591304be3a2a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "46a66c09ddac4e7410fe41ac7d894044c5c6645fd2c14917bc6d7b87d1503730"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2a7ad17fbddf9c286c599b05aab28bf3c8299bca430cb007b50d8903d8acd43e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1da76348bb932bdde1e0ddb17518a72cd83530780f8f117291bb38a6c283f33f"
+    sha256 cellar: :any_skip_relocation, ventura:       "ddfd9654d4c2d91be50ece83be9fe99d1956a031371a4a500b815cd245484dc8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "62547c04177a060f949fb71e0494daa046bbd042aba0bd92c69f441ecec76f7a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "905e08c21227d57747654cf8e48e11250376453d22212a0dbabc66d3ee68ef23"
   end
 
   depends_on "cabal-install" => :build

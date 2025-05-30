@@ -1,21 +1,13 @@
 class Kea < Formula
   desc "DHCP server"
   homepage "https://www.isc.org/kea/"
+  url "https://ftp.isc.org/isc/kea/2.6.3/kea-2.6.3.tar.gz"
+  mirror "https://dl.cloudsmith.io/public/isc/kea-2-6/raw/versions/2.6.3/kea-2.6.3.tar.gz"
+  sha256 "00241a5955ffd3d215a2c098c4527f9d7f4b203188b276f9a36250dd3d9dd612"
   license "MPL-2.0"
 
-  stable do
-    # NOTE: the livecheck block is a best guess at excluding development versions.
-    #       Check https://www.isc.org/download/#Kea to make sure we're using a stable version.
-    url "https://ftp.isc.org/isc/kea/2.6.2/kea-2.6.2.tar.gz"
-    mirror "https://dl.cloudsmith.io/public/isc/kea-2-6/raw/versions/2.6.2/kea-2.6.2.tar.gz"
-    sha256 "8a50b63103734b59c3b8619ccd6766d2dfee3f02e3a5f9f3abc1cd55f70fa424"
-
-    # Backport support for Boost 1.87.0
-    patch do
-      url "https://gitlab.isc.org/isc-projects/kea/-/commit/81edc181f85395c39964104ef049a195bafb9737.diff"
-      sha256 "17fd38148482e61be2192b19f7d05628492397d3f7c54e9097a89aeacf030072"
-    end
-  end
+  # NOTE: the livecheck block is a best guess at excluding development versions.
+  #       Check https://www.isc.org/download/#Kea to make sure we're using a stable version.
 
   livecheck do
     url "ftp://ftp.isc.org/isc/kea/"
@@ -25,14 +17,13 @@ class Kea < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_sequoia: "0140ea7c9ede2d94efc51caadaf12c062c853d7d3d5cc68a26221b7a37226e83"
-    sha256 arm64_sonoma:  "59d717d80b87a2e491e1107105e04f9ef4caaf4d269f458558808777cfceed2e"
-    sha256 arm64_ventura: "e6a283e858cc2f08b3db91c7941f2eb0cacda7be81e58b00b8520356fe35e394"
-    sha256 sonoma:        "058ce5aeb4d71d54ebf0f6ff98ce7732c8e14d9d509588d48a05d23d488fe8bd"
-    sha256 ventura:       "a9bb4722c39d136fcc2641e78ffacdd58cbe1f3e3fb0fe1120e3141a046242a9"
-    sha256 arm64_linux:   "ceef0b2966ea631be071f02fb710cf6c3eaf319112203dec5977c45a7d30b0f1"
-    sha256 x86_64_linux:  "3db7bc8bbb9a06006c008c199d5412c1e76a771b5d96a769d8014fc65c9ebf4a"
+    sha256 arm64_sequoia: "4c66f8f52593d9e945699305f4fe64388472f6de31a061733c5a87370fb6479c"
+    sha256 arm64_sonoma:  "f8053d8a6fcd8b24e825049ec6debc1122c66e476e87bc969a526d7322aeeb79"
+    sha256 arm64_ventura: "d1371ae2cc23ff1ec5af366b12d241b67d019caa9310728c570c3f7d8d84d153"
+    sha256 sonoma:        "b977974fce305b9e45b45c3cf9f3686d21a0ab4cc37ec90405c65894af2b70ce"
+    sha256 ventura:       "9cf0169cc4bb7ba9ecef631cca6c083014fda86a7a064d9919245840c6be6ea2"
+    sha256 arm64_linux:   "fe9d2c5f9a9c911c0191ecc7c9e24c3b756e4665d65b7dc19224e3458f9374c7"
+    sha256 x86_64_linux:  "c9d151d10c0ebd376294c91e4f5b353217d3226d9c711633cfcd23198b8d603b"
   end
 
   head do

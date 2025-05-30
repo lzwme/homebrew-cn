@@ -4,15 +4,16 @@ class Mandown < Formula
   url "https:github.comTitor8115mandownarchiverefstagsv1.0.5.2.tar.gz"
   sha256 "9903203fb95364a8b2774fe4eb4260daa725873d8f9a6e079d4c2ace81bede92"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "16dc6fc0dce771f2568a38212dbb8ee9a4c262d737e83ae2a05575f1f29931bc"
-    sha256 cellar: :any,                 arm64_sonoma:  "7ae97c8f48213d8aad67e3d9edb24d832569fa69487a4fb7c1db3447b2a024c8"
-    sha256 cellar: :any,                 arm64_ventura: "24b373ecb63b84230f0f86f745cb4249239a042b32ab1cbfd40605078460119d"
-    sha256 cellar: :any,                 sonoma:        "6992cc1fe420af48147fb1a65db14b4c802977e42d5398bd794761c735131d53"
-    sha256 cellar: :any,                 ventura:       "8eae3a3b31cd0d843b6ff09dfe3469ec3bee7767a51fcb39c189de9f6526148a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a4f3e1393953047b195a1393c6ff664ed8ca7c9b96dc0d510acd7b4b3ab05cd1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7f23f558c76c49fff56ffa50d019c8866b34eb3314a038e4229d12cfe6036fed"
+    sha256 cellar: :any,                 arm64_sequoia: "62058c08be40e955aa5a9092da1b9c5975391f1715432219bbe6dad514c681b1"
+    sha256 cellar: :any,                 arm64_sonoma:  "d343e0a1552d905a9fcd584e61c76529bcc8d26d91974b93b29ec0af577f7291"
+    sha256 cellar: :any,                 arm64_ventura: "51097a822ac6600795f5edcc3731477189e06856cf244d8d21ba6c0ff565ac26"
+    sha256 cellar: :any,                 sonoma:        "2bb2bfe9ada4cdbb8c6a6076919aeaff49d7cc62624370f887193b55dd7963f1"
+    sha256 cellar: :any,                 ventura:       "ab61a2e08c5a47dc9cac7f6dfed509bae5bf0b4639710b68bbb8b2c4414d1c70"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "57dfe62d68152f7084d3a6e565ad0ff2dc182e78134938d16e73fd8a845c310e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0629af3814a1f1ddb1db8d5d1c2fa110114b959899dce4b8e4e3261e91469c4a"
   end
 
   depends_on "pkgconf" => :build

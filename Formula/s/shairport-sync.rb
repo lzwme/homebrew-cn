@@ -4,6 +4,7 @@ class ShairportSync < Formula
   url "https:github.commikebradyshairport-syncarchiverefstags4.3.7.tar.gz"
   sha256 "a1242d100b61fe1fffbbf706e919ed51d6a341c9fb8293fb42046e32ae2b3338"
   license "MIT"
+  revision 1
   head "https:github.commikebradyshairport-sync.git", branch: "master"
 
   livecheck do
@@ -12,13 +13,13 @@ class ShairportSync < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "c25646009fe8cddab1b71c91b10a39f911e97b3b3eecb86eb89abf5b06314e09"
-    sha256 arm64_sonoma:  "35734a8d4528fa4adfda8389a9928ccdc0537fe2cc85c7d84a8fca56f2ad8f04"
-    sha256 arm64_ventura: "8cf7de53d4ddb584a9c867487d12b63398c12a70828854856b356b89744bc5f5"
-    sha256 sonoma:        "c354b7d9cbb4d7ae6f6c0eb45e90673033ed3a9f00fcc365aadb0126c03485e9"
-    sha256 ventura:       "b926bdadaad35052db8c2b52c0d3c2f3a70b5029084e1f0f390525588e2a17bf"
-    sha256 arm64_linux:   "371e002a675cc3343cbf7e9632b4d6b36cfe6c32465c3970fb22fecaa2f3dc2b"
-    sha256 x86_64_linux:  "a11b5f33ab1cdf35b511fc944c61c192e9c070d58b09bcfb0b108388108208eb"
+    sha256 arm64_sequoia: "7545247fdb0c6f1d073bb20d3bc89304637ee0d57cee66e725e1ee32549dd1ae"
+    sha256 arm64_sonoma:  "21a738ff972c71852726ef8073116fb6e77db042d92a4846b9aee123af0f5ff8"
+    sha256 arm64_ventura: "1cb4522df509d78bc574c27a8d668b6bf639dcb0e6a68d015b8e93205c1c0ac3"
+    sha256 sonoma:        "a61879e3ed9398bd9683ad8851d54db9c49a0bdf701cf5b58b6bc79f101ed553"
+    sha256 ventura:       "eea7570e9fcc832b79f410bb906dac1fadb920deca94edb3d81f74544e48acb4"
+    sha256 arm64_linux:   "69d9c8f3540f793214bbc3e9bbf61b39b5b4caa3bcd7c5c17a958ab7eb599164"
+    sha256 x86_64_linux:  "5098428e618dec3360e3cb5ede3eaec09611ff3cc27596fc9a9fc2a737917bf5"
   end
 
   depends_on "autoconf" => :build

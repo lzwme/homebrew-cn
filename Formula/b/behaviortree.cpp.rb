@@ -1,18 +1,18 @@
 class BehaviortreeCpp < Formula
   desc "Behavior Trees Library in C++"
   homepage "https:www.behaviortree.dev"
-  url "https:github.comBehaviorTreeBehaviorTree.CPParchiverefstags4.7.1.tar.gz"
-  sha256 "7fccfad1bbe6fd0b3dffff0e439fcd508ca2983deec1b7447a5c8d66540dd91c"
+  url "https:github.comBehaviorTreeBehaviorTree.CPParchiverefstags4.7.2.tar.gz"
+  sha256 "fa52bfd1f23a65ecf7da887b565213441a3628dab85179329d4731a6d273ebd5"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d4c88258807c03dfa42972d969926a0ca73e47cfb4255f2671899530d5f5b697"
-    sha256 cellar: :any,                 arm64_sonoma:  "d966f3f5496bbf6dd1e5814f0efb80692046c9e88ec5be3cae349b8a2f51bcc4"
-    sha256 cellar: :any,                 arm64_ventura: "762a8cf30054ceac0d39c0fc660619a1293a6c1d93d2bd79a5dab2f65a09e701"
-    sha256 cellar: :any,                 sonoma:        "d29e1b0f4dc31024d23c858c0dc398b92b7e81699685bcbb2925dfcd53d9c14c"
-    sha256 cellar: :any,                 ventura:       "33194549fe30d82462d9544ee3d337c3561c9ebb0297c0f0904ce5f72c78bae8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "daada1bfe756c6bb71bcdf3f0f7090ae2436172c1f7bdb6d6890937771722410"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9709dc54ea399939a8ebf959cb9d10b8766f6a05f0284fb3de1e3e037818b7b0"
+    sha256 cellar: :any,                 arm64_sequoia: "287a827d7ee1eaf4183d1b96b731ac76818742a3fa3fd25c0bf730eff06fe2d1"
+    sha256 cellar: :any,                 arm64_sonoma:  "1e8bc3ce758fa6c41a04df7103cd9af35f6282f6bbd01cd21ccb360a1a07d678"
+    sha256 cellar: :any,                 arm64_ventura: "8130722b4e1f778150a591fe5683c42b35c02c728d3f6841902bc381a1f59ab5"
+    sha256 cellar: :any,                 sonoma:        "d13d59ee51d12603e80c1e92e0f439c1777dfdb72f48b2539d075d2dcf42a736"
+    sha256 cellar: :any,                 ventura:       "5d8380fa532c1116067e3df6dcfe453f4fd11f37d340bc4ff43d15ca9199b016"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f411456a62a19fb19c7b09be80e13b6938fd4a2970778b772dbe9b555878c141"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8acd7de66935419328ad2804bacdf2137041cefe500fd3dbd6200067542c260"
   end
 
   depends_on "cmake" => :build

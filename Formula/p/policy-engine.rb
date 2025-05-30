@@ -1,18 +1,18 @@
 class PolicyEngine < Formula
   desc "Unified Policy Engine"
   homepage "https:github.comsnykpolicy-engine"
-  url "https:github.comsnykpolicy-enginearchiverefstagsv0.34.0.tar.gz"
-  sha256 "cc61ac06f363a67619054fe50c23e3f426c7cef3126d5fe797263f75643147ba"
+  url "https:github.comsnykpolicy-enginearchiverefstagsv1.0.0.tar.gz"
+  sha256 "e188113c2d3c25727943371153546ca818990b6125751b0f4f78171da847063b"
   license "Apache-2.0"
   head "https:github.comsnykpolicy-engine.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "495d5173ad8a462721d65e891bf831a2d3474d9a237e45ff9331853710adbf98"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "afafc897a5e8508325afba6f191da1412d0246ea7acb4efb71dae42330f37117"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e23695932846e1506ca7cd7294db6b21215330325e40da46941f8c730da0d2f8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7543165e28d12e5ff5af0535de81fec7d4422cd4388452303bfb68197994e4af"
-    sha256 cellar: :any_skip_relocation, ventura:       "d3d1f63bde5d9f93eb973d6c018d32c3868bb31226edc6efbe24d915c0ab2305"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3587a14bb6366e5658872e4a0148c6f3b6a1b10915a42f4b96f747f8234d9eb"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "444f466414228ead13c746e6fc1cd7c0bd853d0d8ae89bbf0828332e05eb0e6c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e3b6f4e823932562da44865a3622cc540b62885db695bbfa7afe4742e22a558d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "514e1f79a8ec9574d5f89fae1ee53031241cc8f2e35c453909fbdab734b79d12"
+    sha256 cellar: :any_skip_relocation, sonoma:        "06a6a3edbab4e855a22f8aad7bcd47691fdc39810b148dd26fbf53f25aa11fe6"
+    sha256 cellar: :any_skip_relocation, ventura:       "e44c79e201b1a2586528715f7c504816bfe7859fa135b9811694d32fa40794f5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c4275eb7fde7e9ebb38b9a613a029cded133aaf4d76e57586ad6d41cecbd6cd"
   end
 
   depends_on "go" => :build

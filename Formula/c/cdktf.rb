@@ -4,14 +4,15 @@ class Cdktf < Formula
   url "https:registry.npmjs.orgcdktf-cli-cdktf-cli-0.20.12.tgz"
   sha256 "90bb30b7eae861d2a7ab21d1fe4ddbf71c8f74e7b2c31052c9b9265ff69d4c6e"
   license "MPL-2.0"
+  revision 1
 
   bottle do
-    sha256                               arm64_sequoia: "c1f18f63b582964297038bb4b67726fdd4f3679da303fe3db743bc50f8415b31"
-    sha256                               arm64_sonoma:  "e69789750019da67bc16c2e137228306528a18f2bf92499c027f40cc98749980"
-    sha256                               arm64_ventura: "44219e68aa1993c579b5f973322703f64209ed42b9bb4bbce4ad49a5d82a7bbc"
-    sha256                               sonoma:        "3219484a717ff464e6bce5bf60688d37dda8a1544f80235ec15e5325bf1c8f6e"
-    sha256                               ventura:       "055c2f47d7e4ed2fb81f2c978a9281e49dbfb802b7aa23a0efdd4092028a7840"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd71b277d96e93d200479006af9ee8987034fc8e3706a9f2e6cd88619ee6cac9"
+    sha256                               arm64_sequoia: "f3a5571c228c0afe23c7823f29a91085faf6feb8355a54acacf42674f66cfa28"
+    sha256                               arm64_sonoma:  "b8d8e69d7a3657a8706747664b19a1753b1d1c516edfa5b5f509208eacb64426"
+    sha256                               arm64_ventura: "80736d8e4441e675140caf8e90457ef084a28a0fc55a89230ba89bb1419abd1c"
+    sha256                               sonoma:        "fe84c384fef7fe0fccdce3eaf4ac021c08a735a0ace56a558c134cfdb46a056f"
+    sha256                               ventura:       "5db5bbf4b1592846f17d5557752f123121fd9b6d2e5308a0f8442ec7801e19dc"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b5e6e9ed6f9ab6fdec3758e977d27f150776d56d8cf30c05fe1903277df13e4"
   end
 
   depends_on "opentofu" => :test

@@ -1,18 +1,18 @@
 class DdnsGo < Formula
   desc "Simple and easy-to-use DDNS"
   homepage "https:github.comjeessy2ddns-go"
-  url "https:github.comjeessy2ddns-goarchiverefstagsv6.9.3.tar.gz"
-  sha256 "898fbfdf774e1dd025bfe4c48b6b9cc6d4d16e8060009167ca3fae03e0e64d5b"
+  url "https:github.comjeessy2ddns-goarchiverefstagsv6.9.4.tar.gz"
+  sha256 "9430183bc24261060d1ff3353d6d9d1543a608f50d931953d64956629aaa67fe"
   license "MIT"
   head "https:github.comjeessy2ddns-go.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f73adf995e17ecc2fd6de2aacf7fef175d7c728f5ea7de388b652cf94b6e4c96"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f73adf995e17ecc2fd6de2aacf7fef175d7c728f5ea7de388b652cf94b6e4c96"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f73adf995e17ecc2fd6de2aacf7fef175d7c728f5ea7de388b652cf94b6e4c96"
-    sha256 cellar: :any_skip_relocation, sonoma:        "41c375ee07522d2d70695b1cc486b37087b40148e1cb2ddf47cd06f4e7544539"
-    sha256 cellar: :any_skip_relocation, ventura:       "41c375ee07522d2d70695b1cc486b37087b40148e1cb2ddf47cd06f4e7544539"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38d1dded5aa1d95e9e6aa3757ba0fff6450f72fdf445ccd05d7c183fd10c6798"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f8764d5d9517c5eef19f52ef8b95ca5098500946c272eb2fd8e731ff0be1228"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1f8764d5d9517c5eef19f52ef8b95ca5098500946c272eb2fd8e731ff0be1228"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1f8764d5d9517c5eef19f52ef8b95ca5098500946c272eb2fd8e731ff0be1228"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a35dc633e37a12cdb02e46cedcd9acfeb90b580ee53a9589dc82512ca9506ffb"
+    sha256 cellar: :any_skip_relocation, ventura:       "a35dc633e37a12cdb02e46cedcd9acfeb90b580ee53a9589dc82512ca9506ffb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "51d76ae1d86f9e568f25ca8a0b8a9b83d410e816f96202eefa581bbd227e3d98"
   end
 
   depends_on "go" => :build

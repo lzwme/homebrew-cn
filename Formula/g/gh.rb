@@ -1,8 +1,8 @@
 class Gh < Formula
   desc "GitHub command-line tool"
   homepage "https:cli.github.com"
-  url "https:github.comclicliarchiverefstagsv2.73.0.tar.gz"
-  sha256 "e432fd7e8944f94624fbd287b3bdd46f6bbed23609178c940bdb7b5d55a6d1c4"
+  url "https:github.comclicliarchiverefstagsv2.74.0.tar.gz"
+  sha256 "b13e60f114388cbc20ba410d57b43f262814dec7d3e37363accfd525c6885d3b"
   license "MIT"
   head "https:github.comclicli.git", branch: "trunk"
 
@@ -12,13 +12,12 @@ class Gh < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "046beaade0306d23d0ee28e7e701ef159d44b26aa324d7b8fc80a1b1df6f8feb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "046beaade0306d23d0ee28e7e701ef159d44b26aa324d7b8fc80a1b1df6f8feb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "046beaade0306d23d0ee28e7e701ef159d44b26aa324d7b8fc80a1b1df6f8feb"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9946753c758f993c9b0fb9801fb786bdac09bafda1f75636d92a20235491710c"
-    sha256 cellar: :any_skip_relocation, ventura:       "fe5234f1da080ed707089ac8612560a53ac1aba3a6c86011f9df245e87d93b03"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "626c7ba266656072f14a5e64972af3958d07e08b7184c6963f0efaf6409a219c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "4fe2f192935bc17640db32dac2af838aae1f1fa8d34adca07db4274bd4bbf3d3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4fe2f192935bc17640db32dac2af838aae1f1fa8d34adca07db4274bd4bbf3d3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4fe2f192935bc17640db32dac2af838aae1f1fa8d34adca07db4274bd4bbf3d3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "984fd93ecf2dc65a508e5aa614ebd75e53f286c0cff4ff7203cd128cfdf853a2"
+    sha256 cellar: :any_skip_relocation, ventura:       "702f6fb14e9e3db15d9cee9af66e0342605334305f0cda7f66dad5bb33e143d9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "850479fcc72eeec97eb7d7a74d79dfedad2f3c62d5b45a37beae63b2b1b57910"
   end
 
   depends_on "go" => :build

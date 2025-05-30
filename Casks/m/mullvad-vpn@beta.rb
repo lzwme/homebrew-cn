@@ -1,4 +1,4 @@
-cask "mullvadvpn@beta" do
+cask "mullvad-vpn@beta" do
   version "2025.6"
   sha256 "c2f5899b53f8385d86e0fe6facd3cf3572db71635120e216d3e8ddaf0999b991"
 
@@ -15,7 +15,7 @@ cask "mullvadvpn@beta" do
     end
   end
 
-  conflicts_with cask: "mullvadvpn"
+  conflicts_with cask: "mullvad-vpn"
   depends_on macos: ">= :ventura"
 
   pkg "MullvadVPN-#{version}.pkg"

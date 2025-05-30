@@ -7,18 +7,14 @@ class Libkml < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia:  "16858cec446e361bcf9e982681d9283e990e2ffca3ab0d85f54b23bd48557623"
-    sha256 cellar: :any,                 arm64_sonoma:   "179af536831d605bf028ef8c8f343ae9463b60b2864bc473b4266659d994f4cf"
-    sha256 cellar: :any,                 arm64_ventura:  "ee02b6adeccc3033cc99a2e8a45f8d21a4df7c487c0be1f05f623a7d3ac6ffa1"
-    sha256 cellar: :any,                 arm64_monterey: "39b02cd2375b13cf321a80d04bdd90e07139bd99bd9e0f8b0ac816b96ec5920e"
-    sha256 cellar: :any,                 arm64_big_sur:  "4c4e7310b060e79a58f209a910a56f7b9e5535305e81127afa0540ddb33c9d58"
-    sha256 cellar: :any,                 sonoma:         "eb05bd2a83db1deae6c926aadd56c2128364c66d9f76c2c8ddafed1d65a0715d"
-    sha256 cellar: :any,                 ventura:        "8c1aad6dd48f07f59db92056f984a4ea23de92a1f5103b39314e6995d7c7e43a"
-    sha256 cellar: :any,                 monterey:       "8fea3543dfb5a38bcc28fdf049d30657ce12b20ab4435b41d0d4634856b28bd9"
-    sha256 cellar: :any,                 big_sur:        "19bf29c790ba047803ce5ac8f33192d1bfd281458026870d74f18ee91c732203"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "18bf187fc45bb5fb71649813c9647d91ae0b27a4097dd8858dfc1c642ba18589"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "b827ac73d49a0fb2d3d0073ef374d6c9a54688698daf7600670594aa10ea6149"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "eb94aab1bf14416741d583115f1296611b1ce5fca7cef1748bf935cb28fdea02"
+    sha256 cellar: :any,                 arm64_sonoma:  "1b1bcd07c0c72921902ad1ba84d8e184f4412b28b7553c3c293eedacab771604"
+    sha256 cellar: :any,                 arm64_ventura: "e76761b18a288e50fdab372c0098846eebe2fd422beae5478837cbbed20e2212"
+    sha256 cellar: :any,                 sonoma:        "085481f1cef637b7a0c20c9e1297fe9ad5ba68c5cfd0e4b5349cf038e17205af"
+    sha256 cellar: :any,                 ventura:       "c26ab6d33b6f3d00bd73a1eb42aa558d72b5dfff9b31a97d6f5c57d5c6f6200c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ebd0dd2936b88b97b2ef2493dbcdda7103549067a4e5528fba3c3a4d1b3420d6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8ee2cd309d2ded095b5def7e951816110d57c122c7192564e488a3cc4fddb360"
   end
 
   depends_on "boost" => [:build, :test]
@@ -34,7 +30,13 @@ class Libkml < Formula
   uses_from_macos "zlib"
 
   def install
-    system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    # Workaround to build with CMake 4
+    ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
+
+    system "cmake", "-S", ".", "-B", "build",
+                    "-DCMAKE_CXX_STANDARD=14",
+                    "-DCMAKE_INSTALL_RPATH=#{rpath}",
+                    *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
@@ -75,7 +77,7 @@ class Libkml < Formula
     CPP
 
     flags = shell_output("pkgconf --cflags --libs libkml gtest").chomp.split
-    system ENV.cxx, "test.cpp", "-std=c++14", "-o", "test", *flags
+    system ENV.cxx, "test.cpp", "-std=c++17", "-o", "test", *flags
     assert_match "PASSED", shell_output(".test")
   end
 end
