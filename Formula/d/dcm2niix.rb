@@ -25,9 +25,6 @@ class Dcm2niix < Formula
   depends_on "cmake" => :build
 
   def install
-    # Workaround to build with CMake 4
-    ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
-
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

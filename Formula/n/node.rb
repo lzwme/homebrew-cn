@@ -42,6 +42,8 @@ class Node < Formula
     depends_on "gcc@12" => :build if DevelopmentTools.gcc_version("/usr/bin/gcc") < 12
   end
 
+  link_overwrite "bin/npm", "bin/npx"
+
   # https://github.com/swiftlang/llvm-project/commit/078651b6de4b767b91e3e6a51e5df11a06d7bc4f
   fails_with :clang do
     build 1699

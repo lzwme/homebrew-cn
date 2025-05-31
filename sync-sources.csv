@@ -1985,6 +1985,7 @@ Homebrew-homebrew-core/Formula/f/flux.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flvmeta.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flvstreamer.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/flyctl.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/flye.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flyscrape.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/flyway.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fmdiff.rb, Homebrew/homebrew-core, 1
@@ -2028,6 +2029,7 @@ Homebrew-homebrew-core/Formula/f/foundry.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fourmolu.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fourstore.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fox.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/f/foxglove-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fpart.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fpc.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/f/fpdns.rb, Homebrew/homebrew-core, 1
@@ -3302,6 +3304,7 @@ Homebrew-homebrew-core/Formula/k/ktfmt.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/ktlint.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/ktmpl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/ktoblzcheck.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/ktop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/ktor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kty.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kube-bench.rb, Homebrew/homebrew-core, 1
@@ -4758,6 +4761,7 @@ Homebrew-homebrew-core/Formula/n/notifiers.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/notify.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/notmuch-mutt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/notmuch.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/n/nova.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/noweb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nowplaying-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nox.rb, Homebrew/homebrew-core, 0
@@ -5358,6 +5362,7 @@ Homebrew-homebrew-core/Formula/p/podsync.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/poetry.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/poke.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pokerstove.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/polaris.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/policy-engine.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/policy_sentry.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/polkit.rb, Homebrew/homebrew-core, 1
@@ -5738,6 +5743,7 @@ Homebrew-homebrew-core/Formula/r/reattach-to-user-namespace.rb, Homebrew/homebre
 Homebrew-homebrew-core/Formula/r/reaver.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/rebar3.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/recc.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/r/reckoner.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/recode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/recon-ng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/r/recoverjpeg.rb, Homebrew/homebrew-core, 0
@@ -7865,6 +7871,7 @@ Homebrew-homebrew-cask/Casks/a/apparency.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/appcleaner.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/appcode.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/appdelete.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/a/appexindexer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/appflowy.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/a/appgate-sdp-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/a/appgrid.rb, Homebrew/homebrew-cask, 1
@@ -12287,7 +12294,6 @@ Homebrew-homebrew-cask/Casks/k/kindle-comic-creator.rb, Homebrew/homebrew-cask, 
 Homebrew-homebrew-cask/Casks/k/kindle-create.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kindle-previewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/k/kindle.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/k/kit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kitematic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kitty.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/k/kitty@nightly.rb, Homebrew/homebrew-cask, 1
@@ -13922,6 +13928,7 @@ Homebrew-homebrew-cask/Casks/s/screens-connect.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/screens.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/scribus.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/script-debugger.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/script-kit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/scriptql.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/scrivener.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/scroll-reverser.rb, Homebrew/homebrew-cask, 0

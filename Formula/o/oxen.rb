@@ -1,24 +1,26 @@
 class Oxen < Formula
   desc "Data VCS for structured and unstructured machine learning datasets"
   homepage "https:www.oxen.ai"
-  url "https:github.comOxen-AIOxenarchiverefstagsv0.34.7.tar.gz"
-  sha256 "f830c146b2c5b93d0c0b94ddad03ac10d6dbf9b4eb39297bd4b914ff9076e179"
+  url "https:github.comOxen-AIOxenarchiverefstagsv0.35.0.tar.gz"
+  sha256 "f8301be0615b5e489ea7ec6811a04e6730424c05710b22453b3b1c66e946dcf9"
   license "Apache-2.0"
   head "https:github.comOxen-AIOxen.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "308c4e9b10b4f4504ca2970baea5b518f96e3770a814c8da40ef96f4c29992d2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f8614beac1f930c3b5aa9fb3b500d13498c3f335e064cfb7dfbd9d7ef7f588c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "aafaaff87750438c8c1386acfcf298c86020efa9fb034db390f7566afeba4bf0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8336f2b93dc0d97cb20576cfb2004d7ba67f4c4b8ffdb5db1bd8604f628721a2"
-    sha256 cellar: :any_skip_relocation, ventura:       "2ba25b20500f7fd7ab49dd5cb3f73d069d62d26acbb20ae7f2a9e943c659ac58"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6019a6c82e0fda3ce82deee832e65a7116a4d7ba17499c126b1ccc12c8626cff"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8793e7c834bac7cf51526e4bc397f60959aad9ba2582547deb3648d997ef7f7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c5028a4c4023327ee842b9e609b3ea7c1c0a00e4d335ff853bb79d93bd4b948c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "854c2db0bbc9098ac8a2bd518d0a4e0aa0743680f8a098a0ccd00b5e75e7533e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2d156ebc9ad223b4c2740de009fb2c7ed5cb8398bbb3afb8a8b443675c88649c"
+    sha256 cellar: :any_skip_relocation, ventura:       "9003f44c38e1210ff649904a81a267b238e411b92d8c7a9b6ffc4c09b0c3ed19"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c0ad60cfb5dad9e31709a8b65301315a9afdfe2ad8aa2698085c8d3065888c4d"
   end
 
   depends_on "cmake" => :build # for libz-ng-sys
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
+  depends_on "xz"
 
+  uses_from_macos "bzip2"
   uses_from_macos "llvm" # for libclang
 
   on_linux do

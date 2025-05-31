@@ -1,10 +1,9 @@
 class Coturn < Formula
   desc "Free open source implementation of TURN and STUN Server"
   homepage "https:github.comcoturncoturn"
-  url "https:github.comcoturncoturnarchiverefstags4.6.3.tar.gz"
-  sha256 "dc3a529fd9956dc8771752a7169c5ad4c18b9deef3ec96049de30fabf1637704"
+  url "https:github.comcoturncoturnarchiverefstags4.7.0.tar.gz"
+  sha256 "adbc90550d326e1b0fef4ccf9955c0ea32e63792acedcbc9cdbe9f71f380e622"
   license "BSD-3-Clause"
-  revision 1
 
   livecheck do
     url :stable
@@ -12,13 +11,13 @@ class Coturn < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "d9bc46fa338fa68b9a829f2086b359e2cd92291ac2334d23d2d25bce73210647"
-    sha256                               arm64_sonoma:  "f48367d4e77f52c69ab4ad0276a3b8f8200679e8dfcb5ac5995dfa0603454778"
-    sha256                               arm64_ventura: "177e302f3af1048a929dafbdd0ee76c11f94d37fa5463b38e29ee3967c02d099"
-    sha256                               sonoma:        "94d3da45859fbc4ff34196fba84e0af037a9654efe84e5656f2287b22808ca25"
-    sha256                               ventura:       "de095f3b7f5020ba028b1b01aa6750400e395f1a87c6c6d89748d07b5dcf5250"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "64207317fa171d91d0088b4d8cc9f97de409735a2343b18b6a724489d6fd9edb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "231c71724dd5e78c2373cbc3e145b30552e36663ae210c305f2935d025681982"
+    sha256                               arm64_sequoia: "fa977d739b4f45c90e117848b494943dc4c5862d4f7dca2eec9329b5f98ea1b7"
+    sha256                               arm64_sonoma:  "ef170c3be32ccca9f426c5ee91f2f1b2d6b23eab2d14b61a9dbef90634b3c184"
+    sha256                               arm64_ventura: "370b0e1c912d181a353d10d5f809bb929a7ee62efd4e4b256f93be4d5f3ef8b2"
+    sha256                               sonoma:        "dfcd872aa3063d9c3fe48429a3eb0db83244f5c489133d58d019c0aaaf7e67f4"
+    sha256                               ventura:       "ca058c6f5813d62c5c96ee2a530f2af73788e1906f06c4dc8cebad1503d977e3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b38bb0504053fe35dc664db2c484db9490abe48835b14f90742240b3eafcc419"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f113db4b6046a08adfa26a0602d4a3855d6fef9f75958a0039a5778e7594aa12"
   end
 
   depends_on "pkgconf" => :build

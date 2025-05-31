@@ -1,18 +1,18 @@
 class Conftest < Formula
   desc "Test your configuration files using Open Policy Agent"
   homepage "https:www.conftest.dev"
-  url "https:github.comopen-policy-agentconftestarchiverefstagsv0.60.0.tar.gz"
-  sha256 "85db17fba05e95594c30fd67dfdbef78e18cf0f87ab3537d987a8197e2c19911"
+  url "https:github.comopen-policy-agentconftestarchiverefstagsv0.61.0.tar.gz"
+  sha256 "c067811e8e74068d6fa6473e2f0b31e5c221e33969e029c0b909ebf47c3bc135"
   license "Apache-2.0"
   head "https:github.comopen-policy-agentconftest.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "effd49553b97c61f566f9e6f20088c720eef2d9cccb059991be421551724483c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e09a8c2da7662d8c109024e001e7ef49833718bdd5575779238fc4f313f20e2d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "01f9d2cc41bbdc7500639f6e396ff1c7c771291b428f6e76671a09079ae052c0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6ae1bff1b4b49e52187fd2f147265961ad59a99ab8de5b07d52bf0cac1bb80c8"
-    sha256 cellar: :any_skip_relocation, ventura:       "5ea5d6a74c47a0945691a4482754050ed23f8363511a845ee88cf66a2b824b0c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fcde20e3189d8bbbbd92b3c7339f0d40d720a5a42da5a50c6f243f23529b6144"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2198421aec656bd255a31bc7cbeaf29c5a71ba2be1d6555bd6b2f5fa85a4473f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a3ac375a3099be69f23905d7c212d61dbfc14d4b43f3bcb23022c3b24724640"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b3c9d2ba57490175bd0ffa6f8bba57ff980155ba864dcd46f5783b1b2efcb35a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b3db569c6ddb5c382bca3a9009a7288f39601b0aadc3131db4606a7f97842d4f"
+    sha256 cellar: :any_skip_relocation, ventura:       "dae732aa033885618333c955e1b37c55c400c9204fb038c65a80b8e816dee94f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90e48d7795babd1de504ea222319c3ba7fa0f6a755a78640cd4d43d7d5090c28"
   end
 
   depends_on "go" => :build

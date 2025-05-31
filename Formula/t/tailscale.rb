@@ -9,6 +9,7 @@ class Tailscale < Formula
   livecheck do
     url :stable
     regex(^v?(\d+(?:\.\d+)+)$i)
+    strategy :github_latest
   end
 
   bottle do

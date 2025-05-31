@@ -1,18 +1,18 @@
 class Hcloud < Formula
   desc "Command-line interface for Hetzner Cloud"
   homepage "https:github.comhetznercloudcli"
-  url "https:github.comhetznercloudcliarchiverefstagsv1.50.0.tar.gz"
-  sha256 "61fb1823a176ec77c102c30b3a7de50c67df7eda6dd8a3bf1f17c882e8c78011"
+  url "https:github.comhetznercloudcliarchiverefstagsv1.51.0.tar.gz"
+  sha256 "530b5925a93da73b7f346e61ff7f8742fae400cd6dfaa1374963b1adbe594138"
   license "MIT"
   head "https:github.comhetznercloudcli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5926c1e2cb28a791212b47aee1fa99ef3a269b7e29325d21cd3844754e2d3053"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5926c1e2cb28a791212b47aee1fa99ef3a269b7e29325d21cd3844754e2d3053"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5926c1e2cb28a791212b47aee1fa99ef3a269b7e29325d21cd3844754e2d3053"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e2916119cdca7afe0d62123300ac9d49649aa19e44cc14aaadfe8f55a1c86582"
-    sha256 cellar: :any_skip_relocation, ventura:       "e2916119cdca7afe0d62123300ac9d49649aa19e44cc14aaadfe8f55a1c86582"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3455977befd86b6dcb02de868e4d1d544134095ba3b2c74772ae1d32747b9954"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "7827e1af3e21d91e64cd6b32a2aaf2b9a4700a79f093dae9205e24e848fd01dd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a45d2ce8910e71a300e2c06f9a5c01765529c9f2b37ef6eb9c460eac9e116c93"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "545f332f681b5de55df7f283a78d15f5ff36eee338752ad624ceff7d0f58983e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9b53acd81bae9ca4f1027e1a3311479be55bf060759e39be69dcf4913496ff3b"
+    sha256 cellar: :any_skip_relocation, ventura:       "ebded319b8048793fba63fd83f9e67fc2d3284e41f94fb2cea4c253891f6b8c5"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14f680fafab6d685802e526beb06d26d585f2d85b3e03ce246d679c27639275b"
   end
 
   depends_on "go" => :build

@@ -1,19 +1,19 @@
 class Rhai < Formula
   desc "Embedded scripting language for Rust"
   homepage "https:rhai.rs"
-  url "https:github.comrhaiscriptrhaiarchiverefstagsv1.21.0.tar.gz"
-  sha256 "11b1303830b95efe153c8fcab25628b8304b31f4c2b8ecd0791979800db19e49"
+  url "https:github.comrhaiscriptrhaiarchiverefstagsv1.22.0.tar.gz"
+  sha256 "16c60ab5428e4ef1e4df55edb43914dd7f4fcee5615b3399b1a96aa2e9d9fe79"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comrhaiscriptrhai.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b13e0af55b0f0ff2c11db28b877fa24fb9b395df051a8cb406e3fbdb8c55439"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fcc91dc8b4817eb2e12ee73a317e283deb4ce9e3cdb61e10ec5f440835e89546"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "007a9c01d4d28fb5f1890cbd50db8da29774dfb2166924f3bc46002eca043aff"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0e9e3530ec4b005d6b144c0869754d38f02fbe9f0e0c306684a4a5aac0389a1c"
-    sha256 cellar: :any_skip_relocation, ventura:       "fd7252baec59a484b66ff70db31eec2c15ad6ec57230b014b3dfcf8d4aa45cb9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1882578806acf50e157c2727d61e92a53c9b6d92ab7245e1639f72f412627fd6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "625323d49d84a3cf9e0ea41a65b1d6d5b7bba882a55117da31e9b94bf0036a7b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "09d1c838e78169868e40f03d2b17018cd044b1d780bc018f9136917275901af5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7208659b91f63561c5459260783a7e408b721304370a8d1cc063647e065b51ee"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "8e4a4cc3b640ffc4e8479f2161be68df4137915a6a3934fa41793baa3b83ccce"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b2310e04362f3d57bc318482c04cc353a8cda29be8f959a90088ae377a6136fd"
+    sha256 cellar: :any_skip_relocation, ventura:       "2f4c967e77eb0c6f9e70c6d8fc4a08903749c254cc04e64cb79220120a0f7544"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "df5a7cd30053615e06a8a97d27fd1f74cdbf3e2934009531cc396bc4f06ecf23"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3eb590cb0d25f330d9b246d243df9b8bacab4439e52a54bb472bfc08ace2b963"
   end
 
   depends_on "rust" => :build

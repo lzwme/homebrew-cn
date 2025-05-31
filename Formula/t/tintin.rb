@@ -1,8 +1,8 @@
 class Tintin < Formula
   desc "MUD client"
   homepage "https:tintin.mudhalla.net"
-  url "https:github.comscandumtintinreleasesdownload2.02.42tintin-2.02.42.tar.gz"
-  sha256 "ae3396fe40a246dd09d8c31a232202db1827a11e6fbebfa9b1f413e7fd1807c4"
+  url "https:github.comscandumtintinreleasesdownload2.02.51tintin-2.02.51.tar.gz"
+  sha256 "9279f25d18defddf449863f4bad6ec971feacd297a9d9ddaac28c9b5d5eced02"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Tintin < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f7e297d0dccb6ab59b5d6fe3b6e0a80e288fef30ccae1d15afe2e148d0f13082"
-    sha256 cellar: :any,                 arm64_sonoma:  "baf16649efa1cb54f57f398d1feaa25cc9e4fde3bdcb97ea14b1c6f695a3e0aa"
-    sha256 cellar: :any,                 arm64_ventura: "dcd49d734e84046e1517ff268c77660bbcd8ba8f7793a010f8f80b08c4ba19ba"
-    sha256 cellar: :any,                 sonoma:        "698c40d0d6db51cdbe86646169120805cf53482072eede0ba54bdbd81780c700"
-    sha256 cellar: :any,                 ventura:       "9c59d0ef2e18563f0d9e6b0d132a03b452ce67613c147d16753ac3f977f3fff3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d8121a277dec9b7881db528e6752d1a2d23748fdcba1485a598a563ca1acd365"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73211f73ffa77b2e9f5795784ea9440754c3e4a130a164d44b8e1bd059435505"
+    sha256 cellar: :any,                 arm64_sequoia: "c8410631e4b5913d30deff7f49b6c1f0b8e5d86b9aa894a61a5a61138ce4a8fe"
+    sha256 cellar: :any,                 arm64_sonoma:  "699fae6ad2d5b69edb8a966d22364e25c27485084d3c8a55d6b767680e4be03e"
+    sha256 cellar: :any,                 arm64_ventura: "27270803fb800ee49cd574dcbfa6a7d2e3dd18e4baf5a7d04107684421d15849"
+    sha256 cellar: :any,                 sonoma:        "39d054d89de62da4d8e05f4f85e33bcf7eaac2ac6ca5567138bc9b0dbf94b912"
+    sha256 cellar: :any,                 ventura:       "1bf5c897c70f625d4d2b115b832470b7ff7009caf600f03b4a6075fc66c1b813"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "12d800c80fab044fd6ac3cc2052516797095394b8e5e532e8e59c7a3bb0dd52f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "135f4682a04e95b104a5bcb6ac078c42bd87cc5c355a455c96d9ae796ce9d34a"
   end
 
   depends_on "gnutls"

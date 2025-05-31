@@ -1,19 +1,19 @@
 class Swiftdraw < Formula
   desc "Convert SVG into PDF, PNG, JPEG or SF Symbol"
   homepage "https:github.comswhittySwiftDraw"
-  url "https:github.comswhittySwiftDrawarchiverefstags0.21.0.tar.gz"
-  sha256 "83a08fc68cbae050b9c484b18ffb2909fbd774281625c5509fd0ec8127f8c813"
+  url "https:github.comswhittySwiftDrawarchiverefstags0.22.0.tar.gz"
+  sha256 "072f68d7dc5481fb4139b5f437db6a388014deb34ae11eefd8729de565f431f7"
   license "Zlib"
   head "https:github.comswhittySwiftDraw.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1a872ae45c421eafb9a62cc714b330f375ced3d4737bd863d5e5ad645a9f354e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "21c321c6f4c37bb855ec175f09001312abcb0fcd1749be70e7653a181769e9eb"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "dda0c33168a03d5dccfada5f8fb669c697133623d83a7cdaa63737c858e6e76d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6a4c303d2b68b336eb314a5f7a9248c4e611c5d2f2aa131c0e8930dcd17e419e"
-    sha256 cellar: :any_skip_relocation, ventura:       "ab3896fc065157dc90733ae61ae943634bc9b4b5752c57b14e448310cf947712"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "dc101a3672ff884df44e0f7b5df98c8d49cd60e20c8fada2bb44dbcfc853bd17"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "013026aa86eac3c83513a342fa7208c08a4831915e6c954de0e441ee47dc907c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61ff66d69af1b5609c53920d90af27958a03e67f16f3e4b92a93a59102c9da3d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2275cd577cce39b7994b86ebabc7c44a08be2ab9b8318f3b49fff6abaf06b99"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6487967882b8a29a17eddedb99f49c6e57faaee1893caf65c3141b9005e961f7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d58f4d73ff88f049f4eca9ac1125bcafe83d8f22a1e66eeb3caa0f0e6074cc51"
+    sha256 cellar: :any_skip_relocation, ventura:       "937236fcaf02b73ce585afcdd7b4cbb8ef61f941a09788f15c74c38d29457878"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fea9f4155e962b4ac717e93ae699f1c040930f68f20381179f774b99c45538cf"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1e1621b92bbfeeb8f795667b0c406ea2647e12b0af0dfbc3ec656a314710fc6a"
   end
 
   depends_on xcode: ["14.0", :build]

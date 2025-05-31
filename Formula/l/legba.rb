@@ -4,6 +4,7 @@ class Legba < Formula
   url "https:github.comevilsocketlegbaarchiverefstagsv0.10.0.tar.gz"
   sha256 "9755ec21539ec31dfc6c314dde1416c9b2bc79199f5aceb937e84bafc445b208"
   license "AGPL-3.0-only"
+  head "https:github.comevilsocketlegba.git", branch: "main"
 
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "0bb1be7ca5dfde3d92f8edf755edbd2cea4129c60730055612f4cd863a637252"
@@ -22,6 +23,8 @@ class Legba < Formula
   depends_on "samba"
 
   def install
+    # Support cmake 4, remove after https:github.comevilsocketlegbapull72
+    ENV["CMAKE_POLICY_VERSION_MINIMUM"] = "3.5"
     # Ensure that the `openssl` crate picks up the intended library.
     ENV["OPENSSL_DIR"] = Formula["openssl@3"].opt_prefix
     ENV["OPENSSL_NO_VENDOR"] = "1"
