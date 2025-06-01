@@ -1,8 +1,8 @@
 class Netatalk < Formula
   desc "File server for Macs, compliant with Apple Filing Protocol (AFP)"
   homepage "https:netatalk.io"
-  url "https:github.comNetatalknetatalkreleasesdownloadnetatalk-4-2-3netatalk-4.2.3.tar.xz"
-  sha256 "10a3c3a4c11acec657df9c33c69a6269e319dba759c5e1dfa41ee5a3f1b80c43"
+  url "https:github.comNetatalknetatalkreleasesdownloadnetatalk-4-2-4netatalk-4.2.4.tar.xz"
+  sha256 "4f07bbe118a951dd740d3f51a87b5cafba2496bd0b22e704438f421aa6670f99"
   license all_of: [
     "GPL-2.0-only",
     "GPL-2.0-or-later",
@@ -17,13 +17,13 @@ class Netatalk < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 arm64_sequoia: "69e46dedf08d65bed39339feb1f8869e067cbe388dcaf5656dd387f0d9daf4cc"
-    sha256 arm64_sonoma:  "f6955cafb3b273d5206c68b9b0dfb84cc96710a7ee7e88c27b0dbb38a288a53b"
-    sha256 arm64_ventura: "3fc7701c21ebfae0713083310756a0c44587c652394862905e66d360f39218d2"
-    sha256 sonoma:        "d3fc3a551b589e4447939b2d2a45534c3e34ddb251a70b0b75b599a177b4217d"
-    sha256 ventura:       "a4f38fa00e4d3e5d3a55e2131c0ea2b5962c9c46c2bd2427e38be834c4583ec0"
-    sha256 arm64_linux:   "92aa0794215554271e9a7fbc52db72c474a7a12d2465da5345db5e95726c681c"
-    sha256 x86_64_linux:  "a217b1d01f114b2a69080e4102066b2be1ccf566c203b5bd62f58b9a88ccea9a"
+    sha256 arm64_sequoia: "17e4d6ffd0039fbe4adfc873f576685a068a1755974d14890e5592371d9ac960"
+    sha256 arm64_sonoma:  "d74905541c89f537266a677868cb5ff6cc0230975e1e619dbeacbdc82fa1437a"
+    sha256 arm64_ventura: "1404002f05914d1cdfaa843e113499bfe67d05cfeac50ed6e91304b9b2b9f1e1"
+    sha256 sonoma:        "759e86a275a1ac958615fc9d837bea59a2d4f13ad7cf60b3e40ce34816bd34d7"
+    sha256 ventura:       "d0ce9f60f70a3896ca49ac8d13ac87c9946342f5225e467b8e50b88b3e7e7fdc"
+    sha256 arm64_linux:   "c792a362f93a358adc2a44683c83649eb54b7513254cc444ea18c7b04830a5be"
+    sha256 x86_64_linux:  "ead1152fc2b9997022839c082bc9419328858bd46426f0b0fb673944cf4b2df8"
   end
 
   depends_on "cmark-gfm" => :build
@@ -66,6 +66,7 @@ class Netatalk < Formula
       "-Dwith-cups-libdir-path=#{libexec}",
       "-Dwith-cups-pap-backend=#{OS.linux?}",
       "-Dwith-docs=man,readmes,html_manual",
+      "-Dwith-homebrew=true",
       "-Dwith-init-dir=#{prefix}",
       "-Dwith-init-hooks=false",
       "-Dwith-install-hooks=false",

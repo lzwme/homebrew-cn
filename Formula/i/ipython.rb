@@ -3,19 +3,19 @@ class Ipython < Formula
 
   desc "Interactive computing in Python"
   homepage "https:ipython.org"
-  url "https:files.pythonhosted.orgpackages9d0263a84444a7409b3c0acd1de9ffe524660e0e5d82ee473e78b45e5bfb64a4ipython-9.2.0.tar.gz"
-  sha256 "62a9373dbc12f28f9feaf4700d052195bf89806279fc8ca11f3f54017d04751b"
+  url "https:files.pythonhosted.orgpackagesdc094c7e06b96fbd203e06567b60fb41b06db606b6a82db6db7b2c85bb72a15cipython-9.3.0.tar.gz"
+  sha256 "79eb896f9f23f50ad16c3bc205f686f6e030ad246cc309c6279a242b14afe9d8"
   license "BSD-3-Clause"
   head "https:github.comipythonipython.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e10722230861a5db2ef2b390540c0735d2edaebcfa5beecef6cfc7297b62fcf2"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e10722230861a5db2ef2b390540c0735d2edaebcfa5beecef6cfc7297b62fcf2"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "e10722230861a5db2ef2b390540c0735d2edaebcfa5beecef6cfc7297b62fcf2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "aae30f91cb0b55ee7b634645e3748c6c23c1488100cdd24df6485348ee36c7d2"
-    sha256 cellar: :any_skip_relocation, ventura:       "aae30f91cb0b55ee7b634645e3748c6c23c1488100cdd24df6485348ee36c7d2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e10722230861a5db2ef2b390540c0735d2edaebcfa5beecef6cfc7297b62fcf2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e10722230861a5db2ef2b390540c0735d2edaebcfa5beecef6cfc7297b62fcf2"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0c3f4bbc8ab62ad88acc4ff79cb11cdd3c3a1bf73c5d8423fc8d374fa125b236"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0c3f4bbc8ab62ad88acc4ff79cb11cdd3c3a1bf73c5d8423fc8d374fa125b236"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0c3f4bbc8ab62ad88acc4ff79cb11cdd3c3a1bf73c5d8423fc8d374fa125b236"
+    sha256 cellar: :any_skip_relocation, sonoma:        "927cf13a39fa6aa40aa8be9e83391abbe390d0b50f7d00662ab71c116dee85b6"
+    sha256 cellar: :any_skip_relocation, ventura:       "927cf13a39fa6aa40aa8be9e83391abbe390d0b50f7d00662ab71c116dee85b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c3f4bbc8ab62ad88acc4ff79cb11cdd3c3a1bf73c5d8423fc8d374fa125b236"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c3f4bbc8ab62ad88acc4ff79cb11cdd3c3a1bf73c5d8423fc8d374fa125b236"
   end
 
   depends_on "python@3.13"

@@ -1,21 +1,19 @@
 class TomcatNative < Formula
   desc "Lets Tomcat use some native resources for performance"
   homepage "https://tomcat.apache.org/native-doc/"
-  url "https://www.apache.org/dyn/closer.lua?path=tomcat/tomcat-connectors/native/2.0.8/source/tomcat-native-2.0.8-src.tar.gz"
-  mirror "https://archive.apache.org/dist/tomcat/tomcat-connectors/native/2.0.8/source/tomcat-native-2.0.8-src.tar.gz"
-  sha256 "c7c5382fcb5a647a5ce6fed0b96721e94198fa2f5725cf5124f5b6511b05dfef"
+  url "https://www.apache.org/dyn/closer.lua?path=tomcat/tomcat-connectors/native/2.0.9/source/tomcat-native-2.0.9-src.tar.gz"
+  mirror "https://archive.apache.org/dist/tomcat/tomcat-connectors/native/2.0.9/source/tomcat-native-2.0.9-src.tar.gz"
+  sha256 "8aed0def414d7f49b688e826797513e95182ecbd7b6f8b6f025e527b85065c02"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "7caf42d03492c53d43083891f42f64647bc3fb5ac40317d1fe8c66400638ae02"
-    sha256 cellar: :any,                 arm64_sonoma:   "6b3347d417585b401fbb9e1573eb3875c50d9b4b35ef2da335f8e4eafce14a31"
-    sha256 cellar: :any,                 arm64_ventura:  "ec858f97d5549c229516c7e76309e7335b867458d837378054cacf6b0faa5fbe"
-    sha256 cellar: :any,                 arm64_monterey: "d7094e23b954b6193486ea5de1f30373a66108004dc66f2b983e71ad649cd5d0"
-    sha256 cellar: :any,                 sonoma:         "6266f592dccf65035414e175135551b9a9eeb5dbe8051533ff53e09550f78f1c"
-    sha256 cellar: :any,                 ventura:        "cf77f977158497e7924c40f37448e4c3f9ca09e5dac9adf702db4a1c660e59c8"
-    sha256 cellar: :any,                 monterey:       "0032aae5e5ac4a08e503dc7ba1e95ccf6e88db975a50c898307fad8e7b86fb58"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "aaae8c9cf5b7d5b87b305a98773c73bc4ed6070d589ab1b79c04a1d50e4fe2aa"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "3b6871bc6de4e15f504981b8930ccd64e3b955ae2b73ec5642376f9dbf3d5efc"
+    sha256 cellar: :any,                 arm64_sequoia: "d69d5e50666db22767640427773e7f032e40bb9a4802fc48f0a1b7991263fe4b"
+    sha256 cellar: :any,                 arm64_sonoma:  "54bac94b6a98b710c507941c7a6c750256f001c86a0605f828b176b53a4d5773"
+    sha256 cellar: :any,                 arm64_ventura: "82f712cd4cc80f9a85c240fe8eefacf0de8f2c8191020533d20575dee8bbb1b8"
+    sha256 cellar: :any,                 sonoma:        "670968ff66ddab50702616d827e2c15cdbb97a95def107c0707224f3feaa6b49"
+    sha256 cellar: :any,                 ventura:       "0c1abba080581dfadb7557e36ff283c7dff8655eef0aaaba5807fc58015c9405"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b34d0fa510a7c5365e1d983d3046a89bf03223247e3e7676158652f002bc175"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "66f6cf0d5dcb235699a3c4606eef141556286eefc51c574b643fd53acc1f2d1e"
   end
 
   depends_on "tomcat" => :test
@@ -57,6 +55,7 @@ class TomcatNative < Formula
 
     pid = spawn(tomcat.bin/"catalina", "start")
     sleep 10
+    sleep 10 if OS.mac? && Hardware::CPU.intel?
     begin
       system tomcat.bin/"catalina", "stop"
     ensure

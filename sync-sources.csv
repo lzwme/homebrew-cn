@@ -635,6 +635,7 @@ Homebrew-homebrew-core/Formula/b/braid.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brainfuck.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/breezy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brename.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/breseq.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brev.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brew-cask-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/brew-gem.rb, Homebrew/homebrew-core, 1
@@ -1204,6 +1205,7 @@ Homebrew-homebrew-core/Formula/c/crash.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/crates-tui.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crc32c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/crcany.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/crd2pulumi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/create-api.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/create-dmg.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/credstash.rb, Homebrew/homebrew-core, 1
@@ -1844,6 +1846,7 @@ Homebrew-homebrew-core/Formula/f/fastfetch.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastga.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastgron.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastjar.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/f/fastk.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastlane.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastly.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/f/fastme.rb, Homebrew/homebrew-core, 0
@@ -5089,6 +5092,7 @@ Homebrew-homebrew-core/Formula/p/pandoc-crossref.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pandoc-plot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pandoc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pandocomatic.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pangene.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pango.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pangomm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pangomm@2.46.rb, Homebrew/homebrew-core, 0
@@ -5181,6 +5185,7 @@ Homebrew-homebrew-core/Formula/p/peg-markdown.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/peg.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pegtl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pelikan.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/perbase.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/perceptualdiff.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/percol.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/percona-server.rb, Homebrew/homebrew-core, 1
@@ -10209,6 +10214,8 @@ Homebrew-homebrew-cask/Casks/font/font-j/font-jsmath-cmsy10.rb, Homebrew/homebre
 Homebrew-homebrew-cask/Casks/font/font-j/font-jsmath-cmti10.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-j/font-jua.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-j/font-judson.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-j/font-juisee-nf.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-j/font-juisee.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-j/font-julee.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-j/font-juliamono.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-j/font-julius-sans-one.rb, Homebrew/homebrew-cask, 1
@@ -10386,6 +10393,7 @@ Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-bright-tc.rb, Homebrew/homebr
 Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-bright.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-fasmartgothic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-heartserif.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-marker-gothic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-neoxihei.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-neozhisong.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-simxihei.rb, Homebrew/homebrew-cask, 1
@@ -10425,6 +10433,7 @@ Homebrew-homebrew-cask/Casks/font/font-m/font-manjari.rb, Homebrew/homebrew-cask
 Homebrew-homebrew-cask/Casks/font/font-m/font-manrope.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-mansalva.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-manuale.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-m/font-manufacturing-consent.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-cn.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-nf-cn.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-maple-mono-nf.rb, Homebrew/homebrew-cask, 1
@@ -12864,6 +12873,7 @@ Homebrew-homebrew-cask/Casks/m/mounty.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mouseless.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mouseless@preview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mousepose.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/m/moves.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/m/movist-pro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mp3gain-express.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/m/mp3tag.rb, Homebrew/homebrew-cask, 0
@@ -14277,7 +14287,6 @@ Homebrew-homebrew-cask/Casks/s/stepmania.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/steveschow-gfxcardstatus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stolendata-mpv.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/stoplight-studio.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/s/stork.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/storyboarder.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/stratoshark.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/stratoshark@dev.rb, Homebrew/homebrew-cask, 0

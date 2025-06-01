@@ -1,13 +1,13 @@
 class AdamstarkAudiofile < Formula
   desc "C++ Audio File Library by Adam Stark"
   homepage "https:github.comadamstarkAudioFile"
-  url "https:github.comadamstarkAudioFilearchiverefstags1.1.2.tar.gz"
-  sha256 "d090282207421e27be57c3df1199a9893e0321ea7c971585361a3fc862bb8c16"
+  url "https:github.comadamstarkAudioFilearchiverefstags1.1.3.tar.gz"
+  sha256 "abc22bbe798cb552048485ce19278f35f587340bf0d5c68ac0028505eaf70dfe"
   license "MIT"
   head "https:github.comadamstarkAudioFile.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "ab031793961063448870b09b5bd997671df66cd2eeeb98d4daebeb389fadeb59"
+    sha256 cellar: :any_skip_relocation, all: "be3c28ee81b69cd235ffdc3a9085037178558b2714b431781404b13d2a4cc5b3"
   end
 
   def install

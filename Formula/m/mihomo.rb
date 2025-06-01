@@ -1,19 +1,19 @@
 class Mihomo < Formula
   desc "Another rule-based tunnel in Go, formerly known as ClashMeta"
   homepage "https:wiki.metacubex.one"
-  url "https:github.comMetaCubeXmihomoarchiverefstagsv1.19.9.tar.gz"
-  sha256 "900ddee847f4dc35f2298ca3fea451a9bbb582557ce390198d73a29f4586813f"
+  url "https:github.comMetaCubeXmihomoarchiverefstagsv1.19.10.tar.gz"
+  sha256 "a0ca7bb23fcfa067e8a58a9618879a507881dbca321a8eb0550948b1d26296c0"
   license "GPL-3.0-or-later"
   head "https:github.comMetaCubeXmihomo.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "00440610ff7933cd5a590383a49919f45e90dd0130a58dd25f9c462ff2f1e3f8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "262e85d9e305210f1579404ff925cedf8fdd28b0ffa7467cf69bd1b8a25525de"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4b927b0c13bf6d3885a8f1bfe0c0b385a4dd2b5a79402ce6a8c068afd20c5695"
-    sha256 cellar: :any_skip_relocation, sonoma:        "51ddd5c3b31f377531bbfcf4430d13200c269bf49f3b2e76bfcf48c3a6f14dd7"
-    sha256 cellar: :any_skip_relocation, ventura:       "1381896eac0993aa2e067198873836be2757676a73e53e3eca5f5eb100f6e44c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5a34298f284267bc1eabf68bdf10a50be7dd1b67d33f2b4da18c631b306d854"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8f3e68fe9b456b86b9782ab6f12198b5f28b541f4b9cb4f46fedadb95216b09d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "65e28b3821978a0cceeef732f9d427c4353b70fd4f82720f6ac190855527f09c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "034cc7e6fca1de4d05c46384a80a02f85c648f98e7a171ba1e6e02fa33268aa0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9a844f3c640b9c3c3f8f713e26adddb1909b19c7543169dd0befd49d1ab55195"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e4dec29cf05cab364e8eb24e69e051c24d8db396a95a8702965fd43efa4004ea"
+    sha256 cellar: :any_skip_relocation, ventura:       "43f8f4b686fc953e0368ff758aa803ef7f0bbc415733d2d29645c19444861785"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e64c1d023fdaccf392c0bd5cc3901f2ffc59397667547b3e36ea814864df1b12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "87bbcad993d18333922848b275de8ac461676ab5c0045ae66e9f87523716f9fa"
   end
 
   depends_on "go" => :build

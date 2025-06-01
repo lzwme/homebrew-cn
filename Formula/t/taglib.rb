@@ -1,19 +1,19 @@
 class Taglib < Formula
   desc "Audio metadata library"
   homepage "https:taglib.org"
-  url "https:taglib.github.ioreleasestaglib-2.0.2.tar.gz"
-  sha256 "0de288d7fe34ba133199fd8512f19cc1100196826eafcb67a33b224ec3a59737"
+  url "https:taglib.github.ioreleasestaglib-2.1.tar.gz"
+  sha256 "95b788b39eaebab41f7e6d1c1d05ceee01a5d1225e4b6d11ed8976e96ba90b0c"
   license all_of: ["LGPL-2.1-only", "MPL-1.1"]
   head "https:github.comtaglibtaglib.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bcee4f3d052cbe5989067daf7a174503c25b7192cf061776cdd907b466ff3058"
-    sha256 cellar: :any,                 arm64_sonoma:  "4294daac491a5377c5600ffc009127c145ee9b57b326a2e0ddb36fbfa392a1cc"
-    sha256 cellar: :any,                 arm64_ventura: "74dbb8c6094f04e047bfd5fa118a979f477d071b9cf836418e3b0f937903e121"
-    sha256 cellar: :any,                 sonoma:        "98bc5de27c719c40923a8a9b949cede60d16e5fe6fced83e77feed4add720251"
-    sha256 cellar: :any,                 ventura:       "8841e4c1db0f37278adc2f3c62b0b115c55293bc277e1e2f99b8c545b8ba73e1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc4caad6f5f00412d88bd96a6e1f2e3a58cda1d7760af66439e3d1b46d195cc1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f43bb70deddf02f695e91b7f4c4153b4f690133e5e03a711a27790a0a4172c28"
+    sha256 cellar: :any,                 arm64_sequoia: "33bae1ce3df75ae42afe0a00e5ff89c13fe89c55a90492f83936871400bead26"
+    sha256 cellar: :any,                 arm64_sonoma:  "a8407786ef99bff2dacc49c41ee8597bf0e1b320770cf7e375cbcf3dd01edfa2"
+    sha256 cellar: :any,                 arm64_ventura: "5fa5bc0e5f1f0420951a109822212307d4c47eca65e13c80cd12130ef3db7582"
+    sha256 cellar: :any,                 sonoma:        "0bcb92f06b8a816e61db238c4866038e32d939d137ae5a9b2b6a89f6354dc060"
+    sha256 cellar: :any,                 ventura:       "dc45e7bdf7b98bbc8c82fc504d9f9fc439c0ee404c081f3a9d47db3a43440d0e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "578bbf176f2ab333475f9bf2f1aba06cdc376416eab72610354959efe1255441"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "90098d41daac6072c0daf0dc6a9a179811a0a7067809018845ef727a6611ca8f"
   end
 
   depends_on "cmake" => :build

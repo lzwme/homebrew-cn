@@ -1,17 +1,17 @@
 class Qdmr < Formula
   desc "Codeplug programming tool for DMR radios"
   homepage "https:dm3mat.darc.deqdmr"
-  url "https:github.comhmatuschekqdmrarchiverefstagsv0.12.2.tar.gz"
-  sha256 "4be8692e7270ac51032f43d56227ddee7ba7b515e98f8f3f867398899593e779"
+  url "https:github.comhmatuschekqdmrarchiverefstagsv0.12.3.tar.gz"
+  sha256 "1ee2adc912120025190eff65c78b1f8a153d1cab14909cbd5291403fb7b04643"
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 arm64_sequoia: "6ab16e6c0e074af48e283646dfe8fec3e4c43bd75a72c3d61e70c6aaaf7d52e1"
-    sha256 arm64_sonoma:  "9f328b9c8835430065a0b2fb6732b8af7bceb89f54fecc9e3069353327e00a04"
-    sha256 arm64_ventura: "1921e4934527288d3e837706cb5a53b74c46a89881f53ba09f8bb430a78577c2"
-    sha256 sonoma:        "9e07686e7cebb8ea130a9d1183541f3d8396e5fc0bd171e090317430e086e53f"
-    sha256 ventura:       "b47be9e66eed4887eadb16d6a0a1dd16a1f57943bf370342b06c1aef100a70fc"
-    sha256 x86_64_linux:  "7715c1833cdd017122b29d8966de514e21a908df7f77112feea00319a769ace2"
+    sha256 arm64_sequoia: "beb390820470fa2c825dc25a14c2d40de8770f9d513ca639085335773571a730"
+    sha256 arm64_sonoma:  "58d13f717ae94f13d6cdcef192691b031ea352b85bffd2c0948aa75831a3e59f"
+    sha256 arm64_ventura: "5c19013fde907534ed1e008086dd0af7e58f52091820a503058e6d155690a290"
+    sha256 sonoma:        "d80d900ac2c58bdc5d66d31e8c843f24809ceb8934688da4d5f08f9f2da755f4"
+    sha256 ventura:       "d272e84ab9b72bbff9e33fbf75983668a1cd2196e81e848a439a8ec57eafc1d4"
+    sha256 x86_64_linux:  "88fecf14b35168081be6da6a39e1b8326aa94429c2de4d12cd555220f66b2d67"
   end
 
   depends_on "cmake" => :build
