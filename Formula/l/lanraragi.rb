@@ -1,19 +1,19 @@
 class Lanraragi < Formula
   desc "Web application for archival and reading of mangadoujinshi"
   homepage "https:github.comDifegueLANraragi"
-  url "https:github.comDifegueLANraragiarchiverefstagsv.0.9.40.tar.gz"
-  sha256 "6d26a92a0054e83da92d5e73d074ed69dd79539be410b6d77b04e470062fd503"
+  url "https:github.comDifegueLANraragiarchiverefstagsv.0.9.41.tar.gz"
+  sha256 "390d198690e26703bf1a52b634e63b3e92c432a7157501832069d39199adcf54"
   license "MIT"
   head "https:github.comDifegueLANraragi.git", branch: "dev"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c2bcdc9e4877bbf3aeed731c76137ea29f58651c3072beccb4b39fca3abd3488"
-    sha256 cellar: :any,                 arm64_sonoma:  "1eb212c64a8320fe0c04132b7628e2030615daa7e044bb8d4c14a766d93cf584"
-    sha256 cellar: :any,                 arm64_ventura: "22fa3648a0c9d44ab98d6aca81849bfdbee6c2f06c965dffcc8744006ca3ec16"
-    sha256 cellar: :any,                 sonoma:        "79c7c96f06283f5bf40a25bdb52256a47d0d3e8a48c76de812422b42b1c924f5"
-    sha256 cellar: :any,                 ventura:       "52806a1a7f163ee977e893fdb7ab82e0768874a5a5a5a8deb5df7c01fa788682"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1feee998a2a39c37e4fe44e5b3334cceeba64ddca96a0098b654a0c79b6c61bf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e5fb1326998ad168d3f1d015f897f78df696b7f87bc192d2ded96cb0b922f9c4"
+    sha256 cellar: :any,                 arm64_sequoia: "ee4f5a14314f40f1b206b523a16336ce8a686825297ab796342bb281d0a5389d"
+    sha256 cellar: :any,                 arm64_sonoma:  "4c07be938e320d4a37a02bfdb730959ec36c88799bf16f83c2cbc7d3816491f2"
+    sha256 cellar: :any,                 arm64_ventura: "47ea9eee3f163b432a658acf7cbd9e618955b92fe54a8fd6cb1358039da1e038"
+    sha256 cellar: :any,                 sonoma:        "4e57f8d82a8b6d7e11f38ab6a557106a6228455f1dc3b33754db2ce2ae072ea0"
+    sha256 cellar: :any,                 ventura:       "9d2aff4b06727eb2cbc24b46677eaac0073c9aed50823744a1eab62a2694ec25"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a8e605b524579aac12f6b4d738c1ffbf08582cd74b7aac29711c9bfb254d7e8d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15fce6c4c855ffcfedcb5679593ad781456a68083db2da75bd2ad73f9866eb9c"
   end
 
   depends_on "pkgconf" => :build

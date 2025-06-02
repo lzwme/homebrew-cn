@@ -12,6 +12,7 @@ class Pangene < Formula
     sha256 cellar: :any_skip_relocation, arm64_ventura: "03ab1d6a2d24f4629689f39536fb9422f934b86eef4dd5d0ceafeb479140c472"
     sha256 cellar: :any_skip_relocation, sonoma:        "9c86caf9ed1c9918e4286f785151b4af0b7e5fd665c430948c5eb0f14a8c8424"
     sha256 cellar: :any_skip_relocation, ventura:       "96ad645c4f2a6ae15cbf231a2e9b080fa3334d8b412e1c5dbdbe580bd66f6c22"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c01933d9ab50883be5455c7666cb5afadfaf1789eefb6613d8fdc51eeb9f9f64"
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "487052e67934b027898914dcfec64d1805b0ab9f9457704c1bb5e2aed204d5a7"
   end
 

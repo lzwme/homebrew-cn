@@ -1,18 +1,18 @@
 class Changie < Formula
   desc "Automated changelog tool for preparing releases"
   homepage "https:changie.dev"
-  url "https:github.comminiscruffchangiearchiverefstagsv1.21.1.tar.gz"
-  sha256 "734d1f42a12b645170925cc1855626dc82a386b4250558baffe416517a9aa710"
+  url "https:github.comminiscruffchangiearchiverefstagsv1.22.0.tar.gz"
+  sha256 "3ff3f717618f7c47be72d6bbf82ed23c1ee529e83e51bf8a1d079717f0d45127"
   license "MIT"
   head "https:github.comminiscruffchangie.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "25e98c7a599a54bc71fe36e2373d3ca16c34064e77c4f964183978747bbad8a8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "25e98c7a599a54bc71fe36e2373d3ca16c34064e77c4f964183978747bbad8a8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "25e98c7a599a54bc71fe36e2373d3ca16c34064e77c4f964183978747bbad8a8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "249be5b876c374cbb18e8acfea9f660041786ad2c2b17a1c7fdf0689c1dd29e5"
-    sha256 cellar: :any_skip_relocation, ventura:       "249be5b876c374cbb18e8acfea9f660041786ad2c2b17a1c7fdf0689c1dd29e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9d4142b0e9ff351cd7595b85f9256f76277041456bb0578e88d83e9dd1a4c8b7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2fb60e9ca2ccef779bd1cb4242d4f6176b58c31d275b88905ef6171b5482827c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2fb60e9ca2ccef779bd1cb4242d4f6176b58c31d275b88905ef6171b5482827c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2fb60e9ca2ccef779bd1cb4242d4f6176b58c31d275b88905ef6171b5482827c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bd8de99d840ec8b80a3d98cebbd77a4a374730e8ed0f0d129a36ebe4f2111fd9"
+    sha256 cellar: :any_skip_relocation, ventura:       "bd8de99d840ec8b80a3d98cebbd77a4a374730e8ed0f0d129a36ebe4f2111fd9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b9243c53cb73b0e2b7830be72ceb885ba525bca820aee22c00d6db7453db9409"
   end
 
   depends_on "go" => :build

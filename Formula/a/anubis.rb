@@ -1,8 +1,8 @@
 class Anubis < Formula
   desc "Protect resources from scraper bots"
   homepage "https:anubis.techaro.lol"
-  url "https:github.comTecharoHQanubisarchiverefstagsv1.18.0.tar.gz"
-  sha256 "b543f3c4af32a71994f4290b901b5670ce3cc7756b9db2c86d2569286d6dd6ef"
+  url "https:github.comTecharoHQanubisarchiverefstagsv1.19.1.tar.gz"
+  sha256 "5fa0640abad46d1cbe5a84063ec60caa3272478044bad3e1e8b0260ee8756ce7"
   license "MIT"
   head "https:github.comTecharoHQanubis.git", branch: "main"
 
@@ -12,12 +12,12 @@ class Anubis < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b162bd9c43dedbe24fbfff3667d5df2cf433d34c698b286a894ff2dbba8ee9ba"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7387ba7dd8e716f47bc486ca499dc40a02484ed5284186c591032f61c2f5241e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "774a900e165f381bbebc6dcbb55cdde962cad597968a9c1912f20e1c0418b28e"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2328432dc08c377c0f4ef8641e3806856785c2bfb7e26d388abd0e53daadfa9e"
-    sha256 cellar: :any_skip_relocation, ventura:       "2608708e94511311a6b6f5e363bc98aaadc9c11358c1a05231161acc871f1384"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "655f3a50f4db66e85fa0a866d146de7cc0bd2165b9692513b3314aec5185c414"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ffcb9cd038e147a4e4aab9ffda6472b12737a8763aeccf8d046b187fa098aa9c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "19a3533a753225e8e7118e94ee4f11e19d3e8a816acd3aae96c03ea9e9a1230b"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0f083df38b52274a0e69b9480f0bfb2b710e38db27b0d1ad290ff3c7221d79d6"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5682dcbd0dfe7976c83e342269c4c17024b5679a5d9ca7053561ec5717b294da"
+    sha256 cellar: :any_skip_relocation, ventura:       "67ccc6acdca2a741e4fa9f9fa922d6e5461a88a47acf8ab7e933620cbcf9b095"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b1f51ff69339768fa16ef116c7ba89f4455ca14bb6de82842d15c11aa62b3d88"
   end
 
   depends_on "go" => :build

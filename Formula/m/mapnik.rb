@@ -3,10 +3,9 @@ class Mapnik < Formula
   homepage "https:mapnik.org"
   # needs submodules
   url "https:github.commapnikmapnik.git",
-      tag:      "v4.0.7",
-      revision: "d9d4288bea04c5ef9925c03db353cf5f308e06ad"
+      tag:      "v4.1.0",
+      revision: "203d6f01b0a64e445e8df15d2cb2dfbca8f1089f"
   license "LGPL-2.1-or-later"
-  revision 2
   head "https:github.commapnikmapnik.git", branch: "master"
 
   livecheck do
@@ -15,13 +14,13 @@ class Mapnik < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "29a822426649d23d451319bd0e8a97ca73befc6b26b2643cabd9ed6aea578e8a"
-    sha256 cellar: :any, arm64_sonoma:  "a078278f51be82e77b0392328a77750f8b3d10aa506ba953a3182a90b7a06d0a"
-    sha256 cellar: :any, arm64_ventura: "2aa1748de65ed49fcbdc2f2483e1933e9238d5d08f23f0e199334de7e10efee1"
-    sha256 cellar: :any, sonoma:        "44dd1ff51b0290cda60df185e662717209a8b7d0eadd05da7d6df429d521fddb"
-    sha256 cellar: :any, ventura:       "83221debd01d9073623d4b84cfce8d28dd76ee9199333130eabc2c0685d640a9"
-    sha256               arm64_linux:   "d4fb224d070a7cd94e3c17674e16c39a9c7d07293bdb5c7115f75a3b1a82fa57"
-    sha256               x86_64_linux:  "344607e36fe3ed140f6eda570637cf093c1abbca17dfa541efa01a15e04672fa"
+    sha256 cellar: :any, arm64_sequoia: "4489722afc28bc0136766959c977b53d1c1350c0cb8736fd1953e46bdf7e8a09"
+    sha256 cellar: :any, arm64_sonoma:  "d9de0b20f517923050d3e3094ac4cdf264d8136e93d75b067ce430e569ca3185"
+    sha256 cellar: :any, arm64_ventura: "efefaa28ac60c12d8bfb0a138de9915bd4bf3d6debc51e250410d3deb2662efa"
+    sha256 cellar: :any, sonoma:        "d8e85f5f8c217631b0a3b210b3a3d55f87bbc9f6d0a2ee72c14399aa7071cb4d"
+    sha256 cellar: :any, ventura:       "369c83c4ca6cab4abbb09315a29f452251712ebd24e41f2388321c6c169f7785"
+    sha256               arm64_linux:   "86e8ec32c92569f4b9943f211beabfea4abbde6894ee80409a157152f6cf810e"
+    sha256               x86_64_linux:  "2bd231fe0a1652182bab271fe06d839c0bb67f86f286321ef5b3fe604eaff906"
   end
 
   depends_on "cmake" => :build

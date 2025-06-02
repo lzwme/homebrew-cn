@@ -1,8 +1,8 @@
 class Assimp < Formula
   desc "Portable library for importing many well-known 3D model formats"
   homepage "https:www.assimp.org"
-  url "https:github.comassimpassimparchiverefstagsv5.4.3.tar.gz"
-  sha256 "66dfbaee288f2bc43172440a55d0235dfc7bf885dda6435c038e8000e79582cb"
+  url "https:github.comassimpassimparchiverefstagsv6.0.0.tar.gz"
+  sha256 "95a7263db4a8478bf0ffa22cedd249f5ef02d7dcafd14d288bbc9a5ca24e5c1d"
   # NOTE: BSD-2-Clause is omitted as contribOpen3DGCo3dgcArithmeticCodec.c is not used
   license all_of: [
     "BSD-3-Clause",
@@ -15,15 +15,13 @@ class Assimp < Formula
   head "https:github.comassimpassimp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "3617c461f17de42a22ab7090b1b056b16f854f767bcbd9f46e3df1d1c2374b0b"
-    sha256 cellar: :any,                 arm64_sonoma:   "6e0aead723a0156775a0e547d7c38da9893f0db854e32932e168f09b9f33df1d"
-    sha256 cellar: :any,                 arm64_ventura:  "7ced67d760a444e794361406950f9cf559448bb1820ed27f151c8026df25109e"
-    sha256 cellar: :any,                 arm64_monterey: "e37e55230c1dadd42cc118a8cc7b1ede59226d833731c4da7c7edd2a7f7e89e8"
-    sha256 cellar: :any,                 sonoma:         "97806c9287013e10f6cd45d131e2936639c714048393699d607189f302d4b457"
-    sha256 cellar: :any,                 ventura:        "fdee9585eca259f83b827a0b7f7161599a914150cf3ded457e8d9c51eed5a6a7"
-    sha256 cellar: :any,                 monterey:       "6b2af335f9c9c4a0706e9a111d45e33a1feaf78aaffa00d8c8361e0e2f5bd1cd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "882b3c50f9882e2f2b2ee67d7a5bb949979c0da89c343fb7caca913bad65649e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "46b2c127678c024d31c2e873fb39739a65ce04718439d1e6661a8dc7aacdd4ec"
+    sha256 cellar: :any,                 arm64_sequoia: "ccf4f9fbfb87e220d791b8bae7a03840e6d52440f4788ede9ce189a9157049bd"
+    sha256 cellar: :any,                 arm64_sonoma:  "c113d9fc5739e25495ef086f9356a8ea2676757a7d84326c285c425e4ddb1f02"
+    sha256 cellar: :any,                 arm64_ventura: "cd67606d49b2ac59e3d223c4d1a4ebace5a1c60a853d5ece4486a88654c0e1d8"
+    sha256 cellar: :any,                 sonoma:        "408b6e7c895e18d2cfed9337f6c323e092ae09f3b8d32e09d6ad562bb180fc46"
+    sha256 cellar: :any,                 ventura:       "bbabbc09843ea4a0e2ab4b95f310c211aba7e78b665dd974ee65495036562074"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "36ea2edbe7367cae0d51accda43f797269828c2049ee2b48e5c504606a0fed5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50d9455ac367dc04ab56783795b31269ed338668643b5f35ddb8bc2815bc7c4e"
   end
 
   depends_on "cmake" => :build

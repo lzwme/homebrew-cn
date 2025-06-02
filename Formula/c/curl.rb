@@ -27,13 +27,14 @@ class Curl < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4e1a9fa77c2e2c80589750f54fafcd2f014a3251aef28cd7159ae21f63407ce6"
-    sha256 cellar: :any,                 arm64_sonoma:  "1cee86f0eaf6551365e196be37dd6b8c5ba4ceba762dfb562acc31cb37f453ae"
-    sha256 cellar: :any,                 arm64_ventura: "2dd30282842f21a92915c671e0c7ef48cd100f3c8a9ec0dba92e042de1d561c0"
-    sha256 cellar: :any,                 sonoma:        "3d8219f0c288493ac8c49ff3038dbdfd14bad581c6e384939693fcdaeaa91a6f"
-    sha256 cellar: :any,                 ventura:       "02364a79a7e5efb5ec6711ae3dc67c06f60a876477c9a8c04df328de01248e28"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2e4acfcc5932b7e7a6a52f487cf41560bda3fb02c69f34bf37f55499b70eb803"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b902e408c4295747033a0a608d9593ff11d247283d1aa939b666af9ceb28e27"
+    rebuild 1
+    sha256 cellar: :any,                 arm64_sequoia: "69efd2fd516be31f0c79b1af0a989c52f4d64d9003d39a0cefc6e64350e738c6"
+    sha256 cellar: :any,                 arm64_sonoma:  "e552078c530a8315d4877daf4906bf7745bd24cc3941b7f44980bba20db5ff46"
+    sha256 cellar: :any,                 arm64_ventura: "5034cef9debaa38a5466af6b88694c4430f7851470a5b24f0afb0322fae9e607"
+    sha256 cellar: :any,                 sonoma:        "e30b8516c64ac2ed9b2e0ac4afecdb6f5166327a6e5f1b900ece864992b9a320"
+    sha256 cellar: :any,                 ventura:       "78cef1a6e06b1a5118e33b907a3adadf8c7861573a69c201f9e6524502c8a5b6"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "91a9a666d78f78e18ea810640354b311dc13fa08680ecac0aac0ac452ff1300a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da5123da4f2bb51d5ddb60cfed48b7f5223f1dadef133ebc892d292636924517"
   end
 
   head do
@@ -62,14 +63,15 @@ class Curl < Formula
     depends_on "libidn2"
   end
 
-  conflicts_with "wcurl", because: "both install `wcurl` binary"
-
   def install
     tag_name = "curl-#{version.to_s.tr(".", "_")}"
     if build.stable? && stable.mirrors.grep(github\.com).first.exclude?(tag_name)
       odie "Tag name #{tag_name} is not found in the GitHub mirror URL! " \
            "Please make sure the URL is correct."
     end
+
+    # Use our `curl` formula with `wcurl`
+    inreplace "scriptswcurl", 'CMD="curl "', "CMD=\"#{opt_bin}curl \""
 
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
 

@@ -12,6 +12,22 @@ cask "font-jetbrains-mono" do
     strategy :gitHub_latest
   end
 
+  font "fontsttfJetBrainsMono-Bold.ttf"
+  font "fontsttfJetBrainsMono-BoldItalic.ttf"
+  font "fontsttfJetBrainsMono-ExtraBold.ttf"
+  font "fontsttfJetBrainsMono-ExtraBoldItalic.ttf"
+  font "fontsttfJetBrainsMono-ExtraLight.ttf"
+  font "fontsttfJetBrainsMono-ExtraLightItalic.ttf"
+  font "fontsttfJetBrainsMono-Italic.ttf"
+  font "fontsttfJetBrainsMono-Light.ttf"
+  font "fontsttfJetBrainsMono-LightItalic.ttf"
+  font "fontsttfJetBrainsMono-Medium.ttf"
+  font "fontsttfJetBrainsMono-MediumItalic.ttf"
+  font "fontsttfJetBrainsMono-Regular.ttf"
+  font "fontsttfJetBrainsMono-SemiBold.ttf"
+  font "fontsttfJetBrainsMono-SemiBoldItalic.ttf"
+  font "fontsttfJetBrainsMono-Thin.ttf"
+  font "fontsttfJetBrainsMono-ThinItalic.ttf"
   font "fontsttfJetBrainsMonoNL-Bold.ttf"
   font "fontsttfJetBrainsMonoNL-BoldItalic.ttf"
   font "fontsttfJetBrainsMonoNL-ExtraBold.ttf"

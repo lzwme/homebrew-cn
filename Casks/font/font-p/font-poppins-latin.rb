@@ -8,7 +8,7 @@ cask "font-poppins-latin" do
 
   livecheck do
     url "https:github.comitfoundryPoppinstreemasterproducts"
-    regex(href=.*?PoppinsLatin[._-]v?(\d+(?:\.\d+)+)(?:[._-]Latin)?[._-]OTF\.zipi)
+    regex(PoppinsLatin[._-]v?(\d+(?:\.\d+)+)(?:[._-]Latin)?[._-]OTF\.zipi)
     strategy :page_match
   end
 

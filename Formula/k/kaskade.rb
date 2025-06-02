@@ -3,21 +3,19 @@ class Kaskade < Formula
 
   desc "TUI for Kafka"
   homepage "https:github.comsauljabinkaskade"
-  url "https:files.pythonhosted.orgpackages341d468734b0d4acf041dbc50a25562694de23dd732761376b18083b940b1bbfkaskade-4.0.4.tar.gz"
-  sha256 "42090569c7b2ad5baf62568dba6bd23064daec643ae12d2d5022651d78edc785"
+  url "https:files.pythonhosted.orgpackagesb56a4a51af28c5537eb45ab7199a3220e25385171767e86ffabfb908ced2635ekaskade-4.0.5.tar.gz"
+  sha256 "7eedc2040f8c32a1870dcd1018ac0e20e4feab3b9a45a8152764dcc11a6e860e"
   license "MIT"
-  revision 1
   head "https:github.comsauljabinkaskade.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "25f14ff28ed17fd2258ed2a36a0c52ee0d3a3cfd68f7ad2d352f30cf21958c15"
-    sha256 cellar: :any,                 arm64_sonoma:  "3c1e2af66ab175a38bf19ecf987745f606b8e4079b9f2ec2e839ff1e8a720fd9"
-    sha256 cellar: :any,                 arm64_ventura: "d675fcf07a4f8397867fde686ee29dccd6ab3a2ce3b2deddc362ee7b118e06e3"
-    sha256 cellar: :any,                 sonoma:        "20a87fddc5e0098a3684a6a7c164442bcc23dce1fd8e6fa633cf8424f37e1134"
-    sha256 cellar: :any,                 ventura:       "9c1decfd4d852ff9b02885d0cf33dc27cc02dccf23608bcc57ebe811d07d6a5d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c971286de0e26a8328eceb517690929ef8623f6c607582c17a9d3c983f29f397"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f32b8c8259b24d879176c04c7eb5127f7e4c48d04c6488d7d9e7d29c50767d7"
+    sha256 cellar: :any,                 arm64_sequoia: "af3c008cd7d7925a9fe5a2dec583447d84ef9d60094eef614a9d00567a6a45f0"
+    sha256 cellar: :any,                 arm64_sonoma:  "3bcd9171e7c20353fc29d7b7465f483f70409bbf42927614ffbdd618af563e63"
+    sha256 cellar: :any,                 arm64_ventura: "1829b30097b5ca376813bca70346f2e07a4f0f5fb3f7fdb88b36b0251d816579"
+    sha256 cellar: :any,                 sonoma:        "47abd3344a6d3e6c300bc68b9faa1d2c34fa86760b0ae1d39f52fadd29b8e293"
+    sha256 cellar: :any,                 ventura:       "60dbc7a68b646de1e490fa3c8fd10274a48605699acf1d2b9ac62958524facf8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "42a0e0d5fbe2cda62540a28040ca5aaceed8e82d9aaf396a433a4ff9e83fc2e4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d694516be2d6a026e0f186271656d3e0de31f5a326ed8d6bb0437b90acd8bad0"
   end
 
   depends_on "rust" => :build # for rpds-py
@@ -177,8 +175,8 @@ class Kaskade < Formula
   end
 
   resource "textual" do
-    url "https:files.pythonhosted.orgpackages34998408761a1a1076b2bb69d4859ec110d74be7515552407ac1cb6b68630eb6textual-3.2.0.tar.gz"
-    sha256 "d2f3b0c39e02535bb5f2aec1c45e10bd3ee7508ed1e240b7505c3cf02a6f00ed"
+    url "https:files.pythonhosted.orgpackages6d9602751746cf6950e9e8968186cb42eed1e52d91e2c80cc52bb19589e25900textual-3.3.0.tar.gz"
+    sha256 "aa162b92dde93c5231e3689cdf26b141e86a77ac0a5ba96069bc9547e44119ae"
   end
 
   resource "typing-extensions" do
