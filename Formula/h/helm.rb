@@ -2,19 +2,19 @@ class Helm < Formula
   desc "Kubernetes package manager"
   homepage "https:helm.sh"
   url "https:github.comhelmhelm.git",
-      tag:      "v3.18.1",
-      revision: "f6f8700a539c18101509434f3b59e6a21402a1b2"
+      tag:      "v3.18.2",
+      revision: "04cad4610054e5d546aa5c5d9c1b1d5cf68ec1f8"
   license "Apache-2.0"
   head "https:github.comhelmhelm.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "9661c6a0f29e54f4c1ce91b04af1013c3dd91237d88203b9d164c89f4cc0f180"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7ca208ab577975c7a626b1ab126760d2b28f255c952bd8e05c71d2a42dbb4b45"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "087dda92167b73fac74498532258993f4b1c4e7a0657169f69218d652302df3d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0fd6960a527f3554c5dd5ffe72c4c291c16966a82fe0fb676497c4eb39d71c62"
-    sha256 cellar: :any_skip_relocation, ventura:       "18541d195130bfdd48c2a554374aec287e85d0e6fbfb9de4918b5d7c86880c05"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c514bdfa410e2a62e515a3b5334bfa3ea58e8cb599097b6fe0d12b0ef8a8b94a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b77aa7b3cea3c2dfe18d26dbe0aa6ad029e61ad435376188651158cb6a5e625"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2839421ff115477637eb88afa346ba7108229013954aaed80d4a259bd28d7462"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7eb5a917a4862aad9c9b3a0773c1479ff58f315e1da7eb0821a8ab93cbc2ef45"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "26bafae2cc635414d9d73dbfb040099969280cd33147c888e3f5eb04ace75deb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "bcfdbfdb41d69f2dfac93b026e635b517826ed020aceae7ba46a98d608ddc6f2"
+    sha256 cellar: :any_skip_relocation, ventura:       "dc2f2bf6003837227abec1d7cfdc02fe2609c241561650f1928e4a4059a52e98"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3987965b39c4e72f945704466af8003675e61995e5fdaceea7589000541e0f34"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bd3527cb26cf230591eba0e088038c9ec922e904f604899863fe3d17de08570b"
   end
 
   depends_on "go" => :build

@@ -1,18 +1,18 @@
 class Dcfldd < Formula
   desc "Enhanced version of dd for forensics and security"
   homepage "https:github.comresurrecting-open-source-projectsdcfldd"
-  url "https:github.comresurrecting-open-source-projectsdcflddarchiverefstagsv1.9.2.tar.gz"
-  sha256 "52468122e915273eaffde94cb0b962adaefe260b8af74e98e1282e2177f01194"
+  url "https:github.comresurrecting-open-source-projectsdcflddarchiverefstagsv1.9.3.tar.gz"
+  sha256 "e5813e97bbc8f498f034f5e05178489c1be86de015e8da838de59f90f68491e7"
   license "GPL-2.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e637feaefa3854ecdd910334ae5da97d68614e8e29a369fa93f6aaab9329a173"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1fb762dc8ff64b3829c069c5d65b33af13b1f0610bcdcaa8d6fa2de18d6e28dc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "209e4325ac641238a6be2c411e9d964a0f4efbb87cf5b69ffcfdd0efbf7ef523"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a0ab38a209df9b31c0f6a4a9212fa29f42569a47337046bef83c2e91121b3e23"
-    sha256 cellar: :any_skip_relocation, ventura:       "3a087faea51f503a26ec7376b5955be58489380439b83ef554ab8c3be8669529"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5c400bc4961787061faada1c125e0dc6c5e2fe8f0ba1604f4e87d591489ce5b5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "74daa691d054382c0173e9d0942a6ab7a91ce53a1f222c6297c2b9849a1d38b8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27d926c612143e59fa534f10bf44f138501302ab3d7a5990c46ee4c43a66aaae"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3111fcd6917b2ac2b3d6d9076c2dcb144a97c1887e15f982ffd3d36e9d90c4e5"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "03d0c6c64483793ba34e2a79dd3dfd73753df1cfbf66995c517c7290a752c2c9"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7b4bf86232cb89e6da8244cc8cf38f4cc075636792c8f5f52f19a424ac315c9d"
+    sha256 cellar: :any_skip_relocation, ventura:       "c89731f9220e739bc26473f6e17adbb3246cf93dfe9835b77a96552edfb9994b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "f82b6d7c901bd91e1425a1a135656959b45485a8f79d38c805a7991726e13a58"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "44661f718a486d0d5bcc1b024d830cd7e72c4621577bb6d40d032b68a641f510"
   end
 
   depends_on "autoconf" => :build

@@ -1,8 +1,8 @@
 class Gleam < Formula
   desc "Statically typed language for the Erlang VM"
   homepage "https:gleam.run"
-  url "https:github.comgleam-langgleamarchiverefstagsv1.10.0.tar.gz"
-  sha256 "4661bebc010209c5c3d180a8f7ad6c16b596655acf74bf459d3baf81af8589d5"
+  url "https:github.comgleam-langgleamarchiverefstagsv1.11.0.tar.gz"
+  sha256 "92141dd13b8dbe279abb3b3ef89ee15e7a960a17b2da18e9a7d079f1552e47a7"
   license "Apache-2.0"
   head "https:github.comgleam-langgleam.git", branch: "main"
 
@@ -12,13 +12,13 @@ class Gleam < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "405a9b9ba544e34de5bfa28d894f0e79c1c78a4bf98b178e31ab25970df01fd8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d854103c68b3fb28140aa6dd42ac74cea9768e63f3a34b88598c1f774e5de8c7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1bf695135d21df76cc771b97b32fdc28823854123c7fdc09d63c47134e8dd6f8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "fc3f2fca62b3732bf983b957780b8f52c0bec7301e678ab31332b671e7177de7"
-    sha256 cellar: :any_skip_relocation, ventura:       "000ec3329cb534593c4fd660a78eab1eb477dec98070c930ab169596cd68052e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e193b2135cc03984260839f0dea8bb148d8aaef4a2e3a8fc596275b3e418f7ad"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "98a6a74f866139deb8296ea9b46987d833c378483e264ee68085b7355b000772"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d70331a6698910a6a8006bfad201efe7a3b02acf3d3de369db2f48de04a9d6df"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7590e2cb41cdc66c4884357223d5754b02a102b951602b35d2eef31ca45b1da2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "477c228774a90c3bfd3d5b471ed87fe5a880449d1a7634d2e07f784a9f57617e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "05580f71852ed30b2849daf2373d9c8fa5accd3e28f9c942f7449abfc8abecac"
+    sha256 cellar: :any_skip_relocation, ventura:       "882356880e346fbae520d846c5fb54183eec8c4538368082a3fc1ce4c88f1a26"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "15f95a08d37f63afeb59dde6d4b5d652ed193bfd7eef18d2b2b07320d3c9ac0f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "97b5786dab8770c9f7200dec51b7edb8e58ab594b4ae05ab3287d52076d7044b"
   end
 
   depends_on "pkgconf" => :build

@@ -1,8 +1,8 @@
 class I2p < Formula
   desc "Anonymous overlay network - a network within a network"
   homepage "https:geti2p.net"
-  url "https:github.comi2pi2p.i2parchiverefstagsi2p-2.8.2.tar.gz"
-  sha256 "b259b5a7d4652dc344b106d00223d1a6c53339d3a126aed2428a56806044d464"
+  url "https:github.comi2pi2p.i2parchiverefstagsi2p-2.9.0.tar.gz"
+  sha256 "34070d95989abf5c3e922eb31958d696bdbe0bdffde2284aa14e1c763f73d7ea"
   license :cannot_represent
 
   livecheck do
@@ -11,13 +11,13 @@ class I2p < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0474f0fe1bb56848164ead49ae8fc6773411c03a89deca2d2bab927818d6c3e5"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5dc4c1f910162f8b9ad1f918bf6e3e3b79c8a859b5c63baa2be55387acddc49a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5c2ab69384a69e6789a5d94c42e9db014a13e4246a6883fc77a71e24db197c84"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0ba3aa0abed7cf698f49358c49e17f95a1147d1016edd0fa9280b199a433fec2"
-    sha256 cellar: :any_skip_relocation, ventura:       "883859807c878a8335a3ea00fc89fc705ca66a725ea1c87809253541398450d5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "a713439beb9052582edac83adc9afb95aeb729020b7094d0a1b6146cd44cf11f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d8af5e63ed68d9755a4e29419295bba255ea6915f43393670b16ee027565d71"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d10735b41070267fa23840521e7bd7448a5f5582ecb40db21a249d66fd3c3640"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9cafaf3da69405b8be448701232aff14014d07253c8a115d2da2579a7efc085"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "00431dbce28697fc43ef7dd02c3a26d94dd52bc05e0e855cd68a4a0330756ce5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "0041a0350fa5a460dcbaad6b798d0cd6217bcbdf642419751d7739212b13d1b3"
+    sha256 cellar: :any_skip_relocation, ventura:       "b9de9e24242cccbbfe25de8b082c7cdbeaa36bc501df2c0024091a0acd15bdf4"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5df693bc55ce843fd3c2ada7120c84763d7bb251aef0c4811e919ba6f6e397be"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2c966abff9fcd29e0d682bf45917175326eb013e9d000167bbad023a66cec51"
   end
 
   depends_on "ant" => :build

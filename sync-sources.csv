@@ -4818,6 +4818,7 @@ Homebrew-homebrew-core/Formula/n/nvimpager.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nvm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nvtop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nwchem.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/n/nx.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/n/nyancat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nylon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/n/nyx.rb, Homebrew/homebrew-core, 1
@@ -12053,7 +12054,7 @@ Homebrew-homebrew-cask/Casks/i/infinity.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/infoflow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/inform.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/infra.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/i/inkdown.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/i/inkdown.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/inkdrop.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/i/inkscape.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/i/inkstitch.rb, Homebrew/homebrew-cask, 1

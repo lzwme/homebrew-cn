@@ -1,19 +1,19 @@
 class AstGrep < Formula
   desc "Code searching, linting, rewriting"
   homepage "https:github.comast-grepast-grep"
-  url "https:github.comast-grepast-greparchiverefstags0.38.3.tar.gz"
-  sha256 "387a20ce819a37dd073a4b8fdf383ce09aa3627fafe79cb17612c5cd0657ef8f"
+  url "https:github.comast-grepast-greparchiverefstags0.38.4.tar.gz"
+  sha256 "f1c6dc88f676fae236f38cde4f71d160c7161fdc2601ec861c90f16b1c83f1cc"
   license "MIT"
   head "https:github.comast-grepast-grep.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "508bfc02fd0988fe7771ca31272cb604c31c382b829918ab303116206b537042"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cbbc40170248d42e58bb88be31b51e34e93452b3779b413677a949bb6b5cad77"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "642700f4798562dcb84b72cb6250818023fef0919f1b597933a92da0902ecda2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "315f45296b4d67a66e1535e85f87b6cc150f20952f4d296bfc0aa2e4c5acf3da"
-    sha256 cellar: :any_skip_relocation, ventura:       "b88f559d1dc047f478985e5fa8e7905a0c60ea9acc15f1313aeece0b337c8b00"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "51aa22b0a6c9e9e520b97adeb59d4c9e3659fc0eda962318ba52fe0b4967ce1a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "15f9d2ba503eac30ebb2d09bd4cc7e92d904c7a935d7fa630dfa38ba3976bdad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b7160b70212718414574c940ef92294a387ab62b2cea78dada7dc295607873e1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f16e9a8d8e75f06753848672d1d8f4983979dec0b5e4aaa2d74cf3b7b849477c"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "096e0c7f3d0ec6a52d5192992f9f1a2d7bf9ada98b7b9c384d9820f2df7884b3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7239cfc66be6d6fe759d6438e97a5e3adf3f5b7b40d46c918e69735c3c3ccc60"
+    sha256 cellar: :any_skip_relocation, ventura:       "96f14dc15fdcc765240b771947c27b42f62b7a8c12fc285b6306636a95c6757c"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a60314aac187584b7345be0510c13a0cbe1bfa726f454cbd71e0e8ec78e347a6"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8e91179f8e969e3212e2ba7493ce0e2471ef9439c315a5cb194626ef1e09c5d4"
   end
 
   depends_on "rust" => :build

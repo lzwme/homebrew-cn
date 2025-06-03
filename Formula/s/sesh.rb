@@ -1,18 +1,18 @@
 class Sesh < Formula
   desc "Smart session manager for the terminal"
   homepage "https:github.comjoshmedeskisesh"
-  url "https:github.comjoshmedeskisesharchiverefstagsv2.13.0.tar.gz"
-  sha256 "14d69448c689ba5116a55260518ca8b6a4f659c2e41833dc1341801b0dc5ad2d"
+  url "https:github.comjoshmedeskisesharchiverefstagsv2.14.0.tar.gz"
+  sha256 "7629869620aa2b496262c51511be20660579ae94baf1e2ea82af8dcbde3ab4db"
   license "MIT"
   head "https:github.comjoshmedeskisesh.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "68da55e239a522e3c8b4311407184a2bd958b83bfe7f1d64048884badf38ffd4"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "68da55e239a522e3c8b4311407184a2bd958b83bfe7f1d64048884badf38ffd4"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "68da55e239a522e3c8b4311407184a2bd958b83bfe7f1d64048884badf38ffd4"
-    sha256 cellar: :any_skip_relocation, sonoma:        "13f517c70687613ace023e9ad13b4dcb800f7bd3092d42e460381a6e2370685a"
-    sha256 cellar: :any_skip_relocation, ventura:       "13f517c70687613ace023e9ad13b4dcb800f7bd3092d42e460381a6e2370685a"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13efb4aa7dbf4b5839b25ecd7000d64a5413c5bc4348c2536e837cbb70ca8b5d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f4a08f14ff0f13d1a09029e3f368711056be1285e67417183c818e16faa45b4a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f4a08f14ff0f13d1a09029e3f368711056be1285e67417183c818e16faa45b4a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f4a08f14ff0f13d1a09029e3f368711056be1285e67417183c818e16faa45b4a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "572bebaa4fba4afc9ce8c6cdf7e78aae8e9d579dd73e2c0a656185dc100f2c87"
+    sha256 cellar: :any_skip_relocation, ventura:       "572bebaa4fba4afc9ce8c6cdf7e78aae8e9d579dd73e2c0a656185dc100f2c87"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8b04bbb41e606e1f258b25a8af3f1b542bcf30eda615656571e648e6bb4c8802"
   end
 
   depends_on "go" => :build

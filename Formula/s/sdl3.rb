@@ -1,8 +1,8 @@
 class Sdl3 < Formula
   desc "Low-level access to audio, keyboard, mouse, joystick, and graphics"
   homepage "https:libsdl.org"
-  url "https:github.comlibsdl-orgSDLreleasesdownloadrelease-3.2.14SDL3-3.2.14.tar.gz"
-  sha256 "b7e7dc05011b88c69170fe18935487b2559276955e49113f8c1b6b72c9b79c1f"
+  url "https:github.comlibsdl-orgSDLreleasesdownloadrelease-3.2.16SDL3-3.2.16.tar.gz"
+  sha256 "6340e58879b2d15830c8460d2f589a385c444d1faa2a4828a9626c7322562be8"
   license "Zlib"
   head "https:github.comlibsdl-orgSDL.git", branch: "main"
 
@@ -13,13 +13,13 @@ class Sdl3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9fc5ea606986464d0e28043548aa6f28a49f2bebdfb3d8a5dcf51f16d5c8b89a"
-    sha256 cellar: :any,                 arm64_sonoma:  "7fa6a3be9641557760354c61aab88b57990d6d2425d39522c0cb9514f01d3ba7"
-    sha256 cellar: :any,                 arm64_ventura: "f276c456f68b1eb04d4dbfee90bbfcee71097abbdf73fc5dc7505e5a606eceab"
-    sha256 cellar: :any,                 sonoma:        "218d0ee409437c58d02b2c5c30b04efbaaeddcdd2d10106c7ebd69924deb74e1"
-    sha256 cellar: :any,                 ventura:       "88746e302f321a9990eb2e6a928857bbed7590d41ab21b2e61ce6d3130650c34"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0323ce9d745c83a5e4575063997bf1a1a09b2a8ddd1099675b5f3ac5b3e5766f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48199501eca060fdd07ecaa14aa8036dcdbd0c476a3267426404f14da86e7659"
+    sha256 cellar: :any,                 arm64_sequoia: "1c67df52a37bbd4f13f61eca7c19bea36a53ff3dc0d310c9a878cd0f924edb21"
+    sha256 cellar: :any,                 arm64_sonoma:  "85d25691ab5555af9cdc272551be6564bc0b460f57b2eae7effb6f6f044c2061"
+    sha256 cellar: :any,                 arm64_ventura: "abf021c48b6276686d35220f7288635fca53b0bec6f433c6810df091350e3bca"
+    sha256 cellar: :any,                 sonoma:        "d7f87a73bb06d65c1c3e5cb5d67fccccfe40ba4abf665909e4693ca41f442527"
+    sha256 cellar: :any,                 ventura:       "4275579a0a85d883b83906aa14a4bca6f1759af443bd70a8f8032d10cba925d9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "237d70db22ec812af6eb7568604c20868d1766e2e161350892402498c4ff8102"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "601e5d04d6e7d2f1ed8a2c50850952a49fa149f8e6458f841fc2f35725bf8521"
   end
 
   depends_on "cmake" => :build

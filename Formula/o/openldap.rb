@@ -13,13 +13,14 @@ class Openldap < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "fe7932d74b679ab0594c4013723eb14082a8a3ce7b988c6bdf864998e090d24e"
-    sha256 arm64_sonoma:  "0ed851b33742a97a7f21b160d1e541123ef661e13f4aa2ccf1d30dd7079f2696"
-    sha256 arm64_ventura: "73f5a30f37afaf85bc703f074556e4815f34d9781c7703e63610cf1cd10fffcd"
-    sha256 sonoma:        "e69ae26f59606cd5578f0b03607da382a5625fe1364d628fdc93554f7bb2be4e"
-    sha256 ventura:       "453c106685ec1346eebc7166f2b8df5dc36cc921a3150b9aeae8ef4edbd99dde"
-    sha256 arm64_linux:   "183d21349be5f2256afc86ef4439f2563e6335d93ac060a15c52de91809b9c90"
-    sha256 x86_64_linux:  "a352d40a8e1cd57f64d535055a0b4131b44a27cc6ec8443bf1fc6db43e572ded"
+    rebuild 1
+    sha256 arm64_sequoia: "90749053fa49720027fec10a7f6b69d12e3a7aa2c319fed0c9021ce4a1ee5873"
+    sha256 arm64_sonoma:  "8d4319c2a4e33ded3d0650b1e9bd56f4e087a3c72dda53aa1e7fc1c5747dbd93"
+    sha256 arm64_ventura: "3f6ac8d8010ce41c011a300b68a93ada298fe35f1c1577f1d9413c2e892d3d06"
+    sha256 sonoma:        "dbfb4021fc4b5b3df381c2ec339ed0801952b1d93728152cc30edf6e3e8da1ac"
+    sha256 ventura:       "0cca5d539102430ce70d06b5956b6cc9b658a495edb3c7abb13582872f171daf"
+    sha256 arm64_linux:   "dd8990617d2d310cf965ff185b405d0b903860b2b535d45d3ddfc6409dd5fa97"
+    sha256 x86_64_linux:  "c618d0eb76c5e2cf57846bd6be286018e00da7eb37f5a5b3a6d22ff0ed7885d9"
   end
 
   keg_only :provided_by_macos
@@ -59,6 +60,7 @@ class Openldap < Formula
       --enable-refint
       --enable-retcode
       --enable-seqmod
+      --enable-sssvlv
       --enable-translucent
       --enable-unique
       --enable-valsort

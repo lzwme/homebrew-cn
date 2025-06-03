@@ -1,9 +1,9 @@
 class Cheapglk < Formula
   desc "Extremely minimal Glk library"
   homepage "https://www.eblong.com/zarf/glk/"
-  url "https://www.eblong.com/zarf/glk/cheapglk-106.tar.gz"
-  version "1.0.6"
-  sha256 "2753562a173b4d03ae2671df2d3c32ab7682efd08b876e7e7624ebdc8bf1510b"
+  url "https://www.eblong.com/zarf/glk/cheapglk-107.tar.gz"
+  version "1.0.7"
+  sha256 "87b9a19d741c71a8d3bffbb0fd7833410672006d3815717c70860e1681043d4c"
   license "MIT"
 
   livecheck do
@@ -12,22 +12,13 @@ class Cheapglk < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "06c024dbe07b8308e89bb36c08b5de6013ba39ce41cc49446894032ab58b4caa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0650047fb219451a53de59e89821939cf571d8c0ba9227e48c22f0112b3c0f1c"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "46c6748a4f62fe0b8f62a0f0a8ed01351b3057624bb0bf4a62edb51575e631dd"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7f34227be66c2d76ee900dd6cfcbe1263bab3c706ef05b348314944711bc1de4"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "73f43be61554255b8b1bb6f2e185b567eca2c868f0c65ddf8a53020fddd8e35a"
-    sha256 cellar: :any_skip_relocation, sonoma:         "b01e82e79b66c1d902ce76a51b4848e088e0ead6a1f5ca21717e7d3026356bc4"
-    sha256 cellar: :any_skip_relocation, ventura:        "b7c1ecbddaa051401144361b5231f77990f7862be8618de1d711493c32aac368"
-    sha256 cellar: :any_skip_relocation, monterey:       "16e6658829ca0f23ea49cfcdbee978c19e61b9eb1adfa26b5ffae7bb9c07f688"
-    sha256 cellar: :any_skip_relocation, big_sur:        "9b3b09b201d58788157377de21147fc1dab74635912c3592626e9575905d9061"
-    sha256 cellar: :any_skip_relocation, catalina:       "91d3c4e89b0750585d52206bf25054eb2db72af798e0d4e1c33021177b92ae13"
-    sha256 cellar: :any_skip_relocation, mojave:         "d57b00a86e3d1c76f43d8f034c1dfe77d23da3d34637449040fdedd21f6a4a63"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "47c6f59d902a306b30c6255f65fd7626e32d5c39800fd80daeada852e95994f2"
-    sha256 cellar: :any_skip_relocation, sierra:         "d76d29db8ea0201fcef949e02cbddb1c06311dece796a263192ffef487a3aa2c"
-    sha256 cellar: :any_skip_relocation, el_capitan:     "497a5399738c026d318d3213b764f20fb80ccea94181919fad2e80eb75086055"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "974eb82901452583a12e12149b6691d5925426d35204fb5a7ea82f5fbecf7cbd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "af305413ea03f3b67064c61be1f26be3860370d87e774d4fc6c014ca66cdd380"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5600c759374d421d057d4901d84f12c4a0526ef88c23d6d838b699eb409a6c9"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "796c71e7b1eb29c4bbf1702e4a10d2f8ec25dd66d987ad7a570a8cfb1841db06"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "baf814604181f0dcaf9105bd843e5dc6583bd13f1a4cefe21145d8c98218dff2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5a18e98d351775e2419fa5a15484bdcadad75fc7861518fd4069900c14117b8d"
+    sha256 cellar: :any_skip_relocation, ventura:       "fe810d9b9aa201d3a740860c1433858f84965b6ce5ac5ca9b448c4f982e1d382"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "18c73a83fb777146fd406d1f6da79a8cf3eb530d271eecd761e0c881233cefde"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70161bfc4d712eed8c06bc1542de58ac63726e196b5a2cf22ea449f8a627e089"
   end
 
   keg_only "it conflicts with other Glk libraries"

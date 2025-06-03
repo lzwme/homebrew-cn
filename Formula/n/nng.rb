@@ -1,8 +1,8 @@
 class Nng < Formula
   desc "Nanomsg-next-generation -- light-weight brokerless messaging"
   homepage "https:nng.nanomsg.org"
-  url "https:github.comnanomsgnngarchiverefstagsv1.10.1.tar.gz"
-  sha256 "a05936a64851809ea4b6d4d96d80f2a1b815ef14d6c4f6dd2c8716bd38dd1822"
+  url "https:github.comnanomsgnngarchiverefstagsv1.11.tar.gz"
+  sha256 "12aaff6f8f183ba0fec378af8620c47cf4be6da975d016ec6cdec2fbac0d3534"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class Nng < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f789508482605d3898a720b13ee0dd824ae18cdfce0bf84c2658bd4b9d8c307d"
-    sha256 cellar: :any,                 arm64_sonoma:  "cd22208f26b61a5fbac9c6e056bc0363be4ab8ec5edb12da7c3a6a900e64140d"
-    sha256 cellar: :any,                 arm64_ventura: "cc1d18cfce4ade76e5ad37f8c1f01762be60458447460b4580240e74d19c2196"
-    sha256 cellar: :any,                 sonoma:        "df7377f8a991aa85c06cef8cca79f2c3d6b2a5d788731ae7e383c9b49d763d62"
-    sha256 cellar: :any,                 ventura:       "1c9e50f925a44ed332d98420c2e3c12538336d175896e2fca83f04d809cbf6da"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "627182101a9a3e1288114a3156f64dc01ce0b010d6e26ed144208ff9c59b1f8e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c69fc95eeee497679a4e5914bb9cdf0f43aa5cd30418f89cb562c896420b919b"
+    sha256 cellar: :any,                 arm64_sequoia: "c8b949fcace671131602004d36dd682e84a8f11c294121883780bed5c37207e3"
+    sha256 cellar: :any,                 arm64_sonoma:  "787e01ff6e0b46d61794bb151e18ff2af1dfcb590f2721eb35187c1de60ea3d9"
+    sha256 cellar: :any,                 arm64_ventura: "33847914c92079fae13338b6099d547957a33b9142c50196919080a23196a74d"
+    sha256 cellar: :any,                 sonoma:        "f21583c80dc1ccd84cde614cb8ea7a8b7e7586ecd39aae010583a038e562580d"
+    sha256 cellar: :any,                 ventura:       "5a4c09d6a83310a8117cbeb2df1f292581a7a32eff9f0c0db6a3d9172b47a6d3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7df32fb58d3135bbeb0b9046534a0fb901dacfddc215546855146b3102c52eeb"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "25761374c9d2ca6fedff91630fb23e7fe10ae9f68369f7eaaddc1fa5ffc35e6b"
   end
 
   depends_on "asciidoctor" => :build

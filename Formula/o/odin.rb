@@ -2,20 +2,20 @@ class Odin < Formula
   desc "Programming language with focus on simplicity, performance and modern systems"
   homepage "https:odin-lang.org"
   url "https:github.comodin-langOdin.git",
-      tag:      "dev-2025-04",
-      revision: "d9f990d42e2a1bccf3e7be8ba02efa6504e9af9b"
-  version "2025-04"
+      tag:      "dev-2025-06",
+      revision: "cd1f66e85c22b019adf53835f5d24231cb071e6d"
+  version "2025-06"
   license "BSD-3-Clause"
   head "https:github.comodin-langOdin.git", branch: "master"
 
   bottle do
-    sha256                               arm64_sequoia: "7db718db30a1550b4a257bf38a8c4760444fe690e79823bec57ef72531e19453"
-    sha256                               arm64_sonoma:  "29b07670d0f84f2d3cbf5e44797246913f1408e25633c2842b18d13edc5aab2c"
-    sha256                               arm64_ventura: "a1c4e779f3e0f4eeef5c06c5190b576c451efbe7db4bf7e4048e05c4084d09eb"
-    sha256 cellar: :any,                 sonoma:        "a57b5002a4131c081be1d99ad99d319ac271406704b5e1a817c39da4bb6deb0d"
-    sha256 cellar: :any,                 ventura:       "9f92112d2995381ea558c36c2f93605c452d9cdba7d215a26ae648539c4a7c66"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "69c5405ef06d38cb1bd97a307fd108ba79b7bdb3cf2d31632726b6ad13bba14b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ff99f77d215a0919e14ee0c7241979b07e8f36f372e4ea99cee3042b787251f0"
+    sha256                               arm64_sequoia: "ca3c7fda6ff4f285373e5115f269555d7d9f544764f4c024e0ff16b5836a109b"
+    sha256                               arm64_sonoma:  "0f2d101296a06d88f4b914f798530dab39159ceb410ee6ed9cd1a3f0ffa8febe"
+    sha256                               arm64_ventura: "02e34bdb4417933bc0f42e7e74ae19ad31fffe622bbd483af7b7095d836f12d4"
+    sha256 cellar: :any,                 sonoma:        "58556f14bc0d816199f4562e8371eb4cdfc2373acf186112b3d8dc12a757c4f3"
+    sha256 cellar: :any,                 ventura:       "88f066b32c13a404494da37ddb9f6a492716aa14676515b1f01f1e9316d2ac20"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8d1f83c10f8aa873f49a6f27cdc434f0e533a3dee755862e53ed8e0274ec1536"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f3b3f867de9938f30e01d63fe0edf1a430c09fa8eb96c77e58405aa5b8a0b482"
   end
 
   depends_on "glfw"
@@ -30,6 +30,7 @@ class Odin < Formula
 
   def install
     llvm = deps.map(&:to_formula).find { |f| f.name.match?(^llvm(@\d+(\.\d+)*)?$) }
+    ENV.llvm_clang if OS.linux?
     ENV["LLVM_CONFIG"] = (llvm.opt_bin"llvm-config").to_s
     ENV.append "LDFLAGS", "-Wl,-rpath,#{llvm.opt_lib}" if OS.linux?
 

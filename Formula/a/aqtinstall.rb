@@ -3,25 +3,25 @@ class Aqtinstall < Formula
 
   desc "Another unofficial Qt installer"
   homepage "https:github.commiurahraqtinstall"
-  url "https:files.pythonhosted.orgpackagesdec64e122b226120407b76b473433b24a7628853ce4c4405ed3d56d52f8e6a9eaqtinstall-3.2.1.tar.gz"
-  sha256 "80005d4f8eebd50487a87fec2de4d4f808bb72fc923026eef9e3575795f801bf"
+  url "https:files.pythonhosted.orgpackages761924a588de6c25d43169d172dab47e63a63cd0d8f90e98cf86487acbf00ac7aqtinstall-3.3.0.tar.gz"
+  sha256 "9c7d85fbe7258be2d7d23fda33f8aff2e8b7536817255eaeaaf4226da8546a31"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6bae085ca061fadbcbf0d15c6e1fc5a36776dd51e62161bd89e0a2b05e786b2e"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "18587357a412fa3e04beb885a50eda950ff5346e682ac082612548a35b7a5ca9"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "602f0515af58cced1f36ac5e133172e40f7c8a19df70dd544cf5c224f607410d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "25dbc8e783e9558de958fca4a5b88ed4d00be16633762117ab966d5c78a9918d"
-    sha256 cellar: :any_skip_relocation, ventura:       "d404a32e21f3a5e5bdc86f316afc0577e21605db9fa4af30a6d26dc28ccf4e21"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "aff64375ab227d6ce03b552d0cf448d8fd5c6bdb422832788b5534fc652ff9db"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ebd32bd548797fff9f1d3d66d72941a6bf61fead384f965fded846449fd490f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9c9dd5e40d7bd533d8da2bb74d7315449731b18f7bb700a744070cd7d00c02c"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be17bb4b99450b17dc24764ae573bdc60efff0eb47a74264980c605ffafa175e"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "01ae5a1db0def636b7a76062c68a9a147e2376abb916ec899b96e411ca4dc647"
+    sha256 cellar: :any_skip_relocation, sonoma:        "a4e8a129ef5f6c66f9d7891e0bd803059b60e66e3763b96c97043267c79b085a"
+    sha256 cellar: :any_skip_relocation, ventura:       "a2a5b8af8f1f847dd0b6cf7f07d3d99b752ce7775f58e59e7410dbd8da15d1b7"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe5793553ea949f4aab1c7fa0da26925a6e285b08f5c4cb88c0ae3b82437644d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ed0671250344889120e275dd0e377d74e3276dbd4b3387a68f4cc0e87568829"
   end
 
   depends_on "python@3.13"
 
   resource "beautifulsoup4" do
-    url "https:files.pythonhosted.orgpackagesf03cadaf39ce1fb4afdd21b611e3d530b183bb7759c9b673d60db0e347fd4439beautifulsoup4-4.13.3.tar.gz"
-    sha256 "1bd32405dacc920b42b83ba01644747ed77456a65760e285fbc47633ceddaf8b"
+    url "https:files.pythonhosted.orgpackagesd8e40c4c39e18fd76d6a628d4dd8da40543d136ce2d1752bd6eeeab0791f4d6bbeautifulsoup4-4.13.4.tar.gz"
+    sha256 "dbb3c4e1ceae6aefebdaf2423247260cd062430a410e38c66f2baa50a8437195"
   end
 
   resource "brotli" do
@@ -35,13 +35,13 @@ class Aqtinstall < Formula
   end
 
   resource "certifi" do
-    url "https:files.pythonhosted.orgpackages1cabc9f1e32b7b1bf505bf26f0ef697775960db7932abeb7b516de930ba2705fcertifi-2025.1.31.tar.gz"
-    sha256 "3d5da6925056f6f18f119200434a4780a94263f10d1c21d032a6f6b2baa20651"
+    url "https:files.pythonhosted.orgpackagese89ec05b3920a3b7d20d3d3310465f50348e5b3694f4f88c6daf736eef3024c4certifi-2025.4.26.tar.gz"
+    sha256 "0a816057ea3cdefcef70270d2c515e4506bbc954f417fa5ade2021213bb8f0c6"
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https:files.pythonhosted.orgpackagese43389c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12dcharset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "defusedxml" do
@@ -50,8 +50,8 @@ class Aqtinstall < Formula
   end
 
   resource "humanize" do
-    url "https:files.pythonhosted.orgpackages5b8c4f2f0784d08a383b5de3d3b1d65a6f204cc5dc487621c91c550388d756afhumanize-4.12.1.tar.gz"
-    sha256 "1338ba97415c96556758a6e2f65977ed406dddf4620d4c6db9bbdfd07f0f1232"
+    url "https:files.pythonhosted.orgpackages22d1bbc4d251187a43f69844f7fd8941426549bbe4723e8ff0a7441796b0789fhumanize-4.12.3.tar.gz"
+    sha256 "8430be3a615106fdfceb0b2c1b41c4c98c6b0fc5cc59663a5539b111dd325fb0"
   end
 
   resource "idna" do
@@ -60,8 +60,8 @@ class Aqtinstall < Formula
   end
 
   resource "inflate64" do
-    url "https:files.pythonhosted.orgpackagesdd8c3a7ac7e1931bd1bca5f8e3687f7611083f6a79aae02b9cd6b7ce1fb4a8d0inflate64-1.0.1.tar.gz"
-    sha256 "3b1c83c22651b5942b35829df526e89602e494192bf021e0d7d0b600e76c429d"
+    url "https:files.pythonhosted.orgpackagese3a7974e6daa6c353cf080b540c18f11840e81b36d18106963a0a857b1fc2adfinflate64-1.0.3.tar.gz"
+    sha256 "a89edd416c36eda0c3a5d32f31ff1555db2c5a3884aa8df95e8679f8203e12ee"
   end
 
   resource "multivolumefile" do
@@ -80,28 +80,28 @@ class Aqtinstall < Formula
   end
 
   resource "py7zr" do
-    url "https:files.pythonhosted.orgpackages26c30e05c711c16af0b9c47f3f77323303b338b9a871ba020d95d2b8dd6605aepy7zr-0.22.0.tar.gz"
-    sha256 "c6c7aea5913535184003b73938490f9a4d8418598e533f9ca991d3b8e45a139e"
+    url "https:files.pythonhosted.orgpackages9762d6f18967875aa60182198a0dd287d3a50d8aea1d844239ea00c016f7be88py7zr-1.0.0.tar.gz"
+    sha256 "f6bfee81637c9032f6a9f0eb045a4bfc7a7ff4138becfc42d7cb89b54ffbfef1"
   end
 
   resource "pybcj" do
-    url "https:files.pythonhosted.orgpackagesbf693f4ce9d4c79f6ddf6bf60af873f65605123a0e8cd13159f8531a9cb81710pybcj-1.0.3.tar.gz"
-    sha256 "b8873637f0be00ceaa372d0fb81693604b4bbc8decdb2b1ae5f9b84d196788d9"
+    url "https:files.pythonhosted.orgpackagesce75bbcf098abf68081fa27c09d642790daa99d9156132c8b0893e3fecd946abpybcj-1.0.6.tar.gz"
+    sha256 "70bbe2dc185993351955bfe8f61395038f96f5de92bb3a436acb01505781f8f2"
   end
 
   resource "pycryptodomex" do
-    url "https:files.pythonhosted.orgpackagesbad5861a7daada160fcf6b0393fb741eeb0d0910b039ad7f0cd56c39afdd4a20pycryptodomex-3.22.0.tar.gz"
-    sha256 "a1da61bacc22f93a91cbe690e3eb2022a03ab4123690ab16c46abb693a9df63d"
+    url "https:files.pythonhosted.orgpackagesc985e24bf90972a30b0fcd16c73009add1d7d7cd9140c2498a68252028899e41pycryptodomex-3.23.0.tar.gz"
+    sha256 "71909758f010c82bc99b0abf4ea12012c98962fbf0583c2164f8b84533c2e4da"
   end
 
   resource "pyppmd" do
-    url "https:files.pythonhosted.orgpackages428e06581a619ad31cd28fd897bd55aff2ea945d3d566969b8b3f682599e6deepyppmd-1.1.1.tar.gz"
-    sha256 "f1a812f1e7628f4c26d05de340b91b72165d7b62778c27d322b82ce2e8ff00cb"
+    url "https:files.pythonhosted.orgpackagesf6d7b3084ff1ac6451ef7dd93d4f7627eeb121a3bed4f8a573a81978a43ddb06pyppmd-1.2.0.tar.gz"
+    sha256 "cc04af92f1d26831ec96963439dfb27c96467b5452b94436a6af696649a121fd"
   end
 
   resource "pyzstd" do
-    url "https:files.pythonhosted.orgpackages6214878fee4072cecb1cc6e061c7d0d933e481389c27de939538c9cc3f18894apyzstd-0.16.2.tar.gz"
-    sha256 "179c1a2ea1565abf09c5f2fd72f9ce7c54b2764cf7369e05c0bfd8f1f67f63d2"
+    url "https:files.pythonhosted.orgpackages8fa254d860ccbd07e3c67e4d0321d1c29fc7963ac82cf801a078debfc4ef7c15pyzstd-0.17.0.tar.gz"
+    sha256 "d84271f8baa66c419204c1dd115a4dec8b266f8a2921da21b81764fa208c1db6"
   end
 
   resource "requests" do
@@ -115,8 +115,8 @@ class Aqtinstall < Formula
   end
 
   resource "soupsieve" do
-    url "https:files.pythonhosted.orgpackagesd7cefbaeed4f9fb8b2daa961f90591662df6a86c1abf25c548329a86920aedfbsoupsieve-2.6.tar.gz"
-    sha256 "e2e68417777af359ec65daac1057404a3c8a5455bb8abc36f1a9866ab1a51abb"
+    url "https:files.pythonhosted.orgpackages3ff44a80cd6ef364b2e8b65b15816a843c0980f7a5a2b4dc701fc574952aa19fsoupsieve-2.7.tar.gz"
+    sha256 "ad282f9b6926286d2ead4750552c8a6142bc4c783fd66b0293547c8fe6ae126a"
   end
 
   resource "texttable" do
@@ -125,13 +125,13 @@ class Aqtinstall < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
-    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
+    url "https:files.pythonhosted.orgpackagesf63723083fcd6e35492953e8d2aaaa68b860eb422b34627b13f2ce3eb6106061typing_extensions-4.13.2.tar.gz"
+    sha256 "e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesaa63e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66urllib3-2.3.0.tar.gz"
-    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
+    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
+    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
   end
 
   def install

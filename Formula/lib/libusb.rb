@@ -1,8 +1,8 @@
 class Libusb < Formula
   desc "Library for USB device access"
   homepage "https:libusb.info"
-  url "https:github.comlibusblibusbreleasesdownloadv1.0.28libusb-1.0.28.tar.bz2"
-  sha256 "966bb0d231f94a474eaae2e67da5ec844d3527a1f386456394ff432580634b29"
+  url "https:github.comlibusblibusbreleasesdownloadv1.0.29libusb-1.0.29.tar.bz2"
+  sha256 "5977fc950f8d1395ccea9bd48c06b3f808fd3c2c961b44b0c2e6e29fc3a70a85"
   license "LGPL-2.1-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Libusb < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "fb9ed6ef1610e649e3b95f2eb2945f7329fc5695bcb2521c4dca924b61b3ff31"
-    sha256 cellar: :any,                 arm64_sonoma:  "d6490cbec98bc45587edff71af6bc6c7807d120c8a938d5135120dfcde0ede95"
-    sha256 cellar: :any,                 arm64_ventura: "81ee03b903ccaadf6624b56b94da8660b7530ff2ca1c91c0f3b9970c0aca9a43"
-    sha256 cellar: :any,                 sonoma:        "161e0741fa3b4cd8efb5c750c1dd277214f57637320c1bd699f8a1f0a4ac1c2a"
-    sha256 cellar: :any,                 ventura:       "d71077cf63c1b8903735656f3d7558d5e4a63588fe5ef5f9d612908e1dc848a4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b240ee6dd7aca2c54bf65ed74391608418f2085ec6b7db0946550ea6aa98636"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5473c8faecc7be9a9ea04d712906ca4970fdf9abc1fc8713502a4eb4f8ca4d71"
+    sha256 cellar: :any,                 arm64_sequoia: "197c6a9c929f846cacdb7e79376a706ba295bf7f9a5aa49ac9712b9d6a571962"
+    sha256 cellar: :any,                 arm64_sonoma:  "63ea19dcae1a6e9b82b9d2d8497367f29b2baf337aa30bf69abc1a37252078b3"
+    sha256 cellar: :any,                 arm64_ventura: "c5c93e938ae936589f352d213e24cff2a02990e08efb8e7620c45075b1301f50"
+    sha256 cellar: :any,                 sonoma:        "ace918b6a959314990d4653e81496f99594e2999f5a36fd61f538fa3b469db3f"
+    sha256 cellar: :any,                 ventura:       "ecf25be7aa95c979306f6054a6de8aa4dadd380f17341ffdda2259e48a01a213"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bc6fdd8e4ea046dbe90ba929765570c3066d4463d37da4e055b69297c954994c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "70face621f55df85bc16900355953c3ea8f522d7e9f030df490c3494e8898b2c"
   end
 
   head do

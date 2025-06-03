@@ -1,8 +1,8 @@
 class Assimp < Formula
   desc "Portable library for importing many well-known 3D model formats"
   homepage "https:www.assimp.org"
-  url "https:github.comassimpassimparchiverefstagsv6.0.0.tar.gz"
-  sha256 "95a7263db4a8478bf0ffa22cedd249f5ef02d7dcafd14d288bbc9a5ca24e5c1d"
+  url "https:github.comassimpassimparchiverefstagsv6.0.1.tar.gz"
+  sha256 "0c6ec0e601cab4700019c1e60b5cd332cc6355e63e59c11344693623c08a7d38"
   # NOTE: BSD-2-Clause is omitted as contribOpen3DGCo3dgcArithmeticCodec.c is not used
   license all_of: [
     "BSD-3-Clause",
@@ -15,13 +15,13 @@ class Assimp < Formula
   head "https:github.comassimpassimp.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ccf4f9fbfb87e220d791b8bae7a03840e6d52440f4788ede9ce189a9157049bd"
-    sha256 cellar: :any,                 arm64_sonoma:  "c113d9fc5739e25495ef086f9356a8ea2676757a7d84326c285c425e4ddb1f02"
-    sha256 cellar: :any,                 arm64_ventura: "cd67606d49b2ac59e3d223c4d1a4ebace5a1c60a853d5ece4486a88654c0e1d8"
-    sha256 cellar: :any,                 sonoma:        "408b6e7c895e18d2cfed9337f6c323e092ae09f3b8d32e09d6ad562bb180fc46"
-    sha256 cellar: :any,                 ventura:       "bbabbc09843ea4a0e2ab4b95f310c211aba7e78b665dd974ee65495036562074"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "36ea2edbe7367cae0d51accda43f797269828c2049ee2b48e5c504606a0fed5f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50d9455ac367dc04ab56783795b31269ed338668643b5f35ddb8bc2815bc7c4e"
+    sha256 cellar: :any,                 arm64_sequoia: "a43d70a501a16ef7b9f278cea4a99798d080395e5ea50e452c2e0bd0fb07006a"
+    sha256 cellar: :any,                 arm64_sonoma:  "ec2d87fa225a09cb108f9611ed10e6fc9f3b86413373f1babd9bd2be94318939"
+    sha256 cellar: :any,                 arm64_ventura: "18cb56c4bd3dfdf3f2ede01a944edec69f92b90b97a50aa856fc69cceaef901b"
+    sha256 cellar: :any,                 sonoma:        "8ba45ccc2774bc0e17f811f836406cb3d5fe129f4a3c087ac2250cc3ab064f69"
+    sha256 cellar: :any,                 ventura:       "c1fc0889307ab26168df04ed10c1133055aaf123034350dbc2bdb3c7f475d078"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d5254106aabf9cc5097670753afc657b9d93c3003bef4d46225038561c10e42"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6a995c5ba9d96c7ff5f1a34bc184bc213f404a1a4e9de7769cc5b4c60f120a29"
   end
 
   depends_on "cmake" => :build

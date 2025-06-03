@@ -1,14 +1,14 @@
 class Iputils < Formula
   desc "Set of small useful utilities for Linux networking"
   homepage "https:github.comiputilsiputils"
-  url "https:github.comiputilsiputilsarchiverefstags20240905.tar.gz"
-  sha256 "055b4e6e4f298c97fd5848898099e59b4590db63fac3f7ad4fa796354ad44403"
+  url "https:github.comiputilsiputilsarchiverefstags20250602.tar.gz"
+  sha256 "79048b6a74b4831d6ee5f50ea5122ca2123bad6adc49bc9008c126061ded6a69"
   license all_of: ["GPL-2.0-or-later", "BSD-3-Clause"]
   head "https:github.comiputilsiputils.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "9881e8da206fa156f109ae29a816d2927eee1366b5f38e32c22cbcb7987ab14f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "5e17cf0b22d54026f33a2a0883726815e6a98b31a838e2c644b6c2b219c1b934"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "6e815977ef9efdc2a3e17a19cd2ff0360359bc9de2789f086abee5e65d1c92d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "fda656bf3d0765f8d6612bb716e40d338a3511514799f8bd415104f559e9aa36"
   end
 
   depends_on "meson" => :build

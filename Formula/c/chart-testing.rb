@@ -2,18 +2,18 @@ class ChartTesting < Formula
   desc "Testing and linting Helm charts"
   homepage "https:github.comhelmchart-testing"
   url "https:github.comhelmchart-testing.git",
-      tag:      "v3.12.0",
-      revision: "d6991035017d7ac0e3dec3d1b5ad2e5f18674b32"
+      tag:      "v3.13.0",
+      revision: "dac2d60e7a47c929a9c1ef545b83ac247d9f51d8"
   license "Apache-2.0"
   head "https:github.comhelmchart-testing.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f2138869a05cf42de24e10d8512bc26070ac19169d3bb41f061c226a67ac7aaa"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f2138869a05cf42de24e10d8512bc26070ac19169d3bb41f061c226a67ac7aaa"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f2138869a05cf42de24e10d8512bc26070ac19169d3bb41f061c226a67ac7aaa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "aaaa3bcedb8fae176cd2ba889ebe715f11b3592ee61be0917c3ed8b232b4081e"
-    sha256 cellar: :any_skip_relocation, ventura:       "aaaa3bcedb8fae176cd2ba889ebe715f11b3592ee61be0917c3ed8b232b4081e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dc2bea119cc70298682e2b83e5ab7df72f962ce06068a8548c4f643a77aea1ce"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0faf3efe0f5c189917186de7e840c09d8d404789daf212ca9229addb67319ceb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0faf3efe0f5c189917186de7e840c09d8d404789daf212ca9229addb67319ceb"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0faf3efe0f5c189917186de7e840c09d8d404789daf212ca9229addb67319ceb"
+    sha256 cellar: :any_skip_relocation, sonoma:        "efeea231950969e1e64dca249476d63b1732b7eaf607f4e01e2e7fefe868b537"
+    sha256 cellar: :any_skip_relocation, ventura:       "efeea231950969e1e64dca249476d63b1732b7eaf607f4e01e2e7fefe868b537"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "519215363721042661fd326ffc7e1a31af634518fa4df3b13f37cc8d08079653"
   end
 
   depends_on "go" => :build

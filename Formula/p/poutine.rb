@@ -1,18 +1,18 @@
 class Poutine < Formula
   desc "Security scanner that detects vulnerabilities in build pipelines"
   homepage "https:boostsecurityio.github.iopoutine"
-  url "https:github.comboostsecurityiopoutinearchiverefstagsv0.17.0.tar.gz"
-  sha256 "6d98171b2c4100d2677c219258fcd1c00b6ef184f9cb5994e0cacb3a0ac30b47"
+  url "https:github.comboostsecurityiopoutinearchiverefstagsv0.18.0.tar.gz"
+  sha256 "3a3c7df89659da4679681c59a1ed96863f99ef2a434422090cdee21e09ba1cb9"
   license "Apache-2.0"
   head "https:github.comboostsecurityiopoutine.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8a68b0e4d2eb59afbf494b16aa9924e7b8e84d385ec63eb842dc0a400b984491"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "40314a9f7b10a379035b65cbd619f5647deac536e39fe6c98eb77e77514ea635"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "83e057f632d96a7e3ccc2f2ec6576c0f7c01fa9920f44770494c5387daedcfd8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "edf15bb654cf74c0fea4ec087fa930a9ce81ae0f3b6f05f691e7fc960de88aec"
-    sha256 cellar: :any_skip_relocation, ventura:       "a77e2d668fd598fb00138d3a04a82c3a9e41cb65bb5e3d50121863d7a577bdfe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e043de17490b9eb9b7f7b785fd423ee0ee8115378056c8e76bb2a98f53c86db7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "da3b785575f2fc64e9e79f8d7220ca7b8c679e6c9e63f3ec3d7f22f154621566"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "aff442b64f3646b52d85aef3ccaeb323643b3a2ecc2c70838982daae35a2452f"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e3a208a618f4862db5b7a7d6f7adde1d3e194081e456a2fe78cf871f6fc4947a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "c7cc696944c656046a024c93d1758e3e035a0b6b85b566db263b380609b2763a"
+    sha256 cellar: :any_skip_relocation, ventura:       "72caa4c0e047d16e47883e9088d184cc2ffc77c9d86e18c47074136dd1d44599"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "285b75f5ed9b20964bed0515abfa86b12ab14480b8b44ae06a7e193733d1b30b"
   end
 
   depends_on "go" => :build

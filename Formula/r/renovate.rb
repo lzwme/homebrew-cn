@@ -1,8 +1,8 @@
 class Renovate < Formula
   desc "Automated dependency updates. Flexible so you don't need to be"
   homepage "https:github.comrenovatebotrenovate"
-  url "https:registry.npmjs.orgrenovate-renovate-40.37.0.tgz"
-  sha256 "de080d1b1c2f9f6277ac98bf47ac6f2a2d9422dbf11b76bfae9611bb413c5d15"
+  url "https:registry.npmjs.orgrenovate-renovate-40.39.0.tgz"
+  sha256 "9a054d59e6e67b0e54d49936fb60668cfb937121ad8f2cedded1e4f6effe96f3"
   license "AGPL-3.0-only"
 
   # There are thousands of renovate releases on npm and the page the `Npm`
@@ -17,13 +17,13 @@ class Renovate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d81809ab99388c96425867f7f86968ce4a57316616795de9432babacb2e29e33"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df2800d24b89118d4be77e7de636c4d645801b7f57f03d30531ec2bed19c03e3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "c046515d2f78ccf9b2f417634b5d6f367011f82832845d472745f5ba81d31cfa"
-    sha256 cellar: :any_skip_relocation, sonoma:        "ebf4c4fe58af8ff1fc59fb4c359692e48f61d76f9201dbd0b12141b7ac174121"
-    sha256 cellar: :any_skip_relocation, ventura:       "30093d0afac33bf7a310a4d184adba9b814398366edcccd99b32750a7205f554"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "33fa85d123fb4a136f948895c16816f04adecfabfa49e3d56bdc7b0858dc08e5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef654a60358e44886c0b71b8dc9640a9aa523f0745106e5f5ca89267654bcf50"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8da78c62be3fce9c99777db1a14c12bfaddff758ef9f48ea3eafd09893ae2ddd"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "93d525431c76e1917303dde8330b3659005e23181a73a2a5387d41ef4004e5ec"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "25c71424a220f1c9cc4c7aeec80057261852ce1c7a4c0c948fadaf8cde0fb0c2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "16eeb19c33e8148b62c22097ef6d086983e6b748d1fb22bf7d8876e2d9953063"
+    sha256 cellar: :any_skip_relocation, ventura:       "9db5dce0f4206ec01e0c733b9aee5a6d5d81ed9a89a64f1b4baf3dfb21eefbfb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0bd8063cff1e3525b6ff3d99d7db3a25834daa903721f40430beb04ce83fa59f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3d5beed202ead3eb3c9a399dc9482fad7bbc4a0a1336654b19b94de9c7ca8b2e"
   end
 
   depends_on "node@22"

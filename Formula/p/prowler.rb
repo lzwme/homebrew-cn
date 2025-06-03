@@ -3,18 +3,18 @@ class Prowler < Formula
 
   desc "Tool for cloud security assessments, audits, incident response, and more"
   homepage "https:prowler.com"
-  url "https:files.pythonhosted.orgpackages0b055a9db9a7be643b6b13e878967252e5ae083f09f1f6749530d2ea973b4e36prowler-5.7.1.tar.gz"
-  sha256 "0354ba6955aed8d5ce7f589c73906a7d5796c0dddb02e469fc89304c1b9022dd"
+  url "https:files.pythonhosted.orgpackages31f90f1d249543074692b49d3c43951a00676ab4ed0068909fd287e6f1b11fe8prowler-5.7.2.tar.gz"
+  sha256 "930f62526ecbd7719dcfa3116abc8934762d3c5b0d990a0b344c1c9de7aa5623"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4cbd696b9fdd8f913809b4a051916854cffc76bde7db098f8f50dd459d0afc8d"
-    sha256 cellar: :any,                 arm64_sonoma:  "48ff6a575360707a1f5539157878f0c2a5b28825f39c444b2285f9e27849cd40"
-    sha256 cellar: :any,                 arm64_ventura: "7d7e6005c8fee947139f237a2495884c7462c3810d3a244b18c9eb2796f1a44e"
-    sha256 cellar: :any,                 sonoma:        "0ea0f56615b49548239e55027bbcb1c4450cfd2ae7cd9be44b976cdb9e748df4"
-    sha256 cellar: :any,                 ventura:       "c2ccc682678ee468d785811464c036526101b36d6c4e0dcf1607ebe5d3c784f3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "33a236e27cf7a63714ab99eea35c213b9e0ade876a539d860034277c17c17cc8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c44963dc29ce11de677e4d121b86588270597e9eaa09bdab0c09f3fbbdb72c83"
+    sha256 cellar: :any,                 arm64_sequoia: "1a24acfd7541e3cf3a806ce5320112918556c19350cbe134251c78a7627adb76"
+    sha256 cellar: :any,                 arm64_sonoma:  "febbdd3930d2f3aedf353b13b43de9d10ecc4cc8fa085d5b5e055b303b04d87d"
+    sha256 cellar: :any,                 arm64_ventura: "7fd81c61f7e71aeb6b5cef4208466d60db8d9dfdbc51bbee370dc786fb2a3833"
+    sha256 cellar: :any,                 sonoma:        "be49753ca94c2dd210912dbf65d9a527850b1300d753fb22bf4184d3d4d9b49f"
+    sha256 cellar: :any,                 ventura:       "064582e347e94edca9a8119b4d93d712e49c4e0fa2bde9b7551e926295bf1857"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "47ee830d3df3231eafc863d01bc83e0c702dfd58d3a4dc736ccb3da8155fe732"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1455f678a6cc472779f9ede4665e5e1a6cce894ec1ea8d9a542a7806e6cdb5f6"
   end
 
   depends_on "cmake" => :build
@@ -43,8 +43,8 @@ class Prowler < Formula
   end
 
   resource "aiohttp" do
-    url "https:files.pythonhosted.orgpackages63e7fa1a8c00e2c54b05dc8cb5d1439f627f7c267874e3f7bb047146116020f9aiohttp-3.11.18.tar.gz"
-    sha256 "ae856e1138612b7e412db63b7708735cff4d38d0399f6a5435d3dac2669f558a"
+    url "https:files.pythonhosted.orgpackages23282d96dffe4deb40faa7f5615b4aa96c87528e65837d8cb5385da4aecf1c07aiohttp-3.12.6.tar.gz"
+    sha256 "37b1c6034a1e14764adad1829cd710543b1699d7985e1d336f0aa52a2dd76ba9"
   end
 
   resource "aiosignal" do
@@ -303,8 +303,8 @@ class Prowler < Formula
   end
 
   resource "google-auth" do
-    url "https:files.pythonhosted.orgpackages94a538c21d0e731bb716cffcf987bd9a3555cb95877ab4b616cfb96939933f20google_auth-2.40.1.tar.gz"
-    sha256 "58f0e8416a9814c1d86c9b7f6acf6816b51aba167b2c76821965271bac275540"
+    url "https:files.pythonhosted.orgpackages6684f67f53c505a6b2c5da05c988e2a5483f5ba9eee4b1841d2e3ff22f547cd5google_auth-2.40.2.tar.gz"
+    sha256 "a33cde547a2134273226fa4b853883559947ebe9207521f7afc707efbf690f58"
   end
 
   resource "google-auth-httplib2" do
@@ -473,8 +473,8 @@ class Prowler < Formula
   end
 
   resource "narwhals" do
-    url "https:files.pythonhosted.orgpackagesf057283881d06788c2fddd05eb7f0d6c82c5116d2827e83b845c796c74417c56narwhals-1.40.0.tar.gz"
-    sha256 "17064abffd264ea1cfe6aefc8a0080f3a4ffb3659a98bcad5456ca80b88f2a0a"
+    url "https:files.pythonhosted.orgpackages32fc7b9a3689911662be59889b1b0b40e17d5dba6f98080994d86ca1f3154d41narwhals-1.41.0.tar.gz"
+    sha256 "0ab2e5a1757a19b071e37ca74b53b0b5426789321d68939738337dfddea629b5"
   end
 
   resource "nest-asyncio" do
@@ -513,8 +513,8 @@ class Prowler < Formula
   end
 
   resource "plotly" do
-    url "https:files.pythonhosted.orgpackages8a7cf396bc817975252afbe7af102ce09cd12ac40a8e90b8699a857d1b15c8a3plotly-6.1.1.tar.gz"
-    sha256 "84a4f3d36655f1328fa3155377c7e8a9533196697d5b79a4bc5e905bdd09a433"
+    url "https:files.pythonhosted.orgpackagesae77431447616eda6a432dc3ce541b3f808ecb8803ea3d4ab2573b67f8eb4208plotly-6.1.2.tar.gz"
+    sha256 "4fdaa228926ba3e3a213f4d1713287e69dcad1a7e66cf2025bd7d7026d5014b4"
   end
 
   resource "propcache" do
@@ -528,8 +528,8 @@ class Prowler < Formula
   end
 
   resource "protobuf" do
-    url "https:files.pythonhosted.orgpackages1348718c1e104a2e89970a8ff3b06d87e152834b576c570a6908f8c17ba88d65protobuf-6.31.0.tar.gz"
-    sha256 "314fab1a6a316469dc2dd46f993cbbe95c861ea6807da910becfe7475bc26ffe"
+    url "https:files.pythonhosted.orgpackages52f3b9655a711b32c19720253f6f06326faf90580834e2e83f840472d752bc8bprotobuf-6.31.1.tar.gz"
+    sha256 "d8cac4c982f0b957a4dc73a80e2ea24fab08e679c0de9deb835f4a12d69aca9a"
   end
 
   resource "py-ocsf-models" do
@@ -633,8 +633,8 @@ class Prowler < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages8dd2ec1acaaff45caed5c2dedb33b67055ba9d4e96b091094df90762e60135fesetuptools-80.8.0.tar.gz"
-    sha256 "49f7af965996f26d43c8ae34539c8d99c5042fbff34302ea151eaa9c207cd257"
+    url "https:files.pythonhosted.orgpackages185d3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fcasetuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   resource "shodan" do
@@ -723,8 +723,8 @@ class Prowler < Formula
   end
 
   resource "zipp" do
-    url "https:files.pythonhosted.orgpackages3f50bad581df71744867e9468ebd0bcd6505de3b275e06f202c2cb016e3ff56fzipp-3.21.0.tar.gz"
-    sha256 "2c9958f6430a2040341a52eb608ed6dd93ef4392e02ffe219417c1b28b5dd1f4"
+    url "https:files.pythonhosted.orgpackages12b67b3d16792fdf94f146bed92be90b4eb4563569eca91513c8609aebf0c167zipp-3.22.0.tar.gz"
+    sha256 "dd2f28c3ce4bc67507bfd3781d21b7bb2be31103b51a4553ad7d90b84e57ace5"
   end
 
   def install
