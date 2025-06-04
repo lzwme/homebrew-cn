@@ -1,17 +1,18 @@
 class Nx < Formula
   desc "Smart, Fast and Extensible Build System"
   homepage "https://nx.dev"
-  url "https://registry.npmjs.org/nx/-/nx-21.0.4.tgz"
-  sha256 "dd1bf64358661a2d14dd027f8b0c6d8eea051afff4ec8206407bdb9335991f9f"
+  url "https://registry.npmjs.org/nx/-/nx-21.1.2.tgz"
+  sha256 "f0c866819641ac6aebf96a3370cfe726f97016c749db1f530c66dda0abd61ed7"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "c1d5a9df1f46bf4e9216cd2d88153a9b32a6263fbbb6f700898792a28ad0cb28"
-    sha256 cellar: :any,                 arm64_sonoma:  "c1d5a9df1f46bf4e9216cd2d88153a9b32a6263fbbb6f700898792a28ad0cb28"
-    sha256 cellar: :any,                 arm64_ventura: "c1d5a9df1f46bf4e9216cd2d88153a9b32a6263fbbb6f700898792a28ad0cb28"
-    sha256 cellar: :any,                 sonoma:        "aaf2aab4c5272fbcdfbc4f09a8b5c85155319c34c4ea541a3bccbe372dd91743"
-    sha256 cellar: :any,                 ventura:       "aaf2aab4c5272fbcdfbc4f09a8b5c85155319c34c4ea541a3bccbe372dd91743"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a363a3395436db3f2721fcc40315d7c50a79ebeaaa480613df61ff7d77b04450"
+    sha256 cellar: :any,                 arm64_sequoia: "64826a6e28d4d5717bda79628fbfbfa39c708aea0e337752d889b88b5d727a47"
+    sha256 cellar: :any,                 arm64_sonoma:  "64826a6e28d4d5717bda79628fbfbfa39c708aea0e337752d889b88b5d727a47"
+    sha256 cellar: :any,                 arm64_ventura: "64826a6e28d4d5717bda79628fbfbfa39c708aea0e337752d889b88b5d727a47"
+    sha256 cellar: :any,                 sonoma:        "62ec9edb941f52075abde7d51323b1f6b720bf2573ed3819ff15e2e6f3213544"
+    sha256 cellar: :any,                 ventura:       "62ec9edb941f52075abde7d51323b1f6b720bf2573ed3819ff15e2e6f3213544"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "565d28ed59e23306f557eb4406ef7040999e45f1fe911281e5355a5fb4fd089b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ebd4cba813beec1ec8525be1b6e69a98b612b0a045a5fa2ca29a69794f8b1b8c"
   end
 
   depends_on "node"

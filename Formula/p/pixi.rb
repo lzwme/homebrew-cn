@@ -1,8 +1,8 @@
 class Pixi < Formula
   desc "Package management made easy"
   homepage "https:pixi.sh"
-  url "https:github.comprefix-devpixiarchiverefstagsv0.47.0.tar.gz"
-  sha256 "a1bdf15b861b63d2a7d12947980e415e35d6ae268194b4c09bb765a406fe0259"
+  url "https:github.comprefix-devpixiarchiverefstagsv0.48.0.tar.gz"
+  sha256 "008d49f5adfece6a0cb8b4cdf2a44b0577c9d3760fdd64b466ae54923077562e"
   license "BSD-3-Clause"
   head "https:github.comprefix-devpixi.git", branch: "main"
 
@@ -15,13 +15,13 @@ class Pixi < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "61fdae6bcf25d9d0f0dc4a115d1f318cb7797b6d076f9f56c9c5ce15e3b3a23d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fd6f42fc9aab2115fd0cc34aa50ac71149a74b469558ca192cd28be3cfe238dc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1ab7a204d1da6c9917f9b1b733222a1db66b7d92f12496f415786bb378888389"
-    sha256 cellar: :any_skip_relocation, sonoma:        "dbc475fb568f7aec4d093616c882eacb2248eb7a951221e91239a98188812e76"
-    sha256 cellar: :any_skip_relocation, ventura:       "729d89ffd6c09784b93fb9558553d420f4f1e70b0076addb416e6c8e199022b3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad0d4dd9eeedb704bbffa7accd3ba5ef84df40a9bcf9a1ad71bfc5705a1d32ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3bbcfe741234910c8a70674f3d8091610fbdbaf5e9a657a5be0b4281c022d4e5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6caa997959cbedcbf79eb923f670871234c6e4ed21715529e059eb46a1d45689"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "765cfa417446813ad3626dbbdfe195b69cb89c40a1b3791bd2c291acca2131ea"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b07110caa030ac0d48173270b80fd4b69d91aa1cbc8387e360293aae768008f7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4495dcb5270b7634c6dc146a9797893fc9aa85d799849ecd08afc4b4f931c7d4"
+    sha256 cellar: :any_skip_relocation, ventura:       "514d4737aeab72617534c78b1d6620ccf15df23ff12c1246726112dd55562fd2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "68884111625b02633ef9db4b2d0a5b3d634dc9914c98a6488619ba3f8aa3fe2d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dfc41559049e647fae2a57d06a5fd43f55aae3e09faa4d17f012c5b372698516"
   end
 
   depends_on "cmake" => :build

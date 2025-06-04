@@ -4,15 +4,16 @@ class Pymupdf < Formula
   url "https:files.pythonhosted.orgpackages9913d9f3b67b98111e79307e2a3cf6d5f73daaca002144cc6d236c4a0adbc386pymupdf-1.26.0.tar.gz"
   sha256 "ffe023f820379c84a0ddae38b0d07ea4016e1de84929491c34415520c629bcce"
   license "AGPL-3.0-only"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b0ae84a83ca13a45fdf567f79821532f642faef2bf0b031de18c24e59d2841ec"
-    sha256 cellar: :any,                 arm64_sonoma:  "a83fd1c58c06ba629d8a81faf50abf29f035ce3e51ce1ff34ed86704617d480b"
-    sha256 cellar: :any,                 arm64_ventura: "dba891887ca0d5c27fc67cb9eee2e8d1ecbdc9e727cc8a68863cd6dd2230f3c9"
-    sha256 cellar: :any,                 sonoma:        "4e780f10dcf829b0a29e5e1cd9df6c44411db0861c71cc7f345c1df00b57e413"
-    sha256 cellar: :any,                 ventura:       "e84ec87b72b331c4b5c2ac0d9cf9ff572e5f6048e4791bc6d9c9b6dceefb3329"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3664b2d2b2a68384e966008f2cd10da6decaa575b4ce84fb753c3b3f54654c26"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "db3ba5cdff301f01a10f0c7422c8b9033c43e88a46ec09e01f500205e36dcad5"
+    sha256 cellar: :any,                 arm64_sequoia: "1773aa238f89be9b822b1a7db7449a9f2af11ea0833cc9b5176362369308c09f"
+    sha256 cellar: :any,                 arm64_sonoma:  "ffc059b2872dcd5f75ebdb39850bcd66815e1c30ef2b8a028d0b52410b513ca6"
+    sha256 cellar: :any,                 arm64_ventura: "ca9a2139475f05ea6b5872dfa19eb78e8eda44d388ad6e5817f982a47e44a3f0"
+    sha256 cellar: :any,                 sonoma:        "022d9e01864e2364be0cfaf53cd05cf82b292bd9453b51eef9ae01966ad63f2a"
+    sha256 cellar: :any,                 ventura:       "a058db1a4e1dfd40717da1ec750ccc32c8429a08b4e58f62ecb013411bbadc69"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3a2561ccc1e2f9ef243da6aad55fa12c190505ef3012a5abc4c9da8bf7c55a98"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "da8b3b1bd9444ced58e46bce498113ab2e5a863abd0200d565586a4619ca55e0"
   end
 
   depends_on "freetype" => :build

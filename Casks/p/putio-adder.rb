@@ -7,6 +7,7 @@ cask "putio-adder" do
   homepage "https:github.comnicoSWDput.io-adder"
 
   deprecate! date: "2024-06-03", because: :unmaintained
+  disable! date: "2025-06-03", because: :unmaintained
 
   app "put.io adder.app"
 end

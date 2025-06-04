@@ -1,8 +1,8 @@
 class ProtocGenGrpcSwift < Formula
   desc "Protoc plugin for generating gRPC Swift stubs"
   homepage "https:github.comgrpcgrpc-swift-protobuf"
-  url "https:github.comgrpcgrpc-swift-protobufarchiverefstags1.3.0.tar.gz"
-  sha256 "0dc2eeb4d04d3909b20d6bcccb79ff828d5a3f800a5f12bca3118828f9dde554"
+  url "https:github.comgrpcgrpc-swift-protobufarchiverefstags2.0.0.tar.gz"
+  sha256 "308e62a9160603310f055a8fa02484f80e245ad49e094cef4193b520a1736adf"
   license "Apache-2.0"
   version_scheme 1
   head "https:github.comgrpcgrpc-swift-protobuf.git", branch: "main"
@@ -13,9 +13,9 @@ class ProtocGenGrpcSwift < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a3750dc134f8c2ffdd812b9f16420cd35bf1e48504c0e3c510ff6b0ad9941d20"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "2f3cef9ef3de12f5271180a0caed835da583254aefaea90ad00111d8864edae3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8df60e3d84856a1c95e85e8bdc08f8c43a4c41df42eed371e433625fc223a43b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94e1f8cb9cb5040d4a4b54eb9f391618ba6b8aad9d0482cdf197507c359b9aa8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "59d21de765a01b40b2c2ec704dc8e6985b72677f5717fa96391d81c917931af0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2985626ab628df99de6c3b90aff852f1073a6e262a5056e07f4032a65903e588"
   end
 
   depends_on xcode: ["15.0", :build]
@@ -32,8 +32,8 @@ class ProtocGenGrpcSwift < Formula
     else
       ["--static-swift-stdlib"]
     end
-    system "swift", "build", *args, "-c", "release", "--product", "protoc-gen-grpc-swift"
-    bin.install ".buildreleaseprotoc-gen-grpc-swift"
+    system "swift", "build", *args, "-c", "release", "--product", "protoc-gen-grpc-swift-2"
+    bin.install ".buildreleaseprotoc-gen-grpc-swift-2"
   end
 
   test do
@@ -52,7 +52,7 @@ class ProtocGenGrpcSwift < Formula
         string text = 1;
       }
     PROTO
-    system Formula["protobuf"].opt_bin"protoc", "echo.proto", "--grpc-swift_out=."
+    system Formula["protobuf"].opt_bin"protoc", "echo.proto", "--grpc-swift-2_out=."
     assert_path_exists testpath"echo.grpc.swift"
   end
 end

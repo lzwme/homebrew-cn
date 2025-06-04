@@ -1,18 +1,18 @@
 class Yeet < Formula
   desc "Packaging tool that lets you declare build instructions in JavaScript"
   homepage "https:github.comTecharoHQyeet"
-  url "https:github.comTecharoHQyeetarchiverefstagsv0.6.0.tar.gz"
-  sha256 "b87d344b56eb69aa72dce54c88397a77a8a24a9c013d1d81796d165d3000fe5d"
+  url "https:github.comTecharoHQyeetarchiverefstagsv0.6.1.tar.gz"
+  sha256 "dcd0199495e5cbe9dded07ffe0ed4b86acb44a6d9d43998425ffef7fcc188d7e"
   license "MIT"
   head "https:github.comTecharoHQyeet.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ab0f01e210c875e6e3d877ae90501750b237932f57fea21c1bc467e8a0f1eda7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ab0f01e210c875e6e3d877ae90501750b237932f57fea21c1bc467e8a0f1eda7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ab0f01e210c875e6e3d877ae90501750b237932f57fea21c1bc467e8a0f1eda7"
-    sha256 cellar: :any_skip_relocation, sonoma:        "d07b9541b0ab17a0c2bcead15f5c23c599b99dbf0cdbbc9201c19b820daacbc9"
-    sha256 cellar: :any_skip_relocation, ventura:       "d07b9541b0ab17a0c2bcead15f5c23c599b99dbf0cdbbc9201c19b820daacbc9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cd694b054ccadce7cac78ca150fd568e2a8ec5b5a358fd2bb1ebf6464f4cf68a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "adce749755dbd9fa70914a9060dfb69baa356f28d7e880f505b7a629f641916d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "adce749755dbd9fa70914a9060dfb69baa356f28d7e880f505b7a629f641916d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "adce749755dbd9fa70914a9060dfb69baa356f28d7e880f505b7a629f641916d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5fe5a7dac77da8778f27e48ffe3364a043fb5a005a66a900c84d5463b41b463e"
+    sha256 cellar: :any_skip_relocation, ventura:       "5fe5a7dac77da8778f27e48ffe3364a043fb5a005a66a900c84d5463b41b463e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a7b8fe20a7ceaeecd202b89c9841840b79300865461fe61cb7659cf91f27924a"
   end
 
   depends_on "go" => :build

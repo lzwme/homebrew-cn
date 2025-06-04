@@ -1,18 +1,18 @@
 class CodeServer < Formula
   desc "Access VS Code through the browser"
   homepage "https:github.comcodercode-server"
-  url "https:registry.npmjs.orgcode-server-code-server-4.100.2.tgz"
-  sha256 "869f21594fb63ef255b7c53ecafc4f5bcf973f8d1897829b6246341ad926f7d3"
+  url "https:registry.npmjs.orgcode-server-code-server-4.100.3.tgz"
+  sha256 "a85138ac3a382a9ba1df652a751901ec598fed24f673b8a8653de7be8335bfaa"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e8fe656adf763150a5900ec863e041e3d9cee4b4132f4a485dc27ccc3d720f8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03f1b17800fa23541788c0a4b2b564ed900f7c8ba8eb8a764e312442d10ffd55"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5234907d787f9631965e9d0d003bdafb0b613b6e4949a8658852524f09bdbc21"
-    sha256 cellar: :any_skip_relocation, sonoma:        "f8b55e21a44a88bc6e2ef923ea2eca68d2abfd24d4b946980bed9567ef024e2d"
-    sha256 cellar: :any_skip_relocation, ventura:       "08fbb86ce75941f8a3818ab55039a79f9948ffdae6d788c40388517c644ef09c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "601cffb081453ffec004d5797e208eb882c9e176c1e5cc6a5d9effb28d9c849e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "320a3e07e323e30ff7abeadf933fe3577e8aed1a5f6f9c3d1a3e823ba64f68e7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "09e14227ff4b741288f6ced6167c23155a2e6f1e80ad3ed08a0d8f9a37dc6ac8"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1696b9c600b76e5be899517c44c5b32e02cd44383af2c8e088a4f07bc5625fe0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "6ca625738f45d0495b2ebe5d33943d8edced735f7e84d06806c9a3868ec2414f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d2fe2692846bcf26211c9a1fc079026c86a295758c18bda519519d67ada3677d"
+    sha256 cellar: :any_skip_relocation, ventura:       "f52a6d36e616752505a3861e7486fb65e1ffb20c60165970f75ac1642d4594e5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ccc372a687625ce6406fd8a0aa6b96298919bd90c885e2aaff31b73a6fb2943c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b8dacb160e8191384e2d106139f990fc3d3b701244e5cb86ca7a550dfca78d26"
   end
 
   depends_on "pkgconf" => :build

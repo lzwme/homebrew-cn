@@ -3,19 +3,19 @@ class Serialosc < Formula
   homepage "https:github.commonomedocsblobgh-pagesserialoscosc.md"
   # pull from git tag to get submodules
   url "https:github.commonomeserialosc.git",
-      tag:      "v1.4.5",
-      revision: "79ac58b0737bc8a6617d90ab41fb00b791a5a746"
+      tag:      "v1.4.6",
+      revision: "82982437ba197b93793e89eee1cbb12c1f73e928"
   license "ISC"
   head "https:github.commonomeserialosc.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b1ba9d4682993c2b91b290ae127d7d3b4f9bf824096990f70680651a79390459"
-    sha256 cellar: :any,                 arm64_sonoma:  "84e6065faa98dbfb31e366907c0ad337472165ccffb3c8299cf2649811d19d6b"
-    sha256 cellar: :any,                 arm64_ventura: "f52aa361a0b6fcd4636a6e98d7b14d720ada9da0f2a78389f94296a54532d294"
-    sha256 cellar: :any,                 sonoma:        "594dd66c1a55996360013bad6a3f6fe042a5ee853b855b19e8703e0b501ac5cd"
-    sha256 cellar: :any,                 ventura:       "20f48d409724d37c319fd7595e47cc051be3e4343771168dfecbb9cd83e420d4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6b01477de4be9295d6c2997b07611a4d52428a819bd5662b34f04d55e110c8b8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9b66b2d89de42e40b3f3659dbb4f461698d0ff515047af8fd58ca543efe2757c"
+    sha256 cellar: :any,                 arm64_sequoia: "6bf7e4ce2c236c488e3d5f5779f97d888f19c471aaf0d08e9fdefea7afea20c2"
+    sha256 cellar: :any,                 arm64_sonoma:  "498514d0881e192dd36837716da1df5a7256179f515dc8b1dace4f480348b724"
+    sha256 cellar: :any,                 arm64_ventura: "9e549647a50621a2bafce9aad05daef120e36767af5e57a3df117d6afc5c580e"
+    sha256 cellar: :any,                 sonoma:        "4bda1903d28760b7b340db427ebf78566a93171f494ea082cd63d6eef79b0e23"
+    sha256 cellar: :any,                 ventura:       "d2cf788f4bf6dd3805af4f729e9dc7ed7a1ecde36a93468014a20052dddb87fd"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fd3d5d496535917f6e503b7b4041e23ea50b33a99c695f0ab68abcdbe576ace2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b4eee0e4d13807fb31e5ccb13536357177f2285f546af6ee9bc167a778797323"
   end
 
   depends_on "confuse"

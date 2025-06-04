@@ -4,17 +4,16 @@ class Oq < Formula
   url "https:github.comBlacksmoke16oqarchiverefstagsv1.3.5.tar.gz"
   sha256 "66b2d879b6e2061121c50b8e584ce82f95fe79348bf3696ca38e5910a6c42495"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "3c85406e1243e64b72d6c6e29e57312acdf1da6bf5ad3bd0ad0103fcd6d5ae9f"
-    sha256 cellar: :any,                 arm64_sonoma:   "99fc2a852c9fcd9346ab49b10a2fffca37b96c874311073bde9875b1317dcaa3"
-    sha256 cellar: :any,                 arm64_ventura:  "79c06b62ee8b7a819e2c752656a17e24192206454206a8f13f23f69764b35b72"
-    sha256 cellar: :any,                 arm64_monterey: "86d0284e415fa4dcf91a75c6c5dab04e73044c161777fb52449c62a62c4b3c4b"
-    sha256 cellar: :any,                 sonoma:         "d7b699f030dc0c632c034b5ffefb4db85a34976919ee4853e1814cd9caf93a5d"
-    sha256 cellar: :any,                 ventura:        "d55554139463e1d576a3c240c55fb868a7520f87073383baa74a9dc2a0769fb0"
-    sha256 cellar: :any,                 monterey:       "1ab1903afd02e46a04c19996dab38cfb49051d023a0138bb079b725d29df5c56"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "2e812e3b89e7e79cfab5322b70482a26e96e64319a9d37b18149b2d9ce3d7fe3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "6875c56c9a0b5c7f0bb103c94bc6e4a0b770f48ec90e46dc58f72e54bc71811e"
+    sha256 cellar: :any,                 arm64_sequoia: "1a3da7d5c1facf9978ed2e5e4b837db7979b6123839d133c947b9eb9b1200762"
+    sha256 cellar: :any,                 arm64_sonoma:  "9ac4ab6b25021efebdd52241b9018349fe42721bf3545bdb991e79fa55bea62f"
+    sha256 cellar: :any,                 arm64_ventura: "db3b7b294448ad7861fdbd8c5e7356e56f60567412c8b7a423b2278618975645"
+    sha256 cellar: :any,                 sonoma:        "64e1f4aa81d4189fb7d5cb01f9a1675779243b9906c07cd0a1fce59b7795d702"
+    sha256 cellar: :any,                 ventura:       "40e53859430f914af54832221b6c6851ddd6f596cddc047d0d59404f91bb483a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ee6a792a88c20a7d9aef0fd7ef3ae14ed64d1ba33f2490a4cd9d42f9b860c77a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5b1fab86fb911af9ac17c870211e41e94fa4d3ee655cf013153807b6c9ab0f7e"
   end
 
   depends_on "crystal" => :build
@@ -34,6 +33,8 @@ class Oq < Formula
   end
 
   test do
+    assert_match version.to_s, shell_output("#{bin}oq --version")
+
     assert_equal(
       "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<root><foo>1<foo><bar>2<bar><root>\n",
       pipe_output("#{bin}oq -o xml --indent 0 .", '{"foo":1, "bar":2}'),

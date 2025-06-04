@@ -3,19 +3,19 @@ class Sip < Formula
 
   desc "Tool to create Python bindings for C and C++ libraries"
   homepage "https:python-sip.readthedocs.ioenlatest"
-  url "https:files.pythonhosted.orgpackages5b62f46c9a5634d4f9712721fe6f3c17ec19df89400c4fda3a9fd7e0f960f88esip-6.11.1.tar.gz"
-  sha256 "3dae4baaf9e9f781d84bf293e0e2938dc7f44b826837889026eba53bd36c81b5"
+  url "https:files.pythonhosted.orgpackages25fb67c5ebb38defec74da7a3e2e0fa994809d152e3d4097f260bc7862a7af30sip-6.12.0.tar.gz"
+  sha256 "083ced94f85315493231119a63970b2ba42b1d38b38e730a70e02a99191a89c6"
   license "BSD-2-Clause"
   head "https:github.comPython-SIPsip.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ce4c69155ae1a5ec482636deb7ca18c592dc9f55c81a08ad203ca2665ac51ee0"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce4c69155ae1a5ec482636deb7ca18c592dc9f55c81a08ad203ca2665ac51ee0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ce4c69155ae1a5ec482636deb7ca18c592dc9f55c81a08ad203ca2665ac51ee0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "52a876478482491abbbb2921533ef70fc5e8b5cccc232406674d63345b24e5b9"
-    sha256 cellar: :any_skip_relocation, ventura:       "52a876478482491abbbb2921533ef70fc5e8b5cccc232406674d63345b24e5b9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c950820f47c4ea50e60161eb8a30c1e9e1ccc2c75a0a8d4d09a5a71da9ccfa0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4c950820f47c4ea50e60161eb8a30c1e9e1ccc2c75a0a8d4d09a5a71da9ccfa0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f298136ca0d625d7cd5e6ca41bdd887262f9cd7ab56b4cbf11019b04a7082ce3"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f298136ca0d625d7cd5e6ca41bdd887262f9cd7ab56b4cbf11019b04a7082ce3"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "f298136ca0d625d7cd5e6ca41bdd887262f9cd7ab56b4cbf11019b04a7082ce3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "489a7d9dc8b1f0439675f6dc550d7da9eee040d304fcaf960ff371825ec05d79"
+    sha256 cellar: :any_skip_relocation, ventura:       "489a7d9dc8b1f0439675f6dc550d7da9eee040d304fcaf960ff371825ec05d79"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a44c1a2f3ea1b3976bedb2df9edea3b0be8ba1356de0ada90b746bc087cd0be7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a44c1a2f3ea1b3976bedb2df9edea3b0be8ba1356de0ada90b746bc087cd0be7"
   end
 
   depends_on "python@3.13"
@@ -26,8 +26,8 @@ class Sip < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages8dd2ec1acaaff45caed5c2dedb33b67055ba9d4e96b091094df90762e60135fesetuptools-80.8.0.tar.gz"
-    sha256 "49f7af965996f26d43c8ae34539c8d99c5042fbff34302ea151eaa9c207cd257"
+    url "https:files.pythonhosted.orgpackages185d3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fcasetuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   def python3

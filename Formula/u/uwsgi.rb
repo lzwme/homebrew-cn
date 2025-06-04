@@ -1,19 +1,19 @@
 class Uwsgi < Formula
   desc "Full stack for building hosting services"
   homepage "https:uwsgi-docs.readthedocs.ioenlatest"
-  url "https:files.pythonhosted.orgpackagesaf7434f5411f1c1dc55cbcba3d817d1723b920484d2aeede4663bbaa5be7ee22uwsgi-2.0.29.tar.gz"
-  sha256 "6bd150ae60d0d9947429ea7dc8e5f868de027e5eb38355fb613b9413732c432f"
+  url "https:files.pythonhosted.orgpackages6ff0d794e9c7359f488b158e88c9e718c5600efdb74a0daf77331e5ffb6c87c4uwsgi-2.0.30.tar.gz"
+  sha256 "c12aa652124f062ac216077da59f6d247bd7ef938234445881552e58afb1eb5f"
   license "GPL-2.0-or-later"
   head "https:github.comunbituwsgi.git", branch: "master"
 
   bottle do
-    sha256 arm64_sequoia: "d0de47a93650ac9a647ca1993d544e58594f13ecf44c74be30d82e6c21c6a3ee"
-    sha256 arm64_sonoma:  "63e804aa021c578d63efee146a7de4c14da0c32112a5f9191f9206cdd97c8eea"
-    sha256 arm64_ventura: "d84676d2359811575925b6bdbdd1a27783426d8b5b852deb98377c8e9b51f7a2"
-    sha256 sonoma:        "dc6829ecbb85e22d148e917a616932e6dad93a5be054acacad11e5ecdd806fe9"
-    sha256 ventura:       "87f2ef9402ac05723ff24c4ea1b9594ad959f19f9895b11d8411e197d3df616d"
-    sha256 arm64_linux:   "a5431eded1a13c7f3c02242c7aefa988053db24c02767b81847436f6c5da1137"
-    sha256 x86_64_linux:  "38727ddcb072891b2929e8cc22c87afb78e044e9dc783b532b8353e452f53899"
+    sha256 arm64_sequoia: "b2386757296c38cd05ba889d19d2bc6d29c07ba6124657f1d905965fc3da1e1a"
+    sha256 arm64_sonoma:  "45c740b6194c9740b2d88e40a67ebf5d6019869e13faf2b40d6cf747a87808d3"
+    sha256 arm64_ventura: "dd78e316d8d60fc40c16425d7bd57788725052921e79bd1291a81c81f1c3b00d"
+    sha256 sonoma:        "8c1aff88354475b992347f8449ef581753a402dce09b4318d6c6ef1c378d4e65"
+    sha256 ventura:       "0de8c5fcee50137e7e2346567afb07ec1fa9b995bd3392604f1e3e812393824e"
+    sha256 arm64_linux:   "472b257c4aa0a1ff3d7e915bda3196681cc459de6964b19d9670cf26ee3516e1"
+    sha256 x86_64_linux:  "3c27e5bd84f5135985cce5e2c13f8a7845074bab10040fccf09caa9d0bc0e4d9"
   end
 
   depends_on "pkgconf" => :build

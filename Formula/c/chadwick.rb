@@ -1,36 +1,23 @@
 class Chadwick < Formula
-  desc "Tools for parsing Retrosheet MLB play-by-play files"
-  homepage "https:chadwick.sourceforge.netdocindex.html"
-  url "https:downloads.sourceforge.netprojectchadwickchadwick-0.7chadwick-0.7.2chadwick-0.7.2.tar.gz"
-  sha256 "f7b3af15281106e101e2ccc4cb182a3f15dbdc3327f2bcb045bfc486a8fda46e"
+  desc "Tools for manipulating baseball data"
+  homepage "https:chadwick.readthedocs.io"
+  url "https:github.comchadwickbureauchadwickreleasesdownloadv0.10.0chadwick-0.10.0.tar.gz"
+  sha256 "a4128934286edf5f9938923aad2000f7549dcccfb3b3f149a417534ef7eb29e9"
   license "GPL-2.0-or-later"
 
   livecheck do
     url :stable
-    regex(%r{url=.*?chadwick[._-]v?(\d+(?:\.\d+)+)\.t}i)
+    strategy :github_latest
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "ea8f3deb32e7ade5b361904026269eab8b02b7fd47a85f68742949a28b33c9bb"
-    sha256 cellar: :any,                 arm64_sonoma:   "855a048e94a4e914cede20351ea1984f9d70dbfeddcd8e91977c7258e3a320ce"
-    sha256 cellar: :any,                 arm64_ventura:  "0686220c29d180a3aa51a536564ae3289dca57e26fc74b15076a7b00af5121dc"
-    sha256 cellar: :any,                 arm64_monterey: "38685dff8c84293981d24cb109e29e7daab5054c8b643e5d4f4345a6ca5b68ab"
-    sha256 cellar: :any,                 arm64_big_sur:  "3feae6163c485d40c22f4dcbd0f2772245e8010e7beb4b9f9c399bd93d46f475"
-    sha256 cellar: :any,                 sonoma:         "186b043a9bdda11c13c24427a4cf164037e065ee9e7820fc5f1c50f138ff1e5a"
-    sha256 cellar: :any,                 ventura:        "d1038d6d2b346cd1569b3150c8fdef655d9fd8f26634481b7283b382fafc6273"
-    sha256 cellar: :any,                 monterey:       "12a233aaf2854a5ab2d7561581465d51f014f9622e2231b5e3da98f4041937be"
-    sha256 cellar: :any,                 big_sur:        "d03f388d1a56550fdc5b9832bf0a952c35a5b7d38f0661885c0dc4b7ee01d718"
-    sha256 cellar: :any,                 catalina:       "693c6ee0980401936a83453bdbc398aeb0eb06ba9bb8e101046508b14edfdc98"
-    sha256 cellar: :any,                 mojave:         "a068fd25b1e8b3d6f9a56a8a1d4ac18a49f07f82450b1ab3f3766b86fb0a362a"
-    sha256 cellar: :any,                 high_sierra:    "427b5c0fca10b23b66c56bda3537080df2ba467edea59a9dfd2f0fba56f50f9b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "816b2b8f0ed7a14dc13048bb104ff9b13d2e03aff240fe35407e8ba51b08f098"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "a384612258d503ddcdf39abc98c60e3cfdad289aaaad89169ee18f6f4e596639"
-  end
-
-  # Fix -flat_namespace being used on Big Sur and later.
-  patch do
-    url "https:raw.githubusercontent.comHomebrewformula-patches03cf8088210822aa2c1ab544ed58ea04c897d9c4libtoolconfigure-pre-0.4.2.418-big_sur.diff"
-    sha256 "83af02f2aa2b746bb7225872cab29a253264be49db0ecebb12f841562d9a2923"
+    sha256 cellar: :any,                 arm64_sequoia: "7f2f912f0bd0d1e01b9c5c79756c1871ee38ca5db5867eb00a8b329a964c6e4a"
+    sha256 cellar: :any,                 arm64_sonoma:  "b4995539e3c7049d6d714ddcc248caaca634d951bac7276e5c39b3bdb6a5efa7"
+    sha256 cellar: :any,                 arm64_ventura: "47081e4a3818a66fccc361021b5f240dbd8b35dc262a0a952e4d669f8c6963a6"
+    sha256 cellar: :any,                 sonoma:        "674fb89cebb20d3c283cd3ebf3adf86349ceffcb0257aba582ad5f542505fc46"
+    sha256 cellar: :any,                 ventura:       "8065fe16594fa33d3a306ee0ce5fec37b948736f322ee9be2e8ff273db8d0feb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "98e955a622c79cad9c246dd9889bc67ea5d24175599c788b7f2b510d44aaab5f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "29fda27d9cbc2fbf9caef380fe3d1a950d4586b8826f0ceed226b71cf6fbfaa9"
   end
 
   def install

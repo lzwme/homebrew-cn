@@ -1,18 +1,18 @@
 class Goshs < Formula
   desc "Simple, yet feature-rich web server written in Go"
   homepage "https:goshs.deenindex.html"
-  url "https:github.compatrickhenergoshsarchiverefstagsv1.0.9.tar.gz"
-  sha256 "a3e68619711bd0de75fd4c4547b0f439a72a280422d91723185c79b60c02ce16"
+  url "https:github.compatrickhenergoshsarchiverefstagsv1.1.0.tar.gz"
+  sha256 "61000f308cd48b23aa02d2dd41184824260a8d7d6bf47e6a7f658e4d228ac8d1"
   license "MIT"
   head "https:github.compatrickhenergoshs.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb5859b62d75c721feda62a1c5e6f607bec279b3562a4f207aa64e749fd3c39b"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cb5859b62d75c721feda62a1c5e6f607bec279b3562a4f207aa64e749fd3c39b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "cb5859b62d75c721feda62a1c5e6f607bec279b3562a4f207aa64e749fd3c39b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "333372b8cbef048974a4f40ac93ec634d15964b2454dd73492237b448a9f5076"
-    sha256 cellar: :any_skip_relocation, ventura:       "333372b8cbef048974a4f40ac93ec634d15964b2454dd73492237b448a9f5076"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ee7963579cb2c9597ac6e7fcd74d53e83e9f4d1633eff6cfc2c8a5241941a6e5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8dbc48ee5ff0bd67f1dcd6907ae1528903fcb01d7ad2d1194240b4e1f2bedce"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8dbc48ee5ff0bd67f1dcd6907ae1528903fcb01d7ad2d1194240b4e1f2bedce"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c8dbc48ee5ff0bd67f1dcd6907ae1528903fcb01d7ad2d1194240b4e1f2bedce"
+    sha256 cellar: :any_skip_relocation, sonoma:        "383755cdeaa9811ec6e4aeb85c7bf4df36ced4c9d067c87c045cba1faa6a1efa"
+    sha256 cellar: :any_skip_relocation, ventura:       "383755cdeaa9811ec6e4aeb85c7bf4df36ced4c9d067c87c045cba1faa6a1efa"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "737fb1e7393f743aaa27f24748c49f6a3af8f4615a8dabd5238afbdd513ab602"
   end
 
   depends_on "go" => :build

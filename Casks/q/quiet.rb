@@ -1,6 +1,6 @@
 cask "quiet" do
-  version "5.0.1"
-  sha256 "e784d3fc3a237ed36d8f227028b88696e216e7063b126a8330e0405956aed83a"
+  version "5.1.1"
+  sha256 "4e0ed23dec95dfb510c89cb08853783ce9b492e906d5d486a9d02dd874af112f"
 
   url "https:github.comTryQuietquietreleasesdownload@quietdesktop@#{version}Quiet-#{version}.dmg",
       verified: "github.comTryQuietquiet"

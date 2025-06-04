@@ -3,17 +3,17 @@ class ArcadeLearningEnvironment < Formula
 
   desc "Platform for AI research"
   homepage "https:github.comFarama-FoundationArcade-Learning-Environment"
-  url "https:github.comFarama-FoundationArcade-Learning-Environmentarchiverefstagsv0.11.0.tar.gz"
-  sha256 "300717009d18c784bf4b407f608e269d7c87e40769c277206230011352e65b97"
+  url "https:github.comFarama-FoundationArcade-Learning-Environmentarchiverefstagsv0.11.1.tar.gz"
+  sha256 "2b878ae1b7febb498c7ab5351791c6d9838dc214b4825eec0df1b53b58b6aaa3"
   license "GPL-2.0-only"
   head "https:github.comFarama-FoundationArcade-Learning-Environment.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sonoma:  "191b6685efed5b2ba30b0d6202cc72c587baf4d634f574282af9938c1bf91c23"
-    sha256 cellar: :any,                 arm64_ventura: "b5a2ca6b560a54dabeb2007590d593d909c6f0b06f58bd9f8d4beda70f49b27e"
-    sha256 cellar: :any,                 sonoma:        "869f084d4552b4eeea0a87c7dfbf170c2ba0a44f6a7d21efbfc78f8c539c4e7b"
-    sha256 cellar: :any,                 ventura:       "ff92a17a39e49b0b9e52d65b6e691a48d5ff37d5aac4b4949566a7b6dc627456"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61ae2d9e4d3527b8ef0f8dd070b00cd09aaddb1d5eebe2ae8296ee33266eecaf"
+    sha256 cellar: :any,                 arm64_sonoma:  "8d87d2e4b11ba564c543865131922e5c1dff39a4e435b6131de0457dd22cae2c"
+    sha256 cellar: :any,                 arm64_ventura: "95950e96cce466d33d976383da6074fbe79edc88e1b4510c80eb3477821e7907"
+    sha256 cellar: :any,                 sonoma:        "b44653d20e65755dee7012979796e55627f91364cb7c64354498ffdf1829eb0d"
+    sha256 cellar: :any,                 ventura:       "29c3bd51a8760f8b9aca78895128398104a088fec43d5af6c12a08e66716eaa7"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d152b9cf2c6106dfc85851479e7218cee002053d30b36a5c528e14ecba8ffd73"
   end
 
   depends_on "cmake" => :build
@@ -69,8 +69,12 @@ class ArcadeLearningEnvironment < Formula
       (buildpath"srcpythonroms").install pwd.glob("ROM**.bin")
     end
 
-    # error: no member named 'signbit' in the global namespace
-    inreplace "setup.py", "cmake_args = [", "\\0\"-DCMAKE_OSX_SYSROOT=#{MacOS.sdk_path}\"," if OS.mac?
+    inreplace "setup.py" do |s|
+      # error: no member named 'signbit' in the global namespace
+      s.gsub! "cmake_args = [", "\\0\"-DCMAKE_OSX_SYSROOT=#{MacOS.sdk_path}\"," if OS.mac?
+      # Remove XLA support for now
+      s.gsub! "-DBUILD_VECTOR_XLA_LIB=ON", ""
+    end
     system python3, "-m", "pip", "install", *std_pip_args, "."
 
     # Replace vendored `libSDL2` with a symlink to our own.

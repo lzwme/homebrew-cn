@@ -1,8 +1,8 @@
 class Calceph < Formula
   desc "C library to access the binary planetary ephemeris files"
   homepage "https://www.imcce.fr/inpop/calceph"
-  url "https://www.imcce.fr/content/medias/recherche/equipes/asd/calceph/calceph-4.0.4.tar.gz"
-  sha256 "20c9f0bd720c5cfe99a7b342babda3ff91428adfec9d55357b380b4a13205d60"
+  url "https://www.imcce.fr/content/medias/recherche/equipes/asd/calceph/calceph-4.0.5.tar.gz"
+  sha256 "3460d8a3e10a86e7fe0228d5d9abcda589713b8ed3ee007ce061ae01f8c2e1ea"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,13 +11,13 @@ class Calceph < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "8052ae633e2e434f92a58297a7d95b7abf31c6df27a4f150f04acd90c458b24d"
-    sha256 cellar: :any,                 arm64_sonoma:  "bccdf7dd4f4b833f7382eafad36ab00cc3e886f2193013fcf01f8c3edeab93f1"
-    sha256 cellar: :any,                 arm64_ventura: "ed3e3aa4f63ba31eb8b56a313e7695c2bc1a1ec3f76b91de087ba1ba4c89c477"
-    sha256 cellar: :any,                 sonoma:        "71acfca39979f054472b0f287a256e3ef51548f77e6e20410a3c669403a1b63a"
-    sha256 cellar: :any,                 ventura:       "4527dfd754d1f940f46eca0af7000e6cb8f8c801521810288325c5e189eab35b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ffc8336653268c6346b19ddab898e85adbe911d54c784a41a9867a28e7e617ea"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3cac5e4fa043c89c765556ecde72dfea4199b1f59f814840916c8c97eacc633f"
+    sha256 cellar: :any,                 arm64_sequoia: "754230b9132b8db3b75dc7eae342772e8e3cd3404e8bda89e0ca63a6bdab9333"
+    sha256 cellar: :any,                 arm64_sonoma:  "8330dada267fd61aed38edb48579a83e57694c70c78b5c5c9064fd672983266c"
+    sha256 cellar: :any,                 arm64_ventura: "0e7de121d382e0277e2d23e8627417493a97e8f7ca95b00f6bfc6b18a9064738"
+    sha256 cellar: :any,                 sonoma:        "17b0aa7869f8977327c1ba0d5838fecc882dd85a3a6a6872806593f375ce0ad7"
+    sha256 cellar: :any,                 ventura:       "614cddd90b7e738303e97d386fa1612ab57fd60766bf8fb8cc781af06adfde39"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "527d6c7622d8df61721200858ab0e1eb2d538fb3e4742e19e1a7ab3ff3692c77"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7a14165e0bb191f70ea0b083004328096ed866efa64e5b301ddd394c4df12d67"
   end
 
   depends_on "cmake" => :build

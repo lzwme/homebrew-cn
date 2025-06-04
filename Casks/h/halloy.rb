@@ -6,7 +6,7 @@ cask "halloy" do
       verified: "github.comsquidowlhalloy"
   name "Halloy"
   desc "IRC client"
-  homepage "https:halloy.squidowl.org"
+  homepage "https:halloy.chat"
 
   depends_on macos: ">= :big_sur"
 

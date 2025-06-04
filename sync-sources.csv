@@ -578,6 +578,7 @@ Homebrew-homebrew-core/Formula/b/blocky.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/blogc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bltool.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bluepill.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/blueprint-compiler.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/bluetoothconnector.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/blueutil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bluez.rb, Homebrew/homebrew-core, 0
@@ -972,6 +973,7 @@ Homebrew-homebrew-core/Formula/c/clangql.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clarinet.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/classads.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/claude-squad.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/claws-mail.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/clazy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/clblas.rb, Homebrew/homebrew-core, 1
@@ -9062,6 +9064,7 @@ Homebrew-homebrew-cask/Casks/f/firefox@esr.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/firefox@nightly.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/firestorm.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/f/fireworks.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/f/firezone.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fiscript.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fishing-funds.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/f/fission.rb, Homebrew/homebrew-cask, 0
@@ -13327,6 +13330,7 @@ Homebrew-homebrew-cask/Casks/p/parsehub.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/parsify.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/particle-dev.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pashua.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/p/passepartout.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/password-gorilla.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pastebot.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pastenow.rb, Homebrew/homebrew-cask, 0
@@ -14204,7 +14208,6 @@ Homebrew-homebrew-cask/Casks/s/sparsity.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spatial.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/spatterlight.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spechtlite.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/s/spectacle-editor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spectacle.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/specter.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/spectrolite.rb, Homebrew/homebrew-cask, 0
@@ -14416,6 +14419,7 @@ Homebrew-homebrew-cask/Casks/t/tales-of-majeyal.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/talon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tandem.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tap-forms.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/tartelet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/taskade.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/taskbar.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/taskexplorer.rb, Homebrew/homebrew-cask, 0

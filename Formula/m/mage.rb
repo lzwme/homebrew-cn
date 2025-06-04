@@ -8,17 +8,14 @@ class Mage < Formula
   head "https:github.commagefilemage.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "28b336fab95d06098802501b558552c9d89a4d67fd0eccd3362fbf21588da6bb"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "97099907714e6c713ed43d40e4a67ca112a7a9a9d84bfaabb69d680c92db5c68"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "d5edee3b01ecc1dc26cf07372e9cbcfd7bc0c6c98ad8f5d89ab6255efe1af28c"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "d5edee3b01ecc1dc26cf07372e9cbcfd7bc0c6c98ad8f5d89ab6255efe1af28c"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "d5edee3b01ecc1dc26cf07372e9cbcfd7bc0c6c98ad8f5d89ab6255efe1af28c"
-    sha256 cellar: :any_skip_relocation, sonoma:         "591710efff0b81f7e371a19a1f0cd6bc858975638fa2c99efd53d30688700140"
-    sha256 cellar: :any_skip_relocation, ventura:        "0fe71622f956586e54e08ec69f49dd719c16bca43fe62370720f32e8cb015a71"
-    sha256 cellar: :any_skip_relocation, monterey:       "0fe71622f956586e54e08ec69f49dd719c16bca43fe62370720f32e8cb015a71"
-    sha256 cellar: :any_skip_relocation, big_sur:        "0fe71622f956586e54e08ec69f49dd719c16bca43fe62370720f32e8cb015a71"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "ed5ea666a4ba52cf7ec5ec2b977b86aa969e88fe071043c257f302be90d01fdd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f4c08f1a7d6d80eeda6054fcdaea66ef2d344a952d9e249561781f8fabe54fff"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b81db54414e8059c020d3f75144337f216536a73742263d0efe306fcdbd1e140"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b81db54414e8059c020d3f75144337f216536a73742263d0efe306fcdbd1e140"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b81db54414e8059c020d3f75144337f216536a73742263d0efe306fcdbd1e140"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9f3ab340917962784ac8e7dd0e54112f6d60f7546de91aeb8373ba29c80cec26"
+    sha256 cellar: :any_skip_relocation, ventura:       "9f3ab340917962784ac8e7dd0e54112f6d60f7546de91aeb8373ba29c80cec26"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c4f7a29602cc18739d9c7714860f36a3a6c1f12d2e8d6cd3b04b9a0f28ba25e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3721ad24ae36b353b46e1b3fc9b6bc6abf3bc328102da949fe50441e4eebfe5"
   end
 
   depends_on "go"

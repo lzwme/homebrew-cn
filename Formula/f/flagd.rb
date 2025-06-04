@@ -2,8 +2,8 @@ class Flagd < Formula
   desc "Feature flag daemon with a Unix philosophy"
   homepage "https:github.comopen-featureflagd"
   url "https:github.comopen-featureflagd.git",
-      tag:      "flagdv0.12.3",
-      revision: "3f4690e55013680abe36a84156d52dffb190efd5"
+      tag:      "flagdv0.12.4",
+      revision: "cb2b8eeb9c5496272b1f22d63f8eaa5d220707f5"
   license "Apache-2.0"
   head "https:github.comopen-featureflagd.git", branch: "main"
 
@@ -18,12 +18,12 @@ class Flagd < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "dadb1601b41a5e537d6990d75c1189dd94e5a6eda9da929751e0f5bed4368656"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bc539c41ff9a15f0aef1d688e1f7b164cfe7f356f8f123b78af4961d9b51c9a8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0ef17631fc833000515e34c22d7a65a5077d6251a2d500255547c32d316de59a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "de447ee90cebd5ba4b2c1c63256f70bc4891cfe5f882303ce82c8cc3c7297322"
-    sha256 cellar: :any_skip_relocation, ventura:       "d6c307245267dc5d558dff6612fff1aa906352ed9621ed64bd91dfd039c7316e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c3e2741763f115b442fa855eebd6c2da0b2a542fed9d671a06e5227376d0706b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e83b2115cb9670309511f6e1313d54fff6a18b8906ea51157c75b70af7afc3a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14f1b213c31b4f38b63c45603b0eb697cb370149a5e6f5290d0504869d24ae46"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1b87cc7d2654b7b28be4dc884bcda1c6458ac59bd1b39dbef5c3b8613443ec72"
+    sha256 cellar: :any_skip_relocation, sonoma:        "170d65621ac42851963ae5abf5bcb233af321351731a6732c2bc09881e1d60bf"
+    sha256 cellar: :any_skip_relocation, ventura:       "319070d717a541b3fded62e8d1f0e3a04756226cc4adf58eedad0833c0edf740"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a56312659d810062fafd8d81bca327f40cc67cbfcfb327ce647226a82a4a6e0"
   end
 
   depends_on "go" => :build
