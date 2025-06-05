@@ -4,7 +4,7 @@ class Opencbm < Formula
   url "https:github.comOpenCBMOpenCBMarchiverefstagsv0.4.99.104.tar.gz"
   sha256 "5499cd1143b4a246d6d7e93b94efbdf31fda0269d939d227ee5bcc0406b5056a"
   license "GPL-2.0-only"
-  head "https:git.code.sf.netpopencbmcode.git", branch: "master"
+  head "https:github.comOpenCBMOpenCBM.git", branch: "master"
 
   livecheck do
     url :homepage

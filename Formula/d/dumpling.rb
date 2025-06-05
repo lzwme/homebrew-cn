@@ -1,8 +1,8 @@
 class Dumpling < Formula
   desc "Creating SQL dump from a MySQL-compatible database"
   homepage "https:github.compingcaptidb"
-  url "https:github.compingcaptidbarchiverefstagsv8.5.1.tar.gz"
-  sha256 "5266d6d4657c4b8fe805e63f885afd2ed189c34ed25174f9ff17b8a3392208f0"
+  url "https:github.compingcaptidbarchiverefstagsv8.5.2.tar.gz"
+  sha256 "bfabe08b914aad6a172ba32ad03ea6794d4f556c1d32e38d67feffc6a05bf4f4"
   license "Apache-2.0"
   head "https:github.compingcaptidb.git", branch: "master"
 
@@ -12,12 +12,12 @@ class Dumpling < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6715a2eff19789a8226fd793c666467fb293a850eb7ce16bfa521d3d5e71ad84"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e8801737a27e7d2ac8480b200e3cd93c93c85890e6c9262ed2da27feab78991d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "f1dc9cb3092baa6e4724deddc2ca90a367d568733fc9bbec3551380f891c2334"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3b81af5b162a3d46429358564ff50cc35d9b4764d699c475dba3554059923c38"
-    sha256 cellar: :any_skip_relocation, ventura:       "245acffe14d7a85d822ccd801c1da66d2dcfddf2f9bf28353d0ee5b8423816cb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c49cf78d2f80ea4fae79fc6f4478feb9ba9957c818dbd92455f95ee7aee39db7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d8ab27a5aaeed5e78a2fa8189192a6589ebc022523a59a6485ae2e6ecd01b2a4"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b95ca8a6a7c0ffb5b7de5dfd8e09a1d3d1c80e5ce57aee0af11e7ed6df734167"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c5432c2dc0af75762b71093139319ecc8c93a6eaa4d4b4b78353d63f845f59aa"
+    sha256 cellar: :any_skip_relocation, sonoma:        "5655d700bd9b7f128cf5116319a88a5ccd8c4a623d6da6540c19799cadb03d39"
+    sha256 cellar: :any_skip_relocation, ventura:       "f1ab77315b49553f8d8701d8f48ca2df07855cabc9bb9f9e7eaa11217c250a3c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1f55d1695723f526b079f6bd61840e64a46024352a636321fb2d37c425b62205"
   end
 
   depends_on "go" => :build

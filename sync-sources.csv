@@ -968,6 +968,7 @@ Homebrew-homebrew-core/Formula/c/clamz.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/c/clang-build-analyzer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clang-format.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clang-format@11.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/c/clang-include-graph.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clang-uml.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clangql.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/c/clarinet.rb, Homebrew/homebrew-core, 1
@@ -3087,8 +3088,8 @@ Homebrew-homebrew-core/Formula/j/jenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jerm.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jerryscript.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jet.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/j/jetty-runner.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/j/jetty.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/j/jetty-runner.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/j/jetty.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/j/jflex.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jfrog-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jhead.rb, Homebrew/homebrew-core, 1
@@ -3219,6 +3220,7 @@ Homebrew-homebrew-core/Formula/k/kanif.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kapacitor.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kapp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/karchive.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/k/kargo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/karmadactl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/karn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/kaskade.rb, Homebrew/homebrew-core, 1
@@ -3275,7 +3277,7 @@ Homebrew-homebrew-core/Formula/k/kmod.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/kn.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/knock.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/knot-resolver.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/k/knot.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/k/knot.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/k/ko.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/koji.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/k/koka.rb, Homebrew/homebrew-core, 1
@@ -9586,7 +9588,7 @@ Homebrew-homebrew-cask/Casks/font/font-c/font-changa-one.rb, Homebrew/homebrew-c
 Homebrew-homebrew-cask/Casks/font/font-c/font-changa.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-chango.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-chapbook.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/font/font-c/font-charis-sil.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/font/font-c/font-charis.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-c/font-charm.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-charmonman.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-c/font-charter.rb, Homebrew/homebrew-cask, 0
@@ -9926,7 +9928,7 @@ Homebrew-homebrew-cask/Casks/font/font-g/font-genshingothic.rb, Homebrew/homebre
 Homebrew-homebrew-cask/Casks/font/font-g/font-gentium-basic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-gentium-book-basic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-gentium-book-plus.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-g/font-gentium-plus.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-g/font-gentium.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-genwanmin.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-genyogothic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-genyomin.rb, Homebrew/homebrew-cask, 1
@@ -13148,6 +13150,7 @@ Homebrew-homebrew-cask/Casks/o/onecast.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/onedrive.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/onekey.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/onionshare.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/o/onlook.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/only-switch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/o/onlyoffice.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/o/ontime.rb, Homebrew/homebrew-cask, 1
@@ -13309,7 +13312,6 @@ Homebrew-homebrew-cask/Casks/p/paragon-extfs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/paragon-extfs@11.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/paragon-ntfs.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/paragon-vmdk-mounter.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/p/parallels-access.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/parallels-client.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/parallels-toolbox.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/parallels-virtualization-sdk.rb, Homebrew/homebrew-cask, 0
@@ -14068,6 +14070,7 @@ Homebrew-homebrew-cask/Casks/s/simpholders.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/simple-comic.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/simple-web-server.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/simpleclock.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/s/simpledemviewer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/simplemind.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/simplenote.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/s/simplesynth.rb, Homebrew/homebrew-cask, 1
@@ -14114,6 +14117,7 @@ Homebrew-homebrew-cask/Casks/s/slicer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/slicer@preview.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/slidepad.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/slidepilot.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/s/slideshower.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/slik.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/slimbatterymonitor.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/s/slimhud.rb, Homebrew/homebrew-cask, 1

@@ -1,8 +1,8 @@
 class PythonTkAT312 < Formula
   desc "Python interface to TclTk"
   homepage "https:www.python.org"
-  url "https:www.python.orgftppython3.12.10Python-3.12.10.tgz"
-  sha256 "15d9c623abfd2165fe816ea1fb385d6ed8cf3c664661ab357f1782e3036a6dac"
+  url "https:www.python.orgftppython3.12.11Python-3.12.11.tgz"
+  sha256 "7b8d59af8216044d2313de8120bfc2cc00a9bd2e542f15795e1d616c51faf3d6"
   license "Python-2.0"
 
   livecheck do
@@ -10,13 +10,13 @@ class PythonTkAT312 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "4f832d4f9d8159f5f43965a918ef8ba9ea84a42e4c165eb344d8b319e6585285"
-    sha256 cellar: :any, arm64_sonoma:  "a2e2a63a3c42b4e8679b8ae5ec1c996d61eb101fed24a7b119222a856f5291f3"
-    sha256 cellar: :any, arm64_ventura: "2ebc6fd91d82f4b92983349a9727feba917f64838b64cc33f273676ef9af1809"
-    sha256 cellar: :any, sonoma:        "c08bb26635a9e2e68a1b345dbe6db5c188e304d2acd496b6c9e7cfb89494d206"
-    sha256 cellar: :any, ventura:       "df8622d18ffcddcf2cc83f44cab17b35e4dd3284154dff83882ff5ce1ed6da89"
-    sha256               arm64_linux:   "1b0e9487ab705bd667c5938d99f73f6e5a4fb0cc9f8de20617eb0e54a5e0a17c"
-    sha256               x86_64_linux:  "e2e34bffb1d1eb5b3c7c3e9cff5bdf41d8a991f18927674a5eafa03911626b93"
+    sha256 cellar: :any, arm64_sequoia: "8b40ef8c878913ef3d4724878a54ce29691577ed2c7c7d0ca72bc36de9403316"
+    sha256 cellar: :any, arm64_sonoma:  "a9800e8176b374cc5237bf15f91d4ef0b6d6db76cd641f7ab18bdded0caf7905"
+    sha256 cellar: :any, arm64_ventura: "0daadc7788c7eb850e6947f23ed76e3f780c034d93195490f44573dfa8a90286"
+    sha256 cellar: :any, sonoma:        "758f8037f49d3f37e48f1d976e3048a94634e054039c4dc20bb55e3d82ca6be5"
+    sha256 cellar: :any, ventura:       "9fed59271386927bf56878a23f804480b9c65313d8f0cc12c75720677ebf5250"
+    sha256               arm64_linux:   "bde690b35592c3df93ce8b8d44dd9050a3556b49d8efbd20495807b8bfc9b2ff"
+    sha256               x86_64_linux:  "95197b9b2bac3893a70872f953485916d140a005cddcdb14447e1bbf8d60832f"
   end
 
   depends_on "python@3.12"

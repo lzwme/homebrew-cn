@@ -1,8 +1,8 @@
 class PythonTkAT313 < Formula
   desc "Python interface to TclTk"
   homepage "https:www.python.org"
-  url "https:www.python.orgftppython3.13.3Python-3.13.3.tgz"
-  sha256 "988d735a6d33568cbaff1384a65cb22a1fb18a9ecb73d43ef868000193ce23ed"
+  url "https:www.python.orgftppython3.13.4Python-3.13.4.tgz"
+  sha256 "2666038f1521b7a8ec34bf2997b363778118d6f3979282c93723e872bcd464e0"
   license "Python-2.0"
 
   livecheck do
@@ -10,13 +10,13 @@ class PythonTkAT313 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "82c80aaceb7c8f25672f3a0730d253d6909999d8f4ae4adb58d6b89566f25239"
-    sha256 cellar: :any, arm64_sonoma:  "2f40d41384a436d14268d32b882658ea843524e1324cc24a3b770eb501c2e330"
-    sha256 cellar: :any, arm64_ventura: "5c90e8539ed24a5def32acfe3475e82cde41632f276c3b001db386ca2b3127c5"
-    sha256 cellar: :any, sonoma:        "8cc81ba5382e9def03ab1139eec5212392473de4ee89535c3ac7fd81c4462806"
-    sha256 cellar: :any, ventura:       "4ec0dc85b2161fa24726e8ece4984eef382c03a9ea14c8848d0f2a7219efd905"
-    sha256               arm64_linux:   "baf3ff28f59f02f4bfbb9ea703f47c9781d18b8721585775705954730f41dedd"
-    sha256               x86_64_linux:  "5d7d7ce41a88c63bd571eaf2cb870247b39fe1f9aeb5b0557da90a04b741a344"
+    sha256 cellar: :any, arm64_sequoia: "5e6807439625285dd5a53a045d7a4b65d7cd82ad66bc87809258902f4a9bb1dc"
+    sha256 cellar: :any, arm64_sonoma:  "c10bfa46bbfcde6551a5991d10fc2b03600ddf5371a84972e6f9eecc1fda9974"
+    sha256 cellar: :any, arm64_ventura: "ea32e90251da993a7e61a4cef2bd453ff26ff7102020b10cf9fb915cabde2c2c"
+    sha256 cellar: :any, sonoma:        "88d0aee2a6d625f7ffb25efbcdde15a2e1b883bb64b3c38203ec29fdecc4f5b7"
+    sha256 cellar: :any, ventura:       "f01a7794e659ceb4208de288aeacc46fc7dcc143675d6b0a4119b0f909fc0f6e"
+    sha256               arm64_linux:   "be636493c1d38b83d7e95f61a315de8ba61072d6c7515b41c36214e3c82dabec"
+    sha256               x86_64_linux:  "d0d66790343518e42f86bbdf73c83513830e69061cf9b38987ec7da0ab54e840"
   end
 
   depends_on "python@3.13"

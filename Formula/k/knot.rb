@@ -1,27 +1,27 @@
 class Knot < Formula
   desc "High-performance authoritative-only DNS server"
-  homepage "https:www.knot-dns.cz"
-  url "https:knot-dns.nic.czreleaseknot-3.4.6.tar.xz"
-  sha256 "d19c5a1ff94b4f26027d635de108dbfc88f5652be86ccb3ba9a44ee9be0e5839"
+  homepage "https://www.knot-dns.cz/"
+  url "https://knot-dns.nic.cz/release/knot-3.4.7.tar.xz"
+  sha256 "dd346ca6f3afabcdc5e9ba09dd667b010590bb66a42f4541021fb9d6f073dacc"
   license all_of: ["GPL-3.0-or-later", "0BSD", "BSD-3-Clause", "LGPL-2.0-or-later", "MIT"]
 
   livecheck do
-    url "https:www.knot-dns.czdownload"
-    regex(href=.*?knot[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://www.knot-dns.cz/download/"
+    regex(/href=.*?knot[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
-    sha256 arm64_sequoia: "62241ba2192c8ffce58930ecd47a88899eaccc4251bfb9f7ba23fe18f2e60c03"
-    sha256 arm64_sonoma:  "94f5f562fe7533cb29fc2e53fb6f9308fe16b36b4f1cf41bb7caa273c16f0bfb"
-    sha256 arm64_ventura: "d7b76b9ed9be9a503cc6a21c5c896f0125411dbf119e4f225894f8d2a1d03867"
-    sha256 sonoma:        "9d65336182f586b314fd29bfee25c8652839c3032f9f9afa405e02ae502c8d63"
-    sha256 ventura:       "f2353253ac4781bbb3436823a9e56389edf0091d03874caa3157e042fb7cba2d"
-    sha256 arm64_linux:   "719cc905109bf0ca8a68b009af89ba49a9e2b6f0caa1d90c82a845abd1d1ef55"
-    sha256 x86_64_linux:  "8e0bf75312b54c8edd092dd36139829eaefb5b0f0160f5053d5b47d3a65dedf2"
+    sha256 arm64_sequoia: "1fb8278e561ed7d9a99f4ba23c25a88b537dd237e9db452e4b62717c48130841"
+    sha256 arm64_sonoma:  "5234cf8758edf2892799102953dd273394716cc5be1a9841012b269da540d8cb"
+    sha256 arm64_ventura: "a7744ed3ae7ac074e555e500273763bcf8243535b211ee9e2d6bb70dd70ca044"
+    sha256 sonoma:        "bb04dda43aa53b3dbda4ef5aa899c81cccceb6dcaf2cf927a3f4b74a7d24ddc2"
+    sha256 ventura:       "553cdc9c373828a8fb90b87d6f73723f294dc3a0a5021d18eebdccc7b4396750"
+    sha256 arm64_linux:   "9e9a49395d66917fda7c89d86d2df83def6d3d91c4f3a733af2dcf144e6dd806"
+    sha256 x86_64_linux:  "c1f15009c4df1619d610ae555a92c0e1cec16bb65f03183bc7fc25e849127e79"
   end
 
   head do
-    url "https:gitlab.nic.czknotknot-dns.git", branch: "master"
+    url "https://gitlab.nic.cz/knot/knot-dns.git", branch: "master"
 
     depends_on "autoconf" => :build
     depends_on "automake" => :build
@@ -40,43 +40,35 @@ class Knot < Formula
 
   uses_from_macos "libedit"
 
-  # Fix 'knotmodulesrrl.kru.inc.c:250:7: error: always_inline function' on macOS 13 and 14,
-  # see https:github.comHomebrewhomebrew-corepull219163.
-  # Remove in next release.
-  patch do
-    url "https:gitlab.nic.czknotknot-dns-commit509d9d82b51c58ea572dccb09f4fdbe1a3c2571e.diff"
-    sha256 "c9b0d2dd5dddbe3d2fc0b817bbc3171f34fb73d0b099bf2b52cf101f4d0239ff"
-  end
-
   def install
     system "autoreconf", "--force", "--install", "--verbose" if build.head?
-    system ".configure", "--disable-silent-rules",
+    system "./configure", "--disable-silent-rules",
                           "--with-configdir=#{etc}",
-                          "--with-storage=#{var}knot",
-                          "--with-rundir=#{var}runknot",
+                          "--with-storage=#{var}/knot",
+                          "--with-rundir=#{var}/run/knot",
                           "--with-module-dnstap",
                           "--enable-dnstap",
                           "--enable-quic",
                           *std_configure_args
 
-    inreplace "samplesMakefile", "install-data-local:", "disable-install-data-local:"
+    inreplace "samples/Makefile", "install-data-local:", "disable-install-data-local:"
 
     system "make"
     system "make", "install"
     system "make", "install-singlehtml"
 
-    (buildpath"knot.conf").write(knot_conf)
+    (buildpath/"knot.conf").write(knot_conf)
     etc.install "knot.conf"
   end
 
   def post_install
-    (var"knot").mkpath
+    (var/"knot").mkpath
   end
 
   def knot_conf
     <<~EOS
       server:
-        rundir: "#{var}knot"
+        rundir: "#{var}/knot"
         listen: [ "0.0.0.0@53", "::@53" ]
 
       log:
@@ -88,21 +80,21 @@ class Knot < Formula
 
       template:
         - id: "default"
-          storage: "#{var}knot"
+          storage: "#{var}/knot"
     EOS
   end
 
   service do
-    run opt_sbin"knotd"
+    run opt_sbin/"knotd"
     require_root true
     input_path File::NULL
     log_path File::NULL
-    error_log_path var"logknot.log"
+    error_log_path var/"log/knot.log"
   end
 
   test do
-    system bin"kdig", "@94.140.14.140", "www.knot-dns.cz", "+quic"
-    system bin"khost", "brew.sh"
-    system sbin"knotc", "conf-check"
+    system bin/"kdig", "@94.140.14.140", "www.knot-dns.cz", "+quic"
+    system bin/"khost", "brew.sh"
+    system sbin/"knotc", "conf-check"
   end
 end

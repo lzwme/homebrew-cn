@@ -1,18 +1,18 @@
 class Primecount < Formula
   desc "Fast prime counting function program and CC++ library"
   homepage "https:github.comkimwalischprimecount"
-  url "https:github.comkimwalischprimecountarchiverefstagsv7.18.tar.gz"
-  sha256 "9d8a0127cc4dd9319006b5db6c6f9844532dab9da9c2d410d1e244902463a399"
+  url "https:github.comkimwalischprimecountarchiverefstagsv7.19.tar.gz"
+  sha256 "0ecb63282c02e3056707671b3d6c5bdb783b64a33c911f0fd4abe6e79e9f8a34"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d1481dca0ff40292686b2732be1e4a2f595fc0e1c87cdf1fbb47d88e448324c1"
-    sha256 cellar: :any,                 arm64_sonoma:  "8a4a88e83d308bb3e08f12a512b749129f5052a0540b3f669d33e7057d983846"
-    sha256 cellar: :any,                 arm64_ventura: "d732e1d2b4ab2046dca0f3d199f830f48e03dba3a733c6c6018c2eb0851ad6fb"
-    sha256 cellar: :any,                 sonoma:        "9542671d8d6a290e5df6559eb253bb3d10466e783f9813a0f33b300275376dff"
-    sha256 cellar: :any,                 ventura:       "ddd9a1c45a424659c71867a522531647c8ddd8cc51cfcc293b327307890ba791"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4ae092abec241b1e6d61dc2b28fc505afb3c366a4c948d7681fa82bd42f2ccef"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d3181e38e05c2a4319f683f5cae69de62742715d5f45347d76c5df61abcdfdc2"
+    sha256 cellar: :any,                 arm64_sequoia: "3b11d5023b905870365a96e7b4233a5dd6d601c54632a066ca7bddccc46e56f4"
+    sha256 cellar: :any,                 arm64_sonoma:  "76877d4a667be28a6213be4003ad9449bc3857d6c8765f4fcc683fe4b254bccb"
+    sha256 cellar: :any,                 arm64_ventura: "a7189f7a075892d62aa776d7e7dcd153eaa8e1597567d8d3216a37e0a1d3e716"
+    sha256 cellar: :any,                 sonoma:        "3fc3ceae1e26ad44c2601d19a8f7380e9842c75e0562b98c6e2ddec670925365"
+    sha256 cellar: :any,                 ventura:       "1ed880bc9fd10c30438f8dd7e5340d7993ecebeef3f9d52baaff9173102efa8b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b6978a7c73429ee018db844be5eded68421b7852055724b49f24dfff872c96e2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "848dced425035cb0ca9084512c2e1926e5b1f4b1004a2c9e97cf5a2dbb21c7dc"
   end
 
   depends_on "cmake" => :build

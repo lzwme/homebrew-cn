@@ -1,8 +1,8 @@
 class Joern < Formula
   desc "Open-source code analysis platform based on code property graphs"
   homepage "https:joern.io"
-  url "https:github.comjoerniojoernarchiverefstagsv4.0.360.tar.gz"
-  sha256 "5a0e9eff10dedd72bb2119ffe7243bac05b052d78ba3ec9ed73926c4c062bb13"
+  url "https:github.comjoerniojoernarchiverefstagsv4.0.370.tar.gz"
+  sha256 "26655cb5243414a563b65df89b7296423943490595792ade264a82c30e76f5ec"
   license "Apache-2.0"
 
   livecheck do
@@ -12,13 +12,13 @@ class Joern < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e5f8d8896e28da6803bc95604b42ec8f11abe06b174bcf13264802cd98ecc537"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3294cf9c1394c8e9013f3e57329958733e933534d12a54d14a39e72c00be0782"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0178e8e69b929aff9568ae1ef7af150ad1b6c8e5a688d98c5177c8e085544589"
-    sha256 cellar: :any_skip_relocation, sonoma:        "2e76d62753e04fbebacd1cde67c698f962a38df6c2aa5184bd64e3c4883f87ce"
-    sha256 cellar: :any_skip_relocation, ventura:       "1ccb22cb34222a5cbb7501f9d737931a19202fc65d2b2a512025c07e69d58409"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "da63cf8e28be60316c3f37c3e6301fd81236432e2aaa46e432a151631eb0e6f0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f1607bddd08fab585aa1ee0b3830ea522651b307e146999bc35ed4ca12360b73"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ff018940e4454e365f659f080089e55a981a5919f3f24322363866f8f083ca87"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff018940e4454e365f659f080089e55a981a5919f3f24322363866f8f083ca87"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ff018940e4454e365f659f080089e55a981a5919f3f24322363866f8f083ca87"
+    sha256 cellar: :any_skip_relocation, sonoma:        "8530e24f243e90b62dda97fc82d23a752a3650fdf032431e18ae9f96a467b47d"
+    sha256 cellar: :any_skip_relocation, ventura:       "5b00d473ac9299385b41bce7686fdd9766bcd6a24a666834e01c0385daa96fa1"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a27bc60be497d1d51585b5f1e0715e4dd7783601c8e0b0913b7c6cf8f8d8f4d3"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f38b4cb3c57899a4e30250bc6fd4ff933553d350041444758ff4a59ae0ecfca8"
   end
 
   depends_on "sbt" => :build

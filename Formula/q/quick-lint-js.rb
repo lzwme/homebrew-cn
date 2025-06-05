@@ -4,17 +4,17 @@ class QuickLintJs < Formula
   url "https:c.quick-lint-js.comreleases3.2.0sourcequick-lint-js-3.2.0.tar.gz"
   sha256 "f17b39726622637946136076c406e89d3a98ae363d5e3c2a93ab1139bf0e828d"
   license "GPL-3.0-or-later"
-  revision 5
+  revision 6
   head "https:github.comquick-lintquick-lint-js.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "22f5b01de393d987ab548240c96e431ad674f3370e77689be3c73348c569af8b"
-    sha256 cellar: :any,                 arm64_sonoma:  "6201363defa25543f5b7fd1cdaaf326f9a9ad3854413daaa083449ee1315ffb3"
-    sha256 cellar: :any,                 arm64_ventura: "2f756eeb26e05573ac69db780c82831f594c12bf36ba194cea767de422b46628"
-    sha256 cellar: :any,                 sonoma:        "4939daaa3f8d302bfbb3b3061e95b94c33b5b105956bd8190f4916ead9c77369"
-    sha256 cellar: :any,                 ventura:       "c77cb4db725fe78fa82cceaead890b035a6c05d89e133e9897935919ee2713c1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e38faa6ea5b9c72ea1975dad60629e8004aa7fcaeda07acff30f86b72227101"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "aec9493f33efc20dd88dbd4172ef4dc1ecce5fc7b79396ce048b871a7ee55f09"
+    sha256 cellar: :any,                 arm64_sequoia: "cc2bcf04b29c7454a5614d5d19d65160a91887f24abbb6192c58c3160eb9e8ed"
+    sha256 cellar: :any,                 arm64_sonoma:  "3a4c1ae85e662c20ab6fe90671708b5f7908bf99a9fdb8b89963002c110586b2"
+    sha256 cellar: :any,                 arm64_ventura: "40d423c74c392ca76e3aa44cbdb5e67cea17a6dfeefa9ce7830fd6c5588f3d40"
+    sha256 cellar: :any,                 sonoma:        "aa2023ec9fcfb5c3065c519d2d8f3d8f6794b7268308df714e03b65aa6797979"
+    sha256 cellar: :any,                 ventura:       "835b11499e7f1ac54eb876c2381921dbbe85d27b18d049416645e9e16af2c178"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8afa99b5efff7f2968f354e137998fc9cf44a6b941350b8e7d9200f1d3ba213f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d902e6b80322aeb5a13684ccab9de0e7e70dde9829f3dd8a58d44e82487035e9"
   end
 
   depends_on "cmake" => :build

@@ -1,19 +1,19 @@
 class LsLint < Formula
   desc "Extremely fast file and directory name linter"
   homepage "https:ls-lint.org"
-  url "https:github.comloeffel-iols-lintarchiverefstagsv2.3.0.tar.gz"
-  sha256 "b68b924ee8a8bea41a8508824555455a001af48df3f1f60d7f4fc55b2abe7188"
+  url "https:github.comloeffel-iols-lintarchiverefstagsv2.3.1.tar.gz"
+  sha256 "ea6b53fb2bf13055e1cd5eb4aeeddc883044e859a617adebd1802181cdb44b14"
   license "MIT"
   head "https:github.comloeffel-iols-lint.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5755722b1e46c3e058c2a42dca4e79a4602fcaeb69be97bb8c0b01193b23b9f8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5755722b1e46c3e058c2a42dca4e79a4602fcaeb69be97bb8c0b01193b23b9f8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "5755722b1e46c3e058c2a42dca4e79a4602fcaeb69be97bb8c0b01193b23b9f8"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7dbbc2b20c13dee5e1d75420bfb443086d049fccd84651fd79ceb3a4092a3c19"
-    sha256 cellar: :any_skip_relocation, ventura:       "7dbbc2b20c13dee5e1d75420bfb443086d049fccd84651fd79ceb3a4092a3c19"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "494b0d8df7cf9b9fb421600b8e16d4dda2f06862733d46bdf3409b72f6f62f1b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56648b3a5981cbd825079b534e4a3764eb2606bf251394a7926bc7f4f22b4f3f"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "172e96e228cb48828fb773cdf48c36ecbf194ef62334733deddb4ec6bdb7ef4a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "172e96e228cb48828fb773cdf48c36ecbf194ef62334733deddb4ec6bdb7ef4a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "172e96e228cb48828fb773cdf48c36ecbf194ef62334733deddb4ec6bdb7ef4a"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4621cde237fbfb8c5dbcab5049a667d6f096e805672641c3951e7ab560e6036f"
+    sha256 cellar: :any_skip_relocation, ventura:       "4621cde237fbfb8c5dbcab5049a667d6f096e805672641c3951e7ab560e6036f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e03ffa79c655f478d360cb192f0290677f4372b5e323f712a13687c87582aea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "166d12ed28cae04a36a99d4cb75b71092e0aa7e6d7bd109a17556379381412e4"
   end
 
   depends_on "go" => :build

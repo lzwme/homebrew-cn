@@ -1,18 +1,18 @@
 class SingBox < Formula
   desc "Universal proxy platform"
   homepage "https:sing-box.sagernet.org"
-  url "https:github.comSagerNetsing-boxarchiverefstagsv1.11.11.tar.gz"
-  sha256 "31cc321efaa2fe9f3e3be9b065354552378f5a1dac49f6a24ce7e48d8a6c8979"
+  url "https:github.comSagerNetsing-boxarchiverefstagsv1.11.13.tar.gz"
+  sha256 "903d61cb1ae3b4782f294e2429ede8c6929d764e61c04331fcc448c28e9adbba"
   license "GPL-3.0-or-later"
   head "https:github.comSagerNetsing-box.git", branch: "dev-next"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e614ef31a63a5ad8c66bd63a99c92fe521bb276110625591354b3a4d2b004943"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "456d9d83214a7814ca33f91b4dda4b8418bd68d7e1f5b7ca411e3a4b5dcf9ad1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0f0a00c0eb31ac9c224abf4872fb48c4fad1e9e39018c5c3a18077a4fc3d7c8c"
-    sha256 cellar: :any_skip_relocation, sonoma:        "97b8ad1975e095e1e0d397b35610f8d626f3d760a98302c84b04b843996d3dfb"
-    sha256 cellar: :any_skip_relocation, ventura:       "d0174842a207ab6c789d838ba3a15504ec169940a7182d5a1e683a6da447d452"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fb6c95e210fe750d8655672c0de2465f2d815c91ad0ac27fc8690e3b676eba0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "eee804c3030351aaabda149bfbdae9512ae5b31957a5090cec19806c8dd8252e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "de1d260f71a09370d7e518ae733628e33f3a0ded982b9c18c23638a0c52947e8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "c896b1b307eb60d433aa36ffc43e4b8725c1c29ab81cc5b4f11f9b3907fb4040"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2222292e162571348020e6c66681debd83ff721645d1c319bc9a1aea4ef52815"
+    sha256 cellar: :any_skip_relocation, ventura:       "a2e3c23df05276285d3e4735e65a9bc9ce559220a14824727555787f9e095bcd"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7795e3be0ba0d4f20a9d5b6263689ac5e8d054ae8f75df78cf27f5ea101aa6fe"
   end
 
   depends_on "go" => :build

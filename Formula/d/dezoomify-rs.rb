@@ -1,8 +1,8 @@
 class DezoomifyRs < Formula
   desc "Tiled image downloader"
   homepage "https:github.comlovasoadezoomify-rs"
-  url "https:github.comlovasoadezoomify-rsarchiverefstagsv2.13.0.tar.gz"
-  sha256 "b10bbb08d1e0f135f9db98a264e1b07dc05520b1968f433de2282cd74f004ebc"
+  url "https:github.comlovasoadezoomify-rsarchiverefstagsv2.14.0.tar.gz"
+  sha256 "8b8b7bc2123a14bfd0ead7657f2bfebfe112a33c8ed127ac6fed450dcda525a0"
   license "GPL-3.0-only"
   head "https:github.comlovasoadezoomify-rs.git", branch: "master"
 
@@ -15,17 +15,22 @@ class DezoomifyRs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "6108be976ce125b6bff8f8ac0e3e961d9241c9c516d45ee136cdc1462ce689be"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ff85552168051685953432ef73daf408f75b248aac71a5823f94cc1ba76f17c7"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4e1400a24bb9c455275a4d7fe2dd522bb6f54bc5e9a1f631fd0290ed657e0e96"
-    sha256 cellar: :any_skip_relocation, sonoma:        "8d89fe6376c15244f784963fd9ea1bc5226088978f95c8a47c8eb41da9ac6ef3"
-    sha256 cellar: :any_skip_relocation, ventura:       "5088562b5587179e0f31b706a5028a786b1e251dcc33bdce1aa4a1889392ae62"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4e61cfcc1bc5a27a91b2e77b9c093f772289120c64ddc4f136b69987392efadc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3db821d32bdad848d8d4241afec374f212cf335fce3320831313faf90de84b4"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "747be9819d67ad5fbe81b7a583cdc1e42c117cd5038bc6cab44980efd707c4d5"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e017ca0e79ace888ff12e6ddc3546afff5d886e680edcff50c9d34ef1e22dfd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "fc135b2a06103c45d8d89c45c147fddbf2e0a8dfa55aef72ed9bd5c9c0138923"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1c45e11b3f3a42733fd51e643c4ceaa3edc6a5710e3da21da7bc6ad589a2af96"
+    sha256 cellar: :any_skip_relocation, ventura:       "5a0f8a4093c54f35c216f3a7be56f750c09fd559902ae3c8657dc4f16fbde608"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "00f2a647ca94a7be398fa0dba17ac1dce9a9bbfdac257760387b4e942e499a9f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "36e7c6f0db47cd0d0b12ea6310e6c098607e8caf4b85464e914427d584070799"
   end
 
+  depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "imagemagick" => :test
+
+  on_linux do
+    depends_on "openssl@3"
+  end
 
   def install
     system "cargo", "install", *std_cargo_args

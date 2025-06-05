@@ -8,6 +8,8 @@ class CodecovCli < Formula
   license "Apache-2.0"
   head "https:github.comcodecovcodecov-cli.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "ae5bc3b78a59855aee46b5ee9fd52ee6e3231835efcdea86c9f387158784e783"
     sha256 cellar: :any,                 arm64_sonoma:  "49ba9fa231e0617e9c2e3abbc6a095a1f5d51fadffb5dc79246474c45b337618"

@@ -10,24 +10,19 @@ class Texi2html < Formula
   end
 
   bottle do
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f1edd0597b8dbd1dd4150ebf2cdfd1e85f0b686e68216684cc38b10e19295a03"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d97147d3fb05920663a4113bcd9a82420c1cdb15593a46d36d5f0bf2e0f023bc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "7114d60ab173de6a576098ba484cb226ad2a65c3f6ef2f668f8c5c2d0676fc2f"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "7114d60ab173de6a576098ba484cb226ad2a65c3f6ef2f668f8c5c2d0676fc2f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "03feaacb6b615ca2dda676bf5fe4f9551c488a851ccd1e89b12d257a5c7d932b"
-    sha256 cellar: :any_skip_relocation, sonoma:         "620ae7ace83d9220659e8b81cc9706e812e67f737952dec8a81895d4a289dfaa"
-    sha256 cellar: :any_skip_relocation, ventura:        "f1d5a70912d5b39d5da118a19474ec509a34a903cefb2c00ff403569325fe0ae"
-    sha256 cellar: :any_skip_relocation, monterey:       "f1d5a70912d5b39d5da118a19474ec509a34a903cefb2c00ff403569325fe0ae"
-    sha256 cellar: :any_skip_relocation, big_sur:        "4ad9c71802c3258a3c0c7ff8800ddd70cc230ddfecc095080d0144ba153bc2dc"
-    sha256 cellar: :any_skip_relocation, catalina:       "10f6d76de400799fb21dc900a2344ef444d43658dd502f0c040ad7c0a4bf0fbb"
-    sha256 cellar: :any_skip_relocation, mojave:         "10f6d76de400799fb21dc900a2344ef444d43658dd502f0c040ad7c0a4bf0fbb"
-    sha256 cellar: :any_skip_relocation, high_sierra:    "10f6d76de400799fb21dc900a2344ef444d43658dd502f0c040ad7c0a4bf0fbb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "fc03b703a8cb858fbaf0fcba903ce5b59399cc83fad97e953eb15e4392ac11df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "13d9124964d4e6a9c99ca57e763e34e40397871bf94b4064cddb5262bf501f47"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f76e24ff2903b5bc781b51c1fa641893343610b6827eed40af85063af2def71"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0f76e24ff2903b5bc781b51c1fa641893343610b6827eed40af85063af2def71"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "0f76e24ff2903b5bc781b51c1fa641893343610b6827eed40af85063af2def71"
+    sha256 cellar: :any_skip_relocation, sonoma:        "cfe992664d07c79edc0c906993d4dea923de1ee43c431861cbea911825404e57"
+    sha256 cellar: :any_skip_relocation, ventura:       "cfe992664d07c79edc0c906993d4dea923de1ee43c431861cbea911825404e57"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2b6ba2c5edb099dcc8e2a36a2aeebb010cd55458c55e14ba84c856997bb651d4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ef3f56a762d93771772c74dc8469edc8caa802df76d9f17ea98e8db7a2ccfe35"
   end
 
-  depends_on "gettext"
+  on_macos do
+    depends_on "gettext"
+  end
 
   def install
     args = []

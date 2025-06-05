@@ -3,8 +3,8 @@ class Katago < Formula
   homepage "https:github.comlightvectorKataGo"
   # Occasionally check upstream docs in case recommended modelnetwork is changed.
   # Ref: https:github.comlightvectorKataGo?tab=readme-ov-file#other-questions
-  url "https:github.comlightvectorKataGoarchiverefstagsv1.16.1.tar.gz"
-  sha256 "5e004042dc1ee8185b8fb7a807e3d421d09349dccb858e41ffe2e9b96a4173d0"
+  url "https:github.comlightvectorKataGoarchiverefstagsv1.16.2.tar.gz"
+  sha256 "1f8234413aeb01f45a1c03652d07160e571b9112735e5478f8b6e072e9009bb7"
   license all_of: [
     "MIT",
     "CC0-1.0", # g170 resources
@@ -16,13 +16,13 @@ class Katago < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "196387b2b8364d6c21b3ad7f21e99ce5a9a0de12ea8bd1b13df64267a9247808"
-    sha256 cellar: :any,                 arm64_sonoma:  "f18c1f3a208bc7db520b128de3f554c22a3f06e2f3b7359c2a7399ef4ad6015c"
-    sha256 cellar: :any,                 arm64_ventura: "721c9102dac3e2e115a05cfcc87ad46d3e4ed8b1b2a4e97c0fc27768fb0efcd4"
-    sha256 cellar: :any,                 sonoma:        "8a11310fbdc2db3bd226f99266b7f4440a2d8ecefa68a2ec64306a1f72bd167e"
-    sha256 cellar: :any,                 ventura:       "a756163f9bc8424595dd5e2bf03eb9243b03749bbbdd58c31b9e471337a3c9ee"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "3617c29c7f43a9224c99d3d3a649d5427be69fb9c152b0f2c5dd456979b9278d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1a6a7e66ecb9f2c5972fb8836157bb3b11285efca806d314f75b59840643f0a5"
+    sha256 cellar: :any,                 arm64_sequoia: "46507964a2e3a03974f3eb75293c11646b4cda6102a65afd87e97adc55fd2173"
+    sha256 cellar: :any,                 arm64_sonoma:  "3142c70bfc9359d33c95180d764175ff33901f6a15eb742b10cdd48aa54994e8"
+    sha256 cellar: :any,                 arm64_ventura: "f74deaf28ea89664ef4a93ee876b7d1354a18ba05d42263ba9caeaf1a63fd7a4"
+    sha256 cellar: :any,                 sonoma:        "8e7f2fb2d0ebbb61cad0784aab893c9ee1da60a887518502f641d7c191985292"
+    sha256 cellar: :any,                 ventura:       "207fd5d9c4b0d90ebe9f468f18211b91d690e4a8ad1aa72101c2c9ec3c2ffbc5"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "23b16da526d08426a9110990305da062799a79219cbe91244381fd4ed571f68f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "559f97780089d7862bb2a514a6e3e82c5841df38530e81f2fdc07ecde25b0845"
   end
 
   depends_on "cmake" => :build

@@ -11,6 +11,8 @@ class Cheapglk < Formula
     regex(/href=.*?cheapglk[._-]v?(?:\d+(?:\.\d+)*)\.t[^>]+?>\s*?CheapGlk library v?(\d+(?:\.\d+)+)/im)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a5600c759374d421d057d4901d84f12c4a0526ef88c23d6d838b699eb409a6c9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "796c71e7b1eb29c4bbf1702e4a10d2f8ec25dd66d987ad7a570a8cfb1841db06"

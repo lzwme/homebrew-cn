@@ -1,19 +1,19 @@
 class Fricas < Formula
   desc "Advanced computer algebra system"
   homepage "https:fricas.github.io"
-  url "https:github.comfricasfricasarchiverefstags1.3.11.tar.gz"
-  sha256 "ce74ad30b2b25433ec0307f48a0cf36e894efdf9c030b7ef7665511f5e6bf7d9"
+  url "https:github.comfricasfricasarchiverefstags1.3.12.tar.gz"
+  sha256 "f201cf62e3c971e8bafbc64349210fbdc8887fd1af07f09bdcb0190ed5880a90"
   license "BSD-3-Clause"
   head "https:github.comfricasfricas.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f979124c221aacc487700749338a4be2926cf8e5e41108e9f9c0a55a35d05e7e"
-    sha256 cellar: :any,                 arm64_sonoma:  "8989cfeb1e1d63f6489e402ad19fd8433d1b3d206535e9b08af6d16e2c26c6d7"
-    sha256 cellar: :any,                 arm64_ventura: "6c37fc5e9a30a29f94aba6999246cdc4428242afbb250836aeaf7e139d359f79"
-    sha256 cellar: :any,                 sonoma:        "8ead560ceff9155edf01af8e4d7bdebd803df863848d94aa423431ce6633f58e"
-    sha256 cellar: :any,                 ventura:       "eafaa5ea9b679d04b2d77f6c98c2348a1cbc43abd74a70b5bed283524881070a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "78aa1002ed22279cdc6aef277ab708d411fcd3c113a516a63f7a62967f324ea4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3704109df28d50e400c8a0e58e23b6d3e7b9eff93adfc2c543bf8c089de170a1"
+    sha256 cellar: :any,                 arm64_sequoia: "7fbe73c52677676edec374061a9889381f7b8dd79d231cd5db743e8b47b83be4"
+    sha256 cellar: :any,                 arm64_sonoma:  "f80b27d9b594c6161a4b882f13cdb0c62f883d42760bb62d8563791d3ce3660b"
+    sha256 cellar: :any,                 arm64_ventura: "e78686fad2f37772d9d575453720622bd63af29ecc888a369672b14f2ca3e1d7"
+    sha256 cellar: :any,                 sonoma:        "716ba2734fc10c1a9540e8b868bfa6ff05c0ff8fa07fc04582808e2c12efb999"
+    sha256 cellar: :any,                 ventura:       "a3737a559b67fb9d5887f00208bf6c56b0e444d8f88be2d627db873c6971fde9"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "22865967ea74382926e358484cef468d9eda01c3b251ee98ac8bdcb0095f47db"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f35e32107cab4e45364c7f07245b562c6a425283ec655a22214a2c6f8302e8a2"
   end
 
   depends_on "gmp"
@@ -29,7 +29,7 @@ class Fricas < Formula
 
   def install
     args = [
-      "--with-lisp=sbcl --dynamic-space-size 4096",
+      "--with-lisp=sbcl",
       "--enable-gmp",
     ]
 

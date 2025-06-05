@@ -1,20 +1,18 @@
 class Libusbmuxd < Formula
   desc "USB multiplexor library for iOS devices"
   homepage "https:www.libimobiledevice.org"
-  url "https:github.comlibimobiledevicelibusbmuxdreleasesdownload2.1.0libusbmuxd-2.1.0.tar.bz2"
-  sha256 "c35bf68f8e248434957bd5b234c389b02206a06ecd9303a7fb931ed7a5636b16"
+  url "https:github.comlibimobiledevicelibusbmuxdreleasesdownload2.1.1libusbmuxd-2.1.1.tar.bz2"
+  sha256 "5546f1aba1c3d1812c2b47d976312d00547d1044b84b6a461323c621f396efce"
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia:  "5d4892dedecd97caba1f56522add5e601b4bc09ccea572c7c9b3ff84bd14744a"
-    sha256 cellar: :any,                 arm64_sonoma:   "8149dcd7d29cdf463c40a10e8030dcb23a4eb9e69078a88fb2e8671d9a27bdad"
-    sha256 cellar: :any,                 arm64_ventura:  "3908c3a4d699d2aff22b40e6353c498042153a47798357c4500b76b495f24e88"
-    sha256 cellar: :any,                 arm64_monterey: "738b1efb11135136a9066ee73379829f29c57df598e989631d26e4ae5401f456"
-    sha256 cellar: :any,                 sonoma:         "9b366b324e9758bd9f5d10c536e40ef2d90ed2caf2886ff7e55e13fe496628dd"
-    sha256 cellar: :any,                 ventura:        "b188d3fcab748c6ac1e5740129bf4a07b2756dedd557d89f6f1291715bf6c45e"
-    sha256 cellar: :any,                 monterey:       "4ea63ce7da1344b4e2fde47b7c2a9d8bad424bd5ce9282f6af1aa66a1155135b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "84338459d26e427bd4a56a6f2c3e15a98f7dc4fa667d62ad4d77d2b052a193b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "f3e9212633194e2e9436afd98d00fd5e167ec0ff13f1abfd065112dd2dd32bd3"
+    sha256 cellar: :any,                 arm64_sequoia: "f8255f91e52d9854b2aec30297e8038c2154ff3cb59f64b0cc8006cb301f143c"
+    sha256 cellar: :any,                 arm64_sonoma:  "b3dfe62a2e25c35da59e32db101d490974d93a1a6ed30755bb4380a7d947a63e"
+    sha256 cellar: :any,                 arm64_ventura: "da3ade8614bf17b6d7415bcaca5d567c78e72e0c170e2f0bb386a77169964a23"
+    sha256 cellar: :any,                 sonoma:        "f20787b876fc3b9c8412d92ac2adaeb3dc2526155d327b0118534bb06c208079"
+    sha256 cellar: :any,                 ventura:       "eff1c068df54d65b5fc16bfee3aa8f6a556574c4ccbb3d9c56ee91efd12c639a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7ec20326419ca71e8bb1d5b0fbc545f9b9028592a16f257e55ab6bc02772296b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b2a58d873fa065eb1e3940d7f45f4f16781a90dd188f880368d50aac172a850"
   end
 
   head do

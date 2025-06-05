@@ -1,19 +1,19 @@
 class Simdjson < Formula
   desc "SIMD-accelerated C++ JSON parser"
   homepage "https:simdjson.org"
-  url "https:github.comsimdjsonsimdjsonarchiverefstagsv3.12.3.tar.gz"
-  sha256 "d0af071f2f4187d8b26b556e83ef832b634bd5feb4e2f537b9dabbd334d4e334"
+  url "https:github.comsimdjsonsimdjsonarchiverefstagsv3.13.0.tar.gz"
+  sha256 "07a1bb3587aac18fd6a10a83fe4ab09f1100ab39f0cb73baea1317826b9f9e0d"
   license "Apache-2.0"
   head "https:github.comsimdjsonsimdjson.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3eb49356f9c6ccce46cdf627e8ebef557bdd1817776f8bdd3653bd4c92b8802d"
-    sha256 cellar: :any,                 arm64_sonoma:  "7ec78445ccd839b7e8a11f6994561760d107464f157e82cfc049095438bfd5bd"
-    sha256 cellar: :any,                 arm64_ventura: "a9ca3f54731c3af437e7de669542e08bc41ad9898963e464a245a151368766aa"
-    sha256 cellar: :any,                 sonoma:        "3f4509080df7f6a9bb9f6d1b67c766d3172765e0204fc4b694300e35371b1c73"
-    sha256 cellar: :any,                 ventura:       "09043e27cafd7a7802e2220954f18f9a158e9991376d2fe2c0997546861a2b1a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "e15d466abaa6b3ebe4c2271aad04730811e432d1f1b9ef0adc6dd716bf1c4028"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2564b875d68a2b94647cdcc5c611a1ba8d75269313c673174119442fed5e6ea6"
+    sha256 cellar: :any,                 arm64_sequoia: "2d66e98360e79ddc9c6659aea66532e472b31186f83a9d6efe240065833ef1a0"
+    sha256 cellar: :any,                 arm64_sonoma:  "09d15daf7902bf3d9acaeb330213d8989ec42f6b47d18774805efabc8dcec563"
+    sha256 cellar: :any,                 arm64_ventura: "9f4c5211b7b231e77b6e582dfee0453b1125cecad9e5b0aaa79dab1bcce1961a"
+    sha256 cellar: :any,                 sonoma:        "2d2a463a26509e2b0fb17195ac08f6d64b1f3fd05d518360ae971d79d0fdf69d"
+    sha256 cellar: :any,                 ventura:       "0630a2e93b646ae610a63fcc362d444d5c28c43e1197c7fbcdcef3d128f93790"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "263c95f269c2bd4426e68ede98f171e0bce930258f40752bdd79dbdbae4c4694"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2ee079674bcc8c6c27dd8b812845eb9cacf84e0a8d406a068bed56a50b9dc0e6"
   end
 
   depends_on "cmake" => :build
