@@ -5,6 +5,8 @@ class Eatmemory < Formula
   sha256 "568622f6aef9e20e7d5c5bb66ab7ce74bec458415b8135921fe6d2425450b374"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2e7bd76b7716d888a22230bc74357a62fd3c4b2a8e4cfe2846dba3bec52e856a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9c83f4e8d97be2623b0294a9fca3c163f47690b3609475e76056c672b7ef6cca"

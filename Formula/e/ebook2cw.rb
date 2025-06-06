@@ -10,6 +10,8 @@ class Ebook2cw < Formula
     regex(/href=.*?ebook2cw[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "8ee60330873ad88bbe4346269b4ce0f1c1598382e98ebfae5a264d8af4474148"
     sha256 arm64_sonoma:   "db414d0d717be52093b787e79f866d82e2f91fbdf7290b89b194ce5da6a2116b"

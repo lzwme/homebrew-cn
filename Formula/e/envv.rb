@@ -5,6 +5,8 @@ class Envv < Formula
   sha256 "1db05b46904e0cc4d777edf3ea14665f6157ade0567359e28663b5b00f6fa59a"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2110b9d05836da02e31062ad025810c86e863d23c8a585dcb227da34c20e3376"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "58710a70856d6c30fbb8615800486e82d73abd17eb31e557ecd4b9aa41bfda7d"

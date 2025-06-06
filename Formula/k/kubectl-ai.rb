@@ -5,6 +5,11 @@ class KubectlAi < Formula
   sha256 "15fd892b06b2b992d96024c7880869ea929f535153fe743de7e0a4088e702aa1"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "9e8e865c902c74ade666ae2b0856ab64d0638061c0df24347cfd91c76e0782cf"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9e8e865c902c74ade666ae2b0856ab64d0638061c0df24347cfd91c76e0782cf"

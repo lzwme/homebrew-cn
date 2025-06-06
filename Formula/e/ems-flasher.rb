@@ -10,6 +10,8 @@ class EmsFlasher < Formula
     regex(href=.*?ems-flasher[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "3234b5a7a065c25076109874fb9f7f4c4a43b87f758320145eed22b186be84d3"
     sha256 cellar: :any,                 arm64_sonoma:   "92132e129a5b7ef2267791b3ff632cd211b461f75a7f0bb9d123fadfb53df0d6"

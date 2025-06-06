@@ -1,8 +1,8 @@
 class Vsce < Formula
   desc "Tool for packaging, publishing and managing VS Code extensions"
   homepage "https:code.visualstudio.comapiworking-with-extensionspublishing-extension#vsce"
-  url "https:registry.npmjs.org@vscodevsce-vsce-3.4.2.tgz"
-  sha256 "50a4d47a38c7bf8b04332dc2c9c30e8772b44d8e430fb50fd3911706320e043a"
+  url "https:registry.npmjs.org@vscodevsce-vsce-3.5.0.tgz"
+  sha256 "fd092586bad4c1684daf9c997fba789eb28a574e55b0646d7df94a258d8e2fae"
   license "MIT"
   head "https:github.commicrosoftvscode-vsce.git", branch: "main"
 
@@ -14,13 +14,13 @@ class Vsce < Formula
   end
 
   bottle do
-    sha256                               arm64_sequoia: "b24a646ffe3394a8d6645ae8a4f98b9473966810c1f00ed24575e31d2fe23a67"
-    sha256                               arm64_sonoma:  "7e2cc6ff5907578406123f9b21d77008474952f4310179d67730ae7c8928e786"
-    sha256                               arm64_ventura: "c6725b4473fc154d7946157565ed0a6d5f79bbfa726d7e549ba5432488e2d680"
-    sha256                               sonoma:        "a12a0c57153008e6b0865f5d6bd62d3b7da4df47934b52267eec3cae7f193e69"
-    sha256                               ventura:       "9386ee42a9c61fe5f0997080ce4e31a14549e15bcc74b4c255985f06a86fe4b3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9e63bb13eb7b7947cb9060f9ab9fe2d8b23e0d1f6b1ddfad72f5eb35bdb6cf00"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf936e711330acf51518ef9fe322b5aeade391b3790d8ee269f48e8b9243981a"
+    sha256                               arm64_sequoia: "79b880f77b49416ff0ba21016dfe1eff4910e4df3fb8a8cd2e1f25eb17ba7045"
+    sha256                               arm64_sonoma:  "a82fccb99b1aa0e4b3b330e5013a8d862e47db39b65e2fbf3ff960273139c713"
+    sha256                               arm64_ventura: "306f32638193a0cab65039e2caa3c1b7e35d6f20c441ead9d05a1800b6f61457"
+    sha256                               sonoma:        "16dfb079980e1d9cd482a8bc7b9c087cf867a500aa9e6453f06512f4f57f96bc"
+    sha256                               ventura:       "97445cb532b20d1844e09091550d793365747c26a7f812127f3d99badb638646"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a84098be53b536513b3ea83b6edc146d6d399281c9dc8f448c6d476397c513b4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6d0e23870896000d924a0665940c67b1e8a63ea31d76d82ed661b4cd9c7ec8e3"
   end
 
   depends_on "pkgconf" => :build

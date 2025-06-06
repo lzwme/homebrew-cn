@@ -8,6 +8,8 @@ class Easyeda2kicad < Formula
   license "AGPL-3.0-or-later"
   head "https:github.comuPesyeasyeda2kicad.py.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "63ed5e301650da8befc358c541925387a1f08b8eff7f0ce6a6c929a305961945"
     sha256 cellar: :any,                 arm64_sonoma:  "d0014b3a6121857ab6c8bd613f394d1c18d68ec6491b20bc60834a76109936ab"

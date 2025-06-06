@@ -12,6 +12,8 @@ class Ezstream < Formula
     regex(%r{href=(?:["']?|.*?)ezstream[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "34332f32987c8a53a1d5368b7f9a08d46410609e7c82132d8b8e124a51f2b1aa"
     sha256 cellar: :any,                 arm64_sonoma:  "f707c6216526edfd36d62e773bccfbf616dc72071955b6811b60de26d923995b"

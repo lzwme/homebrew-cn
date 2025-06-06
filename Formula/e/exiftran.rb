@@ -11,6 +11,8 @@ class Exiftran < Formula
     regex(href=.*?fbida[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "66bbdb1194918c7a35edce9ec143a5ff05cc719e129e6e613cd5e600da2fbced"

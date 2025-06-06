@@ -12,6 +12,8 @@ class ErlangAT27 < Formula
     regex(^OTP[._-]v?(27(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "bff7f023ddbac233d5353e01a12078785a9b385f751589f17c8c89014040b80e"
     sha256 cellar: :any,                 arm64_sonoma:  "410d02810f2aec83e88b3e56c0b9c0d3244c142fa9ce358631447f36b3a065c8"

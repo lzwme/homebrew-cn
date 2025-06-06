@@ -10,6 +10,8 @@ class EasyrpgPlayer < Formula
     regex(/href=.*?easyrpg-player[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia: "bfcc503e8f0ee35e4b4cd08fc3b813a444608597916333df7b1ad7bcf0a659bc"

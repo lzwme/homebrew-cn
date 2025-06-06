@@ -1,10 +1,9 @@
 class PythonAT39 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https:www.python.org"
-  url "https:www.python.orgftppython3.9.22Python-3.9.22.tar.xz"
-  sha256 "8c136d199d3637a1fce98a16adc809c1d83c922d02d41f3614b34f8b6e7d38ec"
+  url "https:www.python.orgftppython3.9.23Python-3.9.23.tar.xz"
+  sha256 "61a42919e13d539f7673cf11d1c404380e28e540510860b9d242196e165709c9"
   license "Python-2.0"
-  revision 1
 
   livecheck do
     url "https:www.python.orgftppython"
@@ -12,13 +11,13 @@ class PythonAT39 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "2615cd792702cfa009cdf53de341a2f3e3afe47f0badd4146b1774446e9fc0db"
-    sha256 arm64_sonoma:  "02eede67f8c40fd8f370e8b15f90b9601f5943c4175cca86f891c21e8bbf49e9"
-    sha256 arm64_ventura: "112dd83db002b08bd6db327838b6240f3f3791bfd58c0edcb815d8241bfaec55"
-    sha256 sonoma:        "91d13f4897308fb1cb4a41b202e778018b744b34c90c1c2d8422b844db79f3e4"
-    sha256 ventura:       "90a57938879980381944d65b282146e627fc9d6d8960e9afc2f4e4710cfd1a24"
-    sha256 arm64_linux:   "55b2a518b57bec731980e317ea42e6d23b223dd9d5f6ed034b4315bb626603ae"
-    sha256 x86_64_linux:  "75eed312f581e9defd9d5531de1facb106cf3cf5da11d014b6501e6dc6f84cb3"
+    sha256 arm64_sequoia: "e088eaa87ecbf35c8c87ffd1e6e864b20509ec1597c4f5f98360fe500d2292e5"
+    sha256 arm64_sonoma:  "c742522959cf677a09ba96071c9c036caaa1e8a9e08b0dba9b8b07babde351f2"
+    sha256 arm64_ventura: "ca973824df91389a033f153a3e2bd5f0e818c42fe4df3b0576e427f3d1d11e84"
+    sha256 sonoma:        "844b1b98b64bb3a0317d8da05ca3674a98b522a361790090332da15372ca195e"
+    sha256 ventura:       "ca3dfb7151380a909adc83c10f0ddcfb8c1c09f9aac93c1b87e91b3a2ab6fa5e"
+    sha256 arm64_linux:   "05fb5b5497827bc1db68ca2e895c0820900c64d174a7ad60b01123d5cea33944"
+    sha256 x86_64_linux:  "4ab2946adbebc2a587565156aa5c2e12b6f850a1e76bed19e5aeac82b358047c"
   end
 
   # setuptools remembers the build flags python is built with and uses them to
@@ -61,8 +60,8 @@ class PythonAT39 < Formula
   end
 
   resource "setuptools" do
-    url "https:files.pythonhosted.orgpackages9e8bdc1773e8e5d07fd27c1632c45c1de856ac3dbf09c0147f782ca6d990cf15setuptools-80.7.1.tar.gz"
-    sha256 "f6ffc5f0142b1bd8d0ca94ee91b30c0ca862ffd50826da1ea85258a06fd94552"
+    url "https:files.pythonhosted.orgpackages185d3bf57dcd21979b887f014ea83c24ae194cfcd12b9e0fda66b957c69d1fcasetuptools-80.9.0.tar.gz"
+    sha256 "f36b47402ecde768dbfafc46e8e4207b4360c654f1f3bb84475f0a28628fb19c"
   end
 
   resource "wheel" do

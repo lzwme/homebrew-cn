@@ -7,6 +7,8 @@ class ErlangAT24 < Formula
   license "Apache-2.0"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "4b033ab7693bc346cfcdc745afe84cabb0a67326ec1651cd2294e6f0bb84eb24"
     sha256 cellar: :any,                 arm64_sonoma:  "034839e7b3d701ed14dfb55a2e025bacc979106e12907a94f65a367bb71c13de"

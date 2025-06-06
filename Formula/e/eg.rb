@@ -6,6 +6,8 @@ class Eg < Formula
   license "GPL-2.0-or-later"
   head "https:github.comdavepeg.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256                               arm64_sequoia:  "88dbfa7cf9217122bc925c3681ee19cefcdb758063696fa00577967301b34fbb"
     sha256                               arm64_sonoma:   "76e0f0b7dadc29420b7a83e10425eda231ba773ee90485838605b87d3934d964"

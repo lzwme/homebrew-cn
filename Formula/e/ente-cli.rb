@@ -11,6 +11,8 @@ class EnteCli < Formula
     regex(^cli-v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2efd5893df437f97c91a84d69d855629921325f6f397c84be29d072723019d91"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2efd5893df437f97c91a84d69d855629921325f6f397c84be29d072723019d91"

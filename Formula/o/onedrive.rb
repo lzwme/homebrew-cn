@@ -1,18 +1,19 @@
 class Onedrive < Formula
   desc "Folder synchronization with OneDrive"
   homepage "https:github.comabrauneggonedrive"
-  url "https:github.comabrauneggonedrivearchiverefstagsv2.5.5.tar.gz"
-  sha256 "413a4e02c18c7c37d4cb6b57121116de7e628c7be1fce14e7db3fbcb1a0d364b"
+  url "https:github.comabrauneggonedrivearchiverefstagsv2.5.6.tar.gz"
+  sha256 "dda49ae9d0c042205ae8f375704c154fc7a9fc88aa21e307e7d83aa1954ad57e"
   license "GPL-3.0-only"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_linux:  "f1ead5dc849ef0116935be7dadfe2dddd5bf51f1785ae14655557646bc72af87"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "b273403588785ee1442e2189d69ec4fd6c9bbd28b3a65852ce613a8c591521dc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:  "ffed268ca06c52fc34d1c0936ff9874541ea0edd765e11c0ecd327cc0f252d79"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "59db371d3d004e737c0ebe46f81fe830dc70ce81d4cac2ec1c2559a6f30da02b"
   end
 
   depends_on "ldc" => :build
   depends_on "pkgconf" => :build
   depends_on "curl"
+  depends_on "dbus"
   depends_on :linux
   depends_on "sqlite"
   depends_on "systemd"

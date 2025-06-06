@@ -6,6 +6,8 @@ class ExtractUrl < Formula
   license "BSD-2-Clause"
   revision 3
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "07d5950507abddf2124e3327888d40a80fe013caab73fcb3ee917258cb541859"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "388031e9b2d1cc1bb1769b5ff6c0dfc2970d331ef77b773e9c91e09a1c9b1c03"

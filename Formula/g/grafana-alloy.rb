@@ -1,18 +1,18 @@
 class GrafanaAlloy < Formula
   desc "OpenTelemetry Collector distribution with programmable pipelines"
   homepage "https:grafana.comossalloy-opentelemetry-collector"
-  url "https:github.comgrafanaalloyarchiverefstagsv1.9.0.tar.gz"
-  sha256 "879a86c36985e2fdca86d996562cc12cccd281a9a622c9822e5e2836286c5440"
+  url "https:github.comgrafanaalloyarchiverefstagsv1.9.1.tar.gz"
+  sha256 "d9eaa0719b9264b47d30ad459d13535d9e51815afcb089245b10eabffb14793c"
   license "Apache-2.0"
   head "https:github.comgrafanaalloy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f65156002238ebee8aa82ca63989e934bae4cd43afbe10f8e486599930435322"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cd5b80c704a06275ec3729ad4a556fee9baa1374452dc6dacd97bb9137ebaf52"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "203fbe15bd1f51419b1a273f61492da89b0266239ee8c63cb1294bc36c0bdedf"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1fccb634e8bb90648f53f7e7aadd6e64d12543e1c4fc2483b8ba5216091162eb"
-    sha256 cellar: :any_skip_relocation, ventura:       "4dd3a04f268ecbb9a0ceea3c6f137e2f546b8f717cc3ee0f1c2abc3d198b6753"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d63936181b562e5d016ae350be058d881514ed360ee0452a99d66fb6800144c0"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5fa4ab718ee2c2a349ec18cfc32b64efa61b8c893373c4bf2d4e60865f972b3f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2878ce46352a891e0e1403bc2b6ba622fd04bcc8f7c4a11527afe84f6ceb0ba"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "b7085ef27a3379c15b020ece45c2b3bd27da7d46c210719f2e917b5df2bfc7f3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e699aa684016788397b9f7ec8ceef2cf51c776eb6eec3a8de76af00d1b76cf3b"
+    sha256 cellar: :any_skip_relocation, ventura:       "804524c5b40a63fa3c02e08450abecb11a325440959984c1c2dad5f271497b70"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "77707c1e4a40bf5710c5751cea903427946072c2a87fdd25d1bb2b9ab360e6e5"
   end
 
   depends_on "go" => :build

@@ -5,6 +5,11 @@ class Scw < Formula
   sha256 "5d17781f701059946f876e87f6e92a53e0315dc8e70ca7462cf08d581a0e8eb8"
   license "Apache-2.0"
 
+  livecheck do
+    url :stable
+    strategy :github_latest
+  end
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c8177c1d7b1642185aa240d58b90a3dc5a01391ce840efbf2b21472e944ff912"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8177c1d7b1642185aa240d58b90a3dc5a01391ce840efbf2b21472e944ff912"

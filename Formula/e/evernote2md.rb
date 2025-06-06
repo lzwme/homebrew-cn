@@ -6,6 +6,8 @@ class Evernote2md < Formula
   license "MIT"
   head "https:github.comwormi4okevernote2md.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "20aa5f0579e02309ed70360a6ac0c5c64b23aa3eed44d95701080b617b36755c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "20aa5f0579e02309ed70360a6ac0c5c64b23aa3eed44d95701080b617b36755c"

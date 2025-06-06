@@ -14,6 +14,8 @@ class Eiffelstudio < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia: "439bf0adf57faebf0897400e531338efeb4e91e7b9a4470ba94932d3025d3cbb"

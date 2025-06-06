@@ -2,20 +2,20 @@ class Pulumi < Formula
   desc "Cloud native development platform"
   homepage "https:pulumi.io"
   url "https:github.compulumipulumi.git",
-      tag:      "v3.174.0",
-      revision: "70245c2e69f863fb52cab1662fee31cab7c4e6aa"
+      tag:      "v3.175.0",
+      revision: "0b83ce113e31f415887b5221a97c1b375585efd6"
   license "Apache-2.0"
   head "https:github.compulumipulumi.git", branch: "master"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "fda114c2f38bb370ee31b9f7f6e5da7cf8608d3d616a57fa474357500089483a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a35ad7f2d489071b77253b42525c2bb993432d4cabd9f39e9819d488ad6f3673"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8a889a698bb3ffa2cfd9c9654a93c528f4e59a57a7e180e9ea0aba95a84bca44"
-    sha256 cellar: :any_skip_relocation, sonoma:        "e242be55dc367a369923508c02b7bdaace643a0d927f67d35d1e41703e5864ce"
-    sha256 cellar: :any_skip_relocation, ventura:       "de4bde182364f7183345b3b597381eb8a46a1fc606e74626d2db99970a43a297"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2c0b3468315efaa21f356ac0f2d630fb48de5b8f87b7c32125831d27459c09d8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a6f41dd3ec75574bceca95427bed3e010f281ced3c34e7293b99dc4a0a571ebe"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c696d2fdef86383cfabdc2597fb59f1cb85e05081304c3f862d166fa69370ab6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "4165a6d97ee475a86e34cee8e0f8782ef314aa2223a53abff7b78e6a95e4d99c"
+    sha256 cellar: :any_skip_relocation, sonoma:        "e51d1f103aa5ff42a5295bfb149de7159a36cd9646c9419ba5a02ec19ba65a7e"
+    sha256 cellar: :any_skip_relocation, ventura:       "133cde3d2cbde8f235fdf8b02422a9196046d318cb7e1e85888104f96ba6e958"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7c4b2d32724aaf745631311fa5171a76db84aaaa00536797421daae0e0b00069"
   end
 
   depends_on "go" => :build

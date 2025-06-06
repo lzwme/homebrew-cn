@@ -6,6 +6,8 @@ class EbookTools < Formula
   license "MIT"
   revision 3
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "f5941a8ccff53411313a9126e9414bb6ee069ac5ac3b4ebf819d0b98bc757460"
     sha256 cellar: :any,                 arm64_sonoma:   "62256c5eb6880252f8110c8c35d9c84bd9838bce63de8af4377497d19da21d82"

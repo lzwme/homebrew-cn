@@ -6,6 +6,8 @@ class Eureka < Formula
   license "MIT"
   head "https:github.comsimegeureka.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "02998b7bb77a41e30a5053ec6530d04f4ce8224a05100a60604373b3cbe00857"

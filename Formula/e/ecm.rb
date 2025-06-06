@@ -6,6 +6,8 @@ class Ecm < Formula
   sha256 "1d0d19666f46d9a2fc7e534f52475e80a274e93bdd3c010a75fe833f8188b425"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "425a4fb200db26245c891166bbfbc2238d96f53bc94d24171adbaa58d321297c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fdf32f3a049870985a1a971414a46077e2735cf8d4df10326ed5807d661601a4"

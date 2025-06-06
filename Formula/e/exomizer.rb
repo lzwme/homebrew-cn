@@ -13,6 +13,8 @@ class Exomizer < Formula
     regex(/href=.*?exomizer[._-]v?(\d+(?:\.\d+)+)\.zip/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "93a5cf305a6a643351a6335ce2555628f9448b9010009475e77ffa6d8a54b441"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a7292bb3eeaffac34f6540a029f6e21b79089b66e498d9e3bfa611cd44189b48"

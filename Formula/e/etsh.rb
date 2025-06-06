@@ -11,6 +11,8 @@ class Etsh < Formula
     regex(/href=.*?etsh[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256                               arm64_sequoia:  "d67ffc1ce7bd60251ea6a60da6f2c4676d2ee3c32cdf22743398de0c2eb7cb05"
     sha256                               arm64_sonoma:   "94f5918f0bc1416a3a10328e6297dd831c2f65b588245cd7612bfbeedd169007"

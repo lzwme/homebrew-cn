@@ -6,6 +6,8 @@ class Emp < Formula
   license "BSD-2-Clause"
   head "https:github.comremind101empire.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7ef67fd96c5a64e80725b692c1aee910be954a1b176304d2286d1c55d3c40df2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "382fd0ca04a5ba7096e40659a951bcc592c81dad66dc4678b6048404db8de7b8"

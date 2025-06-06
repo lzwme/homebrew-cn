@@ -3,20 +3,20 @@ class Aider < Formula
 
   desc "AI pair programming in your terminal"
   homepage "https:aider.chat"
-  url "https:files.pythonhosted.orgpackages1b765621ce9d7e3a4fa2b7015a422023a238089a2628bc522762b2193cc6e8c0aider_chat-0.83.2.tar.gz"
-  sha256 "b3b1d8d532313d22cec3f418773f2c7623e21c09fd6ae2bcaeba9726b73b0022"
+  url "https:files.pythonhosted.orgpackages76948cbf0e10a01bd24c68a0b14e256b75abaa4bae662f955669e14fc5902b0eaider_chat-0.84.0.tar.gz"
+  sha256 "b5001eaae8741816c28fa7a06adb616f2ba5293553de94ee123b99038c98fae0"
   license "Apache-2.0"
   head "https:github.compaul-gauthieraider.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "fdd59056418e25a87d7e90d5d69cee7bb563d7b43237c01214f71dd580bd77f3"
-    sha256 cellar: :any,                 arm64_sonoma:  "2517fd3ce44b123fb4d4ce5e693e2e0e330cee26977a728b5db31a6e4e8af919"
-    sha256 cellar: :any,                 arm64_ventura: "70b0bbb63ea8435811049d658687fae2054bc1e2baaa77c3937a66c69529bb79"
-    sha256 cellar: :any,                 sonoma:        "7dd19b8a55054fad73f278a687c46c32c469a00eb15f4e9be5c356a678b870d4"
-    sha256 cellar: :any,                 ventura:       "3d02adf57cc0e0f77bc05ac9576105a9bb016f61e719ba5a8f65dfb725ea5d48"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "039b70ce858567d9fd262aee7bde938d43fd52d016c41e4eb9c87f2c6e7e861f"
+    sha256 cellar: :any,                 arm64_sequoia: "a1245af11a730a757f2a2d28c3ddefd671a813ac28553f850c76cbae14816ff6"
+    sha256 cellar: :any,                 arm64_sonoma:  "aeb08bc4240e4b1d8ca8806d76d04a5210f87fd869c4de5b02e27fbd52213035"
+    sha256 cellar: :any,                 arm64_ventura: "2b64f54cbc1af6ce8c6fbbb9ced3a4904fd158998fdff237d702c1689158c745"
+    sha256 cellar: :any,                 sonoma:        "99409ce0e3b254ba3dc159772c016925def739877680cfb575725cb1f3299f35"
+    sha256 cellar: :any,                 ventura:       "dc8d14216fdcaae9126005b3689ba3a97d0727f5002a019d47e7b8e219c11221"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "cf816c3bd0f62051a52570a389830a91aaff74b161cfba60fb39037e4a9b8cdc"
   end
 
   depends_on "maturin" => :build # for `hf-xet`
@@ -182,13 +182,13 @@ class Aider < Formula
   end
 
   resource "grpcio" do
-    url "https:files.pythonhosted.orgpackagesd133bf7bf9188cfce1c626e4c5d55523fec7f2f1d905e003df5da025f532916egrpcio-1.72.0rc1.tar.gz"
-    sha256 "221793dccd3332060f426975a041d319d6d57323d857d4afc25257ec4a5a67f3"
+    url "https:files.pythonhosted.orgpackagesfe45ff8c80a5a2e7e520d9c4d3c41484a11d33508253f6f4dd06d2c4b4158999grpcio-1.72.1.tar.gz"
+    sha256 "87f62c94a40947cec1a0f91f95f5ba0aa8f799f23a1d42ae5be667b6b27b959c"
   end
 
   resource "grpcio-status" do
-    url "https:files.pythonhosted.orgpackages5bb2f5caba63bb0c1637f468d820c46756b8bae28187928ffbe097157f478429grpcio_status-1.72.0rc1.tar.gz"
-    sha256 "20b9cabe989824eeb5d8322189fdc084dfc69bb9fff7cb165cd28340cdbc73e1"
+    url "https:files.pythonhosted.orgpackages50b8e563262a30065d3b52b61ca92c427fe2a1b04ba5dfca0415ae0df8ecdac8grpcio_status-1.72.1.tar.gz"
+    sha256 "627111a87afa920eafb42cc6c50db209d263e07fa51fbb084981ef636566be7b"
   end
 
   resource "h11" do
@@ -591,7 +591,13 @@ class Aider < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_install_with_resources without: "tree-sitter-language-pack"
+
+    # Remove prebuilt bindings: https:github.comGoldzihertree-sitter-language-packissues46
+    resource("tree-sitter-language-pack").stage do
+      Pathname.pwd.glob("tree_sitter_language_packbindings*").map(&:unlink)
+      venv.pip_install Pathname.pwd
+    end
   end
 
   test do

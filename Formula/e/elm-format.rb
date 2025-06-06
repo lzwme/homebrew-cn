@@ -7,6 +7,8 @@ class ElmFormat < Formula
   license "BSD-3-Clause"
   head "https:github.comavh4elm-format.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "39551d3762854b22e3db540e1eb0187484cf50ce30233a70289ae0d6d29e1c27"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "25f339b466676ecaa1be5b3d5fa0d49a1ea6c4a8593be06837e85695a93bebff"

@@ -3612,6 +3612,7 @@ Homebrew-homebrew-core/Formula/l/lziprecover.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lzlib.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lzo.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/l/lzop.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/l/lzsa.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/lib/lib3ds.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libaacs.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/lib/libabigail.rb, Homebrew/homebrew-core, 0
@@ -13369,6 +13370,7 @@ Homebrew-homebrew-cask/Casks/p/pecunia.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/penc.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pencil.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pencil2d.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/p/peninsula.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pennywise.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/pensela.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/perforce.rb, Homebrew/homebrew-cask, 0

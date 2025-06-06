@@ -11,7 +11,8 @@ class Ack < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "62510ce54397ea7584535c44fa55eb0a5fd424c393d40d228f8e4b5e73ddf549"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, all: "8d040693538ad8d489770cf4186a47364fc2bbe4d47e863c491b863e04b4df30"
   end
 
   head do
@@ -50,6 +51,13 @@ class Ack < Formula
       system "#{Formula["pod2man"].opt_bin}pod2man", bin"ack", "ack.1", "--release=ack v#{version}"
       man1.install "ack.1"
     end
+  end
+
+  def post_install
+    # FIXME: keg relocation breaks the shebang, so we unbreak it here.
+    #        See https:github.comHomebrewbrewissues20023
+    # We need `audit_result: false` because this replacement only needs to be done when poured from an `:all` bottle.
+    inreplace bin"ack", "#!#{Formula["perl"].opt_bin}perl", "#!usrbinenv perl", audit_result: false
   end
 
   test do

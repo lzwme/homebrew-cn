@@ -11,6 +11,8 @@ class Enca < Formula
     regex(href=.*?enca[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "39e220bf0bc73df65cfbc2b9702a29ed48197a9c721760111cc4af07f771a912"
     sha256 arm64_sonoma:   "2528d77eb23d82075f2cb1d877ea170927c4bb16a38f1a05fa1494545973ef23"

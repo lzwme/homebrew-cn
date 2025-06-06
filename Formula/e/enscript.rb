@@ -8,6 +8,8 @@ class Enscript < Formula
   revision 1
   head "https:git.savannah.gnu.orggitenscript.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "2236c54447fc2e015995a2fa047dd406dbfefa9db547a10b305e5817482d8446"
     sha256 arm64_sonoma:   "3ef28a752ae04d37d64b0b42c1fb615fcb4c374ee67722f7d0884d8567f66734"

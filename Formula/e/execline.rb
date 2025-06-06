@@ -5,6 +5,8 @@ class Execline < Formula
   sha256 "73c9160efc994078d8ea5480f9161bfd1b3cf0b61f7faab704ab1898517d0207"
   license "ISC"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e8bbbad617bb8ac9e26e9631efdf913a74a06b7f5a88b06363dd1d29aa7b2dac"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d5fe2632e0befbca3259c9fef9072b4f64dab302bea224139726a4b89052a3ae"

@@ -6,6 +6,8 @@ class EasyTag < Formula
   license "GPL-2.0-or-later"
   revision 12
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "d04b63e28faa7da6ebab02e67dbf9b815cb4da4e382d98cac430184426a73f9b"
     sha256 arm64_sonoma:  "6f77c6d7fe588b1bf054cb77d0a9f3fc1a3021b8197ed2e2f30f08441ebb7749"

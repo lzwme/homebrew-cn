@@ -5,6 +5,8 @@ class Erlfmt < Formula
   sha256 "e3643d8833c3a9170d695fd6c44914342240bd8bd10cfacaeac2633ee0561709"
   license "Apache-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "721b5216c77bfdcd0e63cf7e4eb40b335d1cbf7840b0ff94505c5ca232cac095"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "342d7aa1b364d7803738bafd0fa57360a2e582376641da3668e72e4154cdc9e9"

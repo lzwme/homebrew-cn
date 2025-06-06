@@ -6,6 +6,8 @@ class Epeg < Formula
   license "MIT-enna"
   head "https:github.commattesepeg.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "f76fb3cb8de88a494ad312352ac1cf1c34091c19f042ff330ff9bcd0ec8ea47c"
     sha256 cellar: :any,                 arm64_sonoma:   "a75e74989ce84ab632a526be0e13096687ad08b7204139d3dae623435446dbb9"

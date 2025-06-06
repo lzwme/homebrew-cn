@@ -10,6 +10,8 @@ class EotUtils < Formula
     regex(href=.*?eot-utilities[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "dcf1a3953bd2c4baedc5f004a95be4704f19c554d064c27e613a2384edbffd82"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "50db80cb120e30adb337ad7c89a227bc3a2d324f7f86415688704f67fd7afbe9"

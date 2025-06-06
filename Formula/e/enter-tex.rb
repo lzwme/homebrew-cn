@@ -6,6 +6,8 @@ class EnterTex < Formula
   license "GPL-3.0-or-later"
   head "https://gitlab.gnome.org/swilmet/enter-tex.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "77272cae991848eb62ccd74429963ed19fc0ec0cabd32ee6775e05894523e061"
     sha256 arm64_sonoma:  "cf804f346bb3fcecc2e03767b05a1b9a4121039ddfeed3e08aa914cee53a0b57"

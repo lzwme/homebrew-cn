@@ -6,6 +6,8 @@ class Enchive < Formula
   license "Unlicense"
   head "https:github.comskeetoenchive.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e5167a67337419271ca6275a8ee178da5c3b417dd29721ed7c954c2cecaa8dfa"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ea632e41797ea8ac720c8e0ded7eafe6b580fecb092bbe0d25e0c2a805189a9d"

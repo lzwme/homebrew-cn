@@ -31,6 +31,8 @@ class Ettercap < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia:  "4c2d77df3c85c46b78d941966c625306f0d2054bb3029e14826636a8550b7785"

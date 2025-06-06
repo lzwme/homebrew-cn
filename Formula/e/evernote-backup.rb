@@ -7,6 +7,8 @@ class EvernoteBackup < Formula
   sha256 "564c39cd92633e9e9492346363bd3f85175c15a9f73d5c34d35835a2ef05e197"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "bf2e5bf18ebe4af610081206fb38e9124cadf4e596df687b90924480b91f8dc9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f9b31ec399d7dde71784ee3d71c605d0041260f865f41057d3349cae3c494a20"

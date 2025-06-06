@@ -5,6 +5,8 @@ class Exif < Formula
   sha256 "0fe268736e0ca0538d4af941022761a438854a64c8024a4175e57bf0418117b9"
   license "LGPL-2.1-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "f6cbeebd5b8041e6b8ce190a02911e9c53a0079648a35bcd7c279372cbef4afa"
     sha256 cellar: :any,                 arm64_sonoma:   "16650f088870ad4c8f97b7f9e5fcf49eb170409c90c59a4dd07979eaebd463bd"

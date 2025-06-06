@@ -10,6 +10,8 @@ class Etl < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "3c63ed72c0400281f0b83a9db3437aa84426d37f482feaf4dcf2c9accc70caf6"
   end

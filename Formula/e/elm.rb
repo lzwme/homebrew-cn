@@ -5,6 +5,8 @@ class Elm < Formula
   sha256 "aa161caca775cef1bbb04bcdeb4471d3aabcf87b6d9d9d5b0d62d3052e8250b1"
   license "BSD-3-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 3
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1b77344c25644ff522e7dbe293e6b98bbcb75f275cbb4c8a8033c88d93888ce0"

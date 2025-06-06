@@ -13,6 +13,8 @@ class Epsilon < Formula
     regex(%r{url=.*?/epsilon[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "00006841c371ebcd51bc9f3105d16bc690fa54fa0a37ee9b0acfd33cfcee9b1e"
     sha256 cellar: :any,                 arm64_sonoma:   "04b24b368a0881d8244800904fc5c3daa304e9333a1a1e87f25cf6962b057417"

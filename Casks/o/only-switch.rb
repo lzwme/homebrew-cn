@@ -8,7 +8,7 @@ cask "only-switch" do
   homepage "https:github.comjacklandrinOnlySwitch"
 
   livecheck do
-    url "http:jacklandrin.github.ioappcast.xml"
+    url "https:jacklandrin.github.ioappcast.xml"
     strategy :sparkle, &:short_version
   end
 

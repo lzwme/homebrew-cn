@@ -10,6 +10,8 @@ class ExactImage < Formula
     regex(/href=.*?exact-image[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "f44f495419aa32f25be9e14a76466def5388eb6535e8f8a9b0755a87431342cc"
     sha256 cellar: :any,                 arm64_sonoma:  "f206295b88ae90ba83c514706654efbe65fc2667e42050926a82a9570a54eeba"

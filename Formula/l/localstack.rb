@@ -3,17 +3,17 @@ class Localstack < Formula
 
   desc "Fully functional local AWS cloud stack"
   homepage "https://localstack.cloud/"
-  url "https://files.pythonhosted.org/packages/21/78/44c19a8ac78a5ff3ebf336593ac1f58c42f13da9c1a68ed4944d5c3b646e/localstack-4.4.0.tar.gz"
-  sha256 "d304dcbd025af1b67e1e50972446e5f5f875d9cf8f86ed947c86349228f0e8c9"
+  url "https://files.pythonhosted.org/packages/11/7a/6030f1bfebf4cbef70d01fec2b76653a363da10d5ae30ee60487fa81e040/localstack-4.5.0.tar.gz"
+  sha256 "f8ebf3a9af1826c595cfe4196c6d52792152db374e437e1a574ac52aedc53a18"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "5e016059881bd0593c98d739e2b6f3c76c4643f628a7838b7329f425e894b010"
-    sha256 cellar: :any,                 arm64_sonoma:  "edb73dfa7116e32f969cfedeeb173d038f5a56c1e0f72b1b15d488260048743b"
-    sha256 cellar: :any,                 arm64_ventura: "10930be4b785cd9191a4ac39f5855e9a83af264446f8d8e123125ed2f101c0cb"
-    sha256 cellar: :any,                 sonoma:        "121fed99d0ba585fdd952cec67b1b900bdebecf9c1fd066a50a3087813f473d3"
-    sha256 cellar: :any,                 ventura:       "446780d9fa301a9c5f6a2c8626c3988f52f6001d759e11c94f7f53302c020a70"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9016027b0d67e9e842f045f3bd465f56ff7d9ed29786a550ae121a6f232955c6"
+    sha256 cellar: :any,                 arm64_sequoia: "3e155db3147456b4be7dc72f6c544c9d9e4fd425d3689de227e127df3c40d442"
+    sha256 cellar: :any,                 arm64_sonoma:  "f9c1a8cf77bceb21e9ff6128f438c3d8c86be2ab8052e6e5712b1ab8636330aa"
+    sha256 cellar: :any,                 arm64_ventura: "98a67aeccdfe8e3d9632e2c391c76d72ab18f7f2ba69eb1ae82bf295fa7e9918"
+    sha256 cellar: :any,                 sonoma:        "00f0f29fb48ff85be905cd0589c9179c1bc8d0bfa6d53c192b120a21b785c165"
+    sha256 cellar: :any,                 ventura:       "abb29cc12c74e498094575510acdf34116742a5685026813370c93529ac8ab72"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cd8da867b1949c96bfe5f1e6c8bc24ecfeb65c6db6b6662c354265796e39b19"
   end
 
   depends_on "docker" => :test
@@ -28,8 +28,8 @@ class Localstack < Formula
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/6c/81/3747dad6b14fa2cf53fcf10548cf5aea6913e96fab41a3c198676f8948a5/cachetools-5.5.2.tar.gz"
-    sha256 "1a661caa9175d26759571b2e19580f9d6393969e5dfca11fdb1f947a23e640d4"
+    url "https://files.pythonhosted.org/packages/c0/b0/f539a1ddff36644c28a61490056e5bae43bd7386d9f9c69beae2d7e7d6d1/cachetools-6.0.0.tar.gz"
+    sha256 "f225782b84438f828328fc2ad74346522f27e5b1440f4e9fd18b20ebfd1aa2cf"
   end
 
   resource "charset-normalizer" do
@@ -38,8 +38,8 @@ class Localstack < Formula
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
   end
 
   resource "dill" do
@@ -63,13 +63,13 @@ class Localstack < Formula
   end
 
   resource "localstack-core" do
-    url "https://files.pythonhosted.org/packages/d8/7f/5fc41099382be3bc7f92427e0ea165b8ad50075cb01963769af6d8f96f58/localstack_core-4.4.0.tar.gz"
-    sha256 "02ed647d51946c09f2f77ff6dbec358eae676cbe2779ce13418133727fc00b37"
+    url "https://files.pythonhosted.org/packages/cc/24/840843f39d331acdc36f4bcfb094922e2f5a4547473f2db18abaf16c3641/localstack_core-4.5.0.tar.gz"
+    sha256 "2930c0a67dad7f88d2690c0b8720a8b605774c6edf819593ab0328fd14a3e395"
   end
 
   resource "localstack-ext" do
-    url "https://files.pythonhosted.org/packages/a8/52/4ec536ece083fb7127f8b88087ec1d383c8bdc2e7b463cc276808ab323cc/localstack_ext-4.4.0.tar.gz"
-    sha256 "cbf8a733dec7fa7b984f2796d7a64b93b1280774dbe549cd26415a8d2def0088"
+    url "https://files.pythonhosted.org/packages/7e/c7/d63c41166e2d7fd6bd469c12a49f11848f42762be803260f93fd48fd8c52/localstack_ext-4.5.0.tar.gz"
+    sha256 "7d7c30ce3edbe822a5ff3db063d323ae3360c346d6719c83447fbd9188462556"
   end
 
   resource "markdown-it-py" do

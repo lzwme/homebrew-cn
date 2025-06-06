@@ -6,16 +6,17 @@ class Snakemake < Formula
   url "https:files.pythonhosted.orgpackagesbc3213663b412501ed32fbab35a69278888a96918f2bf1a4259964d4d10fcdcasnakemake-9.5.1.tar.gz"
   sha256 "480367b560b7c643eb8575274b4537b20e3cba23f2502b4d221a10e88703f6bd"
   license "MIT"
+  revision 1
   head "https:github.comsnakemakesnakemake.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "a6c33ba4cdb87e70b357e1f8c94af8e8ab46fbc1963acb48bf9a608945a3c0b8"
-    sha256 cellar: :any,                 arm64_sonoma:  "34dd5a7e0104db7a93bbd7fd2da0820d1f076a6001f7ecc24f58bed7d0c7252c"
-    sha256 cellar: :any,                 arm64_ventura: "342986dbf5453572f1e81e4f365c27355884a8daf3c4e84ef1c7f26410facfb4"
-    sha256 cellar: :any,                 sonoma:        "84215a0b25efa705b4522d6e02e081be6b1248ee7eda697e5d49c58dbf0ceb5c"
-    sha256 cellar: :any,                 ventura:       "d5ff9fd236f2ae0a957f1754eaf67634d6c9be80ce8123f324108dbe3d12ce7c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "b3d02633ff9297e56173f22339a4ed55659ca4b45b8300dbcd480a70b9bf3deb"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ac867a1f0d73f6ef32a1cd05a52ad8e93d7e52030376c30f407544aa40c1d4d"
+    sha256 cellar: :any,                 arm64_sequoia: "19c96c1a9b3893b7856c966e181415de8fa1561a2139dfffb5c7f858c572aaa6"
+    sha256 cellar: :any,                 arm64_sonoma:  "fb501463b0c2280718178747cf279e71d142711f20aa5a476afa63919e1a704b"
+    sha256 cellar: :any,                 arm64_ventura: "d0d600bab277c45f6e7798451ce1a8a9bb4e518eaa9745e3e04205006ee33fa6"
+    sha256 cellar: :any,                 sonoma:        "2700adb0ea854b90b7f78507a25e09ede657613f989c2e59b3644f4918403640"
+    sha256 cellar: :any,                 ventura:       "4e7212ff12cb4df26a9a2515f6e3c1be792819f838d06c8577dd0d1d843687b8"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "8ddd9f193ec9e2b594b61173ca1fdd2426dfdc73da41f54a65399bdd1c37e322"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fef0e8230c40de3e49a3f72eebb9c62f83e90af881877b0d4092ca32c7e201df"
   end
 
   depends_on "rust" => :build
@@ -50,8 +51,8 @@ class Snakemake < Formula
   end
 
   resource "configargparse" do
-    url "https:files.pythonhosted.orgpackages708a73f1008adfad01cb923255b924b1528727b8270e67cb4ef41eabdc7d783eConfigArgParse-1.7.tar.gz"
-    sha256 "e7067471884de5478c58a511e529f0f9bd1c66bfef1dea90935438d6c23306d1"
+    url "https:files.pythonhosted.orgpackages854d6c9ef746dfcc2a32e26f3860bb4a011c008c392b83eabdfb598d1a8bbe5dconfigargparse-1.7.1.tar.gz"
+    sha256 "79c2ddae836a1e5914b71d58e4b9adbd9f7779d4e6351a637b7d2d9b6c46d3d9"
   end
 
   resource "connection-pool" do
@@ -105,8 +106,8 @@ class Snakemake < Formula
   end
 
   resource "jsonschema" do
-    url "https:files.pythonhosted.orgpackages382e03362ee4034a4c917f697890ccd4aec0800ccf9ded7f511971c75451deecjsonschema-4.23.0.tar.gz"
-    sha256 "d71497fef26351a33265337fa77ffeb82423f3ea21283cd9467bb03999266bc4"
+    url "https:files.pythonhosted.orgpackagesbfd31cf5326b923a53515d8f3a2cd442e6d7e94fcc444716e879ea70a0ce3177jsonschema-4.24.0.tar.gz"
+    sha256 "0b4e8069eb12aedfa881333004bccaec24ecef5a8a6a4b6df142b2cc9599d196"
   end
 
   resource "jsonschema-specifications" do
@@ -115,8 +116,8 @@ class Snakemake < Formula
   end
 
   resource "jupyter-core" do
-    url "https:files.pythonhosted.orgpackages0011b56381fa6c3f4cc5d2cf54a7dbf98ad9aa0b339ef7a601d6053538b079a7jupyter_core-5.7.2.tar.gz"
-    sha256 "aa5f8d32bbf6b431ac830496da7392035d6f61b4f54872f15c4bd2a9c3f536d9"
+    url "https:files.pythonhosted.orgpackages991b72906d554acfeb588332eaaa6f61577705e9ec752ddb486f302dafa292d9jupyter_core-5.8.1.tar.gz"
+    sha256 "0a5f9706f70e64786b75acba995988915ebd4601c8a52e534a40b51c95f59941"
   end
 
   resource "markupsafe" do

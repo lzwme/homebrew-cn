@@ -12,6 +12,8 @@ class Eigen < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 3
     sha256 cellar: :any_skip_relocation, all: "06503290dc3c07a67b8f582046b0a7f0bd68c2cb2da1e5bc071710de5ba7f5ec"

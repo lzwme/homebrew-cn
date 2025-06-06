@@ -13,6 +13,8 @@ class EmacsClangCompleteAsync < Formula
     patch :DATA
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "171855a6a36e55afe0109bf492172c3718b566a6de8a962f5db0557ed1e16e43"
     sha256 cellar: :any,                 arm64_sonoma:   "33e186cda9570a911bd5e90a213c6abfb6960f7f8c8f5ba1d5bd3c4da0e373be"
