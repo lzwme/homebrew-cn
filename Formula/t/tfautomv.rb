@@ -1,20 +1,18 @@
 class Tfautomv < Formula
   desc "Generate Terraform moved blocks automatically for painless refactoring"
   homepage "https:tfautomv.dev"
-  url "https:github.combussertfautomvarchiverefstagsv0.6.2.tar.gz"
-  sha256 "d89e19c03c7cd1ea1714d091cea751289936b2d52e790fae3a26b23bc445313d"
+  url "https:github.combussertfautomvarchiverefstagsv0.7.0.tar.gz"
+  sha256 "0a00bfb9b4a236640cc4ad0efd9d1982c14f93d5379a5adcd35b1691e0846044"
   license "Apache-2.0"
   head "https:github.combussertfautomv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a9f6d13a8c6a71575153fa486dfcd6ed49eaf824d5d52fb1c3e3cfb8bbdcc22a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f2008e44b8a87c112dedaaaf588ae85d7924c6ae516b990930e3aaa496561681"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "f7a44d21ae1093c71a98213fd7bc9ee7d3580ef3a892dd6ef4dab6661063c598"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "916ac0746672c339e18cce67240025c827502721985de1370e8b92210b6d8bf2"
-    sha256 cellar: :any_skip_relocation, sonoma:         "3c05cf7c115225365f5581be0ea2b83ac903d178b371f2b5bf3c5e905f5b2afa"
-    sha256 cellar: :any_skip_relocation, ventura:        "5dc891bcc1497098c3682f6bc4ecb40c872bb70eafb048118161feed0fa3846d"
-    sha256 cellar: :any_skip_relocation, monterey:       "dc9001cde510f52eefd365d491f494f525b589680c3cc2a6b2fcd396cb6683b9"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c2413e0780e7e9601a1b62263d3fff816f1a10b2b0df145b5fdbb85c0641fa1a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "15f822277c9415edce4e42e4cc8d26af85af55c4c3c673bb9a589023e416dd71"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "15f822277c9415edce4e42e4cc8d26af85af55c4c3c673bb9a589023e416dd71"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "15f822277c9415edce4e42e4cc8d26af85af55c4c3c673bb9a589023e416dd71"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7ddabecdc49b7b4257f5674f0448deca4e522d314c006a1cdf144a6e0b24e3ab"
+    sha256 cellar: :any_skip_relocation, ventura:       "7ddabecdc49b7b4257f5674f0448deca4e522d314c006a1cdf144a6e0b24e3ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0d29d02610f03ccc17652c66df782b807f69d000b22a89a6c6e18e8b21356863"
   end
 
   depends_on "go" => :build

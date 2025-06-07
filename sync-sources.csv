@@ -495,6 +495,7 @@ Homebrew-homebrew-core/Formula/b/beecrypt.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/b/befunge93.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/behaviortree.cpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bench.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/b/benchi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/bender.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/benerator.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/b/benthos.rb, Homebrew/homebrew-core, 1
@@ -3196,6 +3197,7 @@ Homebrew-homebrew-core/Formula/j/jvgrep.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jvm-mon.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jvmtop.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jwt-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/j/jwt-hack.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jxl-oxide.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jxrlib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/j/jython.rb, Homebrew/homebrew-core, 0
@@ -5991,6 +5993,7 @@ Homebrew-homebrew-core/Formula/s/samba.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sambamba.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/saml2aws.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sampler.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/samply.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/samtools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/samurai.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sane-backends.rb, Homebrew/homebrew-core, 0
@@ -6602,6 +6605,7 @@ Homebrew-homebrew-core/Formula/t/t1lib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/t1utils.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/ta-lib.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tabiew.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tabixpp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tabulate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tach.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tag.rb, Homebrew/homebrew-core, 1
@@ -6859,6 +6863,7 @@ Homebrew-homebrew-core/Formula/t/tomcat@9.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tomee-plume.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tomee-plus.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tomee-webprofile.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/t/toml-bombadil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/toml-test.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/toml11.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/toml2json.rb, Homebrew/homebrew-core, 1
@@ -11739,6 +11744,7 @@ Homebrew-homebrew-cask/Casks/g/get-iplayer-automator.rb, Homebrew/homebrew-cask,
 Homebrew-homebrew-cask/Casks/g/get-lyrical.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/getoutline.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/g/gfxcardstatus.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/g/gg.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/ghdl.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/ghidra.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/g/ghost-browser.rb, Homebrew/homebrew-cask, 0

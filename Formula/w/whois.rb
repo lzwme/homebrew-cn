@@ -1,19 +1,19 @@
 class Whois < Formula
   desc "Lookup tool for domain names and other internet resources"
   homepage "https:github.comrfc1036whois"
-  url "https:github.comrfc1036whoisarchiverefstagsv5.6.1.tar.gz"
-  sha256 "d219c7f130c6f1565f769b0e079d9509a6aadfe6690423b4428d027fdd43ecd1"
+  url "https:github.comrfc1036whoisarchiverefstagsv5.6.2.tar.gz"
+  sha256 "0773cf51fc9a980af3954fb3859c7673f8bb7901c5be4041a12c926609edeb89"
   license "GPL-2.0-or-later"
   head "https:github.comrfc1036whois.git", branch: "next"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "0b9980ce74dccd2db75e71fc993fca8e7349ad9ac53afe5526733a3a95a54a5c"
-    sha256 cellar: :any,                 arm64_sonoma:  "5b241adffad818826ee2d8a03c95e9cf7f818436e142fa8444d3fcb485bd57e5"
-    sha256 cellar: :any,                 arm64_ventura: "3ae63df848ede6c098bf46af84018c502efb960a356f28ce67de290ebb94908c"
-    sha256 cellar: :any,                 sonoma:        "ae44dc18f2b8a408b8b9aad625c1a95ee4df3353bed0101ba7aaf0039d783905"
-    sha256 cellar: :any,                 ventura:       "32db1168ea21c3c94774318be6dca256f8a3a207f5dde742803b20427cecae0b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "9d3dd5f7356299c04c87745672edc38f70cfdb16fbf4bc38bbdc8118f5275db3"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4b16b682d44bee04915e4fd039b7ac36361dd7dcf17c990beca96ec588f809c3"
+    sha256 cellar: :any,                 arm64_sequoia: "5c8577a0e2803e96e43e1f21b39754d031b8b6dbce1ceea190100c9ccc27a2f6"
+    sha256 cellar: :any,                 arm64_sonoma:  "c74431c6be171166545e8d0e97768f05eddfbe38d924cadcf488437604cb5645"
+    sha256 cellar: :any,                 arm64_ventura: "4eca16ae0e9a9d3cd778ccb1a0ee22e004284fbdbd7853ef8b69cb597378c1b0"
+    sha256 cellar: :any,                 sonoma:        "07180940868e2bbf29b7ec112efe6158087871935eb794485560711b21e22cc1"
+    sha256 cellar: :any,                 ventura:       "0665a16b1f2e2c006db927451a4bdaf4ef2fd486cec22a9e2b3172f3ab4be30e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "5826a1de1904fb6a257a277fb305852ad9e9997e36c6687bc61c1e3a22a2350e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1987b3c0ef46aeeb8fa7c09c2023deb9a9f33165cdff053dde38a1ffa762efb2"
   end
 
   keg_only :provided_by_macos

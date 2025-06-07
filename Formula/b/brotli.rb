@@ -8,6 +8,11 @@ class Brotli < Formula
   license "MIT"
   head "https:github.comgooglebrotli.git", branch: "master"
 
+  livecheck do
+    url :stable
+    regex(^v?(\d+(?:\.\d+)+)$i)
+  end
+
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_sequoia: "64750425b7578860d8b6a75fdb187408667f7d6523169e8dc29528bbc15309f0"

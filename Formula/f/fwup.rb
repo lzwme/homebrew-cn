@@ -1,18 +1,18 @@
 class Fwup < Formula
   desc "Configurable embedded Linux firmware update creator and runner"
   homepage "https:github.comfwup-homefwup"
-  url "https:github.comfwup-homefwupreleasesdownloadv1.12.0fwup-1.12.0.tar.gz"
-  sha256 "aed865e7067a3a54fea1d604457dbaff8b07f577737aeba6b23b240d2f9f562a"
+  url "https:github.comfwup-homefwupreleasesdownloadv1.13.0fwup-1.13.0.tar.gz"
+  sha256 "70979d36b39857b37cc378291d3bca5a9e1feec0a1b66f67a79fae46d8831529"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3a6475fae09adbbd4d267481d3766d6e241524275285e614017a969da501cc09"
-    sha256 cellar: :any,                 arm64_sonoma:  "a254ebf601c9189becda7a184f537a0aa4ac4a15b0f29434f4a7d77c03208075"
-    sha256 cellar: :any,                 arm64_ventura: "d3e2a527a61fa63fb980dbf222a0f3b77e53a1a63d1b7e7c9e040f825918af5a"
-    sha256 cellar: :any,                 sonoma:        "cb5000cb6745a5a7bd9de40cef64bf331190e500a2b9be212932e30a78c8cd45"
-    sha256 cellar: :any,                 ventura:       "50c158ddc59870d967aa7a2964b37c57483427728c5d8d73ae2fa8f1e18a9354"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec429ce368f3207b95dde1280115cc8443091782986445a60d3b972eacc6fbc8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "56e168989bccb02fee0ec1084e3518013687c07f4c839778f108d4783c6c4a61"
+    sha256 cellar: :any,                 arm64_sequoia: "31c3bf9d91a3d49bcb75ae61e27fb7cccd856f69bae861841884430c0c99f1f9"
+    sha256 cellar: :any,                 arm64_sonoma:  "6909ea5de2f883926be1af71e0f6316662f3b4aa26224e863791b9d6c137c3d5"
+    sha256 cellar: :any,                 arm64_ventura: "ae6228df886d9372709f67031b05b0e52a02243de4ece1e0eea09d10be139652"
+    sha256 cellar: :any,                 sonoma:        "968ceaceda1b320df56b862a25d4366b136151891c0025d8c5a3d2a9ebd893ba"
+    sha256 cellar: :any,                 ventura:       "d07d9b1e611b39c49f7d7280b772fd98f4654cec4b15e1ee7c6dd7cf7ef0841f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a8167e3a8701e07b6650ddf3ca485e03d7e508f054c009b714f6e551f3599c80"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "763938b79feea5b422d84bf11c6f81b2471c3bb9e91734a8bb37314f6f9dd4e9"
   end
 
   depends_on "pkgconf" => :build

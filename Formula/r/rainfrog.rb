@@ -1,19 +1,19 @@
 class Rainfrog < Formula
   desc "Database management TUI for PostgreSQLMySQLSQLite"
   homepage "https:github.comachristmascarlrainfrog"
-  url "https:github.comachristmascarlrainfrogarchiverefstagsv0.3.1.tar.gz"
-  sha256 "dc04ede15bc894d66d64a5b15db925b5f371f59f4651b6add043bbaa5cef2e50"
+  url "https:github.comachristmascarlrainfrogarchiverefstagsv0.3.2.tar.gz"
+  sha256 "e00cfc738fec12f7380c10416fc332b9701957b46c042062058c406907ce12b5"
   license "MIT"
   head "https:github.comachristmascarlrainfrog.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ee3d22045e6ee913b2b76862c4eb2b2811ba7920f127ae10f765538a75b7b99"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d6e27385d78c70ebef43a0aa9230a70117b378a6745cf2203d1e03c5b3e6fda6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "4023769ffc4fbdd25b9850f9b63a2c4d88e6aeccde5de2c304fb1622f73224c9"
-    sha256 cellar: :any_skip_relocation, sonoma:        "7e50bf071b56407d56b6e3aa868787493818ad32426f0efe93c44a3fb2581a95"
-    sha256 cellar: :any_skip_relocation, ventura:       "ecbad32538d407572729a41e8d7d8cee54ada7668a5f9bbc80bf7b577f0a64d3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4c2461c810472f754280b021c8b2be1bff3082deac57f53ee5f796fd63b79dd1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7e2b006afe3735a1ce14abd53cb110cc6c9eb25c4f7d48b573f90ca0d396ffad"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2920ef30f1197c7a50568527d83302ae5db880c64de74eae29f8fb75b83ff6e"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ed17a14f566ea783dd2335ef4ba02ec44e98ace9787983399ca328539a2cd7ed"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "2644917e6d9ffa26b325f8c1b54fdb818a0ccea7f8fd0c844dec722019a7fc8b"
+    sha256 cellar: :any_skip_relocation, sonoma:        "ba5c8787728465fc39e4f8ec1c73ae91b0afb435a51bce2f076490deaaf08552"
+    sha256 cellar: :any_skip_relocation, ventura:       "60371e8fab13832cfeb8ba9e49a8aede4c11d62d005a517ccf62d56ed094e23d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a300ba03230b9870de74ce592100eaf04d81327596e4a7b4f972b2dbebbebeb9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "50c57ce140ac2501ed43757382650dd4c4d6bcc05ecd1df808e04f84d20be36f"
   end
 
   depends_on "rust" => :build

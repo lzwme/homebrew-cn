@@ -1,8 +1,8 @@
 class Luarocks < Formula
   desc "Package manager for the Lua programming language"
   homepage "https:luarocks.org"
-  url "https:luarocks.orgreleasesluarocks-3.11.1.tar.gz"
-  sha256 "c3fb3d960dffb2b2fe9de7e3cb004dc4d0b34bb3d342578af84f84325c669102"
+  url "https:luarocks.orgreleasesluarocks-3.12.0.tar.gz"
+  sha256 "3d4c8acddf9b975e77da68cbf748d5baf483d0b6e9d703a844882db25dd61cdf"
   license "MIT"
   head "https:github.comluarocksluarocks.git", branch: "master"
 
@@ -12,8 +12,7 @@ class Luarocks < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "0cf000ae5081eff2d53ed7fe0e7becdb59151b022afe68502954f52bae71b555"
+    sha256 cellar: :any_skip_relocation, all: "78cf2c9f0b7d5235102f6bccfa9c2aa43857cff0b7a6f5d50225c45677b4cd98"
   end
 
   depends_on "luajit" => :test
@@ -37,9 +36,7 @@ class Luarocks < Formula
       cmdconfig
       cmdwhich
       corecfg
-      corepath
       deps
-      loader
     ].map { |file| share"lua"luaversion"luarocks#{file}.lua" }
     inreplace inreplace_files, "usrlocal", HOMEBREW_PREFIX
   end

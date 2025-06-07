@@ -1,19 +1,10 @@
 class Podman < Formula
   desc "Tool for managing OCI containers and pods"
   homepage "https:podman.io"
+  url "https:github.comcontainerspodmanarchiverefstagsv5.5.1.tar.gz"
+  sha256 "00d02f85ad27a46e77456fef1be81865a43147544ed2487e6c4c8decd0e3748f"
   license all_of: ["Apache-2.0", "GPL-3.0-or-later"]
   head "https:github.comcontainerspodman.git", branch: "main"
-
-  stable do
-    url "https:github.comcontainerspodmanarchiverefstagsv5.5.0.tar.gz"
-    sha256 "a4abfc72ef9a59ba80d081ea604ad2976ff967ae526e50e234edc1d2481bd9d1"
-
-    # build patch for go1.24.3, upstream pr ref, https:github.comcontainerspodmanpull26137
-    patch do
-      url "https:github.comcontainerspodmancommitdb65baaa215b68d73996ca17dd8c596901ab8bdb.patch?full_index=1"
-      sha256 "b9e8ca69b6c9d4bf99307f0afca96c4c9c6d39674628d88358e5df56b1cac839"
-    end
-  end
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created and upstream uses GitHub releases to
@@ -26,12 +17,12 @@ class Podman < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8326e41b43e41f71fa6cf9c32197bd6326249edb1abe5d56f182c5a4ae5491ea"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe77f82f04ef18c3a3ad6457340e8bbc1451467c0babc7a27ebed477ab3a7efd"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "184ef91d1d9262339e77cbf68af5230b2d4e3fa2c02919eea92ece9e69429fc2"
-    sha256 cellar: :any_skip_relocation, sonoma:        "56c83d6ce5ee4811cb81388fb1d98b561a7384a72d4fef58180d1ba5ba0101ec"
-    sha256 cellar: :any_skip_relocation, ventura:       "c03c4bda67fda6af378728aa48cfc5b54627a8462b79c6a0ec917f0f708a3702"
-    sha256                               x86_64_linux:  "41451408fa6ba525f18d8389aef3a4f174a6cddd9c1891ed3e20a065374d0db7"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "115239bfbda90cccd67139e8a5791476e5a8ffa5db8f25d4ba56d6973671cc09"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "23523719b10e300baa455be362c8a47424f970715852c1413ea229c44bc374d0"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "ebdde6e2342da97ec8d2c62f2b048bc07a16ff5cbc7d0d99d3ee43d8f2a74217"
+    sha256 cellar: :any_skip_relocation, sonoma:        "15a296188af06c17d3a940407b5ada34ec6fa2e1c68b6c8493817c433b4cb4cb"
+    sha256 cellar: :any_skip_relocation, ventura:       "7e4b1994d16195da4d169dbaa94e7a5b65d35547332c7e4adba6ada06cc762ea"
+    sha256                               x86_64_linux:  "836de35a08f680948e6454cf3463171f2ce00c9cd732806531aecb2561c4db49"
   end
 
   depends_on "go" => :build
@@ -87,8 +78,8 @@ class Podman < Formula
 
   resource "netavark" do
     on_linux do
-      url "https:github.comcontainersnetavarkarchiverefstagsv1.15.0.tar.gz"
-      sha256 "efda776e538ce33050b1f6ce58c5070efeb45653d48fe4d17a47524c8fc17cf1"
+      url "https:github.comcontainersnetavarkarchiverefstagsv1.15.2.tar.gz"
+      sha256 "84325e03aa0a2818aef9fb57b62cda8e9472584744d91ce5e5b191098f9e6d6a"
     end
   end
 

@@ -1,20 +1,20 @@
 class JavaServiceWrapper < Formula
   desc "Simplify the deployment, launch and monitoring of Java applications"
   homepage "https://wrapper.tanukisoftware.com/"
-  url "https://downloads.sourceforge.net/project/wrapper/wrapper_src/Wrapper_3.6.1_20250514/wrapper_3.6.1_src.tar.gz"
-  sha256 "c33ea05d6bff80632d0b7edbd2e63e694deafc65dfaddfd08b4605f4da22f658"
+  url "https://downloads.sourceforge.net/project/wrapper/wrapper_src/Wrapper_3.6.2_20250605/wrapper_3.6.2_src.tar.gz"
+  sha256 "9adec5e1786d1ca50c1e2ff300f01b54a1fa4fbe631fd7512e096f7db4a9cddd"
   license any_of: ["GPL-2.0-only", "GPL-3.0-only"]
 
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "216727d5e12c520318201c389543c03c5bd95b88e71b4cf913fb24892bb54105"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3dc80b5bae66308592d533ccc343410e01c8881b827151df7348e4050cb3edb6"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "13ec420a894efa500568e39a4caf2e26f14f07cdcaf4e9bd97c2196ab6a7036d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "3dbadd579880550a0844754cc268e0cd4917fadd7694534a464fa867dcd8ad8d"
-    sha256 cellar: :any_skip_relocation, ventura:       "57045f6e4b0f1a153696aa693870f811a811626b87427bae6e55b23ed60cbfd5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "41df4f16608c9f6447efd063c415391ae0dfd2eff7d906ee5adab5dd2976b58e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4cb5d428b2a9b22b01b0379e0e85e38ca3c825d3fdad2a7f73320128c04222cf"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "bbab0b6ad974b3224734d45f8f8c324c50f5818edf966477b4285a0f2e13992a"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dcdd6d00deb470d7a8542ba65fe84a4b78222aca65f0a0137cff5a7ff3dc94af"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "22e80ccd9a12fcacaec00a9359ddaf7c58bc936dd0aa0042ef25eac46fd2e1b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "05bf4b4b9aa43398feb1a0d8ff24d1c259c8158914044d1f78bf0441f1533973"
+    sha256 cellar: :any_skip_relocation, ventura:       "8ef9ed8518305d3d2d5dd6a6ad3a78f0db279256c393f8b36cf5b6642ff41c26"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6225995f4c1519f54f1987c72c9388b70a9c4e003443594c42d1e188be3dcf2c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6f282b50f8c2c2339db931a68ce8b7148f077c754ecff2934a1d05ed76c4a94"
   end
 
   depends_on "ant" => :build

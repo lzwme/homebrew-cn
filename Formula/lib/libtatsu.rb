@@ -1,19 +1,19 @@
 class Libtatsu < Formula
   desc "Library handling the communication with Apple's Tatsu Signing Server (TSS)"
   homepage "https:libimobiledevice.org"
-  url "https:github.comlibimobiledevicelibtatsureleasesdownload1.0.4libtatsu-1.0.4.tar.bz2"
-  sha256 "08094e58364858360e1743648581d9bad055ba3b06e398c660e481ebe0ae20b3"
+  url "https:github.comlibimobiledevicelibtatsureleasesdownload1.0.5libtatsu-1.0.5.tar.bz2"
+  sha256 "536fa228b14f156258e801a7f4d25a3a9dd91bb936bf6344e23171403c57e440"
   license "LGPL-2.1-or-later"
   head "https:github.comlibimobiledevicelibtatsu.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "3490caa14c81cdffce28d50ce34880ab9b95a193a26906bf035492e3c37a3b2d"
-    sha256 cellar: :any,                 arm64_sonoma:  "870c73a45691c13d672235e9a3ed53d0a9d76a7f1b9aafda775b541c1735c3d1"
-    sha256 cellar: :any,                 arm64_ventura: "4a33d3d2692d953e3bd1c0a8561011152ab9dcb5d029f0bbc33315233337fe52"
-    sha256 cellar: :any,                 sonoma:        "fafd0d67b5ccd44ee5c33fd4ba38f063029a89582a21e5a88104f00638bc620f"
-    sha256 cellar: :any,                 ventura:       "70223395b5fb5525f701e78c40b9b5b4c9f897fec98bee2dff4af63612440da4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "84fd9c2fef6f7311c1b68ab8f1c481ea0e80cfc6ceffc1bef0dd23ff38e4c5cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dd96d83e2a85b4c479893f9493d0ffb9d7f66d357216d08adb6a4a158f72a582"
+    sha256 cellar: :any,                 arm64_sequoia: "e729a89bd9fba8be9355e7c4dd4dfc89cb039f6c063ffcd1adb102d3dfec75d5"
+    sha256 cellar: :any,                 arm64_sonoma:  "efb9b3d41f8e825551a9047fd46788477ee53b3fa40f1c032bb74297be7ca21b"
+    sha256 cellar: :any,                 arm64_ventura: "6324074e98eef39e5bccff4ed8dccd26cd28279d6cfeeb907e48ef8770bdc5bc"
+    sha256 cellar: :any,                 sonoma:        "3c64e4c3dec2b31b5d9a228073f08997d2efa813fe6ec431eba870112995fa08"
+    sha256 cellar: :any,                 ventura:       "73f65e3ab29de1deaa39d6784e9003867ba43205e91cede4847239f118bd7ebb"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "be22c10c322aac3a41282d50b06cd6c8d3add347ba1f9978a3fc43da5418a753"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e616827b2db64dfa913646990030b20db78dc3cddd6e56a801eb82658ae6b07"
   end
 
   depends_on "autoconf" => :build

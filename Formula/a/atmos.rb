@@ -1,20 +1,20 @@
 class Atmos < Formula
   desc "Universal Tool for DevOps and Cloud Automation"
   homepage "https:github.comcloudposseatmos"
-  url "https:github.comcloudposseatmosarchiverefstagsv1.177.0.tar.gz"
-  sha256 "e925f9d9ee295d3faa334441a077e5f5cd28bdef2ade1c1530c321bf814bab66"
+  url "https:github.comcloudposseatmosarchiverefstagsv1.178.0.tar.gz"
+  sha256 "04eacebed9f004e791934c3b75e386cba089fd7c545de05e762849551b7f7815"
   license "Apache-2.0"
   head "https:github.comcloudposseatmos.git", branch: "main"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a436e20696c2b0a1c7978b17e95c2aff1249ed97010cd0bb42bd258dca25b3d8"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b81fa067b6ef236b1fd9238cda821e998664b409f1647a5298605f601967b1f"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a1546e84ced832b7a171b0620d52162e3cb5d858d1443028297b9bcdf01a5960"
-    sha256 cellar: :any_skip_relocation, sonoma:        "9893f072ab5c73702fe7b0175ff4a1c61a00310cdaee67e40cd7dfcfae11bb0a"
-    sha256 cellar: :any_skip_relocation, ventura:       "20a180fa1e05ac4d9a725d47f9a67a125f674e7dabdb43483eae44b91d88244c"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5caa91949d3960b6dc6d12b29da8b60b15582fc074850500916e01e2870cae93"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "f658be3b3981e3b2c76f1d266181be69d91485cba21a8edcd94e67720f85b40f"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "733b9d864c1d89517793a3d1c6acaff7b46b3fc87f92329dfd4bc1e0d402fd05"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "02237b0397c79aff78bd6fa7d80cb6e4516466dac27d5232ad949eda15cad6f1"
+    sha256 cellar: :any_skip_relocation, sonoma:        "394c0dd09cb05821fb7540b8aeb1f899e44119d520c49bb09dd1f4276d1d7053"
+    sha256 cellar: :any_skip_relocation, ventura:       "2016f0d168713178be3bc4f727a196cd8571ea11d32ac23676cf962bfab0df97"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "d35d8c35a07d82b31abfb9cafd10a7471e2b3910d6d05ff3ee49aefb06d505d6"
   end
 
   depends_on "go" => :build
