@@ -5,6 +5,8 @@ class Fprobe < Formula
   sha256 "3a1cedf5e7b0d36c648aa90914fa71a158c6743ecf74a38f4850afbac57d22a0"
   license "GPL-2.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "edcd1f7fb0c159ed2363136b500af38948c8e4a9a1cb26b4b3c6e745f2ef67c4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8bdcb6faba3511a0868787da0e4baeb9219e9862c0323722d6137473ac81d0f8"

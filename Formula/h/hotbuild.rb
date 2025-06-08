@@ -6,6 +6,8 @@ class Hotbuild < Formula
   license "MulanPSL-2.0"
   head "https:github.comwandercnhotbuild.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fbc85999d55d54744d2d91cb460717d72fc448bd5845222218bf3fcf510fd3ac"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ddd19c999dc3804ab7ce881c97e26f62c61579c59ae13aaa3b6d6cfdf8b5bb77"

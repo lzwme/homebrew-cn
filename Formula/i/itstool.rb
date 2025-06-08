@@ -11,6 +11,8 @@ class Itstool < Formula
     regex(href=.*?itstool[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 5
     sha256 cellar: :any_skip_relocation, all: "789a00622218d97cded8fbc0e82b043478c693b62f25a372769f4d0cd8eb7cb6"

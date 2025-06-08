@@ -11,6 +11,8 @@ class Ficy < Formula
     regex(%r{href=.*?releases/fIcy[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a74c5666c5779883383e3e98926f165056a5c2b1c4489c344390c8cea1700354"

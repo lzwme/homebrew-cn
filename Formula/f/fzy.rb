@@ -6,6 +6,8 @@ class Fzy < Formula
   license "MIT"
   head "https:github.comjhawthornfzy.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8cbf2b486b0abed29cf5fb45fc5580fc74881ceacae68cd11e53bdbeabae52ea"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "250fc5952135704c7a93c1066a13fbb27322358dedc115d7792da91cd56d12ed"

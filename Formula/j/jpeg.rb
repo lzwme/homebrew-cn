@@ -11,6 +11,8 @@ class Jpeg < Formula
     regex(/href=.*?jpegsrc[._-]v?(\d+[a-z]?)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "0c2e03678c6b74d190096c547c337769d6678bd41eda71d6688e465825c4b003"
     sha256 cellar: :any,                 arm64_sonoma:   "15c7bc3002bdb1f9281a9621d4d9c7722142aab09cc983e950b24d78c7a8744b"

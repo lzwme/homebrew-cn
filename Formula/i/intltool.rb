@@ -6,6 +6,8 @@ class Intltool < Formula
   license "GPL-2.0-or-later"
   revision 2
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7ebd88e28e9fdc4af031759fae5cfc6b4f93489e2aff78924d0a0b41ab4d9ea2"

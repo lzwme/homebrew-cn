@@ -1,24 +1,24 @@
 class Objfw < Formula
   desc "Portable, lightweight framework for the Objective-C language"
-  homepage "https:objfw.nil.im"
-  url "https:objfw.nil.imdownloadsobjfw-1.3.tar.gz"
-  sha256 "de9e8a84437c01dacb9e83d7de0e3f7add3152165707d51a4caec640e4f56ba6"
+  homepage "https://objfw.nil.im/"
+  url "https://objfw.nil.im/downloads/objfw-1.3.1.tar.gz"
+  sha256 "a3bdf28c2e166f97680601c29f204670a8c4c8e43d393321a7d1f64fe1d2f513"
   license "LGPL-3.0-only"
-  head "https:objfw.nil.im", using: :fossil
+  head "https://objfw.nil.im/", using: :fossil
 
   livecheck do
-    url "https:objfw.nil.imwiki?name=Releases"
-    regex(href=.*?objfw[._-]v?(\d+(?:\.\d+)+)\.ti)
+    url "https://objfw.nil.im/wiki?name=Releases"
+    regex(/href=.*?objfw[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
   bottle do
-    sha256 arm64_sequoia: "4c9acb6b2cbb4c5f60327bc0b45eaded42f416f56efcaa4b079b1841b563e486"
-    sha256 arm64_sonoma:  "e07a67967f009dad95cac824238475e5509ddabb2908c8a8318ed600b54bef8c"
-    sha256 arm64_ventura: "c2263362599830bcb994be5ec834960386f52542d8aed892837c418d6b821fb8"
-    sha256 sonoma:        "105960305b587763883ef15b78e9babb71bd74d64328e37d4c438ab4dbaedfe2"
-    sha256 ventura:       "e13c3bf6a4a1f6d389d75978d3c8ccc3236d0c599a4c24b133a024dcf48274fc"
-    sha256 arm64_linux:   "02e8e1ec91e72f84e041911ab4fadd221c5d54d78b3660dcd84d4d705a028f6d"
-    sha256 x86_64_linux:  "abc0b34c221438f218cb7b667bde87c888d05a1c6f4bafe333e2052d668305a4"
+    sha256 arm64_sequoia: "e72889618c308398315bed8f950b0204dc1d1b13f617688b7e4e68cc55fbbe28"
+    sha256 arm64_sonoma:  "b92b445ba45a570948c1f994c362a1e007a15be73cb899d4c6bff65ab69c4d77"
+    sha256 arm64_ventura: "f2269407984c284520cbaf76003e3b781c5e993754c33383b7a7ea80c0e18a62"
+    sha256 sonoma:        "c0b882afc31b310be6a67c2d53f36b812b3011a20b34a74d41fcfa2f0cb33fa9"
+    sha256 ventura:       "c9adc05a96dbf3a510afa4c7e23cd525f0f9b7ef2865f980f14c78227d8f244e"
+    sha256 arm64_linux:   "e36af4104b44e9048db2be7383b50738ee5bd08f9a9efcaecf03a47eb59c8c06"
+    sha256 x86_64_linux:  "dd48c8235b71203b0d344fe4437d3080c9b39c716ffc0a184cbb6cc43d84d80b"
   end
 
   depends_on "autoconf" => :build
@@ -33,42 +33,37 @@ class Objfw < Formula
   fails_with :gcc
 
   patch :DATA
-  patch do
-    # Fix building for macOS 13 with old SDK, as used by Homebrew.
-    url "https:github.comObjFWObjFWcommit2d297b2d3702d24662819016b57f0a67d902990d.patch?full_index=1"
-    sha256 "39ccc15f5f5123dae4c86ce6dfbb21ce08a4b4b600e6d6faa19268657e5cf3e8"
-  end
 
   def install
     ENV.clang if OS.linux?
 
-    system ".autogen.sh"
-    system ".configure", "--prefix=#{prefix}"
+    system "./autogen.sh"
+    system "./configure", "--prefix=#{prefix}"
     system "make", "install"
 
     return unless OS.mac?
 
-    inreplace bin"objfw-config", 'OBJC="clang"', 'OBJC="usrbinclang"'
+    inreplace bin/"objfw-config", 'OBJC="clang"', 'OBJC="/usr/bin/clang"'
   end
 
   test do
-    system bin"objfw-new", "--app", "Test"
-    system bin"objfw-compile", "-o", "t", "Test.m"
-    system ".t"
+    system bin/"objfw-new", "--app", "Test"
+    system bin/"objfw-compile", "-o", "t", "Test.m"
+    system "./t"
   end
 end
 
 __END__
-diff --git abuild-auxm4buildsys.m4 bbuild-auxm4buildsys.m4
+diff --git a/build-aux/m4/buildsys.m4 b/build-aux/m4/buildsys.m4
 index 3ec1cc5c..c0c31cac 100644
---- abuild-auxm4buildsys.m4
-+++ bbuild-auxm4buildsys.m4
+--- a/build-aux/m4/buildsys.m4
++++ b/build-aux/m4/buildsys.m4
 @@ -323,7 +323,7 @@ AC_DEFUN([BUILDSYS_FRAMEWORK], [
  		AS_IF([test x"$host_is_ios" = x"yes"], [
- 			FRAMEWORK_LDFLAGS_INSTALL_NAME='-Wl,-install_name,@executable_pathFrameworks$$out$${out%.framework}'
+ 			FRAMEWORK_LDFLAGS_INSTALL_NAME='-Wl,-install_name,@executable_path/Frameworks/$$out/$${out%.framework}'
  		], [
--			FRAMEWORK_LDFLAGS_INSTALL_NAME='-Wl,-install_name,@executable_path..Frameworks$$out$${out%.framework}'
-+			FRAMEWORK_LDFLAGS_INSTALL_NAME='-Wl,-install_name,${prefix}LibraryFrameworks$$out$${out%.framework}'
+-			FRAMEWORK_LDFLAGS_INSTALL_NAME='-Wl,-install_name,@executable_path/../Frameworks/$$out/$${out%.framework}'
++			FRAMEWORK_LDFLAGS_INSTALL_NAME='-Wl,-install_name,${prefix}/Library/Frameworks/$$out/$${out%.framework}'
  		])
  
  		AC_SUBST(FRAMEWORK_LDFLAGS)

@@ -6,6 +6,8 @@ class Fmdiff < Formula
   license :public_domain
   head "https:github.combrunodefrainefmscripts.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8ab942e4b04b177d43cf53476f9643e8ebe9bee8c549cf2d40eb9745c196785c"

@@ -5,6 +5,8 @@ class Hunspell < Formula
   sha256 "11ddfa39afe28c28539fe65fc4f1592d410c1e9b6dd7d8a91ca25d85e9ec65b8"
   license any_of: ["MPL-1.1", "GPL-2.0-or-later", "LGPL-2.1-or-later"]
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "98c354c4b2d30399b17d20622cddfbbbc27a2a33fbde6c53a9445375ab4d6c61"
     sha256 cellar: :any,                 arm64_sonoma:   "7c5fef61ba38c643c6e29cdb3e835875011411edf1f421a7f0329e1723c6e397"

@@ -11,6 +11,8 @@ class Imagejs < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e63b962d504ec008aa03bbbc391604e5ade5d25d0316d1b040cc053a56b2821f"

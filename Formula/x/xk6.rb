@@ -12,22 +12,23 @@ class Xk6 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "8c30883a97b9390078624953d716ac9a28381bc4750ac8439a0b4056b2b929bc"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8c30883a97b9390078624953d716ac9a28381bc4750ac8439a0b4056b2b929bc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "8c30883a97b9390078624953d716ac9a28381bc4750ac8439a0b4056b2b929bc"
-    sha256 cellar: :any_skip_relocation, sonoma:        "6f1fb3fa00507d7cf6204eee0e6bd075687526c6a7b7dd195c7b00cbb4893a47"
-    sha256 cellar: :any_skip_relocation, ventura:       "6f1fb3fa00507d7cf6204eee0e6bd075687526c6a7b7dd195c7b00cbb4893a47"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c7dc28e2fb92b4cfdc65de33fb2a5eb4d495269a75ec4bfc997054c47642ed4c"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e20d80d6dce1d8d3fe65f5f09d709c01c20a87aab6590f4cc10edbb3fea3e1d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e20d80d6dce1d8d3fe65f5f09d709c01c20a87aab6590f4cc10edbb3fea3e1d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "1e20d80d6dce1d8d3fe65f5f09d709c01c20a87aab6590f4cc10edbb3fea3e1d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "1a0a0f3825ef3f80275ec37a02f0321b57a84605c06c683e69d296c04335c02e"
+    sha256 cellar: :any_skip_relocation, ventura:       "1a0a0f3825ef3f80275ec37a02f0321b57a84605c06c683e69d296c04335c02e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "954dc78481339ce43e2da09648d31a2bf739c77f74817173ae8b43009d280b72"
   end
 
   depends_on "go"
 
   def install
-    system "go", "build", *std_go_args(ldflags: "-s -w"), ".cmdxk6"
+    system "go", "build", *std_go_args(ldflags: "-s -w -X go.k6.ioxk6internalcmd.version=#{version}")
   end
 
   test do
-    str_build = shell_output("#{bin}xk6 build")
-    assert_match "xk6 has now produced a new k6 binary", str_build
+    assert_match "xk6 version #{version}", shell_output("#{bin}xk6 version")
+    assert_match "xk6 has now produced a new k6 binary", shell_output("#{bin}xk6 build")
   end
 end

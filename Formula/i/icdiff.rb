@@ -8,6 +8,8 @@ class Icdiff < Formula
   license "PSF-2.0"
   head "https:github.comjeffkaufmanicdiff.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 3
     sha256 cellar: :any_skip_relocation, all: "6fd6d50bbd97cdad70b01dcbb90a65b87f79a359cbe235f0d23367de8778fbfc"

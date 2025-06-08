@@ -5,6 +5,8 @@ class Hey < Formula
   sha256 "944097e62dd0bd5012d3b355d9fe2e7b7afcf13cc0b2c06151e0f4c2babfc279"
   license "Apache-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "11d051b5a740c4932cdbb39fa8e3abb465b499b0dd24831b0649fc37fb9da5a2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7240c725e9276fc11ea1a59f748219c34b26ef36fa299644cc676ebd459b92ca"

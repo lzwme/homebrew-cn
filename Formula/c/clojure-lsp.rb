@@ -1,9 +1,9 @@
 class ClojureLsp < Formula
   desc "Language Server (LSP) for Clojure"
   homepage "https:github.comclojure-lspclojure-lsp"
-  url "https:github.comclojure-lspclojure-lspreleasesdownload2025.05.27-13.56.57clojure-lsp-standalone.jar"
-  version "2025.05.27-13.56.57"
-  sha256 "088972f1eb9fb88fc436089a98a7e19c57bed1db2c0ca125e0c60325fe129bf9"
+  url "https:github.comclojure-lspclojure-lspreleasesdownload2025.06.06-19.04.49clojure-lsp-standalone.jar"
+  version "2025.06.06-19.04.49"
+  sha256 "3220b0aa582f03dbbae05b3892426d6b7e20b6c6a9c9e95b5346deffd50126c9"
   license "MIT"
   version_scheme 1
   head "https:github.comclojure-lspclojure-lsp.git", branch: "master"
@@ -16,7 +16,7 @@ class ClojureLsp < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "3d619401724cbfdd92f76cd94d934055b4bc3c94878d8f34ada1bb77bef9b649"
+    sha256 cellar: :any_skip_relocation, all: "bb3cb3102608aa2d35dddb86d1bc0abfb2e6eeae3b99af10dd7878a75bc81b03"
   end
 
   depends_on "openjdk"

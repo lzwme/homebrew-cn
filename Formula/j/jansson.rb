@@ -5,6 +5,8 @@ class Jansson < Formula
   sha256 "2521cd51a9641d7a4e457f7215a4cd5bb176f690bc11715ddeec483e85d9e2b3"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "2bc5197c2d2b866df7f529962479d0af3a81524fb84235c055d6a10ad21edd88"
     sha256 cellar: :any,                 arm64_sonoma:  "613dd35360b87dc3b327f0129ab3b0d5758b056ac1413adb5bd073a2630044b8"

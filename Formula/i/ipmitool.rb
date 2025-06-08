@@ -14,6 +14,8 @@ class Ipmitool < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "edbce0fa9c0eb8554d49e69266b9a954b48675511ae98cab9f252df858c60feb"
     sha256 arm64_sonoma:  "4209c292804d02871d7ffbb5eacfe3d0a9b4c433bd7ea324d7411453e5898ed8"

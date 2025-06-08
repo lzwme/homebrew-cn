@@ -5,6 +5,8 @@ class Flake < Formula
   sha256 "8dd249888005c2949cb4564f02b6badb34b2a0f408a7ec7ab01e11ceca1b7f19"
   license "LGPL-2.1-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9d0c8523afc14e96a58b6494cf494b13527d6ba7f11c125b779999b1ad088644"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "54ce4e48992d14357903109712f7b68241c69159d9d41b89cef79c9de2226f26"

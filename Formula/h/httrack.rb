@@ -13,6 +13,8 @@ class Httrack < Formula
     regex(href=.*?httrack[._-]v?(\d+(?:\.\d+)+)\.i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia:  "49d241f3883e9342da2bc7b3344f3bb4ae0e17fb2bd4f476834dbdaf3c190c6d"

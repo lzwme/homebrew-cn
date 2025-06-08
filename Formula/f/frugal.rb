@@ -5,6 +5,8 @@ class Frugal < Formula
   sha256 "3e55ad273b96bfc802beffe51ad694ce7b305a33a50c05efb1dfcf0bb4c7715f"
   license "Apache-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eacd34e93b0fc193380d03bc05a347ddad3fee930429b65ec0a90f87ddb44467"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "eacd34e93b0fc193380d03bc05a347ddad3fee930429b65ec0a90f87ddb44467"

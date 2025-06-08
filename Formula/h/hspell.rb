@@ -10,6 +10,8 @@ class Hspell < Formula
     regex(href=.*?hspell[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia:  "c40456d586f63147c43885dbad8c72e18bafae62f93305d96e29146465f053e8"

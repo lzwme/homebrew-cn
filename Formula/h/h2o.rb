@@ -6,6 +6,8 @@ class H2o < Formula
   license "MIT"
   revision 3
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "c54b0d937a91c61b234753347dd756cb2a26dcb3b7f1aa37252b55fb9ee065ae"
     sha256 arm64_sonoma:   "02473fe011f04525a6e4fd604baa839c43988ca3fc96396774d96200e79daf87"

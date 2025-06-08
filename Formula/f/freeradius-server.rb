@@ -11,6 +11,8 @@ class FreeradiusServer < Formula
     regex(^release[._-](\d+(?:[._]\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "95cb101c2859a0765631f98c22516ec0ef7f04dca8e54a1eec172e6cb6d529c2"
     sha256 arm64_sonoma:  "85dfb2f19b835f7a1e3591fc936c03abf32fa80c2e9bede757be2654c0cd160d"

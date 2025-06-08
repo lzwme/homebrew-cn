@@ -5,6 +5,8 @@ class Heatshrink < Formula
   sha256 "7529a1c8ac501191ad470b166773364e66d9926aad632690c72c63a1dea7e9a6"
   license "ISC"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4135d8d01abb01a3864191897728bddbc0791fa9356aa2537eeab61bdef9e1ff"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ceb0d2e8dff933f32c0aae21c396d5f2ea1bbffa163fced76f09e1b8b4680df8"

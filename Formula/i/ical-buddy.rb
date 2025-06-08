@@ -7,6 +7,8 @@ class IcalBuddy < Formula
   revision 1
   head "https:github.comdkalutaicalBuddy64.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "be7bf233e7a634c48779b5567de34e3f2a5af0e3b7b85fe1036cd899d665d1e6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5f5470ef901a02406a988f04542a69a7563b7936eaa90144aa316a10fcdc1977"

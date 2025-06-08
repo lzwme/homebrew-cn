@@ -9,6 +9,8 @@ class Iconsur < Formula
   sha256 "d732df6bbcaf1418c6f46f9148002cbc1243814692c1c0e5c0cebfcff001c4a1"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 3
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ba4be0ff656530a2a787c34d2b8c9502a0bb6448dd3d76198ff9d9a295769303"

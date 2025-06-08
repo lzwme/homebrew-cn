@@ -6,6 +6,8 @@ class Fastga < Formula
   license all_of: ["BSD-3-Clause", "MIT"]
   head "https:github.comthegenemyersFASTGA.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6cf6fbdcd9c0ddbfb7392104717c9d700919b919f96569839b69488b1c18771d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e41f37ccfc620233339a799213045969c5a6688eec7ed821d8a85e7b70c340a"

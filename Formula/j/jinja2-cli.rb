@@ -8,6 +8,8 @@ class Jinja2Cli < Formula
   license "BSD-2-Clause"
   revision 3
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "69847d8dd63445895938e9a787d879a81c933764fea8b3df683ae18a3c0465e9"
     sha256 cellar: :any,                 arm64_sonoma:  "883bb7f1ecae9adf6e224cec532dac1738f95c82e3a414d2d29be0d6555eed31"

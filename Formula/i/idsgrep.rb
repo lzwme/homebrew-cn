@@ -10,6 +10,8 @@ class Idsgrep < Formula
     regex(/href=.*idsgrep[._-]v?(\d+(?:\.\d+)+)\.t*/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "9195c89da2a586ec7c5d86d4b7da682d4d358ff39581755414f6040dce4db197"
     sha256 cellar: :any,                 arm64_sonoma:  "cd0cd350e0b1880c10cdb41eb85aa6a2f72829b08bffb5ef4c507ae9b75359e4"

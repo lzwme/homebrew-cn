@@ -6,6 +6,8 @@ class Imgdiff < Formula
   license "MIT"
   head "https:github.comn7olkachevimgdiff.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "353d0253fe941d4505520098a05f9be091e7c4cdd1ce77dd192f20b4021df88d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dde33cc03e6e8eabf007303fb1fbc66c6b84675d6397df4cce9d1c7540a7ce0a"

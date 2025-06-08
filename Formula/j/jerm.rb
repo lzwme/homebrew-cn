@@ -7,6 +7,8 @@ class Jerm < Formula
   sha256 "8a63e34a2c6a95a67110a7a39db401f7af75c5c142d86d3ba300a7b19cbcf0e9"
   license "BSD-2-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "584ce1292fc18f70a010cd4bc311630e44113232c7ab10b30b24c90e2c967e32"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "96b7c79c29b63fe4f2819bb547c97c77d870aedc601d90e5e92a6b6657d89b45"

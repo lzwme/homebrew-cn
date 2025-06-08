@@ -6,6 +6,8 @@ class Fibjs < Formula
   license "GPL-3.0-only"
   head "https:github.comfibjsfibjs.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f940f6107a3dd1035e68d8be72bd46d99d90a23cf254084572c5d005323babfe"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4bf3d1703cf3e662ebf874d2cf05ccc2deb41ef2502d30344d20f80744441cb4"

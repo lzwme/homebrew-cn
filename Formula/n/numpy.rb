@@ -1,19 +1,19 @@
 class Numpy < Formula
   desc "Package for scientific computing with Python"
   homepage "https:www.numpy.org"
-  url "https:files.pythonhosted.orgpackages76217d2a95e4bba9dc13d043ee156a356c0a8f0c6309dff6b21b4d71a073b8a8numpy-2.2.6.tar.gz"
-  sha256 "e29554e2bef54a90aa5cc07da6ce955accb83f21ab5de01a62c8478897b264fd"
+  url "https:files.pythonhosted.orgpackagesf3db8e12381333aea300890829a0a36bfa738cac95475d88982d538725143fd9numpy-2.3.0.tar.gz"
+  sha256 "581f87f9e9e9db2cba2141400e160e9dd644ee248788d6f90636eeb8fd9260a6"
   license "BSD-3-Clause"
   head "https:github.comnumpynumpy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "015951ce3ac8d4580c7d65ab01da55253e7fbbe196f14da546511f1e0bf76866"
-    sha256 cellar: :any,                 arm64_sonoma:  "db8fc4fb6a7d3014c09f9385b85e60b160f18c537924f729c54e24e4f7e7d522"
-    sha256 cellar: :any,                 arm64_ventura: "e1b6497914bb0181a845af0be3d96a016a8b86e03ce0b85b8baccb8ab4d939bc"
-    sha256 cellar: :any,                 sonoma:        "886e8a12f2d386ff22b8b24397086920d30c9e2f7a24819dcabd24519ffb2e8e"
-    sha256 cellar: :any,                 ventura:       "3ab83826239866b15cd57b0207c96393f44c7850ed57212b7dafde21aa36ef0b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "4fa25795190a56d8e7cb7b1c7e7e45186f37008198722730a7eca17d3654bd74"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5c8119202fb8599cec02bb32936b2149f090c9495970d96c3b47fb1e6eb7e0d8"
+    sha256 cellar: :any,                 arm64_sequoia: "9f6f60e2be311759e7efaba77eaca8745b746b5d48d2b1472e80f053c35c8de6"
+    sha256 cellar: :any,                 arm64_sonoma:  "d0088dde5437fb81e49b2ebc04a561f738aad118737ef12e36fc1cb29715b7ac"
+    sha256 cellar: :any,                 arm64_ventura: "ee872d853a2bc5e877ba65abb53188b9eb36f59e4f3e57be560c94a0c4ad7bfc"
+    sha256 cellar: :any,                 sonoma:        "b846369ec2021b66df32f17ba7963dd445ef5d2246c551c9d1b7bf69492a08ea"
+    sha256 cellar: :any,                 ventura:       "9ab136f0b32d1630ff1378e0065a8cf67f19240dcca56d37e5ef8a40266a36ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6303dd05bb3f6bc76e779c6968e09b42ac4ed62cc9ec107b493b23eba9bd1626"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6fc94014a1a4c0479e619865109834491b776edfdae48dd5caffd19038b06217"
   end
 
   depends_on "gcc" => :build # for gfortran

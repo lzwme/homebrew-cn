@@ -16,6 +16,8 @@ class Ifuse < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_linux:  "734a650c8068975a04496c7efc513167c327b7202a112698745cea919ad75a6d"
     sha256 cellar: :any_skip_relocation, x86_64_linux: "1c1e2348ff0c16c8d70685fb9112a77739aec3317e21079527dcb2abb0f99e8e"

@@ -10,6 +10,8 @@ class FsUae < Formula
     regex(href=.*?fs-uae[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "5a73ce64da67c0d1997c5350c97d38a9549853ef97f20d824a74a6d1f9ed31c2"
     sha256 cellar: :any,                 arm64_sonoma:   "9a2fbee9c1775354923db18f96abbd547af702a295b74754efe801addb1559bc"

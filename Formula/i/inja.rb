@@ -6,6 +6,8 @@ class Inja < Formula
   license "MIT"
   head "https:github.compantorinja.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "78f7fb60abcd044a0fbd19d1723da834a8a754f4df1601de17a02b2010381666"

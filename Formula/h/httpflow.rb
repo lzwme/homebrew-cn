@@ -6,6 +6,8 @@ class Httpflow < Formula
   license "MIT"
   head "https:github.comsix-ddchttpflow.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "ac62f29bcb5a484af3755990f8ddd109dce6df7a261e281f9846a383457f815a"
     sha256 cellar: :any,                 arm64_sonoma:   "2c7c2232e112599cf10e22ac013df5cf5823f6071292fa91a5252480539c85b7"

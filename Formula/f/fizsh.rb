@@ -11,6 +11,8 @@ class Fizsh < Formula
     regex(%r{url=.*?fizsh[._-]v?(\d+(?:\.\d+)+(?:-\d+)?)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "df5876c3cbe6a7389c95edc4e72f7037012b3287ac58ad7b26f27895c85c1a6c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3cbf2b10f9ad45e0c2fa5d94a53a7718359221fe69fbbd197bf09fc68192d402"

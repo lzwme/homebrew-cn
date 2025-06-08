@@ -6,6 +6,8 @@ class Freedink < Formula
   license "GPL-3.0-or-later"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia:  "791eb877668eacf35dbc1e12754a2fc5c40f5804107367fc7f0cc2da76f0974e"

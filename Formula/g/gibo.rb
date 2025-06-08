@@ -1,20 +1,20 @@
 class Gibo < Formula
   desc "Access GitHub's .gitignore boilerplates"
   homepage "https:github.comsimonwhitakergibo"
-  url "https:github.comsimonwhitakergiboarchiverefstagsv3.0.12.tar.gz"
-  sha256 "6bc51d54587234b8d223c392ec9c88478780de4ae5851d493ab10acaacf65ed1"
+  url "https:github.comsimonwhitakergiboarchiverefstagsv3.0.14.tar.gz"
+  sha256 "ec6f3c82e57695b9fe8610b7c16d8c39a23769487a8ebf85408f661761b68c57"
   license "Unlicense"
   head "https:github.comsimonwhitakergibo.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "20e9694f273ff53268b679a0fd068ebb3c1aee284232aae079a60e1641beb5cd"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "55c7e709c07a5611634d54925fc457b7d1ef199913e2c2452c74597f005466b8"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "28820935ff881cb175dd68db249241b33b470ff5a112441f34e94f17869852a1"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "63289331b1fcee840c80627e90ab7161071332e653bda826057a1add291d19d8"
-    sha256 cellar: :any_skip_relocation, sonoma:         "9ba85c273ba563633f4c2b20ca74f2e74e8c8be82a321bd521b7831f8b986ac8"
-    sha256 cellar: :any_skip_relocation, ventura:        "b1ad375442dd98976d82054f1fdd8af6e68c3923fadde7537d9f394bd3828946"
-    sha256 cellar: :any_skip_relocation, monterey:       "4b86011e1e5292846ae6886d432830fc3be8aba954589e3ab20549acc2d5c1df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "e63a095a734201c7a6bb43e49cbd3c925514308a4876b1c1a9c25af57548c594"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "96cff6fc7f7729fd6079afe880c13d7be1c66ad72e2c1a6501f91bb599f64e49"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "96cff6fc7f7729fd6079afe880c13d7be1c66ad72e2c1a6501f91bb599f64e49"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "96cff6fc7f7729fd6079afe880c13d7be1c66ad72e2c1a6501f91bb599f64e49"
+    sha256 cellar: :any_skip_relocation, sonoma:        "042bd7b78512ac7ca840430bff26d1c1c4651d449a94e2c72c66e0b8b852a04a"
+    sha256 cellar: :any_skip_relocation, ventura:       "042bd7b78512ac7ca840430bff26d1c1c4651d449a94e2c72c66e0b8b852a04a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6c5e560511609a96a820633f3d05454cad2fedf4eb93b07d1d6a22aff0c72602"
   end
 
   depends_on "go" => :build

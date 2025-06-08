@@ -8,6 +8,8 @@ class FlowControl < Formula
   license "MIT"
   head "https:github.comneurocyteflow.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "6ed1b2aaf297e50e5782d85c71a6fd23bd8705043e79281e194d68520661e11f"
     sha256 arm64_sonoma:  "2ddcea938d0eb9f7aa4560991d7a4d2f3fe89e322d4cac67ed5b70f7e04e73f8"

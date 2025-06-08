@@ -10,6 +10,8 @@ class Hmmer < Formula
     regex(/href=.*?hmmer[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3342dd2de2909df5053dea525398b3e3902b07a1d58dab35a940bb7bf77b877b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f0b23b02bb7bf3113ad01b32f5410ad7e1aade6186e5b54f788bc4c5345ea7d4"

@@ -7,6 +7,8 @@ class Idris2 < Formula
   revision 4
   head "https:github.comidris-langIdris2.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any, arm64_sequoia: "f2e9a79eac9603493e64a21505f127cc98d64e418b5fbfd82ed02a9144b7dcb5"
     sha256 cellar: :any, arm64_sonoma:  "5b85059f83fe007bbf8de891999e16da762694cdec97ba66ad304f65c9a6e149"

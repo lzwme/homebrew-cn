@@ -10,6 +10,8 @@ class Jags < Formula
     regex(%r{url=.*?/JAGS[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "9ec17a748448aef193d0e71ca36c578a4b2b587d2a020d88331d38c07ea0f557"
     sha256 cellar: :any,                 arm64_sonoma:   "576bfc31090a7cc7bbae18111b04dd83bea17682c2262d287614727f72410e63"

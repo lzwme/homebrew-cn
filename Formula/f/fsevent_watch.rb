@@ -6,6 +6,8 @@ class FseventWatch < Formula
   license "MIT"
   head "https:github.comprogerfsevent_watch.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0a96b52b8e7a56b8ee8c83f18d8bf32c1413a79a6f22192cd11d011e8f84c392"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b52aa2f7b37774ad1250f27ea993c494de0e338a1e27be12c16773c41a9a69e7"

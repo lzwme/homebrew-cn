@@ -17,6 +17,8 @@ class Jxrlib < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "e7aae93b96e812a888ab0a4da737a40fef17bb389a7e3bcc5106ff81c33a7841"
     sha256 cellar: :any,                 arm64_sonoma:   "437e4ba50db36d58d3c043f6a3a1e34939f0e80f1318160d9d142da27f222e47"

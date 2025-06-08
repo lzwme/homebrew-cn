@@ -6,6 +6,8 @@ class Jmxtrans < Formula
   license "MIT"
   version_scheme 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, sonoma:       "f55c75730632187661589592bc60ce5846195fa7b90bea0d6f680bb0d1e3b37f"
     sha256 cellar: :any_skip_relocation, ventura:      "bfb7084ad1740683f32109d720b9b0e19b0c33ce75c67cb41b4e943f9a2c6454"

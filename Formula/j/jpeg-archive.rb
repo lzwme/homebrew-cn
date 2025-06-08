@@ -6,6 +6,8 @@ class JpegArchive < Formula
   license "MIT"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "01115c8c03cc35f2460ef29b711a0a2bb26c847d7363e352a720c2c6d71d62e6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "baf9261d5b80bc442cbf7ea1e7f4f98f8e52339009dfecad4175e8622f283382"

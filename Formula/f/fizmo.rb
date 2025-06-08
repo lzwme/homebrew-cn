@@ -11,6 +11,8 @@ class Fizmo < Formula
     regex(%r{href=.*?fizmo[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "4e3cac7e500d651ad426903ea1016ab8c1814b75c9f8bd421a089b308c8a2ce7"
     sha256 arm64_sonoma:   "40879942bfcd0d7fe5b9ffbf4ae0392d0e93b3ffc148aaa06b803388284ab23f"

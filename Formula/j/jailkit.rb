@@ -11,6 +11,8 @@ class Jailkit < Formula
     regex(/href=.*?jailkit[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 3
     sha256 arm64_sequoia: "076d8ccde7798b91dd5d4180fc2d2debb7ef02e2db89cd365c6deebf6bc6efdf"

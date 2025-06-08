@@ -4,16 +4,16 @@ class EtcdCppApiv3 < Formula
   url "https:github.cometcd-cpp-apiv3etcd-cpp-apiv3archiverefstagsv0.15.4.tar.gz"
   sha256 "4516ecfa420826088c187efd42dad249367ca94ea6cdfc24e3030c3cf47af7b4"
   license "BSD-3-Clause"
-  revision 26
+  revision 27
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "4dd23f170f12ad42d169695374f924b936cc6cc9449176a895203e6876a1c726"
-    sha256 cellar: :any,                 arm64_sonoma:  "54c0103a1dc76f246a285130f4e2ada7a9213c90cb64077a6c984f7a0cc41b0c"
-    sha256 cellar: :any,                 arm64_ventura: "462d4581862855be71d685d83af2f296f7a012b14c63074bd722230391c0114b"
-    sha256 cellar: :any,                 sonoma:        "d9725ae06d814b43ee37795c9a51918d179cbfb5661fa99a4e0167b2362e25ea"
-    sha256 cellar: :any,                 ventura:       "2bc04fca1a499846d501f4c32e3410952105abfb5bfd0f96950ef0e78d028fa3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0c24deb1cb6462b8a42a8c96eae65d4864985efab9ff56bc9b2eb614c79837f2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7dbefaed16e5429bdc6ac50a2d611a59f8354d9f1fbbe9b9f8696a8b2fd2b809"
+    sha256 cellar: :any,                 arm64_sequoia: "0a6f1046afee7890bafc8c73e0fa678aa192046d6e36cfc0a7fc24608c9809aa"
+    sha256 cellar: :any,                 arm64_sonoma:  "dbdbdebc603b6b14fba8937dc524f64e1db8642199d933bcf246ca7d23535517"
+    sha256 cellar: :any,                 arm64_ventura: "d6d216b793a16f53f094304041bd63515156155b794dceb665add080f6e37894"
+    sha256 cellar: :any,                 sonoma:        "61c45817ec6d7ae739be04e628429c46770c1e0f9e5f208ef58e0548223725e9"
+    sha256 cellar: :any,                 ventura:       "cd6d852d954f12ac0a5d0999f1a8a980152f87fa08408de7e53ba09845540145"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d5298c4b41ae3fc1bb1b3427ee80ab185c558fe0ebd71d4781bf7f1b744ba772"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7fb0c41158b23be390d0a19f100a4cc937f627a3747da7d76acb6a9446a28051"
   end
 
   depends_on "cmake" => [:build, :test]

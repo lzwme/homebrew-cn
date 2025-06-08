@@ -13,6 +13,8 @@ class IcarusVerilog < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "71feafd9b968350f08ca504f95b7d0be4e048799c47c145e2d7757ce0d179a5c"
     sha256 arm64_sonoma:   "16e03356975ad058efbf99a12cb1ed1a6c078aea5d7b5bb6a0035442afb0f335"

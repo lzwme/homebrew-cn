@@ -7,6 +7,8 @@ class Ideviceinstaller < Formula
   revision 1
   head "https:github.comlibimobiledeviceideviceinstaller.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "42ce06edd2a59ca8e25f460c6d66689c04587f4779bf4ef4f965b5c7d01b89c4"
     sha256 cellar: :any,                 arm64_sonoma:   "818061a6b3ede66696892086a119faa1df036d6d4a3242672fdb955db0d23e6c"

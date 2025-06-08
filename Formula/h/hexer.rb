@@ -10,6 +10,8 @@ class Hexer < Formula
     regex(/href=.*?hexer[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bd7a6cbea17a087bc8c9f58fbd4dcc595ea3c1f65760a6c1f7c34d9e4c2c7b1c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e5bd5b3ffa68b3200ee5cdda6afa4ed5982760598c759bebc1497404abf170b9"

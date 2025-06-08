@@ -6,6 +6,8 @@ class Jpegoptim < Formula
   license "GPL-3.0-or-later"
   head "https:github.comtjkojpegoptim.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "6f2da3ecfcd521abededbff7aa2d8578773ef9951e9ad2b859fd5cdc05470102"
     sha256 cellar: :any,                 arm64_sonoma:   "ca3a05d563b803911fcec6940ee9a26bd6e7bb21519e5841947635c856e1bc50"

@@ -11,6 +11,8 @@ class Ipbt < Formula
     regex(/href=.*?ipbt[._-]v?(\d+(?:\.\d+)*)(?:[._-][\da-z]+)?\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "92e01edfa69f113441a864b0a8f64ff02089a7f058da34d9a8a0d92c0cb9bdaa"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b9aa1ec59dbb646fa05808cd92db6f11cb16027349a2c3d29ad0bbdf56bf76f"

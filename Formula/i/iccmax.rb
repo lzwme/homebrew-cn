@@ -5,6 +5,8 @@ class Iccmax < Formula
   sha256 "e3bff2e0e7876faebe4a2097eefa2a190325bcc04c152ef470449f0c01b41fa7"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "1c199d5cf09f566e818d2049fb093faf85d4db8d5523e1434291fa2c9472410b"
     sha256 cellar: :any,                 arm64_sonoma:  "1b74500262109e0e702597ed2342f488c4517b8f44800534e33c55c88b89bdaf"

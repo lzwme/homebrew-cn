@@ -5,6 +5,8 @@ class Foma < Formula
   sha256 "cb380f43e86fc7b3d4e43186db3e7cff8f2417e18ea69cc991e466a3907d8cbd"
   license "GPL-2.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "cac3217fb92f4bdd36f498474518fef5dabd74dbaa606e5ced0cbcea2686f555"

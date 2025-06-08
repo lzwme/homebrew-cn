@@ -5,6 +5,8 @@ class Hdt < Formula
   sha256 "3abc8af7a0b19760654acf149f0ec85d4e9589a32c4331d3bfbe2fcd825173e6"
   license "LGPL-2.1-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "85d785dfa207bd588ef5e630b9a5adde0d98bac472119547d6128e0544de7bb4"
     sha256 cellar: :any,                 arm64_sonoma:   "606b24419877439b12ba1833394854122acf1342bf10fa6801b32d213e12f1aa"

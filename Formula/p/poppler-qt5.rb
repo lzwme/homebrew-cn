@@ -1,8 +1,8 @@
 class PopplerQt5 < Formula
   desc "PDF rendering library (based on the xpdf-3.0 code base)"
   homepage "https://poppler.freedesktop.org/"
-  url "https://poppler.freedesktop.org/poppler-25.05.0.tar.xz"
-  sha256 "9b1627c5b76816ac5e4052a03f5b605ba40b45cf06b02cadd0479620b499ab38"
+  url "https://poppler.freedesktop.org/poppler-25.06.0.tar.xz"
+  sha256 "8199532d38984fab46dbd0020ec9c40f20e928e33e9b4cc6043572603a821d83"
   license "GPL-2.0-only"
   head "https://gitlab.freedesktop.org/poppler/poppler.git", branch: "master"
 
@@ -11,12 +11,12 @@ class PopplerQt5 < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "11a3271980ff355366de1befa3dd81079b4fc72de0fc5f3f84e816637cc71b24"
-    sha256 arm64_sonoma:  "26f344648a7db1ec6d7e863f2ae923c08af94f5bf68908c55dcaf170f90cfb94"
-    sha256 arm64_ventura: "7960861dae7186f997321c8b4b86bc6cf862810000c272d669475b52dc60ac0d"
-    sha256 sonoma:        "c833682ef064ffa06277272577a6aaf416336d753a41aff2688da96ec20a1e2a"
-    sha256 ventura:       "871809e895d027f941d191c6ef0f3046e1f2d169ac4cef67f24521218d0693e0"
-    sha256 x86_64_linux:  "3de8d53b9aa3fef18570ff59f773831aef2283cc6551cb366f6a3eae2c1a6710"
+    sha256 arm64_sequoia: "abc46a084ffe74832cfd9ccac1f432bcb700829cee87c276f4d114c8637bf74f"
+    sha256 arm64_sonoma:  "31da5336eb89d5bcfa8e1910d767528b27de0815f8ab9ca4eb8abc58e842ced9"
+    sha256 arm64_ventura: "9bedddf7b8ea4c15b1fc8507e8d6eeb76a37d48d3fcc6904ba0df8cd634783ac"
+    sha256 sonoma:        "b9a9a99a25ee2e59457277b6525055c8659f00b5efd450c94078179ea8e48d84"
+    sha256 ventura:       "7af63cf583a66fdeff1f330556270a7a94007268909859737a4577b0156874a4"
+    sha256 x86_64_linux:  "4cec6e0411b1c33588bb94adf304f512d66e5783bc136ab9df6105a16c17d128"
   end
 
   keg_only "it conflicts with poppler"
@@ -51,6 +51,11 @@ class PopplerQt5 < Formula
   resource "font-data" do
     url "https://poppler.freedesktop.org/poppler-data-0.4.12.tar.gz"
     sha256 "c835b640a40ce357e1b83666aabd95edffa24ddddd49b8daff63adb851cdab74"
+
+    livecheck do
+      url "https://poppler.freedesktop.org/"
+      regex(/href=.*?poppler-data[._-]v?(\d+(?:\.\d+)+)\.t/i)
+    end
   end
 
   def install

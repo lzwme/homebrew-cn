@@ -6,6 +6,8 @@ class Hex < Formula
   license "MIT"
   head "https:github.comsitkevijhex.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "00163db8e16e993aea4f0695efa7742dd69be3b8c95fda5fd173116e6a95dab9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6ba2edfeca426fad9d11610304e66413568579e8799fcd75233bb78b244c734b"

@@ -5,6 +5,8 @@ class Inadyn < Formula
   sha256 "e64c4386b6f42bbace589b847f22823a755b59f14a277a5f556fef0d99069245"
   license all_of: ["GPL-2.0-or-later", "ISC", "MIT"]
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "e39b78913e57e26ef5a7f3d3acf1af40f58ac4025acc42e433eb790ea7454eb2"
     sha256 arm64_sonoma:   "fe1fce79f66da620c913fbdb957e248a86c230c11811c816abb71a0b7917f787"

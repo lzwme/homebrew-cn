@@ -6,6 +6,8 @@ class Feedgnuplot < Formula
   license any_of: ["GPL-1.0-or-later", "Artistic-1.0"]
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7f6265ef15bfe79ba7eb98b7c726fddcf19819ffa4ee0f613af37df07d396c48"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "85639667a8f91888be75bf1f0fb1074b6f23adf6d3e2a4ec3048efaceed0d53e"

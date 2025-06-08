@@ -11,6 +11,8 @@ class Jnettop < Formula
     regex(%r{url=.*?/jnettop[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_sequoia:  "9660bd7bea038b091d0e0fdee7bbc5daf4c764ef2869282e6bf8e619f4a8d3f0"

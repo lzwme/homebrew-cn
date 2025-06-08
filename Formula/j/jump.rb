@@ -6,6 +6,8 @@ class Jump < Formula
   license "MIT"
   head "https:github.comgsamokovarovjump.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ecddcb16acf0ec0cfd882ba188e731b1a82afc22aa30131f15331ccea1135ece"

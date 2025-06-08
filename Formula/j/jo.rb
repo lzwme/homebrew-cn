@@ -5,6 +5,8 @@ class Jo < Formula
   sha256 "0195cd6f2a41103c21544e99cd9517b0bce2d2dc8cde31a34867977f8a19c79f"
   license all_of: ["GPL-2.0-or-later", "MIT"]
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "92ff2f6f6fb52d6ceb30e458a3a402eb49094671947f028a2abe78dc822ffd58"

@@ -6,6 +6,8 @@ class HttpServerRs < Formula
   license "Apache-2.0"
   head "https:github.comhttp-server-rshttp-server.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fe010697a6d9851c061d2939929b4e6f9750ad2612ba486b35610175da62c604"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d6f29de99576b74d2398a7fc093bc700a3de1d7d5c1db98224c3750c1ae79226"

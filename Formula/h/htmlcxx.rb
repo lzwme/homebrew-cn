@@ -5,6 +5,8 @@ class Htmlcxx < Formula
   sha256 "5d38f938cf4df9a298a5346af27195fffabfef9f460fc2a02233cbcfa8fc75c8"
   license all_of: ["LGPL-2.0-only", "Apache-2.0"]
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "e1cb2639240425d10dcaea3639f09ae7b7795141d85b562d5df0fd79709c6edc"
     sha256 arm64_sonoma:   "a0db079df456a6240676663a280b60f12ef280c2a83f3f4a3a7c41a9e5bd719d"

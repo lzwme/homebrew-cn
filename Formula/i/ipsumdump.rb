@@ -11,6 +11,8 @@ class Ipsumdump < Formula
     regex(href=.*?ipsumdump[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "df39ad78cb2e3dbca54558205978fc4c39ffee8b17f11027f51c62dab42b9da7"
     sha256 arm64_sonoma:   "009a39b4f09dc2d72956618d85b8981ec8288b7320a4072799b670b72c863680"

@@ -11,6 +11,8 @@ class Juliaup < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "124719225451633c8388a76501cc32a5d401f06d1b21ac804d04c1daab9231b9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5dad7c0608bb8e22d61de78a207ce79f74b41790dfd9291dd702dc239e825ab1"

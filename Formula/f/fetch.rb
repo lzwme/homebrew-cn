@@ -6,6 +6,8 @@ class Fetch < Formula
   license "MIT"
   head "https:github.comgruntwork-iofetch.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e8f939d5d6749844ca829cfb0cca8512c1e454fbb01659c0d2c0e61ecf8f6e8e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0a21b760276b6a748ecb20263b36dc40911a174d471667307aca3f7f9457d440"

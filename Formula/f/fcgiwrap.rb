@@ -5,6 +5,8 @@ class Fcgiwrap < Formula
   sha256 "4c7de0db2634c38297d5fcef61ab4a3e21856dd7247d49c33d9b19542bd1c61f"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "c5bbbd4868035ccb9d9f03b894456f3d2e61a167a55f3d934f8c093d26a27e84"
     sha256 cellar: :any,                 arm64_sonoma:   "8978a76429865262b1d5acef3279849a91f46a49adfdee6555a9e0985d355c77"

@@ -8,6 +8,8 @@ class Fairymax < Formula
   license :public_domain
   head "http://hgm.nubati.net/git/fairymax.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia:  "ff66c8d9a55cb7c3567972c8c615ef9a91475322d3ede04f3c0babfcd247910e"

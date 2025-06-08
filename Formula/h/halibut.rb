@@ -11,6 +11,8 @@ class Halibut < Formula
     regex(/href=.*?halibut[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f9fc41c88b7b3b7d2cc9ae9160316ea794a4316e1ed217c3dca842324cdbff54"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e5aa2f452b8152cfe1db12e63ebab5cc3884aeb0096a8e237382ffd91b4ea3d7"

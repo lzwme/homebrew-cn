@@ -11,6 +11,8 @@ class Ii < Formula
     regex(/href=.*?ii[._-]v?(\d+(?:\.\d+)*)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ab84f7b5884e3b926510c76631987ea2eb214d73c0595af30063c7b0131fe759"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eeaebb7ec193ae9299db69b34cecf80665a50d2820a69c2ed053142af6d4de40"

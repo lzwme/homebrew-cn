@@ -6,6 +6,8 @@ class Flatcc < Formula
   license "Apache-2.0"
   head "https:github.comdvidelabsflatcc.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0b4fe2b90d0bdb57b6c3a2e1ef0a339b7ce4b37e68815505cfac6b05cbd698d9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d6297c6550a16691459f67ee05d11fc87be05a24e23e8b4a1c084e0d04c61c03"

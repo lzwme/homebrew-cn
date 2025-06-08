@@ -11,6 +11,8 @@ class John < Formula
     regex(href=.*?john[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia: "838f0767e0ffb76971a2a0c05c76edb7c0bcd457446ac25eb6b6ac003668197e"

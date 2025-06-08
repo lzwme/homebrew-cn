@@ -5,6 +5,8 @@ class Insect < Formula
   sha256 "dcb8d696e9209157f596c7c102cdc436d520629d2aed71585767af77bde2cb70"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "29f76c8e217cd55d3cda29df44ef5a8d18b795c72ffb408d2d81385ed7455bb7"

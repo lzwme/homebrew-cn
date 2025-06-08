@@ -17,6 +17,8 @@ class Icu4cAT77 < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "19f6b5fef0cdf1dfc7f136ca103348ec8530ffdf8012273f6ee4a6159cdfaf75"
     sha256 cellar: :any,                 arm64_sonoma:  "f2b3a9d78e046b3b1ca1f06227272c0ea25490bd8efa4c98a33ffdcc734452ff"

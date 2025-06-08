@@ -11,6 +11,8 @@ class Ipv6toolkit < Formula
     regex(href=.*?ipv6toolkit[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "84e046d00d2c97f7aa83e87b5f81264820bf1a2303adc3a8f32b2af23aeac8df"

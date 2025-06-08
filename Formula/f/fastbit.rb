@@ -9,6 +9,8 @@ class Fastbit < Formula
   license "BSD-3-Clause"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "1474f36207d0c52b2b6f37570476043036fc324462ea4e641fc6c42684b69f0b"
     sha256 cellar: :any,                 arm64_sonoma:   "f7225849b4ad234bdc241a601ac7815c22fef58cc76c2a5a0c2e9efca5ed3db8"

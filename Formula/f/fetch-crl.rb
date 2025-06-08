@@ -10,6 +10,8 @@ class FetchCrl < Formula
     regex(/href=.*?fetch-crl[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "52ab61a76d3a769a87f1f61f0d4c22ff747180d99afb62ad4e91a0a1d8b957af"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7677617f4cba5505e09c4ba9200801b8633cf95a56f6c242ce137ae217a5c967"

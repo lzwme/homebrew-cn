@@ -10,6 +10,8 @@ class Forge < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "2e4b5e1f940c3a2bc469fd2206eb113ba24e2add15245d202cf296bda59b269d"
     sha256 cellar: :any,                 arm64_sonoma:   "653482d31c8e2546a15569be8c3f7756382a49f2e5a66dea83b61aa6a5effad8"

@@ -5,6 +5,8 @@ class Hadolint < Formula
   sha256 "1f972f070fa068a8a18b62016c9cbd00df994006e069647038694fc6cde45545"
   license "GPL-3.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "59b74bdb8e45b7e59e477aa7f5e0a3534a656181816010f4cd2811b0ff2de1f8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d2058530a9078298705f9fa4da7a7408a649aa9cdac2fd7983ee9bed2a8099ba"

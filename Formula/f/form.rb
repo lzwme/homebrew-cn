@@ -10,6 +10,8 @@ class Form < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "891f2e2731329a342dcbda8da08939d5ef910a1bedfaab2be34da51c1f6fe72d"
     sha256 cellar: :any,                 arm64_sonoma:   "9ebf608d1d098eac5b6b0ed04117538f42719ac61db8b7bc06a40aca73d62fab"

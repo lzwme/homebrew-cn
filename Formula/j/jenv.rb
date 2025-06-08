@@ -6,6 +6,8 @@ class Jenv < Formula
   license "MIT"
   head "https:github.comjenvjenv.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "35224b1400c377abd56e99f5e6caec0b48672a935cd3eb250046cf5ab107948e"
   end

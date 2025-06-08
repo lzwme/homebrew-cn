@@ -5,6 +5,8 @@ class Hypopg < Formula
   sha256 "9afe6357fd389d8d33fad81703038ce520b09275ec00153c6c89282bcdedd6bc"
   license "PostgreSQL"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "10b284849ebe8618fcd22cf24d8c7f738a6c8eebbfc43985a507678933d7cb99"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5af96aaf0761e90723a994ecd9513d41771f9b29322d83d9ed59e5333d75a29d"

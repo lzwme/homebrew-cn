@@ -10,6 +10,8 @@ class Id3tool < Formula
     regex(/href=.*?id3tool[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c0c5fde02924517f49e33c33f18430726f0b613bb013fa73d0eb035a6d34755f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e67faa6f3ae68053ff10e5e16e3dfad49dd3f67a578114109a143c6131c44391"

@@ -5,6 +5,8 @@ class Immer < Formula
   sha256 "de8411c84830864604bb685dc8f2e3c0dbdc40b95b2f6726092f7dcc85e75209"
   license "BSL-1.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "b7829748b93385f0e75c14f6b04502c943d7ca8b3530b6d3715cfb1c00fbd401"

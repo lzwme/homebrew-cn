@@ -5,6 +5,8 @@ class Heppdt2 < Formula
   sha256 "12a1b6ffdd626603fa3b4d70f44f6e95a36f8f3b6d4fd614bac14880467a2c2e"
   license "AFL-3.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a88323276e43919598c99db83cb8ad62864a6c3fa87045791ae7b65f5c8c1aeb"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2114a3a999db405565067ff1590fec7434c1481f6ba57416d2a722baf19991e0"

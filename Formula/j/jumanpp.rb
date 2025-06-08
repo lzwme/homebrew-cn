@@ -10,6 +10,8 @@ class Jumanpp < Formula
     regex(/href=.*?jumanpp[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "6ea43f4832aa25047b071cc99cb91995b249db44017818191fd106b0c50f901d"
     sha256 arm64_sonoma:   "9fa8968d1e8332287161611d534e060d383cd5e732dc56015fe681cbe38d88fd"

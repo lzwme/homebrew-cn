@@ -5,6 +5,8 @@ class Jless < Formula
   sha256 "43527a78ba2e5e43a7ebd8d0da8b5af17a72455c5f88b4d1134f34908a594239"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6227a6ccd685510fd4a4db69ac652e12b785dfb320afab4dfdced92ca546f6a5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ce76bc45d945ae9210c3ede829ae8dbf7087faffa41f8edd18887566aca9a944"

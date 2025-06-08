@@ -5,6 +5,8 @@ class Imagesnap < Formula
   sha256 "103610515aae71fe1eea6bea15b2b48542f88042515d404fb4d0a18f44120a9a"
   license :public_domain
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d0088adcce46dada16585280738cedb609b10178e4c192ad9d9b92f92c90b45c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ae1001e52ea2fdb7dd9531be39fda237c343b0013f2b7855e9ee1656ae0466b3"

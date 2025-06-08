@@ -6,6 +6,8 @@ class FonFlashCli < Formula
   license "GPL-2.0-or-later"
   head "https:github.comericpaulbishopgargoyle.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f3f3e955e9c78f33084b9ad4a915383ff41a9decff3b638c605a407bf8d877c1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3578903bdf423bf0f5a01a50073bfe90c47aaf25b5a744156fa5d743c1db0086"

@@ -5,6 +5,8 @@ class Hexcurse < Formula
   sha256 "f6919e4a824ee354f003f0c42e4c4cef98a93aa7e3aa449caedd13f9a2db5530"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4a7086e819b1cd96888fbd2026a5367552e1eacd579dd72fa81e275c32939499"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "26ca7161cf90a9794229c2a7fdee93f2a8ffe0db514ff282e480f199d408fbfd"

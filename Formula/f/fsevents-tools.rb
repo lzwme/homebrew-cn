@@ -10,6 +10,8 @@ class FseventsTools < Formula
     regex(href=.*?fsevents-tools[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "69d137adc9cbcce94aa7160b76705454f3f04fc0598f2146264887fc0a278c2e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "665d116f18811af91513b9cd670e8504cc765bebc6e114fbf815930bd48386f7"

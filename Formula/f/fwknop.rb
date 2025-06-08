@@ -12,6 +12,8 @@ class Fwknop < Formula
     regex(href=.*?fwknop[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "dd24ee01f0b52367ccb00111e7e3b28586cbe9b355b9461ac38175fcdaaa0b31"
     sha256 arm64_sonoma:   "3729d1321c0430837a4dfd26d0f504a4ef05d9798e37f12bf56149c0a88badc7"

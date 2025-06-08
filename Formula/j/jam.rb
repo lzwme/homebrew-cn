@@ -5,6 +5,8 @@ class Jam < Formula
   sha256 "72ea48500ad3d61877f7212aa3d673eab2db28d77b874c5a0b9f88decf41cb73"
   license "Jam"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2ecb702317e3639199260d2431cb4df895ba1e72ca13fbd18d74526926f67c5a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "750191fa0660e62dee16dca7e7105fa4cbc783fa3b5dd87bddb727bddcbaa5a3"

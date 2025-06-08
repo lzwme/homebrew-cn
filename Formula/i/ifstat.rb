@@ -10,6 +10,8 @@ class Ifstat < Formula
     regex(/href=["']?ifstat[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7929e573cc9e8172c16c8a9d4a5c3ff51fb02ba824a70c4e749cea56e9d33ed2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "077e591c44a830e200e6587ea68eefdc06be3fd5ab6eafe867743b3f24a4d498"

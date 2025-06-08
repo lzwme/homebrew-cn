@@ -6,6 +6,8 @@ class Html2text < Formula
   license "GPL-2.0-or-later"
   head "https:github.comgrobianhtml2text.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0586df2ecd8a66280ec53b0ae852f22867471b66a60fbd4cb8054a1a2c98b536"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "03b77ee2ee4c1a68b990f2d386ddf70ff2f072da841441f2d4ae0aecf3e95f26"

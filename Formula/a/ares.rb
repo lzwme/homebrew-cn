@@ -1,8 +1,8 @@
 class Ares < Formula
   desc "Automated decoding of encrypted text"
   homepage "https:github.combee-sanAres"
-  url "https:github.combee-sanAresarchiverefstagsv0.10.0.tar.gz"
-  sha256 "d951302b572ed0786c366762b430d0d37479be8649b16122548ece1ea0a28900"
+  url "https:github.combee-sanAresarchiverefstags0.11.0.tar.gz"
+  sha256 "fd8751de6c46eb523d62d4ca52018b9127b9fa5fbd4a372b7f22e0f9957f030f"
   license "MIT"
 
   livecheck do
@@ -13,18 +13,13 @@ class Ares < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6b698cc90e5f474391cb7a574b84ba9a3c9d4e70f4de900676375856a58408a6"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3d2827a8036416c4adba83c9a6fd43eeddf76f6bd7902107ab728cf3369d3d90"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "97a85bf81a02c6a8264a4ea153adc2190d2da0d88920a6f789e38605ffd3cee4"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "c2bcc31382c5987f72cc62f942178fd2048d7d4acc71e94b36e15f9e77fc2e8d"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "9bc8074875bad6f69b3a3caa03a53c42639905b9d755b58d3c9d81519c5c1b49"
-    sha256 cellar: :any_skip_relocation, sonoma:         "64ff6858a4170c60665df77f5d3b7ef643a4c91f7e870da9cbfb3599cb196514"
-    sha256 cellar: :any_skip_relocation, ventura:        "2ef2937082a01200c25fc1d61f1fdc91029bd443dbc8ee44f0b1b843f8c3adee"
-    sha256 cellar: :any_skip_relocation, monterey:       "38bdef4ea6190bb5107cc2f42924b9b5aafcfbf0a7d8b1af0f68088076c58c66"
-    sha256 cellar: :any_skip_relocation, big_sur:        "148415168b096df8c5c39e14f6f68727331a3793073a122992e020568d5d87a3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "d44d38b5f09547f5ef9891e76a883ed8a9dc1ab1a55b688a7ce34993c4550fac"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "8d8628ee2e4ccb9ff40faedc01fff88f8ab4e7154d3a8573ba4d8b7dc7bb106e"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "3f1ebc203591b997591cf3f7fef4fb145eaf1c7bdda7c1b92a4a5f7c73afc3a1"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "69ed6c01fd307449f1f5f1d76f1de7dc4f804d1c57ba7bc106c9dbead3685ee8"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5acf01bcc2e7bb451ffaf5b99fc499663de093222b057b0f4d8f21b7239c7e6e"
+    sha256 cellar: :any_skip_relocation, sonoma:        "453b5cf8f4f29d7a0a5702569f9f149451bd5e19c313886a0e5024369cab3879"
+    sha256 cellar: :any_skip_relocation, ventura:       "038f0c1740c55673f92e9eda04f45e2d1af79ec0c75a19d0495d0286c0fc1821"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "18bca98bf45a77d9f7358342a4196720b37d59ea4f77f26c9c8a36abe3a70c8c"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9bdeab88f015b3d9e745c63a71c680c2a53b17f9a81146ddfc1d67233d332ed5"
   end
 
   depends_on "rust" => :build
@@ -34,8 +29,11 @@ class Ares < Formula
   end
 
   test do
-    input_string = "U0dWc2JHOGdabkp2YlNCSWIyMWxZbkpsZHc9PQ=="
+    # base64 encoded string for "Hello from Homebrew"
+    input_string = "SGVsbG8gZnJvbSBIb21lYnJldw=="
     expected_text = "Hello from Homebrew"
-    assert_includes shell_output("#{bin}ares -d -t #{input_string}"), expected_text
+    # Disable custom color scheme
+    output = pipe_output("#{bin}ares -d -t #{input_string}", "N", 0)
+    assert_match expected_text, output
   end
 end

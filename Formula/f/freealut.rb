@@ -10,6 +10,8 @@ class Freealut < Formula
     regex(href=.*?freealut[._-]v?(\d+(?:\.\d+)+)\.orig\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "74fb9b51f64c8f9683e853836bf34c519fe2dc3d58d97a44b0db070bf7b737cf"
     sha256 cellar: :any,                 arm64_sonoma:   "0e38d6b21c45fe87a07e97bbdee177a22de254c35873f5d3b6cd17c896221af5"

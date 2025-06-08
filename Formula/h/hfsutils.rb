@@ -6,6 +6,8 @@ class Hfsutils < Formula
   sha256 "bc9d22d6d252b920ec9cdf18e00b7655a6189b3f34f42e58d5bb152957289840"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2a486e1123355f24eb17dd33821edbfa4c9f7f505ffa9009f8380a0000b4f45f"

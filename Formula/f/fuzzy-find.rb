@@ -17,6 +17,8 @@ class FuzzyFind < Formula
     regex(^v?(\d+(?:\.\d+)+)i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9232687527d2937f2d743e0774e9073675887b2cac09cedddbf053a67db9e4b5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "187ec442ac4e7b4fa865dc8065ce6fc2a9d2e8e79c55fd3c3006b5e294b65619"

@@ -5,6 +5,8 @@ class Hexd < Formula
   sha256 "de0db7205c8eb0f170263aca27f5d48963855345bc79ba4842edd21a938d0326"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "05ec65d79e0eae2ee7291cbb5fc523358b97e0f93a5b5cab039d02b27aa39230"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6258b4701ae5d49c39ee122ad9988d9647141a3c62ae49923dacc5086617c1f5"

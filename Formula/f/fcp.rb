@@ -10,6 +10,8 @@ class Fcp < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6e7d88353ca2875a9db0c92e402a0b6e3872dc6d09ffa332524238d50b1535f2"

@@ -20,6 +20,8 @@ class Id3lib < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "2043f772a3513c2eeaf0c6c18894930ececbfc0a8480f7223995ed81abf00401"
     sha256 cellar: :any,                 arm64_sonoma:   "b881a2bd2bd818806f8b793da5064f7ecc09d2a675ea6a23ab688d5b3b9d2ef9"

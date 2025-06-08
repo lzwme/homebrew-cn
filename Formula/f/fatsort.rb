@@ -11,6 +11,8 @@ class Fatsort < Formula
     regex(%r{url=.*?/fatsort[._-]v?(\d+(?:\.\d+)+)\.\d+\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "47f7e484d7283c661836b9cc8418b84c31865c546828f593cca451b4683271dc"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "19232a80ff846e801ac176cbc07b67be6ae337b4b411159f98f3f1510659f982"

@@ -8,6 +8,8 @@ class Hyfetch < Formula
   license "MIT"
   head "https:github.comhykilpikonnahyfetch.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5032952a2e1ded6fc2a2982b8ea254233f5886c54a34717b0affd2890d40765e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5032952a2e1ded6fc2a2982b8ea254233f5886c54a34717b0affd2890d40765e"

@@ -5,6 +5,8 @@ class Fann < Formula
   sha256 "3d6ee056dab91f3b34a3f233de6a15331737848a4cbdb4e0552123d95eed4485"
   license "LGPL-2.1-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "1a57d8d2501d63d56451fb00bc9fed3e5596b0afd995638b1c290e6a7aa663f5"
     sha256 cellar: :any,                 arm64_sonoma:   "b89f592bc6efa6bc3098f6881b6e6af8adf0ca7a1dc3e6eb4677ba86f9ac44dc"

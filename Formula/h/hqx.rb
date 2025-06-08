@@ -6,6 +6,8 @@ class Hqx < Formula
       revision: "124c9399fa136fb0f743417ca27dfa2ca2860c2d"
   license "LGPL-2.1-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_sequoia:  "d0546464bc8981a17a079d2e9264ae9bbca9cbd7db380b0c2d8c76addf18f4e5"

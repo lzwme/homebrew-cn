@@ -3,18 +3,18 @@ class Mcpm < Formula
 
   desc "Open source, community-driven MCP server and client manager"
   homepage "https://mcpm.sh/"
-  url "https://files.pythonhosted.org/packages/16/e0/18cc963f433fdc934de57efb49b97ee6a3bf0905cfcd6f30367c33fa6fc2/mcpm-1.13.3.tar.gz"
-  sha256 "39b93f84704535e794df1879e0a32a822091094dbf325df6b585394aaa48ceed"
+  url "https://files.pythonhosted.org/packages/b2/49/de0bc54f708907d70e563e46b9028793b9fccfbd546932a17c0b38ab82e9/mcpm-1.13.4.tar.gz"
+  sha256 "fa03bcf76e18e0663b1ebe04c9a1dc364847be0760fe9996aeba25745a9a51af"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6e02007e534ebd5f083d7761668da8c1933cc9be22ccf7d638fb14b8a9ba264d"
-    sha256 cellar: :any,                 arm64_sonoma:  "33139660a7a84376674ec5459fcd94159f0946dcea9755c7aec943447dbba8d4"
-    sha256 cellar: :any,                 arm64_ventura: "755b7450fcd6ac60ca91b1705ac19527c937e92a0d109c37b9b05338af70ae14"
-    sha256 cellar: :any,                 sonoma:        "e73a98c593d19e3da262083164807a207dbbef443be1fb725c67d20084d9451c"
-    sha256 cellar: :any,                 ventura:       "bc2cd4f32da055322ecefe4bbf13db0c46fd8b7db07058bbf199db0b12eb44b5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "12ebb1c844752c8f7cbbbfa3f259e1f7d462d6c8411e9951680845c5ec5e7bd4"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0cfdc89e1a9e30c8f0afdf46c2af6c0e0b76e752b796c81ee31f19b14cf93db1"
+    sha256 cellar: :any,                 arm64_sequoia: "f738a305227e3bd618b680760ad46f5e3a9956efe61a10d78a8c983f19c3fb80"
+    sha256 cellar: :any,                 arm64_sonoma:  "de976e5b300fa99d356b9a75313765caf68cc908f031e18813f46f2f11cd5f52"
+    sha256 cellar: :any,                 arm64_ventura: "b557464072925f0ed1b4b4fcb59de5be3361f261024fa56764ddb511f6efc07c"
+    sha256 cellar: :any,                 sonoma:        "1b08c3ecb9e66d6631a05ca52c494a6f80b059eb4ab1c89152409710eb99a92c"
+    sha256 cellar: :any,                 ventura:       "98ac4608a1df5d66db5fa837e0e6db682a9b8f5a46d6d4726e047d805d44e1ec"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ad9ee3fc3b4587af40b86e9eaa9e8f5c830b924647295375036b95027c3e84ac"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3e521921cfef03c54fc7c9245fd130913b00855879eb0fab9df7589f93dac8ed"
   end
 
   depends_on "rust" => :build
@@ -86,8 +86,8 @@ class Mcpm < Formula
   end
 
   resource "mcp" do
-    url "https://files.pythonhosted.org/packages/ea/03/77c49cce3ace96e6787af624611b627b2828f0dca0f8df6f330a10eea51e/mcp-1.9.2.tar.gz"
-    sha256 "3c7651c053d635fd235990a12e84509fe32780cd359a5bbef352e20d4d963c05"
+    url "https://files.pythonhosted.org/packages/f2/df/8fefc0c6c7a5c66914763e3ff3893f9a03435628f6625d5e3b0dc45d73db/mcp-1.9.3.tar.gz"
+    sha256 "587ba38448e81885e5d1b84055cfcc0ca56d35cd0c58f50941cab01109405388"
   end
 
   resource "mdurl" do
@@ -146,8 +146,8 @@ class Mcpm < Formula
   end
 
   resource "ruamel-yaml" do
-    url "https://files.pythonhosted.org/packages/56/2f/5a4dd48a259cb72d6f972abb728d3b219b50980fe3b7c548e0be7c5f56aa/ruamel.yaml-0.18.12.tar.gz"
-    sha256 "5a38fd5ce39d223bebb9e3a6779e86b9427a03fb0bf9f270060f8b149cffe5e2"
+    url "https://files.pythonhosted.org/packages/aa/f9/0e3b3a678d087f8067249ecc9f2434428a93442004be86faed201ac7aeee/ruamel.yaml-0.18.13.tar.gz"
+    sha256 "b0d5ac0a2b0b4e39d87aed00ddff26e795de6750b064da364a8d009b97ce5f26"
   end
 
   resource "ruamel-yaml-clib" do

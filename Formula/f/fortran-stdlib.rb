@@ -5,6 +5,8 @@ class FortranStdlib < Formula
   sha256 "07615b1fd0d9c78f04ec5a26234d091cb7e359933ba2caee311dcd6f58d87af0"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "349996236701c1fdb6a5fdec58dc627f3550929fb8ec80509b8f8d380fbf19de"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f37094c09728b25724680dcfee1aa5e2fa9da72e55787fe601156af2c397601f"

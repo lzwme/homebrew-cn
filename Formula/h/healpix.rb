@@ -7,6 +7,8 @@ class Healpix < Formula
   license "GPL-2.0-or-later"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "00a065c336cdb31ca6f06b99b478f0b287b63a4f1ded2042c3c73520e1fa683b"
     sha256 cellar: :any,                 arm64_sonoma:  "e1fee5370b52292ae8ac97fff082aa5556b77668a786ee8da2145131ea74095f"

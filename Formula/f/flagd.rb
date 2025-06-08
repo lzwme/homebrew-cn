@@ -17,6 +17,8 @@ class Flagd < Formula
     regex(%r{^flagdv?(\d+(?:[.-]\d+)+)$}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6e83b2115cb9670309511f6e1313d54fff6a18b8906ea51157c75b70af7afc3a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14f1b213c31b4f38b63c45603b0eb697cb370149a5e6f5290d0504869d24ae46"

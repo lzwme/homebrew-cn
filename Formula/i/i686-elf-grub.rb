@@ -6,6 +6,8 @@ class I686ElfGrub < Formula
   sha256 "f3c97391f7c4eaa677a78e090c7e97e6dc47b16f655f04683ebd37bef7fe0faa"
   license "GPL-3.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "16923a4a52103eb6468129a574eb7b3c85d771adb37773d8e2a6850225805931"
     sha256 arm64_sonoma:  "ceb84b9c359fbb659e7b355065513d605bd013fde1a642c4c9838d08499e5959"

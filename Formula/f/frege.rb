@@ -19,6 +19,8 @@ class Frege < Formula
 
         match[1]
       end
+
+      no_autobump! because: :requires_manual_review
     end
   end
 

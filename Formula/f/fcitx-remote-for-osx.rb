@@ -5,6 +5,8 @@ class FcitxRemoteForOsx < Formula
   sha256 "453c99a0c2e227c29e2db640c592b657342a9294a3386d1810fd4c9237deeaae"
   license "GPL-3.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ba0909f82f992a9c0cf6e883da59d3b9ceeb33a6a3e0e01a6ee4e885953b923e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "08938e1cc1bcafa79ae3fe4adcf00b6e12bc8144a70aa796d3b974471a7d9bb1"

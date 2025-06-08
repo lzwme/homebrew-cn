@@ -11,6 +11,8 @@ class FairyStockfish < Formula
     regex(^fairy_sf[._-]v?(\d+(?:\.\d+)*)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "36c6b1790bc144c874f7a1f737814c391380c47439b304c5c8e0ef368e773bc6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cbf99586202d3f28f7bfdf09830f620631030ae85276caf38d2b0d3246b22f9c"

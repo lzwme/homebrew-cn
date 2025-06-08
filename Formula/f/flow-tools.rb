@@ -5,6 +5,8 @@ class FlowTools < Formula
   sha256 "80bbd3791b59198f0d20184761d96ba500386b0a71ea613c214a50aa017a1f67"
   license "BSD-2-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia:  "f99aa518b7c94faa3be0ea9d263a7de70ef5778f65c5f620cee6b6e03f42b2d5"

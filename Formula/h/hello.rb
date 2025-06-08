@@ -5,6 +5,8 @@ class Hello < Formula
   sha256 "5a9a996dc292cc24dcf411cee87e92f6aae5b8d13bd9c6819b4c7a9dce0818ab"
   license "GPL-3.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e81841d7339d3d83c7fbc3ba2f0ba20d9719b2b6e4db7acd47b5ed3c1ca9448c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "80309bb8f4140c2d596adaa5de91672aa95456cc659d6682d3e53821f5270879"

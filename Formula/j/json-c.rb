@@ -12,6 +12,8 @@ class JsonC < Formula
     regex(^json-c[._-](\d+(?:\.\d+)+)(?:[._-]\d{6,8})?$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "c5514d30b5249b6d2a92e4dff45f56e2b081aa8811d13a20c84a3b911f6604d7"
     sha256 cellar: :any,                 arm64_sonoma:  "16b53cbbfaa2361f7e68f112f8ce706bc3d59738f377a26a1341c7122956e9b3"

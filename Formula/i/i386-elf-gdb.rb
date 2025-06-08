@@ -11,6 +11,8 @@ class I386ElfGdb < Formula
     formula "gdb"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "af939496c6245db5f2f812e196fb9e4b3623f15a2db5035716f392d6633ffe8c"
     sha256 arm64_sonoma:  "951dac8073ae7de6fb7d74db8b7694a4bc323e02013f1ac541b1f03f45e8d319"

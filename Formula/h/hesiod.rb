@@ -6,6 +6,8 @@ class Hesiod < Formula
   license "BSD-2-Clause"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "b35e4acc79d9b6003e2358d0c508b8c0e8abd37b5668136f5b52ebdbec389bbc"

@@ -6,6 +6,8 @@ class Forego < Formula
   license "Apache-2.0"
   head "https:github.comddollarforego.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ef67ea741e0294b822fc3dfb3cfd124e9621b2c8f24ab6e8c023f95782cd81eb"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f46dbdf37d045a718a27858ca874d1eb69b67bbd04e5778f549e4f632dd4f01a"

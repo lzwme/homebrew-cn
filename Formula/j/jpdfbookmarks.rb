@@ -5,6 +5,8 @@ class Jpdfbookmarks < Formula
   sha256 "8ab51c20414591632e48ad3817e6c97e9c029db8aaeff23d74c219718cfe19f9"
   license "GPL-3.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "60bddeddc1d35f34e2bcd8a56d86d52153532cbb26ffaadc4c286f72cae60a82"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1d99055fa011a56f11a4fdcdcca268d9a1e7dbb524d0f474142ce2de853c3b21"

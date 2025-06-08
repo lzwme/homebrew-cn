@@ -10,6 +10,8 @@ class Joe < Formula
     regex(%r{url=.*?/joe[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia:  "f38fa4459c7448db87ddfa85c7baeb98202c4e8b64b189607606f1fce906bef5"

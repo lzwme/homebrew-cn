@@ -11,6 +11,8 @@ class Itpp < Formula
     regex(%r{url=.*?/itpp[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "58f42ea3453634e3160598380eedb74e3917eec37fe55c5e57b09db4f4ca2314"

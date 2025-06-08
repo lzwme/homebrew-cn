@@ -6,6 +6,8 @@ class Freeling < Formula
   license "AGPL-3.0-only"
   revision 10
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "4e30428a201c092dd95925dbf2cbcf0462c161fc9605de3208a6947435ca8f96"
     sha256 cellar: :any,                 arm64_sonoma:  "1daaaad0626d64ab84527ee4c3010e7d0182c0bb9105927b2a5ff67d450c508f"

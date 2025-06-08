@@ -15,6 +15,8 @@ class Intercept < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7b2ca377ce1685e85a012867dbddc3a499ff32c063c29b361f653a7a4f073aa4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7b2ca377ce1685e85a012867dbddc3a499ff32c063c29b361f653a7a4f073aa4"

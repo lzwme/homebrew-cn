@@ -13,6 +13,8 @@ class Hevea < Formula
     regex(/href=.*?hevea[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "bdfe564bb63675879e20d1f8d2958a658b10a062010af2cb2634ba08987ae135"
     sha256 arm64_sonoma:   "37c9173e633f015bdac3ded26af7827373fbfc24816bb4224e788c288f6b502c"

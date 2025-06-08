@@ -5,6 +5,8 @@ class FishLsp < Formula
   sha256 "c28799ee8b7e3a17b7892aa3f9d80ebe638313b9bce772ac364faee3ced5d43a"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "fd0aa44217f04dce7a0016c07e1f232552092de2958a862b3dbba59ff98e5d4e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "31e2b3079d69b9d7f960399e6ff205aafdaacae5c0d9e39bb8ada0a17a4b2763"

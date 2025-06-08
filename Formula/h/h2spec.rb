@@ -7,6 +7,8 @@ class H2spec < Formula
   license "MIT"
   head "https:github.comsummerwindh2spec.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c838540f260b348701c7911092e08e52b6e6395ffb442ddd65e47ab7d4b606ff"

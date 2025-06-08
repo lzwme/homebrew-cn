@@ -10,6 +10,8 @@ class Funcoeszz < Formula
     regex(/href=.*?funcoeszz[._-]v?(\d+(?:\.\d+)+)\.sh/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "b9d4a7633bfd39f84797948a471e9d231cdc7539e472dc982cc33c2f4b6d3e88"

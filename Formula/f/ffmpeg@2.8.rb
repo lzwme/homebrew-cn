@@ -13,6 +13,8 @@ class FfmpegAT28 < Formula
     regex(/href=.*?ffmpeg[._-]v?(2\.8(?:\.\d+)*)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "6e22fbdd846396385c6c0ff1a2f38ab320c175d45ab384e4bc0509df7f07a053"
     sha256 arm64_sonoma:  "f20d6994de950893888d0aa9f890c6ab8e180ecdf2c5ccd77cb9f6eb046eb908"

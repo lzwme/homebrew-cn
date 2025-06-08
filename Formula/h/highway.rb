@@ -6,6 +6,8 @@ class Highway < Formula
   license "Apache-2.0"
   head "https:github.comgooglehighway.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "8a3327629482279fdff46b5bf3324cb6379a975b271d1ecc4a901a3cdb7e7f5a"
     sha256 cellar: :any,                 arm64_sonoma:   "406c96cf28555eb84e1c67788db50223a6af2fd488ce91e831068e60981d128a"

@@ -7,6 +7,8 @@ class Flintrock < Formula
   sha256 "dde4032630ad44c374c2a9b12f0d97db87fa5117995f1c7dd0f70b631f47a035"
   license "Apache-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 4
     sha256 cellar: :any,                 arm64_sequoia: "a1211bc4ea1c062dfa95b3c14f6da61dcab02b1d6216e6687ef58b6680379089"

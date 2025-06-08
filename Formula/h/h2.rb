@@ -6,6 +6,8 @@ class H2 < Formula
   sha256 "aa95a3433b6f434cac43b072b52756fa46c611239b7a0de3a8038501b8dae2af"
   license "MPL-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "5fd92e04e213f01b78acb580651cf0ef22ccc29ea925e903eed2ddf4f907254b"
   end

@@ -6,6 +6,8 @@ class Jp < Formula
   license "MIT"
   head "https:github.comsgrebenjp.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "01da1efbfd32691e7a34fa8e13108bfd327d52cc9b76a349a900df7f3a6411c6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7f3a46aca24fd10a6f170d25b5f59ec1247a393f0aa71fa2e6d7d0994f4e3631"

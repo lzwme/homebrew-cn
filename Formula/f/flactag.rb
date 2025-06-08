@@ -6,6 +6,8 @@ class Flactag < Formula
   license "GPL-3.0-or-later"
   revision 4
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "8701c9513901987485c41ce6778104199cac3fabcdfcc1fc2c82717ededa93e8"
     sha256 cellar: :any,                 arm64_sonoma:  "e65ce7a13bb6a8e11483996b87de1e8240dcdddf394762c4b9b4c42e411e6649"

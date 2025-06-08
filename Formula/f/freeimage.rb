@@ -7,6 +7,8 @@ class Freeimage < Formula
   license "FreeImage"
   head "https:svn.code.sf.netpfreeimagesvnFreeImagetrunk"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 3
     sha256 cellar: :any,                 arm64_sequoia:  "0c56e5950270ba19800a0b51d0fb516689c82921c2651c30c9fc17934bfb2fdc"

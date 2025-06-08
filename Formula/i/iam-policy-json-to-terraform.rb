@@ -6,6 +6,8 @@ class IamPolicyJsonToTerraform < Formula
   license "Apache-2.0"
   head "https:github.comfloselliam-policy-json-to-terraform.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "016bb0b29e4f5c61e1c7e0e0c99ba74757327a146ddf9906df1d628694e31ae2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "016bb0b29e4f5c61e1c7e0e0c99ba74757327a146ddf9906df1d628694e31ae2"

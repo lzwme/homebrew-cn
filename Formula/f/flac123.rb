@@ -6,6 +6,8 @@ class Flac123 < Formula
   license "GPL-2.0-or-later"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "f1d6d3f1269accb9be1c482d9cfa9179a29423fe0dcc9ab8823132e4de9d861f"
     sha256 cellar: :any,                 arm64_sonoma:  "5f3eec5bb05991c31ad6d90767ba8a83ca4892bd0a07b14db323d4886c4a2d0c"

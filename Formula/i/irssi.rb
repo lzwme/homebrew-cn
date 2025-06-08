@@ -11,6 +11,8 @@ class Irssi < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "9f640f1d64cf5331669a1f872ef3f797d4c4360015bba172c9b2ce4c48412453"
     sha256 arm64_sonoma:  "ca992d7b5d2a8af9a75712670cacccf4910fa7c706e39169037a1c957ca314f1"

@@ -15,6 +15,8 @@ class IkeScan < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia:  "ab952b41aca2d112e8238ac293c43b90382a49fa9afca8f1726a5f1b138dd1aa"

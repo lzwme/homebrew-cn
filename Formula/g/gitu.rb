@@ -1,19 +1,19 @@
 class Gitu < Formula
   desc "TUI Git client inspired by Magit"
   homepage "https:github.comaltsemgitu"
-  url "https:github.comaltsemgituarchiverefstagsv0.32.0.tar.gz"
-  sha256 "02197becacec15ff1b862ea7e1ddc283145b72fc8a212e98b87d02e6c0637c9b"
+  url "https:github.comaltsemgituarchiverefstagsv0.33.0.tar.gz"
+  sha256 "43dea7dae5f9aef9d3edb2f4e6ddd16d21664a6739b2856d53471846a97ded7d"
   license "MIT"
   head "https:github.comaltsemgitu.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "ecdf813c5a4e7e27fde5d8e1727189448e6e8a2eb4b7c356daa533ed01f592d9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fb52e7e2b11192ce52998002336b9da842e24088bcac2a08ed3f2ceb2cf9f622"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "675ef978ba7ac5d2a4b0ecc5640dbbcb15e4ac11b4717b5bc76c722a9c90a806"
-    sha256 cellar: :any_skip_relocation, sonoma:        "56ba0fe2560acb4ffbb00535a0d9ea4141e7cdffad552c1e07e4ed07e250b0e1"
-    sha256 cellar: :any_skip_relocation, ventura:       "158535e46718d4b18645a9b910b86fbaf1538f05e225a3612247f63d5bea9c8a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "747a56dbca0c06dc81b23c388302d2e14ba6d183df3a6e15f3810dc785329f92"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b569eff1a9dd50d466e2a55ff7d36565e2fbe19888041a05c4f0b811a27a690b"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "94369b51fac1600013f78476f5fd6b2aa5d40be4b905ac6abab89a1421460da7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b8b95ca1908b0544140450730a711ac6009cac6752788425411d8ea70bcc6f4a"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "325a3a1a68ad8a5cdf1271a9f686df372586e47e1fbfb90e78abe04baf7583dc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d6cf65fbcf1a6aad660e62286349db1052925d38419e39119a117170cf7a97e4"
+    sha256 cellar: :any_skip_relocation, ventura:       "3c711f90d369934713ff9b37f745daf5d432ee44dcd49883edeb02a9dcfbc8a2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "2cd4ee400d3f456150223a61f8c5477157a137e3d8dbda9433d5ca8159d24918"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82074bc671b846a610d3e4245c698f31a99c21fdbe37eb6175e67a20b68e6bf9"
   end
 
   depends_on "rust" => :build

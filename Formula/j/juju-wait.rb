@@ -8,6 +8,8 @@ class JujuWait < Formula
   license "GPL-3.0-only"
   revision 3
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 6
     sha256 cellar: :any,                 arm64_sequoia: "7d8a37c0c1be688c222abe9d980a5368887f18f7436de14e82f526fe4e023d66"

@@ -10,6 +10,8 @@ class Hdf5Mpi < Formula
     formula "hdf5"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "3d151c2f7f4e990d4c87d09cfd1159a00eeced94110946b04d78e8afc643532d"
     sha256 cellar: :any,                 arm64_sonoma:  "328ef1d38510de4d0b6acdd2aa8ba2bf96ee37c7006ee56b7cf33107386a4eb3"

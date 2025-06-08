@@ -11,6 +11,8 @@ class Figlet < Formula
     regex(/href=.*?figlet[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "a157e5806797a85551f7773614157047dfa09fb38e76d6502cb93c79a207851c"
     sha256 arm64_sonoma:   "2af79123d12d6b8c4fc9a21fb3b7eae8405b2887bb06f14253e4a50166ac1220"

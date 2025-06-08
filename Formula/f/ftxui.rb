@@ -6,6 +6,8 @@ class Ftxui < Formula
   license "MIT"
   head "https:github.comArthurSonzogniFTXUI.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "5b3e3442ed075b99e3604bea2a515ebb1cbbd9d806386e040d925d38a54692f8"
     sha256 cellar: :any,                 arm64_sonoma:  "04064b1363f454f0f9cbbbeb16d98d8d5fef2daf3e0bef0c5e168a73e8b54b89"

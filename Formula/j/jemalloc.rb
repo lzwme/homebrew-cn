@@ -5,6 +5,8 @@ class Jemalloc < Formula
   sha256 "2db82d1e7119df3e71b7640219b6dfe84789bc0537983c3b7ac4f7189aecfeaa"
   license "BSD-2-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "e5e0394bcc4feeb5db140387352090773761aebe3ff8ae42faf4990b2360fec6"
     sha256 cellar: :any,                 arm64_sonoma:   "f70f02aa2f1b858ed5e5cef84a271efeaaa27e79f266844997aab95daa66a7fa"

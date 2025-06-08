@@ -6,6 +6,8 @@ class JupyterR < Formula
   license "MIT"
   revision 3
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "9e60d5223a4c0794c025996a7c56b33ffbed5618aa930246c32cf13726b98cb8"
     sha256 cellar: :any,                 arm64_sonoma:   "f5e53d2e1c07fada5048527bf93c183650f8f4b5ec3bb088d2f27136d06ce3c3"

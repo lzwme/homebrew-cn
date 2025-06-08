@@ -11,6 +11,8 @@ class Ispell < Formula
     regex(/href=.*?ispell[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "fc52b0f23b84dbe44eba8d0ef80ae93927f90591678155d6579af7e04819abb0"
     sha256 arm64_sonoma:   "f59130f4372ea62fbc0e9eb4278f334c2c0560bda769da34124eaa09be982308"

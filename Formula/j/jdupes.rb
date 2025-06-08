@@ -10,6 +10,8 @@ class Jdupes < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "be36bdaad3510fc56343d42b0fc7038d9341c4ae9e0ce27cc51f6a793abf5b3a"
     sha256 cellar: :any,                 arm64_sonoma:   "994e52bf99877c30b8e1dff40cb68b15107837c98f81f0dc4bae9ac4b7996270"

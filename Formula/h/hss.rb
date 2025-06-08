@@ -5,6 +5,8 @@ class Hss < Formula
   sha256 "d7846ee657fe6a600c7d6f8e91f17ffa238efcaeb6f79856caa9fdedd96e3bca"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "c616d7afe8f651f286bb4ae77580bcf33427f770c3d9769f8968bc94ba54d7ef"
     sha256 cellar: :any,                 arm64_sonoma:   "2aff0aef887b145023e4a61c093bf041696c8e4d34f38a0cba28cef8ecbd76af"

@@ -6,6 +6,8 @@ class Hashpump < Formula
   license "MIT"
   revision 7
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_ventura:  "ee4e8e386dbf585e9672aabb460e44e0a3ba40486d71443200912c1e39e95ad5"
     sha256 cellar: :any,                 arm64_monterey: "63cf0b6889738999549fbaec92d5a6659c7e67243e6c1d8c6de327a625aec770"

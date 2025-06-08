@@ -5,6 +5,8 @@ class FlipLink < Formula
   sha256 "9389806ffda4ed5aa47f39fc71ac2a19be59cc28aab93bfb32bb514ed7165f75"
   license any_of: ["Apache-2.0", "MIT"]
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6f7946a65b6cc5748c00e69297f119478baf555d89d4d9ca36f7952e8763b463"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "79535fccaccc327856b6a65d873732f073267f69b00d60f4fb564c8c30abf645"

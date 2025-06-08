@@ -9,6 +9,8 @@ class HttpPrompt < Formula
   revision 11
   head "https:github.comhttpiehttp-prompt.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "fd295f3f14ca5b3d24e898df9a74df05c1af6a0de036ff3fdf980bedbef23b97"
     sha256 cellar: :any,                 arm64_sonoma:  "89411f03cdec958f4a7a236e46e3b3053a478d5b5cbeddc9c10984ff14fa534f"

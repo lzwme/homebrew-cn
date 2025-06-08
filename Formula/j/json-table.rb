@@ -6,6 +6,8 @@ class JsonTable < Formula
   license "EPL-1.0"
   head "https:github.commichajson-table.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2a0e4783bbce7faa941caf2506f8b7d00503c2fd904f4902add6f3e1f29882f6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4a11c671903d3c7095c3c9f650e1162afd2f6ccc189c8109162886182d8fd68f"

@@ -26,6 +26,8 @@ class Intercal < Formula
     regex(/^v?(0(?:\.\d+)+)$/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 sonoma:       "bdbcb6b6741a84e30ab923c62dc0dbced0348ba9c35b95f9441bdc4bb821130a"
     sha256 ventura:      "996598c6c8145f0a45dac7109aa3cb39b5854396b58c3b7ab75c784844160877"

@@ -5,6 +5,8 @@ class Iat < Formula
   sha256 "fb72c42f4be18107ec1bff8448bd6fac2a3926a574d4950a4d5120f0012d62ca"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f6bc109730274136edd66490ce1029a7e48d083a418924684adbd72154a1ea84"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b9bf951c493709c86c80ded9cfda13a70c2fb7c6736ed66403bd493cd4267c5e"

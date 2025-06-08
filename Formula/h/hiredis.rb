@@ -6,6 +6,8 @@ class Hiredis < Formula
   license "BSD-3-Clause"
   head "https:github.comredishiredis.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "d3bb6a7fd40584c74321d404d0c459f11e3d612c329a5f95367c372cb21bbdca"
     sha256 cellar: :any,                 arm64_sonoma:  "68e9423a13a8c5dc27884296ec0ee6ab25930aaa85d3b6e5e8726855fd864211"

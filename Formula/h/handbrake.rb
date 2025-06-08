@@ -6,6 +6,8 @@ class Handbrake < Formula
   license "GPL-2.0-only"
   head "https:github.comHandBrakeHandBrake.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e522355fdd80a18975dff369e4f84f114db24bdd998c9aabf0412e37870d3c14"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "2bf626472451af5250d1ad1bda30d045fd8524c8ead478ba10c6617137513ea4"

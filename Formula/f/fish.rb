@@ -10,6 +10,8 @@ class Fish < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   pour_bottle? only_if: :default_prefix
 
   bottle do

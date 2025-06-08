@@ -5,6 +5,8 @@ class Flamebearer < Formula
   sha256 "e787b71204f546f79360fd103197bc7b68fb07dbe2de3a3632a3923428e2f5f1"
   license "ISC"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1b939fd19118035fcde87874cde3e22dc9c39140e23d6234c1c18c23967edca0"

@@ -9,6 +9,8 @@ class Iocextract < Formula
   revision 6
   head "https:github.comInQuestiocextract.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "77906e2e0c46fc8af0b0e771f466e8cf8e5e9aa8f1a73262fda532e2916626be"

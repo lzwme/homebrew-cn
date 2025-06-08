@@ -8,6 +8,8 @@ class Instalooter < Formula
   license "GPL-3.0-or-later"
   revision 11
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "94426ba0b3b5a40609a0f9473fe0b0382cb4dfe97acccdd637563ec3e993134f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "94426ba0b3b5a40609a0f9473fe0b0382cb4dfe97acccdd637563ec3e993134f"

@@ -7,6 +7,8 @@ class Heksa < Formula
   license "Apache-2.0"
   head "https:github.comraspiheksa.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ba04dda9e2366f4af82dc315932e46e298779ffd0a4a1e5bbf37f531b2c9b102"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b2e5970a9ac9da77a4e75733b5afe87fdba4704007b938e35855714c204ab9d8"

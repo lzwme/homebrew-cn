@@ -1,8 +1,8 @@
 class MongoCDriver < Formula
   desc "C driver for MongoDB"
   homepage "https:github.commongodbmongo-c-driver"
-  url "https:github.commongodbmongo-c-driverarchiverefstags1.30.2.tar.gz"
-  sha256 "e3b2d7c18f27b868b99c0ab2e9c811852fa4d86fe2d1d55a53f42d51859dd99d"
+  url "https:github.commongodbmongo-c-driverarchiverefstags2.0.1.tar.gz"
+  sha256 "3fb98aa71e292f0aabcbcf6b9bd624affafa9375ee4ab53baeababeccc194dbd"
   license "Apache-2.0"
   head "https:github.commongodbmongo-c-driver.git", branch: "master"
 
@@ -12,13 +12,13 @@ class MongoCDriver < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "27fb9714cd35894ea2ff3ba8a8f15404e7e8891828017af6de24bd42b07e2800"
-    sha256 cellar: :any,                 arm64_sonoma:  "32e547870031851b3593b3ae1b47448cd0f16716104565ec0a47e61396ef4e39"
-    sha256 cellar: :any,                 arm64_ventura: "3e3797c1b3afb92ac3735f24fefd37538bc62e4c2d271582d371203afee4adad"
-    sha256 cellar: :any,                 sonoma:        "3ffda9abb00eaf6679997f0f3f9a132e94d31ceae9795538ae717ba4cf6572f8"
-    sha256 cellar: :any,                 ventura:       "48296c8aa08d70a3ea1c68b0696a8ee41d6cf4e6cbe96699a22f2e5860768327"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "0bc0b2d8fe455186465e54c541572da488e67a4c86715e540fe0443646067e66"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "28e1ebf7816f3553b3a0bd82b2a078177f1ddef47020adea67144781a459e0b2"
+    sha256 cellar: :any,                 arm64_sequoia: "d8bffecbb658f187a2ac9cd3ce737152bc76062d6b21332f1b7a62d3f32d8e58"
+    sha256 cellar: :any,                 arm64_sonoma:  "a9b2d601078acae424010d9bbfddb2660ece1f16116e2c47ae6661ae8435e7b5"
+    sha256 cellar: :any,                 arm64_ventura: "a7772b3e618cd809db685a7bd21ca1a3804d03dc844ce2a7e2d20b6ab79faaef"
+    sha256 cellar: :any,                 sonoma:        "06f5ed099c2498486f7b3e1ed82cca47878bc942a2effd8d9c8c3bf8b581dc1a"
+    sha256 cellar: :any,                 ventura:       "f72c8393f703727a99acf996f0da2d9cdfcd01d866b5560010799d2d10e08798"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "35a0f6db14c9aef2e06a65c67b723bb4445f26f6987513c8b1b7edd1a413ca4b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "14a9347cff9130e447973bcdbf13d63f21c21ef5b27e179addf92b44107b4ffc"
   end
 
   depends_on "cmake" => :build
@@ -42,13 +42,13 @@ class MongoCDriver < Formula
 
   test do
     system ENV.cc, "-o", "test", pkgshare"libbsonexamplesjson-to-bson.c",
-      "-I#{include}libbson-1.0", "-L#{lib}", "-lbson-1.0"
+      "-I#{include}bson-#{version.major_minor_patch}", "-L#{lib}", "-lbson2"
     (testpath"test.json").write('{"name": "test"}')
     assert_match "\u0000test\u0000", shell_output(".test test.json")
 
     system ENV.cc, "-o", "test", pkgshare"libmongocexamplesmongoc-ping.c",
-      "-I#{include}libmongoc-1.0", "-I#{include}libbson-1.0",
-      "-L#{lib}", "-lmongoc-1.0", "-lbson-1.0"
+      "-I#{include}mongoc-#{version.major_minor_patch}", "-I#{include}bson-#{version.major_minor_patch}",
+      "-L#{lib}", "-lmongoc2", "-lbson2"
     assert_match "No suitable servers", shell_output(".test mongodb:0.0.0.0 2>&1", 3)
   end
 end

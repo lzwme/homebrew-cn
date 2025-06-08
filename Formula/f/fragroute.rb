@@ -12,6 +12,8 @@ class Fragroute < Formula
     regex(href=.*?fragroute[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any, arm64_sequoia:  "23765e32fc33a439c133cea31e2e6c700d24bd1fe6f421cb973dab6db91dc69b"

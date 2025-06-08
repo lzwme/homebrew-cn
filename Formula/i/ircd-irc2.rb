@@ -14,6 +14,8 @@ class IrcdIrc2 < Formula
     :cannot_represent, # ircd/{res_comp.c,res_init.c,res_mkquery.c,resolv_def.h}
   ]
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 arm64_sequoia:  "11a1e704e3078514219037593b14351817074e38045f95a056d048ced644fed1"

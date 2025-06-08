@@ -10,6 +10,8 @@ class I686ElfBinutils < Formula
     formula "binutils"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "b0a006a8cb8b4b032c38c07349f0287d0cfb719ca75845cccb13415908b4938c"
     sha256 arm64_sonoma:  "9afba9508ee359df64f8f4aa6b8281a9b10955e3931466018f055191b3fdc955"

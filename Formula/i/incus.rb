@@ -11,6 +11,8 @@ class Incus < Formula
     regex(href=.*?incus[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "3bdc48bce95df6d104b47f9ba711aa1c081f766ef4406cd3c08885a1cf1a4a37"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3bdc48bce95df6d104b47f9ba711aa1c081f766ef4406cd3c08885a1cf1a4a37"

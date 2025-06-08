@@ -6,6 +6,7 @@ class SyslogNg < Formula
   url "https:github.comsyslog-ngsyslog-ngreleasesdownloadsyslog-ng-4.8.3syslog-ng-4.8.3.tar.gz"
   sha256 "f82732a8e639373037d2b69c0e6d5d6594290f0350350f7a146af4cd8ab9e2c7"
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
+  revision 2
   head "https:github.comsyslog-ngsyslog-ng.git", branch: "master"
 
   livecheck do
@@ -14,13 +15,13 @@ class SyslogNg < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "d4928f166e61b8e99acde9033b17fd21ba1a186efdd66b9b438e835f34841147"
-    sha256 arm64_sonoma:  "3895718155b1fe46f7d633743a92fcd905964f15511122f6aa2116a22395c4d8"
-    sha256 arm64_ventura: "d76a08e02019b4f2fdcee8354ba3f71b76ee86c845435f0d1229c7ce505bfb5a"
-    sha256 sonoma:        "7919187646e85fdd98bdfc35f31758aa691aa14a496866144298a611f3bedb02"
-    sha256 ventura:       "48329beb4bb819a945ec944a98e30f55b92a8fc998cfdfd41d2207fd3f0f5986"
-    sha256 arm64_linux:   "7cce32122d34f262711e915d5e9c7b2cf05cf05e43038fc168aafa69ac8825f9"
-    sha256 x86_64_linux:  "9f1c1f8fe88a3187fe4fc0ea32c95648f7e4452d9b03809ef584759c71ff55a3"
+    sha256 arm64_sequoia: "a0dd2aa906edf808365589337925346294631afaa3a72884a67af81e6bc9b9e1"
+    sha256 arm64_sonoma:  "8f3d14f563daf5c81f9126b50d78c3e97009c160b66c81c8683ea393ecfde715"
+    sha256 arm64_ventura: "503dc684479b26464528269d3537f4de4537caf0dc5820709ace2994dcd25e4d"
+    sha256 sonoma:        "05c5019780e23ed7cb7aba1a16f5066c379c446c55a97023b6cecf8ed403aa54"
+    sha256 ventura:       "b165340eb625f85e1a7e7093b7f3633d078b36ea97bb7c78ea6b7309888f1467"
+    sha256 arm64_linux:   "c0c8e1bbc13b0c1372bb6fb04d89c3bcd360550765db5efb3ea1dc08836e9ad6"
+    sha256 x86_64_linux:  "7910edc406a5d90d96e962932d651ab6cb4f876d6dd5416abee812f3e1a8c40f"
   end
 
   depends_on "pkgconf" => :build
@@ -36,7 +37,7 @@ class SyslogNg < Formula
   depends_on "libnet"
   depends_on "libpaho-mqtt"
   depends_on "librdkafka"
-  depends_on "mongo-c-driver"
+  depends_on "mongo-c-driver@1"
   depends_on "net-snmp"
   depends_on "openssl@3"
   depends_on "pcre2"

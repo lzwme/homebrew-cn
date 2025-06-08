@@ -11,6 +11,8 @@ class JvmMon < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "61c0f2de3ba96b85b364c0c6df8a11dfca3a61790a19b105f5579ffba96f8fb5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "569d3b771bab87123faac0038aa194a79788b5f5b8a5e1b73974baf70daf30c0"

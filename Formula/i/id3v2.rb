@@ -5,6 +5,8 @@ class Id3v2 < Formula
   sha256 "8105fad3189dbb0e4cb381862b4fa18744233c3bbe6def6f81ff64f5101722bf"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "6d78452187f861e1e8ecf3a23a2e873e251ccda22403a855c86dff5aa6e5bb30"
     sha256 cellar: :any,                 arm64_sonoma:   "9bf6ca393764873ff61916821417e4bfbbe1564682ca2004fcbeef1525c211b7"

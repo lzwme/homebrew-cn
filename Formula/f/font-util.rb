@@ -5,6 +5,8 @@ class FontUtil < Formula
   sha256 "5c9f64123c194b150fee89049991687386e6ff36ef2af7b80ba53efaf368cc95"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "debcf269b82d6b7503808ae95aed9f0a39df46ec3a323b272c545c57148f4254"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c330ddeddd9f3f0a53c3845c1b3d3bcf1524370135df06eea99a914659185fcd"

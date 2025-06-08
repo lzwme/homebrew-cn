@@ -5,6 +5,8 @@ class Finatra < Formula
   sha256 "aa4fab5ccdc012da9edf4650addf54b6ba64eb7e6a5e88d8c76e68e4d89216de"
   license "Apache-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "adbf00cd007ff84e48376228209f6ad7f73d34dea489cfe762267ab42d0252d1"

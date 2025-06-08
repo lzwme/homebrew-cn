@@ -5,6 +5,8 @@ class Jsonlint < Formula
   sha256 "a7f763575d3e3ecc9b2a24b18ccbad2b4b38154c073ac63ebc9517c4cb2de06f"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 3
     sha256 cellar: :any_skip_relocation, all: "97762cc27f840903d10f585400d3a9019ff18813ce89ffc25cf4d13390479a13"

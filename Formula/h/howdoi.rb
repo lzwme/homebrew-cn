@@ -8,6 +8,8 @@ class Howdoi < Formula
   license "MIT"
   revision 9
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_sequoia: "2674270159eb079ad93bb4c4abe680f4dd089976fe59109dd2156c9111fa600b"

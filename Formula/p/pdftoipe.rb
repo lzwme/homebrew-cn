@@ -4,16 +4,16 @@ class Pdftoipe < Formula
   url "https:github.comotfriedipe-toolsarchiverefstagsv7.2.29.1.tar.gz"
   sha256 "604ef6e83ad8648fa09c41a788549db28193bb3638033d69cac2b0b3f33bd69b"
   license "GPL-2.0-or-later"
-  revision 6
+  revision 7
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9e93f97375ae15498043bc1cfe9733bd2939f2a000817f4c497a055407e13349"
-    sha256 cellar: :any,                 arm64_sonoma:  "dcd657a43dbc49efb2f2de2bf4a78c6ed1e93576365e97947e2f78e006851e0c"
-    sha256 cellar: :any,                 arm64_ventura: "ce7e36a7df776d6955d39cae2ac448785c1f0e791a623448bc6b4e3faf6198d0"
-    sha256 cellar: :any,                 sonoma:        "7668361aa148108d8d71cee8242525543fdd6228a3ea4bb94e3d216a84f919ff"
-    sha256 cellar: :any,                 ventura:       "a1d8e7abc1851aff252b5ee0925843a8cd3f32587730a5da3145d970c1905bb3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "24d9edff97cc36b7050ed98a75baeba2184f941710ca7257b10d7cad82b48fb0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "13364e0ade978267567a9687c4a783c7761b6cb9b8bab6f2c77b147d91414711"
+    sha256 cellar: :any,                 arm64_sequoia: "b53031b21a4c2a85bd24e6e76bf9fc9529958e593dbc57578bbda62a6eb75863"
+    sha256 cellar: :any,                 arm64_sonoma:  "a3295144f553dfd41a1dc58a6b2aec4a778f7138ba60459b0af9d235a7221fd9"
+    sha256 cellar: :any,                 arm64_ventura: "db41e30d1dff63006459645e14a06561ab3fc9493e824d1aaa023b8e1f652579"
+    sha256 cellar: :any,                 sonoma:        "a1ac877d2ee711ad58ba675474e53298ac061cb9e275ab965b6918308da2056b"
+    sha256 cellar: :any,                 ventura:       "6fcdf3f28ae5be12ad574882615d1df18a9cab1b39c90b09288a9dd020f33114"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "0770869a663d308800971e1cf925b6a978d2e7e4d02afb396c2dfb03b4563402"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48aaaf36d80d986ca7bd6055e2e85c60a05727f97117fb50c830085bd60449d4"
   end
 
   depends_on "pkgconf" => :build

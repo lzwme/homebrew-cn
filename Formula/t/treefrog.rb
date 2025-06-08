@@ -4,6 +4,7 @@ class Treefrog < Formula
   url "https:github.comtreefrogframeworktreefrog-frameworkarchiverefstagsv2.11.0.tar.gz"
   sha256 "67cbd3d2ee9810007feb97694c6eb1f7ddf9040210e69ca3adc7995c96f63df9"
   license "BSD-3-Clause"
+  revision 1
   head "https:github.comtreefrogframeworktreefrog-framework.git", branch: "master"
 
   livecheck do
@@ -12,17 +13,17 @@ class Treefrog < Formula
   end
 
   bottle do
-    sha256 arm64_sonoma:  "e42ddfe0fa827d1f960ad9ebf94515bdd1e6515c84fa3a466e309118870da58d"
-    sha256 arm64_ventura: "46ea6cafe756b381432a53c52cad8bd19f4066ad6ebb5af04ff6371cc0f7cfdf"
-    sha256 sonoma:        "dd238ea3df08da065ff476dbe01bd9620dedc69da885c4554b7eda53b6a63ab1"
-    sha256 ventura:       "4f29217b878dc7e40a20db0704a4273798dc429f72c86595baa882bd39eca03a"
-    sha256 x86_64_linux:  "5d9f3deacba06b0fee54e42f69653d224caad91c4feb04100982237401f8f5fe"
+    sha256 arm64_sonoma:  "75f00345bd6ef254cc732ee27d3cca4cb2c2b4d3ec1a0f0c9c5c25b5a8139d96"
+    sha256 arm64_ventura: "65fafc887042f7679a72d01001c9853215e9cbe733e36d14b2d33e8e7fa6081e"
+    sha256 sonoma:        "fa26e8cbf7cfea256f3ccdd566f118c052c29a4156541d631fdb007fce827ea1"
+    sha256 ventura:       "2c38ae3a6318816e71031118ba8ce44543b3a6328a7e4cef14ff3dd5a4d38dcb"
+    sha256 x86_64_linux:  "e442623cd0ab40cf43d2ac0da448f47fbb2d8cd0373b5e75405e794cff7dc1f8"
   end
 
   depends_on "pkgconf" => :build
   depends_on "glog"
   depends_on "lz4"
-  depends_on "mongo-c-driver"
+  depends_on "mongo-c-driver@1"
   depends_on "qt"
 
   def install

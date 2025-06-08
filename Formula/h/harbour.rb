@@ -20,6 +20,8 @@ class Harbour < Formula
     regex(%r{url=.*?harbour[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "c391f2098164917feb69d3e4820c3c7495dbb84689c5fe2b5dcf5f0d5940d82c"

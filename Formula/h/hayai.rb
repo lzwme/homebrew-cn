@@ -5,6 +5,8 @@ class Hayai < Formula
   sha256 "e30e69b107361c132c831a2c8b2040ea51225bb9ed50675b51099435b8cd6594"
   license "Apache-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "550f637f1d8b57e9b2127a31da69c37b88928c44d67805b6126eb1b5c4119acc"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "761e7c56fb8d74f8803deda44ba43cf8e483937a173f74fce264fb12a345a285"

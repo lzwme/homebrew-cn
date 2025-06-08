@@ -22,6 +22,8 @@ class Httperf < Formula
     skip "No version information available to check"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "777ac05c7372517913a1dc06a7cfa1499480ed89708baf56d57749bfaf9b3375"

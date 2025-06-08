@@ -15,6 +15,8 @@ class Iftop < Formula
     regex(/href=.*?iftop[._-]v?(\d+(?:\.\d+)+(?:pre\d+)?)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6a3d6d2dbbb5f10a3cc0043846d9742314b1795d77f08dae5a2ce8abfe9696f3"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f516ed09bb4c7f8b6fb01626b6a822a382c88d5a26329798f3139f7998192f6e"

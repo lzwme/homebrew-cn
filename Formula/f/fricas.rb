@@ -6,6 +6,8 @@ class Fricas < Formula
   license "BSD-3-Clause"
   head "https:github.comfricasfricas.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "7fbe73c52677676edec374061a9889381f7b8dd79d231cd5db743e8b47b83be4"
     sha256 cellar: :any,                 arm64_sonoma:  "f80b27d9b594c6161a4b882f13cdb0c62f883d42760bb62d8563791d3ce3660b"

@@ -12,6 +12,8 @@ class Heimdal < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia:  "fb6f2aaa1bd42cc3a1f66b2734eb142b5d7720d7ee3f4fc4988cdbcacb94b572"

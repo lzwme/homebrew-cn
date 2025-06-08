@@ -14,6 +14,8 @@ class Irrlicht < Formula
     regex(%r{url=.*?irrlicht[._-]v?(\d+(?:\.\d+)+)\.(?:t|zip)}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "045c5bc182a699319caede3eda01d1e51487e2bb176ed6609af6f045a3674068"
     sha256 cellar: :any,                 arm64_sonoma:   "52d4ef47d187ba97e3d75832e69650fe4c042019e379b9937c27f6e4864e4927"

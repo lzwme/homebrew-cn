@@ -5,6 +5,8 @@ class Fex < Formula
   sha256 "03043c8eac74f43173068a2e693b6f73d5b45f453a063e6da11f34455d0e374e"
   license "Apache-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d0777ac160fda3d6860d6a7077e98e05e0a7a80f75c4c15e39c58699bd9c22ff"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0265e802a5e8b6d206890f636723f6ba34c0da506b1de7b47f84208d8d93f278"

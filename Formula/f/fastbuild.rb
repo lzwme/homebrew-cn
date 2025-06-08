@@ -5,6 +5,8 @@ class Fastbuild < Formula
   sha256 "c08d9233d575d6dbbc42363caa64e16cd9709e22f58b492dc1b65620fbdfc297"
   license "Zlib"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, sonoma:       "61c25b4f9dbf1cdd1956a23a46ead3d306fa029825312ed88dee6a6849e5d5b0"
     sha256 cellar: :any_skip_relocation, ventura:      "f2ed6f7c462b3a7d23fe9e5e7c63c049fc343b56df292c0e91f69e5587146930"

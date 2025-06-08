@@ -3,19 +3,19 @@ class BumpMyVersion < Formula
 
   desc "Version bump your Python project"
   homepage "https:callowayproject.github.iobump-my-version"
-  url "https:files.pythonhosted.orgpackages640eaead863992499caece72c0cd81ed0b25c2c8bc328f9794038afcc235d95dbump_my_version-1.1.4.tar.gz"
-  sha256 "5e6928a24a73bae11aa28184936d0f2a8071bb2f033f36d310ff194f7f8d6be8"
+  url "https:files.pythonhosted.orgpackagesa4b6c45043a404e0878e3abeff1c25c87df78777c33760e7459901e0504f003abump_my_version-1.2.0.tar.gz"
+  sha256 "5120d798aaf26468a37ca0f127992dc036688b8e5e106adc8870b13c2a2df22d"
   license "MIT"
   head "https:github.comcallowayprojectbump-my-version.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "f10cb46de70e7ce75b399326c4fa92d101f6656da0ea35bfddbb9b6c56eea3d9"
-    sha256 cellar: :any,                 arm64_sonoma:  "a39b0ccc187eb026f6064f3d811a1fdde859360e8dd6f03ce09c1269c83d70d9"
-    sha256 cellar: :any,                 arm64_ventura: "b6451998d04591316c6e39a4af1b469a0ac14383783208e548d0cc595657ffde"
-    sha256 cellar: :any,                 sonoma:        "200bb5100c3f811dcfacaace5102e59d11c82ede68223de35e8ea96b579efa4e"
-    sha256 cellar: :any,                 ventura:       "c956d0d3aa906086bfc1d7c918e9f61b0353047b7fb1042dc7791f77984a6e9d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5ff9d48a4f887376a7a8bd7c9fb5107860336a23291f87147ea5fab0cf437755"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc28995a060646edbb2bace1e08c1f9f8a584ec1a82815725ad7c518f7654ac0"
+    sha256 cellar: :any,                 arm64_sequoia: "3d955f10b072bbdd66618d4795540c1403313425ec76fe49753ddb2c873b850f"
+    sha256 cellar: :any,                 arm64_sonoma:  "206261c5a514cb1839712c32794f63d0e5aab1c21f6d3618224e6b70ac753c81"
+    sha256 cellar: :any,                 arm64_ventura: "3fec34f0a0b2e0d87672e124a8edf06e93d6c710cd5038445137c248fc0a6d55"
+    sha256 cellar: :any,                 sonoma:        "75ffb88646f7486a0c9de44854909a4b67cacef44d52f8e0dfcba2c3a952de56"
+    sha256 cellar: :any,                 ventura:       "89186bb3ace7ea633afa3ce8a5abba7c059552226b8a440211d6669e1305d9aa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4585c18d9125c54ed5f2e2d2549b1d9febac5542c6550d38760483f794ec27f8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9561f1b35c520a5209fe9747b5a37b3549de0b1fed2b79e44c9808b9ded1b135"
   end
 
   depends_on "rust" => :build # for pydantic_core
@@ -82,8 +82,8 @@ class BumpMyVersion < Formula
   end
 
   resource "pydantic" do
-    url "https:files.pythonhosted.orgpackages77ab5250d56ad03884ab5efd07f734203943c8a8ab40d551e208af81d0257bf2pydantic-2.11.4.tar.gz"
-    sha256 "32738d19d63a226a52eed76645a98ee07c1f410ee41d93b4afbfa85ed8111c2d"
+    url "https:files.pythonhosted.orgpackagesf0868ce9040065e8f924d642c58e4a344e33163a07f6b57f836d0d734e0ad3fbpydantic-2.11.5.tar.gz"
+    sha256 "7f853db3d0ce78ce8bbb148c401c2cdd6431b3473c0cdff2755c7690952a7b7a"
   end
 
   resource "pydantic-core" do
@@ -127,18 +127,18 @@ class BumpMyVersion < Formula
   end
 
   resource "tomlkit" do
-    url "https:files.pythonhosted.orgpackagesb109a439bec5888f00a54b8b9f05fa94d7f901d6735ef4e55dcec9bc37b5d8fatomlkit-0.13.2.tar.gz"
-    sha256 "fff5fe59a87295b278abd31bec92c15d9bc4a06885ab12bcea52c71119392e79"
+    url "https:files.pythonhosted.orgpackagescc180bbf3884e9eaa38819ebe46a7bd25dcd56b67434402b66a58c4b8e552575tomlkit-0.13.3.tar.gz"
+    sha256 "430cf247ee57df2b94ee3fbe588e71d362a941ebb545dec29b53961d61add2a1"
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesf63723083fcd6e35492953e8d2aaaa68b860eb422b34627b13f2ce3eb6106061typing_extensions-4.13.2.tar.gz"
-    sha256 "e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef"
+    url "https:files.pythonhosted.orgpackagesd1bc51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5typing_extensions-4.14.0.tar.gz"
+    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
   end
 
   resource "typing-inspection" do
-    url "https:files.pythonhosted.orgpackages825ce6082df02e215b846b4b8c0b887a64d7d08ffaba30605502639d44c06b82typing_inspection-0.4.0.tar.gz"
-    sha256 "9765c87de36671694a67904bf2c96e395be9c6439bb6c87b5142569dcdd65122"
+    url "https:files.pythonhosted.orgpackagesf8b10c11f5058406b3af7609f121aaa6b609744687f1d158b3c3a5bf4cc94238typing_inspection-0.4.1.tar.gz"
+    sha256 "6ae134cc0203c33377d43188d4064e9b357dba58cff3185f22924610e70a9d28"
   end
 
   resource "wcmatch" do

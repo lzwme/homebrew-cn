@@ -7,6 +7,8 @@ class Ffmpeg2theora < Formula
   revision 11
   head "https://gitlab.xiph.org/xiph/ffmpeg2theora.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "386bcf4220cfa4e2aa06f1a9fa920cbd028d321bf622f3b7c1010d63502ce584"
     sha256 cellar: :any,                 arm64_sonoma:   "db8c87aecac7f8ee1585140a11fba27cbc9f570662c646403b3a1363c3ae65d4"

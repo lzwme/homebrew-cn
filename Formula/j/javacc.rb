@@ -11,6 +11,8 @@ class Javacc < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9095c2d3b973f05a81fc336594a9adcab73f8a65634827167fad98f831719fff"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f625a9b59d0fd505b1d69243c0147c292e4cd354550df5b352bcae140f7a2cbd"

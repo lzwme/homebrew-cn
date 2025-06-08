@@ -6,6 +6,8 @@ class Hyperkit < Formula
   license "BSD-2-Clause"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, monterey: "69e59bde1dae4ff1da807711cd9060cdf81e248aa55a0dd761a20abd8787e20b"
   end

@@ -6,6 +6,8 @@ class Innotop < Formula
   license any_of: ["GPL-2.0-only", "Artistic-1.0-Perl"]
   head "https:github.cominnotopinnotop.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "954079748cf6e9ff2ed6cf2f1c32596c923dcc1b91e5731eda1b99c58644d239"

@@ -1,19 +1,19 @@
 class Libvpx < Formula
   desc "VP8VP9 video codec"
   homepage "https:www.webmproject.orgcode"
-  url "https:github.comwebmprojectlibvpxarchiverefstagsv1.15.1.tar.gz"
-  sha256 "6cba661b22a552bad729bd2b52df5f0d57d14b9789219d46d38f73c821d3a990"
+  url "https:github.comwebmprojectlibvpxarchiverefstagsv1.15.2.tar.gz"
+  sha256 "26fcd3db88045dee380e581862a6ef106f49b74b6396ee95c2993a260b4636aa"
   license "BSD-3-Clause"
   head "https:chromium.googlesource.comwebmlibvpx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bb811f6f020d8bc6925bbc2c7fd83b1c0af249771c569ffaff2b7615d3401b45"
-    sha256 cellar: :any,                 arm64_sonoma:  "bb7841386f01932b9462487ebf797f5bdc33ef60ab25d03f9713a415f4ae5ee8"
-    sha256 cellar: :any,                 arm64_ventura: "c071523e335390cfb3a53a31605370e59661ceb34d3de70ce5c994f5fa266176"
-    sha256 cellar: :any,                 sonoma:        "6e42222126ae6f4972a445ca86c025c757e821b968d0cfe27ae50872bcdc0778"
-    sha256 cellar: :any,                 ventura:       "35cbc1468a09a60c41864e771f22fb9bcfd95d28e3562424ed96dd4729f3e4dc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "883ccf021a6b372db93238b4e761933605d6f502760912bac8c3816f7488fa85"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "42acfc38372a660e6db58db33af8a0700fdaecbd1775244cbe40941d7d3cb210"
+    sha256 cellar: :any,                 arm64_sequoia: "2f2d553f2f66735705b3962dca32a4a16bbfbe443c17898c0cea110d13bb012d"
+    sha256 cellar: :any,                 arm64_sonoma:  "7eff9f3e0be6983c8018e445dd1b3242fa6631a2b2d410b1db989436224af387"
+    sha256 cellar: :any,                 arm64_ventura: "8fc8387529166f2b569d3f804921d5ba26a3db0ce3c825338f3085f67dbf7675"
+    sha256 cellar: :any,                 sonoma:        "2b32497dc2978a8ac931cbd93bbcd8669b49421a5ddc8f0b1313a2977f05f121"
+    sha256 cellar: :any,                 ventura:       "3202d78ad6ceb9b6b329d146cd41675618ea9e09c34cf1557a4ed2986826e139"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "bcf22715ec604a46f2fbe8abc185b10d68348437c923998afaf66ab757e8f182"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "e0c61f077f7fe903a03c721d3e67bb0a93a53f9e00fd2f5119aed6a71101c159"
   end
 
   on_intel do

@@ -6,6 +6,8 @@ class Icemon < Formula
   license "GPL-2.0-or-later"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "ee2a82f839e771368531ab54f76b5b17b54fbfdbe1ce4ff77671321b5913c35a"

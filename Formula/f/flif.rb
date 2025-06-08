@@ -6,6 +6,8 @@ class Flif < Formula
   license "LGPL-3.0-or-later"
   head "https:github.comFLIF-hubFLIF.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "7ab5f6dea4a3bf05a201e221b47042ea4ff6d4372f64c1be2a306604d5710b38"
     sha256 cellar: :any,                 arm64_sonoma:   "6e2f70fa17688130a568e64fd6a4abdfe8e61681c1948cf2ecca01dfb04ee535"

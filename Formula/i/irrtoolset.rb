@@ -12,6 +12,8 @@ class Irrtoolset < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c8f841c2b1f1181dfd110bb27a4d374ff43d204bda34a871aa260bd8c67c7e43"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "89d7ae76431629fd7703e8295dae62fbaae4ef6adba8b261e14d92ff409fc450"

@@ -7,6 +7,8 @@ class Jello < Formula
   sha256 "eee1d43f2d9bb3b3b8c857b713e56191badb9a03a2274defaad1e727fad35521"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "6aee2f309a909d8f46313936879821ecd4dfbef13d3a1c75732fee794eb941b4"
   end

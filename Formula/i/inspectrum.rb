@@ -6,6 +6,8 @@ class Inspectrum < Formula
   license "GPL-3.0-or-later"
   head "https:github.commiekinspectrum.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "7060c870cf3c1fb749f7fbca5fa9479ff9f3794f932804f211728c6238355025"
     sha256 cellar: :any,                 arm64_sonoma:   "b8fed8bc9e251d6f90e191b260fba14a907183b966ce9058eca5e45832fd096b"

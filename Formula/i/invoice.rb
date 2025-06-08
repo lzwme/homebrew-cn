@@ -6,6 +6,8 @@ class Invoice < Formula
   license "MIT"
   head "https:github.commaaslalaniinvoice.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "57ae38669eb66909d476bf260857c15657b1a9934645adb5ec339fb6d56eb07f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bfd3dde3902f66423f1a09b951ad977729e31b6e7b81e5e6f4f61de4765e438a"

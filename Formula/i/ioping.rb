@@ -6,6 +6,8 @@ class Ioping < Formula
   license "GPL-3.0-or-later"
   head "https:github.comkoct9iioping.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "52741ce205f6edd2660c7848d815fbf708aeecf69439a47984dedd602c0aa783"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4f3bda1094884d84cd06efdfdbe955f9926c5e9f265abfcb5ae1169ca03ac73e"

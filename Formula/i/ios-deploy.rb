@@ -6,6 +6,8 @@ class IosDeploy < Formula
   license all_of: ["GPL-3.0-or-later", "BSD-3-Clause"]
   head "https:github.comios-controlios-deploy.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4c69eb7279d465db83c5d996a519fdc0f045338adaef8a92eb426a67f9733ee9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6d9ac2ff01049d41618a63ef47738fe9e01cf9b77154b9773bde884a42dd31e1"

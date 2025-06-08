@@ -5,6 +5,8 @@ class Judy < Formula
   sha256 "d2704089f85fdb6f2cd7e77be21170ced4b4375c03ef1ad4cf1075bd414a63eb"
   license "LGPL-2.1-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "9c845c66e4c08af1feb840119e2013109cbfba280a96022e15aa1fe703fa8c61"
     sha256 cellar: :any,                 arm64_sonoma:   "a4aae192c5fb922c184bb6468f445a680549206575f4e78a3494430234465d00"

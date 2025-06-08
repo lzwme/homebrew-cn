@@ -9,6 +9,8 @@ class Jrtplib < Formula
     skip "No longer developed"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "ef88fc08dc41b679c8ccdcaebabab8303f7eb30ccc8cddb2776e4952f335d2f0"
     sha256 cellar: :any,                 arm64_sonoma:   "c21691446176fd07d6163eece3a708d9088739e61fa29671cdeacdb3737fabc5"

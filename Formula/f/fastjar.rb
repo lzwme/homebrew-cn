@@ -10,6 +10,8 @@ class Fastjar < Formula
     regex(/href=.*?fastjar[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "04f3c15e78f2c33a9ef3a33561aced187286cdbbaa0ad29ace0f45f0701873fb"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fc54e682bbb9eed396f0cd21f3ee472ff5473e49932cabd827a224ed01961e68"

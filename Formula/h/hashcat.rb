@@ -18,6 +18,8 @@ class Hashcat < Formula
     regex(href=.*?hashcat[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia:  "06e83f034f4146c057190a75ea05d9ede88a2205db694dacf643d7e4d88b8210"

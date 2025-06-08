@@ -7,6 +7,8 @@ class Img2pdf < Formula
   sha256 "306e279eb832bc159d7d6294b697a9fbd11b4be1f799b14b3b2174fb506af289"
   license "LGPL-3.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "1079b3b50de55ff2cb1ddba4de0b6263eb02e19e4b8c71b789a6e06c5a6eb592"
     sha256 cellar: :any,                 arm64_sonoma:  "3de734f6984a7b7e9642891724dabaa3f21d61627c82d06a5d43828eaaf2933e"

@@ -6,6 +6,8 @@ class Jobber < Formula
   license "MIT"
   head "https:github.comdshearerjobber.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia:  "fc6d39f5ff894aca7a8c037fcb599a2aaa4c5293614e56d6c4aaa6edca572be2"

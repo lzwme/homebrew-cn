@@ -15,6 +15,8 @@ class JbossForge < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, all: "f94f4ca9e8be07c5fbcf13f5c685b071091e4ee55dbe6e0bb33cbfc378fa9d07"

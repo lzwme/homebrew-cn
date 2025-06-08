@@ -6,6 +6,8 @@ class Hostess < Formula
   license "MIT"
   head "https:github.comcbednarskihostess.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5af8f3803260637b3938948d0a18cf210279b7cd6b6abeb9e197e373feb5a53f"

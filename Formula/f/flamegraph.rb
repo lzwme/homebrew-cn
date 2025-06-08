@@ -7,6 +7,8 @@ class Flamegraph < Formula
   revision 1
   head "https:github.combrendangreggFlameGraph.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "97511f43f573d3f64674b4ca16d9e9f2175366d769741f8c49407c8aefdaa4ec"

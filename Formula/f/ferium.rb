@@ -6,6 +6,8 @@ class Ferium < Formula
   license "MPL-2.0"
   head "https:github.comgorilla-devsferium.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6790e976ab796a3eba9bdaf990d338a1ba9fd4dd9af9b95be83971b3c0f08662"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be43fc9aea34e8c638cb352048c5d7b856f3af46d4d920e3717efb923ca1b41c"

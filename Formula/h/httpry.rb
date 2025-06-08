@@ -6,6 +6,8 @@ class Httpry < Formula
   license "GPL-2.0-only"
   head "https:github.comjbittelhttpry.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "efbe819748288998ac0d955481db2aee1846e2e70db91a72ea2c4652accb95e4"

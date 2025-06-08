@@ -11,6 +11,8 @@ class Jpeginfo < Formula
     regex(href=.*?jpeginfo[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "4f5080a068fc3c4e0dbd1f4a1797a633ed8c28e50ab57eecf33b2ee70eb464ae"
     sha256 cellar: :any,                 arm64_sonoma:   "d2ea4f763ff7c44c860bcc04fb737e0a5e258faf6931775349542160ee034e55"

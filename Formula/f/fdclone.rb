@@ -10,6 +10,8 @@ class Fdclone < Formula
     regex(%r{href=.*?\.FD[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sonoma:   "78daa3983f98bea1071db92ef70b8c9a3ea5e01f1d36a32d093de1512b1a65d8"
     sha256 arm64_ventura:  "6307f6eece0a8e13794fb57ef3ac793c5f72bb2769310803e4fee5bb30352e2b"

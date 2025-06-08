@@ -8,6 +8,8 @@ class Fprettify < Formula
   license "GPL-3.0-or-later"
   head "https:github.comfortran-langfprettify.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 3
     sha256 cellar: :any_skip_relocation, all: "f9d9e214fb3810e34036e058e5dd26087ff761ff4ff07d993badd0eeb2de2de5"

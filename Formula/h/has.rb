@@ -6,6 +6,8 @@ class Has < Formula
   license "MIT"
   head "https:github.comkdabirhas.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "dd0eec9c703fb35356c4931881f3c5106a4fdee227e39c2c2844fecf025509e8"

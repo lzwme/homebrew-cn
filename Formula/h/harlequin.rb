@@ -8,6 +8,8 @@ class Harlequin < Formula
   license "MIT"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "d388ca07a0405df9647b982b90f2019cb762b678cf392d4d5cc2314337c3e2fa"
     sha256 cellar: :any,                 arm64_sonoma:  "191fe78c66db0bf1e00cfcf7dc1c6e9f4220b0ecf636dd0c33404846b0693f7d"

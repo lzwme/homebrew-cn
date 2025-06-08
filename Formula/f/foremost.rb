@@ -11,6 +11,8 @@ class Foremost < Formula
     regex(/href=.*?foremost[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2fc223a574f2cc52cd6a40d668429f11a7211a34a206f49f1af4329f14a537db"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ba5d99373d1b35db5088801426f5c2f4d3f091887e0b96f561938008565212db"

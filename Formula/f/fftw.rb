@@ -11,6 +11,8 @@ class Fftw < Formula
     regex(%r{latest official release.*? <b>v?(\d+(?:\.\d+)+)<b>}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "9a89853940caaca128e46545d3999540ea0723767c8ef8245db8f2419a1b2565"
     sha256 cellar: :any,                 arm64_sonoma:  "a1105be9ac0dd78978175a1b07b8ef429bf3d3c9074ad39a128fe5f01b910feb"

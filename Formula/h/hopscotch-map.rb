@@ -5,6 +5,8 @@ class HopscotchMap < Formula
   sha256 "53dab49005cd5dc859f2546d0d3eef058ec7fb3b74fc3b19f4965a9a151e9b20"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "c7e9170bcfbca171cce4515cad7ff32963dfc5ae0f364a5e99ee20839c8682cb"

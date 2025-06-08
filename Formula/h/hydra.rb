@@ -7,6 +7,8 @@ class Hydra < Formula
   revision 5
   head "https:github.comvanhauser-thcthc-hydra.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "4f52a4dd8c6ee9b1819f64a688cd7f2677873250a515b2269acac1758bafc1c8"
     sha256 cellar: :any,                 arm64_sonoma:  "3ecca5dbd9fc6e4770e0c302cb183b65b9eb107ed4a49bea7991905e7635cdaa"

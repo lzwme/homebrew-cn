@@ -6,6 +6,8 @@ class Iblinter < Formula
   license "MIT"
   head "https:github.comIBDecodableIBLinter.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ab02ce27d16504d8ec99411983ecec5503a128fd940bc6d0c9c13ba7347d7632"

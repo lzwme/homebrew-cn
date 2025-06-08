@@ -16,6 +16,8 @@ class HttpLoad < Formula
         date_str = match&.first
         date_str ? Date.parse(date_str)&.strftime("%Y%m%d") : nil
       end
+
+      no_autobump! because: :requires_manual_review
     end
   end
 

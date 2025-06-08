@@ -12,6 +12,8 @@ class FileFormula < Formula
     regex(href=.*?file[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "5fe19d9d579de777487bbaa3722d672da01bcfae88f92af992918069bb5a0ac0"
     sha256 cellar: :any,                 arm64_sonoma:  "573bef480b6d3091dac30e1c279c18285ad25df7a30eea2805abe96aadce828a"

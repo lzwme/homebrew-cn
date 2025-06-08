@@ -6,6 +6,8 @@ class Htmlcleaner < Formula
   license "BSD-3-Clause"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "1ee4cfa168e59ef59a77de847f53f23c4f9a2a7be9a1f1844608c72b5ff1b7af"
