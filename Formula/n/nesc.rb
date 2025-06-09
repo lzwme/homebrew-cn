@@ -6,6 +6,8 @@ class Nesc < Formula
   license "GPL-2.0-only"
   revision 2
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ec7337c2f3b0ce8274e7ccc367aa35ba8930972f946e3e6d30fbd2dcfb728a09"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "586795d905da2511be52a64d753b1085c73149ee3b5f720aa19416f148b8cd8e"

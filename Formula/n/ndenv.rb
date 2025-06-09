@@ -6,6 +6,8 @@ class Ndenv < Formula
   license "MIT"
   head "https:github.comriywondenv.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8650428e672ef45ea98634ed9e024064c9c23e4604fb7f423fe5d7e12cd13f96"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "64537c94265589e52b05cd90de6998880d58960ee25ea3c2d207e92107b6b10d"

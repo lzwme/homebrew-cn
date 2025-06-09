@@ -6,6 +6,8 @@ class Nghttp2 < Formula
   sha256 "8ca4f2a77ba7aac20aca3e3517a2c96cfcf7c6b064ab7d4a0809e7e4e9eb9914"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "73507c5419805c1f355705a6da6d19675faa7df1db7b094e49147f73c4aca5a9"
     sha256 arm64_sonoma:  "7061b3fc947b387e23d8c83f037c1f795e9527bb23f68302d8002469a323738f"

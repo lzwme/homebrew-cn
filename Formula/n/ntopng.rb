@@ -6,6 +6,8 @@ class Ntopng < Formula
   license "GPL-3.0-only"
   head "https:github.comntopntopng.git", branch: "dev"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "1b62120513879ce4cb6ba349d4ac92223089a6c77e6d6719df29250f61954a7b"
     sha256 arm64_sonoma:  "40dffa8af2e27119e1ee18f2808f3578f71a437968fb8178e78c80bdb2dac34c"

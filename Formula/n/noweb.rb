@@ -5,6 +5,8 @@ class Noweb < Formula
   sha256 "7b32657128c8e2cb1114cca55023c58fa46789dcffcbe3dabde2c8a82fe57802"
   license "BSD-2-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f18c4be4fa20125e8adc57369970446c02ceed59304f52ef1e595967db4842dc"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f4a47b231de7c9f6e04f77ecf8ea59edb7658da0fae7b10d9d3d6d7b80577aeb"

@@ -10,6 +10,8 @@ class Ntl < Formula
     regex(href=.*?ntl[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "5b5d6f2e3c4aa10a77d9b526811afda574c87f29a2e56776866755be59996efa"
     sha256 cellar: :any,                 arm64_sonoma:   "ef6c7df391853c86ee1859fd85b677fa6e233d7f60f70921b97a5c0fb61ac330"

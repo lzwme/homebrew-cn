@@ -11,6 +11,8 @@ class MenderArtifact < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia: "d9c42ade066c950f156d48249363f17ae1976ac3a4ff9cd511cff92bd57b02c9"

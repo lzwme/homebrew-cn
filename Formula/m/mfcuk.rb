@@ -6,6 +6,8 @@ class Mfcuk < Formula
   license "GPL-2.0-or-later"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "102426161778216f2bf11462bbaa8bb369a883cc818b560491d85bc5307ef9d9"
     sha256 cellar: :any,                 arm64_sonoma:   "b607795d4f69c5e9a8b6cb6b6017411e8acff391b71ea51e86229352a9ea4a91"

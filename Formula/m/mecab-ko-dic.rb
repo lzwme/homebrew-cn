@@ -10,6 +10,8 @@ class MecabKoDic < Formula
     regex(/href=.*?mecab-ko-dic[._-]v?(\d+(?:\.\d+)+-\d+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4493b0c9c904a1fc3a0e1a25e6f394f6bd499bee75efeb01379121fc7e08abaa"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f9cd00df97f11f37a41f0c5eb56b98832126774d74a0cc98150dcb7a60d1ba78"

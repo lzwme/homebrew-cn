@@ -10,6 +10,8 @@ class Mozjpeg < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "93eea531e7d81f0aade7c403f3e0c65d545d9eade6e0e50bd43bf01cee48f110"
     sha256 cellar: :any,                 arm64_sonoma:   "5254d35ee2814e82b176fa779fc87a69468969dc28f750aaa602d17fd15d1646"

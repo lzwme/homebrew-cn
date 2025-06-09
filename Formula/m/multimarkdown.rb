@@ -6,6 +6,8 @@ class Multimarkdown < Formula
   license "MIT"
   head "https:github.comfletcherMultiMarkdown-6.git", branch: "develop"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "eea3968401cd2eca776486368efbf1572da6dee6bb9cf5c5396448f0da811578"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f04dd2552dc7725620fc3e64e6b803652c0510e20e33242f4bd00bbde327ea74"

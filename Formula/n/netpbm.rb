@@ -15,6 +15,8 @@ class Netpbm < Formula
     strategy :page_match
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "3aec77cc9b5bdf4f773cfbd5f96f9f9fcea7f0310d51a5c37e66bfe4c6fc0163"
     sha256 arm64_sonoma:  "eb2dce6698988891bf98963ff3d3fb7ed7efe42458b2153e91b128eb1f14d316"

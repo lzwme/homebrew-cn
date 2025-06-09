@@ -11,6 +11,8 @@ class Mono < Formula
     regex(/^mono[._-]v?(\d+(?:\.\d+)+)$/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "41128a9161b2880c1ff0da606a970a610255f46426ea970ac505c7f7cc77c817"
     sha256 arm64_sonoma:  "2207ce97c51add48bdb178771a7e6496da62c099a8a740c976772a4f69ff2cd4"

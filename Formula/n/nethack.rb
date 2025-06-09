@@ -25,6 +25,8 @@ class Nethack < Formula
     regex(%r{href=.*?v?(\d+(?:\.\d+)+)?["' >]}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "4bd7bdd2aa9ce9dae7f450ffaeda07c1279f597ef35ee3bd7ee52086b54160e1"
     sha256 arm64_sonoma:   "ce30c296e474a239cb110c54a7b16950de538e9782414718290606a8cc9424d1"

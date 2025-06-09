@@ -5,6 +5,8 @@ class Monocle < Formula
   sha256 "571f53116c345f1f8279a07e1aaaee3850ceb0fc01ba9c5cef3f393fbefa4a6c"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "90179dc8e760a4a85ad5e03a25f8512295fc528a0f2eed38cc756a8c8a6edc61"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "62f25e9b9ac204329a2d3452c1e98de2f64e63f6ae3d40e0d1c896d61c679e1a"

@@ -6,6 +6,8 @@ class Mmdbinspect < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.commaxmindmmdbinspect.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2867196560667fcee30a9b9fb30f38651ffd7e7ac1ab6f352d32d3a9521997a4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dd2ecd32e2d64c6d4b35cfbdf57eeb8cf2c4f79385da300fa791b9e6cac0c449"

@@ -18,6 +18,8 @@ class Mame < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "653d10b5b1ff22f71204f1c651b3798f6ff39a57553cbb56dba162787679aab2"
     sha256 cellar: :any,                 arm64_sonoma:  "f053646362da97c810b777ceeb429599e7d4c15f75c62148eb41252564883ff3"

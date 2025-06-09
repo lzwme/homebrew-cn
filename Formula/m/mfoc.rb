@@ -7,6 +7,8 @@ class Mfoc < Formula
   revision 2
   head "https:github.comnfc-toolsmfoc.git"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "3b89cfda6f79a47fad9df8891458eaf4923c2c6fdea0e17a75bd5f9c1fe7fdc3"
     sha256 cellar: :any,                 arm64_sonoma:   "1d07e71a99eb298fee125dca589933a08e3c4559932a30f4fa7cd162b4852ff9"

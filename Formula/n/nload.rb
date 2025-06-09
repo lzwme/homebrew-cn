@@ -10,6 +10,8 @@ class Nload < Formula
     regex(/href=.*?nload[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a45171a86a39f2386824b9b9acafcdb1d054b43839513022859eac52693de221"

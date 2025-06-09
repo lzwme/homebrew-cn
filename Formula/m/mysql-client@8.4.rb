@@ -11,6 +11,8 @@ class MysqlClientAT84 < Formula
     formula "mysql@8.4"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia: "64277d6ec414f92e516089a4e2c6ad176fdb6152a607676392995002149a1a17"

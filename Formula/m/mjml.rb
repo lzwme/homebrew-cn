@@ -5,6 +5,8 @@ class Mjml < Formula
   sha256 "1918171314f07c1283a84f24bbf6e9cd1325906d48722b26a4b901f0eea00176"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bcde646a47d51238258b06388c69a52115f850eef26ea76c218ad5e7318a2f57"

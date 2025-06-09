@@ -10,6 +10,8 @@ class Mad < Formula
     regex(%r{url=.*?/libmad[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_sequoia:  "1facd8abee7e62bba7c7e445d2cbc5900dfe2dc7903be43a40b128c68f519b02"

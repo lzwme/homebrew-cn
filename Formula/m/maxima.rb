@@ -11,6 +11,8 @@ class Maxima < Formula
     regex(%r{url=.*?/maxima[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "bf1876cc3a45b25028c16b715370c966a5830b98644793802dff6436e3b269ca"
     sha256 cellar: :any_skip_relocation, arm64_ventura: "2e5ab07dc958e30f74506ee83d32f86ab04cd1c92e041fc73395d212655d86dd"

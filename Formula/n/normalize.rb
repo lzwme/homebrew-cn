@@ -10,6 +10,8 @@ class Normalize < Formula
     regex(/href=.*?normalize[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any, arm64_sequoia:  "53b16243f5e01a1b903a687774320986f9a27f92efd6af821aef4e3d7f354467"

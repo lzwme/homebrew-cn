@@ -5,6 +5,8 @@ class NowplayingCli < Formula
   sha256 "bb49123c66282b6495c245589313afc94875a7b0e82c9ae9f79d6f25e7503db4"
   license "GPL-3.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1a4b77d57e7d151e6fc408096e76e2f6273a0187e974778bec58ff4417dac115"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "028c91c0152017e30caa8f006961034ad91faedb2f92fb76d9d3a724775bf2a0"

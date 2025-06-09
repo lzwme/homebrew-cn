@@ -5,6 +5,8 @@ class Nativefier < Formula
   sha256 "483c4fc8e941d5f870c610150f61835ff92ee313688bd3262cf3dca6fb910876"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8217c3f9582943a6a195dff3efcd428a54028e108693ecb6e361e38f8cda83ad"

@@ -5,6 +5,8 @@ class Miniprot < Formula
   sha256 "1ec0290552a6c80ad71657a44c767c3a2a2bbcfe3c7cc150083de7f9dc4b3ed0"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "39c0415c8c794f2af761f7cb95624f6c78506a5de34377e267a1050669b2c33e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "df2ff4d7eb51a65a47c7dff85b7f7c1cd43f797ff305c5193ae0895af298f7db"

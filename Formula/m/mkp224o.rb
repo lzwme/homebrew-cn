@@ -6,6 +6,8 @@ class Mkp224o < Formula
   license "CC0-1.0"
   head "https:github.comcathuggermkp224o.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "49b44c366d873465aa731abd4896cbd43d0b4697084cbc2c1b00e69a92ce1d79"
     sha256 cellar: :any,                 arm64_sonoma:   "76a0f038b57586fc90bdb0688520d308e207f11902a9479a81d8149049c9f418"

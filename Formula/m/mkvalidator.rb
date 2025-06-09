@@ -10,6 +10,8 @@ class Mkvalidator < Formula
     regex(%r{url=.*?mkvalidator[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3295228dd92c0233d71546962d8ae9ab3ea7611324e810b0446f601f8d9e9e07"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9b9b3070f946ba91f4789020f92b61a92c0a07956f63e9e4fb6b5b51858172f0"

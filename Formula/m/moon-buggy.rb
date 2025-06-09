@@ -13,6 +13,8 @@ class MoonBuggy < Formula
     regex(moon-buggy\s+(?:version\s+|v)?(\d+(?:\.\d+)+)[^<]+?\(stable\s+version\)im)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "381b64031018e20366728e5b6cb559bb042e076f238a41aa0fd32a25d6094121"
     sha256 arm64_sonoma:   "5e84d8a0372bf17fda7d55ea77d6d3cc0bf4ab2a00f938657eb30fe3b7c119bf"

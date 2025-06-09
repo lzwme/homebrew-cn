@@ -11,6 +11,8 @@ class MediaInfo < Formula
     regex(href=.*?mediainfo[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "8192fe05feba4545f5c999c17f9704b9e9d360953bb43c738f8083cf704a8247"
     sha256 cellar: :any,                 arm64_sonoma:  "04613befc701ccd6091d073267bdda7e52cb78b1982f217e7fe6a631f427821a"

@@ -9,6 +9,8 @@ class NameThatHash < Formula
   revision 1
   head "https:github.comHashPalsName-That-Hash.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 4
     sha256 cellar: :any_skip_relocation, all: "ebc63e1cd2a29eded2a1d8bd312f4df14882bd40e4e98f713e69aad521b47e0e"

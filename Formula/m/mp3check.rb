@@ -5,6 +5,8 @@ class Mp3check < Formula
   sha256 "27d976ad8495671e9b9ce3c02e70cb834d962b6fdf1a7d437bb0e85454acdd0e"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5cd5050fc0ece72900fdee9f06144599fd519f2f62fa3ec3f8ed0af1e4805301"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "42c1f2ae16cad1568599d24fbf5ad30f8fab865e9c00dab2fc73eb32eba401d7"

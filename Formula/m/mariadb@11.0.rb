@@ -5,6 +5,8 @@ class MariadbAT110 < Formula
   sha256 "0189d62946c37c6db46bf1a468ba9580bcba8e80f05958ec483c3387eccf9a00"
   license "GPL-2.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sonoma:   "89a7b94bb9f795bbe4f842da5648232c6a974e0dd76ba69fe8a0952db13d836f"
     sha256 arm64_ventura:  "7bddd7c137bfc4085f961af777564355dc3180d20855f958638462690cc2eda3"

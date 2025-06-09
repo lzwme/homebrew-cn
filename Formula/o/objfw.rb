@@ -1,8 +1,8 @@
 class Objfw < Formula
   desc "Portable, lightweight framework for the Objective-C language"
   homepage "https://objfw.nil.im/"
-  url "https://objfw.nil.im/downloads/objfw-1.3.1.tar.gz"
-  sha256 "a3bdf28c2e166f97680601c29f204670a8c4c8e43d393321a7d1f64fe1d2f513"
+  url "https://objfw.nil.im/downloads/objfw-1.3.2.tar.gz"
+  sha256 "8148df0d55d1a3218fe9965144b5c3ee2a7f4d8e43e430a6107e294043872cab"
   license "LGPL-3.0-only"
   head "https://objfw.nil.im/", using: :fossil
 
@@ -12,13 +12,13 @@ class Objfw < Formula
   end
 
   bottle do
-    sha256 arm64_sequoia: "e72889618c308398315bed8f950b0204dc1d1b13f617688b7e4e68cc55fbbe28"
-    sha256 arm64_sonoma:  "b92b445ba45a570948c1f994c362a1e007a15be73cb899d4c6bff65ab69c4d77"
-    sha256 arm64_ventura: "f2269407984c284520cbaf76003e3b781c5e993754c33383b7a7ea80c0e18a62"
-    sha256 sonoma:        "c0b882afc31b310be6a67c2d53f36b812b3011a20b34a74d41fcfa2f0cb33fa9"
-    sha256 ventura:       "c9adc05a96dbf3a510afa4c7e23cd525f0f9b7ef2865f980f14c78227d8f244e"
-    sha256 arm64_linux:   "e36af4104b44e9048db2be7383b50738ee5bd08f9a9efcaecf03a47eb59c8c06"
-    sha256 x86_64_linux:  "dd48c8235b71203b0d344fe4437d3080c9b39c716ffc0a184cbb6cc43d84d80b"
+    sha256 arm64_sequoia: "beae7540863a1bd426dc471cf9c2673344008fd266edd41b9a103ab7e10b6141"
+    sha256 arm64_sonoma:  "43829254ef245340617d632f201caac594c76b81c0ec1907c554d0e0509a86db"
+    sha256 arm64_ventura: "321bd53c3b72dc7783866636035f70c7243a900fdca2094739c03a0fc9df7cfd"
+    sha256 sonoma:        "daf32fc7c8401967220ae43d63702c8bad70da6df970c3cd25c306aed93d8a7a"
+    sha256 ventura:       "78a1f38e646712a0368a178c537b6842f38512a1dd68341fd7a56020f73f74e9"
+    sha256 arm64_linux:   "ee605e9810975310d29f96a2b3652d056d3f5959e09551acb0c6547b71242e9e"
+    sha256 x86_64_linux:  "3006257b454f839712b9b53634178d3b60926962e4db04acc54719fa724f7e29"
   end
 
   depends_on "autoconf" => :build

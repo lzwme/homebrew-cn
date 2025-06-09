@@ -6,6 +6,8 @@ class Nb < Formula
   license "AGPL-3.0-or-later"
   head "https:github.comxwmxnb.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1137153eb724d3518bc346355bab19bb0e4272223a9c47c92fd749bddb0730a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "b1137153eb724d3518bc346355bab19bb0e4272223a9c47c92fd749bddb0730a"

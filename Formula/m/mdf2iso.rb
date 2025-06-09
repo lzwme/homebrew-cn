@@ -9,6 +9,8 @@ class Mdf2iso < Formula
     skip "No longer developed or maintained"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "cb7698f54dab58995f190cb1fa0b27206fdcc26df54ed14340042bbdf5e9bc22"

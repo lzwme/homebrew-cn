@@ -10,6 +10,8 @@ class Macosvpn < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7ac4947917a99f3fd96ac3a81a6dbe18be590d25df2bfef024dd0c3e564e9b1b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "35c57637ae70f1265c5cc8df4f370e89eb5fcc441bda03ce4c6b3c294d498899"

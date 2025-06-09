@@ -6,6 +6,8 @@ class Minisat < Formula
   license "MIT"
   head "https:github.comstpminisat.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "67c3c4650f6e2e5c65d53d7d2681783cda655b3eb9915f79debdbaf77c8ddcf0"
     sha256 cellar: :any,                 arm64_sonoma:   "956661daa83980e03eecb0b94a3acba68ce6a8bf4a122b286c94c9aeed708db9"

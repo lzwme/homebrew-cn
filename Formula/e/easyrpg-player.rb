@@ -1,8 +1,8 @@
 class EasyrpgPlayer < Formula
   desc "RPG Maker 2000/2003 games interpreter"
   homepage "https://easyrpg.org/"
-  url "https://easyrpg.org/downloads/player/0.8.1/easyrpg-player-0.8.1.tar.xz"
-  sha256 "51249fbc8da4e3ac2e8371b0d6f9f32ff260096f5478b3b95020e27b031dbd0d"
+  url "https://easyrpg.org/downloads/player/0.8.1.1/easyrpg-player-0.8.1.1.tar.xz"
+  sha256 "52ab46efdc5253a5ef08d3eee49c84d5c5cbb770929f28a08681fe01e5279bb2"
   license "GPL-3.0-or-later"
 
   livecheck do
@@ -10,17 +10,14 @@ class EasyrpgPlayer < Formula
     regex(/href=.*?easyrpg-player[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
-  no_autobump! because: :requires_manual_review
-
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "bfcc503e8f0ee35e4b4cd08fc3b813a444608597916333df7b1ad7bcf0a659bc"
-    sha256 cellar: :any,                 arm64_sonoma:  "ee4520c62cda9ea8653fa2f12266c8f2bb0f6455ad0ba92160e9aacdf1c43a2a"
-    sha256 cellar: :any,                 arm64_ventura: "e1a67c73ebb2639e3ff2cbddd0d0860b7c0115fae59927e35ace0a1e2ce7a7ca"
-    sha256 cellar: :any,                 sonoma:        "2139aa0e7aa904cad6ff617cc8aa8e9434ecb18dac1dc3d4d9b988c1946afc14"
-    sha256 cellar: :any,                 ventura:       "365b0a8d9c51bb87fbff8e9db4ed61c160009dddfb10582a2c23986487de9449"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "94349948b5767d07e9aaf715bb2caa41c8568a19bb0ca17c2c579f72d0e58a33"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2e5888b347c6ccd8a305ffdc8c076d6f6798348d1e81af7743d87f6bda1d76d3"
+    sha256 cellar: :any,                 arm64_sequoia: "92db38c733393d101b7f408ab5ceffef2b4ed4d738cc736d0cb63b6188b4566f"
+    sha256 cellar: :any,                 arm64_sonoma:  "3e856d3375dc9bc24ea8d1daba95b5d70425aa9624bf952de217e80f56b7304a"
+    sha256 cellar: :any,                 arm64_ventura: "46a23bf672d452cd6c3a4473703f55cb50f39dbbefc8124e4f55226a1327de5d"
+    sha256 cellar: :any,                 sonoma:        "0d18f1c5eff68ac87fc93e05b86d45b99c48476e6264cf0adb5c0aef0bc38d0b"
+    sha256 cellar: :any,                 ventura:       "aff66edf7ec8d8349ed07c31617ab0034da3449ff153cf50cf24b0e40b505a6d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "c7faaaf67aac67ae3549a3bfd5c80fc43f2c516fbfb962f5094779b81f2736a4"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2316bb07a7853aa8b92ab96391530ffc09b6c1c5ab91a7db99ac5a5154a2d3af"
   end
 
   depends_on "cmake" => :build

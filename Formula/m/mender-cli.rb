@@ -10,6 +10,8 @@ class MenderCli < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "0f6684645028a62edf8e62d7dfb7845b7aedc474830345cea55e635abf7efe75"
     sha256 cellar: :any,                 arm64_sonoma:  "fe129f50a5e78d44d178a5e802e853f5de0e164a0dd7cb8642cd1bc08423e0c9"

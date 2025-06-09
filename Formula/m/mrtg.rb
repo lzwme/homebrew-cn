@@ -10,6 +10,8 @@ class Mrtg < Formula
     regex(/href=.*?mrtg[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "6f57406896304b19653d1d9ad0f1d803709fe72cde0b1cc7acb141a126617dbd"
     sha256 cellar: :any,                 arm64_sonoma:   "8324ea6acce9878f8599a18ccd373c4b1852f3e51752d5b8309d5581005321eb"

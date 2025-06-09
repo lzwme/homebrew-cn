@@ -10,6 +10,8 @@ class Mpage < Formula
     regex(/href=.*?mpage[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "a596325fba30e7574a19d7fcf3b338f02fa91e9074a13609c7d356b9bba67b29"
     sha256 arm64_sonoma:   "c94c08b44f7dc6719d73f7eb8e103622190b9f189f3352dc8d4360c882280c24"

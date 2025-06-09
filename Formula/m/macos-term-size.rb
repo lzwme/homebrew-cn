@@ -6,6 +6,8 @@ class MacosTermSize < Formula
   license "MIT"
   head "https:github.comsindresorhusmacos-term-size.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "08a0e517feb1a5fea5bb36871b5d3abbe781978e11e458574e92041f4cd07042"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3424acd9de93f00406b4a94e2320a01169a092704c8ab9c66e23f230979c9ff1"

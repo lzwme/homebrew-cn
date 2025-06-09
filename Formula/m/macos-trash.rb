@@ -6,6 +6,8 @@ class MacosTrash < Formula
   license "MIT"
   head "https:github.comsindresorhusmacos-trash.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d2428e281cfd65f72086b510be7e425635e855f4fda1d272964c30b5253a9df4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "8aff9fa300a5df44f6659bfc66c7976e79b8e3aee583c22148ee50062517b281"

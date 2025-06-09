@@ -12,6 +12,8 @@ class Montage < Formula
     regex(href=.*?Montage[._-]v?(\d+(?:\.\d+)+)\.t.*?i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "b1d5f7c20f35e617f62197124a7c5c7e43bd4fc6272cf642346f6311d1da41b3"

@@ -11,6 +11,8 @@ class Mksh < Formula
     regex(/href=.*?mksh-R?(\d+[a-z]?)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b4a7e852c89de699dd93d9e89d5c6928b416f3fc5c54211dc2cb00188d228b66"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "be279888c13fec0c586f14251a00d0413a0bc835dadc07ca0c2f648c5d0b13a5"

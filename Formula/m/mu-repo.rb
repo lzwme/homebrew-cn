@@ -7,6 +7,8 @@ class MuRepo < Formula
   sha256 "f557e46e35a6dd8e1a8735c2a74ea1e60e9280040abc22a472e88eff0d23c5ca"
   license "GPL-3.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, all: "c1a12185e6ce3889731ba486e3fe58b862edcb5123e3877166b361aa7f3132ca"

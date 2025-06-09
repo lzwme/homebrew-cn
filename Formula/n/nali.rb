@@ -6,6 +6,8 @@ class Nali < Formula
   license "MIT"
   head "https:github.comzu1knali.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "49c0a2adfd6547b5f9106bb4cae051405966c565f5c947223071b0b176d67f73"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "76f8757159e2e3c2bfb3109af9f600c1e7f677350f60921bec3473fbf4bc3aa5"

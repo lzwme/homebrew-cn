@@ -6,6 +6,8 @@ class MCli < Formula
   license "MIT"
   head "https:github.comrgcrm-cli.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6c34603cd51adaa1e6dabc3c9ca533b2b72e2eb2a0626ecbac725b04428a4f7e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "16476d5b167268a327662d0aa26bf9c46aaf41bba5b08527f862b9ef2ce14034"

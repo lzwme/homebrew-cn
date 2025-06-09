@@ -3,19 +3,19 @@ class Streamlink < Formula
 
   desc "CLI for extracting streams from various websites to a video player"
   homepage "https:streamlink.github.io"
-  url "https:files.pythonhosted.orgpackages0ebacd25043ddaa6253cdbac234e00702eb6fcaec41c317284ed74f53fbde1b6streamlink-7.3.0.tar.gz"
-  sha256 "1e20d624451f26156a38b9dae5bdfcc6640a8bdf27922370edec8abe237abb08"
+  url "https:files.pythonhosted.orgpackages07838779287122de41b79763810204ce52bf644542396dd0273ad2fa177db80dstreamlink-7.4.0.tar.gz"
+  sha256 "2cc90e5a978800c9e5b113d0b26db1079451f43441a0476255c2e99fd65e60bb"
   license "BSD-2-Clause"
   head "https:github.comstreamlinkstreamlink.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "bceec769879be305a93d147035177e399c8703e4a7b41de06eb1d151e1a680cc"
-    sha256 cellar: :any,                 arm64_sonoma:  "e6ba97af997b319305d7a8cae4e5f4cf68dffc660347e98e669d44ea23e9065a"
-    sha256 cellar: :any,                 arm64_ventura: "33b57190b12e969954493c9056978c140810f1b4af08bcfdf20ff4889ce9d8c1"
-    sha256 cellar: :any,                 sonoma:        "df4c8b93662b3465db6f9b82ad3fa29b2b3e523054362d4ea3a14343aa69e70c"
-    sha256 cellar: :any,                 ventura:       "0d47a67d092480202ad8bfe28aeec98b03213d2a76df49b46d5dcaeadf8129f1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "5062e42a027139a58e40588a246f7ec95e3ccecf5ae976fe04f8ce021eedf327"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a2fcb9c5b7d2a2d636748dbe5d043f38103c844e9d5ab2e1320b33d7f26e851d"
+    sha256 cellar: :any,                 arm64_sequoia: "a5aa39be15dcb4cdde935ec2450ae1ea47a7fb444cc195f6383243031c36cd6a"
+    sha256 cellar: :any,                 arm64_sonoma:  "b3ce0baee67bd4279c12feeb617b0b9e6e4030b32924c6d2b43faaae5b205e2e"
+    sha256 cellar: :any,                 arm64_ventura: "4958888d8bc03a8cc60ffc68ff55b64f02472f82002dec5d0bd84c87a2b1de8a"
+    sha256 cellar: :any,                 sonoma:        "d4e13ef04262a0883f01fd617cb80b22e0ff035893d9f34177356eaad23d891e"
+    sha256 cellar: :any,                 ventura:       "e2cbf8ab2b9df41393b86371fe736bb44e118a630bcb180abbfa5139464e8783"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "11859be80c7be2f19fd713224c13326b67448135c5595f73bbc0c26e691c2f18"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2fc131225b7eb8648a9a1a916d228bb8e25879c591f3804aa817bd5591ca3b72"
   end
 
   depends_on "pkgconf" => :build
@@ -32,8 +32,8 @@ class Streamlink < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https:files.pythonhosted.orgpackagese43389c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12dcharset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "h11" do
@@ -67,8 +67,8 @@ class Streamlink < Formula
   end
 
   resource "pycryptodome" do
-    url "https:files.pythonhosted.orgpackages44e6099310419df5ada522ff34ffc2f1a48a11b37fc6a76f51a6854c182dbd3epycryptodome-3.22.0.tar.gz"
-    sha256 "fd7ab568b3ad7b77c908d7c3f7e167ec5a8f035c64ff74f10d47a4edd043d723"
+    url "https:files.pythonhosted.orgpackages8ea68452177684d5e906854776276ddd34eca30d1b1e15aa1ee9cefc289a33f5pycryptodome-3.23.0.tar.gz"
+    sha256 "447700a657182d60338bab09fdb27518f8856aecd80ae4c6bdddb67ff5da44ef"
   end
 
   resource "pysocks" do

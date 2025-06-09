@@ -6,6 +6,8 @@ class Mpack < Formula
   sha256 "274108bb3a39982a4efc14fb3a65298e66c8e71367c3dabf49338162d207a94c"
   license "BSD-3-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "39ef950b3be79638f72addb1f2bd87c4c67f9bddeb55f62910175ab6c90b6dc8"

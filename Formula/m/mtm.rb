@@ -5,6 +5,8 @@ class Mtm < Formula
   sha256 "2ae05466ef44efa7ddb4bce58efc425617583d9196b72e80ec1090bd77df598c"
   license "GPL-3.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "7568a6130dc642b184063d2b470d2855e0cbc040e80c0f9409aeee9361c80b1b"
     sha256 cellar: :any,                 arm64_sonoma:   "5f63cd8a1cfeab4ed5e0b5b88f63482f88508ea4ee6d3c2c9c16b6fc1cbd8fab"

@@ -6,6 +6,8 @@ class MicroInetd < Formula
   sha256 "15f5558753bb50ed18e4a1445b3e8a185f3b1840ec8e017a5e6fc7690616ec52"
   license "BSD-2-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9693aed7c6ab1caf581335fefd2eea3fcde0e3b62fbbe1378cd81bba864410a4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "232b03dbe326168f085f817aa5f54dfbd1d1793e6eced2991fcf5c27c932f3c4"

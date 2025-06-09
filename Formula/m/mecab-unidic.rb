@@ -11,6 +11,8 @@ class MecabUnidic < Formula
     regex(/href=.*?unidic-mecab[._-]v?(\d+(?:\.\d+)+)[._-]src\.zip/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 3
     sha256 cellar: :any_skip_relocation, all: "41360acf4a7845341e5aa6b3dbd168c083797ad7931f5eb3bd4b40730b02276b"

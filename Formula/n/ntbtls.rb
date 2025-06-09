@@ -10,6 +10,8 @@ class Ntbtls < Formula
     regex(/href=.*?ntbtls[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "0b1672e39923c23daf86bb20ba920ba31144e4a2ab95218cab6c8b45d979a534"
     sha256 cellar: :any,                 arm64_sonoma:   "ab4d5a53bb700d479e6be04b5d749b8c65947be1bf2800120ccb706b2608af1d"

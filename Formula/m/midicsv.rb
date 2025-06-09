@@ -10,6 +10,8 @@ class Midicsv < Formula
     regex(/href=.*?midicsv[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d9f2a974d6a9eb331de0e371bcf96589dd6fdfec7a2f862ec5f0a591d3721825"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f4733fc9797f3a20fc40b127895631d0beca4f15e1dd289ff24e9010821b4731"

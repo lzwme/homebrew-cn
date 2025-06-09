@@ -9,6 +9,8 @@ class Nomad < Formula
   license "MPL-2.0"
   head "https:github.comhashicorpnomad.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "31470c7ad52709c0483c07b31d915d1247759b9d7b900aeba8e909d892bd54a7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "57af75515a8706b2bf7229d144870f017890bf41f11dd908af028e18dabc75a3"

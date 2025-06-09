@@ -5,6 +5,8 @@ class Mmsrip < Formula
   sha256 "5aed3cf17bfe50e2628561b46e12aec3644cfbbb242d738078e8b8fce6c23ed6"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ba19c7e871dd33876bdbd931af577e633a3c2eeb1f0fb25c9d3ade606a0b8c1f"

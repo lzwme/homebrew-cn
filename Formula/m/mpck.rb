@@ -10,6 +10,8 @@ class Mpck < Formula
     regex(/href=.*?checkmate[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "81d2d6e7ea068e0cc9f43913ca1e946efe3cadd19a6e89ee88a7b734dc800cee"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9eeb22c03ef069272b7a17479aa9c88b3778fd6ffbd4b9196da8b1b68bcee68a"

@@ -6,6 +6,8 @@ class NetcdfCxx < Formula
   license "NetCDF"
   revision 3
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "50dfd3ba9dea12a4a355e8643a74ca53b6c184c96e3bcdf0e24e3052491be0c8"
     sha256 cellar: :any,                 arm64_sonoma:  "e80f685cdd7fd31e72e0fdeb96a8770a243f4729d0a2f0417808782dfd2d5bc9"

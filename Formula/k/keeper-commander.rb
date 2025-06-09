@@ -3,19 +3,19 @@ class KeeperCommander < Formula
 
   desc "Command-line and SDK interface to Keeper Password Manager"
   homepage "https:docs.keeper.ioenprivileged-access-managercommander-clioverview"
-  url "https:files.pythonhosted.orgpackages33620d80dba875c2a156b0a44c7fc3cbf215702f55f85dea6c14b0939f64fe99keepercommander-17.1.0.tar.gz"
-  sha256 "e8eaefd1dfc01c2ad9c1a6fb9dc40678d8f9639f300947ea4b233fb241f5105f"
+  url "https:files.pythonhosted.orgpackagesd6565911f0e6eeee11d2e72ee7ab3130513e8ad60e480eb4e108a50922c2fbf8keepercommander-17.1.1.tar.gz"
+  sha256 "03abf94fb594ff6eec63a1ac9076c8a7e839723e13b0ade9afabcfc123270969"
   license "MIT"
   head "https:github.comKeeper-SecurityCommander.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "114140838d4fe540e7f444f27ee4f77ec547e91ada01b0c4dbe74dae06978cfd"
-    sha256 cellar: :any,                 arm64_sonoma:  "7d36812dc91d0e78749d5dbcdef9a3580959eb2307007c9547d642e32acf1fcd"
-    sha256 cellar: :any,                 arm64_ventura: "8da1ac51700b6ec36abe49db1a8c2604b2b95020ffed90220121fa701c62afe8"
-    sha256 cellar: :any,                 sonoma:        "eb23ef278c424bbad48c76e3bb55197ace6069c28fb0b140f35d53f8e4d3f48e"
-    sha256 cellar: :any,                 ventura:       "1289e94b5113e6ebd70370f4dff586b2601b1cef7431ad50e61a1950a2b1e379"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7181126bd3160976c8a60ca4f605f9c4e3ea1708e9996599f6642c71ee4336cc"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "face1b3fbb25aea3b51f937ebc31e03347c1693a77a237923df1e0e2619a1b4c"
+    sha256 cellar: :any,                 arm64_sequoia: "b7871cb3bd9c1da3af06223125fc9adfa4a52e40a423796edbd4c2012694fbf3"
+    sha256 cellar: :any,                 arm64_sonoma:  "dcb39141e34a742a3af710a242a8613fdca098552abbf73d8bd5a8dff88be4f9"
+    sha256 cellar: :any,                 arm64_ventura: "5ec53c5ef36d78f617f8281e96c107eb31f39c415a957f90324ccccf816ff1d0"
+    sha256 cellar: :any,                 sonoma:        "5255ec6a821bc09bcc77ca7ccaaaf6160226e177a73f495a560044d23d1545b3"
+    sha256 cellar: :any,                 ventura:       "414a74996942c5497bac0656ac71a1335284313e535f13c69b94e60117b2e4b0"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "857137bde6fdf856891a0cfb7385780a5cca6f1428e7f342efb003646c0975ca"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b89c49914a802d2bc1e96eaaeb81822eaeb130e12b07f2ee1049782a24b85d80"
   end
 
   depends_on "pkgconf" => :build
@@ -24,14 +24,26 @@ class KeeperCommander < Formula
   depends_on "certifi"
   depends_on "cryptography"
   depends_on "ffmpeg"
+  depends_on "freetype"
+  depends_on "jpeg-turbo"
+  depends_on "libtiff"
   depends_on "libvpx"
   depends_on "libyaml"
+  depends_on "little-cms2"
   depends_on "opus"
   depends_on "python@3.13"
   depends_on "srtp"
+  depends_on "webp"
+
+  uses_from_macos "zlib"
 
   on_macos do
     depends_on "openssl@3"
+  end
+
+  on_intel do
+    depends_on "libxcb"
+    depends_on "openjpeg"
   end
 
   resource "aioice" do
@@ -115,8 +127,8 @@ class KeeperCommander < Formula
   end
 
   resource "fonttools" do
-    url "https:files.pythonhosted.orgpackages3e7a30c581aeaa86d94e7a29344bccefd2408870bf5b0e7640b6f4ffede61bd0fonttools-4.58.1.tar.gz"
-    sha256 "cbc8868e0a29c3e22628dfa1432adf7a104d86d1bc661cecc3e9173070b6ab2d"
+    url "https:files.pythonhosted.orgpackagesb6a93319c6ae07fd9dde51064ddc6d82a2b707efad8ed407d700a01091121bbcfonttools-4.58.2.tar.gz"
+    sha256 "4b491ddbfd50b856e84b0648b5f7941af918f6d32f938f18e62b58426a8d50e2"
   end
 
   resource "fpdf2" do
@@ -240,8 +252,8 @@ class KeeperCommander < Formula
   end
 
   resource "pyngrok" do
-    url "https:files.pythonhosted.orgpackages0df463129f976b3ee21ca8b193e45b639a62eb8b0e2ffbf28ccdf4e4fcd70f3cpyngrok-7.2.9.tar.gz"
-    sha256 "231b7fd4a7a5e8265a8d6150d3ba3c82d9dffd409edaedb72c4e62b32de44f91"
+    url "https:files.pythonhosted.orgpackagesb7f807117c60fe37c97fbc7163f8697f289551d618f930801f3b53f1b14b2b7fpyngrok-7.2.11.tar.gz"
+    sha256 "9f8890389bd95abc00eca13846c8f485a0db6667dc05987eb98fde343adfb25a"
   end
 
   resource "pyopenssl" do
@@ -320,8 +332,8 @@ class KeeperCommander < Formula
   end
 
   resource "zipp" do
-    url "https:files.pythonhosted.orgpackages12b67b3d16792fdf94f146bed92be90b4eb4563569eca91513c8609aebf0c167zipp-3.22.0.tar.gz"
-    sha256 "dd2f28c3ce4bc67507bfd3781d21b7bb2be31103b51a4553ad7d90b84e57ace5"
+    url "https:files.pythonhosted.orgpackagese3020f2892c661036d50ede074e376733dca2ae7c6eb617489437771209d4180zipp-3.23.0.tar.gz"
+    sha256 "a07157588a12518c9d4034df3fbbee09c814741a33ff63c05fa29d26a2404166"
   end
 
   def install

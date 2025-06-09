@@ -6,6 +6,8 @@ class NodeAT16 < Formula
   license "MIT"
   revision 3
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "b13be0d32da21d723781c78c3f5a3bdf84d86541d867c99944ce845752efb7f7"
     sha256 cellar: :any,                 arm64_sonoma:  "77f8dc24029ff4a327a08e34ca03b9bffb2d2af3154a72d3e715dbdbd5dcc056"

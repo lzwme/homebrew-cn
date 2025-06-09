@@ -12,6 +12,8 @@ class Mandoc < Formula
     regex(/href=.*?mandoc[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "cc7045b49fb8f8d57fae60c7ddcd9ea21ebb3abbf4f79e8e9a276273a122fd56"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e52aaa74b6654469741aa21738507e636c4b09576109ff602f78a445a4ce30dc"

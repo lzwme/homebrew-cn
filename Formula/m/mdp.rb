@@ -6,6 +6,8 @@ class Mdp < Formula
   license "GPL-3.0-or-later"
   head "https:github.comvisit1985mdp.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e9f0539ae98eb89b4de2ae0048c6d79bedfe28757a11d09ef99879fa6ab2dd04"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f016a8106040ad6eb3d2d5ec053b87559f48752588177ef6165e7bee1e91166c"

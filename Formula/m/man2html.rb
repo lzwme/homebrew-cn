@@ -11,6 +11,8 @@ class Man2html < Formula
     regex(/href=.*?man2html[._-]?v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ecc7e32cd32d246ff8e3efc5061325d43178e0ed1f32847b501af7c394540483"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "57f83bcc5fc4cc1278e1e8fa671a51959ff91c4952a3a2da10f602c3331f141d"

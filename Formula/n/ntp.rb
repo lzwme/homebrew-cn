@@ -11,6 +11,8 @@ class Ntp < Formula
     regex(/href=.*?ntp[._-]v?(\d+(?:\.\d+)+(?:p\d+)?)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "991683b9f1c1596bd5b8c518bc94efc07539371b2ef0c3ee49144e2db44d4e8e"
     sha256 cellar: :any,                 arm64_sonoma:   "41bfb9eea202e95df1a7aaaee2884019f7df5f3c0b8be100b4fc09f7ac26cdd1"

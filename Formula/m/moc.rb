@@ -42,6 +42,8 @@ class Moc < Formula
     regex(href=.*?moc[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "0c9fa6831440aa41b25064c9f2d93e9827f0d4f1ea0f2e1184def14041366d1b"
     sha256 arm64_sonoma:  "f9698a87a21e1695cfc81523056a86d2a08b3ecb013b978c46b0584a2cff566e"

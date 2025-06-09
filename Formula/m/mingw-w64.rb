@@ -11,6 +11,8 @@ class MingwW64 < Formula
     regex(%r{url=.*?release/mingw-w64[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "5a9ae42e386047663ce83a4bfdd5baba0f3194a82a7b027ebd007b195036374b"
     sha256 arm64_sonoma:  "92f23f47355fe2b1e528190538ebb34d458d8696834c63a585e41e2ef965ec20"

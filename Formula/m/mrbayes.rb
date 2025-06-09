@@ -12,6 +12,8 @@ class Mrbayes < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "bc112b0be314f46b96f507ec3741b7f915b7b384e162ff88d98076a0370a728f"
     sha256 cellar: :any,                 arm64_sonoma:   "e671f59ccb6371a26c1ff58c6bbb800a2bf7472f625ac83d756eeb8b281fd6a9"

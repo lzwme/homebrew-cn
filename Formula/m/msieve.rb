@@ -10,6 +10,8 @@ class Msieve < Formula
     regex(%r{url=.*?/Msieve%20v?(\d+(?:\.\d+)+)/}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "2260d591d00ad9854b38b43ccacae829d03ca030b0f5e50ec5989d7ce2b3e616"
     sha256 cellar: :any,                 arm64_sonoma:   "e2048a031203ed1bb7bb3ee4becb928faa9f6d40b96ce62d3718873dd25bc83e"

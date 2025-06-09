@@ -13,6 +13,8 @@ class Nrg2iso < Formula
     regex(/href=.*?nrg2iso[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2f1d58f67f14d00b757723122fa33b637eee7d39ee468f900d49776d423f49c2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c09a924e840e8dc516e7164e678386d07de4f6b28d73aff61cc8242cdb0f99ef"

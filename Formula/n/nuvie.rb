@@ -6,6 +6,8 @@ class Nuvie < Formula
   license "GPL-2.0-or-later"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "902a34d91fc246cecdc69226062a69cba191bcf6992503f15c4f88ddad3026d6"
     sha256 cellar: :any,                 arm64_sonoma:   "5411b122bd14475a5b65b01528146f985b3af26d4e6b82c6d34c49197e1dfc0e"

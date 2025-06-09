@@ -11,6 +11,8 @@ class Mysqlxx < Formula
     regex(/>mysql\+\+[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "5c39095c830382c0de716906058fdfc99dc8ba77c57b2682ffab177767790c21"
     sha256 cellar: :any,                 arm64_sonoma:  "20c4acc648555402a0e94e9d4f771ae4952e1a207ff86af5b088694b5bc0195d"

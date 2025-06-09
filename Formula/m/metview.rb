@@ -11,6 +11,8 @@ class Metview < Formula
     regex(%r{>\s*Metview\s*<.+?<td[^>]*?>\s*v?(\d+(?:\.\d+)+)\s*</td}im)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sonoma:  "876917b5c9621b6efb3b45381e33741484588dbbda49fa69d01c1af12f79f830"
     sha256 arm64_ventura: "328738471e53512d4f170c1792eb7dd4f44210ae134391e5aefb87f14a5dc719"

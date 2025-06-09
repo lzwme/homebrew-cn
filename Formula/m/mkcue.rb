@@ -5,6 +5,8 @@ class Mkcue < Formula
   sha256 "2aaf57da4d0f2e24329d5e952e90ec182d4aa82e4b2e025283e42370f9494867"
   license "LGPL-2.1-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "86b0008a011b784913cbf754e986e22b8164c5d75cc872c599f668c7061f4f8b"

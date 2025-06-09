@@ -6,6 +6,8 @@ class Makeself < Formula
   license "GPL-2.0-or-later"
   head "https:github.commegastepmakeself.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "3e45d0c2e2373b3a70edf4d95447341b46f57eca3acf42e10ac0403cac4cd620"

@@ -5,6 +5,8 @@ class Memcacheq < Formula
   sha256 "ace33313568959b5a301dda491f63af09793987b73fd15abd3fb613829eda07e"
   license "BSD-3-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "2fb49de889de4fa7c037d8b01d7c75a5bc1f8e2ba57658fa6a936d108f2155fb"
     sha256 cellar: :any,                 arm64_sonoma:  "38ef101728df7bd59257cce89d43a941e531271b1fbed3689fd5af69bb05ac97"

@@ -6,6 +6,8 @@ class MesalibGlw < Formula
   license "SGI-OpenGL"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "b127d5bb8ec7caceb1de9e05a28bf845242e04886ad39357558704b9ffd51e9b"
     sha256 cellar: :any,                 arm64_sonoma:   "e36a490fd422b17fc371870a0da3c657520cc1e90bb01a865c1356a6bb466acd"

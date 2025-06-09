@@ -14,6 +14,8 @@ class MecabUnidicExtended < Formula
     formula "mecab-unidic"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c22fe677d5ab8e9fea7fdae111d0cb7af0e3971ccd5717c54e5e770cf46d5d4a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "243fbb81ef84212672b3b793c96460ae56d66b61b2bad5ca965df3effcd959e7"

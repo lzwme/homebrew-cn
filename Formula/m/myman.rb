@@ -6,6 +6,8 @@ class Myman < Formula
   license "MIT"
   head ":pserver:anonymous:@myman.cvs.sourceforge.net:/cvsroot/myman", using: :cvs
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 arm64_sequoia:  "0dc21521eed45cafe254d4827b33de42b08fd4be2eeae5dc0bfe88f6fe6dbf6f"

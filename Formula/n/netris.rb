@@ -9,6 +9,8 @@ class Netris < Formula
     skip "No longer developed or maintained"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "45fd383811db400a50896723b5c7f9e05015d19208c678d14e52e68031dd6887"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "311ecb7d3b6ba50544169823f78960a2da39290fed321d2f0328fd0b4da72359"

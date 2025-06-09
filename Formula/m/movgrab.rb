@@ -6,6 +6,8 @@ class Movgrab < Formula
   license "GPL-3.0-or-later"
   revision 9
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "eebe35ad85f24d6670b44de90e944d2ec6e7d8b3d678581d765b47a37b5921de"
     sha256 cellar: :any,                 arm64_sonoma:  "8258f2373e9954cec98e1794809aceb67cb86a67b700534ca8e897399a462c1d"

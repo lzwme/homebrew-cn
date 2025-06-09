@@ -6,6 +6,8 @@ class Noir < Formula
   license "MIT"
   head "https:github.comowasp-noirnoir.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "7b5a6a842c5f4ae0628d686a9966c5415ef9deda5a138b217a5597bab5fdfd5d"
     sha256 cellar: :any,                 arm64_sonoma:  "66c2f471904e9893c411a1241f38ba348e8342d7cea57586bfb5444fbd7e0e60"

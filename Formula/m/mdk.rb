@@ -12,6 +12,8 @@ class Mdk < Formula
     regex(%r{href=["']?v?(\d+(?:\.\d+)+)/?["' >]}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "7f8f1976f4085fd2069b0e8e36c7b4dc939a9da53776d446c5bd00587c166ba7"
     sha256 arm64_sonoma:   "fd1a717d1a4c992880d8afd9217b46416521dbe7d4c87b6caf86efdc9e603bb7"

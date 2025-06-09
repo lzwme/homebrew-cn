@@ -5,6 +5,8 @@ class Naga < Formula
   sha256 "7f56b03b34e2756b9688e120831ef4f5932cd89b477ad8b70b5bcc7c32f2f3b3"
   license "BSD-3-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4ff5ae52821845aa9ac4bc84d74ec1554a08984c37767fc5facba882ff322f98"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2c49ba4967205f60079ad869d397bc75e1dd4130b86595dfd06a45836febccdb"

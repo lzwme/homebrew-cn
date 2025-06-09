@@ -11,6 +11,8 @@ class NetSnmp < Formula
     regex(%r{url=.*?net-snmp[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "fdeaf56a79dfe93f7ed48765a26f6b34f030f1a0d96950410c7c4a3100eb0e7f"
     sha256 arm64_sonoma:   "9d0ea2f793065eab2cb7c858d5926bb9ec40dfd0460a31c4d9f09932ae1c2455"

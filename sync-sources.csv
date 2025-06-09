@@ -16,6 +16,7 @@ Homebrew-homebrew-core/Formula/a/abi-dumper.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/abi3audit.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/abnfgen.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/a/abook.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/a/abpoa.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/abricate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/abseil.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/a/abyss.rb, Homebrew/homebrew-core, 1
@@ -2510,7 +2511,6 @@ Homebrew-homebrew-core/Formula/g/gopass-jsonapi.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gopass.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gopeed.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gopls.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/goplus.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/goproxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gops.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gor.rb, Homebrew/homebrew-core, 1
@@ -4224,7 +4224,7 @@ Homebrew-homebrew-core/Formula/m/mapserver.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/marcli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb-connector-c.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb-connector-odbc.rb, Homebrew/homebrew-core, 0
-Homebrew-homebrew-core/Formula/m/mariadb.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/m/mariadb.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/mariadb@10.10.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@10.11.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/mariadb@10.4.rb, Homebrew/homebrew-core, 1
@@ -4395,7 +4395,7 @@ Homebrew-homebrew-core/Formula/m/minisat.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minised.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/m/miniserve.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minisign.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/m/miniupnpc.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/m/miniupnpc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minizinc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minizip-ng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/m/minizip.rb, Homebrew/homebrew-core, 0
@@ -5058,6 +5058,7 @@ Homebrew-homebrew-core/Formula/o/osv-scanner.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/osx-cpu-temp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/osxutils.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/otel-cli.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/oterm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/otf2.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/otf2bdf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/otree.rb, Homebrew/homebrew-core, 1
@@ -6515,6 +6516,7 @@ Homebrew-homebrew-core/Formula/s/streamripper.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/streamvbyte.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stress-ng.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stress.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/stringtie.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/strip-nondeterminism.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/stripe-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/stripe-mock.rb, Homebrew/homebrew-core, 1
@@ -7071,6 +7073,7 @@ Homebrew-homebrew-core/Formula/u/urlview.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/urlwatch.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/uru.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/urweb.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/u/urx.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/usage.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/u/usb.ids.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/u/usbredir.rb, Homebrew/homebrew-core, 0
@@ -7449,6 +7452,7 @@ Homebrew-homebrew-core/Formula/x/xerces-c.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xeyes.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/x/xfig.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xgboost.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/x/xgo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xh.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xidel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/x/xinit.rb, Homebrew/homebrew-core, 1

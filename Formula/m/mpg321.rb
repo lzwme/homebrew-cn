@@ -6,6 +6,8 @@ class Mpg321 < Formula
   license "GPL-2.0-or-later"
   revision 3
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "ed6f4de0b208b65bdc562fefd7f6cd8dbad5b6489b52bc24b4bf9109de4b6f35"
     sha256 arm64_sonoma:   "00b92592cadd767c25fe24941095b6f6f088cf319b25ab78a83d0a75797e7a43"

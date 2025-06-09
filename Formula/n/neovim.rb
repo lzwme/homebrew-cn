@@ -52,6 +52,8 @@ class Neovim < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "4daf9a69527c6243feaf66c3ce0d01f5fc6f6ff962988a561663ddb01a3c36cf"
     sha256 arm64_sonoma:  "619883a9f10ea00f97840b378cc56019690662d1542c1cef0732b5c8f20e3a4d"

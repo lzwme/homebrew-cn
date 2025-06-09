@@ -6,6 +6,8 @@ class Npush < Formula
   license "GPL-2.0-or-later"
   head "https://svn.code.sf.net/p/npush/code/"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "52bb1bf2c16219188637e18260db7c52d8eead9d02dd9f65bb9d7cfb7adf6520"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "58edd27febec742ef46cf8e1b6fca1bf8053a99c953fbd53743a6b12387d924c"

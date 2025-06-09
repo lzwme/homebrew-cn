@@ -17,6 +17,8 @@ class MscGenerator < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "c1f15322760c6c6832f4391aa34e426e3107322cf0150b38ecb504e66c7f0229"
     sha256 arm64_sonoma:  "0099d9bdd7c1cfce442bd16cbc462126e9ea9d8407d8c40538edfcde102f0c57"

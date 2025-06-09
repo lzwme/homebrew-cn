@@ -15,6 +15,8 @@ class MecabIpadic < Formula
     regex(/href=.*?mecab-ipadic[._-]v?(\d+(?:\.\d+)+(?:-\d+)?)(?:\+main)?\.orig\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b0b12716ef5436fca113fb97c824e532b50b86ef59cb5b035498d00f54579286"

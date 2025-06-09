@@ -7,6 +7,8 @@ class Mdv < Formula
   sha256 "eb84ed52a2b68d2e083e007cb485d14fac1deb755fd8f35011eff8f2889df6e9"
   license "BSD-3-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 4
     sha256 cellar: :any,                 arm64_sequoia: "ef4e272237c57fc919e84a83ec656a2573fc2c2e9abcb1f8ee38337674c4547d"

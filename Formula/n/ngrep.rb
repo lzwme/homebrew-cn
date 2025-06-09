@@ -5,6 +5,8 @@ class Ngrep < Formula
   sha256 "dc4dbe20991cc36bac5e97e99475e2a1522fd88c59ee2e08f813432c04c5fff3"
   license :cannot_represent # Described as 'BSD with advertising' here: https:src.fedoraproject.orgrpmsngrepblobrawhidefngrep.spec#_8
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a2f5ada3b9c16b15c122b7a749d12ec3f52e65b710e6cc8f4ea03f81a4eb0a3e"

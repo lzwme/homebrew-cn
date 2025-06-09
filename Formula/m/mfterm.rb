@@ -6,6 +6,8 @@ class Mfterm < Formula
   license "GPL-3.0-or-later"
   revision 3
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "c39d49d9fc6ecddfb36e2e6f92b5e0e130ab8f02a9e8865a33a5cf022479a528"
     sha256 cellar: :any,                 arm64_sonoma:   "f8fe27bad6cfa36a2883513d7d5656022c08cd96974fe350a5e77f51a668fca1"

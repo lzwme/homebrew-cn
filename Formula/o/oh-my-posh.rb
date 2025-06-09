@@ -1,8 +1,8 @@
 class OhMyPosh < Formula
   desc "Prompt theme engine for any shell"
   homepage "https:ohmyposh.dev"
-  url "https:github.comJanDeDobbeleeroh-my-posharchiverefstagsv26.4.0.tar.gz"
-  sha256 "9c3d8358cb91466985f269fd407d1302f2fb7f9e46fe39f9f9a76c2fbf2bfa68"
+  url "https:github.comJanDeDobbeleeroh-my-posharchiverefstagsv26.4.1.tar.gz"
+  sha256 "5bc3624c32ff7bec1294a9cd0fb9112544f9e11c2402682ba71bc872f1e9870d"
   license "MIT"
   head "https:github.comJanDeDobbeleeroh-my-posh.git", branch: "main"
 
@@ -15,12 +15,12 @@ class OhMyPosh < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e33538e016f93587f4baf4bdcf36e7bb32fcdb272162c03f42140e41fa1b03f7"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a87573e906b04d08cc6f42f6d2018310c90df5c275e7fb345ecfffcabce65dfc"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "a7f4f75724a95dbf40b62ff28fdc86c73cd52138cd4bbb8a2ed14e9c9f0d5058"
-    sha256 cellar: :any_skip_relocation, sonoma:        "638f9019bd703eeda167b99f2a8bb110162622a3c457ab48e903b4c2583a0897"
-    sha256 cellar: :any_skip_relocation, ventura:       "bdf452b07e32c960b350f449f9a7d9a820f8fe3a500e3ef536f8a83a6aca405f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "03a437c3b97579e3b80d5b14daa5adb78053999b0084b4da9c6ecb8fb55459c8"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "aeaa1a408c537e86535eed9385df81d3e0dcc0e6c1395fb2b0e173f6e7147f30"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "402b1bbb5925822d28d58fa5da8197b176ac75f44b6363e3856c27670cf81966"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5141465a28b8bfd450b88b62c81465bb36454143843a507cffce8a1015e983cc"
+    sha256 cellar: :any_skip_relocation, sonoma:        "9f31d7a3e92e049a7385406e8cfa6b603bfcac5facafb4391746f8acf95623f9"
+    sha256 cellar: :any_skip_relocation, ventura:       "0288defd914a71a1311c6c0ddea7a782c1f019fc3102eb056bd4b077e851d92e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3602c95844759fd2fa8704a672e28e4f46748d3e0d88bb48e67b700589883618"
   end
 
   depends_on "go" => :build

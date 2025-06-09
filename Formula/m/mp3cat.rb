@@ -5,6 +5,8 @@ class Mp3cat < Formula
   sha256 "b1ec915c09c7e1c0ff48f54844db273505bc0157163bed7b2940792dca8ff951"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5320e93de9cf583fc6b074a45c450c4ebb0fc6b86dbf887c9d77196a34655271"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e5c88c18fd159e395849b60bea5da8355546c7e3de34a521c5d5e9eb5f6ddd83"

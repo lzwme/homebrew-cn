@@ -5,6 +5,8 @@ class Mon < Formula
   sha256 "978711a1d37ede3fc5a05c778a2365ee234b196a44b6c0c69078a6c459e686ac"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8be88943149d839ef8ffc37b1b81150f8c0325fc40a1878bd864df744fa96d67"

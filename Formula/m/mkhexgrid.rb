@@ -10,6 +10,8 @@ class Mkhexgrid < Formula
     regex(/href=.*?mkhexgrid[._-]v?(\d+(?:\.\d+)+)[._-]src\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "66907e9872e7fa397d62e89974e7ad0abfb9a2dc527f25d32606e0d6a73e93f5"
     sha256 cellar: :any,                 arm64_sonoma:   "2714d9b761672dd9ce249a18f1b24d7d0a954574383107b7b048924d11587fd4"

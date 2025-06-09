@@ -11,6 +11,8 @@ class MecabKo < Formula
     regex(/href=.*?mecab[._-]v?(\d+(?:\.\d+)+-ko-\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia:  "3c1c199bd50bf6df285b924549652b4cf357cad624603cd393b9d88b80353a80"

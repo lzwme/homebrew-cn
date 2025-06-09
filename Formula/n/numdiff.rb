@@ -11,6 +11,8 @@ class Numdiff < Formula
     regex(/href=.*?numdiff[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "5cb5945e56139a742bd1887a3b8a97affe5cb10bac1cafbb5cb40a5b1a70e28d"
     sha256 cellar: :any,                 arm64_sonoma:   "49e592dbd55f5df5add8f7a7814d349cbb150546f672ddca22d12e489ff65fde"

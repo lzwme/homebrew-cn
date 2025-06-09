@@ -10,6 +10,8 @@ class Nsuds < Formula
     regex(%r{url=.*?/nsuds[._-]v?(\d+(?:\.\d+)+[A-Z]?)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "bd292cf994f5641b70cfd91b592bc8e82b9a9895d1c95c718ff0530a9b98668d"
     sha256 arm64_sonoma:   "2a478277a19b9cfaf40f2b675cef9113b6db1d662468fdaf2e34c7d9200b5cb9"

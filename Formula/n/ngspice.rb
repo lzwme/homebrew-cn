@@ -10,6 +10,8 @@ class Ngspice < Formula
     regex(%r{url=.*?/ngspice[._-]v?(\d+(?:\.\d+)*)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "1ffc6582d286ba7c1055977a97500cd471eb9f9841c25367fcd1d95732236ef8"
     sha256 arm64_sonoma:  "9552d93ee2085bf77d77231dc028067699663683f109f5ed2c946f54f2d407f6"

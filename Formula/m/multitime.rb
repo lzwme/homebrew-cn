@@ -5,6 +5,8 @@ class Multitime < Formula
   sha256 "31597066239896ee74a3aaaea3b22931a50a1ec1470090c5457ef35500c44249"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9f8212bee01aa77f3422303f6ff1d0e59bb2937be070934a857448e808adaa61"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a0439477342bced6548a46765025a9d860d571060b9319dfe480f977b8420e0c"

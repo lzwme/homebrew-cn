@@ -7,6 +7,8 @@ class Mxnet < Formula
   license "Apache-2.0"
   revision 2
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "1e1e944d4b346f4dd124237e0310c8aded1710c1e49e56b50d43a8e35c503271"
     sha256 cellar: :any,                 arm64_ventura:  "2020a5335652d0b125527493362fcdfc82401f4138cc5f858839bf8fa3c89d8d"

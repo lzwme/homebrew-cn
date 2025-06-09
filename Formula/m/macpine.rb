@@ -17,6 +17,8 @@ class Macpine < Formula
         # Naively convert tags like `v.01` to `0.1`
         tag.match?(^v\.?\d+$i) ? version.chars.join(".") : version
       end
+
+      no_autobump! because: :requires_manual_review
     end
   end
 

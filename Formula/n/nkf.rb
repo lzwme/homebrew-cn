@@ -11,6 +11,8 @@ class Nkf < Formula
     regex(%r{=.*?rel/nkf/v?(\d+(?:\.\d+)+[a-z]?)["' >]}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "67d8e9dea97994ba77574c0be558cb009448a7aa9d3d577b54e3d5728d1fb1d6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "89c0a1d6d5886045189b7a3e393b451c84ea7abf7e6f68663819b96651c58f58"

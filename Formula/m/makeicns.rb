@@ -5,6 +5,8 @@ class Makeicns < Formula
   sha256 "10e44b8d84cb33ed8d92b9c2cfa42f46514586d2ec11ae9832683b69996ddeb8"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "89f7fec6280f4ff185da4d6bf07ba3f30f977bf40b5316c559a8af7a83f2a08c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c13f31a5163d2ffcf745b43b76516445c2dc73b17d370c5ab6c7c601245cc0e7"

@@ -5,6 +5,8 @@ class Mkclean < Formula
   sha256 "2f5cdcab0e09b65f9fef8949a55ef00ee3dd700e4b4050e245d442347d7cc3db"
   license "BSD-3-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b4d263e75e4ccfdc7eeb90529899374a43f38bafda669dd33c906e533f1e7738"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3d518850ce61f5e54380d36c14e6192ec43b52cc83fec9802a08e557d98a02b7"

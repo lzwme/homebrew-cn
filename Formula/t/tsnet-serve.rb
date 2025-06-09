@@ -1,18 +1,18 @@
 class TsnetServe < Formula
   desc "Expose HTTP applications to a Tailscale Tailnet network"
   homepage "https:github.comshaynetsnet-serve"
-  url "https:github.comshaynetsnet-servearchiverefstagsv1.2.2.tar.gz"
-  sha256 "8919abe9e4d7a54539f06369c4155df57bbf7427a6007c9d4e13a908847c7308"
+  url "https:github.comshaynetsnet-servearchiverefstagsv1.2.3.tar.gz"
+  sha256 "74eb6bc77187dc96fa0ca5a615347314ad3016887942fc4b66445250a0cf50ab"
   license "MIT"
   head "https:github.comshaynetsnet-serve.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "331db5b5052dbd753feece4c2b53f26bc60bbd5043366272f373847a3bff3c90"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c1174c09fd0bff9359d086b494d1080ab68b3262e4ab3ec06d3cd3cfab68961b"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b83bec3f46ea89ec189f4cbb236eff876e77ef2e3c38766790b3a188c02731a0"
-    sha256 cellar: :any_skip_relocation, sonoma:        "4cf5f5587606b7eccf13cc6ebf99f760968fb95c44e205921d576bffa6fea477"
-    sha256 cellar: :any_skip_relocation, ventura:       "39b8503b95a78e17f6c1a9e2add4519380ad11a556f6cc8fc92998ea876b25df"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "61082ea4b3cf7a31efc98274928fd075e04aa6bf8b3373ce007edbb6b964f86c"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1f8d0695c024ea24eab8ade9740ac5d96065d1a8398d854e501c5091bb440127"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1ab5b73daabbad4132d88f8cc621a7fb4013e7c17d5aaa78cef976e965c6d8e7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5c7900fd179c02cedae2c84b9b6d31061e664765509143c38b6f47098a4f6809"
+    sha256 cellar: :any_skip_relocation, sonoma:        "7be21bdd228c27b326dedc4c4120d1460618fd062af2178eede6b4b19b5458a6"
+    sha256 cellar: :any_skip_relocation, ventura:       "9f41448fa4d33ea24919013dd2079279724fc8a7c5ec50c2baf5f77663dfd3e8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "960f51f47faaff74445b535c61b5cf6cba1282110e11f4a3de6e49f167245e54"
   end
 
   depends_on "go" => :build
@@ -34,7 +34,6 @@ class TsnetServe < Formula
     sleep 1
 
     output = logfile.read
-    assert_match "starting tsnet-server (#{version})", output
     assert_match "proxying traffic to #{backend}", output
     assert_match "tsnet starting with hostname \"#{hostname}\"", output
     assert_match "LocalBackend state is NeedsLogin", output

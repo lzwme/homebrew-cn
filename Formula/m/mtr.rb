@@ -10,6 +10,8 @@ class Mtr < Formula
   license all_of: ["GPL-2.0-only", "BSD-3-Clause", "LGPL-2.0-only"]
   head "https:github.comtraviscrossmtr.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "de2a8c8ebe004fa34eb74e44a23eda5371a0b00d794c31541369afc9383dcb59"
     sha256 cellar: :any,                 arm64_sonoma:   "d1d03f6a4f9a9e49321d656b787d4e53f1f6acad08384d68bb4ad8199bf1626e"

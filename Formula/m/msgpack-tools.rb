@@ -5,6 +5,8 @@ class MsgpackTools < Formula
   sha256 "98c8b789dced626b5b48261b047e2124d256e5b5d4fbbabdafe533c0bd712834"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "89db8ac554a849076b6b033ccd4d01758772b92c528107049b1ad0df61e3adcf"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "89cbb09892efa84ffed3f4b4184d91a42526e0884034d00edfcff5ef914acf27"

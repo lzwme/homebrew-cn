@@ -6,6 +6,8 @@ class Nip4 < Formula
   license "GPL-2.0-or-later"
   head "https:github.comjcupittnip4.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any, arm64_sequoia: "94dfc45a48ac1b7a5a59574263a4dc10d227037db8112056b3d2b181422aa24a"
     sha256 cellar: :any, arm64_sonoma:  "9d19a8ad64f055c68aed6c2344ef40ffab5f8acc3d2d6edb2dcea224430fa34a"

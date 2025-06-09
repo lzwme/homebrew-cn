@@ -4,6 +4,8 @@ class Mongroup < Formula
   url "https:github.comjgallen23mongrouparchiverefstags0.4.1.tar.gz"
   sha256 "50c6fb0eb6880fa837238a2036f9bc77d2f6db8c66b8c9a041479e2771a925ae"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b3bba7e546bcc3272ead45417072af6058106e894824d2a62395b0bcef1ffbf6"

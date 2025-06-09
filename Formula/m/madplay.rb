@@ -11,6 +11,8 @@ class Madplay < Formula
     regex(%r{url=.*?madplay[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "ba09b6ca2c1a89b49f0df90e4d4330c7271dd39f11d35cf165cb26a9899a6584"
     sha256 arm64_sonoma:   "bb53d0d999f2179e53c438c9fbcfc1fa57a6dfb0a0e87b144fe8d9f5c91689de"

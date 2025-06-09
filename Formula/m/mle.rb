@@ -5,6 +5,8 @@ class Mle < Formula
   sha256 "5275fcfc58d3d4890d074077d94497db488b2648287b3e48e67b00ea517b02ba"
   license "Apache-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "800c452587c4c4ba8e4d97f36ce15a896b8be362999407378bc05a7f7089252a"
     sha256 cellar: :any,                 arm64_sonoma:   "c98cff80d60ca797855ae9258e40629692dc0faadfe49b7de393bfece8cc6d44"

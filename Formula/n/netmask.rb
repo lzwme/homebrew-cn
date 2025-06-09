@@ -5,6 +5,8 @@ class Netmask < Formula
   sha256 "7e4801029a1db868cfb98661bcfdf2152e49d436d41f8748f124d1f4a3409d83"
   license "GPL-2.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "34b5efeb5d392402b007185b47d974e9a664dad743bcc135dae35e9db685c2b9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "393080df1ab114d1d2beec62850676aa931445fe1b5dc99cad1b0454efe2a1ab"

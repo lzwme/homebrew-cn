@@ -6,6 +6,8 @@ class Mpfrcx < Formula
   license "GPL-3.0-or-later"
   head "https://gitlab.inria.fr/enge/mpfrcx.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "e9d9fcb8796dc03e08d4f3b1d1e6e1cd054befac43f75f20f6592891e01c366f"
     sha256 cellar: :any,                 arm64_sonoma:   "3943e6b49295761e2d5ca64145d1f0ca80255d0d6c608c1dc2df5c8d964a9c55"

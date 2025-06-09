@@ -11,6 +11,8 @@ class Mairix < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4fe9dceecdc765588a0da520eac43995f92e4ee5b0c4c73debba1cc89bf24e26"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc607dc417397d6c0d44c2665b7a47528d3db54f7099ae8827b3dafde391fefd"

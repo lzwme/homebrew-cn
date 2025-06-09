@@ -14,6 +14,8 @@ class Mpssh < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6b6d83538348cb97b5847fcbff26efc651cf313bc6ce8c4c572d08cf3b43deca"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1f4e641ecad2e8254a0833ffa46e5168ad2985d0e7ff50fa1b193cd4eec90877"

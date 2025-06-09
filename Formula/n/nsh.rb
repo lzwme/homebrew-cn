@@ -6,6 +6,8 @@ class Nsh < Formula
   license any_of: ["CC0-1.0", "MIT"]
   head "https:github.comnutansh.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2ef8db75b69ddc2fa1c2a917190320078a4d050906e8695cd6ce86ba7a311790"

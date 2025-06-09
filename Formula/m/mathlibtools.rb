@@ -8,6 +8,8 @@ class Mathlibtools < Formula
   license "Apache-2.0"
   revision 5
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_sonoma:   "5c30b6bd959cec65f56d140dff795e4f6d139b2c0b9bb35e4d964378d810b729"

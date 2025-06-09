@@ -5,6 +5,8 @@ class Netcat < Formula
   sha256 "b55af0bbdf5acc02d1eb6ab18da2acd77a400bafd074489003f3df09676332bb"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9da6c99582155faec7fab7c54a568ea80695bb01fd04adc1ed646da91dd93367"

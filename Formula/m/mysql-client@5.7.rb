@@ -4,6 +4,8 @@ class MysqlClientAT57 < Formula
   url "https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-boost-5.7.42.tar.gz"
   sha256 "7e1a7d45e7ca382eb3a992f63631c380904dd49c89f3382ec950aef01997524f"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sonoma:   "1bc3efd20113dbe76c87fee1871d171b9c55896b4a89a7ed7d1f235cb518b650"
     sha256 arm64_ventura:  "223ac8c2302eef56a26c1b76068581df25cfb19b92f2d7b04b281554d515d52d"

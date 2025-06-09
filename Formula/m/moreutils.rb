@@ -14,6 +14,8 @@ class Moreutils < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4d054e5d66851413c272c39e156a48467f39959e89c84f91c1de41cd690c6b78"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fe0990b48df79c064ba76b72360019bea03328e6fcbd99a866ab9d6a1a37e95f"

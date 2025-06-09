@@ -1,18 +1,18 @@
 class Hysteria < Formula
   desc "Feature-packed proxy & relay tool optimized for lossy, unstable connections"
   homepage "https:hysteria.network"
-  url "https:github.comapernethysteriaarchiverefstagsappv2.6.1.tar.gz"
-  sha256 "21955752d4a9fcbe42cde9e491421b67144e0070cba184884ad7f8d4ff1f48de"
+  url "https:github.comapernethysteriaarchiverefstagsappv2.6.2.tar.gz"
+  sha256 "4699431f0bc826da2bbd3939c0a78c4e7bfc02773fc3a62b24615c37ee89b266"
   license "MIT"
   head "https:github.comapernethysteria.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "893d862f1cc8ff509a85160f845542bed099266ce239d4a678bd51e54c223cf1"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "893d862f1cc8ff509a85160f845542bed099266ce239d4a678bd51e54c223cf1"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "893d862f1cc8ff509a85160f845542bed099266ce239d4a678bd51e54c223cf1"
-    sha256 cellar: :any_skip_relocation, sonoma:        "edd9a98c25c2d783dd01daa311c6ac7bf37a7251a6cfa6ec49778a78c9265921"
-    sha256 cellar: :any_skip_relocation, ventura:       "edd9a98c25c2d783dd01daa311c6ac7bf37a7251a6cfa6ec49778a78c9265921"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bf9dafc3df20027eec5f19fab1a099d7fcc5e5ac1784bfd545c410f370462ca3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "13e48d57336bc8c4410a5620b8a1056ac0f448545a8c39c5ebe01b2149c3de48"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "13e48d57336bc8c4410a5620b8a1056ac0f448545a8c39c5ebe01b2149c3de48"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "13e48d57336bc8c4410a5620b8a1056ac0f448545a8c39c5ebe01b2149c3de48"
+    sha256 cellar: :any_skip_relocation, sonoma:        "b6839af9a06324ba41871ee52fb649158f7b424cf3357aaf485fb840bcba8158"
+    sha256 cellar: :any_skip_relocation, ventura:       "b6839af9a06324ba41871ee52fb649158f7b424cf3357aaf485fb840bcba8158"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7ff66a91a3e261ed5a1a8f6519e15e7b361a76f5bfc6a222165220a54a329f08"
   end
 
   depends_on "go" => :build

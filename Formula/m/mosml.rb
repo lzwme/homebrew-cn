@@ -5,6 +5,8 @@ class Mosml < Formula
   sha256 "fed5393668b88d69475b070999b1fd34e902591345de7f09b236824b92e4a78f"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "4c5e5c68a5bafb747f9bf0ebf55e7e67f6ff97ad8107a788579db55b27a5a1c9"
     sha256 cellar: :any,                 arm64_sonoma:   "baf1606f54aca14fe0f9a0e734cea0518dc817fd42fb0b755364da0fa3362e9e"

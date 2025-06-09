@@ -11,6 +11,8 @@ class Mplayer < Formula
     regex(/href=.*?MPlayer[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_sequoia:  "4d99950e65cb0275765a4b1c8b0ebfc33723d09d20b009a01751f991af55148e"

@@ -6,6 +6,8 @@ class Nap < Formula
   license "MIT"
   head "https:github.commaaslalaninap.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4f0de3f0692843a24c7130ca77e99d116432ae35d6c9282fe8fe578558c1fdc5"

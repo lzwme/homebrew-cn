@@ -12,6 +12,8 @@ class MysqlAT80 < Formula
     regex(href=.*?mysql[._-](?:boost[._-])?v?(8\.0(?:\.\d+)*)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "374dcbdffa60dd5a7c01788235ea51faf12c11d8276ed79339c361ada06a77cd"
     sha256 arm64_sonoma:  "e1450da39223da0f12db39461a164ed9522a087e47a08df96cfb3e55bda4a4b4"

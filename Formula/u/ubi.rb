@@ -1,19 +1,19 @@
 class Ubi < Formula
   desc "Universal Binary Installer"
   homepage "https:github.comhouseabsoluteubi"
-  url "https:github.comhouseabsoluteubiarchiverefstagsv0.6.1.tar.gz"
-  sha256 "0aa1e759736514ae22720e81cd935695724a84d352a3c7407e627acc9e36e816"
+  url "https:github.comhouseabsoluteubiarchiverefstagsv0.7.0.tar.gz"
+  sha256 "7dc99fe385447a9f48972306119beb84c9f00704265cc96a1be55293a041c1d2"
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comhouseabsoluteubi.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "77044473c4211322ef1d39a83adc89ba2ab7ac866127b61bc940c651c5ff8898"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4208c9b4fe77b880765080624e02c75e2f7953e09f6b637dff3bb99b10fed100"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "ed494e3cbe9bb19fa85c9f53a73fb0ce45e65900ba729cebbc969f1dfa9ce9ea"
-    sha256 cellar: :any_skip_relocation, sonoma:        "66a4c764f03fad10385acfcaff25b9128cbd641d3384b14ed093ba417da57894"
-    sha256 cellar: :any_skip_relocation, ventura:       "b7ea9d319f4122c83f32db52eda9f3c86da3f1f61e07bf02cc15392e95ee5f89"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1802de977e5ef152ed0457ffee5a9b761758a2d4c10827d078554c5f79193b7f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e8937cdfce9e480918089a701cda089cd4573b6fecd8ca9c46b5c54e1484629"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "850d2ed925f7ffae791a0fb0d1314d27ae598ca9c0724f9c4b4b71ea4af5ced7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "871f99a1aa04b3552465375fca57e5c1168c2945c0c9b37362f6671c94def696"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "95c4c8267e38f9c1602ec087508752d24e02f450a911ed458c1fbbbae5a7ecbe"
+    sha256 cellar: :any_skip_relocation, sonoma:        "158b9d4d4f62c7caf0d9f02234e8b056ed07b439a5d5f919639c442c456148dd"
+    sha256 cellar: :any_skip_relocation, ventura:       "1fbc790067e17881d67b63a425e08c34fee95a74677c7b42f7d0b6a84c09e67e"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fa2f2d88ad0b054ad93e6890d6716eaf0847eb1747adcd173bd8808b1f8e0eed"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "16e5d423c78bbe999c218a0e02e355502a6b12b5a0fe08c7882f5d7de936b609"
   end
 
   depends_on "pkgconf" => :build

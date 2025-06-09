@@ -11,6 +11,8 @@ class Mcabber < Formula
     regex(/href=.*?mcabber[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "22148b4dac302fc1e66326cd0a1790831aa8b2a1fe8911b41944125056d2cd20"
     sha256 arm64_sonoma:   "4360dd97e2380a7f382a3b7c2ca1a0e75525b6611c72f28e65709cafe6b30bb1"

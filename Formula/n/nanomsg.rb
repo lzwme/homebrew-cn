@@ -11,6 +11,8 @@ class Nanomsg < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "16e338dbc680d97de181c2e8d8aae40cd825a7f7bf4c10415d0c802e7b442c89"
     sha256 cellar: :any,                 arm64_sonoma:   "643d76f342c533285619f3be66314377ace8a7a99dc5536a65f6971dcabd88fd"

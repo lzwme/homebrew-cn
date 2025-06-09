@@ -13,6 +13,8 @@ class Nwchem < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256                               arm64_sequoia: "9e7d38520a012a3b258b13b79d2e21fa1f65c69d6a80e442db8543c301ebf8c4"
     sha256                               arm64_sonoma:  "cbd863d1ffb5625c8551e5bccae2ac62d2d09af075e9e10956033d4e3ddaa2b9"

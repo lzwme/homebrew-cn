@@ -5,6 +5,8 @@ class Networkit < Formula
   sha256 "c8db0430f6d7503eaf1e59fbf181374dc9eaa70f572c56d2efa75dd19a3548a9"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "472a50deee447e0e9e0bf740f00e4b3b249797e3d582a78a343651dddbf761aa"
     sha256 cellar: :any,                 arm64_sonoma:  "9818772678ceab5b2aa821024375443b8216889f4a70f66793610c3ed0ecb4fc"

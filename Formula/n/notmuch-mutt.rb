@@ -10,6 +10,8 @@ class NotmuchMutt < Formula
     formula "notmuch"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "7172f1fdbe9794f01c80d042b9052d45fd7d7892cd1f9f4982b6a02b5bfa3680"
     sha256 cellar: :any,                 arm64_sonoma:  "5ee7a940df309ec27388421162a63c718cfff6f3b16354cf19c61cae3ba61a54"

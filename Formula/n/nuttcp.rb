@@ -10,6 +10,8 @@ class Nuttcp < Formula
     regex(/href=.*?nuttcp[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fa943ef3dca4e0414ccb634ed8246fa800eeb01f563c7578217bd4c9e156649d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3307110d7f6cb527152b3f3e70bdec5f80a89b5be55c27bada5b35d549d51714"

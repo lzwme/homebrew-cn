@@ -7,6 +7,8 @@ class Mitie < Formula
   revision 3
   head "https:github.commit-nlpMITIE.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 3
     sha256 cellar: :any,                 arm64_sequoia: "7b817e7140c3a2cc2b13d2a53b4d7a759396626fe2cb6394c8605fdcf3ab3b0c"

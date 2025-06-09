@@ -5,6 +5,8 @@ class Nyancat < Formula
   sha256 "88cdcaa9c7134503dd0364a97fa860da3381a09cb555c3aae9918360827c2032"
   license "NCSA"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bc5741eb96d5bd24301b288f9d2500c635c2b9c0ffc1654ed4ee1b1bfd02c303"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "63f328a8b248972e6d29b28116cd2e6b7396a7a09e2d8a02e85e037ced6d4016"

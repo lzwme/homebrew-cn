@@ -8,6 +8,8 @@ class Nyx < Formula
   license "GPL-3.0-only"
   revision 3
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 3
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5d7b2a2b86698a16d079eaa5f30e5f21fa0dcef3f356f2532fc3eae3bc8353ef"

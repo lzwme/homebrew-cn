@@ -5,6 +5,8 @@ class Nikto < Formula
   sha256 "fb0dc4b2bc92cb31f8069f64ea4d47295bcd11067a7184da955743de7d97709d"
   license "GPL-2.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c7930d224684f5422ede023a9737e1df3f259861ad5085414ba83a27e8f690b8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e822edd4d19c031489f940d9f0d3bd37765470baa55519e8c7f0e141f54b8dd6"

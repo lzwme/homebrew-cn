@@ -11,6 +11,8 @@ class MysqlClientAT80 < Formula
     formula "mysql@8.0"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "59d43aed334afcda44273940a08e0a60d50228607fbd57965657f25578e3fd61"
     sha256 arm64_sonoma:  "ced161166185b2f6c1dc0676b771a4d794eb5bcaa85393411993bb7b8c6a31de"
