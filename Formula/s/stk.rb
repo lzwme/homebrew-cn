@@ -10,6 +10,8 @@ class Stk < Formula
     regex(/href=.*?stk[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "140113c25ddb581acbd291f3671b2657562ff8237c62abe8db42ba2e3e3297f7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b50969de86e485eb0ea91411ecfa5ef8c531fa5da68a0d8f1df49c196339aed"

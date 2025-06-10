@@ -8,6 +8,8 @@ class Pgxnclient < Formula
   license "BSD-3-Clause"
   revision 2
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "f1b1f557db76ca77277fc59e96c5432107680f75068454279508736f0ccb4116"

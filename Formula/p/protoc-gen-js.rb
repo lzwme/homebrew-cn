@@ -7,6 +7,8 @@ class ProtocGenJs < Formula
   revision 9
   head "https:github.comprotocolbuffersprotobuf-javascript.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "e1d3eb4bac2263ba923f679559e88d7b4c12f678e17399438356941b18604643"
     sha256 cellar: :any,                 arm64_sonoma:  "61cd3b85437197c9c3032340d1eb85ba1f94843487e60ce1b6338f61204c7f30"

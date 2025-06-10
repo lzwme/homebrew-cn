@@ -6,6 +6,8 @@ class Reshape < Formula
   license "MIT"
   head "https:github.comfabianlindforsreshape.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "44a403226dcc034a328658eef19b96d0abf441c2042d4777fdad22b74dc4cc41"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b29676af2bbf22ea192ead306a354827084c97c13eec0bac3f51a05117a598d3"

@@ -7,6 +7,8 @@ class Pcb2gcode < Formula
   revision 9
   head "https:github.compcb2gcodepcb2gcode.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:  "b0c34ab4eeed7f51c74bda44421ef4a5b56b4c5916498de6253b6bf581a39664"
     sha256 cellar: :any,                 arm64_ventura: "8fa1390aa15ea9ef167594ca339f0f3687aa1dcce8f91b0eee0cf779a5a1f70f"

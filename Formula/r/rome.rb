@@ -5,6 +5,8 @@ class Rome < Formula
   sha256 "7aee4de208a78208559d6a9ad17788d70f62cace4ff2435b3e817a3e03efdef6"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_monterey: "c9c0cf36af6dfeb99b33b910bf3afbbed3d6dda0ac362be1b8e39dcc690207a1"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "67c36d2034fc1266cb59bf8b853a12dca76166f0366b7b7dbc0d8021922a727c"

@@ -5,6 +5,8 @@ class Qstat < Formula
   sha256 "ff0a050e867ad1d6fdf6b5d707e2fc7aea2826b8a382321220b390c621fb1562"
   license "Artistic-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256                               arm64_sequoia:  "bcce7c206dbb478fe19b9e6560c5c480d613fefeab90d30c0720b5e24ddb0090"
     sha256                               arm64_sonoma:   "f2a21de14cf56f81071c54f323b70b96d745203b3e7cc4343e3b49e9ca683dfa"

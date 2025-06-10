@@ -7,6 +7,8 @@ class Pyspelling < Formula
   sha256 "acd67133c1b7cecd410e3d4489e61f2e4b1f0b6acf1ae6c48c240fbb21729c37"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_sequoia: "f364a5e63736d91e836130acd9578fd23178557d496b47a8085bc5ea68c9e556"

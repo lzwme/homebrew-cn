@@ -10,6 +10,8 @@ class Openconnect < Formula
     regex(/href=.*?openconnect[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 arm64_sequoia:  "76a21b129bbc6a7dbcd67f88f4b2e2a0ca6cb3d5188b7ba763ef669013b58b7c"

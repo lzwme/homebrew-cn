@@ -5,6 +5,8 @@ class Rem < Formula
   sha256 "e57173a26d2071692d72f3374e36444ad0b294c1284e3b28706ff3dbe38ce8af"
   license "Apache-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "18d24b6a8f332bb30a204b078ae06569a7fc851895aea755e5c3771a24b60ddd"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bda72308d8fd433628ebefa28e3821f2a6be7544ae2e358d09be602b8bf8f9da"

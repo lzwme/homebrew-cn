@@ -11,6 +11,8 @@ class OpenkimModels < Formula
     regex(/href=.*?openkim-models[._-]v?(\d+(?:-\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "4b54c417f0e9a9012499d60c41935324c7de81a54bccf1710f68528201eccb9a"
     sha256 cellar: :any,                 arm64_sonoma:   "ca3243c57f7b498ea49744ea96163e585158aff2d69fe10523598a986b302e0b"

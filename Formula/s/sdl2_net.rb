@@ -10,6 +10,8 @@ class Sdl2Net < Formula
     regex(^(?:release[._-])?v?(2(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "3d7c644db9335046fa38cb4ab1f0396572a1cbb1aa748c6458f9a8ac37ac820d"
     sha256 cellar: :any,                 arm64_sonoma:   "370799a594bbe1c431dac68cf7c6c19a048c15923a659bcb3db36ab7b5d9bf5e"

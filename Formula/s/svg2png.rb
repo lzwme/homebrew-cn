@@ -11,6 +11,8 @@ class Svg2png < Formula
     regex(/href=.*?svg2png[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "35e0958cd39141bcefea89ffb6938e60c495151fff2d0c09c22cc3cb2d5a2d90"
     sha256 cellar: :any,                 arm64_sonoma:   "e12447c3d9303d05526006e0264334788b9420770964e4fa621368f38b099905"

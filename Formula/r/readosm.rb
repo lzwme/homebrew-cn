@@ -10,6 +10,8 @@ class Readosm < Formula
     regex(/href=.*?readosm[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "08bbbc1a2839abc8e05b2e77ca2ccf248dc1ff4525ce893329d41306dfc33736"
     sha256 cellar: :any,                 arm64_sonoma:   "ec95a91f77c40f87229dab3be2be87e40354ac76c9517752524cccb44ae20219"

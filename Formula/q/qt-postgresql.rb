@@ -9,6 +9,8 @@ class QtPostgresql < Formula
     formula "qt"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:  "b2b5248e5f9872d540b3864ea2eef265e9b1e46709734334cec94d32b7bbb77e"
     sha256 cellar: :any,                 arm64_ventura: "cfd40bd2d36b50323ff75e579ab892f6c5fc14fba69726ef96a186c995b33f47"

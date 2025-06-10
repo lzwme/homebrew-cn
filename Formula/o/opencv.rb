@@ -23,6 +23,8 @@ class Opencv < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sonoma:  "14e468ccb54da0d671e31730284f933508d5195a208aca7a9b08541ada70c32a"
     sha256 arm64_ventura: "b70e530ca8d0aeb8e6bc91a13c5d1fffd114fce6807f517b8d87c9375cf18b05"

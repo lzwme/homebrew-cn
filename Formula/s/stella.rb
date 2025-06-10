@@ -7,6 +7,8 @@ class Stella < Formula
   license "GPL-2.0-or-later"
   head "https:github.comstella-emustella.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "01b8c2228d4e79fe4353b9a84ce3a25fb60dfe8a7616feec7909d0f6f9fa0aa2"
     sha256 cellar: :any,                 arm64_sonoma:  "1c4bd3b235c0bc7eed68982e3d7aadf17d7d0b576850043d14622ccda12f9a01"

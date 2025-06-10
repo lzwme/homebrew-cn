@@ -6,6 +6,8 @@ class PostgresqlAT12 < Formula
   license "PostgreSQL"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "770808f2893a90101c6043beb222509fdbaeb27d43231ce86a823c880167a869"
     sha256 arm64_sonoma:  "5c7563d9142be7b9f6d9a196ac5962f0df9d2b280b89c3d4a854c88d9a4ddbef"

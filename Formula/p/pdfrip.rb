@@ -6,6 +6,8 @@ class Pdfrip < Formula
   license "MIT"
   head "https:github.commufeedvhpdfrip.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bca08e27db986d69640df5ab539f1b84fcaada7f43d6f8235d472bfb26acc1f1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "92eafcb03fc927dbe7a94aa8b5657038621d342f1405c2a09d6766a94ee04231"

@@ -6,6 +6,8 @@ class Pystring < Formula
   license "BSD-3-Clause"
   head "https:github.comimageworkspystring.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "9e8695ee4b99ef0ec12667a9dee997d4f0f06509b7c262a4a5c74aa1ec7002c4"
     sha256 cellar: :any,                 arm64_sonoma:   "c26e8b819cc438eca6d9cbc63695d5de3946e8593e2a6ae7a80dad9f00755291"

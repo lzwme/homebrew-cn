@@ -5,6 +5,8 @@ class Scdoc < Formula
   sha256 "4c5c6136540384e5455b250f768e7ca11b03fdba1a8efc2341ee0f1111e57612"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8800df45f7cd670d5638e4acd2fad0905fdae6f5216b71bd6d897fcda12c4cd7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6eeed5394fb071aa14153ebe3cb3eb2edb4458c1b25d91adf6a32116fe1eb16b"

@@ -9,6 +9,8 @@ class PythonFreethreading < Formula
     formula "python"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "2a0192d70dc032d339c6b05171781cd7a079c7683e7844ed90816cf322a092fa"
     sha256 arm64_sonoma:  "6d1aa7475a69cd2535f50183a8c88e7de88e236c3114dbc47d5fc9d2cb1eed56"

@@ -15,6 +15,8 @@ class Rdkit < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256                               arm64_sequoia: "fc0084d88f8068bc87338a68421b0178d089cfc10e9d55ba0a58498c1807830c"
     sha256                               arm64_sonoma:  "aff5c49f467699a77fa87cdd1b1ad3cf91a5d5b484e7afe7dc1d2df7f0f90f37"

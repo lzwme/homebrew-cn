@@ -6,6 +6,8 @@ class Solana < Formula
   license "Apache-2.0"
   version_scheme 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia: "587663fffc9f10da1338bd74511ee9997dab9283353b6f1cc57dc52e5dedca0f"

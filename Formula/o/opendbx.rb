@@ -13,6 +13,8 @@ class Opendbx < Formula
     regex(%r{href=.*?/opendbx[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "b355d6e9d840dd066aa4e71bbc2b4ebcca2f13741b07153fcc91a159b0d1665c"
     sha256 arm64_sonoma:   "f5a84ad8458393c0dea21c9e640de968ae3184ddfcf0cf3f25136d376622d564"

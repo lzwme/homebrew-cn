@@ -9,6 +9,8 @@ class QtLibiodbc < Formula
     formula "qt"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:  "f9695d322f1580faa1ab097dcdf76133857556d6c2b1806b9ddc5376eef4bdcf"
     sha256 cellar: :any,                 arm64_ventura: "1c60ac29bcfe47d79fd1c39179a50c05c651db88b3afd30610c4f5614cef684a"

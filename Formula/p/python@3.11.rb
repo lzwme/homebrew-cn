@@ -10,6 +10,8 @@ class PythonAT311 < Formula
     regex(%r{href=.*?v?(3\.11(?:\.\d+)*)?["' >]}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "cab6abf1dbc00b087ce38dc55c52e7fc97253b7d01f353893929464432f9922a"
     sha256 arm64_sonoma:  "bb985068d2b5ad75fd24f77d5664cbedc467abd9f67700c9dccf508474146ab5"

@@ -10,6 +10,8 @@ class Sersniff < Formula
     regex(/href=.*?sersniff[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0b6380a7ceb537b939e10a5cd9a128e95dd0eaf249c80889ba0e5b81173258dc"

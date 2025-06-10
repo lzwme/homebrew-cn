@@ -9,6 +9,8 @@ class Scoutsuite < Formula
   revision 2
   head "https:github.comnccgroupScoutSuite.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "9813329245c18590902b05d7cf9bf670635fc812f360fd04bed78a2071d2d5c5"
     sha256 cellar: :any,                 arm64_sonoma:  "65064351df4adb8e08172ed4a1b9b94c4900eb0093b33ccac1e00d6eab824ddb"

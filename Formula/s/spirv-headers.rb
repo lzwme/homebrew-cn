@@ -11,6 +11,8 @@ class SpirvHeaders < Formula
     regex(^(?:vulkan[._-])?sdk[._-]v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "2d07850b674da53b8fc098287bea1455cb9c2ec4adab305dea040980d8072676"
   end

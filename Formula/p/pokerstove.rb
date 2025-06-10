@@ -6,6 +6,8 @@ class Pokerstove < Formula
   license "BSD-3-Clause"
   revision 5
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "1e01296c7643407ad16a6b088f9d332fd2af4afa1ef32f73b373899aae59ea19"
     sha256 cellar: :any,                 arm64_sonoma:  "9ee487daa2e45f4b5be25714ddda3f282ebde3926652c9d50b90dc52399c0291"

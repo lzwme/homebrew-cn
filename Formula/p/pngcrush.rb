@@ -12,6 +12,8 @@ class Pngcrush < Formula
     regex(%r{url=.*?/pngcrush[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "75989b83be1fbc178d98f4f95701ad605c5374b1f46bde052c9b00da7cd30451"

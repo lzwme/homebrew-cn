@@ -21,6 +21,8 @@ class Rtabmap < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256                               arm64_sonoma:  "1d433bee617217b945cc97f14e98ef947b3966d804f884f047607fb51fb13852"
     sha256                               arm64_ventura: "1e9747b0eb5689899563716f8956590a882545c2f0a9e73df82cd4148f1f198c"

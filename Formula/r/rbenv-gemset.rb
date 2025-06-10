@@ -6,6 +6,8 @@ class RbenvGemset < Formula
   license :public_domain
   head "https:github.comjfrbenv-gemset.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f4b32914a93a0af5a444ff4ace90678f07969a6e0e3aa5d63d0af655e3e570f1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f3a6b6c538ac4b69ed5322a2d056b782ee42a40260359c71465c7817ee87d71a"

@@ -5,6 +5,8 @@ class Pcalc < Formula
   sha256 "6ede71e1442710e73edb99eb1742452e67ad5095cad328526633722850aa1136"
   license "GPL-3.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a2b4d667859884ae73bdc1d92bcb74b9cd916f249e72b7ff11c55850caa0f83d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1213e5809a02adfdb8f3d9b37c9fc20f3bdc55f33f165c40205bab09fd118bad"

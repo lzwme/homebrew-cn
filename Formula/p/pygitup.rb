@@ -7,6 +7,8 @@ class Pygitup < Formula
   sha256 "4a771b9cae8bc6c95e2916bfb120a6ffc76c80fc3f5c91af61f91c21e5980f2e"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "e32f3c3171ea0e3d8c6f4b3c733f76d89b4c16e00b3e66872d8425506dadb79e"

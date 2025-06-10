@@ -5,6 +5,8 @@ class RubyAT31 < Formula
   sha256 "0556acd69f141ddace03fa5dd8d76e7ea0d8f5232edf012429579bcdaab30e7b"
   license "Ruby"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia: "0b2c994b56cc016e46c5897105ec0c68ce7a84dc755e2ffab9fbcbca55997998"

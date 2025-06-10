@@ -6,6 +6,8 @@ class Octobuild < Formula
   license "MIT"
   head "https:github.comoctobuildoctobuild.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "dcf28ddedd6966f418a0261937675783fdc28b05b039110ad12c303c5461dcf7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "eb47d1bfe2700c29530168a58e6a891886e3b9c2f3a116995f9166424bae6efc"

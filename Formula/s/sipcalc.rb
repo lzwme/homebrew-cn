@@ -10,6 +10,8 @@ class Sipcalc < Formula
     regex(/href=.*?sipcalc[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "aff7a2b4ee9e42cb1137a8293b57d1e5bb8892dad88c72895fcc173c81083920"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "29b5769fb8239c6028db50d8e402ef56c49eb88b6add34c61cc1ab5d367cceab"

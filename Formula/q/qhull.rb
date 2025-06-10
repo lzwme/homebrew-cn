@@ -14,6 +14,8 @@ class Qhull < Formula
     regex(href=.*?qhull[._-][^"' >]+?[._-]src[^>]*?\.t[^>]+?>[^<]*Qhull v?(\d+(?:\.\d+)*)i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "03294d7f8db8437cdf8d4d679ae41808a195b733907bf638671f99089592dc17"

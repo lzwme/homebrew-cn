@@ -11,6 +11,8 @@ class Patchutils < Formula
     regex(href=.*?patchutils[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ebaaeda4882f4e6dd9d0846db19d4def5d2d3a975996c7c41ab3d38dfaaa19d5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b3008f1cd6e1e6907825d99562cba86f85284013eaa46202236a11e043558d3f"

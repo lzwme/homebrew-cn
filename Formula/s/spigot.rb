@@ -11,6 +11,8 @@ class Spigot < Formula
     regex(/href=.*?spigot[._-]v?(\d+(?:\.\d+)*)(?:[._-][\da-z]+)?\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f2820ca0f23f9516c1e27c3ea1488558a4912f0eb75dd361917705e02b2096ef"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eb86f3da309c5adb78f3dd822284df1a561e77056ae252dcfa79e787c8601c3b"

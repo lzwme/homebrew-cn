@@ -9,6 +9,8 @@ class QtUnixodbc < Formula
     formula "qt"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:  "e2d985fca29dcb857cb55b7089b7fea68d2dececb867008812e16cca2ca03240"
     sha256 cellar: :any,                 arm64_ventura: "19780170d64a3158c29c59e3caa08bf5bf4c4b4dba329a1342f05ba931d5826a"

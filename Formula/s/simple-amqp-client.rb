@@ -7,6 +7,8 @@ class SimpleAmqpClient < Formula
   revision 11
   head "https:github.comalanxzSimpleAmqpClient.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "87ae8527d44ded5a0dd914f42d21527a951a01b9e99861413d73bc5113dbe74f"
     sha256 cellar: :any,                 arm64_sonoma:  "842d4ae9462815803fc55eb6ab9bd046edd63814df21bdd450e570e61fa14dcd"

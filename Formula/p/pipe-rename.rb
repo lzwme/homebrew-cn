@@ -6,6 +6,8 @@ class PipeRename < Formula
   license "MIT"
   head "https:github.commarcusbuffettpipe-rename.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "79ceea8ede307d9f114d6d476bc2538a9fc2dbaba609c42821ef6206057e251a"

@@ -17,6 +17,8 @@ class SpirvCross < Formula
     regex(^(?:vulkan[._-])?sdk[._-]v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "add1df549154c9c2f278ea006343076345302e60d48f68f957485add62bcae77"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "03588b24c1f09fbfebcd499622d0c54265a423f29888d51d94cf822f7d759cc4"

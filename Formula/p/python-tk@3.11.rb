@@ -9,6 +9,8 @@ class PythonTkAT311 < Formula
     formula "python@3.11"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "00d379569858f3c1a7107a298d37baac30cba208acacabc2884bcf9b16a42273"
     sha256 cellar: :any,                 arm64_sonoma:  "28ebed5c86e33f724cd22d05cb9f10f5716fbc4ce67abd73b0997e748903e14a"

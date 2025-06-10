@@ -7,6 +7,8 @@ class Publish < Formula
   revision 2
   head "https:github.comJohnSundellPublish.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "12bb9d41814cacbe362e02d37825f9eabb5c2c228d2502441389a31deff9cd06"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0d595b1f7732f64fd874095b0c17ec22b77d7261fa83e0324f4657bfd8dbbedf"

@@ -11,6 +11,8 @@ class RxvtUnicode < Formula
     regex(href=.*?rxvt-unicode[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "1d23f1a4c263ebe7df9a0ee2163d6a93c9d4df1cc4263687da4de3851441a4f3"
     sha256 arm64_sonoma:  "9a582a19640cd577067cd9aec10962f9f744853653b514899707d7f1b6264c42"

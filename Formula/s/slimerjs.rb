@@ -6,6 +6,8 @@ class Slimerjs < Formula
   license "MPL-2.0"
   head "https:github.comlaurentjslimerjs.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "28448d431b342918fa343fd2fc2d89663927395d35e0f5c20d16f8038c2f298e"

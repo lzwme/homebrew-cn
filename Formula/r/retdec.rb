@@ -8,6 +8,8 @@ class Retdec < Formula
   revision 1
   head "https:github.comavastretdec.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_sequoia: "216414b394e83210cce369da37d371ac44b4e3b6f6008fa16191efacc4ea9eaa"

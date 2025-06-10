@@ -25,6 +25,8 @@ class Pcre < Formula
     skip "PCRE was declared end of life in 2021-06"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "50b8e2100e02a8649ac963449bf83bd8036608816b58412baad2310046d44d1f"
     sha256 cellar: :any,                 arm64_sonoma:   "fbc1ec29701c2c3f0eb750a0aecf03b90acb6d47f1bbf1dc07eb8a7c9340650e"

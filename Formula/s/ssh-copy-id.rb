@@ -12,6 +12,8 @@ class SshCopyId < Formula
     formula "openssh"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "38fb758068e8bbbfb6ed35f280b124280544fdbfbd247ed7db798ca3710c5427"
   end

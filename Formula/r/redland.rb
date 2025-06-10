@@ -11,6 +11,8 @@ class Redland < Formula
     regex(href=.*?redland[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "16526f739bc4c35eb3524005689e270dd9ce0828e0934d9d57f9693338b7fcda"
     sha256 arm64_sonoma:   "4671a0bffac8906190119990c40dd6642a6f432ec02ce96c56456c5cb48c91ab"

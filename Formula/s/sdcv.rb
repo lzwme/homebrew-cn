@@ -7,6 +7,8 @@ class Sdcv < Formula
   version_scheme 1
   head "https:github.comDushistovsdcv.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "b53341800d7aad1fae6fd3b105de15a7b1f81e4192d350b50cc4f389e21298da"
     sha256 arm64_sonoma:   "7c16b9b5e5b3ae014c182f84df89c800bd60cf9da4a0b1c0fda724dfb42d991c"

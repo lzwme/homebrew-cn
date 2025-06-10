@@ -11,6 +11,8 @@ class Picat < Formula
     regex(/>\s*?Released version v?(\d+(?:[.#]\d+)+)\s*?,/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8baa72e2d29b850efa2c9f048041e4efbf1264b303d2f87907f21ba702022255"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ec6711ce15529f9918b690ac2a897f375768f9b1188212449ef5a10b52305820"

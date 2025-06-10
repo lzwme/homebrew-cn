@@ -23,6 +23,8 @@ class Qt < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any, arm64_sonoma:  "861acfe809369d19c8cbc923afa94c62f48784f087a150e09d3522e5eeb15f9e"
     sha256 cellar: :any, arm64_ventura: "f30408e5e2a56aef97597398e4d552da3286b9fb45ba040e405291584009bea8"

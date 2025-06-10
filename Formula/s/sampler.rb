@@ -5,6 +5,8 @@ class Sampler < Formula
   sha256 "8b60bc5c0f94ddd4291abc2b89c1792da424fa590733932871f7b5e07e7587f9"
   license "GPL-3.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2e9165271f6debe06db6e23f46c13a13b603924e65597f85bb428a1b27780ee1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "0122ac71d3af643458faa2633740d3fd8256bd943ae7d212a6397ce9ff6f39a6"

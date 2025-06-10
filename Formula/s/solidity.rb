@@ -10,6 +10,8 @@ class Solidity < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "473fa776a7d59bcddcd39fcae1decae308a7fcf76b955ad737788edb788dd1b1"
     sha256 cellar: :any,                 arm64_sonoma:  "1fff4b5d4ee6fdfe9f580cb4a0f9102a335c01c3e9cb9b43907b2904e1d9830d"

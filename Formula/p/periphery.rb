@@ -6,6 +6,8 @@ class Periphery < Formula
   license "MIT"
   head "https:github.comperipheryappperiphery.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "90ad3d39f0c214a787731e6efde1dc501ae5afe9fc552495261b02e93fe0ff1f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3e41cb8cb73325e37d7db58465aa8a55f243766037b520ffdb7cec208a48a101"

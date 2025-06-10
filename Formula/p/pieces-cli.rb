@@ -15,6 +15,8 @@ class PiecesCli < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "4d9815455763b274a4d08e888875257af71212813fc7d0e492b3e06b79993231"
     sha256 cellar: :any,                 arm64_sonoma:  "88922a51c7c77e7bacf9eedcb4853105d13825d245eb0bb12821fe3c23a610b2"

@@ -7,6 +7,8 @@ class SaltLint < Formula
   sha256 "7f74e682e7fd78722a6d391ea8edc9fc795113ecfd40657d68057d404ee7be8e"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 4
     sha256 cellar: :any,                 arm64_sequoia: "fbb1958185be4aad5fea5c651fd3e8da21fca696c5d213693e4a81936a1feb2b"

@@ -11,6 +11,8 @@ class RmImproved < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "45fb60809e7c4e6c71f683aa81087c2985f92347819adbadad6d736a65efd62c"

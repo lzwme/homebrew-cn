@@ -5,6 +5,8 @@ class Semtag < Formula
   sha256 "c7becf71c7c14cdef26d3980c3116cce8dad6cd9eb61abcc4d2ff04e2c0f8645"
   license "Apache-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "933179267efd127dbeca0f0b337bdb6eb1150ef3c8706759195b00a0a30bb16b"

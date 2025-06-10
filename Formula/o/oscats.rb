@@ -6,6 +6,8 @@ class Oscats < Formula
   license "GPL-3.0-or-later"
   revision 7
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "14bdf254ea5eb224c087cc3bdc7ba53b46d52b77e2c440f738871e747ad7e33a"
     sha256 cellar: :any,                 arm64_sonoma:   "ee65d5fb7e853cf11866ad5d82e42443a2c899089538f7563a3d63268af2855e"

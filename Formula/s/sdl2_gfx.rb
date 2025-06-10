@@ -11,6 +11,8 @@ class Sdl2Gfx < Formula
     regex(/href=.*?SDL2_gfx[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "0edb8d3b267ce8edd5135b4ab15a2e050204ba10a38b4340e83fe468b78bc8fd"
     sha256 cellar: :any,                 arm64_sonoma:   "ce7aacaf54e17f764780e7480ea8c6ea032f9736565974537bbf3a09645cbc01"

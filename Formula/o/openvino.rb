@@ -13,6 +13,8 @@ class Openvino < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "95709208344d92723a834f0ebee93d7070547e49eb677a46d66f5289039891fd"
     sha256 cellar: :any,                 arm64_sonoma:  "2c6c71ee8441e3f45f14cda2ed0b9e95c582aa9dce3f80a90bd2cc4e2ada3526"

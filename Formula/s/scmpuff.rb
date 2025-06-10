@@ -5,6 +5,8 @@ class Scmpuff < Formula
   sha256 "e07634c7207dc51479d39895e546dd0107a50566faf5c2067f61a3b92c824fbf"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "151580cd03c9b01f87b20dfe4b52cd1fd9a03306463bcca646291418fc37f952"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "228b81ed5e3cb6117d1c3f2d9ece048b52d0b3be7294a50818c78a3e818761c2"

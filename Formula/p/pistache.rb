@@ -6,6 +6,8 @@ class Pistache < Formula
   license "Apache-2.0"
   head "https:github.compistacheiopistache.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any, arm64_sequoia: "df6e5955a69ba59d16fa1085e2a264b6886ac13eaefcfdad36b6cde24fdd357f"
     sha256 cellar: :any, arm64_sonoma:  "17198b6e042abadfa94de4824bb3e9d9a2696230ed2d54cae8dabf8550467fd7"

@@ -6,6 +6,8 @@ class QalculateQt < Formula
   license "GPL-2.0-or-later"
   head "https:github.comQalculateqalculate-qt.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:  "b06ff9fe513cb5cf5001cd191b09c8c216b4ecc0fcb72811758e7887cc5504cc"
     sha256 cellar: :any,                 arm64_ventura: "0a09e028d074e3e8e8f7b83b43db1f03b2ae21d59a97e12cb09e22ff53849100"

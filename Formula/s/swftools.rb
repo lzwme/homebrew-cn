@@ -11,6 +11,8 @@ class Swftools < Formula
     regex(/href=.*?swftools[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia:  "f61324276719da51b51203bba9f88739b126e242ee458f65b98cf04492e01114"

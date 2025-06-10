@@ -3,16 +3,17 @@ class Openrct2 < Formula
   homepage "https:openrct2.io"
   url "https:github.comOpenRCT2OpenRCT2.git",
       tag:      "v0.4.23",
-      revision: "a18956c01bdb88f16427bd2e6259cdf95d3e2ada"
+      revision: "b8d73b523c906993a593a2c2b80d661dbe3da5ee"
   license "GPL-3.0-only"
+  revision 1
   head "https:github.comOpenRCT2OpenRCT2.git", branch: "develop"
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "ad2938e838cbc8e24b2814a4381a8163014cbc042eb5756bfe5062b98ed76e80"
-    sha256 cellar: :any, arm64_sonoma:  "786037c93764157227fa80f013b01ffc6dc5ef19895f62fc6eb27bb2a0507463"
-    sha256 cellar: :any, sonoma:        "f7ed04b617a8f68af3b014b4bfa3ff02d5e6655db9444d33e73429122a58caa7"
-    sha256               arm64_linux:   "f03ddb39bf660a981526342ddd140e260f70a07e147cbb3c372d90e56c0129b0"
-    sha256               x86_64_linux:  "8a25cdd94410968759928acda9ee129648f9864b6b208622b646f0847b431148"
+    sha256 cellar: :any, arm64_sequoia: "cdd04cef69d9c4c56e75eee791d51295d5142461250934e72dc3f56accde2d68"
+    sha256 cellar: :any, arm64_sonoma:  "3530881c112f7c8a880f1f5f3c778f3c64aa9ee90eba7c28fb026398f2780e84"
+    sha256 cellar: :any, sonoma:        "9a7226b35e2187a64bece91a53172036c45b35610ae3fb380a1ad98cf076f8a3"
+    sha256               arm64_linux:   "581606d8d9ecc464e2a18d641560ed4f363301335ec40b536662cc6551ebbdac"
+    sha256               x86_64_linux:  "4ca2181aa36f3b62c973196364f9989e4de09c57b3ae6d0fae6ad4f7fa26468b"
   end
 
   depends_on "cmake" => :build
@@ -46,8 +47,8 @@ class Openrct2 < Formula
   end
 
   resource "objects" do
-    url "https:github.comOpenRCT2objectsreleasesdownloadv1.6.1objects.zip"
-    sha256 "6829186630e52c332b6a4847ebb936c549a522fcadaf8f5e5e4579c4c91a4450"
+    url "https:github.comOpenRCT2objectsreleasesdownloadv1.7.0objects.zip"
+    sha256 "c6fdbcb85816fac7cd870cad63aa067376b6bca579991400e8941c0e2b78bbd2"
   end
 
   resource "openmusic" do
@@ -90,10 +91,7 @@ class Openrct2 < Formula
 
     # By default, the macOS build only looks for data in app bundle Resources.
     libexec.install bin"openrct2"
-    (bin"openrct2").write <<~BASH
-      #!binbash
-      exec "#{libexec}openrct2" "$@" "--openrct2-data-path=#{pkgshare}"
-    BASH
+    (bin"openrct2").write_env_script "#{libexec}openrct2", "--openrct2-data-path=#{pkgshare}", {}
   end
 
   test do

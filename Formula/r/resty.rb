@@ -9,6 +9,8 @@ class Resty < Formula
   revision 1
   head "https:github.commicharesty.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ec5b20a27d1c9548291ebe45f91976563e04c018f9c1f8550fd616b715fa6791"

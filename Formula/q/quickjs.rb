@@ -10,6 +10,8 @@ class Quickjs < Formula
     regex(/href=.*?quickjs[._-]v?(\d+(?:[.-]\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "c95d9c212cf28f7236c7cec3207bb0e60f9366113dd01fb376758ec63e813486"
     sha256 arm64_sonoma:  "50ad44fcd6572ec6eca42f8c8b940d443003dcfac3a79389e64c4ba5b9834660"

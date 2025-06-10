@@ -5,6 +5,8 @@ class SpdxSbomGenerator < Formula
   sha256 "3811d652de0f27d3bfa7c025aa6815805ef347a35b46f9e2a5093cc6b26f7b08"
   license any_of: ["Apache-2.0", "CC-BY-4.0"]
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ca95017f73479fc8907cb24a392bab8d15c69789c565d0f2129502e00d520742"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "489910223a1ba3e54e06461065428738c88018a25f2d82f7fe4e87bb8e8eb552"

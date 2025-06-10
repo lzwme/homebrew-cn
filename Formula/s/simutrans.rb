@@ -15,6 +15,8 @@ class Simutrans < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "7882263a911cbabe05edc77dd7184ea1b7f85c38097d7b932f1899b97bbb5966"
     sha256 cellar: :any,                 arm64_sonoma:  "58f3f1132d0dc17ddeb8528b300995b1ea2d350773d7e7b29e066f6f3a13e6be"

@@ -11,6 +11,8 @@ class OneMl < Formula
     regex(href=.*?1ml[._-]v?(\d+(?:\.\d+)+)\.zipi)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "518403a9c2d724be15ba74440476759174fa0f95e7e5e18d799df42dc406d0f1"

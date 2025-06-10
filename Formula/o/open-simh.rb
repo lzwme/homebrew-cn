@@ -11,6 +11,8 @@ class OpenSimh < Formula
     regex(^v?(\d+(?:\.\d+)+(?:-\d+)?)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "848fae7d7b6b38629ba56cee3fe71d9d622ae73a15f6da231fe185ebf7250607"
     sha256 cellar: :any,                 arm64_sonoma:   "43567e394094f3435e761a4114a421c0488f5af137ce9b4d8aff87d75b485fa1"

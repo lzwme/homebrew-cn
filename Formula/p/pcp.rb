@@ -7,6 +7,8 @@ class Pcp < Formula
   license "Apache-2.0"
   head "https:github.comdennis-trapcp.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b70326a9568fb548f3ce008619104436192af8cd247f06eb722057d8188e828d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1aaac9b306226ce54909757ccdb10996d84803605c1e01f6f08e907ba7b30ec0"

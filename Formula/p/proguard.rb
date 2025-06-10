@@ -10,6 +10,8 @@ class Proguard < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "6cbbd228033de155297ce16984c8f4b876c85c9d4d398c72060241bb5a01e735"
   end

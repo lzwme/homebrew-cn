@@ -5,6 +5,8 @@ class OhdearCli < Formula
   sha256 "2af752e7e5ba316e696795860c911df2327033ead395645e055c86fc00ae588c"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "e142196fd160453d6cb57aa083561c73079fb38778ba34152ff19f6b3447933d"
   end

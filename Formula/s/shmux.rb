@@ -5,6 +5,8 @@ class Shmux < Formula
   sha256 "c9f8863e2550e23e633cf5fc7a9c4c52d287059f424ef78aba6ecd98390fb9ab"
   license "BSD-3-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1c6c5f0ff3534ed4ad1c56180b80e0c1963b25c803789492c130ab0620eccb64"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2b5156cf3563aa2cca9be5a0de4e8bdd23fbd78854910a8fd25e0cf83b0d0172"

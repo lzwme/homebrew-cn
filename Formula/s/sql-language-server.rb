@@ -5,6 +5,8 @@ class SqlLanguageServer < Formula
   sha256 "c92fe8ae8756f86bc893ec3dff6d85653de242eb671af0430807064db79d9cd6"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd5d2aa5e74f6c90fab27c5fb63afb21c59cae849a65ed257848c689bd5f043e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9aa6c820accaa95b19c29fc1512ee089f49c630a0b8a11ca84562870a332d4a2"

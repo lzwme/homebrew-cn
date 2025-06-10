@@ -16,6 +16,8 @@ class OsmGpsMap < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256                               arm64_sequoia:  "86a72e93e60138253d415f0f8350e2a08f01cf670631f159cbcb9aef453991f0"
     sha256                               arm64_sonoma:   "4e99312645cad4b62bce40d08360aaf0071a7a5fce6e8331c3940fc9956d6a30"

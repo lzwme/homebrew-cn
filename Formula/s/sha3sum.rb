@@ -5,6 +5,8 @@ class Sha3sum < Formula
   sha256 "82c0808b11f4ba039531b22877dd68e4d870f53cae0c23b7c5d22d40312129f7"
   license "ISC"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "123cc2c228d8770644c184f6e1a0da0b2e4398bbdf4aff9cc2465a5bc59ac41d"

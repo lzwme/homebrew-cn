@@ -11,6 +11,8 @@ class Pwsafe < Formula
     regex(href=.*?pwsafe[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "fcd7dd6ac6b4755c4f6e165e8fad94838cb260a07b47a890f1f1e54ab6d04e3d"

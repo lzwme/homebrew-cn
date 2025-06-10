@@ -9,6 +9,8 @@ class Offlineimap < Formula
   revision 3
   head "https:github.comOfflineIMAPofflineimap3.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2182b73d2eb5f2fc88614f4cd78889da9a8fa1cf7cf78e83884856f5dbc9e2da"

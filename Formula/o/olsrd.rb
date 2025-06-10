@@ -11,6 +11,8 @@ class Olsrd < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "874cb9fc08951755b92d6f4310d46d3204bf67785ae95d96d07ef754f22fbb83"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d6c4e30770465a800d9d40fbf7098db2cbcffb15c511fdff67f9e6efda615122"

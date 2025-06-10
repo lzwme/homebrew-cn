@@ -59,7 +59,8 @@ class JavaServiceWrapper < Formula
       wrapper.java.command=#{java_home}/bin/java
       wrapper.java.mainclass=org.tanukisoftware.wrapper.WrapperSimpleApp
       wrapper.jarfile=#{libexec}/lib/wrapper.jar
-      wrapper.java.classpath.1=#{testpath}
+      wrapper.java.classpath.1=#{libexec}/lib/wrapper.jar
+      wrapper.java.classpath.2=#{testpath}
       wrapper.java.library.path.1=#{libexec}/lib
       wrapper.java.additional.auto_bits=TRUE
       wrapper.java.additional.1=-Xms128M

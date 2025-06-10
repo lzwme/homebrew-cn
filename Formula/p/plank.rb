@@ -11,6 +11,8 @@ class Plank < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "902d73cd939a2dabe044db2f5023ba45c1c5ac8c83e77f650110fd167d03dd04"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1c300759e15cbfe318181f9a32a7642f297c72f20b6e5503e90d6ffe72dd9f04"

@@ -9,6 +9,8 @@ class QtPerconaServer < Formula
     formula "qt"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:  "534a4ea601ef00f9b21e1d59e00950510183f9d797c6c2ad42f0795bb7eadf12"
     sha256 cellar: :any,                 arm64_ventura: "dd6b700419445afe0ba3d9fca087b618640f8eada89a7fbc0aeb620d014d8f54"

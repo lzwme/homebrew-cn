@@ -4,6 +4,8 @@ class PutmailQueue < Formula
   url "https://downloads.sourceforge.net/project/putmail/putmail-queue/0.2/putmail-queue-0.2.tar.bz2"
   sha256 "09349ad26345783e061bfe4ad7586fbbbc5d1cc48e45faa9ba9f667104f9447c"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "6fc472e77db929384f6f9e436b6a3433df05d86cc583e499f92bd69373d332c3"
   end

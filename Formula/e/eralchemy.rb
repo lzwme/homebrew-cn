@@ -6,16 +6,16 @@ class Eralchemy < Formula
   url "https:files.pythonhosted.orgpackages19055f69930e83a02360d9ed16660bdd58d9d501bffabd43d7dbbe8c14269143eralchemy-1.5.0.tar.gz"
   sha256 "fa66a3cd324abd27ad8e65908d7af48d8198c0c185aeb22189cf40516de25941"
   license "Apache-2.0"
+  revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "92ec126756fb9a9a3b483d2a5c7ea2487e07c16ca357f5d386f1c206a761c2b3"
-    sha256 cellar: :any,                 arm64_sonoma:  "6fbb9351b85cbb0f7a3b3416201820a4f39dffb0f7d07e9585c185c48fd16673"
-    sha256 cellar: :any,                 arm64_ventura: "30f822ebe671d6ca630435f0a5a91bf561edaa26fa650c69047991ba19b56257"
-    sha256 cellar: :any,                 sonoma:        "ef8c1526f85a9c1ffbf2b4ad0fc02e8979fb149873761feba5dd3b0232e9bc8b"
-    sha256 cellar: :any,                 ventura:       "1991afedef5dc1bfcb529e2c6c38c47734f83a5b6585bb5424eb7a3f994fa879"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7bceb9011707597662091f77a43f3e192b53ed5490c971b77126ef0b0ad94ea8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "ed03f3df61c850f93cbb16b1f06c25cd586c92164594e49803bc69565cc2e432"
+    sha256 cellar: :any,                 arm64_sequoia: "08649146de0cdf02e659ede3d8a0abcf22ceef117c63df9f556414137f04d692"
+    sha256 cellar: :any,                 arm64_sonoma:  "f18d6b415538d24a6777d5589f0a1c36386a541765baef679e9152f36c9d2f47"
+    sha256 cellar: :any,                 arm64_ventura: "bcbea307eb470ce0f6a1ed9ec24536e421be304087f58b4669f970a514f33fc6"
+    sha256 cellar: :any,                 sonoma:        "285c6bda5678f036aa4315660073df0bd86e68f9a761fe66a5ea4f4a8be3f4bf"
+    sha256 cellar: :any,                 ventura:       "90a5befab4b548f14b9a203fd1c802910b9ff3511653d62666f338a814d489b2"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "4eab42a4e1af97949850753589b99b101b5e66c6d2b3fcdc6f6caabec7d388ea"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "3be4ace8ed5abe63973efc16f9c8a88b99a267743d05ae0045ff8d58c841d02e"
   end
 
   depends_on "pkgconf" => :build

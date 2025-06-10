@@ -10,6 +10,8 @@ class Robodoc < Formula
     regex(href=.*?robodoc[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia:  "20487c94420045784329d4f876f1292f4ddf54e015153bda4999ef5365b0e770"

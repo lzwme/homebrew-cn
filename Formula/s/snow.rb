@@ -11,6 +11,8 @@ class Snow < Formula
     regex(/href=.*?snow[._-]v?(\d+(?:\.\d+)*)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2a2fc6f30db002d270ad215e53e38a9178038ea9b05a19121dbc4ddd8975282f"

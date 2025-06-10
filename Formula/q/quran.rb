@@ -6,6 +6,8 @@ class Quran < Formula
       revision: "c0e271a69a2e817bf75c8ad79a1fc93aa1b868c9"
   license "AGPL-3.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "20b7b1031a5da9f17bd4916cc3d4eeb78242fbdd08e71485febe5861afd9ba78"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "042b57a9c4db3996221e8295c01bd101c6b443e1c7259010358511df7f96fdb8"

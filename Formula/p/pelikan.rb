@@ -6,6 +6,8 @@ class Pelikan < Formula
   license "Apache-2.0"
   head "https:github.comtwitterpelikan.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "cf1eea879a3b1eb8ec2d34616519f383cadea119d9dfec32ef89f93c5de3f248"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6074fdbebf10e608f76145fc4d41cf9be62d3b3ac67cf6b50ab1a1c21c0da76f"

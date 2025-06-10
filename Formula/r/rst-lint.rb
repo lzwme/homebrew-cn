@@ -7,6 +7,8 @@ class RstLint < Formula
   sha256 "1b235c0c922341ab6c530390892eb9e92f90b9b75046063e047cacfb0f050c45"
   license "Unlicense"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 8
     sha256 cellar: :any_skip_relocation, all: "33af15142db56039486e955b7a684f745bb02857f97b0aca3d5095a4b389d35b"

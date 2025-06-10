@@ -6,6 +6,8 @@ class Sqlbench < Formula
   license "MIT"
   head "https:github.comfelixgesqlbench.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bb5fc33b6e66c2132a7369001b56bced611e9f7b7f7d2488cf11c57f7f7c77ab"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ede04ad826d75e794b7fe73102638e05fa6d800fd9621d9060817afe5b1c398f"

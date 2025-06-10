@@ -16,6 +16,8 @@ class OpenBabel < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 4
     sha256                               arm64_sequoia: "6e65ad2651937d58c9c4c023948ef066fb47d80c1add72a46478dc068a3b8889"

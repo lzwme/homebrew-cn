@@ -5,6 +5,8 @@ class Pla < Formula
   sha256 "966ff0de604cfe4fe6e9650ee7776c5096211ad76e060ff4fd9edbd711977ef2"
   license "GPL-2.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "bb80455464cd182092c87cc0c242eda1050fdb3579ac6204338934741c5af632"
     sha256 cellar: :any,                 arm64_sonoma:   "34622b25b182676b0af0bcb5832d47a7d72672d3ad6e972036efdb551011fa7e"

@@ -12,6 +12,8 @@ class ReconNg < Formula
   license "GPL-3.0-only"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 7
     sha256 cellar: :any,                 arm64_sequoia: "73ef8f988840d76008deb366dcb3540b381b9344ea2dd1633262c2289939771f"

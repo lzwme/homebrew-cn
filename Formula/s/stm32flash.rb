@@ -10,6 +10,8 @@ class Stm32flash < Formula
     regex(%r{url=.*?/stm32flash[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b888c0246ff2ed980cc2ca7e08e8890641bec73f22a47dea03dad402dfaff6e0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3b07e1d419f8b53f22dbd8479b61446e99cf2f9fcad620af12ab8cbcce21d27f"

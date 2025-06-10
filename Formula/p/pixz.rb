@@ -6,6 +6,8 @@ class Pixz < Formula
   license "BSD-2-Clause"
   head "https:github.comvasipixz.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "a92eaf0c89c34b5db225090adeedd24d26e3481d46e43eca1e94a2fdd509a98a"

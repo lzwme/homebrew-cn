@@ -6,6 +6,8 @@ class Pyyaml < Formula
   license "MIT"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "87a238bf1e44a97f54755f0e95ba11860884b186678d3ce163db3034b7b2d7cc"
     sha256 cellar: :any,                 arm64_sonoma:   "b538bcab64b4ab3f6351c219cff42e2d163201efcaa272e4ee7e58783ffb3ce6"

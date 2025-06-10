@@ -5,6 +5,8 @@ class Pict < Formula
   sha256 "42af3ac7948d5dfed66525c4b6a58464dfd8f78a370b1fc03a8d35be2179928f"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fa8ac4e122053ec2c71f8c2855cb4274835f9571152427650684364bc2f84855"

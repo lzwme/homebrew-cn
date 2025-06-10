@@ -5,6 +5,8 @@ class Ocmtoc < Formula
   sha256 "9954194f28823e4b1774d2029a1d043e63b99ff31900bff2841973a63f9e916f"
   license "APSL-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "76c855fd1977f72607d1a5e666eb281e43d39ed12d80195f2ac223ce23a0f72f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "12fda27f6b2cd588a3d5bbea9cc63834f08cf32e6b62f78b8bcee54d3435519d"

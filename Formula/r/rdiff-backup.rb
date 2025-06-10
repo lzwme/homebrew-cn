@@ -8,6 +8,8 @@ class RdiffBackup < Formula
   license "GPL-2.0-or-later"
   revision 2
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_sequoia: "b8a183aadfc497b89651c586a63267398a9ffa1b5fc7181bbb3dba635ed50aa8"

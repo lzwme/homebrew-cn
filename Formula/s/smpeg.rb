@@ -16,6 +16,8 @@ class Smpeg < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "e7a1451326b54dd9107b43762c877fc91a8d9cb7fcae37aad8f4a354c98c56bf"

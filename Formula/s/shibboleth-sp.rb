@@ -11,6 +11,8 @@ class ShibbolethSp < Formula
     regex(/href=.*?shibboleth-sp[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "0569ff4651fd7d6700c65c25790574f19066174c768959ae2064aea20ad5a99b"
     sha256 arm64_sonoma:  "0a46e994d409ba22543dc7bc7736238bcce908efc32d987ce0c043ceced97a70"

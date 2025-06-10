@@ -5,6 +5,8 @@ class S6Rc < Formula
   sha256 "81277f6805e8d999ad295bf9140a909943b687ffcfb5aa3c4efd84b1a574586e"
   license "ISC"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ffb8c25c6c698f13c255d694dfc6218116857cf633b6764a6ee4c026de314e20"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "120ab3b0a9ca7cf2db5f0b27ee6dffcebb3560e718956f5cab8693655d9aac14"

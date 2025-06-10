@@ -12,6 +12,8 @@ class Slrn < Formula
     regex(/href=.*?slrn[._-]v?(\d+(?:\.\d+)+(?:[a-z]?\d*)?)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 arm64_sequoia:  "439ad507d119a98349f0cc8422d9ef91125faa53a802a55078f11f1e7bb53fc4"

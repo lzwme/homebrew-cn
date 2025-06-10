@@ -9,6 +9,8 @@ class QtMariadb < Formula
     formula "qt"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:  "75e3067a257aafc396c73db5a337a1c33a7c30401da3accf5a2361e78b345a78"
     sha256 cellar: :any,                 arm64_ventura: "7b9a4a684d172d026ef92946bbe16a9cbbe4ef77b4d10681c68989a08c4c12df"

@@ -10,6 +10,8 @@ class Pngcheck < Formula
     regex(/href=.*?pngcheck[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b2a29178b3ecfedf6214021f290ebb12464f76b1b2179aa7aea7ae22be605b34"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bd889a6e98aced57897687ed9c5235a5b6d617bb7a4e92c8c81f0d68c5b8662c"

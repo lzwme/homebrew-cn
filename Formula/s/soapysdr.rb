@@ -14,6 +14,8 @@ class Soapysdr < Formula
     patch :DATA
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 3
     sha256 cellar: :any,                 arm64_sequoia: "2cd1b0106c59df55ee3022f0e426718979343f8c0791a1cbf189a0230b582967"

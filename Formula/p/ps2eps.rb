@@ -5,6 +5,8 @@ class Ps2eps < Formula
   sha256 "cd7064e3787ddb79246d78dc8f76104007a21c2f97280b1bed3e7d273af97945"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0cd7a84b33465e03768eb2c76ec181b730c775f18e57eeb282df636ee1a8e10f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "09d6e7f0fbbec5bd6e494715028e9730c32ddb1284261d5593734d1bd35c79da"

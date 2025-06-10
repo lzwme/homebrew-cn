@@ -8,6 +8,8 @@ class OnlykeyAgent < Formula
   license "LGPL-3.0-only"
   revision 5
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "1fd5cda3116c1be1b089204ffc6cc5e0a3b51d407f300449499c0b6a5054d24f"
     sha256 cellar: :any,                 arm64_sonoma:  "d373f7b075ca5c08c796c93d8db07f04b50c77d3a1ed07c7312565175c7db351"

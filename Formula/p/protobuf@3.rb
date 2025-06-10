@@ -5,6 +5,8 @@ class ProtobufAT3 < Formula
   sha256 "acb71ce46502683c31d4f15bafb611b9e7b858b6024804d6fb84b85750884208"
   license "BSD-3-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 4
     sha256 cellar: :any,                 arm64_sequoia:  "b6215fe7415a0af6a030e42af7cfce3c08b31ca8e29ed0f262989fc7ea38b12f"

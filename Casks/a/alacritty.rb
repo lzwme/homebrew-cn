@@ -13,21 +13,18 @@ cask "alacritty" do
   end
 
   app "Alacritty.app"
-  binary "Alacritty.appContentsMacOSalacritty"
-  binary "Alacritty.appContentsResourcescompletions_alacritty",
-         target: "#{HOMEBREW_PREFIX}sharezshsite-functions_alacritty"
-  binary "Alacritty.appContentsResourcescompletionsalacritty.bash",
-         target: "#{HOMEBREW_PREFIX}etcbash_completion.dalacritty"
-  binary "Alacritty.appContentsResourcescompletionsalacritty.fish",
-         target: "#{HOMEBREW_PREFIX}sharefishvendor_completions.dalacritty.fish"
-  binary "Alacritty.appContentsResources61alacritty",
+  binary "#{appdir}Alacritty.appContentsMacOSalacritty"
+  binary "#{appdir}Alacritty.appContentsResources61alacritty",
          target: "#{ENV.fetch("TERMINFO", "~.terminfo")}61alacritty"
-  binary "Alacritty.appContentsResources61alacritty-direct",
+  binary "#{appdir}Alacritty.appContentsResources61alacritty-direct",
          target: "#{ENV.fetch("TERMINFO", "~.terminfo")}61alacritty-direct"
-  manpage "Alacritty.appContentsResourcesalacritty.1.gz"
-  manpage "Alacritty.appContentsResourcesalacritty.5.gz"
-  manpage "Alacritty.appContentsResourcesalacritty-msg.1.gz"
-  manpage "Alacritty.appContentsResourcesalacritty-bindings.5.gz"
+  manpage "#{appdir}Alacritty.appContentsResourcesalacritty.1.gz"
+  manpage "#{appdir}Alacritty.appContentsResourcesalacritty.5.gz"
+  manpage "#{appdir}Alacritty.appContentsResourcesalacritty-msg.1.gz"
+  manpage "#{appdir}Alacritty.appContentsResourcesalacritty-bindings.5.gz"
+  bash_completion "#{appdir}Alacritty.appContentsResourcescompletionsalacritty.bash"
+  fish_completion "#{appdir}Alacritty.appContentsResourcescompletionsalacritty.fish"
+  zsh_completion "#{appdir}Alacritty.appContentsResourcescompletions_alacritty"
 
   zap trash: [
     "~LibraryPreferencesorg.alacritty.plist",

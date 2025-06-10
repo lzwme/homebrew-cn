@@ -6,6 +6,8 @@ class Starship < Formula
   license "ISC"
   head "https:github.comstarshipstarship.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e0f085c4ec44508be2fda1fd8d89ef9d7cc2207026e7db1da5a9d922d7046498"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c8a074bbded5edb346475e4bf3c6faecc13b15486cd75ffd7dc102c65369adad"

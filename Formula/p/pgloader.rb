@@ -12,6 +12,8 @@ class Pgloader < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "cb7f5d7b24d71a33f540c1deac860c14ac23a722ea8d090dcee236d323fb91c7"

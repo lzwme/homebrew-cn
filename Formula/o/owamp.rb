@@ -10,6 +10,8 @@ class Owamp < Formula
     regex(href=.*?owamp[._-]v?(\d+(?:\.\d+)+(?:-\d+)?)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9060c36f5f038c5d1b43cdb45319a414b214dc8ddef7745658b64ea756cd68e8"

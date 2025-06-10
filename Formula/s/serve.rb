@@ -6,6 +6,8 @@ class Serve < Formula
   license "MIT"
   head "https:github.comsyntaqxserve.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "341258202fb50eeaf467342669a26e492800683fc5dca43dd91f84c585ef336a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e5f617c56cc80d5658b19d32dbc6002f5de4061af0da97a4ec7c2d420b8285a2"

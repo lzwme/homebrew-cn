@@ -10,6 +10,8 @@ class Pdftohtml < Formula
     regex(%r{url=.*?/pdftohtml[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "09de57926ddbd85906d6ed7dabf427f6314d13cab5de1c0e073a1288a3ea0b2a"

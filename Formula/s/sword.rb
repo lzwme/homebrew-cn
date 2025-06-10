@@ -10,6 +10,8 @@ class Sword < Formula
     regex(%r{href=.*?sword[._-]v?(\d+(?:\.\d+)+)?["' >]}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia:  "0bbd46a628e21ec4c2cc033e16a03dca1a2ac3fb5e0ce282a5e60abf4c0b8f97"

@@ -5,6 +5,8 @@ class Pipemeter < Formula
   sha256 "e470ac5f3e71b5eee1a925d7174a6fa8f0753f2107e067fbca3f383fab2e87d8"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0653426bc1f7a2f36bc886279953ec40660d867797f4623162cc749c2f48ba0e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "197626afa86a59a767aa171fc9c7244c0fecb1548175c59aee7af5a64051e7d0"

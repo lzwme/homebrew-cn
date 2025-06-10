@@ -6,6 +6,8 @@ class Redshift < Formula
   license "GPL-3.0-or-later"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia:  "82b1df8db7796fa1af92a7b3ef4ea428e4d94a65850a5e2cdb90f354605cf065"

@@ -14,6 +14,8 @@ class Sgrep < Formula
     skip "No up-to-date sources to check for versions"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "836a9d21daa61fa592a52541e2927175f2689e67569562961ea4c22278fe65a0"

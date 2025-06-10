@@ -17,6 +17,8 @@ class Saxon < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "9c4034c95793e5201c494a6f5306081c90488558205742949d2dea530ff74660"
   end

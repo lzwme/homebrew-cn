@@ -5,6 +5,8 @@ class Smartmontools < Formula
   sha256 "690b83ca331378da9ea0d9d61008c4b22dde391387b9bbad7f29387f2595f76e"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "40ae2e7c1fe5a99587149ea92c170bd8a89f97b44cb0b1d616635c45dfac2074"
     sha256 arm64_sonoma:  "55f5004cb84ed1a3ca63ad5d312dfad8eb85d5fe5adeefb317187729b37af0f6"

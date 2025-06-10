@@ -6,6 +6,8 @@ class Simh < Formula
   sha256 "bd8b01c24e62d9ba930f41a7ae7c87bf0c1e5794e27ff689c1b058ed75ebc3e8"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "1c035c21f19ee6b0418c5437901ae58c92f295db48755c0b17fed3e57359be4b"
     sha256 cellar: :any,                 arm64_sonoma:   "6a2f006ba70c8319a1eb4d8ece33be4a0a24e0f064d655bdf6f3d39209b586b8"

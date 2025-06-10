@@ -27,6 +27,8 @@ class SpeechTools < Formula
     regex(%r{href=["']?v?(\d+(?:\.\d+)+)?["' >]}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "711ab1173ba030660d1d8ee4e33da992aedcea17abf46073d9cc61600393cf7a"
     sha256 cellar: :any,                 arm64_sonoma:   "661e6c51d679c86f3f8a3e0bf98f11d2bf70e94dfffa01b15ae8cfce3a25a32b"

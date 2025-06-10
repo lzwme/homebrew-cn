@@ -6,6 +6,8 @@ class Sshfs < Formula
   license any_of: ["LGPL-2.1-only", "GPL-2.0-only"]
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_linux:  "bbd7c81450476893e5574f06a4d3fa7975156b71d5dbf1ab28ccd3f103e1dfef"
     sha256 x86_64_linux: "07adb364aaf4520dca920a1b0c2ba1af740e222e6026766aaec88ee9715812df"

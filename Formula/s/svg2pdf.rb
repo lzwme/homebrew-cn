@@ -11,6 +11,8 @@ class Svg2pdf < Formula
     regex(href=.*?svg2pdf[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "47d73aad7aae2d18a27bb902aa155f2f0a716ae9da58468a177c324de3307cc6"
     sha256 cellar: :any,                 arm64_sonoma:   "5d2e70a72f9a8858e35dd8f3103931091f755b8f23de7163b2a684fc5d2d54da"

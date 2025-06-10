@@ -11,6 +11,8 @@ class Paperjam < Formula
     regex(/href=.*?paperjam[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "271b0d2b33c3f06f81fac58248a81a95eef0bcc36929230e2bad7b4d38ff34db"
     sha256 cellar: :any,                 arm64_sonoma:  "4df949ea647a2056ea7d7ab0ea2d298f45da5643ae92c25aaac80aad7e1301c7"

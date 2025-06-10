@@ -5,6 +5,8 @@ class Pk < Formula
   sha256 "0431fe8fcbdfb3ac8ccfdef3d098d6397556f8905b7dec21bc15942a8fc5f110"
   license "Apache-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "be0b36f6d80ee6d6191207faa7454eff5a35fac1aaa54cb3df986482bb4129fb"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "df016243a24085cb085bd78cb4e2a0c0a58f0f017a94a09f5b9f7555e6739745"

@@ -10,6 +10,8 @@ class Reprepro < Formula
     regex(/href=.*?reprepro[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "badeb1ae69e64807080d2a9a593d5195e784998e9fd7ac3c38666f90c3ac3aea"
     sha256 cellar: :any,                 arm64_sonoma:   "6ae8f574c8fbfa13776901135cf93d2764d7fc039d7ab6727c959310785769b6"

@@ -5,6 +5,8 @@ class ProcpsAT3 < Formula
   sha256 "efa6f6b4625a795f5c8a3d5bd630a121d270bc8573c5a0b6a6068e73611d6cd5"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 x86_64_linux: "680fec0c339075bb267e208f4074688c6699356c76cce5566033b4d11f1b7508"
   end

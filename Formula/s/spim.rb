@@ -7,6 +7,8 @@ class Spim < Formula
   license "BSD-3-Clause"
   head "https://svn.code.sf.net/p/spimsimulator/code/"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia:  "0bbfdf9f722ade3b41dba3007110f92b87f5cdae144349b030399253fc7cf29c"

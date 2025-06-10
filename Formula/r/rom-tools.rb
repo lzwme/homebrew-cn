@@ -11,6 +11,8 @@ class RomTools < Formula
     formula "mame"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "bd78e16ae965b563b274495eeac4cb0361e68778874d5c5a9616ac4fb1c925d7"
     sha256 cellar: :any,                 arm64_sonoma:  "42a638be8c1f2e9b67f9866af6d4fc6bd588978a833db96f999a6214fb4c0575"

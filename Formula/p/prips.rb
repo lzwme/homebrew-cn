@@ -10,6 +10,8 @@ class Prips < Formula
     regex(/href=.*?prips[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "119d431a378f96585d6d92857c3dbf524cca2bad9e993d81763015f2e876ebf5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c4824dd5010e37dd1c8dd3689fd00b7a7bc861aa229ce86bb67d14e814832f3a"

@@ -5,6 +5,8 @@ class Skalibs < Formula
   sha256 "0e626261848cc920738f92fd50a24c14b21e30306dfed97b8435369f4bae00a5"
   license "ISC"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c668db63e78d6fc7ebe695706f1d26081db734729bdb6892f783d128b8943291"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "43990849b9d5f38a0a33a6dc0f25b4ee9ff409507a88e1e6128e4667a1b3713a"

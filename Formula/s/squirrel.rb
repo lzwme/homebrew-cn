@@ -14,6 +14,8 @@ class Squirrel < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c208328e416371ac27e3ae7a78bfd4e319b972848e47647526d282ff36539eb1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "55b91fac014d0478c05c654b6a4d45edc116a7c4853933a7a8d1ee27643a61b5"

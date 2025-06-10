@@ -1630,6 +1630,7 @@ Homebrew-homebrew-core/Formula/d/dvd-vr.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dvdauthor.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dvdbackup.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dvdrtools.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/d/dvisvgm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dvm.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/d/dvorak7min.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/d/dvr-scan.rb, Homebrew/homebrew-core, 1
@@ -2593,7 +2594,7 @@ Homebrew-homebrew-core/Formula/g/graphql-inspector.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/graphqlviz.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/graphqurl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/graphqxl.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/g/graphviz.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/graphviz.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/g/graphviz2drawio.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gravity.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/grayskull.rb, Homebrew/homebrew-core, 1
@@ -5056,6 +5057,7 @@ Homebrew-homebrew-core/Formula/o/osslsigncode.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/ossp-uuid.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/osv-scanner.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/osx-cpu-temp.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/o/osx-trash.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/osxutils.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/otel-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/o/oterm.rb, Homebrew/homebrew-core, 1
@@ -5526,6 +5528,7 @@ Homebrew-homebrew-core/Formula/p/pulp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pulsarctl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pulseaudio.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/p/pulumi.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/p/pulumictl.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pumba.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/punktf.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/p/pup.rb, Homebrew/homebrew-core, 1
@@ -6762,6 +6765,7 @@ Homebrew-homebrew-core/Formula/t/tfel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfenv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfk8s.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tflint.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tfmcp.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfmigrate.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfmv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tfocus.rb, Homebrew/homebrew-core, 1
@@ -8759,7 +8763,7 @@ Homebrew-homebrew-cask/Casks/d/dmenu-mac.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dmg-canvas.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dmidiplayer.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dnsmonitor.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/d/do-not-disturb.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/do-not-disturb.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dockdoor.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/docker-toolbox.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/docker.rb, Homebrew/homebrew-cask, 0
@@ -9950,6 +9954,7 @@ Homebrew-homebrew-cask/Casks/font/font-g/font-genshingothic.rb, Homebrew/homebre
 Homebrew-homebrew-cask/Casks/font/font-g/font-gentium-basic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-gentium-book-basic.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-g/font-gentium-book-plus.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/font/font-g/font-gentium-book.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-gentium-plus.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-gentium.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-g/font-genwanmin.rb, Homebrew/homebrew-cask, 1
@@ -10437,7 +10442,6 @@ Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-wenkai-tc.rb, Homebrew/homebr
 Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-wenkai.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-l/font-lxgw-zhenkai.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-m+-nerd-font.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/font/font-m/font-m+.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/font/font-m/font-m-plus-1-code.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-m-plus-1.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/font/font-m/font-m-plus-1p.rb, Homebrew/homebrew-cask, 1
@@ -14450,7 +14454,7 @@ Homebrew-homebrew-cask/Casks/t/tap-forms.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/tartelet.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/taskade.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/taskbar.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/t/taskexplorer.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/t/taskexplorer.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/taskpaper.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/t/taskwarrior-pomodoro.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/t/tastytrade.rb, Homebrew/homebrew-cask, 0

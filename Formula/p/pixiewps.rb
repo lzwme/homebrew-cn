@@ -6,6 +6,8 @@ class Pixiewps < Formula
   license "GPL-3.0-or-later"
   head "https:github.comwiire-apixiewps.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "c88ef0a54b523b538d88e491bf10933853e5600ebb4c391d0529e28b5feac368"
     sha256 cellar: :any,                 arm64_sonoma:   "db1461e5abc8e20b06a0e50a99a377367aa6f7840303307b49962ce4d31dcbe8"

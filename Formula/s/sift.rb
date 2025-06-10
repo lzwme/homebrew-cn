@@ -5,6 +5,8 @@ class Sift < Formula
   sha256 "bbbd5c472c36b78896cd7ae673749d3943621a6d5523d47973ed2fc6800ae4c8"
   license "GPL-3.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a9f002da076b35a37e62503ec58fe1ee19b6800f14467fdb6436de1dc648d9de"

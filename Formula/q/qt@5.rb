@@ -18,6 +18,8 @@ class QtAT5 < Formula
     regex(%r{href=["']?v?(\d+(?:\.\d+)+)?["' >]}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "a661d1f9b62c9fff165ace3821f3befeb65620166b63d8795301f132cc9aeb50"
     sha256 cellar: :any,                 arm64_sonoma:  "1902b5b126785f33ff1fdd612c458a0dd2cca205c925f4c04fc5ef4e6b7d5517"

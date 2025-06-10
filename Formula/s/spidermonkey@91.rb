@@ -7,6 +7,8 @@ class SpidermonkeyAT91 < Formula
   license "MPL-2.0"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "2ecaf8e4212260b4f579a7fc466f78615adfae5c7a0e99d1976a39568fc24e6b"
     sha256 cellar: :any,                 arm64_sonoma:   "67ab8a1a5b3c43e1b0c8b28e261ac6f584ae03a18d19a0279cea2ca7cfb054d0"

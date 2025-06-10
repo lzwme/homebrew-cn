@@ -8,6 +8,8 @@ class Odin < Formula
   license "BSD-3-Clause"
   head "https:github.comodin-langOdin.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256                               arm64_sequoia: "ca3c7fda6ff4f285373e5115f269555d7d9f544764f4c024e0ff16b5836a109b"
     sha256                               arm64_sonoma:  "0f2d101296a06d88f4b914f798530dab39159ceb410ee6ed9cd1a3f0ffa8febe"

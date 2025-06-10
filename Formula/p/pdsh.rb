@@ -6,6 +6,8 @@ class Pdsh < Formula
   license "GPL-2.0-or-later"
   head "https:github.comchaospdsh.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "4f305e8c05c690c64f73c73e4a845f21d4bbafe7d0e15e96fb4c5e2833f455c9"
     sha256 arm64_sonoma:   "e00a802e4fbdbbe512b3222a15da104ff75a5f35beb28fed5a6239f9b4cf0476"

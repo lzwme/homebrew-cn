@@ -6,6 +6,8 @@ class RedTldr < Formula
   license "MIT"
   head "https:github.comRvn0xsyred-tldr.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8a4763cc47c39163940cd6921068b6eabf24269fbc648f0f91c352ca46470eac"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f17f3eaa4917886c572dca60179e11abd40391fbf92863ebeaef7a239d3297db"

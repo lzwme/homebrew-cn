@@ -10,6 +10,8 @@ class Pngxx < Formula
     regex(/href=.*?png\+\+[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "acf63a60a34fbd3c3491c29b7ea5081736b7ce316d6d27b7732313920f450701"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5eec08e707d28e9849abb32efc3d218abfb2ff953ee1e9ed6fe3790646713090"

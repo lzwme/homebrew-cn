@@ -17,6 +17,8 @@ class Objconv < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2b4714a356e16792f3980afc77dc4be1dc71f422b1f018581add5627a7029938"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4e8ce3fb8918b114d7db84a03abb75f67cdc66f19278aad8cde5b22e11db7522"

@@ -5,6 +5,8 @@ class Sambamba < Formula
   sha256 "955a51a00be9122aa9b0c27796874bfdda85de58aa0181148ef63548ea5192b0"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "920be291227ca05e361411dc0199507c0c341b492b47db42248b52b27ed99ccc"
     sha256 cellar: :any,                 arm64_sonoma:   "ddb87f1e11e5f6c241ba9165e9902311d40216ce3a5a7fac3b0d020e24ff17cc"

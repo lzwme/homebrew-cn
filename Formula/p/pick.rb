@@ -6,6 +6,8 @@ class Pick < Formula
   license "MIT"
   head "https:github.commptrepick.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c5df3f1f792d5df3784e7d7e8204de908bb43f7ec0830bf576eedc58de28c683"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cf2e439d81bbe3a7cc2fadf74c2b22835087deb28ece7b39a05312372e551d86"

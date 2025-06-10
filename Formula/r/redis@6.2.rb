@@ -11,6 +11,8 @@ class RedisAT62 < Formula
     any_of: ["CC0-1.0", "BSD-2-Clause"], # deps/hdr_histogram
   ]
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "bd4e8b149de304f96ca737de9dbbfa4a3055dd93df5a0bf42d25dec056bc81d3"
     sha256 cellar: :any,                 arm64_sonoma:  "097a41d0f9e5c0a68981de1230d7d7d9cda8454aed0ac9ff038e8f48e2a5214e"

@@ -5,6 +5,8 @@ class PostgresqlHll < Formula
   sha256 "e2f55a6f4c4ab95ee4f1b4a2b73280258c5136b161fe9d059559556079694f0e"
   license "Apache-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "27480a860a6ad43655bbc46261a3802ea26252038b3c0ada7900d7727654248d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7c452476e1fa061eff0b1e1ed08ded91385d0ea266b47173ecac203e009ddcc4"

@@ -6,6 +6,8 @@ class Rslint < Formula
   license "MIT"
   head "https:github.comrslintrslint.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ac8cd4c717dfda47bbf135c332e2468c8129772a797f577836c79ae8a5e427e3"

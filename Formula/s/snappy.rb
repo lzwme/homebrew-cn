@@ -6,6 +6,8 @@ class Snappy < Formula
   license "BSD-3-Clause"
   head "https:github.comgooglesnappy.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "326d8c9a73e0990a43fefe96d2e29355fcd6f42906710017bd1a3baf4401bb33"
     sha256 cellar: :any,                 arm64_sonoma:  "28b0702ed678a35c6d03cb4d91f975e17b3b5af7480418f3c82f46365e55533d"

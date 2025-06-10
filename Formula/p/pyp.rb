@@ -7,6 +7,8 @@ class Pyp < Formula
   sha256 "97c78f8fd6d4550bf67bb5001a4c5c1fa58184d9bd8256abac3e240fa38aa05c"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "0b8eaab0a5475a43fcbc136c96cd81caed5abb0b755395652d6d238cc9968f4b"
   end

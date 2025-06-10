@@ -13,6 +13,8 @@ class SpiceGtk < Formula
     regex(/href=.*?spice-gtk[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia:  "9b710c6b06c09f3b4c64937c7499df490e00294ab41e330657dd7025f0040abf"

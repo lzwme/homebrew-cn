@@ -5,6 +5,8 @@ class Pgvector < Formula
   sha256 "867a2c328d4928a5a9d6f052cd3bc78c7d60228a9b914ad32aa3db88e9de27b0"
   license "PostgreSQL"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d0ea074a0dd35acc1957c1f2f6d90df297a16d7e47f94368b85e3a309e9540fe"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "01a8036c0a03daa290fca07e915e406356fd36cdbd084117e9246d772955b438"

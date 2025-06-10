@@ -5,6 +5,8 @@ class Swfmill < Formula
   sha256 "db24f63963957faec02bb14b8b61cdaf7096774f8cfdeb9d3573e2e19231548e"
   license "GPL-2.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "627251dcb91c98bea4455fb35da262880aae7f2f5897162616f62135f1fe9234"
     sha256 cellar: :any,                 arm64_sonoma:   "a9e8c77577b790f0e88eec48aa1e8091c7df0708731aab2d5b61f5379c4ee0ee"

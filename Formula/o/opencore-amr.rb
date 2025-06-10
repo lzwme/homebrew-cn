@@ -10,6 +10,8 @@ class OpencoreAmr < Formula
     regex(%r{url=.*?/opencore-amr[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "48a7944b5baf1d23777ff16d0f1b44ba3fb1872728e578e245993019895b0075"
     sha256 cellar: :any,                 arm64_sonoma:   "b9598108fb81e647206266d1ebfd43872454df8d9eb8292e09b550fb190e5c4f"

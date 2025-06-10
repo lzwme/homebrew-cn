@@ -6,6 +6,8 @@ class SshPermitA38 < Formula
   license "MIT"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_sonoma:   "0c9ed9e40aee04a34d31a3ee2f84978b2298302533b45eacf0dbe306f21457d4"

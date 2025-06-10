@@ -19,6 +19,8 @@ class Re2 < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "78c39b1bdfc21ac31d89fc69ef35cc28fe7deabd551c3b3ec29c0f200c56c7ae"
     sha256 cellar: :any,                 arm64_sonoma:   "9dc85bc8e5a00a1a642331e812871dc00ed4a272a8415ec523f278d0dbb1faab"

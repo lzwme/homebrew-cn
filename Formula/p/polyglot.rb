@@ -6,6 +6,8 @@ class Polyglot < Formula
   license "GPL-2.0-or-later"
   head "http://hgm.nubati.net/git/polyglot.git", branch: "learn"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7c17a367c2d5da43b534695330ea6467fb27dcd887afeb6dc582601c4a6a5fdc"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bc554a6ab1946c530812eef33e2092102df23edfb12dcb14d98d288b5f15de96"

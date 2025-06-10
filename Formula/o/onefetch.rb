@@ -6,6 +6,8 @@ class Onefetch < Formula
   license "MIT"
   head "https:github.como2shonefetch.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c79034fef2b28abfb613dab6543eef17e6af769c95757166f1f727d37d5a42e8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c710fccdd294242271b24039e0fa3061a31e5dbbf51284c76f5787cdafc576a8"

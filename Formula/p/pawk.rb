@@ -7,6 +7,8 @@ class Pawk < Formula
   sha256 "59ec1a4046cf545e1376c8c0a28f5f178a3b88dbc85fb3772aa3ce8c2e088349"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "ac3b1c476a0e40e5eed34672c9d426989456b17907cfeee03c6e6ed88d0d01b9"
   end

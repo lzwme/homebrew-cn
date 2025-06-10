@@ -7,6 +7,8 @@ class PegMarkdown < Formula
   revision 1
   head "https:github.comjgmpeg-markdown.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "bd7f5543b909228fcad9af4e3173b8ca657d92ca17233c99c8415716c7a575a5"
     sha256 cellar: :any,                 arm64_sonoma:   "a98a5d30c50275c60315ca49c9a5e9f8db427bf8e14dd76eed44f5d59af8b354"

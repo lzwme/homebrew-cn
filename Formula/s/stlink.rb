@@ -6,6 +6,8 @@ class Stlink < Formula
   license "BSD-3-Clause"
   head "https:github.comstlink-orgstlink.git", branch: "develop"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "234d04d230556d8342bc80d9d8564e7c643f86ebd39c8e3d9cd10667076c4459"
     sha256 arm64_sonoma:   "182146c51940a4851235c5a1e66e0a1455d5833a112537c366b68314f4280d62"

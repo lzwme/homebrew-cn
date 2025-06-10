@@ -10,6 +10,8 @@ class Sloccount < Formula
     regex(/href=.*?sloccount[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3243d86a2a6a558e56911fe743461644ff484b699d962c7afcb17ffed89b7706"

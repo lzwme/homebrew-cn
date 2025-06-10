@@ -10,6 +10,8 @@ class Rmcast < Formula
     regex(/href=.*?rmcast[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "2550872c1731058ae467f82b6258659ace4cc86e091fa54f827daa61cd5677fc"
     sha256 cellar: :any,                 arm64_sonoma:   "d82904f97cda3eb5874bfca8ac452568a04efeadd88524fc2b1e03cb594ecca9"

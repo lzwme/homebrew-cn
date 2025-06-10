@@ -7,6 +7,8 @@ class Opencoarrays < Formula
   revision 5
   head "https:github.comsourceryinstituteopencoarrays.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "e263b0b0243719cdaf1ef02de84c8d70c52b1ba4b75254e75eec540daba88fde"
     sha256 cellar: :any,                 arm64_sonoma:  "8c6e809fff5e543d60f2ee038ca04aa99e398a69b3aec9db067249c84b2beef0"

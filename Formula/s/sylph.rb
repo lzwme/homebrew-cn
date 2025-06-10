@@ -5,6 +5,8 @@ class Sylph < Formula
   sha256 "9dceb4e2302ece3ca225218dfb8367c88a88c98d1eb4e8eac82a202195584099"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2954424cd08c4d8072a175ebc40f37ecf77b0d06e951260f25b05b34567f4c5f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "95c93babdea5665924b5cb74d60f02a7d42bdbfd12cb9dfbb8eda92c33c8dbe0"

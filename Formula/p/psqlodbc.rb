@@ -14,6 +14,8 @@ class Psqlodbc < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "7301df560fe98f539315f6236b45b308afc94748ff8aa2b5b0e0cdb2d0900354"
     sha256 cellar: :any,                 arm64_sonoma:  "990accc6923fb034bc1ebbf5b7a5d820b9a85807c9a3e90c581f986a26215f46"

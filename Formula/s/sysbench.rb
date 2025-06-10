@@ -7,6 +7,8 @@ class Sysbench < Formula
   revision 7
   head "https:github.comakopytovsysbench.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "58353cd8988e133b4dfa59be80204cf6968ab6a733f9da7b3a53f561b74c4a20"
     sha256 cellar: :any,                 arm64_sonoma:  "88b6daa8909f7deca820c79d70651675e73bab3bf25e431ba72967ae78a932bb"

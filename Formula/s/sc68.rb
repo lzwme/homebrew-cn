@@ -10,6 +10,8 @@ class Sc68 < Formula
     regex(%r{url=.*?/sc68[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "530da22ced84ec1181ddf6887028d6a4e9fa955446a492c039e5c807d6f2ec82"
     sha256 arm64_sonoma:   "f6c0c19ce245cb76ed53a1e9d017eb6b598ac1834f5c7ff215978147498be18e"

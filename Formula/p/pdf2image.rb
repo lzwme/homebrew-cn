@@ -6,6 +6,8 @@ class Pdf2image < Formula
   license "FSFUL"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "412c25b88af18ef42fc4c705a409449b38f3fab9a792b40067ce2c510e524903"
     sha256 arm64_sonoma:   "caf804519e1009c069f081987d8cf3a9052649c7fa2359bf9749df195bbdbb21"

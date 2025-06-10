@@ -10,6 +10,8 @@ class Potrace < Formula
     regex(/href=.*?potrace[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "dec55e697af533180d68158fd557f596e65887a1e5043214dc0532464aa6ef27"
     sha256 cellar: :any,                 arm64_sonoma:   "003f7041bd6b4ea6de5ac2c8fbe9e2537a6a6dbd169f0c872627c5e2daa00afa"

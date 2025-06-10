@@ -20,6 +20,8 @@ class Spotifyd < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "dd6598774377cc653a1e34568c6afff11509e3fac350dc0084532ad1eaad97ec"

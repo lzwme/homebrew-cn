@@ -12,6 +12,8 @@ class SpirvTools < Formula
     regex(^(?:vulkan[._-])?sdk[._-]v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "526f0b2be7bbd832d10573e1504944562ca8bd0ab19ac5c6fc5fcfdf0192ed65"
     sha256 cellar: :any,                 arm64_sonoma:  "0d90a066a6f63a137cac4c38c8fe51f76a00f9ef2dfc00b92c06fc2aa11c1fa1"

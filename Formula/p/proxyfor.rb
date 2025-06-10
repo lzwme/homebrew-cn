@@ -5,6 +5,8 @@ class Proxyfor < Formula
   sha256 "f4e2340dbce232333ce05473b75f3b1eacf27d1699071b52a9cf420a8c47fd96"
   license any_of: ["Apache-2.0", "MIT"]
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6447af4607f2a07504be751324b5771f1db26846b5c4b426a11a615ba9b7487d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "312dae34b5b94992b9224e8eb2b38e11643ca63d2f8c3372544dcce1d39e4d49"

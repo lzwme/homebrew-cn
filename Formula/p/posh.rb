@@ -10,6 +10,8 @@ class Posh < Formula
     regex(%r{^debian/v?(\d+(?:\.\d+)+)$}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4521f3540d2fab592dafd00531ecb265fb361568e62a608eb3965258f3de58ea"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "bdbfb5bbceaa13a46364fc19af24197741066064ab0a158f0ea3d46e550b9ef7"

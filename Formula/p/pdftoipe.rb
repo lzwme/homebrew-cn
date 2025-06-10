@@ -6,6 +6,8 @@ class Pdftoipe < Formula
   license "GPL-2.0-or-later"
   revision 7
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "b53031b21a4c2a85bd24e6e76bf9fc9529958e593dbc57578bbda62a6eb75863"
     sha256 cellar: :any,                 arm64_sonoma:  "a3295144f553dfd41a1dc58a6b2aec4a778f7138ba60459b0af9d235a7221fd9"

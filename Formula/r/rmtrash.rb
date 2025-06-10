@@ -6,6 +6,8 @@ class Rmtrash < Formula
   license "MIT"
   head "https:github.comTBXarkrmtrash.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a30a53dd25ff977ad17267908d9d93d95f246e2d947aba78d181b5670a6ebcb3"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1d28190fb40efa3936483dd2f550e15911e86d1d533278f2bcdbb9b85aa3741f"

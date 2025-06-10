@@ -14,6 +14,8 @@ class Rtmpdump < Formula
     regex(href=.*?rtmpdump[._-]v?(\d+(?:[.+]\d+)+)[^"' >]*?\.orig\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "4d88c286ea074e6dc9612679d33f1e25910dce5cd4c4a3f9f2dcdec8ad950516"
     sha256 cellar: :any,                 arm64_sonoma:   "fc5748b95d47c39bb4d633090cc0a7b5fe90bda5ef163fa5b8809272c9bf4618"

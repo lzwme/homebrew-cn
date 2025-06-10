@@ -10,6 +10,8 @@ class Sha2 < Formula
     regex(/href=.*?sha2[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 4
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "1f07e3e5d745947e51cedb4f9f9b76c8b23ad190f19f938845fecc2374e80a9d"

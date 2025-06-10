@@ -6,6 +6,8 @@ class Shamrock < Formula
   license "CECILL-2.1"
   head "https:github.comShamrock-codeShamrock.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "996d6ea9bc4daa22a38d922a145a48acd22cc66672fdc2f0fe783ee09a6d6a9f"
     sha256 arm64_sonoma:  "b938862a15a7506af458f490c308167db0acea6c78d5c7ca2453e0d5bc394803"

@@ -6,6 +6,8 @@ class Sbjson < Formula
   license "BSD-3-Clause"
   head "https:github.comSBJsonSBJson.git", branch: "trunk"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "217c356def1ddd0b9d9bc1d6bc12966315a41e7a10a029b39460b5becfd1521b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2a4df626840987db1cc6e63599b28909887644147ecb2c76cff994a9cc2d26cd"

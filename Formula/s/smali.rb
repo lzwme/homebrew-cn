@@ -5,6 +5,8 @@ class Smali < Formula
   sha256 "2c42f0b1768a5ca0f9e7fe2241962e6ab54940964d60e2560c67b0029dac7bf1"
   license "BSD-3-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "909b027559fa670c4e04e24e5d8f0c16ca7c0791826c709a9e1923d3c8a7d7c6"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "a156600b701a8ec390c3cc6f8348c5fdc87a4f4168ca1b9fa85729437d1a7c6a"

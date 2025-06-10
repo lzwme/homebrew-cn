@@ -13,6 +13,8 @@ class Sapling < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "68b681bdf583a8244cc12d20040bbc2bf72b483003e5f72718a02bf1eb1a4b6b"
     sha256 cellar: :any,                 arm64_sonoma:  "ba622027c69cacce85eceb38fb55ec67a3567cc443e2cf171856be99140c8659"

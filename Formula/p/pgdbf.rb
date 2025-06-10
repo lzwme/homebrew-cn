@@ -5,6 +5,8 @@ class Pgdbf < Formula
   sha256 "e46f75e9ac5f500bd12c4542b215ea09f4ebee638d41dcfd642be8e9769aa324"
   license "GPL-3.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a1747cf572e94ce2d46311dc5f7d13f736e22f0b1be93a3abd0fb8e1c3d781ac"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "35cd208c6ab173a31b1732a64b19ae4a9f34d127ec6dbfed163452e5227c6e50"

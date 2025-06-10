@@ -9,6 +9,8 @@ class Ren < Formula
     skip "Not actively developed or maintained"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7a3c1d2e3849aad71fa4b7f54cfbae86184153159a8019839ac7fb69747cebc0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7e228ed14477809a0b2e182d476e09213ac70ffa87469e637e3c8d0f446be2a1"

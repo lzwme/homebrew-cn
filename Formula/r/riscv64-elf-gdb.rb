@@ -11,6 +11,8 @@ class Riscv64ElfGdb < Formula
     formula "gdb"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "fc182c3f9b43f0706c5e38ad0cc227b5a0462f413b3e7975137baafcbf9f75bb"
     sha256 arm64_sonoma:  "0e376f70fab060eb7a19ea146565b21f25c39fad626b9345f16ba541f98b7e05"

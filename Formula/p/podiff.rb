@@ -10,6 +10,8 @@ class Podiff < Formula
     regex(/href=.*?podiff[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f182567ba8a6a7b58d52d49833b794b0347a7e35d32dc0fb786ded005b36f407"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4410226ffe7c84b1612f2546a2975a4bf6467b7c84dff6aeb19b86b306f2679b"

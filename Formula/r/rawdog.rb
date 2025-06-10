@@ -8,6 +8,8 @@ class Rawdog < Formula
   license "Apache-2.0"
   revision 13
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "b4e993f8b81885682f56b1f4ada3faa0595df6b79bf50e821876109dbce53aa8"
     sha256 cellar: :any,                 arm64_sonoma:  "008330b3971a4995029a32cb9f5a7e3fb38bfceecb9cac802bfda9b806342318"

@@ -6,6 +6,8 @@ class Skani < Formula
   license "MIT"
   head "https:github.combluenote-1577skani.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b9cb6481c4334cccd0a6e3726ef1accc7f03f916949d6c04cbf57bb281f1ddf3"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4ed2e71f080f76d0b993299eabf00956d8026d3b71ceae1b5f24f57c099bb20e"

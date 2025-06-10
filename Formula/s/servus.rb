@@ -6,6 +6,8 @@ class Servus < Formula
       revision: "170bd93dbdd6c0dd80cf4dfc5926590cc5cef5ab"
   license "LGPL-3.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "e4e1dc29b490f71552d5037b7eec4b049884e7ab5942f543fc65392f856f6ce0"
     sha256 cellar: :any,                 arm64_sonoma:   "1ca10abd68ab48408bc5d5db44e2512345ceab9ba48765c61f6ac2079268dcb5"

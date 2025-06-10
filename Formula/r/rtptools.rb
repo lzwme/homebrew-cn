@@ -11,6 +11,8 @@ class Rtptools < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "06e5ec34e865108c33c8e34cc136a7d12758ace00639494adeafeabccea7d1e0"

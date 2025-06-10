@@ -17,6 +17,8 @@ class Psftools < Formula
     regex(/Stable Release.+?href=.*?psftools[._-]v?(\d+(?:\.\d+)+)\.t/im)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "12640a4b3994e97fca6c888cdd660d554598bf8bcbb308ceeb9b84215e7d8fb3"
     sha256 cellar: :any,                 arm64_sonoma:   "7b3c2ecfcbac182eeb598a944eb04ae8506330cd0ae1b058a96679f52dad028b"

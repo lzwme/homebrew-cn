@@ -5,6 +5,8 @@ class Pmdmini < Formula
   sha256 "e3288dcf356e83ef4ad48cde44fcb703ca9ce478b9fcac1b44bd9d2d84bf2ba3"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "d3d140be8d8be65eaa695bb6e2b83964e989e141cfdd7ab8d2c9e05d81b55f54"
     sha256 cellar: :any,                 arm64_sonoma:   "a7f473c3f27a8a2e781391b383060545cfd8af27425b2c5eca4e18a2821ee2ff"

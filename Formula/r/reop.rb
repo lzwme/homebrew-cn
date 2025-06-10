@@ -11,6 +11,8 @@ class Reop < Formula
     skip "No longer developed"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "b1329c9bb7f9a9adb0ccf90c4c045cfa032215406f48c4fbe5d5f010019091a9"
     sha256 cellar: :any,                 arm64_sonoma:   "0a34d7d7270cd31264c8064b44f2fd1475a6edec8d159f2455ba6d5f6a5dce80"

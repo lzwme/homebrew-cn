@@ -10,6 +10,8 @@ class Stone < Formula
     regex(/href=.*?stone[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ea5e1f4e87879d1281b96a0ee7950c74e639429d622fe4e4ecfa2c2155ddc051"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8db3b91a892716e56362887cdc17006d43abdb00f9897be80c1a06953cbed0ed"

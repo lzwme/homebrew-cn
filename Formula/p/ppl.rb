@@ -12,6 +12,8 @@ class Ppl < Formula
     regex(href=.*?ppl[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "527d1a14323856ce82d73c94a18da7b53363c5f9064de4f70dda5a5aa1c84ee6"
     sha256 arm64_sonoma:   "72645288d73cc251a6310649cbd8782c07438ce56d1a66fe190ceea5e7a10782"

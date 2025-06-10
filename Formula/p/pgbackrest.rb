@@ -5,6 +5,8 @@ class Pgbackrest < Formula
   sha256 "5f050ad751feb5b506cf3c58a5cf1674a7b502328abcb50b37756175f80990e9"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any, arm64_sequoia: "14f05c57dcf96a4e1096fe8b9b924d1439cd21ccb4737d334232235b091ed3da"
     sha256 cellar: :any, arm64_sonoma:  "116313dd70a612c5cfdb47033069bd3912a32f8cfb5fee45d1ddc3e277cd1fd1"

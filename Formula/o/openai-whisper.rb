@@ -9,6 +9,8 @@ class OpenaiWhisper < Formula
   revision 1
   head "https:github.comopenaiwhisper.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "fb20c184addee014fbd43a8035592e76c148b5ea8ce30e22fd5b1f17ca38b7aa"
     sha256 cellar: :any,                 arm64_sonoma:  "2ff5f9e031d71cdc3b66795bfadb17c67f9ad75466e695ad601dde1a60dce069"

@@ -26,6 +26,8 @@ class Ola < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256                               arm64_sequoia: "6d4182b55d3ec40ac585f082515e7ee1125e42acbc6902e3ab1d15c01721b465"
     sha256                               arm64_sonoma:  "9b45e675b229a1443b89f643533a07aaf3f9674062bbf6115ba899d1b5388b49"

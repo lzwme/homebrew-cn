@@ -6,6 +6,8 @@ class ShadowsocksLibev < Formula
   license "GPL-3.0-or-later"
   revision 5
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "1634eda3b34216de2f4208756ef79a7a3cf9dd92aed1efe90657f069ad25f95c"
     sha256 cellar: :any,                 arm64_sonoma:   "36afad86fca33908c9f81c18511aa4d59f6114e4dc85b66735eb1450bfec79bf"

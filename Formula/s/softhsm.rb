@@ -13,6 +13,8 @@ class Softhsm < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 arm64_sequoia:  "469b96859edc8a37e5e3dd99aab7c7f615dad572d7ca71576fe7efa5059244a2"

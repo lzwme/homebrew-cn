@@ -1,6 +1,6 @@
 cask "font-sketchybar-app-font" do
-  version "2.0.32"
-  sha256 "6119360368bb9862b89f5341d9ceb6112ee6b81a50c336a30c64167f77f9442c"
+  version "2.0.35"
+  sha256 "314919577aec0d81daf694973fcedd8ff6e28d7205eace5a5d9d9c572b0f6933"
 
   url "https:github.comkvndrsslrsketchybar-app-fontreleasesdownloadv#{version}sketchybar-app-font.ttf"
   name "sketchybar-app-font"

@@ -11,6 +11,8 @@ class Rpm2cpio < Formula
     regex(/^PORTVERSION=\s*?v?(\d+(?:\.\d+)+)$/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 3
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "57971030692fdb6757848c6febbfa2ee6b331287482019e45760328de8e03720"

@@ -12,6 +12,8 @@ class Openssh < Formula
     regex(href=.*?openssh[._-]v?(\d+(?:\.\d+)+(?:p\d+)?)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "0f9bafc94fa471cbb2385c7d6c94555007562649922e994db8c0445a509f7309"
     sha256 arm64_sonoma:  "3d29bd75979fa18a5ffedeb87e980935130badc1e66eb1b03fbe939395d69faa"

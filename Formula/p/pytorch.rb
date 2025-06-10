@@ -13,6 +13,8 @@ class Pytorch < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "ec01ffac0aa0b57f68f549662c25d92a1dad3f2e339f7c3dc854170c17605971"
     sha256 cellar: :any,                 arm64_sonoma:  "5014d4b9765a0d095e999622a2d3dd11b86fe35cd3fdbd8326c650899ec9fba8"

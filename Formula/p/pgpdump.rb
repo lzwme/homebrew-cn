@@ -6,6 +6,8 @@ class Pgpdump < Formula
   license "BSD-3-Clause"
   head "https:github.comkazu-yamamotopgpdump.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3e1106f448c38f9e3c36c90d622db3e4e0fba0375346446d8b5f8b50acc8fae9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1486016d74d108d52c41c9b09d8d681bc7a08e553a6e65f1753b37df3ce6e18a"

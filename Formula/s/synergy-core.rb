@@ -31,6 +31,8 @@ class SynergyCore < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256                               arm64_sonoma:   "b51e183a0c07609d4b5f81e194251ce29c93fc220b8989d50e7a7ee58ac49021"
     sha256                               arm64_ventura:  "2a7b87a5e398dd460a081cb8899bd611175c9b8ed473bc908ed8bc116ca10964"

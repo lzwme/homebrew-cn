@@ -6,6 +6,8 @@ class Ocrad < Formula
   sha256 "11200cc6b0b7ba16884a72dccb58ef694f7aa26cd2b2041e555580f064d2d9e9"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "e64667cc0efcf07cbbdb3459f9cbb88be11b2718b75417226e910e2cfb71a5a4"
     sha256 cellar: :any,                 arm64_sonoma:   "36d45f3af4754048ddde02ce9b7d9668ae188d7140b76aeda80f65ee6bb69a17"

@@ -28,12 +28,9 @@ cask "wezterm" do
     binary "#{appdir}WezTerm.appContentsMacOS#{tool}"
   end
 
-  binary "#{appdir}WezTerm.appContentsResourcesshell-completionzsh",
-         target: "#{HOMEBREW_PREFIX}sharezshsite-functions_wezterm"
-  binary "#{appdir}WezTerm.appContentsResourcesshell-completionbash",
-         target: "#{HOMEBREW_PREFIX}etcbash_completion.dwezterm"
-  binary "#{appdir}WezTerm.appContentsResourcesshell-completionfish",
-         target: "#{HOMEBREW_PREFIX}sharefishvendor_completions.dwezterm.fish"
+  bash_completion "#{appdir}WezTerm.appContentsResourcesshell-completionbash", target: "wezterm"
+  fish_completion "#{appdir}WezTerm.appContentsResourcesshell-completionfish", target: "wezterm.fish"
+  zsh_completion "#{appdir}WezTerm.appContentsResourcesshell-completionzsh", target: "_wezterm"
 
   zap trash: [
     "~.localsharewezterm",

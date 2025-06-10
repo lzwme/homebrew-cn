@@ -11,6 +11,8 @@ class Qrupdate < Formula
     regex(%r{url=.*?/qrupdate[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "5ea96ebb5b0af96ca5976f5c0a188c772eadc46fa52edb44cdb89f3d2e69436c"
     sha256 cellar: :any,                 arm64_sonoma:   "30d96fead1ad674156f1ca3121c2c5df27f3a2e42d226425ca6f83554628a86b"

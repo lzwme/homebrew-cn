@@ -6,6 +6,8 @@ class Pgcopydb < Formula
   license "PostgreSQL"
   head "https:github.comdimitripgcopydb.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia: "f0f0c6e9e3ebe35b9d32a1e127cafe4fe120356dc758a1475c6830af13d048b2"

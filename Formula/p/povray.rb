@@ -12,6 +12,8 @@ class Povray < Formula
     regex(^v?(\d+(?:\.\d+)+\.\d{1,4})$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "a43f64589b9b2abbc3dd1460e56c79c0d8473e0b0cdd343f7fae52474450adc9"
     sha256 arm64_sonoma:  "ffc8acf31801cc124cf903e3ad6014014e6f5e3784938b43f42bcb39758d3f95"

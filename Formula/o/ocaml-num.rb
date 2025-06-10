@@ -6,6 +6,8 @@ class OcamlNum < Formula
   license "LGPL-2.1-only" => { with: "OCaml-LGPL-linking-exception" }
   revision 2
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "6d725e2394822cf187d7e62e026e2074d3634cc0d446b99628b940fb17a98fc5"
     sha256 cellar: :any,                 arm64_sonoma:  "0770ab23c6c1522658854b81feee508616d0961ed59df5fce51668b148ec663c"

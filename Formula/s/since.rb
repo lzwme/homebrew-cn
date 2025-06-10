@@ -10,6 +10,8 @@ class Since < Formula
     regex(/href=.*?since[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "07893929437e39dacfc617af4ec38af1153bbd8a3655992293b1ac8c415ac240"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ccf2421f8310655e3579181a2127aa8897340b05ee8c1d1a2fe5ae8d856793b8"

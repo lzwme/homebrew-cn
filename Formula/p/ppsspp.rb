@@ -15,6 +15,8 @@ class Ppsspp < Formula
     patch :DATA
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any, arm64_sequoia: "8f5212b45e4cc85e00696a97c7b2f19faf46eaff672261ffe4a9a1600f88918b"
     sha256 cellar: :any, arm64_sonoma:  "15ea4f6454395652c4bc38f9162265f037c73f6adedc72ee24e1d6d8152da938"

@@ -10,6 +10,8 @@ class SpatialiteTools < Formula
     regex(href=.*?spatialite-tools[._-]v?(\d+(?:\.\d+)+[a-z]?)\.(?:t|zip)i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "3a2225e7ff88a5434b9935dc47f265e045644d5efa22e4a942d32c71869833cc"
     sha256 cellar: :any,                 arm64_sonoma:  "04ec75c512a3d0c0e9aef46df243130f9c1c9e217c9605af148554a321946642"

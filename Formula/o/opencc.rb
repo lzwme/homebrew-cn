@@ -5,6 +5,8 @@ class Opencc < Formula
   sha256 "ad4bcd8d87219a240a236d4a55c9decd2132a9436697d2882ead85c8939b0a99"
   license "Apache-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia: "8b6b0e9d88ffeecb82287510d3416101529d017851b0b537f9e6b541673bed66"

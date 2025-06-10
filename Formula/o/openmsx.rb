@@ -17,6 +17,8 @@ class Openmsx < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any, arm64_sequoia: "ee0a9be62e2b1c04669a5fdbadbf59ece48fb64cfc5c6287cc3c404ce39f884f"
     sha256 cellar: :any, arm64_sonoma:  "ed81ae7655dd0ca38610c9c5fd48ede0676f2244e29cbdaef8e8dfd62f153abf"

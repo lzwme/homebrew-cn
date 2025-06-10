@@ -5,6 +5,8 @@ class Sftpgo < Formula
   sha256 "02d36a540e79ee877585c145cbe294bd48b03db98d2b577273cad4c8b6cf482c"
   license "AGPL-3.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "618de2bf3a3e61caeb84a818715060a7793e35dea8309b529c42715e10382778"
     sha256 arm64_sonoma:  "cf13ba2d5b0ef2cf8cc20ef3c6e7ba8719fcca93e88b545924ac0976dbc0d9bb"

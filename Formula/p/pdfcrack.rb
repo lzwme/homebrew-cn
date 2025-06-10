@@ -5,6 +5,8 @@ class Pdfcrack < Formula
   sha256 "7b8b29b18fcd5cb984aeb640ee06edf09fede4709b59c32fee4f2d86860de5b4"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2b014cb16fb3c9c3d8d587c792f9d94d2c1c7efc6032cdffab864c3e8c93786f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "db85d14c7177eed695a8947e0d8ffb49c9378ac5b5a704a27a9375736b063e2d"

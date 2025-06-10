@@ -6,17 +6,18 @@ class Dnsviz < Formula
   url "https:files.pythonhosted.orgpackages5991aa152739fea36d4456fbcc71a26333ffef587526d722c10c281ab12a6a35dnsviz-0.11.1.tar.gz"
   sha256 "203b1aa2e3aa09af415a96a0afc98eef4acf845ab8af57bf9f7569bd13161717"
   license "GPL-2.0-or-later"
+  revision 1
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "00110e902d3a1519334f1226603864e95d9d93c669d43c6fbf37aa27b08915d2"
-    sha256 cellar: :any,                 arm64_sonoma:  "7cd031019ebadc5e47683d83d1d5828b5eb3baaa058ea3d69fb74b1a97906c22"
-    sha256 cellar: :any,                 arm64_ventura: "b2fbd7dcdf0549567e1da7bf6ea52f57be4a2abfc81ecaba08dda9ce5c35bc01"
-    sha256 cellar: :any,                 sonoma:        "0682b0b1bbcd7b5e43d2304c3739f682eb29b6d47a1967f484bd3ba794d96ad6"
-    sha256 cellar: :any,                 ventura:       "d1765ce90cc43961a8592c8abda79368e9cf9c1c0bc000fc536720ca0ab89e5d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1a96068801bd4e01adcc3a7441f41a498b0a6b88cc5b1fe8fbe6d5461975f6f5"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8d105d485eb7a835fec8e4c6b7af690ba215c77b540a7d5b3954e2558e799e26"
+    sha256 cellar: :any,                 arm64_sequoia: "caed4a974f2a1111d2a16262e543e453902627186de111aaa61ddb8032dd35a1"
+    sha256 cellar: :any,                 arm64_sonoma:  "1581924ecb9d02d792a419193ac546d9bd23cf9eebb6c24036057215bb426155"
+    sha256 cellar: :any,                 arm64_ventura: "5298cc8506b62c7a0ab4d777bac991fb323e4fb7aeb3df58c9cdbe30a5705758"
+    sha256 cellar: :any,                 sonoma:        "868cb74462053d69ac21313706d77ee77784e0f16bc1bfa9f4954c75f786d492"
+    sha256 cellar: :any,                 ventura:       "ce1d41d45c74b5fd99a9304908e6f2e0c1b96b6e4c1885092798125107c6af0b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a2bf1c4ac13ab45adc76818b196bc0a29cdb15bebb708418cfe1ebae5c851348"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0c57ff69d2c3f50edf3a9ae8c07f2d1d0ba7c0d72dc697c58b46363bb3c3895a"
   end
 
   depends_on "bind" => [:build, :test]

@@ -11,6 +11,8 @@ class Shntool < Formula
     regex(/href=.*?shntool[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c5d116fc457d0cb26ccaea1e50b59a4edae2af2e89064c473aa420717dc0a9c6"

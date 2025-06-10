@@ -6,6 +6,8 @@ class Onnx < Formula
   license "Apache-2.0"
   revision 2
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia: "87e803d38d384328e30a6104d461aa429168f34f90166034effa1f2393e68cc2"

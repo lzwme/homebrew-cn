@@ -5,6 +5,8 @@ class Stoken < Formula
   sha256 "102e2d112b275efcdc20ef438670e4f24f08870b9072a81fda316efcc38aef9c"
   license "LGPL-2.1-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "07719ef72ddd93085d5cea66cf89371b128668f37532f9996d595f7280f46ef7"
     sha256 cellar: :any,                 arm64_sonoma:   "ef8f9c9c4a3edbf707c41392dc366204f0a65ed60420b192108cf20f5a84c18e"

@@ -3,19 +3,19 @@ class Dooit < Formula
 
   desc "TUI todo manager"
   homepage "https:github.comkraanzudooit"
-  url "https:files.pythonhosted.orgpackages0f889ba9d1c289f215a16afe9135ecbcbe4473b0619da2c34bc05a4502eb9823dooit-3.2.2.tar.gz"
-  sha256 "5a9bd501c6291c0c4bd8ed5035a9168f0e38b7245d3b3d1cd927e61f887ef953"
+  url "https:files.pythonhosted.orgpackagescf922a83069a1b7d2e7455f40c9c70ad63daeba0f68b52ed8e6e248144d7928cdooit-3.2.3.tar.gz"
+  sha256 "5ac238f2d781c438eabc5616428697c7e0905130e80d3b814126f64a925d0c70"
   license "MIT"
   head "https:github.comkraanzudooit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "31d3daf7728e9a2d00606bbfb0226408a3833fa03b7e6d7a7c3c4ffa5af62317"
-    sha256 cellar: :any,                 arm64_sonoma:  "5a4ff1ac059b30c4570ef1ba771c063a5f1d80e942918fcb8bd6d05667c67591"
-    sha256 cellar: :any,                 arm64_ventura: "5182797225f133ce3c7f758e89f2599f3cb9e7bfc05b008a324b79811ff42344"
-    sha256 cellar: :any,                 sonoma:        "27be32f80235fc4b29bcd5d5fe0e5a8cc11f0cd6628d46d283c09e356d37db83"
-    sha256 cellar: :any,                 ventura:       "f7e53e1d767b4c43f85b7ff7a9dd971bee6d5abcbcbd6b65e271008355a911d1"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "1553693744a2be536c2e57f7105cf3cbeaf10cf3f3037fa8741c3af187a0f5a2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "9024438caae6b9b611cbbc8e83701ad4a14767dbd056c1133b1f6c2b0d8c29b2"
+    sha256 cellar: :any,                 arm64_sequoia: "8047ea87fead5fee013e42473bfc468ecea6c4e92c5613e20fa351b6b6868102"
+    sha256 cellar: :any,                 arm64_sonoma:  "69ee89a2ac8de7643e8027db3c47c66cda323812f5cda655eb55a7b713489598"
+    sha256 cellar: :any,                 arm64_ventura: "193c34d754ee15a4c34ac70126513bc6728444fdae801f9faaf7124adfcb42c5"
+    sha256 cellar: :any,                 sonoma:        "9e6508f0952cebb70e33c1e52263a17ee86ace45614cd67983598f9eab5c0b72"
+    sha256 cellar: :any,                 ventura:       "4b0b6625df2341d618c5aa8f747fb50f383eeda34c6a9205d382038772b4f929"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "91e4c510fe23e24702bcec6b1bbeca2e9ad76f8fc20b8e567f9ae6c053d501df"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "bba39beee68ca9679573e86bea3528a63fa1efbf2f9106098d6674d7467d8c02"
   end
 
   depends_on "cmake" => :build
@@ -23,13 +23,13 @@ class Dooit < Formula
   depends_on "python@3.13"
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackagescd0f62ca20172d4f87d93cf89665fbaedcd560ac48b465bd1d92bfc7ea6b0a41click-8.2.0.tar.gz"
-    sha256 "f5452aeddd9988eefa20f90f05ab66f17fce1ee2a36907fd30b05bbb5953814d"
+    url "https:files.pythonhosted.orgpackages606c8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbcclick-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
   end
 
   resource "greenlet" do
-    url "https:files.pythonhosted.orgpackages34c1a82edae11d46c0d83481aacaa1e578fea21d94a1ef400afd734d47ad95adgreenlet-3.2.2.tar.gz"
-    sha256 "ad053d34421a2debba45aa3cc39acf454acbcd025b3fc1a9f8a0dee237abd485"
+    url "https:files.pythonhosted.orgpackagesc992bb85bd6e80148a4d2e0c59f7c0c2891029f8fd510183afc7d8d2feeed9b6greenlet-3.2.3.tar.gz"
+    sha256 "8b0dd8ae4c0d6f5e54ee55ba935eeb3d735a9b58a8a1e5b5cbab64e01a39f365"
   end
 
   resource "linkify-it-py" do
@@ -88,18 +88,18 @@ class Dooit < Formula
   end
 
   resource "sqlalchemy" do
-    url "https:files.pythonhosted.orgpackages68c33f2bfa5e4dcd9938405fe2fab5b6ab94a9248a4f9536ea2fd497da20525fsqlalchemy-2.0.40.tar.gz"
-    sha256 "d827099289c64589418ebbcaead0145cd19f4e3e8a93919a0100247af245fa00"
+    url "https:files.pythonhosted.orgpackages636645b165c595ec89aa7dcc2c1cd222ab269bc753f1fc7a1e68f8481bd957bfsqlalchemy-2.0.41.tar.gz"
+    sha256 "edba70118c4be3c2b1f90754d308d0b79c6fe2c0fdc52d8ddf603916f83f4db9"
   end
 
   resource "textual" do
-    url "https:files.pythonhosted.orgpackages34998408761a1a1076b2bb69d4859ec110d74be7515552407ac1cb6b68630eb6textual-3.2.0.tar.gz"
-    sha256 "d2f3b0c39e02535bb5f2aec1c45e10bd3ee7508ed1e240b7505c3cf02a6f00ed"
+    url "https:files.pythonhosted.orgpackages6d9602751746cf6950e9e8968186cb42eed1e52d91e2c80cc52bb19589e25900textual-3.3.0.tar.gz"
+    sha256 "aa162b92dde93c5231e3689cdf26b141e86a77ac0a5ba96069bc9547e44119ae"
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesf63723083fcd6e35492953e8d2aaaa68b860eb422b34627b13f2ce3eb6106061typing_extensions-4.13.2.tar.gz"
-    sha256 "e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef"
+    url "https:files.pythonhosted.orgpackagesd1bc51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5typing_extensions-4.14.0.tar.gz"
+    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
   end
 
   resource "tzlocal" do

@@ -7,6 +7,8 @@ class Robotfindskitten < Formula
   revision 1
   head "https:github.comrobotfindskittenrobotfindskitten.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "ea748b3acc46a3b17408ae1f7989c8d37389eb92e9d0d325e66b134136b51904"
     sha256 arm64_sonoma:   "94751d896df7daed821dfd5ba1a5c89c05b9e014f9e44c3d9f5e0f09a9f512be"

@@ -22,6 +22,8 @@ class Parrot < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "a51d427d1063c4e9a7bf13f9039a29fb6f9f690cfc751e6d100376435cd3c3ad"
     sha256 arm64_sonoma:   "33247f7453684d5af68220cb3aa6590adaeadeb6f4f45fe51e3e4584502e9b33"

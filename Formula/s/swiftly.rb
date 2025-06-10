@@ -7,6 +7,8 @@ class Swiftly < Formula
   license "Apache-2.0"
   head "https:github.comswiftlangswiftly.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "77df84071ef43c8f4365c79c36723cf5db0581fd9e539609cf6a30dd2fd963db"

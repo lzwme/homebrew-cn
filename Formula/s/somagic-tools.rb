@@ -5,6 +5,8 @@ class SomagicTools < Formula
   sha256 "b091723c55e6910cbf36c88f8d37a8d69856868691899683ec70c83b122a0715"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "6df28d78f161dc5a7e4a53d329db5c191848fe0c50abf3d7b0d71019d0ccbdae"
     sha256 cellar: :any,                 arm64_sonoma:   "1c378cda0ff89daa67d23c9747b812fc59ada83f8c7126cf894858a3f6846b8a"

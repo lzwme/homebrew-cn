@@ -10,6 +10,8 @@ class Seexpr < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_sequoia: "bb4a0dda70f5ddd52570aa14998475ca6a14a02e57c0703084d32b25fee3b69d"

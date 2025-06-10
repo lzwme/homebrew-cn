@@ -5,6 +5,8 @@ class Odt2txt < Formula
   sha256 "23a889109ca9087a719c638758f14cc3b867a5dcf30a6c90bf6a0985073556dd"
   license "GPL-2.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "306d55c929e1ac95e7e4a0ae181c666b460e1e733ee3bedc106fa95f06187724"

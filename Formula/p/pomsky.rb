@@ -6,6 +6,8 @@ class Pomsky < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.compomsky-langpomsky.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4e2c2f94091ab38f06f95ddca0c90df7cb9c7f4fb16e78518b365756f68d04d8"

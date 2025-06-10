@@ -11,6 +11,8 @@ class OpensslAT11 < Formula
   license "OpenSSL"
   version_scheme 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia:  "e49b48327359eb6f1e1a0c67f4810105d803b560cd0d70c7247f2157f7cffe61"

@@ -9,6 +9,8 @@ class Supervisor < Formula
   revision 2
   head "https:github.comSupervisorsupervisor.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c9dcc3c481ca0d17cd2aab91c2e158b4963d61e2927187a808233ce3bd7b314b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c9dcc3c481ca0d17cd2aab91c2e158b4963d61e2927187a808233ce3bd7b314b"

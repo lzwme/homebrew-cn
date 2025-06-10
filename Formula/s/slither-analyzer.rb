@@ -8,6 +8,8 @@ class SlitherAnalyzer < Formula
   license "AGPL-3.0-only"
   head "https:github.comcryticslither.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "0afe1fd5ed9b06cdae9ef4d95862b6352f9aeb989b7af4da6e7bc21c462d74fc"
     sha256 cellar: :any,                 arm64_sonoma:  "3abb429be05a04b5088233cc8453d8f99141194c82d127eed626bd92a4daabb3"

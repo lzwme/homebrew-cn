@@ -23,6 +23,10 @@ class TrashCli < Formula
 
   depends_on "python@3.13"
 
+  conflicts_with "macos-trash", because: "both install a `trash` binary"
+  conflicts_with "osx-trash", because: "both install a `trash` binary"
+  conflicts_with "trash", because: "both install a `trash` binary"
+
   resource "psutil" do
     url "https:files.pythonhosted.orgpackages18c78c6872f7372eb6a6b2e4708b88419fb46b857f7a2e1892966b851cc79fc9psutil-6.0.0.tar.gz"
     sha256 "8faae4f310b6d969fa26ca0545338b21f73c6b15db7c4a8d934a5482faa818f2"

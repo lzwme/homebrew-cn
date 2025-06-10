@@ -9,6 +9,8 @@ class QtMysql < Formula
     formula "qt"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:  "de4214b11bea15051888408a3e19201346a4e3b71f89c5e2c6853e2b44c7cf2e"
     sha256 cellar: :any,                 arm64_ventura: "28d5d9fcbd15e57c87aafaf93ce91f8469715e177f9187a75e2831d2d063a6be"

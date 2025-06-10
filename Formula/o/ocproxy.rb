@@ -12,6 +12,8 @@ class Ocproxy < Formula
     regex(^v?(\d+(?:\.\d{1,3})+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "46d04d2d8fb1173d250c9a568512984ee10c67d0538224248858944a7c65dcf2"
     sha256 cellar: :any,                 arm64_sonoma:   "28eaf6815e07abd2aa324b3adb957523b49de41139079f3ab4480be043aa8a29"

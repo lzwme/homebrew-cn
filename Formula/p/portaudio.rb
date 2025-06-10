@@ -17,6 +17,8 @@ class Portaudio < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "8ad9f1c15a4bc9c05a9dd184b53b8f5f5d13a2458a70535bfb01e54ce4f8b4bd"

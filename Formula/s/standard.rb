@@ -6,6 +6,8 @@ class Standard < Formula
   license "MIT"
   head "https:github.comstandardstandard.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d20e97c6540bd3307d244952e9a90986e43b5c11821d88941238a06592dfb422"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d20e97c6540bd3307d244952e9a90986e43b5c11821d88941238a06592dfb422"

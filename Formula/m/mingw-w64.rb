@@ -1,10 +1,9 @@
 class MingwW64 < Formula
   desc "Minimalist GNU for Windows and GCC cross-compilers"
   homepage "https://sourceforge.net/projects/mingw-w64/"
-  url "https://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/mingw-w64-v12.0.0.tar.bz2"
-  sha256 "cc41898aac4b6e8dd5cffd7331b9d9515b912df4420a3a612b5ea2955bbeed2f"
+  url "https://downloads.sourceforge.net/project/mingw-w64/mingw-w64/mingw-w64-release/mingw-w64-v13.0.0.tar.bz2"
+  sha256 "5afe822af5c4edbf67daaf45eec61d538f49eef6b19524de64897c6b95828caf"
   license "ZPL-2.1"
-  revision 3
 
   livecheck do
     url :stable
@@ -14,13 +13,13 @@ class MingwW64 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 arm64_sequoia: "5a9ae42e386047663ce83a4bfdd5baba0f3194a82a7b027ebd007b195036374b"
-    sha256 arm64_sonoma:  "92f23f47355fe2b1e528190538ebb34d458d8696834c63a585e41e2ef965ec20"
-    sha256 arm64_ventura: "f81707aced2a718e657628136c3d2eafc27aabf9f2da819d4a52c03d8b16a486"
-    sha256 sonoma:        "e344d42914b81fc67338747aa5d79e21976b1dd2fa8ad5eb1c12449500c45959"
-    sha256 ventura:       "a677397d8fc7fe99d1b51fa9cb5dcd385c576dfa10e95089843c8ba0471fe169"
-    sha256 arm64_linux:   "7560388b1897195f4c425bd1d22a970d422fbaf3e6f17732baeaa0c381654099"
-    sha256 x86_64_linux:  "e76356b3bb0aa7fd99d07fcd0f04ffd87870e6b77b2a8861f18ced039355cfe9"
+    sha256 arm64_sequoia: "cc7fe16c47d1f1f5f9410d05e02149b62ad97dbf77db7d85c05cda4785540579"
+    sha256 arm64_sonoma:  "c9717e6c2afeb5954b82e626a8bbd5f7ace1178ee1fcd13783693022a62c6aea"
+    sha256 arm64_ventura: "2ffcf5043e9003de19185390981b962a78211998eb076047f475c4689e3f29c3"
+    sha256 sonoma:        "9bf52b59b8df4beb447f1fe1df92678fd1a22185039ded5804d74d6c7d61fe50"
+    sha256 ventura:       "2cbccdaebf5b4e406ad8e8716dbeda3a1aa68f10548f5322d2b118ca0ea6c337"
+    sha256 arm64_linux:   "37abe99b98f11b17e639a4368dd6f04dbb756fcfb94ced37d6c4440dcd8756a9"
+    sha256 x86_64_linux:  "e0534e850ad819565968460b4e9135fd1f0351f810f06bef08f232ff7372ae43"
   end
 
   # binutils searches for zstd using pkg-config

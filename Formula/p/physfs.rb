@@ -6,6 +6,8 @@ class Physfs < Formula
   license "Zlib"
   head "https:github.comicculusphysfs.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "e6b0663f9c6fd2b671825e510c705706dfccc018571c20e689ef082d5b701fdb"
     sha256 cellar: :any,                 arm64_sonoma:   "7556de6af5b763d6ce5fbb4e56acd432aefd2752a8bd27b38377de64f7f0ffc6"

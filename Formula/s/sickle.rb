@@ -5,6 +5,8 @@ class Sickle < Formula
   sha256 "eab271d25dc799e2ce67c25626128f8f8ed65e3cd68e799479bba20964624734"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "14f29f9f78cfd733320efeca1a531d5a22db8908185bf5340f1d806c554fe7d9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9c820fd16930b4e385a72a92abd1f57386b87ac03fee2ec19fb02996e22fc3ae"

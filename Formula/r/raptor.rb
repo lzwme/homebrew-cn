@@ -10,6 +10,8 @@ class Raptor < Formula
     regex(href=.*?raptor2[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "26276eb455188d1b46f33144e3f71c7fb3bbcb0eeeecf990402b095fb90662d0"
     sha256 cellar: :any,                 arm64_sonoma:   "40dcde53bea22c1f9f190517ffb52d13fc1bd8cb2ee91cf7f9439718cf491ef4"

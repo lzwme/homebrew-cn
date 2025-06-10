@@ -8,6 +8,8 @@ class Pdnsd < Formula
   sha256 "bb5835d0caa8c4b31679d6fd6a1a090b71bdf70950db3b1d0cea9cf9cb7e2a7b"
   license "GPL-3.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 arm64_sequoia:  "9ddb9a075c4ca211351979db780d89982bdaaad387b43055c96082cd50a6ed20"

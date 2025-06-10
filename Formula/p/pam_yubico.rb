@@ -5,6 +5,8 @@ class PamYubico < Formula
   sha256 "63d02788852644d871746e1a7a1d16c272c583c226f62576f5ad232a6a44e18c"
   license "BSD-2-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "7fc128f00d5170584104e0c4c49e4307043fd3ba3db125792138dab3279853b9"
     sha256 cellar: :any,                 arm64_ventura:  "e763d80b575c27eb381f559494636cb7737a0721f884d98523d0452911262273"

@@ -18,6 +18,8 @@ class Picoc < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "43e537db7d3f77463969b213bbb8fcaed5bef26c4c1600989140bc4c8ce77f80"

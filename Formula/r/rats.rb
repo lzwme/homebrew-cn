@@ -5,6 +5,8 @@ class Rats < Formula
   sha256 "2163ad111070542d941c23b98d3da231f13cf065f50f2e4ca40673996570776a"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "0957ff0fe765a50f6ec8a12edc3119741fe39133b438ee114ace6d05288fb06c"
     sha256 arm64_sonoma:   "67a98f4d5385f43dadf88b69c4ea04a4b42a318f9be2820d5c52cb859b69c6e4"

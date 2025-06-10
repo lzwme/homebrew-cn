@@ -6,6 +6,8 @@ class Phodav < Formula
   license "LGPL-2.1-only"
   head "https://gitlab.gnome.org/GNOME/phodav.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "d6beac9ae63de2d6fa449ca75e45a768f2b42fbe01739a6480867a969942f111"
     sha256 arm64_sonoma:   "e71f34ceed2c0b5ac310099aa989f2899c3d6b8a2c135aca3898e112e737437a"

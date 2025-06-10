@@ -14,6 +14,8 @@ class Splint < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256                               arm64_sequoia:  "71b5c97c68f8d10d646955b1111d8556dc2f0ab90136dafd78f5beb673533fb3"

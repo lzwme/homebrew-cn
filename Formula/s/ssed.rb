@@ -10,6 +10,8 @@ class Ssed < Formula
     regex(/href=.*?sed[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 3
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "92006e68fb2c4e57950c340c9ccef34132c2577f7341b79c168ca906bd400018"

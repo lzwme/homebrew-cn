@@ -6,6 +6,8 @@ class SpringCompletion < Formula
   license "Unlicense"
   head "https:github.comjacaetevhaspring_bash_completion.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4b3ae7469be600ebd63ca8f9bb7f59677dc2d766c05b75becf477923dade4cca"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b31b990436b19546a9fe8d392496e6d8b14c1bd0f1e622d1ad01baee4fd4383e"

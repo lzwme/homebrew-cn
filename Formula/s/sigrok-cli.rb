@@ -10,6 +10,8 @@ class SigrokCli < Formula
     regex(/href=.*?sigrok-cli[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "fd787456a3085648cbf83f56294acc9c37579a5dba2338d8d56c74710c03ee90"
     sha256 cellar: :any,                 arm64_sonoma:   "a5e82221775d890da9132fdc4326606838e1622c0e692248e2e2efd54839893e"

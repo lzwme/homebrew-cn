@@ -7,6 +7,8 @@ class Pyvim < Formula
   sha256 "2a3506690f73a79dd02cdc45f872d3edf20a214d4c3666d12459e2ce5b644baa"
   license "BSD-3-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 4
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "704fda45ac7e30a081b5490c20420d172244219adbe364367f10bc0a2d550465"

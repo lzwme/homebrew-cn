@@ -6,6 +6,8 @@ class PerlXmlParser < Formula
   license "Artistic-2.0"
   head "https:github.comcpan-authorsXML-Parser.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6652df7d2ee4241d47bd7696f6b6b063ce31cfca2d922f5be08adb4364df9952"

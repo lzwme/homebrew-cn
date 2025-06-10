@@ -5,6 +5,8 @@ class Rgxg < Formula
   sha256 "554741f95dcc320459875c248e2cc347b99f809d9555c957d763d3d844e917c6"
   license "Zlib"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "80c6d906b67ef65832f1724146eef85c50e01d73f3808c87c7b4dd1eadc39102"
     sha256 cellar: :any,                 arm64_sonoma:   "6b1d2f700c3ca6fc03930409bb4ec68cbdbcbb2931facef03d2422369c29f81a"

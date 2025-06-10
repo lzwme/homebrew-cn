@@ -10,6 +10,8 @@ class Par2 < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "5ce70b25e1d26d887fca53fa5ab3269e0e94b8964420fb749ef9ecdb01ec3592"
     sha256 cellar: :any,                 arm64_sonoma:  "263b109002436476cd6f3f1ccf77b1fa7e10562706ba0e5b2dfa2af2538bed64"

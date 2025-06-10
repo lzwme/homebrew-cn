@@ -6,6 +6,8 @@ class Pillar < Formula
   license "MIT"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, sonoma:       "764efeebd41e17d3c2024497dd036f074235b0d7c145e6d1dfd936a7ea85f1ad"
     sha256 cellar: :any_skip_relocation, ventura:      "4abaecf745c4a7fc8b4e116ec80c22a81a41aa906a7bccae2fa8b409b12bc8f1"

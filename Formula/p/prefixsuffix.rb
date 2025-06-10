@@ -6,6 +6,8 @@ class Prefixsuffix < Formula
   license "GPL-2.0-or-later"
   revision 10
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256                               arm64_sequoia:  "30ef0ba35485343f36734f212295160cedd798991dfa2abd35a6b60f7f95405e"
     sha256                               arm64_sonoma:   "6e197205c70b3923ae50f5f33bd203810348f2846a3eabaf86839a978c598426"

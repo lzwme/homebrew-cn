@@ -5,6 +5,8 @@ class Pop < Formula
   sha256 "360db66ff46cf6331b2851f53477b7bf3a49303b0b46aaacff3d6c1027bf3f40"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f942784cbbe4d0e5e24f74f9e4431d8a798d6109c2ea3f483405430ca7279f5b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dfda627b23f5fe1cef94ea1f9932edcd93f8930af29e6ded7161546112e30e60"

@@ -6,6 +6,8 @@ class Smlpkg < Formula
   license "MIT"
   head "https:github.comdiku-dksmlpkg.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, sonoma:       "e32a3bb66ffda047e591f59df909bc287720f6ee371ccb4d0e4b0871977c8947"

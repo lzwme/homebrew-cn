@@ -7,6 +7,8 @@ class Osm2pgrouting < Formula
   revision 16
   head "https:github.compgRoutingosm2pgrouting.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "8d5da6cbb1019f6896dcd1c2ec6b5b85364f5ab8e1eaf03faa363a9ac741f708"
     sha256 cellar: :any,                 arm64_sonoma:  "07719354b8de8ec105fb5fff9b6f5555af88d5fa25b2c740669beb753d4d879d"

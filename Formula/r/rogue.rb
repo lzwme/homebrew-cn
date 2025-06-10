@@ -11,6 +11,8 @@ class Rogue < Formula
     regex(/href=.*?rogue-?v?(\d+(?:\.\d+)+)(?:-src)?\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "78ece502084d54a61267fe5b312cc9a85161bc428fc6f8785f7e5e738bcaa237"

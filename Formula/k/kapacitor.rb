@@ -6,8 +6,8 @@ class Kapacitor < Formula
 
   stable do
     url "https:github.cominfluxdatakapacitor.git",
-        tag:      "v1.7.6",
-        revision: "3347c7d9aec8e031a3eb05f501461fb106c20529"
+        tag:      "v1.7.7",
+        revision: "f59b0b1f0c0681f37a7aa62d79600009d2f168c8"
 
     # TODO: Remove when release uses flux >= 0.195.0 to get following fix for rust >= 1.78
     # Ref: https:github.cominfluxdatafluxcommit68c831c40b396f0274f6a9f97d77707c39970b02
@@ -20,13 +20,19 @@ class Kapacitor < Formula
         url "https:github.cominfluxdatafluxcommit08b6cb784759242fd1455f1d28e653194745c0c6.patch?full_index=1"
         sha256 "3c40b88897c1bd34c70f277e13320148cbee44b8ac7b8029be6bf4f541965302"
       end
+
+      # go1.22 patch for flux 0.194.5
+      patch do
+        url "https:raw.githubusercontent.comHomebrewformula-patches4928e7c7ac070ca64e2c62393c1e7ae95db7889fkapacitorflux-0.194.5-go1.22.patch"
+        sha256 "3290b34f688edad2dc10a4abd88ea2ee8821cd547ee99325fbbbe4652ad62bea"
+      end
     end
 
     # build patch to upgrade flux so that it can be built with rust 1.72.0+
     # upstream PR ref, https:github.cominfluxdatakapacitorpull2811
     patch do
-      url "https:raw.githubusercontent.comHomebrewformula-patchese1d275be21f72a5d07dfe920c4ce7692f818761ekapacitor1.7.6-rust-1.72.patch"
-      sha256 "4e82470590dcaaac7e56c52f659e31107116e426456b74789daf9364039907f0"
+      url "https:raw.githubusercontent.comHomebrewformula-patchesc004d4600a284d62ba74741ffb60f0474403478ekapacitor1.7.7.patch"
+      sha256 "c70370136bb4b32112157ce4cc9748a0287a6d9dc92e6651711baa75eb5514be"
     end
   end
 
@@ -36,12 +42,12 @@ class Kapacitor < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "a8247430a0e749413545540c04d418b0adeed5d37d83319e69751596322a1c9d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d56568c7ae7bca2be7324da1c5bdc4fc7f086ff1054a786f0fed2670225ca710"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "b5b98fcf4136a43925d791c4c803dbaabd62e5167dca2863343551b6e4a3ac70"
-    sha256 cellar: :any_skip_relocation, sonoma:        "33549402f35a9bb69c36a731c6b24ecf9ac57cec0ecb790a3f8a301b4ced507e"
-    sha256 cellar: :any_skip_relocation, ventura:       "de2e14999f1f6714d3504c183bd35f8b37fed4a4d886b266cf175040fcd37bc0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5e963db4b37cde0cba4449f211213422a9ebba18f121a77e2cacfc90e6eb2fc5"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "451c6a3aa08d84641cf3dadf1f68d35c52bd7c15d9ca88b2798c2ce77b6b6b45"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6567975ba8a72a373a8268866b2aad44e10865dfb91b7debc62ad8d15cee73cd"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "26a545b9888d32bb46390e6038b1e7376158065168f7fe5d5e00633416a24a41"
+    sha256 cellar: :any_skip_relocation, sonoma:        "611ab90e163c42434d7c6689e422fb659ad7c56a346fdc55e1040733a3088e38"
+    sha256 cellar: :any_skip_relocation, ventura:       "4df541aad47ccb1217f61955e2aacbb8669d1b19959222201828b9c67b43765e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "02e1405e7b3de7b5d4d93223800c79cd34247718e8837b68e28e1592b7f6a812"
   end
 
   depends_on "go" => :build

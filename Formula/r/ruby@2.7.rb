@@ -6,6 +6,8 @@ class RubyAT27 < Formula
   license "Ruby"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sonoma:   "1145b53a7a873516f3408712c8ac546d0f36242c929d8a586d5209bbd136134e"
     sha256 arm64_ventura:  "3b37017d8a6c722b6ce8b44361d7893a8458c8696e84f393df01be87e4d67faa"

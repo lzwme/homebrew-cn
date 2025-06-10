@@ -6,6 +6,8 @@ class Oakc < Formula
   license "Apache-2.0"
   head "https:github.comadam-mcdanieloakc.git", branch: "develop"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "07e3a3b23965b457f71c6938c55dd7dfcccffc666746863345e301f4888a4f13"

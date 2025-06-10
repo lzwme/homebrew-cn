@@ -13,6 +13,8 @@ class StyleCheck < Formula
     skip "No version information available to check"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "fb1e03c25875d0cf1b78f401e403452420169250d6fd6cee1be00d4d8bb51725"

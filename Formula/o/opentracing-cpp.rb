@@ -5,6 +5,8 @@ class OpentracingCpp < Formula
   sha256 "5b170042da4d1c4c231df6594da120875429d5231e9baa5179822ee8d1054ac3"
   license "Apache-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "e30de6dd8cd5968ca9e06daa0f2e6bc3f750f55adf8a7b70c981e79df7704932"
     sha256 cellar: :any,                 arm64_sonoma:   "7da4222d346f9ea96d1fbf8d89662250c82876a1f5cccbf2a335af1e6cf9ae71"

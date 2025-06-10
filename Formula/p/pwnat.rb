@@ -6,6 +6,8 @@ class Pwnat < Formula
   license "GPL-3.0-or-later"
   head "https:github.comsamykpwnat.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "cad8dc7797afa7c06b216dd8c22990593fcdf4c020ac76a23ec4c7de3c7413d7"

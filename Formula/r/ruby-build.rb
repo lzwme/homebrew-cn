@@ -6,6 +6,8 @@ class RubyBuild < Formula
   license "MIT"
   head "https:github.comrbenvruby-build.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "93d5ca3ad145a3fe62de35b08a1f4d4f2dcfad09dab5c95195b3a0e00ef388c6"
   end

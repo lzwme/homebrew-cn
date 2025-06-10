@@ -10,6 +10,8 @@ class Sfst < Formula
     regex(%r{href=.*?data/SFST[._-]v?(\d+(?:\.\d+)+[a-z]*)\.[tz]}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "cb6e8457e5e8fabb6149537221ed7e08cbba522464b29b41fe26c59b730ed34c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fd33725d7517fc287408916639bafd47f925e58e979464ac214f6eb66d9a927d"

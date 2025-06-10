@@ -5,6 +5,8 @@ class Putmail < Formula
   sha256 "1f4e6f33496100ad89b8f029621fb78ab2f80258994c7cd8687fd46730df45be"
   license "ICU"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "1df81ef382665ba394fb3ee99383dd7662a776290f9efdb0a2c7765ce3a663e4"
   end

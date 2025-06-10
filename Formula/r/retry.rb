@@ -5,6 +5,8 @@ class Retry < Formula
   sha256 "68e241d10f0e2d784a165634bb2eb12b7baf0a9fd9d27c4d54315382597d892e"
   license "Apache-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ba9aabeed58659b5bb810b2cc266bcce7b9bdafa7767bd553b362e1add65e062"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fab2637e747061b35b938d0ec128394c62e5c6322913ca9e36a780ac7cf7baf5"

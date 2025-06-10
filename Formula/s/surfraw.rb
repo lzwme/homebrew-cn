@@ -5,6 +5,8 @@ class Surfraw < Formula
   sha256 "ad0420583c8cdd84a31437e59536f8070f15ba4585598d82638b950e5c5c3625"
   license :public_domain
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8d04a21e14ecb8b591159c55dbc4a0af5ea0eadaa5dcb581c6c6c4a74d0b0e7a"

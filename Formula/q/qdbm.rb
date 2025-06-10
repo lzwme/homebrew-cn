@@ -10,6 +10,8 @@ class Qdbm < Formula
     regex(/href=.*?qdbm[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_sequoia: "93ffe465aedaa92b472c387fcee97ce7c8611b32aba5127cde60558746aed441"

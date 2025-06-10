@@ -6,6 +6,8 @@ class Spek < Formula
   license "GPL-3.0-or-later"
   revision 3
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "9a5cf8f9e155491cc75e877decfa35c8c7cd860ed879247333a5c8384660359e"
     sha256 cellar: :any,                 arm64_sonoma:  "76309f0f2438be4e22807912c1a081674e2d3edee7f976b8eca234cba52bf52d"

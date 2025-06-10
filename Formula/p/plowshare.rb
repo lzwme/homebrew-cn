@@ -6,6 +6,8 @@ class Plowshare < Formula
   license "GPL-3.0-or-later"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9a2dcee44e65269a88332c733ecf4e8f6be114bb689283bfcdf35e091792902d"

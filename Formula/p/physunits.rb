@@ -6,6 +6,8 @@ class Physunits < Formula
   license "BSL-1.0"
   head "https:github.commartinmoenePhysUnits-CT-Cpp11.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "d1aab63a49f0f5ca8b530354e7efe1b884c7d57e69509aca43bc4416191e3079"
   end

@@ -5,6 +5,8 @@ class Pkcs11Tools < Formula
   sha256 "5fcda842ed009dacef5d935f5d46bda81bdc26795737af525aa904655a640ba0"
   license "Apache-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "22183ecdec16099e7c38d97f5499deb1fbcb9236a9d4deb2c08fa22fd7007358"
     sha256 cellar: :any,                 arm64_sonoma:   "41dd63eb44f9015459c816515202120069605a31875d536a920ec87ede6c1990"

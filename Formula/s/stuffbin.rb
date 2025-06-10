@@ -6,6 +6,8 @@ class Stuffbin < Formula
   license "MIT"
   head "https:github.comknadhstuffbin.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "402fa14f5eb2b8e670aa9253aa94c89ad8f8153b005b85a9a96060114ff91ef7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "075e2b5c0183fc8210112ffe224dfabd77f082428afa415880092398611c6ee3"

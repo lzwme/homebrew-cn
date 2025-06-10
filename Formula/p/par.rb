@@ -11,6 +11,8 @@ class Par < Formula
     regex(/href=.*?Par[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e9ddecfb12a39ebdfba8f7b76364ad415565f182ab871210af61218645e5e438"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "39ef4ab70ff5a020f370b7cc1d8c1c70c70e1ed252ac542a1eeda1140a2d8d0f"

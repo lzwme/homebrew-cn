@@ -6,6 +6,8 @@ class Pastebinit < Formula
   license "GPL-2.0-or-later"
   revision 4
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 4
     sha256 cellar: :any_skip_relocation, all: "01413047be89a3e516a5a8e4668488ae73c1b30e90d98ed6e4c47d43e4672a46"

@@ -6,6 +6,8 @@ class Smlfmt < Formula
   license "MIT"
   head "https:github.comshwestricksmlfmt.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "ca671852fb33a6c846046fc88e6ba48b80f18a2b41844bbb6f711c9ca6600e2b"
     sha256 cellar: :any,                 arm64_sonoma:  "4a4d72dd8bc6a5eb4cc96f5b8029163371f7a8d8bc8ca005a6a01f874f8b24d7"

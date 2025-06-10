@@ -6,6 +6,8 @@ class Peco < Formula
   license "MIT"
   head "https:github.compecopeco.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c7a5fa08c2aa3ad21a733a5523c4fb5fc7217258bebcaaf33e0d61cf11cbefa3"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "837a17172f4346d52cd042a91b1238e8765fdd829cc2c33b13911a9604612562"

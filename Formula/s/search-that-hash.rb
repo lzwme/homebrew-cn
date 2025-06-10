@@ -9,6 +9,8 @@ class SearchThatHash < Formula
   revision 9
   head "https:github.comHashPalsSearch-That-Hash.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5b3e204dce24083c6713bca5a0dde2d0f0e627f787758e6b8e01803891c54b7b"

@@ -11,6 +11,8 @@ class Pigz < Formula
     regex(href=.*?pigz[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "64097e66f14e0e16ab597007639492ac10e2d0f499968b757f91fa700f06f952"
     sha256 cellar: :any,                 arm64_sonoma:   "97752b6fd2b65df80d73068299789a714fb01b6b904fd843c142677e4f2c3db7"

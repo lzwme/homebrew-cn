@@ -5,6 +5,8 @@ class Sugarjar < Formula
   sha256 "7ae427d8dff1a293f063617365e76615ea7d238aaa7def260fd2b6f2cfa5e768"
   license "Apache-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "dd160e6f1f1274ca6ccd308d7a7b3561797957d2fdddaa97ed06d02b275b195d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd160e6f1f1274ca6ccd308d7a7b3561797957d2fdddaa97ed06d02b275b195d"

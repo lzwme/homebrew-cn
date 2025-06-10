@@ -3,17 +3,15 @@ class Gitup < Formula
 
   desc "Update multiple git repositories at once"
   homepage "https:github.comearwiggit-repo-updater"
-  url "https:files.pythonhosted.orgpackages7f074835f8f4de5924b5f38b816c648bde284f0cec9a9ae65bd7e5b7f5867638gitup-0.5.1.tar.gz"
-  sha256 "4f787079cd65d8f60c5842181204635e1b72d3533ae91f0c619624c6b20846dd"
+  url "https:files.pythonhosted.orgpackages419e3e47a00bf3c4e47f2acec776732421819b723d5adeae3b0adf0ed5f82c0dgitup-0.5.2.tar.gz"
+  sha256 "e750d63c9f4938cad175619a8a22f8ab3a3854515e4f5ac6e72c88e848fe651c"
   license "MIT"
-  revision 10
-  head "https:github.comearwiggit-repo-updater.git", branch: "develop"
+  head "https:github.comearwiggit-repo-updater.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "e1d094ec14134e880e5058a182f7788d0f46c06c7976226e16ac48709d5a3061"
+    sha256 cellar: :any_skip_relocation, all: "4ef4421a9edad018b76acd44d00dc3bc99a980623ee00deef7a7aa60bce940d3"
   end
 
   depends_on "python@3.13"
@@ -24,24 +22,18 @@ class Gitup < Formula
   end
 
   resource "gitdb" do
-    url "https:files.pythonhosted.orgpackages190dbbb5b5ee188dec84647a4664f3e11b06ade2bde568dbd489d9d64adef8edgitdb-4.0.11.tar.gz"
-    sha256 "bf5421126136d6d0af55bc1e7c1af1c397a34f5b7bd79e776cd3e89785c2b04b"
+    url "https:files.pythonhosted.orgpackages729463b0fc47eb32792c7ba1fe1b694daec9a63620db1e313033d18140c2320agitdb-4.0.12.tar.gz"
+    sha256 "5ef71f855d191a3326fcfbc0d5da835f26b13fbcba60c32c21091c349ffdb571"
   end
 
   resource "gitpython" do
-    url "https:files.pythonhosted.orgpackagesb6a1106fd9fa2dd989b6fb36e5893961f82992cf676381707253e0bf93eb1662GitPython-3.1.43.tar.gz"
-    sha256 "35f314a9f878467f5453cc1fee295c3e18e52f1b99f10f6cf5b1682e968a9e7c"
+    url "https:files.pythonhosted.orgpackagesc08937df0b71473153574a5cdef8f242de422a0f5d26d7a9e231e6f169b4ad14gitpython-3.1.44.tar.gz"
+    sha256 "c87e30b26253bf5418b01b0660f818967f3c503193838337fe5e573331249269"
   end
 
   resource "smmap" do
-    url "https:files.pythonhosted.orgpackages8804b5bf6d21dc4041000ccba7eb17dd3055feb237e7ffc2c20d3fae3af62baasmmap-5.0.1.tar.gz"
-    sha256 "dceeb6c0028fdb6734471eb07c0cd2aae706ccaecab45965ee83f11c8d3b1f62"
-  end
-
-  # Replace `pipes` usage for python 3.13
-  patch do
-    url "https:github.comearwiggit-repo-updatercommitb48c59c37849369174ed3ed1d28086c6f3044625.patch?full_index=1"
-    sha256 "054c56ff9ea631776fbd24969c534b470f318fd2707b5b5bd690f43abfa1c3a7"
+    url "https:files.pythonhosted.orgpackages44cda040c4b3119bbe532e5b0732286f805445375489fceaec1f48306068ee3bsmmap-5.0.2.tar.gz"
+    sha256 "26ea65a03958fa0c8a1c7e8c7a58fdc77221b8910f6be2131affade476898ad5"
   end
 
   def install

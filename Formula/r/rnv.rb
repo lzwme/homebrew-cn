@@ -5,6 +5,8 @@ class Rnv < Formula
   sha256 "b2a1578773edd29ef7a828b3a392bbea61b4ca8013ce4efc3b5fbc18662c162e"
   license "BSD-3-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "c2d6586422e5ac938d5f27b00ba89881fb64e07b84250b44ac5905bd7189bd92"
     sha256 cellar: :any,                 arm64_sonoma:   "150d0eecdd925b7dd54064578d8e204e0cfbb1575ea100ba13168e2b4e22f4eb"

@@ -11,6 +11,8 @@ class Png2ico < Formula
     regex(/href=.*?png2ico-src[._-]v?(\d+(?:[.-]\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_sequoia:  "a6af9f89d575ccf1b4bb27b2b24eac106315c65775ca654859931a8b90cf09de"

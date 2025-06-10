@@ -6,6 +6,8 @@ class RnaStar < Formula
   sha256 "3f65305e4112bd154c7e22b333dcdaafc681f4a895048fa30fa7ae56cac408e7"
   license all_of: ["MIT", "BSD-2-Clause"]
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "df53db303004a937634a3eaa227119f92eac00286bc80df0558dd1db1e5bb314"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c12dcd41638c9578c39ee0ecb0ec33996ee390690eb95d68b49f56f0f129c608"

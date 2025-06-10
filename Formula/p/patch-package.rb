@@ -5,6 +5,8 @@ class PatchPackage < Formula
   sha256 "4d2bd29c0d73a6eb8c43270125998bb7586d4f4128a2f1f7002e69edc5fed8e2"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "dcccd910c1f42974369839c896362e5ffcb2b29c6bcc71d74b13c2590a9e0291"

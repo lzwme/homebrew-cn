@@ -5,6 +5,8 @@ class Ssdeep < Formula
   sha256 "ff2eabc78106f009b4fb2def2d76fb0ca9e12acf624cbbfad9b3eb390d931313"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "e15c23668877e2528d0ef6a446904c5c9802095b19bcbaf037ce382376c50fb2"

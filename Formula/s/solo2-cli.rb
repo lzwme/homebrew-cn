@@ -6,6 +6,8 @@ class Solo2Cli < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comsolokeyssolo2-cli.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0eeda3ebb79864789018e56cdd4bf347b798478c754f9f3be29e26ce788cc604"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ac06ba094da706b68c527fa6904187aa9c2d21fd26246bf9a343a4a14a4d8dd9"

@@ -10,6 +10,8 @@ class Redstore < Formula
     regex(/href=.*?redstore[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "722eb9bb530ade0f251ce260bc4f0dc3b519b164e86d2c3792d6559edfd1f01e"
     sha256 cellar: :any,                 arm64_sonoma:   "17d341618995c10bb92327af09bc2af0fb295fc798fb229b5813db72e912f639"

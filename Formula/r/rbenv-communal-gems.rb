@@ -6,6 +6,8 @@ class RbenvCommunalGems < Formula
   license "MIT"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "a189879cf1fb24dfd135aaf5c9fafe5c4fc1251236da0476be32e7a3a9edb5ce"

@@ -6,6 +6,8 @@ class Rasusa < Formula
   license "MIT"
   head "https:github.commbhall88rasusa.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "08e1af923ce8e04dcdd10bfdc1f9c66bac275a886116d15b667826cff63b0492"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5bf0ea2e9e8e13e931b0fc36401707d60e00a410acecc146340530dc41afdc8c"

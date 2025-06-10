@@ -15,6 +15,8 @@ class Rubyfmt < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "96c578513b4ad8026f8c6202855fbbb50d8f22a1f06fa24672e6d4537bebe3cd"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dd1e916ff9236b322ef2fe242e95ff19b0ba244b7798b637c60458e0f9e72311"

@@ -5,6 +5,8 @@ class Puf < Formula
   sha256 "3f1602057dc47debeb54effc2db9eadcffae266834389bdbf5ab14fc611eeaf0"
   license "GPL-2.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "148adff9f4f307fc6b8a94bf5a5baa2c66dd8f3aee810c349a4cc3a356517d90"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "cb2dd937eb2ae17b8c5abb9df4e2a8639c02dfce8ae5d6a78f26a51ec5104d44"

@@ -6,6 +6,8 @@ class Saldl < Formula
   license "AGPL-3.0-or-later"
   head "https:github.comsaldlsaldl.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "f6ca14c2df72bbec447ff0fbcbfe0b1b76070808210ec18c6822fc0579bb9053"

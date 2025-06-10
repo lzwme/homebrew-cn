@@ -6,6 +6,8 @@ class Phoneinfoga < Formula
   license "GPL-3.0-only"
   head "https:github.comsundowndevphoneinfoga.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7753aee0c8aa77f686eff25f3c74b9f53d620dee4f7be890afc31bddb631c95d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d56737c84d3cbb5cf5e4545e77d5b5f2ddc9c589305b68bc929187381dfa0bff"

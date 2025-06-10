@@ -11,6 +11,8 @@ class OsrmBackend < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "d99d43985b7eb9874b9a854559a8dd7ba095653a0bc7991f540a9f691098f381"
     sha256 cellar: :any,                 arm64_sonoma:  "1238dc214ee091861d48367a2c78b5458ccdfdd6737404fd8184f4dd815e6d34"

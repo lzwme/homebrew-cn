@@ -6,6 +6,8 @@ class Pinfo < Formula
   license "GPL-2.0-only"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "156abee096126843dea45d4b863b41cfaf28f9acd4fd8932b1388b981b299e5f"
     sha256 arm64_sonoma:   "8cd30c690fd15b9a98a0c7ebf41c7529d6c1fd06467290d228eb585d5de04d9e"

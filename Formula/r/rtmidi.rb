@@ -10,6 +10,8 @@ class Rtmidi < Formula
     regex(href=.*?rtmidi[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "1c3e7eb76b81cc7b731bb82550bf888bec6add154b060f975b8f4ef0c907e4cd"

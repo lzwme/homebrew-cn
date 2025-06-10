@@ -6,6 +6,8 @@ class PdfDiff < Formula
   license "MIT"
   head "https:github.comserhackpdf-diff.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "33b71b6dcebe2687113628450e3a414db0c5abc4c27b4eda4090477c089f102f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9880f5520ed55ad05c505196a7d9c826c1a9afebefd1c96b56d9f38fca232a6d"

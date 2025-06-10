@@ -5,6 +5,8 @@ class Sixtunnel < Formula
   sha256 "8bc00d8dcd086d13328d868a78e204d8988b214e0c0f7fbdd0794ffe23207fe5"
   license "GPL-2.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0d847ef0fc6b81caed85f280cc141d608d76549981701549464e23a3f5db3157"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "ce493b1a9309acdd209d74c96eed32d4b579f2500208a9f926ac513fb01080c1"

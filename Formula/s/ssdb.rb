@@ -6,6 +6,8 @@ class Ssdb < Formula
   license "BSD-3-Clause"
   head "https:github.comideawussdb.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b781dfcd8a19c986f0595815cb3e9bcc8c6a98fc818e90b6d3c4b505b6379e45"

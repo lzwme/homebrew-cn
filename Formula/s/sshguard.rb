@@ -6,6 +6,8 @@ class Sshguard < Formula
   license "ISC"
   version_scheme 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a0f56a4e44504c78bf201cbb62b0d01d1ab2fcf1149e6dcc6e7562fb41c0ac99"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "11ef33ea3f5e54e448b493db07993839407bd6e62fd50ed3b7feaae74f0419f0"

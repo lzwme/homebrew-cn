@@ -9,6 +9,8 @@ class PythonGdbmAT312 < Formula
     formula "python@3.12"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any, arm64_sequoia: "e9dfb0a8a1c5c3d32e8a0e32f98acd0727a4c595baa9208b4ec248f1861b863a"
     sha256 cellar: :any, arm64_sonoma:  "6b52029d5aad2e4540c870d36b104464599d645bd7f6517fcca289247a147b3a"

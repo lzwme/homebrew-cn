@@ -7,6 +7,8 @@ class Opal < Formula
   license "MIT"
   head "https:github.comopalopal.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256                               arm64_sequoia:  "6c91211a8fdbeffb9335212d4d6f13cf42ba1710b74062e1dfe26a717c9db67c"
     sha256                               arm64_sonoma:   "a4cdd1358d5eb6508bf38cc2a67613a9e487cd250bdf9b35e85dea762894dffa"

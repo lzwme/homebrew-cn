@@ -12,6 +12,8 @@ class St < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a3d3897d2bddfdd53f91432d4c120f008714cca367ffd2d2eae56fa9fb323873"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1d70d18294a3082b4989f85232bbef32f80369c3cb93465fba6773efa17d3d8e"

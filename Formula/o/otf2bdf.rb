@@ -11,6 +11,8 @@ class Otf2bdf < Formula
     regex(^v?(\d+(?:\.\d+)+(?:[._-]?p\d+)?)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "51d176016f0bb1ef87c844b246d9f733e594314fb7fbc19f7a2a4bbae330cf6a"
     sha256 cellar: :any,                 arm64_sonoma:  "deb8ebe605b3723509213f415b25315efbc0fb1e72ad3866cabec7830b523894"

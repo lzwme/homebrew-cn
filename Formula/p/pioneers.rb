@@ -6,6 +6,8 @@ class Pioneers < Formula
   license "GPL-2.0-or-later"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "f8818813a32e582cfe48b07fea5acb1f9796fb529586e2b1d73eded630f64eb4"
     sha256 arm64_sonoma:   "322552b3012b80d29fbb86bd7986a9819857e34f37a4e25d5787ba891318f17f"

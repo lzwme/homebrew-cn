@@ -10,6 +10,8 @@ class Paperkey < Formula
     regex(href=.*?paperkey[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c5f29efd5bd3c2ce18f744e141fbb9e3013a0474a3d391efcd1ccfdf31bc9c73"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b249d92841f7cada3fbbad6ebfa77672ba9ce1925f3e8d6b1169049e35d2c161"

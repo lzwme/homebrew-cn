@@ -5,6 +5,8 @@ class Plog < Formula
   sha256 "55a090fc2b46ab44d0dde562a91fe5fc15445a3caedfaedda89fe3925da4705a"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "97760bb532e44bf5f1d01856ec41448c1ba1f092b5abacaa5338c9a27be6567a"

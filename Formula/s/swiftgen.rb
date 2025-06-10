@@ -6,6 +6,8 @@ class Swiftgen < Formula
   license "MIT"
   head "https:github.comSwiftGenSwiftGen.git", branch: "stable"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "49cf0b56d500cf87acc05ca32f5007b750469c865253bd6b070dffcd309d8065"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dc57fa733294a7d4d27714cd3eb954f2f8de1231cc0f991e6c043e2528a25311"

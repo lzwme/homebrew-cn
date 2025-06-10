@@ -5,6 +5,8 @@ class OpenSp < Formula
   sha256 "57f4898498a368918b0d49c826aa434bb5b703d2c3b169beb348016ab25617ce"
   license "X11"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 5
     sha256 cellar: :any,                 arm64_sequoia:  "06f749f6c70ec8df9f8a171e3528d6d322b3d71cb59002fb4e02804f8b70bcdd"

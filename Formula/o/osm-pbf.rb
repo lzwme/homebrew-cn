@@ -6,6 +6,8 @@ class OsmPbf < Formula
   license "LGPL-3.0-or-later"
   revision 13
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "ed7762d14a46871ddbed1b0dc1c0ab5232c679650fc4f7d26e1a2f00f5d1a39d"
     sha256 cellar: :any,                 arm64_sonoma:  "31d0e2574171450149af2225ce6d8904de1b1ecc057a3cf38114de3e0873f432"

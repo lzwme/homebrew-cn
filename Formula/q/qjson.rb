@@ -6,6 +6,8 @@ class Qjson < Formula
   license "LGPL-2.1-only"
   revision 2
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "d2d3a43592241e2217ea2508fa0ac418058d95d774f5d9fac89cbfe6ec031af0"

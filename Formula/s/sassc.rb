@@ -7,6 +7,8 @@ class Sassc < Formula
   license "MIT"
   head "https:github.comsasssassc.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "76372bcf1accae3510d1f2cd03f6a10f9a9016221e541e3b356021eaa5af18be"
     sha256 cellar: :any,                 arm64_sonoma:   "5f840fc12c44dabbade2ec934710c03adbcfa33f1b62903542dd03f169171f52"

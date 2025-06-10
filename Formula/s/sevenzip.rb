@@ -12,6 +12,8 @@ class Sevenzip < Formula
     regex(>\s*Download\s+7-Zip\s+v?(\d+(?:\.\d+)+)\s+\([^)]+?\)im)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8af70077a765a3b8932830f8ac0bffe756ab09a01e9c4f1cceaf4b6ff67b73b6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f43517abad06c408e8e4d3b9d49d7984223f3181d44e9c9582ffd1be047fb191"

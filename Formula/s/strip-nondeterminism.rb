@@ -11,6 +11,8 @@ class StripNondeterminism < Formula
     regex(/^v?(\d+(?:\.\d+)+)$/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7917ac787a7dc6cf8d86c1b6b0fe44de78036523fec7a9c81c00c0b6dffbbac6"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7917ac787a7dc6cf8d86c1b6b0fe44de78036523fec7a9c81c00c0b6dffbbac6"

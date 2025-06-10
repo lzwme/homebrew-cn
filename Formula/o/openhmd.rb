@@ -6,6 +6,8 @@ class Openhmd < Formula
   license "BSL-1.0"
   head "https:github.comOpenHMDOpenHMD.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "743ff7cdd099472c22867b6883dbebb8731898e770c6c9a9c16e42a99de5b10a"
     sha256 cellar: :any,                 arm64_sonoma:   "f234246a30572beddda70313054bf10e58a96ee842bbeded6e1d1017febc0c02"

@@ -10,6 +10,8 @@ class Ptunnel < Formula
     regex(/href=.*?PingTunnel[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fc5d1df7e57ad9f2fe35f68eef503fd2f9bf7da2edc2d0374acc3a37891ee13e"

@@ -5,6 +5,8 @@ class Staq < Formula
   sha256 "838402b6ca541200740cc3ab989b3026f3b001ebf3e1ce7d89ae7f09a0e33195"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia: "4a78fb5391ce391ef6df17138cd12b2cdb940b6826ad87f31ae4c28e879d1f87"

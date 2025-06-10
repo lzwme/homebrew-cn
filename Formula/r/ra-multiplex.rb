@@ -6,6 +6,8 @@ class RaMultiplex < Formula
   license "MIT"
   head "https:github.compr2502ra-multiplex.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e50b9bbf819cb3d63e167b26f8eaf81b455383223a918c1de2d8f95847b34591"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3368801066ec9a6af29b02b91b4d94d5ab518bafef2e43b6b6bb124ddf0219be"

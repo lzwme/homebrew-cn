@@ -6,6 +6,8 @@ class Pngnq < Formula
   license "BSD-3-Clause"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "06007a7ead893b75a74fa9f5cc7c466219fe2be5149a245e0ae560dd52503aae"

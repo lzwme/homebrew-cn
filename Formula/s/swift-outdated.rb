@@ -7,6 +7,8 @@ class SwiftOutdated < Formula
   revision 1
   head "https:github.comkiliankoeswift-outdated.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "56a726e5f73cfc65075dfb810e92cd9b75721bacc4a5c4ac824b7725345baf56"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cba510240616bdc16f3c756002a8bbb5368753b2a58d1edfb86b95876d5ac0e3"

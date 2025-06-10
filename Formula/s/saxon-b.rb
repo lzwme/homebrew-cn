@@ -18,6 +18,8 @@ class SaxonB < Formula
     skip "Not actively developed or maintained"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "689001c5df91d0cf80e9ea2d72a5a8ae88abb45142dd47bf9797728d215d2139"

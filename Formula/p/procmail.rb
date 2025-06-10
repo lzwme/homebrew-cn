@@ -6,6 +6,8 @@ class Procmail < Formula
   license any_of: ["GPL-2.0-or-later", "Artistic-1.0-Perl"]
   version_scheme 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4a2dee1f884a35fe10236bd86b12bd6bc507aa720f764be04e75fdc042c75fd8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a9daf01dcf08b8b98d376cc6a99f1e8404db58f51ee2d62305ec604ddbcf3d7f"

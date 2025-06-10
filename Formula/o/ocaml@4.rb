@@ -16,6 +16,8 @@ class OcamlAT4 < Formula
     regex(%r{href=.*?releasesv?(4(?:\.\d+)+)?["']}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "76e0588c99b9497463259b330659ce2f53d1c0763f89639c5f42e5503117bac5"
     sha256 arm64_sonoma:   "6abe32932e41a40ff75c1d429fc01ea3492f7a0c3281707c5ae472fba7c5db15"

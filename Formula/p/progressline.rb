@@ -6,6 +6,8 @@ class Progressline < Formula
   license "MIT"
   head "https:github.comkattoufProgressLine.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b1ce512768f4802c3951adc6b2dd4add13a71d80ad5e04be15edecf17be6525a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "77d1ab6f1922dbb9b14f3eed38fe30ddd33fdd5c058564389ec692af11e2a943"

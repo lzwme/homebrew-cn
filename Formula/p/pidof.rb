@@ -8,6 +8,8 @@ class Pidof < Formula
   sha256 "2a2cd618c7b9130e1a1d9be0210e786b85cbc9849c9b6f0cad9cbde31541e1b8"
   license :cannot_represent
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4ec5871a736544b3d218e48cb3883ae457aa097eb0b9a37e666d069d00080fb4"

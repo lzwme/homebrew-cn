@@ -6,6 +6,8 @@ class ProtobufAT21 < Formula
   license "BSD-3-Clause"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256                               arm64_sequoia: "9a941768e6f914b2c5a412728f3794a49a53b894b3cbe637809df93bc9b521e3"
     sha256                               arm64_sonoma:  "a906fb18cfff9e07a71c34d01c74676ea28290fa6c4cfa26f68e48449abf242a"

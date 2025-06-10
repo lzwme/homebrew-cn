@@ -5,6 +5,8 @@ class Pbzip2 < Formula
   sha256 "8fd13eaaa266f7ee91f85c1ea97c86d9c9cc985969db9059cdebcb1e1b7bdbe6"
   license "bzip2-1.0.6"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "09d47c48c9c64a8c026c28f30e3e0074f1f0a195d5886d37e1a15f6925ab91bc"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "96fd12c7e49a4710a7d718412bc0d1cbda865873486489bb068ff49bd5c23dd9"

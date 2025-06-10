@@ -5,6 +5,8 @@ class Pyflow < Formula
   sha256 "36be46aaebf7bc77d2f250b3646024fb1f2f04d92113d3ce46ea5846f7e4c4f4"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "93dec35941a4d5096bdb4b9816702d4488f84dcd17fde1bfcd5ac9f8ca710810"

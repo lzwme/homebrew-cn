@@ -12,6 +12,8 @@ class Pcb < Formula
     regex(%r{url=.*?/pcb[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sonoma:   "191403f5cf3241f6322f861bf87c986a5e9e584b718694a09e8d78ffe88090de"
     sha256 arm64_ventura:  "50572577988176158590776ea433364a6198912f1a7a723894850210ed83df8d"

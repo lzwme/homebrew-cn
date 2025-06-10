@@ -6,6 +6,8 @@ class PscPackage < Formula
   license "BSD-3-Clause"
   revision 2
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "caa3fd862fbd5b0fee519827956ee81da5cb790c8f4818b63c25e4e3b4647f9d"

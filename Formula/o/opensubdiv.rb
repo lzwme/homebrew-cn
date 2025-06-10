@@ -10,6 +10,8 @@ class Opensubdiv < Formula
     regex(^v?(\d+(?:[._]\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "82514e22222203cd7f1311d3e327cade6c43276a8824f86438fafe8bc14b8b33"
     sha256 cellar: :any,                 arm64_sonoma:   "0eedbb0c9de3bac83f8a80d501d6dc419942e8f09c4eecc5a49ce5dbb2243d64"

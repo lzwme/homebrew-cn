@@ -7,6 +7,8 @@ class Stubby < Formula
   revision 1
   head "https:github.comgetdnsapistubby.git", branch: "develop"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "7e9b965dcf689e5c31274e2d5ebe0ecc6f5aa7d4b3fc17a4abefdd65d94a64a8"
     sha256 arm64_sonoma:   "eec9c56666a83664194ac6612bba1c330a54d14ead67dba1100757fc303f8edb"

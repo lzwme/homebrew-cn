@@ -6,15 +6,16 @@ class Graphviz2drawio < Formula
   url "https:files.pythonhosted.orgpackagesfbe92ba4114579f8e708b6b5d671afe355c9b8cdd52b15a9d126ec188a2bcad6graphviz2drawio-1.1.0.tar.gz"
   sha256 "8758b9eefbac5d8c03a0358c0158845235c9c3caa99887f0f6026cfecc2895f2"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "d4769c040786fa9ee30174d92bb67b3a953a2f2326246f8b27e654bee67d200b"
-    sha256 cellar: :any,                 arm64_sonoma:  "e4c6965b0583bac104b5bd23840b5d54ad024cb9e1f85edda82054af89ab57da"
-    sha256 cellar: :any,                 arm64_ventura: "1a176afc58d98042fe8703e7a77394312c968a24ec8030e31818a806f9cc97c2"
-    sha256 cellar: :any,                 sonoma:        "2c5c640eb65fcf872c3b2040e66d4e50638d2d20b86875396b1be23077aa7057"
-    sha256 cellar: :any,                 ventura:       "c40142532b84851304ad59b84766b4925e235dc7be8c59101ac4ee510ba2a983"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "05eb5f23dc6efa81762509793f4592d02c8bdc07f1c0b8ea7b24c93ba1a8f782"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8de7b9131747446df4db4a90e800749c21e78e715fb2f0843a7fe847978b2c05"
+    sha256 cellar: :any,                 arm64_sequoia: "50ab994e55b3da1f78154153eda00cbd046e61622a68166d91a749e9a2f14aeb"
+    sha256 cellar: :any,                 arm64_sonoma:  "5308392ba34b5394e45cb88673b2ad81174c6a04c59c21a4efa60d79baf26405"
+    sha256 cellar: :any,                 arm64_ventura: "682c30229b1763aacbb8c6a242ca5b8ac51911348a311eae43f7195e72f3e74e"
+    sha256 cellar: :any,                 sonoma:        "f9c6d7cdef5d9589a47a6eb8973c9e8cc3183aba7c2d089475bec334e28fcb6a"
+    sha256 cellar: :any,                 ventura:       "975b9d72d80c92eae4c493d6c0875124d246f9c13cdaeab176b6fec001fd354b"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "61a0aa57fc3e29714c8561077c5cf190defe648a516b25ae95521414e1aef357"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2898216e7208864eeaebf6bd70e3430ef769e6f8ca656b139a711e930984d3ec"
   end
 
   depends_on "graphviz"

@@ -6,6 +6,8 @@ class Oak < Formula
   license "MIT"
   head "https:github.comthesephistoak.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b4add3db56fe8171421dc3fd528ee7d39b54936c03d75b89a42a24c8d8a3a151"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "fb8d9531ce0034422a0233fb27c1e77c94910d91f544e18407b8420f67f7f3e3"

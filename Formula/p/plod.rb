@@ -6,6 +6,8 @@ class Plod < Formula
   sha256 "1b7b8267c41b11c2f5413a8d6850099e0547b7506031b0c733121ed5e8d182f5"
   license any_of: ["Artistic-1.0-Perl", "GPL-1.0-or-later"]
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c66eae9ec8211f26b1dd03894db3be83acd71fac5b27d39a6381482bf7f22d9a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4b9c9cd2b570e27155488643d25109a5782ef3acbf76aa86ce249630999c5043"

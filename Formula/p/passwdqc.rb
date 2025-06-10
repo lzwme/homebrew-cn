@@ -10,6 +10,8 @@ class Passwdqc < Formula
     regex(href=["']?passwdqc[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "ff2e3463c33e26713d8d994134dbcf4cc3b90f2eae60135ef52821ec82af6dc9"
     sha256 cellar: :any,                 arm64_sonoma:   "8c8d9e924950156472e0040224cf7f30a6e6c256eccc027746be8a9211b245f4"

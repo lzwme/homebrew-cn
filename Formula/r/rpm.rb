@@ -26,6 +26,8 @@ class Rpm < Formula
     regex(href=.*?rpm[._-]v?(\d+\.\d+(?:\.(?:\d|[1-8]\d+)(?:\.\d+)*))\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "b68a3e9add758b36a2547372709f655d29948680c2403d8819a46445a9211a50"
     sha256 arm64_sonoma:  "7319baf421ef56e8cdf5e937f0624a5ff14521d0d045d27446611faede12a0f8"

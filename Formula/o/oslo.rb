@@ -6,6 +6,8 @@ class Oslo < Formula
   license "Apache-2.0"
   head "https:github.comopenslooslo.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a5977795384029ca047af4c7226a66c98907587e183469462a0f6c8ecb46e659"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8aa369ef73a62437f2aa4bd37d40e508c15a77faf74be64b254052c09f7136d1"

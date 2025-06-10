@@ -6,6 +6,8 @@ class Shc < Formula
   license "GPL-3.0-or-later"
   head "https:github.comneurobinshc.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "280ac078e9ec3e7fd245942e1b6d141288fec51877aa5d032e57ce8403d24a8c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c0e1db3eca184dfad518ba0f0ab5a1d4c66f34aca3097f44610a5471882ca311"

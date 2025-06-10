@@ -7,6 +7,8 @@ class Portmidi < Formula
   revision 1
   version_scheme 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "a02a8f130081aeda7fd82a826b510f4b2afdcf7af21cffe1d22963fcd3560065"
     sha256 cellar: :any,                 arm64_sonoma:   "c24a75dda06927ed08b718df274d6eae2f6f8ded0601673ccd4311a210f89681"

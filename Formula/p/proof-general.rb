@@ -6,6 +6,8 @@ class ProofGeneral < Formula
   license "GPL-3.0-or-later"
   head "https:github.comProofGeneralPG.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f0afc78703aed0f2cdd4ec47dc841b5bf2ecc69b52d7f4a1b3ef7c2189a127b4"

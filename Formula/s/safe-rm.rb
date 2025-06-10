@@ -6,6 +6,8 @@ class SafeRm < Formula
   license "GPL-3.0-or-later"
   head "https://git.launchpad.net/safe-rm", using: :git, branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "553b3046d666998b51823efecce49ce2309b01fe8367dcb95d7b44a4ee16b899"

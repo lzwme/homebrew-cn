@@ -7,6 +7,8 @@ class Surelog < Formula
   revision 1
   head "https:github.comchipsallianceSurelog.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "9ee2c25ec18fd1d9dd4f7793b6ba916671a576d1e79ea3f59b0c0ecd6f405def"
     sha256 cellar: :any,                 arm64_sonoma:  "8ec82893f6dae9ba5959bc4c7d7910afe640343ebd7ec40f66eae243c30815c2"

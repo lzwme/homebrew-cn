@@ -16,6 +16,8 @@ class Pce < Formula
     regex(/href=.*?pce[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "17114b6c0a358160aabd06b3ae1999cfecb546fd8a4e070605e1fa52c318b767"
     sha256 cellar: :any,                 arm64_sonoma:   "06c5d604c5179ef189ace688dd996d55754841ce310066779725b257919a3285"

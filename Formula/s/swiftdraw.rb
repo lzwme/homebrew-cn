@@ -6,6 +6,8 @@ class Swiftdraw < Formula
   license "Zlib"
   head "https:github.comswhittySwiftDraw.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "61ff66d69af1b5609c53920d90af27958a03e67f16f3e4b92a93a59102c9da3d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c2275cd577cce39b7994b86ebabc7c44a08be2ab9b8318f3b49fff6abaf06b99"

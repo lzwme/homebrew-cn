@@ -5,6 +5,8 @@ class OpenZwave < Formula
   sha256 "c4e4eb643709eb73c30cc25cffc24e9e7b6d7c49bd97ee8986c309d168d9ad2f"
   license "LGPL-3.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_ventura:  "8d7c20fa4a5bd2b5691c3f8bf77b2cfe00669e0c7c779418c9c67c73d91ccb0e"
     sha256 arm64_monterey: "46059e0f107fa894491dcca4afbc27487374077ac10d0c9e0466b70a21b98bdf"

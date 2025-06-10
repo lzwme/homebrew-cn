@@ -5,6 +5,8 @@ class RustScript < Formula
   sha256 "21061a471cdb25656952750d7436f12b57bac3c292485e9bc71a5352b290d5df"
   license "Apache-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "84ccef7a3d517ba17b93f95b279529a318501e56e9d6e3c7c9c6122b10c63fac"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "960a5c6f1f1dd0c988f547a6de1635c0512d6ee77f9efad1d906484cdd52c03a"

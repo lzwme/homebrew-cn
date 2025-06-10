@@ -5,6 +5,8 @@ class Screenpipe < Formula
   sha256 "eb3599daabc1312b5c1a7799c1ec8ab715aa02d9216a6aa42d930039c84a70c9"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "e19fe81711f2b581441d5ef4e4894229ff0b40bcb7ec97620649b41ccfac3784"
     sha256 cellar: :any,                 arm64_sonoma:  "b029a73f249a978552cc4d6e7fcd35655bfc466f0f343a8dc7ef3e47feeb6f07"

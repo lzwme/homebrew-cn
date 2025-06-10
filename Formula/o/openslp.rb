@@ -5,6 +5,8 @@ class Openslp < Formula
   sha256 "924337a2a8e5be043ebaea2a78365c7427ac6e9cee24610a0780808b2ba7579b"
   license "BSD-3-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 sonoma:       "9f8b91c18c4a8e0738618531ad35f6068daa27cb6069362510622592113aada5"

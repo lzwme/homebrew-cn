@@ -10,6 +10,8 @@ class Oniguruma < Formula
     skip "No longer developed or maintained"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "7d6ab71fff646664b91e8ff91744696ec775357787dbc1a28e45d52759662e8d"
     sha256 cellar: :any,                 arm64_sonoma:  "86beadf2205c134bfc642be07b663476532c10591743461c2c64bc85be51afc8"

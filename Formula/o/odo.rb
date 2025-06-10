@@ -5,6 +5,8 @@ class Odo < Formula
   sha256 "52133a6b92510d27dfe80c7e9f333b90af43d12f7ea0cf00718aee8a85824df5"
   license "ISC"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "42a837f21b67949d9a12872adc2b2b62553071b86d947ff7640eac9547a00261"

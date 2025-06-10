@@ -5,6 +5,8 @@ class Pwgen < Formula
   sha256 "dab03dd30ad5a58e578c5581241a6e87e184a18eb2c3b2e0fffa8a9cf105c97b"
   license "GPL-2.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "78e78f3269e5a571f309e859d1765104c3a85a227bc12292efe437ca838696bb"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b8d6d5e6fb87ca3906b04af23e27464f3ae52100e9f0c98ed3cbbc9701e47a1f"

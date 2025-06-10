@@ -15,6 +15,8 @@ class PipCompletion < Formula
     skip "No version information available"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "ea3a13ea2cc0274e22c8afff04f203677ea90969ff2a6bcb9eb7eb7d072d1f17"

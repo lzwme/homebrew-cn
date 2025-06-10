@@ -5,6 +5,8 @@ class SofiaSip < Formula
   sha256 "daca3d961b6aa2974ad5d3be69ed011726c3e4d511b2a0d4cb6d878821a2de7a"
   license "LGPL-2.1-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "c3097f4dedd66c5da27cea5bb43070acd0c131ffa1906cedcaed0c655600e808"
     sha256 cellar: :any,                 arm64_sonoma:   "18e0ab1bfa33dbb06af1169f0a7bdadd1e74513761079879a53eb2d23efb81df"

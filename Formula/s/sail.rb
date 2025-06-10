@@ -7,6 +7,8 @@ class Sail < Formula
   sha256 "cae38b97fada34a7681872661342c82b317d877eab882830c59610734eb53bdf"
   license "GPL-3.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_sequoia: "64c4f621752f55d5c49fce2d2e7226f2ed76d6a66b7ad2c3b8dbd780a2d0262a"

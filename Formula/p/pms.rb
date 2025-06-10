@@ -6,6 +6,8 @@ class Pms < Formula
   license "MIT"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "24de40d237ca53721190a990da548b37b777fa60e7599c9c0c0dcf289333bbeb"
     sha256 cellar: :any,                 arm64_sonoma:   "2992d520cbc631a4764f7387d6f37efbb9dc5d75a387993217fb83204fa17a50"

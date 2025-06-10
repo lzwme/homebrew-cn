@@ -17,6 +17,8 @@ class Remake < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia:  "e653146f267c162714ce0110f5cc892c9a2cbf2e0555922a31f26e65139385ab"

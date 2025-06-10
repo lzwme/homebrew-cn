@@ -10,6 +10,8 @@ class Rtaudio < Formula
     regex(href=.*?rtaudio[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "91a97a9e4ed02b0fef4016d7ee2916edce3c41251bf9942f4aef4a9148c382f3"

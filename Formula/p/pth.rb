@@ -6,6 +6,8 @@ class Pth < Formula
   sha256 "72353660c5a2caafd601b20e12e75d865fd88f6cf1a088b306a3963f0bc77232"
   license "LGPL-2.1-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_sequoia:  "ebea43fc620e5a3ca68ab4b1f05222b45ff99430e0572ad43a26ba2dc08178d2"

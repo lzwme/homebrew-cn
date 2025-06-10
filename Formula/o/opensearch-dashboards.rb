@@ -11,6 +11,8 @@ class OpensearchDashboards < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "876fbfe98451b347628282dec9ba9367d99882e57cb430f3b2a86cdf5ad33928"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "876fbfe98451b347628282dec9ba9367d99882e57cb430f3b2a86cdf5ad33928"

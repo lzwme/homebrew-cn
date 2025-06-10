@@ -6,6 +6,8 @@ class Oq < Formula
   license "MIT"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "1a3da7d5c1facf9978ed2e5e4b837db7979b6123839d133c947b9eb9b1200762"
     sha256 cellar: :any,                 arm64_sonoma:  "9ac4ab6b25021efebdd52241b9018349fe42721bf3545bdb991e79fa55bea62f"

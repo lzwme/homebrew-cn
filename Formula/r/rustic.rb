@@ -6,6 +6,8 @@ class Rustic < Formula
   license "Apache-2.0"
   head "https:github.comrustic-rsrustic.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "855e62b8c968742aa7c9a601d2e421559e9b78cb9f5ef3fbab6ca24fb456a89c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c336b3986e4d26df024f4f9e742a53141c3efd43484d1799de608ee37d8d4720"

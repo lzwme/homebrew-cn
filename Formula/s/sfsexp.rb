@@ -5,6 +5,8 @@ class Sfsexp < Formula
   sha256 "15e9a18bb0d5c3c5093444a9003471c2d25ab611b4219ef1064f598668723681"
   license "LGPL-2.1-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "f03b944967fd032f7538cafe2d1207790c47445922ecc8720b176ed8c1f747e9"
     sha256 cellar: :any,                 arm64_sonoma:  "5fff80561a38b1e7f175a8eb61f556abc10e9c3c9db5c1eff1babd21208a41ee"

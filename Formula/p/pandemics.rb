@@ -5,6 +5,8 @@ class Pandemics < Formula
   sha256 "9be418ec78ca512cc66d57a7533a5acda003c8bc488d7fff7fa2905c9ad39e29"
   license "BSD-3-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "445777877cbca7a8c5e0c8096b16948aa2b93c2a5ae41b71cb75e660ba2710d5"

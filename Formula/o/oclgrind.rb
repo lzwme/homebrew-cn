@@ -11,6 +11,8 @@ class Oclgrind < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sonoma:   "0dcf5df23a8e0972f081f74a530e1181e17d1fb7ad6d4af5d5a0d40faf25626b"

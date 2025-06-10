@@ -5,6 +5,8 @@ class Sexpect < Formula
   sha256 "44f5711aa99f3ccf9c4b0edfcd9a7d25fa64b442574624ce451713d1532c1a7e"
   license "GPL-3.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8647d681a0db2c3a76b9b22182564a560f630709d1bf9313740968ad9090ffb2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "dfb2baed2c6a89e7bb6c7c7d3e3fde11b3638e3a2c9e015d9fe0fc4f8d32589f"

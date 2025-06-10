@@ -7,6 +7,8 @@ class OrganizeTool < Formula
   sha256 "034fdcf9ffeb23d21b495e038665278e589fa04dc7c0c0a01a4a3b30a06c539f"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "b6f9e95698b7fd36da9dd8b1496a8b9f256ec621afd2c5ee9189c0a76209102d"
     sha256 cellar: :any,                 arm64_sonoma:  "46e1ea475ee507110ebd029f5ac455ae9a8e94ca019fa35c83e631f3868c600f"

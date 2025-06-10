@@ -6,6 +6,8 @@ class Portal < Formula
   license "MIT"
   head "https:github.comSpatiumPortaeportal.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 3
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2c0f1d260c58e98e4fd7899ef87280ffe8efcc67d77764203a9d54fe35e47ab4"

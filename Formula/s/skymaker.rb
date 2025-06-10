@@ -8,6 +8,8 @@ class Skymaker < Formula
   sha256 "a16f9c2bd653763b5e1629e538d49f63882c46291b479b4a4997de84d8e9fb0f"
   license "GPL-3.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "a64d0196f49aabd48d626c7b2585e61faa5812eae14a914f884733fb8a9dd754"
     sha256 cellar: :any,                 arm64_sonoma:   "3b60d5073126dc8d3d74b4c96855b082aa49fc6d5b6a56340d14f93b746c0b15"

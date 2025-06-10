@@ -6,6 +6,8 @@ class Runme < Formula
   license "Apache-2.0"
   head "https:github.comrunmedevrunme.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "cc0752ae0c5865acded0003fd1bb786e174b0ff5cee7a064b8c5253c9d6621d0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "cc0752ae0c5865acded0003fd1bb786e174b0ff5cee7a064b8c5253c9d6621d0"

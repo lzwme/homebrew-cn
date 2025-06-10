@@ -10,6 +10,8 @@ class Qwt < Formula
     regex(%r{url=.*?/qwt[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sonoma:  "136f2812341e94fb98be285e00f938c7078aa855dd766be89e8b27b65ff61729"

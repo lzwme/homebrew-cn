@@ -11,6 +11,8 @@ class Sqlsmith < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "3d3b4d8a61c5b1012c165f83da60cad4a1de62653d24c378b42aa5505a986551"
     sha256 cellar: :any,                 arm64_sonoma:  "9f8a63bc4257b008ecc16ba3913c1e1b2b263f34f00e3385d45bc002f9221a11"

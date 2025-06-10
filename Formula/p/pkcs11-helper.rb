@@ -12,6 +12,8 @@ class Pkcs11Helper < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "02b61fe7186023ea090b8fab072d980451ef4edc5e860c247c2ccba6c422de2b"
     sha256 cellar: :any,                 arm64_sonoma:   "d5877e3655d952f137610ab0168b4e996dec23dfc16b1ac4db5ab0cdb46eb525"

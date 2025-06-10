@@ -12,6 +12,8 @@ class Synfig < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256                               arm64_sonoma:  "a34f714cd0675cdaf0770cf662de92fab119890831b8e806584594e07a36abbe"
     sha256                               arm64_ventura: "6d5e945bb683d8a2a053950136bf5b6a45831a9239e8b513c334ef6be3ad3115"

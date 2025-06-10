@@ -5,6 +5,8 @@ class Postgraphile < Formula
   sha256 "131cb5c572c68a42a6c612b65041a4fa656a5364a75f7384f1446f62a684c9fc"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4b4305806f3dfd7348eae61c3dcd47b8d33e353becbeb00c917ec745e4851b1f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "4b4305806f3dfd7348eae61c3dcd47b8d33e353becbeb00c917ec745e4851b1f"

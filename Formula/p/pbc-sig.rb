@@ -10,6 +10,8 @@ class PbcSig < Formula
     regex(href=.*?pbc_sig[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "9af9663103707abefc59beba05f6b9e61d969944c35fb504245e9642c5d46d26"

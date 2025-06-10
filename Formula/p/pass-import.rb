@@ -9,6 +9,8 @@ class PassImport < Formula
   revision 3
   head "https:github.comroddhjavpass-import.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia: "e2263e0d94a2fd744c5748f9cd6a3966fc11ae33deca1ffb34e5997b47c2dafc"

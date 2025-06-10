@@ -6,6 +6,8 @@ class Rc < Formula
   sha256 "5ed26334dd0c1a616248b15ad7c90ca678ae3066fa02c5ddd0e6936f9af9bfd8"
   license "Zlib"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7f1229b46bbcd4ea15a8cf6ed36601dc7e2a6e1a0436f4c6f946bc8611c236c9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "64e670569da0f8330abe43a6f0cbb96266ae145b5324add5e71c658d44266745"

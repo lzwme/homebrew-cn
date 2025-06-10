@@ -10,6 +10,8 @@ class RegexOpt < Formula
     regex(/href=.*?regex-opt[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e8f6966781bb65e96887151f04d99914b4a4401e4888c2d88d5e82a15aa41937"

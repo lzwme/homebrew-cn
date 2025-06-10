@@ -11,6 +11,8 @@ class Ronn < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256                               arm64_sequoia: "ae47bcebfb7b492d6a6aa8f9dedcb248c79f657f37dd851b8148299120750253"
     sha256                               arm64_sonoma:  "2aa277c67249e543b65df95bd8ae64e88276b8be25497c27edf923aa20933049"

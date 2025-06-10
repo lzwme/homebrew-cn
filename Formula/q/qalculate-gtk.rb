@@ -5,6 +5,8 @@ class QalculateGtk < Formula
   sha256 "dcf33e89ec2539c3e0bf9c5aee18b44680f6630b1e02cf23e2e9add6578450c7"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sonoma:  "6c39d6caced24fc7ba6961fe555175467fda6fe25ee2101c3dfd899cb9c591c3"
     sha256 arm64_ventura: "9a1c8e13ef2dc561a1f136468738ba34a668fa68593ed8ad69f0262b5de30529"

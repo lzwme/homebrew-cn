@@ -38,6 +38,8 @@ class Redex < Formula
     patch :DATA
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "65347da8f446206921fbb0603b12153dacc92e1eaa161b1b74ebb38576d5ac3c"
     sha256 cellar: :any,                 arm64_sonoma:  "b658660c4464c283aa5cdf0605713ef2dfc3175a2d1fe3b57469596f784eb2c0"

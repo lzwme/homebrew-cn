@@ -5,6 +5,8 @@ class Run < Formula
   sha256 "942427701caa99a9a3a6458a121b5c80b424752ea8701b26083841de5ae43ff6"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "559da124641b371439fa38a4c23ec8c3f4edeb32bc2e7003d560b32808219004"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ac7325643156aa96a729b67c7331bf0567ad3a37681093e79d9b090644de3469"

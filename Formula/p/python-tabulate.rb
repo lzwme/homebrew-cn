@@ -8,6 +8,8 @@ class PythonTabulate < Formula
   license "MIT"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 4
     sha256 cellar: :any_skip_relocation, all: "cea38c8f00045852ff2e04f39f4e1e9f1b1a83a4f21f8f94bd2765b2ed75240e"

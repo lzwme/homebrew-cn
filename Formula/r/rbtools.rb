@@ -8,6 +8,8 @@ class Rbtools < Formula
   license "MIT"
   head "https:github.comreviewboardrbtools.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a62c7635efca81fa9f6fa7c9a32e6d726f9ad633fe7b1b1f297db99fc4f9ba5a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "a62c7635efca81fa9f6fa7c9a32e6d726f9ad633fe7b1b1f297db99fc4f9ba5a"

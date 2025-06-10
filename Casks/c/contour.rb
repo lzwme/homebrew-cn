@@ -6,16 +6,20 @@ cask "contour" do
          intel: "fd560a5e58f55ac20cd0d440b136365428126ba6fac8edde69b4d36d98467c7e"
 
   url "https:github.comcontour-terminalcontourreleasesdownloadv#{version}contour-#{version}-macOS-#{arch}.dmg"
-  name "contour"
+  name "Contour"
   desc "Terminal emulator"
   homepage "https:github.comcontour-terminalcontour"
 
   app "contour.app"
-  binary "contour.appContentsMacOScontour"
-  binary "contour.appContentsResourcesshell-integrationshell-integration.zsh",
-         target: "#{HOMEBREW_PREFIX}sharezshsite-functions_contour"
-  binary "contour.appContentsResourcesterminfo63contour",
+  binary "#{appdir}contour.appContentsMacOScontour"
+  binary "#{appdir}contour.appContentsResourcesterminfo63contour",
          target: "#{ENV.fetch("TERMINFO", "~.terminfo")}63contour"
+  bash_completion "#{appdir}contour.appContentsResourcesshell-integrationshell-integration.bash",
+                  target: "contour"
+  fish_completion "#{appdir}contour.appContentsResourcesshell-integrationshell-integration.fish",
+                  target: "contour.fish"
+  zsh_completion "#{appdir}contour.appContentsResourcesshell-integrationshell-integration.zsh",
+                 target: "_contour"
 
   zap trash: "~.configcontour"
 end

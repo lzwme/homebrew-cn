@@ -10,6 +10,8 @@ class Rzip < Formula
     regex(/href=.*?rzip[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e831e4f90ea7d39b9e846ab0d18048bca802d65a6ecd3b61bfe1e55bbe831345"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2632e94c5b807679406f19003c336b49ff755acd982d507ab3c2098e1fe91afb"

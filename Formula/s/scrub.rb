@@ -6,6 +6,8 @@ class Scrub < Formula
   sha256 "43d98d3795bc2de7920efe81ef2c5de4e9ed1f903c35c939a7d65adc416d6cb8"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6b5104b893d57f47767bfd57cd943551d95cd9b322645a56fdb18ba325904b02"

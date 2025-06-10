@@ -5,6 +5,8 @@ class Sqtop < Formula
   sha256 "eae4c8bc16dbfe70c776d990ecf14328acab0ed736f0bf3bd1647a3ac2f5e8bf"
   license "GPL-2.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "86fa975d403a9957261b33b293324908d327eff19831b705463866a7a4ccad2a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "beff07169db5be764d18cb3bee9a18371d130c6cb3d2e8890e41b460c6e0f55e"

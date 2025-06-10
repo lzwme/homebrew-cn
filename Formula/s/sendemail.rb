@@ -9,6 +9,8 @@ class Sendemail < Formula
     skip "Not actively developed or maintained"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "113001c5e97ed667b4f8401c335b3a337a7354b1562ca8b40b6499e6cdb68278"

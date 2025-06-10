@@ -5,6 +5,8 @@ class PyqtAT5 < Formula
   sha256 "fda45743ebb4a27b4b1a51c6d8ef455c4c1b5d610c90d2934c7802b5c1557c52"
   license "GPL-3.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "ee754605e872d1b42d4dafe9b53980d4917a49003f4b54c32d282fafbc2dbe25"
     sha256 cellar: :any,                 arm64_sonoma:  "4d1a259a2b1c7e926f1b84f60bf574348ce11d148e75ab7f47ca1f1310d696b2"

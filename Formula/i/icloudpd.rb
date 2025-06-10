@@ -8,16 +8,17 @@ class Icloudpd < Formula
       tag:      "v1.28.1",
       revision: "ad1a381fb24a82154d07c4469d323ad5fb463ffd"
   license "MIT"
+  revision 1
   head "https:github.comicloud-photos-downloadericloud_photos_downloader.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "27e71c4da43034a935688193a05441bb117e4125462488aeb5547e750dc838ca"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "14a161306a50f278a96aca00fdaa7dc0ed9505c2702940e08bcc038c2a9f5806"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "2c5ae4fd2983f648bea4180ed827a2b15c8e18feca9c7aee323e9f554d019edd"
-    sha256 cellar: :any_skip_relocation, sonoma:        "85c81882a7fd7d24979fc71dc2bbfa09837bde46dff18528d7fd6339669bdb1c"
-    sha256 cellar: :any_skip_relocation, ventura:       "69992977f7afdda43e26513c330f6a80fb873111e99201aa0e6005c5d086b743"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "63c167fbbb4f65b50fa2ad7e8406b496fff815665834e0141c1edb258bae6ae7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "31a408094879cd55d38ee6fd9152b73e8c8fe29021e14b20089181f7c28e8497"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "cb42bf067398edcbb94dee5b080dbbd04502b1ceb0572a5bbc74f50a0bc3b7eb"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9af6384a0c175ed10c50e2f4f5d0c79d0a97d715b83063af9da76093ebf8efec"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "69a402642cd26619c98b895c0a9cfb868637bb1f80248e628c0d93e676a98401"
+    sha256 cellar: :any_skip_relocation, sonoma:        "169eb03973e3ccb39f34d6ac653ea9691d3661cdd17eb432a8925ca2ec677d3f"
+    sha256 cellar: :any_skip_relocation, ventura:       "d2e8dbe347b546ad3ca5c589d3478237c7d91de0f22c484df154b4a9013dad43"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "de289a69dc230b34cc08f700af4bbdafffba71b61198c84bd20d45c5e1c9a0ab"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0e6a503a68d14f2857dfd8f9d704724ca8a07c22d09f7499a1d04f2647473633"
   end
 
   depends_on "certifi"
@@ -43,8 +44,8 @@ class Icloudpd < Formula
   end
 
   resource "flask" do
-    url "https:files.pythonhosted.orgpackages8950dff6380f1c7f84135484e176e0cac8690af72fa90e932ad2a0a60e28c69bflask-3.1.0.tar.gz"
-    sha256 "5f873c5184c897c8d9d1b05df1e3d01b14910ce69607a117bd3277098a5836ac"
+    url "https:files.pythonhosted.orgpackagesc0dee47735752347f4128bcf354e0da07ef311a78244eba9e3dc1d4a5ab21a98flask-3.1.1.tar.gz"
+    sha256 "284c7b8f2f58cb737f0cf1c30fd7eaf0ccfcde196099d24ecede3fc2005aa59e"
   end
 
   resource "idna" do
@@ -108,8 +109,8 @@ class Icloudpd < Formula
   end
 
   resource "pytz" do
-    url "https:files.pythonhosted.orgpackages3a313c70bf7603cc2dca0f19bdc53b4537a797747a58875b552c8c413d963a3fpytz-2024.2.tar.gz"
-    sha256 "2aa355083c50a0f93fa581709deac0c9ad65cca8a9e9beac660adcbd493c798a"
+    url "https:files.pythonhosted.orgpackagesf8bfabbd3cdfb8fbc7fb3d4d38d320f2441b1e7cbe29be4f23797b4a2b5d8aacpytz-2025.2.tar.gz"
+    sha256 "360b9e3dbb49a209c21ad61809c7fb453643e048b38924c765813546746e81c3"
   end
 
   resource "requests" do
@@ -138,13 +139,13 @@ class Icloudpd < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
-    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
+    url "https:files.pythonhosted.orgpackagesd1bc51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5typing_extensions-4.14.0.tar.gz"
+    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
   end
 
   resource "tzlocal" do
-    url "https:files.pythonhosted.orgpackages04d3c19d65ae67636fe63953b20c2e4a8ced4497ea232c43ff8d01db16de8dc0tzlocal-5.2.tar.gz"
-    sha256 "8d399205578f1a9342816409cc1e46a93ebd5755e39ea2d85334bea911bf0e6e"
+    url "https:files.pythonhosted.orgpackages8b2ec14812d3d4d9cd1773c6be938f89e5735a1f11a9f184ac3639b93cef35d5tzlocal-5.3.1.tar.gz"
+    sha256 "cceffc7edecefea1f595541dbd6e990cb1ea3d19bf01b2809f362a03dd7921fd"
   end
 
   resource "urllib3" do

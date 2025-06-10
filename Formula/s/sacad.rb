@@ -7,6 +7,8 @@ class Sacad < Formula
   sha256 "73333aabbab71a941ed393e9c497250bb9a8a06eb93a4da9afef46d2d6dd5f00"
   license "MPL-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "209abcc3e86b84f3b8fb42814f6ed486528f4a80eda90f39bc498ebfb1c0f851"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f186d3996c26173edf0f409a7ae1a6142085d2640250c115fb3e94510730301d"

@@ -5,6 +5,8 @@ class Pickle < Formula
   sha256 "fe68430bbaf01b45c7bf46fa3fd2ab51f8d3ab41e6f5620644d245a29d56cfd6"
   license "BSD-3-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f639f368ae43bb57ae421bbd3426bab6edc063da8f7ec66f53344c104073f430"

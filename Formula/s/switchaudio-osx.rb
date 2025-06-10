@@ -6,6 +6,8 @@ class SwitchaudioOsx < Formula
   license "MIT"
   head "https:github.comdewellerswitchaudio-osx.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d8d4c24b4029b788cdfc13bf36ddb650d220fd6fb43df0d60131c47034734f51"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4e6292b5cbda7b5b7dc412d6f787903cb9cdab68ad75c1a8ac0bf3e63985d782"

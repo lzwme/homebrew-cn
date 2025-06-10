@@ -6,6 +6,8 @@ class Qrencode < Formula
   license "LGPL-2.1-or-later"
   head "https:github.comfukuchilibqrencode.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia: "3fec9ad635eb185c133cca4e3ab3e8ab7c2094453c462c457b1e5624960bca35"

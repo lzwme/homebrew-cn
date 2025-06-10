@@ -16,6 +16,8 @@ class Supermodel < Formula
     regex(href=.*?Supermodel[._-]v?(\d+(?:\.\d+)+[a-z]?)[._-]Src\.zipi)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia: "55806d70707f24311eac885aa6ec3963cc508dbd397b159a7a80611392bb9c9f"

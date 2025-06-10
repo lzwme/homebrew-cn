@@ -9,6 +9,8 @@ class QwtQt5 < Formula
     formula "qwt"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "92b1dc9c4e182b760312b9b520cc45ae9a236566ec0183bc6eea6e92ab874651"
     sha256 cellar: :any,                 arm64_sonoma:   "894d743586ad9e9dcbbb45f9448c6f2fc945aae526f50b2d17e2162b82527402"

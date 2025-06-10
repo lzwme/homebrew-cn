@@ -7,6 +7,8 @@ class Pytouhou < Formula
   revision 9
   head "https://hg.linkmauve.fr/touhou", using: :hg
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sonoma:   "e83c5e161c69cc14081b875a18043a08fa60db38b9a6703d290c5f6d80da95aa"

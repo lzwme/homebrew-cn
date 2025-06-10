@@ -8,6 +8,8 @@ class Pssh < Formula
   license "BSD-3-Clause"
   revision 6
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 5
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d5930def7b287c71f933a5f8cf985135891a2a9e3ca750be4a0960aa5768bdaf"

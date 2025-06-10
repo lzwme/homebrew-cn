@@ -3,18 +3,18 @@ class Peru < Formula
 
   desc "Dependency retriever for version control and archives"
   homepage "https:github.combuildinspaceperu"
-  url "https:files.pythonhosted.orgpackagesa845cec03aca5ab8a8a1ff8248dcd5c9f17e5a7e9c9e8e9d0b9a135a1c0605e7peru-1.3.3.tar.gz"
-  sha256 "ac6b0d0e85fbe7d57d4587b4e58551de83fd4af4f8245a0851414898cce3e1b1"
+  url "https:files.pythonhosted.orgpackages0e96dc9e467f61327b686b6e775ecf7e365011c44fd25b34114de926dfb54f15peru-1.3.4.tar.gz"
+  sha256 "2ff19ae8569b783177d5cf9fb6c0e306698f7397603f2fdf4a0672d15f7dbd73"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "fd7035d7b44788659c3c228fdbca57d6f918799469ca542046e70b64465e3855"
-    sha256 cellar: :any,                 arm64_sonoma:  "124352399f26fd9fdc5a396a33f6f624ef613eb7a5eb07b50aac7262ac12a0c3"
-    sha256 cellar: :any,                 arm64_ventura: "ad488293d43ee05ac8eccf9e5278e7613b26a8ac960b1385d128fa78e1465f15"
-    sha256 cellar: :any,                 sonoma:        "e575c707cc3431e180e541d516812c8f4303adfd3e786198da14f4af7c27ddc5"
-    sha256 cellar: :any,                 ventura:       "45a48b49b8eef723df7537615fb968eb984c1c6e6a4a44634177c3ce35b367d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "7e5028dc6124874490ec40f9f0ff0a588e6dce432432ebf5d8832b2c178dd00b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "73ab93c07fc0d53f07452e107fa9352fc3a269a608f0284a4baa41369c9e6257"
+    sha256 cellar: :any,                 arm64_sequoia: "beeb4f77adc52280a01149f9cdfd3b4100d6c7dd92c51aa6fb59b4a4c1d50bd9"
+    sha256 cellar: :any,                 arm64_sonoma:  "6bcea08bb842546b71b214f6390e8cc31eff4b778000d178472526199a231b66"
+    sha256 cellar: :any,                 arm64_ventura: "b013421dad16894ef27b69c705cc52b729eaa7b404c70cd926b755c6ec11c461"
+    sha256 cellar: :any,                 sonoma:        "374514a3186c7992d46046a34c5293d75ca9681b767cd2a4a39d112a7e2ddc15"
+    sha256 cellar: :any,                 ventura:       "1ade107c73338fe0a62805099cc16d53e59ba95009055c01d6def097c4928dfc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7fe0da4736ccecc7dd1b2609e57f76e1eeeddbac408f7d3cd83bb204220173e9"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "55ed2401a2819caa9197b706d000b153c1893036ff291ca64e6b65bd949248ef"
   end
 
   depends_on "libyaml"

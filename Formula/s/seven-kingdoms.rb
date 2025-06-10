@@ -10,6 +10,8 @@ class SevenKingdoms < Formula
     regex(%r{url=.*?/7kaa[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia: "b2d889d8c50a32132e8a843b6e11fb74f2201d8b8a5518b0e05494c425c3d38b"

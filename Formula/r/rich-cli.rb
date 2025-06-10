@@ -8,6 +8,8 @@ class RichCli < Formula
   license "MIT"
   revision 6
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "c3304709ad3006fba00a93e4be5df3a01915f2e1ce0139f10a75f2b1c948e176"

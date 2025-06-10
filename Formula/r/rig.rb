@@ -5,6 +5,8 @@ class Rig < Formula
   sha256 "00bfc970d5c038c1e68bc356c6aa6f9a12995914b7d4fda69897622cb5b77ab8"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256                               arm64_sequoia:  "794a9e6df14ced7ebcdfdd890a1a51145882325ff6f196b0775f4503289ef38a"
     sha256                               arm64_sonoma:   "c49772908fab4d132435015e225760d30f00d742f5e09123c71cdf90a453d3ea"

@@ -6,6 +6,8 @@ class Openvi < Formula
   license "BSD-3-Clause"
   head "https:github.comjohnsonjhOpenVi.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "7782e6ed0969f0329395994ababca79b94ea7a8e576b97cdb71ec6698f070e45"
     sha256 cellar: :any,                 arm64_sonoma:  "3516b1e080308c873e3d03a050a07f0e0515abe4baa306cd9bc8a838371a7d1f"

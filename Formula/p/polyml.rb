@@ -6,6 +6,8 @@ class Polyml < Formula
   license "LGPL-2.1-or-later"
   head "https:github.compolymlpolyml.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "956ba9b862e294bd6ebd6efb29ab46446bbcf9d29c09dcbab2003d4ba76bc4eb"
     sha256 arm64_sonoma:   "8da7733920403e84fc73e04e2ba73e163630f063daf01d325f777c21ef2faf4c"

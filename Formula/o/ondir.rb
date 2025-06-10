@@ -13,6 +13,8 @@ class Ondir < Formula
     skip "Not actively developed or maintained"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a50815d50ce3b1e89cb6b61c496948a36d189436512178182080e6480a86cbc5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2eb866fd4fdac434823afb1a3a0dea5197f433dc6fb94aea3fb13adec8e615d0"

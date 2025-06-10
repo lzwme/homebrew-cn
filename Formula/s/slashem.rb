@@ -13,6 +13,8 @@ class Slashem < Formula
     regex(%r{url=.*?slashem-source([^]+)[^.]+\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f3489647fb5f38f4016ef73e262df24407525bb01f076463c21f5b8340e47c27"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3cc225b937c53aa8a9121eb03ffcfd067a338a050df4b348cac6e8ea36c1cf19"

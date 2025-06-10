@@ -6,6 +6,8 @@ class Reflex < Formula
   license "MIT"
   head "https:github.comcesparereflex.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "188a2f2056610511ae1b9b7bbbc373091f88600c5cc28ee13eb57eaee4e21d3e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7203be2c2bcb77f967584006bb447f041897f78748cb3a6f8e84fd770c66016e"

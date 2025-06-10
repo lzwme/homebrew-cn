@@ -6,6 +6,8 @@ class StartupNotification < Formula
   license "LGPL-2.0-or-later"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "a8443bdbe68a6ad0d3cfb6e762cf01b88eb719d243691b8070b024ad5c8ab70e"
     sha256 cellar: :any,                 arm64_sonoma:   "688da3d5c9f204ab402e2d419b2925bdf6087a1d6fc8d604e0e11be639904be8"

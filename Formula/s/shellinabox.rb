@@ -6,6 +6,8 @@ class Shellinabox < Formula
   license "GPL-2.0-only"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b3bc61dfd3c0f3764b43daadc5f1538a1108f349b60cf26903487c1e7bb0a909"

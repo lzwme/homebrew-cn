@@ -12,6 +12,8 @@ class Supertux < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "3f63bbb4a3eca63586e1bcb23482fdcdd91936e6b6bd181ca5b6d3f4b57c463e"
     sha256 cellar: :any,                 arm64_sonoma:  "f44ec03e212e95daaa1cc85363c084e5dc545ac9be24812aa64f6d3a43046791"

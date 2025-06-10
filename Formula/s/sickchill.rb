@@ -8,6 +8,8 @@ class Sickchill < Formula
   license "GPL-3.0-or-later"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "15de2198f2d82629cde9cdf25a3cff55c3955dff88f7e6a34b0e0485d73088e7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9bb860c05fa1f4b084dbd66059b976963d638d325868d48dbd3f587957756998"

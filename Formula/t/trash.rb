@@ -26,6 +26,10 @@ class Trash < Formula
 
   depends_on :macos
 
+  conflicts_with "macos-trash", because: "both install a `trash` binary"
+  conflicts_with "osx-trash", because: "both install a `trash` binary"
+  conflicts_with "trash-cli", because: "both install a `trash` binary"
+
   def install
     # https:github.comali-rantakaritrashissues43
     inreplace "Makefile", "-force_cpusubtype_ALL", ""
