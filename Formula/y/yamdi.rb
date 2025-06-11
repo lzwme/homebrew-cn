@@ -5,6 +5,8 @@ class Yamdi < Formula
   sha256 "4a6630f27f6c22bcd95982bf3357747d19f40bd98297a569e9c77468b756f715"
   license "BSD-3-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d1682a7424cf30298588c37aa36158d5d39ec11729cd7dae34303d244b1ad15a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "423627352b9bd50656cb38b57ddd40faad37c001d52f9cf941a62f6d0fd0b997"

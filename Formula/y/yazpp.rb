@@ -10,6 +10,8 @@ class Yazpp < Formula
     regex(/href=.*?yazpp[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "3db462397a75847cfe8f47b63a8e72357aeb56c3e6ad39f1e56f961fa6c67031"
     sha256 cellar: :any,                 arm64_sonoma:  "8a0413a93b0784924650e2e642e5044b3547361916ca81e4231828ce24ce3322"

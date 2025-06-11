@@ -11,6 +11,8 @@ class Tfenv < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "c66a9c7c90b14b63c471b56405ec064b081474cc85528b324bd1bcc1c1af248d"

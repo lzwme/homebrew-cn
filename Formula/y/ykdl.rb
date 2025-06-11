@@ -7,6 +7,8 @@ class Ykdl < Formula
   sha256 "c689b8e4bf303d1582e40d5039539a1a754f7cf897bce73ec57c7e874e354b19"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "eb541b86eded5d4bcc6262795c769d284a9e3c37f42f70121d43864f4066dc1d"

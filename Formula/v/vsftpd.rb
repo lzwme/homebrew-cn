@@ -11,6 +11,8 @@ class Vsftpd < Formula
     regex(href=.*?vsftpd[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 arm64_sequoia: "d878a9c0483cf81228a5301cf5768e613271d731fbf2affa778a475bcea57a09"

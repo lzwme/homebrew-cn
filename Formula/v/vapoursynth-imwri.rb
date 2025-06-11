@@ -8,6 +8,8 @@ class VapoursynthImwri < Formula
   version_scheme 1
   head "https:github.comvapoursynthvs-imwri.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any, arm64_sequoia: "05e577ee12e4337fb9af5870c39c485e5e7a5ac4b56365361e9c2e7e35eca388"
     sha256 cellar: :any, arm64_sonoma:  "2bbe0c55617799e49cfd693a838565894dc7ecb5fbcaef0b72e9103da674999d"

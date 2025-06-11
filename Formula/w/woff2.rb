@@ -5,6 +5,8 @@ class Woff2 < Formula
   sha256 "add272bb09e6384a4833ffca4896350fdb16e0ca22df68c0384773c67a175594"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "f451e27be673ee74d5cdbbb50fa6d818ac48b0800f9daf0c27bb5995c27f8b9b"

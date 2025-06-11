@@ -14,6 +14,8 @@ class Udptunnel < Formula
     regex(/href=.*?udptunnel[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "be4c5ad4d4094dd6afe8d22aa7ab5fad4a53ca8605a4d9c8b379f209076fe48b"

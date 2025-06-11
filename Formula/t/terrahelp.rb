@@ -6,6 +6,8 @@ class Terrahelp < Formula
   license "Apache-2.0"
   head "https:github.comopencredoterrahelp.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b5fc796c20c29a328691b8499b2987a5249ea4be381ceb270d73200dfd310f85"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c077330b4b023abcd41cc69010561ff2046b426a760ea6129ff496df69416b04"

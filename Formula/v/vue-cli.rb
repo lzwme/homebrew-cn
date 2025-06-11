@@ -5,6 +5,8 @@ class VueCli < Formula
   sha256 "29aa4eb0ba827624e42683e1339ebd40e663ad09836dd027df30e3d2108b0b71"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3b72fda6c0563cd941f67f7fcff7ce0562af8f248188775a0409c7c26e23a2fc"

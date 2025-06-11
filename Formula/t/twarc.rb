@@ -8,6 +8,8 @@ class Twarc < Formula
   license "MIT"
   revision 9
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "a47530dfbcb3c61845ce2a202587d5c931f166cdbd1a125b800d6aebb6c6e157"

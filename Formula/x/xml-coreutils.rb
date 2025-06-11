@@ -5,6 +5,8 @@ class XmlCoreutils < Formula
   sha256 "7fb26d57bb17fa770452ccd33caf288deee1d757a0e0a484b90c109610d1b7df"
   license "GPL-3.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "f0416be37c963bcfec7ccdab87e91272d03f68a314ceda3b287f154397e9481c"

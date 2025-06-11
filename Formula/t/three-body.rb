@@ -6,6 +6,8 @@ class ThreeBody < Formula
   license "MIT"
   head "https:github.comrustq3body-lang.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b14b79b6374be096bc29c9e9f25a429c9330d1bbf42bb7228a5df22b038ccce4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "17906f40f4a7908537f9c3a96653a588c31d0b420bb10c7c3f98ab1a0b2a3020"

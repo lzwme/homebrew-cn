@@ -8,6 +8,8 @@ class Tsung < Formula
   license "GPL-2.0-or-later"
   head "https:github.comprocessonetsung.git", branch: "develop"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "49d55c65d11487c31015102992d20c0853656fc09b85e6f35570573417a949ec"

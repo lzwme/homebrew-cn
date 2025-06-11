@@ -6,6 +6,8 @@ class Yj < Formula
   license "Apache-2.0"
   head "https:github.comsclevineyj.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "71786086bcb09233fdf3ac0df85662d4bc72a897a96456f170e69b047042f56d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9b768047213c8d89fbf913d6a7558bc7375b2bb212c3de790dc818f4b5220886"

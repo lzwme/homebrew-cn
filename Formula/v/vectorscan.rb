@@ -7,6 +7,8 @@ class Vectorscan < Formula
   revision 1
   head "https:github.comVectorCampvectorscan.git", branch: "develop"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "b360fb4b6e842de1f1aa4599528a0b2bb899f960b6f380fa3acdfaad54f4cec3"
     sha256 cellar: :any,                 arm64_sonoma:   "f39f184ac1f5dbdb22087f8a6fe7ffaadcbb0fdea64d1ea872d2e4df90e28a0b"

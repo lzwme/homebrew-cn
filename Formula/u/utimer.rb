@@ -10,6 +10,8 @@ class Utimer < Formula
     skip "No longer developed or maintained"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "b81fca5d55f6c336477ac27ce66e9fb030be982864b54be675ee624b73444f7b"
     sha256 cellar: :any,                 arm64_sonoma:   "ee04213e439d3e859b16c5f0e07f19d70400a9dea3bcde536212cee288bfb6f6"

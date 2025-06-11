@@ -5,6 +5,8 @@ class Triton < Formula
   sha256 "00792c7668da5fc711e79cce1ee130e3e4adf5696a622b995f7b2a4127a4dc7f"
   license "MPL-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ebb4e410777f4fd73d5b2d9e053f6406cd7f35df730e884e73414e7980316b99"

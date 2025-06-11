@@ -7,6 +7,8 @@ class VapoursynthOcr < Formula
   version_scheme 1
   head "https:github.comvapoursynthvs-ocr.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia: "59e7198e55f020269ef5dba9f54c07b67c5a789379df455ec634e6b236a129b0"

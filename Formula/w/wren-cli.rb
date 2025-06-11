@@ -5,6 +5,8 @@ class WrenCli < Formula
   sha256 "fafdc5d6615114d40de3956cd3a255e8737dadf8bd758b48bac00db61563cb4c"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "09debbe79f6af18ccbb0f2a4aabf117cfa7b3a33fb455fdd7b943ab8c8e399ce"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "228ccca95d81d073708b4b53278b5fa8a2d4a070c4a0c613cf3eb7181d26ba64"

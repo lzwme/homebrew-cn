@@ -6,15 +6,16 @@ class Bbot < Formula
   url "https:files.pythonhosted.orgpackages110cc5553229baf664055d1b9204e334d2c93001e08604dc18c0f6ecd272bcf9bbot-2.5.0.tar.gz"
   sha256 "4481b9db248387ffb3cfd0fc9369dc5580bc8f810aa793f2b3bd5bf9fb1e2b16"
   license "GPL-3.0-or-later"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "9e6f0059118ed2a6080f183be67bbac3862b1dc2d32629ba000905be689136eb"
-    sha256 cellar: :any,                 arm64_sonoma:  "305a143f951e6250c500797631d66c7b3be39a16f7a63a4caa0afaccdcd29348"
-    sha256 cellar: :any,                 arm64_ventura: "d10c25d48bcae1151ba7b77d90bfd8f119c8624e2f48a0723474a233062a0e64"
-    sha256 cellar: :any,                 sonoma:        "bc1610533afd83568b0358c340b71c522a10e05fa29c33353c72613cf24f9ca0"
-    sha256 cellar: :any,                 ventura:       "362287c266af4cfd502579ec3aba9821496e3af25977d4343a35762297dc7755"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "6f093d3493e8b0ea2afc427f179db9bb5b70b2a509e0374ea517289fd25c7ae0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fc30b5a5f3b7c46a751a95b9e85ca9147e6e6a882a33db045f6254cd2d9f8283"
+    sha256 cellar: :any,                 arm64_sequoia: "fbd8caa2d756ced239a26f149b8740866051e9babfeb4bcdbe82f3b1d1da72a4"
+    sha256 cellar: :any,                 arm64_sonoma:  "77bc3b1ebdd3d7ab52b2368af6dfbf992b8cc20d952fa0368543be84da821363"
+    sha256 cellar: :any,                 arm64_ventura: "293e06b94dfdae692e5f711974612afa23d2346bedd3e55049349374deed0ba6"
+    sha256 cellar: :any,                 sonoma:        "53eccc64384385ed18f0147e273d5ddab55b00266eb6bcd7aee4b4af41715fe4"
+    sha256 cellar: :any,                 ventura:       "331adefa6173668f80a65d340b17817e2701fb85946e4e1ce1a15fc281add61a"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "3499d2a39f8c2a6f7a23b42e137dde890e5450729f4ffb8922ae9ec13686660f"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0f9e9162957d5fdd9debd8f6b3ff8e286b9ee3c3068d77b2051acbe98797a2de"
   end
 
   depends_on "cmake" => :build
@@ -223,8 +224,8 @@ class Bbot < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https:files.pythonhosted.orgpackagese10a929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "requests-file" do

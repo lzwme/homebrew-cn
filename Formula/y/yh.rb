@@ -6,6 +6,8 @@ class Yh < Formula
   license "Apache-2.0"
   head "https:github.comandreazorzettoyh.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "37b637b99befa6608662694e5100828cf4ad50a9513e57cae75febfd04e9fc96"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4719f7e1a8166248cf84ac5efe7d8bf0df277a08ed4cba8e1b071f87622dfb67"

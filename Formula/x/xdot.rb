@@ -8,6 +8,8 @@ class Xdot < Formula
   license "LGPL-3.0-or-later"
   head "https:github.comjrfonsecaxdot.py.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "8f3a6484db099186946f2e3fca16c51cd622e70030959554352b1128c1169d07"

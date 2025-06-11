@@ -6,10 +6,11 @@ class GalleryDl < Formula
   url "https:files.pythonhosted.orgpackagesa63ee9c024254ff37553d02601205db34fdb854c9b556ee669679702807a50begallery_dl-1.29.7.tar.gz"
   sha256 "5fabac1ca7279420bb3ebff5bff8cee80478f48ffb314a42f4ed580f122c0117"
   license "GPL-2.0-only"
+  revision 1
   head "https:github.commikfgallery-dl.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "8f2f8e90e426d4348a013adefa6f319bcb304cb258cad0909261482d4e1ebcdc"
+    sha256 cellar: :any_skip_relocation, all: "8b7e42b908a2fd701824ed41230e227bc35d80af92a9c40be8afbaaf8cde458d"
   end
 
   depends_on "certifi"
@@ -26,8 +27,8 @@ class GalleryDl < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https:files.pythonhosted.orgpackagese10a929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "urllib3" do

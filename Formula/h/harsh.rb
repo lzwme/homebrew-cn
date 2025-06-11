@@ -1,18 +1,18 @@
 class Harsh < Formula
   desc "Habit tracking for geeks"
   homepage "https:github.comwakataraharsh"
-  url "https:github.comwakataraharsharchiverefstagsv0.10.21.tar.gz"
-  sha256 "3ddf2798ab1853932ecadfb1bcc1ea6cecfb96fbda35fbd52a797baf5844e6b1"
+  url "https:github.comwakataraharsharchiverefstagsv0.10.22.tar.gz"
+  sha256 "941198dae44835635836459e8a682a13aa4ca5aed334f5adcd8b708746f5c366"
   license "MIT"
   head "https:github.comwakataraharsh.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "681743141ad4722b7161b6f11c6f513d4c5844ee51f25ba9f5535c85ca0eb64a"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "681743141ad4722b7161b6f11c6f513d4c5844ee51f25ba9f5535c85ca0eb64a"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "681743141ad4722b7161b6f11c6f513d4c5844ee51f25ba9f5535c85ca0eb64a"
-    sha256 cellar: :any_skip_relocation, sonoma:        "c53ec508dd9962b23efba69a2948eecd0400a8468f571b869a4184c51f0e93cf"
-    sha256 cellar: :any_skip_relocation, ventura:       "c53ec508dd9962b23efba69a2948eecd0400a8468f571b869a4184c51f0e93cf"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "82d1afdfcec69c42387a91aeebc377b0c7709e4fbfdf5a990362e852a598e417"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2f582ac18703ce292d79434f447cbc34a9737e9126dd75ffc309215ecee043d"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e2f582ac18703ce292d79434f447cbc34a9737e9126dd75ffc309215ecee043d"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "e2f582ac18703ce292d79434f447cbc34a9737e9126dd75ffc309215ecee043d"
+    sha256 cellar: :any_skip_relocation, sonoma:        "2c415d3f039f7aef867af13ffe3cfe9a7e881ec567ba12329baf8a438465373b"
+    sha256 cellar: :any_skip_relocation, ventura:       "2c415d3f039f7aef867af13ffe3cfe9a7e881ec567ba12329baf8a438465373b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "768d4bad34551928261f87b117c1a5ff7e10b19647b9dad0fe0621097327f5ce"
   end
 
   depends_on "go" => :build

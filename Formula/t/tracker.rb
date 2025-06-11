@@ -8,6 +8,8 @@ class Tracker < Formula
   license all_of: ["LGPL-2.1-or-later", "GPL-2.0-or-later"]
   revision 4
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "34218a3697312858347f19f7b687ad25626b65dd8f78c10efd462df9327eb078"
     sha256 arm64_sonoma:  "cb0d4881cc33a9e7a2d68c2c02f1011840ed28a4a1c3333bad6d4a254861a3e7"

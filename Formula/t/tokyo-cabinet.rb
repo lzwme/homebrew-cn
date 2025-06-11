@@ -11,6 +11,8 @@ class TokyoCabinet < Formula
     regex(/href=.*?tokyocabinet[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia:  "4f3639469a608b0ad65b82a7529849eb87808348165e167cb3ff347cfb92dd54"

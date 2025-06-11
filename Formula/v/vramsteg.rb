@@ -11,6 +11,8 @@ class Vramsteg < Formula
     regex(href=.*?vramsteg[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0fc0621375da82a15b6a36551f6fe423df69a79c656beae75ce15a6e6c331556"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f122182d7989681603772e5ca869e722b9a358e170f2f60135c635a51142a6a2"

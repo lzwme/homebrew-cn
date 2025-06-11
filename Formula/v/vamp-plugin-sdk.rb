@@ -18,6 +18,8 @@ class VampPluginSdk < Formula
     regex(href=.*?vamp-plugin-sdk[._-]v?(\d+(?:\.\d+)+)\.orig\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "0fd18a6d81ea391818744555984ec3b2f8052f801a097be6511dc4589d9810fc"
     sha256 cellar: :any,                 arm64_sonoma:  "1ba7dd45b17c25c2eecfa787ee7ca90509534e91492351c5237acd33be37b3b7"

@@ -9,6 +9,8 @@ class Term < Formula
     skip "Cannot reliably check for new releases upstream"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9d96e3974bb4da6fa39f80ef74835a9c3be1e9b39679293e30552bdeeef1b15b"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "6dd9dd17ed477530310c64097beb15b38091a3b63c90c76289908ac550bb83d1"

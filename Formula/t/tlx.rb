@@ -5,6 +5,8 @@ class Tlx < Formula
   sha256 "24dd1acf36dd43b8e0414420e3f9adc2e6bb0e75047e872a06167961aedad769"
   license "BSL-1.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "5e35cf4b2cf66334a3c6782fef229a96684942f5aa07063874e0020fb319e15b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2be507f7ba45c99557ac676c7c47b0288b5e364a2c61b33e2abf173865e8f9b3"

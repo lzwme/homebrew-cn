@@ -8,6 +8,8 @@ class WrkTrello < Formula
     skip "Not actively developed or maintained"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "255e64f8c821c3e05bf04b13424ff23883aa00291b5f30da474584a7b609d3a6"
   end

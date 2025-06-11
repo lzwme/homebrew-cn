@@ -16,6 +16,8 @@ class Vilistextum < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "518d8afa3e88d75bb45459300aa06568ebdb4b712495fac4d0edbe3dcfa17fb5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "6ca2e91c4c222843276180c7e4368437fad8284a673b5cd3b26aeb3650204b6f"

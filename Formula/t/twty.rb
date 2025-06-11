@@ -5,6 +5,8 @@ class Twty < Formula
   sha256 "4e76ada5e7c5f2e20881fbf303fb50d3d4a443a8e37f2444371a90102737e49b"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "06376606f273478b5bbcb8f781549cf79bf9b4cf596cc3a274104c1dca2704ea"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "455017b709a05e29e56106d6fafd24f4e9c09fba6d18bcc2b8a5173faf1d21c7"

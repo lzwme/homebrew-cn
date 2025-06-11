@@ -6,6 +6,8 @@ class Urweb < Formula
   license "BSD-3-Clause"
   revision 12
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "6b9b4b19d55dd9fa56d0e848f3730131b1d9942e7752af3c4d4cbe9e7865cac5"
     sha256 arm64_sonoma:  "5ae2a880693f266d5a4c97a701f6c275be9af42c6a5001285df1fd5943cf9020"

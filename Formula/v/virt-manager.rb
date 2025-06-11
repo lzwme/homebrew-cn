@@ -9,6 +9,8 @@ class VirtManager < Formula
   license "GPL-2.0-or-later"
   head "https:github.comvirt-managervirt-manager.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "83397ecb04b719a262ba0d0b06a0a7561598de290647b16fce11ed3e64a7fa9c"
   end

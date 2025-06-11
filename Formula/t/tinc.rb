@@ -10,6 +10,8 @@ class Tinc < Formula
     regex(href=.*?tinc[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "d452247fec1d29690250c77dafdeb7cac2c945ddef7f11e19fa728563cf4f720"

@@ -5,6 +5,8 @@ class Tcptunnel < Formula
   sha256 "1926e2636d26570035a5a0292c8d7766c4a9af939881121660df0d0d4513ade4"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8cda7483257c117ca1f5fa465c9659b2dd6ca6e88705c95c19a299b0bbdd2319"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "566b47c82002d0bebdd2d445c83e6c32640e42cbbbb9d7b818b0519b62c0f252"

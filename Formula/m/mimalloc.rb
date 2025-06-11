@@ -1,8 +1,8 @@
 class Mimalloc < Formula
   desc "Compact general purpose allocator"
   homepage "https:github.commicrosoftmimalloc"
-  url "https:github.commicrosoftmimallocarchiverefstagsv3.0.3.tar.gz"
-  sha256 "baf343041420e2924e1760bbbc0c111101c44e1cecb998e7951f646a957ee05f"
+  url "https:github.commicrosoftmimallocarchiverefstagsv3.1.4.tar.gz"
+  sha256 "84992bca18d6f74829b884c369de2707085b8248aaf3a1368e21f3993020171f"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class Mimalloc < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "b657c7aca154a9b170620ac048e5debd9f0b851408136e9d3491e70649492947"
-    sha256 cellar: :any,                 arm64_sonoma:  "cb4094377d756f2611176257b1110e6e965990c2ae2472411031e9493975c16a"
-    sha256 cellar: :any,                 arm64_ventura: "417efc86d46f48ce567097aaeeb1520953a01757aab9e419bedf5912076187c5"
-    sha256 cellar: :any,                 sonoma:        "55982e35a14e02cb0520d13f785bf7b120c5f85d6c1ba5d20bd4875c93724f5f"
-    sha256 cellar: :any,                 ventura:       "1ab149295b0719eb3f7fa08c5b6729bc8dfa81ab053e4f906e004fbea4300f5e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "60df33e9543a3f69549eea7e959c2358bf55804e9e4a1cfe7e90513e74a740b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "fbadee26452799c56fbdb76c6a5da92852b2332cab14be7da3b4e26be484f145"
+    sha256 cellar: :any,                 arm64_sequoia: "89240a2e31cee0b79ba3a4fb8cb78b10ef845bf40c7b70cbc8806b5666e045b2"
+    sha256 cellar: :any,                 arm64_sonoma:  "148859c5e90af9564b39395169d6272659b9d3ecb0865bcb4c4c2edb43229f86"
+    sha256 cellar: :any,                 arm64_ventura: "26d060ff1be7e7ccceab0d06c40ee8f4a783001ad6e56babfc6ca61e4081b180"
+    sha256 cellar: :any,                 sonoma:        "3faf4a00a950b7a9ca0ff2fb0b6f2cb1eaa31fd1a6b76489ec8f58b3fe6c988f"
+    sha256 cellar: :any,                 ventura:       "b54295e1c094c20fecabec2f79b1f2774b86d7196d17315f5c58b87a74039f84"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ea0f73965cd06d118e9a59a8de81b92c5b09f1067932ce65314ea8d4f3e8e87a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "898ebf78da50a5aac02b9ab4c9bfd15ba99ef92c8ece46a38b9c4a1839b3e1d2"
   end
 
   depends_on "cmake" => :build

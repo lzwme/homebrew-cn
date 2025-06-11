@@ -10,6 +10,8 @@ class Vttest < Formula
     regex(/href=.*?vttest[._-]v?(\d+(?:[.-]\d+)*)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "5c0bf421235c658ec8217bcb7a68799df68c5f060b05940bb20f97e7fb43a7b3"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7cdb02a9f59bf22b59a6efb440d27427e380fb411d7408b2cece68856c120ca8"

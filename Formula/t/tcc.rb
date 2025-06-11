@@ -20,6 +20,8 @@ class Tcc < Formula
     regex(/href=.*?tcc[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 catalina:     "68930891a8746b34b372ecfe43a6a042d0097414713c831353a095135d7b9569"
     sha256 mojave:       "ca8cd4827e72201cd5f368b5b74b9dead8554e0188b7ea63f81926d775d704e9"

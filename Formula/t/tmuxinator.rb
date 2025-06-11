@@ -6,6 +6,8 @@ class Tmuxinator < Formula
   license "MIT"
   head "https:github.comtmuxinatortmuxinator.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "6d3d903bd93f7555c16d092f8bd85d972f4c726d2670340f53f8df3682b93934"
   end

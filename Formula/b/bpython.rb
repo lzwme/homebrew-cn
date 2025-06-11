@@ -6,46 +6,47 @@ class Bpython < Formula
   url "https:files.pythonhosted.orgpackagesbaddcc02bf66f342a4673867fdf6c1f9fce90ec1e91e651b21bc4af4890101dabpython-0.25.tar.gz"
   sha256 "c246fc909ef6dcc26e9d8cb4615b0e6b1613f3543d12269b19ffd0782166c65b"
   license "MIT"
+  revision 1
   head "https:github.combpythonbpython.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "06bf6629f26910b0566487146288f2bfb1a22f2d4475fd8edfa40b846f999a70"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c859efd5a00b94aa9a44b5220ef48454b6f8ec2144334f56c04613bac6ad5471"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "40ded59a27e86ff42fe70298d5c2599ac2a87fcfa9f816e1bcbad96371c2e91f"
-    sha256 cellar: :any_skip_relocation, sonoma:        "688b211f53cd9632034f46c4337bc1840c15e38c14ea430027e80e53204e36e5"
-    sha256 cellar: :any_skip_relocation, ventura:       "c9d34b976f66b6d5519f209703ac1248a16136db2a644f6ffca3485019784f26"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "ed3ce49336e167299dd2f293d67a290fc4054cca82bcc4f0dff25460e0416240"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7632a46277b96ead7b36d94f1b19d43cd05d96c1e7e5c6f8230f126c436343e9"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2d60da6cf634294cda7f89a9d197be247defda0d7ba77c496a63bf5dacd22432"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3a98ae347f658f3e58fcbbb30f04979b88825759baad584c43436e792e485c81"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "16cb7d1a3c0d87fba4a1f7ae50ee5fa75354d4d0541d385ef1c5ee8000642a3f"
+    sha256 cellar: :any_skip_relocation, sonoma:        "3e8907e65b0fe7c9e5dbb6affb9f23be5bba9f83f613b908c269fc109ab5205a"
+    sha256 cellar: :any_skip_relocation, ventura:       "6e1dcdc560f76f6b0ec201364bc18dce2a20db4aaa6685c019cb81cfb21a4bfa"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "ec77b4e9f45e004fbac154adfeda3e88fe968101e598ae2aea1b5a74f4a8ec21"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b637086839e8ef3b5e8f289854a3ca524029a1c426ff74d7053af65b34cf3cb5"
   end
 
   depends_on "certifi"
   depends_on "python@3.13"
 
   resource "blessed" do
-    url "https:files.pythonhosted.orgpackages25ae92e9968ad23205389ec6bd82e2d4fca3817f1cdef34e10aa8d529ef8b1d7blessed-1.20.0.tar.gz"
-    sha256 "2cdd67f8746e048f00df47a2880f4d6acbcdb399031b604e34ba8f71d5787680"
+    url "https:files.pythonhosted.orgpackages0c5e3cada2f7514ee2a76bb8168c71f9b65d056840ebb711962e1ec08eeaa7b0blessed-1.21.0.tar.gz"
+    sha256 "ece8bbc4758ab9176452f4e3a719d70088eb5739798cd5582c9e05f2a28337ec"
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https:files.pythonhosted.orgpackagese43389c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12dcharset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "curtsies" do
-    url "https:files.pythonhosted.orgpackages53d2ea91db929b5dcded637382235f9f1b7d06ef64b7f2af7fe1be1369e1f0d2curtsies-0.4.2.tar.gz"
-    sha256 "6ebe33215bd7c92851a506049c720cca4cf5c192c1665c1d7a98a04c4702760e"
+    url "https:files.pythonhosted.orgpackagesd1185741cb42624089a815520d5b65c39c3e59673a77fd1fab6ad65bdebf2f91curtsies-0.4.3.tar.gz"
+    sha256 "102a0ffbf952124f1be222fd6989da4ec7cce04e49f613009e5f54ad37618825"
   end
 
   resource "cwcwidth" do
-    url "https:files.pythonhosted.orgpackages95e3275e359662052888bbb262b947d3f157aaf685aaeef4efc8393e4f36d8aacwcwidth-0.1.9.tar.gz"
-    sha256 "f19d11a0148d4a8cacd064c96e93bca8ce3415a186ae8204038f45e108db76b8"
+    url "https:files.pythonhosted.orgpackages237603fc9fb3441a13e9208bb6103ebb7200eba7647d040008b8303a1c03e152cwcwidth-0.1.10.tar.gz"
+    sha256 "7468760f72c1f4107be1b2b2854bc000401ea36a69daed36fb966a1e19a7a124"
   end
 
   resource "greenlet" do
-    url "https:files.pythonhosted.orgpackages2fffdf5fede753cc10f6a5be0931204ea30c35fa2f2ea7a35b25bdaf4fe40e46greenlet-3.1.1.tar.gz"
-    sha256 "4ce3ac6cdb6adf7946475d7ef31777c26d94bccc377e070a7986bd2d5c515467"
+    url "https:files.pythonhosted.orgpackagesc992bb85bd6e80148a4d2e0c59f7c0c2891029f8fd510183afc7d8d2feeed9b6greenlet-3.2.3.tar.gz"
+    sha256 "8b0dd8ae4c0d6f5e54ee55ba935eeb3d735a9b58a8a1e5b5cbab64e01a39f365"
   end
 
   resource "idna" do
@@ -64,18 +65,13 @@ class Bpython < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
-  end
-
-  resource "six" do
-    url "https:files.pythonhosted.orgpackages94e7b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2six-1.17.0.tar.gz"
-    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
+    url "https:files.pythonhosted.orgpackagese10a929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesaa63e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66urllib3-2.3.0.tar.gz"
-    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
+    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
+    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
   end
 
   resource "wcwidth" do

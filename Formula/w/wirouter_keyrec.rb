@@ -11,6 +11,8 @@ class WirouterKeyrec < Formula
     regex(%r{href=.*?/WiRouter_KeyRec[._-]v?(\d+(?:\.\d+)+)\.zip}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "cccb46ddcd0b30219ed24a351f2dfb1dacf796da3fdabe377b2d9300db62bf1d"
     sha256 arm64_sonoma:   "86c53e8b3f2532c768bb13ae50bd272e3b55866a674c3bf7aa9c370c80ab6084"

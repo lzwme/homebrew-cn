@@ -10,6 +10,8 @@ class Tcpflow < Formula
     regex(href=.*?tcpflow[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_sequoia:  "173cfbc01371f93960738b1c9d0a7fc46f4ee1ea3f3932710c7f7359e7b80c3a"

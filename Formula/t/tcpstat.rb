@@ -7,6 +7,8 @@ class Tcpstat < Formula
   license "BSD-2-Clause"
   head "https:github.comjtttcpstat.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2e7c67338b0d6c0f83589d31ce70046af5888a6bb752e5f2d69361d81b57ef99"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "05facda1f2a318b0253ef9b01500561ed6791d0b5143c5aeb05d1187902a6758"

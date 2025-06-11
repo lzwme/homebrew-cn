@@ -6,6 +6,8 @@ class ZshFSyH < Formula
   license "BSD-3-Clause"
   head "https:github.comz-shellF-Sy-H.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "219d0141922740e742d765b4e55a3b6331cd0deaab671c07a19a085b04e2f7ef"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "219d0141922740e742d765b4e55a3b6331cd0deaab671c07a19a085b04e2f7ef"

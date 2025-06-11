@@ -6,6 +6,8 @@ class Xdotool < Formula
   license "BSD-3-Clause"
   head "https:github.comjordansisselxdotool.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia: "53cc99835729d36906840e2c26f1229415781d2cad0d3119982468af1251ceb3"

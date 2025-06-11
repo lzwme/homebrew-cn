@@ -11,6 +11,8 @@ class Visp < Formula
     regex(href=.*?visp[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:  "aeeb52ede1480fea6884423f6d00f96dc66bef176ae9f48e6cb14284767a4dc3"
     sha256 cellar: :any,                 arm64_ventura: "f0c9bb028e286ec5781bfb3905d6b42cfcc0f16f3eb2327c4e3cd05fdd314ac5"

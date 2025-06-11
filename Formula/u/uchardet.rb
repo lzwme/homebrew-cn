@@ -6,6 +6,8 @@ class Uchardet < Formula
   license any_of: ["MPL-1.1", "GPL-2.0-or-later", "LGPL-2.1-or-later"]
   head "https://gitlab.freedesktop.org/uchardet/uchardet.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "171e31b14ade23db98fd45f32cebdd1c278ce5b5d629d4e3be7c81a56bee03a7"
     sha256 cellar: :any,                 arm64_sonoma:   "70b2c779c315b71c067c8f4a743a90688dfa329c9d5e1c174345d0071fdf09d8"

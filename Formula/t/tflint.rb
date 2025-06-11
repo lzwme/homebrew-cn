@@ -6,6 +6,8 @@ class Tflint < Formula
   license "MPL-2.0"
   head "https:github.comterraform-linterstflint.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f334670b74f8d6ec47e6cb8e21784753fba04f87a11b6d3743190463eff27615"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "f334670b74f8d6ec47e6cb8e21784753fba04f87a11b6d3743190463eff27615"

@@ -6,6 +6,8 @@ class X8664ElfGrub < Formula
   sha256 "f3c97391f7c4eaa677a78e090c7e97e6dc47b16f655f04683ebd37bef7fe0faa"
   license "GPL-3.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "9e7f8e4ae40110b6b2ef9610497ecc11612f2c28c399ac3addf7587ddcb88284"
     sha256 arm64_sonoma:  "66784aa8aecb9d70cab2eefb31b6f21cd0a2e29b3325c958abed5288c257b2e0"

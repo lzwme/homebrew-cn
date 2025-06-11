@@ -11,6 +11,8 @@ class Wal2json < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "ec43557186dc322d7e038dbc6a9d2062296a13f8830952bbdb0c72d154c8a70b"

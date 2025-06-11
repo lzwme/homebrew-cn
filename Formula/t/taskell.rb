@@ -6,6 +6,8 @@ class Taskell < Formula
   sha256 "0d4f3f54fb0b975f969d7ef8a810bbc7a78e0b46aec28cc4cb337ee36e8abdfc"
   license "BSD-3-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "81cffc6cbe93688273e832ebe73d24f0f0b7e7ba39e6e09cdf22efa8c919c692"
     sha256 cellar: :any_skip_relocation, arm64_ventura:  "d3d4adedf5311251d430126a527c229bc743f7ad10204f953669c46ed1ecb1ae"

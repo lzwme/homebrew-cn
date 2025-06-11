@@ -6,6 +6,8 @@ class Vrpn < Formula
   license "BSL-1.0"
   head "https:github.comvrpnvrpn.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia: "462a889a4d51338c58f99862c0812246a5277b9d2e234cfdf860d48c4be65220"

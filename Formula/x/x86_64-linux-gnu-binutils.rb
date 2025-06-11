@@ -10,6 +10,8 @@ class X8664LinuxGnuBinutils < Formula
     formula "binutils"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "2f25854d0670553fd5b5306d53e544929d3ae89595e5b04b3784e29fb6a0facd"
     sha256 arm64_sonoma:  "607de283c72bd6b0d7141fed0282051e244768fc907093ac5f6d4d951588dbde"

@@ -10,6 +10,8 @@ class Tweak < Formula
     regex(/href=.*?tweak[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bf452cf3fc91bce4ad69ee5bea2c8485c80aac9efad963b3492cd10d2eb83619"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "c7696232f907f0fb9d98fdd2b1fbff035fddfa50180f63b0edef3c556f8b0aeb"

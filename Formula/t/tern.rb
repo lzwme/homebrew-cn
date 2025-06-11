@@ -8,6 +8,8 @@ class Tern < Formula
   license "BSD-2-Clause"
   head "https:github.comtern-toolstern.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 5
     sha256 cellar: :any,                 arm64_sequoia: "9594d3b770425800447abf9fc76b1b63de4e5223e7e3723baa5d5b166d03d31b"

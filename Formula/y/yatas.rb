@@ -6,6 +6,8 @@ class Yatas < Formula
   license "Apache-2.0"
   head "https:github.compadok-teamyatas.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "6e5ba8ff412e6b856410c206db19c24ddbb66ddcaf3ef3052d47b63e11d16974"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "1e1e7442a54bc2fb49b02ccdffc667bc6a7b1a08d6a16972d694d35d67835f25"

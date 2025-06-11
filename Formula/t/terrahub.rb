@@ -5,6 +5,8 @@ class Terrahub < Formula
   sha256 "0288f47ab305550d0f21633a9a487e1de688556229242bf0c86e120d1240e1c4"
   license "MPL-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "338bea3d5cf73bd46b3c98463c61454328de8bd281762ee4e504408e851622c6"

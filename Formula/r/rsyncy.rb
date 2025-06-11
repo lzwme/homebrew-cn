@@ -3,14 +3,13 @@ class Rsyncy < Formula
 
   desc "Statusprogress bar for rsync"
   homepage "https:github.comlaktakrsyncy"
-  url "https:github.comlaktakrsyncyarchiverefstagsv0.2.0-1.tar.gz"
-  sha256 "b2f1c0e49f63266b3a81b0c7925592a405770a3e1296040a106b503a85024b00"
+  url "https:github.comlaktakrsyncyarchiverefstagsv0.2.1.tar.gz"
+  sha256 "3832f71fbdfb3fbc3d135da91864abab44f16a9e9918d46389604a463bbf840f"
   license "MIT"
   head "https:github.comlaktakrsyncy.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, all: "c9f3bf3e3e2b3b67497decbe21a1accbc9e18b1a020fcd7c696bc3eb768396b1"
+    sha256 cellar: :any_skip_relocation, all: "a67e111ca3ef8b9e2b4fd568b818e79fbb3ca6a8f1310d8707c2d79beb69e681"
   end
 
   depends_on "python@3.13"

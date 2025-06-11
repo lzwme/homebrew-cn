@@ -6,6 +6,8 @@ class Zsxd < Formula
   license all_of: ["CC-BY-SA-4.0", "GPL-3.0-only"]
   head "https://gitlab.com/solarus-games/games/zsxd.git", branch: "dev"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7f0acd40f96b33fa5dfb02c86c7c5565d0c02043888ab1824e9c65bc515cbd8e"

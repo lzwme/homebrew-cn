@@ -6,6 +6,8 @@ class Vimpager < Formula
   license "BSD-2-Clause"
   head "https:github.comrkitovervimpager.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3f2a6dd688af38e4777f82795806da5477f9bbc91f05f1bb567777656169652a"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b414a1f47556bd96038f4314fdcc4a5794c7064990e2b464c951717043c7c0c0"

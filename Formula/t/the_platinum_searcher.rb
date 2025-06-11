@@ -6,6 +6,8 @@ class ThePlatinumSearcher < Formula
   license "MIT"
   head "https:github.commonochromeganethe_platinum_searcher.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "2ba93995429038b3bc692cf512396e683d766b131a307e63afbbe913218b54c1"

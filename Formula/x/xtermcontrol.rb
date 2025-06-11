@@ -10,6 +10,8 @@ class Xtermcontrol < Formula
     regex(/href=.*?xtermcontrol[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "91e3dd1b814e1b6fb24ddff2fbc094d1126e9c88e156e8f66291dd0c25a84aa9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1631d01a3eee1cf04f37e7d01dcdb6d7066221ea94990b6a429f322acabcc5db"

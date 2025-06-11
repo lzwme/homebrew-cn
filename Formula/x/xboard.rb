@@ -7,6 +7,8 @@ class Xboard < Formula
   license "GPL-3.0-or-later"
   revision 4
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sonoma:   "286ed707d8d03708c836b4ac6a00777425e5984b6fe5be083ae571cfcfccb877"
     sha256 arm64_ventura:  "50cd0e9fe8b8c1e1cafca11ab050238c046b037db55561204c25bd238438cdd4"

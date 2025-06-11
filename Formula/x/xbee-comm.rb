@@ -9,6 +9,8 @@ class XbeeComm < Formula
   license "GPL-3.0-or-later"
   head "https:github.comguyzmoxbee-comm.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3a9eedfd657cad6df2ac1df6c320df225e7b9c14add897b1044fecd21d161aee"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b50fa055f4f542eab3a06ef487bf7eab058d592c1b27eec56344e09e17bf9093"

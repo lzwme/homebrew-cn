@@ -5,6 +5,8 @@ class Ultralist < Formula
   sha256 "d4a524c94c1ea4a748711a1187246ed1fd00eaaafd5b8153ad23b42d36485f79"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "110edc14d3b119a73a5de437726450fb928f436c94743d94db437bfe132b37be"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "9b2752e4eb0dd8af2d061318320c6c9efe9b9668ffbf87349bc7d0a0517b590b"

@@ -10,6 +10,8 @@ class Wwwoffle < Formula
     regex(/href=.*?wwwoffle[._-]v?(\d+(?:\.\d+)+[a-z]?)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "114a59c443772a746833b3431d2cd275755ae5f8eed92326c7763e2097eca980"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dba1da001f686548a7ba1ecb2bb6a2fe34a5fb6c821846c3f47c3d6bf461ca1a"

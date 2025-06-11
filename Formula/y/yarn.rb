@@ -9,6 +9,8 @@ class Yarn < Formula
     skip("1.x line is frozen and features/bugfixes only happen on 2+")
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "edb63a1b15d560263270324b63bee4c2aa8145197636a755436cc14424fc1e12"

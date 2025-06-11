@@ -12,6 +12,8 @@ class Tasksh < Formula
     regex(href=.*?tasksh[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "71cf7963bf3f6eab310007ab05aafb9be4e4c766f6446f79671073cc7100a83f"

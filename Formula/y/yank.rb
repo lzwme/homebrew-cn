@@ -5,6 +5,8 @@ class Yank < Formula
   sha256 "40f5472df5f6356a4d6f48862a19091bd4de3f802b3444891b3bc4b710fb35ca"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0296212716734c1aa848c53307e2c7650c884be26a7b725fac7177df7d6c844"

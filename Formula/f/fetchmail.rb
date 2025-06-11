@@ -1,8 +1,8 @@
 class Fetchmail < Formula
   desc "Client for fetching mail from POP, IMAP, ETRN or ODMR-capable servers"
   homepage "https://www.fetchmail.info/"
-  url "https://downloads.sourceforge.net/project/fetchmail/branch_6.5/fetchmail-6.5.2.tar.xz"
-  sha256 "8fd0477408620ae382c1d0ef83d8946a95e5be0c2e582dd4ebe55cba513a45fe"
+  url "https://downloads.sourceforge.net/project/fetchmail/branch_6.5/fetchmail-6.5.3.tar.xz"
+  sha256 "d74e893b78ef29ebef375ab7e726d2977140f8f1208f5905569395cbdae4c23d"
   license all_of: [
     "LGPL-2.1-or-later",
     "ISC",
@@ -17,13 +17,13 @@ class Fetchmail < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_sequoia: "50d4e5f30efe550d1ef4347f0c462c1361253ef3440861132106bbfa9fbfd6f2"
-    sha256 cellar: :any, arm64_sonoma:  "4eda9c11eaa05e24837a30f5fd682e9cb190a923356e6e5d1c6fe74f76ef06ea"
-    sha256 cellar: :any, arm64_ventura: "49823e15e65d008950bfece7216bb4d745c80edeb15b56cfb719719cd26b37c1"
-    sha256 cellar: :any, sonoma:        "03319b40971cb573afe7d0e3492065f811937d4e3a0ff2203bdb33fd85f5b5a0"
-    sha256 cellar: :any, ventura:       "e6c5aeb3329d1e2e4ca9a936cac0ee14365b5acfd8bca476e21cb85823a67b50"
-    sha256               arm64_linux:   "b24ad98c2d5292865ec6a9c1ae720a9a0a0c9bd6ddb03ea63be3260bfa5b731c"
-    sha256               x86_64_linux:  "b27f94a8b07b2724bcae268a396cba7cf1549a186c32edee811b3142eb822439"
+    sha256 cellar: :any, arm64_sequoia: "0c2b7b565082ada07fea6623d2f47de9205cdd7f0751c1b881cf31495ebe1f78"
+    sha256 cellar: :any, arm64_sonoma:  "7f2e893f8b78f28a798c8932a58794e1d0f17464dcddb3799e4de7609a4c80d6"
+    sha256 cellar: :any, arm64_ventura: "273148b625624d63d24a23924e14d8438496b8c78d8c4e306d968acc233107c0"
+    sha256 cellar: :any, sonoma:        "7278652d2c80fb5796aad06d91940d281e5a2db7e1332c272b57af04f7c550ce"
+    sha256 cellar: :any, ventura:       "d02f747fbc6e6bfaef82d40ebc2e324667ef01b709d3545d8f5962c30c6fd3cb"
+    sha256               arm64_linux:   "21c443fa59adef09f84adcddad282b5f0432e070d6c6a0ed793486d70cf69283"
+    sha256               x86_64_linux:  "837c133b9dda8c760b7c3500ceb25bcf95e6c3401cb8b816a853ad92c98809f4"
   end
 
   depends_on "pkgconf" => :build

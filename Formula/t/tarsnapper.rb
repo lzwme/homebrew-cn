@@ -8,6 +8,8 @@ class Tarsnapper < Formula
   license "BSD-2-Clause"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 7
     sha256 cellar: :any,                 arm64_sequoia: "a3f3c24d9015ea8c6e555746211e7af56deb8ce020c047776cd06166f70c77d2"

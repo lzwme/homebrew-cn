@@ -6,6 +6,8 @@ class Uhubctl < Formula
   license "GPL-2.0-only"
   head "https:github.commvpuhubctl.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "45506e121cd1c2bdf1077b0086f6dae8adcf1b24c48c32882d2c06eee848b87a"
     sha256 cellar: :any,                 arm64_sonoma:  "28e0b5ad40356523caf8b0e489af4f5a18cfcebafb21f323800068a3cb591f18"

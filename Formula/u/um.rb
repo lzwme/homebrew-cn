@@ -5,6 +5,8 @@ class Um < Formula
   sha256 "f8c3f4bc5933cb4ab9643dcef7b01b8e8edf2dcbcd8062ef3ef214d1673ae64e"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "46ec29ef67ab6cbf8cde6a9d5029f6224f2fcc77a58f40f5feb178cacab94822"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "b91d98a8fd437a600f933a582128c859b9cbf5f84ffd499275156db31c44f1b5"

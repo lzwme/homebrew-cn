@@ -5,6 +5,8 @@ class Tctl < Formula
   sha256 "945272db4860e3a015e43b4ffc8fc24ecd585e604f4b94b3a964d2f4e51b9c32"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7820bd1e43e2d0b5fbbbf20ac2592642c42d2085c2f8ec4c96a98ec609fb6a35"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ac5e8aca07861abbfb56081050cfb6faa543a8ccb5ce8c800b5f0197de90cbfb"

@@ -5,6 +5,8 @@ class Xwininfo < Formula
   sha256 "3518897c17448df9ba99ad6d9bb1ca0f17bc0ed7c0fd61281b34ceed29a9253f"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "de81136f2da87e8553dbabd1ef911279447842a5d9a03cdf9b05830ed464fca0"
     sha256 cellar: :any,                 arm64_sonoma:  "c990cacb2c672ffeef97ce1e9e6bf07a62de68b31e0c844a374c6ea4330caddc"

@@ -6,6 +6,8 @@ class Zinit < Formula
   license "MIT"
   head "https:github.comzdharma-continuumzinit.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "804a9d5dcb76db825078745d20af231ff45870f86f0d5564688067de7294c2a9"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "804a9d5dcb76db825078745d20af231ff45870f86f0d5564688067de7294c2a9"

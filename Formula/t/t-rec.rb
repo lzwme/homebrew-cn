@@ -5,6 +5,8 @@ class TRec < Formula
   sha256 "1744fb7743209ea153a729f89e8e7f2f03bd61247488fbeea31abbe234087cd7"
   license "GPL-3.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "31e705c01ca086aeb97ea2ab92f97cdc982e8a2c003fa1262352c282c9e184f1"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "9f6104c42e6d8dc1dd9c33f8d9a62b2c331054878b475991b1ed32ad72012cc6"

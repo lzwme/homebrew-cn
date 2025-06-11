@@ -10,6 +10,8 @@ class Virtualpg < Formula
     regex(/href=.*?virtualpg[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia: "8e204f28da296c7deb1ce80831b2bfe8d7456aa540642c554de86f031c7aabad"

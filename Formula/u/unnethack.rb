@@ -25,6 +25,8 @@ class Unnethack < Formula
     regex(^v?(\d+(?:\.\d+)+(?:[._-]\d{6,8})?)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "fccec5070c4616fe421556ce507d015687ccdcd4da2681b2f8cc676dd4e7df9e"
     sha256 arm64_sonoma:   "1c6320df0cd991aeb79ab344592d38726b9844cf5427c15b8a24d3195f2864b7"

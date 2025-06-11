@@ -6,10 +6,11 @@ class AivenClient < Formula
   url "https:files.pythonhosted.orgpackages13883e30de140ad09232e53f03a32feccdcb77f5df56a3412f28eb460e0612c0aiven_client-4.7.2.tar.gz"
   sha256 "78e8ea1a93c29e29b9aae77669d700aa3fe05c1c02d699c7c3b86d8f63bd6ec3"
   license "Apache-2.0"
+  revision 1
   head "https:github.comaivenaiven-client.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "d8ddfad37c86b3568d5b0e58e499a1a5776b593dca83cd171142aa68b85c95c9"
+    sha256 cellar: :any_skip_relocation, all: "1746ce37abfb5d724b5c970bbb15fe420d93ad0cf11ef592b4dc83c1f70b4edb"
   end
 
   depends_on "certifi"
@@ -26,8 +27,8 @@ class AivenClient < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https:files.pythonhosted.orgpackagese10a929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "requests-toolbelt" do

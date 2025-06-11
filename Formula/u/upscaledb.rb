@@ -28,6 +28,8 @@ class Upscaledb < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "f9e07f206aa8c7656e752da77826815d0bc704c2f71beaed6341817b60cb9ba5"
     sha256 cellar: :any,                 arm64_ventura:  "31263250b809be124c24d249704e8a84de26c46c12b1f9e4a7abea51dbd79c4f"

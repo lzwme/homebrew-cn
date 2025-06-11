@@ -9,6 +9,8 @@ class Woof < Formula
   revision 1
   head "https:github.comsimon-budigwoof.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "cfc359d1f134edad9eb8e9f5fa9542486b3934dfc2c3f56e694c2557460a47b8"

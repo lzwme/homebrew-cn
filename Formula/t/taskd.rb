@@ -7,6 +7,8 @@ class Taskd < Formula
   revision 1
   head "https:github.comGothenburgBitFactorytaskserver.git", branch: "1.2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any,                 arm64_sequoia:  "61cffe43c79c6f9b87120529a75db6303a304526f47426999b22a3115418ee7a"

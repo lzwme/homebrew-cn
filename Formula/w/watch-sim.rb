@@ -6,6 +6,8 @@ class WatchSim < Formula
   license "MIT"
   head "https:github.comalloywatch-sim.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ef6e2048bbcb961e59e3e5f25602fd685222f49c4cad51da8bbb12bc3de3d7c4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2551be702d19489b5bc7224b2312c132df7a5090fda12c5c0e305b4982e828b4"

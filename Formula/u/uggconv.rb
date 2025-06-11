@@ -5,6 +5,8 @@ class Uggconv < Formula
   sha256 "9a215429bc692b38d88d11f38ec40f43713576193558cd8ca6c239541b1dd7b8"
   license "BSD-3-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3802603d8a8f1cadf23ebd88778fdeff1a797cd6241cb0f7460e6784bba01971"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "8b7da823890abb6aa5b02742c2b75d104883781b2c58bc3ae45469e936fadb1f"

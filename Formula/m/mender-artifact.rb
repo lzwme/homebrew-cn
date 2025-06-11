@@ -14,13 +14,13 @@ class MenderArtifact < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "d9c42ade066c950f156d48249363f17ae1976ac3a4ff9cd511cff92bd57b02c9"
-    sha256 cellar: :any,                 arm64_sonoma:  "64a6cdafadb4b633f303a00fe2880fbd7a450a85c9586b2d246972c600917ec9"
-    sha256 cellar: :any,                 arm64_ventura: "b91a6a9767b4847fb9c954d1107b9b072f906137a767b22562e6faabe355e155"
-    sha256 cellar: :any,                 sonoma:        "515fbdff1f6d0ff7bbfed64647309df28c9021dbe2e85d80332782c2a30089bb"
-    sha256 cellar: :any,                 ventura:       "340b7365db24c4a352647eb37f50c589464585ac7d12b54ebab8037a2574a39e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "48b8f124a177b145ddea1a11bcc974408c634113177f3b4341bb758016c5fc55"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "80224c8592a5dc4827fa0a910636f7d34dcfd38bae207b5a4fdb2f948a0037b6"
+    sha256 cellar: :any,                 arm64_sonoma:  "de1ae9470958c874522781e728982d9cb122fb91433137084fa5a8f32f97f853"
+    sha256 cellar: :any,                 arm64_ventura: "36bb71ef0ae85788b6d791a694cc1fa1421998b0fcc6b393385f02b29d57c115"
+    sha256 cellar: :any,                 sonoma:        "99f483948f3b03f67872a6e376565e72847b01bf8c9ef88f5b9be054d8336ed2"
+    sha256 cellar: :any,                 ventura:       "c3a172ee1a0db147f6215f064a1c33cf0bb86d9ff8619236b35f9583574f1e3a"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07214f6a3d3292b02f755f8189fbb5acc54f57c3dba65ece86d8feb5a3506dd4"
   end
 
   depends_on "go" => :build
@@ -30,6 +30,12 @@ class MenderArtifact < Formula
   def install
     ldflags = "-s -w -X github.commendersoftwaremender-artifactcli.Version=#{version}"
     system "go", "build", *std_go_args(ldflags: ldflags)
+
+    # mender-artifact doesn't support autocomplete generation so we have to
+    # install the individual files instead of using
+    # generate_completions_from_executable()
+    zsh_completion.install "autocompletezsh_autocomplete" => "_mender-artifact"
+    bash_completion.install "autocompletebash_autocomplete" => "mender-artifact"
   end
 
   test do

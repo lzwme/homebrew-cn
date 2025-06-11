@@ -20,6 +20,8 @@ class Theora < Formula
     regex(%r{href=(?:["']?|.*?)libtheora[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 4
     sha256 cellar: :any,                 arm64_sequoia:  "19801e6ceb5c12db4621afff8746a3ef77581226559ec728c6c07a49659b23d3"

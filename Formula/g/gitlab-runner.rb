@@ -13,12 +13,13 @@ class GitlabRunner < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "73d1466c2b90dda3eb93583767756680416ab55ce049d4a02633df7b43e8e1a3"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "73d1466c2b90dda3eb93583767756680416ab55ce049d4a02633df7b43e8e1a3"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "73d1466c2b90dda3eb93583767756680416ab55ce049d4a02633df7b43e8e1a3"
-    sha256 cellar: :any_skip_relocation, sonoma:        "043f9f82c10e4529bcb6da5238fb219ce3ff440a90ffd3a5a376cf57208ca2ba"
-    sha256 cellar: :any_skip_relocation, ventura:       "043f9f82c10e4529bcb6da5238fb219ce3ff440a90ffd3a5a376cf57208ca2ba"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4e117cd8f01fee566da3ea7429dd28dbebdd411c882d98ed94bd668d790b62d9"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "499f68ed5ee27e70230e6e48ec4cbd603321b9b43248e81480c73c2efc057ff7"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "499f68ed5ee27e70230e6e48ec4cbd603321b9b43248e81480c73c2efc057ff7"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "499f68ed5ee27e70230e6e48ec4cbd603321b9b43248e81480c73c2efc057ff7"
+    sha256 cellar: :any_skip_relocation, sonoma:        "d8743302af7dc3a627a061500b532e178a779c8e80b54c97015006be9ca4d3c0"
+    sha256 cellar: :any_skip_relocation, ventura:       "d8743302af7dc3a627a061500b532e178a779c8e80b54c97015006be9ca4d3c0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "495e47f9cd7a8cd745bdb8cdcf85bbe058482b14e4091847e3d6f440eab7e837"
   end
 
   depends_on "go" => :build
@@ -32,7 +33,6 @@ class GitlabRunner < Formula
       -X #{proj}/common.REVISION=#{Utils.git_short_head(length: 8)}
       -X #{proj}/common.BRANCH=#{version.major}-#{version.minor}-stable
       -X #{proj}/common.BUILT=#{time.strftime("%Y-%m-%dT%H:%M:%S%:z")}
-      -B gobuildid
     ]
     system "go", "build", *std_go_args(ldflags:)
   end

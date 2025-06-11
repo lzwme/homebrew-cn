@@ -2209,6 +2209,7 @@ Homebrew-homebrew-core/Formula/g/gerbil-scheme.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gerbv.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gerrit-tools.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/gersemi.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/g/gerust.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/get-flash-videos.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/get_iplayer.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/g/getdns.rb, Homebrew/homebrew-core, 1
@@ -2853,7 +2854,7 @@ Homebrew-homebrew-core/Formula/h/hub.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hubble.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hubflow.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/huexpress.rb, Homebrew/homebrew-core, 1
-Homebrew-homebrew-core/Formula/h/huggingface-cli.rb, Homebrew/homebrew-core, 0
+Homebrew-homebrew-core/Formula/h/huggingface-cli.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hugo.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/humanlog.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/h/hunspell.rb, Homebrew/homebrew-core, 1
@@ -6402,6 +6403,7 @@ Homebrew-homebrew-core/Formula/s/spotifyd.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spr.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spring-completion.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/spring-loaded.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/s/sprocket.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sproxy.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/s/spytrap-adb.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/s/sq.rb, Homebrew/homebrew-core, 1
@@ -6963,6 +6965,7 @@ Homebrew-homebrew-core/Formula/t/ttyplot.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/ttyrec.rb, Homebrew/homebrew-core, 0
 Homebrew-homebrew-core/Formula/t/tuc.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tuisky.rb, Homebrew/homebrew-core, 1
+Homebrew-homebrew-core/Formula/t/tun2proxy.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tundra.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tunnel.rb, Homebrew/homebrew-core, 1
 Homebrew-homebrew-core/Formula/t/tuntox.rb, Homebrew/homebrew-core, 1
@@ -8523,6 +8526,7 @@ Homebrew-homebrew-cask/Casks/c/connectmenow.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/console.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/consul.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/container-ps.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/c/container.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/contexts.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/c/continuity-activation-tool.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/c/contour.rb, Homebrew/homebrew-cask, 1
@@ -8635,9 +8639,9 @@ Homebrew-homebrew-cask/Casks/d/datazenit.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/datovka.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/datweatherdoe.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/davmail.rb, Homebrew/homebrew-cask, 0
-Homebrew-homebrew-cask/Casks/d/db-browser-for-sqlcipher@nightly.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/db-browser-for-sqlcipher@nightly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/db-browser-for-sqlite.rb, Homebrew/homebrew-cask, 1
-Homebrew-homebrew-cask/Casks/d/db-browser-for-sqlite@nightly.rb, Homebrew/homebrew-cask, 0
+Homebrew-homebrew-cask/Casks/d/db-browser-for-sqlite@nightly.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/d/dbeaver-community.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dbeaver-enterprise.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/d/dbeaverlite.rb, Homebrew/homebrew-cask, 0
@@ -13322,6 +13326,7 @@ Homebrew-homebrew-cask/Casks/p/pagico.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/paintbrush.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/paintcode.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pairpods.rb, Homebrew/homebrew-cask, 1
+Homebrew-homebrew-cask/Casks/p/pale-moon.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/paletro.rb, Homebrew/homebrew-cask, 0
 Homebrew-homebrew-cask/Casks/p/pallotron-yubiswitch.rb, Homebrew/homebrew-cask, 1
 Homebrew-homebrew-cask/Casks/p/panda.rb, Homebrew/homebrew-cask, 1

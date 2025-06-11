@@ -6,6 +6,8 @@ class Tgif < Formula
   license "QPL-1.0"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "d25b56e8a0c3f77e501a9a9bb0e1214a0c50b28885be6971ad522d6d18bf54fb"
     sha256 arm64_sonoma:   "c50b1a8d587e78480c0b90da2aac56ff3439668b3d59fa44e2ba1ee1cc2a2674"

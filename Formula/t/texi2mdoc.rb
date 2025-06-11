@@ -10,6 +10,8 @@ class Texi2mdoc < Formula
     regex(/href=.*?texi2mdoc[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "9a769b9b0c164d2f296ef48c04dfa683a0605dbf55e93f12c34c273b9ca6f90c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "10e2d836d65a262b58228fd05b6b09a9d069d2b889905b36a81239fd646aec7d"

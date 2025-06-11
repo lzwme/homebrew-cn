@@ -6,18 +6,19 @@ class CodecovCli < Formula
   url "https:files.pythonhosted.orgpackages3a7e7d916fa02a49d1f16fbb74498bdb95d005d008eb9792626b2468336297cbcodecov_cli-11.0.3.tar.gz"
   sha256 "0a6d92f51bc6bfb3c5bb6b59722ba3c32e1325f2d23562b4596e2c93782cadad"
   license "Apache-2.0"
+  revision 1
   head "https:github.comcodecovcodecov-cli.git", branch: "main"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ae5bc3b78a59855aee46b5ee9fd52ee6e3231835efcdea86c9f387158784e783"
-    sha256 cellar: :any,                 arm64_sonoma:  "49ba9fa231e0617e9c2e3abbc6a095a1f5d51fadffb5dc79246474c45b337618"
-    sha256 cellar: :any,                 arm64_ventura: "b186dfd38f9294c5e6625b0fd36078ce03b647d4ba9c5a6a7be2c711a25257a7"
-    sha256 cellar: :any,                 sonoma:        "fefb9fbd5c877ab9eefcca55f4f132c2369f20067a2d90b699cbcd36ea46cdb4"
-    sha256 cellar: :any,                 ventura:       "c62567be4efcdcddb1ec8fb1e488c398d9ced423fb375e5f6df0ebc5d0304d80"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "95945bff50aeb41f49848e3e18315965b1a26255e6253a42dc19d2fb34ebcf15"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "18eefa5dfedbe8110a96595dbb628f598ddff483942feb9aa23b9a758d8a725e"
+    sha256 cellar: :any,                 arm64_sequoia: "5b5bd1526ecfb25b6d23954b95b21a56e15a8a9b972b731c3ea5aa051e2295c3"
+    sha256 cellar: :any,                 arm64_sonoma:  "fec967ee3ef0c8462db33a408060fe24fe2312348983bfd3b3974e092dce7453"
+    sha256 cellar: :any,                 arm64_ventura: "daeb99e7b149654e093c60e84ef205918d968376b620aba659f3e442818d3a84"
+    sha256 cellar: :any,                 sonoma:        "6c1e4bac47549d7d297ae3a34a5368604c25d987be28300239e4c9c2b5df5b83"
+    sha256 cellar: :any,                 ventura:       "bed3efb52068ac475f9f089a1edded15ad185d3dc64fbc169f5b2552e6b61828"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "a6b2732d5753b0ea53e465fce020c1f38517cd127cf657650e8802fa00ffa0f0"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c5266e46169fa78c2190466589d7d455d69824320153d9f7e29672409e459373"
   end
 
   depends_on "rust" => :build
@@ -55,8 +56,8 @@ class CodecovCli < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https:files.pythonhosted.orgpackagese10a929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "responses" do

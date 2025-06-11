@@ -6,6 +6,8 @@ class Umockdev < Formula
   license "LGPL-2.1-or-later"
   head "https:github.commartinpittumockdev.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_linux:  "ca0cdf39df6bd2a6520a838d7c72945674574019b48b7863f31df0e4e5d67234"
     sha256 x86_64_linux: "7ad4f20e560ca3dbff215a5780424964b2773b4f8f10269cab867ffaa5dbb86d"

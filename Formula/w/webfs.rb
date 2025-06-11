@@ -11,6 +11,8 @@ class Webfs < Formula
     regex(href=.*?webfs[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 arm64_sequoia:  "3291625be9eb1abecfaf361089d2cfcd6ae76f8123cd08280b2e8d41d176686c"

@@ -28,6 +28,8 @@ class Wrangler < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4765b14d43dcbbd7362daed20ef277ee4f07e2d7a1c44abe9c3a87ba9eb61440"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "104fedfdf25f93ef4f3c304d79c9b98f99f0e40b5dee425374b98cf70d355995"

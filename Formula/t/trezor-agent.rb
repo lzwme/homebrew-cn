@@ -11,6 +11,8 @@ class TrezorAgent < Formula
   license "LGPL-3.0-only"
   revision 6
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 3
     sha256 cellar: :any,                 arm64_sequoia: "d30a423e7bb16cb85bd82c747656b8cf5f565f22322153f65e3f680c599b943b"

@@ -6,6 +6,8 @@ class Tiff2png < Formula
   license "ISC"
   revision 3
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "d8e03677d759133baf47f323bb3ca630c65cc7c66e53809ae8cb2458ea6e65c5"
     sha256 cellar: :any,                 arm64_sonoma:   "02a4646315bc8a2391938a856635056e7b64b372b6c2607960911eb772229bf1"

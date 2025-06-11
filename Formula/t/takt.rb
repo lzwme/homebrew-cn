@@ -6,6 +6,8 @@ class Takt < Formula
   license "GPL-2.0-or-later"
   revision 2
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "89999aa891436126770e5d390013ec55a9f2eff6e569e046443de74b9cd648d5"
     sha256 arm64_sonoma:   "9cf5685481804bc8482d1f8d9eaa3b7e41465e70e8d04662e81243d9ac139aef"

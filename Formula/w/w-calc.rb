@@ -6,6 +6,8 @@ class WCalc < Formula
   license "GPL-2.0-or-later"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "6e58f6ee9e2c2996498fbdefc112993bf9462421d1523e46360eebd7fbb975c8"
     sha256 cellar: :any,                 arm64_sonoma:   "22c9fbdad127cb9d4a7bb8cdf77a9a42a07e3849e222e16004ceff2b9a913b97"

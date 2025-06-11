@@ -11,6 +11,8 @@ class Tcping < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b43eafbc84776f3718d8fdcad688ca581d2b3e74de5de6f199d6af57ed810930"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "3658deb0ed9da1938d4c2a6c4336fdc51ac8a2037365a9b9b19708d5c16d7cd9"

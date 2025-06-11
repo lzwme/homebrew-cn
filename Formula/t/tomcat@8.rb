@@ -6,6 +6,8 @@ class TomcatAT8 < Formula
   sha256 "163abe51289dd09dc375791888d6f2d5508c06050548dc4fc7700251f4bebaca"
   license "Apache-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "8704ee4ff0be3b0acdadf62c2fd3fd8aaf12944b49f2a2621886b8f935ed397c"
   end

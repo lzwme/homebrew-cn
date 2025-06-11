@@ -10,6 +10,8 @@ class Yamcha < Formula
     regex(/href=.*?yamcha[._-]v?(\d+(?:\.\d+)+)\.t/im)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "1291bdd640d66cfbbe073862038e660ada3fe9377d3386db32dd56967ee23d5f"

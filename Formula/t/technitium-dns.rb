@@ -5,6 +5,8 @@ class TechnitiumDns < Formula
   sha256 "37ade6327dc63700b4a63db6347d3174112d8ffcb817645073f7e5e114e76400"
   license "GPL-3.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "a501489591cd182a2acd46fa546b3cd716eed5fa2009c5943a76340e2198c666"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "047ed2ef79d6f7b05619f0573e3f1a1bc60d45220ae23e40b0b5e851b291250a"

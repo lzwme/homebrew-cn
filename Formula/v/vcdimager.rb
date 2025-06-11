@@ -7,6 +7,8 @@ class Vcdimager < Formula
   license "GPL-2.0-or-later"
   revision 2
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "2dbaab4b58479eca7337c3648f97c5f77bb8fb2ee40fd065b931215a16d52330"
     sha256 cellar: :any,                 arm64_sonoma:  "3b3614dbce9b743fb1f7e31e2dfdd0a59ac7949277c5fb712c09d0fbdef0751d"

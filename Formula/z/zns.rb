@@ -6,6 +6,8 @@ class Zns < Formula
   license "MIT"
   head "https:github.comznsclizns.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "6b44e23dcd5f00ee7363edded2f65a8cff2e348a89af0ed97c267278625e285d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b44e23dcd5f00ee7363edded2f65a8cff2e348a89af0ed97c267278625e285d"

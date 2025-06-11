@@ -11,6 +11,8 @@ class Zboy < Formula
     regex(%r{url=.*?/zboy[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "cb8335a141f8e9a964288509aa204bee9b9a1672286ce0c97e236af7c8afc6a6"
     sha256 cellar: :any,                 arm64_sonoma:   "16735e77d0184557a36d147ba19935ef2ddf048a6cad3d63efe90c72065a8c4c"

@@ -11,6 +11,8 @@ class Unyaffs < Formula
     regex(/href=.*?unyaffs[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ec8fe9164edaf17dc336a0dc203f5955d17692fa22f508cfe04f4cd87921a85c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "992ddb8ed826d693a43e89852d2a913e79547240910233975d83660b66f88835"

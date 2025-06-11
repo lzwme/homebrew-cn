@@ -6,6 +6,8 @@ class Wdfs < Formula
   license "GPL-2.0-or-later"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_linux:  "d5bef8c1e794e7fb184f7a04210de8a0e1d4e409ef20317d091abc2e6d4db08b"

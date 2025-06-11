@@ -6,6 +6,8 @@ class TerrapinScanner < Formula
   license "Apache-2.0"
   head "https:github.comRUB-NDSTerrapin-Scanner.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "3d313ceecb351ed4b58d37e59fefe4092122577466cf8df2eb21fac0aca78514"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e7f6c8f5b37b3e428566572156b3b2aafd3cbae6b682bb816e2a7383d12b3e87"

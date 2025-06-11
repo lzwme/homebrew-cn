@@ -5,6 +5,8 @@ class Wsk < Formula
   sha256 "cafc57b2f2e29f204c00842541691038abcc4e639dd78485f9c042c93335f286"
   license "Apache-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d021a20a2281bc21cc5e1512fc566d655403d2e807b65108998766d9f2439db5"

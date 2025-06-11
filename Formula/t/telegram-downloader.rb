@@ -6,6 +6,8 @@ class TelegramDownloader < Formula
   license "AGPL-3.0-only"
   head "https:github.comiyeartdl.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "99d307605dc690de7501f0bafafc35731bb575a3c21b92e786fbd66aab3ebb2c"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "fbb286bc65050ea2f360cc19265521fb44282a47371b5522946b56eecdf99aa7"

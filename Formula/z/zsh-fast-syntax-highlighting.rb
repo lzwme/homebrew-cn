@@ -6,6 +6,8 @@ class ZshFastSyntaxHighlighting < Formula
   license "BSD-3-Clause"
   head "https:github.comzdharma-continuumfast-syntax-highlighting.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "2b63cd29b30d65b5f15e12a53ecf2b8f78b8eae1e0a32ac5761d88933cb00ad8"

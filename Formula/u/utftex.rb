@@ -5,6 +5,8 @@ class Utftex < Formula
   sha256 "c50a44e33eba551526ff553c0af0bdd3f3a219d8ed60f11fcd9d7b30cd028af1"
   license "GPL-3.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "2600f08ffa67d205a11c72fb8edaa16bc5b25e0b1ef5b6a7d88e4dbee325d7cf"
     sha256 cellar: :any,                 arm64_sonoma:   "fcefa68f71397e48ca164144e5c78eacc458462b440ee3406379e8fc281b0b5e"

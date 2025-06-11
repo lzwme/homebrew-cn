@@ -5,6 +5,8 @@ class Tunnel < Formula
   sha256 "7a57451416b76dbf220e69c7dd3e4c33dc84758a41cdb9337a464338565e3e6e"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "847dc0c5ba0c3db3aa8f83cb4af3632bda3fa9bebd5a6a751c0d93a747575f7e"

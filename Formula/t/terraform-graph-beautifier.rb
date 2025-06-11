@@ -6,6 +6,8 @@ class TerraformGraphBeautifier < Formula
   license "Apache-2.0"
   head "https:github.compcasteranterraform-graph-beautifier.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "e0baf8c158de8191e5c9cbbd0c77397e78d000045857e37784c3dd73cc9e042b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "dcc2b1e8bb7321d175baf7210354cd1985c2caf162445b0ad0bb89edf0f9277a"

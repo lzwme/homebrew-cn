@@ -5,6 +5,8 @@ class Waon < Formula
   sha256 "75d5c1721632afee55a54bcbba1a444e53b03f4224b03da29317e98aa223c30b"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "10296a60dfeda8e84d9d66f0bbce71ca7072f3a108936537aedabb4108f1e9bd"
     sha256 cellar: :any,                 arm64_sonoma:   "7b3a144f5378ada22f1510604e3c49057031d6003769d97ccb8deee748b874e5"

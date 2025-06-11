@@ -7,6 +7,8 @@ class Ubertooth < Formula
   license "GPL-2.0-or-later"
   head "https:github.comgreatscottgadgetsubertooth.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia: "fa7215f06163e3333e33b92dd89476ced1eaa8f7ca3c2f5e790494832cb73cac"

@@ -6,6 +6,8 @@ class Termbox < Formula
   license "MIT"
   head "https:github.comtermboxtermbox.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "571090957f2e0ff1cc0bf2f15802e7e1585e769e14ebdaf2fd6ac649d5a26602"
     sha256 cellar: :any,                 arm64_sonoma:   "4f40420e806ed17a377452472803016909039a1d5054483e14bde23583ca2ea8"

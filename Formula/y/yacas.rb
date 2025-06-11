@@ -5,6 +5,8 @@ class Yacas < Formula
   sha256 "36333e9627a0ed27def7a3d14628ecaab25df350036e274b37f7af1d1ff7ef5b"
   license "LGPL-2.1-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fc6a29cf051c3fe413734f62fe49f1e06cbc42e8243e79ed514848dea52304a8"

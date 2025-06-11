@@ -10,6 +10,8 @@ class X8664ElfBinutils < Formula
     formula "binutils"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "2afacd61b85a74db24bf4d3f307e9c18ca5b7144c5d79d00db82c7f3e5d1add6"
     sha256 arm64_sonoma:  "4215b24625bf23b01a6e6a1d667f812794784f3a58b7045568f63807a1663f9c"

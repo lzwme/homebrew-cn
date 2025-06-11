@@ -5,6 +5,8 @@ class Xeyes < Formula
   sha256 "0950c600bf33447e169a539ee6655ef9f36d6cebf2c1be67f7ab55dacb753023"
   license "X11"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "819f815762f42fe4c83c16a8ab3b52374e86f5769012e7ad063b0f024348ebb0"
     sha256 cellar: :any,                 arm64_sonoma:  "e52653dc93b15317743e62242e8f034644dae383e6ceb60fa68fc6427e2e0ff1"

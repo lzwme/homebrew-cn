@@ -11,6 +11,8 @@ class T1lib < Formula
     regex(href=.*?t1lib[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256                               arm64_sequoia:  "b13bdc384d062e0a30c75b4ec280865e39273acb787acf872d98a416a5b08ffd"

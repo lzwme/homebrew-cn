@@ -10,6 +10,8 @@ class VoAmrwbenc < Formula
     regex(%r{url=.*?/vo-amrwbenc[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "fec91381e714f851e4215e99f160daeeb8844fe28ac28bb86f4de6076eb7db1e"
     sha256 cellar: :any,                 arm64_sonoma:  "2b42ddf93167c6e68a0ff075380b69d1b03b9ead3125cf392571578c282ca677"

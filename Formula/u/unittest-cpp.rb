@@ -14,6 +14,8 @@ class UnittestCpp < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "8477bf1fd9cd1f227c003d267c92492e60b169896c2e9e04b23ba7473b89201a"
     sha256 cellar: :any,                 arm64_sonoma:   "618082a8d57ee7c5a285bd1f2e8fffc2edc76ba703e0764baf13f34236d44813"

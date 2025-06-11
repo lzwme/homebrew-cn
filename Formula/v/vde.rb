@@ -6,6 +6,8 @@ class Vde < Formula
   license all_of: ["GPL-2.0-or-later", "LGPL-2.1-or-later"]
   head "https:github.comvirtualsquarevde-2.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "1e3ffe05a0f354b3909f74d3374fc036156c438147f5ac8dd34a8f747071e9f8"
     sha256 arm64_sonoma:   "3d2231810ad7229ba6a68178d648ab1f13bdfe50b214cb2d299d644d66e03762"

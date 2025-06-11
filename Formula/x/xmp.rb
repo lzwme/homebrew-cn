@@ -5,6 +5,8 @@ class Xmp < Formula
   sha256 "dc54513af9a4681029a1243fd0c9cdf153d813a1125de6c782926674285bc5ae"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "656fb3759733a4e097ca973439b9ed791ddfeb768bbbe8203b9aa5684bb5883b"
     sha256 arm64_sonoma:   "95c30bbd87a818cdc81a4a90f27ba11585c5e11ddebfa5bc552e20246a4ab26c"

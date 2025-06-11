@@ -6,15 +6,16 @@ class Cycode < Formula
   url "https:files.pythonhosted.orgpackages98e10b87e092c2a05a193628b9f28fb4f243f2498f87a726b2262aae67e92e30cycode-3.1.0.tar.gz"
   sha256 "de26d4df0f6a92df89923c87c6c46d244d944d2a092ea4a661ee866092fccb84"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "ccdf2ac8b9cbc779478d440af41b2d68621fbc4fec8b8f6843c6ed980d4c7558"
-    sha256 cellar: :any,                 arm64_sonoma:  "ca44ac6a45cf7a1f4a93a71fb386db72c187dcde171d3f5f0318bb9fba4bac40"
-    sha256 cellar: :any,                 arm64_ventura: "11ef35c19cd66c7dfedfce79899f18d8e7b90de3d72ebb2705b0edf8cf47897a"
-    sha256 cellar: :any,                 sonoma:        "034dc7c513cf3e4f9311bcb2223e05ed6eda4993bd839efce74b83961ea5a958"
-    sha256 cellar: :any,                 ventura:       "08d72c480d918a3e1f79eb7178ebf3aaa345aaf3d40ec2fdd178d68bdff88dc8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "96788e34ecc42425c2092e2da0a67d5f70aae52bf9629bb77bc358721703ff3f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b11fb900d0debb317a6e10ec4d88024fa814e53efb4959e878a3450aac826113"
+    sha256 cellar: :any,                 arm64_sequoia: "d8256c7cad464c9dcf03709ffe984ceeb49d5457e20ef83ccd360dd21ab1c328"
+    sha256 cellar: :any,                 arm64_sonoma:  "120feb325d4f26cf9044be31f676df468bdc5b0315c2a1210677a3aa00b65231"
+    sha256 cellar: :any,                 arm64_ventura: "f7625b6f93d23574b55583fbcfb8f2fd50efaa92bf6cb18968f94100618e14d2"
+    sha256 cellar: :any,                 sonoma:        "c38883e8a4ea5cd80e390950f6ba4ed896c24ed69290fb57aad23c29dc814cdf"
+    sha256 cellar: :any,                 ventura:       "f3e700e27dd382bfa91aba28afdc319834f0a1becb557893896e04f0512f553f"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e3662b040eccb1c3a378c7bcda31d5468e48391cf8fafad09036dafd9744b36d"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "940b0749abc389d80a83c75fb6458fd12492e25d4103742b1b7ebc75be3eb551"
   end
 
   depends_on "certifi"
@@ -112,8 +113,8 @@ class Cycode < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https:files.pythonhosted.orgpackagese10a929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "rich" do
@@ -157,8 +158,8 @@ class Cycode < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesf63723083fcd6e35492953e8d2aaaa68b860eb422b34627b13f2ce3eb6106061typing_extensions-4.13.2.tar.gz"
-    sha256 "e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef"
+    url "https:files.pythonhosted.orgpackagesd1bc51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5typing_extensions-4.14.0.tar.gz"
+    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
   end
 
   resource "urllib3" do

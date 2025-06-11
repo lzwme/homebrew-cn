@@ -1,19 +1,19 @@
 class Anyquery < Formula
   desc "Query anything with SQL"
   homepage "https:anyquery.dev"
-  url "https:github.comjulien040anyqueryarchiverefstags0.4.1.tar.gz"
-  sha256 "31b3fa6506aadabda9b53c977964d7548602a7311acacb6f407f09a78d6005ca"
+  url "https:github.comjulien040anyqueryarchiverefstags0.4.2.tar.gz"
+  sha256 "fd7a249965fa4cb014629772fa4d9c79acb823c89f73fb68c9c1361a08cd11c6"
   license "AGPL-3.0-only"
   head "https:github.comjulien040anyquery.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "b363cd009398d2392c99117f66858a2e4c8a4500d45cfe3625ead058cb09bea9"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7c9394f9d0e66ed4b3ad67b3ca08a632c41233d4b4fa04131c38697c4be76214"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "44bbaf4e254068d5e88da2bfefff78fd29e45fa7311a51282bee8ab42ebaa03b"
-    sha256 cellar: :any_skip_relocation, sonoma:        "627ac11a9ad4c6c243e4a6306ff5f53b6f1d37355c23a4fae3e7fcccf1ea3636"
-    sha256 cellar: :any_skip_relocation, ventura:       "83bccaa1b8a214c6e371bef27b982757f21d9c1bad4cf59bf010b80c74749ed8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f1c6b705f45ce8dee3bd1a1c0dc01b22768a462e71ab3f4d8539471c8772715e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1bc174f34b9a509d9876d2d4902b2f5ea3ca5643b29af184f73fdcb5bd280a9a"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "633ae2407073601f460b229f3beb084266437459fe714f69bd59e131d64e7f13"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6b17f457620eb7440cc85dc95fa8459f99b2c4f12fbb6da748b8877c7897f699"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "9b785e0818e53eb11abb3e696fab37b0e80c7a866633fc3657e6b3e9434cdec3"
+    sha256 cellar: :any_skip_relocation, sonoma:        "073ebafdfab0932bf134f30913180ef678975665d9f8f983f61eedb60a299d9f"
+    sha256 cellar: :any_skip_relocation, ventura:       "996619f831a41f6af4a848ba472d93582fbcfbebde6b5f4e679777b36b186fae"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "e201c0565a68397dddb0f0bcdb5c03a60b1c089013c4c0d38301469c8ceaedd2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a3eab4be29633cec4a71c15468b49637323b4dbe443ba48b2016acec244a77cd"
   end
 
   depends_on "go" => :build

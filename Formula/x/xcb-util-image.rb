@@ -5,6 +5,8 @@ class XcbUtilImage < Formula
   sha256 "0ebd4cf809043fdeb4f980d58cdcf2b527035018924f8c14da76d1c81001293b"
   license "X11"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "e7ebd7a81c36003239f80b1fdd67650d6eee527482e2f2f70edc14b631f77224"
     sha256 cellar: :any,                 arm64_sonoma:   "237ce9305294166d1dbd5348b95e75c577511c7b4e69d0203905c86ff5b1ed48"

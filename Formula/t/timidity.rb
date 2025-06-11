@@ -11,6 +11,8 @@ class Timidity < Formula
     regex(%r{url=.*?TiMidity%2B%2B[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "8e504bb7f36e5feae11358a05aaa0b9651b84cc60664d4d8199c6c72c07d13c4"
     sha256 arm64_sonoma:  "faa51ccbf4324d22f47660879db054f204dd19fd7d18361a4e8bc207b261ae10"

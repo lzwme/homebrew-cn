@@ -6,6 +6,8 @@ class Xe < Formula
   license :public_domain
   head "https:github.comleahneukirchenxe.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "41b532af620346e9afe4665a07ffe03f81110990f9fa032ddc4b7a84926bf36f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "16095f122ae4444d568eea11511c33f99c7b0760655af5b245d6f21bfad2f1d0"

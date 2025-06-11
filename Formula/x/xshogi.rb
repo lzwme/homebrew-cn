@@ -7,6 +7,8 @@ class Xshogi < Formula
   license "GPL-3.0-or-later"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "efa3ef60e9dfadad1ec9f16f37ebf800c787fb8d0d605be1bb2dbb41143bb1ec"
     sha256 cellar: :any,                 arm64_ventura:  "656249206d9b9972cf307f04b4068f8a442e519c73e64536359d80bf64c117c1"

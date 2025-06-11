@@ -10,6 +10,8 @@ class Traildb < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia:  "6855e108a52b0df9a4f13492f09ccf0d8ae7efcb2b25441f88a9d1e214137c4c"

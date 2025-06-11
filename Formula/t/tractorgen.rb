@@ -10,6 +10,8 @@ class Tractorgen < Formula
     regex(href=.*?tractorgen[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "e2bedfd7170837438de7a29894660b3ae2e9c885167792ef3521a19e419c9e91"

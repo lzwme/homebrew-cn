@@ -14,6 +14,8 @@ class Tmpwatch < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "593b95beea81c8d5c890fd6bba09e14033619d8d7cdd7de4fe3d703040cbdd72"

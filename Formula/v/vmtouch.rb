@@ -6,6 +6,8 @@ class Vmtouch < Formula
   license "BSD-3-Clause"
   head "https:github.comhoytechvmtouch.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "71ea80f43e78935336818c646b4561db14301e5590d0e726f221a944cb9efb73"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "af6dca4823cffd3272dce9a60743bfe9d7fd9a8bd467b3ae55ba370b8bb37d00"

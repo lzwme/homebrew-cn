@@ -5,6 +5,8 @@ class Xmlcatmgr < Formula
   sha256 "ea1142b6aef40fbd624fc3e2130cf10cf081b5fa88e5229c92b8f515779d6fdc"
   license "BSD-3-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a5001b714208e85e53c79584088d9f1d710f82e450119e27ab4a4cd037f914b3"

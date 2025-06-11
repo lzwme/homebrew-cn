@@ -23,6 +23,8 @@ class Wownero < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "e853a94c2180d3369de8bb4f5d04cf7ffea7736b3d1d53f17c69b7bfc3275982"
     sha256 cellar: :any,                 arm64_sonoma:  "89cc4a6b275adf3f8e97f36e8cbfa545bf7b892f6e0f26575e47f936cc816fa9"

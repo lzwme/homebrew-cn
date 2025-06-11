@@ -12,6 +12,8 @@ class Udunits < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "8ba9d3ce2f87072bd50d40063a6db63a456ec9a934d381002d1c31587c0e10b1"
     sha256 arm64_sonoma:   "bb3b99a3627d9008b70648de70aee2014444eebc0eac4ad50d2cec00c4260a62"

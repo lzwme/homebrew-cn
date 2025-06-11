@@ -14,6 +14,8 @@ class Wandio < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "685add7045c60ef524de06b753866b39fcb9a35b25dc57041609b8661b2bf545"
     sha256 cellar: :any,                 arm64_sonoma:   "3653ed92c97fe1d0574bb854a16e54fce8c25740a75aaf6989bc065fbfe5477b"

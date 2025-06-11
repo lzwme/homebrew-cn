@@ -10,6 +10,8 @@ class Unittest < Formula
     regex(/href=.*?unittest[._-]v?(\d+(?:[.-]\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "21c093f62ed5f62198f1a5275ea0e1793db566cdf0b6893e0a153a84ed41253f"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "22d12ce92d27e2c6b3b1c137d6193c4295c6aadb4dd658fe0ee10822ca130367"

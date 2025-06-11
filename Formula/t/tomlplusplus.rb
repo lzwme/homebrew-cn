@@ -5,6 +5,8 @@ class Tomlplusplus < Formula
   sha256 "8517f65938a4faae9ccf8ebb36631a38c1cadfb5efa85d9a72e15b9e97d25155"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "3934d4a98565c6b3161550033341f13c4e74085b3de259e57f09007c5a03b940"
     sha256 cellar: :any,                 arm64_sonoma:   "40067a1ffc31cf6fdcb26161a1809b815a8d82a63afdf93232dd81521329e05d"

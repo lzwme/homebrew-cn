@@ -5,6 +5,8 @@ class Whatmask < Formula
   sha256 "7dca0389e22e90ec1b1c199a29838803a1ae9ab34c086a926379b79edb069d89"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a035d42b3734e84e406d28c3bcb1bddfb63f8551c4aaec6bfe3c9e049928e45e"

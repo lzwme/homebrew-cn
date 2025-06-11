@@ -10,6 +10,8 @@ class ZitaConvolver < Formula
     regex(/href=.*?zita-convolver[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "4426fc8a54e7e24fa6227c1b38a0f0a8ad3d0957244ea5e29e1092b28f7cade5"
     sha256 cellar: :any,                 arm64_sonoma:   "5b3e06cb4fc6b39c91d964d8a5f960aa7c8a2715907978b26d6d6ab25c4705bf"

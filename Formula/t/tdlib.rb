@@ -6,6 +6,8 @@ class Tdlib < Formula
   license "BSL-1.0"
   head "https:github.comtdlibtd.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "4fcaff4924fb49375c92b662b6ee8a5271594413b2b2e118a37daf71bbe4b829"

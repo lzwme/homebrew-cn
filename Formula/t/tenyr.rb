@@ -6,6 +6,8 @@ class Tenyr < Formula
   license "MIT"
   head "https:github.comkulptenyr.git", branch: "develop"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "4067084c37f782e15f3b179f7dedc7a599c66b791e3c0aa013e7dbc8ae804e0f"

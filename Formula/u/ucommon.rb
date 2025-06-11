@@ -13,6 +13,8 @@ class Ucommon < Formula
     regex(/href=.*?ucommon[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "8d1eb9d2f6984eb37ce94f421122cdddce8070132ddf9b911dae8ed69accadea"
     sha256 arm64_sonoma:   "aef98eb17b5948c37b54052b5695cbc7de0e3ebfed947973ccf5df6bc99280db"

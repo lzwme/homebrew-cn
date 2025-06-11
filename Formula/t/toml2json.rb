@@ -6,6 +6,8 @@ class Toml2json < Formula
   license "MIT"
   head "https:github.comwoodruffwtoml2json.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c236bae5e89882b86de4a4432cd45c265e52b120cfb92f5df4668a7d5d5ae28e"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e916b159e93d256b232b7e05b9c70fd8efed7fcf90ba0e54f8fa1d47660fdc96"

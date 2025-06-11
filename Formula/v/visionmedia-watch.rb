@@ -6,6 +6,8 @@ class VisionmediaWatch < Formula
   license "MIT"
   head "https:github.comtjwatch.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a1230c8458404ec82ba7142d81abed0964e482842427e0860bdd0590cc25ad88"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7ae623768a63f7e3c72abb3bc6b06dbcefad5c698195d8298b2e89de2cd04d63"

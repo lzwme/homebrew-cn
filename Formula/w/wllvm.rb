@@ -8,6 +8,8 @@ class Wllvm < Formula
   license "MIT"
   revision 1
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 5
     sha256 cellar: :any_skip_relocation, all: "1f51172a70e011c1666255f2ace6d910d573681b83d50c31b551616dce265e6b"

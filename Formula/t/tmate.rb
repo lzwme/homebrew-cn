@@ -16,6 +16,8 @@ class Tmate < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "b27b6f267188c6bd851cf061dc7fabf97a127c7930a57070cb46caf0333ef71f"
     sha256 cellar: :any,                 arm64_sonoma:   "1d2e440f793063b6f35862278723efe92afdbe5bab8a23bff6bf122b3f6a61f9"

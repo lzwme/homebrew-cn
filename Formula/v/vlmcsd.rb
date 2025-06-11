@@ -7,6 +7,8 @@ class Vlmcsd < Formula
   license "LGPL-2.1-or-later"
   head "https:github.comWind4vlmcsd.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "42bed0ef59c540a54cc77bf71002b8229414ed077be0bceecd568fe37b33a4be"

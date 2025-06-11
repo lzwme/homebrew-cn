@@ -6,6 +6,8 @@ class Tfocus < Formula
   license "MIT"
   head "https:github.comnwiizotfocus.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "b5dbfaf820e34ef9e6bb04d45a1d277fea9a27cda78fed88ae90f3686efa0006"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "c72c12d7d0620fe84de30e04a49bdd1c98961891ec81267b95957c3dbc5dfbeb"

@@ -10,6 +10,8 @@ class Zsync < Formula
     :public_domain, # librcksum/md4.c, libzsync/sha1.c, zlib/inflate.c
   ]
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "242e3632a7cacc43f4b909c69bea7ae3c850921189867c6f6980523fea4f0364"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eae952647fec12661f80edba535420196912e3fce0c3e3272e8584993a53df39"

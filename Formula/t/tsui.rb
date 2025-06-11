@@ -6,6 +6,8 @@ class Tsui < Formula
   license "MIT"
   head "https:github.comneuralinkcorptsui.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "d3ca9c93120f6fb18fa2450a484d7ec1010c07b278303764c6e190465d56b0ea"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d0194b896a9a93fc431be42723304fda6a1387587994f816979858f5572959d3"

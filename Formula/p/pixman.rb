@@ -1,8 +1,8 @@
 class Pixman < Formula
   desc "Low-level library for pixel manipulation"
   homepage "https://cairographics.org/"
-  url "https://cairographics.org/releases/pixman-0.46.0.tar.gz"
-  sha256 "02d9ff7b8458ef61731c3d355f854bbf461fd0a4d3563c51f1c1c7b00638050d"
+  url "https://cairographics.org/releases/pixman-0.46.2.tar.gz"
+  sha256 "3e0de5ba6e356916946a3d958192f15505dcab85134771bfeab4ce4e29bbd733"
   license "MIT"
 
   livecheck do
@@ -11,13 +11,13 @@ class Pixman < Formula
   end
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6d08a20cf16a9f69e925000085b4062501df3c8838b25284a7a5733608fd944a"
-    sha256 cellar: :any,                 arm64_sonoma:  "bb33e3bd843674caaa950a8709d05642098e812eca15c31857a43433ed90ba25"
-    sha256 cellar: :any,                 arm64_ventura: "3d828f7c89d6c86df8e446f236491d601568b57b7a921c8638bc7b2a624c4d9d"
-    sha256 cellar: :any,                 sonoma:        "c2d900dfd371707c26fd4cb0cc39d1cacecfad46996c7221a7cc076f187d3d5f"
-    sha256 cellar: :any,                 ventura:       "ba2d352ce10d31e30df0f902a726e7b57937768844a75452f93cb7cc7b80649f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "41be5dc73da1641d3c1a717cf63080e5d905038afa6a0db9d672e5eb8a009595"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "7db0ed1a87555ff2b1327d980ab335f6f1ee6c6008be640b16a3fe51b0b48ad2"
+    sha256 cellar: :any,                 arm64_sequoia: "562fd713cba6bd2d1b67efc0985e25a0540243c6af8bcfb1add2c59e79a6a4c6"
+    sha256 cellar: :any,                 arm64_sonoma:  "c987aaa3c13f36ba7f1d09b7c6e1551caca2b766a8a3483ee78f1be6af099904"
+    sha256 cellar: :any,                 arm64_ventura: "d95aaa640c1545ca252fc63356c15ac1922cdf12a1b3b53c0a7cc81d37f56d6b"
+    sha256 cellar: :any,                 sonoma:        "e36b4e62524a998dfcba997b3e827537ef8179df9f9c558e203476cd264e2c9f"
+    sha256 cellar: :any,                 ventura:       "76bf47b17df80924d7e3e181756bc4b626726fb3edbb64712f8efaf3a9084390"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "b0348b9a6b322df730a5b2d6486f48ab5ffa7417bfb7d82470159c8c25f3bd9e"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "dae8493d70813d203b6e05abbf9297edff4c5b94320fe74492198f9169930f09"
   end
 
   depends_on "meson" => :build

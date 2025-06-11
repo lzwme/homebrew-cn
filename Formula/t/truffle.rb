@@ -5,6 +5,8 @@ class Truffle < Formula
   sha256 "bbc24698fc9964cd80acc8952500f708ef18984096eba9e75f40db3486392347"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256                               arm64_sequoia:  "faf61c11f0243979a4bed2ebccbfc71cd540b1d72faded9b7bbfc871bbd8ae74"

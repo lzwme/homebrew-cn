@@ -5,6 +5,8 @@ class Veraxx < Formula
   sha256 "9415657a09438353489db10ca860dd6459e446cfd9c649a1a2e02268da66f270"
   license "BSL-1.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "99507020d8491dc44e6404d4d2d859ec8f05270afd4aef8b75f5f1ebb04be413"

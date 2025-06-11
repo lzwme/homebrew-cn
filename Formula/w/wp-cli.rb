@@ -10,6 +10,8 @@ class WpCli < Formula
     strategy :github_latest
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "087f15d5afa17ba4483aec086b2945d0dcd477a55987775862fcabe5902ce8ab"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "087f15d5afa17ba4483aec086b2945d0dcd477a55987775862fcabe5902ce8ab"

@@ -6,6 +6,8 @@ class TtyClock < Formula
   license "BSD-3-Clause"
   head "https:github.comxorg62tty-clock.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "7068bc510258482b8643c72d3cd98e5aeb11ec1c870a4f843b4dab323adc5437"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "d9d3a157ca3d9c96d55c96e377ce0adf1033d388971438793fce2646976d5ab2"

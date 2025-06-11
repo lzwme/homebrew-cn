@@ -11,6 +11,8 @@ class WithReadline < Formula
     regex(/href=.*?with-readline[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "64699e89e796bf016bb6754677c5a76f881111becdbbea0ae532de8e9f398932"
     sha256 cellar: :any,                 arm64_sonoma:   "5aeb8225f4f4897af246a0e1b4042375539336d0b80721968d50f4760157b5e2"

@@ -11,6 +11,8 @@ class Wv < Formula
     skip "Not actively developed or maintained"
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia: "f43fdf4000603806925c2d0e26fdb5d3f5d6be5c435478964c8dce92484784a3"

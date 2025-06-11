@@ -7,6 +7,8 @@ class Wxlua < Formula
   revision 1
   head "https:github.compkulchenkowxlua.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "5ab53a21ffd382cb7d53a884b4eb09df5484c36d106c452f03c75f8841726d5c"
     sha256 cellar: :any,                 arm64_sonoma:  "c00c2ef44ed734d26861a29d800555455f86c7fd8d846f12ecc6b4f0d151bd37"

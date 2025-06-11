@@ -10,6 +10,8 @@ class TaskSpooler < Formula
     regex(/href=.*?ts[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ec87fc500e93595c87fc6624bd6321ce23f58e72c3b6050992e6d0f0856f24b2"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4f452fc17ad06bee57a2b4ea77cc8f8dc353f75de71ff41220675f1d89db96fd"

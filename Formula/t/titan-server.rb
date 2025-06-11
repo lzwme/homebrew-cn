@@ -6,6 +6,8 @@ class TitanServer < Formula
   sha256 "67538e231db5be75821b40dd026bafd0cd7451cdd7e225a2dc31e124471bb8ef"
   license "Apache-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ad979abf4355375d61b23ec670d548680090f6d8ce4616c00f6c039fa99a1838"

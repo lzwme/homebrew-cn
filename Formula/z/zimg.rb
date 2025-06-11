@@ -6,6 +6,8 @@ class Zimg < Formula
   license "WTFPL"
   head "https:github.comsekrit-twczimg.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "16b38c35a093542456e5c026cb464df27ebe509eb857696cbfbb6146708e5cd1"
     sha256 cellar: :any,                 arm64_sonoma:   "1a08f06a0a7fc2a23266a03e8afd63759f99f3a0041d1503fafc5ce9410df8dc"

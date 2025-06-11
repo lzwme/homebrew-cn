@@ -5,6 +5,8 @@ class T1utils < Formula
   sha256 "61877935b1987044ddff4bb90a05200ca7164678a355e170bf5f1a5556cc9f29"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "bd84184aade118b7cbf5d85bf3f4265405a7120e4551f6fff8461fef9048abb7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "a516ec13b48bdbfbdf2265ca8bd31425936bb0a1f17868325789e4cdf76cb0f1"

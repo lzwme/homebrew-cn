@@ -5,6 +5,8 @@ class Tinyxml < Formula
   sha256 "15bdfdcec58a7da30adc87ac2b078e4417dbe5392f3afb719f9ba6d062645593"
   license "Zlib"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "d9865bd3033992b304259880d063f35dd08c314ecf0f3a627a6dda616e946b8b"
     sha256 cellar: :any,                 arm64_sonoma:   "bc5be45bfaaab1e89a96c0fba01f026586cfd831d067a5a534b3c72de7026f83"

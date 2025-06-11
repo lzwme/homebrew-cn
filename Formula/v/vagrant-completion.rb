@@ -8,6 +8,8 @@ class VagrantCompletion < Formula
   license "MIT"
   head "https:github.comhashicorpvagrant.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "b0d411d4cb2f9c85c5f2fb8443dd25bcf8b7624c49019abf613ebd8caa38314f"

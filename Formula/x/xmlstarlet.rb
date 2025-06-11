@@ -5,6 +5,8 @@ class Xmlstarlet < Formula
   sha256 "15d838c4f3375332fd95554619179b69e4ec91418a3a5296e7c631b7ed19e7ca"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4adaaf3c7da18a5c7349ccf69fadf95ea8cd878f5cac627a2b9f90b89c519f4b"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "f5e323357004f390e9362f5949b0e396b2436c0ed66a4c81603f79eee1d8eeea"

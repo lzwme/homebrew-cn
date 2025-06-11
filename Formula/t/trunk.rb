@@ -6,6 +6,8 @@ class Trunk < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https:github.comtrunk-rstrunk.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "f29f737a25367f9d601004ab3c69d5af49388d105dbbf4de4342e9b26bb19235"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "6e353a529700001a2d583d8b5c7b64fd33437b62cb06df847d87be200750a7d1"

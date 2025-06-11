@@ -5,6 +5,8 @@ class Xcodes < Formula
   sha256 "415c104c1aca42e68b4c6ede64e543d79a60d5a6fa99095f2aad179a74045047"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c0bfcfc461c00b753ca481a0a3e1d7997c5eb940389de08895ee673c1a0e2612"

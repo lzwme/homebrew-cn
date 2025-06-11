@@ -11,6 +11,8 @@ class TemporalTables < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "bcc21d71656c35c2fce9354192edb11f0751ef87d0fd7fae94563f7ef93ed4d7"

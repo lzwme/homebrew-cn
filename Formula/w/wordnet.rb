@@ -15,6 +15,8 @@ class Wordnet < Formula
     regex(/href=.*?(?:WordNet|wn)[._-]?v?(\d+(?:\.\d+)+)(?:[._-]dict)?\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256                               arm64_sequoia: "13c3f71489c21a26e9ccab1c57d9021c705fe548ac756787e2641b90a1eadfb9"
     sha256                               arm64_sonoma:  "3189324a36718d3838b41231d17611873cc112740c6179f1672b66a5f7f02530"

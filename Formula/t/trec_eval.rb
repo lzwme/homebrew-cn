@@ -5,6 +5,8 @@ class TrecEval < Formula
   sha256 "c3994a73103ec842e12df693749584a45814c35c36dcc15f38984bd463566ba1"
   license :public_domain
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "fcdd6e403afdb47f056383b66c17ec205973b463c9f09e0991b5272eacddfaa7"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "55f874cf4900def882e6d43572bb1da136c2b2fc4a457bdd0fee5a02e865b197"

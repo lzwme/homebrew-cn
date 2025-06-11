@@ -5,6 +5,8 @@ class Xmodmap < Formula
   sha256 "9a2f8168f7b0bc382828847403902cb6bf175e17658b36189eac87edda877e81"
   license "MIT-open-group"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "1a71168c6e5ae767004d75967ece8e8f41971b5e89072e05d1f68072c8857486"
     sha256 cellar: :any,                 arm64_sonoma:   "735be4fae3324a706814ab035dd4c7dbb9bf1a5095e15b00fed401376bab18cc"

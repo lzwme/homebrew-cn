@@ -5,6 +5,8 @@ class Xlsclients < Formula
   sha256 "68baee57e70250ac4a7759fb78221831f97d88bc8e51dcc2e64eb3f8ca56bae3"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "f232c88f33a86c8c9c4f660d5b1102f7a91f26d9b9565d41e6a1bbd5e282b3d2"
     sha256 cellar: :any,                 arm64_sonoma:  "be45e2812020b6a380b6c7affa69859d6563e79087308382ef6b30cc6bdaae1a"

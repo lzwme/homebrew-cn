@@ -6,6 +6,8 @@ class Zorba < Formula
   license "Apache-2.0"
   revision 20
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "531dae378c0007fe5b28d122ad9e03158f87653321070f53fa7a8016125611b7"
     sha256 arm64_sonoma:  "7bfa2637276cbc0fbade2f450da1b68e88fb7aedd944ce83a658014ac035607e"

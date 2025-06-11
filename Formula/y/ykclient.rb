@@ -16,6 +16,8 @@ class Ykclient < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sonoma:   "d9a2809f4ceb7eaab4f2af89746007a4dab264c166d05a3dcdbbf6ea187d98c6"
     sha256 cellar: :any,                 arm64_ventura:  "23db2cdc9c298cc6ddcf0db595ba661ab352d3bc70dde9b9063a6a76666c76da"

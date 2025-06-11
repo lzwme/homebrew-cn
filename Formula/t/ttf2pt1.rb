@@ -12,6 +12,8 @@ class Ttf2pt1 < Formula
     regex(%r{url=.*?/ttf2pt1[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "b6ad2fb422b592e707adf8a5e622a1aba01994fdeee1979ce0810e1a7fea435d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "35473cb3d10d199702745a66cbd1219309eb884b517d5a1f3356c2b83ec717dc"

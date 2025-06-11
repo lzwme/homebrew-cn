@@ -1,18 +1,18 @@
 class Tt < Formula
   desc "Command-line utility to manage Tarantool applications"
   homepage "https:github.comtarantooltt"
-  url "https:github.comtarantoolttreleasesdownloadv2.9.1tt-2.9.1-complete.tar.gz"
-  sha256 "c2db35772470cdfba8b2e1cba06391d848cfec3c50163e635be305aedd23c04a"
+  url "https:github.comtarantoolttreleasesdownloadv2.10.0tt-2.10.0-complete.tar.gz"
+  sha256 "e115bbc85230f12a69746f54e47a3fd06fd9c2fed4657e519820c9c7653cb03b"
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "6d04aa04e9bed0b14ad572a06872d32e48c2df523e38221943908806d0ef0140"
-    sha256 cellar: :any,                 arm64_sonoma:  "b7bfef5b73cf784b28eea0ff9e2cadc4e4d66f3caa8518d85362f01de5d2a596"
-    sha256 cellar: :any,                 arm64_ventura: "17e36ad39cc6eff36ba4417a514e33b899b9d2cfac9beadb6256d21a9a827793"
-    sha256                               sonoma:        "eb3ed8f61cc6b844e6728ad12a202768352d1be5b46a0e4be684d54e8d145724"
-    sha256                               ventura:       "5f3bf271f86d10e3082cfaa3208e919ff1d60bd14966b9fb497d13c7c3007ebf"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "49e0d720c0028f079bbdd709b9b2737bc821e768fb5144952c308cd997f56d89"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "6e685ed345c8e6fe62a1d357fdade38e242354eab0842ac0152723baaf74168c"
+    sha256 cellar: :any,                 arm64_sequoia: "1f8a98013c734d61cdcedc8d0d33cdb108c57658618fd0315c67485df37bb995"
+    sha256 cellar: :any,                 arm64_sonoma:  "714aa4b30f9dc882186112f8b5f44edd148129400792ff333ac5030ede340462"
+    sha256 cellar: :any,                 arm64_ventura: "0724e06cff0d38abe96c3aaf608fbd75d02836316f6dcbaa0e60d3675064d910"
+    sha256                               sonoma:        "82c6635b3e7fb55db6be341d8982de18f66e7ae8b5ac67837bba20ac7b2ba439"
+    sha256                               ventura:       "1a3fdaf1b8d3a2469f7372a6ed5afb12faccba2a22aa9303a04c51835249d899"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "fcbb83bee9a6a46d294bf744af57bc25289ed794eff8455ae10e4b1ce06087ec"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f6e2f34113d16c75e8803f39ca737210c7d177325ff1c6955c6b34f14543ae2d"
   end
 
   depends_on "go" => :build

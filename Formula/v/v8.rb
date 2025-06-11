@@ -23,6 +23,8 @@ class V8 < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "ee9f92d890ff6d646db3b11554be91ed50219923f5a7900d7f3e980a8d00f9e8"
     sha256 cellar: :any,                 arm64_sonoma:  "7c4952b33dd522e79610eabb3beb9bbfdddc3378f41c2153041503e9f8f0a878"

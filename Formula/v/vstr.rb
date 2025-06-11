@@ -10,6 +10,8 @@ class Vstr < Formula
     regex(/href=.*?vstr[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "578ee5248bf780a885cfc3dc8a806949ded7af743c3be7e7c839fe4d190a43cd"
     sha256 cellar: :any,                 arm64_sonoma:   "54ad15b7c3afd4dadfe4f48c8da91b39efc16d597b9f7300dc67aab5c3f75a40"

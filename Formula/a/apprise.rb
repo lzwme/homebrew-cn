@@ -6,15 +6,16 @@ class Apprise < Formula
   url "https://files.pythonhosted.org/packages/f8/1e/fe19c88c3e1ff96f4ea757bae9f6350060ac28be523507053347aa5d67db/apprise-1.9.3.tar.gz"
   sha256 "f583667ea35b8899cd46318c6cb26f0faf6a4605b119174c2523a012590c65a6"
   license "BSD-3-Clause"
+  revision 1
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "354b28f0fb23363894667645c28ca9901a14ef20542ed7e1f217008b9060e30e"
-    sha256 cellar: :any,                 arm64_sonoma:  "ce7f87a5e4b166890f249446033ffccd2f75240a9a7756c5d09e9b6105241812"
-    sha256 cellar: :any,                 arm64_ventura: "05c8c0fd8290b6ad5d60a606270857a0c1c6a5812248e7cd7a7fad426e996fe9"
-    sha256 cellar: :any,                 sonoma:        "ada7b48bcb889febea70f31b506ab1357ee00109815c2f72e2262d784c4409db"
-    sha256 cellar: :any,                 ventura:       "0ff02200c042ed717c0202f4088055e0d611a21dba4620727177cc654384fd51"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "f554695504727b87700262ef6cc6fe87040bffb8c1d6d059d69fbdd6984188d0"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "c761465aba70b06dd7757c62c301daac2dc273c3d53feec956b4d3502633d030"
+    sha256 cellar: :any,                 arm64_sequoia: "efca83e33402cd9c97a47bc12239af471f75226c7e607d9cf9f545dc142469e8"
+    sha256 cellar: :any,                 arm64_sonoma:  "7f839ea7e876f169d2681fd8b8929c3dea64f28670d4f6ac1efd1b9d5fde9f39"
+    sha256 cellar: :any,                 arm64_ventura: "3578cdef5e6ee0d226c1ee22999a28d22c9e83e2ca57684ed4b025e0c7fa39f2"
+    sha256 cellar: :any,                 sonoma:        "479fdb08b2da41f4815691c88ad54d09d42337e2d095d66bcdd37786e28cd36a"
+    sha256 cellar: :any,                 ventura:       "1a5047e13d554eba586031bc1d278bc5f641e77d5f3b5f074937f908b05c1940"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "6439b294a7c9e49ceddfdca012bdcf9f6bd532c5de6b962818221666ebcd7ef8"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "38c97c36594a2066ca1debd1ab23ab3ef0417adf9250a46b6380383b5ccd2c98"
   end
 
   depends_on "certifi"
@@ -22,13 +23,13 @@ class Apprise < Formula
   depends_on "python@3.13"
 
   resource "charset-normalizer" do
-    url "https://files.pythonhosted.org/packages/16/b0/572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357/charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https://files.pythonhosted.org/packages/e4/33/89c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12d/charset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https://files.pythonhosted.org/packages/60/6c/8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbc/click-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
   end
 
   resource "idna" do
@@ -37,8 +38,8 @@ class Apprise < Formula
   end
 
   resource "markdown" do
-    url "https://files.pythonhosted.org/packages/54/28/3af612670f82f4c056911fbbbb42760255801b3068c48de792d354ff4472/markdown-3.7.tar.gz"
-    sha256 "2ae2471477cfd02dbbf038d5d9bc226d40def84b4fe2986e49b59b6b472bbed2"
+    url "https://files.pythonhosted.org/packages/2f/15/222b423b0b88689c266d9eac4e61396fe2cc53464459d6a37618ac863b24/markdown-3.8.tar.gz"
+    sha256 "7df81e63f0df5c4b24b7d156eb81e4690595239b7d70937d0409f1b0de319c6f"
   end
 
   resource "oauthlib" do
@@ -52,8 +53,8 @@ class Apprise < Formula
   end
 
   resource "requests" do
-    url "https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https://files.pythonhosted.org/packages/e1/0a/929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8/requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "requests-oauthlib" do
@@ -62,8 +63,8 @@ class Apprise < Formula
   end
 
   resource "urllib3" do
-    url "https://files.pythonhosted.org/packages/aa/63/e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66/urllib3-2.3.0.tar.gz"
-    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
+    url "https://files.pythonhosted.org/packages/8a/78/16493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0/urllib3-2.4.0.tar.gz"
+    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
   end
 
   def install

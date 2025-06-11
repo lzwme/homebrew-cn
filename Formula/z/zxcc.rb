@@ -10,6 +10,8 @@ class Zxcc < Formula
     regex(/href=.*?zxcc[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "bddad2d64c555a4a13ba9cbc9c0cb6da0f249f6ef360c2274626a8b036c473a3"
     sha256 arm64_sonoma:   "8c8e1b35ae99069026c14d9cf0d35a14196d7be3e0a1e7bdbc9d6ec5fd6f5b13"

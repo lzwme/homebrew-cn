@@ -6,6 +6,8 @@ class Upx < Formula
   license "GPL-2.0-or-later"
   head "https:github.comupxupx.git", branch: "devel"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "784eb4d2d244872be35b8a8bd82900ce5789740950620b1a1119141361230b72"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "228b152ff34d6dbd0b7e8aef959013f47b7401cb210fca682c991198cbe2e6c2"

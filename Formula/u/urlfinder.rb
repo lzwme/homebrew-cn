@@ -6,6 +6,8 @@ class Urlfinder < Formula
   license "MIT"
   head "https:github.compingc0yURLFinder.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ba0d3713537c7c40ac307a3911c7f96096a03270e8bfb029c73c37a0dbc25357"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "2696316763f9ba4efd365b8d76c62ff87a417b4b06aa1cc566da1f4f2b01faf8"

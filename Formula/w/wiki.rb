@@ -5,6 +5,8 @@ class Wiki < Formula
   sha256 "529c6a58b3b5c5eb3faab07f2bf752155868b912e4f753e432d14040ff4f4262"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "f04d4a1f0e1ff026faa5c23ff76285373b149aee6ea15cac6e15675566f2c0d5"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "ff6fe02817f0844c04ab7f49950a4002ddb29aec162412c8dae098ee3d8a27af"

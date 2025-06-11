@@ -6,19 +6,19 @@ class Cruft < Formula
   url "https:files.pythonhosted.orgpackagesd17e0e20012f2aa156e5d6a70483a8d90accb7ed4966dddb0c58987d9f6eba12cruft-2.16.0.tar.gz"
   sha256 "184662853fbc1c16c0137fe0e9444e0cbe95e40362f5ebb2d9fae33d9223e73f"
   license "MIT"
-  revision 1
+  revision 2
   head "https:github.comcruftcruft.git", branch: "master"
 
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "e5e41d578ada45a0151ce9c8e2b738bca0676d5a2ae8a9b59a385c67b7a5a182"
-    sha256 cellar: :any,                 arm64_sonoma:  "d35f7ca0f3a67330cde228787fcfd800089ba5bae39aed787f83f7f658ee9998"
-    sha256 cellar: :any,                 arm64_ventura: "10c160818ff74b45cc399ddeaba42392dd85dde57392de6600a8edc18da2ff13"
-    sha256 cellar: :any,                 sonoma:        "a0fc82754d9cf9daa2073f7a669b5fe206be2cddd782c5c0500f58938990409c"
-    sha256 cellar: :any,                 ventura:       "33d3b41b97eec435a95c44e3f12b607422be96ceefce86b9c011c75189db1714"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "877a6b776387bb82f712f4debc0c68aa741e322b3b01c594ae226e0ace770392"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "92fd31d81091b01cd9e9055482ff0e97f6af8bbb9ecbc9b137c8874e9b2e84a1"
+    sha256 cellar: :any,                 arm64_sequoia: "ad39579e5cf67e9d038dcbb90428a2c3e2d570d70c6245138cb1876ba5136ea0"
+    sha256 cellar: :any,                 arm64_sonoma:  "190c707c426a09da51c614293b3ce5045864b492227e7cfcc82d48271e7314ea"
+    sha256 cellar: :any,                 arm64_ventura: "b3b1e6260b9008152344573405a8a5330371c3e164d52735ee3c6d3762e7a584"
+    sha256 cellar: :any,                 sonoma:        "0fcdf19675bf13a33bbed2a19ab926173ddfad61cb070002f34478b58f92767e"
+    sha256 cellar: :any,                 ventura:       "1dd9db1dec2951bb2182ed9d179a17152bba07870d6fcb8bda4f32e6345f77dc"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "7a4f67fafa0a04fd79a855ceb3cdb127c09f9cc8d28cda246461eaea7e714692"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "2703585445ce3628a1a6b51bcbf85ccd381cc24f2ca822384976803e8f6e4816"
   end
 
   depends_on "certifi"
@@ -41,13 +41,13 @@ class Cruft < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https:files.pythonhosted.orgpackagese43389c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12dcharset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "click" do
-    url "https:files.pythonhosted.orgpackagesb92e0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8bclick-8.1.8.tar.gz"
-    sha256 "ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"
+    url "https:files.pythonhosted.orgpackages606c8ca2efa64cf75a977a0d7fac081354553ebe483345c734fb6b6515d96bbcclick-8.2.1.tar.gz"
+    sha256 "27c491cc05d968d271d5a1db13e3b5a184636d9d930f148c50b038f0d0646202"
   end
 
   resource "cookiecutter" do
@@ -111,13 +111,13 @@ class Cruft < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https:files.pythonhosted.orgpackagese10a929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "rich" do
-    url "https:files.pythonhosted.orgpackagesab3a0316b28d0761c6734d6bc14e770d85506c986c85ffb239e688eeaab2c2bcrich-13.9.4.tar.gz"
-    sha256 "439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"
+    url "https:files.pythonhosted.orgpackagesa153830aa4c3066a8ab0ae9a9955976fb770fe9c6102117c8ec4ab3ea62d89e8rich-14.0.0.tar.gz"
+    sha256 "82f1bc23a6a21ebca4ae0c45af9bdbc492ed20231dcb63f297d6d1021a9d5725"
   end
 
   resource "shellingham" do
@@ -141,23 +141,23 @@ class Cruft < Formula
   end
 
   resource "typer" do
-    url "https:files.pythonhosted.orgpackages8b6f3991f0f1c7fcb2df31aef28e0594d8d54b05393a0e4e34c65e475c2a5d41typer-0.15.2.tar.gz"
-    sha256 "ab2fab47533a813c49fe1f16b1a370fd5819099c00b119e0633df65f22144ba5"
+    url "https:files.pythonhosted.orgpackagesc58c7d682431efca5fd290017663ea4588bf6f2c6aad085c7f108c5dbc316e70typer-0.16.0.tar.gz"
+    sha256 "af377ffaee1dbe37ae9440cb4e8f11686ea5ce4e9bae01b84ae7c63b87f1dd3b"
   end
 
   resource "types-python-dateutil" do
-    url "https:files.pythonhosted.orgpackagesa96047d92293d9bc521cd2301e423a358abfac0ad409b3a1606d8fbae1321961types_python_dateutil-2.9.0.20241206.tar.gz"
-    sha256 "18f493414c26ffba692a72369fea7a154c502646301ebfe3d56a04b3767284cb"
+    url "https:files.pythonhosted.orgpackagesef88d65ed807393285204ab6e2801e5d11fbbea811adcaa979a2ed3b67a5ef41types_python_dateutil-2.9.0.20250516.tar.gz"
+    sha256 "13e80d6c9c47df23ad773d54b2826bd52dbbb41be87c3f339381c1700ad21ee5"
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesdfdbf35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557typing_extensions-4.12.2.tar.gz"
-    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
+    url "https:files.pythonhosted.orgpackagesd1bc51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5typing_extensions-4.14.0.tar.gz"
+    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesaa63e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66urllib3-2.3.0.tar.gz"
-    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
+    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
+    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
   end
 
   def install

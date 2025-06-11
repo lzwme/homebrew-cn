@@ -11,6 +11,8 @@ class Tnftp < Formula
     regex(/href=.*?tnftp[._-]v?(\d+(?:\.\d+)*)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "14d89deb1cf265a42cfa512173e91ee2e2eef8bc7e2748eb744fcdb4548e85a3"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "11e76e93e1069f6e77346bde84e5d637d1b1b45dbfe22b5da7373c6724ec37c7"

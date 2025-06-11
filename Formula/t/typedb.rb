@@ -5,6 +5,8 @@ class Typedb < Formula
   sha256 "93a5540c02e3e4f4b7783a2d14a8907dcfde3c2b051984ca6b2df79abc3830ce"
   license "AGPL-3.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "dc3d91037b148bc7c232e2146eae539b52e328c6c76de01b137aa4639d6a6976"

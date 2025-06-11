@@ -5,6 +5,8 @@ class Xorgrgb < Formula
   sha256 "77142e3d6f06cfbfbe440e29596765259988a22db40b1e706e14b8ba4c962aa5"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "4cc8217eee8a4df6d597f4f6ab26718712256edd2bb0c5babcd646719ef052c0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "4148ce78e43c9aae8e75e639f5ebab603d20cd3aabd2e6421b71d967ac92aab7"

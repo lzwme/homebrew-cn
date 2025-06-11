@@ -5,6 +5,8 @@ class TlExpected < Formula
   sha256 "1db357f46dd2b24447156aaf970c4c40a793ef12a8a9c2ad9e096d9801368df6"
   license "CC0-1.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, all: "ddbe48577c50c3cde2fae8ec584ce33a9c58d9dbb43ea4854a53ee51b75d2c41"

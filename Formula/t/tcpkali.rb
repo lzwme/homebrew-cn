@@ -5,6 +5,8 @@ class Tcpkali < Formula
   sha256 "a9a15a1703fc4960360a414ee282d821a7b42d4bbba89f9e72a796164ff69598"
   license "BSD-2-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "d3356d233dace7efe54b216d5ba97ed31a4ad7e800bb94ad5bc078dcdda8e7a0"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "e39e3dddac6717a918e86cb86f552ccc71c2a828b361599083a0d36fa3e79780"

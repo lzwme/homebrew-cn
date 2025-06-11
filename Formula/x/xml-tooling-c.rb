@@ -11,6 +11,8 @@ class XmlToolingC < Formula
     regex(/href=.*?xmltooling[._-]v?(\d+(?:\.\d+)+)\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia: "1b36b66bb9b46fd88ee081350f982c80b786f7badafdf75a741c900be3e1b911"
     sha256 cellar: :any,                 arm64_sonoma:  "64daef61885d864d71a90bdfaee06917c8c804f16047e57cd7f61e7ea010f2d0"

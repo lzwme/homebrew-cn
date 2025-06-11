@@ -6,15 +6,16 @@ class Aqtinstall < Formula
   url "https:files.pythonhosted.orgpackages761924a588de6c25d43169d172dab47e63a63cd0d8f90e98cf86487acbf00ac7aqtinstall-3.3.0.tar.gz"
   sha256 "9c7d85fbe7258be2d7d23fda33f8aff2e8b7536817255eaeaaf4226da8546a31"
   license "MIT"
+  revision 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "d9c9dd5e40d7bd533d8da2bb74d7315449731b18f7bb700a744070cd7d00c02c"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "be17bb4b99450b17dc24764ae573bdc60efff0eb47a74264980c605ffafa175e"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "01ae5a1db0def636b7a76062c68a9a147e2376abb916ec899b96e411ca4dc647"
-    sha256 cellar: :any_skip_relocation, sonoma:        "a4e8a129ef5f6c66f9d7891e0bd803059b60e66e3763b96c97043267c79b085a"
-    sha256 cellar: :any_skip_relocation, ventura:       "a2a5b8af8f1f847dd0b6cf7f07d3d99b752ce7775f58e59e7410dbd8da15d1b7"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "fe5793553ea949f4aab1c7fa0da26925a6e285b08f5c4cb88c0ae3b82437644d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1ed0671250344889120e275dd0e377d74e3276dbd4b3387a68f4cc0e87568829"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1800c98a44ca9f747a7cf2ce8e02ac2d59ce2942bf6af9ccf64a295061eee450"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "d13e0b5e6231b627572bdadb2aa9dd21efd21f5ba3c60871331af940dc1217f6"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "3fef848cbf9f5fb81f2af90c70d283dc7c46afd272d0d797a227701f4025c9e5"
+    sha256 cellar: :any_skip_relocation, sonoma:        "4ddfe08ab2fc3f6f10a5e6158cb9a7b1cf4f75ab5dd1bad37901b22ebcca4f27"
+    sha256 cellar: :any_skip_relocation, ventura:       "8fc3dd98f7fc6a4a6b9bf7be0eef1966aaff6b5aa6d8d82eafe4bfb6f3231a82"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "70568ba0757903863362359b25482e4a0d5a797146eb869dd55230c3417ed089"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "07aa400bab836bf643bb068bc9c530ce337485553321ee1433f1911769a97287"
   end
 
   depends_on "python@3.13"
@@ -105,8 +106,8 @@ class Aqtinstall < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https:files.pythonhosted.orgpackagese10a929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "semantic-version" do
@@ -125,8 +126,8 @@ class Aqtinstall < Formula
   end
 
   resource "typing-extensions" do
-    url "https:files.pythonhosted.orgpackagesf63723083fcd6e35492953e8d2aaaa68b860eb422b34627b13f2ce3eb6106061typing_extensions-4.13.2.tar.gz"
-    sha256 "e6c81219bd689f51865d9e372991c540bda33a0379d5573cddb9a3a23f7caaef"
+    url "https:files.pythonhosted.orgpackagesd1bc51647cd02527e87d05cb083ccc402f93e441606ff1f01739a62c8ad09ba5typing_extensions-4.14.0.tar.gz"
+    sha256 "8676b788e32f02ab42d9e7c61324048ae4c6d844a399eebace3d4979d75ceef4"
   end
 
   resource "urllib3" do

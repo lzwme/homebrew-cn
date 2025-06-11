@@ -5,6 +5,8 @@ class Vfuse < Formula
   sha256 "fbf5f8a1c664b03c7513a70aa05c3fc501a7ebdb53f128f1f05c24395871a314"
   license "Apache-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_monterey: "f8184d1fd9ed9a9053df739ad09fa721686131c8a6c2a13b294aec564016cf19"
     sha256 cellar: :any_skip_relocation, arm64_big_sur:  "f8184d1fd9ed9a9053df739ad09fa721686131c8a6c2a13b294aec564016cf19"

@@ -7,6 +7,8 @@ class Unpaper < Formula
   revision 2
   head "https:github.comunpaperunpaper.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "698367ece512da282636d61bd2a514efacb0d014684cc2ae663d9f0121cf3d64"
     sha256 cellar: :any,                 arm64_sonoma:   "13a3d8a2709a9ff5af9d0cfe4149ecfed559ab159e89157d090363226a94149b"

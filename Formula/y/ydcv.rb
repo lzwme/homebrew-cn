@@ -9,6 +9,8 @@ class Ydcv < Formula
   revision 4
   head "https:github.comfelixonmarsydcv.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "061ae513e42baa453cad8f642aba997e3adeb2a56fcc15f9b0450f45e426b006"

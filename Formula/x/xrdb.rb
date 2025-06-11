@@ -5,6 +5,8 @@ class Xrdb < Formula
   sha256 "31f5fcab231b38f255b00b066cf7ea3b496df712c9eb2d0d50c670b63e5033f4"
   license "MIT-open-group"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "c623fd441390eaf1e39523477efd40c69f906eecc0e298db015fad002828a707"
     sha256 cellar: :any,                 arm64_sonoma:   "dd6633e16b4d7304c613cc88b59930d98bfc8bddf4e575e161c06fd74200d89a"

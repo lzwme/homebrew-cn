@@ -7,6 +7,8 @@ class Zrok < Formula
   license all_of: ["Apache-2.0", "BSD-3-Clause", "MIT"]
   head "https:github.comopenzitizrok.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "c5183020d3d78d3e9b2e7ff20d90e5d81fc6227685fcfea5cd4fd4ec1ba05a15"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "e6215eb4bfb6d71325108005256aad15ab35b2fed1341d4c59d87513d84dd4c5"

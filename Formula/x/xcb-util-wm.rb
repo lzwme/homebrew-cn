@@ -5,6 +5,8 @@ class XcbUtilWm < Formula
   sha256 "dcecaaa535802fd57c84cceeff50c64efe7f2326bf752e16d2b77945649c8cd7"
   license "X11"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "78b8c05d6a387da472f24f9b4fa8a60eb3c1815a2b013a5cd9c379d54362f058"
     sha256 cellar: :any,                 arm64_sonoma:   "f2e885b4eefb54d3e9b5f2d4a8dbf4fd93141e8b3c12fbcaa99b318a3dfdad1e"

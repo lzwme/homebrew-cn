@@ -1,8 +1,8 @@
 class Xk6 < Formula
   desc "Build k6 with extensions"
   homepage "https:k6.io"
-  url "https:github.comgrafanaxk6archiverefstagsv0.20.1.tar.gz"
-  sha256 "db0af1b8969e307a531b362039fbfb030a568de17763a6825195d958c73352bb"
+  url "https:github.comgrafanaxk6archiverefstagsv1.0.0.tar.gz"
+  sha256 "4ca1f83301db00bffca583b116e31f892954333f1f539800a0803c141c68198c"
   license "Apache-2.0"
   head "https:github.comgrafanaxk6.git", branch: "master"
 
@@ -12,13 +12,12 @@ class Xk6 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_sequoia: "1e20d80d6dce1d8d3fe65f5f09d709c01c20a87aab6590f4cc10edbb3fea3e1d"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "1e20d80d6dce1d8d3fe65f5f09d709c01c20a87aab6590f4cc10edbb3fea3e1d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "1e20d80d6dce1d8d3fe65f5f09d709c01c20a87aab6590f4cc10edbb3fea3e1d"
-    sha256 cellar: :any_skip_relocation, sonoma:        "1a0a0f3825ef3f80275ec37a02f0321b57a84605c06c683e69d296c04335c02e"
-    sha256 cellar: :any_skip_relocation, ventura:       "1a0a0f3825ef3f80275ec37a02f0321b57a84605c06c683e69d296c04335c02e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "954dc78481339ce43e2da09648d31a2bf739c77f74817173ae8b43009d280b72"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "5a53d435a0d34b78869b95185ab81b3366defcbce07e6a25358122b6322c47b2"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "5a53d435a0d34b78869b95185ab81b3366defcbce07e6a25358122b6322c47b2"
+    sha256 cellar: :any_skip_relocation, arm64_ventura: "5a53d435a0d34b78869b95185ab81b3366defcbce07e6a25358122b6322c47b2"
+    sha256 cellar: :any_skip_relocation, sonoma:        "06ff52c7eb50fd4acbada6a5e8b42a5b9c201143d56cb47264977b2f351f1d00"
+    sha256 cellar: :any_skip_relocation, ventura:       "06ff52c7eb50fd4acbada6a5e8b42a5b9c201143d56cb47264977b2f351f1d00"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "571960d6e2bff838c0e4f639a11ed0c9cc47c3e1e5e150827e88fa97b0ae4eea"
   end
 
   depends_on "go"

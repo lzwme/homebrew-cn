@@ -6,6 +6,8 @@ class Vaulted < Formula
   license "MIT"
   head "https:github.commiquellavaulted.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "a7d20c4d22958ce6a36c53ae40821c077a31bfcce9df74593bc83a7bcf318332"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "7fde70166c645a842baec036f638bc3e0435f22bcc2c16fd2e81186ff200c882"

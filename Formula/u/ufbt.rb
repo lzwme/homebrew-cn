@@ -7,6 +7,8 @@ class Ufbt < Formula
   sha256 "4f1a858858598ed2e25bbab69e2ea604bc00758c3b1e8ecf897a29866157363b"
   license "GPL-3.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, all: "561e844026e50a7d961338d459851e9d62bca87f7449fc9404234b31a24e73d2"

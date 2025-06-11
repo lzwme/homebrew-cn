@@ -5,6 +5,8 @@ class TechnitiumLibrary < Formula
   sha256 "b191357282562662b11563d80476d18061e7cb7adf6d5b0637e012c5e961faae"
   license "GPL-3.0-only"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "7e4cb83b00dd9588bf345937b4221fd0b8c5e12ba18f149ff5de729bc6df4334"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "28984faece182530989be911c65002be59e1ed4a8a828d10ce834223af4ce65d"

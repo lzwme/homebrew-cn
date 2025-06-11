@@ -7,6 +7,8 @@ class Unrtf < Formula
   license "GPL-3.0-or-later"
   head "https://hg.savannah.gnu.org/hgweb/unrtf/", using: :hg
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia:  "cea46b40e6483a6d9ca253f214b32830ad9fe133502aeee92b4ff06074da8566"
     sha256 arm64_sonoma:   "b1dc04615894a229fd0ece73e4e96f5a86e6448dc422714d259bee15a9eec0e9"

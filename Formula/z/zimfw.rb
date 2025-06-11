@@ -5,6 +5,8 @@ class Zimfw < Formula
   sha256 "ec1a6a5b89fa1ab9262c6614f8fb14432483817e9a572608791a861995f15c46"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, all: "da833b86e814243b438d819009dcf738fd6f7ef8fa2dc18fd0107e648cccacd0"
   end

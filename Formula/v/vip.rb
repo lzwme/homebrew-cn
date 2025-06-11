@@ -28,6 +28,8 @@ class Vip < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 2
     sha256 cellar: :any_skip_relocation, all: "4168bb377aa3ca2722f484c1bfbd8c5d89e9231565439ac1ad2ad06ddfeb3d20"

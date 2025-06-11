@@ -6,6 +6,8 @@ class WaitOn < Formula
   sha256 "d7f40655f5c11e882890340826d1163050e2748de66b292c15b10d32feb6490f"
   license "BSD-4-Clause"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "ffd8be74922f931670be9f5bb8fbea47735ddef928a74d44562bcf0e2969c01d"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "866722ebcb399e5524776cc6ffdd2022112287368e4fa768b8b9bbfe2a8a30cc"

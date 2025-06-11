@@ -10,6 +10,8 @@ class Tofrodos < Formula
     regex(/href=.*?tofrodos[._-]v?(\d+(?:\.\d+)+)\.(?:t|zip)/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "4f5b16d880a34a9f8f8bcf3c3a5520affe8356fcf24854fd23e09b07ee1b2de8"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "55ad657b7068a6106e846311ca92abbbf94ed236d7c48b263a25eabc95acc434"

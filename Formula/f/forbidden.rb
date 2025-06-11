@@ -6,16 +6,17 @@ class Forbidden < Formula
   url "https:files.pythonhosted.orgpackagesed80eb80e899c8ac2357aa9b001600e64177a1a68c32b466becadf1eb0a09e01forbidden-13.2.tar.gz"
   sha256 "e560b121b1419393695505a4bf61ab82230a34bffc9b1779ca75a33ab3f62916"
   license "MIT"
+  revision 1
   head "https:github.comivan-sincekforbidden.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any,                 arm64_sequoia: "2245b94b8c99ed3559cc4adb14dd697f91470ed94a9deee99f747db03a25022e"
-    sha256 cellar: :any,                 arm64_sonoma:  "b477ba383c03cea30975ed2963b0fcd32b7a1ff7f667f1c6330560abf189857d"
-    sha256 cellar: :any,                 arm64_ventura: "18eb7d97360f621c07c4f49e408940a273be58e051212720fb93c57522d464eb"
-    sha256 cellar: :any,                 sonoma:        "65007aa53d56c3695b661ead36a7f80c7fa8265bee1e2535c0944887a2b1673d"
-    sha256 cellar: :any,                 ventura:       "288400dd51340b542c352fb9899300fea07a2a2a528e785274c4a79eebf3697e"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "247ee447bea00d027b98995b8ceb448946dba48aeacfbc03eed32cc302b90002"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "f7b94130c1ae5812ca69f9492c9155eed553c1dfef6799066429acb99ff58ce3"
+    sha256 cellar: :any,                 arm64_sequoia: "982a7c02aff4742964dc98742c4295469391bc74ab77e10f9c7ae2c8fdd3bdf5"
+    sha256 cellar: :any,                 arm64_sonoma:  "7370f2a1aac5012366ed4d05e5346396c853e6abefbfa790e5010ab3e7e6c2f2"
+    sha256 cellar: :any,                 arm64_ventura: "6a285ffdd2ad660f8596130405c00e796f3c98bcb043865e7a00a4e188d37677"
+    sha256 cellar: :any,                 sonoma:        "3d8e33dc5de2d1623c38344e078148c6ffc14a990c58631fc4fa6acc348e895d"
+    sha256 cellar: :any,                 ventura:       "b16fb162c6b5385ea2d300b52b1282a4eac092718c82bcd18d3d305abf93c57d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:   "d295e60830896f3756e79caba62b7cc2a102913c209bd46b6a8d075cbfa12c71"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "b21489768fe7143d1fe323c8250746be41f7133d86dae0755260572321a81aa5"
   end
 
   depends_on "certifi"
@@ -42,8 +43,8 @@ class Forbidden < Formula
   end
 
   resource "charset-normalizer" do
-    url "https:files.pythonhosted.orgpackages16b0572805e227f01586461c80e0fd25d65a2115599cc9dad142fee4b747c357charset_normalizer-3.4.1.tar.gz"
-    sha256 "44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3"
+    url "https:files.pythonhosted.orgpackagese43389c2ced2b67d1c2a61c19c6751aa8902d46ce3dacb23600a283619f5a12dcharset_normalizer-3.4.2.tar.gz"
+    sha256 "5baececa9ecba31eff645232d59845c07aa030f0c81ee70184a90d35099a0e63"
   end
 
   resource "colorama" do
@@ -77,8 +78,8 @@ class Forbidden < Formula
   end
 
   resource "requests" do
-    url "https:files.pythonhosted.orgpackages63702bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913requests-2.32.3.tar.gz"
-    sha256 "55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760"
+    url "https:files.pythonhosted.orgpackagese10a929373653770d8a0d7ea76c37de6e41f11eb07559b103b1c02cafb3f7cf8requests-2.32.4.tar.gz"
+    sha256 "27d0316682c8a29834d3264820024b62a36942083d52caf2f14c0591336d3422"
   end
 
   resource "tabulate" do
@@ -87,13 +88,13 @@ class Forbidden < Formula
   end
 
   resource "termcolor" do
-    url "https:files.pythonhosted.orgpackages377288311445fd44c455c7d553e61f95412cf89054308a1aa2434ab835075fc5termcolor-2.5.0.tar.gz"
-    sha256 "998d8d27da6d48442e8e1f016119076b690d962507531df4890fcd2db2ef8a6f"
+    url "https:files.pythonhosted.orgpackagesca6c3d75c196ac07ac8749600b60b03f4f6094d54e132c4d94ebac6ee0e0add0termcolor-3.1.0.tar.gz"
+    sha256 "6a6dd7fbee581909eeec6a756cff1d7f7c376063b14e4a298dc4980309e55970"
   end
 
   resource "urllib3" do
-    url "https:files.pythonhosted.orgpackagesaa63e53da845320b757bf29ef6a9062f5c669fe997973f966045cb019c3f4b66urllib3-2.3.0.tar.gz"
-    sha256 "f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d"
+    url "https:files.pythonhosted.orgpackages8a7816493d9c386d8e60e442a35feac5e00f0913c0f4b7c217c11e8ec2ff53e0urllib3-2.4.0.tar.gz"
+    sha256 "414bc6535b787febd7567804cc015fee39daab8ad86268f1310a9250697de466"
   end
 
   def install

@@ -10,6 +10,8 @@ class Xaric < Formula
     regex(href=.*?xaric[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 arm64_sequoia:  "4ba45ac925f747831ac9bcee52f9c4e45e91b6d10d66181c801ec247dd1d70dd"

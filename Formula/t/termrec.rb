@@ -11,6 +11,8 @@ class Termrec < Formula
     regex(^v?(\d+(?:\.\d+)+)$i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia: "e49f5031c0c2bd9c8a17c75bd3d345755a47525ef4a68d32ca257dcb47b7eb10"

@@ -5,6 +5,8 @@ class Zmqpp < Formula
   sha256 "c1d4587df3562f73849d9e5f8c932ca7dcfc7d8bec31f62d7f35073ef81f4d29"
   license "MPL-2.0"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "9fa8e84d3f7cdd481639d63079b3ff25804d464cdf1107397bcde6fe4950726a"
     sha256 cellar: :any,                 arm64_sonoma:   "574b288b419ea2c184b6720d566a15dd75554bc252379a86cefc173794866a7d"

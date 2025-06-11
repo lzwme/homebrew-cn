@@ -1,9 +1,9 @@
 class GccAT14 < Formula
   desc "GNU compiler collection"
   homepage "https:gcc.gnu.org"
-  url "https:ftp.gnu.orggnugccgcc-14.2.0gcc-14.2.0.tar.xz"
-  mirror "https:ftpmirror.gnu.orggccgcc-14.2.0gcc-14.2.0.tar.xz"
-  sha256 "a7b39bc69cbf9e25826c5a60ab26477001f7c08d85cec04bc0e29cabed6f3cc9"
+  url "https:ftp.gnu.orggnugccgcc-14.3.0gcc-14.3.0.tar.xz"
+  mirror "https:ftpmirror.gnu.orggccgcc-14.3.0gcc-14.3.0.tar.xz"
+  sha256 "e0dc77297625631ac8e50fa92fffefe899a4eb702592da5c32ef04e2293aca3a"
   license "GPL-3.0-or-later" => { with: "GCC-exception-3.1" }
 
   livecheck do
@@ -14,14 +14,14 @@ class GccAT14 < Formula
   no_autobump! because: :requires_manual_review
 
   bottle do
-    sha256                               arm64_sequoia: "e4363ac186b44cad98495db0de0ec3f8499edd5b2424b18251509332083f3a53"
-    sha256                               arm64_sonoma:  "0df99599c52345da1c6eb01ff48f06685a9ff5c7e4f1fa09b03656651e41a283"
-    sha256                               arm64_ventura: "664a2b57edd2570f79a43b869ee00026dd64d46c134e11b70da73b130d731069"
-    sha256                               sequoia:       "f9e2941425d2804e99073ebc51a21ebd327b4a358c0fea46ffe891258d442467"
-    sha256                               sonoma:        "ab3cfda4f5afc397e759b0b3a01effbcec592fbe4f9ca84914115881e24bf80f"
-    sha256                               ventura:       "435930e24810bdbdbdf97d03399c0b8e8b3cc001e9adf8609105d207fe857896"
-    sha256 cellar: :any_skip_relocation, arm64_linux:   "c42d728f21fb32ff8cbb55dfe8c9c593ffde4b64d4653ffaf93ae4fa61426ccd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8a96193c62812d2e768a1525197d634da787f09adca3f9001f4f4e180496646c"
+    sha256 arm64_sequoia: "a506cdc6f124d98860376b407ea1ccd7efc26c17599dd36e8d84fe5a8d9174d7"
+    sha256 arm64_sonoma:  "4b1650d3a4f05e83f41ce6db9ce026330c0e27f11d36ec0728d7d5df88aec2d8"
+    sha256 arm64_ventura: "259e3427f528f649952d1a0ae2ee76c8d3d7b4358dc4bfeb628a3a0fb9fcfc2b"
+    sha256 sequoia:       "9d5abc0f7730ee67b0af8fd1e8145bb9f8807e75bee08244b529892c24ac081b"
+    sha256 sonoma:        "c7947c080206399d57ef43e32f0370e625b50f4f4aff5366173d0f18a745c703"
+    sha256 ventura:       "40507ee533e8652fb0edc9c2e97a7bc1a9204285ce18832ac81cefcf4902dd13"
+    sha256 arm64_linux:   "73647cea1d508c67b6b09232aa1cde8ef9a788efa684feaad53b4136da4dd7ee"
+    sha256 x86_64_linux:  "fb94a8a1e2afd35062fbe9a577803347b078f32e72cc6528cddeccfdedceeb2b"
   end
 
   # The bottles are built on systems with the CLT installed, and do not work
@@ -54,16 +54,8 @@ class GccAT14 < Formula
   # Apple Silicon support, located at https:github.comiainsgcc-14-branch
   patch do
     on_macos do
-      url "https:raw.githubusercontent.comHomebrewformula-patchesf30c309442a60cfb926e780eae5d70571f8ab2cbgccgcc-14.2.0-r2.diff"
-      sha256 "6c0a4708f35ccf2275e6401197a491e3ad77f9f0f9ef5761860768fa6da14d3d"
-    end
-  end
-
-  # Fix for macOS 15.4 SDK issue https:gcc.gnu.orgbugzillashow_bug.cgi?id=119590
-  patch do
-    on_macos do
-      url "https:github.comiainsgcc-14-branchcommitefb88ebe0a6886f816c0d037df33df6556544ad6.patch?full_index=1"
-      sha256 "4077af416eaf40a968e4b9d382aeb6470c2b79f09a52da2dd6aa91ace7af5c87"
+      url "https:raw.githubusercontent.comHomebrewformula-patches473d292cbbdfd318341cb6d4bcdf8de47879bab7gccgcc-14.3.0.diff"
+      sha256 "b8611362ae43a5644ab908d6e4d9bfc90346a914c3ba851197086d54148b1289"
     end
   end
 

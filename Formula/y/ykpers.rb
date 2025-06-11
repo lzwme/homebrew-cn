@@ -11,6 +11,8 @@ class Ykpers < Formula
     regex(href=.*?ykpers[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "b1a84b25eb98c3a81bb369743de29418fc21af87cc28e6596ee38a4595c793df"
     sha256 cellar: :any,                 arm64_sonoma:   "e62f960d0e8851938c674e31e768bcc4bee8ed0e87a13430a9d59c5fba4d95da"

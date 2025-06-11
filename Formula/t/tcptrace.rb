@@ -8,6 +8,8 @@ class Tcptrace < Formula
   sha256 "63380a4051933ca08979476a9dfc6f959308bc9f60d45255202e388eb56910bd"
   license "GPL-2.0-or-later"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "8d117c6645454b8a7d360ca644eff63f362abe2ce853b5d01733c67a49ca4373"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:   "5391990c5db4c21d094d243368443f039990ed44da3d07e0a52b2f0922a3a6a5"

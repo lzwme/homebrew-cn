@@ -5,6 +5,8 @@ class XcbUtilKeysyms < Formula
   sha256 "1fa21c0cea3060caee7612b6577c1730da470b88cbdf846fa4e3e0ff78948e54"
   license "X11"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "bf1324e90b7abdb41f7a6dfa41ce477627ad5d069a09dcfeb51491c5a559b274"
     sha256 cellar: :any,                 arm64_sonoma:   "71f2367c5777c07deb7cf6edda8a7b7a0d9bf162a467b8ae930c2ad0cdb6c450"

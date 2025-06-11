@@ -7,6 +7,8 @@ class TarsnapGui < Formula
   revision 1
   head "https:github.comTarsnaptarsnap-gui.git", branch: "master"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any,                 arm64_sequoia:  "c9cddf5f7eb1d96d77deabf95a9633bdc7fbc649f8349e6960db1f071346e34a"

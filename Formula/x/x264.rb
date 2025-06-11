@@ -38,6 +38,8 @@ class X264 < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "599b5307d2eed20dd72830c722dd30faeca5fa7f87b9a36c122ed575311d84fc"
     sha256 cellar: :any,                 arm64_sonoma:   "19910a7d287524c93e7c56e30eca711618e0b568c0a9a4462924b76761840fd5"

@@ -6,6 +6,8 @@ class Usage < Formula
   license "MIT"
   head "https:github.comjdxusage.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "48749a36fe6f537c4fe3e123d21627fd4b25ff38609d4d24cc81f1fad83ea000"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "3943027449c6376bdfe6a1ddc228d1b3a78cf003dd88c20126f6cabc04a6799b"

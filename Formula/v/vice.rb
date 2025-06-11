@@ -11,6 +11,8 @@ class Vice < Formula
     regex(%r{url=.*?/vice[._-]v?(\d+(?:\.\d+)+)\.t}i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 arm64_sequoia: "8b78df5935aab1f83e0207ea2f728b96a74e66d69f5299e8507f990f11920822"
     sha256 arm64_sonoma:  "729bb747eeb23ff89b1cb604520e7204880394934d91f316c9dc7aeef2f7f73f"

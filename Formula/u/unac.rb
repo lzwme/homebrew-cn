@@ -10,6 +10,8 @@ class Unac < Formula
     regex(/href=.*?unac[._-]v?(\d+(?:\.\d+)+)\.orig\.t/i)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any,                 arm64_sequoia:  "648dfb172e5d6311dc6659235d05b5c22b814f48adab26a9a64288382f0a90d7"
     sha256 cellar: :any,                 arm64_sonoma:   "27170110668e4f920abf561c75cc4b8f0f9bed1ba84ab5b52426663f2fb68546"

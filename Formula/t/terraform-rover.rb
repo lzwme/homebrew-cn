@@ -5,6 +5,8 @@ class TerraformRover < Formula
   sha256 "491709df11c70c9756e55f4cd203321bf1c6b92793b8db91073012a1f13b42e5"
   license "MIT"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "0c8bae1c6ef570dad674bd7984d2f20ee36b55d92c2c73e9ea6fb96d1fbad622"

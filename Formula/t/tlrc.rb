@@ -6,6 +6,8 @@ class Tlrc < Formula
   license "MIT"
   head "https:github.comtldr-pagestlrc.git", branch: "main"
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "80196e92b44c096505b91bf92bec2e8977fc0af0209b2fa1a3f7bb8a5418bbf4"
     sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7cc33f44d74c59ce048151d8a24dad087f194f1d3947125880d4d2f605291ffa"

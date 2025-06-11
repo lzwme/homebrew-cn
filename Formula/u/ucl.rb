@@ -10,6 +10,8 @@ class Ucl < Formula
     regex(href=.*?ucl[._-]v?(\d+(?:\.\d+)+)\.ti)
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 1
     sha256 cellar: :any_skip_relocation, arm64_sequoia:  "c2bf62c73925dcc1099836d528dd46f4f6f3fdae979f58584a930dbe92e89055"

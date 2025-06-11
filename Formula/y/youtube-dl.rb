@@ -16,6 +16,8 @@ class YoutubeDl < Formula
     end
   end
 
+  no_autobump! because: :requires_manual_review
+
   bottle do
     rebuild 5
     sha256 cellar: :any_skip_relocation, arm64_sequoia: "0f3b77e4e5dc244e6e1e85f307083798af83134824e30977936acedf014b58cc"
